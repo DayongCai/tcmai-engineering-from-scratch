@@ -1,0 +1,29 @@
+{
+  "slug": "12-kouqiang-xiufu-xue",
+  "title": "口腔修复学",
+  "en": "Prosthodontics",
+  "deptSlug": "08-wuguan",
+  "deptTitle": "五官口腔系",
+  "globalN": 117,
+  "type": "Clinic",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 72,
+  "bridge": "义齿设计→参数化 CAD / 咬合重建→力学优化",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/08-wuguan/12-kouqiang-xiufu-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/08-wuguan/12-kouqiang-xiufu-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

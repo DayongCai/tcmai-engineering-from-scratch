@@ -1,0 +1,118 @@
+{
+  "id": "engineering-track",
+  "title": "工程型",
+  "en": "Engineering Track",
+  "audience": "面向中医药 AI 工程师：以软件系统与数据能力为核心，中医知识只需达到「能与临床医师对话、能判断输出是否荒谬」的程度。",
+  "outcome": "毕业时能从零构建一个中医领域软件系统（数据层到服务层），并为它写出模型卡、合规声明与失效边界。",
+  "semesters": [
+    1,
+    10
+  ],
+  "subjectCount": 31,
+  "hours": 2106,
+  "route": [
+    {
+      "semester": 1,
+      "stage": "sheng",
+      "reason": "第一学期不先学中医会一路错下去：阴阳五行是后面所有中医概念的语法。",
+      "subjects": [
+        "01-zhongyi/01-zhongyi-jichu-lilun",
+        "01-zhongyi/03-zhongguo-yixue-shi"
+      ]
+    },
+    {
+      "semester": 2,
+      "stage": "sheng",
+      "reason": "术语与数据结构同构：学中药学的同时理解「多标签 + 有序属性」这类表示问题。",
+      "subjects": [
+        "02-zhongyao/01-zhongyaoxue",
+        "03-zhenjiu/01-jingluo-xue"
+      ]
+    },
+    {
+      "semester": 3,
+      "stage": "sheng",
+      "reason": "工程线入口：从医学人工智能导论开始，同时用诊断学理解「一次分类」在临床上意味着什么。",
+      "subjects": [
+        "07-zhineng/01-yixue-rengong-zhineng-daolun",
+        "01-zhongyi/05-zhongyi-zhen-duan-xue",
+        "02-zhongyao/03-fangjixue"
+      ]
+    },
+    {
+      "semester": 4,
+      "stage": "sheng",
+      "reason": "架构与设备两条线同时开工：先定架构，再谈数据从哪来。",
+      "subjects": [
+        "07-zhineng/02-zhongyi-ruanjian-jiagou-xue",
+        "07-zhineng/03-zhongyi-zhineng-shebei",
+        "06-guanli/01-yixue-tongjixue",
+        "06-guanli/02-zhongyiyao-zhengce-fagui",
+        "03-zhenjiu/02-shuxue-xue",
+        "08-wuguan/02-kouqiang-jiepou-shengli"
+      ]
+    },
+    {
+      "semester": 5,
+      "stage": "zhang",
+      "reason": "NLP 与知识图谱是中医数据的两个主战场，同学期开，互相验证。",
+      "subjects": [
+        "07-zhineng/04-zhongyi-ziran-yuyan-chuli",
+        "07-zhineng/05-zhongyi-zhishi-tupu",
+        "01-zhongyi/10-zhongyi-neike-xue"
+      ]
+    },
+    {
+      "semester": 6,
+      "stage": "zhang",
+      "reason": "从「表示」走到「系统」：辨证系统、图像、信号、大数据四条应用线并行。",
+      "subjects": [
+        "07-zhineng/06-zhongyi-zhineng-bianzheng",
+        "07-zhineng/07-yixue-tuxiang-shezhen",
+        "07-zhineng/08-maizhen-keguanhua",
+        "07-zhineng/09-zhongyi-dashuju-fenxi",
+        "06-guanli/06-yiyuan-guanli-xue",
+        "06-guanli/09-yiliao-baoxian-jingji"
+      ]
+    },
+    {
+      "semester": 7,
+      "stage": "zhuang",
+      "reason": "大模型与智能体是收口能力：前面所有模块在这里被编排成一个会自己做事的系统。",
+      "subjects": [
+        "07-zhineng/10-llm-yu-zhongyi-zhinengti",
+        "07-zhineng/11-zhongyi-jiqiren-xue",
+        "07-zhineng/13-zhongyi-duomotai-ronghe",
+        "06-guanli/10-yixue-xinxi-guanli",
+        "06-guanli/11-yiyuan-xinxihua-bingan",
+        "06-guanli/12-zhongyiyao-biaozhunhua"
+      ]
+    },
+    {
+      "semester": 8,
+      "stage": "zhuang",
+      "reason": "上线前必须过的两道关：安全合规与工程伦理。",
+      "subjects": [
+        "07-zhineng/14-yixue-shuju-anquan-yinsi",
+        "07-zhineng/15-zhongyi-ai-lunli-zhili",
+        "01-zhongyi/15-zhongyi-gejia-xueshuo"
+      ]
+    },
+    {
+      "semester": 10,
+      "stage": "yi",
+      "reason": "毕业设计：把八年学的东西压成一个能跑、能解释、能被别人接手的系统。",
+      "subjects": []
+    }
+  ],
+  "capstone": {
+    "title": "中医领域全栈系统",
+    "deliverable": "一套端到端可运行的中医域系统：数据入库 → 表示学习 → 服务接口 → 前端交付，含模型卡与合规声明。",
+    "criteria": [
+      "接口契约先写（OpenAPI / JSON Schema），代码后写",
+      "每个模型附模型卡，明确写出不适用场景",
+      "含至少一个「模态缺失」场景的正确降级行为",
+      "全部测试可离线复现，不依赖外部 API key"
+    ]
+  }
+}

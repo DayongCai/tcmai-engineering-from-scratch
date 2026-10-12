@@ -1,0 +1,75 @@
+# [tcmP] 课程编排 · 01-zhongyi/01-zhongyi-jichu-lilun
+#
+# 单一事实来源是 departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/<slug>/docs/zh.md
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+
+id: 01-zhongyi-jichu-lilun
+title: 中医基础理论
+en: Fundamentals of TCM Theory
+dept: 01-zhongyi
+dept_title: 中医系
+semester: 1
+stage: sheng
+hours: 72
+chapters_target: 10
+bridge: 阴阳→二分类 / 五行→多分类 / 藏象→知识图谱
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN（TTS 可用时）；无 TTS 时为静音轨 + 人工配音
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-yin-yang-er-fenlei
+    title: 阴阳学说 → 二分类：从零实现逻辑回归
+    video: slides-ready        # planned | narration-ready | slides-ready | rendered | published
+    estimate_minutes: 10       # 来自 narration/lesson.json 的 estimateTotalSeconds，非实测
+    figure: yin-yang-sigmoid
+
+  - slug: 02-wu-xing-duo-fenlei
+    title: 五行学说 → 多分类：从零实现 Softmax（并检验生克约束是否真的有用）
+    video: slides-ready
+    estimate_minutes: 8
+    figure: wuxing-cycle
+
+  - slug: 03-zang-xiang-tupu
+    title: 藏象学说 → 知识图谱：脏腑关系的图表示
+    video: slides-ready
+    estimate_minutes: 8
+    figure: zangxiang-graph
+
+  # 以下 7 章尚未开章。运行脚手架开章后，在此登记。
+  # node scripts/scaffold_chapter.js 01-zhongyi/01-zhongyi-jichu-lilun 04-<slug> "标题"
+  - slug: 04-jing-qi-xue-ye
+    title: 精气血津液 → 状态向量
+    video: planned
+  - slug: 05-zang-fu-biao-li
+    title: 脏腑相表里 → 对称关系图
+    video: planned
+  - slug: 06-jingluo-xue-shuo
+    title: 经络学说 → 图上的路径查询
+    video: planned
+  - slug: 07-qingzhi-bingji
+    title: 情志致病 → 情绪分类与五志相胜
+    video: planned
+  - slug: 08-tizhi-fenlei
+    title: 体质学说 → 多标签分类
+    video: planned
+  - slug: 09-bingyin-bingji
+    title: 病因病机 → 因果图与反事实
+    video: planned
+  - slug: 10-zhiliao-yuanze
+    title: 治则治法 → 约束下的搜索
+    video: planned
+
+capstone:
+  title: 用代码讲清一个中医基础理论命题
+  deliverable: 三分钟讲清一个命题的幻灯片 + 可运行代码 + 一份 Prompt 产出物
+  criteria:
+    - 讲稿与 docs/zh.md 同源，不另存一份
+    - 每集结尾必须有免责声明卡
+    - 时长只标估算或实测，不混用

@@ -1,0 +1,29 @@
+{
+  "slug": "15-huli-yanjiu-zhengxun",
+  "title": "护理研究与循证护理",
+  "en": "Nursing Research & EBP",
+  "deptSlug": "05-huli",
+  "deptTitle": "护理系",
+  "globalN": 75,
+  "type": "Build",
+  "semester": 8,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 54,
+  "bridge": "证据分级→GRADE 算法 / 文献筛选→PRISMA 流程自动化",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/05-huli/15-huli-yanjiu-zhengxun",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/05-huli/15-huli-yanjiu-zhengxun",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

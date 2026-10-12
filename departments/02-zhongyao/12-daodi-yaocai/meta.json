@@ -1,0 +1,29 @@
+{
+  "slug": "12-daodi-yaocai",
+  "title": "道地药材与产地加工",
+  "en": "Genuine Regional Herbs & Post-harvest",
+  "deptSlug": "02-zhongyao",
+  "deptTitle": "中药系",
+  "globalN": 27,
+  "type": "Reference",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "产地指纹→地理加权 / 品质溯源→区块链账本",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/02-zhongyao/12-daodi-yaocai",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/02-zhongyao/12-daodi-yaocai",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

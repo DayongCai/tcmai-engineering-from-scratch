@@ -1,0 +1,29 @@
+{
+  "slug": "14-yixue-shuju-anquan-yinsi",
+  "title": "医学数据安全与隐私保护",
+  "en": "Medical Data Security & Privacy",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 104,
+  "type": "Build",
+  "semester": 8,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 54,
+  "bridge": "脱敏→k-匿名 / 联邦学习→差分隐私",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/14-yixue-shuju-anquan-yinsi",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/14-yixue-shuju-anquan-yinsi",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

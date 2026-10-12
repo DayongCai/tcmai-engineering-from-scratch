@@ -1,0 +1,29 @@
+{
+  "slug": "07-zhongyi-erbihou-xue",
+  "title": "中医耳鼻喉科学",
+  "en": "TCM Otorhinolaryngology",
+  "deptSlug": "08-wuguan",
+  "deptTitle": "五官口腔系",
+  "globalN": 112,
+  "type": "Clinic",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "耳鼻喉辨证→多标签分类 / 嗓音数据→声学特征",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/08-wuguan/07-zhongyi-erbihou-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/08-wuguan/07-zhongyi-erbihou-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

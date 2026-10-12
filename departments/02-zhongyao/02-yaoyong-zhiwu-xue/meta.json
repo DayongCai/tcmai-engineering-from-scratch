@@ -1,0 +1,29 @@
+{
+  "slug": "02-yaoyong-zhiwu-xue",
+  "title": "药用植物学",
+  "en": "Medicinal Botany",
+  "deptSlug": "02-zhongyao",
+  "deptTitle": "中药系",
+  "globalN": 17,
+  "type": "Core",
+  "semester": 2,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "植物分类→层级分类 / 叶片形态→CNN 特征",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/02-zhongyao/02-yaoyong-zhiwu-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/02-zhongyao/02-yaoyong-zhiwu-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "09-zhongyao-yaoji-xue",
+  "title": "中药药剂学",
+  "en": "TCM Pharmaceutics",
+  "deptSlug": "02-zhongyao",
+  "deptTitle": "中药系",
+  "globalN": 24,
+  "type": "Core",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "剂型设计→多目标优化 / 释放曲线→动力学拟合",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/02-zhongyao/09-zhongyao-yaoji-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/02-zhongyao/09-zhongyao-yaoji-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

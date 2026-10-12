@@ -1,0 +1,29 @@
+{
+  "slug": "11-wuli-zhiliao",
+  "title": "物理治疗与运动康复",
+  "en": "Physiotherapy & Sports Rehab",
+  "deptSlug": "03-zhenjiu",
+  "deptTitle": "针灸系",
+  "globalN": 41,
+  "type": "Build",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "运动处方→个性化推荐 / 步态数据→时序分类",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/03-zhenjiu/11-wuli-zhiliao",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/03-zhenjiu/11-wuli-zhiliao",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

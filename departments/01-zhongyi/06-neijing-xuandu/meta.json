@@ -1,0 +1,29 @@
+{
+  "slug": "06-neijing-xuandu",
+  "title": "内经选读",
+  "en": "Selected Readings from Huangdi Neijing",
+  "deptSlug": "01-zhongyi",
+  "deptTitle": "中医系",
+  "globalN": 6,
+  "type": "Core",
+  "semester": 3,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 72,
+  "bridge": "原文→语料库 / 条文检索→向量检索",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/01-zhongyi/06-neijing-xuandu",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/01-zhongyi/06-neijing-xuandu",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "04-chuangshang-jijiu-xue",
+  "title": "创伤急救学",
+  "en": "Trauma & Emergency Care",
+  "deptSlug": "04-gushang",
+  "deptTitle": "骨伤系",
+  "globalN": 49,
+  "type": "Clinic",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "创伤评分→风险分层 / 急救流程→决策树",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/04-gushang/04-chuangshang-jijiu-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/04-gushang/04-chuangshang-jijiu-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

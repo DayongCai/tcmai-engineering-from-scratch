@@ -1,0 +1,29 @@
+{
+  "slug": "10-yixue-xinxi-guanli",
+  "title": "医学信息管理",
+  "en": "Health Information Management",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 85,
+  "type": "Build",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 54,
+  "bridge": "电子病历→HL7/FHIR 建模 / 数据质量→校验规则",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/10-yixue-xinxi-guanli",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/10-yixue-xinxi-guanli",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

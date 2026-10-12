@@ -1,0 +1,29 @@
+{
+  "slug": "02-zhongyiyao-zhengce-fagui",
+  "title": "中医药政策与法规",
+  "en": "TCM Policy & Regulation",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 77,
+  "type": "Core",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "法规条文→检索问答 / 合规判断→规则树",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/02-zhongyiyao-zhengce-fagui",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/02-zhongyiyao-zhengce-fagui",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

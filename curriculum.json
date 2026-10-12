@@ -1,0 +1,227 @@
+{
+  "$schema": "./curriculum.schema.json",
+  "version": "1.0.0",
+  "domain": {
+    "slug": "tcm",
+    "title": "中医药领域",
+    "en": "Traditional Chinese Medicine",
+    "motto": "从零起步，生长壮老已，终成医圣。",
+    "scale": { "departments": 8, "subjects": 120, "semesters": 10, "stages": 5 }
+  },
+
+  "subjectTuple": [
+    "slug", "title", "en", "type", "semester", "hours", "chapters", "bridge"
+  ],
+  "subjectTupleNote": "type ∈ Core|Build|Reference|Clinic ; semester ∈ 1..10 ; hours=课时 ; chapters=章节目标数 ; bridge=中医概念→AI/工程方法 的桥梁说明",
+
+  "stages": [
+    { "id": "sheng",  "n": 1, "title": "生", "sub": "启蒙", "glyph": "🌱", "years": "大一–大二", "semesters": [1, 2, 3, 4], "pressure": 5, "knowledge": 3, "artifact": "📋 概念卡 / 术语表 / Prompt 模板" },
+    { "id": "zhang",  "n": 2, "title": "长", "sub": "积累", "glyph": "🌿", "years": "大三",     "semesters": [5, 6],       "pressure": 3, "knowledge": 5, "artifact": "🛠️ 辨证模板 / 知识库 / Skill" },
+    { "id": "zhuang", "n": 3, "title": "壮", "sub": "鼎盛", "glyph": "🌳", "years": "大四",     "semesters": [7, 8],       "pressure": 2, "knowledge": 4, "artifact": "🤖 智能体 / 🔌 MCP 服务" },
+    { "id": "lao",    "n": 4, "title": "老", "sub": "固化", "glyph": "🍂", "years": "大五上",   "semesters": [9],          "pressure": 3, "knowledge": 1, "artifact": "⚙️ 临床轮转手册 / 系统" },
+    { "id": "yi",     "n": 5, "title": "已", "sub": "转型", "glyph": "🔄", "years": "大五下",   "semesters": [10],         "pressure": 4, "knowledge": 0, "artifact": "🧰 毕业设计 / 工具箱" }
+  ],
+
+  "departments": [
+    {
+      "n": 1,
+      "slug": "01-zhongyi",
+      "title": "中医系",
+      "en": "Traditional Chinese Medicine",
+      "icon": "☯️",
+      "focus": "理法方药的内核：基础理论、经典、临床各科",
+      "subjects": [
+        ["01-zhongyi-jichu-lilun",      "中医基础理论",   "Fundamentals of TCM Theory",        "Core", 1, 72, 10, "阴阳→二分类 / 五行→多分类 / 藏象→知识图谱"],
+        ["02-yi-gu-wen",                "医古文",         "Classical Chinese for TCM",         "Core", 1, 54,  8, "古文分词→分词器 / 训诂→语义消歧"],
+        ["03-zhongguo-yixue-shi",       "中国医学史",     "History of Chinese Medicine",       "Reference", 1, 36,  8, "医史脉络→时间图谱 / 学派演化→谱系聚类"],
+        ["04-zhongyi-tizhi-xue",        "中医体质学",     "TCM Constitution Theory",           "Core", 4, 54,  8, "九种体质→多分类 / 体质问卷→特征工程"],
+        ["05-zhongyi-zhen-duan-xue",    "中医诊断学",     "TCM Diagnostics",                   "Core", 3, 90, 12, "四诊→多模态特征 / 八纲→多维分类"],
+        ["06-neijing-xuandu",           "内经选读",       "Selected Readings from Huangdi Neijing", "Core", 3, 72, 10, "原文→语料库 / 条文检索→向量检索"],
+        ["07-shanghanlun",              "伤寒论",         "Treatise on Cold Damage",           "Core", 4, 90, 12, "六经→状态机 / 方证→条件概率"],
+        ["08-jingui-yaolue",            "金匮要略",       "Synopsis of the Golden Chamber",    "Core", 5, 72, 10, "杂病→规则库 / 方证对应→检索增强"],
+        ["09-wenbing-xue",              "温病学",         "Warm Disease Theory",               "Core", 5, 72, 10, "卫气营血→分层状态机 / 传变→时序模型"],
+        ["10-zhongyi-neike-xue",        "中医内科学",     "TCM Internal Medicine",             "Clinic", 5, 108, 14, "脏腑辨证→决策树 / 证型→集成分类"],
+        ["11-zhongyi-waike-xue",        "中医外科学",     "TCM External Medicine",             "Clinic", 6, 72, 10, "外科辨证→图像特征 / 疮疡分期→序列标注"],
+        ["12-zhongyi-fuke-xue",         "中医妇科学",     "TCM Gynecology",                    "Clinic", 6, 72, 10, "月经周期→周期序列模型 / 妇科辨证→智能体"],
+        ["13-zhongyi-erke-xue",         "中医儿科学",     "TCM Pediatrics",                    "Clinic", 6, 72, 10, "小儿剂量→规则引擎 / 儿科辨证→ReAct 智能体"],
+        ["14-zhongyi-zhenghou-xue",     "中医证候学",     "TCM Syndrome Theory",               "Build", 7, 72, 10, "证候→本体建模 / 证型标准化→嵌入聚类"],
+        ["15-zhongyi-gejia-xueshuo",    "中医各家学说",   "Schools of TCM Thought",            "Reference", 7, 54, 8, "学派对比→文本相似度 / 学术谱系→图网络"]
+      ]
+    },
+    {
+      "n": 2,
+      "slug": "02-zhongyao",
+      "title": "中药系",
+      "en": "Chinese Materia Medica",
+      "icon": "🌾",
+      "focus": "本草、方剂与中药全产业链：资源—鉴定—化学—药理—制剂",
+      "subjects": [
+        ["01-zhongyaoxue",              "中药学",             "Chinese Materia Medica",              "Core", 2, 90, 12, "四气五味归经→词嵌入 / 功效相似度→余弦距离"],
+        ["02-yaoyong-zhiwu-xue",        "药用植物学",         "Medicinal Botany",                    "Core", 2, 54,  8, "植物分类→层级分类 / 叶片形态→CNN 特征"],
+        ["03-fangjixue",                "方剂学",             "TCM Formulary",                       "Core", 3, 90, 12, "君臣佐使→缩放点积注意力 / 类方鉴别→对比学习"],
+        ["04-zhongyao-ziyuan-xue",      "中药资源学",         "TCM Resource Science",                "Reference", 3, 54,  8, "产区分布→空间聚类 / 资源评价→多指标模型"],
+        ["05-zhongyao-jianding-xue",    "中药鉴定学",         "Identification of Chinese Materia Medica", "Build", 4, 72, 10, "性状鉴别→图像分类 / 显微鉴别→纹理特征"],
+        ["06-zhongyao-huaxue",          "中药化学",           "Phytochemistry of TCM",               "Core", 4, 90, 12, "成分结构→分子指纹 / 活性预测→QSAR 回归"],
+        ["07-zhongyao-yaoli-xue",       "中药药理学",         "TCM Pharmacology",                    "Core", 5, 72, 10, "药效实验→剂量-反应拟合 / 网络药理→图算法"],
+        ["08-zhongyao-paozhi-xue",      "中药炮制学",         "TCM Processing",                      "Build", 5, 54,  8, "炮制火候→过程曲线 / 工艺参数→回归优化"],
+        ["09-zhongyao-yaoji-xue",       "中药药剂学",         "TCM Pharmaceutics",                   "Core", 5, 72, 10, "剂型设计→多目标优化 / 释放曲线→动力学拟合"],
+        ["10-zhongyao-fenxi-xue",       "中药分析学",         "TCM Analysis",                        "Build", 6, 72, 10, "指纹图谱→降维与相似度 / 光谱数据→PLS 回归"],
+        ["11-zhongyao-yaodai-donglixue", "中药药代动力学",    "TCM Pharmacokinetics",                "Build", 6, 54,  8, "血药浓度→房室模型 / 参数估计→非线性拟合"],
+        ["12-daodi-yaocai",             "道地药材与产地加工", "Genuine Regional Herbs & Post-harvest", "Reference", 6, 54, 8, "产地指纹→地理加权 / 品质溯源→区块链账本"],
+        ["13-zhongchengyao-linchuang",  "中成药与临床用药",   "Patent Medicines in Clinical Use",    "Clinic", 7, 72, 10, "联合用药→推荐系统 / 不良反应→异常检测"],
+        ["14-peiwu-yu-jinji",           "中药配伍与禁忌",     "TCM Herb Compatibility & Contraindications", "Build", 7, 54, 8, "十八反十九畏→规则图谱 / 配伍风险→图推理"],
+        ["15-zhongyao-xinyao-yanfa",    "中药新药研发",       "New TCM Drug Development",            "Build", 8, 72, 10, "研发管线→项目管理 / 临床试验→A/B 试验设计"]
+      ]
+    },
+    {
+      "n": 3,
+      "slug": "03-zhenjiu",
+      "title": "针灸系",
+      "en": "Acupuncture & Moxibustion",
+      "icon": "🪡",
+      "focus": "经络腧穴—刺法灸法—针灸治疗 与推拿康复的完整链条",
+      "subjects": [
+        ["01-jingluo-xue",              "经络学",             "Meridian Theory",                     "Core", 2, 72, 10, "经络循行→图结构 / 路径查询→图遍历"],
+        ["02-shuxue-xue",               "腧穴学",             "Acupoint Theory",                     "Core", 3, 90, 12, "腧穴定位→三维坐标 / 取穴→KD-Tree 最近邻"],
+        ["03-zhenjiu-yiji-xuan",        "针灸医籍选",         "Selected Acupuncture Classics",       "Reference", 3, 54, 8, "古籍条文→语料检索 / 治法归纳→规则抽取"],
+        ["04-qigong-xue",               "中医气功学",         "TCM Qigong",                          "Reference", 3, 36, 6, "呼吸节律→时序信号 / 功法教学→动作识别"],
+        ["05-tuina-xue",                "推拿学",             "Tui Na (Chinese Massage)",            "Clinic", 4, 72, 10, "手法参数→力-时曲线 / 疗效评价→量表分析"],
+        ["06-tuina-shoufa-xue",         "推拿手法学",         "Tui Na Manipulation Techniques",      "Build", 4, 54, 8, "手法轨迹→姿态估计 / 力度反馈→可穿戴传感"],
+        ["07-cifa-jiufa-xue",           "刺法灸法学",         "Acupuncture & Moxibustion Techniques", "Core", 4, 72, 10, "进针角度→几何参数 / 得气→肌电特征"],
+        ["08-zhenjiu-zhiliao-xue",      "针灸治疗学",         "Acupuncture Therapeutics",            "Clinic", 5, 90, 12, "处方配穴→组合优化 / 疗效预测→分类模型"],
+        ["09-kangfu-yixue-jichu",       "康复医学基础",       "Foundations of Rehabilitation",       "Core", 5, 54, 8, "功能评定→量表计分 / 康复计划→路径搜索"],
+        ["10-shiyan-zhenjiu-xue",       "实验针灸学",         "Experimental Acupuncture",            "Build", 6, 72, 10, "动物实验→统计设计 / 电针参数→响应曲面"],
+        ["11-wuli-zhiliao",             "物理治疗与运动康复", "Physiotherapy & Sports Rehab",        "Build", 6, 54, 8, "运动处方→个性化推荐 / 步态数据→时序分类"],
+        ["12-erxue-zhenduan-xue",       "耳穴诊治学",         "Auricular Diagnosis & Therapy",       "Build", 6, 54, 8, "耳穴分区→图像配准 / 阳性反应点→目标检测"],
+        ["13-zhendao-yixue",            "针刀医学",           "Acupotomy Medicine",                  "Clinic", 7, 54, 8, "松解层次→解剖分层模型 / 操作规划→路径规划"],
+        ["14-zhenjiu-zhentong-mazui",   "针灸镇痛与麻醉",     "Acupuncture Analgesia & Anesthesia",  "Build", 7, 54, 8, "镇痛机制→神经环路建模 / 疼痛评分→回归"],
+        ["15-zhongyi-kangfu-xue",       "中医康复学",         "TCM Rehabilitation",                  "Clinic", 7, 72, 10, "辨证施康→规则+ML 混合 / 随访数据→生存分析"]
+      ]
+    },
+    {
+      "n": 4,
+      "slug": "04-gushang",
+      "title": "骨伤系",
+      "en": "Orthopedics & Traumatology",
+      "icon": "🦴",
+      "focus": "正骨理筋—骨病退变—运动损伤与康复工程",
+      "subjects": [
+        ["01-zhongyi-yundong-xue",      "中医运动学",         "TCM Kinesiology",                     "Core", 4, 54, 8, "导引术式→动作序列 / 运动学参数→运动捕捉"],
+        ["02-yao-shang-jiepou",         "骨伤解剖学",         "Musculoskeletal Anatomy",             "Core", 4, 72, 10, "断层解剖→三维重建 / 定位→坐标系变换"],
+        ["03-gushang-kexue-jichu",      "中医骨伤科学基础",   "Foundations of TCM Orthopedics",      "Core", 5, 72, 10, "筋骨辨证→分层规则 / 损伤分类→多标签分类"],
+        ["04-chuangshang-jijiu-xue",    "创伤急救学",         "Trauma & Emergency Care",             "Clinic", 5, 54, 8, "创伤评分→风险分层 / 急救流程→决策树"],
+        ["05-yundong-yixue",            "运动医学与损伤防护", "Sports Medicine & Injury Prevention", "Build", 5, 54, 8, "损伤预测→幸存分析 / 负荷管理→时序模型"],
+        ["06-zhongyi-zhenggu-xue",      "中医正骨学",         "TCM Bone-setting",                    "Clinic", 6, 90, 12, "复位手法→力学仿真 / 骨折分型→图像分类"],
+        ["07-zhongyi-jinshang-xue",     "中医筋伤学",         "TCM Soft-tissue Injury",              "Clinic", 6, 72, 10, "筋伤分期→阶段模型 / 触诊→压力传感阵列"],
+        ["08-gushang-shoufa-zhiliao",   "骨伤科手法治疗学",   "Orthopedic Manual Therapy",           "Build", 6, 72, 10, "手法力学→力反馈控制 / 疗效→纵向数据分析"],
+        ["09-guke-yingxiang-zhenduan",  "骨科影像诊断学",     "Orthopedic Imaging",                  "Build", 6, 72, 10, "X线/CT/MRI→CNN 分割 / 病灶检测→目标检测"],
+        ["10-jizhu-bing-xue",           "脊柱病学",           "Spinal Disorders",                    "Clinic", 7, 72, 10, "脊柱曲度→几何测量 / 退变分级→有序回归"],
+        ["11-guanjie-bing-xue",         "关节病学",           "Joint Disorders",                     "Clinic", 7, 72, 10, "关节间隙→自动测量 / 炎症活动度→影像组学"],
+        ["12-guzhishusong-tuibian",     "骨质疏松与退行性疾病", "Osteoporosis & Degenerative Disease", "Build", 7, 54, 8, "骨密度→回归预测 / 骨折风险→FRAX 类模型"],
+        ["13-zhongyi-zhengji-xue",      "中医整脊学",         "TCM Spinal Adjustment",               "Clinic", 7, 54, 8, "脊柱序列→姿态估计 / 调整方案→规划算法"],
+        ["14-kangfu-gongcheng-zhiju",   "康复工程与支具学",   "Rehab Engineering & Orthotics",       "Build", 8, 54, 8, "支具设计→参数化建模 / 3D 打印→增材制造流程"],
+        ["15-gushang-kangfu-pingding",  "骨伤康复评定",       "Orthopedic Rehab Assessment",         "Build", 8, 54, 8, "评定量表→信效度分析 / 康复进度→增长曲线模型"]
+      ]
+    },
+    {
+      "n": 5,
+      "slug": "05-huli",
+      "title": "护理系",
+      "en": "Nursing",
+      "icon": "🩺",
+      "focus": "中医护理特色技术 + 现代护理全科能力",
+      "subjects": [
+        ["01-zhongyi-huli-jichu",       "中医护理学基础",     "Foundations of TCM Nursing",          "Core", 2, 72, 10, "辨证施护→规则库 / 证护对应→映射表"],
+        ["02-jichu-huli-xue",           "基础护理学",         "Fundamental Nursing",                 "Core", 2, 72, 10, "护理操作→标准作业流程 / 生命体征→异常检测"],
+        ["03-jiankang-pinggu",          "健康评估",           "Health Assessment",                   "Core", 3, 54,  8, "问诊查体→结构化采集 / 异常体征→规则+ML 判别"],
+        ["04-zhongyi-huli-jishu",       "中医护理技术",       "TCM Nursing Techniques",              "Build", 3, 54,  8, "拔罐艾灸刮痧→操作参数化 / 不良反应→监测预警"],
+        ["05-zhongyi-yangsheng-xue",    "中医养生学",         "TCM Health Cultivation",              "Core", 3, 54,  8, "体质养生→个性化推荐 / 生活处方→规则引擎"],
+        ["06-zhongyi-xinli-xue",        "中医心理学",         "TCM Psychology",                      "Core", 4, 54,  8, "情志辨证→情绪分类 NLP / 五志相胜→博弈模型"],
+        ["07-neike-huli-xue",           "内科护理学",         "Medical Nursing",                     "Clinic", 5, 90, 12, "护理诊断→本体推理 / 病情变化→时序预警"],
+        ["08-waike-huli-xue",           "外科护理学",         "Surgical Nursing",                    "Clinic", 5, 72, 10, "围手术期→流程编排 / 并发症→风险预测"],
+        ["09-fuchanke-huli-xue",        "妇产科护理学",       "OB/GYN Nursing",                      "Clinic", 6, 54,  8, "产程→阶段状态机 / 母婴数据→联合建模"],
+        ["10-erke-huli-xue",            "儿科护理学",         "Pediatric Nursing",                   "Clinic", 6, 54,  8, "儿童生长发育→曲线拟合 / 用药剂量→体重规则"],
+        ["11-shequ-huli-xue",           "社区护理学",         "Community Nursing",                   "Build", 6, 54,  8, "家庭访视→路线优化 / 慢病管理→队列随访"],
+        ["12-jiwei-zhengzheng-huli",    "急危重症护理学",     "Critical Care Nursing",               "Clinic", 7, 72, 10, "危重评分→风险模型 / 抢救流程→实时决策支持"],
+        ["13-huli-guanli-xue",          "护理管理学",         "Nursing Management",                  "Reference", 7, 36, 6, "排班优化→运筹求解 / 质量指标→控制图"],
+        ["14-huli-lunli-fagui",         "护理伦理与法规",     "Nursing Ethics & Law",                "Reference", 7, 36, 6, "伦理困境→多准则决策 / 知情同意→合规校验"],
+        ["15-huli-yanjiu-zhengxun",     "护理研究与循证护理", "Nursing Research & EBP",              "Build", 8, 54, 8, "证据分级→GRADE 算法 / 文献筛选→PRISMA 流程自动化"]
+      ]
+    },
+    {
+      "n": 6,
+      "slug": "06-guanli",
+      "title": "管理系",
+      "en": "Management",
+      "icon": "📊",
+      "focus": "中医药治理、政策、教育与卫生经济、卫生信息化",
+      "subjects": [
+        ["01-yixue-tongjixue",          "医学统计学",         "Medical Statistics",                  "Core", 4, 72, 10, "假设检验→从零实现 / 回归→最小二乘"],
+        ["02-zhongyiyao-zhengce-fagui", "中医药政策与法规",   "TCM Policy & Regulation",             "Core", 4, 54,  8, "法规条文→检索问答 / 合规判断→规则树"],
+        ["03-zhongyi-guanli-xue",       "中医管理学",         "TCM Management",                      "Core", 5, 54,  8, "科室绩效→多指标评价 / 资源配置→线性规划"],
+        ["04-weisheng-shiye-guanli",    "卫生事业管理",       "Health Service Management",           "Core", 5, 54,  8, "卫生指标体系→看板建模 / 区域配置→供需模型"],
+        ["05-zhongyi-wenhua-chuanbo",   "中医文化传播学",     "TCM Cultural Communication",          "Reference", 5, 36, 6, "传播内容→主题建模 / 受众画像→用户分群"],
+        ["06-yiyuan-guanli-xue",        "医院管理学",         "Hospital Management",                 "Clinic", 6, 72, 10, "门诊流程→排队论仿真 / 床位调度→离散事件仿真"],
+        ["07-zhongyi-jiaoyu-xue",       "中医教育学",         "TCM Education",                       "Build", 6, 54,  8, "教学评价→学习分析 / 课程图谱→先修关系图"],
+        ["08-jiankang-fuwu-guanli",     "健康服务与管理",     "Health Services & Management",        "Build", 6, 54,  8, "健康档案→数据治理 / 干预方案→推荐系统"],
+        ["09-yiliao-baoxian-jingji",    "医疗保险与卫生经济", "Health Insurance & Economics",        "Reference", 6, 54, 8, "医保支付→成本效果分析 / 费用预测→时间序列"],
+        ["10-yixue-xinxi-guanli",       "医学信息管理",       "Health Information Management",       "Build", 7, 54,  8, "电子病历→HL7/FHIR 建模 / 数据质量→校验规则"],
+        ["11-yiyuan-xinxihua-bingan",   "医院信息化与病案管理", "Hospital IT & Medical Records",      "Build", 7, 54,  8, "病案首页→编码 NLP / HIS 集成→接口编排"],
+        ["12-zhongyiyao-biaozhunhua",   "中医药标准化",       "TCM Standardization",                 "Build", 7, 54,  8, "证候术语→本体与编码 / 标准符合性→自动核查"],
+        ["13-linchuang-keyan-fangfa",   "临床科研方法学",     "Clinical Research Methodology",       "Build", 7, 54,  8, "试验设计→随机化算法 / 真实世界研究→因果推断"],
+        ["14-zhishichanquan-zhuanhua",  "中医药知识产权与成果转化", "TCM IP & Commercialization",     "Reference", 8, 36, 6, "专利检索→文本相似 / 转化路径→决策支持"],
+        ["15-zhongyi-guojijiaoyu",      "中医国际教育与传播", "International TCM Education",         "Reference", 8, 36, 6, "多语种教材→i18n 流水线 / 术语对齐→跨语言嵌入"]
+      ]
+    },
+    {
+      "n": 7,
+      "slug": "07-zhineng",
+      "title": "智能系",
+      "en": "Intelligent TCM",
+      "icon": "🤖",
+      "focus": "中医 x 人工智能：架构、数据、模型、设备与治理（本项目的工程引擎）",
+      "subjects": [
+        ["01-yixue-rengong-zhineng-daolun", "医学人工智能导论",   "Introduction to Medical AI",          "Core", 3, 54,  8, "感知机→从零实现 / 梯度下降→手写训练循环 / 交叉验证→泛化评估"],
+        ["02-zhongyi-ruanjian-jiagou-xue",  "中医软件架构学",     "TCM Software Architecture",           "Build", 4, 72, 10, "分层架构→领域驱动设计 / API→契约优先"],
+        ["03-zhongyi-zhineng-shebei",       "中医智能设备与可穿戴设备", "TCM Smart Devices & Wearables", "Build", 4, 72, 10, "脉象/舌象采集→传感器融合 / 边缘推理→模型量化"],
+        ["04-zhongyi-ziran-yuyan-chuli",    "中医自然语言处理",   "TCM Natural Language Processing",     "Build", 5, 72, 10, "医案分词→BPE 从零 / 实体识别→序列标注"],
+        ["05-zhongyi-zhishi-tupu",          "中医知识图谱",       "TCM Knowledge Graph",                 "Build", 5, 72, 10, "实体关系→三元组抽取 / 推理→图神经网络"],
+        ["06-zhongyi-zhineng-bianzheng",    "中医智能辨证系统",   "Intelligent TCM Syndrome Differentiation", "Build", 6, 72, 10, "四诊合参→多模态融合 / 证型输出→可解释性"],
+        ["07-yixue-tuxiang-shezhen",        "医学图像处理与舌诊客观化", "Medical Imaging & Tongue Diagnosis", "Build", 6, 72, 10, "舌象分割→CNN / 颜色校正→色彩空间变换"],
+        ["08-maizhen-keguanhua",            "脉诊客观化与信号处理", "Pulse Diagnosis Signal Processing",  "Build", 6, 72, 10, "脉搏波→小波变换 / 特征提取→时频分析"],
+        ["09-zhongyi-dashuju-fenxi",        "中医大数据分析",     "TCM Big Data Analytics",              "Build", 6, 54,  8, "医案仓库→ETL / 证型聚类→无监督学习"],
+        ["10-llm-yu-zhongyi-zhinengti",     "大语言模型与中医智能体", "LLMs & TCM Agents",               "Build", 7, 90, 12, "君臣佐使→注意力从零实现 / 方证对应→RAG / 辨证论治→ReAct 智能体 / 经典检索→MCP 服务"],
+        ["11-zhongyi-jiqiren-xue",          "中医机器人学",       "TCM Robotics",                        "Build", 7, 54,  8, "机械臂推拿→运动学正逆解 / 力控→阻抗控制"],
+        ["12-shuzi-renti-xuni-fangzhen",    "数字人体与虚拟仿真", "Digital Human & Simulation",          "Build", 7, 54,  8, "经络三维建模→网格几何 / 虚拟针刺→碰撞检测"],
+        ["13-zhongyi-duomotai-ronghe",      "中医多模态数据融合", "TCM Multimodal Fusion",               "Build", 7, 72, 10, "望闻问切→跨模态对齐 / 融合层→注意力机制"],
+        ["14-yixue-shuju-anquan-yinsi",     "医学数据安全与隐私保护", "Medical Data Security & Privacy", "Build", 8, 54,  8, "脱敏→k-匿名 / 联邦学习→差分隐私"],
+        ["15-zhongyi-ai-lunli-zhili",       "中医AI伦理与治理",   "TCM AI Ethics & Governance",          "Build", 8, 54,  8, "可解释性→SHAP 从零 / 模型卡→治理文档"]
+      ]
+    },
+    {
+      "n": 8,
+      "slug": "08-wuguan",
+      "title": "五官口腔系",
+      "en": "Otorhinolaryngology & Stomatology",
+      "icon": "👁️",
+      "focus": "眼、耳鼻喉、口腔三科的经典辨证与现代诊疗技术",
+      "subjects": [
+        ["01-erbihou-jiepou-shengli",   "耳鼻喉解剖生理学",   "ENT Anatomy & Physiology",            "Core", 4, 54,  8, "腔道结构→三维建模 / 生理信号→声学分析"],
+        ["02-kouqiang-jiepou-shengli",  "口腔解剖生理学",     "Oral Anatomy & Physiology",           "Core", 4, 54,  8, "牙列形态→几何建模 / 咬合→力学仿真"],
+        ["03-zhongyi-mianbu-wangzhen",  "中医面部望诊学",     "TCM Facial Inspection",               "Build", 5, 54,  8, "面色分区→图像配准 / 面色分类→色彩直方图"],
+        ["04-yanke-guangxue-yanguang",  "眼科光学与验光",     "Ophthalmic Optics & Refraction",      "Build", 5, 54,  8, "屈光计算→光学公式 / 验光数据→球柱换算"],
+        ["05-zhongyi-wuguan-jingdian",  "中医五官科经典选读", "Selected ENT/Stomato Classics",       "Reference", 5, 36, 6, "原文检索→向量库 / 方证归纳→规则抽取"],
+        ["06-zhongyi-yanke-xue",        "中医眼科学",         "TCM Ophthalmology",                   "Clinic", 6, 72, 10, "五轮八廓→分层模型 / 眼底图像→病灶检测"],
+        ["07-zhongyi-erbihou-xue",      "中医耳鼻喉科学",     "TCM Otorhinolaryngology",             "Clinic", 6, 72, 10, "耳鼻喉辨证→多标签分类 / 嗓音数据→声学特征"],
+        ["08-zhongyi-kouqiang-kexue",   "中医口腔科学",       "TCM Stomatology",                     "Clinic", 6, 72, 10, "口腔辨证→黏膜图像分类 / 治疗计划→决策支持"],
+        ["09-kouqiang-neike-xue",       "口腔内科学",         "Oral Medicine",                       "Clinic", 6, 72, 10, "龋病分级→有序分类 / X 线影像→语义分割"],
+        ["10-yanke-yingxiang-jiancha",  "眼科影像与检查技术", "Ophthalmic Imaging & Examination",    "Build", 6, 54,  8, "OCT/眼底→CNN / 视野检查→缺损图谱分析"],
+        ["11-kouqiang-hemian-waike",    "口腔颌面外科学",     "Oral & Maxillofacial Surgery",        "Clinic", 7, 72, 10, "颌面重建→三维规划 / 手术导航→配准算法"],
+        ["12-kouqiang-xiufu-xue",       "口腔修复学",         "Prosthodontics",                      "Clinic", 7, 72, 10, "义齿设计→参数化 CAD / 咬合重建→力学优化"],
+        ["13-kouqiang-zhengji-xue",     "口腔正畸学",         "Orthodontics",                        "Clinic", 7, 72, 10, "头影测量→关键点检测 / 拔牙决策→分类模型"],
+        ["14-zhongyi-sangyin-yixue",    "中医嗓音医学",       "TCM Voice Medicine",                  "Build", 7, 54,  8, "嗓音信号→谱图分类 / 发声训练→生物反馈"],
+        ["15-zhongyi-meirong-pifu",     "中医美容与皮肤治疗学", "TCM Cosmetology & Dermatology",     "Build", 8, 54,  8, "皮肤图像→病变分割 / 面部年轻化→图像评价"]
+      ]
+    }
+  ]
+}

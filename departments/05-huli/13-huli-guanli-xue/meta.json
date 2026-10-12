@@ -1,0 +1,29 @@
+{
+  "slug": "13-huli-guanli-xue",
+  "title": "护理管理学",
+  "en": "Nursing Management",
+  "deptSlug": "05-huli",
+  "deptTitle": "护理系",
+  "globalN": 73,
+  "type": "Reference",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 36,
+  "bridge": "排班优化→运筹求解 / 质量指标→控制图",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/05-huli/13-huli-guanli-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/05-huli/13-huli-guanli-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

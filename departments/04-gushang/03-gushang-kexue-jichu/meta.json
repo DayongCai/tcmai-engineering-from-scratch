@@ -1,0 +1,29 @@
+{
+  "slug": "03-gushang-kexue-jichu",
+  "title": "中医骨伤科学基础",
+  "en": "Foundations of TCM Orthopedics",
+  "deptSlug": "04-gushang",
+  "deptTitle": "骨伤系",
+  "globalN": 48,
+  "type": "Core",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "筋骨辨证→分层规则 / 损伤分类→多标签分类",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/04-gushang/03-gushang-kexue-jichu",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/04-gushang/03-gushang-kexue-jichu",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

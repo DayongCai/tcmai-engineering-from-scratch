@@ -1,0 +1,29 @@
+{
+  "slug": "03-zhenjiu-yiji-xuan",
+  "title": "针灸医籍选",
+  "en": "Selected Acupuncture Classics",
+  "deptSlug": "03-zhenjiu",
+  "deptTitle": "针灸系",
+  "globalN": 33,
+  "type": "Reference",
+  "semester": 3,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "古籍条文→语料检索 / 治法归纳→规则抽取",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/03-zhenjiu/03-zhenjiu-yiji-xuan",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/03-zhenjiu/03-zhenjiu-yiji-xuan",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

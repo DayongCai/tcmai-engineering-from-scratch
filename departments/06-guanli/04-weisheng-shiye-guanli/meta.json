@@ -1,0 +1,29 @@
+{
+  "slug": "04-weisheng-shiye-guanli",
+  "title": "卫生事业管理",
+  "en": "Health Service Management",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 79,
+  "type": "Core",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "卫生指标体系→看板建模 / 区域配置→供需模型",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/04-weisheng-shiye-guanli",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/04-weisheng-shiye-guanli",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

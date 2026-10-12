@@ -1,0 +1,29 @@
+{
+  "slug": "09-zhongyi-dashuju-fenxi",
+  "title": "中医大数据分析",
+  "en": "TCM Big Data Analytics",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 99,
+  "type": "Build",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "医案仓库→ETL / 证型聚类→无监督学习",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/09-zhongyi-dashuju-fenxi",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/09-zhongyi-dashuju-fenxi",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

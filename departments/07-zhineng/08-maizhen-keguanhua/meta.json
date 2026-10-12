@@ -1,0 +1,29 @@
+{
+  "slug": "08-maizhen-keguanhua",
+  "title": "脉诊客观化与信号处理",
+  "en": "Pulse Diagnosis Signal Processing",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 98,
+  "type": "Build",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "脉搏波→小波变换 / 特征提取→时频分析",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/08-maizhen-keguanhua",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/08-maizhen-keguanhua",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

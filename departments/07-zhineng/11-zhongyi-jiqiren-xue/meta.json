@@ -1,0 +1,29 @@
+{
+  "slug": "11-zhongyi-jiqiren-xue",
+  "title": "中医机器人学",
+  "en": "TCM Robotics",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 101,
+  "type": "Build",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 54,
+  "bridge": "机械臂推拿→运动学正逆解 / 力控→阻抗控制",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/11-zhongyi-jiqiren-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/11-zhongyi-jiqiren-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

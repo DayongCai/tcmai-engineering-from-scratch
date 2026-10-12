@@ -1,0 +1,29 @@
+{
+  "slug": "02-yao-shang-jiepou",
+  "title": "骨伤解剖学",
+  "en": "Musculoskeletal Anatomy",
+  "deptSlug": "04-gushang",
+  "deptTitle": "骨伤系",
+  "globalN": 47,
+  "type": "Core",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 72,
+  "bridge": "断层解剖→三维重建 / 定位→坐标系变换",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/04-gushang/02-yao-shang-jiepou",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/04-gushang/02-yao-shang-jiepou",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

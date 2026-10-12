@@ -1,0 +1,29 @@
+{
+  "slug": "11-yiyuan-xinxihua-bingan",
+  "title": "医院信息化与病案管理",
+  "en": "Hospital IT & Medical Records",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 86,
+  "type": "Build",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 54,
+  "bridge": "病案首页→编码 NLP / HIS 集成→接口编排",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/11-yiyuan-xinxihua-bingan",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/11-yiyuan-xinxihua-bingan",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

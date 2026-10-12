@@ -1,0 +1,48 @@
+{
+  "slug": "01-zhongyi-jichu-lilun",
+  "title": "中医基础理论",
+  "en": "Fundamentals of TCM Theory",
+  "deptSlug": "01-zhongyi",
+  "deptTitle": "中医系",
+  "globalN": 1,
+  "type": "Core",
+  "semester": 1,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 72,
+  "bridge": "阴阳→二分类 / 五行→多分类 / 藏象→知识图谱",
+  "chaptersTarget": 10,
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-yin-yang-er-fenlei",
+      "title": "阴阳学说 → 二分类：从零实现逻辑回归",
+      "status": "🚧"
+    },
+    {
+      "n": 2,
+      "slug": "02-wu-xing-duo-fenlei",
+      "title": "五行学说 → 多分类：从零实现 Softmax",
+      "status": "🚧"
+    },
+    {
+      "n": 3,
+      "slug": "03-zang-xiang-tupu",
+      "title": "藏象学说 → 知识图谱：脏腑关系的图表示",
+      "status": "🚧"
+    }
+  ],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/01-zhongyi/01-zhongyi-jichu-lilun",
+    "videosPublished": 0,
+    "status": "slides-ready"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun",
+    "chaptersWritten": 1,
+    "words": 5665,
+    "status": "wip"
+  }
+}

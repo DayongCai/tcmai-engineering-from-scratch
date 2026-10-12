@@ -1,0 +1,29 @@
+{
+  "slug": "12-shuzi-renti-xuni-fangzhen",
+  "title": "数字人体与虚拟仿真",
+  "en": "Digital Human & Simulation",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 102,
+  "type": "Build",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 54,
+  "bridge": "经络三维建模→网格几何 / 虚拟针刺→碰撞检测",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/12-shuzi-renti-xuni-fangzhen",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/12-shuzi-renti-xuni-fangzhen",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

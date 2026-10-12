@@ -1,0 +1,29 @@
+{
+  "slug": "10-shiyan-zhenjiu-xue",
+  "title": "实验针灸学",
+  "en": "Experimental Acupuncture",
+  "deptSlug": "03-zhenjiu",
+  "deptTitle": "针灸系",
+  "globalN": 40,
+  "type": "Build",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "动物实验→统计设计 / 电针参数→响应曲面",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/03-zhenjiu/10-shiyan-zhenjiu-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/03-zhenjiu/10-shiyan-zhenjiu-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

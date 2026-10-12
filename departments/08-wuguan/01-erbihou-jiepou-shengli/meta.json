@@ -1,0 +1,29 @@
+{
+  "slug": "01-erbihou-jiepou-shengli",
+  "title": "耳鼻喉解剖生理学",
+  "en": "ENT Anatomy & Physiology",
+  "deptSlug": "08-wuguan",
+  "deptTitle": "五官口腔系",
+  "globalN": 106,
+  "type": "Core",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "腔道结构→三维建模 / 生理信号→声学分析",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/08-wuguan/01-erbihou-jiepou-shengli",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/08-wuguan/01-erbihou-jiepou-shengli",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

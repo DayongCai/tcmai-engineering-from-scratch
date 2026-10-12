@@ -1,0 +1,29 @@
+{
+  "slug": "05-zhongyi-zhen-duan-xue",
+  "title": "中医诊断学",
+  "en": "TCM Diagnostics",
+  "deptSlug": "01-zhongyi",
+  "deptTitle": "中医系",
+  "globalN": 5,
+  "type": "Core",
+  "semester": 3,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 90,
+  "bridge": "四诊→多模态特征 / 八纲→多维分类",
+  "chaptersTarget": 12,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/01-zhongyi/05-zhongyi-zhen-duan-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/01-zhongyi/05-zhongyi-zhen-duan-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

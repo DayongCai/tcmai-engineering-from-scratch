@@ -1,0 +1,31 @@
+{
+  "slug": "MM-subject-slug",
+  "title": "学科中文名",
+  "en": "Subject English Name",
+  "deptSlug": "NN-dept-slug",
+  "deptTitle": "院系名",
+  "globalN": 1,
+  "type": "Core",
+  "semester": 1,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 72,
+  "bridge": "中医概念→方法 / 中医概念→方法",
+  "chaptersTarget": 10,
+  "chapters": [
+    { "n": 1, "slug": "01-chapter-slug", "title": "第一章标题", "status": "🚧" }
+  ],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/NN-dept-slug/MM-subject-slug",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/NN-dept-slug/MM-subject-slug",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

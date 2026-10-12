@@ -1,0 +1,29 @@
+{
+  "slug": "04-zhongyi-tizhi-xue",
+  "title": "中医体质学",
+  "en": "TCM Constitution Theory",
+  "deptSlug": "01-zhongyi",
+  "deptTitle": "中医系",
+  "globalN": 4,
+  "type": "Core",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "九种体质→多分类 / 体质问卷→特征工程",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/01-zhongyi/04-zhongyi-tizhi-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/01-zhongyi/04-zhongyi-tizhi-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "13-zhendao-yixue",
+  "title": "针刀医学",
+  "en": "Acupotomy Medicine",
+  "deptSlug": "03-zhenjiu",
+  "deptTitle": "针灸系",
+  "globalN": 43,
+  "type": "Clinic",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 54,
+  "bridge": "松解层次→解剖分层模型 / 操作规划→路径规划",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/03-zhenjiu/13-zhendao-yixue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/03-zhenjiu/13-zhendao-yixue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

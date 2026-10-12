@@ -1,0 +1,29 @@
+{
+  "slug": "08-zhongyao-paozhi-xue",
+  "title": "中药炮制学",
+  "en": "TCM Processing",
+  "deptSlug": "02-zhongyao",
+  "deptTitle": "中药系",
+  "globalN": 23,
+  "type": "Build",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "炮制火候→过程曲线 / 工艺参数→回归优化",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/02-zhongyao/08-zhongyao-paozhi-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/02-zhongyao/08-zhongyao-paozhi-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

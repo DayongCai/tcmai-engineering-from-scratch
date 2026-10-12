@@ -1,0 +1,29 @@
+{
+  "slug": "11-zhongyi-waike-xue",
+  "title": "中医外科学",
+  "en": "TCM External Medicine",
+  "deptSlug": "01-zhongyi",
+  "deptTitle": "中医系",
+  "globalN": 11,
+  "type": "Clinic",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "外科辨证→图像特征 / 疮疡分期→序列标注",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/01-zhongyi/11-zhongyi-waike-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/01-zhongyi/11-zhongyi-waike-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

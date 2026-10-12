@@ -1,0 +1,29 @@
+{
+  "slug": "03-zhongyi-zhineng-shebei",
+  "title": "中医智能设备与可穿戴设备",
+  "en": "TCM Smart Devices & Wearables",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 93,
+  "type": "Build",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 72,
+  "bridge": "脉象/舌象采集→传感器融合 / 边缘推理→模型量化",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/03-zhongyi-zhineng-shebei",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/03-zhongyi-zhineng-shebei",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

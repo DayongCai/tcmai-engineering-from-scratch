@@ -1,0 +1,29 @@
+{
+  "slug": "04-zhongyao-ziyuan-xue",
+  "title": "中药资源学",
+  "en": "TCM Resource Science",
+  "deptSlug": "02-zhongyao",
+  "deptTitle": "中药系",
+  "globalN": 19,
+  "type": "Reference",
+  "semester": 3,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "产区分布→空间聚类 / 资源评价→多指标模型",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/02-zhongyao/04-zhongyao-ziyuan-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/02-zhongyao/04-zhongyao-ziyuan-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

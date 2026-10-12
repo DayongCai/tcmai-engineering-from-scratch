@@ -1,0 +1,29 @@
+{
+  "slug": "01-zhongyaoxue",
+  "title": "中药学",
+  "en": "Chinese Materia Medica",
+  "deptSlug": "02-zhongyao",
+  "deptTitle": "中药系",
+  "globalN": 16,
+  "type": "Core",
+  "semester": 2,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 90,
+  "bridge": "四气五味归经→词嵌入 / 功效相似度→余弦距离",
+  "chaptersTarget": 12,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/02-zhongyao/01-zhongyaoxue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/02-zhongyao/01-zhongyaoxue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

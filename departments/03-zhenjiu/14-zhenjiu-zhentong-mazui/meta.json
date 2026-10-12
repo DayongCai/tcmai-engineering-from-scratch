@@ -1,0 +1,29 @@
+{
+  "slug": "14-zhenjiu-zhentong-mazui",
+  "title": "针灸镇痛与麻醉",
+  "en": "Acupuncture Analgesia & Anesthesia",
+  "deptSlug": "03-zhenjiu",
+  "deptTitle": "针灸系",
+  "globalN": 44,
+  "type": "Build",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 54,
+  "bridge": "镇痛机制→神经环路建模 / 疼痛评分→回归",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/03-zhenjiu/14-zhenjiu-zhentong-mazui",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/03-zhenjiu/14-zhenjiu-zhentong-mazui",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "14-kangfu-gongcheng-zhiju",
+  "title": "康复工程与支具学",
+  "en": "Rehab Engineering & Orthotics",
+  "deptSlug": "04-gushang",
+  "deptTitle": "骨伤系",
+  "globalN": 59,
+  "type": "Build",
+  "semester": 8,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 54,
+  "bridge": "支具设计→参数化建模 / 3D 打印→增材制造流程",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/04-gushang/14-kangfu-gongcheng-zhiju",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/04-gushang/14-kangfu-gongcheng-zhiju",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

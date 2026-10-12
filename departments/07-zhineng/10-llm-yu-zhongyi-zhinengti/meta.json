@@ -1,0 +1,29 @@
+{
+  "slug": "10-llm-yu-zhongyi-zhinengti",
+  "title": "大语言模型与中医智能体",
+  "en": "LLMs & TCM Agents",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 100,
+  "type": "Build",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 90,
+  "bridge": "注意力从零实现 / RAG / ReAct 智能体 / MCP",
+  "chaptersTarget": 12,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/10-llm-yu-zhongyi-zhinengti",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/10-llm-yu-zhongyi-zhinengti",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

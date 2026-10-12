@@ -1,0 +1,36 @@
+MIT License
+
+Copyright (c) 2026 tcmai-engineering-from-scratch contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## 医学免责声明 / Medical Disclaimer
+
+本项目的全部文档、代码、视频与教材，仅用于**教育与科研**目的。
+
+- 本项目**不构成**任何形式的临床诊疗建议、处方建议或用药指导。
+- 本项目中的任何模型、算法、软件或智能体，**均未**取得医疗器械注册或临床验证。
+- 任何基于本项目的临床决策，**必须**由具备合法执业资格的医师在其专业判断下作出，
+  并遵循所在国家/地区的法律法规与伦理审查要求。
+- 本项目为独立社区教育项目，不代表任何院校、学会、监管机构的立场，也未获其背书。
+
+中医药相关内容中引用的经典条文与术语，以国家现行标准及权威教材为准；
+若本仓库内容与之冲突，以标准与教材为准。

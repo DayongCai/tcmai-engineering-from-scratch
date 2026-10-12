@@ -1,0 +1,29 @@
+{
+  "slug": "13-kouqiang-zhengji-xue",
+  "title": "口腔正畸学",
+  "en": "Orthodontics",
+  "deptSlug": "08-wuguan",
+  "deptTitle": "五官口腔系",
+  "globalN": 118,
+  "type": "Clinic",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 72,
+  "bridge": "头影测量→关键点检测 / 拔牙决策→分类模型",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/08-wuguan/13-kouqiang-zhengji-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/08-wuguan/13-kouqiang-zhengji-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

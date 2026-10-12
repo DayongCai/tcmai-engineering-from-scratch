@@ -1,0 +1,29 @@
+{
+  "slug": "09-fuchanke-huli-xue",
+  "title": "妇产科护理学",
+  "en": "OB/GYN Nursing",
+  "deptSlug": "05-huli",
+  "deptTitle": "护理系",
+  "globalN": 69,
+  "type": "Clinic",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "产程→阶段状态机 / 母婴数据→联合建模",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/05-huli/09-fuchanke-huli-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/05-huli/09-fuchanke-huli-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "07-zhongyi-jiaoyu-xue",
+  "title": "中医教育学",
+  "en": "TCM Education",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 82,
+  "type": "Build",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "教学评价→学习分析 / 课程图谱→先修关系图",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/07-zhongyi-jiaoyu-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/07-zhongyi-jiaoyu-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

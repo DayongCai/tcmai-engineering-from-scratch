@@ -1,0 +1,29 @@
+{
+  "slug": "11-zhongyao-yaodai-donglixue",
+  "title": "中药药代动力学",
+  "en": "TCM Pharmacokinetics",
+  "deptSlug": "02-zhongyao",
+  "deptTitle": "中药系",
+  "globalN": 26,
+  "type": "Build",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "血药浓度→房室模型 / 参数估计→非线性拟合",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/02-zhongyao/11-zhongyao-yaodai-donglixue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/02-zhongyao/11-zhongyao-yaodai-donglixue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "02-kouqiang-jiepou-shengli",
+  "title": "口腔解剖生理学",
+  "en": "Oral Anatomy & Physiology",
+  "deptSlug": "08-wuguan",
+  "deptTitle": "五官口腔系",
+  "globalN": 107,
+  "type": "Core",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "牙列形态→几何建模 / 咬合→力学仿真",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/08-wuguan/02-kouqiang-jiepou-shengli",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/08-wuguan/02-kouqiang-jiepou-shengli",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

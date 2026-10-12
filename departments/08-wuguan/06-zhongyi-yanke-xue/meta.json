@@ -1,0 +1,29 @@
+{
+  "slug": "06-zhongyi-yanke-xue",
+  "title": "中医眼科学",
+  "en": "TCM Ophthalmology",
+  "deptSlug": "08-wuguan",
+  "deptTitle": "五官口腔系",
+  "globalN": 111,
+  "type": "Clinic",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "五轮八廓→分层模型 / 眼底图像→病灶检测",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/08-wuguan/06-zhongyi-yanke-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/08-wuguan/06-zhongyi-yanke-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "13-zhongchengyao-linchuang",
+  "title": "中成药与临床用药",
+  "en": "Patent Medicines in Clinical Use",
+  "deptSlug": "02-zhongyao",
+  "deptTitle": "中药系",
+  "globalN": 28,
+  "type": "Clinic",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 72,
+  "bridge": "联合用药→推荐系统 / 不良反应→异常检测",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/02-zhongyao/13-zhongchengyao-linchuang",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/02-zhongyao/13-zhongchengyao-linchuang",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "08-jingui-yaolue",
+  "title": "金匮要略",
+  "en": "Synopsis of the Golden Chamber",
+  "deptSlug": "01-zhongyi",
+  "deptTitle": "中医系",
+  "globalN": 8,
+  "type": "Core",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "杂病→规则库 / 方证对应→检索增强",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/01-zhongyi/08-jingui-yaolue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/01-zhongyi/08-jingui-yaolue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

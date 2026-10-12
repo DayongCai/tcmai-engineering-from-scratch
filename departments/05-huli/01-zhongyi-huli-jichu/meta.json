@@ -1,0 +1,29 @@
+{
+  "slug": "01-zhongyi-huli-jichu",
+  "title": "中医护理学基础",
+  "en": "Foundations of TCM Nursing",
+  "deptSlug": "05-huli",
+  "deptTitle": "护理系",
+  "globalN": 61,
+  "type": "Core",
+  "semester": 2,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 72,
+  "bridge": "辨证施护→规则库 / 证护对应→映射表",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/05-huli/01-zhongyi-huli-jichu",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/05-huli/01-zhongyi-huli-jichu",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

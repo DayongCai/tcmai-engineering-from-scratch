@@ -1,0 +1,29 @@
+{
+  "slug": "10-erke-huli-xue",
+  "title": "儿科护理学",
+  "en": "Pediatric Nursing",
+  "deptSlug": "05-huli",
+  "deptTitle": "护理系",
+  "globalN": 70,
+  "type": "Clinic",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "儿童生长发育→曲线拟合 / 用药剂量→体重规则",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/05-huli/10-erke-huli-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/05-huli/10-erke-huli-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

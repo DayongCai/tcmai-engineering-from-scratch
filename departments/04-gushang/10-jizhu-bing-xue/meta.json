@@ -1,0 +1,29 @@
+{
+  "slug": "10-jizhu-bing-xue",
+  "title": "脊柱病学",
+  "en": "Spinal Disorders",
+  "deptSlug": "04-gushang",
+  "deptTitle": "骨伤系",
+  "globalN": 55,
+  "type": "Clinic",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 72,
+  "bridge": "脊柱曲度→几何测量 / 退变分级→有序回归",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/04-gushang/10-jizhu-bing-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/04-gushang/10-jizhu-bing-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

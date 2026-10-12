@@ -1,0 +1,29 @@
+{
+  "slug": "14-peiwu-yu-jinji",
+  "title": "中药配伍与禁忌",
+  "en": "TCM Herb Compatibility & Contraindications",
+  "deptSlug": "02-zhongyao",
+  "deptTitle": "中药系",
+  "globalN": 29,
+  "type": "Build",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 54,
+  "bridge": "十八反十九畏→规则图谱 / 配伍风险→图推理",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/02-zhongyao/14-peiwu-yu-jinji",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/02-zhongyao/14-peiwu-yu-jinji",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

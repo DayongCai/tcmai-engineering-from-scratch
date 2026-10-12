@@ -1,0 +1,29 @@
+{
+  "slug": "03-zhongyi-guanli-xue",
+  "title": "中医管理学",
+  "en": "TCM Management",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 78,
+  "type": "Core",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "科室绩效→多指标评价 / 资源配置→线性规划",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/03-zhongyi-guanli-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/03-zhongyi-guanli-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

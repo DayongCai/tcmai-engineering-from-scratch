@@ -1,0 +1,29 @@
+{
+  "slug": "15-zhongyi-meirong-pifu",
+  "title": "中医美容与皮肤治疗学",
+  "en": "TCM Cosmetology & Dermatology",
+  "deptSlug": "08-wuguan",
+  "deptTitle": "五官口腔系",
+  "globalN": 120,
+  "type": "Build",
+  "semester": 8,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 54,
+  "bridge": "皮肤图像→病变分割 / 面部年轻化→图像评价",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/08-wuguan/15-zhongyi-meirong-pifu",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/08-wuguan/15-zhongyi-meirong-pifu",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

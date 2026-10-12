@@ -1,0 +1,39 @@
+# 生成物与临时文件
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+
+# 站点构建缓存
+site/.cache/
+site/stats.json
+
+# 视频与音频中间产物（成片走 release，不入库）
+platform/**/narration/*.mp3
+platform/**/narration/*.wav
+platform/**/video/*.mp4
+platform/**/video/*.webm
+platform/**/tmp/
+platform/**/__pycache__/
+
+# 教材排版产物
+textbooks/build/
+textbooks/**/build/*.pdf
+textbooks/**/build/*.epub
+textbooks/**/build/*.tex
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# 编辑器
+.vscode/
+.idea/
+*.code-workspace
+
+# 本地草稿
+*.local.md
+scratch/
+tmp/

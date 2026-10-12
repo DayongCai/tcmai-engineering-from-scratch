@@ -1,0 +1,29 @@
+{
+  "slug": "14-huli-lunli-fagui",
+  "title": "护理伦理与法规",
+  "en": "Nursing Ethics & Law",
+  "deptSlug": "05-huli",
+  "deptTitle": "护理系",
+  "globalN": 74,
+  "type": "Reference",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 36,
+  "bridge": "伦理困境→多准则决策 / 知情同意→合规校验",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/05-huli/14-huli-lunli-fagui",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/05-huli/14-huli-lunli-fagui",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

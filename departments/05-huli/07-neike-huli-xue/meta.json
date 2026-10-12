@@ -1,0 +1,29 @@
+{
+  "slug": "07-neike-huli-xue",
+  "title": "内科护理学",
+  "en": "Medical Nursing",
+  "deptSlug": "05-huli",
+  "deptTitle": "护理系",
+  "globalN": 67,
+  "type": "Clinic",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 90,
+  "bridge": "护理诊断→本体推理 / 病情变化→时序预警",
+  "chaptersTarget": 12,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/05-huli/07-neike-huli-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/05-huli/07-neike-huli-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

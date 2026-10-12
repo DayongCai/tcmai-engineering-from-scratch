@@ -1,0 +1,5126 @@
+/* 生成物: site/build.js — 请勿手工编辑 */
+window.TCMAI_DATA = {
+  "domain": {
+    "slug": "tcm",
+    "title": "中医药领域",
+    "en": "Traditional Chinese Medicine",
+    "motto": "从零起步，生长壮老已，终成医圣。",
+    "scale": {
+      "departments": 8,
+      "subjects": 120,
+      "semesters": 10,
+      "stages": 5
+    }
+  },
+  "stages": [
+    {
+      "id": "sheng",
+      "n": 1,
+      "title": "生",
+      "sub": "启蒙",
+      "glyph": "🌱",
+      "years": "大一–大二",
+      "semesters": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "pressure": 5,
+      "knowledge": 3,
+      "artifact": "📋 概念卡 / 术语表 / Prompt 模板"
+    },
+    {
+      "id": "zhang",
+      "n": 2,
+      "title": "长",
+      "sub": "积累",
+      "glyph": "🌿",
+      "years": "大三",
+      "semesters": [
+        5,
+        6
+      ],
+      "pressure": 3,
+      "knowledge": 5,
+      "artifact": "🛠️ 辨证模板 / 知识库 / Skill"
+    },
+    {
+      "id": "zhuang",
+      "n": 3,
+      "title": "壮",
+      "sub": "鼎盛",
+      "glyph": "🌳",
+      "years": "大四",
+      "semesters": [
+        7,
+        8
+      ],
+      "pressure": 2,
+      "knowledge": 4,
+      "artifact": "🤖 智能体 / 🔌 MCP 服务"
+    },
+    {
+      "id": "lao",
+      "n": 4,
+      "title": "老",
+      "sub": "固化",
+      "glyph": "🍂",
+      "years": "大五上",
+      "semesters": [
+        9
+      ],
+      "pressure": 3,
+      "knowledge": 1,
+      "artifact": "⚙️ 临床轮转手册 / 系统"
+    },
+    {
+      "id": "yi",
+      "n": 5,
+      "title": "已",
+      "sub": "转型",
+      "glyph": "🔄",
+      "years": "大五下",
+      "semesters": [
+        10
+      ],
+      "pressure": 4,
+      "knowledge": 0,
+      "artifact": "🧰 毕业设计 / 工具箱"
+    }
+  ],
+  "tracks": {
+    "platform": {
+      "id": "tcmP",
+      "title": "网络视频教育平台",
+      "dir": "platform",
+      "en": "Online Video Education Platform"
+    },
+    "textbooks": {
+      "id": "textbooks",
+      "title": "学科编写教材",
+      "dir": "textbooks",
+      "en": "Subject Textbooks"
+    }
+  },
+  "counts": {
+    "departments": 8,
+    "subjects": 120,
+    "chapters": 1086,
+    "hours": 7596,
+    "semesters": 10,
+    "stages": 5,
+    "chaptersBuilt": 3,
+    "subjectsDone": 0,
+    "subjectsWip": 1,
+    "subjectsPlanned": 119,
+    "videos": 0,
+    "textbookChapters": 1
+  },
+  "semesterPlan": [
+    {
+      "semester": 1,
+      "stage": "sheng",
+      "stageTitle": "生",
+      "years": "大一–大二",
+      "hours": 162,
+      "chapters": 26,
+      "subjects": [
+        {
+          "slug": "01-zhongyi-jichu-lilun",
+          "title": "中医基础理论",
+          "dept": "01-zhongyi",
+          "deptTitle": "中医系",
+          "type": "Core",
+          "hours": 72,
+          "path": "departments/01-zhongyi/01-zhongyi-jichu-lilun"
+        },
+        {
+          "slug": "02-yi-gu-wen",
+          "title": "医古文",
+          "dept": "01-zhongyi",
+          "deptTitle": "中医系",
+          "type": "Core",
+          "hours": 54,
+          "path": "departments/01-zhongyi/02-yi-gu-wen"
+        },
+        {
+          "slug": "03-zhongguo-yixue-shi",
+          "title": "中国医学史",
+          "dept": "01-zhongyi",
+          "deptTitle": "中医系",
+          "type": "Reference",
+          "hours": 36,
+          "path": "departments/01-zhongyi/03-zhongguo-yixue-shi"
+        }
+      ]
+    },
+    {
+      "semester": 2,
+      "stage": "sheng",
+      "stageTitle": "生",
+      "years": "大一–大二",
+      "hours": 360,
+      "chapters": 50,
+      "subjects": [
+        {
+          "slug": "01-zhongyaoxue",
+          "title": "中药学",
+          "dept": "02-zhongyao",
+          "deptTitle": "中药系",
+          "type": "Core",
+          "hours": 90,
+          "path": "departments/02-zhongyao/01-zhongyaoxue"
+        },
+        {
+          "slug": "02-yaoyong-zhiwu-xue",
+          "title": "药用植物学",
+          "dept": "02-zhongyao",
+          "deptTitle": "中药系",
+          "type": "Core",
+          "hours": 54,
+          "path": "departments/02-zhongyao/02-yaoyong-zhiwu-xue"
+        },
+        {
+          "slug": "01-jingluo-xue",
+          "title": "经络学",
+          "dept": "03-zhenjiu",
+          "deptTitle": "针灸系",
+          "type": "Core",
+          "hours": 72,
+          "path": "departments/03-zhenjiu/01-jingluo-xue"
+        },
+        {
+          "slug": "01-zhongyi-huli-jichu",
+          "title": "中医护理学基础",
+          "dept": "05-huli",
+          "deptTitle": "护理系",
+          "type": "Core",
+          "hours": 72,
+          "path": "departments/05-huli/01-zhongyi-huli-jichu"
+        },
+        {
+          "slug": "02-jichu-huli-xue",
+          "title": "基础护理学",
+          "dept": "05-huli",
+          "deptTitle": "护理系",
+          "type": "Core",
+          "hours": 72,
+          "path": "departments/05-huli/02-jichu-huli-xue"
+        }
+      ]
+    },
+    {
+      "semester": 3,
+      "stage": "sheng",
+      "stageTitle": "生",
+      "years": "大一–大二",
+      "hours": 702,
+      "chapters": 100,
+      "subjects": [
+        {
+          "slug": "05-zhongyi-zhen-duan-xue",
+          "title": "中医诊断学",
+          "dept": "01-zhongyi",
+          "deptTitle": "中医系",
+          "type": "Core",
+          "hours": 90,
+          "path": "departments/01-zhongyi/05-zhongyi-zhen-duan-xue"
+        },
+        {
+          "slug": "06-neijing-xuandu",
+          "title": "内经选读",
+          "dept": "01-zhongyi",
+          "deptTitle": "中医系",
+          "type": "Core",
+          "hours": 72,
+          "path": "departments/01-zhongyi/06-neijing-xuandu"
+        },
+        {
+          "slug": "03-fangjixue",
+          "title": "方剂学",
+          "dept": "02-zhongyao",
+          "deptTitle": "中药系",
+          "type": "Core",
+          "hours": 90,
+          "path": "departments/02-zhongyao/03-fangjixue"
+        },
+        {
+          "slug": "04-zhongyao-ziyuan-xue",
+          "title": "中药资源学",
+          "dept": "02-zhongyao",
+          "deptTitle": "中药系",
+          "type": "Reference",
+          "hours": 54,
+          "path": "departments/02-zhongyao/04-zhongyao-ziyuan-xue"
+        },
+        {
+          "slug": "02-shuxue-xue",
+          "title": "腧穴学",
+          "dept": "03-zhenjiu",
+          "deptTitle": "针灸系",
+          "type": "Core",
+          "hours": 90,
+          "path": "departments/03-zhenjiu/02-shuxue-xue"
+        },
+        {
+          "slug": "03-zhenjiu-yiji-xuan",
+          "title": "针灸医籍选",
+          "dept": "03-zhenjiu",
+          "deptTitle": "针灸系",
+          "type": "Reference",
+          "hours": 54,
+          "path": "departments/03-zhenjiu/03-zhenjiu-yiji-xuan"
+        },
+        {
+          "slug": "04-qigong-xue",
+          "title": "中医气功学",
+          "dept": "03-zhenjiu",
+          "deptTitle": "针灸系",
+          "type": "Reference",
+          "hours": 36,
+          "path": "departments/03-zhenjiu/04-qigong-xue"
+        },
+        {
+          "slug": "03-jiankang-pinggu",
+          "title": "健康评估",
+          "dept": "05-huli",
+          "deptTitle": "护理系",
+          "type": "Core",
+          "hours": 54,
+          "path": "departments/05-huli/03-jiankang-pinggu"
+        },
+        {
+          "slug": "04-zhongyi-huli-jishu",
+          "title": "中医护理技术",
+          "dept": "05-huli",
+          "deptTitle": "护理系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/05-huli/04-zhongyi-huli-jishu"
+        },
+        {
+          "slug": "05-zhongyi-yangsheng-xue",
+          "title": "中医养生学",
+          "dept": "05-huli",
+          "deptTitle": "护理系",
+          "type": "Core",
+          "hours": 54,
+          "path": "departments/05-huli/05-zhongyi-yangsheng-xue"
+        },
+        {
+          "slug": "01-yixue-rengong-zhineng-daolun",
+          "title": "医学人工智能导论",
+          "dept": "07-zhineng",
+          "deptTitle": "智能系",
+          "type": "Core",
+          "hours": 54,
+          "path": "departments/07-zhineng/01-yixue-rengong-zhineng-daolun"
+        }
+      ]
+    },
+    {
+      "semester": 4,
+      "stage": "sheng",
+      "stageTitle": "生",
+      "years": "大一–大二",
+      "hours": 1062,
+      "chapters": 150,
+      "subjects": [
+        {
+          "slug": "04-zhongyi-tizhi-xue",
+          "title": "中医体质学",
+          "dept": "01-zhongyi",
+          "deptTitle": "中医系",
+          "type": "Core",
+          "hours": 54,
+          "path": "departments/01-zhongyi/04-zhongyi-tizhi-xue"
+        },
+        {
+          "slug": "07-shanghanlun",
+          "title": "伤寒论",
+          "dept": "01-zhongyi",
+          "deptTitle": "中医系",
+          "type": "Core",
+          "hours": 90,
+          "path": "departments/01-zhongyi/07-shanghanlun"
+        },
+        {
+          "slug": "05-zhongyao-jianding-xue",
+          "title": "中药鉴定学",
+          "dept": "02-zhongyao",
+          "deptTitle": "中药系",
+          "type": "Build",
+          "hours": 72,
+          "path": "departments/02-zhongyao/05-zhongyao-jianding-xue"
+        },
+        {
+          "slug": "06-zhongyao-huaxue",
+          "title": "中药化学",
+          "dept": "02-zhongyao",
+          "deptTitle": "中药系",
+          "type": "Core",
+          "hours": 90,
+          "path": "departments/02-zhongyao/06-zhongyao-huaxue"
+        },
+        {
+          "slug": "05-tuina-xue",
+          "title": "推拿学",
+          "dept": "03-zhenjiu",
+          "deptTitle": "针灸系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/03-zhenjiu/05-tuina-xue"
+        },
+        {
+          "slug": "06-tuina-shoufa-xue",
+          "title": "推拿手法学",
+          "dept": "03-zhenjiu",
+          "deptTitle": "针灸系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/03-zhenjiu/06-tuina-shoufa-xue"
+        },
+        {
+          "slug": "07-cifa-jiufa-xue",
+          "title": "刺法灸法学",
+          "dept": "03-zhenjiu",
+          "deptTitle": "针灸系",
+          "type": "Core",
+          "hours": 72,
+          "path": "departments/03-zhenjiu/07-cifa-jiufa-xue"
+        },
+        {
+          "slug": "01-zhongyi-yundong-xue",
+          "title": "中医运动学",
+          "dept": "04-gushang",
+          "deptTitle": "骨伤系",
+          "type": "Core",
+          "hours": 54,
+          "path": "departments/04-gushang/01-zhongyi-yundong-xue"
+        },
+        {
+          "slug": "02-yao-shang-jiepou",
+          "title": "骨伤解剖学",
+          "dept": "04-gushang",
+          "deptTitle": "骨伤系",
+          "type": "Core",
+          "hours": 72,
+          "path": "departments/04-gushang/02-yao-shang-jiepou"
+        },
+        {
+          "slug": "06-zhongyi-xinli-xue",
+          "title": "中医心理学",
+          "dept": "05-huli",
+          "deptTitle": "护理系",
+          "type": "Core",
+          "hours": 54,
+          "path": "departments/05-huli/06-zhongyi-xinli-xue"
+        },
+        {
+          "slug": "01-yixue-tongjixue",
+          "title": "医学统计学",
+          "dept": "06-guanli",
+          "deptTitle": "管理系",
+          "type": "Core",
+          "hours": 72,
+          "path": "departments/06-guanli/01-yixue-tongjixue"
+        },
+        {
+          "slug": "02-zhongyiyao-zhengce-fagui",
+          "title": "中医药政策与法规",
+          "dept": "06-guanli",
+          "deptTitle": "管理系",
+          "type": "Core",
+          "hours": 54,
+          "path": "departments/06-guanli/02-zhongyiyao-zhengce-fagui"
+        },
+        {
+          "slug": "02-zhongyi-ruanjian-jiagou-xue",
+          "title": "中医软件架构学",
+          "dept": "07-zhineng",
+          "deptTitle": "智能系",
+          "type": "Build",
+          "hours": 72,
+          "path": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue"
+        },
+        {
+          "slug": "03-zhongyi-zhineng-shebei",
+          "title": "中医智能设备与可穿戴设备",
+          "dept": "07-zhineng",
+          "deptTitle": "智能系",
+          "type": "Build",
+          "hours": 72,
+          "path": "departments/07-zhineng/03-zhongyi-zhineng-shebei"
+        },
+        {
+          "slug": "01-erbihou-jiepou-shengli",
+          "title": "耳鼻喉解剖生理学",
+          "dept": "08-wuguan",
+          "deptTitle": "五官口腔系",
+          "type": "Core",
+          "hours": 54,
+          "path": "departments/08-wuguan/01-erbihou-jiepou-shengli"
+        },
+        {
+          "slug": "02-kouqiang-jiepou-shengli",
+          "title": "口腔解剖生理学",
+          "dept": "08-wuguan",
+          "deptTitle": "五官口腔系",
+          "type": "Core",
+          "hours": 54,
+          "path": "departments/08-wuguan/02-kouqiang-jiepou-shengli"
+        }
+      ]
+    },
+    {
+      "semester": 5,
+      "stage": "zhang",
+      "stageTitle": "长",
+      "years": "大三",
+      "hours": 1368,
+      "chapters": 194,
+      "subjects": [
+        {
+          "slug": "08-jingui-yaolue",
+          "title": "金匮要略",
+          "dept": "01-zhongyi",
+          "deptTitle": "中医系",
+          "type": "Core",
+          "hours": 72,
+          "path": "departments/01-zhongyi/08-jingui-yaolue"
+        },
+        {
+          "slug": "09-wenbing-xue",
+          "title": "温病学",
+          "dept": "01-zhongyi",
+          "deptTitle": "中医系",
+          "type": "Core",
+          "hours": 72,
+          "path": "departments/01-zhongyi/09-wenbing-xue"
+        },
+        {
+          "slug": "10-zhongyi-neike-xue",
+          "title": "中医内科学",
+          "dept": "01-zhongyi",
+          "deptTitle": "中医系",
+          "type": "Clinic",
+          "hours": 108,
+          "path": "departments/01-zhongyi/10-zhongyi-neike-xue"
+        },
+        {
+          "slug": "07-zhongyao-yaoli-xue",
+          "title": "中药药理学",
+          "dept": "02-zhongyao",
+          "deptTitle": "中药系",
+          "type": "Core",
+          "hours": 72,
+          "path": "departments/02-zhongyao/07-zhongyao-yaoli-xue"
+        },
+        {
+          "slug": "08-zhongyao-paozhi-xue",
+          "title": "中药炮制学",
+          "dept": "02-zhongyao",
+          "deptTitle": "中药系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/02-zhongyao/08-zhongyao-paozhi-xue"
+        },
+        {
+          "slug": "09-zhongyao-yaoji-xue",
+          "title": "中药药剂学",
+          "dept": "02-zhongyao",
+          "deptTitle": "中药系",
+          "type": "Core",
+          "hours": 72,
+          "path": "departments/02-zhongyao/09-zhongyao-yaoji-xue"
+        },
+        {
+          "slug": "08-zhenjiu-zhiliao-xue",
+          "title": "针灸治疗学",
+          "dept": "03-zhenjiu",
+          "deptTitle": "针灸系",
+          "type": "Clinic",
+          "hours": 90,
+          "path": "departments/03-zhenjiu/08-zhenjiu-zhiliao-xue"
+        },
+        {
+          "slug": "09-kangfu-yixue-jichu",
+          "title": "康复医学基础",
+          "dept": "03-zhenjiu",
+          "deptTitle": "针灸系",
+          "type": "Core",
+          "hours": 54,
+          "path": "departments/03-zhenjiu/09-kangfu-yixue-jichu"
+        },
+        {
+          "slug": "03-gushang-kexue-jichu",
+          "title": "中医骨伤科学基础",
+          "dept": "04-gushang",
+          "deptTitle": "骨伤系",
+          "type": "Core",
+          "hours": 72,
+          "path": "departments/04-gushang/03-gushang-kexue-jichu"
+        },
+        {
+          "slug": "04-chuangshang-jijiu-xue",
+          "title": "创伤急救学",
+          "dept": "04-gushang",
+          "deptTitle": "骨伤系",
+          "type": "Clinic",
+          "hours": 54,
+          "path": "departments/04-gushang/04-chuangshang-jijiu-xue"
+        },
+        {
+          "slug": "05-yundong-yixue",
+          "title": "运动医学与损伤防护",
+          "dept": "04-gushang",
+          "deptTitle": "骨伤系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/04-gushang/05-yundong-yixue"
+        },
+        {
+          "slug": "07-neike-huli-xue",
+          "title": "内科护理学",
+          "dept": "05-huli",
+          "deptTitle": "护理系",
+          "type": "Clinic",
+          "hours": 90,
+          "path": "departments/05-huli/07-neike-huli-xue"
+        },
+        {
+          "slug": "08-waike-huli-xue",
+          "title": "外科护理学",
+          "dept": "05-huli",
+          "deptTitle": "护理系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/05-huli/08-waike-huli-xue"
+        },
+        {
+          "slug": "03-zhongyi-guanli-xue",
+          "title": "中医管理学",
+          "dept": "06-guanli",
+          "deptTitle": "管理系",
+          "type": "Core",
+          "hours": 54,
+          "path": "departments/06-guanli/03-zhongyi-guanli-xue"
+        },
+        {
+          "slug": "04-weisheng-shiye-guanli",
+          "title": "卫生事业管理",
+          "dept": "06-guanli",
+          "deptTitle": "管理系",
+          "type": "Core",
+          "hours": 54,
+          "path": "departments/06-guanli/04-weisheng-shiye-guanli"
+        },
+        {
+          "slug": "05-zhongyi-wenhua-chuanbo",
+          "title": "中医文化传播学",
+          "dept": "06-guanli",
+          "deptTitle": "管理系",
+          "type": "Reference",
+          "hours": 36,
+          "path": "departments/06-guanli/05-zhongyi-wenhua-chuanbo"
+        },
+        {
+          "slug": "04-zhongyi-ziran-yuyan-chuli",
+          "title": "中医自然语言处理",
+          "dept": "07-zhineng",
+          "deptTitle": "智能系",
+          "type": "Build",
+          "hours": 72,
+          "path": "departments/07-zhineng/04-zhongyi-ziran-yuyan-chuli"
+        },
+        {
+          "slug": "05-zhongyi-zhishi-tupu",
+          "title": "中医知识图谱",
+          "dept": "07-zhineng",
+          "deptTitle": "智能系",
+          "type": "Build",
+          "hours": 72,
+          "path": "departments/07-zhineng/05-zhongyi-zhishi-tupu"
+        },
+        {
+          "slug": "03-zhongyi-mianbu-wangzhen",
+          "title": "中医面部望诊学",
+          "dept": "08-wuguan",
+          "deptTitle": "五官口腔系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/08-wuguan/03-zhongyi-mianbu-wangzhen"
+        },
+        {
+          "slug": "04-yanke-guangxue-yanguang",
+          "title": "眼科光学与验光",
+          "dept": "08-wuguan",
+          "deptTitle": "五官口腔系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/08-wuguan/04-yanke-guangxue-yanguang"
+        },
+        {
+          "slug": "05-zhongyi-wuguan-jingdian",
+          "title": "中医五官科经典选读",
+          "dept": "08-wuguan",
+          "deptTitle": "五官口腔系",
+          "type": "Reference",
+          "hours": 36,
+          "path": "departments/08-wuguan/05-zhongyi-wuguan-jingdian"
+        }
+      ]
+    },
+    {
+      "semester": 6,
+      "stage": "zhang",
+      "stageTitle": "长",
+      "years": "大三",
+      "hours": 1890,
+      "chapters": 268,
+      "subjects": [
+        {
+          "slug": "11-zhongyi-waike-xue",
+          "title": "中医外科学",
+          "dept": "01-zhongyi",
+          "deptTitle": "中医系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/01-zhongyi/11-zhongyi-waike-xue"
+        },
+        {
+          "slug": "12-zhongyi-fuke-xue",
+          "title": "中医妇科学",
+          "dept": "01-zhongyi",
+          "deptTitle": "中医系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/01-zhongyi/12-zhongyi-fuke-xue"
+        },
+        {
+          "slug": "13-zhongyi-erke-xue",
+          "title": "中医儿科学",
+          "dept": "01-zhongyi",
+          "deptTitle": "中医系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/01-zhongyi/13-zhongyi-erke-xue"
+        },
+        {
+          "slug": "10-zhongyao-fenxi-xue",
+          "title": "中药分析学",
+          "dept": "02-zhongyao",
+          "deptTitle": "中药系",
+          "type": "Build",
+          "hours": 72,
+          "path": "departments/02-zhongyao/10-zhongyao-fenxi-xue"
+        },
+        {
+          "slug": "11-zhongyao-yaodai-donglixue",
+          "title": "中药药代动力学",
+          "dept": "02-zhongyao",
+          "deptTitle": "中药系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/02-zhongyao/11-zhongyao-yaodai-donglixue"
+        },
+        {
+          "slug": "12-daodi-yaocai",
+          "title": "道地药材与产地加工",
+          "dept": "02-zhongyao",
+          "deptTitle": "中药系",
+          "type": "Reference",
+          "hours": 54,
+          "path": "departments/02-zhongyao/12-daodi-yaocai"
+        },
+        {
+          "slug": "10-shiyan-zhenjiu-xue",
+          "title": "实验针灸学",
+          "dept": "03-zhenjiu",
+          "deptTitle": "针灸系",
+          "type": "Build",
+          "hours": 72,
+          "path": "departments/03-zhenjiu/10-shiyan-zhenjiu-xue"
+        },
+        {
+          "slug": "11-wuli-zhiliao",
+          "title": "物理治疗与运动康复",
+          "dept": "03-zhenjiu",
+          "deptTitle": "针灸系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/03-zhenjiu/11-wuli-zhiliao"
+        },
+        {
+          "slug": "12-erxue-zhenduan-xue",
+          "title": "耳穴诊治学",
+          "dept": "03-zhenjiu",
+          "deptTitle": "针灸系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/03-zhenjiu/12-erxue-zhenduan-xue"
+        },
+        {
+          "slug": "06-zhongyi-zhenggu-xue",
+          "title": "中医正骨学",
+          "dept": "04-gushang",
+          "deptTitle": "骨伤系",
+          "type": "Clinic",
+          "hours": 90,
+          "path": "departments/04-gushang/06-zhongyi-zhenggu-xue"
+        },
+        {
+          "slug": "07-zhongyi-jinshang-xue",
+          "title": "中医筋伤学",
+          "dept": "04-gushang",
+          "deptTitle": "骨伤系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/04-gushang/07-zhongyi-jinshang-xue"
+        },
+        {
+          "slug": "08-gushang-shoufa-zhiliao",
+          "title": "骨伤科手法治疗学",
+          "dept": "04-gushang",
+          "deptTitle": "骨伤系",
+          "type": "Build",
+          "hours": 72,
+          "path": "departments/04-gushang/08-gushang-shoufa-zhiliao"
+        },
+        {
+          "slug": "09-guke-yingxiang-zhenduan",
+          "title": "骨科影像诊断学",
+          "dept": "04-gushang",
+          "deptTitle": "骨伤系",
+          "type": "Build",
+          "hours": 72,
+          "path": "departments/04-gushang/09-guke-yingxiang-zhenduan"
+        },
+        {
+          "slug": "09-fuchanke-huli-xue",
+          "title": "妇产科护理学",
+          "dept": "05-huli",
+          "deptTitle": "护理系",
+          "type": "Clinic",
+          "hours": 54,
+          "path": "departments/05-huli/09-fuchanke-huli-xue"
+        },
+        {
+          "slug": "10-erke-huli-xue",
+          "title": "儿科护理学",
+          "dept": "05-huli",
+          "deptTitle": "护理系",
+          "type": "Clinic",
+          "hours": 54,
+          "path": "departments/05-huli/10-erke-huli-xue"
+        },
+        {
+          "slug": "11-shequ-huli-xue",
+          "title": "社区护理学",
+          "dept": "05-huli",
+          "deptTitle": "护理系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/05-huli/11-shequ-huli-xue"
+        },
+        {
+          "slug": "06-yiyuan-guanli-xue",
+          "title": "医院管理学",
+          "dept": "06-guanli",
+          "deptTitle": "管理系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/06-guanli/06-yiyuan-guanli-xue"
+        },
+        {
+          "slug": "07-zhongyi-jiaoyu-xue",
+          "title": "中医教育学",
+          "dept": "06-guanli",
+          "deptTitle": "管理系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/06-guanli/07-zhongyi-jiaoyu-xue"
+        },
+        {
+          "slug": "08-jiankang-fuwu-guanli",
+          "title": "健康服务与管理",
+          "dept": "06-guanli",
+          "deptTitle": "管理系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/06-guanli/08-jiankang-fuwu-guanli"
+        },
+        {
+          "slug": "09-yiliao-baoxian-jingji",
+          "title": "医疗保险与卫生经济",
+          "dept": "06-guanli",
+          "deptTitle": "管理系",
+          "type": "Reference",
+          "hours": 54,
+          "path": "departments/06-guanli/09-yiliao-baoxian-jingji"
+        },
+        {
+          "slug": "06-zhongyi-zhineng-bianzheng",
+          "title": "中医智能辨证系统",
+          "dept": "07-zhineng",
+          "deptTitle": "智能系",
+          "type": "Build",
+          "hours": 72,
+          "path": "departments/07-zhineng/06-zhongyi-zhineng-bianzheng"
+        },
+        {
+          "slug": "07-yixue-tuxiang-shezhen",
+          "title": "医学图像处理与舌诊客观化",
+          "dept": "07-zhineng",
+          "deptTitle": "智能系",
+          "type": "Build",
+          "hours": 72,
+          "path": "departments/07-zhineng/07-yixue-tuxiang-shezhen"
+        },
+        {
+          "slug": "08-maizhen-keguanhua",
+          "title": "脉诊客观化与信号处理",
+          "dept": "07-zhineng",
+          "deptTitle": "智能系",
+          "type": "Build",
+          "hours": 72,
+          "path": "departments/07-zhineng/08-maizhen-keguanhua"
+        },
+        {
+          "slug": "09-zhongyi-dashuju-fenxi",
+          "title": "中医大数据分析",
+          "dept": "07-zhineng",
+          "deptTitle": "智能系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/07-zhineng/09-zhongyi-dashuju-fenxi"
+        },
+        {
+          "slug": "06-zhongyi-yanke-xue",
+          "title": "中医眼科学",
+          "dept": "08-wuguan",
+          "deptTitle": "五官口腔系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/08-wuguan/06-zhongyi-yanke-xue"
+        },
+        {
+          "slug": "07-zhongyi-erbihou-xue",
+          "title": "中医耳鼻喉科学",
+          "dept": "08-wuguan",
+          "deptTitle": "五官口腔系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/08-wuguan/07-zhongyi-erbihou-xue"
+        },
+        {
+          "slug": "08-zhongyi-kouqiang-kexue",
+          "title": "中医口腔科学",
+          "dept": "08-wuguan",
+          "deptTitle": "五官口腔系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/08-wuguan/08-zhongyi-kouqiang-kexue"
+        },
+        {
+          "slug": "09-kouqiang-neike-xue",
+          "title": "口腔内科学",
+          "dept": "08-wuguan",
+          "deptTitle": "五官口腔系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/08-wuguan/09-kouqiang-neike-xue"
+        },
+        {
+          "slug": "10-yanke-yingxiang-jiancha",
+          "title": "眼科影像与检查技术",
+          "dept": "08-wuguan",
+          "deptTitle": "五官口腔系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/08-wuguan/10-yanke-yingxiang-jiancha"
+        }
+      ]
+    },
+    {
+      "semester": 7,
+      "stage": "zhuang",
+      "stageTitle": "壮",
+      "years": "大四",
+      "hours": 1584,
+      "chapters": 228,
+      "subjects": [
+        {
+          "slug": "14-zhongyi-zhenghou-xue",
+          "title": "中医证候学",
+          "dept": "01-zhongyi",
+          "deptTitle": "中医系",
+          "type": "Build",
+          "hours": 72,
+          "path": "departments/01-zhongyi/14-zhongyi-zhenghou-xue"
+        },
+        {
+          "slug": "15-zhongyi-gejia-xueshuo",
+          "title": "中医各家学说",
+          "dept": "01-zhongyi",
+          "deptTitle": "中医系",
+          "type": "Reference",
+          "hours": 54,
+          "path": "departments/01-zhongyi/15-zhongyi-gejia-xueshuo"
+        },
+        {
+          "slug": "13-zhongchengyao-linchuang",
+          "title": "中成药与临床用药",
+          "dept": "02-zhongyao",
+          "deptTitle": "中药系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/02-zhongyao/13-zhongchengyao-linchuang"
+        },
+        {
+          "slug": "14-peiwu-yu-jinji",
+          "title": "中药配伍与禁忌",
+          "dept": "02-zhongyao",
+          "deptTitle": "中药系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/02-zhongyao/14-peiwu-yu-jinji"
+        },
+        {
+          "slug": "13-zhendao-yixue",
+          "title": "针刀医学",
+          "dept": "03-zhenjiu",
+          "deptTitle": "针灸系",
+          "type": "Clinic",
+          "hours": 54,
+          "path": "departments/03-zhenjiu/13-zhendao-yixue"
+        },
+        {
+          "slug": "14-zhenjiu-zhentong-mazui",
+          "title": "针灸镇痛与麻醉",
+          "dept": "03-zhenjiu",
+          "deptTitle": "针灸系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/03-zhenjiu/14-zhenjiu-zhentong-mazui"
+        },
+        {
+          "slug": "15-zhongyi-kangfu-xue",
+          "title": "中医康复学",
+          "dept": "03-zhenjiu",
+          "deptTitle": "针灸系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/03-zhenjiu/15-zhongyi-kangfu-xue"
+        },
+        {
+          "slug": "10-jizhu-bing-xue",
+          "title": "脊柱病学",
+          "dept": "04-gushang",
+          "deptTitle": "骨伤系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/04-gushang/10-jizhu-bing-xue"
+        },
+        {
+          "slug": "11-guanjie-bing-xue",
+          "title": "关节病学",
+          "dept": "04-gushang",
+          "deptTitle": "骨伤系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/04-gushang/11-guanjie-bing-xue"
+        },
+        {
+          "slug": "12-guzhishusong-tuibian",
+          "title": "骨质疏松与退行性疾病",
+          "dept": "04-gushang",
+          "deptTitle": "骨伤系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/04-gushang/12-guzhishusong-tuibian"
+        },
+        {
+          "slug": "13-zhongyi-zhengji-xue",
+          "title": "中医整脊学",
+          "dept": "04-gushang",
+          "deptTitle": "骨伤系",
+          "type": "Clinic",
+          "hours": 54,
+          "path": "departments/04-gushang/13-zhongyi-zhengji-xue"
+        },
+        {
+          "slug": "12-jiwei-zhengzheng-huli",
+          "title": "急危重症护理学",
+          "dept": "05-huli",
+          "deptTitle": "护理系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/05-huli/12-jiwei-zhengzheng-huli"
+        },
+        {
+          "slug": "13-huli-guanli-xue",
+          "title": "护理管理学",
+          "dept": "05-huli",
+          "deptTitle": "护理系",
+          "type": "Reference",
+          "hours": 36,
+          "path": "departments/05-huli/13-huli-guanli-xue"
+        },
+        {
+          "slug": "14-huli-lunli-fagui",
+          "title": "护理伦理与法规",
+          "dept": "05-huli",
+          "deptTitle": "护理系",
+          "type": "Reference",
+          "hours": 36,
+          "path": "departments/05-huli/14-huli-lunli-fagui"
+        },
+        {
+          "slug": "10-yixue-xinxi-guanli",
+          "title": "医学信息管理",
+          "dept": "06-guanli",
+          "deptTitle": "管理系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/06-guanli/10-yixue-xinxi-guanli"
+        },
+        {
+          "slug": "11-yiyuan-xinxihua-bingan",
+          "title": "医院信息化与病案管理",
+          "dept": "06-guanli",
+          "deptTitle": "管理系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/06-guanli/11-yiyuan-xinxihua-bingan"
+        },
+        {
+          "slug": "12-zhongyiyao-biaozhunhua",
+          "title": "中医药标准化",
+          "dept": "06-guanli",
+          "deptTitle": "管理系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/06-guanli/12-zhongyiyao-biaozhunhua"
+        },
+        {
+          "slug": "13-linchuang-keyan-fangfa",
+          "title": "临床科研方法学",
+          "dept": "06-guanli",
+          "deptTitle": "管理系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/06-guanli/13-linchuang-keyan-fangfa"
+        },
+        {
+          "slug": "10-llm-yu-zhongyi-zhinengti",
+          "title": "大语言模型与中医智能体",
+          "dept": "07-zhineng",
+          "deptTitle": "智能系",
+          "type": "Build",
+          "hours": 90,
+          "path": "departments/07-zhineng/10-llm-yu-zhongyi-zhinengti"
+        },
+        {
+          "slug": "11-zhongyi-jiqiren-xue",
+          "title": "中医机器人学",
+          "dept": "07-zhineng",
+          "deptTitle": "智能系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/07-zhineng/11-zhongyi-jiqiren-xue"
+        },
+        {
+          "slug": "12-shuzi-renti-xuni-fangzhen",
+          "title": "数字人体与虚拟仿真",
+          "dept": "07-zhineng",
+          "deptTitle": "智能系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/07-zhineng/12-shuzi-renti-xuni-fangzhen"
+        },
+        {
+          "slug": "13-zhongyi-duomotai-ronghe",
+          "title": "中医多模态数据融合",
+          "dept": "07-zhineng",
+          "deptTitle": "智能系",
+          "type": "Build",
+          "hours": 72,
+          "path": "departments/07-zhineng/13-zhongyi-duomotai-ronghe"
+        },
+        {
+          "slug": "11-kouqiang-hemian-waike",
+          "title": "口腔颌面外科学",
+          "dept": "08-wuguan",
+          "deptTitle": "五官口腔系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/08-wuguan/11-kouqiang-hemian-waike"
+        },
+        {
+          "slug": "12-kouqiang-xiufu-xue",
+          "title": "口腔修复学",
+          "dept": "08-wuguan",
+          "deptTitle": "五官口腔系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/08-wuguan/12-kouqiang-xiufu-xue"
+        },
+        {
+          "slug": "13-kouqiang-zhengji-xue",
+          "title": "口腔正畸学",
+          "dept": "08-wuguan",
+          "deptTitle": "五官口腔系",
+          "type": "Clinic",
+          "hours": 72,
+          "path": "departments/08-wuguan/13-kouqiang-zhengji-xue"
+        },
+        {
+          "slug": "14-zhongyi-sangyin-yixue",
+          "title": "中医嗓音医学",
+          "dept": "08-wuguan",
+          "deptTitle": "五官口腔系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/08-wuguan/14-zhongyi-sangyin-yixue"
+        }
+      ]
+    },
+    {
+      "semester": 8,
+      "stage": "zhuang",
+      "stageTitle": "壮",
+      "years": "大四",
+      "hours": 468,
+      "chapters": 70,
+      "subjects": [
+        {
+          "slug": "15-zhongyao-xinyao-yanfa",
+          "title": "中药新药研发",
+          "dept": "02-zhongyao",
+          "deptTitle": "中药系",
+          "type": "Build",
+          "hours": 72,
+          "path": "departments/02-zhongyao/15-zhongyao-xinyao-yanfa"
+        },
+        {
+          "slug": "14-kangfu-gongcheng-zhiju",
+          "title": "康复工程与支具学",
+          "dept": "04-gushang",
+          "deptTitle": "骨伤系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/04-gushang/14-kangfu-gongcheng-zhiju"
+        },
+        {
+          "slug": "15-gushang-kangfu-pingding",
+          "title": "骨伤康复评定",
+          "dept": "04-gushang",
+          "deptTitle": "骨伤系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/04-gushang/15-gushang-kangfu-pingding"
+        },
+        {
+          "slug": "15-huli-yanjiu-zhengxun",
+          "title": "护理研究与循证护理",
+          "dept": "05-huli",
+          "deptTitle": "护理系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/05-huli/15-huli-yanjiu-zhengxun"
+        },
+        {
+          "slug": "14-zhishichanquan-zhuanhua",
+          "title": "中医药知识产权与成果转化",
+          "dept": "06-guanli",
+          "deptTitle": "管理系",
+          "type": "Reference",
+          "hours": 36,
+          "path": "departments/06-guanli/14-zhishichanquan-zhuanhua"
+        },
+        {
+          "slug": "15-zhongyi-guojijiaoyu",
+          "title": "中医国际教育与传播",
+          "dept": "06-guanli",
+          "deptTitle": "管理系",
+          "type": "Reference",
+          "hours": 36,
+          "path": "departments/06-guanli/15-zhongyi-guojijiaoyu"
+        },
+        {
+          "slug": "14-yixue-shuju-anquan-yinsi",
+          "title": "医学数据安全与隐私保护",
+          "dept": "07-zhineng",
+          "deptTitle": "智能系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/07-zhineng/14-yixue-shuju-anquan-yinsi"
+        },
+        {
+          "slug": "15-zhongyi-ai-lunli-zhili",
+          "title": "中医AI伦理与治理",
+          "dept": "07-zhineng",
+          "deptTitle": "智能系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/07-zhineng/15-zhongyi-ai-lunli-zhili"
+        },
+        {
+          "slug": "15-zhongyi-meirong-pifu",
+          "title": "中医美容与皮肤治疗学",
+          "dept": "08-wuguan",
+          "deptTitle": "五官口腔系",
+          "type": "Build",
+          "hours": 54,
+          "path": "departments/08-wuguan/15-zhongyi-meirong-pifu"
+        }
+      ]
+    },
+    {
+      "semester": 9,
+      "stage": "lao",
+      "stageTitle": "老",
+      "years": "大五上",
+      "hours": 0,
+      "chapters": 0,
+      "subjects": []
+    },
+    {
+      "semester": 10,
+      "stage": "yi",
+      "stageTitle": "已",
+      "years": "大五下",
+      "hours": 0,
+      "chapters": 0,
+      "subjects": []
+    }
+  ],
+  "departments": [
+    {
+      "n": 1,
+      "slug": "01-zhongyi",
+      "title": "中医系",
+      "en": "Traditional Chinese Medicine",
+      "icon": "☯️",
+      "focus": "理法方药的内核：基础理论、经典、临床各科",
+      "path": "departments/01-zhongyi",
+      "hours": 1062,
+      "chapters": 150,
+      "subjects": [
+        {
+          "n": 1,
+          "globalN": 1,
+          "slug": "01-zhongyi-jichu-lilun",
+          "title": "中医基础理论",
+          "en": "Fundamentals of TCM Theory",
+          "type": "Core",
+          "semester": 1,
+          "stage": "sheng",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 3,
+          "pct": 30,
+          "status": "wip",
+          "glyph": "🚧",
+          "bridge": "阴阳→二分类 / 五行→多分类 / 藏象→知识图谱",
+          "path": "departments/01-zhongyi/01-zhongyi-jichu-lilun",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/01-zhongyi/01-zhongyi-jichu-lilun",
+            "videosPublished": 0,
+            "status": "slides-ready"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun",
+            "chaptersWritten": 1,
+            "words": 5665,
+            "status": "wip"
+          }
+        },
+        {
+          "n": 2,
+          "globalN": 2,
+          "slug": "02-yi-gu-wen",
+          "title": "医古文",
+          "en": "Classical Chinese for TCM",
+          "type": "Core",
+          "semester": 1,
+          "stage": "sheng",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "古文分词→分词器 / 训诂→语义消歧",
+          "path": "departments/01-zhongyi/02-yi-gu-wen",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/01-zhongyi/02-yi-gu-wen",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/01-zhongyi/02-yi-gu-wen",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 3,
+          "globalN": 3,
+          "slug": "03-zhongguo-yixue-shi",
+          "title": "中国医学史",
+          "en": "History of Chinese Medicine",
+          "type": "Reference",
+          "semester": 1,
+          "stage": "sheng",
+          "hours": 36,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "医史脉络→时间图谱 / 学派演化→谱系聚类",
+          "path": "departments/01-zhongyi/03-zhongguo-yixue-shi",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/01-zhongyi/03-zhongguo-yixue-shi",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/01-zhongyi/03-zhongguo-yixue-shi",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 4,
+          "globalN": 4,
+          "slug": "04-zhongyi-tizhi-xue",
+          "title": "中医体质学",
+          "en": "TCM Constitution Theory",
+          "type": "Core",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "九种体质→多分类 / 体质问卷→特征工程",
+          "path": "departments/01-zhongyi/04-zhongyi-tizhi-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/01-zhongyi/04-zhongyi-tizhi-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/01-zhongyi/04-zhongyi-tizhi-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 5,
+          "globalN": 5,
+          "slug": "05-zhongyi-zhen-duan-xue",
+          "title": "中医诊断学",
+          "en": "TCM Diagnostics",
+          "type": "Core",
+          "semester": 3,
+          "stage": "sheng",
+          "hours": 90,
+          "chaptersTarget": 12,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "四诊→多模态特征 / 八纲→多维分类",
+          "path": "departments/01-zhongyi/05-zhongyi-zhen-duan-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/01-zhongyi/05-zhongyi-zhen-duan-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/01-zhongyi/05-zhongyi-zhen-duan-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 6,
+          "globalN": 6,
+          "slug": "06-neijing-xuandu",
+          "title": "内经选读",
+          "en": "Selected Readings from Huangdi Neijing",
+          "type": "Core",
+          "semester": 3,
+          "stage": "sheng",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "原文→语料库 / 条文检索→向量检索",
+          "path": "departments/01-zhongyi/06-neijing-xuandu",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/01-zhongyi/06-neijing-xuandu",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/01-zhongyi/06-neijing-xuandu",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 7,
+          "globalN": 7,
+          "slug": "07-shanghanlun",
+          "title": "伤寒论",
+          "en": "Treatise on Cold Damage",
+          "type": "Core",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 90,
+          "chaptersTarget": 12,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "六经→状态机 / 方证→条件概率",
+          "path": "departments/01-zhongyi/07-shanghanlun",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/01-zhongyi/07-shanghanlun",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/01-zhongyi/07-shanghanlun",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 8,
+          "globalN": 8,
+          "slug": "08-jingui-yaolue",
+          "title": "金匮要略",
+          "en": "Synopsis of the Golden Chamber",
+          "type": "Core",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "杂病→规则库 / 方证对应→检索增强",
+          "path": "departments/01-zhongyi/08-jingui-yaolue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/01-zhongyi/08-jingui-yaolue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/01-zhongyi/08-jingui-yaolue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 9,
+          "globalN": 9,
+          "slug": "09-wenbing-xue",
+          "title": "温病学",
+          "en": "Warm Disease Theory",
+          "type": "Core",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "卫气营血→分层状态机 / 传变→时序模型",
+          "path": "departments/01-zhongyi/09-wenbing-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/01-zhongyi/09-wenbing-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/01-zhongyi/09-wenbing-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 10,
+          "globalN": 10,
+          "slug": "10-zhongyi-neike-xue",
+          "title": "中医内科学",
+          "en": "TCM Internal Medicine",
+          "type": "Clinic",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 108,
+          "chaptersTarget": 14,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "脏腑辨证→决策树 / 证型→集成分类",
+          "path": "departments/01-zhongyi/10-zhongyi-neike-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/01-zhongyi/10-zhongyi-neike-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/01-zhongyi/10-zhongyi-neike-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 11,
+          "globalN": 11,
+          "slug": "11-zhongyi-waike-xue",
+          "title": "中医外科学",
+          "en": "TCM External Medicine",
+          "type": "Clinic",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "外科辨证→图像特征 / 疮疡分期→序列标注",
+          "path": "departments/01-zhongyi/11-zhongyi-waike-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/01-zhongyi/11-zhongyi-waike-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/01-zhongyi/11-zhongyi-waike-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 12,
+          "globalN": 12,
+          "slug": "12-zhongyi-fuke-xue",
+          "title": "中医妇科学",
+          "en": "TCM Gynecology",
+          "type": "Clinic",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "月经周期→周期序列模型 / 妇科辨证→智能体",
+          "path": "departments/01-zhongyi/12-zhongyi-fuke-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/01-zhongyi/12-zhongyi-fuke-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/01-zhongyi/12-zhongyi-fuke-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 13,
+          "globalN": 13,
+          "slug": "13-zhongyi-erke-xue",
+          "title": "中医儿科学",
+          "en": "TCM Pediatrics",
+          "type": "Clinic",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "小儿剂量→规则引擎 / 儿科辨证→ReAct 智能体",
+          "path": "departments/01-zhongyi/13-zhongyi-erke-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/01-zhongyi/13-zhongyi-erke-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/01-zhongyi/13-zhongyi-erke-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 14,
+          "globalN": 14,
+          "slug": "14-zhongyi-zhenghou-xue",
+          "title": "中医证候学",
+          "en": "TCM Syndrome Theory",
+          "type": "Build",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "证候→本体建模 / 证型标准化→嵌入聚类",
+          "path": "departments/01-zhongyi/14-zhongyi-zhenghou-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/01-zhongyi/14-zhongyi-zhenghou-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/01-zhongyi/14-zhongyi-zhenghou-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 15,
+          "globalN": 15,
+          "slug": "15-zhongyi-gejia-xueshuo",
+          "title": "中医各家学说",
+          "en": "Schools of TCM Thought",
+          "type": "Reference",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "学派对比→文本相似度 / 学术谱系→图网络",
+          "path": "departments/01-zhongyi/15-zhongyi-gejia-xueshuo",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/01-zhongyi/15-zhongyi-gejia-xueshuo",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/01-zhongyi/15-zhongyi-gejia-xueshuo",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "slug": "02-zhongyao",
+      "title": "中药系",
+      "en": "Chinese Materia Medica",
+      "icon": "🌾",
+      "focus": "本草、方剂与中药全产业链：资源—鉴定—化学—药理—制剂",
+      "path": "departments/02-zhongyao",
+      "hours": 1026,
+      "chapters": 144,
+      "subjects": [
+        {
+          "n": 1,
+          "globalN": 16,
+          "slug": "01-zhongyaoxue",
+          "title": "中药学",
+          "en": "Chinese Materia Medica",
+          "type": "Core",
+          "semester": 2,
+          "stage": "sheng",
+          "hours": 90,
+          "chaptersTarget": 12,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "四气五味归经→词嵌入 / 功效相似度→余弦距离",
+          "path": "departments/02-zhongyao/01-zhongyaoxue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/02-zhongyao/01-zhongyaoxue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/02-zhongyao/01-zhongyaoxue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 2,
+          "globalN": 17,
+          "slug": "02-yaoyong-zhiwu-xue",
+          "title": "药用植物学",
+          "en": "Medicinal Botany",
+          "type": "Core",
+          "semester": 2,
+          "stage": "sheng",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "植物分类→层级分类 / 叶片形态→CNN 特征",
+          "path": "departments/02-zhongyao/02-yaoyong-zhiwu-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/02-zhongyao/02-yaoyong-zhiwu-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/02-zhongyao/02-yaoyong-zhiwu-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 3,
+          "globalN": 18,
+          "slug": "03-fangjixue",
+          "title": "方剂学",
+          "en": "TCM Formulary",
+          "type": "Core",
+          "semester": 3,
+          "stage": "sheng",
+          "hours": 90,
+          "chaptersTarget": 12,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "君臣佐使→缩放点积注意力 / 类方鉴别→对比学习",
+          "path": "departments/02-zhongyao/03-fangjixue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/02-zhongyao/03-fangjixue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/02-zhongyao/03-fangjixue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 4,
+          "globalN": 19,
+          "slug": "04-zhongyao-ziyuan-xue",
+          "title": "中药资源学",
+          "en": "TCM Resource Science",
+          "type": "Reference",
+          "semester": 3,
+          "stage": "sheng",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "产区分布→空间聚类 / 资源评价→多指标模型",
+          "path": "departments/02-zhongyao/04-zhongyao-ziyuan-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/02-zhongyao/04-zhongyao-ziyuan-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/02-zhongyao/04-zhongyao-ziyuan-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 5,
+          "globalN": 20,
+          "slug": "05-zhongyao-jianding-xue",
+          "title": "中药鉴定学",
+          "en": "Identification of Chinese Materia Medica",
+          "type": "Build",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "性状鉴别→图像分类 / 显微鉴别→纹理特征",
+          "path": "departments/02-zhongyao/05-zhongyao-jianding-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/02-zhongyao/05-zhongyao-jianding-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/02-zhongyao/05-zhongyao-jianding-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 6,
+          "globalN": 21,
+          "slug": "06-zhongyao-huaxue",
+          "title": "中药化学",
+          "en": "Phytochemistry of TCM",
+          "type": "Core",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 90,
+          "chaptersTarget": 12,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "成分结构→分子指纹 / 活性预测→QSAR 回归",
+          "path": "departments/02-zhongyao/06-zhongyao-huaxue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/02-zhongyao/06-zhongyao-huaxue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/02-zhongyao/06-zhongyao-huaxue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 7,
+          "globalN": 22,
+          "slug": "07-zhongyao-yaoli-xue",
+          "title": "中药药理学",
+          "en": "TCM Pharmacology",
+          "type": "Core",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "药效实验→剂量-反应拟合 / 网络药理→图算法",
+          "path": "departments/02-zhongyao/07-zhongyao-yaoli-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/02-zhongyao/07-zhongyao-yaoli-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/02-zhongyao/07-zhongyao-yaoli-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 8,
+          "globalN": 23,
+          "slug": "08-zhongyao-paozhi-xue",
+          "title": "中药炮制学",
+          "en": "TCM Processing",
+          "type": "Build",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "炮制火候→过程曲线 / 工艺参数→回归优化",
+          "path": "departments/02-zhongyao/08-zhongyao-paozhi-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/02-zhongyao/08-zhongyao-paozhi-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/02-zhongyao/08-zhongyao-paozhi-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 9,
+          "globalN": 24,
+          "slug": "09-zhongyao-yaoji-xue",
+          "title": "中药药剂学",
+          "en": "TCM Pharmaceutics",
+          "type": "Core",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "剂型设计→多目标优化 / 释放曲线→动力学拟合",
+          "path": "departments/02-zhongyao/09-zhongyao-yaoji-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/02-zhongyao/09-zhongyao-yaoji-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/02-zhongyao/09-zhongyao-yaoji-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 10,
+          "globalN": 25,
+          "slug": "10-zhongyao-fenxi-xue",
+          "title": "中药分析学",
+          "en": "TCM Analysis",
+          "type": "Build",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "指纹图谱→降维与相似度 / 光谱数据→PLS 回归",
+          "path": "departments/02-zhongyao/10-zhongyao-fenxi-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/02-zhongyao/10-zhongyao-fenxi-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/02-zhongyao/10-zhongyao-fenxi-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 11,
+          "globalN": 26,
+          "slug": "11-zhongyao-yaodai-donglixue",
+          "title": "中药药代动力学",
+          "en": "TCM Pharmacokinetics",
+          "type": "Build",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "血药浓度→房室模型 / 参数估计→非线性拟合",
+          "path": "departments/02-zhongyao/11-zhongyao-yaodai-donglixue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/02-zhongyao/11-zhongyao-yaodai-donglixue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/02-zhongyao/11-zhongyao-yaodai-donglixue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 12,
+          "globalN": 27,
+          "slug": "12-daodi-yaocai",
+          "title": "道地药材与产地加工",
+          "en": "Genuine Regional Herbs & Post-harvest",
+          "type": "Reference",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "产地指纹→地理加权 / 品质溯源→区块链账本",
+          "path": "departments/02-zhongyao/12-daodi-yaocai",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/02-zhongyao/12-daodi-yaocai",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/02-zhongyao/12-daodi-yaocai",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 13,
+          "globalN": 28,
+          "slug": "13-zhongchengyao-linchuang",
+          "title": "中成药与临床用药",
+          "en": "Patent Medicines in Clinical Use",
+          "type": "Clinic",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "联合用药→推荐系统 / 不良反应→异常检测",
+          "path": "departments/02-zhongyao/13-zhongchengyao-linchuang",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/02-zhongyao/13-zhongchengyao-linchuang",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/02-zhongyao/13-zhongchengyao-linchuang",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 14,
+          "globalN": 29,
+          "slug": "14-peiwu-yu-jinji",
+          "title": "中药配伍与禁忌",
+          "en": "TCM Herb Compatibility & Contraindications",
+          "type": "Build",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "十八反十九畏→规则图谱 / 配伍风险→图推理",
+          "path": "departments/02-zhongyao/14-peiwu-yu-jinji",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/02-zhongyao/14-peiwu-yu-jinji",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/02-zhongyao/14-peiwu-yu-jinji",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 15,
+          "globalN": 30,
+          "slug": "15-zhongyao-xinyao-yanfa",
+          "title": "中药新药研发",
+          "en": "New TCM Drug Development",
+          "type": "Build",
+          "semester": 8,
+          "stage": "zhuang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "研发管线→项目管理 / 临床试验→A/B 试验设计",
+          "path": "departments/02-zhongyao/15-zhongyao-xinyao-yanfa",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/02-zhongyao/15-zhongyao-xinyao-yanfa",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/02-zhongyao/15-zhongyao-xinyao-yanfa",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "slug": "03-zhenjiu",
+      "title": "针灸系",
+      "en": "Acupuncture & Moxibustion",
+      "icon": "🪡",
+      "focus": "经络腧穴—刺法灸法—针灸治疗 与推拿康复的完整链条",
+      "path": "departments/03-zhenjiu",
+      "hours": 954,
+      "chapters": 136,
+      "subjects": [
+        {
+          "n": 1,
+          "globalN": 31,
+          "slug": "01-jingluo-xue",
+          "title": "经络学",
+          "en": "Meridian Theory",
+          "type": "Core",
+          "semester": 2,
+          "stage": "sheng",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "经络循行→图结构 / 路径查询→图遍历",
+          "path": "departments/03-zhenjiu/01-jingluo-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/03-zhenjiu/01-jingluo-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/03-zhenjiu/01-jingluo-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 2,
+          "globalN": 32,
+          "slug": "02-shuxue-xue",
+          "title": "腧穴学",
+          "en": "Acupoint Theory",
+          "type": "Core",
+          "semester": 3,
+          "stage": "sheng",
+          "hours": 90,
+          "chaptersTarget": 12,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "腧穴定位→三维坐标 / 取穴→KD-Tree 最近邻",
+          "path": "departments/03-zhenjiu/02-shuxue-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/03-zhenjiu/02-shuxue-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/03-zhenjiu/02-shuxue-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 3,
+          "globalN": 33,
+          "slug": "03-zhenjiu-yiji-xuan",
+          "title": "针灸医籍选",
+          "en": "Selected Acupuncture Classics",
+          "type": "Reference",
+          "semester": 3,
+          "stage": "sheng",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "古籍条文→语料检索 / 治法归纳→规则抽取",
+          "path": "departments/03-zhenjiu/03-zhenjiu-yiji-xuan",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/03-zhenjiu/03-zhenjiu-yiji-xuan",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/03-zhenjiu/03-zhenjiu-yiji-xuan",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 4,
+          "globalN": 34,
+          "slug": "04-qigong-xue",
+          "title": "中医气功学",
+          "en": "TCM Qigong",
+          "type": "Reference",
+          "semester": 3,
+          "stage": "sheng",
+          "hours": 36,
+          "chaptersTarget": 6,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "呼吸节律→时序信号 / 功法教学→动作识别",
+          "path": "departments/03-zhenjiu/04-qigong-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/03-zhenjiu/04-qigong-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/03-zhenjiu/04-qigong-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 5,
+          "globalN": 35,
+          "slug": "05-tuina-xue",
+          "title": "推拿学",
+          "en": "Tui Na (Chinese Massage)",
+          "type": "Clinic",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "手法参数→力-时曲线 / 疗效评价→量表分析",
+          "path": "departments/03-zhenjiu/05-tuina-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/03-zhenjiu/05-tuina-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/03-zhenjiu/05-tuina-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 6,
+          "globalN": 36,
+          "slug": "06-tuina-shoufa-xue",
+          "title": "推拿手法学",
+          "en": "Tui Na Manipulation Techniques",
+          "type": "Build",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "手法轨迹→姿态估计 / 力度反馈→可穿戴传感",
+          "path": "departments/03-zhenjiu/06-tuina-shoufa-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/03-zhenjiu/06-tuina-shoufa-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/03-zhenjiu/06-tuina-shoufa-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 7,
+          "globalN": 37,
+          "slug": "07-cifa-jiufa-xue",
+          "title": "刺法灸法学",
+          "en": "Acupuncture & Moxibustion Techniques",
+          "type": "Core",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "进针角度→几何参数 / 得气→肌电特征",
+          "path": "departments/03-zhenjiu/07-cifa-jiufa-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/03-zhenjiu/07-cifa-jiufa-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/03-zhenjiu/07-cifa-jiufa-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 8,
+          "globalN": 38,
+          "slug": "08-zhenjiu-zhiliao-xue",
+          "title": "针灸治疗学",
+          "en": "Acupuncture Therapeutics",
+          "type": "Clinic",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 90,
+          "chaptersTarget": 12,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "处方配穴→组合优化 / 疗效预测→分类模型",
+          "path": "departments/03-zhenjiu/08-zhenjiu-zhiliao-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/03-zhenjiu/08-zhenjiu-zhiliao-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/03-zhenjiu/08-zhenjiu-zhiliao-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 9,
+          "globalN": 39,
+          "slug": "09-kangfu-yixue-jichu",
+          "title": "康复医学基础",
+          "en": "Foundations of Rehabilitation",
+          "type": "Core",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "功能评定→量表计分 / 康复计划→路径搜索",
+          "path": "departments/03-zhenjiu/09-kangfu-yixue-jichu",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/03-zhenjiu/09-kangfu-yixue-jichu",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/03-zhenjiu/09-kangfu-yixue-jichu",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 10,
+          "globalN": 40,
+          "slug": "10-shiyan-zhenjiu-xue",
+          "title": "实验针灸学",
+          "en": "Experimental Acupuncture",
+          "type": "Build",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "动物实验→统计设计 / 电针参数→响应曲面",
+          "path": "departments/03-zhenjiu/10-shiyan-zhenjiu-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/03-zhenjiu/10-shiyan-zhenjiu-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/03-zhenjiu/10-shiyan-zhenjiu-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 11,
+          "globalN": 41,
+          "slug": "11-wuli-zhiliao",
+          "title": "物理治疗与运动康复",
+          "en": "Physiotherapy & Sports Rehab",
+          "type": "Build",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "运动处方→个性化推荐 / 步态数据→时序分类",
+          "path": "departments/03-zhenjiu/11-wuli-zhiliao",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/03-zhenjiu/11-wuli-zhiliao",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/03-zhenjiu/11-wuli-zhiliao",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 12,
+          "globalN": 42,
+          "slug": "12-erxue-zhenduan-xue",
+          "title": "耳穴诊治学",
+          "en": "Auricular Diagnosis & Therapy",
+          "type": "Build",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "耳穴分区→图像配准 / 阳性反应点→目标检测",
+          "path": "departments/03-zhenjiu/12-erxue-zhenduan-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/03-zhenjiu/12-erxue-zhenduan-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/03-zhenjiu/12-erxue-zhenduan-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 13,
+          "globalN": 43,
+          "slug": "13-zhendao-yixue",
+          "title": "针刀医学",
+          "en": "Acupotomy Medicine",
+          "type": "Clinic",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "松解层次→解剖分层模型 / 操作规划→路径规划",
+          "path": "departments/03-zhenjiu/13-zhendao-yixue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/03-zhenjiu/13-zhendao-yixue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/03-zhenjiu/13-zhendao-yixue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 14,
+          "globalN": 44,
+          "slug": "14-zhenjiu-zhentong-mazui",
+          "title": "针灸镇痛与麻醉",
+          "en": "Acupuncture Analgesia & Anesthesia",
+          "type": "Build",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "镇痛机制→神经环路建模 / 疼痛评分→回归",
+          "path": "departments/03-zhenjiu/14-zhenjiu-zhentong-mazui",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/03-zhenjiu/14-zhenjiu-zhentong-mazui",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/03-zhenjiu/14-zhenjiu-zhentong-mazui",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 15,
+          "globalN": 45,
+          "slug": "15-zhongyi-kangfu-xue",
+          "title": "中医康复学",
+          "en": "TCM Rehabilitation",
+          "type": "Clinic",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "辨证施康→规则+ML 混合 / 随访数据→生存分析",
+          "path": "departments/03-zhenjiu/15-zhongyi-kangfu-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/03-zhenjiu/15-zhongyi-kangfu-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/03-zhenjiu/15-zhongyi-kangfu-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "slug": "04-gushang",
+      "title": "骨伤系",
+      "en": "Orthopedics & Traumatology",
+      "icon": "🦴",
+      "focus": "正骨理筋—骨病退变—运动损伤与康复工程",
+      "path": "departments/04-gushang",
+      "hours": 972,
+      "chapters": 138,
+      "subjects": [
+        {
+          "n": 1,
+          "globalN": 46,
+          "slug": "01-zhongyi-yundong-xue",
+          "title": "中医运动学",
+          "en": "TCM Kinesiology",
+          "type": "Core",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "导引术式→动作序列 / 运动学参数→运动捕捉",
+          "path": "departments/04-gushang/01-zhongyi-yundong-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/04-gushang/01-zhongyi-yundong-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/04-gushang/01-zhongyi-yundong-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 2,
+          "globalN": 47,
+          "slug": "02-yao-shang-jiepou",
+          "title": "骨伤解剖学",
+          "en": "Musculoskeletal Anatomy",
+          "type": "Core",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "断层解剖→三维重建 / 定位→坐标系变换",
+          "path": "departments/04-gushang/02-yao-shang-jiepou",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/04-gushang/02-yao-shang-jiepou",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/04-gushang/02-yao-shang-jiepou",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 3,
+          "globalN": 48,
+          "slug": "03-gushang-kexue-jichu",
+          "title": "中医骨伤科学基础",
+          "en": "Foundations of TCM Orthopedics",
+          "type": "Core",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "筋骨辨证→分层规则 / 损伤分类→多标签分类",
+          "path": "departments/04-gushang/03-gushang-kexue-jichu",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/04-gushang/03-gushang-kexue-jichu",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/04-gushang/03-gushang-kexue-jichu",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 4,
+          "globalN": 49,
+          "slug": "04-chuangshang-jijiu-xue",
+          "title": "创伤急救学",
+          "en": "Trauma & Emergency Care",
+          "type": "Clinic",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "创伤评分→风险分层 / 急救流程→决策树",
+          "path": "departments/04-gushang/04-chuangshang-jijiu-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/04-gushang/04-chuangshang-jijiu-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/04-gushang/04-chuangshang-jijiu-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 5,
+          "globalN": 50,
+          "slug": "05-yundong-yixue",
+          "title": "运动医学与损伤防护",
+          "en": "Sports Medicine & Injury Prevention",
+          "type": "Build",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "损伤预测→幸存分析 / 负荷管理→时序模型",
+          "path": "departments/04-gushang/05-yundong-yixue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/04-gushang/05-yundong-yixue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/04-gushang/05-yundong-yixue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 6,
+          "globalN": 51,
+          "slug": "06-zhongyi-zhenggu-xue",
+          "title": "中医正骨学",
+          "en": "TCM Bone-setting",
+          "type": "Clinic",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 90,
+          "chaptersTarget": 12,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "复位手法→力学仿真 / 骨折分型→图像分类",
+          "path": "departments/04-gushang/06-zhongyi-zhenggu-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/04-gushang/06-zhongyi-zhenggu-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/04-gushang/06-zhongyi-zhenggu-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 7,
+          "globalN": 52,
+          "slug": "07-zhongyi-jinshang-xue",
+          "title": "中医筋伤学",
+          "en": "TCM Soft-tissue Injury",
+          "type": "Clinic",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "筋伤分期→阶段模型 / 触诊→压力传感阵列",
+          "path": "departments/04-gushang/07-zhongyi-jinshang-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/04-gushang/07-zhongyi-jinshang-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/04-gushang/07-zhongyi-jinshang-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 8,
+          "globalN": 53,
+          "slug": "08-gushang-shoufa-zhiliao",
+          "title": "骨伤科手法治疗学",
+          "en": "Orthopedic Manual Therapy",
+          "type": "Build",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "手法力学→力反馈控制 / 疗效→纵向数据分析",
+          "path": "departments/04-gushang/08-gushang-shoufa-zhiliao",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/04-gushang/08-gushang-shoufa-zhiliao",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/04-gushang/08-gushang-shoufa-zhiliao",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 9,
+          "globalN": 54,
+          "slug": "09-guke-yingxiang-zhenduan",
+          "title": "骨科影像诊断学",
+          "en": "Orthopedic Imaging",
+          "type": "Build",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "X线/CT/MRI→CNN 分割 / 病灶检测→目标检测",
+          "path": "departments/04-gushang/09-guke-yingxiang-zhenduan",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/04-gushang/09-guke-yingxiang-zhenduan",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/04-gushang/09-guke-yingxiang-zhenduan",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 10,
+          "globalN": 55,
+          "slug": "10-jizhu-bing-xue",
+          "title": "脊柱病学",
+          "en": "Spinal Disorders",
+          "type": "Clinic",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "脊柱曲度→几何测量 / 退变分级→有序回归",
+          "path": "departments/04-gushang/10-jizhu-bing-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/04-gushang/10-jizhu-bing-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/04-gushang/10-jizhu-bing-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 11,
+          "globalN": 56,
+          "slug": "11-guanjie-bing-xue",
+          "title": "关节病学",
+          "en": "Joint Disorders",
+          "type": "Clinic",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "关节间隙→自动测量 / 炎症活动度→影像组学",
+          "path": "departments/04-gushang/11-guanjie-bing-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/04-gushang/11-guanjie-bing-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/04-gushang/11-guanjie-bing-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 12,
+          "globalN": 57,
+          "slug": "12-guzhishusong-tuibian",
+          "title": "骨质疏松与退行性疾病",
+          "en": "Osteoporosis & Degenerative Disease",
+          "type": "Build",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "骨密度→回归预测 / 骨折风险→FRAX 类模型",
+          "path": "departments/04-gushang/12-guzhishusong-tuibian",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/04-gushang/12-guzhishusong-tuibian",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/04-gushang/12-guzhishusong-tuibian",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 13,
+          "globalN": 58,
+          "slug": "13-zhongyi-zhengji-xue",
+          "title": "中医整脊学",
+          "en": "TCM Spinal Adjustment",
+          "type": "Clinic",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "脊柱序列→姿态估计 / 调整方案→规划算法",
+          "path": "departments/04-gushang/13-zhongyi-zhengji-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/04-gushang/13-zhongyi-zhengji-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/04-gushang/13-zhongyi-zhengji-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 14,
+          "globalN": 59,
+          "slug": "14-kangfu-gongcheng-zhiju",
+          "title": "康复工程与支具学",
+          "en": "Rehab Engineering & Orthotics",
+          "type": "Build",
+          "semester": 8,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "支具设计→参数化建模 / 3D 打印→增材制造流程",
+          "path": "departments/04-gushang/14-kangfu-gongcheng-zhiju",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/04-gushang/14-kangfu-gongcheng-zhiju",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/04-gushang/14-kangfu-gongcheng-zhiju",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 15,
+          "globalN": 60,
+          "slug": "15-gushang-kangfu-pingding",
+          "title": "骨伤康复评定",
+          "en": "Orthopedic Rehab Assessment",
+          "type": "Build",
+          "semester": 8,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "评定量表→信效度分析 / 康复进度→增长曲线模型",
+          "path": "departments/04-gushang/15-gushang-kangfu-pingding",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/04-gushang/15-gushang-kangfu-pingding",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/04-gushang/15-gushang-kangfu-pingding",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "slug": "05-huli",
+      "title": "护理系",
+      "en": "Nursing",
+      "icon": "🩺",
+      "focus": "中医护理特色技术 + 现代护理全科能力",
+      "path": "departments/05-huli",
+      "hours": 882,
+      "chapters": 128,
+      "subjects": [
+        {
+          "n": 1,
+          "globalN": 61,
+          "slug": "01-zhongyi-huli-jichu",
+          "title": "中医护理学基础",
+          "en": "Foundations of TCM Nursing",
+          "type": "Core",
+          "semester": 2,
+          "stage": "sheng",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "辨证施护→规则库 / 证护对应→映射表",
+          "path": "departments/05-huli/01-zhongyi-huli-jichu",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/05-huli/01-zhongyi-huli-jichu",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/05-huli/01-zhongyi-huli-jichu",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 2,
+          "globalN": 62,
+          "slug": "02-jichu-huli-xue",
+          "title": "基础护理学",
+          "en": "Fundamental Nursing",
+          "type": "Core",
+          "semester": 2,
+          "stage": "sheng",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "护理操作→标准作业流程 / 生命体征→异常检测",
+          "path": "departments/05-huli/02-jichu-huli-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/05-huli/02-jichu-huli-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/05-huli/02-jichu-huli-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 3,
+          "globalN": 63,
+          "slug": "03-jiankang-pinggu",
+          "title": "健康评估",
+          "en": "Health Assessment",
+          "type": "Core",
+          "semester": 3,
+          "stage": "sheng",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "问诊查体→结构化采集 / 异常体征→规则+ML 判别",
+          "path": "departments/05-huli/03-jiankang-pinggu",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/05-huli/03-jiankang-pinggu",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/05-huli/03-jiankang-pinggu",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 4,
+          "globalN": 64,
+          "slug": "04-zhongyi-huli-jishu",
+          "title": "中医护理技术",
+          "en": "TCM Nursing Techniques",
+          "type": "Build",
+          "semester": 3,
+          "stage": "sheng",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "拔罐艾灸刮痧→操作参数化 / 不良反应→监测预警",
+          "path": "departments/05-huli/04-zhongyi-huli-jishu",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/05-huli/04-zhongyi-huli-jishu",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/05-huli/04-zhongyi-huli-jishu",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 5,
+          "globalN": 65,
+          "slug": "05-zhongyi-yangsheng-xue",
+          "title": "中医养生学",
+          "en": "TCM Health Cultivation",
+          "type": "Core",
+          "semester": 3,
+          "stage": "sheng",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "体质养生→个性化推荐 / 生活处方→规则引擎",
+          "path": "departments/05-huli/05-zhongyi-yangsheng-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/05-huli/05-zhongyi-yangsheng-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/05-huli/05-zhongyi-yangsheng-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 6,
+          "globalN": 66,
+          "slug": "06-zhongyi-xinli-xue",
+          "title": "中医心理学",
+          "en": "TCM Psychology",
+          "type": "Core",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "情志辨证→情绪分类 NLP / 五志相胜→博弈模型",
+          "path": "departments/05-huli/06-zhongyi-xinli-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/05-huli/06-zhongyi-xinli-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/05-huli/06-zhongyi-xinli-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 7,
+          "globalN": 67,
+          "slug": "07-neike-huli-xue",
+          "title": "内科护理学",
+          "en": "Medical Nursing",
+          "type": "Clinic",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 90,
+          "chaptersTarget": 12,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "护理诊断→本体推理 / 病情变化→时序预警",
+          "path": "departments/05-huli/07-neike-huli-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/05-huli/07-neike-huli-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/05-huli/07-neike-huli-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 8,
+          "globalN": 68,
+          "slug": "08-waike-huli-xue",
+          "title": "外科护理学",
+          "en": "Surgical Nursing",
+          "type": "Clinic",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "围手术期→流程编排 / 并发症→风险预测",
+          "path": "departments/05-huli/08-waike-huli-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/05-huli/08-waike-huli-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/05-huli/08-waike-huli-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 9,
+          "globalN": 69,
+          "slug": "09-fuchanke-huli-xue",
+          "title": "妇产科护理学",
+          "en": "OB/GYN Nursing",
+          "type": "Clinic",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "产程→阶段状态机 / 母婴数据→联合建模",
+          "path": "departments/05-huli/09-fuchanke-huli-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/05-huli/09-fuchanke-huli-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/05-huli/09-fuchanke-huli-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 10,
+          "globalN": 70,
+          "slug": "10-erke-huli-xue",
+          "title": "儿科护理学",
+          "en": "Pediatric Nursing",
+          "type": "Clinic",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "儿童生长发育→曲线拟合 / 用药剂量→体重规则",
+          "path": "departments/05-huli/10-erke-huli-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/05-huli/10-erke-huli-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/05-huli/10-erke-huli-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 11,
+          "globalN": 71,
+          "slug": "11-shequ-huli-xue",
+          "title": "社区护理学",
+          "en": "Community Nursing",
+          "type": "Build",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "家庭访视→路线优化 / 慢病管理→队列随访",
+          "path": "departments/05-huli/11-shequ-huli-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/05-huli/11-shequ-huli-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/05-huli/11-shequ-huli-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 12,
+          "globalN": 72,
+          "slug": "12-jiwei-zhengzheng-huli",
+          "title": "急危重症护理学",
+          "en": "Critical Care Nursing",
+          "type": "Clinic",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "危重评分→风险模型 / 抢救流程→实时决策支持",
+          "path": "departments/05-huli/12-jiwei-zhengzheng-huli",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/05-huli/12-jiwei-zhengzheng-huli",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/05-huli/12-jiwei-zhengzheng-huli",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 13,
+          "globalN": 73,
+          "slug": "13-huli-guanli-xue",
+          "title": "护理管理学",
+          "en": "Nursing Management",
+          "type": "Reference",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 36,
+          "chaptersTarget": 6,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "排班优化→运筹求解 / 质量指标→控制图",
+          "path": "departments/05-huli/13-huli-guanli-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/05-huli/13-huli-guanli-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/05-huli/13-huli-guanli-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 14,
+          "globalN": 74,
+          "slug": "14-huli-lunli-fagui",
+          "title": "护理伦理与法规",
+          "en": "Nursing Ethics & Law",
+          "type": "Reference",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 36,
+          "chaptersTarget": 6,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "伦理困境→多准则决策 / 知情同意→合规校验",
+          "path": "departments/05-huli/14-huli-lunli-fagui",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/05-huli/14-huli-lunli-fagui",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/05-huli/14-huli-lunli-fagui",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 15,
+          "globalN": 75,
+          "slug": "15-huli-yanjiu-zhengxun",
+          "title": "护理研究与循证护理",
+          "en": "Nursing Research & EBP",
+          "type": "Build",
+          "semester": 8,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "证据分级→GRADE 算法 / 文献筛选→PRISMA 流程自动化",
+          "path": "departments/05-huli/15-huli-yanjiu-zhengxun",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/05-huli/15-huli-yanjiu-zhengxun",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/05-huli/15-huli-yanjiu-zhengxun",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "slug": "06-guanli",
+      "title": "管理系",
+      "en": "Management",
+      "icon": "📊",
+      "focus": "中医药治理、政策、教育与卫生经济、卫生信息化",
+      "path": "departments/06-guanli",
+      "hours": 792,
+      "chapters": 118,
+      "subjects": [
+        {
+          "n": 1,
+          "globalN": 76,
+          "slug": "01-yixue-tongjixue",
+          "title": "医学统计学",
+          "en": "Medical Statistics",
+          "type": "Core",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "假设检验→从零实现 / 回归→最小二乘",
+          "path": "departments/06-guanli/01-yixue-tongjixue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/06-guanli/01-yixue-tongjixue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/06-guanli/01-yixue-tongjixue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 2,
+          "globalN": 77,
+          "slug": "02-zhongyiyao-zhengce-fagui",
+          "title": "中医药政策与法规",
+          "en": "TCM Policy & Regulation",
+          "type": "Core",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "法规条文→检索问答 / 合规判断→规则树",
+          "path": "departments/06-guanli/02-zhongyiyao-zhengce-fagui",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/06-guanli/02-zhongyiyao-zhengce-fagui",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/06-guanli/02-zhongyiyao-zhengce-fagui",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 3,
+          "globalN": 78,
+          "slug": "03-zhongyi-guanli-xue",
+          "title": "中医管理学",
+          "en": "TCM Management",
+          "type": "Core",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "科室绩效→多指标评价 / 资源配置→线性规划",
+          "path": "departments/06-guanli/03-zhongyi-guanli-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/06-guanli/03-zhongyi-guanli-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/06-guanli/03-zhongyi-guanli-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 4,
+          "globalN": 79,
+          "slug": "04-weisheng-shiye-guanli",
+          "title": "卫生事业管理",
+          "en": "Health Service Management",
+          "type": "Core",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "卫生指标体系→看板建模 / 区域配置→供需模型",
+          "path": "departments/06-guanli/04-weisheng-shiye-guanli",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/06-guanli/04-weisheng-shiye-guanli",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/06-guanli/04-weisheng-shiye-guanli",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 5,
+          "globalN": 80,
+          "slug": "05-zhongyi-wenhua-chuanbo",
+          "title": "中医文化传播学",
+          "en": "TCM Cultural Communication",
+          "type": "Reference",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 36,
+          "chaptersTarget": 6,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "传播内容→主题建模 / 受众画像→用户分群",
+          "path": "departments/06-guanli/05-zhongyi-wenhua-chuanbo",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/06-guanli/05-zhongyi-wenhua-chuanbo",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/06-guanli/05-zhongyi-wenhua-chuanbo",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 6,
+          "globalN": 81,
+          "slug": "06-yiyuan-guanli-xue",
+          "title": "医院管理学",
+          "en": "Hospital Management",
+          "type": "Clinic",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "门诊流程→排队论仿真 / 床位调度→离散事件仿真",
+          "path": "departments/06-guanli/06-yiyuan-guanli-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/06-guanli/06-yiyuan-guanli-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/06-guanli/06-yiyuan-guanli-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 7,
+          "globalN": 82,
+          "slug": "07-zhongyi-jiaoyu-xue",
+          "title": "中医教育学",
+          "en": "TCM Education",
+          "type": "Build",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "教学评价→学习分析 / 课程图谱→先修关系图",
+          "path": "departments/06-guanli/07-zhongyi-jiaoyu-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/06-guanli/07-zhongyi-jiaoyu-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/06-guanli/07-zhongyi-jiaoyu-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 8,
+          "globalN": 83,
+          "slug": "08-jiankang-fuwu-guanli",
+          "title": "健康服务与管理",
+          "en": "Health Services & Management",
+          "type": "Build",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "健康档案→数据治理 / 干预方案→推荐系统",
+          "path": "departments/06-guanli/08-jiankang-fuwu-guanli",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/06-guanli/08-jiankang-fuwu-guanli",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/06-guanli/08-jiankang-fuwu-guanli",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 9,
+          "globalN": 84,
+          "slug": "09-yiliao-baoxian-jingji",
+          "title": "医疗保险与卫生经济",
+          "en": "Health Insurance & Economics",
+          "type": "Reference",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "医保支付→成本效果分析 / 费用预测→时间序列",
+          "path": "departments/06-guanli/09-yiliao-baoxian-jingji",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/06-guanli/09-yiliao-baoxian-jingji",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/06-guanli/09-yiliao-baoxian-jingji",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 10,
+          "globalN": 85,
+          "slug": "10-yixue-xinxi-guanli",
+          "title": "医学信息管理",
+          "en": "Health Information Management",
+          "type": "Build",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "电子病历→HL7/FHIR 建模 / 数据质量→校验规则",
+          "path": "departments/06-guanli/10-yixue-xinxi-guanli",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/06-guanli/10-yixue-xinxi-guanli",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/06-guanli/10-yixue-xinxi-guanli",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 11,
+          "globalN": 86,
+          "slug": "11-yiyuan-xinxihua-bingan",
+          "title": "医院信息化与病案管理",
+          "en": "Hospital IT & Medical Records",
+          "type": "Build",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "病案首页→编码 NLP / HIS 集成→接口编排",
+          "path": "departments/06-guanli/11-yiyuan-xinxihua-bingan",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/06-guanli/11-yiyuan-xinxihua-bingan",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/06-guanli/11-yiyuan-xinxihua-bingan",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 12,
+          "globalN": 87,
+          "slug": "12-zhongyiyao-biaozhunhua",
+          "title": "中医药标准化",
+          "en": "TCM Standardization",
+          "type": "Build",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "证候术语→本体与编码 / 标准符合性→自动核查",
+          "path": "departments/06-guanli/12-zhongyiyao-biaozhunhua",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/06-guanli/12-zhongyiyao-biaozhunhua",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/06-guanli/12-zhongyiyao-biaozhunhua",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 13,
+          "globalN": 88,
+          "slug": "13-linchuang-keyan-fangfa",
+          "title": "临床科研方法学",
+          "en": "Clinical Research Methodology",
+          "type": "Build",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "试验设计→随机化算法 / 真实世界研究→因果推断",
+          "path": "departments/06-guanli/13-linchuang-keyan-fangfa",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/06-guanli/13-linchuang-keyan-fangfa",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/06-guanli/13-linchuang-keyan-fangfa",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 14,
+          "globalN": 89,
+          "slug": "14-zhishichanquan-zhuanhua",
+          "title": "中医药知识产权与成果转化",
+          "en": "TCM IP & Commercialization",
+          "type": "Reference",
+          "semester": 8,
+          "stage": "zhuang",
+          "hours": 36,
+          "chaptersTarget": 6,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "专利检索→文本相似 / 转化路径→决策支持",
+          "path": "departments/06-guanli/14-zhishichanquan-zhuanhua",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/06-guanli/14-zhishichanquan-zhuanhua",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/06-guanli/14-zhishichanquan-zhuanhua",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 15,
+          "globalN": 90,
+          "slug": "15-zhongyi-guojijiaoyu",
+          "title": "中医国际教育与传播",
+          "en": "International TCM Education",
+          "type": "Reference",
+          "semester": 8,
+          "stage": "zhuang",
+          "hours": 36,
+          "chaptersTarget": 6,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "多语种教材→i18n 流水线 / 术语对齐→跨语言嵌入",
+          "path": "departments/06-guanli/15-zhongyi-guojijiaoyu",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/06-guanli/15-zhongyi-guojijiaoyu",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/06-guanli/15-zhongyi-guojijiaoyu",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "slug": "07-zhineng",
+      "title": "智能系",
+      "en": "Intelligent TCM",
+      "icon": "🤖",
+      "focus": "中医 x 人工智能：架构、数据、模型、设备与治理（本项目的工程引擎）",
+      "path": "departments/07-zhineng",
+      "hours": 990,
+      "chapters": 140,
+      "subjects": [
+        {
+          "n": 1,
+          "globalN": 91,
+          "slug": "01-yixue-rengong-zhineng-daolun",
+          "title": "医学人工智能导论",
+          "en": "Introduction to Medical AI",
+          "type": "Core",
+          "semester": 3,
+          "stage": "sheng",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "感知机→从零实现 / 梯度下降→手写训练循环 / 交叉验证→泛化评估",
+          "path": "departments/07-zhineng/01-yixue-rengong-zhineng-daolun",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/07-zhineng/01-yixue-rengong-zhineng-daolun",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/07-zhineng/01-yixue-rengong-zhineng-daolun",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 2,
+          "globalN": 92,
+          "slug": "02-zhongyi-ruanjian-jiagou-xue",
+          "title": "中医软件架构学",
+          "en": "TCM Software Architecture",
+          "type": "Build",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "分层架构→领域驱动设计 / API→契约优先",
+          "path": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/07-zhineng/02-zhongyi-ruanjian-jiagou-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/07-zhineng/02-zhongyi-ruanjian-jiagou-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 3,
+          "globalN": 93,
+          "slug": "03-zhongyi-zhineng-shebei",
+          "title": "中医智能设备与可穿戴设备",
+          "en": "TCM Smart Devices & Wearables",
+          "type": "Build",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "脉象/舌象采集→传感器融合 / 边缘推理→模型量化",
+          "path": "departments/07-zhineng/03-zhongyi-zhineng-shebei",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/07-zhineng/03-zhongyi-zhineng-shebei",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/07-zhineng/03-zhongyi-zhineng-shebei",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 4,
+          "globalN": 94,
+          "slug": "04-zhongyi-ziran-yuyan-chuli",
+          "title": "中医自然语言处理",
+          "en": "TCM Natural Language Processing",
+          "type": "Build",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "医案分词→BPE 从零 / 实体识别→序列标注",
+          "path": "departments/07-zhineng/04-zhongyi-ziran-yuyan-chuli",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/07-zhineng/04-zhongyi-ziran-yuyan-chuli",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/07-zhineng/04-zhongyi-ziran-yuyan-chuli",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 5,
+          "globalN": 95,
+          "slug": "05-zhongyi-zhishi-tupu",
+          "title": "中医知识图谱",
+          "en": "TCM Knowledge Graph",
+          "type": "Build",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "实体关系→三元组抽取 / 推理→图神经网络",
+          "path": "departments/07-zhineng/05-zhongyi-zhishi-tupu",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/07-zhineng/05-zhongyi-zhishi-tupu",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/07-zhineng/05-zhongyi-zhishi-tupu",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 6,
+          "globalN": 96,
+          "slug": "06-zhongyi-zhineng-bianzheng",
+          "title": "中医智能辨证系统",
+          "en": "Intelligent TCM Syndrome Differentiation",
+          "type": "Build",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "四诊合参→多模态融合 / 证型输出→可解释性",
+          "path": "departments/07-zhineng/06-zhongyi-zhineng-bianzheng",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/07-zhineng/06-zhongyi-zhineng-bianzheng",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/07-zhineng/06-zhongyi-zhineng-bianzheng",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 7,
+          "globalN": 97,
+          "slug": "07-yixue-tuxiang-shezhen",
+          "title": "医学图像处理与舌诊客观化",
+          "en": "Medical Imaging & Tongue Diagnosis",
+          "type": "Build",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "舌象分割→CNN / 颜色校正→色彩空间变换",
+          "path": "departments/07-zhineng/07-yixue-tuxiang-shezhen",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/07-zhineng/07-yixue-tuxiang-shezhen",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/07-zhineng/07-yixue-tuxiang-shezhen",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 8,
+          "globalN": 98,
+          "slug": "08-maizhen-keguanhua",
+          "title": "脉诊客观化与信号处理",
+          "en": "Pulse Diagnosis Signal Processing",
+          "type": "Build",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "脉搏波→小波变换 / 特征提取→时频分析",
+          "path": "departments/07-zhineng/08-maizhen-keguanhua",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/07-zhineng/08-maizhen-keguanhua",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/07-zhineng/08-maizhen-keguanhua",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 9,
+          "globalN": 99,
+          "slug": "09-zhongyi-dashuju-fenxi",
+          "title": "中医大数据分析",
+          "en": "TCM Big Data Analytics",
+          "type": "Build",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "医案仓库→ETL / 证型聚类→无监督学习",
+          "path": "departments/07-zhineng/09-zhongyi-dashuju-fenxi",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/07-zhineng/09-zhongyi-dashuju-fenxi",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/07-zhineng/09-zhongyi-dashuju-fenxi",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 10,
+          "globalN": 100,
+          "slug": "10-llm-yu-zhongyi-zhinengti",
+          "title": "大语言模型与中医智能体",
+          "en": "LLMs & TCM Agents",
+          "type": "Build",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 90,
+          "chaptersTarget": 12,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "君臣佐使→注意力从零实现 / 方证对应→RAG / 辨证论治→ReAct 智能体 / 经典检索→MCP 服务",
+          "path": "departments/07-zhineng/10-llm-yu-zhongyi-zhinengti",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/07-zhineng/10-llm-yu-zhongyi-zhinengti",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/07-zhineng/10-llm-yu-zhongyi-zhinengti",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 11,
+          "globalN": 101,
+          "slug": "11-zhongyi-jiqiren-xue",
+          "title": "中医机器人学",
+          "en": "TCM Robotics",
+          "type": "Build",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "机械臂推拿→运动学正逆解 / 力控→阻抗控制",
+          "path": "departments/07-zhineng/11-zhongyi-jiqiren-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/07-zhineng/11-zhongyi-jiqiren-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/07-zhineng/11-zhongyi-jiqiren-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 12,
+          "globalN": 102,
+          "slug": "12-shuzi-renti-xuni-fangzhen",
+          "title": "数字人体与虚拟仿真",
+          "en": "Digital Human & Simulation",
+          "type": "Build",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "经络三维建模→网格几何 / 虚拟针刺→碰撞检测",
+          "path": "departments/07-zhineng/12-shuzi-renti-xuni-fangzhen",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/07-zhineng/12-shuzi-renti-xuni-fangzhen",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/07-zhineng/12-shuzi-renti-xuni-fangzhen",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 13,
+          "globalN": 103,
+          "slug": "13-zhongyi-duomotai-ronghe",
+          "title": "中医多模态数据融合",
+          "en": "TCM Multimodal Fusion",
+          "type": "Build",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "望闻问切→跨模态对齐 / 融合层→注意力机制",
+          "path": "departments/07-zhineng/13-zhongyi-duomotai-ronghe",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/07-zhineng/13-zhongyi-duomotai-ronghe",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/07-zhineng/13-zhongyi-duomotai-ronghe",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 14,
+          "globalN": 104,
+          "slug": "14-yixue-shuju-anquan-yinsi",
+          "title": "医学数据安全与隐私保护",
+          "en": "Medical Data Security & Privacy",
+          "type": "Build",
+          "semester": 8,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "脱敏→k-匿名 / 联邦学习→差分隐私",
+          "path": "departments/07-zhineng/14-yixue-shuju-anquan-yinsi",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/07-zhineng/14-yixue-shuju-anquan-yinsi",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/07-zhineng/14-yixue-shuju-anquan-yinsi",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 15,
+          "globalN": 105,
+          "slug": "15-zhongyi-ai-lunli-zhili",
+          "title": "中医AI伦理与治理",
+          "en": "TCM AI Ethics & Governance",
+          "type": "Build",
+          "semester": 8,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "可解释性→SHAP 从零 / 模型卡→治理文档",
+          "path": "departments/07-zhineng/15-zhongyi-ai-lunli-zhili",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/07-zhineng/15-zhongyi-ai-lunli-zhili",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/07-zhineng/15-zhongyi-ai-lunli-zhili",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "slug": "08-wuguan",
+      "title": "五官口腔系",
+      "en": "Otorhinolaryngology & Stomatology",
+      "icon": "👁️",
+      "focus": "眼、耳鼻喉、口腔三科的经典辨证与现代诊疗技术",
+      "path": "departments/08-wuguan",
+      "hours": 918,
+      "chapters": 132,
+      "subjects": [
+        {
+          "n": 1,
+          "globalN": 106,
+          "slug": "01-erbihou-jiepou-shengli",
+          "title": "耳鼻喉解剖生理学",
+          "en": "ENT Anatomy & Physiology",
+          "type": "Core",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "腔道结构→三维建模 / 生理信号→声学分析",
+          "path": "departments/08-wuguan/01-erbihou-jiepou-shengli",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/08-wuguan/01-erbihou-jiepou-shengli",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/08-wuguan/01-erbihou-jiepou-shengli",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 2,
+          "globalN": 107,
+          "slug": "02-kouqiang-jiepou-shengli",
+          "title": "口腔解剖生理学",
+          "en": "Oral Anatomy & Physiology",
+          "type": "Core",
+          "semester": 4,
+          "stage": "sheng",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "牙列形态→几何建模 / 咬合→力学仿真",
+          "path": "departments/08-wuguan/02-kouqiang-jiepou-shengli",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/08-wuguan/02-kouqiang-jiepou-shengli",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/08-wuguan/02-kouqiang-jiepou-shengli",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 3,
+          "globalN": 108,
+          "slug": "03-zhongyi-mianbu-wangzhen",
+          "title": "中医面部望诊学",
+          "en": "TCM Facial Inspection",
+          "type": "Build",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "面色分区→图像配准 / 面色分类→色彩直方图",
+          "path": "departments/08-wuguan/03-zhongyi-mianbu-wangzhen",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/08-wuguan/03-zhongyi-mianbu-wangzhen",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/08-wuguan/03-zhongyi-mianbu-wangzhen",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 4,
+          "globalN": 109,
+          "slug": "04-yanke-guangxue-yanguang",
+          "title": "眼科光学与验光",
+          "en": "Ophthalmic Optics & Refraction",
+          "type": "Build",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "屈光计算→光学公式 / 验光数据→球柱换算",
+          "path": "departments/08-wuguan/04-yanke-guangxue-yanguang",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/08-wuguan/04-yanke-guangxue-yanguang",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/08-wuguan/04-yanke-guangxue-yanguang",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 5,
+          "globalN": 110,
+          "slug": "05-zhongyi-wuguan-jingdian",
+          "title": "中医五官科经典选读",
+          "en": "Selected ENT/Stomato Classics",
+          "type": "Reference",
+          "semester": 5,
+          "stage": "zhang",
+          "hours": 36,
+          "chaptersTarget": 6,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "原文检索→向量库 / 方证归纳→规则抽取",
+          "path": "departments/08-wuguan/05-zhongyi-wuguan-jingdian",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/08-wuguan/05-zhongyi-wuguan-jingdian",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/08-wuguan/05-zhongyi-wuguan-jingdian",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 6,
+          "globalN": 111,
+          "slug": "06-zhongyi-yanke-xue",
+          "title": "中医眼科学",
+          "en": "TCM Ophthalmology",
+          "type": "Clinic",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "五轮八廓→分层模型 / 眼底图像→病灶检测",
+          "path": "departments/08-wuguan/06-zhongyi-yanke-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/08-wuguan/06-zhongyi-yanke-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/08-wuguan/06-zhongyi-yanke-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 7,
+          "globalN": 112,
+          "slug": "07-zhongyi-erbihou-xue",
+          "title": "中医耳鼻喉科学",
+          "en": "TCM Otorhinolaryngology",
+          "type": "Clinic",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "耳鼻喉辨证→多标签分类 / 嗓音数据→声学特征",
+          "path": "departments/08-wuguan/07-zhongyi-erbihou-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/08-wuguan/07-zhongyi-erbihou-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/08-wuguan/07-zhongyi-erbihou-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 8,
+          "globalN": 113,
+          "slug": "08-zhongyi-kouqiang-kexue",
+          "title": "中医口腔科学",
+          "en": "TCM Stomatology",
+          "type": "Clinic",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "口腔辨证→黏膜图像分类 / 治疗计划→决策支持",
+          "path": "departments/08-wuguan/08-zhongyi-kouqiang-kexue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/08-wuguan/08-zhongyi-kouqiang-kexue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/08-wuguan/08-zhongyi-kouqiang-kexue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 9,
+          "globalN": 114,
+          "slug": "09-kouqiang-neike-xue",
+          "title": "口腔内科学",
+          "en": "Oral Medicine",
+          "type": "Clinic",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "龋病分级→有序分类 / X 线影像→语义分割",
+          "path": "departments/08-wuguan/09-kouqiang-neike-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/08-wuguan/09-kouqiang-neike-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/08-wuguan/09-kouqiang-neike-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 10,
+          "globalN": 115,
+          "slug": "10-yanke-yingxiang-jiancha",
+          "title": "眼科影像与检查技术",
+          "en": "Ophthalmic Imaging & Examination",
+          "type": "Build",
+          "semester": 6,
+          "stage": "zhang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "OCT/眼底→CNN / 视野检查→缺损图谱分析",
+          "path": "departments/08-wuguan/10-yanke-yingxiang-jiancha",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/08-wuguan/10-yanke-yingxiang-jiancha",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/08-wuguan/10-yanke-yingxiang-jiancha",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 11,
+          "globalN": 116,
+          "slug": "11-kouqiang-hemian-waike",
+          "title": "口腔颌面外科学",
+          "en": "Oral & Maxillofacial Surgery",
+          "type": "Clinic",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "颌面重建→三维规划 / 手术导航→配准算法",
+          "path": "departments/08-wuguan/11-kouqiang-hemian-waike",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/08-wuguan/11-kouqiang-hemian-waike",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/08-wuguan/11-kouqiang-hemian-waike",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 12,
+          "globalN": 117,
+          "slug": "12-kouqiang-xiufu-xue",
+          "title": "口腔修复学",
+          "en": "Prosthodontics",
+          "type": "Clinic",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "义齿设计→参数化 CAD / 咬合重建→力学优化",
+          "path": "departments/08-wuguan/12-kouqiang-xiufu-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/08-wuguan/12-kouqiang-xiufu-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/08-wuguan/12-kouqiang-xiufu-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 13,
+          "globalN": 118,
+          "slug": "13-kouqiang-zhengji-xue",
+          "title": "口腔正畸学",
+          "en": "Orthodontics",
+          "type": "Clinic",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 72,
+          "chaptersTarget": 10,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "头影测量→关键点检测 / 拔牙决策→分类模型",
+          "path": "departments/08-wuguan/13-kouqiang-zhengji-xue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/08-wuguan/13-kouqiang-zhengji-xue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/08-wuguan/13-kouqiang-zhengji-xue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 14,
+          "globalN": 119,
+          "slug": "14-zhongyi-sangyin-yixue",
+          "title": "中医嗓音医学",
+          "en": "TCM Voice Medicine",
+          "type": "Build",
+          "semester": 7,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "嗓音信号→谱图分类 / 发声训练→生物反馈",
+          "path": "departments/08-wuguan/14-zhongyi-sangyin-yixue",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/08-wuguan/14-zhongyi-sangyin-yixue",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/08-wuguan/14-zhongyi-sangyin-yixue",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        },
+        {
+          "n": 15,
+          "globalN": 120,
+          "slug": "15-zhongyi-meirong-pifu",
+          "title": "中医美容与皮肤治疗学",
+          "en": "TCM Cosmetology & Dermatology",
+          "type": "Build",
+          "semester": 8,
+          "stage": "zhuang",
+          "hours": 54,
+          "chaptersTarget": 8,
+          "chaptersBuilt": 0,
+          "pct": 0,
+          "status": "planned",
+          "glyph": "⬚",
+          "bridge": "皮肤图像→病变分割 / 面部年轻化→图像评价",
+          "path": "departments/08-wuguan/15-zhongyi-meirong-pifu",
+          "platform": {
+            "id": "tcmP",
+            "coursePath": "platform/courses/08-wuguan/15-zhongyi-meirong-pifu",
+            "videosPublished": 0,
+            "status": "planned"
+          },
+          "textbook": {
+            "id": "textbooks",
+            "path": "textbooks/08-wuguan/15-zhongyi-meirong-pifu",
+            "chaptersWritten": 0,
+            "words": 0,
+            "status": "planned"
+          }
+        }
+      ]
+    }
+  ]
+};

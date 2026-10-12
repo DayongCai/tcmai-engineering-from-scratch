@@ -1,0 +1,29 @@
+{
+  "slug": "12-jiwei-zhengzheng-huli",
+  "title": "急危重症护理学",
+  "en": "Critical Care Nursing",
+  "deptSlug": "05-huli",
+  "deptTitle": "护理系",
+  "globalN": 72,
+  "type": "Clinic",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 72,
+  "bridge": "危重评分→风险模型 / 抢救流程→实时决策支持",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/05-huli/12-jiwei-zhengzheng-huli",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/05-huli/12-jiwei-zhengzheng-huli",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

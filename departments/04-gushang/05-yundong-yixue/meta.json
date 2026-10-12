@@ -1,0 +1,29 @@
+{
+  "slug": "05-yundong-yixue",
+  "title": "运动医学与损伤防护",
+  "en": "Sports Medicine & Injury Prevention",
+  "deptSlug": "04-gushang",
+  "deptTitle": "骨伤系",
+  "globalN": 50,
+  "type": "Build",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "损伤预测→幸存分析 / 负荷管理→时序模型",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/04-gushang/05-yundong-yixue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/04-gushang/05-yundong-yixue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

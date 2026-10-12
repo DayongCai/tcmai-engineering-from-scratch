@@ -1,0 +1,29 @@
+{
+  "slug": "02-shuxue-xue",
+  "title": "腧穴学",
+  "en": "Acupoint Theory",
+  "deptSlug": "03-zhenjiu",
+  "deptTitle": "针灸系",
+  "globalN": 32,
+  "type": "Core",
+  "semester": 3,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 90,
+  "bridge": "腧穴定位→三维坐标 / 取穴→KD-Tree 最近邻",
+  "chaptersTarget": 12,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/03-zhenjiu/02-shuxue-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/03-zhenjiu/02-shuxue-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

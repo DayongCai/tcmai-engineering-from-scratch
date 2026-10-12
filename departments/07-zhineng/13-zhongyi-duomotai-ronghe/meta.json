@@ -1,0 +1,29 @@
+{
+  "slug": "13-zhongyi-duomotai-ronghe",
+  "title": "中医多模态数据融合",
+  "en": "TCM Multimodal Fusion",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 103,
+  "type": "Build",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 72,
+  "bridge": "望闻问切→跨模态对齐 / 融合层→注意力机制",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/13-zhongyi-duomotai-ronghe",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/13-zhongyi-duomotai-ronghe",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

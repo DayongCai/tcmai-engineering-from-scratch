@@ -1,0 +1,29 @@
+{
+  "slug": "11-kouqiang-hemian-waike",
+  "title": "口腔颌面外科学",
+  "en": "Oral & Maxillofacial Surgery",
+  "deptSlug": "08-wuguan",
+  "deptTitle": "五官口腔系",
+  "globalN": 116,
+  "type": "Clinic",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 72,
+  "bridge": "颌面重建→三维规划 / 手术导航→配准算法",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/08-wuguan/11-kouqiang-hemian-waike",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/08-wuguan/11-kouqiang-hemian-waike",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

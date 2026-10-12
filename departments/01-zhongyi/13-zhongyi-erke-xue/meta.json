@@ -1,0 +1,29 @@
+{
+  "slug": "13-zhongyi-erke-xue",
+  "title": "中医儿科学",
+  "en": "TCM Pediatrics",
+  "deptSlug": "01-zhongyi",
+  "deptTitle": "中医系",
+  "globalN": 13,
+  "type": "Clinic",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "小儿剂量→规则引擎 / 儿科辨证→ReAct 智能体",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/01-zhongyi/13-zhongyi-erke-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/01-zhongyi/13-zhongyi-erke-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

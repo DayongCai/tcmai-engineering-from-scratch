@@ -1,0 +1,29 @@
+{
+  "slug": "02-zhongyi-ruanjian-jiagou-xue",
+  "title": "中医软件架构学",
+  "en": "TCM Software Architecture",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 92,
+  "type": "Build",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 72,
+  "bridge": "分层架构→领域驱动设计 / API→契约优先",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/02-zhongyi-ruanjian-jiagou-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/02-zhongyi-ruanjian-jiagou-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

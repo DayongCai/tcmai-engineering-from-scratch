@@ -1,0 +1,29 @@
+{
+  "slug": "15-gushang-kangfu-pingding",
+  "title": "骨伤康复评定",
+  "en": "Orthopedic Rehab Assessment",
+  "deptSlug": "04-gushang",
+  "deptTitle": "骨伤系",
+  "globalN": 60,
+  "type": "Build",
+  "semester": 8,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 54,
+  "bridge": "评定量表→信效度分析 / 康复进度→增长曲线模型",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/04-gushang/15-gushang-kangfu-pingding",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/04-gushang/15-gushang-kangfu-pingding",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "07-zhongyao-yaoli-xue",
+  "title": "中药药理学",
+  "en": "TCM Pharmacology",
+  "deptSlug": "02-zhongyao",
+  "deptTitle": "中药系",
+  "globalN": 22,
+  "type": "Core",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "药效实验→剂量-反应拟合 / 网络药理→图算法",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/02-zhongyao/07-zhongyao-yaoli-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/02-zhongyao/07-zhongyao-yaoli-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "05-zhongyi-wuguan-jingdian",
+  "title": "中医五官科经典选读",
+  "en": "Selected ENT/Stomato Classics",
+  "deptSlug": "08-wuguan",
+  "deptTitle": "五官口腔系",
+  "globalN": 110,
+  "type": "Reference",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 36,
+  "bridge": "原文检索→向量库 / 方证归纳→规则抽取",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/08-wuguan/05-zhongyi-wuguan-jingdian",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/08-wuguan/05-zhongyi-wuguan-jingdian",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

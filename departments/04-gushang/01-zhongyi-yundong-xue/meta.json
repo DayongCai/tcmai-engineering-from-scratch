@@ -1,0 +1,29 @@
+{
+  "slug": "01-zhongyi-yundong-xue",
+  "title": "中医运动学",
+  "en": "TCM Kinesiology",
+  "deptSlug": "04-gushang",
+  "deptTitle": "骨伤系",
+  "globalN": 46,
+  "type": "Core",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "导引术式→动作序列 / 运动学参数→运动捕捉",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/04-gushang/01-zhongyi-yundong-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/04-gushang/01-zhongyi-yundong-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

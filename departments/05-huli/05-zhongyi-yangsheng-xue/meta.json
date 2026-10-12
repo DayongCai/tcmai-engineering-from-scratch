@@ -1,0 +1,29 @@
+{
+  "slug": "05-zhongyi-yangsheng-xue",
+  "title": "中医养生学",
+  "en": "TCM Health Cultivation",
+  "deptSlug": "05-huli",
+  "deptTitle": "护理系",
+  "globalN": 65,
+  "type": "Core",
+  "semester": 3,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "体质养生→个性化推荐 / 生活处方→规则引擎",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/05-huli/05-zhongyi-yangsheng-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/05-huli/05-zhongyi-yangsheng-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

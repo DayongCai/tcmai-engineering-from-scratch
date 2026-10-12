@@ -1,0 +1,29 @@
+{
+  "slug": "09-kangfu-yixue-jichu",
+  "title": "康复医学基础",
+  "en": "Foundations of Rehabilitation",
+  "deptSlug": "03-zhenjiu",
+  "deptTitle": "针灸系",
+  "globalN": 39,
+  "type": "Core",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "功能评定→量表计分 / 康复计划→路径搜索",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/03-zhenjiu/09-kangfu-yixue-jichu",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/03-zhenjiu/09-kangfu-yixue-jichu",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

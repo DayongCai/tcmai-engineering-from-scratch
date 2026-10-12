@@ -1,0 +1,29 @@
+{
+  "slug": "04-qigong-xue",
+  "title": "中医气功学",
+  "en": "TCM Qigong",
+  "deptSlug": "03-zhenjiu",
+  "deptTitle": "针灸系",
+  "globalN": 34,
+  "type": "Reference",
+  "semester": 3,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 36,
+  "bridge": "呼吸节律→时序信号 / 功法教学→动作识别",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/03-zhenjiu/04-qigong-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/03-zhenjiu/04-qigong-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

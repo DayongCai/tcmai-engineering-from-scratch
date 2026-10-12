@@ -1,0 +1,29 @@
+{
+  "slug": "12-zhongyiyao-biaozhunhua",
+  "title": "中医药标准化",
+  "en": "TCM Standardization",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 87,
+  "type": "Build",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 54,
+  "bridge": "证候术语→本体与编码 / 标准符合性→自动核查",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/12-zhongyiyao-biaozhunhua",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/12-zhongyiyao-biaozhunhua",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

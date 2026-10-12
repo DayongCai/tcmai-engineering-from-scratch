@@ -1,0 +1,29 @@
+{
+  "slug": "06-zhongyi-zhineng-bianzheng",
+  "title": "中医智能辨证系统",
+  "en": "Intelligent TCM Syndrome Differentiation",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 96,
+  "type": "Build",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "四诊合参→多模态融合 / 证型输出→可解释性",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/06-zhongyi-zhineng-bianzheng",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/06-zhongyi-zhineng-bianzheng",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

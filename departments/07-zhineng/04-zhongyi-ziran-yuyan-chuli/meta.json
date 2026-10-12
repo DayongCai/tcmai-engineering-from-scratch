@@ -1,0 +1,29 @@
+{
+  "slug": "04-zhongyi-ziran-yuyan-chuli",
+  "title": "中医自然语言处理",
+  "en": "TCM Natural Language Processing",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 94,
+  "type": "Build",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "医案分词→BPE 从零 / 实体识别→序列标注",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/04-zhongyi-ziran-yuyan-chuli",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/04-zhongyi-ziran-yuyan-chuli",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

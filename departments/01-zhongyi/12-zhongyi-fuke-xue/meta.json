@@ -1,0 +1,29 @@
+{
+  "slug": "12-zhongyi-fuke-xue",
+  "title": "中医妇科学",
+  "en": "TCM Gynecology",
+  "deptSlug": "01-zhongyi",
+  "deptTitle": "中医系",
+  "globalN": 12,
+  "type": "Clinic",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "月经周期→周期序列模型 / 妇科辨证→智能体",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/01-zhongyi/12-zhongyi-fuke-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/01-zhongyi/12-zhongyi-fuke-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "05-tuina-xue",
+  "title": "推拿学",
+  "en": "Tui Na (Chinese Massage)",
+  "deptSlug": "03-zhenjiu",
+  "deptTitle": "针灸系",
+  "globalN": 35,
+  "type": "Clinic",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 72,
+  "bridge": "手法参数→力-时曲线 / 疗效评价→量表分析",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/03-zhenjiu/05-tuina-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/03-zhenjiu/05-tuina-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

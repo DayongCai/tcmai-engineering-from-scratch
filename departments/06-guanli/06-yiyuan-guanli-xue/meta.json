@@ -1,0 +1,29 @@
+{
+  "slug": "06-yiyuan-guanli-xue",
+  "title": "医院管理学",
+  "en": "Hospital Management",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 81,
+  "type": "Clinic",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "门诊流程→排队论仿真 / 床位调度→离散事件仿真",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/06-yiyuan-guanli-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/06-yiyuan-guanli-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

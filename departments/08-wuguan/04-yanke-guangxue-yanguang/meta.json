@@ -1,0 +1,29 @@
+{
+  "slug": "04-yanke-guangxue-yanguang",
+  "title": "眼科光学与验光",
+  "en": "Ophthalmic Optics & Refraction",
+  "deptSlug": "08-wuguan",
+  "deptTitle": "五官口腔系",
+  "globalN": 109,
+  "type": "Build",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "屈光计算→光学公式 / 验光数据→球柱换算",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/08-wuguan/04-yanke-guangxue-yanguang",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/08-wuguan/04-yanke-guangxue-yanguang",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

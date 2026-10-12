@@ -1,0 +1,29 @@
+{
+  "slug": "03-zhongyi-mianbu-wangzhen",
+  "title": "中医面部望诊学",
+  "en": "TCM Facial Inspection",
+  "deptSlug": "08-wuguan",
+  "deptTitle": "五官口腔系",
+  "globalN": 108,
+  "type": "Build",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "面色分区→图像配准 / 面色分类→色彩直方图",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/08-wuguan/03-zhongyi-mianbu-wangzhen",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/08-wuguan/03-zhongyi-mianbu-wangzhen",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

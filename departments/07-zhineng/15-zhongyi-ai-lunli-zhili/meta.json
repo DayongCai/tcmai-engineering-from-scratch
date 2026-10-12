@@ -1,0 +1,29 @@
+{
+  "slug": "15-zhongyi-ai-lunli-zhili",
+  "title": "中医AI伦理与治理",
+  "en": "TCM AI Ethics & Governance",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 105,
+  "type": "Build",
+  "semester": 8,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 54,
+  "bridge": "可解释性→SHAP 从零 / 模型卡→治理文档",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/15-zhongyi-ai-lunli-zhili",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/15-zhongyi-ai-lunli-zhili",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

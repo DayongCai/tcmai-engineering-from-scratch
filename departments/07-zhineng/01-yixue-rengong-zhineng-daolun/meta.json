@@ -1,0 +1,29 @@
+{
+  "slug": "01-yixue-rengong-zhineng-daolun",
+  "title": "医学人工智能导论",
+  "en": "Introduction to Medical AI",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 91,
+  "type": "Core",
+  "semester": 3,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "从零实现感知机 / 梯度下降 / 交叉验证",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/01-yixue-rengong-zhineng-daolun",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/01-yixue-rengong-zhineng-daolun",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

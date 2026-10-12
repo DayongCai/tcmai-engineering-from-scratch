@@ -1,0 +1,29 @@
+{
+  "slug": "10-zhongyi-neike-xue",
+  "title": "中医内科学",
+  "en": "TCM Internal Medicine",
+  "deptSlug": "01-zhongyi",
+  "deptTitle": "中医系",
+  "globalN": 10,
+  "type": "Clinic",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 108,
+  "bridge": "脏腑辨证→决策树 / 证型→集成分类",
+  "chaptersTarget": 14,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/01-zhongyi/10-zhongyi-neike-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/01-zhongyi/10-zhongyi-neike-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

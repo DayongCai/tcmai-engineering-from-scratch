@@ -1,0 +1,29 @@
+{
+  "slug": "09-wenbing-xue",
+  "title": "温病学",
+  "en": "Warm Disease Theory",
+  "deptSlug": "01-zhongyi",
+  "deptTitle": "中医系",
+  "globalN": 9,
+  "type": "Core",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "卫气营血→分层状态机 / 传变→时序模型",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/01-zhongyi/09-wenbing-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/01-zhongyi/09-wenbing-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

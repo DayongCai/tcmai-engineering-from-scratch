@@ -1,0 +1,29 @@
+{
+  "slug": "09-yiliao-baoxian-jingji",
+  "title": "医疗保险与卫生经济",
+  "en": "Health Insurance & Economics",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 84,
+  "type": "Reference",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "医保支付→成本效果分析 / 费用预测→时间序列",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/09-yiliao-baoxian-jingji",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/09-yiliao-baoxian-jingji",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

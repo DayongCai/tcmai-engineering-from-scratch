@@ -1,0 +1,29 @@
+{
+  "slug": "14-zhishichanquan-zhuanhua",
+  "title": "中医药知识产权与成果转化",
+  "en": "TCM IP & Commercialization",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 89,
+  "type": "Reference",
+  "semester": 8,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 36,
+  "bridge": "专利检索→文本相似 / 转化路径→决策支持",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/14-zhishichanquan-zhuanhua",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/14-zhishichanquan-zhuanhua",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

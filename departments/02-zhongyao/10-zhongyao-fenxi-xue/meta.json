@@ -1,0 +1,29 @@
+{
+  "slug": "10-zhongyao-fenxi-xue",
+  "title": "中药分析学",
+  "en": "TCM Analysis",
+  "deptSlug": "02-zhongyao",
+  "deptTitle": "中药系",
+  "globalN": 25,
+  "type": "Build",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "指纹图谱→降维与相似度 / 光谱数据→PLS 回归",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/02-zhongyao/10-zhongyao-fenxi-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/02-zhongyao/10-zhongyao-fenxi-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

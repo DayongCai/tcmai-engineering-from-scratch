@@ -1,0 +1,29 @@
+{
+  "slug": "08-zhongyi-kouqiang-kexue",
+  "title": "中医口腔科学",
+  "en": "TCM Stomatology",
+  "deptSlug": "08-wuguan",
+  "deptTitle": "五官口腔系",
+  "globalN": 113,
+  "type": "Clinic",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "口腔辨证→黏膜图像分类 / 治疗计划→决策支持",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/08-wuguan/08-zhongyi-kouqiang-kexue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/08-wuguan/08-zhongyi-kouqiang-kexue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

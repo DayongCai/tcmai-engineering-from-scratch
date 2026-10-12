@@ -1,0 +1,49 @@
+{
+  "lesson": "NN-chapter-slug",
+  "title": "章节标题",
+  "subject": "MM-subject-slug",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "前置自测：本课开始前，你应该已经具备的能力是？",
+      "options": ["选项 A", "选项 B", "选项 C", "选项 D"],
+      "correct": 0,
+      "explanation": "说明为什么这是前置条件，以及不满足时该先回去看哪一章。"
+    },
+    {
+      "stage": "check",
+      "question": "过程检查 1：核心概念的理解。",
+      "options": ["选项 A", "选项 B", "选项 C", "选项 D"],
+      "correct": 1,
+      "explanation": "解释正确项，并指出错误项的典型误区。"
+    },
+    {
+      "stage": "check",
+      "question": "过程检查 2：代码实现的关键细节。",
+      "options": ["选项 A", "选项 B", "选项 C", "选项 D"],
+      "correct": 2,
+      "explanation": "解释正确项。"
+    },
+    {
+      "stage": "check",
+      "question": "过程检查 3：中医 → AI 桥梁的合理性。",
+      "options": ["选项 A", "选项 B", "选项 C", "选项 D"],
+      "correct": 3,
+      "explanation": "解释正确项。"
+    },
+    {
+      "stage": "post",
+      "question": "课后检验 1：能否把本课方法迁移到一个新的证候/场景？",
+      "options": ["选项 A", "选项 B", "选项 C", "选项 D"],
+      "correct": 0,
+      "explanation": "解释正确项。"
+    },
+    {
+      "stage": "post",
+      "question": "课后检验 2：本方法的临床/工程边界在哪里？",
+      "options": ["选项 A", "选项 B", "选项 C", "选项 D"],
+      "correct": 1,
+      "explanation": "解释正确项，并明确写出不应使用的场景。"
+    }
+  ]
+}

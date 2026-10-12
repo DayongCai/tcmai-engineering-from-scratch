@@ -1,0 +1,171 @@
+name: curriculum
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: curriculum-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ── 阻断门：课程结构与章节契约 ──────────────────────────────
+  audit:
+    name: "课程审计（结构 + 契约）"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 生成课程表与索引
+        run: |
+          node scripts/build_catalog.js
+          node scripts/build_roadmap.js
+          node scripts/build_doc_indexes.js
+
+      - name: L0/L1/L2 三层审计
+        run: node scripts/audit_curriculum.js
+
+      - name: 学习路径校验
+        run: node tests/test_learning_paths.js
+
+      - name: 课程结构与章节契约测试
+        run: node tests/test_curriculum_contract.js
+
+      - name: 桥梁表与术语表校验
+        run: node tests/test_glossary_bridge.js
+
+      - name: 内容复核（机器可判部分）
+        run: node tests/test_content_review.js
+
+  # ── 阻断门：每个已建章节的代码必须真的能跑 ──────────────────
+  chapters:
+    name: "章节代码可执行性"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/build_catalog.js
+      - name: 逐章运行 main.js 与单元测试
+        run: node tests/test_chapter_code.js
+
+  # ── 阻断门：站点生成物形状 ─────────────────────────────────
+  site-artifacts:
+    name: "tcmP 站点构建与生成物校验"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/build_catalog.js
+      - run: node site/pages.js
+      - run: node site/build.js
+      - run: node tests/test_site_artifacts.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tcmP-site
+          path: site/
+          retention-days: 14
+
+  # ── 咨询门：README 计数漂移（main 上自愈，PR 上只提示） ──────
+  counts-drift:
+    name: "README 计数一致性（咨询）"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/build_catalog.js
+      - run: node scripts/check_readme_counts.js
+        continue-on-error: true
+
+  # ── main 自愈：重建生成物并提交 ─────────────────────────────
+  rebuild-artifacts:
+    name: "重建生成物（仅 main）"
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: [audit, chapters]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 重建 catalog / ROADMAP / 院系索引 / 站点数据
+        run: |
+          node scripts/build_catalog.js
+          node scripts/build_roadmap.js
+          node scripts/build_doc_indexes.js
+          node site/pages.js
+          node site/build.js
+
+      - name: 同步 README 计数块
+        run: node scripts/check_readme_counts.js --fix
+
+      - name: 同步 learning-paths 计数
+        run: node tests/test_learning_paths.js --fix
+
+      - name: 提交变更（无变更时跳过）
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog.json ROADMAP.md departments/ site/ learning-paths/ README.md
+          if git diff --cached --quiet; then
+            echo "无生成物变更"
+          else
+            git commit -m "chore(build): 重建生成物 [skip ci]"
+            git push
+          fi
+
+  # ── 教材流水线 ────────────────────────────────────────────
+  textbooks:
+    name: "textbooks 教材汇总与事实校核"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/build_catalog.js
+      - run: node textbooks/build_book.js --check
+      - run: node textbooks/build_book.js --all
+
+  # ── tcmP 视频流水线（第 1–3 段可跑，第 4 段需 ffmpeg） ──────
+  video-pipeline:
+    name: "tcmP 讲稿与幻灯片（不含成片）"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: 探测工具链
+        run: node platform/pipeline/check_tools.js
+      - name: 抽取讲稿与幻灯片
+        run: |
+          if [ -d platform/courses ]; then
+            for c in $(ls -d platform/courses/*/*/ 2>/dev/null | sed 's|platform/courses/||; s|/$||'); do
+              node platform/pipeline/extract_narration.js "$c" || true
+              node platform/pipeline/build_slides.js "$c" || true
+            done
+          fi
+      - name: 断言每集都有免责声明卡
+        run: node tests/assert_disclaimers.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tcmP-slides
+          path: platform/courses/**/slides/
+          retention-days: 14

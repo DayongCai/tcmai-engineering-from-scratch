@@ -1,0 +1,29 @@
+{
+  "slug": "08-jiankang-fuwu-guanli",
+  "title": "健康服务与管理",
+  "en": "Health Services & Management",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 83,
+  "type": "Build",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "健康档案→数据治理 / 干预方案→推荐系统",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/08-jiankang-fuwu-guanli",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/08-jiankang-fuwu-guanli",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

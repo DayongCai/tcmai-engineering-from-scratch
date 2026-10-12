@@ -1,0 +1,29 @@
+{
+  "slug": "10-yanke-yingxiang-jiancha",
+  "title": "眼科影像与检查技术",
+  "en": "Ophthalmic Imaging & Examination",
+  "deptSlug": "08-wuguan",
+  "deptTitle": "五官口腔系",
+  "globalN": 115,
+  "type": "Build",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "OCT/眼底→CNN / 视野检查→缺损图谱分析",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/08-wuguan/10-yanke-yingxiang-jiancha",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/08-wuguan/10-yanke-yingxiang-jiancha",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

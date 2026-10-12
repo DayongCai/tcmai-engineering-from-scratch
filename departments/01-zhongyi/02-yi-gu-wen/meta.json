@@ -1,0 +1,29 @@
+{
+  "slug": "02-yi-gu-wen",
+  "title": "医古文",
+  "en": "Classical Chinese for TCM",
+  "deptSlug": "01-zhongyi",
+  "deptTitle": "中医系",
+  "globalN": 2,
+  "type": "Core",
+  "semester": 1,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "古文分词→分词器 / 训诂→语义消歧",
+  "chaptersTarget": 8,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/01-zhongyi/02-yi-gu-wen",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/01-zhongyi/02-yi-gu-wen",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

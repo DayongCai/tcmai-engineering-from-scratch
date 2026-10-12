@@ -1,0 +1,147 @@
+{
+  "id": "clinical-track",
+  "title": "临床型",
+  "en": "Clinical Track",
+  "audience": "面向中医临床医师方向：以辨证论治能力为核心，工程能力作为临床决策支持的辅助。",
+  "outcome": "毕业时能独立完成四诊采集与辨证论治，并能为自己的判断建立可复核的证据链；能读懂一个临床决策支持系统的输出并指出其不可靠之处。",
+  "semesters": [
+    1,
+    9
+  ],
+  "subjectCount": 61,
+  "hours": 4140,
+  "route": [
+    {
+      "semester": 1,
+      "stage": "sheng",
+      "reason": "先立住中医的世界观与语言：不懂阴阳五行与古文，后面全是背不住的名词。",
+      "subjects": [
+        "01-zhongyi/01-zhongyi-jichu-lilun",
+        "01-zhongyi/02-yi-gu-wen",
+        "01-zhongyi/03-zhongguo-yixue-shi"
+      ]
+    },
+    {
+      "semester": 2,
+      "stage": "sheng",
+      "reason": "药与经络是诊断的两条腿：一边知道药性，一边知道身体的通道。",
+      "subjects": [
+        "02-zhongyao/01-zhongyaoxue",
+        "02-zhongyao/02-yaoyong-zhiwu-xue",
+        "03-zhenjiu/01-jingluo-xue",
+        "05-huli/01-zhongyi-huli-jichu",
+        "05-huli/02-jichu-huli-xue"
+      ]
+    },
+    {
+      "semester": 3,
+      "stage": "sheng",
+      "reason": "诊断学是分水岭：前两年学的所有东西，在这里第一次被要求合成一个判断。",
+      "subjects": [
+        "01-zhongyi/05-zhongyi-zhen-duan-xue",
+        "01-zhongyi/06-neijing-xuandu",
+        "02-zhongyao/03-fangjixue",
+        "03-zhenjiu/02-shuxue-xue",
+        "03-zhenjiu/03-zhenjiu-yiji-xuan",
+        "05-huli/03-jiankang-pinggu",
+        "05-huli/04-zhongyi-huli-jishu"
+      ]
+    },
+    {
+      "semester": 4,
+      "stage": "sheng",
+      "reason": "进入经典与手技：伤寒论的六经框架 + 手法这条手上的能力线。",
+      "subjects": [
+        "01-zhongyi/07-shanghanlun",
+        "01-zhongyi/04-zhongyi-tizhi-xue",
+        "03-zhenjiu/05-tuina-xue",
+        "03-zhenjiu/07-cifa-jiufa-xue",
+        "04-gushang/01-zhongyi-yundong-xue",
+        "08-wuguan/01-erbihou-jiepou-shengli"
+      ]
+    },
+    {
+      "semester": 5,
+      "stage": "zhang",
+      "reason": "临床各科全面展开：金匮的杂病框架 + 内科 + 针灸治疗，开始形成自己的处方思路。",
+      "subjects": [
+        "01-zhongyi/08-jingui-yaolue",
+        "01-zhongyi/09-wenbing-xue",
+        "01-zhongyi/10-zhongyi-neike-xue",
+        "02-zhongyao/07-zhongyao-yaoli-xue",
+        "03-zhenjiu/08-zhenjiu-zhiliao-xue",
+        "03-zhenjiu/09-kangfu-yixue-jichu",
+        "04-gushang/03-gushang-kexue-jichu",
+        "04-gushang/04-chuangshang-jijiu-xue",
+        "05-huli/07-neike-huli-xue"
+      ]
+    },
+    {
+      "semester": 6,
+      "stage": "zhang",
+      "reason": "专科化：外科、妇科、儿科、骨伤各科入场，同时补齐影像与客观化检查的读片能力。",
+      "subjects": [
+        "01-zhongyi/11-zhongyi-waike-xue",
+        "01-zhongyi/12-zhongyi-fuke-xue",
+        "01-zhongyi/13-zhongyi-erke-xue",
+        "02-zhongyao/05-zhongyao-jianding-xue",
+        "03-zhenjiu/12-erxue-zhenduan-xue",
+        "04-gushang/06-zhongyi-zhenggu-xue",
+        "04-gushang/07-zhongyi-jinshang-xue",
+        "04-gushang/09-guke-yingxiang-zhenduan",
+        "05-huli/08-waike-huli-xue",
+        "08-wuguan/06-zhongyi-yanke-xue",
+        "08-wuguan/07-zhongyi-erbihou-xue",
+        "08-wuguan/08-zhongyi-kouqiang-kexue"
+      ]
+    },
+    {
+      "semester": 7,
+      "stage": "zhuang",
+      "reason": "疑难与整合：证候学把前面所有零散辨证收拢成体系，各家学说给出历史坐标系。",
+      "subjects": [
+        "01-zhongyi/14-zhongyi-zhenghou-xue",
+        "01-zhongyi/15-zhongyi-gejia-xueshuo",
+        "02-zhongyao/13-zhongchengyao-linchuang",
+        "02-zhongyao/14-peiwu-yu-jinji",
+        "03-zhenjiu/13-zhendao-yixue",
+        "03-zhenjiu/15-zhongyi-kangfu-xue",
+        "04-gushang/10-jizhu-bing-xue",
+        "04-gushang/11-guanjie-bing-xue",
+        "04-gushang/13-zhongyi-zhengji-xue",
+        "05-huli/12-jiwei-zhengzheng-huli",
+        "06-guanli/13-linchuang-keyan-fangfa",
+        "07-zhineng/10-llm-yu-zhongyi-zhinengti"
+      ]
+    },
+    {
+      "semester": 8,
+      "stage": "zhuang",
+      "reason": "收口：伦理与证据两条底线必须在大五临床前立住。",
+      "subjects": [
+        "02-zhongyao/15-zhongyao-xinyao-yanfa",
+        "04-gushang/14-kangfu-gongcheng-zhiju",
+        "04-gushang/15-gushang-kangfu-pingding",
+        "05-huli/15-huli-yanjiu-zhengxun",
+        "06-guanli/15-zhongyi-guojijiaoyu",
+        "07-zhineng/15-zhongyi-ai-lunli-zhili",
+        "08-wuguan/15-zhongyi-meirong-pifu"
+      ]
+    },
+    {
+      "semester": 9,
+      "stage": "lao",
+      "reason": "临床轮转：不再排常规课，全部时间用于在真实病人身上把前八年练成本能。",
+      "subjects": []
+    }
+  ],
+  "capstone": {
+    "title": "临床决策支持评估与批判",
+    "deliverable": "对一个真实中医 AI 产品做完整评估报告：数据来源、性能指标、失效场景、伦理与合规风险，并给出改进方案。",
+    "criteria": [
+      "报告必须包含至少 3 个真实失效案例，并说明为什么会失效",
+      "必须给出可核查的评估方法与原始数据",
+      "必须明确写出该产品不应用于哪些临床场景"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "01-yixue-tongjixue",
+  "title": "医学统计学",
+  "en": "Medical Statistics",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 76,
+  "type": "Core",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 72,
+  "bridge": "假设检验→从零实现 / 回归→最小二乘",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/01-yixue-tongjixue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/01-yixue-tongjixue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

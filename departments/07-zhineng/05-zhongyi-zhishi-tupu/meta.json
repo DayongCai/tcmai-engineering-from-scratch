@@ -1,0 +1,29 @@
+{
+  "slug": "05-zhongyi-zhishi-tupu",
+  "title": "中医知识图谱",
+  "en": "TCM Knowledge Graph",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 95,
+  "type": "Build",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "实体关系→三元组抽取 / 推理→图神经网络",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/05-zhongyi-zhishi-tupu",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/05-zhongyi-zhishi-tupu",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

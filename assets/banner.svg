@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="tcmai-engineering-from-scratch">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#faf8f3"/>
+      <stop offset="100%" stop-color="#f2efe6"/>
+    </linearGradient>
+    <radialGradient id="jade" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1f6f5c" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#1f6f5c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="300" fill="url(#paper)"/>
+  <circle cx="1010" cy="150" r="180" fill="url(#jade)"/>
+
+  <!-- 五行：相生外圈 + 相克五角星 -->
+  <g transform="translate(1010,150)" fill="none" stroke="#1f6f5c" stroke-width="1.4" opacity="0.55">
+    <circle r="86"/>
+    <circle r="58" stroke-dasharray="4 5" opacity="0.6"/>
+  </g>
+  <g transform="translate(1010,150)" stroke="#a8321e" stroke-width="1.2" opacity="0.42" fill="none">
+    <path d="M0,-86 L81.8,26.6 L-81.8,26.6 Z"/>
+    <path d="M0,86 L81.8,-26.6 L-81.8,-26.6 Z"/>
+  </g>
+  <g transform="translate(1010,150)" font-family="Georgia, serif" font-size="19" fill="#1f6f5c" text-anchor="middle">
+    <text y="-88">木</text>
+    <text x="88" y="7">火</text>
+    <text x="56" y="76">土</text>
+    <text x="-56" y="76">金</text>
+    <text x="-88" y="7">水</text>
+  </g>
+
+  <!-- 标题 -->
+  <g transform="translate(64,112)">
+    <text font-family="Georgia, 'Songti SC', serif" font-size="52" fill="#1b1a17" letter-spacing="0.5">
+      中医药 · 从零工程
+    </text>
+    <text y="34" font-family="ui-monospace, Consolas, monospace" font-size="15"
+          fill="#6f6a5e" letter-spacing="5.5">
+      TCMAI ENGINEERING FROM SCRATCH
+    </text>
+    <text y="76" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="16" fill="#6f6a5e">
+      1 领域 · 8 院系 · 120 学科 · 1086 章节 · 7596 学时
+    </text>
+    <text y="102" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="16" fill="#6f6a5e">
+      生长壮老已 · 双根因共振 · 每个章节留下一件能用的产出物
+    </text>
+  </g>
+
+  <!-- 两条交付轨道 -->
+  <g transform="translate(64,252)" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="14">
+    <rect x="0" y="-16" width="188" height="26" rx="13" fill="#e3efe9" stroke="#bcd8cd"/>
+    <text x="14" y="2" fill="#1f6f5c">🎬 [tcmP] 网络视频教育平台</text>
+    <rect x="204" y="-16" width="182" height="26" rx="13" fill="#fdf1dd" stroke="#ead6b0"/>
+    <text x="218" y="2" fill="#8a6410">📚 [textbooks] 120 门教材</text>
+    <text x="404" y="2" fill="#a8321e" font-size="12">教育用途 · 不构成临床诊疗建议</text>
+  </g>
+</svg>

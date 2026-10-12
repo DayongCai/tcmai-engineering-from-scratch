@@ -1,0 +1,29 @@
+{
+  "slug": "15-zhongyi-guojijiaoyu",
+  "title": "中医国际教育与传播",
+  "en": "International TCM Education",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 90,
+  "type": "Reference",
+  "semester": 8,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 36,
+  "bridge": "多语种教材→i18n 流水线 / 术语对齐→跨语言嵌入",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/15-zhongyi-guojijiaoyu",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/15-zhongyi-guojijiaoyu",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

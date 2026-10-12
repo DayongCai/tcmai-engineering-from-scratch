@@ -1,0 +1,114 @@
+{
+  "id": "research-track",
+  "title": "科研型",
+  "en": "Research Track",
+  "audience": "面向中医药科研人员：以真实世界研究、组学与网络药理、循证方法为核心。",
+  "outcome": "毕业时能设计并执行一项真实世界中医研究（从方案、伦理审查到统计分析与论文），并能为结论的因果解读划定边界。",
+  "semesters": [
+    1,
+    10
+  ],
+  "subjectCount": 27,
+  "hours": 1782,
+  "route": [
+    {
+      "semester": 1,
+      "stage": "sheng",
+      "reason": "医史与古文是文献研究的地基：不读原文的科研，引文就会错。",
+      "subjects": [
+        "01-zhongyi/01-zhongyi-jichu-lilun",
+        "01-zhongyi/02-yi-gu-wen",
+        "01-zhongyi/03-zhongguo-yixue-shi"
+      ]
+    },
+    {
+      "semester": 2,
+      "stage": "sheng",
+      "reason": "药用植物学给出药材的物质基础，中药学给出功效语义，两端对齐才能做成分-功效研究。",
+      "subjects": [
+        "02-zhongyao/01-zhongyaoxue",
+        "02-zhongyao/02-yaoyong-zhiwu-xue"
+      ]
+    },
+    {
+      "semester": 3,
+      "stage": "sheng",
+      "reason": "方剂是中医的复方干预单位，方剂学 + 统计学是复方研究的双入口。",
+      "subjects": [
+        "02-zhongyao/03-fangjixue",
+        "01-zhongyi/05-zhongyi-zhen-duan-xue",
+        "01-zhongyi/06-neijing-xuandu"
+      ]
+    },
+    {
+      "semester": 4,
+      "stage": "sheng",
+      "reason": "统计与法规：先知道能做什么、不能做什么，再谈设计。",
+      "subjects": [
+        "06-guanli/01-yixue-tongjixue",
+        "06-guanli/02-zhongyiyao-zhengce-fagui",
+        "02-zhongyao/05-zhongyao-jianding-xue",
+        "02-zhongyao/06-zhongyao-huaxue"
+      ]
+    },
+    {
+      "semester": 5,
+      "stage": "zhang",
+      "reason": "药理与网络药理：从单位成分到多靶点，是中药机制研究的主线。",
+      "subjects": [
+        "02-zhongyao/07-zhongyao-yaoli-xue",
+        "02-zhongyao/09-zhongyao-yaoji-xue",
+        "01-zhongyi/09-wenbing-xue"
+      ]
+    },
+    {
+      "semester": 6,
+      "stage": "zhang",
+      "reason": "分析技术与药代：证据的物质基础必须可测量、可重复。",
+      "subjects": [
+        "02-zhongyao/10-zhongyao-fenxi-xue",
+        "02-zhongyao/11-zhongyao-yaodai-donglixue",
+        "02-zhongyao/12-daodi-yaocai",
+        "03-zhenjiu/10-shiyan-zhenjiu-xue"
+      ]
+    },
+    {
+      "semester": 7,
+      "stage": "zhuang",
+      "reason": "科研方法学 + 知识图谱：现代中医研究的两个基础设施。",
+      "subjects": [
+        "06-guanli/13-linchuang-keyan-fangfa",
+        "06-guanli/12-zhongyiyao-biaozhunhua",
+        "01-zhongyi/14-zhongyi-zhenghou-xue",
+        "07-zhineng/05-zhongyi-zhishi-tupu"
+      ]
+    },
+    {
+      "semester": 8,
+      "stage": "zhuang",
+      "reason": "证据与转化：研究不能停在论文，要能走到成果与合规。",
+      "subjects": [
+        "05-huli/15-huli-yanjiu-zhengxun",
+        "06-guanli/14-zhishichanquan-zhuanhua",
+        "02-zhongyao/15-zhongyao-xinyao-yanfa",
+        "07-zhineng/15-zhongyi-ai-lunli-zhili"
+      ]
+    },
+    {
+      "semester": 10,
+      "stage": "yi",
+      "reason": "学位论文：一项能被别人重复的真实世界研究。",
+      "subjects": []
+    }
+  ],
+  "capstone": {
+    "title": "真实世界中医研究",
+    "deliverable": "一份完整研究方案 + 一份真实数据上的分析报告（含统计代码），通过模拟伦理审查。",
+    "criteria": [
+      "预注册研究假设，明确主要终点与次要终点",
+      "统计方法与数据结构匹配，附完整可复现代码",
+      "因果结论必须给出混杂控制策略与敏感性分析",
+      "必须包含一篇系统评价或 Meta 分析的完整检索流程（PRISMA）"
+    ]
+  }
+}

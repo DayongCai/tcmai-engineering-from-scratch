@@ -1,0 +1,29 @@
+{
+  "slug": "08-gushang-shoufa-zhiliao",
+  "title": "骨伤科手法治疗学",
+  "en": "Orthopedic Manual Therapy",
+  "deptSlug": "04-gushang",
+  "deptTitle": "骨伤系",
+  "globalN": 53,
+  "type": "Build",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "手法力学→力反馈控制 / 疗效→纵向数据分析",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/04-gushang/08-gushang-shoufa-zhiliao",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/04-gushang/08-gushang-shoufa-zhiliao",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

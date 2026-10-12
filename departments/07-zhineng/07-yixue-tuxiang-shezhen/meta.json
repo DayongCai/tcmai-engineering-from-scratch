@@ -1,0 +1,29 @@
+{
+  "slug": "07-yixue-tuxiang-shezhen",
+  "title": "医学图像处理与舌诊客观化",
+  "en": "Medical Imaging & Tongue Diagnosis",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 97,
+  "type": "Build",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "舌象分割→CNN / 颜色校正→色彩空间变换",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/07-yixue-tuxiang-shezhen",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/07-yixue-tuxiang-shezhen",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}
