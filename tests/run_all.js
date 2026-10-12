@@ -29,6 +29,7 @@ const SUITES = [
   { file: 'test_knowledge_tree.js', desc: '《中医知识树》导入层（xlsx 读取 / 连续性合并 / 五级骨架 / DSU 交叉印证）' },
   { file: 'test_shanghan_base.js', desc: '《伤寒论底本》导入层（27 篇 1760 条 / 9 域跨源核对 / 出处可复现）' },
   { file: 'test_materials_import.js', desc: '源材料批量导入层（7 份材料 / 四种形态渲染 / 出处可复现）' },
+  { file: 'test_leijing_colors.js', desc: '类经图翼方位色接入（16×11 矩阵 / 三层球面 / 配色判定用对对照）' },
   { file: 'test_chapter_code.js', desc: '每个已建章节的 code/main.js 与单元测试', slow: true },
   { file: 'test_content_review.js', desc: '人机闭环：内容复核清单', advisory: true },
   { file: 'assert_disclaimers.js', desc: '[tcmP] 每集讲稿必须带末位免责声明卡' },
