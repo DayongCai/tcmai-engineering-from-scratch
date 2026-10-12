@@ -1,0 +1,109 @@
+{
+  "$generated": "node scripts/import_shanghan_base.js",
+  "crossCheck": {
+    "available": true,
+    "reference": "standards/semtensor/datasets/shanghan-domains.json（由 SHL_目录.json 的 28 集推得）",
+    "base": "standards/shanghan/底本.json（本底本 00目录 的「域」列，直接给定）",
+    "domainCountBase": 9,
+    "domainCountReference": 9,
+    "domainsAgreeOnName": 9,
+    "tiaoAgree": 8,
+    "tiaoDiffer": 1,
+    "onlyInBase": [],
+    "onlyInReference": [],
+    "rows": [
+      {
+        "domain": "序跋·目录",
+        "basePianist": 1,
+        "baseDeclaredTiao": 90,
+        "baseActualTiao": 90,
+        "refTiao": 117,
+        "refEpisodes": 2,
+        "tiaoAgree": false,
+        "delta": -27
+      },
+      {
+        "domain": "脉法·伤寒例",
+        "basePianist": 1,
+        "baseDeclaredTiao": 61,
+        "baseActualTiao": 61,
+        "refTiao": 61,
+        "refEpisodes": 1,
+        "tiaoAgree": true,
+        "delta": 0
+      },
+      {
+        "domain": "太阳病",
+        "basePianist": 4,
+        "baseDeclaredTiao": 568,
+        "baseActualTiao": 566,
+        "refTiao": 566,
+        "refEpisodes": 4,
+        "tiaoAgree": true,
+        "delta": 0
+      },
+      {
+        "domain": "阳明病",
+        "basePianist": 2,
+        "baseDeclaredTiao": 134,
+        "baseActualTiao": 134,
+        "refTiao": 134,
+        "refEpisodes": 2,
+        "tiaoAgree": true,
+        "delta": 0
+      },
+      {
+        "domain": "少阳病",
+        "basePianist": 3,
+        "baseDeclaredTiao": 65,
+        "baseActualTiao": 64,
+        "refTiao": 64,
+        "refEpisodes": 3,
+        "tiaoAgree": true,
+        "delta": 0
+      },
+      {
+        "domain": "太阴病",
+        "basePianist": 3,
+        "baseDeclaredTiao": 195,
+        "baseActualTiao": 194,
+        "refTiao": 194,
+        "refEpisodes": 3,
+        "tiaoAgree": true,
+        "delta": 0
+      },
+      {
+        "domain": "霍乱·差后劳复",
+        "basePianist": 3,
+        "baseDeclaredTiao": 34,
+        "baseActualTiao": 34,
+        "refTiao": 34,
+        "refEpisodes": 3,
+        "tiaoAgree": true,
+        "delta": 0
+      },
+      {
+        "domain": "汗吐下诸可不可",
+        "basePianist": 9,
+        "baseDeclaredTiao": 589,
+        "baseActualTiao": 587,
+        "refTiao": 587,
+        "refEpisodes": 9,
+        "tiaoAgree": true,
+        "delta": 0
+      },
+      {
+        "domain": "厥阴病",
+        "basePianist": 1,
+        "baseDeclaredTiao": 30,
+        "baseActualTiao": 30,
+        "refTiao": 30,
+        "refEpisodes": 1,
+        "tiaoAgree": true,
+        "delta": 0
+      }
+    ],
+    "verdict": "域集合完全一致（两个独立来源）",
+    "note": "底本的「条」按分表内实际条目数计（actualTiao）；「声明条数」是目录列的原始值，两者大多数相同，不一致处保留原始值以便复核。"
+  }
+}
