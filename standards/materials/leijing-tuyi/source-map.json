@@ -1,0 +1,28 @@
+{
+  "$generated": "node scripts/import_materials.js",
+  "slug": "leijing-tuyi",
+  "title": "类经图翼",
+  "source": {
+    "file": "sources/类经图翼_v1.0定稿.xlsx",
+    "origin": "用户桌面材料",
+    "sha256": "a824a065ae4aa9e36dc614de9761abcedd49700d7aa57403959dc0d4d3358778",
+    "bytes": 659165
+  },
+  "shape": {
+    "toc": "meta",
+    "tocSheet": "00目录",
+    "body": "wide"
+  },
+  "counts": {
+    "sheets": 19,
+    "tocRows": 102,
+    "bodySections": 18,
+    "bodyUnits": 4518
+  },
+  "emptySections": [],
+  "readme": {
+    "file": "类经图翼.md",
+    "chars": 552703
+  },
+  "note": "content.json 是纯派生产物（体量大、可由源重跑得到），**不入库**；重建命令：node scripts/import_materials.js"
+}

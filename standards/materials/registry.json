@@ -1,0 +1,77 @@
+{
+  "$generated": "node scripts/import_materials.js",
+  "note": "源资料「格式乙」（00目录 + 分表）批量导入注册表。形态逐份实测，不是推断。",
+  "materials": [
+    {
+      "slug": "leijing-tuyi",
+      "title": "类经图翼",
+      "file": "类经图翼_v1.0定稿.xlsx",
+      "sections": 18,
+      "units": 4518,
+      "chars": 552703,
+      "empty": 0
+    },
+    {
+      "slug": "neiyin-qiqing",
+      "title": "内因七情",
+      "file": "内因七情.xlsx",
+      "sections": 19,
+      "units": 20162,
+      "chars": 921491,
+      "empty": 2
+    },
+    {
+      "slug": "waiyin-liuyin",
+      "title": "外因六淫",
+      "file": "外因六淫.xlsx",
+      "sections": 12,
+      "units": 10552,
+      "chars": 476727,
+      "empty": 2
+    },
+    {
+      "slug": "wuyishan-suwen30",
+      "title": "武夷山 · 素问30",
+      "file": "武夷山.xlsx",
+      "sections": 31,
+      "units": 34640,
+      "chars": 1398704,
+      "empty": 1,
+      "timedCues": 34566,
+      "noteBlocks": 74
+    },
+    {
+      "slug": "zhongyiyao-ai-daolun",
+      "title": "中医药AI导论",
+      "file": "中医药AI导论.xlsx",
+      "sections": 10,
+      "units": 4823,
+      "chars": 178991,
+      "empty": 1
+    },
+    {
+      "slug": "lingjichu-ai",
+      "title": "零基础学 AI",
+      "file": "ai-intro.xlsx",
+      "sections": 20,
+      "units": 8579,
+      "chars": 281909,
+      "empty": 0
+    },
+    {
+      "slug": "neijing-jizhen",
+      "title": "黄帝内经急症救命",
+      "file": "内经急诊.xlsx",
+      "sections": 3,
+      "units": 260,
+      "chars": 6547,
+      "empty": 0
+    }
+  ],
+  "totals": {
+    "materials": 7,
+    "sections": 113,
+    "units": 83534,
+    "chars": 3817072
+  }
+}

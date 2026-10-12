@@ -1,0 +1,31 @@
+{
+  "$generated": "node scripts/import_materials.js",
+  "slug": "neiyin-qiqing",
+  "title": "内因七情",
+  "source": {
+    "file": "sources/内因七情.xlsx",
+    "origin": "用户桌面材料",
+    "sha256": "f26ec1bed77cb3556642d0661668df4b4ee8903f6c37a6927dcdd23aa50d5ea5",
+    "bytes": 1947272
+  },
+  "shape": {
+    "toc": "kv",
+    "tocSheet": "00目录",
+    "body": "kv"
+  },
+  "counts": {
+    "sheets": 20,
+    "tocRows": 13,
+    "bodySections": 19,
+    "bodyUnits": 20162
+  },
+  "emptySections": [
+    "Sheet2",
+    "Sheet3"
+  ],
+  "readme": {
+    "file": "内因七情.md",
+    "chars": 921491
+  },
+  "note": "content.json 是纯派生产物（体量大、可由源重跑得到），**不入库**；重建命令：node scripts/import_materials.js"
+}

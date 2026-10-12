@@ -1,0 +1,30 @@
+{
+  "$generated": "node scripts/import_materials.js",
+  "slug": "wuyishan-suwen30",
+  "title": "武夷山 · 素问30",
+  "source": {
+    "file": "sources/武夷山.xlsx",
+    "origin": "用户桌面材料",
+    "sha256": "03e9286013791f5f8570be1e72dff5131610deb58d04b5dfefef859be2f36172",
+    "bytes": 1669945
+  },
+  "shape": {
+    "toc": "table",
+    "tocSheet": "0目录",
+    "body": "subtitle"
+  },
+  "counts": {
+    "sheets": 33,
+    "tocRows": 38,
+    "bodySections": 31,
+    "bodyUnits": 34640
+  },
+  "emptySections": [
+    "Sheet1"
+  ],
+  "readme": {
+    "file": "武夷山 · 素问30.md",
+    "chars": 1398704
+  },
+  "note": "content.json 是纯派生产物（体量大、可由源重跑得到），**不入库**；重建命令：node scripts/import_materials.js"
+}

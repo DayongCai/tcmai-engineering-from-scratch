@@ -1,0 +1,30 @@
+{
+  "$generated": "node scripts/import_materials.js",
+  "slug": "zhongyiyao-ai-daolun",
+  "title": "中医药AI导论",
+  "source": {
+    "file": "sources/中医药AI导论.xlsx",
+    "origin": "用户桌面材料",
+    "sha256": "fc54c2ac4ab8a5ecc7224669b41566827fa7a8e44bfc83483538eb67b7464741",
+    "bytes": 282089
+  },
+  "shape": {
+    "toc": "table",
+    "tocSheet": "00目录",
+    "body": "autoWide"
+  },
+  "counts": {
+    "sheets": 11,
+    "tocRows": 87,
+    "bodySections": 10,
+    "bodyUnits": 4823
+  },
+  "emptySections": [
+    "P1-P6"
+  ],
+  "readme": {
+    "file": "中医药AI导论.md",
+    "chars": 178991
+  },
+  "note": "content.json 是纯派生产物（体量大、可由源重跑得到），**不入库**；重建命令：node scripts/import_materials.js"
+}

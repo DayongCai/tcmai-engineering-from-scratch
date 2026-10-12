@@ -1,0 +1,28 @@
+{
+  "$generated": "node scripts/import_materials.js",
+  "slug": "lingjichu-ai",
+  "title": "零基础学 AI",
+  "source": {
+    "file": "sources/ai-intro.xlsx",
+    "origin": "用户桌面材料",
+    "sha256": "06567e215e029bdb228ef7116cf4b613e3a5d16b2742f3a8b9189a79615dadef",
+    "bytes": 9109555
+  },
+  "shape": {
+    "toc": "table",
+    "tocSheet": "00目录",
+    "body": "kv"
+  },
+  "counts": {
+    "sheets": 21,
+    "tocRows": 114,
+    "bodySections": 20,
+    "bodyUnits": 8579
+  },
+  "emptySections": [],
+  "readme": {
+    "file": "零基础学 AI.md",
+    "chars": 281909
+  },
+  "note": "content.json 是纯派生产物（体量大、可由源重跑得到），**不入库**；重建命令：node scripts/import_materials.js"
+}

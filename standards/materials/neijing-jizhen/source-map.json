@@ -1,0 +1,28 @@
+{
+  "$generated": "node scripts/import_materials.js",
+  "slug": "neijing-jizhen",
+  "title": "黄帝内经急症救命",
+  "source": {
+    "file": "sources/内经急诊.xlsx",
+    "origin": "用户桌面材料",
+    "sha256": "38dfa3604f5254e5392da12bbfd02d894110b93c1b718803d8e74d9da2f4b175",
+    "bytes": 32082
+  },
+  "shape": {
+    "toc": "none",
+    "tocSheet": null,
+    "body": "prose"
+  },
+  "counts": {
+    "sheets": 3,
+    "tocRows": 0,
+    "bodySections": 3,
+    "bodyUnits": 260
+  },
+  "emptySections": [],
+  "readme": {
+    "file": "黄帝内经急症救命.md",
+    "chars": 6547
+  },
+  "note": "content.json 是纯派生产物（体量大、可由源重跑得到），**不入库**；重建命令：node scripts/import_materials.js"
+}

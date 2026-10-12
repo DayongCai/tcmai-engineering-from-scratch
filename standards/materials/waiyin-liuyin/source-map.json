@@ -1,0 +1,31 @@
+{
+  "$generated": "node scripts/import_materials.js",
+  "slug": "waiyin-liuyin",
+  "title": "外因六淫",
+  "source": {
+    "file": "sources/外因六淫.xlsx",
+    "origin": "用户桌面材料",
+    "sha256": "16f6d275c473da892a633ed40b690132b59f54bd8876c001786fb6fd7c099141",
+    "bytes": 579643
+  },
+  "shape": {
+    "toc": "table",
+    "tocSheet": "00目录",
+    "body": "kv"
+  },
+  "counts": {
+    "sheets": 13,
+    "tocRows": 7,
+    "bodySections": 12,
+    "bodyUnits": 10552
+  },
+  "emptySections": [
+    "Sheet2",
+    "Sheet3"
+  ],
+  "readme": {
+    "file": "外因六淫.md",
+    "chars": 476727
+  },
+  "note": "content.json 是纯派生产物（体量大、可由源重跑得到），**不入库**；重建命令：node scripts/import_materials.js"
+}
