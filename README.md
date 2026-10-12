@@ -253,6 +253,10 @@ tcmai-engineering-from-scratch/
 └── .github/workflows/        curriculum.yml（审计 / 计数同步 / 站点重建）
 ```
 
+> **想把这份仓库改造成另一门领域的课程？** 见 [FORKING.md](FORKING.md) ——
+> 从参考项目出发的实际流程、该保留与该替换的分界、不能省的质量门，
+> 以及六条踩过的坑（每条附本仓库的真实数字）。
+
 ---
 
 ## 与上游项目的关系
