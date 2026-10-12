@@ -32,6 +32,19 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
 .compact table{border-collapse:collapse;font-size:13px;width:100%}
 .compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+/* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
+.math{font-style:italic;font-family:var(--serif)}
+.math-block{display:block;text-align:center;font-family:var(--serif);font-size:1.05em;margin:.8em 0}
+.math-op,.math-text,.math-rm{font-style:normal}
+.math-op{padding:0 .12em}
+.math-cal{font-style:normal}
+.math-bb{font-style:normal;font-weight:700}
+.frac{display:inline-block;vertical-align:middle;text-align:center;font-style:normal;margin:0 .15em;line-height:1.15}
+.frac-num{display:block;padding:0 .3em;border-bottom:1px solid currentColor}
+.frac-den{display:block;padding:0 .3em}
+.math-sqrt{font-style:normal;margin-right:.05em}
+.math-line{border-top:1px solid currentColor;font-style:normal;padding-top:.05em}
+.math-note{font-size:.8em;font-style:normal}
 .figure-host{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
 #hud{position:fixed;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#8a8578;
   background:#faf8f3cc;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
@@ -731,6 +744,26 @@ addEdge(g, z.fu,   '相表里', z.name);   // ← 少这一行，从腑查脏会
   const deck=document.getElementById('deck');
   const slides=[...document.querySelectorAll('.slide')];
   let i=0;
+
+  // ── 单帧模式：?shot=N 只渲染第 N 张，供无头浏览器逐帧截图 ──
+  // 截图器需要一张「干净的、正好一屏」的画面，所以这里藏掉其余幻灯片、
+  // 关掉滚动吸附、去掉 HUD，并在 title 上打就绪标记（渲染完成前截图会得到空白）。
+  const shot=new URLSearchParams(location.search).get('shot');
+  if(shot!==null){
+    const n=Math.max(0,Math.min(slides.length-1,Number(shot)||0));
+    slides.forEach((s,idx)=>{ if(idx!==n) s.style.display='none'; });
+    deck.style.overflow='hidden';
+    deck.style.scrollSnapType='none';
+    const hud=document.getElementById('hud');
+    if(hud) hud.style.display='none';
+    const target=slides[n];
+    if(target){ target.style.borderBottom='0'; target.scrollIntoView({block:'start'}); }
+    document.title='SHOT_READY '+n+' of '+slides.length;
+    if(window.TCMFigures)window.TCMFigures.mount(document);
+    // 只读视图：不绑键盘与点击，避免截图过程中页面状态改变
+    return;
+  }
+
   function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView();}
   addEventListener('keydown',e=>{
     if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}

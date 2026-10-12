@@ -105,6 +105,58 @@ test('[chapter] 完整渲染：MOTTO / PROBLEM / 双根因 / 经典引文 / 代�
   assert.strictEqual(opts, 24, `小测选项应为 6 题 × 4 = 24 项，实得 ${opts}`);
 });
 
+test('[chapter] 有视频的章节内嵌真正的 <video> 播放器（不是一句「视频已就绪」的标签）', () => {
+  const key = '01-zhongyi/01-zhongyi-jichu-lilun/01-yin-yang-er-fenlei';
+  const videoRel = `platform/courses/${key}/video/lesson.mp4`;
+  const hasMp4 = fs.existsSync(path.join(ROOT, videoRel));
+
+  const html = render('chapter', `?path=${encodeURIComponent(key)}`).html();
+  if (!hasMp4) {
+    // 成片不入库，CI 上通常没有 —— 此时只能断言占位卡存在且说明了生成方式
+    assert.ok(html.includes('尚未录制') || html.includes('lesson-video'), '无成片时既无播放器也无占位说明');
+    return;
+  }
+  assert.ok(html.includes('<video'), '有视频却未渲染 <video> 播放器');
+  assert.ok(html.includes('class="lesson-video"'), '缺播放器样式类');
+  assert.ok(html.includes('controls'), '播放器缺 controls 属性（无法播放）');
+  assert.ok(html.includes(videoRel), `播放器 src 未指向 ${videoRel}`);
+  assert.ok(html.includes('type="video/mp4"'), '缺 MIME 类型声明');
+});
+
+test('[chapter] 无视频的章节给出占位说明，且指明生成方式', () => {
+  const key = '01-zhongyi/01-zhongyi-jichu-lilun/02-wu-xing-duo-fenlei';
+  const html = render('chapter', `?path=${encodeURIComponent(key)}`).html();
+  assert.ok(!html.includes('<video'), '该章没有成片，却渲染了播放器（会指向 404）');
+  assert.ok(html.includes('尚未录制'), '缺「尚未录制」提示');
+  assert.ok(html.includes('platform/README.md'), '占位说明未指向流水线文档');
+});
+
+test('[subject] 视频进度按实际成片统计，不读手工计数器', () => {
+  const html = render('subject', `?path=${encodeURIComponent('01-zhongyi/01-zhongyi-jichu-lilun')}`).html();
+  // meta.json 里的 videosPublished 是手工字段，实际成片可能多于它；
+  // 这里断言页面上的数字与文件系统一致。
+  const m = html.match(/已完成视频\s*(\d+)\s*\/\s*\d+/);
+  assert.ok(m, '学科页未显示视频进度');
+  const ours = fs.existsSync(path.join(ROOT, 'platform', 'courses')) ? countMp4() : 0;
+  assert.strictEqual(Number(m[1]), ours, `学科页显示 ${m[1]}，文件系统实有 ${ours}`);
+});
+
+/** 统计本学科真实存在的成片 */
+function countMp4() {
+  let n = 0;
+  const walk = (d) => {
+    let es = [];
+    try { es = fs.readdirSync(d, { withFileTypes: true }); } catch { return; }
+    for (const e of es) {
+      const p = path.join(d, e.name);
+      if (e.isDirectory()) walk(p);
+      else if (e.name === 'lesson.mp4' && p.includes('01-zhongyi-jichu-lilun')) n += 1;
+    }
+  };
+  walk(path.join(ROOT, 'platform', 'courses', '01-zhongyi', '01-zhongyi-jichu-lilun'));
+  return n;
+}
+
 test('[chapter] 图形挂载点在正文里被渲染为可挂载的 div', () => {
   const key = '01-zhongyi/01-zhongyi-jichu-lilun/02-wu-xing-duo-fenlei';
   const html = render('chapter', `?path=${encodeURIComponent(key)}`).html();

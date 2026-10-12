@@ -19,6 +19,7 @@ const {
   subjectStatus,
   readMeta,
   writeJson,
+  countPublishedVideos,
 } = require('./lib');
 
 const cur = loadCurriculum();
@@ -75,7 +76,7 @@ const catalog = {
     subjectsDone: allSubjects.filter((s) => s.status === 'done').length,
     subjectsWip: allSubjects.filter((s) => s.status === 'wip').length,
     subjectsPlanned: allSubjects.filter((s) => s.status === 'planned').length,
-    videos: allSubjects.reduce((a, s) => a + (s.platform?.videosPublished || 0), 0),
+    videos: countPublishedVideos(),
     textbookChapters: allSubjects.reduce((a, s) => a + (s.textbook?.chaptersWritten || 0), 0),
   },
   semesterPlan: plan.map((p) => ({

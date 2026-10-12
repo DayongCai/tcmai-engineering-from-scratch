@@ -36,14 +36,11 @@ if (!target || !target.includes('/')) {
 const [dept, subject] = target.split('/');
 const courseDir = path.join(ROOT, 'platform', 'courses', dept, subject);
 
-function which(name) {
-  const r = spawnSync(process.platform === 'win32' ? 'where' : 'which', [name], { encoding: 'utf8' });
-  return r.status === 0 ? String(r.stdout).split(/\r?\n/).find((l) => l.trim()) : null;
-}
+const { findFfmpeg, findFfprobe, findTtsBackend } = require('./find_tools');
 
-const ffmpeg = which('ffmpeg');
-const ffprobe = which('ffprobe');
-const tts = which('edge-tts');
+const ffmpeg = findFfmpeg();
+const ffprobe = findFfprobe();
+const ttsBackend = findTtsBackend();
 
 console.log(`═══ [tcmP] 成片合成 · ${target} ═══\n`);
 
@@ -54,6 +51,9 @@ if (!ffmpeg) {
   console.error('');
   console.error('  安装 ffmpeg:');
   console.error('    Windows : winget install Gyan.FFmpeg');
+  console.error('              （本机实测：winget 会从 github.com 拉包，若被墙会报');
+  console.error('               InternetOpenUrl() failed 0x80072efd，改用 gh-proxy 镜像，');
+  console.error('               完整步骤见 platform/README.md「ffmpeg 装不上怎么办」）');
   console.error('    macOS   : brew install ffmpeg');
   console.error('    Linux   : sudo apt install ffmpeg');
   console.error('');
@@ -85,7 +85,7 @@ if (!chapters.length) {
 
 console.log(`  ffmpeg   ✅ ${ffmpeg}`);
 console.log(`  ffprobe  ${ffprobe ? `✅ ${ffprobe}` : '⬚ 缺失（时长校验将跳过，并在输出中标注）'}`);
-console.log(`  edge-tts ${tts ? `✅ ${tts}` : '⬚ 缺失（将生成静音轨，配音需人工或换 TTS）'}`);
+console.log(`  tts      ${ttsBackend.kind ? `✅ ${ttsBackend.label}` : `⬚ ${ttsBackend.label}`}  （配音在上一段合成，这里只消费 narration/audio/）`);
 console.log('');
 
 let built = 0;
@@ -103,10 +103,10 @@ for (const ch of chapters) {
     continue;
   }
   if (!fs.existsSync(framesDir)) {
-    console.error(`  ✗ ${ch}: 缺 frames/ 目录（需先用无头浏览器或截图工具把 slides/index.html 逐页导出为 001.png …）`);
+    console.error(`  ✗ ${ch}: 缺 frames/ 目录 —— 先用无头浏览器逐张导出画面帧`);
+    console.error(`     node platform/pipeline/render_frames.js ${dept}/${subject} --chapter ${ch}`);
     console.error(`     幻灯片: ${path.relative(ROOT, slidePath).replace(/\\/g, '/')}`);
-    console.error('     导出建议: 浏览器打开后按 p 打印为 PDF，或用 Chrome headless:');
-    console.error(`       chrome --headless --print-to-pdf="${path.join(cdir, 'slides', 'lesson.pdf')}" "${slidePath}"`);
+    console.error('     截图器会生成 frames/001.png … 每段一张，尺寸 1920×1080');
     continue;
   }
 
@@ -120,14 +120,25 @@ for (const ch of chapters) {
   fs.mkdirSync(videoDir, { recursive: true });
   const listPath = path.join(cdir, 'concat.txt');
   const lines = [];
+  let withAudio = 0;
 
   for (let i = 0; i < narr.segments.length; i += 1) {
     const seg = narr.segments[i];
     const frame = path.join(framesDir, frames[i]);
-    const audioFile = tts ? path.join(audioDir, `${String(i + 1).padStart(3, '0')}.mp3`) : null;
+    // 配音文件只要**存在**就用，不关心它是哪个 TTS 产的：
+    // 人工录音、edge-tts、SAPI、云端 TTS 都可能落在同一个位置，把「谁产的」写死在判据里
+    // 会让非 edge-tts 的配音被静默忽略（然后你会以为配音没生效是 TTS 的问题）。
+    // 讲稿里记了 audio 文件名就用它（可区分 wav/mp3），否则按 mp3 → wav 顺序找。
+    const candidates = seg.audio
+      ? [path.join(audioDir, seg.audio)]
+      : [path.join(audioDir, `${String(i + 1).padStart(3, '0')}.mp3`),
+         path.join(audioDir, `${String(i + 1).padStart(3, '0')}.wav`)];
+    const audioFile = candidates.find((p) => fs.existsSync(p)) || null;
+    const hasAudio = Boolean(audioFile);
+    if (hasAudio) withAudio += 1;
     const partFile = path.join(videoDir, `part-${String(i + 1).padStart(3, '0')}.mp4`);
 
-    const args = ffmpegArgs({ frame, seconds: seg.estimateSeconds, audioFile, out: partFile });
+    const args = ffmpegArgs({ frame, seconds: seg.estimateSeconds, audioFile: hasAudio ? audioFile : null, out: partFile });
     const r = spawnSync(ffmpeg, args, { encoding: 'utf8' });
     if (r.status !== 0) {
       console.error(`  ✗ ${ch} 第 ${i + 1} 段编码失败:`);
@@ -159,7 +170,12 @@ for (const ch of chapters) {
 
   const size = fs.statSync(outFile).size;
   console.log(`  ✅ ${ch} → video/lesson.mp4 (${(size / 1024 / 1024).toFixed(1)} MB${duration ? `, ${duration.toFixed(1)}s [ffprobe 实测]` : ', 时长未校验'})`);
-  if (!tts) console.log(`     ⚠ 无 TTS：本片为静音轨，配音需人工补录`);
+  if (withAudio === 0) {
+    console.log('     ⚠ 本片为静音轨（narration/audio/ 下没有配音文件）');
+    console.log('       配音来源不限：edge-tts、云端 TTS、人工录音都可以，放到 narration/audio/001.mp3 … 即可');
+  } else {
+    console.log(`     🔊 已配 ${withAudio}/${narr.segments.length} 段旁白`);
+  }
   built += 1;
 }
 

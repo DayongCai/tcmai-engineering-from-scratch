@@ -124,6 +124,23 @@ tbody tr:nth-child(even) { background: #fcfbf7; }
 .doc code { background: var(--paper-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; }
 .math { font-style: italic; font-family: var(--serif); }
 .math-block { display: block; text-align: center; font-family: var(--serif); font-size: 17px; margin: .8em 0; }
+/* 函数名与正体排版：斜体是给变量的，函数名必须正体 */
+.math-op, .math-text, .math-rm { font-style: normal; }
+.math-op { padding: 0 .12em; }
+.math-cal { font-style: normal; font-family: "Cambria Math", var(--serif); }
+.math-bb { font-style: normal; font-weight: 700; }
+/* 真分式：上下堆叠，分子下沿带分数线 —— 不是 "1/(1+e)" 这种斜杠近似 */
+.frac {
+  display: inline-block; vertical-align: middle; text-align: center;
+  font-style: normal; margin: 0 .15em; line-height: 1.15;
+}
+.frac-num { display: block; padding: 0 .3em; border-bottom: 1px solid currentColor; }
+.frac-den { display: block; padding: 0 .3em; }
+.math-sqrt { font-style: normal; margin-right: .05em; }
+.math-line { border-top: 1px solid currentColor; font-style: normal; padding-top: .05em; }
+.math-hat::before { content: '^'; display: block; height: .5em; margin-bottom: -.45em; }
+.math-note { font-size: .8em; font-style: normal; }
+.math-block .frac { font-size: 1.02em; }
 
 .codeblock { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 1em 0; background: #fbfaf6; }
 .codeblock-lang { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); background: var(--paper-2); padding: 4px 12px; border-bottom: 1px solid var(--line); }
@@ -198,6 +215,10 @@ button.btn:hover { opacity: .9; }
   background: #fff; padding: 16px; margin: 22px 0;
 }
 .figure-host svg { display: block; }
+
+/* ── 章节页内嵌视频播放器 ── */
+.lesson-video { width: 100%; max-width: 960px; aspect-ratio: 16 / 9; background: #000; border-radius: 10px; display: block; }
+.video-card .card-title { margin-bottom: 10px; }
 
 /* ── 免责与提示 ── */
 .notice {

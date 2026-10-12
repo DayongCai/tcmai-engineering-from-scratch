@@ -6,14 +6,16 @@
   "chapter": "02-wu-xing-duo-fenlei",
   "title": "第 2 章 · 五行学说 → 多分类：从零实现 Softmax（并检验生克约束是否真的有用）",
   "segmentCount": 12,
-  "estimateTotalSeconds": 500,
+  "estimateTotalSeconds": 217,
   "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
   "segments": [
     {
       "n": 1,
       "role": "title",
       "text": "第 2 章 · 五行学说 → 多分类：从零实现 Softmax（并检验生克约束是否真的有用）",
       "slide": "title",
+      "spoken": "第 2 章 · 五行学说 ， 多分类：从零实现 Softmax（并检验生克约束是否真的有用）",
       "estimateSeconds": 8
     },
     {
@@ -21,6 +23,7 @@
       "role": "motto",
       "text": "「五行：一曰水，二曰火，三曰木，四曰金，五曰土。」——《尚书·洪范》",
       "slide": "title",
+      "spoken": "「五行：一曰水，二曰火，三曰木，四曰金，五曰土。」——《尚书·洪范》",
       "estimateSeconds": 7
     },
     {
@@ -28,6 +31,7 @@
       "role": "problem",
       "text": "你知道五行是五类，于是写了个五分类器；但相生相克去哪了？你可能已经听过「纯 softmax 会丢掉关系」这句断言 —— 本章要做的第一件事，是**去测它到底对不对**。",
       "slide": "problem",
+      "spoken": "你知道五行是五类，于是写了个五分类器；但相生相克去哪了？你可能已经听过「纯 softmax 会丢掉关系」这句断言 —— 本章要做的第一件事，是去测它到底对不对。",
       "estimateSeconds": 17
     },
     {
@@ -35,6 +39,7 @@
       "role": "roots",
       "text": "环境逼迫(“答辩时被问『你的五行分类器和普通五分类器有什么区别』，答不上来”) + 知识积累(五行生克 × softmax 与关系正则 = 能自己设计并检验约束的建模能力)",
       "slide": "roots",
+      "spoken": "环境逼迫(“答辩时被问『你的五行分类器和普通五分类器有什么区别』，答不上来”) + 知识积累(五行生克 × softmax 与关系正则 = 能自己设计并检验约束的建模能力)",
       "estimateSeconds": 17
     },
     {
@@ -42,13 +47,15 @@
       "role": "figure",
       "text": "wuxing-cycle",
       "slide": "figure",
-      "estimateSeconds": 3
+      "spoken": "接下来这张动画图演示上面这个翻译过程。",
+      "estimateSeconds": 4
     },
     {
       "n": 6,
       "role": "objectives",
       "text": "- 从零实现 softmax（含减 max 的数值稳定写法），并解释不减 max 会在什么量级上溢出\n- 把「相生 / 相克」写成一对**余弦约束**加进损失函数，手推其梯度\n- 用 λ 扫描**测量**一个约束的实际效果，而不是相信断言\n- 说清本章实验里「纯 softmax 已经满足生克一致性」的原因，并指出这暴露了表示层的什么问题\n- 判断什么情况下应该加约束、什么情况下加约束只是自伤",
       "slide": "objectives",
+      "spoken": "从零实现 softmax（含减 max 的数值稳定写法），并解释不减 max 会在什么量级上溢出\n把「相生 / 相克」写成一对余弦约束加进损失函数，手推其梯度\n用 λ 扫描测量一个约束的实际效果，而不是相信断言\n说清本章实验里「纯 softmax 已经满足生克一致性」的原因，并指出这暴露了表示层的什么问题\n判断什么情况下应该加约束、什么情况下加约束只是自伤",
       "estimateSeconds": 36
     },
     {
@@ -56,41 +63,47 @@
       "role": "concept",
       "text": "### 中医：五行与生克\n\n《尚书·洪范》给出五行的名目与次序；《素问·五运行大论》等篇给出相生相克的关系：\n\n```text\n相生：木 → 火 → 土 → 金 → 水 → 木   （外圈，顺时针）\n相克：木克土 · 土克水 · 水克火 · 火克金 · 金克木  （五角星）\n```\n\n关键在于**关系是学说的主体**。如果把五行当成 5 个互不相干的类，那这门学说就退化成了\n一份五格清单 —— 它最有信息量的部分（哪两类互相促进、哪两类互相制约）全丢了。\n\n### AI / 工程：Softmax 与关系正则\n\n多分类用 softmax 把打分转为概率：\n\n$$p_k = \\frac{e^{z_k}}{\\sum_{j=1}^{K} e^{z_j}}, \\qquad z_k = \\mathbf{w}_k^\\top \\mathbf{x} + b_k$$\n\n数值稳定写法必须先减去最大值：\n\n$$p_k = \\frac{e^{z_k - \\max_j z_j}}{\\sum_j e^{z_j - \\max_j z_j}}$$\n\n把关系写成约束，最直接的一种是**约束类权重向量之间的夹角**：\n\n$$\\mathcal{L} = \\underbrace{-\\frac{1}{N}\\sum_i \\log p_{y_i}}_{\\text{交叉熵}} + \\lambda\\Big[\\sum_{(i,j)\\in\\text{生}} \\max(0,\\, m_s - \\cos(\\mathbf{w}_i,\\mathbf{w}_j)) + \\sum_{(i,j)\\in\\text{克}} \\max(0,\\, \\cos(\\mathbf{w}_i,\\mathbf{w}_j) - m_k)\\Big]$$\n\n- 相生对：把两个方向**拉近**（余弦不小于 $m_s$）\n- 相克对：把两个方向**推远**（余弦不大于 $m_k$）\n- $\\lambda$ 是这两者与分类准确率之间的交换率 —— 它不是免费的\n\n### 对应关系\n\n| 中医概念 | AI / 工程概念 | 桥梁（为什么可以这样翻译） | 级别 |\n|---------|--------------|--------------------------|------|\n| 五行 | 5 类多分类 | 类别数为 5，与五行名目一一对应 | **B** |\n| 相生 | 类权重向量之间的**正**余弦约束 | 相生意味着两类在语义上互相促进 → 方向相近 | **B** |\n| 相克 | 类权重向量之间的**负**余弦约束 | 相克意味着互相制约 → 方向相斥 | **B** |\n| 五行配属表 | 属性矩阵（色/味/志/方位） | 通行配属表给出的正是这四组对应 | **A** |\n| 「五位一体的整体观」 | 结构约束先验 | 五行不是 5 个独立标签，而是一个带边的系统 | **B** |\n| 五行 = 五行分类器 | —— | ⚠️ **C 级类比**。只对了类别数，丢掉了全部关系。本章就是来测这个代价的 | **C** |\n\n```mermaid\ngraph LR\n  A[\"五行配属表<br/>色 / 味 / 志 / 方位\"] --> B[\"属性矩阵 X (20×4)\"]\n  B --> C[\"softmax 五分类\"]\n  C --> D[\"测准确率\"]\n  E[\"生克关系<br/>5 条相生 + 5 条相克\"] --> F[\"余弦约束\"]\n  F --> G[\"λ 扫描\"]\n  D --> H[\"结论：约束值不值\"]\n  G --> H\n  H -.->|回指校验| I[\"这个约束在模型里真的有中医含义吗？\"]\n```",
       "slide": "concept",
-      "estimateSeconds": 235
+      "spoken": "中医：五行与生克\n《尚书·洪范》给出五行的名目与次序；《素问·五运行大论》等篇给出相生相克的关系：\n关键在于关系是学说的主体。如果把五行当成 5 个互不相干的类，那这门学说就退化成了\n一份五格清单 —— 它最有信息量的部分（哪两类互相促进、哪两类互相制约）全丢了。\nAI / 工程：Softmax 与关系正则\n多分类用 softmax 把打分转为概率：\n数值稳定写法必须先减去最大值：\n把关系写成约束，最直接的一种是约束类权重向量之间的夹角：\n相生对：把两个方向拉近（余弦不小于 ms ）\n相克对：把两个方向推远（余弦不大于 mk ）\n λ 是这两者与分类准确率之间的交换率 —— 它不是免费的\n对应关系",
+      "estimateSeconds": 60
     },
     {
       "n": 8,
       "role": "build",
       "text": "两件事：softmax（带数值稳定），以及把生克写成可求导的 hinge 约束。\n\n```javascript\nfunction softmax(z) {\n  const m = Math.max(...z);\n  const e = z.map((v) => Math.exp(v - m));   // ← 减 max：正确性要求，不是优化\n  const s = e.reduce((a, b) => a + b, 0);\n  return e.map((v) => v / s);\n}\n\n// 相生: hinge(mSheng − cos)  相克: hinge(cos − mKe)\nconst c = cosine(W[i], W[j]);\nconst violation = wantAbove ? mSheng - c : c - mKe;\nif (violation <= 0) return;                 // 满足约束就不产生梯度\n// d(cos)/d(W[i]) = W[j]/(|W[i]||W[j]|) − cos·W[i]/|W[i]|²\n```\n\n跑起来：\n\n```bash\nnode code/main.js\n```",
       "slide": "build",
-      "estimateSeconds": 86
+      "spoken": "两件事：softmax（带数值稳定），以及把生克写成可求导的 hinge 约束。\n跑起来：",
+      "estimateSeconds": 9
     },
     {
       "n": 9,
       "role": "use",
       "text": "任何成熟框架里，加这项约束都只是 `loss = ce + lambda * reg` 一行。真正的工作量在于：\n\n1. 设计可微的约束形式（hinge？KL？距离？）\n2. 扫描 λ，画出「准确率 vs 关系差」的权衡曲线\n3. 判断这条曲线是否值得走 —— 本课的例子告诉你，不总是值得",
       "slide": "use",
-      "estimateSeconds": 27
+      "spoken": "任何成熟框架里，加这项约束都只是 loss = ce + lambda * reg 一行。真正的工作量在于：\n设计可微的约束形式（hinge？KL？距离？）\n扫描 λ，画出「准确率 vs 关系差」的权衡曲线\n判断这条曲线是否值得走 —— 本课的例子告诉你，不总是值得",
+      "estimateSeconds": 25
     },
     {
       "n": 10,
       "role": "ship",
       "text": "- [📋 Prompt 模板](outputs/prompt-wu-xing-duo-fenlei.md) —— 让大模型在给出五行归类时，**必须同时给出所依据的配属维度**，并显式标注关系一致性\n- [🛠️ Skill 文件](outputs/skill-wu-xing-duo-fenlei.md) —— 把「加约束前先测基线」固化成一个可复用的实验流程",
       "slide": "ship",
-      "estimateSeconds": 34
+      "spoken": "Prompt 模板 —— 让大模型在给出五行归类时，必须同时给出所依据的配属维度，并显式标注关系一致性\n Skill 文件 —— 把「加约束前先测基线」固化成一个可复用的实验流程",
+      "estimateSeconds": 18
     },
     {
       "n": 11,
       "role": "verify",
       "text": "```bash\nnode code/main.js\n# Expected: 见上方「实测结果」代码块，退出码 0\n```\n\n```bash\nnode --test code/main.test.js\n# Expected: 全部通过\n```",
       "slide": "verify",
-      "estimateSeconds": 19
+      "spoken": "这一段以代码实现为主，请看画面上的代码块。",
+      "estimateSeconds": 5
     },
     {
       "n": 12,
       "role": "disclaimer",
       "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "estimateSeconds": 11
     }
   ]

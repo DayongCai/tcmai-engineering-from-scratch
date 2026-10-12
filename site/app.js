@@ -272,7 +272,7 @@ ${chapters.length === 0
   <div class="card">
     <div class="card-title">🎬 [tcmP] 视频课程</div>
     <div class="card-sub mono small">platform/courses/${s.dept.slug}/${s.slug}/</div>
-    <div class="small muted" style="margin-top:8px">已完成视频 ${s.platform ? s.platform.videosPublished : 0} / ${s.chaptersTarget}</div>
+    <div class="small muted" style="margin-top:8px">已完成视频 ${chapters.filter((c) => c.video).length} / ${s.chaptersTarget}</div>
   </div>
   <div class="card">
     <div class="card-title">📚 [textbooks] 教材</div>
@@ -284,6 +284,11 @@ ${chapters.length === 0
 }
 
 // ── 页面：章节 ──
+/** 章节页把标题渲染在页头卡片里，正文再渲染一次 H1 就会连出两个一样的标题 */
+function stripLeadingH1(html) {
+  return String(html).replace(/^\s*<h1\b[^>]*>[\s\S]*?<\/h1>\s*/, '');
+}
+
 function renderChapter() {
   const key = new URLSearchParams(location.search).get('path') || '';
   const c = CONTENT[key];
@@ -319,9 +324,23 @@ function renderChapter() {
   </div>
 </div>
 
-${c.video ? `<div class="card"><div class="card-title">🎬 本讲视频</div><div class="small muted mono">${esc(c.video)}</div><div class="small muted" style="margin-top:6px">视频文件由 <code>platform/</code> 流水线生成后在此播放（MP4 &lt;video&gt; 标签）。</div></div>` : ''}
+${c.video ? `<div class="card video-card">
+  <div class="card-title">🎬 本讲视频</div>
+  <video class="lesson-video" controls preload="metadata" playsinline${c.videoPoster ? ` poster="${encodeURI(c.videoPoster)}"` : ''}>
+    <source src="${encodeURI(c.video)}" type="video/mp4">
+    你的浏览器不支持 &lt;video&gt;。直接下载：<a href="${encodeURI(c.video)}">${esc(c.video)}</a>
+  </video>
+  <div class="small muted" style="margin-top:8px">
+    <code>${esc(c.video)}</code> · 成片不入库（见 <code>.gitignore</code>），随 release 附件发布；
+    本地用 <code>node site/serve.js</code> 预览时会直接提供该文件。
+  </div>
+</div>` : `<div class="card">
+  <div class="card-title">🎬 本讲视频</div>
+  <div class="small muted">尚未录制。生成方式见 <code>platform/README.md</code> 的四段流水线：
+  <code>check_tools → extract_narration → build_slides → render_frames → synthesize_narration → build_video</code>。</div>
+</div>`}
 
-<div class="doc">${c.html}</div>
+<div class="doc">${stripLeadingH1(c.html)}</div>
 
 ${c.exercises ? `<h2>练习</h2><div class="doc">${c.exercises.replace(/^#.*$/m, '').split('\n').filter(Boolean).map((l) => `<p>${esc(l)}</p>`).join('')}</div>` : ''}
 

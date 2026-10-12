@@ -20,6 +20,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const md = require('./md');
+const math = require('./math');
 
 const ROOT = path.resolve(__dirname, '..');
 const SITE = path.join(ROOT, 'site');
@@ -126,10 +127,19 @@ for (const dept of catalog.departments) {
         quiz: JSON.parse(fs.readFileSync(quizPath, 'utf8')),
         exercises: readIf('exercises.md'),
         outputs,
-        // 视频占位：platform/courses/.../<chapter>/video/*.mp4
-        video: fs.existsSync(path.join(ROOT, 'platform', 'courses', dept.slug, subject.slug, name, 'video'))
-          ? `platform/courses/${dept.slug}/${subject.slug}/${name}/video/lesson.mp4`
-          : null,
+        // 视频路径：必须探测到**文件**本身，而不是它所在的目录 ——
+        // 目录存在但 mp4 没生成（例如 ffmpeg 缺失、编码失败）时，
+        // 只判目录会让站点挂上一个指向 404 的播放器。
+        video: (() => {
+          const rel = `platform/courses/${dept.slug}/${subject.slug}/${name}/video/lesson.mp4`;
+          return fs.existsSync(path.join(ROOT, rel)) ? rel : null;
+        })(),
+        // 封面：直接复用第 1 帧。没有它 <video preload="metadata"> 只会显示黑框，
+        // 页面看起来像播放器坏了（其实文件与时长都正常，就是没解码任何一帧）。
+        videoPoster: (() => {
+          const rel = `platform/courses/${dept.slug}/${subject.slug}/${name}/frames/001.png`;
+          return fs.existsSync(path.join(ROOT, rel)) ? rel : null;
+        })(),
       };
       built += 1;
     }
@@ -153,6 +163,7 @@ const contentStr = contentJs;
 fs.writeFileSync(path.join(SITE, 'content.js'), contentStr, 'utf8');
 
 // ── 5. 站点清单（供测试与部署使用）──
+const unknownCmd = math.takeUnknown();
 const manifest = {
   generatedBy: 'site/build.js',
   chapters: built,
@@ -173,3 +184,12 @@ console.log(`  术语文档  : ${Object.keys(glossary).length}`);
 console.log(`  → site/data.js     (${(dataJs.length / 1024).toFixed(1)} KB, ${manifest.dataHash})`);
 console.log(`  → site/content.js  (${(contentStr.length / 1024).toFixed(1)} KB, ${manifest.contentHash})`);
 console.log(`  → site/manifest.json`);
+
+if (unknownCmd.length) {
+  console.log('');
+  console.log(`  ⚠ 公式渲染器遇到 ${unknownCmd.length} 个未知 LaTeX 命令: ${unknownCmd.join(', ')}`);
+  console.log('    → site/math.js 的 SYMBOLS / WRAPPERS / FUNCTION_NAMES 里补上它们，');
+  console.log('      否则这些公式会在页面与幻灯片里显示为去掉反斜杠的裸命令。');
+} else if (built) {
+  console.log('  ✅ 公式渲染器无未知命令');
+}

@@ -3,6 +3,60 @@
 本项目遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.1.0] — 2026-10-12
+
+### 新增 · [tcmP] 成片流水线打通（第 1 章真跑出 MP4）
+
+- **`platform/pipeline/find_tools.js`**：外部工具探测收敛为单一模块（`check_tools` / `render_frames` /
+  `synthesize_narration` / `build_video` 共用）。只有查 PATH 之外的落点才不会把「装了但没 export」误报成缺失。
+- **`platform/pipeline/render_frames.js`**：幻灯片 → `frames/001.png …`（无头 Edge/Chrome，1920×1080）。
+  幻灯片新增 `?shot=N` 单帧模式：只渲染第 N 张并藏掉其余，不靠估算滚动偏移。
+- **`platform/pipeline/synthesize_narration.js`**：讲稿 → 配音，后端降级链 `edge-tts → Windows SAPI → 人工`。
+  产出落到统一位置，`build_video.js` 只认「文件在不在」，不认「谁产的」。
+- **`site/math.js`**：自研 LaTeX 子集渲染器（零依赖，约 250 行）—— 真上下标、真堆叠分式、
+  希腊字母与算子映射、函数名正体、`\frac` / `\sqrt` / `\underbrace` 递归解析。
+  同时收集**未知命令**并在构建时打印，避免公式静默退化成「去掉反斜杠的裸命令」。
+- `tests/test_math_render.js`（18 项）、`tests/test_narration.js`（10 项）新增。
+
+### 修复 · 实际抓出的缺陷
+
+| 缺陷 | 症状 | 抓出它的检查 |
+|------|------|-------------|
+| 章节页**从未有过 `<video>` 播放器** | 只显示「视频已就绪」标签，成片无处可播 | 给「有视频→必须有播放器」补断言 |
+| `serve.js` 只服务 `site/`，成片在 `platform/` | 播放器 404，**表现为一个永不播放的黑框** | 截图核对播放器区域 |
+| `serve.js` 不支持 Range 请求 | 进度条不可拖、部分浏览器完全不播 | 请求头实测（改后 206） |
+| 视频/教材计数读手工字段 `videosPublished` | 恒为 0，与文件系统事实不符 | 改为扫盘统计 |
+| `build_video.js` 只在有 `edge-tts` 时才用配音 | SAPI/人工配音被静默忽略 | 改为「文件存在即采用」 |
+| 时长用 `ffmpeg -show_entries` 读 | 非法调用静默失败，所有时长 `null`，日志只显示「时长未知」 | 改用 `ffprobe` |
+| `site/build.js` 缺 `require('./math')` | 构建直接崩 | 构建期 |
+| 公式渲染器不认识 `\|`（范数） | `\|a\|` 渲染成「去掉反斜杠的竖线」，看起来"差不多对" | 构建期未知命令告警 |
+| 章节页标题重复渲染两次 | 页头卡片与正文 H1 连出两个一样的大标题 | 截图核对 |
+| 题目讲稿里残留 `$\mathbf{x}$`、emoji、图形 id | TTS 会照念源码与「剪贴板」 | `test_narration.js` |
+| 第 2 章讲稿是旧版产物（无 `spoken` 字段） | 静默用原文念稿 | `test_narration.js` |
+| `test_narration` 要求纯散文段的 spoken 也须与 text 不同 | **断言本身错了**：motto/disclaimer 无可剥离内容，相同才是正确 | 改为只在含可剥离内容时断言 |
+
+### 实测事实（可复核）
+
+```text
+第 1 章《阴阳学说 → 二分类》
+  成片      video/lesson.mp4 · 5.7 MB · ffprobe 实测 368.9s（6 分 09 秒）
+  视频流    h264 1920×1080 25fps
+  音轨      aac 22050Hz 单声道 · mean_volume −24.7 dB（非静音）
+  配音      12/12 段 · Windows SAPI（Microsoft Huihui Desktop）· 实测 5 分 47 秒
+  画面帧    12/12 张 · msedge --headless=new
+  幻灯片    12 张 · 站点与幻灯片共用同一套公式 CSS
+```
+
+`estimateSeconds`（4.6 字/秒）与 SAPI `Rate=-2` 实测（≈3.6 字/秒）有偏差：
+第 1 章估算 4 分 09 秒、实测 5 分 47 秒。估算只用于排期，**成片时长一律由实测值决定**。
+
+### 变更
+
+- `.gitignore`：新增 `platform/**/frames/`、`platform/**/narration/audio/`、`platform/**/concat.txt`
+  （数十 MB 中间产物，本地 13 秒可重建）。成片本身仍不入库，走 release 附件。
+- 测试套件 8 → 10（新增公式渲染、讲稿质量）。
+- 章节页：无成片时给出占位说明并指向 `platform/README.md`，不再静默留白。
+
 ## [1.0.0] — 2026-10-12
 
 ### 新增 · 课程架构

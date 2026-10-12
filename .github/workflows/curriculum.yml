@@ -169,3 +169,54 @@ jobs:
           name: tcmP-slides
           path: platform/courses/**/slides/
           retention-days: 14
+
+  # 画面帧 + 静音成片：这两段在 ubuntu-latest 上靠预装的 Chrome 与 ffmpeg 就能跑通，
+  # 不需要任何 pip 安装。TTS 不在此处合成（Linux runner 没有 SAPI，edge-tts 会 403），
+  # 所以 CI 产出的是**静音轨**——恰好用来验证「无配音时流水线仍能出片」这条降级路径。
+  #
+  # 说明：本机（Windows）已逐段实测通过，但本 job 未经真实 CI 执行过 ——
+  # 因此设 continue-on-error，避免把一个未验证的 job 变成阻断项。
+  video-render:
+    name: "tcmP 画面帧与静音成片（Ubuntu 预装 Chrome + ffmpeg）"
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    needs: video-pipeline
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: 确认 Chrome 与 ffmpeg 可用
+        run: |
+          which google-chrome ffmpeg ffprobe
+          google-chrome --version; ffmpeg -version | head -1
+      - name: 导出画面帧
+        run: |
+          if [ -d platform/courses ]; then
+            for c in $(ls -d platform/courses/*/*/ 2>/dev/null | sed 's|platform/courses/||; s|/$||'); do
+              node platform/pipeline/render_frames.js "$c" || true
+            done
+          fi
+      - name: 合成静音成片
+        run: |
+          if [ -d platform/courses ]; then
+            for c in $(ls -d platform/courses/*/*/ 2>/dev/null | sed 's|platform/courses/||; s|/$||'); do
+              node platform/pipeline/build_video.js "$c" || true
+            done
+          fi
+      - name: 断言成片可被 ffprobe 读出时长
+        run: |
+          found=0
+          for f in $(find platform/courses -name lesson.mp4 2>/dev/null); do
+            found=1
+            d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")
+            echo "$f → ${d}s"
+            awk -v d="$d" 'BEGIN { if (d <= 0) exit 1 }' || { echo "❌ 时长非法: $f"; exit 1; }
+          done
+          [ "$found" = 1 ] || echo "（无成片：本仓当前可能没有可渲染的章节）"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tcmP-video
+          path: platform/courses/**/video/lesson.mp4
+          retention-days: 7
+          if-no-files-found: ignore

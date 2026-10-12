@@ -13,6 +13,8 @@
 
 'use strict';
 
+const math = require('./math');
+
 function esc(s) {
   return String(s)
     .replace(/&/g, '&amp;')
@@ -23,15 +25,23 @@ function esc(s) {
 
 function inline(s) {
   let t = esc(s);
-  // 行内代码优先，避免内部内容被后续规则改写
+  // 行内代码与公式都先抽出来，避免内部内容被后续规则改写。
+  // 公式存的是**未转义的 LaTeX 原文**，交给 math.js 渲染（转义在那边做）。
   const codes = [];
   t = t.replace(/`([^`]+)`/g, (_, c) => {
-    codes.push(c);
-    return `\u0000${codes.length - 1}\u0000`;
+    codes.push(esc(c));
+    return `\u0000C${codes.length - 1}\u0000`;
   });
-  // 块公式 $$...$$ 与行内公式 $...$
-  t = t.replace(/\$\$([^$]+)\$\$/g, (_, m) => `<span class="math-block">${m.trim()}</span>`);
-  t = t.replace(/\$([^$\n]+)\$/g, (_, m) => `<span class="math">${m.trim()}</span>`);
+  const maths = [];
+  // 先处理 $$...$$（块级），再处理 $...$（行内），否则双美元会被单美元规则拆坏
+  t = t.replace(/\$\$([^$]+)\$\$/g, (_, m) => {
+    maths.push({ src: m, block: true });
+    return `\u0000M${maths.length - 1}\u0000`;
+  });
+  t = t.replace(/\$([^$\n]+)\$/g, (_, m) => {
+    maths.push({ src: m, block: false });
+    return `\u0000M${maths.length - 1}\u0000`;
+  });
   // 链接
   t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, text, href) => {
     const safe = href.startsWith('http') ? href : href.replace(/\.md$/, '.html');
@@ -40,8 +50,9 @@ function inline(s) {
   // 粗体 / 斜体
   t = t.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   t = t.replace(/(^|[\s（(])\*([^*\n]+)\*/g, '$1<em>$2</em>');
-  // 还原行内代码
-  t = t.replace(/\u0000(\d+)\u0000/g, (_, i) => `<code>${esc(codes[Number(i)])}</code>`);
+  // 还原行内代码与公式
+  t = t.replace(/\u0000C(\d+)\u0000/g, (_, i) => `<code>${codes[Number(i)]}</code>`);
+  t = t.replace(/\u0000M(\d+)\u0000/g, (_, i) => math.render(maths[Number(i)].src, maths[Number(i)].block ? 'block' : 'inline'));
   return t;
 }
 
@@ -96,6 +107,14 @@ function render(markdown) {
     const fig = line.match(/^<div data-figure="([a-z0-9-]+)"><\/div>\s*$/);
     if (fig) {
       out.push(`<div class="figure-host" data-figure="${fig[1]}"></div>`);
+      i += 1;
+      continue;
+    }
+
+    // 块级公式：整行 $$...$$
+    const blockMath = line.match(/^\$\$(.+)\$\$\s*$/);
+    if (blockMath) {
+      out.push(math.render(blockMath[1], 'block'));
       i += 1;
       continue;
     }

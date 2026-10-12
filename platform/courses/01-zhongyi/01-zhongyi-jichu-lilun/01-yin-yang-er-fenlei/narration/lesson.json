@@ -6,92 +6,132 @@
   "chapter": "01-yin-yang-er-fenlei",
   "title": "第 1 章 · 阴阳学说 → 二分类：从零实现逻辑回归",
   "segmentCount": 12,
-  "estimateTotalSeconds": 599,
+  "estimateTotalSeconds": 249,
   "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
   "segments": [
     {
       "n": 1,
       "role": "title",
       "text": "第 1 章 · 阴阳学说 → 二分类：从零实现逻辑回归",
       "slide": "title",
-      "estimateSeconds": 5
+      "spoken": "第 1 章 · 阴阳学说 ， 二分类：从零实现逻辑回归",
+      "estimateSeconds": 5,
+      "audio": "001.mp3",
+      "audioSeconds": 7.22
     },
     {
       "n": 2,
       "role": "motto",
       "text": "「阴阳者，天地之道也，万物之纲纪，变化之父母，生杀之本始，神明之府也。」——《素问·阴阳应象大论》",
       "slide": "title",
-      "estimateSeconds": 11
+      "spoken": "「阴阳者，天地之道也，万物之纲纪，变化之父母，生杀之本始，神明之府也。」——《素问·阴阳应象大论》",
+      "estimateSeconds": 11,
+      "audio": "002.mp3",
+      "audioSeconds": 14.78
     },
     {
       "n": 3,
       "role": "problem",
       "text": "你能背出「阳虚则寒、阴虚则热」，但让你把一位病人的四诊信息落到「偏阴还是偏阳」这一个判断上，你只会说「感觉像」。",
       "slide": "problem",
-      "estimateSeconds": 12
+      "spoken": "你能背出「阳虚则寒、阴虚则热」，但让你把一位病人的四诊信息落到「偏阴还是偏阳」这一个判断上，你只会说「感觉像」。",
+      "estimateSeconds": 12,
+      "audio": "003.mp3",
+      "audioSeconds": 15.6
     },
     {
       "n": 4,
       "role": "roots",
       "text": "环境逼迫(“跟诊时说不出辨证依据，老师追问一句就卡住”) + 知识积累(阴阳学说 × 逻辑回归 = 一个能说出理由、能报出置信度的二分类判断)",
       "slide": "roots",
-      "estimateSeconds": 14
+      "spoken": "环境逼迫(“跟诊时说不出辨证依据，老师追问一句就卡住”) + 知识积累(阴阳学说 × 逻辑回归 = 一个能说出理由、能报出置信度的二分类判断)",
+      "estimateSeconds": 14,
+      "audio": "004.mp3",
+      "audioSeconds": 19.4
     },
     {
       "n": 5,
       "role": "figure",
       "text": "yin-yang-sigmoid",
       "slide": "figure",
-      "estimateSeconds": 3
+      "spoken": "接下来这张动画图演示上面这个翻译过程。",
+      "estimateSeconds": 4,
+      "audio": "005.mp3",
+      "audioSeconds": 6.02
     },
     {
       "n": 6,
       "role": "objectives",
       "text": "- 用不超过 30 行代码，把「阴阳」判别写成一次二分类，并逐项解释权重含义\n- 说清 sigmoid 的输出为什么是「概率」而不是「标签」，以及这个区别在临床上意味着什么\n- 指出把阴阳等同于二进制 0/1 会丢掉哪些语义（这是本课的**排除项**，必须能自己讲出来）\n- 用交叉熵损失手写一次梯度下降，并解释学习率过大时会发生什么\n- 给定一个新病例的体征，算出它的阳证概率并给出可复核的理由",
       "slide": "objectives",
-      "estimateSeconds": 38
+      "spoken": "用不超过 30 行代码，把「阴阳」判别写成一次二分类，并逐项解释权重含义\n说清 sigmoid 的输出为什么是「概率」而不是「标签」，以及这个区别在临床上意味着什么\n指出把阴阳等同于二进制 0/1 会丢掉哪些语义（这是本课的排除项，必须能自己讲出来）\n用交叉熵损失手写一次梯度下降，并解释学习率过大时会发生什么\n给定一个新病例的体征，算出它的阳证概率并给出可复核的理由",
+      "estimateSeconds": 38,
+      "audio": "006.mp3",
+      "audioSeconds": 52.51
     },
     {
       "n": 7,
       "role": "concept",
       "text": "### 中医：阴阳\n\n阴阳是对相互对立又相互依存的两类属性的抽象概括。《素问·阴阳应象大论》把它抬到「万物之纲纪」的位置。关键在于它是**关系性**的，不是分类标签：没有孤立的「阴」，只有相对某参照的「偏阴」。\n\n临床落地时，八纲里的阴阳是**总纲**——表里、寒热、虚实六纲都可以归到阴阳下。所以本章不是要判「属于哪种证」，而是判「这一组体征整体上偏向哪一侧，偏多少」。\n\n### AI / 工程：逻辑回归\n\n给定特征向量 $\\mathbf{x}$，先做一次线性打分：\n\n$$z = \\mathbf{w}^\\top\\mathbf{x} + b$$\n\n再用 sigmoid 把实数压到 $(0,1)$：\n\n$$p = \\sigma(z) = \\frac{1}{1+e^{-z}}$$\n\n以交叉熵为损失 $L = -[y\\log p + (1-y)\\log(1-p)]$ 时，梯度有一个非常干净的形式：\n\n$$\\frac{\\partial L}{\\partial \\mathbf{w}} = (p - y)\\,\\mathbf{x}$$\n\n这意味着每个权重的更新方向，就是「预测偏差 × 该特征取值」。**权重会自己长成对特征重要性的解释** —— 这正是阴阳判别需要的「说得清理由」。\n\n### 对应关系\n\n| 中医概念 | AI / 工程概念 | 桥梁（为什么可以这样翻译） |\n|---------|--------------|--------------------------|\n| 阴阳 | 二分类的两个类别 | 对立两端的划分，与二分类的标签空间一一对应 [**B 级**] |\n| 偏阴偏阳的**程度** | sigmoid 输出的连续概率 | 虚证不是「非阴即阳」，而是偏向程度不同；连续输出保留了强度 [**B 级**] |\n| 阴阳互根互用 | 两类的概率之和为 1 | 这一条是**约束**，恰好对应 $p + (1-p) = 1$ [**A 级**] |\n| 阴阳转化 | 状态转移 / 阈值翻转 | 「重阴必阳」是**动态过程**；本章的单次分类模型**拿不到**这一层，需在后续章节用状态机补 |\n| 阴阳 = 二进制 0/1 | —— | ❌ **D 级误用**。二进制位互斥且可交换，阴阳互根、可转化、带强度。用位运算处理阴阳会丢掉全部动态语义 |\n\n```mermaid\ngraph LR\n  A[\"八纲体征<br/>畏寒 / 口渴 / 脉率\"] --> B[\"特征向量 x\"]\n  B --> C[\"线性打分 z = wᵀx + b\"]\n  C --> D[\"sigmoid → P(阳证)\"]\n  D --> E[\"阈值判定 + 置信度\"]\n  E -.->|回指校验| F[\"能否用中医语言复述权重含义？\"]\n  F -.->|不能| G[\"说明特征设计有问题，回到 A\"]\n```",
       "slide": "concept",
-      "estimateSeconds": 186
+      "spoken": "中医：阴阳\n阴阳是对相互对立又相互依存的两类属性的抽象概括。《素问·阴阳应象大论》把它抬到「万物之纲纪」的位置。关键在于它是关系性的，不是分类标签：没有孤立的「阴」，只有相对某参照的「偏阴」。\n临床落地时，八纲里的阴阳是总纲——表里、寒热、虚实六纲都可以归到阴阳下。所以本章不是要判「属于哪种证」，而是判「这一组体征整体上偏向哪一侧，偏多少」。\nAI / 工程：逻辑回归\n给定特征向量 x ，先做一次线性打分：\n再用 sigmoid 把实数压到 (0,1) ：\n以交叉熵为损失 L = -[ylog p + (1-y)log(1-p)] 时，梯度有一个非常干净的形式：\n这意味着每个权重的更新方向，就是「预测偏差 × 该特征取值」。权重会自己长成对特征重要性的解释 —— 这正是阴阳判别需要的「说得清理由」。\n对应关系",
+      "estimateSeconds": 72,
+      "audio": "007.mp3",
+      "audioSeconds": 101.07
     },
     {
       "n": 8,
       "role": "build",
       "text": "只用 Node.js 标准库。三件事必须自己写：sigmoid、交叉熵、梯度下降。\n\n```javascript\n// 1. sigmoid —— 注意数值稳定写法：z 很负时 e^{-z} 会溢出\nfunction sigmoid(z) {\n  if (z >= 0) { const e = Math.exp(-z); return 1 / (1 + e); }\n  const e = Math.exp(z); return e / (1 + e);\n}\n\n// 2. 交叉熵 + 梯度（一次算完）\nfunction lossAndGrad(w, b, X, y) {\n  let loss = 0;\n  const gw = [0, 0, 0];\n  let gb = 0;\n  for (let i = 0; i < X.length; i += 1) {\n    const z = dot(w, X[i]) + b;\n    const p = sigmoid(z);\n    const eps = 1e-9;\n    loss += -(y[i] * Math.log(p + eps) + (1 - y[i]) * Math.log(1 - p + eps));\n    const d = p - y[i];              // ← 梯度就是 (预测 − 真实)\n    for (let j = 0; j < w.length; j += 1) gw[j] += d * X[i][j];\n    gb += d;\n  }\n  return { loss: loss / X.length, gw: gw.map((g) => g / X.length), gb: gb / X.length };\n}\n\n// 3. 梯度下降\nfor (let step = 0; step < 4000; step += 1) {\n  const { gw, gb } = lossAndGrad(w, b, X, y);\n  for (let j = 0; j < w.length; j += 1) w[j] -= lr * gw[j];\n  b -= lr * gb;\n}\n```\n\n跑起来：\n\n```bash\nnode code/main.js\n```",
       "slide": "build",
-      "estimateSeconds": 148
+      "spoken": "只用 Node.js 标准库。三件事必须自己写：sigmoid、交叉熵、梯度下降。\n跑起来：",
+      "estimateSeconds": 9,
+      "audio": "008.mp3",
+      "audioSeconds": 13.41
     },
     {
       "n": 9,
       "role": "use",
       "text": "框架做的事和上面完全一样，只是把「手写三次循环」封成了 `fit`。本课用同一个梯度公式做一次 10 批的**小批量**训练，验证手写版本与批量版本的解在同一量级。\n\n关键对照：如果两种实现给出的权重**符号相反**，那一定是特征标准化或学习率出了问题，不是「模型玄学」。",
       "slide": "use",
-      "estimateSeconds": 26
+      "spoken": "框架做的事和上面完全一样，只是把「手写三次循环」封成了 fit。本课用同一个梯度公式做一次 10 批的小批量训练，验证手写版本与批量版本的解在同一量级。\n关键对照：如果两种实现给出的权重符号相反，那一定是特征标准化或学习率出了问题，不是「模型玄学」。",
+      "estimateSeconds": 26,
+      "audio": "009.mp3",
+      "audioSeconds": 35.34
     },
     {
       "n": 10,
       "role": "ship",
       "text": "- [📋 Prompt 模板](outputs/prompt-yin-yang-er-fenlei.md) —— 让大模型按「体征 → 阴阳倾向 + 理由」的格式输出，并要求它标注不确定项\n- [🛠️ Skill 文件](outputs/skill-yin-yang-er-fenlei.md) —— 把本课的判别流程固化成一个可复用的操作技能",
       "slide": "ship",
-      "estimateSeconds": 32
+      "spoken": "Prompt 模板 —— 让大模型按「体征 ， 阴阳倾向 + 理由」的格式输出，并要求它标注不确定项\n Skill 文件 —— 把本课的判别流程固化成一个可复用的操作技能",
+      "estimateSeconds": 16,
+      "audio": "010.mp3",
+      "audioSeconds": 20.22
     },
     {
       "n": 11,
       "role": "verify",
       "text": "```bash\nnode code/main.js\n# Expected:\n# ═══ 阴阳 → 二分类：从零实现 (中医基础理论 第1章) ═══\n# 样本: 8 例八纲典型证候 | 特征: 畏寒 / 口渴 / 脉数\n# 训练 4000 步后:\n#   w = [ -7.60,   5.19,   5.85]\n#   b = -2.10\n#   损失轨迹 (每500步): 0.693 → 0.013 → 0.006 → 0.004 → 0.003 → 0.003 → 0.002 → 0.002\n#   训练集准确率: 8/8 = 100%\n# 解读:\n#   畏寒项 w=-7.60 → 该项越强越偏阴\n#   口渴项 w=5.19 → 该项越强越偏阳\n#   脉数项 w=5.85 → 该项越强越偏阳\n# 对照: 小批量(seed=20261012, batch=4, 2000步)\n#   w = [ -6.76,   4.62,   5.19]\n#   符号与全批量一致: 是 ✅（解法稳定）\n# 边界声明: 本例为教学样例，非临床数据集；输出不构成诊疗建议。\n# 退出码 0\n```\n\n```bash\nnode --test code/\n# Expected: 6 项测试全部通过\n```\n\n> **权重绝对值不要当作重要度。** 本例数据是**线性可分**的，交叉熵没有有限的最优解，权重会一直往大处走 —— 所以 `-7.60` 并不比 `-3.00` 更\"重要\"，它只是训练得更久。\n> 真正稳定的是**符号**：畏寒项为负、口渴与脉数项为正。符号翻转就是实现有 bug。\n> 想拿到有界的权重，需要加 L2 正则或提前停止 —— 这是第 4 章的题目。",
       "slide": "verify",
-      "estimateSeconds": 113
+      "spoken": "权重绝对值不要当作重要度。 本例数据是线性可分的，交叉熵没有有限的最优解，权重会一直往大处走 —— 所以 -7.60 并不比 -3.00 更\"重要\"，它只是训练得更久。\n真正稳定的是符号：畏寒项为负、口渴与脉数项为正。符号翻转就是实现有 bug。\n想拿到有界的权重，需要加 L2 正则或提前停止 —— 这是第 4 章的题目。",
+      "estimateSeconds": 31,
+      "audio": "011.mp3",
+      "audioSeconds": 45.11
     },
     {
       "n": 12,
       "role": "disclaimer",
       "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
       "slide": "disclaimer",
-      "estimateSeconds": 11
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "012.mp3",
+      "audioSeconds": 16.52
     }
-  ]
+  ],
+  "audioBackend": "Windows SAPI 离线语音 · Microsoft Huihui Desktop",
+  "audioMeasuredSeconds": 347.19,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
 }

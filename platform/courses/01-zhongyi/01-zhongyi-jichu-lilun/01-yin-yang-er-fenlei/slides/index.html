@@ -32,6 +32,19 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
 .compact table{border-collapse:collapse;font-size:13px;width:100%}
 .compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+/* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
+.math{font-style:italic;font-family:var(--serif)}
+.math-block{display:block;text-align:center;font-family:var(--serif);font-size:1.05em;margin:.8em 0}
+.math-op,.math-text,.math-rm{font-style:normal}
+.math-op{padding:0 .12em}
+.math-cal{font-style:normal}
+.math-bb{font-style:normal;font-weight:700}
+.frac{display:inline-block;vertical-align:middle;text-align:center;font-style:normal;margin:0 .15em;line-height:1.15}
+.frac-num{display:block;padding:0 .3em;border-bottom:1px solid currentColor}
+.frac-den{display:block;padding:0 .3em}
+.math-sqrt{font-style:normal;margin-right:.05em}
+.math-line{border-top:1px solid currentColor;font-style:normal;padding-top:.05em}
+.math-note{font-size:.8em;font-style:normal}
 .figure-host{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
 #hud{position:fixed;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#8a8578;
   background:#faf8f3cc;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
@@ -71,12 +84,12 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <p>阴阳是对相互对立又相互依存的两类属性的抽象概括。《素问·阴阳应象大论》把它抬到「万物之纲纪」的位置。关键在于它是<strong>关系性</strong>的，不是分类标签：没有孤立的「阴」，只有相对某参照的「偏阴」。</p>
 <p>临床落地时，八纲里的阴阳是<strong>总纲</strong>——表里、寒热、虚实六纲都可以归到阴阳下。所以本章不是要判「属于哪种证」，而是判「这一组体征整体上偏向哪一侧，偏多少」。</p>
 <h3 id="ai-工程-逻辑回归">AI / 工程：逻辑回归</h3>
-<p>给定特征向量 <span class="math">\mathbf{x}</span>，先做一次线性打分：</p>
-<p><span class="math-block">z = \mathbf{w}^\top\mathbf{x} + b</span></p>
+<p>给定特征向量 <span class="math"><b>x</b></span>，先做一次线性打分：</p>
+<span class="math-block">z = <b>w</b>ᵀ<b>x</b> + b</span>
 <p>再用 sigmoid 把实数压到 <span class="math">(0,1)</span>：</p>
-<p><span class="math-block">p = \sigma(z) = \frac{1}{1+e^{-z}}</span></p>
-<p>以交叉熵为损失 <span class="math">L = -[y\log p + (1-y)\log(1-p)]</span> 时，梯度有一个非常干净的形式：</p>
-<p><span class="math-block">\frac{\partial L}{\partial \mathbf{w}} = (p - y)\,\mathbf{x}</span></p>
+<span class="math-block">p = σ(z) = <span class="frac"><span class="frac-num">1</span><span class="frac-den">1+e<sup>-z</sup></span></span></span>
+<p>以交叉熵为损失 <span class="math">L = -[y<span class="math-op">log</span> p + (1-y)<span class="math-op">log</span>(1-p)]</span> 时，梯度有一个非常干净的形式：</p>
+<span class="math-block"><span class="frac"><span class="frac-num">∂ L</span><span class="frac-den">∂ <b>w</b></span></span> = (p - y) <b>x</b></span>
 <p>这意味着每个权重的更新方向，就是「预测偏差 × 该特征取值」。<strong>权重会自己长成对特征重要性的解释</strong> —— 这正是阴阳判别需要的「说得清理由」。</p>
 <h3 id="对应关系">对应关系</h3>
 <div class="table-wrap"><table><thead><tr><th>中医概念</th><th>AI / 工程概念</th><th>桥梁（为什么可以这样翻译）</th></tr></thead><tbody><tr><td>阴阳</td><td>二分类的两个类别</td><td>对立两端的划分，与二分类的标签空间一一对应 [<strong>B 级</strong>]</td></tr><tr><td>偏阴偏阳的<strong>程度</strong></td><td>sigmoid 输出的连续概率</td><td>虚证不是「非阴即阳」，而是偏向程度不同；连续输出保留了强度 [<strong>B 级</strong>]</td></tr><tr><td>阴阳互根互用</td><td>两类的概率之和为 1</td><td>这一条是<strong>约束</strong>，恰好对应 <span class="math">p + (1-p) = 1</span> [<strong>A 级</strong>]</td></tr><tr><td>阴阳转化</td><td>状态转移 / 阈值翻转</td><td>「重阴必阳」是<strong>动态过程</strong>；本章的单次分类模型<strong>拿不到</strong>这一层，需在后续章节用状态机补</td></tr><tr><td>阴阳 = 二进制 0/1</td><td>——</td><td>❌ <strong>D 级误用</strong>。二进制位互斥且可交换，阴阳互根、可转化、带强度。用位运算处理阴阳会丢掉全部动态语义</td></tr></tbody></table></div>
@@ -761,6 +774,26 @@ for (let step = 0; step &lt; 4000; step += 1) {
   const deck=document.getElementById('deck');
   const slides=[...document.querySelectorAll('.slide')];
   let i=0;
+
+  // ── 单帧模式：?shot=N 只渲染第 N 张，供无头浏览器逐帧截图 ──
+  // 截图器需要一张「干净的、正好一屏」的画面，所以这里藏掉其余幻灯片、
+  // 关掉滚动吸附、去掉 HUD，并在 title 上打就绪标记（渲染完成前截图会得到空白）。
+  const shot=new URLSearchParams(location.search).get('shot');
+  if(shot!==null){
+    const n=Math.max(0,Math.min(slides.length-1,Number(shot)||0));
+    slides.forEach((s,idx)=>{ if(idx!==n) s.style.display='none'; });
+    deck.style.overflow='hidden';
+    deck.style.scrollSnapType='none';
+    const hud=document.getElementById('hud');
+    if(hud) hud.style.display='none';
+    const target=slides[n];
+    if(target){ target.style.borderBottom='0'; target.scrollIntoView({block:'start'}); }
+    document.title='SHOT_READY '+n+' of '+slides.length;
+    if(window.TCMFigures)window.TCMFigures.mount(document);
+    // 只读视图：不绑键盘与点击，避免截图过程中页面状态改变
+    return;
+  }
+
   function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView();}
   addEventListener('keydown',e=>{
     if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}

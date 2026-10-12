@@ -32,6 +32,19 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
 .compact table{border-collapse:collapse;font-size:13px;width:100%}
 .compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+/* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
+.math{font-style:italic;font-family:var(--serif)}
+.math-block{display:block;text-align:center;font-family:var(--serif);font-size:1.05em;margin:.8em 0}
+.math-op,.math-text,.math-rm{font-style:normal}
+.math-op{padding:0 .12em}
+.math-cal{font-style:normal}
+.math-bb{font-style:normal;font-weight:700}
+.frac{display:inline-block;vertical-align:middle;text-align:center;font-style:normal;margin:0 .15em;line-height:1.15}
+.frac-num{display:block;padding:0 .3em;border-bottom:1px solid currentColor}
+.frac-den{display:block;padding:0 .3em}
+.math-sqrt{font-style:normal;margin-right:.05em}
+.math-line{border-top:1px solid currentColor;font-style:normal;padding-top:.05em}
+.math-note{font-size:.8em;font-style:normal}
 .figure-host{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
 #hud{position:fixed;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#8a8578;
   background:#faf8f3cc;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
@@ -75,12 +88,12 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 一份五格清单 —— 它最有信息量的部分（哪两类互相促进、哪两类互相制约）全丢了。</p>
 <h3 id="ai-工程-softmax-与关系正则">AI / 工程：Softmax 与关系正则</h3>
 <p>多分类用 softmax 把打分转为概率：</p>
-<p><span class="math-block">p_k = \frac{e^{z_k}}{\sum_{j=1}^{K} e^{z_j}}, \qquad z_k = \mathbf{w}_k^\top \mathbf{x} + b_k</span></p>
+<span class="math-block">p<sub>k</sub> = <span class="frac"><span class="frac-num">e<sup>z<sub>k</sub></sup></span><span class="frac-den">∑<sub>j=1</sub><sup>K</sup> e<sup>z<sub>j</sub></sup></span></span>,    z<sub>k</sub> = <b>w</b><sub>k</sub>ᵀ <b>x</b> + b<sub>k</sub></span>
 <p>数值稳定写法必须先减去最大值：</p>
-<p><span class="math-block">p_k = \frac{e^{z_k - \max_j z_j}}{\sum_j e^{z_j - \max_j z_j}}</span></p>
+<span class="math-block">p<sub>k</sub> = <span class="frac"><span class="frac-num">e<sup>z<sub>k</sub> - <span class="math-op">max</span><sub>j</sub> z<sub>j</sub></sup></span><span class="frac-den">∑<sub>j</sub> e<sup>z<sub>j</sub> - <span class="math-op">max</span><sub>j</sub> z<sub>j</sub></sup></span></span></span>
 <p>把关系写成约束，最直接的一种是<strong>约束类权重向量之间的夹角</strong>：</p>
-<p><span class="math-block">\mathcal{L} = \underbrace{-\frac{1}{N}\sum_i \log p_{y_i}}_{\text{交叉熵}} + \lambda\Big[\sum_{(i,j)\in\text{生}} \max(0,\, m_s - \cos(\mathbf{w}_i,\mathbf{w}_j)) + \sum_{(i,j)\in\text{克}} \max(0,\, \cos(\mathbf{w}_i,\mathbf{w}_j) - m_k)\Big]</span></p>
-<ul><li>相生对：把两个方向<strong>拉近</strong>（余弦不小于 <span class="math">m_s</span>）</li><li>相克对：把两个方向<strong>推远</strong>（余弦不大于 <span class="math">m_k</span>）</li><li><span class="math">\lambda</span> 是这两者与分类准确率之间的交换率 —— 它不是免费的</li></ul>
+<span class="math-block"><span class="math-cal">L</span> = -<span class="frac"><span class="frac-num">1</span><span class="frac-den">N</span></span>∑<sub>i</sub> <span class="math-op">log</span> p<sub>y<sub>i</sub></sub><sub class="math-note"><span class="math-text">交叉熵</span></sub> + λ∑<sub>(i,j)∈<span class="math-text">生</span></sub> <span class="math-op">max</span>(0,  m<sub>s</sub> - <span class="math-op">cos</span>(<b>w</b><sub>i</sub>,<b>w</b><sub>j</sub>)) + ∑<sub>(i,j)∈<span class="math-text">克</span></sub> <span class="math-op">max</span>(0,  <span class="math-op">cos</span>(<b>w</b><sub>i</sub>,<b>w</b><sub>j</sub>) - m<sub>k</sub>)</span>
+<ul><li>相生对：把两个方向<strong>拉近</strong>（余弦不小于 <span class="math">m<sub>s</sub></span>）</li><li>相克对：把两个方向<strong>推远</strong>（余弦不大于 <span class="math">m<sub>k</sub></span>）</li><li><span class="math">λ</span> 是这两者与分类准确率之间的交换率 —— 它不是免费的</li></ul>
 <h3 id="对应关系">对应关系</h3>
 <div class="table-wrap"><table><thead><tr><th>中医概念</th><th>AI / 工程概念</th><th>桥梁（为什么可以这样翻译）</th><th>级别</th></tr></thead><tbody><tr><td>五行</td><td>5 类多分类</td><td>类别数为 5，与五行名目一一对应</td><td><strong>B</strong></td></tr><tr><td>相生</td><td>类权重向量之间的<strong>正</strong>余弦约束</td><td>相生意味着两类在语义上互相促进 → 方向相近</td><td><strong>B</strong></td></tr><tr><td>相克</td><td>类权重向量之间的<strong>负</strong>余弦约束</td><td>相克意味着互相制约 → 方向相斥</td><td><strong>B</strong></td></tr><tr><td>五行配属表</td><td>属性矩阵（色/味/志/方位）</td><td>通行配属表给出的正是这四组对应</td><td><strong>A</strong></td></tr><tr><td>「五位一体的整体观」</td><td>结构约束先验</td><td>五行不是 5 个独立标签，而是一个带边的系统</td><td><strong>B</strong></td></tr><tr><td>五行 = 五行分类器</td><td>——</td><td>⚠️ <strong>C 级类比</strong>。只对了类别数，丢掉了全部关系。本章就是来测这个代价的</td><td><strong>C</strong></td></tr></tbody></table></div>
 <pre class="mermaid">graph LR
@@ -730,6 +743,26 @@ if (violation &lt;= 0) return;                 // 满足约束就不产生梯度
   const deck=document.getElementById('deck');
   const slides=[...document.querySelectorAll('.slide')];
   let i=0;
+
+  // ── 单帧模式：?shot=N 只渲染第 N 张，供无头浏览器逐帧截图 ──
+  // 截图器需要一张「干净的、正好一屏」的画面，所以这里藏掉其余幻灯片、
+  // 关掉滚动吸附、去掉 HUD，并在 title 上打就绪标记（渲染完成前截图会得到空白）。
+  const shot=new URLSearchParams(location.search).get('shot');
+  if(shot!==null){
+    const n=Math.max(0,Math.min(slides.length-1,Number(shot)||0));
+    slides.forEach((s,idx)=>{ if(idx!==n) s.style.display='none'; });
+    deck.style.overflow='hidden';
+    deck.style.scrollSnapType='none';
+    const hud=document.getElementById('hud');
+    if(hud) hud.style.display='none';
+    const target=slides[n];
+    if(target){ target.style.borderBottom='0'; target.scrollIntoView({block:'start'}); }
+    document.title='SHOT_READY '+n+' of '+slides.length;
+    if(window.TCMFigures)window.TCMFigures.mount(document);
+    // 只读视图：不绑键盘与点击，避免截图过程中页面状态改变
+    return;
+  }
+
   function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView();}
   addEventListener('keydown',e=>{
     if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}

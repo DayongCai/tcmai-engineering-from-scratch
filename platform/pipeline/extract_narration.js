@@ -17,6 +17,9 @@
 
 const fs = require('fs');
 const path = require('path');
+// 复用站点侧的公式渲染器：旁白与画面必须对同一个公式给出同一种读法，
+// 各自实现一套「把 LaTeX 变成能念的东西」迟早会对不上。
+const math = require('../../site/math');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const RATE = 4.6; // 中文播报估算速率（字/秒），仅用于排期与剪辑预留
@@ -141,6 +144,77 @@ function estimateSeconds(text) {
   return Math.max(3, Math.round(chars / RATE));
 }
 
+/**
+ * 把课堂文本转成「可朗读文本」。
+ *
+ * 为什么必须单独一步：文档是给眼睛看的，里面有代码块、表格、Markdown 标记。
+ * 把这些直接喂给 TTS，念出来的会是 "const gw 等于 左括号 0 逗号 0 逗号 0 右括号"，
+ * 这不是旁白，这是噪音。真实流水线都要做这一步分离。
+ *
+ * 处理规则:
+ *   - 围栏代码块整段丢弃（代码由画面承担，旁白不念）
+ *   - 表格整段丢弃（表格是扫读用的，念出来无法理解）
+ *   - 去掉 Markdown 标记（**粗体**、`行内码`、[链接](url)、# 标题、> 引用）
+ *   - 公式保留 Unicode 化后的可读形式
+ *   - 压缩空白；若结果过短（例如整段只有代码），该段退回为一句提示语
+ */
+function speakable(text, role) {
+  // 图形段：原文只是图形 id（如 yin-yang-sigmoid），念出来是乱码。
+  // 换成一句如实的画面说明 —— 不描述图形内容（那会变成编造），只说画面上有什么。
+  if (role === 'figure') return '接下来这张动画图演示上面这个翻译过程。';
+
+  const lines = String(text).replace(/\r\n/g, '\n').split('\n');
+  const kept = [];
+  let inFence = false;
+
+  for (const line of lines) {
+    if (/^\s*```/.test(line)) { inFence = !inFence; continue; }
+    if (inFence) continue;
+    const t = line.trim();
+    if (!t) { kept.push(''); continue; }
+    if (t.startsWith('|')) continue;                 // 表格
+    if (/^[-|: ]+$/.test(t)) continue;               // 表格分隔线
+    if (/^<div data-figure=/.test(t)) continue;      // 图形占位
+    if (/^\$\$.*\$\$$/.test(t)) continue;            // 块公式（改由画面承担）
+    kept.push(
+      t
+        .replace(/^#{1,6}\s*/, '')                   // 标题
+        .replace(/^>\s*/, '')                        // 引用
+        .replace(/^\s*[-*+]\s+/, '')                 // 列表符号
+        .replace(/^\s*\d+\.\s+/, '')
+        .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')      // 链接 → 文字
+        .replace(/`([^`]+)`/g, '$1')                 // 行内代码
+        .replace(/\*\*([^*]+)\*\*/g, '$1')
+        .replace(/(^|[\s（(])\*([^*\n]+)\*/g, '$1$2')
+    );
+  }
+
+  const out = kept
+    .join('\n')
+    .replace(/\$([^$\n]+)\$/g, (_, m) => ` ${readableMath(m)} `)   // 行内公式 → 可读文本
+    .replace(/→/g, '，')                                          // 箭头念不出，换成停顿
+    // emoji 与符号标记是给眼睛的：TTS 会念成「剪贴板」「锤子」或直接吞掉，都是噪音
+    .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}]/gu, '')
+    .replace(/^[·•]\s*/gm, '')
+    .replace(/\n{2,}/g, '\n')
+    .replace(/[ \t]{2,}/g, ' ')
+    .trim();
+
+  // 整段都是代码/表格时不留空——空旁白会让成片该段变成 3 秒静默
+  return out || '这一段以代码实现为主，请看画面上的代码块。';
+}
+
+/** 用公式渲染器把 LaTeX 变成纯文本，供 TTS 朗读（去掉 HTML 标签并还原实体） */
+function readableMath(latex) {
+  return math.convert(latex)
+    .replace(/<[^>]+>/g, '')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
 const outBase = path.join(ROOT, 'platform', 'courses', dept, subject);
 let written = 0;
 
@@ -154,7 +228,8 @@ for (const ch of targets) {
   }
   const md = fs.readFileSync(docPath, 'utf8');
   const segments = segment(md);
-  const total = segments.reduce((a, s) => a + estimateSeconds(s.text), 0);
+  // 时长估算基于「可朗读文本」而非文档原文：原文里的代码块不该算进念稿时长
+  const total = segments.reduce((a, s) => a + estimateSeconds(speakable(s.text, s.role)), 0);
 
   const payload = {
     generatedBy: 'platform/pipeline/extract_narration.js',
@@ -166,7 +241,16 @@ for (const ch of targets) {
     segmentCount: segments.length,
     estimateTotalSeconds: total,
     estimateNote: 'estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe',
-    segments: segments.map((s, i) => ({ n: i + 1, ...s, estimateSeconds: estimateSeconds(s.text) })),
+    textVsSpoken: 'text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken',
+    segments: segments.map((s, i) => {
+      const spoken = speakable(s.text, s.role);
+      return {
+        n: i + 1,
+        ...s,
+        spoken,
+        estimateSeconds: estimateSeconds(spoken),
+      };
+    }),
   };
 
   const dir = path.join(outBase, ch, 'narration');
@@ -186,3 +270,4 @@ for (const ch of targets) {
 
 console.log(`\n完成: ${written}/${targets.length} 个章节`);
 console.log('下一步: node platform/pipeline/build_slides.js ' + target);
+

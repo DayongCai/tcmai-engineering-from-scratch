@@ -13,6 +13,11 @@ platform/**/narration/*.mp3
 platform/**/narration/*.wav
 platform/**/video/*.mp4
 platform/**/video/*.webm
+# 中间产物：逐帧 PNG（几十 MB）与 TTS 配音（可 13 秒重建）都不入库。
+# 成片（video/lesson.mp4）走 release 附件发布，见 platform/README.md。
+platform/**/frames/
+platform/**/narration/audio/
+platform/**/concat.txt
 platform/**/tmp/
 platform/**/__pycache__/
 

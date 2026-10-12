@@ -166,6 +166,34 @@ function writeJson(file, obj) {
   fs.writeFileSync(file, `${JSON.stringify(obj, null, 2)}\n`, 'utf8');
 }
 
+/**
+ * 扫文件系统统计**真实存在的成片**。
+ *
+ * 为什么不信 meta.json 里的手工计数器：那个字段靠人记得去改，于是会长期停在 0。
+ * 「已发视频 0」看起来诚实，直到有人打开站点发现播放器是好的 —— 数据与事实不符，
+ * 而没有任何东西会报错。凡是能从文件系统推出的事实，就不要维护第二份。
+ */
+function countPublishedVideos(root) {
+  const fs = require('fs');
+  const base = path.join(root || ROOT, 'platform', 'courses');
+  let n = 0;
+  const walk = (dir) => {
+    let entries;
+    try {
+      entries = fs.readdirSync(dir, { withFileTypes: true });
+    } catch {
+      return;
+    }
+    for (const e of entries) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) { walk(p); continue; }
+      if (e.name === 'lesson.mp4') n += 1;
+    }
+  };
+  walk(base);
+  return n;
+}
+
 module.exports = {
   ROOT,
   CURRICULUM_PATH,
@@ -177,4 +205,5 @@ module.exports = {
   readMeta,
   stageOfSemester,
   writeJson,
+  countPublishedVideos,
 };

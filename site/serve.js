@@ -60,6 +60,15 @@ const server = http.createServer((req, res) => {
     res.writeHead(403).end('403');
     return;
   }
+
+  // 站点页里引用的成片（platform/…）与教材产物（textbooks/…）都在 site/ 之外。
+  // 静态部署时它们是 release 附件或 CDN 资源；本地预览也必须能直接打开，
+  // 否则章节页上的 <video> 只会永远停在黑框 —— 看起来像播放器坏了，实际是路径 404。
+  if (!pathname.startsWith('/repo/') && !fs.existsSync(file)) {
+    const alt = resolveSafe(ROOT, rel);
+    if (alt && fs.existsSync(alt)) file = alt;
+  }
+
   if (fs.existsSync(file) && fs.statSync(file).isDirectory()) {
     file = path.join(file, 'index.html');
   }
@@ -70,8 +79,35 @@ const server = http.createServer((req, res) => {
   }
 
   const ext = path.extname(file).toLowerCase();
+  const size = fs.statSync(file).size;
+  const mime = MIME[ext] || 'application/octet-stream';
+  const range = req.headers.range;
+
+  // 视频要支持 Range 请求：浏览器拖动进度条、以及 Safari 的元数据探测都依赖它。
+  // 不支持 Range 时大文件只能整体下载，<video> 在部分浏览器里会完全不播放。
+  if (range && /^bytes=\d*-\d*$/.test(range)) {
+    const [startRaw, endRaw] = range.replace('bytes=', '').split('-');
+    const start = startRaw === '' ? Math.max(0, size - Number(endRaw)) : Number(startRaw);
+    const end = endRaw === '' || startRaw === '' ? size - 1 : Math.min(Number(endRaw), size - 1);
+    if (start > end || start >= size) {
+      res.writeHead(416, { 'Content-Range': `bytes */${size}` }).end();
+      return;
+    }
+    res.writeHead(206, {
+      'Content-Type': mime,
+      'Content-Length': end - start + 1,
+      'Content-Range': `bytes ${start}-${end}/${size}`,
+      'Accept-Ranges': 'bytes',
+      'Cache-Control': 'no-cache',
+    });
+    fs.createReadStream(file, { start, end }).pipe(res);
+    return;
+  }
+
   res.writeHead(200, {
-    'Content-Type': MIME[ext] || 'application/octet-stream',
+    'Content-Type': mime,
+    'Content-Length': size,
+    'Accept-Ranges': 'bytes',
     'Cache-Control': 'no-cache',
   });
   fs.createReadStream(file).pipe(res);

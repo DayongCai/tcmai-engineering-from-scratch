@@ -11,14 +11,16 @@
 'use strict';
 
 const { spawnSync } = require('node:child_process');
+const tools = require('./find_tools');
 
 const TOOLS = [
   {
     name: 'ffmpeg',
     stage: '第 4 段 · 成片编码',
     needed: true,
+    find: tools.findFfmpeg,
     install: {
-      win32: 'winget install Gyan.FFmpeg   （或 scoop install ffmpeg / choco install ffmpeg）',
+      win32: 'winget install Gyan.FFmpeg（github.com 被墙时改用 gh-proxy 镜像，见 platform/README.md「ffmpeg 装不上怎么办」）',
       darwin: 'brew install ffmpeg',
       linux: 'sudo apt install ffmpeg',
     },
@@ -27,18 +29,38 @@ const TOOLS = [
     name: 'ffprobe',
     stage: '第 4 段 · 时长探测',
     needed: false,
+    find: tools.findFfprobe,
     install: { win32: '随 ffmpeg 一同安装', darwin: '随 ffmpeg 一同安装', linux: '随 ffmpeg 一同安装' },
   },
   {
-    name: 'edge-tts',
-    stage: '第 4 段 · 旁白配音（可替代）',
+    name: 'headless-browser',
+    stage: '第 3.5 段 · 画面帧导出（Edge / Chrome）',
+    needed: true,
+    find: tools.findBrowser,
+    install: {
+      win32: 'Edge 随 Windows 预装；或 winget install Google.Chrome',
+      darwin: 'brew install --cask google-chrome',
+      linux: 'sudo apt install chromium',
+    },
+  },
+  {
+    name: 'tts',
+    stage: '第 3 段 · 配音合成',
     needed: false,
-    install: { win32: 'pip install edge-tts', darwin: 'pip install edge-tts', linux: 'pip install edge-tts' },
+    find: () => tools.findTtsBackend().path,
+    note: () => tools.findTtsBackend().label,
+    installed_ok: true,   // 只要有任何一条 TTS 链可用就算可用（含离线语音）
+    install: {
+      win32: '两条链任选：pip install edge-tts（需 python），或装 Windows 中文语音包（设置 → 时间和语言 → 语音）',
+      darwin: 'pip install edge-tts',
+      linux: 'pip install edge-tts',
+    },
   },
   {
     name: 'pandoc',
     stage: '[textbooks] · PDF / EPUB 排版',
     needed: false,
+    find: tools.findPandoc,
     install: {
       win32: 'winget install JohnMacFarlane.Pandoc',
       darwin: 'brew install pandoc',
@@ -47,15 +69,9 @@ const TOOLS = [
   },
 ];
 
-function probe(name) {
-  const isWin = process.platform === 'win32';
-  const r = spawnSync(isWin ? 'where' : 'which', [name], { encoding: 'utf8', shell: false });
-  if (r.status !== 0) return null;
-  const first = String(r.stdout || '').split(/\r?\n/).find((l) => l.trim());
-  return first ? first.trim() : null;
-}
-
 function version(cmd) {
+  // 非可执行文件（如 TTS 后端名）不尝试 -version，避免把语音名当成命令跑
+  if (!cmd || !/\.exe$|ffmpeg|ffprobe|pandoc|msedge|chrome|edge-tts$/i.test(cmd)) return '';
   const r = spawnSync(cmd, ['-version'], { encoding: 'utf8' });
   if (r.status !== 0) return '';
   const line = String(r.stdout || '').split(/\r?\n/)[0] || '';
@@ -63,7 +79,7 @@ function version(cmd) {
 }
 
 const platform = process.platform;
-const results = TOOLS.map((t) => ({ ...t, path: probe(t.name) }));
+const results = TOOLS.map((t) => ({ ...t, path: t.find() }));
 
 console.log('═══ [tcmP] 视频流水线 · 工具链探测 ═══');
 console.log(`  平台: ${platform} · Node ${process.version}\n`);
@@ -74,25 +90,26 @@ for (const r of results) {
   console.log(`  ${r.name.padEnd(10)} ${tag}`);
   console.log(`     阶段: ${r.stage}`);
   if (ok) {
-    const v = version(r.path);
+    const v = r.name === 'headless-browser' ? '' : version(r.path);
     if (v) console.log(`     版本: ${v}`);
     console.log(`     路径: ${r.path}`);
+    if (r.note) console.log(`     后端: ${r.note()}`);
   } else {
     console.log(`     安装: ${r.install[platform] || r.install.linux}`);
   }
   console.log('');
 }
 
-const blocked = results.filter((r) => r.needed && !r.path);
-const degraded = results.filter((r) => !r.needed && !r.path);
+const blocked = results.filter((t) => t.needed && !t.path);
+const degraded = results.filter((t) => !t.needed && !t.path);
 
 console.log('─── 结论 ───');
 if (blocked.length === 0) {
-  console.log('  ✅ 全部必需工具齐备，四段流水线均可执行');
+  console.log('  ✅ 全部必需工具齐备，流水线六个阶段均可执行');
 } else {
-  console.log(`  ⚠ 阻断项: ${blocked.map((r) => r.name).join(', ')}`);
-  console.log('  → 第 1–3 段（探测 / 讲稿 / 幻灯片）仍可完整执行；');
-  console.log('  → 第 4 段（成片）会被 build_video.js 明确拒绝，而不是生成占位文件。');
+  console.log(`  ⚠ 阻断项: ${blocked.map((t) => t.name).join(', ')}`);
+  console.log('  → 缺 headless-browser 时无法导出画面帧');
+  console.log('  → 缺 ffmpeg 时无法合成 MP4（build_video.js 会明确拒绝，而不是生成占位文件）');
 }
 if (degraded.length) {
   console.log(`  ⬚ 降级项: ${degraded.map((r) => `${r.name}(${r.stage})`).join(' · ')}`);
