@@ -365,6 +365,8 @@ ${codeNames.length ? `
 </div>
 ` : ''}
 
+${renderOutputs(c.outputs)}
+
 ${c.quiz ? renderQuiz(c.quiz, c.key) : ''}
 
 <hr/>
@@ -373,6 +375,37 @@ ${c.quiz ? renderQuiz(c.quiz, c.key) : ''}
   ${next ? `<span style="float:right"><a href="chapter.html?path=${encodeURIComponent(next.key)}">${esc(next.title)}</a> →</span>` : ''}
 </p>
 `);
+}
+
+/**
+ * 本章产出物：契约要求每章交出 prompt-<base>.md + skill-<base>.md。
+ *
+ * 为什么要在章节页渲染它们：这两件是「工程化」与「讲课」的分界 ——
+ * 代码跑通只证明写对了，**能交出去复用**才算工程化。之前它们只躺在
+ * `outputs/` 目录里，页面上看不到，于是「每章都产出提示词与技能」这件事
+ * 对读者是不可见的（与 outputs 契约曾是空壳门是同一类问题的两种形态）。
+ */
+const OUTPUT_LABEL = { prompt: '提示词', skill: '技能', agent: '智能体', mcp: 'MCP 服务' };
+
+function renderOutputs(outputs) {
+  const list = outputs || [];
+  if (!list.length) {
+    return `<h2>带走的东西</h2>
+<p class="muted small">本章尚未产出。契约要求每章交出 <code>prompt-&lt;base&gt;.md</code> 与
+<code>skill-&lt;base&gt;.md</code> 两件 —— 缺了就是没写完（见 <code>CONTRIBUTING.md</code>）。</p>`;
+  }
+  const cards = list.map((o) => `
+  <div class="output-card">
+    <div class="output-kind kind-${esc(o.kind)}">${esc(OUTPUT_LABEL[o.kind] || o.kind)}</div>
+    <div class="output-title">${esc(o.title)}</div>
+    ${o.description ? `<div class="output-desc">${esc(o.description)}</div>` : ''}
+    <div class="output-meta">${o.chars} 字 · <a href="${encodeURI(o.file)}">${esc(o.name)}</a></div>
+  </div>`).join('');
+  return `<h2>带走的东西</h2>
+<p class="muted small">这两件是本章可以被拿走复用的部分 ——
+提示词让大模型按本章的判断格式输出，技能把本章的流程固化下来。</p>
+<div class="output-grid">${cards}
+</div>`;
 }
 
 function renderQuiz(quiz, key) {

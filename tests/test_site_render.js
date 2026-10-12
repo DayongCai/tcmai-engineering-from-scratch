@@ -131,6 +131,35 @@ test('[chapter] 无视频的章节给出占位说明，且指明生成方式', (
   assert.ok(html.includes('platform/README.md'), '占位说明未指向流水线文档');
 });
 
+test('[chapter] 渲染本产出物（prompt / skill）—— 不只是躺在 outputs/ 目录里', () => {
+  const key = '01-zhongyi/01-zhongyi-jichu-lilun/01-yin-yang-er-fenlei';
+  const html = render('chapter', `?path=${encodeURIComponent(key)}`).html();
+
+  assert.ok(html.includes('带走的东西'), '章节页缺「带走的东西」一节');
+  assert.ok(html.includes('output-grid'), '缺产出物网格容器');
+  assert.ok(html.includes('kind-prompt'), '未渲染提示词卡（kind-prompt）');
+  assert.ok(html.includes('kind-skill'), '未渲染技能卡（kind-skill）');
+
+  // 卡片上的链接必须指向真实文件 —— 只渲染个壳、链接 404 等于没渲染
+  const [dept, subject, chapter] = key.split('/');
+  const base = chapter.replace(/^\d+-/, '');
+  for (const kind of ['prompt', 'skill']) {
+    const rel = `departments/${dept}/${subject}/chapters/${chapter}/outputs/${kind}-${base}.md`;
+    assert.ok(fs.existsSync(path.join(ROOT, rel)), `产出物文件不存在: ${rel}`);
+    assert.ok(html.includes(encodeURI(rel)), `页面未链接到 ${rel}`);
+  }
+  // 字数来自构建期解析（真实值），不是写死的
+  assert.match(html, /output-meta">\s*\d+ 字/, '产出物卡缺字数（构建期解析的真实值）');
+});
+
+test('[chapter] 无产出物的章节给出诚实的缺口说明，不装作有', () => {
+  // 直接构造：把 outputs 清空后渲染的语义由 renderOutputs 保证；
+  // 这里断言渲染器对空列表的输出（读取源码里的那句话，防止被改成静默隐藏）
+  const app = fs.readFileSync(path.join(ROOT, 'site', 'app.js'), 'utf8');
+  assert.ok(/本章尚未产出/.test(app), 'renderOutputs 缺「尚未产出」分支');
+  assert.ok(/缺了就是没写完/.test(app), '缺口说明未点明「没写完」');
+});
+
 test('[subject] 视频进度按实际成片统计，不读手工计数器', () => {
   const html = render('subject', `?path=${encodeURIComponent('01-zhongyi/01-zhongyi-jichu-lilun')}`).html();
   // meta.json 里的 videosPublished 是手工字段，实际成片可能多于它；

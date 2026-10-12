@@ -105,7 +105,30 @@ for (const dept of catalog.departments) {
       if (fs.existsSync(outDir)) {
         for (const f of fs.readdirSync(outDir).sort()) {
           if (!f.endsWith('.md')) continue;
-          outputs.push({ name: f, body: fs.readFileSync(path.join(outDir, f), 'utf8') });
+          const body = fs.readFileSync(path.join(outDir, f), 'utf8');
+          // 在构建期解出类型与说明：页面（浏览器端）不该重复实现 frontmatter 解析。
+          // 同一份解析逻辑散到两处，迟早会漂移 —— 而漂移时只有一边会错。
+          const m = /^(prompt|skill|agent|mcp)-(.+)\.md$/.exec(f);
+          const fm = {};
+          const fmMatch = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/.exec(body);
+          if (fmMatch) {
+            for (const line of fmMatch[1].split('\n')) {
+              const mm = /^([A-Za-z_][\w-]*):\s*(.*)$/.exec(line);
+              if (mm) fm[mm[1]] = mm[2].trim().replace(/^["']|["']$/g, '');
+            }
+          }
+          const h1 = /^#\s+(.+)$/m.exec(body);
+          outputs.push({
+            name: f,
+            kind: m ? m[1] : 'other',
+            // 仓库根相对路径：站点本地预览由 serve.js 回落到仓库根，
+            // 静态部署从仓库根发布时同样可用（见 site/serve.js）。
+            file: `departments/${dept.slug}/${subject.slug}/chapters/${name}/outputs/${f}`,
+            title: (h1 ? h1[1] : fm.name || f).trim(),
+            description: fm.description || null,
+            chars: body.replace(/\s/g, '').length,
+            body,
+          });
         }
       }
 
