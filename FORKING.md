@@ -81,7 +81,7 @@
 3. 写 audit_curriculum.js（L0 数据 / L1 结构 / L2 契约 / L3 内容）
 4. 让审计对 120 个空学科全绿                            ← 关键里程碑
 5. 写 build_catalog / build_doc_indexes / build_roadmap  → 索引与站点
-6. 写全套测试（现在 18 个套件）
+6. 写全套测试（现在 19 个套件）
 7. 然后才开始写第 1 章的内容
 ```
 
@@ -150,10 +150,11 @@
 |---|---|---|
 | 课程审计（L0–L3） | `npm run audit` | 三层 0 错误 |
 | 计数一致性 | `npm run counts` | README 声明与 catalog.json 逐项对齐 |
-| 链接完整性 | `npm run links` | 扫描 172 个 md，0 断链 |
-| 测试套件 | `npm test` | 18 个套件全绿 |
+| 链接完整性 | `npm run links` | 扫描 173 个 md，0 断链 |
+| 产出物索引 | `npm run outputs` | 6 件产物 / 3 章，`--check` 不漂移 |
+| 测试套件 | `npm test` | 19 个套件全绿 |
 
-`npm run check` = 审计 + 计数 + 链接 `--strict`，CI 上跑这一条。
+`npm run check` = 审计 + 计数 + 链接 `--strict` + 产出物索引 `--check`，CI 上跑这一条。
 
 **门的强度要看它能不能被空壳骗过**：只检查"文件存在"的门，一个 `touch` 就能过。
 上表四门里，每条断言都写在值得断言的东西上 —— 见教训 2。

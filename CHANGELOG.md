@@ -3,6 +3,54 @@
 本项目遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.9.0] — 2026-10-12
+
+### 新增 · 根级产出物索引（上游对照的最后一项缺口）
+
+契约要求每章交出 `outputs/prompt-<base>.md` + `skill-<base>.md`（可复用的提示词与技能）。
+这些产物散在 120 个学科、1086 个章节的目录里 —— 现在 3 章 6 件靠人找还行，
+**1086 章时等于不存在：写了却找不到，与没写等价。**
+
+`scripts/build_outputs_index.js` →
+
+| 产物 | 用途 |
+|---|---|
+| `outputs/index.json` | 机器可读索引（供站点/检索/统计）：items + tree + gaps + counts |
+| `outputs/README.md` | 人可读索引（按 院系 → 学科 → 章节 分层，逐件带类型/标题/说明/字数/链接） |
+| `outputs/index.html` | 自包含浏览页（离线单文件可开，形态参考用户既有的读书会交流页） |
+
+浏览页的形态照 `E:/医圣成长/tcm-textbooks/读书会交流页/index.html` 取：
+暖色深底（`#0d0a07` / 面板 `#1a1610` / 边 `#2a2218`）+ 宋体栈
+（`Noto Serif SC` → `Source Han Serif CN` → `Songti SC` → `SimSun`）+ 卡片网格。
+**但数据是生成的不是硬编码的** —— 那份交流页把知识树写在 HTML 里，
+改一次要手工同步；本页把 `index.json` 内联，重跑脚本即同步。
+
+### 缺口是显式列出的，不是瞒着的
+
+索引不只列"有什么"，还列"该有而没有什么"：已建章节若缺 prompt 或 skill，
+进 `gaps` 并在 README 与页面底部单列一节。
+**不让索引看起来比现实漂亮** —— 一条列表里，缺口比产出物更需要被看见。
+
+### 本门抓出我自己的两处错
+
+1. **链接检查（1.7.0 新增）抓到**：`outputs/README.md` 里 6 条链接写成
+   `../../<根相对路径>`，而该文件在 `outputs/` 下，应为 `../`。
+2. **文档事实核对（1.8.0 新增）抓到**：`FORKING.md` 写「18 个套件 / 172 个 md」，
+   加上本节的套件与文件后实际是 **19 / 173** —— 与上一轮同一类的静默过期。
+
+两处都是**这一轮新加的门抓到这一轮新写的代码**，说明门的时序是对的：
+先立门，再写会被门检查的东西。
+
+另外补了一条断言：链接检查只扫 `.md`，所以 **HTML 的内部 href 得自己守**
+（生成器里同一个 `../` 错误我犯了两次，第一次在 README、第二次在 HTML）——
+`tests/test_outputs_index.js` 现在逐个 `existsSync` 验证页面里的链接。
+
+### 其他
+
+- 测试套件 18 → **19**（新增 `test_outputs_index.js` 12 项），全部通过。
+- `npm run outputs` 新增；`npm run build` 与 `npm run check` 均接入（`--check` 防漂移）。
+- `FORKING.md` 质量门表从四条增至五条。
+
 ## [1.8.0] — 2026-10-12
 
 ### 新增 · `FORKING.md`：改造参考架构建新课的流程（对照上游 `FORKING.md`）

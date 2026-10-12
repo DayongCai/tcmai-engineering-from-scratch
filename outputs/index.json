@@ -1,0 +1,183 @@
+{
+  "$generated": "node scripts/build_outputs_index.js",
+  "note": "可复用产出物的根级索引。契约见 CONTRIBUTING.md；每章的产物是生成物，索引是它们的生成物。",
+  "counts": {
+    "items": 6,
+    "chaptersWithOutputs": 3,
+    "byKind": {
+      "prompt": 3,
+      "skill": 3
+    },
+    "gaps": 0
+  },
+  "tree": [
+    {
+      "dept": "中医系",
+      "slug": "01-zhongyi",
+      "icon": "☯️",
+      "subjects": [
+        {
+          "subject": "中医基础理论",
+          "slug": "01-zhongyi-jichu-lilun",
+          "type": "Core",
+          "semester": 1,
+          "chapters": [
+            {
+              "chapter": "01-yin-yang-er-fenlei",
+              "title": "第 1 章 · 阴阳学说 → 二分类：从零实现逻辑回归",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/01-yin-yang-er-fenlei/outputs/prompt-yin-yang-er-fenlei.md",
+                  "title": "Prompt · 阴阳倾向结构化归因",
+                  "description": null,
+                  "chars": 1234
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/01-yin-yang-er-fenlei/outputs/skill-yin-yang-er-fenlei.md",
+                  "title": "阴阳倾向结构化判别",
+                  "description": "把四诊体征结构化为阴阳倾向判断（含置信度与拒答条件），并逐项给出可核查理由。",
+                  "chars": 1322
+                }
+              ]
+            },
+            {
+              "chapter": "02-wu-xing-duo-fenlei",
+              "title": "第 2 章 · 五行学说 → 多分类：从零实现 Softmax（并检验生克约束是否真的有用）",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/02-wu-xing-duo-fenlei/outputs/prompt-wu-xing-duo-fenlei.md",
+                  "title": "Prompt · 加约束前的基线测量",
+                  "description": null,
+                  "chars": 1300
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/02-wu-xing-duo-fenlei/outputs/skill-wu-xing-duo-fenlei.md",
+                  "title": "五行归类的可归因流程",
+                  "description": "五行归类必须给出所依据的配属维度，并显式标注生克关系一致性；资料不足时标记不确定。",
+                  "chars": 1612
+                }
+              ]
+            },
+            {
+              "chapter": "03-zang-xiang-tupu",
+              "title": "第 3 章 · 藏象学说 → 知识图谱：脏腑关系的图表示",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/03-zang-xiang-tupu/outputs/prompt-zang-xiang-tupu.md",
+                  "title": "Prompt · 藏象关系链整理（带方向校验）",
+                  "description": null,
+                  "chars": 1943
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/03-zang-xiang-tupu/outputs/skill-zang-xiang-tupu.md",
+                  "title": "藏象关系链抽取与校验",
+                  "description": "把症状串成藏象关系链，每一步标注关系类型与方向，跨五行时显式标出相生相克。",
+                  "chars": 1670
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医基础理论",
+      "subjectSlug": "01-zhongyi-jichu-lilun",
+      "chapter": "01-yin-yang-er-fenlei",
+      "chapterTitle": "第 1 章 · 阴阳学说 → 二分类：从零实现逻辑回归",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/01-yin-yang-er-fenlei/outputs/prompt-yin-yang-er-fenlei.md",
+      "title": "Prompt · 阴阳倾向结构化归因",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 1234
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医基础理论",
+      "subjectSlug": "01-zhongyi-jichu-lilun",
+      "chapter": "01-yin-yang-er-fenlei",
+      "chapterTitle": "第 1 章 · 阴阳学说 → 二分类：从零实现逻辑回归",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/01-yin-yang-er-fenlei/outputs/skill-yin-yang-er-fenlei.md",
+      "title": "阴阳倾向结构化判别",
+      "name": "yin-yang-er-fenlei",
+      "description": "把四诊体征结构化为阴阳倾向判断（含置信度与拒答条件），并逐项给出可核查理由。",
+      "version": "1.0.0",
+      "chars": 1322
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医基础理论",
+      "subjectSlug": "01-zhongyi-jichu-lilun",
+      "chapter": "02-wu-xing-duo-fenlei",
+      "chapterTitle": "第 2 章 · 五行学说 → 多分类：从零实现 Softmax（并检验生克约束是否真的有用）",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/02-wu-xing-duo-fenlei/outputs/prompt-wu-xing-duo-fenlei.md",
+      "title": "Prompt · 加约束前的基线测量",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 1300
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医基础理论",
+      "subjectSlug": "01-zhongyi-jichu-lilun",
+      "chapter": "02-wu-xing-duo-fenlei",
+      "chapterTitle": "第 2 章 · 五行学说 → 多分类：从零实现 Softmax（并检验生克约束是否真的有用）",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/02-wu-xing-duo-fenlei/outputs/skill-wu-xing-duo-fenlei.md",
+      "title": "五行归类的可归因流程",
+      "name": "wu-xing-duo-fenlei",
+      "description": "五行归类必须给出所依据的配属维度，并显式标注生克关系一致性；资料不足时标记不确定。",
+      "version": "1.0.0",
+      "chars": 1612
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医基础理论",
+      "subjectSlug": "01-zhongyi-jichu-lilun",
+      "chapter": "03-zang-xiang-tupu",
+      "chapterTitle": "第 3 章 · 藏象学说 → 知识图谱：脏腑关系的图表示",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/03-zang-xiang-tupu/outputs/prompt-zang-xiang-tupu.md",
+      "title": "Prompt · 藏象关系链整理（带方向校验）",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 1943
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医基础理论",
+      "subjectSlug": "01-zhongyi-jichu-lilun",
+      "chapter": "03-zang-xiang-tupu",
+      "chapterTitle": "第 3 章 · 藏象学说 → 知识图谱：脏腑关系的图表示",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/03-zang-xiang-tupu/outputs/skill-zang-xiang-tupu.md",
+      "title": "藏象关系链抽取与校验",
+      "name": "zang-xiang-tupu",
+      "description": "把症状串成藏象关系链，每一步标注关系类型与方向，跨五行时显式标出相生相克。",
+      "version": "1.0.0",
+      "chars": 1670
+    }
+  ],
+  "gaps": []
+}
