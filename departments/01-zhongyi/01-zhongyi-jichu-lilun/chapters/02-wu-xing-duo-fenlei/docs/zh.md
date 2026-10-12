@@ -213,6 +213,8 @@ node --test code/main.test.js
 # Expected: 全部通过
 ```
 
+> **边界声明**：本章示例数据为教学样例，**非临床数据集**；本章给出的任何模型输出均不构成诊疗建议，也不能替代执业医师的判断。
+
 ## 练习
 
 见 [exercises.md](../exercises.md)。

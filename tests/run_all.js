@@ -33,6 +33,7 @@ const SUITES = [
   { file: 'test_links.js', desc: '内部链接检查（含判据宽严两侧的负例）' },
   { file: 'test_forking_doc.js', desc: '改造流程文档的事实核对（文档里的数字不许静默过期）' },
   { file: 'test_outputs_index.js', desc: '产出物索引层（与文件系统双向一致 / 缺口显式 / 不漂移）' },
+  { file: 'test_audit_l3.js', desc: 'L3 内容层端到端（造探针章节，四个负例：代价与边界/代码块绕过/H1/引文）' },
   { file: 'test_chapter_code.js', desc: '每个已建章节的 code/main.js 与单元测试', slow: true },
   { file: 'test_content_review.js', desc: '人机闭环：内容复核清单', advisory: true },
   { file: 'assert_disclaimers.js', desc: '[tcmP] 每集讲稿必须带末位免责声明卡' },

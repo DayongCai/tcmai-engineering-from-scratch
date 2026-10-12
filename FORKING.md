@@ -81,7 +81,7 @@
 3. 写 audit_curriculum.js（L0 数据 / L1 结构 / L2 契约 / L3 内容）
 4. 让审计对 120 个空学科全绿                            ← 关键里程碑
 5. 写 build_catalog / build_doc_indexes / build_roadmap  → 索引与站点
-6. 写全套测试（现在 19 个套件）
+6. 写全套测试（现在 20 个套件）
 7. 然后才开始写第 1 章的内容
 ```
 
@@ -137,7 +137,7 @@
 | `outputs/prompt-<base>.md` | 有 H1、有 `## 用途` 段、≥300 字、文件名含 `<base>` | `audit_curriculum.js` L2 |
 | `outputs/skill-<base>.md` | frontmatter 含 `name`/`description`/`version`，且 `name` === `<base>` | 同上 |
 | `quiz.json` | `pre`/`check`/`post` 三段题数固定、每题 4 选项、`correct` ∈ 0..3 | 同上 |
-| `docs/zh.md` | 有经典引文（写到《书名·篇名》）、有免责声明、有"代价与边界" | 同上 |
+| `docs/zh.md` | 有经典引文（写到《书名·篇名》）、有免责声明、有"代价与边界" | `audit_curriculum.js` **L3** |
 | `code/main.js` | 可运行、**自终止**、退出码 0 | `tests/test_chapter_code.js` |
 
 `<base>` = 章目录名去掉 `NN-` 前缀（章 `01-yin-yang-er-fenlei` → `prompt-yin-yang-er-fenlei.md`）。
@@ -152,7 +152,7 @@
 | 计数一致性 | `npm run counts` | README 声明与 catalog.json 逐项对齐 |
 | 链接完整性 | `npm run links` | 扫描 173 个 md，0 断链 |
 | 产出物索引 | `npm run outputs` | 6 件产物 / 3 章，`--check` 不漂移 |
-| 测试套件 | `npm test` | 19 个套件全绿 |
+| 测试套件 | `npm test` | 20 个套件全绿 |
 
 `npm run check` = 审计 + 计数 + 链接 `--strict` + 产出物索引 `--check`，CI 上跑这一条。
 

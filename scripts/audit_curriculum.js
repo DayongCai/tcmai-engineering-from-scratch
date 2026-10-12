@@ -2,10 +2,11 @@
 /**
  * audit_curriculum.js — 课程结构与章节契约审计（CI 阻断门）
  *
- * 分三层:
+ * 分四层:
  *   L0 数据层 : curriculum.json 自身合法（数量/唯一性/元组形状/取值域）
  *   L1 结构层 : 磁盘目录与 curriculum.json 对齐，命名规范
  *   L2 契约层 : 已建章节必须满足 docs/zh.md + quiz.json + outputs/ 契约
+ *   L3 内容层 : docs/zh.md 的内容要求（经典引文/免责声明/代价与边界/篇幅/UTF-8/单一 H1）
  *
  * 退出码: 0 通过 / 1 有错误
  */
@@ -94,6 +95,10 @@ if (!fs.existsSync(deptDir)) {
 
 // ─────────── L2 契约层 ───────────
 let builtChapters = 0;
+// L3 用：最小篇幅。必须声明在调用点之前 —— 函数声明会提升，const 不会，
+// 声明在后面会让第一次调用撞上 TDZ（第一版就栽在这里）。
+const CONTENT_MIN_CHARS = 1500;
+
 for (const s of flat) {
   const st = subjectStatus(s);
   if (st.built === 0) continue;
@@ -129,10 +134,12 @@ for (const s of flat) {
       err(`L2 quiz.json 解析失败: ${s.path}/chapters/${name} — ${e.message}`);
     }
     checkOutputs(s, cdir, name, err);
+    checkContent(s, cdir, name, err);
     builtChapters += 1;
   }
 }
 ok.push(`L2 契约层: ${builtChapters} 个已建章节通过 docs/quiz/outputs 契约`);
+ok.push(`L3 内容层: ${builtChapters} 个已建章节通过 引文/免责/代价与边界/篇幅 校验`);
 
 /**
  * L2 · outputs/ 契约
@@ -208,6 +215,70 @@ function checkOutputs(s, cdir, name, err) {
     if (raw.replace(/\s/g, '').length < 300) {
       err(`L2 skill 正文过短（${raw.replace(/\s/g, '').length} 字）: ${where}/${skills[0]}`);
     }
+  }
+}
+
+/**
+ * L3 · 内容层
+ *
+ * 契约（CONTRIBUTING.md / FORKING.md）对 `docs/zh.md` 的要求不止"文件在"：
+ *   有经典引文（写到《书名·篇名》级）· 有免责/边界声明 · 有「代价与边界」段。
+ *
+ * 这一层此前**不存在**。要说精确：L2 并非完全不看 docs —— 它查 4 个结构标记
+ * （MOTTO / PROBLEM / 环境逼迫 / 知识积累）与文件存在性。
+ * 但契约承诺的另三项**没人查**：经典引文（须写到《书名·篇名》级）、
+ * 免责/边界声明、「代价与边界」段。
+ * FORKING.md 的产物契约表还把这三项标成"由 audit_curriculum.js L2 检查"，那是假的。
+ *
+ * docs 内容不达标时的失败形态是安静的：文件在、能打开、读起来像那么回事。
+ * 实现后立刻在已有内容里查出两处违约：第 1 章缺「代价与边界」、
+ * 三章的免责声明只写在代码块里（文档级声明一条没有）。
+ * 这个门第一次跑就抓到了东西 —— 它不是形式主义。
+ *
+ * **必须跳过围栏代码块**：`# 边界声明: …` 这种行出现在示例输出里，
+ * 算不得文档级声明（第一版正则没跳过，把 19 行代码注释误计成 19 个 H1）。
+ */
+function stripFenced(text) {
+  const out = [];
+  let inFence = false;
+  for (const line of text.split('\n')) {
+    if (/^\s*```/.test(line)) { inFence = !inFence; continue; }
+    if (!inFence) out.push(line);
+  }
+  return out.join('\n');
+}
+
+function checkContent(s, cdir, name, err) {
+  const docPath = path.join(cdir, 'docs', 'zh.md');
+  const where = `${s.path}/chapters/${name}`;
+  if (!fs.existsSync(docPath)) return;          // 存在性由 L2 负责
+
+  const buf = fs.readFileSync(docPath);
+  let text;
+  try {
+    text = new TextDecoder('utf-8', { fatal: true }).decode(buf);
+  } catch {
+    err(`L3 docs/zh.md 不是有效 UTF-8（编辑器存成了别的编码？）: ${where}`);
+    return;
+  }
+
+  const prose = stripFenced(text);
+  const plain = prose.replace(/\s/g, '');
+
+  const h1 = (prose.match(/^#\s+\S/gm) || []).length;
+  if (h1 !== 1) err(`L3 docs/zh.md 顶层 H1 应为 1 个，实为 ${h1}: ${where}`);
+
+  if (!/《[^》]*·[^》]*》/.test(prose)) {
+    err(`L3 docs/zh.md 缺经典引文（须写到《书名·篇名》级，如《素问·阴阳应象大论》）: ${where}`);
+  }
+  if (!/代价与边界/.test(prose)) {
+    err(`L3 docs/zh.md 缺「代价与边界」段 —— 只报喜不报忧的章节不算写完: ${where}`);
+  }
+  if (!/(免责|边界声明|不构成诊疗|不构成医疗)/.test(prose)) {
+    err(`L3 docs/zh.md 正文缺免责/边界声明（写在代码块里不算）: ${where}`);
+  }
+  if (plain.length < CONTENT_MIN_CHARS) {
+    err(`L3 docs/zh.md 篇幅不足 ${CONTENT_MIN_CHARS} 字（实测 ${plain.length}）: ${where}`);
   }
 }
 
