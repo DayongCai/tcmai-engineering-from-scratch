@@ -3,6 +3,66 @@
 本项目遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.7.0] — 2026-10-12
+
+### 新增 · 内部链接检查（对照上游 `scripts/link_check.py` 补的缺口）
+
+上游把链接检查分两层：内链在 `audit_lessons.py` 里（规则 L010），外链在独立的
+`link_check.py`（带 7 天缓存）。**本仓库此前两层都没有** —— 而文档里
+「见 xxx.md」这类句子断了不会报错，只是点不动。
+
+新增 `scripts/check_links.js` + `tests/test_links.js`（5 项，含负例）：
+
+```
+扫描 171 个 Markdown 文件（跳过 .git / node_modules / 源材料全本 / 站点快照 / templates）
+✅ 未发现断链
+```
+
+### 实测 · 它抓出一个真 bug：`departments/README.md` 的 120 条链接全指错一层
+
+`build_doc_indexes.js` 生成 `departments/README.md` 时，学科链接用的是 `s.path`
+（**仓库根相对**，形如 `departments/01-zhongyi/01-zhongyi-jichu-lilun`）。
+但该文件就在 `departments/` 下，而 markdown 是按**文件所在目录**解析的 ——
+于是 121 条链接全部指向 `departments/departments/…`。
+
+修生成器（去掉前导 `departments/`）后，断链 **124 → 4**。
+
+另外 3 类真断链，同属「`../` 层数差一层」：
+
+| 文件 | 错值 | 正确的 |
+|---|---|---|
+| 3 × `chapters/*/docs/zh.md` | `outputs/prompt-*.md` | `../outputs/prompt-*.md` |
+| 3 × `chapters/*/docs/zh.md` | `exercises.md` | `../exercises.md`（该文件确实在章节根） |
+| `chapters/03-zang-xiang-tupu/docs/zh.md` | `../../../../glossary/…` | `../../../../../../glossary/…`（差 2 层） |
+
+### 一处**我自己修错的**（留档）
+
+`textbooks/01-zhongyi/01-zhongyi-jichu-lilun/01-第1章-…md` 里原本的
+`../../../glossary/bridge-map.md` **是对的**，我按「同类错误」的直觉改成了 `../../`，
+反而改坏。是脚本量出来的：同一批候选路径逐个 `existsSync`，只有原值 ✅。
+**手数 `../` 不可靠，要量。**
+
+### 检查器判据的两个错法（都踩过，都写进测试）
+
+- **太宽**：把「指向尚未开工学科」的前瞻引用当断链 → 一次报 124 条假阳性，
+  人就不看了，门等于没有。
+- **太松**：把**已建学科内部**的路径写错也归进「未开工」吞掉 → 真 bug 永远浮不出来。
+  第一版正是如此（10 处「未开工」里 7 处其实是真断链）。
+
+现在判据：只有「curriculum 声明了、且**子目录里一个文件都没有**」才算未开工。
+不能只看目录存在性 —— `npm run build` 会把 120 个学科目录全建出来，
+那样判据会随「上次跑没跑过构建」而变，而 git 又不跟踪空目录，
+同一份仓库在不同机器上会给出不同结论。
+
+`tests/test_links.js` 两侧都设了负例：既断言不误报，也**故意造一处已建学科内部的断链**
+要求检查器报出来，然后还原。
+
+### 其他
+
+- 测试套件 16 → 17，全部通过；三层审计 0 错误。
+- 上游还有两项值得补、本次未做：根级 `outputs/index.json`（把各章 prompt/skill
+  汇总成索引，现在 3 章能靠人找，1086 章时不行）、`FORKING.md`（改造参考架构的流程）。
+
 ## [1.6.0] — 2026-10-12
 
 ### 新增 · 类经图翼「语义范畴 × 方位」接入语义张量（结论是否定的）

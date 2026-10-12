@@ -128,8 +128,8 @@ node code/main.js
 
 ## SHIP IT：产出物
 
-- [📋 Prompt 模板](outputs/prompt-yin-yang-er-fenlei.md) —— 让大模型按「体征 → 阴阳倾向 + 理由」的格式输出，并要求它标注不确定项
-- [🛠️ Skill 文件](outputs/skill-yin-yang-er-fenlei.md) —— 把本课的判别流程固化成一个可复用的操作技能
+- [📋 Prompt 模板](../outputs/prompt-yin-yang-er-fenlei.md) —— 让大模型按「体征 → 阴阳倾向 + 理由」的格式输出，并要求它标注不确定项
+- [🛠️ Skill 文件](../outputs/skill-yin-yang-er-fenlei.md) —— 把本课的判别流程固化成一个可复用的操作技能
 
 ## 验证
 
@@ -165,7 +165,7 @@ node --test code/
 
 ## 练习
 
-见 [exercises.md](exercises.md)。
+见 [exercises.md](../exercises.md)。
 
 ## 进阶思考
 

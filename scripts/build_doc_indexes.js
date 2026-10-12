@@ -68,7 +68,11 @@ for (const p of plan) {
   }
   out += `| 学科 | 院系 | 类型 | 学时 |\n|------|------|------|------|\n`;
   for (const s of p.subjects) {
-    out += `| [${s.title}](${s.path}/) | ${s.deptTitle} | ${s.type} | ${s.hours} |\n`;
+    // s.path 是**仓库根相对**的（departments/NN-dept/NN-subject），
+    // 但本文件在 departments/ 下，markdown 按文件所在目录解析，
+    // 所以必须去掉前导 `departments/`，否则全体指向 departments/departments/…（实测 121 条全断）。
+    const rel = s.path.replace(/^departments\//, '');
+    out += `| [${s.title}](${rel}/) | ${s.deptTitle} | ${s.type} | ${s.hours} |\n`;
   }
 }
 

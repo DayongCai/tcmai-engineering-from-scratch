@@ -217,7 +217,7 @@ node code/main.js
 
 > 「藏象 = 器官知识图谱」—— 藏象之「肝」是功能系统，与解剖肝脏**不是一对一**关系。
 > 直接按解剖器官建模会造成系统性错误：例如把「肝郁」理解为肝脏的病理改变。
-> 这是本项目在 [bridge-map.md](../../../../glossary/bridge-map.md) 中列为 D 级的典型误用。
+> 这是本项目在 [bridge-map.md](../../../../../../glossary/bridge-map.md) 中列为 D 级的典型误用。
 
 ## USE IT：框架调用
 
@@ -229,8 +229,8 @@ node code/main.js
 
 ## SHIP IT：产出物
 
-- [📋 Prompt 模板](outputs/prompt-zang-xiang-tupu.md) —— 让大模型把症状串成藏象关系链，**每一步都必须标出关系类型**，并在跨五行时显式标注方向
-- [🛠️ Skill 文件](outputs/skill-zang-xiang-tupu.md) —— 藏象关系抽取与本体校验的固定流程
+- [📋 Prompt 模板](../outputs/prompt-zang-xiang-tupu.md) —— 让大模型把症状串成藏象关系链，**每一步都必须标出关系类型**，并在跨五行时显式标注方向
+- [🛠️ Skill 文件](../outputs/skill-zang-xiang-tupu.md) —— 藏象关系抽取与本体校验的固定流程
 
 ## 验证
 
@@ -246,7 +246,7 @@ node --test code/main.test.js
 
 ## 练习
 
-见 [exercises.md](exercises.md)。
+见 [exercises.md](../exercises.md)。
 
 ## 进阶思考
 

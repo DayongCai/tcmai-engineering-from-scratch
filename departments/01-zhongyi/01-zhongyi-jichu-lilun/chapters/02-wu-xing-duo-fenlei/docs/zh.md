@@ -198,8 +198,8 @@ node code/main.js
 
 ## SHIP IT：产出物
 
-- [📋 Prompt 模板](outputs/prompt-wu-xing-duo-fenlei.md) —— 让大模型在给出五行归类时，**必须同时给出所依据的配属维度**，并显式标注关系一致性
-- [🛠️ Skill 文件](outputs/skill-wu-xing-duo-fenlei.md) —— 把「加约束前先测基线」固化成一个可复用的实验流程
+- [📋 Prompt 模板](../outputs/prompt-wu-xing-duo-fenlei.md) —— 让大模型在给出五行归类时，**必须同时给出所依据的配属维度**，并显式标注关系一致性
+- [🛠️ Skill 文件](../outputs/skill-wu-xing-duo-fenlei.md) —— 把「加约束前先测基线」固化成一个可复用的实验流程
 
 ## 验证
 
@@ -215,7 +215,7 @@ node --test code/main.test.js
 
 ## 练习
 
-见 [exercises.md](exercises.md)。
+见 [exercises.md](../exercises.md)。
 
 ## 进阶思考
 
