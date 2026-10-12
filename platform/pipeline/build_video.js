@@ -138,7 +138,11 @@ for (const ch of chapters) {
     if (hasAudio) withAudio += 1;
     const partFile = path.join(videoDir, `part-${String(i + 1).padStart(3, '0')}.mp4`);
 
-    const args = ffmpegArgs({ frame, seconds: seg.estimateSeconds, audioFile: hasAudio ? audioFile : null, out: partFile });
+    // 时长必须用**实测配音时长**，不能用估算：估算只用于排期，用它定时长会让字幕整体偏移
+    const seconds = Number.isFinite(seg.audioSeconds) && seg.audioSeconds > 0
+      ? seg.audioSeconds
+      : seg.estimateSeconds;
+    const args = ffmpegArgs({ frame, seconds, audioFile: hasAudio ? audioFile : null, out: partFile });
     const r = spawnSync(ffmpeg, args, { encoding: 'utf8' });
     if (r.status !== 0) {
       console.error(`  ✗ ${ch} 第 ${i + 1} 段编码失败:`);
@@ -168,8 +172,37 @@ for (const ch of chapters) {
     duration = p.status === 0 ? Number(String(p.stdout).trim()) : null;
   }
 
+  // 字幕嵌入：把 narration/subtitles.vtt 作为 mov_text 轨嵌进 MP4。
+  // 没有字幕就跳过 —— 但**不静默**：缺字幕是缺一步流水线，得说出来。
+  const vttPath = path.join(cdir, 'narration', 'subtitles.vtt');
+  let subtitleNote = '无字幕轨';
+  if (fs.existsSync(vttPath)) {
+    const embedded = path.join(videoDir, 'lesson.with-subs.mp4');
+    const r = spawnSync(ffmpeg, [
+      '-y', '-i', outFile, '-i', vttPath,
+      '-map', '0', '-map', '1', '-c', 'copy', '-c:s', 'mov_text',
+      '-metadata:s:s:0', 'language=chi', embedded,
+    ], { encoding: 'utf8' });
+    if (r.status === 0 && fs.existsSync(embedded)) {
+      fs.renameSync(embedded, outFile);
+      // 复核：字幕轨必须真的在成片里，不能只相信 ffmpeg 的退出码
+      if (ffprobe) {
+        const probe = spawnSync(ffprobe, ['-v', 'error', '-select_streams', 's', '-show_entries', 'stream=index,codec_name', '-of', 'csv=p=0', outFile], { encoding: 'utf8' });
+        const hasSub = /mov_text|subrip/.test(String(probe.stdout || ''));
+        subtitleNote = hasSub ? '已嵌入 mov_text 字幕轨' : '⚠ 字幕嵌入后 ffprobe 未检出字幕轨';
+      } else {
+        subtitleNote = '已嵌入 mov_text 字幕轨（无 ffprobe，未复核）';
+      }
+    } else {
+      subtitleNote = '⚠ 字幕嵌入失败（成片仍可播放，但不带字幕轨）';
+    }
+  } else {
+    subtitleNote = '无字幕轨（先跑 build_subtitles.js）';
+  }
+
   const size = fs.statSync(outFile).size;
   console.log(`  ✅ ${ch} → video/lesson.mp4 (${(size / 1024 / 1024).toFixed(1)} MB${duration ? `, ${duration.toFixed(1)}s [ffprobe 实测]` : ', 时长未校验'})`);
+  console.log(`     💬 ${subtitleNote}`);
   if (withAudio === 0) {
     console.log('     ⚠ 本片为静音轨（narration/audio/ 下没有配音文件）');
     console.log('       配音来源不限：edge-tts、云端 TTS、人工录音都可以，放到 narration/audio/001.mp3 … 即可');
@@ -184,21 +217,29 @@ console.log('成片不入库（见 .gitignore），走 release 附件发布；si
 
 /**
  * 生成单段的 ffmpeg 参数。
- * - 有音频：以音频时长为准，画面静帧铺满
- * - 无音频：用 estimateSeconds 生成静音轨
+ *
+ * **必须显式 `-t seconds`，不能只靠 `-shortest`。**
+ * 实测：`-loop 1 -i frame -i audio -shortest` 产出的视频流比音频长 2.0～2.2 秒
+ * （第 2 段：视频流 16.800s / 420 帧，音频 14.778s）—— 单张静图被循环喂进来时，
+ * 编码器会跑到音频前面去，`-shortest` 只在数据包边界检查，拦不住已经编好的那几秒。
+ * 后果是每段多出约 2 秒静默画面，12 段累计 +21.8 秒「对视音差」——
+ * 画面上看不出来，字幕却会整体提前。所以时长由外部实测值给定，`-shortest` 只作双保险。
+ *
+ * 采样率也必须与配音一致：有配音的段是 22050Hz，无配音的段若用 44100Hz 的 anullsrc，
+ * 拼接时 `-c copy` 会把不同采样率的流硬接在一起。
  */
 function ffmpegArgs({ frame, seconds, audioFile, out }) {
-  if (audioFile && fs.existsSync(audioFile)) {
-    return [
-      '-y', '-loop', '1', '-i', frame, '-i', audioFile,
-      '-c:v', 'libx264', '-tune', 'stillimage', '-pix_fmt', 'yuv420p', '-r', '25',
-      '-c:a', 'aac', '-b:a', '128k', '-shortest', '-vf', 'scale=1920:-2', out,
-    ];
-  }
-  return [
-    '-y', '-loop', '1', '-i', frame, '-f', 'lavfi', '-i', 'anullsrc=channel_layout=mono:sample_rate=44100',
-    '-t', String(seconds),
+  const hasAudio = audioFile && fs.existsSync(audioFile);
+  const args = ['-y', '-loop', '1', '-i', frame];
+  if (hasAudio) args.push('-i', audioFile);
+  else args.push('-f', 'lavfi', '-i', 'anullsrc=channel_layout=mono:sample_rate=22050');
+  args.push(
     '-c:v', 'libx264', '-tune', 'stillimage', '-pix_fmt', 'yuv420p', '-r', '25',
-    '-c:a', 'aac', '-b:a', '128k', '-shortest', '-vf', 'scale=1920:-2', out,
-  ];
+    '-c:a', 'aac', '-b:a', '128k',
+    '-vf', 'scale=1920:-2',
+    '-t', String(seconds)
+  );
+  if (hasAudio) args.push('-shortest');
+  args.push(out);
+  return args;
 }

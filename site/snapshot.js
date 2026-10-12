@@ -32,6 +32,7 @@ const ALL_PAGES = [
   ['roadmap', '进度'],
   ['paths', '学习路径'],
   ['glossary', '术语表'],
+  ['semtensor', '语义张量'],
   ['about', '关于'],
 ];
 
@@ -43,7 +44,7 @@ if (!pages.length) {
   process.exit(1);
 }
 
-for (const required of ['data.js', 'content.js', 'style.css', 'app.js']) {
+for (const required of ['data.js', 'content.js', 'style.css', 'app.js', 'semtensor-spec.js', 'semtensor.js', 'sphere.js']) {
   if (!fs.existsSync(path.join(SITE, required))) {
     console.error(`✗ 缺 site/${required} —— 先跑: node scripts/build_catalog.js && node site/build.js`);
     process.exit(1);
@@ -53,10 +54,15 @@ for (const required of ['data.js', 'content.js', 'style.css', 'app.js']) {
 const read = (f) => fs.readFileSync(path.join(SITE, f), 'utf8');
 
 const css = read('style.css');
+// 顺序必须与 site/pages.js 的 SCRIPTS 一致：
+// semtensor-spec.js 提供常量，semtensor.js 在求值时就要读它，sphere.js 又依赖 semtensor.js。
 const js = {
   data: read('data.js'),
+  spec: read('semtensor-spec.js'),
   content: read('content.js'),
   progress: read('progress.js'),
+  semtensor: read('semtensor.js'),
+  sphere: read('sphere.js'),
   figures: read('figures.js'),
   app: read('app.js'),
 };
@@ -90,8 +96,11 @@ ${css}
 <div id="app"></div>
 <noscript><p style="padding:40px;font-family:system-ui">本快照需要启用 JavaScript。</p></noscript>
 <script>${js.data}</script>
+<script>${js.spec}</script>
 <script>${js.content}</script>
 <script>${js.progress}</script>
+<script>${js.semtensor}</script>
+<script>${js.sphere}</script>
 <script>${js.figures}</script>
 <script>${js.app}</script>
 </body>

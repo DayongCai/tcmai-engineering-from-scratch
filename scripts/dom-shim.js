@@ -34,9 +34,18 @@
 
 'use strict';
 
-function makeEl(tag) {
+const HTML_NS = 'http://www.w3.org/1999/xhtml';
+
+/**
+ * @param {string} tag
+ * @param {string} [ns] namespaceURI —— 必须记录。
+ *   真实 DOM 里 `document.createElementNS(svgNS,'div')` 造出的是「未知 SVG 元素」，
+ *   浏览器**不渲染**且不报错；夹具若不区分命名空间，这类 bug 就永远测不出来。
+ */
+function makeEl(tag, ns) {
   return {
     tagName: String(tag).toUpperCase(),
+    namespaceURI: ns || HTML_NS,
     children: [],
     dataset: {},
     attrs: {},
@@ -46,7 +55,10 @@ function makeEl(tag) {
     _text: '',
 
     get innerHTML() { return this._html; },
-    set innerHTML(v) { this._html = String(v); },
+    // 真实浏览器给 innerHTML 赋值会**清空并替换**子节点。
+    // 夹具只存字符串不清 children，会让任何「重绘」逻辑在测试里叠加出旧节点，
+    // 于是「重绘后坐标变了吗」这类断言测的是一个并不存在的环境。
+    set innerHTML(v) { this._html = String(v); this.children.length = 0; },
     get textContent() { return this._text; },
     set textContent(v) { this._text = String(v); },
     get firstChild() { return this.children[0] || null; },
@@ -100,15 +112,18 @@ function makeEnv(opts = {}) {
     // Return an element for ANY selector — see the header note.
     querySelector: () => makeEl('div'),
     querySelectorAll: () => [],
-    createElement: (t) => makeEl(t),
-    createElementNS: (_ns, t) => makeEl(t),
+    createElement: (t) => makeEl(t, HTML_NS),
+    createElementNS: (ns, t) => makeEl(t, ns),
     createTextNode: (s) => ({ nodeType: 3, textContent: String(s) }),
     addEventListener(t, fn) { (this.listeners[t] = this.listeners[t] || []).push(fn); },
   };
 
   const window = {
     document,
-    location: { search, href: 'http://localhost/' },
+    // protocol 是真实 location 必有的字段：页面会用它判断「能否 fetch 同目录文件」。
+    // 夹具里少了它，任何读 location.protocol 的代码都会在测试里炸而在浏览器里正常 ——
+    // 夹具与真实环境不一致时，测试就在测一个不存在的东西。
+    location: { search, href: 'http://localhost/', protocol: 'http:', hostname: 'localhost' },
     localStorage: {
       getItem: (k) => (store.has(k) ? store.get(k) : null),
       setItem: (k, v) => { store.set(k, String(v)); },
@@ -172,4 +187,4 @@ function boot(env) {
   return env.html();
 }
 
-module.exports = { makeEl, makeEnv, loadScript, boot };
+module.exports = { makeEl, makeEnv, loadScript, boot, HTML_NS };

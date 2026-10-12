@@ -162,7 +162,31 @@ const contentStr = contentJs;
 
 fs.writeFileSync(path.join(SITE, 'content.js'), contentStr, 'utf8');
 
-// ── 5. 站点清单（供测试与部署使用）──
+// ── 5. 语义张量：规范常量 + 数据集（生成 window.TCMAI_SEMTENSOR_SPEC / _DATA）──
+// 常量只有一份（standards/semtensor/axis-colors.json），构建期注入浏览器；
+// 页面与图注不得复制常量 —— 复制出来的第二份一定会漂移。
+const semtensorSpec = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards', 'semtensor', 'axis-colors.json'), 'utf8'));
+const semtensorData = {
+  reference: JSON.parse(fs.readFileSync(path.join(ROOT, 'standards', 'semtensor', 'datasets', 'reference-units.json'), 'utf8')),
+  neijing: JSON.parse(fs.readFileSync(path.join(ROOT, 'standards', 'semtensor', 'datasets', 'neijing-domains.json'), 'utf8')),
+  shanghan: JSON.parse(fs.readFileSync(path.join(ROOT, 'standards', 'semtensor', 'datasets', 'shanghan-domains.json'), 'utf8')),
+};
+// 图注实例：与 standards 下的 .txt 同源，构建期注入，file:// 下也能用（此时 fetch 不可用）
+const annoDir = path.join(ROOT, 'standards', 'semtensor', 'annotations');
+const annotations = {};
+if (fs.existsSync(annoDir)) {
+  for (const f of fs.readdirSync(annoDir).filter((x) => x.endsWith('.txt')).sort()) {
+    annotations[f] = fs.readFileSync(path.join(annoDir, f), 'utf8');
+  }
+}
+const specJs =
+  '/* 生成物: site/build.js — 请勿手工编辑 */\n' +
+  'window.TCMAI_SEMTENSOR_SPEC = ' + JSON.stringify(semtensorSpec, null, 2) + ';\n' +
+  'window.TCMAI_SEMTENSOR_DATA = ' + JSON.stringify(semtensorData, null, 2) + ';\n' +
+  'window.TCMAI_SEMTENSOR_ANNOTATIONS = ' + JSON.stringify(annotations, null, 2) + ';\n';
+fs.writeFileSync(path.join(SITE, 'semtensor-spec.js'), specJs, 'utf8');
+
+// ── 6. 站点清单（供测试与部署使用）──
 const unknownCmd = math.takeUnknown();
 const manifest = {
   generatedBy: 'site/build.js',

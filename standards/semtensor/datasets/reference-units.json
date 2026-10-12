@@ -1,0 +1,2432 @@
+{
+  "generatedBy": "scripts/build_semtensor_datasets.js",
+  "sourceFile": "standards/semtensor/sources/母子父-三维极坐标语义球面-同步旋转.html",
+  "convention": "v1.0-elevation（源数据已是该口径：θ=仰角、φ=方位角）",
+  "colorNote": "colorSourceHex 为源系统（Python 编码器）产出的 hex；colorDerived 为按规范公理算出的值。实测二者仅 2/116 一致（只在 |v|=1 的单轴点上），且源实现自身的 JS comp() 也不复现该 hex —— 见规范 §14.1 与 scripts/verify_semtensor_axiom.js。",
+  "params": {
+    "rings": 45,
+    "seg": 70,
+    "figure_mm": [
+      198,
+      98
+    ],
+    "dpi": 240,
+    "axis_label_size": 9,
+    "tick_size": 7,
+    "arrow_head": 6.5,
+    "dot_iot": 1.7,
+    "dot_edge": 0.35,
+    "dot_O": 1.8,
+    "cloud_alpha_face": 0.3,
+    "cloud_alpha_rim": 0.95,
+    "marker_alpha_face": 0.72,
+    "marker_alpha_rim": 1,
+    "cloud_point_size": 4,
+    "marker_point_size": 32,
+    "iot_point_size": 26,
+    "azimuth_step_deg": 30,
+    "elev_ticks_deg": [
+      -60,
+      -30,
+      0,
+      30,
+      60
+    ],
+    "view_elev_deg": 20,
+    "view_azim_deg": -60,
+    "meridian_phi_deg": [
+      0,
+      180
+    ],
+    "yinyang_circle_phi_deg": [
+      90,
+      270
+    ]
+  },
+  "spheres": [
+    {
+      "no": "①",
+      "name": "母",
+      "sex": "女",
+      "sign": [
+        -1,
+        -1,
+        1
+      ],
+      "angle_x": 180,
+      "angle_y": 135,
+      "angle_z": 90,
+      "xy_face": "3π/4"
+    },
+    {
+      "no": "②",
+      "name": "子",
+      "sex": "男",
+      "sign": [
+        1,
+        1,
+        1
+      ],
+      "angle_x": 0,
+      "angle_y": 45,
+      "angle_z": 90,
+      "xy_face": "π/4"
+    },
+    {
+      "no": "③",
+      "name": "父",
+      "sex": "男",
+      "sign": [
+        1,
+        1,
+        1
+      ],
+      "angle_x": 0,
+      "angle_y": 45,
+      "angle_z": 90,
+      "xy_face": "π/4"
+    }
+  ],
+  "mirror": {
+    "男": [
+      1,
+      1,
+      1
+    ],
+    "女": [
+      -1,
+      -1,
+      1
+    ]
+  },
+  "ruling": "θ = 仰角 elevation ∈ [−90°,+90°] ; φ = 方位角 azimuth ∈ [0°,360°) ; X = r·cosθ·cosφ , Y = r·cosθ·sinφ , Z = r·sinθ",
+  "unitCount": 116,
+  "byKind": {
+    "dsu": 103,
+    "six_channel": 6,
+    "system": 4,
+    "treasure": 3
+  },
+  "units": [
+    {
+      "uid": "DSU-00001",
+      "label": "风寒束表证",
+      "kind": "dsu",
+      "x": 0.2,
+      "y": -0.4,
+      "z": 0,
+      "theta": 0,
+      "phi": 296.565,
+      "r": 0.8195,
+      "u": [
+        0.4472127965897986,
+        -0.8944275904545496,
+        0
+      ],
+      "colorSourceHex": "#2374AD",
+      "colorDerived": "#1B8988",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00002",
+      "label": "风热犯表证",
+      "kind": "dsu",
+      "x": 1,
+      "y": -0.4,
+      "z": 0.1,
+      "theta": 5.305,
+      "phi": 338.199,
+      "r": 0.7325,
+      "u": [
+        0.9245023278610505,
+        -0.36979326668453266,
+        0.0924574804668639
+      ],
+      "colorSourceHex": "#515DB0",
+      "colorDerived": "#6444DE",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00003",
+      "label": "痰热壅肺证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": 0.2308,
+      "theta": 9.268,
+      "phi": 45,
+      "r": 0.648,
+      "u": [
+        0.6978760813411351,
+        0.697876081341135,
+        0.1610526317198285
+      ],
+      "colorSourceHex": "#4E7366",
+      "colorDerived": "#A03486",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00004",
+      "label": "脾胃湿热证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": -0.1,
+      "theta": -4.045,
+      "phi": 45,
+      "r": 0.6915,
+      "u": [
+        0.7053453470715045,
+        0.7053453470715044,
+        -0.07053993712187295
+      ],
+      "colorSourceHex": "#556D66",
+      "colorDerived": "#B62B79",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00005",
+      "label": "脾胃虚寒证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.4,
+      "z": 0.6,
+      "theta": 29.122,
+      "phi": 158.199,
+      "r": 0.702,
+      "u": [
+        -0.8111060179936601,
+        0.3244356828341479,
+        0.486670849012357
+      ],
+      "colorSourceHex": "#5F9F41",
+      "colorDerived": "#AB8741",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00006",
+      "label": "肝郁脾虚证",
+      "kind": "dsu",
+      "x": 0.6,
+      "y": 0.7,
+      "z": 0.5333,
+      "theta": 30.049,
+      "phi": 49.399,
+      "r": 0.752,
+      "u": [
+        0.563319994096338,
+        0.6572134996931436,
+        0.5007404518035188
+      ],
+      "colorSourceHex": "#358A65",
+      "colorDerived": "#5A6F7C",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00007",
+      "label": "肝胆湿热证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": 0.2,
+      "theta": 8.049,
+      "phi": 45,
+      "r": 0.8425,
+      "u": [
+        0.7001408489867915,
+        0.7001408489867914,
+        0.14001993843774477
+      ],
+      "colorSourceHex": "#507266",
+      "colorDerived": "#A23286",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00008",
+      "label": "肝阳上亢证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": 0.4444,
+      "theta": 17.446,
+      "phi": 45,
+      "r": 0.794,
+      "u": [
+        0.6745798237631366,
+        0.6745798237631365,
+        0.2998068090344033
+      ],
+      "colorSourceHex": "#427D66",
+      "colorDerived": "#92418C",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00009",
+      "label": "气滞血瘀证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": 0.3684,
+      "theta": 14.602,
+      "phi": 45,
+      "r": 0.7865,
+      "u": [
+        0.6842674944992676,
+        0.6842674944992675,
+        0.25210313751199065
+      ],
+      "colorSourceHex": "#477966",
+      "colorDerived": "#973D8A",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00010",
+      "label": "阴虚燥热证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0.4,
+      "z": 0.1667,
+      "theta": 8.797,
+      "phi": 21.801,
+      "r": 0.8135,
+      "u": [
+        0.9175570766207823,
+        0.3670152237670798,
+        0.15293409255729837
+      ],
+      "colorSourceHex": "#5D5C9C",
+      "colorDerived": "#9038AD",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00011",
+      "label": "脾肾阳虚证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.4,
+      "z": -0.2727,
+      "theta": -14.21,
+      "phi": 158.199,
+      "r": 0.6615,
+      "u": [
+        -0.9000702178032937,
+        0.3600206252124914,
+        -0.24547658227443664
+      ],
+      "colorSourceHex": "#959422",
+      "colorDerived": "#F47A07",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00012",
+      "label": "寒湿痹阻证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 1,
+      "z": -0.25,
+      "theta": -10.025,
+      "phi": 135,
+      "r": 0.6795,
+      "u": [
+        -0.6963105977462443,
+        0.6963105977462444,
+        -0.17407786456794525
+      ],
+      "colorSourceHex": "#698933",
+      "colorDerived": "#EE600C",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00013",
+      "label": "湿热浸淫证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0.3,
+      "z": 0.25,
+      "theta": 13.466,
+      "phi": 16.699,
+      "r": 0.7175,
+      "u": [
+        0.9314951828893359,
+        0.27944422683907305,
+        0.23286830686092835
+      ],
+      "colorSourceHex": "#585FA3",
+      "colorDerived": "#8341B7",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00014",
+      "label": "寒凝血瘀证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 1,
+      "z": -0.5455,
+      "theta": -21.091,
+      "phi": 135,
+      "r": 0.7345,
+      "u": [
+        -0.6597377484601183,
+        0.6597377484601185,
+        -0.35985025568081386
+      ],
+      "colorSourceHex": "#5D9135",
+      "colorDerived": "#EE6C0B",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00015",
+      "label": "气虚不摄证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.4,
+      "z": -0.2727,
+      "theta": -14.21,
+      "phi": 158.199,
+      "r": 0.611,
+      "u": [
+        -0.9000702178032937,
+        0.3600206252124914,
+        -0.24547658227443664
+      ],
+      "colorSourceHex": "#959422",
+      "colorDerived": "#F47A07",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00016",
+      "label": "湿热瘀结证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": -0.2,
+      "theta": -8.049,
+      "phi": 45,
+      "r": 0.6245,
+      "u": [
+        0.7001408489867915,
+        0.7001408489867914,
+        -0.14001993843774477
+      ],
+      "colorSourceHex": "#527264",
+      "colorDerived": "#B83273",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00017",
+      "label": "气滞血瘀证(颈部)",
+      "kind": "dsu",
+      "x": 0.2,
+      "y": 1,
+      "z": -0.25,
+      "theta": -13.774,
+      "phi": 78.69,
+      "r": 0.62,
+      "u": [
+        0.19047743270427575,
+        0.9523813268857791,
+        -0.23809274627688828
+      ],
+      "colorSourceHex": "#965130",
+      "colorDerived": "#D43B32",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00018",
+      "label": "寒湿痹阻证(腰部)",
+      "kind": "dsu",
+      "x": -1,
+      "y": 1,
+      "z": -0.3333,
+      "theta": -13.263,
+      "phi": 135,
+      "r": 0.638,
+      "u": [
+        -0.6882462842836703,
+        0.6882462842836704,
+        -0.22942123776896162
+      ],
+      "colorSourceHex": "#668B33",
+      "colorDerived": "#EE640C",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00019",
+      "label": "肝肾亏虚证",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0.4,
+      "z": -0.0714,
+      "theta": -5.657,
+      "phi": 146.31,
+      "r": 0.605,
+      "u": [
+        -0.8279987171522056,
+        0.5519977352248181,
+        -0.09857294101817995
+      ],
+      "colorSourceHex": "#898928",
+      "colorDerived": "#908326",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00020",
+      "label": "肺气虚寒证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.4,
+      "z": -0.1111,
+      "theta": -5.89,
+      "phi": 158.199,
+      "r": 0.8325,
+      "u": [
+        -0.9235776637399318,
+        0.3694234087018868,
+        -0.10261892683013278
+      ],
+      "colorSourceHex": "#A58E1E",
+      "colorDerived": "#F57207",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00021",
+      "label": "阴虚肺燥证",
+      "kind": "dsu",
+      "x": -0.2,
+      "y": 0.4,
+      "z": 0.1429,
+      "theta": 17.715,
+      "phi": 116.565,
+      "r": 0.5925,
+      "u": [
+        -0.42600679443313133,
+        0.8520154914341372,
+        0.3042824566961646
+      ],
+      "colorSourceHex": "#6F743A",
+      "colorDerived": "#4B8E45",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00022",
+      "label": "心肾不交证",
+      "kind": "dsu",
+      "x": -0.2,
+      "y": 0.4,
+      "z": 0.5625,
+      "theta": 51.514,
+      "phi": 116.565,
+      "r": 0.7645,
+      "u": [
+        -0.27831098398677784,
+        0.5566232109244762,
+        0.7827602425088014
+      ],
+      "colorSourceHex": "#2A9F68",
+      "colorDerived": "#43965F",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00023",
+      "label": "肝阳上亢证(头部)",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": 0.75,
+      "theta": 27.938,
+      "phi": 45,
+      "r": 0.858,
+      "u": [
+        0.624697087089056,
+        0.624697087089056,
+        0.4685158468663537
+      ],
+      "colorSourceHex": "#338A67",
+      "colorDerived": "#825093",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00024",
+      "label": "寒哮证（冷哮）",
+      "kind": "dsu",
+      "x": -1,
+      "y": 1,
+      "z": -0.0714,
+      "theta": -2.891,
+      "phi": 135,
+      "r": 0.821,
+      "u": [
+        -0.7062068407175326,
+        0.7062068407175327,
+        -0.050436060983416686
+      ],
+      "colorSourceHex": "#728430",
+      "colorDerived": "#ED580E",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00025",
+      "label": "风热犯肺证",
+      "kind": "dsu",
+      "x": 1,
+      "y": -0.4,
+      "z": 0.1,
+      "theta": 5.305,
+      "phi": 338.199,
+      "r": 0.664,
+      "u": [
+        0.9245023278610505,
+        -0.36979326668453266,
+        0.0924574804668639
+      ],
+      "colorSourceHex": "#515DB0",
+      "colorDerived": "#6444DE",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00026",
+      "label": "痰湿壅肺证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.7,
+      "z": 0,
+      "theta": 0,
+      "phi": 145.008,
+      "r": 0.676,
+      "u": [
+        -0.8192321226824457,
+        0.5734620555583553,
+        0
+      ],
+      "colorSourceHex": "#8F8526",
+      "colorDerived": "#F05E0C",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00027",
+      "label": "肺肾气虚证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.4,
+      "z": -0.1538,
+      "theta": -8.129,
+      "phi": 158.199,
+      "r": 0.747,
+      "u": [
+        -0.9191501837388775,
+        0.3676524534068814,
+        -0.1414023098704138
+      ],
+      "colorSourceHex": "#A1901F",
+      "colorDerived": "#F47507",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00028",
+      "label": "肺脾肾虚、痰瘀互结证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.7,
+      "z": -0.2143,
+      "theta": -9.957,
+      "phi": 145.008,
+      "r": 0.6715,
+      "u": [
+        -0.8068926822730871,
+        0.5648244537533617,
+        -0.17290903890878406
+      ],
+      "colorSourceHex": "#7F8B2B",
+      "colorDerived": "#F0690A",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00029",
+      "label": "肺阴亏虚证",
+      "kind": "dsu",
+      "x": -0.2,
+      "y": 0.4,
+      "z": 0.0769,
+      "theta": 9.76,
+      "phi": 116.565,
+      "r": 0.753,
+      "u": [
+        -0.4407400563570154,
+        0.8814820810813977,
+        0.1695215132507463
+      ],
+      "colorSourceHex": "#826831",
+      "colorDerived": "#528A40",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00030",
+      "label": "风热犯肺证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0.3,
+      "z": 0.0909,
+      "theta": 4.976,
+      "phi": 16.699,
+      "r": 0.67,
+      "u": [
+        0.9542175716144652,
+        0.2862608378810488,
+        0.08673845005436102
+      ],
+      "colorSourceHex": "#6750AD",
+      "colorDerived": "#9232B6",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00031",
+      "label": "阳虚水泛证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.7,
+      "z": 0.1429,
+      "theta": 6.675,
+      "phi": 145.008,
+      "r": 0.6835,
+      "u": [
+        -0.8136789267772856,
+        0.5695748213416791,
+        0.11623737356013769
+      ],
+      "colorSourceHex": "#82892B",
+      "colorDerived": "#DE661A",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00032",
+      "label": "气阴两虚、痰瘀阻络证",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0.7,
+      "z": -0.1667,
+      "theta": -10.247,
+      "phi": 130.601,
+      "r": 0.6125,
+      "u": [
+        -0.6404074175415096,
+        0.7471497630526581,
+        -0.1778920209795015
+      ],
+      "colorSourceHex": "#708231",
+      "colorDerived": "#A57621",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00033",
+      "label": "肝阳上亢证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": 0.4545,
+      "theta": 17.818,
+      "phi": 45,
+      "r": 0.7335,
+      "u": [
+        0.6731892085294697,
+        0.6731892085294696,
+        0.3059944101432774
+      ],
+      "colorSourceHex": "#427D66",
+      "colorDerived": "#91428C",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00034",
+      "label": "胸阳痹阻、痰瘀互结证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.7,
+      "z": 0.3333,
+      "theta": 15.274,
+      "phi": 145.008,
+      "r": 0.679,
+      "u": [
+        -0.7902944363319857,
+        0.5532056903131777,
+        0.2634353205396524
+      ],
+      "colorSourceHex": "#6F8F34",
+      "colorDerived": "#C96F2A",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00035",
+      "label": "心脾两虚证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.4,
+      "z": 0.6667,
+      "theta": 31.757,
+      "phi": 158.199,
+      "r": 0.56,
+      "u": [
+        -0.7894747799607758,
+        0.3157833669518095,
+        0.5263178098473047
+      ],
+      "colorSourceHex": "#57A145",
+      "colorDerived": "#A68946",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00036",
+      "label": "心肾阳虚、水饮凌心证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.4,
+      "z": 0.3125,
+      "theta": 16.18,
+      "phi": 158.199,
+      "r": 0.768,
+      "u": [
+        -0.8917032192431653,
+        0.3566738951538953,
+        0.27865588331690305
+      ],
+      "colorSourceHex": "#87952C",
+      "colorDerived": "#C87D2B",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00037",
+      "label": "热毒侵心、气阴两伤证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0,
+      "z": 0.6,
+      "theta": 30.964,
+      "phi": 0,
+      "r": 0.5765,
+      "u": [
+        0.8574907394492733,
+        0,
+        0.5144993991820966
+      ],
+      "colorSourceHex": "#3F77A7",
+      "colorDerived": "#5666D8",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00038",
+      "label": "痰湿内阻证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 1,
+      "z": -0.1818,
+      "theta": -7.326,
+      "phi": 135,
+      "r": 0.6505,
+      "u": [
+        -0.7013344425230859,
+        0.701334442523086,
+        -0.12751470292348457
+      ],
+      "colorSourceHex": "#6D8732",
+      "colorDerived": "#ED5D0D",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00039",
+      "label": "气虚血瘀证",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0.7,
+      "z": 0,
+      "theta": 0,
+      "phi": 130.601,
+      "r": 0.664,
+      "u": [
+        -0.6507874689509606,
+        0.7592599490664593,
+        0
+      ],
+      "colorSourceHex": "#7E7A2E",
+      "colorDerived": "#A56D23",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00040",
+      "label": "风寒湿痹、内含于心证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0,
+      "z": 0.4545,
+      "theta": 24.444,
+      "phi": 180,
+      "r": 0.6005,
+      "u": [
+        -0.9103661508763679,
+        1.1148769927228403e-16,
+        0.41380366279015246
+      ],
+      "colorSourceHex": "#919E30",
+      "colorDerived": "#AF9E3E",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00041",
+      "label": "气阴两虚、心脉瘀阻证",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0.7,
+      "z": 0.375,
+      "theta": 22.134,
+      "phi": 130.601,
+      "r": 0.6715,
+      "u": [
+        -0.6028278242504524,
+        0.7033064479161517,
+        0.376774010023291
+      ],
+      "colorSourceHex": "#548D40",
+      "colorDerived": "#807F3F",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00042",
+      "label": "真心痛（阳衰血瘀）证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.7,
+      "z": 0.375,
+      "theta": 17.078,
+      "phi": 145.008,
+      "r": 0.7605,
+      "u": [
+        -0.783108776709566,
+        0.5481757323519068,
+        0.2936733053937619
+      ],
+      "colorSourceHex": "#6B9136",
+      "colorDerived": "#C5712D",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00043",
+      "label": "肺肾气虚、痰瘀阻络证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.7,
+      "z": -0.0625,
+      "theta": -2.931,
+      "phi": 145.008,
+      "r": 0.578,
+      "u": [
+        -0.8181604340140296,
+        0.5727118740533915,
+        -0.05113329181880247
+      ],
+      "colorSourceHex": "#8A8728",
+      "colorDerived": "#F0610B",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00044",
+      "label": "气虚便秘证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.4,
+      "z": -0.1111,
+      "theta": -5.89,
+      "phi": 158.199,
+      "r": 0.702,
+      "u": [
+        -0.9235776637399318,
+        0.3694234087018868,
+        -0.10261892683013278
+      ],
+      "colorSourceHex": "#A58E1E",
+      "colorDerived": "#F57207",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00045",
+      "label": "脾虚湿盛证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.4,
+      "z": 0.125,
+      "theta": 6.62,
+      "phi": 158.199,
+      "r": 0.586,
+      "u": [
+        -0.9222887875218331,
+        0.368907868899899,
+        0.11528389599264062
+      ],
+      "colorSourceHex": "#A28F20",
+      "colorDerived": "#E17318",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00046",
+      "label": "脾胃湿热证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": 0.1,
+      "theta": 4.045,
+      "phi": 45,
+      "r": 0.7715,
+      "u": [
+        0.7053453470715045,
+        0.7053453470715044,
+        0.07053993712187295
+      ],
+      "colorSourceHex": "#556D67",
+      "colorDerived": "#AA2B82",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00047",
+      "label": "肝胃不和证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0.3,
+      "z": 0.6364,
+      "theta": 31.363,
+      "phi": 16.699,
+      "r": 0.604,
+      "u": [
+        0.8178765286603127,
+        0.24535915847936116,
+        0.5204583241882644
+      ],
+      "colorSourceHex": "#368191",
+      "colorDerived": "#695CBA",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00048",
+      "label": "肝胃郁热证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": 0.4444,
+      "theta": 17.446,
+      "phi": 45,
+      "r": 0.7155,
+      "u": [
+        0.6745798237631366,
+        0.6745798237631365,
+        0.2998068090344033
+      ],
+      "colorSourceHex": "#427D66",
+      "colorDerived": "#92418C",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00049",
+      "label": "肝郁脾虚证",
+      "kind": "dsu",
+      "x": 0.6,
+      "y": 0,
+      "z": 0.4545,
+      "theta": 37.147,
+      "phi": 0,
+      "r": 0.759,
+      "u": [
+        0.7970888461570291,
+        0,
+        0.6038620466067196
+      ],
+      "colorSourceHex": "#32859D",
+      "colorDerived": "#2F89A1",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00050",
+      "label": "水湿内停证（鼓胀）",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.7,
+      "z": -0.3,
+      "theta": -13.808,
+      "phi": 145.008,
+      "r": 0.61,
+      "u": [
+        -0.7955571048055401,
+        0.5568895554803356,
+        -0.23866905117828127
+      ],
+      "colorSourceHex": "#7A8E2C",
+      "colorDerived": "#F06D0A",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00051",
+      "label": "痰湿内阻证",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 1,
+      "z": -0.1818,
+      "theta": -8.862,
+      "phi": 120.964,
+      "r": 0.6915,
+      "u": [
+        -0.5083574372157077,
+        0.847254234768023,
+        -0.15405511252512719
+      ],
+      "colorSourceHex": "#806F2E",
+      "colorDerived": "#E95310",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00052",
+      "label": "肝胆湿热证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0.3,
+      "z": 0.1667,
+      "theta": 9.07,
+      "phi": 16.699,
+      "r": 0.705,
+      "u": [
+        0.9458512973060638,
+        0.2837509944609432,
+        0.1576410369379178
+      ],
+      "colorSourceHex": "#6057A8",
+      "colorDerived": "#8B3AB6",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00053",
+      "label": "阳明腑实证/结胸证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": 0.4286,
+      "theta": 16.859,
+      "phi": 45,
+      "r": 0.7215,
+      "u": [
+        0.676716294240124,
+        0.6767162942401239,
+        0.2900174377857785
+      ],
+      "colorSourceHex": "#437C66",
+      "colorDerived": "#93408C",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00054",
+      "label": "脾肾气虚、水湿内停证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.7,
+      "z": -0.3333,
+      "theta": -15.274,
+      "phi": 145.008,
+      "r": 0.646,
+      "u": [
+        -0.7902944363319857,
+        0.5532056903131777,
+        -0.2634353205396524
+      ],
+      "colorSourceHex": "#788F2D",
+      "colorDerived": "#F06E0A",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00055",
+      "label": "下焦湿热瘀阻证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": -0.25,
+      "theta": -10.025,
+      "phi": 45,
+      "r": 0.7755,
+      "u": [
+        0.6963105977462444,
+        0.6963105977462443,
+        -0.17407786456794525
+      ],
+      "colorSourceHex": "#507463",
+      "colorDerived": "#BA3571",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00056",
+      "label": "肾虚瘀阻证（癃闭）",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.7,
+      "z": -0.25,
+      "theta": -11.575,
+      "phi": 145.008,
+      "r": 0.673,
+      "u": [
+        -0.8025713114622224,
+        0.5617994964556496,
+        -0.20065048168391433
+      ],
+      "colorSourceHex": "#7D8D2C",
+      "colorDerived": "#F06B0A",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00057",
+      "label": "膀胱湿热证（热淋）",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": -0.2,
+      "theta": -8.049,
+      "phi": 45,
+      "r": 0.7665,
+      "u": [
+        0.7001408489867915,
+        0.7001408489867914,
+        -0.14001993843774477
+      ],
+      "colorSourceHex": "#527264",
+      "colorDerived": "#B83273",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00058",
+      "label": "湿热下注证（热淋/白浊）",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": -0.3333,
+      "theta": -13.263,
+      "phi": 45,
+      "r": 0.511,
+      "u": [
+        0.6882462842836704,
+        0.6882462842836703,
+        -0.22942123776896162
+      ],
+      "colorSourceHex": "#4E7761",
+      "colorDerived": "#BC3A6D",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00059",
+      "label": "肝郁脾虚证（痛泻）",
+      "kind": "dsu",
+      "x": 0.6,
+      "y": 0,
+      "z": 0.5833,
+      "theta": 44.193,
+      "phi": 0,
+      "r": 0.602,
+      "u": [
+        0.7169957770851999,
+        0,
+        0.697077510497929
+      ],
+      "colorSourceHex": "#249393",
+      "colorDerived": "#2A8EA0",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00060",
+      "label": "大肠湿热蕴毒证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": -0.3333,
+      "theta": -13.263,
+      "phi": 45,
+      "r": 0.6005,
+      "u": [
+        0.6882462842836704,
+        0.6882462842836703,
+        -0.22942123776896162
+      ],
+      "colorSourceHex": "#4E7761",
+      "colorDerived": "#BC3A6D",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00061",
+      "label": "脾虚瘀阻证",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0.7,
+      "z": -0.375,
+      "theta": -22.134,
+      "phi": 130.601,
+      "r": 0.532,
+      "u": [
+        -0.6028278242504524,
+        0.7033064479161517,
+        -0.376774010023291
+      ],
+      "colorSourceHex": "#628D34",
+      "colorDerived": "#A67E20",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00062",
+      "label": "脾肾阳虚、湿浊内蕴证",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0.7,
+      "z": 0,
+      "theta": 0,
+      "phi": 130.601,
+      "r": 0.6535,
+      "u": [
+        -0.6507874689509606,
+        0.7592599490664593,
+        0
+      ],
+      "colorSourceHex": "#7E7A2E",
+      "colorDerived": "#A56D23",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00063",
+      "label": "湿热下注、邪留正伤证",
+      "kind": "dsu",
+      "x": -0.2,
+      "y": 0.7,
+      "z": -0.1667,
+      "theta": -12.895,
+      "phi": 105.945,
+      "r": 0.6125,
+      "u": [
+        -0.2677863694991356,
+        0.9372768108907381,
+        -0.22316505119968938
+      ],
+      "colorSourceHex": "#925A2C",
+      "colorDerived": "#A16925",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00064",
+      "label": "气虚血瘀、风中经络证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0,
+      "z": -0.2,
+      "theta": -11.31,
+      "phi": 180,
+      "r": 0.74,
+      "u": [
+        -0.9805804445574351,
+        1.2008647027337515e-16,
+        -0.19611729080206794
+      ],
+      "colorSourceHex": "#D4940D",
+      "colorDerived": "#FD9500",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00065",
+      "label": "风邪外袭、经络痹阻证",
+      "kind": "dsu",
+      "x": 0.6,
+      "y": -0.4,
+      "z": 0,
+      "theta": 0,
+      "phi": 326.31,
+      "r": 0.6675,
+      "u": [
+        0.832050948079558,
+        -0.5546992156114054,
+        0
+      ],
+      "colorSourceHex": "#3F6AA6",
+      "colorDerived": "#396DA5",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00066",
+      "label": "肝火上炎、风火上扰证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0.3,
+      "z": 0.8333,
+      "theta": 38.596,
+      "phi": 16.699,
+      "r": 0.519,
+      "u": [
+        0.748603524543493,
+        0.22457757910908502,
+        0.6238250347674119
+      ],
+      "colorSourceHex": "#298E8B",
+      "colorDerived": "#5F66BC",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00067",
+      "label": "寒湿阻络、气滞血瘀证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 1,
+      "z": -0.25,
+      "theta": -10.025,
+      "phi": 135,
+      "r": 0.5315,
+      "u": [
+        -0.6963105977462443,
+        0.6963105977462444,
+        -0.17407786456794525
+      ],
+      "colorSourceHex": "#698933",
+      "colorDerived": "#EE600C",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00068",
+      "label": "肝阳上亢、风阳上扰证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0.3,
+      "z": 0.875,
+      "theta": 39.966,
+      "phi": 16.699,
+      "r": 0.6405,
+      "u": [
+        0.7341036640208265,
+        0.22022768832332418,
+        0.6423329166148675
+      ],
+      "colorSourceHex": "#27908A",
+      "colorDerived": "#5E68BC",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00069",
+      "label": "风痰闭窍、肝风内动证（痫证）",
+      "kind": "dsu",
+      "x": 0.6,
+      "y": 1,
+      "z": 0.5556,
+      "theta": 25.472,
+      "phi": 59.036,
+      "r": 0.506,
+      "u": [
+        0.4644877752492519,
+        0.7741388357242004,
+        0.43006995903873585
+      ],
+      "colorSourceHex": "#4B7C5A",
+      "colorDerived": "#8C4C7F",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00070",
+      "label": "肝肾阴虚、虚风内动证（颤证）",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0.4,
+      "z": -0.3,
+      "theta": -22.589,
+      "phi": 146.31,
+      "r": 0.55,
+      "u": [
+        -0.7682193104928411,
+        0.5121448992173598,
+        -0.3841180719408347
+      ],
+      "colorSourceHex": "#70952F",
+      "colorDerived": "#918D25",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00071",
+      "label": "肝火亢盛、气阴两虚证（瘿病）",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0,
+      "z": 0.4615,
+      "theta": 24.775,
+      "phi": 0,
+      "r": 0.622,
+      "u": [
+        0.907960412610418,
+        0,
+        0.4190559498829713
+      ],
+      "colorSourceHex": "#4E68B1",
+      "colorDerived": "#5E5CD9",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00072",
+      "label": "脾肾阳虚证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.4,
+      "z": -0.375,
+      "theta": -19.197,
+      "phi": 158.199,
+      "r": 0.7025,
+      "u": [
+        -0.8768499404827699,
+        0.3507327067888097,
+        -0.3288171988566865
+      ],
+      "colorSourceHex": "#8C9725",
+      "colorDerived": "#F47E06",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00073",
+      "label": "气阴两虚证（消渴）",
+      "kind": "dsu",
+      "x": -0.2,
+      "y": 0.4,
+      "z": -0.1,
+      "theta": -12.604,
+      "phi": 116.565,
+      "r": 0.761,
+      "u": [
+        -0.43643565255694045,
+        0.872873254257563,
+        -0.21821137270777025
+      ],
+      "colorSourceHex": "#826C2F",
+      "colorDerived": "#5D8B36",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00074",
+      "label": "湿热下注、痹阻经络证（热痹）",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": -0.3333,
+      "theta": -13.263,
+      "phi": 45,
+      "r": 0.684,
+      "u": [
+        0.6882462842836704,
+        0.6882462842836703,
+        -0.22942123776896162
+      ],
+      "colorSourceHex": "#4E7761",
+      "colorDerived": "#BC3A6D",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00075",
+      "label": "痰湿内盛、脾虚不运证",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0.7,
+      "z": -0.1,
+      "theta": -6.19,
+      "phi": 130.601,
+      "r": 0.675,
+      "u": [
+        -0.6469932467261622,
+        0.7548333104008578,
+        -0.1078258419861476
+      ],
+      "colorSourceHex": "#757E30",
+      "colorDerived": "#A57222",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00076",
+      "label": "肾精亏虚、骨痿证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.4,
+      "z": -0.7273,
+      "theta": -34.029,
+      "phi": 158.199,
+      "r": 0.595,
+      "u": [
+        -0.7694813736229918,
+        0.307786170169292,
+        -0.5596124454475554
+      ],
+      "colorSourceHex": "#74A22C",
+      "colorDerived": "#F48905",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00077",
+      "label": "脾胃虚弱、气血两虚证",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.4,
+      "z": 0,
+      "theta": 0,
+      "phi": 158.199,
+      "r": 0.6025,
+      "u": [
+        -0.9284793451480311,
+        0.37138404062840835,
+        0
+      ],
+      "colorSourceHex": "#B38B1A",
+      "colorDerived": "#F56C08",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00078",
+      "label": "肾精亏虚、髓枯血虚证",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0.4,
+      "z": -0.6,
+      "theta": -39.762,
+      "phi": 146.31,
+      "r": 0.5225,
+      "u": [
+        -0.6396041298526213,
+        0.42640166440522,
+        -0.639600013811702
+      ],
+      "colorSourceHex": "#5BA334",
+      "colorDerived": "#919624",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00079",
+      "label": "热毒炽盛、气阴两虚证(急劳/热劳)",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0.7,
+      "z": -0.5,
+      "theta": -22.275,
+      "phi": 34.992,
+      "r": 0.619,
+      "u": [
+        0.7580970887927441,
+        0.5306675639480607,
+        -0.3790524245238346
+      ],
+      "colorSourceHex": "#507B6A",
+      "colorDerived": "#BB4970",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00080",
+      "label": "痰瘀互结、气阴两虚证(石疽/恶核)",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0,
+      "z": -0.25,
+      "theta": -14.036,
+      "phi": 0,
+      "r": 0.6145,
+      "u": [
+        0.9701435307473132,
+        0,
+        -0.24253150259118317
+      ],
+      "colorSourceHex": "#734DBA",
+      "colorDerived": "#9F49B5",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00081",
+      "label": "湿热浸淫、筋脉失养证(痿证)",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0.7,
+      "z": 0,
+      "theta": 0,
+      "phi": 34.992,
+      "r": 0.4405,
+      "u": [
+        0.8192321226824456,
+        0.5734620555583555,
+        0
+      ],
+      "colorSourceHex": "#615F80",
+      "colorDerived": "#AB2590",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00082",
+      "label": "脾胃虚弱、中气下陷证(痿证/睑废)",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.4,
+      "z": -0.4286,
+      "theta": -21.699,
+      "phi": 158.199,
+      "r": 0.536,
+      "u": [
+        -0.8626863931964442,
+        0.3450674052952278,
+        -0.3697305407949537
+      ],
+      "colorSourceHex": "#889926",
+      "colorDerived": "#F48006",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00083",
+      "label": "髓海不足、肾虚痰瘀证(痴呆)",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0.4,
+      "z": -0.3333,
+      "theta": -24.809,
+      "phi": 146.31,
+      "r": 0.5555,
+      "u": [
+        -0.7552622806842568,
+        0.5035069014023654,
+        -0.4195946706236907
+      ],
+      "colorSourceHex": "#6E972F",
+      "colorDerived": "#918E25",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00084",
+      "label": "湿热火毒蕴结、气滞血瘀证(蛇串疮/缠腰火丹)",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0.3,
+      "z": 0.1667,
+      "theta": 9.07,
+      "phi": 16.699,
+      "r": 0.699,
+      "u": [
+        0.9458512973060638,
+        0.2837509944609432,
+        0.1576410369379178
+      ],
+      "colorSourceHex": "#6057A8",
+      "colorDerived": "#8B3AB6",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00085",
+      "label": "血热风盛、瘀毒内蕴证(白疕/松皮癣)",
+      "kind": "dsu",
+      "x": 1,
+      "y": -0.4,
+      "z": 0.1667,
+      "theta": 8.797,
+      "phi": 338.199,
+      "r": 0.7125,
+      "u": [
+        0.9175570766207825,
+        -0.3670152237670793,
+        0.15293409255729837
+      ],
+      "colorSourceHex": "#4D62AC",
+      "colorDerived": "#6049DD",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00086",
+      "label": "肺经风热、湿热瘀结证",
+      "kind": "dsu",
+      "x": 1,
+      "y": 1,
+      "z": 0.2,
+      "theta": 8.049,
+      "phi": 45,
+      "r": 0.658,
+      "u": [
+        0.7001408489867915,
+        0.7001408489867914,
+        0.14001993843774477
+      ],
+      "colorSourceHex": "#507266",
+      "colorDerived": "#A23286",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00087",
+      "label": "风热外袭、营卫不和证(瘾疹/风疹块)",
+      "kind": "dsu",
+      "x": 1,
+      "y": -0.4,
+      "z": 0.1818,
+      "theta": 9.582,
+      "phi": 338.199,
+      "r": 0.652,
+      "u": [
+        0.9155255544805978,
+        -0.36620263175306145,
+        0.16645897870083698
+      ],
+      "colorSourceHex": "#4C63AB",
+      "colorDerived": "#5F4BDD",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00088",
+      "label": "湿热浸淫、脾虚湿蕴证(湿疮/浸淫疮)",
+      "kind": "dsu",
+      "x": 0.6,
+      "y": 0.7,
+      "z": -0.1111,
+      "theta": -6.872,
+      "phi": 49.399,
+      "r": 0.6925,
+      "u": [
+        0.6461121683774685,
+        0.7538053749625325,
+        -0.11965167174829427
+      ],
+      "colorSourceHex": "#5C6B5F",
+      "colorDerived": "#825665",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00089",
+      "label": "肝肾阴虚、肝阳上亢证(青风内障/绿风内障)",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0.4,
+      "z": -0.1,
+      "theta": -7.895,
+      "phi": 146.31,
+      "r": 0.595,
+      "u": [
+        -0.8241643146991834,
+        0.5494414734502969,
+        -0.13735810725687797
+      ],
+      "colorSourceHex": "#858A29",
+      "colorDerived": "#908526",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00090",
+      "label": "肝肾不足、晶珠混浊证(圆翳内障/如银内障)",
+      "kind": "dsu",
+      "x": -1,
+      "y": 0.4,
+      "z": -0.6,
+      "theta": -29.122,
+      "phi": 158.199,
+      "r": 0.557,
+      "u": [
+        -0.8111060179936601,
+        0.3244356828341479,
+        -0.486670849012357
+      ],
+      "colorSourceHex": "#7C9E2A",
+      "colorDerived": "#F48606",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00091",
+      "label": "风寒外袭、痰湿阻窍证(耳胀/耳闭)",
+      "kind": "dsu",
+      "x": -1,
+      "y": -0.4,
+      "z": 0,
+      "theta": 0,
+      "phi": 201.801,
+      "r": 0.578,
+      "u": [
+        -0.9284793451480312,
+        -0.37138404062840813,
+        0
+      ],
+      "colorSourceHex": "#A0922C",
+      "colorDerived": "#BF803E",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00092",
+      "label": "肺经风热、湿热上蒸证(鼻渊/鼻鼽)",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0.7,
+      "z": -0.1429,
+      "theta": -6.675,
+      "phi": 34.992,
+      "r": 0.6565,
+      "u": [
+        0.8136789267772855,
+        0.5695748213416794,
+        -0.11623737356013769
+      ],
+      "colorSourceHex": "#5A667B",
+      "colorDerived": "#B13185",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00093",
+      "label": "肝气郁结、心神失养证(郁证/百合病)",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": -0.3,
+      "z": 0.6429,
+      "theta": 43.781,
+      "phi": 206.565,
+      "r": 0.619,
+      "u": [
+        -0.645767518238212,
+        -0.32288303811312247,
+        0.6919037910629632
+      ],
+      "colorSourceHex": "#2EAB60",
+      "colorDerived": "#44A36D",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00094",
+      "label": "胆郁痰扰、心神不宁证(惊悸/不寐)",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0.3,
+      "z": 0.7273,
+      "theta": 34.861,
+      "phi": 16.699,
+      "r": 0.6115,
+      "u": [
+        0.7859368705256055,
+        0.23577740944092523,
+        0.571587481271016
+      ],
+      "colorSourceHex": "#30878E",
+      "colorDerived": "#6461BB",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00095",
+      "label": "心肾不交、阴虚火旺证(不寐)",
+      "kind": "dsu",
+      "x": -0.2,
+      "y": 0.4,
+      "z": 0.4667,
+      "theta": 46.219,
+      "phi": 116.565,
+      "r": 0.6235,
+      "u": [
+        -0.30942822937235154,
+        0.6188578406668142,
+        0.7219897117775982
+      ],
+      "colorSourceHex": "#2F9B5F",
+      "colorDerived": "#3D9858",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00096",
+      "label": "气阴两虚、痰瘀毒结证(肺积/息贲)",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0.7,
+      "z": -0.2353,
+      "theta": -14.317,
+      "phi": 130.601,
+      "r": 0.7365,
+      "u": [
+        -0.6305755737943095,
+        0.7356791593012342,
+        -0.24728651460159873
+      ],
+      "colorSourceHex": "#6B8532",
+      "colorDerived": "#A67921",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00097",
+      "label": "脾胃虚弱、瘀毒内结证(胃积/反胃)",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0.7,
+      "z": -0.4444,
+      "theta": -25.737,
+      "phi": 130.601,
+      "r": 0.7425,
+      "u": [
+        -0.586227262117992,
+        0.6839389238618183,
+        -0.43424088427551466
+      ],
+      "colorSourceHex": "#5F9135",
+      "colorDerived": "#A68120",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00098",
+      "label": "肝郁脾虚、瘀毒互结证(肝积/鼓胀)",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0.7,
+      "z": 0,
+      "theta": 0,
+      "phi": 130.601,
+      "r": 0.7715,
+      "u": [
+        -0.6507874689509606,
+        0.7592599490664593,
+        0
+      ],
+      "colorSourceHex": "#7E7A2E",
+      "colorDerived": "#A56D23",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00099",
+      "label": "肝气郁结、冲任失调证(乳岩/乳石痈)",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0,
+      "z": 0,
+      "theta": 0,
+      "phi": 180,
+      "r": 0.7485,
+      "u": [
+        -1,
+        1.2246467991473532e-16,
+        0
+      ],
+      "colorSourceHex": "#FF8C00",
+      "colorDerived": "#999A20",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00100",
+      "label": "湿热蕴结、瘀毒内阻证(肠蕈/脏毒)",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0.7,
+      "z": -0.5,
+      "theta": -22.275,
+      "phi": 34.992,
+      "r": 0.7545,
+      "u": [
+        0.7580970887927441,
+        0.5306675639480607,
+        -0.3790524245238346
+      ],
+      "colorSourceHex": "#507B6A",
+      "colorDerived": "#BB4970",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00101",
+      "label": "热毒犯肺、痰瘀阻络证(失荣/上石疽)",
+      "kind": "dsu",
+      "x": 1,
+      "y": 0.3,
+      "z": 0.1429,
+      "theta": 7.792,
+      "phi": 16.699,
+      "r": 0.7485,
+      "u": [
+        0.94898367823454,
+        0.28469069418543175,
+        0.1355772366168454
+      ],
+      "colorSourceHex": "#6255AA",
+      "colorDerived": "#8D37B6",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00102",
+      "label": "痰气交阻、瘀毒凝结证(石瘿)",
+      "kind": "dsu",
+      "x": 0.6,
+      "y": 0.3,
+      "z": 0,
+      "theta": 0,
+      "phi": 26.565,
+      "r": 0.6185,
+      "u": [
+        0.8944275904545494,
+        0.4472127965897988,
+        0
+      ],
+      "colorSourceHex": "#675597",
+      "colorDerived": "#635D80",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DSU-00103",
+      "label": "肾虚瘀毒证(癃闭/积证)",
+      "kind": "dsu",
+      "x": -0.6,
+      "y": 0.7,
+      "z": -0.7692,
+      "theta": -39.84,
+      "phi": 130.601,
+      "r": 0.735,
+      "u": [
+        -0.4996983434630343,
+        0.5829874681175321,
+        -0.6406459065335616
+      ],
+      "colorSourceHex": "#589D36",
+      "colorDerived": "#B7871A",
+      "colorMatch": false,
+      "meta": "dsu"
+    },
+    {
+      "uid": "DOM-SIX-太阳病",
+      "label": "太阳病",
+      "kind": "six_channel",
+      "x": 0.8,
+      "y": -0.9,
+      "z": 0,
+      "theta": 0,
+      "phi": 311.634,
+      "r": 1,
+      "u": [
+        0.6643698480493211,
+        -0.7474039771120582,
+        0
+      ],
+      "colorSourceHex": "#297A9B",
+      "colorDerived": "#4952CF",
+      "colorMatch": false,
+      "meta": "six_channel · 六经域"
+    },
+    {
+      "uid": "DOM-SIX-阳明病",
+      "label": "阳明病",
+      "kind": "six_channel",
+      "x": 0.9,
+      "y": 0.85,
+      "z": 0.1,
+      "theta": 4.618,
+      "phi": 43.363,
+      "r": 1,
+      "u": [
+        0.7246580539850979,
+        0.6843891522747996,
+        0.08051206768623079
+      ],
+      "colorSourceHex": "#556C6A",
+      "colorDerived": "#973A80",
+      "colorMatch": false,
+      "meta": "six_channel · 六经域"
+    },
+    {
+      "uid": "DOM-SIX-少阳病",
+      "label": "少阳病",
+      "kind": "six_channel",
+      "x": 0.3,
+      "y": 0,
+      "z": 0.2,
+      "theta": 33.69,
+      "phi": 0,
+      "r": 1,
+      "u": [
+        0.8320509480795582,
+        0,
+        0.5546992156114053
+      ],
+      "colorSourceHex": "#397DA3",
+      "colorDerived": "#199B79",
+      "colorMatch": false,
+      "meta": "six_channel · 六经域"
+    },
+    {
+      "uid": "DOM-SIX-太阴病",
+      "label": "太阴病",
+      "kind": "six_channel",
+      "x": -0.6,
+      "y": 0.7,
+      "z": -0.3,
+      "theta": -18.025,
+      "phi": 130.601,
+      "r": 1,
+      "u": [
+        -0.618847855810909,
+        0.7219966792542598,
+        -0.30943194163509036
+      ],
+      "colorSourceHex": "#678933",
+      "colorDerived": "#A67C21",
+      "colorMatch": false,
+      "meta": "six_channel · 六经域"
+    },
+    {
+      "uid": "DOM-SIX-少阴病",
+      "label": "少阴病",
+      "kind": "six_channel",
+      "x": -0.9,
+      "y": 0.8,
+      "z": -0.8,
+      "theta": -33.599,
+      "phi": 138.366,
+      "r": 1,
+      "u": [
+        -0.6225358666377626,
+        0.5533741748625628,
+        -0.5533770119409982
+      ],
+      "colorSourceHex": "#569D36",
+      "colorDerived": "#D77F10",
+      "colorMatch": false,
+      "meta": "six_channel · 六经域"
+    },
+    {
+      "uid": "DOM-SIX-厥阴病",
+      "label": "厥阴病",
+      "kind": "six_channel",
+      "x": -0.4,
+      "y": 0.2,
+      "z": 0.5,
+      "theta": 48.19,
+      "phi": 153.435,
+      "r": 1,
+      "u": [
+        -0.596281396313633,
+        0.2981400324025902,
+        0.745359656467431
+      ],
+      "colorSourceHex": "#32AA5F",
+      "colorDerived": "#42A158",
+      "colorMatch": false,
+      "meta": "six_channel · 六经域"
+    },
+    {
+      "uid": "DOM-SYS-生理",
+      "label": "生理",
+      "kind": "system",
+      "x": 0,
+      "y": 0.1,
+      "z": -0.6,
+      "theta": -80.538,
+      "phi": 90,
+      "r": 0.9,
+      "u": [
+        1.0066195018731127e-17,
+        0.16439344022684096,
+        -0.9863948483291993
+      ],
+      "colorSourceHex": "#CFBC0C",
+      "colorDerived": "#8FAD22",
+      "colorMatch": false,
+      "meta": "system · 四系统"
+    },
+    {
+      "uid": "DOM-SYS-心理",
+      "label": "心理",
+      "kind": "system",
+      "x": 0.1,
+      "y": -0.1,
+      "z": 0.9,
+      "theta": 81.07,
+      "phi": 315,
+      "r": 0.9,
+      "u": [
+        0.10976253076236019,
+        -0.10976253076236024,
+        0.9878787241768515
+      ],
+      "colorSourceHex": "#02C0B2",
+      "colorDerived": "#0EB0BF",
+      "colorMatch": false,
+      "meta": "system · 四系统"
+    },
+    {
+      "uid": "DOM-SYS-社会",
+      "label": "社会",
+      "kind": "system",
+      "x": 0.2,
+      "y": -0.4,
+      "z": 0.3,
+      "theta": 33.855,
+      "phi": 296.565,
+      "r": 0.9,
+      "u": [
+        0.37138790316919695,
+        -0.7427774649755399,
+        0.5570930468997956
+      ],
+      "colorSourceHex": "#10988B",
+      "colorDerived": "#129985",
+      "colorMatch": false,
+      "meta": "system · 四系统"
+    },
+    {
+      "uid": "DOM-SYS-生态",
+      "label": "生态",
+      "kind": "system",
+      "x": -0.2,
+      "y": -0.6,
+      "z": 0,
+      "theta": 0,
+      "phi": 251.565,
+      "r": 0.9,
+      "u": [
+        -0.3162286133887094,
+        -0.9486830155928029,
+        0
+      ],
+      "colorSourceHex": "#2878A6",
+      "colorDerived": "#348782",
+      "colorMatch": false,
+      "meta": "system · 四系统"
+    },
+    {
+      "uid": "DOM-JQS-精",
+      "label": "精",
+      "kind": "treasure",
+      "x": 0,
+      "y": 0,
+      "z": -1,
+      "theta": -90,
+      "phi": 0,
+      "r": 1,
+      "u": [
+        6.123233995736766e-17,
+        0,
+        -1
+      ],
+      "colorSourceHex": "#F2C200",
+      "colorDerived": "#F2C200",
+      "colorMatch": true,
+      "meta": "treasure · 精气神"
+    },
+    {
+      "uid": "DOM-JQS-气",
+      "label": "气",
+      "kind": "treasure",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "theta": 90,
+      "phi": 0,
+      "r": 1,
+      "u": [
+        6.123233995736766e-17,
+        0,
+        1
+      ],
+      "colorSourceHex": "#00C7C7",
+      "colorDerived": "#00B050",
+      "colorMatch": false,
+      "meta": "treasure · 精气神"
+    },
+    {
+      "uid": "DOM-JQS-神",
+      "label": "神",
+      "kind": "treasure",
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "theta": 90,
+      "phi": 0,
+      "r": 1,
+      "u": [
+        6.123233995736766e-17,
+        0,
+        1
+      ],
+      "colorSourceHex": "#00C7C7",
+      "colorDerived": "#00C7C7",
+      "colorMatch": true,
+      "meta": "treasure · 精气神"
+    }
+  ]
+}

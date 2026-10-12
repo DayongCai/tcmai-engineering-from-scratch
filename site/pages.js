@@ -25,7 +25,26 @@ const PAGES = [
   ['roadmap', '进度', '进度 — 院系、学科、章节建设状态'],
   ['paths', '学习路径', '学习路径 — 临床型 / 工程型 / 科研型 / 教学型 / 复合型'],
   ['glossary', '术语表', '双术语表 — 中医术语 / AI 术语 / 桥梁对照'],
+  ['semtensor', '语义张量', '三维极坐标语义张量 — 颜色赋值公理、母子父三球与语义域分布'],
   ['about', '关于', '关于本平台 — 架构、数据管线与免责声明'],
+];
+
+/**
+ * 脚本加载顺序有硬约束：
+ *   semtensor-spec.js 必须在 semtensor.js **之前** ——
+ *   semtensor.js 在求值时就读取 window.TCMAI_SEMTENSOR_SPEC，
+ *   顺序反了会在加载期直接抛「缺少坐标与颜色常量」。
+ *   sphere.js 又必须在 semtensor.js 之后（它 require 计算核心）。
+ */
+const SCRIPTS = [
+  'data.js',
+  'semtensor-spec.js',
+  'content.js',
+  'progress.js',
+  'semtensor.js',
+  'sphere.js',
+  'figures.js',
+  'app.js',
 ];
 
 function page(id, label, desc) {
@@ -50,11 +69,7 @@ function page(id, label, desc) {
     </div>
   </noscript>
 </div>
-<script src="data.js"></script>
-<script src="content.js"></script>
-<script src="progress.js"></script>
-<script src="figures.js"></script>
-<script src="app.js"></script>
+${SCRIPTS.map((s) => `<script src="${s}"></script>`).join('\n')}
 </body>
 </html>
 `;

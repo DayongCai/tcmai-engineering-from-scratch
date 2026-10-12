@@ -276,10 +276,43 @@ test('figures.js 注册的每张图都能真的挂载进宿主元素（不抛异
   }
 });
 
-test('站点脚本不发起网络请求（进度只存本机）', () => {
-  for (const f of ['progress.js', 'app.js', 'figures.js', 'md.js']) {
+test('站点脚本不向外部发起请求（本机数据一律不外发）', () => {
+  // 约定要写精确，否则它会被悄悄放宽或被过度执行：
+  //   禁止  —— 向任何跨域/外部地址发请求、发送本机数据（fetchSendBeacon/XHR 外呼）、埋点。
+  //   允许  —— 同源相对路径 GET 一个静态资源（图注 .txt），这不会把任何数据发出去。
+  // 进度仍然只写 localStorage。
+  const ALLOWED_SAME_ORIGIN_FETCH = ['app.js'];   // 仅图注按需载入这一处
+
+  for (const f of ['progress.js', 'figures.js', 'md.js', 'semtensor.js', 'sphere.js', 'content.js']) {
     const src = fs.readFileSync(path.join(SITE, f), 'utf8');
     assert.ok(!/\bfetch\s*\(/.test(src), `${f} 含 fetch 调用`);
     assert.ok(!/XMLHttpRequest/.test(src), `${f} 含 XMLHttpRequest`);
   }
+
+  for (const f of fs.readdirSync(SITE).filter((x) => x.endsWith('.js') && !x.endsWith('.test.js'))) {
+    const src = fs.readFileSync(path.join(SITE, f), 'utf8');
+    assert.ok(!/sendBeacon/.test(src), `${f} 含 sendBeacon`);
+    assert.ok(!/new\s+WebSocket/.test(src), `${f} 含 WebSocket`);
+    // 任何写死的绝对 URL 都是外呼的信号（相对路径不带协议）
+    const abs = src.match(/fetch\s*\(\s*[`'"](https?:)?\/\//g);
+    assert.ok(!abs, `${f} 存在指向绝对地址的请求`);
+  }
+
+  const app = fs.readFileSync(path.join(SITE, 'app.js'), 'utf8');
+  const fetches = app.match(/fetch\s*\(([^)]*)/g) || [];
+  for (const call of fetches) {
+    assert.ok(
+      /standards\/semtensor\/annotations\//.test(call),
+      `app.js 出现未被登记的 fetch 目标: ${call}`
+    );
+    assert.ok(!/https?:/.test(call), '图注 fetch 不得指向外部地址');
+    assert.ok(/location\.protocol\s*&&/.test(app), '图注 fetch 未被协议守卫（file:// 下会报错）');
+  }
+  assert.ok(ALLOWED_SAME_ORIGIN_FETCH.includes('app.js'));
+});
+
+test('进度数据不出本机：localStorage 键固定且不含任何网络上报', () => {
+  const src = fs.readFileSync(path.join(SITE, 'progress.js'), 'utf8');
+  assert.ok(/tcmai:progress:v1/.test(src), '进度键名变了（老用户的进度会丢）');
+  assert.ok(!/http/.test(src), 'progress.js 出现 http 字样');
 });

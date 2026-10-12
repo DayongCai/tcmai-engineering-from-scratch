@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>tcmP · 颜色赋值三维极坐标语义张量 · 母子父三球面同步旋转图</title>
+<style>
+  :root{
+    --bg:#0b0e13; --panel:#121722; --panel2:#171e2b; --line:#25304a;
+    --fg:#e8edf7; --muted:#93a1bd; --accent:#00B050;
+    --x-i:#FF8C00; --x-t:#8A2BE2; --y-i:#1F61D9; --y-t:#DB1C1C; --z-i:#F2C200; --z-t:#00C7C7;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);
+    font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",system-ui,-apple-system,sans-serif;}
+  header{padding:14px 20px 10px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:40}
+  h1{margin:0 0 4px;font-size:17px;font-weight:700;letter-spacing:.4px}
+  .sub{color:var(--muted);font-size:12.5px;line-height:1.6}
+  .sub code{background:#0d1420;border:1px solid var(--line);border-radius:4px;padding:0 4px;color:#cfe3ff}
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  button,label.btn{background:var(--panel2);color:var(--fg);border:1px solid var(--line);
+    border-radius:6px;padding:6px 11px;font-size:12.5px;cursor:pointer;font-family:inherit}
+  button:hover,label.btn:hover{border-color:var(--accent);color:#fff}
+  button.on{background:var(--accent);color:#04170c;border-color:var(--accent);font-weight:700}
+  .sep{width:1px;height:22px;background:var(--line)}
+  .rng{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted)}
+  input[type=range]{width:120px;accent-color:var(--accent)}
+  #grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:14px 20px 0}
+  @media (max-width:1100px){#grid{grid-template-columns:1fr}}
+  figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+  .fighd{display:flex;align-items:center;gap:9px;padding:9px 12px;border-bottom:1px solid var(--line);background:var(--panel2)}
+  .fighd .no{font-size:19px;font-weight:800}
+  .fighd .nm{font-size:14.5px;font-weight:700}
+  .fighd .tag{font-size:11.5px;color:var(--muted);margin-left:auto;text-align:right;line-height:1.45}
+  .stage{position:relative;width:100%;aspect-ratio:1/0.92;background:radial-gradient(circle at 50% 42%,#151c29 0%,#0b0e13 78%)}
+  .stage canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+  .stage canvas.drag{cursor:grabbing}
+  .lbl{position:absolute;transform:translate(-50%,-50%);pointer-events:none;font-size:11px;
+       color:#dbe6fb;text-shadow:0 0 4px #000,0 0 8px #000;white-space:nowrap}
+  .lbl.axis{font-size:14px;font-weight:800;letter-spacing:.5px}
+  .lbl.tick{font-size:10px;color:#a9b8d6}
+  .lbl.iot{font-size:9.5px;color:#e6eeff;opacity:.92}
+  .tip{position:absolute;pointer-events:none;background:#0a0f18f2;border:1px solid var(--accent);
+       border-radius:6px;padding:6px 9px;font-size:12px;line-height:1.55;max-width:250px;display:none;z-index:20;
+       box-shadow:0 6px 20px #000a}
+  .tip b{color:#fff}
+  .tip .kv{color:var(--muted)}
+  figcaption{padding:10px 12px 12px;border-top:1px solid var(--line);background:#0f141e}
+  figcaption h4{margin:0 0 6px;font-size:12.5px;color:var(--accent);letter-spacing:.5px;font-weight:700}
+  pre.cap{margin:0;white-space:pre-wrap;word-break:break-word;font-size:11.8px;line-height:1.75;
+          color:#c9d6ee;max-height:230px;overflow:auto;font-family:"Microsoft YaHei",monospace}
+  .capbar{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+  .capbar button{padding:4px 9px;font-size:11.5px}
+  textarea{width:100%;min-height:170px;background:#0a0e16;color:#d7e3f8;border:1px solid var(--line);
+           border-radius:6px;font-family:Consolas,"Microsoft YaHei",monospace;font-size:11.5px;line-height:1.6;padding:8px}
+  .ed{display:none;margin-top:8px}
+  .ed.open{display:block}
+  footer{margin:16px 20px 30px;padding:14px 16px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+  footer h3{margin:0 0 8px;font-size:13.5px;color:var(--accent)}
+  table{border-collapse:collapse;font-size:12px;margin:6px 0 14px;width:100%;max-width:760px}
+  th,td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+  th{background:var(--panel2);color:var(--muted);font-weight:600}
+  .sw{display:inline-block;width:12px;height:12px;border-radius:3px;border:1px solid #0006;vertical-align:-2px;margin-right:6px}
+  .note{color:var(--muted);font-size:12px;line-height:1.75}
+  .ok{color:var(--accent)}
+</style>
+</head>
+<body>
+<header>
+  <h1>tcmP · 颜色赋值三维极坐标语义张量 —— ①母 ②子 ③父 三球面同步旋转图</h1>
+  <div class="sub">
+    口径裁定：<code>θ = 仰角 elevation ∈ [−90°, +90°]</code>　<code>φ = 方位角 azimuth ∈ [0°, 360°)</code>　
+    <code>r = 尺度 ∈ (0,1]</code>　球→笛：<code>X = r·cosθ·cosφ , Y = r·cosθ·sinφ , Z = r·sinθ</code>
+  </div>
+  <div class="toolbar">
+    <button id="btnAuto" class="on">自动旋转 开</button>
+    <button id="btnReset">复位视角</button>
+    <span class="sep"></span>
+    <button id="btnV1">前视 (20°,−60°)</button>
+    <button id="btnV2">正视 XZ (0°,−90°)</button>
+    <button id="btnV3">俯视 (88°,−90°)</button>
+    <button id="btnV4">侧视 YZ (0°,0°)</button>
+    <span class="sep"></span>
+    <span class="rng">尺度伸缩 ×<input id="scaleR" type="range" min="0.2" max="1" step="0.01" value="1"><b id="scaleRv">1.00</b></span>
+    <span class="sep"></span>
+    <button id="btnMirror">镜像对照 开</button>
+    <button id="btnGrid" class="on">球面点云 开</button>
+    <button id="btnAxes" class="on">坐标轴 开</button>
+    <button id="btnShot">导出整图 PNG</button>
+  </div>
+</header>
+
+<div id="grid"></div>
+
+<footer>
+  <h3>轴端取色表（母/子/父 三球共用 · 单一来源 axioms.AXIS_ENDPOINTS）</h3>
+  <div id="axisTable"></div>
+  <h3>颜色公理（单一来源 axioms.comp）</h3>
+  <div class="note" id="axiomNote"></div>
+</footer>
+
+<script>
+/* =======================================================================
+   tcmP 三维极坐标语义张量 · 零依赖 WebGL 视图
+   本文件不含任何外链资源；可直接 file:// 双击打开。
+   ======================================================================= */
+const DATA = {"params":{"rings":45,"seg":70,"figure_mm":[198.0,98.0],"dpi":240,"axis_label_size":9.0,"tick_size":7.0,"arrow_head":6.5,"dot_iot":1.7,"dot_edge":0.35,"dot_O":1.8,"cloud_alpha_face":0.3,"cloud_alpha_rim":0.95,"marker_alpha_face":0.72,"marker_alpha_rim":1.0,"cloud_point_size":4.0,"marker_point_size":32.0,"iot_point_size":26.0,"azimuth_step_deg":30.0,"elev_ticks_deg":[-60.0,-30.0,0.0,30.0,60.0],"view_elev_deg":20.0,"view_azim_deg":-60.0,"meridian_phi_deg":[0.0,180.0],"yinyang_circle_phi_deg":[90.0,270.0]},"spheres":[{"no":"①","name":"母","sex":"女","sign":[-1,-1,1],"angle_x":180.0,"angle_y":135.0,"angle_z":90.0,"xy_face":"3π/4"},{"no":"②","name":"子","sex":"男","sign":[1,1,1],"angle_x":0.0,"angle_y":45.0,"angle_z":90.0,"xy_face":"π/4"},{"no":"③","name":"父","sex":"男","sign":[1,1,1],"angle_x":0.0,"angle_y":45.0,"angle_z":90.0,"xy_face":"π/4"}],"units":[{"uid":"DSU-00001","label":"风寒束表证","kind":"dsu","x":0.2,"y":-0.4,"z":0.0,"r":0.8195,"theta_deg":0.0,"phi_deg":296.565,"hex":"#2374AD","meta":"dsu"},{"uid":"DSU-00002","label":"风热犯表证","kind":"dsu","x":1.0,"y":-0.4,"z":0.1,"r":0.7325,"theta_deg":5.305,"phi_deg":338.199,"hex":"#515DB0","meta":"dsu"},{"uid":"DSU-00003","label":"痰热壅肺证","kind":"dsu","x":1.0,"y":1.0,"z":0.2308,"r":0.648,"theta_deg":9.268,"phi_deg":45.0,"hex":"#4E7366","meta":"dsu"},{"uid":"DSU-00004","label":"脾胃湿热证","kind":"dsu","x":1.0,"y":1.0,"z":-0.1,"r":0.6915,"theta_deg":-4.045,"phi_deg":45.0,"hex":"#556D66","meta":"dsu"},{"uid":"DSU-00005","label":"脾胃虚寒证","kind":"dsu","x":-1.0,"y":0.4,"z":0.6,"r":0.702,"theta_deg":29.122,"phi_deg":158.199,"hex":"#5F9F41","meta":"dsu"},{"uid":"DSU-00006","label":"肝郁脾虚证","kind":"dsu","x":0.6,"y":0.7,"z":0.5333,"r":0.752,"theta_deg":30.049,"phi_deg":49.399,"hex":"#358A65","meta":"dsu"},{"uid":"DSU-00007","label":"肝胆湿热证","kind":"dsu","x":1.0,"y":1.0,"z":0.2,"r":0.8425,"theta_deg":8.049,"phi_deg":45.0,"hex":"#507266","meta":"dsu"},{"uid":"DSU-00008","label":"肝阳上亢证","kind":"dsu","x":1.0,"y":1.0,"z":0.4444,"r":0.794,"theta_deg":17.446,"phi_deg":45.0,"hex":"#427D66","meta":"dsu"},{"uid":"DSU-00009","label":"气滞血瘀证","kind":"dsu","x":1.0,"y":1.0,"z":0.3684,"r":0.7865,"theta_deg":14.602,"phi_deg":45.0,"hex":"#477966","meta":"dsu"},{"uid":"DSU-00010","label":"阴虚燥热证","kind":"dsu","x":1.0,"y":0.4,"z":0.1667,"r":0.8135,"theta_deg":8.797,"phi_deg":21.801,"hex":"#5D5C9C","meta":"dsu"},{"uid":"DSU-00011","label":"脾肾阳虚证","kind":"dsu","x":-1.0,"y":0.4,"z":-0.2727,"r":0.6615,"theta_deg":-14.21,"phi_deg":158.199,"hex":"#959422","meta":"dsu"},{"uid":"DSU-00012","label":"寒湿痹阻证","kind":"dsu","x":-1.0,"y":1.0,"z":-0.25,"r":0.6795,"theta_deg":-10.025,"phi_deg":135.0,"hex":"#698933","meta":"dsu"},{"uid":"DSU-00013","label":"湿热浸淫证","kind":"dsu","x":1.0,"y":0.3,"z":0.25,"r":0.7175,"theta_deg":13.466,"phi_deg":16.699,"hex":"#585FA3","meta":"dsu"},{"uid":"DSU-00014","label":"寒凝血瘀证","kind":"dsu","x":-1.0,"y":1.0,"z":-0.5455,"r":0.7345,"theta_deg":-21.091,"phi_deg":135.0,"hex":"#5D9135","meta":"dsu"},{"uid":"DSU-00015","label":"气虚不摄证","kind":"dsu","x":-1.0,"y":0.4,"z":-0.2727,"r":0.611,"theta_deg":-14.21,"phi_deg":158.199,"hex":"#959422","meta":"dsu"},{"uid":"DSU-00016","label":"湿热瘀结证","kind":"dsu","x":1.0,"y":1.0,"z":-0.2,"r":0.6245,"theta_deg":-8.049,"phi_deg":45.0,"hex":"#527264","meta":"dsu"},{"uid":"DSU-00017","label":"气滞血瘀证(颈部)","kind":"dsu","x":0.2,"y":1.0,"z":-0.25,"r":0.62,"theta_deg":-13.774,"phi_deg":78.69,"hex":"#965130","meta":"dsu"},{"uid":"DSU-00018","label":"寒湿痹阻证(腰部)","kind":"dsu","x":-1.0,"y":1.0,"z":-0.3333,"r":0.638,"theta_deg":-13.263,"phi_deg":135.0,"hex":"#668B33","meta":"dsu"},{"uid":"DSU-00019","label":"肝肾亏虚证","kind":"dsu","x":-0.6,"y":0.4,"z":-0.0714,"r":0.605,"theta_deg":-5.657,"phi_deg":146.31,"hex":"#898928","meta":"dsu"},{"uid":"DSU-00020","label":"肺气虚寒证","kind":"dsu","x":-1.0,"y":0.4,"z":-0.1111,"r":0.8325,"theta_deg":-5.89,"phi_deg":158.199,"hex":"#A58E1E","meta":"dsu"},{"uid":"DSU-00021","label":"阴虚肺燥证","kind":"dsu","x":-0.2,"y":0.4,"z":0.1429,"r":0.5925,"theta_deg":17.715,"phi_deg":116.565,"hex":"#6F743A","meta":"dsu"},{"uid":"DSU-00022","label":"心肾不交证","kind":"dsu","x":-0.2,"y":0.4,"z":0.5625,"r":0.7645,"theta_deg":51.514,"phi_deg":116.565,"hex":"#2A9F68","meta":"dsu"},{"uid":"DSU-00023","label":"肝阳上亢证(头部)","kind":"dsu","x":1.0,"y":1.0,"z":0.75,"r":0.858,"theta_deg":27.938,"phi_deg":45.0,"hex":"#338A67","meta":"dsu"},{"uid":"DSU-00024","label":"寒哮证（冷哮）","kind":"dsu","x":-1.0,"y":1.0,"z":-0.0714,"r":0.821,"theta_deg":-2.891,"phi_deg":135.0,"hex":"#728430","meta":"dsu"},{"uid":"DSU-00025","label":"风热犯肺证","kind":"dsu","x":1.0,"y":-0.4,"z":0.1,"r":0.664,"theta_deg":5.305,"phi_deg":338.199,"hex":"#515DB0","meta":"dsu"},{"uid":"DSU-00026","label":"痰湿壅肺证","kind":"dsu","x":-1.0,"y":0.7,"z":0.0,"r":0.676,"theta_deg":0.0,"phi_deg":145.008,"hex":"#8F8526","meta":"dsu"},{"uid":"DSU-00027","label":"肺肾气虚证","kind":"dsu","x":-1.0,"y":0.4,"z":-0.1538,"r":0.747,"theta_deg":-8.129,"phi_deg":158.199,"hex":"#A1901F","meta":"dsu"},{"uid":"DSU-00028","label":"肺脾肾虚、痰瘀互结证","kind":"dsu","x":-1.0,"y":0.7,"z":-0.2143,"r":0.6715,"theta_deg":-9.957,"phi_deg":145.008,"hex":"#7F8B2B","meta":"dsu"},{"uid":"DSU-00029","label":"肺阴亏虚证","kind":"dsu","x":-0.2,"y":0.4,"z":0.0769,"r":0.753,"theta_deg":9.76,"phi_deg":116.565,"hex":"#826831","meta":"dsu"},{"uid":"DSU-00030","label":"风热犯肺证","kind":"dsu","x":1.0,"y":0.3,"z":0.0909,"r":0.67,"theta_deg":4.976,"phi_deg":16.699,"hex":"#6750AD","meta":"dsu"},{"uid":"DSU-00031","label":"阳虚水泛证","kind":"dsu","x":-1.0,"y":0.7,"z":0.1429,"r":0.6835,"theta_deg":6.675,"phi_deg":145.008,"hex":"#82892B","meta":"dsu"},{"uid":"DSU-00032","label":"气阴两虚、痰瘀阻络证","kind":"dsu","x":-0.6,"y":0.7,"z":-0.1667,"r":0.6125,"theta_deg":-10.247,"phi_deg":130.601,"hex":"#708231","meta":"dsu"},{"uid":"DSU-00033","label":"肝阳上亢证","kind":"dsu","x":1.0,"y":1.0,"z":0.4545,"r":0.7335,"theta_deg":17.818,"phi_deg":45.0,"hex":"#427D66","meta":"dsu"},{"uid":"DSU-00034","label":"胸阳痹阻、痰瘀互结证","kind":"dsu","x":-1.0,"y":0.7,"z":0.3333,"r":0.679,"theta_deg":15.274,"phi_deg":145.008,"hex":"#6F8F34","meta":"dsu"},{"uid":"DSU-00035","label":"心脾两虚证","kind":"dsu","x":-1.0,"y":0.4,"z":0.6667,"r":0.56,"theta_deg":31.757,"phi_deg":158.199,"hex":"#57A145","meta":"dsu"},{"uid":"DSU-00036","label":"心肾阳虚、水饮凌心证","kind":"dsu","x":-1.0,"y":0.4,"z":0.3125,"r":0.768,"theta_deg":16.18,"phi_deg":158.199,"hex":"#87952C","meta":"dsu"},{"uid":"DSU-00037","label":"热毒侵心、气阴两伤证","kind":"dsu","x":1.0,"y":0.0,"z":0.6,"r":0.5765,"theta_deg":30.964,"phi_deg":0.0,"hex":"#3F77A7","meta":"dsu"},{"uid":"DSU-00038","label":"痰湿内阻证","kind":"dsu","x":-1.0,"y":1.0,"z":-0.1818,"r":0.6505,"theta_deg":-7.326,"phi_deg":135.0,"hex":"#6D8732","meta":"dsu"},{"uid":"DSU-00039","label":"气虚血瘀证","kind":"dsu","x":-0.6,"y":0.7,"z":0.0,"r":0.664,"theta_deg":0.0,"phi_deg":130.601,"hex":"#7E7A2E","meta":"dsu"},{"uid":"DSU-00040","label":"风寒湿痹、内含于心证","kind":"dsu","x":-1.0,"y":0.0,"z":0.4545,"r":0.6005,"theta_deg":24.444,"phi_deg":180.0,"hex":"#919E30","meta":"dsu"},{"uid":"DSU-00041","label":"气阴两虚、心脉瘀阻证","kind":"dsu","x":-0.6,"y":0.7,"z":0.375,"r":0.6715,"theta_deg":22.134,"phi_deg":130.601,"hex":"#548D40","meta":"dsu"},{"uid":"DSU-00042","label":"真心痛（阳衰血瘀）证","kind":"dsu","x":-1.0,"y":0.7,"z":0.375,"r":0.7605,"theta_deg":17.078,"phi_deg":145.008,"hex":"#6B9136","meta":"dsu"},{"uid":"DSU-00043","label":"肺肾气虚、痰瘀阻络证","kind":"dsu","x":-1.0,"y":0.7,"z":-0.0625,"r":0.578,"theta_deg":-2.931,"phi_deg":145.008,"hex":"#8A8728","meta":"dsu"},{"uid":"DSU-00044","label":"气虚便秘证","kind":"dsu","x":-1.0,"y":0.4,"z":-0.1111,"r":0.702,"theta_deg":-5.89,"phi_deg":158.199,"hex":"#A58E1E","meta":"dsu"},{"uid":"DSU-00045","label":"脾虚湿盛证","kind":"dsu","x":-1.0,"y":0.4,"z":0.125,"r":0.586,"theta_deg":6.62,"phi_deg":158.199,"hex":"#A28F20","meta":"dsu"},{"uid":"DSU-00046","label":"脾胃湿热证","kind":"dsu","x":1.0,"y":1.0,"z":0.1,"r":0.7715,"theta_deg":4.045,"phi_deg":45.0,"hex":"#556D67","meta":"dsu"},{"uid":"DSU-00047","label":"肝胃不和证","kind":"dsu","x":1.0,"y":0.3,"z":0.6364,"r":0.604,"theta_deg":31.363,"phi_deg":16.699,"hex":"#368191","meta":"dsu"},{"uid":"DSU-00048","label":"肝胃郁热证","kind":"dsu","x":1.0,"y":1.0,"z":0.4444,"r":0.7155,"theta_deg":17.446,"phi_deg":45.0,"hex":"#427D66","meta":"dsu"},{"uid":"DSU-00049","label":"肝郁脾虚证","kind":"dsu","x":0.6,"y":0.0,"z":0.4545,"r":0.759,"theta_deg":37.147,"phi_deg":0.0,"hex":"#32859D","meta":"dsu"},{"uid":"DSU-00050","label":"水湿内停证（鼓胀）","kind":"dsu","x":-1.0,"y":0.7,"z":-0.3,"r":0.61,"theta_deg":-13.808,"phi_deg":145.008,"hex":"#7A8E2C","meta":"dsu"},{"uid":"DSU-00051","label":"痰湿内阻证","kind":"dsu","x":-0.6,"y":1.0,"z":-0.1818,"r":0.6915,"theta_deg":-8.862,"phi_deg":120.964,"hex":"#806F2E","meta":"dsu"},{"uid":"DSU-00052","label":"肝胆湿热证","kind":"dsu","x":1.0,"y":0.3,"z":0.1667,"r":0.705,"theta_deg":9.07,"phi_deg":16.699,"hex":"#6057A8","meta":"dsu"},{"uid":"DSU-00053","label":"阳明腑实证/结胸证","kind":"dsu","x":1.0,"y":1.0,"z":0.4286,"r":0.7215,"theta_deg":16.859,"phi_deg":45.0,"hex":"#437C66","meta":"dsu"},{"uid":"DSU-00054","label":"脾肾气虚、水湿内停证","kind":"dsu","x":-1.0,"y":0.7,"z":-0.3333,"r":0.646,"theta_deg":-15.274,"phi_deg":145.008,"hex":"#788F2D","meta":"dsu"},{"uid":"DSU-00055","label":"下焦湿热瘀阻证","kind":"dsu","x":1.0,"y":1.0,"z":-0.25,"r":0.7755,"theta_deg":-10.025,"phi_deg":45.0,"hex":"#507463","meta":"dsu"},{"uid":"DSU-00056","label":"肾虚瘀阻证（癃闭）","kind":"dsu","x":-1.0,"y":0.7,"z":-0.25,"r":0.673,"theta_deg":-11.575,"phi_deg":145.008,"hex":"#7D8D2C","meta":"dsu"},{"uid":"DSU-00057","label":"膀胱湿热证（热淋）","kind":"dsu","x":1.0,"y":1.0,"z":-0.2,"r":0.7665,"theta_deg":-8.049,"phi_deg":45.0,"hex":"#527264","meta":"dsu"},{"uid":"DSU-00058","label":"湿热下注证（热淋/白浊）","kind":"dsu","x":1.0,"y":1.0,"z":-0.3333,"r":0.511,"theta_deg":-13.263,"phi_deg":45.0,"hex":"#4E7761","meta":"dsu"},{"uid":"DSU-00059","label":"肝郁脾虚证（痛泻）","kind":"dsu","x":0.6,"y":0.0,"z":0.5833,"r":0.602,"theta_deg":44.193,"phi_deg":0.0,"hex":"#249393","meta":"dsu"},{"uid":"DSU-00060","label":"大肠湿热蕴毒证","kind":"dsu","x":1.0,"y":1.0,"z":-0.3333,"r":0.6005,"theta_deg":-13.263,"phi_deg":45.0,"hex":"#4E7761","meta":"dsu"},{"uid":"DSU-00061","label":"脾虚瘀阻证","kind":"dsu","x":-0.6,"y":0.7,"z":-0.375,"r":0.532,"theta_deg":-22.134,"phi_deg":130.601,"hex":"#628D34","meta":"dsu"},{"uid":"DSU-00062","label":"脾肾阳虚、湿浊内蕴证","kind":"dsu","x":-0.6,"y":0.7,"z":0.0,"r":0.6535,"theta_deg":0.0,"phi_deg":130.601,"hex":"#7E7A2E","meta":"dsu"},{"uid":"DSU-00063","label":"湿热下注、邪留正伤证","kind":"dsu","x":-0.2,"y":0.7,"z":-0.1667,"r":0.6125,"theta_deg":-12.895,"phi_deg":105.945,"hex":"#925A2C","meta":"dsu"},{"uid":"DSU-00064","label":"气虚血瘀、风中经络证","kind":"dsu","x":-1.0,"y":0.0,"z":-0.2,"r":0.74,"theta_deg":-11.31,"phi_deg":180.0,"hex":"#D4940D","meta":"dsu"},{"uid":"DSU-00065","label":"风邪外袭、经络痹阻证","kind":"dsu","x":0.6,"y":-0.4,"z":0.0,"r":0.6675,"theta_deg":0.0,"phi_deg":326.31,"hex":"#3F6AA6","meta":"dsu"},{"uid":"DSU-00066","label":"肝火上炎、风火上扰证","kind":"dsu","x":1.0,"y":0.3,"z":0.8333,"r":0.519,"theta_deg":38.596,"phi_deg":16.699,"hex":"#298E8B","meta":"dsu"},{"uid":"DSU-00067","label":"寒湿阻络、气滞血瘀证","kind":"dsu","x":-1.0,"y":1.0,"z":-0.25,"r":0.5315,"theta_deg":-10.025,"phi_deg":135.0,"hex":"#698933","meta":"dsu"},{"uid":"DSU-00068","label":"肝阳上亢、风阳上扰证","kind":"dsu","x":1.0,"y":0.3,"z":0.875,"r":0.6405,"theta_deg":39.966,"phi_deg":16.699,"hex":"#27908A","meta":"dsu"},{"uid":"DSU-00069","label":"风痰闭窍、肝风内动证（痫证）","kind":"dsu","x":0.6,"y":1.0,"z":0.5556,"r":0.506,"theta_deg":25.472,"phi_deg":59.036,"hex":"#4B7C5A","meta":"dsu"},{"uid":"DSU-00070","label":"肝肾阴虚、虚风内动证（颤证）","kind":"dsu","x":-0.6,"y":0.4,"z":-0.3,"r":0.55,"theta_deg":-22.589,"phi_deg":146.31,"hex":"#70952F","meta":"dsu"},{"uid":"DSU-00071","label":"肝火亢盛、气阴两虚证（瘿病）","kind":"dsu","x":1.0,"y":0.0,"z":0.4615,"r":0.622,"theta_deg":24.775,"phi_deg":0.0,"hex":"#4E68B1","meta":"dsu"},{"uid":"DSU-00072","label":"脾肾阳虚证","kind":"dsu","x":-1.0,"y":0.4,"z":-0.375,"r":0.7025,"theta_deg":-19.197,"phi_deg":158.199,"hex":"#8C9725","meta":"dsu"},{"uid":"DSU-00073","label":"气阴两虚证（消渴）","kind":"dsu","x":-0.2,"y":0.4,"z":-0.1,"r":0.761,"theta_deg":-12.604,"phi_deg":116.565,"hex":"#826C2F","meta":"dsu"},{"uid":"DSU-00074","label":"湿热下注、痹阻经络证（热痹）","kind":"dsu","x":1.0,"y":1.0,"z":-0.3333,"r":0.684,"theta_deg":-13.263,"phi_deg":45.0,"hex":"#4E7761","meta":"dsu"},{"uid":"DSU-00075","label":"痰湿内盛、脾虚不运证","kind":"dsu","x":-0.6,"y":0.7,"z":-0.1,"r":0.675,"theta_deg":-6.19,"phi_deg":130.601,"hex":"#757E30","meta":"dsu"},{"uid":"DSU-00076","label":"肾精亏虚、骨痿证","kind":"dsu","x":-1.0,"y":0.4,"z":-0.7273,"r":0.595,"theta_deg":-34.029,"phi_deg":158.199,"hex":"#74A22C","meta":"dsu"},{"uid":"DSU-00077","label":"脾胃虚弱、气血两虚证","kind":"dsu","x":-1.0,"y":0.4,"z":0.0,"r":0.6025,"theta_deg":0.0,"phi_deg":158.199,"hex":"#B38B1A","meta":"dsu"},{"uid":"DSU-00078","label":"肾精亏虚、髓枯血虚证","kind":"dsu","x":-0.6,"y":0.4,"z":-0.6,"r":0.5225,"theta_deg":-39.762,"phi_deg":146.31,"hex":"#5BA334","meta":"dsu"},{"uid":"DSU-00079","label":"热毒炽盛、气阴两虚证(急劳/热劳)","kind":"dsu","x":1.0,"y":0.7,"z":-0.5,"r":0.619,"theta_deg":-22.275,"phi_deg":34.992,"hex":"#507B6A","meta":"dsu"},{"uid":"DSU-00080","label":"痰瘀互结、气阴两虚证(石疽/恶核)","kind":"dsu","x":1.0,"y":0.0,"z":-0.25,"r":0.6145,"theta_deg":-14.036,"phi_deg":0.0,"hex":"#734DBA","meta":"dsu"},{"uid":"DSU-00081","label":"湿热浸淫、筋脉失养证(痿证)","kind":"dsu","x":1.0,"y":0.7,"z":0.0,"r":0.4405,"theta_deg":0.0,"phi_deg":34.992,"hex":"#615F80","meta":"dsu"},{"uid":"DSU-00082","label":"脾胃虚弱、中气下陷证(痿证/睑废)","kind":"dsu","x":-1.0,"y":0.4,"z":-0.4286,"r":0.536,"theta_deg":-21.699,"phi_deg":158.199,"hex":"#889926","meta":"dsu"},{"uid":"DSU-00083","label":"髓海不足、肾虚痰瘀证(痴呆)","kind":"dsu","x":-0.6,"y":0.4,"z":-0.3333,"r":0.5555,"theta_deg":-24.809,"phi_deg":146.31,"hex":"#6E972F","meta":"dsu"},{"uid":"DSU-00084","label":"湿热火毒蕴结、气滞血瘀证(蛇串疮/缠腰火丹)","kind":"dsu","x":1.0,"y":0.3,"z":0.1667,"r":0.699,"theta_deg":9.07,"phi_deg":16.699,"hex":"#6057A8","meta":"dsu"},{"uid":"DSU-00085","label":"血热风盛、瘀毒内蕴证(白疕/松皮癣)","kind":"dsu","x":1.0,"y":-0.4,"z":0.1667,"r":0.7125,"theta_deg":8.797,"phi_deg":338.199,"hex":"#4D62AC","meta":"dsu"},{"uid":"DSU-00086","label":"肺经风热、湿热瘀结证","kind":"dsu","x":1.0,"y":1.0,"z":0.2,"r":0.658,"theta_deg":8.049,"phi_deg":45.0,"hex":"#507266","meta":"dsu"},{"uid":"DSU-00087","label":"风热外袭、营卫不和证(瘾疹/风疹块)","kind":"dsu","x":1.0,"y":-0.4,"z":0.1818,"r":0.652,"theta_deg":9.582,"phi_deg":338.199,"hex":"#4C63AB","meta":"dsu"},{"uid":"DSU-00088","label":"湿热浸淫、脾虚湿蕴证(湿疮/浸淫疮)","kind":"dsu","x":0.6,"y":0.7,"z":-0.1111,"r":0.6925,"theta_deg":-6.872,"phi_deg":49.399,"hex":"#5C6B5F","meta":"dsu"},{"uid":"DSU-00089","label":"肝肾阴虚、肝阳上亢证(青风内障/绿风内障)","kind":"dsu","x":-0.6,"y":0.4,"z":-0.1,"r":0.595,"theta_deg":-7.895,"phi_deg":146.31,"hex":"#858A29","meta":"dsu"},{"uid":"DSU-00090","label":"肝肾不足、晶珠混浊证(圆翳内障/如银内障)","kind":"dsu","x":-1.0,"y":0.4,"z":-0.6,"r":0.557,"theta_deg":-29.122,"phi_deg":158.199,"hex":"#7C9E2A","meta":"dsu"},{"uid":"DSU-00091","label":"风寒外袭、痰湿阻窍证(耳胀/耳闭)","kind":"dsu","x":-1.0,"y":-0.4,"z":0.0,"r":0.578,"theta_deg":0.0,"phi_deg":201.801,"hex":"#A0922C","meta":"dsu"},{"uid":"DSU-00092","label":"肺经风热、湿热上蒸证(鼻渊/鼻鼽)","kind":"dsu","x":1.0,"y":0.7,"z":-0.1429,"r":0.6565,"theta_deg":-6.675,"phi_deg":34.992,"hex":"#5A667B","meta":"dsu"},{"uid":"DSU-00093","label":"肝气郁结、心神失养证(郁证/百合病)","kind":"dsu","x":-0.6,"y":-0.3,"z":0.6429,"r":0.619,"theta_deg":43.781,"phi_deg":206.565,"hex":"#2EAB60","meta":"dsu"},{"uid":"DSU-00094","label":"胆郁痰扰、心神不宁证(惊悸/不寐)","kind":"dsu","x":1.0,"y":0.3,"z":0.7273,"r":0.6115,"theta_deg":34.861,"phi_deg":16.699,"hex":"#30878E","meta":"dsu"},{"uid":"DSU-00095","label":"心肾不交、阴虚火旺证(不寐)","kind":"dsu","x":-0.2,"y":0.4,"z":0.4667,"r":0.6235,"theta_deg":46.219,"phi_deg":116.565,"hex":"#2F9B5F","meta":"dsu"},{"uid":"DSU-00096","label":"气阴两虚、痰瘀毒结证(肺积/息贲)","kind":"dsu","x":-0.6,"y":0.7,"z":-0.2353,"r":0.7365,"theta_deg":-14.317,"phi_deg":130.601,"hex":"#6B8532","meta":"dsu"},{"uid":"DSU-00097","label":"脾胃虚弱、瘀毒内结证(胃积/反胃)","kind":"dsu","x":-0.6,"y":0.7,"z":-0.4444,"r":0.7425,"theta_deg":-25.737,"phi_deg":130.601,"hex":"#5F9135","meta":"dsu"},{"uid":"DSU-00098","label":"肝郁脾虚、瘀毒互结证(肝积/鼓胀)","kind":"dsu","x":-0.6,"y":0.7,"z":0.0,"r":0.7715,"theta_deg":0.0,"phi_deg":130.601,"hex":"#7E7A2E","meta":"dsu"},{"uid":"DSU-00099","label":"肝气郁结、冲任失调证(乳岩/乳石痈)","kind":"dsu","x":-0.6,"y":0.0,"z":0.0,"r":0.7485,"theta_deg":0.0,"phi_deg":180.0,"hex":"#FF8C00","meta":"dsu"},{"uid":"DSU-00100","label":"湿热蕴结、瘀毒内阻证(肠蕈/脏毒)","kind":"dsu","x":1.0,"y":0.7,"z":-0.5,"r":0.7545,"theta_deg":-22.275,"phi_deg":34.992,"hex":"#507B6A","meta":"dsu"},{"uid":"DSU-00101","label":"热毒犯肺、痰瘀阻络证(失荣/上石疽)","kind":"dsu","x":1.0,"y":0.3,"z":0.1429,"r":0.7485,"theta_deg":7.792,"phi_deg":16.699,"hex":"#6255AA","meta":"dsu"},{"uid":"DSU-00102","label":"痰气交阻、瘀毒凝结证(石瘿)","kind":"dsu","x":0.6,"y":0.3,"z":0.0,"r":0.6185,"theta_deg":0.0,"phi_deg":26.565,"hex":"#675597","meta":"dsu"},{"uid":"DSU-00103","label":"肾虚瘀毒证(癃闭/积证)","kind":"dsu","x":-0.6,"y":0.7,"z":-0.7692,"r":0.735,"theta_deg":-39.84,"phi_deg":130.601,"hex":"#589D36","meta":"dsu"},{"uid":"DOM-SIX-太阳病","label":"太阳病","kind":"six_channel","x":0.8,"y":-0.9,"z":0.0,"r":1.0,"theta_deg":0.0,"phi_deg":311.634,"hex":"#297A9B","meta":"six_channel · 六经域"},{"uid":"DOM-SIX-阳明病","label":"阳明病","kind":"six_channel","x":0.9,"y":0.85,"z":0.1,"r":1.0,"theta_deg":4.618,"phi_deg":43.363,"hex":"#556C6A","meta":"six_channel · 六经域"},{"uid":"DOM-SIX-少阳病","label":"少阳病","kind":"six_channel","x":0.3,"y":0.0,"z":0.2,"r":1.0,"theta_deg":33.69,"phi_deg":0.0,"hex":"#397DA3","meta":"six_channel · 六经域"},{"uid":"DOM-SIX-太阴病","label":"太阴病","kind":"six_channel","x":-0.6,"y":0.7,"z":-0.3,"r":1.0,"theta_deg":-18.025,"phi_deg":130.601,"hex":"#678933","meta":"six_channel · 六经域"},{"uid":"DOM-SIX-少阴病","label":"少阴病","kind":"six_channel","x":-0.9,"y":0.8,"z":-0.8,"r":1.0,"theta_deg":-33.599,"phi_deg":138.366,"hex":"#569D36","meta":"six_channel · 六经域"},{"uid":"DOM-SIX-厥阴病","label":"厥阴病","kind":"six_channel","x":-0.4,"y":0.2,"z":0.5,"r":1.0,"theta_deg":48.19,"phi_deg":153.435,"hex":"#32AA5F","meta":"six_channel · 六经域"},{"uid":"DOM-SYS-生理","label":"生理","kind":"system","x":0.0,"y":0.1,"z":-0.6,"r":0.9,"theta_deg":-80.538,"phi_deg":90.0,"hex":"#CFBC0C","meta":"system · 四系统"},{"uid":"DOM-SYS-心理","label":"心理","kind":"system","x":0.1,"y":-0.1,"z":0.9,"r":0.9,"theta_deg":81.07,"phi_deg":315.0,"hex":"#02C0B2","meta":"system · 四系统"},{"uid":"DOM-SYS-社会","label":"社会","kind":"system","x":0.2,"y":-0.4,"z":0.3,"r":0.9,"theta_deg":33.855,"phi_deg":296.565,"hex":"#10988B","meta":"system · 四系统"},{"uid":"DOM-SYS-生态","label":"生态","kind":"system","x":-0.2,"y":-0.6,"z":0.0,"r":0.9,"theta_deg":0.0,"phi_deg":251.565,"hex":"#2878A6","meta":"system · 四系统"},{"uid":"DOM-JQS-精","label":"精","kind":"treasure","x":0.0,"y":0.0,"z":-1.0,"r":1.0,"theta_deg":-90.0,"phi_deg":0.0,"hex":"#F2C200","meta":"treasure · 精气神"},{"uid":"DOM-JQS-气","label":"气","kind":"treasure","x":0.0,"y":0.0,"z":0.0,"r":1.0,"theta_deg":90.0,"phi_deg":0.0,"hex":"#00C7C7","meta":"treasure · 精气神"},{"uid":"DOM-JQS-神","label":"神","kind":"treasure","x":0.0,"y":0.0,"z":1.0,"r":1.0,"theta_deg":90.0,"phi_deg":0.0,"hex":"#00C7C7","meta":"treasure · 精气神"}],"units_sph":{"DSU-00001":{"theta":0.0,"phi":5.176036589385496},"DSU-00002":{"theta":0.09258223701950717,"phi":5.902678930067221},"DSU-00003":{"theta":0.16175286601699576,"phi":0.7853981633974483},"DSU-00004":{"theta":-0.07059317928404737,"phi":0.7853981633974483},"DSU-00005":{"theta":0.5082672461712843,"phi":2.761086276477428},"DSU-00006":{"theta":0.5244465739593805,"phi":0.8621700546672264},"DSU-00007":{"theta":0.14048970175352038,"phi":0.7853981633974483},"DSU-00008":{"theta":0.30449629074738105,"phi":0.7853981633974483},"DSU-00009":{"theta":0.25484853861947604,"phi":0.7853981633974483},"DSU-00010":{"theta":0.15352836222331978,"phi":0.38050637711236485},"DSU-00011":{"theta":-0.2480078082462069,"phi":2.761086276477428},"DSU-00012":{"theta":-0.17496904566568888,"phi":2.356194490192345},"DSU-00013":{"theta":0.23503108541963125,"phi":0.2914567944778671},"DSU-00014":{"theta":-0.36811364184757045,"phi":2.356194490192345},"DSU-00015":{"theta":-0.2480078082462069,"phi":2.761086276477428},"DSU-00016":{"theta":-0.14048970175352038,"phi":0.7853981633974483},"DSU-00017":{"theta":-0.24040421676925935,"phi":1.373400766945016},"DSU-00018":{"theta":-0.23147736397017837,"phi":2.356194490192345},"DSU-00019":{"theta":-0.09873154165775752,"phi":2.5535900500422257},"DSU-00020":{"theta":-0.10280041042031847,"phi":2.761086276477428},"DSU-00021":{"theta":0.30919332094300134,"phi":2.0344439357957027},"DSU-00022":{"theta":0.8990831843818549,"phi":2.0344439357957027},"DSU-00023":{"theta":0.48761624271510606,"phi":0.7853981633974483},"DSU-00024":{"theta":-0.050464744183203555,"phi":2.356194490192345},"DSU-00025":{"theta":0.09258223701950717,"phi":5.902678930067221},"DSU-00026":{"theta":0.0,"phi":2.5308666892005847},"DSU-00027":{"theta":-0.14188277104695063,"phi":2.761086276477428},"DSU-00028":{"theta":-0.17377897963497355,"phi":2.5308666892005847},"DSU-00029":{"theta":0.17033841486145399,"phi":2.0344439357957027},"DSU-00030":{"theta":0.08685604255036619,"phi":0.2914567944778671},"DSU-00031":{"theta":0.11650315543783156,"phi":2.5308666892005847},"DSU-00032":{"theta":-0.17884388414486602,"phi":2.279422598922567},"DSU-00033":{"theta":0.3109834179230064,"phi":0.7853981633974483},"DSU-00034":{"theta":0.2665778211745361,"phi":2.5308666892005847},"DSU-00035":{"theta":0.554261834452328,"phi":2.761086276477428},"DSU-00036":{"theta":0.28239482624754264,"phi":2.761086276477428},"DSU-00037":{"theta":0.540419500270584,"phi":0.0},"DSU-00038":{"theta":-0.1278634659552813,"phi":2.356194490192345},"DSU-00039":{"theta":0.0,"phi":2.279422598922567},"DSU-00040":{"theta":0.4266274931268761,"phi":3.141592653589793},"DSU-00041":{"theta":0.38630713850441917,"phi":2.279422598922567},"DSU-00042":{"theta":0.2980600775678411,"phi":2.5308666892005847},"DSU-00043":{"theta":-0.051157320810636515,"phi":2.5308666892005847},"DSU-00044":{"theta":-0.10280041042031847,"phi":2.761086276477428},"DSU-00045":{"theta":0.11554265687125068,"phi":2.761086276477428},"DSU-00046":{"theta":0.07059317928404737,"phi":0.7853981633974483},"DSU-00047":{"theta":0.5473943522509449,"phi":0.2914567944778671},"DSU-00048":{"theta":0.30449629074738105,"phi":0.7853981633974483},"DSU-00049":{"theta":0.6483319890872608,"phi":0.0},"DSU-00050":{"theta":-0.24099314166210992,"phi":2.5308666892005847},"DSU-00051":{"theta":-0.15466268445032597,"phi":2.1112158270654806},"DSU-00052":{"theta":0.1583019994538199,"phi":0.2914567944778671},"DSU-00053":{"theta":0.2942487251052694,"phi":0.7853981633974483},"DSU-00054":{"theta":-0.2665778211745361,"phi":2.5308666892005847},"DSU-00055":{"theta":-0.17496904566568888,"phi":0.7853981633974483},"DSU-00056":{"theta":-0.20201431423879662,"phi":2.5308666892005847},"DSU-00057":{"theta":-0.14048970175352038,"phi":0.7853981633974483},"DSU-00058":{"theta":-0.23147736397017837,"phi":0.7853981633974483},"DSU-00059":{"theta":0.7713145875745882,"phi":0.0},"DSU-00060":{"theta":-0.23147736397017837,"phi":0.7853981633974483},"DSU-00061":{"theta":-0.38630713850441917,"phi":2.279422598922567},"DSU-00062":{"theta":0.0,"phi":2.279422598922567},"DSU-00063":{"theta":-0.22505597033883729,"phi":1.849095985800008},"DSU-00064":{"theta":-0.19739555984988078,"phi":3.141592653589793},"DSU-00065":{"theta":0.0,"phi":5.695182703632018},"DSU-00066":{"theta":0.6736354359544623,"phi":0.2914567944778671},"DSU-00067":{"theta":-0.17496904566568888,"phi":2.356194490192345},"DSU-00068":{"theta":0.6975436292681605,"phi":0.2914567944778671},"DSU-00069":{"theta":0.4445777317580507,"phi":1.0303768265243125},"DSU-00070":{"theta":-0.39424437506478544,"phi":2.5535900500422257},"DSU-00071":{"theta":0.4324077755705379,"phi":0.0},"DSU-00072":{"theta":-0.33505141258645116,"phi":2.761086276477428},"DSU-00073":{"theta":-0.21998797739545947,"phi":2.0344439357957027},"DSU-00074":{"theta":-0.23147736397017837,"phi":0.7853981633974483},"DSU-00075":{"theta":-0.10804285256575324,"phi":2.279422598922567},"DSU-00076":{"theta":-0.5939253608994206,"phi":2.761086276477428},"DSU-00077":{"theta":0.0,"phi":2.761086276477428},"DSU-00078":{"theta":-0.693980594900994,"phi":2.5535900500422257},"DSU-00079":{"theta":-0.38876841374426574,"phi":0.6107259643892086},"DSU-00080":{"theta":-0.24497866312686414,"phi":0.0},"DSU-00081":{"theta":0.0,"phi":0.6107259643892086},"DSU-00082":{"theta":-0.37871076424722927,"phi":2.761086276477428},"DSU-00083":{"theta":-0.4329943368370131,"phi":2.5535900500422257},"DSU-00084":{"theta":0.1583019994538199,"phi":0.2914567944778671},"DSU-00085":{"theta":0.15352836222331978,"phi":5.902678930067221},"DSU-00086":{"theta":0.14048970175352038,"phi":0.7853981633974483},"DSU-00087":{"theta":0.16723718975572632,"phi":5.902678930067221},"DSU-00088":{"theta":-0.11993847783011066,"phi":0.8621700546672263},"DSU-00089":{"theta":-0.1377962246458851,"phi":2.5535900500422257},"DSU-00090":{"theta":-0.5082672461712843,"phi":2.761086276477428},"DSU-00091":{"theta":0.0,"phi":3.522099030702158},"DSU-00092":{"theta":-0.11650315543783156,"phi":0.6107259643892086},"DSU-00093":{"theta":0.7641151412300564,"phi":3.6052402625905993},"DSU-00094":{"theta":0.6084410677869279,"phi":0.2914567944778671},"DSU-00095":{"theta":0.8066811855648404,"phi":2.0344439357957027},"DSU-00096":{"theta":-0.24987831206058614,"phi":2.279422598922567},"DSU-00097":{"theta":-0.4491991165501437,"phi":2.279422598922567},"DSU-00098":{"theta":0.0,"phi":2.279422598922567},"DSU-00099":{"theta":0.0,"phi":3.141592653589793},"DSU-00100":{"theta":-0.38876841374426574,"phi":0.6107259643892086},"DSU-00101":{"theta":0.13598781897136927,"phi":0.2914567944778671},"DSU-00102":{"theta":0.0,"phi":0.4636476090008061},"DSU-00103":{"theta":-0.6953367468272287,"phi":2.279422598922567},"DOM-SIX-太阳病":{"theta":0.0,"phi":5.439031321066415},"DOM-SIX-阳明病":{"theta":0.08060422135544082,"phi":0.7568345055586883},"DOM-SIX-少阳病":{"theta":0.5880026035475677,"phi":0.0},"DOM-SIX-太阴病":{"theta":-0.3145897425602662,"phi":2.279422598922567},"DOM-SIX-少阴病":{"theta":-0.5864066432194588,"phi":2.4149503129080676},"DOM-SIX-厥阴病":{"theta":0.8410686705679302,"phi":2.677945044588987},"DOM-SYS-生理":{"theta":-1.4056476493802699,"phi":1.5707963267948966},"DOM-SYS-心理":{"theta":1.4149359490883244,"phi":5.497787143782138},"DOM-SYS-社会":{"theta":0.5908727501454191,"phi":5.176036589385496},"DOM-SYS-生态":{"theta":0.0,"phi":4.3906384259880475},"DOM-JQS-精":{"theta":-1.5707963267948966,"phi":0.0},"DOM-JQS-气":{"theta":1.5707963267948966,"phi":0.0},"DOM-JQS-神":{"theta":1.5707963267948966,"phi":0.0}},"captions":{"母":"# tcmP 中医药网络教育平台 · 颜色赋值三维极坐标语义张量 · 球面图注\n# 本文件为纯文本，可直接编辑。\n# 在 interactive HTML 中用「编辑图注文本 → 应用参数并重绘」或\n# 「从文件载入 .txt」，即可完成【参数应用实例化】。\n# 单一来源：kg/semtensor/axioms.py（颜色公理）与 semtensor/encoder.py（三轴映射）\n# 口径裁定（本系统唯一口径）：\n#   θ = 仰角 elevation ∈ [−90°, +90°]（赤道 0，天顶 +90°，天底 −90°）\n#   φ = 方位角 azimuth ∈ [0°, 360°)（自 +X 轴起算，绕 +Z 轴逆时针）\n#   球 → 笛卡尔：X = r·cosθ·cosφ ， Y = r·cosθ·sinφ ， Z = r·sinθ\n#   笛 → 球    ：r = |v| ， θ = arcsin(Z/r) ， φ = atan2(Y, X)\n#   旧稿（θ=极角 0..180°）换算：θ_仰角 = 90° − θ_极角 ，φ 不变\n\n[球]\nno = ①\nname = 母\nsex = 女\nsign = −1 −1 +1\nangle_x = 180\nangle_y = 135\nangle_z = 90\nxy_face = 3π/4\nmirror_point_cloud = 1\n\n[参数]\nrings = 45\nseg = 70\nazimuth_step_deg = 30\nelev_ticks_deg = -60,-30,0,30,60\narrow_head = 6.5\ndot_iot = 1.7\ndot_edge = 0.35\ndot_O = 1.8\ncloud_point_size = 4.0\nmarker_point_size = 32.0\niot_point_size = 26.0\ncloud_alpha_rim = 0.95\ncloud_alpha_face = 0.3\nmarker_alpha_rim = 1.0\nmarker_alpha_face = 0.72\nview_elev_deg = 20\nview_azim_deg = -60\nmirror_point_cloud = 1\n\n[图注正文]\n图  tcmP · 颜色赋值三维极坐标语义张量 —— ①母球面（单位球面 r = 1.0）\n\n■ 一、本球身份\n①母球面，性别女；镜像符号 (sx,sy,sz) = (−1 −1 +1)\n（球面点云 = 镜像算子 M 作用于基准方向 n̂(θ,φ)：母球 M = diag(−1,−1,+1)，子/父球 M = I）\n三维正交坐标：X–Z 真实夹角 = (1/2)π；X–Y 图面夹角 = 3π/4（依规格 0401：男 (1/4)π、女 (3/4)π）\n三轴图面角：X+ = 180°，Y+ = 135°，Z+ = 90°\n\n■ 二、口径（本系统唯一口径）\nθ = 仰角 elevation ∈ [−90°,+90°]；φ = 方位角 azimuth ∈ [0°,360°)。\n球→笛：X = r·cosθ·cosφ，Y = r·cosθ·sinφ，Z = r·sinθ；r ∈ (0,1] 为「语义张量尺度」。\n球面图按单位球面 r = 1.0 作图（方向承载语义）；「尺度伸缩 ×k」滑杆把 r 映射到点半径，作尺度可视化。\n赤道 = θ = 0（细虚线）；φ = 0°/180° 两条经线为方位基准；φ = 90°/270° 大圆为阴阳界（X = 0）。\n\n■ 三、三轴语义与轴端取色（母/子/父 三球共用同一张轴色表）\nX（左右）阴阳轴   ：I −1 阴 · O 0 中 · T +1 阳 　端色 橙605nm/绿533nm/紫415nm\nY（前后）表里轴   ：I −1 表 · O 0 半表半里 · T +1 里 　端色 蓝458nm/绿533nm/红685nm\nZ（足→首）精气神轴：I −1 精 · O 0 气 · T +1 神 　端色 黄578nm/绿533nm/青493nm\nO 点三轴共有基准色 = 绿 #00B050（不是灰）。\n轴端色取「可见光波长序段中位数」为基准：红685/橙605/黄578/绿533/青493/蓝458/紫415（nm）。\n\n■ 四、颜色公理（单一来源 axioms.comp）\n单轴渐变 ramp(t,轴)：在 [−1,0,+1] 三色间逐通道线性插值。\n合成色：w_i = clip(|v_i|,0,1)；k = max(w_i)；C = (1−k)·绿 + k·(Σ w_i·c_i / Σ w_i)。\n性质：① O 点任意轴都回到基准绿；② 三轴同强时趋向三端色加权混合；\n　　　③ 镜像不变色——球面**几何**随球镜像（M(女)=diag(−1,−1,+1)，φ→φ+180°），\n　　　　 **取色坐标**作反镜像补偿（即文档 0403 的「各球按自身轴正向取色的符号」），\n　　　　 ⇒ 同一语义单元在母/子/父三球上同色，三球共用同一张轴色表。\n\n■ 五、本球语义点云\n语义单元总数（DSU）116，本球绘制 103 个；域级节点 13 个（六经域 6 + 四系统 4 + 精气神 3）。\n点半径 ∝ r（尺度）；点色 = 该单元三分量 (x,y,z) 的合成色。\n本球镜像：开（与子/父球关于 Z 轴呈 π 旋转的男女镜像）\n\n■ 六、网格与离散微分几何（DDG）校验\n经向环 45 × 纬向点 70 = 顶点 3152，三角面 6300；\n点云降采样 45×70 = 3150（闭合球须补极点顶点与三角扇，否则曲率全废）。\n曲率密度 K = 角度亏损 / 对偶胞面积 ≈ 1；Gauss–Bonnet：ΣK·A = Σ角度亏损 = 4π = 12.56637061436（闭合球上精确成立）；\nEuler 示性数 V − E + F = 2。\n\n■ 七、交互（三维可同步旋转）\n三球共用同一相机状态（仰角/方位角/距离），拖动任一球面即三球同步旋转；滚轮同步缩放；\n自动旋转、视角预设（前视 20°,−60° / 正视 XZ / 俯视 / 侧视 YZ）作用于全部三球。\n点云透明度由离散法向驱动：轮廓 |n·v|→0 最不透明（0.95），正对观察者处最透明（0.3），\n近大远小并按深度排序绘制（depthshade=False——颜色即数据，不被深度调淡）。\n悬停任一语义点显示 标签 / θ仰角 / φ方位角 / r / 三分量 / 合成色 HEX。\n\n■ 八、画布规范\n画布内不出现汉字：只用 X/Y/Z、θ/φ 数字与圈号 ①②③；汉字母语（本注）全部下沉到本文件。\n","子":"# tcmP 中医药网络教育平台 · 颜色赋值三维极坐标语义张量 · 球面图注\n# 本文件为纯文本，可直接编辑。\n# 在 interactive HTML 中用「编辑图注文本 → 应用参数并重绘」或\n# 「从文件载入 .txt」，即可完成【参数应用实例化】。\n# 单一来源：kg/semtensor/axioms.py（颜色公理）与 semtensor/encoder.py（三轴映射）\n# 口径裁定（本系统唯一口径）：\n#   θ = 仰角 elevation ∈ [−90°, +90°]（赤道 0，天顶 +90°，天底 −90°）\n#   φ = 方位角 azimuth ∈ [0°, 360°)（自 +X 轴起算，绕 +Z 轴逆时针）\n#   球 → 笛卡尔：X = r·cosθ·cosφ ， Y = r·cosθ·sinφ ， Z = r·sinθ\n#   笛 → 球    ：r = |v| ， θ = arcsin(Z/r) ， φ = atan2(Y, X)\n#   旧稿（θ=极角 0..180°）换算：θ_仰角 = 90° − θ_极角 ，φ 不变\n\n[球]\nno = ②\nname = 子\nsex = 男\nsign = +1 +1 +1\nangle_x = 0\nangle_y = 45\nangle_z = 90\nxy_face = π/4\nmirror_point_cloud = 1\n\n[参数]\nrings = 45\nseg = 70\nazimuth_step_deg = 30\nelev_ticks_deg = -60,-30,0,30,60\narrow_head = 6.5\ndot_iot = 1.7\ndot_edge = 0.35\ndot_O = 1.8\ncloud_point_size = 4.0\nmarker_point_size = 32.0\niot_point_size = 26.0\ncloud_alpha_rim = 0.95\ncloud_alpha_face = 0.3\nmarker_alpha_rim = 1.0\nmarker_alpha_face = 0.72\nview_elev_deg = 20\nview_azim_deg = -60\nmirror_point_cloud = 1\n\n[图注正文]\n图  tcmP · 颜色赋值三维极坐标语义张量 —— ②子球面（单位球面 r = 1.0）\n\n■ 一、本球身份\n②子球面，性别男；镜像符号 (sx,sy,sz) = (+1 +1 +1)\n（球面点云 = 镜像算子 M 作用于基准方向 n̂(θ,φ)：母球 M = diag(−1,−1,+1)，子/父球 M = I）\n三维正交坐标：X–Z 真实夹角 = (1/2)π；X–Y 图面夹角 = π/4（依规格 0401：男 (1/4)π、女 (3/4)π）\n三轴图面角：X+ = 0°，Y+ = 45°，Z+ = 90°\n\n■ 二、口径（本系统唯一口径）\nθ = 仰角 elevation ∈ [−90°,+90°]；φ = 方位角 azimuth ∈ [0°,360°)。\n球→笛：X = r·cosθ·cosφ，Y = r·cosθ·sinφ，Z = r·sinθ；r ∈ (0,1] 为「语义张量尺度」。\n球面图按单位球面 r = 1.0 作图（方向承载语义）；「尺度伸缩 ×k」滑杆把 r 映射到点半径，作尺度可视化。\n赤道 = θ = 0（细虚线）；φ = 0°/180° 两条经线为方位基准；φ = 90°/270° 大圆为阴阳界（X = 0）。\n\n■ 三、三轴语义与轴端取色（母/子/父 三球共用同一张轴色表）\nX（左右）阴阳轴   ：I −1 阴 · O 0 中 · T +1 阳 　端色 橙605nm/绿533nm/紫415nm\nY（前后）表里轴   ：I −1 表 · O 0 半表半里 · T +1 里 　端色 蓝458nm/绿533nm/红685nm\nZ（足→首）精气神轴：I −1 精 · O 0 气 · T +1 神 　端色 黄578nm/绿533nm/青493nm\nO 点三轴共有基准色 = 绿 #00B050（不是灰）。\n轴端色取「可见光波长序段中位数」为基准：红685/橙605/黄578/绿533/青493/蓝458/紫415（nm）。\n\n■ 四、颜色公理（单一来源 axioms.comp）\n单轴渐变 ramp(t,轴)：在 [−1,0,+1] 三色间逐通道线性插值。\n合成色：w_i = clip(|v_i|,0,1)；k = max(w_i)；C = (1−k)·绿 + k·(Σ w_i·c_i / Σ w_i)。\n性质：① O 点任意轴都回到基准绿；② 三轴同强时趋向三端色加权混合；\n　　　③ 镜像不变色——球面**几何**随球镜像（M(女)=diag(−1,−1,+1)，φ→φ+180°），\n　　　　 **取色坐标**作反镜像补偿（即文档 0403 的「各球按自身轴正向取色的符号」），\n　　　　 ⇒ 同一语义单元在母/子/父三球上同色，三球共用同一张轴色表。\n\n■ 五、本球语义点云\n语义单元总数（DSU）116，本球绘制 103 个；域级节点 13 个（六经域 6 + 四系统 4 + 精气神 3）。\n点半径 ∝ r（尺度）；点色 = 该单元三分量 (x,y,z) 的合成色。\n本球镜像：开（男球取基准方向）\n\n■ 六、网格与离散微分几何（DDG）校验\n经向环 45 × 纬向点 70 = 顶点 3152，三角面 6300；\n点云降采样 45×70 = 3150（闭合球须补极点顶点与三角扇，否则曲率全废）。\n曲率密度 K = 角度亏损 / 对偶胞面积 ≈ 1；Gauss–Bonnet：ΣK·A = Σ角度亏损 = 4π = 12.56637061436（闭合球上精确成立）；\nEuler 示性数 V − E + F = 2。\n\n■ 七、交互（三维可同步旋转）\n三球共用同一相机状态（仰角/方位角/距离），拖动任一球面即三球同步旋转；滚轮同步缩放；\n自动旋转、视角预设（前视 20°,−60° / 正视 XZ / 俯视 / 侧视 YZ）作用于全部三球。\n点云透明度由离散法向驱动：轮廓 |n·v|→0 最不透明（0.95），正对观察者处最透明（0.3），\n近大远小并按深度排序绘制（depthshade=False——颜色即数据，不被深度调淡）。\n悬停任一语义点显示 标签 / θ仰角 / φ方位角 / r / 三分量 / 合成色 HEX。\n\n■ 八、画布规范\n画布内不出现汉字：只用 X/Y/Z、θ/φ 数字与圈号 ①②③；汉字母语（本注）全部下沉到本文件。\n","父":"# tcmP 中医药网络教育平台 · 颜色赋值三维极坐标语义张量 · 球面图注\n# 本文件为纯文本，可直接编辑。\n# 在 interactive HTML 中用「编辑图注文本 → 应用参数并重绘」或\n# 「从文件载入 .txt」，即可完成【参数应用实例化】。\n# 单一来源：kg/semtensor/axioms.py（颜色公理）与 semtensor/encoder.py（三轴映射）\n# 口径裁定（本系统唯一口径）：\n#   θ = 仰角 elevation ∈ [−90°, +90°]（赤道 0，天顶 +90°，天底 −90°）\n#   φ = 方位角 azimuth ∈ [0°, 360°)（自 +X 轴起算，绕 +Z 轴逆时针）\n#   球 → 笛卡尔：X = r·cosθ·cosφ ， Y = r·cosθ·sinφ ， Z = r·sinθ\n#   笛 → 球    ：r = |v| ， θ = arcsin(Z/r) ， φ = atan2(Y, X)\n#   旧稿（θ=极角 0..180°）换算：θ_仰角 = 90° − θ_极角 ，φ 不变\n\n[球]\nno = ③\nname = 父\nsex = 男\nsign = +1 +1 +1\nangle_x = 0\nangle_y = 45\nangle_z = 90\nxy_face = π/4\nmirror_point_cloud = 1\n\n[参数]\nrings = 45\nseg = 70\nazimuth_step_deg = 30\nelev_ticks_deg = -60,-30,0,30,60\narrow_head = 6.5\ndot_iot = 1.7\ndot_edge = 0.35\ndot_O = 1.8\ncloud_point_size = 4.0\nmarker_point_size = 32.0\niot_point_size = 26.0\ncloud_alpha_rim = 0.95\ncloud_alpha_face = 0.3\nmarker_alpha_rim = 1.0\nmarker_alpha_face = 0.72\nview_elev_deg = 20\nview_azim_deg = -60\nmirror_point_cloud = 1\n\n[图注正文]\n图  tcmP · 颜色赋值三维极坐标语义张量 —— ③父球面（单位球面 r = 1.0）\n\n■ 一、本球身份\n③父球面，性别男；镜像符号 (sx,sy,sz) = (+1 +1 +1)\n（球面点云 = 镜像算子 M 作用于基准方向 n̂(θ,φ)：母球 M = diag(−1,−1,+1)，子/父球 M = I）\n三维正交坐标：X–Z 真实夹角 = (1/2)π；X–Y 图面夹角 = π/4（依规格 0401：男 (1/4)π、女 (3/4)π）\n三轴图面角：X+ = 0°，Y+ = 45°，Z+ = 90°\n\n■ 二、口径（本系统唯一口径）\nθ = 仰角 elevation ∈ [−90°,+90°]；φ = 方位角 azimuth ∈ [0°,360°)。\n球→笛：X = r·cosθ·cosφ，Y = r·cosθ·sinφ，Z = r·sinθ；r ∈ (0,1] 为「语义张量尺度」。\n球面图按单位球面 r = 1.0 作图（方向承载语义）；「尺度伸缩 ×k」滑杆把 r 映射到点半径，作尺度可视化。\n赤道 = θ = 0（细虚线）；φ = 0°/180° 两条经线为方位基准；φ = 90°/270° 大圆为阴阳界（X = 0）。\n\n■ 三、三轴语义与轴端取色（母/子/父 三球共用同一张轴色表）\nX（左右）阴阳轴   ：I −1 阴 · O 0 中 · T +1 阳 　端色 橙605nm/绿533nm/紫415nm\nY（前后）表里轴   ：I −1 表 · O 0 半表半里 · T +1 里 　端色 蓝458nm/绿533nm/红685nm\nZ（足→首）精气神轴：I −1 精 · O 0 气 · T +1 神 　端色 黄578nm/绿533nm/青493nm\nO 点三轴共有基准色 = 绿 #00B050（不是灰）。\n轴端色取「可见光波长序段中位数」为基准：红685/橙605/黄578/绿533/青493/蓝458/紫415（nm）。\n\n■ 四、颜色公理（单一来源 axioms.comp）\n单轴渐变 ramp(t,轴)：在 [−1,0,+1] 三色间逐通道线性插值。\n合成色：w_i = clip(|v_i|,0,1)；k = max(w_i)；C = (1−k)·绿 + k·(Σ w_i·c_i / Σ w_i)。\n性质：① O 点任意轴都回到基准绿；② 三轴同强时趋向三端色加权混合；\n　　　③ 镜像不变色——球面**几何**随球镜像（M(女)=diag(−1,−1,+1)，φ→φ+180°），\n　　　　 **取色坐标**作反镜像补偿（即文档 0403 的「各球按自身轴正向取色的符号」），\n　　　　 ⇒ 同一语义单元在母/子/父三球上同色，三球共用同一张轴色表。\n\n■ 五、本球语义点云\n语义单元总数（DSU）116，本球绘制 103 个；域级节点 13 个（六经域 6 + 四系统 4 + 精气神 3）。\n点半径 ∝ r（尺度）；点色 = 该单元三分量 (x,y,z) 的合成色。\n本球镜像：开（男球取基准方向）\n\n■ 六、网格与离散微分几何（DDG）校验\n经向环 45 × 纬向点 70 = 顶点 3152，三角面 6300；\n点云降采样 45×70 = 3150（闭合球须补极点顶点与三角扇，否则曲率全废）。\n曲率密度 K = 角度亏损 / 对偶胞面积 ≈ 1；Gauss–Bonnet：ΣK·A = Σ角度亏损 = 4π = 12.56637061436（闭合球上精确成立）；\nEuler 示性数 V − E + F = 2。\n\n■ 七、交互（三维可同步旋转）\n三球共用同一相机状态（仰角/方位角/距离），拖动任一球面即三球同步旋转；滚轮同步缩放；\n自动旋转、视角预设（前视 20°,−60° / 正视 XZ / 俯视 / 侧视 YZ）作用于全部三球。\n点云透明度由离散法向驱动：轮廓 |n·v|→0 最不透明（0.95），正对观察者处最透明（0.3），\n近大远小并按深度排序绘制（depthshade=False——颜色即数据，不被深度调淡）。\n悬停任一语义点显示 标签 / θ仰角 / φ方位角 / r / 三分量 / 合成色 HEX。\n\n■ 八、画布规范\n画布内不出现汉字：只用 X/Y/Z、θ/φ 数字与圈号 ①②③；汉字母语（本注）全部下沉到本文件。\n","总览":"# tcmP 中医药网络教育平台 · 颜色赋值三维极坐标语义张量 · 球面图注\n# 本文件为纯文本，可直接编辑。\n# 在 interactive HTML 中用「编辑图注文本 → 应用参数并重绘」或\n# 「从文件载入 .txt」，即可完成【参数应用实例化】。\n# 单一来源：kg/semtensor/axioms.py（颜色公理）与 semtensor/encoder.py（三轴映射）\n# 口径裁定（本系统唯一口径）：\n#   θ = 仰角 elevation ∈ [−90°, +90°]（赤道 0，天顶 +90°，天底 −90°）\n#   φ = 方位角 azimuth ∈ [0°, 360°)（自 +X 轴起算，绕 +Z 轴逆时针）\n#   球 → 笛卡尔：X = r·cosθ·cosφ ， Y = r·cosθ·sinφ ， Z = r·sinθ\n#   笛 → 球    ：r = |v| ， θ = arcsin(Z/r) ， φ = atan2(Y, X)\n#   旧稿（θ=极角 0..180°）换算：θ_仰角 = 90° − θ_极角 ，φ 不变\n\n[球]\nname = 总览\n\n[参数]\nrings = 45\nseg = 70\nazimuth_step_deg = 30\nelev_ticks_deg = -60,-30,0,30,60\narrow_head = 6.5\ndot_iot = 1.7\ndot_edge = 0.35\ndot_O = 1.8\ncloud_point_size = 4.0\nmarker_point_size = 32.0\niot_point_size = 26.0\ncloud_alpha_rim = 0.95\ncloud_alpha_face = 0.3\nmarker_alpha_rim = 1.0\nmarker_alpha_face = 0.72\nview_elev_deg = 20\nview_azim_deg = -60\nmirror_point_cloud = 1\n\n[图注正文]\n图 1  tcmP 中医药网络教育平台 · 颜色赋值三维极坐标语义张量\n　　　（①母 ②子 ③父 三球面同步旋转；θ = 仰角，φ = 方位角）\n\n■ 一、模型定位\n承载对象：中医药语义单元（病证单元 DSU／六经域／四系统／精气神三宝）。\n承载方式：**方向承载语义**——每个语义单元归一为单位球面上的一个方向 n̂(θ,φ)；\n　　　　　r ∈ (0,1] 承载「语义张量尺度」，供平台做尺度伸缩（扩缩容、加权、剪枝）。\n读色方式：点的颜色 ← 该点三轴坐标按颜色公理合成 ⇒ 色—义一一对应（颜色是坐标的函数，不是装饰）；\n　　　　　同类语义聚色成区，便于读「聚集 / 类别 / 相关」。\n\n■ 二、三球与男女镜像\n①母球面（女）：右侧属阳、左侧属阴（右阳左阴），镜像符号 (sx,sy,sz) = (−1,−1,+1)\n②子球面（男）、③父球面（男）：镜像符号 (sx,sy,sz) = (+1,+1,+1)\n三者迎面走向医生：医生「左侧-中间-右侧」= 母-子-父；三者左手侧 = 医生右手侧。\n男女镜像由算子 M(女) = diag(−1,−1,+1) 实现：几何位置 φ → φ + 180°（θ 不变），\n取色坐标作反镜像补偿 ⇒ **同一语义单元在母/子/父三球上同色**，\n故母/子/父 三类单位球面点着色表完全相同（与 README §3 一致）。\n二维表现：X–Y 图面夹角 男 = (1/4)π、女 = (3/4)π（规格 0401）；三轴图面角 男 0°/45°/90°、女 180°/135°/90°。\n\n■ 三、口径（本系统唯一口径，取代旧稿的 θ=极角）\nθ = 仰角 elevation ∈ [−90°, +90°]（赤道 0，天顶 +90°，天底 −90°）；\nφ = 方位角 azimuth ∈ [0°, 360°)（自 +X 轴起算，绕 +Z 轴逆时针）。\n球→笛：X = r·cosθ·cosφ ，Y = r·cosθ·sinφ ，Z = r·sinθ；\n笛→球：r = |v| ，θ = arcsin(Z/r) ，φ = atan2(Y,X)。\n旧稿换算：θ_仰角 = 90° − θ_极角；旧稿「赤道 θ=π/2」 → 「赤道 θ=0」；旧稿「极点 θ=0/π」 → 「θ=±π/2」。\n\n■ 四、三轴语义与轴端取色表（三球共用）\n轴              I (−1)                O (0)                T (+1)\nX 左右·阴阳    橙 605nm #FF8C00      绿 533nm #00B050     紫 415nm #8A2BE2\nY 前后·表里    蓝 458nm #1F61D9      绿 533nm #00B050     红 685nm #DB1C1C\nZ 足→首·精气神 黄 578nm #F2C200      绿 533nm #00B050     青 493nm #00C7C7\nO 点三轴共有基准色 = 绿（不是灰）；轴端色取「可见光波长序段中位数」为基准。\n\n■ 五、颜色公理\nramp(t,轴) 在 [−1,0,+1] 三色间逐通道线性插值；\nw_i = clip(|v_i|,0,1)，k = max(w_i)，C = (1−k)·绿 + k·(Σ w_i·c_i / Σ w_i)。\n关键性质：O 点任意轴都回到基准绿；三轴同强时颜色趋向三端色加权混合；镜像不变色。\n\n■ 六、语义映射（可计算）\nx = 0.60·阴阳(八纲) + 0.40·寒热(八纲) 　→ −1 阴 / 0 中 / +1 阳\ny = 0.70·表里(八纲) + 0.30·虚实(八纲) 　→ −1 表 / 0 半表半里 / +1 里\nz = (神分 − 精分)/(精分 + 气分 + 神分 + 1)（关键词判位）→ −1 精 / 0 气 / +1 神\nr = clip(0.35·证据等级 + 0.35·症状密度 + 0.30·桥接完备度, 0.20, 1.00)\nθ = arcsin(z/|v|) ，φ = atan2(y, x) ，C = comp(x,y,z)\n\n■ 七、语义单元索引（数字 ↔ 语义，按 r 降序前 60 条）\n序号  语义单元                  尺度 r   仰角 θ      方位角 φ      合成色\n    1  肝阳上亢证(头部)                r=0.86  θ=  27.94°  φ=  45.00°  #338A67\n    2  肝胆湿热证                    r=0.84  θ=   8.05°  φ=  45.00°  #507266\n    3  肺气虚寒证                    r=0.83  θ=  -5.89°  φ= 158.20°  #A58E1E\n    4  寒哮证（冷哮）                  r=0.82  θ=  -2.89°  φ= 135.00°  #728430\n    5  风寒束表证                    r=0.82  θ=   0.00°  φ= 296.57°  #2374AD\n    6  阴虚燥热证                    r=0.81  θ=   8.80°  φ=  21.80°  #5D5C9C\n    7  肝阳上亢证                    r=0.79  θ=  17.45°  φ=  45.00°  #427D66\n    8  气滞血瘀证                    r=0.79  θ=  14.60°  φ=  45.00°  #477966\n    9  下焦湿热瘀阻证                  r=0.78  θ= -10.02°  φ=  45.00°  #507463\n   10  脾胃湿热证                    r=0.77  θ=   4.04°  φ=  45.00°  #556D67\n   11  肝郁脾虚、瘀毒互结证(肝积/鼓胀)        r=0.77  θ=   0.00°  φ= 130.60°  #7E7A2E\n   12  心肾阳虚、水饮凌心证               r=0.77  θ=  16.18°  φ= 158.20°  #87952C\n   13  膀胱湿热证（热淋）                r=0.77  θ=  -8.05°  φ=  45.00°  #527264\n   14  心肾不交证                    r=0.76  θ=  51.51°  φ= 116.57°  #2A9F68\n   15  气阴两虚证（消渴）                r=0.76  θ= -12.60°  φ= 116.57°  #826C2F\n   16  真心痛（阳衰血瘀）证               r=0.76  θ=  17.08°  φ= 145.01°  #6B9136\n   17  肝郁脾虚证                    r=0.76  θ=  37.15°  φ=   0.00°  #32859D\n   18  湿热蕴结、瘀毒内阻证(肠蕈/脏毒)        r=0.75  θ= -22.27°  φ=  34.99°  #507B6A\n   19  肺阴亏虚证                    r=0.75  θ=   9.76°  φ= 116.57°  #826831\n   20  肝郁脾虚证                    r=0.75  θ=  30.05°  φ=  49.40°  #358A65\n   21  肝气郁结、冲任失调证(乳岩/乳石痈)       r=0.75  θ=   0.00°  φ= 180.00°  #FF8C00\n   22  热毒犯肺、痰瘀阻络证(失荣/上石疽)       r=0.75  θ=   7.79°  φ=  16.70°  #6255AA\n   23  肺肾气虚证                    r=0.75  θ=  -8.13°  φ= 158.20°  #A1901F\n   24  脾胃虚弱、瘀毒内结证(胃积/反胃)        r=0.74  θ= -25.74°  φ= 130.60°  #5F9135\n   25  气虚血瘀、风中经络证               r=0.74  θ= -11.31°  φ= 180.00°  #D4940D\n   26  气阴两虚、痰瘀毒结证(肺积/息贲)        r=0.74  θ= -14.32°  φ= 130.60°  #6B8532\n   27  肾虚瘀毒证(癃闭/积证)             r=0.73  θ= -39.84°  φ= 130.60°  #589D36\n   28  寒凝血瘀证                    r=0.73  θ= -21.09°  φ= 135.00°  #5D9135\n   29  肝阳上亢证                    r=0.73  θ=  17.82°  φ=  45.00°  #427D66\n   30  风热犯表证                    r=0.73  θ=   5.30°  φ= 338.20°  #515DB0\n   31  阳明腑实证/结胸证                r=0.72  θ=  16.86°  φ=  45.00°  #437C66\n   32  湿热浸淫证                    r=0.72  θ=  13.47°  φ=  16.70°  #585FA3\n   33  肝胃郁热证                    r=0.72  θ=  17.45°  φ=  45.00°  #427D66\n   34  血热风盛、瘀毒内蕴证(白疕/松皮癣)       r=0.71  θ=   8.80°  φ= 338.20°  #4D62AC\n   35  肝胆湿热证                    r=0.70  θ=   9.07°  φ=  16.70°  #6057A8\n   36  脾肾阳虚证                    r=0.70  θ= -19.20°  φ= 158.20°  #8C9725\n   37  脾胃虚寒证                    r=0.70  θ=  29.12°  φ= 158.20°  #5F9F41\n   38  气虚便秘证                    r=0.70  θ=  -5.89°  φ= 158.20°  #A58E1E\n   39  湿热火毒蕴结、气滞血瘀证(蛇串疮/缠腰火丹)   r=0.70  θ=   9.07°  φ=  16.70°  #6057A8\n   40  湿热浸淫、脾虚湿蕴证(湿疮/浸淫疮)       r=0.69  θ=  -6.87°  φ=  49.40°  #5C6B5F\n   41  脾胃湿热证                    r=0.69  θ=  -4.04°  φ=  45.00°  #556D66\n   42  痰湿内阻证                    r=0.69  θ=  -8.86°  φ= 120.96°  #806F2E\n   43  湿热下注、痹阻经络证（热痹）           r=0.68  θ= -13.26°  φ=  45.00°  #4E7761\n   44  阳虚水泛证                    r=0.68  θ=   6.68°  φ= 145.01°  #82892B\n   45  寒湿痹阻证                    r=0.68  θ= -10.02°  φ= 135.00°  #698933\n   46  胸阳痹阻、痰瘀互结证               r=0.68  θ=  15.27°  φ= 145.01°  #6F8F34\n   47  痰湿壅肺证                    r=0.68  θ=   0.00°  φ= 145.01°  #8F8526\n   48  痰湿内盛、脾虚不运证               r=0.67  θ=  -6.19°  φ= 130.60°  #757E30\n   49  肾虚瘀阻证（癃闭）                r=0.67  θ= -11.57°  φ= 145.01°  #7D8D2C\n   50  肺脾肾虚、痰瘀互结证               r=0.67  θ=  -9.96°  φ= 145.01°  #7F8B2B\n   51  气阴两虚、心脉瘀阻证               r=0.67  θ=  22.13°  φ= 130.60°  #548D40\n   52  风热犯肺证                    r=0.67  θ=   4.98°  φ=  16.70°  #6750AD\n   53  风邪外袭、经络痹阻证               r=0.67  θ=   0.00°  φ= 326.31°  #3F6AA6\n   54  风热犯肺证                    r=0.66  θ=   5.30°  φ= 338.20°  #515DB0\n   55  气虚血瘀证                    r=0.66  θ=   0.00°  φ= 130.60°  #7E7A2E\n   56  脾肾阳虚证                    r=0.66  θ= -14.21°  φ= 158.20°  #959422\n   57  肺经风热、湿热瘀结证               r=0.66  θ=   8.05°  φ=  45.00°  #507266\n   58  肺经风热、湿热上蒸证(鼻渊/鼻鼽)        r=0.66  θ=  -6.68°  φ=  34.99°  #5A667B\n   59  脾肾阳虚、湿浊内蕴证               r=0.65  θ=   0.00°  φ= 130.60°  #7E7A2E\n   60  风热外袭、营卫不和证(瘾疹/风疹块)       r=0.65  θ=   9.58°  φ= 338.20°  #4C63AB\n　　（本球面仅标数字/圈号，数字↔语义映射表即本表，随本文件一起维护。）\n\n■ 八、域级节点（解析给定）\n  太阳病     x=+0.80 y=-0.90 z=+0.00  r=1.00  θ=   0.00°  φ= 311.63°  #297A9B  [six_channel]\n  阳明病     x=+0.90 y=+0.85 z=+0.10  r=1.00  θ=   4.62°  φ=  43.36°  #556C6A  [six_channel]\n  少阳病     x=+0.30 y=+0.00 z=+0.20  r=1.00  θ=  33.69°  φ=   0.00°  #397DA3  [six_channel]\n  太阴病     x=-0.60 y=+0.70 z=-0.30  r=1.00  θ= -18.02°  φ= 130.60°  #678933  [six_channel]\n  少阴病     x=-0.90 y=+0.80 z=-0.80  r=1.00  θ= -33.60°  φ= 138.37°  #569D36  [six_channel]\n  厥阴病     x=-0.40 y=+0.20 z=+0.50  r=1.00  θ=  48.19°  φ= 153.43°  #32AA5F  [six_channel]\n  生理      x=+0.00 y=+0.10 z=-0.60  r=0.90  θ= -80.54°  φ=  90.00°  #CFBC0C  [system]\n  心理      x=+0.10 y=-0.10 z=+0.90  r=0.90  θ=  81.07°  φ= 315.00°  #02C0B2  [system]\n  社会      x=+0.20 y=-0.40 z=+0.30  r=0.90  θ=  33.85°  φ= 296.57°  #10988B  [system]\n  生态      x=-0.20 y=-0.60 z=+0.00  r=0.90  θ=   0.00°  φ= 251.57°  #2878A6  [system]\n  精       x=+0.00 y=+0.00 z=-1.00  r=1.00  θ= -90.00°  φ=   0.00°  #F2C200  [treasure]\n  气       x=+0.00 y=+0.00 z=+0.00  r=1.00  θ=  90.00°  φ=   0.00°  #00C7C7  [treasure]\n  神       x=+0.00 y=+0.00 z=+1.00  r=1.00  θ=  90.00°  φ=   0.00°  #00C7C7  [treasure]\n\n■ 九、规模统计\n语义单元 DSU 103 个；域级节点 13 个（六经域 6 · 四系统 4 · 精气神 3）。\n三球绘制点：①母 116 · ②子 116 · ③父 116（含域节点）。\n网格：经向环 45 × 纬向点 70；三角面 6300；点云 3150。\n\n■ 十、与平台可计算参数的融合\n本系统自持三通道（语义张量 / FTS5 trigram / 字符 bigram TF-IDF），构成「中医药领域语义向量的独立系统」；\n同时在 kg/semtensor/fusion.py 与平台既有两条通道融合：\n　　S = α·S_vec（text2vec 768d 余弦）+ β·S_fts（FTS5/RRF）+ γ·S_tensor（方向+尺度）+ δ·S_color（色一致性）\n默认 α=0.45 β=0.25 γ=0.20 δ=0.10；可选 tensor_rerank（张量重排）与 tensor_scale（尺度伸缩剪枝）。\n"},"mirror":{"男":[1,1,1],"女":[-1,-1,1]},"ruling":"θ = 仰角 elevation ∈ [−90°,+90°] ; φ = 方位角 azimuth ∈ [0°,360°) ; X = r·cosθ·cosφ , Y = r·cosθ·sinφ , Z = r·sinθ","mirrorNote":"球面几何随球镜像（M(女)=diag(−1,−1,+1)，φ→φ+180°），取色坐标反镜像补偿 ⇒ 同一语义单元在母/子/父三球上同色，三球共用同一张轴色表"};
+window.__ST_DATA__ = DATA;                       // 供联调 / 无头验证读取
+window.__ST_HEALTH__ = {booted:false, errors:[], frames:0};
+window.addEventListener("error", e => window.__ST_HEALTH__.errors.push(String(e.message)));
+
+/* ---------- 颜色公理（与 kg/semtensor/axioms.py 逐行同构） ---------- */
+const C_O = [0.000,0.690,0.314];
+const AXIS_EP = {
+  X:{ I:{nm:"橙",nm_:605,c:[1.000,0.549,0.000],hex:"#FF8C00"},
+      O:{nm:"绿",nm_:533,c:C_O,hex:"#00B050"},
+      T:{nm:"紫",nm_:415,c:[0.541,0.169,0.886],hex:"#8A2BE2"} },
+  Y:{ I:{nm:"蓝",nm_:458,c:[0.122,0.380,0.851],hex:"#1F61D9"},
+      O:{nm:"绿",nm_:533,c:C_O,hex:"#00B050"},
+      T:{nm:"红",nm_:685,c:[0.859,0.110,0.110],hex:"#DB1C1C"} },
+  Z:{ I:{nm:"黄",nm_:578,c:[0.949,0.761,0.000],hex:"#F2C200"},
+      O:{nm:"绿",nm_:533,c:C_O,hex:"#00B050"},
+      T:{nm:"青",nm_:493,c:[0.000,0.780,0.780],hex:"#00C7C7"} }
+};
+const AXES=["X","Y","Z"];
+function ramp(t,axis){
+  t=Math.max(-1,Math.min(1,t));
+  const E=AXIS_EP[axis], cI=E.I.c, cO=E.O.c, cT=E.T.c;
+  const a = t<0 ? [cI,cO,t+1] : [cO,cT,t];
+  return [a[0][0]+(a[1][0]-a[0][0])*a[2],
+          a[0][1]+(a[1][1]-a[0][1])*a[2],
+          a[0][2]+(a[1][2]-a[0][2])*a[2]];
+}
+function comp(v){
+  const w=[Math.min(1,Math.abs(v[0])),Math.min(1,Math.abs(v[1])),Math.min(1,Math.abs(v[2]))];
+  const k=Math.max(w[0],w[1],w[2]), s=w[0]+w[1]+w[2];
+  if(s<1e-12||k<=0) return C_O.slice();
+  const m=[0,0,0];
+  for(let i=0;i<3;i++){const c=ramp(v[i],AXES[i]); m[0]+=w[i]*c[0]; m[1]+=w[i]*c[1]; m[2]+=w[i]*c[2];}
+  return [0,1,2].map(i=>Math.max(0,Math.min(1,(1-k)*C_O[i]+k*m[i]/s)));
+}
+function hexs(c){return "#"+c.map(x=>Math.round(Math.max(0,Math.min(1,x))*255).toString(16).padStart(2,"0").toUpperCase()).join("");}
+function sph(th,ph,r){const ct=Math.cos(th);return [r*ct*Math.cos(ph),r*ct*Math.sin(ph),r*Math.sin(th)];}
+
+/* ---------- 4×4 矩阵 ---------- */
+function mPersp(fovy,asp,zn,zf){const f=1/Math.tan(fovy/2);const nf=1/(zn-zf);
+  return new Float32Array([f/asp,0,0,0, 0,f,0,0, 0,0,(zf+zn)*nf,-1, 0,0,2*zf*zn*nf,0]);}
+function mMul(a,b){const o=new Float32Array(16);
+  for(let i=0;i<4;i++)for(let j=0;j<4;j++){let s=0;for(let k=0;k<4;k++)s+=a[k*4+j]*b[i*4+k];o[i*4+j]=s;}return o;}
+function mLookAt(eye,ctr,up){
+  const z=nrm(sub(eye,ctr)), x=nrm(cross(up,z)), y=cross(z,x);
+  return new Float32Array([x[0],y[0],z[0],0, x[1],y[1],z[1],0, x[2],y[2],z[2],0,
+    -dot(x,eye),-dot(y,eye),-dot(z,eye),1]);}
+function sub(a,b){return [a[0]-b[0],a[1]-b[1],a[2]-b[2]];}
+function cross(a,b){return [a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];}
+function dot(a,b){return a[0]*b[0]+a[1]*b[1]+a[2]*b[2];}
+function nrm(a){const n=Math.hypot(a[0],a[1],a[2])||1;return [a[0]/n,a[1]/n,a[2]/n];}
+
+/* ---------- 共享相机状态（三球同步的唯一来源） ---------- */
+const CAM={elev:DATA.params.view_elev_deg*Math.PI/180, azim:DATA.params.view_azim_deg*Math.PI/180,
+           dist:3.05, auto:true};
+function camEye(){const ce=Math.cos(CAM.elev);
+  return [CAM.dist*ce*Math.cos(CAM.azim), CAM.dist*ce*Math.sin(CAM.azim), CAM.dist*Math.sin(CAM.elev)];}
+
+/* ---------- 着色器 ---------- */
+const VS_PT=`
+attribute vec3 aPos; attribute vec3 aCol;
+uniform mat4 uProj,uView; uniform float uScale,uSizeK; uniform vec3 uEye;
+varying vec3 vCol; varying float vA;
+void main(){
+  vec3 n = normalize(aPos);
+  vec3 vd = normalize(uEye - aPos);
+  float d = abs(dot(n, vd));                            // 0=轮廓, 1=正对观察者
+  vA = mix(uAlphaRim, uAlphaFace, d);
+  vCol = aCol;
+  vec4 mv = uView*vec4(aPos,1.0);
+  gl_Position = uProj*mv;
+  gl_PointSize = uSizeK*uScale/max(0.001,-mv.z);
+}`;
+const FS_PT=`
+precision mediump float;
+varying vec3 vCol; varying float vA;
+void main(){
+  vec2 p = gl_PointCoord-vec2(0.5);
+  float r = dot(p,p);
+  if(r>0.25) discard;
+  float e = smoothstep(0.25,0.16,r);
+  gl_FragColor = vec4(vCol, vA*e);
+}`;
+const VS_LN=`
+attribute vec3 aPos; attribute vec3 aCol;
+uniform mat4 uProj,uView; uniform float uAlpha;
+varying vec3 vCol; varying float vA;
+void main(){ vCol=aCol; vA=uAlpha; gl_Position=uProj*uView*vec4(aPos,1.0); }`;
+const FS_LN=`
+precision mediump float; varying vec3 vCol; varying float vA;
+void main(){ gl_FragColor = vec4(vCol, vA); }`;
+
+const VS_HDR=`precision highp float; uniform float uAlphaRim; uniform float uAlphaFace;`;
+
+function sh(gl,type,src){const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);
+  if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(s));return s;}
+function prog(gl,vs,fs){const p=gl.createProgram();
+  gl.attachShader(p,sh(gl,gl.VERTEX_SHADER,vs));gl.attachShader(p,sh(gl,gl.FRAGMENT_SHADER,fs));
+  gl.linkProgram(p);if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(p));return p;}
+
+/* ---------- 几何构造 ---------- */
+function buildCloud(mirror){
+  const R=DATA.params.rings, S=DATA.params.seg;
+  const M = mirror ? DATA.mirror[mirror] || [1,1,1] : [1,1,1];
+  const pos=[],col=[];
+  for(let i=1;i<R;i++){
+    const th = -Math.PI/2 + Math.PI*i/R;
+    for(let j=0;j<S;j++){
+      const ph = 2*Math.PI*j/S;
+      const n = sph(th+Math.PI/(2*R), ph, 1.0);   // 单元自身方向 n̂（半格偏移，避开极点汇聚）
+      const p = [n[0]*M[0], n[1]*M[1], n[2]*M[2]]; // 球面位置 = M·n̂（几何镜像）
+      const cc = [p[0]*M[0], p[1]*M[1], p[2]*M[2]];// 取色坐标 = M·p = n̂（反镜像补偿）
+      const c = comp(cc);
+      pos.push(p[0],p[1],p[2]); col.push(c[0],c[1],c[2]);
+    }
+  }
+  return {pos:new Float32Array(pos), col:new Float32Array(col), n:pos.length/3};
+}
+function buildMarkers(units, mirror, scaleK){
+  const M = mirror ? DATA.mirror[mirror] || [1,1,1] : [1,1,1];
+  const pos=[],col=[],list=[];
+  units.forEach(u=>{
+    const n=DATA.units_sph[u.uid]; if(!n) return;
+    const r=Math.max(0.06,Math.min(1,u.r))*scaleK;
+    let p=sph(n.theta,n.phi,r); p=[p[0]*M[0],p[1]*M[1],p[2]*M[2]];
+    const c=comp([u.x,u.y,u.z]);
+    pos.push(p[0],p[1],p[2]); col.push(c[0],c[1],c[2]);
+    list.push({p:p,u:u,r:r,c:c,hex:hexs(c)});
+  });
+  return {pos:new Float32Array(pos),col:new Float32Array(col),
+          n:pos.length/3, list:list};
+}
+/* 经线（φ=0/180 与 阴阳界 φ=90/270）、赤道（θ=0 细虚线）、赤道环刻度 */
+function buildLines(mirror){
+  const M = mirror ? DATA.mirror[mirror] || [1,1,1] : [1,1,1];
+  const pos=[],col=[];
+  const push=(a,b,ca,cb)=>{pos.push(a[0],a[1],a[2],b[0],b[1],b[2]);
+    col.push(ca[0],ca[1],ca[2],cb[0],cb[1],cb[2]);};
+  const N=140;
+  DATA.params.meridian_phi_deg.forEach(pd=>{
+    const ph=pd*Math.PI/180;
+    for(let i=0;i<N;i++){
+      let a=sph(-Math.PI/2+Math.PI*i/N, ph,1.0), b=sph(-Math.PI/2+Math.PI*(i+1)/N, ph,1.0);
+      a=[a[0]*M[0],a[1]*M[1],a[2]*M[2]]; b=[b[0]*M[0],b[1]*M[1],b[2]*M[2]];
+      push(a,b,[0.03,0.05,0.09],[0.03,0.05,0.09]);
+    }
+  });
+  DATA.params.yinyang_circle_phi_deg.forEach(pd=>{
+    const ph=pd*Math.PI/180;
+    for(let i=0;i<N;i++){
+      let a=sph(-Math.PI/2+Math.PI*i/N, ph,1.0), b=sph(-Math.PI/2+Math.PI*(i+1)/N, ph,1.0);
+      a=[a[0]*M[0],a[1]*M[1],a[2]*M[2]]; b=[b[0]*M[0],b[1]*M[1],b[2]*M[2]];
+      push(a,b,[0.62,0.70,0.88],[0.62,0.70,0.88]);
+    }
+  });
+  const SEG=180, dash=true;
+  for(let i=0;i<SEG;i++){
+    if(dash && i%2) continue;                       // θ=0 赤道细虚线
+    let a=sph(0, 2*Math.PI*i/SEG,1.005), b=sph(0, 2*Math.PI*(i+1)/SEG,1.005);
+    a=[a[0]*M[0],a[1]*M[1],a[2]*M[2]]; b=[b[0]*M[0],b[1]*M[1],b[2]*M[2]];
+    push(a,b,[0.45,0.52,0.68],[0.45,0.52,0.68]);
+  }
+  // 方位角刻度（每 step 度，赤道外侧短须）
+  const st=DATA.params.azimuth_step_deg;
+  for(let d=0;d<360;d+=st){
+    const ph=d*Math.PI/180;
+    let a=sph(0,ph,1.005), b=sph(0,ph,1.06);
+    a=[a[0]*M[0],a[1]*M[1],a[2]*M[2]]; b=[b[0]*M[0],b[1]*M[1],b[2]*M[2]];
+    push(a,b,[0.72,0.79,0.94],[0.72,0.79,0.94]);
+  }
+  return {pos:new Float32Array(pos),col:new Float32Array(col),n:pos.length/3};
+}
+/* 三轴：两段三点 I/O/T + 实体箭头（世界空间圆管，随视角稳定可见） */
+function rod(p0,c0,p1,c1,rad,pos,col,sides,nsub){
+  let d=[p1[0]-p0[0],p1[1]-p0[1],p1[2]-p0[2]];
+  const L=Math.hypot(d[0],d[1],d[2])||1; d=[d[0]/L,d[1]/L,d[2]/L];
+  const up=Math.abs(d[2])>0.9?[1,0,0]:[0,0,1];
+  const e1=nrm(cross(d,up)), e2=cross(d,e1);
+  const rings=[];
+  for(let i=0;i<=nsub;i++){
+    const t=i/nsub;
+    const c=[c0[0]+(c1[0]-c0[0])*t, c0[1]+(c1[1]-c0[1])*t, c0[2]+(c1[2]-c0[2])*t];
+    const b=[p0[0]+d[0]*t*L, p0[1]+d[1]*t*L, p0[2]+d[2]*t*L];
+    const row=[];
+    for(let k=0;k<sides;k++){
+      const a=2*Math.PI*k/sides, ca=Math.cos(a), sa=Math.sin(a);
+      row.push([b[0]+rad*(e1[0]*ca+e2[0]*sa), b[1]+rad*(e1[1]*ca+e2[1]*sa),
+                b[2]+rad*(e1[2]*ca+e2[2]*sa), c]);
+    }
+    rings.push(row);
+  }
+  for(let i=0;i<nsub;i++)for(let k=0;k<sides;k++){
+    const k2=(k+1)%sides;
+    const A=rings[i][k], B=rings[i][k2], C=rings[i+1][k2], D=rings[i+1][k];
+    pos.push(A[0],A[1],A[2], B[0],B[1],B[2], C[0],C[1],C[2]);
+    col.push(...A[3],...B[3],...C[3]);
+    pos.push(A[0],A[1],A[2], C[0],C[1],C[2], D[0],D[1],D[2]);
+    col.push(...A[3],...C[3],...D[3]);
+  }
+}
+function cone(base,cb,tip,ct,rad,pos,col,sides){
+  let d=[tip[0]-base[0],tip[1]-base[1],tip[2]-base[2]];
+  const L=Math.hypot(d[0],d[1],d[2])||1; d=[d[0]/L,d[1]/L,d[2]/L];
+  const up=Math.abs(d[2])>0.9?[1,0,0]:[0,0,1];
+  const e1=nrm(cross(d,up)), e2=cross(d,e1);
+  const ring=[];
+  for(let k=0;k<sides;k++){
+    const a=2*Math.PI*k/sides, ca=Math.cos(a), sa=Math.sin(a);
+    ring.push([base[0]+rad*(e1[0]*ca+e2[0]*sa), base[1]+rad*(e1[1]*ca+e2[1]*sa),
+               base[2]+rad*(e1[2]*ca+e2[2]*sa)]);
+  }
+  for(let k=0;k<sides;k++){
+    const k2=(k+1)%sides;
+    pos.push(...tip,...ring[k],...ring[k2]); col.push(...ct,...cb,...cb);
+    pos.push(...base,...ring[k2],...ring[k]); col.push(...cb,...cb,...cb);
+  }
+}
+function buildAxes(mirror){
+  const M = mirror ? DATA.mirror[mirror] || [1,1,1] : [1,1,1];
+  const m = v => [v[0]*M[0], v[1]*M[1], v[2]*M[2]];
+  const pos=[],col=[],ipos=[],icol=[],list=[];
+  const A=[[1,0,0],[0,1,0],[0,0,1]];
+  const S=1.15, ROD=0.0085, HEAD=0.030, HEADL=0.13;
+  AXES.forEach((ax,i)=>{
+    const dSrc=A[i], dir=m(dSrc);
+    const cI=AXIS_EP[ax].I.c, cO=C_O.slice(), cT=AXIS_EP[ax].T.c;
+    const pI=m([-S*dSrc[0],-S*dSrc[1],-S*dSrc[2]]), pO=[0,0,0],
+          pT=m([ S*dSrc[0], S*dSrc[1], S*dSrc[2]]);
+    rod(pI,cI,pO,cO,ROD,pos,col,10,10);                 // 负值段 I→O
+    rod(pO,cO,pT,cT,ROD,pos,col,10,10);                 // 正值段 O→T
+    cone(m([dSrc[0]*(S-HEADL),dSrc[1]*(S-HEADL),dSrc[2]*(S-HEADL)]),cT,pT,cT,HEAD,pos,col,16);
+    // I / O / T 三点
+    [[pI,cI,'I(−1)',-S],[pO,cO,'O(0)',0],[pT,cT,'T(+1)',S]].forEach(([p,c,nm,t])=>{
+      ipos.push(p[0],p[1],p[2]); icol.push(...c);
+      list.push({kind:"iot",label:nm,pos:p,col:c,ax:ax});
+    });
+    list.push({kind:"axis",label:ax,pos:m([dSrc[0]*1.30,dSrc[1]*1.30,dSrc[2]*1.30]),col:cT});
+  });
+  return {pos:new Float32Array(pos),col:new Float32Array(col),n:pos.length/3,
+          iot:{pos:new Float32Array(ipos),col:new Float32Array(icol),n:ipos.length/3},
+          list:list};
+}
+
+/* ---------- 单球渲染器 ---------- */
+class SphereView{
+  constructor(sphere, root){
+    this.sphere=sphere;
+    this.stage=root.querySelector(".stage");
+    this.cv=root.querySelector("canvas");
+    this.tip=root.querySelector(".tip");
+    const gl=this.cv.getContext("webgl",{antialias:true,alpha:false,preserveDrawingBuffer:true});
+    this.gl=gl;
+    if(!gl){this.stage.innerHTML='<div class="lbl" style="position:static;padding:20px">当前浏览器不支持 WebGL</div>';return;}
+    this.pCloud=prog(gl,VS_HDR+VS_PT,FS_PT);
+    this.pLine=prog(gl,VS_LN,FS_LN);
+    this.geo={};
+    this.rebuild();
+    this.labels=[];
+    this.buildLabels();
+    this.bindPointer();
+  }
+  upload(key){
+    const gl=this.gl, g=this.geo[key];
+    if(!g.buf) g.buf=gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER,g.buf); gl.bufferData(gl.ARRAY_BUFFER,g.pos,gl.DYNAMIC_DRAW);
+    if(!g.cbuf) g.cbuf=gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER,g.cbuf); gl.bufferData(gl.ARRAY_BUFFER,g.col,gl.DYNAMIC_DRAW);
+  }
+  rebuild(){
+    const cur=window.__ST_STATE__;
+    const sex = cur.mirror ? this.sphere.sex : null;
+    this.geo.cloud=buildCloud(sex);
+    this.geo.lines=buildLines(sex);
+    this.geo.axes =buildAxes(sex);
+    this.geo.iot  =this.geo.axes.iot;
+    const us=DATA.units.filter(u=>DATA.units_sph[u.uid]);
+    this.geo.mk=buildMarkers(us, sex, cur.scaleK);
+    Object.keys(this.geo).forEach(k=>this.upload(k));
+    this.axisLabels=this.geo.axes.list;
+  }
+  buildLabels(){
+    const wrap=document.createElement("div");
+    this.stage.querySelectorAll(".lbl.dyn").forEach(e=>e.remove());
+    const mk=(cls,txt,color)=>{const d=document.createElement("div");
+      d.className="lbl "+cls+" dyn"; if(color)d.style.color=color; d.textContent=txt;
+      this.stage.appendChild(d); return d;};
+    this.labels=[];
+    AXES.forEach(ax=>{this.labels.push({el:mk("axis",ax,"#ffffff"),p:null,kind:"ax",ref:ax});});
+    const st=DATA.params.azimuth_step_deg;
+    for(let d=0;d<360;d+=st){
+      const el=mk("tick",d+"°","#a9b8d6");
+      const ph=d*Math.PI/180;
+      this.labels.push({el:el,p:sph(0,ph,1.12),kind:"tick",phi:ph});
+    }
+    // I(−1) / O(0) / T(+1) 三点标签（画布内只用字母+数字，无汉字）
+    this.iotLbl=(this.geo.axes.list||[]).filter(o=>o.kind==="iot").map(o=>({
+      el:mk("iot",o.label,hexs(o.col)), p:o.pos, ref:o.ax}));
+    this.iotEls=[];
+  }
+  bindPointer(){
+    const cv=this.cv;
+    cv.addEventListener("pointerdown",e=>{cv.classList.add("drag");
+      this.drag={x:e.clientX,y:e.clientY}; cv.setPointerCapture(e.pointerId);});
+    cv.addEventListener("pointerup",e=>{cv.classList.remove("drag");this.drag=null;});
+    cv.addEventListener("pointermove",e=>{
+      if(this.drag){ CAM.azim -= (e.clientX-this.drag.x)*0.008;
+                     CAM.elev = Math.max(-1.53,Math.min(1.53,CAM.elev+(e.clientY-this.drag.y)*0.006));
+                     this.drag={x:e.clientX,y:e.clientY}; }
+      else this.pick(e);
+    });
+    cv.addEventListener("pointerleave",()=>{this.tip.style.display="none";});
+    cv.addEventListener("wheel",e=>{e.preventDefault();
+      CAM.dist=Math.max(1.55,Math.min(7.5,CAM.dist*(1+Math.sign(e.deltaY)*0.08)));},{passive:false});
+  }
+  resize(){
+    const dpr=Math.min(2,window.devicePixelRatio||1);
+    const r=this.cv.getBoundingClientRect();
+    const w=Math.max(80,Math.round(r.width*dpr)), h=Math.max(80,Math.round(r.height*dpr));
+    if(this.cv.width!==w||this.cv.height!==h){this.cv.width=w;this.cv.height=h;}
+    this.aspect=w/h; this.dpr=dpr; this.cssW=r.width; this.cssH=r.height;
+  }
+  draw(){
+    const gl=this.gl; if(!gl) return;
+    this.resize();
+    gl.viewport(0,0,this.cv.width,this.cv.height);
+    gl.clearColor(0.043,0.055,0.075,1); gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+    gl.enable(gl.DEPTH_TEST); gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+    const eye=camEye(), proj=mPersp(38*Math.PI/180,this.aspect,0.1,100), view=mLookAt(eye,[0,0,0],[0,0,1]);
+    const cur=window.__ST_STATE__;
+    const uK=this.cv.height/540;
+
+    // 球面点云（色场：三轴合成色映射到球面）
+    if(cur.showGrid){
+      gl.useProgram(this.pCloud);
+      gl.uniformMatrix4fv(gl.getUniformLocation(this.pCloud,"uProj"),false,proj);
+      gl.uniformMatrix4fv(gl.getUniformLocation(this.pCloud,"uView"),false,view);
+      gl.uniform1f(gl.getUniformLocation(this.pCloud,"uScale"),uK*1.0);
+      gl.uniform3fv(gl.getUniformLocation(this.pCloud,"uEye"),eye);
+      gl.uniform1f(gl.getUniformLocation(this.pCloud,"uSizeK"),DATA.params.cloud_point_size*this.dpr);
+      gl.uniform1f(gl.getUniformLocation(this.pCloud,"uAlphaRim"),DATA.params.cloud_alpha_rim);
+      gl.uniform1f(gl.getUniformLocation(this.pCloud,"uAlphaFace"),DATA.params.cloud_alpha_face);
+      this.bindPt(this.pCloud,this.geo.cloud);
+      gl.drawArrays(gl.POINTS,0,this.geo.cloud.n);
+    }
+    // 网格线
+    gl.useProgram(this.pLine);
+    gl.uniformMatrix4fv(gl.getUniformLocation(this.pLine,"uProj"),false,proj);
+    gl.uniformMatrix4fv(gl.getUniformLocation(this.pLine,"uView"),false,view);
+    gl.uniform1f(gl.getUniformLocation(this.pLine,"uAlpha"),0.85);
+    this.bindLn(this.pLine,this.geo.lines);
+    gl.drawArrays(gl.LINES,0,this.geo.lines.n);
+    // 三轴（实体圆管 + 箭头）
+    if(cur.showAxes){
+      gl.uniform1f(gl.getUniformLocation(this.pLine,"uAlpha"),1.0);
+      this.bindLn(this.pLine,this.geo.axes);
+      gl.drawArrays(gl.TRIANGLES,0,this.geo.axes.n);
+      gl.useProgram(this.pCloud);
+      gl.uniformMatrix4fv(gl.getUniformLocation(this.pCloud,"uProj"),false,proj);
+      gl.uniformMatrix4fv(gl.getUniformLocation(this.pCloud,"uView"),false,view);
+      gl.uniform1f(gl.getUniformLocation(this.pCloud,"uScale"),uK*1.0);
+      gl.uniform3fv(gl.getUniformLocation(this.pCloud,"uEye"),eye);
+      gl.uniform1f(gl.getUniformLocation(this.pCloud,"uSizeK"),DATA.params.iot_point_size*this.dpr);
+      gl.uniform1f(gl.getUniformLocation(this.pCloud,"uAlphaRim"),1.0);
+      gl.uniform1f(gl.getUniformLocation(this.pCloud,"uAlphaFace"),1.0);
+      this.bindPt(this.pCloud,this.geo.iot);
+      gl.drawArrays(gl.POINTS,0,this.geo.iot.n);
+    }
+    // 语义单元散点（张量点云）
+    gl.useProgram(this.pCloud);
+    gl.uniformMatrix4fv(gl.getUniformLocation(this.pCloud,"uProj"),false,proj);
+    gl.uniformMatrix4fv(gl.getUniformLocation(this.pCloud,"uView"),false,view);
+    gl.uniform1f(gl.getUniformLocation(this.pCloud,"uScale"),uK*1.0);
+    gl.uniform3fv(gl.getUniformLocation(this.pCloud,"uEye"),eye);
+    gl.uniform1f(gl.getUniformLocation(this.pCloud,"uSizeK"),DATA.params.marker_point_size*this.dpr);
+    gl.uniform1f(gl.getUniformLocation(this.pCloud,"uAlphaRim"),DATA.params.marker_alpha_rim);
+    gl.uniform1f(gl.getUniformLocation(this.pCloud,"uAlphaFace"),DATA.params.marker_alpha_face);
+    this.bindPt(this.pCloud,this.geo.mk);
+    gl.drawArrays(gl.POINTS,0,this.geo.mk.n);
+
+    this.proj=proj; this.view=view; this.eye=eye;
+    this.placeLabels(cur);
+  }
+  bindPt(p,g){
+    const gl=this.gl;
+    gl.bindBuffer(gl.ARRAY_BUFFER,g.buf);
+    const a1=gl.getAttribLocation(p,"aPos"); gl.enableVertexAttribArray(a1);
+    gl.vertexAttribPointer(a1,3,gl.FLOAT,false,0,0);
+    gl.bindBuffer(gl.ARRAY_BUFFER,g.cbuf);
+    const a2=gl.getAttribLocation(p,"aCol"); gl.enableVertexAttribArray(a2);
+    gl.vertexAttribPointer(a2,3,gl.FLOAT,false,0,0);
+  }
+  bindLn(p,g){
+    const gl=this.gl;
+    gl.bindBuffer(gl.ARRAY_BUFFER,g.buf);
+    const a1=gl.getAttribLocation(p,"aPos"); gl.enableVertexAttribArray(a1);
+    gl.vertexAttribPointer(a1,3,gl.FLOAT,false,0,0);
+    gl.bindBuffer(gl.ARRAY_BUFFER,g.cbuf);
+    const a2=gl.getAttribLocation(p,"aCol"); gl.enableVertexAttribArray(a2);
+    gl.vertexAttribPointer(a2,3,gl.FLOAT,false,0,0);
+  }
+  project(p){
+    const v=this.view, pr=this.proj;
+    const mv=[v[0]*p[0]+v[4]*p[1]+v[8]*p[2]+v[12],
+              v[1]*p[0]+v[5]*p[1]+v[9]*p[2]+v[13],
+              v[2]*p[0]+v[6]*p[1]+v[10]*p[2]+v[14]];
+    const cw=-mv[2]; if(cw<=0.001) return null;
+    const cx=pr[0]*mv[0], cy=pr[5]*mv[1];
+    return {x:(cx/cw*0.5+0.5)*this.cssW, y:(1-(cy/cw*0.5+0.5))*this.cssH, z:cw};
+  }
+  placeLabels(cur){
+    const eye=nrm(this.eye);
+    AXES.forEach((ax,i)=>{const L=this.labels[i]; const d=[i===0?1:0,i===1?1:0,i===2?1:0];
+      const m=cur.mirror?DATA.mirror[this.sphere.sex]:[1,1,1];
+      const p=[1.34*d[0]*m[0],1.34*d[1]*m[1],1.34*d[2]*m[2]];
+      const s=this.project(p); L.el.style.display=s?"block":"none";
+      if(s){L.el.style.left=s.x+"px";L.el.style.top=s.y+"px";}});
+    const st=DATA.params.azimuth_step_deg; let k=3;
+    for(let d=0;d<360;d+=st,k++){
+      const L=this.labels[k]; if(!L||L.kind!=="tick") continue;
+      const m=cur.mirror?DATA.mirror[this.sphere.sex]:[1,1,1];
+      let p=sph(0,L.phi,1.16); p=[p[0]*m[0],p[1]*m[1],p[2]*m[2]];
+      const s=this.project(p);
+      const front=dot(nrm(p),eye)>0.02;
+      if(s&&front){L.el.style.display="block";L.el.style.left=s.x+"px";L.el.style.top=s.y+"px";}
+      else L.el.style.display="none";
+    }
+    (this.iotLbl||[]).forEach(L=>{
+      const s=this.project(L.p);
+      if(s){L.el.style.display="block";
+            L.el.style.left=(s.x+11)+"px"; L.el.style.top=(s.y-11)+"px";}
+      else L.el.style.display="none";
+    });
+  }
+  pick(e){
+    const r=this.cv.getBoundingClientRect();
+    const mx=e.clientX-r.left, my=e.clientY-r.top;
+    let best=null,bd=13;
+    this.geo.mk.list.forEach(o=>{
+      const s=this.project(o.p); if(!s) return;
+      const d=Math.hypot(s.x-mx,s.y-my);
+      if(d<bd){bd=d;best={o:o,s:s};}
+    });
+    if(!best){this.tip.style.display="none";return;}
+    const u=best.o.u;
+    this.tip.innerHTML=`<b>${u.label||u.uid}</b><br>
+      <span class="kv">坐标系</span> θ仰角 ${u.theta_deg.toFixed(1)}° · φ方位角 ${u.phi_deg.toFixed(1)}° · r ${best.o.r.toFixed(3)}<br>
+      <span class="kv">三分量</span> X ${u.x.toFixed(2)} · Y ${u.y.toFixed(2)} · Z ${u.z.toFixed(2)}<br>
+      <span class="kv">合成色</span> <span class="sw" style="background:${best.o.hex}"></span>${best.o.hex}<br>
+      <span class="kv">${u.meta||""}</span>`;
+    this.tip.style.display="block";
+    this.tip.style.left=Math.min(this.cssW-258,Math.max(2,best.s.x+12))+"px";
+    this.tip.style.top=Math.max(2,best.s.y-10)+"px";
+  }
+}
+
+/* ---------- 图注文本解析（可编辑文本文件 → 参数实例化） ---------- */
+function parseCaption(txt){
+  const cfg={params:{},spheres:{},body:[]}; let sec="";
+  txt.split(/\r?\n/).forEach(raw=>{
+    const line=raw.replace(/\s+$/,"");
+    const m=line.match(/^\s*\[(.+?)\]\s*$/);
+    if(m){sec=m[1].trim();return;}
+    if(/^\s*#/.test(line)||line==="") {if(sec==="图注正文"&&line!=="")cfg.body.push("");return;}
+    const kv=line.match(/^\s*([A-Za-z_][\w]*)\s*=\s*(.*)$/);
+    if(kv&&(sec==="参数"||sec==="球")){ (cfg.params)[kv[1]]=kv[2]; return; }
+    if(sec==="图注正文") cfg.body.push(line);
+  });
+  return cfg;
+}
+function applyParams(cfg){
+  const P=DATA.params, N=n=>{const v=parseFloat(n);return isNaN(v)?null:v;};
+  if(cfg.params.rings) P.rings=Math.max(6,Math.min(200,N(cfg.params.rings)||P.rings));
+  if(cfg.params.seg) P.seg=Math.max(8,Math.min(300,N(cfg.params.seg)||P.seg));
+  if(cfg.params.arrow_head) P.arrow_head=N(cfg.params.arrow_head)||P.arrow_head;
+  if(cfg.params.dot_iot) P.dot_iot=N(cfg.params.dot_iot)||P.dot_iot;
+  if(cfg.params.elev_ticks_deg) {
+    P.elev_ticks_deg=cfg.params.elev_ticks_deg.split(",").map(s=>parseFloat(s)).filter(v=>!isNaN(v));
+  }
+  if(cfg.params.azimuth_step_deg){
+    const st=N(cfg.params.azimuth_step_deg); if(st&&360%st===0) P.azimuth_step_deg=st;
+  }
+  if(cfg.params.view_elev_deg) CAM.elev=(N(cfg.params.view_elev_deg)||0)*Math.PI/180;
+  if(cfg.params.view_azim_deg) CAM.azim=(N(cfg.params.view_azim_deg)||0)*Math.PI/180;
+  if(cfg.params.mirror_point_cloud!==undefined)
+    window.__ST_STATE__.mirror = (String(cfg.params.mirror_point_cloud).trim()!=="0");
+  P.cloud_alpha_rim  = N(cfg.params.cloud_alpha_rim)||P.cloud_alpha_rim;
+  P.cloud_alpha_face = N(cfg.params.cloud_alpha_face)||P.cloud_alpha_face;
+  P.cloud_point_size = N(cfg.params.cloud_point_size)||P.cloud_point_size;
+  P.marker_point_size= N(cfg.params.marker_point_size)||P.marker_point_size;
+  P.iot_point_size   = N(cfg.params.iot_point_size)||P.iot_point_size;
+  Object.assign(DATA.captions, cfg.spheres);
+  if(cfg.body.length) DATA.captions[window.__ST_STATE__.activeCapKey||"总览"]=cfg.body.join("\n");
+}
+
+/* ---------- 界面装配 ---------- */
+window.__ST_STATE__={auto:true,mirror:true,showGrid:true,showAxes:true,scaleK:1.0,
+                     activeCapKey:"总览"};
+const VIEWS=[];
+function boot(){
+  const grid=document.getElementById("grid");
+  DATA.spheres.forEach(sp=>{
+    const fig=document.createElement("figure");
+    fig.innerHTML=`
+      <div class="fighd">
+        <span class="no">${sp.no}</span><span class="nm">${sp.name}球面</span>
+        <span class="tag">性别 ${sp.sex} · 符号 (${sp.sign.join(",")})<br>
+        X-Y 图面夹角 ${sp.xy_face} · X+ 图面角 ${sp.angle_x}°</span>
+      </div>
+      <div class="stage"><canvas></canvas><div class="tip"></div></div>
+      <figcaption>
+        <h4>图注 · 参数应用实例化（文本可编辑）</h4>
+        <pre class="cap" id="cap-${sp.name}"></pre>
+        <div class="capbar">
+          <button data-edit="${sp.name}">编辑图注文本</button>
+          <button data-exp="${sp.name}">导出图注 .txt</button>
+          <button data-imp="${sp.name}">从文件载入 .txt</button>
+        </div>
+        <div class="ed" id="ed-${sp.name}">
+          <textarea spellcheck="false"></textarea>
+          <div class="capbar">
+            <button data-apply="${sp.name}">应用参数并重绘</button>
+            <button data-close="${sp.name}">收起</button>
+          </div>
+        </div>
+      </figcaption>`;
+    grid.appendChild(fig);
+    fig.querySelector(".cap").textContent = DATA.captions[sp.name]||"";
+    VIEWS.push(new SphereView(sp, fig));
+  });
+  // 总览图注（跨三球，附在图下）
+  const ov=document.createElement("figure");
+  ov.style.gridColumn="1 / -1";
+  ov.innerHTML=`<figcaption>
+      <h4>总览图注 · 三球统一说明与数字↔语义映射表（文本可编辑）</h4>
+      <pre class="cap" style="max-height:430px" id="cap-总览"></pre>
+      <div class="capbar">
+        <button data-edit="总览">编辑总览图注</button>
+        <button data-exp="总览">导出总览图注 .txt</button>
+        <button data-imp="总览">从文件载入 .txt</button>
+      </div>
+      <div class="ed" id="ed-总览"><textarea spellcheck="false"></textarea>
+        <div class="capbar"><button data-apply="总览">应用参数并重绘</button>
+        <button data-close="总览">收起</button></div></div>
+    </figcaption>`;
+  document.querySelector("footer").before(ov);
+  document.getElementById("cap-总览").textContent = DATA.captions["总览"]||"";
+  // 轴色表
+  let th="<table><tr><th>轴</th><th>I (−1)</th><th>O (0) 共用基准</th><th>T (+1)</th></tr>";
+  AXES.forEach(ax=>{const E=AXIS_EP[ax];
+    const cell=k=>`<span class="sw" style="background:${E[k].hex}"></span>${E[k].nm} ${E[k].nm_}nm`;
+    th+=`<tr><td><b>${ax}</b> ${{"X":"左右","Y":"前后","Z":"上下(脚→头)"}[ax]}</td>
+      <td>${cell("I")}</td><td>${cell("O")}</td><td>${cell("T")}</td></tr>`;});
+  th+="</table>";
+  document.getElementById("axisTable").innerHTML=th;
+  document.getElementById("axiomNote").innerHTML=
+    `ramp(t,axis) 在 [−1,0,+1] 三色间逐通道线性插值；合成色 `+
+    `<code>w<sub>i</sub> = clip(|v<sub>i</sub>|,0,1)</code>，<code>k = max(w<sub>i</sub>)</code>，`+
+    `<code>C = (1−k)·绿 + k·(Σ w<sub>i</sub>c<sub>i</sub> / Σ w<sub>i</sub>)</code>。`+
+    `基准绿 <code>#00B050 (533nm)</code>。O 点任意轴回到基准绿；三轴同强时颜色趋向三端色加权混合；`+
+    `<b>镜像算子 M(女)=diag(−1,−1,+1) 只改 (x,y) 符号 ⇒ |v<sub>i</sub>| 不变 ⇒ 合成色守恒</b>`+
+    `（母/子/父 三球轴色表完全相同）。`;
+  // 按钮
+  const $=id=>document.getElementById(id);
+  $("btnAuto").onclick=e=>{window.__ST_STATE__.auto=!window.__ST_STATE__.auto;
+    e.target.classList.toggle("on",window.__ST_STATE__.auto);
+    e.target.textContent="自动旋转 "+(window.__ST_STATE__.auto?"开":"关");};
+  $("btnMirror").onclick=e=>{window.__ST_STATE__.mirror=!window.__ST_STATE__.mirror;
+    e.target.classList.toggle("on",window.__ST_STATE__.mirror);
+    e.target.textContent="镜像对照 "+(window.__ST_STATE__.mirror?"开":"关");rebuildAll();};
+  $("btnGrid").onclick=e=>{window.__ST_STATE__.showGrid=!window.__ST_STATE__.showGrid;
+    e.target.classList.toggle("on",window.__ST_STATE__.showGrid);
+    e.target.textContent="球面点云 "+(window.__ST_STATE__.showGrid?"开":"关");};
+  $("btnAxes").onclick=e=>{window.__ST_STATE__.showAxes=!window.__ST_STATE__.showAxes;
+    e.target.classList.toggle("on",window.__ST_STATE__.showAxes);
+    e.target.textContent="坐标轴 "+(window.__ST_STATE__.showAxes?"开":"关");};
+  $("btnReset").onclick=()=>{CAM.elev=DATA.params.view_elev_deg*Math.PI/180;
+    CAM.azim=DATA.params.view_azim_deg*Math.PI/180;CAM.dist=3.05;};
+  $("btnV1").onclick=()=>{CAM.elev=20*Math.PI/180;CAM.azim=-60*Math.PI/180;};
+  $("btnV2").onclick=()=>{CAM.elev=0;CAM.azim=-90*Math.PI/180;};
+  $("btnV3").onclick=()=>{CAM.elev=88*Math.PI/180;CAM.azim=-90*Math.PI/180;};
+  $("btnV4").onclick=()=>{CAM.elev=0;CAM.azim=0;};
+  $("scaleR").oninput=e=>{window.__ST_STATE__.scaleK=parseFloat(e.target.value);
+    $("scaleRv").textContent=parseFloat(e.target.value).toFixed(2);rebuildAll();};
+  $("btnShot").onclick=exportAll;
+  document.addEventListener("click",ev=>{
+    const b=ev.target.closest("button"); if(!b) return;
+    const k=b.dataset.edit||b.dataset.exp||b.dataset.imp||b.dataset.apply||b.dataset.close;
+    if(!k) return;
+    if(b.dataset.edit){
+      const ed=document.getElementById("ed-"+k); ed.classList.toggle("open");
+      if(ed.classList.contains("open"))
+        ed.querySelector("textarea").value = bootstrapCaption(k);
+    }
+    if(b.dataset.close){document.getElementById("ed-"+k).classList.remove("open");}
+    if(b.dataset.apply){
+      const txt=document.getElementById("ed-"+k).querySelector("textarea").value;
+      window.__ST_STATE__.activeCapKey=k;
+      const cfg=parseCaption(txt);
+      cfg.spheres[k]=cfg.body.join("\n");
+      applyParams(cfg);
+      document.getElementById("cap-"+k).textContent=cfg.body.join("\n");
+      rebuildAll();
+    }
+    if(b.dataset.exp){
+      const txt=document.getElementById("ed-"+k).classList.contains("open")
+        ? document.getElementById("ed-"+k).querySelector("textarea").value
+        : (bootstrapCaption(k));
+      download(`图注-${k}.txt`, txt);
+    }
+    if(b.dataset.imp){
+      const inp=document.createElement("input"); inp.type="file"; inp.accept=".txt,text/plain";
+      inp.onchange=()=>{const f=inp.files[0]; if(!f) return;
+        const rd=new FileReader();
+        rd.onload=()=>{const cfg=parseCaption(rd.result);
+          window.__ST_STATE__.activeCapKey=k;
+          cfg.spheres[k]=cfg.body.join("\n");
+          applyParams(cfg);
+          document.getElementById("cap-"+k).textContent=cfg.body.join("\n");
+          const ed=document.getElementById("ed-"+k);
+          ed.classList.add("open"); ed.querySelector("textarea").value=rd.result;
+          rebuildAll();};
+        rd.readAsText(f,"utf-8");};
+      inp.click();
+    }
+  });
+  // 尝试从同目录 txt 载入（HTTP 环境下生效；file:// 下自动回退内嵌文本）
+  try{
+    ["母","子","父","总览"].forEach(n=>{
+      fetch("图注-"+n+".txt").then(r=>r.ok?r.text():null).then(t=>{
+        if(!t) return;
+        const cfg=parseCaption(t); cfg.spheres[n]=cfg.body.join("\n");
+        applyParams(cfg);
+        document.getElementById("cap-"+n).textContent=cfg.body.join("\n");
+        rebuildAll();
+      }).catch(()=>{});
+    });
+  }catch(e){}
+  requestAnimationFrame(loop);
+  window.__ST_HEALTH__.booted = true;
+  window.__ST_HEALTH__.views = VIEWS.length;
+}
+function bootstrapCaption(k){
+  const sp=DATA.spheres.find(s=>s.name===k);
+  const head = sp
+    ? `# tcmP 三维极坐标语义张量 · ${sp.no}${k}球面 · 图注（可编辑文本）\n`+
+      `[球]\nno = ${sp.no}\nname = ${k}\nsex = ${sp.sex}\n`+
+      `sign = ${sp.sign.join(" ")}\nangle_x = ${sp.angle_x}\nangle_y = ${sp.angle_y}\n`+
+      `angle_z = ${sp.angle_z}\nxy_face = ${sp.xy_face}\nmirror_point_cloud = ${sp.sex==="女"?1:1}\n\n`
+    : `# tcmP 三维极坐标语义张量 · 总览图注（可编辑文本）\n[球]\nname = 总览\n\n`;
+  return head + `[参数]\nrings = ${DATA.params.rings}\nseg = ${DATA.params.seg}\n`+
+    `azimuth_step_deg = ${DATA.params.azimuth_step_deg}\nelev_ticks_deg = ${DATA.params.elev_ticks_deg.join(",")}\n`+
+    `arrow_head = ${DATA.params.arrow_head}\ndot_iot = ${DATA.params.dot_iot}\n`+
+    `cloud_point_size = ${DATA.params.cloud_point_size}\nmarker_point_size = ${DATA.params.marker_point_size}\n`+
+    `iot_point_size = ${DATA.params.iot_point_size}\n`+
+    `cloud_alpha_rim = ${DATA.params.cloud_alpha_rim}\ncloud_alpha_face = ${DATA.params.cloud_alpha_face}\n`+
+    `view_elev_deg = ${DATA.params.view_elev_deg}\nview_azim_deg = ${DATA.params.view_azim_deg}\n\n`+
+    `[图注正文]\n${DATA.captions[k]||""}\n`;
+}
+function rebuildAll(){VIEWS.forEach(v=>v&&v.rebuild&&v.rebuild());}
+function download(name,txt){
+  const b=new Blob([txt],{type:"text/plain;charset=utf-8"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download=name; a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+}
+function exportAll(){
+  // 三球横向拼合导出（含 HTML 叠加层的轴名 / 刻度 / I-O-T 标签）
+  const dpr=Math.min(2,window.devicePixelRatio||1);
+  const w=VIEWS[0].cv.width, h=VIEWS[0].cv.height, gap=Math.round(14*dpr);
+  const cv=document.createElement("canvas"); cv.width=w*3+gap*2; cv.height=h;
+  const ctx=cv.getContext("2d"); ctx.fillStyle="#0b0e13"; ctx.fillRect(0,0,cv.width,cv.height);
+  VIEWS.forEach((v,i)=>ctx.drawImage(v.cv, i*(w+gap), 0, w, h));
+  ctx.textAlign="center"; ctx.textBaseline="middle";
+  VIEWS.forEach((v,i)=>{
+    const cr=v.cv.getBoundingClientRect();
+    const sx=v.cv.width/Math.max(1,cr.width), sy=v.cv.height/Math.max(1,cr.height);
+    v.stage.querySelectorAll(".lbl.dyn").forEach(el=>{
+      const st=getComputedStyle(el);
+      if(st.display==="none") return;
+      const r=el.getBoundingClientRect();
+      if(r.width===0) return;
+      const x=(r.x-cr.x+r.width/2)*sx + i*(w+gap);
+      const y=(r.y-cr.y+r.height/2)*sy;
+      const isAxis=el.classList.contains("axis");
+      const isIot=el.classList.contains("iot");
+      const px=isAxis?16*dpr:(isIot?13*dpr:13.5*dpr);
+      ctx.font=(isAxis?"bold ":"")+px+"px 'Microsoft YaHei',sans-serif";
+      ctx.fillStyle=st.color;
+      ctx.lineWidth=3*dpr; ctx.strokeStyle="rgba(0,0,0,.85)";
+      ctx.strokeText(el.textContent, x, y);
+      ctx.fillText(el.textContent, x, y);
+    });
+  });
+  const F=Math.round(17*dpr);
+  ctx.font=`bold ${F}px "Microsoft YaHei",sans-serif`;
+  ctx.textAlign="left";
+  DATA.spheres.forEach((sp,i)=>{
+    const x=i*(w+gap)+Math.round(16*dpr), y=Math.round(26*dpr);
+    ctx.lineWidth=4*dpr; ctx.strokeStyle="rgba(0,0,0,.85)";
+    ctx.strokeText(sp.no+sp.name, x, y); ctx.fillStyle="#ffffff"; ctx.fillText(sp.no+sp.name, x, y);
+  });
+  const note=`θ=仰角 θ∈[−90°,+90°]  φ=方位角 φ∈[0°,360°)  r=尺度∈(0,1]   X=r·cosθ·cosφ  Y=r·cosθ·sinφ  Z=r·sinθ`;
+  ctx.font=`${Math.round(14*dpr)}px "Microsoft YaHei",sans-serif`;
+  ctx.fillStyle="#93a1bd";
+  ctx.textAlign="left";
+  ctx.fillText(note, Math.round(16*dpr), h-Math.round(16*dpr));
+  const a=document.createElement("a");
+  a.href=cv.toDataURL("image/png"); a.download="母子父-三维极坐标语义球面-同步旋转.png"; a.click();
+}
+let last=performance.now();
+function loop(t){
+  const dt=(t-last)/1000; last=t;
+  if(window.__ST_STATE__.auto) CAM.azim += dt*0.20;
+  VIEWS.forEach(v=>v&&v.draw&&v.draw());
+  requestAnimationFrame(loop);
+}
+if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",boot); else boot();
+</script>
+</body>
+</html>

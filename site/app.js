@@ -13,6 +13,9 @@ const DATA = window.TCMAI_DATA;
 const CONTENT = window.TCMAI_CONTENT || {};
 const PATHS = window.TCMAI_PATHS || [];
 const GLOSSARY = window.TCMAI_GLOSSARY || {};
+// 语义张量计算核心（site/semtensor.js）。它必须在 app.js 之前加载 ——
+// 这里不做兜底实现：缺了它说明页面外壳的脚本顺序错了，应该直接暴露出来。
+const S = window.TCMSemTensor;
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -38,6 +41,7 @@ const NAV = [
   ['roadmap.html', '进度'],
   ['paths.html', '学习路径'],
   ['glossary.html', '术语表'],
+  ['semtensor.html', '语义张量'],
   ['about.html', '关于'],
 ];
 
@@ -625,6 +629,322 @@ node site/serve.js              # http://localhost:7788</code></pre>
 }
 
 // ── 路由 ──
+// ── 页面：语义张量（三维极坐标球面）────────────────────────────────────
+/**
+ * 数据集的单位 → 点云。
+ * 颜色一律由 build 期的数据集给出（colorDerived），页面**不自己算色** ——
+ * 页面重算就会出现「图上的颜色」与「测试断言的颜色」两套来源，
+ * 而它们迟早会不一致，且不一致时没有任何东西会报错。
+ */
+function semtensorUnits(which) {
+  const D = window.TCMAI_SEMTENSOR_DATA;
+  if (!D) return [];
+  // 默认用**源实现的 116 个真实单元**（103 病证 + 13 域级节点）。
+  // 自造的域映射只在源数据不可得时才用 —— 真实数据永远优先。
+  if (which === 'reference' || (!which && D.reference)) {
+    const KIND = { dsu: '病证单元', six_channel: '六经域', system: '四系统', treasure: '精气神' };
+    return D.reference.units.map((u) => ({
+      key: u.uid,
+      name: u.label,
+      theta: u.theta,
+      phi: u.phi,
+      r: u.r,
+      u: u.u,
+      degenerate: u.x === 0 && u.y === 0 && u.z === 0,
+      detail: `${KIND[u.kind] || u.kind}　三分量 (${u.x}, ${u.y}, ${u.z})　源色 ${u.colorSourceHex}` +
+        (u.colorMatch ? '' : `　⚠ 与按公理算出的 ${u.colorDerived} 不一致（见规范 §14.1）`),
+    }));
+  }
+  if (which === 'shanghan') {
+    return D.shanghan.episodes.map((e) => ({
+      key: e.code,
+      name: `S${e.juan} ${e.name}`,
+      theta: e.theta,
+      phi: e.phi,
+      r: e.r,
+      u: S.sphToCart(1, e.theta, e.phi),
+      detail: `域：${e.domain}　条数：${e.tiao}　时长：${(e.durationSec / 60).toFixed(1)} 分`,
+    }));
+  }
+  if (which === 'shanghan-domain') {
+    return D.shanghan.domains.map((d) => ({
+      key: `D${d.order}`,
+      name: `域 ${d.order}　${d.name}`,
+      theta: d.theta,
+      phi: d.phi,
+      r: d.r,
+      u: d.u,
+      detail: `${d.pianLike} 集　${d.tiao} 条　${(d.durationSec / 60).toFixed(0)} 分`,
+    }));
+  }
+  return D.neijing.domains.map((d) => ({
+    key: `N${d.order}`,
+    name: `${d.order}. ${d.name}`,
+    theta: d.theta,
+    phi: d.phi,
+    r: d.r,
+    u: d.u,
+    detail: `篇 ${d.pian} · 章 ${d.zhang} · 节 ${d.jie} · ${d.chars.toLocaleString()} 字（占比 ${d.share}%）`,
+  }));
+}
+
+function renderSemtensor() {
+  const D = window.TCMAI_SEMTENSOR_DATA;
+  if (!D) {
+    return shell('semtensor.html', '语义张量', `
+<h1>三维极坐标语义张量</h1>
+<div class="notice">数据集未生成。请先运行 <code>node scripts/build_semtensor_datasets.js</code> 与 <code>node site/build.js</code>。</div>`);
+  }
+
+  const anns = window.TCMAI_SEMTENSOR_ANNOTATIONS || {};
+  const annKeys = Object.keys(anns);
+  const firstAnn = anns['图注-总览.txt'] || window.TCMSphere.DEFAULT_ANNOTATION;
+
+  const axisRows = ['X', 'Y', 'Z'].map((a) => {
+    const ax = S.SPEC.axes[a];
+    return `<tr>
+      <td class="mono">${a}</td>
+      <td>${esc(ax.name)}<div class="small muted">${esc(ax.direction)}</div></td>
+      <td><span class="swatch" style="background:${ax.i.hex}"></span><span class="mono small">${ax.i.hex}</span><div class="small muted">${esc(ax.i.semantic)} · ${ax.i.nm}nm</div></td>
+      <td><span class="swatch" style="background:${ax.o.hex}"></span><span class="mono small">${ax.o.hex}</span><div class="small muted">${esc(ax.o.semantic)} · ${ax.o.nm}nm</div></td>
+      <td><span class="swatch" style="background:${ax.t.hex}"></span><span class="mono small">${ax.t.hex}</span><div class="small muted">${esc(ax.t.semantic)} · ${ax.t.nm}nm</div></td>
+    </tr>`;
+  }).join('');
+
+  const njRows = D.neijing.domains.map((d) => `<tr>
+      <td class="mono">${d.order}</td>
+      <td>${esc(d.name)}</td>
+      <td class="mono">${d.pian}</td>
+      <td class="mono">${d.zhang}</td>
+      <td class="mono">${d.jie}</td>
+      <td class="mono">${d.chars.toLocaleString()}</td>
+      <td class="mono">${d.theta.toFixed(1)}°</td>
+      <td class="mono">${d.phi}°</td>
+      <td class="mono">${d.r.toFixed(2)}</td>
+      <td><span class="swatch" style="background:${d.colorDerived}"></span><span class="mono small">${d.colorDerived}</span></td>
+    </tr>`).join('');
+
+  const shRows = D.shanghan.domains.map((d) => `<tr>
+      <td class="mono">${d.order}</td>
+      <td>${esc(d.name)}</td>
+      <td class="mono">${d.pianLike}</td>
+      <td class="mono">${d.tiao}</td>
+      <td class="mono">${(d.durationSec / 60).toFixed(0)}</td>
+      <td class="mono">${d.theta.toFixed(1)}°</td>
+      <td class="mono">${d.phi.toFixed(1)}°</td>
+      <td class="mono">${d.r.toFixed(2)}</td>
+      <td><span class="swatch" style="background:${d.colorDerived}"></span><span class="mono small">${d.colorDerived}</span></td>
+    </tr>`).join('');
+
+  const mismatch = D.shanghan.episodes.filter((e) => !e.colorMatch).length;
+
+  return shell('semtensor.html', '语义张量', `
+<h1>三维极坐标语义张量 · 颜色赋值</h1>
+<p class="lede">方向承载语义、尺度承载张量、<strong>颜色即坐标的函数</strong>。同一片色区就是同一类语义 ——
+不是装饰，而是可被机器断言的量。规范见 <code>standards/semtensor/</code>，计算核心 <code>site/semtensor.js</code>，
+硬证据 <code>tests/test_semtensor.js</code>（44 项）。</p>
+
+<div class="card">
+  <div class="card-title">◉ 交互球面：母子父三球同步旋转</div>
+  <div class="controls">
+    <label class="small muted">数据集
+      <select id="st-which">
+        <option value="reference">源实现 · 116 个真实语义单元</option>
+        <option value="neijing">内经 12 语义域</option>
+        <option value="shanghan-domain">伤寒论 9 域</option>
+        <option value="shanghan">伤寒论 28 集</option>
+      </select>
+    </label>
+    <button id="st-apply" class="btn">应用图注并重绘</button>
+    <label class="small muted">载入图注
+      <select id="st-anno">
+        ${annKeys.map((k) => `<option value="${esc(k)}">${esc(k)}</option>`).join('')}
+      </select>
+    </label>
+    <button id="st-reset" class="btn">复位视角 (θ 20° / φ −60°)</button>
+    <span class="small muted">拖动任一球即可旋转；三球共用一个相机，天然同步。</span>
+  </div>
+
+  <div class="st-layout">
+    <div id="st-view" style="flex:1 1 620px;min-width:300px"></div>
+    <div style="flex:0 1 320px;min-width:250px">
+      <div class="card" style="margin:0 0 10px">
+        <div class="card-title small">读数（悬停任一点）</div>
+        <div id="st-readout" class="small muted">把鼠标移到球面上的语义点上。</div>
+      </div>
+      <div class="card" style="margin:0">
+        <div class="card-title small">图注（可编辑 · 改文本即改图）</div>
+        <textarea id="st-anno-text" class="anno-text" spellcheck="false">${esc(firstAnn)}</textarea>
+        <div id="st-params" class="small muted mono" style="margin-top:6px"></div>
+      </div>
+    </div>
+  </div>
+  <div class="small muted" style="margin-top:10px">
+    画布内不出现汉字（规范 §8）：球面图只标 X/Y/Z、I/O/T、θ/φ 数字与圈号 ①②③；
+    域名单与口径说明全部下沉到图注与本页表格。
+  </div>
+</div>
+
+<h2>轴端色表</h2>
+<p class="small muted">端色基准 = 可见光波长序段中位数（序段跨度 50nm）。O 点三轴共有，基准色是<strong>绿 <span class="mono">${S.SPEC.origin.hex}</span></strong>（533nm），不是灰。</p>
+<table class="data-table">
+  <thead><tr><th>轴</th><th>语义</th><th>I (−1)</th><th>O (0)</th><th>T (+1)</th></tr></thead>
+  <tbody>${axisRows}</tbody>
+</table>
+
+<h2>颜色公理</h2>
+<div class="card mono small" style="line-height:1.9">
+  单轴渐变 ramp(t, 轴)：在 [−1, 0, +1] 三色间逐通道线性插值<br/>
+  w<sub>i</sub> = clip(|v<sub>i</sub>|, 0, 1)　；　k = max(w<sub>i</sub>)<br/>
+  C = (1 − k)·绿 + k·( Σ w<sub>i</sub>·c<sub>i</sub> / Σ w<sub>i</sub> )
+</div>
+<p class="small muted">性质：O 点任意轴都回到基准绿（O 点任意轴都回到基准绿 <span class="mono">comp(0,0,0) = ${S.compHex(0, 0, 0)}</span>）；
+三轴同强时趋向三端色的加权混合；镜像不变色；对符号敏感（v 与 −v 必异色）。
+<strong>颜色取方向不取尺度</strong> —— 否则「尺度伸缩不改色」不成立，见规范 §4.1。</p>
+
+<h2>源实现 · 116 个真实语义单元（103 病证 + 六经域 6 + 四系统 4 + 精气神 3）</h2>
+<p class="small muted">数据取自源实现交付物 <code>standards/semtensor/sources/</code> 内嵌的 <code>DATA.units</code>，
+原样入库、不做二次加工。<strong>这是真实数据，站点默认用它</strong>；
+下方「内经 12 语义域」的球面映射是本仓库的本地约定，只在源数据不可得时才用。</p>
+<table class="data-table">
+  <thead><tr><th>序号</th><th>语义单元</th><th>类型</th><th>三分量 (x, y, z)</th><th>r 尺度</th><th>θ 仰角</th><th>φ 方位</th><th>合成色（公理）</th><th>源色</th></tr></thead>
+  <tbody>${D.reference.units
+    .slice()
+    .sort((a, b) => b.r - a.r)
+    .slice(0, 24)
+    .map((u, i) => `<tr>
+      <td class="mono">${i + 1}</td>
+      <td>${esc(u.label)}</td>
+      <td class="small muted">${esc(({ dsu: '病证', six_channel: '六经域', system: '四系统', treasure: '精气神' })[u.kind] || u.kind)}</td>
+      <td class="mono small">${u.x.toFixed(2)}, ${u.y.toFixed(2)}, ${u.z.toFixed(2)}</td>
+      <td class="mono">${u.r.toFixed(3)}</td>
+      <td class="mono">${u.theta.toFixed(2)}°</td>
+      <td class="mono">${u.phi.toFixed(2)}°</td>
+      <td><span class="swatch" style="background:${u.colorDerived}"></span><span class="mono small">${u.colorDerived}</span></td>
+      <td><span class="swatch" style="background:${u.colorSourceHex}"></span><span class="mono small">${u.colorSourceHex}</span>${u.colorMatch ? '' : ' <span class="small muted">≠</span>'}</td>
+    </tr>`).join('')}</tbody>
+</table>
+<p class="small muted">按 r 降序显示前 24 条（共 ${D.reference.unitCount} 条）。
+「合成色」是按本仓库颜色公理算出的值，「源色」是源系统 <code>hex</code> 字段的原值 ——
+<strong>实测二者仅 2/${D.reference.unitCount} 一致</strong>，原因见规范 §14.1（源的元数据与源页面本身也不一致）。</p>
+
+<h2>内经 12 语义域（篇／章／节／字数取自《人类生命公理文本》总纲表）</h2>
+<table class="data-table">
+  <thead><tr><th>内序</th><th>语义域</th><th>篇</th><th>章</th><th>节</th><th>字数</th><th>θ 仰角</th><th>φ 方位</th><th>r 尺度</th><th>合成色</th></tr></thead>
+  <tbody>${njRows}</tbody>
+  <tfoot><tr><th colspan="2">合计</th><th class="mono">${D.neijing.totals.pian}</th><th class="mono">${D.neijing.totals.zhang}</th><th class="mono">${D.neijing.totals.jie}</th><th class="mono">${D.neijing.totals.chars.toLocaleString()}</th><th colspan="4"></th></tr></tfoot>
+</table>
+<p class="small muted">球面映射：${esc(D.neijing.mapping.theta)}；${esc(D.neijing.mapping.phi)}；${esc(D.neijing.mapping.r)}。
+<strong>这是本仓库的域级本地约定，非规范原文</strong>（§14.2）。</p>
+
+<h2>伤寒论 9 域（28 集 · ${(D.shanghan.episodes.reduce((a, e) => a + (e.durationSec || 0), 0) / 60).toFixed(0)} 分钟）</h2>
+<table class="data-table">
+  <thead><tr><th>序</th><th>域</th><th>集数</th><th>条数</th><th>分钟</th><th>θ 仰角</th><th>φ 方位</th><th>r 尺度</th><th>合成色</th></tr></thead>
+  <tbody>${shRows}</tbody>
+</table>
+
+<div class="notice">
+  <strong>待裁定项（实测发现，不掩盖）：</strong>
+  源目录 <code>SHL_目录.json</code> 里每集自带的「色」<strong>无法用本规范的颜色公理复现</strong> ——
+  实测 ${mismatch}/${D.shanghan.episodes.length} 不一致。源系统的配色算法只存在于
+  <code>docs/axis_color.py</code>（本机不可得）。因此本仓库<strong>同时保留两列</strong>：
+  <code>colorSource</code>（源值，原样）与 <code>colorDerived</code>（按公理算出）；
+  本页与测试一律使用 <code>colorDerived</code>，<strong>不声称复现了源系统的配色</strong>。
+  详见规范 §14.1。
+</div>
+
+<div class="notice">
+  免责：本页与全部球面图仅用于教育与科研，<strong>不构成临床诊疗建议</strong>。
+  语义域的位置与颜色是工程化的表示约定，不是医学判断。
+</div>`);
+}
+
+/** 语义张量页接线：挂载球面视图、数据集切换、图注实例化三条通道 */
+function bindSemtensor() {
+  const view = document.getElementById('st-view');
+  if (!view || !window.TCMSphere || !window.TCMAI_SEMTENSOR_DATA) return;
+
+  const readout = document.getElementById('st-readout');
+  const annoText = document.getElementById('st-anno-text');
+  const paramsBox = document.getElementById('st-params');
+  const whichSel = document.getElementById('st-which');
+  const annoSel = document.getElementById('st-anno');
+  const D = window.TCMAI_SEMTENSOR_DATA;
+
+  let handle = null;
+
+  const showParams = () => {
+    if (!paramsBox || !handle) return;
+    const p = handle.getParams();
+    const cam = handle.getCamera();
+    paramsBox.textContent =
+      `rings=${p.rings} seg=${p.seg} azimuth_step=${p.azimuth_step_deg}° ` +
+      `alpha=${p.cloud_alpha_face}…${p.cloud_alpha_rim} ` +
+      `view=θ${cam.elevDeg.toFixed(0)}°/φ${cam.azimDeg.toFixed(0)}°`;
+  };
+
+  const mount = (which) => {
+    if (handle) {
+      // 换数据集只重建点云，保留当前视角与图注参数
+      const p = handle.getParams();
+      handle = window.TCMSphere.render(view, {
+        units: semtensorUnits(which),
+        readout,
+        annotation: handle.getAnnotation(),
+      });
+      handle.applyAnnotation(handle.getAnnotation());
+      handle.setView(p.view_elev_deg, p.view_azim_deg);
+    } else {
+      handle = window.TCMSphere.render(view, {
+        units: semtensorUnits(which),
+        readout,
+        annotation: annoText ? annoText.value : undefined,
+        onView: showParams,
+      });
+    }
+    showParams();
+  };
+
+  mount(whichSel ? whichSel.value : 'reference');
+
+  if (whichSel) {
+    whichSel.addEventListener('change', () => mount(whichSel.value));
+  }
+
+  if (document.getElementById('st-apply') && annoText) {
+    document.getElementById('st-apply').addEventListener('click', () => {
+      handle.applyAnnotation(annoText.value);
+      showParams();
+    });
+  }
+
+  // 通道 3：HTTP 环境下先取同目录 图注-*.txt；file:// 或取不到时用构建期注入的文本
+  if (annoSel && annoText) {
+    annoSel.addEventListener('change', async () => {
+      const name = annoSel.value;
+      let text = (window.TCMAI_SEMTENSOR_ANNOTATIONS || {})[name] || '';
+      if (location.protocol && location.protocol.startsWith('http')) {
+        try {
+          const r = await fetch(`standards/semtensor/annotations/${encodeURIComponent(name)}`);
+          if (r.ok) text = await r.text();
+        } catch { /* 取不到就用注入文本，不报错中断 */ }
+      }
+      if (text) {
+        annoText.value = text;
+        handle.applyAnnotation(text);
+        showParams();
+      }
+    });
+  }
+
+  if (document.getElementById('st-reset')) {
+    document.getElementById('st-reset').addEventListener('click', () => {
+      handle.setView(20, -60);
+      showParams();
+    });
+  }
+}
+
 const ROUTES = {
   index: renderIndex,
   catalog: renderCatalog,
@@ -633,6 +953,7 @@ const ROUTES = {
   roadmap: renderRoadmap,
   paths: renderPaths,
   glossary: renderGlossary,
+  semtensor: renderSemtensor,
   about: renderAbout,
 };
 
@@ -647,6 +968,7 @@ function boot() {
     bindQuiz(key);
     bindLab();
   }
+  if (page === 'semtensor') bindSemtensor();
   if (page === 'catalog') {
     const dept = $('#f-dept');
     const sem = $('#f-sem');

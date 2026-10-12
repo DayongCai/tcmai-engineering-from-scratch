@@ -216,6 +216,21 @@ button.btn:hover { opacity: .9; }
 }
 .figure-host svg { display: block; }
 
+/* ── 语义张量：三维极坐标球面视图 ── */
+.st-layout { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-start; }
+.sphere-grid-3 svg { background: linear-gradient(180deg, #fffdf8 0%, #faf7f0 100%); border: 1px solid var(--line); border-radius: 10px; }
+.anno-text {
+  width: 100%; min-height: 240px; resize: vertical;
+  font-family: var(--mono); font-size: 11px; line-height: 1.55;
+  border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px;
+  background: var(--paper-2); color: inherit;
+}
+.data-table { border-collapse: collapse; width: 100%; font-size: 13px; margin: 10px 0 16px; }
+.data-table th, .data-table td { border: 1px solid var(--line); padding: 5px 8px; text-align: left; vertical-align: top; }
+.data-table thead th { background: var(--paper-2); font-weight: 600; }
+.data-table tfoot th { background: var(--paper-2); }
+.swatch { display: inline-block; width: 13px; height: 13px; border-radius: 3px; border: 1px solid rgba(0,0,0,.18); vertical-align: -2px; margin-right: 5px; }
+
 /* ── 章节页内嵌视频播放器 ── */
 .lesson-video { width: 100%; max-width: 960px; aspect-ratio: 16 / 9; background: #000; border-radius: 10px; display: block; }
 .video-card .card-title { margin-bottom: 10px; }

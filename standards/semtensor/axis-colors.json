@@ -1,0 +1,146 @@
+{
+  "$schema": "tcmai/semtensor/axis-colors@1.0",
+  "note": "三维极坐标语义张量的颜色公理常量。单一来源 —— 站点、图注、文档一律读此文件，不得复制常量。",
+  "source": "standards/semtensor/规范-三维极坐标语义张量-v1.0.md §3 §4",
+  "coordinateSystem": {
+    "authoritative": "v1.0-elevation",
+    "r": { "min": 0.0, "max": 1.0, "open": "下限不含 0（r∈(0,1]）" },
+    "theta": { "meaning": "仰角 elevation", "unit": "deg", "min": -90, "max": 90, "note": "赤道 0，天顶 +90，天底 −90" },
+    "phi": { "meaning": "方位角 azimuth", "unit": "deg", "min": 0, "max": 360, "note": "自 +X 轴起算，绕 +Z 轴逆时针，区间半开" },
+    "sphereToCartesian": "X = r·cosθ·cosφ ; Y = r·cosθ·sinφ ; Z = r·sinθ",
+    "cartesianToSphere": "r = |v| ; θ = asin(Z/r) ; φ = atan2(Y, X)",
+    "legacyPolarAngle": {
+      "note": "旧稿（《中医药领域语义向量极坐标表示.docx》第 03/05 节）以 θ 为极角 0–180°，公式 X = r·sinθ·cosφ, Y = r·sinθ·sinφ, Z = r·cosθ。",
+      "conversion": "θ_仰角 = 90° − θ_极角 ; φ 不变",
+      "examples": ["旧稿「赤道 θ=90°」→「θ=0」", "旧稿「北极 θ=0°」→「θ=+90°」", "旧稿「南极 θ=180°」→「θ=−90°」"]
+    }
+  },
+  "visibleSpectrum": {
+    "note": "端色基准 = 可见光波长序段中位数。序段跨度 50nm。",
+    "bands": [
+      { "order": 0, "name": "红外", "nm": null, "nmBound": ">750", "ev": "<1.80" },
+      { "order": 1, "name": "红", "nm": 685, "ev": 1.81, "hex": "#DB1C1C" },
+      { "order": 2, "name": "橙", "nm": 605, "ev": 2.05, "hex": "#FF8C00" },
+      { "order": 3, "name": "黄", "nm": 578, "ev": 2.15, "hex": "#F2C200" },
+      { "order": 4, "name": "绿", "nm": 533, "ev": 2.33, "hex": "#00B050" },
+      { "order": 5, "name": "青", "nm": 493, "ev": 2.52, "hex": "#00C7C7" },
+      { "order": 6, "name": "蓝", "nm": 458, "ev": 2.65, "hex": "#1F61D9" },
+      { "order": 7, "name": "紫", "nm": 415, "ev": 2.99, "hex": "#8A2BE2" },
+      { "order": 8, "name": "紫外", "nm": null, "nmBound": "<350", "ev": ">3.00" },
+      { "order": 9, "name": "白光", "nm": 560, "ev": 2.21 }
+    ]
+  },
+  "origin": {
+    "label": "O 原点基准色",
+    "name": "绿",
+    "nm": 533,
+    "ev": 2.33,
+    "hex": "#00B050",
+    "rgb01": [0.0, 0.6901960784313725, 0.3137254901960784],
+    "note": "O 点三轴共有，基准色是绿不是灰。归零时任意轴都回到此色。"
+  },
+  "axes": {
+    "X": {
+      "n": 0,
+      "name": "阴阳轴",
+      "direction": "左右",
+      "i": { "value": -1, "semantic": "阴", "band": "橙", "nm": 605, "hex": "#FF8C00" },
+      "o": { "value": 0, "semantic": "中（阴阳平和）", "band": "绿", "nm": 533, "hex": "#00B050" },
+      "t": { "value": 1, "semantic": "阳", "band": "紫", "nm": 415, "hex": "#8A2BE2" }
+    },
+    "Y": {
+      "n": 1,
+      "name": "表里轴",
+      "direction": "前后",
+      "i": { "value": -1, "semantic": "表", "band": "蓝", "nm": 458, "hex": "#1F61D9" },
+      "o": { "value": 0, "semantic": "半表半里", "band": "绿", "nm": 533, "hex": "#00B050" },
+      "t": { "value": 1, "semantic": "里", "band": "红", "nm": 685, "hex": "#DB1C1C" }
+    },
+    "Z": {
+      "n": 2,
+      "name": "精气神轴",
+      "direction": "足→首",
+      "i": { "value": -1, "semantic": "精（形质）", "band": "黄", "nm": 578, "hex": "#F2C200" },
+      "o": { "value": 0, "semantic": "气（能量）", "band": "绿", "nm": 533, "hex": "#00B050" },
+      "t": { "value": 1, "semantic": "神（神志情志）", "band": "青", "nm": 493, "hex": "#00C7C7" }
+    }
+  },
+  "mirror": {
+    "note": "母子父三球共用同一张轴色表。几何位置与取色坐标的整体镜像使同一语义单元在三球上同色。",
+    "spheres": [
+      { "n": 1, "name": "母", "sex": "女", "sign": [-1, -1, 1], "angleX": 180, "angleY": 135, "angleZ": 90, "xyFaceRad": "3π/4" },
+      { "n": 2, "name": "子", "sex": "男", "sign": [1, 1, 1], "angleX": 0, "angleY": 45, "angleZ": 90, "xyFaceRad": "π/4" },
+      { "n": 3, "name": "父", "sex": "男", "sign": [1, 1, 1], "angleX": 0, "angleY": 45, "angleZ": 90, "xyFaceRad": "π/4" }
+    ],
+    "rule": "几何位置 = M(sex)·n̂ ；取色坐标 = M(sex)·(M(sex)·n̂) = n̂ ⇒ 三球同色"
+  },
+  "renderSpec": {
+    "defaultView": { "elevDeg": 20, "azimDeg": -60 },
+    "grid": { "rings": 45, "seg": 70, "vertices": 3152, "faces": 6300, "edges": 9450, "note": "DDG 闭合单位球，必须补极点顶点与三角扇" },
+    "cloud": { "pointSizePx": 9, "depthShade": false, "note": "颜色即数据，不被深度调淡" },
+    "depth": { "alphaRim": 0.95, "alphaFace": 0.30, "note": "透明度由离散法向驱动：|n·v|→0 最不透明，正对观察者处最透明" },
+    "azimuth": { "stepDeg": 30, "note": "赤道环每 30° 一刻度并标数值，仅可见半球" },
+    "axesRender": { "pipeRadius": 0.0085, "arrowHeadHalfAngleDeg": 13, "segments": 2, "points": ["I", "O", "T"] },
+    "canvasRule": "画布内不出现汉字：只用 X/Y/Z、θ/φ 数字与圈号 ①②③；汉字母语全部下沉图注"
+  },
+  "tensorSimilarity": {
+    "cosDelta": "sinθ₁·sinθ₂ + cosθ₁·cosθ₂·cos(φ₁−φ₂)",
+    "scaleSim": "min(r₁,r₂)/max(r₁,r₂)",
+    "colorDiff": "ΔRGB/√3 （归一 0–1）",
+    "S_T": "0.65·(cosΔ+1)/2 + 0.15·尺度相似 + 0.20·(1−色差)"
+  },
+  "scale": { "formula": "r' = clip(r × gain, 0.05, 1.00)", "note": "方向与颜色不变" },
+
+  "sourceImplementation": {
+    "note": "源实现（交付物 02）已入库：standards/semtensor/sources/。本节记录它比书面规范多出来的常量 —— 书面规范只给出了部分呈现参数。",
+    "file": "standards/semtensor/sources/母子父-三维极坐标语义球面-同步旋转.html",
+    "params": {
+      "rings": 45,
+      "seg": 70,
+      "figure_mm": [198.0, 98.0],
+      "dpi": 240,
+      "axis_label_size": 9.0,
+      "tick_size": 7.0,
+      "arrow_head": 6.5,
+      "dot_iot": 1.7,
+      "dot_edge": 0.35,
+      "dot_O": 1.8,
+      "cloud_point_size": 4.0,
+      "marker_point_size": 32.0,
+      "iot_point_size": 26.0,
+      "cloud_alpha_face": 0.3,
+      "cloud_alpha_rim": 0.95,
+      "marker_alpha_face": 0.72,
+      "marker_alpha_rim": 1.0,
+      "azimuth_step_deg": 30.0,
+      "elev_ticks_deg": [-60.0, -30.0, 0.0, 30.0, 60.0],
+      "view_elev_deg": 20.0,
+      "view_azim_deg": -60.0,
+      "meridian_phi_deg": [0.0, 180.0],
+      "yinyang_circle_phi_deg": [90.0, 270.0]
+    },
+    "arrowHeadNote": "书面规范 §7 写「箭头锥半顶角约 13°」，而源实现的参数是 `arrow_head = 6.5`（量纲不符合角度）。本仓库按书面规范取 13°，并在图注里允许用箭注 `arrow_head` 覆盖。二者命名相同但含义不同，是待裁定项之一。",
+    "elevationTicksNote": "源实现在仰角上也画刻度（elev_ticks_deg = −60/−30/0/30/60），书面规范只规定了方位刻度。本仓库暂只实现方位刻度。",
+    "ruling": "θ = 仰角 elevation ∈ [−90°,+90°] ; φ = 方位角 azimuth ∈ [0°,360°) ; X = r·cosθ·cosφ , Y = r·cosθ·sinφ , Z = r·sinθ",
+    "mirrorMap": { "男": [1, 1, 1], "女": [-1, -1, 1] }
+  },
+
+  "knownDiscrepancies": {
+    "colorAxiomIsUnderdefined": {
+      "summary": "书面规范的颜色公理 `C = (1−k)·绿 + k·(Σ w_i·c_i / Σ w_i)` 没有定义 c_i。",
+      "readings": {
+        "A_endpoint": "c_i = 该轴在 sign(v_i) 一侧的端色（纯色）",
+        "B_ramp": "c_i = ramp(v_i, 轴)（该分量取值处的插值色）—— 源实现 HTML 里的 JS comp() 用的是这一读法"
+      },
+      "measurement": "对着源数据 116 个单元实测：A 读法 2/116 吻合，B 读法 2/116 吻合。两者在 |v_i| = 1 的单轴点上相同（精 #F2C200、神 #00C7C7 命中），其余全部不一致。",
+      "conclusion": "源实现自身存在两条互不相符的取色路径：DATA.units[].hex 由 Python 编码器（kg/semtensor/axioms.py + encoder.py）产出，而页面渲染时用 JS comp() 重算、并**忽略** u.hex 字段。两条路径在同一份数据上给出不同颜色 ⇒ 不能声称本仓库复现了源系统的配色。",
+      "verification": "scripts/verify_semtensor_axiom.js（可复核，不需要目视）"
+    },
+    "degenerateUnitInRealData": {
+      "summary": "源数据的「气」节点 x=y=z=0 —— 正是书面规范未定义的三轴全零情形。",
+      "sourceValue": "源 hex = #00C7C7（Z 轴 T 端青）",
+      "axiomValue": "按公理应回基准绿 #00B050",
+      "note": "源数据在该点与自身公理不一致。本仓库对退化情形取「基准绿 + degenerate 标记 + 空心点」（见规范 §5.1），与源数据不同，也不假装相同。"
+    }
+  }
+}

@@ -1,0 +1,909 @@
+{
+  "generatedBy": "scripts/build_semtensor_datasets.js",
+  "source": "standards/semtensor/datasets/shl-episodes.source.json（伤寒论底本 28 集目录）",
+  "convention": "v1.0-elevation；源数据为代码口径（θ=方位角/φ=仰角），已显式换算并保留 source 字段",
+  "colorNote": "colorSource 为源系统值，colorDerived 为本仓库按规范公理算出的值；实测二者 28/28 不一致，见规范 §14.1（待裁定项）",
+  "episodes": [
+    {
+      "code": "S00",
+      "juan": "00",
+      "name": "目录·序跋",
+      "domain": "序跋·目录",
+      "tiao": 27,
+      "durationSec": 62.42,
+      "file": "SHL_00_目录·序跋.mp4",
+      "source": {
+        "theta": -180,
+        "phi": -48.6,
+        "u": [
+          -0.662,
+          0,
+          -0.7495
+        ],
+        "color": "#84AD26"
+      },
+      "theta": -48.6,
+      "phi": 180,
+      "r": 1,
+      "colorSource": "#84AD26",
+      "colorDerived": "#BAAB14",
+      "colorMatch": false
+    },
+    {
+      "code": "S01",
+      "juan": "01",
+      "name": "（序跋·题署·目录）",
+      "domain": "序跋·目录",
+      "tiao": 90,
+      "durationSec": 1526.58,
+      "file": "SHL_01_(序跋·题署·目录).mp4",
+      "source": {
+        "theta": -172,
+        "phi": -21.8,
+        "u": [
+          -0.9192,
+          -0.1292,
+          -0.372
+        ],
+        "color": "#A19D1F"
+      },
+      "theta": -21.8,
+      "phi": 188,
+      "r": 1,
+      "colorSource": "#A19D1F",
+      "colorDerived": "#D59819",
+      "colorMatch": false
+    },
+    {
+      "code": "S02",
+      "juan": "02",
+      "name": "辨痉湿暍脉证",
+      "domain": "脉法·伤寒例",
+      "tiao": 61,
+      "durationSec": 957.92,
+      "file": "SHL_02_辨痉湿暍脉证.mp4",
+      "source": {
+        "theta": -150,
+        "phi": -34.1,
+        "u": [
+          -0.7168,
+          -0.4139,
+          -0.5611
+        ],
+        "color": "#5AA53E"
+      },
+      "theta": -34.1,
+      "phi": 210,
+      "r": 1,
+      "colorSource": "#5AA53E",
+      "colorDerived": "#8C9B3D",
+      "colorMatch": false
+    },
+    {
+      "code": "S03",
+      "juan": "03",
+      "name": "辨太阳病脉证并治上",
+      "domain": "太阳病",
+      "tiao": 14,
+      "durationSec": 182.17,
+      "file": "SHL_03_辨太阳病脉证并治上.mp4",
+      "source": {
+        "theta": 90,
+        "phi": -54.1,
+        "u": [
+          0,
+          0.5869,
+          -0.8097
+        ],
+        "color": "#889927"
+      },
+      "theta": -54.1,
+      "phi": 90,
+      "r": 1,
+      "colorSource": "#889927",
+      "colorDerived": "#BC8619",
+      "colorMatch": false
+    },
+    {
+      "code": "S04",
+      "juan": "04",
+      "name": "辨太阳病脉证并治（提纲起",
+      "domain": "太阳病",
+      "tiao": 78,
+      "durationSec": 670.92,
+      "file": "SHL_04_辨太阳病脉证并治(提纲起.mp4",
+      "source": {
+        "theta": 98,
+        "phi": -26.9,
+        "u": [
+          -0.1241,
+          0.8829,
+          -0.4528
+        ],
+        "color": "#886C2D"
+      },
+      "theta": -26.9,
+      "phi": 98,
+      "r": 1,
+      "colorSource": "#886C2D",
+      "colorDerived": "#CA6318",
+      "colorMatch": false
+    },
+    {
+      "code": "S05",
+      "juan": "05",
+      "name": "辨太阳病脉证并治中",
+      "domain": "太阳病",
+      "tiao": 283,
+      "durationSec": 2593.08,
+      "file": "SHL_05_辨太阳病脉证并治中.mp4",
+      "source": {
+        "theta": 106,
+        "phi": 60,
+        "u": [
+          -0.1378,
+          0.4806,
+          0.866
+        ],
+        "color": "#20A67C"
+      },
+      "theta": 60,
+      "phi": 106,
+      "r": 1,
+      "colorSource": "#20A67C",
+      "colorDerived": "#528F77",
+      "colorMatch": false
+    },
+    {
+      "code": "S06",
+      "juan": "06",
+      "name": "辨太阳病脉证并治下",
+      "domain": "太阳病",
+      "tiao": 191,
+      "durationSec": 1674.58,
+      "file": "SHL_06_辨太阳病脉证并治下.mp4",
+      "source": {
+        "theta": 114,
+        "phi": 21,
+        "u": [
+          -0.3797,
+          0.8529,
+          0.3582
+        ],
+        "color": "#69753E"
+      },
+      "theta": 21,
+      "phi": 114,
+      "r": 1,
+      "colorSource": "#69753E",
+      "colorDerived": "#98693F",
+      "colorMatch": false
+    },
+    {
+      "code": "S07",
+      "juan": "07",
+      "name": "辨阳明病脉证并治",
+      "domain": "阳明病",
+      "tiao": 1,
+      "durationSec": 15.67,
+      "file": "SHL_07_辨阳明病脉证并治.mp4",
+      "source": {
+        "theta": 60,
+        "phi": -59.6,
+        "u": [
+          0.2532,
+          0.4386,
+          -0.8623
+        ],
+        "color": "#80A32F"
+      },
+      "theta": -59.6,
+      "phi": 60,
+      "r": 1,
+      "colorSource": "#80A32F",
+      "colorDerived": "#BC8232",
+      "colorMatch": false
+    },
+    {
+      "code": "S08",
+      "juan": "08",
+      "name": "辨少阳病脉证并治",
+      "domain": "少阳病",
+      "tiao": 43,
+      "durationSec": 454.67,
+      "file": "SHL_08_辨少阳病脉证并治.mp4",
+      "source": {
+        "theta": 30,
+        "phi": -41.8,
+        "u": [
+          0.6459,
+          0.3729,
+          -0.6661
+        ],
+        "color": "#4D9557"
+      },
+      "theta": -41.8,
+      "phi": 30,
+      "r": 1,
+      "colorSource": "#4D9557",
+      "colorDerived": "#837D59",
+      "colorMatch": false
+    },
+    {
+      "code": "S09",
+      "juan": "09",
+      "name": "辨阳明病脉证并治（提纲起",
+      "domain": "阳明病",
+      "tiao": 133,
+      "durationSec": 1285.17,
+      "file": "SHL_09_辨阳明病脉证并治(提纲起.mp4",
+      "source": {
+        "theta": 68,
+        "phi": -3.6,
+        "u": [
+          0.3739,
+          0.9253,
+          -0.0629
+        ],
+        "color": "#8D4D3F"
+      },
+      "theta": -3.6,
+      "phi": 68,
+      "r": 1,
+      "colorSource": "#8D4D3F",
+      "colorDerived": "#B73251",
+      "colorMatch": false
+    },
+    {
+      "code": "S10",
+      "juan": "10",
+      "name": "辨少阳病脉证并治",
+      "domain": "少阳病",
+      "tiao": 2,
+      "durationSec": 28.83,
+      "file": "SHL_10_辨少阳病脉证并治.mp4",
+      "source": {
+        "theta": 38,
+        "phi": -59.2,
+        "u": [
+          0.4041,
+          0.3157,
+          -0.8585
+        ],
+        "color": "#79A33A"
+      },
+      "theta": -59.2,
+      "phi": 38,
+      "r": 1,
+      "colorSource": "#79A33A",
+      "colorDerived": "#B58242",
+      "colorMatch": false
+    },
+    {
+      "code": "S11",
+      "juan": "11",
+      "name": "辨少阳病脉证并治（提纲起",
+      "domain": "少阳病",
+      "tiao": 19,
+      "durationSec": 104.92,
+      "file": "SHL_11_辨少阳病脉证并治(提纲起.mp4",
+      "source": {
+        "theta": 46,
+        "phi": -51.9,
+        "u": [
+          0.4282,
+          0.4434,
+          -0.7874
+        ],
+        "color": "#689C40"
+      },
+      "theta": -51.9,
+      "phi": 46,
+      "r": 1,
+      "colorSource": "#689C40",
+      "colorDerived": "#A57D45",
+      "colorMatch": false
+    },
+    {
+      "code": "S12",
+      "juan": "12",
+      "name": "辨太阴病脉证并治",
+      "domain": "太阴病",
+      "tiao": 7,
+      "durationSec": 28,
+      "file": "SHL_12_辨太阴病脉证并治.mp4",
+      "source": {
+        "theta": 0,
+        "phi": -57,
+        "u": [
+          0.5442,
+          0,
+          -0.839
+        ],
+        "color": "#80A048"
+      },
+      "theta": -57,
+      "phi": 0,
+      "r": 1,
+      "colorSource": "#80A048",
+      "colorDerived": "#A98D57",
+      "colorMatch": false
+    },
+    {
+      "code": "S13",
+      "juan": "13",
+      "name": "辨霍乱病脉证并治",
+      "domain": "霍乱·差后劳复",
+      "tiao": 1,
+      "durationSec": 17.58,
+      "file": "SHL_13_辨霍乱病脉证并治.mp4",
+      "source": {
+        "theta": -90,
+        "phi": -59.6,
+        "u": [
+          0,
+          -0.5064,
+          -0.8623
+        ],
+        "color": "#76AC41"
+      },
+      "theta": -59.6,
+      "phi": 270,
+      "r": 1,
+      "colorSource": "#76AC41",
+      "colorDerived": "#8DA150",
+      "colorMatch": false
+    },
+    {
+      "code": "S14",
+      "juan": "14",
+      "name": "辨阴阳易差后劳复病脉证并",
+      "domain": "霍乱·差后劳复",
+      "tiao": 1,
+      "durationSec": 22.17,
+      "file": "SHL_14_辨阴阳易差后劳复病脉证并.mp4",
+      "source": {
+        "theta": -82,
+        "phi": -59.6,
+        "u": [
+          0.0705,
+          -0.5015,
+          -0.8623
+        ],
+        "color": "#71AC41"
+      },
+      "theta": -59.6,
+      "phi": 278,
+      "r": 1,
+      "colorSource": "#71AC41",
+      "colorDerived": "#8D9C56",
+      "colorMatch": false
+    },
+    {
+      "code": "S15",
+      "juan": "15",
+      "name": "辨可发汗病脉证并治",
+      "domain": "汗吐下诸可不可",
+      "tiao": 34,
+      "durationSec": 314.58,
+      "file": "SHL_15_辨可发汗病脉证并治.mp4",
+      "source": {
+        "theta": -120,
+        "phi": -45.6,
+        "u": [
+          -0.3499,
+          -0.6061,
+          -0.7143
+        ],
+        "color": "#47A650"
+      },
+      "theta": -45.6,
+      "phi": 240,
+      "r": 1,
+      "colorSource": "#47A650",
+      "colorDerived": "#789C4F",
+      "colorMatch": false
+    },
+    {
+      "code": "S16",
+      "juan": "16",
+      "name": "辨阴阳易差后劳复病脉证并",
+      "domain": "霍乱·差后劳复",
+      "tiao": 32,
+      "durationSec": 211.5,
+      "file": "SHL_16_辨阴阳易差后劳复病脉证并.mp4",
+      "source": {
+        "theta": -74,
+        "phi": -46.4,
+        "u": [
+          0.19,
+          -0.6625,
+          -0.7245
+        ],
+        "color": "#43A25B"
+      },
+      "theta": -46.4,
+      "phi": 286,
+      "r": 1,
+      "colorSource": "#43A25B",
+      "colorDerived": "#66926C",
+      "colorMatch": false
+    },
+    {
+      "code": "S17",
+      "juan": "17",
+      "name": "辨不可发汗病脉证并治",
+      "domain": "汗吐下诸可不可",
+      "tiao": 33,
+      "durationSec": 297.83,
+      "file": "SHL_17_辨不可发汗病脉证并治.mp4",
+      "source": {
+        "theta": -112,
+        "phi": -46,
+        "u": [
+          -0.2602,
+          -0.644,
+          -0.7194
+        ],
+        "color": "#45A454"
+      },
+      "theta": -46,
+      "phi": 248,
+      "r": 1,
+      "colorSource": "#45A454",
+      "colorDerived": "#739B54",
+      "colorMatch": false
+    },
+    {
+      "code": "S18",
+      "juan": "18",
+      "name": "辨可发汗病脉证并治",
+      "domain": "汗吐下诸可不可",
+      "tiao": 144,
+      "durationSec": 1160.08,
+      "file": "SHL_18_辨可发汗病脉证并治.mp4",
+      "source": {
+        "theta": -104,
+        "phi": 1.1,
+        "u": [
+          -0.2419,
+          -0.9701,
+          0.0185
+        ],
+        "color": "#2274B2"
+      },
+      "theta": 1.1,
+      "phi": 256,
+      "r": 1,
+      "colorSource": "#2274B2",
+      "colorDerived": "#486DAB",
+      "colorMatch": false
+    },
+    {
+      "code": "S19",
+      "juan": "19",
+      "name": "辨发汗后病脉证并治",
+      "domain": "汗吐下诸可不可",
+      "tiao": 148,
+      "durationSec": 1088.33,
+      "file": "SHL_19_辨发汗后病脉证并治.mp4",
+      "source": {
+        "theta": -96,
+        "phi": 2.8,
+        "u": [
+          -0.1044,
+          -0.9934,
+          0.0481
+        ],
+        "color": "#1D6CC4"
+      },
+      "theta": 2.8,
+      "phi": 264,
+      "r": 1,
+      "colorSource": "#1D6CC4",
+      "colorDerived": "#326AC4",
+      "colorMatch": false
+    },
+    {
+      "code": "S20",
+      "juan": "20",
+      "name": "辨不可下病脉证并治",
+      "domain": "汗吐下诸可不可",
+      "tiao": 1,
+      "durationSec": 17,
+      "file": "SHL_20_辨不可下病脉证并治.mp4",
+      "source": {
+        "theta": -88,
+        "phi": -59.6,
+        "u": [
+          0.0177,
+          -0.5061,
+          -0.8623
+        ],
+        "color": "#75AC41"
+      },
+      "theta": -59.6,
+      "phi": 272,
+      "r": 1,
+      "colorSource": "#75AC41",
+      "colorDerived": "#8D9F52",
+      "colorMatch": false
+    },
+    {
+      "code": "S21",
+      "juan": "21",
+      "name": "辨可下病脉证并治",
+      "domain": "汗吐下诸可不可",
+      "tiao": 1,
+      "durationSec": 16.83,
+      "file": "SHL_21_辨可下病脉证并治.mp4",
+      "source": {
+        "theta": -80,
+        "phi": -59.6,
+        "u": [
+          0.0879,
+          -0.4987,
+          -0.8623
+        ],
+        "color": "#70AC42"
+      },
+      "theta": -59.6,
+      "phi": 280,
+      "r": 1,
+      "colorSource": "#70AC42",
+      "colorDerived": "#8D9B57",
+      "colorMatch": false
+    },
+    {
+      "code": "S22",
+      "juan": "22",
+      "name": "辨不可下病脉证并治",
+      "domain": "汗吐下诸可不可",
+      "tiao": 36,
+      "durationSec": 441.42,
+      "file": "SHL_22_辨不可下病脉证并治.mp4",
+      "source": {
+        "theta": -72,
+        "phi": -44.7,
+        "u": [
+          0.2195,
+          -0.6756,
+          -0.7038
+        ],
+        "color": "#3EA15D"
+      },
+      "theta": -44.7,
+      "phi": 288,
+      "r": 1,
+      "colorSource": "#3EA15D",
+      "colorDerived": "#62916E",
+      "colorMatch": false
+    },
+    {
+      "code": "S23",
+      "juan": "23",
+      "name": "辨太阴病脉证并治（提纲起",
+      "domain": "太阴病",
+      "tiao": 1,
+      "durationSec": 22,
+      "file": "SHL_23_辨太阴病脉证并治(提纲起.mp4",
+      "source": {
+        "theta": 8,
+        "phi": -59.6,
+        "u": [
+          0.5015,
+          0.0705,
+          -0.8623
+        ],
+        "color": "#82A342"
+      },
+      "theta": -59.6,
+      "phi": 8,
+      "r": 1,
+      "colorSource": "#82A342",
+      "colorDerived": "#B08B50",
+      "colorMatch": false
+    },
+    {
+      "code": "S24",
+      "juan": "24",
+      "name": "辨厥阴病脉证并治（提纲起",
+      "domain": "厥阴病",
+      "tiao": 30,
+      "durationSec": 351.33,
+      "file": "SHL_24_辨厥阴病脉证并治(提纲起.mp4",
+      "source": {
+        "theta": -60,
+        "phi": -47.3,
+        "u": [
+          0.3392,
+          -0.5875,
+          -0.7347
+        ],
+        "color": "#46A159"
+      },
+      "theta": -47.3,
+      "phi": 300,
+      "r": 1,
+      "colorSource": "#46A159",
+      "colorDerived": "#6B8D70",
+      "colorMatch": false
+    },
+    {
+      "code": "S25",
+      "juan": "25",
+      "name": "辨可下病脉证并治",
+      "domain": "汗吐下诸可不可",
+      "tiao": 125,
+      "durationSec": 1226.33,
+      "file": "SHL_25_辨可下病脉证并治.mp4",
+      "source": {
+        "theta": -64,
+        "phi": -7,
+        "u": [
+          0.4351,
+          -0.8921,
+          -0.1218
+        ],
+        "color": "#217AA3"
+      },
+      "theta": -7,
+      "phi": 296,
+      "r": 1,
+      "colorSource": "#217AA3",
+      "colorDerived": "#4862BC",
+      "colorMatch": false
+    },
+    {
+      "code": "S26",
+      "juan": "26",
+      "name": "辨发汗吐下后病脉证并治",
+      "domain": "汗吐下诸可不可",
+      "tiao": 65,
+      "durationSec": 826.67,
+      "file": "SHL_26_辨发汗吐下后病脉证并治.mp4",
+      "source": {
+        "theta": -56,
+        "phi": -32.4,
+        "u": [
+          0.4719,
+          -0.6997,
+          -0.5364
+        ],
+        "color": "#2F966F"
+      },
+      "theta": -32.4,
+      "phi": 304,
+      "r": 1,
+      "colorSource": "#2F966F",
+      "colorDerived": "#598482",
+      "colorMatch": false
+    },
+    {
+      "code": "S27",
+      "juan": "27",
+      "name": "辨太阴病脉证并治（提纲起",
+      "domain": "太阴病",
+      "tiao": 186,
+      "durationSec": 1485.67,
+      "file": "SHL_27_辨太阴病脉证并治(提纲起.mp4",
+      "source": {
+        "theta": 16,
+        "phi": 18.9,
+        "u": [
+          0.9096,
+          0.2608,
+          0.3234
+        ],
+        "color": "#4F689F"
+      },
+      "theta": 18.9,
+      "phi": 16,
+      "r": 1,
+      "colorSource": "#4F689F",
+      "colorDerived": "#6F53B0",
+      "colorMatch": false
+    }
+  ],
+  "domains": [
+    {
+      "order": 1,
+      "name": "序跋·目录",
+      "episodes": [
+        "00",
+        "01"
+      ],
+      "pianLike": 2,
+      "tiao": 117,
+      "durationSec": 1589,
+      "theta": -27.92354276143558,
+      "phi": 186.59399900927468,
+      "r": 1,
+      "u": [
+        -0.8777282682716857,
+        -0.10146346537424805,
+        -0.46829291289857916
+      ],
+      "colorDerived": "#CE9D17",
+      "colorAggregateNote": "颜色由聚合方向重算（规范 §10 域聚合）"
+    },
+    {
+      "order": 2,
+      "name": "脉法·伤寒例",
+      "episodes": [
+        "02"
+      ],
+      "pianLike": 1,
+      "tiao": 61,
+      "durationSec": 957.92,
+      "theta": -34.1,
+      "phi": 209.99999999999997,
+      "r": 1,
+      "u": [
+        -0.7171212856493231,
+        -0.41403016731124725,
+        -0.5606389945632417
+      ],
+      "colorDerived": "#8C9B3D",
+      "colorAggregateNote": "颜色由聚合方向重算（规范 §10 域聚合）"
+    },
+    {
+      "order": 3,
+      "name": "太阳病",
+      "episodes": [
+        "03",
+        "04",
+        "05",
+        "06"
+      ],
+      "pianLike": 4,
+      "tiao": 566,
+      "durationSec": 5120.75,
+      "theta": 34.04281876760228,
+      "phi": 107.86726963257527,
+      "r": 1,
+      "u": [
+        -0.25423118885209184,
+        0.7886549812597553,
+        0.5598123106444043
+      ],
+      "colorDerived": "#757853",
+      "colorAggregateNote": "颜色由聚合方向重算（规范 §10 域聚合）"
+    },
+    {
+      "order": 4,
+      "name": "阳明病",
+      "episodes": [
+        "07",
+        "09"
+      ],
+      "pianLike": 2,
+      "tiao": 134,
+      "durationSec": 1300.84,
+      "theta": -3.9557908257120946,
+      "phi": 67.96971503179572,
+      "r": 1,
+      "u": [
+        0.3742029860742767,
+        0.9247772463328412,
+        -0.06898673697271425
+      ],
+      "colorDerived": "#B73351",
+      "colorAggregateNote": "颜色由聚合方向重算（规范 §10 域聚合）"
+    },
+    {
+      "order": 5,
+      "name": "少阳病",
+      "episodes": [
+        "08",
+        "10",
+        "11"
+      ],
+      "pianLike": 3,
+      "tiao": 64,
+      "durationSec": 588.42,
+      "theta": -45.55080093946154,
+      "phi": 34.351568213248626,
+      "r": 1,
+      "u": [
+        0.5781418867771922,
+        0.3951446078375226,
+        -0.7138716254696208
+      ],
+      "colorDerived": "#8F7C53",
+      "colorAggregateNote": "颜色由聚合方向重算（规范 §10 域聚合）"
+    },
+    {
+      "order": 6,
+      "name": "太阴病",
+      "episodes": [
+        "12",
+        "23",
+        "27"
+      ],
+      "pianLike": 3,
+      "tiao": 194,
+      "durationSec": 1535.67,
+      "theta": 16.545358735252407,
+      "phi": 15.643361052777035,
+      "r": 1,
+      "u": [
+        0.9230870724724094,
+        0.25848374538555186,
+        0.28477431416083515
+      ],
+      "colorDerived": "#744FB2",
+      "colorAggregateNote": "颜色由聚合方向重算（规范 §10 域聚合）"
+    },
+    {
+      "order": 7,
+      "name": "霍乱·差后劳复",
+      "episodes": [
+        "13",
+        "14",
+        "16"
+      ],
+      "pianLike": 3,
+      "tiao": 34,
+      "durationSec": 251.25,
+      "theta": -47.19996014005069,
+      "phi": 285.4783636886164,
+      "r": 1,
+      "u": [
+        0.18132567161858779,
+        -0.654799343605114,
+        -0.7337293918239749
+      ],
+      "colorDerived": "#68936B",
+      "colorAggregateNote": "颜色由聚合方向重算（规范 §10 域聚合）"
+    },
+    {
+      "order": 8,
+      "name": "汗吐下诸可不可",
+      "episodes": [
+        "15",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "25",
+        "26"
+      ],
+      "pianLike": 9,
+      "tiao": 587,
+      "durationSec": 5389.07,
+      "theta": -12.688875363023064,
+      "phi": 272.50215227213806,
+      "r": 1,
+      "u": [
+        0.0425906921838353,
+        -0.9746470787017123,
+        -0.21965678891743826
+      ],
+      "colorDerived": "#4672B0",
+      "colorAggregateNote": "颜色由聚合方向重算（规范 §10 域聚合）"
+    },
+    {
+      "order": 9,
+      "name": "厥阴病",
+      "episodes": [
+        "24"
+      ],
+      "pianLike": 1,
+      "tiao": 30,
+      "durationSec": 351.33,
+      "theta": -47.3,
+      "phi": 300,
+      "r": 1,
+      "u": [
+        0.3390798349340353,
+        -0.5873035019278174,
+        -0.7349145951499599
+      ],
+      "colorDerived": "#6B8D6F",
+      "colorAggregateNote": "颜色由聚合方向重算（规范 §10 域聚合）"
+    }
+  ]
+}
