@@ -128,13 +128,88 @@ for (const s of flat) {
     } catch (e) {
       err(`L2 quiz.json 解析失败: ${s.path}/chapters/${name} — ${e.message}`);
     }
-    if (!fs.existsSync(path.join(cdir, 'outputs'))) {
-      warn(`L2 缺 outputs/: ${s.path}/chapters/${name}`);
-    }
+    checkOutputs(s, cdir, name, err);
     builtChapters += 1;
   }
 }
 ok.push(`L2 契约层: ${builtChapters} 个已建章节通过 docs/quiz/outputs 契约`);
+
+/**
+ * L2 · outputs/ 契约
+ *
+ * 契约不是「目录存在」—— 那是个空壳也能过的门。每章必须交出两件**可复用**的产物：
+ *   outputs/prompt-<slug>.md   提示词：本课的判断过程能被别人复述的形式
+ *   outputs/skill-<slug>.md    技能：带 frontmatter 的可装载产物（name/description/version）
+ *
+ * 为什么值得当硬门：这两件产物正是「工程化」与「讲课」的分界。
+ * 只查存在性的话，一个空的 outputs/ 目录能让「每章都产出提示词与技能」变成假话。
+ */
+function checkOutputs(s, cdir, name, err) {
+  const outDir = path.join(cdir, 'outputs');
+  const where = `${s.path}/chapters/${name}`;
+  if (!fs.existsSync(outDir)) {
+    err(`L2 缺 outputs/: ${where}`);
+    return;
+  }
+
+  const files = fs.readdirSync(outDir);
+  const prompts = files.filter((f) => /^prompt-.*\.md$/.test(f));
+  const skills = files.filter((f) => /^skill-.*\.md$/.test(f));
+
+  if (prompts.length !== 1) {
+    err(`L2 outputs/ 需恰好 1 个 prompt-*.md，实为 ${prompts.length}: ${where}`);
+  }
+  if (skills.length !== 1) {
+    err(`L2 outputs/ 需恰好 1 个 skill-*.md，实为 ${skills.length}: ${where}`);
+  }
+
+  // 基准名：与 skill frontmatter 的 name 同一约定 —— 章目录名去掉「NN-」前缀。
+  // （第一版直接比目录全名，结果把三个本来合规的章节全判成违规 —— 断言错了，不是文件错了。）
+  const base = name.replace(/^\d+-/, '');
+
+  // 提示词：文件名含基准名、有 H1 与「用途」段，正文不得是空壳
+  if (prompts.length === 1) {
+    if (!prompts[0].includes(base)) {
+      err(`L2 prompt 文件名须含「${base}」: ${where}/${prompts[0]}`);
+    }
+    const t = fs.readFileSync(path.join(outDir, prompts[0]), 'utf8');
+    if (!/^#\s+\S/m.test(t)) err(`L2 prompt 缺 H1: ${where}/${prompts[0]}`);
+    if (!/^##\s*用途/m.test(t)) err(`L2 prompt 缺「## 用途」段: ${where}/${prompts[0]}`);
+    if (t.replace(/\s/g, '').length < 300) {
+      err(`L2 prompt 正文过短（${t.replace(/\s/g, '').length} 字）: ${where}/${prompts[0]}`);
+    }
+  }
+
+  // 技能：YAML frontmatter 三件套齐全，且 name 必须等于基准名
+  if (skills.length === 1) {
+    if (!skills[0].includes(base)) {
+      err(`L2 skill 文件名须含「${base}」: ${where}/${skills[0]}`);
+    }
+    const raw = fs.readFileSync(path.join(outDir, skills[0]), 'utf8');
+    const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/.exec(raw);
+    if (!m) {
+      err(`L2 skill 缺 YAML frontmatter: ${where}/${skills[0]}`);
+    } else {
+      const fm = m[1];
+      const get = (k) => {
+        const mm = new RegExp(`^${k}:\\s*(.+)$`, 'm').exec(fm);
+        return mm ? mm[1].trim() : '';
+      };
+      for (const k of ['name', 'description', 'version']) {
+        if (!get(k)) err(`L2 skill frontmatter 缺 ${k}: ${where}/${skills[0]}`);
+      }
+      if (get('name') && get('name') !== base) {
+        err(`L2 skill name「${get('name')}」≠ 基准名「${base}」: ${where}/${skills[0]}`);
+      }
+      if (get('description') && get('description').replace(/\s/g, '').length < 12) {
+        err(`L2 skill description 过短: ${where}/${skills[0]}`);
+      }
+    }
+    if (raw.replace(/\s/g, '').length < 300) {
+      err(`L2 skill 正文过短（${raw.replace(/\s/g, '').length} 字）: ${where}/${skills[0]}`);
+    }
+  }
+}
 
 // ─────────── 输出 ───────────
 console.log('═══ tcmai-engineering-from-scratch · 课程审计 ═══\n');

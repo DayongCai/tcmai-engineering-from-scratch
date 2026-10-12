@@ -142,8 +142,20 @@ tests/                     # CI 门控 + 人机闭环审核
 
 ### `outputs/`
 
-至少 1 个文件。命名 `prompt-<slug>.md` / `skill-<slug>.md` / `agent-<slug>.md` / `mcp-<slug>.md`。
+**必须恰好两个文件**（`scripts/audit_curriculum.js` 的 L2 层强制校验，不是「目录存在」就算过）：
+
+| 文件 | 要求 |
+|---|---|
+| `prompt-<base>.md` | 有 H1、有 `## 用途` 段、正文 ≥ 300 字 |
+| `skill-<base>.md` | YAML frontmatter 含 `name` / `description` / `version`；`name` 必须等于 `<base>` |
+
+其中 `<base>` = 章目录名去掉 `NN-` 前缀（章 `01-yin-yang-er-fenlei` → `prompt-yin-yang-er-fenlei.md`）。
+
 产出物是**能被直接拿去用**的东西，不是本章代码的抄本。
+这两件产物正是「工程化」与「讲课」的分界 —— 一个空的 `outputs/` 目录会让
+「每章都产出提示词与技能」这句话变成假话，所以它必须是硬门。
+
+（`agent-<base>.md` / `mcp-<base>.md` 是允许的额外产物，但不替代上面两件。）
 
 ---
 

@@ -1,0 +1,217 @@
+{
+  "$generated": "node scripts/import_knowledge_tree.js",
+  "$source": "standards/knowledge-tree/sources/中医知识树.xlsx",
+  "title": "中医知识树 · 五级骨架（须—根—干—枝—叶）",
+  "convention": {
+    "tree": "树承载层次（从属／递进／教学先后），图承载关系（跨枝经脉）。树图一体：叶即图节点，边即经脉。",
+    "levels": "L0 须 → L1 根 → L2 干 → L3 枝 → L4 叶",
+    "platformAlignment": "tcmP · kg/tree（知识树） · kg/samples（病证图谱） · /tree/* 与 /kg/* 端点"
+  },
+  "levels": [
+    {
+      "level": 0,
+      "name": "须（哲学根基）",
+      "count": 6,
+      "items": [
+        "象数阴阳",
+        "五行生克",
+        "精气神形",
+        "天人相应",
+        "藏象经络",
+        "恒动整体"
+      ],
+      "itemsAreExcerpt": true
+    },
+    {
+      "level": 1,
+      "name": "根（核心公理）",
+      "count": 4,
+      "items": [
+        "整体观念",
+        "辨证论治",
+        "恒动平衡",
+        "治未病"
+      ],
+      "itemsAreExcerpt": true
+    },
+    {
+      "level": 2,
+      "name": "干（院系域）",
+      "count": 8,
+      "items": [
+        "D01 中医学院",
+        "D02 中药学院",
+        "D03 针灸学院",
+        "D04 推拿学院",
+        "D05 骨伤学院",
+        "D06 五官口腔学院",
+        "D07 中医智能学院",
+        "D08 中医管理学院"
+      ],
+      "itemsAreExcerpt": true
+    },
+    {
+      "level": 3,
+      "name": "枝（学科）",
+      "count": 120,
+      "items": [
+        "120 门学科（CM/MM/AT/TU/OR/ENT/AI/MG）"
+      ],
+      "itemsAreExcerpt": true
+    },
+    {
+      "level": 4,
+      "name": "叶（知识点/病证单元）",
+      "count": 2592,
+      "items": [
+        "章节知识点 2489 + 病证单元 103"
+      ],
+      "itemsAreExcerpt": true
+    }
+  ],
+  "conceptCluster": {
+    "name": "概念丛（图节点）",
+    "count": 333,
+    "items": [
+      "五行/经脉/六经/证候/西医病/ICD-11/技能 = 333"
+    ]
+  },
+  "domains": [
+    {
+      "code": "D01",
+      "name": "中医学院",
+      "subjectCount": 28,
+      "subjectsExcerpt": [
+        "中医基础理论、中医诊断学、医古文基础、中国医学史、中医思维方法论、中医文献学、中医经典导读、中医伦理学…"
+      ]
+    },
+    {
+      "code": "D02",
+      "name": "中药学院",
+      "subjectCount": 20,
+      "subjectsExcerpt": [
+        "临床中药学、方剂学（上）、方剂学（下）、药用植物学、中药化学、中药药理学、中药鉴定学、中药炮制学…"
+      ]
+    },
+    {
+      "code": "D03",
+      "name": "针灸学院",
+      "subjectCount": 12,
+      "subjectsExcerpt": [
+        "经络腧穴学、刺法灸法学、针灸治疗学、针灸医籍选读、实验针灸学、微针疗法（耳针/头针/腕踝针）、针灸神经科学、针灸康复学…"
+      ]
+    },
+    {
+      "code": "D04",
+      "name": "推拿学院",
+      "subjectCount": 10,
+      "subjectsExcerpt": [
+        "推拿学基础、推拿手法学、推拿诊断学、推拿功法学、推拿治疗学、小儿推拿学、脏腑推拿学、一指禅推拿学…"
+      ]
+    },
+    {
+      "code": "D05",
+      "name": "骨伤学院",
+      "subjectCount": 12,
+      "subjectsExcerpt": [
+        "中医骨伤科学基础、骨伤诊断学、骨伤影像学、骨伤生物力学、中医正骨学、中医筋伤学、中医骨病学、骨科手术学基础…"
+      ]
+    },
+    {
+      "code": "D06",
+      "name": "五官口腔学院",
+      "subjectCount": 10,
+      "subjectsExcerpt": [
+        "中医眼科学、中医耳鼻喉科学、中医口腔科学、中医喉科学、中医五官科护理学、中西医结合眼科学、中西医结合耳鼻喉科学、口腔内科学…"
+      ]
+    },
+    {
+      "code": "D07",
+      "name": "中医智能学院",
+      "subjectCount": 14,
+      "subjectsExcerpt": [
+        "中医药人工智能导论、中医信息学、中医药数据科学、中医知识图谱、中医智能诊断学、中医自然语言处理、中医智能问诊系统、中医机器学习…"
+      ]
+    },
+    {
+      "code": "D08",
+      "name": "中医管理学院",
+      "subjectCount": 14,
+      "subjectsExcerpt": [
+        "医院管理学、中医药经济学、中医药市场营销、中医药政策与法规、中医医疗机构管理、中医健康管理、中医养生管理、中医公共卫生管理…"
+      ]
+    }
+  ],
+  "domainTotal": 120,
+  "localComparison": {
+    "localDepartments": 8,
+    "localSubjects": 120,
+    "localDistribution": "每院系 15 学科（均匀）",
+    "sourceDistribution": "D01 中医学院 28 · D02 中药学院 20 · D03 针灸学院 12 · D04 推拿学院 10 · D05 骨伤学院 12 · D06 五官口腔学院 10 · D07 中医智能学院 14 · D08 中医管理学院 14"
+  },
+  "crossReferences": {
+    "dsuIdentifierSpace": {
+      "available": true,
+      "claim": "两套资料都声称 103 个病证单元",
+      "verdict": "编号空间同源（已按编号+名字核对）",
+      "referenceDsuCount": 103,
+      "xlsxClaimedCount": 103,
+      "idTriplesInXlsx": 1,
+      "nameOverlap": 13,
+      "nameOverlapOf": 103,
+      "contradictions": 0,
+      "foreignNames": [],
+      "checks": [
+        {
+          "uid": "DSU-00001",
+          "nameInXlsx": "风寒束表证",
+          "labelInReference": "风寒束表证",
+          "agree": true
+        }
+      ],
+      "note": "xlsx 只摘录了部分证名（非全名单），故 103 的全量无法仅凭 xlsx 核对；但重叠部分编号与名字一致、且无一个 xlsx 证名落在参考实现的 103 之外。「数量相同」由此升级为「有据的印证」，而非巧合。"
+    }
+  },
+  "discrepancies": [
+    {
+      "id": "D-01",
+      "field": "学科编号位次",
+      "source": "源教材自称 D07-S04（中医智能学院第 4 学科）",
+      "local": "本仓库 07-zhineng 下《中医知识图谱》为第 5 学科（05-zhongyi-zhishi-tupu）",
+      "status": "未裁定",
+      "note": "源体系的 D##-S## 位次是源自己的排序，不能从本仓库的院系学科表推导。不可自动改号——那会把「猜」写成「数据」。"
+    },
+    {
+      "id": "D-02",
+      "field": "院系数量与分布",
+      "source": "见 source-domains：D01 中医学院 28 · D02 中药学院 20 · D03 针灸学院 12 · D04 推拿学院 10 · D05 骨伤学院 12 · D06 五官口腔 10 · D07 中医智能学院 14 · D08 中医管理学院 14（合计 120）",
+      "local": "本仓库 8 院系 × 每院系 15 学科 = 120（均匀分布）",
+      "status": "两端一致 / 中间不一致",
+      "note": "院系总数 8 与学科总数 120 两端吻合，但每院系学科数与院系集合都不同。这不是错，是两套设计取向——源按真实办学规模，本仓库按教学均齐。"
+    },
+    {
+      "id": "D-03",
+      "field": "院系集合差异",
+      "source": "有 D04 推拿学院；无护理学院",
+      "local": "有 05-huli 护理系；无推拿院系（推拿内容并入骨伤）",
+      "status": "未裁定",
+      "note": "两边都是 8 个院系，但第 4/5 位不同。合并或补设会牵动 curriculum.json 的 120 学科重排，属结构变更，须明确决策后单独提交。"
+    },
+    {
+      "id": "D-04",
+      "field": "院系称谓",
+      "source": "「学院」（中医学院 / 中药学院 / …）",
+      "local": "「系」（中医系 / 中药系 / …）",
+      "status": "未裁定",
+      "note": "纯命名，不影响数据；但站点、教材、讲稿里混用会显得两套体系。宜统一，未定前不改。"
+    },
+    {
+      "id": "D-05",
+      "field": "学历层次口径",
+      "source": "本科 U4（3 学分 / 54 学时 = 理论 30 + 实验 24）",
+      "local": "《中医知识图谱》72 学时 / 10 学分",
+      "status": "未裁定",
+      "note": "学时数不同。教材正文与学时表是两套事实，不互相覆盖。"
+    }
+  ]
+}

@@ -152,6 +152,20 @@ textbooks/<dept>/<subject>/
 └── build/                  # 由 scripts/build_book.js 汇成 PDF / EPUB 分卷
 ```
 
+#### 已有外部教材稿（导入，非手写）
+
+`textbooks/07-zhineng/05-zhongyi-zhishi-tupu/` 是由桌面资料 `中医知识树.xlsx`
+**导入**的完整教材（4 篇 10 章 49 节）。这类教材稿是**生成物，不要手改**：
+
+```bash
+node scripts/import_knowledge_tree.js          # 重新导入
+node scripts/import_knowledge_tree.js --check  # 只校核不写文件
+```
+
+导入层的机器可读产物（五级骨架、八域学科分布、出处指纹、与源体系的分歧项）在
+`standards/knowledge-tree/`。与本院系体系「两端一致、中间不一致」的五项差异逐条记在
+`tree-schema.json` 的 `discrepancies`，**未做任何自动对齐**。
+
 ---
 
 ## 章节契约（每章必须满足）

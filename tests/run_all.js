@@ -26,6 +26,7 @@ const SUITES = [
   { file: 'test_narration.js', desc: '[tcmP] 讲稿质量（可朗读性 / 段帧一致 / 免责措辞）' },
   { file: 'test_semtensor.js', desc: '语义张量计算核心（规范 §12 硬证据：端色/基点/往返/镜像/DDG Gauss–Bonnet）' },
   { file: 'test_sphere_render.js', desc: '三维极坐标球面渲染（画布无汉字 / 三球同色 / 同步旋转 / 图注实例化）' },
+  { file: 'test_knowledge_tree.js', desc: '《中医知识树》导入层（xlsx 读取 / 连续性合并 / 五级骨架 / DSU 交叉印证）' },
   { file: 'test_chapter_code.js', desc: '每个已建章节的 code/main.js 与单元测试', slow: true },
   { file: 'test_content_review.js', desc: '人机闭环：内容复核清单', advisory: true },
   { file: 'assert_disclaimers.js', desc: '[tcmP] 每集讲稿必须带末位免责声明卡' },
