@@ -22,10 +22,14 @@
 
 ### 新增 · [tcmP] 网络视频教育平台
 
-- `site/`：构建期数据管线（`curriculum.json` → `catalog.json` → `site/data.js`）+ 静态站点
-- 页面：课程目录 / 学科页 / 章节页 / 路线图 / 学习路径 / 术语表 / 交互式实验台
+- `site/`：构建期数据管线（`curriculum.json` → `catalog.json` → `site/data.js` / `content.js`）+ 静态站点
+- 页面：课程目录 / 学科页 / 章节页 / 路线图 / 学习路径 / 术语表 / 关于
+- 6 张中医概念动画图（`site/figures.js`）：阴阳→二分类、五行生克、藏象图谱、四诊融合（含模态缺失）、腧穴 KD-Tree 检索、君臣佐使注意力
+- 章节页内嵌可运行的实验台；小测分 1 前置 + 3 过程 + 2 课后三档
+- 本机进度（`site/progress.js`）：只写 localStorage，不发起任何网络请求
+- `site/snapshot.js`：把整站打成**单文件 HTML**，离线双击即可打开，便于分发与审阅
 - `platform/`：讲稿 → TTS 旁白 → HTML/CSS 幻灯片 → MP4 的视频生产流水线
-- 本地零依赖服务器 `site/serve.js`
+- 本地零依赖服务器 `site/serve.js`（含目录穿越防护）
 
 ### 新增 · [textbooks] 教材出版流水线
 
@@ -36,7 +40,30 @@
 
 - `scripts/`：`build_catalog` / `build_roadmap` / `build_doc_indexes` / `audit_curriculum` /
   `check_readme_counts` / `scaffold_subject` / `scaffold_chapter`（纯 Node.js 标准库，无第三方依赖）
-- `.github/workflows/curriculum.yml`：audit（阻断）、counts-sync、site-rebuild、counts-drift
-- `tests/`：课程结构测试、CI 门测试、人机闭环内容复核清单
+- `.github/workflows/curriculum.yml`：audit（阻断）、chapters（阻断）、site-artifacts（阻断）、
+  counts-drift（咨询）、rebuild-artifacts（main 自愈）、textbooks、video-pipeline
+- `tests/`：8 个套件全部通过
+  - `test_curriculum_contract` 课程结构与章节契约
+  - `test_learning_paths` 学习路径引用与计数
+  - `test_site_artifacts` 站点生成物形状与 manifest hash 一致性
+  - `test_site_render` **渲染烟雾测试**：用最小 DOM shim 在 Node 里真跑 `app.js`，逐页渲染并断言内容
+  - `test_glossary_bridge` 桥梁表分级（A/B/C/D）与双术语表
+  - `test_chapter_code` 逐章运行 `main.js` 与单元测试（要求 ≥5 项、退出码 0、输出含边界声明）
+  - `test_content_review` 人机闭环：机器可判的引文/免责规则 + 需中医背景复核的清单
+  - `assert_disclaimers` 每集讲稿必须带**末位**免责声明卡
+
+### 建设过程中由测试实际抓出并修正的缺陷
+
+| 缺陷 | 抓出它的检查 |
+|------|-------------|
+| 权重全零时余弦约束梯度产生 `0/0 → NaN` | 第 2 章 `λ=0` 梯度对照测试 |
+| 最短路径渲染把「金克木」写成「木克金」 | 第 3 章路径方向测试 |
+| 相表里只建一侧边 → 「从腑查脏」静默失败 | 本体完整性校验 |
+| 五行未建成节点 → `肝 → 悲` 路径不可达 | 最短路径测试 |
+| 「纯 softmax 一定丢掉关系」的断言被实测推翻 | 第 2 章 λ 扫描 |
+| 两个学科的 bridge 字段缺 `→` 分隔 | 课程结构契约测试 |
+| 两章缺「翻译代价与临床边界」声明 | 内容复核测试 |
+| `departments/**/docs/zh.md` 的 `**/` 提前闭合 JS 块注释 | 站点构建 |
+| README 计数块漂移 | 计数一致性检查 |
 
 [1.0.0]: https://github.com/

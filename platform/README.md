@@ -16,6 +16,7 @@ platform/                   视频生产与课程编排（本目录）
 ```bash
 npm run site     # 生成 data.js / content.js
 npm run serve    # http://localhost:7788
+node site/snapshot.js   # 或打成单文件 HTML，离线双击即可打开
 ```
 
 ---

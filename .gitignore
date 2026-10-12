@@ -37,3 +37,4 @@ __pycache__/
 *.local.md
 scratch/
 tmp/
+site/snapshot/

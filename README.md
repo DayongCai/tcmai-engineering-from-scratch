@@ -207,6 +207,14 @@ node departments/01-zhongyi/01-zhongyi-jichu-lilun/chapters/01-yin-yang-er-fenle
 
 第二行跑通之后，你已经用代码解释了「阴阳」。剩下 1085 个章节带你走到「医圣」。
 
+想看站点但不想起服务器？打一个单文件快照，直接双击打开：
+
+```bash
+node site/pages.js && node site/build.js
+node site/snapshot.js
+# → site/snapshot/index.html （单文件，离线可用，无需服务器）
+```
+
 ---
 
 ## 仓库结构
