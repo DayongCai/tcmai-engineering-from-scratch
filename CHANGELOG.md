@@ -40,13 +40,17 @@
 
 - `scripts/`：`build_catalog` / `build_roadmap` / `build_doc_indexes` / `audit_curriculum` /
   `check_readme_counts` / `scaffold_subject` / `scaffold_chapter`（纯 Node.js 标准库，无第三方依赖）
+- `scripts/dom-shim.js`：最小 DOM/browser shim，让客户端渲染的页面能在 Node 里被**真实执行**并断言。
+  与 skill `curriculum-repo-engineering` **共用同一份实现**，仓库不另写副本 —— 两份测试夹具必然漂移，
+  而漂移的夹具会给出虚假的信心。
 - `.github/workflows/curriculum.yml`：audit（阻断）、chapters（阻断）、site-artifacts（阻断）、
   counts-drift（咨询）、rebuild-artifacts（main 自愈）、textbooks、video-pipeline
 - `tests/`：8 个套件全部通过
   - `test_curriculum_contract` 课程结构与章节契约
   - `test_learning_paths` 学习路径引用与计数
   - `test_site_artifacts` 站点生成物形状与 manifest hash 一致性
-  - `test_site_render` **渲染烟雾测试**：用最小 DOM shim 在 Node 里真跑 `app.js`，逐页渲染并断言内容
+  - `test_site_render` **渲染烟雾测试**：用 `scripts/dom-shim.js` 在 Node 里真跑 `app.js`，
+    逐页渲染并断言内容 —— 22/22 通过
   - `test_glossary_bridge` 桥梁表分级（A/B/C/D）与双术语表
   - `test_chapter_code` 逐章运行 `main.js` 与单元测试（要求 ≥5 项、退出码 0、输出含边界声明）
   - `test_content_review` 人机闭环：机器可判的引文/免责规则 + 需中医背景复核的清单

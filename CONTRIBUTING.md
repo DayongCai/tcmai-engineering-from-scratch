@@ -202,6 +202,15 @@ CI 门（`.github/workflows/curriculum.yml`）：
 | `departments/**/meta.json` | push 到 main |
 | `site/data.js` | push 到 main |
 
+**共享工具（不要在仓库里另写副本）：**
+
+| 文件 | 来源 | 说明 |
+|------|------|------|
+| `scripts/dom-shim.js` | skill `curriculum-repo-engineering` | 客户端渲染页面的测试夹具。两份副本必然漂移，漂移的夹具会给出虚假信心 |
+
+改动 `scripts/dom-shim.js` 时，必须在真实构建上重跑一次渲染测试并记录结果 ——
+这份 shim 本身没有自动测试，改坏了没人会发现。
+
 **你来处理：**
 
 | 表面 | 时机 |
