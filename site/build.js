@@ -221,6 +221,67 @@ const manifest = {
 };
 fs.writeFileSync(path.join(SITE, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
 
+// ── 7. 统计与部署产物 ────────────────────────────────────────────────
+//
+// stats.json：`.gitignore` 第 9 行早就写着它，但**从来没有人生成** ——
+// 又一处「声明了却不存在」。这里补上。
+// **不写生成时间**：带时间戳的文件每次构建都不同，任何「产物是否漂移」的比较都会永远失败。
+const stats = {
+  generatedBy: 'site/build.js',
+  domain: catalog.domain.title,
+  departments: catalog.counts.departments,
+  subjects: catalog.counts.subjects,
+  chaptersTarget: catalog.counts.chapters,
+  chaptersBuilt: built,
+  subjectPages: new Set(Object.values(content).map((c) => `${c.deptSlug}/${c.subjectSlug}`)).size,
+  videos: catalog.counts.videos,
+  learningPaths: learningPaths.length,
+  glossaryDocs: Object.keys(glossary).length,
+  outputs: {
+    items: Object.values(content).reduce((a, c) => a + (c.outputs ? c.outputs.length : 0), 0),
+    kinds: Object.values(content).flatMap((c) => (c.outputs || []).map((o) => o.kind))
+      .reduce((a, k) => ({ ...a, [k]: (a[k] || 0) + 1 }), {}),
+  },
+  textbookWords: catalog.counts.textbookWords ?? null,
+  dataHash: manifest.dataHash,
+  contentHash: manifest.contentHash,
+};
+fs.writeFileSync(path.join(SITE, 'stats.json'), `${JSON.stringify(stats, null, 2)}\n`, 'utf8');
+
+// sitemap.xml / robots.txt —— 从**渲染页面的同一份源**生成（上游的做法）：
+// 页面清单若在别处再维护一份，迟早会与真实页面漂移，而漂移时不会有任何东西报错。
+//
+// **没有配 SITE_ORIGIN 就不生成**：sitemap 里的绝对 URL 必须是真的，
+// 编一个域名写进去，比没有 sitemap 更糟 —— 搜索引擎会照单全收。
+const ORIGIN = (process.env.SITE_ORIGIN || '').replace(/\/+$/, '');
+let sitemapUrls = 0;
+if (ORIGIN) {
+  const urls = [
+    { loc: '/', pri: '1.0' },
+    { loc: '/catalog.html', pri: '0.9' },
+    { loc: '/roadmap.html', pri: '0.8' },
+    { loc: '/paths.html', pri: '0.8' },
+    { loc: '/glossary.html', pri: '0.7' },
+    { loc: '/semtensor.html', pri: '0.7' },
+    { loc: '/about.html', pri: '0.5' },
+  ];
+  // 学科页与章节页：站点用查询参数寻址，sitemap 里照实写 ——
+  // 诚实但不理想（深链爬取弱）。改成路径式路由是另一件事，见 README 的已知限制。
+  // 「已建」的判据取自 content（同一份源），不另立一份 subjectStatus。
+  for (const key of new Set(Object.values(content).map((c) => `${c.deptSlug}/${c.subjectSlug}`))) {
+    urls.push({ loc: `/subject.html?path=${encodeURIComponent(key)}`, pri: '0.7' });
+  }
+  for (const key of Object.keys(content)) {
+    urls.push({ loc: `/chapter.html?path=${encodeURIComponent(key)}`, pri: '0.6' });
+  }
+  const body = urls.map((u) => `  <url><loc>${ORIGIN}${u.loc.replace(/&/g, '&amp;')}</loc><priority>${u.pri}</priority></url>`).join('\n');
+  fs.writeFileSync(path.join(SITE, 'sitemap.xml'),
+    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`, 'utf8');
+  fs.writeFileSync(path.join(SITE, 'robots.txt'),
+    `User-agent: *\nAllow: /\nSitemap: ${ORIGIN}/sitemap.xml\n`, 'utf8');
+  sitemapUrls = urls.length;
+}
+
 console.log('═══ [tcmP] 站点构建 ═══');
 console.log(`  领域      : ${catalog.domain.title}`);
 console.log(`  院系 / 学科: ${catalog.counts.departments} / ${catalog.counts.subjects}`);
@@ -231,6 +292,15 @@ console.log(`  术语文档  : ${Object.keys(glossary).length}`);
 console.log(`  → site/data.js     (${(dataJs.length / 1024).toFixed(1)} KB, ${manifest.dataHash})`);
 console.log(`  → site/content.js  (${(contentStr.length / 1024).toFixed(1)} KB, ${manifest.contentHash})`);
 console.log(`  → site/manifest.json`);
+console.log(`  → site/stats.json`);
+if (ORIGIN) {
+  console.log(`  → site/sitemap.xml (${sitemapUrls} URLs, origin ${ORIGIN})`);
+  console.log(`  → site/robots.txt`);
+} else {
+  console.log(`  ⬚ sitemap.xml / robots.txt 未生成：未配置 SITE_ORIGIN。`);
+  console.log(`    部署时设 SITE_ORIGIN=https://你的域名 再跑一次即可 ——`);
+  console.log(`    不编一个假域名写进 sitemap：搜索引擎会照单全收。`);
+}
 
 if (unknownCmd.length) {
   console.log('');
