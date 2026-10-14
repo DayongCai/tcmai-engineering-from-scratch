@@ -535,5 +535,5 @@ if (require.main === module) main();
 
 module.exports = {
   buildDocument, tokenizeBigram, tokenizeNGram, buildTfidf, buildBm25,
-  rrf, cosine, silhouette, knnPurity, harvestContexts, BM25_K1, BM25_B,
+  rrf, cosine, silhouette, knnPurity, harvestContexts, collectCorpus, BM25_K1, BM25_B,
 };

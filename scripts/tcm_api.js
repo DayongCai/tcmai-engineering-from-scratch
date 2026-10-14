@@ -67,6 +67,16 @@ function loadSymptomMap() {
   const table = [];
   // 注意：源表把**整行 markdown 表格塞在一个单元格里**（`| 1 | 恶寒重/… | 寒凝 (3) | … |`），
   // 不是拆成 7 个单元格。所以先取该行唯一的非空单元格，再按 `|` 自己切列。
+  //
+  // 关于"源表自称 50 项、我只解析出 46 项"：**不是解析漏了，是我把两类行拍平成了一类。**
+  //   47–50 行不是「症状→病机」行，而是**过程线索行**，主判定栏写的是 `线索：r↑（风/寒速入）`，
+  //   没有 `病机 (权重)` 对，所以被 `parseW` 漏掉：
+  //     47 病程 <24h（急发）        → r↑ 入侵速率
+  //     48 病程 >72h/迁延反复        → τ↑ 滞留时长
+  //     49 反复发作（月 ≥10 次）     → f↑ 暴露节律
+  //     50 有形之物：痰/肿/结节/结石/瘀斑 → m↑ 物质沉积率
+  //   即 50 = **46 条症状→病机 + 4 条 P 参数（r/τ/f/m）过程线索**。两类都解析，分别标 kind。
+  const PROC = /线索\s*[：:]\s*([rτfm])\s*↑/;
   for (const r of rows) {
     const cells = r.map((c) => c.trim()).filter((x) => x !== '');
     if (!cells.length) continue;
@@ -81,13 +91,17 @@ function loadSymptomMap() {
     const parseW = (s) => [...String(s).matchAll(/([\u4e00-\u9fff]{2,4})\s*\((\d)\)/g)]
       .map((x) => ({ mech: x[1], w: Number(x[2]) }));
     const prim = parseW(primary);
-    if (!prim.length) continue;
     const gVal = parseFloat((/([\d.]+)/.exec(gRef) || [])[1]);
+    const proc = PROC.exec(primary);
+    if (!prim.length && !proc) continue;   // 既不是病机行也不是过程线索行 → 不是映射表
     table.push({
       no: Number(no),
+      kind: prim.length ? 'mechanism' : 'process',
       terms: terms.split('/').map((s) => s.trim()).filter(Boolean),
       primary: prim,
       secondary: parseW(secondary),
+      // 过程线索行的参数（r 速率 / τ 滞留 / f 节律 / m 沉积）
+      processParam: proc ? proc[1] : null,
       gRef: isFinite(gVal) ? gVal : null,
       stage: String(stage).trim(),
       anchor: String(anchor).trim(),
@@ -103,9 +117,12 @@ function loadSymptomMap() {
 // 这里对兼判采取更保守的做法：**只在主判缺失时才用兼判**，并把决定记进输出。
 function inferMechanisms(symptoms, table, { strength = 0.8 } = {}) {
   const hits = [];
+  const processClues = [];
   for (const q of symptoms) {
     const row = table.find((r) => r.terms.some((t) => t.includes(q) || q.includes(t)));
-    if (row) hits.push({ query: q, row });
+    if (!row) continue;
+    if (row.kind === 'process') { processClues.push({ query: q, param: row.processParam, stage: row.stage, line: row.terms.join('/') }); continue; }
+    hits.push({ query: q, row });
   }
   const acc = new Map();   // mech -> {num, den}
   const traces = [];
@@ -123,7 +140,7 @@ function inferMechanisms(symptoms, table, { strength = 0.8 } = {}) {
     const x = v.den ? v.num / v.den : 0;
     return { mech, x: Number(x.toFixed(4)), g: Number(gauss(x).toFixed(4)), from: v.ws.join('+') };
   }).sort((a, b) => b.g - a.g);
-  return { mechs, traces, hitRate: hits.length / (symptoms.length || 1) };
+  return { mechs, traces, processClues, hitRate: hits.length / (symptoms.length || 1) };
 }
 
 // ── 3. 病机 + 阶段线索 + 锚点 → 证候（三条规则全出自源表）──

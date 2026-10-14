@@ -81,7 +81,7 @@
 3. 写 audit_curriculum.js（L0 数据 / L1 结构 / L2 契约 / L3 内容）
 4. 让审计对 120 个空学科全绿                            ← 关键里程碑
 5. 写 build_catalog / build_doc_indexes / build_roadmap  → 索引与站点
-6. 写全套测试（现在 25 个套件）
+6. 写全套测试（现在 26 个套件）
 7. 然后才开始写第 1 章的内容
 ```
 
@@ -150,10 +150,10 @@
 |---|---|---|
 | 课程审计（L0–L3） | `npm run audit` | 三层 0 错误 |
 | 计数一致性 | `npm run counts` | README 声明与 catalog.json 逐项对齐 |
-| 链接完整性 | `npm run links` | 扫描 176 个 md，0 断链 |
+| 链接完整性 | `npm run links` | 扫描 177 个 md，0 断链 |
 | 产出物索引 | `npm run outputs` | 6 件产物 / 3 章，`--check` 不漂移 |
 | 项目看板 | `npm run dashboard` | KPI 与源独立重算一致 |
-| 测试套件 | `npm test` | 25 个套件全绿 |
+| 测试套件 | `npm test` | 26 个套件全绿 |
 
 `npm run check` = 审计 + 计数 + 链接 `--strict` + 产出物索引 `--check`，CI 上跑这一条。
 

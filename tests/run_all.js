@@ -39,6 +39,7 @@ const SUITES = [
   { file: 'test_icd11_client.js', desc: 'ICD-11 客户端（双通道：WHO 凭据路径 / 本地库父链 / 仓库编码校验）' },
   { file: 'test_dashboard.js', desc: '项目看板（KPI 与源独立重算比对；阻塞项必须带解除条件）' },
   { file: 'test_tcm_api.js', desc: '/diag 与 /bianzheng（逆转推理引擎：映射表/高斯/方名 + 未命中不得美化）' },
+  { file: 'test_dsu_descriptions.js', desc: '证候描述（构词解析 / 证据只取正文的守门 / 覆盖数字如实）' },
   { file: 'test_chapter_code.js', desc: '每个已建章节的 code/main.js 与单元测试', slow: true },
   { file: 'test_content_review.js', desc: '人机闭环：内容复核清单', advisory: true },
   { file: 'assert_disclaimers.js', desc: '[tcmP] 每集讲稿必须带末位免责声明卡' },

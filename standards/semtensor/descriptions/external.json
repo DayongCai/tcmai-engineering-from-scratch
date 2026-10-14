@@ -1,0 +1,98 @@
+{
+  "$generated": "人工经 web_search 取回后落库（脚本不抓网；抓网步骤与来源逐条记录）",
+  "$note": [
+    "本文件是**外部检索证据**，不是定义权威。每条都带 url + title + 原文片段 + 检索途径。",
+    "为什么不由脚本抓：① zh.wikipedia.org 在本机**不可达**（实测 HTTP 000，/wiki、/w/api.php、m. 三个入口全超时）；",
+    "② 百度百科对 curl 返回 403；③ 可达路径只有 web_search（firecrawl/keenable 后端）。",
+    "因此抓取是**有界的、逐条的**，取回的原文按片段入库，未取到的一律不写 —— 宁可覆盖低，不许编。",
+    "片段里的英文/韩文来源（herba.kr）转引的是 WHO 国际标准术语，标注为 'WHO-TCM' 类。"
+  ],
+  "fetchedAt": "2026-10-13",
+  "channel": "web_search（本机 zh.wikipedia.org 不可达；百度百科对 curl 403）",
+  "entries": [
+    {
+      "label": "风寒束表证",
+      "sources": [
+        {
+          "type": "准官方·出版方",
+          "title": "麻黄汤 · 人卫中医助手",
+          "url": "https://rwzyzs.pmphai.com/gdsdetail/614073-288671",
+          "snippet": "寒束表，卫阳被遏，营阴郁滞。故其临床脉症以发热恶风寒，头痛项强，身疼骨痛，无汗脉浮紧为典型表现。寒侵袭，经脉为之不利，故头项强痛。"
+        },
+        {
+          "type": "百科",
+          "title": "表寒证 · 百度百科",
+          "url": "https://baike.baidu.com/item/%E8%A1%A8%E5%AF%92%E8%AF%81/16775596",
+          "snippet": "表寒证，中医病证名，指寒邪侵袭肌表导致卫阳受损，以恶寒重、发热轻、无汗、脉浮紧为主要表现的证候。其病因多为风寒邪气，病机为寒邪束表致卫阳失于温煦，正邪相争。"
+        }
+      ]
+    },
+    {
+      "label": "脾肾阳虚证",
+      "sources": [
+        {
+          "type": "专利文献（转述病证名定义）",
+          "title": "CN105381333A 一种治疗脾肾阳虚的中药组合物 · Google Patents",
+          "url": "https://patents.google.com/patent/CN105381333A/zh",
+          "snippet": "脾肾阳虚，病证名。脾肾阳虚证以脾肾阳虚、阴寒内盛为特征。由多由感受寒邪较重，或久病耗气损伤脾肾之阳气，或久泻不止，损伤脾肾之阳，或其他脏腑的亏虚，累及脾肾两脏等引起。"
+        },
+        {
+          "type": "医院医案（舌脉佐证）",
+          "title": "医案选介 · 天津中医药大学第二附属医院",
+          "url": "https://www.tjzyefy.com/system/2018/02/17/014305453.shtml",
+          "snippet": "脾虚为肝所乘，致脾阳不足，终累及肾，致脾肾阳虚，阳虚不固，而发腹泻。……其舌质淡，苔白腻，脉沉细为脾肾阳虚之象。"
+        }
+      ]
+    },
+    {
+      "label": "肝阳上亢证",
+      "sources": [
+        {
+          "type": "WHO-TCM（国际标准术语，转引）",
+          "title": "肝陽上亢證 · 韩药资源研究中心（引 WHO international standard terminologies on TCM 2022 / 2007）",
+          "url": "https://herba.kr/boncho/?id=47621&m=view&t=dict",
+          "snippet": "pattern/syndrome of ascendant hyperactivity of liver yang；a pattern/syndrome marked by dizziness, headache, flushed face, blurred vision, tinnitus, bitter taste in the mouth and string-like pulse. code 2.9.90。另注：本质是阴虚而本虚标实。"
+        },
+        {
+          "type": "行业指南（证候定义）",
+          "title": "高血压病肝热阳亢证诊疗实践指南（PDF）",
+          "url": "https://www.sdtcm.net/resources//uploads/20251031/1761894703202089191.pdf",
+          "snippet": "患者素体阳盛，复因情志过极或饮食失节，致使肝失疏泄，气机郁滞，郁久化热……极易引动肝阳亢逆上冲，其核心病机在于肝热内炽，阳气已具亢盛冲逆之势。病位与肝、脾、肾三脏关系密切。"
+        }
+      ]
+    },
+    {
+      "label": "痰湿内阻证",
+      "sources": [
+        {
+          "type": "医家论述（痰饮总论）",
+          "title": "中醫對痰飲的認識",
+          "url": "https://www.vanessafanrui.com/single-post/%E4%B8%AD%E9%86%AB%E5%B0%8D%E7%97%B0%E9%A3%B2%E7%9A%84%E8%AA%8D%E8%AD%98",
+          "snippet": "痰飲是人體水液輸布失常而產生的病理產物。……痰多偏質粘稠，流動性小難消，易停聚於肺、胃，也可凝聚於局部形成包塊。若只見其證未見其形，稱為無形之痰。"
+        }
+      ]
+    },
+    {
+      "label": "肝郁脾虚证",
+      "sources": [
+        {
+          "type": "医院名医工作室（辨证分析）",
+          "title": "【学术】春季养肝正当时 · 北京市中医药管理局",
+          "url": "https://zyj.beijing.gov.cn/sy/whkp/201912/t20191219_1309636.html",
+          "snippet": "咽堵胸闷、两胁胀满、情绪抑郁乃肝郁气滞，疏泄失常所致；郁久化火则有口苦心烦、寐差多梦、舌红苔黄诸证；……肝木侮土，脾失健运则见纳少便溏；脉弦细苔腻亦为肝郁脾虚，痰气互结之证。"
+        },
+        {
+          "type": "期刊综述",
+          "title": "肠易激综合征中医证候学特点的认知和探索",
+          "url": "https://www.wjgnet.com/1009-3079/full/v18/i21/2210.htm",
+          "snippet": "证候是疾病过程中某一阶段机体对内外致病因素作出的综合反映，在宏观上表现为特定的症状、体征(舌象、脉象等)。"
+        }
+      ]
+    }
+  ],
+  "notFetched": {
+    "why": "8 条检索里有 2 条后端失败（脾胃湿热证 / 肝胆湿热证），另有 88 个证名尚未检索",
+    "remaining": 88,
+    "failedThisRun": ["脾胃湿热证", "肝胆湿热证"]
+  }
+}
