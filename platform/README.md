@@ -83,8 +83,18 @@ tts              ✅ 可用   (Windows SAPI · Microsoft Huihui Desktop，离线
 pandoc           ⬚ 缺失   → [textbooks] 的 PDF/EPUB 排版不可用（Markdown 汇总可用）
 ```
 
-第 1 章《阴阳学说 → 二分类》已走完整链：**1920×1080 / 25fps / 12 段配音 / 6 分 09 秒 / 5.7 MB**。
-`ffprobe` 实测时长 368.9s，音轨 `mean_volume −24.7 dB`（非静音）。
+2026-10-15 起三章**全部走完整链**（1920×1080 / 25fps / 每章 12 段配音，均带 mov_text 字幕轨）：
+
+```text
+01-yin-yang-er-fenlei   5.61 MB · 347.22s
+02-wu-xing-duo-fenlei   4.53 MB · 302.72s
+03-zang-xiang-tupu      4.75 MB · 315.31s
+```
+
+上面三行与磁盘上 `video/lesson.mp4` 的体积、`narration/subtitles.json` 的 `videoSeconds`
+**逐项核对**（`tests/test_platform_pipeline.js`）。这段曾写着「6 分 09 秒 / 5.7 MB」——
+那是「画面比配音长 +21.8s」修复**之前**的旧值，修复后没回头改（2026-10-15 才发现）。
+音轨 `aac`（非静音）；逐章数字随时可用 `npm run tcmP:check` 复核。
 
 ---
 

@@ -405,6 +405,38 @@ test('course.yaml 的时长与 lesson.json 一致（"声明了来源"就必须�
   assert(bad.length === 0, `时长与来源不符：\n      ${bad.join('\n      ')}`);
 });
 
+test('platform/README.md 里写的成片体积与时长必须与磁盘相符', () => {
+  // 这段曾长期写着「6 分 09 秒 / 5.7 MB」—— 那是「画面比配音长 +21.8s」修复之前的旧值。
+  // 文档里的实测数字不许静默过期，所以这里按行核对：
+  //   01-yin-yang-er-fenlei   5.61 MB · 347.22s
+  const md = fs.readFileSync(path.join(ROOT, 'platform', 'README.md'), 'utf8');
+  const re = /^([0-9]{2}-[a-z-]+)\s+([\d.]+) MB · ([\d.]+)s$/gm;
+  const found = [];
+  let m;
+  while ((m = re.exec(md)) !== null) found.push({ slug: m[1], mb: Number(m[2]), sec: Number(m[3]) });
+  assert(found.length > 0, 'platform/README.md 里没有可核对的成片行（格式：<slug>  X.XX MB · YY.YYs）');
+
+  const bad = [];
+  for (const row of found) {
+    const ch = chapters.find((c) => c.key.endsWith('/' + row.slug));
+    if (!ch) { bad.push(`${row.slug}: platform/courses 下没有这个章节`); continue; }
+    const mp4 = path.join(ch.dir, 'video', 'lesson.mp4');
+    if (!fs.existsSync(mp4)) { bad.push(`${row.slug}: README 写了体积时长，磁盘上没有成片`); continue; }
+    const realMb = size(mp4) / 1048576;
+    if (Math.abs(realMb - row.mb) > 0.02) {
+      bad.push(`${row.slug}: README 写 ${row.mb} MB，实测 ${realMb.toFixed(2)} MB`);
+    }
+    const sj = path.join(ch.dir, 'narration', 'subtitles.json');
+    if (fs.existsSync(sj)) {
+      const realSec = JSON.parse(fs.readFileSync(sj, 'utf8')).videoSeconds;
+      if (typeof realSec === 'number' && Math.abs(realSec - row.sec) > 0.5) {
+        bad.push(`${row.slug}: README 写 ${row.sec}s，subtitles.json 的 videoSeconds 是 ${realSec}s`);
+      }
+    }
+  }
+  assert(bad.length === 0, `README 的实测数字与磁盘不符：\n      ${bad.join('\n      ')}`);
+});
+
 console.log(`\n  ${passed} 通过 · ${failures.length} 失败`);
 if (failures.length) {
   console.log('\n失败明细:');
