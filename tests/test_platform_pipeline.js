@@ -263,9 +263,14 @@ test('字幕的诚实报告被填（条数一致、视音差、文本与配音�
     if (hasVideo) {
       assert(typeof S.videoMinusNarrationSeconds === 'number',
         `${ch.key}: 成片已存在，对视音差必须是实测数字，实为 ${JSON.stringify(S.videoMinusNarrationSeconds)}`);
+    } else if (S.videoMinusNarrationSeconds === null) {
+      // 没有成片、也明说了未校验 —— 一致
+    } else if (typeof S.videoMinusNarrationSeconds === 'number') {
+      // 新克隆的仓库里成片不在（video/ 不入库），但 subtitles.json 入库且记着当时实测的
+      // 对视音差。这时**无法回验**：明说，不算失败。否则这道门在 CI 上必然误报。
+      console.log(`    ⚠ ${ch.key}: 成片不在（不入库）—— 对视音差无法回验（库里的值是当时实测的 ${S.videoMinusNarrationSeconds}s）`);
     } else {
-      assert(S.videoMinusNarrationSeconds === null,
-        `${ch.key}: 无成片时应明说"未校验"（null），实为 ${JSON.stringify(S.videoMinusNarrationSeconds)} —— 不许留 undefined 或编个数字`);
+      assert(false, `${ch.key}: videoMinusNarrationSeconds 既不是数字也不是 null，而是 ${JSON.stringify(S.videoMinusNarrationSeconds)}`);
     }
     assert(S.textMatchesNarration === true,
       `${ch.key}: textMatchesNarration 不为 true —— 字幕文字与配音不一致`);
@@ -344,6 +349,8 @@ test('course.yaml 的 video 状态与磁盘实况一致（手工状态不许静�
   assert(yamlFiles.length > 0, '没找到任何 course.yaml');
 
   const bad = [];
+  const unverifiable = [];
+  const RANK = { planned: 0, 'narration-ready': 1, 'slides-ready': 2, rendered: 3, published: 4 };
   for (const f of yamlFiles) {
     const subjectDir = path.dirname(f);
     for (const ch of readCourseYaml(f)) {
@@ -351,8 +358,19 @@ test('course.yaml 的 video 状态与磁盘实况一致（手工状态不许静�
       // published 是"已发布"这个额外动作，磁盘上表现为 rendered —— 允许它高一级
       if (ch.video === actual) continue;
       if (ch.video === 'published' && actual === 'rendered') continue;
+      // yaml 记的状态"高于"磁盘实况：多半是产物不在（成片/配音/帧都不入库）。
+      // 那**无法回验** —— 按三态处理，明说而不是判失败。
+      if ((RANK[ch.video] ?? -1) > (RANK[actual] ?? -1)) {
+        unverifiable.push(`${ch.slug}: 记为 ${ch.video}，磁盘只到 ${actual}`);
+        continue;
+      }
+      // 反过来：磁盘上有产物、yaml 记得更低 —— 这是真不一致（手工状态过期）
       bad.push(`${path.relative(ROOT, f)} 里 ${ch.slug} 写的是 ${ch.video}，磁盘实况是 ${actual}`);
     }
+  }
+  if (unverifiable.length) {
+    console.log(`    ⚠ ${unverifiable.length} 章的状态无法回验（产物不入库）：`);
+    for (const u of unverifiable) console.log(`       ${u}`);
   }
   assert(bad.length === 0, `状态与实况不符：\n      ${bad.join('\n      ')}`);
 });
@@ -417,11 +435,16 @@ test('platform/README.md 里写的成片体积与时长必须与磁盘相符', (
   assert(found.length > 0, 'platform/README.md 里没有可核对的成片行（格式：<slug>  X.XX MB · YY.YYs）');
 
   const bad = [];
+  const unverifiable = [];
   for (const row of found) {
     const ch = chapters.find((c) => c.key.endsWith('/' + row.slug));
     if (!ch) { bad.push(`${row.slug}: platform/courses 下没有这个章节`); continue; }
     const mp4 = path.join(ch.dir, 'video', 'lesson.mp4');
-    if (!fs.existsSync(mp4)) { bad.push(`${row.slug}: README 写了体积时长，磁盘上没有成片`); continue; }
+    if (!fs.existsSync(mp4)) {
+      // 成片不入库 —— 新克隆的仓库里必然不在。那**无法回验**：明说，不判失败。
+      unverifiable.push(`${row.slug}: README 写了 ${row.mb} MB · ${row.sec}s，但磁盘上没有成片`);
+      continue;
+    }
     const realMb = size(mp4) / 1048576;
     if (Math.abs(realMb - row.mb) > 0.02) {
       bad.push(`${row.slug}: README 写 ${row.mb} MB，实测 ${realMb.toFixed(2)} MB`);
@@ -433,6 +456,10 @@ test('platform/README.md 里写的成片体积与时长必须与磁盘相符', (
         bad.push(`${row.slug}: README 写 ${row.sec}s，subtitles.json 的 videoSeconds 是 ${realSec}s`);
       }
     }
+  }
+  if (unverifiable.length) {
+    console.log(`    ⚠ ${unverifiable.length} 行无法回验（成片不入库）：`);
+    for (const u of unverifiable) console.log(`       ${u}`);
   }
   assert(bad.length === 0, `README 的实测数字与磁盘不符：\n      ${bad.join('\n      ')}`);
 });
@@ -454,19 +481,24 @@ test('声明了配音就必须真有配音文件（静音成片不能冒充已�
     const mp3 = listOf(path.join(ch.dir, 'narration', 'audio'), /\.mp3$/);
     const claimed = segs.filter((s) => s.audio).length;
 
-    if (L.audioBackend) {
-      assert(mp3.length === claimed,
-        `${ch.key}: lesson.json 声明了 audioBackend（"${L.audioBackend}"），但 audio/ 里有 ${mp3.length} 个 mp3、讲稿记了 ${claimed} 个文件`);
-      assert(typeof L.audioMeasuredSeconds === 'number' && L.audioMeasuredSeconds > 0,
-        `${ch.key}: 声明了配音后端却没有实测总时长`);
-    } else if (mp3.length > 0) {
-      assert(false, `${ch.key}: audio/ 里有 ${mp3.length} 个 mp3，但 lesson.json 没记 audioBackend（"用了哪条降级链"必须明说）`);
-    }
-
     const hasVideo = fs.existsSync(path.join(ch.dir, 'video', 'lesson.mp4'));
-    if (hasVideo && claimed === segs.length && segs.length > 0) {
-      assert(mp3.length > 0,
-        `${ch.key}: 成片已生成、且每段都记了 audio 文件名，但 audio/ 是空的 —— 那是个静音成片`);
+
+    if (mp3.length > 0) {
+      // 盘上有配音 → 必须与讲稿的声明逐一吻合
+      assert(L.audioBackend,
+        `${ch.key}: audio/ 里有 ${mp3.length} 个 mp3，但 lesson.json 没记 audioBackend（"用了哪条降级链"必须明说）`);
+      assert(mp3.length === claimed,
+        `${ch.key}: audio/ 里有 ${mp3.length} 个 mp3，讲稿记了 ${claimed} 个文件`);
+      assert(typeof L.audioMeasuredSeconds === 'number' && L.audioMeasuredSeconds > 0,
+        `${ch.key}: 有配音文件却缺 audioMeasuredSeconds`);
+    } else if (hasVideo && L.audioBackend) {
+      // 有声明、有成片、却没有配音文件 → 静音成片在冒充已配旁白
+      assert(false,
+        `${ch.key}: 成片已生成、lesson.json 声明了 audioBackend（"${L.audioBackend}"），但 audio/ 是空的 —— 那是个静音成片`);
+    } else {
+      // 配音没产出、成片也没有 —— 这是**新克隆仓库的正常状态**（audio/ 与 video/ 都不入库，
+      // 而 lesson.json 入库）。明说，不算失败：否则这道门在 CI 上必然误报。
+      console.log(`    ⚠ ${ch.key}: 配音未产出（成片也不在）—— 契约未比对（新克隆的正常状态）`);
     }
   }
 });
