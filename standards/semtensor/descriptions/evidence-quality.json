@@ -1,0 +1,414 @@
+{
+  "$generated": "node scripts/evidence_quality.js",
+  "coverage": {
+    "fetched": 22,
+    "total": 96,
+    "pending": 74
+  },
+  "distribution": {
+    "specific": 13,
+    "labelOnly": 0,
+    "variantOnly": 6,
+    "generic": 3
+  },
+  "distributionNote": "specific=证名字面命中（或括注语境命中）；label-only=证名命中但括注语境未命中（应 --requery）；variant-only=证名未字面命中，但正文出现**写法不同的近名证候**（证据可能对同一概念，需人工确认，**工具不擅自判同义**）；generic=连近名都没有，是泛论。",
+  "qualifierStats": {
+    "entriesWithQualifier": 4,
+    "ofWhichSpecific": 4
+  },
+  "placeContext": {
+    "颈部": [
+      "颈",
+      "项痹",
+      "颈椎"
+    ],
+    "腰部": [
+      "腰",
+      "腰椎",
+      "腰腿"
+    ],
+    "头部": [
+      "头",
+      "头痛",
+      "眩晕",
+      "脑"
+    ]
+  },
+  "unmappedQualifiers": [],
+  "entries": [
+    {
+      "label": "大肠湿热蕴毒证",
+      "base": "大肠湿热蕴毒证",
+      "labelTerms": [
+        "大肠湿热蕴毒证",
+        "大肠湿热蕴毒"
+      ],
+      "qualifiers": [],
+      "tier": "generic",
+      "sources": 1,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": []
+    },
+    {
+      "label": "风寒束表证",
+      "base": "风寒束表证",
+      "labelTerms": [
+        "风寒束表证",
+        "风寒束表"
+      ],
+      "qualifiers": [],
+      "tier": "variant-only",
+      "sources": 2,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": [
+        "表寒证"
+      ]
+    },
+    {
+      "label": "肝阳上亢证",
+      "base": "肝阳上亢证",
+      "labelTerms": [
+        "肝阳上亢证",
+        "肝阳上亢"
+      ],
+      "qualifiers": [],
+      "tier": "variant-only",
+      "sources": 2,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": [
+        "高血压病肝热阳亢证"
+      ]
+    },
+    {
+      "label": "肝郁脾虚证",
+      "base": "肝郁脾虚证",
+      "labelTerms": [
+        "肝郁脾虚证",
+        "肝郁脾虚"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 2,
+      "labelHitSources": 1,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": []
+    },
+    {
+      "label": "寒凝血瘀证",
+      "base": "寒凝血瘀证",
+      "labelTerms": [
+        "寒凝血瘀证",
+        "寒凝血瘀"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 2,
+      "labelHitSources": 1,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": []
+    },
+    {
+      "label": "寒湿痹阻证",
+      "base": "寒湿痹阻证",
+      "labelTerms": [
+        "寒湿痹阻证",
+        "寒湿痹阻"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 2,
+      "labelHitSources": 1,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": [
+        "指以感受寒邪为主的痹证"
+      ]
+    },
+    {
+      "label": "寒湿痹阻证(腰部)",
+      "base": "寒湿痹阻证",
+      "labelTerms": [
+        "寒湿痹阻证",
+        "寒湿痹阻"
+      ],
+      "qualifiers": [
+        "腰部"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 1,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "variantHints": [
+        "寒湿瘀阻证"
+      ]
+    },
+    {
+      "label": "寒湿阻络、气滞血瘀证",
+      "base": "寒湿阻络、气滞血瘀证",
+      "labelTerms": [
+        "寒湿阻络、气滞血瘀证",
+        "寒湿阻络、气滞血瘀"
+      ],
+      "qualifiers": [],
+      "tier": "generic",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": []
+    },
+    {
+      "label": "寒哮证（冷哮）",
+      "base": "寒哮证",
+      "labelTerms": [
+        "寒哮证",
+        "寒哮"
+      ],
+      "qualifiers": [
+        "冷哮"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 1,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "variantHints": []
+    },
+    {
+      "label": "脾肾阳虚证",
+      "base": "脾肾阳虚证",
+      "labelTerms": [
+        "脾肾阳虚证",
+        "脾肾阳虚"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 2,
+      "labelHitSources": 2,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": []
+    },
+    {
+      "label": "气虚便秘证",
+      "base": "气虚便秘证",
+      "labelTerms": [
+        "气虚便秘证",
+        "气虚便秘"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 2,
+      "labelHitSources": 1,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": []
+    },
+    {
+      "label": "气虚不摄证",
+      "base": "气虚不摄证",
+      "labelTerms": [
+        "气虚不摄证",
+        "气虚不摄"
+      ],
+      "qualifiers": [],
+      "tier": "variant-only",
+      "sources": 2,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": [
+        "气不摄血证",
+        "气不摄血证是中医病证"
+      ]
+    },
+    {
+      "label": "气虚血瘀、风中经络证",
+      "base": "气虚血瘀、风中经络证",
+      "labelTerms": [
+        "气虚血瘀、风中经络证",
+        "气虚血瘀、风中经络"
+      ],
+      "qualifiers": [],
+      "tier": "variant-only",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": [
+        "气虚血瘀证"
+      ]
+    },
+    {
+      "label": "气虚血瘀证",
+      "base": "气虚血瘀证",
+      "labelTerms": [
+        "气虚血瘀证",
+        "气虚血瘀"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 1,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": [
+        "一种气虚血瘀证病证",
+        "同时又兼有血瘀病证",
+        "紫或瘀斑此舌象是血瘀证"
+      ]
+    },
+    {
+      "label": "气滞血瘀证",
+      "base": "气滞血瘀证",
+      "labelTerms": [
+        "气滞血瘀证",
+        "气滞血瘀"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 1,
+      "labelHitSources": 1,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": [
+        "气滞血瘀证是中医病证",
+        "机郁滞导致血行瘀阻的证"
+      ]
+    },
+    {
+      "label": "气滞血瘀证(颈部)",
+      "base": "气滞血瘀证",
+      "labelTerms": [
+        "气滞血瘀证",
+        "气滞血瘀"
+      ],
+      "qualifiers": [
+        "颈部"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 1,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "variantHints": []
+    },
+    {
+      "label": "痰湿内阻证",
+      "base": "痰湿内阻证",
+      "labelTerms": [
+        "痰湿内阻证",
+        "痰湿内阻"
+      ],
+      "qualifiers": [],
+      "tier": "generic",
+      "sources": 1,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": []
+    },
+    {
+      "label": "下焦湿热瘀阻证",
+      "base": "下焦湿热瘀阻证",
+      "labelTerms": [
+        "下焦湿热瘀阻证",
+        "下焦湿热瘀阻"
+      ],
+      "qualifiers": [],
+      "tier": "variant-only",
+      "sources": 2,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": [
+        "湿热病证",
+        "今温病学医家对湿热病证",
+        "一般认为湿热病证",
+        "含温热夹湿所致的多种证"
+      ]
+    },
+    {
+      "label": "心脾两虚证",
+      "base": "心脾两虚证",
+      "labelTerms": [
+        "心脾两虚证",
+        "心脾两虚"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 3,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": [
+        "心脾两虚证是中医病证"
+      ]
+    },
+    {
+      "label": "心肾不交、阴虚火旺证(不寐)",
+      "base": "心肾不交、阴虚火旺证",
+      "labelTerms": [
+        "心肾不交、阴虚火旺证",
+        "心肾不交、阴虚火旺"
+      ],
+      "qualifiers": [
+        "不寐"
+      ],
+      "tier": "specific",
+      "sources": 1,
+      "labelHitSources": 1,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "variantHints": [
+        "阴虚火旺证"
+      ]
+    },
+    {
+      "label": "心肾不交证",
+      "base": "心肾不交证",
+      "labelTerms": [
+        "心肾不交证",
+        "心肾不交"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 3,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": [
+        "心肾既济失调所致的病证",
+        "以心肾不交为病机的方证"
+      ]
+    },
+    {
+      "label": "心肾阳虚、水饮凌心证",
+      "base": "心肾阳虚、水饮凌心证",
+      "labelTerms": [
+        "心肾阳虚、水饮凌心证",
+        "心肾阳虚、水饮凌心"
+      ],
+      "qualifiers": [],
+      "tier": "variant-only",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "variantHints": [
+        "水饮证中医辩证",
+        "心悸水饮凌心证",
+        "水饮凌心证"
+      ]
+    }
+  ]
+}

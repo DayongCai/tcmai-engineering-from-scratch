@@ -1,6 +1,6 @@
 {
   "name": "tcmai-engineering-from-scratch",
-  "version": "1.22.0",
+  "version": "1.23.0",
   "private": true,
   "description": "中医药领域 1领域·8院系·120学科 —— 网络视频教育平台 [tcmP] 与教材编写流水线 [textbooks]",
   "license": "MIT",
@@ -17,6 +17,7 @@
     "embeddings": "node scripts/build_embeddings.js",
     "descriptions": "node scripts/build_dsu_descriptions.js",
     "external:batch": "node scripts/external_batch.js",
+    "evidence:quality": "node scripts/evidence_quality.js",
     "api": "node scripts/tcm_api.js",
     "icd11": "node scripts/icd11_client.js",
     "icd11:ensure": "node scripts/icd11_client.js --ensure",
