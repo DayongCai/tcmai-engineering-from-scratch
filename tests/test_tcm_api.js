@@ -87,15 +87,40 @@ test('/diag?q=恶寒,发热,无汗 → 风寒束表证 + CA00 普通感冒 + 麻
   assert.ok(r.icdTitle, 'ICD 编码应能取到官方标题（来自本地 ICD-11 库）');
 });
 
-test('/bianzheng?q=口苦,咽干 → 期望肝胆湿热证，**未命中**（据实记录，不调参凑答案）', () => {
+test('/bianzheng?q=口苦,咽干 → 肝胆湿热证（补上 R2/R3 后命中）', () => {
   const r = instance.bianzheng('口苦,咽干');
-  const rank = r.ranked.findIndex((x) => x.label === '肝胆湿热证');
-  // 这两条断言是**故意的**：它们描述的是当前真实结果，不是期望结果。
-  // 若哪天有人（或我）为了"让测试变绿"去调权重，这两条会立刻失败并逼出解释。
-  assert.notStrictEqual(r.top.label, '肝胆湿热证', '竟然命中了？那必须重审：是算法变了还是被调参了');
-  assert.ok(rank >= 0, '肝胆湿热证连候选榜都没进 —— 那说明排序被改坏了');
-  assert.ok(rank <= 10, `肝胆湿热证掉到第 ${rank + 1}，已在前 10 之外`);
-  console.log(`      （期望 肝胆湿热证 排第 ${rank + 1}；当前第 1 是 ${r.top.label} —— 见 README 的成因分析）`);
+  // 这条断言在 1.16.0 时是**反向**的（要求不命中）。它按设计报了警，逼出这轮的解释：
+  //   · 补上了 A_jk 矩阵与 R2 病位载荷；
+  //   · 关键证据是**症状锚点直接点名脏腑** —— `03热一（胆热口苦）` 里的「胆」是观察到的病位。
+  // 所以现在是正断言，但旁边补了一条守门：没有观察到病位时**不许**靠投影加分（见下一条测试）。
+  assert.strictEqual(r.top.label, '肝胆湿热证', `实得 ${r.top.label}`);
+  const why = r.top.why.join(' ');
+  assert.ok(/病位D胆/.test(why), `命中的依据里没有「胆」这个观察到的病位：${why}`);
+  assert.ok(/\[观察到\]/.test(why), '病位加分必须标注来源是「观察到」');
+});
+
+test('A_jk 矩阵从 xlsx 解析出来，且自带的出边Σ 校验精确通过', () => {
+  const aff = instance.affinity;
+  assert.strictEqual(Object.keys(aff.A).length, 11, `只解析出 ${Object.keys(aff.A).length} 个脏`);
+  assert.deepStrictEqual(aff.sumsComputed, aff.sumsReported,
+    `出边Σ 对不上：表载 ${JSON.stringify(aff.sumsReported)} vs 实测 ${JSON.stringify(aff.sumsComputed)}`);
+  // 抽查源表里的取值
+  assert.strictEqual(aff.A['S脾']['S湿'], 0.9, '脾 湿 0.9 应来自源表');
+  assert.strictEqual(aff.A['P肺']['Z燥'], 0.9, '肺 燥 0.9 应来自源表');
+  assert.strictEqual(aff.A['H肝']['F风'], 0.8, '肝 风 0.8 应来自源表');
+});
+
+test('守门：没有观察到病位时，不许靠 A_jk 投影加分（/diag 曾因此退步）', () => {
+  // 恶寒/发热/无汗 的锚点是 `02寒三（散热关闸）` 等，**没有点名任何脏腑**。
+  // 若把 R2 的全部投影载荷都加分，任何带脏腑字的证候都白得约 1 分，
+  // `风寒束表证`（证名无脏腑字）会被 `脾胃虚寒证`（脾+胃）压掉 —— 实测确实如此。
+  const r = instance.diag('恶寒,发热,无汗');
+  assert.strictEqual(r.syndrome.label, '风寒束表证', `实得 ${r.syndrome.label}`);
+  const why = r.syndrome.why.join(' ');
+  assert.ok(!/病位/.test(why), `本次没有观察到病位，却出现了病位加分：${why}`);
+  // 但投影本身仍要被算出来（它是指标，不是加分项）
+  assert.ok(r.r2.byPosition.length === 11, 'R2 应仍给出 11 个病位载荷');
+  assert.ok(r.r2.byPosition.every((p) => p.direct === 0), '本次不该有任何「观察到」的病位');
 });
 
 test('检索确定性：同一输入两次结果一致', () => {

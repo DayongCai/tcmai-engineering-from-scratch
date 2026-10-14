@@ -132,7 +132,80 @@ const MECH_KEYWORDS = {
   暑脱: ['暑'], 气虚: ['气虚'], 阳虚: ['阳虚'],
 };
 
-function scoreSyndromes(inferred, dsu) {
+// ── 3b. A_jk 邪-脏亲和矩阵（R2 的数据）──
+//
+// 来源：`外因六淫.xlsx#9外因致病定位流水线` §2.2「邪-脏亲和矩阵 A_jk（11×6，L1→L2 边权重表）」。
+// 该表自带出边Σ 校验行（F4.4 / H5.5 / R5.5 / Z4.1 / S5.4 / U4.4），本函数**核对它**后再用。
+const ZHANG = ['P肺', 'H肝', 'X心', 'S脾', 'R肾', 'D胆', 'W胃', 'XC小肠', 'DC大肠', 'PG膀胱', 'SJ三焦'];
+const EVIL_KEYS = ['F风', 'H寒', 'R热', 'Z燥', 'S湿', 'U暑'];
+// 病机 → 邪（逆转引擎 R2 的 q_mj ≡ A_jk(m)）
+const MECH_TO_EVIL = { 寒凝: 'H寒', 热亢: 'R热', 燥涸: 'Z燥', 湿滞: 'S湿', 风扰: 'F风', 暑脱: 'U暑' };
+// 脏腑汉字（用于在证候名上找病位）
+const ZHANG_CHAR = { 'H肝': ['肝'], 'X心': ['心'], 'P肺': ['肺'], 'S脾': ['脾'], 'R肾': ['肾', '命门'],
+  'D胆': ['胆'], 'W胃': ['胃'], 'XC小肠': ['小肠'], 'DC大肠': ['大肠', '肠'], 'PG膀胱': ['膀胱'], 'SJ三焦': ['三焦'] };
+
+function loadAffinity() {
+  const wb = readWorkbook(P('standards/materials/waiyin-liuyin/sources/外因六淫.xlsx'), { maxRows: 400 });
+  const sheet = (wb.sheets || []).find((s) => /9外因致病定位流水线/.test(s.name));
+  const rows = (sheet.rows || []).map((r) => r.map((c) => String(c == null ? '' : c).trim()));
+  const A = {};
+  let sumsReported = null, sumsComputed = null;
+  for (const r of rows) {
+    const cells = r.filter((x) => x !== '');
+    if (!cells.length) continue;
+    const line = cells.join(' | ');
+    if (!line.startsWith('|')) continue;
+    const parts = line.split('|').map((s) => s.trim());
+    if (parts[0] === '') parts.shift();
+    if (parts[parts.length - 1] === '') parts.pop();
+    if (parts.length < 7) continue;
+    const name = parts[0].replace(/\*\*/g, '');
+    if (ZHANG.includes(name)) {
+      const vals = parts.slice(1, 7).map((v) => parseFloat(v.replace(/\*\*/g, '')));
+      if (vals.every((v) => isFinite(v))) A[name] = Object.fromEntries(EVIL_KEYS.map((k, i) => [k, vals[i]]));
+    }
+    if (/出边Σ|出边Σ/.test(parts[0])) {
+      sumsReported = Object.fromEntries(EVIL_KEYS.map((k, i) => [k, parseFloat((parts[i + 1] || '').replace(/\*\*/g, ''))]));
+    }
+  }
+  // 自带校验：出边Σ 必须等于按列求和
+  if (Object.keys(A).length && sumsReported) {
+    sumsComputed = Object.fromEntries(EVIL_KEYS.map((k) => [k, Number(Object.values(A).reduce((s, row) => s + row[k], 0).toFixed(4))]));
+  }
+  return { A, sumsReported, sumsComputed };
+}
+
+// ── R2 病位载荷 + R3 归因（源引擎 §1.3）──
+//   R2 病位载荷 w_j = Σ_m g_m·q_mj，q_mj ≡ A_jk(m)
+//   R3 证据似然 L_k = Σ_j A_jk·w_j              （逆向贝叶斯）
+//
+// 除 R2 的投影外，**锚点直接点名脏腑**也计入病位 —— 源表的锚点就写着
+// `03热一（胆热口苦）`：口苦是胆热，那个「胆」是**观察到的病位**，不是投影出来的。
+// 直接证据与投影证据分开记，权重不同（直接证据不受 A_jk 稀释）。
+function r2r3(inferred, aff) {
+  const w = {};                    // 病位载荷
+  const direct = {};               // 直接点名的病位
+  for (const m of inferred.mechs) {
+    const evil = MECH_TO_EVIL[m.mech];
+    if (!evil || !aff.A) continue;
+    for (const z of Object.keys(aff.A)) w[z] = (w[z] || 0) + m.g * aff.A[z][evil];
+  }
+  for (const t of inferred.traces) {
+    const txt = norm(t.anchor);
+    for (const [z, chars] of Object.entries(ZHANG_CHAR)) {
+      if (chars.some((c) => txt.includes(c))) direct[z] = (direct[z] || 0) + 0.8928;
+    }
+  }
+  for (const [z, v] of Object.entries(direct)) w[z] = (w[z] || 0) + v;
+  const byPosition = Object.entries(w).map(([z, v]) => ({ zhang: z, load: Number(v.toFixed(4)), direct: Number((direct[z] || 0).toFixed(4)) }))
+    .sort((a, b) => b.load - a.load);
+  const likelihood = Object.entries(EVIL_KEYS).map(([, k]) => ({
+    evil: k, L: Number(Object.entries(w).reduce((s, [z, v]) => s + (aff.A[z] ? aff.A[z][k] * v : 0), 0).toFixed(4)),
+  })).sort((a, b) => b.L - a.L);
+  return { byPosition, likelihood };
+}
+
+function scoreSyndromes(inferred, dsu, r2) {
   // 阶段线索里出现的汉字（如 `S2 表` → 表；`S4 物质化` → 物质化）作为病位关键词
   const stageKw = new Set();
   // 锚点的**前缀编号**编码了六淫：`02寒三`→寒、`03热一`→热、`04燥一`→燥、
@@ -160,6 +233,19 @@ function scoreSyndromes(inferred, dsu) {
     for (const [evil, n] of evilHits) {
       for (const kw of EVIL[evil] || []) {
         if (name.includes(kw)) { s += 0.25 * n; why.push(`锚点归因(${evil}×${n}) +${(0.25 * n).toFixed(2)}`); }
+      }
+    }
+    // R2 病位通道：**只计被观察到的病位**（症状锚点直接点名的脏腑，如 `胆热口苦`→胆）。
+    //
+    // 为什么不是把 R2 的全部投影载荷都加上：A_jk 的投影把载荷摊在 11 个脏上（每个约 0.8~1.2），
+    // 于是**任何**带脏腑字的证候都白得约 1 分 —— 加了之后 `/diag` 的 `风寒束表证`（证名里没有脏腑字）
+    // 会被 `脾胃虚寒证`（脾+胃）压掉。源表 §2.2 的读取规则本来就是说 A_jk 用来**排候选**
+    // （Top-1~3、主受脏 ≥0.6），候选要由证据选定 —— **投影给候选，观察才是证据。**
+    // 需要直方投影响应时看 r2.byPosition，那是指标，不是加分项。
+    for (const p of (r2 && r2.byPosition) || []) {
+      if (!p.direct) continue;
+      for (const kw of ZHANG_CHAR[p.zhang] || []) {
+        if (name.includes(kw)) { s += p.load; why.push(`病位${p.zhang}(${kw})[观察到] +${p.load}`); break; }
       }
     }
     return { uid: u.uid, label: name, score: Number(s.toFixed(4)), why };
@@ -201,6 +287,7 @@ function extractFormulas(text) {
 // ── 端点 ──
 function makeApi() {
   const table = loadSymptomMap();
+  const aff = loadAffinity();
   const raw = JSON.parse(fs.readFileSync(P('standards/semtensor/datasets/reference-units.json'), 'utf8'));
   const units = Array.isArray(raw) ? raw : raw.units;
   const dsu = units.filter((u) => u.kind === 'dsu');
@@ -233,20 +320,23 @@ function makeApi() {
     tableSize: table.length,
     articleCount: articles.length,
     dsuCount: dsu.length,
+    affinity: aff,
 
-    /** /bianzheng?symptoms —— 症状 → 证候 */
+    /** /bianzheng?symptoms —— 症状 → 证候（R0→R1→R2→R3） */
     bianzheng(q) {
       const symptoms = norm(q).split(/[,，\s、]+/).filter(Boolean);
       const inferred = inferMechanisms(symptoms, table);
-      const ranked = scoreSyndromes(inferred, dsu);
-      return { query: q, symptoms, inferred, ranked: ranked.slice(0, 8), top: ranked[0] || null };
+      const r2 = r2r3(inferred, aff);
+      const ranked = scoreSyndromes(inferred, dsu, r2);
+      return { query: q, symptoms, inferred, r2, ranked: ranked.slice(0, 8), top: ranked[0] || null };
     },
 
     /** /diag?symptoms —— 症状 → 病 + 方 + ICD-11 */
     diag(q) {
       const symptoms = norm(q).split(/[,，\s、]+/).filter(Boolean);
       const inferred = inferMechanisms(symptoms, table);
-      const ranked = scoreSyndromes(inferred, dsu);
+      const r2 = r2r3(inferred, aff);
+      const ranked = scoreSyndromes(inferred, dsu, r2);
       const top = ranked[0] || null;
 
       // 方剂：伤寒论条文按症状检索
@@ -262,7 +352,7 @@ function makeApi() {
       const attrs = top ? dsuAttrs.get(top.uid) : null;
       const icdEntity = attrs && attrs.icd && db ? db.byCode(attrs.icd) : null;
       return {
-        query: q, symptoms, inferred,
+        query: q, symptoms, inferred, r2,
         syndrome: top,
         ranked: ranked.slice(0, 5),
         disease: attrs ? attrs.disease : null,
