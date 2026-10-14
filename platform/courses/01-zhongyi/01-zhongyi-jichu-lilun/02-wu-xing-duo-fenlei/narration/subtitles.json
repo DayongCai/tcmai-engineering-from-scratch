@@ -1,0 +1,135 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/01-zhongyi-jichu-lilun/02-wu-xing-duo-fenlei/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 12,
+  "audioBackend": "Windows SAPI 离线语音 · Microsoft Huihui Desktop",
+  "audioTotalSeconds": 302.71,
+  "estimatedCues": 0,
+  "videoSeconds": 302.724218,
+  "videoMinusNarrationSeconds": 0.014,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 11.23,
+      "seconds": 11.23,
+      "estimated": false,
+      "text": "第 2 章 · 五行学说 ， 多分类：从零实现 Softmax（并检验生克约束是否真的有用）",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 11.23,
+      "end": 22.14,
+      "seconds": 10.91,
+      "estimated": false,
+      "text": "「五行：一曰水，二曰火，三曰木，四曰金，五曰土。」——《尚书·洪范》",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 22.14,
+      "end": 43.61,
+      "seconds": 21.47,
+      "estimated": false,
+      "text": "你知道五行是五类，于是写了个五分类器；但相生相克去哪了？你可能已经听过「纯 softmax 会丢掉关系」这句断言 —— 本章要做的第一件事，是去测它到底对不对。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 43.61,
+      "end": 65.42,
+      "seconds": 21.81,
+      "estimated": false,
+      "text": "环境逼迫(“答辩时被问『你的五行分类器和普通五分类器有什么区别』，答不上来”) + 知识积累(五行生克 × softmax 与关系正则 = 能自己设计并检验约束的建模能力)",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "figure",
+      "start": 65.42,
+      "end": 71.44,
+      "seconds": 6.02,
+      "estimated": false,
+      "text": "接下来这张动画图演示上面这个翻译过程。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "objectives",
+      "start": 71.44,
+      "end": 120.3,
+      "seconds": 48.86,
+      "estimated": false,
+      "text": "从零实现 softmax（含减 max 的数值稳定写法），并解释不减 max 会在什么量级上溢出 把「相生 / 相克」写成一对余弦约束加进损失函数，手推其梯度 用 λ 扫描测量一个约束的实际效果，而不是相信断言 说清本章实验里「纯 softmax 已经满足生克一致性」的原因，并指出这暴露了表示层的什么问题 判断什么情况下应该加约束、什么情况下加约束只是自伤",
+      "audio": "006.mp3"
+    },
+    {
+      "n": 7,
+      "role": "concept",
+      "start": 120.3,
+      "end": 207.95,
+      "seconds": 87.65,
+      "estimated": false,
+      "text": "中医：五行与生克 《尚书·洪范》给出五行的名目与次序；《素问·五运行大论》等篇给出相生相克的关系： 关键在于关系是学说的主体。如果把五行当成 5 个互不相干的类，那这门学说就退化成了 一份五格清单 —— 它最有信息量的部分（哪两类互相促进、哪两类互相制约）全丢了。 AI / 工程：Softmax 与关系正则 多分类用 softmax 把打分转为概率： 数值稳定写法必须先减去最大值： 把关系写成约束，最直接的一种是约束类权重向量之间的夹角： 相生对：把两个方向拉近（余弦不小于 ms ） 相克对：把两个方向推远（余弦不大于 mk ） λ 是这两者与分类准确率之间的交换率 —— 它不是免费的 对应关系",
+      "audio": "007.mp3"
+    },
+    {
+      "n": 8,
+      "role": "build",
+      "start": 207.95,
+      "end": 220.26,
+      "seconds": 12.31,
+      "estimated": false,
+      "text": "两件事：softmax（带数值稳定），以及把生克写成可求导的 hinge 约束。 跑起来：",
+      "audio": "008.mp3"
+    },
+    {
+      "n": 9,
+      "role": "use",
+      "start": 220.26,
+      "end": 257,
+      "seconds": 36.74,
+      "estimated": false,
+      "text": "任何成熟框架里，加这项约束都只是 loss = ce + lambda * reg 一行。真正的工作量在于： 设计可微的约束形式（hinge？KL？距离？） 扫描 λ，画出「准确率 vs 关系差」的权衡曲线 判断这条曲线是否值得走 —— 本课的例子告诉你，不总是值得",
+      "audio": "009.mp3"
+    },
+    {
+      "n": 10,
+      "role": "ship",
+      "start": 257,
+      "end": 279.37,
+      "seconds": 22.37,
+      "estimated": false,
+      "text": "Prompt 模板 —— 让大模型在给出五行归类时，必须同时给出所依据的配属维度，并显式标注关系一致性 Skill 文件 —— 把「加约束前先测基线」固化成一个可复用的实验流程",
+      "audio": "010.mp3"
+    },
+    {
+      "n": 11,
+      "role": "verify",
+      "start": 279.37,
+      "end": 286.19,
+      "seconds": 6.82,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "011.mp3"
+    },
+    {
+      "n": 12,
+      "role": "disclaimer",
+      "start": 286.19,
+      "end": 302.71,
+      "seconds": 16.52,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "012.mp3"
+    }
+  ]
+}

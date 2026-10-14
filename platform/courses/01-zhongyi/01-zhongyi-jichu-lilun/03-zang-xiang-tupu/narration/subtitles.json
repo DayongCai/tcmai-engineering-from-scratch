@@ -1,0 +1,135 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/01-zhongyi-jichu-lilun/03-zang-xiang-tupu/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 12,
+  "audioBackend": "Windows SAPI 离线语音 · Microsoft Huihui Desktop",
+  "audioTotalSeconds": 315.28,
+  "estimatedCues": 0,
+  "videoSeconds": 315.30966,
+  "videoMinusNarrationSeconds": 0.03,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 7.42,
+      "seconds": 7.42,
+      "estimated": false,
+      "text": "第 3 章 · 藏象学说 ， 知识图谱：脏腑关系的图表示",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 7.42,
+      "end": 12.89,
+      "seconds": 5.47,
+      "estimated": false,
+      "text": "「藏象何如？」——《素问·六节藏象论》",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 12.89,
+      "end": 35.53,
+      "seconds": 22.64,
+      "estimated": false,
+      "text": "你能背出「肝开窍于目、在志为怒、在体为筋」，但这些知识是散的。当病人说「我最近特别容易发怒，还老是流泪」，你没法系统地回答「这几点在藏象体系里怎么串起来」。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 35.53,
+      "end": 54.23,
+      "seconds": 18.7,
+      "estimated": false,
+      "text": "环境逼迫(“写病历只会罗列症状，串不成一个整体判断”) + 知识积累(藏象配属 × 图结构 = 能把「象」变成可遍历、可校验的关系网络)",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "figure",
+      "start": 54.23,
+      "end": 60.25,
+      "seconds": 6.02,
+      "estimated": false,
+      "text": "接下来这张动画图演示上面这个翻译过程。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "objectives",
+      "start": 60.25,
+      "end": 108.92,
+      "seconds": 48.67,
+      "estimated": false,
+      "text": "说清「藏」与「象」的区别，以及为什么「象」本质上是关系而不是属性 先定义本体（实体类型 + 关系类型），再灌数据；说清反过来做会付出什么代价 从零实现邻接表、k 跳邻域、最短路径，并处理边方向 写出三项本体完整性校验，并把「哪些关系还没建」变成可枚举清单 解释为什么藏象与五行必须放在同一张图里 —— 拆成两张表会丢掉哪条路径",
+      "audio": "006.mp3"
+    },
+    {
+      "n": 7,
+      "role": "concept",
+      "start": 108.92,
+      "end": 210.96,
+      "seconds": 102.04,
+      "estimated": false,
+      "text": "中医：藏与象 《素问·五藏别论》：「所谓五藏者，藏精气而不泻也。」——「藏」指藏于内的脏腑功能。 「象」指这些功能表现于外的征象。 关键在于藏象的核心是「联系」，不是「属性清单」： 每一条都是一条边，不是一个字段。肝之所以是「肝」，一半由它连着什么决定。 用表格存这些关系，你只能逐行查；用图存，你可以问「从『目』走两步能到哪」。 AI / 工程：知识图谱 知识图谱的最小单元是三元组 (头实体, 关系, 尾实体)。落到实现上就是邻接表： 图上的三件事必须自己写一遍： 方向性是要处理的真实问题。 相克边只建「克」的方向（金克木）。当你反向查询 金与木的关系时，渲染时必须标注「逆向遍历」，否则会把「金克木」讲成「木克金」—— 中医的方向讲反了，不是排版问题，是学术错误。 对应关系",
+      "audio": "007.mp3"
+    },
+    {
+      "n": 8,
+      "role": "build",
+      "start": 210.96,
+      "end": 227.03,
+      "seconds": 16.07,
+      "estimated": false,
+      "text": "先定本体，再灌数据： 相表里是对称关系，两侧都要建边： 最短路径要携带真实边方向： 跑起来：",
+      "audio": "008.mp3"
+    },
+    {
+      "n": 9,
+      "role": "use",
+      "start": 227.03,
+      "end": 269.85,
+      "seconds": 42.82,
+      "estimated": false,
+      "text": "用成熟图库（NetworkX / Neo4j / RDF 三元组库）做同样的事，接口不同但三件事不变： 邻域、路径、校验。真正的差别在规模：本课 40 节点 50 条边，手写足够； 真实的医案知识图谱是十万节点量级，那时才需要图数据库。 不要在 40 个节点上引入 Neo4j。 这是本章最实用的工程建议。",
+      "audio": "009.mp3"
+    },
+    {
+      "n": 10,
+      "role": "ship",
+      "start": 269.85,
+      "end": 291.94,
+      "seconds": 22.09,
+      "estimated": false,
+      "text": "Prompt 模板 —— 让大模型把症状串成藏象关系链，每一步都必须标出关系类型，并在跨五行时显式标注方向 Skill 文件 —— 藏象关系抽取与本体校验的固定流程",
+      "audio": "010.mp3"
+    },
+    {
+      "n": 11,
+      "role": "verify",
+      "start": 291.94,
+      "end": 298.76,
+      "seconds": 6.82,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "011.mp3"
+    },
+    {
+      "n": 12,
+      "role": "disclaimer",
+      "start": 298.76,
+      "end": 315.28,
+      "seconds": 16.52,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "012.mp3"
+    }
+  ]
+}

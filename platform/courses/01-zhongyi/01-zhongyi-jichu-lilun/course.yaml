@@ -26,20 +26,23 @@ platform:
 chapters:
   - slug: 01-yin-yang-er-fenlei
     title: 阴阳学说 → 二分类：从零实现逻辑回归
-    video: slides-ready        # planned | narration-ready | slides-ready | rendered | published
-    estimate_minutes: 10       # 来自 narration/lesson.json 的 estimateTotalSeconds，非实测
+    video: rendered            # planned | narration-ready | slides-ready | rendered | published
+    estimate_minutes: 4.2      # = narration/lesson.json 的 estimateTotalSeconds ÷ 60
+    measured_minutes: 5.8      # = narration/lesson.json 的 audioMeasuredSeconds ÷ 60（实测配音）
     figure: yin-yang-sigmoid
 
   - slug: 02-wu-xing-duo-fenlei
     title: 五行学说 → 多分类：从零实现 Softmax（并检验生克约束是否真的有用）
-    video: slides-ready
-    estimate_minutes: 8
+    video: rendered
+    estimate_minutes: 3.6
+    measured_minutes: 5.0
     figure: wuxing-cycle
 
   - slug: 03-zang-xiang-tupu
     title: 藏象学说 → 知识图谱：脏腑关系的图表示
-    video: slides-ready
-    estimate_minutes: 8
+    video: rendered
+    estimate_minutes: 3.6
+    measured_minutes: 5.3
     figure: zangxiang-graph
 
   # 以下 7 章尚未开章。运行脚手架开章后，在此登记。

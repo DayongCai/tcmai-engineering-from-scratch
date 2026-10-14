@@ -58,7 +58,9 @@ const platformFiles = walk('platform');
 const videos = platformFiles.filter((p) => /lesson\.mp4$/.test(p));
 const narration = platformFiles.filter((p) => /narration[\\/]audio[\\/].*\.(wav|mp3)$/.test(p));
 const frames = platformFiles.filter((p) => /frames[\\/].*\.png$/.test(p));
-const slides = platformFiles.filter((p) => /slides[\\/].*\.(json|md)$/.test(p));
+// 幻灯片产物是 slides/index.html —— 第一版写成 .json|.md，于是这个计数恒为 0。
+// （"有成片"那条分支直到 2026-10-15 三章都录出成片才第一次被执行，才暴露出来。）
+const slides = platformFiles.filter((p) => /slides[\\/].*\.(html|json|md)$/.test(p));
 const sitePages = walk('site').filter((p) => /site[\\/][a-z]+\.html$/.test(p));
 
 // 标准/资料线
@@ -109,7 +111,7 @@ const workstreams = [
     evidence: videos.length
       ? `${videos.length} 成片 · ${narration.length} 配音 · ${frames.length} 帧 · ${slides.length} 幻灯片/讲稿件`
       : '无成片（流水线脚本齐备：find_tools→extract_narration→build_slides→render_frames→synthesize_narration→build_subtitles→build_video）',
-    detail: 'TTS 降级链 edge-tts → Windows SAPI → 人工；时长用实测配音时长；字幕对视音差 +0.022s',
+    detail: 'TTS 降级链 edge-tts → Windows SAPI → 人工；时长用实测配音时长；字幕对视音差逐章实测（毫秒级）',
   },
   {
     name: '[textbooks] 教材 · 内容',

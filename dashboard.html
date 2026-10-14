@@ -53,7 +53,7 @@
 <body>
 <div class="wrap">
   <h1>tcmai-engineering-from-scratch · 项目看板</h1>
-  <div class="sub">由 <code>node scripts/build_dashboard.js</code> 从仓库现状生成 · 版本 <code>v1.29.0</code> ·
+  <div class="sub">由 <code>node scripts/build_dashboard.js</code> 从仓库现状生成 · 版本 <code>v1.30.0</code> ·
     生成时全部数字来自 curriculum.json / catalog.json / 文件系统 / 派生索引，不手写</div>
 
   <h2>规模与进度</h2>
@@ -63,11 +63,11 @@
     <div class="kpi"><div class="k">章节（目标）</div><div class="v">1086</div></div>
     <div class="kpi"><div class="k">已建章节</div><div class="v">3<small>0.28%</small></div></div>
     <div class="kpi"><div class="k">书稿文件</div><div class="v">13<small>md</small></div></div>
-    <div class="kpi"><div class="k">视频成片</div><div class="v">1</div></div>
+    <div class="kpi"><div class="k">视频成片</div><div class="v">3</div></div>
     <div class="kpi"><div class="k">产出物</div><div class="v">6<small>undefined 章</small></div></div>
     <div class="kpi"><div class="k">测试套件</div><div class="v">34</div></div>
     <div class="kpi"><div class="k">扫描 md</div><div class="v">180<small>0 断链</small></div></div>
-    <div class="kpi"><div class="k">版本</div><div class="v">1.29.0</div></div>
+    <div class="kpi"><div class="k">版本</div><div class="v">1.30.0</div></div>
   </div>
 
   <h2>项目逻辑 · 数据流</h2>
@@ -87,7 +87,7 @@
     <tr><td>[tcmP] 平台 · 站点</td><td><span class="pill s-done">已完成</span></td>
         <td>site/ 9 个页面 · data/content/semtensor-spec/manifest/stats 生成于构建<div class="why">静态站 + 单文件离线快照；Range 请求与路径穿越防护已测</div></td></tr>
     <tr><td>[tcmP] 平台 · 视频流水线</td><td><span class="pill s-done">已完成</span></td>
-        <td>1 成片 · 12 配音 · 12 帧 · 0 幻灯片/讲稿件<div class="why">TTS 降级链 edge-tts → Windows SAPI → 人工；时长用实测配音时长；字幕对视音差 +0.022s</div></td></tr>
+        <td>3 成片 · 36 配音 · 36 帧 · 3 幻灯片/讲稿件<div class="why">TTS 降级链 edge-tts → Windows SAPI → 人工；时长用实测配音时长；字幕对视音差逐章实测（毫秒级）</div></td></tr>
     <tr><td>[textbooks] 教材 · 内容</td><td><span class="pill s-active">进行中</span></td>
         <td>5 卷 · 已写 13 章 · 构建产物 2 件<div class="why">教材正文 = 章节 docx 的 docs/zh.md 汇总；同时出单文件书 HTML（不需要 pandoc）</div></td></tr>
     <tr><td>课程骨架 · 学科/章节</td><td><span class="pill s-active">进行中</span></td>
@@ -141,6 +141,7 @@
 
   <h2>最近提交</h2>
   <div class="card git">
+    <div>399d417  <b>eat(platform): 成片流梳理 + 产物契约门（[tcmP] 的另一半此前只有一行）</b></div>
     <div>a846e62  <b>ata(external): 证候外部证据第 4 批（+6 条，0 条失败）</b></div>
     <div>7db7e7f  <b>ocs(arch): 逻辑架构 ARCHITECTURE.md —— 靠哪几条逻辑立住，换域动哪一层</b></div>
     <div>cd61fca  <b>eat(porting): 上游漂移哨兵（定时看门狗，无 LLM，静默契约）</b></div>
@@ -152,7 +153,6 @@
     <div>f80b255  <b>ata(external): 证候外部证据第 3 批（+5 条，1 条检索失败）</b></div>
     <div>4403514  <b>eat(embeddings): 按上游 vectorization-ICD11 补齐描述字段与指标口径</b></div>
     <div>598caf2  <b>ata(external): 证候外部证据第 2 批（+5 条，1 条检索失败）</b></div>
-    <div>9fbe11f  <b>eat(external): 外部证据分批机制 + WHO-TCM 结构化通道 + 构词三类词表</b></div>
   </div>
 
   <footer>

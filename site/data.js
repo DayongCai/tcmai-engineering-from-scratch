@@ -114,7 +114,7 @@ window.TCMAI_DATA = {
     "subjectsDone": 0,
     "subjectsWip": 1,
     "subjectsPlanned": 119,
-    "videos": 1,
+    "videos": 3,
     "textbookChapters": 1
   },
   "semesterPlan": [

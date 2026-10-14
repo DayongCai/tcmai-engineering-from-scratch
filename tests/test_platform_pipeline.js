@@ -254,8 +254,19 @@ test('字幕的诚实报告被填（条数一致、视音差、文本与配音�
     assert(S.rule, `${ch.key}: 缺 rule —— 切分规则必须写下来，否则改法无从对照`);
     assert(S.cueCount === (lesson.segments || []).length,
       `${ch.key}: cueCount ${S.cueCount} ≠ 段数 ${(lesson.segments || []).length}`);
-    assert(typeof S.videoMinusNarrationSeconds === 'number',
-      `${ch.key}: 缺 videoMinusNarrationSeconds —— 这条正是修「画面比配音长」那个 bug 留下的实测`);
+    assert('videoMinusNarrationSeconds' in S,
+      `${ch.key}: subtitles.json 里连 videoMinusNarrationSeconds 字段都没有`);
+    // 这条字段的真实语义是「对视音差」——成片还没做时算不出来。
+    // 所以断言要分两态（第一版写成"必须是 number"，那假设了字幕一定已有成片，
+    // 对刚做完字幕、还没合成视频的章节会误报）。
+    const hasVideo = fs.existsSync(path.join(ch.dir, 'video', 'lesson.mp4'));
+    if (hasVideo) {
+      assert(typeof S.videoMinusNarrationSeconds === 'number',
+        `${ch.key}: 成片已存在，对视音差必须是实测数字，实为 ${JSON.stringify(S.videoMinusNarrationSeconds)}`);
+    } else {
+      assert(S.videoMinusNarrationSeconds === null,
+        `${ch.key}: 无成片时应明说"未校验"（null），实为 ${JSON.stringify(S.videoMinusNarrationSeconds)} —— 不许留 undefined 或编个数字`);
+    }
     assert(S.textMatchesNarration === true,
       `${ch.key}: textMatchesNarration 不为 true —— 字幕文字与配音不一致`);
     assert(Array.isArray(S.mismatches) && S.mismatches.length === 0,
@@ -287,6 +298,111 @@ test('完成度被打印出来（"三章里只有一章成片"这件事不许静
   }
   assert(chapters.length > 0 || !fs.existsSync(COURSES),
     'platform/courses 存在但一个章节都没有');
+});
+
+// ── 六、course.yaml 的状态不许与磁盘实况不符 ────────────────
+//
+// course.yaml 自己写着「只登记讲什么、什么状态」，而 video 字段是**手工维护**的。
+// 手工维护的状态必然烂：三章都已经成片了，文件里还写着 slides-ready。
+// 这与 test_forking_doc.js 守的是同一条逻辑（文档里的数字/状态不许静默过期），
+// 只是换了个文件。
+
+/** 实况等级：磁盘上走到哪一段 */
+function actualState(chDir) {
+  if (!fs.existsSync(chDir)) return 'planned';
+  if (fs.existsSync(path.join(chDir, 'video', 'lesson.mp4'))) return 'rendered';
+  if (fs.existsSync(path.join(chDir, 'slides', 'index.html'))) return 'slides-ready';
+  if (fs.existsSync(path.join(chDir, 'narration', 'lesson.json'))) return 'narration-ready';
+  return 'planned';
+}
+
+/** 极简 yaml 读取：只取 chapters 下每条 slug 与 video（本项目无 yaml 库，够用即可） */
+function readCourseYaml(file) {
+  const txt = fs.readFileSync(file, 'utf8');
+  const out = [];
+  let cur = null;
+  for (const line of txt.split('\n')) {
+    const mSlug = line.match(/^\s*-\s*slug:\s*(\S+)/);
+    if (mSlug) { cur = { slug: mSlug[1], video: null }; out.push(cur); continue; }
+    const mVideo = line.match(/^\s*video:\s*(\S+)/);
+    if (mVideo && cur) cur.video = mVideo[1];
+  }
+  return out;
+}
+
+test('course.yaml 的 video 状态与磁盘实况一致（手工状态不许静默过期）', () => {
+  const yamlFiles = [];
+  const walkYaml = (dir, depth = 0) => {
+    if (depth > 4 || !fs.existsSync(dir)) return;
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) walkYaml(p, depth + 1);
+      else if (e.name === 'course.yaml') yamlFiles.push(p);
+    }
+  };
+  walkYaml(COURSES);
+  assert(yamlFiles.length > 0, '没找到任何 course.yaml');
+
+  const bad = [];
+  for (const f of yamlFiles) {
+    const subjectDir = path.dirname(f);
+    for (const ch of readCourseYaml(f)) {
+      const actual = actualState(path.join(subjectDir, ch.slug));
+      // published 是"已发布"这个额外动作，磁盘上表现为 rendered —— 允许它高一级
+      if (ch.video === actual) continue;
+      if (ch.video === 'published' && actual === 'rendered') continue;
+      bad.push(`${path.relative(ROOT, f)} 里 ${ch.slug} 写的是 ${ch.video}，磁盘实况是 ${actual}`);
+    }
+  }
+  assert(bad.length === 0, `状态与实况不符：\n      ${bad.join('\n      ')}`);
+});
+
+test('course.yaml 的时长与 lesson.json 一致（"声明了来源"就必须真的对得上）', () => {
+  const yamlFiles = [];
+  const walkYaml = (dir, depth = 0) => {
+    if (depth > 4 || !fs.existsSync(dir)) return;
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) walkYaml(p, depth + 1);
+      else if (e.name === 'course.yaml') yamlFiles.push(p);
+    }
+  };
+  walkYaml(COURSES);
+
+  const bad = [];
+  for (const f of yamlFiles) {
+    const subjectDir = path.dirname(f);
+    const txt = fs.readFileSync(f, 'utf8');
+    // slug 与它的 estimate_minutes / measured_minutes
+    const entries = [];
+    let cur = null;
+    for (const line of txt.split('\n')) {
+      const mSlug = line.match(/^\s*-\s*slug:\s*(\S+)/);
+      if (mSlug) { cur = { slug: mSlug[1], est: null, meas: null }; entries.push(cur); continue; }
+      const mEst = line.match(/^\s*estimate_minutes:\s*([\d.]+)/);
+      if (mEst && cur) cur.est = Number(mEst[1]);
+      const mMeas = line.match(/^\s*measured_minutes:\s*([\d.]+)/);
+      if (mMeas && cur) cur.meas = Number(mMeas[1]);
+    }
+    for (const e of entries) {
+      const lessonPath = path.join(subjectDir, e.slug, 'narration', 'lesson.json');
+      if (!fs.existsSync(lessonPath)) continue;   // 未开章的不比
+      const L = JSON.parse(fs.readFileSync(lessonPath, 'utf8'));
+      if (e.est !== null && L.estimateTotalSeconds) {
+        const want = L.estimateTotalSeconds / 60;
+        if (Math.abs(e.est - want) > 0.05) {
+          bad.push(`${e.slug}: estimate_minutes 写 ${e.est}，lesson.json 的 estimateTotalSeconds 换算是 ${want.toFixed(1)}`);
+        }
+      }
+      if (e.meas !== null && L.audioMeasuredSeconds) {
+        const want = L.audioMeasuredSeconds / 60;
+        if (Math.abs(e.meas - want) > 0.06) {
+          bad.push(`${e.slug}: measured_minutes 写 ${e.meas}，lesson.json 的 audioMeasuredSeconds 换算是 ${want.toFixed(1)}`);
+        }
+      }
+    }
+  }
+  assert(bad.length === 0, `时长与来源不符：\n      ${bad.join('\n      ')}`);
 });
 
 console.log(`\n  ${passed} 通过 · ${failures.length} 失败`);

@@ -26,6 +26,7 @@ const path = require('node:path');
 
 const ROOT = path.resolve(__dirname, '..');
 const SITE = path.join(ROOT, 'site');
+const COURSES_DIR = path.join(ROOT, 'platform', 'courses');
 const { makeEnv, loadScript, boot } = require('../scripts/dom-shim');
 
 // 顺序必须与 site/*.html 里的 <script> 顺序一致
@@ -124,9 +125,31 @@ test('[chapter] 有视频的章节内嵌真正的 <video> 播放器（不是一�
 });
 
 test('[chapter] 无视频的章节给出占位说明，且指明生成方式', () => {
-  const key = '01-zhongyi/01-zhongyi-jichu-lilun/02-wu-xing-duo-fenlei';
-  const html = render('chapter', `?path=${encodeURIComponent(key)}`).html();
-  assert.ok(!html.includes('<video'), '该章没有成片，却渲染了播放器（会指向 404）');
+  // 不要在测试里"假定"某一章没有成片 —— 那一章随时可能被录出来。
+  // 第一版硬编码了 02 章；2026-10-15 把它录成成片后，这条断言当场变成误报。
+  // 改成按磁盘挑一个真的没有成片的已建章节（旁边那条有视频的测试就是这么做的）。
+  const built = fs.existsSync(COURSES_DIR)
+    ? fs.readdirSync(COURSES_DIR, { withFileTypes: true }).flatMap((dept) => {
+        if (!dept.isDirectory()) return [];
+        return fs.readdirSync(path.join(COURSES_DIR, dept.name), { withFileTypes: true }).flatMap((sub) => {
+          if (!sub.isDirectory()) return [];
+          return fs.readdirSync(path.join(COURSES_DIR, dept.name, sub.name), { withFileTypes: true })
+            .filter((c) => c.isDirectory())
+            .map((c) => `${dept.name}/${sub.name}/${c.name}`);
+        });
+      })
+    : [];
+
+  const withoutVideo = built.find(
+    (k) => !fs.existsSync(path.join(ROOT, `platform/courses/${k}/video/lesson.mp4`))
+  );
+  if (!withoutVideo) {
+    console.log('    ⚠ 已建章节都有成片 —— 占位分支**未验证**（明说，不是通过）');
+    return;
+  }
+
+  const html = render('chapter', `?path=${encodeURIComponent(withoutVideo)}`).html();
+  assert.ok(!html.includes('<video'), `${withoutVideo} 没有成片，却渲染了播放器（会指向 404）`);
   assert.ok(html.includes('尚未录制'), '缺「尚未录制」提示');
   assert.ok(html.includes('platform/README.md'), '占位说明未指向流水线文档');
 });
