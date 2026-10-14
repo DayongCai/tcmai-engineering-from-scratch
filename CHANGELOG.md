@@ -3,6 +3,96 @@
 本项目遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.21.0] — 2026-10-14
+
+### 修正 · 本地 ICD-11 库把描述丢了（它的核心字段）
+
+拿上游仓库的完整 README 与文件树对照后发现：**`data/icd11/entities.ndjson` 建库时把
+`definition` / `full_text` / `index_terms` 全部丢弃了** —— 而这些列就在磁盘那份 CSV 里，
+`parseCsv` 也解析了它们，只是写库时没带上。`icd11_client.js` 的注释还写着"带 definition"，
+**文档说了实话，构建没做到**。
+
+实测这三列的覆盖（同一份 13,960 条）：
+
+| 列 | 非空 | 平均长度 |
+|---|---|---|
+| `definition` | **6,894 / 13,960 (49.4%)** | 311 字符 |
+| `full_text` | 13,960 (100%) | 407 字符 |
+| `index_terms` | 10,855 (77.8%) | 240 字符 |
+
+**关键核对**：`definition` 为空的 = **7,066 条**，与上游论文写的
+"**7,066 entries having empty descriptions**" **逐条吻合**。这确定了
+**本仓库手上的就是论文用的那份数据集**（此前 meta.json 只记"13,960 vs 规格 31,838 的缩水"，
+现在补上了这层身份确认）。
+
+改后 `entities.ndjson` 3.17 MB → 14.5 MB（gitignore，不入库），`meta.json` 新增
+`descriptions` 段记录覆盖与缺列。上游缺列时**跳过并显式说明**，不编造。
+
+### 新增 · 嵌入指标模块 lib_metrics.js（与上游同口径，纯 Node 零依赖）
+
+`scripts/lib_metrics.js`：把上游 `Embeddings/embedding_analysis.py` 那套指标的**语义**照搬，
+使本仓库的输出与论文**可比**，而不是自造一套只有自己看得懂的数。
+
+| 指标 | 口径 | 方向 |
+|---|---|---|
+| `silhouette` | sklearn 语义（a=同簇均距、b=最近异簇均距、s=(b−a)/max(a,b)） | 越大越好 |
+| `calinskiHarabasz` | (between/(k−1)) / (within/(n−k)) | 越大越好 |
+| `daviesBouldin` | mean_i max_{j≠i} (S_i+S_j)/M_ij | **越小越好** |
+| `meanIntra/InterClusterDistance` | 簇内 pdist 均值；簇间对"其余"取前 100 点（**照抄上游**） | — |
+| `clusterSeparationRatio` | inter / intra | 越大越好 |
+| `chapterEntropy` / `effectiveNumChapters` | Shannon(log2) / 2^H | — |
+| `trustworthinessContinuity` | Venna & Kaski，秩口径照上游 | 越大越好 |
+| `symbolAccuracy` + **随机基线** | 近邻编码前缀同段率；基线 = Σ(n_c/n)² | 越大越好 |
+
+向量**同时支持对象与 Map 两种载体**（上游两处调用方各用一种），并且**只此一份实现** ——
+`build_embeddings.js` 里原来那份 `silhouette` 已删除，改为调用本模块。
+
+### 新增 · 在上游数据集上复现论文的对照 icd11_embeddings.js
+
+`npm run icd11:metrics` → `standards/icd11/embedding-metrics.{json,md}`。
+同一份 13,960 条、按**ICD-11 章节**聚类、TF-IDF **3,000 特征**（论文配置），
+**只改一个变量：输入文本**。
+
+| 指标 | 仅标题 | 标题 + full_text | 变化 |
+|---|---|---|---|
+| 轮廓系数 | 0.0225 | 0.0391 | ↑ |
+| CH 指数 | 3.0539 | 4.2408 | ↑ |
+| DB 指数（越小越好） | 3.3109 | 3.8715 | **↓ 变差** |
+| 簇分离比 | 1.0516 | 1.0755 | ↑ |
+| **层级一致性 1-符号** | **32.79%** | **42.37%** | **↑ +9.58pp** |
+| ├ 随机基线 | 3.72% | 3.72% | — |
+| └ 相对基线倍数 | 8.81× | 11.38× | ↑ |
+
+（分层抽样 1,171 条 / 26 章节，确定性等距取样。）
+
+**"描述才是关键"在本机可复现**：只换输入文本，六项里五项变好。
+**DB 变差如实记下**，不挑好看的报。
+
+**不许误读**（产物里 `caveats` 与 `absoluteNotComparable` 都写着）：距离用余弦而非欧氏、
+不做 SVD 降维、抽样而非全量、只做 TF-IDF 一支 —— **绝对水平不可与论文比**
+（论文 PubMedBERT 1-符号 92.33%），可比的是**"只改输入文本这一件事"的方向与幅度**，
+以及相对随机基线的倍数。
+
+### 修正 · 三个真 bug（都是测试或实跑抓出来的）
+
+1. **`dotDiffNorm2` 一度被改成返回范数**（多一个开方）—— CH 用平方距离、DB 才开方，
+   CH 会被整体算错。已加断言钉住（`‖{0:3}−0‖² = 9` 而不是 3）。
+2. **`for...in` 对 Map 完全看不见**：`calinskiHarabasz` / `daviesBouldin` 收集维度用它，
+   结果同一份数据在对象载体下 CH 算 **1.8e16**、在 Map 载体下算 **0**。
+   已改走 `entries()`，并用"两种载体必须给出相同指标"的断言钉住。
+3. **熵里给每个 `p` 都加 `1e-10`** 把 `p=0.25` 也推偏（4 等份算成 3.9999999984 个有效簇）。
+   改为只在 `p>0` 时计算。
+
+另有两处是**测试自己写错**（"混杂构型"被写成和"分离构型"同样的几何，两个数当然一样），
+已改正并注明。
+
+### 测试
+
+`tests/test_lib_metrics.js`（16 项）：每个指标都有**能手算的期望值** ——
+分离构型轮廓 = 1、正交簇余弦距离 = 1、4 等分熵 = 2 bit、`prefixOf('1C22',1)='1'`、
+高维=低维时 T=C=1、样本不足时返回 null（不硬算假数）、稀疏点积 = 稠密点积、
+两种载体同值、`dotDiffNorm2` 是平方和。
+
 ## [1.20.0] — 2026-10-13
 
 ### 新增 · 外部证据的分批机制（88 个证名的检索有载体了）

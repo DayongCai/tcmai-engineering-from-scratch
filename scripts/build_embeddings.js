@@ -46,6 +46,10 @@ const path = require('node:path');
 const ROOT = path.resolve(__dirname, '..');
 const OUTDIR = path.join(ROOT, 'standards/semtensor/embeddings');
 const { readWorkbook } = require('./lib_xlsx.js');
+// 嵌入质量指标：**与上游 vectorization-ICD11 的 embedding_analysis.py 同口径**
+// （轮廓 / CH / DB / 簇内簇间距离 / 分离比 / 熵 / 符号准确率）。
+// 本文件原来自己有一份 silhouette —— 两套实现必然漂移，故删掉改用这里。
+const M = require('./lib_metrics.js');
 
 // ─────────────────────────── ① Document 构建 ───────────────────────────
 //
@@ -306,28 +310,13 @@ function loadTreeAttrs() {
 }
 
 // ─────────────────────── 评测（借上游指标） ───────────────────────
+// 轮廓 / CH / DB / 分离比 / 熵 统一走 lib_metrics.js（**单一实现**，
+// 与上游 embedding_analysis.py 同名同义）。本文件只保留 kNN 纯度 ——
+// 那是这个仓库自己的判据，上游没有。
 
-/** 轮廓系数（按簇标签），返回均值 */
-function silhouette(vectors, labels) {
-  const idx = vectors.map((_, i) => i);
-  const cos = (i, j) => cosine(vectors[i], vectors[j]);
-  let sum = 0, n = 0;
-  for (const i of idx) {
-    const same = idx.filter((j) => j !== i && labels[j] === labels[i]);
-    if (!same.length) continue;
-    const others = [...new Set(labels)].filter((l) => l !== labels[i]);
-    const a = 1 - same.reduce((s, j) => s + cos(i, j), 0) / same.length;   // 距离 = 1 - 余弦
-    let b = Infinity;
-    for (const l of others) {
-      const grp = idx.filter((j) => labels[j] === l);
-      if (!grp.length) continue;
-      b = Math.min(b, 1 - grp.reduce((s, j) => s + cos(i, j), 0) / grp.length);
-    }
-    if (!isFinite(b)) continue;
-    sum += (b - a) / Math.max(a, b);
-    n += 1;
-  }
-  return n ? sum / n : NaN;
+/** 保留 4 位小数；非有限值返回 null（不许把 NaN 写进产物） */
+function num(x) {
+  return Number.isFinite(x) ? Number(x.toFixed(4)) : null;
 }
 
 /** kNN 纯度：最近邻中同标签的比例（上游"是否有语义邻域"的判据） */
@@ -398,11 +387,21 @@ function main() {
     bySuffix.forEach((s) => cnt.set(s, (cnt.get(s) || 0) + 1));
     bySuffix = bySuffix.map((s) => (cnt.get(s) >= 2 ? s : '__single__'));
 
+    const silent = M.clusterDistances(vecs, bySuffix);
+    const ent = M.entropy(bySuffix);
     reports[name] = {
       tokensPerDoc: docs.map((d) => tok(d.text).length),
       vocabulary: tfidf.vocabulary.length,
       knnPurityBySuffix: knnPurity(vecs, bySuffix, 5),
-      silhouetteBySuffix: silhouette(vecs, bySuffix),
+      // 以下五项与上游 embedding_analysis.py 同名同义（聚类目标：证名后缀族）
+      silhouetteBySuffix: num(M.silhouette(vecs, bySuffix)),
+      calinskiHarabaszBySuffix: num(M.calinskiHarabasz(vecs, bySuffix)),
+      daviesBouldinBySuffix: num(M.daviesBouldin(vecs, bySuffix)),
+      clusterSeparationRatio: num(silent.intra && silent.inter ? silent.inter / silent.intra : null),
+      meanIntraClusterDistance: num(silent.intra),
+      meanInterClusterDistance: num(silent.inter),
+      suffixFamilyEntropy: num(ent.chapterEntropy),
+      effectiveNumFamilies: num(ent.effectiveNumChapters),
       knnPurityByDisease: known >= 3 ? knnPurity(vecs, byDisease, 5) : null,
       diseaseCoverage: known,
     };
@@ -535,5 +534,6 @@ if (require.main === module) main();
 
 module.exports = {
   buildDocument, tokenizeBigram, tokenizeNGram, buildTfidf, buildBm25,
-  rrf, cosine, silhouette, knnPurity, harvestContexts, collectCorpus, BM25_K1, BM25_B,
+  rrf, cosine, silhouette: M.silhouette, knnPurity, harvestContexts, collectCorpus, BM25_K1, BM25_B,
+  metrics: M,
 };

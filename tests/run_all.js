@@ -41,6 +41,7 @@ const SUITES = [
   { file: 'test_tcm_api.js', desc: '/diag 与 /bianzheng（逆转推理引擎：映射表/高斯/方名 + 未命中不得美化）' },
   { file: 'test_dsu_descriptions.js', desc: '证候描述（构词解析 / 证据只取正文的守门 / 覆盖数字如实）' },
   { file: 'test_external_batch.js', desc: '外部证据分批（队列确定性 / 空结果不入库 / 导入幂等）' },
+  { file: 'test_lib_metrics.js', desc: '嵌入指标（轮廓/CH/DB/分离比/熵/符号准确率/保真度，手算期望值）' },
   { file: 'test_chapter_code.js', desc: '每个已建章节的 code/main.js 与单元测试', slow: true },
   { file: 'test_content_review.js', desc: '人机闭环：内容复核清单', advisory: true },
   { file: 'assert_disclaimers.js', desc: '[tcmP] 每集讲稿必须带末位免责声明卡' },

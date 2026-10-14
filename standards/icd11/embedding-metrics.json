@@ -1,0 +1,88 @@
+{
+  "$generated": "node scripts/icd11_embeddings.js",
+  "reference": {
+    "repo": "marcolomele/vectorization-ICD11",
+    "paper": "Descriptions are all you need: Semantic Vectorization of Hierarchical Medical Knowledge (ICD-11) via Large Language Models (Bocconi, 2025)",
+    "dataset": "13,960 ICD-11 entities —— 与本仓库 data/icd11/ 同一份（definition 为空 7,066 条与论文数字吻合）",
+    "clusteringTarget": "ICD-11 章节（chapter）",
+    "tfidfConfig": "3,000 features（论文 \"3,000 features with SVD reduction\"）",
+    "reported": {
+      "hierarchical1Symbol": {
+        "PubMedBERT": 0.9233,
+        "BioBERT": 0.8995,
+        "BERT": 0.8307
+      },
+      "hierarchical4Symbol": {
+        "PubMedBERT": 0.7513,
+        "BioBERT": 0.6614,
+        "BERT": 0.5185
+      },
+      "comorbidityTop": {
+        "TFIDF": 0.28,
+        "GatorTron": 0.19,
+        "PubMedBERT": 0.17
+      },
+      "meanCosineAcrossHierarchy": 0.636
+    }
+  },
+  "caveats": [
+    "距离用余弦（论文用欧氏）→ 轮廓/CH/DB 的绝对值与论文不可直接比，只可看**方向与相对变化**。",
+    "不做 SVD 降维（纯 Node 截断 SVD 需迭代特征分解）→ 直接在 3000 维稀疏 TF-IDF 上算余弦。口径差，不是等价实现。",
+    "按章节分层抽样，不是 13,960 全量（全量两两距离 2e8 对，纯 JS 跑不完）；样本量见各条件的 sample 字段。",
+    "只做 TF-IDF 一支（论文做了 7 个模型）。论文自己的结论是 TF-IDF 在层级保持上弱于 PubMedBERT，故此处复现的是**下限**。",
+    "**不报 trustworthiness / continuity**：这两项衡量降维保真度，而本脚本不做 t-SNE/UMAP/SVD，没有低维坐标可比。硬填一个假坐标会得出无意义的数，所以不填 —— 该指标在 lib_metrics.js 里实现并单测，留给真正做降维的调用方。"
+  ],
+  "maxFeatures": 3000,
+  "conditions": [
+    {
+      "condition": "仅标题 title",
+      "sample": 1171,
+      "vocabSize": 1916,
+      "silhouette": 0.0225,
+      "calinskiHarabasz": 3.0539,
+      "daviesBouldin": 3.3109,
+      "meanIntraClusterDistance": 0.9435,
+      "meanInterClusterDistance": 0.9922,
+      "clusterSeparationRatio": 1.0516,
+      "chapterEntropy": 4.6903,
+      "effectiveNumChapters": 25.817,
+      "actualNumChapters": 26,
+      "symbol1Accuracy": 0.3279,
+      "symbol4Accuracy": 0.0475,
+      "symbol1Chance": 0.0372,
+      "symbol4Chance": 0.0015,
+      "symbol1LiftVsChance": 8.81,
+      "symbol4LiftVsChance": 30.67
+    },
+    {
+      "condition": "标题+描述 title + full_text",
+      "sample": 1171,
+      "vocabSize": 3000,
+      "silhouette": 0.0391,
+      "calinskiHarabasz": 4.2408,
+      "daviesBouldin": 3.8715,
+      "meanIntraClusterDistance": 0.9085,
+      "meanInterClusterDistance": 0.9771,
+      "clusterSeparationRatio": 1.0755,
+      "chapterEntropy": 4.6903,
+      "effectiveNumChapters": 25.817,
+      "actualNumChapters": 26,
+      "symbol1Accuracy": 0.4237,
+      "symbol4Accuracy": 0.0571,
+      "symbol1Chance": 0.0372,
+      "symbol4Chance": 0.0015,
+      "symbol1LiftVsChance": 11.38,
+      "symbol4LiftVsChance": 36.9
+    }
+  ],
+  "delta": {
+    "silhouette": 0.0166,
+    "calinskiHarabasz": 1.1869,
+    "daviesBouldin": 0.5606,
+    "clusterSeparationRatio": 0.0239,
+    "symbol1Accuracy": 0.0958,
+    "symbol4Accuracy": 0.0096
+  },
+  "deltaNote": "DB 指数**越小越好**，其余越大越好；正号＝加了描述之后变好。",
+  "absoluteNotComparable": "绝对水平**不可与论文比**：论文是 PubMedBERT 级模型 + 800 字符描述 + 13,960 全量（1-符号 92.33%）；本处是 TF-IDF + 标题（或 407 字符 full_text）+ 分层抽样。**可比的是\"只改输入文本这一件事\"的方向与幅度**，以及相对随机基线的倍数（symbol*LiftVsChance）。"
+}

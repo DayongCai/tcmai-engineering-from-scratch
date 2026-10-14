@@ -24,8 +24,11 @@
  * 通道2 · 本地库（data/icd11/）
  *   规格的 31,838 实体是 ICD-11 **Foundation 组件**（含 ICF/ICHI 全域、无编码、多父）。
  *   本机拿不到那份；可取到的是 **MMS 线性化快照 13,960 行**（WHO 2025-01 版，经上游
- *   vectorization-ICD11 数据集转出，带 code/title/parent/definition）。
- *   **13,960 ≠ 31,838，这是缩水不是同一份库** —— 差异记在 meta.json 与 README。
+ *   vectorization-ICD11 数据集转出，带 code/title/parent/definition/full_text/index_terms）。
+ *   **13,960 = 上游论文的同一份数据集**（论文描述 "13,960 ICD-11 entities"，且
+ *   本库 definition 为空的条数 = **7,066**，与论文 "7,066 entries having empty
+ *   descriptions" 逐条吻合）。**13,960 ≠ 规格的 31,838** —— 那是 Foundation 组件，
+ *   不同源，差异记在 meta.json 与 README，不宣称等价。
  *   好处是 MMS 单父 + 有编码，正好能做规格要的 "Foundation ID → MMS 标准编码" 与父链还原章节。
  *
  * 通道2 的表形状与规格一致（id / code / title）；存储不是 SQLite（本仓库零第三方依赖，
@@ -155,9 +158,15 @@ function buildLocal(opts = {}) {
   const I = (k) => head.indexOf(k);
   const need = ['id', 'code', 'title', 'class_kind', 'parent'];
   for (const k of need) if (I(k) < 0) throw new Error(`快照缺列 ${k}`);
+  // 描述类列：上游 vectorization-ICD11 数据集的核心，**原来解析了却被丢掉**。
+  // 缺了就跳过（不报错也不编造）——但要在 meta 里说明缺了哪几列。
+  const descCols = ['definition', 'full_text', 'index_terms', 'inclusions'];
+  const haveDesc = descCols.filter((k) => I(k) >= 0);
+  const missingDesc = descCols.filter((k) => I(k) < 0);
 
   const byId = new Map();
   const all = [];
+  let withDefinition = 0;
   for (let i = 1; i < rows.length; i++) {
     const r = rows[i];
     if (!r[I('id')]) continue;
@@ -168,6 +177,14 @@ function buildLocal(opts = {}) {
       kind: r[I('class_kind')] || '',
       parent: r[I('parent')] || '',
     };
+    // 描述：**保留原文，不摘要、不改写**。这是嵌入模型的输入，摘要过就不是同一份语料了。
+    for (const k of haveDesc) {
+      const col = k === 'full_text' ? 'fullText' : k === 'index_terms' ? 'indexTerms' : k;
+      const v = (r[I(k)] || '').trim();
+      if (v) e[col] = v;
+    }
+    e.hasDefinition = Boolean(e.definition);
+    if (e.hasDefinition) withDefinition += 1;
     all.push(e); byId.set(e.id, e);
   }
 
@@ -201,6 +218,16 @@ function buildLocal(opts = {}) {
     withCode: all.filter((e) => e.code).length,
     byKind,
     chapters: all.filter((e) => e.kind === 'chapter').length,
+    // 描述覆盖：与上游论文的口径对齐（论文：原始 13,960 条里 7,066 条 description 为空）
+    descriptions: {
+      withDefinition,
+      emptyDefinition: all.length - withDefinition,
+      withFullText: all.filter((e) => e.fullText).length,
+      withIndexTerms: all.filter((e) => e.indexTerms).length,
+      keptColumns: haveDesc,
+      missingColumns: missingDesc,
+      note: 'definition 为空的是**上游原始状态**，不是抓取失败。上游论文记为「7,066 entries having empty descriptions」，可逐条对本库复核。',
+    },
     // 与规格的差距必须显式：31,838 是 Foundation 组件的规模，本库是 MMS 线性化子集
     specEntities: 31838,
     specDelta: 31838 - all.length,
@@ -212,6 +239,8 @@ function buildLocal(opts = {}) {
     console.log(`  → ${path.relative(ROOT, ndjsonPath)}  (${all.length} 实体)`);
     console.log(`  → ${path.relative(ROOT, metaPath)}`);
     console.log(`     类型分布 ${JSON.stringify(byKind)}`);
+    console.log(`     描述覆盖 definition ${withDefinition}/${all.length} · full_text ${meta.descriptions.withFullText} · index_terms ${meta.descriptions.withIndexTerms}`);
+    if (missingDesc.length) console.log(`     ⚠ 上游缺列 ${missingDesc.join(' / ')} —— 已跳过，未编造`);
     console.log(`     与规格规模差 ${meta.specDelta}（${all.length} vs 31,838）—— 不同源，见 meta.specNote`);
   }
   return meta;

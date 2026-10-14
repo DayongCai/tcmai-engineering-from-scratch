@@ -103,6 +103,49 @@ npm run icd11 -- --search "heart beat"
 npm run icd11 -- --who-check    # 探测 WHO 凭据
 ```
 
+## 数据集身份：与上游论文是同一份
+
+上游仓库 `marcolomele/vectorization-ICD11` 的论文描述数据集为 "13,960 ICD-11 entities…
+7,066 entries having empty descriptions, 14% completeness"。
+
+本库实测（`data/icd11/source.csv`，19,461,645 字节，sha256 `c4ffa495…`）：
+
+| 列 | 非空 | 平均长度 |
+|---|---|---|
+| `definition` | **6,894 / 13,960 (49.4%)** | 311 字符 |
+| `full_text` | 13,960 (100%) | 407 字符 |
+| `index_terms` | 10,855 (77.8%) | 240 字符 |
+
+**`definition` 为空 7,066 条 = 论文的 7,066** —— 逐条吻合，故确认同一份数据集。
+（此前只记了「13,960 vs 规格 31,838 的缩水」，那是**另一个对照**：31,838 是 Foundation 组件。）
+
+> 建库一度把这几个描述列丢了（注释写着"带 definition"、代码没带）。已修：保留**原文**，
+> 不摘要不改写 —— 摘要过就不是同一份语料了。上游缺列时跳过并显式说明。
+
+## 嵌入评测（复现论文的指标口径）
+
+```bash
+npm run icd11:metrics            # 默认分层抽样 1200
+node scripts/icd11_embeddings.js --sample 600
+```
+
+产物：`embedding-metrics.json` + `embedding-metrics.md`。
+
+同一份数据、按 **ICD-11 章节**聚类、TF-IDF **3,000 特征**（论文配置），**只改输入文本**：
+
+| 指标 | 仅标题 | 标题 + full_text |
+|---|---|---|
+| 轮廓系数 | 0.0225 | 0.0391 |
+| CH 指数 | 3.0539 | 4.2408 |
+| DB 指数（越小越好） | 3.3109 | **3.8715（变差）** |
+| 簇分离比 | 1.0516 | 1.0755 |
+| **层级一致性 1-符号** | 32.79% | **42.37%** |
+| └ 相对随机基线 | 8.81× | 11.38× |
+
+**"描述才是关键"在本机可复现**（六项里五项变好）。但**绝对水平不可与论文比**：
+距离用余弦而非欧氏、不做 SVD 降维、抽样而非全量、只做 TF-IDF 一支
+（论文 PubMedBERT 1-符号 92.33%）。可比的是**方向与幅度**，以及相对随机基线的倍数。
+
 ## 还没做到的
 
 - **中文标题**：规格的通道1 是「中文搜索 → Foundation ID」。本地库是**英文** MMS；
@@ -111,3 +154,9 @@ npm run icd11 -- --who-check    # 探测 WHO 凭据
   我的库里 `id` 已是 MMS 侧 id，**没有真正的 Foundation→MMS 跨组件映射**（那需要 Foundation 数据）。
 - **全文检索**：本地库只按标题子串匹配（`--search`）。规格的 FTS5/BM25 在
   `scripts/build_embeddings.js` 里实现，两者尚未接起来。
+- **不报 trustworthiness / continuity**：那两项衡量降维保真度，而本仓库不做
+  t-SNE/UMAP/SVD，没有低维坐标可比。函数在 `lib_metrics.js` 里实现并单测，
+  硬填一个假坐标只会得出无意义的数。
+- **上游的 7 个模型只做了 1 个**（TF-IDF）。BERT/BioBERT/GatorTron 等要 Python + 大模型权重，
+  与本仓库"纯 Node 零依赖"冲突。论文自己的结论是 TF-IDF 在层级保持上弱于 PubMedBERT ——
+  所以这里复现的是**下限那一支**。
