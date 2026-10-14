@@ -53,7 +53,7 @@
 <body>
 <div class="wrap">
   <h1>tcmai-engineering-from-scratch · 项目看板</h1>
-  <div class="sub">由 <code>node scripts/build_dashboard.js</code> 从仓库现状生成 · 版本 <code>v1.15.0</code> ·
+  <div class="sub">由 <code>node scripts/build_dashboard.js</code> 从仓库现状生成 · 版本 <code>v1.16.0</code> ·
     生成时全部数字来自 curriculum.json / catalog.json / 文件系统 / 派生索引，不手写</div>
 
   <h2>规模与进度</h2>
@@ -65,19 +65,19 @@
     <div class="kpi"><div class="k">书稿文件</div><div class="v">13<small>md</small></div></div>
     <div class="kpi"><div class="k">视频成片</div><div class="v">1</div></div>
     <div class="kpi"><div class="k">产出物</div><div class="v">6<small>undefined 章</small></div></div>
-    <div class="kpi"><div class="k">测试套件</div><div class="v">24</div></div>
-    <div class="kpi"><div class="k">扫描 md</div><div class="v">175<small>0 断链</small></div></div>
-    <div class="kpi"><div class="k">版本</div><div class="v">1.15.0</div></div>
+    <div class="kpi"><div class="k">测试套件</div><div class="v">25</div></div>
+    <div class="kpi"><div class="k">扫描 md</div><div class="v">176<small>0 断链</small></div></div>
+    <div class="kpi"><div class="k">版本</div><div class="v">1.16.0</div></div>
   </div>
 
   <h2>项目逻辑 · 数据流</h2>
   <div class="flow">
     <div class="step"><div class="n">桌面源资料</div><div class="d">108 项 · 45 xlsx / 16 docx / 4 旧 .xls</div><div class="r">解析入库，绝不手抄</div></div>
-    <div class="step"><div class="n">standards/</div><div class="d">6 个域 · 带 sources/ 原件 + sha256</div><div class="r">派生物（content.json）不入库</div></div>
+    <div class="step"><div class="n">standards/</div><div class="d">7 个域 · 带 sources/ 原件 + sha256</div><div class="r">派生物（content.json）不入库</div></div>
     <div class="step"><div class="n">curriculum.json</div><div class="d">单一事实来源</div><div class="r">1 领域 / 8 院系 / 120 学科 / 1086 章节</div></div>
     <div class="step"><div class="n">departments/</div><div class="d">课程骨架（章节契约：docs + code + quiz + outputs）</div><div class="r">已建 3 章</div></div>
     <div class="step"><div class="n">[tcmP] + [textbooks]</div><div class="d">两条交付物线</div><div class="r">站点/视频 · 教材/书</div></div>
-    <div class="step"><div class="n">质量门</div><div class="d">L0–L3 审计 · 链接 · 计数 · 产出物索引</div><div class="r">24 套件</div></div>
+    <div class="step"><div class="n">质量门</div><div class="d">L0–L3 审计 · 链接 · 计数 · 产出物索引</div><div class="r">25 套件</div></div>
   </div>
 
   <h2>工作流状态</h2>
@@ -93,13 +93,13 @@
     <tr><td>课程骨架 · 学科/章节</td><td><span class="pill s-active">进行中</span></td>
         <td>120 学科已建目录 · 已建章节 3/1086（0.28%）<div class="why">curriculum.json 为单一事实来源；审计对 120 个空学科全绿是第一个里程碑</div></td></tr>
     <tr><td>源资料入库</td><td><span class="pill s-done">已完成</span></td>
-        <td>standards/ 6 个域：icd11 · knowledge-tree · leijing-tuyi · materials · semtensor · shanghan<div class="why">解析入库、绝不手抄；各带 sources/ 原件 + sha256 溯源；派生 content.json 不入库</div></td></tr>
+        <td>standards/ 7 个域：endpoints · icd11 · knowledge-tree · leijing-tuyi · materials · semtensor · shanghan<div class="why">解析入库、绝不手抄；各带 sources/ 原件 + sha256 溯源；派生 content.json 不入库</div></td></tr>
     <tr><td>嵌入层（embedding-code 规格）</td><td><span class="pill s-block">受阻</span></td>
         <td>8 组件实现 7（⑦ 已补）· 字段供给：证候 103/103 · 病 12/103 · ICD 7/103 · 其余 0/103<div class="why">轮廓系数 -0.113（≈随机）· 端点行为复现 1/3 —— 卡在「没有描述可嵌入」</div></td></tr>
     <tr><td>ICD-11 客户端（规格 ⑦）</td><td><span class="pill s-active">进行中</span></td>
         <td>本地库 13960 实体（MMS 2025-01）· 仓库 7 个编码 7/7 解析<div class="why">WHO API 通道需凭据（无凭据一律 401，本机未配置）；中文标题通道**未验证**</div></td></tr>
     <tr><td>质量门 · 审计与测试</td><td><span class="pill s-done">已完成</span></td>
-        <td>审计 L0–L3 · 24 个测试套件（25 个测试文件）· 链接扫描 175 个 md（0 断链） · npm run check 四道门<div class="why">L3 内容层实测抓到 2 处契约违约；文档事实核对测试已 4 次抓到过期数字</div></td></tr>
+        <td>审计 L0–L3 · 25 个测试套件（26 个测试文件）· 链接扫描 176 个 md（0 断链） · npm run check 四道门<div class="why">L3 内容层实测抓到 2 处契约违约；文档事实核对测试已 4 次抓到过期数字</div></td></tr>
     </tbody>
   </table>
 
@@ -141,6 +141,7 @@
 
   <h2>最近提交</h2>
   <div class="card git">
+    <div>274605b  <b>eat(dashboard): 项目看板（由仓库现状生成）+ 修正嵌入层两个让结论虚高的问题</b></div>
     <div>c5fdc56  <b>eat(icd11): 按 WHO 网页补上规格组件 ⑦（双通道客户端 + 本地库）</b></div>
     <div>064cf69  <b>eat(embeddings): 实现源材料 embedding-code 规格（八个组件首次落地）</b></div>
     <div>8964a3b  <b>eat(deliverables): 两条交付物线各补一个能交出去的成品</b></div>
@@ -152,7 +153,6 @@
     <div>c81c192  <b>eat(leijing): 接入类经图翼「语义范畴 × 方位」——结论是否定的（含一处自查方法错）</b></div>
     <div>220a67b  <b>eat(materials): 剩余 6 份源材料一次性入库（注册表驱动）</b></div>
     <div>dd9f704  <b>eat(shanghan): 桌面源资料清点 + 《伤寒论底本》入库，9 域跨源印证</b></div>
-    <div>987528f  <b>eat(knowledge-tree): 导入《中医知识树》教材 + 收紧 outputs 契约</b></div>
   </div>
 
   <footer>

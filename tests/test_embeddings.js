@@ -147,12 +147,17 @@ test('回归锚点：失眠的期望答案心脾两虚证 在前 5 内', () => {
 });
 
 test('失败端点记为失败，并记下它排第几（不许美化）', () => {
-  const miss = idx.retrievalSmoke.filter((x) => !(x.expectedRank != null && x.expectedRank <= 5));
-  assert.ok(miss.length >= 1, '三个端点全进前 5？那这条测试的用意（不许美化）需要重审');
-  for (const m of miss) {
-    assert.ok(m.expectedInSpec, `失败的 ${m.endpoint} 没有记录规格原值`);
-    assert.notStrictEqual(m.allUnits.top1, m.expectedInSpec, `${m.endpoint} 的 top1 竟然就是期望值，与"失败"矛盾`);
+  // 注意这条**不断言"必须有失败"** —— 那种断言与"top1 必须是 X"一样脆：语料一改就断，
+  // 而断的原因与系统的质量无关。这里守的是**报告不许丢掉对照**：
+  // 规格的每个用例都必须出现、都必须带着期望值与被测位次（位次可为 null = 未入榜）。
+  assert.strictEqual(idx.retrievalSmoke.length, 3, `规格用例少了：只有 ${idx.retrievalSmoke.length} 条`);
+  for (const s of idx.retrievalSmoke) {
+    assert.ok(s.expectedInSpec, `${s.endpoint} 丢了规格原值`);
+    assert.ok('expectedRank' in s, `${s.endpoint} 没记位次`);
+    assert.ok('allUnits' in s && 'top5' in s.allUnits, `${s.endpoint} 没记实际返回`);
   }
+  const inTop5 = idx.retrievalSmoke.filter((s) => s.expectedRank != null && s.expectedRank <= 5).length;
+  console.log(`      （期望答案进前 5：${inTop5}/3 —— 数字随语料变化，报告必须跟着变，但不许不记）`);
 });
 
 test('检索是确定性的（同一份语料跑两次，位次一致）', () => {

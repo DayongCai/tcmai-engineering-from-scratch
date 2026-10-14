@@ -211,10 +211,17 @@ function collectCorpus() {
     /semtensor[\\/]embeddings[\\/]/,
     /site[\\/]stats\.json$/,
     /outputs[\\/]index\.json$/,
-    /standards[\\/]icd11[\\/]README\.md$/,
     /icd11[\\/]meta\.json$/,
     /dashboard\.html$/,
     /manifest\.json$/,
+    // 本仓库**对系统的分析/报告**也不是语料。这条吃过两次亏：
+    //   第一次 std/semtensor/embeddings/index.json 里写着「DSU-00035 · 心脾两虚证」；
+    //   第二次我写的 std/endpoints/README.md 里写着「口苦,咽干 → 肝胆湿热证」——
+    // 两者都让检索"变好了"，而提升来自**我把答案写进了语料**，不是系统学到了东西。
+    /standards[\\/][^\\/]*README\.md$/,
+    /standards[\\/][^\\/]+[\\/]README\.md$/,
+    /endpoints[\\/]/,
+    /source-inventory\.md$/,
   ];
   const walk = (d) => {
     let e; try { e = fs.readdirSync(d, { withFileTypes: true }); } catch { return; }
