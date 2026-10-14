@@ -56,13 +56,14 @@ function git(gitExe, args, opts = {}) {
  * 量上游：缓存存在就 fetch + 读树，不存在就浅克隆。
  * 返回 {head, headDate, scripts[], topDirs[], measuredAt}；仓库不可达时抛错（**不静默降级**）。
  */
-function measureUpstream({ repoUrl, cacheDir, gitExe }) {
+function measureUpstream({ repoUrl, cacheDir, gitExe, quiet = false }) {
+  const say = (s) => { if (!quiet) console.log(s); };
   const inRepo = path.join(ROOT, cacheDir);
   if (!fs.existsSync(path.join(inRepo, '.git'))) {
-    console.log(`  ← 浅克隆 ${repoUrl}（只要目录树，不要 blob）`);
+    say(`  ← 浅克隆 ${repoUrl}（只要目录树，不要 blob）`);
     git(gitExe, ['clone', '--depth', '1', '--filter=blob:none', '--no-checkout', repoUrl, inRepo]);
   } else {
-    console.log('  ← fetch 上游最新');
+    say('  ← fetch 上游最新');
     git(gitExe, ['-C', inRepo, 'fetch', '--depth', '1', 'origin', 'HEAD']);
     git(gitExe, ['-C', inRepo, 'reset', '--soft', 'FETCH_HEAD']);
   }

@@ -3,6 +3,46 @@
 本项目遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.27.0] — 2026-10-14
+
+### 新增 · 上游漂移哨兵（定时看门狗，无 LLM）
+
+`scripts/check_upstream_drift.js` + `scripts/cron_upstream_drift.sh` + 定时任务
+`569f51721813`（`30 */8 * * *`，`no_agent`）。逻辑：量一次上游，与账本比，
+**有变化才说话，没变化一个字都不输出**（看门狗模式：每 8 小时报一次"上游没变"是噪音，
+会让人把通知关掉）。
+
+**为什么不挂进「证候外部证据」那个任务**：那个任务在队列空时回 `[SILENT]`（设计如此）——
+把漂移哨兵挂在它里面，**检索任务一结束，哨兵就跟着静音了**。两件事的生死不该绑在一起。
+两条任务还**错开 30 分钟**（`0 */8` vs `30 */8`），避开对方的 git 提交。
+
+`script` 契约的坑：Hermes 的 cron `script` 只按 `.sh`/`.bash` 或 **Python** 执行 ——
+`.js` 会被当 Python 跑。所以包一层 bash；又因为 `script` 必须住在
+`~/.hermes/scripts/` 下，那里只放一个**蹦床**（一行跳回仓库），真逻辑留在仓库里受版本控制。
+
+### 修正 · 「静默契约」的测试原本测不到关键那一环
+
+第一版只测了纯函数 `render()`，而**泄漏发生在测量环节**：`measureUpstream` 自己
+`console.log('← fetch 上游最新')`，哨兵 stdout 因此有 25 字节 —— 定时任务会把
+脚本 stdout **原样发出**，等于每 8 小时一条噪音。
+
+修法与加固（这是本轮最有价值的一段）：
+1. `measureUpstream` 加 `quiet` 参数，哨兵调用时传 `true`（**测量过程一句话都不许说**）；
+2. `check_upstream_drift.js` 暴露 `run({ measure })`，**可注入假测量** →
+   **整条路径**（含测量环节）都能测，不再只测纯函数；
+3. 加一条回归断言：`quiet:true` 下调用测量，`console.log` 捕获必须为空。
+
+### 实测（两个分支都跑过，不只跑静默那侧）
+
+| 情形 | 结果 |
+|---|---|
+| 账本与上游一致 | stdout **0 字节** · stderr 0 · exit 0（`--verbose` 下手动查会说明"静默"） |
+| 基线改旧（去掉 `build_book.py` + 换 head） | **确实说话**：报出 `HEAD oldsha0 → f0c979b`、`scripts/ 52 → 53`、`新增：build_book.py`，并给出 `npm run porting -- --measure` |
+| 恢复账本 | `PORTING.md 与账本一致` |
+
+`tests/test_upstream_drift.js` 13 项（静默契约 / 会说话的三种情形 / drift 纯函数 /
+整条路径可测 / 测量环节静默回归）。全套 **32 个套件**。
+
 ## [1.26.0] — 2026-10-14
 
 ### 修正 · 「新鲜度比对」原本是个报"通过"的跳过 —— 等于假通过
