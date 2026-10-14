@@ -31,14 +31,23 @@ test('labelTerms：尾部「证/病」可省（`气虚便秘证` 在正文里写
   assert(!t.includes('气虚'), `放宽过头了：${JSON.stringify(t)}`);
 });
 
-test('异名写法能被发现，但**不据此改判**（写成「气不摄血证」时只能给线索）', () => {
+test('未登记的写法只能给线索（`气不摄血证` 进表**之前**就是这种状态）', () => {
+  // 这条同时说明：进表前后行为不同，而"进表"要过 tests/test_aliases.js 那道溯源门。
+  const r = EQ.assess({
+    label: '痰湿内阻证',   // 表里没有它
+    sources: [src('某资料', '痰湿内蕴证常见于肥胖之人，舌苔白腻。')],
+  });
+  assert(r.tier === 'variant-unconfirmed', `应判待确认异名，实得 ${r.tier}`);
+  assert(r.variantHints.includes('痰湿内蕴证'), `没给出线索：${JSON.stringify(r.variantHints)}`);
+});
+
+test('进了表的 synonym 才升为特指（`气虚不摄证` ← 气不摄血证）', () => {
   const r = EQ.assess({
     label: '气虚不摄证',
     sources: [src('气不摄血证_百度百科', '气不摄血证是中医病证名，指因脾气虚弱导致统摄血液功能失常。')],
   });
-  assert(r.tier === 'variant-only', `应判异名，实得 ${r.tier}`);
-  assert(r.variantHints.some((h) => h.includes('气不摄血证')), `没给出异名线索：${JSON.stringify(r.variantHints)}`);
-  assert(r.labelHitSources === 0, '字面命中数应为 0');
+  assert(r.tier === 'specific', `同义异名应升为特指，实得 ${r.tier}`);
+  assert(r.viaAlias.some((v) => v.relation === 'synonym'), '应标出来自同义异名');
 });
 
 // ── 四个层级 ────────────────────────────────────────────────
@@ -105,7 +114,7 @@ test('对真实 external.json 全量评估不报错，且每条都有 tier', () 
   const path = require('path');
   const ext = JSON.parse(fs.readFileSync(
     path.join(__dirname, '..', 'standards/semtensor/descriptions/external.json'), 'utf8'));
-  const tiers = new Set(['specific', 'variant-only', 'label-only', 'generic']);
+  const tiers = new Set(['specific', 'partial', 'variant-unconfirmed', 'label-only', 'generic']);
   for (const e of ext.entries) {
     const r = EQ.assess(e);
     assert(tiers.has(r.tier), `${e.label} 的 tier 非法：${r.tier}`);

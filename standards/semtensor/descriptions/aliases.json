@@ -1,0 +1,88 @@
+{
+  "$note": "证候异名表。本项目认为：这些不是「证据无关」，而是**写法不同** —— 但不同的写法关系不同，故按 relation 区别对待，不一律等同。",
+  "$gates": [
+    "**每条别名都必须在 `source` 指向的来源里字面出现**，且该来源必须已在本仓库 external.json 里（由 tests/test_aliases.js 强制）。",
+    "别名只从**已取回的真实材料**里采集，不凭记忆写同义词。",
+    "relation 决定证据怎么算：synonym 可直接计入；composition 只是部分证据；qualified/broader 只能作旁证。"
+  ],
+  "relations": {
+    "synonym": "同义异名 —— 同一证候的两个通行叫法，证据可直接计入",
+    "composition": "复合证名的组成部分 —— 本仓库证名是两个证候的合称，该别名只覆盖其中一半，属**部分证据**",
+    "qualified": "病/部位限定的用法 —— 同一证候在特定疾病语境下的叫法，证据可用但须保留限定语境",
+    "broader": "上位（更宽的证候名）—— 该别名覆盖面更大，只能作旁证"
+  },
+  "entries": [
+    {
+      "label": "气虚不摄证",
+      "aliases": [
+        {
+          "name": "气不摄血证",
+          "relation": "synonym",
+          "source": "https://baike.baidu.com/item/%E6%B0%94%E4%B8%8D%E6%91%84%E8%A1%80%E8%AF%81/5989683",
+          "basis": "该百科条目以「气不摄血证」为条目名，定义为「指因脾气虚弱导致统摄血液功能失常，以出血为主要表现的证候」，与本仓库「气虚不摄证」指同一证候。"
+        }
+      ]
+    },
+    {
+      "label": "肝阳上亢证",
+      "aliases": [
+        {
+          "name": "高血压病肝热阳亢证",
+          "relation": "qualified",
+          "source": "https://www.sdtcm.net/resources//uploads/20251031/1761894703202089191.pdf",
+          "basis": "《高血压病肝热阳亢证诊疗实践指南》标题即在「肝热阳亢证」前冠以病名「高血压病」，属同一证候在特定疾病语境下的用法。"
+        }
+      ]
+    },
+    {
+      "label": "心肾阳虚、水饮凌心证",
+      "aliases": [
+        {
+          "name": "水饮凌心证",
+          "relation": "composition",
+          "source": "https://m.baidu.com/bh/m/detail/ar_5963038797833467196?frsrcid=rec",
+          "basis": "本仓库证名是「心肾阳虚」与「水饮凌心」两个证候的合称；该来源讨论的是其中「水饮凌心证」这一半。"
+        },
+        {
+          "name": "心悸水饮凌心证",
+          "relation": "composition",
+          "source": "https://m.baidu.com/bh/m/detail/ar_5963038797833467196?frsrcid=rec",
+          "basis": "同上，「心悸」是病位/症状限定，核心仍是「水饮凌心证」，只覆盖合称的一半。"
+        }
+      ]
+    },
+    {
+      "label": "气虚血瘀、风中经络证",
+      "aliases": [
+        {
+          "name": "气虚血瘀证",
+          "relation": "composition",
+          "source": "https://www.zyxyfy.com/ksdh/zsjg/byglxzyyy/byzjk/ysbz56/content_17195",
+          "basis": "本仓库证名是「气虚血瘀」与「风中经络」的合称；甘肃中医药大学附属医院《中风病（脑梗塞）恢复期针灸康复诊疗方案》中列的是「气虚血瘀证」这一半。"
+        }
+      ]
+    },
+    {
+      "label": "风寒束表证",
+      "aliases": [
+        {
+          "name": "表寒证",
+          "relation": "broader",
+          "source": "https://baike.baidu.com/item/%E8%A1%A8%E5%AF%92%E8%AF%81/16775596",
+          "basis": "「表寒证」是更大的类（凡寒邪在表者皆属），「风寒束表证」是其中一员，故只能作旁证。"
+        }
+      ]
+    },
+    {
+      "label": "下焦湿热瘀阻证",
+      "aliases": [
+        {
+          "name": "湿热病证",
+          "relation": "broader",
+          "source": "http://www.tzszyyy.com/wanghongjing/html/news/90.html",
+          "basis": "该来源讨论的是「湿热病证」这一大类（含温热夹湿所致的多种证），未落到「下焦」与「瘀阻」，属上位概念。"
+        }
+      ]
+    }
+  ]
+}

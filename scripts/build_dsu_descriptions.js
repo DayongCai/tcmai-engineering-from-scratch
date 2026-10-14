@@ -135,6 +135,13 @@ function main() {
   // WHO-TCM 通道（独立于 ICD-11）
   const who = JSON.parse(fs.readFileSync(P('standards/semtensor/descriptions/who-tcm.json'), 'utf8'));
   const whoByLabel = new Map(who.entries.map((e) => [e.label, { ...e, parsed: parseWhoCode(e.whoCode) }]));
+  // 异名表：**不是证据无关，是写法不同**。表不存在就当没有（不报错、不编造）。
+  const RELATION_CN = { synonym: '同义', composition: '复合证名的组成部分', qualified: '病名限定用法', broader: '上位概念' };
+  let aliasByLabel = new Map();
+  try {
+    const al = JSON.parse(fs.readFileSync(P('standards/semtensor/descriptions/aliases.json'), 'utf8'));
+    aliasByLabel = new Map(al.entries.map((e) => [e.label, e.aliases]));
+  } catch { /* 表还没建，静默跳过 */ }
 
   // 语料（复用嵌入层的取语料，**但再收紧一次**：证据只取正文）。
   //
@@ -222,6 +229,9 @@ function main() {
       textbookEvidence: ctx.map((c) => ({ file: c.file, snippet: c.snippet })),
       externalEvidence: ext,
       whoTcm: whoByLabel.get(e.label) || null,
+      // 异名：**不是证据无关，是写法不同**（见 standards/semtensor/descriptions/aliases.json）。
+      // relation 决定怎么用：synonym 可直接计入；composition/qualified/broader 只能作部分证据。
+      aliases: aliasByLabel.get(e.label) || [],
       missing,
     });
   }
@@ -248,6 +258,7 @@ function main() {
     withTextbook: cov((r) => r.textbookEvidence.length),
     withExternal: cov((r) => r.externalEvidence.length),
     withWhoTcm: cov((r) => r.whoTcm),
+    withAlias: cov((r) => r.aliases.length),
     fullyMissing: cov((r) => r.missing.length === 7),   // 7 = 缺失项总数；加了 WHO-TCM 后 6 就成了陈旧常量
     avgMissing: Number((out.reduce((s, r) => s + r.missing.length, 0) / total).toFixed(2)),
   };
@@ -301,6 +312,13 @@ function main() {
       md.push(`  - 出处：知识树「图谱接口」**样例表**（全表 12 条，非 103 个证候的全量对照）`);
     }
     for (const e of r.externalEvidence) md.push(`- 外部（${e.type}）：${e.title} — ${e.snippet}`);
+    if (r.aliases.length) {
+      const order = { synonym: 0, composition: 1, qualified: 2, broader: 3 };
+      const list = [...r.aliases].sort((a, b) => (order[a.relation] ?? 9) - (order[b.relation] ?? 9))
+        .map((a) => `${a.name}（${RELATION_CN[a.relation] || a.relation}）`).join(' · ');
+      md.push(`- **异名**（不是证据无关，是写法不同）：${list}`);
+      md.push('  - 出处：`standards/semtensor/descriptions/aliases.json`；每条别名都由测试钉住「必须在它 source 指向的来源里字面出现」');
+    }
     if (r.whoTcm) {
       const w = r.whoTcm;
       md.push(`- **WHO-TCM**：\`${w.whoCode}\` ｜ ${w.whoEnglish}`);

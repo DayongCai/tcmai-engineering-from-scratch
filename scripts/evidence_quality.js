@@ -74,7 +74,28 @@ function labelTerms(base) {
 
 /** 从来源文本里提出所有「…证」形态的词，作为**启发式线索**（不是判定） */
 function syndromeTokens(text) {
-  return [...new Set(text.match(/[\u4e00-\u9fa5]{2,10}证/g) || [])];
+  // **函数词过滤**：贪婪匹配会把前面的散文一起吞进来（实测拿到过
+  // 「气不摄血证是中医病证」「一般认为湿热病证」「含温热夹湿所致的多种证」这种碎片）。
+  // 含这些字的候选一律丢掉 —— 宁可少给线索，也不要给脏线索。
+  const JUNK = /[是的为等所及与今含在对其此凡故则亦皆辩认一种多致夹已而何如或]|认为|一般|所致/;
+  return [...new Set(text.match(/[\u4e00-\u9fa5]{2,10}证/g) || [])].filter((t) => !JUNK.test(t));
+}
+
+// ── 异名表（不是证据无关，是写法不同 —— 但不同写法的关系不同）──────
+
+let ALIAS_TABLE = null;
+function aliasTable() {
+  if (ALIAS_TABLE) return ALIAS_TABLE;
+  try {
+    const raw = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/semtensor/descriptions/aliases.json'), 'utf8'));
+    ALIAS_TABLE = new Map(raw.entries.map((e) => [e.label, e.aliases]));
+  } catch { ALIAS_TABLE = new Map(); }   // 表不存在就当没有（不报错、不编造）
+  return ALIAS_TABLE;
+}
+
+/** 该证名在异名表里登记的别名 */
+function aliasesFor(label) {
+  return aliasTable().get(label) || [];
 }
 
 /** 共享 ≥2 个汉字的写法 —— 仅作提示，**不据此改判** */
@@ -106,16 +127,29 @@ function assess(entry, collected = { unmapped: [] }) {
     }
   }
   const hints = variantHints(texts, base);
+  // 表里登记过的别名：命中即记下**关系**（synonym 才算同一概念）
+  const viaAlias = aliasesFor(entry.label)
+    .filter((a) => texts.some((t) => t.includes(a.name)))
+    .map((a) => ({ name: a.name, relation: a.relation }));
+  const hasSynonym = viaAlias.some((v) => v.relation === 'synonym');
+  // 未进表的写法（去掉表里那些，免得重复计）
+  const tableNames = new Set(aliasesFor(entry.label).map((a) => a.name));
+  const rawHints = hints.filter((h) => !tableNames.has(h));
+
   let tier;
   if (context.length) {
-    tier = qualifierHits.length ? 'specific' : (labelHit.length ? 'label-only' : (hints.length ? 'variant-only' : 'generic'));
-  } else if (labelHit.length) {
+    // 带括注：括注语境是硬条件。命中语境才算特指；只命中证名/别名仍是"沉没证据"
+    tier = qualifierHits.length ? 'specific'
+      : (labelHit.length || viaAlias.length) ? 'label-only'
+        : rawHints.length ? 'variant-unconfirmed' : 'generic';
+  } else if (labelHit.length || hasSynonym) {
+    // **同义异名可当同一概念** → 升为特指，并标出来源是异名
     tier = 'specific';
+  } else if (viaAlias.length) {
+    // composition / qualified / broader：**只能作部分证据/旁证，不许升格**
+    tier = 'partial';
   } else {
-    // **必须把「写法不同」和「真是泛论」分开。**
-    // 「肝阳上亢证 ← 正文写高血压病肝热阳亢证」和「寒凝血瘀证 ← 泛论血瘀」是两回事，
-    // 混成一个"通用"会把有证据的条目说成没证据。
-    tier = hints.length ? 'variant-only' : 'generic';
+    tier = rawHints.length ? 'variant-unconfirmed' : 'generic';
   }
   return {
     label: entry.label,
@@ -127,11 +161,15 @@ function assess(entry, collected = { unmapped: [] }) {
     labelHitSources: labelHit.length,
     qualifierHitSources: qualifierHits.length,
     qualifiersMissed: context.filter((q) => !qualifierHits.includes(q)),
-    variantHints: hints,
+    viaAlias,
+    variantHints: rawHints,
   };
 }
 
-const TIER_CN = { specific: '特指', 'label-only': '仅证名', 'variant-only': '异名', generic: '通用' };
+const TIER_CN = {
+  specific: '特指', partial: '部分(异名·非同一概念)', 'variant-unconfirmed': '待确认异名',
+  'label-only': '仅证名', generic: '通用',
+};
 
 function main() {
   const argv = process.argv.slice(2);
@@ -142,7 +180,7 @@ function main() {
   const collected = { unmapped: [] };
   const rows = ext.entries.map((e) => assess(e, collected));
 
-  const dist = { specific: 0, 'label-only': 0, 'variant-only': 0, generic: 0 };
+  const dist = { specific: 0, partial: 0, 'variant-unconfirmed': 0, 'label-only': 0, generic: 0 };
   for (const r of rows) dist[r.tier] += 1;
 
   const totalLabels = B.allLabels().length;
@@ -153,11 +191,13 @@ function main() {
     coverage: { fetched: rows.length, total: totalLabels, pending: totalLabels - rows.length },
     distribution: {
       specific: dist.specific,
+      viaSynonymAlias: rows.filter((r) => r.viaAlias.some((v) => v.relation === 'synonym')).length,
+      partial: dist.partial,
+      variantUnconfirmed: dist['variant-unconfirmed'],
       labelOnly: dist['label-only'],
-      variantOnly: dist['variant-only'],
       generic: dist.generic,
     },
-    distributionNote: 'specific=证名字面命中（或括注语境命中）；label-only=证名命中但括注语境未命中（应 --requery）；variant-only=证名未字面命中，但正文出现**写法不同的近名证候**（证据可能对同一概念，需人工确认，**工具不擅自判同义**）；generic=连近名都没有，是泛论。',
+    distributionNote: 'specific=证名字面命中，或命中**同义异名**（本项目主张"不是证据无关、是写法不同"，但只有 synonym 才算同一概念）；partial=命中**非同一概念**的异名（composition 复合证名的组成部分 / qualified 病名限定 / broader 上位），只能作部分证据或旁证；variant-unconfirmed=正文出现未登记的近名写法，待人工确认，工具不擅自判同义；label-only=证名命中但括注语境未命中（应 --requery）；generic=连近名都没有，是泛论。',
     qualifierStats: {
       entriesWithQualifier: withQualifier.length,
       ofWhichSpecific: withQualifier.filter((r) => r.tier === 'specific').length,
@@ -177,7 +217,7 @@ function main() {
   if (!onlyJson) {
     console.log('═══ 外部证据质量分级 ═══\n');
     console.log(`  覆盖 ${rows.length}/${totalLabels}（余 ${totalLabels - rows.length} 待检索）`);
-    console.log(`  特指 ${dist.specific} · 异名（写法不同）${dist['variant-only']} · 仅证名（应退回）${dist['label-only']} · 通用 ${dist.generic}`);
+    console.log(`  特指 ${dist.specific}（其中来自同义异名 ${out.distribution.viaSynonymAlias}）· 部分(非同一概念) ${dist.partial} · 待确认异名 ${dist['variant-unconfirmed']} · 仅证名 ${dist['label-only']} · 通用 ${dist.generic}`);
     console.log(`  带括注的 ${withQualifier.length} 条里，特指 ${out.qualifierStats.ofWhichSpecific} 条`);
     if (out.unmappedQualifiers.length) {
       console.log(`  ⚠ 未能映射的部位词（未展开，按病名处理）：${out.unmappedQualifiers.join(' · ')}`);
@@ -187,12 +227,14 @@ function main() {
     if (!miss.length) console.log('  （无）');
     for (const r of miss) console.log(`  ${r.label}  ← 漏掉 ${r.qualifiersMissed.join('、')}`);
 
-    const gen = rows.filter((r) => r.tier === 'variant-only' || r.tier === 'generic');
+    const gen = rows.filter((r) => r.tier !== 'specific');
     if (gen.length) {
       console.log('\n  ── 非「特指」的（附线索，**不据此改判**）──');
       for (const r of gen) {
-        const hint = r.variantHints.length ? `  ｜ 正文里的其他写法：${r.variantHints.join(' ')}` : '  ｜ 无近名线索 → 泛论';
-        console.log(`  [${TIER_CN[r.tier]}] ${r.label}  ｜ 找过：${r.labelTerms.join(' / ')}${hint}`);
+        const al = r.viaAlias.length ? `  ｜ 已登记异名：${r.viaAlias.map((v) => `${v.name}(${v.relation})`).join(' ')}` : '';
+        const hint = r.variantHints.length ? `  ｜ 未登记写法：${r.variantHints.join(' ')}` : '';
+        const tail = (!al && !hint) ? '  ｜ 无近名线索 → 泛论' : '';
+        console.log(`  [${TIER_CN[r.tier]}] ${r.label}${al}${hint}${tail}`);
       }
     }
     console.log(`\n  → ${path.relative(ROOT, OUT)}`);
@@ -203,4 +245,4 @@ if (require.main === module) {
   try { main(); } catch (e) { console.error(`\n✗ ${e.message}`); process.exit(1); }
 }
 
-module.exports = { assess, contextTerms, PLACE_CONTEXT, TIER_CN, labelTerms, syndromeTokens, variantHints };
+module.exports = { assess, contextTerms, PLACE_CONTEXT, TIER_CN, labelTerms, syndromeTokens, variantHints, aliasesFor };
