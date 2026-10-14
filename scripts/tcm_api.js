@@ -205,6 +205,70 @@ function r2r3(inferred, aff) {
   return { byPosition, likelihood };
 }
 
+// ── 3c. 按证名合并（概率倾向）──
+//
+// 实测：103 个 DSU 只有 **96 个不同证名**，7 组重名、7 条多余记录，且 7 组的坐标/颜色**全不同**
+// （源把同一证名放到了球面不同位置）。7 组里有 5 组是「一个有证据（病/ICD）+ 一个空」。
+//
+// 合并规则（三条都能被驳）：
+//  1. **同名 = 同一证候，证据只计一次。** 打分是名字驱动的，两个成员得分必然相同；
+//     把它们相加就是把同一份证据算两遍 —— 概率会虚假地翻倍。
+//  2. **概率倾向 p 用 softmax(S/τ)** 在**合并后的候选集**上算：这才叫"倾向"（彼此可比的分布），
+//     原始 S 是绝对分、不可直接读作概率。
+//  3. **canonical 取"记录最全"的成员**（有 病/ICD 者优先，并列则取最小 uid）。
+//     并列时取最小 uid 是为了**确定性**，不是为了"对"；其余 uid 全部保留在 aliases 里。
+//
+// 坐标取 canonical 的，但**必须记下组内坐标分歧**（coordSpread）——
+// 源把同一证名放在两个点上，那是源数据的事实，合并不能把它抹掉。
+function mergeByLabel(rows, dsu, attrs) {
+  const byUid = new Map(dsu.map((u) => [u.uid, u]));
+  const groups = new Map();
+  for (const r of rows) {
+    const a = groups.get(r.label) || { label: r.label, members: [], score: r.score, why: r.why };
+    a.members.push(r);
+    groups.set(r.label, a);
+  }
+  const merged = [...groups.values()].map((g) => {
+    const recs = g.members.map((m) => {
+      const u = byUid.get(m.uid) || {};
+      const at = attrs.get(m.uid) || {};
+      return { uid: m.uid, disease: at.disease || null, icd: at.icd || null, x: u.x, y: u.y, z: u.z, hex: u.colorSourceHex };
+    });
+    // canonical：记录最全 → 最小 uid
+    const sorted = [...recs].sort((a, b) => {
+      const richness = (r) => (r.disease ? 1 : 0) + (r.icd ? 1 : 0);
+      return richness(b) - richness(a) || a.uid.localeCompare(b.uid);
+    });
+    const canonical = sorted[0];
+    // 组内坐标分歧（最大两两距离）
+    let spread = 0;
+    for (let i = 0; i < recs.length; i++) {
+      for (let j = i + 1; j < recs.length; j++) {
+        const d = Math.hypot(recs[i].x - recs[j].x, recs[i].y - recs[j].y, recs[i].z - recs[j].z);
+        if (isFinite(d)) spread = Math.max(spread, d);
+      }
+    }
+    return {
+      label: g.label,
+      score: g.score,
+      why: g.why,
+      canonical: canonical.uid,
+      aliases: recs.map((r) => r.uid),
+      mergedFrom: recs.length,
+      coordSpread: Number(spread.toFixed(4)),
+      members: recs,
+    };
+  }).sort((a, b) => b.score - a.score || a.label.localeCompare(b.label));
+
+  // 概率倾向：softmax(S/τ)。τ=1 即标准 softmax；只在合并后的候选集上算。
+  const TAU = 1.0;
+  const maxS = Math.max(...merged.map((m) => m.score));
+  const exps = merged.map((m) => Math.exp((m.score - maxS) / TAU));
+  const sum = exps.reduce((a, b) => a + b, 0);
+  merged.forEach((m, i) => { m.p = Number((exps[i] / sum).toFixed(6)); });
+  return { merged, tau: TAU, total: merged.length, duplicatesMerged: merged.reduce((s, m) => s + m.mergedFrom - 1, 0) };
+}
+
 function scoreSyndromes(inferred, dsu, r2) {
   // 阶段线索里出现的汉字（如 `S2 表` → 表；`S4 物质化` → 物质化）作为病位关键词
   const stageKw = new Set();
@@ -322,13 +386,39 @@ function makeApi() {
     dsuCount: dsu.length,
     affinity: aff,
 
-    /** /bianzheng?symptoms —— 症状 → 证候（R0→R1→R2→R3） */
+    /** 全量合并表：103 条记录 → 96 个证名（不依赖症状，纯按名字合并） */
+    mergeTable() {
+      const m = mergeByLabel(
+        dsu.map((u) => ({ uid: u.uid, label: u.label, score: 0, why: [] })),
+        dsu, dsuAttrs,
+      );
+      const groups = m.merged.filter((x) => x.mergedFrom > 1);
+      return {
+        records: dsu.length,
+        distinctNames: m.total,
+        duplicateGroups: groups.length,
+        extrasMerged: m.duplicatesMerged,
+        groups: groups.map((g) => ({
+          label: g.label, canonical: g.canonical, aliases: g.aliases,
+          coordSpread: g.coordSpread, members: g.members,
+        })),
+      };
+    },
+
+    /** /bianzheng?symptoms —— 症状 → 证候（R0→R1→R2→R3，按证名合并概率倾向） */
     bianzheng(q) {
       const symptoms = norm(q).split(/[,，\s、]+/).filter(Boolean);
       const inferred = inferMechanisms(symptoms, table);
       const r2 = r2r3(inferred, aff);
-      const ranked = scoreSyndromes(inferred, dsu, r2);
-      return { query: q, symptoms, inferred, r2, ranked: ranked.slice(0, 8), top: ranked[0] || null };
+      const raw = scoreSyndromes(inferred, dsu, r2);
+      const m = mergeByLabel(raw, dsu, dsuAttrs);
+      return {
+        query: q, symptoms, inferred, r2,
+        ranked: m.merged.slice(0, 8), top: m.merged[0] || null,
+        // 合并前的逐记录榜留着，便于审计"是不是合并把谁弄丢了"
+        perRecord: raw.slice(0, 12),
+        merge: { total: m.total, duplicatesMerged: m.duplicatesMerged, tau: m.tau, dsuRecords: dsu.length },
+      };
     },
 
     /** /diag?symptoms —— 症状 → 病 + 方 + ICD-11 */
@@ -336,8 +426,8 @@ function makeApi() {
       const symptoms = norm(q).split(/[,，\s、]+/).filter(Boolean);
       const inferred = inferMechanisms(symptoms, table);
       const r2 = r2r3(inferred, aff);
-      const ranked = scoreSyndromes(inferred, dsu, r2);
-      const top = ranked[0] || null;
+      const m = mergeByLabel(scoreSyndromes(inferred, dsu, r2), dsu, dsuAttrs);
+      const top = m.merged[0] || null;
 
       // 方剂：伤寒论条文按症状检索
       const qt = emb.tokenizeBigram(symptoms.join(' '));
@@ -349,12 +439,13 @@ function makeApi() {
       for (const h of hits) for (const f of h.formulas) formulaCount.set(f, (formulaCount.get(f) || 0) + 1);
       const formulas = [...formulaCount.entries()].sort((a, b) => b[1] - a[1]).map(([f, n]) => ({ formula: f, fromArticles: n }));
 
-      const attrs = top ? dsuAttrs.get(top.uid) : null;
+      const attrs = top ? dsuAttrs.get(top.canonical) : null;
       const icdEntity = attrs && attrs.icd && db ? db.byCode(attrs.icd) : null;
       return {
         query: q, symptoms, inferred, r2,
         syndrome: top,
-        ranked: ranked.slice(0, 5),
+        rankByProbability: m.merged.slice(0, 5).map((x) => ({ label: x.label, p: x.p, canonical: x.canonical, aliases: x.aliases })),
+        merge: { total: m.total, duplicatesMerged: m.duplicatesMerged, dsuRecords: dsu.length },
         disease: attrs ? attrs.disease : null,
         icd: attrs ? attrs.icd : null,
         icdTitle: icdEntity ? icdEntity.title : null,
@@ -401,6 +492,18 @@ function main() {
     }
     return;
   }
+  if (argv.includes('--merge-table')) {
+    const t = api.mergeTable();
+    console.log('═══ DSU 按证名合并（全量，不依赖症状）═══\n');
+    console.log(`  记录 ${t.records} → 不同证名 ${t.distinctNames} · 重名组 ${t.duplicateGroups} · 合并掉 ${t.extrasMerged} 条\n`);
+    for (const g of t.groups) {
+      console.log(`  ${g.label}   ×${g.aliases.length}  canonical=${g.canonical}  coordSpread=${g.coordSpread}`);
+      for (const m of g.members) {
+        console.log(`      ${m.uid}  (${m.x},${m.y},${m.z})  ${m.hex}  病=${m.disease || '—'}  ICD=${m.icd || '—'}`);
+      }
+    }
+    return;
+  }
   if (argv.includes('--diag')) {
     const r = api.diag(val('--diag'));
     console.log(JSON.stringify(r, null, 2));
@@ -411,7 +514,7 @@ function main() {
     console.log(JSON.stringify(r, null, 2));
     return;
   }
-  console.log('用法: --diag 恶寒,发热,无汗 | --bianzheng 口苦,咽干 | --spec-check');
+  console.log('用法: --diag 恶寒,发热,无汗 | --bianzheng 口苦,咽干 | --merge-table | --spec-check');
 }
 
 if (require.main === module) main();

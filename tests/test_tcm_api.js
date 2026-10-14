@@ -135,6 +135,79 @@ test('未知症状不编结论（命中率为 0 时不得分）', () => {
   assert.strictEqual(r.top, null, '没有任何依据时不该给出证候');
 });
 
+// ── 重名合并（概率倾向）──
+test('全量合并：103 条记录 → 96 个证名，7 组合并掉 7 条', () => {
+  const t = instance.mergeTable();
+  assert.strictEqual(t.records, 103, `DSU 记录数变了：${t.records}`);
+  assert.strictEqual(t.distinctNames, 96, `不同证名数变了：${t.distinctNames}`);
+  assert.strictEqual(t.duplicateGroups, 7, `重名组数变了：${t.duplicateGroups}`);
+  assert.strictEqual(t.extrasMerged, 7, `合并掉的条数变了：${t.extrasMerged}`);
+  // 记录守恒：合并是"归组"，不是"删数据"
+  const totalMembers = t.groups.reduce((s, g) => s + g.aliases.length, 0);
+  assert.strictEqual(totalMembers, 7 * 2, '重名组应为 7 组 × 2 条');
+});
+
+test('canonical 取「记录最全」的成员（有病/ICD 者优先）', () => {
+  const t = instance.mergeTable();
+  const g = (label) => t.groups.find((x) => x.label === label);
+  // 这 5 组都是「一个有证据 + 一个空」
+  const cases = [
+    ['肝胆湿热证', 'DSU-00007'], ['肝阳上亢证', 'DSU-00008'], ['肝郁脾虚证', 'DSU-00006'],
+    ['脾胃湿热证', 'DSU-00004'], ['脾肾阳虚证', 'DSU-00011'],
+  ];
+  for (const [label, want] of cases) {
+    const grp = g(label);
+    assert.ok(grp, `合并表里没有 ${label}`);
+    assert.strictEqual(grp.canonical, want, `${label} 的 canonical 应为 ${want}`);
+    // 且 canonical 确实是组内记录更全的那个
+    const can = grp.members.find((m) => m.uid === want);
+    const other = grp.members.find((m) => m.uid !== want);
+    const rich = (m) => (m.disease ? 1 : 0) + (m.icd ? 1 : 0);
+    assert.ok(rich(can) >= rich(other), `${label}: canonical 的记录并不比另一条更全`);
+  }
+});
+
+test('组内坐标分歧被记录（源把同一证名放到球面不同位置，合并不许抹掉）', () => {
+  const t = instance.mergeTable();
+  for (const g of t.groups) {
+    assert.ok(g.coordSpread > 0, `${g.label} 的 coordSpread 为 0 —— 与实测「7 组坐标全不同」矛盾`);
+  }
+  // 实测区分：肝阳上亢证 几乎重合（同色 #427D66，0.0101），肝郁脾虚证 相距 0.70
+  const near = t.groups.find((x) => x.label === '肝阳上亢证');
+  const far = t.groups.find((x) => x.label === '肝郁脾虚证');
+  assert.ok(near.coordSpread < 0.05, `肝阳上亢证 应当几乎重合，实测 ${near.coordSpread}`);
+  assert.ok(far.coordSpread > 0.5, `肝郁脾虚证 应当相距较远，实测 ${far.coordSpread}`);
+});
+
+test('合并后榜内证名不重复，且概率倾向是分布（0<p≤1）', () => {
+  const r = instance.bianzheng('口苦,咽干');
+  const labels = r.ranked.map((x) => x.label);
+  assert.strictEqual(labels.length, new Set(labels).size, `榜内仍有重名：${labels.join(' / ')}`);
+  for (const x of r.ranked) {
+    assert.ok(x.p > 0 && x.p <= 1, `${x.label} 的 p=${x.p} 不是概率`);
+    assert.ok(Math.abs(r.ranked.reduce((s, y) => s + y.p, 0) - r.ranked.reduce((s, y) => s + y.p, 0)) < 1e-9);
+  }
+  const sum = r.ranked.reduce((s, x) => s + x.p, 0);
+  assert.ok(sum <= 1 + 1e-9, `top8 的 p 之和 ${sum} > 1`);
+  // 合并前逐记录榜仍在（审计用），且它是有重名的 —— 证明合并确实做了事
+  const perLabels = r.perRecord.map((x) => x.label);
+  assert.ok(perLabels.length > new Set(perLabels).size, '合并前的榜应当有重名（否则这条测试没测到东西）');
+});
+
+test('合并保留 aliases：命中肝湿热时两个 uid 都在', () => {
+  const r = instance.bianzheng('口苦,咽干');
+  assert.strictEqual(r.top.label, '肝胆湿热证');
+  assert.deepStrictEqual(r.top.aliases, ['DSU-00007', 'DSU-00052']);
+  assert.strictEqual(r.top.canonical, 'DSU-00007');
+});
+
+test('合并不改变 /diag 的答案（canonical 用于取病/ICD）', () => {
+  const r = instance.diag('恶寒,发热,无汗');
+  assert.strictEqual(r.syndrome.label, '风寒束表证');
+  assert.strictEqual(r.icd, 'CA00');
+  assert.strictEqual(r.merge.dsuRecords, 103);
+});
+
 console.log(`\n  ${passed} 通过 · ${failures.length} 失败`);
 if (failures.length) {
   console.log('\n失败明细:');
