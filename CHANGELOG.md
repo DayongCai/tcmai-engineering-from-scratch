@@ -3,6 +3,37 @@
 本项目遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.30.2] — 2026-10-15
+
+### 门的一个盲点：静音成片能冒充「已配旁白」
+
+（1.30.1 是 `platform/README.md` 那处旧数的修复，记在 1.30.0 的「第四处」里。）
+
+起因是一个提问：「它的产物已经被后续步骤消费掉了 —— why?」追这条链时读到
+`build_video.js` 的段级判据：
+
+```js
+const audioFile = candidates.find((p) => fs.existsSync(p)) || null;
+const hasAudio = Boolean(audioFile);
+const args = ffmpegArgs({ frame, seconds, audioFile: hasAudio ? audioFile : null, ... });
+```
+
+**缺配音时它降级成静音轨，而不是失败**（该文件头部自己也写着「需要 ffmpeg（必需）
+与 TTS（可选，缺则生成静音轨）」）。这个降级是对的 —— TTS 是整条链最脆的一环
+（云端要 key、edge-tts 要 python 且会 403），不该卡死出片。
+
+但它带来一个后果：**静音成片在文件层面与配好音的成片完全无法区分** ——
+体积下限、段数与帧数对齐、字幕条数，我那 14 项断言**全都照样通过**。
+
+所以判据只能挂在「有没有声明」上（第 15 项）：
+- 声明了 `audioBackend`（= 声称合成过配音）就必须真有文件，且数目与讲稿记的一致；
+- 声明了后端却没有 `audioMeasuredSeconds` → 失败；
+- 反过来，`audio/` 里有 mp3 却没记 `audioBackend` → 也失败（"用了哪条降级链"必须明说）；
+- 成片已生成、每段都记了 audio 文件名、而 `audio/` 是空的 → 那是个静音成片 → 失败。
+
+**负例实测**：把 02 章的 `narration/audio/` 移开（模拟静音成片），门立刻红：
+「声明了 audioBackend，但 audio/ 里有 0 个 mp3、讲稿记了 12 个文件」。
+
 ## [1.30.0] — 2026-10-15
 
 ### 跑通 02、03 两章的后四段 —— 三章全部成片

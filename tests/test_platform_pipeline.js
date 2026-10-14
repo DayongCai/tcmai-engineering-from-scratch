@@ -437,6 +437,40 @@ test('platform/README.md 里写的成片体积与时长必须与磁盘相符', (
   assert(bad.length === 0, `README 的实测数字与磁盘不符：\n      ${bad.join('\n      ')}`);
 });
 
+test('声明了配音就必须真有配音文件（静音成片不能冒充已配旁白）', () => {
+  // 起因是一个真问题：build_video.js 在缺配音时**降级成静音轨**而不是失败
+  // （见该文件注释「需要 ffmpeg（必需）与 TTS（可选，缺则生成静音轨）」，
+  //   段级判据在 audioFile = candidates.find(exists) || null）。
+  // 这个降级是对的（TTS 是整条链最脆的一环，不该卡死出片），
+  // 但它带来一个后果：**一个静音成片在文件层面与配好音的成片无法区分** ——
+  // 体积下限、段数对齐、帧数对齐全都照样通过。
+  // 所以判据只能挂在「有没有声明」上：声明了 audioBackend（= 声称合成过配音）
+  // 就必须真有文件；不许出现"声明有旁白、盘上 0 个 mp3"。
+  for (const ch of chapters) {
+    const lp = path.join(ch.dir, 'narration', 'lesson.json');
+    if (!fs.existsSync(lp)) continue;
+    const L = JSON.parse(fs.readFileSync(lp, 'utf8'));
+    const segs = L.segments || [];
+    const mp3 = listOf(path.join(ch.dir, 'narration', 'audio'), /\.mp3$/);
+    const claimed = segs.filter((s) => s.audio).length;
+
+    if (L.audioBackend) {
+      assert(mp3.length === claimed,
+        `${ch.key}: lesson.json 声明了 audioBackend（"${L.audioBackend}"），但 audio/ 里有 ${mp3.length} 个 mp3、讲稿记了 ${claimed} 个文件`);
+      assert(typeof L.audioMeasuredSeconds === 'number' && L.audioMeasuredSeconds > 0,
+        `${ch.key}: 声明了配音后端却没有实测总时长`);
+    } else if (mp3.length > 0) {
+      assert(false, `${ch.key}: audio/ 里有 ${mp3.length} 个 mp3，但 lesson.json 没记 audioBackend（"用了哪条降级链"必须明说）`);
+    }
+
+    const hasVideo = fs.existsSync(path.join(ch.dir, 'video', 'lesson.mp4'));
+    if (hasVideo && claimed === segs.length && segs.length > 0) {
+      assert(mp3.length > 0,
+        `${ch.key}: 成片已生成、且每段都记了 audio 文件名，但 audio/ 是空的 —— 那是个静音成片`);
+    }
+  }
+});
+
 console.log(`\n  ${passed} 通过 · ${failures.length} 失败`);
 if (failures.length) {
   console.log('\n失败明细:');
