@@ -52,3 +52,6 @@ site/snapshot/
 
 # 嵌入层派生产物（可由 node scripts/build_embeddings.js 重跑；README.md 入库）
 standards/semtensor/embeddings/index.json
+
+# ICD-11 快照与本地库（19.5 MB，版权属 WHO；按 sha256 可重现，见 standards/icd11/README.md）
+data/icd11/

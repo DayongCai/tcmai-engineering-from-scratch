@@ -3,6 +3,92 @@
 本项目遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.14.0] — 2026-10-13
+
+### 新增 · ICD-11 客户端（规格组件 ⑦「双通道」）与它需要的本地库
+
+上一轮把 `embedding-code` 的八个组件实现了七个，唯一整块缺的是 ⑦。这一轮按 WHO 网页补上。
+
+**规格原文**（`中医知识树.xlsx#embedding-code`）写的是：
+通道1 = 内网 API `192.168.0.111:8080`（中文搜索 → Foundation ID）；
+通道2 = 本地 `data/icd11_mms.db`（31,838 实体）。
+
+#### 通道1 · 换成 WHO 的公开等价物
+
+内网那个是源平台的私有部署，本机不可达。WHO 的公开版是 `https://id.who.int/`，同一套语义。
+按 WHO ICD-API 文档 v2 实现：
+
+| 项 | 值 |
+|---|---|
+| 基址 | `https://id.who.int/` |
+| 必带头 | `API-Version: v2`（v2 要求所有调用都带） |
+| 认证 | OAuth2 `client_credentials`，token 端点 `https://icdaccessmanagement.who.int/connect/token`，scope `icdapi_access` |
+| 端点形态 | **URI 即端点**（`http://id.who.int/icd/entity/...` 改 https 直接请求，省一次重定向） |
+
+**实测无凭据不可达**：`id.who.int` 各端点一律 `HTTP 401`，token 端点无 body `HTTP 400`。
+→ 凭据是硬门槛，代码里**明说没有**，不伪造、不降级成"猜一个编码"。
+凭据只从环境变量读，**只报键名有无、绝不打印值**（有测试钉住这条）。
+
+#### 通道2 · 本地库（已构建，且说清它不是规格里那份）
+
+规格的 **31,838 实体是 Foundation 组件**（WHO-FIC 全域、含 ICF/ICHI、无编码、多父）——本机不可及。
+实际取到并可复现的是 **MMS 线性化快照 13,960 行**（WHO `2025-01`，经上游 vectorization-ICD11 转出，
+sha256 `c4ffa495…`，19,461,645 字节）。
+
+**13,960 ≠ 31,838：这是缩水，不是同一份库，不宣称等价。** 差异写进 `meta.json` 与 README，并有测试断言"规模确实不同"。
+
+存储**不是 SQLite**（坚持零第三方依赖且本机无 sqlite）：NDJSON + 内存索引。
+**查询语义**与规格一致（`code_by_id` 签名逐字对应），**存储格式**不同。
+
+比规格多出来的：**父链还原章节**。MMS 单父，沿 `parent` 上溯到 `class_kind=chapter`——
+于是「某编码属于哪一章节」是**算出来的**，不是按编码前缀猜的：
+
+```
+BA00 · Essential hypertension
+  block · Hypertensive diseases
+    chapter · 11 · Diseases of the circulatory system
+```
+
+#### 跑通的校验：本仓库 `icd11_map` 的编码 **7/7 全部解析**
+
+来源是知识树 xlsx「图谱接口」表（唯一事实来源，不手抄）。此前这些编码**只是字符串，从没被任何东西验过**：
+
+| 编码 | 官方标题 | 章节 |
+|---|---|---|
+| CA00 | Acute nasopharyngitis | 12 呼吸系统 |
+| 1E32 | Influenza, virus not identified | 01 传染病 |
+| DA60 | Gastric ulcer | 13 消化系统 |
+| DD91.0 | Irritable bowel syndrome | 13 消化系统 |
+| 1E51.0 | Chronic hepatitis B | 01 传染病 |
+| BA00 | Essential hypertension | 11 循环系统 |
+| 5A11 | Type 2 diabetes mellitus | 05 内分泌代谢 |
+| **MC81** | Abnormalities of heart beat | —（规格 `/semantic-search` 实测输出里的编码，独立验过） |
+
+**结论：`icd11_map` 是合法的 ICD-11 MMS 编码，且现在能算出章节。**
+
+#### 快照不入库
+
+ICD-11 内容版权归 WHO，上游仓库 GPL-3.0 → 19.5 MB 快照落 `data/icd11/`（`.gitignore`），
+按 `--fetch` + sha256 校验可重现。**内容变过就拒绝建库**（有负例测试）。
+
+#### 测试
+
+`tests/test_icd11_client.js`（17 项，0 跳过）分三层：
+- **纯逻辑**（小型 fixture，任何机器可跑）：RFC4180 的三种陷阱（引号内逗号 / 引号内换行 / 连续双引号）、
+  父链还原章节、父链断裂时不猜章节、`code_by_id` 字段恰为 `{id,code,title}`、查不到返回 null、
+  **sha256 闸拒篡改**、meta 如实记录规模差；
+- **真数据**：7/7 编码解析 + 官方标题与章节来自快照 + MC81；
+- **通道1 凭据路径**（异步，显式 await —— 塞进同步 `test()` 会让断言失败变成静默通过）。
+
+**自己写错的地方也记一下**：fixture 第一版手写 CSV 字符串，多了一个空字段，`parent` 值错位，
+测出来是"父链坏"而其实是测试数据坏。改成按列位构造后消失——**手数位数不可靠，这条本仓库已经栽过好几次。**
+
+### 还没做到的（写进 README）
+
+- **中文标题**：本地库是英文 MMS；中文要凭据走 WHO API 的 `Accept-Language: zh`。**无凭据，中文通道未验证过。**
+- **Foundation → MMS 跨组件映射**：我的库里 `id` 已是 MMS 侧 id，没有真正的跨组件映射（需要 Foundation 数据）。
+- **全文检索**：本地库只做标题子串匹配；BM25 在 `build_embeddings.js` 里，两者尚未接起来。
+
 ## [1.13.0] — 2026-10-13
 
 ### 新增 · 嵌入层：实现源材料里那份「tcmP 真实实现」的编码引擎规格
