@@ -49,3 +49,6 @@ __pycache__/
 scratch/
 tmp/
 site/snapshot/
+
+# 嵌入层派生产物（可由 node scripts/build_embeddings.js 重跑；README.md 入库）
+standards/semtensor/embeddings/index.json

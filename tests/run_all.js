@@ -35,6 +35,7 @@ const SUITES = [
   { file: 'test_outputs_index.js', desc: '产出物索引层（与文件系统双向一致 / 缺口显式 / 不漂移）' },
   { file: 'test_audit_l3.js', desc: 'L3 内容层端到端（造探针章节，四个负例：代价与边界/代码块绕过/H1/引文）' },
   { file: 'test_deliverable_artifacts.js', desc: '两条交付物线成品（stats/sitemap/robots · 单文件书 HTML）' },
+  { file: 'test_embeddings.js', desc: '嵌入层（按源材料 embedding-code 规格：TF-IDF/BM25/RRF + 回归锚点）', slow: true },
   { file: 'test_chapter_code.js', desc: '每个已建章节的 code/main.js 与单元测试', slow: true },
   { file: 'test_content_review.js', desc: '人机闭环：内容复核清单', advisory: true },
   { file: 'assert_disclaimers.js', desc: '[tcmP] 每集讲稿必须带末位免责声明卡' },
