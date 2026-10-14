@@ -3,6 +3,75 @@
 本项目遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.25.0] — 2026-10-14
+
+### 新增 · 全链路账本 PORTING.md（「哪一块是从参考的哪一块来的」）
+
+此前只有 `FORKING.md`（**规程**：怎么照参考造一门新课），但没有一份**账本**回答
+「本仓库的这一块，对应参考的哪一块，中途改了什么」。补上：
+
+- `porting-map.json` —— 账本源：参考侧实测清单 · 三个不变量 · 结构映射 ·
+  工具链逐个脚本映射 · 未移植项 · 本仓库新增 · 质量门
+- `PORTING.md` —— **从 json 渲染**（`npm run porting`），首行有渲染器标记，不许手改
+- `tests/test_porting_map.js` —— 10 项守门
+
+**先量实物再写表**：参考侧清单全部现场列目录得到。顺带更正了两处过期记录 ——
+`D:\ai-engineering-from-scratch-main` 与 `E:\GitHub\ai-engineering-from-scratch`
+实测**都不存在**，本机只剩
+`D:\ai-engineering-from-scratch source code\ai-engineering-from-scratch-main`。
+
+### 账本里的关键事实
+
+参考的 9 个脚本 → 本仓库的映射（逐个，含状态）：
+
+| 参考 | 本仓库 | 状态 |
+|---|---|---|
+| `_lib.py` | `lib.js` | 移植 |
+| `audit_lessons.py` | `audit_curriculum.js` | **移植+扩写**（三层 → L0–L3 四层） |
+| `build_catalog.py` | `build_catalog.js` | 移植 |
+| `check_readme_counts.py` | `check_readme_counts.js` | 移植 |
+| `link_check.py` | `check_links.js` | 移植 |
+| `scaffold_workbench.py` | `scaffold_subject.js` + `scaffold_chapter.js` | 拆分 |
+| `scaffold-lesson.sh` | `scaffold_chapter.js` | 合并 |
+| `lesson_run.py` | `tests/test_chapter_code.js` | 移植 |
+| `install_skills.py` | — | **未移植（记账，非遗忘）** |
+
+结构映射：`phases/` → `departments/`（两层 → 三层：院系/学科/章节）；
+`lesson`（code/ docs/ outputs/ quiz.json）→ `chapters/<NN-slug>/`（docs 收紧为 `docs/zh.md`）；
+`LESSON_TEMPLATE.md` 单文件 → `templates/` 四文件。
+
+未移植 4 项 + 新增 22 项，账本里逐条写了理由（`requirements.txt` 弃用是因为本仓库
+**零依赖**；`AGENTS.md` 写不进去是因为本机策略保护，等价内容落 `CONTRIBUTING.md`）。
+
+### 这道门抓的不是文风，是烂账
+
+**这道门写出来的当场就连抓 4 个账本自身的错**：
+
+1. `site/（26 文件）` 当路径 —— 带注解的目录不是路径；
+2. `文档索引构建` 只有 6 个字，说不清为什么；
+3. `FORKING.md（改造流程规程：…）` 又是带注解的路径；
+4. `glossary/（ai-terms.md / …）` 与 `outputs/ + standards/ …` 同类。
+
+修法统一为：**注解归 `note`，`ours` 只放路径**。这正是这类账本最容易烂的方式 ——
+"看起来对"的表，没人会去核对。
+
+门守的另外三件事：
+- **`evidence` 必须是 `run_all.js` 里已注册的套件** —— 否则"有测试"是空话
+- **参考 `scripts/` 的每一个都必须在账本里有交代**（映射或显式未移植）——
+  参考侧新增脚本不会被我静默忽略
+- **参考仓库在线时做新鲜度比对**（现场清单 vs 账本清单，多一个少一个都报错）；
+  离线则**明说跳过**，不假装通过
+
+### 接线
+
+`npm run porting` 渲染；`npm run check` 加上 `build_porting_map.js --check`
+（产物不许漂移，与产出物索引同一套做法）。`FORKING.md §8 延伸` 加了指向 PORTING.md 的链接 ——
+没人链的文档没人读。
+
+### 测试
+
+`tests/test_porting_map.js` 10 项。全套 **31 个套件**。
+
 ## [1.24.0] — 2026-10-14
 
 ### 新增 · 证候异名表 —— 「不是证据无关，而是写法不同」的落点

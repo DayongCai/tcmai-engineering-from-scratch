@@ -43,6 +43,7 @@ const SUITES = [
   { file: 'test_external_batch.js', desc: '外部证据分批（队列确定性 / 空结果不入库 / 导入幂等 / 括注限定词）' },
   { file: 'test_evidence_quality.js', desc: '证据质量分级（特指/部分/待确认异名/仅证名/通用，五级各有真实踩坑案例）' },
   { file: 'test_aliases.js', desc: '异名表（**每条别名必须在它 source 指向的来源里字面出现**）' },
+  { file: 'test_porting_map.js', desc: '全链路账本（参考→本仓库：路径验真 / evidence 已注册 / 参考新脚本不许被静默忽略 / 不漂移）' },
   { file: 'test_lib_metrics.js', desc: '嵌入指标（轮廓/CH/DB/分离比/熵/符号准确率/保真度，手算期望值）' },
   { file: 'test_chapter_code.js', desc: '每个已建章节的 code/main.js 与单元测试', slow: true },
   { file: 'test_content_review.js', desc: '人机闭环：内容复核清单', advisory: true },
