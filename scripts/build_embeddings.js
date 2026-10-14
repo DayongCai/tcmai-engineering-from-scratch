@@ -202,15 +202,29 @@ function rrf(rankLists, k = 60) {
 
 function collectCorpus() {
   const files = [];
+  // **排除派生件**：语料只能来自源。
+  // 第一版把 standards/semtensor/embeddings/index.json 也读了进去 —— 那是一份
+  // 报告，里面写着 "DSU-00035 · 心脾两虚证" 这类字符串，于是下一轮它变成了
+  // 心脾两虚证的"语料证据"。**自己的输出喂回自己的输入**，是个反馈环：
+  // 每次重跑都会让上一次的结论更"正确"，而这不是学到的东西，是回音。
+  const DERIVED = [
+    /semtensor[\\/]embeddings[\\/]/,
+    /site[\\/]stats\.json$/,
+    /outputs[\\/]index\.json$/,
+    /standards[\\/]icd11[\\/]README\.md$/,
+    /icd11[\\/]meta\.json$/,
+    /dashboard\.html$/,
+    /manifest\.json$/,
+  ];
   const walk = (d) => {
     let e; try { e = fs.readdirSync(d, { withFileTypes: true }); } catch { return; }
     for (const x of e) {
       const p = path.join(d, x.name);
       if (x.isDirectory()) {
-        // sources/ 是原件目录（含 xlsx 派生的整本 md），它对描述有帮助，但
-        // 逐字节全读太贵；只跳过 .git/node_modules/build 与站点快照。
         if (!/node_modules|\.git$|build$|snapshot/.test(x.name)) walk(p);
-      } else if (/\.(md|json|txt)$/.test(x.name)) files.push(p);
+      } else if (/\.(md|json|txt)$/.test(x.name)) {
+        if (!DERIVED.some((re) => re.test(p))) files.push(p);
+      }
     }
   };
   for (const d of ['textbooks', 'standards', 'glossary', 'departments']) walk(path.join(ROOT, d));
@@ -410,8 +424,19 @@ function main() {
     };
     const top = (fused) => fused.slice(0, 5).map((x) => docs[x.i]);
     const all = top(rankIn('all')), only = top(rankIn('dsu'));
+    // 规格记录的是"期望答案"，但**它排第几才是性质**，`top1 恰好等于它`只是语料快照的性质：
+    // 任何无关文件的增删都会改 IDF，从而翻转排名。所以记 rank（在完整排序里的位次），
+    // 排序长度固定，不受 Top-K 截断影响。
+    const rankOf = (fused, label) => {
+      const i = fused.findIndex((x) => docs[x.i].label === label);
+      return i < 0 ? null : i + 1;
+    };
+    const rankAll = rankIn('all');
+    const rankDsu = rankIn('dsu');
     return {
       endpoint: e.ep, query: e.q, expectedInSpec: e.expect,
+      expectedRank: rankOf(rankAll, e.expect),
+      expectedRankDsuOnly: rankOf(rankDsu, e.expect),
       allUnits: { top1: all[0] ? `${all[0].uid} · ${all[0].label}` : null, top5: all.map((f) => `${f.uid} · ${f.label}`), hit: all[0] ? all[0].label === e.expect : false },
       dsuOnly: { top1: only[0] ? `${only[0].uid} · ${only[0].label}` : null, top5: only.map((f) => `${f.uid} · ${f.label}`), hit: only[0] ? only[0].label === e.expect : false },
     };
@@ -431,6 +456,7 @@ function main() {
       units: units.length,
       dsu: dsuDocs.length,
       corpusFiles: corpus.length,
+      corpusFileList: corpus.map((c) => c.file),
       edgesReportedBySource: edgeTypes,
     },
     evaluation: reports,
@@ -457,15 +483,15 @@ function main() {
     console.log(`  ${n}  词表 ${String(r.vocabulary).padStart(5)} · 每篇 ${Math.round(r.tokensPerDoc.reduce((a, b) => a + b, 0) / r.tokensPerDoc.length)} token`);
     console.log(`      kNN 纯度(证尾族) ${r.knnPurityBySuffix.toFixed(4)} · 轮廓 ${isNaN(r.silhouetteBySuffix) ? 'n/a' : r.silhouetteBySuffix.toFixed(4)}`);
   }
-  console.log('\n检索冒烟（向量 ∪ BM25，RRF k=60）· 两个口径都报 —— 失败要能定位到原因：');
+  console.log('\n检索冒烟（向量 ∪ BM25，RRF k=60）· 记「期望答案排第几」而不是「top1 是不是它」：');
   for (const s of smoke) {
+    const r = s.expectedRank;
     console.log(`  ${s.endpoint}   期望 ${s.expectedInSpec}`);
-    console.log(`     全部单元 ${s.allUnits.hit ? '✅' : '  '} ${s.allUnits.top1}`);
-    console.log(`     只 DSU   ${s.dsuOnly.hit ? '✅' : '  '} ${s.dsuOnly.top1}`);
+    console.log(`     rank ${r == null ? '未入榜' : r}${r != null && r <= 5 ? ' （前 5 内）' : ' （前 5 外）'} · top1 = ${s.allUnits.top1}`);
   }
-  const hitsAll = smoke.filter((s) => s.allUnits.hit).length;
-  const hitsDsu = smoke.filter((s) => s.dsuOnly.hit).length;
-  console.log(`    命中：全部单元 ${hitsAll}/${smoke.length} · 只 DSU ${hitsDsu}/${smoke.length}`);
+  const inTop5 = smoke.filter((s) => s.expectedRank != null && s.expectedRank <= 5).length;
+  const atTop1 = smoke.filter((s) => s.expectedRank === 1).length;
+  console.log(`    期望答案进前 5：${inTop5}/${smoke.length} · 恰好排第 1：${atTop1}/${smoke.length}`);
   console.log(`\n  → ${path.relative(ROOT, path.join(OUTDIR, 'index.json'))}`);
 
   if (query) {

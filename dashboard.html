@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>tcmai-engineering-from-scratch · 项目看板</title>
+<style>
+  :root{
+    --bg:#0d0a07; --panel:#1a1610; --line:#2a2218; --ink:#e8ddcb;
+    --dim:#9a8b74; --gold:#c8a45c; --jade:#6f9e7f; --red:#b4544a; --blue:#6b84b4;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);line-height:1.75;
+    font-family:'Noto Serif SC','Source Han Serif CN','Songti SC','SimSun',serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:2.2rem 1.4rem 4rem}
+  h1{font-size:1.5rem;margin:0 0 .2rem;letter-spacing:.02em}
+  .sub{color:var(--dim);font-size:.82rem;margin-bottom:1.8rem}
+  .sub code{color:var(--gold);background:#141109;padding:.05rem .3rem;border-radius:3px}
+  h2{font-size:.95rem;color:var(--gold);font-weight:400;letter-spacing:.14em;
+    margin:2.2rem 0 .8rem;padding-bottom:.35rem;border-bottom:1px solid var(--line)}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:.6rem}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:.7rem .8rem}
+  .kpi .k{color:var(--dim);font-size:.7rem;letter-spacing:.06em}
+  .kpi .v{font-size:1.35rem;color:var(--gold);font-variant-numeric:tabular-nums;line-height:1.3}
+  .kpi .v small{font-size:.7rem;color:var(--jade);margin-left:.3rem}
+  .flow{display:flex;flex-direction:column;gap:.4rem}
+  .step{display:grid;grid-template-columns:150px 1fr 1fr;gap:.8rem;align-items:baseline;
+    background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold);
+    border-radius:6px;padding:.55rem .8rem;font-size:.84rem}
+  .step .n{color:var(--ink)}
+  .step .d{color:var(--dim)}
+  .step .r{color:var(--jade);font-size:.78rem}
+  table{width:100%;border-collapse:collapse;font-size:.84rem}
+  th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--dim);font-weight:400;font-size:.72rem;letter-spacing:.08em}
+  .pill{display:inline-block;font-size:.68rem;padding:.1rem .45rem;border-radius:99px;
+    border:1px solid currentColor;white-space:nowrap}
+  .s-done{color:var(--jade)} .s-active{color:var(--gold)} .s-block{color:var(--red)} .s-idle{color:var(--dim)}
+  .col2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  @media(max-width:820px){.col2{grid-template-columns:1fr}.step{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:.8rem 1rem;font-size:.84rem}
+  .card h3{margin:0 0 .35rem;font-size:.86rem;color:var(--gold);font-weight:400}
+  .card .why{color:var(--dim);font-size:.78rem}
+  .card .fix{color:var(--jade);font-size:.78rem;margin-top:.3rem}
+  .item{padding:.55rem 0;border-bottom:1px dashed var(--line)}
+  .item:last-child{border-bottom:0}
+  .git{font-family:ui-monospace,'Cascadia Code',Consolas,monospace;font-size:.76rem;color:var(--dim)}
+  .git b{color:var(--gold);font-weight:400}
+  footer{margin-top:2.4rem;border-top:1px solid var(--line);padding-top:.8rem;
+    color:var(--dim);font-size:.74rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>tcmai-engineering-from-scratch · 项目看板</h1>
+  <div class="sub">由 <code>node scripts/build_dashboard.js</code> 从仓库现状生成 · 版本 <code>v1.15.0</code> ·
+    生成时全部数字来自 curriculum.json / catalog.json / 文件系统 / 派生索引，不手写</div>
+
+  <h2>规模与进度</h2>
+  <div class="kpis">
+    <div class="kpi"><div class="k">领域 / 院系</div><div class="v">1 / 8</div></div>
+    <div class="kpi"><div class="k">学科</div><div class="v">120</div></div>
+    <div class="kpi"><div class="k">章节（目标）</div><div class="v">1086</div></div>
+    <div class="kpi"><div class="k">已建章节</div><div class="v">3<small>0.28%</small></div></div>
+    <div class="kpi"><div class="k">书稿文件</div><div class="v">13<small>md</small></div></div>
+    <div class="kpi"><div class="k">视频成片</div><div class="v">1</div></div>
+    <div class="kpi"><div class="k">产出物</div><div class="v">6<small>undefined 章</small></div></div>
+    <div class="kpi"><div class="k">测试套件</div><div class="v">24</div></div>
+    <div class="kpi"><div class="k">扫描 md</div><div class="v">175<small>0 断链</small></div></div>
+    <div class="kpi"><div class="k">版本</div><div class="v">1.15.0</div></div>
+  </div>
+
+  <h2>项目逻辑 · 数据流</h2>
+  <div class="flow">
+    <div class="step"><div class="n">桌面源资料</div><div class="d">108 项 · 45 xlsx / 16 docx / 4 旧 .xls</div><div class="r">解析入库，绝不手抄</div></div>
+    <div class="step"><div class="n">standards/</div><div class="d">6 个域 · 带 sources/ 原件 + sha256</div><div class="r">派生物（content.json）不入库</div></div>
+    <div class="step"><div class="n">curriculum.json</div><div class="d">单一事实来源</div><div class="r">1 领域 / 8 院系 / 120 学科 / 1086 章节</div></div>
+    <div class="step"><div class="n">departments/</div><div class="d">课程骨架（章节契约：docs + code + quiz + outputs）</div><div class="r">已建 3 章</div></div>
+    <div class="step"><div class="n">[tcmP] + [textbooks]</div><div class="d">两条交付物线</div><div class="r">站点/视频 · 教材/书</div></div>
+    <div class="step"><div class="n">质量门</div><div class="d">L0–L3 审计 · 链接 · 计数 · 产出物索引</div><div class="r">24 套件</div></div>
+  </div>
+
+  <h2>工作流状态</h2>
+  <table>
+    <thead><tr><th style="width:210px">工作流</th><th style="width:74px">状态</th><th>证据（来自仓库）</th></tr></thead>
+    <tbody>
+    <tr><td>[tcmP] 平台 · 站点</td><td><span class="pill s-done">已完成</span></td>
+        <td>site/ 9 个页面 · data/content/semtensor-spec/manifest/stats 生成于构建<div class="why">静态站 + 单文件离线快照；Range 请求与路径穿越防护已测</div></td></tr>
+    <tr><td>[tcmP] 平台 · 视频流水线</td><td><span class="pill s-done">已完成</span></td>
+        <td>1 成片 · 12 配音 · 12 帧 · 0 幻灯片/讲稿件<div class="why">TTS 降级链 edge-tts → Windows SAPI → 人工；时长用实测配音时长；字幕对视音差 +0.022s</div></td></tr>
+    <tr><td>[textbooks] 教材 · 内容</td><td><span class="pill s-active">进行中</span></td>
+        <td>5 卷 · 已写 13 章 · 构建产物 2 件<div class="why">教材正文 = 章节 docx 的 docs/zh.md 汇总；同时出单文件书 HTML（不需要 pandoc）</div></td></tr>
+    <tr><td>课程骨架 · 学科/章节</td><td><span class="pill s-active">进行中</span></td>
+        <td>120 学科已建目录 · 已建章节 3/1086（0.28%）<div class="why">curriculum.json 为单一事实来源；审计对 120 个空学科全绿是第一个里程碑</div></td></tr>
+    <tr><td>源资料入库</td><td><span class="pill s-done">已完成</span></td>
+        <td>standards/ 6 个域：icd11 · knowledge-tree · leijing-tuyi · materials · semtensor · shanghan<div class="why">解析入库、绝不手抄；各带 sources/ 原件 + sha256 溯源；派生 content.json 不入库</div></td></tr>
+    <tr><td>嵌入层（embedding-code 规格）</td><td><span class="pill s-block">受阻</span></td>
+        <td>8 组件实现 7（⑦ 已补）· 字段供给：证候 103/103 · 病 12/103 · ICD 7/103 · 其余 0/103<div class="why">轮廓系数 -0.113（≈随机）· 端点行为复现 1/3 —— 卡在「没有描述可嵌入」</div></td></tr>
+    <tr><td>ICD-11 客户端（规格 ⑦）</td><td><span class="pill s-active">进行中</span></td>
+        <td>本地库 13960 实体（MMS 2025-01）· 仓库 7 个编码 7/7 解析<div class="why">WHO API 通道需凭据（无凭据一律 401，本机未配置）；中文标题通道**未验证**</div></td></tr>
+    <tr><td>质量门 · 审计与测试</td><td><span class="pill s-done">已完成</span></td>
+        <td>审计 L0–L3 · 24 个测试套件（25 个测试文件）· 链接扫描 175 个 md（0 断链） · npm run check 四道门<div class="why">L3 内容层实测抓到 2 处契约违约；文档事实核对测试已 4 次抓到过期数字</div></td></tr>
+    </tbody>
+  </table>
+
+  <h2>阻塞项 · 与解除条件</h2>
+  <div class="col2">
+    <div class="card"><h3>103 个 DSU 缺属性字段</h3>
+      <div class="why">为什么：源平台 kg/ 下那 7 个病证单元文件未随资料来；disease 12/103、icd 7/103、dsym/ssym/formula/zf/six 全 0/103</div>
+      <div class="why">影响：嵌入层的 /diag 与 /bianzheng 端点命中率 1/3；这是「没有描述可嵌入」，不是模型问题</div>
+      <div class="fix">解除：给 103 个 DSU 写真正的描述（病因/病机/主症/舌脉/治法）—— [textbooks] 线的产出物</div></div>
+    <div class="card"><h3>ICD-11 中文通道未验证</h3>
+      <div class="why">为什么：WHO API 需 client_id/secret（无凭据一律 HTTP 401）；本地库是英文 MMS</div>
+      <div class="why">影响：规格里「中文搜索 → Foundation ID」这条路一次都没跑通过</div>
+      <div class="fix">解除：https://icd.who.int/icdapi 注册 → 设 ICD11_CLIENT_ID / ICD11_CLIENT_SECRET</div></div>
+    <div class="card"><h3>PDF/EPUB 不可用</h3>
+      <div class="why">为什么：本机无 pandoc</div>
+      <div class="why">影响：[textbooks] 只能到 Markdown + 单文件书 HTML</div>
+      <div class="fix">解除：装 pandoc（或确认 HTML 已够用）</div></div>
+    <div class="card"><h3>4 个旧二进制 .xls 读不了</h3>
+      <div class="why">为什么：OLE2/BIFF8 需复合文档 + BIFF 记录 + SST 解析</div>
+      <div class="why">影响：《黄帝内经全文》《素问灵枢》等 4 份源资料在库外（是能力缺口，不是资料不存在）</div>
+      <div class="fix">解除：补 BIFF8 读取器（独立工作量）</div></div>
+    <div class="card"><h3>源数据三处内部不一致待裁定</h3>
+      <div class="why">为什么：颜色公理未定义 c_i；源实现 comp() 与 Python hex 互不相符；类经图翼方位色已实测排除</div>
+      <div class="why">影响：语义张量的颜色无法从源复现（已用同规模随机调色板对照排除该路径）</div>
+      <div class="fix">解除：需源实现 kg/semtensor/axioms.py + encoder.py（F:\tcm\tcmP 已查不存在）</div></div>
+  </div>
+
+  <h2>下一步（按价值排序）</h2>
+  <div class="card">
+    <div class="item"><b>把本地 ICD-11 库接进 BM25 检索</b> <span class="pill s-idle">中</span>
+      <div class="why">直接补 /diag 与 /bianzheng 失败的那一环；两处实现已各自存在，只差接起来</div></div>
+    <div class="item"><b>给 103 个 DSU 写描述（沿 textbooks 线）</b> <span class="pill s-idle">大</span>
+      <div class="why">嵌入层与辨证检索的共同前置；不写这个，换任何模型都没用</div></div>
+    <div class="item"><b>用 ICD-11 章节反查学科一致性</b> <span class="pill s-idle">小</span>
+      <div class="why">现在编码能算出章节，出现了新检查：DSU 的 ICD 章节是否与学科枝吻合</div></div>
+    <div class="item"><b>站点呈现教材内容</b> <span class="pill s-idle">中</span>
+      <div class="why">两件交付物目前只靠一个进度计数器连着；书 HTML 已生成但站点没有入口</div></div>
+  </div>
+
+  <h2>最近提交</h2>
+  <div class="card git">
+    <div>c5fdc56  <b>eat(icd11): 按 WHO 网页补上规格组件 ⑦（双通道客户端 + 本地库）</b></div>
+    <div>064cf69  <b>eat(embeddings): 实现源材料 embedding-code 规格（八个组件首次落地）</b></div>
+    <div>8964a3b  <b>eat(deliverables): 两条交付物线各补一个能交出去的成品</b></div>
+    <div>dfe180b  <b>eat(audit): L3 内容层 —— 契约承诺的三项内容要求此前没人查（门一挂就抓到 2 处违约）</b></div>
+    <div>fd0d073  <b>ix(site): 章节页渲染本章产出物（offers/prompt+skill 一直没露面）</b></div>
+    <div>2da25a3  <b>eat(outputs): 根级产出物索引（上游对照的最后一项缺口）</b></div>
+    <div>dabf47f  <b>eat(forking): 改造参考架构建新课的流程文档 + 文档事实核对测试</b></div>
+    <div>dca4dcf  <b>eat(links): 内部链接检查（对照上游 link_check 补缺口）+ 修 120 条指错一层的链接</b></div>
+    <div>c81c192  <b>eat(leijing): 接入类经图翼「语义范畴 × 方位」——结论是否定的（含一处自查方法错）</b></div>
+    <div>220a67b  <b>eat(materials): 剩余 6 份源材料一次性入库（注册表驱动）</b></div>
+    <div>dd9f704  <b>eat(shanghan): 桌面源资料清点 + 《伤寒论底本》入库，9 域跨源印证</b></div>
+    <div>987528f  <b>eat(knowledge-tree): 导入《中医知识树》教材 + 收紧 outputs 契约</b></div>
+  </div>
+
+  <footer>
+    看板是派生件：<b>数字来自仓库现状，缺派生件时显式标「未生成」</b>，不猜不留空。
+    每条状态都能指到证据；状态与证据不符时，以证据为准。
+  </footer>
+</div>
+</body>
+</html>

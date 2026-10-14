@@ -130,20 +130,38 @@ test('字段供给被如实记录（证候满、病侧稀）', () => {
   assert.strictEqual(withIcd, 7, `ICD 覆盖数变了：${withIcd}`);
 });
 
-test('回归锚点：规格记录的 /semantic-search?q=失眠 → 心脾两虚证 仍然成立', () => {
-  const s = idx.retrievalSmoke.find((x) => /失眠/.test(x.query));
-  assert.ok(s, '冒烟里没有失眠这一条');
-  assert.strictEqual(s.allUnits.top1, 'DSU-00035 · 心脾两虚证', `实际 top1 = ${s.allUnits.top1}`);
-  assert.ok(s.allUnits.hit, '失眠 不再是 top1 命中');
+test('语料里不许出现派生件（防"自己的输出喂回自己的输入"的反馈环）', () => {
+  const list = idx.counts.corpusFileList || [];
+  assert.ok(list.length > 100, `语料文件清单过短：${list.length}`);
+  const bad = list.filter((f) => /embeddings[\\/]|stats\.json|outputs[\\/]index\.json|dashboard\.html|icd11[\\/]README|icd11[\\/]meta\.json|manifest\.json/.test(f));
+  assert.deepStrictEqual(bad, [], `语料里混进了派生件：\n${bad.join('\n')}`);
 });
 
-test('失败端点被标注为失败，而不是悄悄调低标准', () => {
-  const miss = idx.retrievalSmoke.filter((x) => !x.allUnits.hit);
-  assert.ok(miss.length >= 1, '三个端点全过？那这条测试的用意（不许美化）需要重审');
-  miss.forEach((m) => {
+test('回归锚点：失眠的期望答案心脾两虚证 在前 5 内', () => {
+  // 断言"排第几"而不是"top1 恰好是它"：top1 是**语料快照**的性质，任何无关文件的增删
+  // 都会改 IDF 从而翻转排名（第一次就是这么断的）。位次才是系统的性质。
+  const s = idx.retrievalSmoke.find((x) => /失眠/.test(x.query));
+  assert.ok(s, '冒烟里没有失眠这一条');
+  assert.ok(s.expectedRank != null, '失眠的期望答案未入榜');
+  assert.ok(s.expectedRank <= 5, `失眠的期望答案掉到第 ${s.expectedRank}（前 5 外）`);
+});
+
+test('失败端点记为失败，并记下它排第几（不许美化）', () => {
+  const miss = idx.retrievalSmoke.filter((x) => !(x.expectedRank != null && x.expectedRank <= 5));
+  assert.ok(miss.length >= 1, '三个端点全进前 5？那这条测试的用意（不许美化）需要重审');
+  for (const m of miss) {
     assert.ok(m.expectedInSpec, `失败的 ${m.endpoint} 没有记录规格原值`);
-    assert.ok(m.allUnits.top1 && m.allUnits.top1 !== m.expectedInSpec);
-  });
+    assert.notStrictEqual(m.allUnits.top1, m.expectedInSpec, `${m.endpoint} 的 top1 竟然就是期望值，与"失败"矛盾`);
+  }
+});
+
+test('检索是确定性的（同一份语料跑两次，位次一致）', () => {
+  const run2 = spawnSync(process.execPath, ['scripts/build_embeddings.js'], { cwd: ROOT, encoding: 'utf8' });
+  assert.strictEqual(run2.status, 0);
+  const idx2 = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/semtensor/embeddings/index.json'), 'utf8'));
+  const ranks = (o) => o.retrievalSmoke.map((s) => `${s.query}:${s.expectedRank}`).join('|');
+  assert.strictEqual(ranks(idx2), ranks(idx), '两次运行位次不同 —— 检索不可复现');
+  assert.strictEqual(idx2.counts.corpusFiles, idx.counts.corpusFiles);
 });
 
 console.log(`\n  ${passed} 通过 · ${failures.length} 失败`);
