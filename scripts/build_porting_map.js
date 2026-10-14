@@ -14,6 +14,7 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
+const { execFileSync } = require('node:child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 const SRC = path.join(ROOT, 'porting-map.json');
@@ -26,6 +27,74 @@ const STATUS_CN = {
   merged: '合并',
   'ported+extended': '移植+扩写',
 };
+
+// ── 参考仓库新鲜度：靠浅克隆（只要目录树，不要 blob）────────────────
+//
+// 为什么不上 API：api.github.com 有 60 次/时限额（实测撞到过），jsdelivr 的
+// data 主机在这条网络上超时。**blob-less 浅克隆只要 9 秒**，且给的是权威的树。
+// git 需要两项本地参数（不改全局）：safe.directory（本机仓库属旧 SID）与
+// http.sslBackend=schannel（本机 git 自带的 CA bundle 读不了）。
+
+function resolveGit() {
+  for (const cand of [process.env.HERMES_GIT, 'git', 'J:/Program Files/Git/cmd/git.exe']) {
+    if (!cand) continue;
+    try {
+      execFileSync(cand, ['--version'], { stdio: 'pipe' });
+      return cand;
+    } catch { /* 试下一个 */ }
+  }
+  return null;
+}
+
+const GIT_ARGS = ['-c', 'safe.directory=*', '-c', 'http.sslBackend=schannel'];
+
+function git(gitExe, args, opts = {}) {
+  return execFileSync(gitExe, [...GIT_ARGS, ...args], { encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'], ...opts }).trim();
+}
+
+/**
+ * 量上游：缓存存在就 fetch + 读树，不存在就浅克隆。
+ * 返回 {head, headDate, scripts[], topDirs[], measuredAt}；仓库不可达时抛错（**不静默降级**）。
+ */
+function measureUpstream({ repoUrl, cacheDir, gitExe }) {
+  const inRepo = path.join(ROOT, cacheDir);
+  if (!fs.existsSync(path.join(inRepo, '.git'))) {
+    console.log(`  ← 浅克隆 ${repoUrl}（只要目录树，不要 blob）`);
+    git(gitExe, ['clone', '--depth', '1', '--filter=blob:none', '--no-checkout', repoUrl, inRepo]);
+  } else {
+    console.log('  ← fetch 上游最新');
+    git(gitExe, ['-C', inRepo, 'fetch', '--depth', '1', 'origin', 'HEAD']);
+    git(gitExe, ['-C', inRepo, 'reset', '--soft', 'FETCH_HEAD']);
+  }
+  // `-r` 递归取**文件**（不含子目录本身）；`-d` 只取**目录**。
+  // 踩过：不带 `-r` 拿到的 43 是"顶层条目"（含 agent-machine 这类子目录），
+  // 不带 `-d` 拿到的顶层把 README.md 这些**文件**也算成了目录 —— 两个量纲都错。
+  const scripts = git(gitExe, ['-C', inRepo, 'ls-tree', '--name-only', '-r', 'HEAD', 'scripts/'])
+    .split('\n').filter(Boolean).map((s) => s.replace(/^scripts\//, '')).sort();
+  const topDirs = git(gitExe, ['-C', inRepo, 'ls-tree', '--name-only', '-d', 'HEAD'])
+    .split('\n').filter(Boolean).map((s) => s.replace(/\/$/, '')).sort();
+  const headLine = git(gitExe, ['-C', inRepo, 'log', '-1', '--format=%H|%ad', '--date=short']);
+  const [head, headDate] = headLine.split('|');
+  return { head, headDate, scripts, topDirs, measuredAt: new Date().toISOString().slice(0, 10) };
+}
+
+/** 漂移由 json **派生**（不落库），保证渲染是纯函数、结果确定 */
+function computeDrift(map) {
+  const up = map.reference.upstream;
+  if (!up) return null;
+  const snap = new Set(map.reference.inventory.scripts);
+  const live = new Set(up.scripts);
+  const snapTop = new Set(map.reference.inventory.dirs.map((d) => d.split(' ')[0]));
+  return {
+    scriptsAdded: up.scripts.filter((s) => !snap.has(s)),
+    scriptsRemoved: map.reference.inventory.scripts.filter((s) => !live.has(s)),
+    topDirsAdded: up.topDirs.filter((d) => !snapTop.has(d)),
+    snapshotAt: map.reference.measuredAt,
+    upstreamAt: up.measuredAt,
+    upstreamHead: up.head,
+    upstreamHeadDate: up.headDate,
+  };
+}
 
 function render(map) {
   const r = map.reference;
@@ -56,6 +125,39 @@ function render(map) {
   L.push(`| 目录 | ${r.inventory.dirs.map((s) => `\`${s}\``).join(' · ')} |`);
   L.push(`| 运行时 | ${r.inventory.runtime} |`);
   L.push('');
+  const d = computeDrift(map);
+  if (d) {
+    L.push('### 参考侧漂移（新鲜度比对）');
+    L.push('');
+    L.push(`快照量于 **${d.snapshotAt}**，上游量于 **${d.upstreamAt}**（HEAD \`${d.upstreamHead.slice(0, 7)}\` · ${d.upstreamHeadDate}）。`);
+    L.push('');
+    L.push(`**上游 \`scripts/\` 有 ${d.scriptsAdded.length + map.reference.inventory.scripts.length - d.scriptsRemoved.length} 个，本仓库据以移植的快照只有 ${map.reference.inventory.scripts.length} 个。**`);
+    L.push('');
+    if (d.scriptsAdded.length) {
+      L.push(`上游新增 ${d.scriptsAdded.length} 个（**未移植，逐一列在这里以免被静默忽略**）：`);
+      L.push('');
+      L.push(`> ${d.scriptsAdded.map((s) => `\`${s}\``).join(' · ')}`);
+      L.push('');
+    }
+    if (d.scriptsRemoved.length) {
+      L.push(`快照里有、上游已删：${d.scriptsRemoved.map((s) => `\`${s}\``).join(' · ')}`);
+      L.push('');
+    }
+    if (d.topDirsAdded.length) {
+      L.push(`上游新增顶层目录：${d.topDirsAdded.map((s) => `\`${s}\``).join(' · ')}`);
+      L.push('');
+    }
+    L.push('**这份漂移不是"待办清单"，是事实记账**：参考项目在本仓库换域之后仍在长（上表里 `build_book.py`');
+    L.push('对应本仓库独立长出来的 `textbooks/build_book.js`，方向撞上了；其余多数是 i18n / certifications');
+    L.push('这类本仓库域内不需要的东西）。要刷新：`npm run porting -- --measure`。');
+    L.push('');
+  } else {
+    L.push('### 参考侧漂移（新鲜度比对）');
+    L.push('');
+    L.push('**状态：尚未比对。** 跑 `npm run porting -- --measure` 从上游量一次（blob-less 浅克隆，约 9 秒），');
+    L.push('把上游 \`scripts/\` 与顶层目录记进账本 —— 否则参考侧新增了什么，本账本**不知道**。');
+    L.push('');
+  }
 
   // ── 二、三个不变量 ──
   L.push('## 二、先定的三个不变量（换域时唯一不能动的东西）');
@@ -138,8 +240,27 @@ function render(map) {
 }
 
 function main() {
-  const check = process.argv.includes('--check');
+  const argv = process.argv.slice(2);
+  const check = argv.includes('--check');
+  const measure = argv.includes('--measure');
   const map = JSON.parse(fs.readFileSync(SRC, 'utf8'));
+
+  if (measure) {
+    const repoUrl = (argv.includes('--repo') ? argv[argv.indexOf('--repo') + 1] : null) || map.reference.upstreamRepoUrl;
+    const cacheDir = (argv.includes('--cache') ? argv[argv.indexOf('--cache') + 1] : null) || map.reference.upstreamCacheDir || '.refcache';
+    if (!repoUrl) throw new Error('账本里没有 upstreamRepoUrl，且未给 --repo —— 不知道去量哪个仓库，不猜');
+    const gitExe = resolveGit();
+    if (!gitExe) throw new Error('找不到 git 可执行文件（试过 PATH 与 J:/Program Files/Git/cmd/git.exe）；设 HERMES_GIT 指定');
+    const up = measureUpstream({ repoUrl, cacheDir, gitExe });
+    map.reference.upstream = up;
+    map.reference.upstreamCacheDir = cacheDir;
+    fs.writeFileSync(SRC, `${JSON.stringify(map, null, 2)}\n`, 'utf8');
+    const drift = computeDrift(map);
+    console.log(`  上游 HEAD ${up.head.slice(0, 7)}（${up.headDate}）· scripts/ ${up.scripts.length} 个`);
+    console.log(`  漂移：新增 ${drift.scriptsAdded.length} · 上游已删 ${drift.scriptsRemoved.length} · 新增顶层目录 ${drift.topDirsAdded.length}`);
+    console.log(`  → 账本已更新（${path.relative(ROOT, SRC)}）`);
+  }
+
   const md = render(map);
   if (check) {
     const cur = fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8') : '';
@@ -158,4 +279,4 @@ if (require.main === module) {
   try { main(); } catch (e) { console.error(`\n✗ ${e.message}`); process.exit(1); }
 }
 
-module.exports = { render };
+module.exports = { render, computeDrift, measureUpstream, resolveGit };

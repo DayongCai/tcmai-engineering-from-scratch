@@ -27,6 +27,9 @@ textbooks/**/build/*.pdf
 textbooks/**/build/*.epub
 textbooks/**/build/*.tex
 
+# 参考仓库的浅克隆缓存（供 PORTING.md 新鲜度比对；是缓存不是内容）
+.refcache/
+
 # 源材料解析产物：content.json 是**纯派生**（15 MB，可由源 xlsx 重跑得到），不入库。
 # 入库的是：sources/*.xlsx（不可再生的源数据）+ <标题>.md（人可读全本，交付物）
 #            + source-map.json（出处与指纹，小且需长期保存）

@@ -3,6 +3,62 @@
 本项目遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.26.0] — 2026-10-14
+
+### 修正 · 「新鲜度比对」原本是个报"通过"的跳过 —— 等于假通过
+
+上一版 `tests/test_porting_map.js` 里，参考仓库不在本机时是「打印一行警告 → 算通过」。
+**一个报绿的跳过比没有检查更坏**：它给出"已核对"的错觉。为验证这一点，把新鲜度做成真的：
+
+1. **找到上游地址**：从快照自己的 README/FORKING.md 里读出
+   `https://github.com/rohitg00/ai-engineering-from-scratch`（**读出来的，不是猜的**）。
+2. **量上游的法子**：api.github.com 撞到过 60 次/时限额，jsdelivr 的 data 主机在本网络超时，
+   GitHub 的 HTML 目录页是前端渲染抓不到 —— 最后用 **blob-less 浅克隆**
+   （`--depth 1 --filter=blob:none --no-checkout`，**约 9 秒**，只要目录树）。
+   本机 git 另需两项**局部**参数（不改全局）：`safe.directory=*` 与
+   `http.sslBackend=schannel`（自带 CA bundle 读不了，实测报错）。
+3. **三态替代跳过**：缓存在线就比对现场（测试只读缓存，**不发网络请求**）；
+   离线则**明说未比对**；`PORTING_FRESHNESS_STRICT=1` 下离线判**失败**。
+4. **漂移进产物**：`PORTING.md` 新增「参考侧漂移」段，把上游多出来的脚本逐个列出。
+
+### 发现 · 上游比本仓库据以移植的快照**多了 44 个脚本、13 个顶层目录**
+
+这个发现正是"跳过即通过"藏住的东西：
+
+| | 快照（换域时） | 上游 HEAD `f0c979b`（2026-10-13） |
+|---|---|---|
+| `scripts/` | **9 个** | **53 个** |
+| 顶层目录 | 8 个 | +`.claude .github api book certifications docs i18n learning-paths lib manuals skills` |
+
+上游新增里有一部分是**本仓库域内不需要**的（i18n 翻译流水线 12 个脚本、certifications 认证
+体系、quiz 去偏、SEO、OG 字体）；但有一类值得直面：**`build_book.py` 与本仓库独立长出来的
+`textbooks/build_book.js` 方向撞上了** —— 同一个需求两边各自做了一遍。
+
+账本记的是**事实**，不是待办清单：这 44 项列在那里，是为了"参考侧新增了什么"不再隐形
+（`tests/test_porting_map.js` 会把它们与缓存现场比对）。
+
+### 修正 · 量纲错误两处（自己抓出来的）
+
+- `scripts/` 用 `ls-tree` 不带 `-r`，拿到 43 是"顶层条目"（含 `agent-machine/` 这类子目录），
+  不是文件数 → 改 `-r`，得 53。
+- 顶层目录用 `ls-tree` 不带 `-d`，把 `README.md` 这些**文件**也算成了目录，
+  于是"新增顶层目录"报成 29 → 改 `-d`，得 13。
+- 另：账本里的快照目录清单漏了 `phases`/`scripts` 两项，一并补上。
+
+**三处都是同一个毛病：拿一个"看起来对"的量当指标。** 数字错的时候比缺失更难发现。
+
+### 接线 · 先例前置
+
+`FORKING.md` 第 1 步（认清参考项目的分层）开头加了一段**必读指引**：先读 PORTING.md
+再动分类表，并写明三个理由（省一遍重新分类 / 知道哪些改动当时就证明必须 /
+知道参考**现在**什么样）。第 1 步那张分类表也标注了它量的是**哪一份快照**
+（上游现状见 PORTING.md 漂移段）—— 否则那张表本身就在误导人。
+
+### 测试
+
+`tests/test_porting_map.js` 12 项（+2）：新鲜度三态 + 严格模式、快照侧比对、
+**漂移必须被渲染进产物**（不许只躺在控制台里）。`.refcache/` 进 `.gitignore`。
+
 ## [1.25.0] — 2026-10-14
 
 ### 新增 · 全链路账本 PORTING.md（「哪一块是从参考的哪一块来的」）

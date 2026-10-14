@@ -4,6 +4,9 @@
     "repo": "ai-engineering-from-scratch",
     "measuredPath": "D:/ai-engineering-from-scratch source code/ai-engineering-from-scratch-main",
     "measuredAt": "2026-10-14",
+    "upstreamRepoUrl": "https://github.com/rohitg00/ai-engineering-from-scratch",
+    "upstreamCacheDir": ".refcache",
+    "upstreamNote": "来源地址是从快照自己的 README/FORKING.md 里读出来的（`rohitg00/ai-engineering-from-scratch`），不是猜的。上游靠 blob-less 浅克隆量取（约 9 秒）：api.github.com 有 60 次/时限额（实测撞到过），jsdelivr 的 data 主机在这条网络上超时。",
     "note": "本机只剩这一份快照（此前记的 D:\\ai-engineering-from-scratch-main 与 E:\\GitHub\\ai-engineering-from-scratch 实测**都不存在**）。路径不在时，测试跳过「新鲜度比对」，但结构比对照常 —— 账本不依赖参考仓库在线。",
     "inventory": {
       "scripts": [
@@ -32,8 +35,98 @@
         "requirements.txt",
         "vercel.json"
       ],
-      "dirs": ["assets", "glossary", "outputs", "projects", "site (32 文件)", "web"],
+      "dirs": [
+        "assets",
+        "glossary",
+        "outputs",
+        "phases",
+        "projects",
+        "scripts",
+        "site (32 文件)",
+        "web"
+      ],
       "runtime": "Python 3 + requirements.txt（含重依赖）"
+    },
+    "upstream": {
+      "head": "f0c979b98d35f0547fe7a5f9aadf2f25d6c2e375",
+      "headDate": "2026-10-13",
+      "scripts": [
+        "_lib.py",
+        "agent-machine/build.mjs",
+        "agent-machine/content.mjs",
+        "agent-machine/export.js",
+        "agent-machine/geometry.mjs",
+        "agent-machine/kit/LICENSE",
+        "agent-machine/kit/iso-kit.mjs",
+        "agent-machine/kit/lathe.mjs",
+        "agent-machine/kit/tube.mjs",
+        "agent-machine/live.js",
+        "agent-machine/model.mjs",
+        "agent-machine/page.css",
+        "audit_certifications.py",
+        "audit_lessons.py",
+        "audit_manuals.js",
+        "audit_readme_locales.py",
+        "backfill_certification_references.py",
+        "build-favicons.js",
+        "build-og-fonts.js",
+        "build_book.py",
+        "build_catalog.py",
+        "build_readme_i18n.py",
+        "check_mcpa_wire.py",
+        "check_quiz_bias.py",
+        "check_readme_counts.py",
+        "check_translation_coverage.js",
+        "debias_certification_questions.py",
+        "debias_quizzes.py",
+        "install_skills.py",
+        "lesson_run.py",
+        "link_check.py",
+        "preview-writing.js",
+        "project_test.py",
+        "readme_translations.py",
+        "record_demo.py",
+        "run_lesson_tests.py",
+        "scaffold-lesson.sh",
+        "scaffold_workbench.py",
+        "serve-agent-site.js",
+        "test_agent_api.js",
+        "test_agent_negotiation.js",
+        "test_agent_readiness.py",
+        "test_agent_wire.js",
+        "test_audit_readme_locales.py",
+        "test_book_rendering.py",
+        "test_check_mcpa_wire.py",
+        "test_seo_routes.js",
+        "test_skill_artifact_bundles.py",
+        "test_translate_ui_strings.py",
+        "test_translate_workflow.py",
+        "translate_lessons.py",
+        "translate_matrix.py",
+        "translate_ui_strings.py"
+      ],
+      "topDirs": [
+        ".claude",
+        ".github",
+        "api",
+        "assets",
+        "book",
+        "certifications",
+        "docs",
+        "glossary",
+        "i18n",
+        "learning-paths",
+        "lib",
+        "manuals",
+        "outputs",
+        "phases",
+        "projects",
+        "scripts",
+        "site",
+        "skills",
+        "web"
+      ],
+      "measuredAt": "2026-10-14"
     }
   },
   "invariants": [
@@ -79,84 +172,109 @@
   "toolchain": [
     {
       "ref": "scripts/_lib.py",
-      "ours": ["scripts/lib.js"],
+      "ours": [
+        "scripts/lib.js"
+      ],
       "status": "ported",
       "note": "共享工具（路径解析、markdown 读取）。本仓库另有 lib_xlsx.js / lib_metrics.js / dom-shim.js 三个参考里没有的库。",
       "evidence": "tests/test_links.js"
     },
     {
       "ref": "scripts/audit_lessons.py",
-      "ours": ["scripts/audit_curriculum.js"],
+      "ours": [
+        "scripts/audit_curriculum.js"
+      ],
       "status": "extended",
       "note": "**从三层扩到四层**：L0 数据 / L1 结构 / L2 契约 / **L3 内容**（引文《书名·篇名》/ 免责声明 / 代价与边界 / 最小篇幅）。L3 是逐条比完上游规则清单后补的 —— 上游对 docs 的**内容**要求当时无人查。",
       "evidence": "tests/test_audit_l3.js"
     },
     {
       "ref": "scripts/build_catalog.py",
-      "ours": ["scripts/build_catalog.js"],
+      "ours": [
+        "scripts/build_catalog.js"
+      ],
       "status": "ported",
       "note": "扫 phases/ 出 catalog.json → 扫 departments/ 出 curriculum.json + catalog.json。",
       "evidence": "tests/test_curriculum_contract.js"
     },
     {
       "ref": "scripts/check_readme_counts.py",
-      "ours": ["scripts/check_readme_counts.js"],
+      "ours": [
+        "scripts/check_readme_counts.js"
+      ],
       "status": "ported",
       "note": "README 里的声明数字必须与 catalog 逐项对齐，可 --fix。",
       "evidence": "tests/test_forking_doc.js"
     },
     {
       "ref": "scripts/link_check.py",
-      "ours": ["scripts/check_links.js"],
+      "ours": [
+        "scripts/check_links.js"
+      ],
       "status": "ported",
       "note": "内部链接完整性，--strict 给 CI。链接层级靠**量**不靠手数 ../（教训 4）。",
       "evidence": "tests/test_links.js"
     },
     {
       "ref": "scripts/scaffold_workbench.py",
-      "ours": ["scripts/scaffold_subject.js", "scripts/scaffold_chapter.js"],
+      "ours": [
+        "scripts/scaffold_subject.js",
+        "scripts/scaffold_chapter.js"
+      ],
       "status": "split",
       "note": "参考一个脚手架管一层；本仓库两层（学科 / 章节）各一个。",
       "evidence": "tests/test_curriculum_contract.js"
     },
     {
       "ref": "scripts/scaffold-lesson.sh",
-      "ours": ["scripts/scaffold_chapter.js"],
+      "ours": [
+        "scripts/scaffold_chapter.js"
+      ],
       "status": "merged",
       "note": "shell 脚本并进 Node，去掉平台依赖。",
       "evidence": "tests/test_curriculum_contract.js"
     },
     {
       "ref": "scripts/lesson_run.py",
-      "ours": ["tests/test_chapter_code.js"],
+      "ours": [
+        "tests/test_chapter_code.js"
+      ],
       "status": "ported",
       "note": "参考：逐课 py_compile 语法检查（可选 --execute，10s 超时，重依赖用 `# requires:` 跳过）。本仓库：跑每章 code/main.js 与其单元测试。",
       "evidence": "tests/test_chapter_code.js"
     },
     {
       "ref": "site/（32 文件）",
-      "ours": ["site/"],
+      "ours": [
+        "site/"
+      ],
       "status": "ported+extended",
       "note": "参考 32 文件 → 本仓库 26 文件。沿用 build.js / app.js / data.js / catalog.html 的骨架与**静态导出**思路；新增 semtensor.html + semtensor.js + sphere.js（三维极坐标语义球）、math.js、paths.html、progress.js、snapshot/。站点是 [tcmP] 交付物的一半。",
       "evidence": "tests/test_site_render.js"
     },
     {
       "ref": "FORKING.md（59 行，讲 fork 给团队/学校/训练营用）",
-      "ours": ["FORKING.md"],
+      "ours": [
+        "FORKING.md"
+      ],
       "status": "extended",
       "note": "参考那份是「fork 走之后怎么用」；本仓库这份是「照着参考**造一门新课**」的规程 —— 五步流程 + 产物契约 + 四条质量门 + 六条教训 + 反模式 + 清单。需求不同，故扩写而非照抄。",
       "evidence": "tests/test_forking_doc.js"
     },
     {
       "ref": "glossary/（terms.md / myths.md）",
-      "ours": ["glossary/"],
+      "ours": [
+        "glossary/"
+      ],
       "status": "extended",
       "note": "本仓库为 ai-terms.md / tcm-terms.md / bridge-map.md。术语表加了一层**桥接表**（bridge-map.md）：AI 术语 ↔ 中医术语的对应，这是换域的必要产物。",
       "evidence": "tests/test_glossary_bridge.js"
     },
     {
       "ref": "phases 的 outputs/ + 根 outputs/",
-      "ours": ["outputs/"],
+      "ours": [
+        "outputs/"
+      ],
       "status": "extended",
       "note": "另加 standards/ 下的标准与产物。产物索引（build_outputs_index.js）是参考没有的：本仓库产物多，需要「双向一致 + 缺口显式 + 不漂移」的账。",
       "evidence": "tests/test_outputs_index.js"
@@ -181,34 +299,120 @@
     }
   ],
   "ourAdditions": [
-    { "path": "scripts/build_dashboard.js", "why": "单文件项目看板，KPI 由仓库现状算出（与源独立重算比对）" },
-    { "path": "scripts/build_embeddings.js", "why": "源材料《中医知识树》embedding-code 八组件的纯 Node 实现（TF-IDF/BM25/RRF/ICD-11 双通道/知识树查询）" },
-    { "path": "scripts/lib_metrics.js", "why": "与上游 vectorization-ICD11 同口径的嵌入质量指标（轮廓/CH/DB/分离比/熵/保真度/符号准确率）" },
-    { "path": "scripts/icd11_embeddings.js", "why": "在上游同一份 ICD-11 数据上复现论文对照（仅标题 vs 标题+描述）" },
-    { "path": "scripts/icd11_client.js", "why": "WHO ICD-11 双通道客户端（OAuth2 凭据路径 + 本地 NDJSON 父链还原章节）" },
-    { "path": "scripts/build_dsu_descriptions.js", "why": "证候描述从证据组装（构词解析 + 教材/外部证据 + WHO-TCM + 异名）" },
-    { "path": "scripts/external_batch.js", "why": "外部证据的分批取用与幂等入库（空结果不入库）" },
-    { "path": "scripts/evidence_quality.js", "why": "证据质量分级（特指/部分/待确认异名/仅证名/通用）" },
-    { "path": "scripts/tcm_api.js", "why": "/diag 与 /bianzheng：逆转推理引擎（症状→病机→病位→六淫）+ A_jk 邪-脏矩阵" },
-    { "path": "scripts/build_semtensor_datasets.js", "why": "语义张量数据集与三维极坐标渲染的派生构建" },
-    { "path": "scripts/verify_semtensor_axiom.js", "why": "颜色公理校验（源内三处不一致已记账，未强行对齐）" },
-    { "path": "scripts/import_materials.js", "why": "源资料（xlsx/docx）解析入库，带 sources/ 原件 + sha256 溯源" },
-    { "path": "scripts/import_knowledge_tree.js", "why": "《中医知识树》入库" },
-    { "path": "scripts/import_shanghan_base.js", "why": "《伤寒论》条文入库" },
-    { "path": "scripts/link_leijing_colors.js", "why": "《类经图翼》方位色彩分层对齐" },
-    { "path": "scripts/build_doc_indexes.js", "why": "给 docs 生成索引页，使文档能被站内检索到而不是躺在目录里" },
-    { "path": "scripts/build_outputs_index.js", "why": "产物索引（双向一致 + 缺口显式 + 不漂移）" },
-    { "path": "scripts/build_roadmap.js", "why": "路线图由现状算出（参考的 ROADMAP.md 是手维护的）" },
-    { "path": "scripts/lib_xlsx.js", "why": "手写 xlsx 读取器 —— 为零依赖而写（本机无 python/pandas）" },
-    { "path": "textbooks/build_book.js", "why": "[textbooks] 交付物线：教材单文件书 HTML（自包含、离线、可点目录）" },
-    { "path": "scripts/probe_source_materials.js", "why": "源资料探查（解析前先看清单，不手抄）" },
-    { "path": "scripts/dom-shim.js", "why": "站点渲染测试用的最小 DOM 垫片" }
+    {
+      "path": "scripts/build_dashboard.js",
+      "why": "单文件项目看板，KPI 由仓库现状算出（与源独立重算比对）"
+    },
+    {
+      "path": "scripts/build_embeddings.js",
+      "why": "源材料《中医知识树》embedding-code 八组件的纯 Node 实现（TF-IDF/BM25/RRF/ICD-11 双通道/知识树查询）"
+    },
+    {
+      "path": "scripts/lib_metrics.js",
+      "why": "与上游 vectorization-ICD11 同口径的嵌入质量指标（轮廓/CH/DB/分离比/熵/保真度/符号准确率）"
+    },
+    {
+      "path": "scripts/icd11_embeddings.js",
+      "why": "在上游同一份 ICD-11 数据上复现论文对照（仅标题 vs 标题+描述）"
+    },
+    {
+      "path": "scripts/icd11_client.js",
+      "why": "WHO ICD-11 双通道客户端（OAuth2 凭据路径 + 本地 NDJSON 父链还原章节）"
+    },
+    {
+      "path": "scripts/build_dsu_descriptions.js",
+      "why": "证候描述从证据组装（构词解析 + 教材/外部证据 + WHO-TCM + 异名）"
+    },
+    {
+      "path": "scripts/external_batch.js",
+      "why": "外部证据的分批取用与幂等入库（空结果不入库）"
+    },
+    {
+      "path": "scripts/evidence_quality.js",
+      "why": "证据质量分级（特指/部分/待确认异名/仅证名/通用）"
+    },
+    {
+      "path": "scripts/tcm_api.js",
+      "why": "/diag 与 /bianzheng：逆转推理引擎（症状→病机→病位→六淫）+ A_jk 邪-脏矩阵"
+    },
+    {
+      "path": "scripts/build_semtensor_datasets.js",
+      "why": "语义张量数据集与三维极坐标渲染的派生构建"
+    },
+    {
+      "path": "scripts/verify_semtensor_axiom.js",
+      "why": "颜色公理校验（源内三处不一致已记账，未强行对齐）"
+    },
+    {
+      "path": "scripts/import_materials.js",
+      "why": "源资料（xlsx/docx）解析入库，带 sources/ 原件 + sha256 溯源"
+    },
+    {
+      "path": "scripts/import_knowledge_tree.js",
+      "why": "《中医知识树》入库"
+    },
+    {
+      "path": "scripts/import_shanghan_base.js",
+      "why": "《伤寒论》条文入库"
+    },
+    {
+      "path": "scripts/link_leijing_colors.js",
+      "why": "《类经图翼》方位色彩分层对齐"
+    },
+    {
+      "path": "scripts/build_doc_indexes.js",
+      "why": "给 docs 生成索引页，使文档能被站内检索到而不是躺在目录里"
+    },
+    {
+      "path": "scripts/build_outputs_index.js",
+      "why": "产物索引（双向一致 + 缺口显式 + 不漂移）"
+    },
+    {
+      "path": "scripts/build_roadmap.js",
+      "why": "路线图由现状算出（参考的 ROADMAP.md 是手维护的）"
+    },
+    {
+      "path": "scripts/lib_xlsx.js",
+      "why": "手写 xlsx 读取器 —— 为零依赖而写（本机无 python/pandas）"
+    },
+    {
+      "path": "textbooks/build_book.js",
+      "why": "[textbooks] 交付物线：教材单文件书 HTML（自包含、离线、可点目录）"
+    },
+    {
+      "path": "scripts/probe_source_materials.js",
+      "why": "源资料探查（解析前先看清单，不手抄）"
+    },
+    {
+      "path": "scripts/dom-shim.js",
+      "why": "站点渲染测试用的最小 DOM 垫片"
+    }
   ],
   "gates": [
-    { "name": "审计 L0–L3", "cmd": "npm run audit", "evidence": "tests/test_audit_l3.js" },
-    { "name": "计数一致", "cmd": "npm run counts", "evidence": "tests/test_forking_doc.js" },
-    { "name": "链接完整", "cmd": "npm run links -- --strict", "evidence": "tests/test_links.js" },
-    { "name": "产物索引不漂移", "cmd": "npm run outputs -- --check", "evidence": "tests/test_outputs_index.js" },
-    { "name": "全套测试", "cmd": "npm test", "evidence": "tests/run_all.js" }
+    {
+      "name": "审计 L0–L3",
+      "cmd": "npm run audit",
+      "evidence": "tests/test_audit_l3.js"
+    },
+    {
+      "name": "计数一致",
+      "cmd": "npm run counts",
+      "evidence": "tests/test_forking_doc.js"
+    },
+    {
+      "name": "链接完整",
+      "cmd": "npm run links -- --strict",
+      "evidence": "tests/test_links.js"
+    },
+    {
+      "name": "产物索引不漂移",
+      "cmd": "npm run outputs -- --check",
+      "evidence": "tests/test_outputs_index.js"
+    },
+    {
+      "name": "全套测试",
+      "cmd": "npm test",
+      "evidence": "tests/run_all.js"
+    }
   ]
 }

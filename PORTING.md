@@ -19,8 +19,24 @@
 | scripts/ | `_lib.py` · `audit_lessons.py` · `build_catalog.py` · `check_readme_counts.py` · `install_skills.py` · `lesson_run.py` · `link_check.py` · `scaffold_workbench.py` · `scaffold-lesson.sh` |
 | 结构 | phases/<NN-slug>/<NN-slug>/：phase → lesson 两层，lesson 内含 code/ docs/ outputs/ quiz.json |
 | 根文档 | `AGENTS.md` · `CHANGELOG.md` · `CODE_OF_CONDUCT.md` · `CONTRIBUTING.md` · `FORKING.md` · `LESSON_TEMPLATE.md` · `LICENSE` · `README.md` · `ROADMAP.md` · `SPONSORS.md` · `requirements.txt` · `vercel.json` |
-| 目录 | `assets` · `glossary` · `outputs` · `projects` · `site (32 文件)` · `web` |
+| 目录 | `assets` · `glossary` · `outputs` · `phases` · `projects` · `scripts` · `site (32 文件)` · `web` |
 | 运行时 | Python 3 + requirements.txt（含重依赖） |
+
+### 参考侧漂移（新鲜度比对）
+
+快照量于 **2026-10-14**，上游量于 **2026-10-14**（HEAD `f0c979b` · 2026-10-13）。
+
+**上游 `scripts/` 有 53 个，本仓库据以移植的快照只有 9 个。**
+
+上游新增 44 个（**未移植，逐一列在这里以免被静默忽略**）：
+
+> `agent-machine/build.mjs` · `agent-machine/content.mjs` · `agent-machine/export.js` · `agent-machine/geometry.mjs` · `agent-machine/kit/LICENSE` · `agent-machine/kit/iso-kit.mjs` · `agent-machine/kit/lathe.mjs` · `agent-machine/kit/tube.mjs` · `agent-machine/live.js` · `agent-machine/model.mjs` · `agent-machine/page.css` · `audit_certifications.py` · `audit_manuals.js` · `audit_readme_locales.py` · `backfill_certification_references.py` · `build-favicons.js` · `build-og-fonts.js` · `build_book.py` · `build_readme_i18n.py` · `check_mcpa_wire.py` · `check_quiz_bias.py` · `check_translation_coverage.js` · `debias_certification_questions.py` · `debias_quizzes.py` · `preview-writing.js` · `project_test.py` · `readme_translations.py` · `record_demo.py` · `run_lesson_tests.py` · `serve-agent-site.js` · `test_agent_api.js` · `test_agent_negotiation.js` · `test_agent_readiness.py` · `test_agent_wire.js` · `test_audit_readme_locales.py` · `test_book_rendering.py` · `test_check_mcpa_wire.py` · `test_seo_routes.js` · `test_skill_artifact_bundles.py` · `test_translate_ui_strings.py` · `test_translate_workflow.py` · `translate_lessons.py` · `translate_matrix.py` · `translate_ui_strings.py`
+
+上游新增顶层目录：`.claude` · `.github` · `api` · `book` · `certifications` · `docs` · `i18n` · `learning-paths` · `lib` · `manuals` · `skills`
+
+**这份漂移不是"待办清单"，是事实记账**：参考项目在本仓库换域之后仍在长（上表里 `build_book.py`
+对应本仓库独立长出来的 `textbooks/build_book.js`，方向撞上了；其余多数是 i18n / certifications
+这类本仓库域内不需要的东西）。要刷新：`npm run porting -- --measure`。
 
 ## 二、先定的三个不变量（换域时唯一不能动的东西）
 

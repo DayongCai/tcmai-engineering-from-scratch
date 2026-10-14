@@ -14,6 +14,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..');
 
@@ -94,21 +95,74 @@ test('结构映射覆盖 phases → departments 与课时契约', () => {
   assert(map.invariants.length === 3, `不变量应为 3 个，实得 ${map.invariants.length}`);
 });
 
-// ── 四、新鲜度：参考仓库在线时比对现场 ────────────────────────
+// ── 四、新鲜度：三态，不许"跳过即通过"────────────────────────
+//
+// 原实现是「参考不在本机 → 打印一行警告 → 算通过」。**一个报"通过"的跳过等于假通过** ——
+// 实测后果：上游 already 比快照多了 44 个脚本、13 个顶层目录，而门一路绿灯。
+// 现在分三态：缓存在线则比对现场（不快照/不拉网）；离线则**明说**，且严格模式判失败。
 
-test('参考仓库在线时，现场 scripts/ 清单与账本一致；离线则明说跳过', () => {
-  const ref = map.reference.measuredPath;
-  const dir = path.join(ref, 'scripts');
-  if (!fs.existsSync(dir)) {
-    console.log(`    ⚠ 跳过新鲜度比对：参考仓库不在此机（${ref}）—— 结构比对照常，但**参考侧可能已更新**`);
+function treeFromCache(cacheDir) {
+  const { resolveGit } = require('../scripts/build_porting_map.js');
+  const gitExe = resolveGit();
+  if (!gitExe) return null;
+  const run = (args) => execFileSync(gitExe,
+    ['-c', 'safe.directory=*', '-c', 'http.sslBackend=schannel', '-C', cacheDir, ...args],
+    { encoding: 'utf8' }).trim();
+  const scripts = run(['ls-tree', '--name-only', '-r', 'HEAD', 'scripts/'])
+    .split('\n').filter(Boolean).map((s) => s.replace(/^scripts\//, '')).sort();
+  const head = run(['log', '-1', '--format=%H']).trim();
+  return { scripts, head };
+}
+
+test('参考侧新鲜度：缓存在线则比对现场；离线则明说（严格模式判失败）', () => {
+  const up = map.reference.upstream;
+  assert(up, '账本没有 upstream 段 —— 跑 `npm run porting -- --measure`');
+  const cacheDir = path.join(ROOT, map.reference.upstreamCacheDir || '.refcache');
+  const strict = process.env.PORTING_FRESHNESS_STRICT === '1';
+
+  if (!fs.existsSync(path.join(cacheDir, '.git'))) {
+    const msg = `新鲜度未比对：缓存 ${path.relative(ROOT, cacheDir)}/ 不存在（跑 npm run porting -- --measure，约 9 秒）`;
+    if (strict) throw new Error(`${msg} —— PORTING_FRESHNESS_STRICT=1 下这是**失败**，不是跳过`);
+    console.log(`    ⚠ ${msg}`);
+    console.log('      （非严格模式：不假装通过 —— 账本里明确记着未比对，PORTING.md 里也写着）');
     return;
   }
-  const now = fs.readdirSync(dir).sort();
+  const live = treeFromCache(cacheDir);
+  if (!live) {
+    console.log('    ⚠ 找不到 git，无法读缓存现场；已记入未比对');
+    return;
+  }
+  const added = live.scripts.filter((s) => !up.scripts.includes(s));
+  const gone = up.scripts.filter((s) => !live.scripts.includes(s));
+  assert(added.length === 0 || live.head === up.head,
+    `缓存里的树比账本新（新增 ${added.join('、')}）—— 跑 \`npm run porting -- --measure\` 更新账本`);
+  assert(gone.length === 0, `缓存里少了账本记着的脚本：${gone.join('、')}`);
+  console.log(`    缓存 HEAD ${live.head.slice(0, 7)} 与账本一致 · 上游 scripts/ ${up.scripts.length} 个`);
+});
+
+test('快照侧：本机快照在线时，账本里的 scripts 清单要与它一致', () => {
+  const snapDir = path.join(map.reference.measuredPath, 'scripts');
+  if (!fs.existsSync(snapDir)) {
+    console.log(`    ⚠ 快照不在本机（${map.reference.measuredPath}）—— 跳过快照侧比对，但账本已记下这份清单`);
+    return;
+  }
+  const real = fs.readdirSync(snapDir).filter((f) => !f.startsWith('.')).sort();
   const recorded = [...map.reference.inventory.scripts].sort();
-  const added = now.filter((f) => !recorded.includes(f));
-  const gone = recorded.filter((f) => !now.includes(f));
-  assert(added.length === 0, `参考新增了脚本，账本没跟上：${added.join('、')}`);
-  assert(gone.length === 0, `参考删了脚本，账本还记着：${gone.join('、')}`);
+  assert(real.join('|') === recorded.join('|'),
+    `账本的快照清单与本机不符：\n  实得 ${real.join('、')}\n  账本 ${recorded.join('、')}`);
+});
+
+test('漂移必须被记进产物（不许只躺在控制台里）', () => {
+  const drift = require('../scripts/build_porting_map.js').computeDrift(map);
+  if (!map.reference.upstream) {
+    console.log('    ⚠ 未比对 → PORTING.md 里写明「尚未比对」');
+    return;
+  }
+  const md = fs.readFileSync(path.join(ROOT, 'PORTING.md'), 'utf8');
+  assert(md.includes('参考侧漂移'), 'PORTING.md 缺「参考侧漂移」段 —— 漂移只躺在控制台里等于没说');
+  if (drift.scriptsAdded.length) {
+    assert(md.includes(drift.scriptsAdded[0]), `新增脚本 ${drift.scriptsAdded[0]} 没被渲染进 PORTING.md`);
+  }
 });
 
 // ── 五、产物不许漂移 ────────────────────────────────────────
