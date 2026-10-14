@@ -3,6 +3,68 @@
 本项目遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.29.0] — 2026-10-15
+
+### 梳理 · 成片流（[tcmP] 的另一半）—— 架构里此前只有一行
+
+上一版把逻辑架构立起来时，`platform/` 只占了一行字。它是 [tcmP] 交付物的另一半，
+内部是**七段流水线**，比 `site/` 复杂得多。补完：第五条数据流 + 两条交付物各自的内部逻辑。
+
+### 第五条数据流，以及它和另外四条**不同在哪**
+
+```
+chapters/**/docs/zh.md → extract_narration → lesson.json → build_slides → slides/index.html
+  → render_frames → frames/*.png → synthesize_narration → audio/*.mp3
+  → build_subtitles → subtitles.vtt → build_video → video/lesson.mp4
+```
+
+**它的起点是 L2（人写的正文），不是 L0** —— 这是与另外四条流的实质差别：
+成片的字是人写的，不是从原件算出来的。为此给每条流加了 `起点` 字段，
+并把架构门原来那条「首段必须是 `departments/` 或 `standards/`」的断言改准
+（那条断言**太死**，它假设所有流都从 L0 起）。
+
+还发现**终点也不都是文件**：检索流终于**服务**（`tcm_api.js` 的端点），
+其余四条终于产物。于是加 `终点` 字段区分 —— 于是又有了一条真断言。
+
+### 两道门抓到的四处不一致
+
+| 抓到什么 | 谁抓的 |
+|---|---|
+| `build_subtitles.js` **既无 npm 命令、也不在 README 表格里**，却真实存在、被 `build_video.js` 依赖、且有产物 | 新增的 `test_platform_pipeline.js` |
+| `scripts/build_dashboard.js` 里流水线次序写成 `…build_video→build_subtitles`，**与依赖方向相反**（成片要带字幕轨，字幕必须先有） | 同上（核对次序时） |
+| 架构文档里引了 `tests/test_textbook_book.js` —— **该文件不存在**，实际守教材线的是 `test_deliverable_artifacts.js` | 写 `deliverables` 段时自查 |
+| `assert_disclaimers.js` 里 `platform/courses 尚未创建，跳过` —— **报绿的跳过** | 复核 platform 相关门时 |
+
+### 新增门：`tests/test_platform_pipeline.js`（11 项）
+
+`platform/courses/` 的产物此前**没有任何检查**。这道门守四件事：
+
+1. **产物与段数对齐** —— 12 段就该有 12 帧 / 12 段配音 / 12 条字幕 / 12 个分片。
+   这条抓的是「渲染到一半失败、留下 8 张图」这种最容易漏过验收的状态。
+2. **不许是占位** —— 有体积下限（实测：成片 5.61 MB、单帧 40 KB、单段配音 86 KB）。
+   没有这条，一个 `touch video/lesson.mp4` 就能让「视频已生成」变真。
+   另有一条「成片不该比分片之和的一半还小」防只合了前半段。
+3. **诚实报告字段必须被填** —— `estimateVsActual`、`textVsSpoken`、`audioBackend`、
+   `videoMinusNarrationSeconds`、`mismatches` 不许是空字段。
+4. **七段三方齐备** —— 脚本 / npm 命令 / README 表格，防「有脚本但没人知道怎么跑」。
+
+**外加完成度必须被打印**：本机实测 3 章里只有第 1 章走完七段
+（`讲稿 3 · 幻灯片 3 · 画面帧 1 · 配音 1 · 字幕 1 · 成片 1`）。
+这个事实在此前**仓库里任何地方都看不见** —— 现在每次跑门都会打出来，
+并明确标注「这是**进度**，不是错误」。
+
+### 本机实测的诚实报告（放进门后第一次被固定下来）
+
+`audioMeasuredSeconds 347.19` vs `estimateTotalSeconds 249` —— **实测比估算多 39%**。
+估算不是承诺，成片时长由实测决定；这条差异现在被门看着，不会被当成"估算就够了"。
+
+### 接线
+
+`npm run tcmP:subtitles` / `npm run tcmP:check` 新增；`npm run check` 加上成片产物契约；
+`FORKING.md` 门的表加一行；`platform/README.md` 的目录树与流水线表补第 5.5 段
+（表格里 5/6 段改用 npm 命令）；`assert_disclaimers.js` 的静默跳过改成**明说**。
+全套 **34 个套件**。
+
 ## [1.28.0] — 2026-10-14
 
 ### 新增 · 逻辑架构 ARCHITECTURE.md（三份文档各管一件事）

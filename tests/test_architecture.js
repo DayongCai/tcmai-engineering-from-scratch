@@ -129,15 +129,41 @@ test('每道门引的测试都已在 run_all.js 注册（"有测试"不能是空
 
 // ── 三、数据流与换域对照 ────────────────────────────────────
 
-test('每条数据流至少四段，且首段是事实源、末段是产物', () => {
-  assert(a.flows.length >= 4, `数据流只有 ${a.flows.length} 条`);
+test('每条数据流至少四段，起点与末段都要说清', () => {
+  assert(a.flows.length >= 5, `数据流只有 ${a.flows.length} 条`);
   for (const f of a.flows) {
     assert(f.chain.length >= 4, `${f.name} 的链太短：${f.chain.join(' → ')}`);
-    assert(f.chain[0].startsWith('departments/') || f.chain[0].startsWith('standards/'),
-      `${f.name} 的链首不是事实源：${f.chain[0]}`);
-    for (const seg of f.chain) {
-      assert(!seg.startsWith('scripts/build_embeddings.js') || f.name.includes('检索'),
-        `${f.name} 混进了不相干的段：${seg}`);
+    assert(['L0', 'L2'].includes(f.from), `${f.name} 的起点层写的是 ${f.from} —— 只能是 L0 或 L2`);
+    // 起点层必须与首段相符：L0 起于目录树/原件，L2 起于人写的内容
+    const first = f.chain[0];
+    const ok = f.from === 'L0'
+      ? first.startsWith('departments/') || first.startsWith('standards/')
+      : first.startsWith('chapters/') || first.startsWith('departments/');
+    assert(ok, `${f.name} 标了起点 ${f.from}，但首段是 ${first} —— 两者不符`);
+    // 终点必须与声明相符：产物是文件、服务是可运行的端点
+    const last = f.chain[f.chain.length - 1];
+    if (f.ends === '产物') {
+      assert(!last.includes('scripts/'), `${f.name} 声明终点是产物，却停在脚本 ${last} 上`);
+    } else if (f.ends === '服务') {
+      assert(/\.js$/.test(last), `${f.name} 声明终点是服务，但最后一段不是脚本：${last}`);
+    } else {
+      assert(false, `${f.name} 的 ends 写的是 ${f.ends} —— 只能是「产物」或「服务」`);
+    }
+  }
+});
+
+test('两条交付物各自内部逻辑被写下来（且不许只说"做得好"）', () => {
+  assert(a.deliverables.length >= 2, `交付物只写了 ${a.deliverables.length} 条`);
+  for (const d of a.deliverables) {
+    assert(d.where && fs.existsSync(path.join(ROOT, d.where.replace(/\/$/, ''))),
+      `${d.name} 的 where 路径不存在：${d.where}`);
+    assert(d.pillars.length >= 1, `${d.name} 没写内部逻辑`);
+    for (const p of d.pillars) {
+      assert(p.rule && p.why && p.why.length > 30, `${d.name} 的「${p.rule}」缺 why 或太短`);
+      assert(p.enforcedBy && p.enforcedBy.length, `${d.name} 的「${p.rule}」没写谁守着它`);
+      for (const f of p.enforcedBy) {
+        assert(fs.existsSync(path.join(ROOT, f)), `${d.name} 引的门不存在：${f}`);
+      }
     }
   }
 });

@@ -111,10 +111,13 @@ function render(a) {
   L.push('');
 
   // ── 四、数据流 ──
-  L.push('## 四、四条数据流（架构在运行时的样子）');
+  L.push('## 四、数据流（架构在运行时的样子）');
+  L.push('');
+  L.push('`起点` 那一列是这套架构里最容易被忽略、却决定了很多事的一项：');
+  L.push('**流的起点在哪一层，就决定了改一处要重跑多少东西。**');
   L.push('');
   for (const f of a.flows) {
-    L.push(`### ${f.name}`);
+    L.push(`### ${f.name}　\`起点 ${f.from}\` → \`终点 ${f.ends}\``);
     L.push('');
     L.push(`\`${f.chain.join('  →  ')}\``);
     L.push('');
@@ -122,8 +125,25 @@ function render(a) {
     L.push('');
   }
 
-  // ── 五、换域对照 ──
-  L.push('## 五、换域时动的是哪一层');
+  // ── 五、两条交付物各自的内部逻辑 ──
+  L.push('## 五、两条交付物各自的内部逻辑');
+  L.push('');
+  L.push('上面讲的是整个仓库共用的逻辑。**交付物内部还各有一套自己的取舍** ——');
+  L.push('它们不适用于另一条线，所以单独列在这里，免得被当成全仓库通则。');
+  L.push('');
+  for (const d of a.deliverables) {
+    L.push(`### ${d.name}　\`${d.where}\``);
+    L.push('');
+    for (const p of d.pillars) {
+      L.push(`- **${p.rule}**`);
+      L.push(`  ${p.why}`);
+      L.push(`  守它的：${p.enforcedBy.map((f) => `\`${f}\``).join(' · ')}`);
+      L.push('');
+    }
+  }
+
+  // ── 六、换域对照 ──
+  L.push('## 六、换域时动的是哪一层');
   L.push('');
   L.push('这张表是「层不动、词替换」的逐条落地 —— **改动集中在工具层与域词，契约层几乎不动**。');
   L.push('');

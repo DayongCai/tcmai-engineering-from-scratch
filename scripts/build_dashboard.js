@@ -108,7 +108,7 @@ const workstreams = [
     state: videos.length ? 'done' : 'idle',
     evidence: videos.length
       ? `${videos.length} 成片 · ${narration.length} 配音 · ${frames.length} 帧 · ${slides.length} 幻灯片/讲稿件`
-      : '无成片（流水线脚本齐备：find_tools→extract_narration→build_slides→render_frames→synthesize_narration→build_video→build_subtitles）',
+      : '无成片（流水线脚本齐备：find_tools→extract_narration→build_slides→render_frames→synthesize_narration→build_subtitles→build_video）',
     detail: 'TTS 降级链 edge-tts → Windows SAPI → 人工；时长用实测配音时长；字幕对视音差 +0.022s',
   },
   {

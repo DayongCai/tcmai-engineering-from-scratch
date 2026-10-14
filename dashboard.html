@@ -53,7 +53,7 @@
 <body>
 <div class="wrap">
   <h1>tcmai-engineering-from-scratch · 项目看板</h1>
-  <div class="sub">由 <code>node scripts/build_dashboard.js</code> 从仓库现状生成 · 版本 <code>v1.28.0</code> ·
+  <div class="sub">由 <code>node scripts/build_dashboard.js</code> 从仓库现状生成 · 版本 <code>v1.29.0</code> ·
     生成时全部数字来自 curriculum.json / catalog.json / 文件系统 / 派生索引，不手写</div>
 
   <h2>规模与进度</h2>
@@ -65,9 +65,9 @@
     <div class="kpi"><div class="k">书稿文件</div><div class="v">13<small>md</small></div></div>
     <div class="kpi"><div class="k">视频成片</div><div class="v">1</div></div>
     <div class="kpi"><div class="k">产出物</div><div class="v">6<small>undefined 章</small></div></div>
-    <div class="kpi"><div class="k">测试套件</div><div class="v">33</div></div>
+    <div class="kpi"><div class="k">测试套件</div><div class="v">34</div></div>
     <div class="kpi"><div class="k">扫描 md</div><div class="v">180<small>0 断链</small></div></div>
-    <div class="kpi"><div class="k">版本</div><div class="v">1.28.0</div></div>
+    <div class="kpi"><div class="k">版本</div><div class="v">1.29.0</div></div>
   </div>
 
   <h2>项目逻辑 · 数据流</h2>
@@ -77,7 +77,7 @@
     <div class="step"><div class="n">curriculum.json</div><div class="d">单一事实来源</div><div class="r">1 领域 / 8 院系 / 120 学科 / 1086 章节</div></div>
     <div class="step"><div class="n">departments/</div><div class="d">课程骨架（章节契约：docs + code + quiz + outputs）</div><div class="r">已建 3 章</div></div>
     <div class="step"><div class="n">[tcmP] + [textbooks]</div><div class="d">两条交付物线</div><div class="r">站点/视频 · 教材/书</div></div>
-    <div class="step"><div class="n">质量门</div><div class="d">L0–L3 审计 · 链接 · 计数 · 产出物索引</div><div class="r">33 套件</div></div>
+    <div class="step"><div class="n">质量门</div><div class="d">L0–L3 审计 · 链接 · 计数 · 产出物索引</div><div class="r">34 套件</div></div>
   </div>
 
   <h2>工作流状态</h2>
@@ -99,7 +99,7 @@
     <tr><td>ICD-11 客户端（规格 ⑦）</td><td><span class="pill s-active">进行中</span></td>
         <td>本地库 13960 实体（MMS 2025-01）· 仓库 7 个编码 7/7 解析<div class="why">WHO API 通道需凭据（无凭据一律 401，本机未配置）；中文标题通道**未验证**</div></td></tr>
     <tr><td>质量门 · 审计与测试</td><td><span class="pill s-done">已完成</span></td>
-        <td>审计 L0–L3 · 33 个测试套件（34 个测试文件）· 链接扫描 180 个 md（0 断链） · npm run check 四道门<div class="why">L3 内容层实测抓到 2 处契约违约；文档事实核对测试已 4 次抓到过期数字</div></td></tr>
+        <td>审计 L0–L3 · 34 个测试套件（35 个测试文件）· 链接扫描 180 个 md（0 断链） · npm run check 四道门<div class="why">L3 内容层实测抓到 2 处契约违约；文档事实核对测试已 4 次抓到过期数字</div></td></tr>
     </tbody>
   </table>
 
@@ -141,6 +141,8 @@
 
   <h2>最近提交</h2>
   <div class="card git">
+    <div>a846e62  <b>ata(external): 证候外部证据第 4 批（+6 条，0 条失败）</b></div>
+    <div>7db7e7f  <b>ocs(arch): 逻辑架构 ARCHITECTURE.md —— 靠哪几条逻辑立住，换域动哪一层</b></div>
     <div>cd61fca  <b>eat(porting): 上游漂移哨兵（定时看门狗，无 LLM，静默契约）</b></div>
     <div>d12a873  <b>ix(porting): 新鲜度从"报绿的跳过"改成真比对 —— 顺带发现上游比快照多 44 个脚本</b></div>
     <div>c4a5e84  <b>ocs(porting): 全链路账本 PORTING.md —— 哪一块是从参考的哪一块来的</b></div>
@@ -151,8 +153,6 @@
     <div>4403514  <b>eat(embeddings): 按上游 vectorization-ICD11 补齐描述字段与指标口径</b></div>
     <div>598caf2  <b>ata(external): 证候外部证据第 2 批（+5 条，1 条检索失败）</b></div>
     <div>9fbe11f  <b>eat(external): 外部证据分批机制 + WHO-TCM 结构化通道 + 构词三类词表</b></div>
-    <div>7615e83  <b>eat(descriptions): 给 96 个证候从证据组装描述 + 修正映射表 50/46 差额</b></div>
-    <div>4a162e2  <b>eat(api): DSU 重名按概率倾向合并（103 条记录 → 96 个证名）</b></div>
   </div>
 
   <footer>

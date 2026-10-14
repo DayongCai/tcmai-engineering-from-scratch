@@ -46,6 +46,7 @@ const SUITES = [
   { file: 'test_porting_map.js', desc: '全链路账本（参考→本仓库：路径验真 / evidence 已注册 / 参考新脚本不许被静默忽略 / 不漂移）' },
   { file: 'test_upstream_drift.js', desc: '上游漂移哨兵（**静默契约**：无变化必须零输出；整条路径含测量环节可测）' },
   { file: 'test_architecture.js', desc: '逻辑架构（层路径验真含通配 / 门引的命令与测试必须存在 / 三份文档不许复述同一事实 / 不漂移）' },
+  { file: 'test_platform_pipeline.js', desc: '成片流水线（七段三方齐备 / 产物与段数对齐 / 不许是占位 / 诚实报告字段被填 / 完成度可见）' },
   { file: 'test_lib_metrics.js', desc: '嵌入指标（轮廓/CH/DB/分离比/熵/符号准确率/保真度，手算期望值）' },
   { file: 'test_chapter_code.js', desc: '每个已建章节的 code/main.js 与单元测试', slow: true },
   { file: 'test_content_review.js', desc: '人机闭环：内容复核清单', advisory: true },

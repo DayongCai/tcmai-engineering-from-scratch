@@ -15,7 +15,9 @@ const ROOT = path.resolve(__dirname, '..');
 const coursesDir = path.join(ROOT, 'platform', 'courses');
 
 if (!fs.existsSync(coursesDir)) {
-  console.log('⬚ platform/courses 尚未创建，跳过');
+  // 明说，不静默通过 —— 「报绿的跳过比没有检查更坏」：
+  // 目录一被删，这道门就会无声消失，而人以为它还在守。
+  console.log('⚠ 免责声明检查：platform/courses 不存在 —— **未检查**（明说，不是通过）');
   process.exit(0);
 }
 

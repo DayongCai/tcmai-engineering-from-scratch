@@ -105,37 +105,77 @@
 | 链接完整 | `npm run links -- --strict` | `tests/test_links.js` |
 | 产物索引不漂移 | `npm run outputs -- --check` | `tests/test_outputs_index.js` |
 | 账本不漂移 | `npm run porting -- --check` | `tests/test_porting_map.js` |
+| 架构不漂移 | `npm run architecture -- --check` | `tests/test_architecture.js` |
+| 成片产物契约 | `npm run tcmP:check` | `tests/test_platform_pipeline.js` |
 | 全套测试 | `npm test` | `tests/run_all.js` |
 
 `npm run check` 串起审计 + 计数 + 链接 + 两条「不漂移」检查。
 
-## 四、四条数据流（架构在运行时的样子）
+## 四、数据流（架构在运行时的样子）
 
-### 课程流（[tcmP] 的骨架）
+`起点` 那一列是这套架构里最容易被忽略、却决定了很多事的一项：
+**流的起点在哪一层，就决定了改一处要重跑多少东西。**
+
+### 课程流（[tcmP] 的骨架）　`起点 L0` → `终点 产物`
 
 `departments/  →  scripts/build_catalog.js  →  curriculum.json  →  site/pages.js  →  site/build.js  →  site/*.html`
 
 目录树 → 投影 → 站点。**单向**：站点永远不写回 curriculum.json。
 
-### 交付物流（产物账）
+### 交付物流（产物账）　`起点 L2` → `终点 产物`
 
 `departments/**/chapters/**/outputs/  →  scripts/build_outputs_index.js  →  outputs/index.json  →  outputs/README.md`
 
 章节产物 → 索引。索引与文件系统**双向一致**，缺一个就报错。
 
-### 检索流（语义层）
+### 检索流（语义层）　`起点 L0` → `终点 服务`
 
 `standards/**/sources/  →  scripts/import_materials.js  →  scripts/build_embeddings.js  →  standards/semtensor/embeddings/index.json  →  scripts/tcm_api.js`
 
 原件 → 抽取 → 编码 → 检索端点（/diag、/bianzheng、/semantic-search）。派生件不入库。
 
-### 教材流（[textbooks] 的成品）
+### 教材流（[textbooks] 的成品）　`起点 L0` → `终点 产物`
 
 `standards/materials/*/sources/  →  scripts/import_materials.js  →  standards/materials/*/*.md  →  textbooks/build_book.js  →  textbooks/build/volume-1-sheng.html`
 
 原件（xlsx）→ 导入成人读全本 md → 单文件书 HTML（自包含、离线、可点目录、带免责）。**派生件 content.json 不入库**，但源 xlsx 与 md 都入库 —— 前者不可再生，后者是交付物。
 
-## 五、换域时动的是哪一层
+### 成片流（[tcmP] 的视频，七段）　`起点 L2` → `终点 产物`
+
+`chapters/**/docs/zh.md  →  platform/pipeline/extract_narration.js  →  platform/courses/*/*/*/narration/lesson.json  →  platform/pipeline/build_slides.js  →  platform/courses/*/*/*/slides/index.html  →  platform/pipeline/render_frames.js  →  platform/courses/*/*/*/frames/*.png  →  platform/pipeline/synthesize_narration.js  →  platform/courses/*/*/*/narration/audio/*.mp3  →  platform/pipeline/build_subtitles.js  →  platform/courses/*/*/*/narration/subtitles.vtt  →  platform/pipeline/build_video.js  →  platform/courses/*/*/*/video/lesson.mp4`
+
+**源在 L2（人写的正文），不在 L0** —— 这是它和另外四条流的实质差别：成片的字是人写的，不是从原件算出来的。七段每一段的产物都是**落在盘上的文件**，所以任何一段都能单独重跑、单独检查。`frames/` 与 `audio/` 不入库（几十 MB），其余入。
+
+## 五、两条交付物各自的内部逻辑
+
+上面讲的是整个仓库共用的逻辑。**交付物内部还各有一套自己的取舍** ——
+它们不适用于另一条线，所以单独列在这里，免得被当成全仓库通则。
+
+### [tcmP] 视频成片　`platform/`
+
+- **可降级的是**探测**，不可降级的是**成片****
+  TTS 是整条链最脆的一环（云端要 key、edge-tts 要 python 且随微软改签名而 403），所以配音有降级链：edge-tts → Windows SAPI → 人工。但 `build_video.js` 缺 ffmpeg 时**明确失败、不留占位文件** —— 成片是交付物，占位文件会让「视频已生成」这句声明变成假话。
+  守它的：`tests/test_platform_pipeline.js`
+
+- **单一事实来源是 `docs/zh.md`，不另存一份讲稿**
+  讲稿、幻灯片、字幕全部从正文派生。存了第二份，正文一改视频就静默过期 —— 而那正是 L1 单向派生要防的事。
+  守它的：`tests/test_narration.js`
+
+- **工具探测只有一份实现（`find_tools.js`）**
+  散在 check_tools / render_frames / build_video 三处必然漂移，漂移的结果是「探测说没装、成片却说装了」这种自相矛盾的输出。
+  守它的：`tests/test_platform_pipeline.js`
+
+- **确定性优先于聪明：用 `?shot=N` 单帧模式，不用滚动偏移**
+  猜偏移在字体/缩放不同的机器上必然错位；一屏一帧则与人工放映的结果一致。（这也是选无头浏览器截图而非服务端渲染 SVG 的同一个理由：零新增依赖且所见即所得。）
+  守它的：`tests/test_platform_pipeline.js`
+
+### [textbooks] 教材　`textbooks/`
+
+- **成品必须是**单个自包含文件**，不是一堆 md**
+  只有源码形态的成品等于没有成品 —— 读者拿到手要能双击打开、离线可读、目录可点、免责在内。
+  守它的：`tests/test_deliverable_artifacts.js`
+
+## 六、换域时动的是哪一层
 
 这张表是「层不动、词替换」的逐条落地 —— **改动集中在工具层与域词，契约层几乎不动**。
 

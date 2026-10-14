@@ -33,6 +33,7 @@ platform/
 │   ├── build_slides.js      docs/zh.md → slides/index.html（离线可放映；?shot=N 单帧模式）
 │   ├── render_frames.js     slides → frames/001.png …（无头 Edge/Chrome，1920×1080）
 │   ├── synthesize_narration.js spoken → narration/audio/00N.mp3（edge-tts → SAPI → 人工）
+│   ├── build_subtitles.js   lesson.json → narration/subtitles.vtt（按语义群=段切分，绝不在段内断开）
 │   └── build_video.js       frames + audio → video/lesson.mp4（需要 ffmpeg，缺则明确报错）
 └── courses/
     └── <dept>/<subject>/
@@ -56,8 +57,9 @@ platform/
 | 2 讲稿 | `node platform/pipeline/extract_narration.js <course>` | 否 | `narration/lesson.json` |
 | 3 幻灯片 | `node platform/pipeline/build_slides.js <course>` | 否 | `slides/index.html` |
 | 4 画面帧 | `node platform/pipeline/render_frames.js <course>` | **需要 Edge / Chrome（无头）** | `frames/001.png …` |
-| 5 配音 | `node platform/pipeline/synthesize_narration.js <course>` | **需要 TTS（见下）** | `narration/audio/00N.mp3` |
-| 6 成片 | `node platform/pipeline/build_video.js <course>` | **需要 ffmpeg** | `video/lesson.mp4` |
+| 5 配音 | `npm run tcmP:tts <course>` | **需要 TTS（见下）** | `narration/audio/00N.mp3` |
+| 5.5 字幕 | `npm run tcmP:subtitles <course>` | 否 | `narration/subtitles.vtt` + `.json` |
+| 6 成片 | `npm run tcmP:video <course>` | **需要 ffmpeg** | `video/lesson.mp4` |
 
 第 2 段把文档拆成 `text`（原文，含代码/表格）与 `spoken`（可朗读文本，已剥离代码与 Markdown）。
 这一步不能省：直接把文档喂给 TTS，念出来的会是「const gw 等于 左括号 0 逗号 0 右括号」。
