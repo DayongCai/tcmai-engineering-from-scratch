@@ -99,6 +99,68 @@ test('人读版（descriptions.md）写明了那条更正', () => {
   assert.match(md, /自我印证/, '人读版没解释为什么 96/96 是假的');
 });
 
+test('构词解析：肝阳上亢证 → 动作「阳上亢」（它在词表里，但**不是连续的「阳亢」**）', () => {
+  // 这一条是踩出来的：证名里是「阳**上**亢」，我第一版词表写的是「阳亢」，永远匹配不上。
+  // 于是 96 个证名里 79 个拆不干净 —— 词表不该凭记忆写，该从证名里量出来。
+  const d = D.decompose('肝阳上亢证');
+  assert.ok(d.locus.includes('肝'), `病位实为 ${JSON.stringify(d.locus)}`);
+  assert.ok(d.action.includes('阳上亢'), `动作实为 ${JSON.stringify(d.action)}`);
+  assert.strictEqual(d.residue, '', `仍有残余：${d.residue}`);
+});
+
+test('残余只算汉字，不算标点（「、」「/」不是词）', () => {
+  const d = D.decompose('肺肾气虚、痰瘀阻络证');
+  assert.ok(!/[、/（）()]/.test(d.residue), `残余里混进了标点：${JSON.stringify(d.residue)}`);
+});
+
+test('「例如（常见于）」来自证据，且标注了样本范围', () => {
+  const r = data.records.find((x) => x.label === '肝阳上亢证');
+  assert.ok(r, '没有肝阳上亢证这条');
+  const ex = r.diseaseExamples.find((d) => d.uid === 'DSU-00008');
+  assert.ok(ex, '肝阳上亢证 的例如里没有 DSU-00008');
+  assert.strictEqual(ex.disease, '原发性高血压', `实为 ${ex.disease}`);
+  assert.strictEqual(ex.icd, 'BA00');
+  // 出处限定必须写在人读版里：那是样例表，不是全量对照
+  assert.match(md, /例如（常见于）/, '人读版没有「例如（常见于）」');
+  assert.match(md, /样例表.*非 103 个证候的全量对照/, '没有标注样本范围 —— 会把样例当全量');
+});
+
+test('WHO-TCM 代码被拆成结构（段.组.项），且与词典类目路径**分开**', () => {
+  const p = D.parseWhoCode('2.9.90');
+  assert.deepStrictEqual(p, { raw: '2.9.90', parts: ['2', '9', '90'], depth: 3, division: '2', group: '2.9', item: '90' });
+  assert.strictEqual(D.parseWhoCode('不是代码'), null, '非法代码应返回 null，不能编一个拆法');
+  const who = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/semtensor/descriptions/who-tcm.json'), 'utf8'));
+  const e = who.entries[0];
+  assert.ok(e.whoCode && e.classPathFromDict.length >= 2, 'WHO 条目缺代码或类目路径');
+  // 两套编号必须都在：代码 2.9.90 ≠ 类目路径里的 2.4
+  assert.notStrictEqual(e.whoCode.split('.').slice(0, 2).join('.'), '2.4',
+    'WHO 代码与词典类目路径被混为一谈了');
+  assert.match(who.caution, /不是同一套|不换算/, '未声明两套编号不可换算');
+  assert.match(who.entries[0].whoEdition, /2007|2022/, '未记录版本');
+});
+
+test('覆盖数字如实：构词拆净 72/96，且拆不干净的名单在产物里可见', () => {
+  // 这个数来回变过两次，都值得记：
+  //   · 第一版 72 —— 但 `strip` 对每个词独立 includes，`寒湿困脾证` 拆成 ["寒湿","湿","寒"]，
+  //     同一处算三遍，**病位虚高到 80 是假的**；
+  //   · 改成"三类共用一条游标"后掉到 69 —— 修对了重复计数，却让**跨类也互相吞**
+  //     （`困脾` 被 `脾` 吃掉，动作变空），那是过度修正；
+  //   · 最终"每类各自一条游标"：同类不重复、跨类允许重叠 → 72。
+  //     `寒湿困脾证` = 病性[寒湿] 病位[脾] 动作[困脾]，三者都对。
+  assert.strictEqual(data.stats.cleanDecompose, 72,
+    `拆净 ${data.stats.cleanDecompose}/96 —— 若突然变大，先查是不是又出现了重复计数或放宽词表`);
+  assert.ok(data.stats.dirtyDecompose.length > 0, '拆不干净的名单空了 —— 缺口被盖住了');
+  for (const d of data.stats.dirtyDecompose) assert.match(d, /← 残余「.+」/, `名单格式不对：${d}`);
+});
+
+test('构词：同类不重复计、跨类不互相吞', () => {
+  const d = D.decompose('寒湿困脾证');
+  assert.deepStrictEqual(d.nature, ['寒湿'], `病性被重复拆成 ${JSON.stringify(d.nature)}`);
+  assert.ok(d.locus.includes('脾'), `病位实为 ${JSON.stringify(d.locus)}`);
+  assert.ok(d.action.includes('困脾'), `动作实为 ${JSON.stringify(d.action)}（曾因共用一个游标被「脾」吃掉）`);
+  assert.strictEqual(d.residue, '', `仍有残余：${d.residue}`);
+});
+
 console.log(`\n  ${passed} 通过 · ${failures.length} 失败`);
 if (failures.length) {
   console.log('\n失败明细:');

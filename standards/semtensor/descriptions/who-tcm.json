@@ -1,0 +1,43 @@
+{
+  "$note": [
+    "WHO 国际标准中医药术语（WHO international standard terminologies on TCM）的**结构化通道**。",
+    "它与 ICD-11 是两套体系，**不可混用**：ICD-11 管疾病与证候的统计分类（如 CA00），",
+    "WHO-TCM 管术语的命名与层级（如 2.9.90）。两者在同一个证候上可能并存，但编号空间不同。",
+    "解析只做**可核对的拆分**，不做语义推断：代码拆成 段.组.项，类目路径原样保留。"
+  ],
+  "scheme": "WHO international standard terminologies on traditional Chinese medicine",
+  "editions": ["2022（WHO 正式版）", "2007（西太区版）"],
+  "codeFormat": "§.组.项 —— 例如 2.9.90 = 第 2 部分（诊断·病证和体质术语）· 组 2.9 · 项 90",
+  "caution": "词典条目里同时给出一串**类目路径**（如 `2.4 證候 - 臟腑經絡證類`），那套编号与 WHO 代码**不是同一套**。本文件两套都存、字段分开，绝不相互换算。",
+  "entries": [
+    {
+      "label": "肝阳上亢证",
+      "whoCode": "2.9.90",
+      "whoEnglish": "pattern/syndrome of ascendant hyperactivity of liver yang",
+      "whoDefinitionEn": "a pattern/syndrome marked by dizziness, headache, flushed face, blurred vision, tinnitus, bitter taste in the mouth and string-like pulse",
+      "whoEdition": "2007（西太区版，代码 2.9.90）；2022 版另有英文名 Hyperactivity of liver yang pattern",
+      "whoEnglishAliases": [
+        "Hyperactivity of liver yang pattern",
+        "Liver yang ascendant hyperactivity pattern",
+        "Liver yang disturbing the mind"
+      ],
+      "classPathFromDict": [
+        "2. 診斷·病證和體質術語 (Terminologies on diagnosis, patterns and constitution)",
+        "2.4 證候 (Patterns)",
+        "臟腑經絡證類 (Patterns of the viscera and channels)"
+      ],
+      "notesFromSource": "本质是阴虚而本虚标实，注意与实证相区别：阳亢、阴虚与肾阴不足三者并见，以阳亢为主",
+      "source": {
+        "url": "https://herba.kr/boncho/?id=47621&m=view&t=dict",
+        "title": "肝陽上亢證 · 韩药资源研究中心（引 WHO 标准术语）",
+        "type": "WHO-TCM（转引）"
+      }
+    }
+  ],
+  "coverage": {
+    "entries": 1,
+    "ofLabels": 96,
+    "why": "WHO-TCM 代码是逐条检索到的，不是批量可得（本机 zh.wikipedia.org 不可达、WHO 的术语库无公开批量接口）。",
+    "howToAdd": "在 external_batch 的分批检索里遇到带 WHO 代码的来源时，把代码与英文名一并落到本文件 entries。"
+  }
+}
