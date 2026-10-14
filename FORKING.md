@@ -95,7 +95,7 @@
 3. 写 audit_curriculum.js（L0 数据 / L1 结构 / L2 契约 / L3 内容）
 4. 让审计对 120 个空学科全绿                            ← 关键里程碑
 5. 写 build_catalog / build_doc_indexes / build_roadmap  → 索引与站点
-6. 写全套测试（现在 32 个套件）
+6. 写全套测试（现在 33 个套件）
 7. 然后才开始写第 1 章的内容
 ```
 
@@ -164,12 +164,12 @@
 |---|---|---|
 | 课程审计（L0–L3） | `npm run audit` | 三层 0 错误 |
 | 计数一致性 | `npm run counts` | README 声明与 catalog.json 逐项对齐 |
-| 链接完整性 | `npm run links` | 扫描 179 个 md，0 断链 |
+| 链接完整性 | `npm run links` | 扫描 180 个 md，0 断链 |
 | 产出物索引 | `npm run outputs` | 6 件产物 / 3 章，`--check` 不漂移 |
 | 项目看板 | `npm run dashboard` | KPI 与源独立重算一致 |
-| 测试套件 | `npm test` | 32 个套件全绿 |
+| 测试套件 | `npm test` | 33 个套件全绿 |
 
-`npm run check` = 审计 + 计数 + 链接 `--strict` + 产出物索引 `--check`，CI 上跑这一条。
+`npm run check` = 审计 + 计数 + 链接 `--strict` + 产出物索引 `--check` + 账本 `--check` + 架构 `--check`，CI 上跑这一条。
 
 **门的强度要看它能不能被空壳骗过**：只检查"文件存在"的门，一个 `touch` 就能过。
 上表四门里，每条断言都写在值得断言的东西上 —— 见教训 2。
@@ -277,6 +277,10 @@ node -e "…对每个候选 resolve 后 existsSync，打印 ✅/❌…"
   参考侧实测清单、三个不变量、结构映射、工具链逐个脚本的映射与改动、未移植项、
   本仓库新增。它是**从 `porting-map.json` 渲染**的，且每个路径与每条 evidence 都由
   `tests/test_porting_map.js` 在文件系统上验真 —— 参考侧新增脚本不会被静默忽略。
+- **「这套架构靠哪几条逻辑立住」见 [ARCHITECTURE.md](ARCHITECTURE.md)** —— 逻辑架构：
+  四条逻辑（单向派生 / 事实源是文件 / 门横切且每层各一道 / 契约继承）、四层与各层的门、
+  四条数据流、换域时动的是哪一层。同样从 `architecture.json` 渲染，由
+  `tests/test_architecture.js` 验真（层路径含通配、门引的命令与测试必须存在）。
 - 进度与阶段见 [ROADMAP.md](ROADMAP.md)。
 - 变更历史与"踩过什么坑"见 [CHANGELOG.md](CHANGELOG.md) ——
   **那里每条修复都写了症状与抓出它的检查**，是本文档教训部分的原始出处。

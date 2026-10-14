@@ -3,6 +3,57 @@
 本项目遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.28.0] — 2026-10-14
+
+### 新增 · 逻辑架构 ARCHITECTURE.md（三份文档各管一件事）
+
+此前有 `FORKING.md`（规程：怎么造）与 `PORTING.md`（账本：哪一块来自哪一块），缺一份
+回答「**这套架构靠哪几条逻辑立住，换域时哪一层动、哪一层不动**」。补上，且同样是
+`architecture.json` 渲染 + 测试守门（`npm run architecture`）。
+
+| 文档 | 管什么 |
+|---|---|
+| `FORKING.md` | 规程 —— 照着参考造一门新课，怎么做 |
+| `PORTING.md` | 账本 —— 参考的哪一块对应本仓库的哪一块，逐个列 |
+| `ARCHITECTURE.md` | 逻辑 —— 靠哪几条逻辑立住，换域时哪一层动 |
+
+**三份不许复述同一事实**（这条本身也进了门：`test_architecture.js` 断言
+ARCHITECTURE.md 不得复述不变量的全文，只能指路 —— 与 PORTING.md 第二节的关系）。
+
+### 四条逻辑（换域换的是词，不是逻辑）
+
+| | 主张 | 证据（本仓库真实踩过） |
+|---|---|---|
+| **L1 单向派生** | 事实源 → 投影 → 交付物，**反向引用 = bug** | 嵌入层的语料显式排除派生件并有断言钉住；反馈环真实开过三扇门（`embeddings/index.json`、`endpoints/README.md`、`descriptions/`），每次都让检索排名翻转 |
+| **L2 事实源是文件** | 目录树与原件是事实，json 只是投影 | `curriculum.json` 由扫 `departments/` 得到；文档数字不许静默过期 —— 本会话抓出 5 次 |
+| **L3 门横切，每层各一道** | L0 数据 / L1 结构 / L2 契约 / **L3 内容** | 参考是三层；逐条比完规则清单发现上游对 docs 的**内容**要求无人查 → 非加 L3 不可（负例含「把代价与边界写进代码块」） |
+| **L4 契约继承** | 章节形状是参考留下的接口，门/脚手架/渲染只认它 | 「120 学科全是空壳时审计先全绿」这个关键里程碑正是靠它 |
+
+### 四层与四条数据流
+
+L0 事实源（`departments/`、`standards/materials/*/sources/`、`data/icd11/`）→
+L1 投影（`curriculum.json`、`catalog.json`）→ L2 内容（章节 docs/quiz）→ L3 交付物
+（`site/`、`textbooks/build/`、`outputs/`）；课程流 / 交付物流 / 检索流 / 教材流 ——
+**每条流的首段都是事实源、末段都是产物**（这门也写进了测试）。
+
+### 这道门写出来当场抓了两个错 + 自证了不是空转
+
+1. **`standards/leijing-tuyi/sources/` 不存在** —— 实际原件在
+   `standards/materials/leijing-tuyi/sources/`。架构文档里写了一条死路径，
+   而**读者照着走才发现**，正是这类文档最常见的烂法。
+2. **教材流只有三段** —— 漏了上游那一步（源 xlsx → `import_materials.js` → 人读全本 md）。
+   补齐后 5 段。
+3. **通配匹配器第一版在 `**` 上无限递归爆栈** —— 用同一索引重入自己。
+   重写成索引递增版后，特意加了一条**自证断言**：不存在的路径必须匹配失败
+   （`standards/leijing-tuyi/sources`、`no-such-top-dir`…），以及真实通配必须匹配成功。
+   **门必须能失败，否则是空转**。
+
+### 接线
+
+`npm run architecture` 渲染；`npm run check` 加上 `build_architecture.js --check`
+（与账本、产出物索引同一套「产物不许漂移」）。`FORKING.md §8 延伸` 加第二条链接。
+`tests/test_architecture.js` 12 项。全套 **33 个套件**。
+
 ## [1.27.0] — 2026-10-14
 
 ### 新增 · 上游漂移哨兵（定时看门狗，无 LLM）
