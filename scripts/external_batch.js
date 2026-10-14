@@ -46,10 +46,31 @@ function allLabels() {
   return [...new Set(dsu.map((u) => u.label))].sort();
 }
 
+/**
+ * 检索串。**括注内容不再丢弃，而是并入检索词** —— 这一条是第 3 批实跑踩出来的：
+ * 原来 `气滞血瘀证(颈部)` 被削成 `气滞血瘀证`，取回的是通用来源，
+ * **颈部特指性证据没取到**，而该 label 一旦入库、队列就不会再查它（沉没）。
+ *
+ * 括注有两种，**两种都该带上**：
+ *   · 同义别名 —— `寒哮证（冷哮）` → 「冷哮」是常用名，带上能多命中
+ *   · 部位/病种限定 —— `气滞血瘀证(颈部)`、`心肾不交、阴虚火旺证(不寐)` → 限定词才是区分点
+ * 所以不区分两种，一律并入；只把括号符号换成空格，保留词本身。
+ */
 function queryFor(label) {
-  // 去掉证名里的括注（如「膀胱湿热证（热淋）」→ 膀胱湿热证），检索更干净
+  const context = (label.match(/[（(]([^）)]*)[）)]/g) || [])
+    .map((m) => m.replace(/[（()）]/g, '').trim())
+    .filter(Boolean);
   const base = label.replace(/[（(][^）)]*[）)]/g, '').trim();
-  return `${base} 中医病证名 病因病机 主症 舌象 脉象 治法`;
+  const head = context.length ? `${base} ${context.join(' ')}` : base;
+  return `${head} 中医病证名 病因病机 主症 舌象 脉象 治法`;
+}
+
+/** 拆出证名本体与括注限定词（给调用方看，也便于测试） */
+function splitLabel(label) {
+  const context = (label.match(/[（(]([^）)]*)[）)]/g) || [])
+    .map((m) => m.replace(/[（()）]/g, '').trim())
+    .filter(Boolean);
+  return { base: label.replace(/[（(][^）)]*[）)]/g, '').trim(), context };
 }
 
 function main() {
@@ -114,9 +135,27 @@ function main() {
     return;
   }
 
-  console.log('用法: --status | --next [-n N] | --import <file.json>');
+  if (argv.includes('--requery')) {
+    // 把已入库的证名**退回队列**：删掉它的条目，下次 --next 会再取一次。
+    // 为什么需要它：队列按 label 去重，一旦入库就**不会再查**。若当初的检索串有缺陷
+    // （第 3 批的括注被削掉），取回的证据就是通用的，而系统不会自己发现 —— 必须能退回。
+    const label = val('--requery');
+    if (!label) throw new Error('--requery 需要证名：--requery "气滞血瘀证(颈部)"');
+    const ext = loadExt();
+    const before = ext.entries.length;
+    ext.entries = ext.entries.filter((e) => e.label !== label);
+    if (ext.entries.length === before) {
+      console.log(`未入库：${label}（不在 external.json 里，无需退回）`);
+      return;
+    }
+    fs.writeFileSync(EXT, `${JSON.stringify(ext, null, 2)}\n`, 'utf8');
+    console.log(`已退回队列：${label}（${before} → ${ext.entries.length}）—— 下次 --next 会重新检索`);
+    return;
+  }
+
+  console.log('用法: --status | --next [-n N] | --import <file.json> | --requery "<证名>"');
 }
 
 if (require.main === module) main();
 
-module.exports = { allLabels, queryFor, EXT };
+module.exports = { queryFor, splitLabel, allLabels, pending, EXT };

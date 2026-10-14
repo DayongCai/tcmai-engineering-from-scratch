@@ -78,10 +78,34 @@ test('还原成功：external.json 回到原样', () => {
   assert.ok(j.entries.length >= 8, `条目数异常：${j.entries.length}`);
 });
 
-test('去括注：`膀胱湿热证（热淋）` 的查询串不带括注', () => {
+// **这条断言翻转了**。原来这里是「去括注：查询串不带括注」，即有意把
+// 「膀胱湿热证（热淋）」削成「膀胱湿热证」。翻转的依据是第 3 批的实跑证据：
+// 「气滞血瘀证(颈部)」被削掉「颈部」后，取回的是通用来源，**特指证据没取到**，
+// 而该 label 一旦入库队列就不会再查 —— 损失无法自动发现。既然括注既有同义别名
+// 也有部位/病种限定，一律并入才是安全的。翻断言就要说清为什么翻，不能悄悄改。
+test('保留括注：`膀胱湿热证（热淋）` 的查询串带「热淋」，但仍不带括号符号', () => {
   const q = B.queryFor('膀胱湿热证（热淋）');
   assert.ok(q.startsWith('膀胱湿热证 '), q);
-  assert.ok(!q.includes('热淋'), `括注没被去掉：${q}`);
+  assert.ok(q.includes('热淋'), `括注被削掉了（这是旧行为，已废弃）：${q}`);
+  assert.ok(!/[（()）]/.test(q), `检索串里残留了括号：${q}`);
+});
+
+test('检索串保留括注限定词（第 3 批踩出来的：削掉「颈部」就只剩通用证据）', () => {
+  const q1 = B.queryFor('气滞血瘀证(颈部)');
+  assert.ok(q1.includes('颈部'), `部位限定被削掉了：${q1}`);
+  const q2 = B.queryFor('寒哮证（冷哮）');
+  assert.ok(q2.includes('冷哮'), `同义别名被削掉了：${q2}`);
+  assert.ok(!/[（()）]/.test(q1) && !/[（()）]/.test(q2), '检索串里残留了括号符号');
+  assert.ok(!B.queryFor('风寒束表证').includes('  '), '无括注时多出了空格');
+});
+
+test('splitLabel 把本体与括注分开，两种括号都认', () => {
+  assert.deepStrictEqual(B.splitLabel('气滞血瘀证(颈部)'), { base: '气滞血瘀证', context: ['颈部'] });
+  assert.deepStrictEqual(B.splitLabel('寒哮证（冷哮）'), { base: '寒哮证', context: ['冷哮'] });
+  assert.deepStrictEqual(B.splitLabel('风寒束表证'), { base: '风寒束表证', context: [] });
+  // 队列里真实存在的长证名（多证并列 + 病种括注）
+  assert.deepStrictEqual(B.splitLabel('心肾不交、阴虚火旺证(不寐)'),
+    { base: '心肾不交、阴虚火旺证', context: ['不寐'] });
 });
 
 console.log(`\n  ${passed} 通过 · ${failures.length} 失败`);
