@@ -1,22 +1,22 @@
 {
   "$generated": "node scripts/evidence_quality.js",
   "coverage": {
-    "fetched": 58,
+    "fetched": 61,
     "total": 96,
-    "pending": 38
+    "pending": 35
   },
   "distribution": {
-    "specific": 41,
+    "specific": 44,
     "viaSynonymAlias": 1,
     "partial": 5,
-    "variantUnconfirmed": 5,
-    "labelOnly": 2,
+    "variantUnconfirmed": 7,
+    "labelOnly": 0,
     "generic": 5
   },
   "distributionNote": "specific=证名字面命中，或命中**同义异名**（本项目主张\"不是证据无关、是写法不同\"，但只有 synonym 才算同一概念）；partial=命中**非同一概念**的异名（composition 复合证名的组成部分 / qualified 病名限定 / broader 上位），只能作部分证据或旁证；variant-unconfirmed=正文出现未登记的近名写法，待人工确认，工具不擅自判同义；label-only=证名命中但括注语境未命中（应 --requery）；generic=连近名都没有，是泛论。",
   "qualifierStats": {
-    "entriesWithQualifier": 26,
-    "ofWhichSpecific": 24
+    "entriesWithQualifier": 27,
+    "ofWhichSpecific": 27
   },
   "placeContext": {
     "颈部": [
@@ -53,6 +53,43 @@
       "qualifiersMissed": [],
       "viaAlias": [],
       "variantHints": []
+    },
+    {
+      "label": "肺经风热、湿热上蒸证(鼻渊/鼻鼽)",
+      "base": "肺经风热、湿热上蒸证",
+      "labelTerms": [
+        "肺经风热、湿热上蒸证",
+        "肺经风热、湿热上蒸"
+      ],
+      "qualifiers": [
+        "鼻渊/鼻鼽"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
+    },
+    {
+      "label": "肺气虚寒证",
+      "base": "肺气虚寒证",
+      "labelTerms": [
+        "肺气虚寒证",
+        "肺气虚寒"
+      ],
+      "qualifiers": [],
+      "tier": "variant-unconfirmed",
+      "sources": 1,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "肺虚寒证",
+        "又称肺阳虚证"
+      ]
     },
     {
       "label": "风寒束表证",
@@ -276,6 +313,24 @@
       ]
     },
     {
+      "label": "肝阳上亢、风阳上扰证",
+      "base": "肝阳上亢、风阳上扰证",
+      "labelTerms": [
+        "肝阳上亢、风阳上扰证",
+        "肝阳上亢、风阳上扰"
+      ],
+      "qualifiers": [],
+      "tier": "variant-unconfirmed",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "风阳上扰证"
+      ]
+    },
+    {
       "label": "肝阳上亢证",
       "base": "肝阳上亢证",
       "labelTerms": [
@@ -294,6 +349,24 @@
           "relation": "qualified"
         }
       ],
+      "variantHints": []
+    },
+    {
+      "label": "肝阳上亢证(头部)",
+      "base": "肝阳上亢证",
+      "labelTerms": [
+        "肝阳上亢证",
+        "肝阳上亢"
+      ],
+      "qualifiers": [
+        "头部"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 3,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
       "variantHints": []
     },
     {
@@ -824,15 +897,15 @@
       "qualifiers": [
         "热淋/白浊"
       ],
-      "tier": "label-only",
+      "tier": "specific",
       "sources": 3,
-      "labelHitSources": 2,
-      "qualifierHitSources": 0,
-      "qualifiersMissed": [
-        "热淋/白浊"
-      ],
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
       "viaAlias": [],
-      "variantHints": []
+      "variantHints": [
+        "膀胱湿热型淋证"
+      ]
     },
     {
       "label": "湿热瘀结证",
@@ -1096,26 +1169,6 @@
           "relation": "composition"
         }
       ],
-      "variantHints": []
-    },
-    {
-      "label": "真心痛（阳衰血瘀）证",
-      "base": "真心痛证",
-      "labelTerms": [
-        "真心痛证",
-        "真心痛"
-      ],
-      "qualifiers": [
-        "阳衰血瘀"
-      ],
-      "tier": "label-only",
-      "sources": 3,
-      "labelHitSources": 2,
-      "qualifierHitSources": 0,
-      "qualifiersMissed": [
-        "阳衰血瘀"
-      ],
-      "viaAlias": [],
       "variantHints": []
     }
   ]
