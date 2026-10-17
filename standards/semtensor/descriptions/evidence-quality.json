@@ -1,22 +1,22 @@
 {
   "$generated": "node scripts/evidence_quality.js",
   "coverage": {
-    "fetched": 22,
+    "fetched": 58,
     "total": 96,
-    "pending": 74
+    "pending": 38
   },
   "distribution": {
-    "specific": 14,
+    "specific": 41,
     "viaSynonymAlias": 1,
     "partial": 5,
-    "variantUnconfirmed": 0,
-    "labelOnly": 0,
-    "generic": 3
+    "variantUnconfirmed": 5,
+    "labelOnly": 2,
+    "generic": 5
   },
   "distributionNote": "specific=证名字面命中，或命中**同义异名**（本项目主张\"不是证据无关、是写法不同\"，但只有 synonym 才算同一概念）；partial=命中**非同一概念**的异名（composition 复合证名的组成部分 / qualified 病名限定 / broader 上位），只能作部分证据或旁证；variant-unconfirmed=正文出现未登记的近名写法，待人工确认，工具不擅自判同义；label-only=证名命中但括注语境未命中（应 --requery）；generic=连近名都没有，是泛论。",
   "qualifierStats": {
-    "entriesWithQualifier": 4,
-    "ofWhichSpecific": 4
+    "entriesWithQualifier": 26,
+    "ofWhichSpecific": 24
   },
   "placeContext": {
     "颈部": [
@@ -76,6 +76,206 @@
       "variantHints": []
     },
     {
+      "label": "肝胆湿热证",
+      "base": "肝胆湿热证",
+      "labelTerms": [
+        "肝胆湿热证",
+        "肝胆湿热"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 2,
+      "labelHitSources": 2,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "疗急性胆囊炎肝胆湿热证"
+      ]
+    },
+    {
+      "label": "肝火亢盛、气阴两虚证（瘿病）",
+      "base": "肝火亢盛、气阴两虚证",
+      "labelTerms": [
+        "肝火亢盛、气阴两虚证",
+        "肝火亢盛、气阴两虚"
+      ],
+      "qualifiers": [
+        "瘿病"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "肝火证",
+        "肝气犯脾证"
+      ]
+    },
+    {
+      "label": "肝火上炎、风火上扰证",
+      "base": "肝火上炎、风火上扰证",
+      "labelTerms": [
+        "肝火上炎、风火上扰证",
+        "肝火上炎、风火上扰"
+      ],
+      "qualifiers": [],
+      "tier": "variant-unconfirmed",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "肝火证"
+      ]
+    },
+    {
+      "label": "肝气郁结、冲任失调证(乳岩/乳石痈)",
+      "base": "肝气郁结、冲任失调证",
+      "labelTerms": [
+        "肝气郁结、冲任失调证",
+        "肝气郁结、冲任失调"
+      ],
+      "qualifiers": [
+        "乳岩/乳石痈"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
+    },
+    {
+      "label": "肝气郁结、心神失养证(郁证/百合病)",
+      "base": "肝气郁结、心神失养证",
+      "labelTerms": [
+        "肝气郁结、心神失养证",
+        "肝气郁结、心神失养"
+      ],
+      "qualifiers": [
+        "郁证/百合病"
+      ],
+      "tier": "specific",
+      "sources": 4,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
+    },
+    {
+      "label": "肝肾不足、晶珠混浊证(圆翳内障/如银内障)",
+      "base": "肝肾不足、晶珠混浊证",
+      "labelTerms": [
+        "肝肾不足、晶珠混浊证",
+        "肝肾不足、晶珠混浊"
+      ],
+      "qualifiers": [
+        "圆翳内障/如银内障"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
+    },
+    {
+      "label": "肝肾亏虚证",
+      "base": "肝肾亏虚证",
+      "labelTerms": [
+        "肝肾亏虚证",
+        "肝肾亏虚"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 2,
+      "labelHitSources": 1,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "从肝肾辨证"
+      ]
+    },
+    {
+      "label": "肝肾阴虚、肝阳上亢证(青风内障/绿风内障)",
+      "base": "肝肾阴虚、肝阳上亢证",
+      "labelTerms": [
+        "肝肾阴虚、肝阳上亢证",
+        "肝肾阴虚、肝阳上亢"
+      ],
+      "qualifiers": [
+        "青风内障/绿风内障"
+      ],
+      "tier": "specific",
+      "sources": 2,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
+    },
+    {
+      "label": "肝肾阴虚、虚风内动证（颤证）",
+      "base": "肝肾阴虚、虚风内动证",
+      "labelTerms": [
+        "肝肾阴虚、虚风内动证",
+        "肝肾阴虚、虚风内动"
+      ],
+      "qualifiers": [
+        "颤证"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
+    },
+    {
+      "label": "肝胃不和证",
+      "base": "肝胃不和证",
+      "labelTerms": [
+        "肝胃不和证",
+        "肝胃不和"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 3,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
+    },
+    {
+      "label": "肝胃郁热证",
+      "base": "肝胃郁热证",
+      "labelTerms": [
+        "肝胃郁热证",
+        "肝胃郁热"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 2,
+      "labelHitSources": 1,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "治疗肝胃郁热证",
+        "肝胃不和证"
+      ]
+    },
+    {
       "label": "肝阳上亢证",
       "base": "肝阳上亢证",
       "labelTerms": [
@@ -97,6 +297,26 @@
       "variantHints": []
     },
     {
+      "label": "肝郁脾虚、瘀毒互结证(肝积/鼓胀)",
+      "base": "肝郁脾虚、瘀毒互结证",
+      "labelTerms": [
+        "肝郁脾虚、瘀毒互结证",
+        "肝郁脾虚、瘀毒互结"
+      ],
+      "qualifiers": [
+        "肝积/鼓胀"
+      ],
+      "tier": "specific",
+      "sources": 2,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "瘀毒内结证"
+      ]
+    },
+    {
       "label": "肝郁脾虚证",
       "base": "肝郁脾虚证",
       "labelTerms": [
@@ -111,6 +331,26 @@
       "qualifiersMissed": [],
       "viaAlias": [],
       "variantHints": []
+    },
+    {
+      "label": "肝郁脾虚证（痛泻）",
+      "base": "肝郁脾虚证",
+      "labelTerms": [
+        "肝郁脾虚证",
+        "肝郁脾虚"
+      ],
+      "qualifiers": [
+        "痛泻"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 2,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "肝郁乘脾证"
+      ]
     },
     {
       "label": "寒凝血瘀证",
@@ -291,6 +531,84 @@
       ]
     },
     {
+      "label": "气阴两虚、痰瘀毒结证(肺积/息贲)",
+      "base": "气阴两虚、痰瘀毒结证",
+      "labelTerms": [
+        "气阴两虚、痰瘀毒结证",
+        "气阴两虚、痰瘀毒结"
+      ],
+      "qualifiers": [
+        "肺积/息贲"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
+    },
+    {
+      "label": "气阴两虚、痰瘀阻络证",
+      "base": "气阴两虚、痰瘀阻络证",
+      "labelTerms": [
+        "气阴两虚、痰瘀阻络证",
+        "气阴两虚、痰瘀阻络"
+      ],
+      "qualifiers": [],
+      "tier": "variant-unconfirmed",
+      "sources": 2,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "气虚和阴虚证"
+      ]
+    },
+    {
+      "label": "气阴两虚、心脉瘀阻证",
+      "base": "气阴两虚、心脉瘀阻证",
+      "labelTerms": [
+        "气阴两虚、心脉瘀阻证",
+        "气阴两虚、心脉瘀阻"
+      ],
+      "qualifiers": [],
+      "tier": "variant-unconfirmed",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "心血瘀阻证",
+        "气虚血瘀证",
+        "气阴两虚证",
+        "心气阴两虚证",
+        "梗死气阴两虚证"
+      ]
+    },
+    {
+      "label": "气阴两虚证（消渴）",
+      "base": "气阴两虚证",
+      "labelTerms": [
+        "气阴两虚证",
+        "气阴两虚"
+      ],
+      "qualifiers": [
+        "消渴"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 2,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "阴虚火旺证"
+      ]
+    },
+    {
       "label": "气滞血瘀证",
       "base": "气滞血瘀证",
       "labelTerms": [
@@ -325,6 +643,308 @@
       "variantHints": []
     },
     {
+      "label": "热毒炽盛、气阴两虚证(急劳/热劳)",
+      "base": "热毒炽盛、气阴两虚证",
+      "labelTerms": [
+        "热毒炽盛、气阴两虚证",
+        "热毒炽盛、气阴两虚"
+      ],
+      "qualifiers": [
+        "急劳/热劳"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "热毒炽盛证",
+        "气阴两虚证"
+      ]
+    },
+    {
+      "label": "热毒犯肺、痰瘀阻络证(失荣/上石疽)",
+      "base": "热毒犯肺、痰瘀阻络证",
+      "labelTerms": [
+        "热毒犯肺、痰瘀阻络证",
+        "热毒犯肺、痰瘀阻络"
+      ],
+      "qualifiers": [
+        "失荣/上石疽"
+      ],
+      "tier": "specific",
+      "sources": 4,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
+    },
+    {
+      "label": "热毒侵心、气阴两伤证",
+      "base": "热毒侵心、气阴两伤证",
+      "labelTerms": [
+        "热毒侵心、气阴两伤证",
+        "热毒侵心、气阴两伤"
+      ],
+      "qualifiers": [],
+      "tier": "variant-unconfirmed",
+      "sources": 4,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "热毒侵心证"
+      ]
+    },
+    {
+      "label": "湿热火毒蕴结、气滞血瘀证(蛇串疮/缠腰火丹)",
+      "base": "湿热火毒蕴结、气滞血瘀证",
+      "labelTerms": [
+        "湿热火毒蕴结、气滞血瘀证",
+        "湿热火毒蕴结、气滞血瘀"
+      ],
+      "qualifiers": [
+        "蛇串疮/缠腰火丹"
+      ],
+      "tier": "specific",
+      "sources": 2,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
+    },
+    {
+      "label": "湿热浸淫、筋脉失养证(痿证)",
+      "base": "湿热浸淫、筋脉失养证",
+      "labelTerms": [
+        "湿热浸淫、筋脉失养证",
+        "湿热浸淫、筋脉失养"
+      ],
+      "qualifiers": [
+        "痿证"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "湿热痿证"
+      ]
+    },
+    {
+      "label": "湿热浸淫、脾虚湿蕴证(湿疮/浸淫疮)",
+      "base": "湿热浸淫、脾虚湿蕴证",
+      "labelTerms": [
+        "湿热浸淫、脾虚湿蕴证",
+        "湿热浸淫、脾虚湿蕴"
+      ],
+      "qualifiers": [
+        "湿疮/浸淫疮"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "脾虚湿蕴证",
+        "脾虚湿恋证",
+        "湿热蕴结证"
+      ]
+    },
+    {
+      "label": "湿热浸淫证",
+      "base": "湿热浸淫证",
+      "labelTerms": [
+        "湿热浸淫证",
+        "湿热浸淫"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 2,
+      "labelHitSources": 1,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "湿热病证"
+      ]
+    },
+    {
+      "label": "湿热下注、痹阻经络证（热痹）",
+      "base": "湿热下注、痹阻经络证",
+      "labelTerms": [
+        "湿热下注、痹阻经络证",
+        "湿热下注、痹阻经络"
+      ],
+      "qualifiers": [
+        "热痹"
+      ],
+      "tier": "specific",
+      "sources": 2,
+      "labelHitSources": 1,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "痹阻经络证",
+        "治湿热痹证"
+      ]
+    },
+    {
+      "label": "湿热下注、邪留正伤证",
+      "base": "湿热下注、邪留正伤证",
+      "labelTerms": [
+        "湿热下注、邪留正伤证",
+        "湿热下注、邪留正伤"
+      ],
+      "qualifiers": [],
+      "tier": "generic",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
+    },
+    {
+      "label": "湿热下注证（热淋/白浊）",
+      "base": "湿热下注证",
+      "labelTerms": [
+        "湿热下注证",
+        "湿热下注"
+      ],
+      "qualifiers": [
+        "热淋/白浊"
+      ],
+      "tier": "label-only",
+      "sources": 3,
+      "labelHitSources": 2,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [
+        "热淋/白浊"
+      ],
+      "viaAlias": [],
+      "variantHints": []
+    },
+    {
+      "label": "湿热瘀结证",
+      "base": "湿热瘀结证",
+      "labelTerms": [
+        "湿热瘀结证",
+        "湿热瘀结"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 2,
+      "labelHitSources": 1,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "湿热病证"
+      ]
+    },
+    {
+      "label": "湿热蕴结、瘀毒内阻证(肠蕈/脏毒)",
+      "base": "湿热蕴结、瘀毒内阻证",
+      "labelTerms": [
+        "湿热蕴结、瘀毒内阻证",
+        "湿热蕴结、瘀毒内阻"
+      ],
+      "qualifiers": [
+        "肠蕈/脏毒"
+      ],
+      "tier": "specific",
+      "sources": 4,
+      "labelHitSources": 1,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
+    },
+    {
+      "label": "水湿内停证（鼓胀）",
+      "base": "水湿内停证",
+      "labelTerms": [
+        "水湿内停证",
+        "水湿内停"
+      ],
+      "qualifiers": [
+        "鼓胀"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
+    },
+    {
+      "label": "痰气交阻、瘀毒凝结证(石瘿)",
+      "base": "痰气交阻、瘀毒凝结证",
+      "labelTerms": [
+        "痰气交阻、瘀毒凝结证",
+        "痰气交阻、瘀毒凝结"
+      ],
+      "qualifiers": [
+        "石瘿"
+      ],
+      "tier": "specific",
+      "sources": 4,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "痰凝毒聚证"
+      ]
+    },
+    {
+      "label": "痰热壅肺证",
+      "base": "痰热壅肺证",
+      "labelTerms": [
+        "痰热壅肺证",
+        "痰热壅肺"
+      ],
+      "qualifiers": [],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 2,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "热邪壅肺证",
+        "又称痰热阻肺证",
+        "风温肺热病痰热壅肺证"
+      ]
+    },
+    {
+      "label": "痰湿内盛、脾虚不运证",
+      "base": "痰湿内盛、脾虚不运证",
+      "labelTerms": [
+        "痰湿内盛、脾虚不运证",
+        "痰湿内盛、脾虚不运"
+      ],
+      "qualifiers": [],
+      "tier": "generic",
+      "sources": 2,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
+    },
+    {
       "label": "痰湿内阻证",
       "base": "痰湿内阻证",
       "labelTerms": [
@@ -339,6 +959,46 @@
       "qualifiersMissed": [],
       "viaAlias": [],
       "variantHints": []
+    },
+    {
+      "label": "痰湿壅肺证",
+      "base": "痰湿壅肺证",
+      "labelTerms": [
+        "痰湿壅肺证",
+        "痰湿壅肺"
+      ],
+      "qualifiers": [],
+      "tier": "variant-unconfirmed",
+      "sources": 2,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "痰湿蕴肺证"
+      ]
+    },
+    {
+      "label": "痰瘀互结、气阴两虚证(石疽/恶核)",
+      "base": "痰瘀互结、气阴两虚证",
+      "labelTerms": [
+        "痰瘀互结、气阴两虚证",
+        "痰瘀互结、气阴两虚"
+      ],
+      "qualifiers": [
+        "石疽/恶核"
+      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": [
+        "痰湿结聚证",
+        "痰瘀互结证",
+        "气阴两虚证"
+      ]
     },
     {
       "label": "下焦湿热瘀阻证",
@@ -436,6 +1096,26 @@
           "relation": "composition"
         }
       ],
+      "variantHints": []
+    },
+    {
+      "label": "真心痛（阳衰血瘀）证",
+      "base": "真心痛证",
+      "labelTerms": [
+        "真心痛证",
+        "真心痛"
+      ],
+      "qualifiers": [
+        "阳衰血瘀"
+      ],
+      "tier": "label-only",
+      "sources": 3,
+      "labelHitSources": 2,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [
+        "阳衰血瘀"
+      ],
+      "viaAlias": [],
       "variantHints": []
     }
   ]
