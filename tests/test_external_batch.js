@@ -29,8 +29,10 @@ function test(name, fn) {
 console.log('═══ 外部证据分批机制 ═══\n');
 
 test('队列是确定性的：同一状态两次跑出同一批', () => {
-  const r1 = spawnSync(process.execPath, ['scripts/external_batch.js', '--next', '-n', '5'], { cwd: ROOT, encoding: 'utf8' });
-  const r2 = spawnSync(process.execPath, ['scripts/external_batch.js', '--next', '-n', '5'], { cwd: ROOT, encoding: 'utf8' });
+  // 关掉租约：这条测的是队列顺序，不是互斥（租约本身另有专门的用例）
+  const env = { ...process.env, EXTERNAL_BATCH_LEASE: 'off' };
+  const r1 = spawnSync(process.execPath, ['scripts/external_batch.js', '--next', '-n', '5'], { cwd: ROOT, encoding: 'utf8', env });
+  const r2 = spawnSync(process.execPath, ['scripts/external_batch.js', '--next', '-n', '5'], { cwd: ROOT, encoding: 'utf8', env });
   assert.strictEqual(r1.status, 0, r1.stderr);
   assert.strictEqual(r1.stdout, r2.stdout, '同一状态两次给出的批次不同 —— 队列不确定');
   const batch = JSON.parse(r1.stdout);
@@ -146,6 +148,33 @@ test('全库 scope 与口径一致（手改 external.json 后必须跑 --audit�
     .filter((e) => S.classify(e).scope !== e.scope)
     .map((e) => `${e.label}: 存 ${e.scope} / 算 ${S.classify(e).scope}`);
   assert.ok(!drift.length, `分级漂移，跑 node scripts/external_batch.js --audit：\n${drift.join('\n')}`);
+});
+
+test('运行租约：别人持租时 --next 中止（退出码 3），--release 释放，过期租约自动接管', () => {
+  const lease = path.join(os.tmpdir(), `xblease-${Date.now()}.json`);
+  const env = { ...process.env, EXTERNAL_BATCH_LEASE: lease };
+  const run = (args) => spawnSync(process.execPath, ['scripts/external_batch.js', ...args], { cwd: ROOT, encoding: 'utf8', env });
+  try {
+    // 未过期的租约 = 另一个运行正在做这一批。注意租约**不绑 PID**：
+    // --next 一返回进程就退出，"这批有人在跑"是跨进程的一段时间，只能靠 TTL 判。
+    fs.writeFileSync(lease, JSON.stringify({ pid: 99999, startedAt: new Date().toISOString(), labels: ['甲'] }));
+    const r1 = run(['--next', '-n', '2']);
+    assert.strictEqual(r1.status, 3, `应中止并返回 3，实际 ${r1.status}：${r1.stdout}${r1.stderr}`);
+    assert.match(r1.stdout, /中止：另一个运行持有本批租约/);
+
+    const rel = run(['--release']);
+    assert.match(rel.stdout, /已释放租约/);
+    assert.ok(!fs.existsSync(lease), '--release 之后租约文件还在');
+
+    // 过期租约（46 分钟前，TTL 45 分钟）不该永久锁住队列
+    fs.writeFileSync(lease, JSON.stringify({ pid: 99999, startedAt: new Date(Date.now() - 46 * 60000).toISOString(), labels: ['甲'] }));
+    const r2 = run(['--next', '-n', '2']);
+    assert.strictEqual(r2.status, 0, `过期租约应被接管：${r2.stderr}`);
+    assert.match(r2.stdout, /旧租约已失效/);
+    assert.ok(fs.existsSync(lease), '接管后应写入自己的租约');
+  } finally {
+    fs.rmSync(lease, { force: true });
+  }
 });
 
 test('splitLabel 把本体与括注分开，两种括号都认', () => {

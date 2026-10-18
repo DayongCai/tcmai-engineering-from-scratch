@@ -27,6 +27,56 @@ const EXT = path.join(ROOT, 'standards/semtensor/descriptions/external.json');
 const api = require('./tcm_api.js');
 const { classify } = require('./lib_evidence_scope.js');   // 证据分级口径（唯一判定处）
 
+// ── 运行租约 ────────────────────────────────────────────────────────
+// 为什么要它：同一个 job 会被并发跑（第 11–14 批实测：05:48 与 08:03 两条提交、
+// 12:42 与 16:02 两条提交，其中两条不在调度时间点上 —— 同日多会话各取了一批）。
+// 两个运行同时 --next 会**检索同一批**、再各自 --import，白烧检索还互相覆盖文件。
+// 租约只解决"重复取批"，不替代 --import 的写指纹校验（那个防的是写冲突）。
+const LEASE = process.env.EXTERNAL_BATCH_LEASE === 'off'
+  ? null
+  : (process.env.EXTERNAL_BATCH_LEASE || path.join(ROOT, '.cache', 'external_batch.lease.json'));
+const LEASE_TTL_MS = Number(process.env.EXTERNAL_BATCH_LEASE_TTL_MS || 45 * 60 * 1000);
+
+function readLease() {
+  if (!LEASE) return null;
+  try { return JSON.parse(fs.readFileSync(LEASE, 'utf8')); } catch { return null; }
+}
+
+/**
+ * 租约是否仍然有效：**只看时间，不看 PID**。
+ *
+ * 为什么不能看 PID：`--next` 一返回进程就退出了，而"取批 → 检索 → 入库"是跨多个进程的一段时间
+ * （在一个 agent 会话里）。按 PID 存活判断，第二个运行永远会被判成"持租进程已死"而直接接管 ——
+ * 实测就是这样失效的。所以租约由 TTL 兜底：`--import` 写完即释放，`--release` 手工释放，
+ * 都没发生就 45 分钟后自动失效。pid 只写进文件供人排查。
+ */
+function leaseFresh(l) {
+  if (!l || !l.startedAt) return false;
+  const age = Date.now() - Date.parse(l.startedAt);
+  return age >= 0 && age < LEASE_TTL_MS;
+}
+
+function writeLease(labels) {
+  if (!LEASE) return;
+  fs.mkdirSync(path.dirname(LEASE), { recursive: true });
+  fs.writeFileSync(LEASE, `${JSON.stringify({
+    pid: process.pid,
+    startedAt: new Date().toISOString(),
+    ttlMinutes: Math.round(LEASE_TTL_MS / 60000),
+    labels,
+  }, null, 2)}\n`, 'utf8');
+}
+
+function clearLease() {
+  if (!LEASE) return;
+  try { fs.unlinkSync(LEASE); } catch { /* 没有就算了 */ }
+}
+
+function describeLease(l) {
+  const mins = Math.round((Date.now() - Date.parse(l.startedAt)) / 60000);
+  return `pid ${l.pid} · ${mins} 分钟前 · 本批 ${(l.labels || []).join('、') || '—'}`;
+}
+
 function loadExt() {
   return JSON.parse(fs.readFileSync(EXT, 'utf8'));
 }
@@ -99,19 +149,39 @@ function main() {
     console.log('═══ 外部证据队列 ═══\n');
     console.log(`  证名总数 ${all.length} · 已有外部证据 ${have.size} · 待检索 ${todo.length}`);
     console.log(`  下一批（前 8）: ${todo.slice(0, 8).join('、')}`);
+    const held = readLease();
+    console.log(`  租约: ${held ? (leaseFresh(held) ? `有效 — ${describeLease(held)}` : `已失效 — ${describeLease(held)}`) : '无'}`);
     return;
   }
 
   if (argv.includes('--next')) {
+    const force = argv.includes('--force');
+    const held = readLease();
+    if (!force && leaseFresh(held)) {
+      // 退出码 3 = "别人正在跑"。定时任务看到它应当**直接收工**，不要再检索、不要 import。
+      console.log(`中止：另一个运行持有本批租约（${describeLease(held)}）。`);
+      console.log('  两个运行同时取批会重复检索同一批证名，并各自 import —— 白烧检索、互相覆盖。');
+      console.log('  确认对方已死：node scripts/external_batch.js --release   强行接管：--next --force');
+      process.exit(3);
+    }
+    if (held && !force) console.log(`（旧租约已失效，接管：${describeLease(held)}）`);
     const n = Number(val('-n', '8'));
     const batch = todo.slice(0, n);
     if (!batch.length) { console.log('队列已空'); return; }
+    writeLease(batch.map((b) => b));
     // 输出可直接喂给检索的 JSON（每项一条独立查询）
     // 合成名额外给出 parts：整串 0 命中时，调用方按构件分别检索再判断是否同现。
     console.log(JSON.stringify(batch.map((label) => {
       const parts = components(splitLabel(label).base);
       return parts.length > 1 ? { label, parts, query: queryFor(label) } : { label, query: queryFor(label) };
     }), null, 2));
+    return;
+  }
+
+  if (argv.includes('--release')) {
+    const held = readLease();
+    clearLease();
+    console.log(held ? `已释放租约（${describeLease(held)}）` : '没有租约');
     return;
   }
 
@@ -184,6 +254,7 @@ function main() {
     fs.writeFileSync(EXT, `${JSON.stringify(ext, null, 2)}\n`, 'utf8');
     console.log(`入库：新增 ${added} · 已有跳过 ${skipped} · 空结果丢弃 ${empty}`);
     console.log(`现有 ${ext.entries.length}/${allLabels().length} · 余 ${remaining} 待检索`);
+    clearLease();   // 本批已落库，释放租约，让下一个运行能取新批
     return;
   }
 
@@ -205,7 +276,7 @@ function main() {
     return;
   }
 
-  console.log('用法: --status | --next [-n N] | --import <file.json> | --audit | --requery "<证名>"');
+  console.log('用法: --status | --next [-n N] [--force] | --import <file.json> | --audit | --release | --requery "<证名>"');
 }
 
 if (require.main === module) main();

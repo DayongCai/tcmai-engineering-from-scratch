@@ -49,13 +49,25 @@
 ## 4. 操作流程
 
 ```bash
-node scripts/external_batch.js --status          # 还差多少
-node scripts/external_batch.js --next -n 6       # 取一批（含「、」的会给 parts）
+node scripts/external_batch.js --status          # 还差多少 + 当前租约
+node scripts/external_batch.js --next -n 6       # 取一批（含「、」的会给 parts；先看退出码）
 # …检索、按「只记真正取回的来源」整理…
-node scripts/external_batch.js --import batch.json   # 入库即定级（scope 自动写）
+node scripts/external_batch.js --import batch.json   # 入库即定级（scope 自动写）并释放租约
 node scripts/external_batch.js --audit               # 口径变动或手改后重算全库
 node scripts/build_dsu_descriptions.js               # 出 descriptions.md（两级分开计）
 ```
+
+### 并发闸门（租约）
+
+同一个 job 会被并发跑：2026-10-18 实测 05:48 / 08:03 / 12:42 / 16:02 四条批次提交，
+其中两条不在调度时间点上（同日多会话各取了一批），两次运行的检索因此完全重复。
+
+- `--next` **取批即写租约**（`.cache/external_batch.lease.json`，已 gitignore），TTL 45 分钟。
+- 第二个运行的 `--next` 直接**退出码 3** 并打印持租者；**它必须就此收工**，不检索、不 import、不提交。
+- `--import` 写完释放；`--release` 手工释放；`--next --force` 强行接管。
+- 租约**不绑 PID**：`--next` 一返回进程就退出，而"取批→检索→入库"是跨进程的一段时间，
+  按 PID 存活判断会让第二个运行永远接管 —— 第一版就是这么失效的（TTL 才是唯一可靠的判据）。
+- 租约只管"别重复取同一批"；写冲突另有 `--import` 的读入指纹校验兜底。
 
 - **入库即定级**：`--import` 会给每条写上 `scope`。
 - **`partial` 不删**：它的来源有溯源价值（往往描述症状而不写证名）。

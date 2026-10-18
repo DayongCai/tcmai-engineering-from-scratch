@@ -56,6 +56,9 @@ site/snapshot/
 # 嵌入层派生产物（可由 node scripts/build_embeddings.js 重跑；README.md 入库）
 standards/semtensor/embeddings/index.json
 
+# 运行时租约（external_batch 的互斥锁；机器本地状态，不入库）
+.cache/
+
 # 证候描述派生产物（可由 node scripts/build_dsu_descriptions.js 重跑）
 # descriptions.md 与 external.json 入库（前者是人读交付物，后者是取回的外部证据）
 standards/semtensor/descriptions/dsu-descriptions.json
