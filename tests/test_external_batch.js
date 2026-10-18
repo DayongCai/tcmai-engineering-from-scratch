@@ -192,6 +192,15 @@ test('默认租约 TTL 必须大于调度器 60 分钟兜底杀进程的上限',
   assert.ok(B.LEASE_TTL_MS > 60 * 60 * 1000, `默认 TTL ${B.LEASE_TTL_MS / 60000} 分钟，未超过 60 分钟硬上限`);
 });
 
+test('不合格清单与数据一致（改了数据就要重跑清单脚本）', () => {
+  const md = fs.readFileSync(path.join(ROOT, 'standards/semtensor/descriptions/PARTIAL-BACKLOG.md'), 'utf8');
+  const j = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/semtensor/descriptions/external.json'), 'utf8'));
+  const S = require(path.join(ROOT, 'scripts', 'lib_evidence_scope.js'));
+  const n = j.entries.filter((e) => S.classify(e).scope === 'partial').length;
+  assert.ok(md.includes(`**${n} 条不合格**`),
+    `清单里写的不是当前 ${n} 条 —— 跑 node scripts/report_partial_backlog.js 重新生成`);
+});
+
 test('splitLabel 把本体与括注分开，两种括号都认', () => {
   assert.deepStrictEqual(B.splitLabel('气滞血瘀证(颈部)'), { base: '气滞血瘀证', context: ['颈部'] });
   assert.deepStrictEqual(B.splitLabel('寒哮证（冷哮）'), { base: '寒哮证', context: ['冷哮'] });
