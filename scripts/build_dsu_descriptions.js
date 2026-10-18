@@ -328,7 +328,11 @@ function main() {
   md.push('把语料收紧到正文（`.md`）后，这个数掉到 **3/96** —— 这才是真的：');
   md.push('**本仓库的 md 正文里几乎没有证候定义。**', '');
   md.push(`（这是"自己的输出喂回自己的输入"在本仓库第 3 次出现，换了扇门：① \`embeddings/index.json\` ② \`endpoints/README.md\` ③ \`datasets/\` + \`descriptions/\`。规则已写死：证据只取正文。）`, '');
-  md.push(`\n**外部证据只有 ${stats.withExternal} 条是这轮实际取回的**（${external.notFetched ? `2 条后端失败，${external.notFetched.remaining} 条未检索` : ''}）。`);
+  // 这里的两个数必须从数据里算：原先写死「2 条后端失败」，退回队列的条目一多就对不上账。
+  const nf = external.notFetched;
+  const failN = (nf && nf.failedThisRun ? nf.failedThisRun.length : 0);
+  const reqN = (nf && nf.requeued ? nf.requeued.length : 0);
+  md.push(`\n**外部证据只有 ${stats.withExternal} 条是这轮实际取回的**（${nf ? `${failN} 条后端失败，${reqN} 条因只有通用证据退回队列，${nf.remaining} 条未检索` : ''}）。`);
   md.push('这不是"没有资料"，是**这轮没取**——数字如实写在这里，不拿 96 分之几去充全覆盖。', '');
   md.push('## 逐条', '');
   for (const r of out) {

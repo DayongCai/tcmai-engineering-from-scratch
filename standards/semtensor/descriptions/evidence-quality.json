@@ -1,21 +1,21 @@
 {
   "$generated": "node scripts/evidence_quality.js",
   "coverage": {
-    "fetched": 94,
+    "fetched": 95,
     "total": 96,
-    "pending": 2
+    "pending": 1
   },
   "distribution": {
-    "specific": 71,
+    "specific": 72,
     "viaSynonymAlias": 1,
     "partial": 3,
-    "variantUnconfirmed": 12,
+    "variantUnconfirmed": 13,
     "labelOnly": 0,
-    "generic": 8
+    "generic": 7
   },
   "distributionNote": "specific=证名字面命中，或命中**同义异名**（本项目主张\"不是证据无关、是写法不同\"，但只有 synonym 才算同一概念）；partial=命中**非同一概念**的异名（composition 复合证名的组成部分 / qualified 病名限定 / broader 上位），只能作部分证据或旁证；variant-unconfirmed=正文出现未登记的近名写法，待人工确认，工具不擅自判同义；label-only=证名命中但括注语境未命中（应 --requery）；generic=连近名都没有，是泛论。",
   "qualifierStats": {
-    "entriesWithQualifier": 37,
+    "entriesWithQualifier": 38,
     "ofWhichSpecific": 37
   },
   "placeContext": {
@@ -66,13 +66,15 @@
         "大肠湿热蕴毒"
       ],
       "qualifiers": [],
-      "tier": "generic",
-      "sources": 1,
-      "labelHitSources": 0,
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 1,
       "qualifierHitSources": 0,
       "qualifiersMissed": [],
       "viaAlias": [],
-      "variantHints": []
+      "variantHints": [
+        "热蕴毒便血二者均属热证"
+      ]
     },
     {
       "label": "胆郁痰扰、心神不宁证(惊悸/不寐)",
@@ -121,14 +123,13 @@
       ],
       "qualifiers": [],
       "tier": "variant-unconfirmed",
-      "sources": 2,
+      "sources": 4,
       "labelHitSources": 0,
       "qualifierHitSources": 0,
       "qualifiersMissed": [],
       "viaAlias": [],
       "variantHints": [
-        "肺经风热证",
-        "湿热蕴结证"
+        "湿热瘀结证"
       ]
     },
     {
@@ -1379,13 +1380,15 @@
         "湿热下注、邪留正伤"
       ],
       "qualifiers": [],
-      "tier": "generic",
+      "tier": "variant-unconfirmed",
       "sources": 3,
       "labelHitSources": 0,
       "qualifierHitSources": 0,
       "qualifiersMissed": [],
       "viaAlias": [],
-      "variantHints": []
+      "variantHints": [
+        "湿热蕴结证"
+      ]
     },
     {
       "label": "湿热下注证（热淋/白浊）",
@@ -1708,6 +1711,26 @@
       "variantHints": [
         "痰瘀互结证"
       ]
+    },
+    {
+      "label": "血热风盛、瘀毒内蕴证(白疕/松皮癣)",
+      "base": "血热风盛、瘀毒内蕴证",
+      "labelTerms": [
+        "血热风盛、瘀毒内蕴证",
+        "血热风盛、瘀毒内蕴"
+      ],
+      "qualifiers": [
+        "白疕/松皮癣"
+      ],
+      "tier": "generic",
+      "sources": 3,
+      "labelHitSources": 0,
+      "qualifierHitSources": 0,
+      "qualifiersMissed": [
+        "白疕/松皮癣"
+      ],
+      "viaAlias": [],
+      "variantHints": []
     },
     {
       "label": "阳明腑实证/结胸证",
