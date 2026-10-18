@@ -174,7 +174,13 @@ function main() {
     if (held && !force) console.log(`（旧租约已失效，接管：${describeLease(held)}）`);
     const n = Number(val('-n', '8'));
     const batch = todo.slice(0, n);
-    if (!batch.length) { console.log('队列已空'); return; }
+    if (!batch.length) {
+      // 队列为空也是**合法状态**（96/96 全入库时）。stdout 一律给 JSON ——
+      // 调用方（定时任务、测试）按机器契约解析，不该在收尾这一批突然收到一行中文。
+      console.error('队列已空');
+      console.log('[]');
+      return;
+    }
     writeLease(batch.map((b) => b));
     // 输出可直接喂给检索的 JSON（每项一条独立查询）
     // 合成名额外给出 parts：整串 0 命中时，调用方按构件分别检索再判断是否同现。

@@ -35,8 +35,13 @@ test('队列是确定性的：同一状态两次跑出同一批', () => {
   const r2 = spawnSync(process.execPath, ['scripts/external_batch.js', '--next', '-n', '5'], { cwd: ROOT, encoding: 'utf8', env });
   assert.strictEqual(r1.status, 0, r1.stderr);
   assert.strictEqual(r1.stdout, r2.stdout, '同一状态两次给出的批次不同 —— 队列不确定');
+  // stdout 一律是 JSON：队列空（96/96 全入库）时给 `[]`，不是一行中文。
   const batch = JSON.parse(r1.stdout);
-  assert.ok(batch.length > 0 && batch.length <= 5, `批次大小 ${batch.length}`);
+  assert.ok(batch.length <= 5, `批次大小 ${batch.length}`);
+  // 空批次必须真的对应"没有待检索项"，不许把空当成成功。
+  if (!batch.length) {
+    assert.strictEqual(B.pending().pending.length, 0, '--next 给了空批次，但队列里仍有待检索项');
+  }
   for (const b of batch) {
     assert.ok(b.label && b.query, '批次项缺 label 或 query');
     // 证名按 ICD-11 标准命名，`、` 是名称的一部分 —— 检索串把顿号换成空格，
