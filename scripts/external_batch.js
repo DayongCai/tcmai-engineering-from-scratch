@@ -25,6 +25,7 @@ const path = require('node:path');
 const ROOT = path.resolve(__dirname, '..');
 const EXT = path.join(ROOT, 'standards/semtensor/descriptions/external.json');
 const api = require('./tcm_api.js');
+const { classify } = require('./lib_evidence_scope.js');   // 证据分级口径（唯一判定处）
 
 function loadExt() {
   return JSON.parse(fs.readFileSync(EXT, 'utf8'));
@@ -114,6 +115,32 @@ function main() {
     return;
   }
 
+  if (argv.includes('--audit')) {
+    // 重算全库分级：口径调整过、或早年入库没定级时跑它。**只写 scope/missingParts，不动来源。**
+    const ext0 = JSON.parse(fs.readFileSync(EXT, 'utf8'));
+    const before = new Map(ext0.entries.map((e) => [e.label, e.scope]));
+    const tally = { single: 0, whole: 0, component: 0, partial: 0 };
+    const drift = [];
+    for (const e of ext0.entries) {
+      const r = classify(e);
+      if (before.get(e.label) && before.get(e.label) !== r.scope) {
+        drift.push(`${e.label}: ${before.get(e.label)} → ${r.scope}`);
+      }
+      e.scope = r.scope;
+      if (r.attestedBy !== null) e.attestedBy = r.attestedBy; else delete e.attestedBy;
+      if (r.missing.length) e.missingParts = r.missing; else delete e.missingParts;
+      tally[r.scope] += 1;
+    }
+    fs.writeFileSync(EXT, `${JSON.stringify(ext0, null, 2)}\n`, 'utf8');
+    console.log(`分级：单构件 ${tally.single} · 整串级 ${tally.whole} · 构件级 ${tally.component} · 不合格 ${tally.partial}`);
+    console.log(`合计 ${ext0.entries.length} · 计入整串覆盖 ${tally.single + tally.whole} · 只计构件覆盖 ${tally.component}`);
+    if (drift.length) {
+      console.log('本次改判：');
+      for (const d of drift) console.log(`  ${d}`);
+    }
+    return;
+  }
+
   if (argv.includes('--import')) {
     const f = val('--import');
     const incoming = JSON.parse(fs.readFileSync(path.resolve(f), 'utf8'));
@@ -139,6 +166,9 @@ function main() {
       };
       if (!clean.sources.length) { empty += 1; continue; }
       if (byLabel.has(item.label)) { skipped += 1; continue; }
+      // 入库即定级（口径见 scripts/lib_evidence_scope.js）：
+      // 单条来源覆盖全部构件 = 整串级；只有构件分别被覆盖 = 构件级。两级不合并。
+      clean.scope = classify({ label: clean.label, sources: clean.sources }).scope;
       ext.entries.push(clean);
       byLabel.set(item.label, clean);
       added += 1;
@@ -175,7 +205,7 @@ function main() {
     return;
   }
 
-  console.log('用法: --status | --next [-n N] | --import <file.json> | --requery "<证名>"');
+  console.log('用法: --status | --next [-n N] | --import <file.json> | --audit | --requery "<证名>"');
 }
 
 if (require.main === module) main();

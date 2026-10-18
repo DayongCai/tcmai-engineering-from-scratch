@@ -30,6 +30,7 @@ const P = (p) => path.join(ROOT, p);
 const OUTDIR = P('standards/semtensor/descriptions');
 const emb = require('./build_embeddings.js');
 const api = require('./tcm_api.js');
+const { classify, countsAsWhole } = require('./lib_evidence_scope.js');   // 证据分级口径
 
 // ── 病性 / 病位 词表（构词解析用；中医证名是构词的，所以能拆）──
 const NATURE = [
@@ -132,6 +133,8 @@ function main() {
   // 外部证据（已落库的）
   const external = JSON.parse(fs.readFileSync(P('standards/semtensor/descriptions/external.json'), 'utf8'));
   const extByLabel = new Map(external.entries.map((e) => [e.label, e.sources]));
+  // 每条的等级当场重算（不信任文件里存的 scope —— 存的值只用来核对口径是否漂移）
+  const scopeOf = new Map(external.entries.map((e) => [e.label, classify(e)]));
   // WHO-TCM 通道（独立于 ICD-11）
   const who = JSON.parse(fs.readFileSync(P('standards/semtensor/descriptions/who-tcm.json'), 'utf8'));
   const whoByLabel = new Map(who.entries.map((e) => [e.label, { ...e, parsed: parseWhoCode(e.whoCode) }]));
@@ -228,6 +231,9 @@ function main() {
       diseaseExamples: e.diseaseExamples || [],
       textbookEvidence: ctx.map((c) => ({ file: c.file, snippet: c.snippet })),
       externalEvidence: ext,
+      // 证据分级：整串级（单条来源覆盖全部构件）/ 构件级（只分别覆盖）/ 单构件。
+      // 口径在 scripts/lib_evidence_scope.js，统计时两级分开报，**不合并**成一个"已覆盖"。
+      externalScope: scopeOf.get(e.label) ? scopeOf.get(e.label).scope : null,
       whoTcm: whoByLabel.get(e.label) || null,
       // 异名：**不是证据无关，是写法不同**（见 standards/semtensor/descriptions/aliases.json）。
       // relation 决定怎么用：synonym 可直接计入；composition/qualified/broader 只能作部分证据。
@@ -257,6 +263,12 @@ function main() {
     withIcd: cov((r) => r.icd),
     withTextbook: cov((r) => r.textbookEvidence.length),
     withExternal: cov((r) => r.externalEvidence.length),
+    // 外部证据的两种强度分开数：整串级才算"这个证名被文献证实"，
+    // 构件级只能说明"构件各自有文献"。合并成 75/96 会让两种证据看起来一样硬。
+    withExternalWhole: cov((r) => r.externalEvidence.length && countsAsWhole(scopeOf.get(r.label)?.scope)),
+    withExternalComponent: cov((r) => r.externalEvidence.length && scopeOf.get(r.label)?.scope === 'component'),
+    externalPartial: out.filter((r) => r.externalEvidence.length && scopeOf.get(r.label)?.scope === 'partial')
+      .map((r) => `${r.label} ← 缺构件「${scopeOf.get(r.label).missing.join('、')}」`),
     withWhoTcm: cov((r) => r.whoTcm),
     withAlias: cov((r) => r.aliases.length),
     fullyMissing: cov((r) => r.missing.length === 7),   // 7 = 缺失项总数；加了 WHO-TCM 后 6 就成了陈旧常量
@@ -282,8 +294,17 @@ function main() {
   md.push(`| ICD-11 编码 | ${stats.withIcd}/${total} | ${((stats.withIcd / total) * 100).toFixed(1)}% |`);
   md.push(`| 教材上下文 | ${stats.withTextbook}/${total} | ${((stats.withTextbook / total) * 100).toFixed(1)}% |`);
   md.push(`| 外部证据（web_search 取回） | ${stats.withExternal}/${total} | ${((stats.withExternal / total) * 100).toFixed(1)}% |`);
+  md.push(`| ├ 其中**整串级**（单条来源覆盖全部构件） | ${stats.withExternalWhole}/${total} | ${((stats.withExternalWhole / total) * 100).toFixed(1)}% |`);
+  md.push(`| └ 其中**构件级**（只有构件分别被覆盖） | ${stats.withExternalComponent}/${total} | ${((stats.withExternalComponent / total) * 100).toFixed(1)}% |`);
   md.push(`| WHO-TCM 代码（独立通道） | ${stats.withWhoTcm}/${total} | ${((stats.withWhoTcm / total) * 100).toFixed(1)}% |`, '');
   md.push(`平均缺 ${stats.avgMissing} 个字段；${stats.fullyMissing} 个证名七项全缺。`, '');
+  md.push(`**外部证据两级分开计，不合并**：整串级 ${stats.withExternalWhole} · 构件级 ${stats.withExternalComponent}（已入库合计 ${stats.withExternal}）。`, '');
+  md.push('为什么必须分开：`胸阳痹阻、痰瘀互结证` 这类按 ICD-11 命名的合称证名，中文临床文献很少逐字写，往往只能取到"胸阳不振"与"痰瘀互结"各自的来源。**构件各自有文献 ≠ 这个证名被文献证实**，把两者并成一个 75/96，会让弱证据看起来和强证据一样硬。判定口径写在 `scripts/lib_evidence_scope.js`（证据边界 = 入库的 title+snippet，括注不参与判定）。', '');
+  if (stats.externalPartial.length) {
+    md.push('### 外部证据不合格（有构件完全没覆盖，需退回重查）', '');
+    for (const p of stats.externalPartial) md.push(`- ${p}`);
+    md.push('');
+  }
   if (stats.dirtyDecompose.length) {
     md.push('### 构词拆不干净的证名（词表缺口，保持可见）', '');
     md.push('病性 + 病位 + 病机动作三类词表盖不到的残余字。**列在这里是为了让缺口别被一个覆盖率数字盖住。**', '');
@@ -336,7 +357,7 @@ function main() {
   console.log(`  证名 ${stats.labels}（对应 ${stats.dsuRecords} 条 DSU 记录）`);
   console.log(`  构词解析：病性 ${stats.withNature} · 病位 ${stats.withLocus} · 动作 ${stats.withAction} · 完全拆净 ${stats.cleanDecompose}`);
   console.log(`  病机 ${stats.withMechanism} · 病名 ${stats.withDisease} · ICD ${stats.withIcd}`);
-  console.log(`  教材证据 ${stats.withTextbook} · 外部证据 ${stats.withExternal} · WHO-TCM ${stats.withWhoTcm}`);
+  console.log(`  教材证据 ${stats.withTextbook} · 外部证据 ${stats.withExternal}（整串 ${stats.withExternalWhole} · 构件 ${stats.withExternalComponent}） · WHO-TCM ${stats.withWhoTcm}`);
   console.log(`  语料 ${stats.corpusFiles} 个 md（不含数据集/索引/报告）`);
   console.log(`  平均缺 ${stats.avgMissing} 项 · 七项全缺 ${stats.fullyMissing} 个 · 构词拆净 ${stats.cleanDecompose}/96`);
   console.log(`  → standards/semtensor/descriptions/descriptions.md`);

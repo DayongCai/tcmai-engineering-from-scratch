@@ -115,6 +115,39 @@ test('证名是 ICD-11 标准名：`、` 属名称，检索串只换空格、不
   assert.ok(q2.includes('胆郁痰扰') && q2.includes('心神不宁证') && q2.includes('惊悸/不寐'), q2);
 });
 
+test('证据分级：single / whole / component / partial 四种判定', () => {
+  const S = require(path.join(ROOT, 'scripts', 'lib_evidence_scope.js'));
+  const src = (t, s) => ({ title: t, snippet: s || '' });
+  // 单构件：来源写「脾胃湿热」即可（「证」是类别后缀，不参与区分）
+  assert.strictEqual(S.classify({ label: '脾胃湿热证', sources: [src('脾胃湿热')] }).scope, 'single');
+  // 整串级：一条来源同时覆盖两个构件
+  assert.strictEqual(S.classify({ label: '胸阳痹阻、痰瘀互结证', sources: [src('胸阳痹阻与痰瘀互结')] }).scope, 'whole');
+  // 构件级：两条来源各覆盖一个构件
+  assert.strictEqual(S.classify({ label: '胸阳痹阻、痰瘀互结证', sources: [src('胸阳痹阻'), src('痰瘀互结证')] }).scope, 'component');
+  // 不合格：缺构件
+  const p = S.classify({ label: '胸阳痹阻、痰瘀互结证', sources: [src('胸阳痹阻')] });
+  assert.strictEqual(p.scope, 'partial');
+  assert.deepStrictEqual(p.missing, ['痰瘀互结证']);
+  // 括注不参与构件判定
+  assert.deepStrictEqual(S.componentsOf('气滞血瘀证(颈部)'), ['气滞血瘀证']);
+});
+
+test('繁体来源可判（肝陽上亢證 → 肝阳上亢证），且不改写原文', () => {
+  const S = require(path.join(ROOT, 'scripts', 'lib_evidence_scope.js'));
+  assert.ok(S.covers('肝陽上亢證 · 韓藥資源研究中心', '肝阳上亢证'));
+  assert.ok(S.covers('濕熱下注所致之熱淋', '湿热下注证'));
+  assert.strictEqual(S.toSimplified('肝陽上亢證'), '肝阳上亢证');
+});
+
+test('全库 scope 与口径一致（手改 external.json 后必须跑 --audit）', () => {
+  const S = require(path.join(ROOT, 'scripts', 'lib_evidence_scope.js'));
+  const j = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/semtensor/descriptions/external.json'), 'utf8'));
+  const drift = j.entries
+    .filter((e) => S.classify(e).scope !== e.scope)
+    .map((e) => `${e.label}: 存 ${e.scope} / 算 ${S.classify(e).scope}`);
+  assert.ok(!drift.length, `分级漂移，跑 node scripts/external_batch.js --audit：\n${drift.join('\n')}`);
+});
+
 test('splitLabel 把本体与括注分开，两种括号都认', () => {
   assert.deepStrictEqual(B.splitLabel('气滞血瘀证(颈部)'), { base: '气滞血瘀证', context: ['颈部'] });
   assert.deepStrictEqual(B.splitLabel('寒哮证（冷哮）'), { base: '寒哮证', context: ['冷哮'] });
