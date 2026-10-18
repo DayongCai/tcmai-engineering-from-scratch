@@ -28,10 +28,10 @@
  * 入库与统计都调用 classify()，不要在别处另写一套判断。
  */
 
-/** 证名去掉括注后的构件（`、` 分隔）。ICD-11 标准名里的顿号是名称的一部分。 */
+/** 证名去掉括注后的构件（`、` 与 `/` 都是并列符）。ICD-11 标准名里的顿号是名称的一部分。 */
 function componentsOf(label) {
   const base = String(label).replace(/[（(][^）)]*[）)]/g, '').trim();
-  return base.split('、').map((s) => s.trim()).filter(Boolean);
+  return base.split(/[、/]/).map((s) => s.trim()).filter(Boolean);
 }
 
 /**

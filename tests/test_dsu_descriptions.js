@@ -69,7 +69,20 @@ test('覆盖数字如实：教材证据 3/96（不是 96/96）', () => {
   assert.strictEqual(data.stats.withTextbook, 3,
     `教材证据 ${data.stats.withTextbook}/96 —— 若这个数突然变大，先查语料是不是又放宽了`);
   assert.ok(data.stats.withExternal >= 1, '外部证据一条都没有？那 external.json 没被读进来');
-  assert.strictEqual(data.stats.fullyMissing > 0, true, '六项全缺为 0 —— 与实测不符，需重审');
+  // 这条原来断言 `fullyMissing > 0`，用来钉住"不是人人都齐"。覆盖爬到 85/96 后它自然变成 0，
+  // 硬钉这个数只会逼人改数据。改钉**真正的不变量**：统计必须与逐条记录重算一致，
+  // 且「整串级 + 构件级」不能超过外部证据总数（否则两级被重复计入，覆盖数就虚高）。
+  const recomputed = data.records.filter((r) => r.missing.length === 7).length;
+  assert.strictEqual(data.stats.fullyMissing, recomputed,
+    `fullyMissing ${data.stats.fullyMissing} ≠ 逐条重算 ${recomputed} —— 统计与记录不一致`);
+  assert.ok(data.stats.withExternalWhole >= 1, '整串级为 0？分级没算进构建');
+  assert.ok(data.stats.withExternalWhole + data.stats.withExternalComponent <= data.stats.withExternal,
+    `整串级 ${data.stats.withExternalWhole} + 构件级 ${data.stats.withExternalComponent} 超过外部证据总数 ${data.stats.withExternal}`);
+  for (const r of data.records) {
+    if (!r.externalEvidence.length) continue;
+    assert.ok(['single', 'whole', 'component', 'partial'].includes(r.externalScope),
+      `${r.label} 的 externalScope 非法：${r.externalScope}`);
+  }
 });
 
 test('每条记录都带出处或显式缺失，不留空话', () => {

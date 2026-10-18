@@ -130,8 +130,9 @@ test('证据分级：single / whole / component / partial 四种判定', () => {
   const p = S.classify({ label: '胸阳痹阻、痰瘀互结证', sources: [src('胸阳痹阻')] });
   assert.strictEqual(p.scope, 'partial');
   assert.deepStrictEqual(p.missing, ['痰瘀互结证']);
-  // 括注不参与构件判定
+  // 括注不参与构件判定；`、` 与 `/` 都是并列符（`阳明腑实证/结胸证` 是两个构件）
   assert.deepStrictEqual(S.componentsOf('气滞血瘀证(颈部)'), ['气滞血瘀证']);
+  assert.deepStrictEqual(S.componentsOf('阳明腑实证/结胸证'), ['阳明腑实证', '结胸证']);
 });
 
 test('繁体来源可判（肝陽上亢證 → 肝阳上亢证），且不改写原文', () => {
