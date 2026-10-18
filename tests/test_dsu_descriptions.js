@@ -76,8 +76,15 @@ test('覆盖数字如实：教材证据 3/96（不是 96/96）', () => {
   assert.strictEqual(data.stats.fullyMissing, recomputed,
     `fullyMissing ${data.stats.fullyMissing} ≠ 逐条重算 ${recomputed} —— 统计与记录不一致`);
   assert.ok(data.stats.withExternalWhole >= 1, '整串级为 0？分级没算进构建');
-  assert.ok(data.stats.withExternalWhole + data.stats.withExternalComponent <= data.stats.withExternal,
-    `整串级 ${data.stats.withExternalWhole} + 构件级 ${data.stats.withExternalComponent} 超过外部证据总数 ${data.stats.withExternal}`);
+  assert.ok(data.stats.withExternalWhole + data.stats.withExternalComponent + data.stats.withConcurrent <= data.stats.withExternal,
+    `整串级 ${data.stats.withExternalWhole} + 并病 ${data.stats.withConcurrent} + 构件级 ${data.stats.withExternalComponent} 超过外部证据总数 ${data.stats.withExternal}`);
+  // 并病（两证同存）是领域判断，必须真的被标出来，且都停在 component —— 否则说明标记与证据脱节
+  assert.ok(data.stats.withConcurrent >= 5, `并病达标只有 ${data.stats.withConcurrent} 条，标记丢了？`);
+  for (const r of data.records) {
+    if (!r.externalConcurrent) continue;
+    assert.strictEqual(r.externalScope, 'component',
+      `${r.label} 标为并病但 scope=${r.externalScope} —— 并病的判据是"两侧各有来源"`);
+  }
   for (const r of data.records) {
     if (!r.externalEvidence.length) continue;
     assert.ok(['single', 'whole', 'component', 'partial'].includes(r.externalScope),

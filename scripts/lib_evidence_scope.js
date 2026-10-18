@@ -71,8 +71,10 @@ function evidenceText(source) {
  * 除后缀外**不做任何同义改写** —— 同义关系在 aliases.json 里，不在这条规则里偷偷做。
  */
 function covers(text, part) {
-  const t = toSimplified(text);
-  const p = toSimplified(part);
+  // 先把空白去掉再比：中文来源里常见「心神不 宁」「气阴两 虚」这种排版空格，
+  // 不归一就会把一条真命中的来源判成不合格（实测：于志强医案「心神不 宁」）。
+  const t = toSimplified(text).replace(/\s+/g, '');
+  const p = toSimplified(part).replace(/\s+/g, '');
   if (t.includes(p)) return true;
   const stem = p.replace(/证$/, '');
   return stem !== p && stem.length >= 2 && t.includes(stem);
