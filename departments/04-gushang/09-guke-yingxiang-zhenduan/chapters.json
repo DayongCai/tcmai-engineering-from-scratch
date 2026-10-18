@@ -1,5 +1,66 @@
 {
   "slug": "09-guke-yingxiang-zhenduan",
   "title": "骨科影像诊断学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-xian-yuanli",
+      "title": "X 线的成像原理与阅片顺序",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-guzhe-zhengxiang",
+      "title": "骨折的影像征象与分型",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-ct-sanwei",
+      "title": "CT 的三维重建与骨窗",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-mri-ruanzuzhi",
+      "title": "MRI 的软组织对比",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-jizhu-tuibian",
+      "title": "脊柱影像与椎间盘退变",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-guanjie-ruangu",
+      "title": "关节影像与软骨评估",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-chaosheng-ruanzuzhi",
+      "title": "超声在软组织损伤中的应用",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-guzhishusong-yingxiang",
+      "title": "骨质疏松的影像评估",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-yingxiang-buyizhi",
+      "title": "影像与症状的不一致",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-ai-yuepian",
+      "title": "AI 阅片的假阴性与责任边界",
+      "status": "📋"
+    }
+  ]
 }

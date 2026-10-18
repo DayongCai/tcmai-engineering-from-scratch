@@ -1,5 +1,66 @@
 {
   "slug": "13-zhongyi-erke-xue",
   "title": "中医儿科学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-xiaoer-shengli",
+      "title": "小儿生理病理特点：稚阴稚阳",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-erke-sizhen",
+      "title": "儿科四诊：望指纹与问诊的特殊性",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-erke-feixi",
+      "title": "小儿肺系病：感冒、咳嗽、肺炎喘嗽",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-erke-pixi",
+      "title": "小儿脾系病：积滞、疳证、泄泻",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-erke-xingan",
+      "title": "小儿心肝病：惊风、癫痫、多动",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-erke-shenxi",
+      "title": "小儿肾系病：水肿、遗尿",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-shixing-jibing",
+      "title": "时行疾病：麻疹、水痘、痄腮",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-xinshenger-jibing",
+      "title": "新生儿疾病与喂养",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-jiliang-fufa",
+      "title": "小儿用药剂量与服药方法",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-shengzhang-quxian",
+      "title": "生长发育曲线与中医体质",
+      "status": "📋"
+    }
+  ]
 }

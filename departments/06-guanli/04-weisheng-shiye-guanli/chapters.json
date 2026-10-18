@@ -1,5 +1,54 @@
 {
   "slug": "04-weisheng-shiye-guanli",
   "title": "卫生事业管理",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-jigou-mubiao",
+      "title": "卫生系统的构成与目标",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-peizhi-gongping",
+      "title": "卫生资源配置与公平性",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-xuqiu-liyong",
+      "title": "卫生服务需求与利用",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-chouzi-feiyong",
+      "title": "卫生筹资与费用控制",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-gongwei-yingji",
+      "title": "公共卫生体系与应急",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-jiceng-fenji",
+      "title": "基层卫生与分级诊疗",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-zhengce-pinggu",
+      "title": "卫生政策评估的方法",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-guoji-bijiao",
+      "title": "国际卫生体系的比较",
+      "status": "📋"
+    }
+  ]
 }

@@ -1,5 +1,66 @@
 {
   "slug": "06-zhongyi-zhineng-bianzheng",
   "title": "中医智能辨证系统",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-xingshihua-guize",
+      "title": "辨证的形式化：从规则到概率",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-caiji-xindu",
+      "title": "症状采集的界面与信度",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-guize-yinqing",
+      "title": "规则引擎与专家系统",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-beiyesi-tuili",
+      "title": "贝叶斯网络与概率推理",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-qianru-biaoshi",
+      "title": "症状—证候的嵌入表示",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-duozheng-shuchu",
+      "title": "多证并存的输出设计",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-yizhixing-pinggu",
+      "title": "与医生诊断的一致性评估",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-anquan-daijia",
+      "title": "安全性：漏诊与误诊的代价",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-jieshi-shuchu",
+      "title": "可解释输出的设计",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-shiyong-baogao",
+      "title": "临床试用的设计与报告",
+      "status": "📋"
+    }
+  ]
 }

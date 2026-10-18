@@ -1,5 +1,66 @@
 {
   "slug": "13-zhongyi-duomotai-ronghe",
   "title": "中医多模态数据融合",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-leixing-duiqi",
+      "title": "模态的类型与对齐问题",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-ronghe-fangfa",
+      "title": "舌象、脉象与问诊的融合",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-tezheng-ronghe",
+      "title": "特征级融合与决策级融合",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-queshi-moshi",
+      "title": "缺失模态的处理",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-kuamotai-jiansuo",
+      "title": "跨模态检索",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-yuxunlian-moxing",
+      "title": "多模态预训练模型",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-ronghe-jieshi",
+      "title": "融合模型的可解释性",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-caiji-tongbu",
+      "title": "数据采集的同步协议",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-zengyi-pinggu",
+      "title": "融合增益的评估方法",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-yinsi-hegui",
+      "title": "多模态数据的隐私与合规",
+      "status": "📋"
+    }
+  ]
 }

@@ -1,5 +1,66 @@
 {
   "slug": "09-zhongyao-yaoji-xue",
   "title": "中药药剂学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-jixing-xuanze",
+      "title": "剂型选择与给药途径",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-tangji-jianzhu",
+      "title": "汤剂与煎煮工艺的参数",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-sanji-wanpian",
+      "title": "散剂、丸剂与片剂",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-jiaonang-keli",
+      "title": "胶囊、颗粒与口服液",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-zhusheji-wujun",
+      "title": "注射剂与无菌工艺",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-waiyong-gaoyao",
+      "title": "外用制剂：膏药、软膏与贴剂",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-huanshi-baxiang",
+      "title": "缓释与靶向给药系统",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-wendingxing",
+      "title": "制剂的稳定性与有效期",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-shengwu-liyongdu",
+      "title": "生物利用度与体外释放",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-fangda-yanzheng",
+      "title": "制剂工艺的放大与验证",
+      "status": "📋"
+    }
+  ]
 }

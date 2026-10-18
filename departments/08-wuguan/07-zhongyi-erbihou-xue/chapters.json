@@ -1,5 +1,66 @@
 {
   "slug": "07-zhongyi-erbihou-xue",
   "title": "中医耳鼻喉科学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-zangfu-jingluo",
+      "title": "耳鼻喉的脏腑经络联系",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-erbing-tiaoming",
+      "title": "耳病：耳鸣、耳聋与耳胀",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-bibing-biyuan",
+      "title": "鼻病：鼻塞、鼻渊与鼻鼽",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-yanhou-bing",
+      "title": "咽喉病：乳蛾、喉痹与梅核气",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-sangyin-shengdai",
+      "title": "嗓音病与声带病变",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-bianyingxing-biyan",
+      "title": "变应性鼻炎的中医辨治",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-zhongeryan-gumo",
+      "title": "分泌性中耳炎与鼓膜病变",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-waizhi-xuewei",
+      "title": "耳鼻喉外治与穴位治疗",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-neijing-shuhou",
+      "title": "鼻内镜术后的中医康复",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-liangbiao-pingjia",
+      "title": "耳鼻喉疗效的量表评价",
+      "status": "📋"
+    }
+  ]
 }

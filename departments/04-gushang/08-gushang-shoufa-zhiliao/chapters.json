@@ -1,5 +1,66 @@
 {
   "slug": "08-gushang-shoufa-zhiliao",
   "title": "骨伤科手法治疗学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-fenlei-shiying",
+      "title": "骨伤手法的分类与适应证",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-lijin-shoufa",
+      "title": "理筋手法：揉、拿、按、推",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-zhengfu-lixue",
+      "title": "整复手法的力学原理",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-jingzhui-fengxian",
+      "title": "颈椎手法的风险与控制",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-xiongyao-guifan",
+      "title": "胸腰椎手法的操作规范",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-guanjie-songdong",
+      "title": "关节松动术与西方手法对照",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-canshu-lianghua",
+      "title": "手法的量化参数",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-jinji-jingshi",
+      "title": "手法治疗的禁忌与警示",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-jiaoxue-kaohe",
+      "title": "手法教学与技能考核",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-duizhao-yanjiu",
+      "title": "手法疗效的对照研究",
+      "status": "📋"
+    }
+  ]
 }

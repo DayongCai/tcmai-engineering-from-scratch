@@ -1,5 +1,54 @@
 {
   "slug": "11-shequ-huli-xue",
   "title": "社区护理学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-duixiang-moshi",
+      "title": "社区护理的对象与模式",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-fangshi-dangan",
+      "title": "家庭访视与健康档案",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-manxing-guanli",
+      "title": "慢性病的社区管理",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-chuanran-yimiao",
+      "title": "传染病与疫苗接种",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-laonian-zhaohu",
+      "title": "老年与失能人群照护",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-jiankang-jiaoyu",
+      "title": "健康教育的设计与评价",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-weisheng-xinxihua",
+      "title": "社区卫生服务的信息化",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-zhiliang-kejixing",
+      "title": "社区护理的质量与可及性",
+      "status": "📋"
+    }
+  ]
 }

@@ -1,5 +1,54 @@
 {
   "slug": "04-chuangshang-jijiu-xue",
   "title": "创伤急救学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-yuanze-liucheng",
+      "title": "创伤急救的原则与流程",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-xianchang-pinggu",
+      "title": "现场评估与搬运固定",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-chuxue-xiuke",
+      "title": "出血与休克的急救",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-guding-zhidong",
+      "title": "骨折的临时固定与制动",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-qingchuang-kangganran",
+      "title": "开放性损伤的清创与抗感染",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-lunao-xiongfu",
+      "title": "颅脑与胸腹损伤的识别",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-duofashang-youxian",
+      "title": "多发伤的优先级判断",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-jilu-jiaojie",
+      "title": "急救记录与交接规范",
+      "status": "📋"
+    }
+  ]
 }

@@ -1,5 +1,66 @@
 {
   "slug": "14-zhongyi-zhenghou-xue",
   "title": "中医证候学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-zhenghou-gainian",
+      "title": "证候的概念：症状群还是推理节点",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-goucheng-yaosu",
+      "title": "证候的构成要素：病性、病位、病势",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-bagang-cengji",
+      "title": "八纲与脏腑辨证的层级关系",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-mingming-guifan",
+      "title": "证候命名规范与 ICD-11 对齐",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-jianbie-zhenduan",
+      "title": "鉴别诊断：相似证候的区分",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-yanbian-jianmo",
+      "title": "证候演变：传变与转归的建模",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-lianghua-quanzhong",
+      "title": "证候的量化：量表与权重",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-nizhuan-tuili",
+      "title": "证候与病机的逆转推理",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-shujuku-zhiliang",
+      "title": "证候数据库的设计与质量",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-zhengju-fenji",
+      "title": "证据分级与外部验证",
+      "status": "📋"
+    }
+  ]
 }

@@ -1,5 +1,54 @@
 {
   "slug": "10-yixue-xinxi-guanli",
   "title": "医学信息管理",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-xinxi-xitong",
+      "title": "医学信息系统的构成",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-biaozhun-hl7",
+      "title": "数据标准与互操作：HL7 与 FHIR",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-bingli-jiansuo",
+      "title": "电子病历的结构与检索",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-shuju-zhiliang",
+      "title": "数据质量与治理",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-anquan-quanxian",
+      "title": "信息安全与权限管理",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-juece-zhichi",
+      "title": "临床决策支持系统",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-shujucang-baobiao",
+      "title": "数据仓库与报表",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-shangxian-peixun",
+      "title": "系统上线的组织与培训",
+      "status": "📋"
+    }
+  ]
 }

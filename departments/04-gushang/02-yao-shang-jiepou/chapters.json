@@ -1,5 +1,66 @@
 {
   "slug": "02-yao-shang-jiepou",
   "title": "骨伤解剖学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-guge-xingtai",
+      "title": "骨骼的形态与骨性标志",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-guanjie-jiegou",
+      "title": "关节的结构与运动轴",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-jiquan-gongneng",
+      "title": "肌群的起止与功能",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-jizhu-jiepou",
+      "title": "脊柱的解剖与节段特征",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-shangzhi-jiegou",
+      "title": "上肢带与手的精细结构",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-xiazhi-jiegou",
+      "title": "下肢带与足的负重结构",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-shenjing-xueguan",
+      "title": "神经血管的走行与损伤风险",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-tibiao-dingwei",
+      "title": "骨伤常用体表定位",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-yingxiang-sanwei",
+      "title": "影像解剖与三维重建",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-bianyi-wupan",
+      "title": "解剖变异与临床误判",
+      "status": "📋"
+    }
+  ]
 }

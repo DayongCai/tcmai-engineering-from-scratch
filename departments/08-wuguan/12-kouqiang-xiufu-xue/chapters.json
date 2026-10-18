@@ -1,5 +1,66 @@
 {
   "slug": "12-kouqiang-xiufu-xue",
   "title": "口腔修复学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-xiufuti-shiying",
+      "title": "修复体的类型与适应证",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-guding-yichi",
+      "title": "固定义齿的设计",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-kezhai-yichi",
+      "title": "可摘局部义齿",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-quankou-yaohe",
+      "title": "全口义齿与咬合重建",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-zhongzhi-shengwu",
+      "title": "种植体的生物学基础",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-zhongzhi-liucheng",
+      "title": "种植修复的流程",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-qianti-guan",
+      "title": "牙体缺损的嵌体与冠",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-cailiao-gongyi",
+      "title": "修复材料与加工工艺",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-yaohe-tiaozheng",
+      "title": "咬合调整与并发症",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-suifang-shibai",
+      "title": "修复体的随访与失败分析",
+      "status": "📋"
+    }
+  ]
 }

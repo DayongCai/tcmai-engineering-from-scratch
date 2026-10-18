@@ -1,5 +1,66 @@
 {
   "slug": "10-shiyan-zhenjiu-xue",
   "title": "实验针灸学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-duixiang-fangfa",
+      "title": "实验针灸学的对象与方法",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-xuewei-zuzhi",
+      "title": "穴位的组织学与理化特性",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-shenjing-jizhi",
+      "title": "针刺效应的神经机制",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-zhenci-zhentong",
+      "title": "针刺镇痛的内源性调控",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-mianyi-neifen",
+      "title": "针刺对免疫与内分泌的影响",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-xuewei-duizhao",
+      "title": "动物实验的穴位定位与对照",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-canshu-biaozhun",
+      "title": "针刺参数的标准化：频率与强度",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-dianshengli-yingxiang",
+      "title": "电生理与功能影像的观测",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-kechongfu-wenti",
+      "title": "实验结果的可重复性问题",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-zhuanhua-lujing",
+      "title": "从机制到临床的转化路径",
+      "status": "📋"
+    }
+  ]
 }

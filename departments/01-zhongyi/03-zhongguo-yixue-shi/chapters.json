@@ -1,5 +1,54 @@
 {
   "slug": "03-zhongguo-yixue-shi",
   "title": "中国医学史",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-xianqin-lianghan",
+      "title": "先秦两汉：从巫医到理论体系",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-weijin-suitang",
+      "title": "魏晋隋唐：本草与方书的积累",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-songjinyuan",
+      "title": "宋金元：学派分化与局方之学",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-mingqing",
+      "title": "明清：温病学兴起与《本草纲目》",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-jindai-huitong",
+      "title": "近现代：中西医汇通与制度化",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-chutu-jianbo",
+      "title": "出土文献：简帛医书的发现与释读",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-yishi-shuzihua",
+      "title": "医史文献的数字化与编年索引",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-yishi-fangfa",
+      "title": "医学史研究方法：史料批判与量化",
+      "status": "📋"
+    }
+  ]
 }

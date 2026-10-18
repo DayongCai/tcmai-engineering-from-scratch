@@ -1,5 +1,54 @@
 {
   "slug": "09-kangfu-yixue-jichu",
   "title": "康复医学基础",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-duixiang-tuandui",
+      "title": "康复医学的对象与团队",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-gongneng-pingding",
+      "title": "功能评定：肌力与关节活动度",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-richang-nengli",
+      "title": "日常生活能力与生活质量量表",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-yundong-chufang",
+      "title": "运动疗法的基础与处方",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-zuoye-yanyu",
+      "title": "作业治疗与言语治疗",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-shenjing-kangfu",
+      "title": "神经康复与卒中单元",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-xinfei-kangfu",
+      "title": "心肺康复与运动风险",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-xindu-chayi",
+      "title": "康复评定的信度与最小临床差异",
+      "status": "📋"
+    }
+  ]
 }

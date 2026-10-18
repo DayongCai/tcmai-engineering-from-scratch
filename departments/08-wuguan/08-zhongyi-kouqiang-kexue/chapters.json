@@ -1,5 +1,66 @@
 {
   "slug": "08-zhongyi-kouqiang-kexue",
   "title": "中医口腔科学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-kouchi-bianzheng",
+      "title": "口齿病的脏腑辨证",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-yatong-yaxuan",
+      "title": "牙痛与牙宣：牙周病的中医辨治",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-kouchuang-nianmo",
+      "title": "口疮与口腔黏膜病",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-kouchou-tuoye",
+      "title": "口臭与唾液异常",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-ganzao-kouqiang",
+      "title": "干燥综合征的口腔表现",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-taixian-baiban",
+      "title": "口腔扁平苔藓与白斑",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-waiyong-hanshu",
+      "title": "中药外用与含漱制剂",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-quanshen-guanxi",
+      "title": "口腔病与全身疾病的关系",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-jilu-guifan",
+      "title": "口腔辨证的记录规范",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-liaoxiao-pingjia",
+      "title": "口腔黏膜病的疗效评价",
+      "status": "📋"
+    }
+  ]
 }

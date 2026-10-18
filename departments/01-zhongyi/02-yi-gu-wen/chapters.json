@@ -1,5 +1,54 @@
 {
   "slug": "02-yi-gu-wen",
   "title": "医古文",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-yiguwen-yuliao",
+      "title": "医古文与语料工程：从训诂到可检索文本",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-tongjia-yitizi",
+      "title": "通假字·古今字·异体字 → 归一化表",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-cilei-huoyong",
+      "title": "词类活用与特殊句式 → 句法分析",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-xuba-wenti",
+      "title": "医籍序跋选读 → 文体与意图分类",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-suwen-xuandu",
+      "title": "《素问》选段精读 → 术语抽取",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-yian-xushi",
+      "title": "医案叙事结构 → 事件与人物抽取",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-bihui-jiaokan",
+      "title": "避讳·缺笔·错简 → 版本校勘与文本对齐",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-fanjian-gongcheng",
+      "title": "繁简转换与异体字表的工程实现",
+      "status": "📋"
+    }
+  ]
 }

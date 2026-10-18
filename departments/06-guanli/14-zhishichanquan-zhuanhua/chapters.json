@@ -1,5 +1,42 @@
 {
   "slug": "14-zhishichanquan-zhuanhua",
   "title": "中医药知识产权与成果转化",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-leixing-bianjie",
+      "title": "知识产权的类型与边界",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-zhuanli-zhuanxie",
+      "title": "中药专利的撰写与检索",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-jingdian-baohu",
+      "title": "经典名方的保护路径",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-zhuanrang-xuke",
+      "title": "技术转让与许可合同",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-zhuanhua-guzhi",
+      "title": "成果转化的流程与估值",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-mimi-quanshu",
+      "title": "商业秘密与数据权属",
+      "status": "📋"
+    }
+  ]
 }

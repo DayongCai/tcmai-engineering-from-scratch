@@ -7,7 +7,7 @@
 | 学科数 | 15 |
 | 总学时 | 882 |
 | 章节目标 | 128 |
-| 已建章节 | 0 |
+| 已建章节 | 1 |
 | 涉及学期 | 第2, 第3, 第4, 第5, 第6, 第7, 第8 |
 
 ## 学科清单
@@ -17,7 +17,7 @@
 | 01 | [中医护理学基础](01-zhongyi-huli-jichu/) | Foundations of TCM Nursing | Core | 2 | 72 | 0/10 | 辨证施护→规则库 / 证护对应→映射表 | ⬚ |
 | 02 | [基础护理学](02-jichu-huli-xue/) | Fundamental Nursing | Core | 2 | 72 | 0/10 | 护理操作→标准作业流程 / 生命体征→异常检测 | ⬚ |
 | 03 | [健康评估](03-jiankang-pinggu/) | Health Assessment | Core | 3 | 54 | 0/8 | 问诊查体→结构化采集 / 异常体征→规则+ML 判别 | ⬚ |
-| 04 | [中医护理技术](04-zhongyi-huli-jishu/) | TCM Nursing Techniques | Build | 3 | 54 | 0/8 | 拔罐艾灸刮痧→操作参数化 / 不良反应→监测预警 | ⬚ |
+| 04 | [中医护理技术](04-zhongyi-huli-jishu/) | TCM Nursing Techniques | Build | 3 | 54 | 1/8 | 拔罐艾灸刮痧→操作参数化 / 不良反应→监测预警 | 🚧 |
 | 05 | [中医养生学](05-zhongyi-yangsheng-xue/) | TCM Health Cultivation | Core | 3 | 54 | 0/8 | 体质养生→个性化推荐 / 生活处方→规则引擎 | ⬚ |
 | 06 | [中医心理学](06-zhongyi-xinli-xue/) | TCM Psychology | Core | 4 | 54 | 0/8 | 情志辨证→情绪分类 NLP / 五志相胜→博弈模型 | ⬚ |
 | 07 | [内科护理学](07-neike-huli-xue/) | Medical Nursing | Clinic | 5 | 90 | 0/12 | 护理诊断→本体推理 / 病情变化→时序预警 | ⬚ |

@@ -1,5 +1,66 @@
 {
   "slug": "10-zhongyao-fenxi-xue",
   "title": "中药分析学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-fangfa-yanzheng",
+      "title": "分析方法的验证：准确度与精密度",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-yangpin-qianchuli",
+      "title": "样品前处理：提取、净化与浓缩",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-tlc-hplc",
+      "title": "薄层色谱与高效液相",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-gc-ms",
+      "title": "气相色谱与质谱联用",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-lc-ms",
+      "title": "液质联用与成分鉴定",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-zhiwen-tupu",
+      "title": "指纹图谱与相似度评价",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-duochengfen-dingliang",
+      "title": "多成分定量与一测多评",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-zhongjinshu-nongcan",
+      "title": "重金属、农残与真菌毒素",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-biaozhunwuzhi",
+      "title": "标准物质与量值溯源",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-shuju-wanzhengxing",
+      "title": "分析数据的完整性与审计追踪",
+      "status": "📋"
+    }
+  ]
 }

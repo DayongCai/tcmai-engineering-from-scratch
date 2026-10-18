@@ -1,5 +1,54 @@
 {
   "slug": "06-tuina-shoufa-xue",
   "title": "推拿手法学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-fenlei-yaoqiu",
+      "title": "手法的分类与基本要求",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-baidong-yizhichan",
+      "title": "摆动类手法：一指禅与滚法",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-moca-jiya",
+      "title": "摩擦类与挤压类手法",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-zhendong-kouji",
+      "title": "振动类与叩击类手法",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-yundong-guanjie",
+      "title": "运动关节类手法",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-lixue-canshu",
+      "title": "手法的力学参数与测量",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-xunlian-pingjia",
+      "title": "手法训练的评价与反馈",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-biaozhun-guifan",
+      "title": "手法标准化的操作规范",
+      "status": "📋"
+    }
+  ]
 }

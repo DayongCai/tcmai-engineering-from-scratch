@@ -33,6 +33,25 @@ if (!fs.existsSync(catalogPath)) {
 const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
 
 // ── 1. data.js ──
+// 章节地图：从各学科的 chapters.json 收上来（由 scripts/build_knowledge_structure.js 生成）。
+// 为什么放进 data.js 而不是渲染期去读文件：浏览器端不能读盘；而「已建」的判据仍以
+// content（磁盘实测）为准，这里只补「声明了但还没写」的那部分 —— 两处都用 slug 对齐，
+// 不存在第二套命名。
+const chapterIndex = {};
+for (const dept of catalog.departments) {
+  for (const subject of dept.subjects) {
+    const p = path.join(ROOT, subject.path, 'chapters.json');
+    if (!fs.existsSync(p)) continue;
+    const idx = JSON.parse(fs.readFileSync(p, 'utf8'));
+    chapterIndex[`${dept.slug}/${subject.slug}`] = (idx.chapters || []).map((c) => ({
+      n: c.n,
+      slug: c.slug,
+      title: c.title,
+      status: c.status || '📋',
+    }));
+  }
+}
+
 const dataJs =
   '/* 生成物: site/build.js — 请勿手工编辑 */\n' +
   'window.TCMAI_DATA = ' +
@@ -44,6 +63,7 @@ const dataJs =
       counts: catalog.counts,
       semesterPlan: catalog.semesterPlan,
       departments: catalog.departments,
+      chapterIndex,
     },
     null,
     2

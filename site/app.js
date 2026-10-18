@@ -246,6 +246,15 @@ function renderSubject() {
     .filter((c) => c.deptSlug === s.dept.slug && c.subjectSlug === s.slug)
     .sort((a, b) => (a.n || 0) - (b.n || 0));
 
+  const map = (DATA.chapterIndex || {})[key] || [];
+  const bySlug = new Map(chapters.map((c) => [c.chapterSlug, c]));
+  // 章节地图 = chapters.json（声明的知识结构）+ CONTENT（磁盘实测的正文）对齐后的结果。
+  // 有正文的才渲染成链接；没正文的标「待写」并把 slug 亮出来，绝不把空章节做成能点进去的 404。
+  const rows = map.length
+    ? map.map((m) => ({ ...m, built: bySlug.get(m.slug) || null }))
+    : chapters.map((c) => ({ n: c.n, slug: c.chapterSlug, title: c.title, status: '🚧', built: c }));
+  const nextUnbuilt = rows.find((r) => !r.built);
+
   return shell('catalog.html', s.title, `
 <div class="breadcrumb"><a href="index.html">总览</a> / <a href="catalog.html?dept=${s.dept.slug}">${esc(s.dept.title)}</a> / ${esc(s.title)}</div>
 <h1>${esc(s.title)}</h1>
@@ -259,17 +268,23 @@ function renderSubject() {
   <div class="count"><b>${String(s.globalN).padStart(3, '0')}</b>学科编号</div>
 </div>
 
-<h2>章节（${chapters.length}/${s.chaptersTarget}）</h2>
-${chapters.length === 0
-  ? `<p class="muted">该学科尚未开章。脚手架命令：<br/><code>node scripts/scaffold_chapter.js ${s.dept.slug}/${s.slug} 01-&lt;slug&gt; "标题"</code></p>`
-  : `<ul class="chapter-list">${chapters.map((c) => `
+<h2>章节地图（已建 ${chapters.length} / 目标 ${s.chaptersTarget}）</h2>
+${rows.length === 0
+  ? `<p class="muted">该学科尚未定义章节结构。先写 <code>standards/knowledge-structure/${s.dept.slug}.txt</code>，再跑 <code>node scripts/build_knowledge_structure.js</code>。</p>`
+  : `<ul class="chapter-list">${rows.map((r) => `
       <li>
-        <span class="n">${String(c.n).padStart(2, '0')}</span>
-        <span style="flex:1"><a href="chapter.html?path=${encodeURIComponent(c.key)}">${esc(c.title)}</a>
-        ${c.problem ? `<div class="small muted">${esc(c.problem)}</div>` : ''}</span>
-        <span class="tag">${Object.keys(c.code).length} 代码</span>
-        ${c.video ? '<span class="tag core">视频</span>' : '<span class="tag">待录制</span>'}
-      </li>`).join('')}</ul>`}
+        <span class="n">${String(r.n).padStart(2, '0')}</span>
+        <span style="flex:1">${r.built
+          ? `<a href="chapter.html?path=${encodeURIComponent(r.built.key)}">${esc(r.title)}</a>
+        ${r.built.problem ? `<div class="small muted">${esc(r.built.problem)}</div>` : ''}`
+          : `${esc(r.title)}<div class="small muted mono">${esc(r.slug)}</div>`}</span>
+        ${r.built
+          ? `<span class="tag">${Object.keys(r.built.code).length} 代码</span>${r.built.video ? '<span class="tag core">视频</span>' : '<span class="tag">待录制</span>'}`
+          : '<span class="tag">待写</span>'}
+      </li>`).join('')}</ul>
+      ${nextUnbuilt
+        ? `<p class="small muted">下一章开章命令：<code>node scripts/scaffold_chapter.js ${s.dept.slug}/${s.slug} ${esc(nextUnbuilt.slug)} "${esc(nextUnbuilt.title)}"</code></p>`
+        : ''}`}
 
 <h2>交付轨道</h2>
 <div class="grid cols-2">

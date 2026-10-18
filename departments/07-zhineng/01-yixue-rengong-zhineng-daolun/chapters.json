@@ -1,5 +1,54 @@
 {
   "slug": "01-yixue-rengong-zhineng-daolun",
   "title": "医学人工智能导论",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-wenti-bianjie",
+      "title": "医学 AI 的问题域与边界",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-jiandu-biaozhu",
+      "title": "监督学习与医学标注数据",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-pinggu-zhibiao",
+      "title": "评估：敏感度、特异度与校准",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-shuju-xielou",
+      "title": "数据泄漏与分布偏移",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-jieshi-caina",
+      "title": "可解释性与临床采纳",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-fagui-shenpi",
+      "title": "医学 AI 的法规与审批",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-zhongyi-teshu",
+      "title": "中医场景下的 AI 特殊性",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-luodi-shibai",
+      "title": "从论文到落地的失败案例",
+      "status": "📋"
+    }
+  ]
 }

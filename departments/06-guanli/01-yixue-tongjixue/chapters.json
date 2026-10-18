@@ -1,5 +1,66 @@
 {
   "slug": "01-yixue-tongjixue",
   "title": "医学统计学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-juese-shujuleixing",
+      "title": "统计学的角色与数据类型",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-miaoshu-fenbu",
+      "title": "描述性统计与分布",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-gailv-chouyang",
+      "title": "概率与抽样分布",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-jiashe-pzhi",
+      "title": "假设检验与 p 值",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-t-fangcha",
+      "title": "t 检验与方差分析",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-kaifang-liebiao",
+      "title": "卡方检验与列联表",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-xiangguan-huigui",
+      "title": "相关与线性回归",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-logistic-shengcun",
+      "title": "Logistic 回归与生存分析",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-duochong-jiaoyan",
+      "title": "多重比较与假阳性控制",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-baogao-kefuxian",
+      "title": "统计报告的规范与可复现",
+      "status": "📋"
+    }
+  ]
 }

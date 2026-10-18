@@ -19,6 +19,48 @@
       "slug": "03-zang-xiang-tupu",
       "title": "藏象学说 → 知识图谱：脏腑关系的图表示",
       "status": "🚧"
+    },
+    {
+      "n": 4,
+      "slug": "04-xulun",
+      "title": "绪论：中医学的学科属性与工程化边界",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-qi-xue-jin-ye",
+      "title": "气血津液 → 状态向量与守恒约束",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-jingluo-tuxing",
+      "title": "经络学说 → 图上的路径与可及性",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-bingyin-bingji",
+      "title": "病因病机 → 因果图与失效模式",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-fangzhi-yuanze",
+      "title": "防治原则 → 策略选择与代价函数",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-tizhi-fabing",
+      "title": "体质与发病 → 先验分布与风险分层",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-siwei-fangfa",
+      "title": "中医思维方法：形式化能做到与做不到的",
+      "status": "📋"
     }
   ]
 }

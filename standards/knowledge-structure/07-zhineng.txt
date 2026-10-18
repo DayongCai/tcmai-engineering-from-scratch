@@ -1,0 +1,174 @@
+# 07-zhineng 智能系 · 章节知识结构（15 学科 · 140 章）
+# 行格式：<NN>|<章节标题>|<slug>
+# 设计原则：智能系是「把中医的判断变成可运行、可评估、可追责的系统」——
+#   每章都要有评测口径；没有评测的模型不算交付。
+
+## 01-yixue-rengong-zhineng-daolun
+01|医学 AI 的问题域与边界|wenti-bianjie
+02|监督学习与医学标注数据|jiandu-biaozhu
+03|评估：敏感度、特异度与校准|pinggu-zhibiao
+04|数据泄漏与分布偏移|shuju-xielou
+05|可解释性与临床采纳|jieshi-caina
+06|医学 AI 的法规与审批|fagui-shenpi
+07|中医场景下的 AI 特殊性|zhongyi-teshu
+08|从论文到落地的失败案例|luodi-shibai
+
+## 02-zhongyi-ruanjian-jiagou-xue
+01|单体、分层与模块边界|danti-fenceng
+02|领域模型：证候与方剂的对象设计|lingyu-moxing
+03|API 设计与接口契约|api-qiyue
+04|数据持久化与版本迁移|chijiu-qianyi
+05|服务拆分与分布式一致性|fuwu-chaifen
+06|消息队列与异步任务|duilie-yibu
+07|可观测性：日志、指标与追踪|keguancha
+08|多租户与权限模型|zuhu-quanxian
+09|离线优先与同步冲突|lixian-tongbu
+10|部署、灰度与回滚|bushu-huigun
+
+## 03-zhongyi-zhineng-shebei
+01|传感与信号链的基本组成|chuangan-xinhao
+02|脉象采集的传感器方案|maixiang-caiji
+03|舌象采集的光源与色卡校正|shexiang-jiaozheng
+04|可穿戴设备的低功耗设计|dipinhao-sheji
+05|信号预处理与噪声抑制|yuchuli-zaosheng
+06|设备端推理与模型压缩|duan-tuili
+07|数据回传与隐私保护|huichuan-yinsi
+08|器械注册与临床验证|zhuce-yanzheng
+09|设备的可靠性测试|kaoxing-ceshi
+10|设备数据与证候标签的对齐|shuju-duiqi
+
+## 04-zhongyi-ziran-yuyan-chuli
+01|中医文本的语料构建|yuliao-goujian
+02|分词与术语识别|fenci-shuyu
+03|古籍的句读与标点恢复|judou-biaodian
+04|实体抽取：症状、药材、方剂|shiti-chouqu
+05|关系抽取：方证与配伍|guanxi-chouqu
+06|文本分类：病案与文献|wenben-fenlei
+07|检索增强与知识问答|jiansuo-zengqiang
+08|大模型的中医知识幻觉|huanjue-wenti
+09|评测集的设计与人工标注|ceping-biaozhu
+10|临床文本的结构化落地|jiegouhua-luodi
+
+## 05-zhongyi-zhishi-tupu
+01|本体设计：概念、属性与关系|benti-sheji
+02|实体与关系的抽取管线|chouqu-guanxian
+03|图数据库的建模与查询|tushujuku-chaxun
+04|知识融合与实体对齐|zhishi-ronghe
+05|推理：规则、路径与嵌入|tuili-lujing
+06|图谱质量评估|zhiliang-pinggu
+07|图谱与检索的联合使用|tupu-jiansuo
+08|时间与版本：知识的演化|shijian-banben
+09|图谱的可视化|keshihua
+10|从图谱到临床决策支持|juece-zhichi
+
+## 06-zhongyi-zhineng-bianzheng
+01|辨证的形式化：从规则到概率|xingshihua-guize
+02|症状采集的界面与信度|caiji-xindu
+03|规则引擎与专家系统|guize-yinqing
+04|贝叶斯网络与概率推理|beiyesi-tuili
+05|症状—证候的嵌入表示|qianru-biaoshi
+06|多证并存的输出设计|duozheng-shuchu
+07|与医生诊断的一致性评估|yizhixing-pinggu
+08|安全性：漏诊与误诊的代价|anquan-daijia
+09|可解释输出的设计|jieshi-shuchu
+10|临床试用的设计与报告|shiyong-baogao
+
+## 07-yixue-tuxiang-shezhen
+01|图像的采集、标定与色彩空间|caiji-biaoding
+02|预处理：去噪、分割与配准|yuchuli-fenge
+03|卷积网络的基本结构|juanji-jiegou
+04|舌体分割与舌苔分离|sheti-fenli
+05|颜色与纹理特征的量化|yanse-wenli
+06|数据集构建与标注一致性|shujuji-biaozhu
+07|分类与回归：舌象 → 证候|fenlei-huigui
+08|模型的可解释性与热力图|reliitu-jieshi
+09|跨设备与跨人群的泛化|fahua-wenti
+10|舌诊客观化的效度验证|xiaodu-yanzheng
+
+## 08-maizhen-keguanhua
+01|脉搏波的生理基础|maibobo-shengli
+02|采集装置与压力标定|caiji-biaoding
+03|滤波与基线漂移校正|lvbo-jiaozheng
+04|时域特征：主波与重搏波|shiyu-tezheng
+05|频域与小波分析|pinyu-xiaobo
+06|特征选择与降维|tezheng-jiangwei
+07|脉象分类模型|maixiang-fenlei
+08|个体差异与基线建模|geti-chayi
+09|与传统脉诊的一致性研究|yizhixing-yanjiu
+10|信号质量与可用性判据|xinhao-zhiliang
+
+## 09-zhongyi-dashuju-fenxi
+01|中医数据的类型与质量|leixing-zhiliang
+02|队列与病案数据的整理|duilie-zhengli
+03|频次统计与关联规则|pinci-guanlian
+04|聚类与证候分型|julei-fenxing
+05|处方规律挖掘的偏倚|pianyi-wajue
+06|时间序列与随访数据|shijian-xulie
+07|可视化与交互分析|keshi-fenxi
+08|分析结论的临床可解释性|jieshi-linchuang
+
+## 10-llm-yu-zhongyi-zhinengti
+01|语言模型的能力边界|nengli-bianjie
+02|提示工程与结构化输出|tishi-jiegouhua
+03|检索增强：把经典放进上下文|jiansuo-zengqiang
+04|工具调用与函数编排|gongju-diaoyong
+05|智能体的规划与记忆|guihua-jiyi
+06|多智能体协作与角色分工|duozhinengti
+07|中医诊疗流程的智能体建模|liucheng-jianmo
+08|幻觉与安全护栏|huanjue-hulan
+09|评测：事实性、一致性与危害|ceping-weihai
+10|本地部署与成本|bendi-bushu
+11|临床使用的人机分工|renji-fengong
+12|监管与责任边界|jianguan-zeren
+
+## 11-zhongyi-jiqiren-xue
+01|医疗机器人的分类与场景|fenlei-changjing
+02|运动学与坐标系|yundongxue-zuobiao
+03|力控与柔顺控制|likong-roushun
+04|推拿机器人的结构与控制|tuina-jiqiren
+05|针灸机器人的定位与进针|zhenjiu-dingwei
+06|人机安全与急停设计|anquan-jiting
+07|机器人操作的疗效评价|liaoxiao-pingjia
+08|器械注册与伦理审查|zhuce-lunli
+
+## 12-shuzi-renti-xuni-fangzhen
+01|人体建模的几何表示|jihe-biaoshi
+02|有限元与生物力学仿真|youxianyuan-fangzhen
+03|针灸穴位的三维定位|xuewei-sanwei
+04|虚拟现实在教学中的应用|vr-jiaoxue
+05|触觉反馈与操作训练|chujue-xunlian
+06|仿真结果的验证方法|yanzheng-fangfa
+07|介入与手术的虚拟演练|shoushu-yanlian
+08|仿真与真实病例的差距|chaju-fenxi
+
+## 13-zhongyi-duomotai-ronghe
+01|模态的类型与对齐问题|leixing-duiqi
+02|舌象、脉象与问诊的融合|ronghe-fangfa
+03|特征级融合与决策级融合|tezheng-ronghe
+04|缺失模态的处理|queshi-moshi
+05|跨模态检索|kuamotai-jiansuo
+06|多模态预训练模型|yuxunlian-moxing
+07|融合模型的可解释性|ronghe-jieshi
+08|数据采集的同步协议|caiji-tongbu
+09|融合增益的评估方法|zengyi-pinggu
+10|多模态数据的隐私与合规|yinsi-hegui
+
+## 14-yixue-shuju-anquan-yinsi
+01|医疗数据的敏感性与分级|mingan-fenji
+02|去标识化与重识别风险|qubiaoshi-fengxian
+03|加密、脱敏与令牌化|jiami-tuomin
+04|访问控制与审计|fangwen-shenji
+05|联邦学习与隐私计算|lianbang-yinsi
+06|数据出境的合规要求|chujing-hegui
+07|安全事件响应与演练|shijian-xiangying
+08|数据伦理审查的要点|lunli-shencha
+
+## 15-zhongyi-ai-lunli-zhili
+01|医疗 AI 的伦理框架|lunli-kuangjia
+02|知情同意与算法告知|zhiqing-gaozhi
+03|偏见与公平性|pianjian-gongping
+04|责任归属与举证|zeren-guishu
+05|中医知识的所有权与归属|zhishi-quanshu
+06|模型卡与透明度报告|moxingka-baogao
+07|治理机制与行业自律|zhili-jizhi
+08|国际规则与跨境协作|guoji-xiezuo

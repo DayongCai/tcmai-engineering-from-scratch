@@ -1,0 +1,183 @@
+# 01-zhongyi 中医系 · 章节知识结构（15 学科 · 150 章）
+# 行格式：<NN>|<章节标题>|<slug>   —— 由 scripts/build_knowledge_structure.js 摊成各学科 chapters.json
+# 设计原则：每一章都要能回指经典原文，并给出一件可运行的工程产物；标题不写「概述」「简介」这类空壳。
+
+## 01-zhongyi-jichu-lilun
+01|阴阳学说 → 二分类：从零实现逻辑回归|yin-yang-er-fenlei
+02|五行学说 → 多分类：从零实现 Softmax|wu-xing-duo-fenlei
+03|藏象学说 → 知识图谱：脏腑关系的图表示|zang-xiang-tupu
+04|绪论：中医学的学科属性与工程化边界|xulun
+05|气血津液 → 状态向量与守恒约束|qi-xue-jin-ye
+06|经络学说 → 图上的路径与可及性|jingluo-tuxing
+07|病因病机 → 因果图与失效模式|bingyin-bingji
+08|防治原则 → 策略选择与代价函数|fangzhi-yuanze
+09|体质与发病 → 先验分布与风险分层|tizhi-fabing
+10|中医思维方法：形式化能做到与做不到的|siwei-fangfa
+
+## 02-yi-gu-wen
+01|医古文与语料工程：从训诂到可检索文本|yiguwen-yuliao
+02|通假字·古今字·异体字 → 归一化表|tongjia-yitizi
+03|词类活用与特殊句式 → 句法分析|cilei-huoyong
+04|医籍序跋选读 → 文体与意图分类|xuba-wenti
+05|《素问》选段精读 → 术语抽取|suwen-xuandu
+06|医案叙事结构 → 事件与人物抽取|yian-xushi
+07|避讳·缺笔·错简 → 版本校勘与文本对齐|bihui-jiaokan
+08|繁简转换与异体字表的工程实现|fanjian-gongcheng
+
+## 03-zhongguo-yixue-shi
+01|先秦两汉：从巫医到理论体系|xianqin-lianghan
+02|魏晋隋唐：本草与方书的积累|weijin-suitang
+03|宋金元：学派分化与局方之学|songjinyuan
+04|明清：温病学兴起与《本草纲目》|mingqing
+05|近现代：中西医汇通与制度化|jindai-huitong
+06|出土文献：简帛医书的发现与释读|chutu-jianbo
+07|医史文献的数字化与编年索引|yishi-shuzihua
+08|医学史研究方法：史料批判与量化|yishi-fangfa
+
+## 04-zhongyi-tizhi-xue
+01|体质的概念与九种体质类型|tizhi-gainian
+02|体质的形成：先天禀赋与后天因素|tizhi-chengyin
+03|九种体质的判定与量表设计|tizhi-liangbiao
+04|体质与证候：易感性与转化关系|tizhi-zhenghou
+05|体质辨识的数据化：问卷 → 特征向量|tizhi-tezheng
+06|体质与疾病易感性的流行病学|tizhi-liuxing
+07|体质调理与治未病的干预设计|tizhi-tiaoli
+08|体质研究的可重复性与测量误差|tizhi-wucha
+
+## 05-zhongyi-zhen-duan-xue
+01|四诊总论：信息采集的偏差与信度|sizhen-zonglun
+02|望诊：神色形态 → 图像特征|wangzhen-shense
+03|舌诊：舌质舌苔 → 颜色与纹理特征|shezhen-tese
+04|闻诊：声音与气味 → 声学与气味谱|wenzhen-shengyin
+05|问诊：十问 → 结构化问卷设计|wenzhen-wenjuan
+06|切诊：脉象的物理基础与取脉|qiezhen-maixiang
+07|八纲辨证 → 四维特征空间|bagang-bianzheng
+08|脏腑辨证 → 规则表与权重|zangfu-bianzheng
+09|气血津液辨证 → 状态判定|qixue-bianzheng
+10|六经与卫气营血 → 序列状态机|liujing-weifen
+11|证候规范化：ICD-11 与术语对齐|zhenghou-guifan
+12|诊断推理的误差来源与可解释性|zhenduan-wucha
+
+## 06-neijing-xuandu
+01|《素问》成书与文本结构|suwen-chengshu
+02|阴阳应象大论：范畴与映射|yinyang-yingxiang
+03|藏象与五脏的系统观|zangxiang-xitong
+04|经脉别论与气血循环|jingmai-bielun
+05|病机十九条：症状到病机的映射|bingji-shijiu
+06|诊法与脉要精微论|zhenfa-maiyao
+07|治则与标本：决策顺序|zhize-biaoben
+08|运气七篇：周期与外部变量|lunqi-qipian
+09|《灵枢》九针与刺法|lingshu-jiuzhen
+10|内经的量化解读与其边界|neijing-lianghua
+
+## 07-shanghanlun
+01|伤寒论的成书、版本与条文结构|chengshu-banben
+02|六经辨证的框架：从太阳到厥阴|liujing-kuangjia
+03|太阳病：表证的判定与麻黄汤类|taiyang-biao
+04|阳明病：里热实证与承气汤类|yangming-li
+05|少阳病：半表半里与小柴胡汤|shaoyang-banbiao
+06|太阴病：里虚寒与理中汤类|taiyin-xuhan
+07|少阴病：心肾阳虚与四逆汤类|shaoyin-xuyang
+08|厥阴病：寒热错杂与乌梅丸|jueyin-hanre
+09|合病并病：多证并存的判定|hebing-bingbing
+10|方证对应：症状群 → 方剂的匹配|fangzheng-duiying
+11|伤寒条文的检索与 BM25 复现|tiaowen-jiansuo
+12|经方剂量的度量衡与折算争议|jiliang-zhesuan
+
+## 08-jingui-yaolue
+01|金匮的成书与杂病分类|chengshu-zabing
+02|脏腑经络先后病：传变与预防|zangfu-chuanbian
+03|痉湿暍病：外感杂病的辨识|jing-shi-ye
+04|百合狐惑阴阳毒：少见病的鉴别|baihe-huhuo
+05|疟病与中风历节：节律与痹阻|nueb-zhongfeng
+06|血痹虚劳：虚损的分层|pibai-xulao
+07|痰饮咳嗽：水液代谢的失效|tanyin-kesou
+08|消渴与淋病：津液与排泄|xiaoke-linbing
+09|妇人病三篇：经带胎产的辨证|furen-sanpian
+10|杂病方剂的配伍规律与统计|zabing-peiwu
+
+## 09-wenbing-xue
+01|温病的范围与伤寒的边界|wenbing-fanwei
+02|卫气营血辨证：四层状态机|weiqi-yingxue
+03|三焦辨证：病位的纵向坐标|sanjiao-bianzheng
+04|风温与春温：新感与伏邪|fengwen-chunwen
+05|暑温与湿温：季节与湿热的耦合|shuwen-shiwen
+06|秋燥与伏暑：燥邪的辨证|qiuzzao-fushu
+07|温病舌诊与斑疹的辨识|wenbing-shezhen
+08|清热透邪与养阴的治法次序|qingre-yangyin
+09|温病条辨的方剂体系|tiaobian-fangji
+10|疫病与公共卫生：历史的建模|yibing-gongwei
+
+## 10-zhongyi-neike-xue
+01|肺系病证：咳嗽与喘证|feixi-kesou
+02|肺痈肺痿：化脓与萎弱|feiyong-feiwei
+03|心系病证：心悸、胸痹、不寐|xinxi-bingzheng
+04|脾胃病证：胃痛、痞满、呕吐|piwei-bingzheng
+05|肠病：泄泻、痢疾、便秘|changbing-xiexie
+06|肝胆病证：胁痛、黄疸、眩晕|gandan-bingzheng
+07|肾系病证：水肿、淋证、癃闭|shenxi-bingzheng
+08|气血津液病证：郁证、血证、消渴|qixue-jinye-bing
+09|肢体经络病证：痹证、痿证、腰痛|zhiti-jingluo
+10|中风：从闭证脱证到分型救治|zhongfeng
+11|虚劳与内伤发热：慢性耗损|xulao-fare
+12|内科病案的辨证路径复现|neike-bingan
+13|证候—方剂—疗效的因果推断|zhengfang-liaoxiao
+14|内科分型与 ICD-11 的映射|fenxing-icd11
+
+## 11-zhongyi-waike-xue
+01|外科的范围：疮疡、乳房、瘿瘤|waike-fanwei
+02|疮疡总论：痈疽疔疖的鉴别|chuangyang-zonglun
+03|乳房疾病：乳痈、乳癖、乳岩|rufang-jibing
+04|瘿病与瘤：甲状腺与体表肿块|yingbing-liu
+05|皮肤病：湿疮、瘾疹、白疕|pifubing
+06|肛肠病：痔、瘘、裂|gangchang-bing
+07|周围血管病：脱疽与静脉病|zhouwei-xueguan
+08|外伤与烧伤的中医处理|waishang-shaoshang
+09|外治法的剂型与工艺|waizhi-jixing
+10|外科辨证的图像化与随访数据|waike-tuxiang
+
+## 12-zhongyi-fuke-xue
+01|妇科学的范围与生理基础|fuke-fanwei
+02|月经病：周期、经量、痛经|yuejing-bing
+03|崩漏与闭经：出血的两端|benglou-bijing
+04|带下病：分泌物的辨证|daixia-bing
+05|妊娠病：恶阻、胎漏、胎动不安|renshen-bing
+06|产后病：三审与三病|chanhou-bing
+07|不孕症：排卵与胞宫|buzheng
+08|妇科杂病：癥瘕与脏躁|fuke-zabing
+09|妇科方剂的周期用药规律|zhouqi-yongyao
+10|妇科数据：周期记录与预测模型|zhouqi-shuju
+
+## 13-zhongyi-erke-xue
+01|小儿生理病理特点：稚阴稚阳|xiaoer-shengli
+02|儿科四诊：望指纹与问诊的特殊性|erke-sizhen
+03|小儿肺系病：感冒、咳嗽、肺炎喘嗽|erke-feixi
+04|小儿脾系病：积滞、疳证、泄泻|erke-pixi
+05|小儿心肝病：惊风、癫痫、多动|erke-xingan
+06|小儿肾系病：水肿、遗尿|erke-shenxi
+07|时行疾病：麻疹、水痘、痄腮|shixing-jibing
+08|新生儿疾病与喂养|xinshenger-jibing
+09|小儿用药剂量与服药方法|jiliang-fufa
+10|生长发育曲线与中医体质|shengzhang-quxian
+
+## 14-zhongyi-zhenghou-xue
+01|证候的概念：症状群还是推理节点|zhenghou-gainian
+02|证候的构成要素：病性、病位、病势|goucheng-yaosu
+03|八纲与脏腑辨证的层级关系|bagang-cengji
+04|证候命名规范与 ICD-11 对齐|mingming-guifan
+05|鉴别诊断：相似证候的区分|jianbie-zhenduan
+06|证候演变：传变与转归的建模|yanbian-jianmo
+07|证候的量化：量表与权重|lianghua-quanzhong
+08|证候与病机的逆转推理|nizhuan-tuili
+09|证候数据库的设计与质量|shujuku-zhiliang
+10|证据分级与外部验证|zhengju-fenji
+
+## 15-zhongyi-gejia-xueshuo
+01|学派的形成：地域、师承与文本|xuepai-xingcheng
+02|刘完素与火热论|liuwansu-huore
+03|张从正与攻邪论|zhangcongzheng-gongxie
+04|李杲与脾胃论|ligao-piwei
+05|朱震亨与滋阴论|zhuzhenheng-ziyin
+06|张景岳与温补学派|zhangjingyue-wenbu
+07|叶天士与温病学派|yetianshi-wenbing
+08|学派观点的对照阅读与结构化|duibi-jiegouhua

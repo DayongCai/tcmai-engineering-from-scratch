@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "做 20 个独立检验、α=0.05，什么都不做也至少出现一次「显著」的概率约为？",
+      "options": [
+        "5%",
+        "20%",
+        "64%",
+        "95%"
+      ],
+      "correct": 2,
+      "explanation": "1-(1-0.05)^20 ≈ 0.64。"
+    },
+    {
+      "stage": "check",
+      "question": "Bonferroni 控制的是？",
+      "options": [
+        "错误发现率（FDR）",
+        "族错误率（FWER）：任意一次假阳性的概率",
+        "统计功效",
+        "样本量"
+      ],
+      "correct": 1,
+      "explanation": "Bonferroni 用 α/m，是最保守的 FWER 控制。"
+    },
+    {
+      "stage": "check",
+      "question": "BH 的正确实现是？",
+      "options": [
+        "拒绝所有 p ≤ α/m 的检验",
+        "把 p 升序排列，找最大 k 使 p(k) ≤ (k/m)·α，拒绝前 k 个",
+        "随机挑一半检验做校正",
+        "把所有 p 值乘以 m"
+      ],
+      "correct": 1,
+      "explanation": "常见错误是只挑「过阈值」的那些，而不是取前 k 个。"
+    },
+    {
+      "stage": "check",
+      "question": "探索性筛选题，一般更合适的是？",
+      "options": [
+        "Bonferroni",
+        "BH（控 FDR）",
+        "不校正",
+        "把 α 调到 0.2"
+      ],
+      "correct": 1,
+      "explanation": "筛选阶段在意「这批发现里错多少比例」，FDR 更贴合，也保留功效。"
+    },
+    {
+      "stage": "post",
+      "question": "校正后不显著，最准确的解读是？",
+      "options": [
+        "证明没有效应",
+        "在校正口径与现有样本量下不足以宣称；真效应可能被校正掉",
+        "数据造错了",
+        "应该改用未校正的结果"
+      ],
+      "correct": 1,
+      "explanation": "不显著 ≠ 无效；这是校正的代价，要写进局限性。"
+    },
+    {
+      "stage": "post",
+      "question": "下面哪种行为是校正无法弥补的？",
+      "options": [
+        "指标多达 20 个",
+        "主结局在分析完成后才确定",
+        "使用 BH 而非 Bonferroni",
+        "α 设在 0.05"
+      ],
+      "correct": 1,
+      "explanation": "事后挑结局属于设计层面的偏倚，任何校正都只是装饰；解药是预注册。"
+    }
+  ]
+}

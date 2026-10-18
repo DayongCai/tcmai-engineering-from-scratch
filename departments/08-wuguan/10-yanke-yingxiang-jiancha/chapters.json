@@ -1,5 +1,54 @@
 {
   "slug": "10-yanke-yingxiang-jiancha",
   "title": "眼科影像与检查技术",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-xiliedeng-jiancha",
+      "title": "裂隙灯与眼前段检查",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-diban-zhaoxiang",
+      "title": "眼底照相与 OCT",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-shiye-jiancha",
+      "title": "视野检查与判读",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-yanya-celiang",
+      "title": "眼压测量与角膜厚度",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-chaosheng-shengwu",
+      "title": "眼部超声与生物测量",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-yingguangsu-zaoying",
+      "title": "荧光素血管造影",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-baogao-zhikong",
+      "title": "影像报告的规范与质控",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-zuhe-jiedu",
+      "title": "检查结果的组合解读",
+      "status": "📋"
+    }
+  ]
 }

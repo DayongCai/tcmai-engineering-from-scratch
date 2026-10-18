@@ -7,7 +7,7 @@
 | 学科数 | 15 |
 | 总学时 | 990 |
 | 章节目标 | 140 |
-| 已建章节 | 0 |
+| 已建章节 | 1 |
 | 涉及学期 | 第3, 第4, 第5, 第6, 第7, 第8 |
 
 ## 学科清单
@@ -19,7 +19,7 @@
 | 03 | [中医智能设备与可穿戴设备](03-zhongyi-zhineng-shebei/) | TCM Smart Devices & Wearables | Build | 4 | 72 | 0/10 | 脉象/舌象采集→传感器融合 / 边缘推理→模型量化 | ⬚ |
 | 04 | [中医自然语言处理](04-zhongyi-ziran-yuyan-chuli/) | TCM Natural Language Processing | Build | 5 | 72 | 0/10 | 医案分词→BPE 从零 / 实体识别→序列标注 | ⬚ |
 | 05 | [中医知识图谱](05-zhongyi-zhishi-tupu/) | TCM Knowledge Graph | Build | 5 | 72 | 0/10 | 实体关系→三元组抽取 / 推理→图神经网络 | ⬚ |
-| 06 | [中医智能辨证系统](06-zhongyi-zhineng-bianzheng/) | Intelligent TCM Syndrome Differentiation | Build | 6 | 72 | 0/10 | 四诊合参→多模态融合 / 证型输出→可解释性 | ⬚ |
+| 06 | [中医智能辨证系统](06-zhongyi-zhineng-bianzheng/) | Intelligent TCM Syndrome Differentiation | Build | 6 | 72 | 1/10 | 四诊合参→多模态融合 / 证型输出→可解释性 | 🚧 |
 | 07 | [医学图像处理与舌诊客观化](07-yixue-tuxiang-shezhen/) | Medical Imaging & Tongue Diagnosis | Build | 6 | 72 | 0/10 | 舌象分割→CNN / 颜色校正→色彩空间变换 | ⬚ |
 | 08 | [脉诊客观化与信号处理](08-maizhen-keguanhua/) | Pulse Diagnosis Signal Processing | Build | 6 | 72 | 0/10 | 脉搏波→小波变换 / 特征提取→时频分析 | ⬚ |
 | 09 | [中医大数据分析](09-zhongyi-dashuju-fenxi/) | TCM Big Data Analytics | Build | 6 | 54 | 0/8 | 医案仓库→ETL / 证型聚类→无监督学习 | ⬚ |

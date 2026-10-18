@@ -1,5 +1,54 @@
 {
   "slug": "11-zhongyao-yaodai-donglixue",
   "title": "中药药代动力学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-jiben-canshu",
+      "title": "药代动力学的基本参数",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-fangshi-moxing",
+      "title": "房室模型与非房室分析",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-duochengfen-tedian",
+      "title": "中药多成分的药代特点",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-xishou-shouguo",
+      "title": "吸收与首过效应",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-fenbu-daixie",
+      "title": "分布、代谢与排泄",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-xianghu-zuoyong",
+      "title": "药物相互作用与配伍",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-zhenghou-chayi",
+      "title": "证候状态下的药代差异",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-qunti-yaodai",
+      "title": "群体药代与个体化给药",
+      "status": "📋"
+    }
+  ]
 }

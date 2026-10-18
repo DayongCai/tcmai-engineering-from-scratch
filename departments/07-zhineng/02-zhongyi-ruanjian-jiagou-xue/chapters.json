@@ -1,5 +1,66 @@
 {
   "slug": "02-zhongyi-ruanjian-jiagou-xue",
   "title": "中医软件架构学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-danti-fenceng",
+      "title": "单体、分层与模块边界",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-lingyu-moxing",
+      "title": "领域模型：证候与方剂的对象设计",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-api-qiyue",
+      "title": "API 设计与接口契约",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-chijiu-qianyi",
+      "title": "数据持久化与版本迁移",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-fuwu-chaifen",
+      "title": "服务拆分与分布式一致性",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-duilie-yibu",
+      "title": "消息队列与异步任务",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-keguancha",
+      "title": "可观测性：日志、指标与追踪",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-zuhu-quanxian",
+      "title": "多租户与权限模型",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-lixian-tongbu",
+      "title": "离线优先与同步冲突",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-bushu-huigun",
+      "title": "部署、灰度与回滚",
+      "status": "📋"
+    }
+  ]
 }

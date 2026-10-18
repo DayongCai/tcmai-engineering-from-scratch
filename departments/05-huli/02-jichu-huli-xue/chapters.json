@@ -1,5 +1,66 @@
 {
   "slug": "02-jichu-huli-xue",
   "title": "基础护理学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-fanwei-lunli",
+      "title": "基础护理的范围与伦理要求",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-wujun-gankong",
+      "title": "无菌技术与感染控制",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-shengming-tizheng",
+      "title": "生命体征的测量与判读",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-geiyao-zhushe",
+      "title": "给药途径与注射技术",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-jingmai-shuye",
+      "title": "静脉输液与并发症",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-yangliao-qidao",
+      "title": "氧疗、吸痰与气道管理",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-daoniao-paixie",
+      "title": "导尿、灌肠与排泄护理",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-yachuang-yufang",
+      "title": "压疮的评估与预防",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-anquan-buliang",
+      "title": "患者安全与不良事件报告",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-caozuo-kaohe",
+      "title": "护理操作的标准与考核",
+      "status": "📋"
+    }
+  ]
 }

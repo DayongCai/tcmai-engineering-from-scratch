@@ -1,5 +1,78 @@
 {
   "slug": "05-zhongyi-zhen-duan-xue",
   "title": "中医诊断学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-sizhen-zonglun",
+      "title": "四诊总论：信息采集的偏差与信度",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-wangzhen-shense",
+      "title": "望诊：神色形态 → 图像特征",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-shezhen-tese",
+      "title": "舌诊：舌质舌苔 → 颜色与纹理特征",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-wenzhen-shengyin",
+      "title": "闻诊：声音与气味 → 声学与气味谱",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-wenzhen-wenjuan",
+      "title": "问诊：十问 → 结构化问卷设计",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-qiezhen-maixiang",
+      "title": "切诊：脉象的物理基础与取脉",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-bagang-bianzheng",
+      "title": "八纲辨证 → 四维特征空间",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-zangfu-bianzheng",
+      "title": "脏腑辨证 → 规则表与权重",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-qixue-bianzheng",
+      "title": "气血津液辨证 → 状态判定",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-liujing-weifen",
+      "title": "六经与卫气营血 → 序列状态机",
+      "status": "📋"
+    },
+    {
+      "n": 11,
+      "slug": "11-zhenghou-guifan",
+      "title": "证候规范化：ICD-11 与术语对齐",
+      "status": "📋"
+    },
+    {
+      "n": 12,
+      "slug": "12-zhenduan-wucha",
+      "title": "诊断推理的误差来源与可解释性",
+      "status": "📋"
+    }
+  ]
 }

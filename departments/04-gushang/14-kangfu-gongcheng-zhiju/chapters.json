@@ -1,5 +1,54 @@
 {
   "slug": "14-kangfu-gongcheng-zhiju",
   "title": "康复工程与支具学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-fanwei-fenlei",
+      "title": "康复工程的范围与分类",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-zhiju-lixue",
+      "title": "支具的生物力学原理",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-zhiju-xuanpei",
+      "title": "脊柱与四肢支具的选配",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-jiazhi-dapei",
+      "title": "假肢的基本结构与适配",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-jiaoxing-xiedian",
+      "title": "矫形鞋垫与足部辅具",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-fuzhu-pinggu",
+      "title": "辅助器具的评估与适配",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-threedp-dayin",
+      "title": "3D 打印在支具中的应用",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-yicongxing-pingjia",
+      "title": "支具依从性与效果评价",
+      "status": "📋"
+    }
+  ]
 }

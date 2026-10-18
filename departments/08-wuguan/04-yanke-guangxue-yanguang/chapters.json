@@ -1,5 +1,54 @@
 {
   "slug": "04-yanke-guangxue-yanguang",
   "title": "眼科光学与验光",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-quguang-chengxiang",
+      "title": "眼的屈光系统与成像",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-quguangbuzheng",
+      "title": "屈光不正的类型与成因",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-yanguang-liucheng",
+      "title": "验光的方法与流程",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-dushu-huansuan",
+      "title": "镜片度数与处方换算",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-laoshi-shuangyan",
+      "title": "老视与双眼视功能",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-shigongneng-jiancha",
+      "title": "视功能检查与低视力",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-shoushu-shiying",
+      "title": "屈光手术的适应证",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-wucha-anquan",
+      "title": "验光误差与处方安全",
+      "status": "📋"
+    }
+  ]
 }

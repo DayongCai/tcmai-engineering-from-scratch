@@ -1,0 +1,177 @@
+# 02-zhongyao 中药系 · 章节知识结构（15 学科 · 144 章）
+# 行格式：<NN>|<章节标题>|<slug>
+# 设计原则：本草—方剂—鉴定—药理—制剂是一条链，每章都要落到「可测量的一种性质」上。
+
+## 01-zhongyaoxue
+01|中药学的研究对象与性能：四气五味|xingneng-siqi
+02|解表药：发散风寒与风热|jiebiaoyao-fengh
+03|清热药：泻火、解毒与凉血|qingreyao-fenlei
+04|泻下药与祛湿药|xiexia-qushi
+05|温里药与理气药|wenli-liqi
+06|消食药、驱虫药与止血药|xiaoshi-zhixue
+07|活血化瘀药：分类与配伍|huoxue-huayu
+08|化痰止咳平喘药|huatan-kesou
+09|安神药、平肝息风药与开窍药|anshen-pinggan
+10|补虚药：补气、补血、补阴、补阳|buxuyao-fenlei
+11|收涩药与涌吐药|shouse-yongtu
+12|中药性能的编码化：性味归经 → 向量|xingneng-bianma
+
+## 02-yaoyong-zhiwu-xue
+01|植物细胞与组织：显微鉴定的基础|xibao-zuzhi
+02|根、茎、叶的形态与药材性状|qiguan-xingtai
+03|花、果实、种子的分类学意义|huaguo-zhongzi
+04|植物分类系统与药用植物科属|fenlei-keshu
+05|药用植物的生态环境与分布|shengtai-fenbu
+06|植物学名的命名法规与拉丁名|lading-mingming
+07|显微制片与组织特征测量|xianwei-zhizhen
+08|腊叶标本与图像识别的数据集|xialye-shujuji
+
+## 03-fangjixue
+01|方剂与治法：方从法出|fangfa-ducong
+02|君臣佐使：组方的角色结构|junchen-zuoshi
+03|解表剂：辛温与辛凉的分野|jiebiaoji
+04|泻下剂与和解剂|xiexia-hejie
+05|清热剂与祛暑剂|qingre-qushu
+06|温里剂与补益剂|wenli-buyi
+07|固涩剂与安神剂|guse-anshen
+08|理气剂与理血剂|liqi-lixue
+09|治风剂与治燥剂|zhifeng-zhizao
+10|祛湿剂与祛痰剂|qushi-qutan
+11|消食剂、驱虫剂与涌吐剂|xiaoshi-quchong
+12|方剂配伍的数据化：药物共现网络|peiwu-gongxian
+
+## 04-zhongyao-ziyuan-xue
+01|中药资源的分布与区划|fenbu-quhua
+02|道地药材的形成与评价|daodi-xingcheng
+03|野生资源的调查与蕴藏量估算|yewai-diaocha
+04|栽培技术与规范化种植|zaipei-gap
+05|资源的可持续利用与替代|kechixu-tidai
+06|濒危物种保护与政策|binwei-baohu
+07|资源普查数据的建库与制图|pucha-shujuku
+08|供需模型与价格波动的量化|gongxu-moxing
+
+## 05-zhongyao-jianding-xue
+01|鉴定的依据：药典、标准与性状|jianding-yiju
+02|来源鉴定：基原与拉丁名核对|laiyuan-jianding
+03|性状鉴定：形色气味的大小与比例|xingzhuang-jianding
+04|显微鉴定：组织与粉末特征|xianwei-jianding
+05|理化鉴定：薄层与色谱指纹|lihua-jianding
+06|常见伪品与混淆品的鉴别|weipin-jianbie
+07|贵重药材的真伪判定|guizhong-zhenwei
+08|DNA 条形码与分子鉴定|dna-tiaoxingma
+09|鉴定报告的规范与可追溯|baogao-guifan
+10|图像识别在性状鉴定中的误判分析|tuxiang-wupan
+
+## 06-zhongyao-huaxue
+01|中药化学成分的类型与分布|huaxue-leixing
+02|提取分离：溶剂、色谱与制备|tiqu-fenli
+03|生物碱类：结构与活性|shengwujian
+04|黄酮类：结构与显色|huangtong
+05|萜类与挥发油|tielei-huiyou
+06|皂苷类：溶血与表面活性|zaogan-lei
+07|醌类与香豆素|kun-xiangdousu
+08|多糖与鞣质|duotang-rouzhi
+09|结构鉴定：波谱解析入门|jiegou-bopu
+10|有效成分与药效物质基础|yaoxiao-wuzhi
+11|成分含量测定与方法学验证|hanshang-ceding
+12|成分—靶点网络与活性预测|chengfen-badian
+
+## 07-zhongyao-yaoli-xue
+01|中药药理的研究范式与特殊性|yanjiu-fanshi
+02|药效学：量效关系与模型选择|yaoxiaoxue
+03|解表、清热类药的药理|jiebiao-yaoli
+04|活血化瘀与止血类药的药理|huoxue-yaoli
+05|补虚类药的免疫调节|buxu-mianyi
+06|化痰平喘与安神类药的药理|huatan-anshen
+07|中药的毒性与安全评价|duxing-anquan
+08|药代动力学与配伍影响|yaodai-peiwu
+09|动物模型与证候模型的争议|zhengxing-moxing
+10|药理证据的分级与临床转化|zhengju-fenji
+
+## 08-zhongyao-paozhi-xue
+01|炮制的目的与历史源流|mudi-yuanliu
+02|炒法：清炒与加辅料炒|chaofa
+03|炙法与酒醋蜜盐的辅料|zhifa-fuliao
+04|煅法与煅淬|duanfa
+05|蒸煮燀与发酵|zhengzhu-fajiao
+06|复制法与特殊炮制|fuzhi-fa
+07|炮制对成分与药效的影响|chengfen-yingxiang
+08|炮制工艺的标准化与质控|gongyi-biaozhun
+
+## 09-zhongyao-yaoji-xue
+01|剂型选择与给药途径|jixing-xuanze
+02|汤剂与煎煮工艺的参数|tangji-jianzhu
+03|散剂、丸剂与片剂|sanji-wanpian
+04|胶囊、颗粒与口服液|jiaonang-keli
+05|注射剂与无菌工艺|zhusheji-wujun
+06|外用制剂：膏药、软膏与贴剂|waiyong-gaoyao
+07|缓释与靶向给药系统|huanshi-baxiang
+08|制剂的稳定性与有效期|wendingxing
+09|生物利用度与体外释放|shengwu-liyongdu
+10|制剂工艺的放大与验证|fangda-yanzheng
+
+## 10-zhongyao-fenxi-xue
+01|分析方法的验证：准确度与精密度|fangfa-yanzheng
+02|样品前处理：提取、净化与浓缩|yangpin-qianchuli
+03|薄层色谱与高效液相|tlc-hplc
+04|气相色谱与质谱联用|gc-ms
+05|液质联用与成分鉴定|lc-ms
+06|指纹图谱与相似度评价|zhiwen-tupu
+07|多成分定量与一测多评|duochengfen-dingliang
+08|重金属、农残与真菌毒素|zhongjinshu-nongcan
+09|标准物质与量值溯源|biaozhunwuzhi
+10|分析数据的完整性与审计追踪|shuju-wanzhengxing
+
+## 11-zhongyao-yaodai-donglixue
+01|药代动力学的基本参数|jiben-canshu
+02|房室模型与非房室分析|fangshi-moxing
+03|中药多成分的药代特点|duochengfen-tedian
+04|吸收与首过效应|xishou-shouguo
+05|分布、代谢与排泄|fenbu-daixie
+06|药物相互作用与配伍|xianghu-zuoyong
+07|证候状态下的药代差异|zhenghou-chayi
+08|群体药代与个体化给药|qunti-yaodai
+
+## 12-daodi-yaocai
+01|道地性的概念与历史产区|daodi-gainian
+02|四大怀药与浙八味的产区特征|huaiyao-zhebawei
+03|产地对成分的影响：土壤与气候|chandi-chengfen
+04|采收时节与有效成分的消长|caishou-shijie
+05|产地加工：干燥、发汗与蒸煮|jiagong-ganzao
+06|产地趁鲜切制与流通规范|chenxian-qiezhi
+07|地理标志与品牌保护|dili-biaozhi
+08|产区溯源的编码与区块链|suyuan-bianma
+
+## 13-zhongchengyao-linchuang
+01|中成药的分类与批准文号|fenlei-pizhun
+02|剂型选择与临床适配|jixing-linchuang
+03|中成药的辨证使用与误区|bianzheng-wuqu
+04|中西药联用的相互作用|zhongxi-lianyong
+05|常见中成药的适应证与禁忌|shiyingzheng-jinji
+06|含毒性药材的中成药管理|duxing-guanli
+07|中成药说明书的信息完整性|shuomingshu
+08|上市后再评价与不良反应监测|zai-pingjia
+09|基药目录与医保支付|jiyao-yibao
+10|处方审核规则的编码化|chufang-shenhe
+
+## 14-peiwu-yu-jinji
+01|七情：单行、相须、相使|qinqing-xiangxu
+02|相畏、相杀、相恶、相反|xiangwei-xiangfan
+03|十八反与十九畏的文献考据|shiba-fan
+04|妊娠禁忌与毒性药材|renshen-jinji
+05|配伍禁忌的实验验证方法|shiyan-yanzheng
+06|剂量与炮制对配伍的影响|jiliang-paozhi
+07|配伍规则的图表示与冲突检测|peiwu-chongtu
+08|临床配伍差错的根因分析|chacuo-genyin
+
+## 15-zhongyao-xinyao-yanfa
+01|新药研发的路径与法规框架|yanfa-lujing
+02|临床前研究：药效、毒理与药代|linchuangqian
+03|处方筛选与工艺路线设计|chufang-shaixuan
+04|质量标准的研究与起草|zhiliang-biaozhun
+05|经典名方的开发路径|jingdian-mingfang
+06|临床试验设计与统计|linchuang-sheji
+07|中药注册分类与申报资料|zhuce-fenlei
+08|真实世界证据与循证评价|zhenshi-shijie
+09|知识产权与专利布局|zhuanli-buju
+10|研发项目管理的里程碑与风险|xiangmu-fengxian

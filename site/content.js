@@ -362,6 +362,950 @@ window.TCMAI_CONTENT = {
     ],
     "video": "platform/courses/01-zhongyi/01-zhongyi-jichu-lilun/03-zang-xiang-tupu/video/lesson.mp4",
     "videoPoster": "platform/courses/01-zhongyi/01-zhongyi-jichu-lilun/03-zang-xiang-tupu/frames/001.png"
+  },
+  "01-zhongyi/05-zhongyi-zhen-duan-xue/08-zangfu-bianzheng": {
+    "key": "01-zhongyi/05-zhongyi-zhen-duan-xue/08-zangfu-bianzheng",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "05-zhongyi-zhen-duan-xue",
+    "subjectTitle": "中医诊断学",
+    "chapterSlug": "08-zangfu-bianzheng",
+    "n": 8,
+    "title": "第 8 章 · 脏腑辨证 → 规则表与权重：把「肝气郁结」写成可复核的打分",
+    "motto": "「见肝之病，则知肝当传之于脾，故先实其脾气。」——《难经·七十七难》",
+    "problem": "病人说「胸闷、叹气、胁胀、心情不好」，你能脱口而出「肝气郁结」，但让你说清「凭哪几条、每条占多少、还差哪条才能定」——你答不上来。",
+    "roots": "环境逼迫(门诊三分钟一个病人，说不清依据就只能依赖老师的结论) + 知识积累(脏腑辨证 × 加权规则表 = 一份能逐条核对、能报出证据缺口的判断)",
+    "html": "<h1 id=\"第-8-章-脏腑辨证-规则表与权重-把-肝气郁结-写成可复核的打分\">第 8 章 · 脏腑辨证 → 规则表与权重：把「肝气郁结」写成可复核的打分</h1>\n<blockquote><p><strong>MOTTO:</strong> 「见肝之病，则知肝当传之于脾，故先实其脾气。」——《难经·七十七难》</p>\n<p><strong>PROBLEM:</strong> 病人说「胸闷、叹气、胁胀、心情不好」，你能脱口而出「肝气郁结」，但让你说清「凭哪几条、每条占多少、还差哪条才能定」——你答不上来。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(门诊三分钟一个病人，说不清依据就只能依赖老师的结论) + 知识积累(脏腑辨证 × 加权规则表 = 一份能逐条核对、能报出证据缺口的判断)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>中医诊断学</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>08 / 12</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>4 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>把脏腑辨证写成一张「症状 → 证候」的规则表，主症/次症的权重可解释</li><li>用不足 60 行标准库代码实现打分、排序、阈值判定与<strong>证据缺口</strong>输出</li><li>说清为什么「分数最高的证候」不等于「应该下的诊断」——剩下那部分是医生的责任</li><li>用两个只差一两条症状的病例，验证规则表能把它们分开</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"中医-脏腑辨证的位置\">中医：脏腑辨证的位置</h3>\n<p>脏腑辨证不是另起一套体系，它是八纲在<strong>病位</strong>维度上的展开。《素问·五脏生成篇》讲「五脏之气，故色见青如草兹者死」，把面色、症状与脏气联系起来；后世《景岳全书·传忠录》把辨证拆成「表里寒热虚实」，病位仍要落到脏腑。所以一张合格的脏腑辨证规则表至少要回答两件事：<strong>哪一脏</strong>、<strong>什么性质</strong>（寒热虚实）。</p>\n<p>教材把每一脏的证候写成「主症 + 次症 + 舌脉 + 兼症」的固定结构。这个结构本身就是一张可执行的打分表：主症是必要条件，次症是加权证据，舌脉往往是<strong>区分寒热</strong>的关键。</p>\n<h3 id=\"ai-工程-加权规则表与证据缺口\">AI/工程：加权规则表与证据缺口</h3>\n<p>设证候 <span class=\"math\">S</span> 的症状-权重对集合为 <span class=\"math\">E<sub>S</sub></span>（每条形如「症状 <span class=\"math\">f<sub>i</sub></span> + 权重 <span class=\"math\">w<sub>i</sub></span>」），病人出现的症状集合为 <span class=\"math\">P</span>，则</p>\n<span class=\"math-block\"><span class=\"math-text\">score</span>(S)=<span class=\"frac\"><span class=\"frac-num\">∑<sub>f<sub>i</sub>∈ P∩ E<sub>S</sub></sub> w<sub>i</sub></span><span class=\"frac-den\">∑<sub>f<sub>i</sub>∈ E<sub>S</sub></sub> w<sub>i</sub></span></span></span>\n<p>三个必须同时输出的量：</p>\n<ol><li><strong>score</strong>：覆盖度，不是概率，不要给它加 softmax 的外衣；</li><li><strong>missing</strong>：未命中的<strong>主症</strong>——这是「还差什么」，比分数本身更有临床价值；</li><li><strong>rivals</strong>：分数相差小于 0.15 的竞争证候，必须一并列出，因为临床上真正难的是鉴别。</li></ol>\n<p>把这三样一起输出，规则表才不会沦为「一个看起来很像 AI 的东西」。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js 核心（完整文件见仓库）\nfunction score(rule, symptoms) {\n  const hit = rule.evidence.filter((e) =&gt; symptoms.includes(e.f));\n  const w = rule.evidence.reduce((a, e) =&gt; a + e.w, 0);\n  const s = hit.reduce((a, e) =&gt; a + e.w, 0);\n  return {\n    id: rule.id,\n    score: +(s / w).toFixed(3),\n    missing: rule.evidence.filter((e) =&gt; e.required &amp;&amp; !symptoms.includes(e.f)).map((e) =&gt; e.f),\n  };\n}</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>node code/main.js</code> 打印两个病例的排序结果与证据缺口；测试断言「肝气郁结」在病例 A 排第一、在病例 B 掉到第二且缺口为「目赤」。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>权重是人的判断，不是数据学出来的</strong>。表里的 3/2/1 来自教材对主症次症的划分，换一本教材就会变。要它稳定，必须固定版本并记录出处，否则同一病人换一家医院得出两种结论。</li><li><strong>覆盖度会被「症状说得越多」的病人抬高</strong>。问诊越细，score 越高，与病情轻重无关。所以分数只能在同一份问诊表内比较，跨病人比较没有意义。</li><li><strong>规则表不能表达「按之痛减」这类需要触诊的动态信息</strong>，也不能表达病程与传变——那需要状态机，不是打分。</li><li><strong>它不处理合病并病</strong>。多证并存时应当输出多个证候并列，而不是取 top-1。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 本章的规则表与代码是教学与工程演练材料，不构成诊疗建议，不能替代执业医师的四诊合参与鉴别诊断。任何真实病例的辨证结论由医师负责。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>给「肝火上炎」补一条能把它与「肝阳上亢」分开的症状，并说明为什么这条必须是主症。</li><li>把阈值从 0.6 改到 0.5，观察漏诊与误诊如何互换，写出你的取舍理由。</li><li>若病人同时满足两个证候且都过阈值，你的输出应该长什么样？</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>规则表是最容易做、也最容易被误当成「智能辨证」的一层。真正的分界不在算法复杂度，而在<strong>是否诚实地报告证据缺口</strong>——一个只会报 top-1 的系统，医生无法判断该不该信它。</p>",
+    "markdown": "# 第 8 章 · 脏腑辨证 → 规则表与权重：把「肝气郁结」写成可复核的打分\n\n> **MOTTO:** 「见肝之病，则知肝当传之于脾，故先实其脾气。」——《难经·七十七难》\n>\n> **PROBLEM:** 病人说「胸闷、叹气、胁胀、心情不好」，你能脱口而出「肝气郁结」，但让你说清「凭哪几条、每条占多少、还差哪条才能定」——你答不上来。\n>\n> **双根因定位:** 环境逼迫(门诊三分钟一个病人，说不清依据就只能依赖老师的结论) + 知识积累(脏腑辨证 × 加权规则表 = 一份能逐条核对、能报出证据缺口的判断)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 中医诊断学 |\n| 院系 | 中医系 |\n| 章序号 | 08 / 12 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 4 小时 |\n\n## 学习目标\n\n- 把脏腑辨证写成一张「症状 → 证候」的规则表，主症/次症的权重可解释\n- 用不足 60 行标准库代码实现打分、排序、阈值判定与**证据缺口**输出\n- 说清为什么「分数最高的证候」不等于「应该下的诊断」——剩下那部分是医生的责任\n- 用两个只差一两条症状的病例，验证规则表能把它们分开\n\n## 核心概念\n\n### 中医：脏腑辨证的位置\n\n脏腑辨证不是另起一套体系，它是八纲在**病位**维度上的展开。《素问·五脏生成篇》讲「五脏之气，故色见青如草兹者死」，把面色、症状与脏气联系起来；后世《景岳全书·传忠录》把辨证拆成「表里寒热虚实」，病位仍要落到脏腑。所以一张合格的脏腑辨证规则表至少要回答两件事：**哪一脏**、**什么性质**（寒热虚实）。\n\n教材把每一脏的证候写成「主症 + 次症 + 舌脉 + 兼症」的固定结构。这个结构本身就是一张可执行的打分表：主症是必要条件，次症是加权证据，舌脉往往是**区分寒热**的关键。\n\n### AI/工程：加权规则表与证据缺口\n\n设证候 $S$ 的症状-权重对集合为 $E_S$（每条形如「症状 $f_i$ + 权重 $w_i$」），病人出现的症状集合为 $P$，则\n\n$$\\text{score}(S)=\\frac{\\sum_{f_i\\in P\\cap E_S} w_i}{\\sum_{f_i\\in E_S} w_i}$$\n\n三个必须同时输出的量：\n\n1. **score**：覆盖度，不是概率，不要给它加 softmax 的外衣；\n2. **missing**：未命中的**主症**——这是「还差什么」，比分数本身更有临床价值；\n3. **rivals**：分数相差小于 0.15 的竞争证候，必须一并列出，因为临床上真正难的是鉴别。\n\n把这三样一起输出，规则表才不会沦为「一个看起来很像 AI 的东西」。\n\n## BUILD IT：从零实现\n\n```js\n// code/main.js 核心（完整文件见仓库）\nfunction score(rule, symptoms) {\n  const hit = rule.evidence.filter((e) => symptoms.includes(e.f));\n  const w = rule.evidence.reduce((a, e) => a + e.w, 0);\n  const s = hit.reduce((a, e) => a + e.w, 0);\n  return {\n    id: rule.id,\n    score: +(s / w).toFixed(3),\n    missing: rule.evidence.filter((e) => e.required && !symptoms.includes(e.f)).map((e) => e.f),\n  };\n}\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：`node code/main.js` 打印两个病例的排序结果与证据缺口；测试断言「肝气郁结」在病例 A 排第一、在病例 B 掉到第二且缺口为「目赤」。\n\n## 代价与边界\n\n- **权重是人的判断，不是数据学出来的**。表里的 3/2/1 来自教材对主症次症的划分，换一本教材就会变。要它稳定，必须固定版本并记录出处，否则同一病人换一家医院得出两种结论。\n- **覆盖度会被「症状说得越多」的病人抬高**。问诊越细，score 越高，与病情轻重无关。所以分数只能在同一份问诊表内比较，跨病人比较没有意义。\n- **规则表不能表达「按之痛减」这类需要触诊的动态信息**，也不能表达病程与传变——那需要状态机，不是打分。\n- **它不处理合病并病**。多证并存时应当输出多个证候并列，而不是取 top-1。\n\n> **免责声明：** 本章的规则表与代码是教学与工程演练材料，不构成诊疗建议，不能替代执业医师的四诊合参与鉴别诊断。任何真实病例的辨证结论由医师负责。\n\n## 练习\n\n1. 给「肝火上炎」补一条能把它与「肝阳上亢」分开的症状，并说明为什么这条必须是主症。\n2. 把阈值从 0.6 改到 0.5，观察漏诊与误诊如何互换，写出你的取舍理由。\n3. 若病人同时满足两个证候且都过阈值，你的输出应该长什么样？\n\n## 进阶思考\n\n规则表是最容易做、也最容易被误当成「智能辨证」的一层。真正的分界不在算法复杂度，而在**是否诚实地报告证据缺口**——一个只会报 top-1 的系统，医生无法判断该不该信它。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 脏腑辨证：加权规则表打分 + 证据缺口\n *\n *   node code/main.js\n *\n * 口径（与 docs/zh.md 一致）：\n *   score = Σ(命中证据权重) / Σ(全部证据权重)   —— 覆盖度，不是概率\n *   missing = 未命中的**主症**（required），这是\"还差什么\"\n *   rivals = 与最高分相差 < 0.15 的证候，必须一并列出\n *\n * 为什么权重写死在表里而不是学出来：教材对主症/次症的划分是这一课的**事实源**，\n * 改成拟合出来的系数，病例一变就再也对不上教材，学生无法复核。\n */\n\nconst RULES = [\n  {\n    id: '肝气郁结',\n    evidence: [\n      { f: '胸胁胀满', w: 3, required: true },\n      { f: '善太息', w: 2, required: true },\n      { f: '情志抑郁', w: 2, required: false },\n      { f: '脉弦', w: 1, required: false },\n    ],\n  },\n  {\n    id: '肝火上炎',\n    evidence: [\n      { f: '目赤', w: 3, required: true },\n      { f: '口苦', w: 2, required: true },\n      { f: '急躁易怒', w: 2, required: false },\n      { f: '脉弦数', w: 1, required: false },\n    ],\n  },\n];\n\nconst RIVAL_GAP = 0.15;\n\nfunction scoreOf(rule, symptoms) {\n  const total = rule.evidence.reduce((a, e) => a + e.w, 0);\n  const hit = rule.evidence.filter((e) => symptoms.includes(e.f));\n  return {\n    id: rule.id,\n    score: +(hit.reduce((a, e) => a + e.w, 0) / total).toFixed(3),\n    missing: rule.evidence.filter((e) => e.required && !symptoms.includes(e.f)).map((e) => e.f),\n  };\n}\n\nfunction rank(symptoms, threshold = 0.6) {\n  const all = RULES.map((r) => scoreOf(r, symptoms)).sort((a, b) => b.score - a.score);\n  const top = all[0];\n  return {\n    // 过阈值才叫\"可考虑的证候\"；没过阈值的仍列出来，但标成 under-threshold\n    candidates: all.map((c) => ({ ...c, passed: c.score >= threshold })),\n    rivals: all.filter((c, i) => i > 0 && top.score - c.score < RIVAL_GAP).map((c) => c.id),\n  };\n}\n\nconst CASES = [\n  { name: 'A：典型肝气郁结', symptoms: ['胸胁胀满', '善太息', '情志抑郁', '脉弦'] },\n  { name: 'B：肝气郁结 + 目赤', symptoms: ['胸胁胀满', '善太息', '目赤', '口苦', '脉弦'] },\n];\n\nfunction main() {\n  for (const c of CASES) {\n    const r = rank(c.symptoms);\n    console.log(`\\n${c.name}`);\n    for (const x of r.candidates) {\n      console.log(`  ${x.id}  score=${x.score}  ${x.passed ? '✓过阈值' : '（未过阈值）'}`);\n      if (x.missing.length) console.log(`    缺主症：${x.missing.join('、')}`);\n    }\n    if (r.rivals.length) console.log(`  ⚠ 竞争证候（分差 < ${RIVAL_GAP}）：${r.rivals.join('、')}`);\n  }\n  console.log('\\n提醒：score 是覆盖度，不是概率；结论由医师负责。');\n  console.log('本输出为教学样例，不构成诊疗建议。');\n}\n\nif (require.main === module) main();\nmodule.exports = { RULES, scoreOf, rank, RIVAL_GAP };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { scoreOf, rank, RULES } = require('./main.js');\n\nconst liverQi = RULES.find((r) => r.id === '肝气郁结');\nconst liverFire = RULES.find((r) => r.id === '肝火上炎');\n\ntest('肝气郁结：典型四症全覆盖 = 1.0，无缺口', () => {\n  const r = scoreOf(liverQi, ['胸胁胀满', '善太息', '情志抑郁', '脉弦']);\n  assert.strictEqual(r.score, 1);\n  assert.deepStrictEqual(r.missing, []);\n});\n\ntest('只有主症时：缺口为空但分数不等于 1（次症是加权项）', () => {\n  const r = scoreOf(liverQi, ['胸胁胀满', '善太息']);\n  assert.strictEqual(r.missing.length, 0);\n  assert.ok(r.score > 0.6 && r.score < 1);\n});\n\ntest('缺主症时：missing 必须报出缺的那一条', () => {\n  const r = scoreOf(liverFire, ['口苦', '急躁易怒']);\n  assert.deepStrictEqual(r.missing, ['目赤']);\n});\n\ntest('两证并存时：排序与竞争证候都要给出', () => {\n  const r = rank(['胸胁胀满', '善太息', '目赤', '口苦', '脉弦']);\n  assert.strictEqual(r.candidates[0].id, '肝气郁结');\n  assert.ok(r.rivals.includes('肝火上炎'));\n});\n\ntest('未过阈值：passed=false，但仍出现在候选里（不许静默丢弃）', () => {\n  const r = rank(['脉弦']);\n  assert.ok(r.candidates.every((c) => c.passed === false));\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "脏腑辨证与八纲辨证的关系，最准确的描述是？",
+          "options": [
+            "两套互相独立的辨证体系，结论经常冲突",
+            "脏腑辨证是八纲在病位维度上的展开，性质仍用寒热虚实表述",
+            "八纲只用于外感，脏腑辨证只用于内伤",
+            "脏腑辨证比八纲更精确，可以完全取代八纲"
+          ],
+          "correct": 1,
+          "explanation": "八纲定性质（表里寒热虚实阴阳），脏腑辨证把「里」进一步落到具体脏腑，两者是层次关系。"
+        },
+        {
+          "stage": "check",
+          "question": "本课的 score 在数学上是下面哪一个？",
+          "options": [
+            "证候成立的先验概率",
+            "命中证据权重占该证候全部证据权重的比例（覆盖度）",
+            "症状总数与证候数的比值",
+            "经过 softmax 归一化后的置信度"
+          ],
+          "correct": 1,
+          "explanation": "score 是覆盖度，不做 softmax —— 把覆盖度包装成概率是最常见的过度声明。"
+        },
+        {
+          "stage": "check",
+          "question": "为什么代码要单独输出 missing（未命中的主症）？",
+          "options": [
+            "为了让输出看起来更长",
+            "因为分数高不代表证据齐，缺口才是医生继续追问的方向",
+            "因为 missing 参与 score 的计算",
+            "因为教材要求每个证候必须有三条主症"
+          ],
+          "correct": 1,
+          "explanation": "缺主症意味着「还差什么才能定」，这比 top-1 的分值更有临床价值。"
+        },
+        {
+          "stage": "check",
+          "question": "病人症状越多，score 越高，这说明？",
+          "options": [
+            "病情越重",
+            "问诊越细覆盖度越高，因此分数只能在同一份问诊表内比较",
+            "规则表的权重需要重新学习",
+            "应该把阈值随症状数量调整"
+          ],
+          "correct": 1,
+          "explanation": "覆盖度对问诊粒度敏感，跨病人直接比较分数是误用。"
+        },
+        {
+          "stage": "post",
+          "question": "两证分数相差 0.12，都过阈值时，正确的输出是？",
+          "options": [
+            "只报最高分那个，避免干扰医生",
+            "报最高分，并把竞争证候一并列出供鉴别",
+            "取平均分作为最终结论",
+            "随机选一个，因为差别不显著"
+          ],
+          "correct": 1,
+          "explanation": "临床上真正难的是鉴别，分差小于阈值时隐藏对手等于制造盲区。"
+        },
+        {
+          "stage": "post",
+          "question": "本课规则表最不适合处理下面哪种情况？",
+          "options": [
+            "只有主症、次症不全的门诊病人",
+            "两个证候同时成立的合病并病",
+            "症状描述里带舌脉的病例",
+            "需要分寒热的病例"
+          ],
+          "correct": 1,
+          "explanation": "打分只能排序，合病并存需要多标签输出与传变模型；本课只演示前者。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-zangfu-bianzheng.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/08-zangfu-bianzheng/outputs/prompt-zangfu-bianzheng.md",
+        "title": "脏腑辨证规则表生成器",
+        "description": null,
+        "chars": 651,
+        "body": "# 脏腑辨证规则表生成器\n\n## 用途\n\n把一段门诊四诊记录，整理成「症状清单 → 脏腑证候排序 + 证据缺口 + 竞争证候」的可复核输出。\n用于**跟诊记录整理、病例讨论准备、教学演示**，不用于替代医师判断。\n\n## 提示词\n\n```text\n你是中医诊断学的助教。下面是一段门诊四诊记录。请只做一件事：\n把它整理成可用于脏腑辨证的结构化证据表。\n\n规则：\n1. 症状必须逐字取自原文，不得改写、不得推断（原文只写「胸闷」，就不要写成「胸胁胀满」）。\n2. 按「主症（决定证候成立）/ 次症（加权）/ 舌脉（多用于定寒热）」分三栏。\n3. 每条症状后面用括号注明它在原文中的位置（第几句），便于回查。\n4. 不要给证候结论；如果你认为证据已足够，只允许写「候选证候：X、Y」，并列出各自的证据缺口。\n5. 缺什么就写缺什么。原文没有舌脉，就写「舌脉未记录」，不要补。\n\n输出格式：\n【症状清单】主症：… / 次症：… / 舌脉：…\n【候选证候与缺口】…\n【必须追问的问题】…\n```\n\n## 使用示例\n\n输入：「患者，女，34 岁。胸闷，善太息，心情不好时加重，纳可，二便调。」\n\n输出要点：主症为「胸闷（第1句）、善太息（第1句）」；次症「情志抑郁（心情不好时加重，第1句）」；\n舌脉未记录；候选证候「肝气郁结」缺舌脉；必须追问：胁肋是否胀痛、脉象如何、月经是否前错。\n\n## 为什么这样限制\n\n- 逐字引用：防止把「胸闷」升格成「胸胁胀满」，那是**替病人加症状**，也是规则表输出失真的第一大来源。\n- 要求标注位置：让第二个人能回原文核对，证据才成立。\n- 禁止给结论：模型的结论没有责任主体；给缺口才是有用的东西。\n"
+      },
+      {
+        "name": "skill-zangfu-bianzheng.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/08-zangfu-bianzheng/outputs/skill-zangfu-bianzheng.md",
+        "title": "zangfu-bianzheng",
+        "description": "把四诊记录整理成脏腑证候的证据表（主症/次症/舌脉）并报出证据缺口，不给结论",
+        "chars": 621,
+        "body": "---\nname: zangfu-bianzheng\ndescription: 把四诊记录整理成脏腑证候的证据表（主症/次症/舌脉）并报出证据缺口，不给结论\nversion: 0.1.0\n---\n\n# zangfu-bianzheng\n\n## 何时使用\n\n- 跟诊后整理病例，需要一份「依据在哪」的记录\n- 病例讨论前，要把四诊信息对齐到脏腑证候的证据结构\n- 教学演示：让学生看清同一个病人为什么会被辨成两个不同证候\n\n## 不适用\n\n- 需要下诊断结论时（本技能只出证据表与缺口）\n- 需要处理合病并病、传变时（那需要状态模型，不是证据表）\n- 原文症状靠含糊转述、无法逐字引用时\n\n## 步骤\n\n1. **锁原文**：把四诊记录按句子编号，后续所有症状都必须能指回句号。\n2. **分三栏**：主症（缺则不成立）/ 次症（加权）/ 舌脉（多定寒热）。\n3. **逐条引用**：不改写、不合并、不推断。原文没写的，写「未记录」。\n4. **列候选**：只写证据已触达的证候，每个都附缺口。\n5. **写追问清单**：把缺口翻译成下一次问诊要问的具体问题。\n\n## 输出模板\n\n```text\n【症状清单】\n主症：<症状>（第N句）…\n次症：<症状>（第N句）…\n舌脉：<…> / 未记录\n\n【候选证候与缺口】\n- <证候>：已覆盖 …；缺 …\n- <证候>：…\n\n【必须追问】\n1. …\n```\n\n## 质量判据\n\n- 每条症状都能在第 N 句找到原话（否则是编的）\n- 缺口为空时，必须说明舌脉与次症是否齐全\n- 至少给出一个竞争证候，除非证据独一地指向某一个\n\n> 本技能输出为教学材料，不构成诊疗建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "02-zhongyao/01-zhongyaoxue/12-xingneng-bianma": {
+    "key": "02-zhongyao/01-zhongyaoxue/12-xingneng-bianma",
+    "deptSlug": "02-zhongyao",
+    "deptTitle": "中药系",
+    "subjectSlug": "01-zhongyaoxue",
+    "subjectTitle": "中药学",
+    "chapterSlug": "12-xingneng-bianma",
+    "n": 12,
+    "title": "第 12 章 · 中药性能的编码化：性味归经 → 向量",
+    "motto": "「药有酸咸甘苦辛五味，又有寒热温凉四气。」——《神农本草经·序录》",
+    "problem": "你能背「麻黄辛、微苦，温，归肺、膀胱经」，但当有人问「哪几味药和麻黄性能最接近」，你只能凭印象点几味，说不出「接近」是按什么算的。",
+    "roots": "环境逼迫(方剂替换、药源短缺时要现场找替代药) + 知识积累(四气五味归经 × 向量空间 = 一个能排序、能解释维度的相似度)",
+    "html": "<h1 id=\"第-12-章-中药性能的编码化-性味归经-向量\">第 12 章 · 中药性能的编码化：性味归经 → 向量</h1>\n<blockquote><p><strong>MOTTO:</strong> 「药有酸咸甘苦辛五味，又有寒热温凉四气。」——《神农本草经·序录》</p>\n<p><strong>PROBLEM:</strong> 你能背「麻黄辛、微苦，温，归肺、膀胱经」，但当有人问「哪几味药和麻黄性能最接近」，你只能凭印象点几味，说不出「接近」是按什么算的。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(方剂替换、药源短缺时要现场找替代药) + 知识积累(四气五味归经 × 向量空间 = 一个能排序、能解释维度的相似度)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>中药学</td></tr><tr><td>院系</td><td>中药系</td></tr><tr><td>章序号</td><td>12 / 12</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>把「性味归经」这种表格文字，变成一个定长向量，并说明每个维度代表什么</li><li>用余弦相似度排序近似药材，并指出相似度<strong>不能</strong>代表什么</li><li>说清「四气」的有序性（寒→凉→平→温→热）为什么不能用 one-hot 编码</li><li>在同一份数据上，比较欧氏距离与余弦相似度给出的排序差异</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"中医-性能是一个多维描述\">中医：性能是一个多维描述</h3>\n<p>四气描述<strong>作用趋向</strong>（寒凉清热、温热散寒），五味描述<strong>功能类别</strong>（辛散、甘补、酸收、苦泄、咸软），归经描述<strong>作用部位</strong>。《神农本草经·序录》把性味并举，后世才把归经补进体系。三者不是并列的标签，而是三个不同性质的轴：气是<strong>有序轴</strong>，味与归经是<strong>类别轴</strong>。</p>\n<p>这一点决定了编码方式：气可以用一个整数（寒=-2 … 热=+2），味与归经必须用 0/1 的多位向量。</p>\n<h3 id=\"ai-工程-混合编码与余弦相似度\">AI/工程：混合编码与余弦相似度</h3>\n<span class=\"math-block\"><b>v</b>(h)=[q, t<sub>1</sub>..t<sub>5</sub>, m<sub>1</sub>..m<sub>12</sub>]</span>\n<p>其中 <span class=\"math\">q</span> 是气（一维整数），<span class=\"math\">t<sub>1</sub>..t<sub>5</sub></span> 是辛甘酸苦咸五位，<span class=\"math\">m<sub>1</sub>..m<sub>12</sub></span> 是十二归经位。</p>\n<p>相似度用余弦：<span class=\"math\"><span class=\"math-op\">cos</span>(<b>v</b><sub>a</sub>,<b>v</b><sub>b</sub>)=<span class=\"frac\"><span class=\"frac-num\"><b>v</b><sub>a</sub>·<b>v</b><sub>b</sub></span><span class=\"frac-den\">‖<b>v</b><sub>a</sub>‖‖<b>v</b><sub>b</sub>‖</span></span></span>。</p>\n<p>必须记住的局限：余弦把 12 个归经维度<strong>等权</strong>处理，而临床上「同归肺经」与「同归膀胱经」的临床意义并不相同；它也不含剂量、炮制、配伍信息。所以它回答的是「性能描述接近」，不是「可以互换」。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">const HERBS = [\n  { name: '麻黄', qi: 2, wei: ['辛', '微苦'], jing: ['肺', '膀胱'] },\n  { name: '桂枝', qi: 2, wei: ['辛', '甘'], jing: ['心', '肺', '膀胱'] },\n  { name: '紫苏叶', qi: 1, wei: ['辛'], jing: ['肺', '脾'] },\n  { name: '薄荷', qi: -1, wei: ['辛'], jing: ['肺', '肝'] },\n  { name: '石膏', qi: -2, wei: ['辛', '甘'], jing: ['肺', '胃'] },\n];\nfunction vec(h) { /* 气 → 1 维；五味 → 5 维；归经 → 12 维 */ }\nfunction cos(a, b) { /* 点积 / 模长积，零向量返回 0 */ }</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：以麻黄为查询，桂枝排第一；石膏因归经重叠少、气相反，排在末位。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>等权是最大的失真源</strong>。12 个归经维度等权，等于宣称「归肺」与「归膀胱」一样重要。真实临床要按病位加权，而权重从哪来，本课没有答案。</li><li><strong>微苦/苦、微温/温这类程度词被压平了</strong>。压平之后，麻黄与桂枝的差异只剩归经，而实际差异在「发汗力强弱」。</li><li><strong>不含炮制与配伍</strong>。蜜炙麻黄与生麻黄在性能向量里完全相同，这在教学上是可接受的简化，在临床上不是。</li><li><strong>相似 ≠ 可替换</strong>。性能相近的药材可能毒性、剂量、禁忌差异极大。本课的排序只能作为「查证线索」，不能作为换药依据。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 本章药材数据为教学示例，性味归经取自通行教材的简化表述，不构成用药建议；实际处方须由执业中医师依据药典与患者情况决定。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>把「微苦」改成独立的类别维度而不是并入「苦」，排序会怎么变？这说明了什么？</li><li>给归经维度加上病位权重（如肺 1.5、膀胱 0.8），重跑麻黄查询，记录前三名的变化。</li><li>为什么不应该用欧氏距离？构造一个例子说明它在什么情况下会给出反直觉的排序。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>编码化的第一步总是「把说明拆成维度」，第二步是「承认哪些信息在拆的过程中丢了」。第二步没人愿意写，因为它让系统看起来不如宣传的那么强——但不写，使用者就会以为它比实际更强。</p>",
+    "markdown": "# 第 12 章 · 中药性能的编码化：性味归经 → 向量\n\n> **MOTTO:** 「药有酸咸甘苦辛五味，又有寒热温凉四气。」——《神农本草经·序录》\n>\n> **PROBLEM:** 你能背「麻黄辛、微苦，温，归肺、膀胱经」，但当有人问「哪几味药和麻黄性能最接近」，你只能凭印象点几味，说不出「接近」是按什么算的。\n>\n> **双根因定位:** 环境逼迫(方剂替换、药源短缺时要现场找替代药) + 知识积累(四气五味归经 × 向量空间 = 一个能排序、能解释维度的相似度)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 中药学 |\n| 院系 | 中药系 |\n| 章序号 | 12 / 12 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 把「性味归经」这种表格文字，变成一个定长向量，并说明每个维度代表什么\n- 用余弦相似度排序近似药材，并指出相似度**不能**代表什么\n- 说清「四气」的有序性（寒→凉→平→温→热）为什么不能用 one-hot 编码\n- 在同一份数据上，比较欧氏距离与余弦相似度给出的排序差异\n\n## 核心概念\n\n### 中医：性能是一个多维描述\n\n四气描述**作用趋向**（寒凉清热、温热散寒），五味描述**功能类别**（辛散、甘补、酸收、苦泄、咸软），归经描述**作用部位**。《神农本草经·序录》把性味并举，后世才把归经补进体系。三者不是并列的标签，而是三个不同性质的轴：气是**有序轴**，味与归经是**类别轴**。\n\n这一点决定了编码方式：气可以用一个整数（寒=-2 … 热=+2），味与归经必须用 0/1 的多位向量。\n\n### AI/工程：混合编码与余弦相似度\n\n$$\\mathbf{v}(h)=[q,\\;t_1..t_5,\\;m_1..m_{12}]$$\n\n其中 $q$ 是气（一维整数），$t_1..t_5$ 是辛甘酸苦咸五位，$m_1..m_{12}$ 是十二归经位。\n\n相似度用余弦：$\\cos(\\mathbf{v}_a,\\mathbf{v}_b)=\\dfrac{\\mathbf{v}_a\\cdot\\mathbf{v}_b}{\\|\\mathbf{v}_a\\|\\|\\mathbf{v}_b\\|}$。\n\n必须记住的局限：余弦把 12 个归经维度**等权**处理，而临床上「同归肺经」与「同归膀胱经」的临床意义并不相同；它也不含剂量、炮制、配伍信息。所以它回答的是「性能描述接近」，不是「可以互换」。\n\n## BUILD IT：从零实现\n\n```js\nconst HERBS = [\n  { name: '麻黄', qi: 2, wei: ['辛', '微苦'], jing: ['肺', '膀胱'] },\n  { name: '桂枝', qi: 2, wei: ['辛', '甘'], jing: ['心', '肺', '膀胱'] },\n  { name: '紫苏叶', qi: 1, wei: ['辛'], jing: ['肺', '脾'] },\n  { name: '薄荷', qi: -1, wei: ['辛'], jing: ['肺', '肝'] },\n  { name: '石膏', qi: -2, wei: ['辛', '甘'], jing: ['肺', '胃'] },\n];\nfunction vec(h) { /* 气 → 1 维；五味 → 5 维；归经 → 12 维 */ }\nfunction cos(a, b) { /* 点积 / 模长积，零向量返回 0 */ }\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：以麻黄为查询，桂枝排第一；石膏因归经重叠少、气相反，排在末位。\n\n## 代价与边界\n\n- **等权是最大的失真源**。12 个归经维度等权，等于宣称「归肺」与「归膀胱」一样重要。真实临床要按病位加权，而权重从哪来，本课没有答案。\n- **微苦/苦、微温/温这类程度词被压平了**。压平之后，麻黄与桂枝的差异只剩归经，而实际差异在「发汗力强弱」。\n- **不含炮制与配伍**。蜜炙麻黄与生麻黄在性能向量里完全相同，这在教学上是可接受的简化，在临床上不是。\n- **相似 ≠ 可替换**。性能相近的药材可能毒性、剂量、禁忌差异极大。本课的排序只能作为「查证线索」，不能作为换药依据。\n\n> **免责声明：** 本章药材数据为教学示例，性味归经取自通行教材的简化表述，不构成用药建议；实际处方须由执业中医师依据药典与患者情况决定。\n\n## 练习\n\n1. 把「微苦」改成独立的类别维度而不是并入「苦」，排序会怎么变？这说明了什么？\n2. 给归经维度加上病位权重（如肺 1.5、膀胱 0.8），重跑麻黄查询，记录前三名的变化。\n3. 为什么不应该用欧氏距离？构造一个例子说明它在什么情况下会给出反直觉的排序。\n\n## 进阶思考\n\n编码化的第一步总是「把说明拆成维度」，第二步是「承认哪些信息在拆的过程中丢了」。第二步没人愿意写，因为它让系统看起来不如宣传的那么强——但不写，使用者就会以为它比实际更强。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 中药性能向量化：四气（有序）+ 五味（多位）+ 归经（多位） → 余弦相似度\n *\n *   node code/main.js\n *\n * 口径：\n *   气 → 一维整数（寒 -2 / 凉 -1 / 平 0 / 温 +1 / 热 +2）\n *   味 → 5 位 0/1（辛 甘 酸 苦 咸）\n *   经 → 12 位 0/1（肺 心 肝 脾 肾 胃 胆 膀胱 大肠 小肠 三焦 心包）\n *\n * 为什么气不能 one-hot：寒→凉→平→温→热 是有序的，one-hot 会把「温」与「热」的距离\n * 算得和「温」与「寒」一样远，这与临床直觉相反。\n * 为什么味/经用多位：一味药可以既辛又甘（桂枝），一条经络表也不能互斥。\n */\n\nconst WEI = ['辛', '甘', '酸', '苦', '咸'];\nconst JING = ['肺', '心', '肝', '脾', '肾', '胃', '胆', '膀胱', '大肠', '小肠', '三焦', '心包'];\nconst QI = { 寒: -2, 凉: -1, 平: 0, 温: 1, 热: 2 };\n\n// 微苦、微温这类程度词在这里被压平 —— 这是本课的已知失真，写在 docs 的「代价与边界」里。\nconst norm = (s) => s.replace(/^微/, '');\n\nfunction vec(herb) {\n  const v = [QI[herb.qi] ?? 0];\n  for (const w of WEI) v.push(herb.wei.map(norm).includes(w) ? 1 : 0);\n  for (const j of JING) v.push(herb.jing.includes(j) ? 1 : 0);\n  return v;\n}\n\nfunction cos(a, b) {\n  const dot = a.reduce((s, x, i) => s + x * b[i], 0);\n  const na = Math.sqrt(a.reduce((s, x) => s + x * x, 0));\n  const nb = Math.sqrt(b.reduce((s, x) => s + x * x, 0));\n  if (!na || !nb) return 0;\n  return +(dot / (na * nb)).toFixed(3);\n}\n\nconst HERBS = [\n  { name: '麻黄', qi: '温', wei: ['辛', '微苦'], jing: ['肺', '膀胱'] },\n  { name: '桂枝', qi: '温', wei: ['辛', '甘'], jing: ['心', '肺', '膀胱'] },\n  { name: '紫苏叶', qi: '温', wei: ['辛'], jing: ['肺', '脾'] },\n  { name: '薄荷', qi: '凉', wei: ['辛'], jing: ['肺', '肝'] },\n  { name: '石膏', qi: '寒', wei: ['辛', '甘'], jing: ['肺', '胃'] },\n];\n\n/** 以某味药为查询，按性能相似度排序（不回自己） */\nfunction neighbors(name, herbs = HERBS) {\n  const q = herbs.find((h) => h.name === name);\n  if (!q) throw new Error(`没有这味药: ${name}`);\n  const qv = vec(q);\n  return herbs\n    .filter((h) => h.name !== name)\n    .map((h) => ({ name: h.name, cos: cos(qv, vec(h)) }))\n    .sort((a, b) => b.cos - a.cos);\n}\n\nfunction main() {\n  for (const name of ['麻黄', '石膏']) {\n    console.log(`\\n查询：${name}（${HERBS.find((h) => h.name === name).qi}）`);\n    for (const n of neighbors(name)) console.log(`  ${n.name.padEnd(4, '　')} cos=${n.cos}`);\n  }\n  console.log('\\n提醒：相似 ≠ 可替换。性能向量不含剂量、炮制、毒性与配伍。');\n  console.log('本输出为教学样例，不构成用药建议。');\n}\n\nif (require.main === module) main();\nmodule.exports = { HERBS, WEI, JING, QI, vec, cos, neighbors };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { vec, cos, neighbors, WEI, JING } = require('./main.js');\n\ntest('向量长度 = 1（气）+ 5（味）+ 12（经）', () => {\n  assert.strictEqual(vec({ qi: '温', wei: ['辛'], jing: ['肺'] }).length, 1 + WEI.length + JING.length);\n});\n\ntest('「微苦」归一到「苦」，但不会同时点亮别的味位', () => {\n  const v = vec({ qi: '温', wei: ['辛', '微苦'], jing: ['肺'] });\n  const weiPart = v.slice(1, 1 + WEI.length);\n  assert.deepStrictEqual(weiPart, [1, 0, 0, 1, 0]); // 辛=1 苦=1\n});\n\ntest('气是有序轴：温与热的距离小于温与寒', () => {\n  const a = vec({ qi: '温', wei: [], jing: [] });\n  const b = vec({ qi: '热', wei: [], jing: [] });\n  const c = vec({ qi: '寒', wei: [], jing: [] });\n  assert.ok(Math.abs(a[0] - b[0]) < Math.abs(a[0] - c[0]));\n});\n\ntest('麻黄查询：桂枝第一，石膏末位；不回自己', () => {\n  const r = neighbors('麻黄');\n  assert.strictEqual(r[0].name, '桂枝');\n  assert.strictEqual(r[r.length - 1].name, '石膏');\n  assert.ok(!r.some((x) => x.name === '麻黄'));\n});\n\ntest('零向量不产生 NaN', () => {\n  assert.strictEqual(cos([0, 0], [1, 0]), 0);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "四气为什么适合编成一个有序整数，而五味不适合？",
+          "options": [
+            "因为四气只有四个值，五味有五个",
+            "因为寒凉平温热存在程度顺序，五味之间是类别关系",
+            "因为五味在古代文献里没有记载",
+            "因为归经必须用 one-hot，五味跟着一起用"
+          ],
+          "correct": 1,
+          "explanation": "气是有序轴（可比较远近），味是类别轴（只可比相同/不同）。"
+        },
+        {
+          "stage": "check",
+          "question": "「微苦」在本课的实现里被如何处理？",
+          "options": [
+            "丢弃，因为程度词不重要",
+            "归一到「苦」，并记入 docs 的已知失真",
+            "单独增加一个「微」维度",
+            "转成浮点权重 0.5"
+          ],
+          "correct": 1,
+          "explanation": "压平是可接受的简化，但必须写明，否则读者会以为系统保留了程度信息。"
+        },
+        {
+          "stage": "check",
+          "question": "余弦相似度高，最准确的解释是？",
+          "options": [
+            "两味药可以互相替代",
+            "两味药的性味归经描述方向接近",
+            "两味药的临床疗效相同",
+            "两味药的毒性相近"
+          ],
+          "correct": 1,
+          "explanation": "它只描述性能向量方向一致，与疗效、剂量、毒性无关。"
+        },
+        {
+          "stage": "check",
+          "question": "把 12 个归经维度等权处理，会带来什么后果？",
+          "options": [
+            "计算变慢",
+            "等于宣称各经同等重要，与实际临床权重不符",
+            "归经会互相抵消",
+            "无法使用余弦相似度"
+          ],
+          "correct": 1,
+          "explanation": "等权是一个隐含假设，必须显式说明，否则失真被藏在代码里。"
+        },
+        {
+          "stage": "post",
+          "question": "以麻黄为查询，石膏相似度为 0，主要原因是？",
+          "options": [
+            "石膏没有归经数据",
+            "气相反（温 vs 寒）且归经重叠少，方向近乎正交",
+            "石膏不是中药",
+            "余弦算法在负值上失效"
+          ],
+          "correct": 1,
+          "explanation": "气维度符号相反拉低点积，归经只重合「肺」一条。"
+        },
+        {
+          "stage": "post",
+          "question": "要让这套编码支持「找替代药」，最必要补的信息是？",
+          "options": [
+            "增加更多药材",
+            "炮制、剂量、毒性与禁忌",
+            "换用欧氏距离",
+            "把归经改成 one-hot"
+          ],
+          "correct": 1,
+          "explanation": "替代决策依赖的正是性能向量里没有的那些信息。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-xingneng-bianma.md",
+        "kind": "prompt",
+        "file": "departments/02-zhongyao/01-zhongyaoxue/chapters/12-xingneng-bianma/outputs/prompt-xingneng-bianma.md",
+        "title": "中药性能编码器",
+        "description": null,
+        "chars": 722,
+        "body": "# 中药性能编码器\n\n## 用途\n\n把中药材的「性味归经」文本整理成结构化记录（气/味/经三栏），用于**建库、教学演示、相似药查询的输入准备**。\n不用于开方、不用于替代药决策。\n\n## 提示词\n\n```text\n你是中药学数据整理助手。请把下面的药材条目，逐条转成结构化记录。\n\n规则：\n1. 只抽原文写到的信息。原文没有的字段写 null，不要用「一般认为」补齐。\n2. 四气只能取：寒 / 凉 / 平 / 温 / 热。带「微」字的，保留原文并另存 raw 字段（如 {\"qi\":\"温\",\"qiRaw\":\"微温\"}）。\n3. 五味只能取：辛 / 甘 / 酸 / 苦 / 咸。带「涩」「淡」的，保留在 raw 里，不并入五味。\n4. 归经按脏腑与六腑分别列出，十二经名称照抄，不合并（「肺、大肠」是两条）。\n5. 输出 JSON 数组，字段：name, qi, wei[], jing[], raw{}, source（原文所在书名与篇名）。\n\n最后单独输出一段「无法结构化」的清单：哪些条目因为表述模糊而留空，为什么。\n```\n\n## 使用示例\n\n输入：「麻黄：辛、微苦，温。归肺、膀胱经。」\n\n输出：\n\n```json\n[{\"name\":\"麻黄\",\"qi\":\"温\",\"wei\":[\"辛\",\"苦\"],\"jing\":[\"肺\",\"膀胱\"],\n  \"raw\":{\"wei\":\"辛、微苦\"},\"source\":\"《中药学》教材·解表药\"}]\n```\n\n「无法结构化」清单：本条无。若原文只写「性温，味辛」，则 jing 为 null，并列出「归经缺失」。\n\n## 为什么这样限制\n\n- 保留 raw：程度词被压平后仍可回溯，否则数据一旦入库，原始表述就再也找不回来。\n- 拒绝用常识补齐：补出来的字段无法溯源，是后续所有统计偏差的起点。\n- 单列「无法结构化」：让缺失可见。缺失被藏进 null 而不被统计，是最常见的自欺。\n"
+      },
+      {
+        "name": "skill-xingneng-bianma.md",
+        "kind": "skill",
+        "file": "departments/02-zhongyao/01-zhongyaoxue/chapters/12-xingneng-bianma/outputs/skill-xingneng-bianma.md",
+        "title": "xingneng-bianma",
+        "description": "把中药材的性味归经整理成可计算向量，并按性能相似度给出近似药候选（只作查证线索）",
+        "chars": 663,
+        "body": "---\nname: xingneng-bianma\ndescription: 把中药材的性味归经整理成可计算向量，并按性能相似度给出近似药候选（只作查证线索）\nversion: 0.1.0\n---\n\n# xingneng-bianma\n\n## 何时使用\n\n- 建药材性能库，需要统一的结构化字段\n- 教学：演示「性能接近」到底是按什么算的\n- 药源短缺时，需要一份候选清单去**人工核对**，而不是直接替换\n\n## 不适用\n\n- 直接决定替代药（本技能不含剂量、炮制、毒性、禁忌、配伍）\n- 孕妇、儿童、肝肾功能不全等人群的特殊用药判断\n- 只有功效描述、没有性味归经记载的条目\n\n## 步骤\n\n1. **抽字段**：name / qi / wei / jing / raw / source，逐字取自原文。\n2. **归一**：气 → 整数（寒 -2 … 热 +2），味与经 → 0/1 多位向量；程度词存 raw。\n3. **查询**：给定一味药，算与其余药材的余弦相似度，降序输出。\n4. **加护栏**：每条结果后面附「本向量未含：剂量、炮制、毒性、配伍、禁忌」。\n5. **人工复核**：把候选清单交给药师/医师，由人决定是否可用。\n\n## 输出模板\n\n```text\n查询：<药名>（气：<…>；味：<…>；经：<…>）\n近邻：\n  1. <药名>  cos=<0.xx>  差异：气 <同/异>；味差 <…>；经差 <…>\n  2. …\n护栏：相似 ≠ 可替换；未含剂量/炮制/毒性/配伍/禁忌。\n```\n\n## 质量判据\n\n- 每条记录的 source 能指到具体书名与篇名\n- 程度词（微温、微苦）在 raw 里可查\n- 近邻列表里必须写出「差异在哪」，只给分数不算完成\n\n> 本技能输出为教学与检索辅助，不构成用药建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "03-zhenjiu/02-shuxue-xue/11-weixian-shendu": {
+    "key": "03-zhenjiu/02-shuxue-xue/11-weixian-shendu",
+    "deptSlug": "03-zhenjiu",
+    "deptTitle": "针灸系",
+    "subjectSlug": "02-shuxue-xue",
+    "subjectTitle": "腧穴学",
+    "chapterSlug": "11-weixian-shendu",
+    "n": 11,
+    "title": "第 11 章 · 危险穴位与针刺安全深度：把「不可深刺」变成一道可算的闸门",
+    "motto": "「刺缺盆中内陷，气泄，令人喘咳逆。」——《素问·刺禁论》",
+    "problem": "教材上写着「风池向鼻尖方向刺 0.8–1.2 寸，不可向内上方深刺」，你记住了这句话，却说不清「多深算深」、也说不清同一个穴位在胖人和瘦人身上为什么不是同一个数。",
+    "roots": "环境逼迫(进针时没人替你算深度，手感也不可靠) + 知识积累(解剖 × 分段线性模型 = 一个按体型给上限、越界就报错的校验器)",
+    "html": "<h1 id=\"第-11-章-危险穴位与针刺安全深度-把-不可深刺-变成一道可算的闸门\">第 11 章 · 危险穴位与针刺安全深度：把「不可深刺」变成一道可算的闸门</h1>\n<blockquote><p><strong>MOTTO:</strong> 「刺缺盆中内陷，气泄，令人喘咳逆。」——《素问·刺禁论》</p>\n<p><strong>PROBLEM:</strong> 教材上写着「风池向鼻尖方向刺 0.8–1.2 寸，不可向内上方深刺」，你记住了这句话，却说不清「多深算深」、也说不清同一个穴位在胖人和瘦人身上为什么不是同一个数。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(进针时没人替你算深度，手感也不可靠) + 知识积累(解剖 × 分段线性模型 = 一个按体型给上限、越界就报错的校验器)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>腧穴学</td></tr><tr><td>院系</td><td>针灸系</td></tr><tr><td>章序号</td><td>11 / 12</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>说清「安全深度」不是一个固定数字，而是由<strong>穴位局部解剖 + 体型</strong>共同决定的区间上界</li><li>用分段线性函数把 BMI 映射成软组织厚度系数，并解释为什么不用线性外推</li><li>实现一个进针前校验器：给定穴位、体型、进针方向与计划深度，返回「允许 / 警告 / 禁止」</li><li>指出这个模型在哪些情况下<strong>必须由人来否决</strong></li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"中医-刺禁的位置与方向\">中医：刺禁的位置与方向</h3>\n<p>《素问·刺禁论》把危险穴位写成后果，而不是写成数字：「刺缺盆中内陷，气泄，令人喘咳逆」「刺脊间中髓，为伛」。后世《针灸甲乙经》把这些部位逐一落到具体穴名。教材于是给出「深度 + 方向 + 禁忌」三件套，但深度给的是<strong>成人中等体型</strong>的参考值。</p>\n<p>临床上真正决定风险的是三件事：针尖到重要结构（肺、血管、脊髓、神经干）的距离、进针方向、以及病人当时的体位与呼吸时相。三件事里没有一件是「寸」能单独表达的。</p>\n<h3 id=\"ai-工程-分段线性-方向向量\">AI/工程：分段线性 + 方向向量</h3>\n<p>把安全深度写成</p>\n<span class=\"math-block\">d<sub><span class=\"math-op\">max</span></sub>(h, <span class=\"math-text\">BMI</span>) = d<sub>0</sub> · k(<span class=\"math-text\">BMI</span>)</span>\n<p><span class=\"math\">k</span> 按体型分四档：BMI &lt; 18.5 取 0.8；18.5 ≤ BMI &lt; 24 取 1.0；24 ≤ BMI &lt; 28 取 1.25；BMI ≥ 28 取 1.4。</p>\n<p>再乘方向惩罚：向内上方进针（朝颅腔/胸腔）时 <span class=\"math\">d<sub><span class=\"math-op\">max</span></sub></span> 直接置零——这不是「更深」，而是<strong>方向本身禁止</strong>。这一步是本课的重点：把「方向」从注释里提出来，变成可执行的分支。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">const POINTS = {\n  '风池': { d0: 1.0, zone: '颅颈交界', forbid: ['内上方'], vital: '椎动脉/延髓' },\n  '肺俞': { d0: 0.8, zone: '胸壁', forbid: ['向内斜刺'], vital: '胸膜/肺' },\n  '人迎': { d0: 0.3, zone: '颈动脉三角', forbid: ['直刺深刺'], vital: '颈动脉/迷走' },\n};\nfunction check(point, bmi, direction, planned) { /* 返回 {verdict, limit, reason} */ }</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：风池在 BMI 22、方向「向鼻尖」、计划 1.0 寸时返回 <code>allow</code>；同样深度改成「内上方」时返回 <code>forbid</code>，理由指向椎动脉。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>系数不是测量出来的</strong>。0.8/1.0/1.25/1.4 是按经验给的分段值，没有影像学标定。换成真实数据，这些数会变，而变的方向未知。</li><li><strong>BMI 只是体型的粗代理</strong>。同样 BMI 的两个人，颈部皮下脂肪可以差一倍；超声测软组织厚度才是正解，本课没有这个条件。</li><li><strong>不建模呼吸时相与体位</strong>。肺俞在深吸气时肺膨胀，风险高于呼气末——模型对此一无所知。</li><li><strong>它只能拦「明显越界」，拦不住「合规但出事」</strong>。允许不等于安全，这个差别必须在界面上写明，否则校验器会制造虚假的安心感。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 本章的深度系数为教学示例，不是临床操作参数，不构成针刺操作依据。任何针刺操作须由具备资质的执业医师依据解剖、影像与现场判断执行；出现气胸、血肿等并发症须立即按急症处理。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>把 BMI 分段改成连续函数（如 logistic），观察在 24 与 28 附近的行为差异，说明分段的好处。</li><li>为「肩井」补一条禁忌：为什么孕妇禁针，这个理由能否写进同一个数据结构？</li><li>如果让模型输出「建议深度区间」而不是单一上限，界面应该怎么提示，才不会被当成许可？</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>安全校验器的价值不在它拦住了多少次，而在它是否让人<strong>在进针前多看一眼方向</strong>。一个只在深度上报警、却对方向沉默的系统，会把最危险的错误留在外面。</p>",
+    "markdown": "# 第 11 章 · 危险穴位与针刺安全深度：把「不可深刺」变成一道可算的闸门\n\n> **MOTTO:** 「刺缺盆中内陷，气泄，令人喘咳逆。」——《素问·刺禁论》\n>\n> **PROBLEM:** 教材上写着「风池向鼻尖方向刺 0.8–1.2 寸，不可向内上方深刺」，你记住了这句话，却说不清「多深算深」、也说不清同一个穴位在胖人和瘦人身上为什么不是同一个数。\n>\n> **双根因定位:** 环境逼迫(进针时没人替你算深度，手感也不可靠) + 知识积累(解剖 × 分段线性模型 = 一个按体型给上限、越界就报错的校验器)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 腧穴学 |\n| 院系 | 针灸系 |\n| 章序号 | 11 / 12 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 说清「安全深度」不是一个固定数字，而是由**穴位局部解剖 + 体型**共同决定的区间上界\n- 用分段线性函数把 BMI 映射成软组织厚度系数，并解释为什么不用线性外推\n- 实现一个进针前校验器：给定穴位、体型、进针方向与计划深度，返回「允许 / 警告 / 禁止」\n- 指出这个模型在哪些情况下**必须由人来否决**\n\n## 核心概念\n\n### 中医：刺禁的位置与方向\n\n《素问·刺禁论》把危险穴位写成后果，而不是写成数字：「刺缺盆中内陷，气泄，令人喘咳逆」「刺脊间中髓，为伛」。后世《针灸甲乙经》把这些部位逐一落到具体穴名。教材于是给出「深度 + 方向 + 禁忌」三件套，但深度给的是**成人中等体型**的参考值。\n\n临床上真正决定风险的是三件事：针尖到重要结构（肺、血管、脊髓、神经干）的距离、进针方向、以及病人当时的体位与呼吸时相。三件事里没有一件是「寸」能单独表达的。\n\n### AI/工程：分段线性 + 方向向量\n\n把安全深度写成\n\n$$d_{\\max}(h, \\text{BMI}) = d_0 \\cdot k(\\text{BMI})$$\n\n$k$ 按体型分四档：BMI < 18.5 取 0.8；18.5 ≤ BMI < 24 取 1.0；24 ≤ BMI < 28 取 1.25；BMI ≥ 28 取 1.4。\n\n再乘方向惩罚：向内上方进针（朝颅腔/胸腔）时 $d_{\\max}$ 直接置零——这不是「更深」，而是**方向本身禁止**。这一步是本课的重点：把「方向」从注释里提出来，变成可执行的分支。\n\n## BUILD IT：从零实现\n\n```js\nconst POINTS = {\n  '风池': { d0: 1.0, zone: '颅颈交界', forbid: ['内上方'], vital: '椎动脉/延髓' },\n  '肺俞': { d0: 0.8, zone: '胸壁', forbid: ['向内斜刺'], vital: '胸膜/肺' },\n  '人迎': { d0: 0.3, zone: '颈动脉三角', forbid: ['直刺深刺'], vital: '颈动脉/迷走' },\n};\nfunction check(point, bmi, direction, planned) { /* 返回 {verdict, limit, reason} */ }\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：风池在 BMI 22、方向「向鼻尖」、计划 1.0 寸时返回 `allow`；同样深度改成「内上方」时返回 `forbid`，理由指向椎动脉。\n\n## 代价与边界\n\n- **系数不是测量出来的**。0.8/1.0/1.25/1.4 是按经验给的分段值，没有影像学标定。换成真实数据，这些数会变，而变的方向未知。\n- **BMI 只是体型的粗代理**。同样 BMI 的两个人，颈部皮下脂肪可以差一倍；超声测软组织厚度才是正解，本课没有这个条件。\n- **不建模呼吸时相与体位**。肺俞在深吸气时肺膨胀，风险高于呼气末——模型对此一无所知。\n- **它只能拦「明显越界」，拦不住「合规但出事」**。允许不等于安全，这个差别必须在界面上写明，否则校验器会制造虚假的安心感。\n\n> **免责声明：** 本章的深度系数为教学示例，不是临床操作参数，不构成针刺操作依据。任何针刺操作须由具备资质的执业医师依据解剖、影像与现场判断执行；出现气胸、血肿等并发症须立即按急症处理。\n\n## 练习\n\n1. 把 BMI 分段改成连续函数（如 logistic），观察在 24 与 28 附近的行为差异，说明分段的好处。\n2. 为「肩井」补一条禁忌：为什么孕妇禁针，这个理由能否写进同一个数据结构？\n3. 如果让模型输出「建议深度区间」而不是单一上限，界面应该怎么提示，才不会被当成许可？\n\n## 进阶思考\n\n安全校验器的价值不在它拦住了多少次，而在它是否让人**在进针前多看一眼方向**。一个只在深度上报警、却对方向沉默的系统，会把最危险的错误留在外面。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 危险穴位进针校验：安全深度上限 + 方向禁令\n *\n *   node code/main.js\n *\n * 口径：\n *   limit = d0 × k(BMI)       —— d0 是教材给中等体型的参考深度（寸）\n *   方向命中 forbid 列表      —— 直接 forbid，不参与深度比较（方向不是\"更深\"）\n *   判定：allow / warn(>80% limit) / forbid(超过 limit)\n *\n * 这是教学模型：系数按经验分段，未做影像学标定。\n */\n\nconst POINTS = {\n  风池: { d0: 1.0, zone: '颅颈交界', forbid: ['内上方', '直刺深刺'], vital: '椎动脉 / 延髓' },\n  肺俞: { d0: 0.8, zone: '胸壁', forbid: ['向内斜刺'], vital: '胸膜 / 肺' },\n  人迎: { d0: 0.3, zone: '颈动脉三角', forbid: ['直刺深刺'], vital: '颈动脉 / 迷走神经' },\n  肩井: { d0: 0.5, zone: '肩胛上', forbid: ['直刺深刺'], vital: '肺尖' },\n};\n\nfunction kOf(bmi) {\n  if (bmi < 18.5) return 0.8;\n  if (bmi < 24) return 1.0;\n  if (bmi < 28) return 1.25;\n  return 1.4;\n}\n\nfunction limitOf(point, bmi) {\n  const p = POINTS[point];\n  if (!p) throw new Error(`未收录穴位: ${point}`);\n  return +(p.d0 * kOf(bmi)).toFixed(2);\n}\n\nfunction check(point, bmi, direction, planned) {\n  const p = POINTS[point];\n  if (!p) throw new Error(`未收录穴位: ${point}`);\n  const limit = limitOf(point, bmi);\n\n  if (p.forbid.some((f) => direction.includes(f))) {\n    return {\n      verdict: 'forbid',\n      limit,\n      reason: `方向「${direction}」属禁用方向，可能伤及${p.vital}；深度再浅也不能抵消方向风险`,\n    };\n  }\n  if (planned > limit) {\n    return { verdict: 'forbid', limit, reason: `计划 ${planned} 寸超过上限 ${limit} 寸（${p.zone}）` };\n  }\n  if (planned > limit * 0.8) {\n    return { verdict: 'warn', limit, reason: `已用 ${(planned / limit * 100).toFixed(0)}% 上限，留出余量` };\n  }\n  return { verdict: 'allow', limit, reason: `在 ${limit} 寸上限内` };\n}\n\nfunction main() {\n  const cases = [\n    ['风池', 22, '向鼻尖', 1.0],\n    ['风池', 22, '向内上方', 1.0],\n    ['风池', 30, '向鼻尖', 1.3],\n    ['肺俞', 22, '向内斜刺', 0.6],\n    ['人迎', 25, '直刺', 0.2],\n  ];\n  for (const [pt, bmi, dir, d] of cases) {\n    const r = check(pt, bmi, dir, d);\n    console.log(`${pt} BMI=${bmi} 方向=${dir} 计划=${d}寸 → ${r.verdict.toUpperCase()}（上限 ${r.limit}）`);\n    console.log(`   ${r.reason}`);\n  }\n  console.log('\\n本输出为教学样例，不构成操作参数；实际进针须由执业医师判断。');\n}\n\nif (require.main === module) main();\nmodule.exports = { POINTS, kOf, limitOf, check };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { kOf, limitOf, check } = require('./main.js');\n\ntest('BMI 分段：四档系数单调不减', () => {\n  const ks = [18, 22, 26, 32].map(kOf);\n  assert.deepStrictEqual(ks, [0.8, 1.0, 1.25, 1.4]);\n  for (let i = 1; i < ks.length; i += 1) assert.ok(ks[i] >= ks[i - 1]);\n});\n\ntest('安全深度上限随 BMI 增大', () => {\n  assert.ok(limitOf('风池', 30) > limitOf('风池', 20));\n  assert.strictEqual(limitOf('人迎', 22), 0.3);\n});\n\ntest('禁用方向：无论多浅都 forbid，且理由指向重要结构', () => {\n  const r = check('风池', 22, '向内上方', 0.3);\n  assert.strictEqual(r.verdict, 'forbid');\n  assert.match(r.reason, /椎动脉|延髓/);\n});\n\ntest('超过上限：forbid 并报出上限', () => {\n  const r = check('风池', 22, '向鼻尖', 1.5);\n  assert.strictEqual(r.verdict, 'forbid');\n  assert.match(r.reason, /1(\\.00)? 寸/);\n});\n\ntest('接近上限（>80%）：warn 而不是 allow', () => {\n  assert.strictEqual(check('风池', 22, '向鼻尖', 0.9).verdict, 'warn');\n  assert.strictEqual(check('风池', 22, '向鼻尖', 0.5).verdict, 'allow');\n});\n\ntest('未收录穴位必须抛错，不许静默放过', () => {\n  assert.throws(() => check('不存在的穴', 22, '直刺', 0.5), /未收录穴位/);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "教材给出的针刺深度（如「0.8–1.2 寸」）默认对应的人群是？",
+          "options": [
+            "所有成人",
+            "成人中等体型",
+            "儿童",
+            "按体重逐人换算后的个体值"
+          ],
+          "correct": 1,
+          "explanation": "教材深度是中等体型的参考值，个体差异没有被写进那个数字里。"
+        },
+        {
+          "stage": "check",
+          "question": "为什么「方向禁令」要单独判，而不并进深度上限？",
+          "options": [
+            "因为方向无法计算",
+            "因为朝危险方向的浅刺同样有风险，方向不是「更深」的问题",
+            "因为方向只影响进针疼痛",
+            "因为教材没有规定方向"
+          ],
+          "correct": 1,
+          "explanation": "向内上方刺风池，0.5 寸也可能伤及椎动脉；把方向折算成深度会漏掉这类风险。"
+        },
+        {
+          "stage": "check",
+          "question": "本课用分段常数 k(BMI) 而不是连续函数，主要理由是？",
+          "options": [
+            "分段常数更精确",
+            "现有证据只支持「大概几档」，连续函数会伪造精度",
+            "连续函数算不出来",
+            "分段常数更快"
+          ],
+          "correct": 1,
+          "explanation": "没有标定数据时，声称连续关系等于编造细节。"
+        },
+        {
+          "stage": "check",
+          "question": "计划深度达到上限的 85% 时，输出应是？",
+          "options": [
+            "allow，因为没超",
+            "warn，提示余量不足",
+            "forbid，直接拒绝",
+            "不输出，交给操作者判断"
+          ],
+          "correct": 1,
+          "explanation": "留余量是针刺安全的基本习惯；warn 让操作者重新确认而不是默认通过。"
+        },
+        {
+          "stage": "post",
+          "question": "校验器返回 allow，意味着？",
+          "options": [
+            "操作一定安全",
+            "在模型已知的维度内没有越界，未知维度（呼吸时相、体位、个体解剖）仍需人判断",
+            "可以加大深度",
+            "可以省略消毒"
+          ],
+          "correct": 1,
+          "explanation": "allow 只覆盖模型建过的维度，不能读成安全承诺。"
+        },
+        {
+          "stage": "post",
+          "question": "要真正提高这套模型的可信度，最该补的是？",
+          "options": [
+            "更多穴位",
+            "影像学测得的软组织厚度与并发症登记数据",
+            "更漂亮的界面",
+            "更多的分段档位"
+          ],
+          "correct": 1,
+          "explanation": "系数目前是经验值；没有实测与并发症数据，任何细分都只是换一种猜法。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-weixian-shendu.md",
+        "kind": "prompt",
+        "file": "departments/03-zhenjiu/02-shuxue-xue/chapters/11-weixian-shendu/outputs/prompt-weixian-shendu.md",
+        "title": "进针前安全复核单",
+        "description": null,
+        "chars": 705,
+        "body": "# 进针前安全复核单\n\n## 用途\n\n进针前 30 秒的复核：把「穴位 + 体型 + 方向 + 计划深度」四项写下来，得到一条明确的允许/警告/禁止结论，\n用于**带教复核、病例讨论、操作记录归档**，不用于替代现场判断。\n\n## 提示词\n\n```text\n你是针灸科的带教助手。下面是一次进针前的记录。请只做复核，不要给治疗建议。\n\n输入字段：穴位、身高体重（或 BMI）、进针方向（解剖方位，如「向鼻尖」「向内上方」）、计划深度（寸）、体位、患者特殊情况（孕、抗凝、气胸史等）。\n\n规则：\n1. 先判方向：若方向指向颅腔、胸腔、大血管或神经干走行区，直接判「禁止」，并写明可能伤及的结构。深度不再作为理由。\n2. 再判深度：给出该体型下的上限，并说明这个上限是教材参考值还是个体测量值。若为参考值，必须注明。\n3. 特殊情况一票否决：抗凝、肺大疱、妊娠、既往气胸等，即使方向深度都合规，也判「需上级医师决定」。\n4. 输出必须包含一句「允许不等于安全」的提示，说明模型不知道哪些信息。\n\n输出格式：\n【结论】允许 / 警告 / 禁止 / 需上级决定\n【依据】方向：… ；深度：… 寸（上限 … 寸，来源：…）\n【未知项】…\n```\n\n## 使用示例\n\n输入：风池，BMI 22，向鼻尖，1.0 寸，坐位，无特殊情况。\n\n输出：【结论】允许【依据】方向安全；上限 1.0 寸（教材参考值 × 中等体型系数 1.0），计划 1.0 寸已达上限 —— 应改判**警告**，\n因为「等于上限」没有余量。【未知项】椎动脉走行变异、呼吸时相。\n\n## 为什么这样限制\n\n- 方向优先：把最危险的错误放在第一道闸门，避免被「深度合规」掩盖。\n- 区分参考值与实测值：不区分，使用者会把教材数字当成个体参数。\n- 特殊情况一票否决：模型没有能力处理这些例外，交给人是最诚实的处理。\n"
+      },
+      {
+        "name": "skill-weixian-shendu.md",
+        "kind": "skill",
+        "file": "departments/03-zhenjiu/02-shuxue-xue/chapters/11-weixian-shendu/outputs/skill-weixian-shendu.md",
+        "title": "weixian-shendu",
+        "description": "进针前的安全深度与方向复核：给出允许/警告/禁止/需上级决定，并列出模型未知项",
+        "chars": 683,
+        "body": "---\nname: weixian-shendu\ndescription: 进针前的安全深度与方向复核：给出允许/警告/禁止/需上级决定，并列出模型未知项\nversion: 0.1.0\n---\n\n# weixian-shendu\n\n## 何时使用\n\n- 带教时，学生第一次独立处理风池、肺俞、人迎、肩井等危险穴位\n- 病例讨论需要把「为什么这个深度不能刺」写成可复述的依据\n- 操作记录里需要留一条安全复核痕迹\n\n## 不适用\n\n- 决定治疗方案（本技能不做治疗建议）\n- 婴幼儿、极度消瘦或肥胖者的个体化深度（需要影像测量）\n- 抗凝、肺大疱、妊娠等特殊人群的最终决定（必须上级医师）\n\n## 步骤\n\n1. **填四要素**：穴位、体型（BMI 或身高体重）、方向、计划深度。\n2. **方向闸门**：方向指向颅腔/胸腔/大血管/神经干 → 直接「禁止」，不受深度影响。\n3. **深度闸门**：上限 = 教材参考深度 × 体型系数；达到 80% 报「警告」，超过报「禁止」。\n4. **特殊人群**：命中任一特殊情况 → 「需上级决定」（一票否决）。\n5. **写未知项**：列出模型不知道的东西（解剖变异、呼吸时相、体位、既往并发症）。\n\n## 输出模板\n\n```text\n【结论】允许 / 警告 / 禁止 / 需上级决定\n【依据】\n  方向：<安全 / 命中禁令：…>\n  深度：计划 <..> 寸，上限 <..> 寸（来源：教材参考 × 体型系数 <..>）\n  特殊：<无 / …>\n【未知项】…\n【提示】允许不等于安全。\n```\n\n## 质量判据\n\n- 「禁止」的理由必须写出可能伤及的结构\n- 「允许」必须同时出现「允许不等于安全」的提示\n- 上限来源必须标注「教材参考值」或「实测值」，不得含糊\n\n> 本技能输出为教学与复核辅助，不构成操作参数或诊疗建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "04-gushang/06-zhongyi-zhenggu-xue/12-shoufa-jianmo": {
+    "key": "04-gushang/06-zhongyi-zhenggu-xue/12-shoufa-jianmo",
+    "deptSlug": "04-gushang",
+    "deptTitle": "骨伤系",
+    "subjectSlug": "06-zhongyi-zhenggu-xue",
+    "subjectTitle": "中医正骨学",
+    "chapterSlug": "12-shoufa-jianmo",
+    "n": 12,
+    "title": "第 12 章 · 正骨手法的力学建模：把「巧劲」拆成力、力臂与阈值",
+    "motto": "「手法者，诚正骨之首务哉。」——《医宗金鉴·正骨心法要旨》",
+    "problem": "老师傅说「用力要巧，不要用蛮力」，你点头，但轮到你上手，要么拔不开，要么一下用力过猛病人喊疼——你并不知道「巧」在数值上对应什么。",
+    "roots": "环境逼迫(复位窗口只有几分钟，反复试错会加重软组织损伤) + 知识积累(骨伤手法 × 力矩模型 = 一组能预先算出、事后复核的力学参数)",
+    "html": "<h1 id=\"第-12-章-正骨手法的力学建模-把-巧劲-拆成力-力臂与阈值\">第 12 章 · 正骨手法的力学建模：把「巧劲」拆成力、力臂与阈值</h1>\n<blockquote><p><strong>MOTTO:</strong> 「手法者，诚正骨之首务哉。」——《医宗金鉴·正骨心法要旨》</p>\n<p><strong>PROBLEM:</strong> 老师傅说「用力要巧，不要用蛮力」，你点头，但轮到你上手，要么拔不开，要么一下用力过猛病人喊疼——你并不知道「巧」在数值上对应什么。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(复位窗口只有几分钟，反复试错会加重软组织损伤) + 知识积累(骨伤手法 × 力矩模型 = 一组能预先算出、事后复核的力学参数)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>中医正骨学</td></tr><tr><td>院系</td><td>骨伤系</td></tr><tr><td>章序号</td><td>12 / 12</td></tr><tr><td>所属阶段</td><td>🌳 壮·鼎盛</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>4 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>把「拔伸牵引」写成力与力臂的乘积关系，并说清每个量的物理单位</li><li>用体重估算所需牵引力，并给出一个<strong>保守上限</strong>，超过就报警</li><li>区分「力足够」与「力安全」：为什么这两件事在正骨里经常冲突</li><li>用模型解释：为什么同样的骨折，瘦人需要的力更小、但安全余量也更小</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"中医-正骨手法的四要素\">中医：正骨手法的四要素</h3>\n<p>《医宗金鉴·正骨心法要旨》把手法分为摸、接、端、提、推、拿、按、摩，并强调「法之所施，使患者不知其苦」。这句话在力学上是有含义的：<strong>在病人感到剧痛之前完成复位</strong>，靠的是力作用在正确的支点与方向上，而不是更大的力。</p>\n<p>教材讲「拔伸牵引、端提挤按、旋转屈伸」，每一条都隐含一个力臂：手放在哪里，决定了同样的力产生多大的力矩。手位错一寸，力矩就差一截——这是「巧劲」的物理内容。</p>\n<h3 id=\"ai-工程-力矩与安全阈值\">AI/工程：力矩与安全阈值</h3>\n<span class=\"math-block\">M = F · d,   F<sub><span class=\"math-text\">need</span></sub> ≈ α · W</span>\n<p>其中 <span class=\"math\">W</span> 为体重，<span class=\"math\">α</span> 为肌张力系数（上肢 0.06–0.10、下肢 0.12–0.18，随肌肉发达程度与是否麻醉变化）。安全判据不是 <span class=\"math\">F<sub><span class=\"math-text\">need</span></sub></span> 本身，而是</p>\n<span class=\"math-block\"><span class=\"frac\"><span class=\"frac-num\">F<sub><span class=\"math-text\">applied</span></sub></span><span class=\"frac-den\">F<sub><span class=\"math-text\">need</span></sub></span></span> ∈ [1.0, 1.3]</span>\n<p>超过 1.3 视为「力过量」：骨折端可能被过度牵开，软组织与血管神经承受额外剪切。这个区间是本课最需要被质疑的地方——它不是测量结果，而是教学用的保守带。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">const ALPHA = { 上肢: [0.06, 0.10], 下肢: [0.12, 0.18] };\nfunction needForce(weightKg, part, muscular = false) { /* 取区间上沿 × 1.15（肌肉发达） */ }\nfunction assess(applied, weightKg, part, leverCm) {\n  // 返回 {need, ratio, moment, verdict}\n}</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：60 kg 成人前臂骨折按上肢系数算得需 6.0 kgf；施加 7 kgf 时 ratio≈1.17 判 <code>ok</code>，施加 8 kgf 时 ratio≈1.33 判 <code>over</code>；肌肉发达者需求自动上浮到 6.9 kgf。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>α 是区间估计，不是个体测量</strong>。肌肉发达、痉挛、麻醉状态都会让它偏移，模型只按「是否肌肉发达」给了一个 1.15 的修正，粗得可笑——但它比「凭手感」可复核。</li><li><strong>力臂取值依赖手位，而手位在体表</strong>。同样放在前臂中段，胖人与瘦人的实际骨性力臂差 2–3 cm，模型无法知道。</li><li><strong>模型不含骨折类型</strong>。横断、斜形、螺旋、粉碎所需牵引力差异很大，本课统一用一个系数，这是明显的过度简化。</li><li><strong>它不能判断复位是否成功</strong>。力学合规 ≠ 对位良好，后者只能靠影像。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 本章的系数与阈值均为教学示例，不构成临床操作参数。正骨复位须由具备资质的医师在影像评估与充分镇痛下实施；血管神经损伤、开放性骨折、病理性骨折须按急症处理。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>把 α 改成按体重分档（如 &lt;50 kg、50–75 kg、&gt;75 kg），观察 60 kg 边界附近的跳变，说明分段的风险。</li><li>若病人处于麻醉状态，α 应上调还是下调？给出理由并改代码。</li><li>为「力臂」增加一个由 BMI 推算的修正项，评估它是否让模型更可信，还是只是更复杂。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>手法的「巧」常被描述成不可言传的东西。一旦拆成力、力臂与阈值，会发现它大部分是可教的——剩下那一小部分（时机、病人反应、手感反馈）才是真正需要师徒相授的。承认这个比例，比笼统说「只能意会」更有用。</p>",
+    "markdown": "# 第 12 章 · 正骨手法的力学建模：把「巧劲」拆成力、力臂与阈值\n\n> **MOTTO:** 「手法者，诚正骨之首务哉。」——《医宗金鉴·正骨心法要旨》\n>\n> **PROBLEM:** 老师傅说「用力要巧，不要用蛮力」，你点头，但轮到你上手，要么拔不开，要么一下用力过猛病人喊疼——你并不知道「巧」在数值上对应什么。\n>\n> **双根因定位:** 环境逼迫(复位窗口只有几分钟，反复试错会加重软组织损伤) + 知识积累(骨伤手法 × 力矩模型 = 一组能预先算出、事后复核的力学参数)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 中医正骨学 |\n| 院系 | 骨伤系 |\n| 章序号 | 12 / 12 |\n| 所属阶段 | 🌳 壮·鼎盛 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 4 小时 |\n\n## 学习目标\n\n- 把「拔伸牵引」写成力与力臂的乘积关系，并说清每个量的物理单位\n- 用体重估算所需牵引力，并给出一个**保守上限**，超过就报警\n- 区分「力足够」与「力安全」：为什么这两件事在正骨里经常冲突\n- 用模型解释：为什么同样的骨折，瘦人需要的力更小、但安全余量也更小\n\n## 核心概念\n\n### 中医：正骨手法的四要素\n\n《医宗金鉴·正骨心法要旨》把手法分为摸、接、端、提、推、拿、按、摩，并强调「法之所施，使患者不知其苦」。这句话在力学上是有含义的：**在病人感到剧痛之前完成复位**，靠的是力作用在正确的支点与方向上，而不是更大的力。\n\n教材讲「拔伸牵引、端提挤按、旋转屈伸」，每一条都隐含一个力臂：手放在哪里，决定了同样的力产生多大的力矩。手位错一寸，力矩就差一截——这是「巧劲」的物理内容。\n\n### AI/工程：力矩与安全阈值\n\n$$M = F \\cdot d,\\qquad F_{\\text{need}} \\approx \\alpha \\cdot W$$\n\n其中 $W$ 为体重，$\\alpha$ 为肌张力系数（上肢 0.06–0.10、下肢 0.12–0.18，随肌肉发达程度与是否麻醉变化）。安全判据不是 $F_{\\text{need}}$ 本身，而是\n\n$$\\frac{F_{\\text{applied}}}{F_{\\text{need}}} \\in [1.0,\\ 1.3]$$\n\n超过 1.3 视为「力过量」：骨折端可能被过度牵开，软组织与血管神经承受额外剪切。这个区间是本课最需要被质疑的地方——它不是测量结果，而是教学用的保守带。\n\n## BUILD IT：从零实现\n\n```js\nconst ALPHA = { 上肢: [0.06, 0.10], 下肢: [0.12, 0.18] };\nfunction needForce(weightKg, part, muscular = false) { /* 取区间上沿 × 1.15（肌肉发达） */ }\nfunction assess(applied, weightKg, part, leverCm) {\n  // 返回 {need, ratio, moment, verdict}\n}\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：60 kg 成人前臂骨折按上肢系数算得需 6.0 kgf；施加 7 kgf 时 ratio≈1.17 判 `ok`，施加 8 kgf 时 ratio≈1.33 判 `over`；肌肉发达者需求自动上浮到 6.9 kgf。\n\n## 代价与边界\n\n- **α 是区间估计，不是个体测量**。肌肉发达、痉挛、麻醉状态都会让它偏移，模型只按「是否肌肉发达」给了一个 1.15 的修正，粗得可笑——但它比「凭手感」可复核。\n- **力臂取值依赖手位，而手位在体表**。同样放在前臂中段，胖人与瘦人的实际骨性力臂差 2–3 cm，模型无法知道。\n- **模型不含骨折类型**。横断、斜形、螺旋、粉碎所需牵引力差异很大，本课统一用一个系数，这是明显的过度简化。\n- **它不能判断复位是否成功**。力学合规 ≠ 对位良好，后者只能靠影像。\n\n> **免责声明：** 本章的系数与阈值均为教学示例，不构成临床操作参数。正骨复位须由具备资质的医师在影像评估与充分镇痛下实施；血管神经损伤、开放性骨折、病理性骨折须按急症处理。\n\n## 练习\n\n1. 把 α 改成按体重分档（如 <50 kg、50–75 kg、>75 kg），观察 60 kg 边界附近的跳变，说明分段的风险。\n2. 若病人处于麻醉状态，α 应上调还是下调？给出理由并改代码。\n3. 为「力臂」增加一个由 BMI 推算的修正项，评估它是否让模型更可信，还是只是更复杂。\n\n## 进阶思考\n\n手法的「巧」常被描述成不可言传的东西。一旦拆成力、力臂与阈值，会发现它大部分是可教的——剩下那一小部分（时机、病人反应、手感反馈）才是真正需要师徒相授的。承认这个比例，比笼统说「只能意会」更有用。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 正骨手法的力学估算：所需牵引力、安全的力区间、以及力矩\n *\n *   node code/main.js\n *\n * 口径：\n *   need  = α(部位)·W·1.15（肌肉发达时）   —— kgf\n *   ratio = applied / need                  —— 合规区间 [1.0, 1.3]\n *   M     = applied · lever(m)              —— kgf·m，用于比较手位差异\n *\n * α 是区间估计，不是个体测量；阈值是教学保守带，不是临床标准。\n */\n\nconst ALPHA = {\n  上肢: [0.06, 0.1],\n  下肢: [0.12, 0.18],\n};\n\nconst RATIO_MIN = 1.0;\nconst RATIO_MAX = 1.3;\nconst MUSCULAR_GAIN = 1.15;\n\nfunction needForce(weightKg, part, muscular = false) {\n  const a = ALPHA[part];\n  if (!a) throw new Error(`未知部位: ${part}（只支持上肢/下肢）`);\n  // 取区间上沿：宁可高估需求量，让\"施加不足\"暴露出来，而不是掩盖\n  const base = a[1] * weightKg;\n  return +(base * (muscular ? MUSCULAR_GAIN : 1)).toFixed(2);\n}\n\nfunction assess(applied, weightKg, part, leverCm, muscular = false) {\n  const need = needForce(weightKg, part, muscular);\n  const ratio = +(applied / need).toFixed(2);\n  const moment = +((applied * leverCm) / 100).toFixed(2);\n  let verdict;\n  if (ratio < RATIO_MIN) verdict = 'under';\n  else if (ratio > RATIO_MAX) verdict = 'over';\n  else verdict = 'ok';\n  return { need, ratio, moment, verdict };\n}\n\nconst VERDICT_ZH = { under: '牵引不足', ok: '区间内', over: '力过量' };\n\nfunction main() {\n  const cases = [\n    [6.9, 60, '上肢', 12],\n    [8, 60, '上肢', 12],\n    [12, 60, '上肢', 12],\n    [14, 70, '下肢', 20, true],\n  ];\n  for (const [applied, w, part, lever, mus] of cases) {\n    const r = assess(applied, w, part, lever, !!mus);\n    console.log(\n      `${w}kg ${part}${mus ? '（肌肉发达）' : ''}：需 ${r.need} kgf，施加 ${applied} kgf`,\n    );\n    console.log(`  ratio=${r.ratio} → ${VERDICT_ZH[r.verdict]}；力矩 ${r.moment} kgf·m（力臂 ${lever} cm）`);\n  }\n  console.log('\\n本输出为教学样例，不构成临床操作参数。');\n}\n\nif (require.main === module) main();\nmodule.exports = { ALPHA, needForce, assess, RATIO_MIN, RATIO_MAX };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { needForce, assess, RATIO_MAX } = require('./main.js');\n\ntest('所需牵引力随体重线性增长', () => {\n  assert.ok(needForce(70, '上肢') > needForce(60, '上肢'));\n  assert.strictEqual(needForce(60, '上肢'), 6); // 0.10 × 60\n});\n\ntest('下肢系数大于上肢：同体重下需要更大的力', () => {\n  assert.ok(needForce(60, '下肢') > needForce(60, '上肢'));\n});\n\ntest('肌肉发达者需求上调 15%', () => {\n  assert.strictEqual(needForce(60, '上肢', true), 6.9);\n});\n\ntest('ratio 落在 [1.0, 1.3] 判 ok，超出判 over', () => {\n  assert.strictEqual(assess(6, 60, '上肢', 12).verdict, 'ok');\n  assert.strictEqual(assess(7.8, 60, '上肢', 12).verdict, 'ok');\n  assert.strictEqual(assess(12, 60, '上肢', 12).verdict, 'over');\n  assert.strictEqual(assess(4, 60, '上肢', 12).verdict, 'under');\n});\n\ntest('力矩随手位（力臂）线性变化，力不变时手位越远力矩越大', () => {\n  const near = assess(8, 60, '上肢', 8);\n  const far = assess(8, 60, '上肢', 16);\n  assert.strictEqual(near.ratio, far.ratio); // 力没变\n  assert.ok(far.moment > near.moment);\n});\n\ntest('未知部位抛错，不许默认成上肢', () => {\n  assert.throws(() => needForce(60, '躯干'), /未知部位/);\n});\n\ntest('边界：恰好在 1.3 倍时仍判 ok（闭区间）', () => {\n  const need = needForce(60, '上肢');\n  const r = assess(need * RATIO_MAX, 60, '上肢', 10);\n  assert.strictEqual(r.verdict, 'ok');\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "《医宗金鉴》说手法要「使患者不知其苦」，这句话在力学上对应的是？",
+          "options": [
+            "用足够大的力快速完成",
+            "在正确的支点与方向上用力，避免以力代巧",
+            "先麻醉再复位",
+            "手法越快越好"
+          ],
+          "correct": 1,
+          "explanation": "手位决定力臂，方向决定剪切；「不知其苦」靠的是力学正确而非力大。"
+        },
+        {
+          "stage": "check",
+          "question": "本课中 ratio = applied / need 的合规区间是？",
+          "options": [
+            "0 — 1.0",
+            "1.0 — 1.3（闭区间）",
+            "1.3 — 2.0",
+            "越大越好"
+          ],
+          "correct": 1,
+          "explanation": "低于 1.0 牵引不足，高于 1.3 视为力过量（可能过度牵开）。"
+        },
+        {
+          "stage": "check",
+          "question": "为什么 need 取 α 区间的上沿？",
+          "options": [
+            "为了保守，宁可高估需求让「施加不足」暴露出来",
+            "因为下沿没有意义",
+            "因为上沿更容易计算",
+            "因为教材只给了上沿"
+          ],
+          "correct": 0,
+          "explanation": "高估需求会让不足的力被判为 under，避免虚假的「够了」。"
+        },
+        {
+          "stage": "check",
+          "question": "同样施加 8 kgf，把力臂从 8 cm 移到 16 cm，会发生什么？",
+          "options": [
+            "ratio 翻倍",
+            "ratio 不变，力矩翻倍",
+            "都翻倍",
+            "都不变"
+          ],
+          "correct": 1,
+          "explanation": "力没变，比值不变；力矩 M=F·d 与力臂成正比 —— 这正是手位的意义。"
+        },
+        {
+          "stage": "post",
+          "question": "模型判 ok，能否说明复位会成功？",
+          "options": [
+            "能，力学合规即成功",
+            "不能，对位情况只能靠影像判断",
+            "能，只要比例在区间内",
+            "取决于体重"
+          ],
+          "correct": 1,
+          "explanation": "力学合规与解剖对位是两件事，模型只管前者。"
+        },
+        {
+          "stage": "post",
+          "question": "本课最大的过度简化是？",
+          "options": [
+            "使用了公斤力单位",
+            "不含骨折类型（横断/斜形/粉碎）对所需牵引力的差异",
+            "没有给出力矩方向",
+            "只做了上肢与下肢两类"
+          ],
+          "correct": 1,
+          "explanation": "骨折类型对牵引需求影响很大，统一系数是本课明确标注的简化。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-shoufa-jianmo.md",
+        "kind": "prompt",
+        "file": "departments/04-gushang/06-zhongyi-zhenggu-xue/chapters/12-shoufa-jianmo/outputs/prompt-shoufa-jianmo.md",
+        "title": "正骨手法力学预演",
+        "description": null,
+        "chars": 764,
+        "body": "# 正骨手法力学预演\n\n## 用途\n\n复位前把「体重、部位、手位、计划用力」写下来，算出所需牵引力、力区间与力矩，\n用于**带教预演、病例复盘、手法教学对比**，不用于替代术中的手感判断。\n\n## 提示词\n\n```text\n你是骨伤科的力学助教。给定一次正骨复位的计划，请做力学预演，不要给治疗建议。\n\n输入：体重(kg)、部位（上肢/下肢）、是否肌肉发达、麻醉状态、手位（距骨折端 cm）、计划施加力(kgf)、骨折类型。\n\n规则：\n1. 先算所需力：α(部位) 区间上沿 × 体重，肌肉发达者 ×1.15，麻醉状态另注明「需求下降，需下调」。\n2. 再算比值：applied / need，落在 [1.0, 1.3] 才叫「区间内」；<1.0 叫牵引不足，>1.3 叫力过量。\n3. 力矩 = applied × 手位(m)。手位变化时，必须重新报力矩，不能只报力。\n4. 骨折类型（横断/斜形/螺旋/粉碎）只作提示：模型不区分它们，必须由人判断这条简化是否可接受。\n5. 输出必须有一句「力学合规不等于对位良好，对位须由影像确认」。\n\n输出格式：\n【数值】need=… kgf；applied=… kgf；ratio=…；M=… kgf·m\n【判定】不足 / 区间内 / 过量\n【简化风险】…\n```\n\n## 使用示例\n\n输入：60 kg，上肢，无肌肉发达，无麻醉，手位 12 cm，计划 8 kgf，横断骨折。\n\n输出：【数值】need=6.0；applied=8.0；ratio=1.33；M=0.96 kgf·m【判定】过量（略超 1.3）\n【简化风险】横断骨折通常需要的牵引力小于斜形，本例按统一系数算可能高估了需求；先降到 7 kgf 再评估。\n\n## 为什么这样限制\n\n- 强制报力矩：只报力会掩盖手位错误，而手位是「巧劲」的主要来源。\n- 骨折类型单列为风险：模型不建模，就必须显式承认，否则使用者以为它考虑了。\n- 加入「影像确认」一句：力学预演最容易被误读成「复位成功」。\n"
+      },
+      {
+        "name": "skill-shoufa-jianmo.md",
+        "kind": "skill",
+        "file": "departments/04-gushang/06-zhongyi-zhenggu-xue/chapters/12-shoufa-jianmo/outputs/skill-shoufa-jianmo.md",
+        "title": "shoufa-jianmo",
+        "description": "正骨复位前的力学预演：算所需牵引力、力区间与力矩，并列出模型未建模的因素",
+        "chars": 644,
+        "body": "---\nname: shoufa-jianmo\ndescription: 正骨复位前的力学预演：算所需牵引力、力区间与力矩，并列出模型未建模的因素\nversion: 0.1.0\n---\n\n# shoufa-jianmo\n\n## 何时使用\n\n- 带教：学生上手前先算一遍，知道「该用多大力」\n- 病例复盘：手法失败后，回看是力不足、力过量还是手位错\n- 手法教学：比较不同手位带来的力矩差异\n\n## 不适用\n\n- 术中实时指导（本技能不做实时反馈）\n- 需要按骨折类型细分力的复杂病例（模型不区分类型）\n- 血管神经损伤、开放性骨折、病理性骨折（按急症处理，不做手法预演）\n\n## 步骤\n\n1. **取数**：体重、部位、肌肉发达与否、麻醉状态、手位、计划力、骨折类型。\n2. **算需求**：α 区间上沿 × 体重 × 肌肉修正。\n3. **算比值与力矩**：ratio ∈ [1.0, 1.3] 为区间内；力矩必须与力一起报。\n4. **标简化**：把模型不建模的因素（骨折类型、软组织嵌顿、个体解剖）逐条写出。\n5. **交人判断**：结论写「预演值」，并注明对位须影像确认。\n\n## 输出模板\n\n```text\n【数值】need=<..> kgf；applied=<..> kgf；ratio=<..>；M=<..> kgf·m\n【判定】不足 / 区间内 / 过量\n【简化风险】1) … 2) …\n【提醒】力学合规不等于对位良好，对位须由影像确认。\n```\n\n## 质量判据\n\n- 力与力矩成对出现，缺一不可\n- 判定必须给出区间依据，而不是「感觉差不多」\n- 简化风险至少两条，且必须是模型真实缺失的项\n\n> 本技能输出为教学预演，不构成临床操作参数。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "05-huli/04-zhongyi-huli-jishu/08-liaoxiao-pingjia": {
+    "key": "05-huli/04-zhongyi-huli-jishu/08-liaoxiao-pingjia",
+    "deptSlug": "05-huli",
+    "deptTitle": "护理系",
+    "subjectSlug": "04-zhongyi-huli-jishu",
+    "subjectTitle": "中医护理技术",
+    "chapterSlug": "08-liaoxiao-pingjia",
+    "n": 8,
+    "title": "第 8 章 · 中医护理技术的疗效评价：把「病人说舒服多了」变成可复核的数",
+    "motto": "「药之不及，针之不到，必须灸之。」——《医学入门·灸法》",
+    "problem": "你给病人做了三次艾灸，病人说「好多了」，护士长问「好多少」，你答不上来；下次换个病人，你也不知道该不该继续做。",
+    "roots": "环境逼迫(护理记录必须写得清，且医保与质控要看依据) + 知识积累(护理技术 × 效应量与最小临床差异 = 一份能被别人复算的疗效记录)",
+    "html": "<h1 id=\"第-8-章-中医护理技术的疗效评价-把-病人说舒服多了-变成可复核的数\">第 8 章 · 中医护理技术的疗效评价：把「病人说舒服多了」变成可复核的数</h1>\n<blockquote><p><strong>MOTTO:</strong> 「药之不及，针之不到，必须灸之。」——《医学入门·灸法》</p>\n<p><strong>PROBLEM:</strong> 你给病人做了三次艾灸，病人说「好多了」，护士长问「好多少」，你答不上来；下次换个病人，你也不知道该不该继续做。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(护理记录必须写得清，且医保与质控要看依据) + 知识积累(护理技术 × 效应量与最小临床差异 = 一份能被别人复算的疗效记录)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>中医护理技术</td></tr><tr><td>院系</td><td>护理系</td></tr><tr><td>章序号</td><td>08 / 08</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>用同一份量表在干预前后各测一次，算出<strong>组内效应量</strong>并解释它的大小含义</li><li>区分「统计学有差异」与「病人感觉得到差别」——后者由最小临床重要差异（MCID）决定</li><li>写出一份能被他人在同一病人身上重算的护理疗效记录</li><li>指出单组前后对比在因果推断上的致命缺陷</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"中医-护理技术的疗效怎么算\">中医：护理技术的疗效怎么算</h3>\n<p>艾灸、拔罐、穴位贴敷这类技术，教材给的疗效描述多是「症状改善」「有效率高」。《医学入门》讲「药之不及，针之不到，必须灸之」，讲的是适应证选择，不是疗效大小。护理要回答的是<strong>这个病人这次改善了多少</strong>，所以必须落到同一量表的两次测量上。</p>\n<p>护理常用量表：疼痛 NRS（0–10）、睡眠 PSQI、焦虑 SAS、中医症状积分。选择原则是一致的：<strong>同一病人、同一量表、同一时间窗、同一个评估者</strong>（或至少记录评估者）。</p>\n<h3 id=\"ai-工程-效应量与-mcid\">AI/工程：效应量与 MCID</h3>\n<p>配对差值的效应量用 Cohen's <span class=\"math\">d<sub>z</sub></span>：</p>\n<span class=\"math-block\">d<sub>z</sub>=<span class=\"frac\"><span class=\"frac-num\"><span class=\"math-line\">x</span><sub><span class=\"math-text\">后</span></sub>-<span class=\"math-line\">x</span><sub><span class=\"math-text\">前</span></sub></span><span class=\"frac-den\">s<sub><span class=\"math-text\">差</span></sub></span></span></span>\n<p>经验读数：0.2 小、0.5 中、0.8 大。但<strong>效应量大不等于病人受益</strong>：NRS 从 6 分降到 5 分，<span class=\"math\">d<sub>z</sub></span> 可能很可观，而 MCID 通常要求至少降 2 分。所以报告必须并排给三个数：均值差、<span class=\"math\">d<sub>z</sub></span>、是否达到 MCID。</p>\n<p>还有一个容易被忽略的环节是<strong>基线</strong>。同一位病人，入院时 NRS 8 分与出院前 3 分，若把「干预前」定在入院那天，测到的其实是住院期间全部处理（包括药物与休息）的合力。护理记录要能说清「这一次技术」的作用，就必须把测量点贴近操作：操作前 30 分钟、操作后固定时点，而不是笼统写「治疗前 / 治疗后」。基线定在哪里，等于决定了这份数据回答的是哪个问题。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">function effect(pre, post, mcid) {\n  const diff = post.map((v, i) =&gt; v - pre[i]);\n  const mean = avg(diff);\n  const sd = stdev(diff);\n  return { mean: +mean.toFixed(2), dz: +(mean / sd).toFixed(2), reached: mean &lt;= -mcid };\n}</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：一组 NRS 从 6/7/5/6/7 降到 4/3/2/4/3，均值差 −3.4、<span class=\"math\">d<sub>z</sub></span> 约 −1.9，达到 MCID=2 的判定；另一组只降 0.8 分，即使 <span class=\"math\">d<sub>z</sub></span> 不小也判「未达 MCID」。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>单组前后对比不能证明是艾灸起效</strong>。病程自然波动、安慰效应、同期用药改变都在里面；没有对照，只能叫「变化」，不能叫「疗效」。</li><li><strong>评估者不盲</strong>。护士知道谁做了艾灸，量表打分容易偏高，这是护理研究里最常见的偏倚。</li><li><strong>MCID 本身是人群平均值</strong>。同一个 2 分，对慢性痛病人可能无感，对术后病人可能很重要。</li><li><strong>样本极小</strong>时 <span class=\"math\">d<sub>z</sub></span> 极不稳定，五个人的效应量不足以支撑任何结论。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 本章的量表与阈值用于教学与护理记录规范演练，不构成诊疗建议；实际护理方案须由责任护士与医师依据病情确定，症状恶化须立即报告。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>把 MCID 从 2 改到 1，观察「达标率」如何变化，说明为什么阈值必须先声明再分析。</li><li>设计一个同期对照（同病区、同类病人、不做艾灸），说明它能排除什么、不能排除什么。</li><li>若两次测量由不同护士完成，记录里应补哪些字段？</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>护理疗效评价最容易被简化成「有效率 90%」这种数字。问一句「90% 是怎么算的」，往往就露出破绽：没有量表、没有阈值、没有基线。把这三样补齐，比多发一篇总结更有价值。</p>",
+    "markdown": "# 第 8 章 · 中医护理技术的疗效评价：把「病人说舒服多了」变成可复核的数\n\n> **MOTTO:** 「药之不及，针之不到，必须灸之。」——《医学入门·灸法》\n>\n> **PROBLEM:** 你给病人做了三次艾灸，病人说「好多了」，护士长问「好多少」，你答不上来；下次换个病人，你也不知道该不该继续做。\n>\n> **双根因定位:** 环境逼迫(护理记录必须写得清，且医保与质控要看依据) + 知识积累(护理技术 × 效应量与最小临床差异 = 一份能被别人复算的疗效记录)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 中医护理技术 |\n| 院系 | 护理系 |\n| 章序号 | 08 / 08 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 用同一份量表在干预前后各测一次，算出**组内效应量**并解释它的大小含义\n- 区分「统计学有差异」与「病人感觉得到差别」——后者由最小临床重要差异（MCID）决定\n- 写出一份能被他人在同一病人身上重算的护理疗效记录\n- 指出单组前后对比在因果推断上的致命缺陷\n\n## 核心概念\n\n### 中医：护理技术的疗效怎么算\n\n艾灸、拔罐、穴位贴敷这类技术，教材给的疗效描述多是「症状改善」「有效率高」。《医学入门》讲「药之不及，针之不到，必须灸之」，讲的是适应证选择，不是疗效大小。护理要回答的是**这个病人这次改善了多少**，所以必须落到同一量表的两次测量上。\n\n护理常用量表：疼痛 NRS（0–10）、睡眠 PSQI、焦虑 SAS、中医症状积分。选择原则是一致的：**同一病人、同一量表、同一时间窗、同一个评估者**（或至少记录评估者）。\n\n### AI/工程：效应量与 MCID\n\n配对差值的效应量用 Cohen's $d_z$：\n\n$$d_z=\\frac{\\bar{x}_{\\text{后}}-\\bar{x}_{\\text{前}}}{s_{\\text{差}}}$$\n\n经验读数：0.2 小、0.5 中、0.8 大。但**效应量大不等于病人受益**：NRS 从 6 分降到 5 分，$d_z$ 可能很可观，而 MCID 通常要求至少降 2 分。所以报告必须并排给三个数：均值差、$d_z$、是否达到 MCID。\n\n还有一个容易被忽略的环节是**基线**。同一位病人，入院时 NRS 8 分与出院前 3 分，若把「干预前」定在入院那天，测到的其实是住院期间全部处理（包括药物与休息）的合力。护理记录要能说清「这一次技术」的作用，就必须把测量点贴近操作：操作前 30 分钟、操作后固定时点，而不是笼统写「治疗前 / 治疗后」。基线定在哪里，等于决定了这份数据回答的是哪个问题。\n\n## BUILD IT：从零实现\n\n```js\nfunction effect(pre, post, mcid) {\n  const diff = post.map((v, i) => v - pre[i]);\n  const mean = avg(diff);\n  const sd = stdev(diff);\n  return { mean: +mean.toFixed(2), dz: +(mean / sd).toFixed(2), reached: mean <= -mcid };\n}\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：一组 NRS 从 6/7/5/6/7 降到 4/3/2/4/3，均值差 −3.4、$d_z$ 约 −1.9，达到 MCID=2 的判定；另一组只降 0.8 分，即使 $d_z$ 不小也判「未达 MCID」。\n\n## 代价与边界\n\n- **单组前后对比不能证明是艾灸起效**。病程自然波动、安慰效应、同期用药改变都在里面；没有对照，只能叫「变化」，不能叫「疗效」。\n- **评估者不盲**。护士知道谁做了艾灸，量表打分容易偏高，这是护理研究里最常见的偏倚。\n- **MCID 本身是人群平均值**。同一个 2 分，对慢性痛病人可能无感，对术后病人可能很重要。\n- **样本极小**时 $d_z$ 极不稳定，五个人的效应量不足以支撑任何结论。\n\n> **免责声明：** 本章的量表与阈值用于教学与护理记录规范演练，不构成诊疗建议；实际护理方案须由责任护士与医师依据病情确定，症状恶化须立即报告。\n\n## 练习\n\n1. 把 MCID 从 2 改到 1，观察「达标率」如何变化，说明为什么阈值必须先声明再分析。\n2. 设计一个同期对照（同病区、同类病人、不做艾灸），说明它能排除什么、不能排除什么。\n3. 若两次测量由不同护士完成，记录里应补哪些字段？\n\n## 进阶思考\n\n护理疗效评价最容易被简化成「有效率 90%」这种数字。问一句「90% 是怎么算的」，往往就露出破绽：没有量表、没有阈值、没有基线。把这三样补齐，比多发一篇总结更有价值。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 护理技术疗效：配对差值的效应量与 MCID 判定\n *\n *   node code/main.js\n *\n * 口径：\n *   diff  = post - pre（量表分值越低越好时，负值表示改善）\n *   dz    = mean(diff) / sd(diff)    —— Cohen's d_z（配对）\n *   reached = mean(diff) <= -MCID    —— 病人可感知的改善，不是统计显著\n *\n * 三个数必须并排报：均值差、dz、是否达 MCID。只报 dz 是本章要防的错误。\n */\n\nconst avg = (a) => a.reduce((s, x) => s + x, 0) / a.length;\nconst stdev = (a) => {\n  if (a.length < 2) return NaN;\n  const m = avg(a);\n  return Math.sqrt(a.reduce((s, x) => s + (x - m) ** 2, 0) / (a.length - 1));\n};\n\nfunction effect(pre, post, mcid) {\n  if (!Array.isArray(pre) || !Array.isArray(post) || pre.length !== post.length || !pre.length) {\n    throw new Error('pre/post 必须是等长非空数组');\n  }\n  const diff = post.map((v, i) => v - pre[i]);\n  const mean = avg(diff);\n  const sd = stdev(diff);\n  return {\n    n: pre.length,\n    mean: +mean.toFixed(2),\n    dz: Number.isFinite(sd) && sd > 0 ? +(mean / sd).toFixed(2) : null,\n    reached: mean <= -mcid,\n    mcid,\n  };\n}\n\nconst GROUPS = [\n  { name: 'A：艾灸三次（NRS）', pre: [6, 7, 5, 6, 7], post: [4, 3, 2, 4, 3], mcid: 2 },\n  { name: 'B：穴位贴敷两次（NRS）', pre: [5, 6, 5, 6, 5], post: [5, 5, 4, 5, 5], mcid: 2 },\n];\n\nfunction main() {\n  for (const g of GROUPS) {\n    const r = effect(g.pre, g.post, g.mcid);\n    console.log(`\\n${g.name}（n=${r.n}）`);\n    console.log(`  均值差 ${r.mean} · dz ${r.dz ?? '—'} · ${r.reached ? '达到' : '未达'} MCID(${r.mcid})`);\n    if (!r.reached) console.log('  提示：统计上可能有变化，但病人未必感觉得到，报告里不能写成「有效」。');\n  }\n  console.log('\\n提醒：单组前后对比只能说明「变化」，不能证明是干预起效。');\n  console.log('本输出为教学样例，不构成诊疗建议。');\n}\n\nif (require.main === module) main();\nmodule.exports = { effect, avg, stdev };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { effect, stdev } = require('./main.js');\n\ntest('均值差方向：量表越低越好时，改善为负', () => {\n  const r = effect([6, 7, 5], [4, 3, 2], 2);\n  assert.strictEqual(r.mean, -3);\n});\n\ntest('未达 MCID 时 reached=false，即使均值差为负', () => {\n  const r = effect([5, 6, 5], [5, 5, 4], 2);\n  assert.strictEqual(r.reached, false);\n});\n\ntest('恰好达到 MCID（闭区间）判 reached=true', () => {\n  const r = effect([6, 6, 6], [4, 4, 4], 2);\n  assert.strictEqual(r.mean, -2);\n  assert.strictEqual(r.reached, true);\n});\n\ntest('无变异（sd=0）时 dz 为 null，而不是 Infinity', () => {\n  const r = effect([5, 5], [4, 4], 1);\n  assert.strictEqual(r.dz, null);\n});\n\ntest('长度不等或空数组必须抛错，不许静默截断', () => {\n  assert.throws(() => effect([1, 2], [1], 1), /等长非空/);\n  assert.throws(() => effect([], [], 1), /等长非空/);\n});\n\ntest('stdev 用样本标准差（n-1）', () => {\n  assert.strictEqual(+stdev([2, 4, 4, 4, 5, 5, 7, 9]).toFixed(2), 2.14);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "护理记录里写「艾灸后病人诉舒适」，最大的问题是？",
+          "options": [
+            "字太少",
+            "没有量表、没有基线、没有时间窗，无法被他人复算",
+            "没有写艾灸的穴位",
+            "没有医师签名"
+          ],
+          "correct": 1,
+          "explanation": "可复核的记录需要同一量表、同一时间窗、可追溯的评估者。"
+        },
+        {
+          "stage": "check",
+          "question": "配对效应量 dz 的分子是？",
+          "options": [
+            "后测均值",
+            "配对差值的均值",
+            "前后均值之和",
+            "标准差"
+          ],
+          "correct": 1,
+          "explanation": "dz = mean(diff)/sd(diff)，用的是差值而非原始分值。"
+        },
+        {
+          "stage": "check",
+          "question": "NRS 从 6 分降到 5 分，dz 不小但判「未达 MCID」，说明？",
+          "options": [
+            "计算错了",
+            "统计上的变化与病人可感知的改善是两件事",
+            "MCID 应随 dz 调整",
+            "样本太小"
+          ],
+          "correct": 1,
+          "explanation": "MCID 是病人能感知的最小变化，与效应量大小的含义不同。"
+        },
+        {
+          "stage": "check",
+          "question": "单组前后对比的致命缺陷是？",
+          "options": [
+            "样本量小",
+            "无法排除自然波动、安慰效应与同期治疗改变，因此不能归因于干预",
+            "量表不统一",
+            "没有统计学检验"
+          ],
+          "correct": 1,
+          "explanation": "没有对照就没有因果归因，只能报告「变化」。"
+        },
+        {
+          "stage": "post",
+          "question": "五个病人的数据算出 dz=−1.9，最稳妥的表述是？",
+          "options": [
+            "艾灸疗效显著",
+            "本组 5 例前后差值均值 −3.4，达到 MCID；例数少、无对照，不能据此推断疗效",
+            "艾灸对疼痛有效",
+            "可以推广到所有病人"
+          ],
+          "correct": 1,
+          "explanation": "报告事实并标注局限，是本课要求的最低标准。"
+        },
+        {
+          "stage": "post",
+          "question": "若两次测量由不同护士完成，记录里最该补的是？",
+          "options": [
+            "两位护士的职称",
+            "评估者身份与是否知晓干预（盲法状态）",
+            "测量时的室温",
+            "病人是否家属陪同"
+          ],
+          "correct": 1,
+          "explanation": "评估者不盲是护理研究最常见的偏倚来源，必须留痕。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-liaoxiao-pingjia.md",
+        "kind": "prompt",
+        "file": "departments/05-huli/04-zhongyi-huli-jishu/chapters/08-liaoxiao-pingjia/outputs/prompt-liaoxiao-pingjia.md",
+        "title": "护理技术疗效记录单",
+        "description": null,
+        "chars": 680,
+        "body": "# 护理技术疗效记录单\n\n## 用途\n\n把一次中医护理技术（艾灸/拔罐/贴敷/耳穴）的疗效写成可复核记录：\n量表、两次测量、均值差、配对效应量、是否达 MCID、以及**不能下什么结论**。\n\n## 提示词\n\n```text\n你是护理教研组的记录助手。下面是一次中医护理技术的前后测量数据。\n请只做记录与计算，不要下\"有效/无效\"的结论。\n\n规则：\n1. 必须写明：量表名称与分值范围、测量时间点（干预前 / 干预后多久）、评估者（是否知晓干预）。\n2. 计算：配对差值均值、配对效应量 dz（样本标准差 n−1）、是否达到声明的 MCID。\n3. 三个数必须并排出现；缺任一项就写「缺」，不要用文字替代数字。\n4. 结论只能写「本组 N 例前后变化为 …」，禁止写「疗效显著」「有效率高」。\n5. 单独一段写「不能推断什么」：无对照、评估者不盲、样本量、同期用药变化。\n\n输出格式：\n【记录】量表 … ；时间点 … ；评估者 …\n【数值】均值差 … ；dz … ；MCID … → 达到 / 未达\n【表述建议】…\n【不能推断】…\n```\n\n## 使用示例\n\n输入：NRS，艾灸前 6/7/5/6/7，三次后 4/3/2/4/3，MCID=2，评估者为责任护士（知晓干预）。\n\n输出：【数值】均值差 −3.4；dz ≈ −1.9；MCID 2 → 达到\n【表述建议】本组 5 例 NRS 由均值 6.2 降至 3.2，差值均值 −3.4，达到 MCID。\n【不能推断】无同期对照；评估者知晓干预；例数 5；未记录同期镇痛药调整。\n\n## 为什么这样限制\n\n- 禁写「有效」：单组前后对比没有因果资格，写了就是过度声明。\n- 强制三数并排：只报 dz 会让人误以为「统计显著 = 病人受益」。\n- 单列「不能推断」：把局限写在记录里，交接班与质控才看得见。\n"
+      },
+      {
+        "name": "skill-liaoxiao-pingjia.md",
+        "kind": "skill",
+        "file": "departments/05-huli/04-zhongyi-huli-jishu/chapters/08-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md",
+        "title": "liaoxiao-pingjia",
+        "description": "中医护理技术的前后测量记录：算配对效应量与 MCID，并明确写出不能推断的结论",
+        "chars": 610,
+        "body": "---\nname: liaoxiao-pingjia\ndescription: 中医护理技术的前后测量记录：算配对效应量与 MCID，并明确写出不能推断的结论\nversion: 0.1.0\n---\n\n# liaoxiao-pingjia\n\n## 何时使用\n\n- 交班记录里要写清「这次艾灸改善了没有、改善多少」\n- 护理查房需要一份能被护士长复算的疗效数据\n- 科室做小样本护理观察，需要先统一记录口径\n\n## 不适用\n\n- 需要证明因果效应的研究（必须有对照与盲法，本技能不做研究设计）\n- 无法使用量表、只能凭感受描述的情形（此时应记录「未测量」而不是编一个数）\n- 危急重症的病情判断（走临床路径，不用疗效记录单）\n\n## 步骤\n\n1. **固定量表**：NRS / PSQI / SAS / 中医症状积分，选一个并在整组内不变。\n2. **固定时间窗**：干预前、干预后多久（如三次后 24 h），写进记录。\n3. **标明评估者**：谁测的、是否知晓干预。\n4. **算三个数**：均值差、配对 dz（n−1）、是否达 MCID。\n5. **写「不能推断」**：无对照、不盲、样本量、同期用药。\n\n## 输出模板\n\n```text\n【记录】量表 … ；时间点 … ；评估者 …\n【数值】均值差 … ；dz … ；MCID … → 达到 / 未达\n【表述】本组 N 例由 … 降至 …\n【不能推断】1) … 2) …\n```\n\n## 质量判据\n\n- 三个数齐全且同量纲\n- 没有出现「有效率」「显著有效」这类未经设计的结论\n- 「不能推断」至少两条，且都不是套话\n\n> 本技能输出为护理记录辅助，不构成诊疗建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "06-guanli/01-yixue-tongjixue/09-duochong-jiaoyan": {
+    "key": "06-guanli/01-yixue-tongjixue/09-duochong-jiaoyan",
+    "deptSlug": "06-guanli",
+    "deptTitle": "管理系",
+    "subjectSlug": "01-yixue-tongjixue",
+    "subjectTitle": "医学统计学",
+    "chapterSlug": "09-duochong-jiaoyan",
+    "n": 9,
+    "title": "第 9 章 · 多重比较与假阳性控制：为什么「做了 20 个指标，总有 1 个显著」",
+    "motto": "「谨守病机，各司其属。」——《素问·至真要大论》",
+    "problem": "一份中医证候研究里测了 20 个指标，其中 1 个 p=0.03，你把它写成「具有统计学意义」，审稿人一句「你校正了吗」就把结论推翻了。",
+    "roots": "环境逼迫(毕业与晋升都要「阳性结果」，指标越加越多) + 知识积累(多重比较 × 错误发现率 = 一套能在分析前就定好、事后不被质疑的判定规则)",
+    "html": "<h1 id=\"第-9-章-多重比较与假阳性控制-为什么-做了-20-个指标-总有-1-个显著\">第 9 章 · 多重比较与假阳性控制：为什么「做了 20 个指标，总有 1 个显著」</h1>\n<blockquote><p><strong>MOTTO:</strong> 「谨守病机，各司其属。」——《素问·至真要大论》</p>\n<p><strong>PROBLEM:</strong> 一份中医证候研究里测了 20 个指标，其中 1 个 p=0.03，你把它写成「具有统计学意义」，审稿人一句「你校正了吗」就把结论推翻了。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(毕业与晋升都要「阳性结果」，指标越加越多) + 知识积累(多重比较 × 错误发现率 = 一套能在分析前就定好、事后不被质疑的判定规则)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>医学统计学</td></tr><tr><td>院系</td><td>管理系</td></tr><tr><td>章序号</td><td>09 / 10</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>说清「做 20 次独立检验、α=0.05，至少一次假阳性的概率约 64%」是怎么算出来的</li><li>实现 Bonferroni 与 Benjamini–Hochberg（BH）两种校正，并说明各自控制的是什么</li><li>判断一份结果表该用哪一种校正，并写出理由</li><li>指出校正<strong>不能</strong>挽救什么（比如事先没定主结局、事后挑指标）</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"为什么要校正\">为什么要校正</h3>\n<p>《医学统计学·方差分析》一章在讲完两两比较后专门提醒：多组间反复比较会放大第一类错误。原因很简单：</p>\n<span class=\"math-block\">P(<span class=\"math-text\">至少一次假阳性</span>)=1-(1-α)<sup>m</sup></span>\n<p><span class=\"math\">m=20</span>、<span class=\"math\">α=0.05</span> 时约 0.64。也就是说，<strong>什么都不做的研究，二十个指标里几乎必然有一个「显著」</strong>。</p>\n<h3 id=\"两种校正-控制的是不同的东西\">两种校正，控制的是不同的东西</h3>\n<ul><li><strong>Bonferroni</strong>：<span class=\"math\">α'=α/m</span>，控制<strong>族错误率（FWER）</strong>——任意一次假阳性的概率。保守，指标多时几乎全灭。</li><li><strong>BH（Benjamini–Hochberg）</strong>：把 p 值升序排列，找到最大的 <span class=\"math\">k</span> 使 <span class=\"math\">p<sub>(k)</sub>≤ <span class=\"frac\"><span class=\"frac-num\">k</span><span class=\"frac-den\">m</span></span>α</span>，则前 <span class=\"math\">k</span> 个拒绝。控制<strong>错误发现率（FDR）</strong>——被宣称的发现里假阳性的<strong>比例</strong>。探索性研究通常更合适。</li></ul>\n<p>关键区别：FWER 问「我有没有说错一次」，FDR 问「我说对的那批里错了多少比例」。前者适合确证性研究，后者适合筛选。</p>\n<p>FWER 一侧还有一个比 Bonferroni 更聪明的做法：<strong>Holm 逐步法</strong>。把 p 值升序排列后，第一个与 <span class=\"math\">α/m</span> 比较，第二个与 <span class=\"math\">α/(m-1)</span> 比较，一旦某一步不显著就停止，之后的一律不拒绝。它同样控制 FWER，但在真有多个效应时比 Bonferroni 更容易留住结果。本课先实现 Bonferroni 与 BH 两条，是因为它们分别代表「最保守」与「按比例控制」两个极端，把这两个搞懂，中间的变体都是同一思路的调整。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">function bh(pvalues, alpha = 0.05) {\n  const idx = pvalues.map((p, i) =&gt; ({ p, i })).sort((a, b) =&gt; a.p - b.p);\n  let k = 0;\n  idx.forEach((x, rank) =&gt; { if (x.p &lt;= ((rank + 1) / idx.length) * alpha) k = rank + 1; });\n  return { k, rejected: idx.slice(0, k).map((x) =&gt; x.i) };  // 注意：拒绝的是&quot;前 k 个&quot;\n}</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：给出的 10 个 p 值中，Bonferroni 只留下 1 个（p=0.001），BH 留下 2 个（0.001、0.008）——差异恰好说明两种口径的取舍。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>校正救不了事后挑指标</strong>。如果主结局是分析完才选的，任何校正都是装饰；预注册才是解药。</li><li><strong>BH 假设检验之间独立或正相关</strong>。指标高度相关时（同一证候的量表与症状积分），FDR 控制会偏松。</li><li><strong>校正后不显著 ≠ 没有效应</strong>。样本量不足时，真效应也会被校正掉，这叫「校正的代价」，必须写进局限性。</li><li><strong>它不解决多重性之外的偏倚</strong>：选择性报告、结局替换、分组不随机，校正一个都管不了。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 本章的代码与阈值用于教学与统计分析演练，不构成研究结论或临床建议；真实研究须按预注册方案与期刊统计要求执行。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>把 α 从 0.05 改到 0.01，观察 BH 的拒绝集合如何变化，说明为什么 α 必须在分析前定。</li><li>构造一组高度相关的 p 值（如 0.01、0.011、0.012…），观察 BH 的表现在哪里失效。</li><li>若研究只有一个主结局与五个次要结局，你会怎么分配 α？写出方案与理由。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>「做了很多比较」本身不是错，<strong>不承认做了很多比较</strong>才是错。校正方法的真正价值不是让结果变好看，而是逼研究者在动手之前就想清楚：我到底要回答几个问题。</p>",
+    "markdown": "# 第 9 章 · 多重比较与假阳性控制：为什么「做了 20 个指标，总有 1 个显著」\n\n> **MOTTO:** 「谨守病机，各司其属。」——《素问·至真要大论》\n>\n> **PROBLEM:** 一份中医证候研究里测了 20 个指标，其中 1 个 p=0.03，你把它写成「具有统计学意义」，审稿人一句「你校正了吗」就把结论推翻了。\n>\n> **双根因定位:** 环境逼迫(毕业与晋升都要「阳性结果」，指标越加越多) + 知识积累(多重比较 × 错误发现率 = 一套能在分析前就定好、事后不被质疑的判定规则)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 医学统计学 |\n| 院系 | 管理系 |\n| 章序号 | 09 / 10 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 说清「做 20 次独立检验、α=0.05，至少一次假阳性的概率约 64%」是怎么算出来的\n- 实现 Bonferroni 与 Benjamini–Hochberg（BH）两种校正，并说明各自控制的是什么\n- 判断一份结果表该用哪一种校正，并写出理由\n- 指出校正**不能**挽救什么（比如事先没定主结局、事后挑指标）\n\n## 核心概念\n\n### 为什么要校正\n\n《医学统计学·方差分析》一章在讲完两两比较后专门提醒：多组间反复比较会放大第一类错误。原因很简单：\n\n$$P(\\text{至少一次假阳性})=1-(1-\\alpha)^m$$\n\n$m=20$、$\\alpha=0.05$ 时约 0.64。也就是说，**什么都不做的研究，二十个指标里几乎必然有一个「显著」**。\n\n### 两种校正，控制的是不同的东西\n\n- **Bonferroni**：$\\alpha'=\\alpha/m$，控制**族错误率（FWER）**——任意一次假阳性的概率。保守，指标多时几乎全灭。\n- **BH（Benjamini–Hochberg）**：把 p 值升序排列，找到最大的 $k$ 使 $p_{(k)}\\le \\frac{k}{m}\\alpha$，则前 $k$ 个拒绝。控制**错误发现率（FDR）**——被宣称的发现里假阳性的**比例**。探索性研究通常更合适。\n\n关键区别：FWER 问「我有没有说错一次」，FDR 问「我说对的那批里错了多少比例」。前者适合确证性研究，后者适合筛选。\n\nFWER 一侧还有一个比 Bonferroni 更聪明的做法：**Holm 逐步法**。把 p 值升序排列后，第一个与 $\\alpha/m$ 比较，第二个与 $\\alpha/(m-1)$ 比较，一旦某一步不显著就停止，之后的一律不拒绝。它同样控制 FWER，但在真有多个效应时比 Bonferroni 更容易留住结果。本课先实现 Bonferroni 与 BH 两条，是因为它们分别代表「最保守」与「按比例控制」两个极端，把这两个搞懂，中间的变体都是同一思路的调整。\n\n## BUILD IT：从零实现\n\n```js\nfunction bh(pvalues, alpha = 0.05) {\n  const idx = pvalues.map((p, i) => ({ p, i })).sort((a, b) => a.p - b.p);\n  let k = 0;\n  idx.forEach((x, rank) => { if (x.p <= ((rank + 1) / idx.length) * alpha) k = rank + 1; });\n  return { k, rejected: idx.slice(0, k).map((x) => x.i) };  // 注意：拒绝的是\"前 k 个\"\n}\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：给出的 10 个 p 值中，Bonferroni 只留下 1 个（p=0.001），BH 留下 2 个（0.001、0.008）——差异恰好说明两种口径的取舍。\n\n## 代价与边界\n\n- **校正救不了事后挑指标**。如果主结局是分析完才选的，任何校正都是装饰；预注册才是解药。\n- **BH 假设检验之间独立或正相关**。指标高度相关时（同一证候的量表与症状积分），FDR 控制会偏松。\n- **校正后不显著 ≠ 没有效应**。样本量不足时，真效应也会被校正掉，这叫「校正的代价」，必须写进局限性。\n- **它不解决多重性之外的偏倚**：选择性报告、结局替换、分组不随机，校正一个都管不了。\n\n> **免责声明：** 本章的代码与阈值用于教学与统计分析演练，不构成研究结论或临床建议；真实研究须按预注册方案与期刊统计要求执行。\n\n## 练习\n\n1. 把 α 从 0.05 改到 0.01，观察 BH 的拒绝集合如何变化，说明为什么 α 必须在分析前定。\n2. 构造一组高度相关的 p 值（如 0.01、0.011、0.012…），观察 BH 的表现在哪里失效。\n3. 若研究只有一个主结局与五个次要结局，你会怎么分配 α？写出方案与理由。\n\n## 进阶思考\n\n「做了很多比较」本身不是错，**不承认做了很多比较**才是错。校正方法的真正价值不是让结果变好看，而是逼研究者在动手之前就想清楚：我到底要回答几个问题。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 多重比较校正：Bonferroni（控 FWER）与 Benjamini–Hochberg（控 FDR）\n *\n *   node code/main.js\n *\n * 口径：\n *   Bonferroni: 阈值 α/m，控制「至少一次假阳性」的概率\n *   BH        : 升序后找最大 k 使 p(k) ≤ (k/m)·α，前 k 个拒绝，控制假阳性占比\n *\n * 两者不可互换：确证性研究用 FWER，探索性筛选用 FDR。\n */\n\nfunction bonferroni(pvalues, alpha = 0.05) {\n  const thr = alpha / pvalues.length;\n  const rejected = [];\n  pvalues.forEach((p, i) => { if (p <= thr) rejected.push(i); });\n  return { method: 'bonferroni', threshold: thr, rejected };\n}\n\nfunction bh(pvalues, alpha = 0.05) {\n  const m = pvalues.length;\n  const idx = pvalues.map((p, i) => ({ p, i })).sort((a, b) => a.p - b.p);\n  let k = 0;\n  idx.forEach((x, rank) => {\n    if (x.p <= ((rank + 1) / m) * alpha) k = rank + 1;\n  });\n  // 拒绝的是排序后的前 k 个，不是\"所有 p ≤ k/m·α 的\"——后者是常见实现错误\n  return { method: 'bh', threshold: k ? (k / m) * alpha : 0, rejected: idx.slice(0, k).map((x) => x.i).sort((a, b) => a - b) };\n}\n\n/** 至少一次假阳性的概率：1-(1-α)^m */\nfunction familyError(alpha, m) {\n  return +(1 - (1 - alpha) ** m).toFixed(3);\n}\n\nconst PVALUES = [0.001, 0.008, 0.021, 0.03, 0.041, 0.12, 0.25, 0.4, 0.62, 0.9];\n\nfunction main() {\n  console.log(`p 值（${PVALUES.length} 个）：${PVALUES.join(', ')}`);\n  console.log(`\\n若不做校正（α=0.05），至少一次假阳性的概率 = ${familyError(0.05, PVALUES.length)}`);\n\n  for (const r of [bonferroni(PVALUES), bh(PVALUES)]) {\n    console.log(`\\n${r.method.toUpperCase()}：阈值 ${r.threshold.toFixed(4)}`);\n    console.log(`  拒绝（显著）的下标：${r.rejected.join(', ') || '无'}`);\n    console.log(`  对应 p 值：${r.rejected.map((i) => PVALUES[i]).join(', ') || '无'}`);\n  }\n  console.log('\\n本输出为教学样例，不构成研究结论；真实研究须按预注册方案执行。');\n}\n\nif (require.main === module) main();\nmodule.exports = { bonferroni, bh, familyError, PVALUES };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { bonferroni, bh, familyError } = require('./main.js');\n\ntest('familyError：m 越大，至少一次假阳性的概率越高', () => {\n  assert.ok(familyError(0.05, 20) > familyError(0.05, 10));\n  assert.strictEqual(familyError(0.05, 1), 0.05);\n});\n\ntest('Bonferroni 阈值 = α/m', () => {\n  assert.strictEqual(+bonferroni([0.01, 0.02, 0.9, 0.5]).threshold.toFixed(5), 0.0125);\n});\n\ntest('Bonferroni 比 BH 保守（拒绝集不会更大）', () => {\n  const p = [0.001, 0.008, 0.021, 0.03, 0.041, 0.12];\n  assert.ok(bonferroni(p).rejected.length <= bh(p).rejected.length);\n});\n\ntest('BH 拒绝的是排序后的前 k 个，而不是所有过阈值的', () => {\n  // 0.05 单独看显著，但排在最后一名，不应被拒绝\n  const r = bh([0.04, 0.045, 0.05, 0.2, 0.9]);\n  assert.deepStrictEqual(r.rejected, []);\n});\n\ntest('BH 在明显分离的数据上拒绝前两个', () => {\n  const r = bh([0.001, 0.008, 0.021, 0.03, 0.041, 0.12, 0.25, 0.4, 0.62, 0.9]);\n  assert.deepStrictEqual(r.rejected, [0, 1]);\n});\n\ntest('单个 p 值：BH 与 Bonferroni 判定一致', () => {\n  assert.deepStrictEqual(bh([0.01]).rejected, [0]);\n  assert.deepStrictEqual(bonferroni([0.01]).rejected, [0]);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "做 20 个独立检验、α=0.05，什么都不做也至少出现一次「显著」的概率约为？",
+          "options": [
+            "5%",
+            "20%",
+            "64%",
+            "95%"
+          ],
+          "correct": 2,
+          "explanation": "1-(1-0.05)^20 ≈ 0.64。"
+        },
+        {
+          "stage": "check",
+          "question": "Bonferroni 控制的是？",
+          "options": [
+            "错误发现率（FDR）",
+            "族错误率（FWER）：任意一次假阳性的概率",
+            "统计功效",
+            "样本量"
+          ],
+          "correct": 1,
+          "explanation": "Bonferroni 用 α/m，是最保守的 FWER 控制。"
+        },
+        {
+          "stage": "check",
+          "question": "BH 的正确实现是？",
+          "options": [
+            "拒绝所有 p ≤ α/m 的检验",
+            "把 p 升序排列，找最大 k 使 p(k) ≤ (k/m)·α，拒绝前 k 个",
+            "随机挑一半检验做校正",
+            "把所有 p 值乘以 m"
+          ],
+          "correct": 1,
+          "explanation": "常见错误是只挑「过阈值」的那些，而不是取前 k 个。"
+        },
+        {
+          "stage": "check",
+          "question": "探索性筛选题，一般更合适的是？",
+          "options": [
+            "Bonferroni",
+            "BH（控 FDR）",
+            "不校正",
+            "把 α 调到 0.2"
+          ],
+          "correct": 1,
+          "explanation": "筛选阶段在意「这批发现里错多少比例」，FDR 更贴合，也保留功效。"
+        },
+        {
+          "stage": "post",
+          "question": "校正后不显著，最准确的解读是？",
+          "options": [
+            "证明没有效应",
+            "在校正口径与现有样本量下不足以宣称；真效应可能被校正掉",
+            "数据造错了",
+            "应该改用未校正的结果"
+          ],
+          "correct": 1,
+          "explanation": "不显著 ≠ 无效；这是校正的代价，要写进局限性。"
+        },
+        {
+          "stage": "post",
+          "question": "下面哪种行为是校正无法弥补的？",
+          "options": [
+            "指标多达 20 个",
+            "主结局在分析完成后才确定",
+            "使用 BH 而非 Bonferroni",
+            "α 设在 0.05"
+          ],
+          "correct": 1,
+          "explanation": "事后挑结局属于设计层面的偏倚，任何校正都只是装饰；解药是预注册。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-duochong-jiaoyan.md",
+        "kind": "prompt",
+        "file": "departments/06-guanli/01-yixue-tongjixue/chapters/09-duochong-jiaoyan/outputs/prompt-duochong-jiaoyan.md",
+        "title": "多重比较校正选择器",
+        "description": null,
+        "chars": 679,
+        "body": "# 多重比较校正选择器\n\n## 用途\n\n给定一份研究的比较次数与目的（确证 / 探索），选出校正方法、算出门槛，并把「不能宣称什么」写清楚。\n用于**统计分析前的方案讨论、稿件自查、审稿意见应答**。\n\n## 提示词\n\n```text\n你是医学统计学的审稿助手。下面是一份研究的比较清单与目的说明。\n\n规则：\n1. 先问目的：确证性（要下结论）用 FWER（Bonferroni 或 Holm）；探索性（要筛候选）用 FDR（BH）。不要两者混用。\n2. 算门槛：Bonferroni = α/m；BH 需列出升序 p 值与 k 值，并写出最终拒绝集。\n3. 明确报告：m 是多少（主结局 + 次要结局 + 亚组 + 时间点，全部计入），α 是否事先设定。\n4. 若主结局是分析后才确定的，直接指出「校正无法弥补，需预注册或标注为探索性」。\n5. 输出必须包含「校正的代价」一段：真实的效应也可能被校正掉。\n\n输出格式：\n【方法】…（理由：目的 = …）\n【m 与 α】… ；门槛 …\n【结果表述】…\n【局限】1) … 2) …\n```\n\n## 使用示例\n\n输入：20 个指标，均为次要结局，目的是筛候选；α=0.05；p 值最小 0.001、次小 0.008。\n\n输出：【方法】BH（探索性）【m 与 α】m=20，α=0.05，门槛按 BH 逐位算（k=1: 0.0025，k=2: 0.005…）\n【结果表述】BH 下 p=0.001 与 0.008 均被拒绝，可写「两个候选指标值得进一步验证」，不可写「疗效显著」。\n\n## 为什么这样限制\n\n- 强制先问目的：方法选错往往不是算错，而是目的没说清。\n- 要求列出 m 的构成：很多人只数主指标，把亚组和时间点漏掉，门槛因此虚高。\n- 强制写「代价」：只讲校正的好处，会让读者以为校正没有成本。\n"
+      },
+      {
+        "name": "skill-duochong-jiaoyan.md",
+        "kind": "skill",
+        "file": "departments/06-guanli/01-yixue-tongjixue/chapters/09-duochong-jiaoyan/outputs/skill-duochong-jiaoyan.md",
+        "title": "duochong-jiaoyan",
+        "description": "按研究目的选择 FWER 或 FDR 校正，算出门槛并写明校正的代价与不可弥补的偏倚",
+        "chars": 565,
+        "body": "---\nname: duochong-jiaoyan\ndescription: 按研究目的选择 FWER 或 FDR 校正，算出门槛并写明校正的代价与不可弥补的偏倚\nversion: 0.1.0\n---\n\n# duochong-jiaoyan\n\n## 何时使用\n\n- 研究方案讨论阶段，需要确定「比较几次、怎么校正」\n- 稿件自查：m 是否漏算、α 是否事后调整\n- 应答审稿人「你校正了吗」这类意见\n\n## 不适用\n\n- 单一比较且无亚组、无多时间点的研究（无需校正）\n- 主结局未预注册、需要事后补校正的情形（校正无效，只能标注探索性）\n- 贝叶斯/机器学习建模中的多重性问题（那是另一套框架）\n\n## 步骤\n\n1. **定目的**：确证 → FWER；探索 → FDR。\n2. **数 m**：主结局 + 次要结局 + 亚组 + 时间点，逐项相加并列出。\n3. **算门槛**：Bonferroni α/m；BH 逐位算 k/m·α 并给拒绝集。\n4. **写表述**：确证写「显著」，探索写「值得进一步验证」。\n5. **写局限**：校正可能抹掉真实效应；事后挑结局校正无效。\n\n## 输出模板\n\n```text\n【方法】…\n【m 与 α】m=…（构成：…）；α=…\n【门槛与拒绝集】…\n【表述】…\n【局限】1) … 2) …\n```\n\n## 质量判据\n\n- m 的构成逐项列出，可被读者复核\n- 方法选择与「目的」一致\n- 局限性包含「校正的代价」而非只有套话\n\n> 本技能输出为统计方案辅助，不构成研究结论。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "07-zhineng/06-zhongyi-zhineng-bianzheng/07-yizhixing-pinggu": {
+    "key": "07-zhineng/06-zhongyi-zhineng-bianzheng/07-yizhixing-pinggu",
+    "deptSlug": "07-zhineng",
+    "deptTitle": "智能系",
+    "subjectSlug": "06-zhongyi-zhineng-bianzheng",
+    "subjectTitle": "中医智能辨证系统",
+    "chapterSlug": "07-yizhixing-pinggu",
+    "n": 7,
+    "title": "第 7 章 · 与医生诊断的一致性评估：kappa 高就说明系统靠谱吗",
+    "motto": "「诊法常以平旦，阴气未动，阳气未散。」——《素问·脉要精微论》",
+    "problem": "你的辨证系统与三位医生的一致率是 82%，你在答辩上说「达到临床可用水平」，评委问「kappa 多少、医生的诊断彼此一致吗」，你答不上来。",
+    "roots": "环境逼迫(要拿一致性数字去论证系统可用) + 知识积累(混淆矩阵 × kappa = 一个能区分「真的对上」与「碰巧对上」的评估)",
+    "html": "<h1 id=\"第-7-章-与医生诊断的一致性评估-kappa-高就说明系统靠谱吗\">第 7 章 · 与医生诊断的一致性评估：kappa 高就说明系统靠谱吗</h1>\n<blockquote><p><strong>MOTTO:</strong> 「诊法常以平旦，阴气未动，阳气未散。」——《素问·脉要精微论》</p>\n<p><strong>PROBLEM:</strong> 你的辨证系统与三位医生的一致率是 82%，你在答辩上说「达到临床可用水平」，评委问「kappa 多少、医生的诊断彼此一致吗」，你答不上来。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(要拿一致性数字去论证系统可用) + 知识积累(混淆矩阵 × kappa = 一个能区分「真的对上」与「碰巧对上」的评估)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>中医智能辨证系统</td></tr><tr><td>院系</td><td>智能系</td></tr><tr><td>章序号</td><td>07 / 10</td></tr><tr><td>所属阶段</td><td>🌳 壮·鼎盛</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>4 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>从混淆矩阵算出原始一致率与 Cohen's kappa，并解释两者差在哪</li><li>说清「患病率极高或极低时 kappa 会失真」这一悖论，并给出替代指标</li><li>用医生之间的 kappa 作为<strong>上界参照</strong>：系统的一致性不可能长期高于人类彼此的一致性</li><li>指出「一致 ≠ 正确」：医生之间一致地错，系统跟着错也会得高分</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"中医-一致性评估的前提是先固定诊法条件\">中医：一致性评估的前提是先固定诊法条件</h3>\n<p>《素问·脉要精微论》强调「诊法常以平旦」，说的是诊断要在条件受控时进行。这句话在今天的含义是：<strong>如果两位医生看同一个病人的时间、体位、问诊深度都不同，他们的不一致里混着测量误差，不能全算作判断差异</strong>。评估系统与医生的一致性之前，先要评估医生彼此的一致性——后者是这套评估的噪声底。</p>\n<h3 id=\"ai-工程-kappa-与它的陷阱\">AI/工程：kappa 与它的陷阱</h3>\n<span class=\"math-block\">κ=<span class=\"frac\"><span class=\"frac-num\">p<sub>o</sub>-p<sub>e</sub></span><span class=\"frac-den\">1-p<sub>e</sub></span></span></span>\n<p><span class=\"math\">p<sub>o</sub></span> 是观察一致率，<span class=\"math\">p<sub>e</sub></span> 是「按各自边际分布随机猜」的期望一致率。kappa 的含义是「扣掉碰巧对上之后的一致程度」。</p>\n<p>三个必须同时报告：<span class=\"math\">p<sub>o</sub></span>、<span class=\"math\">κ</span>、以及<strong>边际分布</strong>（各类占比）。因为当某一类占 90% 时，系统全判这一类就能拿到 0.9 的 <span class=\"math\">p<sub>o</sub></span>，而 <span class=\"math\">κ</span> 可能接近 0——反过来，当两类各占 50% 且几乎全对时，<span class=\"math\">κ</span> 也会被压得比直觉低。这就是著名的 kappa 悖论，替代方案是 PABAK 或 Gwet 的 AC1。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">function kappa(matrix) {\n  // matrix[i][j]：系统判 i、医生判 j 的例数\n  const n = matrix.flat().reduce((a, b) =&gt; a + b, 0);\n  const po = matrix.reduce((s, row, i) =&gt; s + row[i], 0) / n;\n  const rowSum = matrix.map((r) =&gt; r.reduce((a, b) =&gt; a + b, 0) / n);\n  const colSum = matrix[0].map((_, j) =&gt; matrix.reduce((s, r) =&gt; s + r[j], 0) / n);\n  const pe = rowSum.reduce((s, r, i) =&gt; s + r * colSum[i], 0);\n  return { po, pe, kappa: (po - pe) / (1 - pe) };\n}</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：一个「全判同一类」的退化矩阵 <span class=\"math\">p<sub>o</sub>=0.857</span> 但 <span class=\"math\">κ=0</span>，与一个均衡且几乎全对的矩阵（<span class=\"math\">κ≈0.94</span>）形成对照——这正是答辩时最容易被问到的那一处。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>一致不等于正确</strong>。两位医生都判错时，系统跟着错会得高分；没有金标准，一致性只是「像人」，不是「对」。</li><li><strong>kappa 对患病率敏感</strong>。类别极不平衡时它会低得离谱，不能直接拿来与文献里的 0.8 比较。</li><li><strong>样本量与类别数会改变可比性</strong>。5 类 200 例与 2 类 2000 例的 kappa 不可直接对照。</li><li><strong>它不告诉你错在哪</strong>。必须同时给出混淆矩阵，否则无法看出系统是否把「肝阳上亢」全判成「肝火上炎」。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 本章的评估方法用于系统研发与教学；任何辨证系统的临床使用须经伦理审查、前瞻验证与监管审批，本章数据不构成疗效或安全性证据。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>给混淆矩阵加一列「医生之间不一致」的样本，观察 kappa 如何变化。</li><li>用同一份矩阵算 PABAK，比较它与 kappa 的差异，说明各自适合的报告场景。</li><li>若三类样本占比为 90%/5%/5%，系统全判第一类，<span class=\"math\">p<sub>o</sub></span> 与 <span class=\"math\">κ</span> 各是多少？</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>一致性评估最容易被当成「验收指标」：数字够了就上线。但一个只跟人类保持一致的模型，天花板就是人类的一致性水平——而人类彼此的一致性本身可能只有 0.6。先把噪声底测出来，再谈系统好不好。</p>",
+    "markdown": "# 第 7 章 · 与医生诊断的一致性评估：kappa 高就说明系统靠谱吗\n\n> **MOTTO:** 「诊法常以平旦，阴气未动，阳气未散。」——《素问·脉要精微论》\n>\n> **PROBLEM:** 你的辨证系统与三位医生的一致率是 82%，你在答辩上说「达到临床可用水平」，评委问「kappa 多少、医生的诊断彼此一致吗」，你答不上来。\n>\n> **双根因定位:** 环境逼迫(要拿一致性数字去论证系统可用) + 知识积累(混淆矩阵 × kappa = 一个能区分「真的对上」与「碰巧对上」的评估)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 中医智能辨证系统 |\n| 院系 | 智能系 |\n| 章序号 | 07 / 10 |\n| 所属阶段 | 🌳 壮·鼎盛 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 4 小时 |\n\n## 学习目标\n\n- 从混淆矩阵算出原始一致率与 Cohen's kappa，并解释两者差在哪\n- 说清「患病率极高或极低时 kappa 会失真」这一悖论，并给出替代指标\n- 用医生之间的 kappa 作为**上界参照**：系统的一致性不可能长期高于人类彼此的一致性\n- 指出「一致 ≠ 正确」：医生之间一致地错，系统跟着错也会得高分\n\n## 核心概念\n\n### 中医：一致性评估的前提是先固定诊法条件\n\n《素问·脉要精微论》强调「诊法常以平旦」，说的是诊断要在条件受控时进行。这句话在今天的含义是：**如果两位医生看同一个病人的时间、体位、问诊深度都不同，他们的不一致里混着测量误差，不能全算作判断差异**。评估系统与医生的一致性之前，先要评估医生彼此的一致性——后者是这套评估的噪声底。\n\n### AI/工程：kappa 与它的陷阱\n\n$$\\kappa=\\frac{p_o-p_e}{1-p_e}$$\n\n$p_o$ 是观察一致率，$p_e$ 是「按各自边际分布随机猜」的期望一致率。kappa 的含义是「扣掉碰巧对上之后的一致程度」。\n\n三个必须同时报告：$p_o$、$\\kappa$、以及**边际分布**（各类占比）。因为当某一类占 90% 时，系统全判这一类就能拿到 0.9 的 $p_o$，而 $\\kappa$ 可能接近 0——反过来，当两类各占 50% 且几乎全对时，$\\kappa$ 也会被压得比直觉低。这就是著名的 kappa 悖论，替代方案是 PABAK 或 Gwet 的 AC1。\n\n## BUILD IT：从零实现\n\n```js\nfunction kappa(matrix) {\n  // matrix[i][j]：系统判 i、医生判 j 的例数\n  const n = matrix.flat().reduce((a, b) => a + b, 0);\n  const po = matrix.reduce((s, row, i) => s + row[i], 0) / n;\n  const rowSum = matrix.map((r) => r.reduce((a, b) => a + b, 0) / n);\n  const colSum = matrix[0].map((_, j) => matrix.reduce((s, r) => s + r[j], 0) / n);\n  const pe = rowSum.reduce((s, r, i) => s + r * colSum[i], 0);\n  return { po, pe, kappa: (po - pe) / (1 - pe) };\n}\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：一个「全判同一类」的退化矩阵 $p_o=0.857$ 但 $\\kappa=0$，与一个均衡且几乎全对的矩阵（$\\kappa\\approx0.94$）形成对照——这正是答辩时最容易被问到的那一处。\n\n## 代价与边界\n\n- **一致不等于正确**。两位医生都判错时，系统跟着错会得高分；没有金标准，一致性只是「像人」，不是「对」。\n- **kappa 对患病率敏感**。类别极不平衡时它会低得离谱，不能直接拿来与文献里的 0.8 比较。\n- **样本量与类别数会改变可比性**。5 类 200 例与 2 类 2000 例的 kappa 不可直接对照。\n- **它不告诉你错在哪**。必须同时给出混淆矩阵，否则无法看出系统是否把「肝阳上亢」全判成「肝火上炎」。\n\n> **免责声明：** 本章的评估方法用于系统研发与教学；任何辨证系统的临床使用须经伦理审查、前瞻验证与监管审批，本章数据不构成疗效或安全性证据。\n\n## 练习\n\n1. 给混淆矩阵加一列「医生之间不一致」的样本，观察 kappa 如何变化。\n2. 用同一份矩阵算 PABAK，比较它与 kappa 的差异，说明各自适合的报告场景。\n3. 若三类样本占比为 90%/5%/5%，系统全判第一类，$p_o$ 与 $\\kappa$ 各是多少？\n\n## 进阶思考\n\n一致性评估最容易被当成「验收指标」：数字够了就上线。但一个只跟人类保持一致的模型，天花板就是人类的一致性水平——而人类彼此的一致性本身可能只有 0.6。先把噪声底测出来，再谈系统好不好。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 与医生诊断的一致性：混淆矩阵 → 原始一致率 / kappa / PABAK\n *\n *   node code/main.js\n *\n * 口径：\n *   po   = 对角线之和 / 总数\n *   pe   = Σ(行占比 × 列占比)        —— 随机猜的期望一致率\n *   kappa= (po - pe) / (1 - pe)\n *   PABAK= 2·po - 1                  —— 对患病率不敏感的替代指标\n *\n * 三者必须一起报：只看 kappa 会在类别极不平衡时得出反直觉结论。\n */\n\nconst CATS = ['肝气郁结', '肝火上炎', '肝胆湿热'];\n\nfunction stats(matrix) {\n  const n = matrix.flat().reduce((a, b) => a + b, 0);\n  if (!n) throw new Error('混淆矩阵为空');\n  const k = matrix.length;\n  for (const row of matrix) {\n    if (row.length !== k) throw new Error('混淆矩阵必须是方阵');\n  }\n\n  const diag = matrix.reduce((s, row, i) => s + row[i], 0);\n  const po = diag / n;\n\n  const rowSum = matrix.map((r) => r.reduce((a, b) => a + b, 0) / n);\n  const colSum = matrix[0].map((_, j) => matrix.reduce((s, r) => s + r[j], 0) / n);\n  const pe = rowSum.reduce((s, r, i) => s + r * colSum[i], 0);\n\n  return {\n    n,\n    po: +po.toFixed(3),\n    pe: +pe.toFixed(3),\n    kappa: pe === 1 ? null : +((po - pe) / (1 - pe)).toFixed(3),\n    pabak: +(2 * po - 1).toFixed(3),\n  };\n}\n\nconst CASES = [\n  {\n    name: 'A：类别极不平衡，系统全判第一类',\n    m: [\n      [90, 0, 0],\n      [10, 0, 0],\n      [5, 0, 0],\n    ],\n  },\n  {\n    name: 'B：均衡且几乎全对',\n    m: [\n      [30, 1, 0],\n      [1, 29, 1],\n      [0, 1, 30],\n    ],\n  },\n];\n\nfunction main() {\n  for (const c of CASES) {\n    const s = stats(c.m);\n    console.log(`\\n${c.name}（n=${s.n}）`);\n    console.log(`  po=${s.po}  pe=${s.pe}  kappa=${s.kappa ?? '—'}  PABAK=${s.pabak}`);\n    console.log(\n      s.kappa !== null && s.kappa < 0.2\n        ? '  注意：一致率高但 kappa 低 —— 这是\"碰巧对上\"，不是\"学会了\"。'\n        : '  注意：仍需结合混淆矩阵看错在哪一类。',\n    );\n  }\n  console.log(`\\n分类：${CATS.join(' / ')}`);\n  console.log('本输出为教学样例，不构成系统有效性证据。');\n}\n\nif (require.main === module) main();\nmodule.exports = { stats, CATS };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { stats } = require('./main.js');\n\ntest('全对的矩阵：po=1，kappa=1', () => {\n  const r = stats([[5, 0], [0, 5]]);\n  assert.strictEqual(r.po, 1);\n  assert.strictEqual(r.kappa, 1);\n});\n\ntest('类别极不平衡且全判一类：一致率高但 kappa=0', () => {\n  const r = stats([[90, 0, 0], [10, 0, 0], [5, 0, 0]]);\n  assert.ok(r.po > 0.8);\n  assert.strictEqual(r.kappa, 0);\n});\n\ntest('PABAK 对不平衡不敏感，与 kappa 形成对照', () => {\n  const r = stats([[90, 0, 0], [10, 0, 0], [5, 0, 0]]);\n  assert.ok(r.pabak > 0.5); // 2×0.857−1\n  assert.notStrictEqual(r.pabak, r.kappa);\n});\n\ntest('均衡且几乎全对：kappa 明显高于 0.8', () => {\n  const r = stats([[30, 1, 0], [1, 29, 1], [0, 1, 30]]);\n  assert.ok(r.kappa > 0.85);\n});\n\ntest('非方阵与空矩阵必须抛错', () => {\n  assert.throws(() => stats([[1, 2], [3, 4], [5, 6]]), /方阵/);\n  assert.throws(() => stats([[0, 0], [0, 0]]), /为空/);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "评估「系统与医生一致」之前，先要测什么？",
+          "options": [
+            "系统的推理速度",
+            "医生彼此之间的一致性（它是这套评估的噪声底）",
+            "系统的代码行数",
+            "病人的满意度"
+          ],
+          "correct": 1,
+          "explanation": "医生之间都不一致时，系统与单个医生的一致率没有解释力。"
+        },
+        {
+          "stage": "check",
+          "question": "kappa 的分母 1−pe 表示？",
+          "options": [
+            "总样本量",
+            "扣掉「随机猜也能对上」之后剩余的可一致空间",
+            "类别数",
+            "错误率"
+          ],
+          "correct": 1,
+          "explanation": "kappa 衡量的是超出随机水平的那部分一致。"
+        },
+        {
+          "stage": "check",
+          "question": "类别占比 90/5/5、系统全判第一类时，最可能的结果是？",
+          "options": [
+            "po 高、kappa 接近 0",
+            "po 低、kappa 高",
+            "po 与 kappa 都高",
+            "po 与 kappa 都为 0"
+          ],
+          "correct": 0,
+          "explanation": "这是 kappa 悖论的典型形态：一致率被多数类「撑」起来。"
+        },
+        {
+          "stage": "check",
+          "question": "PABAK 的作用是？",
+          "options": [
+            "替代样本量计算",
+            "提供对类别不平衡不敏感的一致率指标",
+            "检验正态性",
+            "校正多重比较"
+          ],
+          "correct": 1,
+          "explanation": "PABAK = 2·po−1，去掉了边际分布的依赖。"
+        },
+        {
+          "stage": "post",
+          "question": "系统与医生一致率 82%，能否直接写「达到临床可用水平」？",
+          "options": [
+            "能，82% 已经很高",
+            "不能：需同时报 kappa、边际分布、医生间一致性，并说明一致不等于正确",
+            "能，只要样本足够大",
+            "不能，因为没有做 t 检验"
+          ],
+          "correct": 1,
+          "explanation": "四个要件缺一不可；一致只是「像人」，不是「对」。"
+        },
+        {
+          "stage": "post",
+          "question": "若两位医生一致地判错，系统跟着错，会怎样？",
+          "options": [
+            "kappa 下降",
+            "一致性评分提高，但系统实际上错了 —— 说明必须有金标准",
+            "系统会被自动淘汰",
+            "无法计算 kappa"
+          ],
+          "correct": 1,
+          "explanation": "一致性评估无法替代金标准验证，这是本课最重要的边界。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-yizhixing-pinggu.md",
+        "kind": "prompt",
+        "file": "departments/07-zhineng/06-zhongyi-zhineng-bianzheng/chapters/07-yizhixing-pinggu/outputs/prompt-yizhixing-pinggu.md",
+        "title": "一致性评估报告单",
+        "description": null,
+        "chars": 770,
+        "body": "# 一致性评估报告单\n\n## 用途\n\n给一份「系统 vs 医生」的辨证对照结果写评估报告：混淆矩阵、原始一致率、kappa、PABAK、医生间一致性、\n以及「这份数字不能证明什么」。用于**论文与答辩材料、内部评审、系统上线前自查**。\n\n## 提示词\n\n```text\n你是医学 AI 评估的统计助手。下面是一份系统与医生的辨证对照表（行=系统判定，列=医生判定）。\n\n规则：\n1. 先给混淆矩阵，不要只给一个百分比。矩阵的类别顺序必须写出来。\n2. 计算并同时报告：po（原始一致率）、kappa、PABAK；若任一类占比 >70%，必须提示 kappa 可能失真。\n3. 报告医生之间的一致性（如两名医生交叉判定同一批病例的 kappa）。若没有这项，明确写「未测量，一致性结论不完整」。\n4. 禁止写「达到临床可用水平」「准确率 82% 因此可用」。只允许写「与医生判定的原始一致率为 …，kappa …」。\n5. 单列一段「不能证明什么」：一致不等于正确；无金标准；样本构成；医生判定的可靠性。\n\n输出格式：\n【混淆矩阵】类别顺序 …；行列 …\n【指标】po=… ；kappa=… ；PABAK=… ；医生间 kappa=…\n【表述建议】…\n【不能证明】1) … 2) …\n```\n\n## 使用示例\n\n输入：三类（肝气郁结/肝火上炎/肝胆湿热），系统全判第一类，医生判定分布 90/10/5。\n\n输出：【指标】po=0.857；kappa=0.000；PABAK=0.714；医生间 kappa=未测量\n【表述建议】原始一致率 0.857，但 kappa 为 0 —— 系统并未区分三类，一致来自多数类。\n【不能证明】系统具备辨证能力；未测医生间一致性；未设金标准。\n\n## 为什么这样限制\n\n- 强制给矩阵：只给百分比时，读者无法判断「一致」来自能力还是来自分布。\n- 强制查医生间一致性：缺了它，一致率没有参照系。\n- 禁写「可用」：一致性研究的结论边界就在这里，越过一步就是过度声明。\n"
+      },
+      {
+        "name": "skill-yizhixing-pinggu.md",
+        "kind": "skill",
+        "file": "departments/07-zhineng/06-zhongyi-zhineng-bianzheng/chapters/07-yizhixing-pinggu/outputs/skill-yizhixing-pinggu.md",
+        "title": "yizhixing-pinggu",
+        "description": "系统与医生辨证一致性评估：混淆矩阵、kappa、PABAK，并写明不能据此声称临床可用",
+        "chars": 622,
+        "body": "---\nname: yizhixing-pinggu\ndescription: 系统与医生辨证一致性评估：混淆矩阵、kappa、PABAK，并写明不能据此声称临床可用\nversion: 0.1.0\n---\n\n# yizhixing-pinggu\n\n## 何时使用\n\n- 辨证系统研发中，需要一份可复核的一致性报告\n- 答辩/投稿前自查：一致率是否被过度解读\n- 内部评审：判断「一致」是能力还是分布造成的\n\n## 不适用\n\n- 需要证明系统正确性的场景（必须有金标准与前瞻验证）\n- 只有一致率、没有逐例对照表的结果（无法计算 kappa）\n- 多中心、多医生、跨设备的一致性研究设计（需要专门的 ICC/kappa 方案）\n\n## 步骤\n\n1. **列矩阵**：行=系统，列=医生，类别顺序写死。\n2. **算三指标**：po、kappa、PABAK；同时报边际分布。\n3. **查医生间一致性**：没有就写「未测量」。\n4. **写局限**：一致≠正确、无金标准、样本构成、医生判定可靠性。\n5. **给表述**：只描述数字，不写「可用」。\n\n## 输出模板\n\n```text\n【混淆矩阵】类别顺序：…；参与例数：…\n【指标】po=… ；kappa=… ；PABAK=… ；医生间 kappa=…\n【表述】与医生判定的原始一致率 …，kappa …（解释：…）\n【不能证明】1) … 2) …\n```\n\n## 质量判据\n\n- 类别顺序与矩阵同时出现\n- 类别极不平衡时必有 kappa 失真提示\n- 结论段没有「准确率/可用/达标」这类词\n\n> 本技能输出为评估辅助，不构成系统有效性或临床可用性证据。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "08-wuguan/06-zhongyi-yanke-xue/01-wulun-bakuo": {
+    "key": "08-wuguan/06-zhongyi-yanke-xue/01-wulun-bakuo",
+    "deptSlug": "08-wuguan",
+    "deptTitle": "五官口腔系",
+    "subjectSlug": "06-zhongyi-yanke-xue",
+    "subjectTitle": "中医眼科学",
+    "chapterSlug": "01-wulun-bakuo",
+    "n": 1,
+    "title": "第 1 章 · 五轮八廓学说与眼的脏腑配属：一张能查、也能被质疑的映射表",
+    "motto": "「五轮者，五脏之精华所发也。」——《银海精微·五轮八廓总论》",
+    "problem": "病人白睛红、黑睛有翳、瞳神不清，你知道该「从肺、从肝、从肾」想，但说不清这三个判断的依据是同一套映射，也说不出这套映射在古代就有分歧。",
+    "roots": "环境逼迫(眼科门诊要在几分钟内把局部体征落到脏腑) + 知识积累(五轮学说 × 可查的映射表 = 一套既能用、又能标出争议的编码)",
+    "html": "<h1 id=\"第-1-章-五轮八廓学说与眼的脏腑配属-一张能查-也能被质疑的映射表\">第 1 章 · 五轮八廓学说与眼的脏腑配属：一张能查、也能被质疑的映射表</h1>\n<blockquote><p><strong>MOTTO:</strong> 「五轮者，五脏之精华所发也。」——《银海精微·五轮八廓总论》</p>\n<p><strong>PROBLEM:</strong> 病人白睛红、黑睛有翳、瞳神不清，你知道该「从肺、从肝、从肾」想，但说不清这三个判断的依据是同一套映射，也说不出这套映射在古代就有分歧。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(眼科门诊要在几分钟内把局部体征落到脏腑) + 知识积累(五轮学说 × 可查的映射表 = 一套既能用、又能标出争议的编码)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>中医眼科学</td></tr><tr><td>院系</td><td>五官口腔系</td></tr><tr><td>章序号</td><td>01 / 10</td></tr><tr><td>所属阶段</td><td>🌳 壮·鼎盛</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>背下并写清五轮与五脏的对应（肉轮—脾、血轮—心、气轮—肺、风轮—肝、水轮—肾）及各轮解剖范围</li><li>把「局部体征 → 轮位 → 脏腑」做成三级查表，并在表里标注<strong>版本与争议</strong></li><li>说清八廓与五轮的关系，以及为什么八廓的配属在历代文献里并不统一</li><li>指出「配属」与「辨证」不是一回事：映射给出思考方向，不给诊断结论</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"中医-五轮是分区-八廓是另一套分区\">中医：五轮是分区，八廓是另一套分区</h3>\n<p>《银海精微》把眼由外向内分为肉轮（胞睑）、血轮（两眦）、气轮（白睛）、风轮（黑睛）、水轮（瞳神），分别配属脾、心、肺、肝、肾。这是一套<strong>空间分区 + 脏腑归约</strong>的模型：看到哪一区的病变，就先想到它对应的脏。</p>\n<p>八廓是另一套分区，历代配属不同（有以八卦方位配、有以脏腑配、有以部位配），《审视瑶函》与《银海精微》的写法就不完全一致。这一点必须讲清：<strong>五轮相对稳定，八廓相对不稳定</strong>。教材把八廓放在次要位置，是有理由的。</p>\n<h3 id=\"ai-工程-把映射做成带版本的表\">AI/工程：把映射做成带版本的表</h3>\n<p>一张可用的映射表至少要有三列：<strong>体征定位</strong>（哪一区的什么表现）、<strong>轮位</strong>、<strong>脏腑</strong>；再加两列元数据：<strong>出处</strong>、<strong>争议标记</strong>。</p>\n<p>工程上这意味着：不要把「白睛红 → 肺热」写成一条规则常量，而要写成一条带 <code>source</code> 与 <code>disputed</code> 字段的记录。否则三年后没人说得清这条规则从哪来，也没法在有新版本时只替换有争议的部分。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">const WULUN = [\n  { lun: '肉轮', area: '胞睑', zang: '脾', source: '《银海精微·五轮八廓总论》', disputed: false },\n  { lun: '血轮', area: '两眦', zang: '心', source: '同上', disputed: false },\n  { lun: '气轮', area: '白睛', zang: '肺', source: '同上', disputed: false },\n  { lun: '风轮', area: '黑睛', zang: '肝', source: '同上', disputed: false },\n  { lun: '水轮', area: '瞳神', zang: '肾', source: '同上', disputed: false },\n];\nfunction locate(sign) { /* 体征 → {轮, 脏, 出处} 或 null */ }</code></pre></div>\n<p>八廓单列为 <code>BAKUO</code>，并带 <code>disputed: true</code> —— 不是「不能用」，而是「用的时候必须说明版本」。</p>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：输入「白睛红赤」返回气轮/肺；输入「胞睑红肿」返回肉轮/脾；输入四不像的描述返回 <code>null</code> 并提示「无法定位，不得强行归轮」。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>映射是分区启发，不是病理机制</strong>。白睛属肺不等于白睛病变都由肺引起；把配属当成因果，是这套学说最常被误用的地方。</li><li><strong>八廓的版本分歧无法在本表内消解</strong>。标 <code>disputed</code> 只是承认分歧，不是解决分歧；涉及八廓时必须以具体文献版本为准。</li><li><strong>一处体征可能落在两区交界</strong>（如眦部与白睛交界），本表的单值返回会掩盖这种模糊，实际应返回多候选。</li><li><strong>它不包含全身辨证</strong>。五轮只管「眼局部落到哪一脏」，寒热虚实仍需四诊合参。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 本章的映射表用于教学与知识编码演练，不构成诊断依据；眼部急性视力下降、剧痛、外伤须立即转急诊眼科处理。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>把 <code>locate</code> 改成返回候选数组（支持跨区体征），说明这对下游规则有什么影响。</li><li>查两个不同版本的八廓配属，列出至少两处差异，并设计表结构容纳它们。</li><li>若病人白睛红 + 瞳神不清同时出现，按本表应该输出什么？为什么不能简单取「更严重」的那个？</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>中医眼科的分区模型之所以能传下来，不是因为它精确，而是因为它<strong>可教、可记、可指向</strong>。把它编码成表时，最该保留的恰恰是「哪里有争议」——抹掉争议的表看起来更干净，却把最重要的学术信息删掉了。</p>",
+    "markdown": "# 第 1 章 · 五轮八廓学说与眼的脏腑配属：一张能查、也能被质疑的映射表\n\n> **MOTTO:** 「五轮者，五脏之精华所发也。」——《银海精微·五轮八廓总论》\n>\n> **PROBLEM:** 病人白睛红、黑睛有翳、瞳神不清，你知道该「从肺、从肝、从肾」想，但说不清这三个判断的依据是同一套映射，也说不出这套映射在古代就有分歧。\n>\n> **双根因定位:** 环境逼迫(眼科门诊要在几分钟内把局部体征落到脏腑) + 知识积累(五轮学说 × 可查的映射表 = 一套既能用、又能标出争议的编码)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 中医眼科学 |\n| 院系 | 五官口腔系 |\n| 章序号 | 01 / 10 |\n| 所属阶段 | 🌳 壮·鼎盛 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 背下并写清五轮与五脏的对应（肉轮—脾、血轮—心、气轮—肺、风轮—肝、水轮—肾）及各轮解剖范围\n- 把「局部体征 → 轮位 → 脏腑」做成三级查表，并在表里标注**版本与争议**\n- 说清八廓与五轮的关系，以及为什么八廓的配属在历代文献里并不统一\n- 指出「配属」与「辨证」不是一回事：映射给出思考方向，不给诊断结论\n\n## 核心概念\n\n### 中医：五轮是分区，八廓是另一套分区\n\n《银海精微》把眼由外向内分为肉轮（胞睑）、血轮（两眦）、气轮（白睛）、风轮（黑睛）、水轮（瞳神），分别配属脾、心、肺、肝、肾。这是一套**空间分区 + 脏腑归约**的模型：看到哪一区的病变，就先想到它对应的脏。\n\n八廓是另一套分区，历代配属不同（有以八卦方位配、有以脏腑配、有以部位配），《审视瑶函》与《银海精微》的写法就不完全一致。这一点必须讲清：**五轮相对稳定，八廓相对不稳定**。教材把八廓放在次要位置，是有理由的。\n\n### AI/工程：把映射做成带版本的表\n\n一张可用的映射表至少要有三列：**体征定位**（哪一区的什么表现）、**轮位**、**脏腑**；再加两列元数据：**出处**、**争议标记**。\n\n工程上这意味着：不要把「白睛红 → 肺热」写成一条规则常量，而要写成一条带 `source` 与 `disputed` 字段的记录。否则三年后没人说得清这条规则从哪来，也没法在有新版本时只替换有争议的部分。\n\n## BUILD IT：从零实现\n\n```js\nconst WULUN = [\n  { lun: '肉轮', area: '胞睑', zang: '脾', source: '《银海精微·五轮八廓总论》', disputed: false },\n  { lun: '血轮', area: '两眦', zang: '心', source: '同上', disputed: false },\n  { lun: '气轮', area: '白睛', zang: '肺', source: '同上', disputed: false },\n  { lun: '风轮', area: '黑睛', zang: '肝', source: '同上', disputed: false },\n  { lun: '水轮', area: '瞳神', zang: '肾', source: '同上', disputed: false },\n];\nfunction locate(sign) { /* 体征 → {轮, 脏, 出处} 或 null */ }\n```\n\n八廓单列为 `BAKUO`，并带 `disputed: true` —— 不是「不能用」，而是「用的时候必须说明版本」。\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：输入「白睛红赤」返回气轮/肺；输入「胞睑红肿」返回肉轮/脾；输入四不像的描述返回 `null` 并提示「无法定位，不得强行归轮」。\n\n## 代价与边界\n\n- **映射是分区启发，不是病理机制**。白睛属肺不等于白睛病变都由肺引起；把配属当成因果，是这套学说最常被误用的地方。\n- **八廓的版本分歧无法在本表内消解**。标 `disputed` 只是承认分歧，不是解决分歧；涉及八廓时必须以具体文献版本为准。\n- **一处体征可能落在两区交界**（如眦部与白睛交界），本表的单值返回会掩盖这种模糊，实际应返回多候选。\n- **它不包含全身辨证**。五轮只管「眼局部落到哪一脏」，寒热虚实仍需四诊合参。\n\n> **免责声明：** 本章的映射表用于教学与知识编码演练，不构成诊断依据；眼部急性视力下降、剧痛、外伤须立即转急诊眼科处理。\n\n## 练习\n\n1. 把 `locate` 改成返回候选数组（支持跨区体征），说明这对下游规则有什么影响。\n2. 查两个不同版本的八廓配属，列出至少两处差异，并设计表结构容纳它们。\n3. 若病人白睛红 + 瞳神不清同时出现，按本表应该输出什么？为什么不能简单取「更严重」的那个？\n\n## 进阶思考\n\n中医眼科的分区模型之所以能传下来，不是因为它精确，而是因为它**可教、可记、可指向**。把它编码成表时，最该保留的恰恰是「哪里有争议」——抹掉争议的表看起来更干净，却把最重要的学术信息删掉了。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 五轮八廓：眼局部体征 → 轮位 → 脏腑 的查表\n *\n *   node code/main.js\n *\n * 口径：\n *   五轮（《银海精微·五轮八廓总论》）：胞睑=肉轮=脾 / 两眦=血轮=心 / 白睛=气轮=肺\n *                                    黑睛=风轮=肝 / 瞳神=水轮=肾\n *   八廓：历代配属不一致 —— 一律标 disputed，使用时须指明版本\n *\n * 为什么带上 source 与 disputed：映射表一旦进代码就会变成\"事实\"，\n * 而八廓的版本分歧是真实的学术信息，不能在编码时被抹平。\n */\n\nconst WULUN = [\n  { lun: '肉轮', area: '胞睑', zang: '脾', source: '《银海精微·五轮八廓总论》', disputed: false },\n  { lun: '血轮', area: '两眦', zang: '心', source: '《银海精微·五轮八廓总论》', disputed: false },\n  { lun: '气轮', area: '白睛', zang: '肺', source: '《银海精微·五轮八廓总论》', disputed: false },\n  { lun: '风轮', area: '黑睛', zang: '肝', source: '《银海精微·五轮八廓总论》', disputed: false },\n  { lun: '水轮', area: '瞳神', zang: '肾', source: '《银海精微·五轮八廓总论》', disputed: false },\n];\n\n// 八廓只做「承认存在」的登记，不给单值配属\nconst BAKUO = {\n  names: ['天廓', '地廓', '火廓', '水廓', '风廓', '雷廓', '泽廓', '山廓'],\n  disputed: true,\n  note: '历代配属不一（《银海精微》与《审视瑶函》不同），编码时不取单值',\n};\n\n/** 体征关键词 → 部位（用于查表；关键词必须来自原文，不做同义扩展） */\nconst SIGN_HINTS = [\n  { area: '胞睑', keys: ['胞睑', '眼睑', '上睑', '下睑'] },\n  { area: '两眦', keys: ['眦', '目内眦', '目外眦'] },\n  { area: '白睛', keys: ['白睛', '球结膜'] },\n  { area: '黑睛', keys: ['黑睛', '角膜'] },\n  { area: '瞳神', keys: ['瞳神', '瞳孔'] },\n];\n\nfunction locate(sign) {\n  const hits = SIGN_HINTS.filter((h) => h.keys.some((k) => sign.includes(k)));\n  // 一处体征命中两个部位（如「眦部白睛」）→ 返回多个候选，不替使用者做取舍\n  const rows = hits.map((h) => WULUN.find((w) => w.area === h.area)).filter(Boolean);\n  if (!rows.length) return null;\n  return rows;\n}\n\nfunction main() {\n  for (const sign of ['白睛红赤', '胞睑红肿', '眦部白睛充血', '视物模糊']) {\n    const r = locate(sign);\n    if (!r) {\n      console.log(`${sign} → 无法定位到五轮；不得强行归轮，需结合专科检查`);\n      continue;\n    }\n    for (const x of r) {\n      console.log(`${sign} → ${x.lun}（${x.area}）→ ${x.zang}脏（出处：${x.source}${x.disputed ? '；有争议' : ''}）`);\n    }\n    if (r.length > 1) console.log(`  注意：命中 ${r.length} 个轮位，属跨区体征，下游应保留多候选`);\n  }\n  console.log('\\n本输出为教学样例，不构成诊断依据；急性视力下降/剧痛/外伤须急诊处理。');\n}\n\nif (require.main === module) main();\nmodule.exports = { WULUN, BAKUO, SIGN_HINTS, locate };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { WULUN, BAKUO, locate } = require('./main.js');\n\ntest('五轮与五脏一一对应，且没有重复轮位', () => {\n  const pairs = WULUN.map((w) => `${w.lun}:${w.zang}`);\n  assert.deepStrictEqual(pairs, ['肉轮:脾', '血轮:心', '气轮:肺', '风轮:肝', '水轮:肾']);\n});\n\ntest('白睛 → 气轮 → 肺', () => {\n  const r = locate('白睛红赤');\n  assert.strictEqual(r.length, 1);\n  assert.strictEqual(r[0].zang, '肺');\n});\n\ntest('瞳神 → 水轮 → 肾', () => {\n  const r = locate('瞳神不清');\n  assert.strictEqual(r[0].zang, '肾');\n});\n\ntest('跨区体征返回多候选，不擅自取一个', () => {\n  const r = locate('眦部白睛充血');\n  assert.strictEqual(r.length, 2);\n  assert.deepStrictEqual(r.map((x) => x.lun).sort(), ['气轮', '血轮']);\n});\n\ntest('无法定位时返回 null，禁止默认归轮', () => {\n  assert.strictEqual(locate('视物模糊'), null);\n});\n\ntest('八廓被标记为有争议，且不提供单值配属', () => {\n  assert.strictEqual(BAKUO.disputed, true);\n  assert.strictEqual(BAKUO.names.length, 8);\n  assert.ok(!('map' in BAKUO) || !BAKUO.map);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "五轮中「气轮」对应哪一部位与脏腑？",
+          "options": [
+            "胞睑 / 脾",
+            "白睛 / 肺",
+            "黑睛 / 肝",
+            "瞳神 / 肾"
+          ],
+          "correct": 1,
+          "explanation": "白睛属气轮，配肺。"
+        },
+        {
+          "stage": "check",
+          "question": "五轮与八廓的稳定性差别在于？",
+          "options": [
+            "两者完全一致",
+            "五轮配属相对稳定，八廓历代配属不一",
+            "八廓比五轮更稳定",
+            "五轮只用于内科"
+          ],
+          "correct": 1,
+          "explanation": "八廓的版本分歧是真实的学术信息，编码时不能抹平。"
+        },
+        {
+          "stage": "check",
+          "question": "本课的表为什么带 source 与 disputed 字段？",
+          "options": [
+            "为了让 JSON 更长",
+            "为了让映射可溯源、可替换，并把争议保留下来",
+            "为了通过编译",
+            "为了兼容旧系统"
+          ],
+          "correct": 1,
+          "explanation": "没有出处与争议标记，规则会变成无法追责的「事实」。"
+        },
+        {
+          "stage": "check",
+          "question": "体征同时落在两眦与白睛交界，正确输出是？",
+          "options": [
+            "只返回血轮",
+            "只返回气轮",
+            "返回两个候选，交下游保留多解",
+            "报错退出"
+          ],
+          "correct": 2,
+          "explanation": "跨区体征强行单值化会丢失信息。"
+        },
+        {
+          "stage": "post",
+          "question": "「白睛属肺」最准确的理解是？",
+          "options": [
+            "白睛病变都由肺引起",
+            "提供思考方向的分区启发，不等于病理机制",
+            "肺病必然出现白睛红",
+            "白睛只能从肺论治"
+          ],
+          "correct": 1,
+          "explanation": "配属是提示，不是因果；把它当机制是这套学说最常被误用的地方。"
+        },
+        {
+          "stage": "post",
+          "question": "病人突发视力下降伴剧痛，本表应如何参与处理？",
+          "options": [
+            "先按五轮归脏再决定",
+            "立即转急诊眼科，映射表不参与急症判断",
+            "查八廓定位",
+            "按气轮肺热处理"
+          ],
+          "correct": 1,
+          "explanation": "急症优先，任何理论映射都不能延误处理。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-wulun-bakuo.md",
+        "kind": "prompt",
+        "file": "departments/08-wuguan/06-zhongyi-yanke-xue/chapters/01-wulun-bakuo/outputs/prompt-wulun-bakuo.md",
+        "title": "眼科体征归轮助手",
+        "description": null,
+        "chars": 587,
+        "body": "# 眼科体征归轮助手\n\n## 用途\n\n把一段眼科门诊记录里的局部体征，归到五轮与脏腑，输出**带出处与争议标记**的映射结果，\n用于**教学、病历结构化、知识库校对**。不用于下诊断。\n\n## 提示词\n\n```text\n你是中医眼科学的助教。下面是一段眼科门诊记录的局部体征描述。\n\n规则：\n1. 只按五轮归位：胞睑=肉轮=脾 / 两眦=血轮=心 / 白睛=气轮=肺 / 黑睛=风轮=肝 / 瞳神=水轮=肾。\n2. 体征必须逐字取自原文；原文没提到的部位，不要推断。\n3. 一处体征跨两个部位时，输出两个候选，并注明「跨区，需结合专科检查」，不得自行取一。\n4. 涉及八廓时，一律注明「历代配属不一，须指明版本」，不得给单值结论。\n5. 不写证型、不写治法、不写方药。只输出归轮结果与缺口。\n\n输出格式：\n【体征 → 轮位 → 脏腑】（逐条，含出处）\n【跨区提示】…\n【缺口】原文未描述的部位：…\n```\n\n## 使用示例\n\n输入：「左眼白睛红赤，胞睑轻度红肿，无明显视力下降。」\n\n输出：【体征 → 轮位】白睛红赤 → 气轮 → 肺（《银海精微·五轮八廓总论》）；胞睑红肿 → 肉轮 → 脾（同）\n【跨区提示】无【缺口】两眦、黑睛、瞳神未描述。\n\n## 为什么这样限制\n\n- 逐字取自原文：防止把「眼红」升格成「白睛红赤」，那是替病人加体征。\n- 跨区保留多候选：单值化会丢掉交界处的鉴别信息。\n- 八廓必须带版本：不给版本就等于把分歧藏起来。\n- 不写证型治法：归轮是分区，辨证是另一层，混在一起就变成「看图开方」。\n"
+      },
+      {
+        "name": "skill-wulun-bakuo.md",
+        "kind": "skill",
+        "file": "departments/08-wuguan/06-zhongyi-yanke-xue/chapters/01-wulun-bakuo/outputs/skill-wulun-bakuo.md",
+        "title": "wulun-bakuo",
+        "description": "眼科局部体征归到五轮与脏腑，输出带出处与争议标记的映射，并保留跨区多候选",
+        "chars": 530,
+        "body": "---\nname: wulun-bakuo\ndescription: 眼科局部体征归到五轮与脏腑，输出带出处与争议标记的映射，并保留跨区多候选\nversion: 0.1.0\n---\n\n# wulun-bakuo\n\n## 何时使用\n\n- 眼科门诊记录需要把体征结构化到五轮\n- 教学：演示「白睛属肺」这类配属的边界\n- 知识库校对：检查已有规则的出处与争议标记是否齐全\n\n## 不适用\n\n- 下证型结论或开方（本技能只做归轮）\n- 八廓的单值判定（历代配属不一，不给单值）\n- 急症：视力骤降、剧痛、外伤、化学伤（立即转急诊）\n\n## 步骤\n\n1. **摘体征**：逐字取自原文，标明部位。\n2. **查五轮**：胞睑肉轮脾 / 两眦血轮心 / 白睛气轮肺 / 黑睛风轮肝 / 瞳神水轮肾。\n3. **处理跨区**：命中两个部位 → 输出两候选 + 提示。\n4. **标出处**：每条给《书名·篇名》；涉及八廓写「须指明版本」。\n5. **列缺口**：原文未描述的部位，逐一列出。\n\n## 输出模板\n\n```text\n【体征 → 轮位 → 脏腑】<体征> → <轮> → <脏>（出处：…）\n【跨区提示】…\n【缺口】未描述：…\n【边界】仅归轮，不含证型/治法；急症转诊优先。\n```\n\n## 质量判据\n\n- 每条映射都有出处\n- 跨区体征不止一个候选\n- 输出里没有证型、治法、方药\n\n> 本技能输出为教学与结构化辅助，不构成诊断依据。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
   }
 };
 window.TCMAI_PATHS = [

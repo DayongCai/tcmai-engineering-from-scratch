@@ -1,5 +1,54 @@
 {
   "slug": "09-zhongyi-dashuju-fenxi",
   "title": "中医大数据分析",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-leixing-zhiliang",
+      "title": "中医数据的类型与质量",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-duilie-zhengli",
+      "title": "队列与病案数据的整理",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-pinci-guanlian",
+      "title": "频次统计与关联规则",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-julei-fenxing",
+      "title": "聚类与证候分型",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-pianyi-wajue",
+      "title": "处方规律挖掘的偏倚",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-shijian-xulie",
+      "title": "时间序列与随访数据",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-keshi-fenxi",
+      "title": "可视化与交互分析",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-jieshi-linchuang",
+      "title": "分析结论的临床可解释性",
+      "status": "📋"
+    }
+  ]
 }

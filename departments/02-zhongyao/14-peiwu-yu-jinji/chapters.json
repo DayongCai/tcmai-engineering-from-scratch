@@ -1,5 +1,54 @@
 {
   "slug": "14-peiwu-yu-jinji",
   "title": "中药配伍与禁忌",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-qinqing-xiangxu",
+      "title": "七情：单行、相须、相使",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-xiangwei-xiangfan",
+      "title": "相畏、相杀、相恶、相反",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-shiba-fan",
+      "title": "十八反与十九畏的文献考据",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-renshen-jinji",
+      "title": "妊娠禁忌与毒性药材",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-shiyan-yanzheng",
+      "title": "配伍禁忌的实验验证方法",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-jiliang-paozhi",
+      "title": "剂量与炮制对配伍的影响",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-peiwu-chongtu",
+      "title": "配伍规则的图表示与冲突检测",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-chacuo-genyin",
+      "title": "临床配伍差错的根因分析",
+      "status": "📋"
+    }
+  ]
 }

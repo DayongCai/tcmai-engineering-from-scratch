@@ -1,5 +1,66 @@
 {
   "slug": "03-zhongyi-zhineng-shebei",
   "title": "中医智能设备与可穿戴设备",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-chuangan-xinhao",
+      "title": "传感与信号链的基本组成",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-maixiang-caiji",
+      "title": "脉象采集的传感器方案",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-shexiang-jiaozheng",
+      "title": "舌象采集的光源与色卡校正",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-dipinhao-sheji",
+      "title": "可穿戴设备的低功耗设计",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-yuchuli-zaosheng",
+      "title": "信号预处理与噪声抑制",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-duan-tuili",
+      "title": "设备端推理与模型压缩",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-huichuan-yinsi",
+      "title": "数据回传与隐私保护",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-zhuce-yanzheng",
+      "title": "器械注册与临床验证",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-kaoxing-ceshi",
+      "title": "设备的可靠性测试",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-shuju-duiqi",
+      "title": "设备数据与证候标签的对齐",
+      "status": "📋"
+    }
+  ]
 }

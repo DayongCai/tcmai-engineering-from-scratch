@@ -1,5 +1,54 @@
 {
   "slug": "11-wuli-zhiliao",
   "title": "物理治疗与运动康复",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-wuli-fenlei",
+      "title": "物理因子的分类与作用机制",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-dianliao-guangliao",
+      "title": "电疗、光疗与超声治疗",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-reliao-lengliao",
+      "title": "热疗、冷疗与牵引",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-yundong-yaosu",
+      "title": "运动处方的要素与剂量",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-jili-naili",
+      "title": "肌力与耐力训练",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-pingheng-buxi",
+      "title": "平衡、协调与步态训练",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-yundong-yufang",
+      "title": "运动损伤的预防与重返赛场",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-shebei-anquan",
+      "title": "康复设备的参数与安全",
+      "status": "📋"
+    }
+  ]
 }

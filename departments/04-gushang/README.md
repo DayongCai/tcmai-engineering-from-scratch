@@ -7,7 +7,7 @@
 | 学科数 | 15 |
 | 总学时 | 972 |
 | 章节目标 | 138 |
-| 已建章节 | 0 |
+| 已建章节 | 1 |
 | 涉及学期 | 第4, 第5, 第6, 第7, 第8 |
 
 ## 学科清单
@@ -19,7 +19,7 @@
 | 03 | [中医骨伤科学基础](03-gushang-kexue-jichu/) | Foundations of TCM Orthopedics | Core | 5 | 72 | 0/10 | 筋骨辨证→分层规则 / 损伤分类→多标签分类 | ⬚ |
 | 04 | [创伤急救学](04-chuangshang-jijiu-xue/) | Trauma & Emergency Care | Clinic | 5 | 54 | 0/8 | 创伤评分→风险分层 / 急救流程→决策树 | ⬚ |
 | 05 | [运动医学与损伤防护](05-yundong-yixue/) | Sports Medicine & Injury Prevention | Build | 5 | 54 | 0/8 | 损伤预测→幸存分析 / 负荷管理→时序模型 | ⬚ |
-| 06 | [中医正骨学](06-zhongyi-zhenggu-xue/) | TCM Bone-setting | Clinic | 6 | 90 | 0/12 | 复位手法→力学仿真 / 骨折分型→图像分类 | ⬚ |
+| 06 | [中医正骨学](06-zhongyi-zhenggu-xue/) | TCM Bone-setting | Clinic | 6 | 90 | 1/12 | 复位手法→力学仿真 / 骨折分型→图像分类 | 🚧 |
 | 07 | [中医筋伤学](07-zhongyi-jinshang-xue/) | TCM Soft-tissue Injury | Clinic | 6 | 72 | 0/10 | 筋伤分期→阶段模型 / 触诊→压力传感阵列 | ⬚ |
 | 08 | [骨伤科手法治疗学](08-gushang-shoufa-zhiliao/) | Orthopedic Manual Therapy | Build | 6 | 72 | 0/10 | 手法力学→力反馈控制 / 疗效→纵向数据分析 | ⬚ |
 | 09 | [骨科影像诊断学](09-guke-yingxiang-zhenduan/) | Orthopedic Imaging | Build | 6 | 72 | 0/10 | X线/CT/MRI→CNN 分割 / 病灶检测→目标检测 | ⬚ |

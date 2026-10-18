@@ -1,5 +1,54 @@
 {
   "slug": "13-zhongyi-zhengji-xue",
   "title": "中医整脊学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-yuanliu-lilun",
+      "title": "整脊的源流与理论基础",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-lixue-pingheng",
+      "title": "脊柱的力学平衡模型",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-zhenduan-chuzhen",
+      "title": "整脊的诊断与触诊",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-shoufa-guifan",
+      "title": "整脊手法的操作规范",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-jingyao-zhiliao",
+      "title": "整脊治疗颈腰椎病",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-anquan-jinji",
+      "title": "整脊的安全性与禁忌",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-yingxiang-pinggu",
+      "title": "整脊的影像学评估",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-duozhongxin-yanjiu",
+      "title": "整脊疗效的多中心研究",
+      "status": "📋"
+    }
+  ]
 }

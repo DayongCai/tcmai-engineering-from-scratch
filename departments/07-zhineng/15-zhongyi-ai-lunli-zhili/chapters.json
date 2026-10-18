@@ -1,5 +1,54 @@
 {
   "slug": "15-zhongyi-ai-lunli-zhili",
   "title": "中医AI伦理与治理",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-lunli-kuangjia",
+      "title": "医疗 AI 的伦理框架",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-zhiqing-gaozhi",
+      "title": "知情同意与算法告知",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-pianjian-gongping",
+      "title": "偏见与公平性",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-zeren-guishu",
+      "title": "责任归属与举证",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-zhishi-quanshu",
+      "title": "中医知识的所有权与归属",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-moxingka-baogao",
+      "title": "模型卡与透明度报告",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-zhili-jizhi",
+      "title": "治理机制与行业自律",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-guoji-xiezuo",
+      "title": "国际规则与跨境协作",
+      "status": "📋"
+    }
+  ]
 }

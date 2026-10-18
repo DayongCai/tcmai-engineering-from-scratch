@@ -1,5 +1,42 @@
 {
   "slug": "14-huli-lunli-fagui",
   "title": "护理伦理与法规",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-yuanze-kunjing",
+      "title": "护理伦理的原则与困境",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-zhiqing-tongyi",
+      "title": "知情同意与患者自主权",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-yinsi-xinxi",
+      "title": "隐私保护与信息使用",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-chacuo-faze",
+      "title": "护理差错的法与责",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-anning-shengming",
+      "title": "安宁疗护与生命伦理",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-fagui-zhifan",
+      "title": "护理法规与执业规范",
+      "status": "📋"
+    }
+  ]
 }

@@ -1,5 +1,66 @@
 {
   "slug": "08-waike-huli-xue",
   "title": "外科护理学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-weishoushu-liucheng",
+      "title": "围手术期护理的流程",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-mazui-jianhu",
+      "title": "麻醉恢复与术后监护",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-shangkou-yinliu",
+      "title": "伤口与引流的护理",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-puwai-fubu",
+      "title": "普外科护理：腹部手术",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-guke-qianyin",
+      "title": "骨科护理：牵引与固定",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-shenwai-lunao",
+      "title": "神经外科护理：颅脑术后",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-xiongwai-huli",
+      "title": "心胸外科护理",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-miniao-waike",
+      "title": "泌尿外科护理",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-ganran-huanyao",
+      "title": "外科感染与换药技术",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-kangfu-waike",
+      "title": "加速康复外科与中医配合",
+      "status": "📋"
+    }
+  ]
 }

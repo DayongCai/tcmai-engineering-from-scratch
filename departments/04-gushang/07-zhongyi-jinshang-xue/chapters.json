@@ -1,5 +1,66 @@
 {
   "slug": "07-zhongyi-jinshang-xue",
   "title": "中医筋伤学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-gainian-fenlei",
+      "title": "筋伤的概念与分类",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-jingbu-jinshang",
+      "title": "颈部筋伤：落枕与颈椎病",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-jianbu-jinshang",
+      "title": "肩部筋伤：肩周炎与肩袖",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-zhouwan-jinshang",
+      "title": "肘腕部筋伤：网球肘与腱鞘炎",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-yaobu-jinshang",
+      "title": "腰部筋伤：腰肌劳损与椎间盘",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-xibu-jinshang",
+      "title": "膝部筋伤：半月板与韧带",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-huaibu-jinshang",
+      "title": "踝部筋伤：扭伤与慢性不稳",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-shoufa-zhenjiu",
+      "title": "筋伤的手法与针灸治疗",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-gongneng-duanlian",
+      "title": "筋伤的功能锻炼",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-yingxiang-fuhe",
+      "title": "筋伤影像与体格检查的符合率",
+      "status": "📋"
+    }
+  ]
 }

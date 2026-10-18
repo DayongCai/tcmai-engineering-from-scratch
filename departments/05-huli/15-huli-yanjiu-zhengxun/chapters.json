@@ -1,5 +1,54 @@
 {
   "slug": "15-huli-yanjiu-zhengxun",
   "title": "护理研究与循证护理",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-xuanti-wentihua",
+      "title": "护理研究的选题与问题化",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-liangxing-sheji",
+      "title": "量性研究与设计类型",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-zhixing-fangtan",
+      "title": "质性研究与访谈分析",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-liangbiao-xinxiao",
+      "title": "量表的选择与信效度",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-xunzheng-fenji",
+      "title": "循证护理的证据分级",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-jiansuo-xitong",
+      "title": "文献检索与系统评价",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-zhuanhua-shijian",
+      "title": "证据到实践的转化",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-lunli-shencha",
+      "title": "护理研究中的伦理审查",
+      "status": "📋"
+    }
+  ]
 }

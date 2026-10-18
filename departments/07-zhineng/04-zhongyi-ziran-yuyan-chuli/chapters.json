@@ -1,5 +1,66 @@
 {
   "slug": "04-zhongyi-ziran-yuyan-chuli",
   "title": "中医自然语言处理",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-yuliao-goujian",
+      "title": "中医文本的语料构建",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-fenci-shuyu",
+      "title": "分词与术语识别",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-judou-biaodian",
+      "title": "古籍的句读与标点恢复",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-shiti-chouqu",
+      "title": "实体抽取：症状、药材、方剂",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-guanxi-chouqu",
+      "title": "关系抽取：方证与配伍",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-wenben-fenlei",
+      "title": "文本分类：病案与文献",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-jiansuo-zengqiang",
+      "title": "检索增强与知识问答",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-huanjue-wenti",
+      "title": "大模型的中医知识幻觉",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-ceping-biaozhu",
+      "title": "评测集的设计与人工标注",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-jiegouhua-luodi",
+      "title": "临床文本的结构化落地",
+      "status": "📋"
+    }
+  ]
 }

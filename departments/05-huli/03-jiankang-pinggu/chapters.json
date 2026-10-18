@@ -1,5 +1,54 @@
 {
   "slug": "03-jiankang-pinggu",
   "title": "健康评估",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-jiankangshi-caiji",
+      "title": "健康史的采集与问诊技巧",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-tige-jiancha",
+      "title": "体格检查的顺序与方法",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-zhengzhuang-pinggu",
+      "title": "症状评估与鉴别思路",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-shiyanshi-pandu",
+      "title": "实验室检查的判读",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-xindiantu-pandu",
+      "title": "心电图的基本判读",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-fengxian-liangbiao",
+      "title": "风险评估量表的使用",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-jilu-goutong",
+      "title": "评估结果的记录与沟通",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-piancha-guodu",
+      "title": "评估偏差与过度检查",
+      "status": "📋"
+    }
+  ]
 }

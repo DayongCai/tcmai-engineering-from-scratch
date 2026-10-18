@@ -1,5 +1,90 @@
 {
   "slug": "10-zhongyi-neike-xue",
   "title": "中医内科学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-feixi-kesou",
+      "title": "肺系病证：咳嗽与喘证",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-feiyong-feiwei",
+      "title": "肺痈肺痿：化脓与萎弱",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-xinxi-bingzheng",
+      "title": "心系病证：心悸、胸痹、不寐",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-piwei-bingzheng",
+      "title": "脾胃病证：胃痛、痞满、呕吐",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-changbing-xiexie",
+      "title": "肠病：泄泻、痢疾、便秘",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-gandan-bingzheng",
+      "title": "肝胆病证：胁痛、黄疸、眩晕",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-shenxi-bingzheng",
+      "title": "肾系病证：水肿、淋证、癃闭",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-qixue-jinye-bing",
+      "title": "气血津液病证：郁证、血证、消渴",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-zhiti-jingluo",
+      "title": "肢体经络病证：痹证、痿证、腰痛",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-zhongfeng",
+      "title": "中风：从闭证脱证到分型救治",
+      "status": "📋"
+    },
+    {
+      "n": 11,
+      "slug": "11-xulao-fare",
+      "title": "虚劳与内伤发热：慢性耗损",
+      "status": "📋"
+    },
+    {
+      "n": 12,
+      "slug": "12-neike-bingan",
+      "title": "内科病案的辨证路径复现",
+      "status": "📋"
+    },
+    {
+      "n": 13,
+      "slug": "13-zhengfang-liaoxiao",
+      "title": "证候—方剂—疗效的因果推断",
+      "status": "📋"
+    },
+    {
+      "n": 14,
+      "slug": "14-fenxing-icd11",
+      "title": "内科分型与 ICD-11 的映射",
+      "status": "📋"
+    }
+  ]
 }

@@ -1,5 +1,54 @@
 {
   "slug": "03-zhongyi-guanli-xue",
   "title": "中医管理学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-tedian-nanti",
+      "title": "中医机构的特点与管理难题",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-keshi-liucheng",
+      "title": "中医科室的设置与流程",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-shicheng-guanli",
+      "title": "名医工作室与师承管理",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-zhiliang-pingjia",
+      "title": "中医服务质量评价",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-tese-lianghua",
+      "title": "中医特色优势的量化",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-jixiao-jizhi",
+      "title": "绩效与激励机制",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-pinpai-chuanbo",
+      "title": "中医机构的品牌与传播",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-pdca-shuju",
+      "title": "管理改进的 PDCA 与数据",
+      "status": "📋"
+    }
+  ]
 }

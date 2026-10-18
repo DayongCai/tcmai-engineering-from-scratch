@@ -1,5 +1,54 @@
 {
   "slug": "04-zhongyi-huli-jishu",
   "title": "中医护理技术",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-aijiu-caozuo",
+      "title": "艾灸的操作与适应证",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-baguan-guasha",
+      "title": "拔罐与刮痧的技术要点",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-erxue-tiefu",
+      "title": "耳穴压豆与穴位贴敷",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-xunxi-shifu",
+      "title": "中药熏洗与湿敷",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-anmo-paida",
+      "title": "穴位按摩与经络拍打",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-guanchang-daoru",
+      "title": "中药保留灌肠与离子导入",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-bingfazheng-chuli",
+      "title": "技术操作的并发症处理",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-liaoxiao-pingjia",
+      "title": "中医护理技术的疗效评价",
+      "status": "📋"
+    }
+  ]
 }

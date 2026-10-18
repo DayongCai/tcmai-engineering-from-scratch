@@ -1,5 +1,54 @@
 {
   "slug": "01-erbihou-jiepou-shengli",
   "title": "耳鼻喉解剖生理学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-er-jiepou-tingjue",
+      "title": "耳的应用解剖与听觉通路",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-tingsheng-jiancha",
+      "title": "听觉生理与听力检查原理",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-bi-jiepou",
+      "title": "鼻与鼻窦的解剖",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-xiujue-shengli",
+      "title": "嗅觉与鼻的生理功能",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-yan-hou-jiepou",
+      "title": "咽与喉的解剖",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-fasheng-tunyan",
+      "title": "发声与吞咽的生理",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-qidao-anquan",
+      "title": "气道与吞咽的安全评估",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-yingxiang-neijing",
+      "title": "影像与内镜的解剖对照",
+      "status": "📋"
+    }
+  ]
 }

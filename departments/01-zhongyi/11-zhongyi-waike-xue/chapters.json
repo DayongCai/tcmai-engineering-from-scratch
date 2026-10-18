@@ -1,5 +1,66 @@
 {
   "slug": "11-zhongyi-waike-xue",
   "title": "中医外科学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-waike-fanwei",
+      "title": "外科的范围：疮疡、乳房、瘿瘤",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-chuangyang-zonglun",
+      "title": "疮疡总论：痈疽疔疖的鉴别",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-rufang-jibing",
+      "title": "乳房疾病：乳痈、乳癖、乳岩",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-yingbing-liu",
+      "title": "瘿病与瘤：甲状腺与体表肿块",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-pifubing",
+      "title": "皮肤病：湿疮、瘾疹、白疕",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-gangchang-bing",
+      "title": "肛肠病：痔、瘘、裂",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-zhouwei-xueguan",
+      "title": "周围血管病：脱疽与静脉病",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-waishang-shaoshang",
+      "title": "外伤与烧伤的中医处理",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-waizhi-jixing",
+      "title": "外治法的剂型与工艺",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-waike-tuxiang",
+      "title": "外科辨证的图像化与随访数据",
+      "status": "📋"
+    }
+  ]
 }

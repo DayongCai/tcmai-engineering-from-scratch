@@ -1,5 +1,54 @@
 {
   "slug": "15-zhongyi-meirong-pifu",
   "title": "中医美容与皮肤治疗学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-lilun-fanwei",
+      "title": "中医美容的理论与范围",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-pifu-fenxing",
+      "title": "面部皮肤的分型与评估",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-cuochuang-bianzhi",
+      "title": "痤疮的中医辨治",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-huangheban-suse",
+      "title": "黄褐斑与色素性疾病",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-tuofa-toupi",
+      "title": "脱发与头皮疾病",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-zhenjiu-meirong",
+      "title": "针灸美容与埋线",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-mianmo-waiyong",
+      "title": "中药面膜与外用制剂",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-fengxian-tongyi",
+      "title": "美容治疗的风险与知情同意",
+      "status": "📋"
+    }
+  ]
 }

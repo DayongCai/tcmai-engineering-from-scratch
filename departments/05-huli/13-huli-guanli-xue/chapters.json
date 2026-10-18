@@ -1,5 +1,42 @@
 {
   "slug": "13-huli-guanli-xue",
   "title": "护理管理学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-zuzhi-gangwei",
+      "title": "护理管理的组织与岗位",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-renli-paiban",
+      "title": "护理人力资源与排班",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-zhiliang-gaijin",
+      "title": "护理质量评价与持续改进",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-buliang-genyin",
+      "title": "护理不良事件与根因分析",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-jixiao-chengben",
+      "title": "护理绩效与成本核算",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-xinxihua-zhili",
+      "title": "护理信息化与数据治理",
+      "status": "📋"
+    }
+  ]
 }

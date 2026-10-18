@@ -1,5 +1,66 @@
 {
   "slug": "06-neijing-xuandu",
   "title": "内经选读",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-suwen-chengshu",
+      "title": "《素问》成书与文本结构",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-yinyang-yingxiang",
+      "title": "阴阳应象大论：范畴与映射",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-zangxiang-xitong",
+      "title": "藏象与五脏的系统观",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-jingmai-bielun",
+      "title": "经脉别论与气血循环",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-bingji-shijiu",
+      "title": "病机十九条：症状到病机的映射",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-zhenfa-maiyao",
+      "title": "诊法与脉要精微论",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-zhize-biaoben",
+      "title": "治则与标本：决策顺序",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-lunqi-qipian",
+      "title": "运气七篇：周期与外部变量",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-lingshu-jiuzhen",
+      "title": "《灵枢》九针与刺法",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-neijing-lianghua",
+      "title": "内经的量化解读与其边界",
+      "status": "📋"
+    }
+  ]
 }

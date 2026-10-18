@@ -1,5 +1,66 @@
 {
   "slug": "13-zhongchengyao-linchuang",
   "title": "中成药与临床用药",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-fenlei-pizhun",
+      "title": "中成药的分类与批准文号",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-jixing-linchuang",
+      "title": "剂型选择与临床适配",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-bianzheng-wuqu",
+      "title": "中成药的辨证使用与误区",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-zhongxi-lianyong",
+      "title": "中西药联用的相互作用",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-shiyingzheng-jinji",
+      "title": "常见中成药的适应证与禁忌",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-duxing-guanli",
+      "title": "含毒性药材的中成药管理",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-shuomingshu",
+      "title": "中成药说明书的信息完整性",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-zai-pingjia",
+      "title": "上市后再评价与不良反应监测",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-jiyao-yibao",
+      "title": "基药目录与医保支付",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-chufang-shenhe",
+      "title": "处方审核规则的编码化",
+      "status": "📋"
+    }
+  ]
 }

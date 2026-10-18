@@ -224,7 +224,9 @@ test('[chapter] 未知路径给出提示而非白屏', () => {
 test('[subject] 渲染学科页：章节计数与两条交付轨道', () => {
   const html = render('subject', '?path=01-zhongyi/01-zhongyi-jichu-lilun').html();
   assert.ok(html.includes('中医基础理论'));
-  assert.ok(html.includes('章节（3/10）'), '学科页章节计数错误');
+  // 章节地图：声明 10 章、已建 3 章 —— 未建的必须显式标「待写」，不许只显示已建的 3 条
+  assert.ok(html.includes('章节地图（已建 3 / 目标 10）'), '学科页章节地图计数错误');
+  assert.ok((html.match(/待写/g) || []).length >= 7, '未建章节未标「待写」');
   assert.ok(html.includes('[tcmP]') && html.includes('[textbooks]'), '缺两条交付轨道');
   assert.ok(html.includes('platform/courses/01-zhongyi/01-zhongyi-jichu-lilun/'), '缺平台路径');
 });

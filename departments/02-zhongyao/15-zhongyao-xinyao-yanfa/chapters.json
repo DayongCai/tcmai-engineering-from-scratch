@@ -1,5 +1,66 @@
 {
   "slug": "15-zhongyao-xinyao-yanfa",
   "title": "中药新药研发",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-yanfa-lujing",
+      "title": "新药研发的路径与法规框架",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-linchuangqian",
+      "title": "临床前研究：药效、毒理与药代",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-chufang-shaixuan",
+      "title": "处方筛选与工艺路线设计",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-zhiliang-biaozhun",
+      "title": "质量标准的研究与起草",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-jingdian-mingfang",
+      "title": "经典名方的开发路径",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-linchuang-sheji",
+      "title": "临床试验设计与统计",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-zhuce-fenlei",
+      "title": "中药注册分类与申报资料",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-zhenshi-shijie",
+      "title": "真实世界证据与循证评价",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-zhuanli-buju",
+      "title": "知识产权与专利布局",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-xiangmu-fengxian",
+      "title": "研发项目管理的里程碑与风险",
+      "status": "📋"
+    }
+  ]
 }

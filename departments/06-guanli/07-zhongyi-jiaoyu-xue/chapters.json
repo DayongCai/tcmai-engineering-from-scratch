@@ -1,5 +1,54 @@
 {
   "slug": "07-zhongyi-jiaoyu-xue",
   "title": "中医教育学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-lishi-shitu",
+      "title": "中医教育的历史与师徒制",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-kecheng-tixi",
+      "title": "院校教育的课程体系",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-daijiao-guipai",
+      "title": "临床带教与规培",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-kaohe-nengli",
+      "title": "考核方式与能力评价",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-moni-bingren",
+      "title": "模拟教学与标准化病人",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-sizheng-suyang",
+      "title": "课程思政与职业素养",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-jiaoyu-jishu",
+      "title": "教育技术的应用",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-pingjia-sheji",
+      "title": "教学效果的评价设计",
+      "status": "📋"
+    }
+  ]
 }

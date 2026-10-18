@@ -1,5 +1,54 @@
 {
   "slug": "12-daodi-yaocai",
   "title": "道地药材与产地加工",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-daodi-gainian",
+      "title": "道地性的概念与历史产区",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-huaiyao-zhebawei",
+      "title": "四大怀药与浙八味的产区特征",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-chandi-chengfen",
+      "title": "产地对成分的影响：土壤与气候",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-caishou-shijie",
+      "title": "采收时节与有效成分的消长",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-jiagong-ganzao",
+      "title": "产地加工：干燥、发汗与蒸煮",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-chenxian-qiezhi",
+      "title": "产地趁鲜切制与流通规范",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-dili-biaozhi",
+      "title": "地理标志与品牌保护",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-suyuan-bianma",
+      "title": "产区溯源的编码与区块链",
+      "status": "📋"
+    }
+  ]
 }

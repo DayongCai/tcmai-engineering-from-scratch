@@ -1,5 +1,66 @@
 {
   "slug": "06-yiyuan-guanli-xue",
   "title": "医院管理学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-zuzhi-zhili",
+      "title": "医院的组织结构与治理",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-menzhen-zhuyuan",
+      "title": "门诊与住院流程管理",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-zhiliang-tixi",
+      "title": "医疗质量管理体系",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-huanzhe-anquan",
+      "title": "患者安全与不良事件",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-renli-paiban",
+      "title": "人力资源与排班",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-caiwu-chengben",
+      "title": "财务与成本核算",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-xinxihua-bingli",
+      "title": "医院信息化与电子病历",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-gongying-yaoshi",
+      "title": "供应链与药事管理",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-jixiao-drg",
+      "title": "绩效考核与 DRG 支付",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-pingshen-gaijin",
+      "title": "医院评审与持续改进",
+      "status": "📋"
+    }
+  ]
 }

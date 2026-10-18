@@ -1,5 +1,42 @@
 {
   "slug": "05-zhongyi-wenhua-chuanbo",
   "title": "中医文化传播学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-hexin-guannian",
+      "title": "中医文化的核心观念与话语",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-lishi-lujing",
+      "title": "中医传播的历史路径",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-xinmeiti-chuanbo",
+      "title": "新媒体与健康传播",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-kepu-fengxian",
+      "title": "科普写作与风险表述",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-kuawenhua-fanyi",
+      "title": "跨文化传播与翻译",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-xiaoguo-celiang",
+      "title": "传播效果的测量",
+      "status": "📋"
+    }
+  ]
 }

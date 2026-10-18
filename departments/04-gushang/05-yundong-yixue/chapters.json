@@ -1,5 +1,54 @@
 {
   "slug": "05-yundong-yixue",
   "title": "运动医学与损伤防护",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-fenlei-jizhi",
+      "title": "运动损伤的分类与机制",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-buwei-fenbu",
+      "title": "常见运动损伤的部位分布",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-jijian-sunshang",
+      "title": "肌腱与韧带损伤的评估",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-tiezha-huju",
+      "title": "运动防护的贴扎与护具",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-fuhe-guanli",
+      "title": "运动负荷管理与过度训练",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-kangfu-fenqi",
+      "title": "损伤后的康复分期",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-chongfan-biaozhun",
+      "title": "重返运动的判定标准",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-liuxingbingxue",
+      "title": "运动损伤的流行病学",
+      "status": "📋"
+    }
+  ]
 }

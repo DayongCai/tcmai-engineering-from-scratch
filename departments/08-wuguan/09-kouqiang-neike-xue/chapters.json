@@ -1,5 +1,66 @@
 {
   "slug": "09-kouqiang-neike-xue",
   "title": "口腔内科学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-qubing-fenqi",
+      "title": "龋病的病因与分期",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-chongtian-zhiliao",
+      "title": "龋病的充填治疗",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-yasuibing-genguan",
+      "title": "牙髓病与根管治疗",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-genjianzhou-chuli",
+      "title": "根尖周病的处理",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-yazhoubing-zhiliao",
+      "title": "牙周病的检查与治疗",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-yazhou-shoushu",
+      "title": "牙周手术与长期维护",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-nianmo-zhenduan",
+      "title": "口腔黏膜病的诊断",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-ertong-yabing",
+      "title": "儿童牙病与预防",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-yufang-fuhuawu",
+      "title": "口腔预防与氟化物应用",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-juece-tongyi",
+      "title": "治疗方案的决策与知情同意",
+      "status": "📋"
+    }
+  ]
 }

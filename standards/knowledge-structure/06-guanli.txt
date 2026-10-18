@@ -1,0 +1,151 @@
+# 06-guanli 管理系 · 章节知识结构（15 学科 · 118 章）
+# 行格式：<NN>|<章节标题>|<slug>
+# 设计原则：管理与政策的价值在「可核算」—— 每章都要给出一个指标、一条口径或一份可核对的账。
+
+## 01-yixue-tongjixue
+01|统计学的角色与数据类型|juese-shujuleixing
+02|描述性统计与分布|miaoshu-fenbu
+03|概率与抽样分布|gailv-chouyang
+04|假设检验与 p 值|jiashe-pzhi
+05|t 检验与方差分析|t-fangcha
+06|卡方检验与列联表|kaifang-liebiao
+07|相关与线性回归|xiangguan-huigui
+08|Logistic 回归与生存分析|logistic-shengcun
+09|多重比较与假阳性控制|duochong-jiaoyan
+10|统计报告的规范与可复现|baogao-kefuxian
+
+## 02-zhongyiyao-zhengce-fagui
+01|中医药法的框架与要点|zhongyiyaofa
+02|执业医师与诊所管理|zhiye-yisheng
+03|中药注册与生产监管|zhuce-jianguan
+04|医疗机构与药事管理|yiliao-yaoshi
+05|医保政策与支付方式|yibao-zhifu
+06|中医药标准与知识产权|biaozhun-zhishi
+07|合规风险与法律责任的案例|hegui-anli
+08|政策文本的检索与比较|zhengce-bijiao
+
+## 03-zhongyi-guanli-xue
+01|中医机构的特点与管理难题|tedian-nanti
+02|中医科室的设置与流程|keshi-liucheng
+03|名医工作室与师承管理|shicheng-guanli
+04|中医服务质量评价|zhiliang-pingjia
+05|中医特色优势的量化|tese-lianghua
+06|绩效与激励机制|jixiao-jizhi
+07|中医机构的品牌与传播|pinpai-chuanbo
+08|管理改进的 PDCA 与数据|pdca-shuju
+
+## 04-weisheng-shiye-guanli
+01|卫生系统的构成与目标|jigou-mubiao
+02|卫生资源配置与公平性|peizhi-gongping
+03|卫生服务需求与利用|xuqiu-liyong
+04|卫生筹资与费用控制|chouzi-feiyong
+05|公共卫生体系与应急|gongwei-yingji
+06|基层卫生与分级诊疗|jiceng-fenji
+07|卫生政策评估的方法|zhengce-pinggu
+08|国际卫生体系的比较|guoji-bijiao
+
+## 05-zhongyi-wenhua-chuanbo
+01|中医文化的核心观念与话语|hexin-guannian
+02|中医传播的历史路径|lishi-lujing
+03|新媒体与健康传播|xinmeiti-chuanbo
+04|科普写作与风险表述|kepu-fengxian
+05|跨文化传播与翻译|kuawenhua-fanyi
+06|传播效果的测量|xiaoguo-celiang
+
+## 06-yiyuan-guanli-xue
+01|医院的组织结构与治理|zuzhi-zhili
+02|门诊与住院流程管理|menzhen-zhuyuan
+03|医疗质量管理体系|zhiliang-tixi
+04|患者安全与不良事件|huanzhe-anquan
+05|人力资源与排班|renli-paiban
+06|财务与成本核算|caiwu-chengben
+07|医院信息化与电子病历|xinxihua-bingli
+08|供应链与药事管理|gongying-yaoshi
+09|绩效考核与 DRG 支付|jixiao-drg
+10|医院评审与持续改进|pingshen-gaijin
+
+## 07-zhongyi-jiaoyu-xue
+01|中医教育的历史与师徒制|lishi-shitu
+02|院校教育的课程体系|kecheng-tixi
+03|临床带教与规培|daijiao-guipai
+04|考核方式与能力评价|kaohe-nengli
+05|模拟教学与标准化病人|moni-bingren
+06|课程思政与职业素养|sizheng-suyang
+07|教育技术的应用|jiaoyu-jishu
+08|教学效果的评价设计|pingjia-sheji
+
+## 08-jiankang-fuwu-guanli
+01|健康服务的业态与链条|yeta-liantiao
+02|健康管理与风险评估|jiankang-fengxian
+03|体检与健康档案|tijian-dangan
+04|慢病管理与随访依从|manxing-yicong
+05|中医治未病服务包|zhiweibing-fuwu
+06|健康保险与支付|baoxian-zhifu
+07|服务质量与客户体验|fuwu-tiyan
+08|健康数据的合规使用|shuju-hegui
+
+## 09-yiliao-baoxian-jingji
+01|医疗保险的基本原理|yuanli-jiegou
+02|支付方式与激励|zhifu-jili
+03|费用测算与精算基础|ceshuan-jingsuan
+04|卫生经济学评价方法|pingjia-fangfa
+05|成本效果与成本效用|chengben-xiaoyong
+06|中医药服务的经济性评价|zhongyi-jingji
+07|医保基金监管与欺诈识别|jijin-jianguan
+08|政策模拟与预算影响分析|yusuan-yingxiang
+
+## 10-yixue-xinxi-guanli
+01|医学信息系统的构成|xinxi-xitong
+02|数据标准与互操作：HL7 与 FHIR|biaozhun-hl7
+03|电子病历的结构与检索|bingli-jiansuo
+04|数据质量与治理|shuju-zhiliang
+05|信息安全与权限管理|anquan-quanxian
+06|临床决策支持系统|juece-zhichi
+07|数据仓库与报表|shujucang-baobiao
+08|系统上线的组织与培训|shangxian-peixun
+
+## 11-yiyuan-xinxihua-bingan
+01|HIS 的模块与系统集成|his-jicheng
+02|病案首页与 ICD 编码|bingan-bianma
+03|病案质控与首页数据|bingan-zhikong
+04|电子病历的合法性与电子签名|hefaxing-qianming
+05|医保结算清单与对账|jiesuan-qingdan
+06|统计报表与指标口径|baobiao-koujing
+07|数据上报与监管接口|shangbao-jiekou
+08|病案数据的科研利用|keyan-liyong
+
+## 12-zhongyiyao-biaozhunhua
+01|标准的分级与体系|fenji-tixi
+02|术语标准与编码|shuyu-bianma
+03|证候与疗效评价标准|zhenghou-biaozhun
+04|中药材与饮片标准|yaocai-biaozhun
+05|方剂与中成药标准|fangji-biaozhun
+06|针灸腧穴的国际标准|xuewei-guobiao
+07|标准制定的程序与共识|zhiding-chengxu
+08|标准实施的符合性评价|shishi-pingjia
+
+## 13-linchuang-keyan-fangfa
+01|研究问题的构建与 PICOS|wenti-picos
+02|观察性研究与偏倚控制|guancha-pianyi
+03|随机对照试验的设计|rct-sheji
+04|真实世界研究与数据源|zhenshi-shuju
+05|样本量与功效计算|yangben-gongxiao
+06|结局指标的选择与替代终点|jieju-tidai
+07|研究报告规范：CONSORT 与 STROBE|baogao-consort
+08|科研诚信与数据可复现|chengxin-kefuxian
+
+## 14-zhishichanquan-zhuanhua
+01|知识产权的类型与边界|leixing-bianjie
+02|中药专利的撰写与检索|zhuanli-zhuanxie
+03|经典名方的保护路径|jingdian-baohu
+04|技术转让与许可合同|zhuanrang-xuke
+05|成果转化的流程与估值|zhuanhua-guzhi
+06|商业秘密与数据权属|mimi-quanshu
+
+## 15-zhongyi-guojijiaoyu
+01|国际教育的历史与现状|lishi-xianzhuang
+02|海外中医立法与执业|haiwai-lifa
+03|WHO 传统医学战略与标准|who-zhanlve
+04|课程与教材的本地化|kecheng-bendihua
+05|留学生教学与语言障碍|liuxuesheng-yuyan
+06|国际合作的模式与风险|hezuo-fengxian

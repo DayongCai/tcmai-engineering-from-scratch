@@ -1,5 +1,54 @@
 {
   "slug": "14-zhenjiu-zhentong-mazui",
   "title": "针灸镇痛与麻醉",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-lishi-guancha",
+      "title": "针刺镇痛的历史与临床观察",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-mazui-caozuo",
+      "title": "针刺麻醉的操作与选穴",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-shoushu-yingyong",
+      "title": "针刺辅助麻醉在手术中的应用",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-liangxiao-chayi",
+      "title": "镇痛效应的量效与个体差异",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-yaowu-lianhe",
+      "title": "针刺镇痛与药物的联合",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-shuhou-tengtong",
+      "title": "术后疼痛与针刺干预",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-anwei-duizhao",
+      "title": "镇痛研究的安慰对照难题",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-jizhi-zhengju",
+      "title": "镇痛机制的证据链",
+      "status": "📋"
+    }
+  ]
 }

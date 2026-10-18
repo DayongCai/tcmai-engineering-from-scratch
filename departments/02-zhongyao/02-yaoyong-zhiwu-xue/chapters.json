@@ -1,5 +1,54 @@
 {
   "slug": "02-yaoyong-zhiwu-xue",
   "title": "药用植物学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-xibao-zuzhi",
+      "title": "植物细胞与组织：显微鉴定的基础",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-qiguan-xingtai",
+      "title": "根、茎、叶的形态与药材性状",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-huaguo-zhongzi",
+      "title": "花、果实、种子的分类学意义",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-fenlei-keshu",
+      "title": "植物分类系统与药用植物科属",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-shengtai-fenbu",
+      "title": "药用植物的生态环境与分布",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-lading-mingming",
+      "title": "植物学名的命名法规与拉丁名",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-xianwei-zhizhen",
+      "title": "显微制片与组织特征测量",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-xialye-shujuji",
+      "title": "腊叶标本与图像识别的数据集",
+      "status": "📋"
+    }
+  ]
 }

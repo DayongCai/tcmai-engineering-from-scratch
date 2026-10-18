@@ -1,5 +1,78 @@
 {
   "slug": "06-zhongyi-zhenggu-xue",
   "title": "中医正骨学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-shoumo-xinhui",
+      "title": "正骨的手摸心会与诊断",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-yuanze-shiji",
+      "title": "复位的基本原则与时机",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-suogu-jianjie",
+      "title": "锁骨与肩关节脱位",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-gonggu-qianbi",
+      "title": "肱骨与前臂骨折",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-wanbu-shoubu",
+      "title": "腕部与手部骨折",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-kuanjie-gugu",
+      "title": "髋关节与股骨骨折",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-xiguan-jingfei",
+      "title": "膝与胫腓骨骨折",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-huaibu-zubu",
+      "title": "踝部与足部骨折",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-jizhu-guzhe",
+      "title": "脊柱骨折与脱位",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-jiaban-shigao",
+      "title": "小夹板与石膏固定的力学",
+      "status": "📋"
+    },
+    {
+      "n": 11,
+      "slug": "11-yingxiang-pingjia",
+      "title": "复位质量的影像评价",
+      "status": "📋"
+    },
+    {
+      "n": 12,
+      "slug": "12-shoufa-jianmo",
+      "title": "正骨手法的力学建模",
+      "status": "📋"
+    }
+  ]
 }

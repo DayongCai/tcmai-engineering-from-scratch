@@ -1,5 +1,42 @@
 {
   "slug": "04-qigong-xue",
   "title": "中医气功学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-gainian-yuanliu",
+      "title": "气功的概念、源流与分类",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-santiao-jiegou",
+      "title": "调身、调息、调心的三调结构",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-gongfa-leixing",
+      "title": "常见功法：八段锦、五禽戏、六字诀",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-fanying-piancha",
+      "title": "练功反应与偏差的识别",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-shengli-xiaoying",
+      "title": "气功的生理效应与研究方法",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-shiyan-guifan",
+      "title": "气功干预的试验设计与报告规范",
+      "status": "📋"
+    }
+  ]
 }

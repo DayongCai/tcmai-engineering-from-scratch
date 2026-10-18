@@ -1,0 +1,169 @@
+# 03-zhenjiu 针灸系 · 章节知识结构（15 学科 · 136 章）
+# 行格式：<NN>|<章节标题>|<slug>
+# 设计原则：经络是图、腧穴是坐标、手法是参数 —— 三者的可计算化是本系的主线。
+
+## 01-jingluo-xue
+01|经络系统的组成与命名|zucheng-mingming
+02|十二经脉的走向与交接|shier-jingmai
+03|奇经八脉的循行与功能|qijing-bamai
+04|经别、经筋与皮部|jingbie-jinjing
+05|经络与脏腑的表里配属|biaoli-peishu
+06|经络的病理反应与诊断意义|bingli-fanying
+07|经络图的空间结构与坐标|jingluo-kongjian
+08|经脉流注次序与时间节律|liuzhu-shijian
+09|经络的现代解剖学对应争议|jiepou-zhengyi
+10|经络数据的图谱化建库|tupu-jianku
+
+## 02-shuxue-xue
+01|腧穴的分类、命名与定位方法|fenlei-dingwei
+02|骨度分寸与体表标志|gudu-fencun
+03|手三阴经腧穴|shou-san-yin
+04|手三阳经腧穴|shou-san-yang
+05|足三阳经腧穴|zu-san-yang
+06|足三阴经腧穴|zu-san-yin
+07|任督二脉腧穴|ren-du-xue
+08|经外奇穴与阿是穴|jingwai-qixue
+09|特定穴：五输、原络、俞募|teding-xue
+10|腧穴的主治规律与配穴|zhuzhi-guilv
+11|危险穴位与针刺安全深度|weixian-shendu
+12|腧穴定位的数字化与三维模型|dingwei-sanwei
+
+## 03-zhenjiu-yiji-xuan
+01|《灵枢·九针十二原》与针刺原则|lingshu-jiuzhen
+02|《素问·骨空论》与经脉证治|suwen-gukong
+03|《针灸甲乙经》的编纂与体例|jiayijing
+04|《针灸大成》的穴位与歌赋|zhenjiudacheng
+05|《铜人腧穴针灸图经》与图谱传统|tongren-tujing
+06|针灸歌赋的文本结构与记忆法|gefu-wenben
+07|古代针灸医案的取穴逻辑|yian-quxue
+08|医籍的检索与条文对齐|jiansuo-duiqi
+
+## 04-qigong-xue
+01|气功的概念、源流与分类|gainian-yuanliu
+02|调身、调息、调心的三调结构|santiao-jiegou
+03|常见功法：八段锦、五禽戏、六字诀|gongfa-leixing
+04|练功反应与偏差的识别|fanying-piancha
+05|气功的生理效应与研究方法|shengli-xiaoying
+06|气功干预的试验设计与报告规范|shiyan-guifan
+
+## 05-tuina-xue
+01|推拿的源流与治疗原理|yuanliu-yuanli
+02|推拿的适应证、禁忌与风险|shiyingzheng-fengxian
+03|成人推拿的常用部位与操作|chengren-buwei
+04|小儿推拿的特定穴与手法|xiaoer-tuina
+05|脊柱推拿与手法安全性|jizhu-tuina
+06|推拿治疗颈肩腰腿痛|jingjian-yaotui
+07|推拿在内科与妇科的应用|neike-fuke
+08|推拿的力学测量与剂量|lixue-celiang
+09|推拿疗效的评价与盲法难题|liaoxiao-pingjia
+10|推拿处方的结构化记录|chufang-jilu
+
+## 06-tuina-shoufa-xue
+01|手法的分类与基本要求|fenlei-yaoqiu
+02|摆动类手法：一指禅与滚法|baidong-yizhichan
+03|摩擦类与挤压类手法|moca-jiya
+04|振动类与叩击类手法|zhendong-kouji
+05|运动关节类手法|yundong-guanjie
+06|手法的力学参数与测量|lixue-canshu
+07|手法训练的评价与反馈|xunlian-pingjia
+08|手法标准化的操作规范|biaozhun-guifan
+
+## 07-cifa-jiufa-xue
+01|针具的规格与选择|zhenju-guige
+02|进针法与针刺角度深度|jinzhen-jiaodu
+03|得气与针刺感应|deqi-ganying
+04|补泻手法与刺激量|buxie-ciliang
+05|灸法：艾炷、艾条与温针灸|jiufa-leixing
+06|拔罐、刮痧与刺络放血|baguan-ciluo
+07|电针、火针与特殊针法|dianzhen-huozhen
+08|针刺异常情况与处理|yichang-chuli
+09|针刺操作的标准化与培训|caozuo-peixun
+10|刺激参数与效应的量效关系|canshu-liangxiao
+
+## 08-zhenjiu-zhiliao-xue
+01|针灸治疗的辨证与选穴原则|bianzheng-xuanxue
+02|配穴方法与处方结构|peixue-chufang
+03|内科病证：中风与面瘫|zhongfeng-miantan
+04|内科病证：头痛、眩晕、失眠|toutong-xuanyun
+05|内科病证：胃痛、泄泻、便秘|weitong-xiexie
+06|骨伤科病证：颈肩腰腿痛|gushang-tongzheng
+07|妇科病证：痛经、月经不调|fuke-tongjing
+08|儿科病证：小儿泄泻与遗尿|erke-xiexie
+09|五官科病证：耳鸣、鼻炎、牙痛|wuguan-tongzheng
+10|急症与痛证的针灸处理|jizheng-tongzheng
+11|针灸临床研究的对照设计|linchuang-duizhao
+12|针灸疗效的证据等级与争议|zhengju-dengji
+
+## 09-kangfu-yixue-jichu
+01|康复医学的对象与团队|duixiang-tuandui
+02|功能评定：肌力与关节活动度|gongneng-pingding
+03|日常生活能力与生活质量量表|richang-nengli
+04|运动疗法的基础与处方|yundong-chufang
+05|作业治疗与言语治疗|zuoye-yanyu
+06|神经康复与卒中单元|shenjing-kangfu
+07|心肺康复与运动风险|xinfei-kangfu
+08|康复评定的信度与最小临床差异|xindu-chayi
+
+## 10-shiyan-zhenjiu-xue
+01|实验针灸学的对象与方法|duixiang-fangfa
+02|穴位的组织学与理化特性|xuewei-zuzhi
+03|针刺效应的神经机制|shenjing-jizhi
+04|针刺镇痛的内源性调控|zhenci-zhentong
+05|针刺对免疫与内分泌的影响|mianyi-neifen
+06|动物实验的穴位定位与对照|xuewei-duizhao
+07|针刺参数的标准化：频率与强度|canshu-biaozhun
+08|电生理与功能影像的观测|dianshengli-yingxiang
+09|实验结果的可重复性问题|kechongfu-wenti
+10|从机制到临床的转化路径|zhuanhua-lujing
+
+## 11-wuli-zhiliao
+01|物理因子的分类与作用机制|wuli-fenlei
+02|电疗、光疗与超声治疗|dianliao-guangliao
+03|热疗、冷疗与牵引|reliao-lengliao
+04|运动处方的要素与剂量|yundong-yaosu
+05|肌力与耐力训练|jili-naili
+06|平衡、协调与步态训练|pingheng-buxi
+07|运动损伤的预防与重返赛场|yundong-yufang
+08|康复设备的参数与安全|shebei-anquan
+
+## 12-erxue-zhenduan-xue
+01|耳穴的分布规律与解剖基础|fenbu-jiepou
+02|耳穴的定位与国标编码|dingwei-guobiao
+03|耳穴诊断的方法与局限|zhenduan-juxian
+04|耳穴压豆与埋针的操作|yadou-maizhen
+05|耳穴治疗常见病的取穴|quxue-changjian
+06|耳穴刺激的参数与疗程|canshu-liaocheng
+07|耳穴疗法的临床证据|linchuang-zhengju
+08|耳穴图谱的数字化|tupu-shuzihua
+
+## 13-zhendao-yixue
+01|针刀的形成与理论框架|xingcheng-kuangjia
+02|针刀的器械与操作规范|qixie-guifan
+03|慢性软组织损伤的病理模型|ruanzuzhi-moxing
+04|颈肩腰腿痛的针刀治疗|jingjian-yaotui
+05|针刀的适应证与禁忌|shiyingzheng-jinji
+06|针刀操作的安全与并发症|anquan-bingfazheng
+07|针刀疗效的评价方法|liaoxiao-pingjia
+08|针刀的压力与切割力学|yali-qiege
+
+## 14-zhenjiu-zhentong-mazui
+01|针刺镇痛的历史与临床观察|lishi-guancha
+02|针刺麻醉的操作与选穴|mazui-caozuo
+03|针刺辅助麻醉在手术中的应用|shoushu-yingyong
+04|镇痛效应的量效与个体差异|liangxiao-chayi
+05|针刺镇痛与药物的联合|yaowu-lianhe
+06|术后疼痛与针刺干预|shuhou-tengtong
+07|镇痛研究的安慰对照难题|anwei-duizhao
+08|镇痛机制的证据链|jizhi-zhengju
+
+## 15-zhongyi-kangfu-xue
+01|中医康复的理论基础与范围|jichu-fanwei
+02|康复中的辨证与体质评估|bianzheng-tizhi
+03|中药内服在康复中的应用|neifu-yingyong
+04|针灸推拿在康复中的应用|zhenjiu-tuina
+05|传统功法与运动康复|gongfa-yundong
+06|饮食调养与情志康复|yinshi-qingzhi
+07|中风与脊髓损伤的中医康复|zhongfeng-jisui
+08|骨折与关节置换后的康复|guzhe-guanjie
+09|康复方案的目标设定与评估|mubiao-pinggu
+10|中医康复的证据与标准化|zhengju-biaozhun

@@ -1,5 +1,78 @@
 {
   "slug": "07-neike-huli-xue",
   "title": "内科护理学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-pinggu-kuangjia",
+      "title": "内科护理的评估框架",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-huxi-huli",
+      "title": "呼吸系统疾病护理：慢阻肺与哮喘",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-xunhuan-huli",
+      "title": "循环系统疾病护理：心衰与冠心",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-xiaohua-huli",
+      "title": "消化系统疾病护理：溃疡与肝硬化",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-miniao-huli",
+      "title": "泌尿系统疾病护理：肾病与透析",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-xueye-huli",
+      "title": "血液系统疾病护理：贫血与出血",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-neifenmi-huli",
+      "title": "内分泌疾病护理：糖尿病与甲状腺",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-shenjing-huli",
+      "title": "神经系统疾病护理：卒中与癫痫",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-fengshi-huli",
+      "title": "风湿免疫疾病护理",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-zhongliu-huli",
+      "title": "肿瘤患者的护理与症状管理",
+      "status": "📋"
+    },
+    {
+      "n": 11,
+      "slug": "11-manxing-guanli",
+      "title": "慢性病管理与随访",
+      "status": "📋"
+    },
+    {
+      "n": 12,
+      "slug": "12-zhiliang-zhibiao",
+      "title": "内科护理的质量指标",
+      "status": "📋"
+    }
+  ]
 }

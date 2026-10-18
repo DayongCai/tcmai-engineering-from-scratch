@@ -1,5 +1,42 @@
 {
   "slug": "05-zhongyi-wuguan-jingdian",
   "title": "中医五官科经典选读",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-yinhai-jingwei",
+      "title": "《银海精微》与眼科证治",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-shenshiyaohan",
+      "title": "《审视瑶函》的辨证体系",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-chonglou-yuyao",
+      "title": "《重楼玉钥》与喉科",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-kouchi-leiyao",
+      "title": "《口齿类要》与口腔病",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-yian-qufang",
+      "title": "五官科医案的取方逻辑",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-jiansuo-duiqi",
+      "title": "经典条文的检索与对齐",
+      "status": "📋"
+    }
+  ]
 }

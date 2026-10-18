@@ -1,5 +1,54 @@
 {
   "slug": "01-zhongyi-yundong-xue",
   "title": "中医运动学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-yuanliu-fenlei",
+      "title": "传统运动养生的源流与分类",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-daoyin-shenfa",
+      "title": "导引术的基本身法与呼吸",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-wuqin-baduanjin",
+      "title": "五禽戏与八段锦的动作结构",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-yijinjing",
+      "title": "易筋经与少林内功",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-taiji-lixue",
+      "title": "太极拳的力学与平衡",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-qiangdu-lianghua",
+      "title": "运动强度的中医量化：汗、息、脉",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-yundong-yufang",
+      "title": "运动损伤的中医预防",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-xiaoguo-pingjia",
+      "title": "传统功法的效果评价设计",
+      "status": "📋"
+    }
+  ]
 }

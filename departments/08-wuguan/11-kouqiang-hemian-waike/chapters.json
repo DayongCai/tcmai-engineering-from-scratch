@@ -1,5 +1,66 @@
 {
   "slug": "11-kouqiang-hemian-waike",
   "title": "口腔颌面外科学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-baya-caozuo",
+      "title": "拔牙的适应证与操作",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-bingfazheng-chuli",
+      "title": "拔牙并发症与处理",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-ganran-zhenzhi",
+      "title": "口腔颌面感染的诊治",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-chuangshang-guzhe",
+      "title": "颌面部创伤与骨折",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-nangzhong-liu",
+      "title": "颌骨囊肿与肿瘤",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-tuoyexian-jibing",
+      "title": "唾液腺疾病",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-nieheguanjie-bing",
+      "title": "颞下颌关节疾病",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-zhengyi-yaohe",
+      "title": "正颌手术与咬合重建",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-mazui-zhentong",
+      "title": "麻醉与镇痛方案",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-shuhou-kangfu",
+      "title": "术后护理与康复",
+      "status": "📋"
+    }
+  ]
 }

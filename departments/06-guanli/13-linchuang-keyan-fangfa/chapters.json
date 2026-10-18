@@ -1,5 +1,54 @@
 {
   "slug": "13-linchuang-keyan-fangfa",
   "title": "临床科研方法学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-wenti-picos",
+      "title": "研究问题的构建与 PICOS",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-guancha-pianyi",
+      "title": "观察性研究与偏倚控制",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-rct-sheji",
+      "title": "随机对照试验的设计",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-zhenshi-shuju",
+      "title": "真实世界研究与数据源",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-yangben-gongxiao",
+      "title": "样本量与功效计算",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-jieju-tidai",
+      "title": "结局指标的选择与替代终点",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-baogao-consort",
+      "title": "研究报告规范：CONSORT 与 STROBE",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-chengxin-kefuxian",
+      "title": "科研诚信与数据可复现",
+      "status": "📋"
+    }
+  ]
 }

@@ -1,5 +1,54 @@
 {
   "slug": "12-erxue-zhenduan-xue",
   "title": "耳穴诊治学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-fenbu-jiepou",
+      "title": "耳穴的分布规律与解剖基础",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-dingwei-guobiao",
+      "title": "耳穴的定位与国标编码",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-zhenduan-juxian",
+      "title": "耳穴诊断的方法与局限",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-yadou-maizhen",
+      "title": "耳穴压豆与埋针的操作",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-quxue-changjian",
+      "title": "耳穴治疗常见病的取穴",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-canshu-liaocheng",
+      "title": "耳穴刺激的参数与疗程",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-linchuang-zhengju",
+      "title": "耳穴疗法的临床证据",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-tupu-shuzihua",
+      "title": "耳穴图谱的数字化",
+      "status": "📋"
+    }
+  ]
 }

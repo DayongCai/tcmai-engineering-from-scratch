@@ -1,5 +1,78 @@
 {
   "slug": "01-zhongyaoxue",
   "title": "中药学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-xingneng-siqi",
+      "title": "中药学的研究对象与性能：四气五味",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-jiebiaoyao-fengh",
+      "title": "解表药：发散风寒与风热",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-qingreyao-fenlei",
+      "title": "清热药：泻火、解毒与凉血",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-xiexia-qushi",
+      "title": "泻下药与祛湿药",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-wenli-liqi",
+      "title": "温里药与理气药",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-xiaoshi-zhixue",
+      "title": "消食药、驱虫药与止血药",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-huoxue-huayu",
+      "title": "活血化瘀药：分类与配伍",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-huatan-kesou",
+      "title": "化痰止咳平喘药",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-anshen-pinggan",
+      "title": "安神药、平肝息风药与开窍药",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-buxuyao-fenlei",
+      "title": "补虚药：补气、补血、补阴、补阳",
+      "status": "📋"
+    },
+    {
+      "n": 11,
+      "slug": "11-shouse-yongtu",
+      "title": "收涩药与涌吐药",
+      "status": "📋"
+    },
+    {
+      "n": 12,
+      "slug": "12-xingneng-bianma",
+      "title": "中药性能的编码化：性味归经 → 向量",
+      "status": "📋"
+    }
+  ]
 }

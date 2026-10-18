@@ -1,5 +1,66 @@
 {
   "slug": "01-zhongyi-huli-jichu",
   "title": "中医护理学基础",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-yuanliu-zhengti",
+      "title": "中医护理的源流与整体护理观",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-bianzheng-shihu",
+      "title": "辨证施护的原则与方法",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-chengxu-jilu",
+      "title": "中医护理的程序与记录",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-qingzhi-huli",
+      "title": "情志护理与心理疏导",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-yinshi-huli",
+      "title": "饮食护理与食疗宜忌",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-qiju-huanjing",
+      "title": "起居与环境护理",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-geiyao-huli",
+      "title": "中药给药的护理要点",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-zhenjiu-huli",
+      "title": "针灸推拿的护理配合",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-fengxian-anquan",
+      "title": "中医护理的风险与安全",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-wenshu-zhikong",
+      "title": "护理文书的结构化与质控",
+      "status": "📋"
+    }
+  ]
 }

@@ -7,7 +7,7 @@
 | 学科数 | 15 |
 | 总学时 | 918 |
 | 章节目标 | 132 |
-| 已建章节 | 0 |
+| 已建章节 | 1 |
 | 涉及学期 | 第4, 第5, 第6, 第7, 第8 |
 
 ## 学科清单
@@ -19,7 +19,7 @@
 | 03 | [中医面部望诊学](03-zhongyi-mianbu-wangzhen/) | TCM Facial Inspection | Build | 5 | 54 | 0/8 | 面色分区→图像配准 / 面色分类→色彩直方图 | ⬚ |
 | 04 | [眼科光学与验光](04-yanke-guangxue-yanguang/) | Ophthalmic Optics & Refraction | Build | 5 | 54 | 0/8 | 屈光计算→光学公式 / 验光数据→球柱换算 | ⬚ |
 | 05 | [中医五官科经典选读](05-zhongyi-wuguan-jingdian/) | Selected ENT/Stomato Classics | Reference | 5 | 36 | 0/6 | 原文检索→向量库 / 方证归纳→规则抽取 | ⬚ |
-| 06 | [中医眼科学](06-zhongyi-yanke-xue/) | TCM Ophthalmology | Clinic | 6 | 72 | 0/10 | 五轮八廓→分层模型 / 眼底图像→病灶检测 | ⬚ |
+| 06 | [中医眼科学](06-zhongyi-yanke-xue/) | TCM Ophthalmology | Clinic | 6 | 72 | 1/10 | 五轮八廓→分层模型 / 眼底图像→病灶检测 | 🚧 |
 | 07 | [中医耳鼻喉科学](07-zhongyi-erbihou-xue/) | TCM Otorhinolaryngology | Clinic | 6 | 72 | 0/10 | 耳鼻喉辨证→多标签分类 / 嗓音数据→声学特征 | ⬚ |
 | 08 | [中医口腔科学](08-zhongyi-kouqiang-kexue/) | TCM Stomatology | Clinic | 6 | 72 | 0/10 | 口腔辨证→黏膜图像分类 / 治疗计划→决策支持 | ⬚ |
 | 09 | [口腔内科学](09-kouqiang-neike-xue/) | Oral Medicine | Clinic | 6 | 72 | 0/10 | 龋病分级→有序分类 / X 线影像→语义分割 | ⬚ |

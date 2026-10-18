@@ -1,0 +1,171 @@
+# 04-gushang 骨伤系 · 章节知识结构（15 学科 · 138 章）
+# 行格式：<NN>|<章节标题>|<slug>
+# 设计原则：骨伤是「力学的病」—— 每章都要能回答：力从哪来、结构怎么坏、固定与训练如何替代。
+
+## 01-zhongyi-yundong-xue
+01|传统运动养生的源流与分类|yuanliu-fenlei
+02|导引术的基本身法与呼吸|daoyin-shenfa
+03|五禽戏与八段锦的动作结构|wuqin-baduanjin
+04|易筋经与少林内功|yijinjing
+05|太极拳的力学与平衡|taiji-lixue
+06|运动强度的中医量化：汗、息、脉|qiangdu-lianghua
+07|运动损伤的中医预防|yundong-yufang
+08|传统功法的效果评价设计|xiaoguo-pingjia
+
+## 02-yao-shang-jiepou
+01|骨骼的形态与骨性标志|guge-xingtai
+02|关节的结构与运动轴|guanjie-jiegou
+03|肌群的起止与功能|jiquan-gongneng
+04|脊柱的解剖与节段特征|jizhu-jiepou
+05|上肢带与手的精细结构|shangzhi-jiegou
+06|下肢带与足的负重结构|xiazhi-jiegou
+07|神经血管的走行与损伤风险|shenjing-xueguan
+08|骨伤常用体表定位|tibiao-dingwei
+09|影像解剖与三维重建|yingxiang-sanwei
+10|解剖变异与临床误判|bianyi-wupan
+
+## 03-gushang-kexue-jichu
+01|骨伤科的范围与学术源流|fanwei-yuanliu
+02|损伤的病因与分类|bingyin-fenlei
+03|骨折的移位机制与复位原理|weiyi-fuwei
+04|筋伤的病理与修复过程|jinshang-xiufu
+05|骨伤辨证：气血、经络与脏腑|bianzheng-qixue
+06|骨伤的内治法与分期用药|neizhi-fenqi
+07|骨伤的外治法与固定|waizhi-guding
+08|功能锻炼与康复介入|gongneng-duanlian
+09|骨伤科的风险与并发症|fengxian-bingfa
+10|骨伤疗效评价的量表体系|pingjia-liangbiao
+
+## 04-chuangshang-jijiu-xue
+01|创伤急救的原则与流程|yuanze-liucheng
+02|现场评估与搬运固定|xianchang-pinggu
+03|出血与休克的急救|chuxue-xiuke
+04|骨折的临时固定与制动|guding-zhidong
+05|开放性损伤的清创与抗感染|qingchuang-kangganran
+06|颅脑与胸腹损伤的识别|lunao-xiongfu
+07|多发伤的优先级判断|duofashang-youxian
+08|急救记录与交接规范|jilu-jiaojie
+
+## 05-yundong-yixue
+01|运动损伤的分类与机制|fenlei-jizhi
+02|常见运动损伤的部位分布|buwei-fenbu
+03|肌腱与韧带损伤的评估|jijian-sunshang
+04|运动防护的贴扎与护具|tiezha-huju
+05|运动负荷管理与过度训练|fuhe-guanli
+06|损伤后的康复分期|kangfu-fenqi
+07|重返运动的判定标准|chongfan-biaozhun
+08|运动损伤的流行病学|liuxingbingxue
+
+## 06-zhongyi-zhenggu-xue
+01|正骨的手摸心会与诊断|shoumo-xinhui
+02|复位的基本原则与时机|yuanze-shiji
+03|锁骨与肩关节脱位|suogu-jianjie
+04|肱骨与前臂骨折|gonggu-qianbi
+05|腕部与手部骨折|wanbu-shoubu
+06|髋关节与股骨骨折|kuanjie-gugu
+07|膝与胫腓骨骨折|xiguan-jingfei
+08|踝部与足部骨折|huaibu-zubu
+09|脊柱骨折与脱位|jizhu-guzhe
+10|小夹板与石膏固定的力学|jiaban-shigao
+11|复位质量的影像评价|yingxiang-pingjia
+12|正骨手法的力学建模|shoufa-jianmo
+
+## 07-zhongyi-jinshang-xue
+01|筋伤的概念与分类|gainian-fenlei
+02|颈部筋伤：落枕与颈椎病|jingbu-jinshang
+03|肩部筋伤：肩周炎与肩袖|jianbu-jinshang
+04|肘腕部筋伤：网球肘与腱鞘炎|zhouwan-jinshang
+05|腰部筋伤：腰肌劳损与椎间盘|yaobu-jinshang
+06|膝部筋伤：半月板与韧带|xibu-jinshang
+07|踝部筋伤：扭伤与慢性不稳|huaibu-jinshang
+08|筋伤的手法与针灸治疗|shoufa-zhenjiu
+09|筋伤的功能锻炼|gongneng-duanlian
+10|筋伤影像与体格检查的符合率|yingxiang-fuhe
+
+## 08-gushang-shoufa-zhiliao
+01|骨伤手法的分类与适应证|fenlei-shiying
+02|理筋手法：揉、拿、按、推|lijin-shoufa
+03|整复手法的力学原理|zhengfu-lixue
+04|颈椎手法的风险与控制|jingzhui-fengxian
+05|胸腰椎手法的操作规范|xiongyao-guifan
+06|关节松动术与西方手法对照|guanjie-songdong
+07|手法的量化参数|canshu-lianghua
+08|手法治疗的禁忌与警示|jinji-jingshi
+09|手法教学与技能考核|jiaoxue-kaohe
+10|手法疗效的对照研究|duizhao-yanjiu
+
+## 09-guke-yingxiang-zhenduan
+01|X 线的成像原理与阅片顺序|xian-yuanli
+02|骨折的影像征象与分型|guzhe-zhengxiang
+03|CT 的三维重建与骨窗|ct-sanwei
+04|MRI 的软组织对比|mri-ruanzuzhi
+05|脊柱影像与椎间盘退变|jizhu-tuibian
+06|关节影像与软骨评估|guanjie-ruangu
+07|超声在软组织损伤中的应用|chaosheng-ruanzuzhi
+08|骨质疏松的影像评估|guzhishusong-yingxiang
+09|影像与症状的不一致|yingxiang-buyizhi
+10|AI 阅片的假阴性与责任边界|ai-yuepian
+
+## 10-jizhu-bing-xue
+01|脊柱的功能单位与退变过程|gongneng-tuibian
+02|颈椎病的分型与诊断|jingzhuibing-fenxing
+03|腰椎间盘突出症的评估|yaotui-pinggu
+04|腰椎管狭窄与滑脱|zhaixia-huatuo
+05|脊柱侧弯的筛查与干预|cejian-shajian
+06|脊柱退变的中医辨证|tuibian-bianzheng
+07|手法、牵引与针灸的治疗组合|zhiliao-zuhe
+08|手术指征与保守治疗的边界|shoushu-zhizheng
+09|脊柱功能的量表评价|liangbiao-pingjia
+10|脊柱病的数据登记与随访|dengji-suifang
+
+## 11-guanjie-bing-xue
+01|关节的结构与退变机制|jiegou-tuibian
+02|骨关节炎的分期与评估|guguanjieyan-fenqi
+03|类风湿关节炎的中医辨治|leifengshi-bianzhi
+04|痛风性关节炎的代谢基础|tongfeng-daixie
+05|肩关节疾病的鉴别|jianjie-jianbie
+06|膝关节疾病的鉴别|xijie-jianbie
+07|关节腔注射与针刀的应用|zhushe-zhendao
+08|关节置换的适应证与康复|zhihuan-kangfu
+09|关节功能评分的比较|gongneng-pingfen
+10|关节病的长期随访数据|suifang-shuju
+
+## 12-guzhishusong-tuibian
+01|骨代谢的基本过程|daixie-guocheng
+02|骨质疏松的诊断标准|zhenduan-biaozhun
+03|中医对骨痿的认识|guwei-renshi
+04|补肝肾类方药的证据|buganshen-zhengju
+05|跌倒风险评估与预防|diedao-yufang
+06|退行性疾病的共同机制|tuixing-jizhi
+07|运动与营养干预|yundong-yingyang
+08|疗效评价的骨密度指标|gumidu-zhibiao
+
+## 13-zhongyi-zhengji-xue
+01|整脊的源流与理论基础|yuanliu-lilun
+02|脊柱的力学平衡模型|lixue-pingheng
+03|整脊的诊断与触诊|zhenduan-chuzhen
+04|整脊手法的操作规范|shoufa-guifan
+05|整脊治疗颈腰椎病|jingyao-zhiliao
+06|整脊的安全性与禁忌|anquan-jinji
+07|整脊的影像学评估|yingxiang-pinggu
+08|整脊疗效的多中心研究|duozhongxin-yanjiu
+
+## 14-kangfu-gongcheng-zhiju
+01|康复工程的范围与分类|fanwei-fenlei
+02|支具的生物力学原理|zhiju-lixue
+03|脊柱与四肢支具的选配|zhiju-xuanpei
+04|假肢的基本结构与适配|jiazhi-dapei
+05|矫形鞋垫与足部辅具|jiaoxing-xiedian
+06|辅助器具的评估与适配|fuzhu-pinggu
+07|3D 打印在支具中的应用|threedp-dayin
+08|支具依从性与效果评价|yicongxing-pingjia
+
+## 15-gushang-kangfu-pingding
+01|康复评定的框架与时机|kuangjia-shiji
+02|关节活动度与肌力测量|huodongdu-jili
+03|疼痛与功能的量表选择|tengtong-liangbiao
+04|步态分析与平衡评定|butai-pingding
+05|手功能与日常生活能力|shougongneng-richang
+06|影像与功能指标的相关性|yingxiang-xiangguan
+07|评定的信度与最小临床差异|xindu-chayi
+08|康复处方的目标与调整|chufang-mubiao

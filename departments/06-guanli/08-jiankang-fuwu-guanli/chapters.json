@@ -1,5 +1,54 @@
 {
   "slug": "08-jiankang-fuwu-guanli",
   "title": "健康服务与管理",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-yeta-liantiao",
+      "title": "健康服务的业态与链条",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-jiankang-fengxian",
+      "title": "健康管理与风险评估",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-tijian-dangan",
+      "title": "体检与健康档案",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-manxing-yicong",
+      "title": "慢病管理与随访依从",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-zhiweibing-fuwu",
+      "title": "中医治未病服务包",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-baoxian-zhifu",
+      "title": "健康保险与支付",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-fuwu-tiyan",
+      "title": "服务质量与客户体验",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-shuju-hegui",
+      "title": "健康数据的合规使用",
+      "status": "📋"
+    }
+  ]
 }

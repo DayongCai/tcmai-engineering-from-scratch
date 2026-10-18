@@ -1,5 +1,66 @@
 {
   "slug": "11-guanjie-bing-xue",
   "title": "关节病学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-jiegou-tuibian",
+      "title": "关节的结构与退变机制",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-guguanjieyan-fenqi",
+      "title": "骨关节炎的分期与评估",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-leifengshi-bianzhi",
+      "title": "类风湿关节炎的中医辨治",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-tongfeng-daixie",
+      "title": "痛风性关节炎的代谢基础",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-jianjie-jianbie",
+      "title": "肩关节疾病的鉴别",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-xijie-jianbie",
+      "title": "膝关节疾病的鉴别",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-zhushe-zhendao",
+      "title": "关节腔注射与针刀的应用",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-zhihuan-kangfu",
+      "title": "关节置换的适应证与康复",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-gongneng-pingfen",
+      "title": "关节功能评分的比较",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-suifang-shuju",
+      "title": "关节病的长期随访数据",
+      "status": "📋"
+    }
+  ]
 }

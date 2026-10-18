@@ -1,5 +1,66 @@
 {
   "slug": "12-zhongyi-fuke-xue",
   "title": "中医妇科学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-fuke-fanwei",
+      "title": "妇科学的范围与生理基础",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-yuejing-bing",
+      "title": "月经病：周期、经量、痛经",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-benglou-bijing",
+      "title": "崩漏与闭经：出血的两端",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-daixia-bing",
+      "title": "带下病：分泌物的辨证",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-renshen-bing",
+      "title": "妊娠病：恶阻、胎漏、胎动不安",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-chanhou-bing",
+      "title": "产后病：三审与三病",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-buzheng",
+      "title": "不孕症：排卵与胞宫",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-fuke-zabing",
+      "title": "妇科杂病：癥瘕与脏躁",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-zhouqi-yongyao",
+      "title": "妇科方剂的周期用药规律",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-zhouqi-shuju",
+      "title": "妇科数据：周期记录与预测模型",
+      "status": "📋"
+    }
+  ]
 }

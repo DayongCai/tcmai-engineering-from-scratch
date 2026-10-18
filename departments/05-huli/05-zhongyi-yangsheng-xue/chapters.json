@@ -1,5 +1,54 @@
 {
   "slug": "05-zhongyi-yangsheng-xue",
   "title": "中医养生学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-jiben-yuanze",
+      "title": "养生的基本原则：天人相应",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-sishi-yangsheng",
+      "title": "四时养生与节气调摄",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-yinshi-tizhi",
+      "title": "饮食养生与体质配膳",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-qingzhi-yangsheng",
+      "title": "情志养生与疏泄",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-yundong-gongfa",
+      "title": "运动养生与传统功法",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-qiju-shuimian",
+      "title": "起居作息与睡眠",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-zhiweibing-jiankang",
+      "title": "治未病与健康管理",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-xiaoguo-celiang",
+      "title": "养生干预的效果测量",
+      "status": "📋"
+    }
+  ]
 }

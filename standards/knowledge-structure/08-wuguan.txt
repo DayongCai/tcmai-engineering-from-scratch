@@ -1,0 +1,165 @@
+# 08-wuguan 五官口腔系 · 章节知识结构（15 学科 · 132 章）
+# 行格式：<NN>|<章节标题>|<slug>
+# 设计原则：五官口腔是「局部窗口 + 全身辨证」—— 每章既要有局部检查的口径，也要有脏腑配属的落点。
+
+## 01-erbihou-jiepou-shengli
+01|耳的应用解剖与听觉通路|er-jiepou-tingjue
+02|听觉生理与听力检查原理|tingsheng-jiancha
+03|鼻与鼻窦的解剖|bi-jiepou
+04|嗅觉与鼻的生理功能|xiujue-shengli
+05|咽与喉的解剖|yan-hou-jiepou
+06|发声与吞咽的生理|fasheng-tunyan
+07|气道与吞咽的安全评估|qidao-anquan
+08|影像与内镜的解剖对照|yingxiang-neijing
+
+## 02-kouqiang-jiepou-shengli
+01|牙体与牙周的组织结构|yati-zuzhi
+02|牙列与咬合关系|yalie-yaohe
+03|颞下颌关节的解剖|nieheguanjie
+04|口腔黏膜与唾液腺|nianmo-xian
+05|颌面部肌肉与神经|hemian-shenjing
+06|口腔的生理功能：咀嚼与吞咽|jujue-tunyan
+07|牙体形态的测量与建模|xingtai-celiang
+08|解剖变异与临床风险|bianyi-fengxian
+
+## 03-zhongyi-mianbu-wangzhen
+01|面部望诊的源流与原理|yuanliu-yuanli
+02|面部分区与脏腑配属|fenqu-zangfu
+03|面色与光泽的判断|mianse-panduan
+04|五官形态与分泌物|wuguan-xingtai
+05|面部图像采集的标准化|caiji-biaozhun
+06|面色特征的量化与色卡|yanse-lianghua
+07|望诊与问诊的一致性|yizhixing-yanjiu
+08|面部望诊的局限与误判|juxian-wupan
+
+## 04-yanke-guangxue-yanguang
+01|眼的屈光系统与成像|quguang-chengxiang
+02|屈光不正的类型与成因|quguangbuzheng
+03|验光的方法与流程|yanguang-liucheng
+04|镜片度数与处方换算|dushu-huansuan
+05|老视与双眼视功能|laoshi-shuangyan
+06|视功能检查与低视力|shigongneng-jiancha
+07|屈光手术的适应证|shoushu-shiying
+08|验光误差与处方安全|wucha-anquan
+
+## 05-zhongyi-wuguan-jingdian
+01|《银海精微》与眼科证治|yinhai-jingwei
+02|《审视瑶函》的辨证体系|shenshiyaohan
+03|《重楼玉钥》与喉科|chonglou-yuyao
+04|《口齿类要》与口腔病|kouchi-leiyao
+05|五官科医案的取方逻辑|yian-qufang
+06|经典条文的检索与对齐|jiansuo-duiqi
+
+## 06-zhongyi-yanke-xue
+01|五轮八廓学说与眼的脏腑配属|wulun-bakuo
+02|眼科四诊与视力检查|sizhen-shili
+03|外障眼病：胞睑、两眦、白睛|waizhang-yanbing
+04|内障眼病：瞳神与眼底|neizhang-yanbing
+05|近视与视疲劳的中医干预|jinshi-pilao
+06|干眼与睑板腺功能障碍|ganyan-jianbanxian
+07|青光眼与视神经病变|qingguangyan-shishenjing
+08|眼底出血与糖网的中医治疗|dichuxue-tangwang
+09|眼科外治法与用药安全|waizhi-yonganquan
+10|眼科疗效评价与随访|liaoxiao-suifang
+
+## 07-zhongyi-erbihou-xue
+01|耳鼻喉的脏腑经络联系|zangfu-jingluo
+02|耳病：耳鸣、耳聋与耳胀|erbing-tiaoming
+03|鼻病：鼻塞、鼻渊与鼻鼽|bibing-biyuan
+04|咽喉病：乳蛾、喉痹与梅核气|yanhou-bing
+05|嗓音病与声带病变|sangyin-shengdai
+06|变应性鼻炎的中医辨治|bianyingxing-biyan
+07|分泌性中耳炎与鼓膜病变|zhongeryan-gumo
+08|耳鼻喉外治与穴位治疗|waizhi-xuewei
+09|鼻内镜术后的中医康复|neijing-shuhou
+10|耳鼻喉疗效的量表评价|liangbiao-pingjia
+
+## 08-zhongyi-kouqiang-kexue
+01|口齿病的脏腑辨证|kouchi-bianzheng
+02|牙痛与牙宣：牙周病的中医辨治|yatong-yaxuan
+03|口疮与口腔黏膜病|kouchuang-nianmo
+04|口臭与唾液异常|kouchou-tuoye
+05|干燥综合征的口腔表现|ganzao-kouqiang
+06|口腔扁平苔藓与白斑|taixian-baiban
+07|中药外用与含漱制剂|waiyong-hanshu
+08|口腔病与全身疾病的关系|quanshen-guanxi
+09|口腔辨证的记录规范|jilu-guifan
+10|口腔黏膜病的疗效评价|liaoxiao-pingjia
+
+## 09-kouqiang-neike-xue
+01|龋病的病因与分期|qubing-fenqi
+02|龋病的充填治疗|chongtian-zhiliao
+03|牙髓病与根管治疗|yasuibing-genguan
+04|根尖周病的处理|genjianzhou-chuli
+05|牙周病的检查与治疗|yazhoubing-zhiliao
+06|牙周手术与长期维护|yazhou-shoushu
+07|口腔黏膜病的诊断|nianmo-zhenduan
+08|儿童牙病与预防|ertong-yabing
+09|口腔预防与氟化物应用|yufang-fuhuawu
+10|治疗方案的决策与知情同意|juece-tongyi
+
+## 10-yanke-yingxiang-jiancha
+01|裂隙灯与眼前段检查|xiliedeng-jiancha
+02|眼底照相与 OCT|diban-zhaoxiang
+03|视野检查与判读|shiye-jiancha
+04|眼压测量与角膜厚度|yanya-celiang
+05|眼部超声与生物测量|chaosheng-shengwu
+06|荧光素血管造影|yingguangsu-zaoying
+07|影像报告的规范与质控|baogao-zhikong
+08|检查结果的组合解读|zuhe-jiedu
+
+## 11-kouqiang-hemian-waike
+01|拔牙的适应证与操作|baya-caozuo
+02|拔牙并发症与处理|bingfazheng-chuli
+03|口腔颌面感染的诊治|ganran-zhenzhi
+04|颌面部创伤与骨折|chuangshang-guzhe
+05|颌骨囊肿与肿瘤|nangzhong-liu
+06|唾液腺疾病|tuoyexian-jibing
+07|颞下颌关节疾病|nieheguanjie-bing
+08|正颌手术与咬合重建|zhengyi-yaohe
+09|麻醉与镇痛方案|mazui-zhentong
+10|术后护理与康复|shuhou-kangfu
+
+## 12-kouqiang-xiufu-xue
+01|修复体的类型与适应证|xiufuti-shiying
+02|固定义齿的设计|guding-yichi
+03|可摘局部义齿|kezhai-yichi
+04|全口义齿与咬合重建|quankou-yaohe
+05|种植体的生物学基础|zhongzhi-shengwu
+06|种植修复的流程|zhongzhi-liucheng
+07|牙体缺损的嵌体与冠|qianti-guan
+08|修复材料与加工工艺|cailiao-gongyi
+09|咬合调整与并发症|yaohe-tiaozheng
+10|修复体的随访与失败分析|suifang-shibai
+
+## 13-kouqiang-zhengji-xue
+01|错颌畸形的分类|cuohe-fenlei
+02|生长发育与矫治时机|shengzhang-shiji
+03|固定矫治器的力学|guding-lixue
+04|隐形矫治与数字化设计|yinxing-shuzihua
+05|拔牙与不拔牙的决策|baya-juece
+06|支抗控制|zhikang-kongzhi
+07|正畸与牙周、修复的联合|lianhe-zhiliao
+08|矫治中的风险与并发症|fengxian-bingfa
+09|保持与复发|baochi-fufa
+10|疗效评价与头影测量|touying-celiang
+
+## 14-zhongyi-sangyin-yixue
+01|嗓音的生理与声学基础|shengyin-shengxue
+02|嗓音障碍的评估方法|zhangai-pinggu
+03|喉的检查与喉镜|hou-jiancha
+04|嗓音病的中医辨证|sangyin-bianzheng
+05|声带小结与息肉的处理|shengdai-xiaojie
+06|嗓音训练与康复|xunlian-kangfu
+07|咽喉反流与嗓音|houfanliu-sangyin
+08|嗓音治疗的效果测量|xiaoguo-celiang
+
+## 15-zhongyi-meirong-pifu
+01|中医美容的理论与范围|lilun-fanwei
+02|面部皮肤的分型与评估|pifu-fenxing
+03|痤疮的中医辨治|cuochuang-bianzhi
+04|黄褐斑与色素性疾病|huangheban-suse
+05|脱发与头皮疾病|tuofa-toupi
+06|针灸美容与埋线|zhenjiu-meirong
+07|中药面膜与外用制剂|mianmo-waiyong
+08|美容治疗的风险与知情同意|fengxian-tongyi

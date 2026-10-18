@@ -1,5 +1,66 @@
 {
   "slug": "12-jiwei-zhengzheng-huli",
   "title": "急危重症护理学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-fenzhen-youxian",
+      "title": "急诊的分诊与优先级",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-fusu-chuchan",
+      "title": "心肺复苏与除颤",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-xiuke-fusu",
+      "title": "休克与液体复苏",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-huxishuai-tongqi",
+      "title": "呼吸衰竭与机械通气",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-zhongdu-huli",
+      "title": "急性中毒的护理",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-chuangshang-huli",
+      "title": "创伤与多发伤的护理",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-jiance-jishu",
+      "title": "重症监护的监测技术",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-zhentong-zhenwang",
+      "title": "镇静镇痛与谵妄管理",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-zhuanyun-anquan",
+      "title": "危重患者的转运",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-lunli-juece",
+      "title": "抢救记录与伦理决策",
+      "status": "📋"
+    }
+  ]
 }

@@ -1,0 +1,161 @@
+# 05-huli 护理系 · 章节知识结构（15 学科 · 128 章）
+# 行格式：<NN>|<章节标题>|<slug>
+# 设计原则：护理是「可执行、可记录、可追责」的学科 —— 每章都要落到一项操作或一条质量指标。
+
+## 01-zhongyi-huli-jichu
+01|中医护理的源流与整体护理观|yuanliu-zhengti
+02|辨证施护的原则与方法|bianzheng-shihu
+03|中医护理的程序与记录|chengxu-jilu
+04|情志护理与心理疏导|qingzhi-huli
+05|饮食护理与食疗宜忌|yinshi-huli
+06|起居与环境护理|qiju-huanjing
+07|中药给药的护理要点|geiyao-huli
+08|针灸推拿的护理配合|zhenjiu-huli
+09|中医护理的风险与安全|fengxian-anquan
+10|护理文书的结构化与质控|wenshu-zhikong
+
+## 02-jichu-huli-xue
+01|基础护理的范围与伦理要求|fanwei-lunli
+02|无菌技术与感染控制|wujun-gankong
+03|生命体征的测量与判读|shengming-tizheng
+04|给药途径与注射技术|geiyao-zhushe
+05|静脉输液与并发症|jingmai-shuye
+06|氧疗、吸痰与气道管理|yangliao-qidao
+07|导尿、灌肠与排泄护理|daoniao-paixie
+08|压疮的评估与预防|yachuang-yufang
+09|患者安全与不良事件报告|anquan-buliang
+10|护理操作的标准与考核|caozuo-kaohe
+
+## 03-jiankang-pinggu
+01|健康史的采集与问诊技巧|jiankangshi-caiji
+02|体格检查的顺序与方法|tige-jiancha
+03|症状评估与鉴别思路|zhengzhuang-pinggu
+04|实验室检查的判读|shiyanshi-pandu
+05|心电图的基本判读|xindiantu-pandu
+06|风险评估量表的使用|fengxian-liangbiao
+07|评估结果的记录与沟通|jilu-goutong
+08|评估偏差与过度检查|piancha-guodu
+
+## 04-zhongyi-huli-jishu
+01|艾灸的操作与适应证|aijiu-caozuo
+02|拔罐与刮痧的技术要点|baguan-guasha
+03|耳穴压豆与穴位贴敷|erxue-tiefu
+04|中药熏洗与湿敷|xunxi-shifu
+05|穴位按摩与经络拍打|anmo-paida
+06|中药保留灌肠与离子导入|guanchang-daoru
+07|技术操作的并发症处理|bingfazheng-chuli
+08|中医护理技术的疗效评价|liaoxiao-pingjia
+
+## 05-zhongyi-yangsheng-xue
+01|养生的基本原则：天人相应|jiben-yuanze
+02|四时养生与节气调摄|sishi-yangsheng
+03|饮食养生与体质配膳|yinshi-tizhi
+04|情志养生与疏泄|qingzhi-yangsheng
+05|运动养生与传统功法|yundong-gongfa
+06|起居作息与睡眠|qiju-shuimian
+07|治未病与健康管理|zhiweibing-jiankang
+08|养生干预的效果测量|xiaoguo-celiang
+
+## 06-zhongyi-xinli-xue
+01|中医心理学的理论框架|lilun-kuangjia
+02|七情学说与情志致病|qiqing-zhizhi
+03|五志与脏腑的关系|wuzhi-zangfu
+04|情志病的辨证与评估|qingzhibing-pinggu
+05|心理疏导与情志相胜|shudao-xiangsheng
+06|身心疾病的中医干预|shenxin-ganyu
+07|心理量表的使用与局限|liangbiao-juxian
+08|心理干预研究的对照设计|duizhao-sheji
+
+## 07-neike-huli-xue
+01|内科护理的评估框架|pinggu-kuangjia
+02|呼吸系统疾病护理：慢阻肺与哮喘|huxi-huli
+03|循环系统疾病护理：心衰与冠心|xunhuan-huli
+04|消化系统疾病护理：溃疡与肝硬化|xiaohua-huli
+05|泌尿系统疾病护理：肾病与透析|miniao-huli
+06|血液系统疾病护理：贫血与出血|xueye-huli
+07|内分泌疾病护理：糖尿病与甲状腺|neifenmi-huli
+08|神经系统疾病护理：卒中与癫痫|shenjing-huli
+09|风湿免疫疾病护理|fengshi-huli
+10|肿瘤患者的护理与症状管理|zhongliu-huli
+11|慢性病管理与随访|manxing-guanli
+12|内科护理的质量指标|zhiliang-zhibiao
+
+## 08-waike-huli-xue
+01|围手术期护理的流程|weishoushu-liucheng
+02|麻醉恢复与术后监护|mazui-jianhu
+03|伤口与引流的护理|shangkou-yinliu
+04|普外科护理：腹部手术|puwai-fubu
+05|骨科护理：牵引与固定|guke-qianyin
+06|神经外科护理：颅脑术后|shenwai-lunao
+07|心胸外科护理|xiongwai-huli
+08|泌尿外科护理|miniao-waike
+09|外科感染与换药技术|ganran-huanyao
+10|加速康复外科与中医配合|kangfu-waike
+
+## 09-fuchanke-huli-xue
+01|女性生殖系统的生理|shengzhi-shengli
+02|孕期监护与产前检查|yunqi-jianhu
+03|分娩期的护理与产程|fenmian-huli
+04|产褥期的护理与康复|chanru-huli
+05|高危妊娠的识别与转诊|gaowei-zhuanzhen
+06|妇科手术的围术期护理|fuke-weishu
+07|妇科肿瘤与化疗护理|zhongliu-huali
+08|母乳喂养与新生儿护理|muru-xinshenger
+
+## 10-erke-huli-xue
+01|儿童的生长发育与评估|shengzhang-pinggu
+02|儿科护理的特点与沟通|tedian-goutong
+03|新生儿疾病护理|xinshenger-huli
+04|儿童呼吸系统疾病护理|huxi-huli
+05|儿童消化系统疾病护理|xiaohua-huli
+06|儿童传染病护理与隔离|chuanran-geli
+07|儿童用药剂量与安全|jiliang-anquan
+08|儿童意外伤害的预防|yiwaishang-yufang
+
+## 11-shequ-huli-xue
+01|社区护理的对象与模式|duixiang-moshi
+02|家庭访视与健康档案|fangshi-dangan
+03|慢性病的社区管理|manxing-guanli
+04|传染病与疫苗接种|chuanran-yimiao
+05|老年与失能人群照护|laonian-zhaohu
+06|健康教育的设计与评价|jiankang-jiaoyu
+07|社区卫生服务的信息化|weisheng-xinxihua
+08|社区护理的质量与可及性|zhiliang-kejixing
+
+## 12-jiwei-zhengzheng-huli
+01|急诊的分诊与优先级|fenzhen-youxian
+02|心肺复苏与除颤|fusu-chuchan
+03|休克与液体复苏|xiuke-fusu
+04|呼吸衰竭与机械通气|huxishuai-tongqi
+05|急性中毒的护理|zhongdu-huli
+06|创伤与多发伤的护理|chuangshang-huli
+07|重症监护的监测技术|jiance-jishu
+08|镇静镇痛与谵妄管理|zhentong-zhenwang
+09|危重患者的转运|zhuanyun-anquan
+10|抢救记录与伦理决策|lunli-juece
+
+## 13-huli-guanli-xue
+01|护理管理的组织与岗位|zuzhi-gangwei
+02|护理人力资源与排班|renli-paiban
+03|护理质量评价与持续改进|zhiliang-gaijin
+04|护理不良事件与根因分析|buliang-genyin
+05|护理绩效与成本核算|jixiao-chengben
+06|护理信息化与数据治理|xinxihua-zhili
+
+## 14-huli-lunli-fagui
+01|护理伦理的原则与困境|yuanze-kunjing
+02|知情同意与患者自主权|zhiqing-tongyi
+03|隐私保护与信息使用|yinsi-xinxi
+04|护理差错的法与责|chacuo-faze
+05|安宁疗护与生命伦理|anning-shengming
+06|护理法规与执业规范|fagui-zhifan
+
+## 15-huli-yanjiu-zhengxun
+01|护理研究的选题与问题化|xuanti-wentihua
+02|量性研究与设计类型|liangxing-sheji
+03|质性研究与访谈分析|zhixing-fangtan
+04|量表的选择与信效度|liangbiao-xinxiao
+05|循证护理的证据分级|xunzheng-fenji
+06|文献检索与系统评价|jiansuo-xitong
+07|证据到实践的转化|zhuanhua-shijian
+08|护理研究中的伦理审查|lunli-shencha

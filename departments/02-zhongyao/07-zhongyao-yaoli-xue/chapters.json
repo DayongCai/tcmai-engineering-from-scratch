@@ -1,5 +1,66 @@
 {
   "slug": "07-zhongyao-yaoli-xue",
   "title": "中药药理学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-yanjiu-fanshi",
+      "title": "中药药理的研究范式与特殊性",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-yaoxiaoxue",
+      "title": "药效学：量效关系与模型选择",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-jiebiao-yaoli",
+      "title": "解表、清热类药的药理",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-huoxue-yaoli",
+      "title": "活血化瘀与止血类药的药理",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-buxu-mianyi",
+      "title": "补虚类药的免疫调节",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-huatan-anshen",
+      "title": "化痰平喘与安神类药的药理",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-duxing-anquan",
+      "title": "中药的毒性与安全评价",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-yaodai-peiwu",
+      "title": "药代动力学与配伍影响",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-zhengxing-moxing",
+      "title": "动物模型与证候模型的争议",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-zhengju-fenji",
+      "title": "药理证据的分级与临床转化",
+      "status": "📋"
+    }
+  ]
 }

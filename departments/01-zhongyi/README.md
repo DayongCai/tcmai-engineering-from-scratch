@@ -7,7 +7,7 @@
 | 学科数 | 15 |
 | 总学时 | 1062 |
 | 章节目标 | 150 |
-| 已建章节 | 3 |
+| 已建章节 | 4 |
 | 涉及学期 | 第1, 第3, 第4, 第5, 第6, 第7 |
 
 ## 学科清单
@@ -18,7 +18,7 @@
 | 02 | [医古文](02-yi-gu-wen/) | Classical Chinese for TCM | Core | 1 | 54 | 0/8 | 古文分词→分词器 / 训诂→语义消歧 | ⬚ |
 | 03 | [中国医学史](03-zhongguo-yixue-shi/) | History of Chinese Medicine | Reference | 1 | 36 | 0/8 | 医史脉络→时间图谱 / 学派演化→谱系聚类 | ⬚ |
 | 04 | [中医体质学](04-zhongyi-tizhi-xue/) | TCM Constitution Theory | Core | 4 | 54 | 0/8 | 九种体质→多分类 / 体质问卷→特征工程 | ⬚ |
-| 05 | [中医诊断学](05-zhongyi-zhen-duan-xue/) | TCM Diagnostics | Core | 3 | 90 | 0/12 | 四诊→多模态特征 / 八纲→多维分类 | ⬚ |
+| 05 | [中医诊断学](05-zhongyi-zhen-duan-xue/) | TCM Diagnostics | Core | 3 | 90 | 1/12 | 四诊→多模态特征 / 八纲→多维分类 | 🚧 |
 | 06 | [内经选读](06-neijing-xuandu/) | Selected Readings from Huangdi Neijing | Core | 3 | 72 | 0/10 | 原文→语料库 / 条文检索→向量检索 | ⬚ |
 | 07 | [伤寒论](07-shanghanlun/) | Treatise on Cold Damage | Core | 4 | 90 | 0/12 | 六经→状态机 / 方证→条件概率 | ⬚ |
 | 08 | [金匮要略](08-jingui-yaolue/) | Synopsis of the Golden Chamber | Core | 5 | 72 | 0/10 | 杂病→规则库 / 方证对应→检索增强 | ⬚ |

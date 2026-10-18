@@ -2,11 +2,11 @@
   "$generated": "node scripts/build_outputs_index.js",
   "note": "可复用产出物的根级索引。契约见 CONTRIBUTING.md；每章的产物是生成物，索引是它们的生成物。",
   "counts": {
-    "items": 6,
-    "chaptersWithOutputs": 3,
+    "items": 22,
+    "chaptersWithOutputs": 11,
     "byKind": {
-      "prompt": 3,
-      "skill": 3
+      "prompt": 11,
+      "skill": 11
     },
     "gaps": 0
   },
@@ -79,6 +79,279 @@
                   "title": "藏象关系链抽取与校验",
                   "description": "把症状串成藏象关系链，每一步标注关系类型与方向，跨五行时显式标出相生相克。",
                   "chars": 1670
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subject": "中医诊断学",
+          "slug": "05-zhongyi-zhen-duan-xue",
+          "type": "Core",
+          "semester": 3,
+          "chapters": [
+            {
+              "chapter": "08-zangfu-bianzheng",
+              "title": "第 8 章 · 脏腑辨证 → 规则表与权重：把「肝气郁结」写成可复核的打分",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/08-zangfu-bianzheng/outputs/prompt-zangfu-bianzheng.md",
+                  "title": "脏腑辨证规则表生成器",
+                  "description": null,
+                  "chars": 651
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/08-zangfu-bianzheng/outputs/skill-zangfu-bianzheng.md",
+                  "title": "zangfu-bianzheng",
+                  "description": "把四诊记录整理成脏腑证候的证据表（主症/次症/舌脉）并报出证据缺口，不给结论",
+                  "chars": 621
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dept": "中药系",
+      "slug": "02-zhongyao",
+      "icon": "🌾",
+      "subjects": [
+        {
+          "subject": "中药学",
+          "slug": "01-zhongyaoxue",
+          "type": "Core",
+          "semester": 2,
+          "chapters": [
+            {
+              "chapter": "12-xingneng-bianma",
+              "title": "第 12 章 · 中药性能的编码化：性味归经 → 向量",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/02-zhongyao/01-zhongyaoxue/chapters/12-xingneng-bianma/outputs/prompt-xingneng-bianma.md",
+                  "title": "中药性能编码器",
+                  "description": null,
+                  "chars": 722
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/02-zhongyao/01-zhongyaoxue/chapters/12-xingneng-bianma/outputs/skill-xingneng-bianma.md",
+                  "title": "xingneng-bianma",
+                  "description": "把中药材的性味归经整理成可计算向量，并按性能相似度给出近似药候选（只作查证线索）",
+                  "chars": 663
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dept": "针灸系",
+      "slug": "03-zhenjiu",
+      "icon": "🪡",
+      "subjects": [
+        {
+          "subject": "腧穴学",
+          "slug": "02-shuxue-xue",
+          "type": "Core",
+          "semester": 3,
+          "chapters": [
+            {
+              "chapter": "11-weixian-shendu",
+              "title": "第 11 章 · 危险穴位与针刺安全深度：把「不可深刺」变成一道可算的闸门",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/03-zhenjiu/02-shuxue-xue/chapters/11-weixian-shendu/outputs/prompt-weixian-shendu.md",
+                  "title": "进针前安全复核单",
+                  "description": null,
+                  "chars": 705
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/03-zhenjiu/02-shuxue-xue/chapters/11-weixian-shendu/outputs/skill-weixian-shendu.md",
+                  "title": "weixian-shendu",
+                  "description": "进针前的安全深度与方向复核：给出允许/警告/禁止/需上级决定，并列出模型未知项",
+                  "chars": 683
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dept": "骨伤系",
+      "slug": "04-gushang",
+      "icon": "🦴",
+      "subjects": [
+        {
+          "subject": "中医正骨学",
+          "slug": "06-zhongyi-zhenggu-xue",
+          "type": "Clinic",
+          "semester": 6,
+          "chapters": [
+            {
+              "chapter": "12-shoufa-jianmo",
+              "title": "第 12 章 · 正骨手法的力学建模：把「巧劲」拆成力、力臂与阈值",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/04-gushang/06-zhongyi-zhenggu-xue/chapters/12-shoufa-jianmo/outputs/prompt-shoufa-jianmo.md",
+                  "title": "正骨手法力学预演",
+                  "description": null,
+                  "chars": 764
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/04-gushang/06-zhongyi-zhenggu-xue/chapters/12-shoufa-jianmo/outputs/skill-shoufa-jianmo.md",
+                  "title": "shoufa-jianmo",
+                  "description": "正骨复位前的力学预演：算所需牵引力、力区间与力矩，并列出模型未建模的因素",
+                  "chars": 644
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dept": "护理系",
+      "slug": "05-huli",
+      "icon": "🩺",
+      "subjects": [
+        {
+          "subject": "中医护理技术",
+          "slug": "04-zhongyi-huli-jishu",
+          "type": "Build",
+          "semester": 3,
+          "chapters": [
+            {
+              "chapter": "08-liaoxiao-pingjia",
+              "title": "第 8 章 · 中医护理技术的疗效评价：把「病人说舒服多了」变成可复核的数",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/05-huli/04-zhongyi-huli-jishu/chapters/08-liaoxiao-pingjia/outputs/prompt-liaoxiao-pingjia.md",
+                  "title": "护理技术疗效记录单",
+                  "description": null,
+                  "chars": 680
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/05-huli/04-zhongyi-huli-jishu/chapters/08-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md",
+                  "title": "liaoxiao-pingjia",
+                  "description": "中医护理技术的前后测量记录：算配对效应量与 MCID，并明确写出不能推断的结论",
+                  "chars": 610
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dept": "管理系",
+      "slug": "06-guanli",
+      "icon": "📊",
+      "subjects": [
+        {
+          "subject": "医学统计学",
+          "slug": "01-yixue-tongjixue",
+          "type": "Core",
+          "semester": 4,
+          "chapters": [
+            {
+              "chapter": "09-duochong-jiaoyan",
+              "title": "第 9 章 · 多重比较与假阳性控制：为什么「做了 20 个指标，总有 1 个显著」",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/06-guanli/01-yixue-tongjixue/chapters/09-duochong-jiaoyan/outputs/prompt-duochong-jiaoyan.md",
+                  "title": "多重比较校正选择器",
+                  "description": null,
+                  "chars": 679
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/06-guanli/01-yixue-tongjixue/chapters/09-duochong-jiaoyan/outputs/skill-duochong-jiaoyan.md",
+                  "title": "duochong-jiaoyan",
+                  "description": "按研究目的选择 FWER 或 FDR 校正，算出门槛并写明校正的代价与不可弥补的偏倚",
+                  "chars": 565
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dept": "智能系",
+      "slug": "07-zhineng",
+      "icon": "🤖",
+      "subjects": [
+        {
+          "subject": "中医智能辨证系统",
+          "slug": "06-zhongyi-zhineng-bianzheng",
+          "type": "Build",
+          "semester": 6,
+          "chapters": [
+            {
+              "chapter": "07-yizhixing-pinggu",
+              "title": "第 7 章 · 与医生诊断的一致性评估：kappa 高就说明系统靠谱吗",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/07-zhineng/06-zhongyi-zhineng-bianzheng/chapters/07-yizhixing-pinggu/outputs/prompt-yizhixing-pinggu.md",
+                  "title": "一致性评估报告单",
+                  "description": null,
+                  "chars": 770
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/07-zhineng/06-zhongyi-zhineng-bianzheng/chapters/07-yizhixing-pinggu/outputs/skill-yizhixing-pinggu.md",
+                  "title": "yizhixing-pinggu",
+                  "description": "系统与医生辨证一致性评估：混淆矩阵、kappa、PABAK，并写明不能据此声称临床可用",
+                  "chars": 622
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dept": "五官口腔系",
+      "slug": "08-wuguan",
+      "icon": "👁️",
+      "subjects": [
+        {
+          "subject": "中医眼科学",
+          "slug": "06-zhongyi-yanke-xue",
+          "type": "Clinic",
+          "semester": 6,
+          "chapters": [
+            {
+              "chapter": "01-wulun-bakuo",
+              "title": "第 1 章 · 五轮八廓学说与眼的脏腑配属：一张能查、也能被质疑的映射表",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/06-zhongyi-yanke-xue/chapters/01-wulun-bakuo/outputs/prompt-wulun-bakuo.md",
+                  "title": "眼科体征归轮助手",
+                  "description": null,
+                  "chars": 587
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/06-zhongyi-yanke-xue/chapters/01-wulun-bakuo/outputs/skill-wulun-bakuo.md",
+                  "title": "wulun-bakuo",
+                  "description": "眼科局部体征归到五轮与脏腑，输出带出处与争议标记的映射，并保留跨区多候选",
+                  "chars": 530
                 }
               ]
             }
@@ -177,6 +450,246 @@
       "description": "把症状串成藏象关系链，每一步标注关系类型与方向，跨五行时显式标出相生相克。",
       "version": "1.0.0",
       "chars": 1670
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医诊断学",
+      "subjectSlug": "05-zhongyi-zhen-duan-xue",
+      "chapter": "08-zangfu-bianzheng",
+      "chapterTitle": "第 8 章 · 脏腑辨证 → 规则表与权重：把「肝气郁结」写成可复核的打分",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/08-zangfu-bianzheng/outputs/prompt-zangfu-bianzheng.md",
+      "title": "脏腑辨证规则表生成器",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 651
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医诊断学",
+      "subjectSlug": "05-zhongyi-zhen-duan-xue",
+      "chapter": "08-zangfu-bianzheng",
+      "chapterTitle": "第 8 章 · 脏腑辨证 → 规则表与权重：把「肝气郁结」写成可复核的打分",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/08-zangfu-bianzheng/outputs/skill-zangfu-bianzheng.md",
+      "title": "zangfu-bianzheng",
+      "name": "zangfu-bianzheng",
+      "description": "把四诊记录整理成脏腑证候的证据表（主症/次症/舌脉）并报出证据缺口，不给结论",
+      "version": "0.1.0",
+      "chars": 621
+    },
+    {
+      "dept": "中药系",
+      "deptSlug": "02-zhongyao",
+      "subject": "中药学",
+      "subjectSlug": "01-zhongyaoxue",
+      "chapter": "12-xingneng-bianma",
+      "chapterTitle": "第 12 章 · 中药性能的编码化：性味归经 → 向量",
+      "kind": "prompt",
+      "file": "departments/02-zhongyao/01-zhongyaoxue/chapters/12-xingneng-bianma/outputs/prompt-xingneng-bianma.md",
+      "title": "中药性能编码器",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 722
+    },
+    {
+      "dept": "中药系",
+      "deptSlug": "02-zhongyao",
+      "subject": "中药学",
+      "subjectSlug": "01-zhongyaoxue",
+      "chapter": "12-xingneng-bianma",
+      "chapterTitle": "第 12 章 · 中药性能的编码化：性味归经 → 向量",
+      "kind": "skill",
+      "file": "departments/02-zhongyao/01-zhongyaoxue/chapters/12-xingneng-bianma/outputs/skill-xingneng-bianma.md",
+      "title": "xingneng-bianma",
+      "name": "xingneng-bianma",
+      "description": "把中药材的性味归经整理成可计算向量，并按性能相似度给出近似药候选（只作查证线索）",
+      "version": "0.1.0",
+      "chars": 663
+    },
+    {
+      "dept": "针灸系",
+      "deptSlug": "03-zhenjiu",
+      "subject": "腧穴学",
+      "subjectSlug": "02-shuxue-xue",
+      "chapter": "11-weixian-shendu",
+      "chapterTitle": "第 11 章 · 危险穴位与针刺安全深度：把「不可深刺」变成一道可算的闸门",
+      "kind": "prompt",
+      "file": "departments/03-zhenjiu/02-shuxue-xue/chapters/11-weixian-shendu/outputs/prompt-weixian-shendu.md",
+      "title": "进针前安全复核单",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 705
+    },
+    {
+      "dept": "针灸系",
+      "deptSlug": "03-zhenjiu",
+      "subject": "腧穴学",
+      "subjectSlug": "02-shuxue-xue",
+      "chapter": "11-weixian-shendu",
+      "chapterTitle": "第 11 章 · 危险穴位与针刺安全深度：把「不可深刺」变成一道可算的闸门",
+      "kind": "skill",
+      "file": "departments/03-zhenjiu/02-shuxue-xue/chapters/11-weixian-shendu/outputs/skill-weixian-shendu.md",
+      "title": "weixian-shendu",
+      "name": "weixian-shendu",
+      "description": "进针前的安全深度与方向复核：给出允许/警告/禁止/需上级决定，并列出模型未知项",
+      "version": "0.1.0",
+      "chars": 683
+    },
+    {
+      "dept": "骨伤系",
+      "deptSlug": "04-gushang",
+      "subject": "中医正骨学",
+      "subjectSlug": "06-zhongyi-zhenggu-xue",
+      "chapter": "12-shoufa-jianmo",
+      "chapterTitle": "第 12 章 · 正骨手法的力学建模：把「巧劲」拆成力、力臂与阈值",
+      "kind": "prompt",
+      "file": "departments/04-gushang/06-zhongyi-zhenggu-xue/chapters/12-shoufa-jianmo/outputs/prompt-shoufa-jianmo.md",
+      "title": "正骨手法力学预演",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 764
+    },
+    {
+      "dept": "骨伤系",
+      "deptSlug": "04-gushang",
+      "subject": "中医正骨学",
+      "subjectSlug": "06-zhongyi-zhenggu-xue",
+      "chapter": "12-shoufa-jianmo",
+      "chapterTitle": "第 12 章 · 正骨手法的力学建模：把「巧劲」拆成力、力臂与阈值",
+      "kind": "skill",
+      "file": "departments/04-gushang/06-zhongyi-zhenggu-xue/chapters/12-shoufa-jianmo/outputs/skill-shoufa-jianmo.md",
+      "title": "shoufa-jianmo",
+      "name": "shoufa-jianmo",
+      "description": "正骨复位前的力学预演：算所需牵引力、力区间与力矩，并列出模型未建模的因素",
+      "version": "0.1.0",
+      "chars": 644
+    },
+    {
+      "dept": "护理系",
+      "deptSlug": "05-huli",
+      "subject": "中医护理技术",
+      "subjectSlug": "04-zhongyi-huli-jishu",
+      "chapter": "08-liaoxiao-pingjia",
+      "chapterTitle": "第 8 章 · 中医护理技术的疗效评价：把「病人说舒服多了」变成可复核的数",
+      "kind": "prompt",
+      "file": "departments/05-huli/04-zhongyi-huli-jishu/chapters/08-liaoxiao-pingjia/outputs/prompt-liaoxiao-pingjia.md",
+      "title": "护理技术疗效记录单",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 680
+    },
+    {
+      "dept": "护理系",
+      "deptSlug": "05-huli",
+      "subject": "中医护理技术",
+      "subjectSlug": "04-zhongyi-huli-jishu",
+      "chapter": "08-liaoxiao-pingjia",
+      "chapterTitle": "第 8 章 · 中医护理技术的疗效评价：把「病人说舒服多了」变成可复核的数",
+      "kind": "skill",
+      "file": "departments/05-huli/04-zhongyi-huli-jishu/chapters/08-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md",
+      "title": "liaoxiao-pingjia",
+      "name": "liaoxiao-pingjia",
+      "description": "中医护理技术的前后测量记录：算配对效应量与 MCID，并明确写出不能推断的结论",
+      "version": "0.1.0",
+      "chars": 610
+    },
+    {
+      "dept": "管理系",
+      "deptSlug": "06-guanli",
+      "subject": "医学统计学",
+      "subjectSlug": "01-yixue-tongjixue",
+      "chapter": "09-duochong-jiaoyan",
+      "chapterTitle": "第 9 章 · 多重比较与假阳性控制：为什么「做了 20 个指标，总有 1 个显著」",
+      "kind": "prompt",
+      "file": "departments/06-guanli/01-yixue-tongjixue/chapters/09-duochong-jiaoyan/outputs/prompt-duochong-jiaoyan.md",
+      "title": "多重比较校正选择器",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 679
+    },
+    {
+      "dept": "管理系",
+      "deptSlug": "06-guanli",
+      "subject": "医学统计学",
+      "subjectSlug": "01-yixue-tongjixue",
+      "chapter": "09-duochong-jiaoyan",
+      "chapterTitle": "第 9 章 · 多重比较与假阳性控制：为什么「做了 20 个指标，总有 1 个显著」",
+      "kind": "skill",
+      "file": "departments/06-guanli/01-yixue-tongjixue/chapters/09-duochong-jiaoyan/outputs/skill-duochong-jiaoyan.md",
+      "title": "duochong-jiaoyan",
+      "name": "duochong-jiaoyan",
+      "description": "按研究目的选择 FWER 或 FDR 校正，算出门槛并写明校正的代价与不可弥补的偏倚",
+      "version": "0.1.0",
+      "chars": 565
+    },
+    {
+      "dept": "智能系",
+      "deptSlug": "07-zhineng",
+      "subject": "中医智能辨证系统",
+      "subjectSlug": "06-zhongyi-zhineng-bianzheng",
+      "chapter": "07-yizhixing-pinggu",
+      "chapterTitle": "第 7 章 · 与医生诊断的一致性评估：kappa 高就说明系统靠谱吗",
+      "kind": "prompt",
+      "file": "departments/07-zhineng/06-zhongyi-zhineng-bianzheng/chapters/07-yizhixing-pinggu/outputs/prompt-yizhixing-pinggu.md",
+      "title": "一致性评估报告单",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 770
+    },
+    {
+      "dept": "智能系",
+      "deptSlug": "07-zhineng",
+      "subject": "中医智能辨证系统",
+      "subjectSlug": "06-zhongyi-zhineng-bianzheng",
+      "chapter": "07-yizhixing-pinggu",
+      "chapterTitle": "第 7 章 · 与医生诊断的一致性评估：kappa 高就说明系统靠谱吗",
+      "kind": "skill",
+      "file": "departments/07-zhineng/06-zhongyi-zhineng-bianzheng/chapters/07-yizhixing-pinggu/outputs/skill-yizhixing-pinggu.md",
+      "title": "yizhixing-pinggu",
+      "name": "yizhixing-pinggu",
+      "description": "系统与医生辨证一致性评估：混淆矩阵、kappa、PABAK，并写明不能据此声称临床可用",
+      "version": "0.1.0",
+      "chars": 622
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "中医眼科学",
+      "subjectSlug": "06-zhongyi-yanke-xue",
+      "chapter": "01-wulun-bakuo",
+      "chapterTitle": "第 1 章 · 五轮八廓学说与眼的脏腑配属：一张能查、也能被质疑的映射表",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/06-zhongyi-yanke-xue/chapters/01-wulun-bakuo/outputs/prompt-wulun-bakuo.md",
+      "title": "眼科体征归轮助手",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 587
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "中医眼科学",
+      "subjectSlug": "06-zhongyi-yanke-xue",
+      "chapter": "01-wulun-bakuo",
+      "chapterTitle": "第 1 章 · 五轮八廓学说与眼的脏腑配属：一张能查、也能被质疑的映射表",
+      "kind": "skill",
+      "file": "departments/08-wuguan/06-zhongyi-yanke-xue/chapters/01-wulun-bakuo/outputs/skill-wulun-bakuo.md",
+      "title": "wulun-bakuo",
+      "name": "wulun-bakuo",
+      "description": "眼科局部体征归到五轮与脏腑，输出带出处与争议标记的映射，并保留跨区多候选",
+      "version": "0.1.0",
+      "chars": 530
     }
   ],
   "gaps": []

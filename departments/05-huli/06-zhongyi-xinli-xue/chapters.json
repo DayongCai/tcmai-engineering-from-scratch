@@ -1,5 +1,54 @@
 {
   "slug": "06-zhongyi-xinli-xue",
   "title": "中医心理学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-lilun-kuangjia",
+      "title": "中医心理学的理论框架",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-qiqing-zhizhi",
+      "title": "七情学说与情志致病",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-wuzhi-zangfu",
+      "title": "五志与脏腑的关系",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-qingzhibing-pinggu",
+      "title": "情志病的辨证与评估",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-shudao-xiangsheng",
+      "title": "心理疏导与情志相胜",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-shenxin-ganyu",
+      "title": "身心疾病的中医干预",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-liangbiao-juxian",
+      "title": "心理量表的使用与局限",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-duizhao-sheji",
+      "title": "心理干预研究的对照设计",
+      "status": "📋"
+    }
+  ]
 }

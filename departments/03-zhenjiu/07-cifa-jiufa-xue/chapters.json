@@ -1,5 +1,66 @@
 {
   "slug": "07-cifa-jiufa-xue",
   "title": "刺法灸法学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-zhenju-guige",
+      "title": "针具的规格与选择",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-jinzhen-jiaodu",
+      "title": "进针法与针刺角度深度",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-deqi-ganying",
+      "title": "得气与针刺感应",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-buxie-ciliang",
+      "title": "补泻手法与刺激量",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-jiufa-leixing",
+      "title": "灸法：艾炷、艾条与温针灸",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-baguan-ciluo",
+      "title": "拔罐、刮痧与刺络放血",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-dianzhen-huozhen",
+      "title": "电针、火针与特殊针法",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-yichang-chuli",
+      "title": "针刺异常情况与处理",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-caozuo-peixun",
+      "title": "针刺操作的标准化与培训",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-canshu-liangxiao",
+      "title": "刺激参数与效应的量效关系",
+      "status": "📋"
+    }
+  ]
 }

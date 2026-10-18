@@ -1,5 +1,66 @@
 {
   "slug": "08-jingui-yaolue",
   "title": "金匮要略",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-chengshu-zabing",
+      "title": "金匮的成书与杂病分类",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-zangfu-chuanbian",
+      "title": "脏腑经络先后病：传变与预防",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-jing-shi-ye",
+      "title": "痉湿暍病：外感杂病的辨识",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-baihe-huhuo",
+      "title": "百合狐惑阴阳毒：少见病的鉴别",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-nueb-zhongfeng",
+      "title": "疟病与中风历节：节律与痹阻",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-pibai-xulao",
+      "title": "血痹虚劳：虚损的分层",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-tanyin-kesou",
+      "title": "痰饮咳嗽：水液代谢的失效",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-xiaoke-linbing",
+      "title": "消渴与淋病：津液与排泄",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-furen-sanpian",
+      "title": "妇人病三篇：经带胎产的辨证",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-zabing-peiwu",
+      "title": "杂病方剂的配伍规律与统计",
+      "status": "📋"
+    }
+  ]
 }

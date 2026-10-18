@@ -1,5 +1,66 @@
 {
   "slug": "05-zhongyao-jianding-xue",
   "title": "中药鉴定学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-jianding-yiju",
+      "title": "鉴定的依据：药典、标准与性状",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-laiyuan-jianding",
+      "title": "来源鉴定：基原与拉丁名核对",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-xingzhuang-jianding",
+      "title": "性状鉴定：形色气味的大小与比例",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-xianwei-jianding",
+      "title": "显微鉴定：组织与粉末特征",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-lihua-jianding",
+      "title": "理化鉴定：薄层与色谱指纹",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-weipin-jianbie",
+      "title": "常见伪品与混淆品的鉴别",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-guizhong-zhenwei",
+      "title": "贵重药材的真伪判定",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-dna-tiaoxingma",
+      "title": "DNA 条形码与分子鉴定",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-baogao-guifan",
+      "title": "鉴定报告的规范与可追溯",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-tuxiang-wupan",
+      "title": "图像识别在性状鉴定中的误判分析",
+      "status": "📋"
+    }
+  ]
 }

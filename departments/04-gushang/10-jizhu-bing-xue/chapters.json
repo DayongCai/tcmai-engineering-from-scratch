@@ -1,5 +1,66 @@
 {
   "slug": "10-jizhu-bing-xue",
   "title": "脊柱病学",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-gongneng-tuibian",
+      "title": "脊柱的功能单位与退变过程",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-jingzhuibing-fenxing",
+      "title": "颈椎病的分型与诊断",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-yaotui-pinggu",
+      "title": "腰椎间盘突出症的评估",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-zhaixia-huatuo",
+      "title": "腰椎管狭窄与滑脱",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-cejian-shajian",
+      "title": "脊柱侧弯的筛查与干预",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-tuibian-bianzheng",
+      "title": "脊柱退变的中医辨证",
+      "status": "📋"
+    },
+    {
+      "n": 7,
+      "slug": "07-zhiliao-zuhe",
+      "title": "手法、牵引与针灸的治疗组合",
+      "status": "📋"
+    },
+    {
+      "n": 8,
+      "slug": "08-shoushu-zhizheng",
+      "title": "手术指征与保守治疗的边界",
+      "status": "📋"
+    },
+    {
+      "n": 9,
+      "slug": "09-liangbiao-pingjia",
+      "title": "脊柱功能的量表评价",
+      "status": "📋"
+    },
+    {
+      "n": 10,
+      "slug": "10-dengji-suifang",
+      "title": "脊柱病的数据登记与随访",
+      "status": "📋"
+    }
+  ]
 }

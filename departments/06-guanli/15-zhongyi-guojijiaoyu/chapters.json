@@ -1,5 +1,42 @@
 {
   "slug": "15-zhongyi-guojijiaoyu",
   "title": "中医国际教育与传播",
-  "chapters": []
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-lishi-xianzhuang",
+      "title": "国际教育的历史与现状",
+      "status": "📋"
+    },
+    {
+      "n": 2,
+      "slug": "02-haiwai-lifa",
+      "title": "海外中医立法与执业",
+      "status": "📋"
+    },
+    {
+      "n": 3,
+      "slug": "03-who-zhanlve",
+      "title": "WHO 传统医学战略与标准",
+      "status": "📋"
+    },
+    {
+      "n": 4,
+      "slug": "04-kecheng-bendihua",
+      "title": "课程与教材的本地化",
+      "status": "📋"
+    },
+    {
+      "n": 5,
+      "slug": "05-liuxuesheng-yuyan",
+      "title": "留学生教学与语言障碍",
+      "status": "📋"
+    },
+    {
+      "n": 6,
+      "slug": "06-hezuo-fengxian",
+      "title": "国际合作的模式与风险",
+      "status": "📋"
+    }
+  ]
 }

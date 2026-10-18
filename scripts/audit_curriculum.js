@@ -88,9 +88,33 @@ if (!fs.existsSync(deptDir)) {
           err(`L1 meta.json 解析失败: ${s.path} — ${e.message}`);
         }
       }
+      // 章节索引：知识结构必须与 curriculum 的章节目标一一对上。
+      // 没有这道门时，「1086 章节」只是一个数字 —— 120 个学科里 119 个连章节名都没有，
+      // 而所有门都是绿的（它们只查已建章节）。声明与结构脱节不会自己报错。
+      const idxPath = path.join(sp, 'chapters.json');
+      if (!fs.existsSync(idxPath)) {
+        err(`L1 学科缺 chapters.json（知识结构）: ${s.path}`);
+      } else {
+        try {
+          const idx = JSON.parse(fs.readFileSync(idxPath, 'utf8'));
+          const list = Array.isArray(idx.chapters) ? idx.chapters : [];
+          if (list.length !== s.chapters) {
+            err(`L1 chapters.json 章数 ${list.length} ≠ 目标 ${s.chapters}: ${s.path}`);
+          }
+          const seen = new Set();
+          for (const c of list) {
+            if (!/^\d{2}-[a-z0-9-]+$/.test(c.slug || '')) err(`L1 chapters.json slug 非法（${c.slug}）: ${s.path}`);
+            if (seen.has(c.slug)) err(`L1 chapters.json slug 重复（${c.slug}）: ${s.path}`);
+            seen.add(c.slug);
+            if (!c.title) err(`L1 chapters.json 有章节缺标题: ${s.path}`);
+          }
+        } catch (e) {
+          err(`L1 chapters.json 解析失败: ${s.path} — ${e.message}`);
+        }
+      }
     }
   }
-  ok.push('L1 结构层: 已落盘院系/学科的 README + meta.json 齐备');
+  ok.push('L1 结构层: 已落盘院系/学科的 README + meta.json + 章节知识结构齐备');
 }
 
 // ─────────── L2 契约层 ───────────
