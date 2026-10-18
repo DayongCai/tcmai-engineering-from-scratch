@@ -66,12 +66,41 @@
       "units": 260,
       "chars": 6547,
       "empty": 0
+    },
+    {
+      "slug": "neijing-quanwen",
+      "title": "黄帝内经全文（素问81篇 · 灵枢81篇）",
+      "file": "黄帝内经全文.xls",
+      "sections": 162,
+      "units": 6456,
+      "chars": 613685,
+      "empty": 0
+    },
+    {
+      "slug": "hdnj-yinpin",
+      "title": "黄帝内经音频理解（逐句字幕 · 165 表）",
+      "file": "HDNJ音频理解.xls",
+      "sections": 164,
+      "units": 125027,
+      "chars": 5352126,
+      "empty": 2,
+      "timedCues": 124660,
+      "noteBlocks": 367
+    },
+    {
+      "slug": "tcmscheme",
+      "title": "中医课程图式（tcmscheme · 17 表）",
+      "file": "tcmscheme.xls",
+      "sections": 16,
+      "units": 3363,
+      "chars": 85411,
+      "empty": 0
     }
   ],
   "totals": {
-    "materials": 7,
-    "sections": 113,
-    "units": 83534,
-    "chars": 3817072
+    "materials": 10,
+    "sections": 455,
+    "units": 218380,
+    "chars": 9868294
   }
 }

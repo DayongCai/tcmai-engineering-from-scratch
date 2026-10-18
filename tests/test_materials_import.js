@@ -3,7 +3,7 @@
  * tests/test_materials_import.js — 「格式乙」源材料批量导入层
  *
  * 测的是**源与产物的对应关系**，以及**每种形态真的渲染成了它该有的样子**：
- *   - 7 份材料各有一套产物（源 xlsx + 全本 md + source-map.json）
+ *   - 10 份材料各有一套产物（源 xls(x) + 全本 md + source-map.json）
  *   - source-map 记的 sha256 等于入库源文件当前指纹（可复现）
  *   - md 字数与 source-map 记录一致（防手改生成稿）
  *   - 字幕形态真的带时间码；宽表形态真的成表；键值形态真的有标签；散文形态真的成段
@@ -35,17 +35,18 @@ const bySlug = Object.fromEntries(registry.materials.map((m) => [m.slug, m]));
 const readMap = (slug) => JSON.parse(fs.readFileSync(path.join(MAT, slug, 'source-map.json'), 'utf8'));
 const readMd = (slug) => fs.readFileSync(path.join(MAT, slug, readMap(slug).readme.file), 'utf8');
 
-test('注册表收录 7 份材料，且每份都有 节/单元/字数 计数', () => {
-  assert.strictEqual(registry.materials.length, 7, `注册了 ${registry.materials.length} 份`);
+test('注册表收录 10 份材料，且每份都有 节/单元/字数 计数', () => {
+  // 数字写死（而不是取自 registry）：注册表少一份时，取自 registry 的断言永远成立
+  assert.strictEqual(registry.materials.length, 10, `注册了 ${registry.materials.length} 份`);
   registry.materials.forEach((m) => {
     assert.ok(m.sections > 0, `${m.slug} 节数为 0`);
     assert.ok(m.units > 0, `${m.slug} 单元数为 0`);
     assert.ok(m.chars > 0, `${m.slug} 字数为 0`);
   });
-  assert.strictEqual(registry.totals.materials, 7);
+  assert.strictEqual(registry.totals.materials, 10);
 });
 
-test('每份材料三件产物齐全：源 xlsx · 全本 md · source-map.json', () => {
+test('每份材料三件产物齐全：源 xls(x) · 全本 md · source-map.json', () => {
   registry.materials.forEach((m) => {
     const dir = path.join(MAT, m.slug);
     const srcPath = path.join(dir, 'sources', m.file);

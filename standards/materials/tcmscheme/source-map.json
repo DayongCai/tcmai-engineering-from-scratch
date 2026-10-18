@@ -1,0 +1,28 @@
+{
+  "$generated": "node scripts/import_materials.js",
+  "slug": "tcmscheme",
+  "title": "中医课程图式（tcmscheme · 17 表）",
+  "source": {
+    "file": "sources/tcmscheme.xls",
+    "origin": "用户桌面材料",
+    "sha256": "0931eb1d22e55512b63605e2c6523a7f65d3e4f1895e9c9af1ab4eb27df92cbf",
+    "bytes": 7339008
+  },
+  "shape": {
+    "toc": "none",
+    "tocSheet": null,
+    "body": "wide"
+  },
+  "counts": {
+    "sheets": 17,
+    "tocRows": 0,
+    "bodySections": 16,
+    "bodyUnits": 3363
+  },
+  "emptySections": [],
+  "readme": {
+    "file": "中医课程图式（tcmscheme · 17 表）.md",
+    "chars": 85411
+  },
+  "note": "content.json 是纯派生产物（体量大、可由源重跑得到），**不入库**；重建命令：node scripts/import_materials.js"
+}

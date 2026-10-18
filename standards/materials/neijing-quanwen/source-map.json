@@ -1,0 +1,28 @@
+{
+  "$generated": "node scripts/import_materials.js",
+  "slug": "neijing-quanwen",
+  "title": "黄帝内经全文（素问81篇 · 灵枢81篇）",
+  "source": {
+    "file": "sources/黄帝内经全文.xls",
+    "origin": "用户桌面材料",
+    "sha256": "bf5e48eee80d9e5cca7f2ebda1e5651a1794341c5654f6e2c81300b4d0a6ef21",
+    "bytes": 1644544
+  },
+  "shape": {
+    "toc": "none",
+    "tocSheet": null,
+    "body": "pian"
+  },
+  "counts": {
+    "sheets": 162,
+    "tocRows": 0,
+    "bodySections": 162,
+    "bodyUnits": 6456
+  },
+  "emptySections": [],
+  "readme": {
+    "file": "黄帝内经全文（素问81篇 · 灵枢81篇）.md",
+    "chars": 613685
+  },
+  "note": "content.json 是纯派生产物（体量大、可由源重跑得到），**不入库**；重建命令：node scripts/import_materials.js"
+}

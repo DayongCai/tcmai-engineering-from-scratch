@@ -2,11 +2,11 @@
   "$generated": "node scripts/build_outputs_index.js",
   "note": "可复用产出物的根级索引。契约见 CONTRIBUTING.md；每章的产物是生成物，索引是它们的生成物。",
   "counts": {
-    "items": 22,
-    "chaptersWithOutputs": 11,
+    "items": 26,
+    "chaptersWithOutputs": 13,
     "byKind": {
-      "prompt": 11,
-      "skill": 11
+      "prompt": 13,
+      "skill": 13
     },
     "gaps": 0
   },
@@ -107,6 +107,54 @@
                   "title": "zangfu-bianzheng",
                   "description": "把四诊记录整理成脏腑证候的证据表（主症/次症/舌脉）并报出证据缺口，不给结论",
                   "chars": 621
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subject": "内经选读",
+          "slug": "06-neijing-xuandu",
+          "type": "Core",
+          "semester": 3,
+          "chapters": [
+            {
+              "chapter": "02-yinyang-yingxiang",
+              "title": "第 2 章 · 《素问·阴阳应象大论》：把「阴阳」拆成四组可操作的维度",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/02-yinyang-yingxiang/outputs/prompt-yinyang-yingxiang.md",
+                  "title": "经文四轴标注器",
+                  "description": null,
+                  "chars": 718
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/02-yinyang-yingxiang/outputs/skill-yinyang-yingxiang.md",
+                  "title": "yinyang-yingxiang",
+                  "description": "按《素问·阴阳应象大论》四轴标注四诊记录：给偏侧、依据与追问，不输出证型",
+                  "chars": 532
+                }
+              ]
+            },
+            {
+              "chapter": "05-bingji-shijiu",
+              "title": "第 5 章 · 病机十九条：十九句话里，五脏只占五条",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/05-bingji-shijiu/outputs/prompt-bingji-shijiu.md",
+                  "title": "病机十九条反查器",
+                  "description": null,
+                  "chars": 596
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/05-bingji-shijiu/outputs/skill-bingji-shijiu.md",
+                  "title": "bingji-shijiu",
+                  "description": "按病机十九条反查症状：列出全部命中条文与各自的不排除项，并指出十九条之外缺什么",
+                  "chars": 498
                 }
               ]
             }
@@ -480,6 +528,66 @@
       "description": "把四诊记录整理成脏腑证候的证据表（主症/次症/舌脉）并报出证据缺口，不给结论",
       "version": "0.1.0",
       "chars": 621
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "02-yinyang-yingxiang",
+      "chapterTitle": "第 2 章 · 《素问·阴阳应象大论》：把「阴阳」拆成四组可操作的维度",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/02-yinyang-yingxiang/outputs/prompt-yinyang-yingxiang.md",
+      "title": "经文四轴标注器",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 718
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "02-yinyang-yingxiang",
+      "chapterTitle": "第 2 章 · 《素问·阴阳应象大论》：把「阴阳」拆成四组可操作的维度",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/02-yinyang-yingxiang/outputs/skill-yinyang-yingxiang.md",
+      "title": "yinyang-yingxiang",
+      "name": "yinyang-yingxiang",
+      "description": "按《素问·阴阳应象大论》四轴标注四诊记录：给偏侧、依据与追问，不输出证型",
+      "version": "0.1.0",
+      "chars": 532
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "05-bingji-shijiu",
+      "chapterTitle": "第 5 章 · 病机十九条：十九句话里，五脏只占五条",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/05-bingji-shijiu/outputs/prompt-bingji-shijiu.md",
+      "title": "病机十九条反查器",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 596
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "05-bingji-shijiu",
+      "chapterTitle": "第 5 章 · 病机十九条：十九句话里，五脏只占五条",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/05-bingji-shijiu/outputs/skill-bingji-shijiu.md",
+      "title": "bingji-shijiu",
+      "name": "bingji-shijiu",
+      "description": "按病机十九条反查症状：列出全部命中条文与各自的不排除项，并指出十九条之外缺什么",
+      "version": "0.1.0",
+      "chars": 498
     },
     {
       "dept": "中药系",

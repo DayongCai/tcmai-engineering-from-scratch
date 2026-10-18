@@ -23,6 +23,7 @@
     "descriptions": "node scripts/build_dsu_descriptions.js",
     "knowledge": "node scripts/build_knowledge_structure.js",
     "knowledge:check": "node scripts/build_knowledge_structure.js --check",
+    "materials:map": "node scripts/map_materials_to_subjects.js",
     "completeness": "node scripts/report_completeness.js",
     "external:batch": "node scripts/external_batch.js",
     "evidence:quality": "node scripts/evidence_quality.js",

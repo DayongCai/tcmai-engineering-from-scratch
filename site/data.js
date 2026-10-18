@@ -110,10 +110,10 @@ window.TCMAI_DATA = {
     "hours": 7596,
     "semesters": 10,
     "stages": 5,
-    "chaptersBuilt": 11,
+    "chaptersBuilt": 13,
     "subjectsDone": 0,
-    "subjectsWip": 9,
-    "subjectsPlanned": 111,
+    "subjectsWip": 10,
+    "subjectsPlanned": 110,
     "videos": 3,
     "textbookChapters": 1
   },
@@ -1475,10 +1475,10 @@ window.TCMAI_DATA = {
           "stage": "sheng",
           "hours": 72,
           "chaptersTarget": 10,
-          "chaptersBuilt": 0,
-          "pct": 0,
-          "status": "planned",
-          "glyph": "⬚",
+          "chaptersBuilt": 2,
+          "pct": 20,
+          "status": "wip",
+          "glyph": "🚧",
           "bridge": "原文→语料库 / 条文检索→向量检索",
           "path": "departments/01-zhongyi/06-neijing-xuandu",
           "platform": {
@@ -5383,7 +5383,7 @@ window.TCMAI_DATA = {
         "n": 8,
         "slug": "08-zangfu-bianzheng",
         "title": "脏腑辨证 → 规则表与权重",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 9,
@@ -5421,7 +5421,7 @@ window.TCMAI_DATA = {
         "n": 2,
         "slug": "02-yinyang-yingxiang",
         "title": "阴阳应象大论：范畴与映射",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 3,
@@ -5439,7 +5439,7 @@ window.TCMAI_DATA = {
         "n": 5,
         "slug": "05-bingji-shijiu",
         "title": "病机十九条：症状到病机的映射",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 6,
@@ -6125,7 +6125,7 @@ window.TCMAI_DATA = {
         "n": 12,
         "slug": "12-xingneng-bianma",
         "title": "中药性能的编码化：性味归经 → 向量",
-        "status": "📋"
+        "status": "🚧"
       }
     ],
     "02-zhongyao/02-yaoyong-zhiwu-xue": [
@@ -7075,7 +7075,7 @@ window.TCMAI_DATA = {
         "n": 11,
         "slug": "11-weixian-shendu",
         "title": "危险穴位与针刺安全深度",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 12,
@@ -8139,7 +8139,7 @@ window.TCMAI_DATA = {
         "n": 12,
         "slug": "12-shoufa-jianmo",
         "title": "正骨手法的力学建模",
-        "status": "📋"
+        "status": "🚧"
       }
     ],
     "04-gushang/07-zhongyi-jinshang-xue": [
@@ -8873,7 +8873,7 @@ window.TCMAI_DATA = {
         "n": 8,
         "slug": "08-liaoxiao-pingjia",
         "title": "中医护理技术的疗效评价",
-        "status": "📋"
+        "status": "🚧"
       }
     ],
     "05-huli/05-zhongyi-yangsheng-xue": [
@@ -9503,7 +9503,7 @@ window.TCMAI_DATA = {
         "n": 9,
         "slug": "09-duochong-jiaoyan",
         "title": "多重比较与假阳性控制",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 10,
@@ -10527,7 +10527,7 @@ window.TCMAI_DATA = {
         "n": 7,
         "slug": "07-yizhixing-pinggu",
         "title": "与医生诊断的一致性评估",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 8,
@@ -11301,7 +11301,7 @@ window.TCMAI_DATA = {
         "n": 1,
         "slug": "01-wulun-bakuo",
         "title": "五轮八廓学说与眼的脏腑配属",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 2,

@@ -2,7 +2,7 @@
 
 > 本章节由 `scripts/build_outputs_index.js` **生成**，请勿手改；重跑脚本同步。
 
-> **22** 件产出物 · 覆盖 **11** 个章节 · prompt 11 · skill 11
+> **26** 件产出物 · 覆盖 **13** 个章节 · prompt 13 · skill 13
 
 ## 这是什么
 
@@ -23,6 +23,7 @@
 | --- | --- | --- | :-: |
 | ☯️ 中医系 | 中医基础理论 | 3 | 6 |
 | ☯️ 中医系 | 中医诊断学 | 1 | 2 |
+| ☯️ 中医系 | 内经选读 | 2 | 4 |
 | 🌾 中药系 | 中药学 | 1 | 2 |
 | 🪡 针灸系 | 腧穴学 | 1 | 2 |
 | 🦴 骨伤系 | 中医正骨学 | 1 | 2 |
@@ -76,6 +77,28 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 脏腑辨证规则表生成器 | — | 651 | [`prompt-zangfu-bianzheng.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/08-zangfu-bianzheng/outputs/prompt-zangfu-bianzheng.md) |
 | skill | zangfu-bianzheng | 把四诊记录整理成脏腑证候的证据表（主症/次症/舌脉）并报出证据缺口，不给结论 | 621 | [`skill-zangfu-bianzheng.md`](../departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/08-zangfu-bianzheng/outputs/skill-zangfu-bianzheng.md) |
+
+### 内经选读
+
+> Core · 第 3 学期 · 已产出 2 章
+
+#### 第 2 章 · 《素问·阴阳应象大论》：把「阴阳」拆成四组可操作的维度
+
+`06-neijing-xuandu/chapters/02-yinyang-yingxiang/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 经文四轴标注器 | — | 718 | [`prompt-yinyang-yingxiang.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/02-yinyang-yingxiang/outputs/prompt-yinyang-yingxiang.md) |
+| skill | yinyang-yingxiang | 按《素问·阴阳应象大论》四轴标注四诊记录：给偏侧、依据与追问，不输出证型 | 532 | [`skill-yinyang-yingxiang.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/02-yinyang-yingxiang/outputs/skill-yinyang-yingxiang.md) |
+
+#### 第 5 章 · 病机十九条：十九句话里，五脏只占五条
+
+`06-neijing-xuandu/chapters/05-bingji-shijiu/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 病机十九条反查器 | — | 596 | [`prompt-bingji-shijiu.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/05-bingji-shijiu/outputs/prompt-bingji-shijiu.md) |
+| skill | bingji-shijiu | 按病机十九条反查症状：列出全部命中条文与各自的不排除项，并指出十九条之外缺什么 | 498 | [`skill-bingji-shijiu.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/05-bingji-shijiu/outputs/skill-bingji-shijiu.md) |
 
 ## 🌾 中药系
 

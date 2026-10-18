@@ -27,7 +27,13 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
-const { readWorkbook } = require('./lib_xlsx');
+const { readWorkbook: readXlsx } = require('./lib_xlsx');
+const { readWorkbook: readXls } = require('./lib_xls');
+
+// 读取器按扩展名分派：.xlsx 是 zip+XML，.xls 是 OLE2+BIFF8，两套完全不同的容器。
+// 桌面那 4 份最重要的原件恰好是 .xls —— 读不了它们时，「1075 章没正文」会被误当成
+// 「没有资料」，实际是工具链缺一段。分派放在这里，调用方不该关心容器格式。
+const readWorkbook = (file) => (/\.xls$/i.test(file) ? readXls(file) : readXlsx(file));
 
 const ROOT = path.resolve(__dirname, '..');
 const DESKTOP = 'J:/Users/user/Desktop';
@@ -107,6 +113,41 @@ const REGISTRY = [
     toc: { sheet: null, shape: 'none' },
     body: { sheets: 'all', shape: 'prose' },
   },
+  {
+    slug: 'neijing-quanwen',
+    file: '黄帝内经全文.xls',
+    altFile: '素问灵枢.xls',
+    title: '黄帝内经全文（素问81篇 · 灵枢81篇）',
+    note: '旧二进制 .xls（BIFF8），由 scripts/lib_xls.js 读取。162 张表 = 素问 81 篇 + 灵枢 81 篇，'
+        + '每表第 1 行是「篇名 | 出处」，其后按「序号 | 类型 | 内容」逐条给 原文 / 译文 / 按语。'
+        + '同内容的 `素问灵枢.xls` 与 `黄帝内经全文.xls` 逐表逐行一致（sha256 不同，是两次导出的字节差异），'
+        + '本导入取后者入库，前者作 altFile 记在 source-map 里。',
+    toc: { sheet: null, shape: 'none' },
+    body: { sheets: 'all', shape: 'pian' },
+  },
+  {
+    slug: 'hdnj-yinpin',
+    file: 'HDNJ音频理解.xls',
+    title: '黄帝内经音频理解（逐句字幕 · 165 表）',
+    note: '旧二进制 .xls（BIFF8），14.7 MB，是本目录里体量最大的一份。'
+        + '「0目录」为篇名索引；其余 164 表按篇给逐句字幕（序号 | 开始时间 | 结束时间 | 文本内容），'
+        + '夹有不带时间码的注释块（【…】），照实分开记，不伪造时间码。',
+    toc: { sheet: '0目录', shape: 'kv' },
+    body: { sheets: 'rest', shape: 'subtitle', headerRow: 0 },
+  },
+  {
+    slug: 'tcmscheme',
+    file: 'tcmscheme.xls',
+    title: '中医课程图式（tcmscheme · 17 表）',
+    note: '旧二进制 .xls（BIFF8），7.2 MB。16 张课程表 + 1 张「形式语言-自动机理论」（非中医院课程，已跳过）。'
+        + '列为 章 | 节 | 段 | 内涵 | 知识点 | 数学逻辑 | 物理场论 | 网络智能 | 个体感知 | 群体特征 | '
+        + '生态环境 | 身心德道 | 典型样例 —— 即「中医概念 → 数学/物理/AI」的逐段桥接表。'
+        + '注意：只有 中诊 375 行、中药 646 行、方剂 589 行、经络腧穴 1213 行是实结构，'
+        + '其余 12 表仅 46 行左右（前言 + 编写说明 + 学科清单），不是完整章节。',
+    toc: { sheet: null, shape: 'none' },
+    body: { sheets: 'rest', shape: 'wide', headerRow: 1 },
+    skipSheets: ['形式语言-自动机理论'],
+  },
 ];
 
 // ── 工具 ──────────────────────────────────────────────────────────────
@@ -134,6 +175,36 @@ function parseWide(sheet, headerRow) {
     records.push(r);
   }
   return { header, records };
+}
+
+/** pian：一表一篇（《黄帝内经》全文的形态）
+ *  第 1 行：篇名 | 出处（如「素问·上古天真论 | 《素问》第1篇」）
+ *  第 2 行：表头（序号 | 类型 | 内容）
+ *  其后： 原文 / 译文 / 按语 … 一条一行
+ *  为什么单列一个形态：它不是「宽表」（列不是字段，条目类型在行里），
+ *  也不是 kv（第一篇第 1 行是标题而不是标签）—— 硬塞进任一形态都会丢掉「类型」这一维，
+ *  而「原文 vs 译文 vs 按语」正是内经篇章最要紧的区分。
+ */
+function parsePian(sheet) {
+  const head = (sheet.rows[0] || []).map(cell);
+  const title = head[0] || sheet.name;
+  const origin = head[1] || '';
+  const hIdx = (sheet.rows[1] || []).some((c) => cell(c) === '类型') ? 1 : -1;
+  const header = hIdx >= 0 ? sheet.rows[hIdx].map(cell) : [];
+  const typeC = header.findIndex((h) => h.includes('类型'));
+  const textC = header.findIndex((h) => h.includes('内容'));
+  const nC = header.findIndex((h) => h.includes('序号'));
+  const blocks = [];
+  for (const row of sheet.rows.slice(hIdx + 1)) {
+    const text = cell(row[textC >= 0 ? textC : 2]);
+    if (!text) continue;
+    blocks.push({
+      n: cell(row[nC >= 0 ? nC : 0]),
+      type: cell(row[typeC >= 0 ? typeC : 1]),
+      text,
+    });
+  }
+  return { title, origin, header, blocks };
 }
 
 /** kv / prose：标签|内容 或纯长文 */
@@ -247,7 +318,10 @@ for (const spec of REGISTRY) {
   const sections = [];
   for (const sh of bodySheets) {
     const shape = spec.body.shape;
-    if (shape === 'wide') {
+    if (shape === 'pian') {
+      const { title, origin, header, blocks } = parsePian(sh);
+      sections.push({ sheet: sh.name, shape, title, origin, header, count: blocks.length, blocks });
+    } else if (shape === 'wide') {
       const { header, records } = parseWide(sh, spec.body.headerRow);
       sections.push({ sheet: sh.name, shape, header, count: records.length, records });
     } else if (shape === 'subtitle') {
@@ -339,6 +413,13 @@ for (const r of results) {
   }
 
   for (const sec of r.data.sections) {
+    if (sec.shape === 'pian') {
+      L.push(`## ${sec.title}${sec.origin ? `（${sec.origin}）` : ''}`, '');
+      for (const b of sec.blocks) {
+        L.push(`**${b.type || '内容'}${b.n ? ` ${b.n}` : ''}**`, '', b.text, '');
+      }
+      continue;
+    }
     L.push(`## ${sec.sheet}`, '');
     if (sec.shape === 'wide') {
       if (!sec.records.length) { L.push('（空表）', ''); continue; }

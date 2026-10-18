@@ -1,0 +1,31 @@
+{
+  "$generated": "node scripts/import_materials.js",
+  "slug": "hdnj-yinpin",
+  "title": "黄帝内经音频理解（逐句字幕 · 165 表）",
+  "source": {
+    "file": "sources/HDNJ音频理解.xls",
+    "origin": "用户桌面材料",
+    "sha256": "04f5393857fe4b11ac59b0f66bb7ec00cc83c7fe6a400a034a63521a021688d9",
+    "bytes": 15028736
+  },
+  "shape": {
+    "toc": "kv",
+    "tocSheet": "0目录",
+    "body": "subtitle"
+  },
+  "counts": {
+    "sheets": 165,
+    "tocRows": 16,
+    "bodySections": 164,
+    "bodyUnits": 125027
+  },
+  "emptySections": [
+    "不内外因定位流水线",
+    "8数字人对话架构"
+  ],
+  "readme": {
+    "file": "黄帝内经音频理解（逐句字幕 · 165 表）.md",
+    "chars": 5352126
+  },
+  "note": "content.json 是纯派生产物（体量大、可由源重跑得到），**不入库**；重建命令：node scripts/import_materials.js"
+}

@@ -18,7 +18,11 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
-const { readWorkbook } = require('./lib_xlsx');
+const { readWorkbook: readXlsx } = require('./lib_xlsx');
+const { readWorkbook: readXls } = require('./lib_xls');
+// 清点必须按扩展名分派：只认 .xlsx 时，4 份 .xls 会一直显示"读取失败"，
+// 而这个假信号会让人以为"资料读不了"，实际只是探测脚本没接上读取器。
+const readWorkbook = (file) => (/\.xls$/i.test(file) ? readXls(file) : readXlsx(file));
 
 const argv = process.argv.slice(2);
 const asJson = argv.includes('--json');
@@ -88,11 +92,11 @@ for (const f of entries) {
   const kind = classify(f);
   let sha = null;
   let prof = { ok: false, textbookFormat: false, sheets: 0 };
-  if (/\.xlsx$/i.test(f)) {
+  if (/\.xlsx?$/i.test(f)) {
     sha = crypto.createHash('sha256').update(fs.readFileSync(full)).digest('hex').slice(0, 12);
     prof = profile(full);
   } else {
-    prof.error = '旧二进制 .xls，本读取器不支持';
+    prof.error = '非表格文件';
   }
   rows.push({
     file: f, kind, kb: Math.round(st.size / 1024), mtime: st.mtime.toISOString().slice(0, 10),
