@@ -37,8 +37,13 @@ test('队列是确定性的：同一状态两次跑出同一批', () => {
   assert.ok(batch.length > 0 && batch.length <= 5, `批次大小 ${batch.length}`);
   for (const b of batch) {
     assert.ok(b.label && b.query, '批次项缺 label 或 query');
-    assert.ok(b.query.includes(b.label.replace(/[（(][^）)]*[）)]/g, '').trim()),
-      `查询串没带上证名：${JSON.stringify(b)}`);
+    // 证名按 ICD-11 标准命名，`、` 是名称的一部分 —— 检索串把顿号换成空格，
+    // 因此断言改为「每个构件都在串里」，而不是「整串逐字在串里」。
+    const base = b.label.replace(/[（(][^）)]*[）)]/g, '').trim();
+    for (const part of base.split('、').map((s) => s.trim()).filter(Boolean)) {
+      assert.ok(b.query.includes(part), `查询串漏了构件「${part}」：${JSON.stringify(b)}`);
+    }
+    assert.ok(!b.query.includes('、'), `检索串里残留顿号：${b.query}`);
     assert.ok(!/[（(]/.test(b.query.replace('中医病证名', '')), `查询串里残留括注：${b.query}`);
   }
 });
@@ -97,6 +102,17 @@ test('检索串保留括注限定词（第 3 批踩出来的：削掉「颈部�
   assert.ok(q2.includes('冷哮'), `同义别名被削掉了：${q2}`);
   assert.ok(!/[（()）]/.test(q1) && !/[（()）]/.test(q2), '检索串里残留了括号符号');
   assert.ok(!B.queryFor('风寒束表证').includes('  '), '无括注时多出了空格');
+});
+
+test('证名是 ICD-11 标准名：`、` 属名称，检索串只换空格、不删词', () => {
+  const q = B.queryFor('肺经风热、湿热瘀结证');
+  assert.ok(q.includes('肺经风热'), `漏了前半：${q}`);
+  assert.ok(q.includes('湿热瘀结证'), `漏了后半：${q}`);
+  assert.ok(!q.includes('、'), `顿号没换成空格：${q}`);
+  assert.deepStrictEqual(B.components('肺经风热、湿热瘀结证'), ['肺经风热', '湿热瘀结证']);
+  // 顿号 + 括注同时出现：三者都要在串里
+  const q2 = B.queryFor('胆郁痰扰、心神不宁证(惊悸/不寐)');
+  assert.ok(q2.includes('胆郁痰扰') && q2.includes('心神不宁证') && q2.includes('惊悸/不寐'), q2);
 });
 
 test('splitLabel 把本体与括注分开，两种括号都认', () => {
