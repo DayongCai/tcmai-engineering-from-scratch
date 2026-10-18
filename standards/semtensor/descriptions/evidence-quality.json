@@ -1,22 +1,22 @@
 {
   "$generated": "node scripts/evidence_quality.js",
   "coverage": {
-    "fetched": 95,
+    "fetched": 94,
     "total": 96,
-    "pending": 1
+    "pending": 2
   },
   "distribution": {
-    "specific": 69,
+    "specific": 71,
     "viaSynonymAlias": 1,
     "partial": 3,
     "variantUnconfirmed": 12,
-    "labelOnly": 3,
+    "labelOnly": 0,
     "generic": 8
   },
   "distributionNote": "specific=证名字面命中，或命中**同义异名**（本项目主张\"不是证据无关、是写法不同\"，但只有 synonym 才算同一概念）；partial=命中**非同一概念**的异名（composition 复合证名的组成部分 / qualified 病名限定 / broader 上位），只能作部分证据或旁证；variant-unconfirmed=正文出现未登记的近名写法，待人工确认，工具不擅自判同义；label-only=证名命中但括注语境未命中（应 --requery）；generic=连近名都没有，是泛论。",
   "qualifierStats": {
-    "entriesWithQualifier": 38,
-    "ofWhichSpecific": 35
+    "entriesWithQualifier": 37,
+    "ofWhichSpecific": 37
   },
   "placeContext": {
     "颈部": [
@@ -48,13 +48,11 @@
       "qualifiers": [
         "热淋"
       ],
-      "tier": "label-only",
-      "sources": 3,
-      "labelHitSources": 3,
-      "qualifierHitSources": 0,
-      "qualifiersMissed": [
-        "热淋"
-      ],
+      "tier": "specific",
+      "sources": 5,
+      "labelHitSources": 4,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
       "viaAlias": [],
       "variantHints": [
         "本方适宜于膀胱湿热证"
@@ -1264,13 +1262,11 @@
       "qualifiers": [
         "癃闭"
       ],
-      "tier": "label-only",
-      "sources": 2,
-      "labelHitSources": 2,
-      "qualifierHitSources": 0,
-      "qualifiersMissed": [
-        "癃闭"
-      ],
+      "tier": "specific",
+      "sources": 3,
+      "labelHitSources": 3,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
       "viaAlias": [],
       "variantHints": []
     },
@@ -1778,26 +1774,6 @@
       "labelHitSources": 2,
       "qualifierHitSources": 0,
       "qualifiersMissed": [],
-      "viaAlias": [],
-      "variantHints": []
-    },
-    {
-      "label": "真心痛（阳衰血瘀）证",
-      "base": "真心痛证",
-      "labelTerms": [
-        "真心痛证",
-        "真心痛"
-      ],
-      "qualifiers": [
-        "阳衰血瘀"
-      ],
-      "tier": "label-only",
-      "sources": 3,
-      "labelHitSources": 2,
-      "qualifierHitSources": 0,
-      "qualifiersMissed": [
-        "阳衰血瘀"
-      ],
       "viaAlias": [],
       "variantHints": []
     }
