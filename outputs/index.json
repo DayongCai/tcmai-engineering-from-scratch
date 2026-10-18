@@ -2,11 +2,11 @@
   "$generated": "node scripts/build_outputs_index.js",
   "note": "可复用产出物的根级索引。契约见 CONTRIBUTING.md；每章的产物是生成物，索引是它们的生成物。",
   "counts": {
-    "items": 26,
-    "chaptersWithOutputs": 13,
+    "items": 36,
+    "chaptersWithOutputs": 18,
     "byKind": {
-      "prompt": 13,
-      "skill": 13
+      "prompt": 18,
+      "skill": 18
     },
     "gaps": 0
   },
@@ -119,6 +119,26 @@
           "semester": 3,
           "chapters": [
             {
+              "chapter": "01-suwen-chengshu",
+              "title": "第 1 章 · 《黄帝内经》成书与文本结构：162 篇不是一个整体",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/01-suwen-chengshu/outputs/prompt-suwen-chengshu.md",
+                  "title": "内经引文定位助手",
+                  "description": null,
+                  "chars": 562
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/01-suwen-chengshu/outputs/skill-suwen-chengshu.md",
+                  "title": "suwen-chengshu",
+                  "description": "把「内经云」补到篇级并判明原文/注释，给出该篇实测体量与字词差异",
+                  "chars": 550
+                }
+              ]
+            },
+            {
               "chapter": "02-yinyang-yingxiang",
               "title": "第 2 章 · 《素问·阴阳应象大论》：把「阴阳」拆成四组可操作的维度",
               "outputs": [
@@ -139,6 +159,26 @@
               ]
             },
             {
+              "chapter": "03-zangxiang-xitong",
+              "title": "第 3 章 · 藏象与五脏的系统观：五个「本」里藏着四种不规则",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/03-zangxiang-xitong/outputs/prompt-zangxiang-xitong.md",
+                  "title": "藏象五元组抽取助手",
+                  "description": null,
+                  "chars": 637
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/03-zangxiang-xitong/outputs/skill-zangxiang-xitong.md",
+                  "title": "zangxiang-xitong",
+                  "description": "抽藏象五元组（本/华/充/阴阳位/通于），剥离校勘夹注并标注不规则句式",
+                  "chars": 514
+                }
+              ]
+            },
+            {
               "chapter": "05-bingji-shijiu",
               "title": "第 5 章 · 病机十九条：十九句话里，五脏只占五条",
               "outputs": [
@@ -155,6 +195,74 @@
                   "title": "bingji-shijiu",
                   "description": "按病机十九条反查症状：列出全部命中条文与各自的不排除项，并指出十九条之外缺什么",
                   "chars": 498
+                }
+              ]
+            },
+            {
+              "chapter": "09-lingshu-jiuzhen",
+              "title": "第 9 章 · 《灵枢·九针十二原》：九种针不是九种型号",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/09-lingshu-jiuzhen/outputs/prompt-lingshu-jiuzhen.md",
+                  "title": "九针选针助手",
+                  "description": null,
+                  "chars": 642
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/09-lingshu-jiuzhen/outputs/skill-lingshu-jiuzhen.md",
+                  "title": "lingshu-jiuzhen",
+                  "description": "按形制—用途查九针：给候选、原文依据与折算区间，不外推适应证",
+                  "chars": 546
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subject": "伤寒论",
+          "slug": "07-shanghanlun",
+          "type": "Core",
+          "semester": 4,
+          "chapters": [
+            {
+              "chapter": "01-chengshu-banben",
+              "title": "第 1 章 · 《伤寒论》的成书、版本与条文结构：1760 条不是 398 条",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/01-chengshu-banben/outputs/prompt-chengshu-banben.md",
+                  "title": "伤寒条号引用器",
+                  "description": null,
+                  "chars": 593
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/01-chengshu-banben/outputs/skill-chengshu-banben.md",
+                  "title": "chengshu-banben",
+                  "description": "伤寒条文引用核对：补到篇+篇内条号+底本标识，原文逐字返回，歧义全列",
+                  "chars": 556
+                }
+              ]
+            },
+            {
+              "chapter": "09-hebing-bingbing",
+              "title": "第 9 章 · 合病与并病：两经同时病，还是一个没走一个又来",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/09-hebing-bingbing/outputs/prompt-hebing-bingbing.md",
+                  "title": "合病并病辨读助手",
+                  "description": null,
+                  "chars": 609
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/09-hebing-bingbing/outputs/skill-hebing-bingbing.md",
+                  "title": "hebing-bingbing",
+                  "description": "判合病与并病：定时间结构、定六经、引主症与原文方，经名不外推",
+                  "chars": 533
                 }
               ]
             }
@@ -534,6 +642,36 @@
       "deptSlug": "01-zhongyi",
       "subject": "内经选读",
       "subjectSlug": "06-neijing-xuandu",
+      "chapter": "01-suwen-chengshu",
+      "chapterTitle": "第 1 章 · 《黄帝内经》成书与文本结构：162 篇不是一个整体",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/01-suwen-chengshu/outputs/prompt-suwen-chengshu.md",
+      "title": "内经引文定位助手",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 562
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "01-suwen-chengshu",
+      "chapterTitle": "第 1 章 · 《黄帝内经》成书与文本结构：162 篇不是一个整体",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/01-suwen-chengshu/outputs/skill-suwen-chengshu.md",
+      "title": "suwen-chengshu",
+      "name": "suwen-chengshu",
+      "description": "把「内经云」补到篇级并判明原文/注释，给出该篇实测体量与字词差异",
+      "version": "0.1.0",
+      "chars": 550
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
       "chapter": "02-yinyang-yingxiang",
       "chapterTitle": "第 2 章 · 《素问·阴阳应象大论》：把「阴阳」拆成四组可操作的维度",
       "kind": "prompt",
@@ -564,6 +702,36 @@
       "deptSlug": "01-zhongyi",
       "subject": "内经选读",
       "subjectSlug": "06-neijing-xuandu",
+      "chapter": "03-zangxiang-xitong",
+      "chapterTitle": "第 3 章 · 藏象与五脏的系统观：五个「本」里藏着四种不规则",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/03-zangxiang-xitong/outputs/prompt-zangxiang-xitong.md",
+      "title": "藏象五元组抽取助手",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 637
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "03-zangxiang-xitong",
+      "chapterTitle": "第 3 章 · 藏象与五脏的系统观：五个「本」里藏着四种不规则",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/03-zangxiang-xitong/outputs/skill-zangxiang-xitong.md",
+      "title": "zangxiang-xitong",
+      "name": "zangxiang-xitong",
+      "description": "抽藏象五元组（本/华/充/阴阳位/通于），剥离校勘夹注并标注不规则句式",
+      "version": "0.1.0",
+      "chars": 514
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
       "chapter": "05-bingji-shijiu",
       "chapterTitle": "第 5 章 · 病机十九条：十九句话里，五脏只占五条",
       "kind": "prompt",
@@ -588,6 +756,96 @@
       "description": "按病机十九条反查症状：列出全部命中条文与各自的不排除项，并指出十九条之外缺什么",
       "version": "0.1.0",
       "chars": 498
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "09-lingshu-jiuzhen",
+      "chapterTitle": "第 9 章 · 《灵枢·九针十二原》：九种针不是九种型号",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/09-lingshu-jiuzhen/outputs/prompt-lingshu-jiuzhen.md",
+      "title": "九针选针助手",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 642
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "09-lingshu-jiuzhen",
+      "chapterTitle": "第 9 章 · 《灵枢·九针十二原》：九种针不是九种型号",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/09-lingshu-jiuzhen/outputs/skill-lingshu-jiuzhen.md",
+      "title": "lingshu-jiuzhen",
+      "name": "lingshu-jiuzhen",
+      "description": "按形制—用途查九针：给候选、原文依据与折算区间，不外推适应证",
+      "version": "0.1.0",
+      "chars": 546
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "01-chengshu-banben",
+      "chapterTitle": "第 1 章 · 《伤寒论》的成书、版本与条文结构：1760 条不是 398 条",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/01-chengshu-banben/outputs/prompt-chengshu-banben.md",
+      "title": "伤寒条号引用器",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 593
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "01-chengshu-banben",
+      "chapterTitle": "第 1 章 · 《伤寒论》的成书、版本与条文结构：1760 条不是 398 条",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/01-chengshu-banben/outputs/skill-chengshu-banben.md",
+      "title": "chengshu-banben",
+      "name": "chengshu-banben",
+      "description": "伤寒条文引用核对：补到篇+篇内条号+底本标识，原文逐字返回，歧义全列",
+      "version": "0.1.0",
+      "chars": 556
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "09-hebing-bingbing",
+      "chapterTitle": "第 9 章 · 合病与并病：两经同时病，还是一个没走一个又来",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/09-hebing-bingbing/outputs/prompt-hebing-bingbing.md",
+      "title": "合病并病辨读助手",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 609
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "09-hebing-bingbing",
+      "chapterTitle": "第 9 章 · 合病与并病：两经同时病，还是一个没走一个又来",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/09-hebing-bingbing/outputs/skill-hebing-bingbing.md",
+      "title": "hebing-bingbing",
+      "name": "hebing-bingbing",
+      "description": "判合病与并病：定时间结构、定六经、引主症与原文方，经名不外推",
+      "version": "0.1.0",
+      "chars": 533
     },
     {
       "dept": "中药系",

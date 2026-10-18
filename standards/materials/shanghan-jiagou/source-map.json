@@ -1,0 +1,28 @@
+{
+  "$generated": "node scripts/import_materials.js",
+  "slug": "shanghan-jiagou",
+  "title": "伤寒架构（六经体系 · 三线表 · 可引来源版）",
+  "source": {
+    "file": "sources/伤寒架构.docx",
+    "origin": "用户桌面材料",
+    "sha256": "3e1da928e280a4cd0f63a3a526032b231fe5465ab6f04b0e062aa712905c1b73",
+    "bytes": 475393
+  },
+  "shape": {
+    "toc": "none",
+    "tocSheet": null,
+    "body": "docx"
+  },
+  "counts": {
+    "sheets": 1,
+    "tocRows": 0,
+    "bodySections": 1,
+    "bodyUnits": 25
+  },
+  "emptySections": [],
+  "readme": {
+    "file": "伤寒架构（六经体系 · 三线表 · 可引来源版）.md",
+    "chars": 2278
+  },
+  "note": "content.json 是纯派生产物（体量大、可由源重跑得到），**不入库**；重建命令：node scripts/import_materials.js"
+}

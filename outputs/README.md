@@ -2,7 +2,7 @@
 
 > 本章节由 `scripts/build_outputs_index.js` **生成**，请勿手改；重跑脚本同步。
 
-> **26** 件产出物 · 覆盖 **13** 个章节 · prompt 13 · skill 13
+> **36** 件产出物 · 覆盖 **18** 个章节 · prompt 18 · skill 18
 
 ## 这是什么
 
@@ -23,7 +23,8 @@
 | --- | --- | --- | :-: |
 | ☯️ 中医系 | 中医基础理论 | 3 | 6 |
 | ☯️ 中医系 | 中医诊断学 | 1 | 2 |
-| ☯️ 中医系 | 内经选读 | 2 | 4 |
+| ☯️ 中医系 | 内经选读 | 5 | 10 |
+| ☯️ 中医系 | 伤寒论 | 2 | 4 |
 | 🌾 中药系 | 中药学 | 1 | 2 |
 | 🪡 针灸系 | 腧穴学 | 1 | 2 |
 | 🦴 骨伤系 | 中医正骨学 | 1 | 2 |
@@ -80,7 +81,16 @@
 
 ### 内经选读
 
-> Core · 第 3 学期 · 已产出 2 章
+> Core · 第 3 学期 · 已产出 5 章
+
+#### 第 1 章 · 《黄帝内经》成书与文本结构：162 篇不是一个整体
+
+`06-neijing-xuandu/chapters/01-suwen-chengshu/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 内经引文定位助手 | — | 562 | [`prompt-suwen-chengshu.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/01-suwen-chengshu/outputs/prompt-suwen-chengshu.md) |
+| skill | suwen-chengshu | 把「内经云」补到篇级并判明原文/注释，给出该篇实测体量与字词差异 | 550 | [`skill-suwen-chengshu.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/01-suwen-chengshu/outputs/skill-suwen-chengshu.md) |
 
 #### 第 2 章 · 《素问·阴阳应象大论》：把「阴阳」拆成四组可操作的维度
 
@@ -91,6 +101,15 @@
 | prompt | 经文四轴标注器 | — | 718 | [`prompt-yinyang-yingxiang.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/02-yinyang-yingxiang/outputs/prompt-yinyang-yingxiang.md) |
 | skill | yinyang-yingxiang | 按《素问·阴阳应象大论》四轴标注四诊记录：给偏侧、依据与追问，不输出证型 | 532 | [`skill-yinyang-yingxiang.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/02-yinyang-yingxiang/outputs/skill-yinyang-yingxiang.md) |
 
+#### 第 3 章 · 藏象与五脏的系统观：五个「本」里藏着四种不规则
+
+`06-neijing-xuandu/chapters/03-zangxiang-xitong/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 藏象五元组抽取助手 | — | 637 | [`prompt-zangxiang-xitong.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/03-zangxiang-xitong/outputs/prompt-zangxiang-xitong.md) |
+| skill | zangxiang-xitong | 抽藏象五元组（本/华/充/阴阳位/通于），剥离校勘夹注并标注不规则句式 | 514 | [`skill-zangxiang-xitong.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/03-zangxiang-xitong/outputs/skill-zangxiang-xitong.md) |
+
 #### 第 5 章 · 病机十九条：十九句话里，五脏只占五条
 
 `06-neijing-xuandu/chapters/05-bingji-shijiu/`
@@ -99,6 +118,37 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 病机十九条反查器 | — | 596 | [`prompt-bingji-shijiu.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/05-bingji-shijiu/outputs/prompt-bingji-shijiu.md) |
 | skill | bingji-shijiu | 按病机十九条反查症状：列出全部命中条文与各自的不排除项，并指出十九条之外缺什么 | 498 | [`skill-bingji-shijiu.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/05-bingji-shijiu/outputs/skill-bingji-shijiu.md) |
+
+#### 第 9 章 · 《灵枢·九针十二原》：九种针不是九种型号
+
+`06-neijing-xuandu/chapters/09-lingshu-jiuzhen/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 九针选针助手 | — | 642 | [`prompt-lingshu-jiuzhen.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/09-lingshu-jiuzhen/outputs/prompt-lingshu-jiuzhen.md) |
+| skill | lingshu-jiuzhen | 按形制—用途查九针：给候选、原文依据与折算区间，不外推适应证 | 546 | [`skill-lingshu-jiuzhen.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/09-lingshu-jiuzhen/outputs/skill-lingshu-jiuzhen.md) |
+
+### 伤寒论
+
+> Core · 第 4 学期 · 已产出 2 章
+
+#### 第 1 章 · 《伤寒论》的成书、版本与条文结构：1760 条不是 398 条
+
+`07-shanghanlun/chapters/01-chengshu-banben/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 伤寒条号引用器 | — | 593 | [`prompt-chengshu-banben.md`](../departments/01-zhongyi/07-shanghanlun/chapters/01-chengshu-banben/outputs/prompt-chengshu-banben.md) |
+| skill | chengshu-banben | 伤寒条文引用核对：补到篇+篇内条号+底本标识，原文逐字返回，歧义全列 | 556 | [`skill-chengshu-banben.md`](../departments/01-zhongyi/07-shanghanlun/chapters/01-chengshu-banben/outputs/skill-chengshu-banben.md) |
+
+#### 第 9 章 · 合病与并病：两经同时病，还是一个没走一个又来
+
+`07-shanghanlun/chapters/09-hebing-bingbing/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 合病并病辨读助手 | — | 609 | [`prompt-hebing-bingbing.md`](../departments/01-zhongyi/07-shanghanlun/chapters/09-hebing-bingbing/outputs/prompt-hebing-bingbing.md) |
+| skill | hebing-bingbing | 判合病与并病：定时间结构、定六经、引主症与原文方，经名不外推 | 533 | [`skill-hebing-bingbing.md`](../departments/01-zhongyi/07-shanghanlun/chapters/09-hebing-bingbing/outputs/skill-hebing-bingbing.md) |
 
 ## 🌾 中药系
 

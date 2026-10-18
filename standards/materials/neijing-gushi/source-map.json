@@ -1,0 +1,28 @@
+{
+  "$generated": "node scripts/import_materials.js",
+  "slug": "neijing-gushi",
+  "title": "内经简版故事 V1（病例 × 语义向量图）",
+  "source": {
+    "file": "sources/内经简版故事V1.docx",
+    "origin": "用户桌面材料",
+    "sha256": "40a47ec8cb66343aceb9bdf5941fc03aade8ca3fc3970e2269df3242b4a2480c",
+    "bytes": 1347917
+  },
+  "shape": {
+    "toc": "none",
+    "tocSheet": null,
+    "body": "docx"
+  },
+  "counts": {
+    "sheets": 1,
+    "tocRows": 0,
+    "bodySections": 1,
+    "bodyUnits": 151
+  },
+  "emptySections": [],
+  "readme": {
+    "file": "内经简版故事 V1（病例 × 语义向量图）.md",
+    "chars": 11654
+  },
+  "note": "content.json 是纯派生产物（体量大、可由源重跑得到），**不入库**；重建命令：node scripts/import_materials.js"
+}

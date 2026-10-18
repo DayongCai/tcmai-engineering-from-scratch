@@ -110,10 +110,10 @@ window.TCMAI_DATA = {
     "hours": 7596,
     "semesters": 10,
     "stages": 5,
-    "chaptersBuilt": 13,
+    "chaptersBuilt": 18,
     "subjectsDone": 0,
-    "subjectsWip": 10,
-    "subjectsPlanned": 110,
+    "subjectsWip": 11,
+    "subjectsPlanned": 109,
     "videos": 3,
     "textbookChapters": 1
   },
@@ -1475,8 +1475,8 @@ window.TCMAI_DATA = {
           "stage": "sheng",
           "hours": 72,
           "chaptersTarget": 10,
-          "chaptersBuilt": 2,
-          "pct": 20,
+          "chaptersBuilt": 5,
+          "pct": 50,
           "status": "wip",
           "glyph": "🚧",
           "bridge": "原文→语料库 / 条文检索→向量检索",
@@ -1506,10 +1506,10 @@ window.TCMAI_DATA = {
           "stage": "sheng",
           "hours": 90,
           "chaptersTarget": 12,
-          "chaptersBuilt": 0,
-          "pct": 0,
-          "status": "planned",
-          "glyph": "⬚",
+          "chaptersBuilt": 2,
+          "pct": 17,
+          "status": "wip",
+          "glyph": "🚧",
           "bridge": "六经→状态机 / 方证→条件概率",
           "path": "departments/01-zhongyi/07-shanghanlun",
           "platform": {
@@ -5415,7 +5415,7 @@ window.TCMAI_DATA = {
         "n": 1,
         "slug": "01-suwen-chengshu",
         "title": "《素问》成书与文本结构",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 2,
@@ -5427,7 +5427,7 @@ window.TCMAI_DATA = {
         "n": 3,
         "slug": "03-zangxiang-xitong",
         "title": "藏象与五脏的系统观",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 4,
@@ -5463,7 +5463,7 @@ window.TCMAI_DATA = {
         "n": 9,
         "slug": "09-lingshu-jiuzhen",
         "title": "《灵枢》九针与刺法",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 10,
@@ -5477,7 +5477,7 @@ window.TCMAI_DATA = {
         "n": 1,
         "slug": "01-chengshu-banben",
         "title": "伤寒论的成书、版本与条文结构",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 2,
@@ -5525,7 +5525,7 @@ window.TCMAI_DATA = {
         "n": 9,
         "slug": "09-hebing-bingbing",
         "title": "合病并病：多证并存的判定",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 10,

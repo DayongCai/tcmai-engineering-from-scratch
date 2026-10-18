@@ -9,7 +9,8 @@
 站在 J:/Users/user/Desktop：
   表格类文件   49 个 → 主材料 19 · 备份 30（另有 4 个 ~$ 锁文件）
   同格式教材    1 个（《中医知识树》：封面 / 目录 / 正文总表 签名）
-  读取失败      0 个（4 份旧二进制 .xls 已由 scripts/lib_xls.js 支持）
+  读取失败      0 个（.xls 走 lib_xls.js，.docx 走 lib_docx.js）
+  文档类       16 docx · 5 pptx · 4 mp4（约 1.7 GB 讲课录像）——已入库 3 份 docx，其余待定
 ```
 
 目录里 108 项：45 xlsx · 16 docx · 6 xls · 6 html · 5 pptx · 4 png · 4 mp4 · 4 lnk · 4 bat · 2 exe · 2 doc ·
@@ -73,7 +74,7 @@
 **`类经图翼` 与 `类经图翼_v1.0定稿` 不是备份关系** —— 两份 sha 不同、体量不同（642 / 644 KB），
 是同一天的两个版本，需人工确认哪份为准。
 
-## 5. 已批量入库的 10 份材料（`standards/materials/`）
+## 5. 已批量入库的 13 份材料（`standards/materials/`）
 
 注册表驱动（`scripts/import_materials.js`），**每份形态都逐份看过并写在代码的 REGISTRY 里**——
 写一条「什么都能认」的规则等于把猜测藏进代码，而没有断言会告诉你猜错了。
@@ -90,7 +91,13 @@
 | `neijing-quanwen` | 黄帝内经全文（素问81+灵枢81） | 162 | 6456 | 613,685 | **一表一篇（类型/内容）** |
 | `hdnj-yinpin` | 黄帝内经音频理解（逐句） | 164 | 125027 | 5,352,126 | **字幕带时间码** |
 | `tcmscheme` | 中医课程图式 | 16 | 3363 | 85,411 | 宽表（章/节/段/桥接） |
-| | **合计** | **455** | **218380** | **9,868,294** | |
+| `shanghan-jiagou` | 伤寒架构（六经·三线表） | 1 | 25 | 2,278 | **docx（段落/标题/表格）** |
+| `neijing-yuyi` | 内经语义域（篇·章·节三级对象） | 1 | 63 | 9,991 | **docx** |
+| `neijing-gushi` | 内经简版故事 V1（病例×向量图） | 1 | 151 | 11,654 | **docx** |
+| | **合计** | **458** | **218619** | **9,892,217** | |
+
+`.docx` 由 `scripts/lib_docx.js`（OOXML：`word/document.xml` 的段落/标题/表格）读取；
+`.xls` 由 `scripts/lib_xls.js`（OLE2+BIFF8）读取；`.xlsx` 仍走 `lib_xlsx.js`。三者按扩展名分派。
 
 每份三件产物：`sources/*.xls(x)`（源数据，不可再生）+ `<标题>.md`（人可读全本，交付物）+
 `source-map.json`（出处与指纹）。`content.json` 是纯派生（约 15 MB，可由源重跑得到），**已 .gitignore 排除**。

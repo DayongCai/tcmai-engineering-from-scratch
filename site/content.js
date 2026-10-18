@@ -481,6 +481,124 @@ window.TCMAI_CONTENT = {
     "video": null,
     "videoPoster": null
   },
+  "01-zhongyi/06-neijing-xuandu/01-suwen-chengshu": {
+    "key": "01-zhongyi/06-neijing-xuandu/01-suwen-chengshu",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "06-neijing-xuandu",
+    "subjectTitle": "内经选读",
+    "chapterSlug": "01-suwen-chengshu",
+    "n": 1,
+    "title": "第 1 章 · 《黄帝内经》成书与文本结构：162 篇不是一个整体",
+    "motto": "「余子万民，养百姓而收其租税……令可传于后世，必明为之法。」——《灵枢·九针十二原》",
+    "problem": "你说「《内经》讲阴阳五行」，但被问「素问和灵枢各多少篇、每篇多长、篇名是不是作者自标的」时答不上来；于是任何一句「内经云」你都无法判断它出自哪一部分、可信到什么程度。",
+    "roots": "环境逼迫(引用经典时说不出篇名与位置，等于没有依据) + 知识积累(文本结构实测 × 三级对象 = 一个能定位、能统计、能说明边界的引文系统)",
+    "html": "<h1 id=\"第-1-章-黄帝内经-成书与文本结构-162-篇不是一个整体\">第 1 章 · 《黄帝内经》成书与文本结构：162 篇不是一个整体</h1>\n<blockquote><p><strong>MOTTO:</strong> 「余子万民，养百姓而收其租税……令可传于后世，必明为之法。」——《灵枢·九针十二原》</p>\n<p><strong>PROBLEM:</strong> 你说「《内经》讲阴阳五行」，但被问「素问和灵枢各多少篇、每篇多长、篇名是不是作者自标的」时答不上来；于是任何一句「内经云」你都无法判断它出自哪一部分、可信到什么程度。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(引用经典时说不出篇名与位置，等于没有依据) + 知识积累(文本结构实测 × 三级对象 = 一个能定位、能统计、能说明边界的引文系统)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>内经选读</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>01 / 10</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>说出《内经》的构成：素问 81 篇 + 灵枢 81 篇 = 162 篇，以及两书各自的体量差异</li><li>用实测数字说明「素问篇均比灵枢长」，并解释这个差异对选读意味着什么</li><li>理解「篇—章—节」三级对象与「篇名锚定」原则，说清为什么篇名可以当主题标签</li><li>用代码算出任意一篇的字数、条数与其在全书中的占比</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"实测-两书不是同一副骨架\">实测：两书不是同一副骨架</h3>\n<p>据仓库内原件（<code>standards/materials/neijing-quanwen/</code>，源 <code>黄帝内经全文.xls</code>）逐表统计：</p>\n<div class=\"table-wrap\"><table><thead><tr><th></th><th>篇数</th><th>正文字数</th><th>篇均字数</th><th>篇均条文数</th></tr></thead><tbody><tr><td>素问</td><td>81</td><td>318,616</td><td><strong>3,934</strong></td><td>47.6</td></tr><tr><td>灵枢</td><td>81</td><td>242,495</td><td><strong>2,994</strong></td><td>32.1</td></tr><tr><td>合计</td><td>162</td><td>561,111</td><td>3,464</td><td>39.9</td></tr></tbody></table></div>\n<p>素问篇均比灵枢长约 31%。这不是排版差异，而是体裁差异：素问多论（阴阳、藏象、运气），灵枢多术（九针、经脉、骨度）。<strong>选读时把它们当同一体裁处理，就会用读论文的方法读操作手册。</strong></p>\n<h3 id=\"三级对象与篇名锚定\">三级对象与篇名锚定</h3>\n<p>《内经语义域》把语言表达对象分成三级：<strong>篇 obj → 章 obj → 节 obj</strong>。三级不是阅读习惯，而是可抽取的规则：篇名由作者自标，所以篇名可以作为语义域的权威归类依据；章与节则靠文意切分，必须靠夹注清洗（如「（别本作睹）」「（《太素》为…）」）先剥掉校勘内容，否则切出来的「章」会带着别人的批注。</p>\n<p>这条规则的实际后果：<strong>「内经云」这三个字不合格</strong>。合格的引用必须到篇，且注明是原文还是后人注释 —— 本仓库的材料把「原文」与「注释」分成两类块，正是为了这件事。</p>\n<h3 id=\"篇名不是章节号\">篇名不是章节号</h3>\n<p>素问的篇名（上古天真论、阴阳应象大论、至真要大论）是主题标签，不是编号；灵枢同理（九针十二原、本输、小针解）。所以「第 5 篇」这种说法必须绑定具体版本 —— 不同版本编次不同。这一点在下一章（文本结构）与伤寒的条号问题上是同一个坑。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js：读本仓库的内经全本，算每篇字数/条数/占比，并按篇名检索\nconst { readWorkbook } = require('../../../scripts/lib_xls');\nconst wb = readWorkbook('standards/materials/neijing-quanwen/sources/黄帝内经全文.xls');\nfunction stats() { /* 逐表统计 SW/LS 前缀，返回 {book, pian, chars, blocks} */ }\nfunction find(name) { /* 按篇名片段检索，返回篇名 + 字数 + 条数 */ }</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>stats()</code> 输出素问 81 篇 318,616 字、灵枢 81 篇 242,495 字，合计 561,111 字；<code>find('至真要大论')</code> 返回该篇的篇名与字数，且拒绝返回空结果（找不到就说找不到）。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>字数统计口径依赖清洗规则</strong>。本仓库按「去掉空白后的汉字数」计，含标点、不含篇名与校勘夹注；换成别的口径数字会变，所以每个数字都标注了来源文件与口径。</li><li><strong>162 篇不等于 162 个作者</strong>。《内经》非一人一时之作，篇间体例不一；本章只做结构与量的描述，不做作者判定。</li><li><strong>本仓库用的是电子整理本，不是校勘底本</strong>。异体字、通假字、错简都可能与刻本不同；一切引文以所用底本为准，本章不承担校勘职能。</li><li><strong>篇均数字不能用来判优劣</strong>。灵枢篇短是因为体裁（操作条目），不是内容少；拿篇均字数当「重要性」是典型的指标误用。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 本章字数与条数由 <code>scripts/lib_xls.js</code> 从仓库内 <code>黄帝内经全文.xls</code> 实测得出，可直接复核；文本校勘与版本判断不属本章范围，临床引用请以权威校勘本为准。本章不构成诊疗建议。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>用 <code>find()</code> 比较《素问·至真要大论》与《灵枢·九针十二原》的字数差，说明这个差与体裁的关系。</li><li>把统计口径改成「含标点」重跑，观察数字变化幅度，说明为什么口径必须写在结论旁边。</li><li>若某篇在材料里只有「注释」没有「原文」，你的统计该怎么处理？给出规则并改代码。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>读经典的第一道门槛不是义理，是<strong>定位</strong>：这句话在哪一篇、是原文还是注、这一篇有多长、属于论还是术。越过这道门槛之后，「内经云」才有分量。</p>",
+    "markdown": "# 第 1 章 · 《黄帝内经》成书与文本结构：162 篇不是一个整体\n\n> **MOTTO:** 「余子万民，养百姓而收其租税……令可传于后世，必明为之法。」——《灵枢·九针十二原》\n>\n> **PROBLEM:** 你说「《内经》讲阴阳五行」，但被问「素问和灵枢各多少篇、每篇多长、篇名是不是作者自标的」时答不上来；于是任何一句「内经云」你都无法判断它出自哪一部分、可信到什么程度。\n>\n> **双根因定位:** 环境逼迫(引用经典时说不出篇名与位置，等于没有依据) + 知识积累(文本结构实测 × 三级对象 = 一个能定位、能统计、能说明边界的引文系统)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 内经选读 |\n| 院系 | 中医系 |\n| 章序号 | 01 / 10 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 说出《内经》的构成：素问 81 篇 + 灵枢 81 篇 = 162 篇，以及两书各自的体量差异\n- 用实测数字说明「素问篇均比灵枢长」，并解释这个差异对选读意味着什么\n- 理解「篇—章—节」三级对象与「篇名锚定」原则，说清为什么篇名可以当主题标签\n- 用代码算出任意一篇的字数、条数与其在全书中的占比\n\n## 核心概念\n\n### 实测：两书不是同一副骨架\n\n据仓库内原件（`standards/materials/neijing-quanwen/`，源 `黄帝内经全文.xls`）逐表统计：\n\n| | 篇数 | 正文字数 | 篇均字数 | 篇均条文数 |\n|---|--:|--:|--:|--:|\n| 素问 | 81 | 318,616 | **3,934** | 47.6 |\n| 灵枢 | 81 | 242,495 | **2,994** | 32.1 |\n| 合计 | 162 | 561,111 | 3,464 | 39.9 |\n\n素问篇均比灵枢长约 31%。这不是排版差异，而是体裁差异：素问多论（阴阳、藏象、运气），灵枢多术（九针、经脉、骨度）。**选读时把它们当同一体裁处理，就会用读论文的方法读操作手册。**\n\n### 三级对象与篇名锚定\n\n《内经语义域》把语言表达对象分成三级：**篇 obj → 章 obj → 节 obj**。三级不是阅读习惯，而是可抽取的规则：篇名由作者自标，所以篇名可以作为语义域的权威归类依据；章与节则靠文意切分，必须靠夹注清洗（如「（别本作睹）」「（《太素》为…）」）先剥掉校勘内容，否则切出来的「章」会带着别人的批注。\n\n这条规则的实际后果：**「内经云」这三个字不合格**。合格的引用必须到篇，且注明是原文还是后人注释 —— 本仓库的材料把「原文」与「注释」分成两类块，正是为了这件事。\n\n### 篇名不是章节号\n\n素问的篇名（上古天真论、阴阳应象大论、至真要大论）是主题标签，不是编号；灵枢同理（九针十二原、本输、小针解）。所以「第 5 篇」这种说法必须绑定具体版本 —— 不同版本编次不同。这一点在下一章（文本结构）与伤寒的条号问题上是同一个坑。\n\n## BUILD IT：从零实现\n\n```js\n// code/main.js：读本仓库的内经全本，算每篇字数/条数/占比，并按篇名检索\nconst { readWorkbook } = require('../../../scripts/lib_xls');\nconst wb = readWorkbook('standards/materials/neijing-quanwen/sources/黄帝内经全文.xls');\nfunction stats() { /* 逐表统计 SW/LS 前缀，返回 {book, pian, chars, blocks} */ }\nfunction find(name) { /* 按篇名片段检索，返回篇名 + 字数 + 条数 */ }\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：`stats()` 输出素问 81 篇 318,616 字、灵枢 81 篇 242,495 字，合计 561,111 字；`find('至真要大论')` 返回该篇的篇名与字数，且拒绝返回空结果（找不到就说找不到）。\n\n## 代价与边界\n\n- **字数统计口径依赖清洗规则**。本仓库按「去掉空白后的汉字数」计，含标点、不含篇名与校勘夹注；换成别的口径数字会变，所以每个数字都标注了来源文件与口径。\n- **162 篇不等于 162 个作者**。《内经》非一人一时之作，篇间体例不一；本章只做结构与量的描述，不做作者判定。\n- **本仓库用的是电子整理本，不是校勘底本**。异体字、通假字、错简都可能与刻本不同；一切引文以所用底本为准，本章不承担校勘职能。\n- **篇均数字不能用来判优劣**。灵枢篇短是因为体裁（操作条目），不是内容少；拿篇均字数当「重要性」是典型的指标误用。\n\n> **免责声明：** 本章字数与条数由 `scripts/lib_xls.js` 从仓库内 `黄帝内经全文.xls` 实测得出，可直接复核；文本校勘与版本判断不属本章范围，临床引用请以权威校勘本为准。本章不构成诊疗建议。\n\n## 练习\n\n1. 用 `find()` 比较《素问·至真要大论》与《灵枢·九针十二原》的字数差，说明这个差与体裁的关系。\n2. 把统计口径改成「含标点」重跑，观察数字变化幅度，说明为什么口径必须写在结论旁边。\n3. 若某篇在材料里只有「注释」没有「原文」，你的统计该怎么处理？给出规则并改代码。\n\n## 进阶思考\n\n读经典的第一道门槛不是义理，是**定位**：这句话在哪一篇、是原文还是注、这一篇有多长、属于论还是术。越过这道门槛之后，「内经云」才有分量。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 《黄帝内经》文本结构统计：162 篇的字数与条数\n *\n *   node code/main.js\n *\n * 口径（写在结论旁边，换口径数字就变）：\n *   · 字数 = 去掉空白后的字符数，含标点，不含篇名与校勘夹注\n *   · 条数 = 材料里「原文/注释」块的数量（不是通行本的「条」编号）\n *   · 只统计仓库内已入库的原件，不联网\n */\n\nconst path = require('node:path');\nconst fs = require('node:fs');\n\nconst ROOT = path.resolve(__dirname, '../../../../../..');\nconst SRC = path.join(ROOT, 'standards/materials/neijing-quanwen/sources/黄帝内经全文.xls');\n\nfunction loadWorkbook() {\n  const { readWorkbook } = require(path.join(ROOT, 'scripts/lib_xls.js'));\n  return readWorkbook(SRC);\n}\n\n/** 逐表统计：SW* 为素问，LS* 为灵枢 */\nfunction stats(wb = loadWorkbook()) {\n  const acc = {\n    素问: { pian: 0, chars: 0, blocks: 0 },\n    灵枢: { pian: 0, chars: 0, blocks: 0 },\n  };\n  for (const s of wb.sheets) {\n    const book = s.name.startsWith('SW') ? '素问' : s.name.startsWith('LS') ? '灵枢' : null;\n    if (!book) continue;\n    const blocks = s.rows.slice(2).filter((r) => String(r[2] || '').trim());\n    const chars = blocks.reduce((a, r) => a + String(r[2]).replace(/\\s/g, '').length, 0);\n    acc[book].pian += 1;\n    acc[book].chars += chars;\n    acc[book].blocks += blocks.length;\n  }\n  const total = {\n    pian: acc.素问.pian + acc.灵枢.pian,\n    chars: acc.素问.chars + acc.灵枢.chars,\n    blocks: acc.素问.blocks + acc.灵枢.blocks,\n  };\n  for (const k of ['素问', '灵枢']) {\n    acc[k].avgChars = Math.round(acc[k].chars / acc[k].pian);\n    acc[k].avgBlocks = +(acc[k].blocks / acc[k].pian).toFixed(1);\n  }\n  return { books: acc, total };\n}\n\n/** 按篇名片段检索：返回 {name, book, chars, blocks} 或 null（找不到就说找不到） */\nfunction find(name, wb = loadWorkbook()) {\n  const hit = wb.sheets.find((s) => String((s.rows[0] || [])[0] || '').includes(name));\n  if (!hit) return null;\n  const blocks = hit.rows.slice(2).filter((r) => String(r[2] || '').trim());\n  return {\n    name: String(hit.rows[0][0]),\n    book: hit.name.startsWith('SW') ? '素问' : '灵枢',\n    chars: blocks.reduce((a, r) => a + String(r[2]).replace(/\\s/g, '').length, 0),\n    blocks: blocks.length,\n  };\n}\n\nfunction main() {\n  if (!fs.existsSync(SRC)) {\n    console.log('源文件未入库，无法统计（先跑 node scripts/import_materials.js）');\n    return;\n  }\n  const s = stats();\n  for (const k of ['素问', '灵枢']) {\n    const b = s.books[k];\n    console.log(`${k}：${b.pian} 篇 · ${b.chars} 字 · 篇均 ${b.avgChars} 字 / ${b.avgBlocks} 条`);\n  }\n  console.log(`合计：${s.total.pian} 篇 · ${s.total.chars} 字 · ${s.total.blocks} 条`);\n  console.log(`素问篇均比灵枢长 ${((s.books.素问.avgChars / s.books.灵枢.avgChars - 1) * 100).toFixed(0)}% —— 体裁差异，不是重要性差异`);\n\n  for (const q of ['至真要大论', '九针十二原', '不存在篇']) {\n    const r = find(q);\n    console.log(r ? `  检索「${q}」→ ${r.name}（${r.book}，${r.chars} 字 / ${r.blocks} 条）` : `  检索「${q}」→ 未找到（不猜、不返回最相近的）`);\n  }\n  console.log('\\n本输出为教学样例，统计口径见文件头；不构成诊疗建议。');\n}\n\nif (require.main === module) main();\nmodule.exports = { stats, find, loadWorkbook, SRC };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { stats, find } = require('./main.js');\n\ntest('两书各 81 篇，合计 162 篇', () => {\n  const s = stats();\n  assert.strictEqual(s.books.素问.pian, 81);\n  assert.strictEqual(s.books.灵枢.pian, 81);\n  assert.strictEqual(s.total.pian, 162);\n});\n\ntest('字数与原件一致（口径：去空白、含标点）', () => {\n  const s = stats();\n  assert.strictEqual(s.books.素问.chars, 318616);\n  assert.strictEqual(s.books.灵枢.chars, 242495);\n  assert.strictEqual(s.total.chars, 561111);\n});\n\ntest('素问篇均长于灵枢（体裁差异，被写成断言）', () => {\n  const s = stats();\n  assert.ok(s.books.素问.avgChars > s.books.灵枢.avgChars);\n});\n\ntest('按篇名检索：命中返回书名与字数', () => {\n  const r = find('至真要大论');\n  assert.ok(r);\n  assert.strictEqual(r.book, '素问');\n  assert.ok(r.chars > 20000);\n});\n\ntest('检索不到时返回 null，不返回最相近的篇', () => {\n  assert.strictEqual(find('不存在的篇名'), null);\n});\n\ntest('条数与字数各自独立统计，不许用条数估字数', () => {\n  const s = stats();\n  assert.ok(s.total.blocks > 0);\n  assert.notStrictEqual(s.total.chars, s.total.blocks);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "《黄帝内经》由哪两部分组成，各多少篇？",
+          "options": [
+            "素问 81 篇 + 灵枢 81 篇",
+            "素问 79 篇 + 灵枢 81 篇",
+            "素问 81 篇 + 难经 81 篇",
+            "素问 60 篇 + 灵枢 90 篇"
+          ],
+          "correct": 0,
+          "explanation": "两书各 81 篇，合计 162 篇；本仓库原件逐表可核。"
+        },
+        {
+          "stage": "check",
+          "question": "据本仓库实测，素问篇均字数约为？",
+          "options": [
+            "1,340 字",
+            "2,994 字",
+            "3,934 字",
+            "5,600 字"
+          ],
+          "correct": 2,
+          "explanation": "素问 318,616 字 / 81 篇 ≈ 3,934 字；灵枢约 2,994 字。"
+        },
+        {
+          "stage": "check",
+          "question": "「篇名锚定」原则的意思是？",
+          "options": [
+            "篇名由编者后加，不能作为依据",
+            "篇名是作者自标的主题，可作为语义域的权威归类依据",
+            "每篇必须按顺序编号才能引用",
+            "篇名可以随意改写以便检索"
+          ],
+          "correct": 1,
+          "explanation": "篇名自标 → 可作为主题标签；章与节靠文意切分，需要夹注清洗。"
+        },
+        {
+          "stage": "check",
+          "question": "素问篇均比灵枢长约三成，最合理的解释是？",
+          "options": [
+            "素问更重要",
+            "体裁差异：素问多论，灵枢多术（操作条目更短）",
+            "灵枢是残本",
+            "字数统计出错了"
+          ],
+          "correct": 1,
+          "explanation": "拿篇均字数当重要性是指标误用，本章明确禁止。"
+        },
+        {
+          "stage": "post",
+          "question": "引用「内经云」时，最低合格标准是？",
+          "options": [
+            "说出书名即可",
+            "到篇名，并注明是原文还是后人注释",
+            "说出卷数",
+            "说出字数"
+          ],
+          "correct": 1,
+          "explanation": "不到篇的引文无法核对；原文与注释混淆会改变结论。"
+        },
+        {
+          "stage": "post",
+          "question": "为什么「第 5 篇」这种说法必须绑定版本？",
+          "options": [
+            "因为篇名会变",
+            "因为不同版本的编次不同，序号不是稳定标识",
+            "因为第 5 篇已佚",
+            "因为页码会变"
+          ],
+          "correct": 1,
+          "explanation": "篇名稳定、序号不稳定；伤寒的条号问题同理。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-suwen-chengshu.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/01-suwen-chengshu/outputs/prompt-suwen-chengshu.md",
+        "title": "内经引文定位助手",
+        "description": null,
+        "chars": 562,
+        "body": "# 内经引文定位助手\n\n## 用途\n\n把一句「内经云」补成可核对的引用：定位到篇、判明原文还是注释、给出该篇体量，\n用于**文稿引用核对、读书笔记规范化、教学备课**。不做义理解释。\n\n## 提示词\n\n```text\n你是内经文献的引文核对助手。下面是一段文稿里的经典引用。\n\n规则：\n1. 每条引用必须补到「《素问·篇名》」或「《灵枢·篇名》」级；补不出来就写「无法定位」，不要猜。\n2. 说明该条是**原文**还是**后人注释**（材料里两者分开存，别混）。\n3. 给出该篇实测体量（字数 / 条文数），来源写「仓库内 neijing-quanwen 原件」。\n4. 若引文与原文有字词差异（异体字、通假、脱文），逐处标出差异位置，不擅自「修正」。\n5. 禁止补写原文里没有的句子；缺什么写缺什么。\n\n输出格式：\n【引用】原句…\n【定位】《素问·X》｜类型：原文/注释\n【体量】该篇 … 字 / … 条\n【字词差异】…\n【无法定位项】…\n```\n\n## 使用示例\n\n输入：「内经云：阴阳者，天地之道也。」\n\n输出：【定位】《素问·阴阳应象大论》｜原文\n【体量】该篇 7,314 字 / 55 条（仓库内原件实测）\n【字词差异】无\n【无法定位项】无\n\n## 为什么这样限制\n\n- 必须到篇：不到篇的引用无法被第二个人核对。\n- 区分原文/注释：注释混进原文，是内经引用最常见的失真。\n- 标注字词差异而不「修正」：整理本与刻本不同，擅自统一会掩盖版本问题。\n"
+      },
+      {
+        "name": "skill-suwen-chengshu.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/01-suwen-chengshu/outputs/skill-suwen-chengshu.md",
+        "title": "suwen-chengshu",
+        "description": "把「内经云」补到篇级并判明原文/注释，给出该篇实测体量与字词差异",
+        "chars": 550,
+        "body": "---\nname: suwen-chengshu\ndescription: 把「内经云」补到篇级并判明原文/注释，给出该篇实测体量与字词差异\nversion: 0.1.0\n---\n\n# suwen-chengshu\n\n## 何时使用\n\n- 文稿或讲稿里引用了「内经」，需要补到可核对的粒度\n- 备课：先确认这句话在哪一篇、多长、属论还是术\n- 校对：同一句在不同整理本里字词不同，需要标出而不改写\n\n## 不适用\n\n- 需要义理阐释或临床解读（本技能只做定位与核对）\n- 需要版本校勘（本仓库不是校勘底本）\n- 引文只有白话转述、没有原文词句时（此时应写「无法定位」）\n\n## 步骤\n\n1. **取特征词**：从引文里挑 2–4 个稳定词（避开虚词与校勘夹注）。\n2. **定位**：在 162 篇里检索，命中到唯一篇即定；命中多篇则全部列出。\n3. **判类型**：原文 / 注释（材料里分开存）。\n4. **报体量**：该篇字数与条文数。\n5. **标差异**：逐处列出异体/通假/脱文，不修正。\n\n## 输出模板\n\n```text\n【引用】…\n【定位】《素问·X》｜原文 / 注释\n【体量】… 字 / … 条\n【字词差异】…（无则写「无」）\n【无法定位项】…（无则写「无」）\n```\n\n## 质量判据\n\n- 每条都到篇级，没有「内经某篇」这种含糊写法\n- 原文与注释标注清楚\n- 差异逐处列出、未擅自统一\n\n> 本技能输出为文献核对辅助，不构成诊疗建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
   "01-zhongyi/06-neijing-xuandu/02-yinyang-yingxiang": {
     "key": "01-zhongyi/06-neijing-xuandu/02-yinyang-yingxiang",
     "deptSlug": "01-zhongyi",
@@ -599,6 +717,124 @@ window.TCMAI_CONTENT = {
     "video": null,
     "videoPoster": null
   },
+  "01-zhongyi/06-neijing-xuandu/03-zangxiang-xitong": {
+    "key": "01-zhongyi/06-neijing-xuandu/03-zangxiang-xitong",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "06-neijing-xuandu",
+    "subjectTitle": "内经选读",
+    "chapterSlug": "03-zangxiang-xitong",
+    "n": 3,
+    "title": "第 3 章 · 藏象与五脏的系统观：五个「本」里藏着四种不规则",
+    "motto": "「心者，生之本，神之变也，其华在面，其充在血脉，为阳中之太阳，通于夏气。」——《素问·六节藏象论》",
+    "problem": "你会背「心其华在面、其充在血脉」，但让你把五脏的这套说法排成一张统一的表，你会发现脾那一句根本套不进同样的格式——而教材把它们并列着写。",
+    "roots": "环境逼迫(写病机分析时把「其华在面」当公式套到每个脏) + 知识积累(原文逐句解析 × 不规则项标注 = 一张诚实到能看出例外的五脏结构表)",
+    "html": "<h1 id=\"第-3-章-藏象与五脏的系统观-五个-本-里藏着四种不规则\">第 3 章 · 藏象与五脏的系统观：五个「本」里藏着四种不规则</h1>\n<blockquote><p><strong>MOTTO:</strong> 「心者，生之本，神之变也，其华在面，其充在血脉，为阳中之太阳，通于夏气。」——《素问·六节藏象论》</p>\n<p><strong>PROBLEM:</strong> 你会背「心其华在面、其充在血脉」，但让你把五脏的这套说法排成一张统一的表，你会发现脾那一句根本套不进同样的格式——而教材把它们并列着写。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(写病机分析时把「其华在面」当公式套到每个脏) + 知识积累(原文逐句解析 × 不规则项标注 = 一张诚实到能看出例外的五脏结构表)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>内经选读</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>03 / 10</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>从《素问·六节藏象论》原文抽出五脏的「本 / 华 / 充 / 阴阳位 / 通于何气」五元组</li><li>指出脾那一句的结构例外（六者合称、无「阳中之」、以「至阴之类」代之）</li><li>说清校勘夹注（如「阳中之太（《太素》作少）阴」）为什么会污染解析，以及先剥后用的规则</li><li>写一个解析器：五句原文 → 结构表 + 不规则项清单</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"原文五句-据仓库内-neijing-quanwen-原件\">原文五句（据仓库内 <code>neijing-quanwen</code> 原件）</h3>\n<blockquote><p>心者，生之本，神之变也，其华在面，其充在血脉，为阳中之太阳，通于夏气。</p>\n<p>肺者，气之本，魄之处也，其华在毛，其充在皮，为阳中之太（《太素》作少）阴，通于秋气。</p>\n<p>肾者，主蛰，封藏之本，精之处也，其华在发，其充在骨，为阴中之少（《太素》作太）阴，通于冬气。</p>\n<p>肝者，罢极之本，魂之居也，其华在爪，其充在筋，以生血气，其味酸，其色苍，此为阳中之少阳，通于春气。</p>\n<p>脾胃大肠小肠三焦膀胱者，仓廪之本，营之居也，名曰器……其华在唇四白，其充在肌，其味甘，其色黄，此至阴之类，通于土气。</p></blockquote>\n<h3 id=\"四条规则与一处例外\">四条规则与一处例外</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>脏</th><th>本</th><th>华</th><th>充</th><th>阴阳位</th><th>通于</th></tr></thead><tbody><tr><td>心</td><td>生之本</td><td>面</td><td>血脉</td><td>阳中之太阳</td><td>夏气</td></tr><tr><td>肺</td><td>气之本</td><td>毛</td><td>皮</td><td>阳中之太（少）阴</td><td>秋气</td></tr><tr><td>肾</td><td>封藏之本</td><td>发</td><td>骨</td><td>阴中之少（太）阴</td><td>冬气</td></tr><tr><td>肝</td><td>罢极之本</td><td>爪</td><td>筋</td><td>阳中之少阳</td><td>春气</td></tr><tr><td>脾（六者合称）</td><td>仓廪之本</td><td>唇四白</td><td>肌</td><td><strong>至阴之类</strong></td><td>土气</td></tr></tbody></table></div>\n<p>三条不规则值得单独说：<strong>其一</strong>，脾不是「脾者」而是「脾胃大肠小肠三焦膀胱者」——一句管六个器官；<strong>其二</strong>，脾没有「阳中之 X」，用的是「至阴之类」；<strong>其三</strong>，肝句多了「其味酸，其色苍」，心肾肺都没有。教材把它们排成整齐的五行表，原文并不整齐。</p>\n<h3 id=\"夹注污染-解析前必须剥\">夹注污染：解析前必须剥</h3>\n<p>肺句原文是「为阳中之太（《太素》作少）阴」，肾句是「为阴中之少（《太素》作太）阴」。这两处方括号里的校勘夹注是<strong>别人写的</strong>，不是经文。若不先剥掉：</p>\n<ul><li>你会把「太阴」与「少阴」两个版本混成一个字段；</li><li>「阳中之太阴」这个组合在《太素》里根本不存在（那边是「少阴」）。</li></ul>\n<p>《内经语义域》把「校勘夹注先行清洗」列为抽取三原则之一，原因就在这里：<strong>夹注不是正文，混进去就是替作者改字。</strong></p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js：从材料 md 里解析五脏五元组，剥夹注并记录被剥内容\nfunction stripGloss(text) { /* 去掉「（《太素》作…）」「（别本作…）」等夹注，返回 {clean, glosses} */ }\nfunction parseFive() { /* 正则抽 心/肺/肾/肝/脾 五句 → {zang, ben, hua, chong, position, qi, irregular} */ }</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>parseFive()</code> 返回 5 条记录；肺脏的 <code>glosses</code> 含「《太素》作少」，<code>position</code> 为清洗后的「阳中之太阴」；脾记录被标 <code>irregular: true</code> 且 <code>zang</code> 为「脾胃大肠小肠三焦膀胱」。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>五元组是后人归纳的格式</strong>。原文只对四脏用同一句式；把它套到脾上是本章做的事，必须标注为整理而非原文。</li><li><strong>「其华」「其充」是关联陈述，不是因果</strong>。面华不等于心病必见面色变化，反向推断尤其危险。</li><li><strong>本章只取一篇</strong>。《六节藏象论》《五脏生成》《玉机真脏论》各有侧重，单篇不能代表藏象学说全貌。</li><li><strong>夹注剥离有风险</strong>。括号里的内容有时是异文、有时是注家的解释，一律剥掉会丢失版本信息；本章把它们另存 <code>glosses</code>，不丢。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 原文与夹注引自仓库内 <code>standards/materials/neijing-quanwen/</code>（源 <code>黄帝内经全文.xls</code>，可复核）；本章的结构表是教学整理，不构成诊断依据。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>补上「其味」「其色」两列，观察哪几脏缺这两个字段，讨论「缺」是原文如此还是整理遗漏。</li><li>若允许把「脾胃大肠小肠三焦膀胱」拆成六条记录，五元组表会变成什么样？这样做丢了什么？</li><li>找出另外两处带夹注的藏象条文，说明剥离前后语义差异。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>藏象学说最容易被教成一张整齐的表，而原文的整齐度只有四分之三。看见那四分之一的不整齐，才算读到了原文，而不是读到了教材。</p>",
+    "markdown": "# 第 3 章 · 藏象与五脏的系统观：五个「本」里藏着四种不规则\n\n> **MOTTO:** 「心者，生之本，神之变也，其华在面，其充在血脉，为阳中之太阳，通于夏气。」——《素问·六节藏象论》\n>\n> **PROBLEM:** 你会背「心其华在面、其充在血脉」，但让你把五脏的这套说法排成一张统一的表，你会发现脾那一句根本套不进同样的格式——而教材把它们并列着写。\n>\n> **双根因定位:** 环境逼迫(写病机分析时把「其华在面」当公式套到每个脏) + 知识积累(原文逐句解析 × 不规则项标注 = 一张诚实到能看出例外的五脏结构表)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 内经选读 |\n| 院系 | 中医系 |\n| 章序号 | 03 / 10 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 从《素问·六节藏象论》原文抽出五脏的「本 / 华 / 充 / 阴阳位 / 通于何气」五元组\n- 指出脾那一句的结构例外（六者合称、无「阳中之」、以「至阴之类」代之）\n- 说清校勘夹注（如「阳中之太（《太素》作少）阴」）为什么会污染解析，以及先剥后用的规则\n- 写一个解析器：五句原文 → 结构表 + 不规则项清单\n\n## 核心概念\n\n### 原文五句（据仓库内 `neijing-quanwen` 原件）\n\n> 心者，生之本，神之变也，其华在面，其充在血脉，为阳中之太阳，通于夏气。\n>\n> 肺者，气之本，魄之处也，其华在毛，其充在皮，为阳中之太（《太素》作少）阴，通于秋气。\n>\n> 肾者，主蛰，封藏之本，精之处也，其华在发，其充在骨，为阴中之少（《太素》作太）阴，通于冬气。\n>\n> 肝者，罢极之本，魂之居也，其华在爪，其充在筋，以生血气，其味酸，其色苍，此为阳中之少阳，通于春气。\n>\n> 脾胃大肠小肠三焦膀胱者，仓廪之本，营之居也，名曰器……其华在唇四白，其充在肌，其味甘，其色黄，此至阴之类，通于土气。\n\n### 四条规则与一处例外\n\n| 脏 | 本 | 华 | 充 | 阴阳位 | 通于 |\n|---|---|---|---|---|---|\n| 心 | 生之本 | 面 | 血脉 | 阳中之太阳 | 夏气 |\n| 肺 | 气之本 | 毛 | 皮 | 阳中之太（少）阴 | 秋气 |\n| 肾 | 封藏之本 | 发 | 骨 | 阴中之少（太）阴 | 冬气 |\n| 肝 | 罢极之本 | 爪 | 筋 | 阳中之少阳 | 春气 |\n| 脾（六者合称） | 仓廪之本 | 唇四白 | 肌 | **至阴之类** | 土气 |\n\n三条不规则值得单独说：**其一**，脾不是「脾者」而是「脾胃大肠小肠三焦膀胱者」——一句管六个器官；**其二**，脾没有「阳中之 X」，用的是「至阴之类」；**其三**，肝句多了「其味酸，其色苍」，心肾肺都没有。教材把它们排成整齐的五行表，原文并不整齐。\n\n### 夹注污染：解析前必须剥\n\n肺句原文是「为阳中之太（《太素》作少）阴」，肾句是「为阴中之少（《太素》作太）阴」。这两处方括号里的校勘夹注是**别人写的**，不是经文。若不先剥掉：\n\n- 你会把「太阴」与「少阴」两个版本混成一个字段；\n- 「阳中之太阴」这个组合在《太素》里根本不存在（那边是「少阴」）。\n\n《内经语义域》把「校勘夹注先行清洗」列为抽取三原则之一，原因就在这里：**夹注不是正文，混进去就是替作者改字。**\n\n## BUILD IT：从零实现\n\n```js\n// code/main.js：从材料 md 里解析五脏五元组，剥夹注并记录被剥内容\nfunction stripGloss(text) { /* 去掉「（《太素》作…）」「（别本作…）」等夹注，返回 {clean, glosses} */ }\nfunction parseFive() { /* 正则抽 心/肺/肾/肝/脾 五句 → {zang, ben, hua, chong, position, qi, irregular} */ }\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：`parseFive()` 返回 5 条记录；肺脏的 `glosses` 含「《太素》作少」，`position` 为清洗后的「阳中之太阴」；脾记录被标 `irregular: true` 且 `zang` 为「脾胃大肠小肠三焦膀胱」。\n\n## 代价与边界\n\n- **五元组是后人归纳的格式**。原文只对四脏用同一句式；把它套到脾上是本章做的事，必须标注为整理而非原文。\n- **「其华」「其充」是关联陈述，不是因果**。面华不等于心病必见面色变化，反向推断尤其危险。\n- **本章只取一篇**。《六节藏象论》《五脏生成》《玉机真脏论》各有侧重，单篇不能代表藏象学说全貌。\n- **夹注剥离有风险**。括号里的内容有时是异文、有时是注家的解释，一律剥掉会丢失版本信息；本章把它们另存 `glosses`，不丢。\n\n> **免责声明：** 原文与夹注引自仓库内 `standards/materials/neijing-quanwen/`（源 `黄帝内经全文.xls`，可复核）；本章的结构表是教学整理，不构成诊断依据。\n\n## 练习\n\n1. 补上「其味」「其色」两列，观察哪几脏缺这两个字段，讨论「缺」是原文如此还是整理遗漏。\n2. 若允许把「脾胃大肠小肠三焦膀胱」拆成六条记录，五元组表会变成什么样？这样做丢了什么？\n3. 找出另外两处带夹注的藏象条文，说明剥离前后语义差异。\n\n## 进阶思考\n\n藏象学说最容易被教成一张整齐的表，而原文的整齐度只有四分之三。看见那四分之一的不整齐，才算读到了原文，而不是读到了教材。\n",
+    "code": {
+      "main.js": "'use strict';\r\n/**\r\n * 藏象五元组解析：《素问·六节藏象论》五脏句 → {本,华,充,阴阳位,通于} + 不规则项\r\n *\r\n *   node code/main.js\r\n *\r\n * 两条规则（本章的教学点）：\r\n *   1. 校勘夹注先行清洗：「为阳中之太（《太素》作少）阴」里的括号是别人写的，\r\n *      不剥就会把「太阴」「少阴」两个版本混成一个字段。剥下来的内容存 glosses，不丢。\r\n *   2. 不规则要标注，不要硬套：脾句是「脾胃大肠小肠三焦膀胱者…」六者合称，\r\n *      且用「至阴之类」而非「阳中之X」——套进五元组的整齐表格等于替原文改字。\r\n */\r\n\r\nconst path = require('node:path');\r\nconst fs = require('node:fs');\r\n\r\nconst ROOT = path.resolve(__dirname, '../../../../../..');\r\nconst MD = path.join(ROOT, 'standards/materials/neijing-quanwen/黄帝内经全文（素问81篇 · 灵枢81篇）.md');\r\n\r\n/** 剥夹注：全角括号内含「《…》作」「别本作」「一作」等校勘语 */\r\nfunction stripGloss(text) {\r\n  const glosses = [];\r\n  const clean = String(text).replace(/（([^）]*)）/g, (m, inner) => {\r\n    if (/《[^》]+》|别本|一作|或作|当作/.test(inner)) {\r\n      glosses.push(inner.trim());\r\n      return '';\r\n    }\r\n    return m;\r\n  });\r\n  return { clean, glosses };\r\n}\r\n\r\nfunction loadText() {\r\n  return fs.readFileSync(MD, 'utf8').replace(/\\s+/g, '');\r\n}\r\n\r\nconst SPEC = [\r\n  { zang: '心', re: /心者，生之本[^。]*。/ },\r\n  { zang: '肺', re: /肺者，气之本[^。]*。/ },\r\n  { zang: '肾', re: /肾者，主蛰[^。]*。/ },\r\n  { zang: '肝', re: /肝者，罢极之本[^。]*。/ },\r\n  { zang: '脾胃大肠小肠三焦膀胱', re: /仓廪之本[^。]*通于土气。/ },\r\n];\r\n\r\nfunction field(clean, re) {\r\n  const m = clean.match(re);\r\n  return m ? m[1] : null;\r\n}\r\n\r\n/** 解析五脏：返回记录数组（含 irregular 与 glosses） */\r\nfunction parseFive(text = loadText()) {\r\n  const out = [];\r\n  for (const s of SPEC) {\r\n    const m = text.match(s.re);\r\n    if (!m) { out.push({ zang: s.zang, error: '原文未匹配' }); continue; }\r\n    const { clean, glosses } = stripGloss(m[0]);\r\n    const position = field(clean, /((?:阳中之|阴中之|至阴)[^，。]*)/);\r\n    out.push({\r\n      zang: s.zang,\r\n      ben: field(clean, /([^，。]*之本)/),\r\n      hua: field(clean, /其华在([^，。]*)/),\r\n      chong: field(clean, /其充在([^，。]*)/),\r\n      position: position || null,\r\n      qi: field(clean, /通于([^，。]*气)/),\r\n      glosses,\r\n      irregular: s.zang.length > 1 || !/(阳中之|阴中之)/.test(position || ''),\r\n    });\r\n  }\r\n  return out;\r\n}\r\n\r\nfunction main() {\r\n  const rows = parseFive();\r\n  console.log('脏｜本｜华｜充｜阴阳位｜通于｜不规则');\r\n  for (const r of rows) {\r\n    if (r.error) { console.log(`  ${r.zang}｜${r.error}`); continue; }\r\n    console.log(`  ${r.zang}｜${r.ben}｜${r.hua}｜${r.chong}｜${r.position}｜${r.qi}｜${r.irregular ? '是' : '否'}`);\r\n    if (r.glosses.length) console.log(`     └ 剥出的夹注：${r.glosses.join(' / ')}`);\r\n  }\r\n  console.log(`\\n不规则项 ${rows.filter((r) => r.irregular).length} 条 —— 原文不是一张整齐的表。`);\r\n  console.log('本输出为教学样例，不构成诊断依据。');\r\n}\r\n\r\nif (require.main === module) main();\r\nmodule.exports = { stripGloss, parseFive, loadText, MD };\r\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { stripGloss, parseFive } = require('./main.js');\n\ntest('剥夹注：校勘语进 glosses，正文不被改名', () => {\n  const r = stripGloss('为阳中之太（《太素》作少）阴');\n  assert.strictEqual(r.clean, '为阳中之太阴');\n  assert.deepStrictEqual(r.glosses, ['《太素》作少']);\n});\n\ntest('普通括号（非校勘）保留原文，不当夹注剥', () => {\n  const r = stripGloss('其华在面（即额部）');\n  assert.strictEqual(r.clean, '其华在面（即额部）');\n  assert.deepStrictEqual(r.glosses, []);\n});\n\ntest('五条记录齐全，字段名固定', () => {\n  const rows = parseFive();\n  assert.strictEqual(rows.length, 5);\n  for (const r of rows) {\n    assert.ok('zang' in r && 'ben' in r && 'hua' in r && 'chong' in r && 'position' in r && 'qi' in r);\n  }\n});\n\ntest('肺句清洗后为「阳中之太阴」，并保留被剥的夹注', () => {\n  const lung = parseFive().find((r) => r.zang === '肺');\n  assert.strictEqual(lung.position, '阳中之太阴');\n  assert.ok(lung.glosses.some((g) => g.includes('《太素》作少')));\n});\n\ntest('脾是唯一不规则项：六者合称 + 至阴之类', () => {\n  const rows = parseFive();\n  const irr = rows.filter((r) => r.irregular);\n  assert.strictEqual(irr.length, 1);\n  assert.strictEqual(irr[0].zang, '脾胃大肠小肠三焦膀胱');\n  assert.match(irr[0].position, /至阴/);\n});\n\ntest('四脏的「通于」都落到四季之气', () => {\n  const rows = parseFive().filter((r) => !r.irregular);\n  assert.deepStrictEqual(rows.map((r) => r.qi), ['夏气', '秋气', '冬气', '春气']);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "《素问·六节藏象论》里「心者，生之本」的下一句是？",
+          "options": [
+            "其华在面，其充在血脉",
+            "神之变也，其华在面，其充在血脉",
+            "通于夏气",
+            "君主之官也"
+          ],
+          "correct": 1,
+          "explanation": "原文为「心者，生之本，神之变也，其华在面，其充在血脉，为阳中之太阳，通于夏气」。"
+        },
+        {
+          "stage": "check",
+          "question": "五脏句中，结构最不规则的是哪一脏？",
+          "options": [
+            "心",
+            "肺",
+            "肝",
+            "脾（六者合称那句）"
+          ],
+          "correct": 3,
+          "explanation": "脾句是「脾胃大肠小肠三焦膀胱者」，六者合称，且用「至阴之类」而非「阳中之X」。"
+        },
+        {
+          "stage": "check",
+          "question": "「为阳中之太（《太素》作少）阴」中的括号内容是什么？",
+          "options": [
+            "经文原文的一部分",
+            "校勘夹注（异文），不是经文",
+            "后人的临床按语",
+            "标点符号"
+          ],
+          "correct": 1,
+          "explanation": "夹注是别人写的异文记录；不剥会把两个版本混成一个字段。"
+        },
+        {
+          "stage": "check",
+          "question": "为什么解析前要先剥夹注？",
+          "options": [
+            "为了让文本更短",
+            "否则「阳中之太阴」与《太素》的「阳中之少阴」会被混成一个字段",
+            "因为夹注都是错的",
+            "因为正则不支持括号"
+          ],
+          "correct": 1,
+          "explanation": "剥离不是丢弃：本章把剥下来的内容另存 glosses。"
+        },
+        {
+          "stage": "post",
+          "question": "把五脏排成整齐的五元组表，最需要标注的是？",
+          "options": [
+            "表格的字体",
+            "这是后人归纳的格式，原文只有四脏用同一句式",
+            "数据来源不可靠",
+            "五脏没有五行对应"
+          ],
+          "correct": 1,
+          "explanation": "套格式是整理行为；不标注就等于替原文改字。"
+        },
+        {
+          "stage": "post",
+          "question": "「其华在面」的正确用法是？",
+          "options": [
+            "心病必然面色改变",
+            "关联陈述：脏与体表有对应，但不是单向因果，尤其不能反推",
+            "面色变化一定是心病",
+            "只是修辞"
+          ],
+          "correct": 1,
+          "explanation": "藏象是关联系统，反推最危险。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-zangxiang-xitong.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/03-zangxiang-xitong/outputs/prompt-zangxiang-xitong.md",
+        "title": "藏象五元组抽取助手",
+        "description": null,
+        "chars": 637,
+        "body": "# 藏象五元组抽取助手\n\n## 用途\n\n把一段藏象原文（如《素问·六节藏象论》五脏句）抽成「本 / 华 / 充 / 阴阳位 / 通于何气」五元组，\n并把**不规则项**与**校勘夹注**单独标出。用于**条文结构化、教材对照、知识库建表**。\n\n## 提示词\n\n```text\n你是内经文献的结构化助手。下面是一段藏象原文。请只做抽取，不做解释。\n\n规则：\n1. 先剥校勘夹注：凡「（《某书》作…）」「（别本作…）」「（一作…）」都是夹注，剥出后单独列出，不许丢。\n2. 逐脏抽五元组：本 / 华 / 充 / 阴阳位 / 通于何气。原文没有的字段写 null，不许补。\n3. 句式不规则的必须标注 irregular 并说明原因（例如「六者合称」「用『至阴之类』而非『阳中之X』」）。\n4. 抽不出唯一对应时，列全部候选并注明「需人工判定」。\n5. 禁止把「其华在面」写成因果（如「心病则面赤」）。\n\n输出格式：\n【抽取】脏｜本｜华｜充｜阴阳位｜通于｜不规则\n【夹注】…\n【无法判定】…\n【边界】五元组是后人归纳的格式，原文句式并不统一。\n```\n\n## 使用示例\n\n输入：「肺者，气之本，魄之处也，其华在毛，其充在皮，为阳中之太（《太素》作少）阴，通于秋气。」\n\n输出：【抽取】肺｜气之本｜毛｜皮｜阳中之太阴｜秋气｜否\n【夹注】《太素》作少（影响「太阴/少阴」判定，须保留）\n【边界】若按《太素》，阴阳位应作「阳中之少阴」。\n\n## 为什么这样限制\n\n- 夹注单列：它是版本证据，丢掉就再也找不回来。\n- 不规则必须标：整齐的表会把「六者合称」抹成一个「脾」。\n- 禁写因果：藏象讲关联，反推是最常见的过度解释。\n"
+      },
+      {
+        "name": "skill-zangxiang-xitong.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/03-zangxiang-xitong/outputs/skill-zangxiang-xitong.md",
+        "title": "zangxiang-xitong",
+        "description": "抽藏象五元组（本/华/充/阴阳位/通于），剥离校勘夹注并标注不规则句式",
+        "chars": 514,
+        "body": "---\nname: zangxiang-xitong\ndescription: 抽藏象五元组（本/华/充/阴阳位/通于），剥离校勘夹注并标注不规则句式\nversion: 0.1.0\n---\n\n# zangxiang-xitong\n\n## 何时使用\n\n- 把藏象条文建成结构化表（教材对照、知识库）\n- 校核某脏的「其华」「其充」是否为原文所有\n- 发现两个版本（如《太素》）用字不同，需要保留证据\n\n## 不适用\n\n- 临床辨证（藏象讲关联，不构成诊断）\n- 需要跨篇整合的藏象学说综述（本章只取一篇）\n- 原文句式残缺、无法判定字段时（应标「无法判定」）\n\n## 步骤\n\n1. **剥夹注**：识别「《…》作…」「别本作」「一作」，剥离并存档。\n2. **抽五元组**：本 / 华 / 充 / 阴阳位 / 通于；缺则 null。\n3. **标不规则**：合称句、替代表述（至阴之类）逐一注明。\n4. **留候选**：一句含两脏或跨句时，列候选不合并。\n5. **写边界**：说明五元组是整理格式。\n\n## 输出模板\n\n```text\n【抽取】脏｜本｜华｜充｜阴阳位｜通于｜不规则\n【夹注】…\n【无法判定】…\n【边界】…\n```\n\n## 质量判据\n\n- 夹注一条不丢\n- 不规则项被标出，而不是被表格抹平\n- 没有把关联写成因果\n\n> 本技能输出为文献结构化辅助，不构成诊断依据。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
   "01-zhongyi/06-neijing-xuandu/05-bingji-shijiu": {
     "key": "01-zhongyi/06-neijing-xuandu/05-bingji-shijiu",
     "deptSlug": "01-zhongyi",
@@ -712,6 +948,360 @@ window.TCMAI_CONTENT = {
         "description": "按病机十九条反查症状：列出全部命中条文与各自的不排除项，并指出十九条之外缺什么",
         "chars": 498,
         "body": "---\nname: bingji-shijiu\ndescription: 按病机十九条反查症状：列出全部命中条文与各自的不排除项，并指出十九条之外缺什么\nversion: 0.1.0\n---\n\n# bingji-shijiu\n\n## 何时使用\n\n- 写病机分析前，核对「这条判断有没有条文依据」\n- 教学：让学生看清十九条里脏腑只占 5 条\n- 病例讨论：把同一症状命中的多条条文摆在一起鉴别\n\n## 不适用\n\n- 需要下证型或治法（十九条只给病机方向）\n- 症状落在十九条未覆盖的类别（燥、痰、瘀、情志、外伤）——此时应显式说明「无对应条文」，不硬套\n- 急症判断\n\n## 步骤\n\n1. **摘症状**：原文照录，不改写。\n2. **反查**：用起句关键词匹配，返回全部命中（按序号）。\n3. **带边界**：每条写「本条不排除：…」。\n4. **列缺口**：写清十九条之外的方向。\n5. **补四诊**：指出还缺哪些信息才能分辨。\n\n## 输出模板\n\n```text\n【命中】n. <起句> → 属于<所属>｜不排除：…\n【十九条之外】…\n【需要补充的四诊】…\n```\n\n## 质量判据\n\n- 命中条目不排序、不择优\n- 每条都有不排除项\n- 缺口段非空（十九条不可能覆盖全部病机）\n\n> 本技能输出为教学与核对辅助，不构成诊疗建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "01-zhongyi/06-neijing-xuandu/09-lingshu-jiuzhen": {
+    "key": "01-zhongyi/06-neijing-xuandu/09-lingshu-jiuzhen",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "06-neijing-xuandu",
+    "subjectTitle": "内经选读",
+    "chapterSlug": "09-lingshu-jiuzhen",
+    "n": 9,
+    "title": "第 9 章 · 《灵枢·九针十二原》：九种针不是九种型号",
+    "motto": "「九针之名，各不同形者，针穷其所当补泻也。」——《灵枢·九针十二原》",
+    "problem": "你能背出「镵针、员针、鍉针、锋针、铍针、员利针、毫针、长针、大针」，但说不清哪一种该用在什么部位、为什么长度差到四倍，也说不清「一寸六分」在今天是多少毫米。",
+    "roots": "环境逼迫(临证选针凭习惯，出了问题说不清为什么选它) + 知识积累(原文规格表 × 折算与用途 = 一份能查、能算出尺寸、能说明不确定性的选针依据)",
+    "html": "<h1 id=\"第-9-章-灵枢-九针十二原-九种针不是九种型号\">第 9 章 · 《灵枢·九针十二原》：九种针不是九种型号</h1>\n<blockquote><p><strong>MOTTO:</strong> 「九针之名，各不同形者，针穷其所当补泻也。」——《灵枢·九针十二原》</p>\n<p><strong>PROBLEM:</strong> 你能背出「镵针、员针、鍉针、锋针、铍针、员利针、毫针、长针、大针」，但说不清哪一种该用在什么部位、为什么长度差到四倍，也说不清「一寸六分」在今天是多少毫米。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(临证选针凭习惯，出了问题说不清为什么选它) + 知识积累(原文规格表 × 折算与用途 = 一份能查、能算出尺寸、能说明不确定性的选针依据)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>内经选读</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>09 / 10</td></tr><tr><td>所属阶段</td><td>🌳 壮·鼎盛</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>列出九针的名称、长度与主治（据《灵枢·九针十二原》与《灵枢·官针》两篇原文）</li><li>说清「九针」是按<strong>用途与形制</strong>分的，不是同一支针的九个粗细规格</li><li>用汉制折算给出九针的厘米区间，并说明这个折算为什么只能是区间</li><li>写一个选针器：给定部位与目的，返回候选针具 + 原文依据 + 不确定项</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"原文-两篇各说一半\">原文：两篇各说一半</h3>\n<p>《灵枢·九针十二原》给形制与用途：</p>\n<blockquote><p>镵针者，头大末锐，去泻阳气。员针者，针如卵形，揩摩分间，不得伤肌肉者，以泻分气。鍉针者，锋如黍粟之锐，主按脉，勿陷以致其气。</p></blockquote>\n<p>《灵枢·官针》给取法与本治：</p>\n<blockquote><p>镵针者，取法于巾针，去末寸半，卒锐之，长一寸六分，主热在头身也。二曰员针，取法于絮针，筩其身而卵其锋，长一寸六分，主治分间气。三曰鍉针，取法于黍粟之锐，长三寸半，主按脉取气，令邪出。</p></blockquote>\n<p>两篇合起来才是完整的规格表。只读一篇，你会知道「镵针泻阳气」却不知道它多长；只读另一篇，你知道长度却不知道为什么要那个形。</p>\n<h3 id=\"规格表-据上述两篇-长度单位为-寸\">规格表（据上述两篇，长度单位为「寸」）</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>序</th><th>针</th><th>长度</th><th>形制要点</th><th>主治</th></tr></thead><tbody><tr><td>1</td><td>镵针</td><td>1.6</td><td>头大末锐</td><td>泻阳气、热在头身</td></tr><tr><td>2</td><td>员针</td><td>1.6</td><td>筩身卵锋</td><td>揩摩分间、泻分气</td></tr><tr><td>3</td><td>鍉针</td><td>3.5</td><td>锋如黍粟</td><td>按脉取气、令邪出</td></tr><tr><td>4</td><td>锋针</td><td>1.6</td><td>三隅（三棱）</td><td>泻热出血、痈脓</td></tr><tr><td>5</td><td>铍针</td><td>4.0（广 2.5 分）</td><td>剑形，末如剑锋</td><td>排脓、切痈</td></tr><tr><td>6</td><td>员利针</td><td>1.6</td><td>大如氂，且员且锐</td><td>暴痹、取深邪</td></tr><tr><td>7</td><td>毫针</td><td>3.6</td><td>尖如蚊虻喙</td><td>静以徐往，养神定气</td></tr><tr><td>8</td><td>长针</td><td>7.0</td><td>长其身，锋其末</td><td>深痹、远痹</td></tr><tr><td>9</td><td>大针</td><td>4.0</td><td>尖如梃，其锋微员</td><td>泻水、通关节</td></tr></tbody></table></div>\n<p>一眼可看出它不是「型号序列」：最短的三支（1.6 寸）用途完全不同（泻阳、摩分间、放血），最长的一支（7 寸）专为深部痹阻；<strong>形制决定用途，长度只是形制的一部分</strong>。</p>\n<h3 id=\"折算-一寸是多少\">折算：一寸是多少</h3>\n<p>汉制一寸常按 2.3 cm 左右估算，于是九针落在约 <strong>3.7–16.1 cm</strong>。但这是区间而不是定值：汉代尺度的考古实测本身有分布，且「寸」在不同时期不同。所以任何「某针 = 某毫米」的说法都必须带换算依据，否则是把不确定性藏起来。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js：九针规格表 + 按部位/目的选针 + 汉制折算（给区间，不给点值）\nconst NEEDLES = [ /* 9 条：name, cun, shape, use, source */ ];\nfunction toCm(cun) { /* 用 [2.31, 2.35] 区间返回 {min, max} */ }\nfunction pick(use) { /* 关键词检索用途，返回候选 + 原文依据；无命中返回 [] */ }</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>toCm(1.6)</code> 返回约 3.70–3.76 cm；<code>pick('脓')</code> 命中铍针与锋针两条，并给出各自原文依据；<code>pick('深痹')</code> 命中长针。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>原文的「主某病」是归纳，不是适应证清单</strong>。九针的用途在《官针》《刺节真邪》等篇还有展开，本章只取两篇。</li><li><strong>折算的不确定性不可消除</strong>。给出区间是诚实的上限；临床用针以现代针具规格（直径 × 长度 mm）为准，本章的寸制换算只用于读原文。</li><li><strong>形制描述是文本，不是实测</strong>。「筩其身而卵其锋」这类描述无法直接还原为几何参数，本章不做图像复原。</li><li><strong>本章不含刺法操作与禁忌</strong>。进针深度、角度、危险部位另章（腧穴学·危险穴位）。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 本章规格与引文引自 <code>standards/materials/neijing-quanwen/</code>（源 <code>黄帝内经全文.xls</code>，可复核），折算为读原文用的近似，不构成针具选择或操作建议；实际针刺须由执业医师按现行规范执行。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>用 <code>pick()</code> 分别检索「出血」「水」「痹」，观察哪些针重复出现，说明「一针多能」在原文里如何表述。</li><li>若把折算改成单一系数（如 2.32），<code>toCm</code> 的输出会变成什么？这为什么是退步？</li><li>找出《灵枢·官针》里另外几种刺法（如「五刺」「九刺」），说明它们与九针是什么关系。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>「九针」最容易被读成一张工具清单，其实它是一套<strong>形制—用途</strong>的对应：先想清楚要做什么，再决定用哪种形。工具清单记名字，对应关系才教人。</p>",
+    "markdown": "# 第 9 章 · 《灵枢·九针十二原》：九种针不是九种型号\n\n> **MOTTO:** 「九针之名，各不同形者，针穷其所当补泻也。」——《灵枢·九针十二原》\n>\n> **PROBLEM:** 你能背出「镵针、员针、鍉针、锋针、铍针、员利针、毫针、长针、大针」，但说不清哪一种该用在什么部位、为什么长度差到四倍，也说不清「一寸六分」在今天是多少毫米。\n>\n> **双根因定位:** 环境逼迫(临证选针凭习惯，出了问题说不清为什么选它) + 知识积累(原文规格表 × 折算与用途 = 一份能查、能算出尺寸、能说明不确定性的选针依据)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 内经选读 |\n| 院系 | 中医系 |\n| 章序号 | 09 / 10 |\n| 所属阶段 | 🌳 壮·鼎盛 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 列出九针的名称、长度与主治（据《灵枢·九针十二原》与《灵枢·官针》两篇原文）\n- 说清「九针」是按**用途与形制**分的，不是同一支针的九个粗细规格\n- 用汉制折算给出九针的厘米区间，并说明这个折算为什么只能是区间\n- 写一个选针器：给定部位与目的，返回候选针具 + 原文依据 + 不确定项\n\n## 核心概念\n\n### 原文：两篇各说一半\n\n《灵枢·九针十二原》给形制与用途：\n\n> 镵针者，头大末锐，去泻阳气。员针者，针如卵形，揩摩分间，不得伤肌肉者，以泻分气。鍉针者，锋如黍粟之锐，主按脉，勿陷以致其气。\n\n《灵枢·官针》给取法与本治：\n\n> 镵针者，取法于巾针，去末寸半，卒锐之，长一寸六分，主热在头身也。二曰员针，取法于絮针，筩其身而卵其锋，长一寸六分，主治分间气。三曰鍉针，取法于黍粟之锐，长三寸半，主按脉取气，令邪出。\n\n两篇合起来才是完整的规格表。只读一篇，你会知道「镵针泻阳气」却不知道它多长；只读另一篇，你知道长度却不知道为什么要那个形。\n\n### 规格表（据上述两篇，长度单位为「寸」）\n\n| 序 | 针 | 长度 | 形制要点 | 主治 |\n|--:|---|--:|---|---|\n| 1 | 镵针 | 1.6 | 头大末锐 | 泻阳气、热在头身 |\n| 2 | 员针 | 1.6 | 筩身卵锋 | 揩摩分间、泻分气 |\n| 3 | 鍉针 | 3.5 | 锋如黍粟 | 按脉取气、令邪出 |\n| 4 | 锋针 | 1.6 | 三隅（三棱） | 泻热出血、痈脓 |\n| 5 | 铍针 | 4.0（广 2.5 分） | 剑形，末如剑锋 | 排脓、切痈 |\n| 6 | 员利针 | 1.6 | 大如氂，且员且锐 | 暴痹、取深邪 |\n| 7 | 毫针 | 3.6 | 尖如蚊虻喙 | 静以徐往，养神定气 |\n| 8 | 长针 | 7.0 | 长其身，锋其末 | 深痹、远痹 |\n| 9 | 大针 | 4.0 | 尖如梃，其锋微员 | 泻水、通关节 |\n\n一眼可看出它不是「型号序列」：最短的三支（1.6 寸）用途完全不同（泻阳、摩分间、放血），最长的一支（7 寸）专为深部痹阻；**形制决定用途，长度只是形制的一部分**。\n\n### 折算：一寸是多少\n\n汉制一寸常按 2.3 cm 左右估算，于是九针落在约 **3.7–16.1 cm**。但这是区间而不是定值：汉代尺度的考古实测本身有分布，且「寸」在不同时期不同。所以任何「某针 = 某毫米」的说法都必须带换算依据，否则是把不确定性藏起来。\n\n## BUILD IT：从零实现\n\n```js\n// code/main.js：九针规格表 + 按部位/目的选针 + 汉制折算（给区间，不给点值）\nconst NEEDLES = [ /* 9 条：name, cun, shape, use, source */ ];\nfunction toCm(cun) { /* 用 [2.31, 2.35] 区间返回 {min, max} */ }\nfunction pick(use) { /* 关键词检索用途，返回候选 + 原文依据；无命中返回 [] */ }\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：`toCm(1.6)` 返回约 3.70–3.76 cm；`pick('脓')` 命中铍针与锋针两条，并给出各自原文依据；`pick('深痹')` 命中长针。\n\n## 代价与边界\n\n- **原文的「主某病」是归纳，不是适应证清单**。九针的用途在《官针》《刺节真邪》等篇还有展开，本章只取两篇。\n- **折算的不确定性不可消除**。给出区间是诚实的上限；临床用针以现代针具规格（直径 × 长度 mm）为准，本章的寸制换算只用于读原文。\n- **形制描述是文本，不是实测**。「筩其身而卵其锋」这类描述无法直接还原为几何参数，本章不做图像复原。\n- **本章不含刺法操作与禁忌**。进针深度、角度、危险部位另章（腧穴学·危险穴位）。\n\n> **免责声明：** 本章规格与引文引自 `standards/materials/neijing-quanwen/`（源 `黄帝内经全文.xls`，可复核），折算为读原文用的近似，不构成针具选择或操作建议；实际针刺须由执业医师按现行规范执行。\n\n## 练习\n\n1. 用 `pick()` 分别检索「出血」「水」「痹」，观察哪些针重复出现，说明「一针多能」在原文里如何表述。\n2. 若把折算改成单一系数（如 2.32），`toCm` 的输出会变成什么？这为什么是退步？\n3. 找出《灵枢·官针》里另外几种刺法（如「五刺」「九刺」），说明它们与九针是什么关系。\n\n## 进阶思考\n\n「九针」最容易被读成一张工具清单，其实它是一套**形制—用途**的对应：先想清楚要做什么，再决定用哪种形。工具清单记名字，对应关系才教人。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 九针规格与选针：《灵枢·九针十二原》形制用途 + 《灵枢·官针》取法主治\n *\n *   node code/main.js\n *\n * 口径：\n *   · 长度单位「寸」按汉制折算为区间 [2.31, 2.35] cm —— 给区间不给点值，\n *     因为汉尺实测本身有分布，任何「某针 = 某毫米」都在藏不确定性\n *   · 用途只取两篇原文的措辞，不扩充适应证\n */\n\nconst CM_MIN = 2.31;\nconst CM_MAX = 2.35;\n\nconst SRC_A = '《灵枢·九针十二原》';\nconst SRC_B = '《灵枢·官针》';\n\nconst NEEDLES = [\n  { n: 1, name: '镵针', cun: 1.6, shape: '头大末锐', use: ['泻阳气', '热在头身'], source: `${SRC_A}·${SRC_B}` },\n  { n: 2, name: '员针', cun: 1.6, shape: '筩其身而卵其锋', use: ['揩摩分间', '泻分气'], source: `${SRC_A}·${SRC_B}` },\n  { n: 3, name: '鍉针', cun: 3.5, shape: '锋如黍粟之锐', use: ['按脉取气', '令邪出'], source: `${SRC_A}·${SRC_B}` },\n  { n: 4, name: '锋针', cun: 1.6, shape: '刃三隅', use: ['泻热出血', '痈脓'], source: `${SRC_A}·${SRC_B}` },\n  { n: 5, name: '铍针', cun: 4.0, shape: '末如剑锋，广二分半', use: ['取大脓', '排脓'], source: `${SRC_A}·${SRC_B}` },\n  { n: 6, name: '员利针', cun: 1.6, shape: '大如氂，且员且锐', use: ['取暴痹', '取深邪'], source: `${SRC_A}·${SRC_B}` },\n  { n: 7, name: '毫针', cun: 3.6, shape: '尖如蚊虻喙', use: ['静以徐往', '养神定气'], source: `${SRC_A}·${SRC_B}` },\n  { n: 8, name: '长针', cun: 7.0, shape: '长其身，锋其末', use: ['取深痹', '远痹'], source: `${SRC_A}·${SRC_B}` },\n  { n: 9, name: '大针', cun: 4.0, shape: '尖如梃，其锋微员', use: ['泻水', '通关节'], source: `${SRC_A}·${SRC_B}` },\n];\n\n/** 寸 → 厘米区间（不给点值） */\nfunction toCm(cun) {\n  if (!(cun > 0)) throw new Error('长度必须为正数（寸）');\n  return { min: +(cun * CM_MIN).toFixed(2), max: +(cun * CM_MAX).toFixed(2) };\n}\n\n/** 按用途关键词选针：返回全部命中，并标明依据；无命中返回空数组 */\nfunction pick(keyword) {\n  if (!keyword || !String(keyword).trim()) throw new Error('检索词不能为空');\n  return NEEDLES.filter((x) => x.use.some((u) => u.includes(keyword)) || x.shape.includes(keyword))\n    .map((x) => ({ name: x.name, cun: x.cun, use: x.use, source: x.source }));\n}\n\nfunction main() {\n  console.log('九针（长度单位：寸 → 汉制折算法厘米区间）');\n  for (const x of NEEDLES) {\n    const c = toCm(x.cun);\n    console.log(`  ${x.n}. ${x.name.padEnd(3, '　')} ${x.cun} 寸（${c.min}–${c.max} cm）｜${x.shape}｜${x.use.join('、')}`);\n  }\n  for (const k of ['脓', '深痹', '出血']) {\n    const r = pick(k);\n    console.log(`\\n检索「${k}」→ ${r.length} 支：${r.map((x) => `${x.name}(${x.cun}寸)`).join('、') || '无命中'}`);\n  }\n  console.log('\\n提醒：折算为区间，读原文用；临床针具按现行 mm 规格执行。');\n  console.log('本输出为教学样例，不构成针具选择或操作建议。');\n}\n\nif (require.main === module) main();\nmodule.exports = { NEEDLES, toCm, pick, CM_MIN, CM_MAX };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { NEEDLES, toCm, pick } = require('./main.js');\n\ntest('九针齐备，序号 1..9，每支都有出处', () => {\n  assert.strictEqual(NEEDLES.length, 9);\n  NEEDLES.forEach((x, i) => {\n    assert.strictEqual(x.n, i + 1);\n    assert.match(x.source, /灵枢/);\n  });\n});\n\ntest('长度跨度：最短 1.6 寸、最长 7 寸（长针）', () => {\n  const cuns = NEEDLES.map((x) => x.cun);\n  assert.strictEqual(Math.min(...cuns), 1.6);\n  assert.strictEqual(Math.max(...cuns), 7);\n});\n\ntest('折算给区间不给点值：1.6 寸 ≈ 3.70–3.76 cm', () => {\n  const c = toCm(1.6);\n  assert.deepStrictEqual(c, { min: 3.7, max: 3.76 });\n  assert.notStrictEqual(c.min, c.max, '点值等于把不确定性藏起来');\n});\n\ntest('非正长度抛错', () => {\n  assert.throws(() => toCm(0), /正数/);\n});\n\ntest('按用途选针：「脓」同时命中锋针与铍针，不许只给一支', () => {\n  const r = pick('脓').map((x) => x.name);\n  assert.deepStrictEqual(r.sort(), ['铍针', '锋针'].sort());\n});\n\ntest('无命中返回空数组，不返回最相近的一支', () => {\n  assert.deepStrictEqual(pick('不存在的用途'), []);\n  assert.throws(() => pick('  '), /不能为空/);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "「九针」是按什么分的？",
+          "options": [
+            "同一支针的九种粗细",
+            "按形制与用途分的九种针具",
+            "按进针深度分的九档",
+            "按病人体质分的九类"
+          ],
+          "correct": 1,
+          "explanation": "形制决定用途，长度只是形制的一部分；最短的三支用途完全不同。"
+        },
+        {
+          "stage": "check",
+          "question": "九针中长度最长的是哪一支？",
+          "options": [
+            "铍针（4 寸）",
+            "大针（4 寸）",
+            "长针（7 寸）",
+            "鍉针（3.5 寸）"
+          ],
+          "correct": 2,
+          "explanation": "长针七寸，专为深痹、远痹。"
+        },
+        {
+          "stage": "check",
+          "question": "《灵枢·九针十二原》与《灵枢·官针》各给了九针的什么？",
+          "options": [
+            "两篇内容重复",
+            "前者给形制与用途，后者给取法与本治（主治）",
+            "前者给主治，后者给禁忌",
+            "前者给图，后者给剂量"
+          ],
+          "correct": 1,
+          "explanation": "两篇各说一半，合起来才是完整规格表。"
+        },
+        {
+          "stage": "check",
+          "question": "「一寸六分」折算成厘米，为什么只能是区间？",
+          "options": [
+            "因为计算器精度不够",
+            "汉尺实测本身有分布，寸在不同时期不等值",
+            "因为原文抄错了",
+            "因为寸是重量单位"
+          ],
+          "correct": 1,
+          "explanation": "给点值等于把不确定性藏起来；区间才是诚实表达。"
+        },
+        {
+          "stage": "post",
+          "question": "按本课的实现，检索「脓」应返回？",
+          "options": [
+            "只返回铍针",
+            "铍针与锋针（各自带原文依据）",
+            "返回空",
+            "返回大针"
+          ],
+          "correct": 1,
+          "explanation": "锋针「泻热出血、痈脓」，铍针「取大脓」；多候选才可鉴别。"
+        },
+        {
+          "stage": "post",
+          "question": "本章的用途表最需要提醒的边界是？",
+          "options": [
+            "九针已经失传",
+            "原文的「主某病」是归纳，不是适应证清单，且不含刺法禁忌",
+            "长度单位不统一，无参考价值",
+            "九针只用于外科"
+          ],
+          "correct": 1,
+          "explanation": "用途在《官针》《刺节真邪》等篇还有展开；本章只取两篇。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-lingshu-jiuzhen.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/09-lingshu-jiuzhen/outputs/prompt-lingshu-jiuzhen.md",
+        "title": "九针选针助手",
+        "description": null,
+        "chars": 642,
+        "body": "# 九针选针助手\n\n## 用途\n\n读《灵枢》时把「九针」当成**形制—用途**的对应表来用：给定部位与目的，返回候选针具、原文依据与不确定项。\n用于**备课、条文对读、工具史梳理**。不用于实际选针操作。\n\n## 提示词\n\n```text\n你是内经课的助教。下面是操作需求（部位 + 目的）。请只做两件事：给候选针、给原文依据。\n\n规则：\n1. 候选针只能来自《灵枢·九针十二原》《灵枢·官针》两篇的措辞，不扩充适应证。\n2. 每支针必须同时给出：形态描述（原文）、长度（寸）、折算区间（cm，给区间不给点值）、出处到篇名。\n3. 命中多支时全部列出，并说明差异（形制差异 > 长度差异）。\n4. 折算必须附一句「汉制寸有分布，区间用于读原文；临床按现行 mm 规格」。\n5. 不写进针深度、角度、禁忌（另章）。\n\n输出格式：\n【候选】1) <针名>：<形制>；<长度> 寸（≈<min>–<max> cm）；依据《…》｜适合：…\n【差异】…\n【不确定项】…\n```\n\n## 使用示例\n\n输入：化脓性痈肿，需排脓。\n\n输出：【候选】1) 铍针：末如剑锋、广二分半；4 寸（≈9.24–9.40 cm）；依据《灵枢·官针》｜适合：取大脓\n2) 锋针：刃三隅；1.6 寸（≈3.70–3.76 cm）；依据《灵枢·九针十二原》｜适合：泻热出血、痈脓\n【差异】铍针为切开排脓，锋针为放血泻热，长度差三倍源于用途不同。\n\n## 为什么这样限制\n\n- 只认两篇：九针用途散见多篇，混引会把不同时代的用法叠成一个「标准」。\n- 给区间：汉尺折算的分布是真实存在的，写点值是伪精确。\n- 列差异：九针的价值在形制对应，不在名字。\n"
+      },
+      {
+        "name": "skill-lingshu-jiuzhen.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/09-lingshu-jiuzhen/outputs/skill-lingshu-jiuzhen.md",
+        "title": "lingshu-jiuzhen",
+        "description": "按形制—用途查九针：给候选、原文依据与折算区间，不外推适应证",
+        "chars": 546,
+        "body": "---\nname: lingshu-jiuzhen\ndescription: 按形制—用途查九针：给候选、原文依据与折算区间，不外推适应证\nversion: 0.1.0\n---\n\n# lingshu-jiuzhen\n\n## 何时使用\n\n- 读到「九针」时要把名字落回形制与用途\n- 备课：对比某两支针（如锋针 vs 铍针）的差异\n- 工具史梳理：某一类操作（放血、排脓、深刺）对应哪支针\n\n## 不适用\n\n- 实际选针与操作（临床按现行 mm 规格与规范）\n- 需要刺法禁忌、进针深度（另章：腧穴学·危险穴位）\n- 九针之外的刺法（五刺、九刺、十二节刺）\n\n## 步骤\n\n1. **定目的**：泻热出血 / 排脓 / 摩分间 / 深刺 / 泻水。\n2. **查表**：九针各条形制 + 长度 + 用途（来源《九针十二原》《官针》）。\n3. **给区间**：寸 × [2.31, 2.35] cm。\n4. **列差异**：多候选时先讲形制差异，再讲长度。\n5. **标不确定**：折算区间、原文归纳性、适应证未展开。\n\n## 输出模板\n\n```text\n【候选】1) <针>：<形制>；<寸>（≈<min>–<max> cm）；《…》｜…\n【差异】…\n【不确定项】…\n【提醒】区间用于读原文；临床按现行规格。\n```\n\n## 质量判据\n\n- 每支针都有形制描述与出处\n- 折算写成区间\n- 没有把「主某病」写成适应证\n\n> 本技能输出为教学辅助，不构成针具选择或操作建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "01-zhongyi/07-shanghanlun/01-chengshu-banben": {
+    "key": "01-zhongyi/07-shanghanlun/01-chengshu-banben",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "07-shanghanlun",
+    "subjectTitle": "伤寒论",
+    "chapterSlug": "01-chengshu-banben",
+    "n": 1,
+    "title": "第 1 章 · 《伤寒论》的成书、版本与条文结构：1760 条不是 398 条",
+    "motto": "「撰用《素问》《九卷》《八十一难》《阴阳大论》……为《伤寒杂病论》合十六卷。」——《伤寒论·自序》",
+    "problem": "你听说《伤寒论》有 398 条，随口引用「第 35 条麻黄汤」，却不知道这个条号来自宋本编次；换一个底本，同一条可能编在第 72 条，你的引用立刻失效。",
+    "roots": "环境逼迫(临床带教与论文都要报条号，报错等于没依据) + 知识积累(版本与编次实测 × 声明数与实测数分离 = 一套换底本也不会错位的引用方式)",
+    "html": "<h1 id=\"第-1-章-伤寒论-的成书-版本与条文结构-1760-条不是-398-条\">第 1 章 · 《伤寒论》的成书、版本与条文结构：1760 条不是 398 条</h1>\n<blockquote><p><strong>MOTTO:</strong> 「撰用《素问》《九卷》《八十一难》《阴阳大论》……为《伤寒杂病论》合十六卷。」——《伤寒论·自序》</p>\n<p><strong>PROBLEM:</strong> 你听说《伤寒论》有 398 条，随口引用「第 35 条麻黄汤」，却不知道这个条号来自宋本编次；换一个底本，同一条可能编在第 72 条，你的引用立刻失效。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(临床带教与论文都要报条号，报错等于没依据) + 知识积累(版本与编次实测 × 声明数与实测数分离 = 一套换底本也不会错位的引用方式)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>伤寒论</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>01 / 12</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>说清「宋本 398 条」与「本仓库底本 1760 条」为什么不同：前者是宋人校定编次，后者是刻本<strong>篇内连续编次</strong></li><li>用实测数字描述底本的骨架：27 篇 · 9 域 · 1760 条 · 71,496 字</li><li>解释「声明条数」与「实测条数」为什么要分两列存，并举出本底本里不一致的篇</li><li>写一个引用器：给定底本、篇名与篇内条号，返回条文原文；不给条号就拒绝</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"底本的骨架-本仓库实测\">底本的骨架（本仓库实测）</h3>\n<p><code>standards/shanghan/底本.json</code>（源：识典古籍刻本 version 6，三级对象：篇 obj 27 · 章 obj · 条 obj）：</p>\n<div class=\"table-wrap\"><table><thead><tr><th>语义域</th><th>篇数</th><th>条数</th><th>字数</th></tr></thead><tbody><tr><td>汗吐下诸可不可</td><td>9</td><td>587</td><td>22,186</td></tr><tr><td>太阳病</td><td>4</td><td>566</td><td>22,297</td></tr><tr><td>太阴病</td><td>3</td><td>194</td><td>6,591</td></tr><tr><td>阳明病</td><td>2</td><td>134</td><td>5,356</td></tr><tr><td>少阳病</td><td>3</td><td>64</td><td>2,253</td></tr><tr><td>脉法·伤寒例</td><td>1</td><td>61</td><td>3,991</td></tr><tr><td>序跋·目录</td><td>1</td><td>90</td><td>6,077</td></tr><tr><td>霍乱·差后劳复</td><td>3</td><td>34</td><td>901</td></tr><tr><td>厥阴病</td><td>1</td><td>30</td><td>1,418</td></tr><tr><td><strong>合计</strong></td><td><strong>27</strong></td><td><strong>1,760</strong></td><td><strong>71,496</strong></td></tr></tbody></table></div>\n<p>两个反直觉之处：<strong>其一</strong>，最大的域不是太阳病而是「汗吐下诸可不可」（587 条，9 篇）——那是按治法编的专题汇编，不是按病编；<strong>其二</strong>，厥阴病只有 30 条、1 篇，是全书最小的域，却被后世当作辨证的最后一环。</p>\n<h3 id=\"398-与-1760-条号是版本属性\">398 与 1760：条号是版本属性</h3>\n<p>宋本 398 条是<strong>宋人校定后的通行编号</strong>，跨篇连续；本底本是刻本，条号在<strong>篇内连续</strong>。同一个条文的「第 N 条」在两个体系里必然不同。</p>\n<p>所以合格的引用不是「第 35 条」，而是<strong>《伤寒论·辨太阳病脉证并治中》篇内第 72 条</strong>（本底本）——篇名稳定，条号随底本走。这与内经「篇名锚定、序号不稳」是同一条原则。</p>\n<h3 id=\"声明数与实测数必须分开存\">声明数与实测数必须分开存</h3>\n<p>底本文件里每篇同时记 <code>declared</code>（源表声称的条数与字数）与 <code>actual</code>（逐条解析后的实测值）。实测结果：<strong>27 篇里有 18 篇两者不一致</strong>，其中 3 篇条数差 1（如某篇声明 79 条、实测 78 条），其余是字数差几十字（标点与夹注口径）。</p>\n<p>这不是数据脏，而是<strong>必须留下的证据</strong>：如果只存一个数，你永远不知道当年是谁算错的。分两列存，差异就变成了可核对的对象。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js：底本结构校验 + 域统计 + 篇内条号引用\nconst 底本 = require('../../../../standards/shanghan/底本.json');\nfunction domains() { /* 按域汇总篇/条/字 */ }\nfunction drift() { /* declared ≠ actual 的篇清单（含差值） */ }\nfunction tiao(pianName, n) { /* 篇内第 n 条原文；缺参数即报错，不猜 */ }</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>domains()</code> 输出 9 域 27 篇 1760 条 71,496 字；<code>drift()</code> 列出 18 篇并给出差值；<code>tiao('辨太阳病脉证并治中', 72)</code> 返回「太阳与阳明合病者，必自下利，葛根汤主之」。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>本仓库底本不是校勘本</strong>。它是电子整理本（简体照录，繁体原字另存备份），异体字与错简未校；临床与论文引用仍须回到权威校勘本。</li><li><strong>1760 条 ≠ 1760 个独立方证</strong>。刻本把方后注、煎服法也计入条数，所以条数偏大；拿条数当「方证数量」是误读。</li><li><strong>域划分是本仓库的整理口径</strong>，不是仲景原文的分类；原文没有「语义域」这一层。</li><li><strong>条号只在声明了底本的前提下有效</strong>。任何引用都必须带底本标识，否则无法复核。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 本章条数与字数由 <code>standards/shanghan/底本.json</code> 逐条实测，可复算；版本判断与校勘不属本章范围，方药使用须由执业医师依据权威版本与临床实际决定。本章不构成诊疗建议。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>找出条数差 1 的那几篇，逐篇说明差在哪一条（提示：看 <code>items</code> 的最后几条）。</li><li>若要把宋本 398 条与底本 1760 条做映射，你需要哪些信息？缺什么就无法映射？</li><li>把 <code>tiao()</code> 改成「不传条号则返回该篇全部条文」，说明这会带来什么风险。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>「398 条」这个数字被引用了几百年，却几乎没人同时说出它属于哪个版本。版本意识不是文献学的洁癖，它决定你引的这句话明天还能不能被找到。</p>",
+    "markdown": "# 第 1 章 · 《伤寒论》的成书、版本与条文结构：1760 条不是 398 条\n\n> **MOTTO:** 「撰用《素问》《九卷》《八十一难》《阴阳大论》……为《伤寒杂病论》合十六卷。」——《伤寒论·自序》\n>\n> **PROBLEM:** 你听说《伤寒论》有 398 条，随口引用「第 35 条麻黄汤」，却不知道这个条号来自宋本编次；换一个底本，同一条可能编在第 72 条，你的引用立刻失效。\n>\n> **双根因定位:** 环境逼迫(临床带教与论文都要报条号，报错等于没依据) + 知识积累(版本与编次实测 × 声明数与实测数分离 = 一套换底本也不会错位的引用方式)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 伤寒论 |\n| 院系 | 中医系 |\n| 章序号 | 01 / 12 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 说清「宋本 398 条」与「本仓库底本 1760 条」为什么不同：前者是宋人校定编次，后者是刻本**篇内连续编次**\n- 用实测数字描述底本的骨架：27 篇 · 9 域 · 1760 条 · 71,496 字\n- 解释「声明条数」与「实测条数」为什么要分两列存，并举出本底本里不一致的篇\n- 写一个引用器：给定底本、篇名与篇内条号，返回条文原文；不给条号就拒绝\n\n## 核心概念\n\n### 底本的骨架（本仓库实测）\n\n`standards/shanghan/底本.json`（源：识典古籍刻本 version 6，三级对象：篇 obj 27 · 章 obj · 条 obj）：\n\n| 语义域 | 篇数 | 条数 | 字数 |\n|---|--:|--:|--:|\n| 汗吐下诸可不可 | 9 | 587 | 22,186 |\n| 太阳病 | 4 | 566 | 22,297 |\n| 太阴病 | 3 | 194 | 6,591 |\n| 阳明病 | 2 | 134 | 5,356 |\n| 少阳病 | 3 | 64 | 2,253 |\n| 脉法·伤寒例 | 1 | 61 | 3,991 |\n| 序跋·目录 | 1 | 90 | 6,077 |\n| 霍乱·差后劳复 | 3 | 34 | 901 |\n| 厥阴病 | 1 | 30 | 1,418 |\n| **合计** | **27** | **1,760** | **71,496** |\n\n两个反直觉之处：**其一**，最大的域不是太阳病而是「汗吐下诸可不可」（587 条，9 篇）——那是按治法编的专题汇编，不是按病编；**其二**，厥阴病只有 30 条、1 篇，是全书最小的域，却被后世当作辨证的最后一环。\n\n### 398 与 1760：条号是版本属性\n\n宋本 398 条是**宋人校定后的通行编号**，跨篇连续；本底本是刻本，条号在**篇内连续**。同一个条文的「第 N 条」在两个体系里必然不同。\n\n所以合格的引用不是「第 35 条」，而是**《伤寒论·辨太阳病脉证并治中》篇内第 72 条**（本底本）——篇名稳定，条号随底本走。这与内经「篇名锚定、序号不稳」是同一条原则。\n\n### 声明数与实测数必须分开存\n\n底本文件里每篇同时记 `declared`（源表声称的条数与字数）与 `actual`（逐条解析后的实测值）。实测结果：**27 篇里有 18 篇两者不一致**，其中 3 篇条数差 1（如某篇声明 79 条、实测 78 条），其余是字数差几十字（标点与夹注口径）。\n\n这不是数据脏，而是**必须留下的证据**：如果只存一个数，你永远不知道当年是谁算错的。分两列存，差异就变成了可核对的对象。\n\n## BUILD IT：从零实现\n\n```js\n// code/main.js：底本结构校验 + 域统计 + 篇内条号引用\nconst 底本 = require('../../../../standards/shanghan/底本.json');\nfunction domains() { /* 按域汇总篇/条/字 */ }\nfunction drift() { /* declared ≠ actual 的篇清单（含差值） */ }\nfunction tiao(pianName, n) { /* 篇内第 n 条原文；缺参数即报错，不猜 */ }\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：`domains()` 输出 9 域 27 篇 1760 条 71,496 字；`drift()` 列出 18 篇并给出差值；`tiao('辨太阳病脉证并治中', 72)` 返回「太阳与阳明合病者，必自下利，葛根汤主之」。\n\n## 代价与边界\n\n- **本仓库底本不是校勘本**。它是电子整理本（简体照录，繁体原字另存备份），异体字与错简未校；临床与论文引用仍须回到权威校勘本。\n- **1760 条 ≠ 1760 个独立方证**。刻本把方后注、煎服法也计入条数，所以条数偏大；拿条数当「方证数量」是误读。\n- **域划分是本仓库的整理口径**，不是仲景原文的分类；原文没有「语义域」这一层。\n- **条号只在声明了底本的前提下有效**。任何引用都必须带底本标识，否则无法复核。\n\n> **免责声明：** 本章条数与字数由 `standards/shanghan/底本.json` 逐条实测，可复算；版本判断与校勘不属本章范围，方药使用须由执业医师依据权威版本与临床实际决定。本章不构成诊疗建议。\n\n## 练习\n\n1. 找出条数差 1 的那几篇，逐篇说明差在哪一条（提示：看 `items` 的最后几条）。\n2. 若要把宋本 398 条与底本 1760 条做映射，你需要哪些信息？缺什么就无法映射？\n3. 把 `tiao()` 改成「不传条号则返回该篇全部条文」，说明这会带来什么风险。\n\n## 进阶思考\n\n「398 条」这个数字被引用了几百年，却几乎没人同时说出它属于哪个版本。版本意识不是文献学的洁癖，它决定你引的这句话明天还能不能被找到。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 《伤寒论》底本结构校验：域统计 · 声明/实测差异 · 篇内条号引用\n *\n *   node code/main.js\n *\n * 口径：\n *   · 条 = 底本 items 的编号单位（刻本把方后注、煎服法也计在内，故 1760 条 > 宋本 398 条）\n *   · declared = 源表声称值；actual = 逐条解析后的实测值。两者分开存，差异本身是证据。\n *   · 条号只在**声明底本**的前提下有效（本底本篇章内连续编号）\n */\n\nconst path = require('node:path');\n\nconst ROOT = path.resolve(__dirname, '../../../../../..');\nconst SRC = path.join(ROOT, 'standards/shanghan/底本.json');\n\nfunction load() {\n  return JSON.parse(require('node:fs').readFileSync(SRC, 'utf8'));\n}\n\n/** 按语义域汇总 */\nfunction domains(j = load()) {\n  return j.domains.map((d) => ({\n    name: d.name, pian: d.pianist, tiao: d.actualTiao, chars: d.chars,\n  }));\n}\n\n/** declared ≠ actual 的篇（含差值），这是「源表数字与实测不一致」的可核对证据 */\nfunction drift(j = load()) {\n  return j.pian\n    .filter((p) => p.declared.tiao !== p.actual.tiao || p.declared.chars !== p.actual.chars)\n    .map((p) => ({\n      no: p.no,\n      pian: p.pian,\n      tiaoDelta: p.actual.tiao - p.declared.tiao,\n      charsDelta: p.actual.chars - p.declared.chars,\n    }));\n}\n\n/**\n * 篇内条号引用。\n * @param {string} pianName 篇名（允许片段，但必须唯一命中）\n * @param {number} n 篇内条号（1 起）\n */\nfunction tiao(pianName, n, j = load()) {\n  if (!pianName || !Number.isInteger(n) || n < 1) {\n    throw new Error('必须同时给出篇名与篇内条号（不给条号就是猜，猜出来的引用无法复核）');\n  }\n  const hits = j.pian.filter((p) => p.pian.includes(pianName));\n  if (hits.length === 0) throw new Error(`没有这一篇: ${pianName}`);\n  if (hits.length > 1) {\n    throw new Error(`篇名不唯一（命中 ${hits.length} 篇）：${hits.map((p) => p.pian).join(' / ')}`);\n  }\n  const it = hits[0].items.find((x) => x.no === n);\n  if (!it) throw new Error(`${hits[0].pian} 只有 ${hits[0].items.length} 条，没有第 ${n} 条`);\n  return { pian: hits[0].pian, no: it.no, text: it.text };\n}\n\nfunction main() {\n  const j = load();\n  console.log(`底本：${j.counts.pian} 篇 · ${j.counts.tiao} 条 · ${j.counts.chars} 字 · ${j.counts.domains} 域`);\n  console.log('\\n语义域（按条数降序）：');\n  for (const d of domains(j).sort((a, b) => b.tiao - a.tiao)) {\n    console.log(`  ${d.name.padEnd(9, '　')} 篇 ${String(d.pian).padStart(2)} · 条 ${String(d.tiao).padStart(4)} · ${d.chars} 字`);\n  }\n  const d = drift(j);\n  console.log(`\\n声明数与实测数不一致的篇：${d.length}/${j.counts.pian}`);\n  for (const x of d.slice(0, 5)) {\n    console.log(`  第${x.no}篇 ${x.pian}｜条差 ${x.tiaoDelta >= 0 ? '+' : ''}${x.tiaoDelta}｜字差 ${x.charsDelta >= 0 ? '+' : ''}${x.charsDelta}`);\n  }\n  const t = tiao('辨太阳病脉证并治中', 72);\n  console.log(`\\n引用：${t.pian} 篇内第 ${t.no} 条 → ${t.text.slice(0, 40)}…`);\n  console.log('\\n提醒：条号是版本属性，引用必须带底本标识。本输出为教学样例。');\n}\n\nif (require.main === module) main();\nmodule.exports = { domains, drift, tiao, load, SRC };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { domains, drift, tiao, load } = require('./main.js');\n\ntest('底本规模：27 篇 · 1760 条 · 71496 字 · 9 域', () => {\n  const j = load();\n  assert.strictEqual(j.counts.pian, 27);\n  assert.strictEqual(j.counts.tiao, 1760);\n  assert.strictEqual(j.counts.chars, 71496);\n  assert.strictEqual(j.counts.domains, 9);\n});\n\ntest('域汇总条数之和 = 全书条数（域划分必须闭合）', () => {\n  const sum = domains().reduce((a, d) => a + d.tiao, 0);\n  assert.strictEqual(sum, 1760);\n});\n\ntest('最大域是「汗吐下诸可不可」，不是太阳病', () => {\n  const top = domains().sort((a, b) => b.tiao - a.tiao)[0];\n  assert.strictEqual(top.name, '汗吐下诸可不可');\n});\n\ntest('declared ≠ actual 的篇有 18 篇，差异可逐篇列出', () => {\n  const d = drift();\n  assert.strictEqual(d.length, 18);\n  assert.ok(d.every((x) => Number.isInteger(x.tiaoDelta) && Number.isInteger(x.charsDelta)));\n});\n\ntest('篇内条号引用：第 72 条是葛根汤条', () => {\n  const t = tiao('辨太阳病脉证并治中', 72);\n  assert.match(t.text, /太阳与阳明合病/);\n  assert.match(t.text, /葛根汤主之/);\n});\n\ntest('不给条号 / 条号越界 / 篇名不唯一，都必须抛错（引用不许猜）', () => {\n  assert.throws(() => tiao('辨太阳病脉证并治中'), /篇名与篇内条号/);\n  assert.throws(() => tiao('辨太阳病脉证并治中', 99999), /没有第/);\n  assert.throws(() => tiao('辨太阳病脉证并治', 1), /篇名不唯一/);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "通行的「《伤寒论》398 条」是哪种编次？",
+          "options": [
+            "仲景原书编次",
+            "宋人校定后的通行编号（跨篇连续）",
+            "本仓库底本的篇内编号",
+            "日本康平本的编号"
+          ],
+          "correct": 1,
+          "explanation": "398 条属宋本体系；本仓库底本是刻本，篇内连续编号，合计 1760 条。"
+        },
+        {
+          "stage": "check",
+          "question": "本仓库底本的规模是？",
+          "options": [
+            "27 篇 398 条",
+            "27 篇 1760 条",
+            "22 篇 1122 条",
+            "10 卷 512 条"
+          ],
+          "correct": 1,
+          "explanation": "27 篇 · 1760 条 · 71,496 字 · 9 域，可逐条复算。"
+        },
+        {
+          "stage": "check",
+          "question": "按本仓库的域划分，条数最多的域是？",
+          "options": [
+            "太阳病",
+            "厥阴病",
+            "汗吐下诸可不可",
+            "阳明病"
+          ],
+          "correct": 2,
+          "explanation": "汗吐下诸可不可 9 篇 587 条；它是按治法编的专题汇编，不是按病编。"
+        },
+        {
+          "stage": "check",
+          "question": "为什么 declared（声明条数）与 actual（实测条数）要分两列存？",
+          "options": [
+            "为了兼容旧版文件",
+            "差异本身是证据：只存一个数就永远不知道当年是谁算错的",
+            "因为 JSON 不支持单列",
+            "为了让文件更大"
+          ],
+          "correct": 1,
+          "explanation": "本底本 27 篇里有 18 篇两者不一致，分列后差异成为可核对对象。"
+        },
+        {
+          "stage": "post",
+          "question": "合格的条号引用应该写成？",
+          "options": [
+            "第 35 条",
+            "《伤寒论·辨太阳病脉证并治中》篇内第 72 条（附底本标识）",
+            "卷三第 72 条",
+            "葛根汤那条"
+          ],
+          "correct": 1,
+          "explanation": "篇名稳定、条号随底本；不写底本的条号明天可能指向另一条。"
+        },
+        {
+          "stage": "post",
+          "question": "1760 条为什么不能当作「1760 个方证」？",
+          "options": [
+            "因为条文有重复",
+            "因为刻本把方后注、煎服法也计入条数",
+            "因为有些条是后人加的",
+            "因为条数统计错了"
+          ],
+          "correct": 1,
+          "explanation": "条数是编排单位，不是方证数量；混用会把体量误读成内容量。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-chengshu-banben.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/01-chengshu-banben/outputs/prompt-chengshu-banben.md",
+        "title": "伤寒条号引用器",
+        "description": null,
+        "chars": 593,
+        "body": "# 伤寒条号引用器\n\n## 用途\n\n把一句「伤寒第 N 条」补成可核对的引用：定位到**篇 + 篇内条号 + 底本标识**，并给出原文。\n用于**论文与讲稿引文核对、备课、条文检索**。不做方证推演。\n\n## 提示词\n\n```text\n你是伤寒论文献的引文核对助手。下面是文稿里的条文引用。\n\n规则：\n1. 每条引用必须写成「《伤寒论·篇名》篇内第 N 条 + 底本标识」；缺底本标识就标「不可复核」。\n2. 未经确认属于宋本 398 条编号的，不许写「第 N 条」这个裸编号。\n3. 引文必须逐字返回检索到的原文，不改写、不节略而不标注；节略处以「……」标示。\n4. 一条引用同时命中多篇（如「辨太阳病脉证并治」可指上/中/下/提纲起）时，全部列出，让人选定。\n5. 禁止补写条文里没有的症状或方名。\n\n输出格式：\n【原引】…\n【定位】《伤寒论·X》篇内第 N 条｜底本：…\n【原文】…\n【歧义】…（无则写「无」）\n【不可复核项】…\n```\n\n## 使用示例\n\n输入：「伤寒第 72 条：太阳与阳明合病，葛根汤主之。」\n\n输出：【定位】《伤寒论·辨太阳病脉证并治中》篇内第 72 条（本仓库底本）\n【原文】太阳与阳明合病者，必自下利，葛根汤主之。（后接方后注）\n【歧义】若按宋本 398 条体系，同一条文的编号不同，须先确认底本。\n\n## 为什么这样限制\n\n- 要求底本标识：条号是版本属性，不标底本就无法复核。\n- 歧义全列：太阳病有 4 篇，篇名片段相同，单选等于替人做决定。\n- 原文逐字：改写的「条文」既不能核对，也不能当证据。\n"
+      },
+      {
+        "name": "skill-chengshu-banben.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/01-chengshu-banben/outputs/skill-chengshu-banben.md",
+        "title": "chengshu-banben",
+        "description": "伤寒条文引用核对：补到篇+篇内条号+底本标识，原文逐字返回，歧义全列",
+        "chars": 556,
+        "body": "---\nname: chengshu-banben\ndescription: 伤寒条文引用核对：补到篇+篇内条号+底本标识，原文逐字返回，歧义全列\nversion: 0.1.0\n---\n\n# chengshu-banben\n\n## 何时使用\n\n- 文稿里出现「伤寒第 N 条」，需要确认底本与篇次\n- 备课检索条文原文（含方后注）\n- 发现同一句在两本书里编号不同，需要留下版本说明\n\n## 不适用\n\n- 需要方证推演或剂量折算（另章）\n- 只记得条文大意、没有任何原文词句时（此时应写「不可复核」）\n- 需要宋本 398 条与底本的逐条映射（本仓库未建该映射表）\n\n## 步骤\n\n1. **取原文特征词**（如「太阳与阳明合病」），不要用编号当唯一线索。\n2. **检索篇**：命中多篇则全列（太阳病有上/中/下/提纲起四篇）。\n3. **定条号**：篇内连续编号；同时记 declared 与 actual 条数是否一致。\n4. **标底本**：写明识别古籍刻本 version 与三级对象编号。\n5. **逐字返原文**，节略处标「……」；方后注单列。\n\n## 输出模板\n\n```text\n【定位】《伤寒论·X》篇内第 N 条｜底本：…\n【原文】…\n【方后注】…（无则写「无」）\n【歧义】…\n```\n\n## 质量判据\n\n- 每条引用都带底本标识\n- 没有裸编号（「第 35 条」这种）\n- 原文与方后注分开，节略有标记\n\n> 本技能输出为文献核对辅助，不构成诊疗建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "01-zhongyi/07-shanghanlun/09-hebing-bingbing": {
+    "key": "01-zhongyi/07-shanghanlun/09-hebing-bingbing",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "07-shanghanlun",
+    "subjectTitle": "伤寒论",
+    "chapterSlug": "09-hebing-bingbing",
+    "n": 9,
+    "title": "第 9 章 · 合病与并病：两经同时病，还是一个没走一个又来",
+    "motto": "「太阳与阳明合病者，必自下利，葛根汤主之。」——《伤寒论·辨太阳病脉证并治中》",
+    "problem": "你在病历上写「太阳阳明合病」，但被问「合病和并病差在哪、这条为什么用葛根汤而不是麻黄汤」时，只能说「都是两经病」。",
+    "roots": "环境逼迫(带教提问要一句话说清区别) + 知识积累(原文计数 × 经名配对 = 一份能按「哪两经」检索、能报出条文的传变分类)",
+    "html": "<h1 id=\"第-9-章-合病与并病-两经同时病-还是一个没走一个又来\">第 9 章 · 合病与并病：两经同时病，还是一个没走一个又来</h1>\n<blockquote><p><strong>MOTTO:</strong> 「太阳与阳明合病者，必自下利，葛根汤主之。」——《伤寒论·辨太阳病脉证并治中》</p>\n<p><strong>PROBLEM:</strong> 你在病历上写「太阳阳明合病」，但被问「合病和并病差在哪、这条为什么用葛根汤而不是麻黄汤」时，只能说「都是两经病」。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(带教提问要一句话说清区别) + 知识积累(原文计数 × 经名配对 = 一份能按「哪两经」检索、能报出条文的传变分类)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>伤寒论</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>09 / 12</td></tr><tr><td>所属阶段</td><td>🌳 壮·鼎盛</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>用一句话区分合病（两经或三经<strong>同时</strong>发病）与并病（一经<strong>未罢</strong>又见他经）</li><li>按本仓库底本实测：合病 29 处、并病 16 处，并说出最集中的经名配对</li><li>说清「太阳阳明合病用葛根汤」的道理：病位在表里之间、以下利为主症，故不用麻黄汤峻汗</li><li>写出一个解析器：从条文里认出「哪两经 + 合病/并病 + 主方」，并保留出处</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"定义-同时-vs-先后\">定义：同时 vs 先后</h3>\n<ul><li><strong>合病</strong>：两经或三经的病证<strong>同时出现</strong>，如「太阳阳明合病」（表证与里证同见）。</li><li><strong>并病</strong>：一经病证<strong>未罢</strong>，另一经证候<strong>又起</strong>，如太阳未解而阳明已见，常以双解为法。</li></ul>\n<p>差别不在「几经」，而在<strong>时间结构</strong>：合病是并列，并病是叠加。这个差别决定了治法能不能「先解其一」——并病可以分先后，合病必须同时兼顾。</p>\n<h3 id=\"实测-合病集中在太阳-阳明\">实测：合病集中在太阳+阳明</h3>\n<p>按 <code>standards/shanghan/底本.json</code> 逐条扫描（1760 条）：</p>\n<div class=\"table-wrap\"><table><thead><tr><th>类型</th><th>经名配对</th><th>条数</th></tr></thead><tbody><tr><td>合病</td><td>太阳 + 阳明</td><td>14</td></tr><tr><td>合病</td><td>阳明 + 少阳</td><td>5</td></tr><tr><td>合病</td><td>太阳 + 少阳</td><td>3</td></tr><tr><td>合病</td><td>未标经名</td><td>5</td></tr><tr><td>合病</td><td>仅标一经</td><td>2</td></tr><tr><td>并病</td><td>太阳 + 少阳</td><td>7</td></tr><tr><td>并病</td><td>仅标太阳</td><td>5</td></tr><tr><td>并病</td><td>太阳 + 阳明</td><td>4</td></tr></tbody></table></div>\n<p>合病 29 处、并病 16 处，合计 45 处。两个可直接观察到的偏斜：<strong>合病最常出现在太阳+阳明</strong>（14/29），<strong>并病最常出现在太阳+少阳</strong>（7/16）。这不是理论推演，是底本里条文自己说的话。</p>\n<h3 id=\"为什么是葛根汤\">为什么是葛根汤</h3>\n<p>「太阳与阳明合病者，必自下利，葛根汤主之。」（篇内第 72 条）——表未解而里已受，主症是下利。葛根汤由桂枝汤加麻黄、葛根而成：解表而不峻汗，升津而止利。若见「喘而胸满」而<strong>无下利</strong>，同篇第 8 条则说「不可下，宜麻黄汤」——同一合病，主症不同，方就不同。这正是「合病必须同时兼顾」的具体样子。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js：扫描底本，抽「合病/并病 + 经名配对 + 方名」，按配对计数\nconst JING = ['太阳', '阳明', '少阳', '太阴', '少阴', '厥阴'];\nfunction scan() { /* 返回 [{kind, pair, pian, no, text}] */ }\nfunction tally() { /* 按 pair 计数，不合并「未标经」 */ }\nfunction find(pair) { /* 按配对检索，返回全部命中条文 */ }</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>tally()</code> 输出合病 29 / 并病 16，其中「合病:太阳+阳明」14 条；<code>find('太阳+阳明')</code> 返回篇内第 4、5、8、72、73 条等，并带出葛根汤与葛根加半夏汤。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>按经名关键词统计有假阳/假阴</strong>。底本 5 处合病条文没写具体经名（内文以「二阳」「三阳」指代），本统计把它们单列，不并入任何配对。</li><li><strong>「合病/并病」不等于「多证并存」</strong>。前者是六经层面的术语，后者是现代病历里的泛称；混用会让术语失去分辨力。</li><li><strong>条文重复</strong>。刻本篇内编号重复出现同类条文（如第 4 与第 72 条内容近同），统计会重复计数；本章报的是<strong>条文处数</strong>，不是「病案数」。</li><li><strong>本章不判定患者属于哪种传变</strong>。传变判断需要病程、先后与转归，只能由医师依据四诊作出。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 本章条文与计数引自 <code>standards/shanghan/底本.json</code>（识典古籍刻本，可复核）；传变判断与用力须由执业医师依据权威校勘本与临床实际决定，本章不构成诊疗建议。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>找出那 5 处「未标经名」的合病条文，说明底本用什么词指代两经，并讨论能否安全补全。</li><li>用 <code>find('太阳+少阳')</code> 对比合病与并病两类命中，指出它们在主症与方药上的差异。</li><li>若要求「并病」必须出现先后次序词（如「未罢」「复」「转属」），你的正则该怎么改？会漏掉什么？</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>合病与并病的区分，本质是<strong>给病程建模</strong>：并列 vs 叠加。把它写成代码的第一课不是正则，而是承认一件事——条文里大量信息（主症、先后、转归）藏在上下文里，关键词只能捞起表层。</p>",
+    "markdown": "# 第 9 章 · 合病与并病：两经同时病，还是一个没走一个又来\n\n> **MOTTO:** 「太阳与阳明合病者，必自下利，葛根汤主之。」——《伤寒论·辨太阳病脉证并治中》\n>\n> **PROBLEM:** 你在病历上写「太阳阳明合病」，但被问「合病和并病差在哪、这条为什么用葛根汤而不是麻黄汤」时，只能说「都是两经病」。\n>\n> **双根因定位:** 环境逼迫(带教提问要一句话说清区别) + 知识积累(原文计数 × 经名配对 = 一份能按「哪两经」检索、能报出条文的传变分类)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 伤寒论 |\n| 院系 | 中医系 |\n| 章序号 | 09 / 12 |\n| 所属阶段 | 🌳 壮·鼎盛 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 用一句话区分合病（两经或三经**同时**发病）与并病（一经**未罢**又见他经）\n- 按本仓库底本实测：合病 29 处、并病 16 处，并说出最集中的经名配对\n- 说清「太阳阳明合病用葛根汤」的道理：病位在表里之间、以下利为主症，故不用麻黄汤峻汗\n- 写出一个解析器：从条文里认出「哪两经 + 合病/并病 + 主方」，并保留出处\n\n## 核心概念\n\n### 定义：同时 vs 先后\n\n- **合病**：两经或三经的病证**同时出现**，如「太阳阳明合病」（表证与里证同见）。\n- **并病**：一经病证**未罢**，另一经证候**又起**，如太阳未解而阳明已见，常以双解为法。\n\n差别不在「几经」，而在**时间结构**：合病是并列，并病是叠加。这个差别决定了治法能不能「先解其一」——并病可以分先后，合病必须同时兼顾。\n\n### 实测：合病集中在太阳+阳明\n\n按 `standards/shanghan/底本.json` 逐条扫描（1760 条）：\n\n| 类型 | 经名配对 | 条数 |\n|---|---|--:|\n| 合病 | 太阳 + 阳明 | 14 |\n| 合病 | 阳明 + 少阳 | 5 |\n| 合病 | 太阳 + 少阳 | 3 |\n| 合病 | 未标经名 | 5 |\n| 合病 | 仅标一经 | 2 |\n| 并病 | 太阳 + 少阳 | 7 |\n| 并病 | 仅标太阳 | 5 |\n| 并病 | 太阳 + 阳明 | 4 |\n\n合病 29 处、并病 16 处，合计 45 处。两个可直接观察到的偏斜：**合病最常出现在太阳+阳明**（14/29），**并病最常出现在太阳+少阳**（7/16）。这不是理论推演，是底本里条文自己说的话。\n\n### 为什么是葛根汤\n\n「太阳与阳明合病者，必自下利，葛根汤主之。」（篇内第 72 条）——表未解而里已受，主症是下利。葛根汤由桂枝汤加麻黄、葛根而成：解表而不峻汗，升津而止利。若见「喘而胸满」而**无下利**，同篇第 8 条则说「不可下，宜麻黄汤」——同一合病，主症不同，方就不同。这正是「合病必须同时兼顾」的具体样子。\n\n## BUILD IT：从零实现\n\n```js\n// code/main.js：扫描底本，抽「合病/并病 + 经名配对 + 方名」，按配对计数\nconst JING = ['太阳', '阳明', '少阳', '太阴', '少阴', '厥阴'];\nfunction scan() { /* 返回 [{kind, pair, pian, no, text}] */ }\nfunction tally() { /* 按 pair 计数，不合并「未标经」 */ }\nfunction find(pair) { /* 按配对检索，返回全部命中条文 */ }\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：`tally()` 输出合病 29 / 并病 16，其中「合病:太阳+阳明」14 条；`find('太阳+阳明')` 返回篇内第 4、5、8、72、73 条等，并带出葛根汤与葛根加半夏汤。\n\n## 代价与边界\n\n- **按经名关键词统计有假阳/假阴**。底本 5 处合病条文没写具体经名（内文以「二阳」「三阳」指代），本统计把它们单列，不并入任何配对。\n- **「合病/并病」不等于「多证并存」**。前者是六经层面的术语，后者是现代病历里的泛称；混用会让术语失去分辨力。\n- **条文重复**。刻本篇内编号重复出现同类条文（如第 4 与第 72 条内容近同），统计会重复计数；本章报的是**条文处数**，不是「病案数」。\n- **本章不判定患者属于哪种传变**。传变判断需要病程、先后与转归，只能由医师依据四诊作出。\n\n> **免责声明：** 本章条文与计数引自 `standards/shanghan/底本.json`（识典古籍刻本，可复核）；传变判断与用力须由执业医师依据权威校勘本与临床实际决定，本章不构成诊疗建议。\n\n## 练习\n\n1. 找出那 5 处「未标经名」的合病条文，说明底本用什么词指代两经，并讨论能否安全补全。\n2. 用 `find('太阳+少阳')` 对比合病与并病两类命中，指出它们在主症与方药上的差异。\n3. 若要求「并病」必须出现先后次序词（如「未罢」「复」「转属」），你的正则该怎么改？会漏掉什么？\n\n## 进阶思考\n\n合病与并病的区分，本质是**给病程建模**：并列 vs 叠加。把它写成代码的第一课不是正则，而是承认一件事——条文里大量信息（主症、先后、转归）藏在上下文里，关键词只能捞起表层。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 合病 / 并病扫描：从底本条文里抽「类型 + 经名配对 + 出处」\n *\n *   node code/main.js\n *\n * 口径（写在结论旁边）：\n *   · 计数单位是**条文处数**，不是病案数；刻本里同类条文重复出现会重复计数\n *   · 条文没写具体经名的（以「二阳」「三阳」指代）单列「未标经」，不并入任何配对\n *   · 只认六经名，不推断「太阳病」是否含阳明\n */\n\nconst path = require('node:path');\nconst fs = require('node:fs');\n\nconst ROOT = path.resolve(__dirname, '../../../../../..');\nconst SRC = path.join(ROOT, 'standards/shanghan/底本.json');\nconst JING = ['太阳', '阳明', '少阳', '太阴', '少阴', '厥阴'];\n\nfunction load() {\n  return JSON.parse(fs.readFileSync(SRC, 'utf8'));\n}\n\n/** 扫描全部条文，返回 [{kind, pair, pian, no, text}] */\nfunction scan(j = load()) {\n  const out = [];\n  for (const p of j.pian) {\n    for (const it of p.items) {\n      for (const kind of ['合病', '并病']) {\n        if (!it.text.includes(kind)) continue;\n        const found = JING.filter((x) => it.text.includes(x));\n        out.push({\n          kind,\n          pair: `${kind}:${found.join('+') || '未标经'}`,\n          named: found,\n          pian: p.pian,\n          no: it.no,\n          text: it.text,\n        });\n      }\n    }\n  }\n  return out;\n}\n\n/** 按配对计数（未标经单列，不合并进任何配对） */\nfunction tally(j = load()) {\n  const rows = scan(j);\n  const by = {};\n  for (const r of rows) by[r.pair] = (by[r.pair] || 0) + 1;\n  const total = { 合病: 0, 并病: 0 };\n  for (const r of rows) total[r.kind] += 1;\n  return { by, total };\n}\n\n/** 按配对检索：'太阳+阳明' 或 '并病:太阳+少阳' */\nfunction find(pair, j = load()) {\n  return scan(j).filter((r) => r.pair.includes(pair));\n}\n\nfunction main() {\n  const t = tally();\n  console.log(`合病 ${t.total.合病} 处 · 并病 ${t.total.并病} 处`);\n  const rows = Object.entries(t.by).sort((a, b) => b[1] - a[1]);\n  for (const [k, v] of rows) console.log(`  ${k.padEnd(14, '　')} ${v}`);\n\n  for (const q of ['太阳+阳明', '太阳+少阳']) {\n    const hits = find(q);\n    console.log(`\\n检索「${q}」→ ${hits.length} 处`);\n    for (const h of hits.slice(0, 4)) {\n      console.log(`  ${h.kind}｜${h.pian} 篇内第 ${h.no} 条｜${h.text.slice(0, 42)}…`);\n    }\n  }\n  console.log('\\n提醒：计数单位是条文处数，不是病案数；5 处未标经名的条文单列，未并入任何配对。');\n  console.log('本输出为教学样例，不构成诊疗建议。');\n}\n\nif (require.main === module) main();\nmodule.exports = { scan, tally, find, JING, load };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { scan, tally, find, JING } = require('./main.js');\n\ntest('合病 29 处 · 并病 16 处，合计 45 处', () => {\n  const t = tally();\n  assert.strictEqual(t.total.合病, 29);\n  assert.strictEqual(t.total.并病, 16);\n  assert.strictEqual(scan().length, 45);\n});\n\ntest('合病最集中的配对是太阳+阳明（14 处）', () => {\n  assert.strictEqual(tally().by['合病:太阳+阳明'], 14);\n});\n\ntest('并病最集中的配对是太阳+少阳（7 处）', () => {\n  assert.strictEqual(tally().by['并病:太阳+少阳'], 7);\n});\n\ntest('未标经名的 5 处单列，不并入任何经名配对', () => {\n  const t = tally();\n  assert.strictEqual(t.by['合病:未标经'], 5);\n  const merged = Object.entries(t.by)\n    .filter(([k]) => k !== '合病:未标经')\n    .reduce((a, [, v]) => a + v, 0);\n  assert.strictEqual(merged + 5, 45);\n});\n\ntest('检索太阳+阳明同时命中合病与并病（不许只给合病）', () => {\n  const r = find('太阳+阳明');\n  assert.strictEqual(r.length, 18);\n  assert.ok(r.some((x) => x.kind === '合病'));\n  assert.ok(r.some((x) => x.kind === '并病'));\n});\n\ntest('每条命中都带得出处（篇名 + 篇内条号）', () => {\n  for (const r of scan()) {\n    assert.ok(r.pian && Number.isInteger(r.no) && r.no > 0);\n  }\n});\n\ntest('经名只认六经，不把「二阳」猜成太阳+阳明', () => {\n  assert.deepStrictEqual(JING, ['太阳', '阳明', '少阳', '太阴', '少阴', '厥阴']);\n  const wu = scan().filter((r) => r.pair === '合病:未标经');\n  assert.ok(wu.every((r) => r.named.length === 0));\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "合病与并病最关键的区别是？",
+          "options": [
+            "涉及的经数不同",
+            "时间结构：合病是两经同时病，并病是一经未罢他经又起",
+            "合病属阳证，并病属阴证",
+            "合病必用一方，并病必用两方"
+          ],
+          "correct": 1,
+          "explanation": "差别不在几经，而在并列还是叠加；这决定治法能不能分先后。"
+        },
+        {
+          "stage": "check",
+          "question": "按本仓库底本实测，合病最多出现在哪一对经？",
+          "options": [
+            "太阳+少阳",
+            "太阳+阳明",
+            "阳明+少阳",
+            "太阴+少阴"
+          ],
+          "correct": 1,
+          "explanation": "合病 29 处中太阳+阳明占 14 处。"
+        },
+        {
+          "stage": "check",
+          "question": "并病最集中的配对是？",
+          "options": [
+            "太阳+阳明",
+            "太阳+少阳",
+            "少阳+阳明",
+            "少阴+厥阴"
+          ],
+          "correct": 1,
+          "explanation": "并病 16 处中太阳+少阳 7 处。"
+        },
+        {
+          "stage": "check",
+          "question": "「太阳与阳明合病者，必自下利」用葛根汤，而「喘而胸满」则宜麻黄汤，说明？",
+          "options": [
+            "两条条文互相矛盾",
+            "同一合病，主症不同则方不同：合病要同时兼顾表里，不能峻汗",
+            "葛根汤就是麻黄汤加葛根",
+            "下利是麻黄的禁忌"
+          ],
+          "correct": 1,
+          "explanation": "见下利用葛根汤（解表升津止利），无下利而喘满可用麻黄汤；主症决定选方。"
+        },
+        {
+          "stage": "post",
+          "question": "扫描出的 45 处，正确的计数单位是？",
+          "options": [
+            "45 个病案",
+            "45 个方证",
+            "45 处条文（同类条文重复出现会重复计数）",
+            "45 位患者"
+          ],
+          "correct": 2,
+          "explanation": "条文处数 ≠ 病案数；刻本里同类条文重复出现是常态。"
+        },
+        {
+          "stage": "post",
+          "question": "底本里 5 处合病条文没写具体经名（用「二阳」指代），正确处理是？",
+          "options": [
+            "按上下文补成太阳+阳明",
+            "单列「未标经」，不并入任何配对",
+            "直接丢弃",
+            "计入太阳+阳明"
+          ],
+          "correct": 1,
+          "explanation": "补全会制造伪精确；未标经必须可见，否则统计被悄悄改写。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-hebing-bingbing.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/09-hebing-bingbing/outputs/prompt-hebing-bingbing.md",
+        "title": "合病并病辨读助手",
+        "description": null,
+        "chars": 609,
+        "body": "# 合病并病辨读助手\n\n## 用途\n\n把病历或条文里的「合病」「并病」说清楚：**哪两经、同时还是先后、主症是什么、方为什么是那个方**。\n用于**病案讨论、条文对照、带教提问**。不做传变预测。\n\n## 提示词\n\n```text\n你是伤寒论的助教。下面是病历摘要或条文。请只做三件事：定性、定经、定主症。\n\n规则：\n1. 先说时间结构：两经同时 = 合病；一经未罢他经又起 = 并病。必须给出判断依据（哪个词）。\n2. 经名只写病历或条文里出现过的六经名（太阳/阳明/少阳/太阴/少阴/厥阴）。没写就写「未标经」，不许补。\n3. 主症逐字引用原文；没有写到的症状写「未描述」，不推断。\n4. 方药只引条文原方；条文无方则写「原文无方」。\n5. 不给预后判断，不说「必然传变」。\n\n输出格式：\n【定性】合病 / 并病｜依据词：…\n【定经】… + …\n【主症】…\n【方】…（原文无方则写「原文无方」）\n【未标注】…\n```\n\n## 使用示例\n\n输入：「发热恶寒，无汗，头痛，又见下利，脉浮。」\n\n输出：【定性】合病（表证与里证同时出现）｜依据：症状并列、无先后词\n【定经】太阳 + 阳明（据条文「太阳与阳明合病者，必自下利」）\n【主症】发热恶寒、无汗、头痛、下利｜未描述：脉象细节、呕否\n【方】葛根汤（原文），若无下利而喘满，原文另主麻黄汤\n\n## 为什么这样限制\n\n- 先定时间结构：合病/并病的治法次序不同，概念一错全错。\n- 经名不许补：底本里有 5 处只写「二阳」，补全就是伪精确。\n- 不给预后：传变需要病程与转归，不是靠条文关键词能推的。\n"
+      },
+      {
+        "name": "skill-hebing-bingbing.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/09-hebing-bingbing/outputs/skill-hebing-bingbing.md",
+        "title": "hebing-bingbing",
+        "description": "判合病与并病：定时间结构、定六经、引主症与原文方，经名不外推",
+        "chars": 533,
+        "body": "---\nname: hebing-bingbing\ndescription: 判合病与并病：定时间结构、定六经、引主症与原文方，经名不外推\nversion: 0.1.0\n---\n\n# hebing-bingbing\n\n## 何时使用\n\n- 病历或带教讨论里出现「合病」「并病」，需要把依据讲清楚\n- 条文对照：同一合病不同主症为何用不同方\n- 教学：演示「并列 vs 叠加」的时间结构差异\n\n## 不适用\n\n- 预测传变方向与转归（需要病程数据，条文关键词不够）\n- 条文只以「二阳」「三阳」指代、且无其它线索时（应保留「未标经」）\n- 方药剂量与加减（另章）\n\n## 步骤\n\n1. **找依据词**：有无「未罢」「复」「转属」等先后词 → 并病；纯并列 → 合病。\n2. **列经名**：只列出现过的六经名；不足写「未标经」。\n3. **摘主症**：逐字引用，未描述项单列。\n4. **引原方**：条文有方照录；无方写「原文无方」。\n5. **标出处**：篇名 + 篇内条号 + 底本标识。\n\n## 输出模板\n\n```text\n【定性】…｜依据词：…\n【定经】… + …\n【主症】…｜未描述：…\n【方】…\n【出处】《伤寒论·X》篇内第 N 条（底本：…）\n```\n\n## 质量判据\n\n- 定性有依据词，不是凭感觉\n- 没有补写条文里没有的经名或症状\n- 出处到篇、到条、带底本\n\n> 本技能输出为教学与讨论辅助，不构成诊疗建议。\n"
       }
     ],
     "video": null,

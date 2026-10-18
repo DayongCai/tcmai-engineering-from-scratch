@@ -95,12 +95,39 @@
       "units": 3363,
       "chars": 85411,
       "empty": 0
+    },
+    {
+      "slug": "shanghan-jiagou",
+      "title": "伤寒架构（六经体系 · 三线表 · 可引来源版）",
+      "file": "伤寒架构.docx",
+      "sections": 1,
+      "units": 25,
+      "chars": 2278,
+      "empty": 0
+    },
+    {
+      "slug": "neijing-yuyi",
+      "title": "内经语义域（篇·章·节三级对象与三维极坐标）",
+      "file": "内经语义域.docx",
+      "sections": 1,
+      "units": 63,
+      "chars": 9991,
+      "empty": 0
+    },
+    {
+      "slug": "neijing-gushi",
+      "title": "内经简版故事 V1（病例 × 语义向量图）",
+      "file": "内经简版故事V1.docx",
+      "sections": 1,
+      "units": 151,
+      "chars": 11654,
+      "empty": 0
     }
   ],
   "totals": {
-    "materials": 10,
-    "sections": 455,
-    "units": 218380,
-    "chars": 9868294
+    "materials": 13,
+    "sections": 458,
+    "units": 218619,
+    "chars": 9892217
   }
 }

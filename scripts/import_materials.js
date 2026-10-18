@@ -34,6 +34,7 @@ const { readWorkbook: readXls } = require('./lib_xls');
 // 桌面那 4 份最重要的原件恰好是 .xls —— 读不了它们时，「1075 章没正文」会被误当成
 // 「没有资料」，实际是工具链缺一段。分派放在这里，调用方不该关心容器格式。
 const readWorkbook = (file) => (/\.xls$/i.test(file) ? readXls(file) : readXlsx(file));
+const { readDocx } = require('./lib_docx');
 
 const ROOT = path.resolve(__dirname, '..');
 const DESKTOP = 'J:/Users/user/Desktop';
@@ -147,6 +148,34 @@ const REGISTRY = [
     toc: { sheet: null, shape: 'none' },
     body: { sheets: 'rest', shape: 'wide', headerRow: 1 },
     skipSheets: ['形式语言-自动机理论'],
+  },
+  {
+    slug: 'shanghan-jiagou',
+    file: '伤寒架构.docx',
+    title: '伤寒架构（六经体系 · 三线表 · 可引来源版）',
+    note: '.docx（OOXML），由 scripts/lib_docx.js 读取。六经架构总表（7×8 三线表）、'
+        + '传变与合病并病（循经/越经/表里/合病/并病/直中/里邪出表七类）、六经辨证总义、来源。'
+        + '文中自述「提纲原文为公开文献转引，非校勘底本」——引用时须保留这句。',
+    toc: { sheet: null, shape: 'none' },
+    body: { sheets: 'all', shape: 'docx' },
+  },
+  {
+    slug: 'neijing-yuyi',
+    file: '内经语义域.docx',
+    title: '内经语义域（篇·章·节三级对象与三维极坐标）',
+    note: '.docx（OOXML）。三级对象抽取规则（篇名锚定 / 校勘夹注先行清洗）、两书规模对照、'
+        + '素问与灵枢的语义域归类表。是内经选读「成书与文本结构」「量化解读」两章的方法出处。',
+    toc: { sheet: null, shape: 'none' },
+    body: { sheets: 'all', shape: 'docx' },
+  },
+  {
+    slug: 'neijing-gushi',
+    file: '内经简版故事V1.docx',
+    title: '内经简版故事 V1（病例 × 语义向量图）',
+    note: '.docx（OOXML）。以类风湿关节炎（尪痹）虚构病例走完整演变，用极坐标/球面轨迹/雷达把证候画成向量；'
+        + '含女性旁白对照与全书各卷标题。是「内经的量化解读与其边界」一章的写法样本。',
+    toc: { sheet: null, shape: 'none' },
+    body: { sheets: 'all', shape: 'docx' },
   },
 ];
 
@@ -286,6 +315,20 @@ for (const spec of REGISTRY) {
   }
   const usedFile = spec.__used || spec.file;
   const buf = fs.readFileSync(path.join(DESKTOP, usedFile));
+  // docx 不是工作簿：走 OOXML 读取器，把「块」当成它的分节
+  if (spec.body.shape === 'docx') {
+    const d = readDocx(path.join(DESKTOP, usedFile));
+    results.push({
+      slug: spec.slug, file: usedFile, title: spec.title, note: spec.note,
+      sha256: sha256(buf), bytes: buf.length,
+      sheetCount: 1, sheetNames: ['document.xml'],
+      toc: { shape: 'none', sheet: null, rows: 0, header: null },
+      body: { shape: 'docx', sections: 1, units: d.counts.blocks },
+      emptySections: d.blocks.length ? [] : ['（空文档）'],
+      data: { toc: { shape: 'none', rows: [] }, sections: [{ sheet: d.title || spec.title, shape: 'docx', count: d.counts.blocks, blocks: d.blocks }] },
+    });
+    continue;
+  }
   const wb = readWorkbook(path.join(DESKTOP, usedFile));
 
   const tocSheet = spec.toc.sheet ? wb.sheets.find((s) => s.name === spec.toc.sheet) : null;
@@ -413,6 +456,21 @@ for (const r of results) {
   }
 
   for (const sec of r.data.sections) {
+    if (sec.shape === 'docx') {
+      for (const b of sec.blocks) {
+        if (b.type === 'table') {
+          const head = b.rows[0] || [];
+          L.push(`| ${head.join(' | ')} |`, `| ${head.map(() => '---').join(' | ')} |`);
+          for (const r of b.rows.slice(1)) L.push(`| ${r.slice(0, head.length).map((c) => String(c).replace(/\|/g, '\|')).join(' | ')} |`);
+          L.push('');
+        } else if (b.type.startsWith('h')) {
+          L.push(`${'#'.repeat(Number(b.type[1]) + 1)} ${b.text}`, '');
+        } else {
+          L.push(b.text, '');
+        }
+      }
+      continue;
+    }
     if (sec.shape === 'pian') {
       L.push(`## ${sec.title}${sec.origin ? `（${sec.origin}）` : ''}`, '');
       for (const b of sec.blocks) {
