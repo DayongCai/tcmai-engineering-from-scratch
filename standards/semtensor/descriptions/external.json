@@ -51,16 +51,26 @@
       "label": "大肠湿热蕴毒证",
       "sources": [
         {
+          "type": "症状鉴别文献（在线症状库）",
+          "title": "医砭» 症状鑑别» 大便下血",
+          "url": "https://yibian.hopto.org/cn/db/?sypno=219",
+          "snippet": "风火熏迫与大肠湿热蕴毒便血二者均属热证、实证，极易混淆。 肝肾阴虚与脾肾阳虚便血二者皆属虚证，具有遇劳频发的特点。 鉴别大便下血一症，除审察其病因、病机、主要兼症 ..."
+        },
+        {
+          "type": "韩国韩医学原典学会期刊（KCI）",
+          "title": "대한한의학원전학회지 2025, Vol.38 No.3 - 한국학술지인용색인",
+          "url": "https://www.kci.go.kr/kciportal/landing/journalArticleList.kci?vol_isse_id=VOL000186602&sere_id=001642",
+          "snippet": "... (大腸濕熱蘊毒). On the other hand, the Donguibogam employed herbs that clear heat and detoxify(淸熱解毒), eliminate dampness(去濕), nourish Blood and ..."
+        },
+        {
           "type": "医院名医工作室（病机论述）",
           "title": "溃疡性结肠炎 · 医案及制剂 · 甘肃省中医院",
           "url": "https://www.gszyy.com/ywgz/mygzs/gssjmzygzs/txdmygzs/yajzj9/content_35329",
-          "snippet": "田老师认为此病病位在大肠，病机根本在于脾，脾虚为本。结合经典、疾病性质、中医辨证及自身体会认为湿热毒邪贯穿疾病始终。病机总属本虚标实之证。"
+          "snippet": "田老师认为此病病位在大肠，病机根本在于脾，脾虚为本。结合经典、疾病性质、中医辨证及自身体会认为湿热毒邪贯穿疾病始终。病机总属本虚标实之证，脾虚为本，湿、热、毒、瘀为标。"
         }
       ],
-      "scope": "partial",
-      "missingParts": [
-        "大肠湿热蕴毒证"
-      ]
+      "scope": "single",
+      "attestedBy": 0
     },
     {
       "label": "胆郁痰扰、心神不宁证(惊悸/不寐)",
