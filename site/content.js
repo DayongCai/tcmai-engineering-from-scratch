@@ -953,6 +953,124 @@ window.TCMAI_CONTENT = {
     "video": null,
     "videoPoster": null
   },
+  "01-zhongyi/06-neijing-xuandu/06-zhenfa-maiyao": {
+    "key": "01-zhongyi/06-neijing-xuandu/06-zhenfa-maiyao",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "06-neijing-xuandu",
+    "subjectTitle": "内经选读",
+    "chapterSlug": "06-zhenfa-maiyao",
+    "n": 6,
+    "title": "第 6 章 · 《脉要精微论》：先把诊断条件管住，再谈脉象",
+    "motto": "「诊法常以平旦，阴气未动，阳气未散，饮食未进，经脉未盛，络脉调匀，气血未乱，故乃可诊有过之脉。」——《素问·脉要精微论》",
+    "problem": "你在门诊随手搭脉，出诊记录写「脉弦」，但没人知道病人刚爬了三层楼、刚喝完咖啡、刚吵完架——同一个「弦」，可能来自病，也可能来自你没管住的条件。",
+    "roots": "环境逼迫(门诊条件无法像经典要求那样理想) + 知识积累(原文条件清单 × 偏差记录 = 一份能说明「这次测量在什么条件下成立」的记录)",
+    "html": "<h1 id=\"第-6-章-脉要精微论-先把诊断条件管住-再谈脉象\">第 6 章 · 《脉要精微论》：先把诊断条件管住，再谈脉象</h1>\n<blockquote><p><strong>MOTTO:</strong> 「诊法常以平旦，阴气未动，阳气未散，饮食未进，经脉未盛，络脉调匀，气血未乱，故乃可诊有过之脉。」——《素问·脉要精微论》</p>\n<p><strong>PROBLEM:</strong> 你在门诊随手搭脉，出诊记录写「脉弦」，但没人知道病人刚爬了三层楼、刚喝完咖啡、刚吵完架——同一个「弦」，可能来自病，也可能来自你没管住的条件。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(门诊条件无法像经典要求那样理想) + 知识积累(原文条件清单 × 偏差记录 = 一份能说明「这次测量在什么条件下成立」的记录)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>内经选读</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>06 / 10</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>背出原文给的四个条件（阴气未动、阳气未散、饮食未进、气血未乱）并说明各自影响什么</li><li>说出「平旦诊法」的实质：<strong>控制变量</strong>，不是规定时间</li><li>用原文的脉象四条（长、短、数、大）说明「同一属性两个方向」的判读结构</li><li>写一个采集条件检查器：不满足时输出偏差项，而不是拒绝测量</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"原文-先条件-后脉\">原文：先条件，后脉</h3>\n<blockquote><p>诊法常以平旦，阴气未动，阳气未散，饮食未进，经脉未盛，络脉调匀，气血未乱，故乃可诊有过之脉。——《素问·脉要精微论》</p></blockquote>\n<blockquote><p>夫脉者，血之府也。长则气治，短则气病，数则烦心，大则病进。——同上</p></blockquote>\n<p>第一句常被读成「要早上看病」，其实它列的是<strong>四个变量</strong>：阳气（活动）、饮食、经脉盛衰、气血乱否。平旦只是这四项同时归零的那个时点。换句话说，原文讲的是<strong>对照条件</strong>，不是时辰崇拜。</p>\n<p>第二句给了四个脉象与四条判读：长/短是一对（气之治与病），数/大是另一对（烦心与病进）。注意它没有给「正常脉」，只给方向——这与后世二十八脉的体系不同，读的时候不能互套。</p>\n<h3 id=\"为什么条件会改写结论\">为什么条件会改写结论</h3>\n<p>同一病人，刚运动后脉多数、餐后脉多滑、情绪激动后脉多弦。若不记录条件，这些都由「病」来背。原文的四个条件恰好对应四类干扰：<strong>活动（阳气）</strong>、<strong>进食（饮食）</strong>、<strong>时相（经脉盛衰）</strong>、<strong>情绪（气血乱）</strong>。</p>\n<p>工程上的推论很直接：脉象记录不是单个值，而是「值 + 条件 + 偏差项」。缺条件，值就不可比。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js：采集条件检查 + 脉象四条的判读表\nfunction checkCondition({ rested, fasted, calm, hour }) {\n  // 逐项判断是否满足「平旦四条件」，返回 {ok, deviations[], advice}\n  // 不满足时不拒绝测量，而是把偏差写进记录 —— 门诊不可能等到平旦\n}\nconst PULSES = [ /* 长/短/数/大：原文判读 + 边界（不与其他脉象互套） */ ];</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>checkCondition({rested:false, fasted:true, calm:true, hour:15})</code> 返回 <code>ok:false</code>，偏差项含「未静息」「非平旦（15 时）」，并给出「记录偏差后仍可测量」的建议；<code>PULSES</code> 四条各带原文与边界。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>门诊做不到平旦</strong>。原文的理想条件在现实中几乎不可得，本章的处理是<strong>记录偏差</strong>，而不是假装满足。</li><li><strong>四项条件是原文所列，不是穷举</strong>。药物（咖啡因、降压药）、环境温度、体位同样影响脉象，本章把它们列为「未列入原文但必须记录」的补充项。</li><li><strong>四条脉象不能覆盖临床</strong>。长短数大只是举例，且与后世二十八脉命名不完全对应；拿本章的表去套二十八脉会错位。</li><li><strong>判读方向不等于诊断</strong>。「数则烦心」是提示，不是「脉数即心烦」的等价命题。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 原文引自仓库内 <code>standards/materials/neijing-quanwen/</code>（源 <code>黄帝内经全文.xls</code>，可复核）；本章的条件检查器是记录工具，不构成诊断依据，脉象判读须由执业医师完成。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>给 <code>checkCondition</code> 增加「服药」与「体位」两项，说明为什么它们不该混进原文的四条件里。</li><li>若病人必须在不满足条件时测量，记录里最少要写哪几项，第二个人才能判断这次脉象可用性？</li><li>对比《脉要精微论》的「长短短数大」与后世二十八脉，列出至少三处命名不对应。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>经典里最容易被跳过的，往往是条件句。「诊法常以平旦」被引用了一千年，多数引用只留下「早上」两个字，丢掉的正是那四个变量——而变量才是这句话的方法论。</p>",
+    "markdown": "# 第 6 章 · 《脉要精微论》：先把诊断条件管住，再谈脉象\n\n> **MOTTO:** 「诊法常以平旦，阴气未动，阳气未散，饮食未进，经脉未盛，络脉调匀，气血未乱，故乃可诊有过之脉。」——《素问·脉要精微论》\n>\n> **PROBLEM:** 你在门诊随手搭脉，出诊记录写「脉弦」，但没人知道病人刚爬了三层楼、刚喝完咖啡、刚吵完架——同一个「弦」，可能来自病，也可能来自你没管住的条件。\n>\n> **双根因定位:** 环境逼迫(门诊条件无法像经典要求那样理想) + 知识积累(原文条件清单 × 偏差记录 = 一份能说明「这次测量在什么条件下成立」的记录)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 内经选读 |\n| 院系 | 中医系 |\n| 章序号 | 06 / 10 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 背出原文给的四个条件（阴气未动、阳气未散、饮食未进、气血未乱）并说明各自影响什么\n- 说出「平旦诊法」的实质：**控制变量**，不是规定时间\n- 用原文的脉象四条（长、短、数、大）说明「同一属性两个方向」的判读结构\n- 写一个采集条件检查器：不满足时输出偏差项，而不是拒绝测量\n\n## 核心概念\n\n### 原文：先条件，后脉\n\n> 诊法常以平旦，阴气未动，阳气未散，饮食未进，经脉未盛，络脉调匀，气血未乱，故乃可诊有过之脉。——《素问·脉要精微论》\n\n> 夫脉者，血之府也。长则气治，短则气病，数则烦心，大则病进。——同上\n\n第一句常被读成「要早上看病」，其实它列的是**四个变量**：阳气（活动）、饮食、经脉盛衰、气血乱否。平旦只是这四项同时归零的那个时点。换句话说，原文讲的是**对照条件**，不是时辰崇拜。\n\n第二句给了四个脉象与四条判读：长/短是一对（气之治与病），数/大是另一对（烦心与病进）。注意它没有给「正常脉」，只给方向——这与后世二十八脉的体系不同，读的时候不能互套。\n\n### 为什么条件会改写结论\n\n同一病人，刚运动后脉多数、餐后脉多滑、情绪激动后脉多弦。若不记录条件，这些都由「病」来背。原文的四个条件恰好对应四类干扰：**活动（阳气）**、**进食（饮食）**、**时相（经脉盛衰）**、**情绪（气血乱）**。\n\n工程上的推论很直接：脉象记录不是单个值，而是「值 + 条件 + 偏差项」。缺条件，值就不可比。\n\n## BUILD IT：从零实现\n\n```js\n// code/main.js：采集条件检查 + 脉象四条的判读表\nfunction checkCondition({ rested, fasted, calm, hour }) {\n  // 逐项判断是否满足「平旦四条件」，返回 {ok, deviations[], advice}\n  // 不满足时不拒绝测量，而是把偏差写进记录 —— 门诊不可能等到平旦\n}\nconst PULSES = [ /* 长/短/数/大：原文判读 + 边界（不与其他脉象互套） */ ];\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：`checkCondition({rested:false, fasted:true, calm:true, hour:15})` 返回 `ok:false`，偏差项含「未静息」「非平旦（15 时）」，并给出「记录偏差后仍可测量」的建议；`PULSES` 四条各带原文与边界。\n\n## 代价与边界\n\n- **门诊做不到平旦**。原文的理想条件在现实中几乎不可得，本章的处理是**记录偏差**，而不是假装满足。\n- **四项条件是原文所列，不是穷举**。药物（咖啡因、降压药）、环境温度、体位同样影响脉象，本章把它们列为「未列入原文但必须记录」的补充项。\n- **四条脉象不能覆盖临床**。长短数大只是举例，且与后世二十八脉命名不完全对应；拿本章的表去套二十八脉会错位。\n- **判读方向不等于诊断**。「数则烦心」是提示，不是「脉数即心烦」的等价命题。\n\n> **免责声明：** 原文引自仓库内 `standards/materials/neijing-quanwen/`（源 `黄帝内经全文.xls`，可复核）；本章的条件检查器是记录工具，不构成诊断依据，脉象判读须由执业医师完成。\n\n## 练习\n\n1. 给 `checkCondition` 增加「服药」与「体位」两项，说明为什么它们不该混进原文的四条件里。\n2. 若病人必须在不满足条件时测量，记录里最少要写哪几项，第二个人才能判断这次脉象可用性？\n3. 对比《脉要精微论》的「长短短数大」与后世二十八脉，列出至少三处命名不对应。\n\n## 进阶思考\n\n经典里最容易被跳过的，往往是条件句。「诊法常以平旦」被引用了一千年，多数引用只留下「早上」两个字，丢掉的正是那四个变量——而变量才是这句话的方法论。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 诊法条件检查 + 脉象四条判读（《素问·脉要精微论》）\n *\n *   node code/main.js\n *\n * 设计要点：\n *   1. 不满足条件时不拒绝测量 —— 门诊等不到平旦。做法是把偏差写进记录，\n *      让「这个脉象在什么条件下取得」成为记录的一部分。\n *   2. 原文四项条件（阴气未动/阳气未散/饮食未进/气血未乱）只覆盖活动、进食、时相、情绪；\n *      药物、体位、温度等「未列入原文但影响脉象」的项单列为 supplements，不混进去。\n *   3. 脉象判读只给原文方向，不给诊断结论。\n */\n\n/** 原文四项条件（据《素问·脉要精微论》「诊法常以平旦…」） */\nfunction checkCondition(env = {}) {\n  const { rested = false, fasted = false, calm = false, hour = 12 } = env;\n  const deviations = [];\n  if (!rested) deviations.push('未静息（阳气未散这一条不成立）');\n  if (!fasted) deviations.push('已进食（饮食未进这一条不成立）');\n  if (!calm) deviations.push('情绪未平（气血未乱这一条不成立）');\n  const dawn = hour >= 4 && hour <= 7;\n  if (!dawn) deviations.push(`非平旦（${hour} 时；经脉盛衰这一条按原文不成立）`);\n\n  return {\n    ok: deviations.length === 0,\n    deviations,\n    // 门诊现实：偏差项必须记录，而不是把测量作废\n    advice: deviations.length\n      ? '记录上述偏差后再采集；同一次随访尽量保持相同条件，才可纵向比较'\n      : '条件满足原文要求，可直接采集',\n  };\n}\n\n/** 原文四条：长/短/数/大 —— 只给方向与边界，不给诊断 */\nconst PULSES = [\n  { name: '长', text: '长则气治', read: '气机和调', boundary: '长而太过（如长而硬）不属此条' },\n  { name: '短', text: '短则气病', read: '气机不利', boundary: '短亦可因痰食壅滞，本条不排除' },\n  { name: '数', text: '数则烦心', read: '热扰心神之提示', boundary: '数亦见于虚、见于药（咖啡因等）' },\n  { name: '大', text: '大则病进', read: '病势进展之提示', boundary: '大而无力属虚，不与「病进」等同' },\n];\n\n/** 未列入原文、但影响脉象的补充项（必须记录，不混入四条件） */\nconst SUPPLEMENTS = ['服药（尤其降压、咖啡因）', '体位（卧/坐/立）', '环境温度', '是否刚吸烟'];\n\nfunction main() {\n  const cases = [\n    { name: 'A：理想平旦', env: { rested: true, fasted: true, calm: true, hour: 6 } },\n    { name: 'B：门诊下午', env: { rested: false, fasted: true, calm: true, hour: 15 } },\n  ];\n  for (const c of cases) {\n    const r = checkCondition(c.env);\n    console.log(`\\n${c.name} → ${r.ok ? '条件成立' : '条件不成立'}`);\n    for (const d of r.deviations) console.log(`  · ${d}`);\n    console.log(`  建议：${r.advice}`);\n  }\n  console.log('\\n脉象四条（原文方向，非诊断）：');\n  for (const p of PULSES) console.log(`  ${p.name}：${p.text} → ${p.read}｜边界：${p.boundary}`);\n  console.log(`\\n原文未列、但必须记录的项：${SUPPLEMENTS.join('、')}`);\n  console.log('\\n本输出为教学样例，不构成诊断依据。');\n}\n\nif (require.main === module) main();\nmodule.exports = { checkCondition, PULSES, SUPPLEMENTS };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { checkCondition, PULSES, SUPPLEMENTS } = require('./main.js');\n\ntest('四条件全满足 + 平旦 → ok', () => {\n  const r = checkCondition({ rested: true, fasted: true, calm: true, hour: 6 });\n  assert.strictEqual(r.ok, true);\n  assert.deepStrictEqual(r.deviations, []);\n});\n\ntest('门诊下午：偏差项逐条列出，且不作废测量', () => {\n  const r = checkCondition({ rested: false, fasted: true, calm: true, hour: 15 });\n  assert.strictEqual(r.ok, false);\n  assert.ok(r.deviations.length >= 2);\n  assert.match(r.advice, /记录/);\n});\n\ntest('平旦边界：4–7 时算平旦，8 时不算', () => {\n  assert.strictEqual(checkCondition({ rested: true, fasted: true, calm: true, hour: 4 }).ok, true);\n  assert.strictEqual(checkCondition({ rested: true, fasted: true, calm: true, hour: 7 }).ok, true);\n  assert.strictEqual(checkCondition({ rested: true, fasted: true, calm: true, hour: 8 }).ok, false);\n});\n\ntest('脉象四条齐备，每条都有原文与边界', () => {\n  assert.deepStrictEqual(PULSES.map((p) => p.name), ['长', '短', '数', '大']);\n  for (const p of PULSES) {\n    assert.match(p.text, /则/);\n    assert.ok(p.boundary.length > 5, `${p.name} 缺边界`);\n  }\n});\n\ntest('补充项与原文四条件分开：药物/体位/温度不得混入 deviations 文案', () => {\n  assert.ok(SUPPLEMENTS.some((s) => s.includes('服药')));\n  const r = checkCondition({ rested: true, fasted: true, calm: true, hour: 6 });\n  assert.ok(!r.deviations.join('').includes('体位'));\n});\n\ntest('全默认值（什么都不传）必须判定不成立，不许默认满足', () => {\n  const r = checkCondition();\n  assert.strictEqual(r.ok, false);\n  assert.ok(r.deviations.length === 4);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "「诊法常以平旦」这句话的实质是？",
+          "options": [
+            "规定必须早上看病",
+            "举出四个需要控制的变量（阳气/饮食/经脉盛衰/气血），平旦是它们同时归零的时点",
+            "说明脉诊只在清晨有效",
+            "要求病人空腹当天不活动"
+          ],
+          "correct": 1,
+          "explanation": "原文列的是条件，不是时辰；平旦只是四项同时成立的那个时点。"
+        },
+        {
+          "stage": "check",
+          "question": "「夫脉者，血之府也」之后给出的四条判读是？",
+          "options": [
+            "浮沉迟数",
+            "长则气治，短则气病，数则烦心，大则病进",
+            "滑涩虚实",
+            "弦紧濡弱"
+          ],
+          "correct": 1,
+          "explanation": "原文只给长短数大四条方向，不与后世二十八脉互套。"
+        },
+        {
+          "stage": "check",
+          "question": "门诊无法满足平旦条件时，本章的处理是？",
+          "options": [
+            "拒绝采集",
+            "记录偏差项后仍采集，并在记录中保留条件",
+            "把下午的脉象换算成平旦脉象",
+            "只记录脉象不记录条件"
+          ],
+          "correct": 1,
+          "explanation": "作废测量在门诊不可行；把条件写进记录，值才可比。"
+        },
+        {
+          "stage": "check",
+          "question": "下列哪一项属于「原文未列但必须记录」的补充项？",
+          "options": [
+            "饮食",
+            "情绪",
+            "服药（如咖啡因、降压药）",
+            "时相"
+          ],
+          "correct": 2,
+          "explanation": "原文四项涵盖活动、进食、时相、情绪；药物等属补充项，应单列。"
+        },
+        {
+          "stage": "post",
+          "question": "「数则烦心」的正确读法是？",
+          "options": [
+            "脉数就一定是心烦",
+            "热扰心神的方向性提示，数亦可见于虚或药物影响",
+            "心烦必然脉数",
+            "数脉等于发热"
+          ],
+          "correct": 1,
+          "explanation": "原文给方向，不给等价命题；边界必须随条文一起记。"
+        },
+        {
+          "stage": "post",
+          "question": "要让两次随访的脉象可比，最关键的是？",
+          "options": [
+            "同一名医生",
+            "两次采集的条件尽量一致，且偏差项都被记录",
+            "同一台设备",
+            "同一时间段内完成"
+          ],
+          "correct": 1,
+          "explanation": "条件一致 + 偏差留痕，才谈得上纵向比较。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-zhenfa-maiyao.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/06-zhenfa-maiyao/outputs/prompt-zhenfa-maiyao.md",
+        "title": "诊法条件记录助手",
+        "description": null,
+        "chars": 657,
+        "body": "# 诊法条件记录助手\n\n## 用途\n\n采集脉象前把**条件**记录下来：哪些原文条件成立、哪些不成立、有哪些原文未列但影响判读的补充项。\n用于**脉象记录规范化、随访可比性、教学演示**。不用于脉象判读结论。\n\n## 提示词\n\n```text\n你是内经课的助教。下面是本次脉诊的采集情境。请只做条件核对，不做脉象判读。\n\n原文条件（《素问·脉要精微论》）：\n1. 阴气未动 —— 未活动、静息足够\n2. 阳气未散 —— 未劳作出汗\n3. 饮食未进 —— 空腹\n4. 气血未乱 —— 情绪平稳\n（原文以「平旦」为四项同时成立的时点）\n\n规则：\n1. 逐条判定成立/不成立，不成立要写出依据。\n2. 不满足时不作废测量：输出「记录偏差后采集」的建议。\n3. 药物、体位、环境温度、吸烟等单列「补充项」，不要混进原文四条件。\n4. 禁止把条件偏差换算成「校正后的脉象」。\n5. 禁止给脉象结论或证型。\n\n输出格式：\n【原文四条件】1) … 成立/不成立（依据）…\n【补充项】…\n【建议】…\n【不可比提示】与上次采集的条件差异：…\n```\n\n## 使用示例\n\n输入：下午 3 点，病人刚爬楼，未进食，情绪平稳，服降压药。\n\n输出：【四条件】1) 阴气未动：不成立（刚活动）2) 阳气未散：不成立（爬楼）3) 饮食未进：成立\n4) 气血未乱：成立\n【补充项】服降压药；体位未记录\n【建议】记录偏差后采集；下次尽量同一时段、同样活动状态\n【不可比提示】与平旦采集的历史值不可直接比较。\n\n## 为什么这样限制\n\n- 不作废测量：门诊现实如此，作废等于没有数据。\n- 不换算：任何「校正」都是编造，条件只能记录不能消除。\n- 补充项单列：把它塞进原文四条件，会让「原文条件」这个基准失真。\n"
+      },
+      {
+        "name": "skill-zhenfa-maiyao.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/06-zhenfa-maiyao/outputs/skill-zhenfa-maiyao.md",
+        "title": "zhenfa-maiyao",
+        "description": "脉诊采集条件核对：逐条判原文四条件、单列补充项、不作废也不换算",
+        "chars": 500,
+        "body": "---\nname: zhenfa-maiyao\ndescription: 脉诊采集条件核对：逐条判原文四条件、单列补充项、不作废也不换算\nversion: 0.1.0\n---\n\n# zhenfa-maiyao\n\n## 何时使用\n\n- 脉象记录需要说明「在什么条件下取得」\n- 随访比较前，检查两次采集条件是否可比\n- 教学：演示「平旦诊法」其实是一组控制变量\n\n## 不适用\n\n- 脉象判读与辨证（本技能只做条件）\n- 需要把条件差异「校正」掉（本章明确禁止换算）\n- 特殊人群（孕妇、危重）的采集判断（须医师决定）\n\n## 步骤\n\n1. **核四条件**：静息、未劳作、空腹、情绪平稳；平旦作为四项同时成立的时点参考。\n2. **写依据**：每条成立/不成立都要有可核的事实。\n3. **列补充项**：药物、体位、温度、吸烟等单列。\n4. **给建议**：偏差存在时，建议「记录后采集」，不作废。\n5. **标不可比**：与历史值比较时，列条件差异。\n\n## 输出模板\n\n```text\n【四条件】1) … 成立/不成立（依据）…\n【补充项】…\n【建议】…\n【不可比提示】…\n```\n\n## 质量判据\n\n- 每条判定都有依据\n- 没有「校正后的脉象」这种表述\n- 补充项没有被塞进原文四条件\n\n> 本技能输出为记录辅助，不构成诊断依据。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
   "01-zhongyi/06-neijing-xuandu/09-lingshu-jiuzhen": {
     "key": "01-zhongyi/06-neijing-xuandu/09-lingshu-jiuzhen",
     "deptSlug": "01-zhongyi",

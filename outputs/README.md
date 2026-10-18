@@ -2,7 +2,7 @@
 
 > 本章节由 `scripts/build_outputs_index.js` **生成**，请勿手改；重跑脚本同步。
 
-> **36** 件产出物 · 覆盖 **18** 个章节 · prompt 18 · skill 18
+> **38** 件产出物 · 覆盖 **19** 个章节 · prompt 19 · skill 19
 
 ## 这是什么
 
@@ -23,7 +23,7 @@
 | --- | --- | --- | :-: |
 | ☯️ 中医系 | 中医基础理论 | 3 | 6 |
 | ☯️ 中医系 | 中医诊断学 | 1 | 2 |
-| ☯️ 中医系 | 内经选读 | 5 | 10 |
+| ☯️ 中医系 | 内经选读 | 6 | 12 |
 | ☯️ 中医系 | 伤寒论 | 2 | 4 |
 | 🌾 中药系 | 中药学 | 1 | 2 |
 | 🪡 针灸系 | 腧穴学 | 1 | 2 |
@@ -81,7 +81,7 @@
 
 ### 内经选读
 
-> Core · 第 3 学期 · 已产出 5 章
+> Core · 第 3 学期 · 已产出 6 章
 
 #### 第 1 章 · 《黄帝内经》成书与文本结构：162 篇不是一个整体
 
@@ -118,6 +118,15 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 病机十九条反查器 | — | 596 | [`prompt-bingji-shijiu.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/05-bingji-shijiu/outputs/prompt-bingji-shijiu.md) |
 | skill | bingji-shijiu | 按病机十九条反查症状：列出全部命中条文与各自的不排除项，并指出十九条之外缺什么 | 498 | [`skill-bingji-shijiu.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/05-bingji-shijiu/outputs/skill-bingji-shijiu.md) |
+
+#### 第 6 章 · 《脉要精微论》：先把诊断条件管住，再谈脉象
+
+`06-neijing-xuandu/chapters/06-zhenfa-maiyao/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 诊法条件记录助手 | — | 657 | [`prompt-zhenfa-maiyao.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/06-zhenfa-maiyao/outputs/prompt-zhenfa-maiyao.md) |
+| skill | zhenfa-maiyao | 脉诊采集条件核对：逐条判原文四条件、单列补充项、不作废也不换算 | 500 | [`skill-zhenfa-maiyao.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/06-zhenfa-maiyao/outputs/skill-zhenfa-maiyao.md) |
 
 #### 第 9 章 · 《灵枢·九针十二原》：九种针不是九种型号
 

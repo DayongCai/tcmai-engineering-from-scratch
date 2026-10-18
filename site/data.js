@@ -110,7 +110,7 @@ window.TCMAI_DATA = {
     "hours": 7596,
     "semesters": 10,
     "stages": 5,
-    "chaptersBuilt": 18,
+    "chaptersBuilt": 19,
     "subjectsDone": 0,
     "subjectsWip": 11,
     "subjectsPlanned": 109,
@@ -1475,8 +1475,8 @@ window.TCMAI_DATA = {
           "stage": "sheng",
           "hours": 72,
           "chaptersTarget": 10,
-          "chaptersBuilt": 5,
-          "pct": 50,
+          "chaptersBuilt": 6,
+          "pct": 60,
           "status": "wip",
           "glyph": "🚧",
           "bridge": "原文→语料库 / 条文检索→向量检索",
@@ -5445,7 +5445,7 @@ window.TCMAI_DATA = {
         "n": 6,
         "slug": "06-zhenfa-maiyao",
         "title": "诊法与脉要精微论",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 7,

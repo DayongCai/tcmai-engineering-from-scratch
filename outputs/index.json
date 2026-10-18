@@ -2,11 +2,11 @@
   "$generated": "node scripts/build_outputs_index.js",
   "note": "可复用产出物的根级索引。契约见 CONTRIBUTING.md；每章的产物是生成物，索引是它们的生成物。",
   "counts": {
-    "items": 36,
-    "chaptersWithOutputs": 18,
+    "items": 38,
+    "chaptersWithOutputs": 19,
     "byKind": {
-      "prompt": 18,
-      "skill": 18
+      "prompt": 19,
+      "skill": 19
     },
     "gaps": 0
   },
@@ -195,6 +195,26 @@
                   "title": "bingji-shijiu",
                   "description": "按病机十九条反查症状：列出全部命中条文与各自的不排除项，并指出十九条之外缺什么",
                   "chars": 498
+                }
+              ]
+            },
+            {
+              "chapter": "06-zhenfa-maiyao",
+              "title": "第 6 章 · 《脉要精微论》：先把诊断条件管住，再谈脉象",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/06-zhenfa-maiyao/outputs/prompt-zhenfa-maiyao.md",
+                  "title": "诊法条件记录助手",
+                  "description": null,
+                  "chars": 657
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/06-zhenfa-maiyao/outputs/skill-zhenfa-maiyao.md",
+                  "title": "zhenfa-maiyao",
+                  "description": "脉诊采集条件核对：逐条判原文四条件、单列补充项、不作废也不换算",
+                  "chars": 500
                 }
               ]
             },
@@ -756,6 +776,36 @@
       "description": "按病机十九条反查症状：列出全部命中条文与各自的不排除项，并指出十九条之外缺什么",
       "version": "0.1.0",
       "chars": 498
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "06-zhenfa-maiyao",
+      "chapterTitle": "第 6 章 · 《脉要精微论》：先把诊断条件管住，再谈脉象",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/06-zhenfa-maiyao/outputs/prompt-zhenfa-maiyao.md",
+      "title": "诊法条件记录助手",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 657
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "06-zhenfa-maiyao",
+      "chapterTitle": "第 6 章 · 《脉要精微论》：先把诊断条件管住，再谈脉象",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/06-zhenfa-maiyao/outputs/skill-zhenfa-maiyao.md",
+      "title": "zhenfa-maiyao",
+      "name": "zhenfa-maiyao",
+      "description": "脉诊采集条件核对：逐条判原文四条件、单列补充项、不作废也不换算",
+      "version": "0.1.0",
+      "chars": 500
     },
     {
       "dept": "中医系",
