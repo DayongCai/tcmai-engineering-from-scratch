@@ -152,7 +152,8 @@ test('全库 scope 与口径一致（手改 external.json 后必须跑 --audit�
 
 test('运行租约：别人持租时 --next 中止（退出码 3），--release 释放，过期租约自动接管', () => {
   const lease = path.join(os.tmpdir(), `xblease-${Date.now()}.json`);
-  const env = { ...process.env, EXTERNAL_BATCH_LEASE: lease };
+  const TTL_MS = 45 * 60 * 1000;   // 这条用例把 TTL 固定成 45 分钟，好构造"刚好过期"
+  const env = { ...process.env, EXTERNAL_BATCH_LEASE: lease, EXTERNAL_BATCH_LEASE_TTL_MS: String(TTL_MS) };
   const run = (args) => spawnSync(process.execPath, ['scripts/external_batch.js', ...args], { cwd: ROOT, encoding: 'utf8', env });
   try {
     // 未过期的租约 = 另一个运行正在做这一批。注意租约**不绑 PID**：
@@ -161,6 +162,13 @@ test('运行租约：别人持租时 --next 中止（退出码 3），--release 
     const r1 = run(['--next', '-n', '2']);
     assert.strictEqual(r1.status, 3, `应中止并返回 3，实际 ${r1.status}：${r1.stdout}${r1.stderr}`);
     assert.match(r1.stdout, /中止：另一个运行持有本批租约/);
+
+    // 续租：把 40 分钟前的租约刷新，仍应判为有效（--next 继续被挡）
+    fs.writeFileSync(lease, JSON.stringify({ pid: 99999, startedAt: new Date(Date.now() - 40 * 60000).toISOString(), labels: ['甲'] }));
+    const ren = run(['--renew']);
+    assert.match(ren.stdout, /已续租/);
+    assert.ok(Date.now() - Date.parse(JSON.parse(fs.readFileSync(lease, 'utf8')).startedAt) < 60000, '续租没有刷新时间');
+    assert.strictEqual(run(['--next', '-n', '2']).status, 3, '续租后仍应挡住第二个运行');
 
     const rel = run(['--release']);
     assert.match(rel.stdout, /已释放租约/);
@@ -175,6 +183,12 @@ test('运行租约：别人持租时 --next 中止（退出码 3），--release 
   } finally {
     fs.rmSync(lease, { force: true });
   }
+});
+
+test('默认租约 TTL 必须大于调度器 60 分钟兜底杀进程的上限', () => {
+  // 实测：11 次执行里有一次 failed 跑了 59.2 分钟（~60 分钟超时被杀）。
+  // TTL 若小于这个硬上限，"活着的长跑"会被误判过期、被下一个运行抢走。
+  assert.ok(B.LEASE_TTL_MS > 60 * 60 * 1000, `默认 TTL ${B.LEASE_TTL_MS / 60000} 分钟，未超过 60 分钟硬上限`);
 });
 
 test('splitLabel 把本体与括注分开，两种括号都认', () => {

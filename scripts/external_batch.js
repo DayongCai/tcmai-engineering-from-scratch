@@ -35,7 +35,13 @@ const { classify } = require('./lib_evidence_scope.js');   // 证据分级口径
 const LEASE = process.env.EXTERNAL_BATCH_LEASE === 'off'
   ? null
   : (process.env.EXTERNAL_BATCH_LEASE || path.join(ROOT, '.cache', 'external_batch.lease.json'));
-const LEASE_TTL_MS = Number(process.env.EXTERNAL_BATCH_LEASE_TTL_MS || 45 * 60 * 1000);
+// 租约 TTL 必须是**调度器兜底杀进程的硬上限之上**，不能按"平时多快"来定：
+// 实测 11 次执行 —— 成功批次 min 1.5 / p50 2.5 / p90 4.1 / max 5.7 分钟；
+// 但有一次 failed 跑了 59.2 分钟，那正是调度器的 ~60 分钟超时把进程杀掉的时间点。
+// 若按 45 分钟设 TTL，一个"活着的长跑"会在第 45 分钟被判过期、被下一个运行接管。
+// 所以默认 120 分钟 = 硬上限的 2 倍：活着的运行不会被抢，真挂死的运行最多占 2 小时，
+// 而调度间隔是 8 小时，不会挡住下一个计划批次。
+const LEASE_TTL_MS = Number(process.env.EXTERNAL_BATCH_LEASE_TTL_MS || 120 * 60 * 1000);
 
 function readLease() {
   if (!LEASE) return null;
@@ -73,8 +79,9 @@ function clearLease() {
 }
 
 function describeLease(l) {
-  const mins = Math.round((Date.now() - Date.parse(l.startedAt)) / 60000);
-  return `pid ${l.pid} · ${mins} 分钟前 · 本批 ${(l.labels || []).join('、') || '—'}`;
+  const ageMin = (Date.now() - Date.parse(l.startedAt)) / 60000;
+  const leftMin = Math.round(LEASE_TTL_MS / 60000 - ageMin);
+  return `pid ${l.pid} · ${ageMin.toFixed(0)} 分钟前 · 剩 ${leftMin} 分钟 · 本批 ${(l.labels || []).join('、') || '—'}`;
 }
 
 function loadExt() {
@@ -178,6 +185,16 @@ function main() {
     return;
   }
 
+  if (argv.includes('--renew')) {
+    // 续租：交互式会话可能远超 120 分钟。**不校验持有者** —— 租约是协作信号不是安全边界；
+    // 会误续别人的租约吗？不会：只有正在干活的那个运行会调它。
+    const held = readLease();
+    if (!held) { console.log('没有租约可续'); return; }
+    writeLease(held.labels || []);
+    console.log(`已续租：${describeLease(readLease())}`);
+    return;
+  }
+
   if (argv.includes('--release')) {
     const held = readLease();
     clearLease();
@@ -276,9 +293,9 @@ function main() {
     return;
   }
 
-  console.log('用法: --status | --next [-n N] [--force] | --import <file.json> | --audit | --release | --requery "<证名>"');
+  console.log('用法: --status | --next [-n N] [--force] | --import <file.json> | --audit | --renew | --release | --requery "<证名>"');
 }
 
 if (require.main === module) main();
 
-module.exports = { queryFor, splitLabel, components, allLabels, pending, EXT };
+module.exports = { queryFor, splitLabel, components, allLabels, pending, EXT, LEASE_TTL_MS };
