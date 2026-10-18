@@ -2,11 +2,11 @@
   "$generated": "node scripts/build_outputs_index.js",
   "note": "可复用产出物的根级索引。契约见 CONTRIBUTING.md；每章的产物是生成物，索引是它们的生成物。",
   "counts": {
-    "items": 38,
-    "chaptersWithOutputs": 19,
+    "items": 50,
+    "chaptersWithOutputs": 25,
     "byKind": {
-      "prompt": 19,
-      "skill": 19
+      "prompt": 25,
+      "skill": 25
     },
     "gaps": 0
   },
@@ -263,6 +263,126 @@
                   "title": "chengshu-banben",
                   "description": "伤寒条文引用核对：补到篇+篇内条号+底本标识，原文逐字返回，歧义全列",
                   "chars": 556
+                }
+              ]
+            },
+            {
+              "chapter": "02-liujing-kuangjia",
+              "title": "第 2 章 · 六经辨证的框架：五条提纲，一条失踪",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/02-liujing-kuangjia/outputs/prompt-liujing-kuangjia.md",
+                  "title": "六经可核性核对",
+                  "description": null,
+                  "chars": 685
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/02-liujing-kuangjia/outputs/skill-liujing-kuangjia.md",
+                  "title": "liujing-kuangjia",
+                  "description": "六经可核性核对：逐经给提纲条+规模+标志方，缺篇标 MIA 不补记忆",
+                  "chars": 512
+                }
+              ]
+            },
+            {
+              "chapter": "03-taiyang-biao",
+              "title": "第 3 章 · 太阳病表证：有汗与无汗之外，还有 129 条「发热」被写成了异体字",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/03-taiyang-biao/outputs/prompt-taiyang-biao.md",
+                  "title": "经文症状检索（含异体字归一）",
+                  "description": null,
+                  "chars": 633
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/03-taiyang-biao/outputs/skill-taiyang-biao.md",
+                  "title": "taiyang-biao",
+                  "description": "太阳表证检索与判定：异体字归一报漏检、中风/伤寒分支给依据、不硬分",
+                  "chars": 536
+                }
+              ]
+            },
+            {
+              "chapter": "04-yangming-li",
+              "title": "第 4 章 · 阳明病里实证：三承气不是三档火力，是三道门槛",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/04-yangming-li/outputs/prompt-yangming-li.md",
+                  "title": "三承气分层判定",
+                  "description": null,
+                  "chars": 635
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/04-yangming-li/outputs/skill-yangming-li.md",
+                  "title": "yangming-li",
+                  "description": "阳明腑实三承气分层：只用原文词判档、缺项报缺、异文并列不择一",
+                  "chars": 509
+                }
+              ]
+            },
+            {
+              "chapter": "05-shaoyang-banbiao",
+              "title": "第 5 章 · 少阳病半表半里：一条把「与」改成「或」的规则",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/05-shaoyang-banbiao/outputs/prompt-shaoyang-banbiao.md",
+                  "title": "柴胡证 OR 判定助手",
+                  "description": null,
+                  "chars": 639
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/05-shaoyang-banbiao/outputs/skill-shaoyang-banbiao.md",
+                  "title": "shaoyang-banbiao",
+                  "description": "柴胡证 OR 判定：一证即立、提纲单列、三禁只提示、检索报两层漏检",
+                  "chars": 506
+                }
+              ]
+            },
+            {
+              "chapter": "06-taiyin-xuhan",
+              "title": "第 6 章 · 太阴病：一条提纲撑起的一章，理中丸不在这一篇",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/06-taiyin-xuhan/outputs/prompt-taiyin-xuhan.md",
+                  "title": "证据链核对（结论 ← 条文）",
+                  "description": null,
+                  "chars": 684
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/06-taiyin-xuhan/outputs/skill-taiyin-xuhan.md",
+                  "title": "taiyin-xuhan",
+                  "description": "太阴篇证据链核对：拆篇识目录残片、逐环报 hit/crossPian/missing、缺不补",
+                  "chars": 519
+                }
+              ]
+            },
+            {
+              "chapter": "08-jueyin-hanre",
+              "title": "第 8 章 · 厥阴病：30 条，乌梅丸一次也没出现",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/08-jueyin-hanre/outputs/prompt-jueyin-hanre.md",
+                  "title": "篇内 / 篇外证据探针",
+                  "description": null,
+                  "chars": 670
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/08-jueyin-hanre/outputs/skill-jueyin-hanre.md",
+                  "title": "jueyin-hanre",
+                  "description": "篇内/篇外证据探针：两列计数、缺条标底本未收、仅篇外标篇号",
+                  "chars": 453
                 }
               ]
             },
@@ -866,6 +986,186 @@
       "description": "伤寒条文引用核对：补到篇+篇内条号+底本标识，原文逐字返回，歧义全列",
       "version": "0.1.0",
       "chars": 556
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "02-liujing-kuangjia",
+      "chapterTitle": "第 2 章 · 六经辨证的框架：五条提纲，一条失踪",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/02-liujing-kuangjia/outputs/prompt-liujing-kuangjia.md",
+      "title": "六经可核性核对",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 685
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "02-liujing-kuangjia",
+      "chapterTitle": "第 2 章 · 六经辨证的框架：五条提纲，一条失踪",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/02-liujing-kuangjia/outputs/skill-liujing-kuangjia.md",
+      "title": "liujing-kuangjia",
+      "name": "liujing-kuangjia",
+      "description": "六经可核性核对：逐经给提纲条+规模+标志方，缺篇标 MIA 不补记忆",
+      "version": "0.1.0",
+      "chars": 512
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "03-taiyang-biao",
+      "chapterTitle": "第 3 章 · 太阳病表证：有汗与无汗之外，还有 129 条「发热」被写成了异体字",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/03-taiyang-biao/outputs/prompt-taiyang-biao.md",
+      "title": "经文症状检索（含异体字归一）",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 633
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "03-taiyang-biao",
+      "chapterTitle": "第 3 章 · 太阳病表证：有汗与无汗之外，还有 129 条「发热」被写成了异体字",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/03-taiyang-biao/outputs/skill-taiyang-biao.md",
+      "title": "taiyang-biao",
+      "name": "taiyang-biao",
+      "description": "太阳表证检索与判定：异体字归一报漏检、中风/伤寒分支给依据、不硬分",
+      "version": "0.1.0",
+      "chars": 536
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "04-yangming-li",
+      "chapterTitle": "第 4 章 · 阳明病里实证：三承气不是三档火力，是三道门槛",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/04-yangming-li/outputs/prompt-yangming-li.md",
+      "title": "三承气分层判定",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 635
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "04-yangming-li",
+      "chapterTitle": "第 4 章 · 阳明病里实证：三承气不是三档火力，是三道门槛",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/04-yangming-li/outputs/skill-yangming-li.md",
+      "title": "yangming-li",
+      "name": "yangming-li",
+      "description": "阳明腑实三承气分层：只用原文词判档、缺项报缺、异文并列不择一",
+      "version": "0.1.0",
+      "chars": 509
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "05-shaoyang-banbiao",
+      "chapterTitle": "第 5 章 · 少阳病半表半里：一条把「与」改成「或」的规则",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/05-shaoyang-banbiao/outputs/prompt-shaoyang-banbiao.md",
+      "title": "柴胡证 OR 判定助手",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 639
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "05-shaoyang-banbiao",
+      "chapterTitle": "第 5 章 · 少阳病半表半里：一条把「与」改成「或」的规则",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/05-shaoyang-banbiao/outputs/skill-shaoyang-banbiao.md",
+      "title": "shaoyang-banbiao",
+      "name": "shaoyang-banbiao",
+      "description": "柴胡证 OR 判定：一证即立、提纲单列、三禁只提示、检索报两层漏检",
+      "version": "0.1.0",
+      "chars": 506
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "06-taiyin-xuhan",
+      "chapterTitle": "第 6 章 · 太阴病：一条提纲撑起的一章，理中丸不在这一篇",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/06-taiyin-xuhan/outputs/prompt-taiyin-xuhan.md",
+      "title": "证据链核对（结论 ← 条文）",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 684
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "06-taiyin-xuhan",
+      "chapterTitle": "第 6 章 · 太阴病：一条提纲撑起的一章，理中丸不在这一篇",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/06-taiyin-xuhan/outputs/skill-taiyin-xuhan.md",
+      "title": "taiyin-xuhan",
+      "name": "taiyin-xuhan",
+      "description": "太阴篇证据链核对：拆篇识目录残片、逐环报 hit/crossPian/missing、缺不补",
+      "version": "0.1.0",
+      "chars": 519
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "08-jueyin-hanre",
+      "chapterTitle": "第 8 章 · 厥阴病：30 条，乌梅丸一次也没出现",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/08-jueyin-hanre/outputs/prompt-jueyin-hanre.md",
+      "title": "篇内 / 篇外证据探针",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 670
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "08-jueyin-hanre",
+      "chapterTitle": "第 8 章 · 厥阴病：30 条，乌梅丸一次也没出现",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/08-jueyin-hanre/outputs/skill-jueyin-hanre.md",
+      "title": "jueyin-hanre",
+      "name": "jueyin-hanre",
+      "description": "篇内/篇外证据探针：两列计数、缺条标底本未收、仅篇外标篇号",
+      "version": "0.1.0",
+      "chars": 453
     },
     {
       "dept": "中医系",

@@ -2,7 +2,7 @@
 
 > 本章节由 `scripts/build_outputs_index.js` **生成**，请勿手改；重跑脚本同步。
 
-> **38** 件产出物 · 覆盖 **19** 个章节 · prompt 19 · skill 19
+> **50** 件产出物 · 覆盖 **25** 个章节 · prompt 25 · skill 25
 
 ## 这是什么
 
@@ -24,7 +24,7 @@
 | ☯️ 中医系 | 中医基础理论 | 3 | 6 |
 | ☯️ 中医系 | 中医诊断学 | 1 | 2 |
 | ☯️ 中医系 | 内经选读 | 6 | 12 |
-| ☯️ 中医系 | 伤寒论 | 2 | 4 |
+| ☯️ 中医系 | 伤寒论 | 8 | 16 |
 | 🌾 中药系 | 中药学 | 1 | 2 |
 | 🪡 针灸系 | 腧穴学 | 1 | 2 |
 | 🦴 骨伤系 | 中医正骨学 | 1 | 2 |
@@ -139,7 +139,7 @@
 
 ### 伤寒论
 
-> Core · 第 4 学期 · 已产出 2 章
+> Core · 第 4 学期 · 已产出 8 章
 
 #### 第 1 章 · 《伤寒论》的成书、版本与条文结构：1760 条不是 398 条
 
@@ -149,6 +149,60 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 伤寒条号引用器 | — | 593 | [`prompt-chengshu-banben.md`](../departments/01-zhongyi/07-shanghanlun/chapters/01-chengshu-banben/outputs/prompt-chengshu-banben.md) |
 | skill | chengshu-banben | 伤寒条文引用核对：补到篇+篇内条号+底本标识，原文逐字返回，歧义全列 | 556 | [`skill-chengshu-banben.md`](../departments/01-zhongyi/07-shanghanlun/chapters/01-chengshu-banben/outputs/skill-chengshu-banben.md) |
+
+#### 第 2 章 · 六经辨证的框架：五条提纲，一条失踪
+
+`07-shanghanlun/chapters/02-liujing-kuangjia/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 六经可核性核对 | — | 685 | [`prompt-liujing-kuangjia.md`](../departments/01-zhongyi/07-shanghanlun/chapters/02-liujing-kuangjia/outputs/prompt-liujing-kuangjia.md) |
+| skill | liujing-kuangjia | 六经可核性核对：逐经给提纲条+规模+标志方，缺篇标 MIA 不补记忆 | 512 | [`skill-liujing-kuangjia.md`](../departments/01-zhongyi/07-shanghanlun/chapters/02-liujing-kuangjia/outputs/skill-liujing-kuangjia.md) |
+
+#### 第 3 章 · 太阳病表证：有汗与无汗之外，还有 129 条「发热」被写成了异体字
+
+`07-shanghanlun/chapters/03-taiyang-biao/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 经文症状检索（含异体字归一） | — | 633 | [`prompt-taiyang-biao.md`](../departments/01-zhongyi/07-shanghanlun/chapters/03-taiyang-biao/outputs/prompt-taiyang-biao.md) |
+| skill | taiyang-biao | 太阳表证检索与判定：异体字归一报漏检、中风/伤寒分支给依据、不硬分 | 536 | [`skill-taiyang-biao.md`](../departments/01-zhongyi/07-shanghanlun/chapters/03-taiyang-biao/outputs/skill-taiyang-biao.md) |
+
+#### 第 4 章 · 阳明病里实证：三承气不是三档火力，是三道门槛
+
+`07-shanghanlun/chapters/04-yangming-li/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 三承气分层判定 | — | 635 | [`prompt-yangming-li.md`](../departments/01-zhongyi/07-shanghanlun/chapters/04-yangming-li/outputs/prompt-yangming-li.md) |
+| skill | yangming-li | 阳明腑实三承气分层：只用原文词判档、缺项报缺、异文并列不择一 | 509 | [`skill-yangming-li.md`](../departments/01-zhongyi/07-shanghanlun/chapters/04-yangming-li/outputs/skill-yangming-li.md) |
+
+#### 第 5 章 · 少阳病半表半里：一条把「与」改成「或」的规则
+
+`07-shanghanlun/chapters/05-shaoyang-banbiao/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 柴胡证 OR 判定助手 | — | 639 | [`prompt-shaoyang-banbiao.md`](../departments/01-zhongyi/07-shanghanlun/chapters/05-shaoyang-banbiao/outputs/prompt-shaoyang-banbiao.md) |
+| skill | shaoyang-banbiao | 柴胡证 OR 判定：一证即立、提纲单列、三禁只提示、检索报两层漏检 | 506 | [`skill-shaoyang-banbiao.md`](../departments/01-zhongyi/07-shanghanlun/chapters/05-shaoyang-banbiao/outputs/skill-shaoyang-banbiao.md) |
+
+#### 第 6 章 · 太阴病：一条提纲撑起的一章，理中丸不在这一篇
+
+`07-shanghanlun/chapters/06-taiyin-xuhan/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 证据链核对（结论 ← 条文） | — | 684 | [`prompt-taiyin-xuhan.md`](../departments/01-zhongyi/07-shanghanlun/chapters/06-taiyin-xuhan/outputs/prompt-taiyin-xuhan.md) |
+| skill | taiyin-xuhan | 太阴篇证据链核对：拆篇识目录残片、逐环报 hit/crossPian/missing、缺不补 | 519 | [`skill-taiyin-xuhan.md`](../departments/01-zhongyi/07-shanghanlun/chapters/06-taiyin-xuhan/outputs/skill-taiyin-xuhan.md) |
+
+#### 第 8 章 · 厥阴病：30 条，乌梅丸一次也没出现
+
+`07-shanghanlun/chapters/08-jueyin-hanre/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 篇内 / 篇外证据探针 | — | 670 | [`prompt-jueyin-hanre.md`](../departments/01-zhongyi/07-shanghanlun/chapters/08-jueyin-hanre/outputs/prompt-jueyin-hanre.md) |
+| skill | jueyin-hanre | 篇内/篇外证据探针：两列计数、缺条标底本未收、仅篇外标篇号 | 453 | [`skill-jueyin-hanre.md`](../departments/01-zhongyi/07-shanghanlun/chapters/08-jueyin-hanre/outputs/skill-jueyin-hanre.md) |
 
 #### 第 9 章 · 合病与并病：两经同时病，还是一个没走一个又来
 

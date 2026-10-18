@@ -1307,6 +1307,714 @@ window.TCMAI_CONTENT = {
     "video": null,
     "videoPoster": null
   },
+  "01-zhongyi/07-shanghanlun/02-liujing-kuangjia": {
+    "key": "01-zhongyi/07-shanghanlun/02-liujing-kuangjia",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "07-shanghanlun",
+    "subjectTitle": "伤寒论",
+    "chapterSlug": "02-liujing-kuangjia",
+    "n": 2,
+    "title": "第 2 章 · 六经辨证的框架：五条提纲，一条失踪",
+    "motto": "「太阳之为病，脉浮，头项强痛而恶寒。」——《伤寒论·辨太阳病脉证并治》",
+    "problem": "教材讲六经，一张表六行排得整整齐齐。你打开底本逐篇找提纲条，找到五条，第六行（少阴）怎么找都没有——于是你把「少阴之为病，脉微细，但欲寐也」按记忆写了进去。",
+    "roots": "环境逼迫(讲义要一张六经表) + 知识积累(逐条核录 × 缺项标注 = 一张能说明「哪一行没证据」的表)",
+    "html": "<h1 id=\"第-2-章-六经辨证的框架-五条提纲-一条失踪\">第 2 章 · 六经辨证的框架：五条提纲，一条失踪</h1>\n<blockquote><p><strong>MOTTO:</strong> 「太阳之为病，脉浮，头项强痛而恶寒。」——《伤寒论·辨太阳病脉证并治》</p>\n<p><strong>PROBLEM:</strong> 教材讲六经，一张表六行排得整整齐齐。你打开底本逐篇找提纲条，找到五条，第六行（少阴）怎么找都没有——于是你把「少阴之为病，脉微细，但欲寐也」按记忆写了进去。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(讲义要一张六经表) + 知识积累(逐条核录 × 缺项标注 = 一张能说明「哪一行没证据」的表)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>伤寒论</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>02 / 12</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>逐字引对五条提纲（太阳、阳明、少阳、太阴、厥阴），并说出各自的<strong>判据落点</strong></li><li>说清「提纲条」在文本里的角色：它是一经的<strong>入口条件</strong>，不是该经的全部</li><li>用实测数据说明底本缺哪一经的正文，以及缺的证据长什么样</li><li>写一个可核性检查器：对每一经输出「提纲条有无 / 篇数 / 条数 / 方名命中」</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"五条提纲-逐字如下\">五条提纲，逐字如下</h3>\n<blockquote><p>太阳之为病，脉浮，头项强痛而恶寒。——《伤寒论·辨太阳病脉证并治》（篇 4 第 1 条）</p>\n<p>阳明之为病，胃家实，一作寒是也。——《伤寒论·辨阳明病脉证并治》（篇 9 第 2 条）</p>\n<p>少阳之为病，口苦咽干，目眩也。——《伤寒论·辨少阳病脉证并治》（篇 11 第 1 条）</p>\n<p>太阴之为病，腹满而吐，食不下，自利益甚，时腹自痛，下之必胸下结硬。——《伤寒论·辨太阴病脉证并治》（篇 23 第 1 条）</p>\n<p>厥阴之为病，消渴，气上撞心，心中疼热，饥而不欲食，食则吐蛔，下之利不止。——《伤寒论·辨厥阴病脉证并治》（篇 24 第 1 条）</p></blockquote>\n<p>注意两处文本细节，都不是笔误：阳明条的「一作寒是也」是<strong>夹注</strong>（异文），太阴条在篇 27 写作「若下之，必胸下结硬」——同一句两个版本，说明底本是拼合本。</p>\n<h3 id=\"少阴-目录里有-正文没有\">少阴：目录里有，正文没有</h3>\n<p>底本第 12 篇（标注为太阴病）的七条内容，全是卷首与目录：</p>\n<blockquote><p>辨太阴病脉证并治第十 辨少阴病脉证并治第十一 辨厥阴病脉证并治第十二……伤寒论卷第七……宋林亿校正，明赵开美校刻，沉琳仝校。</p></blockquote>\n<p>也就是说，<strong>「辨少阴病脉证并治第十一」这个篇名在底本里只以目录行的形式出现</strong>，正文未收。实测佐证（全库检索）：</p>\n<div class=\"table-wrap\"><table><thead><tr><th>检索对象</th><th>命中</th></tr></thead><tbody><tr><td>「少阴之为病」</td><td><strong>0</strong></td></tr><tr><td>「但欲寐」</td><td><strong>0</strong></td></tr><tr><td>「麻黄附子细辛汤」</td><td><strong>0</strong></td></tr><tr><td>「黄连阿胶汤」</td><td><strong>0</strong></td></tr></tbody></table></div>\n<p>四类少阴标志物全为 0，不是「少」而是「无」。所以本章的六经表只能有五行可核，第六行必须标缺——这一格不是待办，是<strong>证据缺口</strong>。</p>\n<h3 id=\"提纲条不是全部\">提纲条不是全部</h3>\n<p>太阳病 566 条（4 篇）、阳明 134 条（2 篇）、少阳 64 条（3 篇）、厥阴 30 条（1 篇）；而太阴真正可用的只有 1 条提纲 + 篇 27 混编里的少量条文。条数差异本身就是信息：太阳篇占全书条文的三分之一，厥阴篇只有 30 条——<strong>详略不均，是整理本的痕迹，不是病证本身的权重</strong>。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js：逐经输出 {提纲条, 篇数, 条数, 关键方命中, 状态}\nconst OUTLINE = { 太阳: '太阳之为病', 阳明: '阳明之为病', 少阳: '少阳之为病', 太阴: '太阴之为病', 厥阴: '厥阴之为病' };\n// 1) 按域汇总篇数与条数\n// 2) 逐经检索提纲条与标志方，返回 ok / missing\n// 3) 少阴单独列为 MIA，并核对四个标志物是否真为 0</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：五行 <code>status: 'ok'</code>；<code>少阴</code> 输出 <code>MIA</code> 且 <code>probes</code> 四项全 0；<code>太阴</code> 篇数 3 但 <code>usableTiao</code> 显著小于 <code>tiao</code>（因为篇 12 是目录残片）。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>框架不等于辨证</strong>。六经表回答「这一经的入口条件是什么」，不回答「这个病人属哪经」。</li><li><strong>缺口不能靠记忆补</strong>。少阴条文本章一律不引，任何需要少阴原文的推理都标「待补源」。</li><li><strong>篇域标签不可全信</strong>。底本的 <code>domain</code> 字段有错配（篇 27 标太阴、实为混编；篇 24 标厥阴、第 2 条起出现「少阴病」），本章只用标签做分组，不做结论。</li><li><strong>提纲条的版本差异</strong>（阳明夹注、太阴「若/必」）保留原样，不取「更好的那个」。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 全部条文引自仓库内 <code>standards/shanghan/底本.json</code>（源为桌面整理本，可复核）；本章只做文本结构与可核性核对，不构成辨证论治指导。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>篇 27 有 186 条，但太阴候选只有 3 条。请列出你把某条判为「非太阴」的依据。</li><li>「胃家实，一作寒是也」里的夹注如果被删除，阳明提纲的判据会变吗？</li><li>少阴四类标志物全为 0，能否推出「底本不含少阴病内容」？还有哪些可能？</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>一张表最怕的不是缺一行，而是缺了还画满。六经框架在教材里之所以整齐，是因为整理者把不同来源拼在一起时补了缺——本章把补的那一笔擦掉，让你看见接口在哪。</p>",
+    "markdown": "# 第 2 章 · 六经辨证的框架：五条提纲，一条失踪\n\n> **MOTTO:** 「太阳之为病，脉浮，头项强痛而恶寒。」——《伤寒论·辨太阳病脉证并治》\n>\n> **PROBLEM:** 教材讲六经，一张表六行排得整整齐齐。你打开底本逐篇找提纲条，找到五条，第六行（少阴）怎么找都没有——于是你把「少阴之为病，脉微细，但欲寐也」按记忆写了进去。\n>\n> **双根因定位:** 环境逼迫(讲义要一张六经表) + 知识积累(逐条核录 × 缺项标注 = 一张能说明「哪一行没证据」的表)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 伤寒论 |\n| 院系 | 中医系 |\n| 章序号 | 02 / 12 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 逐字引对五条提纲（太阳、阳明、少阳、太阴、厥阴），并说出各自的**判据落点**\n- 说清「提纲条」在文本里的角色：它是一经的**入口条件**，不是该经的全部\n- 用实测数据说明底本缺哪一经的正文，以及缺的证据长什么样\n- 写一个可核性检查器：对每一经输出「提纲条有无 / 篇数 / 条数 / 方名命中」\n\n## 核心概念\n\n### 五条提纲，逐字如下\n\n> 太阳之为病，脉浮，头项强痛而恶寒。——《伤寒论·辨太阳病脉证并治》（篇 4 第 1 条）\n>\n> 阳明之为病，胃家实，一作寒是也。——《伤寒论·辨阳明病脉证并治》（篇 9 第 2 条）\n>\n> 少阳之为病，口苦咽干，目眩也。——《伤寒论·辨少阳病脉证并治》（篇 11 第 1 条）\n>\n> 太阴之为病，腹满而吐，食不下，自利益甚，时腹自痛，下之必胸下结硬。——《伤寒论·辨太阴病脉证并治》（篇 23 第 1 条）\n>\n> 厥阴之为病，消渴，气上撞心，心中疼热，饥而不欲食，食则吐蛔，下之利不止。——《伤寒论·辨厥阴病脉证并治》（篇 24 第 1 条）\n\n注意两处文本细节，都不是笔误：阳明条的「一作寒是也」是**夹注**（异文），太阴条在篇 27 写作「若下之，必胸下结硬」——同一句两个版本，说明底本是拼合本。\n\n### 少阴：目录里有，正文没有\n\n底本第 12 篇（标注为太阴病）的七条内容，全是卷首与目录：\n\n> 辨太阴病脉证并治第十 辨少阴病脉证并治第十一 辨厥阴病脉证并治第十二……伤寒论卷第七……宋林亿校正，明赵开美校刻，沉琳仝校。\n\n也就是说，**「辨少阴病脉证并治第十一」这个篇名在底本里只以目录行的形式出现**，正文未收。实测佐证（全库检索）：\n\n| 检索对象 | 命中 |\n|---|--:|\n| 「少阴之为病」 | **0** |\n| 「但欲寐」 | **0** |\n| 「麻黄附子细辛汤」 | **0** |\n| 「黄连阿胶汤」 | **0** |\n\n四类少阴标志物全为 0，不是「少」而是「无」。所以本章的六经表只能有五行可核，第六行必须标缺——这一格不是待办，是**证据缺口**。\n\n### 提纲条不是全部\n\n太阳病 566 条（4 篇）、阳明 134 条（2 篇）、少阳 64 条（3 篇）、厥阴 30 条（1 篇）；而太阴真正可用的只有 1 条提纲 + 篇 27 混编里的少量条文。条数差异本身就是信息：太阳篇占全书条文的三分之一，厥阴篇只有 30 条——**详略不均，是整理本的痕迹，不是病证本身的权重**。\n\n## BUILD IT：从零实现\n\n```js\n// code/main.js：逐经输出 {提纲条, 篇数, 条数, 关键方命中, 状态}\nconst OUTLINE = { 太阳: '太阳之为病', 阳明: '阳明之为病', 少阳: '少阳之为病', 太阴: '太阴之为病', 厥阴: '厥阴之为病' };\n// 1) 按域汇总篇数与条数\n// 2) 逐经检索提纲条与标志方，返回 ok / missing\n// 3) 少阴单独列为 MIA，并核对四个标志物是否真为 0\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：五行 `status: 'ok'`；`少阴` 输出 `MIA` 且 `probes` 四项全 0；`太阴` 篇数 3 但 `usableTiao` 显著小于 `tiao`（因为篇 12 是目录残片）。\n\n## 代价与边界\n\n- **框架不等于辨证**。六经表回答「这一经的入口条件是什么」，不回答「这个病人属哪经」。\n- **缺口不能靠记忆补**。少阴条文本章一律不引，任何需要少阴原文的推理都标「待补源」。\n- **篇域标签不可全信**。底本的 `domain` 字段有错配（篇 27 标太阴、实为混编；篇 24 标厥阴、第 2 条起出现「少阴病」），本章只用标签做分组，不做结论。\n- **提纲条的版本差异**（阳明夹注、太阴「若/必」）保留原样，不取「更好的那个」。\n\n> **免责声明：** 全部条文引自仓库内 `standards/shanghan/底本.json`（源为桌面整理本，可复核）；本章只做文本结构与可核性核对，不构成辨证论治指导。\n\n## 练习\n\n1. 篇 27 有 186 条，但太阴候选只有 3 条。请列出你把某条判为「非太阴」的依据。\n2. 「胃家实，一作寒是也」里的夹注如果被删除，阳明提纲的判据会变吗？\n3. 少阴四类标志物全为 0，能否推出「底本不含少阴病内容」？还有哪些可能？\n\n## 进阶思考\n\n一张表最怕的不是缺一行，而是缺了还画满。六经框架在教材里之所以整齐，是因为整理者把不同来源拼在一起时补了缺——本章把补的那一笔擦掉，让你看见接口在哪。\n",
+    "code": {
+      "main.js": "'use strict';\r\n/**\r\n * 六经可核性检查：《伤寒论》底本逐经给出 {提纲条, 篇数, 条数, 方命中, 状态}\r\n *\r\n *   node code/main.js\r\n *\r\n * 设计：\r\n *   1. 只按 domain 字段分组统计规模，不对「属哪经」下判断 —— 底本的域标签有错配。\r\n *   2. 提纲条用逐字检索，不做同义扩展；找不到就是 MIA，不许用记忆补。\r\n *   3. MIA 的经必须同时报「标志物全 0」的探针结果，让缺口可复核而不只是「没找到」。\r\n */\r\n\r\nconst path = require('node:path');\r\nconst fs = require('node:fs');\r\n\r\nconst ROOT = path.resolve(__dirname, '../../../../../..');\r\nconst BOOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/shanghan/底本.json'), 'utf8'));\r\n\r\n/** 六经：提纲条首句 + 用来验证「这一经真的在库里」的标志方 */\r\nconst JING = [\r\n  { name: '太阳', outline: '太阳之为病', probes: ['桂枝汤', '麻黄汤'] },\r\n  { name: '阳明', outline: '阳明之为病', probes: ['大承气汤', '调胃承气汤'] },\r\n  { name: '少阳', outline: '少阳之为病', probes: ['小柴胡汤'] },\r\n  { name: '太阴', outline: '太阴之为病', probes: ['理中丸'] },\r\n  { name: '少阴', outline: '少阴之为病', probes: ['麻黄附子细辛汤', '黄连阿胶汤', '但欲寐'] },\r\n  { name: '厥阴', outline: '厥阴之为病', probes: ['乌梅丸', '当归四逆汤'] },\r\n];\r\n\r\nconst ITEMS = [];\r\nfor (const p of BOOK.pian) {\r\n  for (const it of p.items) ITEMS.push({ pian: p.no, pianName: p.pian, domain: p.domain, text: it.text });\r\n}\r\n\r\nconst count = (needle) => ITEMS.filter((i) => i.text.includes(needle)).length;\r\n\r\n/** 逐经检查。status: ok（提纲+至少一个标志物）/ weak（有提纲，标志物缺）/ MIA（提纲缺） */\r\nfunction audit() {\r\n  return JING.map((j) => {\r\n    const outlineHits = ITEMS.filter((i) => i.text.includes(j.outline));\r\n    const pianSet = new Set();\r\n    for (const h of outlineHits) pianSet.add(h.pian);\r\n    const tiao = ITEMS.filter((i) => i.domain === `${j.name}病`).length;\r\n    const pian = new Set(ITEMS.filter((i) => i.domain === `${j.name}病`).map((i) => i.pian)).size;\r\n    const probes = j.probes.map((p) => ({ probe: p, hits: count(p) }));\r\n    const anyProbe = probes.some((p) => p.hits > 0);\r\n    const status = outlineHits.length === 0 ? 'MIA' : anyProbe ? 'ok' : 'weak';\r\n    return {\r\n      name: j.name,\r\n      status,\r\n      tiao,\r\n      pian,\r\n      outline: outlineHits.length ? outlineHits[0].text : null,\r\n      outlineAt: outlineHits.length ? `篇${outlineHits[0].pian}` : null,\r\n      probes,\r\n    };\r\n  });\r\n}\r\n\r\nfunction main() {\r\n  const rows = audit();\r\n  console.log('六经可核性（底本 27 篇 / 逐字检索，不用记忆补缺）\\n');\r\n  console.log('经    状态  条数  篇数  提纲条位置  提纲首句');\r\n  for (const r of rows) {\r\n    const head = r.outline ? r.outline.slice(0, 18) + '…' : '——（检索不到）';\r\n    console.log(`${r.name}  ${r.status.padEnd(5)} ${String(r.tiao).padStart(4)}  ${String(r.pian).padStart(3)}   ${String(r.outlineAt || '-').padEnd(8)} ${head}`);\r\n  }\r\n  const mia = rows.filter((r) => r.status !== 'ok');\r\n  console.log('\\n不可用/偏弱的经：');\r\n  for (const r of mia) {\r\n    const zero = r.probes.filter((p) => p.hits === 0).map((p) => p.probe);\r\n    console.log(`  · ${r.name}（${r.status}）标志物零命中：${zero.join('、') || '无'}`);\r\n  }\r\n  console.log('\\n口径：条数按 domain 字段分组，底本域标签存在错配，故条数只表规模、不表归属。');\r\n  console.log('本输出为文本结构核对，不构成辨证指导。');\r\n}\r\n\r\nif (require.main === module) main();\r\nmodule.exports = { JING, ITEMS, count, audit, BOOK };\r\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { audit, count, ITEMS } = require('./main.js');\n\nconst rows = audit();\nconst by = (n) => rows.find((r) => r.name === n);\n\ntest('五经有提纲条，少阴 MIA', () => {\n  assert.deepStrictEqual(rows.map((r) => r.status), ['ok', 'ok', 'ok', 'ok', 'MIA', 'ok']);\n  assert.strictEqual(by('少阴').outline, null);\n});\n\ntest('少阴三标志物全 0 命中（缺口可复核）', () => {\n  const p = by('少阴').probes;\n  assert.deepStrictEqual(p.map((x) => x.hits), [0, 0, 0]);\n  assert.strictEqual(count('少阴之为病'), 0);\n});\n\ntest('规模：太阳 566/4 篇、阳明 134/2、少阳 64/3、太阴 194/3、厥阴 30/1', () => {\n  assert.deepStrictEqual([by('太阳').tiao, by('太阳').pian], [566, 4]);\n  assert.deepStrictEqual([by('阳明').tiao, by('阳明').pian], [134, 2]);\n  assert.deepStrictEqual([by('少阳').tiao, by('少阳').pian], [64, 3]);\n  assert.deepStrictEqual([by('太阴').tiao, by('太阴').pian], [194, 3]);\n  assert.deepStrictEqual([by('厥阴').tiao, by('厥阴').pian], [30, 1]);\n});\n\ntest('提纲条逐字可取，含异文夹注与两版「若/必」', () => {\n  assert.match(by('阳明').outline, /胃家实，一作寒是也/);\n  assert.match(by('太阴').outline, /下之必胸下结硬/);\n  assert.match(by('厥阴').outline, /食则吐蛔/);\n});\n\ntest('提纲条不与域标签混淆：篇 24 记为厥阴纲，但其中含「少阴病」条文', () => {\n  const p24 = ITEMS.filter((i) => i.pian === 24);\n  assert.ok(p24.some((i) => i.text.includes('少阴病')), '篇24 应混入少阴条');\n  assert.ok(p24.length >= 30);\n});\n\ntest('少阴在库里连「篇名」都只以目录行出现（篇 12）', () => {\n  const p12 = ITEMS.filter((i) => i.pian === 12).map((i) => i.text).join('');\n  assert.ok(p12.includes('辨少阴病脉证并治'), '目录行应含少阴篇名');\n  assert.strictEqual(ITEMS.filter((i) => i.pian === 12 && i.text.includes('少阴之为病')).length, 0);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "「太阳之为病」的提纲条原文是？",
+          "options": [
+            "脉浮，头项强痛而恶寒",
+            "脉浮紧，发热无汗",
+            "脉浮缓，汗出恶风",
+            "脉浮，身重，汗出恶风"
+          ],
+          "correct": 0,
+          "explanation": "提纲条给的是入口条件，不是麻黄汤/桂枝汤的方证。"
+        },
+        {
+          "stage": "check",
+          "question": "底本里「少阴之为病」「但欲寐」「麻黄附子细辛汤」「黄连阿胶汤」的检索结果是？",
+          "options": [
+            "各有 1–2 条",
+            "全部 0 命中",
+            "只有提纲条命中",
+            "只有方名命中"
+          ],
+          "correct": 1,
+          "explanation": "四类标志物全 0，说明少阴篇正文缺失，只有目录行留名。"
+        },
+        {
+          "stage": "check",
+          "question": "阳明提纲「胃家实，一作寒是也」中的「一作寒是也」是？",
+          "options": [
+            "另一条提纲",
+            "校勘异文夹注",
+            "错简",
+            "注家评论"
+          ],
+          "correct": 1,
+          "explanation": "夹注记录异文，不是原文主张；引用时应保留并标注。"
+        },
+        {
+          "stage": "check",
+          "question": "底本各经条数分布是？",
+          "options": [
+            "六经基本均衡",
+            "太阳 566 · 阳明 134 · 少阳 64 · 太阴 194 · 厥阴 30 · 少阴 0",
+            "厥阴最多",
+            "太阴最少"
+          ],
+          "correct": 1,
+          "explanation": "详略极不均，是整理本痕迹；太阴 194 条中含混编篇，实际可用远少于此。"
+        },
+        {
+          "stage": "post",
+          "question": "面对少阴缺篇，本章的正确做法是？",
+          "options": [
+            "按记忆补上「脉微细，但欲寐」",
+            "标为证据缺口，需要时写「待补源」",
+            "用厥阴篇条文代替",
+            "从其他书抄一段"
+          ],
+          "correct": 1,
+          "explanation": "缺口要留痕；补记忆等于制造不可复核的引文。"
+        },
+        {
+          "stage": "post",
+          "question": "为何本章的条数统计「只表规模、不表归属」？",
+          "options": [
+            "因为条数太多",
+            "因为底本 domain 标签存在错配（篇 27 标太阴实为混编、篇 24 标厥阴却含少阴条）",
+            "因为条号不连续",
+            "因为版本不同"
+          ],
+          "correct": 1,
+          "explanation": "标签不可全信，统计只能当规模看。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-liujing-kuangjia.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/02-liujing-kuangjia/outputs/prompt-liujing-kuangjia.md",
+        "title": "六经可核性核对",
+        "description": null,
+        "chars": 685,
+        "body": "# 六经可核性核对\n\n## 用途\n\n在引六经之前先问一句：**这一经在底本里有正文吗？** 输出每经的提纲条、条数、篇数、标志方命中，\n把「缺」标成缺口而不是空白。用于**讲义编写、教材校核、引文前置检查**。\n\n## 提示词\n\n```text\n你是伤寒论文献的核对助手。下面是一个底本（JSON：27 篇，每篇含 items[].text）。\n\n任务：对太阳/阳明/少阳/太阴/少阴/厥阴 逐经输出——\n\n【经名】状态：ok / weak / MIA\n  提纲条：逐字原文 + 所在篇号；找不到写「检索不到」\n  规模：条数（按 domain 分组）/ 篇数\n  标志方：<方名>×命中数\n  线索：若 MIA，列出已检索的标志物（如「少阴之为病」「但欲寐」），并给出命中数\n\n规则：\n1. 提纲条必须逐字取自底本，禁止凭记忆补写；找不到就是 MIA。\n2. 状态判定：提纲条存在且有任一标志方命中 = ok；有提纲但标志方全 0 = weak；无提纲 = MIA。\n3. 条数只表规模，不对「属哪经」下判断（底本 domain 标签有错配）。\n4. 禁止把 MIA 的经用其他篇条文「补全」，也不许跨书引用。\n5. 异文夹注（如「一作寒是也」）与版本差异（「若下之」/「下之必」）原样保留。\n\n输出末尾写一行口径：本核对只做文本结构，不构成辨证指导。\n```\n\n## 使用示例\n\n输入：底本 27 篇。\n\n输出（节选）：\n\n```text\n【少阴】状态：MIA\n  提纲条：检索不到\n  规模：0 条 / 0 篇\n  标志方：麻黄附子细辛汤×0、黄连阿胶汤×0、「但欲寐」×0\n  线索：篇 12 目录行含「辨少阴病脉证并治第十一」，正文未收 → 待补源\n```\n\n## 为什么这样限制\n\n- 缺项若不留痕，下一次引用就会把记忆当原文。\n- 条数与归属分开，是为了不在错配标签上叠加结论。\n"
+      },
+      {
+        "name": "skill-liujing-kuangjia.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/02-liujing-kuangjia/outputs/skill-liujing-kuangjia.md",
+        "title": "liujing-kuangjia",
+        "description": "六经可核性核对：逐经给提纲条+规模+标志方，缺篇标 MIA 不补记忆",
+        "chars": 512,
+        "body": "---\nname: liujing-kuangjia\ndescription: 六经可核性核对：逐经给提纲条+规模+标志方，缺篇标 MIA 不补记忆\nversion: 0.1.0\n---\n\n# liujing-kuangjia\n\n## 何时使用\n\n- 写讲义/教材前，确认六经各自在底本里有没有正文\n- 有人引用「某经提纲」时，核对是否为原文\n- 教材与底本对不上，需要把差异定位到「缺篇 / 错配 / 异文」\n\n## 不适用\n\n- 辨证分型（本技能只做文本核对）\n- 跨书汇总（底本之外一律不引）\n- 方证推演\n\n## 步骤\n\n1. **定底本**：确认 JSON/文本来源与篇数，记录底本标识。\n2. **逐经检索提纲条**：逐字，不做同义扩展。\n3. **跑标志方**：每经 1–3 个代表方/关键句，命中数为 0 即证据。\n4. **判状态**：ok / weak / MIA。\n5. **留痕**：MIA 必须写出「已检索什么、命中多少」，供下一手复核。\n\n## 输出模板\n\n```text\n【经名】状态：ok | weak | MIA\n  提纲条：<原文>（篇 N）/ 检索不到\n  规模：N 条 / M 篇\n  标志方：A×n、B×m\n  线索：…\n```\n\n## 质量判据\n\n- 六行都有状态，没有空白格\n- MIA 的经没有任何替代引文\n- 异文与版本差异保留\n\n> 本技能只做文本结构核对，不构成辨证论治指导。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "01-zhongyi/07-shanghanlun/03-taiyang-biao": {
+    "key": "01-zhongyi/07-shanghanlun/03-taiyang-biao",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "07-shanghanlun",
+    "subjectTitle": "伤寒论",
+    "chapterSlug": "03-taiyang-biao",
+    "n": 3,
+    "title": "第 3 章 · 太阳病表证：有汗与无汗之外，还有 129 条「发热」被写成了异体字",
+    "motto": "「太阳病，头痛发热，身疼恶风，无汗而喘者，麻黄汤主之。」——《伤寒论·辨太阳病脉证并治中》",
+    "problem": "你想统计「发热」在全书出现多少次，用检索工具一查——39 条。可正文里明明到处都是发热。你漏掉的那 124 条，写的是「发𤍠」：𤍠 是一个不在 GB2312 里的异体字。",
+    "roots": "环境逼迫(要按症状检索条文) + 知识积累(归一化表 × 判定规则 = 可复核的检索层)",
+    "html": "<h1 id=\"第-3-章-太阳病表证-有汗与无汗之外-还有-129-条-发热-被写成了异体字\">第 3 章 · 太阳病表证：有汗与无汗之外，还有 129 条「发热」被写成了异体字</h1>\n<blockquote><p><strong>MOTTO:</strong> 「太阳病，头痛发热，身疼恶风，无汗而喘者，麻黄汤主之。」——《伤寒论·辨太阳病脉证并治中》</p>\n<p><strong>PROBLEM:</strong> 你想统计「发热」在全书出现多少次，用检索工具一查——39 条。可正文里明明到处都是发热。你漏掉的那 124 条，写的是「发𤍠」：𤍠 是一个不在 GB2312 里的异体字。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(要按症状检索条文) + 知识积累(归一化表 × 判定规则 = 可复核的检索层)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>伤寒论</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>03 / 12</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>4 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>用原文说清太阳表证的两条分支：中风（汗出、脉缓）与伤寒（无汗、脉浮紧、喘）各自的条件</li><li>说出为什么「脉缓」不等于慢，「脉紧」不等于快——它们描述的是紧张度</li><li>建一张异体字归一化表，让「发热」的检索不漏条</li><li>写一个表证判定器：输入症状集，输出分支、代表方与依据条号，并报「不排除项」</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"两条分支的原文条件\">两条分支的原文条件</h3>\n<blockquote><p>太阳病，发热汗出恶风，脉缓者，名为中风。——《伤寒论·辨太阳病脉证并治》（篇 4）</p>\n<p>太阳中风，阳浮而阴弱。阳浮者，热自发，阴弱者汗自出，啬啬恶寒，淅淅恶风，翕翕发热，鼻鸣干呕者，桂枝汤主之。——《伤寒论·辨太阳病脉证并治》（篇 4，方一）</p>\n<p>太阳病，头痛发热，身疼恶风，无汗而喘者，麻黄汤主之。——《伤寒论·辨太阳病脉证并治中》（篇 5）</p></blockquote>\n<p>三条放在一起，「有汗 / 无汗」是分水岭，「脉缓 / 脉浮紧」是佐证，「喘 / 干呕」是旁证。注意桂枝汤条的自我解释：<strong>阳浮者热自发，阴弱者汗自出</strong>——原文自己在给机制，这是《伤寒论》里少见的「条文带注释」写法。</p>\n<h3 id=\"实测规模-本章全部数字可复算\">实测规模（本章全部数字可复算）</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>指标</th><th>实测</th></tr></thead><tbody><tr><td>太阳病域条文</td><td><strong>566 条 / 4 篇</strong></td></tr><tr><td>「桂枝汤」出现</td><td><strong>134 条</strong></td></tr><tr><td>「麻黄汤」出现</td><td><strong>44 条</strong></td></tr><tr><td>「汗出」</td><td><strong>224 条</strong></td></tr><tr><td>「无汗」</td><td><strong>38 条</strong></td></tr><tr><td>「恶寒」</td><td><strong>107 条</strong></td></tr><tr><td>「发热」（正体）</td><td><strong>39 条</strong></td></tr><tr><td>「发𤍠」（异体）</td><td><strong>129 条</strong></td></tr><tr><td>归一后「发热」</td><td><strong>163 条</strong>（129 + 39 − 5 条两形并存）</td></tr></tbody></table></div>\n<p>最后两行的意义：<strong>不归一化，检索「发热」会漏 124 条（43%）</strong>。这不是排版问题，是检索层的正确性问题——你的症状索引会静默丢掉三分之二的证据。</p>\n<h3 id=\"桂枝汤-134-条说明了什么\">桂枝汤 134 条说明了什么</h3>\n<p>桂枝汤出现 134 次，麻黄汤 44 次，比例约 3:1。但这不是「桂枝汤更重要」的证明——桂枝汤大量出现在<strong>禁忌、误治、变证</strong>的条文里（「桂枝汤不中与之」「先与桂枝汤」之类），出现频次高恰恰因为它是基准方，被反复当作对照。用频次当权重，会把「被反复否定」读成「最常用」。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js\nnormalize(text)      // 𤍠→热 等异体归一，返回 {text, replaced}\nsearch(needle)       // 双向检索：raw 命中 vs normalized 命中，报漏检\nclassify({sweat, pulse, dyspnea, vomiting})  // 中风/伤寒/不确定 + 依据</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>search('发热')</code> 返回 raw 39 / normalized 163，漏检 124（129 条含异体，其中 5 条同时含正体）；<code>classify({sweat: true, pulse: '缓'})</code> → 中风/桂枝汤；<code>classify({sweat: false, pulse: '浮紧', dyspnea: true})</code> → 伤寒/麻黄汤；<code>classify({})</code> → 不确定，且不猜。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>归一化表是手工的，不完整</strong>。本章只收 𤍠→热 一组并附实测影响；其他异体（如「蚘/蛔」「欬/咳」）未纳入，检索结果仍可能漏。</li><li><strong>「脉缓」不是心率慢</strong>。原文语境指脉势缓纵，本章代码只做字符串匹配，<strong>不解析脉象含义</strong>。</li><li><strong>表证判定器只覆盖两条经典分支</strong>。太阳病 566 条里大量是变证、坏病、结胸、痞证，本章不处理；把它当「太阳病分类器」会错。</li><li><strong>频次不是权重</strong>（见上）。</li><li>判定器输出「不排除项」而非单一结论，因为原文本身允许合病（见第 9 章）。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 条文引自仓库内 <code>standards/shanghan/底本.json</code>；该底本使用异体字，本章归一化表仅为检索用途，不改原文。本章不构成处方建议。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>为什么「汗出」224 条远多于「无汗」38 条？给出三种可能解释，并说明如何用条文检验。</li><li>若要给「桂枝汤」的 134 条分类（正方 / 禁忌 / 误治后救逆），你的标注规则怎么写？</li><li>归一把「发𤍠」并到「发热」之后，会不会影响「热」与「𤍠」作为异文的文献学价值？两者如何并存？</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>中医文本的检索难点不在分词，而在<strong>字形</strong>。一个异体字能让 129 条证据消失，而这 129 条恰恰是「发热」最密集的部分——数据工程里最贵的错误，通常不是算法错，是字符没对齐。</p>",
+    "markdown": "# 第 3 章 · 太阳病表证：有汗与无汗之外，还有 129 条「发热」被写成了异体字\r\n\r\n> **MOTTO:** 「太阳病，头痛发热，身疼恶风，无汗而喘者，麻黄汤主之。」——《伤寒论·辨太阳病脉证并治中》\r\n>\r\n> **PROBLEM:** 你想统计「发热」在全书出现多少次，用检索工具一查——39 条。可正文里明明到处都是发热。你漏掉的那 124 条，写的是「发𤍠」：𤍠 是一个不在 GB2312 里的异体字。\r\n>\r\n> **双根因定位:** 环境逼迫(要按症状检索条文) + 知识积累(归一化表 × 判定规则 = 可复核的检索层)\r\n\r\n## 课程信息\r\n\r\n| 项目 | 内容 |\r\n|------|------|\r\n| 学科 | 伤寒论 |\r\n| 院系 | 中医系 |\r\n| 章序号 | 03 / 12 |\r\n| 所属阶段 | 🌿 长·积累 |\r\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\r\n| 预估时长 | 4 小时 |\r\n\r\n## 学习目标\r\n\r\n- 用原文说清太阳表证的两条分支：中风（汗出、脉缓）与伤寒（无汗、脉浮紧、喘）各自的条件\r\n- 说出为什么「脉缓」不等于慢，「脉紧」不等于快——它们描述的是紧张度\r\n- 建一张异体字归一化表，让「发热」的检索不漏条\r\n- 写一个表证判定器：输入症状集，输出分支、代表方与依据条号，并报「不排除项」\r\n\r\n## 核心概念\r\n\r\n### 两条分支的原文条件\r\n\r\n> 太阳病，发热汗出恶风，脉缓者，名为中风。——《伤寒论·辨太阳病脉证并治》（篇 4）\r\n>\r\n> 太阳中风，阳浮而阴弱。阳浮者，热自发，阴弱者汗自出，啬啬恶寒，淅淅恶风，翕翕发热，鼻鸣干呕者，桂枝汤主之。——《伤寒论·辨太阳病脉证并治》（篇 4，方一）\r\n>\r\n> 太阳病，头痛发热，身疼恶风，无汗而喘者，麻黄汤主之。——《伤寒论·辨太阳病脉证并治中》（篇 5）\r\n\r\n三条放在一起，「有汗 / 无汗」是分水岭，「脉缓 / 脉浮紧」是佐证，「喘 / 干呕」是旁证。注意桂枝汤条的自我解释：**阳浮者热自发，阴弱者汗自出**——原文自己在给机制，这是《伤寒论》里少见的「条文带注释」写法。\r\n\r\n### 实测规模（本章全部数字可复算）\r\n\r\n| 指标 | 实测 |\r\n|---|--:|\r\n| 太阳病域条文 | **566 条 / 4 篇** |\r\n| 「桂枝汤」出现 | **134 条** |\r\n| 「麻黄汤」出现 | **44 条** |\r\n| 「汗出」 | **224 条** |\r\n| 「无汗」 | **38 条** |\r\n| 「恶寒」 | **107 条** |\r\n| 「发热」（正体） | **39 条** |\r\n| 「发𤍠」（异体） | **129 条** |\r\n| 归一后「发热」 | **163 条**（129 + 39 − 5 条两形并存） |\r\n\r\n最后两行的意义：**不归一化，检索「发热」会漏 124 条（43%）**。这不是排版问题，是检索层的正确性问题——你的症状索引会静默丢掉三分之二的证据。\r\n\r\n### 桂枝汤 134 条说明了什么\r\n\r\n桂枝汤出现 134 次，麻黄汤 44 次，比例约 3:1。但这不是「桂枝汤更重要」的证明——桂枝汤大量出现在**禁忌、误治、变证**的条文里（「桂枝汤不中与之」「先与桂枝汤」之类），出现频次高恰恰因为它是基准方，被反复当作对照。用频次当权重，会把「被反复否定」读成「最常用」。\r\n\r\n## BUILD IT：从零实现\r\n\r\n```js\r\n// code/main.js\r\nnormalize(text)      // 𤍠→热 等异体归一，返回 {text, replaced}\r\nsearch(needle)       // 双向检索：raw 命中 vs normalized 命中，报漏检\r\nclassify({sweat, pulse, dyspnea, vomiting})  // 中风/伤寒/不确定 + 依据\r\n```\r\n\r\n## 验证\r\n\r\n```bash\r\nnode code/main.js\r\nnode --test code/main.test.js\r\n```\r\n\r\n预期：`search('发热')` 返回 raw 39 / normalized 163，漏检 124（129 条含异体，其中 5 条同时含正体）；`classify({sweat: true, pulse: '缓'})` → 中风/桂枝汤；`classify({sweat: false, pulse: '浮紧', dyspnea: true})` → 伤寒/麻黄汤；`classify({})` → 不确定，且不猜。\r\n\r\n## 代价与边界\r\n\r\n- **归一化表是手工的，不完整**。本章只收 𤍠→热 一组并附实测影响；其他异体（如「蚘/蛔」「欬/咳」）未纳入，检索结果仍可能漏。\r\n- **「脉缓」不是心率慢**。原文语境指脉势缓纵，本章代码只做字符串匹配，**不解析脉象含义**。\r\n- **表证判定器只覆盖两条经典分支**。太阳病 566 条里大量是变证、坏病、结胸、痞证，本章不处理；把它当「太阳病分类器」会错。\r\n- **频次不是权重**（见上）。\r\n- 判定器输出「不排除项」而非单一结论，因为原文本身允许合病（见第 9 章）。\r\n\r\n> **免责声明：** 条文引自仓库内 `standards/shanghan/底本.json`；该底本使用异体字，本章归一化表仅为检索用途，不改原文。本章不构成处方建议。\r\n\r\n## 练习\r\n\r\n1. 为什么「汗出」224 条远多于「无汗」38 条？给出三种可能解释，并说明如何用条文检验。\r\n2. 若要给「桂枝汤」的 134 条分类（正方 / 禁忌 / 误治后救逆），你的标注规则怎么写？\r\n3. 归一把「发𤍠」并到「发热」之后，会不会影响「热」与「𤍠」作为异文的文献学价值？两者如何并存？\r\n\r\n## 进阶思考\r\n\r\n中医文本的检索难点不在分词，而在**字形**。一个异体字能让 129 条证据消失，而这 129 条恰恰是「发热」最密集的部分——数据工程里最贵的错误，通常不是算法错，是字符没对齐。\r\n",
+    "code": {
+      "main.js": "'use strict';\r\n/**\r\n * 太阳病表证：异体字归一化检索 + 中风/伤寒分支判定\r\n *\r\n *   node code/main.js\r\n *\r\n * 口径：\r\n *   · 归一化只用于**检索**，不回写原文；替换次数单独报，便于核对。\r\n *   · 判定只覆盖原文给出的两条经典分支（汗出脉缓 / 无汗脉浮紧），\r\n *     其余情况一律「不确定」，不硬分。\r\n *   · 频次≠权重：桂枝汤 134 条里含大量禁忌与误治条，代码只报数不排序。\r\n */\r\n\r\nconst path = require('node:path');\r\nconst fs = require('node:fs');\r\n\r\nconst ROOT = path.resolve(__dirname, '../../../../../..');\r\nconst BOOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/shanghan/底本.json'), 'utf8'));\r\nconst TEXTS = [];\r\nfor (const p of BOOK.pian) for (const it of p.items) TEXTS.push({ pian: p.no, text: it.text });\r\n\r\n/** 异体字 → 正体（本章只收实测影响最大的一组，其余标注未纳入） */\r\nconst VARIANTS = { '𤍠': '热', '蚘': '蛔', '欬': '咳' };\r\n\r\nfunction normalize(text) {\r\n  let out = text;\r\n  const replaced = {};\r\n  for (const [from, to] of Object.entries(VARIANTS)) {\r\n    const n = out.split(from).length - 1;\r\n    if (n) { replaced[from] = n; out = out.split(from).join(to); }\r\n  }\r\n  return { text: out, replaced };\r\n}\r\n\r\n/** 检索：raw（原样）与 normalized（归一后）两种命中数，差即漏检 */\r\nfunction search(needle) {\r\n  const raw = TEXTS.filter((t) => t.text.includes(needle)).length;\r\n  const norm = TEXTS.filter((t) => normalize(t.text).text.includes(needle)).length;\r\n  return { needle, raw, normalized: norm, missed: norm - raw };\r\n}\r\n\r\n/** 表证分支判定：只认原文条件 */\r\nfunction classify(signs = {}) {\r\n  const { sweat, pulse, dyspnea, vomiting } = signs;\r\n  const base = { sweat: !!sweat, pulse: pulse || null, dyspnea: !!dyspnea, vomiting: !!vomiting };\r\n  const unclear = (why) => ({ branch: '不确定', formula: null, why, ...base, notExcluded: ['合病（见第 9 章）', '变证/坏病'] });\r\n\r\n  if (sweat === undefined || pulse === undefined) return unclear('缺关键条件：汗出与否、脉象');\r\n  if (sweat === true && pulse === '缓') {\r\n    return { branch: '太阳中风', formula: '桂枝汤', why: '发热汗出恶风，脉缓（篇 4）', ...base, notExcluded: ['若兼喘满，须排除合病'] };\r\n  }\r\n  if (sweat === false && pulse === '浮紧' && dyspnea) {\r\n    return { branch: '太阳伤寒', formula: '麻黄汤', why: '无汗而喘，脉浮紧（篇 5）', ...base, notExcluded: ['若烦躁，原文另有分支（大青龙汤条）'] };\r\n  }\r\n  return unclear('条件不落在两条经典分支内');\r\n}\r\n\r\nfunction main() {\r\n  console.log('检索：raw 命中 vs 归一化命中（差 = 因异体字漏掉的条数）\\n');\r\n  for (const n of ['发热', '汗出', '无汗', '恶寒']) {\r\n    const r = search(n);\r\n    console.log(`  ${n}：raw ${r.raw} → 归一后 ${r.normalized}（漏检 ${r.missed}）`);\r\n  }\r\n  const domainTiao = BOOK.pian.filter((x) => x.domain === '太阳病').reduce((a, x) => a + x.actual.tiao, 0);\r\n  const mention = TEXTS.filter((t) => t.text.includes('太阳')).length;\r\n  console.log(`\\n规模：太阳病域 ${domainTiao} 条（4 篇）· 正文提及「太阳」${mention} 条；` +\r\n    `桂枝汤 ${search('桂枝汤').raw} 条 · 麻黄汤 ${search('麻黄汤').raw} 条（频次≠权重）`);\r\n\r\n  console.log('\\n判定样例：');\r\n  for (const s of [{ sweat: true, pulse: '缓' }, { sweat: false, pulse: '浮紧', dyspnea: true }, {}]) {\r\n    const r = classify(s);\r\n    console.log(`  ${JSON.stringify(s)} → ${r.branch}${r.formula ? '/' + r.formula : ''}`);\r\n  }\r\n  console.log('\\n本输出为文本检索与规则演示，不构成辨证处方建议。');\r\n}\r\n\r\nif (require.main === module) main();\r\nmodule.exports = { normalize, search, classify, VARIANTS, TEXTS, BOOK };\r\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { normalize, search, classify } = require('./main.js');\n\ntest('归一化：异体 𤍠 → 热，并报替换次数', () => {\n  const r = normalize('发𤍠恶寒，发𤍠而喘');\n  assert.strictEqual(r.text, '发热恶寒，发热而喘');\n  assert.deepStrictEqual(r.replaced, { '𤍠': 2 });\n});\n\ntest('检索「发热」：raw 39 → 归一 163，漏检 124', () => {\n  const r = search('发热');\n  assert.strictEqual(r.raw, 39);\n  assert.strictEqual(r.normalized, 163);\n  assert.strictEqual(r.missed, 124);\n});\n\ntest('不受异体字影响的关键词漏检为 0', () => {\n  for (const k of ['汗出', '无汗', '恶寒']) assert.strictEqual(search(k).missed, 0, k);\n});\n\ntest('表证分支：汗出脉缓 → 中风/桂枝汤；无汗脉浮紧而喘 → 伤寒/麻黄汤', () => {\n  const a = classify({ sweat: true, pulse: '缓' });\n  assert.strictEqual(a.branch, '太阳中风');\n  assert.strictEqual(a.formula, '桂枝汤');\n  const b = classify({ sweat: false, pulse: '浮紧', dyspnea: true });\n  assert.strictEqual(b.branch, '太阳伤寒');\n  assert.strictEqual(b.formula, '麻黄汤');\n});\n\ntest('条件不足或不合分支时不硬分，且给出不排除项', () => {\n  const r = classify({});\n  assert.strictEqual(r.branch, '不确定');\n  assert.strictEqual(r.formula, null);\n  assert.ok(r.notExcluded.length >= 2);\n  assert.strictEqual(classify({ sweat: true, pulse: '浮紧' }).branch, '不确定');\n});\n\ntest('频次只报数：桂枝汤 134 条、麻黄汤 44 条（不可当权重）', () => {\n  assert.strictEqual(search('桂枝汤').raw, 134);\n  assert.strictEqual(search('麻黄汤').raw, 44);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "太阳表证中「中风」与「伤寒」的分水岭是？",
+          "options": [
+            "有无发热",
+            "汗出与无汗（配合脉缓 / 脉浮紧）",
+            "病程长短",
+            "体质强弱"
+          ],
+          "correct": 1,
+          "explanation": "原文：发热汗出恶风，脉缓者，名为中风；无汗而喘，脉浮紧者属伤寒分支。"
+        },
+        {
+          "stage": "check",
+          "question": "底本里检索「发热」只命中 39 条，原因是？",
+          "options": [
+            "条文确实只有 39 条讲发热",
+            "129 条写作异体「发𤍠」，未归一化故漏检 124 条",
+            "检索工具坏了",
+            "其余条在别篇"
+          ],
+          "correct": 1,
+          "explanation": "39 正体 + 129 异体，5 条两形并存，归一后 163 条。"
+        },
+        {
+          "stage": "check",
+          "question": "「脉缓」的原意最接近？",
+          "options": [
+            "心率慢",
+            "脉势缓纵、紧张度低（与脉紧相对）",
+            "脉搏微弱",
+            "节律不齐"
+          ],
+          "correct": 1,
+          "explanation": "缓/紧描述紧张度，不是频率；代码只做字符串匹配，不解析脉象。"
+        },
+        {
+          "stage": "check",
+          "question": "桂枝汤 134 条 vs 麻黄汤 44 条，正确解读是？",
+          "options": [
+            "桂枝汤更重要",
+            "频次含大量禁忌与误治对照条，不能当权重",
+            "麻黄汤已淘汰",
+            "两方等价"
+          ],
+          "correct": 1,
+          "explanation": "出现多常因被反复引用作对照，频次≠临床权重。"
+        },
+        {
+          "stage": "post",
+          "question": "判定器遇到「汗出 + 脉浮紧」时应该？",
+          "options": [
+            "归为中风",
+            "归为伤寒",
+            "输出不确定并给不排除项",
+            "任选一个"
+          ],
+          "correct": 2,
+          "explanation": "不落在两条经典分支内，不许硬分。"
+        },
+        {
+          "stage": "post",
+          "question": "归一化表建好之后，原文要不要一起改成正体？",
+          "options": [
+            "要，统一字形便于检索",
+            "不要，原文保留异体，归一化只作用于检索层",
+            "只改标题",
+            "看情况"
+          ],
+          "correct": 1,
+          "explanation": "异体本身是文献信息；改写原文会毁掉可复核性。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-taiyang-biao.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/03-taiyang-biao/outputs/prompt-taiyang-biao.md",
+        "title": "经文症状检索（含异体字归一）",
+        "description": null,
+        "chars": 633,
+        "body": "# 经文症状检索（含异体字归一）\n\n## 用途\n\n在《伤寒论》底本上按症状检索条文，并**显式报出因异体字漏掉的条数**。\n用于**引文核对、方证条文收集、教材与底本比对**。不做辨证结论。\n\n## 提示词\n\n```text\n你是伤寒论文本的检索助手。底本为 JSON（27 篇，每篇 items[].text），\n该底本混用异体字（如「𤍠」用于「热」）。\n\n任务：按给定关键词检索，输出——\n【关键词】raw 命中 N 条 / 归一化命中 M 条 / 漏检 M−N\n【归一键】本次使用了哪些字形映射，各替换多少次\n【条文】最多 5 条，格式：篇 N：「原文逐字」；不足 5 条如实说\n【口径说明】检索只做字形对齐，不改原文\n\n规则：\n1. 必须先报 raw 与归一化两个数，差值不得省略。\n2. 条文逐字照抄，不改写、不补字；方后注用「（方后注）」标明。\n3. 不得据检索结果下辨证结论或推荐处方。\n4. 若某关键词 raw=0 而归一化>0，需单独提示「该词在底本中只以异体字出现」。\n5. 映射表之外的字形不得臆造；遇到疑似异体，列出来但标「未归一」。\n```\n\n## 使用示例\n\n输入：关键词「发热」。\n\n输出（节选）：\n\n```text\n【发热】raw 39 / 归一化 163 / 漏检 124\n【归一键】𤍠→热 ×129（5 条两形并存）\n【条文】篇 5：「太阳病，头痛发热，身疼恶风，无汗而喘者，麻黄汤主之。」\n【口径说明】检索层归一，原文保留异体\n```\n\n## 为什么这样限制\n\n- 只报一个数，读者无从知道漏了多少；两个数并置，缺口自己说话。\n- 逐字照抄是引文纪律；方后注混杂在条文里，不标出来就会把注文当原文。\n"
+      },
+      {
+        "name": "skill-taiyang-biao.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/03-taiyang-biao/outputs/skill-taiyang-biao.md",
+        "title": "taiyang-biao",
+        "description": "太阳表证检索与判定：异体字归一报漏检、中风/伤寒分支给依据、不硬分",
+        "chars": 536,
+        "body": "---\nname: taiyang-biao\ndescription: 太阳表证检索与判定：异体字归一报漏检、中风/伤寒分支给依据、不硬分\nversion: 0.1.0\n---\n\n# taiyang-biao\n\n## 何时使用\n\n- 按症状在底本里找条文（发热、汗出、无汗、恶寒）\n- 判断一条病案落在太阳中风还是太阳伤寒分支\n- 教材与底本不一致，定位是字形问题还是条文问题\n\n## 不适用\n\n- 太阳病变证、坏病、结胸、痞证（本技能只覆盖两条经典分支）\n- 处方剂量与加减（见第 12 章）\n- 需要合病判断时（见第 9 章）\n\n## 步骤\n\n1. **归一化检索**：先用异体映射跑一遍，报 raw / normalized / 漏检。\n2. **取条文**：逐字，标篇号，方后注单独标。\n3. **判分支**：汗出+脉缓 → 中风/桂枝汤；无汗+脉浮紧+喘 → 伤寒/麻黄汤。\n4. **不硬分**：条件不落入两支，输出「不确定」+ 不排除项。\n5. **留口径**：频次不等于权重；原文异体不改写。\n\n## 输出模板\n\n```text\n【检索】关键词 raw N / 归一 M / 漏检 M−N\n【条文】篇 N：「原文」\n【分支】太阳中风 | 太阳伤寒 | 不确定（原因）\n【依据】…\n【不排除】…\n```\n\n## 质量判据\n\n- 两个命中数都在\n- 引文可逐字比对\n- 不确定的没有被硬塞进某一支\n\n> 本技能只做检索与规则判定，不构成辨证处方建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "01-zhongyi/07-shanghanlun/04-yangming-li": {
+    "key": "01-zhongyi/07-shanghanlun/04-yangming-li",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "07-shanghanlun",
+    "subjectTitle": "伤寒论",
+    "chapterSlug": "04-yangming-li",
+    "n": 4,
+    "title": "第 4 章 · 阳明病里实证：三承气不是三档火力，是三道门槛",
+    "motto": "「阳明病，脉迟，汗出不恶寒，身重短气，腹满潮热，大便硬，大承气汤主之。若腹大满不通者，与小承气汤。」——《伤寒论·辨阳明病脉证并治》（篇 8）",
+    "problem": "你把三承气当成「轻—中—重」三档，病人腹满潮热就往上加码。但原文这两句是**同一基础证的两个分支**：都是腹满潮热，一个大便硬用大承气，一个腹大满不通改用小承气——加码方向在这里是反的。",
+    "roots": "环境逼迫(临床要选方) + 知识积累(逐条条件表 × 异文标注 = 能说明「凭什么这一档」)",
+    "html": "<h1 id=\"第-4-章-阳明病里实证-三承气不是三档火力-是三道门槛\">第 4 章 · 阳明病里实证：三承气不是三档火力，是三道门槛</h1>\n<blockquote><p><strong>MOTTO:</strong> 「阳明病，脉迟，汗出不恶寒，身重短气，腹满潮热，大便硬，大承气汤主之。若腹大满不通者，与小承气汤。」——《伤寒论·辨阳明病脉证并治》（篇 8）</p>\n<p><strong>PROBLEM:</strong> 你把三承气当成「轻—中—重」三档，病人腹满潮热就往上加码。但原文这两句是<strong>同一基础证的两个分支</strong>：都是腹满潮热，一个大便硬用大承气，一个腹大满不通改用小承气——加码方向在这里是反的。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(临床要选方) + 知识积累(逐条条件表 × 异文标注 = 能说明「凭什么这一档」)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>伤寒论</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>04 / 12</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>4 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>逐字引出阳明提纲与三承气的分层条件，说明「痞满燥实」各自对应哪些原文词</li><li>解释为什么「腹大满不通」反而用小承气（气机壅塞 vs 燥屎内结的区别）</li><li>认出底本里的异文标注（「玉函云：与小承气汤」）并说明它如何改变选方</li><li>写一个分层判定器：输出档位、命中条件、缺失条件与不排除项</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"阳明提纲与它的夹注\">阳明提纲与它的夹注</h3>\n<blockquote><p>阳明之为病，胃家实，一作寒是也。——《伤寒论·辨阳明病脉证并治》（篇 9）</p></blockquote>\n<p>「胃家实」三字是全篇入口。夹注「一作寒是也」提示另有版本作「胃家寒」——这直接把提纲的判据反转。本章按主流读法取「胃家实」，但<strong>保留夹注</strong>，因为删掉它会假装版本一致。</p>\n<h3 id=\"一条原文-两个分支\">一条原文，两个分支</h3>\n<blockquote><p>阳明病，脉迟，汗出不恶寒，身重短气，腹满潮热，大便硬，大承气汤主之。若腹大满不通者，与小承气汤。——（篇 8）</p></blockquote>\n<p>拆开看条件：</p>\n<div class=\"table-wrap\"><table><thead><tr><th>条件（原文词）</th><th>大承气支</th><th>小承气支</th></tr></thead><tbody><tr><td>脉迟、汗出不恶寒</td><td>✓</td><td>✓</td></tr><tr><td>身重短气、腹满潮热</td><td>✓</td><td>✓</td></tr><tr><td>大便硬</td><td>✓</td><td>—（腹大满不通）</td></tr><tr><td>腹大满不通</td><td>—</td><td>✓</td></tr></tbody></table></div>\n<p><strong>大便硬</strong>是燥屎成形的标志，故用大承气直下；<strong>腹大满不通</strong>是气机壅塞为主，燥屎未必坚，故小承气轻下。所以「更重的症状用更轻的方」并不矛盾——两个分支的目标不同：一个攻燥屎，一个通壅气。</p>\n<h3 id=\"异文会改方\">异文会改方</h3>\n<blockquote><p>发汗后，恶寒者，虚故也。不恶寒但热者，实也，当和胃气，与调胃承气汤。方三十三玉函云：与小承气汤。——（篇 5）</p></blockquote>\n<p>同一处，《玉函》给的是小承气。底本把两个说法并列保留了。这件事对工程的启示很直接：<strong>方名不是铁值，是带版本的值</strong>。任何「条文→方」的映射表都必须留一个 <code>variant</code> 字段，否则你在做的是一个静默二选一。</p>\n<h3 id=\"实测规模\">实测规模</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>指标</th><th>实测</th></tr></thead><tbody><tr><td>阳明病域条文</td><td><strong>134 条 / 2 篇</strong></td></tr><tr><td>「大承气汤」</td><td><strong>79 条</strong></td></tr><tr><td>「调胃承气汤」</td><td><strong>33 条</strong></td></tr><tr><td>「小承气汤」</td><td><strong>31 条</strong></td></tr><tr><td>「谵语」</td><td><strong>61 条</strong></td></tr><tr><td>「腹满」</td><td><strong>62 条</strong></td></tr><tr><td>「不大便」</td><td><strong>40 条</strong></td></tr><tr><td>「燥屎」</td><td><strong>25 条</strong></td></tr><tr><td>「潮热」（正体）</td><td><strong>16 条</strong></td></tr><tr><td>「手足濈然汗出」</td><td><strong>3 条</strong></td></tr></tbody></table></div>\n<p>注意「大承气汤」79 条远超另两方之和——与第 3 章同理，大量出现是在<strong>禁忌与误治</strong>条里（「不可与大承气汤」之类），频次不代表首选率。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js\ngrade(signs)   // 输入 {潮热,谵语,手足濈然汗出,腹满,不大便,大便硬,燥屎,腹大满不通}\n               // 输出 {tier: 大承气|小承气|调胃承气|不足以定档, hit[], missing[], notExcluded[]}</code></pre></div>\n<p>判定规则（全部来自原文词）：</p>\n<ol><li>大便硬 + 潮热 + 腹满 → <code>大承气汤</code></li><li>腹大满不通 + 潮热（无大便硬）→ <code>小承气汤</code></li><li>但热不恶寒、无腹满硬满 → <code>调胃承气汤</code>（和胃气）</li><li>其余 → <code>不足以定档</code>，并列出还缺哪些条件</li></ol>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>grade({大便硬:true, 潮热:true, 腹满:true})</code> → <code>大承气汤</code>；<code>grade({腹大满不通:true, 潮热:true})</code> → <code>小承气汤</code>；<code>grade({})</code> → 不足以定档且 <code>missing</code> 非空。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>只覆盖三承气的原文条件</strong>，阳明病另有白虎汤、茵陈蒿汤、栀子豉汤等大量分支，本章不涉及。</li><li><strong>「痞满燥实」是后世归纳</strong>，原文用词是腹满、大便硬、潮热、谵语；本章的映射标明了对应词，未把归纳当原文。</li><li><strong>判定器不处理虚实夹杂</strong>（如「脉迟」在此为邪结而非虚寒），也不判断患者能否承受攻下。</li><li><strong>异文保留不取舍</strong>：<code>variant</code> 字段只记录，不自动选择；选哪一版是文献学判断，不由代码代劳。</li><li>攻下类方剂有明确禁忌与风险，本章代码仅作文本规则演示。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 条文引自 <code>standards/shanghan/底本.json</code>（可复核，含异体字与异文标注）；本章为条文结构与规则演示，不构成处方或攻下指征判断，临床须由执业医师决定。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>「脉迟」在阳明腑实证里为何不是寒？用原文其他条（如「脉迟…可攻」）佐证。</li><li>若一条病案同时有「大便硬」与「腹大满不通」，按原文该走哪支？给出你的理由与风险。</li><li>设计 <code>variant</code> 字段的结构，使「玉函云：与小承气汤」在输出里既可见又不覆盖主文。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>三承气的教学图常画成一条上升的箭头，而原文给的是一棵分叉树。把树压成箭头，学生就会记住「越重越猛」这个错的方向——这正是「读原文」与「读归纳」的差别。</p>",
+    "markdown": "# 第 4 章 · 阳明病里实证：三承气不是三档火力，是三道门槛\n\n> **MOTTO:** 「阳明病，脉迟，汗出不恶寒，身重短气，腹满潮热，大便硬，大承气汤主之。若腹大满不通者，与小承气汤。」——《伤寒论·辨阳明病脉证并治》（篇 8）\n>\n> **PROBLEM:** 你把三承气当成「轻—中—重」三档，病人腹满潮热就往上加码。但原文这两句是**同一基础证的两个分支**：都是腹满潮热，一个大便硬用大承气，一个腹大满不通改用小承气——加码方向在这里是反的。\n>\n> **双根因定位:** 环境逼迫(临床要选方) + 知识积累(逐条条件表 × 异文标注 = 能说明「凭什么这一档」)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 伤寒论 |\n| 院系 | 中医系 |\n| 章序号 | 04 / 12 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 4 小时 |\n\n## 学习目标\n\n- 逐字引出阳明提纲与三承气的分层条件，说明「痞满燥实」各自对应哪些原文词\n- 解释为什么「腹大满不通」反而用小承气（气机壅塞 vs 燥屎内结的区别）\n- 认出底本里的异文标注（「玉函云：与小承气汤」）并说明它如何改变选方\n- 写一个分层判定器：输出档位、命中条件、缺失条件与不排除项\n\n## 核心概念\n\n### 阳明提纲与它的夹注\n\n> 阳明之为病，胃家实，一作寒是也。——《伤寒论·辨阳明病脉证并治》（篇 9）\n\n「胃家实」三字是全篇入口。夹注「一作寒是也」提示另有版本作「胃家寒」——这直接把提纲的判据反转。本章按主流读法取「胃家实」，但**保留夹注**，因为删掉它会假装版本一致。\n\n### 一条原文，两个分支\n\n> 阳明病，脉迟，汗出不恶寒，身重短气，腹满潮热，大便硬，大承气汤主之。若腹大满不通者，与小承气汤。——（篇 8）\n\n拆开看条件：\n\n| 条件（原文词） | 大承气支 | 小承气支 |\n|---|:--:|:--:|\n| 脉迟、汗出不恶寒 | ✓ | ✓ |\n| 身重短气、腹满潮热 | ✓ | ✓ |\n| 大便硬 | ✓ | —（腹大满不通） |\n| 腹大满不通 | — | ✓ |\n\n**大便硬**是燥屎成形的标志，故用大承气直下；**腹大满不通**是气机壅塞为主，燥屎未必坚，故小承气轻下。所以「更重的症状用更轻的方」并不矛盾——两个分支的目标不同：一个攻燥屎，一个通壅气。\n\n### 异文会改方\n\n> 发汗后，恶寒者，虚故也。不恶寒但热者，实也，当和胃气，与调胃承气汤。方三十三玉函云：与小承气汤。——（篇 5）\n\n同一处，《玉函》给的是小承气。底本把两个说法并列保留了。这件事对工程的启示很直接：**方名不是铁值，是带版本的值**。任何「条文→方」的映射表都必须留一个 `variant` 字段，否则你在做的是一个静默二选一。\n\n### 实测规模\n\n| 指标 | 实测 |\n|---|--:|\n| 阳明病域条文 | **134 条 / 2 篇** |\n| 「大承气汤」 | **79 条** |\n| 「调胃承气汤」 | **33 条** |\n| 「小承气汤」 | **31 条** |\n| 「谵语」 | **61 条** |\n| 「腹满」 | **62 条** |\n| 「不大便」 | **40 条** |\n| 「燥屎」 | **25 条** |\n| 「潮热」（正体） | **16 条** |\n| 「手足濈然汗出」 | **3 条** |\n\n注意「大承气汤」79 条远超另两方之和——与第 3 章同理，大量出现是在**禁忌与误治**条里（「不可与大承气汤」之类），频次不代表首选率。\n\n## BUILD IT：从零实现\n\n```js\n// code/main.js\ngrade(signs)   // 输入 {潮热,谵语,手足濈然汗出,腹满,不大便,大便硬,燥屎,腹大满不通}\n               // 输出 {tier: 大承气|小承气|调胃承气|不足以定档, hit[], missing[], notExcluded[]}\n```\n\n判定规则（全部来自原文词）：\n\n1. 大便硬 + 潮热 + 腹满 → `大承气汤`\n2. 腹大满不通 + 潮热（无大便硬）→ `小承气汤`\n3. 但热不恶寒、无腹满硬满 → `调胃承气汤`（和胃气）\n4. 其余 → `不足以定档`，并列出还缺哪些条件\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：`grade({大便硬:true, 潮热:true, 腹满:true})` → `大承气汤`；`grade({腹大满不通:true, 潮热:true})` → `小承气汤`；`grade({})` → 不足以定档且 `missing` 非空。\n\n## 代价与边界\n\n- **只覆盖三承气的原文条件**，阳明病另有白虎汤、茵陈蒿汤、栀子豉汤等大量分支，本章不涉及。\n- **「痞满燥实」是后世归纳**，原文用词是腹满、大便硬、潮热、谵语；本章的映射标明了对应词，未把归纳当原文。\n- **判定器不处理虚实夹杂**（如「脉迟」在此为邪结而非虚寒），也不判断患者能否承受攻下。\n- **异文保留不取舍**：`variant` 字段只记录，不自动选择；选哪一版是文献学判断，不由代码代劳。\n- 攻下类方剂有明确禁忌与风险，本章代码仅作文本规则演示。\n\n> **免责声明：** 条文引自 `standards/shanghan/底本.json`（可复核，含异体字与异文标注）；本章为条文结构与规则演示，不构成处方或攻下指征判断，临床须由执业医师决定。\n\n## 练习\n\n1. 「脉迟」在阳明腑实证里为何不是寒？用原文其他条（如「脉迟…可攻」）佐证。\n2. 若一条病案同时有「大便硬」与「腹大满不通」，按原文该走哪支？给出你的理由与风险。\n3. 设计 `variant` 字段的结构，使「玉函云：与小承气汤」在输出里既可见又不覆盖主文。\n\n## 进阶思考\n\n三承气的教学图常画成一条上升的箭头，而原文给的是一棵分叉树。把树压成箭头，学生就会记住「越重越猛」这个错的方向——这正是「读原文」与「读归纳」的差别。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 阳明腑实三承气分层判定（条件全部取自原文词）\n *\n *   node code/main.js\n *\n * 口径：\n *   · 判定只覆盖三承气；阳明病其他分支（白虎、茵陈蒿、栀子豉）不在此列。\n *   · 「痞满燥实」是后世归纳，代码用的是原文词：腹满 / 大便硬 / 潮热 / 谵语 / 燥屎。\n *   · 异文（如「玉函云：与小承气汤」）单独以 variants 报，不覆盖主文，也不自动择一。\n *   · 不判虚实夹杂、不判可攻与否 —— 那是临床判断，不是文本规则。\n */\n\nconst path = require('node:path');\nconst fs = require('node:fs');\n\nconst ROOT = path.resolve(__dirname, '../../../../../..');\nconst BOOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/shanghan/底本.json'), 'utf8'));\nconst TEXTS = [];\nfor (const p of BOOK.pian) for (const it of p.items) TEXTS.push({ pian: p.no, text: it.text });\n\nconst K = {\n  big: ['大便硬', '潮热', '腹满'],\n  small: ['腹大满不通', '潮热'],\n  mild: ['不恶寒但热'],\n};\n\nfunction grade(signs = {}) {\n  const has = (k) => signs[k] === true;\n  const hitOf = (keys) => keys.filter(has);\n  const missingOf = (keys) => keys.filter((k) => !has(k));\n\n  if (has('大便硬') && has('潮热') && has('腹满')) {\n    return { tier: '大承气汤', hit: hitOf(K.big), missing: missingOf(K.big), notExcluded: ['若腹大满不通为主，原文另有小承气分支'] };\n  }\n  if (has('腹大满不通') && has('潮热') && !has('大便硬')) {\n    return { tier: '小承气汤', hit: hitOf(K.small), missing: missingOf(K.small), notExcluded: ['若燥屎已成，需考虑大承气（原文另条）'] };\n  }\n  if (has('不恶寒但热') && !has('腹满') && !has('大便硬')) {\n    return { tier: '调胃承气汤', hit: hitOf(K.mild), missing: missingOf(K.mild), notExcluded: ['异文《玉函》此处作小承气汤'] };\n  }\n  const missing = ['潮热', '腹满', '大便硬', '腹大满不通'].filter((k) => !has(k));\n  return { tier: '不足以定档', hit: hitOf([...K.big, ...K.small, ...K.mild]), missing, notExcluded: ['可能属阳明其他分支（白虎/茵陈蒿/栀子豉）'] };\n}\n\n/** 频次与异文（只报数、只记录） */\nfunction stats() {\n  const c = (k) => TEXTS.filter((t) => t.text.includes(k)).length;\n  return {\n    条: BOOK.pian.filter((p) => p.domain === '阳明病').reduce((a, p) => a + p.actual.tiao, 0),\n    篇: BOOK.pian.filter((p) => p.domain === '阳明病').length,\n    大承气汤: c('大承气汤'), 小承气汤: c('小承气汤'), 调胃承气汤: c('调胃承气汤'),\n    谵语: c('谵语'), 腹满: c('腹满'), 不大便: c('不大便'), 燥屎: c('燥屎'), 潮热: c('潮热'),\n  };\n}\n\n/** 底本自带的「某书云」异文标注 */\nfunction variants() {\n  return TEXTS.filter((t) => /玉函云|一作/.test(t.text)).map((t) => ({\n    pian: t.pian,\n    text: t.text.slice(0, 80),\n    note: (t.text.match(/玉函云[^。]*|一作[^。]*/) || [''])[0],\n  }));\n}\n\nfunction main() {\n  const s = stats();\n  console.log(`阳明病域 ${s.条} 条 / ${s.篇} 篇`);\n  console.log(`方名频次：大承气 ${s.大承气汤} · 小承气 ${s.小承气汤} · 调胃 ${s.调胃承气汤}（频次含禁忌条，不等于首选率）`);\n  console.log(`症状词：谵语 ${s.谵语} · 腹满 ${s.腹满} · 不大便 ${s.不大便} · 燥屎 ${s.燥屎} · 潮热 ${s.潮热}\\n`);\n  const cases = [\n    { 大便硬: true, 潮热: true, 腹满: true },\n    { 腹大满不通: true, 潮热: true },\n    { 不恶寒但热: true },\n    {},\n  ];\n  for (const cs of cases) {\n    const r = grade(cs);\n    console.log(`${JSON.stringify(cs)}\\n  → ${r.tier}｜命中 ${r.hit.join('/') || '无'}｜缺 ${r.missing.join('/') || '无'}`);\n  }\n  const v = variants();\n  console.log(`\\n底本异文标注 ${v.length} 处（例）：`);\n  for (const x of v.slice(0, 3)) console.log(`  篇${x.pian} ${x.note} ← ${x.text}…`);\n  console.log('\\n本输出为条文规则演示，不构成攻下指征或处方建议。');\n}\n\nif (require.main === module) main();\nmodule.exports = { grade, stats, variants, TEXTS };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { grade, stats, variants } = require('./main.js');\n\ntest('大便硬 + 潮热 + 腹满 → 大承气汤', () => {\n  const r = grade({ 大便硬: true, 潮热: true, 腹满: true });\n  assert.strictEqual(r.tier, '大承气汤');\n  assert.deepStrictEqual(r.hit.sort(), ['大便硬', '潮热', '腹满'].sort());\n  assert.deepStrictEqual(r.missing, []);\n});\n\ntest('腹大满不通 + 潮热（无大便硬）→ 小承气汤：症状更「满」而方更轻', () => {\n  const r = grade({ 腹大满不通: true, 潮热: true });\n  assert.strictEqual(r.tier, '小承气汤');\n  assert.ok(r.notExcluded.some((x) => x.includes('大承气')));\n});\n\ntest('但热不恶寒、无腹满硬满 → 调胃承气汤，并提示玉函异文', () => {\n  const r = grade({ 不恶寒但热: true });\n  assert.strictEqual(r.tier, '调胃承气汤');\n  assert.ok(r.notExcluded.join('').includes('玉函'));\n});\n\ntest('信息不足时不硬定档，且列出缺项', () => {\n  const r = grade({});\n  assert.strictEqual(r.tier, '不足以定档');\n  assert.ok(r.missing.length >= 3);\n});\n\ntest('同时有腹大满不通与大便硬时走大承气，但必须提示分叉', () => {\n  const r = grade({ 腹大满不通: true, 大便硬: true, 潮热: true, 腹满: true });\n  assert.strictEqual(r.tier, '大承气汤');\n  assert.ok(r.notExcluded.length >= 1);\n});\n\ntest('规模与频次：134 条 / 2 篇；大承气 79 · 调胃 33 · 小承气 31', () => {\n  const s = stats();\n  assert.deepStrictEqual([s.条, s.篇], [134, 2]);\n  assert.deepStrictEqual([s.大承气汤, s.调胃承气汤, s.小承气汤], [79, 33, 31]);\n  assert.deepStrictEqual([s.潮热, s.燥屎], [16, 25]);\n});\n\ntest('异文标注可取出，且不覆盖主文（只记录）', () => {\n  const v = variants();\n  assert.ok(v.length >= 20, `异文标注应不少，实得 ${v.length}`);\n  assert.ok(v.some((x) => x.note.includes('玉函')));\n  assert.ok(v.every((x) => typeof x.text === 'string' && x.note.length >= 2));\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "阳明病的提纲条是？",
+          "options": [
+            "胃家实（一作寒是也）",
+            "口苦咽干目眩",
+            "腹满而吐，食不下",
+            "脉浮头项强痛而恶寒"
+          ],
+          "correct": 0,
+          "explanation": "「一作寒是也」是夹注异文，须一并保留。"
+        },
+        {
+          "stage": "check",
+          "question": "「腹大满不通」为何改用小承气而不是大承气？",
+          "options": [
+            "病情更轻",
+            "以气机壅塞为主、燥屎未必坚，目标是通壅气而非攻燥屎",
+            "小承气更安全所以随便用",
+            "原文写错了"
+          ],
+          "correct": 1,
+          "explanation": "两分支目标不同：大承气攻燥屎，小承气通壅气。"
+        },
+        {
+          "stage": "check",
+          "question": "底本「与调胃承气汤。方三十三玉函云：与小承气汤」说明什么？",
+          "options": [
+            "底本抄错",
+            "同一处存在版本异文，方名是带版本的值",
+            "调胃与小承气等价",
+            "玉函不可信"
+          ],
+          "correct": 1,
+          "explanation": "异文必须记录，不能静默二选一。"
+        },
+        {
+          "stage": "check",
+          "question": "阳明病域条数与「大承气汤」出现条数分别是？",
+          "options": [
+            "134 条 / 79 条",
+            "566 条 / 79 条",
+            "134 条 / 134 条",
+            "64 条 / 33 条"
+          ],
+          "correct": 0,
+          "explanation": "134 条 2 篇；大承气 79、调胃 33、小承气 31。"
+        },
+        {
+          "stage": "post",
+          "question": "「大承气汤」出现 79 条，能否说明它最常用？",
+          "options": [
+            "能",
+            "不能，频次含大量禁忌与误治对照条",
+            "能，因为方名出现即应用",
+            "无法判断"
+          ],
+          "correct": 1,
+          "explanation": "与第 3 章同理：频次≠权重。"
+        },
+        {
+          "stage": "post",
+          "question": "判定器在条件不足时应该输出什么？",
+          "options": [
+            "默认大承气",
+            "默认调胃承气",
+            "不足以定档 + 缺项清单 + 不排除项",
+            "随机选一方"
+          ],
+          "correct": 2,
+          "explanation": "不硬分是纪律；缺项清单让人知道下一步该问什么。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-yangming-li.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/04-yangming-li/outputs/prompt-yangming-li.md",
+        "title": "三承气分层判定",
+        "description": null,
+        "chars": 635,
+        "body": "# 三承气分层判定\n\n## 用途\n\n把一条阳明腑实的病案，按**原文条件**落到三承气中的一档；条件不够就报缺项，不硬定。\n用于**病案讨论、条文对照、教材校核**。不做攻下决策。\n\n## 提示词\n\n```text\n你是伤寒论助教。下面是病案摘要。请只做分层，不做处方决策。\n\n原文条件（底本）：\n· 腹满、潮热、大便硬 → 大承气汤（篇 8：「…腹满潮热，大便硬，大承气汤主之」）\n· 腹大满不通、潮热（无大便硬）→ 小承气汤（同条：「若腹大满不通者，与小承气汤」）\n· 不恶寒但热（无腹满硬满）→ 调胃承气汤（篇 5：「当和胃气，与调胃承气汤」）\n\n规则：\n1. 只允许用上述原文条件判定；不得引入「痞满燥实」作为判据（那是归纳，不是原文）。\n2. 条件不足 → 输出「不足以定档」并列出缺项，禁止默认取最重档。\n3. 每条结论必须附原文出处（篇号 + 原句片段）。\n4. 遇到版本异文（如「玉函云：与小承气汤」）必须并列报出，不得择一。\n5. 不给剂量、不给煎服法、不判患者能否承受攻下。\n\n输出格式：\n【档位】大承气 | 小承气 | 调胃承气 | 不足以定档\n【命中条件】…\n【缺失条件】…\n【异文】…\n【不排除】…\n```\n\n## 使用示例\n\n输入：腹满、潮热、大便硬三日未行、谵语。\n\n输出：【档位】大承气汤（篇 8「腹满潮热，大便硬」）\n【命中条件】大便硬 / 潮热 / 腹满\n【缺失条件】无\n【异文】无\n【不排除】若以腹大满不通为主，原文另有小承气分支。\n\n## 为什么这样限制\n\n- 「痞满燥实」好用但会盖住原文的用词差异，分层要能回到原句。\n- 默认取最重档是最危险的失效方式：判定器越\"果断\"，临床越容易越界。\n"
+      },
+      {
+        "name": "skill-yangming-li.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/04-yangming-li/outputs/skill-yangming-li.md",
+        "title": "yangming-li",
+        "description": "阳明腑实三承气分层：只用原文词判档、缺项报缺、异文并列不择一",
+        "chars": 509,
+        "body": "---\nname: yangming-li\ndescription: 阳明腑实三承气分层：只用原文词判档、缺项报缺、异文并列不择一\nversion: 0.1.0\n---\n\n# yangming-li\n\n## 何时使用\n\n- 病案讨论中要判断该走大承气、小承气还是调胃承气\n- 教材写「痞满燥实」而你想回到原文用词核对\n- 发现同一条文两个版本给出不同方，需要并列记录\n\n## 不适用\n\n- 阳明其他分支（白虎汤、茵陈蒿汤、栀子豉汤）\n- 攻下禁忌与患者耐受判断（临床决定）\n- 剂量与煎服法（见第 12 章）\n\n## 步骤\n\n1. **取条件**：腹满、潮热、大便硬、腹大满不通、不恶寒但热、谵语、燥屎——是否出现。\n2. **判档**：大便硬+潮热+腹满 → 大承气；腹大满不通+潮热（无大便硬）→ 小承气；但热不恶寒无硬满 → 调胃。\n3. **报缺项**：不足则「不足以定档」，列出还缺什么。\n4. **记异文**：遇到「玉函云」「一作」并列报出。\n5. **留边界**：不给剂量、不判可攻。\n\n## 输出模板\n\n```text\n【档位】…\n【命中条件】…\n【缺失条件】…\n【异文】…\n【不排除】…\n```\n\n## 质量判据\n\n- 判据能追到原句\n- 没有默认最重档\n- 异文与原主文并存\n- 没有剂量与指征结论\n\n> 本技能只做文本分层，不构成攻下指征或处方建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "01-zhongyi/07-shanghanlun/05-shaoyang-banbiao": {
+    "key": "01-zhongyi/07-shanghanlun/05-shaoyang-banbiao",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "07-shanghanlun",
+    "subjectTitle": "伤寒论",
+    "chapterSlug": "05-shaoyang-banbiao",
+    "n": 5,
+    "title": "第 5 章 · 少阳病半表半里：一条把「与」改成「或」的规则",
+    "motto": "「伤寒中风，有柴胡证，但见一证便是，不必悉具。」——《伤寒论·辨太阳病脉证并治中》（篇 5）",
+    "problem": "你按教材四证（往来寒热、胸胁苦满、默默不欲饮食、心烦喜呕）做「全部满足」的判定，结果十个病人九个判不出来。原文说的恰恰相反：**一证即可**。",
+    "roots": "环境逼迫(门诊信息不全，四证难齐) + 知识积累(逻辑结构 × 检索陷阱 = 一条能落地的判定规则)",
+    "html": "<h1 id=\"第-5-章-少阳病半表半里-一条把-与-改成-或-的规则\">第 5 章 · 少阳病半表半里：一条把「与」改成「或」的规则</h1>\n<blockquote><p><strong>MOTTO:</strong> 「伤寒中风，有柴胡证，但见一证便是，不必悉具。」——《伤寒论·辨太阳病脉证并治中》（篇 5）</p>\n<p><strong>PROBLEM:</strong> 你按教材四证（往来寒热、胸胁苦满、默默不欲饮食、心烦喜呕）做「全部满足」的判定，结果十个病人九个判不出来。原文说的恰恰相反：<strong>一证即可</strong>。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(门诊信息不全，四证难齐) + 知识积累(逻辑结构 × 检索陷阱 = 一条能落地的判定规则)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>伤寒论</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>05 / 12</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>逐字引出少阳提纲与柴胡四证，指出「但见一证便是」的判定含义：逻辑是 <strong>OR</strong>，不是 AND</li><li>说出少阳三禁（汗、吐、下）在原文里的落点，并说明为什么会误治</li><li>认出第二个检索陷阱：「默默不欲饮食」在底本写作「嘿嘿不欲饮食」，按教材词检索命中 0</li><li>写一个柴胡证判定器：OR 逻辑 + 命中项 + 不排除项</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"提纲-三症-不是四证\">提纲：三症，不是四证</h3>\n<blockquote><p>少阳之为病，口苦咽干，目眩也。——《伤寒论·辨少阳病脉证并治》（篇 11）</p></blockquote>\n<p>提纲只给三症，且都是<strong>上窍与感觉</strong>层面的（口、咽、目）。这是少阳篇最容易被跳过的一句——教材把它写成小标题，学生只记柴胡四证。</p>\n<h3 id=\"柴胡证的四证与-不必悉具\">柴胡证的四证与「不必悉具」</h3>\n<blockquote><p>伤寒五六日，中风，往来寒热，胸胁苦满，嘿嘿不欲饮食，心烦喜呕，或胸中烦而不呕，或渴，或腹中痛，或胁下痞硬，或心下悸，小便不利，或不渴，身有微热，或咳者，小柴胡汤主之。——（篇 5）</p>\n<p>伤寒中风，有柴胡证，但见一证便是，不必悉具。凡柴胡汤病证而下之，若柴胡证不罢者，复与柴胡汤，必蒸蒸而振，却复发热，汗出而解。——（篇 5）</p></blockquote>\n<p>第一句给了四证 + 七个「或」；第二句直接给判定规则：<strong>一证便是</strong>。所以小柴胡汤证的逻辑结构是：</p>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">text</div><pre><code class=\"lang-text\">少阳 = 口苦 OR 咽干 OR 目眩          （提纲三症）\n柴胡证 = 往来寒热 OR 胸胁苦满 OR 嘿嘿不欲饮食 OR 心烦喜呕   （四证取一）</code></pre></div>\n<p>注意「或胸中烦而不呕…或咳者」那七个「或」是<strong>兼症</strong>，属于同一方证内部的加减范围，不是判定必要条件。把它当必要条件，就会得出「必须咳才能用」的荒谬结论。</p>\n<h3 id=\"第二个检索陷阱-嘿嘿-默默\">第二个检索陷阱：嘿嘿 / 默默</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>检索词</th><th>raw 命中</th><th>归一后</th></tr></thead><tbody><tr><td>「默默不欲饮食」（教材写法）</td><td><strong>0</strong></td><td><strong>3</strong></td></tr><tr><td>「嘿嘿不欲饮食」（底本写法）</td><td>3</td><td>—（归一把它并到「默默」）</td></tr><tr><td>「往来寒热」</td><td><strong>5</strong></td><td><strong>16</strong></td></tr><tr><td>「胸胁苦满」</td><td>3</td><td>3</td></tr><tr><td>「心烦喜呕」</td><td>3</td><td>3</td></tr><tr><td>「但见一证」</td><td>1</td><td>1</td></tr></tbody></table></div>\n<p>「往来寒热」一行还藏着第二层：11 条写作「往来寒𤍠」，与第 3 章同一个 𤍠。<strong>两个陷阱叠在同一个词上</strong>——先按古写改词形，再按异体字归一，才拿得到 16 条。</p>\n<p>与第 3 章的「𤍠/热」是同一类问题：<strong>检索词来自教材，底本用的是古写</strong>。这次不是异体字，是通假——「嘿」通「默」。所以归一化表要能同时处理异体与通假，否则第 3 章修好的漏检在这里又出现一次。</p>\n<h3 id=\"三禁-少阳为什么不能汗吐下\">三禁：少阳为什么不能汗吐下</h3>\n<p>底本里「不可发汗」38 条、「不可下」37 条、「不可吐」5 条（多数集中在汗吐下诸可不可篇）。少阳位于半表半里，汗则伤津、下则引邪入里、吐则伤胃气，故原文反复告诫。工程上的启示：<strong>判定规则要带「禁止集」</strong>，而不是只输出「该用什么」。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js\nshaoYang(signs)   // OR 逻辑判柴胡证：任一四证 → 立证；提纲三症单列\ncontra(signs)     // 三禁检查：汗/吐/下已施 + 柴胡证罢不罢\nsearch(needle)    // 带通假/异体归一，报 raw 与归一命中</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>shaoYang({往来寒热: true})</code> → 立柴胡证（一证即可）；<code>shaoYang({})</code> → 不立证并列出四证；<code>search('默默不欲饮食')</code> raw 0 / 归一 3；<code>search('往来寒热')</code> raw 5 / 归一 16。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>「但见一证」不等于「凡有一证皆可投小柴胡」</strong>。原文同时要求「有柴胡证」，四证只是柴胡证的组成；本章代码只做字面 OR，不判是否属柴胡证范畴。</li><li><strong>七「或」不加权</strong>。原文未给权重，代码也不臆造。</li><li><strong>三禁是文本告诫，不是绝对禁忌表</strong>。临床有合病、兼证时须重新判断（见第 9 章）。</li><li><strong>归一化表仍不完整</strong>：通假（嘿/默）与异体（𤍠/热）混在同一张表里，扩展时须标明类型，否则日后无法区分「写错」与「古写」。</li><li>判定器输出不构成处方建议。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 条文引自 <code>standards/shanghan/底本.json</code>（含古写与异文，可复核）；本章为条文逻辑与检索演示，不构成辨证处方建议。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>把四证的 OR 改成加权评分，会不会更准？用原文「但见一证便是」反驳或支持。</li><li>七「或」如果被误当必要条件，会漏掉多少条文？用检索估算。</li><li>「嘿」通「默」与「𤍠」代「热」，在数据里应归为同一类还是两类？给出你的分类理由。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>一句话就能改掉一个系统的逻辑结构：「不必悉具」把 AND 变 OR。多数中医 AI 的证候模型默认 AND，因为打分表好写——而原文在这里明确禁止 AND。</p>",
+    "markdown": "# 第 5 章 · 少阳病半表半里：一条把「与」改成「或」的规则\r\n\r\n> **MOTTO:** 「伤寒中风，有柴胡证，但见一证便是，不必悉具。」——《伤寒论·辨太阳病脉证并治中》（篇 5）\r\n>\r\n> **PROBLEM:** 你按教材四证（往来寒热、胸胁苦满、默默不欲饮食、心烦喜呕）做「全部满足」的判定，结果十个病人九个判不出来。原文说的恰恰相反：**一证即可**。\r\n>\r\n> **双根因定位:** 环境逼迫(门诊信息不全，四证难齐) + 知识积累(逻辑结构 × 检索陷阱 = 一条能落地的判定规则)\r\n\r\n## 课程信息\r\n\r\n| 项目 | 内容 |\r\n|------|------|\r\n| 学科 | 伤寒论 |\r\n| 院系 | 中医系 |\r\n| 章序号 | 05 / 12 |\r\n| 所属阶段 | 🌿 长·积累 |\r\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\r\n| 预估时长 | 3 小时 |\r\n\r\n## 学习目标\r\n\r\n- 逐字引出少阳提纲与柴胡四证，指出「但见一证便是」的判定含义：逻辑是 **OR**，不是 AND\r\n- 说出少阳三禁（汗、吐、下）在原文里的落点，并说明为什么会误治\r\n- 认出第二个检索陷阱：「默默不欲饮食」在底本写作「嘿嘿不欲饮食」，按教材词检索命中 0\r\n- 写一个柴胡证判定器：OR 逻辑 + 命中项 + 不排除项\r\n\r\n## 核心概念\r\n\r\n### 提纲：三症，不是四证\r\n\r\n> 少阳之为病，口苦咽干，目眩也。——《伤寒论·辨少阳病脉证并治》（篇 11）\r\n\r\n提纲只给三症，且都是**上窍与感觉**层面的（口、咽、目）。这是少阳篇最容易被跳过的一句——教材把它写成小标题，学生只记柴胡四证。\r\n\r\n### 柴胡证的四证与「不必悉具」\r\n\r\n> 伤寒五六日，中风，往来寒热，胸胁苦满，嘿嘿不欲饮食，心烦喜呕，或胸中烦而不呕，或渴，或腹中痛，或胁下痞硬，或心下悸，小便不利，或不渴，身有微热，或咳者，小柴胡汤主之。——（篇 5）\r\n>\r\n> 伤寒中风，有柴胡证，但见一证便是，不必悉具。凡柴胡汤病证而下之，若柴胡证不罢者，复与柴胡汤，必蒸蒸而振，却复发热，汗出而解。——（篇 5）\r\n\r\n第一句给了四证 + 七个「或」；第二句直接给判定规则：**一证便是**。所以小柴胡汤证的逻辑结构是：\r\n\r\n```\r\n少阳 = 口苦 OR 咽干 OR 目眩          （提纲三症）\r\n柴胡证 = 往来寒热 OR 胸胁苦满 OR 嘿嘿不欲饮食 OR 心烦喜呕   （四证取一）\r\n```\r\n\r\n注意「或胸中烦而不呕…或咳者」那七个「或」是**兼症**，属于同一方证内部的加减范围，不是判定必要条件。把它当必要条件，就会得出「必须咳才能用」的荒谬结论。\r\n\r\n### 第二个检索陷阱：嘿嘿 / 默默\r\n\r\n| 检索词 | raw 命中 | 归一后 |\r\n|---|--:|--:|\r\n| 「默默不欲饮食」（教材写法） | **0** | **3** |\r\n| 「嘿嘿不欲饮食」（底本写法） | 3 | —（归一把它并到「默默」） |\r\n| 「往来寒热」 | **5** | **16** |\r\n| 「胸胁苦满」 | 3 | 3 |\r\n| 「心烦喜呕」 | 3 | 3 |\r\n| 「但见一证」 | 1 | 1 |\r\n\r\n「往来寒热」一行还藏着第二层：11 条写作「往来寒𤍠」，与第 3 章同一个 𤍠。**两个陷阱叠在同一个词上**——先按古写改词形，再按异体字归一，才拿得到 16 条。\r\n\r\n与第 3 章的「𤍠/热」是同一类问题：**检索词来自教材，底本用的是古写**。这次不是异体字，是通假——「嘿」通「默」。所以归一化表要能同时处理异体与通假，否则第 3 章修好的漏检在这里又出现一次。\r\n\r\n### 三禁：少阳为什么不能汗吐下\r\n\r\n底本里「不可发汗」38 条、「不可下」37 条、「不可吐」5 条（多数集中在汗吐下诸可不可篇）。少阳位于半表半里，汗则伤津、下则引邪入里、吐则伤胃气，故原文反复告诫。工程上的启示：**判定规则要带「禁止集」**，而不是只输出「该用什么」。\r\n\r\n## BUILD IT：从零实现\r\n\r\n```js\r\n// code/main.js\r\nshaoYang(signs)   // OR 逻辑判柴胡证：任一四证 → 立证；提纲三症单列\r\ncontra(signs)     // 三禁检查：汗/吐/下已施 + 柴胡证罢不罢\r\nsearch(needle)    // 带通假/异体归一，报 raw 与归一命中\r\n```\r\n\r\n## 验证\r\n\r\n```bash\r\nnode code/main.js\r\nnode --test code/main.test.js\r\n```\r\n\r\n预期：`shaoYang({往来寒热: true})` → 立柴胡证（一证即可）；`shaoYang({})` → 不立证并列出四证；`search('默默不欲饮食')` raw 0 / 归一 3；`search('往来寒热')` raw 5 / 归一 16。\r\n\r\n## 代价与边界\r\n\r\n- **「但见一证」不等于「凡有一证皆可投小柴胡」**。原文同时要求「有柴胡证」，四证只是柴胡证的组成；本章代码只做字面 OR，不判是否属柴胡证范畴。\r\n- **七「或」不加权**。原文未给权重，代码也不臆造。\r\n- **三禁是文本告诫，不是绝对禁忌表**。临床有合病、兼证时须重新判断（见第 9 章）。\r\n- **归一化表仍不完整**：通假（嘿/默）与异体（𤍠/热）混在同一张表里，扩展时须标明类型，否则日后无法区分「写错」与「古写」。\r\n- 判定器输出不构成处方建议。\r\n\r\n> **免责声明：** 条文引自 `standards/shanghan/底本.json`（含古写与异文，可复核）；本章为条文逻辑与检索演示，不构成辨证处方建议。\r\n\r\n## 练习\r\n\r\n1. 把四证的 OR 改成加权评分，会不会更准？用原文「但见一证便是」反驳或支持。\r\n2. 七「或」如果被误当必要条件，会漏掉多少条文？用检索估算。\r\n3. 「嘿」通「默」与「𤍠」代「热」，在数据里应归为同一类还是两类？给出你的分类理由。\r\n\r\n## 进阶思考\r\n\r\n一句话就能改掉一个系统的逻辑结构：「不必悉具」把 AND 变 OR。多数中医 AI 的证候模型默认 AND，因为打分表好写——而原文在这里明确禁止 AND。\r\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 少阳病：柴胡证 OR 判定 + 三禁检查 + 通假/异体归一检索\n *\n *   node code/main.js\n *\n * 口径：\n *   · 原文「但见一证便是，不必悉具」→ 四证取一即可立证，逻辑是 OR 不是 AND。\n *   · 提纲三症（口苦/咽干/目眩）单列，不与四证合并计分。\n *   · 七个「或」是兼症，不当必要条件，代码不参与判定。\n *   · 三禁（汗/吐/下）只做文本提示，不作绝对禁忌。\n */\n\nconst path = require('node:path');\nconst fs = require('node:fs');\n\nconst ROOT = path.resolve(__dirname, '../../../../../..');\nconst BOOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/shanghan/底本.json'), 'utf8'));\nconst TEXTS = [];\nfor (const p of BOOK.pian) for (const it of p.items) TEXTS.push({ pian: p.no, text: it.text });\n\n/** 归一：type 区分「异体字」与「通假」，日后扩展可分辨 */\nconst VARIANTS = [\n  { from: '𤍠', to: '热', type: '异体' },\n  { from: '嘿嘿', to: '默默', type: '通假' },\n];\n\nfunction normalize(text) {\n  let out = text;\n  const replaced = [];\n  for (const v of VARIANTS) {\n    const n = out.split(v.from).length - 1;\n    if (n) { replaced.push({ ...v, n }); out = out.split(v.from).join(v.to); }\n  }\n  return { text: out, replaced };\n}\n\nfunction search(needle) {\n  const raw = TEXTS.filter((t) => t.text.includes(needle)).length;\n  const norm = TEXTS.filter((t) => normalize(t.text).text.includes(needle)).length;\n  return { needle, raw, normalized: norm, missed: norm - raw };\n}\n\nconst MAIN = ['往来寒热', '胸胁苦满', '默默不欲饮食', '心烦喜呕'];\nconst OUTLINE = ['口苦', '咽干', '目眩'];\n\n/** 柴胡证判定：OR 逻辑 */\nfunction shaoYang(signs = {}) {\n  const hit = MAIN.filter((k) => signs[k] === true);\n  const outline = OUTLINE.filter((k) => signs[k] === true);\n  if (hit.length === 0) {\n    return {\n      established: false,\n      hit,\n      outline,\n      missing: MAIN.filter((k) => !hit.includes(k)),\n      why: '四证皆无（原文：但见一证便是，故无证不立）',\n      notExcluded: ['提纲三症可单独提示少阳倾向，但不等于柴胡证'],\n    };\n  }\n  return {\n    established: true,\n    hit,\n    outline,\n    missing: [],\n    why: `一证即可立（原文「不必悉具」）：${hit[0]}`,\n    notExcluded: ['若已汗/吐/下，须看柴胡证罢不罢', '合病（见第 9 章）'],\n  };\n}\n\n/** 三禁：报了做过什么，就给对应告诫；未做则不提 */\nfunction contra(signs = {}) {\n  const out = [];\n  if (signs.已汗) out.push('已发汗：津伤则邪易入里，原文反复言不可发汗');\n  if (signs.已吐) out.push('已吐：胃气受损，柴胡证欲解而中气先虚');\n  if (signs.已下) out.push('已下：若柴胡证不罢者，原文仍许复与柴胡汤，但须防引邪入里');\n  return out;\n}\n\nfunction main() {\n  console.log('检索（raw vs 归一化）：');\n  for (const k of ['默默不欲饮食', '嘿嘿不欲饮食', '往来寒热', '胸胁苦满', '心烦喜呕', '但见一证']) {\n    const r = search(k);\n    console.log(`  ${k}：raw ${r.raw} → 归一 ${r.normalized}（漏检 ${r.missed}）`);\n  }\n  const tiao = BOOK.pian.filter((p) => p.domain === '少阳病').reduce((a, p) => a + p.actual.tiao, 0);\n  console.log(`\\n规模：少阳病域 ${tiao} 条 · 小柴胡汤 ${search('小柴胡汤').raw} 条 · 柴胡证 ${search('柴胡证').raw} 条`);\n\n  console.log('\\n判定：');\n  for (const s of [{ 往来寒热: true }, { 心烦喜呕: true, 已下: true }, {}]) {\n    const r = shaoYang(s);\n    const c = contra(s);\n    console.log(`  ${JSON.stringify(s)} → ${r.established ? '立柴胡证' : '不立证'}｜命中 ${r.hit.join('/') || '无'}`);\n    if (c.length) console.log(`     三禁提示：${c.join('；')}`);\n  }\n  console.log('\\n本输出为条文逻辑演示，不构成辨证处方建议。');\n}\n\nif (require.main === module) main();\nmodule.exports = { normalize, search, shaoYang, contra, VARIANTS, TEXTS };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { normalize, search, shaoYang, contra, VARIANTS } = require('./main.js');\n\ntest('归一区分异体与通假：𤍠→热（异体）、嘿嘿→默默（通假）', () => {\n  const r = normalize('往来寒𤍠，嘿嘿不欲饮食');\n  assert.strictEqual(r.text, '往来寒热，默默不欲饮食');\n  assert.deepStrictEqual(r.replaced.map((x) => x.type).sort(), ['异体', '通假']);\n  assert.ok(VARIANTS.every((v) => ['异体', '通假'].includes(v.type)));\n});\n\ntest('检索陷阱：「默默」raw 0 → 归一 3', () => {\n  const r = search('默默不欲饮食');\n  assert.deepStrictEqual([r.raw, r.normalized], [0, 3]);\n});\n\ntest('两层陷阱叠加：「往来寒热」raw 5 → 归一 16', () => {\n  const r = search('往来寒热');\n  assert.deepStrictEqual([r.raw, r.normalized, r.missed], [5, 16, 11]);\n});\n\ntest('OR 判定：任一证即立柴胡证（不必悉具）', () => {\n  for (const k of ['往来寒热', '胸胁苦满', '默默不欲饮食', '心烦喜呕']) {\n    const r = shaoYang({ [k]: true });\n    assert.strictEqual(r.established, true, k);\n    assert.match(r.why, /不必悉具/);\n  }\n});\n\ntest('四证皆无则不立证，并列出缺项；提纲三症不替代柴胡证', () => {\n  const r = shaoYang({ 口苦: true, 咽干: true });\n  assert.strictEqual(r.established, false);\n  assert.deepStrictEqual(r.outline, ['口苦', '咽干']);\n  assert.strictEqual(r.missing.length, 4);\n});\n\ntest('三禁提示只在已施时出现，且「已下」保留原文许复与之说', () => {\n  assert.deepStrictEqual(contra({}), []);\n  const c = contra({ 已下: true });\n  assert.strictEqual(c.length, 1);\n  assert.match(c[0], /复与柴胡汤/);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "「但见一证便是，不必悉具」的判定含义是？",
+          "options": [
+            "四证须全备",
+            "四证任一即可立柴胡证（OR 逻辑）",
+            "只需提纲三症",
+            "须七「或」中至少三症"
+          ],
+          "correct": 1,
+          "explanation": "原文明确否定「悉具」，即 AND 逻辑不成立。"
+        },
+        {
+          "stage": "check",
+          "question": "少阳提纲三症是？",
+          "options": [
+            "往来寒热、胸胁苦满、心烦喜呕",
+            "口苦、咽干、目眩",
+            "腹满、吐、自利",
+            "消渴、气上撞心、心中疼热"
+          ],
+          "correct": 1,
+          "explanation": "提纲三症均在上窍与感觉层面，不等于柴胡四证。"
+        },
+        {
+          "stage": "check",
+          "question": "按教材词检索「默默不欲饮食」命中 0，原因是？",
+          "options": [
+            "底本没有此证",
+            "底本写作「嘿嘿不欲饮食」（嘿通默）3 条",
+            "检索工具故障",
+            "该条在亡佚篇"
+          ],
+          "correct": 1,
+          "explanation": "通假字导致词形不匹配，归一并到「默默」后有 3 条。"
+        },
+        {
+          "stage": "check",
+          "question": "「往来寒热」raw 5 → 归一 16，多出的 11 条来自？",
+          "options": [
+            "另 11 条同义表述",
+            "11 条写作「往来寒𤍠」，异体字 𤍠",
+            "重复条文",
+            "注文被计入"
+          ],
+          "correct": 1,
+          "explanation": "与第 3 章同一个异体字，两个陷阱叠在同一词上。"
+        },
+        {
+          "stage": "post",
+          "question": "七「或」（或渴、或咳…）在判定中的角色是？",
+          "options": [
+            "必要条件",
+            "兼症加减范围，不参与判定",
+            "否定条件",
+            "权重加分项"
+          ],
+          "correct": 1,
+          "explanation": "把兼症当必要条件会得出「必须咳才能用」的荒谬结论。"
+        },
+        {
+          "stage": "post",
+          "question": "三禁（汗、吐、下）在代码里的正确处理是？",
+          "options": [
+            "作为绝对禁忌直接拒绝",
+            "作为文本提示输出，并保留原文「柴胡证不罢者复与柴胡汤」",
+            "完全忽略",
+            "换算成剂量调整"
+          ],
+          "correct": 1,
+          "explanation": "原文留了复与的余地，代码不能把告诫当绝对禁令。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-shaoyang-banbiao.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/05-shaoyang-banbiao/outputs/prompt-shaoyang-banbiao.md",
+        "title": "柴胡证 OR 判定助手",
+        "description": null,
+        "chars": 639,
+        "body": "# 柴胡证 OR 判定助手\n\n## 用途\n\n判定一份病历是否立柴胡证：**四证取一即可**，并报三禁与不排除项。\n用于**带教提问、病案讨论、教材逻辑校核**。不做处方决策。\n\n## 提示词\n\n```text\n你是伤寒论助教。下面是病案摘要。请判定柴胡证，按 OR 逻辑，不做处方。\n\n原文依据（底本）：\n1. 提纲：少阳之为病，口苦咽干，目眩也。（篇 11）\n2. 四证：往来寒热、胸胁苦满、嘿嘿（通默）不欲饮食、心烦喜呕（篇 5 小柴胡汤条）\n3. 规则：有柴胡证，但见一证便是，不必悉具。（篇 5）\n4. 七「或」（或渴、或咳…）为兼症，不参与判定。\n\n规则：\n1. 四证任一成立 → 立柴胡证；四证皆无 → 不立，并列出四证。\n2. 提纲三症单列，可提示少阳倾向，但不得单独用来立柴胡证。\n3. 三禁（已汗/已吐/已下）作为提示输出；「已下而柴胡证不罢」须保留原文「复与柴胡汤」的余地。\n4. 检索词若为教材写法（默默），须同时报底本写法（嘿嘿）与命中差异。\n5. 不给方、不给剂量、不判合病从属。\n\n输出格式：\n【判定】立柴胡证 | 不立\n【命中】…（四证）\n【提纲】…（单列）\n【三禁提示】…\n【不排除】…\n【检索口径】raw / 归一化 命中数\n```\n\n## 使用示例\n\n输入：往来寒热两天，口苦，未吐下。\n\n输出：【判定】立柴胡证（一证即可）\n【命中】往来寒热\n【提纲】口苦\n【三禁提示】无\n【不排除】合病；若兼腹满便秘须另判阳明\n【检索口径】往来寒热 raw 5 / 归一 16\n\n## 为什么这样限制\n\n- AND 逻辑会让九成病人判不出来，而原文明确禁止 AND。\n- 提纲三症与柴胡四证混算，会把少阳倾向当柴胡证，扩大适用范围。\n"
+      },
+      {
+        "name": "skill-shaoyang-banbiao.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/05-shaoyang-banbiao/outputs/skill-shaoyang-banbiao.md",
+        "title": "shaoyang-banbiao",
+        "description": "柴胡证 OR 判定：一证即立、提纲单列、三禁只提示、检索报两层漏检",
+        "chars": 506,
+        "body": "---\nname: shaoyang-banbiao\ndescription: 柴胡证 OR 判定：一证即立、提纲单列、三禁只提示、检索报两层漏检\nversion: 0.1.0\n---\n\n# shaoyang-banbiao\n\n## 何时使用\n\n- 病历信息不全，四证只有一两项，要判断能否立柴胡证\n- 教材写法与底本用字不一致，需要量化漏检\n- 已误汗/误下，要判断还能不能复与柴胡汤\n\n## 不适用\n\n- 合病与并病的从属判断（见第 9 章）\n- 大柴胡汤、柴胡桂枝汤等变方的选择\n- 剂量与煎服法\n\n## 步骤\n\n1. **归一检索**：教材词 → 底本词（默默/嘿嘿），再叠异体（𤍠/热），两层都报。\n2. **判四证**：OR，一证即立；四证皆无则不立并列缺。\n3. **单列提纲**：口苦/咽干/目眩只作倾向提示。\n4. **三禁提示**：已汗/已吐/已下各给一句，附原文「复与柴胡汤」余地。\n5. **留不排除**：合病、兼阳明、兼太阴。\n\n## 输出模板\n\n```text\n【判定】立柴胡证 | 不立\n【命中】…【提纲】…【三禁提示】…【不排除】…\n【检索口径】raw N / 归一 M\n```\n\n## 质量判据\n\n- 没有用 AND 判定\n- 提纲三症未被用来立证\n- 两层检索数字都在\n- 三禁留了余地\n\n> 本技能只做条文逻辑判定，不构成辨证处方建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "01-zhongyi/07-shanghanlun/06-taiyin-xuhan": {
+    "key": "01-zhongyi/07-shanghanlun/06-taiyin-xuhan",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "07-shanghanlun",
+    "subjectTitle": "伤寒论",
+    "chapterSlug": "06-taiyin-xuhan",
+    "n": 6,
+    "title": "第 6 章 · 太阴病：一条提纲撑起的一章，理中丸不在这一篇",
+    "motto": "「太阴之为病，腹满而吐，食不下，自利益甚，时腹自痛，下之必胸下结硬。」——《伤寒论·辨太阴病脉证并治》（篇 23）",
+    "problem": "教材说「太阴病，理中汤主之」「自利不渴者，属太阴，宜服四逆辈」。你打开底本一查：理中丸 5 处，全在霍乱篇；「自利不渴」0 处；「四逆辈」0 处。太阴这一经，底本只给你一条提纲。",
+    "roots": "环境逼迫(要讲太阴病却无篇可依) + 知识积累(逐篇拆解 × 证据链核对 = 知道哪句能引、哪句是拼合)",
+    "html": "<h1 id=\"第-6-章-太阴病-一条提纲撑起的一章-理中丸不在这一篇\">第 6 章 · 太阴病：一条提纲撑起的一章，理中丸不在这一篇</h1>\n<blockquote><p><strong>MOTTO:</strong> 「太阴之为病，腹满而吐，食不下，自利益甚，时腹自痛，下之必胸下结硬。」——《伤寒论·辨太阴病脉证并治》（篇 23）</p>\n<p><strong>PROBLEM:</strong> 教材说「太阴病，理中汤主之」「自利不渴者，属太阴，宜服四逆辈」。你打开底本一查：理中丸 5 处，全在霍乱篇；「自利不渴」0 处；「四逆辈」0 处。太阴这一经，底本只给你一条提纲。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(要讲太阴病却无篇可依) + 知识积累(逐篇拆解 × 证据链核对 = 知道哪句能引、哪句是拼合)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>伤寒论</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>06 / 12</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>逐字引出太阴提纲，并对比篇 27 的异文（「若下之」/「下之必」）</li><li>用实测说明太阴篇在底本里的真实状态：1 条提纲 + 186 条混编 + 7 条目录残片</li><li>说清「理中丸 → 太阴病」这条教材链条在底本里断在哪一环</li><li>写一个证据链核对器：给定「结论←条文」的映射，逐环报「命中/缺失/跨篇」</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"底本里的太阴-被切成三块\">底本里的太阴，被切成三块</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>篇</th><th>标注</th><th>条数</th><th>实际内容</th></tr></thead><tbody><tr><td>12</td><td>辨太阴病脉证并治</td><td>7</td><td><strong>全是卷首与目录行</strong>（「辨太阴病脉证并治第十 辨少阴病脉证并治第十一……宋林亿校正……」），无一条条文</td></tr><tr><td>23</td><td>辨太阴病脉证并治（提纲起）</td><td>1</td><td><strong>唯一一条真条文</strong>：太阴提纲</td></tr><tr><td>27</td><td>辨太阴病脉证并治（提纲起）</td><td>186</td><td>提纲条重复一次，其余混入太阳（14 处）、阳明（3 处）语境；「腹满」5 条、「自利」1 条</td></tr></tbody></table></div>\n<p>所以「太阴病域 194 条」这个数字是真的，但<strong>可用的太阴条文只有 1 条提纲</strong>，其余是混编与目录。</p>\n<h3 id=\"提纲的两个版本\">提纲的两个版本</h3>\n<blockquote><p>太阴之为病，腹满而吐，食不下，自利益甚，时腹自痛，下之必胸下结硬。——（篇 23）</p>\n<p>太阴之为病，腹满而吐，食不下，自利益甚，时腹自痛，若下之，必胸下结硬。——（篇 27 第 1 条）</p></blockquote>\n<p>差别在「下之必」与「若下之，必」：前者是断言，后者是条件。这一字之差会改变条文性质——是「误下必然结硬」还是「若误下则会结硬」。本章两版并列，不择一。</p>\n<h3 id=\"教材链条断在哪一环\">教材链条断在哪一环</h3>\n<p>教材常见的推理链是：</p>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">text</div><pre><code class=\"lang-text\">腹满而吐、自利 → 脾虚寒 → 温中 → 理中丸/四逆辈</code></pre></div>\n<p>逐环核对底本：</p>\n<div class=\"table-wrap\"><table><thead><tr><th>环节</th><th>底本证据</th><th>状态</th></tr></thead><tbody><tr><td>提纲（腹满而吐、食不下、自利益甚、时腹自痛）</td><td>篇 23 一条</td><td>✅ 命中</td></tr><tr><td>「自利不渴者，属太阴」</td><td><strong>0 处</strong></td><td>❌ 缺失</td></tr><tr><td>「宜服四逆辈」</td><td><strong>0 处</strong></td><td>❌ 缺失</td></tr><tr><td>理中丸</td><td><strong>5 处，全在霍乱篇</strong>（篇 15/16：「霍乱头痛发热，身疼痛，热多欲饮水者，五苓散主之；寒多不用水者，理中丸主之」）</td><td>⚠️ 跨篇</td></tr></tbody></table></div>\n<p>结论不是「教材错」，而是：<strong>「太阴—理中丸」这条链，是靠跨篇拼合与后世补充成立的，不是太阴篇内部的原文</strong>。讲这一章时，引提纲可以引原句；引「理中丸主之」必须标「霍乱篇」，不能标「太阴篇」。</p>\n<h3 id=\"与阳明腹满的鉴别\">与阳明腹满的鉴别</h3>\n<p>两经都有腹满，原文给的分辨点不在「满」，而在<strong>吐利与寒热</strong>：</p>\n<ul><li>太阴：腹满<strong>而吐</strong>，<strong>自利益甚</strong>，时腹自痛（虚寒，喜温按）</li><li>阳明：腹满<strong>潮热</strong>，大便硬，谵语（实热，拒按）</li></ul>\n<p>这个对照可以只用词频与共现算出，不需要背——这也正是代码要做的事。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js\nsplitPian()      // 拆 12/23/27 三篇：条文数、是否目录残片、提纲条\nchainCheck(list)// 逐环核对「结论←条文」映射，报 hit / missing / crossPian\ndifferentiate()  // 太阴 vs 阳明：腹满 ×（吐利 / 潮热大便硬）共现</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>splitPian()</code> 报 12 篇 <code>isToc: true</code>；<code>chainCheck</code> 对「自利不渴」「四逆辈」返回 <code>missing</code>，对「理中丸」返回 <code>crossPian: true</code>；<code>differentiate()</code> 给出太阴/阳明各自的词共现条数。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>本章不重建太阴篇</strong>。缺口如实留在表里，不用其他篇条文填补。</li><li><strong>跨篇引用不是错</strong>，但必须标篇名。把霍乱篇的方写成太阴篇的方，是可复核性的流失。</li><li><strong>1 条提纲不足以支持辨证</strong>。任何「太阴虚寒证」的完整证候描述都超出本章证据。</li><li><strong>目录残片也可能是证据</strong>：它证明了「少阴篇、厥阴篇」确实曾被编在此处（见第 2 章），不该当噪声删掉。</li><li>四逆汤全库 31 条，多分布在太阳、少阴语境与汗吐下篇，本章不据频次推归属。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 条文引自 <code>standards/shanghan/底本.json</code>；该底本太阴篇残缺，本章的缺口标注即为结论的一部分。本章不构成辨证处方建议。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>篇 27 的 186 条里，你用什么规则判定某条「不是太阴」？规则能不能写成代码？</li><li>「下之必」与「若下之，必」在临床推理上有何差别？举一个会被这差别改变判断的场景。</li><li>如果要求「太阴章必须配一个方」，你会选理中丸并标跨篇，还是留空？说明取舍。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>一门课最难讲的部分，往往是「原文不够」的那一章。承认只有一条提纲，比用三页讲义把它补满更接近事实——而补满的人，通常不会告诉你他补了。</p>",
+    "markdown": "# 第 6 章 · 太阴病：一条提纲撑起的一章，理中丸不在这一篇\n\n> **MOTTO:** 「太阴之为病，腹满而吐，食不下，自利益甚，时腹自痛，下之必胸下结硬。」——《伤寒论·辨太阴病脉证并治》（篇 23）\n>\n> **PROBLEM:** 教材说「太阴病，理中汤主之」「自利不渴者，属太阴，宜服四逆辈」。你打开底本一查：理中丸 5 处，全在霍乱篇；「自利不渴」0 处；「四逆辈」0 处。太阴这一经，底本只给你一条提纲。\n>\n> **双根因定位:** 环境逼迫(要讲太阴病却无篇可依) + 知识积累(逐篇拆解 × 证据链核对 = 知道哪句能引、哪句是拼合)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 伤寒论 |\n| 院系 | 中医系 |\n| 章序号 | 06 / 12 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 逐字引出太阴提纲，并对比篇 27 的异文（「若下之」/「下之必」）\n- 用实测说明太阴篇在底本里的真实状态：1 条提纲 + 186 条混编 + 7 条目录残片\n- 说清「理中丸 → 太阴病」这条教材链条在底本里断在哪一环\n- 写一个证据链核对器：给定「结论←条文」的映射，逐环报「命中/缺失/跨篇」\n\n## 核心概念\n\n### 底本里的太阴，被切成三块\n\n| 篇 | 标注 | 条数 | 实际内容 |\n|--:|---|--:|---|\n| 12 | 辨太阴病脉证并治 | 7 | **全是卷首与目录行**（「辨太阴病脉证并治第十 辨少阴病脉证并治第十一……宋林亿校正……」），无一条条文 |\n| 23 | 辨太阴病脉证并治（提纲起） | 1 | **唯一一条真条文**：太阴提纲 |\n| 27 | 辨太阴病脉证并治（提纲起） | 186 | 提纲条重复一次，其余混入太阳（14 处）、阳明（3 处）语境；「腹满」5 条、「自利」1 条 |\n\n所以「太阴病域 194 条」这个数字是真的，但**可用的太阴条文只有 1 条提纲**，其余是混编与目录。\n\n### 提纲的两个版本\n\n> 太阴之为病，腹满而吐，食不下，自利益甚，时腹自痛，下之必胸下结硬。——（篇 23）\n>\n> 太阴之为病，腹满而吐，食不下，自利益甚，时腹自痛，若下之，必胸下结硬。——（篇 27 第 1 条）\n\n差别在「下之必」与「若下之，必」：前者是断言，后者是条件。这一字之差会改变条文性质——是「误下必然结硬」还是「若误下则会结硬」。本章两版并列，不择一。\n\n### 教材链条断在哪一环\n\n教材常见的推理链是：\n\n```\n腹满而吐、自利 → 脾虚寒 → 温中 → 理中丸/四逆辈\n```\n\n逐环核对底本：\n\n| 环节 | 底本证据 | 状态 |\n|---|---|:--|\n| 提纲（腹满而吐、食不下、自利益甚、时腹自痛） | 篇 23 一条 | ✅ 命中 |\n| 「自利不渴者，属太阴」 | **0 处** | ❌ 缺失 |\n| 「宜服四逆辈」 | **0 处** | ❌ 缺失 |\n| 理中丸 | **5 处，全在霍乱篇**（篇 15/16：「霍乱头痛发热，身疼痛，热多欲饮水者，五苓散主之；寒多不用水者，理中丸主之」） | ⚠️ 跨篇 |\n\n结论不是「教材错」，而是：**「太阴—理中丸」这条链，是靠跨篇拼合与后世补充成立的，不是太阴篇内部的原文**。讲这一章时，引提纲可以引原句；引「理中丸主之」必须标「霍乱篇」，不能标「太阴篇」。\n\n### 与阳明腹满的鉴别\n\n两经都有腹满，原文给的分辨点不在「满」，而在**吐利与寒热**：\n\n- 太阴：腹满**而吐**，**自利益甚**，时腹自痛（虚寒，喜温按）\n- 阳明：腹满**潮热**，大便硬，谵语（实热，拒按）\n\n这个对照可以只用词频与共现算出，不需要背——这也正是代码要做的事。\n\n## BUILD IT：从零实现\n\n```js\n// code/main.js\nsplitPian()      // 拆 12/23/27 三篇：条文数、是否目录残片、提纲条\nchainCheck(list)// 逐环核对「结论←条文」映射，报 hit / missing / crossPian\ndifferentiate()  // 太阴 vs 阳明：腹满 ×（吐利 / 潮热大便硬）共现\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：`splitPian()` 报 12 篇 `isToc: true`；`chainCheck` 对「自利不渴」「四逆辈」返回 `missing`，对「理中丸」返回 `crossPian: true`；`differentiate()` 给出太阴/阳明各自的词共现条数。\n\n## 代价与边界\n\n- **本章不重建太阴篇**。缺口如实留在表里，不用其他篇条文填补。\n- **跨篇引用不是错**，但必须标篇名。把霍乱篇的方写成太阴篇的方，是可复核性的流失。\n- **1 条提纲不足以支持辨证**。任何「太阴虚寒证」的完整证候描述都超出本章证据。\n- **目录残片也可能是证据**：它证明了「少阴篇、厥阴篇」确实曾被编在此处（见第 2 章），不该当噪声删掉。\n- 四逆汤全库 31 条，多分布在太阳、少阴语境与汗吐下篇，本章不据频次推归属。\n\n> **免责声明：** 条文引自 `standards/shanghan/底本.json`；该底本太阴篇残缺，本章的缺口标注即为结论的一部分。本章不构成辨证处方建议。\n\n## 练习\n\n1. 篇 27 的 186 条里，你用什么规则判定某条「不是太阴」？规则能不能写成代码？\n2. 「下之必」与「若下之，必」在临床推理上有何差别？举一个会被这差别改变判断的场景。\n3. 如果要求「太阴章必须配一个方」，你会选理中丸并标跨篇，还是留空？说明取舍。\n\n## 进阶思考\n\n一门课最难讲的部分，往往是「原文不够」的那一章。承认只有一条提纲，比用三页讲义把它补满更接近事实——而补满的人，通常不会告诉你他补了。\n",
+    "code": {
+      "main.js": "'use strict';\r\n/**\r\n * 太阴篇证据链核对：拆篇 / 逐环核对 / 太阴阳明腹满鉴别\r\n *\r\n *   node code/main.js\r\n *\r\n * 口径：\r\n *   · 篇 12 是卷首与目录（isToc=true），不计入可用条文。\r\n *   · 提纲条两版并列（篇 23「下之必」/ 篇 27「若下之，必」），不择一。\r\n *   · 「跨篇」不算错，但必须在结论里标出篇名；代码用 crossPian 表达这件事。\r\n *   · 不据频次推归属，不重建缺失条文。\r\n */\r\n\r\nconst path = require('node:path');\r\nconst fs = require('node:fs');\r\n\r\nconst ROOT = path.resolve(__dirname, '../../../../../..');\r\nconst BOOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/shanghan/底本.json'), 'utf8'));\r\nconst TEXTS = [];\r\nfor (const p of BOOK.pian) for (const it of p.items) TEXTS.push({ pian: p.no, text: it.text });\r\n\r\nconst TOC_MARKS = ['辨太阴病脉证并治第十', '伤寒论卷', '校正', '校刻', '校。'];\r\n\r\nfunction isToc(pian) {\r\n  const items = BOOK.pian.find((p) => p.no === pian).items;\r\n  const hits = items.filter((i) => TOC_MARKS.some((m) => i.text.includes(m))).length;\r\n  return hits / items.length >= 0.6;\r\n}\r\n\r\n/** 拆太阴三篇 */\r\nfunction splitPian() {\r\n  return [12, 23, 27].map((n) => {\r\n    const p = BOOK.pian.find((x) => x.no === n);\r\n    return {\r\n      pian: n,\r\n      tiao: p.actual.tiao,\r\n      chars: p.actual.chars,\r\n      isToc: isToc(n),\r\n      hasOutline: p.items.some((i) => i.text.includes('太阴之为病')),\r\n      outline: (p.items.find((i) => i.text.includes('太阴之为病')) || {}).text || null,\r\n    };\r\n  });\r\n}\r\n\r\n/** 逐环核对：每条「结论←条文」映射的落点 */\r\nfunction chainCheck(list) {\r\n  return list.map(({ claim, needles, expectPian }) => {\r\n    const hits = [];\r\n    for (const n of needles) {\r\n      for (const t of TEXTS) if (t.text.includes(n)) hits.push({ needle: n, pian: t.pian });\r\n    }\r\n    if (hits.length === 0) return { claim, status: 'missing', hits: [] };\r\n    const pians = [...new Set(hits.map((h) => h.pian))];\r\n    // 只以首个检索词（主判据）的落点判跨篇，避免旁证词把结论拉成 crossPian\r\n    const primaryPians = [...new Set(hits.filter((h) => h.needle === needles[0]).map((h) => h.pian))];\r\n    const base = primaryPians.length ? primaryPians : pians;\r\n    const outside = expectPian ? base.filter((x) => !expectPian.includes(x)) : [];\r\n    return {\r\n      claim,\r\n      status: outside.length ? 'crossPian' : 'hit',\r\n      hits: hits.slice(0, 6),\r\n      pians,\r\n      crossPian: outside.length > 0,\r\n    };\r\n  });\r\n}\r\n\r\n/** 太阴 vs 阳明：腹满 ×（吐利 / 潮热大便硬）共现 */\r\nfunction differentiate() {\r\n  const tai = TEXTS.filter((t) => t.text.includes('腹满') && (t.text.includes('吐') || t.text.includes('自利')));\r\n  const yang = TEXTS.filter((t) => t.text.includes('腹满') && (t.text.includes('潮热') || t.text.includes('大便硬')));\r\n  return { taiyin: tai.length, yangming: yang.length };\r\n}\r\n\r\nfunction main() {\r\n  console.log('太阴三篇拆解：');\r\n  for (const r of splitPian()) {\r\n    console.log(`  篇${r.pian}：${r.tiao} 条 / ${r.chars} 字｜目录残片 ${r.isToc ? '是' : '否'}｜提纲条 ${r.hasOutline ? '有' : '无'}`);\r\n    if (r.outline) console.log(`       ${r.outline.slice(0, 46)}…`);\r\n  }\r\n  console.log('\\n教材链条逐环核对：');\r\n  const rows = chainCheck([\r\n    { claim: '提纲：腹满而吐、食不下、自利益甚、时腹自痛', needles: ['腹满而吐', '食不下', '自利益甚', '时腹自痛'], expectPian: [23, 27] },\r\n    { claim: '自利不渴者，属太阴', needles: ['自利不渴'], expectPian: [23, 27] },\r\n    { claim: '宜服四逆辈', needles: ['四逆辈'], expectPian: [23, 27] },\r\n    { claim: '理中丸主之', needles: ['理中丸'], expectPian: [23, 27] },\r\n  ]);\r\n  for (const r of rows) {\r\n    const where = r.hits.length ? `命中篇 ${[...new Set(r.hits.map((h) => h.pian))].join('/')}` : '—';\r\n    console.log(`  ${r.status.padEnd(9)} ${r.claim}（${where}）`);\r\n  }\r\n  const d = differentiate();\r\n  console.log(`\\n腹满鉴别：腹满+吐/自利 ${d.taiyin} 条；腹满+潮热/大便硬 ${d.yangming} 条`);\r\n  console.log('\\n口径：跨篇命中不是错误，但结论必须标篇名；本章不重建缺失条文。');\r\n  console.log('本输出为文本核对，不构成辨证处方建议。');\r\n}\r\n\r\nif (require.main === module) main();\r\nmodule.exports = { splitPian, chainCheck, differentiate, isToc, TEXTS };\r\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { splitPian, chainCheck, differentiate, isToc } = require('./main.js');\n\ntest('篇 12 是目录残片（7 条全为卷首/目录），概不当作可用条文', () => {\n  assert.strictEqual(isToc(12), true);\n  assert.strictEqual(isToc(23), false);\n  const r = splitPian().find((x) => x.pian === 12);\n  assert.strictEqual(r.tiao, 7);\n  assert.strictEqual(r.hasOutline, false);\n});\n\ntest('太阴只有 1 条真提纲（篇 23）+ 篇 27 重复一版，两版字面不同', () => {\n  const rows = splitPian();\n  const p23 = rows.find((x) => x.pian === 23);\n  const p27 = rows.find((x) => x.pian === 27);\n  assert.strictEqual(p23.tiao, 1);\n  assert.match(p23.outline, /下之必胸下结硬/);\n  assert.match(p27.outline, /若下之，必胸下结硬/);\n  assert.notStrictEqual(p23.outline, p27.outline);\n});\n\ntest('教材链条：「自利不渴」「四逆辈」在底本里缺失', () => {\n  const rows = chainCheck([\n    { claim: '自利不渴者，属太阴', needles: ['自利不渴'], expectPian: [23, 27] },\n    { claim: '宜服四逆辈', needles: ['四逆辈'], expectPian: [23, 27] },\n  ]);\n  assert.deepStrictEqual(rows.map((r) => r.status), ['missing', 'missing']);\n});\n\ntest('理中丸 5 处全在霍乱篇（15/16）→ crossPian，不许标成太阴篇', () => {\n  const [r] = chainCheck([{ claim: '理中丸主之', needles: ['理中丸'], expectPian: [23, 27] }]);\n  assert.strictEqual(r.status, 'crossPian');\n  assert.deepStrictEqual(r.pians.sort(), [15, 16]);\n});\n\ntest('提纲主判据命中，跨篇旁证不改变结论', () => {\n  const [r] = chainCheck([{ claim: '提纲', needles: ['腹满而吐'], expectPian: [23, 27] }]);\n  assert.strictEqual(r.status, 'hit');\n});\n\ntest('腹满鉴别：太阴（吐/自利）与阳明（潮热/大便硬）都有可计数条文', () => {\n  const d = differentiate();\n  assert.ok(d.taiyin >= 3, `太阴侧 ${d.taiyin}`);\n  assert.ok(d.yangming >= 3, `阳明侧 ${d.yangming}`);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "底本「太阴病域」共 194 条，其中真正可用的太阴条文是？",
+          "options": [
+            "194 条",
+            "1 条提纲（篇 23）+ 篇 27 混编里的少量",
+            "8 条",
+            "0 条"
+          ],
+          "correct": 1,
+          "explanation": "篇 12 是目录残片、篇 23 仅提纲、篇 27 为 186 条混编。"
+        },
+        {
+          "stage": "check",
+          "question": "「理中丸」在底本里出现在哪一篇？",
+          "options": [
+            "太阴篇",
+            "霍乱篇（15/16）",
+            "阳明篇",
+            "厥阴篇"
+          ],
+          "correct": 1,
+          "explanation": "「寒多不用水者，理中丸主之」出自霍乱篇，属跨篇引用。"
+        },
+        {
+          "stage": "check",
+          "question": "「自利不渴者，属太阴」与「宜服四逆辈」在底本中的检索结果是？",
+          "options": [
+            "各 1 条",
+            "均 0 条（缺失）",
+            "仅「四逆辈」缺失",
+            "仅「自利不渴」缺失"
+          ],
+          "correct": 1,
+          "explanation": "两条经典表述都不在底本，教材链条此处断裂。"
+        },
+        {
+          "stage": "check",
+          "question": "太阴提纲在篇 23 与篇 27 的差别是？",
+          "options": [
+            "症状不同",
+            "「下之必」与「若下之，必」——断言 vs 条件",
+            "篇 27 缺末句",
+            "完全相同"
+          ],
+          "correct": 1,
+          "explanation": "一字之差改变条文性质，须两版并列。"
+        },
+        {
+          "stage": "post",
+          "question": "把霍乱篇的理中丸写成「太阴篇的方」属于？",
+          "options": [
+            "正常简化",
+            "跨篇引用未标篇名，损害可复核性",
+            "学术创新",
+            "版本差异"
+          ],
+          "correct": 1,
+          "explanation": "跨篇不是错，不标篇名才是错。"
+        },
+        {
+          "stage": "post",
+          "question": "面对只有 1 条提纲的太阴篇，正确做法是？",
+          "options": [
+            "用后世资料补满讲义",
+            "缺口如实标注，结论只到证据能支持的地方",
+            "跳过这一章",
+            "从少阴篇借条文"
+          ],
+          "correct": 1,
+          "explanation": "缺口标注本身就是结论的一部分。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-taiyin-xuhan.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/06-taiyin-xuhan/outputs/prompt-taiyin-xuhan.md",
+        "title": "证据链核对（结论 ← 条文）",
+        "description": null,
+        "chars": 684,
+        "body": "# 证据链核对（结论 ← 条文）\n\n## 用途\n\n把一条讲义结论拆成「条文支撑环节」，逐环核对底本：命中 / 缺失 / 跨篇。\n用于**教材校核、讲义编写、引文前检查**。不补缺、不推算。\n\n## 提示词\n\n```text\n你是文献核对助手。给定底本（JSON：篇→items[].text）与一组「结论←条文」映射，\n逐环输出状态。\n\n规则：\n1. 每环给三个状态：hit（命中且在本篇）/ crossPian（命中但在别篇）/ missing（检索不到）。\n2. crossPian 必须写出实际篇号；结论里引用时必须标该篇名，禁止改标目标篇。\n3. missing 不许用同义改写去「凑命中」，也不许换成别的书。\n4. 若某篇被判为「目录残片」（卷首、校刻、目录行占比高），单独标注，不计入可用条文。\n5. 同一句有版本差异（如「下之必」/「若下之，必」）时两版并列，不择一。\n6. 输出末尾写口径：缺口标注即结论的一部分。\n\n输出格式：\n【篇况】篇 N：X 条，目录残片 是/否，提纲条 有/无\n【环节】claim → hit | crossPian（篇 …）| missing\n【缺口】…\n【口径】…\n```\n\n## 使用示例\n\n输入：结论「太阴病，理中丸主之」。\n\n输出：\n\n```text\n【篇况】篇 12：7 条，目录残片 是；篇 23：1 条；篇 27：186 条（混编）\n【环节】理中丸主之 → crossPian（篇 15/16 霍乱篇）\n【缺口】「自利不渴者，属太阴」、「宜服四逆辈」→ missing\n【口径】跨篇引用须标篇名；缺口不补\n```\n\n## 为什么这样限制\n\n- 一句话的结论常常由三四条不同来源拼成，不逐环核对就发现不了哪一环是借来的。\n- 允许「跨篇」但强制标篇名，是为了让下一手能复核，而不是禁止使用。\n"
+      },
+      {
+        "name": "skill-taiyin-xuhan.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/06-taiyin-xuhan/outputs/skill-taiyin-xuhan.md",
+        "title": "taiyin-xuhan",
+        "description": "太阴篇证据链核对：拆篇识目录残片、逐环报 hit/crossPian/missing、缺不补",
+        "chars": 519,
+        "body": "---\nname: taiyin-xuhan\ndescription: 太阴篇证据链核对：拆篇识目录残片、逐环报 hit/crossPian/missing、缺不补\nversion: 0.1.0\n---\n\n# taiyin-xuhan\n\n## 何时使用\n\n- 讲义写「太阴病，理中汤主之」前，核对这句出自哪一篇\n- 某一经条文明显偏少，怀疑篇目残缺\n- 需要区分「原文没有」与「我没检索到」\n\n## 不适用\n\n- 重建缺失篇（本技能只标缺口）\n- 太阴虚寒证的完整辨证（证据不足）\n- 剂量与煎服法\n\n## 步骤\n\n1. **拆篇**：把该经各篇列条数，判「目录残片」（卷首/校刻/目录行占比 ≥60%）。\n2. **取提纲**：逐字，多版本并列。\n3. **逐环核对**：每条结论映射到检索词，报 hit / crossPian（篇号）/ missing。\n4. **标缺口**：missing 不补、不换书、不同义凑。\n5. **写口径**：缺口标注即结论的一部分。\n\n## 输出模板\n\n```text\n【篇况】篇 N：X 条，目录残片 是/否\n【环节】claim → hit | crossPian（篇 …）| missing\n【缺口】…\n【口径】…\n```\n\n## 质量判据\n\n- 跨篇的都标了篇号\n- 没有用别的书补缺\n- 目录残片没被算成条文\n\n> 本技能只做证据链核对，不构成辨证处方建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "01-zhongyi/07-shanghanlun/08-jueyin-hanre": {
+    "key": "01-zhongyi/07-shanghanlun/08-jueyin-hanre",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "07-shanghanlun",
+    "subjectTitle": "伤寒论",
+    "chapterSlug": "08-jueyin-hanre",
+    "n": 8,
+    "title": "第 8 章 · 厥阴病：30 条，乌梅丸一次也没出现",
+    "motto": "「厥阴之为病，消渴，气上撞心，心中疼热，饥而不欲食，食则吐蛔，下之利不止。」——《伤寒论·辨厥阴病脉证并治》（篇 24）",
+    "problem": "教材把乌梅丸当厥阴病的主方讲一整节。你在底本里检索「乌梅丸」——0 条。厥阴篇 30 条里没有它，全书也没有它。",
+    "roots": "环境逼迫(要讲厥阴主方) + 知识积累(篇内/篇外分开统计 = 知道哪些话能说「厥阴篇说」)",
+    "html": "<h1 id=\"第-8-章-厥阴病-30-条-乌梅丸一次也没出现\">第 8 章 · 厥阴病：30 条，乌梅丸一次也没出现</h1>\n<blockquote><p><strong>MOTTO:</strong> 「厥阴之为病，消渴，气上撞心，心中疼热，饥而不欲食，食则吐蛔，下之利不止。」——《伤寒论·辨厥阴病脉证并治》（篇 24）</p>\n<p><strong>PROBLEM:</strong> 教材把乌梅丸当厥阴病的主方讲一整节。你在底本里检索「乌梅丸」——0 条。厥阴篇 30 条里没有它，全书也没有它。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(要讲厥阴主方) + 知识积累(篇内/篇外分开统计 = 知道哪些话能说「厥阴篇说」)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>伤寒论</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>08 / 12</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>逐字引出厥阴提纲，把六个症拆开，指出「下之利不止」是<strong>禁忌后果</strong>而非症状</li><li>用「篇内 / 篇外」两列统计区分：什么证据在厥阴篇里，什么只存在于全书别处</li><li>说清乌梅丸在底本中的状态（0 命中），以及这对讲义意味着什么</li><li>写一个分布探针：对每个关键词同时给「篇内条数」与「全库条数」</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"提纲六症-其中一句是禁令\">提纲六症，其中一句是禁令</h3>\n<blockquote><p>厥阴之为病，消渴，气上撞心，心中疼热，饥而不欲食，食则吐蛔，下之利不止。——（篇 24 第 1 条）</p></blockquote>\n<p>拆开看：</p>\n<div class=\"table-wrap\"><table><thead><tr><th>原文</th><th>性质</th></tr></thead><tbody><tr><td>消渴</td><td>症状</td></tr><tr><td>气上撞心</td><td>症状（病人自述的气逆感）</td></tr><tr><td>心中疼热</td><td>症状</td></tr><tr><td>饥而不欲食</td><td>症状（矛盾性食欲）</td></tr><tr><td>食则吐蛔</td><td>症状（进食触发）</td></tr><tr><td><strong>下之利不止</strong></td><td><strong>误治后果 / 禁令</strong></td></tr></tbody></table></div>\n<p>前五条是症，最后一条是「若下之则利不止」的告诫。顺带一个自己踩到的坑：底本把「心中疼热」写作「心中疼𤍠」，本章的解析器第一版没归一，只数出 4 症——<strong>同一个异体字在第 3、5、8 章各绊了一次</strong>。把它当成第六个症状，就会出现「厥阴病见下利不止」的错误读法——原文说的是<strong>下法造成</strong>的利不止。</p>\n<h3 id=\"篇内-30-条的构成\">篇内 30 条的构成</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>内容</th><th>条数</th></tr></thead><tbody><tr><td>提纲条</td><td>1</td></tr><tr><td>涉「厥」的条文</td><td>4（含提纲）</td></tr><tr><td>含「少阴病」的条文（混入）</td><td>1（第 2 条起）</td></tr><tr><td>含「阳明病」的条文（混入）</td><td>4</td></tr><tr><td>其余</td><td>二十余条属太阳/阳明语境</td></tr></tbody></table></div>\n<p>篇 24 从第 2 条起就出现「少阴病，饮食入口则吐……」，与第 6 章太阴篇的问题同源：<strong>底本的篇界在少阴/厥阴之间是错位的</strong>。</p>\n<h3 id=\"篇内-vs-篇外-一张必须分两列的表\">篇内 vs 篇外：一张必须分两列的表</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>关键词</th><th>厥阴篇（篇 24）内</th><th>全库</th></tr></thead><tbody><tr><td>「厥」</td><td>4</td><td><strong>45</strong></td></tr><tr><td>「乌梅丸」</td><td><strong>0</strong></td><td><strong>0</strong></td></tr><tr><td>「四逆散」</td><td>0</td><td><strong>0</strong></td></tr><tr><td>「当归四逆汤」</td><td><strong>1</strong></td><td><strong>2</strong></td></tr><tr><td>「厥深」/「热亦深」</td><td>0</td><td><strong>1</strong></td></tr><tr><td>「气上撞心」</td><td>1</td><td>1</td></tr><tr><td>「消渴」</td><td>1</td><td><strong>5</strong></td></tr><tr><td>「吐蛔」</td><td>1</td><td><strong>4</strong></td></tr></tbody></table></div>\n<p>读法：厥阴篇里能引的只有提纲与 3 条零散涉厥条文；「厥深者热亦深」这句名言在底本里只出现 1 次，且<strong>不在厥阴篇</strong>；乌梅丸、四逆散全库 0 命中。</p>\n<p>这意味着讲义必须写成：「厥阴病的提纲是……；至于乌梅丸，底本未收此条，常见于后世刊本与其他版本，需另行补源。」——一句话就把「引文」和「转述」分开了。</p>\n<h3 id=\"为什么这章仍然值得写\">为什么这章仍然值得写</h3>\n<p>厥阴是六经里条文最少、最破碎的一篇（30 条，占全书 1.7%）。它的教学价值不在「背乌梅丸」，而在<strong>学会承认证据边界</strong>：同一句话，写成「厥阴篇云」与写成「后世云」，可复核性完全不同。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js\nparseOutline()   // 提纲逐症拆分，标出「症」与「误治后果」\nprobe(key)       // 篇内条数 vs 全库条数\nmixCheck()       // 篇 24 内混入的其他经病名统计（少阴/太阳/阳明）</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>probe('乌梅丸')</code> → <code>{inPian: 0, all: 0}</code>；<code>probe('厥')</code> → <code>{inPian: 4, all: 45}</code>；<code>parseOutline()</code> 的 <code>contra</code> 字段包含「下之利不止」而非并入 <code>symptoms</code>。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>本章不补乌梅丸条</strong>。任何厥阴主方的讲解都标注「底本无此条」。</li><li><strong>篇界错位是底本缺陷</strong>，不是厥阴病本身的问题；本章只做标注，不做校勘。</li><li><strong>30 条不足以描述厥阴病全貌</strong>。凡本章未引的厥阴论述，一律不写。</li><li><strong>「厥」字在全书 45 条中大量属太阳、阳明语境</strong>（如「手足厥冷」作为症状出现在别经），不能按字面归入厥阴。</li><li>寒热错杂的治法涉及附子、干姜等峻药，本章不涉剂量与用法。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 条文引自 <code>standards/shanghan/底本.json</code>（厥阴篇残缺，缺口已标注）；本章为文本结构核对，不构成辨证处方建议。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>提纲里「下之利不止」若被读成症状，会导致什么错误结论？举一个具体例子。</li><li>「厥深者热亦深」不在厥阴篇，引用时该怎么写才不失真？</li><li>若要求你为厥阴病补一章，你会先补哪一类证据（版本、注家、还是别本条文）？为什么？</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>一门学问的成熟度，常常体现在它怎么处理「没有」：是把没有的补上，还是把没有的说清楚。厥阴篇 30 条是一个测试——你能不能在只有提纲的地方，讲出一节不掺水的课。</p>",
+    "markdown": "# 第 8 章 · 厥阴病：30 条，乌梅丸一次也没出现\r\n\r\n> **MOTTO:** 「厥阴之为病，消渴，气上撞心，心中疼热，饥而不欲食，食则吐蛔，下之利不止。」——《伤寒论·辨厥阴病脉证并治》（篇 24）\r\n>\r\n> **PROBLEM:** 教材把乌梅丸当厥阴病的主方讲一整节。你在底本里检索「乌梅丸」——0 条。厥阴篇 30 条里没有它，全书也没有它。\r\n>\r\n> **双根因定位:** 环境逼迫(要讲厥阴主方) + 知识积累(篇内/篇外分开统计 = 知道哪些话能说「厥阴篇说」)\r\n\r\n## 课程信息\r\n\r\n| 项目 | 内容 |\r\n|------|------|\r\n| 学科 | 伤寒论 |\r\n| 院系 | 中医系 |\r\n| 章序号 | 08 / 12 |\r\n| 所属阶段 | 🌿 长·积累 |\r\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\r\n| 预估时长 | 3 小时 |\r\n\r\n## 学习目标\r\n\r\n- 逐字引出厥阴提纲，把六个症拆开，指出「下之利不止」是**禁忌后果**而非症状\r\n- 用「篇内 / 篇外」两列统计区分：什么证据在厥阴篇里，什么只存在于全书别处\r\n- 说清乌梅丸在底本中的状态（0 命中），以及这对讲义意味着什么\r\n- 写一个分布探针：对每个关键词同时给「篇内条数」与「全库条数」\r\n\r\n## 核心概念\r\n\r\n### 提纲六症，其中一句是禁令\r\n\r\n> 厥阴之为病，消渴，气上撞心，心中疼热，饥而不欲食，食则吐蛔，下之利不止。——（篇 24 第 1 条）\r\n\r\n拆开看：\r\n\r\n| 原文 | 性质 |\r\n|---|---|\r\n| 消渴 | 症状 |\r\n| 气上撞心 | 症状（病人自述的气逆感） |\r\n| 心中疼热 | 症状 |\r\n| 饥而不欲食 | 症状（矛盾性食欲） |\r\n| 食则吐蛔 | 症状（进食触发） |\r\n| **下之利不止** | **误治后果 / 禁令** |\r\n\r\n前五条是症，最后一条是「若下之则利不止」的告诫。顺带一个自己踩到的坑：底本把「心中疼热」写作「心中疼𤍠」，本章的解析器第一版没归一，只数出 4 症——**同一个异体字在第 3、5、8 章各绊了一次**。把它当成第六个症状，就会出现「厥阴病见下利不止」的错误读法——原文说的是**下法造成**的利不止。\r\n\r\n### 篇内 30 条的构成\r\n\r\n| 内容 | 条数 |\r\n|---|--:|\r\n| 提纲条 | 1 |\r\n| 涉「厥」的条文 | 4（含提纲） |\r\n| 含「少阴病」的条文（混入） | 1（第 2 条起） |\r\n| 含「阳明病」的条文（混入） | 4 |\r\n| 其余 | 二十余条属太阳/阳明语境 |\r\n\r\n篇 24 从第 2 条起就出现「少阴病，饮食入口则吐……」，与第 6 章太阴篇的问题同源：**底本的篇界在少阴/厥阴之间是错位的**。\r\n\r\n### 篇内 vs 篇外：一张必须分两列的表\r\n\r\n| 关键词 | 厥阴篇（篇 24）内 | 全库 |\r\n|---|--:|--:|\r\n| 「厥」 | 4 | **45** |\r\n| 「乌梅丸」 | **0** | **0** |\r\n| 「四逆散」 | 0 | **0** |\r\n| 「当归四逆汤」 | **1** | **2** |\r\n| 「厥深」/「热亦深」 | 0 | **1** |\r\n| 「气上撞心」 | 1 | 1 |\r\n| 「消渴」 | 1 | **5** |\r\n| 「吐蛔」 | 1 | **4** |\r\n\r\n读法：厥阴篇里能引的只有提纲与 3 条零散涉厥条文；「厥深者热亦深」这句名言在底本里只出现 1 次，且**不在厥阴篇**；乌梅丸、四逆散全库 0 命中。\r\n\r\n这意味着讲义必须写成：「厥阴病的提纲是……；至于乌梅丸，底本未收此条，常见于后世刊本与其他版本，需另行补源。」——一句话就把「引文」和「转述」分开了。\r\n\r\n### 为什么这章仍然值得写\r\n\r\n厥阴是六经里条文最少、最破碎的一篇（30 条，占全书 1.7%）。它的教学价值不在「背乌梅丸」，而在**学会承认证据边界**：同一句话，写成「厥阴篇云」与写成「后世云」，可复核性完全不同。\r\n\r\n## BUILD IT：从零实现\r\n\r\n```js\r\n// code/main.js\r\nparseOutline()   // 提纲逐症拆分，标出「症」与「误治后果」\r\nprobe(key)       // 篇内条数 vs 全库条数\r\nmixCheck()       // 篇 24 内混入的其他经病名统计（少阴/太阳/阳明）\r\n```\r\n\r\n## 验证\r\n\r\n```bash\r\nnode code/main.js\r\nnode --test code/main.test.js\r\n```\r\n\r\n预期：`probe('乌梅丸')` → `{inPian: 0, all: 0}`；`probe('厥')` → `{inPian: 4, all: 45}`；`parseOutline()` 的 `contra` 字段包含「下之利不止」而非并入 `symptoms`。\r\n\r\n## 代价与边界\r\n\r\n- **本章不补乌梅丸条**。任何厥阴主方的讲解都标注「底本无此条」。\r\n- **篇界错位是底本缺陷**，不是厥阴病本身的问题；本章只做标注，不做校勘。\r\n- **30 条不足以描述厥阴病全貌**。凡本章未引的厥阴论述，一律不写。\r\n- **「厥」字在全书 45 条中大量属太阳、阳明语境**（如「手足厥冷」作为症状出现在别经），不能按字面归入厥阴。\r\n- 寒热错杂的治法涉及附子、干姜等峻药，本章不涉剂量与用法。\r\n\r\n> **免责声明：** 条文引自 `standards/shanghan/底本.json`（厥阴篇残缺，缺口已标注）；本章为文本结构核对，不构成辨证处方建议。\r\n\r\n## 练习\r\n\r\n1. 提纲里「下之利不止」若被读成症状，会导致什么错误结论？举一个具体例子。\r\n2. 「厥深者热亦深」不在厥阴篇，引用时该怎么写才不失真？\r\n3. 若要求你为厥阴病补一章，你会先补哪一类证据（版本、注家、还是别本条文）？为什么？\r\n\r\n## 进阶思考\r\n\r\n一门学问的成熟度，常常体现在它怎么处理「没有」：是把没有的补上，还是把没有的说清楚。厥阴篇 30 条是一个测试——你能不能在只有提纲的地方，讲出一节不掺水的课。\r\n",
+    "code": {
+      "main.js": "'use strict';\r\n/**\r\n * 厥阴篇：提纲逐症解析 + 篇内/篇外分布探针 + 混入检查\r\n *\r\n *   node code/main.js\r\n *\r\n * 口径：\r\n *   · 提纲里「下之利不止」是误治后果，不是症状；代码把它放进 contra，不并入 symptoms。\r\n *   · 每类证据都报两列：篇 24 内条数 / 全库条数 —— 只报一列会看不出证据边界。\r\n *   · 乌梅丸、四逆散在底本全库 0 命中；本章只标缺口，不补条文。\r\n */\r\n\r\nconst path = require('node:path');\r\nconst fs = require('node:fs');\r\n\r\nconst ROOT = path.resolve(__dirname, '../../../../../..');\r\nconst BOOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/shanghan/底本.json'), 'utf8'));\r\n\r\nconst JUEYIN = 24;\r\nconst PIAN = BOOK.pian.find((p) => p.no === JUEYIN);\r\nconst ALL = [];\r\nfor (const p of BOOK.pian) for (const it of p.items) ALL.push({ pian: p.no, text: it.text });\r\n\r\n/** 异体归一：底本「心中疼𤍠」用 𤍠，不归一就数不出这一症（本章自身踩到的坑） */\r\nconst norm = (x) => x.split('𤍠').join('热');\r\n\r\n/** 提纲逐症拆分：「下之利不止」归 contra */\r\nfunction parseOutline() {\r\n  const t = norm(PIAN.items[0].text);\r\n  const symptoms = ['消渴', '气上撞心', '心中疼热', '饥而不欲食', '食则吐蛔'].filter((k) => t.includes(k));\r\n  const contra = ['下之利不止', '若下之', '下之'].find((k) => t.includes(k)) || null;\r\n  return { raw: t, symptoms, contra, symptomCount: symptoms.length };\r\n}\r\n\r\n/** 篇内 vs 全库 */\r\nfunction probe(key) {\r\n  return {\r\n    key,\r\n    inPian: PIAN.items.filter((i) => i.text.includes(key)).length,\r\n    all: ALL.filter((i) => i.text.includes(key)).length,\r\n  };\r\n}\r\n\r\n/** 篇内混入的其他经病名 */\r\nfunction mixCheck() {\r\n  const out = {};\r\n  for (const k of ['太阳病', '阳明病', '少阳病', '太阴病', '少阴病', '霍乱']) {\r\n    const n = PIAN.items.filter((i) => i.text.includes(k)).length;\r\n    if (n) out[k] = n;\r\n  }\r\n  return out;\r\n}\r\n\r\nfunction main() {\r\n  const o = parseOutline();\r\n  console.log(`厥阴提纲（篇 ${JUEYIN} 第 1 条）：\\n  ${o.raw}\\n`);\r\n  console.log(`  症状 ${o.symptomCount} 项：${o.symptoms.join('、')}`);\r\n  console.log(`  误治后果：${o.contra}（不是症状）\\n`);\r\n\r\n  console.log(`篇 ${JUEYIN} 共 ${PIAN.actual.tiao} 条 / ${PIAN.actual.chars} 字\\n`);\r\n  console.log('篇内 vs 全库：');\r\n  for (const k of ['厥', '乌梅丸', '四逆散', '当归四逆汤', '厥深', '热亦深', '气上撞心', '消渴', '吐蛔']) {\r\n    const r = probe(k);\r\n    const flag = r.inPian === 0 && r.all === 0 ? '  ← 底本无此条' : r.inPian === 0 ? '  ← 仅篇外' : '';\r\n    console.log(`  ${k.padEnd(6, '　')} 篇内 ${String(r.inPian).padStart(2)} ｜ 全库 ${String(r.all).padStart(3)}${flag}`);\r\n  }\r\n  console.log(`\\n混入检查：${JSON.stringify(mixCheck())}`);\r\n  console.log('口径：厥阴篇残缺，「厥」字在别经语境亦大量出现，不可按字面归经。');\r\n  console.log('本输出为文本核对，不构成辨证处方建议。');\r\n}\r\n\r\nif (require.main === module) main();\r\nmodule.exports = { parseOutline, probe, mixCheck, PIAN, ALL };\r\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { parseOutline, probe, mixCheck, PIAN } = require('./main.js');\n\ntest('提纲拆出 5 症 + 1 条禁令：「下之利不止」不算症状', () => {\n  const o = parseOutline();\n  assert.strictEqual(o.symptomCount, 5);\n  assert.deepStrictEqual(o.symptoms, ['消渴', '气上撞心', '心中疼热', '饥而不欲食', '食则吐蛔']);\n  assert.strictEqual(o.contra, '下之利不止');\n  assert.ok(!o.symptoms.includes('下之利不止'));\n});\n\ntest('异体字已归一：提纲里的「心中疼𤍠」应计为一个症状而非丢失', () => {\n  assert.ok(parseOutline().raw.includes('心中疼热'));\n});\n\ntest('乌梅丸与四逆散在底本全库为 0（缺口可复核）', () => {\n  for (const k of ['乌梅丸', '四逆散']) {\n    const r = probe(k);\n    assert.deepStrictEqual([r.inPian, r.all], [0, 0], k);\n  }\n});\n\ntest('篇内 vs 全库：「厥」篇内 4 / 全库 45；「厥深」「热亦深」仅篇外', () => {\n  assert.deepStrictEqual([probe('厥').inPian, probe('厥').all], [4, 45]);\n  assert.deepStrictEqual([probe('厥深').inPian, probe('厥深').all], [0, 1]);\n  assert.deepStrictEqual([probe('热亦深').inPian, probe('热亦深').all], [0, 1]);\n});\n\ntest('当归四逆汤：篇内有 1 条，但全库仅 2 条', () => {\n  assert.deepStrictEqual([probe('当归四逆汤').inPian, probe('当归四逆汤').all], [1, 2]);\n});\n\ntest('篇 24 共 30 条，且混入少阴病 1 条、阳明病 4 条（篇界错位）', () => {\n  assert.strictEqual(PIAN.actual.tiao, 30);\n  const m = mixCheck();\n  assert.strictEqual(m['少阴病'], 1);\n  assert.strictEqual(m['阳明病'], 4);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "厥阴提纲共有几「症」？",
+          "options": [
+            "6 症",
+            "5 症（末句「下之利不止」是误治后果）",
+            "4 症",
+            "3 症"
+          ],
+          "correct": 1,
+          "explanation": "「下之利不止」是下法造成的后果，不是症状。"
+        },
+        {
+          "stage": "check",
+          "question": "「乌梅丸」在底本中的检索结果是？",
+          "options": [
+            "厥阴篇内 1 条",
+            "全库 0 条",
+            "阳明篇有 1 条",
+            "共 3 条"
+          ],
+          "correct": 1,
+          "explanation": "底本未收乌梅丸条，厥阴主方无法从底本取证。"
+        },
+        {
+          "stage": "check",
+          "question": "「厥」字在厥阴篇与全库的条数分别是？",
+          "options": [
+            "4 / 45",
+            "30 / 30",
+            "0 / 45",
+            "4 / 4"
+          ],
+          "correct": 0,
+          "explanation": "篇内 4 条，全库 45 条——多数在别经语境，不能按字面归经。"
+        },
+        {
+          "stage": "check",
+          "question": "「厥深者热亦深」在底本里的分布是？",
+          "options": [
+            "厥阴篇内",
+            "仅篇外（全库 1 条）",
+            "不存在",
+            "多处重复"
+          ],
+          "correct": 1,
+          "explanation": "名言虽在底本，但不在厥阴篇，引用须标实际篇名。"
+        },
+        {
+          "stage": "post",
+          "question": "写讲义时引用乌梅丸的正确做法是？",
+          "options": [
+            "写「厥阴篇云：乌梅丸主之」",
+            "注明底本未收此条，属后世刊本/他本内容，需另标来源",
+            "直接删掉不提",
+            "用四逆散代替"
+          ],
+          "correct": 1,
+          "explanation": "引文与转述必须分开标注。"
+        },
+        {
+          "stage": "post",
+          "question": "厥阴篇只有 30 条（全书 1.7%），这说明？",
+          "options": [
+            "厥阴病罕见",
+            "底本该篇残缺、篇界错位，不能用条数推病证权重",
+            "厥阴不重要",
+            "其他篇抄多了"
+          ],
+          "correct": 1,
+          "explanation": "条数反映底本状态，不反映临床权重。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-jueyin-hanre.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/08-jueyin-hanre/outputs/prompt-jueyin-hanre.md",
+        "title": "篇内 / 篇外证据探针",
+        "description": null,
+        "chars": 670,
+        "body": "# 篇内 / 篇外证据探针\n\n## 用途\n\n引用某经的条文前，先分清「在这篇里」与「只在全书里」：每个关键词给两列计数。\n用于**讲义编写、引文核对、残缺篇识别**。不补缺、不推归属。\n\n## 提示词\n\n```text\n你是伤寒论文献核对助手。给定底本（JSON：篇→items[].text）与目标篇号。\n\n任务：对一组关键词输出——\n【关键词】篇内 N ｜ 全库 M  ［标记：底本无此条 / 仅篇外 / 篇内可用］\n\n规则：\n1. 必须同时给两列；只给一列视为无效输出。\n2. 「底本无此条」（M=0）时，讲义只能写「底本未收」，不得写成「本篇云」。\n3. 「仅篇外」（篇内 0、全库 >0）时必须写出实际篇号，引用时标该篇。\n4. 提纲类药物/方名逐字检索，不做同义扩展；异体字（如 𤍠）先归一再计数，并说明归一。\n5. 若本篇混入其他经病名（太阳病/阳明病/少阴病…），单列「混入检查」。\n6. 输出末尾写口径：条数反映底本状态，不反映病证权重。\n\n输出格式：\n【提纲】原文 + 症状 n 项 + 误治后果\n【分布】关键词｜篇内｜全库｜标记\n【混入】…\n【口径】…\n```\n\n## 使用示例\n\n输入：篇 24（厥阴）。\n\n输出（节选）：\n\n```text\n【提纲】厥阴之为病，消渴，气上撞心，心中疼热，饥而不欲食，食则吐蛔，下之利不止。\n        症状 5 项；误治后果：下之利不止\n【分布】乌梅丸｜0｜0｜底本无此条\n        厥深｜0｜1｜仅篇外\n        厥｜4｜45｜篇内可用（但别经亦多用）\n【混入】少阴病 1、阳明病 4\n【口径】条数反映底本状态\n```\n\n## 为什么这样限制\n\n- 一列数字最容易被误读成「本篇有」；两列并置，缺口自己显形。\n- 「仅篇外」若不标篇号，读者会把别篇条文当本篇原文，这是最常见的引文失真。\n"
+      },
+      {
+        "name": "skill-jueyin-hanre.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/08-jueyin-hanre/outputs/skill-jueyin-hanre.md",
+        "title": "jueyin-hanre",
+        "description": "篇内/篇外证据探针：两列计数、缺条标底本未收、仅篇外标篇号",
+        "chars": 453,
+        "body": "---\nname: jueyin-hanre\ndescription: 篇内/篇外证据探针：两列计数、缺条标底本未收、仅篇外标篇号\nversion: 0.1.0\n---\n\n# jueyin-hanre\n\n## 何时使用\n\n- 引用某经条文，需要确认它是否真在该篇\n- 某篇条文数异常少，怀疑残缺或混编\n- 教材主方在底本里查不到，需要给出可复核的说法\n\n## 不适用\n\n- 补佚（本技能只标缺口）\n- 厥阴病的完整辨证（底本证据不足）\n- 方剂剂量与加减\n\n## 步骤\n\n1. **取提纲**：逐字，先归类「症状 / 误治后果」。\n2. **归一**：异体字（𤍠 等）先归一再计数，并写明。\n3. **两列计数**：篇内 / 全库，逐词标注「底本无此条 / 仅篇外 / 篇内可用」。\n4. **混入检查**：本篇内出现的其他经病名计数。\n5. **写口径**：条数反映底本状态，不反映病证权重。\n\n## 输出模板\n\n```text\n【提纲】…\n【分布】词｜篇内｜全库｜标记\n【混入】…\n【口径】…\n```\n\n## 质量判据\n\n- 两列都在\n- 「仅篇外」都带篇号\n- 没有把缺口写成「本篇云」\n- 异体归一有说明\n\n> 本技能只做文本核对，不构成辨证处方建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
   "01-zhongyi/07-shanghanlun/09-hebing-bingbing": {
     "key": "01-zhongyi/07-shanghanlun/09-hebing-bingbing",
     "deptSlug": "01-zhongyi",

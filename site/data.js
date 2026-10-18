@@ -110,7 +110,7 @@ window.TCMAI_DATA = {
     "hours": 7596,
     "semesters": 10,
     "stages": 5,
-    "chaptersBuilt": 19,
+    "chaptersBuilt": 25,
     "subjectsDone": 0,
     "subjectsWip": 11,
     "subjectsPlanned": 109,
@@ -1506,8 +1506,8 @@ window.TCMAI_DATA = {
           "stage": "sheng",
           "hours": 90,
           "chaptersTarget": 12,
-          "chaptersBuilt": 2,
-          "pct": 17,
+          "chaptersBuilt": 8,
+          "pct": 67,
           "status": "wip",
           "glyph": "🚧",
           "bridge": "六经→状态机 / 方证→条件概率",
@@ -5483,31 +5483,31 @@ window.TCMAI_DATA = {
         "n": 2,
         "slug": "02-liujing-kuangjia",
         "title": "六经辨证的框架：从太阳到厥阴",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-taiyang-biao",
         "title": "太阳病：表证的判定与麻黄汤类",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-yangming-li",
         "title": "阳明病：里热实证与承气汤类",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-shaoyang-banbiao",
         "title": "少阳病：半表半里与小柴胡汤",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-taiyin-xuhan",
         "title": "太阴病：里虚寒与理中汤类",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 7,
@@ -5519,7 +5519,7 @@ window.TCMAI_DATA = {
         "n": 8,
         "slug": "08-jueyin-hanre",
         "title": "厥阴病：寒热错杂与乌梅丸",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 9,
