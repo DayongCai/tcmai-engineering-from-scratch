@@ -175,6 +175,25 @@ function buildShanghan() {
 // 103 个病证单元（DSU）+ 13 个域级节点（六经域 6 / 四系统 4 / 精气神 3）。
 // 这是**真实数据**，比任何自造的映射都可信 —— 所以站点默认用它。
 
+// label 修正层：reference-units.json 是生成物（源是 sources/*.html 的 DATA.units），
+// 对 label 的修正不能直接改生成结果 —— 下次 build 会被覆盖。修正写在 datasets/label-repairs.json，
+// 这里在解析后套用；from 必须逐字命中，命中不了就报错（宁可炸，不要静默改错名）。
+function applyLabelRepairs(units) {
+  const p = path.join(ROOT, 'standards', 'semtensor', 'datasets', 'label-repairs.json');
+  if (!fs.existsSync(p)) return { units, applied: [] };
+  const doc = JSON.parse(fs.readFileSync(p, 'utf8'));
+  const applied = [];
+  for (const r of doc.entries || []) {
+    const u = units.find((x) => x.uid === r.uid);
+    if (!u) throw new Error(`label-repairs: uid ${r.uid} 不在源数据里`);
+    if (u.label !== r.from) throw new Error(`label-repairs: ${r.uid} 源 label 不等于 from（源「${u.label}」≠ from「${r.from}」）`);
+    u.label = r.to;
+    u.labelRepairedFrom = r.from;
+    applied.push(`${r.uid} ${r.from} → ${r.to}`);
+  }
+  return { units, applied };
+}
+
 function parseReferenceUnits() {
   const srcDir = path.join(ROOT, 'standards', 'semtensor', 'sources');
   if (!fs.existsSync(srcDir)) return null;
@@ -203,8 +222,11 @@ function parseReferenceUnits() {
     };
   });
 
+  const repaired = applyLabelRepairs(units);
+
   return {
     sourceFile: `standards/semtensor/sources/${htmlFile}`,
+    labelRepairs: repaired.applied,
     convention: 'v1.0-elevation（源数据已是该口径：θ=仰角、φ=方位角）',
     colorNote:
       'colorSourceHex 为源系统（Python 编码器）产出的 hex；colorDerived 为按规范公理算出的值。' +

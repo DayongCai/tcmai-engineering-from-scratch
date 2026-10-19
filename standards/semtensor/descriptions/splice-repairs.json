@@ -21,7 +21,8 @@
   "entries": [
     {
       "uid": "DSU-00101",
-      "label": "热毒犯肺、痰瘀阻络证(失荣/上石疽)",
+      "label": "热毒犯肺、痰瘀阻络证(哮喘性支气管肺炎)",
+      "labelOriginal": "热毒犯肺、痰瘀阻络证(失荣/上石疽)",
       "kind": "splice",
       "verdict": "confirmed",
       "relation": "cause-effect",
@@ -46,7 +47,9 @@
       "evidenceProblem": "改名后原 6 条来源（失荣/石疽/淋巴瘤）全部不对题 —— 不能平移，必须清空重查。这是本次不直接改名的第二个原因。",
       "proposed": {
         "option": "A",
-        "applied": false,
+        "applied": true,
+        "appliedAt": "2026-10-19",
+        "appliedHow": "label 经 datasets/label-repairs.json 由生成器套用（build_semtensor_datasets.js :: applyLabelRepairs），external.json 旧条目按『来源不对题』清空重查，新条目加 relationChain=cause-effect；构建分四级报数，因果链单列。",
         "summary": "不拆名：保留单条 DSU，病名改为『哮喘性支气管肺炎』，加 relation=cause-effect，证据口径改为『同一病种内 因、果各有一源 = 达标』（与并病同级、单列 bucket，不与整串级合并）。",
         "labels": ["热毒犯肺、痰瘀阻络证(哮喘性支气管肺炎)"],
         "edges": [{ "from": "热毒犯肺", "type": "causes", "to": "痰瘀阻络证" }],

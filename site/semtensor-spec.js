@@ -2491,7 +2491,7 @@ window.TCMAI_SEMTENSOR_DATA = {
       },
       {
         "uid": "DSU-00101",
-        "label": "热毒犯肺、痰瘀阻络证(失荣/上石疽)",
+        "label": "热毒犯肺、痰瘀阻络证(哮喘性支气管肺炎)",
         "kind": "dsu",
         "x": 1,
         "y": 0.3,
@@ -2507,7 +2507,8 @@ window.TCMAI_SEMTENSOR_DATA = {
         "colorSourceHex": "#6255AA",
         "colorDerived": "#8D37B6",
         "colorMatch": false,
-        "meta": "dsu"
+        "meta": "dsu",
+        "labelRepairedFrom": "热毒犯肺、痰瘀阻络证(失荣/上石疽)"
       },
       {
         "uid": "DSU-00102",

@@ -52,7 +52,26 @@
   合并会把弱证据洗白。
 
 判定链：`lib_evidence_scope.js` 出 `scope` → `external.json` 的 `concurrent` 是领域标注 →
-`build_dsu_descriptions.js` 据此分三级报数 → 平台层读 `externalScope` + `externalConcurrent`。
+`build_dsu_descriptions.js` 据此分四级报数 → 平台层读 `externalScope` + `externalConcurrent`（因果链另见下节）。
+
+### 因果链（一证为因、一证为果）是第四类
+
+有些名字里的「、」既不是并病，也不是两个并列构件，而是**一条病机的先后**：
+`热毒犯肺、痰瘀阻络证(哮喘性支气管肺炎)` —— 热毒犯肺是始动病机，痰瘀阻络是它的后果
+（热毒灼津 → 痰阻肺络 → 久则血瘀）。对这类：
+
+- **名称同样不拆**（一条 DSU、一个 label）；
+- **判据与并病同级**：同一病种（中医病名层，如「肺炎喘嗽」范畴）内，**因、果各有一源** 即达标；
+- 标记写在 `external.json` 的 `relationChain: "cause-effect"` 字段（另有 `relationWhy` 记依据）；
+- 报数**单列「因果链达标」**，既不与整串级合并，也不与并病混计 —— 两者证据强度相同，语义不同
+  （因果链是先后，并病是同存）；
+- 与并病**互斥**：同一条目不可能既标 `concurrent` 又标 `relationChain`（测试里已钉住）。
+
+`scripts/lib_evidence_scope.js` 不需要认识它：分类仍由文本覆盖得出 `component`，
+"达标"是构建层按领域标注算的 —— 与并病的处理方式一致，避免出现第二套判定。
+
+判定链（含因果链）：`classify()` 出 `scope` → `external.json` 的 `concurrent` / `relationChain`
+是领域标注 → 构建分四级报数 → 平台层读 `externalScope` + `externalConcurrent` + `externalChain`。
 
 ## 3. 为什么写这份标准（两次实跑教训）
 
@@ -107,4 +126,4 @@ node scripts/build_dsu_descriptions.js               # 出 descriptions.md（两
 ## 5. 当前状态（由 `descriptions.md` 自动生成，勿手改本节的数字）
 
 跑 `node scripts/build_dsu_descriptions.js` 后看 `descriptions.md` 的覆盖表，那里有
-「外部证据（web_search 取回）」「其中整串级」「其中构件级」三行，以及不合格清单。
+「外部证据（web_search 取回）」「其中整串级」「其中并病达标」「其中因果链达标」「其中构件级」五行，以及不合格清单。

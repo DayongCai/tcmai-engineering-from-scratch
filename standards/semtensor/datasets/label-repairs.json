@@ -1,0 +1,16 @@
+{
+  "$note": "reference-units.json 是**生成产物**（来自 sources/*.html 的 DATA.units）。直接改生成物会在下次 build 时被覆盖，所以对 label 的修正写在这里，由 scripts/build_semtensor_datasets.js 在解析后套用。只改 label，不动坐标/颜色。",
+  "appliedTo": "standards/semtensor/datasets/reference-units.json",
+  "generator": "scripts/build_semtensor_datasets.js :: parseReferenceUnits()",
+  "entries": [
+    {
+      "uid": "DSU-00101",
+      "from": "热毒犯肺、痰瘀阻络证(失荣/上石疽)",
+      "to": "热毒犯肺、痰瘀阻络证(哮喘性支气管肺炎)",
+      "why": "括注病名错位：证名属肺系（热毒犯肺为始动病机、痰瘀阻络为其后果），原括注失荣/上石疽是颈部岩肿。判定与溯源见 standards/semtensor/descriptions/splice-repairs.json（DSU-00101，方案 A）。",
+      "decidedBy": "用户 2026-10-19",
+      "appliedAt": "2026-10-19",
+      "keepsOriginal": "热毒犯肺、痰瘀阻络证(失荣/上石疽)"
+    }
+  ]
+}

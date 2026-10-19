@@ -115,7 +115,14 @@ function variantHints(texts, base) {
 
 /** 给一条记录定级 */
 function assess(entry, collected = { unmapped: [] }) {
-  const { base, context } = B.splitLabel(entry.label);
+  const { base, context: brackets } = B.splitLabel(entry.label);
+  // 括注有两种：
+  //   ① 病名/部位限定（`气滞血瘀证(颈部)`）—— 决定证据**是否对题**，当硬条件；
+  //   ② 证名自带的病性（`真心痛（阳衰血瘀）证`）—— 它就是证名的一部分，不是语境限定。
+  // 第 ② 种若也当硬条件，会要求来源逐字出现「阳衰血瘀」，把「心肾阳虚…亡阳厥脱」的好证据
+  // 判成"通用证据"（2026-10-19 实测：那份 3 条来源全被判 label-only）。用 bracketKind:'pattern' 显式标出，
+  // 不靠猜 —— 没标的仍按 ① 处理。
+  const context = entry.bracketKind === 'pattern' ? [] : brackets;
   const terms = labelTerms(base);
   const texts = (entry.sources || []).map(textOf);
   const labelHit = texts.filter((t) => terms.some((w) => t.includes(w)));

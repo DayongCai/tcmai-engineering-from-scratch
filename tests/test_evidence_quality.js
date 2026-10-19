@@ -123,6 +123,17 @@ test('对真实 external.json 全量评估不报错，且每条都有 tier', () 
   assert(ext.entries.length >= 22, `条目数异常：${ext.entries.length}`);
 });
 
+test('括注是病性（bracketKind=pattern）时不当语境硬条件 —— 否则好证据被判通用', () => {
+  const snippet = '……若心肾阳虚，水邪泛滥，水饮凌心射肺……或亡阳厥脱、亡阴厥脱(心源性休克)……';
+  // 标了 pattern：不要求来源逐字出现「阳衰血瘀」，证名字面命中即特指
+  const pat = EQ.assess({ label: '真心痛（阳衰血瘀）证', bracketKind: 'pattern', sources: [src('真心痛_百度百科', snippet)] });
+  assert(pat.qualifiers.length === 0, `不应把（阳衰血瘀）当语境，实得 ${pat.qualifiers.length} 个`);
+  assert(pat.tier === 'specific', `应判特指，实得 ${pat.tier}`);
+  // 没标 pattern 的同形条目仍按语境硬条件处理（不许静默放宽）
+  const plain = EQ.assess({ label: '真心痛（阳衰血瘀）证', sources: [src('真心痛_百度百科', snippet)] });
+  assert(plain.tier === 'label-only', `未标的应仍判仅证名，实得 ${plain.tier}`);
+});
+
 test('带括注的条目里不许有「仅证名」残留（第 3 批的两条已用 --requery 补救过）', () => {
   const fs = require('fs');
   const path = require('path');
