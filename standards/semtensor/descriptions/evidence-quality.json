@@ -1,12 +1,12 @@
 {
   "$generated": "node scripts/evidence_quality.js",
   "coverage": {
-    "fetched": 96,
-    "total": 96,
+    "fetched": 97,
+    "total": 97,
     "pending": 0
   },
   "distribution": {
-    "specific": 72,
+    "specific": 73,
     "viaSynonymAlias": 1,
     "partial": 3,
     "variantUnconfirmed": 13,
@@ -15,8 +15,8 @@
   },
   "distributionNote": "specific=证名字面命中，或命中**同义异名**（本项目主张\"不是证据无关、是写法不同\"，但只有 synonym 才算同一概念）；partial=命中**非同一概念**的异名（composition 复合证名的组成部分 / qualified 病名限定 / broader 上位），只能作部分证据或旁证；variant-unconfirmed=正文出现未登记的近名写法，待人工确认，工具不擅自判同义；label-only=证名命中但括注语境未命中（应 --requery）；generic=连近名都没有，是泛论。",
   "qualifierStats": {
-    "entriesWithQualifier": 38,
-    "ofWhichSpecific": 36
+    "entriesWithQualifier": 39,
+    "ofWhichSpecific": 37
   },
   "placeContext": {
     "颈部": [
@@ -95,6 +95,24 @@
       "variantHints": [
         "温胆汤加减论治心系病证"
       ]
+    },
+    {
+      "label": "毒热蕴结证(石瘿)",
+      "base": "毒热蕴结证",
+      "labelTerms": [
+        "毒热蕴结证",
+        "毒热蕴结"
+      ],
+      "qualifiers": [
+        "石瘿"
+      ],
+      "tier": "specific",
+      "sources": 1,
+      "labelHitSources": 1,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
     },
     {
       "label": "肺经风热、湿热上蒸证(鼻渊/鼻鼽)",
@@ -1487,29 +1505,6 @@
       "variantHints": []
     },
     {
-      "label": "痰气交阻、瘀毒凝结证(石瘿)",
-      "base": "痰气交阻、瘀毒凝结证",
-      "labelTerms": [
-        "痰气交阻、瘀毒凝结证",
-        "痰气交阻、瘀毒凝结"
-      ],
-      "qualifiers": [
-        "石瘿"
-      ],
-      "tier": "specific",
-      "sources": 7,
-      "labelHitSources": 0,
-      "qualifierHitSources": 1,
-      "qualifiersMissed": [],
-      "viaAlias": [],
-      "variantHints": [
-        "痰凝毒聚证",
-        "痰郁气结证",
-        "毒热蕴结证",
-        "痰瘀互结证"
-      ]
-    },
-    {
       "label": "痰热壅肺证",
       "base": "痰热壅肺证",
       "labelTerms": [
@@ -1600,6 +1595,24 @@
         "痰瘀互结证",
         "气阴两虚证"
       ]
+    },
+    {
+      "label": "痰郁气结证(石瘿)",
+      "base": "痰郁气结证",
+      "labelTerms": [
+        "痰郁气结证",
+        "痰郁气结"
+      ],
+      "qualifiers": [
+        "石瘿"
+      ],
+      "tier": "specific",
+      "sources": 1,
+      "labelHitSources": 1,
+      "qualifierHitSources": 1,
+      "qualifiersMissed": [],
+      "viaAlias": [],
+      "variantHints": []
     },
     {
       "label": "下焦湿热瘀阻证",

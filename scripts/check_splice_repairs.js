@@ -52,7 +52,19 @@ for (const e of doc.entries) {
 
   const actual = componentsOf(e.label);
   const declared = Array.isArray(e.components) ? e.components : [];
-  if (JSON.stringify(actual) !== JSON.stringify(declared)) {
+  if (e.split) {
+    // 拆名条目：当前 label 只剩一个构件，不能拿它跟**原**构件表比。
+    // 改为校验「原 label 的构件」与登记的 componentsOriginal 一致，且每个拆出的 label 都在数据里。
+    const orig = componentsOf(e.labelOriginal || '');
+    if (JSON.stringify(orig) !== JSON.stringify(e.componentsOriginal || [])) {
+      fail(`componentsOriginal 与原证名不符：口径 ${JSON.stringify(orig)} ≠ 登记 ${JSON.stringify(e.componentsOriginal || [])}`);
+    }
+    for (let i = 0; i < (e.split.uids || []).length; i += 1) {
+      const su = byUid.get(e.split.uids[i]);
+      if (!su) fail(`拆名 uid 不存在：${e.split.uids[i]}`);
+      else if (su.label !== e.split.labels[i]) fail(`拆名 label 与数据不符：${e.split.uids[i]} 数据「${su.label}」≠ 登记「${e.split.labels[i]}」`);
+    }
+  } else if (JSON.stringify(actual) !== JSON.stringify(declared)) {
     fail(`components 与口径不一致：口径 ${JSON.stringify(actual)} ≠ 登记 ${JSON.stringify(declared)}`);
   }
   if (e.relation === 'cause-effect' && actual.length < 2) fail('cause-effect 至少需要两个构件');
@@ -60,12 +72,15 @@ for (const e of doc.entries) {
 
   const proposed = e.proposed || {};
   if (proposed.labels && proposed.labels.length) {
+    const own = new Set(e.split ? e.split.labels : []);
     for (const l of proposed.labels) {
-      if (l !== e.label && labels.has(l)) fail(`proposed 名称与现有证名撞名：${l}`);
+      // 拆名已落地时，拆出的名字本来就在数据里 —— 那是自己的产物，不算撞名
+      if (l !== e.label && !own.has(l) && labels.has(l)) fail(`proposed 名称与现有证名撞名：${l}`);
     }
-    // 不拆名（1 条）时，构件数不变；拆名时条数应与构件数一致
-    if (proposed.labels.length > 1 && proposed.labels.length !== actual.length) {
-      fail(`拆名条数 ${proposed.labels.length} 与构件数 ${actual.length} 不一致`);
+    // 不拆名（1 条）时，构件数不变；拆名时条数应与**原**构件数一致（拆名后当前 label 只剩一条）
+    const partCount = e.split ? (e.componentsOriginal || []).length : actual.length;
+    if (proposed.labels.length > 1 && proposed.labels.length !== partCount) {
+      fail(`拆名条数 ${proposed.labels.length} 与构件数 ${partCount} 不一致`);
     }
   }
   if (typeof proposed.applied !== 'boolean') fail('proposed.applied 必须是布尔值（有没有写进数据层要说清）');

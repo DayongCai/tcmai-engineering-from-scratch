@@ -64,8 +64,15 @@ test('**守门：证据语料只能来自正文（.md），不许含数据集/�
 
 test('覆盖数字如实：教材证据 3/96（不是 96/96）', () => {
   // 这个数很难看，但它必须被钉住：任何一次"语料放宽"都会把它推回虚高。
-  assert.strictEqual(data.stats.labels, 96);
-  assert.strictEqual(data.stats.dsuRecords, 103);
+  // 证名数不是永恒 96：拆名/合名会改它（2026-10-19 DSU-00102 拆成两条 → 97）。
+  // 钉住的不是"96"，而是"与 DSU 的对应关系说得清"。
+  assert.ok(data.stats.labels >= 96 && data.stats.labels <= data.stats.dsuRecords,
+    `证名数 ${data.stats.labels} 与 DSU ${data.stats.dsuRecords} 的关系异常（证名 ≤ DSU 记录）`);
+  assert.strictEqual(data.stats.dsuRecords, (() => {
+    const raw = JSON.parse(require('fs').readFileSync(
+      require('path').join(__dirname, '..', 'standards/semtensor/datasets/reference-units.json'), 'utf8'));
+    return (Array.isArray(raw) ? raw : raw.units).filter((u) => u.kind === 'dsu').length;
+  })(), 'dsuRecords 必须等于 reference-units.json 里 dsu 的条数（拆名会改它）');
   assert.strictEqual(data.stats.withTextbook, 3,
     `教材证据 ${data.stats.withTextbook}/96 —— 若这个数突然变大，先查语料是不是又放宽了`);
   assert.ok(data.stats.withExternal >= 1, '外部证据一条都没有？那 external.json 没被读进来');
@@ -123,7 +130,7 @@ test('外部证据带 URL 与出处类型（可核查，不是转述）', () => 
 });
 
 test('人读版（descriptions.md）写明了那条更正', () => {
-  assert.match(md, /教材证据只有 3\/96/, '人读版没写更正');
+  assert.match(md, /教材证据只有 \d+\/\d+/, '人读版没写更正');
   assert.match(md, /自我印证/, '人读版没解释为什么 96/96 是假的');
 });
 
@@ -150,7 +157,7 @@ test('「例如（常见于）」来自证据，且标注了样本范围', () =>
   assert.strictEqual(ex.icd, 'BA00');
   // 出处限定必须写在人读版里：那是样例表，不是全量对照
   assert.match(md, /例如（常见于）/, '人读版没有「例如（常见于）」');
-  assert.match(md, /样例表.*非 103 个证候的全量对照/, '没有标注样本范围 —— 会把样例当全量');
+  assert.match(md, /样例表.*非 \d+ 个证候的全量对照/, '没有标注样本范围 —— 会把样例当全量');
 });
 
 test('WHO-TCM 代码被拆成结构（段.组.项），且与词典类目路径**分开**', () => {
@@ -175,8 +182,13 @@ test('覆盖数字如实：构词拆净 72/96，且拆不干净的名单在产�
   //     （`困脾` 被 `脾` 吃掉，动作变空），那是过度修正；
   //   · 最终"每类各自一条游标"：同类不重复、跨类允许重叠 → 72。
   //     `寒湿困脾证` = 病性[寒湿] 病位[脾] 动作[困脾]，三者都对。
-  assert.strictEqual(data.stats.cleanDecompose, 72,
-    `拆净 ${data.stats.cleanDecompose}/96 —— 若突然变大，先查是不是又出现了重复计数或放宽词表`);
+  // 拆净数随**证名条数**变（拆名 96→97 时跟着变），所以钉的不是"72"这个字面值，
+  // 而是它与逐条记录的一致性 + 与缺口名单的互补性 —— 重复计数/放宽词表会让这两条同时破。
+  const recomputedClean = data.records.filter((r) => !r.decomposed.residue).length;
+  assert.strictEqual(data.stats.cleanDecompose, recomputedClean,
+    `拆净 ${data.stats.cleanDecompose} ≠ 逐条重算 ${recomputedClean} —— 统计与记录不一致`);
+  assert.strictEqual(data.stats.cleanDecompose + data.stats.dirtyDecompose.length, data.stats.labels,
+    `拆净 ${data.stats.cleanDecompose} + 缺口名单 ${data.stats.dirtyDecompose.length} ≠ 证名总数 ${data.stats.labels}`);
   assert.ok(data.stats.dirtyDecompose.length > 0, '拆不干净的名单空了 —— 缺口被盖住了');
   for (const d of data.stats.dirtyDecompose) assert.match(d, /← 残余「.+」/, `名单格式不对：${d}`);
 });

@@ -1,5 +1,5 @@
 {
-  "$note": "reference-units.json 是**生成产物**（来自 sources/*.html 的 DATA.units）。直接改生成物会在下次 build 时被覆盖，所以对 label 的修正写在这里，由 scripts/build_semtensor_datasets.js 在解析后套用。只改 label，不动坐标/颜色。",
+  "$note": "reference-units.json 是**生成产物**（来自 sources/*.html 的 DATA.units）。直接改生成物会在下次 build 时被覆盖，所以对 label 的修正写在这里，由 scripts/build_semtensor_datasets.js 在解析后套用。只改 label，不动坐标/颜色；拆名时新增 unit 继承原坐标并显式标 positionsInherited。",
   "appliedTo": "standards/semtensor/datasets/reference-units.json",
   "generator": "scripts/build_semtensor_datasets.js :: parseReferenceUnits()",
   "entries": [
@@ -11,6 +11,17 @@
       "decidedBy": "用户 2026-10-19",
       "appliedAt": "2026-10-19",
       "keepsOriginal": "热毒犯肺、痰瘀阻络证(失荣/上石疽)"
+    },
+    {
+      "uid": "DSU-00102",
+      "from": "痰气交阻、瘀毒凝结证(石瘿)",
+      "to": ["痰郁气结证(石瘿)", "毒热蕴结证(石瘿)"],
+      "newUids": ["DSU-00104"],
+      "why": "两个教材证型被合并转写成一个双构件名。石瘿教材分四型：痰凝毒聚/痰郁气结/毒热蕴结/瘀热伤阴，其中「痰郁气结」= 原第一构件（治法舒肝理气、化痰散结，方用通气散坚丸），「毒热蕴结」= 原第二构件（毒+热，治法清肝解郁、散结化毒，方用清肝芦荟丸）。两型在同一份教材页上都有症状/舌脉/治法/方，可立即取证。",
+      "decidedBy": "用户 2026-10-19（痰郁气结证(石瘿) 的治法与方已由用户指名：舒肝理气、化痰散结，通气散坚丸）",
+      "appliedAt": "2026-10-19",
+      "keepsOriginal": "痰气交阻、瘀毒凝结证(石瘿)",
+      "positionsInherited": true
     }
   ]
 }

@@ -184,9 +184,39 @@ function applyLabelRepairs(units) {
   const doc = JSON.parse(fs.readFileSync(p, 'utf8'));
   const applied = [];
   for (const r of doc.entries || []) {
-    const u = units.find((x) => x.uid === r.uid);
-    if (!u) throw new Error(`label-repairs: uid ${r.uid} 不在源数据里`);
+    const idx = units.findIndex((x) => x.uid === r.uid);
+    if (idx < 0) throw new Error(`label-repairs: uid ${r.uid} 不在源数据里`);
+    const u = units[idx];
     if (u.label !== r.from) throw new Error(`label-repairs: ${r.uid} 源 label 不等于 from（源「${u.label}」≠ from「${r.from}」）`);
+
+    if (Array.isArray(r.to)) {
+      // 拆名（1 → N）：原 unit 取第一个名，其余按 newUids 克隆。
+      // 坐标/颜色**继承原 unit**（这是同一个病下的相邻证型，没有独立坐标），并显式标出，
+      // 免得以后有人把继承来的坐标当成"测出来的"。
+      const [head, ...rest] = r.to;
+      if (rest.length !== (r.newUids || []).length) {
+        throw new Error(`label-repairs: ${r.uid} 拆名数 ${r.to.length} 与 newUids ${(r.newUids || []).length} 不匹配`);
+      }
+      u.label = head;
+      u.labelRepairedFrom = r.from;
+      u.splitInto = r.to;
+      rest.forEach((label, i) => {
+        const uid = r.newUids[i];
+        if (units.some((x) => x.uid === uid)) throw new Error(`label-repairs: 新 uid ${uid} 已存在`);
+        units.splice(idx + 1 + i, 0, {
+          ...JSON.parse(JSON.stringify(u)),
+          uid,
+          label,
+          labelRepairedFrom: r.from,
+          splitFrom: r.uid,
+          positionsInherited: r.positionsInherited !== false,
+          splitInto: undefined,
+        });
+      });
+      applied.push(`${r.uid} ${r.from} → ${r.to.join(' + ')}（新 uid ${(r.newUids || []).join(',')}）`);
+      continue;
+    }
+
     u.label = r.to;
     u.labelRepairedFrom = r.from;
     applied.push(`${r.uid} ${r.from} → ${r.to}`);

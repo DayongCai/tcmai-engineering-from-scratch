@@ -250,9 +250,14 @@ function main() {
   // ── 覆盖统计 ──
   const total = out.length;
   const cov = (f) => out.filter(f).length;
+  // DSU 记录数从数据里算，不写死：拆名/合名会改变它（2026-10-19 DSU-00102 拆成两条 → 103→104）。
+  const dsuCount = (() => {
+    const raw = JSON.parse(fs.readFileSync(P('standards/semtensor/datasets/reference-units.json'), 'utf8'));
+    return (Array.isArray(raw) ? raw : raw.units).filter((u) => u.kind === 'dsu').length;
+  })();
   const stats = {
     labels: total,
-    dsuRecords: 103,
+    dsuRecords: dsuCount,
     corpusFiles: corpus.length,
     corpusFileList: corpus.map((c) => c.file),
     withNature: cov((r) => r.decomposed.nature.length),
@@ -298,7 +303,7 @@ function main() {
 
   // 人读版（入库）：方法 + 覆盖 + 逐条
   const md = [];
-  md.push('# 证候描述（96 个证名 / 103 条 DSU 记录）', '');
+  md.push(`# 证候描述（${total} 个证名 / ${stats.dsuRecords} 条 DSU 记录）`, '');
   md.push('> 由 `node scripts/build_dsu_descriptions.js` **从证据组装**，不是生成的。');
   md.push('> 每一段都指得到出处；没有证据的字段**显式列为缺失**，不写空话。', '');
   md.push('## 覆盖', '');
@@ -332,7 +337,7 @@ function main() {
     for (const d of stats.dirtyDecompose) md.push(`- ${d}`);
     md.push('');
   }
-  md.push('### 一条必须说清的更正：教材证据只有 3/96', '');
+  md.push(`### 一条必须说清的更正：教材证据只有 ${stats.withTextbook}/${total}`, '');
   md.push('第一版**这个数是 96/96（100%）**。它来自语料里混进了 `reference-units.json` 与 `external.json` ——');
   md.push('也就是**我自己的数据集**，"教材证据"取出来是 `ived": " 5A6F7C", "colorMatch": false` 这样的 JSON 碎片。');
   md.push('**那不是教材，是被论证的对象本身；用它当证据就是自我印证。**');
@@ -355,7 +360,7 @@ function main() {
     if (r.diseaseExamples.length) {
       const list = r.diseaseExamples.map((d) => `${d.disease || '（病名未载）'}${d.icd ? ` \`${d.icd}\`` : ''}（${d.uid}）`).join(' · ');
       md.push(`- **例如（常见于）**：${list}`);
-      md.push(`  - 出处：知识树「图谱接口」**样例表**（全表 12 条，非 103 个证候的全量对照）`);
+      md.push(`  - 出处：知识树「图谱接口」**样例表**（全表 12 条，非 ${stats.dsuRecords} 个证候的全量对照）`);
     }
     for (const e of r.externalEvidence) md.push(`- 外部（${e.type}）：${e.title} — ${e.snippet}`);
     if (r.aliases.length) {
@@ -384,7 +389,7 @@ function main() {
   console.log(`  病机 ${stats.withMechanism} · 病名 ${stats.withDisease} · ICD ${stats.withIcd}`);
   console.log(`  教材证据 ${stats.withTextbook} · 外部证据 ${stats.withExternal}（整串 ${stats.withExternalWhole} · 并病达标 ${stats.withConcurrent} · 因果链 ${stats.withChain} · 构件 ${stats.withExternalComponent}） · WHO-TCM ${stats.withWhoTcm}`);
   console.log(`  语料 ${stats.corpusFiles} 个 md（不含数据集/索引/报告）`);
-  console.log(`  平均缺 ${stats.avgMissing} 项 · 七项全缺 ${stats.fullyMissing} 个 · 构词拆净 ${stats.cleanDecompose}/96`);
+  console.log(`  平均缺 ${stats.avgMissing} 项 · 七项全缺 ${stats.fullyMissing} 个 · 构词拆净 ${stats.cleanDecompose}/${total}`);
   console.log(`  → standards/semtensor/descriptions/descriptions.md`);
   console.log(`  → standards/semtensor/descriptions/dsu-descriptions.json`);
 }

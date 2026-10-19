@@ -1,6 +1,10 @@
 {
   "generatedBy": "scripts/build_semtensor_datasets.js",
   "sourceFile": "standards/semtensor/sources/母子父-三维极坐标语义球面-同步旋转.html",
+  "labelRepairs": [
+    "DSU-00101 热毒犯肺、痰瘀阻络证(失荣/上石疽) → 热毒犯肺、痰瘀阻络证(哮喘性支气管肺炎)",
+    "DSU-00102 痰气交阻、瘀毒凝结证(石瘿) → 痰郁气结证(石瘿) + 毒热蕴结证(石瘿)（新 uid DSU-00104）"
+  ],
   "convention": "v1.0-elevation（源数据已是该口径：θ=仰角、φ=方位角）",
   "colorNote": "colorSourceHex 为源系统（Python 编码器）产出的 hex；colorDerived 为按规范公理算出的值。实测二者仅 2/116 一致（只在 |v|=1 的单轴点上），且源实现自身的 JS comp() 也不复现该 hex —— 见规范 §14.1 与 scripts/verify_semtensor_axiom.js。",
   "params": {
@@ -100,9 +104,9 @@
     ]
   },
   "ruling": "θ = 仰角 elevation ∈ [−90°,+90°] ; φ = 方位角 azimuth ∈ [0°,360°) ; X = r·cosθ·cosφ , Y = r·cosθ·sinφ , Z = r·sinθ",
-  "unitCount": 116,
+  "unitCount": 117,
   "byKind": {
-    "dsu": 103,
+    "dsu": 104,
     "six_channel": 6,
     "system": 4,
     "treasure": 3
@@ -2131,7 +2135,7 @@
     },
     {
       "uid": "DSU-00102",
-      "label": "痰气交阻、瘀毒凝结证(石瘿)",
+      "label": "痰郁气结证(石瘿)",
       "kind": "dsu",
       "x": 0.6,
       "y": 0.3,
@@ -2147,7 +2151,35 @@
       "colorSourceHex": "#675597",
       "colorDerived": "#635D80",
       "colorMatch": false,
-      "meta": "dsu"
+      "meta": "dsu",
+      "labelRepairedFrom": "痰气交阻、瘀毒凝结证(石瘿)",
+      "splitInto": [
+        "痰郁气结证(石瘿)",
+        "毒热蕴结证(石瘿)"
+      ]
+    },
+    {
+      "uid": "DSU-00104",
+      "label": "毒热蕴结证(石瘿)",
+      "kind": "dsu",
+      "x": 0.6,
+      "y": 0.3,
+      "z": 0,
+      "theta": 0,
+      "phi": 26.565,
+      "r": 0.6185,
+      "u": [
+        0.8944275904545494,
+        0.4472127965897988,
+        0
+      ],
+      "colorSourceHex": "#675597",
+      "colorDerived": "#635D80",
+      "colorMatch": false,
+      "meta": "dsu",
+      "labelRepairedFrom": "痰气交阻、瘀毒凝结证(石瘿)",
+      "splitFrom": "DSU-00102",
+      "positionsInherited": true
     },
     {
       "uid": "DSU-00103",

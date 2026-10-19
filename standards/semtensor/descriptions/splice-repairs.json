@@ -26,7 +26,10 @@
       "kind": "splice",
       "verdict": "confirmed",
       "relation": "cause-effect",
-      "components": ["热毒犯肺", "痰瘀阻络证"],
+      "components": [
+        "热毒犯肺",
+        "痰瘀阻络证"
+      ],
       "relationWhy": "括注病名错位：证名属肺系（热毒犯肺为始动病机，痰瘀阻络是其后果），病名属颈部岩肿（失荣/上石疽 = 恶性淋巴瘤、颈部淋巴转移癌）。『、』在此不是并病，是病机因果链 —— 这正是文献里几乎不会出现该整串的原因。",
       "diseaseAsIs": "失荣/上石疽（颈部岩肿）",
       "diseaseCorrect": "支气管肺炎性哮喘（规范病名：哮喘性支气管肺炎；中医病名：肺炎喘嗽范畴）",
@@ -51,8 +54,16 @@
         "appliedAt": "2026-10-19",
         "appliedHow": "label 经 datasets/label-repairs.json 由生成器套用（build_semtensor_datasets.js :: applyLabelRepairs），external.json 旧条目按『来源不对题』清空重查，新条目加 relationChain=cause-effect；构建分四级报数，因果链单列。",
         "summary": "不拆名：保留单条 DSU，病名改为『哮喘性支气管肺炎』，加 relation=cause-effect，证据口径改为『同一病种内 因、果各有一源 = 达标』（与并病同级、单列 bucket，不与整串级合并）。",
-        "labels": ["热毒犯肺、痰瘀阻络证(哮喘性支气管肺炎)"],
-        "edges": [{ "from": "热毒犯肺", "type": "causes", "to": "痰瘀阻络证" }],
+        "labels": [
+          "热毒犯肺、痰瘀阻络证(哮喘性支气管肺炎)"
+        ],
+        "edges": [
+          {
+            "from": "热毒犯肺",
+            "type": "causes",
+            "to": "痰瘀阻络证"
+          }
+        ],
         "impact": "证名数不变（96）；external.json 该 label 需改名并重新入队取证"
       },
       "alternative": {
@@ -63,15 +74,17 @@
     },
     {
       "uid": "DSU-00102",
-      "label": "痰气交阻、瘀毒凝结证(石瘿)",
+      "label": "痰郁气结证(石瘿)",
       "kind": "splice",
-      "verdict": "pending",
+      "verdict": "confirmed",
       "relation": "merge-of-patterns",
-      "components": ["痰气交阻", "瘀毒凝结证"],
+      "components": [
+        "痰郁气结证"
+      ],
       "relationWhy": "病名（石瘿）对题，问题在证名：两套教材证型被合并转写 —— 痰气交阻←痰郁气结/痰凝毒聚，瘀毒凝结←毒热蕴结/瘀热伤阴。三套分型里都没有『瘀毒凝结』。",
       "diseaseAsIs": "石瘿（甲状腺癌）",
       "diseaseCorrect": "石瘿（甲状腺癌）—— 病名不变",
-      "userDecision": "用户 2026-10-19 未给本条病名映射；按待决策处理。",
+      "userDecision": "用户 2026-10-19：痰郁气结证(石瘿) 的治法为舒肝理气、化痰散结，方用通气散坚丸 —— 与石瘿教材（中医外科·辨证论治）逐字一致，据此按教材四型回改并拆名。",
       "evidence": {
         "textbookPatterns": [
           "《中医外科学》体例：痰凝毒聚/痰郁气结/毒热蕴结/瘀热伤阴（https://www.zyqjg.com/portal.php?mod=view&aid=678）",
@@ -85,11 +98,32 @@
       },
       "proposed": {
         "option": "B",
-        "applied": false,
-        "summary": "拆成两条并回教材名，或二选一：①按现名拆 痰气交阻证(石瘿)/瘀毒凝结证(石瘿)；②按教材回改 痰郁气结证(石瘿)/毒热蕴结证(石瘿)。建议②——回改到有出处的名称，语义张量层才好对齐。",
-        "labels": ["痰郁气结证(石瘿)", "毒热蕴结证(石瘿)"],
+        "applied": true,
+        "appliedAt": "2026-10-19",
+        "appliedHow": "label-repairs.json 支持 1→N 拆名：原 uid 取第一个名，其余按 newUids 克隆（坐标继承并标 positionsInherited）；external.json 旧双构件条目清空，两条新证名各自取教材原文入库（均 single）。",
+        "summary": "拆成两条教材证名，而不是保留合并转写的双构件名。",
+        "labels": [
+          "痰郁气结证(石瘿)",
+          "毒热蕴结证(石瘿)"
+        ],
         "edges": [],
-        "impact": "证名 96→97；新两条需从零取证（教材来源可直接用，已有 2 条石瘿教材来源可复用）"
+        "impact": "证名 96→97、DSU 103→104；两条均整串级（教材原文含症状/舌脉/治法/方）"
+      },
+      "labelOriginal": "痰气交阻、瘀毒凝结证(石瘿)",
+      "componentsOriginal": [
+        "痰气交阻",
+        "瘀毒凝结证"
+      ],
+      "split": {
+        "uids": [
+          "DSU-00102",
+          "DSU-00104"
+        ],
+        "labels": [
+          "痰郁气结证(石瘿)",
+          "毒热蕴结证(石瘿)"
+        ],
+        "positionsInherited": true
       }
     },
     {
@@ -98,7 +132,9 @@
       "kind": "disease-mapping",
       "verdict": "confirmed",
       "relation": "none",
-      "components": ["真心痛证"],
+      "components": [
+        "真心痛证"
+      ],
       "formNote": "口径把「（阳衰血瘀）」按括注剔除（lib_evidence_scope.componentsOf 的正则对全角括号一视同仁），所以判定只认「真心痛证」，'阳衰血瘀' 不参与构件判定 —— 这正是本条 scope=single 的原因。若要它参与，得把病性写成无括号形式，属命名层改动。",
       "diseaseAsIs": "无括注（证名内含『真心痛』为病名）",
       "diseaseCorrect": "心肌梗死（急性心肌梗死）；『阳衰血瘀』对应心梗出现亡阳厥脱（心源性休克/心衰）的阶段",
@@ -109,7 +145,13 @@
           "中华中医药学会·心肌梗死：『瘀血闭阻心脉…而发为真心痛；心肾阳衰』（https://www.cacm.org.cn/spskl/item/?item_id=10051）"
         ]
       },
-      "proposed": { "option": "none", "applied": false, "summary": "不拆不改名。scope=single，已计入整串覆盖；只需在病名对应表登记（本文件即登记处）。", "labels": [], "edges": [] }
+      "proposed": {
+        "option": "none",
+        "applied": false,
+        "summary": "不拆不改名。scope=single，已计入整串覆盖；只需在病名对应表登记（本文件即登记处）。",
+        "labels": [],
+        "edges": []
+      }
     }
   ]
 }
