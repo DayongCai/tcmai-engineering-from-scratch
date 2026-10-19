@@ -2,11 +2,11 @@
   "$generated": "node scripts/build_outputs_index.js",
   "note": "可复用产出物的根级索引。契约见 CONTRIBUTING.md；每章的产物是生成物，索引是它们的生成物。",
   "counts": {
-    "items": 64,
-    "chaptersWithOutputs": 32,
+    "items": 66,
+    "chaptersWithOutputs": 33,
     "byKind": {
-      "prompt": 32,
-      "skill": 32
+      "prompt": 33,
+      "skill": 33
     },
     "gaps": 0
   },
@@ -295,6 +295,26 @@
                   "title": "lingshu-jiuzhen",
                   "description": "按形制—用途查九针：给候选、原文依据与折算区间，不外推适应证",
                   "chars": 546
+                }
+              ]
+            },
+            {
+              "chapter": "10-neijing-lianghua",
+              "title": "第 10 章 · 内经的量化解读与其边界：一张「能算什么／不能算什么」的表",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/10-neijing-lianghua/outputs/prompt-neijing-lianghua.md",
+                  "title": "量化请求判据（三问）",
+                  "description": null,
+                  "chars": 702
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/10-neijing-lianghua/outputs/skill-neijing-lianghua.md",
+                  "title": "neijing-lianghua",
+                  "description": "量化请求三问：结构可算效力不可算、基准缺失给区间、缺项不许填",
+                  "chars": 469
                 }
               ]
             }
@@ -1186,6 +1206,36 @@
       "description": "按形制—用途查九针：给候选、原文依据与折算区间，不外推适应证",
       "version": "0.1.0",
       "chars": 546
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "10-neijing-lianghua",
+      "chapterTitle": "第 10 章 · 内经的量化解读与其边界：一张「能算什么／不能算什么」的表",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/10-neijing-lianghua/outputs/prompt-neijing-lianghua.md",
+      "title": "量化请求判据（三问）",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 702
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "10-neijing-lianghua",
+      "chapterTitle": "第 10 章 · 内经的量化解读与其边界：一张「能算什么／不能算什么」的表",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/10-neijing-lianghua/outputs/skill-neijing-lianghua.md",
+      "title": "neijing-lianghua",
+      "name": "neijing-lianghua",
+      "description": "量化请求三问：结构可算效力不可算、基准缺失给区间、缺项不许填",
+      "version": "0.1.0",
+      "chars": 469
     },
     {
       "dept": "中医系",

@@ -2,7 +2,7 @@
 
 > 本章节由 `scripts/build_outputs_index.js` **生成**，请勿手改；重跑脚本同步。
 
-> **64** 件产出物 · 覆盖 **32** 个章节 · prompt 32 · skill 32
+> **66** 件产出物 · 覆盖 **33** 个章节 · prompt 33 · skill 33
 
 ## 这是什么
 
@@ -23,7 +23,7 @@
 | --- | --- | --- | :-: |
 | ☯️ 中医系 | 中医基础理论 | 3 | 6 |
 | ☯️ 中医系 | 中医诊断学 | 1 | 2 |
-| ☯️ 中医系 | 内经选读 | 9 | 18 |
+| ☯️ 中医系 | 内经选读 | 10 | 20 |
 | ☯️ 中医系 | 伤寒论 | 12 | 24 |
 | 🌾 中药系 | 中药学 | 1 | 2 |
 | 🪡 针灸系 | 腧穴学 | 1 | 2 |
@@ -81,7 +81,7 @@
 
 ### 内经选读
 
-> Core · 第 3 学期 · 已产出 9 章
+> Core · 第 3 学期 · 已产出 10 章
 
 #### 第 1 章 · 《黄帝内经》成书与文本结构：162 篇不是一个整体
 
@@ -163,6 +163,15 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 九针选针助手 | — | 642 | [`prompt-lingshu-jiuzhen.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/09-lingshu-jiuzhen/outputs/prompt-lingshu-jiuzhen.md) |
 | skill | lingshu-jiuzhen | 按形制—用途查九针：给候选、原文依据与折算区间，不外推适应证 | 546 | [`skill-lingshu-jiuzhen.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/09-lingshu-jiuzhen/outputs/skill-lingshu-jiuzhen.md) |
+
+#### 第 10 章 · 内经的量化解读与其边界：一张「能算什么／不能算什么」的表
+
+`06-neijing-xuandu/chapters/10-neijing-lianghua/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 量化请求判据（三问） | — | 702 | [`prompt-neijing-lianghua.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/10-neijing-lianghua/outputs/prompt-neijing-lianghua.md) |
+| skill | neijing-lianghua | 量化请求三问：结构可算效力不可算、基准缺失给区间、缺项不许填 | 469 | [`skill-neijing-lianghua.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/10-neijing-lianghua/outputs/skill-neijing-lianghua.md) |
 
 ### 伤寒论
 

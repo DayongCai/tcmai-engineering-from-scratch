@@ -110,9 +110,9 @@ window.TCMAI_DATA = {
     "hours": 7596,
     "semesters": 10,
     "stages": 5,
-    "chaptersBuilt": 32,
-    "subjectsDone": 1,
-    "subjectsWip": 10,
+    "chaptersBuilt": 33,
+    "subjectsDone": 2,
+    "subjectsWip": 9,
     "subjectsPlanned": 109,
     "videos": 3,
     "textbookChapters": 1
@@ -1475,10 +1475,10 @@ window.TCMAI_DATA = {
           "stage": "sheng",
           "hours": 72,
           "chaptersTarget": 10,
-          "chaptersBuilt": 9,
-          "pct": 90,
-          "status": "wip",
-          "glyph": "🚧",
+          "chaptersBuilt": 10,
+          "pct": 100,
+          "status": "done",
+          "glyph": "✅",
           "bridge": "原文→语料库 / 条文检索→向量检索",
           "path": "departments/01-zhongyi/06-neijing-xuandu",
           "platform": {
@@ -5469,7 +5469,7 @@ window.TCMAI_DATA = {
         "n": 10,
         "slug": "10-neijing-lianghua",
         "title": "内经的量化解读与其边界",
-        "status": "📋"
+        "status": "🚧"
       }
     ],
     "01-zhongyi/07-shanghanlun": [

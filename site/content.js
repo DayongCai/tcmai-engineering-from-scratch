@@ -1543,6 +1543,124 @@ window.TCMAI_CONTENT = {
     "video": null,
     "videoPoster": null
   },
+  "01-zhongyi/06-neijing-xuandu/10-neijing-lianghua": {
+    "key": "01-zhongyi/06-neijing-xuandu/10-neijing-lianghua",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "06-neijing-xuandu",
+    "subjectTitle": "内经选读",
+    "chapterSlug": "10-neijing-lianghua",
+    "n": 10,
+    "title": "第 10 章 · 内经的量化解读与其边界：一张「能算什么／不能算什么」的表",
+    "motto": "「合于四时五脏阴阳，揆度以为常也。」——《素问·经脉别论》",
+    "problem": "九章下来你手上有九种量化工具：篇目体量、偏侧值、五元组、路径图、十九条反查、条件核对、治序规则、运气推演、九针折算。有人接着问「那你算算这个证候的概率」「算算这个方多久见效」——工具不会拒绝，因为它们不知道自己不该回答。",
+    "roots": "环境逼迫(量化了就要被追问) + 知识积累(九种手法 × 失效模式 = 一张知道何时停手的表)",
+    "html": "<h1 id=\"第-10-章-内经的量化解读与其边界-一张-能算什么-不能算什么-的表\">第 10 章 · 内经的量化解读与其边界：一张「能算什么／不能算什么」的表</h1>\n<blockquote><p><strong>MOTTO:</strong> 「合于四时五脏阴阳，揆度以为常也。」——《素问·经脉别论》</p>\n<p><strong>PROBLEM:</strong> 九章下来你手上有九种量化工具：篇目体量、偏侧值、五元组、路径图、十九条反查、条件核对、治序规则、运气推演、九针折算。有人接着问「那你算算这个证候的概率」「算算这个方多久见效」——工具不会拒绝，因为它们不知道自己不该回答。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(量化了就要被追问) + 知识积累(九种手法 × 失效模式 = 一张知道何时停手的表)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>内经选读</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>10 / 10</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>说出九种手法各自「能算的那一格」与「不能算的那一格」，而不是笼统地说「能量化」</li><li>用三律判断一个新请求该不该接：结构 vs 效力、区间 vs 点值、缺项留痕</li><li>认出每类手法最常见的失效模式，并说明它长什么样</li><li>给自己写一条「停手规则」：什么情况下必须回答「这不可算」</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"九种手法的登记表-本章正文\">九种手法的登记表（本章正文）</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>章</th><th>手法</th><th>能算</th><th>不能算</th><th>失效模式</th></tr></thead><tbody><tr><td>01</td><td>篇目体量统计</td><td>篇数、字数、篇均与条均（561,111 字 / 162 篇）</td><td>文本质量、成书年代、学派归属</td><td>把篇幅当重要性（篇均长 ≠ 价值高）</td></tr><tr><td>02</td><td>四轴偏侧值</td><td>有序轴上的方向与强度（−1…+1）、参照点声明</td><td>跨轴加总、换算成剂量、无参照点的绝对判断</td><td><strong>把 null 填成 0</strong>（「无证据」被读成「中性」）</td></tr><tr><td>03</td><td>藏象五元组解析</td><td>字段抽取（本/华/充/位/通于）、不规则句式标注、夹注剥离</td><td>字段之间的因果、「其华在面」推出诊断</td><td>把不规则句硬套模板（脾句是六者合称）</td></tr><tr><td>04</td><td>路径图（拓扑）</td><td>可达性、汇点识别、无环性检验</td><td>流量、速率、压力、时间</td><td>把「肺朝百脉」读成闭环（原文是单向叙述）</td></tr><tr><td>05</td><td>病机十九条反查</td><td>症状→病机的多命中共现、不排除项、归类计数（脏 5/火 5/热 4…）</td><td>概率与敏感度、证候优先级、完备性</td><td>把十九条当完备清单（它只是举例十九类）</td></tr><tr><td>06</td><td>诊法条件核对</td><td>条件偏差清单、两次采集的可比性</td><td>校正后的脉象值、把下午换算成平旦</td><td>换算「平旦等效值」（条件只能记录，不能消除）</td></tr><tr><td>07</td><td>治序规则判定</td><td>条件→先治标/先治本、优先级冲突的胜出与压过</td><td>疗效、疗程、方药选择</td><td>把归纳的优先级（中满&gt;二便&gt;有余不足）说成原文明文</td></tr><tr><td>08</td><td>干支运气推演</td><td>干支、中运太过/不及、司天、在泉、天符（60 年 / 12 天符）</td><td>气候、病种流行、宜忌</td><td>从「司天为何气」直接跳到「今年宜温宜清」</td></tr><tr><td>09</td><td>九针规格折算</td><td>单位区间（1 寸 2.31–2.35 cm）、形制—用途对应</td><td>单枚/单支的克数、实际进针深度</td><td>给点值假装精确（1.6 寸 ≠ 3.70 cm 整）</td></tr></tbody></table></div>\n<p>代码核对结果：<strong>9/9 章登记完整</strong>、<strong>9/9 章三件套在磁盘上齐全</strong>、<strong>9/9 章引用的数字/关键词都能在该章 docs 里逐字找到</strong>。</p>\n<p>最后这一条不是装饰：本章引用的每个数（561,111、脏 5、天符 12、2.31…）都由代码回到对应章正文里检索一遍。<strong>收尾章最容易被写成凭记忆的总结</strong>，所以它必须能自证。</p>\n<h3 id=\"三律\">三律</h3>\n<p><strong>律一：结构可算，效力不可算。</strong></p>\n<p>九种手法算的全是结构——数量、顺序、归属、可达性、区间。没有一种能算效力：疗效、预后、应验。这不是技术不足，是<strong>参数不在文本里</strong>。文本能告诉你「十九条里火类最多」，不能告诉你「火类证候更好治」。</p>\n<p><strong>律二：区间优于点值。</strong></p>\n<p>凡是基准会漂的地方，都给区间：九针 1.6 寸 → 3.70–3.76 cm；经方三两 → 41.25 / 46.88 / 9 g 三档并列。给点值的诱惑在于好看，代价是把不确定度藏起来——读者以为你算准了。</p>\n<p><strong>律三：缺项留痕。</strong></p>\n<ul><li><code>null ≠ 0</code>：第 2 章里「无证据」必须记 null，不能记 0，否则「没有倾向」和「中性」混为一谈。</li><li><code>未判定 ≠ 正常</code>：第 7 章的预后判据只覆盖 13/45 条，其余「未判定」，不是「没事」。</li><li>「缺失」要写出来：第 3 章的脾句是唯一不规则项，标注它比删掉它更有信息量。</li></ul>\n<h3 id=\"判据三问-接到请求先用\">判据三问（接到请求先用）</h3>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">text</div><pre><code class=\"lang-text\">1. 你要的是结构还是效力？        → 效力，直接停\n2. 你的基准还在吗？              → 单位/参照点/版本缺一项，只能给区间或拒绝\n3. 缺的那一格你打算填什么？      → 想填 0 或想补一条「合理的」，直接停</code></pre></div>\n<p>三问都过了，才轮到选手法。</p>\n<h3 id=\"本章自身的边界\">本章自身的边界</h3>\n<ul><li><strong>登记表是作者归纳</strong>，不是原文所有。原文没有「九种量化手法」这种说法。</li><li><strong>只覆盖本书九章</strong>。《伤寒论》那套（频次、BM25、剂量折算、预后分层）失效模式不同——例如频次偏倚、负样本缺失、枚重不可折。混着讲会把两套边界搅在一起。</li><li><strong>三律是经验规则，不是定理</strong>。它们来自这九章踩过的坑，换语料要重验。</li></ul>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js\nLEDGER              // 九行登记：can / cannot / failure / evidence\nclassify(kind)      // 计数·顺序·归属·区间 → 可算；因果·效力·应验 → 不可算；未知 → 抛错\nauditChapters()     // 磁盘核对：九章 docs/code/test/quiz 是否齐全\nverifyEvidence()    // 登记表里的每个数字，必须能在该章 docs 里找到\ncoverage()          // 每章是否都写了「能算」与「不能算」</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>coverage().total === 9</code> 且 <code>bad</code> 为空；<code>auditChapters()</code> 9/9 ok；<code>verifyEvidence()</code> 9/9 ok；<code>classify('效力').verdict === '不可算'</code>；<code>classify('疗效预测')</code> 抛错。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>「能算」不等于「算得对」</strong>。本章只判类型，不判质量：区间给得再宽，也可能是错的区间。</li><li><strong>三律有例外</strong>。计数也可能不可算——当口径本身有争议时（如「条」的边界），先解决口径。</li><li><strong>登记表会过期</strong>。任何一章改写方法，本章的表就要同步；代码里的 <code>verifyEvidence()</code> 只能抓「证据消失」，抓不到「方法已换」。</li><li><strong>不构成诊疗依据</strong>。这一章讲的是方法边界，不是医学结论。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 本章引用的数字均来自本仓库前九章的正文与代码（可复算，<code>code/main.js</code> 会逐条回检）；本章为方法学讨论，不构成诊疗依据。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>给「这个病人属哪一经」这个请求做判据三问，写出你会怎么回答。</li><li>三律里哪一条最容易被违反？举一个你自己写文档时的例子。</li><li>若要把《伤寒论》章节的量化也登记进来，你会新增哪几列？</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>九章的方法加起来，能回答的问题比想象中少，但每一个回答都能被第二个人复算——这正是它们区别于「看起来很有道理」的地方。<strong>量化的价值不在算得多，而在算完还敢说哪一格不能算。</strong></p>",
+    "markdown": "# 第 10 章 · 内经的量化解读与其边界：一张「能算什么／不能算什么」的表\n\n> **MOTTO:** 「合于四时五脏阴阳，揆度以为常也。」——《素问·经脉别论》\n>\n> **PROBLEM:** 九章下来你手上有九种量化工具：篇目体量、偏侧值、五元组、路径图、十九条反查、条件核对、治序规则、运气推演、九针折算。有人接着问「那你算算这个证候的概率」「算算这个方多久见效」——工具不会拒绝，因为它们不知道自己不该回答。\n>\n> **双根因定位:** 环境逼迫(量化了就要被追问) + 知识积累(九种手法 × 失效模式 = 一张知道何时停手的表)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 内经选读 |\n| 院系 | 中医系 |\n| 章序号 | 10 / 10 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 说出九种手法各自「能算的那一格」与「不能算的那一格」，而不是笼统地说「能量化」\n- 用三律判断一个新请求该不该接：结构 vs 效力、区间 vs 点值、缺项留痕\n- 认出每类手法最常见的失效模式，并说明它长什么样\n- 给自己写一条「停手规则」：什么情况下必须回答「这不可算」\n\n## 核心概念\n\n### 九种手法的登记表（本章正文）\n\n| 章 | 手法 | 能算 | 不能算 | 失效模式 |\n|---|---|---|---|---|\n| 01 | 篇目体量统计 | 篇数、字数、篇均与条均（561,111 字 / 162 篇） | 文本质量、成书年代、学派归属 | 把篇幅当重要性（篇均长 ≠ 价值高） |\n| 02 | 四轴偏侧值 | 有序轴上的方向与强度（−1…+1）、参照点声明 | 跨轴加总、换算成剂量、无参照点的绝对判断 | **把 null 填成 0**（「无证据」被读成「中性」） |\n| 03 | 藏象五元组解析 | 字段抽取（本/华/充/位/通于）、不规则句式标注、夹注剥离 | 字段之间的因果、「其华在面」推出诊断 | 把不规则句硬套模板（脾句是六者合称） |\n| 04 | 路径图（拓扑） | 可达性、汇点识别、无环性检验 | 流量、速率、压力、时间 | 把「肺朝百脉」读成闭环（原文是单向叙述） |\n| 05 | 病机十九条反查 | 症状→病机的多命中共现、不排除项、归类计数（脏 5/火 5/热 4…） | 概率与敏感度、证候优先级、完备性 | 把十九条当完备清单（它只是举例十九类） |\n| 06 | 诊法条件核对 | 条件偏差清单、两次采集的可比性 | 校正后的脉象值、把下午换算成平旦 | 换算「平旦等效值」（条件只能记录，不能消除） |\n| 07 | 治序规则判定 | 条件→先治标/先治本、优先级冲突的胜出与压过 | 疗效、疗程、方药选择 | 把归纳的优先级（中满>二便>有余不足）说成原文明文 |\n| 08 | 干支运气推演 | 干支、中运太过/不及、司天、在泉、天符（60 年 / 12 天符） | 气候、病种流行、宜忌 | 从「司天为何气」直接跳到「今年宜温宜清」 |\n| 09 | 九针规格折算 | 单位区间（1 寸 2.31–2.35 cm）、形制—用途对应 | 单枚/单支的克数、实际进针深度 | 给点值假装精确（1.6 寸 ≠ 3.70 cm 整） |\n\n代码核对结果：**9/9 章登记完整**、**9/9 章三件套在磁盘上齐全**、**9/9 章引用的数字/关键词都能在该章 docs 里逐字找到**。\n\n最后这一条不是装饰：本章引用的每个数（561,111、脏 5、天符 12、2.31…）都由代码回到对应章正文里检索一遍。**收尾章最容易被写成凭记忆的总结**，所以它必须能自证。\n\n### 三律\n\n**律一：结构可算，效力不可算。**\n\n九种手法算的全是结构——数量、顺序、归属、可达性、区间。没有一种能算效力：疗效、预后、应验。这不是技术不足，是**参数不在文本里**。文本能告诉你「十九条里火类最多」，不能告诉你「火类证候更好治」。\n\n**律二：区间优于点值。**\n\n凡是基准会漂的地方，都给区间：九针 1.6 寸 → 3.70–3.76 cm；经方三两 → 41.25 / 46.88 / 9 g 三档并列。给点值的诱惑在于好看，代价是把不确定度藏起来——读者以为你算准了。\n\n**律三：缺项留痕。**\n\n- `null ≠ 0`：第 2 章里「无证据」必须记 null，不能记 0，否则「没有倾向」和「中性」混为一谈。\n- `未判定 ≠ 正常`：第 7 章的预后判据只覆盖 13/45 条，其余「未判定」，不是「没事」。\n- 「缺失」要写出来：第 3 章的脾句是唯一不规则项，标注它比删掉它更有信息量。\n\n### 判据三问（接到请求先用）\n\n```\n1. 你要的是结构还是效力？        → 效力，直接停\n2. 你的基准还在吗？              → 单位/参照点/版本缺一项，只能给区间或拒绝\n3. 缺的那一格你打算填什么？      → 想填 0 或想补一条「合理的」，直接停\n```\n\n三问都过了，才轮到选手法。\n\n### 本章自身的边界\n\n- **登记表是作者归纳**，不是原文所有。原文没有「九种量化手法」这种说法。\n- **只覆盖本书九章**。《伤寒论》那套（频次、BM25、剂量折算、预后分层）失效模式不同——例如频次偏倚、负样本缺失、枚重不可折。混着讲会把两套边界搅在一起。\n- **三律是经验规则，不是定理**。它们来自这九章踩过的坑，换语料要重验。\n\n## BUILD IT：从零实现\n\n```js\n// code/main.js\nLEDGER              // 九行登记：can / cannot / failure / evidence\nclassify(kind)      // 计数·顺序·归属·区间 → 可算；因果·效力·应验 → 不可算；未知 → 抛错\nauditChapters()     // 磁盘核对：九章 docs/code/test/quiz 是否齐全\nverifyEvidence()    // 登记表里的每个数字，必须能在该章 docs 里找到\ncoverage()          // 每章是否都写了「能算」与「不能算」\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：`coverage().total === 9` 且 `bad` 为空；`auditChapters()` 9/9 ok；`verifyEvidence()` 9/9 ok；`classify('效力').verdict === '不可算'`；`classify('疗效预测')` 抛错。\n\n## 代价与边界\n\n- **「能算」不等于「算得对」**。本章只判类型，不判质量：区间给得再宽，也可能是错的区间。\n- **三律有例外**。计数也可能不可算——当口径本身有争议时（如「条」的边界），先解决口径。\n- **登记表会过期**。任何一章改写方法，本章的表就要同步；代码里的 `verifyEvidence()` 只能抓「证据消失」，抓不到「方法已换」。\n- **不构成诊疗依据**。这一章讲的是方法边界，不是医学结论。\n\n> **免责声明：** 本章引用的数字均来自本仓库前九章的正文与代码（可复算，`code/main.js` 会逐条回检）；本章为方法学讨论，不构成诊疗依据。\n\n## 练习\n\n1. 给「这个病人属哪一经」这个请求做判据三问，写出你会怎么回答。\n2. 三律里哪一条最容易被违反？举一个你自己写文档时的例子。\n3. 若要把《伤寒论》章节的量化也登记进来，你会新增哪几列？\n\n## 进阶思考\n\n九章的方法加起来，能回答的问题比想象中少，但每一个回答都能被第二个人复算——这正是它们区别于「看起来很有道理」的地方。**量化的价值不在算得多，而在算完还敢说哪一格不能算。**\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 内经九章的量化手法登记表 + 边界判定器\n *\n *   node code/main.js\n *\n * 本文件是「收尾章」的代码：它不产生新数据，而是把前九章真正用过的九种手法\n * 登记成可核对的结构，并提供三件事：\n *   1. auditChapters()  —— 磁盘核对：九章是否都还在（docs/code/test 三件套）\n *   2. verifyEvidence() —— 登记表里引用的每个数字/关键词，必须真的出现在对应章的 docs 里\n *   3. classify(kind)   —— 接到一个量化请求，判「能算/不能算」，判不了就抛错\n *\n * 口径：\n *   · 登记表是**作者归纳**，不是原文所有；每条都标了「失效模式」，即这一类手法最常见的误用。\n *   · classify 只认六种请求类型；未知类型一律抛错，避免用「大概能算」蒙过去。\n *   · 本表只覆盖本书九章；《伤寒论》章节的量化（频次、BM25、剂量折算）另有一套边界。\n */\n\nconst path = require('node:path');\nconst fs = require('node:fs');\n\nconst HERE = __dirname;\nconst SUBJECT_DIR = path.resolve(HERE, '../..');   // chapters/\nconst CHAPTERS = [\n  '01-suwen-chengshu', '02-yinyang-yingxiang', '03-zangxiang-xitong', '04-jingmai-bielun',\n  '05-bingji-shijiu', '06-zhenfa-maiyao', '07-zhize-biaoben', '08-lunqi-qipian', '09-lingshu-jiuzhen',\n];\n\n/** 九种手法：能算 / 不能算 / 失效模式 / 证据（必须出现在该章 docs 里） */\nconst LEDGER = [\n  {\n    ch: '01', slug: '01-suwen-chengshu', method: '篇目体量统计',\n    can: ['篇数', '字数', '篇均与条均', '体裁差异（篇均字数比）'],\n    cannot: ['文本质量', '成书年代', '学派归属'],\n    failure: '把篇幅当重要性（篇均长 ≠ 价值高）',\n    evidence: ['561,111', '162 篇'],\n  },\n  {\n    ch: '02', slug: '02-yinyang-yingxiang', method: '四轴偏侧值',\n    can: ['有序轴上的方向与强度（−1…+1）', '参照点声明', '缺证记 null'],\n    cannot: ['跨轴加总', '换算成剂量或评分表', '无参照点的绝对判断'],\n    failure: '把 null 填成 0（「无证据」被读成「中性」）',\n    evidence: ['偏侧值', '参照点'],\n  },\n  {\n    ch: '03', slug: '03-zangxiang-xitong', method: '藏象五元组解析',\n    can: ['字段抽取（本/华/充/位/通于）', '不规则句式标注', '校勘夹注剥离'],\n    cannot: ['字段之间的因果', '「其华在面」推出诊断', '跨脏比较'],\n    failure: '把不规则句硬套模板（脾句是六者合称）',\n    evidence: ['五元组', '太素'],\n  },\n  {\n    ch: '04', slug: '04-jingmai-bielun', method: '路径图（拓扑）',\n    can: ['可达性', '汇点识别', '无环性检验'],\n    cannot: ['流量', '速率', '压力', '时间'],\n    failure: '把「肺朝百脉」读成闭环（原文是单向叙述）',\n    evidence: ['汇点', '拓扑'],\n  },\n  {\n    ch: '05', slug: '05-bingji-shijiu', method: '病机十九条反查',\n    can: ['症状 → 病机的多命中共现', '「不排除项」清单', '归类计数（脏 5/火 5/热 4…）'],\n    cannot: ['概率与敏感度', '证候优先级', '完备性'],\n    failure: '把十九条当完备清单（它只是举例十九类）',\n    evidence: ['十九条', '脏 5'],\n  },\n  {\n    ch: '06', slug: '06-zhenfa-maiyao', method: '诊法条件核对',\n    can: ['条件偏差清单', '两次采集的可比性判断'],\n    cannot: ['校正后的脉象值', '把下午换算成平旦', '脉象判读'],\n    failure: '换算「平旦等效值」（条件只能记录，不能消除）',\n    evidence: ['平旦', '条件'],\n  },\n  {\n    ch: '07', slug: '07-zhize-biaoben', method: '治序规则判定',\n    can: ['条件 → 先治标/先治本', '优先级冲突的胜出与压过'],\n    cannot: ['疗效', '疗程', '方药选择'],\n    failure: '把归纳的优先级（中满>二便>有余不足）说成原文明文',\n    evidence: ['中满', '先治'],\n  },\n  {\n    ch: '08', slug: '08-lunqi-qipian', method: '干支运气推演',\n    can: ['干支', '中运太过/不及', '司天', '在泉', '天符'],\n    cannot: ['气候', '病种流行', '宜忌'],\n    failure: '从「司天为何气」直接跳到「今年宜温宜清」',\n    evidence: ['天符', '60'],\n  },\n  {\n    ch: '09', slug: '09-lingshu-jiuzhen', method: '九针规格折算',\n    can: ['单位区间（1 寸 2.31–2.35 cm）', '形制—用途对应'],\n    cannot: ['单枚/单支的克数', '实际进针深度', '现代器械等效'],\n    failure: '给点值假装精确（1.6 寸 ≠ 3.70 cm 整）',\n    evidence: ['九针', '2.31'],\n  },\n];\n\n/** 请求类型 → 判定。只有结构类可算；效力类一律不可算；未知抛错 */\nconst KIND_MAP = {\n  计数: { verdict: '可算', why: '可复算，结果可被第二人验证' },\n  顺序: { verdict: '可算', why: '条件与顺序确定时，结论唯一' },\n  归属: { verdict: '可算', why: '归属可标出处，争议留痕' },\n  区间: { verdict: '可算', why: '区间本身承认不确定度' },\n  因果: { verdict: '不可算', why: '本草与经文未给因果参数' },\n  效力: { verdict: '不可算', why: '疗效需临床证据，非文本统计' },\n  应验: { verdict: '不可算', why: '推演自洽 ≠ 预测应验' },\n};\n\nfunction classify(kind) {\n  const hit = KIND_MAP[kind];\n  if (!hit) throw new Error(`未知请求类型：${kind}（只认 ${Object.keys(KIND_MAP).join('/')}）`);\n  return { kind, ...hit };\n}\n\n/** 磁盘核对：九章是否都在，且各有 docs/code/test */\nfunction auditChapters() {\n  return CHAPTERS.map((slug) => {\n    const dir = path.join(SUBJECT_DIR, slug);\n    const need = ['docs/zh.md', 'code/main.js', 'code/main.test.js', 'quiz.json'];\n    const missing = need.filter((f) => !fs.existsSync(path.join(dir, f)));\n    return { slug, ok: missing.length === 0, missing };\n  });\n}\n\n/** 登记表里的证据必须真的出现在对应章的 docs 里 —— 防止收尾章凭记忆引用 */\nfunction verifyEvidence() {\n  return LEDGER.map((row) => {\n    const doc = path.join(SUBJECT_DIR, row.slug, 'docs/zh.md');\n    const text = fs.existsSync(doc) ? fs.readFileSync(doc, 'utf8') : '';\n    const missing = row.evidence.filter((e) => !text.includes(e));\n    return { ch: row.ch, slug: row.slug, ok: missing.length === 0, missing };\n  });\n}\n\n/** 每个章节是否都登记了「能算」与「不能算」 */\nfunction coverage() {\n  const bad = LEDGER.filter((r) => r.can.length < 1 || r.cannot.length < 1 || !r.failure);\n  return { total: LEDGER.length, bad: bad.map((r) => r.ch) };\n}\n\nfunction main() {\n  console.log('内经九章的量化手法登记表\\n');\n  console.log('章  手法            能算（节选）                          不能算（节选）              失效模式');\n  for (const r of LEDGER) {\n    console.log(\n      `${r.ch}  ${r.method.padEnd(12, '　')} ${r.can[0].slice(0, 16).padEnd(18, '　')} ${r.cannot[0].slice(0, 14).padEnd(18, '　')} ${r.failure.slice(0, 20)}…`,\n    );\n  }\n\n  const cov = coverage();\n  console.log(`\\n登记完整性：${cov.total}/9 章，缺项 ${cov.bad.length ? cov.bad.join(',') : '无'}`);\n\n  const disk = auditChapters();\n  const okDisk = disk.filter((d) => d.ok).length;\n  console.log(`磁盘核对：${okDisk}/9 章三件套齐全${okDisk < 9 ? `，缺：${disk.filter((d) => !d.ok).map((d) => d.slug).join(',')}` : ''}`);\n\n  const ev = verifyEvidence();\n  const okEv = ev.filter((e) => e.ok).length;\n  console.log(`证据核对：${okEv}/9 章引用的数字/关键词都能在该章 docs 里找到`);\n  for (const e of ev.filter((x) => !x.ok)) console.log(`  ✗ 第 ${e.ch} 章缺：${e.missing.join('、')}`);\n\n  console.log('\\n请求类型判定：');\n  for (const k of Object.keys(KIND_MAP)) {\n    const r = classify(k);\n    console.log(`  ${k} → ${r.verdict}（${r.why}）`);\n  }\n  try {\n    classify('疗效预测');\n  } catch (err) {\n    console.log(`  疗效预测 → 抛错：${err.message}`);\n  }\n\n  console.log('\\n三律：');\n  console.log('  律一 结构可算，效力不可算');\n  console.log('  律二 区间优于点值');\n  console.log('  律三 缺项留痕：null ≠ 0，未判定 ≠ 正常');\n  console.log('\\n口径：登记表为作者归纳，仅覆盖本书九章；《伤寒论》章节的量化另有边界。');\n  console.log('本输出为方法边界说明，不构成诊疗依据。');\n}\n\nif (require.main === module) main();\nmodule.exports = { LEDGER, KIND_MAP, classify, auditChapters, verifyEvidence, coverage, CHAPTERS };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { LEDGER, KIND_MAP, classify, auditChapters, verifyEvidence, coverage, CHAPTERS } = require('./main.js');\n\ntest('登记表覆盖九章，章号 01–09 各一次', () => {\n  assert.strictEqual(LEDGER.length, 9);\n  assert.deepStrictEqual(LEDGER.map((r) => r.ch), ['01', '02', '03', '04', '05', '06', '07', '08', '09']);\n  assert.deepStrictEqual(LEDGER.map((r) => r.slug), CHAPTERS);\n});\n\ntest('每章都写了「能算 / 不能算 / 失效模式」，三条都不许空', () => {\n  const cov = coverage();\n  assert.strictEqual(cov.total, 9);\n  assert.deepStrictEqual(cov.bad, []);\n  for (const r of LEDGER) {\n    assert.ok(r.can.length >= 1, `${r.ch} 缺 能算`);\n    assert.ok(r.cannot.length >= 1, `${r.ch} 缺 不能算`);\n    assert.ok(r.failure.length > 5, `${r.ch} 失效模式太短`);\n  }\n});\n\ntest('磁盘核对：九章 docs/code/test/quiz 齐全', () => {\n  const rows = auditChapters();\n  assert.strictEqual(rows.length, 9);\n  assert.ok(rows.every((r) => r.ok), JSON.stringify(rows.filter((r) => !r.ok)));\n});\n\ntest('证据核对：登记的数字/关键词都能在该章 docs 里找到', () => {\n  const rows = verifyEvidence();\n  assert.ok(rows.every((r) => r.ok), JSON.stringify(rows.filter((r) => !r.ok)));\n  // 抽查两条硬数字\n  assert.ok(LEDGER[0].evidence.includes('561,111'));\n  assert.ok(LEDGER[8].evidence.includes('2.31'));\n});\n\ntest('请求类型判定：结构类可算，效力类不可算', () => {\n  for (const k of ['计数', '顺序', '归属', '区间']) assert.strictEqual(classify(k).verdict, '可算', k);\n  for (const k of ['因果', '效力', '应验']) assert.strictEqual(classify(k).verdict, '不可算', k);\n});\n\ntest('未知请求类型必须抛错（不许「大概能算」）', () => {\n  assert.throws(() => classify('疗效预测'), /未知请求类型/);\n  assert.throws(() => classify(''), /未知请求类型/);\n});\n\ntest('三律的载体在表里可查：null 归 0 属第 2 章，点值冒充精确属第 9 章', () => {\n  assert.match(LEDGER.find((r) => r.ch === '02').failure, /null.*0|0.*null/);\n  assert.match(LEDGER.find((r) => r.ch === '09').failure, /点值/);\n  assert.match(LEDGER.find((r) => r.ch === '07').failure, /归纳/);\n});\n\ntest('KIND_MAP 恰有 7 类，判定只有两个字面值', () => {\n  assert.strictEqual(Object.keys(KIND_MAP).length, 7);\n  assert.deepStrictEqual([...new Set(Object.values(KIND_MAP).map((v) => v.verdict))].sort(), ['不可算', '可算']);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "九种量化手法里，能算的是哪一类？",
+          "options": [
+            "疗效与预后",
+            "结构（数量、顺序、归属、可达性、区间）",
+            "气候应验",
+            "药材质量"
+          ],
+          "correct": 1,
+          "explanation": "律一：结构可算，效力不可算。"
+        },
+        {
+          "stage": "check",
+          "question": "「无证据记 null 不记 0」属于三律中的？",
+          "options": [
+            "律一 结构可算",
+            "律二 区间优于点值",
+            "律三 缺项留痕",
+            "不属于任何一律"
+          ],
+          "correct": 2,
+          "explanation": "null ≠ 0，未判定 ≠ 正常。"
+        },
+        {
+          "stage": "check",
+          "question": "九针「1.6 寸 → 3.70–3.76 cm」为什么要给区间而不给 3.73？",
+          "options": [
+            "算不出来",
+            "汉尺本身有分布，点值会把不确定度藏起来",
+            "区间更专业",
+            "原文如此"
+          ],
+          "correct": 1,
+          "explanation": "律二：基准会漂的地方给区间。"
+        },
+        {
+          "stage": "check",
+          "question": "「把十九条当完备清单」是哪一章的失效模式？",
+          "options": [
+            "第 3 章 藏象",
+            "第 5 章 病机十九条",
+            "第 7 章 治则",
+            "第 8 章 运气"
+          ],
+          "correct": 1,
+          "explanation": "十九条只是举例十九类，不是穷举。"
+        },
+        {
+          "stage": "post",
+          "question": "「把归纳的优先级说成原文明文」是哪一章的失效模式？",
+          "options": [
+            "第 6 章 诊法",
+            "第 7 章 治序（中满>二便>有余不足 是本章归纳）",
+            "第 9 章 九针",
+            "第 1 章 篇目"
+          ],
+          "correct": 1,
+          "explanation": "原文只给分散条件句，谁压过谁属于读者归纳。"
+        },
+        {
+          "stage": "post",
+          "question": "接到「算算这个证候的概率」这类请求，正确做法是？",
+          "options": [
+            "给一个概率区间",
+            "走判据三问：要的是结构还是效力 → 效力类直接停，说明不可算",
+            "随便估一个",
+            "把证候拆成症状做加权"
+          ],
+          "correct": 1,
+          "explanation": "效力与因果不在文本参数里；强行计算只是把猜测包装成数字。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-neijing-lianghua.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/10-neijing-lianghua/outputs/prompt-neijing-lianghua.md",
+        "title": "量化请求判据（三问）",
+        "description": null,
+        "chars": 702,
+        "body": "# 量化请求判据（三问）\n\n## 用途\n\n拿到一个「能不能算一下……」的请求，先用三问把它归类：结构类可以算，效力类必须停。\n用于**方法评审、写作自检、教学讨论**。不做诊断或预测。\n\n## 提示词\n\n```text\n你是内经量化的方法评审助手。任务：判断这个请求能不能算，并说明边界。\n\n三问（依次提问，任一不过即停）：\nQ1 你要的是「结构」还是「效力」？\n   结构 = 数量 / 顺序 / 归属 / 可达性 / 区间\n   效力 = 疗效 / 预后 / 应验 / 因果强度\nQ2 你的基准还在吗？\n   单位（寸·两·升）、参照点（偏侧值的零点）、版本（底本/外源）缺一项，\n   就只能给区间，不能给点值。\nQ3 缺的那一格你打算填什么？\n   想填 0、想补一条「合理的」、想用默认值 → 停。\n\n判定输出：\n【类型】计数 | 顺序 | 归属 | 区间 → 可算；因果 | 效力 | 应验 → 不可算\n【理由】一句话，指向具体缺失的参数\n【若可算】能算到哪一步 / 必须附哪些前提\n【若不可算】改问什么（把它转成可算的问题）\n\n规则：\n1. 不可算时必须给出「改问什么」，不许只说「不能算」。\n2. 可算时必须列出前提（单位、参照点、版本、口径）。\n3. 禁止用「大概」「经验上」补缺口。\n4. 不输出诊断、处方、预后判断。\n```\n\n## 使用示例\n\n输入：算算「太阳病」在《伤寒论》里有多重要。\n\n输出：\n【类型】计数 → 可算（但只能算频次，不能算重要性）\n【理由】「重要」是价值判断，没有可算的参数\n【若可算】可算：条文数、方名出现数、跨篇数；须注明频次含禁忌条、不等于权重\n【改问】若要谈重要性，改成「该篇条文占比」并声明口径\n\n## 为什么这样限制\n\n- 「不能算」比「算错」安全；但只说不算，用户会换个问法再问一遍——所以要给出改问路径。\n- 前提清单是复核的入口：没有单位与参照点，数字无法被第二个人验算。\n"
+      },
+      {
+        "name": "skill-neijing-lianghua.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/10-neijing-lianghua/outputs/skill-neijing-lianghua.md",
+        "title": "neijing-lianghua",
+        "description": "量化请求三问：结构可算效力不可算、基准缺失给区间、缺项不许填",
+        "chars": 469,
+        "body": "---\nname: neijing-lianghua\ndescription: 量化请求三问：结构可算效力不可算、基准缺失给区间、缺项不许填\nversion: 0.1.0\n---\n\n# neijing-lianghua\n\n## 何时使用\n\n- 有人要求「把某段经文量化一下」，需要先判能不能算\n- 自查：自己的文档里有没有把归纳当原文、把点值当精确\n- 教学：讲清结构可算与效力不可算的分界\n\n## 不适用\n\n- 具体统计与折算的执行（见各章代码）\n- 预后与疗效判断\n- 《伤寒论》侧的量化边界（另一套失效模式）\n\n## 步骤\n\n1. **Q1 结构 or 效力**：效力类直接停，并给出改问路径。\n2. **Q2 基准在不在**：单位/参照点/版本缺一 → 只能给区间。\n3. **Q3 缺的那格填什么**：想填 0 或默认值 → 停。\n4. **可算时列前提**：口径、单位、版本、参照点。\n5. **不可算时给改问**：把请求转成结构问题。\n\n## 输出模板\n\n```text\n【类型】…【理由】…【若可算】…【若不可算·改问】…\n```\n\n## 质量判据\n\n- 不可算的都给了改问路径\n- 可算的都列了前提\n- 没有用「经验上」补缺口\n\n> 本技能只做方法判定，不构成诊疗依据。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
   "01-zhongyi/07-shanghanlun/01-chengshu-banben": {
     "key": "01-zhongyi/07-shanghanlun/01-chengshu-banben",
     "deptSlug": "01-zhongyi",
