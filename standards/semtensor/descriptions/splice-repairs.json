@@ -1,0 +1,112 @@
+{
+  "$note": "证名拼接（splice）与病名对应的机器可读记录。这里只记『判定与方案』，不改 reference-units.json 的 label —— 命名层的改写留给语义张量层统一执行（用户 2026-10-19：后续中医药领域语义张量可自动纠正）。",
+  "schema": {
+    "uid": "reference-units.json 的 DSU uid",
+    "label": "当前 label（必须与 reference-units.json 逐字一致，check_splice_repairs.js 校验）",
+    "kind": "splice（证名拼接/病名错位）| disease-mapping（仅病名对应）| name-form（名称形态待校）",
+    "verdict": "confirmed（已确认，用户判定或教材证据充分）| pending（待决策）",
+    "relation": "cause-effect（构件间是病机因果链，不是并病）| concurrent（并病）| merge-of-patterns（教材两型合并转写）| none",
+    "proposed": "拆分/改名方案；applied=false 表示尚未写入数据层"
+  },
+  "upstream": {
+    "chain": [
+      "standards/semtensor/sources/母子父-三维极坐标语义球面-同步旋转.html —— DATA.units（116 unit，其中 dsu 103）",
+      "scripts/build_semtensor_datasets.js :: parseReferenceUnits() —— 原样取 uid/label/坐标，无改名逻辑",
+      "standards/semtensor/datasets/reference-units.json —— 逐字落库"
+    ],
+    "finding": "label 文本只存在于该 HTML 的 units 数组；中医知识树.xlsx 全 15 张表对 DSU-00101/00102 与四个构件词 0 命中 —— 上游没有更早的来源可校，拼接发生在这份『源实现交付物』里。",
+    "checkedAt": "2026-10-19",
+    "checkedBy": "grep 全 xlsx + 解析 HTML DATA + 读生成脚本"
+  },
+  "entries": [
+    {
+      "uid": "DSU-00101",
+      "label": "热毒犯肺、痰瘀阻络证(失荣/上石疽)",
+      "kind": "splice",
+      "verdict": "confirmed",
+      "relation": "cause-effect",
+      "components": ["热毒犯肺", "痰瘀阻络证"],
+      "relationWhy": "括注病名错位：证名属肺系（热毒犯肺为始动病机，痰瘀阻络是其后果），病名属颈部岩肿（失荣/上石疽 = 恶性淋巴瘤、颈部淋巴转移癌）。『、』在此不是并病，是病机因果链 —— 这正是文献里几乎不会出现该整串的原因。",
+      "diseaseAsIs": "失荣/上石疽（颈部岩肿）",
+      "diseaseCorrect": "支气管肺炎性哮喘（规范病名：哮喘性支气管肺炎；中医病名：肺炎喘嗽范畴）",
+      "userDecision": "用户 2026-10-19：热毒犯肺,痰瘀阻络证 ≈ 支气管肺炎性哮喘；且『热毒犯肺』导致『痰瘀阻络证』（consequence）。",
+      "evidence": {
+        "nameNotInShirong": [
+          "《中医外科学》总表 2018 · 失荣证型：气郁痰结/阴毒结聚/瘀毒化热/气血两亏（https://www.zhonghuayiyuan.com/wp-content/uploads/2019/01/中医外科学总表-2018年.pdf）",
+          "中华中医药学会/百科·失荣：颈部肿块坚硬如石，相当于颈部原发性恶性肿瘤（已在 external.json）"
+        ],
+        "nameInLungDisease": [
+          "放射性肺损伤：『病机为热毒犯肺』（http://wap.istpei.com/p-42765）",
+          "乳腺癌放疗相关肺损伤：放射性肺损伤急性期可分为热毒犯肺、痰热郁肺…（https://www.cancer361.com/cancer_type/breast_cancer/care/2025-05-28/11920.html）",
+          "小儿肺炎：病理因素为『热、痰、毒、虚、瘀』，重症见痰热闭肺/毒热闭肺（https://www.cacm.org.cn/spskl/item/?item_id=10035）",
+          "支气管肺炎=肺炎喘嗽，指南证型含毒热闭肺证、痰热闭肺证（https://pdf.hanspub.org/tcm_2273726.pdf）"
+        ],
+        "formNote": "指南用的是『毒热闭肺证』，不是『热毒犯肺证』；儿科肺炎标准证型无『痰瘀阻络』（对应位是『痰热闭肺』）。即构件词本身也非规范名，属命名层待校。"
+      },
+      "evidenceProblem": "改名后原 6 条来源（失荣/石疽/淋巴瘤）全部不对题 —— 不能平移，必须清空重查。这是本次不直接改名的第二个原因。",
+      "proposed": {
+        "option": "A",
+        "applied": false,
+        "summary": "不拆名：保留单条 DSU，病名改为『哮喘性支气管肺炎』，加 relation=cause-effect，证据口径改为『同一病种内 因、果各有一源 = 达标』（与并病同级、单列 bucket，不与整串级合并）。",
+        "labels": ["热毒犯肺、痰瘀阻络证(哮喘性支气管肺炎)"],
+        "edges": [{ "from": "热毒犯肺", "type": "causes", "to": "痰瘀阻络证" }],
+        "impact": "证名数不变（96）；external.json 该 label 需改名并重新入队取证"
+      },
+      "alternative": {
+        "option": "B",
+        "summary": "拆成两条 DSU：热毒犯肺证(哮喘性支气管肺炎) + 痰瘀阻络证(哮喘性支气管肺炎)，边 causes",
+        "impact": "DSU 103→104、证名 96→97；两条新条目都要从零取证；覆盖分母全变，历史批次数字不可比"
+      }
+    },
+    {
+      "uid": "DSU-00102",
+      "label": "痰气交阻、瘀毒凝结证(石瘿)",
+      "kind": "splice",
+      "verdict": "pending",
+      "relation": "merge-of-patterns",
+      "components": ["痰气交阻", "瘀毒凝结证"],
+      "relationWhy": "病名（石瘿）对题，问题在证名：两套教材证型被合并转写 —— 痰气交阻←痰郁气结/痰凝毒聚，瘀毒凝结←毒热蕴结/瘀热伤阴。三套分型里都没有『瘀毒凝结』。",
+      "diseaseAsIs": "石瘿（甲状腺癌）",
+      "diseaseCorrect": "石瘿（甲状腺癌）—— 病名不变",
+      "userDecision": "用户 2026-10-19 未给本条病名映射；按待决策处理。",
+      "evidence": {
+        "textbookPatterns": [
+          "《中医外科学》体例：痰凝毒聚/痰郁气结/毒热蕴结/瘀热伤阴（https://www.zyqjg.com/portal.php?mod=view&aid=678）",
+          "人卫《中医外科学》总表 2018：痰瘀内结/瘀热伤阴",
+          "综述 6 型：痰瘀互结/肝郁气滞/瘀热伤阴/气血两虚/气阴两虚/脾肾阳虚（https://cancer361.com/cancer_type/thyroid%20cancer/drug/2025-02-14/11162.html）"
+        ],
+        "nearMiss": [
+          "瘀毒内结（蔡小平，甲状腺癌）——同义近形，非原词",
+          "瘀毒凝结不散（潘敏求·非霍奇金淋巴瘤）——原词但病种不对"
+        ]
+      },
+      "proposed": {
+        "option": "B",
+        "applied": false,
+        "summary": "拆成两条并回教材名，或二选一：①按现名拆 痰气交阻证(石瘿)/瘀毒凝结证(石瘿)；②按教材回改 痰郁气结证(石瘿)/毒热蕴结证(石瘿)。建议②——回改到有出处的名称，语义张量层才好对齐。",
+        "labels": ["痰郁气结证(石瘿)", "毒热蕴结证(石瘿)"],
+        "edges": [],
+        "impact": "证名 96→97；新两条需从零取证（教材来源可直接用，已有 2 条石瘿教材来源可复用）"
+      }
+    },
+    {
+      "uid": "DSU-00042",
+      "label": "真心痛（阳衰血瘀）证",
+      "kind": "disease-mapping",
+      "verdict": "confirmed",
+      "relation": "none",
+      "components": ["真心痛证"],
+      "formNote": "口径把「（阳衰血瘀）」按括注剔除（lib_evidence_scope.componentsOf 的正则对全角括号一视同仁），所以判定只认「真心痛证」，'阳衰血瘀' 不参与构件判定 —— 这正是本条 scope=single 的原因。若要它参与，得把病性写成无括号形式，属命名层改动。",
+      "diseaseAsIs": "无括注（证名内含『真心痛』为病名）",
+      "diseaseCorrect": "心肌梗死（急性心肌梗死）；『阳衰血瘀』对应心梗出现亡阳厥脱（心源性休克/心衰）的阶段",
+      "userDecision": "用户 2026-10-19：真心痛（阳衰血瘀）证 ≈ 心肌梗死。",
+      "evidence": {
+        "fromEntry": [
+          "百科·真心痛：『相关西医疾病 心肌梗死』；『若心肾阳虚…亡阳厥脱、亡阴厥脱(心源性休克)』（https://baike.baidu.com/item/真心痛/326913）",
+          "中华中医药学会·心肌梗死：『瘀血闭阻心脉…而发为真心痛；心肾阳衰』（https://www.cacm.org.cn/spskl/item/?item_id=10051）"
+        ]
+      },
+      "proposed": { "option": "none", "applied": false, "summary": "不拆不改名。scope=single，已计入整串覆盖；只需在病名对应表登记（本文件即登记处）。", "labels": [], "edges": [] }
+    }
+  ]
+}
