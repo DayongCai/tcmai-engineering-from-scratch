@@ -2,7 +2,7 @@
 
 > 本章节由 `scripts/build_outputs_index.js` **生成**，请勿手改；重跑脚本同步。
 
-> **56** 件产出物 · 覆盖 **28** 个章节 · prompt 28 · skill 28
+> **62** 件产出物 · 覆盖 **31** 个章节 · prompt 31 · skill 31
 
 ## 这是什么
 
@@ -23,7 +23,7 @@
 | --- | --- | --- | :-: |
 | ☯️ 中医系 | 中医基础理论 | 3 | 6 |
 | ☯️ 中医系 | 中医诊断学 | 1 | 2 |
-| ☯️ 中医系 | 内经选读 | 6 | 12 |
+| ☯️ 中医系 | 内经选读 | 9 | 18 |
 | ☯️ 中医系 | 伤寒论 | 11 | 22 |
 | 🌾 中药系 | 中药学 | 1 | 2 |
 | 🪡 针灸系 | 腧穴学 | 1 | 2 |
@@ -81,7 +81,7 @@
 
 ### 内经选读
 
-> Core · 第 3 学期 · 已产出 6 章
+> Core · 第 3 学期 · 已产出 9 章
 
 #### 第 1 章 · 《黄帝内经》成书与文本结构：162 篇不是一个整体
 
@@ -110,6 +110,15 @@
 | prompt | 藏象五元组抽取助手 | — | 637 | [`prompt-zangxiang-xitong.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/03-zangxiang-xitong/outputs/prompt-zangxiang-xitong.md) |
 | skill | zangxiang-xitong | 抽藏象五元组（本/华/充/阴阳位/通于），剥离校勘夹注并标注不规则句式 | 514 | [`skill-zangxiang-xitong.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/03-zangxiang-xitong/outputs/skill-zangxiang-xitong.md) |
 
+#### 第 4 章 · 经脉别论：两条路径、一个汇点、一个测点
+
+`06-neijing-xuandu/chapters/04-jingmai-bielun/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 经文路径图助手（气血水液） | — | 684 | [`prompt-jingmai-bielun.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/04-jingmai-bielun/outputs/prompt-jingmai-bielun.md) |
+| skill | jingmai-bielun | 气血水液路径图：逐边附原句、拓扑排序验无环、分清汇点与测点 | 495 | [`skill-jingmai-bielun.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/04-jingmai-bielun/outputs/skill-jingmai-bielun.md) |
+
 #### 第 5 章 · 病机十九条：十九句话里，五脏只占五条
 
 `06-neijing-xuandu/chapters/05-bingji-shijiu/`
@@ -127,6 +136,24 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 诊法条件记录助手 | — | 657 | [`prompt-zhenfa-maiyao.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/06-zhenfa-maiyao/outputs/prompt-zhenfa-maiyao.md) |
 | skill | zhenfa-maiyao | 脉诊采集条件核对：逐条判原文四条件、单列补充项、不作废也不换算 | 500 | [`skill-zhenfa-maiyao.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/06-zhenfa-maiyao/outputs/skill-zhenfa-maiyao.md) |
+
+#### 第 7 章 · 治则与标本：先治哪一个，原文给的是决策表不是口号
+
+`06-neijing-xuandu/chapters/07-zhize-biaoben/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 治序判定（标本先后） | — | 767 | [`prompt-zhize-biaoben.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/07-zhize-biaoben/outputs/prompt-zhize-biaoben.md) |
+| skill | zhize-biaoben | 标本治序判定：命中清单、特例优先、信息不足不猜、反治附辨 | 462 | [`skill-zhize-biaoben.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/07-zhize-biaoben/outputs/skill-zhize-biaoben.md) |
+
+#### 第 8 章 · 运气七篇：把「天时」变成一张可复算的表
+
+`06-neijing-xuandu/chapters/08-lunqi-qipian/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 运气推演助手（干支 → 五运六气） | — | 793 | [`prompt-lunqi-qipian.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/08-lunqi-qipian/outputs/prompt-lunqi-qipian.md) |
+| skill | lunqi-qipian | 运气推演：干支推五运六气与天符，锚点先行，不输出宜忌 | 453 | [`skill-lunqi-qipian.md`](../departments/01-zhongyi/06-neijing-xuandu/chapters/08-lunqi-qipian/outputs/skill-lunqi-qipian.md) |
 
 #### 第 9 章 · 《灵枢·九针十二原》：九种针不是九种型号
 

@@ -110,7 +110,7 @@ window.TCMAI_DATA = {
     "hours": 7596,
     "semesters": 10,
     "stages": 5,
-    "chaptersBuilt": 28,
+    "chaptersBuilt": 31,
     "subjectsDone": 0,
     "subjectsWip": 11,
     "subjectsPlanned": 109,
@@ -1475,8 +1475,8 @@ window.TCMAI_DATA = {
           "stage": "sheng",
           "hours": 72,
           "chaptersTarget": 10,
-          "chaptersBuilt": 6,
-          "pct": 60,
+          "chaptersBuilt": 9,
+          "pct": 90,
           "status": "wip",
           "glyph": "🚧",
           "bridge": "原文→语料库 / 条文检索→向量检索",
@@ -5433,7 +5433,7 @@ window.TCMAI_DATA = {
         "n": 4,
         "slug": "04-jingmai-bielun",
         "title": "经脉别论与气血循环",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 5,
@@ -5451,13 +5451,13 @@ window.TCMAI_DATA = {
         "n": 7,
         "slug": "07-zhize-biaoben",
         "title": "治则与标本：决策顺序",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-lunqi-qipian",
         "title": "运气七篇：周期与外部变量",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 9,

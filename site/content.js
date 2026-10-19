@@ -835,6 +835,124 @@ window.TCMAI_CONTENT = {
     "video": null,
     "videoPoster": null
   },
+  "01-zhongyi/06-neijing-xuandu/04-jingmai-bielun": {
+    "key": "01-zhongyi/06-neijing-xuandu/04-jingmai-bielun",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "06-neijing-xuandu",
+    "subjectTitle": "内经选读",
+    "chapterSlug": "04-jingmai-bielun",
+    "n": 4,
+    "title": "第 4 章 · 经脉别论：两条路径、一个汇点、一个测点",
+    "motto": "「食气入胃，散精于肝，淫气于筋。」——《素问·经脉别论》",
+    "problem": "你能背「脾胃为后天之本」，但说不清「气从口进去，走到哪儿、从哪里出去」。让你画一张循环图，你画成闭环——原文其实给的是**两条单向路径**，而且只在两个地方汇合。",
+    "roots": "环境逼迫(要讲清气血运行) + 知识积累(原文逐句建图 = 知道哪个节点是「汇点」、哪个是「测点」)",
+    "html": "<h1 id=\"第-4-章-经脉别论-两条路径-一个汇点-一个测点\">第 4 章 · 经脉别论：两条路径、一个汇点、一个测点</h1>\n<blockquote><p><strong>MOTTO:</strong> 「食气入胃，散精于肝，淫气于筋。」——《素问·经脉别论》</p>\n<p><strong>PROBLEM:</strong> 你能背「脾胃为后天之本」，但说不清「气从口进去，走到哪儿、从哪里出去」。让你画一张循环图，你画成闭环——原文其实给的是<strong>两条单向路径</strong>，而且只在两个地方汇合。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(要讲清气血运行) + 知识积累(原文逐句建图 = 知道哪个节点是「汇点」、哪个是「测点」)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>内经选读</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>04 / 10</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>逐句把「食气」与「饮入」两条路径还原成有向图，指出各自的终点</li><li>说出「肺朝百脉」在图里的位置：它不是一个器官，是一个<strong>汇点</strong></li><li>解释「气口成寸，以决死生」在工程上意味着什么：把全身状态压缩到一个测点</li><li>用拓扑排序证明两条路径无环，并说明这与「循环」叙事的差别</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"路径一-食气-固体饮食的精微\">路径一：食气（固体饮食的精微）</h3>\n<blockquote><p>食气入胃，散精于肝，淫气于筋。食气入胃，浊气归心，淫精于脉。脉气流经，经气归于肺，肺朝百脉，输精于皮毛。毛脉合精，行气于腑，腑精神明，留于四脏，气归于权衡。权衡以平，气口成寸，以决死生。——《素问·经脉别论》</p></blockquote>\n<p>拆成边：</p>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">text</div><pre><code class=\"lang-text\">胃 → 肝 → 筋          （散精、淫气）\n胃 → 心 → 脉          （浊气归心、淫精于脉）\n脉 → 经 → 肺          （脉气流经，经气归于肺）\n肺 → 皮毛             （肺朝百脉，输精于皮毛）\n皮毛/脉 → 腑 → 四脏    （毛脉合精，行气于腑，留于四脏）\n四脏 → 权衡 → 气口     （气归于权衡，气口成寸）</code></pre></div>\n<p>注意「肺朝百脉」这句常被讲成「肺主管全身血脉」，但在这一段的语法里，它是<strong>脉→经→肺</strong>这条边的终点：所有脉气都要经过肺，再从肺输到皮毛。</p>\n<h3 id=\"路径二-饮入-水液\">路径二：饮入（水液）</h3>\n<blockquote><p>饮入于胃，游溢精气，上输于脾，脾气散精，上归于肺，通调水道，下输膀胱，水精四布，五经并行，合于四时五脏阴阳，揆度以为常也。——《素问·经脉别论》</p></blockquote>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">text</div><pre><code class=\"lang-text\">胃 → 脾 → 肺 → 膀胱 → 水精四布 → 五经并行</code></pre></div>\n<p>两条路径的<strong>唯一公共节点是肺</strong>（食气：经→肺；饮入：脾→肺）。这就是「肺为水之上源」的原文依据——不是比喻，是图上的一个属性：肺是两条路径的必经点。</p>\n<h3 id=\"汇点与测点-不是一回事\">汇点与测点，不是一回事</h3>\n<ul><li><strong>汇点（肺）</strong>：两条路径在此合并，之后分成「皮毛」与「水道」两路输出。</li><li><strong>测点（气口）</strong>：原文最后落到「气归于权衡，权衡以平，气口成寸，以决死生」。这是把全身状态<strong>压缩到一个可触的读数点</strong>。</li></ul>\n<p>工程上这是两件不同的事：汇点是网络拓扑属性，测点是一个<strong>观测假设</strong>——假设气口这一处的状态足以推断全局。本章只做图，不评判这个假设；但要标出来，因为它是后世「独取寸口」的理论起点，也是它的全部风险所在。</p>\n<h3 id=\"生病起于过用\">「生病起于过用」</h3>\n<p>同一篇还有一句常被单独引用的话：</p>\n<blockquote><p>生病起于过用，此为常也。——《素问·经脉别论》</p></blockquote>\n<p>它在这段语境里紧跟「饮食饱甚、汗出于胃；惊而夺精，汗出于心；持重远行，汗出于肾……」等一串「过用则某脏之液外泄」的列举。也就是说，「过用」不是泛泛的「过度」，而是<strong>有具体出口的</strong>：每一种过用，都有一个对应的「汗出于某处」。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js\nEDGES_FOOD / EDGES_DRINK   // 从原文逐句抽出的边（含原句依据）\nbuildGraph(edges)          // 邻接表 + 入度\ntopoSort(graph)            // 拓扑排序：无环则返回序列，有环则抛错\nconvergence(a, b)          // 两条路径的可达节点交集 = 汇点\nsources/sinks              // 起点与终点</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：两条路径均可拓扑排序（无环）；<code>convergence</code> 返回 <code>['肺']</code>（唯一汇点）；食气路径的 sink 含「气口」，饮入路径的 sink 含「五经并行」；若人为加一条 <code>肺 → 胃</code> 的边，<code>topoSort</code> 必须抛错（环检测有效）。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>图是文本图，不是解剖图</strong>。「肝」「心」「肺」在这里是功能节点，不能与器官血管一一对应。</li><li><strong>边只取本篇原句</strong>，不掺后世「经络循行」的完整路线（那在《灵枢·经脉》，是另一套文本）。</li><li><strong>无环 ≠ 生理闭环</strong>。原文这里是「入口→出口」的流向叙述；真正的循环叙事要靠心脉与经络篇合并，本章不做这个合并。</li><li><strong>测点假设未被验证</strong>。「气口决死生」是原文主张，本章只标注它是假设，不提供任何验证数据。</li><li>「过用」的具体对应（汗出于某脏）本章未建表——那需要逐条核对，留作练习。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 引文引自 <code>standards/materials/neijing-quanwen/</code>（源 <code>黄帝内经全文.xls</code>，可复核，篇名到篇级）；本章为文本结构分析，不构成诊断或治疗依据。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>把「汗出于胃/心/肾」那串列举建成一张「过用 → 出口」表，说明它和本章两条路径的关系。</li><li>若在饮入路径加一条 <code>膀胱 → 肺</code> 的边（蒸腾气化），图会成环吗？成环后拓扑排序还能用吗？</li><li>「气口成寸」这个测点假设，如果要用数据检验，最少需要哪几类观测？</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>「肺朝百脉」四个字，被引用得比它所在的整段多得多。单独引用时它像一句宣言；放回段落，它只是一条边的方向说明——<strong>经典的力量常常来自上下文，而不是金句</strong>。</p>",
+    "markdown": "# 第 4 章 · 经脉别论：两条路径、一个汇点、一个测点\n\n> **MOTTO:** 「食气入胃，散精于肝，淫气于筋。」——《素问·经脉别论》\n>\n> **PROBLEM:** 你能背「脾胃为后天之本」，但说不清「气从口进去，走到哪儿、从哪里出去」。让你画一张循环图，你画成闭环——原文其实给的是**两条单向路径**，而且只在两个地方汇合。\n>\n> **双根因定位:** 环境逼迫(要讲清气血运行) + 知识积累(原文逐句建图 = 知道哪个节点是「汇点」、哪个是「测点」)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 内经选读 |\n| 院系 | 中医系 |\n| 章序号 | 04 / 10 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 逐句把「食气」与「饮入」两条路径还原成有向图，指出各自的终点\n- 说出「肺朝百脉」在图里的位置：它不是一个器官，是一个**汇点**\n- 解释「气口成寸，以决死生」在工程上意味着什么：把全身状态压缩到一个测点\n- 用拓扑排序证明两条路径无环，并说明这与「循环」叙事的差别\n\n## 核心概念\n\n### 路径一：食气（固体饮食的精微）\n\n> 食气入胃，散精于肝，淫气于筋。食气入胃，浊气归心，淫精于脉。脉气流经，经气归于肺，肺朝百脉，输精于皮毛。毛脉合精，行气于腑，腑精神明，留于四脏，气归于权衡。权衡以平，气口成寸，以决死生。——《素问·经脉别论》\n\n拆成边：\n\n```\n胃 → 肝 → 筋          （散精、淫气）\n胃 → 心 → 脉          （浊气归心、淫精于脉）\n脉 → 经 → 肺          （脉气流经，经气归于肺）\n肺 → 皮毛             （肺朝百脉，输精于皮毛）\n皮毛/脉 → 腑 → 四脏    （毛脉合精，行气于腑，留于四脏）\n四脏 → 权衡 → 气口     （气归于权衡，气口成寸）\n```\n\n注意「肺朝百脉」这句常被讲成「肺主管全身血脉」，但在这一段的语法里，它是**脉→经→肺**这条边的终点：所有脉气都要经过肺，再从肺输到皮毛。\n\n### 路径二：饮入（水液）\n\n> 饮入于胃，游溢精气，上输于脾，脾气散精，上归于肺，通调水道，下输膀胱，水精四布，五经并行，合于四时五脏阴阳，揆度以为常也。——《素问·经脉别论》\n\n```\n胃 → 脾 → 肺 → 膀胱 → 水精四布 → 五经并行\n```\n\n两条路径的**唯一公共节点是肺**（食气：经→肺；饮入：脾→肺）。这就是「肺为水之上源」的原文依据——不是比喻，是图上的一个属性：肺是两条路径的必经点。\n\n### 汇点与测点，不是一回事\n\n- **汇点（肺）**：两条路径在此合并，之后分成「皮毛」与「水道」两路输出。\n- **测点（气口）**：原文最后落到「气归于权衡，权衡以平，气口成寸，以决死生」。这是把全身状态**压缩到一个可触的读数点**。\n\n工程上这是两件不同的事：汇点是网络拓扑属性，测点是一个**观测假设**——假设气口这一处的状态足以推断全局。本章只做图，不评判这个假设；但要标出来，因为它是后世「独取寸口」的理论起点，也是它的全部风险所在。\n\n### 「生病起于过用」\n\n同一篇还有一句常被单独引用的话：\n\n> 生病起于过用，此为常也。——《素问·经脉别论》\n\n它在这段语境里紧跟「饮食饱甚、汗出于胃；惊而夺精，汗出于心；持重远行，汗出于肾……」等一串「过用则某脏之液外泄」的列举。也就是说，「过用」不是泛泛的「过度」，而是**有具体出口的**：每一种过用，都有一个对应的「汗出于某处」。\n\n## BUILD IT：从零实现\n\n```js\n// code/main.js\nEDGES_FOOD / EDGES_DRINK   // 从原文逐句抽出的边（含原句依据）\nbuildGraph(edges)          // 邻接表 + 入度\ntopoSort(graph)            // 拓扑排序：无环则返回序列，有环则抛错\nconvergence(a, b)          // 两条路径的可达节点交集 = 汇点\nsources/sinks              // 起点与终点\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：两条路径均可拓扑排序（无环）；`convergence` 返回 `['肺']`（唯一汇点）；食气路径的 sink 含「气口」，饮入路径的 sink 含「五经并行」；若人为加一条 `肺 → 胃` 的边，`topoSort` 必须抛错（环检测有效）。\n\n## 代价与边界\n\n- **图是文本图，不是解剖图**。「肝」「心」「肺」在这里是功能节点，不能与器官血管一一对应。\n- **边只取本篇原句**，不掺后世「经络循行」的完整路线（那在《灵枢·经脉》，是另一套文本）。\n- **无环 ≠ 生理闭环**。原文这里是「入口→出口」的流向叙述；真正的循环叙事要靠心脉与经络篇合并，本章不做这个合并。\n- **测点假设未被验证**。「气口决死生」是原文主张，本章只标注它是假设，不提供任何验证数据。\n- 「过用」的具体对应（汗出于某脏）本章未建表——那需要逐条核对，留作练习。\n\n> **免责声明：** 引文引自 `standards/materials/neijing-quanwen/`（源 `黄帝内经全文.xls`，可复核，篇名到篇级）；本章为文本结构分析，不构成诊断或治疗依据。\n\n## 练习\n\n1. 把「汗出于胃/心/肾」那串列举建成一张「过用 → 出口」表，说明它和本章两条路径的关系。\n2. 若在饮入路径加一条 `膀胱 → 肺` 的边（蒸腾气化），图会成环吗？成环后拓扑排序还能用吗？\n3. 「气口成寸」这个测点假设，如果要用数据检验，最少需要哪几类观测？\n\n## 进阶思考\n\n「肺朝百脉」四个字，被引用得比它所在的整段多得多。单独引用时它像一句宣言；放回段落，它只是一条边的方向说明——**经典的力量常常来自上下文，而不是金句**。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 经脉别论的路径图：「食气」与「饮入」两条单向路径 → 拓扑排序 + 汇点\n *\n *   node code/main.js\n *\n * 口径：\n *   · 边逐句取自《素问·经脉别论》原文，每条边带原句依据（quote）。\n *   · 只收本篇出现的节点；不掺《灵枢·经脉》的经络循行（不同文本，不合并）。\n *   · 拓扑排序用来证明「这两段是流向叙述，不是闭环」；有人为加环则必须抛错。\n *   · 汇点 = 两条路径可达节点集的交集，是拓扑属性，不是功能结论。\n */\n\n/** 食气路径（固体饮食之精） */\nconst EDGES_FOOD = [\n  { from: '胃', to: '肝', quote: '食气入胃，散精于肝' },\n  { from: '肝', to: '筋', quote: '淫气于筋' },\n  { from: '胃', to: '心', quote: '食气入胃，浊气归心' },\n  { from: '心', to: '脉', quote: '淫精于脉' },\n  { from: '脉', to: '经', quote: '脉气流经' },\n  { from: '经', to: '肺', quote: '经气归于肺' },\n  { from: '肺', to: '皮毛', quote: '肺朝百脉，输精于皮毛' },\n  { from: '皮毛', to: '腑', quote: '毛脉合精，行气于腑' },\n  { from: '腑', to: '四脏', quote: '腑精神明，留于四脏' },\n  { from: '四脏', to: '权衡', quote: '气归于权衡' },\n  { from: '权衡', to: '气口', quote: '权衡以平，气口成寸，以决死生' },\n];\n\n/** 饮入路径（水液） */\nconst EDGES_DRINK = [\n  { from: '胃', to: '脾', quote: '饮入于胃，游溢精气，上输于脾' },\n  { from: '脾', to: '肺', quote: '脾气散精，上归于肺' },\n  { from: '肺', to: '膀胱', quote: '通调水道，下输膀胱' },\n  { from: '膀胱', to: '水精四布', quote: '水精四布' },\n  { from: '水精四布', to: '五经并行', quote: '五经并行' },\n];\n\nfunction buildGraph(edges) {\n  const adj = new Map();\n  const indeg = new Map();\n  const add = (n) => {\n    if (!adj.has(n)) { adj.set(n, []); indeg.set(n, 0); }\n  };\n  for (const e of edges) {\n    add(e.from); add(e.to);\n    if (!adj.get(e.from).includes(e.to)) {\n      adj.get(e.from).push(e.to);\n      indeg.set(e.to, indeg.get(e.to) + 1);\n    }\n  }\n  return { adj, indeg };\n}\n\n/** 拓扑排序：有环直接抛错（本章用它证明「无环」） */\nfunction topoSort(edges) {\n  const { adj, indeg } = buildGraph(edges);\n  const deg = new Map(indeg);\n  const q = [...deg.entries()].filter(([, d]) => d === 0).map(([n]) => n);\n  const order = [];\n  while (q.length) {\n    const n = q.shift();\n    order.push(n);\n    for (const m of adj.get(n)) {\n      deg.set(m, deg.get(m) - 1);\n      if (deg.get(m) === 0) q.push(m);\n    }\n  }\n  if (order.length !== deg.size) {\n    const left = [...deg.keys()].filter((n) => !order.includes(n));\n    throw new Error(`图中存在环，无法拓扑排序：${left.join('、')}`);\n  }\n  return order;\n}\n\n/** 可达集（BFS） */\nfunction reachable(edges, start) {\n  const { adj } = buildGraph(edges);\n  const seen = new Set();\n  const stack = [start];\n  while (stack.length) {\n    const n = stack.pop();\n    for (const m of adj.get(n) || []) {\n      if (!seen.has(m)) { seen.add(m); stack.push(m); }\n    }\n  }\n  seen.delete(start);\n  return seen;\n}\n\n/** 两路径的汇点（可达节点交集） */\nfunction convergence() {\n  const a = reachable(EDGES_FOOD, '胃');\n  const b = reachable(EDGES_DRINK, '胃');\n  return [...a].filter((n) => b.has(n)).sort();\n}\n\nfunction main() {\n  console.log('食气路径（拓扑序）：');\n  console.log('  ' + topoSort(EDGES_FOOD).join(' → '));\n  console.log('\\n饮入路径（拓扑序）：');\n  console.log('  ' + topoSort(EDGES_DRINK).join(' → '));\n\n  console.log('\\n汇点（两条路径都可达的节点）：');\n  console.log('  ' + convergence().join('、'));\n\n  const foodSinks = [...buildGraph(EDGES_FOOD).adj.entries()].filter(([, v]) => v.length === 0).map(([k]) => k);\n  const drinkSinks = [...buildGraph(EDGES_DRINK).adj.entries()].filter(([, v]) => v.length === 0).map(([k]) => k);\n  console.log(`\\n食气终点：${foodSinks.join('、')}`);\n  console.log(`饮入终点：${drinkSinks.join('、')}`);\n  console.log(`\\n边数：食气 ${EDGES_FOOD.length} 条 · 饮入 ${EDGES_DRINK.length} 条；每条边均带原文依据。`);\n  console.log('口径：文本图，非解剖图；不合并《灵枢·经脉》的循行路线。');\n  console.log('本输出为文本结构分析，不构成诊疗依据。');\n}\n\nif (require.main === module) main();\nmodule.exports = { EDGES_FOOD, EDGES_DRINK, buildGraph, topoSort, reachable, convergence };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { EDGES_FOOD, EDGES_DRINK, buildGraph, topoSort, convergence } = require('./main.js');\n\ntest('两条路径均无环，可拓扑排序', () => {\n  const f = topoSort(EDGES_FOOD);\n  const d = topoSort(EDGES_DRINK);\n  assert.strictEqual(f[0], '胃');\n  assert.strictEqual(d[0], '胃');\n  assert.ok(f.length >= 10, `食气节点 ${f.length}`);\n  assert.ok(d.length >= 5, `饮入节点 ${d.length}`);\n});\n\ntest('汇点唯一：肺（两条路径都必经）', () => {\n  assert.deepStrictEqual(convergence(), ['肺']);\n});\n\ntest('食气路径以「气口」为终点分支，且含「筋」这条支路', () => {\n  const { adj } = buildGraph(EDGES_FOOD);\n  const sinks = [...adj.entries()].filter(([, v]) => v.length === 0).map(([k]) => k).sort();\n  assert.deepStrictEqual(sinks, ['气口', '筋']);\n});\n\ntest('饮入路径终点是「五经并行」', () => {\n  const { adj } = buildGraph(EDGES_DRINK);\n  const sinks = [...adj.entries()].filter(([, v]) => v.length === 0).map(([k]) => k);\n  assert.deepStrictEqual(sinks, ['五经并行']);\n});\n\ntest('环检测有效：人为加「肺→胃」必须抛错', () => {\n  const bad = [...EDGES_DRINK, { from: '肺', to: '胃', quote: '（人为加边，用于验证环检测）' }];\n  assert.throws(() => topoSort(bad), /存在环/);\n});\n\ntest('每条边都带原文依据，不留\"凭记忆\"的边', () => {\n  for (const e of [...EDGES_FOOD, ...EDGES_DRINK]) {\n    assert.ok(e.from && e.to, JSON.stringify(e));\n    assert.ok(typeof e.quote === 'string' && e.quote.length >= 4, `缺依据：${e.from}→${e.to}`);\n  }\n});\n\ntest('边数与原材料一致：食气 11 · 饮入 5', () => {\n  assert.strictEqual(EDGES_FOOD.length, 11);\n  assert.strictEqual(EDGES_DRINK.length, 5);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "《经脉别论》「食气入胃，散精于肝」的下一句是？",
+          "options": [
+            "淫气于筋",
+            "浊气归心",
+            "上输于脾",
+            "气归于权衡"
+          ],
+          "correct": 0,
+          "explanation": "食气→肝→筋 是第一支；胃→心→脉 是第二支。"
+        },
+        {
+          "stage": "check",
+          "question": "「食气」与「饮入」两条路径的唯一公共节点是？",
+          "options": [
+            "胃",
+            "脾",
+            "肺",
+            "膀胱"
+          ],
+          "correct": 2,
+          "explanation": "食气经→肺，饮入脾→肺；这就是「肺为水之上源」的图论依据。"
+        },
+        {
+          "stage": "check",
+          "question": "「肺朝百脉」在本篇语境里的意思是？",
+          "options": [
+            "肺主管全身血脉的总纲",
+            "「脉→经→肺」这条边的方向说明：脉气都要经过肺",
+            "肺有百条经脉",
+            "肺与百脉互不相干"
+          ],
+          "correct": 1,
+          "explanation": "单独引用像宣言，放回段落只是边的方向。"
+        },
+        {
+          "stage": "check",
+          "question": "「气口成寸，以决死生」在工程上属于？",
+          "options": [
+            "拓扑属性",
+            "把全身状态压缩到一个测点的观测假设",
+            "解剖结论",
+            "药方"
+          ],
+          "correct": 1,
+          "explanation": "汇点（肺）是拓扑属性，测点（气口）是观测假设，两者不同。"
+        },
+        {
+          "stage": "post",
+          "question": "本章为何坚持「无环 ≠ 生理闭环」？",
+          "options": [
+            "因为原文有环",
+            "因为本篇给的是入口→出口的流向叙述，完整循环要靠心脉与经络篇合并",
+            "因为拓扑排序会失败",
+            "因为古人不懂循环"
+          ],
+          "correct": 1,
+          "explanation": "合并是另一件事，本章不做。"
+        },
+        {
+          "stage": "post",
+          "question": "「生病起于过用」在本篇语境中「过用」指？",
+          "options": [
+            "泛泛的过度",
+            "有具体出口的过用（如饮食饱甚则汗出于胃）",
+            "用药过量",
+            "情绪波动"
+          ],
+          "correct": 1,
+          "explanation": "它紧跟一串「汗出于某脏」的列举，过用是对应到出口的。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-jingmai-bielun.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/04-jingmai-bielun/outputs/prompt-jingmai-bielun.md",
+        "title": "经文路径图助手（气血水液）",
+        "description": null,
+        "chars": 684,
+        "body": "# 经文路径图助手（气血水液）\n\n## 用途\n\n把《内经》里讲「某物从哪进、经过哪、从哪出」的段落，还原成**有向图**，标出汇点与测点。\n用于**条文结构化、讲义配图、概念关系核对**。不做生理病理推论。\n\n## 提示词\n\n```text\n你是内经文本的结构化助手。下面是一段讲「运行路径」的原文。请只做三件事：抽边、排序、找汇点。\n\n规则：\n1. 每条边写成 A → B，并在 note 里附**原句片断**（逐字，不改写）；无原句依据的边一律不建。\n2. 只收本段出现的节点，不合并其他篇（如《灵枢·经脉》）的循行路线；若需合并，另开一图并声明。\n3. 做拓扑排序：若出现环，报「本段为闭环叙述」，不要强行排序。\n4. 区分两类特殊节点：\n   · 汇点 = 两条以上路径都可达的节点（拓扑属性）\n   · 测点 = 原文明确说「以此决/以此知」的节点（观测假设）\n5. 不许把功能节点等同于解剖器官，也不许补「现代生理对应」。\n\n输出格式：\n【边】A → B（原句：…）\n【拓扑序】…\n【汇点】…\n【测点】…\n【未建边】说明哪些关系原文未给、被拒绝建立\n```\n\n## 使用示例\n\n输入：《素问·经脉别论》「食气入胃…气口成寸，以决死生」+「饮入于胃…五经并行」。\n\n输出：【边】胃→肝（食气入胃，散精于肝）…（共 11 条）+ 饮入 5 条\n【拓扑序】胃→肝→心→筋→脉→经→肺→皮毛→腑→四脏→权衡→气口（食气）；胃→脾→肺→膀胱→水精四布→五经并行（饮入）\n【汇点】肺\n【测点】气口（权衡以平，气口成寸）\n【未建边】「膀胱→肺」的蒸腾未在本篇出现，未建\n\n## 为什么这样限制\n\n- 不附原句的边，是记忆不是文本；一张凭记忆画的图，无法被复核。\n- 汇点与测点混为一谈，就会把「测一个点能知全局」当成结构事实。\n"
+      },
+      {
+        "name": "skill-jingmai-bielun.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/04-jingmai-bielun/outputs/skill-jingmai-bielun.md",
+        "title": "jingmai-bielun",
+        "description": "气血水液路径图：逐边附原句、拓扑排序验无环、分清汇点与测点",
+        "chars": 495,
+        "body": "---\nname: jingmai-bielun\ndescription: 气血水液路径图：逐边附原句、拓扑排序验无环、分清汇点与测点\nversion: 0.1.0\n---\n\n# jingmai-bielun\n\n## 何时使用\n\n- 讲义要把「食气/饮入/营卫」这类运行叙述画成图\n- 核对某个「某脏主某」的说法是否在本篇有路径依据\n- 需要区分「结构上的必经点」与「原文指定的观测点」\n\n## 不适用\n\n- 经络循行的完整路线（《灵枢·经脉》，另一套文本）\n- 生理功能与现代解剖的对应\n- 诊断与治疗\n\n## 步骤\n\n1. **抽边**：A → B + 原句片断；无原句不建边。\n2. **限定节点**：只收本篇出现的节点，不跨篇合并。\n3. **拓扑排序**：有环即报「闭环叙述」，不强行排序。\n4. **标汇点**：多条路径可达的交集。\n5. **标测点**：原文说「以此决/以此知」的节点，单列。\n6. **列未建边**：明确拒绝建立的关系，防止后人误以为是原文所有。\n\n## 输出模板\n\n```text\n【边】A → B（原句：…）\n【拓扑序】…\n【汇点】…【测点】…【未建边】…\n```\n\n## 质量判据\n\n- 每条边有原句\n- 没有跨篇合并\n- 汇点与测点分开\n- 未建边有交代\n\n> 本技能只做文本结构分析，不构成诊疗依据。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
   "01-zhongyi/06-neijing-xuandu/05-bingji-shijiu": {
     "key": "01-zhongyi/06-neijing-xuandu/05-bingji-shijiu",
     "deptSlug": "01-zhongyi",
@@ -1066,6 +1184,242 @@ window.TCMAI_CONTENT = {
         "description": "脉诊采集条件核对：逐条判原文四条件、单列补充项、不作废也不换算",
         "chars": 500,
         "body": "---\nname: zhenfa-maiyao\ndescription: 脉诊采集条件核对：逐条判原文四条件、单列补充项、不作废也不换算\nversion: 0.1.0\n---\n\n# zhenfa-maiyao\n\n## 何时使用\n\n- 脉象记录需要说明「在什么条件下取得」\n- 随访比较前，检查两次采集条件是否可比\n- 教学：演示「平旦诊法」其实是一组控制变量\n\n## 不适用\n\n- 脉象判读与辨证（本技能只做条件）\n- 需要把条件差异「校正」掉（本章明确禁止换算）\n- 特殊人群（孕妇、危重）的采集判断（须医师决定）\n\n## 步骤\n\n1. **核四条件**：静息、未劳作、空腹、情绪平稳；平旦作为四项同时成立的时点参考。\n2. **写依据**：每条成立/不成立都要有可核的事实。\n3. **列补充项**：药物、体位、温度、吸烟等单列。\n4. **给建议**：偏差存在时，建议「记录后采集」，不作废。\n5. **标不可比**：与历史值比较时，列条件差异。\n\n## 输出模板\n\n```text\n【四条件】1) … 成立/不成立（依据）…\n【补充项】…\n【建议】…\n【不可比提示】…\n```\n\n## 质量判据\n\n- 每条判定都有依据\n- 没有「校正后的脉象」这种表述\n- 补充项没有被塞进原文四条件\n\n> 本技能输出为记录辅助，不构成诊断依据。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "01-zhongyi/06-neijing-xuandu/07-zhize-biaoben": {
+    "key": "01-zhongyi/06-neijing-xuandu/07-zhize-biaoben",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "06-neijing-xuandu",
+    "subjectTitle": "内经选读",
+    "chapterSlug": "07-zhize-biaoben",
+    "n": 7,
+    "title": "第 7 章 · 治则与标本：先治哪一个，原文给的是决策表不是口号",
+    "motto": "「病发而有余，本而标之，先治其本，后治其标；病发而不足，标而本之，先治其标，后治其本。」——《素问·标本病传论》",
+    "problem": "你会说「急则治标，缓则治本」，但真给你一个「脾虚又兼中满」的病人，你答不出先动哪一头——因为「急」「缓」是后人加的形容词，原文没这两个字，原文给的是**条件→顺序**的判定。",
+    "roots": "环境逼迫(临床必须决定先后) + 知识积累(逐条规则 × 优先级冲突 = 一张能执行的治序表)",
+    "html": "<h1 id=\"第-7-章-治则与标本-先治哪一个-原文给的是决策表不是口号\">第 7 章 · 治则与标本：先治哪一个，原文给的是决策表不是口号</h1>\n<blockquote><p><strong>MOTTO:</strong> 「病发而有余，本而标之，先治其本，后治其标；病发而不足，标而本之，先治其标，后治其本。」——《素问·标本病传论》</p>\n<p><strong>PROBLEM:</strong> 你会说「急则治标，缓则治本」，但真给你一个「脾虚又兼中满」的病人，你答不出先动哪一头——因为「急」「缓」是后人加的形容词，原文没这两个字，原文给的是<strong>条件→顺序</strong>的判定。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(临床必须决定先后) + 知识积累(逐条规则 × 优先级冲突 = 一张能执行的治序表)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>内经选读</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>07 / 10</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>逐条列出原文的「条件 → 治序」规则，不用「急/缓」这类原文没有的词</li><li>说明四条规则的优先级：中满与二便不利为什么能压过一般本标</li><li>区分「正治（逆）」与「反治（从）」，并说出「甚者从之」的适用条件</li><li>写一个治序判定器：多条规则同时命中时，报出<strong>哪条胜出、为什么</strong></li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"规则一-有余-不足\">规则一：有余 / 不足</h3>\n<blockquote><p>病发而有余，本而标之，先治其本，后治其标；病发而不足，标而本之，先治其标，后治其本。——《素问·标本病传论》</p></blockquote>\n<div class=\"table-wrap\"><table><thead><tr><th>条件</th><th>治序</th></tr></thead><tbody><tr><td>病发而<strong>有余</strong></td><td>先治其<strong>本</strong>，后治其标</td></tr><tr><td>病发而<strong>不足</strong></td><td>先治其<strong>标</strong>，后治其本</td></tr></tbody></table></div>\n<p>注意「本而标之」「标而本之」是<strong>动词用法</strong>：把本当作标来处理／把标当作本来处理。这句话被简化为「实则治本，虚则治标」时，动词的层次感就丢了。</p>\n<h3 id=\"规则二-中满\">规则二：中满</h3>\n<blockquote><p>先病而后生中满者治其标，先中满而后烦心者治其本。——《素问·标本病传论》</p></blockquote>\n<div class=\"table-wrap\"><table><thead><tr><th>条件</th><th>治序</th></tr></thead><tbody><tr><td>先有病，后生<strong>中满</strong></td><td>治其<strong>标</strong>（中满先处理）</td></tr><tr><td>先有<strong>中满</strong>，后生烦心</td><td>治其<strong>本</strong>（中满即本）</td></tr></tbody></table></div>\n<p>同一个症状（中满），因为<strong>出现顺序不同</strong>，标本身份就互换。这是全篇最锋利的一句：标与本不是固定的属性，是<strong>时序关系</strong>。</p>\n<h3 id=\"规则三-二便\">规则三：二便</h3>\n<blockquote><p>小大不利治其标，小大利治其本。——《素问·标本病传论》</p>\n<p>小大不利而后生病者，治其本。——《素问·标本病传论》</p></blockquote>\n<div class=\"table-wrap\"><table><thead><tr><th>条件</th><th>治序</th></tr></thead><tbody><tr><td>大小便<strong>不利</strong></td><td>治其<strong>标</strong>（先通）</td></tr><tr><td>大小便<strong>通利</strong></td><td>治其<strong>本</strong></td></tr><tr><td>二便不利<strong>之后</strong>才生病</td><td>治其<strong>本</strong>（二便是本）</td></tr></tbody></table></div>\n<p>又是时序：二便不利在先，它就是本。</p>\n<h3 id=\"优先级-为什么中满与二便能压过一般规则\">优先级：为什么中满与二便能压过一般规则</h3>\n<p>把三条规则放在一起，会冲突：一个「病发而有余」且「后生中满」的病人，规则一说先治本，规则二说先治标。原文的解法不是折中，而是<strong>特例优先</strong>：</p>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">text</div><pre><code class=\"lang-text\">优先级 1：中满（先病后中满）→ 治标\n优先级 2：小大不利 → 治标\n优先级 3：病发有余/不足 → 按规则一</code></pre></div>\n<p>理由在文本里：中满是「脾胃升降之中枢」受阻，二便是「出入之门户」不通——两者都会让后续治疗无法实施（药入不纳、邪无出路）。所以它们是<strong>前置条件</strong>，不是并列选项。</p>\n<h3 id=\"正治与反治\">正治与反治</h3>\n<blockquote><p>微者逆之，甚者从之。——《素问·至真要大论》</p>\n<p>寒者热之，热者寒之。——《素问·至真要大论》</p>\n<p>塞因塞用，通因通用，必伏其所主，而先其所因，其始则同，其终则异。——《素问·至真要大论》</p></blockquote>\n<div class=\"table-wrap\"><table><thead><tr><th>条件</th><th>治法</th><th>类型</th></tr></thead><tbody><tr><td>病势<strong>微</strong></td><td>逆其象（寒者热之、热者寒之）</td><td>正治</td></tr><tr><td>病势<strong>甚</strong></td><td>从其象（塞因塞用、通因通用）</td><td>反治</td></tr></tbody></table></div>\n<p>「其始则同，其终则异」是反治的判据：<strong>开头看起来顺着病象，结果与病象相反</strong>。所以反治不是「顺着治」，而是「用与表象同向的手段，达成与表象反向的结果」——这一句是分辨「反治」与「误治」的唯一标准。</p>\n<p>底本里能查到「塞因塞用，通因通用」，但<strong>查不到「热因热用」「寒因寒用」</strong>（本章实测：0 命中）。这两句是后世归纳的表述，引用时须标「后世」，不能标「《内经》云」。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js\nRULES        // 四条规则：条件函数 + 治序 + 原文依据 + 优先级\ndecide(state)     // 返回 {order, winner, allMatched, why}\nreverseType(x)    // 微 → 正治(逆)；甚 → 反治(从)</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>decide({有余:true})</code> → 先本后标；<code>decide({有余:true, 先病后中满:true})</code> → 先标后本，<code>winner === '中满'</code>（特例压过规则一）；<code>decide({小大不利:true, 有余:true})</code> → <code>winner === '二便'</code>；<code>reverseType('甚')</code> → <code>'反治'</code>。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>本章只做顺序，不做方药</strong>。治序不等于治法，更不等于处方。</li><li><strong>优先级是本章的读法，不是原文的明文</strong>。原文只给分散的条件句，谁压过谁是本章的归纳——已在表里标明「本章归纳」。</li><li><strong>「急则治标，缓则治本」未采用</strong>：原文无「急」「缓」二字，用它们解释会掩盖条件细节。</li><li><strong>「热因热用」「寒因寒用」在底本 0 命中</strong>，本章一律标为后世表述。</li><li>反治的适用需极强把握，误判即误治；本章代码只做分类，不给临床建议。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 引文引自 <code>standards/materials/neijing-quanwen/</code>（源 <code>黄帝内经全文.xls</code>，篇名到篇级）；本章为条文规则化演示，不构成诊疗依据。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>一个「病发而不足」又「小大不利」的病人，按本章优先级走哪条？给出你的理由，并说明与原文哪句冲突。</li><li>「先病而后生中满者治其标」——如果中满是先病，判据会不会反转？用原文另一句回答。</li><li>为「甚者从之」举一个「其始则同，其终则异」的例子，并说明如何避免与误治混淆。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>「急则治标」四个字流传最广，也最省事——它把一张条件表压缩成一个形容词，代价是丢掉了「中满」「二便」「先后」这些可判定的抓手。经典被记住的往往是最容易被误用的那一句。</p>",
+    "markdown": "# 第 7 章 · 治则与标本：先治哪一个，原文给的是决策表不是口号\n\n> **MOTTO:** 「病发而有余，本而标之，先治其本，后治其标；病发而不足，标而本之，先治其标，后治其本。」——《素问·标本病传论》\n>\n> **PROBLEM:** 你会说「急则治标，缓则治本」，但真给你一个「脾虚又兼中满」的病人，你答不出先动哪一头——因为「急」「缓」是后人加的形容词，原文没这两个字，原文给的是**条件→顺序**的判定。\n>\n> **双根因定位:** 环境逼迫(临床必须决定先后) + 知识积累(逐条规则 × 优先级冲突 = 一张能执行的治序表)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 内经选读 |\n| 院系 | 中医系 |\n| 章序号 | 07 / 10 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 逐条列出原文的「条件 → 治序」规则，不用「急/缓」这类原文没有的词\n- 说明四条规则的优先级：中满与二便不利为什么能压过一般本标\n- 区分「正治（逆）」与「反治（从）」，并说出「甚者从之」的适用条件\n- 写一个治序判定器：多条规则同时命中时，报出**哪条胜出、为什么**\n\n## 核心概念\n\n### 规则一：有余 / 不足\n\n> 病发而有余，本而标之，先治其本，后治其标；病发而不足，标而本之，先治其标，后治其本。——《素问·标本病传论》\n\n| 条件 | 治序 |\n|---|---|\n| 病发而**有余** | 先治其**本**，后治其标 |\n| 病发而**不足** | 先治其**标**，后治其本 |\n\n注意「本而标之」「标而本之」是**动词用法**：把本当作标来处理／把标当作本来处理。这句话被简化为「实则治本，虚则治标」时，动词的层次感就丢了。\n\n### 规则二：中满\n\n> 先病而后生中满者治其标，先中满而后烦心者治其本。——《素问·标本病传论》\n\n| 条件 | 治序 |\n|---|---|\n| 先有病，后生**中满** | 治其**标**（中满先处理） |\n| 先有**中满**，后生烦心 | 治其**本**（中满即本） |\n\n同一个症状（中满），因为**出现顺序不同**，标本身份就互换。这是全篇最锋利的一句：标与本不是固定的属性，是**时序关系**。\n\n### 规则三：二便\n\n> 小大不利治其标，小大利治其本。——《素问·标本病传论》\n>\n> 小大不利而后生病者，治其本。——《素问·标本病传论》\n\n| 条件 | 治序 |\n|---|---|\n| 大小便**不利** | 治其**标**（先通） |\n| 大小便**通利** | 治其**本** |\n| 二便不利**之后**才生病 | 治其**本**（二便是本） |\n\n又是时序：二便不利在先，它就是本。\n\n### 优先级：为什么中满与二便能压过一般规则\n\n把三条规则放在一起，会冲突：一个「病发而有余」且「后生中满」的病人，规则一说先治本，规则二说先治标。原文的解法不是折中，而是**特例优先**：\n\n```\n优先级 1：中满（先病后中满）→ 治标\n优先级 2：小大不利 → 治标\n优先级 3：病发有余/不足 → 按规则一\n```\n\n理由在文本里：中满是「脾胃升降之中枢」受阻，二便是「出入之门户」不通——两者都会让后续治疗无法实施（药入不纳、邪无出路）。所以它们是**前置条件**，不是并列选项。\n\n### 正治与反治\n\n> 微者逆之，甚者从之。——《素问·至真要大论》\n>\n> 寒者热之，热者寒之。——《素问·至真要大论》\n>\n> 塞因塞用，通因通用，必伏其所主，而先其所因，其始则同，其终则异。——《素问·至真要大论》\n\n| 条件 | 治法 | 类型 |\n|---|---|---|\n| 病势**微** | 逆其象（寒者热之、热者寒之） | 正治 |\n| 病势**甚** | 从其象（塞因塞用、通因通用） | 反治 |\n\n「其始则同，其终则异」是反治的判据：**开头看起来顺着病象，结果与病象相反**。所以反治不是「顺着治」，而是「用与表象同向的手段，达成与表象反向的结果」——这一句是分辨「反治」与「误治」的唯一标准。\n\n底本里能查到「塞因塞用，通因通用」，但**查不到「热因热用」「寒因寒用」**（本章实测：0 命中）。这两句是后世归纳的表述，引用时须标「后世」，不能标「《内经》云」。\n\n## BUILD IT：从零实现\n\n```js\n// code/main.js\nRULES        // 四条规则：条件函数 + 治序 + 原文依据 + 优先级\ndecide(state)     // 返回 {order, winner, allMatched, why}\nreverseType(x)    // 微 → 正治(逆)；甚 → 反治(从)\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：`decide({有余:true})` → 先本后标；`decide({有余:true, 先病后中满:true})` → 先标后本，`winner === '中满'`（特例压过规则一）；`decide({小大不利:true, 有余:true})` → `winner === '二便'`；`reverseType('甚')` → `'反治'`。\n\n## 代价与边界\n\n- **本章只做顺序，不做方药**。治序不等于治法，更不等于处方。\n- **优先级是本章的读法，不是原文的明文**。原文只给分散的条件句，谁压过谁是本章的归纳——已在表里标明「本章归纳」。\n- **「急则治标，缓则治本」未采用**：原文无「急」「缓」二字，用它们解释会掩盖条件细节。\n- **「热因热用」「寒因寒用」在底本 0 命中**，本章一律标为后世表述。\n- 反治的适用需极强把握，误判即误治；本章代码只做分类，不给临床建议。\n\n> **免责声明：** 引文引自 `standards/materials/neijing-quanwen/`（源 `黄帝内经全文.xls`，篇名到篇级）；本章为条文规则化演示，不构成诊疗依据。\n\n## 练习\n\n1. 一个「病发而不足」又「小大不利」的病人，按本章优先级走哪条？给出你的理由，并说明与原文哪句冲突。\n2. 「先病而后生中满者治其标」——如果中满是先病，判据会不会反转？用原文另一句回答。\n3. 为「甚者从之」举一个「其始则同，其终则异」的例子，并说明如何避免与误治混淆。\n\n## 进阶思考\n\n「急则治标」四个字流传最广，也最省事——它把一张条件表压缩成一个形容词，代价是丢掉了「中满」「二便」「先后」这些可判定的抓手。经典被记住的往往是最容易被误用的那一句。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 治则与标本：条件→治序的判定器（含优先级冲突）\n *\n *   node code/main.js\n *\n * 口径：\n *   · 规则逐条来自《素问·标本病传论》《素问·至真要大论》原文条件，不用「急/缓」。\n *   · 优先级（中满 > 二便 > 有余/不足）是本章的读法，不是原文明文；代码里标 note。\n *   · 只输出顺序与依据，不出方药、不判预后。\n */\n\nconst RULES = [\n  {\n    id: '中满',\n    priority: 1,\n    when: (s) => s.先病后中满 === true,\n    order: ['标', '本'],\n    quote: '先病而后生中满者治其标，先中满而后烦心者治其本。',\n    why: '中满阻升降，药食难入，属前置条件',\n    note: '本章归纳：中满优先于一般本标',\n  },\n  {\n    id: '二便',\n    priority: 2,\n    when: (s) => s.小大不利 === true,\n    order: ['标', '本'],\n    quote: '小大不利治其标，小大利治其本。',\n    why: '二便不通则邪无出路，属前置条件',\n    note: '本章归纳：二便不利优先于一般本标',\n  },\n  {\n    id: '中满在先',\n    priority: 2,\n    when: (s) => s.中满在先 === true,\n    order: ['本', '标'],\n    quote: '先中满而后烦心者治其本。',\n    why: '中满在先，则中满即本',\n    note: '原文直接给出（同句后半）',\n  },\n  {\n    id: '二便在先',\n    priority: 2,\n    when: (s) => s.二便不利在先 === true,\n    order: ['本', '标'],\n    quote: '小大不利而后生病者，治其本。',\n    why: '二便不利在先，则二便为本',\n    note: '原文直接给出',\n  },\n  {\n    id: '有余不足',\n    priority: 3,\n    when: (s) => s.有余 === true || s.不足 === true,\n    order: (s) => (s.有余 ? ['本', '标'] : ['标', '本']),\n    quote: '病发而有余，本而标之，先治其本，后治其标；病发而不足，标而本之，先治其标，后治其本。',\n    why: '病势有余先治本，不足先治标',\n    note: '原文直接给出',\n  },\n];\n\n/** 判定：返回胜出规则、治序、全部命中（含被压过的） */\nfunction decide(state = {}) {\n  const matched = RULES.filter((r) => r.when(state));\n  if (!matched.length) {\n    return { order: null, winner: null, matched: [], why: '未命中任何规则：缺「有余/不足」「中满」「二便」等条件' };\n  }\n  const sorted = [...matched].sort((a, b) => a.priority - b.priority);\n  const win = sorted[0];\n  return {\n    order: typeof win.order === 'function' ? win.order(state) : win.order,\n    winner: win.id,\n    winnerQuote: win.quote,\n    why: win.why,\n    note: win.note,\n    matched: matched.map((r) => r.id),\n    overridden: sorted.slice(1).map((r) => r.id),\n  };\n}\n\n/** 正治 / 反治：微者逆之，甚者从之 */\nfunction reverseType(intensity) {\n  if (intensity === '微') return { type: '正治', mode: '逆', quote: '微者逆之', example: '寒者热之，热者寒之' };\n  if (intensity === '甚') return { type: '反治', mode: '从', quote: '甚者从之', example: '塞因塞用，通因通用', caveat: '其始则同，其终则异' };\n  throw new Error(`未知病势：${intensity}（原文只有「微」「甚」两档）`);\n}\n\nfunction main() {\n  const cases = [\n    { name: '仅有余', s: { 有余: true } },\n    { name: '仅不足', s: { 不足: true } },\n    { name: '有余 + 先病后中满', s: { 有余: true, 先病后中满: true } },\n    { name: '有余 + 小大不利', s: { 小大不利: true, 有余: true } },\n    { name: '中满在先 + 有余', s: { 中满在先: true, 有余: true } },\n    { name: '二便不利在先 + 不足', s: { 二便不利在先: true, 不足: true } },\n    { name: '信息不足', s: {} },\n  ];\n  for (const c of cases) {\n    const r = decide(c.s);\n    console.log(`${c.name}：${r.order ? r.order.map((x) => '先治' + x).join(' → ') : '—'}${r.winner ? `｜胜出 ${r.winner}` : ''}`);\n    if (r.matched.length > 1) console.log(`    同时命中 ${r.matched.join('/')}；被压过 ${r.overridden.join('/')}`);\n  }\n  console.log('\\n正治/反治：');\n  for (const i of ['微', '甚']) {\n    const r = reverseType(i);\n    console.log(`  ${i} → ${r.type}（${r.mode}）｜${r.quote}｜例：${r.example}${r.caveat ? `｜须辨：${r.caveat}` : ''}`);\n  }\n  console.log('\\n口径：优先级为本章归纳（中满 > 二便 > 有余/不足）；只给顺序，不出方药。');\n  console.log('本输出为条文规则化演示，不构成诊疗依据。');\n}\n\nif (require.main === module) main();\nmodule.exports = { RULES, decide, reverseType };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { RULES, decide, reverseType } = require('./main.js');\n\ntest('规则一：有余先治本，不足先治标', () => {\n  assert.deepStrictEqual(decide({ 有余: true }).order, ['本', '标']);\n  assert.deepStrictEqual(decide({ 不足: true }).order, ['标', '本']);\n});\n\ntest('冲突：有余 + 先病后中满 → 中满胜出（先治标）', () => {\n  const r = decide({ 有余: true, 先病后中满: true });\n  assert.strictEqual(r.winner, '中满');\n  assert.deepStrictEqual(r.order, ['标', '本']);\n  assert.deepStrictEqual(r.overridden, ['有余不足']);\n});\n\ntest('冲突：小大不利压过有余', () => {\n  const r = decide({ 小大不利: true, 有余: true });\n  assert.strictEqual(r.winner, '二便');\n  assert.deepStrictEqual(r.order, ['标', '本']);\n});\n\ntest('时序反转：中满在先 → 中满即本，先治本', () => {\n  const r = decide({ 中满在先: true, 不足: true });\n  assert.strictEqual(r.winner, '中满在先');\n  assert.deepStrictEqual(r.order, ['本', '标']);\n});\n\ntest('时序反转：二便不利在先 → 先治本', () => {\n  const r = decide({ 二便不利在先: true, 不足: true });\n  assert.strictEqual(r.winner, '二便在先');\n  assert.deepStrictEqual(r.order, ['本', '标']);\n});\n\ntest('信息不足时不猜：order 为 null 且说明缺什么', () => {\n  const r = decide({});\n  assert.strictEqual(r.order, null);\n  assert.strictEqual(r.winner, null);\n  assert.match(r.why, /缺/);\n});\n\ntest('每条规则都带原文与优先级，且优先级是有序整数', () => {\n  for (const r of RULES) {\n    assert.ok(r.quote.length > 10, r.id);\n    assert.ok([1, 2, 3].includes(r.priority), r.id);\n    assert.ok(r.id);\n  }\n  assert.strictEqual(RULES.filter((r) => r.priority === 1).length, 1);\n});\n\ntest('正治/反治：微→正治（逆），甚→反治（从）并带「其始则同」之辨', () => {\n  assert.strictEqual(reverseType('微').type, '正治');\n  assert.strictEqual(reverseType('微').mode, '逆');\n  const f = reverseType('甚');\n  assert.strictEqual(f.type, '反治');\n  assert.strictEqual(f.mode, '从');\n  assert.match(f.caveat, /其始则同/);\n});\n\ntest('未知病势抛错（原文只有微/甚两档，不许自造第三档）', () => {\n  assert.throws(() => reverseType('中'), /未知病势/);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "「病发而有余，本而标之」的治序是？",
+          "options": [
+            "先治标后治本",
+            "先治本后治标",
+            "标本同治",
+            "不用治"
+          ],
+          "correct": 1,
+          "explanation": "有余先治本；不足则标而本之，先治标。"
+        },
+        {
+          "stage": "check",
+          "question": "「先病而后生中满者治其标」为什么？",
+          "options": [
+            "中满属标",
+            "中满阻升降、药食难入，是后续治疗的前置条件",
+            "原文没解释",
+            "中满是症状所以先治"
+          ],
+          "correct": 1,
+          "explanation": "标本身份由时序决定，中满后生则治标。"
+        },
+        {
+          "stage": "check",
+          "question": "「先中满而后烦心者治其本」说明什么？",
+          "options": [
+            "中满永远是标",
+            "标与本不是固定属性，是时序关系——中满在先则中满即本",
+            "烦心是本",
+            "两句矛盾"
+          ],
+          "correct": 1,
+          "explanation": "同一症状因出现顺序不同，标本身份互换。"
+        },
+        {
+          "stage": "check",
+          "question": "本章的优先级（中满 > 二便 > 有余/不足）性质是？",
+          "options": [
+            "原文明文",
+            "本章归纳，已在表与代码中标注",
+            "后世医家原文",
+            "无依据的猜测"
+          ],
+          "correct": 1,
+          "explanation": "原文只给分散条件句，谁压过谁属于读者归纳，必须标明。"
+        },
+        {
+          "stage": "post",
+          "question": "「急则治标，缓则治本」在原文里的对应表述是？",
+          "options": [
+            "原文就是这样写的",
+            "原文无「急」「缓」二字，用的是有余/不足、中满先后、二便通否等条件",
+            "出于《伤寒论》",
+            "出于《难经》"
+          ],
+          "correct": 1,
+          "explanation": "形容词化的说法丢掉了可判定的抓手。"
+        },
+        {
+          "stage": "post",
+          "question": "「塞因塞用，通因通用」属于？",
+          "options": [
+            "正治（逆）",
+            "反治（从），判据是「其始则同，其终则异」",
+            "误治",
+            "针灸手法"
+          ],
+          "correct": 1,
+          "explanation": "与表象同向、结果与表象相反；底本有「塞因塞用/通因通用」，但无「热因热用」。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-zhize-biaoben.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/07-zhize-biaoben/outputs/prompt-zhize-biaoben.md",
+        "title": "治序判定（标本先后）",
+        "description": null,
+        "chars": 767,
+        "body": "# 治序判定（标本先后）\n\n## 用途\n\n给定病人状态，判定「先治标还是先治本」，并说明依据哪条原文、哪条压过哪条。\n用于**病案讨论、讲义推演、思路核对**。不出方药、不判预后。\n\n## 提示词\n\n```text\n你是内经治则的规则助手。任务是给治序，不是给治法。\n\n规则集（全部来自《素问·标本病传论》《素问·至真要大论》原文条件）：\nR1 病发而有余 → 先本后标；病发而不足 → 先标后本\nR2 先病而后生中满 → 治标；先中满而后烦心 → 治本\nR3 小大不利 → 治标；小大利 → 治本；小大不利而后生病 → 治本\nR4 微者逆之（正治）；甚者从之（反治：塞因塞用、通因通用）\n\n判定规则：\n1. 逐条判定命中与否，输出命中清单，不许只给结论。\n2. 多条命中时按「中满 > 二便 > 有余/不足」定序，并明确写出「本章归纳」四字，\n   不得声称这是原文明文。\n3. 信息不足（缺有余/不足、中满先后、二便通否）→ 输出「不足以判定」+ 缺项，\n   禁止默认选一个顺序。\n4. 反治必须附「其始则同，其终则异」之辨，并提示误治风险。\n5. 不得输出方药、剂量、疗程；不得下诊断。\n6. 「急则治标，缓则治本」不得作为判据（原文无急/缓二字）。\n\n输出格式：\n【命中规则】R1/R2/R3…（各附原句）\n【治序】先治X → 后治Y\n【胜出】哪条 / 被压过哪条 / 理由（标「本章归纳」）\n【正向反治】微→正治 / 甚→反治（附辨别要点）\n【缺项】…\n```\n\n## 使用示例\n\n输入：病发有余，先病数日后出现中满。\n\n输出：【命中规则】R1（病发而有余，本而标之）、R2（先病而后生中满者治其标）\n【治序】先治标 → 后治本\n【胜出】R2 胜出，R1 被压过；理由：中满阻升降、药食难入，属前置条件（本章归纳）\n【正向反治】未给病势，不作判定\n【缺项】病势微/甚未明\n\n## 为什么这样限制\n\n- 只给结论的治序无法复核；命中清单让读者看到冲突在哪。\n- 默认选一个顺序，是最危险的失败方式：它把「没想清楚」伪装成「已决定」。\n"
+      },
+      {
+        "name": "skill-zhize-biaoben.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/07-zhize-biaoben/outputs/skill-zhize-biaoben.md",
+        "title": "zhize-biaoben",
+        "description": "标本治序判定：命中清单、特例优先、信息不足不猜、反治附辨",
+        "chars": 462,
+        "body": "---\nname: zhize-biaoben\ndescription: 标本治序判定：命中清单、特例优先、信息不足不猜、反治附辨\nversion: 0.1.0\n---\n\n# zhize-biaoben\n\n## 何时使用\n\n- 病案里同时存在虚实与中满/二便问题，要定先后\n- 讲义要讲清「标与本」为何随时序反转\n- 核对某个治序说法是否有原文依据\n\n## 不适用\n\n- 方药选择与剂量\n- 预后判断\n- 针灸取穴\n\n## 步骤\n\n1. **列条件**：有余/不足、中满先后、二便通否、病势微甚。\n2. **逐条命中**：R1–R4 各判是否命中，附原句。\n3. **定序**：中满 > 二便 > 有余/不足（标明是归纳）。\n4. **报冲突**：胜出哪条、压过哪条、为什么。\n5. **正反治**：微→逆（正治）；甚→从（反治），附「其始则同，其终则异」。\n6. **缺则说缺**：信息不足输出「不足以判定」+ 缺项。\n\n## 输出模板\n\n```text\n【命中规则】…【治序】…【胜出】…【正向反治】…【缺项】…\n```\n\n## 质量判据\n\n- 命中清单完整，不跳步\n- 优先级标注为归纳\n- 没有默认顺序\n- 无方药与剂量\n\n> 本技能只做治序判定，不构成诊疗建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "01-zhongyi/06-neijing-xuandu/08-lunqi-qipian": {
+    "key": "01-zhongyi/06-neijing-xuandu/08-lunqi-qipian",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "06-neijing-xuandu",
+    "subjectTitle": "内经选读",
+    "chapterSlug": "08-lunqi-qipian",
+    "n": 8,
+    "title": "第 8 章 · 运气七篇：把「天时」变成一张可复算的表",
+    "motto": "「甲己之岁，土运统之；乙庚之岁，金运统之；丙辛之岁，水运统之；丁壬之岁，木运统之；戊癸之岁，火运统之。」——《素问·天元纪大论》",
+    "problem": "你听说「今年是太阳寒水司天」，却说不清这个结论是怎么从年份推出来的；让你算明年，你只能去查表。而这张表本来就是**从两句话推出来**的。",
+    "roots": "环境逼迫(要断某年的运气) + 知识积累(两条配属规则 × 天符定义 = 一个可复算的 60 年周期)",
+    "html": "<h1 id=\"第-8-章-运气七篇-把-天时-变成一张可复算的表\">第 8 章 · 运气七篇：把「天时」变成一张可复算的表</h1>\n<blockquote><p><strong>MOTTO:</strong> 「甲己之岁，土运统之；乙庚之岁，金运统之；丙辛之岁，水运统之；丁壬之岁，木运统之；戊癸之岁，火运统之。」——《素问·天元纪大论》</p>\n<p><strong>PROBLEM:</strong> 你听说「今年是太阳寒水司天」，却说不清这个结论是怎么从年份推出来的；让你算明年，你只能去查表。而这张表本来就是<strong>从两句话推出来</strong>的。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(要断某年的运气) + 知识积累(两条配属规则 × 天符定义 = 一个可复算的 60 年周期)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>内经选读</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>08 / 10</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>4 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>背出两条配属规则：十干配五运、十二支配司天，并各引原文一句</li><li>由年干推出中运与太过/不及，由年支推出司天、再推出在泉</li><li>说出「天符」的判据，并算出六十甲子里有几个天符之年</li><li>判断运气推演<strong>能说什么、不能说什么</strong></li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"七篇是哪些\">七篇是哪些</h3>\n<p>《素问》运气七篇大论：天元纪大论、五运行大论、六微旨大论、气交变大论、五常政大论、六元正纪大论、至真要大论。它们与其他篇章的文体明显不同（篇幅长、体系完整、多用干支推演），这也是「七篇是否后人补入」这一长期争论的来源——本章不介入该争论，只用其中的<strong>配属规则</strong>。</p>\n<h3 id=\"规则一-十干配五运\">规则一：十干配五运</h3>\n<blockquote><p>甲己之岁，土运统之；乙庚之岁，金运统之；丙辛之岁，水运统之；丁壬之岁，木运统之；戊癸之岁，火运统之。——《素问·天元纪大论》</p></blockquote>\n<p>十干两两一组配五行：甲己→土、乙庚→金、丙辛→水、丁壬→木、戊癸→火。\n再分阴阳：<strong>阳干（甲丙戊庚壬）太过，阴干（乙丁己辛癸）不及</strong>。</p>\n<h3 id=\"规则二-十二支配司天\">规则二：十二支配司天</h3>\n<blockquote><p>子午之上，少阴主之；丑未之上，太阴主之；寅申之上，少阳主之；卯酉之上，阳明主之；辰戌之上，太阳主之；巳亥之上，厥阴主之。——《素问·五运行大论》</p></blockquote>\n<p>地支两两一组：子午→少阴君火、丑未→太阴湿土、寅申→少阳相火、卯酉→阳明燥金、辰戌→太阳寒水、巳亥→厥阴风木。</p>\n<p><strong>在泉</strong>与司天相对，六气三对：少阴↔阳明、太阴↔太阳、少阳↔厥阴。原文有「少阳司天…厥阴在泉」之例可证。</p>\n<h3 id=\"60-年推演的实测结果\">60 年推演的实测结果</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>指标</th><th>实测</th></tr></thead><tbody><tr><td>周期长度</td><td>60（十干 × 十二支，阳干配阳支）</td></tr><tr><td>五运分布</td><td>土 12 · 金 12 · 水 12 · 木 12 · 火 12（均匀）</td></tr><tr><td>太过 / 不及</td><td><strong>各 30 年</strong>（阳干 5 个各配 6 支 = 30）</td></tr><tr><td><strong>天符之年</strong></td><td><strong>12 个</strong></td></tr></tbody></table></div>\n<p>天符之年（中运五行与司天五行相同）实测列表：</p>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">text</div><pre><code class=\"lang-text\">戊寅 乙酉 丙戌 丁亥 戊子 己丑 戊申 乙卯 丙辰 丁巳 戊午 己未</code></pre></div>\n<p>这个 12 不是查表来的，是两条规则相乘的结果，算术如下：</p>\n<ul><li>天符要求「干运五行 = 支司天五行」；</li><li>干支必须同阴阳（阳干配阳支），这一条先把候选砍掉一半：每个五行剩 <strong>2 个组合</strong>（如土：己丑、己未；金：乙卯、乙酉；水：丙辰、丙戌；木：丁巳、丁亥）；</li><li>唯一例外是火——<strong>少阴君火与少阳相火同属火</strong>，所以火运有两组支可用（子午 + 寅申），得 <strong>4 个</strong>（戊子、戊午、戊寅、戊申）。</li></ul>\n<p>于是 4 + 2×4 = <strong>12</strong>。</p>\n<h3 id=\"近年推演-可核对\">近年推演（可核对）</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>年份</th><th>干支</th><th>中运</th><th>司天</th><th>在泉</th></tr></thead><tbody><tr><td>1984</td><td>甲子</td><td>土（太过）</td><td>少阴君火</td><td>阳明燥金</td></tr><tr><td>2024</td><td>甲辰</td><td>土（太过）</td><td>太阳寒水</td><td>太阴湿土</td></tr><tr><td>2026</td><td>丙午</td><td>水（太过）</td><td>少阴君火</td><td>阳明燥金</td></tr></tbody></table></div>\n<p>推演的锚点是 1984 = 甲子年。锚点错了，整张表平移——所以任何运气推演的第一步都该写「以某年为甲子」。</p>\n<h3 id=\"这套表能说什么\">这套表能说什么</h3>\n<ul><li><strong>能说</strong>：某年对应哪一组干支、中运何气、太过不及、司天在泉为何气——这是<strong>规则推演</strong>，可复算、可核对。</li><li><strong>不能自动说</strong>：该年气候如何、哪些病多发、用药该偏寒偏温。从「甲辰年太阳寒水司天」到「今年该怎样」，中间缺少<strong>经验校准</strong>——原文给了推演框架，但把框架等同于预测，是另一回事。</li><li>本章代码刻意只做前半段（干支→运气），<strong>不输出任何&quot;该年宜忌&quot;</strong>。</li></ul>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js\nYUN / SITIAN / ZAIQUAN    // 三条配属表（逐字对应原文）\nsixtyCycle()              // 60 甲子（阳干配阳支）\ncomputeYear(gan, zhi)     // → {yun, taiGuo, sitian, zaiquan, tianfu}\nyearToGanzhi(year)        // 以 1984=甲子 为锚\nstats()                   // 分布、太过/不及、天符列表</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>stats().tianfu === 12</code>；五运各 12；太过/不及各 30；<code>yearToGanzhi(1984)</code> → 甲子；<code>computeYear('甲','辰').sitian === '太阳寒水'</code>。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>本章不评价运气学说的预测效力</strong>。只验证「规则推演是否自洽」，不验证「推演是否应验」。</li><li><strong>锚点依赖约定</strong>。1984=甲子 是通行换算；换锚点整表平移，但周期结构不变。</li><li><strong>天符只按「中运五行 = 司天五行」判</strong>。原文另有「岁直（岁会）」「三合（太乙天符）」等更严格的条件，本章未实现，已在代码注释中标明。</li><li><strong>七篇的真伪之争不介入</strong>。本章把七篇当作既有文本使用。</li><li><strong>干支推演 ≠ 气候预测</strong>。任何把本章输出直接用于临床或农事的做法，都超出了它成立的范围。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 配属规则引自 <code>standards/materials/neijing-quanwen/</code>（源 <code>黄帝内经全文.xls</code>，可复核）；本章为典籍规则的程序化推演，不构成任何预测或诊疗依据。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>用代码算出「从 2026 起最近一个天符之年」，并说明你为什么不能只靠肉眼推。</li><li>若把锚点从 1984 改成 1985=甲子，天符列表会怎么变？这说明了什么？</li><li>「岁会」「太乙天符」的判据比天符多什么条件？试着在 <code>computeYear</code> 上扩展。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>运气学说的现代争议，多半卡在同一处：<strong>推演层是自洽的，应验层是未证的</strong>。把这两层混着讲，支持者与反对者就永远说不到一起——先把「规则能不能算」和「算了准不准」拆开，讨论才有落点。</p>",
+    "markdown": "# 第 8 章 · 运气七篇：把「天时」变成一张可复算的表\r\n\r\n> **MOTTO:** 「甲己之岁，土运统之；乙庚之岁，金运统之；丙辛之岁，水运统之；丁壬之岁，木运统之；戊癸之岁，火运统之。」——《素问·天元纪大论》\r\n>\r\n> **PROBLEM:** 你听说「今年是太阳寒水司天」，却说不清这个结论是怎么从年份推出来的；让你算明年，你只能去查表。而这张表本来就是**从两句话推出来**的。\r\n>\r\n> **双根因定位:** 环境逼迫(要断某年的运气) + 知识积累(两条配属规则 × 天符定义 = 一个可复算的 60 年周期)\r\n\r\n## 课程信息\r\n\r\n| 项目 | 内容 |\r\n|------|------|\r\n| 学科 | 内经选读 |\r\n| 院系 | 中医系 |\r\n| 章序号 | 08 / 10 |\r\n| 所属阶段 | 🌿 长·积累 |\r\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\r\n| 预估时长 | 4 小时 |\r\n\r\n## 学习目标\r\n\r\n- 背出两条配属规则：十干配五运、十二支配司天，并各引原文一句\r\n- 由年干推出中运与太过/不及，由年支推出司天、再推出在泉\r\n- 说出「天符」的判据，并算出六十甲子里有几个天符之年\r\n- 判断运气推演**能说什么、不能说什么**\r\n\r\n## 核心概念\r\n\r\n### 七篇是哪些\r\n\r\n《素问》运气七篇大论：天元纪大论、五运行大论、六微旨大论、气交变大论、五常政大论、六元正纪大论、至真要大论。它们与其他篇章的文体明显不同（篇幅长、体系完整、多用干支推演），这也是「七篇是否后人补入」这一长期争论的来源——本章不介入该争论，只用其中的**配属规则**。\r\n\r\n### 规则一：十干配五运\r\n\r\n> 甲己之岁，土运统之；乙庚之岁，金运统之；丙辛之岁，水运统之；丁壬之岁，木运统之；戊癸之岁，火运统之。——《素问·天元纪大论》\r\n\r\n十干两两一组配五行：甲己→土、乙庚→金、丙辛→水、丁壬→木、戊癸→火。\r\n再分阴阳：**阳干（甲丙戊庚壬）太过，阴干（乙丁己辛癸）不及**。\r\n\r\n### 规则二：十二支配司天\r\n\r\n> 子午之上，少阴主之；丑未之上，太阴主之；寅申之上，少阳主之；卯酉之上，阳明主之；辰戌之上，太阳主之；巳亥之上，厥阴主之。——《素问·五运行大论》\r\n\r\n地支两两一组：子午→少阴君火、丑未→太阴湿土、寅申→少阳相火、卯酉→阳明燥金、辰戌→太阳寒水、巳亥→厥阴风木。\r\n\r\n**在泉**与司天相对，六气三对：少阴↔阳明、太阴↔太阳、少阳↔厥阴。原文有「少阳司天…厥阴在泉」之例可证。\r\n\r\n### 60 年推演的实测结果\r\n\r\n| 指标 | 实测 |\r\n|---|---|\r\n| 周期长度 | 60（十干 × 十二支，阳干配阳支） |\r\n| 五运分布 | 土 12 · 金 12 · 水 12 · 木 12 · 火 12（均匀） |\r\n| 太过 / 不及 | **各 30 年**（阳干 5 个各配 6 支 = 30） |\r\n| **天符之年** | **12 个** |\r\n\r\n天符之年（中运五行与司天五行相同）实测列表：\r\n\r\n```\r\n戊寅 乙酉 丙戌 丁亥 戊子 己丑 戊申 乙卯 丙辰 丁巳 戊午 己未\r\n```\r\n\r\n这个 12 不是查表来的，是两条规则相乘的结果，算术如下：\r\n\r\n- 天符要求「干运五行 = 支司天五行」；\r\n- 干支必须同阴阳（阳干配阳支），这一条先把候选砍掉一半：每个五行剩 **2 个组合**（如土：己丑、己未；金：乙卯、乙酉；水：丙辰、丙戌；木：丁巳、丁亥）；\r\n- 唯一例外是火——**少阴君火与少阳相火同属火**，所以火运有两组支可用（子午 + 寅申），得 **4 个**（戊子、戊午、戊寅、戊申）。\r\n\r\n于是 4 + 2×4 = **12**。\r\n\r\n### 近年推演（可核对）\r\n\r\n| 年份 | 干支 | 中运 | 司天 | 在泉 |\r\n|---|---|---|---|---|\r\n| 1984 | 甲子 | 土（太过） | 少阴君火 | 阳明燥金 |\r\n| 2024 | 甲辰 | 土（太过） | 太阳寒水 | 太阴湿土 |\r\n| 2026 | 丙午 | 水（太过） | 少阴君火 | 阳明燥金 |\r\n\r\n推演的锚点是 1984 = 甲子年。锚点错了，整张表平移——所以任何运气推演的第一步都该写「以某年为甲子」。\r\n\r\n### 这套表能说什么\r\n\r\n- **能说**：某年对应哪一组干支、中运何气、太过不及、司天在泉为何气——这是**规则推演**，可复算、可核对。\r\n- **不能自动说**：该年气候如何、哪些病多发、用药该偏寒偏温。从「甲辰年太阳寒水司天」到「今年该怎样」，中间缺少**经验校准**——原文给了推演框架，但把框架等同于预测，是另一回事。\r\n- 本章代码刻意只做前半段（干支→运气），**不输出任何\"该年宜忌\"**。\r\n\r\n## BUILD IT：从零实现\r\n\r\n```js\r\n// code/main.js\r\nYUN / SITIAN / ZAIQUAN    // 三条配属表（逐字对应原文）\r\nsixtyCycle()              // 60 甲子（阳干配阳支）\r\ncomputeYear(gan, zhi)     // → {yun, taiGuo, sitian, zaiquan, tianfu}\r\nyearToGanzhi(year)        // 以 1984=甲子 为锚\r\nstats()                   // 分布、太过/不及、天符列表\r\n```\r\n\r\n## 验证\r\n\r\n```bash\r\nnode code/main.js\r\nnode --test code/main.test.js\r\n```\r\n\r\n预期：`stats().tianfu === 12`；五运各 12；太过/不及各 30；`yearToGanzhi(1984)` → 甲子；`computeYear('甲','辰').sitian === '太阳寒水'`。\r\n\r\n## 代价与边界\r\n\r\n- **本章不评价运气学说的预测效力**。只验证「规则推演是否自洽」，不验证「推演是否应验」。\r\n- **锚点依赖约定**。1984=甲子 是通行换算；换锚点整表平移，但周期结构不变。\r\n- **天符只按「中运五行 = 司天五行」判**。原文另有「岁直（岁会）」「三合（太乙天符）」等更严格的条件，本章未实现，已在代码注释中标明。\r\n- **七篇的真伪之争不介入**。本章把七篇当作既有文本使用。\r\n- **干支推演 ≠ 气候预测**。任何把本章输出直接用于临床或农事的做法，都超出了它成立的范围。\r\n\r\n> **免责声明：** 配属规则引自 `standards/materials/neijing-quanwen/`（源 `黄帝内经全文.xls`，可复核）；本章为典籍规则的程序化推演，不构成任何预测或诊疗依据。\r\n\r\n## 练习\r\n\r\n1. 用代码算出「从 2026 起最近一个天符之年」，并说明你为什么不能只靠肉眼推。\r\n2. 若把锚点从 1984 改成 1985=甲子，天符列表会怎么变？这说明了什么？\r\n3. 「岁会」「太乙天符」的判据比天符多什么条件？试着在 `computeYear` 上扩展。\r\n\r\n## 进阶思考\r\n\r\n运气学说的现代争议，多半卡在同一处：**推演层是自洽的，应验层是未证的**。把这两层混着讲，支持者与反对者就永远说不到一起——先把「规则能不能算」和「算了准不准」拆开，讨论才有落点。\r\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 运气七篇：干支 → 五运 / 司天 / 在泉 / 天符（60 年周期）\n *\n *   node code/main.js\n *\n * 口径（两条基本规则逐字取自《素问》原文）：\n *   · 「甲己之岁，土运统之；乙庚之岁，金运统之；丙辛之岁，水运统之；丁壬之岁，木运统之；戊癸之岁，火运统之。」\n *     ——《素问·天元纪大论》\n *   · 「子午之上，少阴主之；丑未之上，太阴主之；寅申之上，少阳主之；卯酉之上，阳明主之；\n *      辰戌之上，太阳主之；巳亥之上，厥阴主之。」——《素问·五运行大论》\n * 在泉：与司天相对（少阴↔阳明、太阴↔太阳、少阳↔厥阴），本文有「少阳司天…厥阴在泉」之例。\n * 天符：「中运之气与司天之气相符」（《素问·六元正纪大论》），即中运五行 = 司天五行。\n *\n * 本章只做规则推演，不评价运气学说的预测效力。\n */\n\nconst GAN = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];\nconst ZHI = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];\n\n/** 五运：天干 → 五行（原文十干配属） */\nconst YUN = { 甲: '土', 己: '土', 乙: '金', 庚: '金', 丙: '水', 辛: '水', 丁: '木', 壬: '木', 戊: '火', 癸: '火' };\n/** 太过/不及：阳干太过，阴干不及（甲丙戊庚壬为阳） */\nconst YANG = new Set(['甲', '丙', '戊', '庚', '壬']);\n\n/** 司天：地支 → 六气（原文十二支配属） */\nconst SITIAN = {\n  子: '少阴君火', 午: '少阴君火',\n  丑: '太阴湿土', 未: '太阴湿土',\n  寅: '少阳相火', 申: '少阳相火',\n  卯: '阳明燥金', 酉: '阳明燥金',\n  辰: '太阳寒水', 戌: '太阳寒水',\n  巳: '厥阴风木', 亥: '厥阴风木',\n};\n\n/** 在泉 = 司天六气的对化 */\nconst ZAIQUAN = {\n  少阴君火: '阳明燥金', 阳明燥金: '少阴君火',\n  太阴湿土: '太阳寒水', 太阳寒水: '太阴湿土',\n  少阳相火: '厥阴风木', 厥阴风木: '少阳相火',\n};\n\nconst ELEMENT = { 土: '土', 金: '金', 水: '水', 木: '木', 火: '火' };\n\n/** 六气五行（用于判天符） */\nfunction qiElement(qi) {\n  if (qi.includes('火')) return '火';\n  if (qi.includes('湿土') || qi.endsWith('土')) return '土';\n  if (qi.includes('燥金') || qi.endsWith('金')) return '金';\n  if (qi.includes('寒水') || qi.endsWith('水')) return '水';\n  if (qi.includes('风木') || qi.endsWith('木')) return '木';\n  throw new Error(`未知六气：${qi}`);\n}\n\n/** 六十甲子（阳干配阳支） */\nfunction sixtyCycle() {\n  const out = [];\n  for (let i = 0; i < 60; i += 1) {\n    const gan = GAN[i % 10];\n    const zhi = ZHI[i % 12];\n    out.push({ n: i + 1, gan, zhi, ganzhi: gan + zhi });\n  }\n  return out;\n}\n\n/** 单年推演 */\nfunction computeYear(gan, zhi) {\n  if (!YUN[gan]) throw new Error(`未知天干：${gan}`);\n  if (!SITIAN[zhi]) throw new Error(`未知地支：${zhi}`);\n  const yun = YUN[gan];\n  const sitian = SITIAN[zhi];\n  const zaiquan = ZAIQUAN[sitian];\n  const tianfu = ELEMENT[yun] === qiElement(sitian);\n  return {\n    ganzhi: gan + zhi,\n    yun,\n    taiGuo: YANG.has(gan) ? '太过' : '不及',\n    sitian,\n    zaiquan,\n    tianfu,\n  };\n}\n\n/** 年份 → 干支：以 1984 年（甲子）为锚 */\nfunction yearToGanzhi(year) {\n  const offset = ((year - 1984) % 60 + 60) % 60;\n  return { gan: GAN[offset % 10], zhi: ZHI[offset % 12] };\n}\n\nfunction stats() {\n  const rows = sixtyCycle().map((r) => computeYear(r.gan, r.zhi));\n  const countBy = (k) => rows.reduce((m, r) => { m[r[k]] = (m[r[k]] || 0) + 1; return m; }, {});\n  return {\n    rows,\n    yun: countBy('yun'),\n    sitian: countBy('sitian'),\n    taiGuo: countBy('taiGuo'),\n    tianfu: rows.filter((r) => r.tianfu).length,\n    tianfuList: rows.filter((r) => r.tianfu).map((r) => r.ganzhi),\n  };\n}\n\nfunction main() {\n  const s = stats();\n  console.log('十干配五运（原文）：甲己土 · 乙庚金 · 丙辛水 · 丁壬木 · 戊癸火');\n  console.log('十二支配司天（原文）：子午少阴 · 丑未太阴 · 寅申少阳 · 卯酉阳明 · 辰戌太阳 · 巳亥厥阴\\n');\n\n  console.log('六十甲子统计：');\n  console.log('  五运分布：' + Object.entries(s.yun).map(([k, v]) => `${k}${v}`).join(' · '));\n  console.log('  太过/不及：' + Object.entries(s.taiGuo).map(([k, v]) => `${k}${v}`).join(' · '));\n  console.log(`  天符之年：${s.tianfu} 个（${s.tianfuList.join('、')}）`);\n\n  console.log('\\n近三年推演：');\n  for (const y of [1984, 2024, 2026]) {\n    const g = yearToGanzhi(y);\n    const r = computeYear(g.gan, g.zhi);\n    console.log(`  ${y} ${r.ganzhi}：中运 ${r.yun}（${r.taiGuo}）｜司天 ${r.sitian}｜在泉 ${r.zaiquan}${r.tianfu ? '｜天符' : ''}`);\n  }\n\n  console.log('\\n前 12 年（甲子—乙亥）：');\n  for (const r of s.rows.slice(0, 12)) {\n    console.log(`  ${r.ganzhi}｜运 ${r.yun}${r.taiGuo}｜司天 ${r.sitian}｜在泉 ${r.zaiquan}${r.tianfu ? '｜天符' : ''}`);\n  }\n  console.log('\\n口径：推演只依据原文两条配属规则与天符定义；不评价运气学说的预测效力。');\n  console.log('本输出为典籍规则推演，不构成任何预测或诊疗依据。');\n}\n\nif (require.main === module) main();\nmodule.exports = { GAN, ZHI, YUN, SITIAN, ZAIQUAN, sixtyCycle, computeYear, yearToGanzhi, stats, qiElement };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { GAN, ZHI, YUN, SITIAN, ZAIQUAN, sixtyCycle, computeYear, yearToGanzhi, stats } = require('./main.js');\n\ntest('六十甲子：60 个，阳干配阳支，无重名', () => {\n  const c = sixtyCycle();\n  assert.strictEqual(c.length, 60);\n  assert.strictEqual(new Set(c.map((x) => x.ganzhi)).size, 60);\n  const yang = new Set(['甲', '丙', '戊', '庚', '壬']);\n  const yangZhi = new Set(['子', '寅', '辰', '午', '申', '戌']);\n  for (const x of c) assert.strictEqual(yang.has(x.gan), yangZhi.has(x.zhi), x.ganzhi);\n});\n\ntest('十干配五运与十二支配司天：逐条符合原文', () => {\n  assert.deepStrictEqual(\n    ['甲', '己', '乙', '庚', '丙', '辛', '丁', '壬', '戊', '癸'].map((g) => YUN[g]),\n    ['土', '土', '金', '金', '水', '水', '木', '木', '火', '火'],\n  );\n  assert.strictEqual(SITIAN['子'], '少阴君火');\n  assert.strictEqual(SITIAN['午'], '少阴君火');\n  assert.strictEqual(SITIAN['丑'], '太阴湿土');\n  assert.strictEqual(SITIAN['寅'], '少阳相火');\n  assert.strictEqual(SITIAN['卯'], '阳明燥金');\n  assert.strictEqual(SITIAN['辰'], '太阳寒水');\n  assert.strictEqual(SITIAN['亥'], '厥阴风木');\n});\n\ntest('在泉为司天对化，六气三对闭合', () => {\n  for (const [k, v] of Object.entries(ZAIQUAN)) {\n    assert.strictEqual(ZAIQUAN[v], k, `${k}↔${v} 应对称`);\n  }\n  assert.strictEqual(ZAIQUAN['少阴君火'], '阳明燥金');\n  assert.strictEqual(ZAIQUAN['太阴湿土'], '太阳寒水');\n  assert.strictEqual(ZAIQUAN['少阳相火'], '厥阴风木');\n});\n\ntest('分布均匀：五运各 12，太过/不及各 30', () => {\n  const s = stats();\n  assert.deepStrictEqual(s.yun, { 土: 12, 金: 12, 水: 12, 木: 12, 火: 12 });\n  assert.deepStrictEqual(s.taiGuo, { 太过: 30, 不及: 30 });\n});\n\ntest('天符 12 年，列表与规则推演一致（火运 4 个，其余各 2）', () => {\n  const s = stats();\n  assert.strictEqual(s.tianfu, 12);\n  assert.deepStrictEqual(\n    [...s.tianfuList].sort(),\n    ['丁亥', '丁巳', '丙戌', '丙辰', '乙酉', '乙卯', '己未', '己丑', '戊申', '戊寅', '戊午', '戊子'].sort(),\n  );\n});\n\ntest('锚点：1984 = 甲子；2024 = 甲辰（太阳寒水司天）', () => {\n  assert.strictEqual(yearToGanzhi(1984).gan + yearToGanzhi(1984).zhi, '甲子');\n  const y24 = yearToGanzhi(2024);\n  const r24 = computeYear(y24.gan, y24.zhi);\n  assert.strictEqual(r24.ganzhi, '甲辰');\n  assert.strictEqual(r24.yun, '土');\n  assert.strictEqual(r24.taiGuo, '太过');\n  assert.strictEqual(r24.sitian, '太阳寒水');\n  assert.strictEqual(r24.zaiquan, '太阴湿土');\n});\n\ntest('2026 丙午：水运太过，少阴君火司天，阳明燥金在泉', () => {\n  const r = computeYear('丙', '午');\n  assert.deepStrictEqual([r.yun, r.taiGuo, r.sitian, r.zaiquan], ['水', '太过', '少阴君火', '阳明燥金']);\n});\n\ntest('未知干支必须抛错，不许猜', () => {\n  assert.throws(() => computeYear('子', '子'), /未知天干/);\n  assert.throws(() => computeYear('甲', '甲'), /未知地支/);\n});\n\ntest('配属表覆盖全部十干十二支（无遗漏）', () => {\n  assert.strictEqual(Object.keys(YUN).length, 10);\n  assert.strictEqual(Object.keys(SITIAN).length, 12);\n  assert.deepStrictEqual(Object.keys(YUN).sort(), [...GAN].sort());\n  assert.deepStrictEqual(Object.keys(SITIAN).sort(), [...ZHI].sort());\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "十干配五运的原文规则是？",
+          "options": [
+            "甲己土、乙庚金、丙辛水、丁壬木、戊癸火",
+            "甲乙木、丙丁火、戊己土、庚辛金、壬癸水",
+            "甲庚土、乙辛金",
+            "按年份顺序轮转"
+          ],
+          "correct": 0,
+          "explanation": "两两一组配五行，出自《素问·天元纪大论》。"
+        },
+        {
+          "stage": "check",
+          "question": "「子午之上，少阴主之」属于哪一类规则？",
+          "options": [
+            "五运",
+            "司天（十二支配六气）",
+            "在泉",
+            "天符"
+          ],
+          "correct": 1,
+          "explanation": "出自《素问·五运行大论》；在泉由司天对化推出。"
+        },
+        {
+          "stage": "check",
+          "question": "六十甲子中「太过」与「不及」各占多少年？",
+          "options": [
+            "各 12",
+            "各 30",
+            "太过 40、不及 20",
+            "不固定"
+          ],
+          "correct": 1,
+          "explanation": "阳干 5 个各配 6 支 = 30。五运本身各 12 年。"
+        },
+        {
+          "stage": "check",
+          "question": "天符之年的判据是？",
+          "options": [
+            "司天与在泉同气",
+            "中运五行与司天五行相同",
+            "年支与年干同五行",
+            "每年都是"
+          ],
+          "correct": 1,
+          "explanation": "实测六十甲子中有 12 个天符；火运因君火/相火同属火而有 4 个。"
+        },
+        {
+          "stage": "post",
+          "question": "「甲辰年太阳寒水司天」这一结论的性质是？",
+          "options": [
+            "气候预测",
+            "规则推演的结果（干支→六气），可复算可核对",
+            "经验统计",
+            "随机"
+          ],
+          "correct": 1,
+          "explanation": "推演层自洽；能否应验是另一个问题。"
+        },
+        {
+          "stage": "post",
+          "question": "本章代码刻意不输出什么？",
+          "options": [
+            "干支",
+            "中运太过不及",
+            "该年宜忌与用药倾向",
+            "司天在泉"
+          ],
+          "correct": 2,
+          "explanation": "从「司天为何气」到「该怎样」之间缺经验校准，超出规则推演范围。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-lunqi-qipian.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/08-lunqi-qipian/outputs/prompt-lunqi-qipian.md",
+        "title": "运气推演助手（干支 → 五运六气）",
+        "description": null,
+        "chars": 793,
+        "body": "# 运气推演助手（干支 → 五运六气）\n\n## 用途\n\n由年份或干支推出：中运与太过/不及、司天、在泉、是否天符。输出**只有推演结果，不含宜忌**。\n用于**教学演示、条文对读、推演自检**。不做气候预测或临床推断。\n\n## 提示词\n\n```text\n你是运气学说的规则推演助手。只准用下面两条原文规则与天符定义，不得引入经验判语。\n\nR1（《素问·天元纪大论》）甲己之岁土运统之；乙庚之岁金运统之；丙辛之岁水运统之；\n                        丁壬之岁木运统之；戊癸之岁火运统之。\nR2（《素问·五运行大论》）子午之上少阴主之；丑未之上太阴主之；寅申之上少阳主之；\n                        卯酉之上阳明主之；辰戌之上太阳主之；巳亥之上厥阴主之。\nR3 在泉 = 司天对化：少阴↔阳明、太阴↔太阳、少阳↔厥阴。\nR4 天符 = 中运五行与司天五行相同。\nR5 阴阳：阳干（甲丙戊庚壬）太过，阴干不及；干支须同阴阳。\n\n规则：\n1. 第一步写出「以某年为甲子」的锚点；未给锚点不得推演。\n2. 逐项输出：干支 → 运 → 太过/不及 → 司天 → 在泉 → 是否天符，每步注明依据 R1–R4。\n3. 不许输出该年气候、多发疾病、用药宜忌、运气方。\n4. 不许把「岁会」「太乙天符」与天符混称；本章只实现天符。\n5. 干支不合法（如阳干配阴支）→ 报错，不得自行修正。\n6. 末尾写口径：推演自洽 ≠ 预测应验。\n\n输出格式：\n【锚点】1984 = 甲子\n【推演】干支 … → 运 …（太过/不及）→ 司天 … → 在泉 … → 天符：是/否\n【依据】R1/R2/R3/R4\n【不做】气候与临床推断\n```\n\n## 使用示例\n\n输入：2024 年。\n\n输出：【锚点】1984 = 甲子\n【推演】甲辰 → 运 土（太过，甲为阳干）→ 司天 太阳寒水（辰戌之岁）→ 在泉 太阴湿土 → 天符：否\n【依据】R1、R2、R3、R5\n【不做】不以「太阳寒水司天」推断该年气候或病种\n\n## 为什么这样限制\n\n- 推演是可以复算的，宜忌是不能复算的；混在一起输出，等于把可检验与不可检验的部分打包卖掉。\n- 干支合法性必须报错而不是\"顺手改\"：错一位，整张表平移。\n"
+      },
+      {
+        "name": "skill-lunqi-qipian.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/08-lunqi-qipian/outputs/skill-lunqi-qipian.md",
+        "title": "lunqi-qipian",
+        "description": "运气推演：干支推五运六气与天符，锚点先行，不输出宜忌",
+        "chars": 453,
+        "body": "---\nname: lunqi-qipian\ndescription: 运气推演：干支推五运六气与天符，锚点先行，不输出宜忌\nversion: 0.1.0\n---\n\n# lunqi-qipian\n\n## 何时使用\n\n- 要由年份或干支得到中运、司天、在泉、天符判定\n- 教学演示「查表」与「推演」的差别\n- 核对某条运气说法是否符合 R1–R4\n\n## 不适用\n\n- 气候预测、疾病流行预测\n- 用药宜忌、运气方\n- 岁会/太乙天符（本章未实现）\n\n## 步骤\n\n1. **定锚点**：如 1984 = 甲子；缺锚点不推。\n2. **查 R1**：年干 → 五运 + 太过/不及。\n3. **查 R2**：年支 → 司天。\n4. **推 R3**：在泉 = 司天对化。\n5. **判 R4**：中运五行是否等于司天五行 → 天符。\n6. **声边界**：推演自洽 ≠ 预测应验；不输出宜忌。\n\n## 输出模板\n\n```text\n【锚点】…【推演】干支→运（太过/不及）→司天→在泉→天符\n【依据】R1/R2/R3/R4【不做】…\n```\n\n## 质量判据\n\n- 锚点写明\n- 每步有规则编号\n- 无宜忌与预测\n- 干支不合法时报错\n\n> 本技能只做典籍规则推演，不构成预测或诊疗依据。\n"
       }
     ],
     "video": null,

@@ -2,11 +2,11 @@
   "$generated": "node scripts/build_outputs_index.js",
   "note": "可复用产出物的根级索引。契约见 CONTRIBUTING.md；每章的产物是生成物，索引是它们的生成物。",
   "counts": {
-    "items": 56,
-    "chaptersWithOutputs": 28,
+    "items": 62,
+    "chaptersWithOutputs": 31,
     "byKind": {
-      "prompt": 28,
-      "skill": 28
+      "prompt": 31,
+      "skill": 31
     },
     "gaps": 0
   },
@@ -179,6 +179,26 @@
               ]
             },
             {
+              "chapter": "04-jingmai-bielun",
+              "title": "第 4 章 · 经脉别论：两条路径、一个汇点、一个测点",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/04-jingmai-bielun/outputs/prompt-jingmai-bielun.md",
+                  "title": "经文路径图助手（气血水液）",
+                  "description": null,
+                  "chars": 684
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/04-jingmai-bielun/outputs/skill-jingmai-bielun.md",
+                  "title": "jingmai-bielun",
+                  "description": "气血水液路径图：逐边附原句、拓扑排序验无环、分清汇点与测点",
+                  "chars": 495
+                }
+              ]
+            },
+            {
               "chapter": "05-bingji-shijiu",
               "title": "第 5 章 · 病机十九条：十九句话里，五脏只占五条",
               "outputs": [
@@ -215,6 +235,46 @@
                   "title": "zhenfa-maiyao",
                   "description": "脉诊采集条件核对：逐条判原文四条件、单列补充项、不作废也不换算",
                   "chars": 500
+                }
+              ]
+            },
+            {
+              "chapter": "07-zhize-biaoben",
+              "title": "第 7 章 · 治则与标本：先治哪一个，原文给的是决策表不是口号",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/07-zhize-biaoben/outputs/prompt-zhize-biaoben.md",
+                  "title": "治序判定（标本先后）",
+                  "description": null,
+                  "chars": 767
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/07-zhize-biaoben/outputs/skill-zhize-biaoben.md",
+                  "title": "zhize-biaoben",
+                  "description": "标本治序判定：命中清单、特例优先、信息不足不猜、反治附辨",
+                  "chars": 462
+                }
+              ]
+            },
+            {
+              "chapter": "08-lunqi-qipian",
+              "title": "第 8 章 · 运气七篇：把「天时」变成一张可复算的表",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/08-lunqi-qipian/outputs/prompt-lunqi-qipian.md",
+                  "title": "运气推演助手（干支 → 五运六气）",
+                  "description": null,
+                  "chars": 793
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/08-lunqi-qipian/outputs/skill-lunqi-qipian.md",
+                  "title": "lunqi-qipian",
+                  "description": "运气推演：干支推五运六气与天符，锚点先行，不输出宜忌",
+                  "chars": 453
                 }
               ]
             },
@@ -932,6 +992,36 @@
       "deptSlug": "01-zhongyi",
       "subject": "内经选读",
       "subjectSlug": "06-neijing-xuandu",
+      "chapter": "04-jingmai-bielun",
+      "chapterTitle": "第 4 章 · 经脉别论：两条路径、一个汇点、一个测点",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/04-jingmai-bielun/outputs/prompt-jingmai-bielun.md",
+      "title": "经文路径图助手（气血水液）",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 684
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "04-jingmai-bielun",
+      "chapterTitle": "第 4 章 · 经脉别论：两条路径、一个汇点、一个测点",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/04-jingmai-bielun/outputs/skill-jingmai-bielun.md",
+      "title": "jingmai-bielun",
+      "name": "jingmai-bielun",
+      "description": "气血水液路径图：逐边附原句、拓扑排序验无环、分清汇点与测点",
+      "version": "0.1.0",
+      "chars": 495
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
       "chapter": "05-bingji-shijiu",
       "chapterTitle": "第 5 章 · 病机十九条：十九句话里，五脏只占五条",
       "kind": "prompt",
@@ -986,6 +1076,66 @@
       "description": "脉诊采集条件核对：逐条判原文四条件、单列补充项、不作废也不换算",
       "version": "0.1.0",
       "chars": 500
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "07-zhize-biaoben",
+      "chapterTitle": "第 7 章 · 治则与标本：先治哪一个，原文给的是决策表不是口号",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/07-zhize-biaoben/outputs/prompt-zhize-biaoben.md",
+      "title": "治序判定（标本先后）",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 767
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "07-zhize-biaoben",
+      "chapterTitle": "第 7 章 · 治则与标本：先治哪一个，原文给的是决策表不是口号",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/07-zhize-biaoben/outputs/skill-zhize-biaoben.md",
+      "title": "zhize-biaoben",
+      "name": "zhize-biaoben",
+      "description": "标本治序判定：命中清单、特例优先、信息不足不猜、反治附辨",
+      "version": "0.1.0",
+      "chars": 462
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "08-lunqi-qipian",
+      "chapterTitle": "第 8 章 · 运气七篇：把「天时」变成一张可复算的表",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/08-lunqi-qipian/outputs/prompt-lunqi-qipian.md",
+      "title": "运气推演助手（干支 → 五运六气）",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 793
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "内经选读",
+      "subjectSlug": "06-neijing-xuandu",
+      "chapter": "08-lunqi-qipian",
+      "chapterTitle": "第 8 章 · 运气七篇：把「天时」变成一张可复算的表",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/06-neijing-xuandu/chapters/08-lunqi-qipian/outputs/skill-lunqi-qipian.md",
+      "title": "lunqi-qipian",
+      "name": "lunqi-qipian",
+      "description": "运气推演：干支推五运六气与天符，锚点先行，不输出宜忌",
+      "version": "0.1.0",
+      "chars": 453
     },
     {
       "dept": "中医系",
