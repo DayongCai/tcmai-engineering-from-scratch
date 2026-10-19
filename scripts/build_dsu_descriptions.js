@@ -276,7 +276,8 @@ function main() {
     withExternalComponent: cov((r) => r.externalEvidence.length && !extEntryOf.get(r.label)?.concurrent
       && scopeOf.get(r.label)?.scope === 'component'),
     externalPartial: out.filter((r) => r.externalEvidence.length && scopeOf.get(r.label)?.scope === 'partial')
-      .map((r) => `${r.label} ← 缺构件「${scopeOf.get(r.label).missing.join('、')}」`),
+      // 每个缺构件各自加引号：合并成一个「A、B」会让人以为只缺一个构件（2026-10-19 实见）
+      .map((r) => `${r.label} ← 缺构件${scopeOf.get(r.label).missing.map((p) => `「${p}」`).join('')}`),
     withWhoTcm: cov((r) => r.whoTcm),
     withAlias: cov((r) => r.aliases.length),
     fullyMissing: cov((r) => r.missing.length === 7),   // 7 = 缺失项总数；加了 WHO-TCM 后 6 就成了陈旧常量
