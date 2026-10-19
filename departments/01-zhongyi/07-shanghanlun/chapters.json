@@ -60,19 +60,19 @@
       "n": 10,
       "slug": "10-fangzheng-duiying",
       "title": "方证对应：症状群 → 方剂的匹配",
-      "status": "📋"
+      "status": "🚧"
     },
     {
       "n": 11,
       "slug": "11-tiaowen-jiansuo",
       "title": "伤寒条文的检索与 BM25 复现",
-      "status": "📋"
+      "status": "🚧"
     },
     {
       "n": 12,
       "slug": "12-jiliang-zhesuan",
       "title": "经方剂量的度量衡与折算争议",
-      "status": "📋"
+      "status": "🚧"
     }
   ]
 }

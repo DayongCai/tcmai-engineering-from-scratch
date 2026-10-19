@@ -2,11 +2,11 @@
   "$generated": "node scripts/build_outputs_index.js",
   "note": "可复用产出物的根级索引。契约见 CONTRIBUTING.md；每章的产物是生成物，索引是它们的生成物。",
   "counts": {
-    "items": 50,
-    "chaptersWithOutputs": 25,
+    "items": 56,
+    "chaptersWithOutputs": 28,
     "byKind": {
-      "prompt": 25,
-      "skill": 25
+      "prompt": 28,
+      "skill": 28
     },
     "gaps": 0
   },
@@ -403,6 +403,66 @@
                   "title": "hebing-bingbing",
                   "description": "判合病与并病：定时间结构、定六经、引主症与原文方，经名不外推",
                   "chars": 533
+                }
+              ]
+            },
+            {
+              "chapter": "10-fangzheng-duiying",
+              "title": "第 10 章 · 方证对应：症状群 → 方剂，为什么前三版排序都是错的",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/10-fangzheng-duiying/outputs/prompt-fangzheng-duiying.md",
+                  "title": "方证检索结果解读",
+                  "description": null,
+                  "chars": 741
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/10-fangzheng-duiying/outputs/skill-fangzheng-duiying.md",
+                  "title": "fangzheng-duiying",
+                  "description": "方证检索复核：看支持度/覆盖率/否定句，遇方向相反整份弃用",
+                  "chars": 467
+                }
+              ]
+            },
+            {
+              "chapter": "11-tiaowen-jiansuo",
+              "title": "第 11 章 · 条文检索：MRR 满分，但「库里没有」它不会说",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/11-tiaowen-jiansuo/outputs/prompt-tiaowen-jiansuo.md",
+                  "title": "经文检索与弃答",
+                  "description": null,
+                  "chars": 632
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/11-tiaowen-jiansuo/outputs/skill-tiaowen-jiansuo.md",
+                  "title": "tiaowen-jiansuo",
+                  "description": "经文检索与弃答：白名单先行、归一后检索、近似条不得充数",
+                  "chars": 481
+                }
+              ]
+            },
+            {
+              "chapter": "12-jiliang-zhesuan",
+              "title": "第 12 章 · 经方剂量：桂枝三两是 41 克、47 克，还是 9 克",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/12-jiliang-zhesuan/outputs/prompt-jiliang-zhesuan.md",
+                  "title": "经方剂量三档换算",
+                  "description": null,
+                  "chars": 746
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/12-jiliang-zhesuan/outputs/skill-jiliang-zhesuan.md",
+                  "title": "jiliang-zhesuan",
+                  "description": "经方剂量三档换算：每数带前提、异文并列、计数单位不折克",
+                  "chars": 507
                 }
               ]
             }
@@ -1196,6 +1256,96 @@
       "description": "判合病与并病：定时间结构、定六经、引主症与原文方，经名不外推",
       "version": "0.1.0",
       "chars": 533
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "10-fangzheng-duiying",
+      "chapterTitle": "第 10 章 · 方证对应：症状群 → 方剂，为什么前三版排序都是错的",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/10-fangzheng-duiying/outputs/prompt-fangzheng-duiying.md",
+      "title": "方证检索结果解读",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 741
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "10-fangzheng-duiying",
+      "chapterTitle": "第 10 章 · 方证对应：症状群 → 方剂，为什么前三版排序都是错的",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/10-fangzheng-duiying/outputs/skill-fangzheng-duiying.md",
+      "title": "fangzheng-duiying",
+      "name": "fangzheng-duiying",
+      "description": "方证检索复核：看支持度/覆盖率/否定句，遇方向相反整份弃用",
+      "version": "0.1.0",
+      "chars": 467
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "11-tiaowen-jiansuo",
+      "chapterTitle": "第 11 章 · 条文检索：MRR 满分，但「库里没有」它不会说",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/11-tiaowen-jiansuo/outputs/prompt-tiaowen-jiansuo.md",
+      "title": "经文检索与弃答",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 632
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "11-tiaowen-jiansuo",
+      "chapterTitle": "第 11 章 · 条文检索：MRR 满分，但「库里没有」它不会说",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/11-tiaowen-jiansuo/outputs/skill-tiaowen-jiansuo.md",
+      "title": "tiaowen-jiansuo",
+      "name": "tiaowen-jiansuo",
+      "description": "经文检索与弃答：白名单先行、归一后检索、近似条不得充数",
+      "version": "0.1.0",
+      "chars": 481
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "12-jiliang-zhesuan",
+      "chapterTitle": "第 12 章 · 经方剂量：桂枝三两是 41 克、47 克，还是 9 克",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/12-jiliang-zhesuan/outputs/prompt-jiliang-zhesuan.md",
+      "title": "经方剂量三档换算",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 746
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "12-jiliang-zhesuan",
+      "chapterTitle": "第 12 章 · 经方剂量：桂枝三两是 41 克、47 克，还是 9 克",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/12-jiliang-zhesuan/outputs/skill-jiliang-zhesuan.md",
+      "title": "jiliang-zhesuan",
+      "name": "jiliang-zhesuan",
+      "description": "经方剂量三档换算：每数带前提、异文并列、计数单位不折克",
+      "version": "0.1.0",
+      "chars": 507
     },
     {
       "dept": "中药系",

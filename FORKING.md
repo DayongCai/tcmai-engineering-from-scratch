@@ -164,7 +164,7 @@
 |---|---|---|
 | 课程审计（L0–L3） | `npm run audit` | 三层 0 错误 |
 | 计数一致性 | `npm run counts` | README 声明与 catalog.json 逐项对齐 |
-| 链接完整性 | `npm run links` | 扫描 249 个 md，0 断链 |
+| 链接完整性 | `npm run links` | 扫描 258 个 md，0 断链 |
 | 产出物索引 | `npm run outputs` | 6 件产物 / 3 章，`--check` 不漂移 |
 | 项目看板 | `npm run dashboard` | KPI 与源独立重算一致 |
 | 测试套件 | `npm test` | 39 个套件全绿 |

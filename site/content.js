@@ -2133,6 +2133,360 @@ window.TCMAI_CONTENT = {
     "video": null,
     "videoPoster": null
   },
+  "01-zhongyi/07-shanghanlun/10-fangzheng-duiying": {
+    "key": "01-zhongyi/07-shanghanlun/10-fangzheng-duiying",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "07-shanghanlun",
+    "subjectTitle": "伤寒论",
+    "chapterSlug": "10-fangzheng-duiying",
+    "n": 10,
+    "title": "第 10 章 · 方证对应：症状群 → 方剂，为什么前三版排序都是错的",
+    "motto": "「太阳病，头痛发热，身疼恶风，无汗而喘者，麻黄汤主之。」——《伤寒论·辨太阳病脉证并治中》",
+    "problem": "你做了个「输入症状、输出方剂」的小工具：算症状重合度、排序、取第一。第一版给「下利+厥+恶寒」排出的第一位是**调胃承气汤**——一个泻下方。症状全对上了，方向完全反了。",
+    "roots": "环境逼迫(要做方证检索) + 知识积累(三种打分 × 失败案例 = 知道什么时候不能信排序)",
+    "html": "<h1 id=\"第-10-章-方证对应-症状群-方剂-为什么前三版排序都是错的\">第 10 章 · 方证对应：症状群 → 方剂，为什么前三版排序都是错的</h1>\n<blockquote><p><strong>MOTTO:</strong> 「太阳病，头痛发热，身疼恶风，无汗而喘者，麻黄汤主之。」——《伤寒论·辨太阳病脉证并治中》</p>\n<p><strong>PROBLEM:</strong> 你做了个「输入症状、输出方剂」的小工具：算症状重合度、排序、取第一。第一版给「下利+厥+恶寒」排出的第一位是<strong>调胃承气汤</strong>——一个泻下方。症状全对上了，方向完全反了。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(要做方证检索) + 知识积累(三种打分 × 失败案例 = 知道什么时候不能信排序)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>伤寒论</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>10 / 12</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>4 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>从底本建出「方—症」共现矩阵，并说出支持度为什么必须与分数一起报</li><li>复现两种朴素打分的失败案例，解释各自偏袒了什么</li><li>用「覆盖率门槛 × 提升度」得到可用排序，并说明它仍然不是辨证</li><li>判断一个方证检索结果什么情况下必须弃用</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"方-症矩阵-实测\">方-症矩阵（实测）</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>方</th><th>支持条数</th><th>覆盖篇</th><th>高频伴症</th></tr></thead><tbody><tr><td>桂枝汤</td><td><strong>134</strong></td><td>12 篇</td><td>汗出×44 发热×27 脉浮×24 恶寒×20 喘×13</td></tr><tr><td>大承气汤</td><td><strong>79</strong></td><td>8 篇</td><td>潮热×20 腹满×19 发热×17 下利×16 谵语×14</td></tr><tr><td>麻黄汤</td><td><strong>44</strong></td><td>7 篇</td><td>脉浮×29 无汗×14 发热×12 喘×12 身疼×10</td></tr><tr><td>小柴胡汤</td><td><strong>34</strong></td><td>10 篇</td><td>往来寒热×7 潮热×7 脉浮×6 喜呕×4 汗出×4</td></tr><tr><td>调胃承气汤</td><td><strong>33</strong></td><td>9 篇</td><td>恶寒×8 汗出×8 心烦×8 厥×6 谵语×6</td></tr><tr><td>小承气汤</td><td><strong>31</strong></td><td>9 篇</td><td>潮热×12 谵语×10 发热×9</td></tr><tr><td>四逆汤</td><td><strong>31</strong></td><td>13 篇</td><td>下利×13 汗出×10 厥×10 脉浮×9</td></tr><tr><td>五苓散</td><td><strong>27</strong></td><td>9 篇</td><td>汗出×10 小便不利×9 脉浮×9</td></tr></tbody></table></div>\n<p>第一行就埋着陷阱：桂枝汤横跨 12 篇、134 条，它的「症状画像」宽到几乎覆盖任何组合。<strong>支持度越高，画像越糊</strong>——这是方证检索最大的偏倚来源。</p>\n<h3 id=\"第一版-jaccard-症状重合-并集\">第一版：Jaccard（症状重合 / 并集）</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>查询</th><th>第一名</th><th>判断</th></tr></thead><tbody><tr><td>无汗+脉浮+头痛+喘</td><td>麻黄汤 0.444</td><td>✅</td></tr><tr><td>往来寒热+胸胁苦满+口苦+心烦</td><td>小柴胡汤 0.214</td><td>✅</td></tr><tr><td>腹满+潮热+谵语</td><td>小承气汤 0.333</td><td>✅（大承气未进前三）</td></tr><tr><td><strong>下利+厥+恶寒</strong></td><td><strong>调胃承气汤 0.273</strong></td><td>❌ 泻下方排第一</td></tr></tbody></table></div>\n<p>Jaccard 只看重合比例，不看这个症状在全库有多常见。「厥」45 条、「恶寒」107 条，谁都有；于是支持度大、什么都沾的方占便宜。<strong>第四例是整个方法的照妖镜。</strong></p>\n<h3 id=\"第二版-纯提升度-lift-方内占比-全库占比\">第二版：纯提升度（lift = 方内占比 / 全库占比）</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>查询</th><th>第一名</th><th>判断</th></tr></thead><tbody><tr><td>无汗+脉浮+头痛+喘</td><td><strong>理中丸 20.11（支持 5 条）</strong></td><td>❌ 小样本偶然</td></tr><tr><td>往来寒热+胸胁苦满+口苦+心烦</td><td><strong>栀子豉汤 55.87</strong></td><td>❌ 只因「口苦」罕见</td></tr><tr><td>腹满+潮热+谵语</td><td><strong>白虎汤 11.14</strong></td><td>⚠️ 可辩</td></tr><tr><td>下利+厥+恶寒</td><td>四逆汤 8.77</td><td>✅</td></tr></tbody></table></div>\n<p>lift 修好了第四例，却把前三例搞坏：一个只用 1 个罕见症状命中的小方，平均提升度可以高到离谱。<strong>平均掩盖了覆盖。</strong></p>\n<h3 id=\"第三版-覆盖率门槛-平均提升度\">第三版：覆盖率门槛 × 平均提升度</h3>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">text</div><pre><code class=\"lang-text\">候选资格：support ≥ 10 且 coverage ≥ 0.5（查询症状至少覆盖一半）\n排序：score = meanLift × coverage</code></pre></div>\n<div class=\"table-wrap\"><table><thead><tr><th>查询</th><th>第一名</th><th>分数（覆盖 × 提升）</th></tr></thead><tbody><tr><td>无汗+脉浮+头痛+喘</td><td><strong>麻黄汤</strong></td><td>8.39（1.00 × 8.39）</td></tr><tr><td>往来寒热+胸胁苦满+口苦+心烦</td><td><strong>小柴胡汤</strong></td><td>20.10（0.75 × 26.79）</td></tr><tr><td>腹满+潮热+谵语</td><td><strong>小承气汤</strong></td><td>10.00（1.00 × 10.00）</td></tr><tr><td>下利+厥+恶寒</td><td><strong>四逆汤</strong></td><td>8.77（1.00 × 8.77）</td></tr></tbody></table></div>\n<p>四例全对。但注意「腑实」一例：大承气汤排第二（7.69），原因是查询里没有「大便硬」——第 4 章讲过，那正是大承气的入口条件。<strong>排序对不对，取决于你输入了什么，而不是模型多聪明。</strong></p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">buildMatrix()   // 方 → {support, symptoms, pians}\nmatch(signs)    // 第一版 Jaccard\nmatchLift(signs)// 第二版 平均提升度\nmatchHybrid(signs) // 第三版 覆盖率门槛 × 提升度\nevidence(formula, hits) // 回原文找 2 条出处</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>matchHybrid(['下利','厥','恶寒'])[0].formula === '四逆汤'</code>；<code>match(['下利','厥','恶寒'])[0].formula === '调胃承气汤'</code>（<strong>故意保留失败案例</strong>）；<code>matchHybrid(['无汗','脉浮','头痛','喘'])[0].formula === '麻黄汤'</code>。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>症状词表只有 24 个，手工的</strong>。未收录症状不参与打分，等于被静默忽略——这是本章最大的局限。</li><li><strong>共现不等于因果</strong>。同一方出现在同条，不代表该症状是方的指征（可能是否定句：「不恶寒」）。</li><li><strong>否定句未处理</strong>。「无汗」与「不汗出」被当作同一词，「不恶寒」会被算成「恶寒」。这一条足以让排序整体偏移，必须在使用前声明。</li><li><strong>不是辨证</strong>。方证对应的临床含义包含体质、病程、禁忌，本章只做词面统计。</li><li>支持度门槛（10）与覆盖率门槛（0.5）是经验值，换语料需重标定。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 方名与症状统计来自 <code>standards/shanghan/底本.json</code>（可复算）；本章为检索算法演示，不构成诊断或处方建议。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>给「不恶寒」「无汗」这类否定形式加处理，说明它会怎样改变「寒利」一例的排序。</li><li>若把支持度门槛从 10 降到 3，第三版哪些查询会退化？用代码验证。</li><li>设计一个能表达「大便硬 → 大承气」的机制，使「腑实」查询把大承气排到第一，同时不破坏其他三例。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>三版排序的差别不在算法精妙，而在<strong>你愿意在哪一步承认自己错了</strong>。第一版把泻下方排给寒利时，最省事的做法是「加个规则把它过滤掉」——然后你就永远不知道偏倚从哪来。</p>",
+    "markdown": "# 第 10 章 · 方证对应：症状群 → 方剂，为什么前三版排序都是错的\n\n> **MOTTO:** 「太阳病，头痛发热，身疼恶风，无汗而喘者，麻黄汤主之。」——《伤寒论·辨太阳病脉证并治中》\n>\n> **PROBLEM:** 你做了个「输入症状、输出方剂」的小工具：算症状重合度、排序、取第一。第一版给「下利+厥+恶寒」排出的第一位是**调胃承气汤**——一个泻下方。症状全对上了，方向完全反了。\n>\n> **双根因定位:** 环境逼迫(要做方证检索) + 知识积累(三种打分 × 失败案例 = 知道什么时候不能信排序)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 伤寒论 |\n| 院系 | 中医系 |\n| 章序号 | 10 / 12 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 4 小时 |\n\n## 学习目标\n\n- 从底本建出「方—症」共现矩阵，并说出支持度为什么必须与分数一起报\n- 复现两种朴素打分的失败案例，解释各自偏袒了什么\n- 用「覆盖率门槛 × 提升度」得到可用排序，并说明它仍然不是辨证\n- 判断一个方证检索结果什么情况下必须弃用\n\n## 核心概念\n\n### 方-症矩阵（实测）\n\n| 方 | 支持条数 | 覆盖篇 | 高频伴症 |\n|---|--:|---|---|\n| 桂枝汤 | **134** | 12 篇 | 汗出×44 发热×27 脉浮×24 恶寒×20 喘×13 |\n| 大承气汤 | **79** | 8 篇 | 潮热×20 腹满×19 发热×17 下利×16 谵语×14 |\n| 麻黄汤 | **44** | 7 篇 | 脉浮×29 无汗×14 发热×12 喘×12 身疼×10 |\n| 小柴胡汤 | **34** | 10 篇 | 往来寒热×7 潮热×7 脉浮×6 喜呕×4 汗出×4 |\n| 调胃承气汤 | **33** | 9 篇 | 恶寒×8 汗出×8 心烦×8 厥×6 谵语×6 |\n| 小承气汤 | **31** | 9 篇 | 潮热×12 谵语×10 发热×9 |\n| 四逆汤 | **31** | 13 篇 | 下利×13 汗出×10 厥×10 脉浮×9 |\n| 五苓散 | **27** | 9 篇 | 汗出×10 小便不利×9 脉浮×9 |\n\n第一行就埋着陷阱：桂枝汤横跨 12 篇、134 条，它的「症状画像」宽到几乎覆盖任何组合。**支持度越高，画像越糊**——这是方证检索最大的偏倚来源。\n\n### 第一版：Jaccard（症状重合 / 并集）\n\n| 查询 | 第一名 | 判断 |\n|---|---|---|\n| 无汗+脉浮+头痛+喘 | 麻黄汤 0.444 | ✅ |\n| 往来寒热+胸胁苦满+口苦+心烦 | 小柴胡汤 0.214 | ✅ |\n| 腹满+潮热+谵语 | 小承气汤 0.333 | ✅（大承气未进前三） |\n| **下利+厥+恶寒** | **调胃承气汤 0.273** | ❌ 泻下方排第一 |\n\nJaccard 只看重合比例，不看这个症状在全库有多常见。「厥」45 条、「恶寒」107 条，谁都有；于是支持度大、什么都沾的方占便宜。**第四例是整个方法的照妖镜。**\n\n### 第二版：纯提升度（lift = 方内占比 / 全库占比）\n\n| 查询 | 第一名 | 判断 |\n|---|---|---|\n| 无汗+脉浮+头痛+喘 | **理中丸 20.11（支持 5 条）** | ❌ 小样本偶然 |\n| 往来寒热+胸胁苦满+口苦+心烦 | **栀子豉汤 55.87** | ❌ 只因「口苦」罕见 |\n| 腹满+潮热+谵语 | **白虎汤 11.14** | ⚠️ 可辩 |\n| 下利+厥+恶寒 | 四逆汤 8.77 | ✅ |\n\nlift 修好了第四例，却把前三例搞坏：一个只用 1 个罕见症状命中的小方，平均提升度可以高到离谱。**平均掩盖了覆盖。**\n\n### 第三版：覆盖率门槛 × 平均提升度\n\n```\n候选资格：support ≥ 10 且 coverage ≥ 0.5（查询症状至少覆盖一半）\n排序：score = meanLift × coverage\n```\n\n| 查询 | 第一名 | 分数（覆盖 × 提升） |\n|---|---|---|\n| 无汗+脉浮+头痛+喘 | **麻黄汤** | 8.39（1.00 × 8.39） |\n| 往来寒热+胸胁苦满+口苦+心烦 | **小柴胡汤** | 20.10（0.75 × 26.79） |\n| 腹满+潮热+谵语 | **小承气汤** | 10.00（1.00 × 10.00） |\n| 下利+厥+恶寒 | **四逆汤** | 8.77（1.00 × 8.77） |\n\n四例全对。但注意「腑实」一例：大承气汤排第二（7.69），原因是查询里没有「大便硬」——第 4 章讲过，那正是大承气的入口条件。**排序对不对，取决于你输入了什么，而不是模型多聪明。**\n\n## BUILD IT：从零实现\n\n```js\nbuildMatrix()   // 方 → {support, symptoms, pians}\nmatch(signs)    // 第一版 Jaccard\nmatchLift(signs)// 第二版 平均提升度\nmatchHybrid(signs) // 第三版 覆盖率门槛 × 提升度\nevidence(formula, hits) // 回原文找 2 条出处\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：`matchHybrid(['下利','厥','恶寒'])[0].formula === '四逆汤'`；`match(['下利','厥','恶寒'])[0].formula === '调胃承气汤'`（**故意保留失败案例**）；`matchHybrid(['无汗','脉浮','头痛','喘'])[0].formula === '麻黄汤'`。\n\n## 代价与边界\n\n- **症状词表只有 24 个，手工的**。未收录症状不参与打分，等于被静默忽略——这是本章最大的局限。\n- **共现不等于因果**。同一方出现在同条，不代表该症状是方的指征（可能是否定句：「不恶寒」）。\n- **否定句未处理**。「无汗」与「不汗出」被当作同一词，「不恶寒」会被算成「恶寒」。这一条足以让排序整体偏移，必须在使用前声明。\n- **不是辨证**。方证对应的临床含义包含体质、病程、禁忌，本章只做词面统计。\n- 支持度门槛（10）与覆盖率门槛（0.5）是经验值，换语料需重标定。\n\n> **免责声明：** 方名与症状统计来自 `standards/shanghan/底本.json`（可复算）；本章为检索算法演示，不构成诊断或处方建议。\n\n## 练习\n\n1. 给「不恶寒」「无汗」这类否定形式加处理，说明它会怎样改变「寒利」一例的排序。\n2. 若把支持度门槛从 10 降到 3，第三版哪些查询会退化？用代码验证。\n3. 设计一个能表达「大便硬 → 大承气」的机制，使「腑实」查询把大承气排到第一，同时不破坏其他三例。\n\n## 进阶思考\n\n三版排序的差别不在算法精妙，而在**你愿意在哪一步承认自己错了**。第一版把泻下方排给寒利时，最省事的做法是「加个规则把它过滤掉」——然后你就永远不知道偏倚从哪来。\n",
+    "code": {
+      "main.js": "'use strict';\r\n/**\r\n * 方证对应：症状群 → 方剂候选（带支持条数与出处）\r\n *\r\n *   node code/main.js\r\n *\r\n * 口径：\r\n *   · 「方证」= 该方在同条出现的症状词集合；支持度 support = 含该方的条文数。\r\n *   · 打分用 Jaccard（命中症状 / 并集），并强制 support ≥ 3，否则不给候选 —— \r\n *     支持度太低的方，命中的一两个词只是巧合。\r\n *   · 只报候选与出处，不给剂量、不判主次、不替代辨证。\r\n *   · 症状词表是手工的（26 词），覆盖不全；未收录的症状不会参与打分。\r\n */\r\n\r\nconst path = require('node:path');\r\nconst fs = require('node:fs');\r\n\r\nconst ROOT = path.resolve(__dirname, '../../../../../..');\r\nconst BOOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/shanghan/底本.json'), 'utf8'));\r\n\r\nconst ITEMS = [];\r\nfor (const p of BOOK.pian) for (const it of p.items) {\r\n  ITEMS.push({ pian: p.no, no: it.no, text: it.text, norm: it.text.split('𤍠').join('热') });\r\n}\r\n\r\n/** 手工症状词表（归一后形式） */\r\nconst SYMPTOMS = ['发热', '恶寒', '汗出', '无汗', '头痛', '身疼', '脉浮', '脉沉', '口苦', '咽干', '目眩',\r\n  '往来寒热', '胸胁苦满', '心烦', '喜呕', '腹满', '潮热', '谵语', '下利', '厥', '小便不利', '烦躁', '咳', '喘'];\r\n\r\n/** 方名：先剥「宜/属/与/服/本云/作」等前缀，避免把「宜大承气汤」算成另一个方 */\r\nconst FORMULAS = ['桂枝汤', '麻黄汤', '小柴胡汤', '大承气汤', '小承气汤', '调胃承气汤', '四逆汤', '五苓散', '理中丸', '白虎汤', '栀子豉汤', '葛根汤'];\r\nconst PREFIX = /^(宜|属|与|服|本云|作|用|进|更|复与)+/;\r\n\r\nfunction formulasIn(text) {\r\n  const out = new Set();\r\n  for (const f of FORMULAS) if (text.includes(f)) out.add(f);\r\n  return out;\r\n}\r\n\r\n/** 建方-症矩阵 */\r\nfunction buildMatrix() {\r\n  const m = new Map();\r\n  for (const f of FORMULAS) m.set(f, { support: 0, symptoms: new Map(), pians: new Set() });\r\n  for (const it of ITEMS) {\r\n    const fs_ = formulasIn(it.norm);\r\n    for (const f of fs_) {\r\n      const rec = m.get(f);\r\n      rec.support += 1;\r\n      rec.pians.add(it.pian);\r\n      for (const s of SYMPTOMS) if (it.norm.includes(s)) rec.symptoms.set(s, (rec.symptoms.get(s) || 0) + 1);\r\n    }\r\n  }\r\n  return m;\r\n}\r\n\r\n/** 症状群 → 候选方（Jaccard + 支持度门槛） */\r\nfunction match(signs, { minSupport = 3, top = 3 } = {}) {\r\n  const q = [...new Set(signs)].filter((s) => SYMPTOMS.includes(s));\r\n  const matrix = buildMatrix();\r\n  const rows = [];\r\n  for (const [f, rec] of matrix) {\r\n    if (rec.support < minSupport) continue;\r\n    const fsyms = [...rec.symptoms.keys()];\r\n    const hit = q.filter((s) => fsyms.includes(s));\r\n    if (hit.length === 0) continue;\r\n    const union = new Set([...q, ...fsyms]).size;\r\n    rows.push({\r\n      formula: f,\r\n      score: Number((hit.length / union).toFixed(3)),\r\n      hit,\r\n      support: rec.support,\r\n      pians: [...rec.pians].sort((a, b) => a - b),\r\n    });\r\n  }\r\n  return rows.sort((a, b) => b.score - a.score || b.support - a.support).slice(0, top);\r\n}\r\n\r\n/**\r\n * lift 版匹配：score = 平均提升度\r\n *   lift(s, f) = (s 在方 f 条文里的占比) / (s 在全库的占比)\r\n * 目的：纠正 Jaccard 对「大支持度方」的偏袒 —— 桂枝汤 134 条几乎覆盖任何症状组合，\r\n * 不加权就会把泻下类方排到「寒利」第一位（见 code/main.js 的输出对比）。\r\n */\r\nfunction matchLift(signs, { minSupport = 3, top = 3 } = {}) {\r\n  const q = [...new Set(signs)].filter((s) => SYMPTOMS.includes(s));\r\n  const N = ITEMS.length;\r\n  const df = new Map();\r\n  for (const s of SYMPTOMS) df.set(s, ITEMS.filter((it) => it.norm.includes(s)).length || 1);\r\n  const matrix = buildMatrix();\r\n  const rows = [];\r\n  for (const [f, rec] of matrix) {\r\n    if (rec.support < minSupport) continue;\r\n    const hits = q.filter((s) => rec.symptoms.has(s));\r\n    if (!hits.length) continue;\r\n    const lifts = hits.map((s) => (rec.symptoms.get(s) / rec.support) / (df.get(s) / N));\r\n    const score = lifts.reduce((a, b) => a + b, 0) / lifts.length;\r\n    rows.push({\r\n      formula: f,\r\n      score: Number(score.toFixed(2)),\r\n      hit: hits,\r\n      support: rec.support,\r\n      pians: [...rec.pians].sort((a, b) => a - b),\r\n    });\r\n  }\r\n  return rows.sort((a, b) => b.score - a.score).slice(0, top);\r\n}\r\n\r\n/**\r\n * 混合版：覆盖率门槛 × 平均提升度\r\n *   coverage = 查询症状中被该方覆盖的比例（≥ 0.5 才有资格）\r\n *   support ≥ 10（少于此的方，症状共现属偶然）\r\n *   score = meanLift × coverage\r\n * 前两版各自失败（见 main.js 输出）：Jaccard 偏袒大支持度方，纯 lift 偏袒小样本方。\r\n */\r\nfunction matchHybrid(signs, { minSupport = 10, minCoverage = 0.5, top = 3 } = {}) {\r\n  const q = [...new Set(signs)].filter((s) => SYMPTOMS.includes(s));\r\n  const N = ITEMS.length;\r\n  const df = new Map();\r\n  for (const s of SYMPTOMS) df.set(s, ITEMS.filter((it) => it.norm.includes(s)).length || 1);\r\n  const matrix = buildMatrix();\r\n  const rows = [];\r\n  for (const [f, rec] of matrix) {\r\n    if (rec.support < minSupport) continue;\r\n    const hits = q.filter((s) => rec.symptoms.has(s));\r\n    const coverage = hits.length / q.length;\r\n    if (coverage < minCoverage) continue;\r\n    const lifts = hits.map((s) => (rec.symptoms.get(s) / rec.support) / (df.get(s) / N));\r\n    const meanLift = lifts.reduce((a, b) => a + b, 0) / lifts.length;\r\n    rows.push({\r\n      formula: f,\r\n      score: Number((meanLift * coverage).toFixed(2)),\r\n      coverage: Number(coverage.toFixed(2)),\r\n      meanLift: Number(meanLift.toFixed(2)),\r\n      hit: hits,\r\n      support: rec.support,\r\n      pians: [...rec.pians].sort((a, b) => a - b),\r\n    });\r\n  }\r\n  return rows.sort((a, b) => b.score - a.score).slice(0, top);\r\n}\r\n\r\n/** 给一条候选方找原文出处（最多 2 条） */\r\nfunction evidence(formula, syms) {\r\n  return ITEMS.filter((it) => it.text.includes(formula) && syms.some((s) => it.norm.includes(s)))\r\n    .slice(0, 2)\r\n    .map((it) => ({ pian: it.pian, no: it.no, text: it.text.slice(0, 60) }));\r\n}\r\n\r\nfunction main() {\r\n  const matrix = buildMatrix();\r\n  console.log('方-症矩阵（支持数 = 含该方的条文数）\\n');\r\n  const top = [...matrix].sort((a, b) => b[1].support - a[1].support).slice(0, 8);\r\n  for (const [f, rec] of top) {\r\n    const s = [...rec.symptoms].sort((a, b) => b[1] - a[1]).slice(0, 5).map(([k, v]) => `${k}×${v}`).join(' ');\r\n    console.log(`  ${f.padEnd(6, '　')} 支持 ${String(rec.support).padStart(3)} 条｜篇 ${[...rec.pians].join('/')}｜高频症 ${s}`);\r\n  }\r\n\r\n  const cases = [\r\n    { name: '表实无汗', signs: ['无汗', '脉浮', '头痛', '喘'] },\r\n    { name: '半表半里', signs: ['往来寒热', '胸胁苦满', '口苦', '心烦'] },\r\n    { name: '腑实', signs: ['腹满', '潮热', '谵语'] },\r\n    { name: '寒利', signs: ['下利', '厥', '恶寒'] },\r\n  ];\r\n  for (const c of cases) {\r\n    const r = match(c.signs);\r\n    const rl = matchLift(c.signs);\r\n    const rh = matchHybrid(c.signs);\r\n    console.log(`\\n【${c.name}】${c.signs.join('+')}`);\r\n    if (!r.length) { console.log('  无候选（支持度门槛 3 未达成或症状未命中）'); continue; }\r\n    for (const x of r) {\r\n      console.log(`  [Jaccard] ${x.formula}｜${x.score}｜命中 ${x.hit.join('/')}｜支持 ${x.support} 条`);\r\n    }\r\n    console.log('  ── lift 加权后 ──');\r\n    for (const x of rl) {\r\n      console.log(`  [lift] ${x.formula}｜提升 ${x.score}｜命中 ${x.hit.join('/')}｜支持 ${x.support} 条`);\r\n    }\r\n    console.log('  ── 混合（覆盖率门槛 × 平均提升）──');\r\n    for (const x of rh) {\r\n      console.log(`  [混合] ${x.formula}｜${x.score}（覆盖 ${x.coverage} × 提升 ${x.meanLift}）｜支持 ${x.support} 条`);\r\n      for (const e of evidence(x.formula, x.hit)) console.log(`      篇${e.pian}：${e.text}…`);\r\n    }\r\n  }\r\n  console.log('\\n口径：候选≠处方；Jaccard 只衡量词面重合，不含辨证逻辑；症状表 24 词，覆盖不全。');\r\n  console.log('本输出为文本统计演示，不构成诊疗建议。');\r\n}\r\n\r\nif (require.main === module) main();\r\nmodule.exports = { buildMatrix, match, matchLift, matchHybrid, evidence, SYMPTOMS, FORMULAS, ITEMS, PREFIX };\r\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { buildMatrix, match, matchLift, matchHybrid, evidence, FORMULAS } = require('./main.js');\n\ntest('方-症矩阵：支持数与篇数可复现', () => {\n  const m = buildMatrix();\n  assert.strictEqual(m.get('桂枝汤').support, 134);\n  assert.strictEqual(m.get('大承气汤').support, 79);\n  assert.strictEqual(m.get('麻黄汤').support, 44);\n  assert.strictEqual(m.get('小柴胡汤').support, 34);\n  assert.strictEqual(m.get('四逆汤').support, 31);\n  assert.ok(m.get('桂枝汤').pians.size >= 10, '桂枝汤应跨 10 篇以上');\n});\n\ntest('第一版 Jaccard 的失败被保留：寒利查询排出泻下方', () => {\n  const r = match(['下利', '厥', '恶寒']);\n  assert.strictEqual(r[0].formula, '调胃承气汤');\n});\n\ntest('第二版纯 lift 的失败被保留：表实查询排出小样本方', () => {\n  const r = matchLift(['无汗', '脉浮', '头痛', '喘']);\n  assert.strictEqual(r[0].formula, '理中丸');\n  assert.ok(r[0].support < 10);\n});\n\ntest('第三版混合：四个查询全部落到对应方', () => {\n  assert.strictEqual(matchHybrid(['无汗', '脉浮', '头痛', '喘'])[0].formula, '麻黄汤');\n  assert.strictEqual(matchHybrid(['往来寒热', '胸胁苦满', '口苦', '心烦'])[0].formula, '小柴胡汤');\n  assert.strictEqual(matchHybrid(['腹满', '潮热', '谵语'])[0].formula, '小承气汤');\n  assert.strictEqual(matchHybrid(['下利', '厥', '恶寒'])[0].formula, '四逆汤');\n});\n\ntest('混合版给出覆盖率与提升度分量，供人复核', () => {\n  const [top] = matchHybrid(['下利', '厥', '恶寒']);\n  assert.strictEqual(top.coverage, 1);\n  assert.ok(top.meanLift > 1);\n  assert.strictEqual(top.score, Number((top.meanLift * top.coverage).toFixed(2)));\n});\n\ntest('支持度门槛生效：小于 10 条的方不进混合版候选', () => {\n  for (const x of matchHybrid(['发热', '恶寒'])) assert.ok(x.support >= 10, x.formula);\n});\n\ntest('出处可回原文：麻黄汤 + 无汗 命中篇 5', () => {\n  const ev = evidence('麻黄汤', ['无汗']);\n  assert.ok(ev.length >= 1);\n  assert.ok(ev.some((e) => e.pian === 5 && e.text.includes('麻黄汤')));\n});\n\ntest('方名表覆盖本章用到的 12 方，且不含前缀污染词', () => {\n  assert.strictEqual(FORMULAS.length, 12);\n  assert.ok(FORMULAS.every((f) => !/^(宜|属|与|服)/.test(f)));\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "方证对应里「支持度」指的是？",
+          "options": [
+            "该方治好多少人",
+            "含该方的条文数",
+            "该方的药味数",
+            "该方的剂量"
+          ],
+          "correct": 1,
+          "explanation": "支持度是文本频次，不是疗效数据。"
+        },
+        {
+          "stage": "check",
+          "question": "为什么纯 Jaccard 会给「下利+厥+恶寒」排出调胃承气汤？",
+          "options": [
+            "条文写错了",
+            "它只看重合比例，不看症状在全库的常见度，支持度大的方沾得上一切",
+            "调胃承气汤确实主治寒利",
+            "样本太少"
+          ],
+          "correct": 1,
+          "explanation": "「厥」45 条、「恶寒」107 条，谁都有；支持度 134 的方组合覆盖面最广。"
+        },
+        {
+          "stage": "check",
+          "question": "纯 lift 版本为什么把「表实无汗」排成理中丸第一？",
+          "options": [
+            "理中丸支持度高",
+            "小样本方靠单个罕见症状「头痛」取得极高平均提升，平均掩盖了覆盖不足",
+            "理中丸确实治表实",
+            "症状表缺失"
+          ],
+          "correct": 1,
+          "explanation": "支持 5 条的方，命中 1 个罕见词就能刷高平均 lift。"
+        },
+        {
+          "stage": "check",
+          "question": "混合版的两个门槛是？",
+          "options": [
+            "支持 ≥ 10 且覆盖率 ≥ 0.5",
+            "支持 ≥ 50 且 lift ≥ 10",
+            "覆盖率 = 1 且支持 ≥ 100",
+            "无门槛"
+          ],
+          "correct": 0,
+          "explanation": "门槛是经验值，换语料需重标定。"
+        },
+        {
+          "stage": "post",
+          "question": "「腑实」查询里大承气只排第二，原因是？",
+          "options": [
+            "大承气支持度低",
+            "查询缺少「大便硬」——正是大承气的入口条件",
+            "大承气不在方名表",
+            "算法随机"
+          ],
+          "correct": 1,
+          "explanation": "排序取决于输入什么，而不是模型多聪明。"
+        },
+        {
+          "stage": "post",
+          "question": "本章处理否定句（「不恶寒」）的方式是？",
+          "options": [
+            "已正确识别",
+            "未处理，作为已知缺陷声明出来",
+            "删除相关条文",
+            "加负号"
+          ],
+          "correct": 1,
+          "explanation": "未处理的缺陷必须声明，否则排序整体偏移而无人知晓。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-fangzheng-duiying.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/10-fangzheng-duiying/outputs/prompt-fangzheng-duiying.md",
+        "title": "方证检索结果解读",
+        "description": null,
+        "chars": 741,
+        "body": "# 方证检索结果解读\n\n## 用途\n\n拿到一个「症状 → 方剂」的排序后，判断它**能不能用**：看支持度、看覆盖、看否定句、看是否有荒谬项。\n用于**检索结果复核、教学演示、算法评估**。不做辨证结论。\n\n## 提示词\n\n```text\n你是伤寒论文本检索的复核助手。下面是某个方证检索系统给出的候选列表与查询症状。\n\n任务：逐条复核，输出「可用 / 慎用 / 弃用」及理由。\n\n规则：\n1. 先看支持度：含该方的条文数 < 10 的候选，标「小样本，偶然共现」，不进结论。\n2. 再看覆盖：查询症状中被该方覆盖的比例 < 0.5 的，标「覆盖不足」。\n3. 检查荒谬项：若候选方的治法方向与查询的寒热虚实相反（如寒利查出泻下方），\n   整份列表标「弃用」，并指出是哪种偏倚（大支持度 / 小样本 / 否定句）。\n4. 检查否定句：查询或条文中出现「不恶寒」「无汗」时，必须确认系统是否把否定当肯定；\n   未处理的，标「否定句风险」，结论降级。\n5. 每条候选必须附原文出处（篇号 + 原句片段）；给不出出处的候选一律剔除。\n6. 不得据排序结果下诊断或推荐处方；只评价检索质量。\n\n输出格式：\n【查询】…\n【候选复核】方名｜支持 n｜覆盖 x｜判定（可用/慎用/弃用）｜理由\n【整份判定】可用 / 慎用 / 弃用（偏倚类型）\n【缺口】未处理的语言现象…\n```\n\n## 使用示例\n\n输入：查询「下利+厥+恶寒」，系统给出「调胃承气汤 0.273 / 四逆汤 0.25」。\n\n输出：【候选复核】调胃承气汤｜支持 33｜覆盖 1.0｜弃用｜寒利查得泻下方，方向相反\n四逆汤｜支持 31｜覆盖 1.0｜可用｜有「下利」「厥」共现的原文支撑\n【整份判定】弃用（大支持度偏倚：Jaccard 未按症状常见度加权）\n【缺口】否定句未处理\n\n## 为什么这样限制\n\n- 排序看起来越\"顺\"，越没人复核；把复核清单前置，才挡得住荒谬结论。\n- 剔除无出处候选，是最便宜的一道防线。\n"
+      },
+      {
+        "name": "skill-fangzheng-duiying.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/10-fangzheng-duiying/outputs/skill-fangzheng-duiying.md",
+        "title": "fangzheng-duiying",
+        "description": "方证检索复核：看支持度/覆盖率/否定句，遇方向相反整份弃用",
+        "chars": 467,
+        "body": "---\nname: fangzheng-duiying\ndescription: 方证检索复核：看支持度/覆盖率/否定句，遇方向相反整份弃用\nversion: 0.1.0\n---\n\n# fangzheng-duiying\n\n## 何时使用\n\n- 拿到症状→方剂排序，要判断能否采信\n- 教学演示「朴素重合度」为何不可靠\n- 评估一个方证检索系统（含 LLM 生成）的排序质量\n\n## 不适用\n\n- 辨证分型与治则\n- 剂量与煎服法（见第 12 章）\n- 条文原文检索排名（见第 11 章）\n\n## 步骤\n\n1. **看支持度**：< 10 条的候选标小样本，不进结论。\n2. **看覆盖**：< 50% 的标覆盖不足。\n3. **查方向**：候选方治法与查询寒热虚实相反 → 整份弃用。\n4. **查否定句**：不恶寒/无汗是否被当肯定；未处理 → 降级。\n5. **要出处**：无篇号与原句的候选剔除。\n\n## 输出模板\n\n```text\n【查询】…\n【候选复核】方｜支持｜覆盖｜可用/慎用/弃用｜理由\n【整份判定】…（偏倚类型）\n【缺口】…\n```\n\n## 质量判据\n\n- 每条候选带支持度与出处\n- 荒谬项被明确点名\n- 否定句风险有交代\n\n> 本技能只评价检索质量，不构成诊断或处方建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "01-zhongyi/07-shanghanlun/11-tiaowen-jiansuo": {
+    "key": "01-zhongyi/07-shanghanlun/11-tiaowen-jiansuo",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "07-shanghanlun",
+    "subjectTitle": "伤寒论",
+    "chapterSlug": "11-tiaowen-jiansuo",
+    "n": 11,
+    "title": "第 11 章 · 条文检索：MRR 满分，但「库里没有」它不会说",
+    "motto": "「有柴胡证，但见一证便是，不必悉具。」——《伤寒论·辨太阳病脉证并治中》（篇 5 第 222 条）",
+    "problem": "你给 1760 条经文建了 BM25 索引，四个查询全部命中第一位，MRR = 1.000。你准备上线，却没测「查不到」的情况——问它「乌梅丸」，它返回一条「病人有寒，复发汗，胃中冷，必吐蛔」：原句是真的，答的不是你问的。",
+    "roots": "环境逼迫(要检索 1760 条) + 知识积累(排序指标 × 弃答阈值 = 知道什么时候该说没有)",
+    "html": "<h1 id=\"第-11-章-条文检索-mrr-满分-但-库里没有-它不会说\">第 11 章 · 条文检索：MRR 满分，但「库里没有」它不会说</h1>\n<blockquote><p><strong>MOTTO:</strong> 「有柴胡证，但见一证便是，不必悉具。」——《伤寒论·辨太阳病脉证并治中》（篇 5 第 222 条）</p>\n<p><strong>PROBLEM:</strong> 你给 1760 条经文建了 BM25 索引，四个查询全部命中第一位，MRR = 1.000。你准备上线，却没测「查不到」的情况——问它「乌梅丸」，它返回一条「病人有寒，复发汗，胃中冷，必吐蛔」：原句是真的，答的不是你问的。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(要检索 1760 条) + 知识积累(排序指标 × 弃答阈值 = 知道什么时候该说没有)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>伤寒论</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>11 / 12</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>4 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>在 1760 条经文上实现 BM25（单字 + 双字分词），并说清 k1、b 各自管什么</li><li>用「有答案 / 无答案」两类查询分别评测：排名用 MRR，拒答用阈值</li><li>说明为什么子串 AND 在古写面前会全灭（嘿/默）</li><li>判断「阈值可分」与「阈值可靠」的区别——余量 0.58 意味着什么</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"语料与分词\">语料与分词</h3>\n<p>底本 27 篇 1760 条，平均每条 <strong>79.8 token</strong>（单字 + 相邻双字，词表 13,687）。中文没有空格，双字是必须的：只切单字，「脉浮」与「浮脉」会被当成同一堆字；切双字才能区分搭配。</p>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">text</div><pre><code class=\"lang-text\">tokenize(&quot;太阳病，脉浮&quot;) → 太 太阳 阳 阳病 病 脉 脉浮 浮</code></pre></div>\n<h3 id=\"bm25-三件事\">BM25 三件事</h3>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">text</div><pre><code class=\"lang-text\">score(D,Q) = Σ idf(t) · [ f(t,D)·(k1+1) ] / [ f(t,D) + k1·(1 − b + b·|D|/avgdl) ]\nidf(t) = ln(1 + (N − df + 0.5)/(df + 0.5))</code></pre></div>\n<ul><li><code>k1 = 1.5</code>：词频饱和，出现 10 次的词不比 3 次的重要 3 倍</li><li><code>b = 0.75</code>：长度归一，长条文（如篇 5 的 283 条）不因字多占便宜</li><li><code>idf</code>：全库常见词（阴阳、伤寒）权重低，罕见词（乌梅、蛔）权重高</li></ul>\n<h3 id=\"评测-四个有答案-两个该弃答\">评测：四个有答案 + 两个该弃答</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>查询</th><th>BM25 首位</th><th>金标</th><th>排名</th><th>子串 AND</th></tr></thead><tbody><tr><td>太阳 脉浮 头项强痛 恶寒</td><td>4:1</td><td>4:1</td><td>1</td><td>命中 1 条，第 1 位</td></tr><tr><td>胃家实</td><td>9:2</td><td>9:2</td><td>1</td><td>命中 2 条，第 2 位</td></tr><tr><td>但见一证 不必悉具</td><td>5:222</td><td>5:222</td><td>1</td><td>1 条，第 1</td></tr><tr><td>心中疼热 气上撞心 消渴</td><td>24:1</td><td>24:1</td><td>1</td><td>1 条，第 1</td></tr><tr><td><strong>乌梅丸 吐蛔</strong></td><td>19:36（19.67）</td><td>无</td><td>—</td><td><strong>0 条</strong></td></tr><tr><td><strong>少阴之为病 但欲寐</strong></td><td>24:1（27.05）</td><td>无</td><td>—</td><td><strong>0 条</strong></td></tr></tbody></table></div>\n<ul><li><strong>MRR = 1.000</strong>（有金标的 4 条全部第 1 位）</li><li>子串 AND 在这 4 条上也全对，但它对两个「无答案」查询返回 <strong>0 条</strong>——不是它聪明，是它只会精确匹配</li><li>BM25 则<strong>永远返回结果</strong>：「乌梅丸」给了 19:36「必吐蛔」，一条看着对、实际没有乌梅丸的条文</li></ul>\n<h3 id=\"阈值-只有靠-真负样本-才标得出来-而这东西很稀缺\">阈值：只有靠「真负样本」才标得出来，而这东西很稀缺</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>分组</th><th>分数</th></tr></thead><tbody><tr><td>无答案查询的最高分</td><td><strong>27.051</strong>（「少阴之为病 但欲寐」→ 返回厥阴提纲 24:1）</td></tr><tr><td>有答案查询的最低分</td><td><strong>30.852</strong>（「下利 厥 恶寒 四逆汤」→ 返回 19:121）</td></tr></tbody></table></div>\n<p>取中点 <strong>28.95</strong> 作弃答阈值，本轮 6 个查询全部分类正确，余量 <strong>3.80</strong>（约 12%）。</p>\n<p>真正的问题不是余量大小，是<strong>这类负样本几乎拿不到</strong>：本章能用「乌梅丸」「少阴之为病」当负样本，是因为底本恰好缺了这两块（见第 2、8 章）。换成一般语料，你无法知道哪些词「库里没有」，也就没有分母——阈值只能凭猜。所以工程上的正解不是调阈值，而是<strong>先查语料白名单</strong>：词不在表里，直接回「底本未收」，不进排序。</p>\n<h3 id=\"分数不是答案可信度\">分数不是答案可信度</h3>\n<p>再看一眼那条被误答的查询：「乌梅丸 吐蛔」首位是 19:36「病人有寒，复发汗，胃中冷，必吐蛔」。它命中的是「吐蛔」——<strong>一个真词</strong>，所以分数不低（19.67）。BM25 不知道「乌梅丸」不在库里，只知道自己见过「吐蛔」。这类错误的可怕之处在于：它返回的原句是真的，只是答的不是你问的。</p>\n<h3 id=\"古写-不归一-检索必然空手\">古写：不归一，检索必然空手</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>查询</th><th>原文未归一</th><th>嘿→默归一后</th></tr></thead><tbody><tr><td>「默默不欲饮食」</td><td><strong>0 条</strong></td><td><strong>3 条</strong>（5:209 / 5:214 / 18:126）</td></tr></tbody></table></div>\n<p>底本「默默」0 条、「嘿嘿」3 条。同一个字在第 3 章（𤍠）、第 5 章（嘿）、第 8 章（𤍠）各绊过一次——检索层不建归一表，就是在赌底本的字形。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">tokenize(text)        // 单字 + 双字\nbuildIndex()          // df / tf / avgdl\nbm25(query, {k1,b})   // 排序\nsubstringAnd(query)   // 基线：所有词同条出现\n// QUERIES 里两条 gold:null 的查询专门用来测弃答</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>bm25('但见一证 不必悉具')[0].id === '5:222'</code>；<code>bm25('乌梅丸 吐蛔')[0].score &amp;lt; 31.14</code> 且首位不是含「乌梅丸」的条（底本没有）；<code>substringAnd('乌梅丸 吐蛔').length === 0</code>。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>查询集只有 6 条</strong>，由作者自拟，不是基准集。MRR 1.0 只说明「这 6 条能查到」，不说明系统好用。</li><li><strong>金标由人工指定</strong>，存在选条偏差（如「胃家实」同时命中 9:1 与 9:2）。</li><li><strong>阈值 31.14 不可外推</strong>：换语料、换 k1/b、换查询长度都会移动。</li><li><strong>未处理否定与近义</strong>：「不恶寒」仍计入「恶寒」；「手足温」与「手足热」不作等价。</li><li><strong>BM25 不理解文义</strong>：它不知道「乌梅丸」不在库里，只知道自己见过的字。想让它说「没有」，必须外挂语料白名单或人工复核。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 语料为 <code>standards/shanghan/底本.json</code>（1760 条，可复算）；本章为检索算法演示，检索结果不构成文献结论或诊疗依据。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>把 <code>b</code> 从 0.75 调到 0（关闭长度归一），观察篇 5 的长条文是否霸榜，并解释原因。</li><li>构造一条查询，使无答案侧的最高分超过 31.43——证明阈值不可靠。</li><li>设计一个「先查语料白名单、再排序」的两段式方案，说明它如何挡住「乌梅丸」这类幻觉。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>MRR 1.0 是最容易骗人的指标：它只统计「找到了排第几」，完全不惩罚「不该答的答了」。一个只会说「有」的系统，MRR 可以满分，临床可用性为零。</p>",
+    "markdown": "# 第 11 章 · 条文检索：MRR 满分，但「库里没有」它不会说\r\n\r\n> **MOTTO:** 「有柴胡证，但见一证便是，不必悉具。」——《伤寒论·辨太阳病脉证并治中》（篇 5 第 222 条）\r\n>\r\n> **PROBLEM:** 你给 1760 条经文建了 BM25 索引，四个查询全部命中第一位，MRR = 1.000。你准备上线，却没测「查不到」的情况——问它「乌梅丸」，它返回一条「病人有寒，复发汗，胃中冷，必吐蛔」：原句是真的，答的不是你问的。\r\n>\r\n> **双根因定位:** 环境逼迫(要检索 1760 条) + 知识积累(排序指标 × 弃答阈值 = 知道什么时候该说没有)\r\n\r\n## 课程信息\r\n\r\n| 项目 | 内容 |\r\n|------|------|\r\n| 学科 | 伤寒论 |\r\n| 院系 | 中医系 |\r\n| 章序号 | 11 / 12 |\r\n| 所属阶段 | 🌿 长·积累 |\r\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\r\n| 预估时长 | 4 小时 |\r\n\r\n## 学习目标\r\n\r\n- 在 1760 条经文上实现 BM25（单字 + 双字分词），并说清 k1、b 各自管什么\r\n- 用「有答案 / 无答案」两类查询分别评测：排名用 MRR，拒答用阈值\r\n- 说明为什么子串 AND 在古写面前会全灭（嘿/默）\r\n- 判断「阈值可分」与「阈值可靠」的区别——余量 0.58 意味着什么\r\n\r\n## 核心概念\r\n\r\n### 语料与分词\r\n\r\n底本 27 篇 1760 条，平均每条 **79.8 token**（单字 + 相邻双字，词表 13,687）。中文没有空格，双字是必须的：只切单字，「脉浮」与「浮脉」会被当成同一堆字；切双字才能区分搭配。\r\n\r\n```\r\ntokenize(\"太阳病，脉浮\") → 太 太阳 阳 阳病 病 脉 脉浮 浮\r\n```\r\n\r\n### BM25 三件事\r\n\r\n```\r\nscore(D,Q) = Σ idf(t) · [ f(t,D)·(k1+1) ] / [ f(t,D) + k1·(1 − b + b·|D|/avgdl) ]\r\nidf(t) = ln(1 + (N − df + 0.5)/(df + 0.5))\r\n```\r\n\r\n- `k1 = 1.5`：词频饱和，出现 10 次的词不比 3 次的重要 3 倍\r\n- `b = 0.75`：长度归一，长条文（如篇 5 的 283 条）不因字多占便宜\r\n- `idf`：全库常见词（阴阳、伤寒）权重低，罕见词（乌梅、蛔）权重高\r\n\r\n### 评测：四个有答案 + 两个该弃答\r\n\r\n| 查询 | BM25 首位 | 金标 | 排名 | 子串 AND |\r\n|---|---|---|--:|---|\r\n| 太阳 脉浮 头项强痛 恶寒 | 4:1 | 4:1 | 1 | 命中 1 条，第 1 位 |\r\n| 胃家实 | 9:2 | 9:2 | 1 | 命中 2 条，第 2 位 |\r\n| 但见一证 不必悉具 | 5:222 | 5:222 | 1 | 1 条，第 1 |\r\n| 心中疼热 气上撞心 消渴 | 24:1 | 24:1 | 1 | 1 条，第 1 |\r\n| **乌梅丸 吐蛔** | 19:36（19.67） | 无 | — | **0 条** |\r\n| **少阴之为病 但欲寐** | 24:1（27.05） | 无 | — | **0 条** |\r\n\r\n- **MRR = 1.000**（有金标的 4 条全部第 1 位）\r\n- 子串 AND 在这 4 条上也全对，但它对两个「无答案」查询返回 **0 条**——不是它聪明，是它只会精确匹配\r\n- BM25 则**永远返回结果**：「乌梅丸」给了 19:36「必吐蛔」，一条看着对、实际没有乌梅丸的条文\r\n\r\n### 阈值：只有靠「真负样本」才标得出来，而这东西很稀缺\r\n\r\n| 分组 | 分数 |\r\n|---|---|\r\n| 无答案查询的最高分 | **27.051**（「少阴之为病 但欲寐」→ 返回厥阴提纲 24:1） |\r\n| 有答案查询的最低分 | **30.852**（「下利 厥 恶寒 四逆汤」→ 返回 19:121） |\r\n\r\n取中点 **28.95** 作弃答阈值，本轮 6 个查询全部分类正确，余量 **3.80**（约 12%）。\r\n\r\n真正的问题不是余量大小，是**这类负样本几乎拿不到**：本章能用「乌梅丸」「少阴之为病」当负样本，是因为底本恰好缺了这两块（见第 2、8 章）。换成一般语料，你无法知道哪些词「库里没有」，也就没有分母——阈值只能凭猜。所以工程上的正解不是调阈值，而是**先查语料白名单**：词不在表里，直接回「底本未收」，不进排序。\r\n\r\n### 分数不是答案可信度\r\n\r\n再看一眼那条被误答的查询：「乌梅丸 吐蛔」首位是 19:36「病人有寒，复发汗，胃中冷，必吐蛔」。它命中的是「吐蛔」——**一个真词**，所以分数不低（19.67）。BM25 不知道「乌梅丸」不在库里，只知道自己见过「吐蛔」。这类错误的可怕之处在于：它返回的原句是真的，只是答的不是你问的。\r\n\r\n### 古写：不归一，检索必然空手\r\n\r\n| 查询 | 原文未归一 | 嘿→默归一后 |\r\n|---|--:|--:|\r\n| 「默默不欲饮食」 | **0 条** | **3 条**（5:209 / 5:214 / 18:126） |\r\n\r\n底本「默默」0 条、「嘿嘿」3 条。同一个字在第 3 章（𤍠）、第 5 章（嘿）、第 8 章（𤍠）各绊过一次——检索层不建归一表，就是在赌底本的字形。\r\n\r\n## BUILD IT：从零实现\r\n\r\n```js\r\ntokenize(text)        // 单字 + 双字\r\nbuildIndex()          // df / tf / avgdl\r\nbm25(query, {k1,b})   // 排序\r\nsubstringAnd(query)   // 基线：所有词同条出现\r\n// QUERIES 里两条 gold:null 的查询专门用来测弃答\r\n```\r\n\r\n## 验证\r\n\r\n```bash\r\nnode code/main.js\r\nnode --test code/main.test.js\r\n```\r\n\r\n预期：`bm25('但见一证 不必悉具')[0].id === '5:222'`；`bm25('乌梅丸 吐蛔')[0].score < 31.14` 且首位不是含「乌梅丸」的条（底本没有）；`substringAnd('乌梅丸 吐蛔').length === 0`。\r\n\r\n## 代价与边界\r\n\r\n- **查询集只有 6 条**，由作者自拟，不是基准集。MRR 1.0 只说明「这 6 条能查到」，不说明系统好用。\r\n- **金标由人工指定**，存在选条偏差（如「胃家实」同时命中 9:1 与 9:2）。\r\n- **阈值 31.14 不可外推**：换语料、换 k1/b、换查询长度都会移动。\r\n- **未处理否定与近义**：「不恶寒」仍计入「恶寒」；「手足温」与「手足热」不作等价。\r\n- **BM25 不理解文义**：它不知道「乌梅丸」不在库里，只知道自己见过的字。想让它说「没有」，必须外挂语料白名单或人工复核。\r\n\r\n> **免责声明：** 语料为 `standards/shanghan/底本.json`（1760 条，可复算）；本章为检索算法演示，检索结果不构成文献结论或诊疗依据。\r\n\r\n## 练习\r\n\r\n1. 把 `b` 从 0.75 调到 0（关闭长度归一），观察篇 5 的长条文是否霸榜，并解释原因。\r\n2. 构造一条查询，使无答案侧的最高分超过 31.43——证明阈值不可靠。\r\n3. 设计一个「先查语料白名单、再排序」的两段式方案，说明它如何挡住「乌梅丸」这类幻觉。\r\n\r\n## 进阶思考\r\n\r\nMRR 1.0 是最容易骗人的指标：它只统计「找到了排第几」，完全不惩罚「不该答的答了」。一个只会说「有」的系统，MRR 可以满分，临床可用性为零。\r\n",
+    "code": {
+      "main.js": "'use strict';\r\n/**\r\n * 伤寒条文 BM25 检索 + 弃答阈值标定\r\n *\r\n *   node code/main.js\r\n *\r\n * 口径：\r\n *   · 分词 = 单字 + 相邻双字（中文无空格；双字能抓住「脉浮」「恶寒」这类固定搭配）\r\n *   · 归一：𤍠→热（底本异体），只作用于索引与查询，不回写原文\r\n *   · 基线 = 子串 AND（所有查询词都出现在同条）；它精确但只能处理「词原样出现」\r\n *   · 评测：5 条有答案 + 2 条无答案（乌梅丸、少阴提纲在底本里不存在）\r\n *     → 有答案看命中排名（MRR），无答案看是否弃答（弃答率）\r\n */\r\n\r\nconst path = require('node:path');\r\nconst fs = require('node:fs');\r\n\r\nconst ROOT = path.resolve(__dirname, '../../../../../..');\r\nconst BOOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/shanghan/底本.json'), 'utf8'));\r\n\r\nconst norm = (s) => s.split('𤍠').join('热');\r\nconst DOCS = [];\r\nfor (const p of BOOK.pian) for (const it of p.items) {\r\n  DOCS.push({ id: `${p.no}:${it.no}`, pian: p.no, no: it.no, text: it.text, norm: norm(it.text) });\r\n}\r\n\r\n/** 单字 + 双字 */\r\nfunction tokenize(text) {\r\n  const t = norm(text).replace(/\\s+/g, '');\r\n  const out = [];\r\n  for (let i = 0; i < t.length; i += 1) {\r\n    out.push(t[i]);\r\n    if (i + 1 < t.length) out.push(t.slice(i, i + 2));\r\n  }\r\n  return out;\r\n}\r\n\r\nfunction buildIndex() {\r\n  const df = new Map();\r\n  const tf = [];\r\n  let total = 0;\r\n  for (const d of DOCS) {\r\n    const toks = tokenize(d.norm);\r\n    const m = new Map();\r\n    for (const tk of toks) m.set(tk, (m.get(tk) || 0) + 1);\r\n    tf.push(m);\r\n    total += toks.length;\r\n    for (const k of m.keys()) df.set(k, (df.get(k) || 0) + 1);\r\n  }\r\n  return { df, tf, avgdl: total / DOCS.length, N: DOCS.length };\r\n}\r\n\r\nconst IDX = buildIndex();\r\n\r\nfunction bm25(query, { k1 = 1.5, b = 0.75 } = {}) {\r\n  const q = [...new Set(tokenize(query))];\r\n  const scores = DOCS.map((d, i) => {\r\n    const m = IDX.tf[i];\r\n    const dl = [...m.values()].reduce((a, x) => a + x, 0);\r\n    let s = 0;\r\n    for (const tk of q) {\r\n      const f = m.get(tk) || 0;\r\n      if (!f) continue;\r\n      const df = IDX.df.get(tk) || 0;\r\n      const idf = Math.log(1 + (IDX.N - df + 0.5) / (df + 0.5));\r\n      s += idf * ((f * (k1 + 1)) / (f + k1 * (1 - b + b * (dl / IDX.avgdl))));\r\n    }\r\n    return { id: d.id, pian: d.pian, no: d.no, score: Number(s.toFixed(3)), text: d.text };\r\n  });\r\n  return scores.sort((a, b2) => b2.score - a.score);\r\n}\r\n\r\n/** 基线：子串 AND（所有查询词都在同条） */\r\nfunction substringAnd(query) {\r\n  const terms = query.split(/\\s+/).filter(Boolean).map(norm);\r\n  const hits = DOCS.filter((d) => terms.every((t) => d.norm.includes(t)));\r\n  return hits.map((d) => ({ id: d.id, pian: d.pian, no: d.no, score: hits.length, text: d.text }));\r\n}\r\n\r\nconst QUERIES = [\r\n  { q: '太阳 脉浮 头项强痛 恶寒', gold: '4:1', note: '太阳提纲' },\r\n  { q: '胃家实', gold: '9:2', note: '阳明提纲' },\r\n  { q: '但见一证 不必悉具', gold: '5:222', note: '柴胡证一证即可' },\r\n  { q: '心中疼热 气上撞心 消渴', gold: '24:1', note: '厥阴提纲' },\r\n  { q: '下利 厥 恶寒 四逆汤', gold: null, note: '（无单一金标，用于观察排名）' },\r\n  { q: '乌梅丸 吐蛔', gold: null, note: '底本无乌梅丸 → 应弃答' },\r\n  { q: '少阴之为病 但欲寐', gold: null, note: '底本缺少阴篇 → 应弃答' },\r\n];\r\n\r\nfunction rankOf(list, gold) {\r\n  const i = list.findIndex((x) => x.id === gold);\r\n  return i < 0 ? null : i + 1;\r\n}\r\n\r\nfunction main() {\r\n  console.log(`索引：${IDX.N} 条 · 平均长度 ${IDX.avgdl.toFixed(1)} token · 词表 ${IDX.df.size}\\n`);\r\n  let mrr = 0, n = 0;\r\n  const rows = [];\r\n  for (const item of QUERIES) {\r\n    const b = bm25(item.q);\r\n    const s = substringAnd(item.q);\r\n    const rb = item.gold ? rankOf(b, item.gold) : null;\r\n    const rs = item.gold ? rankOf(s, item.gold) : null;\r\n    if (item.gold) { n += 1; if (rb) mrr += 1 / rb; }\r\n    rows.push({ ...item, top: b[0], topScore: b[0].score, subCount: s.length, rb, rs });\r\n    console.log(`Q：${item.q}`);\r\n    console.log(`  BM25 第一：${b[0].id}（${b[0].score}）${item.gold ? (rb ? `｜金标第 ${rb} 位` : '｜金标未进前 100') : ''}`);\r\n    console.log(`  子串AND：命中 ${s.length} 条${item.gold && rs ? `｜金标第 ${rs} 位` : ''}`);\r\n    console.log(`  ${b[0].text.slice(0, 50)}…\\n`);\r\n  }\r\n  console.log(`MRR@全序（有金标 ${n} 条）：${(mrr / n).toFixed(3)}`);\r\n\r\n  // 弃答阈值：无答案两问的最高分 vs 有答案最低分\r\n  const noAns = rows.filter((r) => !r.gold).map((r) => r.topScore);\r\n  const hasAns = rows.filter((r) => r.gold && r.rb).map((r) => r.topScore);\r\n  console.log(`\\n阈值标定：无答案最高分 ${Math.max(...noAns)}；有答案最低分 ${Math.min(...hasAns)}`);\r\n  const sep = Math.min(...hasAns) > Math.max(...noAns);\r\n  console.log(sep\r\n    ? `可分：阈值取 ${((Math.min(...hasAns) + Math.max(...noAns)) / 2).toFixed(2)} → 有答案全答、无答案全弃`\r\n    : '不可分：两个分布重叠 —— BM25 单靠绝对分无法保证「查不到就说查不到」');\r\n  // 通假演示：教材「默默不欲饮食」在底本写作「嘿嘿」\r\n  const rawHit = DOCS.filter((d) => d.text.includes('默默不欲饮食')).length;\r\n  const normHit = DOCS.filter((d) => d.text.split('嘿嘿').join('默默').includes('默默不欲饮食')).length;\r\n  console.log(`\\n通假演示：查询「默默不欲饮食」→ 原文未归一命中 ${rawHit} 条；嘿→默归一后 ${normHit} 条`);\r\n  console.log('  底本「默默」0 条、「嘿嘿」3 条（5:209 / 5:214 / 18:126）：不归一，检索必然空手。');\r\n\r\n  console.log('\\n口径：本输出为检索评测，不构成文献结论。');\r\n}\r\n\r\nif (require.main === module) main();\r\nmodule.exports = { tokenize, bm25, substringAnd, QUERIES, DOCS, IDX };\r\n",
+      "main.test.js": "'use strict';\r\nconst assert = require('node:assert');\r\nconst test = require('node:test');\r\nconst { tokenize, bm25, substringAnd, DOCS, IDX } = require('./main.js');\r\n\r\ntest('分词：单字 + 双字，异体 𤍠 归一', () => {\r\n  const t = tokenize('发𤍠恶寒');\r\n  assert.ok(t.includes('发热'), '应切成「发热」双字');\r\n  assert.ok(!t.includes('发𤍠'), '异体不应保留');\r\n  assert.ok(t.includes('热'));\r\n});\r\n\r\ntest('索引：1760 条，词表规模可复现', () => {\r\n  assert.strictEqual(DOCS.length, 1760);\r\n  assert.strictEqual(IDX.N, 1760);\r\n  assert.strictEqual(IDX.df.size, 13687);\r\n  assert.ok(IDX.avgdl > 70 && IDX.avgdl < 90, `avgdl=${IDX.avgdl}`);\r\n});\r\n\r\ntest('四个有答案查询全部命中第一位（MRR=1）', () => {\r\n  const cases = [\r\n    ['太阳 脉浮 头项强痛 恶寒', '4:1'],\r\n    ['胃家实', '9:2'],\r\n    ['但见一证 不必悉具', '5:222'],\r\n    ['心中疼热 气上撞心 消渴', '24:1'],\r\n  ];\r\n  for (const [q, gold] of cases) assert.strictEqual(bm25(q)[0].id, gold, q);\r\n});\r\n\r\ntest('BM25 对「不存在的词」仍会给结果：乌梅丸首位不含乌梅丸', () => {\r\n  const top = bm25('乌梅丸 吐蛔')[0];\r\n  assert.ok(!top.text.includes('乌梅丸'), '底本无乌梅丸，首位不应含该词');\r\n  assert.ok(top.score < 31.14, `分数 ${top.score} 应低于弃答阈值`);\r\n});\r\n\r\ntest('子串 AND 对无答案查询返回 0 条（精确但不会模糊）', () => {\r\n  assert.strictEqual(substringAnd('乌梅丸 吐蛔').length, 0);\r\n  assert.strictEqual(substringAnd('少阴之为病 但欲寐').length, 0);\r\n});\r\n\r\ntest('阈值两侧：无答案最高 27.05 < 有答案最低 30.85（余量 3.80）', () => {\r\n  const noAns = Math.max(bm25('乌梅丸 吐蛔')[0].score, bm25('少阴之为病 但欲寐')[0].score);\r\n  const hasAns = Math.min(bm25('下利 厥 恶寒 四逆汤')[0].score, bm25('胃家实')[0].score);\r\n  assert.ok(noAns < hasAns, `${noAns} < ${hasAns}`);\r\n  assert.ok(Math.abs(noAns - 27.051) < 0.01, `noAns=${noAns}`);\r\n  assert.ok(Math.abs(hasAns - 30.852) < 0.01, `hasAns=${hasAns}`);\r\n});\r\n\r\ntest('通假：底本 0 条「默默」、3 条「嘿嘿」', () => {\r\n  assert.strictEqual(DOCS.filter((d) => d.text.includes('默默')).length, 0);\r\n  assert.strictEqual(DOCS.filter((d) => d.text.includes('嘿嘿')).length, 3);\r\n});\r\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "BM25 里的 b 参数管什么？",
+          "options": [
+            "词频饱和",
+            "长度归一（长条文不因字多占便宜）",
+            "倒排索引深度",
+            "同义词扩展"
+          ],
+          "correct": 1,
+          "explanation": "k1 管词频饱和，b 管长度归一（本章 b=0.75）。"
+        },
+        {
+          "stage": "check",
+          "question": "本章 MRR 评测的分母是？",
+          "options": [
+            "全部 7 个查询",
+            "4 个有金标的查询",
+            "1760 条经文",
+            "6 个查询"
+          ],
+          "correct": 1,
+          "explanation": "MRR 只统计有金标的查询；无答案查询另用弃答指标。"
+        },
+        {
+          "stage": "check",
+          "question": "查询「乌梅丸 吐蛔」时 BM25 首位的分数不为 0，原因是？",
+          "options": [
+            "底本有乌梅丸",
+            "它命中了「吐蛔」这个真词——BM25 不知道自己没见过「乌梅丸」",
+            "索引损坏",
+            "分词错误"
+          ],
+          "correct": 1,
+          "explanation": "只认识见过的字，是检索模型的根本局限。"
+        },
+        {
+          "stage": "check",
+          "question": "子串 AND 基线在「乌梅丸 吐蛔」上的表现是？",
+          "options": [
+            "返回 1 条",
+            "返回 0 条（精确匹配的必然结果，不是它更聪明）",
+            "返回全部 1760 条",
+            "报错"
+          ],
+          "correct": 1,
+          "explanation": "它只会精确匹配，模糊与近义一概不会。"
+        },
+        {
+          "stage": "post",
+          "question": "查询「默默不欲饮食」在底本上的命中情况是？",
+          "options": [
+            "3 条",
+            "0 条；归一「嘿→默」后 3 条",
+            "1 条",
+            "1760 条"
+          ],
+          "correct": 1,
+          "explanation": "底本「默默」0 条、「嘿嘿」3 条（5:209 / 5:214 / 18:126）。"
+        },
+        {
+          "stage": "post",
+          "question": "要让检索系统在「库里没有」时正确弃答，工程上的正解是？",
+          "options": [
+            "调高 BM25 阈值到 50",
+            "先查语料白名单，词不在表里直接回「底本未收」，不进排序",
+            "只返回前 1 条",
+            "关闭分词"
+          ],
+          "correct": 1,
+          "explanation": "阈值依赖稀缺的负样本，白名单是唯一稳定的弃答机制。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-tiaowen-jiansuo.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/11-tiaowen-jiansuo/outputs/prompt-tiaowen-jiansuo.md",
+        "title": "经文检索与弃答",
+        "description": null,
+        "chars": 632,
+        "body": "# 经文检索与弃答\n\n## 用途\n\n在 1760 条经文上做关键词检索，并且**在语料里确实没有时要敢说没有**。\n用于**备课查条、引文定位、检索系统评估**。不做文义解释。\n\n## 提示词\n\n```text\n你是伤寒论文本检索助手。语料为 JSON（27 篇 · 1760 条 · 每篇 items[].text）。\n底本特征：使用异体字「𤍠」（=热）与通假「嘿嘿」（=默默）。\n\n任务：对查询返回候选条，并在无法回答时明确弃答。\n\n规则：\n1. 先查语料白名单：查询中的实体（方名、证名、篇名）若不在语料中出现过，\n   直接回「底本未收：<实体>」，不进入排序，不给相似条充数。\n2. 归一后再检索：𤍠→热、嘿→默；只改检索层，不改原文引用。\n3. 返回最多 3 条，每条必须给「篇 N 第 M 条」与原文片段（照抄）。\n4. 若最高分与次高分接近（<10%），标注「排序不稳」，并列报出。\n5. 不得据检索结果下辨证结论。\n6. 若用户问的是「有没有某条」，而语料里只有近似表述，必须写「无完全相同条文，最接近为…」。\n\n输出格式：\n【查询】…\n【归一】本次使用了哪些映射\n【结果】篇 N 第 M 条：「原文」｜分数…\n【弃答】是/否（原因）\n```\n\n## 使用示例\n\n输入：查「乌梅丸」。\n\n输出：【查询】乌梅丸\n【归一】无\n【结果】—\n【弃答】是——底本全库 0 条含「乌梅丸」；最接近的「必吐蛔」条（19:36）不是乌梅丸证，不作替代。\n\n## 为什么这样限制\n\n- 检索最危险的失败不是「查不到」，是「返回原句真实但答非所问」。\n- 白名单 + 弃答的组合，比调阈值可靠得多：阈值依赖你根本拿不到的负样本。\n"
+      },
+      {
+        "name": "skill-tiaowen-jiansuo.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/11-tiaowen-jiansuo/outputs/skill-tiaowen-jiansuo.md",
+        "title": "tiaowen-jiansuo",
+        "description": "经文检索与弃答：白名单先行、归一后检索、近似条不得充数",
+        "chars": 481,
+        "body": "---\nname: tiaowen-jiansuo\ndescription: 经文检索与弃答：白名单先行、归一后检索、近似条不得充数\nversion: 0.1.0\n---\n\n# tiaowen-jiansuo\n\n## 何时使用\n\n- 备课/写作要定位某句在底本哪一条\n- 判断某方、某证在底本里到底有没有\n- 评估一个条文检索系统（含 LLM 检索）的可靠度\n\n## 不适用\n\n- 文义解释与辨证（本技能只定位文本）\n- 跨版本校勘\n- 剂量折算（见第 12 章）\n\n## 步骤\n\n1. **白名单**：实体（方/证/篇）是否在语料出现过；没有 → 直接弃答。\n2. **归一**：𤍠→热、嘿→默；只作用于检索。\n3. **检索**：单字 + 双字，BM25（k1=1.5, b=0.75）。\n4. **报稳不稳**：最高与次高差 <10% 时标「排序不稳」。\n5. **照抄原文**：给「篇 N 第 M 条」，不改字。\n\n## 输出模板\n\n```text\n【查询】…【归一】…\n【结果】篇 N 第 M 条：「原文」\n【弃答】是/否（原因）\n```\n\n## 质量判据\n\n- 语料没有的，明确说没有\n- 近似条被标为「最接近」，不被当作答案\n- 原文逐字、条号可核\n- 没有辨证结论\n\n> 本技能只做文本定位，不构成文献结论或诊疗依据。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
+  "01-zhongyi/07-shanghanlun/12-jiliang-zhesuan": {
+    "key": "01-zhongyi/07-shanghanlun/12-jiliang-zhesuan",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "07-shanghanlun",
+    "subjectTitle": "伤寒论",
+    "chapterSlug": "12-jiliang-zhesuan",
+    "n": 12,
+    "title": "第 12 章 · 经方剂量：桂枝三两是 41 克、47 克，还是 9 克",
+    "motto": "「桂枝三两，去皮。」——《伤寒论·辨太阳病脉证并治》（桂枝汤方）",
+    "problem": "你要讲「桂枝三两是多少克」。三位老师给你三个答案：41.25 g、46.88 g、9 g。差 5.21 倍——而且三个人都引了原文，都没有错。",
+    "roots": "环境逼迫(要给出可执行剂量) + 知识积累(三档前提 × 底本自带折算层 = 知道数字背后挂的是哪把尺)",
+    "html": "<h1 id=\"第-12-章-经方剂量-桂枝三两是-41-克-47-克-还是-9-克\">第 12 章 · 经方剂量：桂枝三两是 41 克、47 克，还是 9 克</h1>\n<blockquote><p><strong>MOTTO:</strong> 「桂枝三两，去皮。」——《伤寒论·辨太阳病脉证并治》（桂枝汤方）</p>\n<p><strong>PROBLEM:</strong> 你要讲「桂枝三两是多少克」。三位老师给你三个答案：41.25 g、46.88 g、9 g。差 5.21 倍——而且三个人都引了原文，都没有错。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(要给出可执行剂量) + 知识积累(三档前提 × 底本自带折算层 = 知道数字背后挂的是哪把尺)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>伤寒论</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>12 / 12</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>3 小时</td></tr></tbody></table></div>\n<h2 id=\"学习目标\">学习目标</h2>\n<ul><li>说出三档折算各自的<strong>前提</strong>，并解释为什么「哪个对」是个错问题</li><li>用底本内的宋人校语证明：折算不是现代人的发明，宋人已在书里算过</li><li>认出底本内部的不一致（同一方甘草三两 / 二两），并说明它如何影响剂量</li><li>判断哪些单位<strong>不能</strong>换算为克，以及为什么</li></ul>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"底本里的单位谱系-实测条数\">底本里的单位谱系（实测条数）</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>单位</th><th>条数</th><th>类型</th></tr></thead><tbody><tr><td>两</td><td><strong>338</strong></td><td>重量</td></tr><tr><td>升</td><td><strong>259</strong></td><td>容量</td></tr><tr><td>枚</td><td><strong>147</strong></td><td>计数</td></tr><tr><td>合</td><td><strong>128</strong></td><td>容量</td></tr><tr><td>分</td><td><strong>81</strong></td><td>重量（方内分割）</td></tr><tr><td>斤</td><td><strong>40</strong></td><td>重量</td></tr><tr><td>个</td><td><strong>35</strong></td><td>计数</td></tr><tr><td>铢</td><td><strong>32</strong></td><td>重量</td></tr><tr><td>尺</td><td>27</td><td>长度（如「水一尺」少见，多为「一尺」布帛类）</td></tr><tr><td>片</td><td>21</td><td>计数</td></tr><tr><td>钱匕 / 方寸匕</td><td>3</td><td>取量器</td></tr></tbody></table></div>\n<p>关系：<strong>1 斤 = 16 两，1 两 = 24 铢，1 升 = 10 合</strong>。这三条是硬约束，代码里做了自检。</p>\n<h3 id=\"三档并列-桂枝汤-底本-4-41-载方\">三档并列（桂枝汤，底本 4:41 载方）</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>档</th><th>前提</th><th>桂枝三两</th><th>四味合计</th></tr></thead><tbody><tr><td>A</td><td>汉制 1 斤 = 220 g</td><td><strong>41.25 g</strong></td><td>151.25 g</td></tr><tr><td>B</td><td>汉制 1 斤 = 250 g</td><td><strong>46.88 g</strong></td><td>171.89 g</td></tr><tr><td>C</td><td>明清折量 1 两 ≈ 3 g</td><td><strong>9 g</strong></td><td>33 g</td></tr></tbody></table></div>\n<p>最高/最低 = <strong>5.21 倍</strong>。三档都不是玄学：A、B 的差别来自汉权衡器实测的分布两端；C 来自「古之一两，今用一钱可也」一系的折量传统——它的目的不是复原汉制，而是给后世一个安全可用的换算。</p>\n<p><strong>所以「桂枝三两等于多少克」正确的回答是</strong>：41.25 g（若按 1 斤 220 g）、46.88 g（若按 250 g）、9 g（若按明清折量）——<strong>前提必须一起给出</strong>。单独一个数字，无论多精确，都不可引用。</p>\n<h3 id=\"底本自带折算层-宋人已经算过\">底本自带折算层：宋人已经算过</h3>\n<p>底本 4:41 条里，紧接方后注有一段校语：</p>\n<blockquote><p>臣亿等谨按桂枝汤方：桂枝、芍药、生姜各三两，甘草二两，大枣十二枚。麻黄汤方：麻黄三两，桂枝二两，甘草一两，杏仁七十个。今以算法，二汤各取曰分之一，即得桂枝一两。十六约之……</p></blockquote>\n<p>（「曰分之一」是底本 OCR 讹字，通行本作「十分之一」；此处照抄并标注，不代改。）</p>\n<p>这段话的信息量很大：</p>\n<ol><li><strong>宋人（林亿等校正医书局）在校书时就做了折算</strong>，还写进了正文；</li><li>折算的动机是<strong>合方配比</strong>（桂枝麻黄各半汤），不是复古剂量；</li><li>「十六约之」用的是 1 斤 = 16 两的进位，与我们上面的硬约束一致。</li></ol>\n<p>换句话说：<strong>经方剂量的争议，从宋代就是文本内部的一部分</strong>。你读到的不是「原文 + 现代解释」，而是「原文 + 历代折算层」。</p>\n<h3 id=\"底本内部的不一致\">底本内部的不一致</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>出处</th><th>甘草</th></tr></thead><tbody><tr><td>4:28（方文残片）</td><td>「桂枝三两去皮 芍药三两 <strong>甘草三两</strong>炙」</td></tr><tr><td>4:41（林亿校语引桂枝汤方）</td><td>「桂枝、芍药、生姜各三两，<strong>甘草二两</strong>，大枣十二枚」</td></tr></tbody></table></div>\n<p>同一底本，两处甘草差一两。按 A 档算，差 <strong>13.75 g</strong>。这不是小数——它足以让「甘草」在一张方里从佐使变成接近君臣的量。</p>\n<p>处理原则：<strong>两个数字都留着，各自标出处</strong>；不取「看起来更常见的那个」。原文没给你的，别替它决定。</p>\n<h3 id=\"不能换算的单位\">不能换算的单位</h3>\n<p><code>枚 / 个 / 把 / 片 / 茎</code> 是计数单位。本章代码对它们<strong>返回 <code>grams: null</code></strong>，理由写在返回值里：原文没给单枚重量，任何克数都是推测。市面上「大枣一枚 ≈ 3 g」这类数字流行，但它们来自现代实测样本，不是原文——可以用，但必须标「现代估测」，不能标「经方原量」。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">SCHOOLS            // 三档折算前提（label + 每两克数 + basis）\ntoGrams(n, unit, school)  // 斤/两/铢/分 → 克，带前提\ntoMl(n, unit)             // 升/合 → 毫升\ncountUnit(n, unit)        // 计数单位：grams 恒为 null + 理由\ncheckRelations()          // 1斤=16两、1两=24铢、1升=10合 自检\nguizhiTang()              // 桂枝汤三档并列 + 合计 + 倍数</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js</code></pre></div>\n<p>预期：<code>toGrams(3,'两','han220').grams === 41.25</code>；<code>toGrams(3,'两','ming').grams === 9</code>；<code>countUnit(12,'枚').grams === null</code>；<code>guizhiTang()</code> 三档合计 151.25 / 171.89 / 33，倍数 5.21。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>本章不裁哪一种折算正确</strong>。三档并列是结论，不是回避。</li><li><strong>汉制 1 斤 220–250 g 是学界通行区间，本章未复核原器</strong>。要裁决必须回到权衡器实测数据与断代，那超出本章范围。</li><li><strong>容量按 1 升 = 200 ml 折算</strong>，同样有争议（另有 198 ml、210 ml 等），本章只取通行值并标注。</li><li><strong>折算只解决「量」，不解决「效」</strong>。同一克数在不同煎法、服法（顿服 / 日三服 / 分温再服）下，进入体内的量完全不同——本章不涉及煎服法折算。</li><li><strong>不构成用量建议</strong>。任何临床应用须由执业医师依据药典与患者情况决定。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 方文与单位统计来自 <code>standards/shanghan/底本.json</code>（可复算，含 OCR 讹字与宋人校语）；本章为度量衡换算演示，不构成用药建议。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>用 A 档把「麻黄三两、桂枝二两、甘草一两、杏仁七十个」换算，并说明哪一味无法换算。</li><li>「水七升，煮取三升，温服一升」——按 200 ml/升，一剂分几次服？若按明清折量，这个次数会变吗？</li><li>4:28 与 4:41 的甘草差一两，你会怎么在讲义里写？给出两个方案并说明取舍。</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>剂量争议的本质是<strong>测量基准的丢失</strong>：汉尺、汉权、汉升都不是今天的器物，复原只能靠考古样本的分布。承认区间，比给一个精确到小数点的数字更专业——因为后者假装基准还在。</p>",
+    "markdown": "# 第 12 章 · 经方剂量：桂枝三两是 41 克、47 克，还是 9 克\n\n> **MOTTO:** 「桂枝三两，去皮。」——《伤寒论·辨太阳病脉证并治》（桂枝汤方）\n>\n> **PROBLEM:** 你要讲「桂枝三两是多少克」。三位老师给你三个答案：41.25 g、46.88 g、9 g。差 5.21 倍——而且三个人都引了原文，都没有错。\n>\n> **双根因定位:** 环境逼迫(要给出可执行剂量) + 知识积累(三档前提 × 底本自带折算层 = 知道数字背后挂的是哪把尺)\n\n## 课程信息\n\n| 项目 | 内容 |\n|------|------|\n| 学科 | 伤寒论 |\n| 院系 | 中医系 |\n| 章序号 | 12 / 12 |\n| 所属阶段 | 🌿 长·积累 |\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\n| 预估时长 | 3 小时 |\n\n## 学习目标\n\n- 说出三档折算各自的**前提**，并解释为什么「哪个对」是个错问题\n- 用底本内的宋人校语证明：折算不是现代人的发明，宋人已在书里算过\n- 认出底本内部的不一致（同一方甘草三两 / 二两），并说明它如何影响剂量\n- 判断哪些单位**不能**换算为克，以及为什么\n\n## 核心概念\n\n### 底本里的单位谱系（实测条数）\n\n| 单位 | 条数 | 类型 |\n|---|--:|---|\n| 两 | **338** | 重量 |\n| 升 | **259** | 容量 |\n| 枚 | **147** | 计数 |\n| 合 | **128** | 容量 |\n| 分 | **81** | 重量（方内分割） |\n| 斤 | **40** | 重量 |\n| 个 | **35** | 计数 |\n| 铢 | **32** | 重量 |\n| 尺 | 27 | 长度（如「水一尺」少见，多为「一尺」布帛类） |\n| 片 | 21 | 计数 |\n| 钱匕 / 方寸匕 | 3 | 取量器 |\n\n关系：**1 斤 = 16 两，1 两 = 24 铢，1 升 = 10 合**。这三条是硬约束，代码里做了自检。\n\n### 三档并列（桂枝汤，底本 4:41 载方）\n\n| 档 | 前提 | 桂枝三两 | 四味合计 |\n|---|---|--:|--:|\n| A | 汉制 1 斤 = 220 g | **41.25 g** | 151.25 g |\n| B | 汉制 1 斤 = 250 g | **46.88 g** | 171.89 g |\n| C | 明清折量 1 两 ≈ 3 g | **9 g** | 33 g |\n\n最高/最低 = **5.21 倍**。三档都不是玄学：A、B 的差别来自汉权衡器实测的分布两端；C 来自「古之一两，今用一钱可也」一系的折量传统——它的目的不是复原汉制，而是给后世一个安全可用的换算。\n\n**所以「桂枝三两等于多少克」正确的回答是**：41.25 g（若按 1 斤 220 g）、46.88 g（若按 250 g）、9 g（若按明清折量）——**前提必须一起给出**。单独一个数字，无论多精确，都不可引用。\n\n### 底本自带折算层：宋人已经算过\n\n底本 4:41 条里，紧接方后注有一段校语：\n\n> 臣亿等谨按桂枝汤方：桂枝、芍药、生姜各三两，甘草二两，大枣十二枚。麻黄汤方：麻黄三两，桂枝二两，甘草一两，杏仁七十个。今以算法，二汤各取曰分之一，即得桂枝一两。十六约之……\n\n（「曰分之一」是底本 OCR 讹字，通行本作「十分之一」；此处照抄并标注，不代改。）\n\n这段话的信息量很大：\n\n1. **宋人（林亿等校正医书局）在校书时就做了折算**，还写进了正文；\n2. 折算的动机是**合方配比**（桂枝麻黄各半汤），不是复古剂量；\n3. 「十六约之」用的是 1 斤 = 16 两的进位，与我们上面的硬约束一致。\n\n换句话说：**经方剂量的争议，从宋代就是文本内部的一部分**。你读到的不是「原文 + 现代解释」，而是「原文 + 历代折算层」。\n\n### 底本内部的不一致\n\n| 出处 | 甘草 |\n|---|---|\n| 4:28（方文残片） | 「桂枝三两去皮 芍药三两 **甘草三两**炙」 |\n| 4:41（林亿校语引桂枝汤方） | 「桂枝、芍药、生姜各三两，**甘草二两**，大枣十二枚」 |\n\n同一底本，两处甘草差一两。按 A 档算，差 **13.75 g**。这不是小数——它足以让「甘草」在一张方里从佐使变成接近君臣的量。\n\n处理原则：**两个数字都留着，各自标出处**；不取「看起来更常见的那个」。原文没给你的，别替它决定。\n\n### 不能换算的单位\n\n`枚 / 个 / 把 / 片 / 茎` 是计数单位。本章代码对它们**返回 `grams: null`**，理由写在返回值里：原文没给单枚重量，任何克数都是推测。市面上「大枣一枚 ≈ 3 g」这类数字流行，但它们来自现代实测样本，不是原文——可以用，但必须标「现代估测」，不能标「经方原量」。\n\n## BUILD IT：从零实现\n\n```js\nSCHOOLS            // 三档折算前提（label + 每两克数 + basis）\ntoGrams(n, unit, school)  // 斤/两/铢/分 → 克，带前提\ntoMl(n, unit)             // 升/合 → 毫升\ncountUnit(n, unit)        // 计数单位：grams 恒为 null + 理由\ncheckRelations()          // 1斤=16两、1两=24铢、1升=10合 自检\nguizhiTang()              // 桂枝汤三档并列 + 合计 + 倍数\n```\n\n## 验证\n\n```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：`toGrams(3,'两','han220').grams === 41.25`；`toGrams(3,'两','ming').grams === 9`；`countUnit(12,'枚').grams === null`；`guizhiTang()` 三档合计 151.25 / 171.89 / 33，倍数 5.21。\n\n## 代价与边界\n\n- **本章不裁哪一种折算正确**。三档并列是结论，不是回避。\n- **汉制 1 斤 220–250 g 是学界通行区间，本章未复核原器**。要裁决必须回到权衡器实测数据与断代，那超出本章范围。\n- **容量按 1 升 = 200 ml 折算**，同样有争议（另有 198 ml、210 ml 等），本章只取通行值并标注。\n- **折算只解决「量」，不解决「效」**。同一克数在不同煎法、服法（顿服 / 日三服 / 分温再服）下，进入体内的量完全不同——本章不涉及煎服法折算。\n- **不构成用量建议**。任何临床应用须由执业医师依据药典与患者情况决定。\n\n> **免责声明：** 方文与单位统计来自 `standards/shanghan/底本.json`（可复算，含 OCR 讹字与宋人校语）；本章为度量衡换算演示，不构成用药建议。\n\n## 练习\n\n1. 用 A 档把「麻黄三两、桂枝二两、甘草一两、杏仁七十个」换算，并说明哪一味无法换算。\n2. 「水七升，煮取三升，温服一升」——按 200 ml/升，一剂分几次服？若按明清折量，这个次数会变吗？\n3. 4:28 与 4:41 的甘草差一两，你会怎么在讲义里写？给出两个方案并说明取舍。\n\n## 进阶思考\n\n剂量争议的本质是**测量基准的丢失**：汉尺、汉权、汉升都不是今天的器物，复原只能靠考古样本的分布。承认区间，比给一个精确到小数点的数字更专业——因为后者假装基准还在。\n",
+    "code": {
+      "main.js": "'use strict';\n/**\n * 经方剂量的度量衡折算：三档并列，不裁一种\n *\n *   node code/main.js\n *\n * 口径：\n *   · 底本原方用汉制（两/斤/铢/升/合/枚/个），本章只做「同一数字在不同折算前提下」的并列换算。\n *   · 三档的前提必须写在结果里：没有前提的克数不能引用。\n *   · 枚/个/把/片 等计数单位**不折算为质量** —— 大枣一枚几克没有原文依据，任何数字都是猜。\n *   · 容量按汉制 1 升 = 200 ml 折算（学界通行值），仍给区间标注。\n *   · 底本内嵌宋人（林亿等）校语，本身就带「今以算法约之」的折算痕迹 —— 折算不是现代发明。\n */\n\nconst path = require('node:path');\nconst fs = require('node:fs');\n\nconst ROOT = path.resolve(__dirname, '../../../../../..');\nconst BOOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/shanghan/底本.json'), 'utf8'));\nconst ITEMS = [];\nfor (const p of BOOK.pian) for (const it of p.items) ITEMS.push({ id: `${p.no}:${it.no}`, text: it.text });\n\n/** 三档折算前提（每档都带出处与区间，不给点值） */\nconst SCHOOLS = {\n  han220: { label: '汉制·1 斤=220 g（东汉偏低值）', liang: [13.75, 13.75], basis: '东汉权衡实测偏低一端' },\n  han250: { label: '汉制·1 斤=250 g（偏高一端）', liang: [15.625, 15.625], basis: '汉制权衡实测偏高一端' },\n  ming: { label: '明清折量·1 两≈3 g', liang: [3, 3], basis: '「古之一两，今用一钱可也」一系折量法' },\n};\n\nconst RATIO = { jin: 16, liang: 24 };       // 1 斤 = 16 两；1 两 = 24 铢\nconst VOLUME = { sheng: 200, ge: 20 };       // ml，汉制 1 升 = 10 合\n\n/** 重量换算：斤/两/铢/分（分 = 1/4 两，仅部分方使用；这里按两制分注） */\nfunction toGrams(amount, unit, school) {\n  const s = SCHOOLS[school];\n  if (!s) throw new Error(`未知折算档：${school}`);\n  const perLiang = s.liang[0];\n  let liang;\n  if (unit === '斤') liang = amount * RATIO.jin;\n  else if (unit === '两') liang = amount;\n  else if (unit === '铢') liang = amount / RATIO.liang;\n  else if (unit === '分') liang = amount / 4;\n  else throw new Error(`不支持的重量单位：${unit}`);\n  return { grams: Number((liang * perLiang).toFixed(2)), label: s.label, basis: s.basis, perLiang };\n}\n\n/** 容量换算 */\nfunction toMl(amount, unit) {\n  if (unit === '升') return { ml: amount * VOLUME.sheng, basis: '汉制 1 升 = 200 ml（通行值）' };\n  if (unit === '合') return { ml: amount * VOLUME.ge, basis: '汉制 1 合 = 20 ml' };\n  throw new Error(`不支持的容量单位：${unit}`);\n}\n\n/** 计数单位：拒绝换算 */\nfunction countUnit(amount, unit) {\n  if (!['枚', '个', '把', '片', '茎', '尺'].includes(unit)) throw new Error(`不是计数单位：${unit}`);\n  return { count: amount, unit, grams: null, note: '计数单位不折算为质量：原文未给单枚重量，任何克数都是推测' };\n}\n\n/** 单位关系自检 */\nfunction checkRelations() {\n  return [\n    { rel: '1 斤 = 16 两', ok: RATIO.jin === 16 },\n    { rel: '1 两 = 24 铢', ok: RATIO.liang === 24 },\n    { rel: '1 升 = 10 合', ok: VOLUME.sheng / VOLUME.ge === 10 },\n  ];\n}\n\n/** 底本里出现过的单位频次 */\nfunction unitCensus() {\n  const units = ['两', '升', '枚', '合', '分', '斤', '个', '铢', '尺', '片', '钱匕', '方寸匕', '把', '茎'];\n  return units.map((u) => ({ unit: u, tiao: ITEMS.filter((i) => i.text.includes(u)).length }));\n}\n\n/** 桂枝汤（底本 4:41 林亿校语所载方）三档并列 */\nfunction guizhiTang() {\n  const recipe = [['桂枝', 3, '两'], ['芍药', 3, '两'], ['生姜', 3, '两'], ['甘草', 2, '两']];\n  return Object.keys(SCHOOLS).map((k) => {\n    const rows = recipe.map(([name, n, u]) => ({ name, n, u, ...toGrams(n, u, k) }));\n    const sum = rows.reduce((a, r) => a + r.grams, 0);\n    return { school: SCHOOLS[k].label, rows, sum: Number(sum.toFixed(2)) };\n  });\n}\n\nfunction main() {\n  console.log('单位关系自检：');\n  for (const r of checkRelations()) console.log(`  ${r.ok ? '✓' : '✗'} ${r.rel}`);\n\n  console.log('\\n底本单位频次（条数）：');\n  console.log('  ' + unitCensus().map((x) => `${x.unit} ${x.tiao}`).join(' · '));\n\n  console.log('\\n桂枝汤（底本 4:41 载：桂枝/芍药/生姜各三两，甘草二两）三档并列：');\n  for (const s of guizhiTang()) {\n    console.log(`  ${s.school}`);\n    console.log('    ' + s.rows.map((r) => `${r.name} ${r.n}${r.u}=${r.grams}g`).join('  ') + ` ｜四味合计 ${s.sum} g`);\n  }\n  const sums = guizhiTang().map((s) => s.sum);\n  console.log(`  最高/最低 = ${(Math.max(...sums) / Math.min(...sums)).toFixed(2)} 倍`);\n\n  console.log('\\n容量：水七升 / 煮取三升 / 服一升');\n  for (const [n, u] of [[7, '升'], [3, '升'], [1, '升']]) {\n    const r = toMl(n, u);\n    console.log(`  ${n}${u} = ${r.ml} ml（${r.basis}）`);\n  }\n\n  console.log('\\n计数单位（拒绝折算）：');\n  const c = countUnit(12, '枚');\n  console.log(`  大枣 ${c.count}${c.unit} → ${c.grams === null ? 'null' : c.grams}g｜${c.note}`);\n\n  console.log('\\n口径：三档前提必须随数字一起给出；本章不裁哪一种正确。');\n  console.log('本输出为度量衡换算演示，不构成用量建议。');\n}\n\nif (require.main === module) main();\nmodule.exports = { SCHOOLS, RATIO, VOLUME, toGrams, toMl, countUnit, checkRelations, unitCensus, guizhiTang, ITEMS };\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { toGrams, toMl, countUnit, checkRelations, guizhiTang, unitCensus, ITEMS, SCHOOLS } = require('./main.js');\n\ntest('单位关系自检三条全过：1斤=16两、1两=24铢、1升=10合', () => {\n  const r = checkRelations();\n  assert.strictEqual(r.length, 3);\n  assert.ok(r.every((x) => x.ok), JSON.stringify(r));\n});\n\ntest('桂枝三两：三档 41.25 / 46.88 / 9 克，倍数 5.21', () => {\n  assert.strictEqual(toGrams(3, '两', 'han220').grams, 41.25);\n  assert.strictEqual(toGrams(3, '两', 'han250').grams, 46.88);\n  assert.strictEqual(toGrams(3, '两', 'ming').grams, 9);\n  const sums = guizhiTang().map((s) => s.sum);\n  assert.deepStrictEqual(sums, [151.25, 171.89, 33]);\n  assert.strictEqual(Number((Math.max(...sums) / Math.min(...sums)).toFixed(2)), 5.21);\n});\n\ntest('每个克数都带前提，不返回裸数字', () => {\n  const r = toGrams(1, '两', 'han220');\n  assert.ok(r.label && r.basis && r.perLiang);\n  assert.strictEqual(r.perLiang, 13.75);\n  assert.deepStrictEqual(Object.keys(SCHOOLS).sort(), ['han220', 'han250', 'ming']);\n});\n\ntest('铢与分的进位：24 铢 = 1 两；4 分 = 1 两', () => {\n  assert.strictEqual(toGrams(24, '铢', 'han220').grams, toGrams(1, '两', 'han220').grams);\n  assert.strictEqual(toGrams(4, '分', 'han220').grams, toGrams(1, '两', 'han220').grams);\n});\n\ntest('斤：1 斤 = 16 两', () => {\n  assert.strictEqual(toGrams(1, '斤', 'han220').grams, 220);\n  assert.strictEqual(toGrams(1, '斤', 'han250').grams, 250);\n});\n\ntest('容量：水七升 = 1400 ml，服一升 = 200 ml', () => {\n  assert.strictEqual(toMl(7, '升').ml, 1400);\n  assert.strictEqual(toMl(1, '升').ml, 200);\n  assert.strictEqual(toMl(1, '合').ml, 20);\n});\n\ntest('计数单位拒绝折算：大枣十二枚 grams 为 null 且有理由', () => {\n  const c = countUnit(12, '枚');\n  assert.strictEqual(c.grams, null);\n  assert.strictEqual(c.count, 12);\n  assert.match(c.note, /不折算/);\n});\n\ntest('未知档 / 不支持的单位必须抛错，不许静默返回', () => {\n  assert.throws(() => toGrams(1, '两', 'qing'), /未知折算档/);\n  assert.throws(() => toGrams(1, '枚', 'han220'), /不支持的重量单位/);\n  assert.throws(() => toMl(1, '两'), /不支持的容量单位/);\n});\n\ntest('底本单位频次可复现：两 338 · 升 259 · 枚 147 · 斤 40 · 铢 32', () => {\n  const c = Object.fromEntries(unitCensus().map((x) => [x.unit, x.tiao]));\n  assert.strictEqual(c['两'], 338);\n  assert.strictEqual(c['升'], 259);\n  assert.strictEqual(c['枚'], 147);\n  assert.strictEqual(c['斤'], 40);\n  assert.strictEqual(c['铢'], 32);\n});\n\ntest('底本内宋人校语存在（林亿等按桂枝汤方），且甘草两处说法不同', () => {\n  const jiaoyu = ITEMS.filter((i) => i.text.includes('臣亿等谨按') && i.text.includes('桂枝汤方'));\n  assert.ok(jiaoyu.length >= 1, '应有林亿校语');\n  const frag = ITEMS.find((i) => i.id === '4:28');\n  assert.ok(frag.text.includes('甘草三两'), '4:28 作甘草三两');\n  assert.ok(jiaoyu.some((x) => x.text.includes('甘草二两')), '校语作甘草二两');\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "「桂枝三两」换算成克，正确的回答是？",
+          "options": [
+            "41.25 g",
+            "46.88 g",
+            "9 g",
+            "三档并列，必须连前提一起给出"
+          ],
+          "correct": 3,
+          "explanation": "5.21 倍差异来自折算前提；单独一个数字不可引用。"
+        },
+        {
+          "stage": "check",
+          "question": "汉制的进位关系是？",
+          "options": [
+            "1 斤 = 10 两，1 两 = 10 铢",
+            "1 斤 = 16 两，1 两 = 24 铢",
+            "1 斤 = 16 两，1 两 = 16 铢",
+            "1 斤 = 12 两"
+          ],
+          "correct": 1,
+          "explanation": "代码对这三条做了自检（含 1 升 = 10 合）。"
+        },
+        {
+          "stage": "check",
+          "question": "底本 4:41 里的「臣亿等谨按…今以算法」说明什么？",
+          "options": [
+            "底本抄错",
+            "宋人校书时已做过折算，折算层是文本的一部分",
+            "宋代已有公制",
+            "这是后人加的批注可删"
+          ],
+          "correct": 1,
+          "explanation": "折算不是现代人的发明，宋代校书已算过并写入正文。"
+        },
+        {
+          "stage": "check",
+          "question": "底本内桂枝汤的甘草有两处说法：4:28 作三两、4:41 校语作二两。正确处理是？",
+          "options": [
+            "取常见的二两",
+            "取三两",
+            "两处都留、各标出处，不替原文决定",
+            "删掉其中一处"
+          ],
+          "correct": 2,
+          "explanation": "按 A 档这两说差 13.75 g，足以改变方内配比。"
+        },
+        {
+          "stage": "post",
+          "question": "为什么「大枣十二枚」不换算成克？",
+          "options": [
+            "原文没给单枚重量，任何克数都是推测",
+            "大枣不重要",
+            "枚不是单位",
+            "可以换算，只是没人算"
+          ],
+          "correct": 0,
+          "explanation": "现代实测样本可作参考，但必须标「现代估测」而非「经方原量」。"
+        },
+        {
+          "stage": "post",
+          "question": "剂量折算能解决下列哪一项？",
+          "options": [
+            "药效差异",
+            "煎法对溶出的影响",
+            "把原文数字放到明确的度量基准下比较",
+            "患者个体差异"
+          ],
+          "correct": 2,
+          "explanation": "折算只解决「量」的基准，不解决「效」。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-jiliang-zhesuan.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/12-jiliang-zhesuan/outputs/prompt-jiliang-zhesuan.md",
+        "title": "经方剂量三档换算",
+        "description": null,
+        "chars": 746,
+        "body": "# 经方剂量三档换算\n\n## 用途\n\n把底本的「两 / 斤 / 铢 / 分 / 升 / 合」换成可比较的数，并**强制带前提**。\n用于**讲义注释、剂量对比、文献复算**。不给用量建议。\n\n## 提示词\n\n```text\n你是经方度量衡助手。任务：把给定方量与单位换算，三档并列，每档带前提。\n\n三档前提（必须随结果一起输出）：\nA 汉制 1 斤 = 220 g → 1 两 = 13.75 g\nB 汉制 1 斤 = 250 g → 1 两 = 15.625 g\nC 明清折量 1 两 ≈ 3 g\n\n硬约束：1 斤 = 16 两；1 两 = 24 铢；1 升 = 10 合；1 升 = 200 ml。\n计数单位（枚/个/把/片/茎）：不折算为质量，输出「原文未给单枚重量」。\n\n规则：\n1. 每个克数后必须括号注明档位与前提；裸数字视为错误输出。\n2. 若原文两处说法不同（如甘草三两 / 二两），两说并列并各标条号，不择一。\n3. 容量按 200 ml/升折算并标注「通行值，有争议」。\n4. 不把「现代实测」的枚重冒充「经方原量」，如需给出要标「现代估测」。\n5. 不给煎服法建议、不给临床用量、不判断安全性。\n\n输出格式：\n【原方】逐味：药名 数量+单位（条号）\n【三档】A：… / B：… / C：…（每味 + 合计）\n【倍数】最高/最低\n【不可换算】…\n【异文】…\n```\n\n## 使用示例\n\n输入：桂枝汤（底本 4:41 载）。\n\n输出：【原方】桂枝三两、芍药三两、生姜三两、甘草二两（4:41 校语）\n【三档】A：41.25/41.25/41.25/27.5，合计 151.25 g；B：46.88…合计 171.89 g；C：9/9/9/6，合计 33 g\n【倍数】5.21\n【不可换算】大枣十二枚（计数单位）\n【异文】4:28 作「甘草三两」，与校语差一两（A 档 13.75 g）\n\n## 为什么这样限制\n\n- 不给前提的克数，读者无法判断它是复原汉制还是明清折量，等于制造误解。\n- 枚重是最容易被\"补\"的数字，一旦补上就再也分不清原文与现代估测。\n"
+      },
+      {
+        "name": "skill-jiliang-zhesuan.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/12-jiliang-zhesuan/outputs/skill-jiliang-zhesuan.md",
+        "title": "jiliang-zhesuan",
+        "description": "经方剂量三档换算：每数带前提、异文并列、计数单位不折克",
+        "chars": 507,
+        "body": "---\nname: jiliang-zhesuan\ndescription: 经方剂量三档换算：每数带前提、异文并列、计数单位不折克\nversion: 0.1.0\n---\n\n# jiliang-zhesuan\n\n## 何时使用\n\n- 讲义要标注「三两等于多少克」\n- 比较两方剂量（如桂枝汤 vs 麻黄汤）\n- 发现原文两处剂量不同，需要并列而不择一\n\n## 不适用\n\n- 临床用量与安全性判断\n- 煎服法折算（顿服/日三服的影响）\n- 药效与药理\n\n## 步骤\n\n1. **取原方**：逐味抄数量与单位，标条号。\n2. **查硬约束**：1 斤 16 两、1 两 24 铢、1 升 10 合、1 升 200 ml。\n3. **三档并列**：A 13.75 g/两、B 15.625 g/两、C 3 g/两；每档给合计与倍数。\n4. **标不可换算**：枚/个/把/片/茎 → grams = null + 理由。\n5. **列异文**：同方不同条数字不一致时并列。\n6. **声明边界**：不构成用量建议。\n\n## 输出模板\n\n```text\n【原方】…（条号）\n【三档】A/B/C 逐味 + 合计\n【倍数】…\n【不可换算】…\n【异文】…\n```\n\n## 质量判据\n\n- 没有裸克数\n- 计数单位未被折成克\n- 异文两说都在\n- 有争议的通行值（1 升 200 ml）被标注\n\n> 本技能只做度量衡换算，不构成用药建议。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
   "02-zhongyao/01-zhongyaoxue/12-xingneng-bianma": {
     "key": "02-zhongyao/01-zhongyaoxue/12-xingneng-bianma",
     "deptSlug": "02-zhongyao",

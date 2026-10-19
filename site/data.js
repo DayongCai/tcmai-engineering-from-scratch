@@ -110,7 +110,7 @@ window.TCMAI_DATA = {
     "hours": 7596,
     "semesters": 10,
     "stages": 5,
-    "chaptersBuilt": 25,
+    "chaptersBuilt": 28,
     "subjectsDone": 0,
     "subjectsWip": 11,
     "subjectsPlanned": 109,
@@ -1506,8 +1506,8 @@ window.TCMAI_DATA = {
           "stage": "sheng",
           "hours": 90,
           "chaptersTarget": 12,
-          "chaptersBuilt": 8,
-          "pct": 67,
+          "chaptersBuilt": 11,
+          "pct": 92,
           "status": "wip",
           "glyph": "🚧",
           "bridge": "六经→状态机 / 方证→条件概率",
@@ -5531,19 +5531,19 @@ window.TCMAI_DATA = {
         "n": 10,
         "slug": "10-fangzheng-duiying",
         "title": "方证对应：症状群 → 方剂的匹配",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-tiaowen-jiansuo",
         "title": "伤寒条文的检索与 BM25 复现",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-jiliang-zhesuan",
         "title": "经方剂量的度量衡与折算争议",
-        "status": "📋"
+        "status": "🚧"
       }
     ],
     "01-zhongyi/08-jingui-yaolue": [

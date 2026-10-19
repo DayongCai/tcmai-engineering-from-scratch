@@ -2,7 +2,7 @@
 
 > 本章节由 `scripts/build_outputs_index.js` **生成**，请勿手改；重跑脚本同步。
 
-> **50** 件产出物 · 覆盖 **25** 个章节 · prompt 25 · skill 25
+> **56** 件产出物 · 覆盖 **28** 个章节 · prompt 28 · skill 28
 
 ## 这是什么
 
@@ -24,7 +24,7 @@
 | ☯️ 中医系 | 中医基础理论 | 3 | 6 |
 | ☯️ 中医系 | 中医诊断学 | 1 | 2 |
 | ☯️ 中医系 | 内经选读 | 6 | 12 |
-| ☯️ 中医系 | 伤寒论 | 8 | 16 |
+| ☯️ 中医系 | 伤寒论 | 11 | 22 |
 | 🌾 中药系 | 中药学 | 1 | 2 |
 | 🪡 针灸系 | 腧穴学 | 1 | 2 |
 | 🦴 骨伤系 | 中医正骨学 | 1 | 2 |
@@ -139,7 +139,7 @@
 
 ### 伤寒论
 
-> Core · 第 4 学期 · 已产出 8 章
+> Core · 第 4 学期 · 已产出 11 章
 
 #### 第 1 章 · 《伤寒论》的成书、版本与条文结构：1760 条不是 398 条
 
@@ -212,6 +212,33 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 合病并病辨读助手 | — | 609 | [`prompt-hebing-bingbing.md`](../departments/01-zhongyi/07-shanghanlun/chapters/09-hebing-bingbing/outputs/prompt-hebing-bingbing.md) |
 | skill | hebing-bingbing | 判合病与并病：定时间结构、定六经、引主症与原文方，经名不外推 | 533 | [`skill-hebing-bingbing.md`](../departments/01-zhongyi/07-shanghanlun/chapters/09-hebing-bingbing/outputs/skill-hebing-bingbing.md) |
+
+#### 第 10 章 · 方证对应：症状群 → 方剂，为什么前三版排序都是错的
+
+`07-shanghanlun/chapters/10-fangzheng-duiying/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 方证检索结果解读 | — | 741 | [`prompt-fangzheng-duiying.md`](../departments/01-zhongyi/07-shanghanlun/chapters/10-fangzheng-duiying/outputs/prompt-fangzheng-duiying.md) |
+| skill | fangzheng-duiying | 方证检索复核：看支持度/覆盖率/否定句，遇方向相反整份弃用 | 467 | [`skill-fangzheng-duiying.md`](../departments/01-zhongyi/07-shanghanlun/chapters/10-fangzheng-duiying/outputs/skill-fangzheng-duiying.md) |
+
+#### 第 11 章 · 条文检索：MRR 满分，但「库里没有」它不会说
+
+`07-shanghanlun/chapters/11-tiaowen-jiansuo/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 经文检索与弃答 | — | 632 | [`prompt-tiaowen-jiansuo.md`](../departments/01-zhongyi/07-shanghanlun/chapters/11-tiaowen-jiansuo/outputs/prompt-tiaowen-jiansuo.md) |
+| skill | tiaowen-jiansuo | 经文检索与弃答：白名单先行、归一后检索、近似条不得充数 | 481 | [`skill-tiaowen-jiansuo.md`](../departments/01-zhongyi/07-shanghanlun/chapters/11-tiaowen-jiansuo/outputs/skill-tiaowen-jiansuo.md) |
+
+#### 第 12 章 · 经方剂量：桂枝三两是 41 克、47 克，还是 9 克
+
+`07-shanghanlun/chapters/12-jiliang-zhesuan/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 经方剂量三档换算 | — | 746 | [`prompt-jiliang-zhesuan.md`](../departments/01-zhongyi/07-shanghanlun/chapters/12-jiliang-zhesuan/outputs/prompt-jiliang-zhesuan.md) |
+| skill | jiliang-zhesuan | 经方剂量三档换算：每数带前提、异文并列、计数单位不折克 | 507 | [`skill-jiliang-zhesuan.md`](../departments/01-zhongyi/07-shanghanlun/chapters/12-jiliang-zhesuan/outputs/skill-jiliang-zhesuan.md) |
 
 ## 🌾 中药系
 
