@@ -30,6 +30,7 @@ const SUITES = [
   { file: 'test_shanghan_base.js', desc: '《伤寒论底本》导入层（27 篇 1760 条 / 9 域跨源核对 / 出处可复现）' },
   { file: 'test_materials_import.js', desc: '源材料批量导入层（13 份材料 / 六种形态渲染 / 出处可复现）' },
   { file: 'test_xls_reader.js', desc: '旧二进制 .xls 读取器（OLE2/BIFF8：内经全本 162 篇逐字校验 / RK 编码）' },
+  { file: 'test_shaoyin_source.js', desc: '少阴外源补录（sha256 / 45 条 15 方 / 不污染底本 / PROVENANCE 一致）' },
   { file: 'test_docx_reader.js', desc: 'Word .docx 读取器（OOXML：段落/标题/表格，伤寒架构六经总表逐格校验）' },
   { file: 'test_leijing_colors.js', desc: '类经图翼方位色接入（16×11 矩阵 / 三层球面 / 配色判定用对对照）' },
   { file: 'test_links.js', desc: '内部链接检查（含判据宽严两侧的负例）' },

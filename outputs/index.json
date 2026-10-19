@@ -2,11 +2,11 @@
   "$generated": "node scripts/build_outputs_index.js",
   "note": "可复用产出物的根级索引。契约见 CONTRIBUTING.md；每章的产物是生成物，索引是它们的生成物。",
   "counts": {
-    "items": 62,
-    "chaptersWithOutputs": 31,
+    "items": 64,
+    "chaptersWithOutputs": 32,
     "byKind": {
-      "prompt": 31,
-      "skill": 31
+      "prompt": 32,
+      "skill": 32
     },
     "gaps": 0
   },
@@ -423,6 +423,26 @@
                   "title": "taiyin-xuhan",
                   "description": "太阴篇证据链核对：拆篇识目录残片、逐环报 hit/crossPian/missing、缺不补",
                   "chars": 519
+                }
+              ]
+            },
+            {
+              "chapter": "07-shaoyin-xuyang",
+              "title": "第 7 章 · 少阴病：45 条里 13 条在讲预后，不是讲方",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/07-shaoyin-xuyang/outputs/prompt-shaoyin-xuyang.md",
+                  "title": "少阴篇预后判读助手",
+                  "description": null,
+                  "chars": 787
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/07-shanghanlun/chapters/07-shaoyin-xuyang/outputs/skill-shaoyin-xuyang.md",
+                  "title": "shaoyin-xuyang",
+                  "description": "少阴篇预后判读：先结论词后判据词，未命中即未判定，条号标外源",
+                  "chars": 449
                 }
               ]
             },
@@ -1346,6 +1366,36 @@
       "description": "太阴篇证据链核对：拆篇识目录残片、逐环报 hit/crossPian/missing、缺不补",
       "version": "0.1.0",
       "chars": 519
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "07-shaoyin-xuyang",
+      "chapterTitle": "第 7 章 · 少阴病：45 条里 13 条在讲预后，不是讲方",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/07-shaoyin-xuyang/outputs/prompt-shaoyin-xuyang.md",
+      "title": "少阴篇预后判读助手",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 787
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "伤寒论",
+      "subjectSlug": "07-shanghanlun",
+      "chapter": "07-shaoyin-xuyang",
+      "chapterTitle": "第 7 章 · 少阴病：45 条里 13 条在讲预后，不是讲方",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/07-shanghanlun/chapters/07-shaoyin-xuyang/outputs/skill-shaoyin-xuyang.md",
+      "title": "shaoyin-xuyang",
+      "name": "shaoyin-xuyang",
+      "description": "少阴篇预后判读：先结论词后判据词，未命中即未判定，条号标外源",
+      "version": "0.1.0",
+      "chars": 449
     },
     {
       "dept": "中医系",

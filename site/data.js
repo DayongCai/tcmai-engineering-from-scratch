@@ -110,9 +110,9 @@ window.TCMAI_DATA = {
     "hours": 7596,
     "semesters": 10,
     "stages": 5,
-    "chaptersBuilt": 31,
-    "subjectsDone": 0,
-    "subjectsWip": 11,
+    "chaptersBuilt": 32,
+    "subjectsDone": 1,
+    "subjectsWip": 10,
     "subjectsPlanned": 109,
     "videos": 3,
     "textbookChapters": 1
@@ -1506,10 +1506,10 @@ window.TCMAI_DATA = {
           "stage": "sheng",
           "hours": 90,
           "chaptersTarget": 12,
-          "chaptersBuilt": 11,
-          "pct": 92,
-          "status": "wip",
-          "glyph": "🚧",
+          "chaptersBuilt": 12,
+          "pct": 100,
+          "status": "done",
+          "glyph": "✅",
           "bridge": "六经→状态机 / 方证→条件概率",
           "path": "departments/01-zhongyi/07-shanghanlun",
           "platform": {
@@ -5513,7 +5513,7 @@ window.TCMAI_DATA = {
         "n": 7,
         "slug": "07-shaoyin-xuyang",
         "title": "少阴病：心肾阳虚与四逆汤类",
-        "status": "📋"
+        "status": "🚧"
       },
       {
         "n": 8,

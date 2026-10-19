@@ -61,12 +61,12 @@
     <div class="kpi"><div class="k">领域 / 院系</div><div class="v">1 / 8</div></div>
     <div class="kpi"><div class="k">学科</div><div class="v">120</div></div>
     <div class="kpi"><div class="k">章节（目标）</div><div class="v">1086</div></div>
-    <div class="kpi"><div class="k">已建章节</div><div class="v">31<small>2.85%</small></div></div>
+    <div class="kpi"><div class="k">已建章节</div><div class="v">32<small>2.95%</small></div></div>
     <div class="kpi"><div class="k">书稿文件</div><div class="v">13<small>md</small></div></div>
     <div class="kpi"><div class="k">视频成片</div><div class="v">3</div></div>
-    <div class="kpi"><div class="k">产出物</div><div class="v">62<small>undefined 章</small></div></div>
-    <div class="kpi"><div class="k">测试套件</div><div class="v">39</div></div>
-    <div class="kpi"><div class="k">扫描 md</div><div class="v">267<small>0 断链</small></div></div>
+    <div class="kpi"><div class="k">产出物</div><div class="v">64<small>undefined 章</small></div></div>
+    <div class="kpi"><div class="k">测试套件</div><div class="v">40</div></div>
+    <div class="kpi"><div class="k">扫描 md</div><div class="v">272<small>0 断链</small></div></div>
     <div class="kpi"><div class="k">版本</div><div class="v">1.35.0</div></div>
   </div>
 
@@ -75,9 +75,9 @@
     <div class="step"><div class="n">桌面源资料</div><div class="d">108 项 · 45 xlsx / 16 docx / 4 旧 .xls</div><div class="r">解析入库，绝不手抄</div></div>
     <div class="step"><div class="n">standards/</div><div class="d">8 个域 · 带 sources/ 原件 + sha256</div><div class="r">派生物（content.json）不入库</div></div>
     <div class="step"><div class="n">curriculum.json</div><div class="d">单一事实来源</div><div class="r">1 领域 / 8 院系 / 120 学科 / 1086 章节</div></div>
-    <div class="step"><div class="n">departments/</div><div class="d">课程骨架（章节契约：docs + code + quiz + outputs）</div><div class="r">已建 31 章</div></div>
+    <div class="step"><div class="n">departments/</div><div class="d">课程骨架（章节契约：docs + code + quiz + outputs）</div><div class="r">已建 32 章</div></div>
     <div class="step"><div class="n">[tcmP] + [textbooks]</div><div class="d">两条交付物线</div><div class="r">站点/视频 · 教材/书</div></div>
-    <div class="step"><div class="n">质量门</div><div class="d">L0–L3 审计 · 链接 · 计数 · 产出物索引</div><div class="r">39 套件</div></div>
+    <div class="step"><div class="n">质量门</div><div class="d">L0–L3 审计 · 链接 · 计数 · 产出物索引</div><div class="r">40 套件</div></div>
   </div>
 
   <h2>工作流状态</h2>
@@ -91,7 +91,7 @@
     <tr><td>[textbooks] 教材 · 内容</td><td><span class="pill s-active">进行中</span></td>
         <td>5 卷 · 已写 13 章 · 构建产物 2 件<div class="why">教材正文 = 章节 docx 的 docs/zh.md 汇总；同时出单文件书 HTML（不需要 pandoc）</div></td></tr>
     <tr><td>课程骨架 · 学科/章节</td><td><span class="pill s-active">进行中</span></td>
-        <td>120 学科已建目录 · 已建章节 31/1086（2.85%）<div class="why">curriculum.json 为单一事实来源；审计对 120 个空学科全绿是第一个里程碑</div></td></tr>
+        <td>120 学科已建目录 · 已建章节 32/1086（2.95%）<div class="why">curriculum.json 为单一事实来源；审计对 120 个空学科全绿是第一个里程碑</div></td></tr>
     <tr><td>源资料入库</td><td><span class="pill s-done">已完成</span></td>
         <td>standards/ 8 个域：endpoints · icd11 · knowledge-structure · knowledge-tree · leijing-tuyi · materials · semtensor · shanghan<div class="why">解析入库、绝不手抄；各带 sources/ 原件 + sha256 溯源；派生 content.json 不入库</div></td></tr>
     <tr><td>嵌入层（embedding-code 规格）</td><td><span class="pill s-block">受阻</span></td>
@@ -99,7 +99,7 @@
     <tr><td>ICD-11 客户端（规格 ⑦）</td><td><span class="pill s-active">进行中</span></td>
         <td>本地库 13960 实体（MMS 2025-01）· 仓库 7 个编码 7/7 解析<div class="why">WHO API 通道需凭据（无凭据一律 401，本机未配置）；中文标题通道**未验证**</div></td></tr>
     <tr><td>质量门 · 审计与测试</td><td><span class="pill s-done">已完成</span></td>
-        <td>审计 L0–L3 · 39 个测试套件（40 个测试文件）· 链接扫描 267 个 md（0 断链） · npm run check 四道门<div class="why">L3 内容层实测抓到 2 处契约违约；文档事实核对测试已 4 次抓到过期数字</div></td></tr>
+        <td>审计 L0–L3 · 40 个测试套件（41 个测试文件）· 链接扫描 272 个 md（0 断链） · npm run check 四道门<div class="why">L3 内容层实测抓到 2 处契约违约；文档事实核对测试已 4 次抓到过期数字</div></td></tr>
     </tbody>
   </table>
 
@@ -141,6 +141,7 @@
 
   <h2>最近提交</h2>
   <div class="card git">
+    <div>d525693  <b>eat(neijing): 内经选读 6/10 → 9/10（+3 章：经脉别论 / 治则标本 / 运气七篇）</b></div>
     <div>5d5adf3  <b>eat(shanghan): 伤寒论 8/12 → 11/12（+3 章：方证对应 / BM25 检索 / 剂量折算）</b></div>
     <div>d90273b  <b>ata(external): 证候外部证据第 24 批（+1 条，0 条失败，0 条退回）</b></div>
     <div>76678da  <b>eat(shanghan): 伤寒论 2/12 → 8/12（+6 章）；底本缺口清单</b></div>
@@ -152,7 +153,6 @@
     <div>943ce90  <b>eat(curriculum): 补齐 120 学科知识结构（1086 章）+ 每院系 1 章正文 + 站点章节地图</b></div>
     <div>b9168f2  <b>ata(external): 不合格清单第五轮补证（+1 条，0 条失败）—— 大肠湿热蕴毒证 退回重检后升单构件级，整串覆盖 70→71，不合格 3→2</b></div>
     <div>f30552e  <b>ata(external): 不合格清单第四轮（3→3 保持，2 条升构件级），构件 21→23</b></div>
-    <div>10dab99  <b>ata(external): 证候外部证据收尾批（+2 条，0 条失败）</b></div>
   </div>
 
   <footer>

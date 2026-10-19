@@ -2251,6 +2251,124 @@ window.TCMAI_CONTENT = {
     "video": null,
     "videoPoster": null
   },
+  "01-zhongyi/07-shanghanlun/07-shaoyin-xuyang": {
+    "key": "01-zhongyi/07-shanghanlun/07-shaoyin-xuyang",
+    "deptSlug": "01-zhongyi",
+    "deptTitle": "中医系",
+    "subjectSlug": "07-shanghanlun",
+    "subjectTitle": "伤寒论",
+    "chapterSlug": "07-shaoyin-xuyang",
+    "n": 7,
+    "title": "第 7 章 · 少阴病：45 条里 13 条在讲预后，不是讲方",
+    "motto": "「少阴之为病，脉微细，但欲寐也。」——《伤寒论·辨少阴病脉证并治》（外源·搜狐2019 第 1 条）",
+    "problem": "底本没有少阴篇，教材却用「四逆汤证」概括少阴病。拿到这篇 45 条之后你会发现：真正占篇幅的不是方，是**死证与可治的判据**——13 条在说这一病往哪边走。",
+    "roots": "环境逼迫(要讲少阴却无底本) + 知识积累(补源 × 预后分层 = 知道哪 13 条是判生死的)",
+    "html": "<h1 id=\"第-7-章-少阴病-45-条里-13-条在讲预后-不是讲方\">第 7 章 · 少阴病：45 条里 13 条在讲预后，不是讲方</h1>\n<blockquote><p><strong>MOTTO:</strong> 「少阴之为病，脉微细，但欲寐也。」——《伤寒论·辨少阴病脉证并治》（外源·搜狐2019 第 1 条）</p>\n<p><strong>PROBLEM:</strong> 底本没有少阴篇，教材却用「四逆汤证」概括少阴病。拿到这篇 45 条之后你会发现：真正占篇幅的不是方，是<strong>死证与可治的判据</strong>——13 条在说这一病往哪边走。</p>\n<p><strong>双根因定位:</strong> 环境逼迫(要讲少阴却无底本) + 知识积累(补源 × 预后分层 = 知道哪 13 条是判生死的)</p></blockquote>\n<h2 id=\"课程信息\">课程信息</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>学科</td><td>伤寒论</td></tr><tr><td>院系</td><td>中医系</td></tr><tr><td>章序号</td><td>07 / 12</td></tr><tr><td>所属阶段</td><td>🌿 长·积累</td></tr><tr><td>产出类型</td><td>📋 Prompt 模板 / 🛠️ Skill 文件</td></tr><tr><td>预估时长</td><td>4 小时</td></tr></tbody></table></div>\n<h2 id=\"先讲清数据来源-本章最重要的一节\">先讲清数据来源（本章最重要的一节）</h2>\n<div class=\"table-wrap\"><table><thead><tr><th>项</th><th>值</th></tr></thead><tbody><tr><td>底本少阴篇</td><td><strong>0 条</strong>（「少阴之为病」「但欲寐」「麻黄附子细辛汤」「黄连阿胶汤」全 0 命中）</td></tr><tr><td>外源补录</td><td><strong>45 条 / 15 方</strong>，<code>standards/shanghan/shaoyin/</code></td></tr><tr><td>来源</td><td>搜狐号转载「辨少阴病脉证并治（原文及译文）」，2019-11-06，sha256 <code>54159419…b732</code></td></tr><tr><td>引用格式</td><td><strong>外源·搜狐2019 第 N 条</strong>（不得写「底本」）</td></tr></tbody></table></div>\n<p>补录<strong>不并入底本</strong>：底本仍按 1760 条统计，外源单独成库。两条库合并计数是本章第一条禁令。</p>\n<h2 id=\"核心概念\">核心概念</h2>\n<h3 id=\"提纲-两个字定生死\">提纲：两个字定生死</h3>\n<blockquote><p>少阴之为病，脉微细，但欲寐也。——《伤寒论·辨少阴病脉证并治》（外源·搜狐2019 第 1 条）</p></blockquote>\n<p>「脉微细」是<strong>脉</strong>，「但欲寐」是<strong>神</strong>。六经提纲里只有少阴把「精神状态」写进提纲——这不是修辞，后文 13 条预后判据里一半在描述神志与手足温度。</p>\n<h3 id=\"三型方证-45-条里的用药结构\">三型方证（45 条里的用药结构）</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>型</th><th>方（条号）</th><th>判据</th></tr></thead><tbody><tr><td>表里同病（温经解表）</td><td>麻黄附子细辛汤(21)、麻黄附子甘草汤(22)</td><td>「始得之，反发热，脉沉」「二三日无证」</td></tr><tr><td>里虚寒（回阳/温中/温涩）</td><td>附子汤(24)、桃花汤(26)、白通汤(34)、白通加猪胆汁(35)、真武汤(36)、通脉四逆汤(37)、吴茱萸汤(29)</td><td>脉微、下利、厥逆、身痛骨节痛</td></tr><tr><td>热化（滋阴/清热/急下）</td><td>黄连阿胶汤(23)、猪肤汤(30)、甘草汤/桔梗汤(31)、苦酒汤(32)、半夏散及汤(33)、猪苓汤(39)、四逆散(38)、大承气汤(40–42)</td><td>心中烦不得卧、咽痛、下利咳呕渴、口燥咽干</td></tr></tbody></table></div>\n<p>注意「急下三承气」（条 40–42）落在少阴篇：<strong>少阴不是只会用热药</strong>，它有「急下存阴」的一面。三型合起来才是这篇的全貌。</p>\n<p>两个体例细节：<strong>吴茱萸汤（条 29）</strong>与<strong>四逆汤（条 43）</strong>在本源中只出现于条文、没有方文，因此不计入「15 方」——统计口径按「有方文者」计，按「条文提及」另计，两者不可混。</p>\n<h3 id=\"13-条预后判据-本章的核心\">13 条预后判据（本章的核心）</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>判定</th><th>条数</th><th>条号</th><th>判据（原文词）</th></tr></thead><tbody><tr><td>死</td><td><strong>5</strong></td><td>16,17,18,19,20</td><td>吐利躁烦四逆／下利止而头眩自冒／脉不至不烦而躁／息高／复烦躁不得卧寐</td></tr><tr><td>不治</td><td><strong>1</strong></td><td>15</td><td>恶寒身蜷而利，<strong>手足逆冷</strong></td></tr><tr><td>难治</td><td><strong>1</strong></td><td>14</td><td>强发汗致<strong>下厥上竭</strong></td></tr><tr><td>可治</td><td><strong>3</strong></td><td>8,9,12</td><td><strong>手足温</strong>／欲去衣被／手足不逆冷反发热（脉不至者灸少阴七壮）</td></tr><tr><td>欲解</td><td><strong>1</strong></td><td>7</td><td><strong>脉暴微、手足反温</strong>，虽烦下利必自愈</td></tr><tr><td>欲愈</td><td><strong>1</strong></td><td>10</td><td>脉阳微阴浮</td></tr><tr><td>欲解时</td><td><strong>1</strong></td><td>11</td><td>从子至寅上</td></tr></tbody></table></div>\n<p>合计 <strong>13 条 / 45 条 = 29%</strong>。也就是说，这篇近三分之一的条文在回答「这个病人往哪边走」，而不是「用哪个方」。</p>\n<p>判据本身极简，且高度集中在两项：</p>\n<ul><li><strong>手足温 / 手足逆冷</strong>：出现即分生死（条 8 可治、条 15 不治）</li><li><strong>脉暴微 / 脉不至</strong>：配手足温度一起读（条 7 欲解、条 18 死）</li></ul>\n<p>一句可以背下来的话：<strong>少阴看手足，阳明看大便。</strong> 前者判阳气存亡，后者判燥屎成否。</p>\n<h3 id=\"禁例三条\">禁例三条</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>条</th><th>原文要点</th></tr></thead><tbody><tr><td>5</td><td>「脉细沉数，病为在里，<strong>不可发汗</strong>」</td></tr><tr><td>6</td><td>「脉微，<strong>不可发汗</strong>，亡阳故也……尺脉弱涩者，复<strong>不可下</strong>之」</td></tr><tr><td>44</td><td>「膈上有寒饮，干呕者，<strong>不可吐</strong>也，急温之」</td></tr></tbody></table></div>\n<p>三条合起来就是少阴的「汗吐下三禁」。第 44 条尤其值得注意：它同时否掉吐法并给出替代（温），是「禁 + 出路」的完整句式。</p>\n<h3 id=\"补源的代价-9-方在底本-0-命中\">补源的代价：9 方在底本 0 命中</h3>\n<div class=\"table-wrap\"><table><thead><tr><th>检查</th><th>结果</th></tr></thead><tbody><tr><td>15 方中，底本有子串命中</td><td><strong>6 方</strong>（麻黄附子甘草汤 2、附子汤 21、甘草汤 23、白通汤 1、真武汤 4、通脉四逆汤 1）</td></tr><tr><td>15 方中，底本 0 命中</td><td><strong>9 方</strong>（麻黄附子细辛汤、黄连阿胶汤、桃花汤、猪肤汤、桔梗汤、苦酒汤、半夏散及汤、白通加猪胆汁、四逆散）</td></tr></tbody></table></div>\n<p>「底本有命中」也不等于「底本有此方条文」：附子汤 21 条、甘草汤 23 条，多数是「甘草干姜汤」「附子粳米汤」这类<strong>子串</strong>。所以本章所有底本侧数字都标「子串口径」，不作方证依据。</p>\n<h2 id=\"build-it-从零实现\">BUILD IT：从零实现</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">js</div><pre><code class=\"lang-js\">// code/main.js\nprognosis(text)    // 先看结论词（死/不治/难治），再看向愈判据，其余「未判定」\nloadFormulas()     // 方名归一（黄连阿肢→阿胶、自通→白通）\nGROUPS             // 三型方证\ncrossCheck()       // 外源 15 方 × 底本子串命中</code></pre></div>\n<h2 id=\"验证\">验证</h2>\n<div class=\"codeblock\"><div class=\"codeblock-lang\">bash</div><pre><code class=\"lang-bash\">node code/main.js\nnode --test code/main.test.js\nnode scripts/parse_shaoyin.js --dry</code></pre></div>\n<p>预期：条 45、方 15、加减 14；预后分层 死 5（16–20）· 不治 1（15）· 难治 1（14）· 可治 3（8,9,12）；底本交叉 6 命中 / 9 零命中；禁例 3 条。</p>\n<h2 id=\"代价与边界\">代价与边界</h2>\n<ul><li><strong>外源不是校勘本</strong>。已知讹字「黄连阿肢汤」「自通汤方」，源内矛盾「黄芩一两 / 二两」，均未改，只登记（见 <code>PROVENANCE.md</code>）。</li><li><strong>条号非宋本 398 体系</strong>。本章条号是本篇内序号 1–45，与宋本编号不可互换。</li><li><strong>预后判据只做词面分类</strong>。原文的「可治」「死」是当时条件下的判断，不是现代预后模型；代码不给生存率、不给时程。</li><li><strong>三型归类是本章归纳</strong>。原文没有「三型」之说，分类依据是方与治法，边界存在重叠（如四逆散既属热化又治厥逆）。</li><li><strong>不能据本章条文直接处方</strong>。剂量、煎服法、禁忌均须回到原文与药典，由执业医师判断。</li></ul>\n<blockquote><p><strong>免责声明：</strong> 条文引自外源补录 <code>standards/shanghan/shaoyin/</code>（来源与 sha256 见 <code>PROVENANCE.md</code>），底本缺此篇；本章为文本结构与预后判据分析，不构成诊疗依据。</p></blockquote>\n<h2 id=\"练习\">练习</h2>\n<ol><li>用本章判据去读条 7 与条 18，两者都出现脉的突变，为什么一个「必自愈」、一个「死」？</li><li>「少阴看手足」这句话在 45 条里能覆盖多少条预后判断？还有哪些判据没被这句话覆盖？</li><li>若要把外源并入底本统计，必须做哪三件事才不会毁掉可复核性？</li></ol>\n<h2 id=\"进阶思考\">进阶思考</h2>\n<p>补源最容易犯的错，是把补来的东西当成原有的。本章刻意让「外源」与「底本」两列并排、永不合并——因为一旦合并，下一次引用就分不清哪句是仲景原文、哪句是网络整理本的转写。</p>",
+    "markdown": "# 第 7 章 · 少阴病：45 条里 13 条在讲预后，不是讲方\r\n\r\n> **MOTTO:** 「少阴之为病，脉微细，但欲寐也。」——《伤寒论·辨少阴病脉证并治》（外源·搜狐2019 第 1 条）\r\n>\r\n> **PROBLEM:** 底本没有少阴篇，教材却用「四逆汤证」概括少阴病。拿到这篇 45 条之后你会发现：真正占篇幅的不是方，是**死证与可治的判据**——13 条在说这一病往哪边走。\r\n>\r\n> **双根因定位:** 环境逼迫(要讲少阴却无底本) + 知识积累(补源 × 预后分层 = 知道哪 13 条是判生死的)\r\n\r\n## 课程信息\r\n\r\n| 项目 | 内容 |\r\n|------|------|\r\n| 学科 | 伤寒论 |\r\n| 院系 | 中医系 |\r\n| 章序号 | 07 / 12 |\r\n| 所属阶段 | 🌿 长·积累 |\r\n| 产出类型 | 📋 Prompt 模板 / 🛠️ Skill 文件 |\r\n| 预估时长 | 4 小时 |\r\n\r\n## 先讲清数据来源（本章最重要的一节）\r\n\r\n| 项 | 值 |\r\n|---|---|\r\n| 底本少阴篇 | **0 条**（「少阴之为病」「但欲寐」「麻黄附子细辛汤」「黄连阿胶汤」全 0 命中） |\r\n| 外源补录 | **45 条 / 15 方**，`standards/shanghan/shaoyin/` |\r\n| 来源 | 搜狐号转载「辨少阴病脉证并治（原文及译文）」，2019-11-06，sha256 `54159419…b732` |\r\n| 引用格式 | **外源·搜狐2019 第 N 条**（不得写「底本」） |\r\n\r\n补录**不并入底本**：底本仍按 1760 条统计，外源单独成库。两条库合并计数是本章第一条禁令。\r\n\r\n## 核心概念\r\n\r\n### 提纲：两个字定生死\r\n\r\n> 少阴之为病，脉微细，但欲寐也。——《伤寒论·辨少阴病脉证并治》（外源·搜狐2019 第 1 条）\r\n\r\n「脉微细」是**脉**，「但欲寐」是**神**。六经提纲里只有少阴把「精神状态」写进提纲——这不是修辞，后文 13 条预后判据里一半在描述神志与手足温度。\r\n\r\n### 三型方证（45 条里的用药结构）\r\n\r\n| 型 | 方（条号） | 判据 |\r\n|---|---|---|\r\n| 表里同病（温经解表） | 麻黄附子细辛汤(21)、麻黄附子甘草汤(22) | 「始得之，反发热，脉沉」「二三日无证」 |\r\n| 里虚寒（回阳/温中/温涩） | 附子汤(24)、桃花汤(26)、白通汤(34)、白通加猪胆汁(35)、真武汤(36)、通脉四逆汤(37)、吴茱萸汤(29) | 脉微、下利、厥逆、身痛骨节痛 |\r\n| 热化（滋阴/清热/急下） | 黄连阿胶汤(23)、猪肤汤(30)、甘草汤/桔梗汤(31)、苦酒汤(32)、半夏散及汤(33)、猪苓汤(39)、四逆散(38)、大承气汤(40–42) | 心中烦不得卧、咽痛、下利咳呕渴、口燥咽干 |\r\n\r\n注意「急下三承气」（条 40–42）落在少阴篇：**少阴不是只会用热药**，它有「急下存阴」的一面。三型合起来才是这篇的全貌。\r\n\r\n两个体例细节：**吴茱萸汤（条 29）**与**四逆汤（条 43）**在本源中只出现于条文、没有方文，因此不计入「15 方」——统计口径按「有方文者」计，按「条文提及」另计，两者不可混。\r\n\r\n### 13 条预后判据（本章的核心）\r\n\r\n| 判定 | 条数 | 条号 | 判据（原文词） |\r\n|---|--:|---|---|\r\n| 死 | **5** | 16,17,18,19,20 | 吐利躁烦四逆／下利止而头眩自冒／脉不至不烦而躁／息高／复烦躁不得卧寐 |\r\n| 不治 | **1** | 15 | 恶寒身蜷而利，**手足逆冷** |\r\n| 难治 | **1** | 14 | 强发汗致**下厥上竭** |\r\n| 可治 | **3** | 8,9,12 | **手足温**／欲去衣被／手足不逆冷反发热（脉不至者灸少阴七壮） |\r\n| 欲解 | **1** | 7 | **脉暴微、手足反温**，虽烦下利必自愈 |\r\n| 欲愈 | **1** | 10 | 脉阳微阴浮 |\r\n| 欲解时 | **1** | 11 | 从子至寅上 |\r\n\r\n合计 **13 条 / 45 条 = 29%**。也就是说，这篇近三分之一的条文在回答「这个病人往哪边走」，而不是「用哪个方」。\r\n\r\n判据本身极简，且高度集中在两项：\r\n\r\n- **手足温 / 手足逆冷**：出现即分生死（条 8 可治、条 15 不治）\r\n- **脉暴微 / 脉不至**：配手足温度一起读（条 7 欲解、条 18 死）\r\n\r\n一句可以背下来的话：**少阴看手足，阳明看大便。** 前者判阳气存亡，后者判燥屎成否。\r\n\r\n### 禁例三条\r\n\r\n| 条 | 原文要点 |\r\n|--:|---|\r\n| 5 | 「脉细沉数，病为在里，**不可发汗**」 |\r\n| 6 | 「脉微，**不可发汗**，亡阳故也……尺脉弱涩者，复**不可下**之」 |\r\n| 44 | 「膈上有寒饮，干呕者，**不可吐**也，急温之」 |\r\n\r\n三条合起来就是少阴的「汗吐下三禁」。第 44 条尤其值得注意：它同时否掉吐法并给出替代（温），是「禁 + 出路」的完整句式。\r\n\r\n### 补源的代价：9 方在底本 0 命中\r\n\r\n| 检查 | 结果 |\r\n|---|---|\r\n| 15 方中，底本有子串命中 | **6 方**（麻黄附子甘草汤 2、附子汤 21、甘草汤 23、白通汤 1、真武汤 4、通脉四逆汤 1） |\r\n| 15 方中，底本 0 命中 | **9 方**（麻黄附子细辛汤、黄连阿胶汤、桃花汤、猪肤汤、桔梗汤、苦酒汤、半夏散及汤、白通加猪胆汁、四逆散） |\r\n\r\n「底本有命中」也不等于「底本有此方条文」：附子汤 21 条、甘草汤 23 条，多数是「甘草干姜汤」「附子粳米汤」这类**子串**。所以本章所有底本侧数字都标「子串口径」，不作方证依据。\r\n\r\n## BUILD IT：从零实现\r\n\r\n```js\r\n// code/main.js\r\nprognosis(text)    // 先看结论词（死/不治/难治），再看向愈判据，其余「未判定」\r\nloadFormulas()     // 方名归一（黄连阿肢→阿胶、自通→白通）\r\nGROUPS             // 三型方证\r\ncrossCheck()       // 外源 15 方 × 底本子串命中\r\n```\r\n\r\n## 验证\r\n\r\n```bash\r\nnode code/main.js\r\nnode --test code/main.test.js\r\nnode scripts/parse_shaoyin.js --dry\r\n```\r\n\r\n预期：条 45、方 15、加减 14；预后分层 死 5（16–20）· 不治 1（15）· 难治 1（14）· 可治 3（8,9,12）；底本交叉 6 命中 / 9 零命中；禁例 3 条。\r\n\r\n## 代价与边界\r\n\r\n- **外源不是校勘本**。已知讹字「黄连阿肢汤」「自通汤方」，源内矛盾「黄芩一两 / 二两」，均未改，只登记（见 `PROVENANCE.md`）。\r\n- **条号非宋本 398 体系**。本章条号是本篇内序号 1–45，与宋本编号不可互换。\r\n- **预后判据只做词面分类**。原文的「可治」「死」是当时条件下的判断，不是现代预后模型；代码不给生存率、不给时程。\r\n- **三型归类是本章归纳**。原文没有「三型」之说，分类依据是方与治法，边界存在重叠（如四逆散既属热化又治厥逆）。\r\n- **不能据本章条文直接处方**。剂量、煎服法、禁忌均须回到原文与药典，由执业医师判断。\r\n\r\n> **免责声明：** 条文引自外源补录 `standards/shanghan/shaoyin/`（来源与 sha256 见 `PROVENANCE.md`），底本缺此篇；本章为文本结构与预后判据分析，不构成诊疗依据。\r\n\r\n## 练习\r\n\r\n1. 用本章判据去读条 7 与条 18，两者都出现脉的突变，为什么一个「必自愈」、一个「死」？\r\n2. 「少阴看手足」这句话在 45 条里能覆盖多少条预后判断？还有哪些判据没被这句话覆盖？\r\n3. 若要把外源并入底本统计，必须做哪三件事才不会毁掉可复核性？\r\n\r\n## 进阶思考\r\n\r\n补源最容易犯的错，是把补来的东西当成原有的。本章刻意让「外源」与「底本」两列并排、永不合并——因为一旦合并，下一次引用就分不清哪句是仲景原文、哪句是网络整理本的转写。\r\n",
+    "code": {
+      "main.js": "'use strict';\r\n/**\r\n * 少阴病（外源补录）：预后判定 + 方证分组 + 与底本交叉核对\r\n *\r\n *   node code/main.js\r\n *\r\n * 数据来源：\r\n *   · standards/shanghan/shaoyin/shaoyin.json —— 外源补录 45 条 / 15 方（来源见 PROVENANCE.md）\r\n *   · standards/shanghan/底本.json —— 底本 27 篇 1760 条（**缺少阴篇**）\r\n *\r\n * 口径：\r\n *   · 外源不并入底本；任何计数分两列报（外源 / 底本），不合并。\r\n *   · 底本侧只做「子串命中」，因为底本没有此篇：命中「甘草汤」的多是「甘草干姜汤」子串，\r\n *     所以底本侧数字只表示「这些字在底本里出现过」，不表示「底本有此方条文」。\r\n *   · 预后判定按原文可判读的词（手足温 / 手足逆冷 / 脉不至 / 息高 / 躁）分类，\r\n *     归不进去的一律「未判定」，不硬套。\r\n */\r\n\r\nconst path = require('node:path');\r\nconst fs = require('node:fs');\r\n\r\nconst ROOT = path.resolve(__dirname, '../../../../../..');\r\nconst SY = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/shanghan/shaoyin/shaoyin.json'), 'utf8'));\r\nconst BOOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/shanghan/底本.json'), 'utf8'));\r\n\r\nconst BOOK_TEXTS = [];\r\nfor (const p of BOOK.pian) for (const it of p.items) BOOK_TEXTS.push(it.text);\r\n\r\n/** 预后判定：先看原文结论词（死/不治/难治），再看向愈判据，其余「未判定」 */\r\nfunction prognosis(text) {\r\n  const tail = text.replace(/。$/, '');\r\n  const lastClause = tail.split(/[，。]/).slice(-2).join('，');\r\n  if (/难治$/.test(tail)) return { cls: '难治', why: lastClause };\r\n  if (/不治$/.test(tail)) return { cls: '不治', why: lastClause };\r\n  if (/死$/.test(tail)) return { cls: '死', why: lastClause };\r\n  if (/必自愈|自愈/.test(tail)) return { cls: '欲解', why: '脉暴微、手足反温，虽烦下利必自愈' };\r\n  if (/可治/.test(tail)) return { cls: '可治', why: lastClause };\r\n  if (/不死/.test(tail)) return { cls: '可治', why: '手足不逆冷、反发热' };\r\n  if (/欲愈/.test(tail)) return { cls: '欲愈', why: lastClause };\r\n  if (/欲解时/.test(tail)) return { cls: '欲解时', why: '从子至寅上' };\r\n  return { cls: '未判定', why: '无预后判据词' };\r\n}\r\n\r\n/** 方证三型（按原文方名与治法归类；每型附条号） */\r\nconst GROUPS = {\r\n  '表里同病（温经解表）': ['麻黄附子细辛汤', '麻黄附子甘草汤'],\r\n  '里虚寒（回阳/温中/温涩）': ['四逆汤', '通脉四逆汤', '白通汤', '白通加猪胆汁', '附子汤', '真武汤', '桃花汤', '吴茱萸汤'],\r\n  '热化（滋阴/清热/急下）': ['黄连阿胶汤', '猪苓汤', '大承气汤', '甘草汤', '桔梗汤', '苦酒汤', '半夏散及汤', '猪肤汤', '四逆散'],\r\n};\r\n\r\n/** 方名归一：源里有两处讹字（黄连阿肢 / 自通） */\r\nconst NAME_FIX = { 黄连阿肢汤: '黄连阿胶汤', 自通汤: '白通汤' };\r\n\r\nfunction loadFormulas() {\r\n  return SY.formulas.map((f) => {\r\n    const name = f.name.replace(/方$/, '');\r\n    return {\r\n      raw: f.name,\r\n      name: NAME_FIX[name] || name,\r\n      tiao: f.tiao,\r\n      composition: f.composition,\r\n      additions: f.additions || [],\r\n    };\r\n  });\r\n}\r\n\r\n/** 交叉核对：外源每方在底本中的子串命中数 */\r\nfunction crossCheck() {\r\n  const rows = loadFormulas().map((f) => ({\r\n    name: f.name,\r\n    inBook: BOOK_TEXTS.filter((t) => t.includes(f.name)).length,\r\n  }));\r\n  return {\r\n    rows,\r\n    zero: rows.filter((r) => r.inBook === 0).map((r) => r.name),\r\n    hit: rows.filter((r) => r.inBook > 0).length,\r\n  };\r\n}\r\n\r\nfunction main() {\r\n  const tiao = SY.tiao;\r\n  console.log(`外源少阴篇：${tiao.length} 条 · ${SY.formulas.length} 方 · 方后加减 ${SY.counts.additions} 项`);\r\n  console.log(`底本对照：底本 ${BOOK.pian.length} 篇 / ${BOOK.pian.reduce((a, p) => a + p.actual.tiao, 0)} 条（缺少阴篇）\\n`);\r\n\r\n  console.log('预后分层：');\r\n  const buckets = {};\r\n  for (const t of tiao) {\r\n    const p = prognosis(t.text);\r\n    (buckets[p.cls] = buckets[p.cls] || []).push({ no: t.no, why: p.why });\r\n  }\r\n  for (const [k, v] of Object.entries(buckets)) {\r\n    console.log(`  ${k.padEnd(4, '　')} ${String(v.length).padStart(2)} 条  ${v.map((x) => x.no).join(',')}${k === '未判定' ? '' : `　依据：${v[0].why}`}`);\r\n  }\r\n\r\n  console.log('\\n方证三型（外源）：');\r\n  const fs2 = loadFormulas();\r\n  for (const [g, names] of Object.entries(GROUPS)) {\r\n    const hit = names.map((n) => fs2.find((f) => f.name === n)).filter(Boolean);\r\n    if (!hit.length) continue;\r\n    console.log(`  ${g}：${hit.map((f) => `${f.name}(条${f.tiao})`).join(' · ')}`);\r\n  }\r\n\r\n  const cc = crossCheck();\r\n  console.log(`\\n底本交叉核对（子串口径）：15 方中 ${cc.hit} 方在底本出现过，${cc.zero.length} 方 0 命中`);\r\n  console.log(`  0 命中：${cc.zero.join('、')}`);\r\n  console.log('  注意：底本命中是子串计数（如「甘草汤」命中含「甘草干姜汤」），不代表底本有此方条文。');\r\n\r\n  const forbid = tiao.filter((t) => /不可发汗|不可下|不可吐/.test(t.text));\r\n  console.log(`\\n禁例：${forbid.length} 条（${forbid.map((t) => t.no).join('、')}）`);\r\n  console.log('\\n口径：外源与底本分列，不合并统计；引用外源须标「外源·搜狐2019 第 N 条」。');\r\n  console.log('本输出为文本结构分析，不构成辨证处方建议。');\r\n}\r\n\r\nif (require.main === module) main();\r\nmodule.exports = { prognosis, loadFormulas, crossCheck, GROUPS, SY, BOOK, BOOK_TEXTS };\r\n",
+      "main.test.js": "'use strict';\nconst assert = require('node:assert');\nconst test = require('node:test');\nconst { prognosis, loadFormulas, crossCheck, SY, BOOK } = require('./main.js');\n\ntest('外源规模：45 条 · 15 方 · 14 项方后加减', () => {\n  assert.strictEqual(SY.tiao.length, 45);\n  assert.strictEqual(SY.formulas.length, 15);\n  assert.strictEqual(SY.counts.additions, 14);\n  assert.strictEqual(SY.tiao[0].text, '少阴之为病，脉微细，但欲寐也。');\n});\n\ntest('底本确实缺少阴篇：篇 27 · 1760 条', () => {\n  assert.strictEqual(BOOK.pian.length, 27);\n  assert.strictEqual(BOOK.pian.reduce((a, p) => a + p.actual.tiao, 0), 1760);\n  const all = BOOK.pian.flatMap((p) => p.items.map((i) => i.text)).join('');\n  assert.ok(!all.includes('少阴之为病'));\n  assert.ok(!all.includes('但欲寐'));\n});\n\ntest('预后分层：死 5（16–20）· 不治 1（15）· 难治 1（14）· 可治 3（8,9,12）', () => {\n  const buckets = {};\n  for (const t of SY.tiao) {\n    const p = prognosis(t.text);\n    (buckets[p.cls] = buckets[p.cls] || []).push(t.no);\n  }\n  assert.deepStrictEqual(buckets['死'], [16, 17, 18, 19, 20]);\n  assert.deepStrictEqual(buckets['不治'], [15]);\n  assert.deepStrictEqual(buckets['难治'], [14]);\n  assert.deepStrictEqual(buckets['可治'], [8, 9, 12]);\n  assert.deepStrictEqual(buckets['欲解'], [7]);\n  assert.deepStrictEqual(buckets['欲愈'], [10]);\n  assert.deepStrictEqual(buckets['欲解时'], [11]);\n});\n\ntest('预后类合计 13 条（占 45 条的 29%）', () => {\n  const n = SY.tiao.filter((t) => prognosis(t.text).cls !== '未判定').length;\n  assert.strictEqual(n, 13);\n  assert.ok(Math.abs(n / SY.tiao.length - 0.29) < 0.01);\n});\n\ntest('判据可解释：条 15 依据手足逆冷，条 7 依据脉暴微与手足反温', () => {\n  assert.match(prognosis(SY.tiao[14].text).why, /手足逆冷/);\n  assert.match(prognosis(SY.tiao[6].text).why, /脉暴微|手足反温/);\n});\n\ntest('方名归一：黄连阿肢→黄连阿胶、自通→白通', () => {\n  const names = loadFormulas().map((f) => f.name);\n  assert.ok(names.includes('黄连阿胶汤'));\n  assert.ok(names.includes('白通汤'));\n  assert.ok(!names.includes('黄连阿肢汤'));\n  assert.ok(!names.includes('自通汤'));\n});\n\ntest('交叉核对：底本侧 6 方有子串命中、9 方 0 命中（子串口径，非方证依据）', () => {\n  const cc = crossCheck();\n  assert.strictEqual(cc.hit, 6);\n  assert.deepStrictEqual(cc.zero.sort(), [\n    '麻黄附子细辛汤', '黄连阿胶汤', '桃花汤', '猪肤汤', '桔梗汤',\n    '苦酒汤', '半夏散及汤', '白通加猪胆汁', '四逆散',\n  ].sort());\n});\n\ntest('禁例 3 条（不可发汗/不可下/不可吐）：条 5、6、44', () => {\n  const f = SY.tiao.filter((t) => /不可发汗|不可下|不可吐/.test(t.text)).map((t) => t.no);\n  assert.deepStrictEqual(f, [5, 6, 44]);\n});\n\ntest('急下三承气落在少阴篇：条 40–42', () => {\n  const ids = SY.tiao.filter((t) => /急下之，宜大承气汤/.test(t.text)).map((t) => t.no);\n  assert.deepStrictEqual(ids, [40, 41, 42]);\n});\n"
+    },
+    "quiz": {
+      "questions": [
+        {
+          "stage": "pre",
+          "question": "少阴提纲「脉微细，但欲寐」中的「但欲寐」描述的是？",
+          "options": [
+            "睡眠习惯",
+            "精神状态（神志迷糊欲睡）",
+            "睡眠时长",
+            "失眠"
+          ],
+          "correct": 1,
+          "explanation": "六经提纲里只有少阴把精神状态写进提纲。"
+        },
+        {
+          "stage": "check",
+          "question": "本章 45 条中，带预后判据（死/不治/难治/可治/自愈/欲愈）的条文有多少？",
+          "options": [
+            "3 条",
+            "7 条",
+            "13 条（约 29%）",
+            "45 条"
+          ],
+          "correct": 2,
+          "explanation": "死 5、不治 1、难治 1、可治 3、欲解 1、欲愈 1、欲解时 1。"
+        },
+        {
+          "stage": "check",
+          "question": "少阴篇里判生死的两个核心判据是？",
+          "options": [
+            "大便与小便",
+            "手足温/手足逆冷 与 脉暴微/脉不至",
+            "口渴与食欲",
+            "舌苔与面色"
+          ],
+          "correct": 1,
+          "explanation": "条 8 手足温可治、条 15 手足逆冷不治；条 7 脉暴微手足反温欲解、条 18 脉不至而躁死。"
+        },
+        {
+          "stage": "check",
+          "question": "少阴篇里有「急下之，宜大承气汤」三条，说明什么？",
+          "options": [
+            "抄错了",
+            "少阴不只有虚寒，还有热化与急下存阴的一面",
+            "大承气汤主少阴",
+            "属于阳明篇误入"
+          ],
+          "correct": 1,
+          "explanation": "条 40–42：口燥咽干、自利清水色纯青、腹胀不大便。"
+        },
+        {
+          "stage": "post",
+          "question": "外源 15 方中，在底本里 0 命中的有几个？",
+          "options": [
+            "0 个",
+            "6 个",
+            "9 个",
+            "15 个"
+          ],
+          "correct": 2,
+          "explanation": "麻黄附子细辛、黄连阿胶、桃花、猪肤、桔梗、苦酒、半夏散及汤、白通加猪胆汁、四逆散。"
+        },
+        {
+          "stage": "post",
+          "question": "引用本章条文时的正确格式是？",
+          "options": [
+            "「底本第 12 条」",
+            "「外源·搜狐2019 第 12 条」",
+            "「宋本第 12 条」",
+            "只写条号"
+          ],
+          "correct": 1,
+          "explanation": "底本缺此篇；外源单独成库，条号是本篇内序号。"
+        }
+      ]
+    },
+    "exercises": null,
+    "outputs": [
+      {
+        "name": "prompt-shaoyin-xuyang.md",
+        "kind": "prompt",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/07-shaoyin-xuyang/outputs/prompt-shaoyin-xuyang.md",
+        "title": "少阴篇预后判读助手",
+        "description": null,
+        "chars": 787,
+        "body": "# 少阴篇预后判读助手\n\n## 用途\n\n读完一条少阴条文，判定它属于**死 / 不治 / 难治 / 可治 / 欲解 / 欲愈 / 未判定**，并写出判据词。\n用于**病案讨论、条文分层、教学演示**。不做预后估计、不给治疗方案。\n\n## 数据边界（必须先声明）\n\n```text\n底本 standards/shanghan/底本.json 缺少阴篇（0 条）。\n本技能只依据外源补录：外源·搜狐2019 第 N 条（45 条 / 15 方）。\n引用格式：外源·搜狐2019 第 N 条。禁止写成「底本」或「宋本第 N 条」。\n```\n\n## 提示词\n\n```text\n你是伤寒论少阴篇的判读助手。任务：给条文定预后类别，并写出判据。\n\n判定顺序（先结论词，后判据词）：\n1. 条文以「死」收尾 → 死\n2. 以「不治」收尾 → 不治\n3. 以「难治」收尾 → 难治\n4. 含「必自愈」→ 欲解；含「可治」或「不死」→ 可治；含「欲愈」→ 欲愈；含「欲解时」→ 欲解时\n5. 以上都无 → 未判定（不许猜）\n\n规则：\n1. 每条必须写出判据词（如「手足逆冷」「脉暴微、手足反温」「息高」），不得只给类别。\n2. 判据词必须在原文里逐字出现；不得用「阳气虚衰」这类解释替代判据。\n3. 未命中的一律「未判定」，不许为了凑满而归类。\n4. 不输出生存期、概率、治疗方案；不把「死」转述为现代病名。\n5. 条号必须标「外源·搜狐2019 第 N 条」。\n\n输出格式：\n【条】外源·搜狐2019 第 N 条：「原文片段」\n【类别】死 | 不治 | 难治 | 可治 | 欲解 | 欲愈 | 欲解时 | 未判定\n【判据】…（逐字词）\n【不发散】不做预后估计与治疗建议\n```\n\n## 使用示例\n\n输入：外源第 15 条「少阴病，恶寒身蜷而利，手足逆冷者，不治。」\n\n输出：\n【条】外源·搜狐2019 第 15 条\n【类别】不治\n【判据】手足逆冷 + 下利 + 恶寒身蜷\n【不发散】不推断生存期\n\n## 为什么这样限制\n\n- 预后类条文占了 29%，若只按方剂讲少阴，这 13 条会被整块跳过。\n- 判据词是唯一能复核的部分；一旦换成「阳虚欲脱」这类解释，读者就无法回到原文。\n"
+      },
+      {
+        "name": "skill-shaoyin-xuyang.md",
+        "kind": "skill",
+        "file": "departments/01-zhongyi/07-shanghanlun/chapters/07-shaoyin-xuyang/outputs/skill-shaoyin-xuyang.md",
+        "title": "shaoyin-xuyang",
+        "description": "少阴篇预后判读：先结论词后判据词，未命中即未判定，条号标外源",
+        "chars": 449,
+        "body": "---\nname: shaoyin-xuyang\ndescription: 少阴篇预后判读：先结论词后判据词，未命中即未判定，条号标外源\nversion: 0.1.0\n---\n\n# shaoyin-xuyang\n\n## 何时使用\n\n- 读到少阴条文，要判断它讲的是预后还是方证\n- 教学演示「少阴看手足」的判据落在哪几条\n- 需要区分「死证」与「不治」「难治」三类语气\n\n## 不适用\n\n- 预后估计（生存期、概率）\n- 处方与剂量\n- 把外源条文当作底本原文引用\n\n## 步骤\n\n1. **声明数据边界**：底本缺此篇；只用外源·搜狐2019（45 条）。\n2. **看结论词**：死 / 不治 / 难治。\n3. **看判据词**：必自愈 → 欲解；可治/不死 → 可治；欲愈、欲解时。\n4. **未命中 → 未判定**，不猜。\n5. **写判据**：逐字，不替换成解释。\n\n## 输出模板\n\n```text\n【条】外源·搜狐2019 第 N 条\n【类别】…\n【判据】…（逐字）\n【不发散】…\n```\n\n## 质量判据\n\n- 类别有结论词或判据词支撑\n- 判据逐字可回原文\n- 未判定的没被硬归\n- 条号标「外源」\n\n> 本技能只做条文预后分类，不构成诊疗依据。\n"
+      }
+    ],
+    "video": null,
+    "videoPoster": null
+  },
   "01-zhongyi/07-shanghanlun/08-jueyin-hanre": {
     "key": "01-zhongyi/07-shanghanlun/08-jueyin-hanre",
     "deptSlug": "01-zhongyi",

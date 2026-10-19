@@ -13,7 +13,10 @@
 | 「黄连阿胶汤」 | **0** |
 | 篇名「辨少阴病脉证并治第十一」 | 仅出现于篇 12 的**目录行** |
 
-结论：少阴篇正文未收，篇名只以目录形式留痕。涉及少阴的课程内容一律标注「底本未收，需补源」。
+结论：少阴篇正文未收，篇名只以目录形式留痕。
+
+**补源状态（2026-10-19）**：已按外源补录 45 条 / 15 方，见 `standards/shanghan/shaoyin/`（`source.md` + `shaoyin.json` + `PROVENANCE.md`）。
+补录**不并入底本**：底本仍是 1760 条且缺少阴；外源单独成库，引用须标「外源·搜狐2019 第 N 条」，不得标「底本」。
 
 ## 二、整篇截断：厥阴病
 
@@ -56,7 +59,7 @@
 | 阳明 | 高（134 条 / 2 篇；篇 7 为 1 条残片） | 提纲、三承气分层 |
 | 少阳 | 中（64 条 / 3 篇） | 提纲、柴胡证四证与「但见一证」 |
 | 太阴 | 低（1 条提纲） | 仅提纲；方须标跨篇 |
-| 少阴 | **无** | 只能标注缺口 |
+| 少阴 | **外源补录**（45 条 / 15 方） | 仅可引 `外源·搜狐2019`；底本仍为 0 |
 | 厥阴 | 低（30 条，缺主方） | 提纲、少量涉厥条文 |
 
 ## 六、复核方式
@@ -64,6 +67,9 @@
 ```bash
 # 六经可核性
 node departments/01-zhongyi/07-shanghanlun/chapters/02-liujing-kuangjia/code/main.js
+# 少阴外源（45 条 / 15 方 / 7 条预后不良）
+node scripts/parse_shaoyin.js --dry
+node departments/01-zhongyi/07-shanghanlun/chapters/07-shaoyin-xuyang/code/main.js
 # 太阴篇拆解与证据链
 node departments/01-zhongyi/07-shanghanlun/chapters/06-taiyin-xuhan/code/main.js
 # 厥阴篇内/篇外分布
@@ -72,4 +78,4 @@ node departments/01-zhongyi/07-shanghanlun/chapters/08-jueyin-hanre/code/main.js
 node departments/01-zhongyi/07-shanghanlun/chapters/03-taiyang-biao/code/main.js
 ```
 
-补源方向（未做，仅记录）：另本《伤寒论》（宋本/康平本/桂林古本）可补少阴篇与乌梅丸条；补入前须与现底本做条号对照，不可直接混排。
+补源方向：少阴篇已由外源补录（见上）；厥阴乌梅丸条仍未补，若补须同样单独成库并标来源，不可并入底本。任何补录都不得改变底本的 1760 条统计口径。

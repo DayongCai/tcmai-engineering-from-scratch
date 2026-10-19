@@ -2,7 +2,7 @@
 
 > 本章节由 `scripts/build_outputs_index.js` **生成**，请勿手改；重跑脚本同步。
 
-> **62** 件产出物 · 覆盖 **31** 个章节 · prompt 31 · skill 31
+> **64** 件产出物 · 覆盖 **32** 个章节 · prompt 32 · skill 32
 
 ## 这是什么
 
@@ -24,7 +24,7 @@
 | ☯️ 中医系 | 中医基础理论 | 3 | 6 |
 | ☯️ 中医系 | 中医诊断学 | 1 | 2 |
 | ☯️ 中医系 | 内经选读 | 9 | 18 |
-| ☯️ 中医系 | 伤寒论 | 11 | 22 |
+| ☯️ 中医系 | 伤寒论 | 12 | 24 |
 | 🌾 中药系 | 中药学 | 1 | 2 |
 | 🪡 针灸系 | 腧穴学 | 1 | 2 |
 | 🦴 骨伤系 | 中医正骨学 | 1 | 2 |
@@ -166,7 +166,7 @@
 
 ### 伤寒论
 
-> Core · 第 4 学期 · 已产出 11 章
+> Core · 第 4 学期 · 已产出 12 章
 
 #### 第 1 章 · 《伤寒论》的成书、版本与条文结构：1760 条不是 398 条
 
@@ -221,6 +221,15 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 证据链核对（结论 ← 条文） | — | 684 | [`prompt-taiyin-xuhan.md`](../departments/01-zhongyi/07-shanghanlun/chapters/06-taiyin-xuhan/outputs/prompt-taiyin-xuhan.md) |
 | skill | taiyin-xuhan | 太阴篇证据链核对：拆篇识目录残片、逐环报 hit/crossPian/missing、缺不补 | 519 | [`skill-taiyin-xuhan.md`](../departments/01-zhongyi/07-shanghanlun/chapters/06-taiyin-xuhan/outputs/skill-taiyin-xuhan.md) |
+
+#### 第 7 章 · 少阴病：45 条里 13 条在讲预后，不是讲方
+
+`07-shanghanlun/chapters/07-shaoyin-xuyang/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 少阴篇预后判读助手 | — | 787 | [`prompt-shaoyin-xuyang.md`](../departments/01-zhongyi/07-shanghanlun/chapters/07-shaoyin-xuyang/outputs/prompt-shaoyin-xuyang.md) |
+| skill | shaoyin-xuyang | 少阴篇预后判读：先结论词后判据词，未命中即未判定，条号标外源 | 449 | [`skill-shaoyin-xuyang.md`](../departments/01-zhongyi/07-shanghanlun/chapters/07-shaoyin-xuyang/outputs/skill-shaoyin-xuyang.md) |
 
 #### 第 8 章 · 厥阴病：30 条，乌梅丸一次也没出现
 
