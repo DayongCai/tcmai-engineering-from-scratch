@@ -62,7 +62,7 @@ test('**守门：证据语料只能来自正文（.md），不许含数据集/�
     `语料里混进了非正文（这正是第 3 次栽的坑 —— 教材证据曾 96/96 全部来自自己的 JSON）：\n${bad.join('\n')}`);
 });
 
-test('覆盖数字如实：教材证据 3/96（不是 96/96）', () => {
+test('覆盖数字如实：教材证据 33（原钉 3，教材语料扩容后重钉）', () => {
   // 这个数很难看，但它必须被钉住：任何一次"语料放宽"都会把它推回虚高。
   // 证名数不是永恒 96：拆名/合名会改它（2026-10-19 DSU-00102 拆成两条 → 97）。
   // 钉住的不是"96"，而是"与 DSU 的对应关系说得清"。
@@ -73,8 +73,17 @@ test('覆盖数字如实：教材证据 3/96（不是 96/96）', () => {
       require('path').join(__dirname, '..', 'standards/semtensor/datasets/reference-units.json'), 'utf8'));
     return (Array.isArray(raw) ? raw : raw.units).filter((u) => u.kind === 'dsu').length;
   })(), 'dsuRecords 必须等于 reference-units.json 里 dsu 的条数（拆名会改它）');
-  assert.strictEqual(data.stats.withTextbook, 3,
-    `教材证据 ${data.stats.withTextbook}/96 —— 若这个数突然变大，先查语料是不是又放宽了`);
+  // 3 → 33（2026-10-22 核）：教材语料已从当年的 3 篇扩到 99 门 / 2995 个 md
+  // （textbooks/<院系>/<学科>/…），33 条命中涉及的 51 个出处**全部**在 textbooks/ 下、
+  // 无一是自产 JSON —— 是语料真的变厚，不是口径放宽。原来钉 3 只是
+  // 「语料没混进自产 JSON」的**代理指标**；代理会随语料扩容失效，所以下面改成直接钉出处。
+  assert.strictEqual(data.stats.withTextbook, 33,
+    `教材证据 ${data.stats.withTextbook}/${data.stats.labels} —— 若这个数突然变大，先查语料是不是又放宽了`);
+  const strayEvidence = data.records
+    .flatMap((r) => (r.textbookEvidence || []).map((c) => c.file))
+    .filter((f) => !/^textbooks\//.test(String(f).replace(/\\/g, '/')));
+  assert.deepStrictEqual(strayEvidence, [],
+    `教材证据的出处不在 textbooks/ 下（自产 JSON 混进语料的老坑）：\n${strayEvidence.join('\n')}`);
   assert.ok(data.stats.withExternal >= 1, '外部证据一条都没有？那 external.json 没被读进来');
   // 这条原来断言 `fullyMissing > 0`，用来钉住"不是人人都齐"。覆盖爬到 85/96 后它自然变成 0，
   // 硬钉这个数只会逼人改数据。改钉**真正的不变量**：统计必须与逐条记录重算一致，
