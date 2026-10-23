@@ -215,6 +215,42 @@ test('splitLabel 把本体与括注分开，两种括号都认', () => {
     { base: '心肾不交、阴虚火旺证', context: ['不寐'] });
 });
 
+test('并病与因果链互斥，标记必须带依据、且只落在构件级', () => {
+  // EVIDENCE-STANDARD.md 说「测试里已钉住」，实际没有这条 —— 2026-10-23 补。
+  // 两类标记强度相同、语义不同（同存 vs 先后），同时挂上等于把两个口径混在一起。
+  const j = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/semtensor/descriptions/external.json'), 'utf8'));
+  for (const e of j.entries) {
+    if (e.relationChain) {
+      assert.strictEqual(e.relationChain, 'cause-effect', `${e.label} 的 relationChain 只能是 cause-effect`);
+      assert.ok(!e.concurrent, `既标并病又标因果链：${e.label}`);
+      assert.strictEqual(e.scope, 'component', `${e.label} scope=${e.scope}，整串级不需要因果链标记`);
+      assert.ok(String(e.relationWhy || '').length >= 10, `${e.label} 缺 relationWhy（领域判断要留依据）`);
+    }
+    if (e.concurrent) {
+      assert.ok(!e.relationChain, `既标并病又标因果链：${e.label}`);
+      assert.ok(String(e.concurrentWhy || '').length >= 10, `${e.label} 缺 concurrentWhy`);
+    }
+  }
+});
+
+test('标记脚本拒绝给已标并病的条目挂因果链（互斥在写入处就挡住）', () => {
+  const real = path.join(ROOT, 'standards/semtensor/descriptions/external.json');
+  const before = fs.readFileSync(real, 'utf8');
+  const j = JSON.parse(before);
+  const concurrent = j.entries.find((e) => e.concurrent);
+  assert.ok(concurrent, '库里没有并病条目，这条用例失去意义');
+  const tmp = path.join(os.tmpdir(), `xchain-${Date.now()}.json`);
+  fs.writeFileSync(tmp, JSON.stringify([{ label: concurrent.label, why: '试图同时挂上因果链（应被拒绝）' }]), 'utf8');
+  try {
+    const r = spawnSync(process.execPath, ['scripts/mark_relation_chain.js', tmp], { cwd: ROOT, encoding: 'utf8' });
+    assert.strictEqual(r.status, 0, r.stderr);
+    assert.match(r.stdout, /拒绝（已标并病/, `没拒绝：${r.stdout}`);
+    assert.strictEqual(fs.readFileSync(real, 'utf8'), before, '被拒绝的写入仍然改了文件');
+  } finally {
+    fs.rmSync(tmp, { force: true });
+  }
+});
+
 console.log(`\n  ${passed} 通过 · ${failures.length} 失败`);
 if (failures.length) {
   console.log('\n失败明细:');

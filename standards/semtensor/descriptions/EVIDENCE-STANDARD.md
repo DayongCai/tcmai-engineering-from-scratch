@@ -62,7 +62,9 @@
 
 - **名称同样不拆**（一条 DSU、一个 label）；
 - **判据与并病同级**：同一病种（中医病名层，如「肺炎喘嗽」范畴）内，**因、果各有一源** 即达标；
-- 标记写在 `external.json` 的 `relationChain: "cause-effect"` 字段（另有 `relationWhy` 记依据）；
+- 标记写在 `external.json` 的 `relationChain: "cause-effect"` 字段（另 `relationWhy` 记依据；
+  `scripts/mark_relation_chain.js` 写入，可 `--off` 撤销。与 `concurrent` 互斥 —— 脚本拒绝同挂，
+  `tests/test_external_batch.js` 也钉住）；
 - 报数**单列「因果链达标」**，既不与整串级合并，也不与并病混计 —— 两者证据强度相同，语义不同
   （因果链是先后，并病是同存）；
 - 与并病**互斥**：同一条目不可能既标 `concurrent` 又标 `relationChain`（测试里已钉住）。
