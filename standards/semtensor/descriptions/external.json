@@ -2075,9 +2075,16 @@
           "title": "针灸早期干预主观认知下降的临床应用与机制探析",
           "url": "https://www.hanspub.org/journal/paperinformation?paperID=118793",
           "snippet": "桂树虹, 宋曼萍, 冯博闻, 等. 针刺对肾虚痰瘀型脑梗死后轻度认知障碍患者精神行为和记忆执行功能的影响[J]."
+        },
+        {
+          "type": "期刊论文（综述·病机，PDF 全文已核）",
+          "title": "中药及其有效成分治疗阿尔茨海默病研究进展",
+          "url": "https://www.syfjxzz.com/cn/article/doi/10.13422/j.cnki.syfjx.20232437",
+          "snippet": "AD病位在脑，属本虚标实之证，病机主要为肾精亏虚，气血衰少，髓海不足，或兼痰、瘀、火诸邪壅塞脑络，脑髓消减，神机失用，终可致毒盛正衰，五脏形神俱损。……根据“肾虚痰瘀”之病机所立方剂，如益肾化浊方、黄蒲通窍胶囊、加减薯蓣丸，兼具补肾、豁痰、化瘀之效"
         }
       ],
-      "scope": "component"
+      "scope": "whole",
+      "attestedBy": 2
     },
     {
       "label": "痰热壅肺证",
