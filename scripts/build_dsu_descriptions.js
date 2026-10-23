@@ -375,7 +375,7 @@ function main() {
       md.push(`- **WHO-TCM**：\`${w.whoCode}\` ｜ ${w.whoEnglish}`);
       if (w.parsed) md.push(`  - 代码拆分：段 ${w.parsed.division} · 组 ${w.parsed.group} · 项 ${w.parsed.item}（§.组.项）`);
       md.push(`  - 类目路径（**另一套编号，不换算**）：${w.classPathFromDict.join(' → ')}`);
-      md.push(`  - 英文异名：${(w.whoEnglishAliases || []).join(' / ')}`);
+      if ((w.whoEnglishAliases || []).length) md.push(`  - 英文异名：${w.whoEnglishAliases.join(' / ')}`);
     }
     for (const c of r.textbookEvidence) md.push(`- 教材：\`${c.file}\` — ${c.snippet.slice(0, 120)}`);
     if (r.missing.length) md.push(`- **缺**：${r.missing.join('、')}`);

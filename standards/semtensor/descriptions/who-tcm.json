@@ -3,16 +3,24 @@
     "WHO 国际标准中医药术语（WHO international standard terminologies on TCM）的**结构化通道**。",
     "它与 ICD-11 是两套体系，**不可混用**：ICD-11 管疾病与证候的统计分类（如 CA00），",
     "WHO-TCM 管术语的命名与层级（如 2.9.90）。两者在同一个证候上可能并存，但编号空间不同。",
-    "解析只做**可核对的拆分**，不做语义推断：代码拆成 段.组.项，类目路径原样保留。"
+    "解析只做**可核对的拆分**，不做语义推断：代码拆成 段.组.项，类目路径原样保留。",
+    "两类来源，都记在每条 source 里：①herba.kr 词典转录（逐条人工核）；②2007 版原文 PDF 的表格解析（批量，见 scripts/who_istt_extract.py，PDF 的 url 与 sha256 写进 source）。",
+    "只做**精确匹配**：证名去括注后与原文中文名逐字一致才入库；同一单元格里的第 2、3 个中文名（原文别名位）也接受，位次记在 matchNote。同义关系不在本文件处理（那在 aliases.json）。",
+    "whoDefinitionEn 为 null = 原文释义列与代码列**无法可靠对齐**（该书四列各自成文本流），不是「这条没有释义」；宁可为 null，不拿邻条释义充数。",
+    "只收 2007 版（西太区）代码。2022 版的编号空间与章节不同，未在此换算；`classPathFromDict` 对 PDF 来源的条目是该书自己的章·节标题，不含编号。"
   ],
   "scheme": "WHO international standard terminologies on traditional Chinese medicine",
-  "editions": ["2022（WHO 正式版）", "2007（西太区版）"],
+  "editions": [
+    "2022（WHO 正式版）",
+    "2007（西太区版）"
+  ],
   "codeFormat": "§.组.项 —— 例如 2.9.90 = 第 2 部分（诊断·病证和体质术语）· 组 2.9 · 项 90",
   "caution": "词典条目里同时给出一串**类目路径**（如 `2.4 證候 - 臟腑經絡證類`），那套编号与 WHO 代码**不是同一套**。本文件两套都存、字段分开，绝不相互换算。",
   "entries": [
     {
       "label": "肝阳上亢证",
       "whoCode": "2.9.90",
+      "whoCnName": "肝陽上亢證",
       "whoEnglish": "pattern/syndrome of ascendant hyperactivity of liver yang",
       "whoDefinitionEn": "a pattern/syndrome marked by dizziness, headache, flushed face, blurred vision, tinnitus, bitter taste in the mouth and string-like pulse",
       "whoEdition": "2007（西太区版，代码 2.9.90）；2022 版另有英文名 Hyperactivity of liver yang pattern",
@@ -32,12 +40,538 @@
         "title": "肝陽上亢證 · 韩药资源研究中心（引 WHO 标准术语）",
         "type": "WHO-TCM（转引）"
       }
+    },
+    {
+      "label": "阳虚水泛证",
+      "whoCode": "2.5.19",
+      "whoCnName": "陽虛水泛證",
+      "whoEnglish": "pattern/syndrome of yang deficiency with water flood",
+      "whoDefinitionEn": "a pattern/syndrome arising when yang deficiency of the spleen and kidney leads to retention of water in the body, usually manifested by generalized edema, inhibited urine, palpitation, dyspnea, aversion to cold with cold limbs, abdominal distension, soggy diarrhea, pale and plump tongue with white slippery coating, and slow, sunken and weak pulse",
+      "whoEdition": "2007（西太区版，代码 2.5.19，书页 109）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Eight-Principle Pattern Identification/Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 1 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 119,
+        "bookPage": 109
+      }
+    },
+    {
+      "label": "风寒束表证",
+      "whoCode": "2.5.36",
+      "whoCnName": "表寒證; 風寒束表證",
+      "whoEnglish": "exterior cold pattern/syndrome",
+      "whoDefinitionEn": null,
+      "whoEdition": "2007（西太区版，代码 2.5.36，书页 111）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Eight-Principle Pattern Identification/Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 2 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 121,
+        "bookPage": 111
+      }
+    },
+    {
+      "label": "风热犯表证",
+      "whoCode": "2.5.37",
+      "whoCnName": "表熱證;風熱犯表證;風熱襲表證",
+      "whoEnglish": "exterior heat pattern/syndrome",
+      "whoDefinitionEn": null,
+      "whoEdition": "2007（西太区版，代码 2.5.37，书页 111）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Eight-Principle Pattern Identification/Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 2 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 121,
+        "bookPage": 111
+      }
+    },
+    {
+      "label": "寒凝血瘀证",
+      "whoCode": "2.6.38",
+      "whoCnName": "寒凝血瘀證",
+      "whoEnglish": "pattern/syndrome of congealing cold with blood stasis",
+      "whoDefinitionEn": "a pattern/syndrome arising when pathogenic cold obstructs qi movement and blood flow, manifested by pain aggravated by cold and alleviated by warmth, cold and cyanotic limbs, and delayed menstruation, painful periods, menstrual discharge of dark purple blood with clots, dark purple tongue with white coating, and sunken, slow and choppy pulse",
+      "whoEdition": "2007（西太区版，代码 2.6.38，书页 121）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Disease Cause Pattern Identification/Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 1 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 131,
+        "bookPage": 121
+      }
+    },
+    {
+      "label": "湿热下注证（热淋/白浊）",
+      "whoCode": "2.6.41",
+      "whoCnName": "濕熱下注證",
+      "whoEnglish": "pattern/syndrome of dampness-heat pouring downward",
+      "whoDefinitionEn": "a pattern/syndrome marked by frequent and painful urination, or yellow fetid discharge from the vagina, or ulceration of the leg with purulent discharge",
+      "whoEdition": "2007（西太区版，代码 2.6.41，书页 122）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Disease Cause Pattern Identification/Syndrome Differentiation"
+      ],
+      "matchNote": "证名去括注后与原文中文名第 1 位逐字一致（括注不参与判定）",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 132,
+        "bookPage": 122
+      }
+    },
+    {
+      "label": "气虚不摄证",
+      "whoCode": "2.7.15",
+      "whoCnName": "氣虛不攝證",
+      "whoEnglish": "pattern/syndrome of qi deficiency with failure to constrain",
+      "whoDefinitionEn": "a pattern/syndrome arising when failure of insufficient qi in constraint leads to loss of liquid substances, marked by seminal emission, incontinence of urine, hemorrhages, lusterless spontaneous sweating, complexion, lassitude, lack of strength, pale and plump tongue, and weak pulse",
+      "whoEdition": "2007（西太区版，代码 2.7.15，书页 126）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Qi-Blood Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 1 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 136,
+        "bookPage": 126
+      }
+    },
+    {
+      "label": "气阴两虚证（消渴）",
+      "whoCode": "2.7.20",
+      "whoCnName": "氣陰兩虛證;氣陰虧虛證",
+      "whoEnglish": "pattern/syndrome of dual deficiency of qi and yin",
+      "whoDefinitionEn": "a pattern/syndrome marked by listlessness, lack of strength, shortness of breath, reluctance to speak, dry throat and mouth, vexing thirst, flushed cheeks in the afternoon, short voidings of small amount of urine, constipation, emaciation, scanty dry tongue coating and vacuous pulse",
+      "whoEdition": "2007（西太区版，代码 2.7.20，书页 127）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Qi-Blood Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "证名去括注后与原文中文名第 1 位逐字一致（括注不参与判定）",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 137,
+        "bookPage": 127
+      }
+    },
+    {
+      "label": "气虚血瘀证",
+      "whoCode": "2.7.28",
+      "whoCnName": "氣虛血瘀證",
+      "whoEnglish": "pattern/syndrome of qi deficiency with blood stasis",
+      "whoDefinitionEn": "a pattern/syndrome of blood stasis resulting from qi deficiency, marked by somber pale complexion, lack of strength, shortness of breath, local stabbing pain, purplish tongue or purple spots on the tongue and sunken choppy pulse",
+      "whoEdition": "2007（西太区版，代码 2.7.28，书页 128）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Qi-Blood Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 1 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 138,
+        "bookPage": 128
+      }
+    },
+    {
+      "label": "气滞血瘀证",
+      "whoCode": "2.7.29",
+      "whoCnName": "氣滯血瘀證",
+      "whoEnglish": "pattern/syndrome of qi stagnation and blood stasis",
+      "whoDefinitionEn": "a pattern/syndrome marked by moving or stabbing pain in the thoracic, hypochondriac, epigastric or abdominal region with or without mass formation, purple tongue or purple-spotted tongue, and string- like choppy pulse",
+      "whoEdition": "2007（西太区版，代码 2.7.29，书页 128）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Qi-Blood Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 1 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 138,
+        "bookPage": 128
+      }
+    },
+    {
+      "label": "气滞血瘀证(颈部)",
+      "whoCode": "2.7.29",
+      "whoCnName": "氣滯血瘀證",
+      "whoEnglish": "pattern/syndrome of qi stagnation and blood stasis",
+      "whoDefinitionEn": "a pattern/syndrome marked by moving or stabbing pain in the thoracic, hypochondriac, epigastric or abdominal region with or without mass formation, purple tongue or purple-spotted tongue, and string- like choppy pulse",
+      "whoEdition": "2007（西太区版，代码 2.7.29，书页 128）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Qi-Blood Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "证名去括注后与原文中文名第 1 位逐字一致（括注不参与判定）",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 138,
+        "bookPage": 128
+      }
+    },
+    {
+      "label": "肺阴亏虚证",
+      "whoCode": "2.9.25",
+      "whoCnName": "肺陰虛證;肺陰虧虛證",
+      "whoEnglish": "lung yin deficiency pattern/syndrome",
+      "whoDefinitionEn": "a pattern/syndrome attributed to yin deficiency of the lung with endogenous heat, manifested by unproductive cough, afternoon fever, night sweating, flushed cheeks, dry throat, red and dry tongue, and rapid fine pulse",
+      "whoEdition": "2007（西太区版，代码 2.9.25，书页 133）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Visceral Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 2 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 143,
+        "bookPage": 133
+      }
+    },
+    {
+      "label": "风热犯肺证",
+      "whoCode": "2.9.29",
+      "whoCnName": "風熱犯肺證",
+      "whoEnglish": "pattern/syndrome of wind-heat invading the lung",
+      "whoDefinitionEn": "a pattern/syndrome marked by fever with mild chilliness, headache, sore throat, cough, reddened tip of the tongue with thin yellowish coating, and rapid floating pulse",
+      "whoEdition": "2007（西太区版，代码 2.9.29，书页 134）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Visceral Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 1 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 144,
+        "bookPage": 134
+      }
+    },
+    {
+      "label": "脾胃湿热证",
+      "whoCode": "2.9.52",
+      "whoCnName": "脾胃濕熱證;中焦濕熱證",
+      "whoEnglish": "pattern/syndrome of dampness-heat in the spleen and stomach",
+      "whoDefinitionEn": "a pattern/syndrome marked by epigastric or abdominal distention, anorexia, nausea, vomiting, lassitude, heaviness sensation of the body, or jaundice with bright yellow discoloration of the skin and the white of the eyes, yellow dense and slimy tongue coating, the same as the pattern/syndrome of dampness-heat in the middle energizer",
+      "whoEdition": "2007（西太区版，代码 2.9.52，书页 136）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Visceral Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 1 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 146,
+        "bookPage": 136
+      }
+    },
+    {
+      "label": "脾胃虚寒证",
+      "whoCode": "2.9.53",
+      "whoCnName": "脾胃虛寒證;脾胃陽虛證",
+      "whoEnglish": "spleen-stomach deficiency cold pattern/syndrome",
+      "whoDefinitionEn": "a pattern/syndrome attributed to insufficient yang qi to warm the spleen and stomach with endogenous cold, and manifested by cold and pains over the stomach, accompanied by anorexia, abdominal fullness, belching, vomiting thin fluid, chronic diarrhea, lassitude and cold limbs, the same as the spleen-stomach yang deficiency pattern/syndrome",
+      "whoEdition": "2007（西太区版，代码 2.9.53，书页 137）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Visceral Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 1 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 147,
+        "bookPage": 137
+      }
+    },
+    {
+      "label": "肝阳上亢证(头部)",
+      "whoCode": "2.9.90",
+      "whoCnName": "肝陽上亢證",
+      "whoEnglish": "pattern/syndrome of ascendant hyperactivity of liver yang",
+      "whoDefinitionEn": "a pattern/syndrome marked by dizziness, headache, flushed face, blurred vision, tinnitus, bitter taste in the mouth and string-like pulse",
+      "whoEdition": "2007（西太区版，代码 2.9.90，书页 141）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Visceral Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "证名去括注后与原文中文名第 1 位逐字一致（括注不参与判定）",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 151,
+        "bookPage": 141
+      }
+    },
+    {
+      "label": "肝胆湿热证",
+      "whoCode": "2.9.91",
+      "whoCnName": "肝膽濕熱證",
+      "whoEnglish": "liver-gallbladder dampness-heat pattern/syndrome",
+      "whoDefinitionEn": "a pattern/syndrome marked by fever and chills, jaundice, hypochondriac and abdominal pain, bitter taste in the mouth, nausea and rapid slippery pulse",
+      "whoEdition": "2007（西太区版，代码 2.9.91，书页 141）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Visceral Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 1 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 151,
+        "bookPage": 141
+      }
+    },
+    {
+      "label": "膀胱湿热证（热淋）",
+      "whoCode": "2.9.110",
+      "whoCnName": "膀胱濕熱證",
+      "whoEnglish": "bladder dampness-heat pattern/syndrome",
+      "whoDefinitionEn": "a pattern/syndrome attributed to dampness-heat attacking on and accumulating in the bladder, marked by frequency and urgency of urination, strangury, turbid urine or hematuria, reddened tongue with yellow slimy coating and rapid pulse",
+      "whoEdition": "2007（西太区版，代码 2.9.110，书页 144）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Visceral Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "证名去括注后与原文中文名第 1 位逐字一致（括注不参与判定）",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 154,
+        "bookPage": 144
+      }
+    },
+    {
+      "label": "心肾不交证",
+      "whoCode": "2.9.113",
+      "whoCnName": "心腎不交證",
+      "whoEnglish": "heart-kidney non-interaction pattern/syndrome",
+      "whoDefinitionEn": "a pattern/syndrome attributed to deficiency of yin fluid of the heart and the kidney with relative preponderance of yang, marked by restlessness, insomnia, palpitation, dizziness, tinnitus, aching of the lower back and knees, seminal emission, vexing heat in the chest, palms and soles, night sweating, reddened tongue with scanty coating and rapid fine pulse",
+      "whoEdition": "2007（西太区版，代码 2.9.113，书页 144）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Visceral Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 1 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 154,
+        "bookPage": 144
+      }
+    },
+    {
+      "label": "心脾两虚证",
+      "whoCode": "2.9.116",
+      "whoCnName": "心脾兩虛證",
+      "whoEnglish": "pattern/syndrome of dual deficiency of the heart and spleen",
+      "whoDefinitionEn": "a pattern/syndrome marked by palpitation, amnesia, insomnia or dream-disturbed sleep, loss of appetite, abdominal distention, loose bowels, lassitude, sallow face, pale tender-soft tongue and fine weak pulse",
+      "whoEdition": "2007（西太区版，代码 2.9.116，书页 144）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Visceral Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 1 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 154,
+        "bookPage": 144
+      }
+    },
+    {
+      "label": "肺肾气虚证",
+      "whoCode": "2.9.118",
+      "whoCnName": "肺腎氣虛證",
+      "whoEnglish": "lung-kidney qi deficiency pattern/syndrome",
+      "whoDefinitionEn": null,
+      "whoEdition": "2007（西太区版，代码 2.9.118，书页 145）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Visceral Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 1 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 155,
+        "bookPage": 145
+      }
+    },
+    {
+      "label": "肝胃不和证",
+      "whoCode": "2.9.123",
+      "whoCnName": "肝氣犯胃證;肝胃不和證",
+      "whoEnglish": "pattern/syndrome of liver qi invading the stomach",
+      "whoDefinitionEn": null,
+      "whoEdition": "2007（西太区版，代码 2.9.123，书页 145）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Visceral Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 2 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 155,
+        "bookPage": 145
+      }
+    },
+    {
+      "label": "肝郁脾虚证",
+      "whoCode": "2.9.124",
+      "whoCnName": "肝鬱脾虛證;肝脾不調證",
+      "whoEnglish": "pattern/syndrome of liver depression and spleen deficiency",
+      "whoDefinitionEn": null,
+      "whoEdition": "2007（西太区版，代码 2.9.124，书页 146）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Visceral Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 1 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 156,
+        "bookPage": 146
+      }
+    },
+    {
+      "label": "肝郁脾虚证（痛泻）",
+      "whoCode": "2.9.124",
+      "whoCnName": "肝鬱脾虛證;肝脾不調證",
+      "whoEnglish": "pattern/syndrome of liver depression and spleen deficiency",
+      "whoDefinitionEn": null,
+      "whoEdition": "2007（西太区版，代码 2.9.124，书页 146）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Visceral Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "证名去括注后与原文中文名第 1 位逐字一致（括注不参与判定）",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 156,
+        "bookPage": 146
+      }
+    },
+    {
+      "label": "脾肾阳虚证",
+      "whoCode": "2.9.126",
+      "whoCnName": "脾腎陽虛證;脾腎虛寒證",
+      "whoEnglish": "spleen-kidney yang deficiency pattern/syndrome",
+      "whoDefinitionEn": null,
+      "whoEdition": "2007（西太区版，代码 2.9.126，书页 146）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Visceral Pattern Identification/ Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 1 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 156,
+        "bookPage": 146
+      }
+    },
+    {
+      "label": "湿热浸淫证",
+      "whoCode": "2.12.24",
+      "whoCnName": "濕熱浸淫證",
+      "whoEnglish": "spreading dampness-heat pattern/syndrome",
+      "whoDefinitionEn": null,
+      "whoEdition": "2007（西太区版，代码 2.12.24，书页 159）",
+      "classPathFromDict": [
+        "Diagnostics",
+        "Defense, Qi, Nutrient and Blood Pattern Identification / Syndrome Differentiation"
+      ],
+      "matchNote": "原文中文名第 1 位与证名逐字一致",
+      "source": {
+        "url": "https://iris.who.int/bitstreams/24400634-2d52-4dde-bbb1-d28ee2c6fd42/download",
+        "title": "WHO International Standard Terminologies on Traditional Medicine in the Western Pacific Region（2007）",
+        "type": "WHO-TCM（原文 PDF，表格逐行坐标解析）",
+        "pdfSha256": "d90b67f7a48a4e6ce06626f2be8ec4438312b66ed8bad89baa2a14691dd3a329",
+        "pdfPage": 169,
+        "bookPage": 159
+      }
     }
   ],
   "coverage": {
-    "entries": 1,
-    "ofLabels": 96,
-    "why": "WHO-TCM 代码是逐条检索到的，不是批量可得（本机 zh.wikipedia.org 不可达、WHO 的术语库无公开批量接口）。",
-    "howToAdd": "在 external_batch 的分批检索里遇到带 WHO 代码的来源时，把代码与英文名一并落到本文件 entries。"
+    "entries": 26,
+    "distinctCodes": 23,
+    "ofLabels": 97,
+    "why": "WHO-TCM 代码要逐条对到原文：2022 版无公开批量接口，本机 zh.wikipedia.org 不可达；2007 版有全文 PDF（IRIS），但表格是四列独立文本流，直接复制会串行，只能按坐标解析后再逐行核对。",
+    "howToAdd": "①python scripts/who_istt_extract.py extract <pdf> <pdftotext.txt> rows.json；②python scripts/who_istt_extract.py match rows.json cands.json（需 opencc）；③node scripts/import_who_tcm.js cands.json（结构校验后才写）。"
   }
 }
