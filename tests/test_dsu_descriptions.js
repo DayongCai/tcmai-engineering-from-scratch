@@ -94,14 +94,31 @@ test('覆盖数字如实：教材证据 33（原钉 3，教材语料扩容后重
   assert.ok(data.stats.withExternalWhole >= 1, '整串级为 0？分级没算进构建');
   assert.ok(data.stats.withExternalWhole + data.stats.withExternalComponent + data.stats.withConcurrent + data.stats.withChain <= data.stats.withExternal,
     `整串级 ${data.stats.withExternalWhole} + 并病 ${data.stats.withConcurrent} + 因果链 ${data.stats.withChain} + 构件级 ${data.stats.withExternalComponent} 超过外部证据总数 ${data.stats.withExternal}`);
-  // 并病（两证同存）是领域判断，必须真的被标出来，且都停在 component —— 否则说明标记与证据脱节
-  assert.ok(data.stats.withConcurrent >= 5, `并病达标只有 ${data.stats.withConcurrent} 条，标记丢了？`);
+  // 并病（两证同存）是领域判断，必须真的被标出来，且都停在 component —— 否则说明标记与证据脱节。
+  // 原来这里钉 `>= 5`（当时 5 条并病的快照）。2026-10-25 三条并病（胆郁痰扰、心神不宁 /
+  // 肝肾阴虚、肝阳上亢 / 气阴两虚、痰瘀阻络）拿到「一句断言写整串」的来源升了整串级，
+  // 并病这条宽判据随之退场 —— 硬钉数字只会逼人改数据。改钉**真正的不变量**：
+  // external.json 里标了 concurrent、且判定仍停在 component 的条目，构建必须原样报出来
+  // （标记没丢、也没多算）；整串/单构件级不许再挂并病标记，否则同一条记录既算整串又算并病。
+  const extEntries = JSON.parse(fs.readFileSync(
+    path.join(ROOT, 'standards/semtensor/descriptions/external.json'), 'utf8')).entries;
+  const concurrentMarked = new Set(extEntries.filter((x) => x.concurrent).map((x) => x.label));
+  const expectedConcurrent = data.records
+    .filter((r) => concurrentMarked.has(r.label) && r.externalScope === 'component');
+  assert.ok(expectedConcurrent.length >= 1, '并病标注一条都没落进 component —— 标记与证据脱节了');
+  assert.strictEqual(data.stats.withConcurrent, expectedConcurrent.length,
+    `并病达标 ${data.stats.withConcurrent} ≠ 标注且停在构件级 ${expectedConcurrent.length} —— 统计与记录不一致`);
   for (const r of data.records) {
     if (!r.externalConcurrent) continue;
     assert.strictEqual(r.externalScope, 'component',
       `${r.label} 标为并病但 scope=${r.externalScope} —— 并病的判据是"两侧各有来源"`);
   }
   // 因果链（因→果）同样以 component 为达标，且必须与并病互斥 —— 一个证名不可能既是同存又是因果
+  const chainMarked = new Set(extEntries
+    .filter((x) => x.relationChain === 'cause-effect' && !x.concurrent).map((x) => x.label));
+  const expectedChain = data.records.filter((r) => chainMarked.has(r.label) && r.externalScope === 'component');
+  assert.strictEqual(data.stats.withChain, expectedChain.length,
+    `因果链达标 ${data.stats.withChain} ≠ 标注且停在构件级 ${expectedChain.length} —— 统计与记录不一致`);
   assert.ok(data.stats.withChain >= 1, `因果链达标只有 ${data.stats.withChain} 条，relationChain 标记丢了？`);
   for (const r of data.records) {
     if (!r.externalChain) continue;

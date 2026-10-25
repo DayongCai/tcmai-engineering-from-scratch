@@ -6,10 +6,10 @@
     "pending": 0
   },
   "distribution": {
-    "specific": 73,
+    "specific": 75,
     "viaSynonymAlias": 1,
     "partial": 3,
-    "variantUnconfirmed": 13,
+    "variantUnconfirmed": 11,
     "labelOnly": 0,
     "generic": 8
   },
@@ -87,7 +87,7 @@
         "惊悸/不寐"
       ],
       "tier": "specific",
-      "sources": 3,
+      "sources": 5,
       "labelHitSources": 0,
       "qualifierHitSources": 1,
       "qualifiersMissed": [],
@@ -531,7 +531,7 @@
         "青风内障/绿风内障"
       ],
       "tier": "specific",
-      "sources": 4,
+      "sources": 5,
       "labelHitSources": 0,
       "qualifierHitSources": 1,
       "qualifiersMissed": [],
@@ -768,9 +768,9 @@
         "寒湿阻络、气滞血瘀"
       ],
       "qualifiers": [],
-      "tier": "variant-unconfirmed",
-      "sources": 5,
-      "labelHitSources": 0,
+      "tier": "specific",
+      "sources": 6,
+      "labelHitSources": 1,
       "qualifierHitSources": 0,
       "qualifiersMissed": [],
       "viaAlias": [],
@@ -1076,9 +1076,9 @@
         "气阴两虚、痰瘀阻络"
       ],
       "qualifiers": [],
-      "tier": "variant-unconfirmed",
-      "sources": 3,
-      "labelHitSources": 0,
+      "tier": "specific",
+      "sources": 5,
+      "labelHitSources": 2,
       "qualifierHitSources": 0,
       "qualifiersMissed": [],
       "viaAlias": [],

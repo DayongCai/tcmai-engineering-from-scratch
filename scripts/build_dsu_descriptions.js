@@ -235,10 +235,15 @@ function main() {
       // 证据分级：整串级（单条来源覆盖全部构件）/ 构件级（只分别覆盖）/ 单构件。
       // 口径在 scripts/lib_evidence_scope.js，统计时两级分开报，**不合并**成一个"已覆盖"。
       externalScope: scopeOf.get(e.label) ? scopeOf.get(e.label).scope : null,
-      // 并病（两证同存）：领域判断，平台层据此把 component 视为达标
-      externalConcurrent: Boolean(extEntryOf.get(e.label)?.concurrent),
-      // 因果链（因→果，不是同存）：同样据此把 component 视为达标，但与并病分列
-      externalChain: extEntryOf.get(e.label)?.relationChain === 'cause-effect',
+      // 并病（两证同存）：领域判断，平台层据此把 component 视为达标。
+      // **只在 component 级成立**：一旦某条来源把整串写成一句断言（scope=whole），
+      // 「两侧各有来源」这条宽判据就退场了 —— 否则平台层会看到 whole + concurrent 的
+      // 自相矛盾组合，统计也会把同一条记录既算整串又算并病（2026-10-25 三条升整串级时踩到）。
+      externalConcurrent: Boolean(extEntryOf.get(e.label)?.concurrent)
+        && scopeOf.get(e.label)?.scope === 'component',
+      // 因果链（因→果，不是同存）：同样只在 component 级有效，但与并病分列
+      externalChain: extEntryOf.get(e.label)?.relationChain === 'cause-effect'
+        && scopeOf.get(e.label)?.scope === 'component',
       whoTcm: whoByLabel.get(e.label) || null,
       // 异名：**不是证据无关，是写法不同**（见 standards/semtensor/descriptions/aliases.json）。
       // relation 决定怎么用：synonym 可直接计入；composition/qualified/broader 只能作部分证据。
@@ -324,7 +329,7 @@ function main() {
   md.push(`| WHO-TCM 代码（独立通道） | ${stats.withWhoTcm}/${total} | ${((stats.withWhoTcm / total) * 100).toFixed(1)}% |`, '');
   md.push(`平均缺 ${stats.avgMissing} 个字段；${stats.fullyMissing} 个证名七项全缺。`, '');
   md.push(`**外部证据分四级计，不合并**：整串级 ${stats.withExternalWhole} · 并病达标 ${stats.withConcurrent} · 因果链达标 ${stats.withChain} · 构件级（弱） ${stats.withExternalComponent}（已入库合计 ${stats.withExternal}）。`, '');
-  md.push('口径：`whole/single` = 某条来源写出整串；`component` = 各构件分别有来源。**并病证候（两证同存）以 `component` 为达标** —— 并病本就是两个证同时存在，要求一条文献写出整串是错的标准；哪些是并病由领域判断记录在 `external.json` 的 `concurrent` 字段（`scripts/mark_concurrent.js` 写入，可撤销）。**因果链（一证为因、一证为果）同样以 `component` 为达标**，标在 `relationChain=cause-effect` 字段 —— 它与并病强度相同但语义不同（先后 vs 同存），所以单独一列，不与并病混计。非并病、非因果链的 `component` 仍按弱证据单列。', '');
+  md.push('口径：`whole/single` = 某条来源写出整串；`component` = 各构件分别有来源。**并病证候（两证同存）以 `component` 为达标** —— 并病本就是两个证同时存在，要求一条文献写出整串是错的标准；哪些是并病由领域判断记录在 `external.json` 的 `concurrent` 字段（`scripts/mark_concurrent.js` 写入，可撤销）。**因果链（一证为因、一证为果）同样以 `component` 为达标**，标在 `relationChain=cause-effect` 字段 —— 它与并病强度相同但语义不同（先后 vs 同存），所以单独一列，不与并病混计。**两类标注只在构件级报数**：某条来源写出整串即升整串级，不必再用宽判据（否则同一条记录既算整串又算并病/因果链）。非并病、非因果链的 `component` 仍按弱证据单列。', '');
   md.push('为什么必须分开：`胸阳痹阻、痰瘀互结证` 这类按 ICD-11 命名的合称证名，中文临床文献很少逐字写，往往只能取到"胸阳不振"与"痰瘀互结"各自的来源。**构件各自有文献 ≠ 这个证名被文献证实**，把两者并成一个 75/96，会让弱证据看起来和强证据一样硬。判定口径写在 `scripts/lib_evidence_scope.js`（证据边界 = 入库的 title+snippet，括注不参与判定）。', '');
   if (stats.externalPartial.length) {
     md.push('### 外部证据不合格（有构件完全没覆盖，需退回重查）', '');

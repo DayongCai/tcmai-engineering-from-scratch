@@ -50,6 +50,12 @@
   （`scripts/mark_concurrent.js` 写入，可 `--off` 撤销），并记 `concurrentWhy` 说明依据；
 - 统计上单列「**并病达标**」，与非并病的「构件级（弱）」分开报 —— 两者证据强度不同，
   合并会把弱证据洗白。
+- **并病只在构件级报数（2026-10-25 补）**：某条来源一旦把整串写成一句断言升了整串级，
+  这条宽判据就退场 —— 构建层只在 `scope=component` 时才认 `concurrent`，否则同一条记录
+  会既计入整串又计入并病（`whole + concurrent` 是自相矛盾的组合）。`external.json` 里的
+  `concurrent` 标注**保留**（两证同存是名称层的事实，不是证据强度），但它不再参与报数；
+  因果链标记则相反：既已让整串级成立，`relationChain` 一并撤销（`mark_relation_chain.js --off`），
+  写入侧也拒绝给非构件级挂链。
 
 判定链：`lib_evidence_scope.js` 出 `scope` → `external.json` 的 `concurrent` 是领域标注 →
 `build_dsu_descriptions.js` 据此分四级报数 → 平台层读 `externalScope` + `externalConcurrent`（因果链另见下节）。
