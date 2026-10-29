@@ -227,6 +227,25 @@ test('构词：同类不重复计、跨类不互相吞', () => {
   assert.strictEqual(d.residue, '', `仍有残余：${d.residue}`);
 });
 
+test('术语对齐（取主构件）：7 条合称落到国家证名表正名，且**不改证据分级**', () => {
+  // 对齐表的风险是"被当成证据用"：它只给平台层一个可核查的正名，
+  // 不参与 externalScope 判定。这里钉住三件事：对象不多不少、字段进了产物、证据数没被抬高。
+  const { load, weakLabels } = require(path.join(ROOT, 'scripts', 'term_alignment.js'));
+  const { table, ext } = load();
+  assert.strictEqual(table.entries.length, 7, `对齐条目应为 7，实际 ${table.entries.length}`);
+  assert.deepStrictEqual(table.entries.map((e) => e.label).sort(), weakLabels(ext),
+    '对齐表与 external.json 的弱构件级不是同一批');
+  const aligned = data.records.filter((r) => r.termAlignment);
+  assert.strictEqual(aligned.length, 7, `构建产物里术语对齐应有 7 条，实际 ${aligned.length}`);
+  for (const r of aligned) assert.strictEqual(r.externalScope, 'component', `${r.label} 的 externalScope 被对齐改成了 ${r.externalScope}`);
+  // 不钉字面数字（覆盖会随检索变化），钉**一致性**：整串级统计必须等于逐条重算，
+  // 且对齐的 7 条一条都不许被算进整串级 —— 对齐不能洗证据。
+  const wholeN = data.records.filter((r) => r.externalEvidence.length && ['whole', 'single'].includes(r.externalScope)).length;
+  assert.strictEqual(data.stats.withExternalWhole, wholeN, `整串级统计 ${data.stats.withExternalWhole} ≠ 逐条重算 ${wholeN}`);
+  for (const r of aligned) assert.ok(!['whole', 'single'].includes(r.externalScope), `${r.label} 被对齐算进了整串级`);
+  assert.strictEqual(data.stats.withTermAlignment, 7, `withTermAlignment 应为 7，实际 ${data.stats.withTermAlignment}`);
+});
+
 console.log(`\n  ${passed} 通过 · ${failures.length} 失败`);
 if (failures.length) {
   console.log('\n失败明细:');
