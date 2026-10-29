@@ -1,0 +1,150 @@
+{
+  "$note": "ICD-11 合称 → 国家证名表通行证名的对齐表。**对齐不是证据**：不改 external.json、不改 externalScope、不计入任何覆盖数。它只回答「平台层要引用一个可核查的证名时，用哪一个」。",
+  "$rule": [
+    "口径=取主构件：合称按 `、`／`/` 切分（括注不参与），**首构件**为主构件。",
+    "主构件在国家证名表里有标准证的，取该标准证的**正名**；表里只是别名的，取它对应的正名（并写明）。",
+    "合称本身不给正名：`wholeStandardName` 恒为 null —— 7 条合称在国家证名表里一条都没有（2026-10-30 全表核验）。",
+    "被丢弃的构件逐个标状态：`standard`＝国家表里有独立证名；`nonstandard`＝0 命中，属「文献无证名」。",
+    "代码只在「表内同一行代码与证名相邻」时写；否则 null，**不推测、不补全**。"
+  ],
+  "$basis": {
+    "table": "中医疾病名代码（医保版 GB95 版 / 医保 2.0 版 GB21 版）",
+    "publisher": "国家医疗保障局",
+    "url": "http://www.nhsa.gov.cn/module/download/downfile.jsp?classid=0&filename=4337fe7c64674a73a665b7f9f28d7087.pdf",
+    "pages": 71,
+    "sha256": "c4dd193e29fac558cc7cd9f0837a954ec043ab1c9647f2f06b2b4102db127c7d",
+    "mirror": "D:\\tcmai-standards\\中医疾病名代码-医保版GB95-GB21-2024.pdf",
+    "extractedText": "D:\\tcmai-standards\\中医疾病名代码-医保版GB95-GB21-2024.txt",
+    "extractedTextSha256": "99ffe7624f61673c705c920e1f52e83eb743433a7857c56d4c906c24a611c36a",
+    "extractedWith": "pdftotext -enc UTF-8",
+    "hitsMethod": "对抽取文本逐串计数（Node split().length-1），非肉眼"
+  },
+  "entries": [
+    {
+      "label": "肺经风热、湿热上蒸证(鼻渊/鼻鼽)",
+      "primary": "肺经风热",
+      "standardName": "肺经风热证",
+      "standardCode": null,
+      "standardNameNote": "表内有「肺经风热证」正名行；同行代码列与相邻证名混排，代码未取。",
+      "wholeStandardName": null,
+      "dropped": [
+        {
+          "part": "湿热上蒸证",
+          "status": "standard",
+          "standardName": "湿热上蒸证",
+          "standardCode": null,
+          "note": "单名在表内出现；GB21 阶段另列有映射关系（精室湿热证），未据此改锚。"
+        }
+      ],
+      "note": "括注 鼻渊/鼻鼽 属病名限定，不参与对齐（对齐只处理名称层）。"
+    },
+    {
+      "label": "肺经风热、湿热瘀结证",
+      "primary": "肺经风热",
+      "standardName": "肺经风热证",
+      "standardCode": null,
+      "standardNameNote": "同上，代码未取。",
+      "wholeStandardName": null,
+      "dropped": [
+        {
+          "part": "湿热瘀结证",
+          "status": "standard",
+          "standardName": "湿热瘀阻证",
+          "standardCode": null,
+          "note": "表内把「湿热瘀结证」列为「湿热瘀阻证」的别名（ZBMRL0 行），故取正名。"
+        }
+      ],
+      "note": "本条无括注，两构件都取自鼻病语境（肺经风热型鼻窦炎）。"
+    },
+    {
+      "label": "风寒外袭、痰湿阻窍证(耳胀/耳闭)",
+      "primary": "风寒外袭",
+      "standardName": "风寒外袭证",
+      "standardCode": null,
+      "standardNameNote": "表内有「风寒外袭证」正名行；代码列混排，未取。",
+      "wholeStandardName": null,
+      "dropped": [
+        {
+          "part": "痰湿阻窍证",
+          "status": "nonstandard",
+          "standardName": null,
+          "standardCode": null,
+          "note": "全表 0 命中 —— 这是「文献无证名」，不是取不到。"
+        }
+      ],
+      "note": "括注 耳胀/耳闭 属病名限定，不参与对齐。"
+    },
+    {
+      "label": "肝火上炎、风火上扰证",
+      "primary": "肝火上炎",
+      "standardName": "肝火上炎证",
+      "standardCode": "B04.02.01.02.02.02",
+      "standardNameNote": "表内「代码 + 证名」同行相邻，代码取自此。",
+      "wholeStandardName": null,
+      "dropped": [
+        {
+          "part": "风火上扰证",
+          "status": "standard",
+          "standardName": "风火上扰证",
+          "standardCode": "B02.02.11.01",
+          "note": "与肝火上炎证是两个独立编码，不是互为别名 —— 故不能把本条当同证异名处理。"
+        }
+      ],
+      "note": "某科普文称二者「同证异名」，与国家标准表分列两码不一致；按标准表处理，别名表不动。"
+    },
+    {
+      "label": "脾胃虚弱、瘀毒内结证(胃积/反胃)",
+      "primary": "脾胃虚弱",
+      "standardName": "脾胃虚证",
+      "standardCode": null,
+      "standardNameNote": "表内「脾胃虚弱证」是「脾胃虚证」的别名（ZZP070 行），故取正名；该行代码在 PDF 文本层被截断（B04.06.03.01.03.），不补全。",
+      "wholeStandardName": null,
+      "dropped": [
+        {
+          "part": "瘀毒内结证",
+          "status": "nonstandard",
+          "standardName": null,
+          "standardCode": null,
+          "note": "全表 0 命中。"
+        }
+      ],
+      "note": "括注 胃积/反胃 属病名限定，不参与对齐。"
+    },
+    {
+      "label": "湿热下注、邪留正伤证",
+      "primary": "湿热下注",
+      "standardName": "湿热下注证",
+      "standardCode": null,
+      "standardNameNote": "表内有「湿热下注证」行；该块为旧名→新名映射，代码列与证名跨列混排，未取。",
+      "wholeStandardName": null,
+      "dropped": [
+        {
+          "part": "邪留正伤证",
+          "status": "nonstandard",
+          "standardName": null,
+          "standardCode": null,
+          "note": "全表 0 命中；「邪留正伤」只作《温病条辨·卷三》劳疟条文的病机语，不是证名。"
+        }
+      ],
+      "note": "合称无标准对应：整条只能引「湿热下注证」，不得把「邪留正伤」当证名引。"
+    },
+    {
+      "label": "血热风盛、瘀毒内蕴证(白疕/松皮癣)",
+      "primary": "血热风盛",
+      "standardName": "血热风盛证",
+      "standardCode": null,
+      "standardNameNote": "表内有「血热风盛证」正名行（ZBFRE0）；代码列与相邻证名混排，未取。",
+      "wholeStandardName": null,
+      "dropped": [
+        {
+          "part": "瘀毒内蕴证",
+          "status": "nonstandard",
+          "standardName": null,
+          "standardCode": null,
+          "note": "全表 0 命中。"
+        }
+      ],
+      "note": "括注 白疕/松皮癣 属病名限定，不参与对齐。"
+    }
+  ]
+}

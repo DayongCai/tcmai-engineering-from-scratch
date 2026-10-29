@@ -147,6 +147,14 @@ function main() {
     aliasByLabel = new Map(al.entries.map((e) => [e.label, e.aliases]));
   } catch { /* 表还没建，静默跳过 */ }
 
+  // 术语对齐（口径：取主构件）。ICD-11 合称在国家证名表里没有正名，平台层要引用时只能落到
+  // 「通行证名」= 首构件的国家证名。**对齐不是证据**：它不改 externalScope、不计入任何覆盖数。
+  let alignByLabel = new Map();
+  try {
+    const ta = JSON.parse(fs.readFileSync(P('standards/semtensor/descriptions/term-alignment.json'), 'utf8'));
+    alignByLabel = new Map(ta.entries.map((e) => [e.label, e]));
+  } catch { /* 表还没建，静默跳过 */ }
+
   // 语料（复用嵌入层的取语料，**但再收紧一次**：证据只取正文）。
   //
   // 为什么收紧：第一版直接用了嵌入层的语料，而那里含 `reference-units.json`、
@@ -161,6 +169,9 @@ function main() {
     if (!/\.md$/.test(f)) return false;
     if (/semtensor\/descriptions\//.test(f)) return false;
     if (/semtensor\/datasets\//.test(f)) return false;
+    // ④ 同一模式第 4 次：standards/ 下是我们自己写的规格与映射说明（如 icd11/tm1/README.md
+    //    里就有「心肾不交证 → SF6L」这类对照），拿它当「教材证据」是自己给自己作证。
+    if (/^standards\//.test(f)) return false;
     return true;
   });
 
@@ -248,6 +259,10 @@ function main() {
       // 异名：**不是证据无关，是写法不同**（见 standards/semtensor/descriptions/aliases.json）。
       // relation 决定怎么用：synonym 可直接计入；composition/qualified/broader 只能作部分证据。
       aliases: aliasByLabel.get(e.label) || [],
+      // 术语对齐（取主构件）：合称本身没有标准正名（wholeStandardName=null），只给
+      // 「平台层可引用的国家证名」+ 被丢弃构件的状态（standard / nonstandard）。
+      // 这是**名称层**的事实，不是证据：不影响 externalScope 与任何覆盖数。
+      termAlignment: alignByLabel.get(e.label) || null,
       missing,
     });
   }
@@ -299,6 +314,8 @@ function main() {
       .map((r) => `${r.label} ← 缺构件${scopeOf.get(r.label).missing.map((p) => `「${p}」`).join('')}`),
     withWhoTcm: cov((r) => r.whoTcm),
     withAlias: cov((r) => r.aliases.length),
+    // 术语对齐（取主构件）：只数「有没有对齐」，**不进证据数** —— 对齐不是证据。
+    withTermAlignment: cov((r) => Boolean(r.termAlignment)),
     fullyMissing: cov((r) => r.missing.length === 7),   // 7 = 缺失项总数；加了 WHO-TCM 后 6 就成了陈旧常量
     avgMissing: Number((out.reduce((s, r) => s + r.missing.length, 0) / total).toFixed(2)),
   };
@@ -331,6 +348,26 @@ function main() {
   md.push(`**外部证据分四级计，不合并**：整串级 ${stats.withExternalWhole} · 并病达标 ${stats.withConcurrent} · 因果链达标 ${stats.withChain} · 构件级（弱） ${stats.withExternalComponent}（已入库合计 ${stats.withExternal}）。`, '');
   md.push('口径：`whole/single` = 某条来源写出整串；`component` = 各构件分别有来源。**并病证候（两证同存）以 `component` 为达标** —— 并病本就是两个证同时存在，要求一条文献写出整串是错的标准；哪些是并病由领域判断记录在 `external.json` 的 `concurrent` 字段（`scripts/mark_concurrent.js` 写入，可撤销）。**因果链（一证为因、一证为果）同样以 `component` 为达标**，标在 `relationChain=cause-effect` 字段 —— 它与并病强度相同但语义不同（先后 vs 同存），所以单独一列，不与并病混计。**两类标注只在构件级报数**：某条来源写出整串即升整串级，不必再用宽判据（否则同一条记录既算整串又算并病/因果链）。非并病、非因果链的 `component` 仍按弱证据单列。', '');
   md.push('为什么必须分开：`胸阳痹阻、痰瘀互结证` 这类按 ICD-11 命名的合称证名，中文临床文献很少逐字写，往往只能取到"胸阳不振"与"痰瘀互结"各自的来源。**构件各自有文献 ≠ 这个证名被文献证实**，把两者并成一个 75/96，会让弱证据看起来和强证据一样硬。判定口径写在 `scripts/lib_evidence_scope.js`（证据边界 = 入库的 title+snippet，括注不参与判定）。', '');
+  // 术语对齐（取主构件）：平台层要引用「一个可核查的证名」时用这张表。
+  if (stats.withTermAlignment) {
+    const aligned = out.filter((r) => r.termAlignment);
+    md.push('## 术语对齐（口径：取主构件）', '');
+    md.push(`> 这 ${aligned.length} 条是 ICD-11 合称 —— 在《中医疾病名代码（医保版 GB95 / 医保 2.0 版 GB21）》全表里，` +
+      `${aligned.filter((r) => r.termAlignment.wholeStandardName === null).length} 条**都没有正名**（不是没取到，是标准表里没有）。` +
+      '平台层要引用时按**首构件**取国家证名；合称本身不给正名。', '');
+    md.push('> **对齐不是证据**：不改 `externalScope`，也不计入任何覆盖数。被丢弃的构件逐个标状态：`standard`＝表里有独立证名；`nonstandard`＝0 命中，属「文献无证名」。', '');
+    md.push('| 原证名（ICD-11 合称） | 主构件正名（可引用） | 丢弃的构件 |', '|---|---|---|');
+    for (const r of aligned) {
+      const a = r.termAlignment;
+      const code = a.standardCode ? ` \`${a.standardCode}\`` : '';
+      const drops = a.dropped.map((d) => (d.status === 'standard'
+        ? `\`${d.part}\` → ${d.standardName}${d.standardCode ? ` \`${d.standardCode}\`` : ''}（标准名）`
+        : `\`${d.part}\` → **文献无证名**`)).join('<br>');
+      md.push(`| ${r.label} | ${a.standardName}${code} | ${drops} |`);
+    }
+    md.push('');
+    md.push('口径与依据：`standards/semtensor/descriptions/term-alignment.json`；门：`node scripts/term_alignment.js --check`（会拿国家表逐串复核标准名与「无证名」判定）。', '');
+  }
   if (stats.externalPartial.length) {
     md.push('### 外部证据不合格（有构件完全没覆盖，需退回重查）', '');
     for (const p of stats.externalPartial) md.push(`- ${p}`);
@@ -375,6 +412,13 @@ function main() {
       md.push(`- **异名**（不是证据无关，是写法不同）：${list}`);
       md.push('  - 出处：`standards/semtensor/descriptions/aliases.json`；每条别名都由测试钉住「必须在它 source 指向的来源里字面出现」');
     }
+    if (r.termAlignment) {
+      const a = r.termAlignment;
+      md.push(`- **术语对齐**（取主构件，**不是证据**）：可引用正名 ${a.standardName}${a.standardCode ? ` \`${a.standardCode}\`` : ''}`);
+      for (const d of a.dropped) {
+        md.push(`  - 丢弃「${d.part}」：${d.status === 'standard' ? `${d.standardName}${d.standardCode ? ` \`${d.standardCode}\`` : ''}（标准名）` : '**文献无证名**'}`);
+      }
+    }
     if (r.whoTcm) {
       const w = r.whoTcm;
       md.push(`- **WHO-TCM**：\`${w.whoCode}\` ｜ ${w.whoEnglish}`);
@@ -393,6 +437,7 @@ function main() {
   console.log(`  构词解析：病性 ${stats.withNature} · 病位 ${stats.withLocus} · 动作 ${stats.withAction} · 完全拆净 ${stats.cleanDecompose}`);
   console.log(`  病机 ${stats.withMechanism} · 病名 ${stats.withDisease} · ICD ${stats.withIcd}`);
   console.log(`  教材证据 ${stats.withTextbook} · 外部证据 ${stats.withExternal}（整串 ${stats.withExternalWhole} · 并病达标 ${stats.withConcurrent} · 因果链 ${stats.withChain} · 构件 ${stats.withExternalComponent}） · WHO-TCM ${stats.withWhoTcm}`);
+  console.log(`  术语对齐（取主构件，不计入证据） ${stats.withTermAlignment}`);
   console.log(`  语料 ${stats.corpusFiles} 个 md（不含数据集/索引/报告）`);
   console.log(`  平均缺 ${stats.avgMissing} 项 · 七项全缺 ${stats.fullyMissing} 个 · 构词拆净 ${stats.cleanDecompose}/${total}`);
   console.log(`  → standards/semtensor/descriptions/descriptions.md`);
