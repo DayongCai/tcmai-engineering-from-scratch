@@ -1,0 +1,443 @@
+{
+  "$generated": "scripts/report_component_recheck.js",
+  "$note": "构件级证据重查清单；重查流程 = --requery \"<label>\" → --next -n 6 → 检索 query → --import",
+  "generatedAt": "2026-11-06T16:03:14.090Z",
+  "total": 97,
+  "componentCount": 12,
+  "entries": [
+    {
+      "label": "脾胃虚弱、瘀毒内结证(胃积/反胃)",
+      "parts": [
+        {
+          "part": "脾胃虚弱",
+          "ownHits": 1,
+          "ownSourceIndexes": [
+            0
+          ],
+          "libHitsExclOwn": 8
+        },
+        {
+          "part": "瘀毒内结证",
+          "ownHits": 1,
+          "ownSourceIndexes": [
+            2
+          ],
+          "libHitsExclOwn": 2
+        }
+      ],
+      "bestSourceIndex": 0,
+      "bestCover": 1,
+      "sources": 3,
+      "hosts": [
+        "shzyyzz.shzyyzz.com",
+        "lnzxy.com",
+        "health.baidu.com"
+      ],
+      "bottleneck": {
+        "part": "瘀毒内结证",
+        "libHitsExclOwn": 2
+      },
+      "query": "脾胃虚弱 瘀毒内结证 胃积/反胃 中医病证名 病因病机 主症 舌象 脉象 治法",
+      "requeryCommand": "node scripts/external_batch.js --requery \"脾胃虚弱、瘀毒内结证(胃积/反胃)\""
+    },
+    {
+      "label": "肺经风热、湿热瘀结证",
+      "parts": [
+        {
+          "part": "肺经风热",
+          "ownHits": 2,
+          "ownSourceIndexes": [
+            0,
+            1
+          ],
+          "libHitsExclOwn": 1
+        },
+        {
+          "part": "湿热瘀结证",
+          "ownHits": 2,
+          "ownSourceIndexes": [
+            2,
+            3
+          ],
+          "libHitsExclOwn": 1
+        }
+      ],
+      "bestSourceIndex": 0,
+      "bestCover": 1,
+      "sources": 4,
+      "hosts": [
+        "familydoctor.cn",
+        "m.baidu.com",
+        "tmbos.org",
+        "11665.com"
+      ],
+      "bottleneck": {
+        "part": "肺经风热",
+        "libHitsExclOwn": 1
+      },
+      "query": "肺经风热 湿热瘀结证 中医病证名 病因病机 主症 舌象 脉象 治法",
+      "requeryCommand": "node scripts/external_batch.js --requery \"肺经风热、湿热瘀结证\""
+    },
+    {
+      "label": "肺经风热、湿热上蒸证(鼻渊/鼻鼽)",
+      "parts": [
+        {
+          "part": "肺经风热",
+          "ownHits": 1,
+          "ownSourceIndexes": [
+            2
+          ],
+          "libHitsExclOwn": 2
+        },
+        {
+          "part": "湿热上蒸证",
+          "ownHits": 2,
+          "ownSourceIndexes": [
+            3,
+            4
+          ],
+          "libHitsExclOwn": 0
+        }
+      ],
+      "bestSourceIndex": 2,
+      "bestCover": 1,
+      "sources": 5,
+      "hosts": [
+        "ebhyxbwk.njournal.sdu.edu.cn",
+        "hnsacm.com",
+        "shyueyanghospital.com",
+        "pharmnet.com.cn",
+        "suoware.com"
+      ],
+      "bottleneck": {
+        "part": "湿热上蒸证",
+        "libHitsExclOwn": 0
+      },
+      "query": "肺经风热 湿热上蒸证 鼻渊/鼻鼽 中医病证名 病因病机 主症 舌象 脉象 治法",
+      "requeryCommand": "node scripts/external_batch.js --requery \"肺经风热、湿热上蒸证(鼻渊/鼻鼽)\""
+    },
+    {
+      "label": "风寒湿痹、内含于心证",
+      "parts": [
+        {
+          "part": "风寒湿痹",
+          "ownHits": 1,
+          "ownSourceIndexes": [
+            1
+          ],
+          "libHitsExclOwn": 1
+        },
+        {
+          "part": "内含于心证",
+          "ownHits": 2,
+          "ownSourceIndexes": [
+            0,
+            2
+          ],
+          "libHitsExclOwn": 0
+        }
+      ],
+      "bestSourceIndex": 0,
+      "bestCover": 1,
+      "sources": 3,
+      "hosts": [
+        "mingbozh.com"
+      ],
+      "bottleneck": {
+        "part": "内含于心证",
+        "libHitsExclOwn": 0
+      },
+      "query": "风寒湿痹 内含于心证 中医病证名 病因病机 主症 舌象 脉象 治法",
+      "requeryCommand": "node scripts/external_batch.js --requery \"风寒湿痹、内含于心证\""
+    },
+    {
+      "label": "风寒外袭、痰湿阻窍证(耳胀/耳闭)",
+      "parts": [
+        {
+          "part": "风寒外袭",
+          "ownHits": 1,
+          "ownSourceIndexes": [
+            1
+          ],
+          "libHitsExclOwn": 0
+        },
+        {
+          "part": "痰湿阻窍证",
+          "ownHits": 1,
+          "ownSourceIndexes": [
+            0
+          ],
+          "libHitsExclOwn": 0
+        }
+      ],
+      "bestSourceIndex": 0,
+      "bestCover": 1,
+      "sources": 2,
+      "hosts": [
+        "health.baidu.com",
+        "news.39.net"
+      ],
+      "bottleneck": {
+        "part": "风寒外袭",
+        "libHitsExclOwn": 0
+      },
+      "query": "风寒外袭 痰湿阻窍证 耳胀/耳闭 中医病证名 病因病机 主症 舌象 脉象 治法",
+      "requeryCommand": "node scripts/external_batch.js --requery \"风寒外袭、痰湿阻窍证(耳胀/耳闭)\""
+    },
+    {
+      "label": "肝火亢盛、气阴两虚证（瘿病）",
+      "parts": [
+        {
+          "part": "肝火亢盛",
+          "ownHits": 1,
+          "ownSourceIndexes": [
+            0
+          ],
+          "libHitsExclOwn": 0
+        },
+        {
+          "part": "气阴两虚证",
+          "ownHits": 2,
+          "ownSourceIndexes": [
+            3,
+            4
+          ],
+          "libHitsExclOwn": 12
+        }
+      ],
+      "bestSourceIndex": 0,
+      "bestCover": 1,
+      "sources": 5,
+      "hosts": [
+        "zzzyyy.com",
+        "tjzyefy.com",
+        "ncshdzyy.com",
+        "health.baidu.com",
+        "tmbos.org"
+      ],
+      "bottleneck": {
+        "part": "肝火亢盛",
+        "libHitsExclOwn": 0
+      },
+      "query": "肝火亢盛 气阴两虚证 瘿病 中医病证名 病因病机 主症 舌象 脉象 治法",
+      "requeryCommand": "node scripts/external_batch.js --requery \"肝火亢盛、气阴两虚证（瘿病）\""
+    },
+    {
+      "label": "肝火上炎、风火上扰证",
+      "parts": [
+        {
+          "part": "肝火上炎",
+          "ownHits": 1,
+          "ownSourceIndexes": [
+            0
+          ],
+          "libHitsExclOwn": 0
+        },
+        {
+          "part": "风火上扰证",
+          "ownHits": 1,
+          "ownSourceIndexes": [
+            1
+          ],
+          "libHitsExclOwn": 2
+        }
+      ],
+      "bestSourceIndex": 0,
+      "bestCover": 1,
+      "sources": 3,
+      "hosts": [
+        "baike.baidu.com",
+        "cntcm.com.cn",
+        "ndsyy.com"
+      ],
+      "bottleneck": {
+        "part": "肝火上炎",
+        "libHitsExclOwn": 0
+      },
+      "query": "肝火上炎 风火上扰证 中医病证名 病因病机 主症 舌象 脉象 治法",
+      "requeryCommand": "node scripts/external_batch.js --requery \"肝火上炎、风火上扰证\""
+    },
+    {
+      "label": "热毒犯肺、痰瘀阻络证(哮喘性支气管肺炎)",
+      "parts": [
+        {
+          "part": "热毒犯肺",
+          "ownHits": 1,
+          "ownSourceIndexes": [
+            0
+          ],
+          "libHitsExclOwn": 0
+        },
+        {
+          "part": "痰瘀阻络证",
+          "ownHits": 2,
+          "ownSourceIndexes": [
+            1,
+            2
+          ],
+          "libHitsExclOwn": 8
+        }
+      ],
+      "bestSourceIndex": 0,
+      "bestCover": 1,
+      "sources": 4,
+      "hosts": [
+        "cqcdc.org",
+        "tcm.china.com.cn",
+        "sdzy.cbpt.cnki.net",
+        "zyj.beijing.gov.cn"
+      ],
+      "bottleneck": {
+        "part": "热毒犯肺",
+        "libHitsExclOwn": 0
+      },
+      "query": "热毒犯肺 痰瘀阻络证 哮喘性支气管肺炎 中医病证名 病因病机 主症 舌象 脉象 治法",
+      "requeryCommand": "node scripts/external_batch.js --requery \"热毒犯肺、痰瘀阻络证(哮喘性支气管肺炎)\""
+    },
+    {
+      "label": "肾精亏虚、髓枯血虚证",
+      "parts": [
+        {
+          "part": "肾精亏虚",
+          "ownHits": 1,
+          "ownSourceIndexes": [
+            2
+          ],
+          "libHitsExclOwn": 4
+        },
+        {
+          "part": "髓枯血虚证",
+          "ownHits": 1,
+          "ownSourceIndexes": [
+            1
+          ],
+          "libHitsExclOwn": 0
+        }
+      ],
+      "bestSourceIndex": 1,
+      "bestCover": 1,
+      "sources": 3,
+      "hosts": [
+        "jzyb.publish.founderss.cn",
+        "health.baidu.com",
+        "familydoctor.cn"
+      ],
+      "bottleneck": {
+        "part": "髓枯血虚证",
+        "libHitsExclOwn": 0
+      },
+      "query": "肾精亏虚 髓枯血虚证 中医病证名 病因病机 主症 舌象 脉象 治法",
+      "requeryCommand": "node scripts/external_batch.js --requery \"肾精亏虚、髓枯血虚证\""
+    },
+    {
+      "label": "湿热下注、邪留正伤证",
+      "parts": [
+        {
+          "part": "湿热下注",
+          "ownHits": 2,
+          "ownSourceIndexes": [
+            0,
+            1
+          ],
+          "libHitsExclOwn": 4
+        },
+        {
+          "part": "邪留正伤证",
+          "ownHits": 1,
+          "ownSourceIndexes": [
+            2
+          ],
+          "libHitsExclOwn": 0
+        }
+      ],
+      "bestSourceIndex": 0,
+      "bestCover": 1,
+      "sources": 3,
+      "hosts": [
+        "ndsyy.com",
+        "m.baidu.com",
+        "gmzyjx.com"
+      ],
+      "bottleneck": {
+        "part": "邪留正伤证",
+        "libHitsExclOwn": 0
+      },
+      "query": "湿热下注 邪留正伤证 中医病证名 病因病机 主症 舌象 脉象 治法",
+      "requeryCommand": "node scripts/external_batch.js --requery \"湿热下注、邪留正伤证\""
+    },
+    {
+      "label": "痰湿内盛、脾虚不运证",
+      "parts": [
+        {
+          "part": "痰湿内盛",
+          "ownHits": 2,
+          "ownSourceIndexes": [
+            0,
+            1
+          ],
+          "libHitsExclOwn": 0
+        },
+        {
+          "part": "脾虚不运证",
+          "ownHits": 2,
+          "ownSourceIndexes": [
+            2,
+            3
+          ],
+          "libHitsExclOwn": 0
+        }
+      ],
+      "bestSourceIndex": 0,
+      "bestCover": 1,
+      "sources": 4,
+      "hosts": [
+        "yydbzz.com",
+        "zryhyy.com.cn",
+        "zgyydb.ac.cn",
+        "haodf.com"
+      ],
+      "bottleneck": {
+        "part": "痰湿内盛",
+        "libHitsExclOwn": 0
+      },
+      "query": "痰湿内盛 脾虚不运证 中医病证名 病因病机 主症 舌象 脉象 治法",
+      "requeryCommand": "node scripts/external_batch.js --requery \"痰湿内盛、脾虚不运证\""
+    },
+    {
+      "label": "血热风盛、瘀毒内蕴证(白疕/松皮癣)",
+      "parts": [
+        {
+          "part": "血热风盛",
+          "ownHits": 2,
+          "ownSourceIndexes": [
+            0,
+            1
+          ],
+          "libHitsExclOwn": 0
+        },
+        {
+          "part": "瘀毒内蕴证",
+          "ownHits": 1,
+          "ownSourceIndexes": [
+            2
+          ],
+          "libHitsExclOwn": 1
+        }
+      ],
+      "bestSourceIndex": 0,
+      "bestCover": 1,
+      "sources": 3,
+      "hosts": [
+        "scm.cuhk.edu.hk",
+        "blog.wenxuecity.com",
+        "yxb.iiyiyi.com"
+      ],
+      "bottleneck": {
+        "part": "血热风盛",
+        "libHitsExclOwn": 0
+      },
+      "query": "血热风盛 瘀毒内蕴证 白疕/松皮癣 中医病证名 病因病机 主症 舌象 脉象 治法",
+      "requeryCommand": "node scripts/external_batch.js --requery \"血热风盛、瘀毒内蕴证(白疕/松皮癣)\""
+    }
+  ]
+}
