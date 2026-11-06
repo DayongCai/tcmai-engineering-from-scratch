@@ -400,7 +400,7 @@ function main() {
   if (stats.withLiteratureNames) {
     const lit = out.filter((r) => r.literatureNames);
     md.push('## 文献通行证名（弱构件级缺的是「同一来源共现」，不是「名字」）', '');
-    md.push(`> 这 ${lit.length} 条是 \`scope=component\` 里**没有并病/因果链标注**的弱证据：每个构件都有来源，但没有一条来源同时写出全部构件。`);
+    md.push(`> 这 ${lit.length} 条是 \`scope=component\` 的证名：其中 **${stats.withExternalComponent} 条**是没有并病/因果链标注的**弱证据**，另 ${stats.withConcurrent + stats.withChain} 条已按并病/因果链达标 —— 但两侧写法在文献里叫什么，是同一个命名层问题，所以一并答复。`);
     md.push('> 本节回答命名层的问题：**每个构件，中文文献实际怎么写**。判定四种：`as-pattern`＝文献就是证名；`as-mechanism`＝只有病机/病因句，不能当证名引用；`aligned`＝可换成另一个文献名（给 relation）；`unmapped`＝文献没有这个写法。', '');
     md.push(`> 统计：**可换名 ${stats.literatureAligned} 个构件位 · 文献无对应 ${stats.literatureUnmapped} 条证名**。本节不进证据数 —— 它改的是平台层怎么引用这个构件，不是证据强度。`, '');
     md.push('| 证名 | 构件 | 判定 | 文献写法 | 出处 |', '|---|---|---|---|---|');
