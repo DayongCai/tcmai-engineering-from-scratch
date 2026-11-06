@@ -2,6 +2,7 @@
 
 > 由 `node scripts/report_component_recheck.js` 从 `external.json` 生成，**不要手改**。
 > 判定口径见 `scripts/lib_evidence_scope.js` 与 `EVIDENCE-STANDARD.md`。
+> 命名层结论（每个构件在文献里到底怎么写）见 `literature-names.json`，门：`node scripts/literature_names.js --check`。
 
 当前：**12 条构件级**（全库 97 条已入库；整串级 85 条、不合格 0 条）。
 

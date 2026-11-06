@@ -141,6 +141,15 @@ function main() {
   const whoByLabel = new Map(who.entries.map((e) => [e.label, { ...e, parsed: parseWhoCode(e.whoCode) }]));
   // 异名表：**不是证据无关，是写法不同**。表不存在就当没有（不报错、不编造）。
   const RELATION_CN = { synonym: '同义', composition: '复合证名的组成部分', qualified: '病名限定用法', broader: '上位概念' };
+  const LIT_VERDICT_CN = {
+    'as-pattern': '文献即证名',
+    'as-mechanism': '仅病机/病因句',
+    aligned: '可换名',
+    unmapped: '文献无对应',
+  };
+  const LIT_RELATION_CN = {
+    synonym: '同义', variant: '近形异写', qualified: '病位限定', broader: '上位/病名', partial: '只覆盖半边',
+  };
   let aliasByLabel = new Map();
   try {
     const al = JSON.parse(fs.readFileSync(P('standards/semtensor/descriptions/aliases.json'), 'utf8'));
@@ -153,6 +162,15 @@ function main() {
   try {
     const ta = JSON.parse(fs.readFileSync(P('standards/semtensor/descriptions/term-alignment.json'), 'utf8'));
     alignByLabel = new Map(ta.entries.map((e) => [e.label, e]));
+  } catch { /* 表还没建，静默跳过 */ }
+
+  // 文献通行证名：构件的**文献写法**判定（as-pattern / as-mechanism / aligned / unmapped）。
+  // 与上一张表分工不同：term-alignment 回答「国家表里叫什么」，这张回答「中文文献怎么写」。
+  // 同样是名称层事实，不是证据 —— 不改 externalScope、不计入覆盖数。
+  let litByLabel = new Map();
+  try {
+    const ln = JSON.parse(fs.readFileSync(P('standards/semtensor/descriptions/literature-names.json'), 'utf8'));
+    litByLabel = new Map(ln.entries.map((e) => [e.label, e]));
   } catch { /* 表还没建，静默跳过 */ }
 
   // 语料（复用嵌入层的取语料，**但再收紧一次**：证据只取正文）。
@@ -263,6 +281,9 @@ function main() {
       // 「平台层可引用的国家证名」+ 被丢弃构件的状态（standard / nonstandard）。
       // 这是**名称层**的事实，不是证据：不影响 externalScope 与任何覆盖数。
       termAlignment: alignByLabel.get(e.label) || null,
+      // 文献通行证名：每个构件的文献写法判定（含「文献只会写成病机句」这一类）。
+      // 与 termAlignment 平行：都只服务平台层的引用，都不进证据数。
+      literatureNames: litByLabel.get(e.label) || null,
       missing,
     });
   }
@@ -316,6 +337,12 @@ function main() {
     withAlias: cov((r) => r.aliases.length),
     // 术语对齐（取主构件）：只数「有没有对齐」，**不进证据数** —— 对齐不是证据。
     withTermAlignment: cov((r) => Boolean(r.termAlignment)),
+    // 文献通行证名：同样只服务命名层，不进证据数。
+    withLiteratureNames: cov((r) => Boolean(r.literatureNames)),
+    literatureAligned: out.reduce((s, r) => s
+      + ((r.literatureNames?.parts || []).filter((p) => p.verdict === 'aligned').length), 0),
+    literatureUnmapped: out.filter((r) => (r.literatureNames?.parts || [])
+      .some((p) => p.verdict === 'unmapped')).length,
     fullyMissing: cov((r) => r.missing.length === 7),   // 7 = 缺失项总数；加了 WHO-TCM 后 6 就成了陈旧常量
     avgMissing: Number((out.reduce((s, r) => s + r.missing.length, 0) / total).toFixed(2)),
   };
@@ -355,18 +382,48 @@ function main() {
     md.push(`> 这 ${aligned.length} 条是 ICD-11 合称 —— 在《中医疾病名代码（医保版 GB95 / 医保 2.0 版 GB21）》全表里，` +
       `${aligned.filter((r) => r.termAlignment.wholeStandardName === null).length} 条**都没有正名**（不是没取到，是标准表里没有）。` +
       '平台层要引用时按**首构件**取国家证名；合称本身不给正名。', '');
-    md.push('> **对齐不是证据**：不改 `externalScope`，也不计入任何覆盖数。被丢弃的构件逐个标状态：`standard`＝表里有独立证名；`nonstandard`＝0 命中，属「文献无证名」。', '');
+    md.push('> **对齐不是证据**：不改 `externalScope`，也不计入任何覆盖数。被丢弃的构件逐个标状态：`standard`＝**国家证名表**里有独立证名；`nonstandard`＝**国家表** 0 命中。', '');
+    md.push('> 注意两个轴不要混：**国家表没有 ≠ 文献没有**。「瘀毒内结证」「痰湿阻窍证」等国表 0 命中的写法，在中文文献里是实打实的证名（逐条判定见下节「文献通行证名」）。', '');
     md.push('| 原证名（ICD-11 合称） | 主构件正名（可引用） | 丢弃的构件 |', '|---|---|---|');
     for (const r of aligned) {
       const a = r.termAlignment;
       const code = a.standardCode ? ` \`${a.standardCode}\`` : '';
       const drops = a.dropped.map((d) => (d.status === 'standard'
         ? `\`${d.part}\` → ${d.standardName}${d.standardCode ? ` \`${d.standardCode}\`` : ''}（标准名）`
-        : `\`${d.part}\` → **文献无证名**`)).join('<br>');
+        : `\`${d.part}\` → **国家表 0 命中**（文献写法见下节）`)).join('<br>');
       md.push(`| ${r.label} | ${a.standardName}${code} | ${drops} |`);
     }
     md.push('');
     md.push('口径与依据：`standards/semtensor/descriptions/term-alignment.json`；门：`node scripts/term_alignment.js --check`（会拿国家表逐串复核标准名与「无证名」判定）。', '');
+  }
+  // 文献通行证名：与上一节分工不同 —— 上一节说「国家表里叫什么」，这一节说「文献怎么写」。
+  if (stats.withLiteratureNames) {
+    const lit = out.filter((r) => r.literatureNames);
+    md.push('## 文献通行证名（弱构件级缺的是「同一来源共现」，不是「名字」）', '');
+    md.push(`> 这 ${lit.length} 条是 \`scope=component\` 里**没有并病/因果链标注**的弱证据：每个构件都有来源，但没有一条来源同时写出全部构件。`);
+    md.push('> 本节回答命名层的问题：**每个构件，中文文献实际怎么写**。判定四种：`as-pattern`＝文献就是证名；`as-mechanism`＝只有病机/病因句，不能当证名引用；`aligned`＝可换成另一个文献名（给 relation）；`unmapped`＝文献没有这个写法。', '');
+    md.push(`> 统计：**可换名 ${stats.literatureAligned} 个构件位 · 文献无对应 ${stats.literatureUnmapped} 条证名**。本节不进证据数 —— 它改的是平台层怎么引用这个构件，不是证据强度。`, '');
+    md.push('| 证名 | 构件 | 判定 | 文献写法 | 出处 |', '|---|---|---|---|---|');
+    for (const r of lit) {
+      for (const p of r.literatureNames.parts) {
+        const ev = p.evidence || {};
+        let src = '—';
+        if (ev.url) {
+          let host = ev.url;
+          try { host = new URL(ev.url).host.replace(/^www\./, ''); } catch { /* 保留原串 */ }
+          src = `[${host}](${ev.url})`;
+        } else if (ev.path) {
+          src = `\`${ev.path.split('/').pop()}\``;
+        }
+        const name = p.literatureName
+          ? `${p.literatureName}（${LIT_RELATION_CN[p.relation] || p.relation}）`
+          : (p.verdict === 'as-pattern' ? '同字（即证名）'
+            : p.verdict === 'as-mechanism' ? '无（只作病机/病因）' : '—');
+        md.push(`| ${r.label} | ${p.part} | ${LIT_VERDICT_CN[p.verdict] || p.verdict} | ${name} | ${src} |`);
+      }
+    }
+    md.push('');
+    md.push('口径与依据：`standards/semtensor/descriptions/literature-names.json`；门：`node scripts/literature_names.js --check` —— 每条引文必须在所指来源的 title+snippet（或 cited 文件）里**逐字命中**，`part` 必须真在证名里，且表不许落后于 `external.json` 的 component 清单。', '');
   }
   if (stats.externalPartial.length) {
     md.push('### 外部证据不合格（有构件完全没覆盖，需退回重查）', '');
@@ -438,6 +495,7 @@ function main() {
   console.log(`  病机 ${stats.withMechanism} · 病名 ${stats.withDisease} · ICD ${stats.withIcd}`);
   console.log(`  教材证据 ${stats.withTextbook} · 外部证据 ${stats.withExternal}（整串 ${stats.withExternalWhole} · 并病达标 ${stats.withConcurrent} · 因果链 ${stats.withChain} · 构件 ${stats.withExternalComponent}） · WHO-TCM ${stats.withWhoTcm}`);
   console.log(`  术语对齐（取主构件，不计入证据） ${stats.withTermAlignment}`);
+  console.log(`  文献通行证名（不进证据数） ${stats.withLiteratureNames} · 可换名 ${stats.literatureAligned} 个构件位 · 文献无对应 ${stats.literatureUnmapped} 条`);
   console.log(`  语料 ${stats.corpusFiles} 个 md（不含数据集/索引/报告）`);
   console.log(`  平均缺 ${stats.avgMissing} 项 · 七项全缺 ${stats.fullyMissing} 个 · 构词拆净 ${stats.cleanDecompose}/${total}`);
   console.log(`  → standards/semtensor/descriptions/descriptions.md`);

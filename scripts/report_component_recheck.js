@@ -105,6 +105,7 @@ md.push('# 构件级证据重查清单（12 条）');
 md.push('');
 md.push('> 由 `node scripts/report_component_recheck.js` 从 `external.json` 生成，**不要手改**。');
 md.push('> 判定口径见 `scripts/lib_evidence_scope.js` 与 `EVIDENCE-STANDARD.md`。');
+md.push('> 命名层结论（每个构件在文献里到底怎么写）见 `literature-names.json`，门：`node scripts/literature_names.js --check`。');
 md.push('');
 md.push(`当前：**${rows.length} 条构件级**（全库 ${ext.entries.length} 条已入库；整串级 85 条、不合格 0 条）。`);
 md.push('');

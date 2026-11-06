@@ -1,0 +1,383 @@
+{
+  "$note": "文献通行证名表：ICD-11 合称的每个构件 → 中文文献实际怎么写。**对齐不是证据** —— 不改 external.json、不改 externalScope、不计入任何覆盖数。它回答的是平台层的问题：要引用/检索这个构件时，用哪个词。",
+  "$why": "队列 97/97 已满、`--audit` 报 12 条 component 之后，剩下能动的只有命名层。UNQUALIFIED.md §10.2 已用国家表（医保 GB95/GB21，sha256 c4dd193e…）核过：7 条合称全表 0 命中，其中 4 个构件（邪留正伤、瘀毒内蕴、瘀毒内结、痰湿阻窍）连单名都没有。那一节写明的处置办法就是这张表：ICD-11 合称 → 文献通行证名。",
+  "$rule": [
+    "每条判定都必须落在**已取回的正文**上：`evidence.quote` 必须在它指向的来源 title+snippet（kind=source，url 必须已在本仓库 external.json 里）或 cited 文件（kind=repo-md / icd11-tm1）里**字面出现**。由 `node scripts/literature_names.js --check` 强制。",
+    "判定不猜语义：判的是「文献把这一串字当什么用」，不是「它应该是什么意思」。",
+    "`as-pattern` = 文献把它当证名写（证型编号、「××型」「××证」）；`as-mechanism` = 同一串字只作病机/病因短语出现，不能直接当证名引用；`aligned` = 可换成另一个文献名，须给 relation；`unmapped` = 文献里没有对应写法，须给 why。",
+    "`level` 记的是通行写法本身的层级：`pattern`＝证名级，`mechanism`＝病机级。病机级写法可以用于检索与解释，**不能**用于「这个证名叫什么」。",
+    "跨条目的来源可以用（构件是名称层的单位，不是某条证名的私产），但必须写明是哪条证名的来源，`basis` 要说清为什么这个写法对本条成立。",
+    "本标准不合并、不替换、不改名：`aligned` 只给平台层提供可引用的词，DSU label 与 external.json 一律不动。"
+  ],
+  "$verdicts": {
+    "as-pattern": "文献里就是这个写法，且是证名级（可引用）",
+    "as-mechanism": "文献里有这一串字，但只作病机/病因短语（不可当证名引用）",
+    "aligned": "可换成另一个文献通行名（给 literatureName + relation + level）",
+    "unmapped": "文献里没有对应写法（给 why）"
+  },
+  "$relations": {
+    "synonym": "同义异名（文献断言二者指同一证）",
+    "variant": "近形异写（用字不同，同一证）",
+    "qualified": "带病位/病名限定的写法（覆盖面更窄，须保留限定语境）",
+    "broader": "上位概念或病名（覆盖面更大，只能作旁证）",
+    "partial": "只覆盖该构件的一部分语义（另一部分需另配）"
+  },
+  "entries": [
+    {
+      "label": "肺经风热、湿热上蒸证(鼻渊/鼻鼽)",
+      "parts": [
+        {
+          "part": "肺经风热",
+          "verdict": "as-pattern",
+          "level": "pattern",
+          "evidence": {
+            "kind": "source",
+            "url": "https://www.shyueyanghospital.com/Html/News/Articles/108532.html",
+            "quote": "①肺经风热型鼻渊"
+          },
+          "basis": "上海中医药大学附属岳阳中西医结合医院鼻渊科普按证型编号写「①肺经风热型鼻渊」，证名级写法，与构件同字。"
+        },
+        {
+          "part": "湿热上蒸证",
+          "verdict": "aligned",
+          "literatureName": "脾胃湿热上蒸",
+          "relation": "qualified",
+          "level": "mechanism",
+          "evidence": {
+            "kind": "source",
+            "url": "https://www.suoware.com/zhuzhizhongyi/3196.html",
+            "quote": "脾胃湿热上蒸鼻窍"
+          },
+          "basis": "鼻渊文献把这一侧写成「脾胃湿热上蒸鼻窍」（带病位限定），ICD-11 名把「脾胃」省掉只留「湿热上蒸」。可换名，但必须带上病位限定，否则会与泛指的湿热证混同。"
+        }
+      ]
+    },
+    {
+      "label": "肺经风热、湿热瘀结证",
+      "parts": [
+        {
+          "part": "肺经风热",
+          "verdict": "as-pattern",
+          "level": "pattern",
+          "evidence": {
+            "kind": "source",
+            "url": "https://m.baidu.com/bh/m/detail/ar_5834910491584992593?frsrcid=rec",
+            "quote": "多见于肺经风热证"
+          },
+          "basis": "鼻窦炎脉象条目直接写「多见于肺经风热证」，证名级。"
+        },
+        {
+          "part": "湿热瘀结证",
+          "verdict": "as-pattern",
+          "level": "pattern",
+          "evidence": {
+            "kind": "source",
+            "url": "https://www.tmbos.org/index/article/view/id/25489.html",
+            "quote": "湿热瘀结证 湿为阴邪"
+          },
+          "crossRef": {
+            "standardName": "湿热瘀阻证",
+            "note": "国家表把「湿热瘀结证」列为「湿热瘀阻证」的别名（见 term-alignment.json）"
+          },
+          "why": "文献确有「湿热瘀结证」这个证名，但本条取回的语境是**盆腔炎**（杜惠兰经验、慢性盆腔炎证型分布研究），与括注的鼻病不同题。名字对得上、病种对不上 —— 这是跨病种拼接，检索解决不了。"
+        }
+      ]
+    },
+    {
+      "label": "风寒湿痹、内含于心证",
+      "parts": [
+        {
+          "part": "风寒湿痹",
+          "verdict": "as-pattern",
+          "level": "pattern",
+          "evidence": {
+            "kind": "source",
+            "url": "https://mingbozh.com/kepu/fengshixingguanjieyan-faq",
+            "quote": "风寒湿痹、虚寒者可在专业医师指导下艾灸"
+          },
+          "basis": "同一篇科普的外治段以「风寒湿痹」作证候限定语（风寒湿痹、虚寒者），证名级写法。"
+        },
+        {
+          "part": "内含于心证",
+          "verdict": "aligned",
+          "literatureName": "心痹",
+          "relation": "broader",
+          "level": "pattern",
+          "evidence": {
+            "kind": "source",
+            "url": "https://mingbozh.com/kepu/fengshixingguanjieyan-faq",
+            "quote": "可内含于心，导致心痹"
+          },
+          "basis": "同一来源的传变段把「内含于心」写成结果「导致心痹」—— 一句话说清了二者的关系：内含于心是传变过程，心痹是传变结果（《素问·痹论》五脏痹之一）。文献要引用这个证候时用「心痹」，不用「内含于心证」。"
+        }
+      ]
+    },
+    {
+      "label": "风寒外袭、痰湿阻窍证(耳胀/耳闭)",
+      "parts": [
+        {
+          "part": "风寒外袭",
+          "verdict": "as-mechanism",
+          "level": "mechanism",
+          "evidence": {
+            "kind": "source",
+            "url": "https://news.39.net/a/240104/y1lhc0k.html",
+            "quote": "常见原因有风寒外袭、风热上扰"
+          },
+          "why": "只作病因并列项出现（「常见原因有风寒外袭、风热上扰、痰湿阻滞或肝胆湿热」），不是证名。当证名引用会把它写成一个并不存在的证型。"
+        },
+        {
+          "part": "痰湿阻窍证",
+          "verdict": "as-pattern",
+          "level": "pattern",
+          "evidence": {
+            "kind": "source",
+            "url": "https://health.baidu.com/m/detail/ar_6217353921755907141",
+            "quote": "1. 痰湿阻窍证"
+          },
+          "basis": "耳膜鼓胀（耳胀）条目按证型编号写「1. 痰湿阻窍证」，并给出病因/症状/舌脉/治法 —— 证名级，且病种对题。国家表 0 命中：有文献写法、无标准证名。"
+        }
+      ]
+    },
+    {
+      "label": "肝火亢盛、气阴两虚证（瘿病）",
+      "parts": [
+        {
+          "part": "肝火亢盛",
+          "verdict": "as-mechanism",
+          "level": "mechanism",
+          "evidence": {
+            "kind": "source",
+            "url": "https://zzzyyy.com/zhongyizhongyao/10913.html",
+            "quote": "肝火亢盛，扰动心神"
+          },
+          "why": "瘿病医案里是病机句（「肝火亢盛，扰动心神，心神不宁，则心悸」），不是证型名。本条取回的来源里没有任何一条把它标成「××型/××证」。"
+        },
+        {
+          "part": "气阴两虚证",
+          "verdict": "as-pattern",
+          "level": "pattern",
+          "evidence": {
+            "kind": "source",
+            "url": "https://health.baidu.com/m/detail/ar_6885288784521519359",
+            "quote": "三、气阴两虚证"
+          },
+          "basis": "甲亢中医分型条目按「三、气阴两虚证」编号列型，并给主症/病机/治法/方药 —— 证名级。"
+        }
+      ]
+    },
+    {
+      "label": "肝火上炎、风火上扰证",
+      "parts": [
+        {
+          "part": "肝火上炎",
+          "verdict": "as-pattern",
+          "level": "pattern",
+          "evidence": {
+            "kind": "source",
+            "url": "https://baike.baidu.com/item/%E8%82%9D%E7%81%AB%E6%97%BA%E7%9B%9B/2682154",
+            "quote": "常见证型有肝火上炎、肝火犯肺"
+          },
+          "crossRef": {
+            "standardName": "肝火上炎证",
+            "standardCode": "B04.02.01.02.02.02",
+            "note": "国家表独立编码（term-alignment.json）"
+          },
+          "basis": "百科在「常见证型」里列「肝火上炎」，证名级；国家表有独立编码。"
+        },
+        {
+          "part": "风火上扰证",
+          "verdict": "as-mechanism",
+          "level": "mechanism",
+          "evidence": {
+            "kind": "source",
+            "url": "https://www.cntcm.com.cn/content/202408/28/c257529.html",
+            "quote": "风火上扰及心神"
+          },
+          "crossRef": {
+            "standardName": "风火上扰证",
+            "standardCode": "B02.02.11.01",
+            "note": "国家表独立编码（term-alignment.json）"
+          },
+          "why": "本条取回的来源里只作病机句（「风火上扰及心神」）；国家表另有独立编码 B02.02.11.01，与肝火上炎证（B04.02.01.02.02.02）**不是互为别名**。某科普称二者「同证异名」是文献观点，国家标准分列 —— 因此不做 synonym 合并。"
+        }
+      ]
+    },
+    {
+      "label": "脾胃虚弱、瘀毒内结证(胃积/反胃)",
+      "parts": [
+        {
+          "part": "脾胃虚弱",
+          "verdict": "as-mechanism",
+          "level": "mechanism",
+          "evidence": {
+            "kind": "source",
+            "url": "https://shzyyzz.shzyyzz.com/rc-pub/front/front-article/download/78749995/lowqualitypdf/%E7%8E%B0%E4%BB%A3%E4%B8%AD%E5%8C%BB%E5%8C%BB%E5%AE%B6%E5%AF%B9%E8%83%83%E7%99%8C%E7%9A%84%E7%97%85%E6%9C%BA%E8%AE%A4%E8%AF%86%E5%8F%8A%E6%B2%BB%E6%B3%95%E5%88%9B%E6%96%B0.pdf",
+            "quote": "脾胃虚弱，浊毒蕴结"
+          },
+          "crossRef": {
+            "standardName": "脾胃虚弱证",
+            "note": "国家表有单名「脾胃虚弱证」（UNQUALIFIED.md §10.2 计数为 6 命中）"
+          },
+          "why": "本条取回的胃癌病机综述里是病机句（「脾胃虚弱，浊毒蕴结」的主病机），不是证型名；国家表有单名证，平台可引国家表正名。"
+        },
+        {
+          "part": "瘀毒内结证",
+          "verdict": "aligned",
+          "literatureName": "瘀毒互结",
+          "relation": "variant",
+          "level": "pattern",
+          "evidence": {
+            "kind": "source",
+            "url": "https://www.zyyfy.com/zyyy_index/article_17623_1.shtml",
+            "quotes": [
+              "气滞血瘀、瘀毒互结",
+              "辨证为肝郁脾虚、瘀毒内结证"
+            ]
+          },
+          "basis": "潘敏求肝癌医案同一段里先用「瘀毒互结」说病机、后写「辨证为肝郁脾虚、瘀毒内结证」—— 同一作者把两种写法当同一个证用，是 variant 的直接证据。另：本条自己的百度健康来源也写「1. 瘀毒内结证」（证名级），所以「文献无此证名」不成立，缺的只是「与脾胃虚弱同现」的一句断言。"
+        }
+      ]
+    },
+    {
+      "label": "热毒犯肺、痰瘀阻络证(哮喘性支气管肺炎)",
+      "parts": [
+        {
+          "part": "热毒犯肺",
+          "verdict": "as-pattern",
+          "level": "pattern",
+          "evidence": {
+            "kind": "source",
+            "url": "https://www.cqcdc.org/index.php?a=shows&catid=84&id=720",
+            "quote": "1.热毒犯肺，肺失宣降证"
+          },
+          "basis": "重庆市疾控《人感染H7N9禽流感诊疗方案（2017年第1版）》按证型编号写「1.热毒犯肺，肺失宣降证」，并给症状/舌脉/治法/处方 —— 官方诊疗方案里的证名，证据等级最高的一类。"
+        },
+        {
+          "part": "痰瘀阻络证",
+          "verdict": "as-pattern",
+          "level": "pattern",
+          "evidence": {
+            "kind": "source",
+            "url": "http://tcm.china.com.cn/2023-12/01/content_42620152.html",
+            "quote": "肺部实变、痰瘀阻络者"
+          },
+          "basis": "支原体肺炎中医治疗方案以「肺部实变、痰瘀阻络者」作兼夹证限定并给加减药，属证候级用法（不是分型并列）。"
+        }
+      ]
+    },
+    {
+      "label": "肾精亏虚、髓枯血虚证",
+      "parts": [
+        {
+          "part": "肾精亏虚",
+          "verdict": "as-pattern",
+          "level": "pattern",
+          "evidence": {
+            "kind": "source",
+            "url": "https://www.familydoctor.cn/hlthsci/shenjing-kui-xu-xing-erming-diao-3zhao-kexue-yingdui-gaishan-zhengzhuang-708604.html",
+            "quote": "肾精亏虚型耳鸣的典型特点"
+          },
+          "crossRef": {
+            "standardName": "肾精亏虚证",
+            "standardCode": "SF96",
+            "note": "ICD-11 TM1 SF96（exact，教材·第4章·4.2.4）"
+          },
+          "basis": "科普按「肾精亏虚型」列型，证名级；TM1 有对应条 SF96。"
+        },
+        {
+          "part": "髓枯血虚证",
+          "verdict": "aligned",
+          "literatureName": "肾虚髓亏证",
+          "relation": "partial",
+          "level": "pattern",
+          "evidence": {
+            "kind": "icd11-tm1",
+            "path": "standards/zhenduan/tm1-landing.md",
+            "quote": "| SF95 | 肾虚髓亏证 |"
+          },
+          "why": "「髓枯血虚」在本条来源里只作**范畴名**出现（北京中医药大学学报：「归属于中医学的“血证”“虚劳”“髓枯”“血虚”等范畴」；百度健康写成「属于“髓枯血虚”」），不是证名。最接近的标准证名是 ICD-11 TM1 SF95「肾虚髓亏证」，但它只覆盖「髓枯」一侧，「血虚」要另配血虚证 —— 所以是 partial，不能当同义换名用。"
+        }
+      ]
+    },
+    {
+      "label": "湿热下注、邪留正伤证",
+      "parts": [
+        {
+          "part": "湿热下注",
+          "verdict": "as-pattern",
+          "level": "pattern",
+          "evidence": {
+            "kind": "source",
+            "url": "https://www.ndsyy.com/hbynew/info/1116/1190.htm",
+            "quote": "中医诊断：石淋（湿热下注，瘀血阻滞）"
+          },
+          "basis": "石淋医案的中医诊断写作「石淋（湿热下注，瘀血阻滞）」，证名级；但语境是石淋（输尿管结石），不是本条另一侧所在的劳疟。"
+        },
+        {
+          "part": "邪留正伤证",
+          "verdict": "unmapped",
+          "why": "文献里没有这个证名。它出自《温病条辨·卷三》劳疟条的原注「邪留正伤」，是对病机的描述（疟邪久留、气血两伤），不是证名；国家表 0 命中；本库 97 条、数百处来源里除该条讲稿外无任何证名级用法。可考虑的最接近写法「正虚邪恋」「余邪未清」在库内 0 命中，不能凭记忆登记。结论：这一侧只能靠命名层处理（改括注病种或拆名），检索与换名都补不了。"
+        }
+      ]
+    },
+    {
+      "label": "痰湿内盛、脾虚不运证",
+      "parts": [
+        {
+          "part": "痰湿内盛",
+          "verdict": "as-pattern",
+          "level": "pattern",
+          "evidence": {
+            "kind": "source",
+            "url": "https://www.yydbzz.com/CN/10.3870/j.issn.1004-0781.2026.02.006",
+            "quote": "最终引发痰湿内盛型肥胖"
+          },
+          "basis": "肥胖辨证分型综述写「痰湿内盛型肥胖」，证型级；深圳卫健委《中医对肥胖的认识及分型》另有「痰湿内盛证」整段证治（见 UNQUALIFIED.md §8）。"
+        },
+        {
+          "part": "脾虚不运证",
+          "verdict": "as-mechanism",
+          "level": "mechanism",
+          "evidence": {
+            "kind": "source",
+            "url": "https://www.zgyydb.ac.cn/zgyydb/article/html/202604029",
+            "quote": "脾虚不运，则湿聚成浊"
+          },
+          "why": "本条来源里是病机句（引《医宗金鉴》「脾虚不运，则湿聚成浊」）。另有来源作证名（上海好望角医院「辨证分为…脾虚不运证」），但按 UNQUALIFIED.md §8 的记录那一条是**与痰湿内盛证并列的实/虚两型**，正是本条停在构件级的原因 —— 不能拿它升整串级。"
+        }
+      ]
+    },
+    {
+      "label": "血热风盛、瘀毒内蕴证(白疕/松皮癣)",
+      "parts": [
+        {
+          "part": "血热风盛",
+          "verdict": "as-pattern",
+          "level": "pattern",
+          "evidence": {
+            "kind": "source",
+            "url": "https://blog.wenxuecity.com/myblog/1771/200806/27979.html",
+            "quote": "2.1 血热风盛型(169例)"
+          },
+          "crossRef": {
+            "standardName": "血热风盛证",
+            "note": "国家表单名（UNQUALIFIED.md §10.2 计数为 1 命中）"
+          },
+          "basis": "280 例银屑病分型治疗报道按「2.1 血热风盛型(169例)」列型，证名级且带例数；国家表有单名。"
+        },
+        {
+          "part": "瘀毒内蕴证",
+          "verdict": "as-mechanism",
+          "level": "mechanism",
+          "evidence": {
+            "kind": "source",
+            "url": "https://yxb.iiyiyi.com/m/wiki/42418.html",
+            "quote": "瘀毒内蕴等较常见的中医辨证"
+          },
+          "why": "只作泛指的「辨证」类词出现，没有证型编号、没有证治内容。银屑病最通行的六型（朱仁康：血热风盛／血虚风燥／风热兼湿／湿热化毒／风湿痹滞／毒热伤营）里没有「瘀毒内蕴」（UNQUALIFIED.md §10.1 整页核过）；国家表 0 命中。结论：这一侧无文献证名。"
+        }
+      ]
+    }
+  ]
+}
