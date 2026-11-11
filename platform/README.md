@@ -30,11 +30,12 @@ platform/
 │   ├── find_tools.js        外部工具探测（三个脚本共用一份，不做二次实现）
 │   ├── check_tools.js       工具可用性报告（ffmpeg / 浏览器 / TTS / pandoc）
 │   ├── extract_narration.js docs/zh.md → narration/lesson.json（分镜 + text/spoken 分离）
-│   ├── build_slides.js      docs/zh.md → slides/index.html（离线可放映；?shot=N 单帧模式）
-│   ├── render_frames.js     slides → frames/001.png …（无头 Edge/Chrome，1920×1080）
+│   ├── build_slides.js      docs/zh.md → slides/index.html + slides/manifest.json（离线可放映；?shot=N 单帧模式）
+│   ├── render_frames.js     slides → frames/001.png …（无头 Edge/Chrome，1920×1080；有 manifest 就按片截图）
 │   ├── synthesize_narration.js spoken → narration/audio/00N.mp3（edge-tts → SAPI → 人工）
 │   ├── build_subtitles.js   lesson.json → narration/subtitles.vtt（按语义群=段切分，绝不在段内断开）
-│   └── build_video.js       frames + audio → video/lesson.mp4（需要 ffmpeg，缺则明确报错）
+│   ├── build_video.js       frames + audio → video/lesson.mp4（需要 ffmpeg，缺则明确报错）
+│   └── build_hls.js         成片 → HLS 两档 + 纯音频 + 字幕组 + 发布清单（APP 播放用，产物在仓库外）
 └── courses/
     └── <dept>/<subject>/
         ├── course.yaml      课程元数据 + 章节 → 视频映射（手工维护）
@@ -83,12 +84,19 @@ tts              ✅ 可用   (Windows SAPI · Microsoft Huihui Desktop，离线
 pandoc           ⬚ 缺失   → [textbooks] 的 PDF/EPUB 排版不可用（Markdown 汇总可用）
 ```
 
-2026-10-15 起三章**全部走完整链**（1920×1080 / 25fps / 每章 12 段配音，均带 mov_text 字幕轨）：
+2026-11-10 起十章**全部走完整链**（1920×1080 / 25fps / 每章 10–12 段配音，均带 mov_text 字幕轨）：
 
 ```text
-01-yin-yang-er-fenlei   5.61 MB · 347.22s
-02-wu-xing-duo-fenlei   4.53 MB · 302.72s
-03-zang-xiang-tupu      4.75 MB · 315.31s
+01-yin-yang-er-fenlei  6.25 MB · 347.22s
+02-wu-xing-duo-fenlei  5.02 MB · 302.72s
+03-zang-xiang-tupu     5.32 MB · 315.31s
+04-xulun               5.99 MB · 273.27s
+05-qi-xue-jin-ye       5.66 MB · 263.74s
+06-jingluo-tuxing      5.67 MB · 260.87s
+07-bingyin-bingji      6.17 MB · 274.64s
+08-fangzhi-yuanze      5.83 MB · 265.37s
+09-tizhi-fabing        5.44 MB · 254.06s
+10-siwei-fangfa        5.70 MB · 264.44s
 ```
 
 上面三行与磁盘上 `video/lesson.mp4` 的体积、`narration/subtitles.json` 的 `videoSeconds`
@@ -239,8 +247,25 @@ chapters:
 3. **成片不入库。** `platform/**/video/*.mp4` 在 `.gitignore` 里；成片走 release 附件。
 4. **不伪造时间轴。** 字幕时间码必须来自真实的音频时长或 TTS 返回的时长，不许按字数估算后当成实测。
 5. **缺工具就报错。** 任何"降级为占位文件"的行为都要在输出里显式打印 `[跳过]` 与原因。
+6. **交付层单独打包，不混进仓库。** 成片 → HLS 的产物写在 `HLS_ROOT`（默认 `D:/tcm-media`），
+   仓库只收清单（`index.json` / `publish.json` 的副本可选）。策略见 `platform/MEDIA-DELIVERY.md`。
 
 ---
+
+## 视频 → APP（自适应流）
+
+```bash
+npm run media:hls -- 09-jichu/12-yaoli-xue          # 打包一门课（幂等，已打的章跳过）
+node platform/pipeline/build_hls.js <course> --only <slug>   # 单章试跑
+npm run media:hls:index                            # 只重写根清单 index.json
+npm run media:check                                # 交付层门（未打包则跳过）
+```
+
+产物结构、档位依据（1080p copy / 540p / 纯音频）、存储与 CDN 三条路径、
+APP 侧读取顺序、版本与防盗链，全部写在 **`platform/MEDIA-DELIVERY.md`**。
+
+一句话结论：**mp4 整段文件不适合 APP 流播**（首屏要等整段缓冲、弱网无档可降、音频占了 47% 字节）；
+HLS 分片后首屏只需一个 6 秒分片，1080p 档实测 182 kbps、540p 档 113 kbps、纯音频 48 kbps。
 
 ## 视频 → 站点
 

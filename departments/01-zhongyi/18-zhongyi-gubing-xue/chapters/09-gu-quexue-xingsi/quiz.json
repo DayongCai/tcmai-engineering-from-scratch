@@ -1,0 +1,79 @@
+{
+  "lesson": "09-gu-quexue-xingsi",
+  "title": "骨缺血性坏死：塌陷之前与之后",
+  "subject": "18-zhongyi-gubing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "股骨头坏死治疗的分水岭是？",
+      "options": [
+        "是否塌陷",
+        "年龄",
+        "疼痛程度",
+        "是否用激素"
+      ],
+      "correct": 0,
+      "explanation": "塌陷前可保髋，塌陷后基本只能置换。"
+    },
+    {
+      "stage": "check",
+      "question": "「围塌陷期」这个概念的意义是？",
+      "options": [
+        "把「治与不治」变成「何时治」",
+        "描述疼痛程度",
+        "区分左右",
+        "判断良恶"
+      ],
+      "correct": 0,
+      "explanation": "教材 9.1.1 概述即写入此概念。"
+    },
+    {
+      "stage": "check",
+      "question": "股骨头坏死的两个主要危险因素是？",
+      "options": [
+        "激素与酒精",
+        "外伤与吸烟",
+        "肥胖与高血压",
+        "寒冷与潮湿"
+      ],
+      "correct": 0,
+      "explanation": "问诊必问项（教材 3.2.1 亦提及）。"
+    },
+    {
+      "stage": "check",
+      "question": "本章引书数量为？",
+      "options": [
+        "8 部 12 次（全书最少）",
+        "38 部 60 次",
+        "0 部",
+        "21 部 50 次"
+      ],
+      "correct": 0,
+      "explanation": "古籍对本病直接支撑有限，教材没有硬凑。"
+    },
+    {
+      "stage": "post",
+      "question": "三证与病程的对应关系是？",
+      "options": [
+        "早期瘀血痹阻、中期痰湿阻络、后期肝肾亏虚",
+        "全期同一证",
+        "无对应",
+        "早期虚后期实"
+      ],
+      "correct": 0,
+      "explanation": "本章少见的「证—期」一一对应。"
+    },
+    {
+      "stage": "post",
+      "question": "胫骨结节骨骺炎被归入缺血性坏死章的理由是？",
+      "options": [
+        "病理基础同为骨骺血供不足",
+        "因为都需手术",
+        "因为都好发于儿童",
+        "因为都疼痛"
+      ],
+      "correct": 0,
+      "explanation": "教材 9.2.1。"
+    }
+  ]
+}

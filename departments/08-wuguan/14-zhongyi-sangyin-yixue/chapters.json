@@ -1,54 +1,71 @@
 {
-  "slug": "14-zhongyi-sangyin-yixue",
-  "title": "中医嗓音医学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-shengyin-shengxue",
-      "title": "嗓音的生理与声学基础",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-zhangai-pinggu",
-      "title": "嗓音障碍的评估方法",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-hou-jiancha",
-      "title": "喉的检查与喉镜",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-sangyin-bianzheng",
-      "title": "嗓音病的中医辨证",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-shengdai-xiaojie",
-      "title": "声带小结与息肉的处理",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-xunlian-kangfu",
-      "title": "嗓音训练与康复",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-houfanliu-sangyin",
-      "title": "咽喉反流与嗓音",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-xiaoguo-celiang",
-      "title": "嗓音治疗的效果测量",
-      "status": "📋"
-    }
-  ]
+ "slug": "14-zhongyi-sangyin-yixue",
+ "title": "中医嗓音医学",
+ "note": "8 章 = 教材 8 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-e141",
+   "title": "咽喉的中医解剖与生理",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-e142",
+   "title": "咽喉病的病因病机",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-e143",
+   "title": "咽喉病的辨证",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-e144",
+   "title": "咽喉病的治法",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-e145",
+   "title": "喉痹与乳蛾",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-e146",
+   "title": "喉喑与失音",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-e147",
+   "title": "声带疾病与用嗓卫生",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-e148",
+   "title": "咽喉急症与调护",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

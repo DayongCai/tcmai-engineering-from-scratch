@@ -1,54 +1,71 @@
 {
-  "slug": "12-zhongyiyao-biaozhunhua",
-  "title": "中医药标准化",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-fenji-tixi",
-      "title": "标准的分级与体系",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-shuyu-bianma",
-      "title": "术语标准与编码",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-zhenghou-biaozhun",
-      "title": "证候与疗效评价标准",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-yaocai-biaozhun",
-      "title": "中药材与饮片标准",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-fangji-biaozhun",
-      "title": "方剂与中成药标准",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-xuewei-guobiao",
-      "title": "针灸腧穴的国际标准",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-zhiding-chengxu",
-      "title": "标准制定的程序与共识",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-shishi-pingjia",
-      "title": "标准实施的符合性评价",
-      "status": "📋"
-    }
-  ]
+ "slug": "12-zhongyiyao-biaozhunhua",
+ "title": "中医药标准化",
+ "note": "8 章 = 教材 8 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-z121",
+   "title": "标准化的对象：从术语到数据元",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-z122",
+   "title": "标准体系与层级",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-z123",
+   "title": "编码与分类",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-z124",
+   "title": "数据元与元数据",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-z125",
+   "title": "知识组织与本体",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-z126",
+   "title": "映射与对齐",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-z127",
+   "title": "标准落地：系统与流程",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-z128",
+   "title": "标准评价与合规",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

@@ -1,0 +1,168 @@
+{
+ "slug": "18-huli-zonghe-jineng",
+ "title": "护理综合技能",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-ch01",
+   "title": "护理综合技能概述与训练要求",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-ch01/docs/zh.md",
+   "code": "chapters/01-ch01/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-ch02",
+   "title": "技能操作的基本规范与准备要求",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-ch02/docs/zh.md",
+   "code": "chapters/02-ch02/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-ch03",
+   "title": "技能操作中的患者安全与权益保护",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-ch03/docs/zh.md",
+   "code": "chapters/03-ch03/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-ch04",
+   "title": "生命体征与一般状况观察类技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-ch04/docs/zh.md",
+   "code": "chapters/04-ch04/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-ch05",
+   "title": "给药相关护理技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-ch05/docs/zh.md",
+   "code": "chapters/05-ch05/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-ch06",
+   "title": "无菌技术与伤口护理类技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-ch06/docs/zh.md",
+   "code": "chapters/06-ch06/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-ch07",
+   "title": "氧疗与气道护理类技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-ch07/docs/zh.md",
+   "code": "chapters/07-ch07/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-ch08",
+   "title": "排泄与导尿护理类技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-ch08/docs/zh.md",
+   "code": "chapters/08-ch08/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-ch09",
+   "title": "体位与活动与转运类技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-ch09/docs/zh.md",
+   "code": "chapters/09-ch09/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-ch10",
+   "title": "急救与复苏配合技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-ch10/docs/zh.md",
+   "code": "chapters/10-ch10/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-ch11",
+   "title": "中医护理技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-ch11/docs/zh.md",
+   "code": "chapters/11-ch11/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-ch12",
+   "title": "围手术期与专科协作类技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-ch12/docs/zh.md",
+   "code": "chapters/12-ch12/code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-ch13",
+   "title": "综合模拟训练与情景演练",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/13-ch13/docs/zh.md",
+   "code": "chapters/13-ch13/code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-ch14",
+   "title": "技能考核与评价要求",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/14-ch14/docs/zh.md",
+   "code": "chapters/14-ch14/code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-ch15",
+   "title": "技能教学与团队协作",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/15-ch15/docs/zh.md",
+   "code": "chapters/15-ch15/code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-ch16",
+   "title": "技能风险与质量安全管理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/16-ch16/docs/zh.md",
+   "code": "chapters/16-ch16/code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-ch17",
+   "title": "社区与居家护理技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/17-ch17/docs/zh.md",
+   "code": "chapters/17-ch17/code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-ch18",
+   "title": "护理综合技能与 tcmP 平台",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/18-ch18/docs/zh.md",
+   "code": "chapters/18-ch18/code/main.js"
+  }
+ ]
+}

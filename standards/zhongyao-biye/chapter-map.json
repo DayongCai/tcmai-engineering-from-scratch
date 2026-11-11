@@ -1,0 +1,104 @@
+{
+ "note": "派生课：本库无该毕设教材；一章一环节，取对应专业课单元，正文挂 standards/biye 台账锚点。",
+ "chapters": {
+  "01-xuan-ti": {
+   "n": 1,
+   "title": "选题：从质量标志物到可验证假设",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4"
+   ],
+   "srcChapters": [
+    "zhongyao-fenxi#10"
+   ],
+   "why": "从质量标准与标准化切入：中药毕设的选题几乎都落在「用什么指标能证明质量一致」上",
+   "derivedFrom": "zhongyao-fenxi 第10章"
+  },
+  "02-yangpin-zhunbei": {
+   "n": 2,
+   "title": "样品与数据准备（批次、指纹图谱）",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6",
+    "2.7",
+    "2.8",
+    "2.9",
+    "2.10"
+   ],
+   "srcChapters": [
+    "zhongyao-fenxi#2",
+    "zhongyao-fenxi#7"
+   ],
+   "why": "取样程序 ＋ 指纹图谱：代表性由取样决定，可比性由图谱决定",
+   "derivedFrom": "zhongyao-fenxi 第2章、zhongyao-fenxi 第7章"
+  },
+  "03-shiyan-shixian": {
+   "n": 3,
+   "title": "实验与建模实现",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5",
+    "3.6"
+   ],
+   "srcChapters": [
+    "zhongyao-huaxue#2"
+   ],
+   "why": "成分研究的一般方法：提取、分离、鉴定这条链是中药实验的通用骨架",
+   "derivedFrom": "zhongyao-huaxue 第2章"
+  },
+  "04-fangfaxue-yanzheng": {
+   "n": 4,
+   "title": "质量一致性与方法学验证",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4"
+   ],
+   "srcChapters": [
+    "zhongyao-fenxi#11"
+   ],
+   "why": "方法学验证独立成章：专属性、精密度、回收率、线性，缺一项结论就不能用",
+   "derivedFrom": "zhongyao-fenxi 第11章"
+  },
+  "05-lunwen-dabian": {
+   "n": 5,
+   "title": "论文写作与答辩",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4"
+   ],
+   "srcChapters": [
+    "zhongyao-fenxi#1"
+   ],
+   "why": "绪论定框架：论文的证据链要从绪论就搭好，不是最后拼",
+   "derivedFrom": "zhongyao-fenxi 第1章"
+  },
+  "06-zhishi-yijiao": {
+   "n": 6,
+   "title": "知识移交：实验记录与交接",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4"
+   ],
+   "srcChapters": [
+    "zhongyao-yaoji#12"
+   ],
+   "why": "把方法交出去：工艺与质量的数字化记录，是移交的全部内容",
+   "derivedFrom": "zhongyao-yaoji 第12章"
+  }
+ }
+}

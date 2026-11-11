@@ -1,0 +1,79 @@
+{
+  "lesson": "05-zhiliao-yuanze",
+  "title": "治疗原则：调神、开窍，先安全后辨证",
+  "subject": "20-zhongyi-jingshenbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "精神科治疗的次序原则是？",
+      "options": [
+        "先安全后辨证",
+        "先辨证后安全",
+        "同时进行",
+        "只做安全"
+      ],
+      "correct": 0,
+      "explanation": "教材 5.1.2 把安全与监护单列一节。"
+    },
+    {
+      "stage": "check",
+      "question": "四类治法不包括？",
+      "options": [
+        "峻下逐水",
+        "化痰开窍",
+        "活血化瘀",
+        "温阳开郁"
+      ],
+      "correct": 0,
+      "explanation": "四法：化痰、活血、温阳、重镇。"
+    },
+    {
+      "stage": "check",
+      "question": "「不用藏药方式」这条规矩的理由是？",
+      "options": [
+        "隐蔽给药破坏信任且剂量不可控",
+        "因为麻烦",
+        "因为药贵",
+        "因为无必要"
+      ],
+      "correct": 0,
+      "explanation": "教材 5.1.2 依从性部分。"
+    },
+    {
+      "stage": "check",
+      "question": "本章引书数量为？",
+      "options": [
+        "3 部 5 次（全书最少）",
+        "25 部 42 次",
+        "0 部",
+        "19 部 32 次"
+      ],
+      "correct": 0,
+      "explanation": "治法章以现代临床经验为主。"
+    },
+    {
+      "stage": "post",
+      "question": "温阳开郁法对应哪一证？",
+      "options": [
+        "肾虚阳郁（郁病后期）",
+        "痰火扰神",
+        "痰气郁结",
+        "瘀血阻窍"
+      ],
+      "correct": 0,
+      "explanation": "与第 7 章「肾虚阳郁证」呼应。"
+    },
+    {
+      "stage": "post",
+      "question": "中西医结合的边界在教材中如何表述？",
+      "options": [
+        "抗精神病药为主、中药为辅",
+        "中药为主",
+        "两者等同",
+        "只用中药"
+      ],
+      "correct": 0,
+      "explanation": "第 5 章定调，第 12 章展开。"
+    }
+  ]
+}

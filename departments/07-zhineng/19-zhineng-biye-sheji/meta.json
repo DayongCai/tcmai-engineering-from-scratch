@@ -1,0 +1,34 @@
+{
+  "slug": "19-zhineng-biye-sheji",
+  "title": "智能系毕业设计与知识移交",
+  "en": "AI Capstone & Handover",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 153,
+  "type": "Build",
+  "semester": 10,
+  "stage": "yi",
+  "stageTitle": "已",
+  "hours": 72,
+  "bridge": "中医问题→可复现实验 / 标注→规范 / 误差→可解释归因",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/19-zhineng-biye-sheji",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/19-zhineng-biye-sheji",
+    "chaptersWritten": 6,
+    "words": 3256,
+    "status": "wip",
+    "layer": "handbook",
+    "contract": "handbook-v1",
+    "origin": "handbook",
+    "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
+    "extractedAt": "2026-11-09"
+  }
+}

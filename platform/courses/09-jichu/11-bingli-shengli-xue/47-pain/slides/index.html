@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>第 47 章 · 疼痛：四环节、两级敏化与一条从症状到疾病的转弯 · 幻灯片</title>
+<style>
+
+:root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
+--jade:#1f6f5c;--jade-soft:#e3efe9;--cinnabar:#a8321e;--cinnabar-soft:#f7e6e2;--gold:#a8862a;
+--sans:system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;
+--serif:"Songti SC","Noto Serif SC",Georgia,serif;
+--mono:ui-monospace,"Cascadia Mono",Consolas,monospace;}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#12110f;color:var(--ink);font-family:var(--sans)}
+#deck{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{min-height:100%;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;
+  padding:5vh 7vw;background:var(--paper);border-bottom:1px solid #000}
+.slide-inner{max-width:1000px;width:100%;margin:0 auto}
+.slide-foot{max-width:1000px;width:100%;margin:3vh auto 0;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+h1.big{font-family:var(--serif);font-size:clamp(28px,4.4vw,54px);line-height:1.25;margin:0}
+blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-height:1.6;margin:0;
+  border-left:6px solid var(--gold);padding-left:24px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--jade);
+  text-transform:uppercase;margin-bottom:14px}
+.kicker.warn{color:var(--cinnabar)}
+p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
+.compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
+.compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+/* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
+.math{font-style:italic;font-family:var(--serif)}
+.math-block{display:block;text-align:center;font-family:var(--serif);font-size:1.05em;margin:.8em 0}
+.math-op,.math-text,.math-rm{font-style:normal}
+.math-op{padding:0 .12em}
+.math-cal{font-style:normal}
+.math-bb{font-style:normal;font-weight:700}
+.frac{display:inline-block;vertical-align:middle;text-align:center;font-style:normal;margin:0 .15em;line-height:1.15}
+.frac-num{display:block;padding:0 .3em;border-bottom:1px solid currentColor}
+.frac-den{display:block;padding:0 .3em}
+.math-sqrt{font-style:normal;margin-right:.05em}
+.math-line{border-top:1px solid currentColor;font-style:normal;padding-top:.05em}
+.math-note{font-size:.8em;font-style:normal}
+.figure-host{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+#hud{position:fixed;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#8a8578;
+  background:#faf8f3cc;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
+@media print{.slide{page-break-after:always;min-height:auto}#hud{display:none}}
+</style>
+</head>
+<body>
+<div id="deck">
+<section class="slide" data-i="0">
+  <div class="slide-inner"><h1 class="big">第 47 章 · 疼痛：四环节、两级敏化与一条从症状到疾病的转弯</h1></div>
+  <div class="slide-foot"><span>1 / 30</span><span>title</span></div>
+</section>
+<section class="slide" data-i="1">
+  <div class="slide-inner"><blockquote class="motto">「疼痛的缺失比疼痛更危险」——补充·hermes-病理生理学讲义·第47章·47.1（《hermes-病理生理学讲义·第47章·47.1》）</blockquote></div>
+  <div class="slide-foot"><span>2 / 30</span><span>motto</span></div>
+</section>
+<section class="slide" data-i="2">
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">疼痛这一章最容易被当成一张量表加一张药表：疼几分、给什么。这套读法在第一个真问题前就塌了——为什么同一种损伤，有人数日恢复，有人多年不减，检查却一再找不到新病灶？为什么揉一揉有用，而忍一忍会让事情变坏？为什么把疼痛彻底压掉不是治疗目标？要答这三问，得先把疼痛还原成一条四环节的链：转导、传导、整合、调控。链一立，敏化就有了位置——它不是疼得更厉害，而是这条链的增益被永久调高，于是疼痛从症状变成疾病状态。</p></div>
+  <div class="slide-foot"><span>3 / 30</span><span>problem</span></div>
+</section>
+<section class="slide" data-i="3">
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（病房与讨论课上关于疼痛的追问几乎都落在两处：把检查未见异常读成疼痛不成立，或把疼痛程度直接换算成损伤程度。前者取消了当事人的体验，后者把强度当成病灶的度量；两种误读都不是知识缺口，而是把一条多环节的链压成了单点，于是增益、情绪与调控全部消失）+ 知识积累（本章 11 节、4082 个非空白字符，关键词频现算为「疼痛」45 次、「伤害」14 次、「功能」13 次、「敏化」9 次、「情绪」8 次、「中枢」8 次：疼痛一词占绝对多数，说明全章围绕这一体验展开；敏化与中枢各 8 至 9 次，恰好是后六节的笔墨重心——机制从外周走向中枢的那一段，就是本章真正要讲的东西。功能 13 次高于敏化，提示讲义在机制之外还留了评估与管理这条线）</p></div>
+  <div class="slide-foot"><span>4 / 30</span><span>roots</span></div>
+</section>
+<section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、定义里的两个词：或潜在、不愉快</div>
+                <div class="compact"><p>47.1 用一句界定把疼痛从「损伤的读数」里拉了出来：</p>
+<blockquote><p>「与实际或潜在组织损伤相关的不愉快感觉与情绪体验」——补充·hermes-病理生理学讲义·第47章·47.1</p></blockquote>
+<p>两个词是这句的分量。「或潜在」承认疼痛可以在没有明显组织损伤时存在——这是 47.6 全部推理的前提，若疼痛必须有病灶才成立，中枢敏化造成的疼痛就成了伪命题。「不愉快」把情绪写进定义，删掉它，剩下的是感觉辨别任务，不是疼痛。讲义由此给出四个维度：感觉-辨别、情绪-动机、认知、社会；并用它解释单纯提高镇痛强度常不足以改善疼痛相关失能——恐惧、失眠与角色丧失未处理时，四维里只有第一维被压住。</p>
+<p>疼痛还是有保护价值的防御系统。讲义举的证据是先天性无痛症者反复骨折、关节破坏、烧伤无察觉，由此得出卷首那句判断，并把目标写成恢复功能而非彻底消除信号。两者在多数情形下同向，在慢性疼痛里却会分岔（47.8 会回到这一点）。</p></div></div>
+  <div class="slide-foot"><span>5 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">二、转导：伤害感受器、炎症汤与沉默的那一群</div>
+                <div class="compact"><p>47.2 讲第一环：把机械、温度与化学刺激变成电信号。执行者是分布于皮肤、肌肉、关节、内脏与血管壁的游离神经末梢，关键分子是温度敏感的 TRP 通道、机械敏感通道与酸敏感离子通道。这一层是纯转导，尚未涉及疼不疼。</p>
+<p>损伤后局面改变：损伤处释放的一组物质被讲义称作炎症汤——缓激肽、前列腺素、组胺、5-羟色胺、ATP、氢离子与神经生长因子。它们不直接引发冲动，而是降低阈值、增加自发电活，即外周敏化；临床表现是静息痛与局部压痛，原本不痛的刺激开始引起疼痛。沉默伤害感受器平时不响应、炎症时被招募，讲义用一句临床画面解释它：</p>
+<blockquote><p>「平时不痛的组织在炎症后一碰就痛」——补充·hermes-病理生理学讲义·第47章·47.2</p></blockquote></div></div>
+  <div class="slide-foot"><span>6 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、转导：伤害感受器、炎症汤与沉默的那一群</div>
+                <div class="compact"><p>这句话说明阈值不是固定属性，而是可被局部化学环境临时改写的一组参数。神经源性炎症则把因果方向倒过来：C 纤维末梢释放 P 物质与降钙素基因相关肽引起血管扩张与水肿，疼痛系统本身也能制造炎症。本节末尾处理定位陷阱——内脏伤害感受器密度低、感受野大，其传入与躯体纤维在脊髓汇聚于同一投射神经元，大脑无法区分来源，形成牵涉痛：心肌缺血表现为左肩、左臂与下颌痛。疼痛的部位因此不等于病灶的部位。</p></div></div>
+  <div class="slide-foot"><span>7 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">三、传导：两类纤维、一个背角、四条上行通路</div>
+                <div class="compact"><p>47.3 拆第二环。纤维分工写在传导速度上：Aδ 纤维有髓、传导快，产生尖锐定位明确的「第一痛」；C 纤维无髓、传导慢，产生钝而弥散的「第二痛」，并携带情绪色彩。这解释了一次损伤为何常有两种性质的痛前后相接。Aβ 纤维传导触觉与振动，正常情况下不引起疼痛——但在中枢敏化后被招募进痛通路。这是本章最重要的一处伏笔：轻触引起疼痛，靠的不是新通路，而是旧通路被改了用途。</p>
+<p>脊髓背角是第一整合站：C 与 Aδ 传入释放谷氨酸、P 物质与降钙素基因相关肽，一方面使投射神经元上行，一方面激活局部中间神经元形成环路。讲义另加一层近年才被重视的机制——持续输入激活胶质细胞，释放细胞因子与脑源性神经营养因子增强痛传递。胶质细胞本是免疫与支持细胞，它进入痛通路，说明这一环已不只是神经元的电活动。</p></div></div>
+  <div class="slide-foot"><span>8 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、传导：两类纤维、一个背角、四条上行通路</div>
+                <div class="compact"><p>上行通路分四路：脊髓丘脑束管定位、性质与强度辨别；脊髓网状束管觉醒、注意力与自主反应；脊髓中脑束给情绪、自主与下行调控提供输入；脊髓颈束与后索管内脏与深部痛的双侧传递。四路并排读能看出一件事：信号不是一条专线，而是分头投递，这正是疼痛同时改变注意力、心率与情绪的原因。末段的解剖推论最值钱——痛温觉纤维在脊髓内交叉后上行，故脊髓半切产生</p>
+<blockquote><p>「对侧痛温觉丧失、同侧本体感觉与运动障碍」——补充·hermes-病理生理学讲义·第47章·47.3</p></blockquote>
+<p>的分离性感觉障碍。这是本章少数能由结构直接推出表现的例子。</p></div></div>
+  <div class="slide-foot"><span>9 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">四、中枢整合：疼痛矩阵与强度、不愉快的分离</div>
+                <div class="compact"><p>47.4 处理第三环。丘脑是主要中继，但疼痛体验由一组结构共同构建：躯体感觉皮层负责定位、强度与性质；岛叶负责内感受、自主反应与身体状态整合；前扣带皮层负责不愉快感与回避动机；前额叶负责评价、意义赋予、注意调控与抑制；杏仁核负责恐惧、警觉与情绪记忆。</p>
+<p>五个结构并列，指向一条关键结论：</p>
+<blockquote><p>「强度与不愉快由不同成分编码」——补充·hermes-病理生理学讲义·第47章·47.4</p></blockquote>
+<p>证据是临床观察：前额叶或扣带区受损者仍能准确报告位置与强度，却诉不再为此痛苦。这一个案同时否掉两种简化——疼痛不是单一强度轴上的一个点，痛苦也不是强度的同义词。反向证据同样成立：焦虑与灾难化思维放大不愉快成分，使同等强度造成更大失能。两句合起来得到本章最要紧的一次拆分：同一个强度值，配上不同的认知与情绪状态，可以是完全不同的生活处境。</p></div></div>
+  <div class="slide-foot"><span>10 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、中枢整合：疼痛矩阵与强度、不愉快的分离</div>
+                <div class="compact"><p>本节末尾把皮层与下行系统的关系定为双向：预期、注意力、情绪状态直接改变上行信号的增益。讲义由此给出很硬的评价——分心、解释、重建意义不是安慰性的空话，而是有生理基础的调制手段。这句话把心理干预从陪聊的位置挪到机制的位置。</p></div></div>
+  <div class="slide-foot"><span>11 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">五、内源性调控：一条下行通路与一道闸门</div>
+                <div class="compact"><p>47.5 讲第四环，全章唯一一处机体自己镇痛的机制。通路写得具体：中脑导水管周围灰质经延髓头端腹内侧区到脊髓背角，经去甲肾上腺素与 5-羟色胺下行纤维抑制传入；内阿片肽及其受体遍布这条通路。三段结构加两类递质，构成一套从脑干到背角的刹车。</p>
+<p>闸门控制学说给它一个更直观的模型：背角存在一个闸门，Aβ 触觉传入的激活可抑制 C 纤维传递，下行纤维亦可关闭闸门。三类日常经验由此得到解释——揉一揉、热敷、按摩能减轻疼痛；注意力集中于他事时疼痛减轻；焦虑、失眠与孤立时疼痛加重，因为下行抑制被削弱。第三类最易被误读：它不是说疼痛想出来的，而是说下行抑制是一项需要资源的生理功能，资源不足时刹车变弱。</p>
+<p>讲义另给两个临床证据：应激性镇痛与安慰剂效应，后者可被相应拮抗剂部分逆转。这一点使预期成为可被药理手段检验的生理变量，而不是一句态度评价。由此得到实践含义：</p></div></div>
+  <div class="slide-foot"><span>12 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">五、内源性调控：一条下行通路与一道闸门</div>
+                <div class="compact"><blockquote><p>「疼痛管理的环境、沟通与预期，本身即为有效成分」——补充·hermes-病理生理学讲义·第47章·47.5</p></blockquote></div></div>
+  <div class="slide-foot"><span>13 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">六、敏化：四级改变与一次性质转换</div>
+                <div class="compact"><p>47.6 是全章枢纽，把散落的敏化拼成四级。外周敏化：炎症介质降低阈值、增加自发电活，表现为静息痛、压痛、对刺激反应增强。中枢敏化：持续 C 纤维输入使背角神经元反应增强、感受野扩大、阈值下降，机制是 wind-up 与长时程增强样改变；两个词必须分清——痛觉过敏是对伤害性刺激反应过强，异常性疼痛是轻触、穿衣、微风即引起疼痛。去抑制：抑制性中间神经元丢失或 GABA 能功能下降，神经损伤后常见，刹车失灵。结构重塑：皮层代表区重组、下行调制失衡、HPA 轴与免疫改变、睡眠结构破坏。</p>
+<p>四级排下来是一条完整的病理生理序列：从阈值下降到环路重组，从功能改变到结构改变。讲义由此给出核心命题——疼痛可以从症状转变为疾病状态。它的推论必须写准，否则极易被误读为疼痛是想象出来的：</p>
+<blockquote><p>「这不等于疼痛不存在，而是提示机制已从外周转移到中枢」——补充·hermes-病理生理学讲义·第47章·47.6</p></blockquote></div></div>
+  <div class="slide-foot"><span>14 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">六、敏化：四级改变与一次性质转换</div>
+                <div class="compact"><p>方向变了，靶点也就变了：针对外周的干预在中枢敏化阶段可能收效有限，这不是干预无效，而是打在了错的一环上。讲义把本节的实践价值落在反面：理解这一点，是避免</p>
+<blockquote><p>「反复检查、反复加量、反复失望」——补充·hermes-病理生理学讲义·第47章·47.6</p></blockquote>
+<p>这一医源性循环的前提。三个动作的顺序值得注意——先找病灶，再压强度，最后失望；三步建立在同一个假设上：疼痛强度应当与病灶成比例。假设一旦不成立，三步全部落空。</p></div></div>
+  <div class="slide-foot"><span>15 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">七、机制分类：五类与两类被忽略的情形</div>
+                <div class="compact"><p>47.7 把四环机制折成一张按机制分类的表。这是全章最实用的一节，落点是选靶点而不是贴病名。</p>
+<div class="table-wrap"><table><thead><tr><th>类别</th><th>机制</th><th>临床特征</th><th>处理方向</th></tr></thead><tbody><tr><td>伤害性（躯体）</td><td>持续伤害性刺激激活完整通路</td><td>定位清晰、与损伤程度相称、活动时加重</td><td>减少伤害性输入、抗炎、制动</td></tr><tr><td>伤害性（内脏）</td><td>内脏感受器激活、汇聚-投射</td><td>定位模糊、伴恶心出汗、可牵涉</td><td>针对原发病，辅以调制</td></tr><tr><td>神经病理性</td><td>躯体感觉系统病变或疾病</td><td>烧灼、电击、针刺样，伴麻木、异常性疼痛、痛觉过敏</td><td>针对神经机制，常规镇痛药反应差</td></tr><tr><td>混合性</td><td>两类机制并存</td><td>癌痛、腰背痛常见</td><td>分层处理各成分</td></tr><tr><td>可塑性/中枢性</td><td>中枢敏化为核心，无明确外周损伤</td><td>广泛痛、疲劳、睡眠障碍、多部位压痛</td><td>功能恢复、运动、认知行为治疗</td></tr></tbody></table></div>
+<p>第四列是重点，讲义用一句话收口：</p>
+<blockquote><p>「同等强度的疼痛，机制不同，方向就不同」——补充·hermes-病理生理学讲义·第47章·47.7</p></blockquote></div></div>
+  <div class="slide-foot"><span>16 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">七、机制分类：五类与两类被忽略的情形</div>
+                <div class="compact"><p>表外另有两类情形被单独点出，因为它们最容易被漏掉或被污名化。心因性放大：讲义特意写明它真实存在，不是装病，而是中枢调制异常的结果——这一措辞把查不出原因从没有病改写为机制在上游。药物相关性疼痛：包括反跳痛与阿片诱导的痛觉过敏，即用于镇痛的干预本身可以加重疼痛敏感，这条必须留在鉴别清单上。</p></div></div>
+  <div class="slide-foot"><span>17 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">八、急性与慢性：一条关系是否仍然成立</div>
+                <div class="compact"><p>47.8 用一对比较把全章收在一处判断上。急性疼痛有明确损伤、有保护价值、随组织愈合而消退；机制以外周伤害感受器激活与外周敏化为主，伴交感激活与焦虑；处理目标是缓解疼痛、支持愈合、预防并发症——讲义举的例子很具体：术后因疼痛不敢咳嗽导致肺不张。慢性疼痛则在组织愈合所需时间之外仍持续（讲义以月计，明确不给具体界值），已失去保护价值；机制以中枢敏化、去抑制、皮层重组与神经免疫改变为主，常伴睡眠障碍、抑郁、疲劳与活动回避；目标转向功能恢复与自我管理。</p>
+<p>两者的分界不是时长，而是一条关系：</p>
+<blockquote><p>「伤害性输入—疼痛强度」——补充·hermes-病理生理学讲义·第47章·47.8</p></blockquote>
+<p>的关系是否仍然成立。急性期紧密，慢性期被削弱。这个判据比任何时点都稳，因为它直接对准机制：关系削弱，说明链上某一环——多半是中枢——已经改了增益。</p></div></div>
+  <div class="slide-foot"><span>18 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">八、急性与慢性：一条关系是否仍然成立</div>
+                <div class="compact"><p>由此推出两条要求。第一，慢性疼痛的评估必须包含功能（睡眠、行走、工作、社交）与心理社会因素，而不只是强度评分：强度在慢性期已不能代表病情。第二，把无痛作为唯一目标会反噬——讲义写得直接，那往往导致过度用药与功能进一步退化。这与 47.1 的恢复功能形成闭环：目标从来不是消掉信号，而是把功能拿回来。</p></div></div>
+  <div class="slide-foot"><span>19 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">九、评估：自述是金标准，记录要成闭环</div>
+                <div class="compact"><p>47.9 只给一份清单，但每一行都对着一个具体的失败模式。第一行是自述：部位、性质、强度、时间模式、诱发与缓解因素、对功能的影响；工具包括数字评分、视觉模拟与面部表情量表，各有适用人群与局限。自述排第一的理由在定义里已经写明——删掉主观成分就不剩疼痛。</p>
+<p>第二行处理无法自述者：婴幼儿、痴呆、镇静、语言障碍、危重患者。办法是行为观察（面部表情、保护性动作、呻吟、僵硬）、生理指标与照护者报告，用结构化工具并建立个体基线。这里有一条硬约束——单次生理指标不能作为疼痛证据：交感激活可被恐惧、发热、容量不足等无数原因触发，它不是疼痛的特异信号。第三行是神经病理性筛查：烧灼或电击样痛、麻木、异常性疼痛、痛觉过敏，用问卷辅助；它问的是机制特征，不是强度。第四行是功能与风险：睡眠、活动能力、情绪、工作与社交、抑郁与自杀风险、物质使用与用药风险——这一行最容易被简化掉，却是评估能否成立的关键。</p>
+<p>第五行给出记录的单位：</p></div></div>
+  <div class="slide-foot"><span>20 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">九、评估：自述是金标准，记录要成闭环</div>
+                <div class="compact"><blockquote><p>「疼痛—干预—再评估」——补充·hermes-病理生理学讲义·第47章·47.9</p></blockquote>
+<p>构成一个完整记录单元，孤立的强度数字没有临床意义。这句话在方法上等于一章的结论：评估的对象不是一次测量，而是一次干预前后的变化。</p></div></div>
+  <div class="slide-foot"><span>21 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">十、管理：按机制分层与五条原则</div>
+                <div class="compact"><p>47.10 把前面所有机制折成方向，而不是方案。伤害性成分减少伤害性输入（制动、冷热敷、抗炎、局部麻醉）与非阿片类镇痛；神经病理性成分作用于钙通道亚基、5-羟色胺与去甲肾上腺素再摄取、钠通道等靶点，以及局部外用制剂；中枢敏化成分以功能恢复为核心——分级运动与活动、睡眠管理、认知行为治疗、患者教育与信念重建；此外还有经皮电刺激、按摩、针灸、放松与正念训练、物理治疗、多学科疼痛门诊。</p>
+<p>分层的意义在于，它把加量这一默认动作替换成换层。若中枢成分占优，在同一靶点上继续加量只增加副作用，不增加疗效——这正是 47.6 那个医源性循环的机制解释。五条原则同样值得记住：多模式、按时而非按痛、以功能为目标、定期再评估、避免单一手段长期依赖。五条没有一条关于更强的药，全部关于结构。</p></div></div>
+  <div class="slide-foot"><span>22 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">十、管理：按机制分层与五条原则</div>
+                <div class="compact"><p>安全方向讲义列了四类：阿片类的呼吸抑制、便秘、耐受与依赖风险；非甾体类的胃肠与肾损害；老年与肝肾功能不全者的代谢差异；以及疼痛缓解后活动量骤增造成的二次损伤。最后一条把疼痛被压住与组织已能承受负荷分开，与 47.1 的保护系统定位一致。讲义在此收口：</p>
+<blockquote><p>「本讲义不提供剂量与方案」——补充·hermes-病理生理学讲义·第47章·47.10</p></blockquote>
+<p>本页照录这条边界，不补充任何具体取值。</p></div></div>
+  <div class="slide-foot"><span>23 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">十一、生命周期与特殊人群：五处系统性偏差</div>
+                <div class="compact"><p>47.11 按人群列偏差，五条有一个共同点——它们都不是机制的新版本，而是机制在不同人群里的表达与测量受到了干扰。</p>
+<p>儿童：痛觉通路在发育早期即功能完整，新生儿甚至更敏感；表达能力有限，须依行为与家长报告；反复的疼痛性操作应做程序性镇痛，并注意远期影响（针头恐惧、痛觉敏化）。后一句把一次操作与长期敏化连起来，正是 47.6 四级改变在小年龄段的版本。老年：疾病负荷大而常少报疼痛，原因很实在——认为老了就该痛、怕被视为抱怨、担心药物副作用；认知障碍者评估困难；多种合并用药增加相互作用与跌倒风险。少报是系统性偏差：它让评估值系统性偏低，而不是随机波动。</p></div></div>
+  <div class="slide-foot"><span>24 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="24">
+  <div class="slide-inner"><div class="kicker">十一、生命周期与特殊人群：五处系统性偏差</div>
+                <div class="compact"><p>妊娠与哺乳：用药须权衡母婴双方风险，非药物手段优先，只给方向不给方案。文化与语言：表达方式、忍耐规范与求助行为差异大；讲义点出以表情平静判断无痛是最常见的评估错误之一——这与 47.4 的强度与不愉快分离互为印证：不愉快的表达受规范约束，强度却不能靠表情读出。临终与重症：舒适为优先目标；镇痛与镇静的边界、以及可能缩短生命的伦理顾虑，需团队与家属充分沟通。讲义在末句给出一个判断：</p>
+<blockquote><p>「未被控制的疼痛本身就是痛苦的主要来源」——补充·hermes-病理生理学讲义·第47章·47.11</p></blockquote>
+<p>这句话把是否用药的讨论从抽象伦理拉回到具体的痛苦负担上。</p></div></div>
+  <div class="slide-foot"><span>25 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="25">
+  <div class="slide-inner"><div class="kicker">十二、节级落位：讲义 47.1–47.11</div>
+                <div class="compact"><div class="table-wrap"><table><thead><tr><th>节号</th><th>一句话落位</th></tr></thead><tbody><tr><td>47.1 定义与多维性</td><td>或潜在解耦损伤，四维解释为何单靠镇痛不够；缺失比疼痛更危险</td></tr><tr><td>47.2 转导</td><td>伤害感受器与炎症汤；沉默感受器被招募；汇聚-投射造成牵涉痛</td></tr><tr><td>47.3 传导与上行通路</td><td>两类纤维两种痛；背角整合与胶质细胞；四条上行通路分工</td></tr><tr><td>47.4 中枢整合</td><td>五结构构成疼痛矩阵；强度与不愉快分离；皮层与下行双向</td></tr><tr><td>47.5 内源性调控</td><td>脑干到背角的下行刹车；闸门控制；预期是有效成分</td></tr><tr><td>47.6 敏化</td><td>四级改变；疼痛从症状变疾病状态；医源性循环的机制</td></tr><tr><td>47.7 机制分类</td><td>五类对照表；心因性放大非装病；药物相关性疼痛</td></tr><tr><td>47.8 急性与慢性</td><td>分界是输入与强度的关系是否成立；目标从无痛转功能</td></tr><tr><td>47.9 评估</td><td>自述为金标准；无法自述者的替代路径；记录成闭环</td></tr><tr><td>47.10 管理</td><td>按机制分层而非加量；五条原则；安全方向不给剂量</td></tr><tr><td>47.11 生命周期</td><td>五处系统性偏差：少报、表情、发育、权衡、伦理</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>26 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="26">
+  <div class="slide-inner"><div class="kicker">十二、节级落位：讲义 47.1–47.11</div>
+                <div class="compact"><p>十一节的次序是一条链的次序：47.1 定词与四维，47.2 到 47.5 走完四环节，47.6 让链改变性质，47.7 到 47.11 讲怎么按改变后的链去分类、评估与管理。若从 47.9 开始读，评估清单会变成一份要背的表；先读 47.6，才知道这份清单每一项在防什么。</p></div></div>
+  <div class="slide-foot"><span>27 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="27">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>引文只有一层。</strong> 本章引文格式统一为<code>补充·hermes-病理生理学讲义·第47章·N.M</code>，章号等于课程章号，节号逐条真实存在。讲义是本仓库原创的教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义这一章 4082 个非空白字符里，数字加计量单位的命中为零（<code>node code/main.js</code> 复算，不照抄声明）。讲义把可量化处改成方向与类别——降低、增加、增强、削弱、持续、消退。本书照录这一取舍：<strong>描述类别可以，给出取值不行。</strong></li><li><strong>不给强度刻度，也不给时长界值。</strong> 本章反复出现以月计的说法，但讲义明确不给具体界值；本页也不转写任何评分量表的刻度与切点。凡遇疼到几分算重、多久算慢性的追问，统一回本书不给值，另立数据层、另立来源与校验。</li><li><strong>不写药物与剂量，不作诊断与判定。</strong> 讲义按机制靶点分组并明说不涉及剂量，本页只保留分组与原则；</li></ul></div></div>
+  <div class="slide-foot"><span>28 / 30</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="28">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>疼痛在本章只作状态与机制类别，心因性放大是机制描述，不是对当事人的评价。凡涉个体，一律中性表述、不贴标签、不作疗效断言。</p>
+<ul><li><strong>不把检查阴性读成疼痛不成立。</strong> 47.6 的整节推理都建立在这一点上：机制可以从外周转到中枢，检查阴性只说明当前检查没有找到结构性解释。</li><li><strong>边界声明</strong>：本章只解释讲义给出的疼痛机制环节与评估类别，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
+  <div class="slide-foot"><span>29 / 30</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="29">
+  <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
+  <div class="slide-foot"><span>30 / 30</span><span>disclaimer</span></div>
+</section>
+</div>
+<div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>
+<script>/**
+ * [tcmP] figures.js —— 中医概念动画图（纯 SVG + rAF，无依赖）
+ *
+ * 自动挂载：文档里写
+ *     <div data-figure="wuxing-cycle"></div>
+ * 即可。支持悬停暂停；系统开启「减少动态效果」时渲染为静态帧。
+ *
+ * 与 ai-engineering-from-scratch 的 site/figures.js 同构（同样的 el/loop/registry 形态），
+ * 图目换成中医概念：
+ *   yin-yang-sigmoid    阴阳 → 二分类：sigmoid 决策边界扫过，样本左右归属翻转
+ *   wuxing-cycle        五行生克：相生正向流动 + 相克五角星流动
+ *   zangxiang-graph     藏象：脏腑 → 官窍 → 情志 的边逐步点亮
+ *   sizhen-fusion       四诊合参：四通道 → 融合层 → 证候输出
+ *   meridian-lookup     经络腧穴：KD-Tree 空间划分 + 最近邻查询
+ *   junchen-attention   君臣佐使：药味 → 权重矩阵高亮
+ */
+
+(function () {
+  'use strict';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── SVG 小工具 ──
+  function el(name, attrs, kids) {
+    const e = document.createElementNS(NS, name);
+    for (const k in attrs || {}) e.setAttribute(k, attrs[k]);
+    (Array.isArray(kids) ? kids : kids ? [kids] : []).filter(Boolean).forEach((c) => e.appendChild(c));
+    return e;
+  }
+  const txt = (s) => document.createTextNode(s);
+
+  function label(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--sans)', 'font-size': 12, fill: 'var(--muted)' },
+      opts || {}
+    ), [txt(s)]);
+  }
+  function mono(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--mono)', 'font-size': 11, fill: 'var(--muted)', 'letter-spacing': '.1em' },
+      opts || {}
+    ), [txt(s)]);
+  }
+
+  function svgRoot(host, W, H, aria) {
+    const svg = el('svg', {
+      viewBox: `0 0 ${W} ${H}`, width: '100%', role: 'img', 'aria-label': aria || '',
+      style: 'display:block;max-width:100%;height:auto',
+    });
+    host.appendChild(svg);
+    return svg;
+  }
+
+  // 悬停暂停 + 时间归一化
+  function loop(host, fn, period, opts) {
+    period = period || 6400;
+    opts = opts || {};
+    let raf, paused = false, t0 = performance.now();
+    const onTick = (now) => {
+      if (!paused) fn((((now - t0) % period) / period));
+      raf = requestAnimationFrame(onTick);
+    };
+    host.addEventListener('mouseenter', () => { paused = true; });
+    host.addEventListener('mouseleave', () => { paused = false; });
+    if (REDUCED) { fn(opts.staticT == null ? 0.62 : opts.staticT); return function () {}; }
+    raf = requestAnimationFrame(onTick);
+    return () => cancelAnimationFrame(raf);
+  }
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeIO = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const sigmoid = (z) => 1 / (1 + Math.exp(-z));
+
+  const FIGURES = {};
+
+  /* ───────────────────── yin-yang-sigmoid ─────────────────────
+     阴阳 → 二分类。左侧散点：X 轴「寒热倾向」，输出 sigmoid 概率。
+     扫描线扫过阈值，样本随阈值的移动左右换边，右侧给出准确率。
+  */
+  FIGURES['yin-yang-sigmoid'] = function (host) {
+    const W = 720, H = 400, PAD = 54;
+    const svg = svgRoot(host, W, H, '阴阳二分类与 sigmoid 决策边界');
+    const plotW = W - PAD * 2, plotH = H - 150;
+
+    // 样本：12 条八纲典型证候（阴=0 阳=1）
+    const data = [
+      [-2.2, 0], [-1.8, 0], [-1.4, 0], [-1.1, 0], [-0.6, 0], [-0.2, 0],
+      [0.2, 1], [0.6, 1], [1.1, 1], [1.5, 1], [1.9, 1], [2.4, 1],
+    ];
+    const X = (v) => PAD + ((v + 3) / 6) * plotW;
+    const Y = (p) => H - 90 - p * plotH;
+
+    // 坐标轴
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: W - PAD, y2: H - 90, stroke: 'var(--line)' }));
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: PAD, y2: H - 90 - plotH, stroke: 'var(--line)' }));
+    svg.appendChild(mono(PAD, H - 72, '寒 / 阴 →'));
+    svg.appendChild(mono(W - PAD, H - 72, '← 热 / 阳', { 'text-anchor': 'end' }));
+    svg.appendChild(mono(8, PAD - 22, 'P(阳)'));
+    svg.appendChild(mono(W - PAD - 130, 26, 'sigmoid 决策边界'));
+
+    const curve = el('path', { d: '', fill: 'none', stroke: 'var(--jade)', 'stroke-width': 2.5 });
+    svg.appendChild(curve);
+    const threshLine = el('line', { stroke: 'var(--cinnabar)', 'stroke-dasharray': '5 4', 'stroke-width': 1.6 });
+    svg.appendChild(threshLine);
+
+    const pts = data.map(([x, y]) => {
+      const g = el('g', {});
+      const c = el('circle', { r: 6, cx: X(x), cy: H - 90 - 0.5 * plotH, fill: y ? 'var(--cinnabar)' : 'var(--jade)', opacity: 0.85 });
+      const cls = el('text', {
+        x: X(x), y: H - 90 - 0.5 * plotH + 4, 'text-anchor': 'middle',
+        'font-family': 'var(--sans)', 'font-size': 10, fill: '#fff',
+      }, [txt(y ? '阳' : '阴')]);
+      g.appendChild(c); g.appendChild(cls);
+      svg.appendChild(g);
+      return { x, y, c, cls };
+    });
+
+    const accText = label(PAD, 26, '', { fill: 'var(--ink)', 'font-size': 13 });
+    svg.appendChild(accText);
+
+    let pathD = '';
+    for (let i = 0; i <= 60; i += 1) {
+      const xv = -3 + (i / 60) * 6;
+      const p = sigmoid(1.6 * xv + 0.1);
+      pathD += `${i === 0 ? 'M' : 'L'}${X(xv).toFixed(1)},${Y(p).toFixed(1)}`;
+    }
+    curve.setAttribute('d', pathD);
+
+    loop(host, (t) => {
+      // 阈值在 0..1 之间来回扫
+      const thr = 0.15 + 0.7 * easeIO(1 - Math.abs(2 * t - 1));
+      const pThr = 0.1 + thr * 0.85;
+      const xThr = (Math.log(pThr / (1 - pThr)) - 0.1) / 1.6;
+      threshLine.setAttribute('x1', X(xThr));
+      threshLine.setAttribute('x2', X(xThr));
+      threshLine.setAttribute('y1', H - 90 - plotH - 6);
+      threshLine.setAttribute('y2', H - 90);
+
+      let correct = 0;
+      for (const p of pts) {
+        const prob = sigmoid(1.6 * p.x + 0.1);
+        const pred = prob >= pThr ? 1 : 0;
+        if (pred === p.y) correct += 1;
+        p.c.setAttribute('cy', Y(prob));
+        p.cls.setAttribute('y', Y(prob) + 4);
+        p.c.setAttribute('r', pred === p.y ? 7 : 5);
+        p.c.setAttribute('opacity', pred === p.y ? 0.92 : 0.32);
+        p.cls.setAttribute('opacity', pred === p.y ? 1 : 0.25);
+        // 判错的样本画一圈红
+        p.c.setAttribute('stroke', pred === p.y ? 'none' : 'var(--cinnabar)');
+        p.c.setAttribute('stroke-width', pred === p.y ? 0 : 2);
+      }
+      accText.textContent = `阈值 P=${pThr.toFixed(2)} · 准确率 ${correct}/${pts.length} = ${((correct / pts.length) * 100).toFixed(0)}%`;
+    }, 7200);
+  };
+
+  /* ───────────────────── wuxing-cycle ─────────────────────
+     五行生克。外圈相生（顺时针流动），内五角星相克。
+  */
+  FIGURES['wuxing-cycle'] = function (host) {
+    const W = 720, H = 440, cx = W / 2 - 70, cy = H / 2, R = 148;
+    const svg = svgRoot(host, W, H, '五行生克关系');
+    const names = ['木', '火', '土', '金', '水'];
+    const colors = ['var(--jade)', 'var(--cinnabar)', 'var(--gold)', '#8a6d3b', '#2a4d69'];
+    const node = names.map((_, i) => {
+      const a = -Math.PI / 2 + (i / 5) * Math.PI * 2;
+      return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), a };
+    });
+
+    // 相生边（外圈，顺时针 木→火→土→金→水→木）
+    const sheng = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const p = el('path', {
+        d: `M${n.x},${n.y} Q${(n.x + m.x) / 2 + (cy - (n.y + m.y) / 2) * 0.16},${(n.y + m.y) / 2 + ((n.x + m.x) / 2 - cx) * 0.16} ${m.x},${m.y}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.28,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+    // 相克边（五角星）
+    const ke = node.map((n, i) => {
+      const m = node[(i + 2) % 5];
+      const p = el('line', {
+        x1: n.x, y1: n.y, x2: m.x, y2: m.y,
+        stroke: 'var(--cinnabar)', 'stroke-width': 1.4, 'stroke-dasharray': '4 4', opacity: 0.2,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+
+    // 沿边流动的点
+    const flow = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const g = el('circle', { r: 4, fill: 'var(--jade)', cx: n.x, cy: n.y, opacity: 0 });
+      svg.appendChild(g);
+      return { g, from: n, to: m };
+    });
+
+    const nodes = node.map((n, i) => {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: n.x, cy: n.y, r: 30, fill: '#fff', stroke: colors[i], 'stroke-width': 2 }));
+      g.appendChild(el('text', {
+        x: n.x, y: n.y + 8, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 22, fill: colors[i],
+      }, [txt(names[i])]));
+      svg.appendChild(g);
+      return g;
+    });
+
+    // 右栏说明
+    svg.appendChild(mono(W - 190, 60, '相生 (outer)'));
+    svg.appendChild(label(W - 190, 82, '木→火→土→金→水→木', { fill: 'var(--jade)' }));
+    svg.appendChild(mono(W - 190, 130, '相克 (star)'));
+    svg.appendChild(label(W - 190, 152, '木克土 · 土克水 · 水克火', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(label(W - 190, 170, '火克金 · 金克木', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(mono(W - 190, 220, '建模要点'));
+    svg.appendChild(label(W - 190, 242, '5 类 + 有向约束', { fill: 'var(--ink)' }));
+    svg.appendChild(label(W - 190, 262, '纯 softmax 会丢掉', { fill: 'var(--muted)' }));
+    svg.appendChild(label(W - 190, 280, '全部关系信息', { fill: 'var(--muted)' }));
+
+    const capt = label(W - 190, H - 30, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const phase = (t * 5) % 5;
+      for (let i = 0; i < 5; i += 1) {
+        const f = flow[i];
+        const local = clamp01(phase - i);
+        const k = easeIO(local);
+        f.g.setAttribute('cx', lerp(f.from.x, f.to.x, k));
+        f.g.setAttribute('cy', lerp(f.from.y, f.to.y, k));
+        f.g.setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.95 : 0);
+        sheng[i].setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.75 : 0.28);
+        const keOn = phase - i >= 0 && phase - i <= 1.4;
+        ke[i].setAttribute('opacity', keOn ? 0.55 : 0.2);
+      }
+      const active = Math.floor(phase) % 5;
+      nodes.forEach((g, i) => g.querySelector('circle').setAttribute('stroke-width', i === active ? 4 : 2));
+      capt.textContent = `当前传导：${names[active]} → ${names[(active + 1) % 5]}（生） / ${names[active]} 克 ${names[(active + 2) % 5]}`;
+    }, 7000);
+  };
+
+  /* ───────────────────── zangxiang-graph ─────────────────────
+     藏象：五脏 → 官窍 → 情志，边按序点亮。
+  */
+  FIGURES['zangxiang-graph'] = function (host) {
+    const W = 720, H = 430;
+    const svg = svgRoot(host, W, H, '藏象学说的脏腑-官窍-情志关系图');
+
+    const zang = [
+      { n: '肝', x: 110, y: 100, qiao: ['目'], zhi: '怒' },
+      { n: '心', x: 110, y: 210, qiao: ['舌'], zhi: '喜' },
+      { n: '脾', x: 110, y: 320, qiao: ['口'], zhi: '思' },
+      { n: '肺', x: 610, y: 100, qiao: ['鼻'], zhi: '悲' },
+      { n: '肾', x: 610, y: 210, qiao: ['耳'], zhi: '恐' },
+    ];
+    const edges = [];
+
+    for (const z of zang) {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: z.x, cy: z.y, r: 26, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+      g.appendChild(el('text', { x: z.x, y: z.y + 8, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 20, fill: 'var(--cinnabar)' }, [txt(z.n)]));
+      svg.appendChild(g);
+
+      const qx = W / 2 + (z.x < 300 ? -40 : 40);
+      g.appendChild(el('line', { x1: z.x + (z.x < 300 ? 26 : -26), y1: z.y, x2: qx - (z.x < 300 ? 22 : -22), y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+
+      const qg = el('g', {});
+      qg.appendChild(el('rect', { x: qx - 22, y: z.y - 14, width: 44, height: 28, rx: 6, fill: 'var(--jade-soft)', stroke: 'var(--jade)', 'stroke-width': 1.3 }));
+      qg.appendChild(el('text', { x: qx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--jade)' }, [txt(z.qiao[0])]));
+      svg.appendChild(qg);
+
+      const zx = W - 110;
+      g.appendChild(el('line', { x1: qx + 22, y1: z.y, x2: zx - 24, y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      const zg = el('g', {});
+      zg.appendChild(el('circle', { cx: zx, cy: z.y, r: 22, fill: '#fdf1dd', stroke: 'var(--gold)', 'stroke-width': 1.3 }));
+      zg.appendChild(el('text', { x: zx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--gold)' }, [txt(z.zhi)]));
+      svg.appendChild(zg);
+
+      edges.push({ zy: z.y, e1: g.querySelector('line'), e2: g.querySelectorAll('line')[1], qg, zg });
+    }
+
+    svg.appendChild(mono(110 - 30, 40, '藏 / 五藏'));
+    svg.appendChild(mono(W / 2 - 30, 40, '象 / 官窍'));
+    svg.appendChild(mono(W - 110 - 30, 40, '情志'));
+    const capt = label(20, H - 14, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const step = t * 5;
+      edges.forEach((e, i) => {
+        const on = step >= i;
+        e.e1.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        e.e2.setAttribute('stroke', on ? 'var(--gold)' : 'var(--line)');
+        e.qg.setAttribute('opacity', on ? 1 : 0.35);
+        e.zg.setAttribute('opacity', on ? 1 : 0.35);
+      });
+      const cur = zang[Math.min(4, Math.floor(step))];
+      capt.textContent = cur ? `点亮中：${cur.n} 开窍于 ${cur.qiao[0]}，在志为${cur.zhi}` : '';
+    }, 6200, { staticT: 0.99 });
+  };
+
+  /* ───────────────────── sizhen-fusion ─────────────────────
+     四诊合参：四通道 → 融合层 → 证候。演示模态缺失时的降级。
+  */
+  FIGURES['sizhen-fusion'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '四诊合参的多模态融合与模态缺失降级');
+    const chans = [
+      { n: '望', d: '舌象 / 面色', y: 60 },
+      { n: '闻', d: '语声 / 气息', y: 130 },
+      { n: '问', d: '主诉 / 现病史', y: 200 },
+      { n: '切', d: '脉搏波', y: 270 },
+    ];
+    const fx = 330, fy = 165;
+    const outx = 600;
+
+    const fxG = el('g', {});
+    fxG.appendChild(el('rect', { x: fx - 52, y: fy - 46, width: 104, height: 92, rx: 10, fill: '#fff', stroke: 'var(--jade)', 'stroke-width': 2 }));
+    fxG.appendChild(el('text', { x: fx, y: fy - 14, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--jade)' }, [txt('融合层')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 8, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('交叉注意力')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 26, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('+ 缺失掩码')]));
+    svg.appendChild(fxG);
+
+    const outG = el('g', {});
+    outG.appendChild(el('rect', { x: outx - 46, y: fy - 32, width: 92, height: 64, rx: 10, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+    outG.appendChild(el('text', { x: outx, y: fy - 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--cinnabar)' }, [txt('证候')]));
+    outG.appendChild(el('text', { x: outx, y: fy + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('带置信度')]));
+    svg.appendChild(outG);
+
+    svg.appendChild(el('line', { x1: fx + 52, y1: fy, x2: outx - 46, y2: fy, stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+
+    const inG = chans.map((c) => {
+      const g = el('g', {});
+      g.appendChild(el('rect', { x: 24, y: c.y - 24, width: 150, height: 48, rx: 8, fill: '#fff', stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      g.appendChild(el('text', { x: 40, y: c.y - 2, 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--ink)' }, [txt(c.n + '诊')]));
+      g.appendChild(el('text', { x: 40, y: c.y + 16, 'font-size': 11, fill: 'var(--muted)' }, [txt(c.d)]));
+      svg.appendChild(g);
+      const path = el('path', {
+        d: `M174,${c.y} C 250,${c.y} 260,${fy} ${fx - 52},${fy}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.22,
+      });
+      svg.appendChild(path);
+      const dot = el('circle', { r: 4, fill: 'var(--jade)', opacity: 0 });
+      svg.appendChild(dot);
+      return { g, path, dot, y: c.y };
+    });
+
+    const capt = label(24, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    // 循环：全模态 → 缺闻诊 → 缺闻+切 → 恢复
+    const phases = [[1, 1, 1, 1], [1, 0, 1, 1], [1, 0, 1, 0], [1, 1, 1, 1]];
+    loop(host, (t) => {
+      const idx = Math.min(phases.length - 1, Math.floor(t * phases.length));
+      const mask = phases[idx];
+      const missing = [];
+      mask.forEach((m, i) => { if (!m) missing.push(chans[i].n); });
+
+      inG.forEach((c, i) => {
+        const on = mask[i] === 1;
+        c.g.style.opacity = on ? 1 : 0.3;
+        c.path.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        c.path.setAttribute('stroke-dasharray', on ? 'none' : '4 4');
+        c.path.setAttribute('opacity', on ? 0.55 : 0.25);
+        const local = clamp01(t * 4 - idx);
+        c.dot.setAttribute('cx', lerp(174, fx - 52, easeIO(local)));
+        c.dot.setAttribute('cy', lerp(c.y, fy, easeIO(local)));
+        c.dot.setAttribute('opacity', on ? 0.95 : 0);
+      });
+
+      const conf = 0.62 + 0.1 * mask.filter(Boolean).length;
+      outG.style.opacity = 0.4 + 0.6 * conf;
+      capt.textContent = missing.length
+        ? `模态缺失：缺 ${missing.join('、')} → 置信度降至 ${(conf * 100).toFixed(0)}%，系统须显式降级而非静默猜测`
+        : `四诊齐备 → 置信度 ${(conf * 100).toFixed(0)}%`;
+    }, 8800, { staticT: 0.35 });
+  };
+
+  /* ───────────────────── meridian-lookup ─────────────────────
+     腧穴检索：KD-Tree 空间划分 + 最近邻查询。
+  */
+  FIGURES['meridian-lookup'] = function (host) {
+    const W = 720, H = 400, PAD = 40;
+    const svg = svgRoot(host, W, H, '腧穴的空间划分与最近邻检索');
+    const plotW = W - PAD * 2 - 30, plotH = H - 110;
+
+    // 模拟体表腧穴点集（合谷、内关、足三里、三阴交等 18 穴）
+    let seed = 20261012;
+    const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+    const pts = Array.from({ length: 18 }, () => ({ x: PAD + 30 + rnd() * (plotW - 60), y: PAD + 20 + rnd() * (plotH - 40) }));
+
+    // KD-Tree 递归划分线
+    const lines = [];
+    (function build(list, depth) {
+      if (list.length < 2) return;
+      const axis = depth % 2;
+      const sorted = list.slice().sort((a, b) => (axis ? a.y - b.y : a.x - b.x));
+      const med = sorted[Math.floor(sorted.length / 2)];
+      if (axis) {
+        const minX = Math.min(...list.map((p) => p.x));
+        const maxX = Math.max(...list.map((p) => p.x));
+        lines.push({ x1: minX, y1: med.y, x2: maxX, y2: med.y, depth });
+        build(list.filter((p) => p.y < med.y), depth + 1);
+        build(list.filter((p) => p.y >= med.y), depth + 1);
+      } else {
+        const minY = Math.min(...list.map((p) => p.y));
+        const maxY = Math.max(...list.map((p) => p.y));
+        lines.push({ x1: med.x, y1: minY, x2: med.x, y2: maxY, depth });
+        build(list.filter((p) => p.x < med.x), depth + 1);
+        build(list.filter((p) => p.x >= med.x), depth + 1);
+      }
+    })(pts, 0);
+
+    const lineEls = lines.map((l) => {
+      const e = el('line', { x1: l.x1, y1: l.y1, x2: l.x2, y2: l.y2, stroke: 'var(--line)', 'stroke-width': 1, opacity: 0 });
+      svg.appendChild(e);
+      return { e, depth: l.depth };
+    });
+
+    const dotEls = pts.map((p, i) => {
+      const c = el('circle', { cx: p.x, cy: p.y, r: 4.5, fill: 'var(--jade)', opacity: 0.75 });
+      svg.appendChild(c);
+      const t = el('text', { x: p.x + 7, y: p.y + 4, 'font-size': 10, fill: 'var(--muted)', opacity: 0 });
+      t.appendChild(txt(`穴${String(i + 1).padStart(2, '0')}`));
+      svg.appendChild(t);
+      return { c, t, p };
+    });
+
+    const query = el('circle', { r: 8, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 2.2 });
+    svg.appendChild(query);
+    const ring = el('circle', { r: 0, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 1, 'stroke-dasharray': '3 3' });
+    svg.appendChild(ring);
+    const link = el('line', { stroke: 'var(--cinnabar)', 'stroke-width': 1.6, 'stroke-dasharray': '4 3' });
+    svg.appendChild(link);
+
+    const capt = label(PAD, H - 20, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      // 查询点沿弧线游走
+      const ang = t * Math.PI * 2;
+      const qx = PAD + 30 + plotW / 2 + Math.cos(ang) * plotW * 0.33;
+      const qy = PAD + 20 + plotH / 2 + Math.sin(ang) * plotH * 0.32;
+      query.setAttribute('cx', qx);
+      query.setAttribute('cy', qy);
+
+      let best = null;
+      let bestD = Infinity;
+      for (const d of dotEls) {
+        const dd = (d.p.x - qx) ** 2 + (d.p.y - qy) ** 2;
+        if (dd < bestD) { bestD = dd; best = d; }
+        d.c.setAttribute('r', 4.5);
+        d.c.setAttribute('fill', 'var(--jade)');
+        d.t.setAttribute('opacity', 0);
+      }
+      const dist = Math.sqrt(bestD);
+      link.setAttribute('x1', qx); link.setAttribute('y1', qy);
+      link.setAttribute('x2', best.p.x); link.setAttribute('y2', best.p.y);
+      ring.setAttribute('cx', qx); ring.setAttribute('cy', qy);
+      ring.setAttribute('r', dist);
+      best.c.setAttribute('r', 8);
+      best.c.setAttribute('fill', 'var(--cinnabar)');
+      best.t.setAttribute('opacity', 1);
+
+      const step = clamp01(t * 3);
+      lineEls.forEach((l) => l.e.setAttribute('opacity', step > l.depth / 6 ? (0.5 - l.depth * 0.06) : 0));
+
+      capt.textContent = `查询点 → 最近腧穴 ${best.t.textContent} · 平面距离 ${dist.toFixed(1)}px（真实体表须改测地距离）`;
+    }, 11000, { staticT: 0.2 });
+  };
+
+  /* ───────────────────── junchen-attention ─────────────────────
+     君臣佐使 → 注意力权重。列 = 药味，行为权重分配。
+  */
+  FIGURES['junchen-attention'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '君臣佐使的注意力权重分配');
+
+    const herbs = ['桂枝', '芍药', '生姜', '大枣', '甘草'];
+    const roles = ['君', '臣', '佐', '使'];
+    const weights = [
+      [0.52, 0.30, 0.08, 0.06, 0.04],
+      [0.18, 0.44, 0.20, 0.12, 0.06],
+      [0.08, 0.16, 0.40, 0.24, 0.12],
+      [0.04, 0.08, 0.18, 0.32, 0.38],
+    ];
+
+    const GX = 110, GY = 60, CW = 84, CH = 52;
+    svg.appendChild(mono(GX, 34, '方剂：桂枝汤（示例）'));
+
+    herbs.forEach((h, j) => {
+      svg.appendChild(el('text', {
+        x: GX + j * CW + CW / 2, y: GY - 10, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 14, fill: 'var(--ink)',
+      }, [txt(h)]));
+    });
+    roles.forEach((r, i) => {
+      svg.appendChild(el('text', {
+        x: GX - 22, y: GY + i * CH + CH / 2 + 6, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--cinnabar)',
+      }, [txt(r)]));
+    });
+
+    const cells = [];
+    for (let i = 0; i < roles.length; i += 1) {
+      for (let j = 0; j < herbs.length; j += 1) {
+        const r = el('rect', {
+          x: GX + j * CW + 3, y: GY + i * CH + 3, width: CW - 6, height: CH - 6, rx: 6,
+          fill: 'var(--jade)', opacity: 0,
+        });
+        svg.appendChild(r);
+        const tx = el('text', {
+          x: GX + j * CW + CW / 2, y: GY + i * CH + CH / 2 + 5, 'text-anchor': 'middle',
+          'font-family': 'var(--mono)', 'font-size': 12, fill: 'var(--ink)', opacity: 0,
+        });
+        tx.appendChild(txt(weights[i][j].toFixed(2)));
+        svg.appendChild(tx);
+        cells.push({ r, tx, w: weights[i][j], i, j });
+      }
+    }
+
+    // 右侧：软化的权重条
+    const bx = GX + herbs.length * CW + 40;
+    svg.appendChild(mono(bx, 34, '行归一化 (softmax)'));
+    const bars = roles.map((r, i) => {
+      const max = Math.max(...weights[i]);
+      const w = Math.max(...weights[i]);
+      const g = el('g', {});
+      g.appendChild(el('text', { x: bx, y: GY + i * 44 + 10, 'font-size': 12, fill: 'var(--muted)' }, [txt(r + ' 最大: ' + max.toFixed(2))]));
+      const bg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 180, height: 8, rx: 4, fill: 'var(--paper-2)' });
+      g.appendChild(bg);
+      const fg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 0, height: 8, rx: 4, fill: 'var(--jade)' });
+      g.appendChild(fg);
+      svg.appendChild(g);
+      return { fg, w: w, max };
+    });
+
+    svg.appendChild(label(20, H - 40, '结构先验：君药权重最大 → 可作为注意力掩码，让模型学不到"反结构"的配伍', { fill: 'var(--muted)' }));
+    const capt = label(20, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const focusRow = Math.floor(t * 4) % 4;
+      const local = clamp01(t * 4 - Math.floor(t * 4));
+      cells.forEach((c) => {
+        const on = c.i === focusRow;
+        c.r.setAttribute('opacity', on ? c.w * (0.55 + 0.45 * local) : c.w * 0.14);
+        c.tx.setAttribute('opacity', on ? 1 : 0.25);
+      });
+      bars.forEach((b, i) => {
+        b.fg.setAttribute('width', i === focusRow ? 180 * (b.max) * (0.5 + 0.5 * local) : 180 * b.max * 0.35);
+      });
+      capt.textContent = `当前角色：${roles[focusRow]} · 权重最高者为 ${herbs[weights[focusRow].indexOf(Math.max(...weights[focusRow]))]}`;
+    }, 8000, { staticT: 0.1 });
+  };
+
+  /* ───────────────────── 自动挂载 ───────────────────── */
+  function mount(root) {
+    const hosts = (root || document).querySelectorAll('[data-figure]');
+    for (const host of hosts) {
+      if (host.dataset.figureMounted === '1') continue;
+      const fn = FIGURES[host.dataset.figure];
+      if (!fn) {
+        host.innerHTML = `<p class="muted small">未知图形：<code>${host.dataset.figure}</code></p>`;
+        host.dataset.figureMounted = '1';
+        continue;
+      }
+      host.classList.add('figure');
+      fn(host);
+      host.dataset.figureMounted = '1';
+    }
+  }
+
+  window.TCMFigures = { FIGURES, mount };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => mount());
+  } else {
+    mount();
+  }
+  // 单页内动态插入的图形（章节页异步渲染）也能挂上
+  new MutationObserver(() => mount()).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+<script>
+(function(){
+  const deck=document.getElementById('deck');
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+
+  // ── 单帧模式：?shot=N 只渲染第 N 张，供无头浏览器逐帧截图 ──
+  // 截图器需要一张「干净的、正好一屏」的画面，所以这里藏掉其余幻灯片、
+  // 关掉滚动吸附、去掉 HUD，并在 title 上打就绪标记（渲染完成前截图会得到空白）。
+  const shot=new URLSearchParams(location.search).get('shot');
+  if(shot!==null){
+    const n=Math.max(0,Math.min(slides.length-1,Number(shot)||0));
+    slides.forEach((s,idx)=>{ if(idx!==n) s.style.display='none'; });
+    deck.style.overflow='hidden';
+    deck.style.scrollSnapType='none';
+    const hud=document.getElementById('hud');
+    if(hud) hud.style.display='none';
+    const target=slides[n];
+    if(target){ target.style.borderBottom='0'; target.scrollIntoView({block:'start'}); }
+    document.title='SHOT_READY '+n+' of '+slides.length;
+    if(window.TCMFigures)window.TCMFigures.mount(document);
+    // 只读视图：不绑键盘与点击，避免截图过程中页面状态改变
+    return;
+  }
+
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView();}
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    else if(e.key==='p'||e.key==='P'){e.preventDefault();print();}
+  });
+  deck.addEventListener('click',e=>{if(e.target.closest('a'))return;go(i+1);});
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)i=+en.target.dataset.i;});},{root:deck,threshold:.6});
+  slides.forEach(s=>io.observe(s));
+  if(window.TCMFigures)window.TCMFigures.mount(document);
+})();
+</script>
+</body>
+</html>

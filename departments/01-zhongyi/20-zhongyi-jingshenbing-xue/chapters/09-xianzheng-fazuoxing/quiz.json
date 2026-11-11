@@ -1,0 +1,79 @@
+{
+  "lesson": "09-xianzheng-fazuoxing",
+  "title": "痫证与发作性障碍：发作的那几分钟",
+  "subject": "20-zhongyi-jingshenbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "痫证的诊断主要依靠？",
+      "options": [
+        "目击者描述重建发作过程",
+        "病人自述",
+        "血液化验",
+        "量表评分"
+      ],
+      "correct": 0,
+      "explanation": "发作是阵发的，病人常无法回忆。"
+    },
+    {
+      "stage": "check",
+      "question": "痫证两期的治法是？",
+      "options": [
+        "发作期豁痰息风开窍，休止期健脾化痰补肝肾",
+        "两期同法",
+        "只治发作",
+        "只治休止"
+      ],
+      "correct": 0,
+      "explanation": "教材 9.1.2。"
+    },
+    {
+      "stage": "check",
+      "question": "痫证持续状态的判据是？",
+      "options": [
+        "抽搐超过 5 分钟或反复发作不醒",
+        "抽搐一次",
+        "有先兆",
+        "脑电图异常"
+      ],
+      "correct": 0,
+      "explanation": "教材 9.1.2 与急诊学第 6 章一致。"
+    },
+    {
+      "stage": "check",
+      "question": "癔症与痫证鉴别的三条是？",
+      "options": [
+        "无舌咬伤、无二便失禁、脑电图正常",
+        "有先兆、有抽搐、有恢复",
+        "年龄、性别、病程",
+        "舌象、脉象、面色"
+      ],
+      "correct": 0,
+      "explanation": "教材 9.2.1。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么要把癔症放在「发作性障碍」章？",
+      "options": [
+        "它以发作形式出现，须与痫证鉴别",
+        "因为它罕见",
+        "因为治法相同",
+        "因为都用药"
+      ],
+      "correct": 0,
+      "explanation": "鉴别的实操重点。"
+    },
+    {
+      "stage": "post",
+      "question": "本章四位面「神志意识」仅 44 说明什么？",
+      "options": [
+        "文本重心在发作表现与治法，而非意识分级",
+        "统计错误",
+        "意识不重要",
+        "无发作"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算，为全书最低。"
+    }
+  ]
+}

@@ -4,63 +4,87 @@
   "chapters": [
     {
       "n": 1,
-      "slug": "01-xiaoer-shengli",
-      "title": "小儿生理病理特点：稚阴稚阳",
-      "status": "📋"
+      "slug": "01-fazhan-gaishu",
+      "title": "中医儿科学发展概要",
+      "status": "🚧"
     },
     {
       "n": 2,
-      "slug": "02-erke-sizhen",
-      "title": "儿科四诊：望指纹与问诊的特殊性",
-      "status": "📋"
+      "slug": "02-shengli-bingli-tedian",
+      "title": "小儿生理病理特点",
+      "status": "🚧"
     },
     {
       "n": 3,
-      "slug": "03-erke-feixi",
-      "title": "小儿肺系病：感冒、咳嗽、肺炎喘嗽",
-      "status": "📋"
+      "slug": "03-shengzhang-yangyu-baojian",
+      "title": "小儿生长发育与喂养保健",
+      "status": "🚧"
     },
     {
       "n": 4,
-      "slug": "04-erke-pixi",
-      "title": "小儿脾系病：积滞、疳证、泄泻",
-      "status": "📋"
+      "slug": "04-erke-sizhen",
+      "title": "儿科四诊概要",
+      "status": "🚧"
     },
     {
       "n": 5,
-      "slug": "05-erke-xingan",
-      "title": "小儿心肝病：惊风、癫痫、多动",
-      "status": "📋"
+      "slug": "05-bianzheng-zhifa",
+      "title": "儿科辨证与治法概要",
+      "status": "🚧"
     },
     {
       "n": 6,
-      "slug": "06-erke-shenxi",
-      "title": "小儿肾系病：水肿、遗尿",
-      "status": "📋"
+      "slug": "06-feixi-jibing",
+      "title": "肺系疾病",
+      "status": "🚧"
     },
     {
       "n": 7,
-      "slug": "07-shixing-jibing",
-      "title": "时行疾病：麻疹、水痘、痄腮",
-      "status": "📋"
+      "slug": "07-pixi-jibing",
+      "title": "脾系疾病",
+      "status": "🚧"
     },
     {
       "n": 8,
-      "slug": "08-xinshenger-jibing",
-      "title": "新生儿疾病与喂养",
-      "status": "📋"
+      "slug": "08-xingan-jibing",
+      "title": "心肝系疾病",
+      "status": "🚧"
     },
     {
       "n": 9,
-      "slug": "09-jiliang-fufa",
-      "title": "小儿用药剂量与服药方法",
-      "status": "📋"
+      "slug": "09-shenxi-jibing",
+      "title": "肾系疾病",
+      "status": "🚧"
     },
     {
       "n": 10,
-      "slug": "10-shengzhang-quxian",
-      "title": "生长发育曲线与中医体质",
-      "status": "📋"
+      "slug": "10-chuanranbing",
+      "title": "传染病",
+      "status": "🚧"
+    },
+    {
+      "n": 11,
+      "slug": "11-chongzheng",
+      "title": "虫证",
+      "status": "🚧"
+    },
+    {
+      "n": 12,
+      "slug": "12-xinshenger-jibing",
+      "title": "新生儿疾病",
+      "status": "🚧"
+    },
+    {
+      "n": 13,
+      "slug": "13-qita-bingzheng",
+      "title": "其他病证",
+      "status": "🚧"
+    },
+    {
+      "n": 14,
+      "slug": "14-jizhen-shuzihua",
+      "title": "儿科急症与数字化AI时代",
+      "status": "🚧"
     }
   ]
 }

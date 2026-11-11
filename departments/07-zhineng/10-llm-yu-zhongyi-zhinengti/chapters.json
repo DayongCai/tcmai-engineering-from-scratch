@@ -1,78 +1,103 @@
 {
-  "slug": "10-llm-yu-zhongyi-zhinengti",
-  "title": "大语言模型与中医智能体",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-nengli-bianjie",
-      "title": "语言模型的能力边界",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-tishi-jiegouhua",
-      "title": "提示工程与结构化输出",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-jiansuo-zengqiang",
-      "title": "检索增强：把经典放进上下文",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-gongju-diaoyong",
-      "title": "工具调用与函数编排",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-guihua-jiyi",
-      "title": "智能体的规划与记忆",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-duozhinengti",
-      "title": "多智能体协作与角色分工",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-liucheng-jianmo",
-      "title": "中医诊疗流程的智能体建模",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-huanjue-hulan",
-      "title": "幻觉与安全护栏",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-ceping-weihai",
-      "title": "评测：事实性、一致性与危害",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-bendi-bushu",
-      "title": "本地部署与成本",
-      "status": "📋"
-    },
-    {
-      "n": 11,
-      "slug": "11-renji-fengong",
-      "title": "临床使用的人机分工",
-      "status": "📋"
-    },
-    {
-      "n": 12,
-      "slug": "12-jianguan-zeren",
-      "title": "监管与责任边界",
-      "status": "📋"
-    }
-  ]
+ "slug": "10-llm-yu-zhongyi-zhinengti",
+ "title": "大模型与中医智能体",
+ "note": "12 章 = 教材 12 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-llm1",
+   "title": "从统计学习到表示学习",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-llm2",
+   "title": "神经网络：层、激活与反向传播",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-llm3",
+   "title": "表征与嵌入：把词与证候放进同一空间",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-llm4",
+   "title": "概率图与序列生成",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-llm5",
+   "title": "半监督与自训练：标注不够时怎么办",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-llm6",
+   "title": "泛化从哪来：计算学习理论的回答",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-llm7",
+   "title": "知识增强：规则与图谱怎么进模型",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-llm8",
+   "title": "强化学习与对齐",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-llm9",
+   "title": "评估：基准分、幻觉与人工评",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-llm10",
+   "title": "智能体的工具与检索",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-llm11",
+   "title": "部署与成本：算力、延迟与更新",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-llm12",
+   "title": "生成内容的责任与合规",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

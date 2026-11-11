@@ -1,0 +1,39 @@
+{
+  "slug": "12-yaoli-xue",
+  "title": "药理学",
+  "en": "Pharmacology",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 132,
+  "type": "Core",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 72,
+  "bridge": "量效关系→S 型曲线拟合 / 受体作用→药靶网络",
+  "chaptersTarget": 49,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/12-yaoli-xue",
+    "videosPublished": 0,
+    "status": "rendered",
+    "narrationChapters": 49,
+    "slideDecks": 49,
+    "slides": 1216,
+    "videosRendered": 49,
+    "videoHours": 17.97,
+    "audioSegments": 673,
+    "audioMinutes": 1078
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/12-yaoli-xue",
+    "chaptersWritten": 49,
+    "words": 1169707,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#药理学",
+    "extractedAt": "2026-10-21"
+  }
+}

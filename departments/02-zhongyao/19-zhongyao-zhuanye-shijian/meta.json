@@ -1,0 +1,40 @@
+{
+  "slug": "19-zhongyao-zhuanye-shijian",
+  "title": "中药专业实践",
+  "en": "Pharmacy Professional Practice",
+  "deptSlug": "02-zhongyao",
+  "deptTitle": "中药系",
+  "globalN": 41,
+  "type": "Clinic",
+  "semester": 9,
+  "stage": "lao",
+  "stageTitle": "老",
+  "hours": 108,
+  "bridge": "产地调研→结构化字段 / 鉴定数据→图像与光谱 / 中试→工艺参数表",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/02-zhongyao/19-zhongyao-zhuanye-shijian",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/02-zhongyao/19-zhongyao-zhuanye-shijian",
+    "chaptersWritten": 6,
+    "words": 3830,
+    "status": "wip",
+    "layer": "handbook",
+    "contract": "handbook-v1",
+    "origin": "handbook",
+    "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
+    "extractedAt": "2026-11-09"
+  },
+  "底本": {
+    "kind": "派生",
+    "from": "linchuang-zhongyao、zhongyao-jianding、zhongyao-paozhi、zhongyao-shangpin、zhongyao-yaoji、zhongyao-ziyuan",
+    "dir": "standards/zhongyao-shijian",
+    "note": "本库无该实践/轮转教材；按场景派生，locator 一律「派生·」"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "lesson": "03-yinyang",
+  "title": "阴阳：从现象到范畴",
+  "subject": "16-zhongyi-zhexue-shi",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "阴阳的三次转义是？",
+      "options": [
+        "现象→范畴→工具",
+        "物质→能量→信息",
+        "表→里→半表半里",
+        "寒→热→平"
+      ],
+      "correct": 0,
+      "explanation": "第三次转义使它可以「推之可百」。"
+    },
+    {
+      "stage": "check",
+      "question": "阴阳是唯一「双高」范畴之一，另一是？",
+      "options": [
+        "气",
+        "五行",
+        "道",
+        "权衡"
+      ],
+      "correct": 0,
+      "explanation": "气 10,855/1,520；阴阳 9,797/1,370。"
+    },
+    {
+      "stage": "check",
+      "question": "判断一个对象是「气」还是「阴阳」的准则是？",
+      "options": [
+        "能量化的是气，只能论关系的是阴阳",
+        "看字数",
+        "看出处",
+        "看是否用于临床"
+      ],
+      "correct": 0,
+      "explanation": "阴阳只能论盛衰。"
+    },
+    {
+      "stage": "check",
+      "question": "阴阳 Top 篇集中在？",
+      "options": [
+        "运气七篇（六元正纪大论等）",
+        "上古天真论",
+        "灵枢·经脉",
+        "全篇均分"
+      ],
+      "correct": 0,
+      "explanation": "密度有 locality。"
+    },
+    {
+      "stage": "post",
+      "question": "把阴阳当实体会导致什么？",
+      "options": [
+        "追问「阴在哪里」而得不到答案",
+        "疗效更好",
+        "辨证更准",
+        "没有后果"
+      ],
+      "correct": 0,
+      "explanation": "关系不能实体化。"
+    },
+    {
+      "stage": "post",
+      "question": "只讲对立不讲互根的后果是？",
+      "options": [
+        "见阴虚只补阴、见阳虚只补阳",
+        "用药过轻",
+        "辨证过细",
+        "无后果"
+      ],
+      "correct": 0,
+      "explanation": "忽略阴中求阳。"
+    }
+  ]
+}

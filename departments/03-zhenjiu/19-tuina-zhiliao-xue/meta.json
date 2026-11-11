@@ -1,0 +1,32 @@
+{
+  "slug": "19-tuina-zhiliao-xue",
+  "title": "推拿治疗学",
+  "en": "Tuina Therapeutics",
+  "deptSlug": "03-zhenjiu",
+  "deptTitle": "针灸系",
+  "globalN": 49,
+  "type": "Clinic",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 54,
+  "bridge": "手法处方→规则库 / 疗效评价→前后对照",
+  "chaptersTarget": 12,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/03-zhenjiu/19-tuina-zhiliao-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/03-zhenjiu/19-tuina-zhiliao-xue",
+    "chaptersWritten": 12,
+    "words": 176070,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#推拿治疗学",
+    "extractedAt": "2026-10-21"
+  }
+}

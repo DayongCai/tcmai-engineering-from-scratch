@@ -1,0 +1,138 @@
+{
+ "slug": "19-zhongyi-laonianbing-xue",
+ "title": "中医老年病学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xulun",
+   "title": "第1章 绪论",
+   "status": "🚧",
+   "source": {
+    "chapter": 1,
+    "units": 6,
+    "hanzi": 12924
+   }
+  },
+  {
+   "n": 2,
+   "slug": "02-fazhan-jianshi",
+   "title": "第2章 中医老年病学发展简史",
+   "status": "🚧",
+   "source": {
+    "chapter": 2,
+    "units": 6,
+    "hanzi": 11124
+   }
+  },
+  {
+   "n": 3,
+   "slug": "03-shengli-bingli-tedian",
+   "title": "第3章 老年生理病理特点",
+   "status": "🚧",
+   "source": {
+    "chapter": 3,
+    "units": 8,
+    "hanzi": 23479
+   }
+  },
+  {
+   "n": 4,
+   "slug": "04-bingyin-bingji",
+   "title": "第4章 老年病病因病机",
+   "status": "🚧",
+   "source": {
+    "chapter": 4,
+    "units": 6,
+    "hanzi": 14116
+   }
+  },
+  {
+   "n": 5,
+   "slug": "05-zhenfa-bianzheng",
+   "title": "第5章 老年病诊法与辨证特点",
+   "status": "🚧",
+   "source": {
+    "chapter": 5,
+    "units": 6,
+    "hanzi": 15886
+   }
+  },
+  {
+   "n": 6,
+   "slug": "06-zhiliao-yuanze-tiaohu",
+   "title": "第6章 老年病治疗原则与调护",
+   "status": "🚧",
+   "source": {
+    "chapter": 6,
+    "units": 6,
+    "hanzi": 11437
+   }
+  },
+  {
+   "n": 7,
+   "slug": "07-changjian-zhengzhuang",
+   "title": "第7章 老年常见症状辨治",
+   "status": "🚧",
+   "source": {
+    "chapter": 7,
+    "units": 7,
+    "hanzi": 12637
+   }
+  },
+  {
+   "n": 8,
+   "slug": "08-xinnao-xueguan",
+   "title": "第8章 老年心脑血管病证",
+   "status": "🚧",
+   "source": {
+    "chapter": 8,
+    "units": 7,
+    "hanzi": 28428
+   }
+  },
+  {
+   "n": 9,
+   "slug": "09-feixi-bingzheng",
+   "title": "第9章 老年肺系病证",
+   "status": "🚧",
+   "source": {
+    "chapter": 9,
+    "units": 5,
+    "hanzi": 9225
+   }
+  },
+  {
+   "n": 10,
+   "slug": "10-piwei-gandan",
+   "title": "第10章 老年脾胃肝胆病证",
+   "status": "🚧",
+   "source": {
+    "chapter": 10,
+    "units": 7,
+    "hanzi": 14197
+   }
+  },
+  {
+   "n": 11,
+   "slug": "11-shenxi-guguanjie",
+   "title": "第11章 老年肾系与骨关节病证",
+   "status": "🚧",
+   "source": {
+    "chapter": 11,
+    "units": 6,
+    "hanzi": 16667
+   }
+  },
+  {
+   "n": 12,
+   "slug": "12-duobing-gongcun-zhihui-yanglao",
+   "title": "第12章 老年多病共存与智慧养老",
+   "status": "🚧",
+   "source": {
+    "chapter": 12,
+    "units": 7,
+    "hanzi": 16043
+   }
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+  "lesson": "05-tianren",
+  "title": "天人相应：人与环境的关系模型",
+  "subject": "16-zhongyi-zhexue-shi",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "天人模型的三个参数是？",
+      "options": [
+        "时、地、人",
+        "寒、热、虚",
+        "上、中、下",
+        "气、血、津"
+      ],
+      "correct": 0,
+      "explanation": "即三因制宜。"
+    },
+    {
+      "stage": "check",
+      "question": "「天地」与「四时」在临床的命中是？",
+      "options": [
+        "143 与 527",
+        "527 与 143",
+        "3,695 与 1,807",
+        "0 与 0"
+      ],
+      "correct": 0,
+      "explanation": "落地的是「时」。"
+    },
+    {
+      "stage": "check",
+      "question": "天人模型不能解释的是？",
+      "options": [
+        "同一季节为何有人发病有人不发病",
+        "季节性发病",
+        "地域差异",
+        "冬病夏治"
+      ],
+      "correct": 0,
+      "explanation": "群体与个体之别。"
+    },
+    {
+      "stage": "check",
+      "question": "本章排在第 5 位的理由是？",
+      "options": [
+        "从本体到关系、从外部到内部、最后到方法的次序",
+        "篇幅",
+        "难度",
+        "年代"
+      ],
+      "correct": 0,
+      "explanation": "顺序本身是论证。"
+    },
+    {
+      "stage": "post",
+      "question": "三因制宜的共同点是？",
+      "options": [
+        "改变同一个方，不是三套方",
+        "三套不同的方",
+        "三个不同的病",
+        "三种不同的药"
+      ],
+      "correct": 0,
+      "explanation": "三个维度上的调整。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么个体预测是天人模型最常被误用处？",
+      "options": [
+        "群体统计不能直接推个体",
+        "因为不准",
+        "因为太旧",
+        "因为无数据"
+      ],
+      "correct": 0,
+      "explanation": "需体质与辨证补足。"
+    }
+  ]
+}

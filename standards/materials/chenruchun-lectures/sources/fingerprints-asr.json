@@ -1,0 +1,105 @@
+{
+  "$generated": "sha256 逐文件实测",
+  "files": {
+    "asr-transcripts.json": {
+      "bytes": 3203598,
+      "sha256": "e5d3217796fe020c08ff86a81bf30a3aa2077b79b0d6099bb57454ac1a59e5f9"
+    },
+    "meta-asr.json": {
+      "bytes": 4122,
+      "sha256": "e86de604a4b4ed744048343cd85680aba5d76d8c91659ba34f39f0f58a8a1ed1"
+    },
+    "asr/lec-01.json": {
+      "bytes": 79163,
+      "sha256": "6cb3925654facb84e214eba59d045d34c38ed537caabc9289bf475ab50506cb1"
+    },
+    "asr/lec-02.json": {
+      "bytes": 129035,
+      "sha256": "2175ddb6f67e4c474eb777265f456af9aaf8c3c61bcac39449eca72d2ed8443e"
+    },
+    "asr/lec-03.json": {
+      "bytes": 86768,
+      "sha256": "7e7bf02b6b56e69455f7a678cf8fc58490ac70b9060f78d1dbcfa5d9e7c64623"
+    },
+    "asr/lec-04.json": {
+      "bytes": 94573,
+      "sha256": "bbad3c26741d3488b83b9467a93ffc38a2249849eb9c42a8eee113ade5e546e9"
+    },
+    "asr/lec-05.json": {
+      "bytes": 29759,
+      "sha256": "5b60c8004b8b162ec1b7c3200cdce03e3aad7713d3cef5062a731b71e8c7795f"
+    },
+    "asr/lec-06.json": {
+      "bytes": 98636,
+      "sha256": "24078469c69acd4136976da73c37e76f125eb14ddb1eae9f52dbce618df93626"
+    },
+    "asr/lec-07.json": {
+      "bytes": 89483,
+      "sha256": "ccc73d9493f26344c14c31477e90bd7d61d947288d65c6503de1a18fbd53014b"
+    },
+    "asr/lec-09.json": {
+      "bytes": 109225,
+      "sha256": "0d7c7bd7508a2a7b554608400f73c3d762a83dd7f286f362c32b30a44e4c86ea"
+    },
+    "asr/lec-10.json": {
+      "bytes": 81959,
+      "sha256": "30e9f5445cf57202db475554afda6c440be7073ffcccc8a02d6e14e3d5d7584a"
+    },
+    "asr/lec-11.json": {
+      "bytes": 98492,
+      "sha256": "551f81742cc4309f93594179cadb53ac7664f52c997a222c3510aa1797fc68f8"
+    },
+    "asr/lec-12.json": {
+      "bytes": 77250,
+      "sha256": "c26dc6cd3b8c84b35f489cabda853841dd9fe2c89323e23c822682c6b779fc6e"
+    },
+    "asr/lec-13.json": {
+      "bytes": 112593,
+      "sha256": "795fb8d992046099176c21cd3c5ac89319fa19bced64473c3d8c96da391a0514"
+    },
+    "asr/lec-14.json": {
+      "bytes": 79811,
+      "sha256": "bf86cac2676543be65ef48525e1f3d62d8bc1656ce8f378400f6c6959b7f4eb4"
+    },
+    "asr/lec-15.json": {
+      "bytes": 91115,
+      "sha256": "031c16168bda62c8525025fa17ea54135a4c1b6efcf5f5d6c081df21a0ed93b3"
+    },
+    "asr/lec-16.json": {
+      "bytes": 123330,
+      "sha256": "b796b96556bffd1e90556171b60d90b64db1f60060dc5cf0048b9a015999a32a"
+    },
+    "asr/lec-17.json": {
+      "bytes": 85198,
+      "sha256": "e75bf1dca17fa31083bd8640c0bea0b64fdc644aaa150b53f1f1125cd3d57706"
+    },
+    "asr/lec-18.json": {
+      "bytes": 76637,
+      "sha256": "23f963c57d5168b6aa5dae9fde30fc36f57de8424379ca21c263c7b4f1815ac1"
+    },
+    "asr/lec-19.json": {
+      "bytes": 94187,
+      "sha256": "14b7f7495102072ac90ee6cc7f5c14d9a1d1dbfbd2d1244111a3c2a6aa38196f"
+    },
+    "asr/lec-20.json": {
+      "bytes": 73377,
+      "sha256": "711ad1f8884dc60df6c355e781e33f8dd85c0147aa81b3005c40bc61277385b1"
+    },
+    "asr/lec-21.json": {
+      "bytes": 107017,
+      "sha256": "3bb00ebf3d044b2efbaa0694a2f5123f71348bbb2927424b6d3cab835d61284e"
+    },
+    "asr/lec-22.json": {
+      "bytes": 69229,
+      "sha256": "0e649832e647b04d64a34dd8bbcb9b2d22b615ba65f3f53b3c61c396a4612503"
+    },
+    "asr/lec-23.json": {
+      "bytes": 115230,
+      "sha256": "f6adef97e72a4edef7c883b596654bf92867adf5e0b00ade8baf642e5bb60a77"
+    },
+    "asr/lec-24.json": {
+      "bytes": 31256,
+      "sha256": "d62bb8c6501b854f10c12bc0bfbad86fcee6e41e535e7602a03652f6bb1ed974"
+    }
+  }
+}

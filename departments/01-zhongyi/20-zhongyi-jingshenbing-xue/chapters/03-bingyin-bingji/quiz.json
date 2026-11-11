@@ -1,0 +1,79 @@
+{
+  "lesson": "03-bingyin-bingji",
+  "title": "病因病机：七情、痰火、瘀虚",
+  "subject": "20-zhongyi-jingshenbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "精神病学的两条主要病机链是？",
+      "options": [
+        "痰火链（实）与虚损链（虚）",
+        "表里链",
+        "寒热链",
+        "气血链"
+      ],
+      "correct": 0,
+      "explanation": "教材 3.2.1：痰火扰神 / 肾虚脑神失养。"
+    },
+    {
+      "stage": "check",
+      "question": "七情致病的关键限定是？",
+      "options": [
+        "「过极」——不是有情志，而是过极",
+        "情绪越多越好",
+        "情志不致病",
+        "只看怒与喜"
+      ],
+      "correct": 0,
+      "explanation": "教材 3.1.1：七情过极与五志化火。"
+    },
+    {
+      "stage": "check",
+      "question": "教材纳入的两项现代病因是？",
+      "options": [
+        "禀赋遗传与脑损伤",
+        "饮食与劳倦",
+        "外伤与虫毒",
+        "寒湿与湿热"
+      ],
+      "correct": 0,
+      "explanation": "教材 3.1.2 明确写入。"
+    },
+    {
+      "stage": "check",
+      "question": "本章三辨第一位的占比约是？",
+      "options": [
+        "病因约 71%（882）",
+        "病机 50%",
+        "证候表现 70%",
+        "三者各三分之一"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算：本章几乎全在讲「什么在致病」。"
+    },
+    {
+      "stage": "post",
+      "question": "痰火链的完整路径是？",
+      "options": [
+        "情志不遂→气郁化火→灼津为痰→痰火扰神",
+        "肾虚→髓减→神失养",
+        "外伤→瘀血→阻窍",
+        "寒凝→气滞→痛"
+      ],
+      "correct": 0,
+      "explanation": "教材 3.2.1。"
+    },
+    {
+      "stage": "post",
+      "question": "虚实不分会导致什么？",
+      "options": [
+        "该清的不清、该补的不补，用反即加重",
+        "无影响",
+        "只是疗程长",
+        "只影响预后"
+      ],
+      "correct": 0,
+      "explanation": "两条链的治法方向相反。"
+    }
+  ]
+}

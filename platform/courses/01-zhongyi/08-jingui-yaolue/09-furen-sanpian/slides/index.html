@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>第 9 章 · 妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段 · 幻灯片</title>
+<style>
+
+:root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
+--jade:#1f6f5c;--jade-soft:#e3efe9;--cinnabar:#a8321e;--cinnabar-soft:#f7e6e2;--gold:#a8862a;
+--sans:system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;
+--serif:"Songti SC","Noto Serif SC",Georgia,serif;
+--mono:ui-monospace,"Cascadia Mono",Consolas,monospace;}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#12110f;color:var(--ink);font-family:var(--sans)}
+#deck{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{min-height:100%;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;
+  padding:5vh 7vw;background:var(--paper);border-bottom:1px solid #000}
+.slide-inner{max-width:1000px;width:100%;margin:0 auto}
+.slide-foot{max-width:1000px;width:100%;margin:3vh auto 0;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+h1.big{font-family:var(--serif);font-size:clamp(28px,4.4vw,54px);line-height:1.25;margin:0}
+blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-height:1.6;margin:0;
+  border-left:6px solid var(--gold);padding-left:24px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--jade);
+  text-transform:uppercase;margin-bottom:14px}
+.kicker.warn{color:var(--cinnabar)}
+p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
+.compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
+.compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+/* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
+.math{font-style:italic;font-family:var(--serif)}
+.math-block{display:block;text-align:center;font-family:var(--serif);font-size:1.05em;margin:.8em 0}
+.math-op,.math-text,.math-rm{font-style:normal}
+.math-op{padding:0 .12em}
+.math-cal{font-style:normal}
+.math-bb{font-style:normal;font-weight:700}
+.frac{display:inline-block;vertical-align:middle;text-align:center;font-style:normal;margin:0 .15em;line-height:1.15}
+.frac-num{display:block;padding:0 .3em;border-bottom:1px solid currentColor}
+.frac-den{display:block;padding:0 .3em}
+.math-sqrt{font-style:normal;margin-right:.05em}
+.math-line{border-top:1px solid currentColor;font-style:normal;padding-top:.05em}
+.math-note{font-size:.8em;font-style:normal}
+.figure-host{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+#hud{position:fixed;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#8a8578;
+  background:#faf8f3cc;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
+@media print{.slide{page-break-after:always;min-height:auto}#hud{display:none}}
+</style>
+</head>
+<body>
+<div id="deck">
+<section class="slide" data-i="0">
+  <div class="slide-inner"><h1 class="big">第 9 章 · 妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段</h1></div>
+  <div class="slide-foot"><span>1 / 31</span><span>title</span></div>
+</section>
+<section class="slide" data-i="1">
+  <div class="slide-inner"><blockquote class="motto">「问曰：新产妇人有三病，一者病痉，二者病郁冒，三者大便难，何谓也？师曰：新产血虚，多汗出，喜中风，故令病痉；亡血复汗，寒多，故令郁冒；亡津液，胃燥，故大便难。」——《金匮要略·妇人产后病脉证治第二十一》第 1 条（外源·笈成·金匱要略方論 第21篇·第1条）</blockquote></div>
+  <div class="slide-foot"><span>2 / 31</span><span>motto</span></div>
+</section>
+<section class="slide" data-i="2">
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">讲妇人病最常见的讲法是「妊娠要安胎、产后要补虚、杂病要调经」，三句话都对，也都没用——它们把三篇当成三个<strong>病种</strong>，于是「什么时候该攻、什么时候只能等」这个真问题被抹掉了。实际上三篇是<strong>一条病程轴上的三段</strong>：妊娠篇要先分清肚子里是胎还是癥（20.2「当下其症」与 20.11「当刺泻」都是妊娠而用攻法），产后篇把三种新产病<strong>并列</strong>而不是递进（21.1），杂病篇 22 条里既有内服也有外治（22.15 内藏、22.20 坐药、22.21 洗、22.22 导）。不把这三段的分工算出来，妇人病就只剩「当归川芎」四个字。</p></div>
+  <div class="slide-foot"><span>3 / 31</span><span>problem</span></div>
+</section>
+<section class="slide" data-i="3">
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（金匮在本仓库无教材底本，条文只能逐字取自外源；不复算就分不清「26 条方文」与「25 个方名」）+ 知识积累（44 条 × 篇级统计 = 知道三篇各 11/11/22 条、7/6/13 方，知道妊娠篇 11 条里有 2 条在讲禁忌、2 条在讲常服）</p></div>
+  <div class="slide-foot"><span>4 / 31</span><span>roots</span></div>
+</section>
+<section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact dense"><h3 id="一-三篇是三段-不是三个病种">一、三篇是三段，不是三个病种</h3>
+<div class="table-wrap"><table><thead><tr><th>篇</th><th>条</th><th>方</th><th>方/条</th><th>药味</th><th>无药味方</th><th>这段病程在问什么</th></tr></thead><tbody><tr><td>20 妊娠</td><td>11</td><td>7</td><td>0.64</td><td>28</td><td>0</td><td>肚子里是胎还是病？能不能攻？</td></tr><tr><td>21 产后</td><td>11</td><td>6</td><td>0.55</td><td>26</td><td>1</td><td>刚生完，虚在哪儿，哪三件事会先坏？</td></tr><tr><td>22 杂病</td><td>22</td><td>13</td><td>0.59</td><td>36</td><td>3</td><td>既不孕也不产的日常妇科病，怎么分经、带、杂</td></tr><tr><td>合计</td><td><strong>44</strong></td><td><strong>26</strong></td><td><strong>0.59</strong></td><td><strong>90</strong></td><td><strong>4</strong></td><td>——</td></tr></tbody></table></div>
+<p>三篇的方条比挤在 0.55–0.64 这个窄带里，说明三篇的写法一致：<strong>先辨证，再出方</strong>，没有一篇是纯方书。这一点与全书差别很大（全书 174 方 / 398 条 = 0.44），妇人三篇的方密度比全书高出三成五——不是因为它更「方剂化」，而是因为它篇幅短、每条都直指一个具体处置。</p>
+<h3 id="二-妊娠篇-先分-胎-与-癥-再谈安胎">二、妊娠篇：先分「胎」与「癥」，再谈安胎</h3></div></div>
+  <div class="slide-foot"><span>5 / 31</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>20.1 立的是<strong>辨妊娠</strong>本身：「妇人得平脉，阴脉小弱，其人渴，不能食，无寒热，名妊娠，桂枝汤主之」。注意这里的判据是「平脉 + 阴脉小弱 + 渴不能食 + 无寒热」四件事的合取，不是某一个脉。</p>
+<p>紧接着 20.2 就出现全书最要紧的一句转折：「妇人宿有症病，经断未及三月，而得漏下不止，胎动在脐上者，为症痼害」，收在「<strong>当下其症，桂枝茯苓丸主之</strong>」。妊娠而用下法，这在常识里是禁忌；原文之所以敢用，前提是先把「癥」与「胎」分开——20.2 自己给了分法（「妊娠六月动者，前三月经水利时，胎也」）。<strong>所以妊娠篇的第一件事不是安胎，是排除</strong>：排不掉癥，后面所有的补都是错的。</p>
+<p>7 方各自钉在一个症状上，几乎一条一方：</p></div></div>
+  <div class="slide-foot"><span>6 / 31</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>条</th><th>方</th><th>味数</th><th>钉住的症状（原文）</th></tr></thead><tbody><tr><td>20.2</td><td>桂枝茯苓丸</td><td>5</td><td>漏下不止、胎动在脐上（癥痼害，当下其症）</td></tr><tr><td>20.5</td><td>当归芍药散</td><td>6</td><td>妇人怀妊，腹中㽲痛</td></tr><tr><td>20.6</td><td>干姜人参半夏丸</td><td>3</td><td>妊娠呕吐不止</td></tr><tr><td>20.7</td><td>当归贝母苦参丸</td><td>3</td><td>妊娠，小便难，饮食如故</td></tr><tr><td>20.8</td><td>葵子茯苓散</td><td>2</td><td>妊娠有水气，身重，小便不利</td></tr><tr><td>20.9</td><td>当归散</td><td>5</td><td>妇人妊娠，宜常服当归散主之</td></tr><tr><td>20.10</td><td>白术散</td><td>4</td><td>妊娠养胎，白术散主之</td></tr></tbody></table></div>
+<p>后两行是<strong>常服方</strong>，与前五行的治病方不是一类。20.9 原文自己写了「妊娠常服即易产，胎无苦疾，产后百病悉主之」——这是预防性长期服食，不是对证处置。把 20.9、20.10 和 20.2 混成一张「妊娠七方」的表，就是把「攻」「治」「养」三件事压成一件。</p>
+<p>本章按条文用词把 11 条分成三组（正则见 <code>code/main.js</code> 的 <code>PREG_RULES</code>，每条都记录命中的原文字串）：</p></div></div>
+  <div class="slide-foot"><span>7 / 31</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>组</th><th>条</th><th>命中字串</th><th>为什么单列</th></tr></thead><tbody><tr><td>禁忌/慎用</td><td>20.2</td><td>「当下其症」</td><td>妊娠用下法，原文给出的前提是「其症不去故也」</td></tr><tr><td>禁忌/慎用</td><td>20.11</td><td>「当刺」</td><td>妊娠而施刺泻（劳宫、关元），原文以此泻「心气实」</td></tr><tr><td>常服/养胎</td><td>20.9</td><td>「常服」</td><td>长期服食，非治病方</td></tr><tr><td>常服/养胎</td><td>20.10</td><td>「养胎」</td><td>同上，且带加减法</td></tr><tr><td>辨胎与证治</td><td>其余 7 条</td><td>——</td><td>20.1、20.3、20.4、20.5、20.6、20.7、20.8</td></tr></tbody></table></div>
+<p><strong>2 条禁忌 + 2 条常服 + 7 条证治 = 11 条</strong>。这个比例本身就是结论：妊娠篇有 4 条（11 条里 36%）在讲「处置的边界」与「平时吃什么」，剩下 7 条才是「病了怎么治」。<strong>「禁忌/慎用」这个栏名是本章起的</strong>：原文没有「禁」字标题，20.2 用攻法、20.11 用刺法，两条的共同点是「妊娠期仍需另立判据的处置」，不是说原文写了「不可」。</p>
+<h3 id="三-产后篇-三病并列-不是三证递进">三、产后篇：三病并列，不是三证递进</h3></div></div>
+  <div class="slide-foot"><span>8 / 31</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact dense"><p>21.1 是一段问答，把新产常见病压成三件：「<strong>新产妇人有三病，一者病痉，二者病郁冒，三者大便难</strong>」。原文的「一者…二者…三者…」是并列句，每条各给一句病机：</p>
+<div class="table-wrap"><table><thead><tr><th>病</th><th>病机（21.1 原文，逐字）</th><th>篇内承接条</th></tr></thead><tbody><tr><td>病痉</td><td>新产血虚，多汗出，喜中风</td><td>21.9（产后中风，发热，面正赤，喘而头痛，竹叶汤主之）</td></tr><tr><td>病郁冒</td><td>亡血复汗，寒多</td><td>21.2（产妇郁冒……小柴胡汤主之）</td></tr><tr><td>大便难</td><td>亡津液，胃燥</td><td>21.3（此为胃实）、21.7（不大便……热在里）</td></tr></tbody></table></div>
+<p>三病的共同分母是「亡血 + 亡津液」，但落点完全不同：痉在表（中风），郁冒在气（孤阳上出、但头汗出），大便难在里（胃燥、胃实）。<strong>所以「产后宜补」这句话在这三条面前是失效的</strong>——21.3 与 21.7 都用了大承气汤这一路，攻的是里实。产后该补还是该攻，取决于三病里坏在哪一条，不取决于「产后」这个身份。</p></div></div>
+  <div class="slide-foot"><span>9 / 31</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>6 方的排布也照这三条走：21.4 当归生姜羊肉汤（腹中㽲痛，虚）、21.5 枳实芍药散（烦满不得卧，气滞）、21.6 下瘀血汤（瘀血著脐下）、21.9 竹叶汤（中风，10 味，本篇最大方）、21.10 竹皮大丸（乳中虚，烦乱呕逆）、21.11 白头翁加甘草阿胶汤（下利虚极）。虚、滞、瘀、风、虚热、下利，六个方向各一方，没有一个是「通用补方」。</p>
+<h3 id="四-杂病篇-22-条最杂-也最讲给药途径">四、杂病篇：22 条最杂，也最讲给药途径</h3>
+<p>22 篇 22 条 13 方，方条比 0.59，与另两篇齐平，但内容是三篇里最散的。可归的几组：</p></div></div>
+  <div class="slide-foot"><span>10 / 31</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><ul><li><strong>热入血室 4 条</strong>（22.1–22.4）：四条同指一名，治法却分三路——22.1「小柴胡汤主之」、22.2「治之无犯胃气及上二焦，必自愈」、22.3 与 22.4「当刺期门」。同名不同治，是「辨病位优先于守一方」的最好例子。</li><li><strong>情志与咽部 2 条</strong>：22.5「妇人咽中如有炙脔，半夏厚朴汤主之」；22.6「妇人脏躁，喜悲伤欲哭，象如神灵所作，数欠伸，甘麦大枣汤主之」。两条都不给脏腑辨证的推演，只给一个可观察的象。</li><li><strong>经带诸条</strong>：22.9 温经汤（「妇人年五十所，病下利数十日不止……手掌烦热，唇口干燥」）、22.10 土瓜根散（「带下经水不利，少腹满痛，经一月再见者」）、22.11 旋覆花汤、22.12 胶姜汤、22.14 抵当汤（「妇人经水不利下」）。</li><li><strong>水血互结 1 条</strong>：22.13「妇人少腹满如敦状，小便微难而不渴，生后者，此为水与血俱结血室也，大黄甘遂汤主之」。</li></ul></div></div>
+  <div class="slide-foot"><span>11 / 31</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><ul><li><strong>外治给药 4 条</strong>：22.15 矾石丸（内脏中）、22.20 蛇床子散（棉裹内之，温阴中坐药）、22.21 狼牙汤（浸汤沥阴中）、22.22 膏发煎（导之）。三篇之中只有 22 篇出现外治给药，20 篇与 21 篇一条都没有——这一栏不是修辞，是结构差异。</li><li><strong>转胞 1 条</strong>：22.19「此名转胞，不得溺也……但利小便则愈」。</li></ul>
+<p>22.8 是全篇最长的一条，也是唯一的总论：「妇人之病，因虚、积冷、结气，为诸经水断绝」。它把妇人病的病因压成三样（虚、积冷、结气），后面 21 条基本都在这三样里找位置。<strong>读 22 篇的正确顺序是先读 22.8，再读其余</strong>——否则 22 条会被当成 22 个互不相关的病。</p>
+<h3 id="五-26-方-25-个方名-4-条无药味">五、26 方、25 个方名、4 条无药味</h3>
+<p>这是本章最容易报错的三个数，必须一起报：</p></div></div>
+  <div class="slide-foot"><span>12 / 31</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><div class="table-wrap"><table><thead><tr><th>口径</th><th>值</th><th>差在哪</th></tr></thead><tbody><tr><td>方文条数（计次）</td><td><strong>26</strong></td><td>formulas[] 里出现几次算几次</td></tr><tr><td>方名去重</td><td><strong>25</strong></td><td>当归芍药散在 20.5、22.17 各出现一次</td></tr><tr><td>有药味者</td><td><strong>22</strong></td><td>4 条只有方名，没有药味</td></tr></tbody></table></div>
+<p>4 条无药味的方是：21.4 当归生姜羊肉汤、22.17 当归芍药散、22.18 小建中汤、22.22 膏发煎。其中 22.17 是<strong>承前省方</strong>——原文只有「妇人腹中诸疾痛，当归芍药散主之」，药味要回 20.5 去取。把小建中汤、膏发煎也算进「可执行处方」，是 26 与 22 之间那 4 条的差额。</p>
+<p>味数两端也很清楚：温经汤 12 味（三篇最大方），竹叶汤 10 味；另一端是红蓝花酒、蛇床子散、狼牙汤各 1 味。<strong>方之大小不随篇走，随「病位单一还是复合」走。</strong></p></div></div>
+  <div class="slide-foot"><span>13 / 31</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">BUILD IT · 从零实现</div>
+                <div class="compact dense"><div class="codeblock"><div class="codeblock-lang">js</div><pre><code class="lang-js">// code/main.js
+pianStats()        // 逐篇：条 / 方 / 方条比 / 药味 / 无药味方 / 原文字数
+fangIndex()        // 26 方按篇归并，计次 26 与去重 25 两种口径同报，重复方点名
+sanBing()          // 产后三病（21.1）：病机逐字取自原文，附篇内承接条
+pregnancyFlags()   // 妊娠篇 11 条分组：禁忌/慎用 2、常服/养胎 2、其余 7
+heatIntoBlood()    // 杂病篇「热入血室」4 条，同名三治
+externalTx()       // 杂病篇外治给药 4 条，逐条核对给药字串
+totals()           // 三篇占全书：条 44/398 = 11.1%，方 26/174 = 14.9%</code></pre></div>
+<p>运行：</p>
+<div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash">node code/main.js
+node --test code/main.test.js</code></pre></div></div></div>
+  <div class="slide-foot"><span>14 / 31</span><span>build</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">BUILD IT · 从零实现</div>
+                <div class="compact dense"><p>预期输出（实测）：44 条 / 26 方（方名去重 25）· 药味 90 次 / 52 味 · 有方名无药味 4 条 · 原文 3,535 字；
+20/21/22 三篇分别为 11 条 7 方（0.64）、11 条 6 方（0.55）、22 条 13 方（0.59）。</p>
+<p>设计上有三处是刻意的：</p>
+<ol><li><code>sanBing()</code> 的 <code>cause</code> 字段必须是 21.1 原文的逐字子串，单测会断言。这条断言的意义不在代码，而在<strong>防止病机被改写成白话</strong>——一旦有人顺手把「亡血复汗，寒多」写成「失血后受寒」，测试就红。</li><li><code>pregnancyFlags()</code> 不用人工打标签，用三条正则扫原文，且把命中的字串一并输出（<code>20.2 命中「当下其症」</code>）。分类可疑时，看命中的是哪个词就够了。</li><li><code>fangIndex()</code> 同时保留 <code>counted</code> 与 <code>distinct</code>。只留一个数，26 与 25 的差额就永远说不清。</li></ol></div></div>
+  <div class="slide-foot"><span>15 / 31</span><span>build</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">验证</div>
+                <div class="compact"><div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash">python scripts/build_jingui_text.py --check   # 篇/条/方 与留档一致
+node code/main.js
+node --test code/main.test.js                 # 11 项断言</code></pre></div>
+<p>单测覆盖的是口径，不是文案：三篇 44/26、逐篇 11/7·11/6·22/13、方条比 0.64/0.55/0.59、药味 90/52、无药味方 4 条逐个点名、当归芍药散唯一重复且 22.17 无药味、三病病机逐字出自 21.1、妊娠分组 4 条、热入血室 4 条与外治 4 条、7 处关键条文逐字可核。</p></div></div>
+  <div class="slide-foot"><span>16 / 31</span><span>verify</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>「禁忌/慎用」与「常服/养胎」是本章的分组，不是原文的小标题。</strong> 原文没有这两栏，分组依据是条文里出现了「当下其症」「当刺」「常服」「养胎」四个词。词是原文的，归类是归纳的；换一组词就会换一组结果。</li><li><strong>26 与 25 同时对，也同时不完整。</strong> 26 是方文条数，25 是方名数，22 是有药味的方数。任取一个当「妇人三篇有多少方」都是错的。此外 20.1 的桂枝汤、20.3 的附子汤、20.4 的胶艾汤、21.2 的小柴胡汤、21.3 与 21.7 的大承气汤、22.19 的肾气丸都只提名而不出方文，一律不计入 26——这与全书的 174 方口径一致，但会让「三篇用方数」看起来偏少。</li><li><strong>条文的分条不等于宋本。</strong> 44 条是按源页 <code>&amp;lt;p id=&amp;quot;篇.条&amp;quot;&amp;gt;</code> 分段的结果，各刻本分条不同；跨书引用必须核对条号，不可写成「宋本第 N 条」。</li><li>**外治 4 条只记给药途径，不评疗效。</li></ul></div></div>
+  <div class="slide-foot"><span>17 / 31</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>** 「内脏中」「棉裹内之」「沥阴中」「导之」是原文的动词，本章只把它当结构信号（说明 22 篇的处置手段不止内服），不作安全性或有效性判断。</p>
+<ul><li><strong>不能据本章处方。</strong> 本章没有讨论任何剂量、煎服法、妊娠用药禁忌的现代清单。妊娠期用药涉及母胎双方，必须由执业医师依现行药典与临床指南判断。</li><li><strong>本章只做文献结构，不作诊疗依据。</strong> 所有关于「该攻该补」的表述，都是对原文语序的描述，不是对临床决策的建议。</li></ul>
+<blockquote><p><strong>免责声明：</strong> 本章条文逐字引自外源 <code>standards/jingui/</code>（来源与 sha256 见该目录 README），本仓库无金匮要略教材底本；本章为文本结构与统计口径分析，不构成诊疗依据，亦不可替代执业医师的辨证与处方。妇科相关内容尤须注意：妊娠、产后属高风险人群，任何用药决定须回原文并由有资质的医师结合现代检查判断。</p></blockquote></div></div>
+  <div class="slide-foot"><span>18 / 31</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">附：本篇原文全录（逐条，主见证）</div>
+                <div class="compact dense"><blockquote><p><strong>第 20 篇 · 妇人妊娠病脉证并治第二十</strong>：11 条 · 7 方 · 868 字（本库 <code>tiao</code> 编号即源页 <code>&amp;lt;p id=&amp;quot;X.Y&amp;quot;&amp;gt;</code>，不等于宋本分条）。本章逐条录出，未做改写；与古诗文网本的分篇/分字差异见 <code>standards/jingui/gushiwen/校勘.md</code>。</p></blockquote>
+<p><strong>第20.1条</strong>　师曰：妇人得平脉，阴脉小弱，其人渴，不能食，无寒热，名妊娠，桂枝汤主之。。于法六十日当有此证；设有医治逆者，却一月加吐下者，则绝之。</p>
+<p><strong>第20.2条</strong>　妇人宿有症病，经断未及三月，而得漏下不止，胎动在脐上者，为症痼害。妊娠六月动者，前三月经水利时，胎也。下血者，后断三月衃也。所以血不止者，其症不去故也，当下其症，桂枝茯苓丸主之。</p>
+<p>桂枝茯苓丸方：
+桂枝 茯苓 牡丹 芍药 桃仁
+右五味，末之，炼蜜和丸，如兔屎大，每日食前服一丸，不知，加至三丸。</p>
+<p><strong>第20.3条</strong>　妇人怀娠六七月，脉弦发热，其胎愈胀，腹痛恶寒者，少腹如扇，所以然者，子脏开故也，当以附子汤温其脏。</p></div></div>
+  <div class="slide-foot"><span>19 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">附：本篇原文全录（逐条，主见证）</div>
+                <div class="compact dense"><p><strong>第20.4条</strong>　师曰：妇人有漏下者，有半产后因续下血都不绝者，有妊娠下血者，假令妊娠腹中痛，为胞阻，胶艾汤主之。</p>
+<p><strong>第20.5条</strong>　妇人怀妊，腹中㽲痛，当归芍药散主之。</p>
+<p>当归芍药散方：
+当归 芍药 茯苓 白术 泽泻 芎䓖
+右六味，杵为散，取方寸匕，酒和，日三服。</p>
+<p><strong>第20.6条</strong>　妊娠呕吐不止，干姜人参半夏丸主之。</p>
+<p>干姜人参半夏丸方：
+干姜 人参 半夏
+右三味，末之，以生姜汁糊为丸，如梧桐子大，饮服十丸，日三次。</p>
+<p><strong>第20.7条</strong>　妊娠，小便难，饮食如故，当归贝母苦参丸主之。</p>
+<p>当归贝母苦参丸方：
+当归 贝母 苦参
+右三味，末之，炼蜜丸如小豆大，饮服三丸，加至十丸。</p>
+<p><strong>第20.8条</strong>　妊娠有水气，身重，小便不利，洒淅恶寒，起即头眩，葵子茯苓散主之。</p>
+<p>葵子茯苓散方：
+葵子 茯苓
+右二味，杵为散，饮服方寸匕，日三服，小便利则愈。</p>
+<p><strong>第20.9条</strong>　妇人妊娠，宜常服当归散主之。</p></div></div>
+  <div class="slide-foot"><span>20 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">附：本篇原文全录（逐条，主见证）</div>
+                <div class="compact dense"><p>当归散方：
+当归 黄芩 芍药 芎䓖 白术
+右五味，杵为散，酒服方寸匕，日再服，妊娠常服即易产，胎无苦疾，产后百病悉主之。</p>
+<p><strong>第20.10条</strong>　妊娠养胎，白术散主之。</p>
+<p>白术散方：
+白术 芎䓖 蜀椒 牡蛎
+右四味，杵为散，酒服一钱匕，日三服，夜一服。但苦痛，加芍药；心下毒痛，倍加芎䓖；心烦吐痛，不能食饮，加细辛一两，半夏大者二十枚。服之后，更以醋浆水服之。若呕，以醋浆水服之；复不解者，小麦汁服之。已后渴者，大麦粥服之，病虽愈，服之勿置。</p>
+<p><strong>第20.11条</strong>　妇人伤胎，怀身腹满，不得小便，从腰以下重，如有水气状。怀身七月，太阴当养不养，此心气实，当刺泻劳宫及关元，小便微利则愈。</p>
+<blockquote><p><strong>第 21 篇 · 妇人产后病脉证治第二十一</strong>：11 条 · 6 方 · 1125 字（本库 <code>tiao</code> 编号即源页 <code>&amp;lt;p id=&amp;quot;X.Y&amp;quot;&amp;gt;</code>，不等于宋本分条）。本章逐条录出，未做改写；与古诗文网本的分篇/分字差异见 <code>standards/jingui/gushiwen/校勘.md</code>。</p></blockquote></div></div>
+  <div class="slide-foot"><span>21 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">附：本篇原文全录（逐条，主见证）</div>
+                <div class="compact dense"><p><strong>第21.1条</strong>　问曰：新产妇人有三病，一者病痉，二者病郁冒，三者大便难，何谓也？师曰：新产血虚，多汗出，喜中风，故令病痉；亡血复汗，寒多，故令郁冒；亡津液，胃燥，故大便难。</p>
+<p><strong>第21.2条</strong>　产妇郁冒，其脉微弱，呕不能食，大便反坚，但头汗出。所以然者，血虚而厥，厥而必冒。冒家欲解，必大汗出。以血虚下厥，孤阳上出，故头汗出。所以产妇喜汗出者，亡阴血虚，阳气独盛，故当汗出，阴阳乃复。大便坚，呕不能食，小柴胡汤主之。</p>
+<p><strong>第21.3条</strong>　病解能食，七八日更发热者，此为胃实，大承气汤主之。</p>
+<p><strong>第21.4条</strong>　产后腹中㽲痛，当归生姜羊肉汤主之，并治腹中寒疝，虚劳不足。</p>
+<p>当归生姜羊肉汤方：</p>
+<p><strong>第21.5条</strong>　产后腹痛，烦满不得卧，枳实芍药散主之。</p>
+<p>枳实芍药散方：
+枳实 芍药
+右二味，杵为散，服方寸匕，日三服，并主痈脓，以麦粥下之。</p>
+<p><strong>第21.6条</strong>　产妇腹痛、法当以枳实芍药散，假令不愈者，此为腹中有瘀血著脐下，宜下瘀血汤主之；亦主经水不利。</p></div></div>
+  <div class="slide-foot"><span>22 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">附：本篇原文全录（逐条，主见证）</div>
+                <div class="compact dense"><p>下瘀血汤方：
+大黄 桃仁 䗪虫
+右三味，末之，炼蜜和为四丸，以酒一升，煎一丸，取八合顿服之。新血下如豚肝。</p>
+<p><strong>第21.7条</strong>　产后七八日，无太阳证，少腹坚痛，此恶露不尽；不大便，烦躁发热、切脉微实，再倍发热，日晡时烦躁者，不食，食则谵语，至夜即愈，宜大承气汤主之。热在里，结在膀胱也。</p>
+<p><strong>第21.8条</strong>　产后风，续之数十日不解，头微痛，恶寒，时时有热，心下闷，干呕，汗出，虽久，阳旦证续在耳，可与阳旦汤。</p>
+<p><strong>第21.9条</strong>　产后中风，发热，面正赤，喘而头痛，竹叶汤主之。</p>
+<p>竹叶汤方：
+竹叶 葛根 防风 桔梗 桂枝 人参 甘草 附子 大枣 生姜
+右十味，以水一斗，煮取二升半，分温三服，温覆使汗出，颈项强，用大附子一枚，破之如豆大，煎药扬去沫。呕者加半夏半升洗。</p>
+<p><strong>第21.10条</strong>　妇人乳中虚，烦乱呕逆，安中益气，竹皮大丸主之。</p>
+<p>竹皮大丸方：
+生竹茹 石膏 桂枝 甘草 白薇
+右五味，末之，枣肉和丸弹子大，以饮服一丸、日三夜二服。有热者倍白薇，烦喘者加柏实一分。</p></div></div>
+  <div class="slide-foot"><span>23 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">附：本篇原文全录（逐条，主见证）</div>
+                <div class="compact dense"><p><strong>第21.11条</strong>　产后下利虚极，白头翁加甘草阿胶汤主之。</p>
+<p>白头翁加甘草阿胶汤方：
+白头翁 甘草 阿胶 秦皮 黄连 柏皮
+右六味，以水七升、煮取二升半，内胶令消尽，分温三服。</p>
+<p>〔附方〕</p>
+<p>《千金》三物黄芩汤：治妇人在草蓐，自发露得风，四肢苦烦热，头痛者与小柴胡汤；头不痛但烦者，此汤主之。
+黄芩 苦参 干地黄
+右三味，以水八升，煮取二升，温服一升，多吐下虫。</p>
+<p>《千金》内补当归建中汤：治妇人产后虚羸不足，腹中刺痛不止，吸吸少气，或苦少腹急摩痛引腰背，不能食饮；产后一月，日得服四、五剂为善，令人强壮宜。
+当归 桂枝 芍药 生姜 甘草 大枣
+右六味，以水一斗，煮取三升，分温三服，一日令尽。若大虚加饴糖六两，汤成内之，于火上暖令饴消，若去血过多，崩伤内衄不止，加地黄六两，阿胶二两，合成八味，汤成内阿胶，若无当归，加芎䓖代之，若无生姜，以干姜代之。</p></div></div>
+  <div class="slide-foot"><span>24 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="24">
+  <div class="slide-inner"><div class="kicker">附：本篇原文全录（逐条，主见证）</div>
+                <div class="compact dense"><blockquote><p><strong>第 22 篇 · 妇人杂病脉证并治第二十二</strong>：22 条 · 13 方 · 1542 字（本库 <code>tiao</code> 编号即源页 <code>&amp;lt;p id=&amp;quot;X.Y&amp;quot;&amp;gt;</code>，不等于宋本分条）。本章逐条录出，未做改写；与古诗文网本的分篇/分字差异见 <code>standards/jingui/gushiwen/校勘.md</code>。</p></blockquote>
+<p><strong>第22.1条</strong>　妇人中风，七八日续来寒热，发作有时，经水适断，此为热入血室，其血必结，故使如疟状，发作有时，小柴胡汤主之。</p>
+<p><strong>第22.2条</strong>　妇人伤寒发热，经水适来，昼日明了，暮则谵语如见鬼状者，此为热入血室，治之无犯胃气及上二焦，必自愈。</p>
+<p><strong>第22.3条</strong>　妇人中风，发热恶寒，经水适来，得之七八日，热除脉迟，身凉和，胸胁满，如结胸状，讝语者，此为热入血室也，当刺期门，随其实而取之。</p>
+<p><strong>第22.4条</strong>　阳明病、下血讝语者，此为热入血室，但头汗出，当刺期门，随其实而泻之，濈然汗出者愈。</p>
+<p><strong>第22.5条</strong>　妇人咽中如有炙脔，半夏厚朴汤主之。</p></div></div>
+  <div class="slide-foot"><span>25 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="25">
+  <div class="slide-inner"><div class="kicker">附：本篇原文全录（逐条，主见证）</div>
+                <div class="compact"><p>半夏厚朴汤方：
+半夏 厚朴 茯苓 生姜 干苏叶
+右五味，以水七升，煮取四升，分服四服，日三夜一服。</p>
+<p><strong>第22.6条</strong>　妇人脏躁，喜悲伤欲哭，象如神灵所作，数欠伸，甘麦大枣汤主之。</p>
+<p>甘麦大枣汤方：
+甘草 小麦 大枣
+右三味，以水六升，煮取三升，温分三服，亦补脾气。</p>
+<p><strong>第22.7条</strong>　妇人吐涎沫，医反下之，心下即痞，当先治其吐涎沫，小青龙汤主之；涎沫止，乃治痞，泻心汤主之。</p></div></div>
+  <div class="slide-foot"><span>26 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="26">
+  <div class="slide-inner"><div class="kicker">附：本篇原文全录（逐条，主见证）</div>
+                <div class="compact"><p><strong>第22.8条</strong>　妇人之病，因虚、积冷、结气，为诸经水断绝，至有历年，血寒积结，胞门寒伤，经络凝坚。在上呕吐涎唾，久成肺痈，形体损分。在中盘结，绕脐寒疝；或两胁疼痛，与脏相连；或结热中，痛在关元，脉数无疮，肌若鱼鳞，时著男子，非止女身。在下未多，经候不匀，令阴掣痛，少腹恶寒；或引腰脊，下根气街，气冲急痛，膝胫疼烦。奄忽眩冒，状如厥癫；或有忧惨，悲伤多嗔，此皆带下，非有鬼神。久则羸瘦，脉虚多寒；三十六病，千变万端；审脉阴阳，虚实紧弦；行其针药，治危得安；其虽同病，脉各异源，子当辨记，勿谓不然。</p>
+<p><strong>第22.9条</strong>　妇人年五十所，病下利数十日不止，暮即发热，少腹里急，腹满，手掌烦热，唇口干燥，何也？师曰：此病属带下，何以故？曾经半产，瘀血在少腹不去。何以知之？其证唇口干燥，故知之。当以温经汤主之。</p></div></div>
+  <div class="slide-foot"><span>27 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="27">
+  <div class="slide-inner"><div class="kicker">附：本篇原文全录（逐条，主见证）</div>
+                <div class="compact dense"><p>温经汤方：
+吴茱萸 当归 芎䓖 芍药 人参 桂枝 阿胶 生姜 牡丹皮 甘草 半夏 麦门冬
+右十二味，以水一斗，煮取三升，分温三服，亦主妇人少腹寒，久不受胎；兼取崩中去血，或月水来过多，及至期不来。</p>
+<p><strong>第22.10条</strong>　带下经水不利，少腹满痛，经一月再见者，土瓜根散主之。</p>
+<p>土瓜根散方：
+土瓜根 芍药 桂枝 䗪虫
+右四味，杵为散，酒服方寸匕，日三服。</p>
+<p><strong>第22.11条</strong>　寸口脉弦而大，弦则为减，大则为芤，减则为寒，芤则为虚，寒虚相搏，此名曰革，妇人则半产漏下，旋覆花汤主之。</p>
+<p><strong>第22.12条</strong>　妇人陷经，漏下黑不解，胶姜汤主之。</p>
+<p><strong>第22.13条</strong>　妇人少腹满如敦状，小便微难而不渴，生后者，此为水与血俱结血室也，大黄甘遂汤主之。</p>
+<p>大黄甘遂汤方：
+大黄 甘遂 阿胶
+右三味，以水三升，煮取一升，顿服之，其血当下。</p>
+<p><strong>第22.14条</strong>　妇人经水不利下，抵当汤主之。</p>
+<p>抵当汤方：
+水蛭 虻虫 桃仁 大黄
+右四味，为末，以水五升，煮取三升，去滓，温服一升。</p></div></div>
+  <div class="slide-foot"><span>28 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="28">
+  <div class="slide-inner"><div class="kicker">附：本篇原文全录（逐条，主见证）</div>
+                <div class="compact denser"><p><strong>第22.15条</strong>　妇人经水闭不利，脏坚癖不止，中有干血，下白物，矾石丸主之。</p>
+<p>矾石丸方：
+矾石 杏仁
+右二味，末之，炼蜜和丸，枣核大，内脏中，剧者再内之。</p>
+<p><strong>第22.16条</strong>　妇人六十二种风，及腹中血气刺痛，红蓝花酒主之。</p>
+<p>红蓝花酒方：
+红蓝花
+右一味，以酒一大升，煎减半，顿服一半，未止再服。</p>
+<p><strong>第22.17条</strong>　妇人腹中诸疾痛，当归芍药散主之。</p>
+<p>当归芍药散方：</p>
+<p><strong>第22.18条</strong>　妇人腹中痛，小建中汤主之。</p>
+<p>小建中汤方：</p>
+<p><strong>第22.19条</strong>　问曰：妇人病饮食如故，烦热不得卧，而反倚息者，何也？师曰：此名转胞，不得溺也。以胞系了戾，故致此病。但利小便则愈，宜肾气丸主之。</p>
+<p><strong>第22.20条</strong>　蛇床子散方，温阴中坐药。</p>
+<p>蛇床子散方：
+蛇床子仁
+右一味，末之，以白粉少许，和合相得，如枣大，棉裹内之，自然温。</p>
+<p><strong>第22.21条</strong>　少阴脉滑而数者，阴中即生疮，阴中蚀疮烂者，狼牙汤洗之。</p>
+<p>狼牙汤方：
+狼牙
+右一味，以水四升，煮取半升，以绵缠筋如茧浸汤沥阴中，日四遍。</p></div></div>
+  <div class="slide-foot"><span>29 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="29">
+  <div class="slide-inner"><div class="kicker">附：本篇原文全录（逐条，主见证）</div>
+                <div class="compact"><p><strong>第22.22条</strong>　胃气下泄，阴吹而正暄，此谷气之实也，膏发煎导之。</p>
+<p>膏发煎方：</p>
+<p>小儿疳虫蚀齿方：
+雄黄 葶苈
+右二味，末之，取腊月猪脂溶，以槐枝绵裹头四五枚，点药烙之。</p>
+<blockquote><p>本章全录 <strong>44 条</strong>。全书 402 条的分布：前十章 191 条（含序 1）+ 篇目精读 14 章 208 条 + 附篇 3 篇（笈成本各作 1 条、按段引用于第 22-24 章）。</p></blockquote>
+<p>&lt;!-- jingui-quanwen:end --&gt;</p></div></div>
+  <div class="slide-foot"><span>30 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="30">
+  <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
+  <div class="slide-foot"><span>31 / 31</span><span>disclaimer</span></div>
+</section>
+</div>
+<div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>
+<script>/**
+ * [tcmP] figures.js —— 中医概念动画图（纯 SVG + rAF，无依赖）
+ *
+ * 自动挂载：文档里写
+ *     <div data-figure="wuxing-cycle"></div>
+ * 即可。支持悬停暂停；系统开启「减少动态效果」时渲染为静态帧。
+ *
+ * 与 ai-engineering-from-scratch 的 site/figures.js 同构（同样的 el/loop/registry 形态），
+ * 图目换成中医概念：
+ *   yin-yang-sigmoid    阴阳 → 二分类：sigmoid 决策边界扫过，样本左右归属翻转
+ *   wuxing-cycle        五行生克：相生正向流动 + 相克五角星流动
+ *   zangxiang-graph     藏象：脏腑 → 官窍 → 情志 的边逐步点亮
+ *   sizhen-fusion       四诊合参：四通道 → 融合层 → 证候输出
+ *   meridian-lookup     经络腧穴：KD-Tree 空间划分 + 最近邻查询
+ *   junchen-attention   君臣佐使：药味 → 权重矩阵高亮
+ */
+
+(function () {
+  'use strict';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── SVG 小工具 ──
+  function el(name, attrs, kids) {
+    const e = document.createElementNS(NS, name);
+    for (const k in attrs || {}) e.setAttribute(k, attrs[k]);
+    (Array.isArray(kids) ? kids : kids ? [kids] : []).filter(Boolean).forEach((c) => e.appendChild(c));
+    return e;
+  }
+  const txt = (s) => document.createTextNode(s);
+
+  function label(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--sans)', 'font-size': 12, fill: 'var(--muted)' },
+      opts || {}
+    ), [txt(s)]);
+  }
+  function mono(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--mono)', 'font-size': 11, fill: 'var(--muted)', 'letter-spacing': '.1em' },
+      opts || {}
+    ), [txt(s)]);
+  }
+
+  function svgRoot(host, W, H, aria) {
+    const svg = el('svg', {
+      viewBox: `0 0 ${W} ${H}`, width: '100%', role: 'img', 'aria-label': aria || '',
+      style: 'display:block;max-width:100%;height:auto',
+    });
+    host.appendChild(svg);
+    return svg;
+  }
+
+  // 悬停暂停 + 时间归一化
+  function loop(host, fn, period, opts) {
+    period = period || 6400;
+    opts = opts || {};
+    let raf, paused = false, t0 = performance.now();
+    const onTick = (now) => {
+      if (!paused) fn((((now - t0) % period) / period));
+      raf = requestAnimationFrame(onTick);
+    };
+    host.addEventListener('mouseenter', () => { paused = true; });
+    host.addEventListener('mouseleave', () => { paused = false; });
+    if (REDUCED) { fn(opts.staticT == null ? 0.62 : opts.staticT); return function () {}; }
+    raf = requestAnimationFrame(onTick);
+    return () => cancelAnimationFrame(raf);
+  }
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeIO = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const sigmoid = (z) => 1 / (1 + Math.exp(-z));
+
+  const FIGURES = {};
+
+  /* ───────────────────── yin-yang-sigmoid ─────────────────────
+     阴阳 → 二分类。左侧散点：X 轴「寒热倾向」，输出 sigmoid 概率。
+     扫描线扫过阈值，样本随阈值的移动左右换边，右侧给出准确率。
+  */
+  FIGURES['yin-yang-sigmoid'] = function (host) {
+    const W = 720, H = 400, PAD = 54;
+    const svg = svgRoot(host, W, H, '阴阳二分类与 sigmoid 决策边界');
+    const plotW = W - PAD * 2, plotH = H - 150;
+
+    // 样本：12 条八纲典型证候（阴=0 阳=1）
+    const data = [
+      [-2.2, 0], [-1.8, 0], [-1.4, 0], [-1.1, 0], [-0.6, 0], [-0.2, 0],
+      [0.2, 1], [0.6, 1], [1.1, 1], [1.5, 1], [1.9, 1], [2.4, 1],
+    ];
+    const X = (v) => PAD + ((v + 3) / 6) * plotW;
+    const Y = (p) => H - 90 - p * plotH;
+
+    // 坐标轴
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: W - PAD, y2: H - 90, stroke: 'var(--line)' }));
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: PAD, y2: H - 90 - plotH, stroke: 'var(--line)' }));
+    svg.appendChild(mono(PAD, H - 72, '寒 / 阴 →'));
+    svg.appendChild(mono(W - PAD, H - 72, '← 热 / 阳', { 'text-anchor': 'end' }));
+    svg.appendChild(mono(8, PAD - 22, 'P(阳)'));
+    svg.appendChild(mono(W - PAD - 130, 26, 'sigmoid 决策边界'));
+
+    const curve = el('path', { d: '', fill: 'none', stroke: 'var(--jade)', 'stroke-width': 2.5 });
+    svg.appendChild(curve);
+    const threshLine = el('line', { stroke: 'var(--cinnabar)', 'stroke-dasharray': '5 4', 'stroke-width': 1.6 });
+    svg.appendChild(threshLine);
+
+    const pts = data.map(([x, y]) => {
+      const g = el('g', {});
+      const c = el('circle', { r: 6, cx: X(x), cy: H - 90 - 0.5 * plotH, fill: y ? 'var(--cinnabar)' : 'var(--jade)', opacity: 0.85 });
+      const cls = el('text', {
+        x: X(x), y: H - 90 - 0.5 * plotH + 4, 'text-anchor': 'middle',
+        'font-family': 'var(--sans)', 'font-size': 10, fill: '#fff',
+      }, [txt(y ? '阳' : '阴')]);
+      g.appendChild(c); g.appendChild(cls);
+      svg.appendChild(g);
+      return { x, y, c, cls };
+    });
+
+    const accText = label(PAD, 26, '', { fill: 'var(--ink)', 'font-size': 13 });
+    svg.appendChild(accText);
+
+    let pathD = '';
+    for (let i = 0; i <= 60; i += 1) {
+      const xv = -3 + (i / 60) * 6;
+      const p = sigmoid(1.6 * xv + 0.1);
+      pathD += `${i === 0 ? 'M' : 'L'}${X(xv).toFixed(1)},${Y(p).toFixed(1)}`;
+    }
+    curve.setAttribute('d', pathD);
+
+    loop(host, (t) => {
+      // 阈值在 0..1 之间来回扫
+      const thr = 0.15 + 0.7 * easeIO(1 - Math.abs(2 * t - 1));
+      const pThr = 0.1 + thr * 0.85;
+      const xThr = (Math.log(pThr / (1 - pThr)) - 0.1) / 1.6;
+      threshLine.setAttribute('x1', X(xThr));
+      threshLine.setAttribute('x2', X(xThr));
+      threshLine.setAttribute('y1', H - 90 - plotH - 6);
+      threshLine.setAttribute('y2', H - 90);
+
+      let correct = 0;
+      for (const p of pts) {
+        const prob = sigmoid(1.6 * p.x + 0.1);
+        const pred = prob >= pThr ? 1 : 0;
+        if (pred === p.y) correct += 1;
+        p.c.setAttribute('cy', Y(prob));
+        p.cls.setAttribute('y', Y(prob) + 4);
+        p.c.setAttribute('r', pred === p.y ? 7 : 5);
+        p.c.setAttribute('opacity', pred === p.y ? 0.92 : 0.32);
+        p.cls.setAttribute('opacity', pred === p.y ? 1 : 0.25);
+        // 判错的样本画一圈红
+        p.c.setAttribute('stroke', pred === p.y ? 'none' : 'var(--cinnabar)');
+        p.c.setAttribute('stroke-width', pred === p.y ? 0 : 2);
+      }
+      accText.textContent = `阈值 P=${pThr.toFixed(2)} · 准确率 ${correct}/${pts.length} = ${((correct / pts.length) * 100).toFixed(0)}%`;
+    }, 7200);
+  };
+
+  /* ───────────────────── wuxing-cycle ─────────────────────
+     五行生克。外圈相生（顺时针流动），内五角星相克。
+  */
+  FIGURES['wuxing-cycle'] = function (host) {
+    const W = 720, H = 440, cx = W / 2 - 70, cy = H / 2, R = 148;
+    const svg = svgRoot(host, W, H, '五行生克关系');
+    const names = ['木', '火', '土', '金', '水'];
+    const colors = ['var(--jade)', 'var(--cinnabar)', 'var(--gold)', '#8a6d3b', '#2a4d69'];
+    const node = names.map((_, i) => {
+      const a = -Math.PI / 2 + (i / 5) * Math.PI * 2;
+      return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), a };
+    });
+
+    // 相生边（外圈，顺时针 木→火→土→金→水→木）
+    const sheng = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const p = el('path', {
+        d: `M${n.x},${n.y} Q${(n.x + m.x) / 2 + (cy - (n.y + m.y) / 2) * 0.16},${(n.y + m.y) / 2 + ((n.x + m.x) / 2 - cx) * 0.16} ${m.x},${m.y}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.28,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+    // 相克边（五角星）
+    const ke = node.map((n, i) => {
+      const m = node[(i + 2) % 5];
+      const p = el('line', {
+        x1: n.x, y1: n.y, x2: m.x, y2: m.y,
+        stroke: 'var(--cinnabar)', 'stroke-width': 1.4, 'stroke-dasharray': '4 4', opacity: 0.2,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+
+    // 沿边流动的点
+    const flow = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const g = el('circle', { r: 4, fill: 'var(--jade)', cx: n.x, cy: n.y, opacity: 0 });
+      svg.appendChild(g);
+      return { g, from: n, to: m };
+    });
+
+    const nodes = node.map((n, i) => {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: n.x, cy: n.y, r: 30, fill: '#fff', stroke: colors[i], 'stroke-width': 2 }));
+      g.appendChild(el('text', {
+        x: n.x, y: n.y + 8, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 22, fill: colors[i],
+      }, [txt(names[i])]));
+      svg.appendChild(g);
+      return g;
+    });
+
+    // 右栏说明
+    svg.appendChild(mono(W - 190, 60, '相生 (outer)'));
+    svg.appendChild(label(W - 190, 82, '木→火→土→金→水→木', { fill: 'var(--jade)' }));
+    svg.appendChild(mono(W - 190, 130, '相克 (star)'));
+    svg.appendChild(label(W - 190, 152, '木克土 · 土克水 · 水克火', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(label(W - 190, 170, '火克金 · 金克木', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(mono(W - 190, 220, '建模要点'));
+    svg.appendChild(label(W - 190, 242, '5 类 + 有向约束', { fill: 'var(--ink)' }));
+    svg.appendChild(label(W - 190, 262, '纯 softmax 会丢掉', { fill: 'var(--muted)' }));
+    svg.appendChild(label(W - 190, 280, '全部关系信息', { fill: 'var(--muted)' }));
+
+    const capt = label(W - 190, H - 30, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const phase = (t * 5) % 5;
+      for (let i = 0; i < 5; i += 1) {
+        const f = flow[i];
+        const local = clamp01(phase - i);
+        const k = easeIO(local);
+        f.g.setAttribute('cx', lerp(f.from.x, f.to.x, k));
+        f.g.setAttribute('cy', lerp(f.from.y, f.to.y, k));
+        f.g.setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.95 : 0);
+        sheng[i].setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.75 : 0.28);
+        const keOn = phase - i >= 0 && phase - i <= 1.4;
+        ke[i].setAttribute('opacity', keOn ? 0.55 : 0.2);
+      }
+      const active = Math.floor(phase) % 5;
+      nodes.forEach((g, i) => g.querySelector('circle').setAttribute('stroke-width', i === active ? 4 : 2));
+      capt.textContent = `当前传导：${names[active]} → ${names[(active + 1) % 5]}（生） / ${names[active]} 克 ${names[(active + 2) % 5]}`;
+    }, 7000);
+  };
+
+  /* ───────────────────── zangxiang-graph ─────────────────────
+     藏象：五脏 → 官窍 → 情志，边按序点亮。
+  */
+  FIGURES['zangxiang-graph'] = function (host) {
+    const W = 720, H = 430;
+    const svg = svgRoot(host, W, H, '藏象学说的脏腑-官窍-情志关系图');
+
+    const zang = [
+      { n: '肝', x: 110, y: 100, qiao: ['目'], zhi: '怒' },
+      { n: '心', x: 110, y: 210, qiao: ['舌'], zhi: '喜' },
+      { n: '脾', x: 110, y: 320, qiao: ['口'], zhi: '思' },
+      { n: '肺', x: 610, y: 100, qiao: ['鼻'], zhi: '悲' },
+      { n: '肾', x: 610, y: 210, qiao: ['耳'], zhi: '恐' },
+    ];
+    const edges = [];
+
+    for (const z of zang) {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: z.x, cy: z.y, r: 26, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+      g.appendChild(el('text', { x: z.x, y: z.y + 8, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 20, fill: 'var(--cinnabar)' }, [txt(z.n)]));
+      svg.appendChild(g);
+
+      const qx = W / 2 + (z.x < 300 ? -40 : 40);
+      g.appendChild(el('line', { x1: z.x + (z.x < 300 ? 26 : -26), y1: z.y, x2: qx - (z.x < 300 ? 22 : -22), y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+
+      const qg = el('g', {});
+      qg.appendChild(el('rect', { x: qx - 22, y: z.y - 14, width: 44, height: 28, rx: 6, fill: 'var(--jade-soft)', stroke: 'var(--jade)', 'stroke-width': 1.3 }));
+      qg.appendChild(el('text', { x: qx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--jade)' }, [txt(z.qiao[0])]));
+      svg.appendChild(qg);
+
+      const zx = W - 110;
+      g.appendChild(el('line', { x1: qx + 22, y1: z.y, x2: zx - 24, y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      const zg = el('g', {});
+      zg.appendChild(el('circle', { cx: zx, cy: z.y, r: 22, fill: '#fdf1dd', stroke: 'var(--gold)', 'stroke-width': 1.3 }));
+      zg.appendChild(el('text', { x: zx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--gold)' }, [txt(z.zhi)]));
+      svg.appendChild(zg);
+
+      edges.push({ zy: z.y, e1: g.querySelector('line'), e2: g.querySelectorAll('line')[1], qg, zg });
+    }
+
+    svg.appendChild(mono(110 - 30, 40, '藏 / 五藏'));
+    svg.appendChild(mono(W / 2 - 30, 40, '象 / 官窍'));
+    svg.appendChild(mono(W - 110 - 30, 40, '情志'));
+    const capt = label(20, H - 14, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const step = t * 5;
+      edges.forEach((e, i) => {
+        const on = step >= i;
+        e.e1.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        e.e2.setAttribute('stroke', on ? 'var(--gold)' : 'var(--line)');
+        e.qg.setAttribute('opacity', on ? 1 : 0.35);
+        e.zg.setAttribute('opacity', on ? 1 : 0.35);
+      });
+      const cur = zang[Math.min(4, Math.floor(step))];
+      capt.textContent = cur ? `点亮中：${cur.n} 开窍于 ${cur.qiao[0]}，在志为${cur.zhi}` : '';
+    }, 6200, { staticT: 0.99 });
+  };
+
+  /* ───────────────────── sizhen-fusion ─────────────────────
+     四诊合参：四通道 → 融合层 → 证候。演示模态缺失时的降级。
+  */
+  FIGURES['sizhen-fusion'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '四诊合参的多模态融合与模态缺失降级');
+    const chans = [
+      { n: '望', d: '舌象 / 面色', y: 60 },
+      { n: '闻', d: '语声 / 气息', y: 130 },
+      { n: '问', d: '主诉 / 现病史', y: 200 },
+      { n: '切', d: '脉搏波', y: 270 },
+    ];
+    const fx = 330, fy = 165;
+    const outx = 600;
+
+    const fxG = el('g', {});
+    fxG.appendChild(el('rect', { x: fx - 52, y: fy - 46, width: 104, height: 92, rx: 10, fill: '#fff', stroke: 'var(--jade)', 'stroke-width': 2 }));
+    fxG.appendChild(el('text', { x: fx, y: fy - 14, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--jade)' }, [txt('融合层')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 8, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('交叉注意力')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 26, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('+ 缺失掩码')]));
+    svg.appendChild(fxG);
+
+    const outG = el('g', {});
+    outG.appendChild(el('rect', { x: outx - 46, y: fy - 32, width: 92, height: 64, rx: 10, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+    outG.appendChild(el('text', { x: outx, y: fy - 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--cinnabar)' }, [txt('证候')]));
+    outG.appendChild(el('text', { x: outx, y: fy + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('带置信度')]));
+    svg.appendChild(outG);
+
+    svg.appendChild(el('line', { x1: fx + 52, y1: fy, x2: outx - 46, y2: fy, stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+
+    const inG = chans.map((c) => {
+      const g = el('g', {});
+      g.appendChild(el('rect', { x: 24, y: c.y - 24, width: 150, height: 48, rx: 8, fill: '#fff', stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      g.appendChild(el('text', { x: 40, y: c.y - 2, 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--ink)' }, [txt(c.n + '诊')]));
+      g.appendChild(el('text', { x: 40, y: c.y + 16, 'font-size': 11, fill: 'var(--muted)' }, [txt(c.d)]));
+      svg.appendChild(g);
+      const path = el('path', {
+        d: `M174,${c.y} C 250,${c.y} 260,${fy} ${fx - 52},${fy}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.22,
+      });
+      svg.appendChild(path);
+      const dot = el('circle', { r: 4, fill: 'var(--jade)', opacity: 0 });
+      svg.appendChild(dot);
+      return { g, path, dot, y: c.y };
+    });
+
+    const capt = label(24, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    // 循环：全模态 → 缺闻诊 → 缺闻+切 → 恢复
+    const phases = [[1, 1, 1, 1], [1, 0, 1, 1], [1, 0, 1, 0], [1, 1, 1, 1]];
+    loop(host, (t) => {
+      const idx = Math.min(phases.length - 1, Math.floor(t * phases.length));
+      const mask = phases[idx];
+      const missing = [];
+      mask.forEach((m, i) => { if (!m) missing.push(chans[i].n); });
+
+      inG.forEach((c, i) => {
+        const on = mask[i] === 1;
+        c.g.style.opacity = on ? 1 : 0.3;
+        c.path.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        c.path.setAttribute('stroke-dasharray', on ? 'none' : '4 4');
+        c.path.setAttribute('opacity', on ? 0.55 : 0.25);
+        const local = clamp01(t * 4 - idx);
+        c.dot.setAttribute('cx', lerp(174, fx - 52, easeIO(local)));
+        c.dot.setAttribute('cy', lerp(c.y, fy, easeIO(local)));
+        c.dot.setAttribute('opacity', on ? 0.95 : 0);
+      });
+
+      const conf = 0.62 + 0.1 * mask.filter(Boolean).length;
+      outG.style.opacity = 0.4 + 0.6 * conf;
+      capt.textContent = missing.length
+        ? `模态缺失：缺 ${missing.join('、')} → 置信度降至 ${(conf * 100).toFixed(0)}%，系统须显式降级而非静默猜测`
+        : `四诊齐备 → 置信度 ${(conf * 100).toFixed(0)}%`;
+    }, 8800, { staticT: 0.35 });
+  };
+
+  /* ───────────────────── meridian-lookup ─────────────────────
+     腧穴检索：KD-Tree 空间划分 + 最近邻查询。
+  */
+  FIGURES['meridian-lookup'] = function (host) {
+    const W = 720, H = 400, PAD = 40;
+    const svg = svgRoot(host, W, H, '腧穴的空间划分与最近邻检索');
+    const plotW = W - PAD * 2 - 30, plotH = H - 110;
+
+    // 模拟体表腧穴点集（合谷、内关、足三里、三阴交等 18 穴）
+    let seed = 20261012;
+    const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+    const pts = Array.from({ length: 18 }, () => ({ x: PAD + 30 + rnd() * (plotW - 60), y: PAD + 20 + rnd() * (plotH - 40) }));
+
+    // KD-Tree 递归划分线
+    const lines = [];
+    (function build(list, depth) {
+      if (list.length < 2) return;
+      const axis = depth % 2;
+      const sorted = list.slice().sort((a, b) => (axis ? a.y - b.y : a.x - b.x));
+      const med = sorted[Math.floor(sorted.length / 2)];
+      if (axis) {
+        const minX = Math.min(...list.map((p) => p.x));
+        const maxX = Math.max(...list.map((p) => p.x));
+        lines.push({ x1: minX, y1: med.y, x2: maxX, y2: med.y, depth });
+        build(list.filter((p) => p.y < med.y), depth + 1);
+        build(list.filter((p) => p.y >= med.y), depth + 1);
+      } else {
+        const minY = Math.min(...list.map((p) => p.y));
+        const maxY = Math.max(...list.map((p) => p.y));
+        lines.push({ x1: med.x, y1: minY, x2: med.x, y2: maxY, depth });
+        build(list.filter((p) => p.x < med.x), depth + 1);
+        build(list.filter((p) => p.x >= med.x), depth + 1);
+      }
+    })(pts, 0);
+
+    const lineEls = lines.map((l) => {
+      const e = el('line', { x1: l.x1, y1: l.y1, x2: l.x2, y2: l.y2, stroke: 'var(--line)', 'stroke-width': 1, opacity: 0 });
+      svg.appendChild(e);
+      return { e, depth: l.depth };
+    });
+
+    const dotEls = pts.map((p, i) => {
+      const c = el('circle', { cx: p.x, cy: p.y, r: 4.5, fill: 'var(--jade)', opacity: 0.75 });
+      svg.appendChild(c);
+      const t = el('text', { x: p.x + 7, y: p.y + 4, 'font-size': 10, fill: 'var(--muted)', opacity: 0 });
+      t.appendChild(txt(`穴${String(i + 1).padStart(2, '0')}`));
+      svg.appendChild(t);
+      return { c, t, p };
+    });
+
+    const query = el('circle', { r: 8, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 2.2 });
+    svg.appendChild(query);
+    const ring = el('circle', { r: 0, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 1, 'stroke-dasharray': '3 3' });
+    svg.appendChild(ring);
+    const link = el('line', { stroke: 'var(--cinnabar)', 'stroke-width': 1.6, 'stroke-dasharray': '4 3' });
+    svg.appendChild(link);
+
+    const capt = label(PAD, H - 20, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      // 查询点沿弧线游走
+      const ang = t * Math.PI * 2;
+      const qx = PAD + 30 + plotW / 2 + Math.cos(ang) * plotW * 0.33;
+      const qy = PAD + 20 + plotH / 2 + Math.sin(ang) * plotH * 0.32;
+      query.setAttribute('cx', qx);
+      query.setAttribute('cy', qy);
+
+      let best = null;
+      let bestD = Infinity;
+      for (const d of dotEls) {
+        const dd = (d.p.x - qx) ** 2 + (d.p.y - qy) ** 2;
+        if (dd < bestD) { bestD = dd; best = d; }
+        d.c.setAttribute('r', 4.5);
+        d.c.setAttribute('fill', 'var(--jade)');
+        d.t.setAttribute('opacity', 0);
+      }
+      const dist = Math.sqrt(bestD);
+      link.setAttribute('x1', qx); link.setAttribute('y1', qy);
+      link.setAttribute('x2', best.p.x); link.setAttribute('y2', best.p.y);
+      ring.setAttribute('cx', qx); ring.setAttribute('cy', qy);
+      ring.setAttribute('r', dist);
+      best.c.setAttribute('r', 8);
+      best.c.setAttribute('fill', 'var(--cinnabar)');
+      best.t.setAttribute('opacity', 1);
+
+      const step = clamp01(t * 3);
+      lineEls.forEach((l) => l.e.setAttribute('opacity', step > l.depth / 6 ? (0.5 - l.depth * 0.06) : 0));
+
+      capt.textContent = `查询点 → 最近腧穴 ${best.t.textContent} · 平面距离 ${dist.toFixed(1)}px（真实体表须改测地距离）`;
+    }, 11000, { staticT: 0.2 });
+  };
+
+  /* ───────────────────── junchen-attention ─────────────────────
+     君臣佐使 → 注意力权重。列 = 药味，行为权重分配。
+  */
+  FIGURES['junchen-attention'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '君臣佐使的注意力权重分配');
+
+    const herbs = ['桂枝', '芍药', '生姜', '大枣', '甘草'];
+    const roles = ['君', '臣', '佐', '使'];
+    const weights = [
+      [0.52, 0.30, 0.08, 0.06, 0.04],
+      [0.18, 0.44, 0.20, 0.12, 0.06],
+      [0.08, 0.16, 0.40, 0.24, 0.12],
+      [0.04, 0.08, 0.18, 0.32, 0.38],
+    ];
+
+    const GX = 110, GY = 60, CW = 84, CH = 52;
+    svg.appendChild(mono(GX, 34, '方剂：桂枝汤（示例）'));
+
+    herbs.forEach((h, j) => {
+      svg.appendChild(el('text', {
+        x: GX + j * CW + CW / 2, y: GY - 10, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 14, fill: 'var(--ink)',
+      }, [txt(h)]));
+    });
+    roles.forEach((r, i) => {
+      svg.appendChild(el('text', {
+        x: GX - 22, y: GY + i * CH + CH / 2 + 6, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--cinnabar)',
+      }, [txt(r)]));
+    });
+
+    const cells = [];
+    for (let i = 0; i < roles.length; i += 1) {
+      for (let j = 0; j < herbs.length; j += 1) {
+        const r = el('rect', {
+          x: GX + j * CW + 3, y: GY + i * CH + 3, width: CW - 6, height: CH - 6, rx: 6,
+          fill: 'var(--jade)', opacity: 0,
+        });
+        svg.appendChild(r);
+        const tx = el('text', {
+          x: GX + j * CW + CW / 2, y: GY + i * CH + CH / 2 + 5, 'text-anchor': 'middle',
+          'font-family': 'var(--mono)', 'font-size': 12, fill: 'var(--ink)', opacity: 0,
+        });
+        tx.appendChild(txt(weights[i][j].toFixed(2)));
+        svg.appendChild(tx);
+        cells.push({ r, tx, w: weights[i][j], i, j });
+      }
+    }
+
+    // 右侧：软化的权重条
+    const bx = GX + herbs.length * CW + 40;
+    svg.appendChild(mono(bx, 34, '行归一化 (softmax)'));
+    const bars = roles.map((r, i) => {
+      const max = Math.max(...weights[i]);
+      const w = Math.max(...weights[i]);
+      const g = el('g', {});
+      g.appendChild(el('text', { x: bx, y: GY + i * 44 + 10, 'font-size': 12, fill: 'var(--muted)' }, [txt(r + ' 最大: ' + max.toFixed(2))]));
+      const bg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 180, height: 8, rx: 4, fill: 'var(--paper-2)' });
+      g.appendChild(bg);
+      const fg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 0, height: 8, rx: 4, fill: 'var(--jade)' });
+      g.appendChild(fg);
+      svg.appendChild(g);
+      return { fg, w: w, max };
+    });
+
+    svg.appendChild(label(20, H - 40, '结构先验：君药权重最大 → 可作为注意力掩码，让模型学不到"反结构"的配伍', { fill: 'var(--muted)' }));
+    const capt = label(20, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const focusRow = Math.floor(t * 4) % 4;
+      const local = clamp01(t * 4 - Math.floor(t * 4));
+      cells.forEach((c) => {
+        const on = c.i === focusRow;
+        c.r.setAttribute('opacity', on ? c.w * (0.55 + 0.45 * local) : c.w * 0.14);
+        c.tx.setAttribute('opacity', on ? 1 : 0.25);
+      });
+      bars.forEach((b, i) => {
+        b.fg.setAttribute('width', i === focusRow ? 180 * (b.max) * (0.5 + 0.5 * local) : 180 * b.max * 0.35);
+      });
+      capt.textContent = `当前角色：${roles[focusRow]} · 权重最高者为 ${herbs[weights[focusRow].indexOf(Math.max(...weights[focusRow]))]}`;
+    }, 8000, { staticT: 0.1 });
+  };
+
+  /* ───────────────────── 自动挂载 ───────────────────── */
+  function mount(root) {
+    const hosts = (root || document).querySelectorAll('[data-figure]');
+    for (const host of hosts) {
+      if (host.dataset.figureMounted === '1') continue;
+      const fn = FIGURES[host.dataset.figure];
+      if (!fn) {
+        host.innerHTML = `<p class="muted small">未知图形：<code>${host.dataset.figure}</code></p>`;
+        host.dataset.figureMounted = '1';
+        continue;
+      }
+      host.classList.add('figure');
+      fn(host);
+      host.dataset.figureMounted = '1';
+    }
+  }
+
+  window.TCMFigures = { FIGURES, mount };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => mount());
+  } else {
+    mount();
+  }
+  // 单页内动态插入的图形（章节页异步渲染）也能挂上
+  new MutationObserver(() => mount()).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+<script>
+(function(){
+  const deck=document.getElementById('deck');
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+
+  // ── 单帧模式：?shot=N 只渲染第 N 张，供无头浏览器逐帧截图 ──
+  // 截图器需要一张「干净的、正好一屏」的画面，所以这里藏掉其余幻灯片、
+  // 关掉滚动吸附、去掉 HUD，并在 title 上打就绪标记（渲染完成前截图会得到空白）。
+  const shot=new URLSearchParams(location.search).get('shot');
+  if(shot!==null){
+    const n=Math.max(0,Math.min(slides.length-1,Number(shot)||0));
+    slides.forEach((s,idx)=>{ if(idx!==n) s.style.display='none'; });
+    deck.style.overflow='hidden';
+    deck.style.scrollSnapType='none';
+    const hud=document.getElementById('hud');
+    if(hud) hud.style.display='none';
+    const target=slides[n];
+    if(target){ target.style.borderBottom='0'; target.scrollIntoView({block:'start'}); }
+    document.title='SHOT_READY '+n+' of '+slides.length;
+    if(window.TCMFigures)window.TCMFigures.mount(document);
+    // 只读视图：不绑键盘与点击，避免截图过程中页面状态改变
+    return;
+  }
+
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView();}
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    else if(e.key==='p'||e.key==='P'){e.preventDefault();print();}
+  });
+  deck.addEventListener('click',e=>{if(e.target.closest('a'))return;go(i+1);});
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)i=+en.target.dataset.i;});},{root:deck,threshold:.6});
+  slides.forEach(s=>io.observe(s));
+  if(window.TCMFigures)window.TCMFigures.mount(document);
+})();
+</script>
+</body>
+</html>

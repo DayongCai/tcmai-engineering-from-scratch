@@ -1,0 +1,32 @@
+{
+  "slug": "21-yixue-lunli-xue",
+  "title": "医学伦理学",
+  "en": "Medical Ethics",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 119,
+  "type": "Reference",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 36,
+  "bridge": "伦理原则→多准则决策 / 知情同意→合规校验",
+  "chaptersTarget": 18,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/21-yixue-lunli-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/21-yixue-lunli-xue",
+    "chaptersWritten": 18,
+    "words": 353510,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#医学伦理学",
+    "extractedAt": "2026-10-21"
+  }
+}

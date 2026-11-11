@@ -1,0 +1,325 @@
+{
+  "slug": "11-bingli-shengli-xue",
+  "title": "病理生理学",
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-introduction-to-pathophysiology",
+      "title": "病理生理学导论",
+      "status": "🚧"
+    },
+    {
+      "n": 2,
+      "slug": "02-homeostasis-allostasis-and-adaptive-responses-to-stressors",
+      "title": "稳态、异稳态与对应激源的适应性反应",
+      "status": "🚧"
+    },
+    {
+      "n": 3,
+      "slug": "03-cell-structure-and-function",
+      "title": "细胞结构与功能",
+      "status": "🚧"
+    },
+    {
+      "n": 4,
+      "slug": "04-cell-injury-aging-and-death",
+      "title": "细胞损伤、衰老与死亡",
+      "status": "🚧"
+    },
+    {
+      "n": 5,
+      "slug": "05-genome-structure-regulation-and-tissue-differentiation",
+      "title": "基因组结构、调控与组织分化",
+      "status": "🚧"
+    },
+    {
+      "n": 6,
+      "slug": "06-genetic-and-developmental-disorders",
+      "title": "遗传与发育性疾病",
+      "status": "🚧"
+    },
+    {
+      "n": 7,
+      "slug": "07-neoplasia",
+      "title": "肿瘤",
+      "status": "🚧"
+    },
+    {
+      "n": 8,
+      "slug": "08-infectious-processes",
+      "title": "感染过程",
+      "status": "🚧"
+    },
+    {
+      "n": 9,
+      "slug": "09-inflammation-and-immunity",
+      "title": "炎症与免疫",
+      "status": "🚧"
+    },
+    {
+      "n": 10,
+      "slug": "10-alterations-in-immune-function",
+      "title": "免疫功能异常",
+      "status": "🚧"
+    },
+    {
+      "n": 11,
+      "slug": "11-malignant-disorders-of-white-blood-cells",
+      "title": "白细胞恶性肿瘤",
+      "status": "🚧"
+    },
+    {
+      "n": 12,
+      "slug": "12-hiv-disease-and-aids",
+      "title": "HIV感染与艾滋病",
+      "status": "🚧"
+    },
+    {
+      "n": 13,
+      "slug": "13-alterations-in-oxygen-transport",
+      "title": "氧运输异常",
+      "status": "🚧"
+    },
+    {
+      "n": 14,
+      "slug": "14-alterations-in-hemostasis-and-blood-coagulation",
+      "title": "止血与凝血异常",
+      "status": "🚧"
+    },
+    {
+      "n": 15,
+      "slug": "15-alterations-in-blood-flow",
+      "title": "血流异常",
+      "status": "🚧"
+    },
+    {
+      "n": 16,
+      "slug": "16-alterations-in-blood-pressure",
+      "title": "血压异常",
+      "status": "🚧"
+    },
+    {
+      "n": 17,
+      "slug": "17-cardiac-function",
+      "title": "心脏功能",
+      "status": "🚧"
+    },
+    {
+      "n": 18,
+      "slug": "18-alterations-in-cardiac-function",
+      "title": "心脏功能异常",
+      "status": "🚧"
+    },
+    {
+      "n": 19,
+      "slug": "19-heart-failure-and-dysrhythmias",
+      "title": "心力衰竭与心律失常",
+      "status": "🚧"
+    },
+    {
+      "n": 20,
+      "slug": "20-shock",
+      "title": "休克",
+      "status": "🚧"
+    },
+    {
+      "n": 21,
+      "slug": "21-respiratory-function-and-alterations-in-gas-exchange",
+      "title": "呼吸功能与气体交换异常",
+      "status": "🚧"
+    },
+    {
+      "n": 22,
+      "slug": "22-obstructive-pulmonary-disorders",
+      "title": "阻塞性肺疾病",
+      "status": "🚧"
+    },
+    {
+      "n": 23,
+      "slug": "23-restrictive-pulmonary-disorders",
+      "title": "限制性肺疾病",
+      "status": "🚧"
+    },
+    {
+      "n": 24,
+      "slug": "24-fluid-and-electrolyte-homeostasis-and-imbalances",
+      "title": "水电解质稳态与失衡",
+      "status": "🚧"
+    },
+    {
+      "n": 25,
+      "slug": "25-acid-base-homeostasis-and-imbalances",
+      "title": "酸碱平衡与失衡",
+      "status": "🚧"
+    },
+    {
+      "n": 26,
+      "slug": "26-renal-function",
+      "title": "肾脏功能",
+      "status": "🚧"
+    },
+    {
+      "n": 27,
+      "slug": "27-intrarenal-disorders",
+      "title": "肾内疾病",
+      "status": "🚧"
+    },
+    {
+      "n": 28,
+      "slug": "28-acute-kidney-injury-and-chronic-kidney-disease",
+      "title": "急性肾损伤与慢性肾脏病",
+      "status": "🚧"
+    },
+    {
+      "n": 29,
+      "slug": "29-disorders-of-the-lower-urinary-tract",
+      "title": "下尿路疾病",
+      "status": "🚧"
+    },
+    {
+      "n": 30,
+      "slug": "30-male-genital-and-reproductive-function",
+      "title": "男性生殖功能",
+      "status": "🚧"
+    },
+    {
+      "n": 31,
+      "slug": "31-alterations-in-male-genital-and-reproductive-function",
+      "title": "男性生殖功能异常",
+      "status": "🚧"
+    },
+    {
+      "n": 32,
+      "slug": "32-female-genital-and-reproductive-function",
+      "title": "女性生殖功能",
+      "status": "🚧"
+    },
+    {
+      "n": 33,
+      "slug": "33-alterations-in-female-genital-and-reproductive-function",
+      "title": "女性生殖功能异常",
+      "status": "🚧"
+    },
+    {
+      "n": 34,
+      "slug": "34-sexually-transmitted-infections",
+      "title": "性传播感染",
+      "status": "🚧"
+    },
+    {
+      "n": 35,
+      "slug": "35-gastrointestinal-function",
+      "title": "胃肠功能",
+      "status": "🚧"
+    },
+    {
+      "n": 36,
+      "slug": "36-gastrointestinal-disorders",
+      "title": "胃肠疾病",
+      "status": "🚧"
+    },
+    {
+      "n": 37,
+      "slug": "37-alterations-in-function-of-the-gallbladder-and-exocrine-pancreas",
+      "title": "胆囊与外分泌胰腺功能异常",
+      "status": "🚧"
+    },
+    {
+      "n": 38,
+      "slug": "38-liver-diseases",
+      "title": "肝脏疾病",
+      "status": "🚧"
+    },
+    {
+      "n": 39,
+      "slug": "39-endocrine-physiology-and-mechanisms-of-hypothalamic-pituitary-regulation",
+      "title": "内分泌生理与下丘脑-垂体调控机制",
+      "status": "🚧"
+    },
+    {
+      "n": 40,
+      "slug": "40-disorders-of-endocrine-function",
+      "title": "内分泌功能紊乱",
+      "status": "🚧"
+    },
+    {
+      "n": 41,
+      "slug": "41-diabetes-mellitus",
+      "title": "糖尿病",
+      "status": "🚧"
+    },
+    {
+      "n": 42,
+      "slug": "42-alterations-in-metabolism-and-nutrition",
+      "title": "代谢与营养异常",
+      "status": "🚧"
+    },
+    {
+      "n": 43,
+      "slug": "43-structure-and-function-of-the-nervous-system",
+      "title": "神经系统结构与功能",
+      "status": "🚧"
+    },
+    {
+      "n": 44,
+      "slug": "44-acute-disorders-of-brain-function",
+      "title": "脑功能急性疾病",
+      "status": "🚧"
+    },
+    {
+      "n": 45,
+      "slug": "45-chronic-disorders-of-neurologic-function",
+      "title": "慢性神经功能障碍",
+      "status": "🚧"
+    },
+    {
+      "n": 46,
+      "slug": "46-alterations-in-special-sensory-function",
+      "title": "特殊感觉功能异常",
+      "status": "🚧"
+    },
+    {
+      "n": 47,
+      "slug": "47-pain",
+      "title": "疼痛",
+      "status": "🚧"
+    },
+    {
+      "n": 48,
+      "slug": "48-mental-health-disorders",
+      "title": "精神心理健康障碍",
+      "status": "🚧"
+    },
+    {
+      "n": 49,
+      "slug": "49-structure-and-function-of-the-musculoskeletal-system",
+      "title": "骨骼肌肉系统结构与功能",
+      "status": "🚧"
+    },
+    {
+      "n": 50,
+      "slug": "50-alterations-in-musculoskeletal-function-trauma-infection-and-disease",
+      "title": "骨骼肌肉功能异常：创伤、感染与疾病",
+      "status": "🚧"
+    },
+    {
+      "n": 51,
+      "slug": "51-alterations-in-musculoskeletal-function-rheumatic-disorders",
+      "title": "骨骼肌肉功能异常：风湿性疾病",
+      "status": "🚧"
+    },
+    {
+      "n": 52,
+      "slug": "52-alterations-in-the-integumentary-system",
+      "title": "皮肤系统异常",
+      "status": "🚧"
+    },
+    {
+      "n": 53,
+      "slug": "53-burn-injuries",
+      "title": "烧伤",
+      "status": "🚧"
+    }
+  ],
+  "note": "章目按讲义（supplements/jiangyi，15 单元 53 章）生成，旧传统 14 章已归档到 chapters-legacy-14/。"
+}

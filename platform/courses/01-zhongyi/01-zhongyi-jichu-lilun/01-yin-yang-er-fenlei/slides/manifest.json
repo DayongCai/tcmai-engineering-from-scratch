@@ -1,0 +1,67 @@
+{
+  "chapter": "01-yin-yang-er-fenlei",
+  "slideCount": 12,
+  "segmentCount": 12,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 21
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 49
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 56
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 65
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 16
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 183
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 1039
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 710
+    },
+    {
+      "n": 9,
+      "segment": 9,
+      "chars": 131
+    },
+    {
+      "n": 10,
+      "segment": 10,
+      "chars": 159
+    },
+    {
+      "n": 11,
+      "segment": 11,
+      "chars": 580
+    },
+    {
+      "n": 12,
+      "segment": 12,
+      "chars": 52
+    }
+  ]
+}

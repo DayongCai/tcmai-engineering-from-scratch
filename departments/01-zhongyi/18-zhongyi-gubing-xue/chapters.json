@@ -1,0 +1,138 @@
+{
+ "slug": "18-zhongyi-gubing-xue",
+ "title": "中医骨病学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gaishu-yuanliu",
+   "title": "第1章 中医骨病学概论与源流",
+   "status": "🚧",
+   "source": {
+    "chapter": 1,
+    "units": 4,
+    "hanzi": 9005
+   }
+  },
+  {
+   "n": 2,
+   "slug": "02-fenlei-bingyin-bingji",
+   "title": "第2章 骨病的分类和病因病机",
+   "status": "🚧",
+   "source": {
+    "chapter": 2,
+    "units": 7,
+    "hanzi": 11032
+   }
+  },
+  {
+   "n": 3,
+   "slug": "03-linchuang-zhencha",
+   "title": "第3章 骨病的临床诊查",
+   "status": "🚧",
+   "source": {
+    "chapter": 3,
+    "units": 7,
+    "hanzi": 11037
+   }
+  },
+  {
+   "n": 4,
+   "slug": "04-zhiliao-fangfa",
+   "title": "第4章 骨病的治疗方法",
+   "status": "🚧",
+   "source": {
+    "chapter": 4,
+    "units": 10,
+    "hanzi": 16234
+   }
+  },
+  {
+   "n": 5,
+   "slug": "05-huaxing-guisuiyan-guanjieyan",
+   "title": "第5章 化脓性骨髓炎与化脓性关节炎",
+   "status": "🚧",
+   "source": {
+    "chapter": 5,
+    "units": 3,
+    "hanzi": 13721
+   }
+  },
+  {
+   "n": 6,
+   "slug": "06-gu-guanjie-jiehe",
+   "title": "第6章 骨与关节结核",
+   "status": "🚧",
+   "source": {
+    "chapter": 6,
+    "units": 3,
+    "hanzi": 8244
+   }
+  },
+  {
+   "n": 7,
+   "slug": "07-gu-zhongliu",
+   "title": "第7章 骨肿瘤",
+   "status": "🚧",
+   "source": {
+    "chapter": 7,
+    "units": 9,
+    "hanzi": 19155
+   }
+  },
+  {
+   "n": 8,
+   "slug": "08-gu-daixie",
+   "title": "第8章 骨代谢性疾病",
+   "status": "🚧",
+   "source": {
+    "chapter": 8,
+    "units": 3,
+    "hanzi": 13558
+   }
+  },
+  {
+   "n": 9,
+   "slug": "09-gu-quexue-xingsi",
+   "title": "第9章 骨缺血性坏死",
+   "status": "🚧",
+   "source": {
+    "chapter": 9,
+    "units": 3,
+    "hanzi": 13720
+   }
+  },
+  {
+   "n": 10,
+   "slug": "10-tuixing-mianyixing",
+   "title": "第10章 骨关节退行性与免疫性疾病",
+   "status": "🚧",
+   "source": {
+    "chapter": 10,
+    "units": 4,
+    "hanzi": 13308
+   }
+  },
+  {
+   "n": 11,
+   "slug": "11-gu-jixing-ruangu",
+   "title": "第11章 骨畸形与骨软骨病",
+   "status": "🚧",
+   "source": {
+    "chapter": 11,
+    "units": 3,
+    "hanzi": 8859
+   }
+  },
+  {
+   "n": 12,
+   "slug": "12-kangfu-shuzihua",
+   "title": "第12章 骨病康复与数字化AI时代",
+   "status": "🚧",
+   "source": {
+    "chapter": 12,
+    "units": 4,
+    "hanzi": 11443
+   }
+  }
+ ]
+}

@@ -1,54 +1,69 @@
 {
-  "slug": "12-daodi-yaocai",
-  "title": "道地药材与产地加工",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-daodi-gainian",
-      "title": "道地性的概念与历史产区",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-huaiyao-zhebawei",
-      "title": "四大怀药与浙八味的产区特征",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-chandi-chengfen",
-      "title": "产地对成分的影响：土壤与气候",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-caishou-shijie",
-      "title": "采收时节与有效成分的消长",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-jiagong-ganzao",
-      "title": "产地加工：干燥、发汗与蒸煮",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-chenxian-qiezhi",
-      "title": "产地趁鲜切制与流通规范",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-dili-biaozhi",
-      "title": "地理标志与品牌保护",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-suyuan-bianma",
-      "title": "产区溯源的编码与区块链",
-      "status": "📋"
-    }
-  ]
+ "note": "12-道地药材与产地加工（派生课）：单元取自父课，locator 一律「派生·」；无单元复用。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-daodi-gainian",
+   "title": "道地药材的概念与源流",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-quhua-fenbu",
+   "title": "产区分布与区划",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-shengtai-pinzhi",
+   "title": "生态因子与品质形成",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-jiyuan-pinzhong",
+   "title": "基原、品种与种质",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-zaipei-caishou",
+   "title": "栽培与采收",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-chandi-jiagong",
+   "title": "产地加工",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-guige-dengji",
+   "title": "规格等级与商品",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-pingjia-zhuisu",
+   "title": "品质评价与追溯",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

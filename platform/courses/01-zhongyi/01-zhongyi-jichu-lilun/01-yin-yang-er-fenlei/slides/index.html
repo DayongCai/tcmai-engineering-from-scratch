@@ -26,11 +26,16 @@ blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-
   text-transform:uppercase;margin-bottom:14px}
 .kicker.warn{color:var(--cinnabar)}
 p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
-.compact{font-size:clamp(14px,1.35vw,18px);line-height:1.75;max-height:64vh;overflow:auto}
-.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em}
-.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:13px}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
-.compact table{border-collapse:collapse;font-size:13px;width:100%}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
 .compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
 /* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
 .math{font-style:italic;font-family:var(--serif)}
@@ -80,7 +85,7 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 </section>
 <section class="slide" data-i="6">
   <div class="slide-inner"><div class="kicker">核心概念</div>
-                <div class="compact"><h3 id="中医-阴阳">中医：阴阳</h3>
+                <div class="compact denser"><h3 id="中医-阴阳">中医：阴阳</h3>
 <p>阴阳是对相互对立又相互依存的两类属性的抽象概括。《素问·阴阳应象大论》把它抬到「万物之纲纪」的位置。关键在于它是<strong>关系性</strong>的，不是分类标签：没有孤立的「阴」，只有相对某参照的「偏阴」。</p>
 <p>临床落地时，八纲里的阴阳是<strong>总纲</strong>——表里、寒热、虚实六纲都可以归到阴阳下。所以本章不是要判「属于哪种证」，而是判「这一组体征整体上偏向哪一侧，偏多少」。</p>
 <h3 id="ai-工程-逻辑回归">AI / 工程：逻辑回归</h3>
@@ -104,7 +109,7 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 </section>
 <section class="slide" data-i="7">
   <div class="slide-inner"><div class="kicker">BUILD IT · 从零实现</div>
-                <div class="compact"><p>只用 Node.js 标准库。三件事必须自己写：sigmoid、交叉熵、梯度下降。</p>
+                <div class="compact denser"><p>只用 Node.js 标准库。三件事必须自己写：sigmoid、交叉熵、梯度下降。</p>
 <div class="codeblock"><div class="codeblock-lang">javascript</div><pre><code class="lang-javascript">// 1. sigmoid —— 注意数值稳定写法：z 很负时 e^{-z} 会溢出
 function sigmoid(z) {
   if (z &gt;= 0) { const e = Math.exp(-z); return 1 / (1 + e); }
@@ -151,7 +156,7 @@ for (let step = 0; step &lt; 4000; step += 1) {
 </section>
 <section class="slide" data-i="10">
   <div class="slide-inner"><div class="kicker">验证</div>
-                <div class="compact"><div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash">node code/main.js
+                <div class="compact denser"><div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash">node code/main.js
 # Expected:
 # ═══ 阴阳 → 二分类：从零实现 (中医基础理论 第1章) ═══
 # 样本: 8 例八纲典型证候 | 特征: 畏寒 / 口渴 / 脉数

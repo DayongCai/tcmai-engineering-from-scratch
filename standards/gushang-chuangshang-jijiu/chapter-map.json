@@ -1,0 +1,131 @@
+{
+ "note": "创伤急救学 派生课：一章一主题；四位面＝章群结构分区。",
+ "chapters": {
+  "01-jijiu-gailun": {
+   "n": 1,
+   "title": "创伤急救总论与评估",
+   "units": [
+    "1.1",
+    "1.2"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "先看气道与呼吸，再看出血与意识——顺序错了会死人",
+   "derivedFrom": "gushang-jichu、jijiu-huli"
+  },
+  "02-xianchang-huli": {
+   "n": 2,
+   "title": "现场救护与搬运固定",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "搬运姿势错，会让稳定骨折变不稳",
+   "derivedFrom": "gushang-jichu、jijiu-huli"
+  },
+  "03-chuxue-shuke": {
+   "n": 3,
+   "title": "出血与休克",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "休克的第一信号是意识与脉搏，不是血压",
+   "derivedFrom": "jijiu-huli、gushang-jichu"
+  },
+  "04-lunao-jizhu": {
+   "n": 4,
+   "title": "颅脑与脊柱损伤",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5",
+    "4.6"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "疑似脊柱损伤先固定，再动",
+   "derivedFrom": "gushang-jichu、jijiu-huli"
+  },
+  "05-xiongfu": {
+   "n": 5,
+   "title": "胸部与腹部创伤",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5",
+    "5.6"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "张力性气胸与腹腔内出血是两个夺命点",
+   "derivedFrom": "gushang-jichu、waike"
+  },
+  "06-sizhi-guzhe-tuowei": {
+   "n": 6,
+   "title": "四肢骨折与脱位的急救",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5",
+    "6.6"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "急救处理定的是保肢，不是复位质量",
+   "derivedFrom": "zhenggu、gushang-jichu"
+  },
+  "07-shaoshang-jishang": {
+   "n": 7,
+   "title": "烧伤、挤压伤与多发伤",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4",
+    "7.5"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "挤压伤的关键是肌红蛋白与肾",
+   "derivedFrom": "jijiu-huli、gushang-jichu"
+  },
+  "08-zainan-zhuanyun": {
+   "n": 8,
+   "title": "灾难救援与转运",
+   "units": [
+    "8.1",
+    "8.2"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "转运决策：能就地稳定就不急着走",
+   "derivedFrom": "jijiu-huli、gushang-jichu"
+  }
+ }
+}

@@ -1,0 +1,607 @@
+{
+ "$generated": "node scripts/build_content_board.js",
+ "generatedAt": "2026-11-11 20:48:43",
+ "rules": {
+  "structure": "catalog.json（SSOT）",
+  "chapters": "catalog.chaptersBuilt + 盘上 departments/*/*/chapters/* 目录核对",
+  "textbook": "data/textbook-board.json（汉字口径 [\\u4e00-\\u9fa5]，与教材看板同源）",
+  "syndrome": "reference-units（kind=dsu）+ dsu-descriptions + external",
+  "terms": "who-istt-terms / standards/icd11 / glossary"
+ },
+ "kpi": {
+  "departments": 9,
+  "subjects": 189,
+  "hours": 11547,
+  "chaptersTarget": 2154,
+  "chaptersBuilt": 2134,
+  "chaptersPct": 99.07,
+  "textbookSubjects": 127,
+  "textbookChapters": 2584,
+  "hanzi": 26746613,
+  "nonWs": 31544031,
+  "syndromes": 97,
+  "syndromeUnits": 104,
+  "shanghanTiao": 398,
+  "formulas": 111,
+  "istt": 3148,
+  "videos": 24
+ },
+ "layers": [
+  {
+   "key": "classic",
+   "name": "① 经典原文",
+   "have": "内经 10/10 · 伤寒 12/12",
+   "target": "内经选读 10 · 伤寒论 12 · 金匮要略 10",
+   "note": "伤寒条文 398 条（215 条带方）· 金匮 0 章（无教材）",
+   "cover": 68.75,
+   "gaps": [
+    "金匮要略 0/10 章（教材缺失）",
+    "内经/伤寒之外无其他经典（难经·神农本草经·温病条辨）"
+   ]
+  },
+  {
+   "key": "syndrome",
+   "name": "② 证候",
+   "have": "97 个（104 单元）",
+   "target": "目标 300+（**本看板假设**，仓库无此指标）",
+   "note": "有描述 97 · 有症状 60 · 有 ICD 9 · 有外部证据 97 · 有教材证据 33 · 重复单元 7 对",
+   "cover": 32.33,
+   "gaps": [
+    "胸阳痹阻、痰瘀互结证 缺：病位词、西医病名、ICD-11 编码、教材上下文、WHO-TCM 代码、病机",
+    "真心痛（阳衰血瘀）证 缺：病性词、西医病名、ICD-11 编码、教材上下文、WHO-TCM 代码、病机",
+    "阳明腑实证/结胸证 缺：病位词、西医病名、ICD-11 编码、教材上下文、WHO-TCM 代码、病机"
+   ]
+  },
+  {
+   "key": "formula",
+   "name": "③ 方剂",
+   "have": "111 个方名",
+   "target": "方剂学 10 章 + 方剂字典（组成/功效/主治）",
+   "note": "仅从伤寒条文里抽出的方名，无组成/功效/主治字段；方剂学教材 0 章",
+   "cover": null,
+   "gaps": [
+    "无结构化方剂库（组成·功效·主治·配伍）",
+    "方剂学学科无教材"
+   ]
+  },
+  {
+   "key": "herb",
+   "name": "④ 中药",
+   "have": "0 条结构化",
+   "target": "中药学 12 章 · 中药字典（性味/归经/功效/用量）",
+   "note": "中药学有教材 30 章正文，但无可计算条目（性味归经未结构化）",
+   "cover": null,
+   "gaps": [
+    "无中药字典（性味·归经·功效·禁忌）",
+    "中药学已建章节 1/12"
+   ]
+  },
+  {
+   "key": "acupoint",
+   "name": "⑤ 腧穴",
+   "have": "0 条结构化",
+   "target": "腧穴学 12 章 · 腧穴字典（归经/定位/主治）",
+   "note": "腧穴学有教材 16 章正文，无穴位条目数据",
+   "cover": null,
+   "gaps": [
+    "无腧穴字典（归经·定位·主治·操作）",
+    "腧穴学已建章节 1/12"
+   ]
+  },
+  {
+   "key": "term",
+   "name": "⑥ 术语",
+   "have": "ISTT 3148 · ICD-11 中文名 472",
+   "target": "WHO ISTT 全量 · ICD-11 第 26 章中文名 · 仓库术语表",
+   "note": "ICD-11 释义 2394 条 · 仓库 glossary 0 行",
+   "cover": 42.14,
+   "gaps": [
+    "TM2 648 条无中文题名（WHO 未译）",
+    "仓库术语表仅 139 行，未与 ISTT 打通"
+   ]
+  },
+  {
+   "key": "evidence",
+   "name": "⑦ 检索与证据",
+   "have": "证候证据 97 条",
+   "target": "每个证候 ≥1 条外部证据 + 可检索语料",
+   "note": "ICD-11 术语层 13306 实体 / 释义 6653",
+   "cover": 93.27,
+   "gaps": [
+    "7 个证候无外部证据"
+   ]
+  }
+ ],
+ "gaps": [
+  {
+   "kind": "教材缺稿",
+   "n": 62,
+   "detail": [
+    "护理系/基础护理学(14章)",
+    "中医系/中医证候学(12章)",
+    "智能系/大语言模型与中医智能体(12章)",
+    "基础医学院/医学细胞生物学(12章)",
+    "基础医学院/医学遗传学(12章)",
+    "中医系/医学衷中参西录选读(10章)",
+    "中药系/中成药与临床用药(10章)",
+    "中药系/中药毒理学(10章)",
+    "针灸系/中医康复学(10章)",
+    "骨伤系/骨伤解剖学(10章)",
+    "骨伤系/脊柱病学(10章)",
+    "骨伤系/关节病学(10章)"
+   ],
+   "fix": "按目标章节数从大到小补稿（先补 14 章的病理生理学、12 章的大语言模型/细胞生物学）"
+  },
+  {
+   "kind": "章节未建",
+   "n": 20,
+   "detail": [
+    "189 学科目标 2154 章，已建 2134"
+   ],
+   "fix": "按学科整科推满（内经/伤寒已满科），而不是全库平均铺开"
+  },
+  {
+   "kind": "教材过薄",
+   "n": 22,
+   "detail": [
+    "中医筋伤学 187 字/章",
+    "中医嗓音医学 257 字/章",
+    "骨伤科手法治疗学 468 字/章",
+    "中医美容与皮肤治疗学 532 字/章",
+    "中医信息学 568 字/章",
+    "科研实训与实验设计 575 字/章",
+    "管理实习与实践 590 字/章",
+    "工程实践与系统交付 590 字/章",
+    "中医知识树 636 字/章",
+    "中药专业实践 638 字/章",
+    "另有 14 个结课类学科（毕业设计/知识移交）单章 540/541/543/555/556/569/574/588/588/592/597/621/807/861 字，属体例例外"
+   ],
+   "fix": "正文类学科低于 8,000 字/章的优先补写（本科教材单章通常 1–1.5 万字）；结课类不计入"
+  },
+  {
+   "kind": "结构化层缺位",
+   "n": 3,
+   "detail": [
+    "方剂（0 条结构化）",
+    "中药（0 条结构化）",
+    "腧穴（0 条结构化）"
+   ],
+   "fix": "从教材正文抽字段（组成/性味归经/定位主治），先做伤寒 111 方"
+  },
+  {
+   "kind": "视频缺位",
+   "n": 1,
+   "detail": [
+    "platform 已发布 0 讲"
+   ],
+   "fix": "tcmP 流水线已就绪，选题材（内经/伤寒各 1 讲试水）"
+  },
+  {
+   "kind": "证候重复单元",
+   "n": 7,
+   "detail": [
+    "脾胃湿热证 ×2（DSU-00004 / DSU-00046）",
+    "肝郁脾虚证 ×2（DSU-00006 / DSU-00049）",
+    "肝胆湿热证 ×2（DSU-00007 / DSU-00052）",
+    "肝阳上亢证 ×2（DSU-00008 / DSU-00033）",
+    "脾肾阳虚证 ×2（DSU-00011 / DSU-00072）",
+    "风热犯肺证 ×2（DSU-00025 / DSU-00030）",
+    "痰湿内阻证 ×2（DSU-00038 / DSU-00051）"
+   ],
+   "fix": "同一证候不同来源各建一条 → 需人工定「是否合并」；合并前 104 单元 ≠ 104 证候，别拿单元数当证候数"
+  }
+ ],
+ "departments": [
+  {
+   "n": 1,
+   "slug": "01-zhongyi",
+   "title": "中医系",
+   "subjects": 23,
+   "chaptersTarget": 276,
+   "chaptersBuilt": 276,
+   "textbookSubjects": 20,
+   "hanzi": 3390731,
+   "thin": 4,
+   "noBook": 3,
+   "videos": 24
+  },
+  {
+   "n": 2,
+   "slug": "02-zhongyao",
+   "title": "中药系",
+   "subjects": 21,
+   "chaptersTarget": 235,
+   "chaptersBuilt": 235,
+   "textbookSubjects": 15,
+   "hanzi": 2741661,
+   "thin": 2,
+   "noBook": 6,
+   "videos": 0
+  },
+  {
+   "n": 3,
+   "slug": "03-zhenjiu",
+   "title": "针灸系",
+   "subjects": 22,
+   "chaptersTarget": 228,
+   "chaptersBuilt": 228,
+   "textbookSubjects": 16,
+   "hanzi": 2458284,
+   "thin": 2,
+   "noBook": 6,
+   "videos": 0
+  },
+  {
+   "n": 4,
+   "slug": "04-gushang",
+   "title": "骨伤系",
+   "subjects": 17,
+   "chaptersTarget": 150,
+   "chaptersBuilt": 150,
+   "textbookSubjects": 7,
+   "hanzi": 768739,
+   "thin": 2,
+   "noBook": 10,
+   "videos": 0
+  },
+  {
+   "n": 5,
+   "slug": "05-huli",
+   "title": "护理系",
+   "subjects": 27,
+   "chaptersTarget": 348,
+   "chaptersBuilt": 348,
+   "textbookSubjects": 23,
+   "hanzi": 6878648,
+   "thin": 0,
+   "noBook": 4,
+   "videos": 0
+  },
+  {
+   "n": 6,
+   "slug": "06-guanli",
+   "title": "管理系",
+   "subjects": 26,
+   "chaptersTarget": 292,
+   "chaptersBuilt": 292,
+   "textbookSubjects": 16,
+   "hanzi": 4309737,
+   "thin": 1,
+   "noBook": 10,
+   "videos": 0
+  },
+  {
+   "n": 7,
+   "slug": "07-zhineng",
+   "title": "智能系",
+   "subjects": 19,
+   "chaptersTarget": 166,
+   "chaptersBuilt": 166,
+   "textbookSubjects": 6,
+   "hanzi": 248639,
+   "thin": 4,
+   "noBook": 13,
+   "videos": 0
+  },
+  {
+   "n": 8,
+   "slug": "08-wuguan",
+   "title": "五官口腔系",
+   "subjects": 17,
+   "chaptersTarget": 144,
+   "chaptersBuilt": 124,
+   "textbookSubjects": 9,
+   "hanzi": 740281,
+   "thin": 5,
+   "noBook": 8,
+   "videos": 0
+  },
+  {
+   "n": 9,
+   "slug": "09-jichu",
+   "title": "基础医学院",
+   "subjects": 17,
+   "chaptersTarget": 315,
+   "chaptersBuilt": 315,
+   "textbookSubjects": 15,
+   "hanzi": 5209893,
+   "thin": 2,
+   "noBook": 2,
+   "videos": 0
+  }
+ ],
+ "disk": {
+  "dirs": 2134,
+  "withDocs": 2134,
+  "withQuiz": 2134,
+  "withOutputs": 2134,
+  "mismatched": []
+ },
+ "syndromeDetail": {
+  "total": 104,
+  "distinctLabels": 97,
+  "records": 97,
+  "duplicates": [
+   {
+    "label": "脾胃湿热证",
+    "count": 2,
+    "uids": [
+     "DSU-00004",
+     "DSU-00046"
+    ]
+   },
+   {
+    "label": "肝郁脾虚证",
+    "count": 2,
+    "uids": [
+     "DSU-00006",
+     "DSU-00049"
+    ]
+   },
+   {
+    "label": "肝胆湿热证",
+    "count": 2,
+    "uids": [
+     "DSU-00007",
+     "DSU-00052"
+    ]
+   },
+   {
+    "label": "肝阳上亢证",
+    "count": 2,
+    "uids": [
+     "DSU-00008",
+     "DSU-00033"
+    ]
+   },
+   {
+    "label": "脾肾阳虚证",
+    "count": 2,
+    "uids": [
+     "DSU-00011",
+     "DSU-00072"
+    ]
+   },
+   {
+    "label": "风热犯肺证",
+    "count": 2,
+    "uids": [
+     "DSU-00025",
+     "DSU-00030"
+    ]
+   },
+   {
+    "label": "痰湿内阻证",
+    "count": 2,
+    "uids": [
+     "DSU-00038",
+     "DSU-00051"
+    ]
+   }
+  ],
+  "withDescription": 97,
+  "withSymptoms": 60,
+  "withIcd": 9,
+  "withExternalEvidence": 97,
+  "withTextbookEvidence": 33,
+  "withWhoTcm": 26,
+  "gaps": [
+   {
+    "label": "胸阳痹阻、痰瘀互结证",
+    "missing": [
+     "病位词",
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码",
+     "病机"
+    ]
+   },
+   {
+    "label": "真心痛（阳衰血瘀）证",
+    "missing": [
+     "病性词",
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码",
+     "病机"
+    ]
+   },
+   {
+    "label": "阳明腑实证/结胸证",
+    "missing": [
+     "病位词",
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码",
+     "病机"
+    ]
+   },
+   {
+    "label": "寒湿痹阻证(腰部)",
+    "missing": [
+     "病位词",
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码"
+    ]
+   },
+   {
+    "label": "肝阳上亢证(头部)",
+    "missing": [
+     "病性词",
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "病机"
+    ]
+   },
+   {
+    "label": "寒哮证（冷哮）",
+    "missing": [
+     "病位词",
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码"
+    ]
+   },
+   {
+    "label": "肺脾肾虚、痰瘀互结证",
+    "missing": [
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码",
+     "病机"
+    ]
+   },
+   {
+    "label": "气阴两虚、痰瘀阻络证",
+    "missing": [
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码",
+     "病机"
+    ]
+   },
+   {
+    "label": "气阴两虚、心脉瘀阻证",
+    "missing": [
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码",
+     "病机"
+    ]
+   },
+   {
+    "label": "水湿内停证（鼓胀）",
+    "missing": [
+     "病位词",
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码"
+    ]
+   },
+   {
+    "label": "肾虚瘀阻证（癃闭）",
+    "missing": [
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码",
+     "病机"
+    ]
+   },
+   {
+    "label": "脾虚瘀阻证",
+    "missing": [
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码",
+     "病机"
+    ]
+   },
+   {
+    "label": "湿热下注、邪留正伤证",
+    "missing": [
+     "病位词",
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码"
+    ]
+   },
+   {
+    "label": "肝火亢盛、气阴两虚证（瘿病）",
+    "missing": [
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码",
+     "病机"
+    ]
+   },
+   {
+    "label": "肾精亏虚、骨痿证",
+    "missing": [
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码",
+     "病机"
+    ]
+   },
+   {
+    "label": "脾胃虚弱、气血两虚证",
+    "missing": [
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码",
+     "病机"
+    ]
+   },
+   {
+    "label": "肾精亏虚、髓枯血虚证",
+    "missing": [
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码",
+     "病机"
+    ]
+   },
+   {
+    "label": "痰瘀互结、气阴两虚证(石疽/恶核)",
+    "missing": [
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码",
+     "病机"
+    ]
+   },
+   {
+    "label": "湿热浸淫、筋脉失养证(痿证)",
+    "missing": [
+     "病位词",
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码"
+    ]
+   },
+   {
+    "label": "脾胃虚弱、中气下陷证(痿证/睑废)",
+    "missing": [
+     "西医病名",
+     "ICD-11 编码",
+     "教材上下文",
+     "WHO-TCM 代码",
+     "病机"
+    ]
+   }
+  ]
+ },
+ "assumptions": [
+  "「证候目标 300+」是本看板定的参照线，仓库没有这个指标，覆盖率只作方向参考",
+  "「方剂/中药/腧穴字典」是建议目标，仓库当前没有结构化数据集，覆盖记 n/a 而不是 0%",
+  "教材汉字数取 textbook-board 的 totals.hanzi（[\\u4e00-\\u9fa5]）；非空白字符另计"
+ ],
+ "sources": {
+  "structure": "catalog.json",
+  "textbook": "data/textbook-board.json",
+  "syndrome": "standards/semtensor/datasets/reference-units.json + descriptions/dsu-descriptions.json + descriptions/external.json",
+  "classics": "standards/shanghan/semtensor-398.json",
+  "terms": "who-istt-terms.json · standards/icd11/zh-names.json · definitions-en.json · glossary/tcm-terms.md",
+  "retrieval": "standards/semtensor/embeddings/index.json + data/icd11/term-index/meta.json"
+ }
+}

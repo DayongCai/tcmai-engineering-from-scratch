@@ -1,42 +1,55 @@
 {
-  "slug": "05-zhongyi-wenhua-chuanbo",
-  "title": "中医文化传播学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-hexin-guannian",
-      "title": "中医文化的核心观念与话语",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-lishi-lujing",
-      "title": "中医传播的历史路径",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-xinmeiti-chuanbo",
-      "title": "新媒体与健康传播",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-kepu-fengxian",
-      "title": "科普写作与风险表述",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-kuawenhua-fanyi",
-      "title": "跨文化传播与翻译",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-xiaoguo-celiang",
-      "title": "传播效果的测量",
-      "status": "📋"
-    }
-  ]
+ "slug": "05-zhongyi-wenhua-chuanbo",
+ "title": "中医文化传播",
+ "note": "6 章 = 教材 6 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-z51",
+   "title": "中医文化的源流：从先秦到汉唐",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-z52",
+   "title": "典籍与医家：可传播的内容从哪来",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-z53",
+   "title": "近现代转型与制度化",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-z54",
+   "title": "信息组织与检索：把典籍变成可查资源",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-z55",
+   "title": "传播内容的标准与证据",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-z56",
+   "title": "当代传播与边界：不神化、不虚构",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

@@ -22,8 +22,11 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/03-zhenjiu/05-tuina-xue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 12,
+    "words": 236476,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#推拿学",
+    "extractedAt": "2026-10-21"
   }
 }

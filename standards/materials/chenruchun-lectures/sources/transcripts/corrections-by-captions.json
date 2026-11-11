@@ -1,0 +1,1279 @@
+{
+ "$generated": "node scripts/asr/anchor_terms_by_captions.js（字幕依据可逐条回图核对）",
+ "what": "把 corrections.json 里每条替换拿去人读字幕里查正名：字幕是画面上的真文本（sources/grids/*.jpg 逐图读出），正名在字幕里字面出现，才说明「他确实这么讲」。本表不产生新规则，只给现有规则分档：直证 / 旁证 / 仅拼音。",
+ "whyNotDiscovery": "试过用字幕盲找错形（滑窗等长比对差 1–2 字），727 条「采纳」全是巧合配对（是不是→你不要、个道理→个方子）：汉语常用词两字之差的碰撞率极高，没有对齐信息就是在随机配对。所以这一层只做佐证。",
+ "policy": {
+  "原件": "sources/asr/lec-NN.json 永不改写",
+  "识别稿": "sources/transcripts/lec-NN.md 与原件逐段一致",
+  "校正稿": "sources/transcripts/corrected/lec-NN.md 只做替换并在段末留原形",
+  "分档": "字幕直证=正名出现在同讲字幕；字幕旁证=只出现在别讲字幕；仅拼音=任何字幕都没有 → 须人工核"
+ },
+ "stats": {
+  "captions": 545,
+  "rules": 64,
+  "direct": 21,
+  "indirect": 19,
+  "pinyinOnly": 24,
+  "directPhrase": 1,
+  "directFormula": 19,
+  "directTerm": 1,
+  "asrHitsCovered": 123,
+  "asrHitsTotal": 247
+ },
+ "rows": [
+  {
+   "kind": "方名",
+   "wrong": "四尼散",
+   "right": "四逆散",
+   "level": "high",
+   "evidence": "字幕直证",
+   "asrCount": 23,
+   "wrongLectures": [
+    4,
+    13,
+    14,
+    16,
+    17,
+    18
+   ],
+   "cite": {
+    "lecture": 17,
+    "mmss": "0:16",
+    "ref": "17-01",
+    "line": "四逆散治疗肋间神经痛"
+   },
+   "otherCites": [
+    {
+     "lecture": 17,
+     "mmss": "8:43",
+     "ref": "17-05",
+     "line": "就是用四逆散本方加青皮郁金"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "小财富汤",
+   "right": "小柴胡汤",
+   "level": "human",
+   "evidence": "字幕直证",
+   "asrCount": 20,
+   "wrongLectures": [
+    3,
+    13,
+    14,
+    16,
+    17,
+    18
+   ],
+   "cite": {
+    "lecture": 14,
+    "mmss": "21:33",
+    "ref": "14-08",
+    "line": "我就是要吃小柴胡汤好"
+   },
+   "otherCites": [
+    {
+     "lecture": 14,
+     "mmss": "22:46",
+     "ref": "14-09",
+     "line": "那么单纯研究小柴胡汤的话"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "泄心汤",
+   "right": "泻心汤",
+   "level": "high",
+   "evidence": "字幕直证",
+   "asrCount": 13,
+   "wrongLectures": [
+    16,
+    17
+   ],
+   "cite": {
+    "lecture": 17,
+    "mmss": "35:41",
+    "ref": "17-16",
+    "line": "甘草泻心汤铺头可以治疗西医讲的三联症"
+   },
+   "otherCites": [
+    {
+     "lecture": 17,
+     "mmss": "40:11",
+     "ref": "17-18",
+     "line": "那半夏泻心汤也不能和"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "五米丸",
+   "right": "乌梅丸",
+   "level": "medium",
+   "evidence": "字幕直证",
+   "asrCount": 12,
+   "wrongLectures": [
+    6,
+    13,
+    14,
+    20
+   ],
+   "cite": {
+    "lecture": 14,
+    "mmss": "39:59",
+    "ref": "14-18",
+    "line": "乌梅丸用待漂亮"
+   },
+   "otherCites": [
+    {
+     "lecture": 14,
+     "mmss": "43:32",
+     "ref": "14-19",
+     "line": "不过乌梅丸不会用"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "李正汤",
+   "right": "理中汤",
+   "level": "medium",
+   "evidence": "字幕直证",
+   "asrCount": 7,
+   "wrongLectures": [
+    5,
+    7,
+    18,
+    20
+   ],
+   "cite": {
+    "lecture": 18,
+    "mmss": "22:14",
+    "ref": "18-10",
+    "line": "且服四逆辈也就包括了理中汤的意思"
+   },
+   "otherCites": [
+    {
+     "lecture": 18,
+     "mmss": "24:12",
+     "ref": "18-11",
+     "line": "下面理中汤这个方我要说两句"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "麻方汤",
+   "right": "麻黄汤",
+   "level": "low",
+   "evidence": "字幕直证",
+   "asrCount": 7,
+   "wrongLectures": [
+    3,
+    5
+   ],
+   "cite": {
+    "lecture": 5,
+    "mmss": "0:15",
+    "ref": "g-05-1",
+    "line": "麻黄汤类"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "武林散",
+   "right": "五苓散",
+   "level": "medium",
+   "evidence": "字幕直证",
+   "asrCount": 7,
+   "wrongLectures": [
+    14,
+    20,
+    21
+   ],
+   "cite": {
+    "lecture": 21,
+    "mmss": "54:27",
+    "ref": "21-20",
+    "line": "五苓散温化膀胱之气"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "贵制汤",
+   "right": "桂枝汤",
+   "level": "high",
+   "evidence": "字幕直证",
+   "asrCount": 5,
+   "wrongLectures": [
+    4,
+    14
+   ],
+   "cite": {
+    "lecture": 14,
+    "mmss": "9:23",
+    "ref": "14-03",
+    "line": "那就可以说桂枝汤也是和法"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "短语",
+   "wrong": "北斧汤",
+   "right": "白虎汤",
+   "level": "human",
+   "evidence": "字幕直证",
+   "asrCount": 4,
+   "wrongLectures": [
+    21
+   ],
+   "cite": {
+    "lecture": 21,
+    "mmss": "13:07",
+    "ref": "21-05",
+    "line": "所以用白虎汤加人参"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "谢心汤",
+   "right": "泻心汤",
+   "level": "high",
+   "evidence": "字幕直证",
+   "asrCount": 4,
+   "wrongLectures": [
+    5,
+    14
+   ],
+   "cite": {
+    "lecture": 5,
+    "mmss": "0:39",
+    "ref": "5-01",
+    "line": "还有半夏泻心汤的泻心汤类"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "白铜汤",
+   "right": "白通汤",
+   "level": "high",
+   "evidence": "字幕直证",
+   "asrCount": 3,
+   "wrongLectures": [
+    19
+   ],
+   "cite": {
+    "lecture": 19,
+    "mmss": "32:46",
+    "ref": "#74",
+    "line": "就是在白通汤里边"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "温荡汤",
+   "right": "温胆汤",
+   "level": "medium",
+   "evidence": "字幕直证",
+   "asrCount": 3,
+   "wrongLectures": [
+    24
+   ],
+   "cite": {
+    "lecture": 24,
+    "mmss": "10:26",
+    "ref": "24-13",
+    "line": "已经吃了两三个月黄连温胆汤了"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "真母汤",
+   "right": "真武汤",
+   "level": "medium",
+   "evidence": "字幕直证",
+   "asrCount": 3,
+   "wrongLectures": [
+    19
+   ],
+   "cite": {
+    "lecture": 19,
+    "mmss": "28:23",
+    "ref": "#65",
+    "line": "我如果说我在真武汤里面"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "半夏谢信汤",
+   "right": "半夏泻心汤",
+   "level": "high",
+   "evidence": "字幕直证",
+   "asrCount": 2,
+   "wrongLectures": [
+    17
+   ],
+   "cite": {
+    "lecture": 17,
+    "mmss": "40:11",
+    "ref": "17-18",
+    "line": "那半夏泻心汤也不能和"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "干燥泄心汤",
+   "right": "甘草泻心汤",
+   "level": "medium",
+   "evidence": "字幕直证",
+   "asrCount": 2,
+   "wrongLectures": [
+    17
+   ],
+   "cite": {
+    "lecture": 17,
+    "mmss": "35:41",
+    "ref": "17-16",
+    "line": "甘草泻心汤铺头可以治疗西医讲的三联症"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "术语",
+   "wrong": "人色",
+   "right": "人参",
+   "level": "human",
+   "evidence": "字幕直证",
+   "asrCount": 2,
+   "wrongLectures": [
+    21
+   ],
+   "cite": {
+    "lecture": 21,
+    "mmss": "13:07",
+    "ref": "21-05",
+    "line": "所以用白虎汤加人参"
+   },
+   "otherCites": [
+    {
+     "lecture": 21,
+     "mmss": "19:36",
+     "ref": "21-08",
+     "line": "什么标准加人参呢"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "四女散",
+   "right": "四逆散",
+   "level": "medium",
+   "evidence": "字幕直证",
+   "asrCount": 2,
+   "wrongLectures": [
+    17
+   ],
+   "cite": {
+    "lecture": 17,
+    "mmss": "0:16",
+    "ref": "17-01",
+    "line": "四逆散治疗肋间神经痛"
+   },
+   "otherCites": [
+    {
+     "lecture": 17,
+     "mmss": "8:43",
+     "ref": "17-05",
+     "line": "就是用四逆散本方加青皮郁金"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "半价泄心汤",
+   "right": "半夏泻心汤",
+   "level": "medium",
+   "evidence": "字幕直证",
+   "asrCount": 1,
+   "wrongLectures": [
+    17
+   ],
+   "cite": {
+    "lecture": 17,
+    "mmss": "40:11",
+    "ref": "17-18",
+    "line": "那半夏泻心汤也不能和"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "半下泄心汤",
+   "right": "半夏泻心汤",
+   "level": "high",
+   "evidence": "字幕直证",
+   "asrCount": 1,
+   "wrongLectures": [
+    17
+   ],
+   "cite": {
+    "lecture": 17,
+    "mmss": "40:11",
+    "ref": "17-18",
+    "line": "那半夏泻心汤也不能和"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "半夏谢心汤",
+   "right": "半夏泻心汤",
+   "level": "high",
+   "evidence": "字幕直证",
+   "asrCount": 1,
+   "wrongLectures": [
+    5
+   ],
+   "cite": {
+    "lecture": 5,
+    "mmss": "0:39",
+    "ref": "5-01",
+    "line": "还有半夏泻心汤的泻心汤类"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "麻烦汤",
+   "right": "麻黄汤",
+   "level": "low",
+   "evidence": "字幕直证",
+   "asrCount": 1,
+   "wrongLectures": [
+    5
+   ],
+   "cite": {
+    "lecture": 5,
+    "mmss": "0:15",
+    "ref": "g-05-1",
+    "line": "麻黄汤类"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "五零散",
+   "right": "五苓散",
+   "level": "high",
+   "evidence": "字幕旁证",
+   "asrCount": 16,
+   "wrongLectures": [
+    1,
+    2,
+    9,
+    14,
+    15,
+    18
+   ],
+   "cite": {
+    "lecture": 21,
+    "mmss": "54:27",
+    "ref": "21-20",
+    "line": "五苓散温化膀胱之气"
+   },
+   "otherCites": [
+    {
+     "lecture": 22,
+     "mmss": "9:12",
+     "ref": "22-06",
+     "line": "那么五苓散也可以治疗多汗"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "五菱散",
+   "right": "五苓散",
+   "level": "high",
+   "evidence": "字幕旁证",
+   "asrCount": 9,
+   "wrongLectures": [
+    2,
+    9,
+    10,
+    24
+   ],
+   "cite": {
+    "lecture": 21,
+    "mmss": "54:27",
+    "ref": "21-20",
+    "line": "五苓散温化膀胱之气"
+   },
+   "otherCites": [
+    {
+     "lecture": 22,
+     "mmss": "9:12",
+     "ref": "22-06",
+     "line": "那么五苓散也可以治疗多汗"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "四季散",
+   "right": "四逆散",
+   "level": "medium",
+   "evidence": "字幕旁证",
+   "asrCount": 5,
+   "wrongLectures": [
+    4,
+    16
+   ],
+   "cite": {
+    "lecture": 17,
+    "mmss": "0:16",
+    "ref": "17-01",
+    "line": "四逆散治疗肋间神经痛"
+   },
+   "otherCites": [
+    {
+     "lecture": 17,
+     "mmss": "8:43",
+     "ref": "17-05",
+     "line": "就是用四逆散本方加青皮郁金"
+    },
+    {
+     "lecture": 14,
+     "mmss": "3:11",
+     "ref": "14-02",
+     "line": "我用四逆散治疗习惯性便秘"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "白富汤",
+   "right": "白虎汤",
+   "level": "medium",
+   "evidence": "字幕旁证",
+   "asrCount": 4,
+   "wrongLectures": [
+    14,
+    22
+   ],
+   "cite": {
+    "lecture": 21,
+    "mmss": "13:07",
+    "ref": "21-05",
+    "line": "所以用白虎汤加人参"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "黄莲温胆汤",
+   "right": "黄连温胆汤",
+   "level": "high",
+   "evidence": "字幕旁证",
+   "asrCount": 4,
+   "wrongLectures": [
+    17
+   ],
+   "cite": {
+    "lecture": 24,
+    "mmss": "10:26",
+    "ref": "24-13",
+    "line": "已经吃了两三个月黄连温胆汤了"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "李中汤",
+   "right": "理中汤",
+   "level": "high",
+   "evidence": "字幕旁证",
+   "asrCount": 4,
+   "wrongLectures": [
+    20
+   ],
+   "cite": {
+    "lecture": 18,
+    "mmss": "22:14",
+    "ref": "18-10",
+    "line": "且服四逆辈也就包括了理中汤的意思"
+   },
+   "otherCites": [
+    {
+     "lecture": 18,
+     "mmss": "24:12",
+     "ref": "18-11",
+     "line": "下面理中汤这个方我要说两句"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "麻光汤",
+   "right": "麻黄汤",
+   "level": "medium",
+   "evidence": "字幕旁证",
+   "asrCount": 3,
+   "wrongLectures": [
+    6
+   ],
+   "cite": {
+    "lecture": 22,
+    "mmss": "19:46",
+    "ref": "22-12",
+    "line": "这里的脉更用重比麻黄汤还重一倍"
+   },
+   "otherCites": [
+    {
+     "lecture": 5,
+     "mmss": "0:15",
+     "ref": "g-05-1",
+     "line": "麻黄汤类"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "马王汤",
+   "right": "麻黄汤",
+   "level": "human",
+   "evidence": "字幕旁证",
+   "asrCount": 3,
+   "wrongLectures": [
+    6
+   ],
+   "cite": {
+    "lecture": 22,
+    "mmss": "19:46",
+    "ref": "22-12",
+    "line": "这里的脉更用重比麻黄汤还重一倍"
+   },
+   "otherCites": [
+    {
+     "lecture": 5,
+     "mmss": "0:15",
+     "ref": "g-05-1",
+     "line": "麻黄汤类"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "乌米丸",
+   "right": "乌梅丸",
+   "level": "medium",
+   "evidence": "字幕旁证",
+   "asrCount": 3,
+   "wrongLectures": [
+    20
+   ],
+   "cite": {
+    "lecture": 14,
+    "mmss": "39:59",
+    "ref": "14-18",
+    "line": "乌梅丸用待漂亮"
+   },
+   "otherCites": [
+    {
+     "lecture": 14,
+     "mmss": "43:32",
+     "ref": "14-19",
+     "line": "不过乌梅丸不会用"
+    }
+   ]
+  },
+  {
+   "kind": "短语",
+   "wrong": "北斧堂",
+   "right": "白虎汤",
+   "level": "human",
+   "evidence": "字幕旁证",
+   "asrCount": 2,
+   "wrongLectures": [
+    22
+   ],
+   "cite": {
+    "lecture": 21,
+    "mmss": "13:07",
+    "ref": "21-05",
+    "line": "所以用白虎汤加人参"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "四亿散",
+   "right": "四逆散",
+   "level": "medium",
+   "evidence": "字幕旁证",
+   "asrCount": 2,
+   "wrongLectures": [
+    11
+   ],
+   "cite": {
+    "lecture": 17,
+    "mmss": "0:16",
+    "ref": "17-01",
+    "line": "四逆散治疗肋间神经痛"
+   },
+   "otherCites": [
+    {
+     "lecture": 17,
+     "mmss": "8:43",
+     "ref": "17-05",
+     "line": "就是用四逆散本方加青皮郁金"
+    },
+    {
+     "lecture": 14,
+     "mmss": "3:11",
+     "ref": "14-02",
+     "line": "我用四逆散治疗习惯性便秘"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "温坛汤",
+   "right": "温胆汤",
+   "level": "medium",
+   "evidence": "字幕旁证",
+   "asrCount": 2,
+   "wrongLectures": [
+    23
+   ],
+   "cite": {
+    "lecture": 17,
+    "mmss": "37:49",
+    "ref": "17-17",
+    "line": "温胆汤这张方子是太好了"
+   },
+   "otherCites": [
+    {
+     "lecture": 21,
+     "mmss": "43:01",
+     "ref": "21-16",
+     "line": "就是更连温胆汤效果好嘛"
+    },
+    {
+     "lecture": 24,
+     "mmss": "10:26",
+     "ref": "24-13",
+     "line": "已经吃了两三个月黄连温胆汤了"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "无弥丸",
+   "right": "乌梅丸",
+   "level": "medium",
+   "evidence": "字幕旁证",
+   "asrCount": 2,
+   "wrongLectures": [
+    20
+   ],
+   "cite": {
+    "lecture": 14,
+    "mmss": "39:59",
+    "ref": "14-18",
+    "line": "乌梅丸用待漂亮"
+   },
+   "otherCites": [
+    {
+     "lecture": 14,
+     "mmss": "43:32",
+     "ref": "14-19",
+     "line": "不过乌梅丸不会用"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "贵汁汤",
+   "right": "桂枝汤",
+   "level": "high",
+   "evidence": "字幕旁证",
+   "asrCount": 1,
+   "wrongLectures": [
+    10
+   ],
+   "cite": {
+    "lecture": 23,
+    "mmss": "18:44",
+    "ref": "23-09",
+    "line": "实际上它就是桂枝汤倍芍药加饴糖"
+   },
+   "otherCites": [
+    {
+     "lecture": 7,
+     "mmss": "6:14",
+     "ref": "7-03",
+     "line": "因为桂枝汤是个补药方子"
+    },
+    {
+     "lecture": 7,
+     "mmss": "16:36",
+     "ref": "7-06",
+     "line": "这才是桂枝汤证重要脉象"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "贵子家父子汤",
+   "right": "桂枝加附子汤",
+   "level": "medium",
+   "evidence": "字幕旁证",
+   "asrCount": 1,
+   "wrongLectures": [
+    2
+   ],
+   "cite": {
+    "lecture": 20,
+    "mmss": "31:43",
+    "ref": "20-14",
+    "line": "桂枝加附子汤阳虚兼表"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "黄莲文坛汤",
+   "right": "黄连温胆汤",
+   "level": "medium",
+   "evidence": "字幕旁证",
+   "asrCount": 1,
+   "wrongLectures": [
+    10
+   ],
+   "cite": {
+    "lecture": 24,
+    "mmss": "10:26",
+    "ref": "24-13",
+    "line": "已经吃了两三个月黄连温胆汤了"
+   },
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "礼中汤",
+   "right": "理中汤",
+   "level": "high",
+   "evidence": "字幕旁证",
+   "asrCount": 1,
+   "wrongLectures": [
+    5
+   ],
+   "cite": {
+    "lecture": 18,
+    "mmss": "22:14",
+    "ref": "18-10",
+    "line": "且服四逆辈也就包括了理中汤的意思"
+   },
+   "otherCites": [
+    {
+     "lecture": 18,
+     "mmss": "24:12",
+     "ref": "18-11",
+     "line": "下面理中汤这个方我要说两句"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "撕尼散",
+   "right": "四逆散",
+   "level": "high",
+   "evidence": "字幕旁证",
+   "asrCount": 1,
+   "wrongLectures": [
+    16
+   ],
+   "cite": {
+    "lecture": 17,
+    "mmss": "0:16",
+    "ref": "17-01",
+    "line": "四逆散治疗肋间神经痛"
+   },
+   "otherCites": [
+    {
+     "lecture": 17,
+     "mmss": "8:43",
+     "ref": "17-05",
+     "line": "就是用四逆散本方加青皮郁金"
+    },
+    {
+     "lecture": 14,
+     "mmss": "3:11",
+     "ref": "14-02",
+     "line": "我用四逆散治疗习惯性便秘"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "随你散",
+   "right": "四逆散",
+   "level": "medium",
+   "evidence": "字幕旁证",
+   "asrCount": 1,
+   "wrongLectures": [
+    7
+   ],
+   "cite": {
+    "lecture": 17,
+    "mmss": "0:16",
+    "ref": "17-01",
+    "line": "四逆散治疗肋间神经痛"
+   },
+   "otherCites": [
+    {
+     "lecture": 17,
+     "mmss": "8:43",
+     "ref": "17-05",
+     "line": "就是用四逆散本方加青皮郁金"
+    },
+    {
+     "lecture": 14,
+     "mmss": "3:11",
+     "ref": "14-02",
+     "line": "我用四逆散治疗习惯性便秘"
+    }
+   ]
+  },
+  {
+   "kind": "方名",
+   "wrong": "小金龙汤",
+   "right": "小青龙汤",
+   "level": "low",
+   "evidence": "仅拼音",
+   "asrCount": 6,
+   "wrongLectures": [
+    9,
+    10,
+    16
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "一瓶风散",
+   "right": "玉屏风散",
+   "level": "human",
+   "evidence": "仅拼音",
+   "asrCount": 6,
+   "wrongLectures": [
+    7,
+    9,
+    15,
+    20
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "大财富汤",
+   "right": "大柴胡汤",
+   "level": "human",
+   "evidence": "仅拼音",
+   "asrCount": 4,
+   "wrongLectures": [
+    13,
+    16,
+    18
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "大清浓汤",
+   "right": "大青龙汤",
+   "level": "medium",
+   "evidence": "仅拼音",
+   "asrCount": 4,
+   "wrongLectures": [
+    5
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "品味散",
+   "right": "平胃散",
+   "level": "medium",
+   "evidence": "仅拼音",
+   "asrCount": 4,
+   "wrongLectures": [
+    14
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "平衛散",
+   "right": "平胃散",
+   "level": "high",
+   "evidence": "仅拼音",
+   "asrCount": 4,
+   "wrongLectures": [
+    20
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "林桂树干汤",
+   "right": "苓桂术甘汤",
+   "level": "medium",
+   "evidence": "仅拼音",
+   "asrCount": 3,
+   "wrongLectures": [
+    20
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "貧衛散",
+   "right": "平胃散",
+   "level": "medium",
+   "evidence": "仅拼音",
+   "asrCount": 3,
+   "wrongLectures": [
+    18
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "平微散",
+   "right": "平胃散",
+   "level": "high",
+   "evidence": "仅拼音",
+   "asrCount": 3,
+   "wrongLectures": [
+    18
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "猪热市高汤",
+   "right": "竹叶石膏汤",
+   "level": "medium",
+   "evidence": "仅拼音",
+   "asrCount": 3,
+   "wrongLectures": [
+    21
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "短语",
+   "wrong": "北斧汤加人色",
+   "right": "白虎加人参汤",
+   "level": "human",
+   "evidence": "仅拼音",
+   "asrCount": 2,
+   "wrongLectures": [
+    21
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "补正义气汤",
+   "right": "补中益气汤",
+   "level": "medium",
+   "evidence": "仅拼音",
+   "asrCount": 2,
+   "wrongLectures": [
+    23
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "黄莲汤",
+   "right": "黄连汤",
+   "level": "high",
+   "evidence": "仅拼音",
+   "asrCount": 2,
+   "wrongLectures": [
+    16
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "马子仁丸",
+   "right": "麻子仁丸",
+   "level": "high",
+   "evidence": "仅拼音",
+   "asrCount": 2,
+   "wrongLectures": [
+    13
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "深浆泄心汤",
+   "right": "生姜泻心汤",
+   "level": "medium",
+   "evidence": "仅拼音",
+   "asrCount": 2,
+   "wrongLectures": [
+    17
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "八真汤",
+   "right": "八珍汤",
+   "level": "high",
+   "evidence": "仅拼音",
+   "asrCount": 1,
+   "wrongLectures": [
+    24
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "术语",
+   "wrong": "财头翁",
+   "right": "白头翁",
+   "level": "human",
+   "evidence": "仅拼音",
+   "asrCount": 1,
+   "wrongLectures": [
+    5
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "大宅胡汤",
+   "right": "大柴胡汤",
+   "level": "medium",
+   "evidence": "仅拼音",
+   "asrCount": 1,
+   "wrongLectures": [
+    16
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "富祖泄心汤",
+   "right": "附子泻心汤",
+   "level": "medium",
+   "evidence": "仅拼音",
+   "asrCount": 1,
+   "wrongLectures": [
+    17
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "麻姓干事汤",
+   "right": "麻杏甘石汤",
+   "level": "high",
+   "evidence": "仅拼音",
+   "asrCount": 1,
+   "wrongLectures": [
+    5
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "麻子人丸",
+   "right": "麻子仁丸",
+   "level": "high",
+   "evidence": "仅拼音",
+   "asrCount": 1,
+   "wrongLectures": [
+    13
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "平肥散",
+   "right": "平胃散",
+   "level": "medium",
+   "evidence": "仅拼音",
+   "asrCount": 1,
+   "wrongLectures": [
+    20
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "酸枣人汤",
+   "right": "酸枣仁汤",
+   "level": "high",
+   "evidence": "仅拼音",
+   "asrCount": 1,
+   "wrongLectures": [
+    14
+   ],
+   "cite": null,
+   "otherCites": []
+  },
+  {
+   "kind": "方名",
+   "wrong": "猪林汤",
+   "right": "猪苓汤",
+   "level": "medium",
+   "evidence": "仅拼音",
+   "asrCount": 1,
+   "wrongLectures": [
+    22
+   ],
+   "cite": null,
+   "otherCites": []
+  }
+ ]
+}

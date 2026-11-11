@@ -1,0 +1,79 @@
+{
+  "lesson": "04-bingyin-bingji",
+  "title": "病因病机：因虚致实，由实转虚",
+  "subject": "19-zhongyi-laonianbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "老年病特有的一类病因是？",
+      "options": [
+        "药石所伤与误治失治",
+        "外感六淫",
+        "饮食劳倦",
+        "情志失调"
+      ],
+      "correct": 0,
+      "explanation": "教材 4.1.2 把「药石所伤」单列，因多重用药本身即致病。"
+    },
+    {
+      "stage": "check",
+      "question": "正虚为本的三个层次是？",
+      "options": [
+        "阴阳气血亏虚、脾肾两虚、心脑失养",
+        "寒热虚实",
+        "表里半表半里",
+        "气血津液"
+      ],
+      "correct": 0,
+      "explanation": "教材 4.2.1 的三层结构。"
+    },
+    {
+      "stage": "check",
+      "question": "虚实传变的两个方向是？",
+      "options": [
+        "因虚致实、由实转虚（构成环）",
+        "由表入里",
+        "由寒转热",
+        "由实转实"
+      ],
+      "correct": 0,
+      "explanation": "教材 4.3.1：这是老年病缠绵难愈的机制。"
+    },
+    {
+      "stage": "check",
+      "question": "本章引文次数为？",
+      "options": [
+        "80 次（全书最高）",
+        "17 次",
+        "51 次",
+        "0 次"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算。"
+    },
+    {
+      "stage": "post",
+      "question": "「虚瘀痰互结」为何是最常见组合？",
+      "options": [
+        "虚致痰瘀、痰瘀更耗正气，三者互相加重",
+        "因为三者同类",
+        "因为方剂如此",
+        "因为教材规定"
+      ],
+      "correct": 0,
+      "explanation": "教材 4.3.2 的常见病机组合。"
+    },
+    {
+      "stage": "post",
+      "question": "把药物反应误当病情进展的后果是？",
+      "options": [
+        "越治越重（加药→更多反应）",
+        "病情好转",
+        "无影响",
+        "自动缓解"
+      ],
+      "correct": 0,
+      "explanation": "这是「药石所伤」单列的现实意义。"
+    }
+  ]
+}

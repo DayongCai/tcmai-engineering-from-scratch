@@ -1,0 +1,151 @@
+{
+ "slug": "19-shehui-yixue",
+ "title": "社会医学",
+ "note": "18 章 = 教材 18 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-z191",
+   "title": "社会医学的对象与方法",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-z192",
+   "title": "健康的社会决定因素",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-z193",
+   "title": "社会分层与健康公平",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-z194",
+   "title": "行为、生活方式与健康",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-z195",
+   "title": "卫生服务体系与社会",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-z196",
+   "title": "基层与社区卫生",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-z197",
+   "title": "医疗保障与社会救助",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-z198",
+   "title": "卫生政策的社会过程",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-z199",
+   "title": "卫生资源与公平配置",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-z1910",
+   "title": "健康测量的指标体系",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-z1911",
+   "title": "调查设计与抽样",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-z1912",
+   "title": "生命统计与疾病统计",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-z1913",
+   "title": "评价方法与经济学视角",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-z1914",
+   "title": "健康促进与干预",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-z1915",
+   "title": "社区干预的组织",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-z1916",
+   "title": "弱势人群与健康照护",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-z1917",
+   "title": "社会医学与中医",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-z1918",
+   "title": "治理与改革趋势",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
+}

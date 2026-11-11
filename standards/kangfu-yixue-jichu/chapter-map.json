@@ -1,0 +1,116 @@
+{
+ "note": "派生课：一章一主题，单元按关键词从父课选题；本课内无单元复用。",
+ "chapters": {
+  "01-kangfu-gailun": {
+   "n": 1,
+   "title": "康复医学概论",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "康复不是「养病」：目标是功能，不是治愈",
+   "derivedFrom": "kangfu-huli、zhenjiu-zhiliao"
+  },
+  "02-gongneng-pingding": {
+   "n": 2,
+   "title": "功能评定",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "没有评定量表，康复就没有终点",
+   "derivedFrom": "kangfu-huli、jichu-huli"
+  },
+  "03-yundong-gongneng": {
+   "n": 3,
+   "title": "运动功能与训练",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "肌力、关节活动度、平衡、步态四条线",
+   "derivedFrom": "kangfu-huli、tuina"
+  },
+  "04-richeng-shenghuo": {
+   "n": 4,
+   "title": "日常生活活动与作业治疗",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "ADL 是康复的最终考场",
+   "derivedFrom": "kangfu-huli、laonian-huli"
+  },
+  "05-yanyu-yinshi": {
+   "n": 5,
+   "title": "言语、吞咽与认知康复",
+   "units": [
+    "5.1",
+    "5.2"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "这三块最容易被忽略，也最影响安全",
+   "derivedFrom": "kangfu-huli、jichu-huli"
+  },
+  "06-kangfu-huli": {
+   "n": 6,
+   "title": "康复护理与并发症预防",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "压疮、跌倒、挛缩、深静脉——四类可防",
+   "derivedFrom": "kangfu-huli、jichu-huli"
+  },
+  "07-shequ-changqi": {
+   "n": 7,
+   "title": "社区与长期照护",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "康复的主战场在出院之后",
+   "derivedFrom": "shequ-huli-xue、laonian-huli"
+  },
+  "08-tuandui-lunli": {
+   "n": 8,
+   "title": "康复团队与伦理",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "团队分工与「谁说了算」",
+   "derivedFrom": "kangfu-huli、huli-lunli-fagui"
+  }
+ }
+}

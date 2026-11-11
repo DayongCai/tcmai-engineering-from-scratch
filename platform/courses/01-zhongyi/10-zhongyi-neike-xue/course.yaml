@@ -1,0 +1,119 @@
+# [tcmP] 课程编排 · 01-zhongyi/10-zhongyi-neike-xue
+#
+# 单一事实来源是 departments/01-zhongyi/10-zhongyi-neike-xue/chapters/<slug>/docs/zh.md
+# 底本是 E:/textbooks/qhzy-中医内科学.xlsx（12 章 83 节 384 小节），
+# 已抽取为 standards/neike/底本.json（节/小节/条目三级，见 standards/neike/README.md）。
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# 14 章 = 底本 12 章 1:1 + 第 13、14 章（证候—方剂—疗效的因果推断 / 内科分型与 ICD-11 的映射），
+# 这两章底本没有对应章，引文跨章。
+#
+# 2026-11-01：14 章全部 planned —— 旁白 / 幻灯片 / 成片都还没有，所以本文件不写
+# estimate_minutes / measured_minutes：那两个字段的意思是对 lesson.json 的实测值。
+#
+# 本文件由 scripts/build_neike_course_yaml.py 渲染，--check 可比对漂移。
+
+id: 10-zhongyi-neike-xue
+title: 中医内科学
+en: TCM Internal Medicine
+dept: 01-zhongyi
+dept_title: 中医学院
+semester: 5
+stage: zhang
+hours: 108
+chapters_target: 14
+bridge: 脏腑辨证→决策树 / 证型→集成分类
+source_text: standards/neike/底本.json（qhzy-中医内科学.xlsx · 12 章 83 节 384 小节 · 329826 汉字 · 真教材）
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN（TTS 可用时）；无 TTS 时为静音轨 + 人工配音
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xulun
+    title: 第1章 绪论
+    unit: 总论
+    video: rendered
+    estimate_minutes: 20.45
+    measured_minutes: 19.84
+  - slug: 02-bianzheng-silu
+    title: 第2章 中医内科疾病的辨证论治思路与方法
+    unit: 总论
+    video: rendered
+    estimate_minutes: 24.72
+    measured_minutes: 24.28
+  - slug: 03-zangfu-bianzheng-gangyao
+    title: 第3章 脏腑辨证纲要与内科治则
+    unit: 总论
+    video: rendered
+    estimate_minutes: 17.00
+    measured_minutes: 16.68
+  - slug: 04-feixi-bingzheng
+    title: 第4章 肺系病证
+    unit: 病证各论
+    video: rendered
+    estimate_minutes: 18.00
+    measured_minutes: 17.49
+  - slug: 05-xinxi-bingzheng
+    title: 第5章 心系病证
+    unit: 病证各论
+    video: rendered
+    estimate_minutes: 16.40
+    measured_minutes: 15.96
+  - slug: 06-piwei-bingzheng
+    title: 第6章 脾胃系病证
+    unit: 病证各论
+    video: rendered
+    estimate_minutes: 17.55
+    measured_minutes: 17.04
+  - slug: 07-ganxi-bingzheng
+    title: 第7章 肝系病证
+    unit: 病证各论
+    video: rendered
+    estimate_minutes: 20.23
+    measured_minutes: 19.68
+  - slug: 08-shenxi-bingzheng
+    title: 第8章 肾系病证
+    unit: 病证各论
+    video: rendered
+    estimate_minutes: 18.58
+    measured_minutes: 18.26
+  - slug: 09-qixue-jinye-bingzheng
+    title: 第9章 气血津液病证
+    unit: 病证各论
+    video: rendered
+    estimate_minutes: 17.72
+    measured_minutes: 17.19
+  - slug: 10-zhiti-jingluo-bingzheng
+    title: 第10章 肢体经络病证
+    unit: 病证各论
+    video: rendered
+    estimate_minutes: 20.50
+    measured_minutes: 19.89
+  - slug: 11-jizheng-chuanranbing
+    title: 第11章 常见急症与传染病
+    unit: 病证各论
+    video: rendered
+    estimate_minutes: 19.58
+    measured_minutes: 19.03
+  - slug: 12-shuzihua-ai
+    title: 第12章 中医内科学的数字化与AI时代
+    unit: 拓展
+    video: rendered
+    estimate_minutes: 23.67
+    measured_minutes: 22.87
+  - slug: 13-zhengfang-liaoxiao
+    title: 第13章 证候—方剂—疗效的因果推断
+    unit: 综合
+    video: rendered
+    estimate_minutes: 27.77
+    measured_minutes: 26.53
+  - slug: 14-fenxing-icd11
+    title: 第14章 内科分型与 ICD-11 的映射
+    unit: 综合
+    video: rendered
+    estimate_minutes: 24.62
+    measured_minutes: 23.36

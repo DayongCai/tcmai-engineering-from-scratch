@@ -1,54 +1,69 @@
 {
-  "slug": "12-guzhishusong-tuibian",
-  "title": "骨质疏松与退行性疾病",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-daixie-guocheng",
-      "title": "骨代谢的基本过程",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-zhenduan-biaozhun",
-      "title": "骨质疏松的诊断标准",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-guwei-renshi",
-      "title": "中医对骨痿的认识",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-buganshen-zhengju",
-      "title": "补肝肾类方药的证据",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-diedao-yufang",
-      "title": "跌倒风险评估与预防",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-tuixing-jizhi",
-      "title": "退行性疾病的共同机制",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-yundong-yingyang",
-      "title": "运动与营养干预",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-gumidu-zhibiao",
-      "title": "疗效评价的骨密度指标",
-      "status": "📋"
-    }
-  ]
+ "note": "骨质疏松与退行性疾病 派生课：8 章，单元取自父课（locator 派生·），本课内无复用。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gudaixie-jichu",
+   "title": "骨代谢基础",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-zhenduan-pinggu",
+   "title": "诊断与骨折风险评估",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-guzhishusong",
+   "title": "骨质疏松症",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-guguanjieyan",
+   "title": "骨关节炎",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-tuibian-yingxiang",
+   "title": "退行性变的影像评估",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-yaowu",
+   "title": "药物与非药物治疗",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-kangfu-diedao",
+   "title": "运动康复与跌倒预防",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-changqi-guanli",
+   "title": "长期管理与随访",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

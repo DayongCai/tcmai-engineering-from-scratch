@@ -1,0 +1,259 @@
+{
+  "$generated": "node scripts/import_chenruchun.js",
+  "slug": "chenruchun-shanghan",
+  "title": "陈瑞春伤寒实践论（目录与章节结构）",
+  "source": {
+    "kind": "web-page",
+    "url": "https://weread.qq.com/web/reader/83d32cc0813ab756cg018e7fkecc32f3013eccbc87e4b62e",
+    "file": "standards/materials/chenruchun-shanghan/sources/陈瑞春伤寒实践论-weread.html",
+    "fetchedAt": "2026-11-11T08:30:46.510Z",
+    "sha256": "60d86b1e63a4a8a1036bb77eba62d39cfc808e5fbd5faa50a3f3ff118dfd1fce",
+    "bytes": 282672,
+    "note": "目录不在 DOM 中，而在页面内联 __INITIAL_STATE__.reader.chapterInfos；正文仅试读。"
+  },
+  "shape": {
+    "tree": "78 章 + 220 anchors（level 1–4）",
+    "deliverable": "..\\C:\\Users\\user\\AppData\\Local\\Temp\\tcmai-chenruchun-19340\\伤寒论临床应用.xlsx",
+    "deliverableSheets": [
+      "00目录",
+      "01学习方法",
+      "02学术思想",
+      "03分析逻辑",
+      "04经方实践",
+      "05医案实录",
+      "06医话实说",
+      "07学术实见",
+      "08条文映射",
+      "09溯源"
+    ],
+    "deliverableFormat": "格式乙签名：00目录（内序｜篇名｜域｜条数｜字数）+ 分表"
+  },
+  "counts": {
+    "chapters": 78,
+    "anchors": 220,
+    "nodes": 298,
+    "wordsDeclared": 255644,
+    "fang": 33,
+    "fangMu": 106,
+    "zhongClasses": 8,
+    "zhongBings": 102,
+    "zhongSub": 8,
+    "yihua": 20,
+    "fupian": 8
+  },
+  "baseLink": {
+    "file": "standards/shanghan/底本.json",
+    "fangHit": 22,
+    "fangMiss": 11,
+    "missed": [
+      "四逆散",
+      "苓甘五味姜辛半夏汤",
+      "厚朴生姜半夏甘草人参汤",
+      "白头翁汤",
+      "当归芍药散",
+      "肾著汤",
+      "麻黄杏仁薏苡甘草汤",
+      "柏叶汤",
+      "甘麦大枣汤",
+      "酸枣仁汤",
+      "百合知母汤与百合地黄汤"
+    ],
+    "missedDetail": [
+      {
+        "fang": "四逆散",
+        "kind": "缺口",
+        "note": "《伤寒论》少阴病篇方（318 条），本底本无少阴病域"
+      },
+      {
+        "fang": "苓甘五味姜辛半夏汤",
+        "kind": "金匮",
+        "note": "《金匮要略·痰饮咳嗽病》方"
+      },
+      {
+        "fang": "厚朴生姜半夏甘草人参汤",
+        "kind": "缺口",
+        "note": "《伤寒论》太阳病篇方（66 条），本底本太阳病域内未见"
+      },
+      {
+        "fang": "白头翁汤",
+        "kind": "缺口",
+        "note": "《伤寒论》厥阴病篇方（371 条），本底本厥阴病仅存 30 条残篇"
+      },
+      {
+        "fang": "当归芍药散",
+        "kind": "金匮",
+        "note": "《金匮要略·妇人妊娠病》方"
+      },
+      {
+        "fang": "肾著汤",
+        "kind": "金匮",
+        "note": "《金匮要略·五脏风寒积聚病》方（甘草干姜茯苓白术汤）"
+      },
+      {
+        "fang": "麻黄杏仁薏苡甘草汤",
+        "kind": "金匮",
+        "note": "《金匮要略·痉湿暍病》方"
+      },
+      {
+        "fang": "柏叶汤",
+        "kind": "金匮",
+        "note": "《金匮要略·惊悸吐衄下血》方"
+      },
+      {
+        "fang": "甘麦大枣汤",
+        "kind": "金匮",
+        "note": "《金匮要略·妇人杂病》方"
+      },
+      {
+        "fang": "酸枣仁汤",
+        "kind": "金匮",
+        "note": "《金匮要略·血痹虚劳病》方"
+      },
+      {
+        "fang": "百合知母汤与百合地黄汤",
+        "kind": "金匮",
+        "note": "《金匮要略·百合狐惑阴阳毒病》方（两首）"
+      }
+    ],
+    "aliasRealigned": [
+      {
+        "fang": "桂枝麻黄各半汤",
+        "matched": [
+          "桂枝、麻黄各半汤"
+        ]
+      },
+      {
+        "fang": "苓桂术甘汤",
+        "matched": [
+          "茯苓桂枝白术甘草汤"
+        ]
+      },
+      {
+        "fang": "理中汤",
+        "matched": [
+          "理中丸"
+        ]
+      },
+      {
+        "fang": "麻黄连翘赤小豆汤",
+        "matched": [
+          "麻黄连轺赤小豆汤"
+        ]
+      },
+      {
+        "fang": "炙甘草汤",
+        "matched": [
+          "炙甘草汤",
+          "复脉汤"
+        ]
+      }
+    ],
+    "aliasRejected": [
+      {
+        "alias": "人参汤",
+        "forFang": "理中汤",
+        "why": "同形异方（白虎加人参汤/四逆加人参汤）与方后注药味串；改用底本实际用字「理中丸」"
+      }
+    ],
+    "crossBing": 18,
+    "byDomain": [
+      {
+        "domain": "太阳病",
+        "tiao": 115,
+        "fang": 16
+      },
+      {
+        "domain": "汗吐下诸可不可",
+        "tiao": 115,
+        "fang": 17
+      },
+      {
+        "domain": "太阴病",
+        "tiao": 20,
+        "fang": 9
+      },
+      {
+        "domain": "少阳病",
+        "tiao": 10,
+        "fang": 6
+      },
+      {
+        "domain": "阳明病",
+        "tiao": 9,
+        "fang": 5
+      },
+      {
+        "domain": "霍乱·差后劳复",
+        "tiao": 4,
+        "fang": 2
+      },
+      {
+        "domain": "厥阴病",
+        "tiao": 2,
+        "fang": 2
+      }
+    ]
+  },
+  "measured": [
+    {
+      "id": "01",
+      "name": "01学习方法",
+      "domain": "方法（分析）",
+      "tiao": 14,
+      "chars": 1132
+    },
+    {
+      "id": "02",
+      "name": "02学术思想",
+      "domain": "思想（分析）",
+      "tiao": 14,
+      "chars": 1232
+    },
+    {
+      "id": "03",
+      "name": "03分析逻辑",
+      "domain": "逻辑（分析）",
+      "tiao": 15,
+      "chars": 1609
+    },
+    {
+      "id": "04",
+      "name": "04经方实践",
+      "domain": "上篇·经方实践（整理）",
+      "tiao": 33,
+      "chars": 3577
+    },
+    {
+      "id": "05",
+      "name": "05医案实录",
+      "domain": "中篇·医案实录（整理）",
+      "tiao": 16,
+      "chars": 1092
+    },
+    {
+      "id": "06",
+      "name": "06医话实说",
+      "domain": "下篇·医话实说（整理）",
+      "tiao": 20,
+      "chars": 481
+    },
+    {
+      "id": "07",
+      "name": "07学术实见",
+      "domain": "附篇·学术实见（整理）",
+      "tiao": 8,
+      "chars": 208
+    },
+    {
+      "id": "08",
+      "name": "08条文映射",
+      "domain": "交叉（与《伤寒论》底本）",
+      "tiao": 10,
+      "chars": 807
+    }
+  ],
+  "readme": {
+    "file": "陈瑞春伤寒实践论-目录.md"
+  },
+  "note": "交付物（xlsx）落在本机桌面；本目录保存源页面、人可读目录与出处指纹。重建：node scripts/import_chenruchun.js"
+}

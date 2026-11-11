@@ -1,0 +1,32 @@
+{
+  "slug": "01-renti-jiepou-xue",
+  "title": "人体解剖学",
+  "en": "Human Anatomy",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 121,
+  "type": "Core",
+  "semester": 1,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 72,
+  "bridge": "解剖结构→本体图谱 / 断层影像→空间配准",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/01-renti-jiepou-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/01-renti-jiepou-xue",
+    "chaptersWritten": 10,
+    "words": 228077,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#人体解剖学",
+    "extractedAt": "2026-10-21"
+  }
+}

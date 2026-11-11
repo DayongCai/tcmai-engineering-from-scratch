@@ -1,0 +1,138 @@
+{
+ "slug": "20-zhongyi-jingshenbing-xue",
+ "title": "中医精神病学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xulun",
+   "title": "第1章 绪论",
+   "status": "🚧",
+   "source": {
+    "chapter": 1,
+    "units": 4,
+    "hanzi": 8726
+   }
+  },
+  {
+   "n": 2,
+   "slug": "02-lilun-jichu",
+   "title": "第2章 中医精神病学的理论基础",
+   "status": "🚧",
+   "source": {
+    "chapter": 2,
+    "units": 4,
+    "hanzi": 11838
+   }
+  },
+  {
+   "n": 3,
+   "slug": "03-bingyin-bingji",
+   "title": "第3章 精神疾病的病因病机",
+   "status": "🚧",
+   "source": {
+    "chapter": 3,
+    "units": 4,
+    "hanzi": 13916
+   }
+  },
+  {
+   "n": 4,
+   "slug": "04-zhenduan",
+   "title": "第4章 精神疾病的诊断",
+   "status": "🚧",
+   "source": {
+    "chapter": 4,
+    "units": 4,
+    "hanzi": 14363
+   }
+  },
+  {
+   "n": 5,
+   "slug": "05-zhiliao-yuanze",
+   "title": "第5章 治疗原则与常用治法",
+   "status": "🚧",
+   "source": {
+    "chapter": 5,
+    "units": 4,
+    "hanzi": 11165
+   }
+  },
+  {
+   "n": 6,
+   "slug": "06-dianzheng-kuangzheng",
+   "title": "第6章 癫证与狂证",
+   "status": "🚧",
+   "source": {
+    "chapter": 6,
+    "units": 4,
+    "hanzi": 16175
+   }
+  },
+  {
+   "n": 7,
+   "slug": "07-yubing",
+   "title": "第7章 郁病",
+   "status": "🚧",
+   "source": {
+    "chapter": 7,
+    "units": 4,
+    "hanzi": 13912
+   }
+  },
+  {
+   "n": 8,
+   "slug": "08-bumian-jiaolv",
+   "title": "第8章 不寐与焦虑障碍",
+   "status": "🚧",
+   "source": {
+    "chapter": 8,
+    "units": 4,
+    "hanzi": 11392
+   }
+  },
+  {
+   "n": 9,
+   "slug": "09-xianzheng-fazuoxing",
+   "title": "第9章 痫证与其他发作性精神障碍",
+   "status": "🚧",
+   "source": {
+    "chapter": 9,
+    "units": 4,
+    "hanzi": 10752
+   }
+  },
+  {
+   "n": 10,
+   "slug": "10-chidai-zhanwang",
+   "title": "第10章 痴呆与谵妄",
+   "status": "🚧",
+   "source": {
+    "chapter": 10,
+    "units": 4,
+    "hanzi": 13823
+   }
+  },
+  {
+   "n": 11,
+   "slug": "11-qita-zhangai",
+   "title": "第11章 其他精神障碍",
+   "status": "🚧",
+   "source": {
+    "chapter": 11,
+    "units": 4,
+    "hanzi": 10961
+   }
+  },
+  {
+   "n": 12,
+   "slug": "12-jiehe-kangfu-shuzihua",
+   "title": "第12章 中西医结合治疗、康复与数字化",
+   "status": "🚧",
+   "source": {
+    "chapter": 12,
+    "units": 4,
+    "hanzi": 17231
+   }
+  }
+ ]
+}

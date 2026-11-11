@@ -1,0 +1,79 @@
+{
+  "lesson": "12-jiehe-kangfu-shuzihua",
+  "title": "中西医结合、康复与数字化：边界写清楚才算合作",
+  "subject": "20-zhongyi-jingshenbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "中西医结合的教材口径是？",
+      "options": [
+        "抗精神病药为主、中药为辅",
+        "中药为主",
+        "两者等同",
+        "只用中药"
+      ],
+      "correct": 0,
+      "explanation": "教材 12.1.1 反复出现的一致措辞。"
+    },
+    {
+      "stage": "check",
+      "question": "联用须监测的指标不包括？",
+      "options": [
+        "骨密度",
+        "肝功能",
+        "血常规",
+        "心电图"
+      ],
+      "correct": 0,
+      "explanation": "教材 12.1.1：肝功、血常规、心电图。"
+    },
+    {
+      "stage": "check",
+      "question": "精神康复三条是？",
+      "options": [
+        "康复训练、调神养生、家庭与社会支持",
+        "药物、手术、理疗",
+        "针灸、推拿、拔罐",
+        "住院、门诊、社区"
+      ],
+      "correct": 0,
+      "explanation": "教材 12.2.1。"
+    },
+    {
+      "stage": "check",
+      "question": "数字化章节同时提出的是？",
+      "options": [
+        "隐私伦理",
+        "无需监管",
+        "完全替代",
+        "禁止使用"
+      ],
+      "correct": 0,
+      "explanation": "教材 12.2.2。"
+    },
+    {
+      "stage": "post",
+      "question": "本章引书仅 2 部 10 次说明什么？",
+      "options": [
+        "本章以现代临床与安全规范为主",
+        "教材遗漏",
+        "中医无内容",
+        "统计错误"
+      ],
+      "correct": 0,
+      "explanation": "第 12 章的定位。"
+    },
+    {
+      "stage": "post",
+      "question": "「边界写清楚才算合作」指什么？",
+      "options": [
+        "主导、联用监测、特殊人群三条都要写明",
+        "只要合作就行",
+        "只写药物",
+        "只写针灸"
+      ],
+      "correct": 0,
+      "explanation": "本章的三条边界。"
+    }
+  ]
+}

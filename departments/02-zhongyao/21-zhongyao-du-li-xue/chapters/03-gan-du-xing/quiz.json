@@ -1,0 +1,79 @@
+{
+ "lesson": "03-gan-du-xing",
+ "title": "肝毒性：为什么肝最先受损",
+ "subject": "21-zhongyao-du-li-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 3 章「肝毒性：为什么肝最先受损」要回答的核心问题是什么？",
+   "options": [
+    "口服的药都先过肝，为什么只有少数药伤肝",
+    "5.5.1 毒性的概念",
+    "马钱子",
+    "5.5.2 有毒中药的应用"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：肝是首过器官，也是代谢活化器官：原药无毒、代谢物有毒；教材对这类药的写法是「少数人」「长期服用」——它承认个体差异。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "减毒与救治",
+    "毒性成分",
+    "毒性表现",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（靶器官）重心落在哪一项？",
+   "options": [
+    "肝",
+    "乙酸-丙二酸途径",
+    "莽草酸途径",
+    "甲戊二羟酸途径"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "14 个",
+    "16 个",
+    "18 个",
+    "20 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "本课程数值类命中只有 15 处，说明什么？",
+   "options": [
+    "教材常数多以范围或文字表述，可数的值少不等于不量化",
+    "5.5.1 毒性的概念",
+    "马钱子",
+    "5.5.2 有毒中药的应用"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：真正的量化在方法学七项指标里。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/zhongyao-du-li/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

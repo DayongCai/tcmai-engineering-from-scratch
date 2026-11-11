@@ -1,0 +1,187 @@
+{
+  "$generated": "sha256 逐文件实测",
+  "files": {
+    "episodes.json": {
+      "bytes": 5832,
+      "sha256": "16e8b0c20a17ce46ad08b43881a93dfe0356c3cc3fb4cf7c25dedab922bac5e6"
+    },
+    "subtitle-samples.json": {
+      "bytes": 24573,
+      "sha256": "a9d6984ac3c49bc054976c5497ee8f35675be92e027d9681f55ca197b1eb8ce6"
+    },
+    "subtitle-samples-courses.json": {
+      "bytes": 92754,
+      "sha256": "84810a438de3b4209b625606177eb2777abd8a3549c2484559d6b148e0acd358"
+    },
+    "meta-lectures.json": {
+      "bytes": 5417,
+      "sha256": "5d5ecc9a0422ef5dd04085b68d9bfc9c23d6a64f14b3d0c2b42426699b0651d7"
+    },
+    "bilibili-video-page.html": {
+      "bytes": 277469,
+      "sha256": "603ad2c30bdf0c23aadd15b1444b80141c71bec04fd59fa73398eb6a2e24c707"
+    },
+    "api-player-v2.json": {
+      "bytes": 2313,
+      "sha256": "b2c914153701cb8daec17b2091c98ffa52e0cd5bfe01c6d6b918709a95d98faa"
+    },
+    "grids": {
+      "grid01.jpg": {
+        "bytes": 142283,
+        "sha256": "e9a01438f10bda60d80ed2cdf2736b43f9368dee92363259804a35672d256ef9"
+      },
+      "grid02.jpg": {
+        "bytes": 140998,
+        "sha256": "f4b2fcc4b69ca9c044ae3762ddec5ddd0de14cbd119ee1a139e1048e28912e71"
+      },
+      "grid03.jpg": {
+        "bytes": 156298,
+        "sha256": "7eb2bfbb7b2d0d1ed0d65a2cb8cdaef59e518bc0d390b774a2f8681d243b5c62"
+      },
+      "grid04.jpg": {
+        "bytes": 146928,
+        "sha256": "f0d4f73f1e4d567e248e6cda3da10c25b66cfcb2329199b45fffb63ed27e7c34"
+      },
+      "grid05.jpg": {
+        "bytes": 156653,
+        "sha256": "fe0274315607ee57b50a1627d9e74d07fee28eed3397d990e4393de0fa890981"
+      },
+      "grid06.jpg": {
+        "bytes": 161433,
+        "sha256": "f7a35743e86de2c05e54602d8a0721c1aa67cb2ca334d4b757b2a00ab8434f58"
+      },
+      "grid07.jpg": {
+        "bytes": 156044,
+        "sha256": "52c16a710eb9c874fd6002974235cf8eb36efb450b3551bcbd31ab8d186b8d1d"
+      },
+      "grid08.jpg": {
+        "bytes": 150750,
+        "sha256": "d56ea5e797130b0b9fa1b633d4fea78e094f059b5af61c448f5b5eaac90027b5"
+      },
+      "grid09.jpg": {
+        "bytes": 154882,
+        "sha256": "d6f2d4ea6e2aa5ce04d9ab699107696f9fe3eb420a5d3ccf68abbed69eeff271"
+      },
+      "grid10.jpg": {
+        "bytes": 154939,
+        "sha256": "05e419216c7157d3195e78ade25a04a75226d2d82ea7d15f82aa90be6240497e"
+      },
+      "grid11.jpg": {
+        "bytes": 137180,
+        "sha256": "590ee1c7d5ad6c2d3c89141e045fba6582f578bffddc4b9b87e96b7629ee7613"
+      },
+      "grid12.jpg": {
+        "bytes": 144049,
+        "sha256": "e3ed4cf6164cf27760a1ddde6ef8e80edfb7a64690cfecbcfb13814ed557a2e2"
+      },
+      "lec-01.jpg": {
+        "bytes": 377708,
+        "sha256": "a1d2c6009c8cfc1782be86986ea68fe162e285424eca0e6ca335462a43cf5c89"
+      },
+      "lec-02.jpg": {
+        "bytes": 377560,
+        "sha256": "7e546fe2ec695a3101fa746498a410b5776ba8e5b2df5b0a361e0d5b1a39802a"
+      },
+      "lec-03.jpg": {
+        "bytes": 358312,
+        "sha256": "88d4c5560828ee2eeaca138237dfd5145bb88b9ca038c06eafee1422282dc38b"
+      },
+      "lec-04.jpg": {
+        "bytes": 363972,
+        "sha256": "5c59a9df9a959520c6e83a43d013253e30b6d6babc5a19fddea49e18616c6165"
+      },
+      "lec-05.jpg": {
+        "bytes": 328184,
+        "sha256": "97ae68bc343a4ea6daedf89d169af3ec7662b846f28a8ab02d4a337c3635694f"
+      },
+      "lec-06.jpg": {
+        "bytes": 363934,
+        "sha256": "0c1030dc050a096a729991e281c1e0f30873c0386ea08357a60ce1d63459e251"
+      },
+      "lec-07.jpg": {
+        "bytes": 382247,
+        "sha256": "5d5d63bdbee2fdb9ea2296cce862e3d689473b09df642a507108fa0aa250e7eb"
+      },
+      "lec-08.jpg": {
+        "bytes": 364099,
+        "sha256": "b610b4022f71cc4188b4190d6d52222ac88bd240e24f7e8cfd24dee8e91183bb"
+      },
+      "lec-09.jpg": {
+        "bytes": 388492,
+        "sha256": "61148c376d5939de76ed5a54f8c41fb9a083af86a357cb096de63fe0c4d2c159"
+      },
+      "lec-10.jpg": {
+        "bytes": 381619,
+        "sha256": "adc7e6f956560ee5673a03080cb43a73ac6af76004f9bde15993ea7cbe678f99"
+      },
+      "lec-11.jpg": {
+        "bytes": 410441,
+        "sha256": "ab560b73eec4fe32997b42f468755692540ac674aeb2d1a658138c9c3e8318a1"
+      },
+      "lec-12.jpg": {
+        "bytes": 402574,
+        "sha256": "792840454207a584b84820612a924788704749fc8b426738c4ccd0ee2a5f9495"
+      },
+      "lec-13.jpg": {
+        "bytes": 421330,
+        "sha256": "93f7100618b62d9ce8e04856d008ceb86eb9b9680b3a63425181b0b206bb9e47"
+      },
+      "lec-14.jpg": {
+        "bytes": 398987,
+        "sha256": "d9da0a35418ef6db4f198aa96da2bf3c1561d56630b69d9a87a08fc3f91306a4"
+      },
+      "lec-15.jpg": {
+        "bytes": 394363,
+        "sha256": "75fea2456665b7770d217fc61d6bc8c91070b2830788644f5fbc3a364af53d1b"
+      },
+      "lec-16.jpg": {
+        "bytes": 412104,
+        "sha256": "6be04eb858ffe81ff99c75067bbc08bc452fbc2121c47bc3a5cb45d557bfde94"
+      },
+      "lec-17.jpg": {
+        "bytes": 417761,
+        "sha256": "8a15a83e5964aaf3167c7a82cb05dbabb0aba9a74070da6af508a4da065d2dd8"
+      },
+      "lec-18.jpg": {
+        "bytes": 443193,
+        "sha256": "516a43d371a5ddd5462109a7c341e4507273a8fe8385eef9060df39ad792aa94"
+      },
+      "lec-19.jpg": {
+        "bytes": 393257,
+        "sha256": "013d4479179e680d793e2d8b8c4408c412080362d989cadf06bdd1fbfdc6ca92"
+      },
+      "lec-20.jpg": {
+        "bytes": 412458,
+        "sha256": "32fb14b18d87d7d2473270a5b808808682cf7d7ccd4afea466368405da4fb5ce"
+      },
+      "lec-21.jpg": {
+        "bytes": 412389,
+        "sha256": "20c2548b8e903684208ec31b99836db046de0428235773d972879ec68e4b58bc"
+      },
+      "lec-22.jpg": {
+        "bytes": 437713,
+        "sha256": "f6f19b030668a54becd56b1db52fed9b1e079b9af4b43548f86b08da6fe1c179"
+      },
+      "lec-23.jpg": {
+        "bytes": 419458,
+        "sha256": "afd22302f6782c9546a2b59110a4a812bc10e9fa2869b5c15100a2ba141b047d"
+      },
+      "lec-24.jpg": {
+        "bytes": 417265,
+        "sha256": "87f582e952103f04f34148ff79d87c6e51ef6e7e146cb06cd5bf485eaea51939"
+      },
+      "tail-grid01.jpg": {
+        "bytes": 149174,
+        "sha256": "17596f2fde91d29dfe1758b984c2caa4245c8d90e0aca64b026f09293372172a"
+      },
+      "tail-grid02.jpg": {
+        "bytes": 154147,
+        "sha256": "8a4230296e3da88df89346cba75c2f5832dd188b5b3a5f926f1d195f43735bdb"
+      },
+      "tail-grid03.jpg": {
+        "bytes": 155963,
+        "sha256": "f3f381799d7382b8f7ee8bbbeda0d59d17b95ee7bcaafdd6f0940099b6377ce8"
+      }
+    }
+  }
+}

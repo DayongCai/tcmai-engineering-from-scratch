@@ -1,0 +1,132 @@
+{
+ "slug": "19-huli-renwen-goutong",
+ "title": "护理人文修养与沟通",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gaishu",
+   "title": "护理人文修养概述",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-gaishu/docs/zh.md",
+   "code": "chapters/01-gaishu/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-renwen-jingshen",
+   "title": "人文精神与职业价值观",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-renwen-jingshen/docs/zh.md",
+   "code": "chapters/02-renwen-jingshen/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-wenhua-chayi",
+   "title": "文化与文化差异",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-wenhua-chayi/docs/zh.md",
+   "code": "chapters/03-wenhua-chayi/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-goutong-yuanli",
+   "title": "沟通的基本原理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-goutong-yuanli/docs/zh.md",
+   "code": "chapters/04-goutong-yuanli/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-huhuan-goutong",
+   "title": "护患沟通的环节与要求",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-huhuan-goutong/docs/zh.md",
+   "code": "chapters/05-huhuan-goutong/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-teshu-qingjing",
+   "title": "特殊情境的沟通要求",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-teshu-qingjing/docs/zh.md",
+   "code": "chapters/06-teshu-qingjing/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-tuandui-goutong",
+   "title": "团队沟通与协作",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-tuandui-goutong/docs/zh.md",
+   "code": "chapters/07-tuandui-goutong/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-liyi-xingxiang",
+   "title": "护理礼仪与职业形象",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-liyi-xingxiang/docs/zh.md",
+   "code": "chapters/08-liyi-xingxiang/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-tongli-zhichi",
+   "title": "同理心与情感支持",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-tongli-zhichi/docs/zh.md",
+   "code": "chapters/09-tongli-zhichi/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-renwen-shijian",
+   "title": "人文关怀的实践要求",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-renwen-shijian/docs/zh.md",
+   "code": "chapters/10-renwen-shijian/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-lunli-juece",
+   "title": "伦理与法律的修养、道德困境",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-lunli-juece/docs/zh.md",
+   "code": "chapters/11-lunli-juece/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-jiaoyu-fansi",
+   "title": "人文素质教育与反思实践",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-jiaoyu-fansi/docs/zh.md",
+   "code": "chapters/12-jiaoyu-fansi/code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-zhiye-fazhan",
+   "title": "人文修养与职业发展",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/13-zhiye-fazhan/docs/zh.md",
+   "code": "chapters/13-zhiye-fazhan/code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-zhiliang-pingtai",
+   "title": "人文修养与护理质量、平台",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/14-zhiliang-pingtai/docs/zh.md",
+   "code": "chapters/14-zhiliang-pingtai/code/main.js"
+  }
+ ]
+}

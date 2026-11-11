@@ -1,0 +1,22 @@
+{
+ "note": "L1 根（核心公理）：四条，对每个院系域各发一条 spine 边。",
+ "source": "standards/knowledge-tree/tree-schema.json#levels[1]",
+ "items": [
+  {
+   "id": "L1.1",
+   "name": "整体观念"
+  },
+  {
+   "id": "L1.2",
+   "name": "辨证论治"
+  },
+  {
+   "id": "L1.3",
+   "name": "恒动平衡"
+  },
+  {
+   "id": "L1.4",
+   "name": "治未病"
+  }
+ ]
+}

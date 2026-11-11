@@ -1,0 +1,38 @@
+%% 图 10-1 病机的分层结构：基本病机 · 具体病机 · 复合病机
+%% 内容依据：textbooks/01-zhongyi/01-zhongyi-jichu-lilun/10-第10章-病机.md §9.1.1
+%%   原文「基本病机指机体对致病因素产生的普遍性、规律性反应，包括邪正盛衰、阴阳失调、
+%%   气血津液失常等；具体病机指某一脏腑、经络或某一类疾病（如六经病机、卫气营血病机）
+%%   的特殊病理变化。AI平台将病机建模为分层推理引擎：底层为基本病机（如'气虚'），
+%%   上层为具体病机（如'心气虚''脾气虚'），通过逻辑运算生成复合病机（如'心脾两虚'）」
+%% 图的三层即原文的分层；节点文字中的例子（心气虚、脾气虚、心脾两虚）为原文所举。
+graph TD
+    BJ["病机<br/>疾病发生、发展、变化的机理"]
+
+    BJ --> JB["基本病机<br/>普遍性 · 规律性反应"]
+    BJ --> JT["具体病机<br/>某一脏腑、经络或某类疾病的特殊变化"]
+
+    JB --> JB1["邪正盛衰"]
+    JB --> JB2["阴阳失调"]
+    JB --> JB3["气血津液失常"]
+
+    JT --> JT1["脏腑病机<br/>如：心气虚 · 脾气虚"]
+    JT --> JT2["经络病机"]
+    JT --> JT3["六经病机"]
+    JT --> JT4["卫气营血病机"]
+
+    JB1 -.-> FH["复合病机<br/>如：心脾两虚"]
+    JB2 -.-> FH
+    JB3 -.-> FH
+    JT1 -.-> FH
+    JT2 -.-> FH
+
+    FH -. "逻辑运算生成" .- JT
+
+    classDef root fill:#eef2e8,stroke:#4a7c59,stroke-width:2.2px,color:#1f1b16
+    classDef lv fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.6px,color:#1f1b16
+    classDef item fill:#fbf8f2,stroke:#b9a992,stroke-width:1.1px,color:#6b6156
+    classDef comp fill:#fdf6e8,stroke:#c9a227,stroke-width:1.6px,color:#1f1b16
+    class BJ root
+    class JB,JT lv
+    class JB1,JB2,JB3,JT1,JT2,JT3,JT4 item
+    class FH comp

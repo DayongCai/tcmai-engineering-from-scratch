@@ -1,0 +1,79 @@
+{
+ "lesson": "04-zhengzhuang-huli",
+ "title": "内科常见症状的护理",
+ "subject": "07-neike-huli-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 4 章「内科常见症状的护理」要回答的核心问题是什么？",
+   "options": [
+    "为什么先讲症状再讲系统",
+    "1.1.2 内科护理的任务与内容体系",
+    "2.1.2 消化与泌尿功能的护理关注点",
+    "3.1.2 评估方法与信息来源类别"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：因为患者来的时候给的是症状不是诊断：发热、疼痛、水肿、呼吸困难，都是跨系统的入口。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "评估与观察",
+    "治疗与护理",
+    "并发症与安全",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（系统归属）重心落在哪一项？",
+   "options": [
+    "呼吸系统",
+    "乙酸-丙二酸途径",
+    "莽草酸途径",
+    "甲戊二羟酸途径"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "1 个",
+    "3 个",
+    "5 个",
+    "7 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "本课程数值类命中只有 15 处，说明什么？",
+   "options": [
+    "教材常数多以范围或文字表述，可数的值少不等于不量化",
+    "1.1.2 内科护理的任务与内容体系",
+    "2.1.2 消化与泌尿功能的护理关注点",
+    "3.1.2 评估方法与信息来源类别"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：真正的量化在方法学七项指标里。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/neike-huli/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

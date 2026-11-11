@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>第 40 章 β-内酰胺类抗生素：一个环，五种母核 · 幻灯片</title>
+<style>
+
+:root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
+--jade:#1f6f5c;--jade-soft:#e3efe9;--cinnabar:#a8321e;--cinnabar-soft:#f7e6e2;--gold:#a8862a;
+--sans:system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;
+--serif:"Songti SC","Noto Serif SC",Georgia,serif;
+--mono:ui-monospace,"Cascadia Mono",Consolas,monospace;}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#12110f;color:var(--ink);font-family:var(--sans)}
+#deck{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{min-height:100%;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;
+  padding:5vh 7vw;background:var(--paper);border-bottom:1px solid #000}
+.slide-inner{max-width:1000px;width:100%;margin:0 auto}
+.slide-foot{max-width:1000px;width:100%;margin:3vh auto 0;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+h1.big{font-family:var(--serif);font-size:clamp(28px,4.4vw,54px);line-height:1.25;margin:0}
+blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-height:1.6;margin:0;
+  border-left:6px solid var(--gold);padding-left:24px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--jade);
+  text-transform:uppercase;margin-bottom:14px}
+.kicker.warn{color:var(--cinnabar)}
+p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
+.compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
+.compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+/* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
+.math{font-style:italic;font-family:var(--serif)}
+.math-block{display:block;text-align:center;font-family:var(--serif);font-size:1.05em;margin:.8em 0}
+.math-op,.math-text,.math-rm{font-style:normal}
+.math-op{padding:0 .12em}
+.math-cal{font-style:normal}
+.math-bb{font-style:normal;font-weight:700}
+.frac{display:inline-block;vertical-align:middle;text-align:center;font-style:normal;margin:0 .15em;line-height:1.15}
+.frac-num{display:block;padding:0 .3em;border-bottom:1px solid currentColor}
+.frac-den{display:block;padding:0 .3em}
+.math-sqrt{font-style:normal;margin-right:.05em}
+.math-line{border-top:1px solid currentColor;font-style:normal;padding-top:.05em}
+.math-note{font-size:.8em;font-style:normal}
+.figure-host{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+#hud{position:fixed;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#8a8578;
+  background:#faf8f3cc;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
+@media print{.slide{page-break-after:always;min-height:auto}#hud{display:none}}
+</style>
+</head>
+<body>
+<div id="deck">
+<section class="slide" data-i="0">
+  <div class="slide-inner"><h1 class="big">第 40 章 β-内酰胺类抗生素：一个环，五种母核</h1></div>
+  <div class="slide-foot"><span>1 / 26</span><span>title</span></div>
+</section>
+<section class="slide" data-i="1">
+  <div class="slide-inner"><blockquote class="motto">「β-内酰胺类抗生素是指化学结构中含有一个四元 β-内酰胺环的一大类抗生素」——教材·药理学·第40章·40.1.1</blockquote></div>
+  <div class="slide-foot"><span>2 / 26</span><span>motto</span></div>
+</section>
+<section class="slide" data-i="2">
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">几十个品种、六七个类别，名字还都长得像：青霉素 G、氨苄西林、阿莫西林、哌拉西林，头孢一至四代，再加头霉素、碳青霉烯、氧头孢烯、单环类。逐个记的代价是记完就散，遇到一个没背过的品种就无从下手。教材给的线只有一条——那个四元环；可「有这个环」只说明它属于这一类，说明不了它为什么耐酶、为什么能口服、为什么抗菌谱宽。真正要问的是：环外的哪一处改动，换来了哪一个性质？</p></div>
+  <div class="slide-foot"><span>3 / 26</span><span>problem</span></div>
+</section>
+<section class="slide" data-i="3">
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（处方单上写的是品种名，不是母核；品种一断供，「换哪个」立刻压过来，能靠的只有「它和它像不像」，而像不像的依据从来没有被说清）+ 知识积累（本章 4 节 12 小节、20,167 字，40.4 一节 5,437 字明显厚于前三节，其中 40.4.3 氧头孢烯类 2,231 字为全章最厚小节，比最薄的 40.1.3 分类与代表药 1,594 字多出四成；词频上「青霉素」120 次覆盖全部 12 个小节、「β-内酰胺酶」46 次——母核词承担分类、机制词承担解释，两套词在同一小节里交替出现，却没有一行把它们对接起来）</p></div>
+  <div class="slide-foot"><span>4 / 26</span><span>roots</span></div>
+</section>
+<section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、一个环决定了全章的解释框架</div>
+                <div class="compact"><p>教材的定义把结构写在最前面：</p>
+<blockquote><p>「β-内酰胺类抗生素是指化学结构中含有一个四元 β-内酰胺环的一大类抗生素」——教材·药理学·第40章·40.1.1</p></blockquote>
+<p>定义之后紧接着一句限定，是本章最要紧的一句：该环是抗菌活性的必需结构，一旦被水解开环，抗菌活性随之消失。这句话决定了全章的读法——所有品种的差别都不在环上，而在环外。</p>
+<p>环外有两处。第一处是并合环：青霉素类以青霉烷为母核，头孢菌素类以头孢烯为母核，头霉素类在头孢烯上加了甲氧基，碳青霉烯类的母核是碳青霉烯，氧头孢烯类的母核里以氧原子替换了硫原子，单环类则只有 β-内酰胺环而无并合环。第二处是侧链：侧链决定药物对青霉素结合蛋白的亲和力、对 β-内酰胺酶的稳定性、透过革兰阴性菌外膜的能力。</p>
+<p>三件事一分开，全章的分类就有了依据：</p>
+<blockquote><p>「按化学结构分类，本类药物可分为青霉素类、头孢菌素类、头霉素类、碳青霉烯类、氧头孢烯类与单环 β-内酰胺类」——教材·药理学·第40章·40.1.3</p></blockquote></div></div>
+  <div class="slide-foot"><span>5 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、一个环决定了全章的解释框架</div>
+                <div class="compact"><p>另有 β-内酰胺酶抑制药及其复方制剂。抑制药本身抗菌活性很弱，作用是保护主药，所以在分类上单列一类——这一处安排很能说明问题：分类的依据不是「有没有抗菌作用」，而是「在治疗中承担什么角色」。</p></div></div>
+  <div class="slide-foot"><span>6 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、机制：亲和力谱就是抗菌谱</div>
+                <div class="compact"><p>抗菌机制的起点在细胞壁：</p>
+<blockquote><p>「细菌细胞壁的主要成分是肽聚糖」——教材·药理学·第40章·40.1.1</p></blockquote>
+<p>肽聚糖由聚糖骨架、四肽侧链与五肽交联桥构成，交联由位于细胞膜外侧的转肽酶催化。β-内酰胺类的立体构型与 D-丙氨酰-D-丙氨酸末端相似，能与转肽酶活性中心共价结合，转肽反应受阻，肽聚糖链之间不能形成交叉联结，细胞壁机械强度下降。菌体内渗透压高，水分内渗，菌体膨胀、变形、拉长，最终在自溶酶被激活的条件下裂解。</p>
+<p>转肽酶有一个更常用的名字：青霉素结合蛋白。教材在这里的处理值得注意——它没有停在「抑制转肽酶」这一句上，而是指出青霉素结合蛋白按分子大小与功能可分为若干种，分别具有转肽酶、羧肽酶或内肽酶的活性；不同药物对不同青霉素结合蛋白的亲和力存在差异。接着给出结论：亲和力谱的差异构成各品种抗菌作用与抗菌谱不同的分子基础。</p>
+<p>这一句是本章的枢纽。它把「抗菌谱」从一个需要背的表，变成了一个可以推的结论：靶点的分布与亲和力的分布，共同决定覆盖哪一段细菌。</p></div></div>
+  <div class="slide-foot"><span>7 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、机制：亲和力谱就是抗菌谱</div>
+                <div class="compact"><p>还有两处必须一起记住。其一，自溶酶的激活与细菌活跃生长繁殖有关，所以本类药对繁殖期细菌作用明显，称繁殖期杀菌药；对静止期细菌难以发挥充分杀菌作用。其二，杀菌效果主要取决于血浆药物浓度高于有效水平的持续时间，属时间依赖性抗菌药。两条合起来，给出的是给药方案的设计着眼点——维持有效作用时间，而不是追求单次高浓度。</p>
+<p>教材还补了一句协同的机制：本类药与氨基糖苷类合用时可出现协同，机制在于细胞壁合成受阻后氨基糖苷类更易进入菌体。那句话在第 42 章会以另一面出现。</p></div></div>
+  <div class="slide-foot"><span>8 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、耐药：五条线，其中三条长在革兰阴性菌的外膜上</div>
+                <div class="compact"><p>耐药的定义先分清两类：</p>
+<blockquote><p>「耐药性可分为固有耐药与获得性耐药两类」——教材·药理学·第40章·40.1.2</p></blockquote>
+<p>前者由染色体基因决定，属天然属性，同类细菌普遍存在；后者由敏感菌获得耐药基因后形成，只出现在部分菌株中，是临床耐药问题的主要来源。获得性耐药可垂直传给子代，也可经质粒、转座子与整合子水平转移——接合、转化与转导是常见方式。这一句解释了为什么耐药扩散的速度会超出单纯突变所能达到的程度。</p>
+<p>第一条线也是最重的一条：</p>
+<blockquote><p>「产生灭活酶是本类药物耐药最常见、也是最重要的机制」——教材·药理学·第40章·40.1.2</p></blockquote></div></div>
+  <div class="slide-foot"><span>9 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、耐药：五条线，其中三条长在革兰阴性菌的外膜上</div>
+                <div class="compact"><p>细菌合成 β-内酰胺酶，水解 β-内酰胺环的酰胺键，药物开环失活。按底物范围可分为青霉素酶、头孢菌素酶、广谱酶、超广谱酶与碳青霉烯酶。酶的编码位置决定其表达方式：染色体基因编码的多为诱导型，接触药物后产量明显增加；质粒介导的多为组成型，可在菌种间快速传播。耐药程度由酶与药物的亲和力、以及酶的产量共同决定——所以「产酶」不等于「对全部品种耐药」，产酶菌对不稳定的品种广泛耐药，对稳定的品种仍可敏感。</p>
+<p>第二条线是靶位改变：</p>
+<blockquote><p>「靶位改变是另一类重要机制」——教材·药理学·第40章·40.1.2</p></blockquote>
+<p>细菌通过突变或获得外源基因改变青霉素结合蛋白的结构或数量，使亲和力下降；也可获得新的、亲和力低的青霉素结合蛋白，在药物存在时继续完成细胞壁合成。甲氧西林耐药金黄色葡萄球菌就是获得了这类低亲和力靶位，且常与其他机制并存，形成多重耐药。</p>
+<p>第三条线是本章最需要在地图上定位的一条：</p>
+<blockquote><p>「外膜通透性降低在革兰阴性菌中较为常见」——教材·药理学·第40章·40.1.2</p></blockquote></div></div>
+  <div class="slide-foot"><span>10 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">三、耐药：五条线，其中三条长在革兰阴性菌的外膜上</div>
+                <div class="compact"><p>革兰阳性菌没有外膜，肽聚糖层外就是环境，药物容易到达靶位；革兰阴性菌在肽聚糖层之外还有一层外膜，药物须经孔蛋白通道进入周浆间隙。孔蛋白基因缺失、表达减少或结构改变，通道变窄或数量减少，进入菌体的药量下降。若同时产酶，两者协同——进去的少，进去的还被水解，靶位就更难达到有效水平。这一条解释了为什么革兰阴性菌的耐药往往比革兰阳性菌复杂。</p>
+<p>另外两条是外排与生物膜。主动外排系统底物范围较宽，是多重耐药的重要成因；生物膜内的细菌被胞外基质包裹，药物难以渗透，菌体代谢缓慢，对繁殖期杀菌药不敏感。教材还提了一个专门的现象：自溶酶活性下降的菌株，在细胞壁合成受抑后仍能维持形态完整，表现为耐受——药物抑制生长而不易将其杀灭。耐受与耐药不是一回事，这一点容易被合并，值得单独记住。</p></div></div>
+  <div class="slide-foot"><span>11 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">三、耐药：五条线，其中三条长在革兰阴性菌的外膜上</div>
+                <div class="compact"><p>五条线合起来，可以提炼出三条判断线索：该菌是否产生可水解该药的酶，该药的靶位在该菌中是否改变，药物能否到达作用部位。三条中任一条成立，抗菌作用都可能下降；同时成立，耐药程度更明显。</p></div></div>
+  <div class="slide-foot"><span>12 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">四、青霉素类：三条轴线，不可兼得</div>
+                <div class="compact"><p>天然青霉素的起点写得很朴素：</p>
+<blockquote><p>「天然青霉素由青霉菌培养液中提取获得」——教材·药理学·第40章·40.2.1</p></blockquote>
+<p>临床常用青霉素 G，另有口服品种青霉素 V。青霉素 G 是有机酸，钾盐与钠盐较稳定，水溶液在室温下易降解，须临用前配制；不耐酸，口服后大部分被胃酸破坏；不耐酶，可被青霉素酶水解。三条性质合起来，解释了它为什么以注射给药为主。</p>
+<p>抗菌谱的重心在革兰阳性菌与部分革兰阴性球菌：溶血性链球菌、肺炎链球菌、草绿色链球菌；白喉棒状杆菌、炭疽芽孢杆菌、破伤风梭菌、产气荚膜梭菌；脑膜炎奈瑟菌与淋病奈瑟菌；梅毒螺旋体、钩端螺旋体、回归热螺旋体与放线菌。对大多数革兰阴性杆菌、铜绿假单胞菌、真菌与病毒没有作用，对产青霉素酶的葡萄球菌也不敏感。这一串读下来，会发现它覆盖的正是「没有外膜」或「外膜易过」的那一类——与第三节的第三条耐药线正好对照。</p>
+<p>半合成青霉素的改构目的，教材归纳为三句话：</p></div></div>
+  <div class="slide-foot"><span>13 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">四、青霉素类：三条轴线，不可兼得</div>
+                <div class="compact"><blockquote><p>「半合成青霉素是在青霉素母核上以化学方法引入不同侧链而得到的一类品种」——教材·药理学·第40章·40.2.2</p></blockquote>
+<p>三个目的是：提高对酸的稳定性以便口服，提高对 β-内酰胺酶的稳定性以对抗产酶菌，扩大抗菌谱以覆盖革兰阴性杆菌。按改构后获得的性能，分为耐酶青霉素、广谱青霉素、抗铜绿假单胞菌青霉素、抗革兰阴性杆菌青霉素四个亚类。</p>
+<p>四条轴线在这里显出矛盾。耐酶青霉素靠侧链的位阻效应使药物不易被酶水解，代价是对青霉素结合蛋白的亲和力下降，抗菌作用弱于青霉素 G；广谱青霉素向革兰阴性杆菌延伸，却损失了对酶的稳定性；抗铜绿假单胞菌青霉素靠带负电荷的侧链透过外膜，仍须依赖复方配伍对抗酶水解。教材用一句话点破：三条轴线——抗菌谱宽窄、对酶的稳定性、口服吸收的可行性——往往不能兼得。</p>
+<p>这句话的用处不在记住矛盾，而在提示一个提问方式：看到一个新品种，先问它把哪一条轴线拉满了、为此放弃了哪一条。答案往往就在结构里。</p></div></div>
+  <div class="slide-foot"><span>14 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">五、头孢菌素类：三条曲线，与它们的例外</div>
+                <div class="compact"><p>头孢菌素类的母核多一个环：</p>
+<blockquote><p>「头孢菌素类是以头孢烯为母核的半合成抗生素」——教材·药理学·第40章·40.3.1</p></blockquote>
+<p>比青霉素母核多一个二氢噻嗪环，稳定性较高，对青霉素酶的耐受能力较强。按抗菌谱、对 β-内酰胺酶的稳定性与对肾脏的毒性，分为四代。</p>
+<p>教材把四代的演变压成三条曲线：对革兰阳性球菌的作用逐代减弱，对革兰阴性菌的作用逐代增强，对肾脏的毒性逐代减轻；对 β-内酰胺酶的稳定性则逐代提高。三条曲线并不平行，教材紧接着给了例外——第三代中的头孢他啶对铜绿假单胞菌有作用，而头孢曲松对该菌没有作用。</p>
+<p>这个例外是全章最值得停留的一处。它说明按代际推断品种特性会出错，须按品种记忆。教材在别处也重复了同一提醒，并且列了三条易混界限：耐酸与耐酶不是同一概念；广谱青霉素的「广谱」主要指覆盖部分革兰阴性杆菌，并不包括铜绿假单胞菌；第三代头孢菌素并非都对铜绿假单胞菌有作用。</p></div></div>
+  <div class="slide-foot"><span>15 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">五、头孢菌素类：三条曲线，与它们的例外</div>
+                <div class="compact"><p>机制的叙述与青霉素类同源：与青霉素结合蛋白结合，抑制转肽反应，阻断肽聚糖交联，菌体在自溶酶参与下裂解。差别在三处：对 β-内酰胺酶稳定性较高，对革兰阴性菌外膜透过能力较强，对青霉素结合蛋白的亲和谱更宽。教材还写了一句推论：亲和谱越宽，细菌通过靶位突变获得耐药的机会相对越小。这句话把「广谱」与「耐药演化慢」连了起来，是一个可迁移的判断。</p>
+<p>体内过程的分节处理值得一提。给药途径因品种而异，口服品种多用于门诊与序贯治疗，注射品种用于较重感染；分布广泛，但多数品种在脑膜无炎症时不易透过血脑屏障，头孢曲松、头孢他啶与头孢呋辛等在脑膜炎症时可达有效水平；排泄以肾为主，头孢曲松兼有胆道与肾脏两条途径，头孢哌酮主要经胆汁排泄。三条差别各自对应一个临床考虑：中枢感染选能透过血脑屏障的，胆道感染选经胆汁排泄比例高的，肾功能减退时选双途径排泄的。教材只写类别与依据，不给具体方案。</p></div></div>
+  <div class="slide-foot"><span>16 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">五、头孢菌素类：三条曲线，与它们的例外</div>
+                <div class="compact"><p>不良反应的重心是过敏反应，且与青霉素类存在交叉过敏的可能。教材的表述很克制：比例低于同类内部，但仍须详细询问过敏史，必要时按规范作皮肤试验并由具备资质的人员判读。另有一类容易被漏掉的不良反应：含甲硫四氮唑基团的品种可干扰维生素 K 的代谢使凝血酶原时间延长，并可抑制乙醛脱氢酶引起双硫仑样反应。这条与 39 章硝咪唑类的双硫仑样反应同源，可以并读。</p></div></div>
+  <div class="slide-foot"><span>17 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">六、其他 β-内酰胺类：一个甲氧基改了什么</div>
+                <div class="compact"><p>头霉素类的定位很清楚：</p>
+<blockquote><p>「头霉素类是从链霉菌培养液中获得的天然产物经结构改造而成的一类 β-内酰胺类抗生素」——教材·药理学·第40章·40.4.1</p></blockquote>
+<p>母核与头孢菌素相同，差别在头孢烯环的第七位碳上多了一个甲氧基。这一个基团带来两件事：空间位阻使药物不易被 β-内酰胺酶接近，对多种质粒介导的酶与部分染色体介导的酶稳定性较高；同时对革兰阴性厌氧菌的抗菌作用明显增强。两件事一个来自位阻，一个来自覆盖范围，教材把它们并列为「区别于头孢菌素类的两个结构基础」。</p>
+<p>厌氧菌覆盖这一条，在这里第一次成为主角。腹腔与盆腔感染多为需氧菌与厌氧菌共同参与，厌氧菌生长缓慢、培养周期长，病原学结果往往滞后于治疗决策；此时若所选药物对厌氧菌缺乏覆盖，即便需氧菌被抑制，病灶仍可能持续。这段话是药理学的推理，教材自己加了限定：不替代病原学判断，也不作病情判定。</p>
+<p>碳青霉烯类的结构特点写得更细：</p></div></div>
+  <div class="slide-foot"><span>18 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">六、其他 β-内酰胺类：一个甲氧基改了什么</div>
+                <div class="compact"><blockquote><p>「碳青霉烯类是具有碳青霉烯母核的一类 β-内酰胺类抗生素」——教材·药理学·第40章·40.4.2</p></blockquote>
+<p>β-内酰胺环与五元环并合，且在特定位置带有羟乙基侧链。这条侧链与酶的活性中心形成稳定结合，使药物对多数 β-内酰胺酶具有高度稳定性。抗菌谱在 β-内酰胺类中覆盖最宽：革兰阳性球菌、革兰阴性杆菌、铜绿假单胞菌与厌氧菌多有作用。但教材同时给了三条边界：对碳青霉烯酶不稳定；对部分非发酵菌作用有限；对甲氧西林耐药金黄色葡萄球菌没有抗菌作用。</p>
+<p>「稳定是相对的」这一层，教材写得比别处都重。羟乙基侧链使药物与酶形成较稳定的中间复合物，酶难以完成水解，所以表现为缓慢水解或竞争性抑制；但碳青霉烯酶能有效水解这一结构。由此引出本章一个重要的判断：稳定性不等于有效性，也不等于可以放心使用——碳青霉烯类在抗菌药物管理中多被列为重点监控品种，使用通常须履行审批或会诊程序并记录用药理由。</p>
+<p>氧头孢烯类做了两处改动：</p></div></div>
+  <div class="slide-foot"><span>19 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">六、其他 β-内酰胺类：一个甲氧基改了什么</div>
+                <div class="compact"><blockquote><p>「氧头孢烯类是以氧头孢烯为母核的一类 β-内酰胺类抗生素」——教材·药理学·第40章·40.4.3</p></blockquote>
+<p>以氧原子替换头孢烯环中的硫原子，同时在第七位碳上带甲氧基。前一处改动改变母核的电子分布，使抗菌谱进一步向革兰阴性杆菌延伸；后一处改动解决酶稳定性。教材把这两类并置比较，结论是：头霉素类加甲氧基解决的是酶稳定性，氧头孢烯类既加甲氧基又换杂原子，所以对革兰阴性杆菌作用稍强、且较易透过血脑屏障。这一比较用来说明结构决定性能，不作优劣排序。</p>
+<p>β-内酰胺酶抑制药在这一节收尾。克拉维酸、舒巴坦、他唑巴坦三者抑制范围不同，但都须与主药组成复方，不能单独用于抗菌治疗。复方的覆盖范围仍受主药抗菌谱的约束——抑制药只解决酶水解这一环，对靶位改变、外膜通透性下降与外排没有针对性。这句话把复方的能力边界划得很清楚。</p></div></div>
+  <div class="slide-foot"><span>20 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">七、这一章真正训练的东西：把「稳定」与「有效」分开</div>
+                <div class="compact"><p>全章词频里，「青霉素」出现最多，「耐药」与「β-内酰胺酶」紧随其后。三个词的次序不是偶然：分类靠母核，解释靠酶与耐药。教材把大量笔墨花在酶上，是因为本章最容易混淆的一组概念就长在这里。</p>
+<p>三组概念要分开。第一组是耐酸与耐酶：前者指口服后不被胃酸破坏，后者指不被细菌产生的酶水解，耐酸青霉素未必耐酶。第二组是稳定与有效：对酶稳定只说明药物不被水解，不说明它能到达靶位、能结合靶点、能覆盖该菌；碳青霉烯类对多数酶稳定，仍可被碳青霉烯酶水解，也对甲氧西林耐药金黄色葡萄球菌无作用。第三组是广谱与全覆盖：广谱指覆盖的范围较宽，不指覆盖所有；教材专门提醒广谱青霉素不包括铜绿假单胞菌，第三代头孢菌素也并非都对铜绿假单胞菌有作用。</p>
+<p>三组概念分开之后，有一个可迁移的提问链：</p></div></div>
+  <div class="slide-foot"><span>21 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">七、这一章真正训练的东西：把「稳定」与「有效」分开</div>
+                <div class="compact"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">这个品种的环外改了什么？
+   │  见 40.1.3（并合环）、40.2.2（侧链引入）、40.4.1（甲氧基）
+   ▼
+改动换来了什么，代价是什么？
+   │  见 40.2.2（三条轴线不可兼得）、40.3.1（三条曲线与例外）
+   ▼
+它对酶的稳定，是否等于对该菌有效？
+   │  见 40.1.2（产酶量与亲和力共同决定）、40.4.2（碳青霉烯酶的边界）
+   ▼
+这一步判断该由谁作出？
+   │  见 40.1.2（病原学检查）、40.3.3（观察与记录要求）</code></pre></div>
+<p>四个问题依次问下去，任何一个品种都能被放到它该在的位置上。</p></div></div>
+  <div class="slide-foot"><span>22 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">八、交接句的分布不是套话</div>
+                <div class="compact"><p><code>code/main.js</code> 数了一遍「具备资质的人员」：全章 45 次，分布在 11 个小节，唯一没有的是 40.1.3（药物分类）。</p>
+<p>这个缺口值得解释。分类一节讲的是「有哪些品种、按什么切」，本身不产生对某个人或某个药的当下判断——它给的是地图，不是结论。所以它不需要交接句。反过来，凡是要说「用在哪」「观察什么」的节，都把判断交了出去。免责套话会均匀出现，结构性安排不会；45 比 11 这个分布，说明这句话是被当作分工写的。</p></div></div>
+  <div class="slide-foot"><span>23 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>引文是教材正文，不是原始文献。</strong> 本章引文格式为「教材·药理学·第N章·N.M.K」，逐字回查的对象是 <code>standards/yaoli/底本.json</code>。「超广谱酶」「碳青霉烯酶」一类术语，本章只作类别说明，不展开酶的分子分类与动力学参数；要引具体分型须回专业文献，本书的引文门管不到那一层。</li><li><strong>词频只描述写法，不描述难度。</strong> 「青霉素」出现最多，说明教材以它为参照系，不说明青霉素类比其他类别更重要。换一套词表，数字就会变；词表固定在 <code>code/main.js</code> 里，可复算，不可外推。</li><li><strong>分代是趋势，不是事实。</strong> 三条曲线是归纳，例外是常态。教材自己举了头孢他啶与头孢曲松的对照，本章据此把「按代际推断」列为三条易混界限之一。把分代当排序，是本章最容易犯的错。</li><li><strong>稳定不等于有效。</strong> 对酶稳定只说明不被水解；能否到达靶位、能否结合靶点、该菌是否在覆盖范围内，是三件独立的事。</li></ul></div></div>
+  <div class="slide-foot"><span>24 / 26</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="24">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>本章把这一组分寸放在第七节，因为它是全章最容易被跳过的一处。</p>
+<ul><li><strong>类别之间没有高低。</strong> 头霉素类处于头孢菌素类与碳青霉烯类之间，教材的原话是「差别是覆盖范围与稳定程度的差别，而不是高低等级的差别」。本章不写首选、不写优劣、不排名次。</li><li><strong>不良反应只写类别，不写发生率与分级。</strong> 过敏反应、凝血异常、双硫仑样反应、中枢神经系统反应，本章只说它们属于哪一类、观察什么、与什么结构相关，不给发生率、不给分级标准。</li><li><strong>十二个小节不是十二个知识点。</strong> 它们是一条链上的十二段，逐条落位是为了保证没有一段被跳过。</li><li><strong>边界声明</strong>：本章只解释教材的分类、药理作用、作用机制、体内过程、临床应用类别与不良反应类别，<strong>不写量值、不作适应证判定、不作疗效与优越性断言，不构成用药建议</strong>；剂量与用法照底本，任何个体的用药决策须由具备资质的人员依现行法律法规与规范、以现行药品说明书与临床指南为依据作出。</li></ul></div></div>
+  <div class="slide-foot"><span>25 / 26</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="25">
+  <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
+  <div class="slide-foot"><span>26 / 26</span><span>disclaimer</span></div>
+</section>
+</div>
+<div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>
+<script>/**
+ * [tcmP] figures.js —— 中医概念动画图（纯 SVG + rAF，无依赖）
+ *
+ * 自动挂载：文档里写
+ *     <div data-figure="wuxing-cycle"></div>
+ * 即可。支持悬停暂停；系统开启「减少动态效果」时渲染为静态帧。
+ *
+ * 与 ai-engineering-from-scratch 的 site/figures.js 同构（同样的 el/loop/registry 形态），
+ * 图目换成中医概念：
+ *   yin-yang-sigmoid    阴阳 → 二分类：sigmoid 决策边界扫过，样本左右归属翻转
+ *   wuxing-cycle        五行生克：相生正向流动 + 相克五角星流动
+ *   zangxiang-graph     藏象：脏腑 → 官窍 → 情志 的边逐步点亮
+ *   sizhen-fusion       四诊合参：四通道 → 融合层 → 证候输出
+ *   meridian-lookup     经络腧穴：KD-Tree 空间划分 + 最近邻查询
+ *   junchen-attention   君臣佐使：药味 → 权重矩阵高亮
+ */
+
+(function () {
+  'use strict';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── SVG 小工具 ──
+  function el(name, attrs, kids) {
+    const e = document.createElementNS(NS, name);
+    for (const k in attrs || {}) e.setAttribute(k, attrs[k]);
+    (Array.isArray(kids) ? kids : kids ? [kids] : []).filter(Boolean).forEach((c) => e.appendChild(c));
+    return e;
+  }
+  const txt = (s) => document.createTextNode(s);
+
+  function label(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--sans)', 'font-size': 12, fill: 'var(--muted)' },
+      opts || {}
+    ), [txt(s)]);
+  }
+  function mono(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--mono)', 'font-size': 11, fill: 'var(--muted)', 'letter-spacing': '.1em' },
+      opts || {}
+    ), [txt(s)]);
+  }
+
+  function svgRoot(host, W, H, aria) {
+    const svg = el('svg', {
+      viewBox: `0 0 ${W} ${H}`, width: '100%', role: 'img', 'aria-label': aria || '',
+      style: 'display:block;max-width:100%;height:auto',
+    });
+    host.appendChild(svg);
+    return svg;
+  }
+
+  // 悬停暂停 + 时间归一化
+  function loop(host, fn, period, opts) {
+    period = period || 6400;
+    opts = opts || {};
+    let raf, paused = false, t0 = performance.now();
+    const onTick = (now) => {
+      if (!paused) fn((((now - t0) % period) / period));
+      raf = requestAnimationFrame(onTick);
+    };
+    host.addEventListener('mouseenter', () => { paused = true; });
+    host.addEventListener('mouseleave', () => { paused = false; });
+    if (REDUCED) { fn(opts.staticT == null ? 0.62 : opts.staticT); return function () {}; }
+    raf = requestAnimationFrame(onTick);
+    return () => cancelAnimationFrame(raf);
+  }
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeIO = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const sigmoid = (z) => 1 / (1 + Math.exp(-z));
+
+  const FIGURES = {};
+
+  /* ───────────────────── yin-yang-sigmoid ─────────────────────
+     阴阳 → 二分类。左侧散点：X 轴「寒热倾向」，输出 sigmoid 概率。
+     扫描线扫过阈值，样本随阈值的移动左右换边，右侧给出准确率。
+  */
+  FIGURES['yin-yang-sigmoid'] = function (host) {
+    const W = 720, H = 400, PAD = 54;
+    const svg = svgRoot(host, W, H, '阴阳二分类与 sigmoid 决策边界');
+    const plotW = W - PAD * 2, plotH = H - 150;
+
+    // 样本：12 条八纲典型证候（阴=0 阳=1）
+    const data = [
+      [-2.2, 0], [-1.8, 0], [-1.4, 0], [-1.1, 0], [-0.6, 0], [-0.2, 0],
+      [0.2, 1], [0.6, 1], [1.1, 1], [1.5, 1], [1.9, 1], [2.4, 1],
+    ];
+    const X = (v) => PAD + ((v + 3) / 6) * plotW;
+    const Y = (p) => H - 90 - p * plotH;
+
+    // 坐标轴
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: W - PAD, y2: H - 90, stroke: 'var(--line)' }));
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: PAD, y2: H - 90 - plotH, stroke: 'var(--line)' }));
+    svg.appendChild(mono(PAD, H - 72, '寒 / 阴 →'));
+    svg.appendChild(mono(W - PAD, H - 72, '← 热 / 阳', { 'text-anchor': 'end' }));
+    svg.appendChild(mono(8, PAD - 22, 'P(阳)'));
+    svg.appendChild(mono(W - PAD - 130, 26, 'sigmoid 决策边界'));
+
+    const curve = el('path', { d: '', fill: 'none', stroke: 'var(--jade)', 'stroke-width': 2.5 });
+    svg.appendChild(curve);
+    const threshLine = el('line', { stroke: 'var(--cinnabar)', 'stroke-dasharray': '5 4', 'stroke-width': 1.6 });
+    svg.appendChild(threshLine);
+
+    const pts = data.map(([x, y]) => {
+      const g = el('g', {});
+      const c = el('circle', { r: 6, cx: X(x), cy: H - 90 - 0.5 * plotH, fill: y ? 'var(--cinnabar)' : 'var(--jade)', opacity: 0.85 });
+      const cls = el('text', {
+        x: X(x), y: H - 90 - 0.5 * plotH + 4, 'text-anchor': 'middle',
+        'font-family': 'var(--sans)', 'font-size': 10, fill: '#fff',
+      }, [txt(y ? '阳' : '阴')]);
+      g.appendChild(c); g.appendChild(cls);
+      svg.appendChild(g);
+      return { x, y, c, cls };
+    });
+
+    const accText = label(PAD, 26, '', { fill: 'var(--ink)', 'font-size': 13 });
+    svg.appendChild(accText);
+
+    let pathD = '';
+    for (let i = 0; i <= 60; i += 1) {
+      const xv = -3 + (i / 60) * 6;
+      const p = sigmoid(1.6 * xv + 0.1);
+      pathD += `${i === 0 ? 'M' : 'L'}${X(xv).toFixed(1)},${Y(p).toFixed(1)}`;
+    }
+    curve.setAttribute('d', pathD);
+
+    loop(host, (t) => {
+      // 阈值在 0..1 之间来回扫
+      const thr = 0.15 + 0.7 * easeIO(1 - Math.abs(2 * t - 1));
+      const pThr = 0.1 + thr * 0.85;
+      const xThr = (Math.log(pThr / (1 - pThr)) - 0.1) / 1.6;
+      threshLine.setAttribute('x1', X(xThr));
+      threshLine.setAttribute('x2', X(xThr));
+      threshLine.setAttribute('y1', H - 90 - plotH - 6);
+      threshLine.setAttribute('y2', H - 90);
+
+      let correct = 0;
+      for (const p of pts) {
+        const prob = sigmoid(1.6 * p.x + 0.1);
+        const pred = prob >= pThr ? 1 : 0;
+        if (pred === p.y) correct += 1;
+        p.c.setAttribute('cy', Y(prob));
+        p.cls.setAttribute('y', Y(prob) + 4);
+        p.c.setAttribute('r', pred === p.y ? 7 : 5);
+        p.c.setAttribute('opacity', pred === p.y ? 0.92 : 0.32);
+        p.cls.setAttribute('opacity', pred === p.y ? 1 : 0.25);
+        // 判错的样本画一圈红
+        p.c.setAttribute('stroke', pred === p.y ? 'none' : 'var(--cinnabar)');
+        p.c.setAttribute('stroke-width', pred === p.y ? 0 : 2);
+      }
+      accText.textContent = `阈值 P=${pThr.toFixed(2)} · 准确率 ${correct}/${pts.length} = ${((correct / pts.length) * 100).toFixed(0)}%`;
+    }, 7200);
+  };
+
+  /* ───────────────────── wuxing-cycle ─────────────────────
+     五行生克。外圈相生（顺时针流动），内五角星相克。
+  */
+  FIGURES['wuxing-cycle'] = function (host) {
+    const W = 720, H = 440, cx = W / 2 - 70, cy = H / 2, R = 148;
+    const svg = svgRoot(host, W, H, '五行生克关系');
+    const names = ['木', '火', '土', '金', '水'];
+    const colors = ['var(--jade)', 'var(--cinnabar)', 'var(--gold)', '#8a6d3b', '#2a4d69'];
+    const node = names.map((_, i) => {
+      const a = -Math.PI / 2 + (i / 5) * Math.PI * 2;
+      return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), a };
+    });
+
+    // 相生边（外圈，顺时针 木→火→土→金→水→木）
+    const sheng = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const p = el('path', {
+        d: `M${n.x},${n.y} Q${(n.x + m.x) / 2 + (cy - (n.y + m.y) / 2) * 0.16},${(n.y + m.y) / 2 + ((n.x + m.x) / 2 - cx) * 0.16} ${m.x},${m.y}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.28,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+    // 相克边（五角星）
+    const ke = node.map((n, i) => {
+      const m = node[(i + 2) % 5];
+      const p = el('line', {
+        x1: n.x, y1: n.y, x2: m.x, y2: m.y,
+        stroke: 'var(--cinnabar)', 'stroke-width': 1.4, 'stroke-dasharray': '4 4', opacity: 0.2,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+
+    // 沿边流动的点
+    const flow = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const g = el('circle', { r: 4, fill: 'var(--jade)', cx: n.x, cy: n.y, opacity: 0 });
+      svg.appendChild(g);
+      return { g, from: n, to: m };
+    });
+
+    const nodes = node.map((n, i) => {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: n.x, cy: n.y, r: 30, fill: '#fff', stroke: colors[i], 'stroke-width': 2 }));
+      g.appendChild(el('text', {
+        x: n.x, y: n.y + 8, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 22, fill: colors[i],
+      }, [txt(names[i])]));
+      svg.appendChild(g);
+      return g;
+    });
+
+    // 右栏说明
+    svg.appendChild(mono(W - 190, 60, '相生 (outer)'));
+    svg.appendChild(label(W - 190, 82, '木→火→土→金→水→木', { fill: 'var(--jade)' }));
+    svg.appendChild(mono(W - 190, 130, '相克 (star)'));
+    svg.appendChild(label(W - 190, 152, '木克土 · 土克水 · 水克火', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(label(W - 190, 170, '火克金 · 金克木', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(mono(W - 190, 220, '建模要点'));
+    svg.appendChild(label(W - 190, 242, '5 类 + 有向约束', { fill: 'var(--ink)' }));
+    svg.appendChild(label(W - 190, 262, '纯 softmax 会丢掉', { fill: 'var(--muted)' }));
+    svg.appendChild(label(W - 190, 280, '全部关系信息', { fill: 'var(--muted)' }));
+
+    const capt = label(W - 190, H - 30, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const phase = (t * 5) % 5;
+      for (let i = 0; i < 5; i += 1) {
+        const f = flow[i];
+        const local = clamp01(phase - i);
+        const k = easeIO(local);
+        f.g.setAttribute('cx', lerp(f.from.x, f.to.x, k));
+        f.g.setAttribute('cy', lerp(f.from.y, f.to.y, k));
+        f.g.setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.95 : 0);
+        sheng[i].setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.75 : 0.28);
+        const keOn = phase - i >= 0 && phase - i <= 1.4;
+        ke[i].setAttribute('opacity', keOn ? 0.55 : 0.2);
+      }
+      const active = Math.floor(phase) % 5;
+      nodes.forEach((g, i) => g.querySelector('circle').setAttribute('stroke-width', i === active ? 4 : 2));
+      capt.textContent = `当前传导：${names[active]} → ${names[(active + 1) % 5]}（生） / ${names[active]} 克 ${names[(active + 2) % 5]}`;
+    }, 7000);
+  };
+
+  /* ───────────────────── zangxiang-graph ─────────────────────
+     藏象：五脏 → 官窍 → 情志，边按序点亮。
+  */
+  FIGURES['zangxiang-graph'] = function (host) {
+    const W = 720, H = 430;
+    const svg = svgRoot(host, W, H, '藏象学说的脏腑-官窍-情志关系图');
+
+    const zang = [
+      { n: '肝', x: 110, y: 100, qiao: ['目'], zhi: '怒' },
+      { n: '心', x: 110, y: 210, qiao: ['舌'], zhi: '喜' },
+      { n: '脾', x: 110, y: 320, qiao: ['口'], zhi: '思' },
+      { n: '肺', x: 610, y: 100, qiao: ['鼻'], zhi: '悲' },
+      { n: '肾', x: 610, y: 210, qiao: ['耳'], zhi: '恐' },
+    ];
+    const edges = [];
+
+    for (const z of zang) {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: z.x, cy: z.y, r: 26, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+      g.appendChild(el('text', { x: z.x, y: z.y + 8, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 20, fill: 'var(--cinnabar)' }, [txt(z.n)]));
+      svg.appendChild(g);
+
+      const qx = W / 2 + (z.x < 300 ? -40 : 40);
+      g.appendChild(el('line', { x1: z.x + (z.x < 300 ? 26 : -26), y1: z.y, x2: qx - (z.x < 300 ? 22 : -22), y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+
+      const qg = el('g', {});
+      qg.appendChild(el('rect', { x: qx - 22, y: z.y - 14, width: 44, height: 28, rx: 6, fill: 'var(--jade-soft)', stroke: 'var(--jade)', 'stroke-width': 1.3 }));
+      qg.appendChild(el('text', { x: qx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--jade)' }, [txt(z.qiao[0])]));
+      svg.appendChild(qg);
+
+      const zx = W - 110;
+      g.appendChild(el('line', { x1: qx + 22, y1: z.y, x2: zx - 24, y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      const zg = el('g', {});
+      zg.appendChild(el('circle', { cx: zx, cy: z.y, r: 22, fill: '#fdf1dd', stroke: 'var(--gold)', 'stroke-width': 1.3 }));
+      zg.appendChild(el('text', { x: zx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--gold)' }, [txt(z.zhi)]));
+      svg.appendChild(zg);
+
+      edges.push({ zy: z.y, e1: g.querySelector('line'), e2: g.querySelectorAll('line')[1], qg, zg });
+    }
+
+    svg.appendChild(mono(110 - 30, 40, '藏 / 五藏'));
+    svg.appendChild(mono(W / 2 - 30, 40, '象 / 官窍'));
+    svg.appendChild(mono(W - 110 - 30, 40, '情志'));
+    const capt = label(20, H - 14, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const step = t * 5;
+      edges.forEach((e, i) => {
+        const on = step >= i;
+        e.e1.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        e.e2.setAttribute('stroke', on ? 'var(--gold)' : 'var(--line)');
+        e.qg.setAttribute('opacity', on ? 1 : 0.35);
+        e.zg.setAttribute('opacity', on ? 1 : 0.35);
+      });
+      const cur = zang[Math.min(4, Math.floor(step))];
+      capt.textContent = cur ? `点亮中：${cur.n} 开窍于 ${cur.qiao[0]}，在志为${cur.zhi}` : '';
+    }, 6200, { staticT: 0.99 });
+  };
+
+  /* ───────────────────── sizhen-fusion ─────────────────────
+     四诊合参：四通道 → 融合层 → 证候。演示模态缺失时的降级。
+  */
+  FIGURES['sizhen-fusion'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '四诊合参的多模态融合与模态缺失降级');
+    const chans = [
+      { n: '望', d: '舌象 / 面色', y: 60 },
+      { n: '闻', d: '语声 / 气息', y: 130 },
+      { n: '问', d: '主诉 / 现病史', y: 200 },
+      { n: '切', d: '脉搏波', y: 270 },
+    ];
+    const fx = 330, fy = 165;
+    const outx = 600;
+
+    const fxG = el('g', {});
+    fxG.appendChild(el('rect', { x: fx - 52, y: fy - 46, width: 104, height: 92, rx: 10, fill: '#fff', stroke: 'var(--jade)', 'stroke-width': 2 }));
+    fxG.appendChild(el('text', { x: fx, y: fy - 14, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--jade)' }, [txt('融合层')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 8, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('交叉注意力')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 26, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('+ 缺失掩码')]));
+    svg.appendChild(fxG);
+
+    const outG = el('g', {});
+    outG.appendChild(el('rect', { x: outx - 46, y: fy - 32, width: 92, height: 64, rx: 10, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+    outG.appendChild(el('text', { x: outx, y: fy - 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--cinnabar)' }, [txt('证候')]));
+    outG.appendChild(el('text', { x: outx, y: fy + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('带置信度')]));
+    svg.appendChild(outG);
+
+    svg.appendChild(el('line', { x1: fx + 52, y1: fy, x2: outx - 46, y2: fy, stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+
+    const inG = chans.map((c) => {
+      const g = el('g', {});
+      g.appendChild(el('rect', { x: 24, y: c.y - 24, width: 150, height: 48, rx: 8, fill: '#fff', stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      g.appendChild(el('text', { x: 40, y: c.y - 2, 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--ink)' }, [txt(c.n + '诊')]));
+      g.appendChild(el('text', { x: 40, y: c.y + 16, 'font-size': 11, fill: 'var(--muted)' }, [txt(c.d)]));
+      svg.appendChild(g);
+      const path = el('path', {
+        d: `M174,${c.y} C 250,${c.y} 260,${fy} ${fx - 52},${fy}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.22,
+      });
+      svg.appendChild(path);
+      const dot = el('circle', { r: 4, fill: 'var(--jade)', opacity: 0 });
+      svg.appendChild(dot);
+      return { g, path, dot, y: c.y };
+    });
+
+    const capt = label(24, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    // 循环：全模态 → 缺闻诊 → 缺闻+切 → 恢复
+    const phases = [[1, 1, 1, 1], [1, 0, 1, 1], [1, 0, 1, 0], [1, 1, 1, 1]];
+    loop(host, (t) => {
+      const idx = Math.min(phases.length - 1, Math.floor(t * phases.length));
+      const mask = phases[idx];
+      const missing = [];
+      mask.forEach((m, i) => { if (!m) missing.push(chans[i].n); });
+
+      inG.forEach((c, i) => {
+        const on = mask[i] === 1;
+        c.g.style.opacity = on ? 1 : 0.3;
+        c.path.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        c.path.setAttribute('stroke-dasharray', on ? 'none' : '4 4');
+        c.path.setAttribute('opacity', on ? 0.55 : 0.25);
+        const local = clamp01(t * 4 - idx);
+        c.dot.setAttribute('cx', lerp(174, fx - 52, easeIO(local)));
+        c.dot.setAttribute('cy', lerp(c.y, fy, easeIO(local)));
+        c.dot.setAttribute('opacity', on ? 0.95 : 0);
+      });
+
+      const conf = 0.62 + 0.1 * mask.filter(Boolean).length;
+      outG.style.opacity = 0.4 + 0.6 * conf;
+      capt.textContent = missing.length
+        ? `模态缺失：缺 ${missing.join('、')} → 置信度降至 ${(conf * 100).toFixed(0)}%，系统须显式降级而非静默猜测`
+        : `四诊齐备 → 置信度 ${(conf * 100).toFixed(0)}%`;
+    }, 8800, { staticT: 0.35 });
+  };
+
+  /* ───────────────────── meridian-lookup ─────────────────────
+     腧穴检索：KD-Tree 空间划分 + 最近邻查询。
+  */
+  FIGURES['meridian-lookup'] = function (host) {
+    const W = 720, H = 400, PAD = 40;
+    const svg = svgRoot(host, W, H, '腧穴的空间划分与最近邻检索');
+    const plotW = W - PAD * 2 - 30, plotH = H - 110;
+
+    // 模拟体表腧穴点集（合谷、内关、足三里、三阴交等 18 穴）
+    let seed = 20261012;
+    const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+    const pts = Array.from({ length: 18 }, () => ({ x: PAD + 30 + rnd() * (plotW - 60), y: PAD + 20 + rnd() * (plotH - 40) }));
+
+    // KD-Tree 递归划分线
+    const lines = [];
+    (function build(list, depth) {
+      if (list.length < 2) return;
+      const axis = depth % 2;
+      const sorted = list.slice().sort((a, b) => (axis ? a.y - b.y : a.x - b.x));
+      const med = sorted[Math.floor(sorted.length / 2)];
+      if (axis) {
+        const minX = Math.min(...list.map((p) => p.x));
+        const maxX = Math.max(...list.map((p) => p.x));
+        lines.push({ x1: minX, y1: med.y, x2: maxX, y2: med.y, depth });
+        build(list.filter((p) => p.y < med.y), depth + 1);
+        build(list.filter((p) => p.y >= med.y), depth + 1);
+      } else {
+        const minY = Math.min(...list.map((p) => p.y));
+        const maxY = Math.max(...list.map((p) => p.y));
+        lines.push({ x1: med.x, y1: minY, x2: med.x, y2: maxY, depth });
+        build(list.filter((p) => p.x < med.x), depth + 1);
+        build(list.filter((p) => p.x >= med.x), depth + 1);
+      }
+    })(pts, 0);
+
+    const lineEls = lines.map((l) => {
+      const e = el('line', { x1: l.x1, y1: l.y1, x2: l.x2, y2: l.y2, stroke: 'var(--line)', 'stroke-width': 1, opacity: 0 });
+      svg.appendChild(e);
+      return { e, depth: l.depth };
+    });
+
+    const dotEls = pts.map((p, i) => {
+      const c = el('circle', { cx: p.x, cy: p.y, r: 4.5, fill: 'var(--jade)', opacity: 0.75 });
+      svg.appendChild(c);
+      const t = el('text', { x: p.x + 7, y: p.y + 4, 'font-size': 10, fill: 'var(--muted)', opacity: 0 });
+      t.appendChild(txt(`穴${String(i + 1).padStart(2, '0')}`));
+      svg.appendChild(t);
+      return { c, t, p };
+    });
+
+    const query = el('circle', { r: 8, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 2.2 });
+    svg.appendChild(query);
+    const ring = el('circle', { r: 0, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 1, 'stroke-dasharray': '3 3' });
+    svg.appendChild(ring);
+    const link = el('line', { stroke: 'var(--cinnabar)', 'stroke-width': 1.6, 'stroke-dasharray': '4 3' });
+    svg.appendChild(link);
+
+    const capt = label(PAD, H - 20, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      // 查询点沿弧线游走
+      const ang = t * Math.PI * 2;
+      const qx = PAD + 30 + plotW / 2 + Math.cos(ang) * plotW * 0.33;
+      const qy = PAD + 20 + plotH / 2 + Math.sin(ang) * plotH * 0.32;
+      query.setAttribute('cx', qx);
+      query.setAttribute('cy', qy);
+
+      let best = null;
+      let bestD = Infinity;
+      for (const d of dotEls) {
+        const dd = (d.p.x - qx) ** 2 + (d.p.y - qy) ** 2;
+        if (dd < bestD) { bestD = dd; best = d; }
+        d.c.setAttribute('r', 4.5);
+        d.c.setAttribute('fill', 'var(--jade)');
+        d.t.setAttribute('opacity', 0);
+      }
+      const dist = Math.sqrt(bestD);
+      link.setAttribute('x1', qx); link.setAttribute('y1', qy);
+      link.setAttribute('x2', best.p.x); link.setAttribute('y2', best.p.y);
+      ring.setAttribute('cx', qx); ring.setAttribute('cy', qy);
+      ring.setAttribute('r', dist);
+      best.c.setAttribute('r', 8);
+      best.c.setAttribute('fill', 'var(--cinnabar)');
+      best.t.setAttribute('opacity', 1);
+
+      const step = clamp01(t * 3);
+      lineEls.forEach((l) => l.e.setAttribute('opacity', step > l.depth / 6 ? (0.5 - l.depth * 0.06) : 0));
+
+      capt.textContent = `查询点 → 最近腧穴 ${best.t.textContent} · 平面距离 ${dist.toFixed(1)}px（真实体表须改测地距离）`;
+    }, 11000, { staticT: 0.2 });
+  };
+
+  /* ───────────────────── junchen-attention ─────────────────────
+     君臣佐使 → 注意力权重。列 = 药味，行为权重分配。
+  */
+  FIGURES['junchen-attention'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '君臣佐使的注意力权重分配');
+
+    const herbs = ['桂枝', '芍药', '生姜', '大枣', '甘草'];
+    const roles = ['君', '臣', '佐', '使'];
+    const weights = [
+      [0.52, 0.30, 0.08, 0.06, 0.04],
+      [0.18, 0.44, 0.20, 0.12, 0.06],
+      [0.08, 0.16, 0.40, 0.24, 0.12],
+      [0.04, 0.08, 0.18, 0.32, 0.38],
+    ];
+
+    const GX = 110, GY = 60, CW = 84, CH = 52;
+    svg.appendChild(mono(GX, 34, '方剂：桂枝汤（示例）'));
+
+    herbs.forEach((h, j) => {
+      svg.appendChild(el('text', {
+        x: GX + j * CW + CW / 2, y: GY - 10, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 14, fill: 'var(--ink)',
+      }, [txt(h)]));
+    });
+    roles.forEach((r, i) => {
+      svg.appendChild(el('text', {
+        x: GX - 22, y: GY + i * CH + CH / 2 + 6, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--cinnabar)',
+      }, [txt(r)]));
+    });
+
+    const cells = [];
+    for (let i = 0; i < roles.length; i += 1) {
+      for (let j = 0; j < herbs.length; j += 1) {
+        const r = el('rect', {
+          x: GX + j * CW + 3, y: GY + i * CH + 3, width: CW - 6, height: CH - 6, rx: 6,
+          fill: 'var(--jade)', opacity: 0,
+        });
+        svg.appendChild(r);
+        const tx = el('text', {
+          x: GX + j * CW + CW / 2, y: GY + i * CH + CH / 2 + 5, 'text-anchor': 'middle',
+          'font-family': 'var(--mono)', 'font-size': 12, fill: 'var(--ink)', opacity: 0,
+        });
+        tx.appendChild(txt(weights[i][j].toFixed(2)));
+        svg.appendChild(tx);
+        cells.push({ r, tx, w: weights[i][j], i, j });
+      }
+    }
+
+    // 右侧：软化的权重条
+    const bx = GX + herbs.length * CW + 40;
+    svg.appendChild(mono(bx, 34, '行归一化 (softmax)'));
+    const bars = roles.map((r, i) => {
+      const max = Math.max(...weights[i]);
+      const w = Math.max(...weights[i]);
+      const g = el('g', {});
+      g.appendChild(el('text', { x: bx, y: GY + i * 44 + 10, 'font-size': 12, fill: 'var(--muted)' }, [txt(r + ' 最大: ' + max.toFixed(2))]));
+      const bg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 180, height: 8, rx: 4, fill: 'var(--paper-2)' });
+      g.appendChild(bg);
+      const fg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 0, height: 8, rx: 4, fill: 'var(--jade)' });
+      g.appendChild(fg);
+      svg.appendChild(g);
+      return { fg, w: w, max };
+    });
+
+    svg.appendChild(label(20, H - 40, '结构先验：君药权重最大 → 可作为注意力掩码，让模型学不到"反结构"的配伍', { fill: 'var(--muted)' }));
+    const capt = label(20, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const focusRow = Math.floor(t * 4) % 4;
+      const local = clamp01(t * 4 - Math.floor(t * 4));
+      cells.forEach((c) => {
+        const on = c.i === focusRow;
+        c.r.setAttribute('opacity', on ? c.w * (0.55 + 0.45 * local) : c.w * 0.14);
+        c.tx.setAttribute('opacity', on ? 1 : 0.25);
+      });
+      bars.forEach((b, i) => {
+        b.fg.setAttribute('width', i === focusRow ? 180 * (b.max) * (0.5 + 0.5 * local) : 180 * b.max * 0.35);
+      });
+      capt.textContent = `当前角色：${roles[focusRow]} · 权重最高者为 ${herbs[weights[focusRow].indexOf(Math.max(...weights[focusRow]))]}`;
+    }, 8000, { staticT: 0.1 });
+  };
+
+  /* ───────────────────── 自动挂载 ───────────────────── */
+  function mount(root) {
+    const hosts = (root || document).querySelectorAll('[data-figure]');
+    for (const host of hosts) {
+      if (host.dataset.figureMounted === '1') continue;
+      const fn = FIGURES[host.dataset.figure];
+      if (!fn) {
+        host.innerHTML = `<p class="muted small">未知图形：<code>${host.dataset.figure}</code></p>`;
+        host.dataset.figureMounted = '1';
+        continue;
+      }
+      host.classList.add('figure');
+      fn(host);
+      host.dataset.figureMounted = '1';
+    }
+  }
+
+  window.TCMFigures = { FIGURES, mount };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => mount());
+  } else {
+    mount();
+  }
+  // 单页内动态插入的图形（章节页异步渲染）也能挂上
+  new MutationObserver(() => mount()).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+<script>
+(function(){
+  const deck=document.getElementById('deck');
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+
+  // ── 单帧模式：?shot=N 只渲染第 N 张，供无头浏览器逐帧截图 ──
+  // 截图器需要一张「干净的、正好一屏」的画面，所以这里藏掉其余幻灯片、
+  // 关掉滚动吸附、去掉 HUD，并在 title 上打就绪标记（渲染完成前截图会得到空白）。
+  const shot=new URLSearchParams(location.search).get('shot');
+  if(shot!==null){
+    const n=Math.max(0,Math.min(slides.length-1,Number(shot)||0));
+    slides.forEach((s,idx)=>{ if(idx!==n) s.style.display='none'; });
+    deck.style.overflow='hidden';
+    deck.style.scrollSnapType='none';
+    const hud=document.getElementById('hud');
+    if(hud) hud.style.display='none';
+    const target=slides[n];
+    if(target){ target.style.borderBottom='0'; target.scrollIntoView({block:'start'}); }
+    document.title='SHOT_READY '+n+' of '+slides.length;
+    if(window.TCMFigures)window.TCMFigures.mount(document);
+    // 只读视图：不绑键盘与点击，避免截图过程中页面状态改变
+    return;
+  }
+
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView();}
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    else if(e.key==='p'||e.key==='P'){e.preventDefault();print();}
+  });
+  deck.addEventListener('click',e=>{if(e.target.closest('a'))return;go(i+1);});
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)i=+en.target.dataset.i;});},{root:deck,threshold:.6});
+  slides.forEach(s=>io.observe(s));
+  if(window.TCMFigures)window.TCMFigures.mount(document);
+})();
+</script>
+</body>
+</html>

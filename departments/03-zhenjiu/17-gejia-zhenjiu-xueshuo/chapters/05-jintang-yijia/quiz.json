@@ -1,0 +1,79 @@
+{
+ "lesson": "05-jintang-yijia",
+ "title": "晋唐针灸医家学术思想",
+ "subject": "17-gejia-zhenjiu-xueshuo",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 5 章「晋唐针灸医家学术思想」要回答的核心问题是什么？",
+   "options": [
+    "针灸从「术」变成「学」，是在哪一步完成的",
+    "各家针灸学说的概念",
+    "研究对象与学习方法",
+    "学说的形成"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：《甲乙经》把穴位按经归位，这一步一旦没读懂，后面的铜人与大成都会被读成重复。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是哪一项？",
+   "options": [
+    "临证应用",
+    "学说主张",
+    "文献依据",
+    "以上均等"
+   ],
+   "correct": 0,
+   "explanation": "由 `node code/main.js` 现算，见正文第二节的分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（时代）重心落在哪一段？",
+   "options": [
+    "晋唐",
+    "先秦两汉",
+    "宋金元",
+    "明清近代"
+   ],
+   "correct": 0,
+   "explanation": "由单元层时代词频相加得出；横切章与断代章的重心含义不同，正文有说明。"
+  },
+  {
+   "stage": "check",
+   "question": "本章从教材取了多少个小节？",
+   "options": [
+    "12 个小节",
+    "14 个小节",
+    "18 个小节",
+    "23 个小节"
+   ],
+   "correct": 0,
+   "explanation": "见 `standards/zhenjiu-gejia/units.json`，并由 `code/main.test.js` 断言。"
+  },
+  {
+   "stage": "post",
+   "question": "本章的数字从哪里来？",
+   "options": [
+    "由 standards/zhenjiu-gejia/units.json 现算",
+    "正文里手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "正文不存独立数字；教材改动后 `node --test` 会先失败。"
+  },
+  {
+   "stage": "post",
+   "question": "把医家人名频次直接当「学术地位排名」，错在哪？",
+   "options": [
+    "频次只反映教材转述次数，不反映学术地位",
+    "各家针灸学说的概念",
+    "研究对象与学习方法",
+    "学说的形成"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：人名多说明教材写他多，不等于临床用他多。"
+  }
+ ]
+}

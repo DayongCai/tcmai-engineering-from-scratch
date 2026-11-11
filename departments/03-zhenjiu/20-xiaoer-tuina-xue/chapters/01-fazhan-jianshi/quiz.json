@@ -1,0 +1,79 @@
+{
+ "lesson": "01-fazhan-jianshi",
+ "title": "小儿推拿学发展简史",
+ "subject": "20-xiaoer-tuina-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 1 章「小儿推拿学发展简史」要回答的核心问题是什么？",
+   "options": [
+    "小儿推拿为什么在明清才成体系",
+    "生理特点",
+    "病理特点",
+    "望闻问切四诊"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：成人推拿自有《内经》以来的经络体系，小儿推拿要等「小儿自有其生理」被认识到，才可能另起一套。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（脏腑系统）重心落在哪一项？",
+   "options": [
+    "脾系",
+    "肺系",
+    "心肝系",
+    "肾系与五官"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "病证应用",
+    "手法操作",
+    "特定穴",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "4 个",
+    "6 个",
+    "7 个",
+    "9 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "小儿推拿的剂量主要用什么计？",
+   "options": [
+    "次数",
+    "分钟",
+    "公斤",
+    "穴位数"
+   ],
+   "correct": 0,
+   "explanation": "全库数值命中 962 处，多为「推 N 次」。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/xiaoer-tuina/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

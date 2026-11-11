@@ -49,9 +49,34 @@ const libDirs = walk('chapters').filter((p) => /docs[\\/]zh\.md$/.test(p) && !/^
 
 // 教材线
 const tbFiles = walk('textbooks');
-const tbChapters = tbFiles.filter((p) => /\.md$/.test(p) && !/README|template/.test(path.basename(p)));
+const tbChapters = tbFiles.filter((p) =>
+  // 只认章契约命名的文件：00-前言、readme、以及 textbooks/ 下的任何说明性文档都不是「章」。
+  // （曾经用「排除 README|template|00-」的黑名单，于是 textbooks/SCHEDULE.md 一落地就被算成一章，虚增 1 章。）
+  /^\d+-第\d+章.*\.md$/.test(path.basename(p)) && !/[\\/]build[\\/]/.test(p));
 const volumes = readJson('textbooks/volumes.json');
 const tbBuild = exists('textbooks/build') ? fs.readdirSync(path.join(ROOT, 'textbooks/build')) : [];
+
+// 底本 / 外源分账：外源（公有领域古籍补录）章数单列，不许并进底本数字
+const extLayer = new Set();
+const hbLayer = new Set();
+for (const d of fs.existsSync(path.join(ROOT, 'departments')) ? fs.readdirSync(path.join(ROOT, 'departments')) : []) {
+  const ddir = path.join(ROOT, 'departments', d);
+  if (!fs.existsSync(ddir) || !fs.statSync(ddir).isDirectory()) continue;
+  for (const s of fs.readdirSync(ddir)) {
+    const mp = path.join(ddir, s, 'meta.json');
+    if (!fs.existsSync(mp)) continue;
+    let t; try { t = JSON.parse(fs.readFileSync(mp, 'utf8')).textbook; } catch { continue; }
+    if (t && t.layer === 'external-source') extLayer.add(`${d}/${s}`);
+    if (t && t.layer === 'handbook') hbLayer.add(`${d}/${s}`);
+  }
+}
+const tbChapterOf = (p) => {
+  const parts = p.split(path.sep);
+  return parts.length > 2 && parts[0] === 'textbooks' ? `${parts[1]}/${parts[2]}` : null;
+};
+const tbChaptersExt = tbChapters.filter((p) => extLayer.has(tbChapterOf(p)));
+const tbChaptersHb = tbChapters.filter((p) => hbLayer.has(tbChapterOf(p)));
+const tbChaptersBase = tbChapters.filter((p) => !extLayer.has(tbChapterOf(p)) && !hbLayer.has(tbChapterOf(p)));
 
 // 平台线
 const platformFiles = walk('platform');
@@ -116,7 +141,7 @@ const workstreams = [
   {
     name: '[textbooks] 教材 · 内容',
     state: tbChapters.length ? 'active' : 'idle',
-    evidence: `${volumes ? volumes.volumes.length : 0} 卷 · 已写 ${tbChapters.length} 章 · 构建产物 ${tbBuild.length} 件`,
+    evidence: `${volumes ? volumes.volumes.length : 0} 卷 · 已写 ${tbChaptersBase.length} 章（底本）+ ${tbChaptersExt.length} 章（外源）+ ${tbChaptersHb.length} 章（手册）· 构建产物 ${tbBuild.length} 件`,
     detail: '教材正文 = 章节 docx 的 docs/zh.md 汇总；同时出单文件书 HTML（不需要 pandoc）',
   },
   {
@@ -208,7 +233,7 @@ const ks = [
   { k: '学科', v: counts.subjects || 120 },
   { k: '章节（目标）', v: target },
   { k: '已建章节', v: built, sub: `${((built / target) * 100).toFixed(2)}%` },
-  { k: '书稿文件', v: tbChapters.length, sub: 'md' },
+  { k: '书稿文件', v: tbChaptersBase.length, sub: `md · 外源 ${tbChaptersExt.length} · 手册 ${tbChaptersHb.length}` },
   { k: '视频成片', v: videos.length },
   { k: '产出物', v: outputsIndex ? outputsIndex.counts.items : '—', sub: outputsIndex ? `${outputsIndex.counts.chapters} 章` : '未生成' },
   { k: '测试套件', v: suiteCount },
@@ -219,7 +244,7 @@ const ks = [
 const flow = [
   ['桌面源资料', '108 项 · 45 xlsx / 16 docx / 4 旧 .xls', '解析入库，绝不手抄'],
   ['standards/', `${standardsDirs.length} 个域 · 带 sources/ 原件 + sha256`, '派生物（content.json）不入库'],
-  ['curriculum.json', '单一事实来源', '1 领域 / 8 院系 / 120 学科 / 1086 章节'],
+  ['curriculum.json', '单一事实来源', `1 领域 / ${counts.departments} 院系 / ${counts.subjects} 学科 / ${counts.chapters} 章节`],
   ['departments/', '课程骨架（章节契约：docs + code + quiz + outputs）', `已建 ${built} 章`],
   ['[tcmP] + [textbooks]', '两条交付物线', '站点/视频 · 教材/书'],
   ['质量门', 'L0–L3 审计 · 链接 · 计数 · 产出物索引', `${suiteCount} 套件`],
@@ -335,6 +360,6 @@ const html = `<!DOCTYPE html>
 
 fs.writeFileSync(OUT, html, 'utf8');
 console.log(`═══ 项目看板 ═══`);
-console.log(`  版本 v${pkg.version} · 已建章节 ${built}/${target} · 教材 ${tbChapters.length} 章 · 视频 ${videos.length} · 套件 ${suiteCount} · 扫描 md ${mdCount}`);
+console.log(`  版本 v${pkg.version} · 已建章节 ${built}/${target} · 教材 ${tbChaptersBase.length}+${tbChaptersExt.length}+${tbChaptersHb.length} 章（底本+外源+手册） · 视频 ${videos.length} · 套件 ${suiteCount} · 扫描 md ${mdCount}`);
 console.log(`  工作流 ${workstreams.length} 项（${workstreams.filter((w) => w.state === 'done').length} 完成 / ${workstreams.filter((w) => w.state === 'active').length} 进行 / ${workstreams.filter((w) => w.state === 'blocked').length} 受阻）`);
 console.log(`  → ${path.relative(ROOT, OUT)}`);

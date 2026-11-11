@@ -1,0 +1,82 @@
+{
+ "courseTitle": "康复医学基础",
+ "deptPath": "departments/03-zhenjiu/09-kangfu-yixue-jichu",
+ "xlsx": "派生课（无教材）：单元取自针灸系与护理系已建课程，见 units.json source",
+ "chain": "康复医学概论 → 功能评定 → 运动功能与训练 → 日常生活活动与作业治疗 → 言语、吞咽与认知康复 → 康复护理与并发症预防 → 社区与长期照护 → 康复团队与伦理",
+ "levelLabel": "观察视角",
+ "objectPressure": "派生课的判断力来自把父课的片段重排成一条决策链",
+ "reportRule": "父课教材与现行规范（须注明出处）",
+ "gapNote": "无独立教材；未覆盖主题见各章 why 与 README",
+ "chapterQ": {
+  "01-kangfu-gailun": [
+   "康复医学概论的核心判据是什么",
+   "康复不是「养病」：目标是功能，不是治愈"
+  ],
+  "02-gongneng-pingding": [
+   "功能评定的核心判据是什么",
+   "没有评定量表，康复就没有终点"
+  ],
+  "03-yundong-gongneng": [
+   "运动功能与训练的核心判据是什么",
+   "肌力、关节活动度、平衡、步态四条线"
+  ],
+  "04-richeng-shenghuo": [
+   "日常生活活动与作业治疗的核心判据是什么",
+   "ADL 是康复的最终考场"
+  ],
+  "05-yanyu-yinshi": [
+   "言语、吞咽与认知康复的核心判据是什么",
+   "这三块最容易被忽略，也最影响安全"
+  ],
+  "06-kangfu-huli": [
+   "康复护理与并发症预防的核心判据是什么",
+   "压疮、跌倒、挛缩、深静脉——四类可防"
+  ],
+  "07-shequ-changqi": [
+   "社区与长期照护的核心判据是什么",
+   "康复的主战场在出院之后"
+  ],
+  "08-tuandui-lunli": [
+   "康复团队与伦理的核心判据是什么",
+   "团队分工与「谁说了算」"
+  ]
+ },
+ "fallback": {
+  "01-kangfu-gailun": [
+   "《康复医学基础·康复医学概论》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "02-gongneng-pingding": [
+   "《康复医学基础·功能评定》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "03-yundong-gongneng": [
+   "《康复医学基础·运动功能与训练》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "04-richeng-shenghuo": [
+   "《康复医学基础·日常生活活动与作业治疗》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "05-yanyu-yinshi": [
+   "《康复医学基础·言语、吞咽与认知康复》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "06-kangfu-huli": [
+   "《康复医学基础·康复护理与并发症预防》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "07-shequ-changqi": [
+   "《康复医学基础·社区与长期照护》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "08-tuandui-lunli": [
+   "《康复医学基础·康复团队与伦理》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ]
+ },
+ "defaultCite": [
+  "《康复医学基础》",
+  "派生课篇名"
+ ]
+}

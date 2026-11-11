@@ -124,7 +124,9 @@ test('产物 index.json 记录了对规格的每一处偏离（偏离必须显�
 });
 
 test('字段供给被如实记录（证候满、病侧稀）', () => {
-  assert.strictEqual(idx.counts.dsu, 103);
+  // 103 → 104：reference-units 里 DSU-00102 按 descriptions/splice-repairs.json 拆成了
+  // 痰郁气结 / 毒热蕴结 两条。数字跟着源走，测试跟着数字走 —— 但不许悄悄改。
+  assert.strictEqual(idx.counts.dsu, 104);
   assert.strictEqual(idx.evaluation.ngram13.diseaseCoverage, 12, '病侧覆盖数变了');
   const withIcd = idx.documents.filter((d) => d.kind === 'dsu' && d.fields.icd).length;
   assert.strictEqual(withIcd, 7, `ICD 覆盖数变了：${withIcd}`);
@@ -135,6 +137,97 @@ test('语料里不许出现派生件（防"自己的输出喂回自己的输入"
   assert.ok(list.length > 100, `语料文件清单过短：${list.length}`);
   const bad = list.filter((f) => /embeddings[\\/]|stats\.json|outputs[\\/]index\.json|dashboard\.html|icd11[\\/]README|icd11[\\/]meta\.json|manifest\.json/.test(f));
   assert.deepStrictEqual(bad, [], `语料里混进了派生件：\n${bad.join('\n')}`);
+});
+
+test('暴露的 ④ 是真 FTS5（不是「等价物」）', () => {
+  assert.ok(idx.fts5, '产物里没有 fts5 诊断段');
+  assert.strictEqual(idx.fts5.engine, 'sqlite');
+  assert.strictEqual(idx.fts5.fts5, true, 'FTS5 虚表没建起来');
+  assert.ok(idx.fts5.sqliteVersion, '没记 sqlite 版本');
+  const mods = idx.fts5.virtualTables.map((t) => t.module);
+  assert.deepStrictEqual(mods, ['fts5', 'fts5'], `虚表模块不是 fts5：${JSON.stringify(mods)}`);
+  const names = idx.fts5.virtualTables.map((t) => t.name);
+  assert.deepStrictEqual(names, ['docs_terms', 'docs_substr']);
+});
+
+test('「本机没有 SQLite」这条偏离必须已被撤销，不许留在报告里', () => {
+  // 上一版 deviations 写的是「④ 不是 SQLite FTS5：BM25 在进程内实现（无 SQLite…）」。
+  // Node 22 自带 node:sqlite 之后这句话就是假的；假话留在产物里比不写更糟。
+  const joined = idx.deviations.join('\n');
+  assert.ok(!/没有 SQLite|无 SQLite|不是 SQLite FTS5/.test(joined), `偏离里还留着旧说法：\n${joined}`);
+});
+
+test('① 用上了真正的描述（论文的 "descriptions"），不是只有证名', () => {
+  const s = idx.counts;
+  assert.ok(s.docsFromDescription >= 90, `描述覆盖率过低：${s.docsFromDescription}`);
+  assert.strictEqual(s.docsFromDescription + s.docsFromFallback, s.units, '文档来源没对账');
+  const d = idx.documents.find((x) => x.label === '心脾两虚证');
+  assert.ok(d, '产物里缺心脾两虚证');
+  assert.ok(/^description/.test(d.promptSource), `心脾两虚证走了兜底：${d.promptSource}`);
+  assert.ok(d.descriptionFields, '没记描述字段');
+  assert.ok(d.text.includes('证候名称：'), `prompt 单元没有论文式字段名：${d.text.slice(0, 80)}`);
+});
+
+test('⑥ 上下文工程按 top-k 送，且报字符数（与论文 1013 字符/prompt 对读）', () => {
+  for (const s of idx.retrievalSmoke) {
+    assert.ok(s.contextBlock, `${s.endpoint} 没出上下文块`);
+    assert.ok(s.contextBlock.docs <= s.contextBlock.k, '上下文块超过 k 条');
+    assert.ok(s.contextBlock.chars > 0, '上下文块是空的');
+    assert.ok('truncated' in s.contextBlock, '没记是否截断');
+  }
+  const s4 = idx.retrievalSmoke[0];
+  assert.strictEqual(s4.contextBlock.k, idx.paperLayer.topkSpec, '默认 k 不是规格的 Top-5');
+});
+
+test('k 扫描在（论文的 top-4 是经验值，必须把 k 的变化量出来）', () => {
+  assert.strictEqual(idx.kSweep.length, 6, 'k 扫描缺档');
+  const ks = idx.kSweep.map((r) => r.k);
+  assert.deepStrictEqual(ks, [1, 3, 4, 5, 8, 10]);
+  for (const r of idx.kSweep) {
+    assert.ok(r.hit <= r.of && r.hitDsuOnly <= r.of, 'k 扫描计数越界');
+  }
+  // 命中数随 k 单调不减 —— 否则说明采样或排序不稳
+  for (let i = 1; i < idx.kSweep.length; i++) {
+    assert.ok(idx.kSweep[i].hit >= idx.kSweep[i - 1].hit, 'k 变大命中反而变少');
+  }
+});
+
+test('A/B 归因在（补教材语境 vs 仅描述，两列都记）', () => {
+  const ab = idx.evaluationAblation;
+  assert.ok(ab && ab.descriptionOnly && ab.descriptionOnly.ngram13, '缺 A/B 那一列');
+  assert.strictEqual(ab.vectorOnlyRank.length, 3, 'A/B 只量了部分端点');
+  for (const r of ab.vectorOnlyRank) {
+    assert.ok('withSupplement' in r.vectorOnlyRank && 'descriptionOnly' in r.vectorOnlyRank, 'A/B 少一列');
+  }
+});
+
+test('⑦ ICD-11 术语通道已启用，证候落点是 TM1，而主诉可以落到西医章节', () => {
+  const layer = idx.icd11TermLayer;
+  assert.strictEqual(layer.enabled, true, `术语层未启用：${layer.why || ''}`);
+  assert.ok(layer.termUnits > 50000, `术语单元过少：${layer.termUnits}`);
+  // 第 26 章分账 + 官方中文名：这两个计数是「中文面接了多少」的硬指标，产物里必须有
+  assert.ok(layer.modules && layer.modules.TM1 > 300 && layer.modules.TM2 > 400,
+    `第 26 章分账没进产物：${JSON.stringify(layer.modules)}`);
+  assert.ok(layer.zhNames >= 100, `官方中文名没进产物：${layer.zhNames}`);
+  const s = idx.retrievalSmoke.find((x) => /失眠/.test(x.query));
+  assert.ok(s.icd11.enabled, '失眠 没走 ICD-11 通道');
+  // 上一版是 'via-tcm'（靠该证候的 WHO 英文名字段，只有 26/104 有）。
+  // 现在中文查询直接走等价映射（同一个张量点上的英文成员 / 组合探针 / 词表直译）。
+  assert.strictEqual(s.icd11.path, 'equivalence', '纯中文查询应当走等价映射');
+  assert.ok((s.icd11.probes || []).length > 0, '没有报出等价探针');
+  assert.ok(s.icd11.hits.length > 0, '失眠 在术语层没有命中');
+  // 两条腿的判据不同：
+  //   via:'syndrome' —— 从证候名查到的必须落在 TM1（证候对应传统医学证候）；
+  //   via:'query'    —— 从主诉查到的**允许**是第 1–25 章（西医），这正是 ICD-11 参考指南
+  //                    §2.23.24 的并列编码：Asthma CA23.32 与 Turbid phlegm… SF86 同时报。
+  // 上一版断言「全部必须是 TM1」，把西医条目当噪声 —— 那是因为当时的滤网连第 1–25 章一起拦了，
+  // 症状查询只能落到第 26 章的血证条目。读了 §2.23.24 之后判据改成下面这样。
+  const fromSyndrome = s.icd11.hits.filter((h) => h.via === 'syndrome');
+  assert.ok(fromSyndrome.length > 0, '证候那条腿没有命中');
+  assert.ok(fromSyndrome.every((h) => /\(TM1\)/.test(h.title)),
+    `证候落点不在 TM1：${JSON.stringify(fromSyndrome)}`);
+  assert.ok(s.icd11.hits.some((h) => !/\(TM[12]\)/.test(h.title)),
+    `主诉没有并列出西医条目 —— §2.23.24 要的是并列编码：${JSON.stringify(s.icd11.hits)}`);
 });
 
 test('回归锚点：失眠的期望答案心脾两虚证 在前 5 内', () => {

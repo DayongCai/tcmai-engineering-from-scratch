@@ -1,54 +1,69 @@
 {
-  "slug": "12-erxue-zhenduan-xue",
-  "title": "耳穴诊治学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-fenbu-jiepou",
-      "title": "耳穴的分布规律与解剖基础",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-dingwei-guobiao",
-      "title": "耳穴的定位与国标编码",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-zhenduan-juxian",
-      "title": "耳穴诊断的方法与局限",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-yadou-maizhen",
-      "title": "耳穴压豆与埋针的操作",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-quxue-changjian",
-      "title": "耳穴治疗常见病的取穴",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-canshu-liaocheng",
-      "title": "耳穴刺激的参数与疗程",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-linchuang-zhengju",
-      "title": "耳穴疗法的临床证据",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-tupu-shuzihua",
-      "title": "耳穴图谱的数字化",
-      "status": "📋"
-    }
-  ]
+ "note": "耳穴诊治学 派生课：8 章，单元取自父课（locator 派生·），本课内无复用。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-yuanliu-lilun",
+   "title": "耳穴诊治的源流与理论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-jiepou-fenqu",
+   "title": "耳廓解剖与分区",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-dingwei",
+   "title": "耳穴定位",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-zhenduan",
+   "title": "耳穴诊断",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-zhiliao-fangfa",
+   "title": "耳穴治疗方法",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-neike-yingyong",
+   "title": "耳穴在内科的应用",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-fuer-wuguan",
+   "title": "耳穴在妇儿与五官的应用",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-anquan-guifan",
+   "title": "耳穴操作安全与规范",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

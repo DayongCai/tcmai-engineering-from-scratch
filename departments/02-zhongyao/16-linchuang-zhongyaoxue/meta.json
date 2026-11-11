@@ -1,0 +1,38 @@
+{
+ "slug": "16-linchuang-zhongyaoxue",
+ "title": "临床中药学",
+ "en": "Clinical Chinese Materia Medica",
+ "deptSlug": "02-zhongyao",
+ "deptTitle": "中药系",
+ "globalN": 36,
+ "type": "Reference",
+ "semester": 7,
+ "stage": "zhuang",
+ "stageTitle": "壮",
+ "hours": 36,
+ "bridge": "证—药对应→关联规则 / 配伍禁忌→约束求解",
+ "chaptersTarget": 15,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/02-zhongyao/16-linchuang-zhongyaoxue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/02-zhongyao/16-linchuang-zhongyaoxue",
+  "chaptersWritten": 15,
+  "words": 384621,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#临床中药学",
+  "extractedAt": "2026-10-21"
+ },
+ "底本": {
+  "kind": "教材",
+  "from": "F:/textbooks/qhzy-临床中药学.xlsx",
+  "dir": "standards/linchuang-zhongyao",
+  "note": "15 内容章 / 73 单元 / 318,901 汉字；课程与教材 1:1，不改结构"
+ }
+}

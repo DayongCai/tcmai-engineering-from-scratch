@@ -100,7 +100,19 @@ for (const ch of chapters) {
   const url = `file:///${slidePath.replace(/\\/g, '/')}`;
   let ok = 0;
 
-  for (let i = 0; i < narr.segments.length; i += 1) {
+  // 拆片后片数 ≠ 段数：有 manifest 就按片截图（否则第 i 段会截到第 i 片，内容整体错位）
+  const manifestPath = path.join(cdir, 'slides', 'manifest.json');
+  const manifest = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, 'utf8')) : null;
+  const shots = manifest ? manifest.slideCount : narr.segments.length;
+
+  // 先清掉「上一版多出来的帧」：改成一段一屏后片数会变少，旧帧留着会让
+  // 「帧数 ≠ 片数」在门里报出来（07-bingyin-bingji 就留了一张 011.png）。
+  for (const f of fs.readdirSync(framesDir)) {
+    if (!/^\d{3}\.png$/.test(f)) continue;
+    if (Number(f.slice(0, 3)) > shots) fs.unlinkSync(path.join(framesDir, f));
+  }
+
+  for (let i = 0; i < shots; i += 1) {
     const out = path.join(framesDir, `${String(i + 1).padStart(3, '0')}.png`);
     const r = spawnSync(browser, [
       '--headless=new',
@@ -130,9 +142,9 @@ for (const ch of chapters) {
   }
 
   // 段数与帧数必须相等，否则后面的配音会错位
-  const mark = ok === narr.segments.length ? '✅' : '✗';
-  console.log(`  ${mark} ${ch}: ${ok}/${narr.segments.length} 帧`);
-  if (ok !== narr.segments.length) {
+  const mark = ok === shots ? '✅' : '✗';
+  console.log(`  ${mark} ${ch}: ${ok}/${shots} 帧`);
+  if (ok !== shots) {
     console.error(`     ✗ 帧数与段落数不一致，成片阶段会因配音错位而拒绝执行`);
   }
 }

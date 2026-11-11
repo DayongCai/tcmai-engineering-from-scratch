@@ -34,9 +34,14 @@ test('计数不变量：声明值与实际展开值一致', () => {
   assert.strictEqual(cur.counts.stages, 5, '阶段数应为 5（生长壮老已）');
 });
 
-test('每院系 15 门学科（设计基准）', () => {
+test('院系规模只能是 15 / 16 / 17 / 18 / 20 / 22 / 25 / 27（设计基准 + 扩科 + 补轮转/毕设）', () => {
   for (const d of cur.departments) {
-    assert.strictEqual(d.subjects.length, 15, `${d.title} 学科数为 ${d.subjects.length}，设计基准为 15`);
+    // 必修：15 = 八院系设计基准；20 = 针灸系扩科；25 = 护理系扩科；16 = 中医/智能各补一门；
+    // 2026-10 每院系补第 9 学期轮转/专业实践 + 第 10 学期毕设，于是各 +2（17/18/22/27）。
+    // 选修（元组第 9 位 elective）不占基准：它按内容相关性挂进院系，加几门都不该让必修规模报警。
+    const required = d.subjects.filter((s) => !s.elective).length;
+    assert.ok([15, 16, 17, 18, 20, 22, 25, 27].includes(required),
+      `${d.title} 必修学科数为 ${required}，应为 15/16/17/18/20/22/25/27 之一`);
   }
 });
 
@@ -77,7 +82,13 @@ test('学期落在 1..10；第 1–8 学期排有常规学科，第 9–10 为�
     if (p.semester <= 8) {
       assert.ok(p.subjects.length > 0, `第 ${p.semester} 学期没有安排任何学科`);
     } else {
-      assert.strictEqual(p.subjects.length, 0, `第 ${p.semester} 学期应为临床轮转/毕设，不应排常规学科`);
+      // 第 9–10 学期承载的是轮转 / 专业实践 / 毕业设计，不是常规讲授学科：
+      // 允许有课，但类型只能是 Clinic/Build，且课程名必须落在「轮转/实践/毕业设计」语义上。
+      assert.ok(p.subjects.length > 0, `第 ${p.semester} 学期应安排轮转/毕设学科`);
+      for (const s of p.subjects) {
+        assert.ok(['Clinic', 'Build'].includes(s.type), `第 ${p.semester} 学期 ${s.slug} 类型 ${s.type} 不是轮转/毕设类`);
+        assert.match(s.title, /轮转|实践|实习|实训|毕业设计/, `${s.slug}「${s.title}」不是轮转/毕设类课程`);
+      }
     }
   }
 });
@@ -93,10 +104,14 @@ test('学时与章节数为正整数，总量落在合理区间', () => {
   for (const s of flat) {
     assert.ok(Number.isInteger(s.hours) && s.hours > 0, `${s.slug} 学时非法`);
     assert.ok(Number.isInteger(s.chapters) && s.chapters > 0, `${s.slug} 章节数非法`);
-    assert.ok(s.chapters >= 6 && s.chapters <= 16, `${s.slug} 章节数 ${s.chapters} 超出 6..16 的合理区间`);
+    // 上限 52 是实测值：09-jichu 的章节目标沿用源教材章题，药理 49 章是源书真实章数。
+    // 「6..16」是 tcmP 单章 10 分钟视频的经验值，不适用于按书抽的章目 —— 不压平数据去凑区间。
+    // 2026-10-30 上限 52 → 60：病理生理学按讲义（Banasik 8th ed. 15 单元 53 章）成章，
+    // 53 是源体系的真实章数；为了守住 52 而砍一章，就是把数据压平去迁就区间。
+    assert.ok(s.chapters >= 6 && s.chapters <= 60, `${s.slug} 章节数 ${s.chapters} 超出 6..60 的合理区间`);
   }
   assert.ok(cur.counts.hours > 5000 && cur.counts.hours < 12000, `总学时 ${cur.counts.hours} 不合理`);
-  assert.ok(cur.counts.chapters > 900 && cur.counts.chapters < 1400, `总章节 ${cur.counts.chapters} 不合理`);
+  assert.ok(cur.counts.chapters > 900 && cur.counts.chapters < 2200, `总章节 ${cur.counts.chapters} 不合理`);
 });
 
 test('已落盘的学科都带 README.md / meta.json / chapters.json', () => {

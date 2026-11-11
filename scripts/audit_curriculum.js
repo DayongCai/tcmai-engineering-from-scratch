@@ -38,7 +38,14 @@ if (flat.length !== cur.domain.scale.subjects) {
   err(`L0 学科数 ${flat.length} ≠ 声明值 ${cur.domain.scale.subjects}`);
 }
 for (const d of cur.departments) {
-  if (d.subjects.length !== 15) warn(`L0 院系 ${d.slug} 学科数为 ${d.subjects.length}（设计基准 15）`);
+  // 设计基准 15 门/院系；扩科后针灸 20、护理 25、中医/智能各 16；2026-10 补第 9/10 学期轮转与毕设后各 +2。
+  // 选修课（元组第 9 位 true）按内容相关性挂进院系，**不计入必修规模基准** —— 否则「加一门选修」会被误判成结构错误。
+  const required = d.subjects.filter((s) => !s.elective).length;
+  const elective = d.subjects.length - required;
+  if (![15, 16, 17, 18, 20, 22, 25, 27].includes(required)) {
+    warn(`L0 院系 ${d.slug} 必修学科数为 ${required}（设计基准 15 / 扩科后允许 16、17、18、20、22、25、27）`);
+  }
+  if (elective > 0) console.log(`   · ${d.slug} 选修 ${elective} 门（不计入必修基准）`);
 }
 const slugSeen = new Map();
 for (const s of flat) {
@@ -52,6 +59,104 @@ for (const s of flat) {
   if (!(s.hours > 0)) err(`L0 学时非法: ${s.slug}`);
   if (!(s.chapters > 0)) err(`L0 章节数非法: ${s.slug}`);
   if (!s.bridge || s.bridge.length < 4) err(`L0 缺中医→AI 桥梁说明: ${s.slug}`);
+}
+
+// ── L0 · 先修图 ──────────────────────────────────────────────────────
+// 先修关系是「排课能排出来」的前提，不是注释。三类错误必须挡在这里：
+//   1. 引用了不存在的课（拼错 slug 是最常见的失败形态，且不会自己报错）
+//   2. 前置课排在本课之后（图上能画，课表上排不出来）
+//   3. 成环（A→B→A，拓扑排序不收敛）
+// 另外统计根课/孤立课：学期 > 1 却没有前置，通常意味着「这门课其实有前置，只是没声明」。
+const byFull = new Map(flat.map((s) => [`${s.deptSlug}/${s.slug}`, s]));
+let prereqEdges = 0;
+const crossDept = [];
+for (const s of flat) {
+  for (const ref of s.prereq) {
+    const full = ref.includes('/') ? ref : `${s.deptSlug}/${ref}`;
+    const target = byFull.get(full);
+    if (!target) { err(`L0 先修引用不存在的课: ${s.deptSlug}/${s.slug} → ${ref}`); continue; }
+    if (full === `${s.deptSlug}/${s.slug}`) { err(`L0 先修自指: ${full}`); continue; }
+    if (!(target.semester < s.semester)) {
+      err(`L0 前置不早于本课: ${s.deptSlug}/${s.slug}（第 ${s.semester} 学期）← ${ref}（第 ${target.semester} 学期）`);
+    }
+    prereqEdges += 1;
+    if (target.deptSlug !== s.deptSlug) crossDept.push(`${s.deptSlug}/${s.slug} ← ${full}`);
+  }
+}
+// Kahn 拓扑排序：不收敛即有环
+{
+  const indeg = new Map(flat.map((s) => [`${s.deptSlug}/${s.slug}`, 0]));
+  const adj = new Map(flat.map((s) => [`${s.deptSlug}/${s.slug}`, []]));
+  for (const s of flat) {
+    for (const full of s.prereqFull) {
+      if (!byFull.has(full)) continue;
+      adj.get(full).push(`${s.deptSlug}/${s.slug}`);
+      indeg.set(`${s.deptSlug}/${s.slug}`, indeg.get(`${s.deptSlug}/${s.slug}`) + 1);
+    }
+  }
+  const q = [...indeg.entries()].filter(([, v]) => v === 0).map(([k]) => k);
+  let seen = 0;
+  while (q.length) {
+    const n = q.shift();
+    seen += 1;
+    for (const m of adj.get(n) || []) {
+      indeg.set(m, indeg.get(m) - 1);
+      if (indeg.get(m) === 0) q.push(m);
+    }
+  }
+  if (seen !== flat.length) {
+    const stuck = [...indeg.entries()].filter(([, v]) => v > 0).map(([k]) => k);
+    err(`L0 先修图有环（拓扑排序只排出 ${seen}/${flat.length} 门）: ${stuck.slice(0, 6).join(', ')}`);
+  }
+}
+// 先修深度（最长链），供看板与排课解释用
+{
+  const depth = new Map();
+  const calc = (s, guard = new Set()) => {
+    const key = `${s.deptSlug}/${s.slug}`;
+    if (depth.has(key)) return depth.get(key);
+    if (guard.has(key)) return 0;
+    guard.add(key);
+    const d = s.prereqFull.filter((f) => byFull.has(f)).reduce((m, f) => Math.max(m, calc(byFull.get(f), guard) + 1), 0);
+    depth.set(key, d);
+    return d;
+  };
+  for (const s of flat) calc(s);
+  const roots = flat.filter((s) => s.prereq.length === 0).length;
+  const orphans = flat.filter((s) => s.semester > 1 && s.prereq.length === 0);
+  const maxDepth = Math.max(...depth.values());
+  // 根课必须登记理由（data/prereq-roots.json）：prereq 为空有两种可能 —— 真根课 / 漏声明。
+  // 不登记就无法区分这两者，于是「覆盖率」永远停在 92%，而人不会去查那 14 门到底该不该有前置。
+  const rootsDoc = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'prereq-roots.json'), 'utf8'));
+  const rootMap = new Map((rootsDoc.roots || []).map((r) => [r.key, r]));
+  for (const [key, r] of rootMap) {
+    const s = byFull.get(key);
+    if (!s) { err(`L0 根课登记引用了不存在的学科: ${key}`); continue; }
+    if (s.prereq.length) err(`L0 根课 ${key} 却声明了前置（${s.prereq.join(',')}）—— 根课表与数据打架`);
+    if (!r.why || r.why.length < 20) err(`L0 根课 ${key} 的理由过短（要写清前置在哪个体系里）`);
+  }
+  const orphansAll = flat.filter((s) => s.prereq.length === 0 && !rootMap.has(`${s.deptSlug}/${s.slug}`));
+  if (orphansAll.length) {
+    warn(
+      `L0 ${orphansAll.length} 门没有声明前置、也没登记为根课（漏声明）: ${orphansAll.slice(0, 8).map((s) => s.slug).join(', ')}`
+    );
+  }
+  const declared = flat.filter((s) => s.prereq.length > 0).length;
+  const eligible = flat.length - rootMap.size;
+  const coverage = eligible ? Math.round((declared / eligible) * 1000) / 10 : 100;
+  cur.__prereqStats = {
+    edges: prereqEdges,
+    roots,
+    rootsRegistered: rootMap.size,
+    maxDepth,
+    crossDept: crossDept.length,
+    orphans: orphansAll.length,
+    coverage,
+  };
+  ok.push(
+    `L0 先修图: ${prereqEdges} 条边 · 根课 ${roots}（登记 ${rootMap.size}）· 最长先修链 ${maxDepth} 层 · 跨院系 ${crossDept.length} 条 · 覆盖率 ${coverage}%`
+  );
+  if (orphansAll.length === 0) console.log(`   · 先修覆盖率 ${coverage}% = ${declared} / (${flat.length} − ${rootMap.size} 已登记根课)`);
 }
 for (const d of cur.departments) {
   const deptSeen = new Set();

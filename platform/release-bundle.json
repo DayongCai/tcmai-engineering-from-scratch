@@ -1,0 +1,881 @@
+{
+  "schema": "tcm-media-bundle/1",
+  "generatedAt": "2026-11-10T19:57:41.949Z",
+  "partMaxBytes": 1717986918.4,
+  "totalChapters": 126,
+  "totalBytes": 7046789120,
+  "bundles": [
+    {
+      "course": "01-zhongyi/01-zhongyi-jichu-lilun",
+      "title": "中医基础理论",
+      "version": "v1",
+      "chapterCount": 10,
+      "totalDurationSec": 2821.661,
+      "totalBytes": 100147477,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "01-zhongyi-jichu-lilun-v1-part-01.tar",
+          "bytes": 29429760,
+          "sha256": "a0edced40e498ab5a6bee7d7cbb5238f175698661a2e4c132e7c116704f4f14a",
+          "chapters": [
+            {
+              "slug": "01-yin-yang-er-fenlei",
+              "title": "阴阳学说 → 二分类：从零实现逻辑回归",
+              "bytes": 11951655,
+              "durationSec": 347.222
+            },
+            {
+              "slug": "02-wu-xing-duo-fenlei",
+              "title": "五行学说 → 多分类：从零实现 Softmax",
+              "bytes": 9824893,
+              "durationSec": 302.724
+            },
+            {
+              "slug": "03-zang-xiang-tupu",
+              "title": "藏象学说 → 知识图谱：脏腑关系的图表示",
+              "bytes": 10326703,
+              "durationSec": 315.31
+            },
+            {
+              "slug": "04-xulun",
+              "title": "绪论：中医学的学科属性与工程化边界",
+              "bytes": 10014962,
+              "durationSec": 273.271
+            },
+            {
+              "slug": "05-qi-xue-jin-ye",
+              "title": "气血津液 → 状态向量与守恒约束",
+              "bytes": 9505841,
+              "durationSec": 263.745
+            },
+            {
+              "slug": "06-jingluo-tuxing",
+              "title": "经络学说 → 图上的路径与可及性",
+              "bytes": 9566257,
+              "durationSec": 260.875
+            },
+            {
+              "slug": "07-bingyin-bingji",
+              "title": "病因病机 → 因果图与失效模式",
+              "bytes": 10294626,
+              "durationSec": 274.643
+            },
+            {
+              "slug": "08-fangzhi-yuanze",
+              "title": "防治原则 → 策略选择与代价函数",
+              "bytes": 9835731,
+              "durationSec": 265.371
+            },
+            {
+              "slug": "09-tizhi-fabing",
+              "title": "体质与发病 → 先验分布与风险分层",
+              "bytes": 9204301,
+              "durationSec": 254.06
+            },
+            {
+              "slug": "10-siwei-fangfa",
+              "title": "中医思维方法：形式化能做到与做不到的",
+              "bytes": 9622508,
+              "durationSec": 264.44
+            }
+          ],
+          "sourceBytes": 100147477
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-10T19:57:26.678Z"
+    },
+    {
+      "course": "01-zhongyi/10-zhongyi-neike-xue",
+      "title": "中医内科学",
+      "version": "v1",
+      "chapterCount": 14,
+      "totalDurationSec": 16685.557,
+      "totalBytes": 698677999,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "10-zhongyi-neike-xue-v1-part-01.tar",
+          "bytes": 704532480,
+          "sha256": "e1de64e5dd0d574495a57906faf78434575fa4444f4354aad231b039c9dab86f",
+          "chapters": [
+            {
+              "slug": "01-xulun",
+              "title": "第1章 绪论",
+              "bytes": 51089697,
+              "durationSec": 1190.295
+            },
+            {
+              "slug": "02-bianzheng-silu",
+              "title": "第2章 中医内科疾病的辨证论治思路与方法",
+              "bytes": 62388497,
+              "durationSec": 1456.91
+            },
+            {
+              "slug": "03-zangfu-bianzheng-gangyao",
+              "title": "第3章 脏腑辨证纲要与内科治则",
+              "bytes": 42052625,
+              "durationSec": 1001.02
+            },
+            {
+              "slug": "04-feixi-bingzheng",
+              "title": "第4章 肺系病证",
+              "bytes": 44685010,
+              "durationSec": 1049.44
+            },
+            {
+              "slug": "05-xinxi-bingzheng",
+              "title": "第5章 心系病证",
+              "bytes": 39714834,
+              "durationSec": 957.81
+            },
+            {
+              "slug": "06-piwei-bingzheng",
+              "title": "第6章 脾胃系病证",
+              "bytes": 42218789,
+              "durationSec": 1022.269
+            },
+            {
+              "slug": "07-ganxi-bingzheng",
+              "title": "第7章 肝系病证",
+              "bytes": 49011421,
+              "durationSec": 1180.75
+            },
+            {
+              "slug": "08-shenxi-bingzheng",
+              "title": "第8章 肾系病证",
+              "bytes": 45495988,
+              "durationSec": 1095.36
+            },
+            {
+              "slug": "09-qixue-jinye-bingzheng",
+              "title": "第9章 气血津液病证",
+              "bytes": 43189563,
+              "durationSec": 1031.243
+            },
+            {
+              "slug": "10-zhiti-jingluo-bingzheng",
+              "title": "第10章 肢体经络病证",
+              "bytes": 49510606,
+              "durationSec": 1193.137
+            },
+            {
+              "slug": "11-jizheng-chuanranbing",
+              "title": "第11章 常见急症与传染病",
+              "bytes": 47475359,
+              "durationSec": 1142.04
+            },
+            {
+              "slug": "12-shuzihua-ai",
+              "title": "第12章 中医内科学的数字化与AI时代",
+              "bytes": 58495851,
+              "durationSec": 1372.253
+            },
+            {
+              "slug": "13-zhengfang-liaoxiao",
+              "title": "第13章 证候—方剂—疗效的因果推断",
+              "bytes": 65403775,
+              "durationSec": 1591.59
+            },
+            {
+              "slug": "14-fenxing-icd11",
+              "title": "第14章 内科分型与 ICD-11 的映射",
+              "bytes": 57945984,
+              "durationSec": 1401.44
+            }
+          ],
+          "sourceBytes": 698677999
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-10T19:57:28.211Z"
+    },
+    {
+      "course": "09-jichu/11-bingli-shengli-xue",
+      "title": "病理生理学",
+      "version": "v1",
+      "chapterCount": 53,
+      "totalDurationSec": 81283.011,
+      "totalBytes": 3474960429,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "11-bingli-shengli-xue-v1-part-01.tar",
+          "bytes": 1686804480,
+          "sha256": "3c995ad0a90d7bee68104bfac5c5dbc9561be86835f1d45842d3165119ff3af3",
+          "chapters": [
+            {
+              "slug": "01-introduction-to-pathophysiology",
+              "title": "第 1 章 · 病理生理学导论",
+              "bytes": 73374539,
+              "durationSec": 1741.27
+            },
+            {
+              "slug": "02-homeostasis-allostasis-and-adaptive-responses-to-stressors",
+              "title": "第 2 章 · 稳态、异稳态与对应激源的适应性反应",
+              "bytes": 68518169,
+              "durationSec": 1607.1
+            },
+            {
+              "slug": "03-cell-structure-and-function",
+              "title": "第 3 章 · 细胞结构与功能",
+              "bytes": 53713942,
+              "durationSec": 1269.99
+            },
+            {
+              "slug": "04-cell-injury-aging-and-death",
+              "title": "第 4 章 · 细胞损伤、衰老与死亡",
+              "bytes": 59050819,
+              "durationSec": 1416.02
+            },
+            {
+              "slug": "05-genome-structure-regulation-and-tissue-differentiation",
+              "title": "第 5 章 · 基因组结构、调控与组织分化",
+              "bytes": 49482704,
+              "durationSec": 1190.5
+            },
+            {
+              "slug": "06-genetic-and-developmental-disorders",
+              "title": "第 6 章 · 遗传与发育性疾病",
+              "bytes": 62012888,
+              "durationSec": 1475.93
+            },
+            {
+              "slug": "07-neoplasia",
+              "title": "第 7 章 · 肿瘤",
+              "bytes": 57544228,
+              "durationSec": 1357.54
+            },
+            {
+              "slug": "08-infectious-processes",
+              "title": "第 8 章 · 感染过程",
+              "bytes": 60652496,
+              "durationSec": 1416.57
+            },
+            {
+              "slug": "09-inflammation-and-immunity",
+              "title": "第 9 章 · 炎症与免疫",
+              "bytes": 62862771,
+              "durationSec": 1486.59
+            },
+            {
+              "slug": "10-alterations-in-immune-function",
+              "title": "第 10 章 · 免疫功能异常",
+              "bytes": 65157225,
+              "durationSec": 1517.33
+            },
+            {
+              "slug": "11-malignant-disorders-of-white-blood-cells",
+              "title": "第 11 章 · 白细胞恶性肿瘤",
+              "bytes": 59091319,
+              "durationSec": 1415.26
+            },
+            {
+              "slug": "12-hiv-disease-and-aids",
+              "title": "第 12 章 · HIV感染与艾滋病",
+              "bytes": 61488851,
+              "durationSec": 1442.39
+            },
+            {
+              "slug": "13-alterations-in-oxygen-transport",
+              "title": "第 13 章 · 氧运输异常",
+              "bytes": 69173095,
+              "durationSec": 1604.88
+            },
+            {
+              "slug": "14-alterations-in-hemostasis-and-blood-coagulation",
+              "title": "第 14 章 · 止血与凝血异常",
+              "bytes": 71067721,
+              "durationSec": 1658.49
+            },
+            {
+              "slug": "15-alterations-in-blood-flow",
+              "title": "第 15 章 · 血流异常",
+              "bytes": 59547463,
+              "durationSec": 1399.99
+            },
+            {
+              "slug": "16-alterations-in-blood-pressure",
+              "title": "第 16 章 · 血压异常",
+              "bytes": 59253537,
+              "durationSec": 1375.37
+            },
+            {
+              "slug": "17-cardiac-function",
+              "title": "第 17 章 · 心脏功能",
+              "bytes": 68217211,
+              "durationSec": 1586.46
+            },
+            {
+              "slug": "18-alterations-in-cardiac-function",
+              "title": "第 18 章 · 心脏功能异常",
+              "bytes": 60475999,
+              "durationSec": 1410.96
+            },
+            {
+              "slug": "19-heart-failure-and-dysrhythmias",
+              "title": "第 19 章 · 心力衰竭与心律失常",
+              "bytes": 64953986,
+              "durationSec": 1522.55
+            },
+            {
+              "slug": "20-shock",
+              "title": "第 20 章 · 休克",
+              "bytes": 61523647,
+              "durationSec": 1452.91
+            },
+            {
+              "slug": "21-respiratory-function-and-alterations-in-gas-exchange",
+              "title": "第 21 章 · 呼吸功能与气体交换异常",
+              "bytes": 74049369,
+              "durationSec": 1731.57
+            },
+            {
+              "slug": "22-obstructive-pulmonary-disorders",
+              "title": "第 22 章 · 阻塞性肺疾病",
+              "bytes": 72481634,
+              "durationSec": 1718.27
+            },
+            {
+              "slug": "23-restrictive-pulmonary-disorders",
+              "title": "第 23 章 · 限制性肺疾病",
+              "bytes": 63874780,
+              "durationSec": 1490.38
+            },
+            {
+              "slug": "24-fluid-and-electrolyte-homeostasis-and-imbalances",
+              "title": "第 24 章 · 水电解质稳态与失衡",
+              "bytes": 74514599,
+              "durationSec": 1723.88
+            },
+            {
+              "slug": "25-acid-base-homeostasis-and-imbalances",
+              "title": "第 25 章 · 酸碱平衡与失衡",
+              "bytes": 63742533,
+              "durationSec": 1517.651
+            },
+            {
+              "slug": "26-renal-function",
+              "title": "第 26 章 · 肾脏功能",
+              "bytes": 74507102,
+              "durationSec": 1745.4
+            }
+          ],
+          "sourceBytes": 1670332627
+        },
+        {
+          "part": 2,
+          "file": "11-bingli-shengli-xue-v1-part-02.tar",
+          "bytes": 1664563200,
+          "sha256": "42057fc7aea8548f72d7b91c493a2c3b4cc9d1c476fe1baa3bc32702accd0988",
+          "chapters": [
+            {
+              "slug": "27-intrarenal-disorders",
+              "title": "第 27 章 · 肾内疾病",
+              "bytes": 54809771,
+              "durationSec": 1290.55
+            },
+            {
+              "slug": "28-acute-kidney-injury-and-chronic-kidney-disease",
+              "title": "第 28 章 · 急性肾损伤与慢性肾脏病",
+              "bytes": 58628485,
+              "durationSec": 1368.67
+            },
+            {
+              "slug": "29-disorders-of-the-lower-urinary-tract",
+              "title": "第 29 章 · 下尿路疾病",
+              "bytes": 60694787,
+              "durationSec": 1410.24
+            },
+            {
+              "slug": "30-male-genital-and-reproductive-function",
+              "title": "第 30 章 · 男性生殖功能",
+              "bytes": 65310046,
+              "durationSec": 1495.63
+            },
+            {
+              "slug": "31-alterations-in-male-genital-and-reproductive-function",
+              "title": "第 31 章 · 男性生殖功能异常",
+              "bytes": 54329811,
+              "durationSec": 1299.04
+            },
+            {
+              "slug": "32-female-genital-and-reproductive-function",
+              "title": "第 32 章 · 女性生殖功能",
+              "bytes": 56499090,
+              "durationSec": 1311.52
+            },
+            {
+              "slug": "33-alterations-in-female-genital-and-reproductive-function",
+              "title": "第 33 章 · 女性生殖功能异常",
+              "bytes": 63390834,
+              "durationSec": 1494.5
+            },
+            {
+              "slug": "34-sexually-transmitted-infections",
+              "title": "第 34 章 · 性传播感染",
+              "bytes": 59650739,
+              "durationSec": 1371.14
+            },
+            {
+              "slug": "35-gastrointestinal-function",
+              "title": "第 35 章 · 胃肠功能",
+              "bytes": 56864770,
+              "durationSec": 1320.01
+            },
+            {
+              "slug": "36-gastrointestinal-disorders",
+              "title": "第 36 章 · 胃肠疾病",
+              "bytes": 66699419,
+              "durationSec": 1561.66
+            },
+            {
+              "slug": "37-alterations-in-function-of-the-gallbladder-and-exocrine-pancreas",
+              "title": "第 37 章 · 胆囊与外分泌胰腺功能异常",
+              "bytes": 53758744,
+              "durationSec": 1269.18
+            },
+            {
+              "slug": "38-liver-diseases",
+              "title": "第 38 章 · 肝脏疾病",
+              "bytes": 61015895,
+              "durationSec": 1434.55
+            },
+            {
+              "slug": "39-endocrine-physiology-and-mechanisms-of-hypothalamic-pituitary-regulation",
+              "title": "第 39 章 · 内分泌生理与下丘脑-垂体调控机制",
+              "bytes": 69966518,
+              "durationSec": 1634.25
+            },
+            {
+              "slug": "40-disorders-of-endocrine-function",
+              "title": "第 40 章 · 内分泌功能紊乱",
+              "bytes": 67335999,
+              "durationSec": 1567.08
+            },
+            {
+              "slug": "41-diabetes-mellitus",
+              "title": "第 41 章 · 糖尿病",
+              "bytes": 74790252,
+              "durationSec": 1739.3
+            },
+            {
+              "slug": "42-alterations-in-metabolism-and-nutrition",
+              "title": "第 42 章 · 代谢与营养异常",
+              "bytes": 72724507,
+              "durationSec": 1701.34
+            },
+            {
+              "slug": "43-structure-and-function-of-the-nervous-system",
+              "title": "第 43 章 · 神经系统结构与功能",
+              "bytes": 59883834,
+              "durationSec": 1389.99
+            },
+            {
+              "slug": "44-acute-disorders-of-brain-function",
+              "title": "第 44 章 · 脑功能急性疾病",
+              "bytes": 63508840,
+              "durationSec": 1490.26
+            },
+            {
+              "slug": "45-chronic-disorders-of-neurologic-function",
+              "title": "第 45 章 · 慢性神经功能障碍",
+              "bytes": 63602021,
+              "durationSec": 1471.757
+            },
+            {
+              "slug": "46-alterations-in-special-sensory-function",
+              "title": "第 46 章 · 特殊感觉功能异常",
+              "bytes": 61926301,
+              "durationSec": 1452.93
+            },
+            {
+              "slug": "47-pain",
+              "title": "第 47 章 · 疼痛",
+              "bytes": 60859765,
+              "durationSec": 1425.09
+            },
+            {
+              "slug": "48-mental-health-disorders",
+              "title": "第 48 章 · 精神心理健康障碍",
+              "bytes": 97478331,
+              "durationSec": 2258.91
+            },
+            {
+              "slug": "49-structure-and-function-of-the-musculoskeletal-system",
+              "title": "第 49 章 · 骨骼肌肉系统结构与功能",
+              "bytes": 76555715,
+              "durationSec": 1763.12
+            },
+            {
+              "slug": "50-alterations-in-musculoskeletal-function-trauma-infection-and-disease",
+              "title": "第 50 章 · 骨骼肌肉功能异常：创伤、感染与疾病",
+              "bytes": 86023085,
+              "durationSec": 1957.45
+            },
+            {
+              "slug": "51-alterations-in-musculoskeletal-function-rheumatic-disorders",
+              "title": "第 51 章 · 骨骼肌肉功能异常：风湿性疾病",
+              "bytes": 79696397,
+              "durationSec": 1830.753
+            }
+          ],
+          "sourceBytes": 1646003956
+        },
+        {
+          "part": 3,
+          "file": "11-bingli-shengli-xue-v1-part-03.tar",
+          "bytes": 159969280,
+          "sha256": "e9505092daee20ad7c657306c1c3dc981ff3411403cbb9f524119ba680126b25",
+          "chapters": [
+            {
+              "slug": "52-alterations-in-the-integumentary-system",
+              "title": "第 52 章 · 皮肤系统异常",
+              "bytes": 78975825,
+              "durationSec": 1851.5
+            },
+            {
+              "slug": "53-burn-injuries",
+              "title": "第 53 章 · 烧伤",
+              "bytes": 79648021,
+              "durationSec": 1847.34
+            }
+          ],
+          "sourceBytes": 158623846
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-10T19:57:35.863Z"
+    },
+    {
+      "course": "09-jichu/12-yaoli-xue",
+      "title": "药理学",
+      "version": "v1",
+      "chapterCount": 49,
+      "totalDurationSec": 64694.356,
+      "totalBytes": 2778874780,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "12-yaoli-xue-v1-part-01.tar",
+          "bytes": 1697320960,
+          "sha256": "8a5b62151b9902bfc9df395fe7e73c70095777b1877a7bb32e95ddda1e2e2b6e",
+          "chapters": [
+            {
+              "slug": "01-introduction",
+              "title": "第1章 绪论",
+              "bytes": 55298752,
+              "durationSec": 1285.11
+            },
+            {
+              "slug": "02-pharmacodynamics",
+              "title": "第2章 药物效应动力学——药效学",
+              "bytes": 78169967,
+              "durationSec": 1789.37
+            },
+            {
+              "slug": "03-pharmacokinetics",
+              "title": "第3章 药物代谢动力学——药动学",
+              "bytes": 45487784,
+              "durationSec": 1084.75
+            },
+            {
+              "slug": "04-factors-affecting-drug-response",
+              "title": "第4章 影响药物效应的因素",
+              "bytes": 48328852,
+              "durationSec": 1131.215
+            },
+            {
+              "slug": "05-autonomic-nervous-system-overview",
+              "title": "第5章 传出神经系统药理概论",
+              "bytes": 47813752,
+              "durationSec": 1107.233
+            },
+            {
+              "slug": "06-cholinergic-agonists",
+              "title": "第6章 拟胆碱药",
+              "bytes": 48743564,
+              "durationSec": 1141.18
+            },
+            {
+              "slug": "07-organophosphates-and-cholinesterase-reactivating-agents",
+              "title": "第7章 有机磷酸酯类及胆碱酯酶复活药",
+              "bytes": 53850208,
+              "durationSec": 1244.84
+            },
+            {
+              "slug": "08-cholinergic-antagonists",
+              "title": "第8章 抗胆碱药",
+              "bytes": 45568198,
+              "durationSec": 1095.99
+            },
+            {
+              "slug": "09-adrenergic-agonists",
+              "title": "第9章 拟肾上腺素药",
+              "bytes": 48621106,
+              "durationSec": 1124.31
+            },
+            {
+              "slug": "10-adrenergic-antagonists",
+              "title": "第10章 抗肾上腺素药",
+              "bytes": 48954695,
+              "durationSec": 1163.81
+            },
+            {
+              "slug": "11-local-anesthetics",
+              "title": "第11章 局部麻醉药",
+              "bytes": 60426184,
+              "durationSec": 1398.55
+            },
+            {
+              "slug": "12-general-anesthetics",
+              "title": "第12章 全身麻醉药",
+              "bytes": 60978302,
+              "durationSec": 1395.63
+            },
+            {
+              "slug": "13-sedative-hypnotics",
+              "title": "第13章 镇静催眠药",
+              "bytes": 58191239,
+              "durationSec": 1375.66
+            },
+            {
+              "slug": "14-antiepileptic-and-anticonvulsant-drugs",
+              "title": "第14章 抗癫痫药与抗惊厥药",
+              "bytes": 64600606,
+              "durationSec": 1492.59
+            },
+            {
+              "slug": "15-antipsychotic-drugs",
+              "title": "第15章 抗精神失常药",
+              "bytes": 53650448,
+              "durationSec": 1235.273
+            },
+            {
+              "slug": "16-drugs-for-neurodegenerative-diseases",
+              "title": "第16章 治疗中枢神经系统退行性疾病药",
+              "bytes": 65235435,
+              "durationSec": 1499.481
+            },
+            {
+              "slug": "17-antipyretic-analgesic-and-anti-inflammatory-drugs",
+              "title": "第17章 解热镇痛抗炎药与抗痛风药",
+              "bytes": 65989944,
+              "durationSec": 1530.05
+            },
+            {
+              "slug": "18-opioid-analgesics",
+              "title": "第18章 镇痛药",
+              "bytes": 60022644,
+              "durationSec": 1380.65
+            },
+            {
+              "slug": "19-central-nervous-system-stimulants",
+              "title": "第19章 中枢兴奋药",
+              "bytes": 57445046,
+              "durationSec": 1330.73
+            },
+            {
+              "slug": "20-histamine-and-antihistamines",
+              "title": "第20章 组胺及抗组胺药",
+              "bytes": 55160001,
+              "durationSec": 1294.99
+            },
+            {
+              "slug": "21-other-autacoid-drugs",
+              "title": "第21章 其他影响自体活性物质的药物",
+              "bytes": 53631806,
+              "durationSec": 1268.79
+            },
+            {
+              "slug": "22-drugs-acting-on-cardiovascular-ion-channels",
+              "title": "第22章 作用于心血管系统离子通道的药物",
+              "bytes": 54209531,
+              "durationSec": 1258.23
+            },
+            {
+              "slug": "23-drugs-for-chronic-heart-failure",
+              "title": "第23章 治疗慢性心功能不全的药物",
+              "bytes": 63384405,
+              "durationSec": 1500.89
+            },
+            {
+              "slug": "24-antihypertensive-drugs",
+              "title": "第24章 抗高血压药",
+              "bytes": 57343580,
+              "durationSec": 1372.92
+            },
+            {
+              "slug": "25-antianginal-drugs",
+              "title": "第25章 抗心绞痛药",
+              "bytes": 61815833,
+              "durationSec": 1478.07
+            },
+            {
+              "slug": "26-antiarrhythmic-drugs",
+              "title": "第26章 抗心律失常药",
+              "bytes": 71032688,
+              "durationSec": 1586.98
+            },
+            {
+              "slug": "27-antiatherosclerotic-drugs",
+              "title": "第27章 抗动脉粥样硬化药",
+              "bytes": 51966976,
+              "durationSec": 1243.4
+            },
+            {
+              "slug": "28-diuretics-and-dehydrating-agents",
+              "title": "第28章 利尿药与脱水药",
+              "bytes": 57675105,
+              "durationSec": 1352.27
+            },
+            {
+              "slug": "29-gastrointestinal-drugs",
+              "title": "第29章 消化系统药",
+              "bytes": 45378659,
+              "durationSec": 1072.7
+            },
+            {
+              "slug": "30-respiratory-system-drugs",
+              "title": "第30章 呼吸系统药",
+              "bytes": 44616143,
+              "durationSec": 1046.67
+            }
+          ],
+          "sourceBytes": 1683591453
+        },
+        {
+          "part": 2,
+          "file": "12-yaoli-xue-v1-part-02.tar",
+          "bytes": 1104168960,
+          "sha256": "f794e2dde87c617851a5e9bdd5489f0c5d217708cd03aa1838d654acc3a8262d",
+          "chapters": [
+            {
+              "slug": "31-uterine-stimulants",
+              "title": "第31章 子宫兴奋药",
+              "bytes": 66356798,
+              "durationSec": 1537.14
+            },
+            {
+              "slug": "32-antianemic-drugs",
+              "title": "第32章 抗贫血药",
+              "bytes": 68725946,
+              "durationSec": 1581.93
+            },
+            {
+              "slug": "33-drugs-affecting-coagulation",
+              "title": "第33章 作用于凝血系统药物",
+              "bytes": 64765583,
+              "durationSec": 1486.67
+            },
+            {
+              "slug": "34-adrenocortical-hormones",
+              "title": "第34章 肾上腺皮质激素类药",
+              "bytes": 72267095,
+              "durationSec": 1648.87
+            },
+            {
+              "slug": "35-thyroid-hormones-and-antithyroid-drugs",
+              "title": "第35章 甲状腺激素与抗甲状腺药",
+              "bytes": 44067698,
+              "durationSec": 1077.715
+            },
+            {
+              "slug": "36-antihyperglycemic-drugs",
+              "title": "第36章 降血糖药",
+              "bytes": 40373809,
+              "durationSec": 975.84
+            },
+            {
+              "slug": "37-sex-hormones-and-contraceptives",
+              "title": "第37章 性激素类药及避孕药",
+              "bytes": 38287753,
+              "durationSec": 924.12
+            },
+            {
+              "slug": "38-antimicrobial-drugs-overview",
+              "title": "第38章 抗病原微生物药物概论",
+              "bytes": 39606537,
+              "durationSec": 957.53
+            },
+            {
+              "slug": "39-synthetic-antibacterial-drugs",
+              "title": "第39章 人工合成抗菌药",
+              "bytes": 59126022,
+              "durationSec": 1376.78
+            },
+            {
+              "slug": "40-beta-lactam-antibiotics",
+              "title": "第40章 β-内酰胺类抗生素",
+              "bytes": 65738388,
+              "durationSec": 1481.74
+            },
+            {
+              "slug": "41-macrolides-lincosamides-and-polypeptide-antibiotics",
+              "title": "第41章 大环内酯类、林可霉素类及多肽类抗生素",
+              "bytes": 59313916,
+              "durationSec": 1397.75
+            },
+            {
+              "slug": "42-aminoglycoside-antibiotics",
+              "title": "第42章 氨基糖苷类抗生素",
+              "bytes": 66017150,
+              "durationSec": 1496.97
+            },
+            {
+              "slug": "43-tetracyclines-and-chloramphenicol",
+              "title": "第43章 四环素类与氯霉素类",
+              "bytes": 50386459,
+              "durationSec": 1188.02
+            },
+            {
+              "slug": "44-antifungal-and-antiviral-drugs",
+              "title": "第44章 抗真菌药与抗病毒药",
+              "bytes": 44260675,
+              "durationSec": 1042.47
+            },
+            {
+              "slug": "45-antituberculosis-and-antileprosy-drugs",
+              "title": "第45章 抗结核病药及抗麻风病药",
+              "bytes": 45216290,
+              "durationSec": 1053.16
+            },
+            {
+              "slug": "46-antiparasitic-drugs",
+              "title": "第46章 抗寄生虫药",
+              "bytes": 59714850,
+              "durationSec": 1379.81
+            },
+            {
+              "slug": "47-anticancer-drugs",
+              "title": "第47章 抗恶性肿瘤药",
+              "bytes": 63704752,
+              "durationSec": 1445.4
+            },
+            {
+              "slug": "48-immunosuppressants",
+              "title": "第48章 免疫抑制药",
+              "bytes": 74365531,
+              "durationSec": 1680.859
+            },
+            {
+              "slug": "49-immunostimulants",
+              "title": "第49章 免疫增强药",
+              "bytes": 72988075,
+              "durationSec": 1679.25
+            }
+          ],
+          "sourceBytes": 1095283327
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-10T19:57:41.948Z"
+    }
+  ],
+  "uploadHint": "GitHub: gh release upload media-v1 <file>；或 rclone copy 到对象存储的 /v1/offline/ 前缀。"
+}

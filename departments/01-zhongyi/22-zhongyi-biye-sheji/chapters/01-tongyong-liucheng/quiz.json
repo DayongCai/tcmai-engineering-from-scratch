@@ -1,0 +1,79 @@
+{
+  "lesson": "01-tongyong-liucheng",
+  "title": "通用流程与基本要求",
+  "subject": "22-zhongyi-biye-sheji",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "本课程把 27 个案例统一成哪三种类型？",
+      "options": [
+        "数据层／方法层／移交层",
+        "综述／个案／实验",
+        "理论／临床／实验",
+        "本科／硕士／博士"
+      ],
+      "correct": 0,
+      "explanation": "九院系各三案。"
+    },
+    {
+      "stage": "check",
+      "question": "「三件必报」指的是哪三件？",
+      "options": [
+        "基线、消融、失效案例",
+        "摘要、正文、参考文献",
+        "目的、方法、结论",
+        "图表、公式、附录"
+      ],
+      "correct": 0,
+      "explanation": "缺失效案例即退回。"
+    },
+    {
+      "stage": "check",
+      "question": "客户数应当怎么来？",
+      "options": [
+        "客群 SAM × 渗透带中位，并报隐含渗透率",
+        "按经验直接设",
+        "按竞品数量",
+        "按用户调研"
+      ],
+      "correct": 0,
+      "explanation": "本轮修正：14 案被 SAM 上限压下。"
+    },
+    {
+      "stage": "check",
+      "question": "客单要与什么挂钩才算验过？",
+      "options": [
+        "客户年营收或 IT 预算占比",
+        "同行平均价",
+        "成本加成",
+        "客户感觉"
+      ],
+      "correct": 0,
+      "explanation": "S16：医院 IT 预算占 1%–2%。"
+    },
+    {
+      "stage": "post",
+      "question": "工时三段比例的来源是什么？",
+      "options": [
+        "假设（设计40/校验35/返工25），标「未实测」",
+        "实测数据",
+        "行业报告",
+        "无关紧要"
+      ],
+      "correct": 0,
+      "explanation": "不得去标签。"
+    },
+    {
+      "stage": "post",
+      "question": "修正客户数后，模型发生了什么变化？",
+      "options": [
+        "客户数砍到 5% 时开始出现亏损案",
+        "没有变化",
+        "全部转亏",
+        "回本更快"
+      ],
+      "correct": 0,
+      "explanation": "模型第一次有边界。"
+    }
+  ]
+}

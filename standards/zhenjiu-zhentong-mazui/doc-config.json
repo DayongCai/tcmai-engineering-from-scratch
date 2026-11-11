@@ -1,0 +1,82 @@
+{
+ "courseTitle": "针灸镇痛与麻醉",
+ "deptPath": "departments/03-zhenjiu/14-zhenjiu-zhentong-mazui",
+ "xlsx": "派生课（无教材）：单元取自针灸系与护理系已建课程，见 units.json source",
+ "chain": "疼痛生理与评估 → 针刺镇痛机制 → 电针参数与量效 → 急性痛与术后镇痛 → 慢性痛 → 针刺辅助麻醉 → 围手术期应用 → 安全与证据等级",
+ "levelLabel": "观察视角",
+ "objectPressure": "派生课的判断力来自把父课的片段重排成一条决策链",
+ "reportRule": "父课教材与现行规范（须注明出处）",
+ "gapNote": "无独立教材；未覆盖主题见各章 why 与 README",
+ "chapterQ": {
+  "01-tengtong-shengli": [
+   "疼痛生理与评估的核心判据是什么",
+   "先能说清「痛在哪一层」"
+  ],
+  "02-zhentong-jizhi": [
+   "针刺镇痛机制的核心判据是什么",
+   "闸门、内源性阿片、下行抑制"
+  ],
+  "03-dianzhen-canshu": [
+   "电针参数与量效的核心判据是什么",
+   "频率与强度是唯一可调的两个把手"
+  ],
+  "04-jixing-tong": [
+   "急性痛与术后镇痛的核心判据是什么",
+   "术后是最容易被验证的场景"
+  ],
+  "05-manxing-tong": [
+   "慢性痛的核心判据是什么",
+   "腰痛、头痛、神经病理性疼痛"
+  ],
+  "06-zhenci-mazui": [
+   "针刺辅助麻醉的核心判据是什么",
+   "不是替代全麻，是减少药量"
+  ],
+  "07-weishouqi": [
+   "围手术期应用的核心判据是什么",
+   "术前焦虑、术后恶心、肠功能恢复"
+  ],
+  "08-anquan-zhengju": [
+   "安全与证据等级的核心判据是什么",
+   "把「有效」与「证据充分」分开写"
+  ]
+ },
+ "fallback": {
+  "01-tengtong-shengli": [
+   "《针灸镇痛与麻醉·疼痛生理与评估》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "02-zhentong-jizhi": [
+   "《针灸镇痛与麻醉·针刺镇痛机制》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "03-dianzhen-canshu": [
+   "《针灸镇痛与麻醉·电针参数与量效》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "04-jixing-tong": [
+   "《针灸镇痛与麻醉·急性痛与术后镇痛》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "05-manxing-tong": [
+   "《针灸镇痛与麻醉·慢性痛》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "06-zhenci-mazui": [
+   "《针灸镇痛与麻醉·针刺辅助麻醉》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "07-weishouqi": [
+   "《针灸镇痛与麻醉·围手术期应用》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "08-anquan-zhengju": [
+   "《针灸镇痛与麻醉·安全与证据等级》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ]
+ },
+ "defaultCite": [
+  "《针灸镇痛与麻醉》",
+  "派生课篇名"
+ ]
+}

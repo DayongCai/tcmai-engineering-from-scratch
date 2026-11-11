@@ -1,0 +1,34 @@
+{
+  "slug": "17-jichu-biye-sheji",
+  "title": "基础医学毕业设计与知识移交",
+  "en": "Biomedical Capstone & Handover",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 187,
+  "type": "Build",
+  "semester": 10,
+  "stage": "yi",
+  "stageTitle": "已",
+  "hours": 72,
+  "bridge": "机制假设→可检验实验 / 记录→原始数据 / 结论→可重复协议",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/17-jichu-biye-sheji",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/17-jichu-biye-sheji",
+    "chaptersWritten": 6,
+    "words": 3330,
+    "status": "wip",
+    "layer": "handbook",
+    "contract": "handbook-v1",
+    "origin": "handbook",
+    "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
+    "extractedAt": "2026-11-09"
+  }
+}

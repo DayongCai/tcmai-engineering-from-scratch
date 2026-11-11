@@ -1,0 +1,126 @@
+{
+ "note": "派生课：一章一主题；四位面＝章群结构分区。",
+ "chapters": {
+  "01-gailun": {
+   "n": 1,
+   "title": "康复工程概论",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "支具的作用是「替代、限制、矫正」三选一",
+   "derivedFrom": "kangfu-huli、zhenggu"
+  },
+  "02-fenlei-cailiao": {
+   "n": 2,
+   "title": "支具分类与材料",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "材料决定强度与重量，也决定依从性",
+   "derivedFrom": "kangfu-huli、zhenggu"
+  },
+  "03-jizhu-zhiju": {
+   "n": 3,
+   "title": "脊柱支具",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5",
+    "3.6"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "脊柱支具的关键是三点受力",
+   "derivedFrom": "kangfu-huli、zhenggu"
+  },
+  "04-shangzhi-zhiju": {
+   "n": 4,
+   "title": "上肢支具",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "手部支具最讲精细",
+   "derivedFrom": "kangfu-huli、shoufa"
+  },
+  "05-xiazhi-zhiju": {
+   "n": 5,
+   "title": "下肢支具",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "负重与步态是下肢支具的两条指标",
+   "derivedFrom": "kangfu-huli、zhenggu"
+  },
+  "06-zuxie-yali": {
+   "n": 6,
+   "title": "矫形鞋与压力治疗",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "压力治疗的关键是梯度，不是越紧越好",
+   "derivedFrom": "kangfu-huli、zhenggu"
+  },
+  "07-zhuxing-fuzhu": {
+   "n": 7,
+   "title": "助行器、轮椅与转移辅具",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "辅具选错，比不用更容易跌倒",
+   "derivedFrom": "kangfu-huli、zhenggu"
+  },
+  "08-pinggu-suifang": {
+   "n": 8,
+   "title": "适配评估与随访",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "皮肤压红是最早的失效信号",
+   "derivedFrom": "kangfu-huli、jichu-huli"
+  }
+ }
+}

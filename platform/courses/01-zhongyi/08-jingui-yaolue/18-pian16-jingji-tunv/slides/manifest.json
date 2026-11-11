@@ -1,0 +1,82 @@
+{
+  "chapter": "18-pian16-jingji-tunv",
+  "slideCount": 15,
+  "segmentCount": 10,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 38
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 66
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 14
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 81
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 328
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 318
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 418
+    },
+    {
+      "n": 8,
+      "segment": 5,
+      "chars": 122
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 375
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 110
+    },
+    {
+      "n": 11,
+      "segment": 8,
+      "chars": 198
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 390
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 396
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 29
+    },
+    {
+      "n": 15,
+      "segment": 10,
+      "chars": 52
+    }
+  ]
+}

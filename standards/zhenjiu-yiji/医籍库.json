@@ -1,0 +1,56 @@
+{
+ "note": "医籍库＝教材十章（每章一部/一类医籍）；单元数按小节计。",
+ "count": 10,
+ "entries": [
+  {
+   "chapter": "1",
+   "name": "《灵枢》选读",
+   "units": 31
+  },
+  {
+   "chapter": "2",
+   "name": "《素问》选读",
+   "units": 22
+  },
+  {
+   "chapter": "3",
+   "name": "《难经》选读",
+   "units": 14
+  },
+  {
+   "chapter": "4",
+   "name": "《针灸甲乙经》选读",
+   "units": 14
+  },
+  {
+   "chapter": "5",
+   "name": "隋唐医家医论选读",
+   "units": 12
+  },
+  {
+   "chapter": "6",
+   "name": "宋金元医家医论选读",
+   "units": 20
+  },
+  {
+   "chapter": "7",
+   "name": "明清医家医论选读",
+   "units": 24
+  },
+  {
+   "chapter": "8",
+   "name": "针灸歌赋选读",
+   "units": 34
+  },
+  {
+   "chapter": "9",
+   "name": "针灸医案选读",
+   "units": 22
+  },
+  {
+   "chapter": "10",
+   "name": "数字化时代·医籍选读与AI平台",
+   "units": 6
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+  "lesson": "02-feibing-lunzhuan",
+  "title": "肺病科轮转：咳嗽与喘证的辨证接诊",
+  "subject": "21-zhongyi-linchuang-lunzhuan",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "肺病科 8 病中哪三病最容易混？",
+      "options": [
+        "咳、喘、哮",
+        "感冒、肺痨",
+        "肺痈、肺痿",
+        "肺胀、肺痿"
+      ],
+      "correct": 0,
+      "explanation": "三者界线是本章第一项动作。"
+    },
+    {
+      "stage": "check",
+      "question": "肺系 8 病共多少项动作？",
+      "options": [
+        "40 项",
+        "45 项",
+        "30 项",
+        "48 项"
+      ],
+      "correct": 0,
+      "explanation": "8 × 5。"
+    },
+    {
+      "stage": "check",
+      "question": "肺病科数值判据是几处？",
+      "options": [
+        "5 处（五科并列最高）",
+        "0 处",
+        "2 处",
+        "12 处"
+      ],
+      "correct": 0,
+      "explanation": "教材里可量化表述较多。"
+    },
+    {
+      "stage": "check",
+      "question": "8 病中跨课的有几个？",
+      "options": [
+        "6 个",
+        "3 个",
+        "8 个",
+        "1 个"
+      ],
+      "correct": 0,
+      "explanation": "跨课最广的一科。"
+    },
+    {
+      "stage": "post",
+      "question": "跨得广对轮转的含义是？",
+      "options": [
+        "「认病」比「治病」更吃紧，先问本科定义",
+        "可以少学",
+        "只学一个科",
+        "无影响"
+      ],
+      "correct": 0,
+      "explanation": "同名病在各科侧重不同。"
+    },
+    {
+      "stage": "post",
+      "question": "五科轮转顺序的依据是？",
+      "options": [
+        "门诊量 × 病种清晰度",
+        "难度递增",
+        "字典序",
+        "学分"
+      ],
+      "correct": 0,
+      "explanation": "心病→肺病→脾胃→肾病→脑病。"
+    }
+  ]
+}

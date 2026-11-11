@@ -1,0 +1,96 @@
+{
+ "slug": "21-zhongyao-du-li-xue",
+ "title": "中药毒理学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-du-xing-gainian",
+   "title": "毒理学的对象：剂量、分级与安全窗",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-du-xing-gainian/docs/zh.md",
+   "code": "chapters/01-du-xing-gainian/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-du-xing-wuzhi",
+   "title": "毒性物质基础：成分类型与矿物药",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-du-xing-wuzhi/docs/zh.md",
+   "code": "chapters/02-du-xing-wuzhi/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-gan-du-xing",
+   "title": "肝毒性：为什么肝最先受损",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-gan-du-xing/docs/zh.md",
+   "code": "chapters/03-gan-du-xing/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-shen-du-xing",
+   "title": "肾毒性：马兜铃酸的教训",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-shen-du-xing/docs/zh.md",
+   "code": "chapters/04-shen-du-xing/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-xin-shen-jing-du-xing",
+   "title": "心与神经毒性：乌头碱的半小时",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-xin-shen-jing-du-xing/docs/zh.md",
+   "code": "chapters/05-xin-shen-jing-du-xing/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-shengzhi-du-xing",
+   "title": "生殖与遗传毒性：妊娠禁忌的分级",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-shengzhi-du-xing/docs/zh.md",
+   "code": "chapters/06-shengzhi-du-xing/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-peiwu-paozhi-jian-du",
+   "title": "配伍与炮制减毒：十八反十九畏怎么读",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-peiwu-paozhi-jian-du/docs/zh.md",
+   "code": "chapters/07-peiwu-paozhi-jian-du/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-jian-ce-anquan-bianjie",
+   "title": "不良反应监测与安全边界",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-jian-ce-anquan-bianjie/docs/zh.md",
+   "code": "chapters/08-jian-ce-anquan-bianjie/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-shiyan-anquan-pingjia",
+   "title": "毒理实验与安全评价：LD50、亚慢性、遗传毒性与 GLP",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-shiyan-anquan-pingjia/docs/zh.md",
+   "code": "chapters/09-shiyan-anquan-pingjia/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-zhiyanxing-changqi",
+   "title": "致癌性与长期暴露：从「中毒」到「肿瘤」的终点",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-zhiyanxing-changqi/docs/zh.md",
+   "code": "chapters/10-zhiyanxing-changqi/code/main.js"
+  }
+ ]
+}

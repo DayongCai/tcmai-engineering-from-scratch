@@ -1,29 +1,38 @@
 {
-  "slug": "04-zhongyi-huli-jishu",
-  "title": "中医护理技术",
-  "en": "TCM Nursing Techniques",
-  "deptSlug": "05-huli",
-  "deptTitle": "护理系",
-  "globalN": 64,
-  "type": "Build",
-  "semester": 3,
-  "stage": "sheng",
-  "stageTitle": "生",
-  "hours": 54,
-  "bridge": "拔罐艾灸刮痧→操作参数化 / 不良反应→监测预警",
-  "chaptersTarget": 8,
-  "chapters": [],
-  "platform": {
-    "id": "tcmP",
-    "coursePath": "platform/courses/05-huli/04-zhongyi-huli-jishu",
-    "videosPublished": 0,
-    "status": "planned"
-  },
-  "textbook": {
-    "id": "textbooks",
-    "path": "textbooks/05-huli/04-zhongyi-huli-jishu",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
-  }
+ "slug": "04-zhongyi-huli-jishu",
+ "title": "中医护理技术",
+ "en": "TCM Nursing Techniques",
+ "deptSlug": "05-huli",
+ "deptTitle": "护理系",
+ "globalN": 64,
+ "type": "Build",
+ "semester": 3,
+ "stage": "sheng",
+ "stageTitle": "生",
+ "hours": 54,
+ "bridge": "拔罐艾灸刮痧→操作参数化 / 不良反应→监测预警",
+ "chaptersTarget": 14,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/05-huli/04-zhongyi-huli-jishu",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/05-huli/04-zhongyi-huli-jishu",
+  "chaptersWritten": 18,
+  "words": 408020,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#中医护理适宜技术",
+  "extractedAt": "2026-10-21"
+ },
+ "底本": {
+  "kind": "教材",
+  "from": "F:/textbooks/qhzy-中医护理适宜技术.xlsx",
+  "dir": "standards/zhongyi-huli-jishu",
+  "note": "18 内容章 / 18 单元 / 364,171 汉字；课程 14 章按母本骨架重排"
+ }
 }

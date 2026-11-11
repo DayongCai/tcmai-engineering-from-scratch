@@ -1,0 +1,131 @@
+{
+ "note": "课程 18 章与教材 18 章一一对应（教材从「发展—理念—概念—沟通—程序—教育—伦理—团队—素养—基础技术—安全质量—舒适—营养排泄—给药—中医护理—特殊人群—社区—平台」编排），映射为恒等映射。",
+ "chapters": {
+  "01-fazhan-daolun": {
+   "n": 1,
+   "title": "护理学的发展与护理学导论",
+   "units": [
+    "1.1.2"
+   ]
+  },
+  "02-linian-jiazhiguan": {
+   "n": 2,
+   "title": "护理理念与护理专业价值观",
+   "units": [
+    "2.1.2"
+   ]
+  },
+  "03-jiben-gainian": {
+   "n": 3,
+   "title": "护理学的基本概念与理论",
+   "units": [
+    "3.1.2"
+   ]
+  },
+  "04-huanhuan-goutong": {
+   "n": 4,
+   "title": "护患关系与沟通",
+   "units": [
+    "4.1.2"
+   ]
+  },
+  "05-huli-chengxu": {
+   "n": 5,
+   "title": "护理程序",
+   "units": [
+    "5.1.2"
+   ]
+  },
+  "06-jiankang-jiaoyu": {
+   "n": 6,
+   "title": "健康教育",
+   "units": [
+    "6.1.2"
+   ]
+  },
+  "07-lunli-falv": {
+   "n": 7,
+   "title": "护理伦理与法律",
+   "units": [
+    "7.1.2"
+   ]
+  },
+  "08-zhuanye-tuandui": {
+   "n": 8,
+   "title": "护理专业与团队协作",
+   "units": [
+    "8.1.2"
+   ]
+  },
+  "09-zhiye-suyang": {
+   "n": 9,
+   "title": "护理职业素养与人文关怀",
+   "units": [
+    "9.1.2"
+   ]
+  },
+  "10-shengming-tizheng": {
+   "n": 10,
+   "title": "生命体征观察与基础护理技术概论",
+   "units": [
+    "10.1.2"
+   ]
+  },
+  "11-huanzhe-anquan": {
+   "n": 11,
+   "title": "患者安全与护理质量",
+   "units": [
+    "11.1.2"
+   ]
+  },
+  "12-shushi-xiuxi": {
+   "n": 12,
+   "title": "舒适、休息与活动",
+   "units": [
+    "12.1.2"
+   ]
+  },
+  "13-yingyang-paixie": {
+   "n": 13,
+   "title": "营养与排泄的护理",
+   "units": [
+    "13.1.2"
+   ]
+  },
+  "14-geiyao-zhiliao": {
+   "n": 14,
+   "title": "给药与治疗的护理",
+   "units": [
+    "14.1.2"
+   ]
+  },
+  "15-zhongyi-huli-jichu": {
+   "n": 15,
+   "title": "中医护理基础与应用",
+   "units": [
+    "15.1.2"
+   ]
+  },
+  "16-teshu-renqun": {
+   "n": 16,
+   "title": "特殊人群的护理",
+   "units": [
+    "16.1.2"
+   ]
+  },
+  "17-shequ-jiankang": {
+   "n": 17,
+   "title": "社区护理与健康管理",
+   "units": [
+    "17.1.2"
+   ]
+  },
+  "18-pingtai-duijie": {
+   "n": 18,
+   "title": "护理学导论与 tcmP 平台",
+   "units": [
+    "18.1.2"
+   ]
+  }
+ }
+}

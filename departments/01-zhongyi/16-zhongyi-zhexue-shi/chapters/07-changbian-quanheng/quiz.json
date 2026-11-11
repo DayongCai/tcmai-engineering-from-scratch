@@ -1,0 +1,79 @@
+{
+  "lesson": "07-changbian-quanheng",
+  "title": "常变与权衡：辨证思维的三条规则",
+  "subject": "16-zhongyi-zhexue-shi",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "三条规则的顺序是？",
+      "options": [
+        "常变 → 顺逆 → 标本",
+        "标本 → 常变 → 顺逆",
+        "顺逆 → 标本 → 常变",
+        "无序"
+      ],
+      "correct": 0,
+      "explanation": "先辨要不要特殊处理，再定方向，最后排次序。"
+    },
+    {
+      "stage": "check",
+      "question": "哪两条真正进入操作层？",
+      "options": [
+        "顺逆与标本（临床占比约两成）",
+        "常变与权衡",
+        "全部",
+        "都不"
+      ],
+      "correct": 0,
+      "explanation": "1,083→232、1,028→188。"
+    },
+    {
+      "stage": "check",
+      "question": "权衡只有 383 次说明？",
+      "options": [
+        "它是元层面的说法，不指向具体对象",
+        "不重要",
+        "统计错",
+        "遗漏"
+      ],
+      "correct": 0,
+      "explanation": "越抽象命中越少。"
+    },
+    {
+      "stage": "check",
+      "question": "常与变的落差指？",
+      "options": [
+        "教科书写常，真实病人多变",
+        "书本与现实无关",
+        "常不重要",
+        "变不重要"
+      ],
+      "correct": 0,
+      "explanation": "实习后最直接的冲击。"
+    },
+    {
+      "stage": "post",
+      "question": "见症治症属于哪种失败？",
+      "options": [
+        "只治标、不辨常变",
+        "只治本",
+        "反治误用",
+        "次序正确"
+      ],
+      "correct": 0,
+      "explanation": "标本不分。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么「治本」不能永远优先？",
+      "options": [
+        "急症时必须先治标",
+        "因为治本无效",
+        "因为治本太慢",
+        "因为治本贵"
+      ],
+      "correct": 0,
+      "explanation": "急则治标。"
+    }
+  ]
+}

@@ -22,8 +22,11 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/03-zhenjiu/08-zhenjiu-zhiliao-xue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 14,
+    "words": 187992,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#针灸治疗学",
+    "extractedAt": "2026-10-21"
   }
 }

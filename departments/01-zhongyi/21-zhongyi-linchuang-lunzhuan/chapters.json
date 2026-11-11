@@ -1,0 +1,60 @@
+{
+  "slug": "21-zhongyi-linchuang-lunzhuan",
+  "title": "中医临床轮转",
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-xinbing-lunzhuan",
+      "title": "心病科轮转：胸痹与心悸的辨证接诊",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/01-xinbing-lunzhuan/docs/zh.md",
+      "code": "chapters/01-xinbing-lunzhuan/code/main.js"
+    },
+    {
+      "n": 2,
+      "slug": "02-feibing-lunzhuan",
+      "title": "肺病科轮转：咳嗽与喘证的辨证接诊",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/02-feibing-lunzhuan/docs/zh.md",
+      "code": "chapters/02-feibing-lunzhuan/code/main.js"
+    },
+    {
+      "n": 3,
+      "slug": "03-piwei-lunzhuan",
+      "title": "脾胃病科轮转：胃痞与泄泻的辨证接诊",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/03-piwei-lunzhuan/docs/zh.md",
+      "code": "chapters/03-piwei-lunzhuan/code/main.js"
+    },
+    {
+      "n": 4,
+      "slug": "04-shenbing-lunzhuan",
+      "title": "肾病科轮转：水肿与淋证的辨证接诊",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/04-shenbing-lunzhuan/docs/zh.md",
+      "code": "chapters/04-shenbing-lunzhuan/code/main.js"
+    },
+    {
+      "n": 5,
+      "slug": "05-naobing-lunzhuan",
+      "title": "脑病科轮转：眩晕与中风的辨证接诊",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/05-naobing-lunzhuan/docs/zh.md",
+      "code": "chapters/05-naobing-lunzhuan/code/main.js"
+    },
+    {
+      "n": 6,
+      "slug": "06-chuke-kaohe",
+      "title": "出科考核与病例复盘（含结构化病历）",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/06-chuke-kaohe/docs/zh.md",
+      "code": "chapters/06-chuke-kaohe/code/main.js"
+    }
+  ]
+}

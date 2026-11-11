@@ -1,0 +1,241 @@
+{
+ "source": {
+  "corpora": {
+   "shanghan": 1760,
+   "jingui": 402,
+   "wenbing": 630
+  },
+  "zheng": "standards/zhenghou/证候库.json",
+  "script": "scripts/build_gejia_layer.py"
+ },
+ "counts": {
+  "schools": 8,
+  "corpus": {
+   "shanghan": 1760,
+   "jingui": 402,
+   "wenbing": 630
+  },
+  "corpusTotal": 2792,
+  "units": 10,
+  "hanzi": 1003
+ },
+ "schools": [
+  {
+   "key": "liu-wansu",
+   "name": "刘完素（河间学派）",
+   "claim": "六气皆从火化，主寒凉",
+   "dynasty": "金",
+   "terms": [
+    "火",
+    "热",
+    "燥",
+    "寒凉",
+    "六气"
+   ],
+   "families": [
+    "热毒",
+    "血热",
+    "湿热"
+   ],
+   "hits": {
+    "shanghan": 219,
+    "jingui": 122,
+    "wenbing": 296
+   },
+   "hitsTotal": 637,
+   "zhengCount": 37,
+   "diseaseCount": 61,
+   "crossCourse": 2
+  },
+  {
+   "key": "zhang-congzheng",
+   "name": "张从正（攻邪学派）",
+   "claim": "病由邪生，攻邪已病，汗吐下三法",
+   "dynasty": "金",
+   "terms": [
+    "汗",
+    "吐",
+    "下",
+    "邪",
+    "攻"
+   ],
+   "families": [
+    "热毒",
+    "痰湿",
+    "血瘀"
+   ],
+   "hits": {
+    "shanghan": 903,
+    "jingui": 236,
+    "wenbing": 337
+   },
+   "hitsTotal": 1476,
+   "zhengCount": 39,
+   "diseaseCount": 70,
+   "crossCourse": 4
+  },
+  {
+   "key": "li-gao",
+   "name": "李杲（补土学派）",
+   "claim": "内伤脾胃，百病由生；升阳益气",
+   "dynasty": "金元",
+   "terms": [
+    "脾胃",
+    "中气",
+    "升阳",
+    "饮食",
+    "劳倦",
+    "阴火"
+   ],
+   "families": [
+    "气虚",
+    "痰湿"
+   ],
+   "hits": {
+    "shanghan": 14,
+    "jingui": 17,
+    "wenbing": 37
+   },
+   "hitsTotal": 68,
+   "zhengCount": 23,
+   "diseaseCount": 31,
+   "crossCourse": 0
+  },
+  {
+   "key": "zhu-zhenheng",
+   "name": "朱震亨（滋阴学派）",
+   "claim": "阳有余阴不足，相火妄动；滋阴降火",
+   "dynasty": "元",
+   "terms": [
+    "阴虚",
+    "相火",
+    "痰",
+    "湿热",
+    "降火"
+   ],
+   "families": [
+    "阴虚",
+    "湿热",
+    "痰湿"
+   ],
+   "hits": {
+    "shanghan": 3,
+    "jingui": 7,
+    "wenbing": 40
+   },
+   "hitsTotal": 50,
+   "zhengCount": 35,
+   "diseaseCount": 62,
+   "crossCourse": 3
+  },
+  {
+   "key": "zhang-jingyue",
+   "name": "张景岳（温补学派）",
+   "claim": "阳非有余，真阴不足；温补命门",
+   "dynasty": "明",
+   "terms": [
+    "命门",
+    "元阳",
+    "真阴",
+    "温补",
+    "水火"
+   ],
+   "families": [
+    "阳虚",
+    "阴虚",
+    "气虚"
+   ],
+   "hits": {
+    "shanghan": 0,
+    "jingui": 0,
+    "wenbing": 7
+   },
+   "hitsTotal": 7,
+   "zhengCount": 34,
+   "diseaseCount": 45,
+   "crossCourse": 2
+  },
+  {
+   "key": "ye-tianshi",
+   "name": "叶天士（温病学派）",
+   "claim": "卫气营血辨证，透邪养阴",
+   "dynasty": "清",
+   "terms": [
+    "卫",
+    "气",
+    "营",
+    "血",
+    "逆传",
+    "舌绛",
+    "透"
+   ],
+   "families": [
+    "血热",
+    "热毒",
+    "阴虚"
+   ],
+   "hits": {
+    "shanghan": 379,
+    "jingui": 156,
+    "wenbing": 289
+   },
+   "hitsTotal": 824,
+   "zhengCount": 37,
+   "diseaseCount": 50,
+   "crossCourse": 3
+  },
+  {
+   "key": "wang-qingren",
+   "name": "王清任（活血学派）",
+   "claim": "治病之要诀在明气血，主逐瘀",
+   "dynasty": "清",
+   "terms": [
+    "瘀",
+    "血",
+    "气",
+    "逐瘀",
+    "通窍"
+   ],
+   "families": [
+    "血瘀",
+    "气滞"
+   ],
+   "hits": {
+    "shanghan": 367,
+    "jingui": 157,
+    "wenbing": 279
+   },
+   "hitsTotal": 803,
+   "zhengCount": 23,
+   "diseaseCount": 50,
+   "crossCourse": 4
+  },
+  {
+   "key": "zhang-xichun",
+   "name": "张锡纯（汇通学派）",
+   "claim": "衷中参西，重镇潜阳与大气下陷",
+   "dynasty": "清末民国",
+   "terms": [
+    "大气",
+    "镇",
+    "肝",
+    "西",
+    "参西"
+   ],
+   "families": [
+    "气虚",
+    "阴虚",
+    "血瘀"
+   ],
+   "hits": {
+    "shanghan": 21,
+    "jingui": 15,
+    "wenbing": 13
+   },
+   "hitsTotal": 49,
+   "zhengCount": 43,
+   "diseaseCount": 73,
+   "crossCourse": 5
+  }
+ ]
+}

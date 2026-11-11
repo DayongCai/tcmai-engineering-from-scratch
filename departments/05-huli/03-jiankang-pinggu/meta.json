@@ -1,29 +1,35 @@
 {
-  "slug": "03-jiankang-pinggu",
-  "title": "健康评估",
-  "en": "Health Assessment",
-  "deptSlug": "05-huli",
-  "deptTitle": "护理系",
-  "globalN": 63,
-  "type": "Core",
-  "semester": 3,
-  "stage": "sheng",
-  "stageTitle": "生",
-  "hours": 54,
-  "bridge": "问诊查体→结构化采集 / 异常体征→规则+ML 判别",
-  "chaptersTarget": 8,
-  "chapters": [],
-  "platform": {
-    "id": "tcmP",
-    "coursePath": "platform/courses/05-huli/03-jiankang-pinggu",
-    "videosPublished": 0,
-    "status": "planned"
-  },
-  "textbook": {
-    "id": "textbooks",
-    "path": "textbooks/05-huli/03-jiankang-pinggu",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
-  }
+ "slug": "03-jiankang-pinggu",
+ "title": "健康评估",
+ "en": "Health Assessment",
+ "deptSlug": "05-huli",
+ "deptTitle": "护理系",
+ "globalN": 63,
+ "type": "Core",
+ "semester": 3,
+ "stage": "sheng",
+ "stageTitle": "生",
+ "hours": 54,
+ "bridge": "问诊查体→结构化采集 / 异常体征→规则+ML 判别",
+ "chaptersTarget": 8,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/05-huli/03-jiankang-pinggu",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/05-huli/03-jiankang-pinggu",
+  "chaptersWritten": 0,
+  "words": 0,
+  "status": "planned"
+ },
+ "底本": {
+  "kind": "派生",
+  "from": "standards/{neike-huli,jichu-huli,laonian-huli,waike-huli}/units.json",
+  "dir": "standards/jiankang-pinggu",
+  "note": "本库无《健康评估》母本；8 章由四门护理课的 8 个评估类单元派生，一章一域。「从容长寿」是本轮引入的评估锚点，父课底本 0 次；问诊/查体/实验室/心电图四块无底本，仍不编"
+ }
 }

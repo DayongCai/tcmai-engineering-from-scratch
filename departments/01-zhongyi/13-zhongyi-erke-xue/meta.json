@@ -11,7 +11,7 @@
   "stageTitle": "长",
   "hours": 72,
   "bridge": "小儿剂量→规则引擎 / 儿科辨证→ReAct 智能体",
-  "chaptersTarget": 10,
+  "chaptersTarget": 14,
   "chapters": [],
   "platform": {
     "id": "tcmP",
@@ -22,8 +22,17 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/01-zhongyi/13-zhongyi-erke-xue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 14,
+    "words": 275093,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#中医儿科学",
+    "extractedAt": "2026-10-21"
+  },
+  "standards": {
+    "path": "standards/erke",
+    "units": 250,
+    "hanzi": 223222,
+    "source": "F:/textbooks/qhzy-中医儿科学.xlsx"
   }
 }

@@ -63,6 +63,12 @@ function expand(data) {
         stageId: stageOfSemester(data.stages, row[idx.semester]).id,
       };
       for (const k of tuple) s[k] = row[idx[k]];
+      // 选修标记在元组第 9 位（elective）。早期写的是「第 tuple 长度之后那位」——
+      // 元组一旦加字段（如 prereq），那个位置就飘了，于是所有选修会静默变必修。
+      s.elective = row[idx.elective] === true;
+      // 先修边：不带「/」= 同院系；带「/」= 跨院系。空数组表示这是一门根课（无前置）。
+      s.prereq = Array.isArray(row[idx.prereq]) ? row[idx.prereq].slice() : [];
+      s.prereqFull = s.prereq.map((r) => (r.includes('/') ? r : `${d.slug}/${r}`));
       return s;
     });
     return {

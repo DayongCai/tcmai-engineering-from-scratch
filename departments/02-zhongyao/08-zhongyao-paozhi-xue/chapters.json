@@ -1,54 +1,87 @@
 {
-  "slug": "08-zhongyao-paozhi-xue",
-  "title": "中药炮制学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-mudi-yuanliu",
-      "title": "炮制的目的与历史源流",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-chaofa",
-      "title": "炒法：清炒与加辅料炒",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-zhifa-fuliao",
-      "title": "炙法与酒醋蜜盐的辅料",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-duanfa",
-      "title": "煅法与煅淬",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-zhengzhu-fajiao",
-      "title": "蒸煮燀与发酵",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-fuzhi-fa",
-      "title": "复制法与特殊炮制",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-chengfen-yingxiang",
-      "title": "炮制对成分与药效的影响",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-gongyi-biaozhun",
-      "title": "炮制工艺的标准化与质控",
-      "status": "📋"
-    }
-  ]
+ "slug": "08-zhongyao-paozhi-xue",
+ "title": "中药炮制学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-mudi-yuanliu",
+   "title": "炮制的目的与历史源流",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-mudi-yuanliu/docs/zh.md",
+   "code": "chapters/01-mudi-yuanliu/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-jingzhi-qiezhi",
+   "title": "净制与切制：炮制的前处理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-jingzhi-qiezhi/docs/zh.md",
+   "code": "chapters/02-jingzhi-qiezhi/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-chaofa",
+   "title": "炒法：清炒与加辅料炒",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-chaofa/docs/zh.md",
+   "code": "chapters/03-chaofa/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-zhifa-fuliao",
+   "title": "炙法与酒醋蜜盐的辅料",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-zhifa-fuliao/docs/zh.md",
+   "code": "chapters/04-zhifa-fuliao/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-duanfa",
+   "title": "煅法与煅淬",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-duanfa/docs/zh.md",
+   "code": "chapters/05-duanfa/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-zhengzhu-fajiao",
+   "title": "蒸煮燀与发酵",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-zhengzhu-fajiao/docs/zh.md",
+   "code": "chapters/06-zhengzhu-fajiao/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-fuzhi-fa",
+   "title": "复制法与特殊炮制",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-fuzhi-fa/docs/zh.md",
+   "code": "chapters/07-fuzhi-fa/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-chengfen-yingxiang",
+   "title": "炮制对成分与药效的影响",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-chengfen-yingxiang/docs/zh.md",
+   "code": "chapters/08-chengfen-yingxiang/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-gongyi-biaozhun",
+   "title": "炮制工艺的标准化与质控",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-gongyi-biaozhun/docs/zh.md",
+   "code": "chapters/09-gongyi-biaozhun/code/main.js"
+  }
+ ]
 }

@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>第 14 章 · 止血与凝血异常：三条线，两种形态，一个终末通路 · 幻灯片</title>
+<style>
+
+:root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
+--jade:#1f6f5c;--jade-soft:#e3efe9;--cinnabar:#a8321e;--cinnabar-soft:#f7e6e2;--gold:#a8862a;
+--sans:system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;
+--serif:"Songti SC","Noto Serif SC",Georgia,serif;
+--mono:ui-monospace,"Cascadia Mono",Consolas,monospace;}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#12110f;color:var(--ink);font-family:var(--sans)}
+#deck{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{min-height:100%;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;
+  padding:5vh 7vw;background:var(--paper);border-bottom:1px solid #000}
+.slide-inner{max-width:1000px;width:100%;margin:0 auto}
+.slide-foot{max-width:1000px;width:100%;margin:3vh auto 0;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+h1.big{font-family:var(--serif);font-size:clamp(28px,4.4vw,54px);line-height:1.25;margin:0}
+blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-height:1.6;margin:0;
+  border-left:6px solid var(--gold);padding-left:24px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--jade);
+  text-transform:uppercase;margin-bottom:14px}
+.kicker.warn{color:var(--cinnabar)}
+p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
+.compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
+.compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+/* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
+.math{font-style:italic;font-family:var(--serif)}
+.math-block{display:block;text-align:center;font-family:var(--serif);font-size:1.05em;margin:.8em 0}
+.math-op,.math-text,.math-rm{font-style:normal}
+.math-op{padding:0 .12em}
+.math-cal{font-style:normal}
+.math-bb{font-style:normal;font-weight:700}
+.frac{display:inline-block;vertical-align:middle;text-align:center;font-style:normal;margin:0 .15em;line-height:1.15}
+.frac-num{display:block;padding:0 .3em;border-bottom:1px solid currentColor}
+.frac-den{display:block;padding:0 .3em}
+.math-sqrt{font-style:normal;margin-right:.05em}
+.math-line{border-top:1px solid currentColor;font-style:normal;padding-top:.05em}
+.math-note{font-size:.8em;font-style:normal}
+.figure-host{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+#hud{position:fixed;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#8a8578;
+  background:#faf8f3cc;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
+@media print{.slide{page-break-after:always;min-height:auto}#hud{display:none}}
+</style>
+</head>
+<body>
+<div id="deck">
+<section class="slide" data-i="0">
+  <div class="slide-inner"><h1 class="big">第 14 章 · 止血与凝血异常：三条线，两种形态，一个终末通路</h1></div>
+  <div class="slide-foot"><span>1 / 31</span><span>title</span></div>
+</section>
+<section class="slide" data-i="1">
+  <div class="slide-inner"><blockquote class="motto">「限局、适度、可撤」——补充·hermes-病理生理学讲义·第14章·14.1（《hermes-病理生理学讲义·第14章·14.1》）</blockquote></div>
+  <div class="slide-foot"><span>2 / 31</span><span>motto</span></div>
+</section>
+<section class="slide" data-i="2">
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead"><strong>凝血不好</strong>是临床上最省事也最没用的一句话。它把三件不同的事压成一个词：血小板栓子建不起来（出血在黏膜、即刻、压之易止）、凝血因子网织不牢（出血在深部、迟发、压之难止）、以及纤溶把已经建好的网拆掉。三种情形的观察重点与处理方向都不同，混成一句，就只剩<strong>开一张化验单</strong>。这一章的十一个节按三条线排：先给三条线（14.1），再各自讲正常生理（14.2 到 14.4），然后讲两端的失衡——出血（14.5 到 14.7）与血栓（14.8 到 14.9），最后是三条线同时失控的弥散性血管内凝血（14.10）与床旁观察（14.11）。读完之后该能做到一件事：看到出血，先问是哪一条线，再问形态对不对得上。</p></div>
+  <div class="slide-foot"><span>3 / 31</span><span>problem</span></div>
+</section>
+<section class="slide" data-i="3">
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（一次交班说<strong>这个病人凝血不好，注意出血</strong>，接着医嘱里又加了抗凝——两句话在同一条线上互相打脸，而没有人指出这一点。讲义在 14.7 专门写了肝病的方向是出血与血栓风险并存，并提醒不能因为凝血酶原时间延长就认定只会出血。要接住这类矛盾，必须先把三条线分开）+ 知识积累（讲义本章 11 节、3 569 汉字，其中 14.9 用两段把遗传性与获得性高凝状态各列一串，14.10 用三步机制把 DIC 的<strong>矛盾表现</strong>解释成三条线各自的后果。这一章的密度在<strong>对应关系</strong>上：每一条机制都要配一种形态，配不上就说明定位错了）</p></div>
+  <div class="slide-foot"><span>4 / 31</span><span>roots</span></div>
+</section>
+<section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、止血是三条同时开动的线（讲义 14.1）</div>
+                <div class="compact"><p>讲义开篇就把口语里的「止血」拆成三条线。一期止血是血管收缩加血小板黏附、活化、聚集，形成血小板栓子——起效以秒计，先把口子堵住。二期止血是凝血因子级联激活、纤维蛋白网形成，把松软的血小板栓子加固成牢固的血栓。纤溶是纤溶酶原被激活为纤溶酶、降解纤维蛋白、血管再通，修复后把脚手架拆掉。</p>
+<p>三条线的正常关系，讲义只给三个词：</p>
+<blockquote><p>「限局、适度、可撤」——补充·hermes-病理生理学讲义·第14章·14.1</p></blockquote>
+<p>三个词各有各的对应：限局说栓子只长在破损处，适度说只长到够用，可撤说修复完成后能被溶解。疾病就是某一条线过强或过弱，<strong>并且失去了限局性</strong>。讲义由此给出本章的两端：</p>
+<p>一端是该堵的没堵住（出血），一端是不该堵的堵了（血栓），而三条线同时失控就是弥散性血管内凝血。这个三角就是全章的地图：14.5 到 14.7 走左端，14.8 到 14.9 走右端，14.10 走中间那个交汇点。</p>
+<p>为什么要分开三条线？讲义的理由落在实用性上：</p></div></div>
+  <div class="slide-foot"><span>5 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、止血是三条同时开动的线（讲义 14.1）</div>
+                <div class="compact"><blockquote><p>「就只能开一张化验单，开不出一个判断」——补充·hermes-病理生理学讲义·第14章·14.1</p></blockquote>
+<p>出血可以是一期止血不足，也可以是二期凝血不足，两者的出血形态、观察重点与处理方向都不同。把三条线分开，才有「判断」可言。</p></div></div>
+  <div class="slide-foot"><span>6 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、内皮不是被动的衬里（讲义 14.2）</div>
+                <div class="compact"><blockquote><p>「血管内皮不是被动的衬里，而是一层主动的抗血栓表面」——补充·hermes-病理生理学讲义·第14章·14.2</p></blockquote>
+<p>讲义列了内皮的三种主动行为：释放一氧化氮与前列环素抑制血小板；表达血栓调节蛋白与硫酸类肝素样物质激活抗凝；分泌组织型纤溶酶原激活物启动纤溶。三件事分别压住三条线——抑制血小板对应一期，激活抗凝对应二期，启动纤溶对应第三条。所以内皮是三条线共同的闸门。</p>
+<blockquote><p>「内皮完整时，血小板不会黏上去」——补充·hermes-病理生理学讲义·第14章·14.2</p></blockquote>
+<p>讲义补了一句很有分量的话：不黏本身就是一种需要持续消耗能量的状态。这句话解释了一个看似矛盾的现象——内皮功能障碍会同时带来血栓与出血两种风险。因为它不是一个开关，是一组需要维护的功能；维护失败时，某些功能亢进、某些功能缺失，两端可以同时出现。</p></div></div>
+  <div class="slide-foot"><span>7 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、内皮不是被动的衬里（讲义 14.2）</div>
+                <div class="compact"><p>内皮损伤后的四步，讲义写得像工序：血管收缩（反射性收缩加内皮素释放）；黏附（内皮下胶原暴露，vWF 结合胶原并发生构象改变，血小板经 GP Ib 受体黏附于 vWF）；活化（形态改变、释放颗粒内容物，招募并激活更多血小板）；聚集（GP IIb/IIIa 与纤维蛋白原桥接，把血小板彼此连起来）。</p>
+<p>临床联系把每一步都对应到一种缺损：vWF 缺乏 → 黏附失败；GP Ib 或 GP IIb/IIIa 异常 → 黏附或聚集失败；阿司匹林抑制血栓烷生成、P2Y12 抑制剂阻断 ADP 通路 → 药物性一期止血减弱。这一路的出血形态讲义写得很具体：</p>
+<blockquote><p>「皮肤瘀点、黏膜出血、刷牙出血、月经过多、即刻渗血、压之易止」——补充·hermes-病理生理学讲义·第14章·14.2</p></blockquote>
+<p>六个特征里，即刻与压之易止是两个时间性特征——它们指向<strong>第一层没建起来</strong>，而凝血与纤溶是好的。记住这两个词，比记住六个词更有用。</p></div></div>
+  <div class="slide-foot"><span>8 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、凝血级联：三条通路与三个要点（讲义 14.3）</div>
+                <div class="compact"><p>外源性通路：组织因子暴露，与因子 VII 结合并激活，进而激活因子 X。这是启动通路，讲义明写「是生理止血真正的第一步」。内源性通路：接触激活（因子 XII、XI），因子 IX 被激活，与因子 VIII 形成复合物，激活因子 X。这是放大通路。共同通路：因子 X 激活 → 凝血酶原变为凝血酶 → 纤维蛋白原变为纤维蛋白 → 因子 XIII 交联加固，形成耐纤溶的网。</p>
+<p>三个要点，讲义按重要性排。第一是维生素 K 依赖因子：II、VII、IX、X，以及抗凝的蛋白 C、蛋白 S。</p>
+<blockquote><p>「维生素 K 缺乏、肝功能不全、华法林类药物的作用都集中在这一组上」——补充·hermes-病理生理学讲义·第14章·14.3</p></blockquote>
+<p>这一句解释了一个临床上很容易混的现象：缺维生素 K 与吃抗凝药的实验室表现相似，因为两者动的是同一组因子。<strong>相似的表现不等于相同的病因</strong>，判断要靠用药史与吸收情况，不能只看化验方向。</p></div></div>
+  <div class="slide-foot"><span>9 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">三、凝血级联：三条通路与三个要点（讲义 14.3）</div>
+                <div class="compact"><p>第二是钙离子（曾称因子 IV）作为多个步骤的辅因子。讲义给了一个可验证的推论：枸橼酸抗凝正是通过螯合钙实现，所以采血管里必须加枸橼酸。这一条把「机制」与「操作」连起来了——采血管的选择不是习惯，是化学。</p>
+<p>第三是组织因子是生理启动的关键。讲义对命名的提醒很值得记：</p>
+<blockquote><p>「它其实是体内最重要的启动途径」——补充·hermes-病理生理学讲义·第14章·14.3</p></blockquote>
+<p>名字里的「外源性」容易误导。内源性通路更像一台放大器。理解这一点，才能解释为什么严重创伤、产科意外、恶性肿瘤（组织因子大量释放）会迅速触发全身凝血——它们动的都是启动环节。</p>
+<p>临床联系给出两组形态差异极大的出血：血友病 A 缺因子 VIII、血友病 B 缺因子 IX，都在内源性通路，表现为深部出血、关节腔与肌肉血肿、迟发性出血、压之难止；外源性通路受损（肝病、维生素 K 缺乏、华法林）则表现为多部位、黏膜与消化道出血。同一句凝血不好，落在这两条通路上，出血的样子完全不同。</p></div></div>
+  <div class="slide-foot"><span>10 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、抗凝与纤溶：四道闸与一个不定位的指标（讲义 14.4）</div>
+                <div class="compact"><p>凝血一旦启动必须能被限局与终止，否则就是全身凝血。四道闸是：抗凝血酶（灭活凝血酶以及因子 Xa 等，肝素类物质使其活性大幅增强）；蛋白 C／蛋白 S 系统（凝血酶与内皮上的血栓调节蛋白结合后激活蛋白 C，蛋白 C 在蛋白 S 辅助下灭活因子 Va 与 VIIIa，即拆掉放大器）；组织因子途径抑制物（抑制 TF-VIIa 复合物，管住启动环节）；纤溶系统（t-PA 与 u-PA 使纤溶酶原变为纤溶酶，降解纤维蛋白，产生 D-二聚体与 FDP）。</p>
+<p>四道闸的位置很整齐：一道管已经生成的凝血酶，一道管放大器，一道管启动，一道管清场。四道闸对应四类遗传性易栓症的机制——抗凝血酶缺乏、蛋白 C／S 缺乏、因子 V Leiden（对活化蛋白 C 抵抗），讲义把这组机制概括为闸门关不紧。</p>
+<p>D-二聚体那一段是本章第一个<strong>指标容易被过度解读</strong>的例子：</p>
+<blockquote><p>「升高提示凝血与纤溶同时活跃」——补充·hermes-病理生理学讲义·第14章·14.4</p></blockquote></div></div>
+  <div class="slide-foot"><span>11 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">四、抗凝与纤溶：四道闸与一个不定位的指标（讲义 14.4）</div>
+                <div class="compact"><p>关键在于它反映的是「纤维蛋白形成之后又被降解」这一事件，不是「哪里有血栓」。所以讲义写明它不定位、不定量：</p>
+<blockquote><p>「不能单独用来诊断血栓」——补充·hermes-病理生理学讲义·第14章·14.4</p></blockquote>
+<p>并补了一句极实用的提醒：术后 D-二聚体几乎都会升高。这一句把「指标升高」与「病」之间的距离量出来了——距离就是定位与定量这两件事，而这两件事它都做不到。</p></div></div>
+  <div class="slide-foot"><span>12 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">五、出血的四层：按三条线的解剖逐层排查（讲义 14.5）</div>
+                <div class="compact"><p>四层是：血管壁异常（遗传性毛细血管扩张症、过敏性紫癜、老年性紫癜、维生素 C 缺乏致胶原合成障碍、感染性血管损伤）；血小板数量减少（生成减少、破坏增加、消耗、分布异常）；血小板功能异常（遗传性或获得性）；凝血因子缺乏或被抑制（遗传性或获得性）。</p>
+<p>四层与三条线不是一一对应，讲义做了交叉：血管壁与血小板数量、功能三层都属一期止血，凝血因子那一层属二期。所以「四层」是排查清单，「三条线」是机制分类——清单用来不漏，分类用来解释。</p>
+<p>鉴别靠出血形态，讲义给了两句对照：</p>
+<blockquote><p>「血小板与血管问题 → 皮肤黏膜、瘀点瘀斑、即刻出血、压之易止」——补充·hermes-病理生理学讲义·第14章·14.5</p></blockquote>
+<blockquote><p>「凝血因子问题 → 深部血肿、关节腔、迟发出血、压之难止」——补充·hermes-病理生理学讲义·第14章·14.5</p></blockquote></div></div>
+  <div class="slide-foot"><span>13 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">五、出血的四层：按三条线的解剖逐层排查（讲义 14.5）</div>
+                <div class="compact"><p>这句经验规则的生理基础讲义也给了：血小板栓子负责先堵住小口，凝血因子负责把大口子焊牢。小血管靠前者，大血管与深部组织靠后者。于是形态不是「症状描述」，它是定位证据——问诊时问<strong>压一会儿能不能止</strong>，比问「出了多少」更有定位价值。</p></div></div>
+  <div class="slide-foot"><span>14 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">六、血小板：数量与功能要分开问（讲义 14.6）</div>
+                <div class="compact"><p>数量减少的三大机制在临床上要分开推理，因为处理方向相反。生成减少且伴其他血细胞减少 → 想到骨髓问题，需查骨髓而非单纯输注；单纯血小板减少而骨髓巨核细胞增多 → 想到破坏增加（免疫性），处理方向是抑制免疫破坏；血小板减少伴溶血与器官损害 → 想到血栓性微血管病。</p>
+<p>第三条最容易判反，讲义专门点破：此时血小板低不是因为没造，而是在微血管里被血栓消耗掉了——低血小板恰恰是血栓正在发生的证据。这一句的结构值得留意：<strong>同一个指标（低），在两层机制里指向相反的两件事</strong>（造得少 vs 耗得多）。所以「低」本身不是信息，<strong>低 + 什么</strong>才是信息。</p>
+<p>功能异常那一段是本章第二个<strong>指标正常但人有病</strong>的例子：尿毒症时毒素抑制血小板功能；肝病时纤维蛋白原与 vWF 的质与量都异常；阿司匹林、氯吡格雷类阻断活化通路。这类患者血小板计数正常，但出血时间延长、临床有出血倾向。</p></div></div>
+  <div class="slide-foot"><span>15 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">六、血小板：数量与功能要分开问（讲义 14.6）</div>
+                <div class="compact"><blockquote><p>「血小板计数正常，但出血时间延长、临床有出血倾向」——补充·hermes-病理生理学讲义·第14章·14.6</p></blockquote>
+<p>结论讲义写得很直接：问诊要问用药史，观察要看黏膜。计数是数量，黏膜是功能——两个不同的证据来源。</p></div></div>
+  <div class="slide-foot"><span>16 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">七、凝血因子的三个获得性原因：同一句「凝血不好」，三种方向（讲义 14.7）</div>
+                <div class="compact"><p>维生素 K 缺乏：新生儿（肠道菌群未建立、母乳中含量低）、长期禁食或吸收不良、广谱抗菌药抑制肠道菌群，导致 II、VII、IX、X 与蛋白 C／S 合成不足。讲义给了一条可推演的细节：</p>
+<blockquote><p>「因子 VII 半衰期最短，故外源性通路最先受影响」——补充·hermes-病理生理学讲义·第14章·14.7</p></blockquote>
+<p>半衰期最短 → 最先掉 → 外源性通路最先受损 → 凝血酶原时间最先延长。这是一条从半衰期推到实验室表现的链条，记住链条就不必记结论。</p>
+<p>肝病：几乎全部凝血因子（除因子 VIII 与 vWF）在肝合成。肝功能受损时因子减少、抗凝物质减少、血小板减少、纤溶亢进同时存在。方向是出血与血栓风险并存。</p>
+<blockquote><p>「出血与血栓风险并存」——补充·hermes-病理生理学讲义·第14章·14.7</p></blockquote></div></div>
+  <div class="slide-foot"><span>17 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">七、凝血因子的三个获得性原因：同一句「凝血不好」，三种方向（讲义 14.7）</div>
+                <div class="compact"><p>讲义对这一条的提醒很硬：不能因为凝血酶原时间延长就认定只会出血。这是本章最容易被忽略的一处，因为它违反直觉——化验提示出血倾向，临床上却要防血栓。原因在四条同时改变：促凝的少了，抗凝的也少了，清场的还更积极，血小板也不够。</p>
+<p>消耗性：DIC 时因子被大量消耗，同时纤溶亢进，形成越凝越缺、越缺越出的循环。</p>
+<p>治疗方向的差别，讲义分得很清：维生素 K 缺乏可补充维生素 K；肝病需综合支持；DIC 的关键是去除病因。</p>
+<blockquote><p>「补进去的因子会立刻成为微血栓的原料」——补充·hermes-病理生理学讲义·第14章·14.7</p></blockquote>
+<p>这一句把「补」这个动作的相对性说透了：在消耗性路径上，补充可能加速消耗。同一类处置在不同机制下方向相反，这是本章第三次出现同一结构（前两次是低血小板的两层含义、肝病的两端风险）。</p></div></div>
+  <div class="slide-foot"><span>18 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">八、血栓三要素：叠加，而不是三选一（讲义 14.8）</div>
+                <div class="compact"><p>Virchow 三联是内皮损伤、血流异常、高凝状态。内皮损伤是动脉血栓的主因（粥样硬化斑块破裂、高血压剪切力、吸烟、感染、导管与支架）；血流异常是淤滞与涡流（长期制动、卧床、心房颤动、静脉曲张、动脉瘤、红细胞增多导致的高黏滞）；高凝状态分遗传性与获得性。</p>
+<p>三要素的关系讲义写得很明确：</p>
+<blockquote><p>「长时间卧床 + 手术创伤 + 高龄」——补充·hermes-病理生理学讲义·第14章·14.8</p></blockquote>
+<p>三条同时具备，静脉血栓的风险骤升。所以预防措施总是成组出现（活动、机械预防、药物预防），</p>
+<blockquote><p>「因为单独一条措施只能对付一个要素」——补充·hermes-病理生理学讲义·第14章·14.8</p></blockquote>
+<p>这一句是本章最实用的一句：它把<strong>为什么预防要成组</strong>从经验变成了结构。三要素是乘法关系，不是加法关系——一条措施把某个要素降到很低，另外两个仍在，风险仍高。</p></div></div>
+  <div class="slide-foot"><span>19 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">八、血栓三要素：叠加，而不是三选一（讲义 14.8）</div>
+                <div class="compact"><p>部位与成分也有规律：动脉血栓在高剪切力下形成，以血小板为主（白色血栓），后果是缺血与梗死；静脉血栓在低剪切力与淤滞下形成，以纤维蛋白与红细胞为主（红色血栓），后果是脱落栓塞。这一对差别直接解释了为什么两端的用药方向不同——成分不同，靶点就不同。</p></div></div>
+  <div class="slide-foot"><span>20 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">九、高凝状态：遗传性与获得性，两张不同的名单（讲义 14.9）</div>
+                <div class="compact"><p>遗传性那一组：因子 V Leiden（活化蛋白 C 抵抗，最常见的遗传性易栓因素）、凝血酶原基因变异、抗凝血酶缺乏、蛋白 C／S 缺乏。讲义给了五个特征：</p>
+<blockquote><p>「年轻、反复、诱因轻微或无诱因即血栓、有家族史、静脉多于动脉」——补充·hermes-病理生理学讲义·第14章·14.9</p></blockquote>
+<p>五个特征里有三个是时间性的（年轻、反复、无诱因），两个是分布性的（家族史、静脉多于动脉）。它们共同指向一件事：机制在闸门那一侧，而不是在诱因那一侧。</p>
+<p>获得性那一组更长：恶性肿瘤（肿瘤细胞释放组织因子与促凝微粒）、妊娠与产褥期、口服避孕药与激素替代治疗、抗磷脂综合征（动静脉均可受累、可致反复流产）、肾病综合征（抗凝血酶随尿丢失）、真性红细胞增多与血小板增多、肥胖、高龄、制动、创伤与手术、脓毒症、重大感染。</p></div></div>
+  <div class="slide-foot"><span>21 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">九、高凝状态：遗传性与获得性，两张不同的名单（讲义 14.9）</div>
+                <div class="compact"><p>注意这一组的机制并不相同：恶性肿瘤与脓毒症动的是启动环节（组织因子），肾病综合征动的是抗凝血酶（丢掉了），真性红细胞增多动的是血流（黏度），抗磷脂综合征动的是膜表面（抗体）。同一张名单里有四种不同的机制——这提醒读者：<strong>分类按来源，机制按环节，两套坐标不能混用</strong>。</p>
+<p>评估那一段讲义给了四问：既往血栓史、家族史、当前诱因（制动、手术、肿瘤、妊娠、感染）、用药史（激素、抗凝、抗血小板）。并给了一句评价：</p>
+<blockquote><p>「这四问不需要任何化验就能把风险分层」——补充·hermes-病理生理学讲义·第14章·14.9</p></blockquote>
+<p>这是本章唯一的「零成本工具」，也是最能体现病理生理学用处的地方：机制清楚了，问诊就能替代一部分检查。</p></div></div>
+  <div class="slide-foot"><span>22 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">十、弥散性血管内凝血：三条线同时失控（讲义 14.10）</div>
+                <div class="compact"><blockquote><p>「DIC 不是一种独立的病，而是多种危重症的共同终末通路」——补充·hermes-病理生理学讲义·第14章·14.10</p></blockquote>
+<p>三步机制：第一步，促凝物质大量入血（严重感染的内毒素、大面积创伤与烧伤、产科意外、恶性肿瘤尤其急性早幼粒细胞白血病、严重溶血）；第二步，微血管内皮广泛损伤加抗凝系统被抑制（抗凝血酶被消耗、蛋白 C 系统受损、TFPI 不足），微血栓在全身微血管内广泛形成；第三步，消耗与纤溶——凝血因子与血小板被大量消耗导致出血，同时纤溶被继发性激活，已形成的纤维蛋白被降解，出血进一步加重。</p>
+<p>临床表现的矛盾正是三条线的表现：微血栓 → 器官缺血与功能障碍（肾、肺、脑、皮肤），可表现为少尿、呼吸困难、意识改变、肢端发凉；消耗性减少 → 广泛出血（穿刺点渗血、皮肤瘀斑、黏膜出血）；微血管病性溶血 → 红细胞在纤维蛋白网中被切割，出现碎片、贫血与黄疸。</p></div></div>
+  <div class="slide-foot"><span>23 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">十、弥散性血管内凝血：三条线同时失控（讲义 14.10）</div>
+                <div class="compact"><p>三条并列就是本章的收口：<strong>同一时刻，三条线可以各自朝不同方向失控</strong>。这就是为什么 DIC 的患者可以同时「出血」与「血栓」，而这两件事并不矛盾——它们是不同血管、不同环节上的结果。</p>
+<p>实验室的方向性改变，讲义要求只记方向、不记数值：血小板降低、纤维蛋白原降低、凝血酶原时间与活化部分凝血活酶时间延长、D-二聚体与 FDP 升高。判读要动态、成组、结合临床。</p>
+<blockquote><p>「单项异常不能定论」——补充·hermes-病理生理学讲义·第14章·14.10</p></blockquote>
+<p>理由是肝病、大量输血、原发性纤溶都能造成部分相似的结果。这一句与 14.4 那句<strong>D-二聚体不能单独诊断血栓</strong>是同一原则的两次应用：<strong>单一指标不构成判断，组合与变化才构成判断</strong>。</p>
+<p>护理重点讲义写成一句话的两半：看出血也看血栓——穿刺点渗血与肢端发凉、尿量减少、意识改变同等重要；避免不必要的侵入性操作，采血后充分压迫，注射部位轮换并记录。这四件事都不需要数值，全部是行为与观察。</p></div></div>
+  <div class="slide-foot"><span>24 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="24">
+  <div class="slide-inner"><div class="kicker">十一、评估与观察：五项同看，写变化不写绝对值（讲义 14.11）</div>
+                <div class="compact"><p>病史四问：出血的部位与形态（黏膜还是深部）、起病时间（先天还是后天）、诱因（外伤、手术、药物、感染）、家族史与肝病史、饮酒史、饮食与吸收情况。用药要问五类：抗血小板药、抗凝药、糖皮质激素、广谱抗菌药、部分中草药。体检看五处：皮肤黏膜瘀点瘀斑、关节肿胀与活动度、肝脾大小、生命体征、有无黄疸。</p>
+<p>实验室那一条把本章的方法收成一句：</p>
+<blockquote><p>「五项同看，才能把病变定位到三条线的哪一条」——补充·hermes-病理生理学讲义·第14章·14.11</p></blockquote>
+<p>五项是血小板计数、凝血酶原时间、活化部分凝血活酶时间、纤维蛋白原、D-二聚体。五项的组合方式对应三条线：血小板计数管一期止血的数量，凝血酶原时间管外源性通路，活化部分凝血活酶时间管内源性通路，纤维蛋白原管底物，D-二聚体管纤溶活性。<strong>五项不是五个分数，是一张定位图。</strong></p></div></div>
+  <div class="slide-foot"><span>25 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="25">
+  <div class="slide-inner"><div class="kicker">十一、评估与观察：五项同看，写变化不写绝对值（讲义 14.11）</div>
+                <div class="compact"><p>护理观察要点：新发瘀斑的位置与范围变化、穿刺点压迫所需时间、牙龈与鼻出血、黑便与血尿、月经量变化、意识与尿量。记录要写部位加大小加时间加是否新发，因为出血倾向的判断靠的是变化，不是单次的绝对值。</p>
+<blockquote><p>「不是单次的绝对值」——补充·hermes-病理生理学讲义·第14章·14.11</p></blockquote>
+<p>这一句可以作为全章的收尾判据：三条线是动态平衡，一次测量只是快照；判断靠的是趋势，而趋势需要同一套记录口径。</p></div></div>
+  <div class="slide-foot"><span>26 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="26">
+  <div class="slide-inner"><div class="kicker">十二、把十一个节压成一条链</div>
+                <div class="compact"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">14.1 三条线（一期 · 二期 · 纤溶）──► 限局 / 适度 / 可撤
+        │
+        ├── 正常生理 ──────────────────────────────┐
+        │   14.2 内皮与一期止血（黏附 → 活化 → 聚集）│
+        │   14.3 凝血级联（启动 · 放大 · 共同）      │
+        │   14.4 抗凝四道闸 + 纤溶（D-二聚体不定位）  │
+        │                                            │
+        ├── 左端：出血 ─────────────────────────────┤
+        │   14.5 四层排查（血管 / 数量 / 功能 / 因子）│
+        │   14.6 数量三机制 + 功能异常               │
+        │   14.7 维生素 K / 肝病 / 消耗              │
+        │                                            │
+        ├── 右端：血栓 ─────────────────────────────┤
+        │   14.8 Virchow 三联（叠加非三选一）        │
+        │   14.9 遗传性 / 获得性高凝                 │
+        │                                            │
+        └── 交汇：14.10 DIC（微血栓 + 消耗 + 溶血）──┘
+                        │
+                        ▼
+              14.11 五项同看，写变化不写绝对值</code></pre></div></div></div>
+  <div class="slide-foot"><span>27 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="27">
+  <div class="slide-inner"><div class="kicker">十二、把十一个节压成一条链</div>
+                <div class="compact"><p>链上三处最容易断：14.1 与 14.5 之间若省略形态对应，四层排查会退化成一张清单；14.3 与 14.7 之间若省略半衰期那条推理，维生素 K 缺乏的实验室表现就只能背；14.8 与 14.9 之间若省略「叠加」，预防措施的成组性就失去了理由。</p></div></div>
+  <div class="slide-foot"><span>28 / 31</span><span>body</span></div>
+</section>
+<section class="slide" data-i="28">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>只引讲义，不引代用底本。</strong> 本章引文格式统一为 补充·hermes-病理生理学讲义·第14章·N.M。讲义是本仓库原创的教学正文，不是任何外文教材的译本。底本凝血一章按因子序号与实验室项目排列，与讲义按三条线分段的口径不同轴，故本章不引，也不做两层折算。</li><li><strong>本章丢掉了什么：全部数值。</strong> 讲义明确只记方向、不记数值；本章同样不写血小板计数、凝血酶原时间、活化部分凝血活酶时间、纤维蛋白原与 D-二聚体的任何取值与参考区间，也不写因子活性的百分比。凡遇「多少算低」<strong>延长几秒有意义</strong>的追问，统一回<strong>本书不给值，需另立数据层</strong>。</li><li><strong>三条线是位置，不是严重程度。</strong> 同一端可以从轻到重，两端可以并存（肝病、DIC）。把「出血」与「血栓」当成互斥的两类，是本章最常见的误读；讲义在 14.7 与 14.10 两次点破这件事。</li><li><strong>单一指标不构成判断。</strong> D-二聚体不定位、不定量；血小板低既可以是造得少，也可以是耗得多；</li></ul></div></div>
+  <div class="slide-foot"><span>29 / 31</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="29">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>凝血酶原时间延长不等于只会出血。判断靠组合、动态与临床，本章不给任何单指标的捷径。</p>
+<ul><li><strong>不写药物与处置参数。</strong> 本章提到抗凝、抗血小板、补充维生素 K、输血与成分输注，只作方向与类别，不给药物名称、剂量、疗程与阈值。具体处置依现行规范与机构制度。</li><li><strong>边界声明</strong>：本章只解释讲义第 14 章的类别与环节，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
+  <div class="slide-foot"><span>30 / 31</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="30">
+  <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
+  <div class="slide-foot"><span>31 / 31</span><span>disclaimer</span></div>
+</section>
+</div>
+<div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>
+<script>/**
+ * [tcmP] figures.js —— 中医概念动画图（纯 SVG + rAF，无依赖）
+ *
+ * 自动挂载：文档里写
+ *     <div data-figure="wuxing-cycle"></div>
+ * 即可。支持悬停暂停；系统开启「减少动态效果」时渲染为静态帧。
+ *
+ * 与 ai-engineering-from-scratch 的 site/figures.js 同构（同样的 el/loop/registry 形态），
+ * 图目换成中医概念：
+ *   yin-yang-sigmoid    阴阳 → 二分类：sigmoid 决策边界扫过，样本左右归属翻转
+ *   wuxing-cycle        五行生克：相生正向流动 + 相克五角星流动
+ *   zangxiang-graph     藏象：脏腑 → 官窍 → 情志 的边逐步点亮
+ *   sizhen-fusion       四诊合参：四通道 → 融合层 → 证候输出
+ *   meridian-lookup     经络腧穴：KD-Tree 空间划分 + 最近邻查询
+ *   junchen-attention   君臣佐使：药味 → 权重矩阵高亮
+ */
+
+(function () {
+  'use strict';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── SVG 小工具 ──
+  function el(name, attrs, kids) {
+    const e = document.createElementNS(NS, name);
+    for (const k in attrs || {}) e.setAttribute(k, attrs[k]);
+    (Array.isArray(kids) ? kids : kids ? [kids] : []).filter(Boolean).forEach((c) => e.appendChild(c));
+    return e;
+  }
+  const txt = (s) => document.createTextNode(s);
+
+  function label(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--sans)', 'font-size': 12, fill: 'var(--muted)' },
+      opts || {}
+    ), [txt(s)]);
+  }
+  function mono(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--mono)', 'font-size': 11, fill: 'var(--muted)', 'letter-spacing': '.1em' },
+      opts || {}
+    ), [txt(s)]);
+  }
+
+  function svgRoot(host, W, H, aria) {
+    const svg = el('svg', {
+      viewBox: `0 0 ${W} ${H}`, width: '100%', role: 'img', 'aria-label': aria || '',
+      style: 'display:block;max-width:100%;height:auto',
+    });
+    host.appendChild(svg);
+    return svg;
+  }
+
+  // 悬停暂停 + 时间归一化
+  function loop(host, fn, period, opts) {
+    period = period || 6400;
+    opts = opts || {};
+    let raf, paused = false, t0 = performance.now();
+    const onTick = (now) => {
+      if (!paused) fn((((now - t0) % period) / period));
+      raf = requestAnimationFrame(onTick);
+    };
+    host.addEventListener('mouseenter', () => { paused = true; });
+    host.addEventListener('mouseleave', () => { paused = false; });
+    if (REDUCED) { fn(opts.staticT == null ? 0.62 : opts.staticT); return function () {}; }
+    raf = requestAnimationFrame(onTick);
+    return () => cancelAnimationFrame(raf);
+  }
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeIO = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const sigmoid = (z) => 1 / (1 + Math.exp(-z));
+
+  const FIGURES = {};
+
+  /* ───────────────────── yin-yang-sigmoid ─────────────────────
+     阴阳 → 二分类。左侧散点：X 轴「寒热倾向」，输出 sigmoid 概率。
+     扫描线扫过阈值，样本随阈值的移动左右换边，右侧给出准确率。
+  */
+  FIGURES['yin-yang-sigmoid'] = function (host) {
+    const W = 720, H = 400, PAD = 54;
+    const svg = svgRoot(host, W, H, '阴阳二分类与 sigmoid 决策边界');
+    const plotW = W - PAD * 2, plotH = H - 150;
+
+    // 样本：12 条八纲典型证候（阴=0 阳=1）
+    const data = [
+      [-2.2, 0], [-1.8, 0], [-1.4, 0], [-1.1, 0], [-0.6, 0], [-0.2, 0],
+      [0.2, 1], [0.6, 1], [1.1, 1], [1.5, 1], [1.9, 1], [2.4, 1],
+    ];
+    const X = (v) => PAD + ((v + 3) / 6) * plotW;
+    const Y = (p) => H - 90 - p * plotH;
+
+    // 坐标轴
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: W - PAD, y2: H - 90, stroke: 'var(--line)' }));
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: PAD, y2: H - 90 - plotH, stroke: 'var(--line)' }));
+    svg.appendChild(mono(PAD, H - 72, '寒 / 阴 →'));
+    svg.appendChild(mono(W - PAD, H - 72, '← 热 / 阳', { 'text-anchor': 'end' }));
+    svg.appendChild(mono(8, PAD - 22, 'P(阳)'));
+    svg.appendChild(mono(W - PAD - 130, 26, 'sigmoid 决策边界'));
+
+    const curve = el('path', { d: '', fill: 'none', stroke: 'var(--jade)', 'stroke-width': 2.5 });
+    svg.appendChild(curve);
+    const threshLine = el('line', { stroke: 'var(--cinnabar)', 'stroke-dasharray': '5 4', 'stroke-width': 1.6 });
+    svg.appendChild(threshLine);
+
+    const pts = data.map(([x, y]) => {
+      const g = el('g', {});
+      const c = el('circle', { r: 6, cx: X(x), cy: H - 90 - 0.5 * plotH, fill: y ? 'var(--cinnabar)' : 'var(--jade)', opacity: 0.85 });
+      const cls = el('text', {
+        x: X(x), y: H - 90 - 0.5 * plotH + 4, 'text-anchor': 'middle',
+        'font-family': 'var(--sans)', 'font-size': 10, fill: '#fff',
+      }, [txt(y ? '阳' : '阴')]);
+      g.appendChild(c); g.appendChild(cls);
+      svg.appendChild(g);
+      return { x, y, c, cls };
+    });
+
+    const accText = label(PAD, 26, '', { fill: 'var(--ink)', 'font-size': 13 });
+    svg.appendChild(accText);
+
+    let pathD = '';
+    for (let i = 0; i <= 60; i += 1) {
+      const xv = -3 + (i / 60) * 6;
+      const p = sigmoid(1.6 * xv + 0.1);
+      pathD += `${i === 0 ? 'M' : 'L'}${X(xv).toFixed(1)},${Y(p).toFixed(1)}`;
+    }
+    curve.setAttribute('d', pathD);
+
+    loop(host, (t) => {
+      // 阈值在 0..1 之间来回扫
+      const thr = 0.15 + 0.7 * easeIO(1 - Math.abs(2 * t - 1));
+      const pThr = 0.1 + thr * 0.85;
+      const xThr = (Math.log(pThr / (1 - pThr)) - 0.1) / 1.6;
+      threshLine.setAttribute('x1', X(xThr));
+      threshLine.setAttribute('x2', X(xThr));
+      threshLine.setAttribute('y1', H - 90 - plotH - 6);
+      threshLine.setAttribute('y2', H - 90);
+
+      let correct = 0;
+      for (const p of pts) {
+        const prob = sigmoid(1.6 * p.x + 0.1);
+        const pred = prob >= pThr ? 1 : 0;
+        if (pred === p.y) correct += 1;
+        p.c.setAttribute('cy', Y(prob));
+        p.cls.setAttribute('y', Y(prob) + 4);
+        p.c.setAttribute('r', pred === p.y ? 7 : 5);
+        p.c.setAttribute('opacity', pred === p.y ? 0.92 : 0.32);
+        p.cls.setAttribute('opacity', pred === p.y ? 1 : 0.25);
+        // 判错的样本画一圈红
+        p.c.setAttribute('stroke', pred === p.y ? 'none' : 'var(--cinnabar)');
+        p.c.setAttribute('stroke-width', pred === p.y ? 0 : 2);
+      }
+      accText.textContent = `阈值 P=${pThr.toFixed(2)} · 准确率 ${correct}/${pts.length} = ${((correct / pts.length) * 100).toFixed(0)}%`;
+    }, 7200);
+  };
+
+  /* ───────────────────── wuxing-cycle ─────────────────────
+     五行生克。外圈相生（顺时针流动），内五角星相克。
+  */
+  FIGURES['wuxing-cycle'] = function (host) {
+    const W = 720, H = 440, cx = W / 2 - 70, cy = H / 2, R = 148;
+    const svg = svgRoot(host, W, H, '五行生克关系');
+    const names = ['木', '火', '土', '金', '水'];
+    const colors = ['var(--jade)', 'var(--cinnabar)', 'var(--gold)', '#8a6d3b', '#2a4d69'];
+    const node = names.map((_, i) => {
+      const a = -Math.PI / 2 + (i / 5) * Math.PI * 2;
+      return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), a };
+    });
+
+    // 相生边（外圈，顺时针 木→火→土→金→水→木）
+    const sheng = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const p = el('path', {
+        d: `M${n.x},${n.y} Q${(n.x + m.x) / 2 + (cy - (n.y + m.y) / 2) * 0.16},${(n.y + m.y) / 2 + ((n.x + m.x) / 2 - cx) * 0.16} ${m.x},${m.y}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.28,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+    // 相克边（五角星）
+    const ke = node.map((n, i) => {
+      const m = node[(i + 2) % 5];
+      const p = el('line', {
+        x1: n.x, y1: n.y, x2: m.x, y2: m.y,
+        stroke: 'var(--cinnabar)', 'stroke-width': 1.4, 'stroke-dasharray': '4 4', opacity: 0.2,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+
+    // 沿边流动的点
+    const flow = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const g = el('circle', { r: 4, fill: 'var(--jade)', cx: n.x, cy: n.y, opacity: 0 });
+      svg.appendChild(g);
+      return { g, from: n, to: m };
+    });
+
+    const nodes = node.map((n, i) => {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: n.x, cy: n.y, r: 30, fill: '#fff', stroke: colors[i], 'stroke-width': 2 }));
+      g.appendChild(el('text', {
+        x: n.x, y: n.y + 8, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 22, fill: colors[i],
+      }, [txt(names[i])]));
+      svg.appendChild(g);
+      return g;
+    });
+
+    // 右栏说明
+    svg.appendChild(mono(W - 190, 60, '相生 (outer)'));
+    svg.appendChild(label(W - 190, 82, '木→火→土→金→水→木', { fill: 'var(--jade)' }));
+    svg.appendChild(mono(W - 190, 130, '相克 (star)'));
+    svg.appendChild(label(W - 190, 152, '木克土 · 土克水 · 水克火', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(label(W - 190, 170, '火克金 · 金克木', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(mono(W - 190, 220, '建模要点'));
+    svg.appendChild(label(W - 190, 242, '5 类 + 有向约束', { fill: 'var(--ink)' }));
+    svg.appendChild(label(W - 190, 262, '纯 softmax 会丢掉', { fill: 'var(--muted)' }));
+    svg.appendChild(label(W - 190, 280, '全部关系信息', { fill: 'var(--muted)' }));
+
+    const capt = label(W - 190, H - 30, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const phase = (t * 5) % 5;
+      for (let i = 0; i < 5; i += 1) {
+        const f = flow[i];
+        const local = clamp01(phase - i);
+        const k = easeIO(local);
+        f.g.setAttribute('cx', lerp(f.from.x, f.to.x, k));
+        f.g.setAttribute('cy', lerp(f.from.y, f.to.y, k));
+        f.g.setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.95 : 0);
+        sheng[i].setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.75 : 0.28);
+        const keOn = phase - i >= 0 && phase - i <= 1.4;
+        ke[i].setAttribute('opacity', keOn ? 0.55 : 0.2);
+      }
+      const active = Math.floor(phase) % 5;
+      nodes.forEach((g, i) => g.querySelector('circle').setAttribute('stroke-width', i === active ? 4 : 2));
+      capt.textContent = `当前传导：${names[active]} → ${names[(active + 1) % 5]}（生） / ${names[active]} 克 ${names[(active + 2) % 5]}`;
+    }, 7000);
+  };
+
+  /* ───────────────────── zangxiang-graph ─────────────────────
+     藏象：五脏 → 官窍 → 情志，边按序点亮。
+  */
+  FIGURES['zangxiang-graph'] = function (host) {
+    const W = 720, H = 430;
+    const svg = svgRoot(host, W, H, '藏象学说的脏腑-官窍-情志关系图');
+
+    const zang = [
+      { n: '肝', x: 110, y: 100, qiao: ['目'], zhi: '怒' },
+      { n: '心', x: 110, y: 210, qiao: ['舌'], zhi: '喜' },
+      { n: '脾', x: 110, y: 320, qiao: ['口'], zhi: '思' },
+      { n: '肺', x: 610, y: 100, qiao: ['鼻'], zhi: '悲' },
+      { n: '肾', x: 610, y: 210, qiao: ['耳'], zhi: '恐' },
+    ];
+    const edges = [];
+
+    for (const z of zang) {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: z.x, cy: z.y, r: 26, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+      g.appendChild(el('text', { x: z.x, y: z.y + 8, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 20, fill: 'var(--cinnabar)' }, [txt(z.n)]));
+      svg.appendChild(g);
+
+      const qx = W / 2 + (z.x < 300 ? -40 : 40);
+      g.appendChild(el('line', { x1: z.x + (z.x < 300 ? 26 : -26), y1: z.y, x2: qx - (z.x < 300 ? 22 : -22), y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+
+      const qg = el('g', {});
+      qg.appendChild(el('rect', { x: qx - 22, y: z.y - 14, width: 44, height: 28, rx: 6, fill: 'var(--jade-soft)', stroke: 'var(--jade)', 'stroke-width': 1.3 }));
+      qg.appendChild(el('text', { x: qx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--jade)' }, [txt(z.qiao[0])]));
+      svg.appendChild(qg);
+
+      const zx = W - 110;
+      g.appendChild(el('line', { x1: qx + 22, y1: z.y, x2: zx - 24, y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      const zg = el('g', {});
+      zg.appendChild(el('circle', { cx: zx, cy: z.y, r: 22, fill: '#fdf1dd', stroke: 'var(--gold)', 'stroke-width': 1.3 }));
+      zg.appendChild(el('text', { x: zx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--gold)' }, [txt(z.zhi)]));
+      svg.appendChild(zg);
+
+      edges.push({ zy: z.y, e1: g.querySelector('line'), e2: g.querySelectorAll('line')[1], qg, zg });
+    }
+
+    svg.appendChild(mono(110 - 30, 40, '藏 / 五藏'));
+    svg.appendChild(mono(W / 2 - 30, 40, '象 / 官窍'));
+    svg.appendChild(mono(W - 110 - 30, 40, '情志'));
+    const capt = label(20, H - 14, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const step = t * 5;
+      edges.forEach((e, i) => {
+        const on = step >= i;
+        e.e1.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        e.e2.setAttribute('stroke', on ? 'var(--gold)' : 'var(--line)');
+        e.qg.setAttribute('opacity', on ? 1 : 0.35);
+        e.zg.setAttribute('opacity', on ? 1 : 0.35);
+      });
+      const cur = zang[Math.min(4, Math.floor(step))];
+      capt.textContent = cur ? `点亮中：${cur.n} 开窍于 ${cur.qiao[0]}，在志为${cur.zhi}` : '';
+    }, 6200, { staticT: 0.99 });
+  };
+
+  /* ───────────────────── sizhen-fusion ─────────────────────
+     四诊合参：四通道 → 融合层 → 证候。演示模态缺失时的降级。
+  */
+  FIGURES['sizhen-fusion'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '四诊合参的多模态融合与模态缺失降级');
+    const chans = [
+      { n: '望', d: '舌象 / 面色', y: 60 },
+      { n: '闻', d: '语声 / 气息', y: 130 },
+      { n: '问', d: '主诉 / 现病史', y: 200 },
+      { n: '切', d: '脉搏波', y: 270 },
+    ];
+    const fx = 330, fy = 165;
+    const outx = 600;
+
+    const fxG = el('g', {});
+    fxG.appendChild(el('rect', { x: fx - 52, y: fy - 46, width: 104, height: 92, rx: 10, fill: '#fff', stroke: 'var(--jade)', 'stroke-width': 2 }));
+    fxG.appendChild(el('text', { x: fx, y: fy - 14, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--jade)' }, [txt('融合层')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 8, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('交叉注意力')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 26, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('+ 缺失掩码')]));
+    svg.appendChild(fxG);
+
+    const outG = el('g', {});
+    outG.appendChild(el('rect', { x: outx - 46, y: fy - 32, width: 92, height: 64, rx: 10, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+    outG.appendChild(el('text', { x: outx, y: fy - 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--cinnabar)' }, [txt('证候')]));
+    outG.appendChild(el('text', { x: outx, y: fy + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('带置信度')]));
+    svg.appendChild(outG);
+
+    svg.appendChild(el('line', { x1: fx + 52, y1: fy, x2: outx - 46, y2: fy, stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+
+    const inG = chans.map((c) => {
+      const g = el('g', {});
+      g.appendChild(el('rect', { x: 24, y: c.y - 24, width: 150, height: 48, rx: 8, fill: '#fff', stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      g.appendChild(el('text', { x: 40, y: c.y - 2, 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--ink)' }, [txt(c.n + '诊')]));
+      g.appendChild(el('text', { x: 40, y: c.y + 16, 'font-size': 11, fill: 'var(--muted)' }, [txt(c.d)]));
+      svg.appendChild(g);
+      const path = el('path', {
+        d: `M174,${c.y} C 250,${c.y} 260,${fy} ${fx - 52},${fy}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.22,
+      });
+      svg.appendChild(path);
+      const dot = el('circle', { r: 4, fill: 'var(--jade)', opacity: 0 });
+      svg.appendChild(dot);
+      return { g, path, dot, y: c.y };
+    });
+
+    const capt = label(24, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    // 循环：全模态 → 缺闻诊 → 缺闻+切 → 恢复
+    const phases = [[1, 1, 1, 1], [1, 0, 1, 1], [1, 0, 1, 0], [1, 1, 1, 1]];
+    loop(host, (t) => {
+      const idx = Math.min(phases.length - 1, Math.floor(t * phases.length));
+      const mask = phases[idx];
+      const missing = [];
+      mask.forEach((m, i) => { if (!m) missing.push(chans[i].n); });
+
+      inG.forEach((c, i) => {
+        const on = mask[i] === 1;
+        c.g.style.opacity = on ? 1 : 0.3;
+        c.path.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        c.path.setAttribute('stroke-dasharray', on ? 'none' : '4 4');
+        c.path.setAttribute('opacity', on ? 0.55 : 0.25);
+        const local = clamp01(t * 4 - idx);
+        c.dot.setAttribute('cx', lerp(174, fx - 52, easeIO(local)));
+        c.dot.setAttribute('cy', lerp(c.y, fy, easeIO(local)));
+        c.dot.setAttribute('opacity', on ? 0.95 : 0);
+      });
+
+      const conf = 0.62 + 0.1 * mask.filter(Boolean).length;
+      outG.style.opacity = 0.4 + 0.6 * conf;
+      capt.textContent = missing.length
+        ? `模态缺失：缺 ${missing.join('、')} → 置信度降至 ${(conf * 100).toFixed(0)}%，系统须显式降级而非静默猜测`
+        : `四诊齐备 → 置信度 ${(conf * 100).toFixed(0)}%`;
+    }, 8800, { staticT: 0.35 });
+  };
+
+  /* ───────────────────── meridian-lookup ─────────────────────
+     腧穴检索：KD-Tree 空间划分 + 最近邻查询。
+  */
+  FIGURES['meridian-lookup'] = function (host) {
+    const W = 720, H = 400, PAD = 40;
+    const svg = svgRoot(host, W, H, '腧穴的空间划分与最近邻检索');
+    const plotW = W - PAD * 2 - 30, plotH = H - 110;
+
+    // 模拟体表腧穴点集（合谷、内关、足三里、三阴交等 18 穴）
+    let seed = 20261012;
+    const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+    const pts = Array.from({ length: 18 }, () => ({ x: PAD + 30 + rnd() * (plotW - 60), y: PAD + 20 + rnd() * (plotH - 40) }));
+
+    // KD-Tree 递归划分线
+    const lines = [];
+    (function build(list, depth) {
+      if (list.length < 2) return;
+      const axis = depth % 2;
+      const sorted = list.slice().sort((a, b) => (axis ? a.y - b.y : a.x - b.x));
+      const med = sorted[Math.floor(sorted.length / 2)];
+      if (axis) {
+        const minX = Math.min(...list.map((p) => p.x));
+        const maxX = Math.max(...list.map((p) => p.x));
+        lines.push({ x1: minX, y1: med.y, x2: maxX, y2: med.y, depth });
+        build(list.filter((p) => p.y < med.y), depth + 1);
+        build(list.filter((p) => p.y >= med.y), depth + 1);
+      } else {
+        const minY = Math.min(...list.map((p) => p.y));
+        const maxY = Math.max(...list.map((p) => p.y));
+        lines.push({ x1: med.x, y1: minY, x2: med.x, y2: maxY, depth });
+        build(list.filter((p) => p.x < med.x), depth + 1);
+        build(list.filter((p) => p.x >= med.x), depth + 1);
+      }
+    })(pts, 0);
+
+    const lineEls = lines.map((l) => {
+      const e = el('line', { x1: l.x1, y1: l.y1, x2: l.x2, y2: l.y2, stroke: 'var(--line)', 'stroke-width': 1, opacity: 0 });
+      svg.appendChild(e);
+      return { e, depth: l.depth };
+    });
+
+    const dotEls = pts.map((p, i) => {
+      const c = el('circle', { cx: p.x, cy: p.y, r: 4.5, fill: 'var(--jade)', opacity: 0.75 });
+      svg.appendChild(c);
+      const t = el('text', { x: p.x + 7, y: p.y + 4, 'font-size': 10, fill: 'var(--muted)', opacity: 0 });
+      t.appendChild(txt(`穴${String(i + 1).padStart(2, '0')}`));
+      svg.appendChild(t);
+      return { c, t, p };
+    });
+
+    const query = el('circle', { r: 8, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 2.2 });
+    svg.appendChild(query);
+    const ring = el('circle', { r: 0, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 1, 'stroke-dasharray': '3 3' });
+    svg.appendChild(ring);
+    const link = el('line', { stroke: 'var(--cinnabar)', 'stroke-width': 1.6, 'stroke-dasharray': '4 3' });
+    svg.appendChild(link);
+
+    const capt = label(PAD, H - 20, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      // 查询点沿弧线游走
+      const ang = t * Math.PI * 2;
+      const qx = PAD + 30 + plotW / 2 + Math.cos(ang) * plotW * 0.33;
+      const qy = PAD + 20 + plotH / 2 + Math.sin(ang) * plotH * 0.32;
+      query.setAttribute('cx', qx);
+      query.setAttribute('cy', qy);
+
+      let best = null;
+      let bestD = Infinity;
+      for (const d of dotEls) {
+        const dd = (d.p.x - qx) ** 2 + (d.p.y - qy) ** 2;
+        if (dd < bestD) { bestD = dd; best = d; }
+        d.c.setAttribute('r', 4.5);
+        d.c.setAttribute('fill', 'var(--jade)');
+        d.t.setAttribute('opacity', 0);
+      }
+      const dist = Math.sqrt(bestD);
+      link.setAttribute('x1', qx); link.setAttribute('y1', qy);
+      link.setAttribute('x2', best.p.x); link.setAttribute('y2', best.p.y);
+      ring.setAttribute('cx', qx); ring.setAttribute('cy', qy);
+      ring.setAttribute('r', dist);
+      best.c.setAttribute('r', 8);
+      best.c.setAttribute('fill', 'var(--cinnabar)');
+      best.t.setAttribute('opacity', 1);
+
+      const step = clamp01(t * 3);
+      lineEls.forEach((l) => l.e.setAttribute('opacity', step > l.depth / 6 ? (0.5 - l.depth * 0.06) : 0));
+
+      capt.textContent = `查询点 → 最近腧穴 ${best.t.textContent} · 平面距离 ${dist.toFixed(1)}px（真实体表须改测地距离）`;
+    }, 11000, { staticT: 0.2 });
+  };
+
+  /* ───────────────────── junchen-attention ─────────────────────
+     君臣佐使 → 注意力权重。列 = 药味，行为权重分配。
+  */
+  FIGURES['junchen-attention'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '君臣佐使的注意力权重分配');
+
+    const herbs = ['桂枝', '芍药', '生姜', '大枣', '甘草'];
+    const roles = ['君', '臣', '佐', '使'];
+    const weights = [
+      [0.52, 0.30, 0.08, 0.06, 0.04],
+      [0.18, 0.44, 0.20, 0.12, 0.06],
+      [0.08, 0.16, 0.40, 0.24, 0.12],
+      [0.04, 0.08, 0.18, 0.32, 0.38],
+    ];
+
+    const GX = 110, GY = 60, CW = 84, CH = 52;
+    svg.appendChild(mono(GX, 34, '方剂：桂枝汤（示例）'));
+
+    herbs.forEach((h, j) => {
+      svg.appendChild(el('text', {
+        x: GX + j * CW + CW / 2, y: GY - 10, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 14, fill: 'var(--ink)',
+      }, [txt(h)]));
+    });
+    roles.forEach((r, i) => {
+      svg.appendChild(el('text', {
+        x: GX - 22, y: GY + i * CH + CH / 2 + 6, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--cinnabar)',
+      }, [txt(r)]));
+    });
+
+    const cells = [];
+    for (let i = 0; i < roles.length; i += 1) {
+      for (let j = 0; j < herbs.length; j += 1) {
+        const r = el('rect', {
+          x: GX + j * CW + 3, y: GY + i * CH + 3, width: CW - 6, height: CH - 6, rx: 6,
+          fill: 'var(--jade)', opacity: 0,
+        });
+        svg.appendChild(r);
+        const tx = el('text', {
+          x: GX + j * CW + CW / 2, y: GY + i * CH + CH / 2 + 5, 'text-anchor': 'middle',
+          'font-family': 'var(--mono)', 'font-size': 12, fill: 'var(--ink)', opacity: 0,
+        });
+        tx.appendChild(txt(weights[i][j].toFixed(2)));
+        svg.appendChild(tx);
+        cells.push({ r, tx, w: weights[i][j], i, j });
+      }
+    }
+
+    // 右侧：软化的权重条
+    const bx = GX + herbs.length * CW + 40;
+    svg.appendChild(mono(bx, 34, '行归一化 (softmax)'));
+    const bars = roles.map((r, i) => {
+      const max = Math.max(...weights[i]);
+      const w = Math.max(...weights[i]);
+      const g = el('g', {});
+      g.appendChild(el('text', { x: bx, y: GY + i * 44 + 10, 'font-size': 12, fill: 'var(--muted)' }, [txt(r + ' 最大: ' + max.toFixed(2))]));
+      const bg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 180, height: 8, rx: 4, fill: 'var(--paper-2)' });
+      g.appendChild(bg);
+      const fg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 0, height: 8, rx: 4, fill: 'var(--jade)' });
+      g.appendChild(fg);
+      svg.appendChild(g);
+      return { fg, w: w, max };
+    });
+
+    svg.appendChild(label(20, H - 40, '结构先验：君药权重最大 → 可作为注意力掩码，让模型学不到"反结构"的配伍', { fill: 'var(--muted)' }));
+    const capt = label(20, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const focusRow = Math.floor(t * 4) % 4;
+      const local = clamp01(t * 4 - Math.floor(t * 4));
+      cells.forEach((c) => {
+        const on = c.i === focusRow;
+        c.r.setAttribute('opacity', on ? c.w * (0.55 + 0.45 * local) : c.w * 0.14);
+        c.tx.setAttribute('opacity', on ? 1 : 0.25);
+      });
+      bars.forEach((b, i) => {
+        b.fg.setAttribute('width', i === focusRow ? 180 * (b.max) * (0.5 + 0.5 * local) : 180 * b.max * 0.35);
+      });
+      capt.textContent = `当前角色：${roles[focusRow]} · 权重最高者为 ${herbs[weights[focusRow].indexOf(Math.max(...weights[focusRow]))]}`;
+    }, 8000, { staticT: 0.1 });
+  };
+
+  /* ───────────────────── 自动挂载 ───────────────────── */
+  function mount(root) {
+    const hosts = (root || document).querySelectorAll('[data-figure]');
+    for (const host of hosts) {
+      if (host.dataset.figureMounted === '1') continue;
+      const fn = FIGURES[host.dataset.figure];
+      if (!fn) {
+        host.innerHTML = `<p class="muted small">未知图形：<code>${host.dataset.figure}</code></p>`;
+        host.dataset.figureMounted = '1';
+        continue;
+      }
+      host.classList.add('figure');
+      fn(host);
+      host.dataset.figureMounted = '1';
+    }
+  }
+
+  window.TCMFigures = { FIGURES, mount };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => mount());
+  } else {
+    mount();
+  }
+  // 单页内动态插入的图形（章节页异步渲染）也能挂上
+  new MutationObserver(() => mount()).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+<script>
+(function(){
+  const deck=document.getElementById('deck');
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+
+  // ── 单帧模式：?shot=N 只渲染第 N 张，供无头浏览器逐帧截图 ──
+  // 截图器需要一张「干净的、正好一屏」的画面，所以这里藏掉其余幻灯片、
+  // 关掉滚动吸附、去掉 HUD，并在 title 上打就绪标记（渲染完成前截图会得到空白）。
+  const shot=new URLSearchParams(location.search).get('shot');
+  if(shot!==null){
+    const n=Math.max(0,Math.min(slides.length-1,Number(shot)||0));
+    slides.forEach((s,idx)=>{ if(idx!==n) s.style.display='none'; });
+    deck.style.overflow='hidden';
+    deck.style.scrollSnapType='none';
+    const hud=document.getElementById('hud');
+    if(hud) hud.style.display='none';
+    const target=slides[n];
+    if(target){ target.style.borderBottom='0'; target.scrollIntoView({block:'start'}); }
+    document.title='SHOT_READY '+n+' of '+slides.length;
+    if(window.TCMFigures)window.TCMFigures.mount(document);
+    // 只读视图：不绑键盘与点击，避免截图过程中页面状态改变
+    return;
+  }
+
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView();}
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    else if(e.key==='p'||e.key==='P'){e.preventDefault();print();}
+  });
+  deck.addEventListener('click',e=>{if(e.target.closest('a'))return;go(i+1);});
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)i=+en.target.dataset.i;});},{root:deck,threshold:.6});
+  slides.forEach(s=>io.observe(s));
+  if(window.TCMFigures)window.TCMFigures.mount(document);
+})();
+</script>
+</body>
+</html>

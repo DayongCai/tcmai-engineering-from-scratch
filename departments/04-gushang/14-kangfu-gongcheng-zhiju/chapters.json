@@ -1,54 +1,69 @@
 {
-  "slug": "14-kangfu-gongcheng-zhiju",
-  "title": "康复工程与支具学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-fanwei-fenlei",
-      "title": "康复工程的范围与分类",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-zhiju-lixue",
-      "title": "支具的生物力学原理",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-zhiju-xuanpei",
-      "title": "脊柱与四肢支具的选配",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-jiazhi-dapei",
-      "title": "假肢的基本结构与适配",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-jiaoxing-xiedian",
-      "title": "矫形鞋垫与足部辅具",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-fuzhu-pinggu",
-      "title": "辅助器具的评估与适配",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-threedp-dayin",
-      "title": "3D 打印在支具中的应用",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-yicongxing-pingjia",
-      "title": "支具依从性与效果评价",
-      "status": "📋"
-    }
-  ]
+ "note": "康复工程与支具学 派生课：8 章，单元取自父课（locator 派生·），本课内无复用。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gailun",
+   "title": "康复工程概论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-fenlei-cailiao",
+   "title": "支具分类与材料",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-jizhu-zhiju",
+   "title": "脊柱支具",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-shangzhi-zhiju",
+   "title": "上肢支具",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-xiazhi-zhiju",
+   "title": "下肢支具",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-zuxie-yali",
+   "title": "矫形鞋与压力治疗",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-zhuxing-fuzhu",
+   "title": "助行器、轮椅与转移辅具",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-pinggu-suifang",
+   "title": "适配评估与随访",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

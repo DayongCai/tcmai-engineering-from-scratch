@@ -1,0 +1,126 @@
+{
+ "note": "派生课：一章一主题；四位面＝章群结构分区。",
+ "chapters": {
+  "01-gudaixie-jichu": {
+   "n": 1,
+   "title": "骨代谢基础",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5",
+    "1.6"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "骨重建的平衡点在哪，治疗就打在哪",
+   "derivedFrom": "gushang-bing、zhongyao-xue"
+  },
+  "02-zhenduan-pinggu": {
+   "n": 2,
+   "title": "诊断与骨折风险评估",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "骨密度是数，不是结论",
+   "derivedFrom": "gushang-bing、kangfu-huli"
+  },
+  "03-guzhishusong": {
+   "n": 3,
+   "title": "骨质疏松症",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "无症状期才是干预窗口",
+   "derivedFrom": "gushang-bing、zhenggu"
+  },
+  "04-guguanjieyan": {
+   "n": 4,
+   "title": "骨关节炎",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "影像退变与疼痛常常不同步",
+   "derivedFrom": "gushang-bing、zhenggu"
+  },
+  "05-tuibian-yingxiang": {
+   "n": 5,
+   "title": "退行性变的影像评估",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "分级用于沟通，不用于代替症状",
+   "derivedFrom": "gushang-yingxiang、gushang-bing"
+  },
+  "06-yaowu": {
+   "n": 6,
+   "title": "药物与非药物治疗",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5",
+    "6.6"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "补钙不是治疗的全部",
+   "derivedFrom": "gushang-bing、linchuang-zhongyao"
+  },
+  "07-kangfu-diedao": {
+   "n": 7,
+   "title": "运动康复与跌倒预防",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "防跌倒比补钙更快见效",
+   "derivedFrom": "kangfu-huli、laonian-huli"
+  },
+  "08-changqi-guanli": {
+   "n": 8,
+   "title": "长期管理与随访",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "依从性决定结局",
+   "derivedFrom": "kangfu-huli、laonian-huli"
+  }
+ }
+}

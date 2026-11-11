@@ -136,10 +136,10 @@ test('未知症状不编结论（命中率为 0 时不得分）', () => {
 });
 
 // ── 重名合并（概率倾向）──
-test('全量合并：103 条记录 → 96 个证名，7 组合并掉 7 条', () => {
+test('全量合并：104 条记录 → 97 个证名，7 组合并掉 7 条', () => {
   const t = instance.mergeTable();
-  assert.strictEqual(t.records, 103, `DSU 记录数变了：${t.records}`);
-  assert.strictEqual(t.distinctNames, 96, `不同证名数变了：${t.distinctNames}`);
+  assert.strictEqual(t.records, 104, `DSU 记录数变了：${t.records}`);
+  assert.strictEqual(t.distinctNames, 97, `不同证名数变了：${t.distinctNames}`);
   assert.strictEqual(t.duplicateGroups, 7, `重名组数变了：${t.duplicateGroups}`);
   assert.strictEqual(t.extrasMerged, 7, `合并掉的条数变了：${t.extrasMerged}`);
   // 记录守恒：合并是"归组"，不是"删数据"
@@ -205,7 +205,7 @@ test('合并不改变 /diag 的答案（canonical 用于取病/ICD）', () => {
   const r = instance.diag('恶寒,发热,无汗');
   assert.strictEqual(r.syndrome.label, '风寒束表证');
   assert.strictEqual(r.icd, 'CA00');
-  assert.strictEqual(r.merge.dsuRecords, 103);
+  assert.strictEqual(r.merge.dsuRecords, 104);
 });
 
 console.log(`\n  ${passed} 通过 · ${failures.length} 失败`);

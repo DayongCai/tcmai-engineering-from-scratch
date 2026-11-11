@@ -22,8 +22,21 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/04-gushang/07-zhongyi-jinshang-xue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 45,
+    "words": 8400,
+    "status": "wip",
+    "layer": "external-source",
+    "origin": "external",
+    "source": "standards/materials/textbooks-batch/external-registry.json#shangke-dacheng",
+    "external": {
+      "id": "shangke-dacheng",
+      "title": "傷科大成",
+      "url": "https://jicheng.tw/tcm/book/%E5%82%B7%E7%A7%91%E5%A4%A7%E6%88%90/index.html",
+      "sha256": "45a132a17492ca5d6ffa747d9df3095ea65ff07a5ab3cc04b03a760aa645bbb0",
+      "baseText": "",
+      "fetchedAt": "2026-10-21",
+      "coverage": "古籍可对上的部分；现代内容未覆盖"
+    },
+    "extractedAt": "2026-10-21"
   }
 }

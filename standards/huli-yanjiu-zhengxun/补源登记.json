@@ -1,0 +1,343 @@
+{
+ "note": "护理研究与循证护理 外源补源登记：每条记来源、URL、sha256、页数与逐字校勘结论。查不到的句子不入库（约定见 补源约定.md）。",
+ "convention": "补源约定.md",
+ "sources": {
+  "PRISMA-2020-expanded": {
+   "file": "PRISMA-2020-expanded-checklist.pdf",
+   "title": "PRISMA 2020 expanded checklist",
+   "series": "PRISMA 2020 statement（Page MJ et al., BMJ 2021;372:n71）配套的扩展核对表",
+   "revised": "2021",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "exists": true,
+   "sha256": "f8239930587fd8931686e63263c06524d88749aa489564923d7d3edf991377a5",
+   "bytes": 207932,
+   "pages": 9,
+   "textChars": 71882,
+   "textLayer": true
+  },
+  "PRISMA-2020-checklist": {
+   "file": "PRISMA-2020-checklist.pdf",
+   "title": "PRISMA 2020 Checklist",
+   "series": "PRISMA 2020 statement 27 条核对表",
+   "revised": "2020",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_checklist.pdf",
+   "exists": true,
+   "sha256": "ba20335e076acfc5acb91eef2146989b5374122ca82026664c04e7e0b856f029",
+   "bytes": 66231,
+   "pages": 2,
+   "textChars": 14049,
+   "textLayer": true
+  },
+  "WHO-Guideline-Contextualization": {
+   "file": "WHO-Evidence-based-guidelines-capacities.pdf",
+   "title": "Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization",
+   "series": "World Health Organization 指南本土化手册（含 GRADE 与 GRADE-ADOLOPMENT）",
+   "revised": "2023",
+   "url": "https://iris.who.int/server/api/core/bitstreams/63282011-3089-4189-b09d-40fc555fbafe/content",
+   "exists": true,
+   "sha256": "ebb271216ef581f6fc28d0c6772c938f009f019c33f7ee871533d6fa3e676abf",
+   "bytes": 1221266,
+   "pages": 60,
+   "textChars": 261346,
+   "textLayer": true
+  }
+ },
+ "clauses": [
+  {
+   "id": "P01",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第1条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第1条"
+  },
+  {
+   "id": "P02",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第2条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第2条"
+  },
+  {
+   "id": "P03",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第3条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第3条"
+  },
+  {
+   "id": "P04",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第4条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第4条"
+  },
+  {
+   "id": "P05",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第5条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第5条"
+  },
+  {
+   "id": "P06",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第6条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第6条"
+  },
+  {
+   "id": "P07",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第7条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第7条"
+  },
+  {
+   "id": "P08",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第8条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第8条"
+  },
+  {
+   "id": "P09",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第9条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第9条"
+  },
+  {
+   "id": "P10",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第10条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第10条"
+  },
+  {
+   "id": "P11",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第11条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第11条"
+  },
+  {
+   "id": "P12",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第12条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第12条"
+  },
+  {
+   "id": "P13",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第13条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第13条"
+  },
+  {
+   "id": "P14",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第14条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第14条"
+  },
+  {
+   "id": "P15",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第15条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第15条"
+  },
+  {
+   "id": "P16",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第16条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第16条"
+  },
+  {
+   "id": "P17",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第17条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第17条"
+  },
+  {
+   "id": "P18",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第18条",
+   "sourceTitle": "PRISMA 2020 expanded checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 expanded checklist 第18条"
+  },
+  {
+   "id": "M01",
+   "source": "PRISMA-2020-checklist",
+   "clause": "第1条",
+   "sourceTitle": "PRISMA 2020 Checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 Checklist 第1条"
+  },
+  {
+   "id": "M02",
+   "source": "PRISMA-2020-checklist",
+   "clause": "第2条",
+   "sourceTitle": "PRISMA 2020 Checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 Checklist 第2条"
+  },
+  {
+   "id": "M03",
+   "source": "PRISMA-2020-checklist",
+   "clause": "第3条",
+   "sourceTitle": "PRISMA 2020 Checklist",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_checklist.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·PRISMA 2020 Checklist 第3条"
+  },
+  {
+   "id": "W01",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第1条",
+   "sourceTitle": "Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization",
+   "url": "https://iris.who.int/server/api/core/bitstreams/63282011-3089-4189-b09d-40fc555fbafe/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization 第1条"
+  },
+  {
+   "id": "W02",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第2条",
+   "sourceTitle": "Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization",
+   "url": "https://iris.who.int/server/api/core/bitstreams/63282011-3089-4189-b09d-40fc555fbafe/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization 第2条"
+  },
+  {
+   "id": "W03",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第3条",
+   "sourceTitle": "Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization",
+   "url": "https://iris.who.int/server/api/core/bitstreams/63282011-3089-4189-b09d-40fc555fbafe/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization 第3条"
+  },
+  {
+   "id": "W04",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第4条",
+   "sourceTitle": "Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization",
+   "url": "https://iris.who.int/server/api/core/bitstreams/63282011-3089-4189-b09d-40fc555fbafe/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization 第4条"
+  },
+  {
+   "id": "W05",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第5条",
+   "sourceTitle": "Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization",
+   "url": "https://iris.who.int/server/api/core/bitstreams/63282011-3089-4189-b09d-40fc555fbafe/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization 第5条"
+  },
+  {
+   "id": "W06",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第6条",
+   "sourceTitle": "Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization",
+   "url": "https://iris.who.int/server/api/core/bitstreams/63282011-3089-4189-b09d-40fc555fbafe/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization 第6条"
+  },
+  {
+   "id": "W07",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第7条",
+   "sourceTitle": "Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization",
+   "url": "https://iris.who.int/server/api/core/bitstreams/63282011-3089-4189-b09d-40fc555fbafe/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization 第7条"
+  },
+  {
+   "id": "W08",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第8条",
+   "sourceTitle": "Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization",
+   "url": "https://iris.who.int/server/api/core/bitstreams/63282011-3089-4189-b09d-40fc555fbafe/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization 第8条"
+  }
+ ],
+ "counts": {
+  "sources": 3,
+  "clauses": 29,
+  "verified": 29,
+  "unverified": 0
+ }
+}

@@ -1,0 +1,157 @@
+{
+  "chapter": "10-zabing-peiwu",
+  "slideCount": 30,
+  "segmentCount": 10,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 22
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 62
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 204
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 101
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 279
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 287
+    },
+    {
+      "n": 7,
+      "segment": 6,
+      "chars": 384
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 346
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 276
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 273
+    },
+    {
+      "n": 11,
+      "segment": 6,
+      "chars": 335
+    },
+    {
+      "n": 12,
+      "segment": 6,
+      "chars": 222
+    },
+    {
+      "n": 13,
+      "segment": 6,
+      "chars": 541
+    },
+    {
+      "n": 14,
+      "segment": 6,
+      "chars": 6
+    },
+    {
+      "n": 15,
+      "segment": 6,
+      "chars": 524
+    },
+    {
+      "n": 16,
+      "segment": 6,
+      "chars": 351
+    },
+    {
+      "n": 17,
+      "segment": 6,
+      "chars": 436
+    },
+    {
+      "n": 18,
+      "segment": 6,
+      "chars": 318
+    },
+    {
+      "n": 19,
+      "segment": 6,
+      "chars": 328
+    },
+    {
+      "n": 20,
+      "segment": 6,
+      "chars": 183
+    },
+    {
+      "n": 21,
+      "segment": 6,
+      "chars": 349
+    },
+    {
+      "n": 22,
+      "segment": 6,
+      "chars": 342
+    },
+    {
+      "n": 23,
+      "segment": 7,
+      "chars": 386
+    },
+    {
+      "n": 24,
+      "segment": 7,
+      "chars": 90
+    },
+    {
+      "n": 25,
+      "segment": 8,
+      "chars": 271
+    },
+    {
+      "n": 26,
+      "segment": 8,
+      "chars": 274
+    },
+    {
+      "n": 27,
+      "segment": 9,
+      "chars": 414
+    },
+    {
+      "n": 28,
+      "segment": 9,
+      "chars": 416
+    },
+    {
+      "n": 29,
+      "segment": 9,
+      "chars": 229
+    },
+    {
+      "n": 30,
+      "segment": 10,
+      "chars": 52
+    }
+  ]
+}

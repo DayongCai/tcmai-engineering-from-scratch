@@ -1,0 +1,349 @@
+{
+ "slug": "12-yaoli-xue",
+ "title": "药理学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-introduction",
+   "title": "第1章 绪论",
+   "unit": "第一篇 总论",
+   "status": "⏳"
+  },
+  {
+   "n": 2,
+   "slug": "02-pharmacodynamics",
+   "title": "第2章 药物效应动力学——药效学",
+   "unit": "第一篇 总论",
+   "status": "⏳"
+  },
+  {
+   "n": 3,
+   "slug": "03-pharmacokinetics",
+   "title": "第3章 药物代谢动力学——药动学",
+   "unit": "第一篇 总论",
+   "status": "⏳"
+  },
+  {
+   "n": 4,
+   "slug": "04-factors-affecting-drug-response",
+   "title": "第4章 影响药物效应的因素",
+   "unit": "第一篇 总论",
+   "status": "⏳"
+  },
+  {
+   "n": 5,
+   "slug": "05-autonomic-nervous-system-overview",
+   "title": "第5章 传出神经系统药理概论",
+   "unit": "第二篇 作用于传出神经系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 6,
+   "slug": "06-cholinergic-agonists",
+   "title": "第6章 拟胆碱药",
+   "unit": "第二篇 作用于传出神经系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 7,
+   "slug": "07-organophosphates-and-cholinesterase-reactivating-agents",
+   "title": "第7章 有机磷酸酯类及胆碱酯酶复活药",
+   "unit": "第二篇 作用于传出神经系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 8,
+   "slug": "08-cholinergic-antagonists",
+   "title": "第8章 抗胆碱药",
+   "unit": "第二篇 作用于传出神经系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 9,
+   "slug": "09-adrenergic-agonists",
+   "title": "第9章 拟肾上腺素药",
+   "unit": "第二篇 作用于传出神经系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 10,
+   "slug": "10-adrenergic-antagonists",
+   "title": "第10章 抗肾上腺素药",
+   "unit": "第二篇 作用于传出神经系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 11,
+   "slug": "11-local-anesthetics",
+   "title": "第11章 局部麻醉药",
+   "unit": "第二篇 作用于传出神经系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 12,
+   "slug": "12-general-anesthetics",
+   "title": "第12章 全身麻醉药",
+   "unit": "第三篇 作用于中枢神经系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 13,
+   "slug": "13-sedative-hypnotics",
+   "title": "第13章 镇静催眠药",
+   "unit": "第三篇 作用于中枢神经系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 14,
+   "slug": "14-antiepileptic-and-anticonvulsant-drugs",
+   "title": "第14章 抗癫痫药与抗惊厥药",
+   "unit": "第三篇 作用于中枢神经系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 15,
+   "slug": "15-antipsychotic-drugs",
+   "title": "第15章 抗精神失常药",
+   "unit": "第三篇 作用于中枢神经系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 16,
+   "slug": "16-drugs-for-neurodegenerative-diseases",
+   "title": "第16章 治疗中枢神经系统退行性疾病药",
+   "unit": "第三篇 作用于中枢神经系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 17,
+   "slug": "17-antipyretic-analgesic-and-anti-inflammatory-drugs",
+   "title": "第17章 解热镇痛抗炎药与抗痛风药",
+   "unit": "第三篇 作用于中枢神经系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 18,
+   "slug": "18-opioid-analgesics",
+   "title": "第18章 镇痛药",
+   "unit": "第三篇 作用于中枢神经系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 19,
+   "slug": "19-central-nervous-system-stimulants",
+   "title": "第19章 中枢兴奋药",
+   "unit": "第三篇 作用于中枢神经系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 20,
+   "slug": "20-histamine-and-antihistamines",
+   "title": "第20章 组胺及抗组胺药",
+   "unit": "第四篇 影响自体活性物质的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 21,
+   "slug": "21-other-autacoid-drugs",
+   "title": "第21章 其他影响自体活性物质的药物",
+   "unit": "第四篇 影响自体活性物质的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 22,
+   "slug": "22-drugs-acting-on-cardiovascular-ion-channels",
+   "title": "第22章 作用于心血管系统离子通道的药物",
+   "unit": "第五篇 作用于心血管系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 23,
+   "slug": "23-drugs-for-chronic-heart-failure",
+   "title": "第23章 治疗慢性心功能不全的药物",
+   "unit": "第五篇 作用于心血管系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 24,
+   "slug": "24-antihypertensive-drugs",
+   "title": "第24章 抗高血压药",
+   "unit": "第五篇 作用于心血管系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 25,
+   "slug": "25-antianginal-drugs",
+   "title": "第25章 抗心绞痛药",
+   "unit": "第五篇 作用于心血管系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 26,
+   "slug": "26-antiarrhythmic-drugs",
+   "title": "第26章 抗心律失常药",
+   "unit": "第五篇 作用于心血管系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 27,
+   "slug": "27-antiatherosclerotic-drugs",
+   "title": "第27章 抗动脉粥样硬化药",
+   "unit": "第五篇 作用于心血管系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 28,
+   "slug": "28-diuretics-and-dehydrating-agents",
+   "title": "第28章 利尿药与脱水药",
+   "unit": "第六篇 作用于内脏系统和血液系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 29,
+   "slug": "29-gastrointestinal-drugs",
+   "title": "第29章 消化系统药",
+   "unit": "第六篇 作用于内脏系统和血液系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 30,
+   "slug": "30-respiratory-system-drugs",
+   "title": "第30章 呼吸系统药",
+   "unit": "第六篇 作用于内脏系统和血液系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 31,
+   "slug": "31-uterine-stimulants",
+   "title": "第31章 子宫兴奋药",
+   "unit": "第六篇 作用于内脏系统和血液系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 32,
+   "slug": "32-antianemic-drugs",
+   "title": "第32章 抗贫血药",
+   "unit": "第六篇 作用于内脏系统和血液系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 33,
+   "slug": "33-drugs-affecting-coagulation",
+   "title": "第33章 作用于凝血系统药物",
+   "unit": "第六篇 作用于内脏系统和血液系统的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 34,
+   "slug": "34-adrenocortical-hormones",
+   "title": "第34章 肾上腺皮质激素类药",
+   "unit": "第七篇 作用于内分泌系统药物",
+   "status": "⏳"
+  },
+  {
+   "n": 35,
+   "slug": "35-thyroid-hormones-and-antithyroid-drugs",
+   "title": "第35章 甲状腺激素与抗甲状腺药",
+   "unit": "第七篇 作用于内分泌系统药物",
+   "status": "⏳"
+  },
+  {
+   "n": 36,
+   "slug": "36-antihyperglycemic-drugs",
+   "title": "第36章 降血糖药",
+   "unit": "第七篇 作用于内分泌系统药物",
+   "status": "⏳"
+  },
+  {
+   "n": 37,
+   "slug": "37-sex-hormones-and-contraceptives",
+   "title": "第37章 性激素类药及避孕药",
+   "unit": "第七篇 作用于内分泌系统药物",
+   "status": "⏳"
+  },
+  {
+   "n": 38,
+   "slug": "38-antimicrobial-drugs-overview",
+   "title": "第38章 抗病原微生物药物概论",
+   "unit": "第八篇 化学治疗药物",
+   "status": "⏳"
+  },
+  {
+   "n": 39,
+   "slug": "39-synthetic-antibacterial-drugs",
+   "title": "第39章 人工合成抗菌药",
+   "unit": "第八篇 化学治疗药物",
+   "status": "⏳"
+  },
+  {
+   "n": 40,
+   "slug": "40-beta-lactam-antibiotics",
+   "title": "第40章 β-内酰胺类抗生素",
+   "unit": "第八篇 化学治疗药物",
+   "status": "⏳"
+  },
+  {
+   "n": 41,
+   "slug": "41-macrolides-lincosamides-and-polypeptide-antibiotics",
+   "title": "第41章 大环内酯类、林可霉素类及多肽类抗生素",
+   "unit": "第八篇 化学治疗药物",
+   "status": "⏳"
+  },
+  {
+   "n": 42,
+   "slug": "42-aminoglycoside-antibiotics",
+   "title": "第42章 氨基糖苷类抗生素",
+   "unit": "第八篇 化学治疗药物",
+   "status": "⏳"
+  },
+  {
+   "n": 43,
+   "slug": "43-tetracyclines-and-chloramphenicol",
+   "title": "第43章 四环素类与氯霉素类",
+   "unit": "第八篇 化学治疗药物",
+   "status": "⏳"
+  },
+  {
+   "n": 44,
+   "slug": "44-antifungal-and-antiviral-drugs",
+   "title": "第44章 抗真菌药与抗病毒药",
+   "unit": "第八篇 化学治疗药物",
+   "status": "⏳"
+  },
+  {
+   "n": 45,
+   "slug": "45-antituberculosis-and-antileprosy-drugs",
+   "title": "第45章 抗结核病药及抗麻风病药",
+   "unit": "第八篇 化学治疗药物",
+   "status": "⏳"
+  },
+  {
+   "n": 46,
+   "slug": "46-antiparasitic-drugs",
+   "title": "第46章 抗寄生虫药",
+   "unit": "第八篇 化学治疗药物",
+   "status": "⏳"
+  },
+  {
+   "n": 47,
+   "slug": "47-anticancer-drugs",
+   "title": "第47章 抗恶性肿瘤药",
+   "unit": "第八篇 化学治疗药物",
+   "status": "⏳"
+  },
+  {
+   "n": 48,
+   "slug": "48-immunosuppressants",
+   "title": "第48章 免疫抑制药",
+   "unit": "第九篇 影响免疫功能的药物",
+   "status": "⏳"
+  },
+  {
+   "n": 49,
+   "slug": "49-immunostimulants",
+   "title": "第49章 免疫增强药",
+   "unit": "第九篇 影响免疫功能的药物",
+   "status": "⏳"
+  }
+ ]
+}

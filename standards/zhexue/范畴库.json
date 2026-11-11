@@ -1,0 +1,321 @@
+{
+ "source": {
+  "neijing": "黄帝内经全文（素问81篇 · 灵枢81篇）.md",
+  "clinical": "standards/{shanghan,jingui,wenbing}",
+  "script": "scripts/build_zhexue_layer.py"
+ },
+ "counts": {
+  "pian": 162,
+  "neijingHanzi": 490232,
+  "clinicalTiao": 2792,
+  "cats": 12,
+  "units": 10,
+  "hanzi": 919
+ },
+ "cats": [
+  {
+   "name": "气",
+   "gloss": "本体：万物的质料与动力",
+   "terms": [
+    "气"
+   ],
+   "neijing": 10855,
+   "clinical": 1520,
+   "per10kNj": 221.4,
+   "topPian": [
+    {
+     "pian": "素问·六元正纪大论",
+     "count": 1498
+    },
+    {
+     "pian": "素问·至真要大论",
+     "count": 591
+    },
+    {
+     "pian": "素问·五常政大论",
+     "count": 501
+    }
+   ]
+  },
+  {
+   "name": "道",
+   "gloss": "本体：不可名而可循的秩序",
+   "terms": [
+    "道"
+   ],
+   "neijing": 1479,
+   "clinical": 30,
+   "per10kNj": 30.2,
+   "topPian": [
+    {
+     "pian": "素问·至真要大论",
+     "count": 95
+    },
+    {
+     "pian": "素问·玉机真藏论",
+     "count": 41
+    },
+    {
+     "pian": "素问·气交变大论",
+     "count": 41
+    }
+   ]
+  },
+  {
+   "name": "天地",
+   "gloss": "关系：人之上的两个坐标",
+   "terms": [
+    "天",
+    "地"
+   ],
+   "neijing": 3695,
+   "clinical": 143,
+   "per10kNj": 75.4,
+   "topPian": [
+    {
+     "pian": "素问·六元正纪大论",
+     "count": 434
+    },
+    {
+     "pian": "素问·本病论",
+     "count": 325
+    },
+    {
+     "pian": "素问·五常政大论",
+     "count": 188
+    }
+   ]
+  },
+  {
+   "name": "阴阳",
+   "gloss": "关系：两分与互根",
+   "terms": [
+    "阴阳",
+    "阴",
+    "阳"
+   ],
+   "neijing": 9797,
+   "clinical": 1370,
+   "per10kNj": 199.8,
+   "topPian": [
+    {
+     "pian": "素问·六元正纪大论",
+     "count": 728
+    },
+    {
+     "pian": "素问·至真要大论",
+     "count": 330
+    },
+    {
+     "pian": "灵枢·终始",
+     "count": 295
+    }
+   ]
+  },
+  {
+   "name": "五行",
+   "gloss": "关系：分类与生克",
+   "terms": [
+    "五行"
+   ],
+   "neijing": 129,
+   "clinical": 0,
+   "per10kNj": 2.6,
+   "topPian": [
+    {
+     "pian": "素问·五常政大论",
+     "count": 13
+    },
+    {
+     "pian": "灵枢·阴阳二十五人",
+     "count": 9
+    },
+    {
+     "pian": "素问·阴阳应象大论",
+     "count": 8
+    }
+   ]
+  },
+  {
+   "name": "四时",
+   "gloss": "关系：时间结构",
+   "terms": [
+    "四时",
+    "春",
+    "夏",
+    "秋",
+    "冬"
+   ],
+   "neijing": 1807,
+   "clinical": 527,
+   "per10kNj": 36.9,
+   "topPian": [
+    {
+     "pian": "素问·金匮真言论",
+     "count": 100
+    },
+    {
+     "pian": "素问·藏气法时论",
+     "count": 83
+    },
+    {
+     "pian": "灵枢·顺气一日分为四时",
+     "count": 66
+    }
+   ]
+  },
+  {
+   "name": "形神",
+   "gloss": "心身：形与神的分合",
+   "terms": [
+    "形",
+    "神"
+   ],
+   "neijing": 1431,
+   "clinical": 139,
+   "per10kNj": 29.2,
+   "topPian": [
+    {
+     "pian": "灵枢·寿夭刚柔",
+     "count": 60
+    },
+    {
+     "pian": "素问·调经论",
+     "count": 57
+    },
+    {
+     "pian": "素问·八正神明论",
+     "count": 48
+    }
+   ]
+  },
+  {
+   "name": "志意",
+   "gloss": "心身：情志与心神",
+   "terms": [
+    "志",
+    "意",
+    "心"
+   ],
+   "neijing": 1900,
+   "clinical": 575,
+   "per10kNj": 38.8,
+   "topPian": [
+    {
+     "pian": "灵枢·经脉",
+     "count": 95
+    },
+    {
+     "pian": "素问·至真要大论",
+     "count": 84
+    },
+    {
+     "pian": "灵枢·本藏",
+     "count": 65
+    }
+   ]
+  },
+  {
+   "name": "常变",
+   "gloss": "方法：常道与变局",
+   "terms": [
+    "常",
+    "变"
+   ],
+   "neijing": 2151,
+   "clinical": 180,
+   "per10kNj": 43.9,
+   "topPian": [
+    {
+     "pian": "素问·六元正纪大论",
+     "count": 213
+    },
+    {
+     "pian": "素问·气交变大论",
+     "count": 133
+    },
+    {
+     "pian": "素问·五常政大论",
+     "count": 104
+    }
+   ]
+  },
+  {
+   "name": "顺逆",
+   "gloss": "方法：顺治与逆治",
+   "terms": [
+    "逆",
+    "顺"
+   ],
+   "neijing": 1083,
+   "clinical": 232,
+   "per10kNj": 22.1,
+   "topPian": [
+    {
+     "pian": "素问·至真要大论",
+     "count": 68
+    },
+    {
+     "pian": "灵枢·玉版",
+     "count": 52
+    },
+    {
+     "pian": "素问·六元正纪大论",
+     "count": 41
+    }
+   ]
+  },
+  {
+   "name": "标本",
+   "gloss": "方法：先后与缓急",
+   "terms": [
+    "标本",
+    "本",
+    "标"
+   ],
+   "neijing": 1028,
+   "clinical": 188,
+   "per10kNj": 21.0,
+   "topPian": [
+    {
+     "pian": "素问·至真要大论",
+     "count": 112
+    },
+    {
+     "pian": "素问·标本病传论",
+     "count": 109
+    },
+    {
+     "pian": "灵枢·经脉",
+     "count": 91
+    }
+   ]
+  },
+  {
+   "name": "权衡",
+   "gloss": "方法：度量的思维",
+   "terms": [
+    "权衡",
+    "权衡",
+    "察"
+   ],
+   "neijing": 383,
+   "clinical": 15,
+   "per10kNj": 7.8,
+   "topPian": [
+    {
+     "pian": "素问·脉要精微论",
+     "count": 28
+    },
+    {
+     "pian": "素问·至真要大论",
+     "count": 15
+    },
+    {
+     "pian": "素问·阴阳应象大论",
+     "count": 13
+    }
+   ]
+  }
+ ]
+}

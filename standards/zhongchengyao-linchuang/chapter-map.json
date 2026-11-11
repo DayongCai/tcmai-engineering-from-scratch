@@ -1,0 +1,171 @@
+{
+ "note": "派生课：一章一主题，单元按关键词从父课选题；无单元复用。",
+ "chapters": {
+  "01-gailun-fenlei": {
+   "n": 1,
+   "title": "中成药概论与分类",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "先分清「成药」与「汤剂」的差别",
+   "derivedFrom": "linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-jianding、zhongyao-xue、zhongyao-yaoji、zhongyao-yaoli"
+  },
+  "02-jixing-gongyi": {
+   "n": 2,
+   "title": "剂型与制备工艺",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "剂型决定释放，工艺决定批间一致",
+   "derivedFrom": "linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-jianding、zhongyao-xue、zhongyao-yaoji、zhongyao-yaoli"
+  },
+  "03-zhiliang-biaozhun": {
+   "n": 3,
+   "title": "质量标准与检验",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "成药的合规底线在标准",
+   "derivedFrom": "linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-jianding、zhongyao-xue、zhongyao-yaoji、zhongyao-yaoli"
+  },
+  "04-zhusheji": {
+   "n": 4,
+   "title": "中药注射剂与特殊剂型",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "风险最高的剂型，要求也最严",
+   "derivedFrom": "linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-jianding、zhongyao-xue、zhongyao-yaoji、zhongyao-yaoli"
+  },
+  "05-neike-yongyao": {
+   "n": 5,
+   "title": "内科常用中成药",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5",
+    "5.6"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "按病证选药，而不是按药名选",
+   "derivedFrom": "linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-jianding、zhongyao-xue、zhongyao-yaoji、zhongyao-yaoli"
+  },
+  "06-fuke-erke": {
+   "n": 6,
+   "title": "妇科与儿科用药",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "人群差异改变剂量与疗程",
+   "derivedFrom": "linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-jianding、zhongyao-xue、zhongyao-yaoji、zhongyao-yaoli"
+  },
+  "07-gushang-pifu": {
+   "n": 7,
+   "title": "骨伤与皮肤科用药",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4",
+    "7.5"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "外用与内服的边界",
+   "derivedFrom": "linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-jianding、zhongyao-xue、zhongyao-yaoji、zhongyao-yaoli"
+  },
+  "08-lianhe-yongyao": {
+   "n": 8,
+   "title": "联合用药与相互作用",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4",
+    "8.5"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "联用是最常见的风险来源",
+   "derivedFrom": "linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-jianding、zhongyao-xue、zhongyao-yaoji、zhongyao-yaoli"
+  },
+  "09-buliang-fanying": {
+   "n": 9,
+   "title": "不良反应与监测",
+   "units": [
+    "9.1",
+    "9.2",
+    "9.3",
+    "9.4",
+    "9.5",
+    "9.6",
+    "9.7",
+    "9.8",
+    "9.9"
+   ],
+   "srcChapters": [
+    "派生#9"
+   ],
+   "why": "中成药也有剂量与毒性边界",
+   "derivedFrom": "linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-jianding、zhongyao-xue、zhongyao-yaoji、zhongyao-yaoli"
+  },
+  "10-heli-yongyao": {
+   "n": 10,
+   "title": "合理使用与处方审核",
+   "units": [
+    "10.1",
+    "10.2",
+    "10.3",
+    "10.4",
+    "10.5",
+    "10.6"
+   ],
+   "srcChapters": [
+    "派生#10"
+   ],
+   "why": "把前面九章收成一张可执行的核对表",
+   "derivedFrom": "linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-jianding、zhongyao-xue、zhongyao-yaoji、zhongyao-yaoli"
+  }
+ }
+}

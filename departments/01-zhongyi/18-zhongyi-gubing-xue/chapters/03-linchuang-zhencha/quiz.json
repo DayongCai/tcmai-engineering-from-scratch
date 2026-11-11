@@ -1,0 +1,79 @@
+{
+  "lesson": "03-linchuang-zhencha",
+  "title": "临床诊查：影像不是辅助，是判据",
+  "subject": "18-zhongyi-gubing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在骨科问诊中，最有分诊价值的一项疼痛特征是？",
+      "options": [
+        "夜间静息痛",
+        "活动后痛",
+        "按压痛",
+        "牵涉痛"
+      ],
+      "correct": 0,
+      "explanation": "夜间静息痛是肿瘤与感染的共同信号，是分开「劳损」与「骨病」的第一刀。"
+    },
+    {
+      "stage": "check",
+      "question": "急性骨髓炎早期 X 线检查的特点是？",
+      "options": [
+        "可为阴性，不能凭阴性排除",
+        "一定阳性",
+        "可见死骨",
+        "可见骨膜反应"
+      ],
+      "correct": 0,
+      "explanation": "教材 3.4.1：骨质破坏常需 2 周以上才显影。"
+    },
+    {
+      "stage": "check",
+      "question": "本章的数值命中数为？",
+      "options": [
+        "62 处（全书最高）",
+        "0 处",
+        "4 处",
+        "47 处"
+      ],
+      "correct": 0,
+      "explanation": "集中在角度、长度、T 值、时限等测量项。"
+    },
+    {
+      "stage": "check",
+      "question": "肿瘤定性的金标准是？",
+      "options": [
+        "病理活检",
+        "X 线",
+        "CT",
+        "MRI"
+      ],
+      "correct": 0,
+      "explanation": "教材 3.4.2 写得很硬：活检是金标准。"
+    },
+    {
+      "stage": "post",
+      "question": "MRI 相对 X 线与 CT 的优势是？",
+      "options": [
+        "骨髓水肿、软组织侵犯、早期坏死",
+        "看骨皮质最清楚",
+        "便宜快速",
+        "无禁忌"
+      ],
+      "correct": 0,
+      "explanation": "教材 3.4.1 四种影像各回答不同问题。"
+    },
+    {
+      "stage": "post",
+      "question": "血沉与 CRP 主要提示什么？",
+      "options": [
+        "感染活动度",
+        "骨量",
+        "肿瘤性质",
+        "神经受压"
+      ],
+      "correct": 0,
+      "explanation": "实验室四项之一；碱性磷酸酶提示成骨活跃。"
+    }
+  ]
+}

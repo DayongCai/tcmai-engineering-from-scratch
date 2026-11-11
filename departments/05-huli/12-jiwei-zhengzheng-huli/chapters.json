@@ -1,66 +1,96 @@
 {
-  "slug": "12-jiwei-zhengzheng-huli",
-  "title": "急危重症护理学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-fenzhen-youxian",
-      "title": "急诊的分诊与优先级",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-fusu-chuchan",
-      "title": "心肺复苏与除颤",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-xiuke-fusu",
-      "title": "休克与液体复苏",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-huxishuai-tongqi",
-      "title": "呼吸衰竭与机械通气",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-zhongdu-huli",
-      "title": "急性中毒的护理",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-chuangshang-huli",
-      "title": "创伤与多发伤的护理",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-jiance-jishu",
-      "title": "重症监护的监测技术",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-zhentong-zhenwang",
-      "title": "镇静镇痛与谵妄管理",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-zhuanyun-anquan",
-      "title": "危重患者的转运",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-lunli-juece",
-      "title": "抢救记录与伦理决策",
-      "status": "📋"
-    }
-  ]
+ "slug": "12-jiwei-zhengzheng-huli",
+ "title": "急危重症护理学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-fenzhen-youxian",
+   "title": "分诊、优先级与团队协作",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-fenzhen-youxian/docs/zh.md",
+   "code": "chapters/01-fenzhen-youxian/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-fusu-chuchan",
+   "title": "心搏骤停与心肺复苏、除颤",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-fusu-chuchan/docs/zh.md",
+   "code": "chapters/02-fusu-chuchan/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-xiuke-fusu",
+   "title": "休克、严重过敏与液体复苏",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-xiuke-fusu/docs/zh.md",
+   "code": "chapters/03-xiuke-fusu/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-huxishuai-tongqi",
+   "title": "呼吸急症、呼吸衰竭与通气支持",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-huxishuai-tongqi/docs/zh.md",
+   "code": "chapters/04-huxishuai-tongqi/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-zhongdu-huli",
+   "title": "急性中毒与理化因素损伤",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-zhongdu-huli/docs/zh.md",
+   "code": "chapters/05-zhongdu-huli/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-chuangshang-huli",
+   "title": "创伤与多发伤的重症护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-chuangshang-huli/docs/zh.md",
+   "code": "chapters/06-chuangshang-huli/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-jiance-jishu",
+   "title": "重症监测、常用技术与配合",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-jiance-jishu/docs/zh.md",
+   "code": "chapters/07-jiance-jishu/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-zhentong-zhenwang",
+   "title": "意识障碍、抽搐与谵妄管理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-zhentong-zhenwang/docs/zh.md",
+   "code": "chapters/08-zhentong-zhenwang/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-zhuanyun-anquan",
+   "title": "特殊人群急症与转运安全",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-zhuanyun-anquan/docs/zh.md",
+   "code": "chapters/09-zhuanyun-anquan/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-lunli-juece",
+   "title": "抢救记录、质量与伦理决策",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-lunli-juece/docs/zh.md",
+   "code": "chapters/10-lunli-juece/code/main.js"
+  }
+ ]
 }

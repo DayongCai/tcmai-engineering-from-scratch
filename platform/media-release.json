@@ -1,0 +1,69 @@
+{
+  "schema": "tcm-media-index/1",
+  "generatedAt": "2026-11-11T20:45:18.830Z",
+  "note": "APP 只读这一份：每门课、每章的 HLS 地址 / 时长 / 封面 / 字幕。播放用 HLS，支持 EXT-X-MEDIA 字幕组。",
+  "segmentSeconds": 6,
+  "ladder": [
+    {
+      "name": "1080p",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "name": "540p",
+      "width": 960,
+      "height": 540
+    }
+  ],
+  "totalDurationSec": 186144.482,
+  "totalBytes": 7839784927,
+  "courses": [
+    {
+      "id": "01-zhongyi/01-zhongyi-jichu-lilun",
+      "title": "中医基础理论",
+      "chapterCount": 10,
+      "totalDurationSec": 2821.661,
+      "totalBytes": 100147477,
+      "publishJson": "01-zhongyi/01-zhongyi-jichu-lilun/publish.json"
+    },
+    {
+      "id": "01-zhongyi/08-jingui-yaolue",
+      "title": "金匮要略",
+      "chapterCount": 24,
+      "totalDurationSec": 20659.897,
+      "totalBytes": 787124242,
+      "publishJson": "01-zhongyi/08-jingui-yaolue/publish.json"
+    },
+    {
+      "id": "01-zhongyi/10-zhongyi-neike-xue",
+      "title": "中医内科学",
+      "chapterCount": 14,
+      "totalDurationSec": 16685.557,
+      "totalBytes": 698677999,
+      "publishJson": "01-zhongyi/10-zhongyi-neike-xue/publish.json"
+    },
+    {
+      "id": "09-jichu/11-bingli-shengli-xue",
+      "title": "病理生理学",
+      "chapterCount": 53,
+      "totalDurationSec": 81283.011,
+      "totalBytes": 3474960429,
+      "publishJson": "09-jichu/11-bingli-shengli-xue/publish.json"
+    },
+    {
+      "id": "09-jichu/12-yaoli-xue",
+      "title": "药理学",
+      "chapterCount": 49,
+      "totalDurationSec": 64694.356,
+      "totalBytes": 2778874780,
+      "publishJson": "09-jichu/12-yaoli-xue/publish.json"
+    }
+  ],
+  "repoRecord": "platform/media-release.json",
+  "regenerate": "npm run media:hls:index",
+  "previous": {
+    "generatedAt": "2026-11-11T20:45:18.683Z",
+    "totalBytes": 7839784927,
+    "courses": 5
+  }
+}

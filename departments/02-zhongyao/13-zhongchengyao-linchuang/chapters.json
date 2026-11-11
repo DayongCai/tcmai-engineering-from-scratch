@@ -1,66 +1,85 @@
 {
-  "slug": "13-zhongchengyao-linchuang",
-  "title": "中成药与临床用药",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-fenlei-pizhun",
-      "title": "中成药的分类与批准文号",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-jixing-linchuang",
-      "title": "剂型选择与临床适配",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-bianzheng-wuqu",
-      "title": "中成药的辨证使用与误区",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-zhongxi-lianyong",
-      "title": "中西药联用的相互作用",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-shiyingzheng-jinji",
-      "title": "常见中成药的适应证与禁忌",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-duxing-guanli",
-      "title": "含毒性药材的中成药管理",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-shuomingshu",
-      "title": "中成药说明书的信息完整性",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-zai-pingjia",
-      "title": "上市后再评价与不良反应监测",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-jiyao-yibao",
-      "title": "基药目录与医保支付",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-chufang-shenhe",
-      "title": "处方审核规则的编码化",
-      "status": "📋"
-    }
-  ]
+ "note": "13-中成药与临床用药（派生课）：单元取自父课，locator 一律「派生·」；无单元复用。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gailun-fenlei",
+   "title": "中成药概论与分类",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-jixing-gongyi",
+   "title": "剂型与制备工艺",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-zhiliang-biaozhun",
+   "title": "质量标准与检验",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-zhusheji",
+   "title": "中药注射剂与特殊剂型",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-neike-yongyao",
+   "title": "内科常用中成药",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-fuke-erke",
+   "title": "妇科与儿科用药",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-gushang-pifu",
+   "title": "骨伤与皮肤科用药",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-lianhe-yongyao",
+   "title": "联合用药与相互作用",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-buliang-fanying",
+   "title": "不良反应与监测",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-heli-yongyao",
+   "title": "合理使用与处方审核",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

@@ -1,0 +1,38 @@
+{
+ "slug": "24-zhongyi-huli-xue",
+ "title": "中医护理学",
+ "en": "TCM Nursing",
+ "deptSlug": "05-huli",
+ "deptTitle": "护理系",
+ "globalN": 89,
+ "type": "Core",
+ "semester": 5,
+ "stage": "zhang",
+ "stageTitle": "长",
+ "hours": 54,
+ "bridge": "辨证施护→规则+ML / 中医护理技术→操作本体",
+ "chaptersTarget": 18,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/05-huli/24-zhongyi-huli-xue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/05-huli/24-zhongyi-huli-xue",
+  "chaptersWritten": 18,
+  "words": 354798,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#中医护理学",
+  "extractedAt": "2026-10-21"
+ },
+ "底本": {
+  "kind": "教材",
+  "from": "F:/textbooks/qhzy-中医护理学.xlsx",
+  "dir": "standards/zhongyi-huli",
+  "note": "18 内容章 / 18 单元 / 309,065 汉字；课程与教材 1:1"
+ }
+}

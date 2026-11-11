@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>中医药领域知识树 · 语义张量球面（M0–M5）</title>
+<style>
+  :root{
+    --bg:#0d0a07; --panel:#1a1610; --line:#2a2218; --ink:#e8e0d2; --dim:#9a8f7d;
+    --gold:#c8a55b; --jade:#6fae9a; --rose:#c0736a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;background:var(--bg);color:var(--ink);
+    font-family:"Noto Serif SC","Source Han Serif CN","Songti SC",SimSun,serif;overflow:hidden}
+  #stage{position:fixed;inset:0}
+  canvas{display:block;width:100%;height:100%}
+  .panel{position:fixed;background:rgba(26,22,16,.92);border:1px solid var(--line);
+    border-radius:10px;padding:14px 16px;backdrop-filter:blur(6px)}
+  #head{top:18px;left:18px;max-width:330px}
+  #head h1{font-size:19px;letter-spacing:.06em;font-weight:600}
+  #head h1 span{color:var(--gold)}
+  #head p{font-size:11.5px;color:var(--dim);line-height:1.7;margin-top:6px}
+  #stages{top:18px;right:18px;width:236px}
+  #stages .t{font-size:11px;color:var(--dim);letter-spacing:.14em;margin-bottom:8px}
+  .sbtn{display:flex;gap:8px;align-items:baseline;width:100%;text-align:left;cursor:pointer;
+    background:transparent;border:1px solid transparent;border-radius:7px;padding:7px 8px;color:var(--ink);
+    font-family:inherit;font-size:12.5px;transition:.18s}
+  .sbtn:hover{background:rgba(200,165,91,.08);border-color:var(--line)}
+  .sbtn.on{background:rgba(200,165,91,.14);border-color:var(--gold)}
+  .sbtn b{color:var(--gold);font-weight:600;font-size:11px;letter-spacing:.06em}
+  .sbtn i{font-style:normal;color:var(--dim);font-size:10.5px;display:block;margin-top:2px}
+  #legend{bottom:18px;left:18px;width:250px}
+  #legend .t{font-size:11px;color:var(--dim);letter-spacing:.14em;margin-bottom:8px}
+  #legend .row{display:flex;align-items:center;gap:8px;font-size:11.5px;margin:3px 0;color:#cfc4b0}
+  #legend .sw{width:11px;height:11px;border-radius:3px;flex:0 0 auto}
+  #stats{bottom:18px;right:18px;width:236px;font-size:11.5px;color:#cfc4b0;line-height:1.85}
+  #stats b{color:var(--ink);font-weight:600}
+  #stats .k{color:var(--dim)}
+  #tip{position:fixed;pointer-events:none;opacity:0;transition:opacity .12s;
+    background:rgba(10,8,6,.95);border:1px solid var(--line);border-radius:8px;padding:9px 11px;
+    font-size:12px;max-width:280px;line-height:1.65;z-index:9}
+  #tip b{color:var(--gold)}
+  #hint{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);font-size:11px;color:#6f6555}
+  .mini{position:fixed;top:18px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
+  .mini button{font-family:inherit;font-size:11.5px;color:#cfc4b0;background:rgba(26,22,16,.9);
+    border:1px solid var(--line);border-radius:20px;padding:6px 13px;cursor:pointer}
+  .mini button:hover{border-color:var(--gold);color:var(--ink)}
+</style>
+</head>
+<body>
+<div id="stage"><canvas id="cv"></canvas></div>
+
+<div class="panel" id="head">
+  <h1>中医药领域<span>知识树</span> · 语义张量球面</h1>
+  <p id="sub">按落地路线 M0–M5 分层投影：极角 θ = 院系扇区，方位 φ = 学段/时序，半径 = 语义体量；颜色由球面坐标赋值。</p>
+</div>
+
+<div class="panel" id="stages"><div class="t">落地路线 · 阶段</div><div id="slist"></div></div>
+<div class="panel" id="legend"><div class="t" id="lt">颜色图例</div><div id="lbody"></div></div>
+<div class="panel" id="stats"></div>
+<div class="mini">
+  <button id="btnRot">暂停自转</button>
+  <button id="btnGrid">球面网格</button>
+  <button id="btnReset">复位</button>
+</div>
+<div id="tip"></div>
+<div id="hint">拖动旋转 · 滚轮缩放 · 悬停查看 · 点击右侧阶段或按 1–6 切换</div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent);
+const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+let W=0,H=0,DPR=Math.min(2,window.devicePixelRatio||1);
+
+// ---------- 调色 ----------
+const DEPT_HUE = [28, 158, 196, 12, 268, 330, 46, 96, 210];
+const SCHOOL_HUE = {'liu-wansu':18,'zhang-congzheng':40,'li-gao':96,'zhu-zhenheng':182,
+  'zhang-jingyue':212,'ye-tianshi':150,'wang-qingren':340,'zhang-xichun':286,'none':0};
+const SCHOOL_NAME = {}; D.schools.forEach(s=>SCHOOL_NAME[s.key]=s.name);
+const DEPT_NAME = D.depts.map(d=>d.title);
+const DEPT_SHORT = {'01-zhongyi':'中医','02-zhongyao':'中药','03-zhenjiu':'针灸','04-gushang':'骨伤',
+  '05-huli':'护理','06-guanli':'管理','07-zhineng':'智能','08-wuguan':'五官','09-jichu':'基础'};
+
+function hsl(h,s,l){ h=((h%360)+360)%360; s=Math.max(0,Math.min(100,s)); l=Math.max(0,Math.min(100,l));
+  return `hsl(${h.toFixed(0)} ${s.toFixed(0)}% ${l.toFixed(0)}%)`; }
+
+// ---------- 球面坐标 ----------
+const maxHanzi = Math.max(1, ...D.subjects.map(s=>s.hanzi));
+const maxUnits = Math.max(1, ...D.subjects.map(s=>s.units));
+const deptOf = i => D.subjects[i].d;
+const perDept = D.depts.map((_,di)=>D.subjects.filter(s=>s.d===di).length);
+
+// 学科 → 球面锚点：θ 落在院系扇区，φ 由学段决定
+const anchor = D.subjects.map((s,si)=>{
+  const di = s.d;
+  let acc = 0; for(let k=0;k<di;k++) acc += perDept[k];
+  const within = (si - acc + 0.5) / Math.max(1,perDept[di]);
+  const theta = ((di + within*0.94 + 0.03) / D.depts.length) * Math.PI*2;
+  const sem = s.sem||1;
+  const phi = (0.5 - (sem-1)/9) * Math.PI * 0.86;   // 学段 1..10 → 北→南
+  const rr = 0.93 + 0.14*Math.sqrt(s.hanzi/maxHanzi);
+  return {theta, phi, r:rr};
+});
+
+// 章点：极坐标 ± 微小抖动，避免完全重合
+function chapterPoint(p, idx){
+  const a = anchor[p.s];
+  // 确定性哈希抖动（sin 散列），避免取模造成的条纹与格点
+  const h1 = Math.sin(idx*12.9898)*43758.5453; const j1 = h1 - Math.floor(h1);
+  const h2 = Math.sin(idx*78.233+1.7)*24634.6345; const j2 = h2 - Math.floor(h2);
+  const dth = (j1-0.5)*0.42, dph = (j2-0.5)*0.30;
+  return {theta:a.theta+dth, phi:Math.max(-1.45,Math.min(1.45,a.phi+dph)), r:a.r + 0.012*Math.sin(idx)};
+}
+
+// ---------- 投影 ----------
+let yaw = 0.6, pitch = -0.35, zoom = 1, spin = true, showGrid = true;
+let rotSpeed = 0.0022;
+
+function proj(th, ph, r){
+  const x0 = r*Math.cos(ph)*Math.cos(th);
+  const y0 = r*Math.sin(ph);
+  const z0 = r*Math.cos(ph)*Math.sin(th);
+  const cy=Math.cos(yaw), sy=Math.sin(yaw);
+  let x = x0*cy - z0*sy, z = x0*sy + z0*cy;
+  const cp=Math.cos(pitch), sp=Math.sin(pitch);
+  let y = y0*cp - z*sp, z2 = y0*sp + z*cp;
+  const cam = 2.55;
+  const k = 1/(cam - z2);
+  const S = Math.min(W*0.50, H*0.74)*zoom;
+  return {sx: W/2 + x*S*k, sy: H/2 - y*S*k, z: z2, k};
+}
+
+// ---------- 阶段 ----------
+const STAGES = [
+  {id:'M0', name:'M0 骨架对齐', hint:'9 干 + 188 枝（已落盘）', mode:'dept', level:'sub'},
+  {id:'M1', name:'M1 叶候选', hint:'章点云（叶的原料）', mode:'dept', level:'chap'},
+  {id:'M2', name:'M2 去重与归并', hint:'通用章题重名（42 个）', mode:'dup', level:'sub'},
+  {id:'M3', name:'M3 时序轴', hint:'学段（朝代待 firstAttested）', mode:'sem', level:'chap'},
+  {id:'M4', name:'M4 学派簇', hint:'8 学派 · 术语命中归簇', mode:'school', level:'chap'},
+  {id:'M5', name:'M5 视图层', hint:'球面颜色赋值 · 全景', mode:'sphere', level:'chap'},
+];
+const hash0 = (location.hash || '').replace('#','').toUpperCase();
+let stage = STAGES.some(x=>x.id===hash0) ? hash0 : STAGES[0].id;
+
+// 阶段切换：写 hash（可分享/可回放）+ 立即重绘，不依赖下一帧
+function setStage(id){
+  if(!STAGES.some(x=>x.id===id)) return;
+  stage = id;
+  try{ history.replaceState(null,'','#'+id); }catch(e){ location.hash = id; }
+  renderStages(); renderLegend(); draw();
+}
+
+// 重题风险：同名学科出现的次数（真实统计），章点继承
+const dupOf = si => D.dupTitles[D.subjects[si].title] || 1;
+
+function colorOf(pt, si){
+  const s = D.subjects[si];
+  const a = anchor[si];
+  const sp = Math.abs(Math.cos(a.phi));           // 球面纬度 → 饱和度
+  const rn = Math.sqrt(s.hanzi/maxHanzi);         // 语义体量 → 亮度
+  switch(stage){
+    case 'M0': case 'M1':
+      return hsl(DEPT_HUE[s.d], 46+34*sp, 34+30*rn);
+    case 'M2': {
+      const d = s.dupMax || 1;
+      if (d >= 6) return hsl(6, 84, 52);
+      if (d >= 4) return hsl(38, 82, 54);
+      if (d >= 2) return hsl(150, 58, 48);
+      return hsl(210, 46, 42);
+    }
+    case 'M3': {
+      const sem = s.sem||1;
+      return hsl(198 - (sem-1)*17, 44+30*sp, 30+30*rn);
+    }
+    case 'M4': {
+      const h = SCHOOL_HUE[s.school] ?? 0;
+      return s.school==='none' ? hsl(0,0,52) : hsl(h, 58+26*sp, 34+28*rn);
+    }
+    default: { // M5 球面颜色赋值：色相随 θ，饱和度随 |φ|，明度随 r
+      const hDeg = ((a.theta*180/Math.PI)%360+360)%360;
+      return hsl(hDeg, 40+48*sp, 26+46*rn);
+    }
+  }
+}
+
+// ---------- 渲染 ----------
+let hover = null, hoverXY = {x:0,y:0};
+
+function draw(){
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+  ctx.clearRect(0,0,W,H);
+
+  // 背景径向光
+  const bg = ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,Math.max(W,H)*0.62);
+  bg.addColorStop(0,'#171208'); bg.addColorStop(0.55,'#0f0b07'); bg.addColorStop(1,'#0a0705');
+  ctx.fillStyle = bg; ctx.fillRect(0,0,W,H);
+
+  if(showGrid) drawGrid();
+
+  const isSub = STAGES.find(s=>s.id===stage).level === 'sub';
+  const items = [];
+
+  if(isSub){
+    D.subjects.forEach((s,si)=>{
+      const a = anchor[si];
+      const p = proj(a.theta, a.phi, a.r);
+      const rn = Math.sqrt(s.hanzi/maxHanzi);
+      const rr0 = stage==='M2' ? 2.2 + (s.dupMax||1)*1.5 : 1.7 + 4.6*rn;
+      items.push({...p, z:p.z, r:rr0, c:colorOf(a,si), si, kind:'sub'});
+    });
+  } else {
+    D.points.forEach((p0, i)=>{
+      const a = chapterPoint(p0, i);
+      const p = proj(a.theta, a.phi, a.r);
+      const rn = Math.sqrt(p0.h/24000);
+      items.push({...p, z:p.z, r:0.7+1.15*Math.min(1.8,rn), c:colorOf(a, p0.s), si:p0.s, ch:p0, kind:'chap'});
+    });
+  }
+
+  // 连线：院系扇区内相邻学科（只在 M0 显示，表达「枝」的从属）
+  if(isSub) drawSpokes();
+
+  items.sort((A,B)=>A.z-B.z);
+  ctx.globalCompositeOperation = 'lighter';
+  for(const it of items){
+    const depth = (it.z + 1.6)/3.2;               // 0..1
+    const alpha = 0.25 + 0.75*Math.max(0,Math.min(1,depth));
+    const rr = it.r * (0.72+0.5*depth) * Math.min(2.6, it.k*2.4);
+    if(rr > 1.5){
+      ctx.globalAlpha = alpha*0.3;
+      ctx.beginPath(); ctx.arc(it.sx,it.sy,rr*1.9,0,6.2832);
+      ctx.fillStyle = it.c; ctx.fill();
+    }
+    ctx.globalAlpha = Math.min(0.92, alpha*0.95);
+    ctx.beginPath(); ctx.arc(it.sx,it.sy,rr,0,6.2832); ctx.fill();
+    it._rr = rr;
+  }
+  ctx.globalCompositeOperation = 'source-over';
+  ctx.globalAlpha = 1;
+
+  if(hover) drawTip();
+}
+
+function drawGrid(){
+  const rings=[-1.2,-0.8,-0.4,0,0.4,0.8,1.2], seg=96;
+  ctx.lineWidth = 1;
+  for(const ph of rings){
+    ctx.beginPath();
+    for(let i=0;i<=seg;i++){
+      const th = i/seg*Math.PI*2;
+      const p = proj(th, ph, 1.0);
+      i? ctx.lineTo(p.sx,p.sy) : ctx.moveTo(p.sx,p.sy);
+    }
+    ctx.strokeStyle='rgba(200,165,91,.10)'; ctx.stroke();
+  }
+  for(let m=0;m<12;m++){
+    const th=m/12*Math.PI*2;
+    ctx.beginPath();
+    for(let i=0;i<=48;i++){
+      const ph=-Math.PI/2 + i/48*Math.PI;
+      const p=proj(th,ph,1.0);
+      i? ctx.lineTo(p.sx,p.sy) : ctx.moveTo(p.sx,p.sy);
+    }
+    ctx.strokeStyle='rgba(200,165,91,.055)'; ctx.stroke();
+  }
+}
+
+// 院系中心 → 各枝的辐条（M0）
+function drawSpokes(){
+  for(let di=0; di<D.depts.length; di++){
+    const idxs = D.subjects.map((s,i)=>[s,i]).filter(([s])=>s.d===di).map(([,i])=>i);
+    if(!idxs.length) continue;
+    const th = (di+0.5)/D.depts.length*Math.PI*2;
+    const hub = proj(th, 0, 0.34);
+    ctx.beginPath(); ctx.strokeStyle='rgba(200,165,91,.16)'; ctx.lineWidth=1;
+    for(const si of idxs){
+      const a=anchor[si], p=proj(a.theta,a.phi,a.r);
+      ctx.moveTo(hub.sx,hub.sy); ctx.lineTo(p.sx,p.sy);
+    }
+    ctx.stroke();
+
+    // 院系名：贴在扇区中心外侧，随球面一起转
+    const out = proj(th, 0, 1.22);
+    const nm = DEPT_SHORT[D.depts[di].slug] || DEPT_NAME[di].replace(/(医学院|学院|系)$/, '');
+    ctx.font = '12.5px "Noto Serif SC",SimSun,serif';
+    ctx.textAlign = 'center';
+    ctx.strokeStyle = 'rgba(10,8,5,.85)'; ctx.lineWidth = 3;
+    ctx.strokeText(nm, out.sx, out.sy);
+    ctx.fillStyle = `hsla(${DEPT_HUE[di]} 55% 68% / ${0.35 + 0.5 * Math.max(0, Math.min(1, (out.z + 1.2) / 2.4))})`;
+    ctx.fillText(nm, out.sx, out.sy);
+  }
+}
+
+function drawTip(){
+  const t = document.getElementById('tip');
+  if(hover.kind==='sub'){
+    const s = D.subjects[hover.si];
+    t.innerHTML = `<b>${s.title}</b><br>${DEPT_NAME[s.d]} · 第 ${s.sem} 学期<br>`+
+      `章 ${s.chapters} · 单元 ${s.units} · 汉字 ${s.hanzi.toLocaleString()}<br>`+
+      `单元层 ${s.std||'—'}<br>主导学派 ${s.school==='none'?'未归类':SCHOOL_NAME[s.school]}（命中 ${s.schoolHits}）<br>`+
+      `重名章题 ${s.dupCount||0} 个 · 最高共享 ${s.dupMax||1} 门${s.dupTop?'（'+s.dupTop+'）':''}`;
+  } else {
+    const c = hover.ch, s = D.subjects[c.s];
+    t.innerHTML = `<b>${s.title} · 第 ${c.c} 章</b><br>${DEPT_NAME[s.d]} · 第 ${s.sem} 学期<br>`+
+      `单元 ${c.u} · 汉字 ${c.h.toLocaleString()}<br>重题风险 ${dupOf(c.s)} 门同名<br>`+
+      `来源 ${c.src}`;
+  }
+  t.style.opacity = 1;
+  t.style.left = Math.min(W-300, hoverXY.x+16)+'px';
+  t.style.top  = Math.max(10, hoverXY.y-12)+'px';
+}
+
+// ---------- 交互 ----------
+let drag=false, lx=0, ly=0, moved=false;
+cv.addEventListener('pointerdown', e=>{ drag=true; moved=false; lx=e.clientX; ly=e.clientY; cv.setPointerCapture(e.pointerId); });
+cv.addEventListener('pointerup', ()=>drag=false);
+cv.addEventListener('pointerleave', ()=>{ hover=null; document.getElementById('tip').style.opacity=0; });
+cv.addEventListener('pointermove', e=>{
+  hoverXY = {x:e.clientX, y:e.clientY};
+  if(drag){
+    const dx=e.clientX-lx, dy=e.clientY-ly;
+    if(Math.abs(dx)+Math.abs(dy)>2) moved=true;
+    yaw += dx*0.006; pitch = Math.max(-1.2, Math.min(1.2, pitch + dy*0.005));
+    lx=e.clientX; ly=e.clientY;
+  }
+  pick();
+});
+cv.addEventListener('wheel', e=>{ e.preventDefault(); zoom = Math.max(0.55, Math.min(2.6, zoom*(e.deltaY>0?0.94:1.06))); }, {passive:false});
+
+function pick(){
+  // 用最近一次绘制的位置做命中（items 未保存，重算一遍太重 → 用逆推：直接取屏幕距离最近的学科锚/章点）
+  const isSub = STAGES.find(s=>s.id===stage).level==='sub';
+  let best=null, bd=64;
+  if(isSub){
+    D.subjects.forEach((s,si)=>{ const a=anchor[si]; const p=proj(a.theta,a.phi,a.r);
+      const d=(p.sx-hoverXY.x)**2+(p.sy-hoverXY.y)**2; if(d<bd){bd=d;best={...p,si,kind:'sub'};} });
+  } else {
+    D.points.forEach((c,i)=>{ const a=chapterPoint(c,i); const p=proj(a.theta,a.phi,a.r);
+      const d=(p.sx-hoverXY.x)**2+(p.sy-hoverXY.y)**2; if(d<bd){bd=d;best={...p,si:c.s,ch:c,kind:'chap'};} });
+  }
+  hover = best;
+  if(!best) document.getElementById('tip').style.opacity=0;
+}
+
+// ---------- 面板 ----------
+function renderStages(){
+  const box = document.getElementById('slist');
+  box.innerHTML = '';
+  STAGES.forEach(s=>{
+    const b = document.createElement('button');
+    b.className = 'sbtn' + (s.id===stage?' on':'');
+    b.innerHTML = `<b>${s.id}</b><span>${s.name.replace(s.id+' ','')}<i>${s.hint}</i></span>`;
+    b.onclick = ()=> setStage(s.id);
+    box.appendChild(b);
+  });
+}
+
+function renderLegend(){
+  const lb = document.getElementById('lbody');
+  if(stage==='M2'){
+    const ds = D.dupStats || {};
+    lb.innerHTML = `<div class="row"><span class="sw" style="background:hsl(210 46% 42%)"></span>无重名章题（140 门）</div>
+      <div class="row"><span class="sw" style="background:hsl(150 58% 48%)"></span>最高 2–3 门同名（22 门）</div>
+      <div class="row"><span class="sw" style="background:hsl(38 82% 54%)"></span>最高 4–5 门同名（9 门）</div>
+      <div class="row"><span class="sw" style="background:hsl(6 84% 52%)"></span>最高 6–9 门同名（17 门）</div>
+      <div class="row" style="color:#8a7f6d;margin-top:6px">${ds.sharedTitles||42} 个章题跨课重名，最高「${(ds.topTitles&&ds.topTitles[0]&&ds.topTitles[0][1])||'绪论'}」9 门</div>`;
+  } else if(stage==='M3'){
+    lb.innerHTML = [1,3,5,7,9].map(s=>`<div class="row"><span class="sw" style="background:hsl(${198-(s-1)*17} 58% 48%)"></span>第 ${s} 学段</div>`).join('') +
+      `<div class="row" style="color:#8a7f6d;margin-top:6px">朝代轴待 firstAttested 抽取后替换</div>`;
+  } else if(stage==='M4'){
+    lb.innerHTML = D.schools.map(s=>`<div class="row"><span class="sw" style="background:hsl(${SCHOOL_HUE[s.key]} 66% 52%)"></span>${s.name}</div>`).join('') +
+      `<div class="row"><span class="sw" style="background:hsl(0 0% 58%)"></span>未归类（命中 < 60）</div>`;
+  } else if(stage==='M5'){
+    lb.innerHTML = `<div class="row">色相 = 极角 θ（院系扇区）</div>
+      <div class="row">饱和度 = |cos φ|（纬度）</div>
+      <div class="row">明度 = √(汉字/最大)</div>
+      <div class="row" style="color:#8a7f6d;margin-top:6px">球面颜色赋值：三个坐标各管一个通道</div>`;
+  } else {
+    lb.innerHTML = DEPT_NAME.map((n,i)=>`<div class="row"><span class="sw" style="background:hsl(${DEPT_HUE[i]} 60% 52%)"></span>${n}</div>`).join('');
+  }
+}
+
+function renderStats(){
+  const t = D.totals;
+  document.getElementById('stats').innerHTML = `
+    <div><span class="k">院系</span> <b>${t.depts}</b> · <span class="k">学科</span> <b>${t.subjects}</b></div>
+    <div><span class="k">章点</span> <b>${t.chapters.toLocaleString()}</b> · <span class="k">单元</span> <b>${t.units.toLocaleString()}</b></div>
+    <div><span class="k">汉字</span> <b>${t.hanzi.toLocaleString()}</b></div>
+    <div><span class="k">解析到单元层</span> <b>${t.withUnits}/${t.subjects}</b></div>
+    <div style="color:#7d7362;margin-top:6px;font-size:10.5px;line-height:1.6">
+      数据源：standards/*/units.json · 学派库.json<br>
+      学派归属＝术语命中 ≥60，非 paper 级判定
+    </div>`;
+}
+
+document.getElementById('btnRot').onclick = e=>{ spin=!spin; e.target.textContent = spin?'暂停自转':'继续自转'; };
+document.getElementById('btnGrid').onclick = ()=>{ showGrid=!showGrid; };
+document.getElementById('btnReset').onclick = ()=>{ yaw=0.6; pitch=-0.35; zoom=1; };
+
+function resize(){
+  W = cv.clientWidth; H = cv.clientHeight;
+  cv.width = W*DPR; cv.height = H*DPR;
+}
+window.addEventListener('resize', resize);
+
+function loop(){
+  if(spin && !drag) yaw += rotSpeed;
+  draw();
+  requestAnimationFrame(loop);
+}
+
+// 键盘 1–6 直接切阶段
+window.addEventListener('keydown', e=>{
+  const n = parseInt(e.key, 10);
+  if(n>=1 && n<=6) setStage(STAGES[n-1].id);
+});
+
+resize(); renderStages(); renderLegend(); renderStats(); draw(); loop();
+</script>
+</body>
+</html>

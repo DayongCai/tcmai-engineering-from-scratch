@@ -1,0 +1,38 @@
+{
+ "slug": "18-zhongyi-gubing-xue",
+ "title": "中医骨病学",
+ "en": "TCM Osteopathy",
+ "deptSlug": "01-zhongyi",
+ "deptTitle": "中医系",
+ "globalN": 18,
+ "type": "Reference",
+ "semester": 8,
+ "stage": "zhuang",
+ "stageTitle": "壮",
+ "hours": 36,
+ "bridge": "骨病分型→影像分类 / 方药→规则库",
+ "chaptersTarget": 12,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/01-zhongyi/18-zhongyi-gubing-xue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/01-zhongyi/18-zhongyi-gubing-xue",
+  "chaptersWritten": 12,
+  "words": 179266,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#中医骨病学",
+  "extractedAt": "2026-10-21"
+ },
+ "standards": {
+  "path": "standards/gubing",
+  "chapters": 12,
+  "units": 60,
+  "hanzi": 149316
+ }
+}

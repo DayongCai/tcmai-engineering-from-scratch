@@ -460,7 +460,7 @@ test('[semtensor] 整页渲染：标题、轴端色表、颜色公理、三张�
     '三维极坐标语义张量 · 颜色赋值',
     '轴端色表',
     '颜色公理',
-    '源实现 · 116 个真实语义单元',
+    '源实现 · 117 个真实语义单元',
     '内经 12 语义域',
     '伤寒论 9 域',
     '待裁定项',
@@ -476,7 +476,7 @@ test('[semtensor] 整页渲染：标题、轴端色表、颜色公理、三张�
   assert.ok(html.includes(DATA.neijing.domains[0].name), '内经域名未渲染');
   // 源实现的真实单元必须出现在页面上（默认数据集）
   const ref = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards', 'semtensor', 'datasets', 'reference-units.json'), 'utf8'));
-  assert.strictEqual(ref.unitCount, 116, `源实现单元数应为 116，实得 ${ref.unitCount}`);
+  assert.strictEqual(ref.unitCount, 117, `源实现单元数应为 117，实得 ${ref.unitCount}`);
   assert.ok(html.includes(ref.units[0].label), '源实现单元未渲染');
   assert.ok(html.includes('风寒束表证'), '源实现的首个病证单元未渲染');
 });

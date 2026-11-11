@@ -1,0 +1,79 @@
+{
+  "lesson": "04-shenbing-lunzhuan",
+  "title": "肾病科轮转：水肿与淋证的辨证接诊",
+  "subject": "21-zhongyi-linchuang-lunzhuan",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "肾系 6 病中构成恶化链的是？",
+      "options": [
+        "水肿→癃闭→关格",
+        "水肿→淋证→阳痿",
+        "癃闭→遗精→关格",
+        "淋证→水肿→遗精"
+      ],
+      "correct": 0,
+      "explanation": "同属水液出不去。"
+    },
+    {
+      "stage": "check",
+      "question": "肾系 6 病中有几个必修？",
+      "options": [
+        "6 个（全部）",
+        "4 个",
+        "5 个",
+        "3 个"
+      ],
+      "correct": 0,
+      "explanation": "本科病种最少。"
+    },
+    {
+      "stage": "check",
+      "question": "淋证为何不与恶化链混？",
+      "options": [
+        "它属另一条线（尿频痛），阶段不同",
+        "因为字不同",
+        "因为方不同",
+        "因为少见"
+      ],
+      "correct": 0,
+      "explanation": "病因与危急度不同。"
+    },
+    {
+      "stage": "check",
+      "question": "肾系必做动作共几项？",
+      "options": [
+        "30 项",
+        "45 项",
+        "40 项",
+        "25 项"
+      ],
+      "correct": 0,
+      "explanation": "6 × 5。"
+    },
+    {
+      "stage": "post",
+      "question": "关格在轮转要求里必须多写哪一项？",
+      "options": [
+        "转诊时点",
+        "饮食",
+        "情志",
+        "脉象"
+      ],
+      "correct": 0,
+      "explanation": "唯一跨急诊的肾系病。"
+    },
+    {
+      "stage": "post",
+      "question": "本科数值判据是几处？",
+      "options": [
+        "3 处",
+        "0 处",
+        "5 处",
+        "12 处"
+      ],
+      "correct": 0,
+      "explanation": "介于脾胃 0 与肺病 5 之间。"
+    }
+  ]
+}

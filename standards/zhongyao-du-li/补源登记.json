@@ -1,0 +1,478 @@
+{
+ "note": "外源补源登记：每条都记来源、URL、sha256、页数与逐字校勘结论。查不到的句子不入库。",
+ "sources": {
+  "OECD-TG420-2001": {
+   "file": "OECD-TG420-2001.pdf",
+   "title": "OECD Test Guideline 420: Acute Oral Toxicity – Fixed Dose Procedure",
+   "adopted": "2001-12-17",
+   "url": "https://ntp.niehs.nih.gov/sites/default/files/iccvam/suppdocs/feddocs/oecd/oecd_gl420.pdf",
+   "exists": true,
+   "sha256": "35e3272c250258570e6e91dde5e20dfb42bf2c783f7b5f972b6f574591855d53",
+   "bytes": 148614,
+   "pages": 14,
+   "textChars": 29516,
+   "textLayer": true
+  },
+  "OECD-TG425-2022": {
+   "file": "OECD-TG425-2022.pdf",
+   "title": "OECD Test Guideline 425: Acute Oral Toxicity – Up-and-Down Procedure",
+   "adopted": "2022-06-30",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/06/test-no-425-acute-oral-toxicity-up-and-down-procedure_g1gh2953/9789264071049-en.pdf",
+   "exists": true,
+   "sha256": "424a92d1c919e9971d737a48a93a070909c8b4b91e3f9ace88b5a55517048db4",
+   "bytes": 2333306,
+   "pages": 29,
+   "textChars": 56859,
+   "textLayer": true
+  },
+  "OECD-TG408-2025": {
+   "file": "OECD-TG408-2025.pdf",
+   "title": "OECD Test Guideline 408: Repeated Dose 90-day Oral Toxicity Study in Rodents",
+   "adopted": "2025-06-25",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/06/test-no-408-repeated-dose-90-day-oral-toxicity-study-in-rodents_g1gh2931/9789264070707-en.pdf",
+   "exists": true,
+   "sha256": "1cccff57e19c6677bea8c5cda61bdbbc69ef7276413c77481bd532ce7440717e",
+   "bytes": 1606230,
+   "pages": 17,
+   "textChars": 41648,
+   "textLayer": true
+  },
+  "OECD-TG471-2020": {
+   "file": "OECD-TG471-2020.pdf",
+   "title": "OECD Test Guideline 471: Bacterial Reverse Mutation Test",
+   "adopted": "2020",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2020/06/test-no-471-bacterial-reverse-mutation-test_g1gh295b/9789264071247-en.pdf",
+   "exists": true,
+   "sha256": "ecb4928c627b62dc9b1b601a891a3d02638d12013713e2c241b01ae49cc17795",
+   "bytes": 1036044,
+   "pages": 12,
+   "textChars": 26612,
+   "textLayer": true
+  },
+  "OECD-TG487-2023": {
+   "file": "OECD-TG487-2023.pdf",
+   "title": "OECD Test Guideline 487: In Vitro Mammalian Cell Micronucleus Test",
+   "adopted": "2023",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2023/07/test-no-487-in-vitro-mammalian-cell-micronucleus-test_g1g6fb2a/9789264264861-en.pdf",
+   "exists": true,
+   "sha256": "36bf8ba37509aca1b7bb84f8b9bdef7cc5ec95daa9d9a877d6fc815b62b92bbb",
+   "bytes": 1829530,
+   "pages": 30,
+   "textChars": 77233,
+   "textLayer": true
+  },
+  "NMPA-古代经典名方-2021": {
+   "file": "NMPA-古代经典名方毒理研究指导原则-征求意见稿-2021.pdf",
+   "title": "古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见稿）",
+   "adopted": "2021-10-12",
+   "url": "https://www.njucm.edu.cn/_upload/article/files/88/5f/2b2540ce4f0985096013d37fd148/5103957a-5553-473e-aa92-1fc73088eb2d.pdf",
+   "status": "征求意见稿（供版本对照；受试物与 GLP 条款已由 2022 年正式稿细化）",
+   "exists": true,
+   "sha256": "0e91aaf93b5bdc1758a9ea3a7eb78a5d2744074fe260053f0e17657b65717a5f",
+   "bytes": 425577,
+   "pages": 8,
+   "textChars": 3587,
+   "textLayer": true
+  },
+  "OECD-TG473-2016": {
+   "file": "OECD-TG473-2016.pdf",
+   "title": "OECD Test Guideline 473: In Vitro Mammalian Chromosomal Aberration Test",
+   "adopted": "2016",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2016/07/test-no-473-in-vitro-mammalian-chromosomal-aberration-test_g1g6ed0e/9789264264649-en.pdf",
+   "exists": true,
+   "sha256": "e0529320cbb7480cc8e9225e4cf7902c6c55f9ceb1b7c810ee1403a017b29ee7",
+   "bytes": 2721772,
+   "pages": 22,
+   "textChars": 52248,
+   "textLayer": true
+  },
+  "OECD-TG407-2025": {
+   "file": "OECD-TG407-2025.pdf",
+   "title": "OECD Test Guideline 407: Repeated Dose 28-day Oral Toxicity Study in Rodents",
+   "adopted": "2025-06-25",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2008/10/test-no-407-repeated-dose-28-day-oral-toxicity-study-in-rodents_g1gh292f/9789264070684-en.pdf",
+   "exists": true,
+   "sha256": "aee01ba1f3e0797d05c6a012cef24231507b2e1e086225b92a8b02852354f772",
+   "bytes": 1448030,
+   "pages": 15,
+   "textChars": 36993,
+   "textLayer": true
+  },
+  "OECD-Genetic-Toxicology-Overview-2017": {
+   "file": "OECD-Genetic-Toxicology-Overview-2017.pdf",
+   "title": "Overview of the set of OECD Genetic Toxicology Test Guidelines and updates performed in 2014-2015",
+   "adopted": "2017",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2017/08/overview-of-the-set-of-oecd-genetic-toxicology-test-guidelines-and-updates-performed-in-2014-2015-second-edition_c7a9416d/61eca5cd-en.pdf",
+   "exists": true,
+   "sha256": "0b8c5047a476a62bd37c6da1582eabde0af0f4833387b588d162e3e681a0749d",
+   "bytes": 2118543,
+   "pages": 70,
+   "textChars": 215514,
+   "textLayer": true
+  },
+  "OECD-TG474-2016": {
+   "file": "OECD-TG474-2016.pdf",
+   "title": "OECD Test Guideline 474: Mammalian Erythrocyte Micronucleus Test",
+   "adopted": "2016",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2016/07/test-no-474-mammalian-erythrocyte-micronucleus-test_g1g6fb16/9789264264762-en.pdf",
+   "exists": true,
+   "sha256": "dbe31a883855f94afd1210475408347ecc8653e6566e55c62838de3759dc63b8",
+   "bytes": 2444609,
+   "pages": 21,
+   "textChars": 58862,
+   "textLayer": true
+  },
+  "OECD-TG451-2018": {
+   "file": "OECD-TG451-2018.pdf",
+   "title": "OECD Test Guideline 451: Carcinogenicity Studies",
+   "adopted": "2018",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/06/test-no-451-carcinogenicity-studies_g1gh2955/9789264071186-en.pdf",
+   "exists": true,
+   "sha256": "a73bec52cf0560428ba9e8354ab3ef019791d39c612bcc98827bf486c7b78e56",
+   "bytes": 281858,
+   "pages": 15,
+   "textChars": 44561,
+   "textLayer": true
+  },
+  "OECD-TG453-2018": {
+   "file": "OECD-TG453-2018.pdf",
+   "title": "OECD Test Guideline 453: Combined Chronic Toxicity/Carcinogenicity Studies",
+   "adopted": "2018",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/06/test-no-453-combined-chronic-toxicity-carcinogenicity-studies_g1gh2959/9789264071223-en.pdf",
+   "exists": true,
+   "sha256": "1a2e9aca14bc1336c84de90cad29757c40fc2164d37414285b57c8a84d7a3eef",
+   "bytes": 312268,
+   "pages": 20,
+   "textChars": 64226,
+   "textLayer": true
+  },
+  "NMPA-毒理研究用样品-试行-2022": {
+   "file": "NMPA-中药新药毒理研究用样品指导原则-试行-2022.pdf",
+   "title": "中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号）",
+   "adopted": "2022-01-07",
+   "status": "正式发布（试行）",
+   "url": "https://www.cde.org.cn/main/news/viewInfoCommon/837a9b355dcc7f1724194e97c2fa3a29",
+   "exists": true,
+   "sha256": "18b7864f3634a45c5ed3c82bc29a893f3d2a1f1842f6bacbe7f41ed0fdd48143",
+   "bytes": 447607,
+   "pages": 13,
+   "textChars": 5445,
+   "textLayer": true
+  },
+  "CDE-长期毒性-2007": {
+   "file": "CDE-中药天然药物长期毒性研究指导原则-2007.pdf",
+   "title": "中药、天然药物长期毒性研究技术指导原则（2007）",
+   "adopted": "2007-08-13",
+   "status": "正式发布",
+   "url": "https://pharmwyp.com/posts/56814/7.3%E4%B8%AD%E8%8D%AF/7.3.3%E9%9D%9E%E4%B8%B4%E5%BA%8A/20070813_CDE_%E4%B8%AD%E8%8D%AF%E3%80%81%E5%A4%A9%E7%84%B6%E8%8D%AF%E7%89%A9%E9%95%BF%E6%9C%9F%E6%AF%92%E6%80%A7%E7%A0%94%E7%A9%B6%E6%8A%80%E6%9C%AF%E6%8C%87%E5%AF%BC%E5%8E%9F%E5%88%99.pdf",
+   "exists": true,
+   "sha256": "bd15bed8f9c67a57b5039dbffdc7364ae3dfc69094a70facb545af473b9d6d55",
+   "bytes": 336686,
+   "pages": 18,
+   "textChars": 12122,
+   "textLayer": true
+  },
+  "OECD-TG452-2018": {
+   "file": "OECD-TG452-2018.pdf",
+   "title": "OECD Test Guideline 452: Chronic Toxicity Studies",
+   "adopted": "2018",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/06/test-no-452-chronic-toxicity-studies_g1gh2957/9789264071209-en.pdf",
+   "exists": true,
+   "sha256": "007928d940d2d5f6406d614660c647c36680e13afe6036b4ccd5fe57bfe5668d",
+   "bytes": 211551,
+   "pages": 18,
+   "textChars": 49388,
+   "textLayer": true
+  },
+  "OECD-TG470-2022": {
+   "file": "OECD-TG470-2022.pdf",
+   "title": "OECD Test Guideline 470: Mammalian Erythrocyte Pig-a Gene Mutation Assay",
+   "adopted": "2022",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/06/test-no-470-mammalian-erythrocyte-pig-a-gene-mutation-assay_8d5eb84f/4faea90e-en.pdf",
+   "exists": true,
+   "sha256": "f0b86b6bcbee1640bca9bba1c1f2ac50df438c463b6e2f1bb07e1a22d60e7276",
+   "bytes": 1031480,
+   "pages": 43,
+   "textChars": 138053,
+   "textLayer": true
+  }
+ },
+ "clauses": [
+  {
+   "id": "E01",
+   "source": "OECD-TG420-2001",
+   "clause": "第2条",
+   "sourceTitle": "OECD Test Guideline 420: Acute Oral Toxicity – Fixed Dose Procedure",
+   "url": "https://ntp.niehs.nih.gov/sites/default/files/iccvam/suppdocs/feddocs/oecd/oecd_gl420.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 420: Acute Oral Toxicity – Fixed Dose Procedure 第2条"
+  },
+  {
+   "id": "E02",
+   "source": "OECD-TG420-2001",
+   "clause": "第8条",
+   "sourceTitle": "OECD Test Guideline 420: Acute Oral Toxicity – Fixed Dose Procedure",
+   "url": "https://ntp.niehs.nih.gov/sites/default/files/iccvam/suppdocs/feddocs/oecd/oecd_gl420.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 420: Acute Oral Toxicity – Fixed Dose Procedure 第8条"
+  },
+  {
+   "id": "E03",
+   "source": "OECD-TG425-2022",
+   "clause": "第2条",
+   "sourceTitle": "OECD Test Guideline 425: Acute Oral Toxicity – Up-and-Down Procedure",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/06/test-no-425-acute-oral-toxicity-up-and-down-procedure_g1gh2953/9789264071049-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 425: Acute Oral Toxicity – Up-and-Down Procedure 第2条"
+  },
+  {
+   "id": "E04",
+   "source": "OECD-TG408-2025",
+   "clause": "第10条",
+   "sourceTitle": "OECD Test Guideline 408: Repeated Dose 90-day Oral Toxicity Study in Rodents",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/06/test-no-408-repeated-dose-90-day-oral-toxicity-study-in-rodents_g1gh2931/9789264070707-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 408: Repeated Dose 90-day Oral Toxicity Study in Rodents 第10条"
+  },
+  {
+   "id": "E05",
+   "source": "OECD-TG471-2020",
+   "clause": "第1条",
+   "sourceTitle": "OECD Test Guideline 471: Bacterial Reverse Mutation Test",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2020/06/test-no-471-bacterial-reverse-mutation-test_g1gh295b/9789264071247-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 471: Bacterial Reverse Mutation Test 第1条"
+  },
+  {
+   "id": "E06",
+   "source": "OECD-TG487-2023",
+   "clause": "第7条",
+   "sourceTitle": "OECD Test Guideline 487: In Vitro Mammalian Cell Micronucleus Test",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2023/07/test-no-487-in-vitro-mammalian-cell-micronucleus-test_g1g6fb2a/9789264264861-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 487: In Vitro Mammalian Cell Micronucleus Test 第7条"
+  },
+  {
+   "id": "E07",
+   "source": "NMPA-古代经典名方-2021",
+   "clause": "二（一）",
+   "sourceTitle": "古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见稿）",
+   "url": "https://www.njucm.edu.cn/_upload/article/files/88/5f/2b2540ce4f0985096013d37fd148/5103957a-5553-473e-aa92-1fc73088eb2d.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见稿） 二（一）"
+  },
+  {
+   "id": "E08",
+   "source": "NMPA-古代经典名方-2021",
+   "clause": "二（二）",
+   "sourceTitle": "古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见稿）",
+   "url": "https://www.njucm.edu.cn/_upload/article/files/88/5f/2b2540ce4f0985096013d37fd148/5103957a-5553-473e-aa92-1fc73088eb2d.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见稿） 二（二）"
+  },
+  {
+   "id": "E09",
+   "source": "NMPA-古代经典名方-2021",
+   "clause": "三（一）",
+   "sourceTitle": "古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见稿）",
+   "url": "https://www.njucm.edu.cn/_upload/article/files/88/5f/2b2540ce4f0985096013d37fd148/5103957a-5553-473e-aa92-1fc73088eb2d.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见稿） 三（一）"
+  },
+  {
+   "id": "E10",
+   "source": "OECD-TG473-2016",
+   "clause": "第2条",
+   "sourceTitle": "OECD Test Guideline 473: In Vitro Mammalian Chromosomal Aberration Test",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2016/07/test-no-473-in-vitro-mammalian-chromosomal-aberration-test_g1g6ed0e/9789264264649-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 473: In Vitro Mammalian Chromosomal Aberration Test 第2条"
+  },
+  {
+   "id": "E11",
+   "source": "OECD-TG407-2025",
+   "clause": "第11条",
+   "sourceTitle": "OECD Test Guideline 407: Repeated Dose 28-day Oral Toxicity Study in Rodents",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2008/10/test-no-407-repeated-dose-28-day-oral-toxicity-study-in-rodents_g1gh292f/9789264070684-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 407: Repeated Dose 28-day Oral Toxicity Study in Rodents 第11条"
+  },
+  {
+   "id": "E12",
+   "source": "OECD-Genetic-Toxicology-Overview-2017",
+   "clause": "第14条",
+   "sourceTitle": "Overview of the set of OECD Genetic Toxicology Test Guidelines and updates performed in 2014-2015",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2017/08/overview-of-the-set-of-oecd-genetic-toxicology-test-guidelines-and-updates-performed-in-2014-2015-second-edition_c7a9416d/61eca5cd-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Overview of the set of OECD Genetic Toxicology Test Guidelines and updates performed in 2014-2015 第14条"
+  },
+  {
+   "id": "E13",
+   "source": "OECD-TG474-2016",
+   "clause": "第2条",
+   "sourceTitle": "OECD Test Guideline 474: Mammalian Erythrocyte Micronucleus Test",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2016/07/test-no-474-mammalian-erythrocyte-micronucleus-test_g1g6fb16/9789264264762-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 474: Mammalian Erythrocyte Micronucleus Test 第2条"
+  },
+  {
+   "id": "E14",
+   "source": "OECD-TG474-2016",
+   "clause": "第3条",
+   "sourceTitle": "OECD Test Guideline 474: Mammalian Erythrocyte Micronucleus Test",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2016/07/test-no-474-mammalian-erythrocyte-micronucleus-test_g1g6fb16/9789264264762-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 474: Mammalian Erythrocyte Micronucleus Test 第3条"
+  },
+  {
+   "id": "E15",
+   "source": "OECD-TG451-2018",
+   "clause": "第14条",
+   "sourceTitle": "OECD Test Guideline 451: Carcinogenicity Studies",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/06/test-no-451-carcinogenicity-studies_g1gh2955/9789264071186-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 451: Carcinogenicity Studies 第14条"
+  },
+  {
+   "id": "E16",
+   "source": "OECD-TG451-2018",
+   "clause": "第33条",
+   "sourceTitle": "OECD Test Guideline 451: Carcinogenicity Studies",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/06/test-no-451-carcinogenicity-studies_g1gh2955/9789264071186-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 451: Carcinogenicity Studies 第33条"
+  },
+  {
+   "id": "E17",
+   "source": "OECD-TG453-2018",
+   "clause": "第14条",
+   "sourceTitle": "OECD Test Guideline 453: Combined Chronic Toxicity/Carcinogenicity Studies",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/06/test-no-453-combined-chronic-toxicity-carcinogenicity-studies_g1gh2959/9789264071223-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 453: Combined Chronic Toxicity/Carcinogenicity Studies 第14条"
+  },
+  {
+   "id": "E18",
+   "source": "NMPA-毒理研究用样品-试行-2022",
+   "clause": "二（一）",
+   "sourceTitle": "中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号）",
+   "url": "https://www.cde.org.cn/main/news/viewInfoCommon/837a9b355dcc7f1724194e97c2fa3a29",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号） 二（一）"
+  },
+  {
+   "id": "E19",
+   "source": "NMPA-毒理研究用样品-试行-2022",
+   "clause": "二（二）",
+   "sourceTitle": "中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号）",
+   "url": "https://www.cde.org.cn/main/news/viewInfoCommon/837a9b355dcc7f1724194e97c2fa3a29",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号） 二（二）"
+  },
+  {
+   "id": "E20",
+   "source": "NMPA-毒理研究用样品-试行-2022",
+   "clause": "三（一）1",
+   "sourceTitle": "中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号）",
+   "url": "https://www.cde.org.cn/main/news/viewInfoCommon/837a9b355dcc7f1724194e97c2fa3a29",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号） 三（一）1"
+  },
+  {
+   "id": "E21",
+   "source": "NMPA-毒理研究用样品-试行-2022",
+   "clause": "三（一）3",
+   "sourceTitle": "中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号）",
+   "url": "https://www.cde.org.cn/main/news/viewInfoCommon/837a9b355dcc7f1724194e97c2fa3a29",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号） 三（一）3"
+  },
+  {
+   "id": "E22",
+   "source": "CDE-长期毒性-2007",
+   "clause": "第 5 节 给药期限",
+   "sourceTitle": "中药、天然药物长期毒性研究技术指导原则（2007）",
+   "url": "https://pharmwyp.com/posts/56814/7.3%E4%B8%AD%E8%8D%AF/7.3.3%E9%9D%9E%E4%B8%B4%E5%BA%8A/20070813_CDE_%E4%B8%AD%E8%8D%AF%E3%80%81%E5%A4%A9%E7%84%B6%E8%8D%AF%E7%89%A9%E9%95%BF%E6%9C%9F%E6%AF%92%E6%80%A7%E7%A0%94%E7%A9%B6%E6%8A%80%E6%9C%AF%E6%8C%87%E5%AF%BC%E5%8E%9F%E5%88%99.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·中药、天然药物长期毒性研究技术指导原则（2007） 第 5 节 给药期限"
+  },
+  {
+   "id": "E23",
+   "source": "CDE-长期毒性-2007",
+   "clause": "引言 第 1 节 目的",
+   "sourceTitle": "中药、天然药物长期毒性研究技术指导原则（2007）",
+   "url": "https://pharmwyp.com/posts/56814/7.3%E4%B8%AD%E8%8D%AF/7.3.3%E9%9D%9E%E4%B8%B4%E5%BA%8A/20070813_CDE_%E4%B8%AD%E8%8D%AF%E3%80%81%E5%A4%A9%E7%84%B6%E8%8D%AF%E7%89%A9%E9%95%BF%E6%9C%9F%E6%AF%92%E6%80%A7%E7%A0%94%E7%A9%B6%E6%8A%80%E6%9C%AF%E6%8C%87%E5%AF%BC%E5%8E%9F%E5%88%99.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·中药、天然药物长期毒性研究技术指导原则（2007） 引言 第 1 节 目的"
+  },
+  {
+   "id": "E24",
+   "source": "OECD-TG452-2018",
+   "clause": "第13条",
+   "sourceTitle": "OECD Test Guideline 452: Chronic Toxicity Studies",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/06/test-no-452-chronic-toxicity-studies_g1gh2957/9789264071209-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 452: Chronic Toxicity Studies 第13条"
+  },
+  {
+   "id": "E25",
+   "source": "OECD-TG452-2018",
+   "clause": "第33条",
+   "sourceTitle": "OECD Test Guideline 452: Chronic Toxicity Studies",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/06/test-no-452-chronic-toxicity-studies_g1gh2957/9789264071209-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 452: Chronic Toxicity Studies 第33条"
+  },
+  {
+   "id": "E26",
+   "source": "OECD-TG470-2022",
+   "clause": "第2条",
+   "sourceTitle": "OECD Test Guideline 470: Mammalian Erythrocyte Pig-a Gene Mutation Assay",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/06/test-no-470-mammalian-erythrocyte-pig-a-gene-mutation-assay_8d5eb84f/4faea90e-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 470: Mammalian Erythrocyte Pig-a Gene Mutation Assay 第2条"
+  },
+  {
+   "id": "E27",
+   "source": "OECD-TG470-2022",
+   "clause": "第3条",
+   "sourceTitle": "OECD Test Guideline 470: Mammalian Erythrocyte Pig-a Gene Mutation Assay",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/06/test-no-470-mammalian-erythrocyte-pig-a-gene-mutation-assay_8d5eb84f/4faea90e-en.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·OECD Test Guideline 470: Mammalian Erythrocyte Pig-a Gene Mutation Assay 第3条"
+  }
+ ],
+ "counts": {
+  "sources": 16,
+  "clauses": 27,
+  "verified": 27,
+  "unverified": 0
+ }
+}

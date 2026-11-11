@@ -1,0 +1,79 @@
+{
+  "lesson": "02-lilun-jichu",
+  "title": "理论基础：脑主神明与心主神明，谁说了算",
+  "subject": "20-zhongyi-jingshenbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "「脑主神明」与「心主神明」在教材中的关系是？",
+      "options": [
+        "分层：脑是物质基础，心是功能枢纽",
+        "互相排斥",
+        "完全相同",
+        "心被淘汰"
+      ],
+      "correct": 0,
+      "explanation": "教材 2.1.1–2.1.2 的处理是分层而非取代。"
+    },
+    {
+      "stage": "check",
+      "question": "五脏藏神中「魂」属哪一脏？",
+      "options": [
+        "肝",
+        "心",
+        "脾",
+        "肾"
+      ],
+      "correct": 0,
+      "explanation": "《灵枢·本神》：神魂魄意志分属心肝肺脾肾。"
+    },
+    {
+      "stage": "check",
+      "question": "「脑为元神之府」出自哪部书？",
+      "options": [
+        "《本草纲目》",
+        "《素问》",
+        "《灵枢》",
+        "《难经》"
+      ],
+      "correct": 0,
+      "explanation": "教材 2.1.1 引用，须注意其非理论专著。"
+    },
+    {
+      "stage": "check",
+      "question": "形神关系在本章的双向链指？",
+      "options": [
+        "形病致神病、神病致形病",
+        "只形致神",
+        "只神致形",
+        "两者无关"
+      ],
+      "correct": 0,
+      "explanation": "教材 2.2.2：形神合一。"
+    },
+    {
+      "stage": "post",
+      "question": "五脏藏神为何能用于辨证？",
+      "options": [
+        "它把具体症状（幻觉、易惊、思虑、恐惧、健忘）分派到五脏",
+        "因为它是比喻",
+        "因为它出自经典",
+        "因为它简单"
+      ],
+      "correct": 0,
+      "explanation": "教材 2.2.1 的实操价值。"
+    },
+    {
+      "stage": "post",
+      "question": "本章四位面首位是？",
+      "options": [
+        "神志意识（128）",
+        "情感情绪",
+        "行为言语",
+        "认知睡眠"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算：理论基础章谈神志。"
+    }
+  ]
+}

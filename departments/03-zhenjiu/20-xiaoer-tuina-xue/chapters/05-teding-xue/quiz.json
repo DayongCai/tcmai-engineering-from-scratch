@@ -1,0 +1,79 @@
+{
+ "lesson": "05-teding-xue",
+ "title": "小儿推拿特定穴",
+ "subject": "20-xiaoer-tuina-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 5 章「小儿推拿特定穴」要回答的核心问题是什么？",
+   "options": [
+    "小儿的「穴位」为什么和成人经穴对不上",
+    "明清以前",
+    "明清时期",
+    "学术流派"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：小儿特定穴多为线状与面状（三关、六腑、天河水、脾经），成人是点；用成人穴位表去核对，几乎全是「查无此穴」。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（脏腑系统）重心落在哪一项？",
+   "options": [
+    "脾系",
+    "肺系",
+    "心肝系",
+    "肾系与五官"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "特定穴",
+    "手法操作",
+    "病证应用",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "9 个",
+    "11 个",
+    "12 个",
+    "14 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "小儿特定穴以什么形态为主？",
+   "options": [
+    "线状与面状为主，点状少数",
+    "明清以前",
+    "明清时期",
+    "学术流派"
+   ],
+   "correct": 0,
+   "explanation": "正文第三节：线状（三关、六腑）与面状（板门、坎宫）为主。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/xiaoer-tuina/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

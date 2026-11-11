@@ -1,0 +1,79 @@
+{
+  "lesson": "10-piwei-gandan",
+  "title": "老年脾胃肝胆病证：能吃，才谈得上治",
+  "subject": "19-zhongyi-laonianbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "本章三条红线中与「进行性吞咽困难」相关的是？",
+      "options": [
+        "噎膈：排查食管肿瘤",
+        "泄泻",
+        "消渴",
+        "胆胀"
+      ],
+      "correct": 0,
+      "explanation": "教材 10.2.1 带「排查肿瘤」提示。"
+    },
+    {
+      "stage": "check",
+      "question": "老年消渴的治疗目标是？",
+      "options": [
+        "避免低血糖与并发症，而非一味降到正常",
+        "血糖必须达标",
+        "只降糖",
+        "不用药"
+      ],
+      "correct": 0,
+      "explanation": "教材 10.4.1：血糖管理与并发症防治。"
+    },
+    {
+      "stage": "check",
+      "question": "本章四位面「脾胃肝胆」的数值是？",
+      "options": [
+        "786（全书最高）",
+        "350",
+        "173",
+        "397"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算：脾胃既是病位也是治疗通道。"
+    },
+    {
+      "stage": "check",
+      "question": "老年泄泻为何忌过用分利？",
+      "options": [
+        "恐伤津液，老年津本不足",
+        "因为无效",
+        "因为太贵",
+        "因为伤脾"
+      ],
+      "correct": 0,
+      "explanation": "教材 10.3.1。"
+    },
+    {
+      "stage": "post",
+      "question": "「脾胃为药之门」的含义是？",
+      "options": [
+        "药物入口第一站是脾胃，通道堵则诸法失效",
+        "脾胃最重要",
+        "脾胃病最多",
+        "脾胃主运化"
+      ],
+      "correct": 0,
+      "explanation": "这是第 6 章「顾护脾胃」的临床落地。"
+    },
+    {
+      "stage": "post",
+      "question": "黄疸或肝功能异常＋用药史，首先想什么？",
+      "options": [
+        "药物性肝损伤（停药评估优先于保肝）",
+        "肝炎病毒",
+        "胆结石",
+        "肝癌"
+      ],
+      "correct": 0,
+      "explanation": "教材 10.5.1：用药安全（肝损伤警示）。"
+    }
+  ]
+}

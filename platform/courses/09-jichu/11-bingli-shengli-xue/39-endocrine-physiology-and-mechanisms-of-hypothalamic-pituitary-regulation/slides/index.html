@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>第 39 章 · 内分泌生理与下丘脑-垂体调控机制：两层整合、三级轴与五种读法 · 幻灯片</title>
+<style>
+
+:root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
+--jade:#1f6f5c;--jade-soft:#e3efe9;--cinnabar:#a8321e;--cinnabar-soft:#f7e6e2;--gold:#a8862a;
+--sans:system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;
+--serif:"Songti SC","Noto Serif SC",Georgia,serif;
+--mono:ui-monospace,"Cascadia Mono",Consolas,monospace;}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#12110f;color:var(--ink);font-family:var(--sans)}
+#deck{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{min-height:100%;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;
+  padding:5vh 7vw;background:var(--paper);border-bottom:1px solid #000}
+.slide-inner{max-width:1000px;width:100%;margin:0 auto}
+.slide-foot{max-width:1000px;width:100%;margin:3vh auto 0;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+h1.big{font-family:var(--serif);font-size:clamp(28px,4.4vw,54px);line-height:1.25;margin:0}
+blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-height:1.6;margin:0;
+  border-left:6px solid var(--gold);padding-left:24px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--jade);
+  text-transform:uppercase;margin-bottom:14px}
+.kicker.warn{color:var(--cinnabar)}
+p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
+.compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
+.compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+/* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
+.math{font-style:italic;font-family:var(--serif)}
+.math-block{display:block;text-align:center;font-family:var(--serif);font-size:1.05em;margin:.8em 0}
+.math-op,.math-text,.math-rm{font-style:normal}
+.math-op{padding:0 .12em}
+.math-cal{font-style:normal}
+.math-bb{font-style:normal;font-weight:700}
+.frac{display:inline-block;vertical-align:middle;text-align:center;font-style:normal;margin:0 .15em;line-height:1.15}
+.frac-num{display:block;padding:0 .3em;border-bottom:1px solid currentColor}
+.frac-den{display:block;padding:0 .3em}
+.math-sqrt{font-style:normal;margin-right:.05em}
+.math-line{border-top:1px solid currentColor;font-style:normal;padding-top:.05em}
+.math-note{font-size:.8em;font-style:normal}
+.figure-host{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+#hud{position:fixed;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#8a8578;
+  background:#faf8f3cc;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
+@media print{.slide{page-break-after:always;min-height:auto}#hud{display:none}}
+</style>
+</head>
+<body>
+<div id="deck">
+<section class="slide" data-i="0">
+  <div class="slide-inner"><h1 class="big">第 39 章 · 内分泌生理与下丘脑-垂体调控机制：两层整合、三级轴与五种读法</h1></div>
+  <div class="slide-foot"><span>1 / 32</span><span>title</span></div>
+</section>
+<section class="slide" data-i="1">
+  <div class="slide-inner"><blockquote class="motto">「任何单一测定都只是这个整合过程的一个截面」——补充·hermes-病理生理学讲义·第39章·39.5（《hermes-病理生理学讲义·第39章·39.5》）</blockquote></div>
+  <div class="slide-foot"><span>2 / 32</span><span>motto</span></div>
+</section>
+<section class="slide" data-i="2">
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">这一章最容易被读成两张表：一张腺体表，一张激素表。两张表都能背，却答不了真正的问题——为什么皮质醇在范围内的患者一遇手术就陷入循环衰竭，为什么甲状腺激素偏高的人表现却像功能低下，为什么同一份化验单在妊娠期要读出另一个结论。这三问共用一个前提：内分泌是多输入整合的系统，激素浓度只是整合过程的一个截面。本章给的是这条前提的四个支点——结构决定溶解性的化学支点、三级轴与三层反馈的结构支点、结合蛋白与受体调节的浓度支点、评估四件套的方法支点。四个支点立住，第 40 章的每一次定位推理才有落脚处。</p></div>
+  <div class="slide-foot"><span>3 / 32</span><span>problem</span></div>
+</section>
+<section class="slide" data-i="3">
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（讨论课上最先被追问的往往是那句“这个箭头要不要紧”，而它在机制层面无法用一个数值回答：同样偏低的靶腺激素，配一个升高的促激素与配一个同样偏低的促激素，指向两个不同的病变层级。没有轴的框架只能背结论，有了轴的框架才能把一对激素读成一个位置）+ 知识积累（本章 11 节、5534 个非空白字符，关键词频现算为「激素」99 次、「垂体」24 次、「受体」20 次、「下丘脑」16 次、「反馈」15 次、「靶腺」7 次：激素一词几乎独占，反馈与靶腺最少。这个分布说明本章的重心是激素如何起效、如何被读出，而不是腺体解剖；反馈只在 39.4 与 39.5 集中出现，却决定了第 40 章全部定位推理的方向）</p></div>
+  <div class="slide-foot"><span>4 / 32</span><span>roots</span></div>
+</section>
+<section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、两层整合：为什么内分泌不能单独读</div>
+                <div class="compact"><p>39.1 先定坐标。内分泌系统由分散于全身的腺体与具有分泌功能的细胞构成——下丘脑、垂体、甲状腺、甲状旁腺、肾上腺、胰岛、性腺，加上分散在心、肾、胃肠、脂肪组织中的内分泌细胞。这一串里既有成形的腺体，也有散在的细胞：把它当成一组器官来记，会漏掉脂肪组织与血管内皮这类“不像腺体的内分泌器官”，而后者正是第 42 章代谢紊乱的主角。</p>
+<p>讲义把内分泌与神经并列，写成机体的两大整合调节系统，并给出分工：</p>
+<blockquote><p>「神经以电信号与短程递质实现快速、定位明确的调控」——补充·hermes-病理生理学讲义·第39章·39.1</p></blockquote>
+<p>内分泌的一侧是另一组形容词：以血液为通道，较慢、广泛、持久。三个词各有机制根据——慢，因为依赖分泌入血与受体后转录；广泛，因为没有定向的解剖通路；持久，因为脂溶性激素靠改变蛋白合成起效，撤除也慢。这三个词在后面反复出现：39.2 用它解释起效时程，39.6 用它解释替代治疗的调整尺度，第 40 章的危象则用它解释为什么急性失代偿来得快而恢复慢。</p></div></div>
+  <div class="slide-foot"><span>5 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">二、四种路径与一条化学主线</div>
+                <div class="compact"><p>同是激素，到达靶细胞的路径有四种：内分泌（入血、经循环至远隔靶细胞）、旁分泌（作用于邻近细胞、不经循环稀释）、自分泌（作用于分泌细胞自身）、神经内分泌（神经元合成激素并释放入血）。差别不在分子，而在路径——路径决定局部浓度，也决定这类激素能否被抽血测到。</p>
+<p>把四种路径与 39.5 的旁分泌网络并读，得到本章第一件实用工具：抽血能测到的只是内分泌方式的那一部分。胰岛内三类细胞之间的相互制约属旁分泌，血中浓度不代表局部浓度；脂肪组织分泌的瘦素与脂联素进循环可测，其局部作用不可测。这是判断“化验正常而症状典型”的第一道入口。</p>
+<p>化学结构那一段是地基。讲义按结构把激素分成肽与蛋白质类、胺类、类固醇类、固醇类与脂肪酸衍生物四类，随即给出总纲：</p>
+<blockquote><p>「结构决定溶解性，溶解性决定受体位置与信号方式」——补充·hermes-病理生理学讲义·第39章·39.1</p></blockquote></div></div>
+  <div class="slide-foot"><span>6 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、四种路径与一条化学主线</div>
+                <div class="compact"><p>这句话把四类结构、两种受体位置、两套时程压成一条推论链。写内分泌的任何一段机制，第一步都该问：这个激素溶不溶于水。答对了，受体在哪、起效多快、效应能否迅速撤除，几个问题一起解决。</p></div></div>
+  <div class="slide-foot"><span>7 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">三、膜受体与核受体，以及一条伏笔</div>
+                <div class="compact"><p>39.2 把主线落到分子层。水溶性激素作用于膜受体，靠第二信使把信号放大并转导至胞内，讲义列了四条通路：腺苷酸环化酶—cAMP—蛋白激酶 A（多见于促激素类）、磷脂酶 C—IP₃/DAG—钙与蛋白激酶 C（如 GnRH、儿茶酚胺的 α 受体效应）、酪氨酸激酶级联（胰岛素与生长因子类受体自身具激酶活性）、鸟苷酸环化酶—cGMP（如心房利钠肽）。四条通路的共同点是效应依赖既有蛋白的活性改变，不依赖新蛋白合成，因此</p>
+<blockquote><p>「起效快、时程短」——补充·hermes-病理生理学讲义·第39章·39.2</p></blockquote>
+<p>脂溶性激素走另一条路：穿过细胞膜，与胞质或核受体结合，作为转录因子调控基因表达，改变靶细胞合成的蛋白种类与数量。讲义给的时程是“起效慢（以小时计）、时程长（以天计）”，并补了一句极实用的推论——效应不易迅速撤除，所以甲状腺功能减退的临床表现出现缓慢，纠正也需要数周才显现。这解释了一个常见的沟通难点：服药数日自觉无变化，不是药无效，而是这条路本来就这么长。</p></div></div>
+  <div class="slide-foot"><span>8 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、膜受体与核受体，以及一条伏笔</div>
+                <div class="compact"><p>四条通路不必逐条背：它们的名字只在读药理时定位药物作用于哪一环时有用。记结构，比记通路名划算。</p>
+<p>本节末段埋下全章最重要的伏笔：持续高水平的激素使受体数量减少或敏感性下降，称下调；长期低激素水平或去神经支配使受体数量增加，称上调。这一条把“激素浓度—生物效应”这条看似线性的关系打断了——浓度相同、效应不同，在生理范围内是常态。39.7 的允许作用、39.8 的第一类误判、第 40 章的激素抵抗综合征，都以它为前提。措辞上要留意：上调与下调描述的是受体，不是激素。</p></div></div>
+  <div class="slide-foot"><span>9 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">四、垂体分两部：门脉系统与储存式释放</div>
+                <div class="compact"><p>39.3 讲结构，讲的却是两套完全不同的调控逻辑。腺垂体分泌六种激素——生长激素、促肾上腺皮质激素、促甲状腺激素、卵泡刺激素、黄体生成素、催乳素——受下丘脑释放激素与抑制激素的双重控制。通路是关键：释放激素不经体循环，而由正中隆起处的神经末梢释放入垂体门脉系统，</p>
+<blockquote><p>「以很高的局部浓度直接送达腺垂体」——补充·hermes-病理生理学讲义·第39章·39.3</p></blockquote>
+<p>后果有两层。其一，极微量的下丘脑激素即可实现精确调控——外周血里测不到的浓度，在门脉里足够高；其二，垂体局部微环境成为独立调节单元，所以垂体激素的测定解释必须考虑局部因素。</p>
+<p>神经垂体是另一半逻辑：它不合成激素，只储存与释放由下丘脑视上核、室旁核合成的抗利尿激素与催产素。因此神经垂体病变表现为释放障碍而非合成障碍，其功能状态须结合下丘脑与渗透压刺激综合判断。这一句挡住一个常见的定位错误——看到抗利尿激素不足，不能直接推到垂体坏了，因为合成在上游。</p></div></div>
+  <div class="slide-foot"><span>10 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、垂体分两部：门脉系统与储存式释放</div>
+                <div class="compact"><p>末段值得单记一笔：垂体位于蝶鞍，上方紧邻视交叉，向上扩展产生双颞侧视野缺损。头痛伴视野改变是垂体占位的经典组合——意义不在记症状，而在提醒内分泌病变可以先以神经科症状出现。</p></div></div>
+  <div class="slide-foot"><span>11 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">五、三级轴与三层反馈</div>
+                <div class="compact"><p>39.4 是骨架。绝大多数内分泌功能以三级轴组织：下丘脑释放激素 → 腺垂体促激素 → 靶腺激素 → 靶组织效应。甲状腺轴为 TRH → TSH → 甲状腺激素；肾上腺轴为 CRH → ACTH → 皮质醇；性腺轴为 GnRH → LH/FSH → 性激素；生长轴为 GHRH/生长抑素 → GH → IGF-1。</p>
+<p>四轴并列，形状相同：一个上位信号、一个中转信号、一个终末激素。这个形状就是定位诊断的全部依据，因为反馈让三者互为条件。长反馈是靶腺激素反向抑制下丘脑与垂体；短反馈是促激素反向抑制下丘脑释放激素，如 ACTH 对 CRH 神经元的抑制；超短反馈是释放激素或促激素抑制自身分泌细胞，使分泌呈脉冲而非持续状态。</p>
+<p>三层叠起来才得到一个可推的结论：同一条轴上，越靠上的病变，被牵连的环节越多。靶腺坏了，只有终末激素掉、促激素升；垂体坏了，终末激素与促激素一起掉；下丘脑坏了，三层一起掉。40.5 那张定位表就是这么推出来的，不是背出来的。</p>
+<p>讲义给了两条临床推论。其一：</p></div></div>
+  <div class="slide-foot"><span>12 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">五、三级轴与三层反馈</div>
+                <div class="compact"><blockquote><p>「长期外源激素会抑制整条轴」——补充·hermes-病理生理学讲义·第39章·39.4</p></blockquote>
+<p>长期使用糖皮质激素者，肾上腺皮质萎缩、内源 CRH 与 ACTH 受抑，突然停药可诱发肾上腺皮质功能不全。这条把治疗与病因接上了：一种病的外源治疗，可以制造出另一种病的解剖基础。其二：</p>
+<blockquote><p>「反馈关系是定位诊断的工具」——补充·hermes-病理生理学讲义·第39章·39.4</p></blockquote>
+<p>同时测定靶腺激素与其促激素，观察二者是否相称，即可判断病变在靶腺、垂体还是下丘脑。这条工具只用一对数值的相对关系，不用绝对值——与本书不写数值的取舍恰好同向。</p></div></div>
+  <div class="slide-foot"><span>13 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">六、正反馈：生殖轴为何不能套用直觉</div>
+                <div class="compact"><p>负反馈不是唯一模式。排卵前雌激素水平持续升高到一定阶段后，由抑制转为增强 GnRH 与 LH 的释放，形成 LH 峰并触发排卵。事实层的结论是：同一激素在不同浓度阶段的作用方向可以相反。方法层的结论是：判断反馈的正负，不能看激素名字，要看它在当前状态下把系统推向哪边。</p>
+<p>讲义把这个例子定位为生理性正反馈的少数范例。少数两个字很重要——它提醒不要把正反馈当常规解释。病理状态下的正反馈环（如休克中的恶性循环）是另一类东西：那是环路失去约束，不是生理设计。第 41 章升糖与降糖的不对称、第 42 章饥饿与应激两种相反的代谢方向，用的都是本节这条读法。</p></div></div>
+  <div class="slide-foot"><span>14 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">七、反馈之外的四个维度</div>
+                <div class="compact"><p>39.5 最容易被跳过，却最能防止简化。它开篇就说：若只按反馈回路理解内分泌，会把一个多输入系统简化成恒温器。随后列四个维度。</p>
+<p>脉冲式分泌：脉冲频率决定 LH 与 FSH 的相对比例——高频偏向 LH，低频偏向 FSH；持续而非脉冲的刺激反使垂体受体下调、促性腺激素分泌受抑，这正是某些 GnRH 类似物用于抑制性腺轴的机制基础。昼夜节律：皮质醇晨高暮低，GH 主要在深睡眠期分泌，节律由视交叉上核驱动。讲义在这里下了一句硬判断：</p>
+<blockquote><p>「单点采血若忽略时点，结论可能完全错误」——补充·hermes-病理生理学讲义·第39章·39.5</p></blockquote>
+<p>另外两维是神经调节与代谢信号：应激、疼痛、情绪经交感与下丘脑通路改变轴的活动，吸吮刺激经神经反射引起催产素与 PRL 释放；血糖、氨基酸、游离脂肪酸、酮体直接作用于胰岛细胞，进食后肠道激素放大胰岛素分泌。末维是旁分泌与局部网络——胰岛内三类细胞互相制约，脂肪组织分泌瘦素与脂联素，血管内皮参与激素的活化与灭活。五维收在一句上：</p></div></div>
+  <div class="slide-foot"><span>15 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">七、反馈之外的四个维度</div>
+                <div class="compact"><blockquote><p>「任何单一测定都只是这个整合过程的一个截面」——补充·hermes-病理生理学讲义·第39章·39.5</p></blockquote></div></div>
+  <div class="slide-foot"><span>16 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">八、转运与清除：总浓度与游离部分</div>
+                <div class="compact"><p>多数激素在血中并非全部游离：甲状腺激素主要与甲状腺结合球蛋白及白蛋白结合，皮质醇与皮质醇结合球蛋白结合，性激素与性激素结合球蛋白结合。只有游离部分能进入细胞产生效应，也只有游离部分参与反馈调节。由此产生一类解释陷阱：</p>
+<blockquote><p>「总浓度测定受结合蛋白影响，可能严重偏离功能状态」——补充·hermes-病理生理学讲义·第39章·39.6</p></blockquote>
+<p>四个方向都要记住。妊娠、雌激素治疗、慢性肝病使结合蛋白升高，总浓度随之升高而游离部分正常，患者并无功能亢进；肾病综合征大量蛋白丢失、严重肝病合成减少使结合蛋白下降，总浓度偏低而游离部分正常，患者并无功能减退；若结合蛋白显著下降而总浓度看起来正常，游离部分可能已经升高。四种组合的共同点是：总浓度朝一个方向走，功能状态没动。</p></div></div>
+  <div class="slide-foot"><span>17 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">八、转运与清除：总浓度与游离部分</div>
+                <div class="compact"><p>半衰期差异同样要紧。肽类激素多以分钟计，需持续分泌或频繁给药；甲状腺激素以天计，故替代治疗的起效与调整都以周为尺度。激素主要在肝降解、肾排泄，肝肾功能不全时清除减慢——这既影响测定值的解释，也影响外源激素的作用强度与持续时间。第 41 章把肾功能不全列入低血糖高危情形，根据就在这一句。</p></div></div>
+  <div class="slide-foot"><span>18 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">九、靶细胞反应性：允许、协同与拮抗</div>
+                <div class="compact"><p>同样浓度的激素，为什么在不同个体身上效应差得很远？答案分三层：受体数量与亲和力、受体后信号效率、允许作用。允许作用最该记住：</p>
+<blockquote><p>「皮质醇本身不直接收缩血管，但它是儿茶酚胺维持血管张力所必需的条件」——补充·hermes-病理生理学讲义·第39章·39.7</p></blockquote>
+<p>缺乏皮质醇时，儿茶酚胺的升压效应显著减弱——这解释了一个反复出现的困惑：肾上腺皮质功能不全者的低血压难以用补液纠正，因为缺的不是容量，是血管对升压信号的响应能力。第 40 章的肾上腺危象、第 42 章的应激代谢，都以这一条为接口。</p></div></div>
+  <div class="slide-foot"><span>19 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">九、靶细胞反应性：允许、协同与拮抗</div>
+                <div class="compact"><p>协同与拮抗给出一张不对称的图：胰高血糖素、肾上腺素、皮质醇、生长激素在升高血糖上相互协同，胰岛素与它们构成方向相反的抗衡系统——一组升糖、一个降糖。讲义对这个结构的评价是：这也是糖尿病在应激下容易失控的原因。第 41 章用整节展开这个不对称，本章只需记住它的形状。最后一组是竞争与耐受：结构相似的激素或药物竞争同一受体，长期刺激导致反应性下降。两者都不改变激素浓度，只改变反应性——这正是本节与 39.6 的分工。</p></div></div>
+  <div class="slide-foot"><span>20 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">十、五种情形：为什么箭头不等于功能诊断</div>
+                <div class="compact"><p>39.8 把前面八节收成一个认识论命题。讲义列了五类情形，每一类都足以推翻“化验单箭头等于功能诊断”这个直觉。</p>
+<p>第一，激素高而功能低下，即抵抗。受体或受体后缺陷时激素水平代偿性升高而终末效应不足：甲状腺激素抵抗者激素升高却表现为甲减倾向，胰岛素抵抗者胰岛素升高而血糖仍高。只看激素水平，结论会与事实相反。</p>
+<p>第二，激素在范围内而轴已失衡。反馈系统可在相当宽的范围内把激素维持在看似正常的水平，直到储备耗竭才跌破界限：肾上腺轴受损早期，皮质醇仍在范围内，只有在应激时才暴露不足。讲义的判断是：</p>
+<blockquote><p>「正常范围内的低值在高应激需求下等于功能不足」——补充·hermes-病理生理学讲义·第39章·39.8</p></blockquote>
+<p>第三，总浓度受结合蛋白干扰，即上一节那四种组合。</p>
+<p>第四，</p>
+<blockquote><p>「节律与脉冲的丧失先于水平异常」——补充·hermes-病理生理学讲义·第39章·39.8</p></blockquote></div></div>
+  <div class="slide-foot"><span>21 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">十、五种情形：为什么箭头不等于功能诊断</div>
+                <div class="compact"><p>皮质醇节律消失、GH 脉冲减少、LH 脉冲频率改变，往往出现在平均水平仍正常时；而节律本身承载信息——皮质醇的晨峰对觉醒、代谢与免疫的时序安排具有意义。这一条把 39.5 的维度从干扰因素提升为诊断对象。</p>
+<p>第五，终末效应物比激素更能反映功能。甲状腺激素的外周转化效率、IGF-1 对 GH 的反映、骨转换标志物对 PTH 与性激素的反映，都比单一上位激素更接近功能状态。五类收在一句结论上：评估内分泌功能必须把激素测定、动态试验、靶器官效应与临床表现四者结合，单点、单指标的判断在逻辑上不成立。</p></div></div>
+  <div class="slide-foot"><span>22 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">十一、评估的五个层次</div>
+                <div class="compact"><p>39.9 把上面的纪律落成可执行的表。基线测定（按时点、按体位、按进食状态采血）回答该时点的方向；动态试验回答储备能力与分泌是否自主；节律与脉冲（多次或连续采样）回答调控模式是否完整；靶器官效应回答激素是否真正起效；定位与病因（影像、自身抗体、基因检测）回答部位与性质。</p>
+<p>兴奋与抑制是一对镜像。兴奋试验用于怀疑功能减退：给予促激素或生理性刺激，观察靶腺能否相应升高——</p>
+<blockquote><p>「有反应提示靶腺储备尚可、病变可能在上位；无反应提示靶腺本身衰竭」——补充·hermes-病理生理学讲义·第39章·39.9</p></blockquote></div></div>
+  <div class="slide-foot"><span>23 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">十一、评估的五个层次</div>
+                <div class="compact"><p>抑制试验用于怀疑功能亢进：给予外源激素，观察自主分泌能否被抑制；不能被抑制提示分泌自主，常见于腺瘤。护理配合四条：严格按医嘱时点采血，避免采血前剧烈活动、吸烟、情绪激动；了解正在使用的激素类药物（可干扰测定与反馈）；记录采血时的进食、睡眠与应激状态；动态试验中观察低血糖、脱水、心悸等反应并备好急救条件。四条都不是操作细节，而是把“时点与状态是结论的一部分”翻译成动作。</p></div></div>
+  <div class="slide-foot"><span>24 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="24">
+  <div class="slide-inner"><div class="kicker">十二、生命周期：同一句话在不同年龄要重读</div>
+                <div class="compact"><p>胎儿与新生儿这一段有一句可直接引的机制：</p>
+<blockquote><p>「甲状腺激素对脑发育具有时限性作用」——补充·hermes-病理生理学讲义·第39章·39.10</p></blockquote>
+<p>先天性甲减若未在早期识别，损害不可逆，新生儿筛查就是这条机制的公共卫生体现。机制词是时限性——不是剂量问题，是窗口问题。</p>
+<p>儿童与青春期：生长轴与性腺轴依次激活，GH 脉冲幅度在青春期升高；启动时间受营养、体脂、睡眠与遗传共同影响，是代谢信号调控内分泌的典型例证。</p>
+<p>妊娠：胎盘分泌大量激素，结合蛋白升高使总激素浓度上升；肾小球滤过率增加与肾糖阈变化使孕期糖代谢呈现特殊模式；胎盘生乳素与皮质醇升高造成生理性胰岛素抵抗。这一段是 39.6 那四种组合的第一手例证，也是第 41 章妊娠糖尿病的机制前提。</p></div></div>
+  <div class="slide-foot"><span>25 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="25">
+  <div class="slide-inner"><div class="kicker">十二、生命周期：同一句话在不同年龄要重读</div>
+                <div class="compact"><p>老年：激素分泌率与清除率同时下降，血中水平可能变化不大而生物学效应减弱；受体敏感性、靶器官反应与储备能力下降；临床表现不典型，识别难度上升。应激状态：急性疾病可重设整个轴的调定点，出现病态下的内分泌模式，此时测定的解释必须结合病情而非套用健康人参考。这一句是全章的出口，直通第 40 章与第 42 章。</p></div></div>
+  <div class="slide-foot"><span>26 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="26">
+  <div class="slide-inner"><div class="kicker">十三、三系统整合：为什么一个腺体会在多处留痕</div>
+                <div class="compact"><p>39.11 把内分泌放回网络。四条通路，先看第一条的关节：</p>
+<blockquote><p>「下丘脑是二者的接口」——补充·hermes-病理生理学讲义·第39章·39.11</p></blockquote>
+<p>交感与副交感神经即由此直接支配胰岛、肾上腺髓质与甲状腺。内分泌对免疫——皮质醇抑制炎症与淋巴细胞增殖，性激素调节免疫反应强度，这也是自身免疫病在性别与年龄上分布差异的部分解释；免疫对内分泌——自身免疫性腺体炎是内分泌功能减退的主要病因之一，细胞因子在重症时抑制下丘脑-垂体轴；代谢对三者——能量供给状态改变激素分泌、神经递质合成与免疫应答，营养因此成为内分泌调节的底层变量。</p>
+<p>这一节给后面三章提供一条共同解释：为什么一个腺体的病变会在多个系统留下痕迹，为什么内分泌、代谢与营养三章总在讲同一批患者。读完后若仍把三章当成三门独立的课，这一节就白读了。</p></div></div>
+  <div class="slide-foot"><span>27 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="27">
+  <div class="slide-inner"><div class="kicker">十四、节级落位：讲义 39.1–39.11</div>
+                <div class="compact"><div class="table-wrap"><table><thead><tr><th>节号</th><th>一句话落位</th></tr></thead><tbody><tr><td>39.1 组成与作用方式</td><td>两大整合系统；四种路径；结构决定溶解性</td></tr><tr><td>39.2 细胞机制</td><td>膜受体四条通路与核受体；受体上下调埋下伏笔</td></tr><tr><td>39.3 下丘脑-垂体单元</td><td>门脉系统送达；神经垂体只储存；蝶鞍毗邻视交叉</td></tr><tr><td>39.4 三级轴与反馈</td><td>长、短、超短三层；正反馈是少数范例；两条临床推论</td></tr><tr><td>39.5 反馈之外的维度</td><td>脉冲、节律、神经、代谢、旁分泌；单一测定只是截面</td></tr><tr><td>39.6 转运与清除</td><td>结合蛋白四种组合；半衰期决定调整尺度</td></tr><tr><td>39.7 靶细胞反应性</td><td>允许作用；一组升糖对一个降糖；竞争与耐受</td></tr><tr><td>39.8 水平不等于功能</td><td>五种情形；单点单指标不成立</td></tr><tr><td>39.9 评估思路</td><td>五个层次；兴奋与抑制互为镜像；护理四条</td></tr><tr><td>39.10 生命周期</td><td>五个阶段；时限性、代谢信号、生理性抵抗、非典型表现</td></tr><tr><td>39.11 三系统整合</td><td>四条通路；多系统共病的解释入口</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>28 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="28">
+  <div class="slide-inner"><div class="kicker">十四、节级落位：讲义 39.1–39.11</div>
+                <div class="compact"><p>十一节的次序本身就是一条推理链：39.1 与 39.2 给分子层，39.3 与 39.4 给结构层，39.5 到 39.7 给浓度与反应性，39.8 与 39.9 收成方法论，39.10 与 39.11 放到时间与网络里。前七节讲机制，后四节讲怎么用——若从 39.9 开始读，五层评估会变成五条并列的检查单。</p></div></div>
+  <div class="slide-foot"><span>29 / 32</span><span>body</span></div>
+</section>
+<section class="slide" data-i="29">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>引文只有一层。</strong> 本章引文格式统一为<code>补充·hermes-病理生理学讲义·第39章·N.M</code>，章号等于课程章号，节号逐条真实存在。讲义是本仓库原创的教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义这一章 5534 个非空白字符里，数字加计量单位的命中为零（<code>node code/main.js</code> 复算，不照抄声明）。讲义把可量化处改成方向与类别——升高、降低、相称、不相称、快、慢。本书照录这一取舍：<strong>描述类别可以，给出取值不行。</strong></li><li><strong>不写正常值、参考区间与单位。</strong> 凡遇多久算长、多少算高的追问，统一回本书不给值，另立数据层、另立来源与校验。本章连半衰期都不给数字，只说尺度。</li><li><strong>不作诊断，也不作正常与异常的判定。</strong> 三级轴、反馈层级与五类误判在本章只作机制类别使用，不用于给任何个体定性。凡涉个体，一律中性表述、不贴标签、不作疗效断言。</li><li>**不写治疗方案。</li></ul></div></div>
+  <div class="slide-foot"><span>30 / 32</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="30">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>** 讲义明说具体剂量属个体化医疗决策；本页只写机制类别与评估思路的层次。</p>
+<ul><li><strong>本章的框架有边界。</strong> 三级轴是最常见的组织形式，但不是唯一形式：旁分泌网络、神经内分泌反射、代谢信号对胰岛的直接作用，都塞不进三级轴的模子。凡遇塞不进去的情形，说明该换框架，而不是把材料削足适履。</li><li><strong>边界声明</strong>：本章只解释讲义给出的机制类别与评估思路，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
+  <div class="slide-foot"><span>31 / 32</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="31">
+  <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
+  <div class="slide-foot"><span>32 / 32</span><span>disclaimer</span></div>
+</section>
+</div>
+<div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>
+<script>/**
+ * [tcmP] figures.js —— 中医概念动画图（纯 SVG + rAF，无依赖）
+ *
+ * 自动挂载：文档里写
+ *     <div data-figure="wuxing-cycle"></div>
+ * 即可。支持悬停暂停；系统开启「减少动态效果」时渲染为静态帧。
+ *
+ * 与 ai-engineering-from-scratch 的 site/figures.js 同构（同样的 el/loop/registry 形态），
+ * 图目换成中医概念：
+ *   yin-yang-sigmoid    阴阳 → 二分类：sigmoid 决策边界扫过，样本左右归属翻转
+ *   wuxing-cycle        五行生克：相生正向流动 + 相克五角星流动
+ *   zangxiang-graph     藏象：脏腑 → 官窍 → 情志 的边逐步点亮
+ *   sizhen-fusion       四诊合参：四通道 → 融合层 → 证候输出
+ *   meridian-lookup     经络腧穴：KD-Tree 空间划分 + 最近邻查询
+ *   junchen-attention   君臣佐使：药味 → 权重矩阵高亮
+ */
+
+(function () {
+  'use strict';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── SVG 小工具 ──
+  function el(name, attrs, kids) {
+    const e = document.createElementNS(NS, name);
+    for (const k in attrs || {}) e.setAttribute(k, attrs[k]);
+    (Array.isArray(kids) ? kids : kids ? [kids] : []).filter(Boolean).forEach((c) => e.appendChild(c));
+    return e;
+  }
+  const txt = (s) => document.createTextNode(s);
+
+  function label(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--sans)', 'font-size': 12, fill: 'var(--muted)' },
+      opts || {}
+    ), [txt(s)]);
+  }
+  function mono(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--mono)', 'font-size': 11, fill: 'var(--muted)', 'letter-spacing': '.1em' },
+      opts || {}
+    ), [txt(s)]);
+  }
+
+  function svgRoot(host, W, H, aria) {
+    const svg = el('svg', {
+      viewBox: `0 0 ${W} ${H}`, width: '100%', role: 'img', 'aria-label': aria || '',
+      style: 'display:block;max-width:100%;height:auto',
+    });
+    host.appendChild(svg);
+    return svg;
+  }
+
+  // 悬停暂停 + 时间归一化
+  function loop(host, fn, period, opts) {
+    period = period || 6400;
+    opts = opts || {};
+    let raf, paused = false, t0 = performance.now();
+    const onTick = (now) => {
+      if (!paused) fn((((now - t0) % period) / period));
+      raf = requestAnimationFrame(onTick);
+    };
+    host.addEventListener('mouseenter', () => { paused = true; });
+    host.addEventListener('mouseleave', () => { paused = false; });
+    if (REDUCED) { fn(opts.staticT == null ? 0.62 : opts.staticT); return function () {}; }
+    raf = requestAnimationFrame(onTick);
+    return () => cancelAnimationFrame(raf);
+  }
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeIO = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const sigmoid = (z) => 1 / (1 + Math.exp(-z));
+
+  const FIGURES = {};
+
+  /* ───────────────────── yin-yang-sigmoid ─────────────────────
+     阴阳 → 二分类。左侧散点：X 轴「寒热倾向」，输出 sigmoid 概率。
+     扫描线扫过阈值，样本随阈值的移动左右换边，右侧给出准确率。
+  */
+  FIGURES['yin-yang-sigmoid'] = function (host) {
+    const W = 720, H = 400, PAD = 54;
+    const svg = svgRoot(host, W, H, '阴阳二分类与 sigmoid 决策边界');
+    const plotW = W - PAD * 2, plotH = H - 150;
+
+    // 样本：12 条八纲典型证候（阴=0 阳=1）
+    const data = [
+      [-2.2, 0], [-1.8, 0], [-1.4, 0], [-1.1, 0], [-0.6, 0], [-0.2, 0],
+      [0.2, 1], [0.6, 1], [1.1, 1], [1.5, 1], [1.9, 1], [2.4, 1],
+    ];
+    const X = (v) => PAD + ((v + 3) / 6) * plotW;
+    const Y = (p) => H - 90 - p * plotH;
+
+    // 坐标轴
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: W - PAD, y2: H - 90, stroke: 'var(--line)' }));
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: PAD, y2: H - 90 - plotH, stroke: 'var(--line)' }));
+    svg.appendChild(mono(PAD, H - 72, '寒 / 阴 →'));
+    svg.appendChild(mono(W - PAD, H - 72, '← 热 / 阳', { 'text-anchor': 'end' }));
+    svg.appendChild(mono(8, PAD - 22, 'P(阳)'));
+    svg.appendChild(mono(W - PAD - 130, 26, 'sigmoid 决策边界'));
+
+    const curve = el('path', { d: '', fill: 'none', stroke: 'var(--jade)', 'stroke-width': 2.5 });
+    svg.appendChild(curve);
+    const threshLine = el('line', { stroke: 'var(--cinnabar)', 'stroke-dasharray': '5 4', 'stroke-width': 1.6 });
+    svg.appendChild(threshLine);
+
+    const pts = data.map(([x, y]) => {
+      const g = el('g', {});
+      const c = el('circle', { r: 6, cx: X(x), cy: H - 90 - 0.5 * plotH, fill: y ? 'var(--cinnabar)' : 'var(--jade)', opacity: 0.85 });
+      const cls = el('text', {
+        x: X(x), y: H - 90 - 0.5 * plotH + 4, 'text-anchor': 'middle',
+        'font-family': 'var(--sans)', 'font-size': 10, fill: '#fff',
+      }, [txt(y ? '阳' : '阴')]);
+      g.appendChild(c); g.appendChild(cls);
+      svg.appendChild(g);
+      return { x, y, c, cls };
+    });
+
+    const accText = label(PAD, 26, '', { fill: 'var(--ink)', 'font-size': 13 });
+    svg.appendChild(accText);
+
+    let pathD = '';
+    for (let i = 0; i <= 60; i += 1) {
+      const xv = -3 + (i / 60) * 6;
+      const p = sigmoid(1.6 * xv + 0.1);
+      pathD += `${i === 0 ? 'M' : 'L'}${X(xv).toFixed(1)},${Y(p).toFixed(1)}`;
+    }
+    curve.setAttribute('d', pathD);
+
+    loop(host, (t) => {
+      // 阈值在 0..1 之间来回扫
+      const thr = 0.15 + 0.7 * easeIO(1 - Math.abs(2 * t - 1));
+      const pThr = 0.1 + thr * 0.85;
+      const xThr = (Math.log(pThr / (1 - pThr)) - 0.1) / 1.6;
+      threshLine.setAttribute('x1', X(xThr));
+      threshLine.setAttribute('x2', X(xThr));
+      threshLine.setAttribute('y1', H - 90 - plotH - 6);
+      threshLine.setAttribute('y2', H - 90);
+
+      let correct = 0;
+      for (const p of pts) {
+        const prob = sigmoid(1.6 * p.x + 0.1);
+        const pred = prob >= pThr ? 1 : 0;
+        if (pred === p.y) correct += 1;
+        p.c.setAttribute('cy', Y(prob));
+        p.cls.setAttribute('y', Y(prob) + 4);
+        p.c.setAttribute('r', pred === p.y ? 7 : 5);
+        p.c.setAttribute('opacity', pred === p.y ? 0.92 : 0.32);
+        p.cls.setAttribute('opacity', pred === p.y ? 1 : 0.25);
+        // 判错的样本画一圈红
+        p.c.setAttribute('stroke', pred === p.y ? 'none' : 'var(--cinnabar)');
+        p.c.setAttribute('stroke-width', pred === p.y ? 0 : 2);
+      }
+      accText.textContent = `阈值 P=${pThr.toFixed(2)} · 准确率 ${correct}/${pts.length} = ${((correct / pts.length) * 100).toFixed(0)}%`;
+    }, 7200);
+  };
+
+  /* ───────────────────── wuxing-cycle ─────────────────────
+     五行生克。外圈相生（顺时针流动），内五角星相克。
+  */
+  FIGURES['wuxing-cycle'] = function (host) {
+    const W = 720, H = 440, cx = W / 2 - 70, cy = H / 2, R = 148;
+    const svg = svgRoot(host, W, H, '五行生克关系');
+    const names = ['木', '火', '土', '金', '水'];
+    const colors = ['var(--jade)', 'var(--cinnabar)', 'var(--gold)', '#8a6d3b', '#2a4d69'];
+    const node = names.map((_, i) => {
+      const a = -Math.PI / 2 + (i / 5) * Math.PI * 2;
+      return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), a };
+    });
+
+    // 相生边（外圈，顺时针 木→火→土→金→水→木）
+    const sheng = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const p = el('path', {
+        d: `M${n.x},${n.y} Q${(n.x + m.x) / 2 + (cy - (n.y + m.y) / 2) * 0.16},${(n.y + m.y) / 2 + ((n.x + m.x) / 2 - cx) * 0.16} ${m.x},${m.y}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.28,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+    // 相克边（五角星）
+    const ke = node.map((n, i) => {
+      const m = node[(i + 2) % 5];
+      const p = el('line', {
+        x1: n.x, y1: n.y, x2: m.x, y2: m.y,
+        stroke: 'var(--cinnabar)', 'stroke-width': 1.4, 'stroke-dasharray': '4 4', opacity: 0.2,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+
+    // 沿边流动的点
+    const flow = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const g = el('circle', { r: 4, fill: 'var(--jade)', cx: n.x, cy: n.y, opacity: 0 });
+      svg.appendChild(g);
+      return { g, from: n, to: m };
+    });
+
+    const nodes = node.map((n, i) => {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: n.x, cy: n.y, r: 30, fill: '#fff', stroke: colors[i], 'stroke-width': 2 }));
+      g.appendChild(el('text', {
+        x: n.x, y: n.y + 8, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 22, fill: colors[i],
+      }, [txt(names[i])]));
+      svg.appendChild(g);
+      return g;
+    });
+
+    // 右栏说明
+    svg.appendChild(mono(W - 190, 60, '相生 (outer)'));
+    svg.appendChild(label(W - 190, 82, '木→火→土→金→水→木', { fill: 'var(--jade)' }));
+    svg.appendChild(mono(W - 190, 130, '相克 (star)'));
+    svg.appendChild(label(W - 190, 152, '木克土 · 土克水 · 水克火', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(label(W - 190, 170, '火克金 · 金克木', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(mono(W - 190, 220, '建模要点'));
+    svg.appendChild(label(W - 190, 242, '5 类 + 有向约束', { fill: 'var(--ink)' }));
+    svg.appendChild(label(W - 190, 262, '纯 softmax 会丢掉', { fill: 'var(--muted)' }));
+    svg.appendChild(label(W - 190, 280, '全部关系信息', { fill: 'var(--muted)' }));
+
+    const capt = label(W - 190, H - 30, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const phase = (t * 5) % 5;
+      for (let i = 0; i < 5; i += 1) {
+        const f = flow[i];
+        const local = clamp01(phase - i);
+        const k = easeIO(local);
+        f.g.setAttribute('cx', lerp(f.from.x, f.to.x, k));
+        f.g.setAttribute('cy', lerp(f.from.y, f.to.y, k));
+        f.g.setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.95 : 0);
+        sheng[i].setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.75 : 0.28);
+        const keOn = phase - i >= 0 && phase - i <= 1.4;
+        ke[i].setAttribute('opacity', keOn ? 0.55 : 0.2);
+      }
+      const active = Math.floor(phase) % 5;
+      nodes.forEach((g, i) => g.querySelector('circle').setAttribute('stroke-width', i === active ? 4 : 2));
+      capt.textContent = `当前传导：${names[active]} → ${names[(active + 1) % 5]}（生） / ${names[active]} 克 ${names[(active + 2) % 5]}`;
+    }, 7000);
+  };
+
+  /* ───────────────────── zangxiang-graph ─────────────────────
+     藏象：五脏 → 官窍 → 情志，边按序点亮。
+  */
+  FIGURES['zangxiang-graph'] = function (host) {
+    const W = 720, H = 430;
+    const svg = svgRoot(host, W, H, '藏象学说的脏腑-官窍-情志关系图');
+
+    const zang = [
+      { n: '肝', x: 110, y: 100, qiao: ['目'], zhi: '怒' },
+      { n: '心', x: 110, y: 210, qiao: ['舌'], zhi: '喜' },
+      { n: '脾', x: 110, y: 320, qiao: ['口'], zhi: '思' },
+      { n: '肺', x: 610, y: 100, qiao: ['鼻'], zhi: '悲' },
+      { n: '肾', x: 610, y: 210, qiao: ['耳'], zhi: '恐' },
+    ];
+    const edges = [];
+
+    for (const z of zang) {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: z.x, cy: z.y, r: 26, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+      g.appendChild(el('text', { x: z.x, y: z.y + 8, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 20, fill: 'var(--cinnabar)' }, [txt(z.n)]));
+      svg.appendChild(g);
+
+      const qx = W / 2 + (z.x < 300 ? -40 : 40);
+      g.appendChild(el('line', { x1: z.x + (z.x < 300 ? 26 : -26), y1: z.y, x2: qx - (z.x < 300 ? 22 : -22), y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+
+      const qg = el('g', {});
+      qg.appendChild(el('rect', { x: qx - 22, y: z.y - 14, width: 44, height: 28, rx: 6, fill: 'var(--jade-soft)', stroke: 'var(--jade)', 'stroke-width': 1.3 }));
+      qg.appendChild(el('text', { x: qx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--jade)' }, [txt(z.qiao[0])]));
+      svg.appendChild(qg);
+
+      const zx = W - 110;
+      g.appendChild(el('line', { x1: qx + 22, y1: z.y, x2: zx - 24, y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      const zg = el('g', {});
+      zg.appendChild(el('circle', { cx: zx, cy: z.y, r: 22, fill: '#fdf1dd', stroke: 'var(--gold)', 'stroke-width': 1.3 }));
+      zg.appendChild(el('text', { x: zx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--gold)' }, [txt(z.zhi)]));
+      svg.appendChild(zg);
+
+      edges.push({ zy: z.y, e1: g.querySelector('line'), e2: g.querySelectorAll('line')[1], qg, zg });
+    }
+
+    svg.appendChild(mono(110 - 30, 40, '藏 / 五藏'));
+    svg.appendChild(mono(W / 2 - 30, 40, '象 / 官窍'));
+    svg.appendChild(mono(W - 110 - 30, 40, '情志'));
+    const capt = label(20, H - 14, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const step = t * 5;
+      edges.forEach((e, i) => {
+        const on = step >= i;
+        e.e1.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        e.e2.setAttribute('stroke', on ? 'var(--gold)' : 'var(--line)');
+        e.qg.setAttribute('opacity', on ? 1 : 0.35);
+        e.zg.setAttribute('opacity', on ? 1 : 0.35);
+      });
+      const cur = zang[Math.min(4, Math.floor(step))];
+      capt.textContent = cur ? `点亮中：${cur.n} 开窍于 ${cur.qiao[0]}，在志为${cur.zhi}` : '';
+    }, 6200, { staticT: 0.99 });
+  };
+
+  /* ───────────────────── sizhen-fusion ─────────────────────
+     四诊合参：四通道 → 融合层 → 证候。演示模态缺失时的降级。
+  */
+  FIGURES['sizhen-fusion'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '四诊合参的多模态融合与模态缺失降级');
+    const chans = [
+      { n: '望', d: '舌象 / 面色', y: 60 },
+      { n: '闻', d: '语声 / 气息', y: 130 },
+      { n: '问', d: '主诉 / 现病史', y: 200 },
+      { n: '切', d: '脉搏波', y: 270 },
+    ];
+    const fx = 330, fy = 165;
+    const outx = 600;
+
+    const fxG = el('g', {});
+    fxG.appendChild(el('rect', { x: fx - 52, y: fy - 46, width: 104, height: 92, rx: 10, fill: '#fff', stroke: 'var(--jade)', 'stroke-width': 2 }));
+    fxG.appendChild(el('text', { x: fx, y: fy - 14, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--jade)' }, [txt('融合层')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 8, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('交叉注意力')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 26, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('+ 缺失掩码')]));
+    svg.appendChild(fxG);
+
+    const outG = el('g', {});
+    outG.appendChild(el('rect', { x: outx - 46, y: fy - 32, width: 92, height: 64, rx: 10, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+    outG.appendChild(el('text', { x: outx, y: fy - 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--cinnabar)' }, [txt('证候')]));
+    outG.appendChild(el('text', { x: outx, y: fy + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('带置信度')]));
+    svg.appendChild(outG);
+
+    svg.appendChild(el('line', { x1: fx + 52, y1: fy, x2: outx - 46, y2: fy, stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+
+    const inG = chans.map((c) => {
+      const g = el('g', {});
+      g.appendChild(el('rect', { x: 24, y: c.y - 24, width: 150, height: 48, rx: 8, fill: '#fff', stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      g.appendChild(el('text', { x: 40, y: c.y - 2, 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--ink)' }, [txt(c.n + '诊')]));
+      g.appendChild(el('text', { x: 40, y: c.y + 16, 'font-size': 11, fill: 'var(--muted)' }, [txt(c.d)]));
+      svg.appendChild(g);
+      const path = el('path', {
+        d: `M174,${c.y} C 250,${c.y} 260,${fy} ${fx - 52},${fy}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.22,
+      });
+      svg.appendChild(path);
+      const dot = el('circle', { r: 4, fill: 'var(--jade)', opacity: 0 });
+      svg.appendChild(dot);
+      return { g, path, dot, y: c.y };
+    });
+
+    const capt = label(24, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    // 循环：全模态 → 缺闻诊 → 缺闻+切 → 恢复
+    const phases = [[1, 1, 1, 1], [1, 0, 1, 1], [1, 0, 1, 0], [1, 1, 1, 1]];
+    loop(host, (t) => {
+      const idx = Math.min(phases.length - 1, Math.floor(t * phases.length));
+      const mask = phases[idx];
+      const missing = [];
+      mask.forEach((m, i) => { if (!m) missing.push(chans[i].n); });
+
+      inG.forEach((c, i) => {
+        const on = mask[i] === 1;
+        c.g.style.opacity = on ? 1 : 0.3;
+        c.path.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        c.path.setAttribute('stroke-dasharray', on ? 'none' : '4 4');
+        c.path.setAttribute('opacity', on ? 0.55 : 0.25);
+        const local = clamp01(t * 4 - idx);
+        c.dot.setAttribute('cx', lerp(174, fx - 52, easeIO(local)));
+        c.dot.setAttribute('cy', lerp(c.y, fy, easeIO(local)));
+        c.dot.setAttribute('opacity', on ? 0.95 : 0);
+      });
+
+      const conf = 0.62 + 0.1 * mask.filter(Boolean).length;
+      outG.style.opacity = 0.4 + 0.6 * conf;
+      capt.textContent = missing.length
+        ? `模态缺失：缺 ${missing.join('、')} → 置信度降至 ${(conf * 100).toFixed(0)}%，系统须显式降级而非静默猜测`
+        : `四诊齐备 → 置信度 ${(conf * 100).toFixed(0)}%`;
+    }, 8800, { staticT: 0.35 });
+  };
+
+  /* ───────────────────── meridian-lookup ─────────────────────
+     腧穴检索：KD-Tree 空间划分 + 最近邻查询。
+  */
+  FIGURES['meridian-lookup'] = function (host) {
+    const W = 720, H = 400, PAD = 40;
+    const svg = svgRoot(host, W, H, '腧穴的空间划分与最近邻检索');
+    const plotW = W - PAD * 2 - 30, plotH = H - 110;
+
+    // 模拟体表腧穴点集（合谷、内关、足三里、三阴交等 18 穴）
+    let seed = 20261012;
+    const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+    const pts = Array.from({ length: 18 }, () => ({ x: PAD + 30 + rnd() * (plotW - 60), y: PAD + 20 + rnd() * (plotH - 40) }));
+
+    // KD-Tree 递归划分线
+    const lines = [];
+    (function build(list, depth) {
+      if (list.length < 2) return;
+      const axis = depth % 2;
+      const sorted = list.slice().sort((a, b) => (axis ? a.y - b.y : a.x - b.x));
+      const med = sorted[Math.floor(sorted.length / 2)];
+      if (axis) {
+        const minX = Math.min(...list.map((p) => p.x));
+        const maxX = Math.max(...list.map((p) => p.x));
+        lines.push({ x1: minX, y1: med.y, x2: maxX, y2: med.y, depth });
+        build(list.filter((p) => p.y < med.y), depth + 1);
+        build(list.filter((p) => p.y >= med.y), depth + 1);
+      } else {
+        const minY = Math.min(...list.map((p) => p.y));
+        const maxY = Math.max(...list.map((p) => p.y));
+        lines.push({ x1: med.x, y1: minY, x2: med.x, y2: maxY, depth });
+        build(list.filter((p) => p.x < med.x), depth + 1);
+        build(list.filter((p) => p.x >= med.x), depth + 1);
+      }
+    })(pts, 0);
+
+    const lineEls = lines.map((l) => {
+      const e = el('line', { x1: l.x1, y1: l.y1, x2: l.x2, y2: l.y2, stroke: 'var(--line)', 'stroke-width': 1, opacity: 0 });
+      svg.appendChild(e);
+      return { e, depth: l.depth };
+    });
+
+    const dotEls = pts.map((p, i) => {
+      const c = el('circle', { cx: p.x, cy: p.y, r: 4.5, fill: 'var(--jade)', opacity: 0.75 });
+      svg.appendChild(c);
+      const t = el('text', { x: p.x + 7, y: p.y + 4, 'font-size': 10, fill: 'var(--muted)', opacity: 0 });
+      t.appendChild(txt(`穴${String(i + 1).padStart(2, '0')}`));
+      svg.appendChild(t);
+      return { c, t, p };
+    });
+
+    const query = el('circle', { r: 8, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 2.2 });
+    svg.appendChild(query);
+    const ring = el('circle', { r: 0, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 1, 'stroke-dasharray': '3 3' });
+    svg.appendChild(ring);
+    const link = el('line', { stroke: 'var(--cinnabar)', 'stroke-width': 1.6, 'stroke-dasharray': '4 3' });
+    svg.appendChild(link);
+
+    const capt = label(PAD, H - 20, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      // 查询点沿弧线游走
+      const ang = t * Math.PI * 2;
+      const qx = PAD + 30 + plotW / 2 + Math.cos(ang) * plotW * 0.33;
+      const qy = PAD + 20 + plotH / 2 + Math.sin(ang) * plotH * 0.32;
+      query.setAttribute('cx', qx);
+      query.setAttribute('cy', qy);
+
+      let best = null;
+      let bestD = Infinity;
+      for (const d of dotEls) {
+        const dd = (d.p.x - qx) ** 2 + (d.p.y - qy) ** 2;
+        if (dd < bestD) { bestD = dd; best = d; }
+        d.c.setAttribute('r', 4.5);
+        d.c.setAttribute('fill', 'var(--jade)');
+        d.t.setAttribute('opacity', 0);
+      }
+      const dist = Math.sqrt(bestD);
+      link.setAttribute('x1', qx); link.setAttribute('y1', qy);
+      link.setAttribute('x2', best.p.x); link.setAttribute('y2', best.p.y);
+      ring.setAttribute('cx', qx); ring.setAttribute('cy', qy);
+      ring.setAttribute('r', dist);
+      best.c.setAttribute('r', 8);
+      best.c.setAttribute('fill', 'var(--cinnabar)');
+      best.t.setAttribute('opacity', 1);
+
+      const step = clamp01(t * 3);
+      lineEls.forEach((l) => l.e.setAttribute('opacity', step > l.depth / 6 ? (0.5 - l.depth * 0.06) : 0));
+
+      capt.textContent = `查询点 → 最近腧穴 ${best.t.textContent} · 平面距离 ${dist.toFixed(1)}px（真实体表须改测地距离）`;
+    }, 11000, { staticT: 0.2 });
+  };
+
+  /* ───────────────────── junchen-attention ─────────────────────
+     君臣佐使 → 注意力权重。列 = 药味，行为权重分配。
+  */
+  FIGURES['junchen-attention'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '君臣佐使的注意力权重分配');
+
+    const herbs = ['桂枝', '芍药', '生姜', '大枣', '甘草'];
+    const roles = ['君', '臣', '佐', '使'];
+    const weights = [
+      [0.52, 0.30, 0.08, 0.06, 0.04],
+      [0.18, 0.44, 0.20, 0.12, 0.06],
+      [0.08, 0.16, 0.40, 0.24, 0.12],
+      [0.04, 0.08, 0.18, 0.32, 0.38],
+    ];
+
+    const GX = 110, GY = 60, CW = 84, CH = 52;
+    svg.appendChild(mono(GX, 34, '方剂：桂枝汤（示例）'));
+
+    herbs.forEach((h, j) => {
+      svg.appendChild(el('text', {
+        x: GX + j * CW + CW / 2, y: GY - 10, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 14, fill: 'var(--ink)',
+      }, [txt(h)]));
+    });
+    roles.forEach((r, i) => {
+      svg.appendChild(el('text', {
+        x: GX - 22, y: GY + i * CH + CH / 2 + 6, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--cinnabar)',
+      }, [txt(r)]));
+    });
+
+    const cells = [];
+    for (let i = 0; i < roles.length; i += 1) {
+      for (let j = 0; j < herbs.length; j += 1) {
+        const r = el('rect', {
+          x: GX + j * CW + 3, y: GY + i * CH + 3, width: CW - 6, height: CH - 6, rx: 6,
+          fill: 'var(--jade)', opacity: 0,
+        });
+        svg.appendChild(r);
+        const tx = el('text', {
+          x: GX + j * CW + CW / 2, y: GY + i * CH + CH / 2 + 5, 'text-anchor': 'middle',
+          'font-family': 'var(--mono)', 'font-size': 12, fill: 'var(--ink)', opacity: 0,
+        });
+        tx.appendChild(txt(weights[i][j].toFixed(2)));
+        svg.appendChild(tx);
+        cells.push({ r, tx, w: weights[i][j], i, j });
+      }
+    }
+
+    // 右侧：软化的权重条
+    const bx = GX + herbs.length * CW + 40;
+    svg.appendChild(mono(bx, 34, '行归一化 (softmax)'));
+    const bars = roles.map((r, i) => {
+      const max = Math.max(...weights[i]);
+      const w = Math.max(...weights[i]);
+      const g = el('g', {});
+      g.appendChild(el('text', { x: bx, y: GY + i * 44 + 10, 'font-size': 12, fill: 'var(--muted)' }, [txt(r + ' 最大: ' + max.toFixed(2))]));
+      const bg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 180, height: 8, rx: 4, fill: 'var(--paper-2)' });
+      g.appendChild(bg);
+      const fg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 0, height: 8, rx: 4, fill: 'var(--jade)' });
+      g.appendChild(fg);
+      svg.appendChild(g);
+      return { fg, w: w, max };
+    });
+
+    svg.appendChild(label(20, H - 40, '结构先验：君药权重最大 → 可作为注意力掩码，让模型学不到"反结构"的配伍', { fill: 'var(--muted)' }));
+    const capt = label(20, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const focusRow = Math.floor(t * 4) % 4;
+      const local = clamp01(t * 4 - Math.floor(t * 4));
+      cells.forEach((c) => {
+        const on = c.i === focusRow;
+        c.r.setAttribute('opacity', on ? c.w * (0.55 + 0.45 * local) : c.w * 0.14);
+        c.tx.setAttribute('opacity', on ? 1 : 0.25);
+      });
+      bars.forEach((b, i) => {
+        b.fg.setAttribute('width', i === focusRow ? 180 * (b.max) * (0.5 + 0.5 * local) : 180 * b.max * 0.35);
+      });
+      capt.textContent = `当前角色：${roles[focusRow]} · 权重最高者为 ${herbs[weights[focusRow].indexOf(Math.max(...weights[focusRow]))]}`;
+    }, 8000, { staticT: 0.1 });
+  };
+
+  /* ───────────────────── 自动挂载 ───────────────────── */
+  function mount(root) {
+    const hosts = (root || document).querySelectorAll('[data-figure]');
+    for (const host of hosts) {
+      if (host.dataset.figureMounted === '1') continue;
+      const fn = FIGURES[host.dataset.figure];
+      if (!fn) {
+        host.innerHTML = `<p class="muted small">未知图形：<code>${host.dataset.figure}</code></p>`;
+        host.dataset.figureMounted = '1';
+        continue;
+      }
+      host.classList.add('figure');
+      fn(host);
+      host.dataset.figureMounted = '1';
+    }
+  }
+
+  window.TCMFigures = { FIGURES, mount };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => mount());
+  } else {
+    mount();
+  }
+  // 单页内动态插入的图形（章节页异步渲染）也能挂上
+  new MutationObserver(() => mount()).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+<script>
+(function(){
+  const deck=document.getElementById('deck');
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+
+  // ── 单帧模式：?shot=N 只渲染第 N 张，供无头浏览器逐帧截图 ──
+  // 截图器需要一张「干净的、正好一屏」的画面，所以这里藏掉其余幻灯片、
+  // 关掉滚动吸附、去掉 HUD，并在 title 上打就绪标记（渲染完成前截图会得到空白）。
+  const shot=new URLSearchParams(location.search).get('shot');
+  if(shot!==null){
+    const n=Math.max(0,Math.min(slides.length-1,Number(shot)||0));
+    slides.forEach((s,idx)=>{ if(idx!==n) s.style.display='none'; });
+    deck.style.overflow='hidden';
+    deck.style.scrollSnapType='none';
+    const hud=document.getElementById('hud');
+    if(hud) hud.style.display='none';
+    const target=slides[n];
+    if(target){ target.style.borderBottom='0'; target.scrollIntoView({block:'start'}); }
+    document.title='SHOT_READY '+n+' of '+slides.length;
+    if(window.TCMFigures)window.TCMFigures.mount(document);
+    // 只读视图：不绑键盘与点击，避免截图过程中页面状态改变
+    return;
+  }
+
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView();}
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    else if(e.key==='p'||e.key==='P'){e.preventDefault();print();}
+  });
+  deck.addEventListener('click',e=>{if(e.target.closest('a'))return;go(i+1);});
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)i=+en.target.dataset.i;});},{root:deck,threshold:.6});
+  slides.forEach(s=>io.observe(s));
+  if(window.TCMFigures)window.TCMFigures.mount(document);
+})();
+</script>
+</body>
+</html>

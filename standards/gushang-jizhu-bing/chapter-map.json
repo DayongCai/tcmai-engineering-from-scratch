@@ -1,0 +1,160 @@
+{
+ "note": "派生课：一章一主题；四位面＝章群结构分区。",
+ "chapters": {
+  "01-jiepou-lixue": {
+   "n": 1,
+   "title": "脊柱解剖与生物力学",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5",
+    "1.6"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "稳定性判断比影像描述更重要",
+   "derivedFrom": "zhenggu、gushang-jichu"
+  },
+  "02-yingxiang-zhenduan": {
+   "n": 2,
+   "title": "脊柱影像诊断",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "先看序列与稳定性，再看信号",
+   "derivedFrom": "gushang-yingxiang、gushang-jichu"
+  },
+  "03-jingzhuibing": {
+   "n": 3,
+   "title": "颈椎病",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "分型决定治法，不只看片子",
+   "derivedFrom": "zhenggu、zhiliao"
+  },
+  "04-jingzhu-sunshang": {
+   "n": 4,
+   "title": "颈椎损伤",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "搬运与固定优先于任何手法",
+   "derivedFrom": "gushang-yingxiang、zhenggu"
+  },
+  "05-yaojianpan": {
+   "n": 5,
+   "title": "腰椎间盘突出症",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "手术指征与保守指征的界线",
+   "derivedFrom": "zhenggu、zhiliao"
+  },
+  "06-yaozhuiguan-xiazhai": {
+   "n": 6,
+   "title": "腰椎管狭窄与滑脱",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "间歇性跛行是关键线索",
+   "derivedFrom": "zhenggu、gushang-yingxiang"
+  },
+  "07-cewan": {
+   "n": 7,
+   "title": "脊柱侧弯与畸形",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "青少年筛查与支具时机",
+   "derivedFrom": "zhenggu、gushang-bing"
+  },
+  "08-guzhishusong-guzhe": {
+   "n": 8,
+   "title": "骨质疏松性椎体骨折",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "这类骨折的固定与止痛策略不同",
+   "derivedFrom": "gushang-bing、zhenggu"
+  },
+  "09-shoufa-shoushu": {
+   "n": 9,
+   "title": "手法与手术的边界",
+   "units": [
+    "9.1",
+    "9.2",
+    "9.3",
+    "9.4",
+    "9.5"
+   ],
+   "srcChapters": [
+    "派生#9"
+   ],
+   "why": "哪些能做手法，哪些一碰就出事",
+   "derivedFrom": "zhenggu、shoufa"
+  },
+  "10-kangfu": {
+   "n": 10,
+   "title": "脊柱康复与长期管理",
+   "units": [
+    "10.1",
+    "10.2",
+    "10.3"
+   ],
+   "srcChapters": [
+    "派生#10"
+   ],
+   "why": "核心训练是复发率的分水岭",
+   "derivedFrom": "kangfu-huli、zhenggu"
+  }
+ }
+}

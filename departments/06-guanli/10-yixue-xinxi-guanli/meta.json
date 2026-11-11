@@ -22,8 +22,11 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/06-guanli/10-yixue-xinxi-guanli",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 18,
+    "words": 362306,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#卫生信息管理",
+    "extractedAt": "2026-10-21"
   }
 }

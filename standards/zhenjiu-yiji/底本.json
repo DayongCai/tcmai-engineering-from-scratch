@@ -1,0 +1,88 @@
+{
+ "source": {
+  "file": "qhzy-针灸医籍选读.xlsx",
+  "sha256": "9d8568f3c36994d6b2e967d1fcb6bf547b1337c7846d519340e739e8e96eacc1",
+  "sheets": 26
+ },
+ "counts": {
+  "chapters": 10,
+  "units": 10,
+  "hanzi": 167066,
+  "diseases": 0,
+  "digits": 230,
+  "valueLike": 11
+ },
+ "chapters": [
+  {
+   "no": "1",
+   "title": "第1章 《灵枢》选读",
+   "units": 1,
+   "hanzi": 29527,
+   "secs": []
+  },
+  {
+   "no": "2",
+   "title": "第2章 《素问》选读",
+   "units": 1,
+   "hanzi": 16680,
+   "secs": []
+  },
+  {
+   "no": "3",
+   "title": "第3章 《难经》选读",
+   "units": 1,
+   "hanzi": 14859,
+   "secs": []
+  },
+  {
+   "no": "4",
+   "title": "第4章 《针灸甲乙经》选读",
+   "units": 1,
+   "hanzi": 13633,
+   "secs": []
+  },
+  {
+   "no": "5",
+   "title": "第5章 隋唐医家医论选读",
+   "units": 1,
+   "hanzi": 13764,
+   "secs": []
+  },
+  {
+   "no": "6",
+   "title": "第6章 宋金元医家医论选读",
+   "units": 1,
+   "hanzi": 14642,
+   "secs": []
+  },
+  {
+   "no": "7",
+   "title": "第7章 明清医家医论选读",
+   "units": 1,
+   "hanzi": 14636,
+   "secs": []
+  },
+  {
+   "no": "8",
+   "title": "第8章 针灸歌赋选读",
+   "units": 1,
+   "hanzi": 22905,
+   "secs": []
+  },
+  {
+   "no": "9",
+   "title": "第9章 针灸医案选读",
+   "units": 1,
+   "hanzi": 13601,
+   "secs": []
+  },
+  {
+   "no": "10",
+   "title": "第10章 数字化时代·医籍选读与AI平台",
+   "units": 1,
+   "hanzi": 12819,
+   "secs": []
+  }
+ ],
+ "groups": []
+}

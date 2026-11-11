@@ -1,0 +1,60 @@
+{
+  "slug": "17-jichu-biye-sheji",
+  "title": "基础医学毕业设计与知识移交",
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-xuan-ti",
+      "title": "选题：从机制假设到可检验实验",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/01-xuan-ti/docs/zh.md",
+      "code": "chapters/01-xuan-ti/code/main.js"
+    },
+    {
+      "n": 2,
+      "slug": "02-fangan-lunli",
+      "title": "实验方案与伦理审批",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/02-fangan-lunli/docs/zh.md",
+      "code": "chapters/02-fangan-lunli/code/main.js"
+    },
+    {
+      "n": 3,
+      "slug": "03-shiyan-shishi",
+      "title": "实验实施与原始记录",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/03-shiyan-shishi/docs/zh.md",
+      "code": "chapters/03-shiyan-shishi/code/main.js"
+    },
+    {
+      "n": 4,
+      "slug": "04-shuju-fenxi",
+      "title": "数据分析与结果呈现",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/04-shuju-fenxi/docs/zh.md",
+      "code": "chapters/04-shuju-fenxi/code/main.js"
+    },
+    {
+      "n": 5,
+      "slug": "05-lunwen-dabian",
+      "title": "论文写作与答辩",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/05-lunwen-dabian/docs/zh.md",
+      "code": "chapters/05-lunwen-dabian/code/main.js"
+    },
+    {
+      "n": 6,
+      "slug": "06-zhishi-yijiao",
+      "title": "知识移交：实验协议与交接",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/06-zhishi-yijiao/docs/zh.md",
+      "code": "chapters/06-zhishi-yijiao/code/main.js"
+    }
+  ]
+}

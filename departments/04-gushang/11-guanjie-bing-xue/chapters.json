@@ -1,66 +1,85 @@
 {
-  "slug": "11-guanjie-bing-xue",
-  "title": "关节病学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-jiegou-tuibian",
-      "title": "关节的结构与退变机制",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-guguanjieyan-fenqi",
-      "title": "骨关节炎的分期与评估",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-leifengshi-bianzhi",
-      "title": "类风湿关节炎的中医辨治",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-tongfeng-daixie",
-      "title": "痛风性关节炎的代谢基础",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-jianjie-jianbie",
-      "title": "肩关节疾病的鉴别",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-xijie-jianbie",
-      "title": "膝关节疾病的鉴别",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-zhushe-zhendao",
-      "title": "关节腔注射与针刀的应用",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-zhihuan-kangfu",
-      "title": "关节置换的适应证与康复",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-gongneng-pingfen",
-      "title": "关节功能评分的比较",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-suifang-shuju",
-      "title": "关节病的长期随访数据",
-      "status": "📋"
-    }
-  ]
+ "note": "关节病学 10 章 ← 《中医骨病学》12 章（1+2、11+12 合并；无单元复用）。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gailun-bingyin",
+   "title": "骨病概论与病因病机",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-linchuang-zhencha",
+   "title": "骨病的临床诊查",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-zhiliao-fangfa",
+   "title": "骨病的治疗方法",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-huamou-guanjieyan",
+   "title": "化脓性骨髓炎与化脓性关节炎",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-gujiehe",
+   "title": "骨与关节结核",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-guzhongliu",
+   "title": "骨肿瘤：识别与转诊",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-gudaixie",
+   "title": "骨代谢性疾病",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-guhuaisi",
+   "title": "骨缺血性坏死",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-tuixing-mianyi",
+   "title": "骨关节退行性与免疫性疾病",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-jixing-kangfu",
+   "title": "骨畸形、骨软骨病与康复",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

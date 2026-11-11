@@ -1,0 +1,168 @@
+{
+ "slug": "16-huli-xue-daolun",
+ "title": "护理学导论",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-fazhan-daolun",
+   "title": "护理学的发展与护理学导论",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-fazhan-daolun/docs/zh.md",
+   "code": "chapters/01-fazhan-daolun/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-linian-jiazhiguan",
+   "title": "护理理念与护理专业价值观",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-linian-jiazhiguan/docs/zh.md",
+   "code": "chapters/02-linian-jiazhiguan/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-jiben-gainian",
+   "title": "护理学的基本概念与理论",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-jiben-gainian/docs/zh.md",
+   "code": "chapters/03-jiben-gainian/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-huanhuan-goutong",
+   "title": "护患关系与沟通",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-huanhuan-goutong/docs/zh.md",
+   "code": "chapters/04-huanhuan-goutong/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-huli-chengxu",
+   "title": "护理程序",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-huli-chengxu/docs/zh.md",
+   "code": "chapters/05-huli-chengxu/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-jiankang-jiaoyu",
+   "title": "健康教育",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-jiankang-jiaoyu/docs/zh.md",
+   "code": "chapters/06-jiankang-jiaoyu/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-lunli-falv",
+   "title": "护理伦理与法律",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-lunli-falv/docs/zh.md",
+   "code": "chapters/07-lunli-falv/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-zhuanye-tuandui",
+   "title": "护理专业与团队协作",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-zhuanye-tuandui/docs/zh.md",
+   "code": "chapters/08-zhuanye-tuandui/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-zhiye-suyang",
+   "title": "护理职业素养与人文关怀",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-zhiye-suyang/docs/zh.md",
+   "code": "chapters/09-zhiye-suyang/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-shengming-tizheng",
+   "title": "生命体征观察与基础护理技术概论",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-shengming-tizheng/docs/zh.md",
+   "code": "chapters/10-shengming-tizheng/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-huanzhe-anquan",
+   "title": "患者安全与护理质量",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-huanzhe-anquan/docs/zh.md",
+   "code": "chapters/11-huanzhe-anquan/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-shushi-xiuxi",
+   "title": "舒适、休息与活动",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-shushi-xiuxi/docs/zh.md",
+   "code": "chapters/12-shushi-xiuxi/code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-yingyang-paixie",
+   "title": "营养与排泄的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/13-yingyang-paixie/docs/zh.md",
+   "code": "chapters/13-yingyang-paixie/code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-geiyao-zhiliao",
+   "title": "给药与治疗的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/14-geiyao-zhiliao/docs/zh.md",
+   "code": "chapters/14-geiyao-zhiliao/code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-zhongyi-huli-jichu",
+   "title": "中医护理基础与应用",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/15-zhongyi-huli-jichu/docs/zh.md",
+   "code": "chapters/15-zhongyi-huli-jichu/code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-teshu-renqun",
+   "title": "特殊人群的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/16-teshu-renqun/docs/zh.md",
+   "code": "chapters/16-teshu-renqun/code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-shequ-jiankang",
+   "title": "社区护理与健康管理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/17-shequ-jiankang/docs/zh.md",
+   "code": "chapters/17-shequ-jiankang/code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-pingtai-duijie",
+   "title": "护理学导论与 tcmP 平台",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/18-pingtai-duijie/docs/zh.md",
+   "code": "chapters/18-pingtai-duijie/code/main.js"
+  }
+ ]
+}

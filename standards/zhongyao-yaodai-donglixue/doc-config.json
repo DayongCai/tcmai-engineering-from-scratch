@@ -1,0 +1,82 @@
+{
+ "courseTitle": "中药药代动力学",
+ "deptPath": "departments/02-zhongyao/11-zhongyao-yaodai-donglixue",
+ "xlsx": "派生课（无教材）：单元取自中药系已建课程，见 units.json source",
+ "chain": "中药药代动力学概论 → 体内过程与生物利用度 → 药动学参数与房室模型 → 成分吸收与转运 → 代谢与代谢物 → 药物相互作用与酶 → 中药复方药动学特点 → 方法学与研究规范",
+ "levelLabel": "观察视角",
+ "objectPressure": "派生课的判断力来自「把父课的片段重新排成一条决策链」",
+ "reportRule": "父课教材与《中国药典》相关项",
+ "gapNote": "无独立教材；未覆盖主题见各章 why 与 README",
+ "chapterQ": {
+  "01-adme-gailun": [
+   "中药药代动力学概论的核心判据是什么",
+   "先立 ADME 框架与中药的特殊性"
+  ],
+  "02-tinei-guocheng": [
+   "体内过程与生物利用度的核心判据是什么",
+   "生物利用度是剂型与工艺的最终检验"
+  ],
+  "03-canshu-moxing": [
+   "药动学参数与房室模型的核心判据是什么",
+   "参数是「能不能比较」的前提"
+  ],
+  "04-chengfen-zhuanyun": [
+   "成分吸收与转运的核心判据是什么",
+   "多成分体系里「谁进了血」"
+  ],
+  "05-daixie-daixiewu": [
+   "代谢与代谢物的核心判据是什么",
+   "代谢决定半衰期，也决定毒性"
+  ],
+  "06-xianghu-zuoyong": [
+   "药物相互作用与酶的核心判据是什么",
+   "联用时代谢酶是主战场"
+  ],
+  "07-fufang-tedian": [
+   "中药复方药动学特点的核心判据是什么",
+   "复方不是单成分的叠加"
+  ],
+  "08-fangfaxue-guifan": [
+   "方法学与研究规范的核心判据是什么",
+   "没有方法学验证，参数不可比"
+  ]
+ },
+ "fallback": {
+  "01-adme-gailun": [
+   "《中药药代动力学·中药药代动力学概论》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "02-tinei-guocheng": [
+   "《中药药代动力学·体内过程与生物利用度》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "03-canshu-moxing": [
+   "《中药药代动力学·药动学参数与房室模型》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "04-chengfen-zhuanyun": [
+   "《中药药代动力学·成分吸收与转运》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "05-daixie-daixiewu": [
+   "《中药药代动力学·代谢与代谢物》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "06-xianghu-zuoyong": [
+   "《中药药代动力学·药物相互作用与酶》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "07-fufang-tedian": [
+   "《中药药代动力学·中药复方药动学特点》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "08-fangfaxue-guifan": [
+   "《中药药代动力学·方法学与研究规范》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ]
+ },
+ "defaultCite": [
+  "《中药药代动力学》",
+  "派生课篇名"
+ ]
+}

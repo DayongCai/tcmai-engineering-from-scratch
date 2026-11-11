@@ -1,0 +1,168 @@
+{
+ "slug": "17-huli-xinli-xue",
+ "title": "护理心理学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-ch01",
+   "title": "护理心理学概述与基本理论",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-ch01/docs/zh.md",
+   "code": "chapters/01-ch01/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-ch02",
+   "title": "心理现象与心理过程基础",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-ch02/docs/zh.md",
+   "code": "chapters/02-ch02/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-ch03",
+   "title": "心理评估与心理护理记录基础",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-ch03/docs/zh.md",
+   "code": "chapters/03-ch03/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-ch04",
+   "title": "护理对象的心理反应与心理需求",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-ch04/docs/zh.md",
+   "code": "chapters/04-ch04/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-ch05",
+   "title": "护患关系与治疗性沟通",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-ch05/docs/zh.md",
+   "code": "chapters/05-ch05/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-ch06",
+   "title": "心理支持与心理疏导的要求",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-ch06/docs/zh.md",
+   "code": "chapters/06-ch06/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-ch07",
+   "title": "心理危机的识别与转介",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-ch07/docs/zh.md",
+   "code": "chapters/07-ch07/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-ch08",
+   "title": "手术与创伤患者的心理护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-ch08/docs/zh.md",
+   "code": "chapters/08-ch08/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-ch09",
+   "title": "慢性病与肿瘤患者的心理护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-ch09/docs/zh.md",
+   "code": "chapters/09-ch09/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-ch10",
+   "title": "孕产妇与儿童青少年的心理护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-ch10/docs/zh.md",
+   "code": "chapters/10-ch10/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-ch11",
+   "title": "老年与临终患者的心理护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-ch11/docs/zh.md",
+   "code": "chapters/11-ch11/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-ch12",
+   "title": "特殊情境中的心理护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-ch12/docs/zh.md",
+   "code": "chapters/12-ch12/code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-ch13",
+   "title": "护士职业心理与压力管理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/13-ch13/docs/zh.md",
+   "code": "chapters/13-ch13/code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-ch14",
+   "title": "护士心理健康与支持体系",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/14-ch14/docs/zh.md",
+   "code": "chapters/14-ch14/code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-ch15",
+   "title": "护理团队沟通与协作心理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/15-ch15/docs/zh.md",
+   "code": "chapters/15-ch15/code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-ch16",
+   "title": "护理心理护理质量与安全管理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/16-ch16/docs/zh.md",
+   "code": "chapters/16-ch16/code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-ch17",
+   "title": "社区与家庭心理护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/17-ch17/docs/zh.md",
+   "code": "chapters/17-ch17/code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-ch18",
+   "title": "护理心理学与 tcmP 平台",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/18-ch18/docs/zh.md",
+   "code": "chapters/18-ch18/code/main.js"
+  }
+ ]
+}

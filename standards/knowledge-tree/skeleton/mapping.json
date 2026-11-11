@@ -1,0 +1,62 @@
+{
+ "note": "源骨架 8 域 ↔ 本库 9 院系对照；本库多出的护理/基础两域标为 D09/D10（源无对应）。",
+ "rows": [
+  {
+   "src": "D01 中医学院",
+   "dept": "01-zhongyi",
+   "note": "一一对应"
+  },
+  {
+   "src": "D02 中药学院",
+   "dept": "02-zhongyao",
+   "note": "一一对应"
+  },
+  {
+   "src": "D03 针灸学院",
+   "dept": "03-zhenjiu",
+   "note": "一一对应"
+  },
+  {
+   "src": "D04 推拿学院",
+   "dept": "03-zhenjiu",
+   "note": "源独立成院；本库推拿 5 门并入针灸系，枝数合并计算"
+  },
+  {
+   "src": "D05 骨伤学院",
+   "dept": "04-gushang",
+   "note": "一一对应"
+  },
+  {
+   "src": "D06 五官口腔学院",
+   "dept": "08-wuguan",
+   "note": "一一对应"
+  },
+  {
+   "src": "D07 中医智能学院",
+   "dept": "07-zhineng",
+   "note": "一一对应"
+  },
+  {
+   "src": "D08 中医管理学院",
+   "dept": "06-guanli",
+   "note": "一一对应"
+  },
+  {
+   "src": "（源无对应）",
+   "dept": "05-huli",
+   "note": "本库新增：护理学院 27 门，源骨架无此域，挂 L2 新干 D09"
+  },
+  {
+   "src": "（源无对应）",
+   "dept": "09-jichu",
+   "note": "本库新增：基础医学院 17 门，源骨架无此域，挂 L2 新干 D10"
+  }
+ ],
+ "diff": {
+  "srcDomains": 8,
+  "srcBranches": 120,
+  "localDepts": 9,
+  "localBranches": 188,
+  "extraLocal": 68
+ }
+}

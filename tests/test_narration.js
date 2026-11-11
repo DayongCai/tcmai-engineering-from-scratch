@@ -140,8 +140,14 @@ test('讲稿的段数与画面帧数一致（不一致会让配音与画面错�
     const framesDir = path.join(chapterDir, 'frames');
     if (!fs.existsSync(framesDir)) continue;                 // 未导帧的章节跳过
     const frames = fs.readdirSync(framesDir).filter((f) => /\.(png|jpg|jpeg)$/i.test(f));
-    if (frames.length !== json.segments.length) {
-      problems.push(`${file}: ${json.segments.length} 段 vs ${frames.length} 帧`);
+    // 拆片之后「一段一帧」不再成立：帧跟着**片**走，片数由 slides/manifest.json 声明。
+    // 有 manifest 就比片数，没有才比段数（老学科行为不变）。
+    const manifestPath = path.join(chapterDir, 'slides', 'manifest.json');
+    const expect = fs.existsSync(manifestPath)
+      ? JSON.parse(fs.readFileSync(manifestPath, 'utf8')).slideCount
+      : json.segments.length;
+    if (frames.length !== expect) {
+      problems.push(`${file}: ${expect} ${fs.existsSync(manifestPath) ? '片' : '段'} vs ${frames.length} 帧`);
     }
   }
   assert.deepStrictEqual(problems, [], problems.join('\n'));

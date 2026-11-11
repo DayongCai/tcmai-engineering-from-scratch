@@ -1,0 +1,1698 @@
+{
+ "note": "L3 枝（学科）：一门课 = 一枝；units/hanzi 来自 standards/<subject>/units.json（枝的证据密度）。",
+ "count": 188,
+ "items": [
+  {
+   "id": "01-zhongyi/01-zhongyi-jichu-lilun",
+   "slug": "01-zhongyi-jichu-lilun",
+   "title": "中医基础理论",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/02-yi-gu-wen",
+   "slug": "02-yi-gu-wen",
+   "title": "医古文",
+   "chapters": 8,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/03-zhongguo-yixue-shi",
+   "slug": "03-zhongguo-yixue-shi",
+   "title": "中国医学史",
+   "chapters": 8,
+   "units": 51,
+   "hanzi": 94294,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/04-zhongyi-tizhi-xue",
+   "slug": "04-zhongyi-tizhi-xue",
+   "title": "中医体质学",
+   "chapters": 8,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/05-zhongyi-zhen-duan-xue",
+   "slug": "05-zhongyi-zhen-duan-xue",
+   "title": "中医诊断学",
+   "chapters": 12,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/06-neijing-xuandu",
+   "slug": "06-neijing-xuandu",
+   "title": "内经选读",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/07-shanghanlun",
+   "slug": "07-shanghanlun",
+   "title": "伤寒论",
+   "chapters": 12,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/08-jingui-yaolue",
+   "slug": "08-jingui-yaolue",
+   "title": "金匮要略",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/09-wenbing-xue",
+   "slug": "09-wenbing-xue",
+   "title": "温病学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/10-zhongyi-neike-xue",
+   "slug": "10-zhongyi-neike-xue",
+   "title": "中医内科学",
+   "chapters": 14,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/11-zhongyi-waike-xue",
+   "slug": "11-zhongyi-waike-xue",
+   "title": "中医外科学",
+   "chapters": 13,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/12-zhongyi-fuke-xue",
+   "slug": "12-zhongyi-fuke-xue",
+   "title": "中医妇科学",
+   "chapters": 13,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/13-zhongyi-erke-xue",
+   "slug": "13-zhongyi-erke-xue",
+   "title": "中医儿科学",
+   "chapters": 14,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/14-zhongyi-zhenghou-xue",
+   "slug": "14-zhongyi-zhenghou-xue",
+   "title": "中医证候学",
+   "chapters": 12,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/15-zhongyi-gejia-xueshuo",
+   "slug": "15-zhongyi-gejia-xueshuo",
+   "title": "中医各家学说",
+   "chapters": 8,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/16-zhongyi-zhexue-shi",
+   "slug": "16-zhongyi-zhexue-shi",
+   "title": "中医哲学史",
+   "chapters": 8,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/17-zhongyi-jizhen-xue",
+   "slug": "17-zhongyi-jizhen-xue",
+   "title": "中医急诊学",
+   "chapters": 12,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/18-zhongyi-gubing-xue",
+   "slug": "18-zhongyi-gubing-xue",
+   "title": "中医骨病学",
+   "chapters": 12,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/19-zhongyi-laonianbing-xue",
+   "slug": "19-zhongyi-laonianbing-xue",
+   "title": "中医老年病学",
+   "chapters": 12,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/20-zhongyi-jingshenbing-xue",
+   "slug": "20-zhongyi-jingshenbing-xue",
+   "title": "中医精神病学",
+   "chapters": 12,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/21-zhongyi-linchuang-lunzhuan",
+   "slug": "21-zhongyi-linchuang-lunzhuan",
+   "title": "中医临床轮转",
+   "chapters": 6,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "01-zhongyi/22-zhongyi-biye-sheji",
+   "slug": "22-zhongyi-biye-sheji",
+   "title": "中医毕业设计与知识移交",
+   "chapters": 28,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D01"
+  },
+  {
+   "id": "02-zhongyao/01-zhongyaoxue",
+   "slug": "01-zhongyaoxue",
+   "title": "中药学",
+   "chapters": 14,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/02-yaoyong-zhiwu-xue",
+   "slug": "02-yaoyong-zhiwu-xue",
+   "title": "药用植物学",
+   "chapters": 9,
+   "units": 66,
+   "hanzi": 186468,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/03-fangjixue",
+   "slug": "03-fangjixue",
+   "title": "方剂学",
+   "chapters": 15,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/04-zhongyao-ziyuan-xue",
+   "slug": "04-zhongyao-ziyuan-xue",
+   "title": "中药资源学",
+   "chapters": 8,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/05-zhongyao-jianding-xue",
+   "slug": "05-zhongyao-jianding-xue",
+   "title": "中药鉴定学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/06-zhongyao-huaxue",
+   "slug": "06-zhongyao-huaxue",
+   "title": "中药化学",
+   "chapters": 12,
+   "units": 55,
+   "hanzi": 192618,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/07-zhongyao-yaoli-xue",
+   "slug": "07-zhongyao-yaoli-xue",
+   "title": "中药药理学",
+   "chapters": 11,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/08-zhongyao-paozhi-xue",
+   "slug": "08-zhongyao-paozhi-xue",
+   "title": "中药炮制学",
+   "chapters": 9,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/09-zhongyao-yaoji-xue",
+   "slug": "09-zhongyao-yaoji-xue",
+   "title": "中药药剂学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/10-zhongyao-fenxi-xue",
+   "slug": "10-zhongyao-fenxi-xue",
+   "title": "中药分析学",
+   "chapters": 12,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/11-zhongyao-yaodai-donglixue",
+   "slug": "11-zhongyao-yaodai-donglixue",
+   "title": "中药药代动力学",
+   "chapters": 8,
+   "units": 40,
+   "hanzi": 141772,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/12-daodi-yaocai",
+   "slug": "12-daodi-yaocai",
+   "title": "道地药材与产地加工",
+   "chapters": 8,
+   "units": 40,
+   "hanzi": 179764,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/13-zhongchengyao-linchuang",
+   "slug": "13-zhongchengyao-linchuang",
+   "title": "中成药与临床用药",
+   "chapters": 10,
+   "units": 56,
+   "hanzi": 189334,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/14-peiwu-yu-jinji",
+   "slug": "14-peiwu-yu-jinji",
+   "title": "中药配伍与禁忌",
+   "chapters": 8,
+   "units": 42,
+   "hanzi": 81746,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/15-zhongyao-xinyao-yanfa",
+   "slug": "15-zhongyao-xinyao-yanfa",
+   "title": "中药新药研发",
+   "chapters": 8,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/16-linchuang-zhongyaoxue",
+   "slug": "16-linchuang-zhongyaoxue",
+   "title": "临床中药学",
+   "chapters": 15,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/17-zhongyao-shangpin-xue",
+   "slug": "17-zhongyao-shangpin-xue",
+   "title": "中药商品学",
+   "chapters": 18,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/18-yaoshi-guanli-xue",
+   "slug": "18-yaoshi-guanli-xue",
+   "title": "药事管理学",
+   "chapters": 28,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/19-zhongyao-zhuanye-shijian",
+   "slug": "19-zhongyao-zhuanye-shijian",
+   "title": "中药专业实践",
+   "chapters": 6,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/20-zhongyao-biye-sheji",
+   "slug": "20-zhongyao-biye-sheji",
+   "title": "中药毕业设计与知识移交",
+   "chapters": 6,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D02"
+  },
+  {
+   "id": "02-zhongyao/21-zhongyao-du-li-xue",
+   "slug": "21-zhongyao-du-li-xue",
+   "title": "中药毒理学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D02"
+  },
+  {
+   "id": "03-zhenjiu/01-jingluo-xue",
+   "slug": "01-jingluo-xue",
+   "title": "经络学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/02-shuxue-xue",
+   "slug": "02-shuxue-xue",
+   "title": "腧穴学",
+   "chapters": 12,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/03-zhenjiu-yiji-xuan",
+   "slug": "03-zhenjiu-yiji-xuan",
+   "title": "针灸医籍选",
+   "chapters": 8,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/04-qigong-xue",
+   "slug": "04-qigong-xue",
+   "title": "中医气功学",
+   "chapters": 7,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/05-tuina-xue",
+   "slug": "05-tuina-xue",
+   "title": "推拿学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/06-tuina-shoufa-xue",
+   "slug": "06-tuina-shoufa-xue",
+   "title": "推拿手法学",
+   "chapters": 8,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/07-cifa-jiufa-xue",
+   "slug": "07-cifa-jiufa-xue",
+   "title": "刺法灸法学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/08-zhenjiu-zhiliao-xue",
+   "slug": "08-zhenjiu-zhiliao-xue",
+   "title": "针灸治疗学",
+   "chapters": 12,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/09-kangfu-yixue-jichu",
+   "slug": "09-kangfu-yixue-jichu",
+   "title": "康复医学基础",
+   "chapters": 8,
+   "units": 23,
+   "hanzi": 375098,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/10-shiyan-zhenjiu-xue",
+   "slug": "10-shiyan-zhenjiu-xue",
+   "title": "实验针灸学",
+   "chapters": 11,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/11-wuli-zhiliao",
+   "slug": "11-wuli-zhiliao",
+   "title": "物理治疗与运动康复",
+   "chapters": 8,
+   "units": 32,
+   "hanzi": 196511,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/12-erxue-zhenduan-xue",
+   "slug": "12-erxue-zhenduan-xue",
+   "title": "耳穴诊治学",
+   "chapters": 8,
+   "units": 40,
+   "hanzi": 58090,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/13-zhendao-yixue",
+   "slug": "13-zhendao-yixue",
+   "title": "针刀医学",
+   "chapters": 8,
+   "units": 39,
+   "hanzi": 74739,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/14-zhenjiu-zhentong-mazui",
+   "slug": "14-zhenjiu-zhentong-mazui",
+   "title": "针灸镇痛与麻醉",
+   "chapters": 8,
+   "units": 37,
+   "hanzi": 81773,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/15-zhongyi-kangfu-xue",
+   "slug": "15-zhongyi-kangfu-xue",
+   "title": "中医康复学",
+   "chapters": 10,
+   "units": 44,
+   "hanzi": 180710,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/16-zhenjiu-xue",
+   "slug": "16-zhenjiu-xue",
+   "title": "针灸学",
+   "chapters": 30,
+   "units": 250,
+   "hanzi": 272830,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/17-gejia-zhenjiu-xueshuo",
+   "slug": "17-gejia-zhenjiu-xueshuo",
+   "title": "各家针灸学说",
+   "chapters": 12,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/18-tuina-gongfa-xue",
+   "slug": "18-tuina-gongfa-xue",
+   "title": "推拿功法学",
+   "chapters": 12,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/19-tuina-zhiliao-xue",
+   "slug": "19-tuina-zhiliao-xue",
+   "title": "推拿治疗学",
+   "chapters": 12,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/20-xiaoer-tuina-xue",
+   "slug": "20-xiaoer-tuina-xue",
+   "title": "小儿推拿学",
+   "chapters": 12,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/21-zhenjiu-linchuang-lunzhuan",
+   "slug": "21-zhenjiu-linchuang-lunzhuan",
+   "title": "针灸临床轮转",
+   "chapters": 6,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D03"
+  },
+  {
+   "id": "03-zhenjiu/22-zhenjiu-biye-sheji",
+   "slug": "22-zhenjiu-biye-sheji",
+   "title": "针灸毕业设计与知识移交",
+   "chapters": 6,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D03"
+  },
+  {
+   "id": "04-gushang/01-zhongyi-yundong-xue",
+   "slug": "01-zhongyi-yundong-xue",
+   "title": "中医运动学",
+   "chapters": 8,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/02-yao-shang-jiepou",
+   "slug": "02-yao-shang-jiepou",
+   "title": "骨伤解剖学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/03-gushang-kexue-jichu",
+   "slug": "03-gushang-kexue-jichu",
+   "title": "中医骨伤科学基础",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/04-chuangshang-jijiu-xue",
+   "slug": "04-chuangshang-jijiu-xue",
+   "title": "创伤急救学",
+   "chapters": 8,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/05-yundong-yixue",
+   "slug": "05-yundong-yixue",
+   "title": "运动医学与损伤防护",
+   "chapters": 8,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/06-zhongyi-zhenggu-xue",
+   "slug": "06-zhongyi-zhenggu-xue",
+   "title": "中医正骨学",
+   "chapters": 12,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/07-zhongyi-jinshang-xue",
+   "slug": "07-zhongyi-jinshang-xue",
+   "title": "中医筋伤学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/08-gushang-shoufa-zhiliao",
+   "slug": "08-gushang-shoufa-zhiliao",
+   "title": "骨伤科手法治疗学",
+   "chapters": 10,
+   "units": 42,
+   "hanzi": 172947,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/09-guke-yingxiang-zhenduan",
+   "slug": "09-guke-yingxiang-zhenduan",
+   "title": "骨科影像诊断学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/10-jizhu-bing-xue",
+   "slug": "10-jizhu-bing-xue",
+   "title": "脊柱病学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/11-guanjie-bing-xue",
+   "slug": "11-guanjie-bing-xue",
+   "title": "关节病学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/12-guzhishusong-tuibian",
+   "slug": "12-guzhishusong-tuibian",
+   "title": "骨质疏松与退行性疾病",
+   "chapters": 8,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/13-zhongyi-zhengji-xue",
+   "slug": "13-zhongyi-zhengji-xue",
+   "title": "中医整脊学",
+   "chapters": 8,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/14-kangfu-gongcheng-zhiju",
+   "slug": "14-kangfu-gongcheng-zhiju",
+   "title": "康复工程与支具学",
+   "chapters": 8,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/15-gushang-kangfu-pingding",
+   "slug": "15-gushang-kangfu-pingding",
+   "title": "骨伤康复评定",
+   "chapters": 8,
+   "units": 25,
+   "hanzi": 279598,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/16-gushang-linchuang-lunzhuan",
+   "slug": "16-gushang-linchuang-lunzhuan",
+   "title": "骨伤临床轮转",
+   "chapters": 6,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D04"
+  },
+  {
+   "id": "04-gushang/17-gushang-biye-sheji",
+   "slug": "17-gushang-biye-sheji",
+   "title": "骨伤毕业设计与知识移交",
+   "chapters": 6,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D04"
+  },
+  {
+   "id": "05-huli/01-zhongyi-huli-jichu",
+   "slug": "01-zhongyi-huli-jichu",
+   "title": "中医护理学基础",
+   "chapters": 12,
+   "units": 18,
+   "hanzi": 314542,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/02-jichu-huli-xue",
+   "slug": "02-jichu-huli-xue",
+   "title": "基础护理学",
+   "chapters": 14,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/03-jiankang-pinggu",
+   "slug": "03-jiankang-pinggu",
+   "title": "健康评估",
+   "chapters": 8,
+   "units": 8,
+   "hanzi": 145170,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/04-zhongyi-huli-jishu",
+   "slug": "04-zhongyi-huli-jishu",
+   "title": "中医护理技术",
+   "chapters": 14,
+   "units": 18,
+   "hanzi": 364171,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/05-zhongyi-yangsheng-xue",
+   "slug": "05-zhongyi-yangsheng-xue",
+   "title": "中医养生学",
+   "chapters": 8,
+   "units": 112,
+   "hanzi": 222635,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/06-zhongyi-xinli-xue",
+   "slug": "06-zhongyi-xinli-xue",
+   "title": "中医心理学",
+   "chapters": 8,
+   "units": 48,
+   "hanzi": 155635,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/07-neike-huli-xue",
+   "slug": "07-neike-huli-xue",
+   "title": "内科护理学",
+   "chapters": 14,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/08-waike-huli-xue",
+   "slug": "08-waike-huli-xue",
+   "title": "外科护理学",
+   "chapters": 13,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/09-fuchanke-huli-xue",
+   "slug": "09-fuchanke-huli-xue",
+   "title": "妇产科护理学",
+   "chapters": 16,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/10-erke-huli-xue",
+   "slug": "10-erke-huli-xue",
+   "title": "儿科护理学",
+   "chapters": 15,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/11-shequ-huli-xue",
+   "slug": "11-shequ-huli-xue",
+   "title": "社区护理学",
+   "chapters": 8,
+   "units": 18,
+   "hanzi": 348867,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/12-jiwei-zhengzheng-huli",
+   "slug": "12-jiwei-zhengzheng-huli",
+   "title": "急危重症护理学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/13-huli-guanli-xue",
+   "slug": "13-huli-guanli-xue",
+   "title": "护理管理学",
+   "chapters": 6,
+   "units": 18,
+   "hanzi": 340443,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/14-huli-lunli-fagui",
+   "slug": "14-huli-lunli-fagui",
+   "title": "护理伦理与法规",
+   "chapters": 6,
+   "units": 18,
+   "hanzi": 366642,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/15-huli-yanjiu-zhengxun",
+   "slug": "15-huli-yanjiu-zhengxun",
+   "title": "护理研究与循证护理",
+   "chapters": 8,
+   "units": 8,
+   "hanzi": 8525,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/16-huli-xue-daolun",
+   "slug": "16-huli-xue-daolun",
+   "title": "护理学导论",
+   "chapters": 18,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/17-huli-xinli-xue",
+   "slug": "17-huli-xinli-xue",
+   "title": "护理心理学",
+   "chapters": 18,
+   "units": 18,
+   "hanzi": 334685,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/18-huli-zonghe-jineng",
+   "slug": "18-huli-zonghe-jineng",
+   "title": "护理综合技能",
+   "chapters": 18,
+   "units": 18,
+   "hanzi": 355351,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/19-huli-renwen-goutong",
+   "slug": "19-huli-renwen-goutong",
+   "title": "护理人文修养与沟通",
+   "chapters": 14,
+   "units": 18,
+   "hanzi": 365739,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/20-jijiu-huli-xue",
+   "slug": "20-jijiu-huli-xue",
+   "title": "急救护理学",
+   "chapters": 18,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/21-laonian-huli-xue",
+   "slug": "21-laonian-huli-xue",
+   "title": "老年护理学",
+   "chapters": 18,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/22-kangfu-huli-xue",
+   "slug": "22-kangfu-huli-xue",
+   "title": "康复护理学",
+   "chapters": 18,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/23-jingshenke-huli-xue",
+   "slug": "23-jingshenke-huli-xue",
+   "title": "精神科护理学",
+   "chapters": 18,
+   "units": 18,
+   "hanzi": 347795,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/24-zhongyi-huli-xue",
+   "slug": "24-zhongyi-huli-xue",
+   "title": "中医护理学",
+   "chapters": 18,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/25-zhongyi-linchuang-huli",
+   "slug": "25-zhongyi-linchuang-huli",
+   "title": "中医临床护理学",
+   "chapters": 18,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/26-huli-linchuang-lunzhuan",
+   "slug": "26-huli-linchuang-lunzhuan",
+   "title": "护理临床轮转",
+   "chapters": 6,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D05"
+  },
+  {
+   "id": "05-huli/27-huli-biye-sheji",
+   "slug": "27-huli-biye-sheji",
+   "title": "护理毕业设计与知识移交",
+   "chapters": 6,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D05"
+  },
+  {
+   "id": "06-guanli/01-yixue-tongjixue",
+   "slug": "01-yixue-tongjixue",
+   "title": "医学统计学",
+   "chapters": 10,
+   "units": 198,
+   "hanzi": 282420,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/02-zhongyiyao-zhengce-fagui",
+   "slug": "02-zhongyiyao-zhengce-fagui",
+   "title": "中医药政策与法规",
+   "chapters": 8,
+   "units": 187,
+   "hanzi": 261409,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/03-zhongyi-guanli-xue",
+   "slug": "03-zhongyi-guanli-xue",
+   "title": "中医管理学",
+   "chapters": 8,
+   "units": 226,
+   "hanzi": 393720,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/04-weisheng-shiye-guanli",
+   "slug": "04-weisheng-shiye-guanli",
+   "title": "卫生事业管理",
+   "chapters": 8,
+   "units": 198,
+   "hanzi": 209912,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/05-zhongyi-wenhua-chuanbo",
+   "slug": "05-zhongyi-wenhua-chuanbo",
+   "title": "中医文化传播学",
+   "chapters": 6,
+   "units": 107,
+   "hanzi": 171890,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/06-yiyuan-guanli-xue",
+   "slug": "06-yiyuan-guanli-xue",
+   "title": "医院管理学",
+   "chapters": 10,
+   "units": 124,
+   "hanzi": 436617,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/07-zhongyi-jiaoyu-xue",
+   "slug": "07-zhongyi-jiaoyu-xue",
+   "title": "中医教育学",
+   "chapters": 8,
+   "units": 163,
+   "hanzi": 160088,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/08-jiankang-fuwu-guanli",
+   "slug": "08-jiankang-fuwu-guanli",
+   "title": "健康服务与管理",
+   "chapters": 8,
+   "units": 282,
+   "hanzi": 333940,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/09-yiliao-baoxian-jingji",
+   "slug": "09-yiliao-baoxian-jingji",
+   "title": "医疗保险与卫生经济",
+   "chapters": 8,
+   "units": 198,
+   "hanzi": 300426,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/10-yixue-xinxi-guanli",
+   "slug": "10-yixue-xinxi-guanli",
+   "title": "医学信息管理",
+   "chapters": 8,
+   "units": 198,
+   "hanzi": 294296,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/11-yiyuan-xinxihua-bingan",
+   "slug": "11-yiyuan-xinxihua-bingan",
+   "title": "医院信息化与病案管理",
+   "chapters": 8,
+   "units": 220,
+   "hanzi": 328015,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/12-zhongyiyao-biaozhunhua",
+   "slug": "12-zhongyiyao-biaozhunhua",
+   "title": "中医药标准化",
+   "chapters": 8,
+   "units": 246,
+   "hanzi": 298778,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/13-linchuang-keyan-fangfa",
+   "slug": "13-linchuang-keyan-fangfa",
+   "title": "临床科研方法学",
+   "chapters": 8,
+   "units": 231,
+   "hanzi": 331606,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/14-zhishichanquan-zhuanhua",
+   "slug": "14-zhishichanquan-zhuanhua",
+   "title": "中医药知识产权与成果转化",
+   "chapters": 6,
+   "units": 44,
+   "hanzi": 64467,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/15-zhongyi-guojijiaoyu",
+   "slug": "15-zhongyi-guojijiaoyu",
+   "title": "中医国际教育与传播",
+   "chapters": 6,
+   "units": 119,
+   "hanzi": 82428,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/16-gonggong-guanli-xue",
+   "slug": "16-gonggong-guanli-xue",
+   "title": "公共管理学",
+   "chapters": 18,
+   "units": 184,
+   "hanzi": 254321,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/17-guanli-xue-jichu",
+   "slug": "17-guanli-xue-jichu",
+   "title": "管理学基础",
+   "chapters": 18,
+   "units": 198,
+   "hanzi": 282888,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/18-guanli-xinli-xue",
+   "slug": "18-guanli-xinli-xue",
+   "title": "管理心理学",
+   "chapters": 18,
+   "units": 197,
+   "hanzi": 206313,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/19-shehui-yixue",
+   "slug": "19-shehui-yixue",
+   "title": "社会医学",
+   "chapters": 18,
+   "units": 338,
+   "hanzi": 438472,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/20-weisheng-fa-xue",
+   "slug": "20-weisheng-fa-xue",
+   "title": "卫生法学",
+   "chapters": 18,
+   "units": 198,
+   "hanzi": 284187,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/21-yixue-lunli-xue",
+   "slug": "21-yixue-lunli-xue",
+   "title": "医学伦理学",
+   "chapters": 18,
+   "units": 176,
+   "hanzi": 248505,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/22-yiyao-renli-ziyuan",
+   "slug": "22-yiyao-renli-ziyuan",
+   "title": "医药人力资源管理",
+   "chapters": 18,
+   "units": 198,
+   "hanzi": 186669,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/23-yiyuan-kuaiji-caiwu",
+   "slug": "23-yiyuan-kuaiji-caiwu",
+   "title": "医院会计与财务管理",
+   "chapters": 18,
+   "units": 198,
+   "hanzi": 300568,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/24-zhongyi-jiankang-guanli",
+   "slug": "24-zhongyi-jiankang-guanli",
+   "title": "中医健康管理",
+   "chapters": 18,
+   "units": 198,
+   "hanzi": 297188,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/25-guanli-shixi-shijian",
+   "slug": "25-guanli-shixi-shijian",
+   "title": "管理实习与实践",
+   "chapters": 6,
+   "units": 112,
+   "hanzi": 193735,
+   "stem": "D06"
+  },
+  {
+   "id": "06-guanli/26-guanli-biye-sheji",
+   "slug": "26-guanli-biye-sheji",
+   "title": "管理毕业设计与知识移交",
+   "chapters": 6,
+   "units": 143,
+   "hanzi": 210326,
+   "stem": "D06"
+  },
+  {
+   "id": "07-zhineng/01-yixue-rengong-zhineng-daolun",
+   "slug": "01-yixue-rengong-zhineng-daolun",
+   "title": "医学人工智能导论",
+   "chapters": 8,
+   "units": 212,
+   "hanzi": 90764,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/02-zhongyi-ruanjian-jiagou-xue",
+   "slug": "02-zhongyi-ruanjian-jiagou-xue",
+   "title": "中医软件架构学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/03-zhongyi-zhineng-shebei",
+   "slug": "03-zhongyi-zhineng-shebei",
+   "title": "中医智能设备与可穿戴设备",
+   "chapters": 6,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/04-zhongyi-ziran-yuyan-chuli",
+   "slug": "04-zhongyi-ziran-yuyan-chuli",
+   "title": "中医自然语言处理",
+   "chapters": 10,
+   "units": 148,
+   "hanzi": 71254,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/05-zhongyi-zhishi-tupu",
+   "slug": "05-zhongyi-zhishi-tupu",
+   "title": "中医知识树",
+   "chapters": 6,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/06-zhongyi-zhineng-bianzheng",
+   "slug": "06-zhongyi-zhineng-bianzheng",
+   "title": "中医智能辨证系统",
+   "chapters": 10,
+   "units": 155,
+   "hanzi": 90194,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/07-yixue-tuxiang-shezhen",
+   "slug": "07-yixue-tuxiang-shezhen",
+   "title": "医学图像处理与舌诊客观化",
+   "chapters": 10,
+   "units": 155,
+   "hanzi": 82740,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/08-maizhen-keguanhua",
+   "slug": "08-maizhen-keguanhua",
+   "title": "脉诊客观化与信号处理",
+   "chapters": 10,
+   "units": 136,
+   "hanzi": 121529,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/09-zhongyi-dashuju-fenxi",
+   "slug": "09-zhongyi-dashuju-fenxi",
+   "title": "中医大数据分析",
+   "chapters": 8,
+   "units": 198,
+   "hanzi": 282420,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/10-llm-yu-zhongyi-zhinengti",
+   "slug": "10-llm-yu-zhongyi-zhinengti",
+   "title": "大语言模型与中医智能体",
+   "chapters": 12,
+   "units": 167,
+   "hanzi": 130037,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/11-zhongyi-jiqiren-xue",
+   "slug": "11-zhongyi-jiqiren-xue",
+   "title": "中医机器人学",
+   "chapters": 8,
+   "units": 114,
+   "hanzi": 67767,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/12-shuzi-renti-xuni-fangzhen",
+   "slug": "12-shuzi-renti-xuni-fangzhen",
+   "title": "数字人体与虚拟仿真",
+   "chapters": 8,
+   "units": 99,
+   "hanzi": 65295,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/13-zhongyi-duomotai-ronghe",
+   "slug": "13-zhongyi-duomotai-ronghe",
+   "title": "中医多模态数据融合",
+   "chapters": 10,
+   "units": 145,
+   "hanzi": 79199,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/14-yixue-shuju-anquan-yinsi",
+   "slug": "14-yixue-shuju-anquan-yinsi",
+   "title": "医学数据安全与隐私保护",
+   "chapters": 8,
+   "units": 44,
+   "hanzi": 64541,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/15-zhongyi-ai-lunli-zhili",
+   "slug": "15-zhongyi-ai-lunli-zhili",
+   "title": "中医AI伦理与治理",
+   "chapters": 8,
+   "units": 44,
+   "hanzi": 64541,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/16-jiqi-xuexi",
+   "slug": "16-jiqi-xuexi",
+   "title": "机器学习",
+   "chapters": 16,
+   "units": 219,
+   "hanzi": 194282,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/17-zhongyi-xinxi-xue",
+   "slug": "17-zhongyi-xinxi-xue",
+   "title": "中医信息学",
+   "chapters": 6,
+   "units": 170,
+   "hanzi": 9282,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/18-zhineng-gongcheng-shijian",
+   "slug": "18-zhineng-gongcheng-shijian",
+   "title": "工程实践与系统交付",
+   "chapters": 6,
+   "units": 81,
+   "hanzi": 107597,
+   "stem": "D07"
+  },
+  {
+   "id": "07-zhineng/19-zhineng-biye-sheji",
+   "slug": "19-zhineng-biye-sheji",
+   "title": "智能系毕业设计与知识移交",
+   "chapters": 6,
+   "units": 77,
+   "hanzi": 78115,
+   "stem": "D07"
+  },
+  {
+   "id": "08-wuguan/01-erbihou-jiepou-shengli",
+   "slug": "01-erbihou-jiepou-shengli",
+   "title": "耳鼻喉解剖生理学",
+   "chapters": 8,
+   "units": 131,
+   "hanzi": 147846,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/02-kouqiang-jiepou-shengli",
+   "slug": "02-kouqiang-jiepou-shengli",
+   "title": "口腔解剖生理学",
+   "chapters": 8,
+   "units": 105,
+   "hanzi": 152812,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/03-zhongyi-mianbu-wangzhen",
+   "slug": "03-zhongyi-mianbu-wangzhen",
+   "title": "中医面部望诊学",
+   "chapters": 8,
+   "units": 113,
+   "hanzi": 128700,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/04-yanke-guangxue-yanguang",
+   "slug": "04-yanke-guangxue-yanguang",
+   "title": "眼科光学与验光",
+   "chapters": 8,
+   "units": 31,
+   "hanzi": 88385,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/05-zhongyi-wuguan-jingdian",
+   "slug": "05-zhongyi-wuguan-jingdian",
+   "title": "中医五官科经典选读",
+   "chapters": 6,
+   "units": 40,
+   "hanzi": 88503,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/06-zhongyi-yanke-xue",
+   "slug": "06-zhongyi-yanke-xue",
+   "title": "中医眼科学",
+   "chapters": 10,
+   "units": 46,
+   "hanzi": 142932,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/07-zhongyi-erbihou-xue",
+   "slug": "07-zhongyi-erbihou-xue",
+   "title": "中医耳鼻喉科学",
+   "chapters": 10,
+   "units": 205,
+   "hanzi": 184607,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/08-zhongyi-kouqiang-kexue",
+   "slug": "08-zhongyi-kouqiang-kexue",
+   "title": "中医口腔科学",
+   "chapters": 10,
+   "units": 20,
+   "hanzi": 16347,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/09-kouqiang-neike-xue",
+   "slug": "09-kouqiang-neike-xue",
+   "title": "口腔内科学",
+   "chapters": 10,
+   "units": 20,
+   "hanzi": 16347,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/10-yanke-yingxiang-jiancha",
+   "slug": "10-yanke-yingxiang-jiancha",
+   "title": "眼科影像与检查技术",
+   "chapters": 8,
+   "units": 40,
+   "hanzi": 109198,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/11-kouqiang-hemian-waike",
+   "slug": "11-kouqiang-hemian-waike",
+   "title": "口腔颌面外科学",
+   "chapters": 10,
+   "units": 154,
+   "hanzi": 148366,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/12-kouqiang-xiufu-xue",
+   "slug": "12-kouqiang-xiufu-xue",
+   "title": "口腔修复学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/13-kouqiang-zhengji-xue",
+   "slug": "13-kouqiang-zhengji-xue",
+   "title": "口腔正畸学",
+   "chapters": 10,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/14-zhongyi-sangyin-yixue",
+   "slug": "14-zhongyi-sangyin-yixue",
+   "title": "中医嗓音医学",
+   "chapters": 8,
+   "units": 24,
+   "hanzi": 21143,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/15-zhongyi-meirong-pifu",
+   "slug": "15-zhongyi-meirong-pifu",
+   "title": "中医美容与皮肤治疗学",
+   "chapters": 8,
+   "units": 45,
+   "hanzi": 33374,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/16-wuguan-linchuang-lunzhuan",
+   "slug": "16-wuguan-linchuang-lunzhuan",
+   "title": "五官口腔临床轮转",
+   "chapters": 6,
+   "units": 72,
+   "hanzi": 89381,
+   "stem": "D08"
+  },
+  {
+   "id": "08-wuguan/17-wuguan-biye-sheji",
+   "slug": "17-wuguan-biye-sheji",
+   "title": "五官口腔毕业设计与知识移交",
+   "chapters": 6,
+   "units": 90,
+   "hanzi": 125368,
+   "stem": "D08"
+  },
+  {
+   "id": "09-jichu/01-renti-jiepou-xue",
+   "slug": "01-renti-jiepou-xue",
+   "title": "人体解剖学",
+   "chapters": 10,
+   "units": 120,
+   "hanzi": 203844,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/02-zuzhi-peitai-xue",
+   "slug": "02-zuzhi-peitai-xue",
+   "title": "组织学与胚胎学",
+   "chapters": 20,
+   "units": 240,
+   "hanzi": 408760,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/03-yixue-xibao-shengwu-xue",
+   "slug": "03-yixue-xibao-shengwu-xue",
+   "title": "医学细胞生物学",
+   "chapters": 12,
+   "units": 144,
+   "hanzi": 246311,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/04-yixue-shengwu-xue",
+   "slug": "04-yixue-shengwu-xue",
+   "title": "医学生物学",
+   "chapters": 16,
+   "units": 192,
+   "hanzi": 327203,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/05-zhengchang-renti-xue",
+   "slug": "05-zhengchang-renti-xue",
+   "title": "正常人体学",
+   "chapters": 18,
+   "units": 216,
+   "hanzi": 365413,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/06-shengli-xue",
+   "slug": "06-shengli-xue",
+   "title": "生理学",
+   "chapters": 11,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/07-shenghua-xue",
+   "slug": "07-shenghua-xue",
+   "title": "生物化学",
+   "chapters": 21,
+   "units": 252,
+   "hanzi": 430918,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/08-jubu-jiepou-xue",
+   "slug": "08-jubu-jiepou-xue",
+   "title": "局部解剖学",
+   "chapters": 9,
+   "units": 108,
+   "hanzi": 184833,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/09-yixue-yichuan-xue",
+   "slug": "09-yixue-yichuan-xue",
+   "title": "医学遗传学",
+   "chapters": 12,
+   "units": 96,
+   "hanzi": 163921,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/10-bingli-xue",
+   "slug": "10-bingli-xue",
+   "title": "病理学",
+   "chapters": 21,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/11-bingli-shengli-xue",
+   "slug": "11-bingli-shengli-xue",
+   "title": "病理生理学",
+   "chapters": 53,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/12-yaoli-xue",
+   "slug": "12-yaoli-xue",
+   "title": "药理学",
+   "chapters": 49,
+   "units": 0,
+   "hanzi": 0,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/13-mianyi-bingyuan-shengwu",
+   "slug": "13-mianyi-bingyuan-shengwu",
+   "title": "免疫学基础与病原生物学",
+   "chapters": 15,
+   "units": 180,
+   "hanzi": 309089,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/14-jibing-xue-jichu",
+   "slug": "14-jibing-xue-jichu",
+   "title": "疾病学基础",
+   "chapters": 18,
+   "units": 216,
+   "hanzi": 360945,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/15-liuxingbing-xue",
+   "slug": "15-liuxingbing-xue",
+   "title": "流行病学",
+   "chapters": 18,
+   "units": 216,
+   "hanzi": 316633,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/16-jichu-keyan-shixun",
+   "slug": "16-jichu-keyan-shixun",
+   "title": "科研实训与实验设计",
+   "chapters": 6,
+   "units": 72,
+   "hanzi": 109850,
+   "stem": "D09"
+  },
+  {
+   "id": "09-jichu/17-jichu-biye-sheji",
+   "slug": "17-jichu-biye-sheji",
+   "title": "基础医学毕业设计与知识移交",
+   "chapters": 6,
+   "units": 72,
+   "hanzi": 108466,
+   "stem": "D09"
+  }
+ ]
+}

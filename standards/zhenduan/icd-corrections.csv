@@ -1,0 +1,15 @@
+﻿平台码,病名,原码,原码题名,判定,动作,建议码,建议题名,依据
+CA00,感冒,CA00,Acute nasopharyngitis,ok,保留,,,Acute nasopharyngitis = 急性鼻咽炎；感冒的现代对应即普通感冒，可接受
+MD12,咳嗽,MD12,Cough,narrow,留码加注,,,Cough 是症状（咳嗽），教材「咳嗽」为病名；症状当病名用，需注明口径
+CA23,哮病,CA23,Asthma,narrow,留码加注,,,Asthma 覆盖面含喘；教材「哮病」与「喘证」分列，Asthma 对应的是哮
+MD11,喘证,MD11,Abnormalities of breathing,conflict,待定码,,,Abnormalities of breathing 是「呼吸异常」大类，不是「喘证」；喘证应落在具体呼吸困难的类目
+MC81,心悸,MC81,Abnormalities of heart beat,narrow,留码加注,,,Abnormalities of heart beat 是体征类（心律异常），心悸是症状；层级不同
+BA40,胸痹,BA40,,missing,删码回查,,,码在 definitions-en.json 无条目（胸痹在 TM1 里的码不是 BA40，需回 WHO 表核对）
+MB51,眩晕,MB51,Diplegia of upper extremities,conflict,换码,MB48,Dizziness or giddiness,Diplegia of upper extremities = 双上肢瘫，与「眩晕」无关；镜象里 Dizziness or giddiness = MB48，才是对得上的码
+MD90,胃脘痛,MD90,Nausea or vomiting,conflict,待定码,,,Nausea or vomiting = 恶心呕吐，与「胃脘痛」不是同一实体
+ME08,呕吐,ME08,Flatulence or related conditions,conflict,待定码,,,Flatulence = 腹胀气，与「呕吐」不同
+ME05,泄泻,ME05,Change in bowel habit,narrow,留码加注,,,Change in bowel habit = 排便习惯改变，与「泄泻」相关但不等于腹泻
+ME06,便秘,ME06,,missing,删码回查,,,码在 definitions-en.json 无条目
+MG27,水肿,MG27,"Haemorrhage, not elsewhere classified",conflict,待定码,,,"Haemorrhage, not elsewhere classified = 出血，与「水肿」无关"
+GC00,淋证,GC00,Cystitis,narrow,留码加注,,,Cystitis = 膀胱炎；「淋证」范围更大（含石淋、膏淋等），只覆盖湿热淋一类
+ME83,腰痛,ME83,"Rheumatism, unspecified",conflict,待定码,,,"Rheumatism, unspecified = 风湿病，与「腰痛」不是同一实体（腰痛应落 low back pain）"

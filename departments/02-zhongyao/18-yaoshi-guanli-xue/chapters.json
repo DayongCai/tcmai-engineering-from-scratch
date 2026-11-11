@@ -1,0 +1,229 @@
+{
+ "note": "18 药事管理学（外源课）：1–10《注册办法》，11–20《药品管理法》，21–22《实施条例》，23–24《GVP》，25–26《GMP》，27–28《GSP》。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-dingyi-fenlei",
+   "title": "药品注册的定义与分类管理",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-shenqingren",
+   "title": "申请人资格与法律责任",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-shangshi-qian",
+   "title": "上市前研究：药学、药理毒理与临床",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-linchuang-shiji",
+   "title": "药物临床试验：分期、伦理与备案",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-anquan-biangeng",
+   "title": "试验期间的安全报告与变更控制",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-shenping",
+   "title": "审评与审批：结论怎么形成",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-hecha-jianyan",
+   "title": "注册核查与注册检验",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-jiakuai",
+   "title": "加快通道：突破性治疗、附条件批准、优先审评",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-shangshi-hou",
+   "title": "上市后变更与再注册",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-zhongyao-tese",
+   "title": "中药注册的特殊性",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-dingyi-shiyong",
+   "title": "药品的定义与适用范围",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-chiyouren",
+   "title": "上市许可持有人制度：一个人对全生命周期负责",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-zhuisu",
+   "title": "药品追溯制度",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-shengchan",
+   "title": "药品生产：许可与 GMP",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-jingying",
+   "title": "药品经营：许可与 GSP",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-fenlei-wangluo-guanggao",
+   "title": "处方药分类、网络销售与广告管制",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-yiliaojigou",
+   "title": "医疗机构药事管理",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-shangshihou-jiancha",
+   "title": "上市后管理与不良反应监测",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 19,
+   "slug": "19-jialieyao",
+   "title": "假药与劣药的认定",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 20,
+   "slug": "20-falv-zeren-chubei",
+   "title": "法律责任与药品储备供应",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 21,
+   "slug": "21-jialie-jianyan-huomian",
+   "title": "假劣药的检验与豁免",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 22,
+   "slug": "22-shishitiao-zengliang",
+   "title": "实施条例的增量：委托、网络、免责与激励",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 23,
+   "slug": "23-yaojing-tixi",
+   "title": "药物警戒体系：谁负责、谁执行、靠什么运转",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 24,
+   "slug": "24-geren-xinhao-fengxian",
+   "title": "从个例报告到风险控制：时限、信号与定期报告",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 25,
+   "slug": "25-gmp-tixi-rendyuan",
+   "title": "GMP 的体系要求与关键人员",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 26,
+   "slug": "26-gmp-sigen-zhizhu",
+   "title": "GMP 的四根支柱：验证、变更、偏差、回顾",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 27,
+   "slug": "27-gsp-zuzhi",
+   "title": "GSP 的组织条件：体系、人员与设施",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 28,
+   "slug": "28-gsp-sizhizhu",
+   "title": "GSP 的四个支点：验收、储存、记录、冷链",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
+}

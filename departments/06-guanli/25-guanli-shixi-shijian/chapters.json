@@ -1,0 +1,60 @@
+{
+  "slug": "25-guanli-shixi-shijian",
+  "title": "管理实习与实践",
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-yiwu-shixi",
+      "title": "医院职能部门实习（医务与质控）",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/01-yiwu-shixi/docs/zh.md",
+      "code": "chapters/01-yiwu-shixi/code/main.js"
+    },
+    {
+      "n": 2,
+      "slug": "02-binggan-shixi",
+      "title": "病案与信息科实习",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/02-binggan-shixi/docs/zh.md",
+      "code": "chapters/02-binggan-shixi/code/main.js"
+    },
+    {
+      "n": 3,
+      "slug": "03-yibao-jiesuan",
+      "title": "医保结算与费用结构分析",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/03-yibao-jiesuan/docs/zh.md",
+      "code": "chapters/03-yibao-jiesuan/code/main.js"
+    },
+    {
+      "n": 4,
+      "slug": "04-zhengce-diaoyan",
+      "title": "中医药政策落地调研",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/04-zhengce-diaoyan/docs/zh.md",
+      "code": "chapters/04-zhengce-diaoyan/code/main.js"
+    },
+    {
+      "n": 5,
+      "slug": "05-pdca-gaijin",
+      "title": "管理改进项目（PDCA）",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/05-pdca-gaijin/docs/zh.md",
+      "code": "chapters/05-pdca-gaijin/code/main.js"
+    },
+    {
+      "n": 6,
+      "slug": "06-shijian-baogao",
+      "title": "实践报告与答辩",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/06-shijian-baogao/docs/zh.md",
+      "code": "chapters/06-shijian-baogao/code/main.js"
+    }
+  ]
+}

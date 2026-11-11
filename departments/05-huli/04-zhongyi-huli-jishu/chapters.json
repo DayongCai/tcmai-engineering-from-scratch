@@ -1,54 +1,132 @@
 {
-  "slug": "04-zhongyi-huli-jishu",
-  "title": "中医护理技术",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-aijiu-caozuo",
-      "title": "艾灸的操作与适应证",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-baguan-guasha",
-      "title": "拔罐与刮痧的技术要点",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-erxue-tiefu",
-      "title": "耳穴压豆与穴位贴敷",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-xunxi-shifu",
-      "title": "中药熏洗与湿敷",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-anmo-paida",
-      "title": "穴位按摩与经络拍打",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-guanchang-daoru",
-      "title": "中药保留灌肠与离子导入",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-bingfazheng-chuli",
-      "title": "技术操作的并发症处理",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-liaoxiao-pingjia",
-      "title": "中医护理技术的疗效评价",
-      "status": "🚧"
-    }
-  ]
+ "slug": "04-zhongyi-huli-jishu",
+ "title": "中医护理技术",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gaishu",
+   "title": "中医护理适宜技术概述与特点",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-gaishu/docs/zh.md",
+   "code": "chapters/01-gaishu/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-qiandu-pinggu",
+   "title": "实施前准备与评估要求",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-qiandu-pinggu/docs/zh.md",
+   "code": "chapters/02-qiandu-pinggu/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-shuxue-jingluo",
+   "title": "腧穴与经络基础",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-shuxue-jingluo/docs/zh.md",
+   "code": "chapters/03-shuxue-jingluo/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-anmo-tiefu",
+   "title": "腧穴按压与穴位贴敷",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-anmo-tiefu/docs/zh.md",
+   "code": "chapters/04-anmo-tiefu/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-aijiu-baguan",
+   "title": "艾灸与拔罐",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-aijiu-baguan/docs/zh.md",
+   "code": "chapters/05-aijiu-baguan/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-guasha-reyun",
+   "title": "刮痧与热熨",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-guasha-reyun/docs/zh.md",
+   "code": "chapters/06-guasha-reyun/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-erxue-ciji",
+   "title": "耳穴与穴位刺激类技术",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-erxue-ciji/docs/zh.md",
+   "code": "chapters/07-erxue-ciji/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-xunxi-waifu",
+   "title": "中药熏洗与外敷",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-xunxi-waifu/docs/zh.md",
+   "code": "chapters/08-xunxi-waifu/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-yaoshan-yinshi",
+   "title": "药膳与饮食调护",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-yaoshan-yinshi/docs/zh.md",
+   "code": "chapters/09-yaoshan-yinshi/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-qingzhi-yangsheng",
+   "title": "情志护理与养生",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-qingzhi-yangsheng/docs/zh.md",
+   "code": "chapters/10-qingzhi-yangsheng/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-chuantong-yundong",
+   "title": "传统运动与导引类护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-chuantong-yundong/docs/zh.md",
+   "code": "chapters/11-chuantong-yundong/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-zhengzhuang-yingyong",
+   "title": "常见症状的适宜技术应用",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-zhengzhuang-yingyong/docs/zh.md",
+   "code": "chapters/12-zhengzhuang-yingyong/code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-guancha-anquan",
+   "title": "观察记录、安全与效果评价",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/13-guancha-anquan/docs/zh.md",
+   "code": "chapters/13-guancha-anquan/code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-tuiguang-pingtai",
+   "title": "技术推广、质量管理与平台",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/14-tuiguang-pingtai/docs/zh.md",
+   "code": "chapters/14-tuiguang-pingtai/code/main.js"
+  }
+ ]
 }

@@ -1,0 +1,60 @@
+{
+  "slug": "17-gushang-biye-sheji",
+  "title": "骨伤毕业设计与知识移交",
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-xuan-ti",
+      "title": "选题：从复位方案到可量化命题",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/01-xuan-ti/docs/zh.md",
+      "code": "chapters/01-xuan-ti/code/main.js"
+    },
+    {
+      "n": 2,
+      "slug": "02-yingxiang-shuju",
+      "title": "影像与生物力学数据准备",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/02-yingxiang-shuju/docs/zh.md",
+      "code": "chapters/02-yingxiang-shuju/code/main.js"
+    },
+    {
+      "n": 3,
+      "slug": "03-shoufa-zhiju",
+      "title": "手法与支具的系统实现",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/03-shoufa-zhiju/docs/zh.md",
+      "code": "chapters/03-shoufa-zhiju/code/main.js"
+    },
+    {
+      "n": 4,
+      "slug": "04-liaoxiao-pingjia",
+      "title": "疗效与并发症评价",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/04-liaoxiao-pingjia/docs/zh.md",
+      "code": "chapters/04-liaoxiao-pingjia/code/main.js"
+    },
+    {
+      "n": 5,
+      "slug": "05-lunwen-dabian",
+      "title": "论文写作与答辩",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/05-lunwen-dabian/docs/zh.md",
+      "code": "chapters/05-lunwen-dabian/code/main.js"
+    },
+    {
+      "n": 6,
+      "slug": "06-zhishi-yijiao",
+      "title": "知识移交：操作规范与交接",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/06-zhishi-yijiao/docs/zh.md",
+      "code": "chapters/06-zhishi-yijiao/code/main.js"
+    }
+  ]
+}

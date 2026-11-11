@@ -1,0 +1,79 @@
+{
+ "lesson": "07-ren-du-xue",
+ "title": "任督二脉腧穴",
+ "subject": "02-shuxue-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 7 章「任督二脉腧穴」要回答的核心问题是什么？",
+   "options": [
+    "任督二脉的穴位为什么按脊柱与正中线排布",
+    "第一侧线背俞穴",
+    "第二侧线穴",
+    "足部穴"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：任督是单线，穴位数固定，但「同一椎体下」在胖瘦身上差得很远。"
+  },
+  {
+   "stage": "check",
+   "question": "「身柱」的编号是？",
+   "options": [
+    "GV12",
+    "LU1",
+    "LU2",
+    "LU5"
+   ],
+   "correct": 0,
+   "explanation": "见本章穴位表；数据取自 standards/shuxue/穴位库.json。"
+  },
+  {
+   "stage": "check",
+   "question": "本章穴位表共列出多少穴？",
+   "options": [
+    "25 穴",
+    "28 穴",
+    "32 穴",
+    "37 穴"
+   ],
+   "correct": 0,
+   "explanation": "由 `node code/main.js` 与穴位库现算。"
+  },
+  {
+   "stage": "check",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/shuxue（穴位库 + 单元层）",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  },
+  {
+   "stage": "post",
+   "question": "把「部位词命中最多」直接当穴位归属，风险在哪？",
+   "options": [
+    "跨部位的穴会被强行归入一处",
+    "没有风险",
+    "穴位数会变多",
+    "主治会失效"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：部位由【定位】文字判定，跨部位穴是简化误差。"
+  },
+  {
+   "stage": "post",
+   "question": "穴位库解析依赖的锚点是什么？",
+   "options": [
+    "「穴名（拼音，编号）」这一写法",
+    "穴名的第一个字",
+    "教材页码",
+    "主治关键词"
+   ],
+   "correct": 0,
+   "explanation": "锚点缺失会静默漏穴，测试断言穴数会先响。"
+  }
+ ]
+}

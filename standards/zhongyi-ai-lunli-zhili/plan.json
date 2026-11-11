@@ -1,0 +1,122 @@
+{
+ "title": "中医 AI 伦理与治理",
+ "note": "合成课：全部材料取自《医学数据安全与隐私》四个章群，另参照 standards/biye/合规口径.json 的法规条文（不并入汉字统计）。",
+ "views": {
+  "法规与责任": [
+   "法规",
+   "条例",
+   "责任",
+   "要求",
+   "监管",
+   "备案"
+  ],
+  "隐私与同意": [
+   "隐私",
+   "知情",
+   "同意",
+   "脱敏",
+   "匿名",
+   "数据主体"
+  ],
+  "治理与审计": [
+   "治理",
+   "审计",
+   "评估",
+   "风险",
+   "记录",
+   "追溯"
+  ]
+ },
+ "levels": {
+  "法规与标准": [
+   1,
+   2
+  ],
+  "隐私与伦理": [
+   3,
+   4
+  ],
+  "安全与治理": [
+   5,
+   6
+  ],
+  "审计与落地": [
+   7,
+   8
+  ]
+ },
+ "chapters": [
+  {
+   "title": "为什么医疗 AI 需要专门治理",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     3
+    ]
+   ]
+  },
+  {
+   "title": "法规与标准的地基",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     1
+    ]
+   ]
+  },
+  {
+   "title": "知情同意与伦理审查",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     4
+    ]
+   ]
+  },
+  {
+   "title": "敏感个人信息与脱敏",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     8
+    ]
+   ]
+  },
+  {
+   "title": "安全体系与风险分级",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     5
+    ]
+   ]
+  },
+  {
+   "title": "访问控制、加密与备份",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     6
+    ]
+   ]
+  },
+  {
+   "title": "模型审计与可追溯",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     7
+    ]
+   ]
+  },
+  {
+   "title": "出问题谁负责：责任链与复盘",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     2
+    ]
+   ]
+  }
+ ]
+}

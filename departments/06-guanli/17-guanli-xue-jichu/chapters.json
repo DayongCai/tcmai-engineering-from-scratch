@@ -1,0 +1,151 @@
+{
+ "slug": "17-guanli-xue-jichu",
+ "title": "管理学基础",
+ "note": "18 章 = 教材 18 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-m1",
+   "title": "管理与管理学",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-m2",
+   "title": "管理理论的形成与发展",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-m3",
+   "title": "管理的基本原理与方法",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-m4",
+   "title": "决策",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-m5",
+   "title": "计划",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-m6",
+   "title": "战略管理",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-m7",
+   "title": "组织设计与组织结构",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-m8",
+   "title": "组织变革与组织文化",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-m9",
+   "title": "人力资源管理",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-m10",
+   "title": "领导",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-m11",
+   "title": "激励",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-m12",
+   "title": "沟通",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-m13",
+   "title": "控制",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-m14",
+   "title": "管理创新与创业",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-m15",
+   "title": "管理伦理与社会责任",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-m16",
+   "title": "管理信息系统与数字化管理",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-m17",
+   "title": "中医药机构管理（中医专题）",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-m18",
+   "title": "管理学基础与AI教学平台",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
+}

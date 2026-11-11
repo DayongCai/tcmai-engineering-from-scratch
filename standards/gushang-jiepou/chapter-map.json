@@ -1,0 +1,164 @@
+{
+ "note": "骨伤解剖学派生课：一章一主题；四位面＝章群结构分区。",
+ "chapters": {
+  "01-gu-jiegou": {
+   "n": 1,
+   "title": "骨的形态与构造",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "骨的强弱由骨小梁排列与皮质厚度共同决定",
+   "derivedFrom": "gushang-jichu、zhenggu"
+  },
+  "02-gu-fayu": {
+   "n": 2,
+   "title": "骨的发生、生长与骨化",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "骨骺线是儿童骨折分型的解剖基础",
+   "derivedFrom": "gushang-jichu、zhenggu"
+  },
+  "03-guanjie": {
+   "n": 3,
+   "title": "关节结构与运动学",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "关节面、关节囊、韧带三者决定活动方向与稳定",
+   "derivedFrom": "zhenggu、kangfu-huli"
+  },
+  "04-ji-jinmo": {
+   "n": 4,
+   "title": "肌、肌腱与筋膜",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "肌的起止点决定它的功能，也决定损伤模式",
+   "derivedFrom": "shoufa、tuina"
+  },
+  "05-shenjing-xueguan": {
+   "n": 5,
+   "title": "神经与血管走行",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "入路设计的第一约束是神经血管",
+   "derivedFrom": "zhenggu、gushang-yingxiang"
+  },
+  "06-jizhu-jiepou": {
+   "n": 6,
+   "title": "脊柱解剖",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5",
+    "6.6"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "三柱理论解释稳定性",
+   "derivedFrom": "gushang-jichu、gushang-jizhu-bing"
+  },
+  "07-shangzhi": {
+   "n": 7,
+   "title": "上肢解剖",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "上肢以灵活为先，稳定靠软组织",
+   "derivedFrom": "zhenggu、gushang-jichu"
+  },
+  "08-xiazhi": {
+   "n": 8,
+   "title": "下肢解剖",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4",
+    "8.5"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "下肢以负重为先，力线决定成败",
+   "derivedFrom": "zhenggu、gushang-jichu"
+  },
+  "09-biaozhi": {
+   "n": 9,
+   "title": "体表标志与定位",
+   "units": [
+    "9.1",
+    "9.2",
+    "9.3",
+    "9.4",
+    "9.5",
+    "9.6"
+   ],
+   "srcChapters": [
+    "派生#9"
+   ],
+   "why": "体表标志是手摸得到的解剖",
+   "derivedFrom": "zhenggu、gushang-jichu"
+  },
+  "10-yingxiang-jiepou": {
+   "n": 10,
+   "title": "影像解剖对照",
+   "units": [
+    "10.1",
+    "10.2",
+    "10.3",
+    "10.4",
+    "10.5"
+   ],
+   "srcChapters": [
+    "派生#10"
+   ],
+   "why": "同一结构在 X 线、CT、MRI 上不是同一个样子",
+   "derivedFrom": "gushang-yingxiang、gushang-jichu"
+  }
+ }
+}

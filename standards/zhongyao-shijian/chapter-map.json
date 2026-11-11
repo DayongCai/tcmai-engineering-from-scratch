@@ -1,0 +1,112 @@
+{
+ "note": "派生课：本库无该实践/轮转教材；一章一个场景，取对应专业课单元，正文挂本库实测量锚点。",
+ "chapters": {
+  "01-changdi-diaoyan": {
+   "n": 1,
+   "title": "药材市场与产地调研：道地性与商品规格",
+   "units": [
+    "1.1",
+    "1.2"
+   ],
+   "srcChapters": [
+    "zhongyao-shangpin#4",
+    "zhongyao-shangpin#7"
+   ],
+   "why": "道地产区 ＋ 规格等级：调研要同时回答「哪产的」与「值多少级」，只答一个等于没调研",
+   "derivedFrom": "zhongyao-shangpin 第4章、zhongyao-shangpin 第7章"
+  },
+  "02-jianding-shijian": {
+   "n": 2,
+   "title": "鉴定实验室实践：性状与显微鉴定",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6",
+    "2.7",
+    "2.8"
+   ],
+   "srcChapters": [
+    "zhongyao-jianding#5",
+    "zhongyao-jianding#6"
+   ],
+   "why": "性状 ＋ 显微：这两项是现场最快能判真伪的手段，理化留给实验室",
+   "derivedFrom": "zhongyao-jianding 第5章、zhongyao-jianding 第6章"
+  },
+  "03-paozhi-chejian": {
+   "n": 3,
+   "title": "炮制车间实践：工艺与质控点",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5",
+    "3.6",
+    "3.7",
+    "3.8"
+   ],
+   "srcChapters": [
+    "zhongyao-paozhi#5",
+    "zhongyao-paozhi#8"
+   ],
+   "why": "质量要求与贮藏 ＋ 炒法：车间里真正要盯的是「每个工序的质控点」",
+   "derivedFrom": "zhongyao-paozhi 第5章、zhongyao-paozhi 第8章"
+  },
+  "04-zhiji-zhongshi": {
+   "n": 4,
+   "title": "制剂中试：处方—工艺—质量",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5",
+    "4.6",
+    "4.7",
+    "4.8",
+    "4.9",
+    "4.10"
+   ],
+   "srcChapters": [
+    "zhongyao-yaoji#4",
+    "zhongyao-yaoji#7"
+   ],
+   "why": "浸出制剂 ＋ 片剂：中试是把处方变成可放大工艺的那一步",
+   "derivedFrom": "zhongyao-yaoji 第4章、zhongyao-yaoji 第7章"
+  },
+  "05-yaofang-suifang": {
+   "n": 5,
+   "title": "药房与临床用药随访",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4"
+   ],
+   "srcChapters": [
+    "linchuang-zhongyao#4"
+   ],
+   "why": "用法与剂量：药房实践的核心是「发给谁、怎么用、有没有效」",
+   "derivedFrom": "linchuang-zhongyao 第4章"
+  },
+  "06-shijian-baogao": {
+   "n": 6,
+   "title": "实践报告与出站考核",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5"
+   ],
+   "srcChapters": [
+    "zhongyao-ziyuan#3"
+   ],
+   "why": "资源调查研究：把实践写成可复核的报告，靠的就是调查方法与数据",
+   "derivedFrom": "zhongyao-ziyuan 第3章"
+  }
+ }
+}

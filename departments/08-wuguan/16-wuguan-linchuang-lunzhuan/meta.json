@@ -1,0 +1,34 @@
+{
+  "slug": "16-wuguan-linchuang-lunzhuan",
+  "title": "五官口腔临床轮转",
+  "en": "ENT & Stomatology Rotation",
+  "deptSlug": "08-wuguan",
+  "deptTitle": "五官口腔系",
+  "globalN": 169,
+  "type": "Clinic",
+  "semester": 9,
+  "stage": "lao",
+  "stageTitle": "老",
+  "hours": 108,
+  "bridge": "专科检查→结构化字段 / 影像→测量 / 疗效→专科评分",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/08-wuguan/16-wuguan-linchuang-lunzhuan",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/08-wuguan/16-wuguan-linchuang-lunzhuan",
+    "chaptersWritten": 6,
+    "words": 3579,
+    "status": "wip",
+    "layer": "handbook",
+    "contract": "handbook-v1",
+    "origin": "handbook",
+    "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
+    "extractedAt": "2026-11-09"
+  }
+}

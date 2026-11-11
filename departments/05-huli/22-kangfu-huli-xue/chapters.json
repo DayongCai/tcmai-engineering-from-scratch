@@ -1,0 +1,168 @@
+{
+ "slug": "22-kangfu-huli-xue",
+ "title": "康复护理学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gaishu",
+   "title": "康复护理学概述",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-gaishu/docs/zh.md",
+   "code": "chapters/01-gaishu/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-lilun",
+   "title": "康复护理的理论基础",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-lilun/docs/zh.md",
+   "code": "chapters/02-lilun/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-tuandui-moshi",
+   "title": "康复护理团队与工作模式",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-tuandui-moshi/docs/zh.md",
+   "code": "chapters/03-tuandui-moshi/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-pinggu-jichu",
+   "title": "康复护理评估基础",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-pinggu-jichu/docs/zh.md",
+   "code": "chapters/04-pinggu-jichu/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-lunli-goutong",
+   "title": "康复护理伦理与沟通",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-lunli-goutong/docs/zh.md",
+   "code": "chapters/05-lunli-goutong/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-jishu-anquan",
+   "title": "康复护理基本技术与安全",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-jishu-anquan/docs/zh.md",
+   "code": "chapters/06-jishu-anquan/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-yundong-gongneng",
+   "title": "运动功能康复护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-yundong-gongneng/docs/zh.md",
+   "code": "chapters/07-yundong-gongneng/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-adl",
+   "title": "日常生活活动能力康复护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-adl/docs/zh.md",
+   "code": "chapters/08-adl/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-yanyu-yantun-renzhi",
+   "title": "言语、吞咽与认知康复护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-yanyu-yantun-renzhi/docs/zh.md",
+   "code": "chapters/09-yanyu-yantun-renzhi/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-zhongyi-kangfu",
+   "title": "中医康复护理技术",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-zhongyi-kangfu/docs/zh.md",
+   "code": "chapters/10-zhongyi-kangfu/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-bingfazheng-yufang",
+   "title": "康复护理中的并发症预防",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-bingfazheng-yufang/docs/zh.md",
+   "code": "chapters/11-bingfazheng-yufang/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-shenjing-xitong",
+   "title": "神经系统疾病康复护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-shenjing-xitong/docs/zh.md",
+   "code": "chapters/12-shenjing-xitong/code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-gu-guanjie",
+   "title": "骨与关节疾病康复护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/13-gu-guanjie/docs/zh.md",
+   "code": "chapters/13-gu-guanjie/code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-xinfei-daixie",
+   "title": "心肺与代谢疾病康复护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/14-xinfei-daixie/docs/zh.md",
+   "code": "chapters/14-xinfei-daixie/code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-teshu-renqun",
+   "title": "特殊人群康复护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/15-teshu-renqun/docs/zh.md",
+   "code": "chapters/15-teshu-renqun/code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-shequ-jujia",
+   "title": "社区与居家康复护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/16-shequ-jujia/docs/zh.md",
+   "code": "chapters/16-shequ-jujia/code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-zhiliang-fengxian",
+   "title": "康复护理质量与风险管理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/17-zhiliang-fengxian/docs/zh.md",
+   "code": "chapters/17-zhiliang-fengxian/code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-pingtai",
+   "title": "康复护理学与教学平台",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/18-pingtai/docs/zh.md",
+   "code": "chapters/18-pingtai/code/main.js"
+  }
+ ]
+}

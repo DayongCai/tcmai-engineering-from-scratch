@@ -1,0 +1,79 @@
+{
+  "lesson": "08-tizhi-wucha",
+  "title": "可重复性与测量误差：三关三问",
+  "subject": "04-zhongyi-tizhi-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "体质判定的三关是？",
+      "options": [
+        "重测信度、评分者信度、结构效度",
+        "轻、中、重",
+        "早、中、晚",
+        "形态、功能、心理"
+      ],
+      "correct": 0,
+      "explanation": "本章第一节。"
+    },
+    {
+      "stage": "check",
+      "question": "最容易被忽略的一关是？",
+      "options": [
+        "评分者信度（缺少双人对照）",
+        "重测信度",
+        "结构效度",
+        "三者相同"
+      ],
+      "correct": 0,
+      "explanation": "一人判定就不知道分歧多大。"
+    },
+    {
+      "stage": "check",
+      "question": "回归均值的对策是？",
+      "options": [
+        "用变化量而非绝对阈值判断效果",
+        "增加样本",
+        "改用他量",
+        "忽略"
+      ],
+      "correct": 0,
+      "explanation": "极端得分第二次自然回落。"
+    },
+    {
+      "stage": "check",
+      "question": "四域误差从大到小的排序是？",
+      "options": [
+        "易感与心理最大，形态最小",
+        "形态最大",
+        "四域相同",
+        "功能最大"
+      ],
+      "correct": 0,
+      "explanation": "故不可四域直接相加。"
+    },
+    {
+      "stage": "post",
+      "question": "引用数字必须能回答的三问是？",
+      "options": [
+        "来自哪一层、口径是什么、稳定性如何",
+        "谁说的、哪年、哪本",
+        "多少、多大、多久",
+        "能否计算、能否复现、能否发表"
+      ],
+      "correct": 0,
+      "explanation": "本课程数字的说明书。"
+    },
+    {
+      "stage": "post",
+      "question": "本课程最大的自我限制是？",
+      "options": [
+        "派生底本本身未经重测",
+        "没有数字",
+        "没有案例",
+        "没有方药"
+      ],
+      "correct": 0,
+      "explanation": "已写入 METHOD.json 的 gap 字段。"
+    }
+  ]
+}

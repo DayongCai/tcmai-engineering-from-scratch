@@ -1,0 +1,79 @@
+{
+  "lesson": "03-tizhi-liangbiao",
+  "title": "九种体质的判定与量表设计：四域各自计量",
+  "subject": "04-zhongyi-tizhi-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "体质判定的四个域是？",
+      "options": [
+        "形态、功能、心理、易感",
+        "望、闻、问、切",
+        "寒热、虚实、表里、阴阳",
+        "气血、脏腑、经络、全身"
+      ],
+      "correct": 0,
+      "explanation": "四域即教材对体质的定义。"
+    },
+    {
+      "stage": "check",
+      "question": "痰湿质最关键的域是？",
+      "options": [
+        "形态（形体、腹部、舌苔）",
+        "心理",
+        "易感",
+        "功能"
+      ],
+      "correct": 0,
+      "explanation": "第 3 章「八质关键域」表。"
+    },
+    {
+      "stage": "check",
+      "question": "量表设计原则不包括？",
+      "options": [
+        "一题测多个域以提高效率",
+        "条目单维",
+        "量纲统一",
+        "缺失不等于最低分"
+      ],
+      "correct": 0,
+      "explanation": "跨域条目会让得分不可解释。"
+    },
+    {
+      "stage": "check",
+      "question": "本章四位面首位是？",
+      "options": [
+        "功能（9）",
+        "形态",
+        "心理",
+        "易感"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算：判定章最重功能域。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么体质判定要支持多标签？",
+      "options": [
+        "老年与慢病人群常兼夹，单选会丢失信息",
+        "因为量表如此",
+        "因为便于统计",
+        "因为九质不全"
+      ],
+      "correct": 0,
+      "explanation": "但须给出主质。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么体质不宜给过多硬阈值？",
+      "options": [
+        "体质边界本身模糊，硬阈值会造成假精确",
+        "因为没有数据",
+        "因为无法测量",
+        "因为规范禁止"
+      ],
+      "correct": 0,
+      "explanation": "与第 8 章测量误差相连。"
+    }
+  ]
+}

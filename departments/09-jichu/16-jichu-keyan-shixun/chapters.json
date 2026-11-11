@@ -1,0 +1,60 @@
+{
+  "slug": "16-jichu-keyan-shixun",
+  "title": "科研实训与实验设计",
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-shiyanshi-anquan",
+      "title": "实验室安全与规范",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/01-shiyanshi-anquan/docs/zh.md",
+      "code": "chapters/01-shiyanshi-anquan/code/main.js"
+    },
+    {
+      "n": 2,
+      "slug": "02-shiyan-sheji",
+      "title": "实验设计与对照设置",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/02-shiyan-sheji/docs/zh.md",
+      "code": "chapters/02-shiyan-sheji/code/main.js"
+    },
+    {
+      "n": 3,
+      "slug": "03-xingtai-fenzi",
+      "title": "形态学与分子实验实训",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/03-xingtai-fenzi/docs/zh.md",
+      "code": "chapters/03-xingtai-fenzi/code/main.js"
+    },
+    {
+      "n": 4,
+      "slug": "04-shuju-tongji",
+      "title": "数据采集与统计分析",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/04-shuju-tongji/docs/zh.md",
+      "code": "chapters/04-shuju-tongji/code/main.js"
+    },
+    {
+      "n": 5,
+      "slug": "05-jieguo-jiedu",
+      "title": "结果解读与可重复性",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/05-jieguo-jiedu/docs/zh.md",
+      "code": "chapters/05-jieguo-jiedu/code/main.js"
+    },
+    {
+      "n": 6,
+      "slug": "06-shixun-baogao",
+      "title": "实训报告与考核",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/06-shixun-baogao/docs/zh.md",
+      "code": "chapters/06-shixun-baogao/code/main.js"
+    }
+  ]
+}

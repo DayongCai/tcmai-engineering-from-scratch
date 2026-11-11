@@ -1,0 +1,127 @@
+{
+ "slug": "13-mianyi-bingyuan-shengwu",
+ "title": "免疫学基础与病原生物学",
+ "note": "15 章 = 教材 15 章（1:1）。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-mianyi-xulun",
+   "title": "免疫学绪论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-kangyuan",
+   "title": "抗原",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-mianyi-fenzi",
+   "title": "免疫分子",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-mianyi-xibao",
+   "title": "免疫细胞",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-mianyi-yingda",
+   "title": "免疫应答",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-chaomin-fanying",
+   "title": "超敏反应",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-mianyi-yingyong",
+   "title": "免疫学应用",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-bingyuan-xulun",
+   "title": "病原生物学绪论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-xijun-zonglun",
+   "title": "细菌学总论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-changjian-xijun",
+   "title": "常见致病细菌",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-bingdu-zonglun",
+   "title": "病毒学总论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-changjian-bingdu",
+   "title": "常见致病病毒",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-zhenjunxue",
+   "title": "真菌学",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-jishengchong-gaishu",
+   "title": "医学寄生虫学概述",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-changjian-jishengchong",
+   "title": "常见致病寄生虫",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
+}

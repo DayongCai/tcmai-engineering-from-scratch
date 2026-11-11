@@ -17,13 +17,23 @@
     "id": "tcmP",
     "coursePath": "platform/courses/01-zhongyi/10-zhongyi-neike-xue",
     "videosPublished": 0,
-    "status": "planned"
+    "status": "rendered",
+    "narrationChapters": 14,
+    "slideDecks": 14,
+    "slides": 334,
+    "videosRendered": 14,
+    "videoHours": 4.63,
+    "audioSegments": 175,
+    "audioMinutes": 278
   },
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/01-zhongyi/10-zhongyi-neike-xue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 12,
+    "words": 405580,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#中医内科学",
+    "extractedAt": "2026-10-21"
   }
 }

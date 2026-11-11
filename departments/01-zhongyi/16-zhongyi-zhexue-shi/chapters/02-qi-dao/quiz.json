@@ -1,0 +1,79 @@
+{
+  "lesson": "02-qi-dao",
+  "title": "气与道：本体论的两个词",
+  "subject": "16-zhongyi-zhexue-shi",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "气的三种含义分别是什么？",
+      "options": [
+        "质料、动力、状态",
+        "阴、阳、中",
+        "寒、热、平",
+        "上、中、下"
+      ],
+      "correct": 0,
+      "explanation": "三义不能互译。"
+    },
+    {
+      "stage": "check",
+      "question": "道在临床经典中的命中是？",
+      "options": [
+        "30 次",
+        "1,479 次",
+        "0 次",
+        "1,520 次"
+      ],
+      "correct": 0,
+      "explanation": "道是论说词。"
+    },
+    {
+      "stage": "check",
+      "question": "气在两部语料的命中是？",
+      "options": [
+        "10,855 / 1,520（双高）",
+        "129 / 0",
+        "1,479 / 30",
+        "383 / 15"
+      ],
+      "correct": 0,
+      "explanation": "气是双高范畴。"
+    },
+    {
+      "stage": "check",
+      "question": "「道—气—证」三层中，证是？",
+      "options": [
+        "气的具体失常状态",
+        "道的别名",
+        "方剂名称",
+        "脏腑名称"
+      ],
+      "correct": 0,
+      "explanation": "由气落到证。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么用「物质」翻译「气」不妥？",
+      "options": [
+        "会丢掉动力与状态两义",
+        "因为太现代",
+        "因为不准确",
+        "因为无出处"
+      ],
+      "correct": 0,
+      "explanation": "气兼有质料与动力。"
+    },
+    {
+      "stage": "post",
+      "question": "气在临床的三种搭配是？",
+      "options": [
+        "气+脏腑、气+升降出入、气+虚实",
+        "气+方、气+药、气+量",
+        "气+时、气+地、气+人",
+        "气+寒、气+热、气+平"
+      ],
+      "correct": 0,
+      "explanation": "对应三义。"
+    }
+  ]
+}

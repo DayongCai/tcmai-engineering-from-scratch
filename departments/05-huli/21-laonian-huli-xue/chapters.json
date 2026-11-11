@@ -1,0 +1,168 @@
+{
+ "slug": "21-laonian-huli-xue",
+ "title": "老年护理学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gaishu",
+   "title": "老年护理学概述",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-gaishu/docs/zh.md",
+   "code": "chapters/01-gaishu/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-shengli-xinli",
+   "title": "老年人的生理与心理社会特点",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-shengli-xinli/docs/zh.md",
+   "code": "chapters/02-shengli-xinli/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-lunli-goutong",
+   "title": "老年护理伦理与沟通",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-lunli-goutong/docs/zh.md",
+   "code": "chapters/03-lunli-goutong/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-zonghe-pinggu",
+   "title": "老年综合评估基础",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-zonghe-pinggu/docs/zh.md",
+   "code": "chapters/04-zonghe-pinggu/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-jiankang-cujin",
+   "title": "老年人健康促进与疾病预防",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-jiankang-cujin/docs/zh.md",
+   "code": "chapters/05-jiankang-cujin/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-manbing-huli",
+   "title": "老年常见慢性病的护理基础",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-manbing-huli/docs/zh.md",
+   "code": "chapters/06-manbing-huli/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-laonian-zonghezheng",
+   "title": "老年综合征护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-laonian-zonghezheng/docs/zh.md",
+   "code": "chapters/07-laonian-zonghezheng/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-renzhi-zhangai",
+   "title": "认知障碍与失智症照护",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-renzhi-zhangai/docs/zh.md",
+   "code": "chapters/08-renzhi-zhangai/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-jizheng-guancha",
+   "title": "老年常见急症与病情观察",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-jizheng-guancha/docs/zh.md",
+   "code": "chapters/09-jizheng-guancha/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-kangfu-huli",
+   "title": "老年康复护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-kangfu-huli/docs/zh.md",
+   "code": "chapters/10-kangfu-huli/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-yingyang-huli",
+   "title": "老年营养与饮食护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-yingyang-huli/docs/zh.md",
+   "code": "chapters/11-yingyang-huli/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-xinli-qingzhi",
+   "title": "老年心理与情志护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-xinli-qingzhi/docs/zh.md",
+   "code": "chapters/12-xinli-qingzhi/code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-changqi-zhaohu",
+   "title": "老年长期照护与居家照护",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/13-changqi-zhaohu/docs/zh.md",
+   "code": "chapters/13-changqi-zhaohu/code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-anquan-fengxian",
+   "title": "老年安全与风险管理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/14-anquan-fengxian/docs/zh.md",
+   "code": "chapters/14-anquan-fengxian/code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-anning-liaohu",
+   "title": "安宁疗护与临终关怀基础",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/15-anning-liaohu/docs/zh.md",
+   "code": "chapters/15-anning-liaohu/code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-zhiliang-tuandui",
+   "title": "老年护理质量管理与团队协作",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/16-zhiliang-tuandui/docs/zh.md",
+   "code": "chapters/16-zhiliang-tuandui/code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-zhihui-yanglao",
+   "title": "智慧养老与老年护理信息化",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/17-zhihui-yanglao/docs/zh.md",
+   "code": "chapters/17-zhihui-yanglao/code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-pingtai",
+   "title": "老年护理学与教学平台",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/18-pingtai/docs/zh.md",
+   "code": "chapters/18-pingtai/code/main.js"
+  }
+ ]
+}

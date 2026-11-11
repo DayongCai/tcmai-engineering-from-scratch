@@ -1,0 +1,175 @@
+{
+ "slug": "07-shenghua-xue",
+ "title": "生物化学",
+ "note": "21 章 = 教材 21 章（1:1）。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xulun",
+   "title": "绪论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-tang-huaxue",
+   "title": "糖化学",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-zhizhi-huaxue",
+   "title": "脂质化学",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-danbaizhi-huaxue",
+   "title": "蛋白质化学",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-hesuan-huaxue",
+   "title": "核酸化学",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-mei",
+   "title": "酶",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-weishengsu-yu-weiliang-yuansu",
+   "title": "维生素和微量元素",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-shengwu-yanghua-yu-nengliang",
+   "title": "生物氧化与能量代谢",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-tang-daixie",
+   "title": "糖代谢",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-zhizhi-daixie",
+   "title": "脂质代谢",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-anjisuan-daixie",
+   "title": "氨基酸代谢",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-hegansuan-daixie",
+   "title": "核苷酸代谢",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-daixie-tiaojie",
+   "title": "代谢调节",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-xueye-shenghua",
+   "title": "血液生化",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-gandan-shenghua",
+   "title": "肝胆生化",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-shuiyan-yu-suanjian-pingheng",
+   "title": "水盐代谢和酸碱平衡",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-dna-shengwu-hecheng",
+   "title": "DNA的生物合成",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-rna-shengwu-hecheng",
+   "title": "RNA的生物合成",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 19,
+   "slug": "19-danbaizhi-shengwu-hecheng",
+   "title": "蛋白质的生物合成",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 20,
+   "slug": "20-jiyin-biaoda-tiaokong",
+   "title": "基因表达调控",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 21,
+   "slug": "21-changyong-jishu",
+   "title": "生物化学与分子生物学常用技术",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
+}

@@ -28,6 +28,9 @@ if (!target || !target.includes('/')) {
 const [dept, subject] = target.split('/');
 const subjectDir = path.join(ROOT, 'departments', dept, subject);
 const courseDir = path.join(ROOT, 'platform', 'courses', dept, subject);
+// 学科级可选配置（与 extract_narration.js 共用同一份 narration-map.json）
+const mapPath = path.join(subjectDir, 'narration-map.json');
+const MAP = fs.existsSync(mapPath) ? JSON.parse(fs.readFileSync(mapPath, 'utf8')) : null;
 
 if (!fs.existsSync(subjectDir)) {
   console.error(`✗ 学科目录不存在: departments/${dept}/${subject}`);
@@ -49,6 +52,12 @@ const figuresCss = `
 `;
 
 function slideHtml(seg, idx, total) {
+  // 密度：一段一屏后，长节（尤其带表格的）会溢出被切掉——07 章第 5 屏就丢了最后一条。
+  // 只用字数会误判：433 字但 12 行（含表格）比 500 字的整段更高。所以用「字数 + 行数×18」作权重。
+  const rawText = String(seg.text || '');
+  const lineCount = rawText.split('\n').filter((l) => l.trim()).length;
+  const weight = rawText.replace(/\s/g, '').length + 18 * lineCount;
+  const dens = weight > 760 ? ' denser' : weight > 470 ? ' dense' : '';
   const body = (() => {
     switch (seg.role) {
       case 'title':
@@ -67,10 +76,11 @@ function slideHtml(seg, idx, total) {
       case 'use':
       case 'verify':
         return `<div class="kicker">${seg.role === 'build' ? 'BUILD IT · 从零实现' : seg.role === 'use' ? 'USE IT · 框架调用' : '验证'}</div>
-                <div class="compact">${md.render(seg.text)}</div>`;
+                <div class="compact${dens}">${md.render(seg.text)}</div>`;
       default:
-        return `<div class="kicker">${seg.role === 'objectives' ? '学习目标' : seg.role === 'concept' ? '核心概念' : seg.role === 'ship' ? 'SHIP IT · 产出物' : ''}</div>
-                <div class="compact">${md.render(seg.text)}</div>`;
+        // 正文片抬头用小节标题（lesson.json 的 heading）；没有标题的老学科保持原样。
+        return `<div class="kicker">${seg.heading || (seg.role === 'objectives' ? '学习目标' : seg.role === 'concept' ? '核心概念' : seg.role === 'ship' ? 'SHIP IT · 产出物' : '')}</div>
+                <div class="compact${dens}">${md.render(seg.text)}</div>`;
     }
   })();
 
@@ -89,7 +99,46 @@ for (const ch of chapters) {
     continue;
   }
   const narr = JSON.parse(fs.readFileSync(narrPath, 'utf8'));
-  const slides = narr.segments.map((s, i) => slideHtml(s, i, narr.segments.length)).join('\n');
+  // 可选：把过长的正文段拆成多张片（学科级 narration-map.json 的 slideSplitChars）。
+  // 为什么默认不拆：其他学科的 lesson.json 已有分帧/字幕等下游产物，段数一变下游就对不上；
+  // 只有显式声明了拆分的学科才变。拆分只在空行（段落边界）处发生，不切断句子。
+  const SPLIT = MAP && Number(MAP.slideSplitChars) > 0 ? Number(MAP.slideSplitChars) : 0;
+  const SPLITTABLE = new Set(['body', 'concept', 'build', 'use', 'verify', 'boundary', 'chain', 'summary']);
+  const expanded = [];
+  for (const [si, s] of narr.segments.entries()) {
+    if (!SPLIT || !SPLITTABLE.has(s.role)) { expanded.push({ ...s, segIndex: si }); continue; }
+    const paras = String(s.text).split(/\n\s*\n/);
+    let buf = [];
+    let len = 0;
+    const flushPart = () => {
+      if (!buf.length) return;
+      expanded.push({ ...s, segIndex: si, text: buf.join('\n\n'), part: true });
+      buf = []; len = 0;
+    };
+    // 单段本身就超长（常见于「代价与边界」这类不带空行的列表/长段）时，
+    // 再按句号切一层——只在句子边界断，不切在词中间。
+    const splitLong = (p) => {
+      if (p.replace(/\s/g, '').length <= SPLIT * 1.25) return [p];
+      const parts = p.split(/(?<=[。！？；])/);
+      const out = [];
+      let cur = '';
+      for (const seg of parts) {
+        if ((cur + seg).replace(/\s/g, '').length > SPLIT && cur) { out.push(cur); cur = seg; }
+        else cur += seg;
+      }
+      if (cur) out.push(cur);
+      return out;
+    };
+    for (const raw of paras) {
+      for (const p of splitLong(raw)) {
+        const n = p.replace(/\s/g, '').length;
+        if (len + n > SPLIT && buf.length) flushPart();
+        buf.push(p); len += n;
+      }
+    }
+    flushPart();
+  }
+  const slides = expanded.map((s, i) => slideHtml(s, i, expanded.length)).join('\n');
 
   const html = `<!DOCTYPE html>
 <html lang="zh-CN">
@@ -113,11 +162,16 @@ blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-
   text-transform:uppercase;margin-bottom:14px}
 .kicker.warn{color:var(--cinnabar)}
 p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
-.compact{font-size:clamp(14px,1.35vw,18px);line-height:1.75;max-height:64vh;overflow:auto}
-.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em}
-.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:13px}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
-.compact table{border-collapse:collapse;font-size:13px;width:100%}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
 .compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
 /* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
 .math{font-style:italic;font-family:var(--serif)}
@@ -190,8 +244,15 @@ ${slides}
   const dir = path.join(courseDir, ch, 'slides');
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf8');
+  // 片↔段的对应关系写进 manifest：拆片之后片数 ≠ 段数，下游（截图、成片）不能靠"第 i 片就是第 i 段"猜
+  fs.writeFileSync(path.join(dir, 'manifest.json'), `${JSON.stringify({
+    chapter: ch,
+    slideCount: expanded.length,
+    segmentCount: narr.segments.length,
+    slides: expanded.map((s, i) => ({ n: i + 1, segment: s.segIndex + 1, chars: String(s.text).replace(/\s/g, '').length })),
+  }, null, 2)}\n`, 'utf8');
   made += 1;
-  console.log(`  ✅ ${ch} → slides/index.html (${narr.segments.length} 张, ${(html.length / 1024).toFixed(0)} KB)`);
+  console.log(`  ✅ ${ch} → slides/index.html (${expanded.length} 张 / ${narr.segments.length} 段, ${(html.length / 1024).toFixed(0)} KB)`);
 }
 
 console.log(`\n完成: ${made}/${chapters.length} 个章节的幻灯片`);

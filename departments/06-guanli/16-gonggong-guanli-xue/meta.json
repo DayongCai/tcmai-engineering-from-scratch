@@ -1,0 +1,32 @@
+{
+  "slug": "16-gonggong-guanli-xue",
+  "title": "公共管理学",
+  "en": "Public Administration",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 114,
+  "type": "Reference",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 36,
+  "bridge": "公共政策→因果推断 / 组织结构→图模型",
+  "chaptersTarget": 18,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/16-gonggong-guanli-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/16-gonggong-guanli-xue",
+    "chaptersWritten": 18,
+    "words": 324189,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#公共管理学",
+    "extractedAt": "2026-10-21"
+  }
+}

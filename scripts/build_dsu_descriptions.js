@@ -190,6 +190,9 @@ function main() {
     // ④ 同一模式第 4 次：standards/ 下是我们自己写的规格与映射说明（如 icd11/tm1/README.md
     //    里就有「心肾不交证 → SF6L」这类对照），拿它当「教材证据」是自己给自己作证。
     if (/^standards\//.test(f)) return false;
+    // ⑤ 同一模式第 5 次：departments/ 下是我们自己写的课程正文（内科 14 章等），
+    //    拿它当「教材证据」同样是自证。本轮由 33→36 的漂移暴露（3 条证据指向内科课程文档）。
+    if (/^departments\//.test(f)) return false;
     return true;
   });
 

@@ -1,0 +1,34 @@
+{
+  "slug": "16-jichu-keyan-shixun",
+  "title": "科研实训与实验设计",
+  "en": "Research Training & Experimental Design",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 186,
+  "type": "Build",
+  "semester": 9,
+  "stage": "lao",
+  "stageTitle": "老",
+  "hours": 108,
+  "bridge": "假设→对照设计 / 原始记录→可复算数据 / 统计→效应量",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/16-jichu-keyan-shixun",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/16-jichu-keyan-shixun",
+    "chaptersWritten": 6,
+    "words": 3451,
+    "status": "wip",
+    "layer": "handbook",
+    "contract": "handbook-v1",
+    "origin": "handbook",
+    "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
+    "extractedAt": "2026-11-09"
+  }
+}

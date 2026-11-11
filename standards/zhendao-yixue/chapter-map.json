@@ -1,0 +1,132 @@
+{
+ "note": "派生课：一章一主题，单元按关键词从父课选题；本课内无单元复用。",
+ "chapters": {
+  "01-zhendao-gailun": {
+   "n": 1,
+   "title": "针刀医学概论",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "「针」与「刀」合一的器械，风险也随之合一",
+   "derivedFrom": "cifa-jiufa、zhenjiu-zhiliao"
+  },
+  "02-qixie-guifan": {
+   "n": 2,
+   "title": "器械、进针与操作规范",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "刀口方向是这门技术的第一条纪律",
+   "derivedFrom": "cifa-jiufa、shuxue"
+  },
+  "03-ruanzuzhi-bingli": {
+   "n": 3,
+   "title": "软组织解剖与病理",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "粘连、瘢痕、挛缩：三种可触的病理",
+   "derivedFrom": "zhenjiu-zhiliao、tuina"
+  },
+  "04-jingjian-yaotui": {
+   "n": 4,
+   "title": "颈肩腰腿痛",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "针刀最主要的适应证群",
+   "derivedFrom": "zhenjiu-zhiliao、zhiliao"
+  },
+  "05-guanjie-jianqiao": {
+   "n": 5,
+   "title": "关节与腱鞘疾病",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "膝、踝、肘、腕：进针点与安全三角",
+   "derivedFrom": "zhenjiu-zhiliao、gubing"
+  },
+  "06-shenjing-kaya": {
+   "n": 6,
+   "title": "神经卡压",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "麻木与放射痛要追问到具体神经",
+   "derivedFrom": "zhenjiu-zhiliao、zhenjiu-xue"
+  },
+  "07-anquan-jinji": {
+   "n": 7,
+   "title": "安全性：禁忌与并发症",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4",
+    "7.5"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "感染、出血、神经损伤三件事必须写死",
+   "derivedFrom": "cifa-jiufa、zhenjiu-zhiliao"
+  },
+  "08-liaoxiao-zhengju": {
+   "n": 8,
+   "title": "疗效评价与循证",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "针刀的证据基础目前薄在哪里",
+   "derivedFrom": "shiyan-zhenjiu、zhenjiu-zhiliao"
+  }
+ }
+}

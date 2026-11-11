@@ -1,0 +1,32 @@
+{
+  "slug": "23-yiyuan-kuaiji-caiwu",
+  "title": "医院会计与财务管理",
+  "en": "Hospital Accounting & Finance",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 121,
+  "type": "Reference",
+  "semester": 8,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 36,
+  "bridge": "成本核算→作业成本法 / 预算→时间序列",
+  "chaptersTarget": 18,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/23-yiyuan-kuaiji-caiwu",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/23-yiyuan-kuaiji-caiwu",
+    "chaptersWritten": 18,
+    "words": 368449,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#医院会计与财务管理",
+    "extractedAt": "2026-10-21"
+  }
+}

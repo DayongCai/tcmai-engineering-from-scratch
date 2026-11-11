@@ -1,66 +1,114 @@
 {
-  "slug": "01-zhongyi-huli-jichu",
-  "title": "中医护理学基础",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-yuanliu-zhengti",
-      "title": "中医护理的源流与整体护理观",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-bianzheng-shihu",
-      "title": "辨证施护的原则与方法",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-chengxu-jilu",
-      "title": "中医护理的程序与记录",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-qingzhi-huli",
-      "title": "情志护理与心理疏导",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-yinshi-huli",
-      "title": "饮食护理与食疗宜忌",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-qiju-huanjing",
-      "title": "起居与环境护理",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-geiyao-huli",
-      "title": "中药给药的护理要点",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-zhenjiu-huli",
-      "title": "针灸推拿的护理配合",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-fengxian-anquan",
-      "title": "中医护理的风险与安全",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-wenshu-zhikong",
-      "title": "护理文书的结构化与质控",
-      "status": "📋"
-    }
-  ]
+ "slug": "01-zhongyi-huli-jichu",
+ "title": "中医护理学基础",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-yuanliu-zhengti",
+   "title": "中医护理的源流与整体护理观",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-yuanliu-zhengti/docs/zh.md",
+   "code": "chapters/01-yuanliu-zhengti/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-lilun-yingyong",
+   "title": "中医基础理论在护理中的应用",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-lilun-yingyong/docs/zh.md",
+   "code": "chapters/02-lilun-yingyong/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-sizhen-bianzheng",
+   "title": "四诊与辨证方法基础",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-sizhen-bianzheng/docs/zh.md",
+   "code": "chapters/03-sizhen-bianzheng/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-jishu-zonglun",
+   "title": "中医护理技术总论与常用技术（一）",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-jishu-zonglun/docs/zh.md",
+   "code": "chapters/04-jishu-zonglun/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-jishu-er",
+   "title": "常用中医护理技术（二）",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-jishu-er/docs/zh.md",
+   "code": "chapters/05-jishu-er/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-yinshi-qingzhi",
+   "title": "饮食起居与情志护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-yinshi-qingzhi/docs/zh.md",
+   "code": "chapters/06-yinshi-qingzhi/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-chengxu",
+   "title": "护理程序与中医护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-chengxu/docs/zh.md",
+   "code": "chapters/07-chengxu/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-guancha-anquan",
+   "title": "病情观察与安全防护",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-guancha-anquan/docs/zh.md",
+   "code": "chapters/08-guancha-anquan/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-zhengzhuang-huli",
+   "title": "常见症状的中医护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-zhengzhuang-huli/docs/zh.md",
+   "code": "chapters/09-zhengzhuang-huli/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-teshu-renqun",
+   "title": "老年、小儿与孕产妇护理基础",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-teshu-renqun/docs/zh.md",
+   "code": "chapters/10-teshu-renqun/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-wenshu-lunli",
+   "title": "护理文书、伦理与依法执业",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-wenshu-lunli/docs/zh.md",
+   "code": "chapters/11-wenshu-lunli/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-jiankang-jiaoyu-zhiliang",
+   "title": "健康教育、康复与质量管理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-jiankang-jiaoyu-zhiliang/docs/zh.md",
+   "code": "chapters/12-jiankang-jiaoyu-zhiliang/code/main.js"
+  }
+ ]
 }

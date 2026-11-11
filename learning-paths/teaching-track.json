@@ -102,7 +102,7 @@
   ],
   "capstone": {
     "title": "一门学科的完整教材",
-    "deliverable": "为 120 门学科中的任意一门，写出完整教材稿（≥8 章）、配套 quiz、先修关系图与评价方案。",
+    "deliverable": "为 135 门学科中的任意一门，写出完整教材稿（≥8 章）、配套 quiz、先修关系图与评价方案。",
     "criteria": [
       "章节必须通过 scripts/audit_curriculum.js 的 L2 契约层",
       "先修关系图不得出现环（DAG 校验）",

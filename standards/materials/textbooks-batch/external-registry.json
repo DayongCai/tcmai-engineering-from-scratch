@@ -1,0 +1,250 @@
+{
+  "$generated": "node scripts/fetch_external_textbooks.js --all",
+  "provider": {
+    "id": "jicheng",
+    "title": "中醫笈成（漢リポ 文字化本）",
+    "url": "https://jicheng.tw/tcm/",
+    "note": "页面自述底本（多为清代刊本 / 欽定四庫全書本）；抓取为公开页面正文，标注「外源·笈成」"
+  },
+  "generatedAt": "2026-10-21",
+  "sources": [
+    {
+      "id": "zhenggu-xinfa",
+      "title": "醫宗金鑑·正骨心法要旨",
+      "provider": "jicheng",
+      "url": "https://jicheng.tw/tcm/book/%E9%86%AB%E5%AE%97%E9%87%91%E9%91%91/%E6%AD%A3%E9%AA%A8%E5%BF%83%E6%B3%95%E8%A6%81%E6%97%A8/index.html",
+      "httpStatus": 200,
+      "dir": "standards/materials/textbooks-batch/external/zhenggu-xinfa",
+      "author": "吳謙等",
+      "dynasty": "清",
+      "year": "公元1742年",
+      "baseText": "《御纂醫宗金鑑》，光緒十八年（1892）上海五彩書局石印本（香港中文大學圖書館掃描本），卷七十一至卷七十四；《欽定四庫全書·子部五·醫家類·御纂醫宗金鑑》卷八十七至卷九十（漢リポ掃描及文字化本）",
+      "bytes": 206455,
+      "sha256": "24c62475ccfe8e36e88f2120cde98c778482675cfd215cec9768d9dd5e233fc4",
+      "chars": 26033,
+      "simplifiedSha256": "ce5cdb00e06331748809858d649ca24dd5fdc9a925d613366b96e0b9ef7c52dc",
+      "chapters": {
+        "n": 77,
+        "level": 3,
+        "volumes": 4,
+        "paragraphs": 539
+      },
+      "subjects": [
+        {
+          "dept": "04-gushang",
+          "slug": "08-gushang-shoufa-zhiliao",
+          "title": "骨伤科手法治疗学",
+          "role": "primary"
+        }
+      ],
+      "why": "手法总论/手法释义/器具总论/头面胸背四肢部伤证，与本课「手法 + 夹缚器具」主线一一对应",
+      "script": "traditional→simplified (opencc t2s，仅字形)",
+      "fetchedAt": "2026-10-21",
+      "status": "fetched"
+    },
+    {
+      "id": "shenshi-yaohan",
+      "title": "審視瑤函",
+      "provider": "jicheng",
+      "url": "https://jicheng.tw/tcm/book/%E5%AF%A9%E8%A6%96%E7%91%A4%E5%87%BD/index.html",
+      "httpStatus": 200,
+      "dir": "standards/materials/textbooks-batch/external/shenshi-yaohan",
+      "author": "傅仁宇",
+      "dynasty": "明",
+      "year": "公元1644年",
+      "baseText": "明崇禎十七年刊本（國家圖書館掃描本）",
+      "bytes": 1064571,
+      "sha256": "b663916b651e9a4fa7039593cd574bf56c861e1352b5d8d12562e89500160413",
+      "chars": 137525,
+      "simplifiedSha256": "aec4ee3679469f2b540489bca9452560f7154e128f82636596035fd640497a4f",
+      "chapters": {
+        "n": 37,
+        "level": 3,
+        "volumes": 8,
+        "paragraphs": 1747
+      },
+      "subjects": [
+        {
+          "dept": "08-wuguan",
+          "slug": "05-zhongyi-wuguan-jingdian",
+          "title": "中医五官科经典选读",
+          "role": "primary"
+        }
+      ],
+      "why": "眼科集成之作（病因/五轮八廓/各证治法），经典选读的眼科主源",
+      "script": "traditional→simplified (opencc t2s，仅字形)",
+      "fetchedAt": "2026-10-21",
+      "status": "fetched"
+    },
+    {
+      "id": "chonglou-yuyao",
+      "title": "重樓玉鑰",
+      "provider": "jicheng",
+      "url": "https://jicheng.tw/tcm/book/%E9%87%8D%E6%A8%93%E7%8E%89%E9%91%B0/index.html",
+      "httpStatus": 200,
+      "dir": "standards/materials/textbooks-batch/external/chonglou-yuyao",
+      "author": "鄭梅澗",
+      "dynasty": "清",
+      "year": "公元1838年（清·乾隆年間）",
+      "baseText": "北京大學圖書館掃描本",
+      "bytes": 239004,
+      "sha256": "6d565fbe372d0d29535340302a66926bf016a12f181b334815323ff339400c25",
+      "chars": 32902,
+      "simplifiedSha256": "f6966357591d9292deddecf39ce38f0149d9f828820173c41f582159ed07f13c",
+      "chapters": {
+        "n": 101,
+        "level": 3,
+        "volumes": 3,
+        "paragraphs": 423
+      },
+      "subjects": [
+        {
+          "dept": "08-wuguan",
+          "slug": "14-zhongyi-sangyin-yixue",
+          "title": "中医嗓音医学",
+          "role": "primary"
+        }
+      ],
+      "why": "喉科专书（咽喉治法/白喉/喉风），嗓音病证的原典",
+      "script": "traditional→simplified (opencc t2s，仅字形)",
+      "fetchedAt": "2026-10-21",
+      "status": "fetched"
+    },
+    {
+      "id": "waike-xinfa",
+      "title": "醫宗金鑑·外科心法要訣",
+      "provider": "jicheng",
+      "url": "https://jicheng.tw/tcm/book/%E9%86%AB%E5%AE%97%E9%87%91%E9%91%91/%E5%A4%96%E7%A7%91%E5%BF%83%E6%B3%95%E8%A6%81%E8%A8%A3/index.html",
+      "httpStatus": 200,
+      "dir": "standards/materials/textbooks-batch/external/waike-xinfa",
+      "author": "吳謙等",
+      "dynasty": "清",
+      "year": "公元1742年",
+      "baseText": "《御纂醫宗金鑑》，光緒十八年（1892）上海五彩書局石印本（香港中文大學圖書館掃描本），外科卷一至卷十六；《欽定四庫全書·子部五·醫家類·御纂醫宗金鑑》卷六十一至卷七十六（漢リポ掃描及文字化本）",
+      "bytes": 1388174,
+      "sha256": "9989a4279eff2b9db6169cbb8b159e3ac5ead8eaf8b21550037c730a92111794",
+      "chars": 178305,
+      "simplifiedSha256": "ee54beb9b489d596d56e415870eb824ef5391e9b03b2bf54a88495c77747d320",
+      "chapters": {
+        "n": 381,
+        "level": 3,
+        "volumes": 16,
+        "paragraphs": 3721
+      },
+      "subjects": [
+        {
+          "dept": "08-wuguan",
+          "slug": "15-zhongyi-meirong-pifu",
+          "title": "中医美容与皮肤治疗学",
+          "role": "primary"
+        }
+      ],
+      "why": "面部皮肤诸证（面游风/黧黑斑/肺风粉刺等）与外治法的原典",
+      "script": "traditional→simplified (opencc t2s，仅字形)",
+      "fetchedAt": "2026-10-21",
+      "status": "fetched"
+    },
+    {
+      "id": "shangke-dacheng",
+      "title": "傷科大成",
+      "provider": "jicheng",
+      "url": "https://jicheng.tw/tcm/book/%E5%82%B7%E7%A7%91%E5%A4%A7%E6%88%90/index.html",
+      "httpStatus": 200,
+      "dir": "standards/materials/textbooks-batch/external/shangke-dacheng",
+      "author": "趙濂",
+      "dynasty": "清",
+      "year": "公元1891年",
+      "baseText": "",
+      "bytes": 98371,
+      "sha256": "45a132a17492ca5d6ffa747d9df3095ea65ff07a5ab3cc04b03a760aa645bbb0",
+      "chars": 12575,
+      "simplifiedSha256": "f2c56fa39b0236c68e4fa3ffa95a515574c5a8204c213c2a885b5b1e91274d6b",
+      "chapters": {
+        "n": 45,
+        "level": 2,
+        "volumes": 12,
+        "paragraphs": 157
+      },
+      "subjects": [
+        {
+          "dept": "04-gushang",
+          "slug": "07-zhongyi-jinshang-xue",
+          "title": "中医筋伤学",
+          "role": "primary"
+        }
+      ],
+      "why": "伤科专书，筋伤/跌打/骨节错缝的证治条目可分章搬运",
+      "script": "traditional→simplified (opencc t2s，仅字形)",
+      "fetchedAt": "2026-10-21",
+      "status": "fetched"
+    },
+    {
+      "id": "wangzhen-zunjing",
+      "title": "望診遵經",
+      "provider": "jicheng",
+      "url": "https://jicheng.tw/tcm/book/%E6%9C%9B%E8%A8%BA%E9%81%B5%E7%B6%93/index.html",
+      "httpStatus": 200,
+      "dir": "standards/materials/textbooks-batch/external/wangzhen-zunjing",
+      "author": "汪宏",
+      "dynasty": "清",
+      "year": "公元1875年",
+      "baseText": "北京大學圖書館掃描本",
+      "bytes": 628952,
+      "sha256": "4bfa7129a8f949c4c02fe8d31c158c20363c6113f118cdb3620fce4e1090d2c2",
+      "chars": 75452,
+      "simplifiedSha256": "f8da9691376f0fc8f27e5750defcde1c869902c7a61827a7eaaa901320bbdb80",
+      "chapters": {
+        "n": 101,
+        "level": 2,
+        "volumes": 3,
+        "paragraphs": 105
+      },
+      "subjects": [
+        {
+          "dept": "08-wuguan",
+          "slug": "03-zhongyi-mianbu-wangzhen",
+          "title": "中医面部望诊学",
+          "role": "primary"
+        }
+      ],
+      "why": "面部气色/五官望诊的专论，是本课的直接原典",
+      "script": "traditional→simplified (opencc t2s，仅字形)",
+      "fetchedAt": "2026-10-21",
+      "status": "fetched"
+    },
+    {
+      "id": "kouchide-leiyao",
+      "title": "口齒類要",
+      "provider": "jicheng",
+      "url": "https://jicheng.tw/tcm/book/%E5%8F%A3%E9%BD%92%E9%A1%9E%E8%A6%81/index.html",
+      "httpStatus": 200,
+      "dir": "standards/materials/textbooks-batch/external/kouchide-leiyao",
+      "author": "薛己",
+      "dynasty": "明",
+      "year": "公元1528年",
+      "baseText": "日本承應三年（1654年）刊本（國家圖書館掃描本）",
+      "bytes": 120596,
+      "sha256": "db74dbe8fdf885cc11a26a2addfa57a4c7561b885305cb4179044abe859e673d",
+      "chars": 14157,
+      "simplifiedSha256": "fdc89126345b81349dfbc6692b8004ecfe12dc7ce53c1e15cc558c272cf27f99",
+      "chapters": {
+        "n": 13,
+        "level": 1,
+        "volumes": 13,
+        "paragraphs": 322
+      },
+      "subjects": [
+        {
+          "dept": "08-wuguan",
+          "slug": "07-zhongyi-kouqiang-kexue",
+          "title": "中医口腔科学",
+          "role": "primary"
+        }
+      ],
+      "why": "口齿专书（齿/舌/唇/口疮），中医口腔科的直接原典",
+      "script": "traditional→simplified (opencc t2s，仅字形)",
+      "fetchedAt": "2026-10-21",
+      "status": "fetched"
+    }
+  ]
+}

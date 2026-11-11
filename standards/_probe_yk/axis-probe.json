@@ -1,0 +1,36 @@
+{
+ "source": {
+  "file": "qhzy-中医眼科学.xlsx",
+  "sha256": "4b06f4db2b2aa2c8758577a045c27c6057ef25ddf18bd2f23fec34ffdc7f9680"
+ },
+ "counts": {
+  "chapters": 12,
+  "units": 46,
+  "hanzi": 142932,
+  "diseases": 24,
+  "digits": 493,
+  "valueLike": 44
+ },
+ "views": {
+  "a": [
+   "眼"
+  ]
+ },
+ "levelsA": {
+  "b": [
+   "眼"
+  ]
+ },
+ "probe": {
+  "view": {
+   "a": 2013
+  },
+  "A_part": {
+   "b": 2013
+  }
+ },
+ "ratio": {
+  "view": 1.0,
+  "A_part": 1.0
+ }
+}

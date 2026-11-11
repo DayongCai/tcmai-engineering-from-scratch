@@ -1,0 +1,221 @@
+{
+ "generated": "2026-10-28",
+ "inputs": {
+  "bzu": {
+   "file": "standards/zhenduan/bzu.json",
+   "sha256": "d345e598d0e702818ed864bfabf753b42a142a8deb992550c15c1d00db694533"
+  },
+  "definitions": {
+   "file": "standards/icd11/definitions-en.json",
+   "sha256": "f783db6194b7df3f62ed94a97b473832474d5e5c609a8a44f83892caf7c23b28",
+   "entries": 2394
+  },
+  "zhNames": {
+   "file": "standards/icd11/zh-names.json",
+   "sha256": "d5758951d88bebf906119eaf1a4043bb12c68ffbfabbca52a6bf1ac8648030a1",
+   "entries": 1120
+  }
+ },
+ "method": {
+  "step1": "取 bzu.json 中带 ICD-11 码的病行（正则 [A-Z]{2}\\d{2}）",
+  "step2": "在 definitions-en.json 查该码；查不到记 missing",
+  "step3": "在 zh-names.json 查中文名与 module（TM1/TM2）；中医病名多不在 TM1，故该项只作参考",
+  "step4": "按题名与本仓库判定表给 ok/narrow/conflict；判定只看题名，不看定义正文",
+  "misalignRate": "(conflict + missing) / 带码条目"
+ },
+ "limits": [
+  "这是「码↔题名」层面对账，不是「临床等价」判断：ok 只表示名字对得上，不表示教材的病与 ICD-11 的实体是同一诊断标准",
+  "zh-names.json 只有 TM1/TM2 两模块（472 + 648），西医章的码（CA/MD/MB/ME/MC/MG/GC）本来就不在其中，所以 inTmZhNames=0 不代表码错",
+  "判定表由本仓库逐条人判，judgements 可复核；不得据此改教材或 bzu 码值",
+  "definitions-en.json 只有 2,394 条（非 MMS 全量），所以只能证明「给出的码指向别的东西」，不能对每条都给正确码；suggested 只在镜象里确有对应条目时才写"
+ ],
+ "chapters": {
+  "12": 2,
+  "16": 1,
+  "21": 9,
+  "MISSING": 2
+ },
+ "stat": {
+  "total": 14,
+  "ok": 1,
+  "narrow": 5,
+  "conflict": 6,
+  "missing": 2,
+  "unjudged": 0,
+  "misaligned": 8,
+  "misalignRate": 0.5714285714285714,
+  "inDefinitions": 12,
+  "inTmZhNames": 0
+ },
+ "items": [
+  {
+   "platformCode": "CA00",
+   "name": "感冒",
+   "icd": "CA00",
+   "icdTitle": "Acute nasopharyngitis",
+   "icdChapter": "12",
+   "zhName": "",
+   "zhModule": "",
+   "verdict": "ok",
+   "reason": "Acute nasopharyngitis = 急性鼻咽炎；感冒的现代对应即普通感冒，可接受",
+   "sourceStatus": "ICD-11 第26章 TM1 已映射"
+  },
+  {
+   "platformCode": "MD12",
+   "name": "咳嗽",
+   "icd": "MD12",
+   "icdTitle": "Cough",
+   "icdChapter": "21",
+   "zhName": "",
+   "zhModule": "",
+   "verdict": "narrow",
+   "reason": "Cough 是症状（咳嗽），教材「咳嗽」为病名；症状当病名用，需注明口径",
+   "sourceStatus": "ICD-11 第26章 TM1 已映射"
+  },
+  {
+   "platformCode": "CA23",
+   "name": "哮病",
+   "icd": "CA23",
+   "icdTitle": "Asthma",
+   "icdChapter": "12",
+   "zhName": "",
+   "zhModule": "",
+   "verdict": "narrow",
+   "reason": "Asthma 覆盖面含喘；教材「哮病」与「喘证」分列，Asthma 对应的是哮",
+   "sourceStatus": "ICD-11 第26章 TM1 已映射"
+  },
+  {
+   "platformCode": "MD11",
+   "name": "喘证",
+   "icd": "MD11",
+   "icdTitle": "Abnormalities of breathing",
+   "icdChapter": "21",
+   "zhName": "",
+   "zhModule": "",
+   "verdict": "conflict",
+   "reason": "Abnormalities of breathing 是「呼吸异常」大类，不是「喘证」；喘证应落在具体呼吸困难的类目",
+   "sourceStatus": "ICD-11 第26章 TM1 已映射"
+  },
+  {
+   "platformCode": "MC81",
+   "name": "心悸",
+   "icd": "MC81",
+   "icdTitle": "Abnormalities of heart beat",
+   "icdChapter": "21",
+   "zhName": "",
+   "zhModule": "",
+   "verdict": "narrow",
+   "reason": "Abnormalities of heart beat 是体征类（心律异常），心悸是症状；层级不同",
+   "sourceStatus": "ICD-11 第26章 TM1 已映射"
+  },
+  {
+   "platformCode": "BA40",
+   "name": "胸痹",
+   "icd": "BA40",
+   "icdTitle": "",
+   "icdChapter": "",
+   "zhName": "",
+   "zhModule": "",
+   "verdict": "missing",
+   "reason": "码在 definitions-en.json 无条目（胸痹在 TM1 里的码不是 BA40，需回 WHO 表核对）",
+   "sourceStatus": "ICD-11 第26章 TM1 已映射"
+  },
+  {
+   "platformCode": "MB51",
+   "name": "眩晕",
+   "icd": "MB51",
+   "icdTitle": "Diplegia of upper extremities",
+   "icdChapter": "21",
+   "zhName": "",
+   "zhModule": "",
+   "verdict": "conflict",
+   "reason": "Diplegia of upper extremities = 双上肢瘫，与「眩晕」无关；镜象里 Dizziness or giddiness = MB48，才是对得上的码",
+   "suggested": "MB48",
+   "sourceStatus": "ICD-11 第26章 TM1 已映射"
+  },
+  {
+   "platformCode": "MD90",
+   "name": "胃脘痛",
+   "icd": "MD90",
+   "icdTitle": "Nausea or vomiting",
+   "icdChapter": "21",
+   "zhName": "",
+   "zhModule": "",
+   "verdict": "conflict",
+   "reason": "Nausea or vomiting = 恶心呕吐，与「胃脘痛」不是同一实体",
+   "sourceStatus": "ICD-11 第26章 TM1 已映射"
+  },
+  {
+   "platformCode": "ME08",
+   "name": "呕吐",
+   "icd": "ME08",
+   "icdTitle": "Flatulence or related conditions",
+   "icdChapter": "21",
+   "zhName": "",
+   "zhModule": "",
+   "verdict": "conflict",
+   "reason": "Flatulence = 腹胀气，与「呕吐」不同",
+   "sourceStatus": "ICD-11 第26章 TM1 已映射"
+  },
+  {
+   "platformCode": "ME05",
+   "name": "泄泻",
+   "icd": "ME05",
+   "icdTitle": "Change in bowel habit",
+   "icdChapter": "21",
+   "zhName": "",
+   "zhModule": "",
+   "verdict": "narrow",
+   "reason": "Change in bowel habit = 排便习惯改变，与「泄泻」相关但不等于腹泻",
+   "sourceStatus": "ICD-11 第26章 TM1 已映射"
+  },
+  {
+   "platformCode": "ME06",
+   "name": "便秘",
+   "icd": "ME06",
+   "icdTitle": "",
+   "icdChapter": "",
+   "zhName": "",
+   "zhModule": "",
+   "verdict": "missing",
+   "reason": "码在 definitions-en.json 无条目",
+   "sourceStatus": "ICD-11 第26章 TM1 已映射"
+  },
+  {
+   "platformCode": "MG27",
+   "name": "水肿",
+   "icd": "MG27",
+   "icdTitle": "Haemorrhage, not elsewhere classified",
+   "icdChapter": "21",
+   "zhName": "",
+   "zhModule": "",
+   "verdict": "conflict",
+   "reason": "Haemorrhage, not elsewhere classified = 出血，与「水肿」无关",
+   "sourceStatus": "ICD-11 第26章 TM1 已映射"
+  },
+  {
+   "platformCode": "GC00",
+   "name": "淋证",
+   "icd": "GC00",
+   "icdTitle": "Cystitis",
+   "icdChapter": "16",
+   "zhName": "",
+   "zhModule": "",
+   "verdict": "narrow",
+   "reason": "Cystitis = 膀胱炎；「淋证」范围更大（含石淋、膏淋等），只覆盖湿热淋一类",
+   "sourceStatus": "ICD-11 第26章 TM1 已映射"
+  },
+  {
+   "platformCode": "ME83",
+   "name": "腰痛",
+   "icd": "ME83",
+   "icdTitle": "Rheumatism, unspecified",
+   "icdChapter": "21",
+   "zhName": "",
+   "zhModule": "",
+   "verdict": "conflict",
+   "reason": "Rheumatism, unspecified = 风湿病，与「腰痛」不是同一实体（腰痛应落 low back pain）",
+   "sourceStatus": "ICD-11 第26章 TM1 已映射"
+  }
+ ]
+}

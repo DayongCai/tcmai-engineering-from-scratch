@@ -1,0 +1,151 @@
+{
+ "slug": "15-liuxingbing-xue",
+ "title": "流行病学",
+ "note": "18 章 = 教材 18 章（1:1）。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xulun",
+   "title": "流行病学绪论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-jibing-fenbu-miaoshu",
+   "title": "疾病分布与描述性研究",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-xiankuang-shaijian",
+   "title": "现况调查与筛检",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-bingli-duizhao",
+   "title": "病例对照研究",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-duilie",
+   "title": "队列研究",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-shiyan-liuxingbingxue",
+   "title": "实验流行病学",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-bingyin-yinguo",
+   "title": "病因与因果推断",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-chuanranbing",
+   "title": "传染病流行病学",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-manxingbing-shanghai",
+   "title": "慢性病与伤害流行病学",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-yanjiu-sheji",
+   "title": "流行病学研究设计",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-shuju-zhengli-fenxi",
+   "title": "流行病学数据的整理与分析",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-pianyi-hunza",
+   "title": "偏倚、混杂与交互作用",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-xianchang-diaocha-zhikong",
+   "title": "现场调查的组织与质量控制",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-jibing-jiance-gongwei",
+   "title": "疾病监测与公共卫生应对",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-fenzi-yichuan",
+   "title": "分子与遗传流行病学",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-xunzheng-yixue",
+   "title": "循证医学与系统评价",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-zhongyi-yao-yanjiu",
+   "title": "流行病学与中医药研究",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-pingtai-lianjie",
+   "title": "流行病学与 tcmP 平台",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
+}

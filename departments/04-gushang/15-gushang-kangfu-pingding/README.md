@@ -1,77 +1,64 @@
 # 骨伤康复评定
 
-> 评定量表→信效度分析 / 康复进度→增长曲线模型
+**15-gushang-kangfu-pingding** · 骨伤学院 · 8 章 · 25 单元 · 279,598 汉字
 
-| 项目 | 内容 |
-|------|------|
-| 院系 | 🦴 骨伤系 `04-gushang` |
-| 类型 | Build |
-| 学期 | 第 8 学期（🌳 壮·鼎盛 / 大四） |
-| 学时 | 54 |
-| 章节目标 | 8 |
-| 学科编号 | 060 / 120 |
-| 英文名 | Orthopedic Rehab Assessment |
+> 评定不是打分，是给下一个决策提供依据；选错量表比不评更糟
 
-## 一、学科定位
+**课程类型：派生课（无独立教材）**。单元正文逐字取自父课，`locator` 一律 `派生·第N章·m.k`，
+`source` 记 `父课:父locator`；本课汉字**不与父课相加**。
 
-骨伤康复评定（Orthopedic Rehab Assessment）是骨伤系的核心学科，聚焦「正骨理筋—骨病退变—运动损伤与康复工程」中的一个完整知识域。
+## 一、父课
 
-## 二、中医 → AI 桥梁
+- `gushang-yingxiang`
+- `huli-yanjiu-zhengxun`
+- `kangfu-huli`
+- `laonian-huli`
+- `shoufa`
+- `zhenjiu-zhiliao`
 
-```text
-评定量表→信效度分析 / 康复进度→增长曲线模型
-```
+## 二、章表
 
-骨伤康复评定 里的每一个传统概念，都被翻译成一个可计算、可验证的工程对象：
-中医概念给出**语义与约束**，AI/工程方法给出**表示与算法**。两者必须能互相回指，
-否则这个章节就还没有写完。
+| # | 章 | 父课来源 | 单元 | 汉字 |
+|--:|---|---|--:|--:|
+| 1 | 康复评定概论 | kangfu-huli、gushang-jichu | 3 | 51,332 |
+| 2 | 关节活动度与肌力评定 | kangfu-huli、shoufa | 3 | 25,372 |
+| 3 | 平衡与步态评定 | kangfu-huli、laonian-huli | 3 | 50,712 |
+| 4 | 日常生活活动与生活质量 | kangfu-huli、jichu-huli | 3 | 50,811 |
+| 5 | 疼痛与心理评定 | kangfu-huli、zhenjiu-zhiliao | 3 | 18,879 |
+| 6 | 影像与功能的对应 | gushang-yingxiang、kangfu-huli | 4 | 11,925 |
+| 7 | 评定量表的选择与信效度 | kangfu-huli、huli-yanjiu-zhengxun | 3 | 19,256 |
+| 8 | 评定报告与随访 | kangfu-huli、huli-yanjiu-zhengxun | 3 | 51,311 |
 
-## 三、章节地图（目标 8 章）
+## 三、三辨与四位面（实测）
 
-章节尚未编写。运行脚手架开章：
+| 三辨 | 词频 |
+|---|--:|
+| **关节与肌力** | **1065** |
+| **功能与步态** | **465** |
+| **量表与报告** | **3074** |
+
+三辨极差 **6.6×**。三辨 6.6×——「评定」是父课的词根（康复护理正文几乎每段都有），无法通过换词消除；已如实标注，不做假轴。
+
+| 四位面（章群结构分区） | 汉字 |
+|---|---:|
+| 概论与关节 | 76,704 |
+| 平衡步态与ADL | 101,523 |
+| 疼痛心理与影像 | 30,804 |
+| 量表与报告 | 70,567 |
+
+四位面极差 **3.3×**（结构分区，不用词频）。
+
+## 四、判据
+
+评定不是打分，是给下一个决策提供依据；选错量表比不评更糟。每章要求写清：**适应证与禁忌、操作/适配要点、可核的记录项、随访节点**。
+
+## 五、章内可执行验证
 
 ```bash
-node scripts/scaffold_chapter.js 04-gushang/15-gushang-kangfu-pingding 01-<chapter-slug>
+node scripts/audit_curriculum.js | grep -A2 "15-gushang-kangfu-pingding"
+node tests/test_chapter_code.js | grep -c "15-gushang-kangfu-pingding"
+python scripts/_derive_gs2.py
 ```
 
-编写完成后，把章节索引写进 `chapters.json`，本表的「状态」列由
-`scripts/build_catalog.js` 自动填充。
-
-## 四、章节契约（每章必须满足）
-
-```text
-chapters/NN-<slug>/
-├── docs/zh.md      # MOTTO / PROBLEM / 环境逼迫 / 知识积累 / CONCEPT / BUILD IT / USE IT / SHIP IT
-├── code/           # 可运行、自终止、退出码 0（Node.js 或 Python，见 AGENTS.md 依赖白名单）
-├── quiz.json       # 恰好 6 题 = 1 pre + 3 check + 2 post
-└── outputs/        # 可复用产出物（prompt / skill / agent / mcp / 临床工具）
-```
-
-## 五、教材交付 [textbooks]
-
-```text
-输出: textbooks/04-gushang/15-gushang-kangfu-pingding/
-├── 00-前言.md
-├── 01-第1章-<标题>.md   ...
-└── figures/                # Mermaid / SVG，禁止 ASCII 框图
-```
-
-## 六、平台交付 [tcmP]
-
-```text
-输出: platform/courses/04-gushang/15-gushang-kangfu-pingding/
-├── course.yaml             # 课程元数据 + 章节 → 视频映射
-├── slides/                 # 讲稿 HTML（由 docs/zh.md 派生）
-├── narration/              # TTS 旁白文本 + 音频
-└── video/                  # 成片 MP4（H.264 / 720p 以上）
-```
-
-## 七、进度
-
-| 指标 | 当前 | 目标 |
-|------|------|------|
-| 章节 | 0 | 8 |
-| 视频 | 0 | 8 |
-| 教材字数 | 0 | ≈ 48000 |
-
-> 状态字形：🌱 未开始 ⬚ · 🚧 进行中 · ✅ 完成
+**免责声明：** 本课为教学材料；无独立教材，内容为本库已建课程的**二次编排**。
+手法、支具适配与评定须由执业人员执行，不构成诊疗建议。

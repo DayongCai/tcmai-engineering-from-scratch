@@ -1,0 +1,76 @@
+{
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "杂疗方在笈成本里被记作几条？",
+   "options": [
+    "1 条",
+    "23 条",
+    "46 条",
+    "没有收录"
+   ],
+   "correct": 0,
+   "explanation": "笈成本附篇整篇存为 1 条且无条号；古诗文网本为 46 段。"
+  },
+  {
+   "stage": "check",
+   "question": "附篇（23-25）在统计口径上应当？",
+   "options": [
+    "按条号并入 402 条",
+    "不编条号、不进杂病统计",
+    "与正文合并计方",
+    "单独算作 3 条"
+   ],
+   "correct": 1,
+   "explanation": "见 standards/jingui/README.md §四第 4 条。"
+  },
+  {
+   "stage": "check",
+   "question": "本篇内容的组织方式是？",
+   "options": [
+    "按脉证推演",
+    "按急救场景给处置",
+    "按五脏分栏",
+    "按方剂大小排序"
+   ],
+   "correct": 1,
+   "explanation": "先写场景（卒死、尸厥、坠马），再给处置，不写脉证推演。"
+  },
+  {
+   "stage": "check",
+   "question": "本篇在古诗文网本里的段落数是？",
+   "options": [
+    "1",
+    "46",
+    "22",
+    "402"
+   ],
+   "correct": 1,
+   "explanation": "46 段 / 1463 字；笈成本整篇 1 条。"
+  },
+  {
+   "stage": "post",
+   "question": "本篇文献里「四时加减柴胡饮子」的特点是？",
+   "options": [
+    "固定组成",
+    "按季节加减",
+    "单味药",
+    "外用"
+   ],
+   "correct": 1,
+   "explanation": "冬三月的加味与春三月不同（加枳实、减白术），是「四时加减」的写法。"
+  },
+  {
+   "stage": "post",
+   "question": "附篇引用格式应写？",
+   "options": [
+    "第23篇·第M条",
+    "第23篇（附）",
+    "第23篇第1条",
+    "附一"
+   ],
+   "correct": 1,
+   "explanation": "附篇不编条号，见 standards/jingui/README.md §四。"
+  }
+ ]
+}

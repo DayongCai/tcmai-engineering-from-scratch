@@ -1,7 +1,7 @@
 {
   "$generated": "scripts/report_component_recheck.js",
   "$note": "构件级证据重查清单；重查流程 = --requery \"<label>\" → --next -n 6 → 检索 query → --import",
-  "generatedAt": "2026-11-06T16:03:14.090Z",
+  "generatedAt": "2026-11-06T16:27:14.460Z",
   "total": 97,
   "componentCount": 12,
   "entries": [

@@ -1,0 +1,79 @@
+{
+  "lesson": "03-zhangcongzheng-gongxie",
+  "title": "张从正与攻邪论：病由邪生",
+  "subject": "15-zhongyi-gejia-xueshuo",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "攻邪派的本体论判断是？",
+      "options": [
+        "病不是人身上本来有的东西",
+        "虚是万病之源",
+        "脾胃为后天之本",
+        "阳非有余"
+      ],
+      "correct": 0,
+      "explanation": "「病之一物，非人身素有之也」。"
+    },
+    {
+      "stage": "check",
+      "question": "三法与三个出口的对应是？",
+      "options": [
+        "汗—表、吐—上、下—下",
+        "汗—下、吐—表、下—上",
+        "三者都走表",
+        "三者都走里"
+      ],
+      "correct": 0,
+      "explanation": "给邪气找最近的一条路。"
+    },
+    {
+      "stage": "check",
+      "question": "本章命中最高的原因是？",
+      "options": [
+        "「汗」「下」为高频单字，噪声大",
+        "攻邪派条文最多",
+        "统计口径错",
+        "样本偏倚"
+      ],
+      "correct": 0,
+      "explanation": "收紧词表后命中会大幅下降。"
+    },
+    {
+      "stage": "check",
+      "question": "攻邪派与补土派的共同敌人是？",
+      "options": [
+        "不问病由的盲目温补",
+        "外感",
+        "内伤",
+        "针灸"
+      ],
+      "correct": 0,
+      "explanation": "这一共同点常被忽略。"
+    },
+    {
+      "stage": "post",
+      "question": "哪些情形不可攻？",
+      "options": [
+        "纯虚无邪",
+        "邪实正未衰",
+        "邪实正已衰",
+        "表证"
+      ],
+      "correct": 0,
+      "explanation": "分界是「有无可攻之邪」。"
+    },
+    {
+      "stage": "post",
+      "question": "关联证候 39 证说明攻邪对应的是？",
+      "options": [
+        "有形之邪（热毒／痰湿／血瘀）",
+        "无形之气",
+        "纯虚之证",
+        "先天之疾"
+      ],
+      "correct": 0,
+      "explanation": "三族并集。"
+    }
+  ]
+}

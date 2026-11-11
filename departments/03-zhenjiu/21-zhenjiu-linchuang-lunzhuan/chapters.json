@@ -1,0 +1,60 @@
+{
+  "slug": "21-zhenjiu-linchuang-lunzhuan",
+  "title": "针灸临床轮转",
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-menzhen-lunzhuan",
+      "title": "针灸科门诊轮转：颈肩腰腿痛的接诊与配穴",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/01-menzhen-lunzhuan/docs/zh.md",
+      "code": "chapters/01-menzhen-lunzhuan/code/main.js"
+    },
+    {
+      "n": 2,
+      "slug": "02-zhongfeng-kangfu",
+      "title": "中风病康复轮转",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/02-zhongfeng-kangfu/docs/zh.md",
+      "code": "chapters/02-zhongfeng-kangfu/code/main.js"
+    },
+    {
+      "n": 3,
+      "slug": "03-mian-tan",
+      "title": "面瘫与周围神经损伤轮转",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/03-mian-tan/docs/zh.md",
+      "code": "chapters/03-mian-tan/code/main.js"
+    },
+    {
+      "n": 4,
+      "slug": "04-jiu-baguan",
+      "title": "灸法与拔罐的适应证与意外处置",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/04-jiu-baguan/docs/zh.md",
+      "code": "chapters/04-jiu-baguan/code/main.js"
+    },
+    {
+      "n": 5,
+      "slug": "05-tuina-lunzhuan",
+      "title": "推拿科轮转",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/05-tuina-lunzhuan/docs/zh.md",
+      "code": "chapters/05-tuina-lunzhuan/code/main.js"
+    },
+    {
+      "n": 6,
+      "slug": "06-chuke-kaohe",
+      "title": "出科考核与病例复盘",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/06-chuke-kaohe/docs/zh.md",
+      "code": "chapters/06-chuke-kaohe/code/main.js"
+    }
+  ]
+}

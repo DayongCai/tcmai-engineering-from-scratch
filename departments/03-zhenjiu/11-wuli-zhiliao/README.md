@@ -1,77 +1,64 @@
 # 物理治疗与运动康复
 
-> 运动处方→个性化推荐 / 步态数据→时序分类
+**11-wuli-zhiliao** · 针灸推拿学院 · 8 章 · 32 单元 · 196,511 汉字
 
-| 项目 | 内容 |
-|------|------|
-| 院系 | 🪡 针灸系 `03-zhenjiu` |
-| 类型 | Build |
-| 学期 | 第 6 学期（🌿 长·积累 / 大三） |
-| 学时 | 54 |
-| 章节目标 | 8 |
-| 学科编号 | 041 / 120 |
-| 英文名 | Physiotherapy & Sports Rehab |
+> 物理因子的共同逻辑：给组织一个可承受的刺激；剂量与禁忌同样重要
 
-## 一、学科定位
+**课程类型：派生课（无独立教材）**。单元正文逐字取自父课，`locator` 一律 `派生·第N章·m.k`，
+`source` 记 `父课:父locator`；本课汉字**不与父课相加**。
 
-物理治疗与运动康复（Physiotherapy & Sports Rehab）是针灸系的核心学科，聚焦「经络腧穴—刺法灸法—针灸治疗 与推拿康复的完整链条」中的一个完整知识域。
+## 一、父课
 
-## 二、中医 → AI 桥梁
+- `cifa-jiufa`
+- `kangfu-huli`
+- `laonian-huli`
+- `shoufa`
+- `tuina`
 
-```text
-运动处方→个性化推荐 / 步态数据→时序分类
-```
+## 二、章表
 
-物理治疗与运动康复 里的每一个传统概念，都被翻译成一个可计算、可验证的工程对象：
-中医概念给出**语义与约束**，AI/工程方法给出**表示与算法**。两者必须能互相回指，
-否则这个章节就还没有写完。
+| # | 章 | 父课来源 | 单元 | 汉字 |
+|--:|---|---|--:|--:|
+| 1 | 物理治疗概论 | cifa-jiufa、kangfu-huli | 5 | 10,521 |
+| 2 | 电疗与电针 | cifa-jiufa、shiyan-zhenjiu | 5 | 11,435 |
+| 3 | 热疗与光疗 | cifa-jiufa、kangfu-huli | 5 | 9,015 |
+| 4 | 冷疗、超声与牵引 | kangfu-huli、tuina | 5 | 11,965 |
+| 5 | 运动疗法基础 | kangfu-huli、tuina | 3 | 37,588 |
+| 6 | 关节活动与肌力训练 | kangfu-huli、shoufa | 3 | 14,674 |
+| 7 | 平衡、协调与步态训练 | kangfu-huli、laonian-huli | 3 | 50,217 |
+| 8 | 运动康复方案与风险控制 | kangfu-huli、zhenjiu-zhiliao | 3 | 51,096 |
 
-## 三、章节地图（目标 8 章）
+## 三、三辨与四位面（实测）
 
-章节尚未编写。运行脚手架开章：
+| 三辨 | 词频 |
+|---|--:|
+| **物理因子** | **741** |
+| **运动疗法** | **1035** |
+| **剂量与安全** | **635** |
+
+三辨极差 **1.6×**。
+
+| 四位面（章群结构分区） | 汉字 |
+|---|---:|
+| 物理因子 | 42,936 |
+| 运动疗法基础 | 37,588 |
+| 训练技术 | 64,891 |
+| 方案与风险 | 51,096 |
+
+四位面极差 **1.7×**。这一轴按**章群归属**直接分区，不用词频——
+派生课的关键词统计容易被父课的泛词（「患者」「治疗」）支配，结构分区更诚实。
+
+## 四、判据
+
+物理因子的共同逻辑：给组织一个可承受的刺激；剂量与禁忌同样重要。本课每章要求写清：**适应证边界、操作要点、可核的记录项、禁忌与风险**。
+
+## 五、章内可执行验证
 
 ```bash
-node scripts/scaffold_chapter.js 03-zhenjiu/11-wuli-zhiliao 01-<chapter-slug>
+node scripts/audit_curriculum.js | grep -A2 "11-wuli-zhiliao"
+node tests/test_chapter_code.js | grep -c "11-wuli-zhiliao"
+python scripts/_derive6_zj.py
 ```
 
-编写完成后，把章节索引写进 `chapters.json`，本表的「状态」列由
-`scripts/build_catalog.js` 自动填充。
-
-## 四、章节契约（每章必须满足）
-
-```text
-chapters/NN-<slug>/
-├── docs/zh.md      # MOTTO / PROBLEM / 环境逼迫 / 知识积累 / CONCEPT / BUILD IT / USE IT / SHIP IT
-├── code/           # 可运行、自终止、退出码 0（Node.js 或 Python，见 AGENTS.md 依赖白名单）
-├── quiz.json       # 恰好 6 题 = 1 pre + 3 check + 2 post
-└── outputs/        # 可复用产出物（prompt / skill / agent / mcp / 临床工具）
-```
-
-## 五、教材交付 [textbooks]
-
-```text
-输出: textbooks/03-zhenjiu/11-wuli-zhiliao/
-├── 00-前言.md
-├── 01-第1章-<标题>.md   ...
-└── figures/                # Mermaid / SVG，禁止 ASCII 框图
-```
-
-## 六、平台交付 [tcmP]
-
-```text
-输出: platform/courses/03-zhenjiu/11-wuli-zhiliao/
-├── course.yaml             # 课程元数据 + 章节 → 视频映射
-├── slides/                 # 讲稿 HTML（由 docs/zh.md 派生）
-├── narration/              # TTS 旁白文本 + 音频
-└── video/                  # 成片 MP4（H.264 / 720p 以上）
-```
-
-## 七、进度
-
-| 指标 | 当前 | 目标 |
-|------|------|------|
-| 章节 | 0 | 8 |
-| 视频 | 0 | 8 |
-| 教材字数 | 0 | ≈ 48000 |
-
-> 状态字形：🌱 未开始 ⬚ · 🚧 进行中 · ✅ 完成
+**免责声明：** 本课为教学材料；无独立教材，内容取自本库已建课程，属**二次编排**。
+具体操作与剂量须以现行规范与执业人员判断为准，不构成诊疗建议。

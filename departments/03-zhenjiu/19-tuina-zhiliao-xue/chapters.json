@@ -1,0 +1,78 @@
+{
+ "slug": "19-tuina-zhiliao-xue",
+ "title": "推拿治疗学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gaishu-tixi",
+   "title": "推拿治疗学概论",
+   "status": "🚧"
+  },
+  {
+   "n": 2,
+   "slug": "02-zhiliao-jichu",
+   "title": "推拿治疗基础",
+   "status": "🚧"
+  },
+  {
+   "n": 3,
+   "slug": "03-jizhu-bingzheng",
+   "title": "脊柱病证推拿治疗",
+   "status": "🚧"
+  },
+  {
+   "n": 4,
+   "slug": "04-guguanjie-jinshang",
+   "title": "骨关节与筋伤病证推拿治疗",
+   "status": "🚧"
+  },
+  {
+   "n": 5,
+   "slug": "05-neike-bingzheng",
+   "title": "内科病证推拿治疗",
+   "status": "🚧"
+  },
+  {
+   "n": 6,
+   "slug": "06-fuke-bingzheng",
+   "title": "妇科病证推拿治疗",
+   "status": "🚧"
+  },
+  {
+   "n": 7,
+   "slug": "07-erke-bingzheng",
+   "title": "儿科病证推拿治疗",
+   "status": "🚧"
+  },
+  {
+   "n": 8,
+   "slug": "08-wuguan-qita",
+   "title": "五官与其他病证推拿治疗",
+   "status": "🚧"
+  },
+  {
+   "n": 9,
+   "slug": "09-yundong-kangfu",
+   "title": "运动损伤与康复推拿",
+   "status": "🚧"
+  },
+  {
+   "n": 10,
+   "slug": "10-anquan-yichang",
+   "title": "推拿治疗安全与异常处理",
+   "status": "🚧"
+  },
+  {
+   "n": 11,
+   "slug": "11-xiandai-yanzheng",
+   "title": "推拿治疗现代研究与循证",
+   "status": "🚧"
+  },
+  {
+   "n": 12,
+   "slug": "12-shuzihua-ai",
+   "title": "推拿治疗数字化与AI时代",
+   "status": "🚧"
+  }
+ ]
+}

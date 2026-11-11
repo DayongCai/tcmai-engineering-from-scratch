@@ -1,0 +1,103 @@
+{
+ "slug": "03-yixue-xibao-shengwu-xue",
+ "title": "医学细胞生物学",
+ "note": "派生课：12 课程章 ←《组织学与胚胎学》《生理学》《生物化学》相关章（正文逐字不改）。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xibao-shengwuxue-gailun",
+   "title": "细胞生物学概论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-xibaomo-yu-kuamo-yunshu",
+   "title": "细胞膜与跨膜运输",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-xibao-lianjie-yu-nianfu",
+   "title": "细胞连接与细胞黏附",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-xibao-waijizhi",
+   "title": "细胞外基质与细胞微环境",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-xibao-gujia-yu-yundong",
+   "title": "细胞骨架与细胞运动",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-shenjingyuan-xinxi-chuandi",
+   "title": "神经元与细胞间信息传递",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-xibaohe-yu-ransezhi",
+   "title": "细胞核与染色质",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-jiyin-biaoda-tiaokong",
+   "title": "基因表达调控",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-xibao-zhouqi-yu-dna-fuzhi",
+   "title": "细胞周期与 DNA 复制",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-danbaizhi-hecheng-yu-xibao-gongneng",
+   "title": "蛋白质合成与细胞功能",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-xibao-fenhua-yu-qiguan-fasheng",
+   "title": "细胞分化与器官发生",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-xibao-yu-fenzi-jishu",
+   "title": "细胞与分子常用技术",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
+}

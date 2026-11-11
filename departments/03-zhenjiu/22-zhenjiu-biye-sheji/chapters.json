@@ -1,0 +1,60 @@
+{
+  "slug": "22-zhenjiu-biye-sheji",
+  "title": "针灸毕业设计与知识移交",
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-xuan-ti",
+      "title": "选题：从配穴方案到可检验命题",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/01-xuan-ti/docs/zh.md",
+      "code": "chapters/01-xuan-ti/code/main.js"
+    },
+    {
+      "n": 2,
+      "slug": "02-shuju-zhunbei",
+      "title": "数据准备：病例、经穴坐标、刺激参数",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/02-shuju-zhunbei/docs/zh.md",
+      "code": "chapters/02-shuju-zhunbei/code/main.js"
+    },
+    {
+      "n": 3,
+      "slug": "03-fangfa-shixian",
+      "title": "方法与系统实现",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/03-fangfa-shixian/docs/zh.md",
+      "code": "chapters/03-fangfa-shixian/code/main.js"
+    },
+    {
+      "n": 4,
+      "slug": "04-liaoxiao-pingjia",
+      "title": "疗效评价与盲法设计",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/04-liaoxiao-pingjia/docs/zh.md",
+      "code": "chapters/04-liaoxiao-pingjia/code/main.js"
+    },
+    {
+      "n": 5,
+      "slug": "05-lunwen-dabian",
+      "title": "论文写作与答辩",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/05-lunwen-dabian/docs/zh.md",
+      "code": "chapters/05-lunwen-dabian/code/main.js"
+    },
+    {
+      "n": 6,
+      "slug": "06-zhishi-yijiao",
+      "title": "知识移交：方案手册与交接",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/06-zhishi-yijiao/docs/zh.md",
+      "code": "chapters/06-zhishi-yijiao/code/main.js"
+    }
+  ]
+}

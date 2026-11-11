@@ -1,66 +1,78 @@
 {
-  "slug": "15-zhongyao-xinyao-yanfa",
-  "title": "中药新药研发",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-yanfa-lujing",
-      "title": "新药研发的路径与法规框架",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-linchuangqian",
-      "title": "临床前研究：药效、毒理与药代",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-chufang-shaixuan",
-      "title": "处方筛选与工艺路线设计",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-zhiliang-biaozhun",
-      "title": "质量标准的研究与起草",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-jingdian-mingfang",
-      "title": "经典名方的开发路径",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-linchuang-sheji",
-      "title": "临床试验设计与统计",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-zhuce-fenlei",
-      "title": "中药注册分类与申报资料",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-zhenshi-shijie",
-      "title": "真实世界证据与循证评价",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-zhuanli-buju",
-      "title": "知识产权与专利布局",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-xiangmu-fengxian",
-      "title": "研发项目管理的里程碑与风险",
-      "status": "📋"
-    }
-  ]
+ "slug": "15-zhongyao-xinyao-yanfa",
+ "title": "中药新药研发",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-lujing-zhiku",
+   "title": "研发路径与证据链：从药材到上市",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-lujing-zhiku/docs/zh.md",
+   "code": "chapters/01-lujing-zhiku/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-gacp-yaocai",
+   "title": "药材源头：GACP 与可持续供应",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-gacp-yaocai/docs/zh.md",
+   "code": "chapters/02-gacp-yaocai/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-gmp-shengchan",
+   "title": "生产：GMP 与关键控制点",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-gmp-shengchan/docs/zh.md",
+   "code": "chapters/03-gmp-shengchan/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-zhiliang-biaozhiwu",
+   "title": "质量控制：标志物、指纹图谱与质量标准",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-zhiliang-biaozhiwu/docs/zh.md",
+   "code": "chapters/04-zhiliang-biaozhiwu/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-wuranwu-canyu",
+   "title": "污染物与残留：限度、来源与检验",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-wuranwu-canyu/docs/zh.md",
+   "code": "chapters/05-wuranwu-canyu/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-shangshi-jiankong",
+   "title": "上市后：安全性监测与药物警戒",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-shangshi-jiankong/docs/zh.md",
+   "code": "chapters/06-shangshi-jiankong/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-zhuce-ziliao",
+   "title": "注册资料：技术要求如何落成可审评的文件",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-zhuce-ziliao/docs/zh.md",
+   "code": "chapters/07-zhuce-ziliao/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-chanye-jiaofu",
+   "title": "产业化与知识移交",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-chanye-jiaofu/docs/zh.md",
+   "code": "chapters/08-chanye-jiaofu/code/main.js"
+  }
+ ]
 }

@@ -1,0 +1,35 @@
+%% 图 1-1 经络系统的组成
+%% 内容依据：01-第1章-经络概述.md §1.1.2
+%%   原文「经络系统由经脉、络脉和连属于体表的十二经筋、十二皮部组成。其中经脉包括
+%%   十二经脉、奇经八脉、十二经别；络脉包括十五络脉和难以计数的浮络、孙络等。」
+%%   经脉系统内部层次依 §1.1.2.1 末段：十二经脉主运行气血之主干，奇经八脉主统率调节气血之
+%%   蓄溢，十二经别主加强表里两经及经脉与脏腑、头面的联系。
+%% 本图只画类别与归属，不画循行路线（路线见各经章），不写尺寸与数值。
+%% 每行控制在 10 字内：mermaid 的 htmlLabels:false 模式对全角字符宽度估算偏窄，
+%% 行过长会溢出节点框（见 textbooks/FIGURES.md「三个必须记住的坑」）。
+graph TD
+    ROOT["经络系统"]
+
+    ROOT --> JM["经脉"]
+    ROOT --> LM["络脉"]
+    ROOT --> LZ["连属体表"]
+
+    JM --> JM1["十二经脉（正经）<br/>气血运行主干"]
+    JM --> JM2["奇经八脉<br/>统率调节气血"]
+    JM --> JM3["十二经别<br/>离入出合·六合"]
+
+    LM --> LM1["十五络脉<br/>十二经各一·任督<br/>·脾之大络"]
+    LM --> LM2["浮络·孙络<br/>遍布全身"]
+
+    LZ --> LZ1["十二经筋<br/>不入内脏·结聚关节"]
+    LZ --> LZ2["十二皮部<br/>卫外屏障"]
+
+    JM1 -.-> ZS["十四经<br/>十二经+任督"]
+    JM2 -.-> QJ["奇经六脉<br/>无专属腧穴"]
+
+    classDef root fill:#eef2e8,stroke:#4a7c59,stroke-width:2px,color:#1f1b16
+    classDef lv fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.6px,color:#1f1b16
+    classDef det fill:#fbf8f2,stroke:#b9a992,stroke-width:1px,color:#6b6156
+    class ROOT root
+    class JM,LM,LZ lv
+    class JM1,JM2,JM3,LM1,LM2,LZ1,LZ2,ZS,QJ det

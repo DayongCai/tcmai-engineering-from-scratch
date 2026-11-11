@@ -1,29 +1,42 @@
 {
-  "slug": "01-zhongyi-huli-jichu",
-  "title": "中医护理学基础",
-  "en": "Foundations of TCM Nursing",
-  "deptSlug": "05-huli",
-  "deptTitle": "护理系",
-  "globalN": 61,
-  "type": "Core",
-  "semester": 2,
-  "stage": "sheng",
-  "stageTitle": "生",
-  "hours": 72,
-  "bridge": "辨证施护→规则库 / 证护对应→映射表",
-  "chaptersTarget": 10,
-  "chapters": [],
-  "platform": {
-    "id": "tcmP",
-    "coursePath": "platform/courses/05-huli/01-zhongyi-huli-jichu",
-    "videosPublished": 0,
-    "status": "planned"
+ "slug": "01-zhongyi-huli-jichu",
+ "title": "中医护理学基础",
+ "en": "Foundations of TCM Nursing",
+ "deptSlug": "05-huli",
+ "deptTitle": "护理系",
+ "globalN": 61,
+ "type": "Core",
+ "semester": 2,
+ "stage": "sheng",
+ "stageTitle": "生",
+ "hours": 72,
+ "bridge": "辨证施护→规则库 / 证护对应→映射表",
+ "chaptersTarget": 12,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/05-huli/01-zhongyi-huli-jichu",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/05-huli/01-zhongyi-huli-jichu",
+  "chaptersWritten": 18,
+  "words": 358220,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#中医护理学基础",
+  "extractedAt": "2026-10-21"
+ },
+ "底本": {
+  "kind": "教材",
+  "from": {
+   "file": "qhzy-中医护理学基础.xlsx",
+   "sha256": "439383edef6d6bc09e7704b1b2e4733548a6f41e782b9a505e41ffc7a0c2e98b",
+   "script": "scripts/build_huli_course.py"
   },
-  "textbook": {
-    "id": "textbooks",
-    "path": "textbooks/05-huli/01-zhongyi-huli-jichu",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
-  }
+  "dir": "standards/zhongyi-huli-jichu",
+  "note": "18 内容章 / 18 单元 / 314,542 汉字；课程 12 章按母本骨架重排"
+ }
 }

@@ -1,29 +1,38 @@
 {
-  "slug": "08-zhongyao-paozhi-xue",
-  "title": "中药炮制学",
-  "en": "TCM Processing",
-  "deptSlug": "02-zhongyao",
-  "deptTitle": "中药系",
-  "globalN": 23,
-  "type": "Build",
-  "semester": 5,
-  "stage": "zhang",
-  "stageTitle": "长",
-  "hours": 54,
-  "bridge": "炮制火候→过程曲线 / 工艺参数→回归优化",
-  "chaptersTarget": 8,
-  "chapters": [],
-  "platform": {
-    "id": "tcmP",
-    "coursePath": "platform/courses/02-zhongyao/08-zhongyao-paozhi-xue",
-    "videosPublished": 0,
-    "status": "planned"
-  },
-  "textbook": {
-    "id": "textbooks",
-    "path": "textbooks/02-zhongyao/08-zhongyao-paozhi-xue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
-  }
+ "slug": "08-zhongyao-paozhi-xue",
+ "title": "中药炮制学",
+ "en": "TCM Processing",
+ "deptSlug": "02-zhongyao",
+ "deptTitle": "中药系",
+ "globalN": 23,
+ "type": "Build",
+ "semester": 5,
+ "stage": "zhang",
+ "stageTitle": "长",
+ "hours": 54,
+ "bridge": "炮制火候→过程曲线 / 工艺参数→回归优化",
+ "chaptersTarget": 9,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/02-zhongyao/08-zhongyao-paozhi-xue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/02-zhongyao/08-zhongyao-paozhi-xue",
+  "chaptersWritten": 12,
+  "words": 174240,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#中药炮制学",
+  "extractedAt": "2026-10-21"
+ },
+ "底本": {
+  "kind": "教材",
+  "from": "F:/textbooks/qhzy-中药炮制学.xlsx",
+  "dir": "standards/zhongyao-paozhi",
+  "note": "12 内容章 / 48 单元 / 149,077 汉字；课程 9 章按「目的—前处理—火制—水火共制—特殊法—评价」重组"
+ }
 }

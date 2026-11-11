@@ -1,0 +1,79 @@
+{
+  "lesson": "02-fazhan-jianshi",
+  "title": "发展简史：从「养老」到「老年病学」",
+  "subject": "19-zhongyi-laonianbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "《养老奉亲书》那句「厌于药而喜于食」的意义是？",
+      "options": [
+        "把老年治疗重心从用药挪到饮食调护",
+        "反对一切药物",
+        "只讲食疗",
+        "讲老年人口味"
+      ],
+      "correct": 0,
+      "explanation": "教材 2.2.1：这是食疗地位的源头。"
+    },
+    {
+      "stage": "check",
+      "question": "四个阶段的观念变化主线是？",
+      "options": [
+        "养老→识衰→专著→调养→学科",
+        "补→攻→补",
+        "寒→热→寒",
+        "内治→外治→内治"
+      ],
+      "correct": 0,
+      "explanation": "教材 2.1–2.3 的组织方式。"
+    },
+    {
+      "stage": "check",
+      "question": "本章四位面首位是？",
+      "options": [
+        "脾胃肝胆（179）",
+        "心脑",
+        "肺系",
+        "肾与骨关节"
+      ],
+      "correct": 0,
+      "explanation": "历代养老著作的共同落点都在脾胃与饮食。"
+    },
+    {
+      "stage": "check",
+      "question": "本章引书数量为？",
+      "options": [
+        "37 部 51 次（全书第二）",
+        "1 部 1 次",
+        "0 部",
+        "38 部 60 次"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么历代都落在脾胃？",
+      "options": [
+        "牙口与消化先衰、长期服药伤脾胃、脾胃为气血生化之源",
+        "因为脾最重要",
+        "因为肾不重要",
+        "因为方剂多"
+      ],
+      "correct": 0,
+      "explanation": "三条理由共同指向「补而不受」这一难题。"
+    },
+    {
+      "stage": "post",
+      "question": "金元四大家对老年病的认识特点是？",
+      "options": [
+        "补土、滋阴、攻邪各有侧重",
+        "全都主张峻补",
+        "全都主张攻邪",
+        "全都主张针灸"
+      ],
+      "correct": 0,
+      "explanation": "教材 2.2.2。"
+    }
+  ]
+}

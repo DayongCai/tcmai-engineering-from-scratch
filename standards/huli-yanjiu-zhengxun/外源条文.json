@@ -1,0 +1,231 @@
+{
+ "note": "护理研究与循证护理 外源条文层：只收 sources/ 下已落盘 PDF 里逐字可查的句子（约定见仓库根 补源约定.md）。原文一栏与 PDF 文本层一致；中文一栏是本库转述，标「转述」不冒充官方译文。",
+ "sources": {
+  "PRISMA-2020-expanded": {
+   "file": "PRISMA-2020-expanded-checklist.pdf",
+   "title": "PRISMA 2020 expanded checklist",
+   "series": "PRISMA 2020 statement（Page MJ et al., BMJ 2021;372:n71）配套的扩展核对表",
+   "revised": "2021",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf"
+  },
+  "PRISMA-2020-checklist": {
+   "file": "PRISMA-2020-checklist.pdf",
+   "title": "PRISMA 2020 Checklist",
+   "series": "PRISMA 2020 statement 27 条核对表",
+   "revised": "2020",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_checklist.pdf"
+  },
+  "WHO-Guideline-Contextualization": {
+   "file": "WHO-Evidence-based-guidelines-capacities.pdf",
+   "title": "Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization",
+   "series": "World Health Organization 指南本土化手册（含 GRADE 与 GRADE-ADOLOPMENT）",
+   "revised": "2023",
+   "url": "https://iris.who.int/server/api/core/bitstreams/63282011-3089-4189-b09d-40fc555fbafe/content"
+  }
+ },
+ "clauses": [
+  {
+   "id": "P01",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第1条",
+   "原文": "Identify the report as a systematic review in the title.",
+   "zh": "在标题中说明这是一篇系统评价。"
+  },
+  {
+   "id": "P02",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第2条",
+   "原文": "Describe the current state of knowledge and its uncertainties.",
+   "zh": "描述当前知识状态及其不确定之处。"
+  },
+  {
+   "id": "P03",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第3条",
+   "原文": "Provide an explicit statement of all objective(s) or question(s) the review addresses, expressed in terms of a relevant question formulation framework.",
+   "zh": "用某个提问框架明确写出本评价要回答的全部问题。"
+  },
+  {
+   "id": "P04",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第4条",
+   "原文": "use the Population, Intervention, Comparator, Outcome (PICO) framework or one of its variants",
+   "zh": "使用 PICO（人群—干预—对照—结局）框架或其变体。"
+  },
+  {
+   "id": "P05",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第5条",
+   "原文": "Specify all study characteristics used to decide whether a study was eligible for inclusion in the review",
+   "zh": "写明判定一项研究能否纳入的全部特征。"
+  },
+  {
+   "id": "P06",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第6条",
+   "原文": "Specify the date when each source (e.g. database, register, website, organisation) was last searched or consulted.",
+   "zh": "写明每个来源（数据库、注册库、网站、机构）最后一次检索或查阅的日期。"
+  },
+  {
+   "id": "P07",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第7条",
+   "原文": "Provide the full line by line search strategy as run in each database",
+   "zh": "给出每个数据库实际执行的逐行检索式。"
+  },
+  {
+   "id": "P08",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第8条",
+   "原文": "Report how many reviewers screened each record (title/abstract) and each report retrieved, whether multiple reviewers worked independently at each stage of screening or not",
+   "zh": "说明每条记录与每篇全文各由几名评价者筛选、各阶段是否独立双人。"
+  },
+  {
+   "id": "P09",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第9条",
+   "原文": "Report how many reviewers collected data from each report, whether multiple reviewers worked independently or not",
+   "zh": "说明每篇文献的数据由几名评价者提取、是否独立双人。"
+  },
+  {
+   "id": "P10",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第10条",
+   "原文": "Specify the tool(s) (and version) used to assess risk of bias in the included studies.",
+   "zh": "写明评价纳入研究偏倚风险所用的工具及其版本。"
+  },
+  {
+   "id": "P11",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第11条",
+   "原文": "Specify for each outcome (or type of outcome [e.g. binary, continuous]), the effect measure(s) (e.g. risk ratio, mean difference) used in the synthesis or presentation of results.",
+   "zh": "对每个结局（或结局类型）写明合成与呈现所用的效应量（如 RR、均数差）。"
+  },
+  {
+   "id": "P12",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第12条",
+   "原文": "reference the software, packages and version numbers used to implement synthesis methods",
+   "zh": "注明实现合成方法所用的软件、程序包与版本号。"
+  },
+  {
+   "id": "P13",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第13条",
+   "原文": "Specify the tool or system (and version) used to assess certainty (or confidence) in the body of evidence.",
+   "zh": "写明评定证据体确定性所用的工具或体系及其版本。"
+  },
+  {
+   "id": "P14",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第14条",
+   "原文": "Report the factors considered (e.g. precision of the effect estimate, consistency of findings across studies)",
+   "zh": "报告所考虑的因素（如效应估计的精确性、研究间结果的一致性）。"
+  },
+  {
+   "id": "P15",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第15条",
+   "原文": "Discuss any limitations of the evidence included in the review.",
+   "zh": "讨论纳入证据本身的局限。"
+  },
+  {
+   "id": "P16",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第16条",
+   "原文": "Discuss any limitations of the review processes used, and comment on the potential impact of each limitation.",
+   "zh": "讨论评价过程本身的局限，并说明每项局限的潜在影响。"
+  },
+  {
+   "id": "P17",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第17条",
+   "原文": "Provide registration information for the review, including register name and registration number, or state that the review was not registered.",
+   "zh": "给出注册信息（注册机构与注册号），或声明未注册。"
+  },
+  {
+   "id": "P18",
+   "source": "PRISMA-2020-expanded",
+   "clause": "第18条",
+   "原文": "Report which of the following are publicly available: template data collection forms; data extracted from included studies; data used for all analyses;",
+   "zh": "说明哪些材料公开可得：数据提取表模板、从纳入研究中提取的数据、全部分析所用数据（原文此处被栏目标题「DATA, CODE, AND OTHER MATERIALS」截断，故条止于此；分析代码见下一条另计）"
+  },
+  {
+   "id": "M01",
+   "source": "PRISMA-2020-checklist",
+   "clause": "第1条",
+   "原文": "Describe any methods used to assess certainty (or confidence) in the body of evidence for an outcome.",
+   "zh": "描述评定某结局证据体确定性（或可信度）所用的方法。"
+  },
+  {
+   "id": "M02",
+   "source": "PRISMA-2020-checklist",
+   "clause": "第2条",
+   "原文": "Describe any methods used to assess risk of bias due to missing results in a synthesis (arising from reporting biases).",
+   "zh": "描述评估「结果缺失」所致偏倚（发表偏倚类）的方法。"
+  },
+  {
+   "id": "M03",
+   "source": "PRISMA-2020-checklist",
+   "clause": "第3条",
+   "原文": "Describe the results of the search and selection process, from the number of records identified in the search to the number of studies included in the review",
+   "zh": "报告检索与筛选结果的全链条数字：从检出的记录数到最终纳入的研究数。"
+  },
+  {
+   "id": "W01",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第1条",
+   "原文": "The GRADE approach provides a transparent framework for assessing the certainty in evidence and for the development of recommendations according to transparently described criteria",
+   "zh": "GRADE 提供的是一个透明框架：按公开写明的标准评定证据确定性，并据此形成推荐。"
+  },
+  {
+   "id": "W02",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第2条",
+   "原文": "be explicit about the certainty of the underlying evidence and how it links to the grade or strength of recommendations",
+   "zh": "明确写出证据确定性，以及它如何对应推荐的等级或强度。"
+  },
+  {
+   "id": "W03",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第3条",
+   "原文": "the PICO model (patient/population, interventions, comparators, outcomes)",
+   "zh": "PICO 模型（人群／患者、干预、对照、结局）。"
+  },
+  {
+   "id": "W04",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第4条",
+   "原文": "be based on systematic reviews of the relevant evidence or on systematically and transparently extracted expert evidence if scientific evidence is missing",
+   "zh": "应基于相关证据的系统评价；确无科学证据时，才用系统、透明提取的专家证据。"
+  },
+  {
+   "id": "W05",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第5条",
+   "原文": "ROBIS risk of bias in systematic reviews",
+   "zh": "ROBIS：系统评价的偏倚风险评价工具。"
+  },
+  {
+   "id": "W06",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第6条",
+   "原文": "Adolopment is a neologism referring to the systematic and transparent approach to adoption, adaptation and/or de novo development of recommendations to fit the context of interest.",
+   "zh": "「采纳—改编—新制」（adolopment）是一个合成词，指为适配本地情境，对推荐采取采纳、改编或重新制定的系统透明做法。"
+  },
+  {
+   "id": "W07",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第7条",
+   "原文": "There is no implementation without contextualization",
+   "zh": "没有本土化就没有落地实施。"
+  },
+  {
+   "id": "W08",
+   "source": "WHO-Guideline-Contextualization",
+   "clause": "第8条",
+   "原文": "Trustworthy guidelines are the cornerstone of giving evidence-informed advice in response to clinical, public health and health policy questions.",
+   "zh": "可信的指南，是就临床、公共卫生与卫生政策问题给出循证建议的基石。"
+  }
+ ]
+}

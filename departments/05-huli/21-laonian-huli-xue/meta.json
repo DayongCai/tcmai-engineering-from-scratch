@@ -1,0 +1,38 @@
+{
+ "slug": "21-laonian-huli-xue",
+ "title": "老年护理学",
+ "en": "Geriatric Nursing",
+ "deptSlug": "05-huli",
+ "deptTitle": "护理系",
+ "globalN": 86,
+ "type": "Clinic",
+ "semester": 6,
+ "stage": "zhang",
+ "stageTitle": "长",
+ "hours": 36,
+ "bridge": "衰弱评估→综合评分 / 跌倒风险→分类模型",
+ "chaptersTarget": 18,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/05-huli/21-laonian-huli-xue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/05-huli/21-laonian-huli-xue",
+  "chaptersWritten": 18,
+  "words": 354724,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#老年护理学",
+  "extractedAt": "2026-10-21"
+ },
+ "底本": {
+  "kind": "教材",
+  "from": "F:/textbooks/qhzy-老年护理学.xlsx",
+  "dir": "standards/laonian-huli",
+  "note": "18 内容章 / 18 单元 / 311,524 汉字；课程与教材 1:1"
+ }
+}

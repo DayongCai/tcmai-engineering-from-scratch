@@ -1,0 +1,161 @@
+{
+ "note": "健康评估外源条文层：只收 sources/ 下已落盘 PDF 里逐字可查的句子。原文一栏与 PDF 文本层一致（连字符合成字母按约定还原）；中文一栏是本库转述，标「转述」不冒充官方译文。约定见仓库根目录 补源约定.md。",
+ "sources": {
+  "HIGN-GDS-4": {
+   "file": "HIGN-GDS-4.pdf",
+   "title": "The Geriatric Depression Scale (GDS)",
+   "series": "Hartford Institute for Geriatric Nursing · Try This: Best Practices in Nursing Care to Older Adults · General Assessment Series, Issue Number 4",
+   "revised": "2019",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_4.pdf"
+  },
+  "HIGN-MentalStatus-3": {
+   "file": "HIGN-MentalStatus-3.pdf",
+   "title": "Mental Status Assessment of Older Adults: The Mini-Cog",
+   "series": "Hartford Institute for Geriatric Nursing · Try This: Best Practices in Nursing Care to Older Adults · General Assessment Series, Issue Number 3",
+   "revised": "2019",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_3.pdf"
+  },
+  "HIGN-HendrichII-8": {
+   "file": "HIGN-HendrichII-8.pdf",
+   "title": "Fall Risk Assessment for Older Adults: The Hendrich II Fall Risk Model",
+   "series": "Hartford Institute for Geriatric Nursing · Try This: Best Practices in Nursing Care to Older Adults · General Assessment Series, Issue Number 8",
+   "revised": "2016",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_8.pdf"
+  },
+  "CDC-CheckForSafety": {
+   "file": "CDC-CheckForSafety.pdf",
+   "title": "Check for Safety: A Home Fall Prevention Checklist for Older Adults",
+   "series": "Centers for Disease Control and Prevention · STEADI (Stopping Elderly Accidents, Deaths & Injuries)",
+   "revised": "2017",
+   "url": "https://www.cdc.gov/steadi/pdf/STEADI-Brochure-CheckForSafety-508.pdf"
+  }
+ },
+ "clauses": [
+  {
+   "id": "E01",
+   "source": "HIGN-GDS-4",
+   "clause": "第1条",
+   "原文": "the Geriatric Depression Scale (GDS), first created by Yesavage, et al., has been tested and used extensively with the older population",
+   "zh": "老年抑郁量表（GDS）由 Yesavage 等首创，在老年人群中经过广泛测试与使用。"
+  },
+  {
+   "id": "E02",
+   "source": "HIGN-GDS-4",
+   "clause": "第2条",
+   "原文": "Of the 15 items, 10 indicated the presence of depression when answered positively, while the rest (question numbers 1, 5, 7, 11, 13) indicated depression when answered negatively.",
+   "zh": "15 个条目中，10 条答「是」指向抑郁；其余 5 条（第 1、5、7、11、13 题）答「否」才指向抑郁。"
+  },
+  {
+   "id": "E03",
+   "source": "HIGN-GDS-4",
+   "clause": "第3条",
+   "原文": "Scores of 0-4 are considered normal, depending on age, education, and complaints; 5-8 indicate mild depression; 9-11 indicate moderate depression; and 12-15 indicate severe depression.",
+   "zh": "0–4 分视为正常（还须结合年龄、教育程度与主诉）；5–8 分提示轻度，9–11 分提示中度，12–15 分提示重度抑郁。"
+  },
+  {
+   "id": "E04",
+   "source": "HIGN-GDS-4",
+   "clause": "第4条",
+   "原文": "It takes about 5 to 7 minutes to complete.",
+   "zh": "完成一次约需 5–7 分钟。"
+  },
+  {
+   "id": "E05",
+   "source": "HIGN-GDS-4",
+   "clause": "第5条",
+   "原文": "Depression is not a natural part of aging.",
+   "zh": "抑郁不是老化的自然组成部分。"
+  },
+  {
+   "id": "E06",
+   "source": "HIGN-GDS-4",
+   "clause": "第6条",
+   "原文": "The Short Form is more easily used by physically ill and mildly to moderately demented patients who have short attention spans and/or feel easily fatigued.",
+   "zh": "短表更适用于躯体患病、轻中度认知障碍、注意力短或易疲劳的对象。"
+  },
+  {
+   "id": "E07",
+   "source": "HIGN-MentalStatus-3",
+   "clause": "第1条",
+   "原文": "The Mini-CogTM is a simple screening tool that is well accepted and takes up to only 3 minutes to administer.",
+   "zh": "Mini-Cog 是一个简便的筛查工具，接受度高，施测不超过 3 分钟。"
+  },
+  {
+   "id": "E08",
+   "source": "HIGN-MentalStatus-3",
+   "clause": "第2条",
+   "原文": "the U.S. Preventative Services Task Force (USPSTF) does not recommend routine cognitive screening in asymptomatic community-dwelling older adults, the Alzheimer’s Association and the American Geriatrics Society do recommend incorporation of assessment of cognitive impairment into the Medicare AWV",
+   "zh": "USPSTF 不推荐对无症状社区老年人做常规认知筛查，而阿尔茨海默协会与美国老年医学会主张把认知评估纳入年度健康访视——两份权威意见不一致，本库如实并列。"
+  },
+  {
+   "id": "E09",
+   "source": "HIGN-MentalStatus-3",
+   "clause": "第3条",
+   "原文": "serves as an effective triage tool to identify individuals in need of more thorough evaluation",
+   "zh": "作为分流工具，识别出需要进一步全面评估的个体。"
+  },
+  {
+   "id": "E10",
+   "source": "HIGN-HendrichII-8",
+   "clause": "第1条",
+   "原文": "Falls among older adults, unlike other ages tend to occur from multifactorial etiology",
+   "zh": "老年人的跌倒与其他年龄段不同，多由多因素病因共同造成。"
+  },
+  {
+   "id": "E11",
+   "source": "HIGN-HendrichII-8",
+   "clause": "第2条",
+   "原文": "Repeated assessments, yearly, and with patient status changes, will increase the reliability of assessment and help predict a change in condition signaling fall risk.",
+   "zh": "每年重复评估、并在病情变化时重评，可提高评估可靠性，并有助于识别提示跌倒风险的状态变化。"
+  },
+  {
+   "id": "E12",
+   "source": "HIGN-HendrichII-8",
+   "clause": "第3条",
+   "原文": "which is quick to administer and provides a determination of risk for falling based on gender, mental and emotional status, symptoms of dizziness, and known categories of medications increasing risk",
+   "zh": "该模型施测快，依据性别、精神与情绪状态、头晕症状以及已知会升高风险的药物类别判定跌倒风险。"
+  },
+  {
+   "id": "E13",
+   "source": "CDC-CheckForSafety",
+   "clause": "第1条",
+   "原文": "Use this checklist to fi nd and fi x hazards in your home.",
+   "zh": "用这份清单找出并消除家中的危险因素。"
+  },
+  {
+   "id": "E14",
+   "source": "CDC-CheckForSafety",
+   "clause": "第2条",
+   "原文": "Are there papers, shoes, books, or other objects on the stairs?",
+   "zh": "楼梯上是否堆着纸张、鞋子、书或其他物件？"
+  },
+  {
+   "id": "E15",
+   "source": "CDC-CheckForSafety",
+   "clause": "第3条",
+   "原文": "Put a non-slip rubber mat or self-stick strips on the fl oor of the tub or shower.",
+   "zh": "浴缸或淋浴区地面铺防滑胶垫或自粘防滑条。"
+  },
+  {
+   "id": "E16",
+   "source": "CDC-CheckForSafety",
+   "clause": "第4条",
+   "原文": "Have grab bars put in next to and inside the tub, and next to the toilet.",
+   "zh": "在浴缸旁、浴缸内以及马桶旁安装扶手。"
+  },
+  {
+   "id": "E17",
+   "source": "CDC-CheckForSafety",
+   "clause": "第5条",
+   "原文": "Is the tub or shower fl oor slippery?",
+   "zh": "浴缸或淋浴地面是否打滑？"
+  },
+  {
+   "id": "E18",
+   "source": "CDC-CheckForSafety",
+   "clause": "第6条",
+   "原文": "Put in a nightlight so you can see where you’re walking.",
+   "zh": "在走道装夜灯，让人看清脚下。"
+  }
+ ]
+}

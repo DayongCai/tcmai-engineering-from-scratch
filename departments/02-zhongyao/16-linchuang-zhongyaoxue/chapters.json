@@ -1,0 +1,141 @@
+{
+ "slug": "16-linchuang-zhongyaoxue",
+ "title": "临床中药学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xulun",
+   "title": "绪论",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-xulun/docs/zh.md",
+   "code": "chapters/01-xulun/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-jiben-lilun",
+   "title": "中药的基本理论",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-jiben-lilun/docs/zh.md",
+   "code": "chapters/02-jiben-lilun/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-paozhi-zhiji",
+   "title": "中药的炮制与制剂",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-paozhi-zhiji/docs/zh.md",
+   "code": "chapters/03-paozhi-zhiji/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-yongfa-jiliang",
+   "title": "中药的用法与剂量",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-yongfa-jiliang/docs/zh.md",
+   "code": "chapters/04-yongfa-jiliang/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-jiebiao",
+   "title": "解表药",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-jiebiao/docs/zh.md",
+   "code": "chapters/05-jiebiao/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-qingre",
+   "title": "清热药",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-qingre/docs/zh.md",
+   "code": "chapters/06-qingre/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-xiexia-qushi",
+   "title": "泻下药与祛风湿药",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-xiexia-qushi/docs/zh.md",
+   "code": "chapters/07-xiexia-qushi/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-huashi-lijin",
+   "title": "化湿药与利水渗湿药",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-huashi-lijin/docs/zh.md",
+   "code": "chapters/08-huashi-lijin/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-wenli-liqi-xiaoshi",
+   "title": "温里药·理气药·消食药",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-wenli-liqi-xiaoshi/docs/zh.md",
+   "code": "chapters/09-wenli-liqi-xiaoshi/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-zhixue-huoxue",
+   "title": "止血药与活血化瘀药",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-zhixue-huoxue/docs/zh.md",
+   "code": "chapters/10-zhixue-huoxue/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-huatan-anshen",
+   "title": "化痰止咳平喘药与安神药",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-huatan-anshen/docs/zh.md",
+   "code": "chapters/11-huatan-anshen/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-pinggan-kaiqiao",
+   "title": "平肝息风药与开窍药",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-pinggan-kaiqiao/docs/zh.md",
+   "code": "chapters/12-pinggan-kaiqiao/code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-buxu",
+   "title": "补虚药",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/13-buxu/docs/zh.md",
+   "code": "chapters/13-buxu/code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-shoushe-yongtu",
+   "title": "收涩药与涌吐药",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/14-shoushe-yongtu/docs/zh.md",
+   "code": "chapters/14-shoushe-yongtu/code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-gongdu-badu",
+   "title": "攻毒杀虫止痒药与拔毒化腐生肌药",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/15-gongdu-badu/docs/zh.md",
+   "code": "chapters/15-gongdu-badu/code/main.js"
+  }
+ ]
+}

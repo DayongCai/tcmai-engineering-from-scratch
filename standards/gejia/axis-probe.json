@@ -1,0 +1,24 @@
+{
+ "counts": {
+  "schools": 8,
+  "corpus": {
+   "shanghan": 1760,
+   "jingui": 402,
+   "wenbing": 630
+  },
+  "corpusTotal": 2792,
+  "units": 10,
+  "hanzi": 1003
+ },
+ "A_school": {
+  "liu-wansu": 637,
+  "zhang-congzheng": 1476,
+  "li-gao": 68,
+  "zhu-zhenheng": 50,
+  "zhang-jingyue": 7,
+  "ye-tianshi": 824,
+  "wang-qingren": 803,
+  "zhang-xichun": 49
+ },
+ "note": "四位面取「理论/方药/病机/传承」——一个学派能被核查的四个维度"
+}

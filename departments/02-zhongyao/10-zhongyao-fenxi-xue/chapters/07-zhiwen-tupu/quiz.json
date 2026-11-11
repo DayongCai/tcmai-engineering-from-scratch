@@ -1,0 +1,79 @@
+{
+ "lesson": "07-zhiwen-tupu",
+ "title": "指纹图谱与相似度评价",
+ "subject": "10-zhongyao-fenxi-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 7 章「指纹图谱与相似度评价」要回答的核心问题是什么？",
+   "options": [
+    "指纹图谱的相似度 0.9，算不算合格",
+    "研究对象与任务",
+    "中药分析学与相关学科",
+    "中药质量标准概述"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：相似度是整体相似性的度量，不指向任何一个成分；0.9 说明「大体像」，不能说明「有效成分够」。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "数据与限度",
+    "样品处理",
+    "测定条件",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（分析目的）重心落在哪一项？",
+   "options": [
+    "指纹图谱",
+    "乙酸-丙二酸途径",
+    "莽草酸途径",
+    "甲戊二羟酸途径"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "5 个",
+    "7 个",
+    "9 个",
+    "11 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "本课程数值类命中只有 15 处，说明什么？",
+   "options": [
+    "教材常数多以范围或文字表述，可数的值少不等于不量化",
+    "研究对象与任务",
+    "中药分析学与相关学科",
+    "中药质量标准概述"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：真正的量化在方法学七项指标里。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/zhongyao-fenxi/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

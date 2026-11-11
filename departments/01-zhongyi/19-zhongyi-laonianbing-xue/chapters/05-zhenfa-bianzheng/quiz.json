@@ -1,0 +1,79 @@
+{
+  "lesson": "05-zhenfa-bianzheng",
+  "title": "诊法与辨证特点：脉象会骗人，功能不会",
+  "subject": "19-zhongyi-laonianbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "老年脉象不能单独作为虚证依据，原因是？",
+      "options": [
+        "老人脉普遍弱、细、沉，须与病前脉对比看趋势",
+        "脉象不准",
+        "脉诊无用",
+        "只信舌象"
+      ],
+      "correct": 0,
+      "explanation": "教材 5.1.2：脉看趋势。"
+    },
+    {
+      "stage": "check",
+      "question": "老年问诊的一条特殊要求是？",
+      "options": [
+        "须问家属补充时间线与用药史",
+        "只问病人",
+        "只看化验",
+        "只问现在"
+      ],
+      "correct": 0,
+      "explanation": "教材 5.1.2：老年症状表述常不准确。"
+    },
+    {
+      "stage": "check",
+      "question": "三条辨证原则的次序是？",
+      "options": [
+        "辨虚实主次→辨标本缓急→辨脏腑定位与浅深",
+        "先定位再分虚实",
+        "先分缓急",
+        "三者无序"
+      ],
+      "correct": 0,
+      "explanation": "教材 5.2.1。"
+    },
+    {
+      "stage": "check",
+      "question": "老年综合评估（CGA）回答的问题与辨证有何不同？",
+      "options": [
+        "辨证答「怎么调」，功能评估答「还能做什么」",
+        "两者相同",
+        "CGA 替代辨证",
+        "辨证替代 CGA"
+      ],
+      "correct": 0,
+      "explanation": "教材 5.3.2 的并置意图。"
+    },
+    {
+      "stage": "post",
+      "question": "六类常见证候中「瘀血」的关键点是？",
+      "options": [
+        "刺痛、定处、舌暗有瘀点",
+        "乏力、自汗",
+        "口干、盗汗",
+        "畏寒、便溏"
+      ],
+      "correct": 0,
+      "explanation": "教材 5.2.2 的六证对照。"
+    },
+    {
+      "stage": "post",
+      "question": "「只辨证不评估功能」的后果是？",
+      "options": [
+        "证辨对了但方案不现实（病人已走不动）",
+        "证辨错",
+        "用药过量",
+        "检查过多"
+      ],
+      "correct": 0,
+      "explanation": "功能状态决定方案可行性。"
+    }
+  ]
+}

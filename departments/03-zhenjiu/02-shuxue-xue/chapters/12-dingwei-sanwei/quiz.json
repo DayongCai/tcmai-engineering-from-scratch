@@ -1,0 +1,79 @@
+{
+ "lesson": "12-dingwei-sanwei",
+ "title": "腧穴定位的数字化与三维模型",
+ "subject": "02-shuxue-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 12 章「腧穴定位的数字化与三维模型」要回答的核心问题是什么？",
+   "options": [
+    "把穴位定位变成三维坐标，丢掉了什么",
+    "第一侧线背俞穴",
+    "第二侧线穴",
+    "足部穴"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：数字化最小单元是「点」，而临床取穴是「面 + 手感」。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "操作",
+    "定位",
+    "主治",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "见正文的分布表，由单元层现算。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "2 个",
+    "4 个",
+    "7 个",
+    "11 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "check",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/shuxue（穴位库 + 单元层）",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  },
+  {
+   "stage": "post",
+   "question": "把「部位词命中最多」直接当穴位归属，风险在哪？",
+   "options": [
+    "跨部位的穴会被强行归入一处",
+    "没有风险",
+    "穴位数会变多",
+    "主治会失效"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：部位由【定位】文字判定，跨部位穴是简化误差。"
+  },
+  {
+   "stage": "post",
+   "question": "穴位库解析依赖的锚点是什么？",
+   "options": [
+    "「穴名（拼音，编号）」这一写法",
+    "穴名的第一个字",
+    "教材页码",
+    "主治关键词"
+   ],
+   "correct": 0,
+   "explanation": "锚点缺失会静默漏穴，测试断言穴数会先响。"
+  }
+ ]
+}

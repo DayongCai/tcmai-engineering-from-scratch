@@ -1,54 +1,78 @@
 {
-  "slug": "04-zhongyao-ziyuan-xue",
-  "title": "中药资源学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-fenbu-quhua",
-      "title": "中药资源的分布与区划",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-daodi-xingcheng",
-      "title": "道地药材的形成与评价",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-yewai-diaocha",
-      "title": "野生资源的调查与蕴藏量估算",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-zaipei-gap",
-      "title": "栽培技术与规范化种植",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-kechixu-tidai",
-      "title": "资源的可持续利用与替代",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-binwei-baohu",
-      "title": "濒危物种保护与政策",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-pucha-shujuku",
-      "title": "资源普查数据的建库与制图",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-gongxu-moxing",
-      "title": "供需模型与价格波动的量化",
-      "status": "📋"
-    }
-  ]
+ "slug": "04-zhongyao-ziyuan-xue",
+ "title": "中药资源学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-fenbu-quhua",
+   "title": "中药资源的分布与区划",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-fenbu-quhua/docs/zh.md",
+   "code": "chapters/01-fenbu-quhua/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-daodi-xingcheng",
+   "title": "道地药材的形成与评价",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-daodi-xingcheng/docs/zh.md",
+   "code": "chapters/02-daodi-xingcheng/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-yewai-diaocha",
+   "title": "野生资源的调查与蕴藏量估算",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-yewai-diaocha/docs/zh.md",
+   "code": "chapters/03-yewai-diaocha/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-zaipei-gap",
+   "title": "栽培技术与规范化种植",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-zaipei-gap/docs/zh.md",
+   "code": "chapters/04-zaipei-gap/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-kaifa-liyong",
+   "title": "资源的开发利用与产业化",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-kaifa-liyong/docs/zh.md",
+   "code": "chapters/05-kaifa-liyong/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-binwei-baohu",
+   "title": "濒危物种保护与政策",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-binwei-baohu/docs/zh.md",
+   "code": "chapters/06-binwei-baohu/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-pucha-shujuku",
+   "title": "资源普查数据的建库与制图",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-pucha-shujuku/docs/zh.md",
+   "code": "chapters/07-pucha-shujuku/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-gongxu-moxing",
+   "title": "供需模型与价格波动的量化",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-gongxu-moxing/docs/zh.md",
+   "code": "chapters/08-gongxu-moxing/code/main.js"
+  }
+ ]
 }

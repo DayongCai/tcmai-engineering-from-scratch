@@ -1,0 +1,96 @@
+{
+ "source": {
+  "provider": "jicheng",
+  "providerTitle": "中醫笈成（漢リポ 文字化本）",
+  "rawBase": "https://gitlab.com/jicheng/jc.data/-/raw/master/pages/book/",
+  "fetchedAt": "2026-11-11",
+  "role": "注家层（逐条注文的唯一来源）；不替代底本，不并入 402 条统计",
+  "citeFormat": "外源·笈成·<书名> <卷/篇>（注家原文逐字）"
+ },
+ "books": [
+  {
+   "book": "金匱要略心典",
+   "author": "尤怡",
+   "dynasty": "清",
+   "edition": "雍正十年（1732）初刻一系，笈成漢リポ文字化本",
+   "kind": "义理",
+   "slug": "xindian",
+   "url": "https://gitlab.com/jicheng/jc.data/-/raw/master/pages/book/%E9%87%91%E5%8C%B1%E8%A6%81%E7%95%A5%E5%BF%83%E5%85%B8/index.html",
+   "rawFile": "raw/xindian.html",
+   "rawBytes": 255980,
+   "rawSha256": "d22ea4b6ab86b7140be2f05ebdc072763284bec94888e925aa734c3f587b391a",
+   "sectionCount": 22,
+   "chars": 50737,
+   "srcBlocks": 339
+  },
+  {
+   "book": "金匱要略淺註",
+   "author": "陳念祖",
+   "dynasty": "清",
+   "edition": "嘉慶一系，笈成漢リポ文字化本",
+   "kind": "训释",
+   "slug": "qianzhu",
+   "url": "https://gitlab.com/jicheng/jc.data/-/raw/master/pages/book/%E9%87%91%E5%8C%B1%E8%A6%81%E7%95%A5%E6%B7%BA%E8%A8%BB/index.html",
+   "rawFile": "raw/qianzhu.html",
+   "rawBytes": 397518,
+   "rawSha256": "d69f36072d4297245ef9618a5aad4c89fc041a8d044b9e9dbfeaff86ad9f5812",
+   "sectionCount": 25,
+   "chars": 58144,
+   "srcBlocks": 345
+  },
+  {
+   "book": "金匱玉函要略輯義",
+   "author": "丹波元簡",
+   "dynasty": "日本·江戶",
+   "edition": "寬政一系，笈成漢リポ文字化本",
+   "kind": "考据",
+   "slug": "jiyi",
+   "url": "https://gitlab.com/jicheng/jc.data/-/raw/master/pages/book/%E9%87%91%E5%8C%B1%E7%8E%89%E5%87%BD%E8%A6%81%E7%95%A5%E8%BC%AF%E7%BE%A9/index.html",
+   "rawFile": "raw/jiyi.html",
+   "rawBytes": 682992,
+   "rawSha256": "6cae15e840e5b8fc6dfb291ad3b1d399f5a2b81c21609c06621e4c05d844f1f3",
+   "sectionCount": 25,
+   "chars": 139141,
+   "srcBlocks": 402
+  },
+  {
+   "slug": "yizong",
+   "book": "醫宗金鑑·訂正仲景全書金匱要略註",
+   "shortBook": "醫宗金鑑",
+   "author": "吳謙",
+   "dynasty": "清",
+   "kind": "官修集註",
+   "edition": "《御纂醫宗金鑑》乾隆七年（1742）敕撰；光緒十八年（1892）上海五彩書局石印本；笈成漢リポ條列版（今版）为主见证，原版为第二见证",
+   "url": "https://gitlab.com/jicheng/jc.data/-/raw/master/pages/book/%E9%86%AB%E5%AE%97%E9%87%91%E9%91%91_%E6%A2%9D%E5%88%97%E7%89%88/%E8%A8%82%E6%AD%A3%E4%BB%B2%E6%99%AF%E5%85%A8%E6%9B%B8%E9%87%91%E5%8C%B1%E8%A6%81%E7%95%A5%E8%A8%BB/index.html",
+   "rawFile": "raw/yizong-tiaolie.html",
+   "rawBytes": 459086,
+   "rawSha256": "6ddbb8aa247cf4b2eace94ebbc76dc6368965845cef2c08ba7c7453d83d8f0be",
+   "witnesses": [
+    {
+     "role": "主见证（條列版：篇名/編號/經文/按/註/集註 字段式，可逐条定位）",
+     "rawFile": "raw/yizong-tiaolie.html",
+     "url": "https://gitlab.com/jicheng/jc.data/-/raw/master/pages/book/%E9%86%AB%E5%AE%97%E9%87%91%E9%91%91_%E6%A2%9D%E5%88%97%E7%89%88/%E8%A8%82%E6%AD%A3%E4%BB%B2%E6%99%AF%E5%85%A8%E6%9B%B8%E9%87%91%E5%8C%B1%E8%A6%81%E7%95%A5%E8%A8%BB/index.html",
+     "rawBytes": 459086,
+     "rawSha256": "6ddbb8aa247cf4b2eace94ebbc76dc6368965845cef2c08ba7c7453d83d8f0be"
+    },
+    {
+     "role": "第二见证（原版：卷—篇—段式，註散在文中，供校字与卷次核对）",
+     "rawFile": "raw/yizong-yuanban.html",
+     "url": "https://gitlab.com/jicheng/jc.data/-/raw/master/pages/book/%E9%86%AB%E5%AE%97%E9%87%91%E9%91%91/%E8%A8%82%E6%AD%A3%E4%BB%B2%E6%99%AF%E5%85%A8%E6%9B%B8%E9%87%91%E5%8C%B1%E8%A6%81%E7%95%A5%E8%A8%BB/index.html",
+     "rawBytes": 426322,
+     "rawSha256": "364fa240d89a44f4588fe91669d4aa6e25614442302a014416f09e7fe1c5ee8f"
+    }
+   ],
+   "sectionCount": 25,
+   "srcBlocks": 383,
+   "chars": 82710,
+   "noteCharsTiao": 0
+  }
+ ],
+ "counts": {
+  "books": 4,
+  "sections": 97,
+  "srcBlocks": 1469,
+  "noteChars": 330732
+ }
+}

@@ -1,0 +1,353 @@
+# [tcmP] 课程编排 · 09-jichu/11-bingli-shengli-xue
+#
+# 单一事实来源是 departments/09-jichu/11-bingli-shengli-xue/chapters/<slug>/docs/zh.md
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+#
+# 2026-10-30：章目从传统 14 章切到讲义 53 章（15 单元）。53 章全部 planned ——
+# 旁白（narration/）、幻灯片（slides/）、成片（video/）都还没有，所以本文件
+# 不写 estimate_minutes / measured_minutes：那两个字段的意思是对 lesson.json 的实测值，
+# 没有 lesson.json 就写，属于编数。
+#
+# 章目由 scripts/plan_binglishengli_53.py 从讲义索引生成；本文件由
+# scripts/build_binglishengli_course_yaml.py 渲染，--check 可比对漂移。
+
+id: 11-bingli-shengli-xue
+title: 病理生理学
+en: Pathophysiology
+dept: 09-jichu
+dept_title: 基础医学院
+semester: 4
+stage: sheng
+hours: 54
+chapters_target: 53
+bridge: 病机演变→状态机 / 代偿失调→阈值模型
+source_text: standards/binglishengli/supplements/jiangyi（讲义 15 单元 53 章 · 第一文本）
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN（TTS 可用时）；无 TTS 时为静音轨 + 人工配音
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-introduction-to-pathophysiology
+    title: 第 1 章 · 病理生理学导论
+    unit: U01
+    video: rendered
+    estimate_minutes: 30.10
+    measured_minutes: 29.02
+  - slug: 02-homeostasis-allostasis-and-adaptive-responses-to-stressors
+    title: 第 2 章 · 稳态、异稳态与对应激源的适应性反应
+    unit: U01
+    video: rendered
+    estimate_minutes: 27.72
+    measured_minutes: 26.79
+  - slug: 03-cell-structure-and-function
+    title: 第 3 章 · 细胞结构与功能
+    unit: U02
+    video: rendered
+    estimate_minutes: 21.72
+    measured_minutes: 21.17
+  - slug: 04-cell-injury-aging-and-death
+    title: 第 4 章 · 细胞损伤、衰老与死亡
+    unit: U02
+    video: rendered
+    estimate_minutes: 24.32
+    measured_minutes: 23.60
+  - slug: 05-genome-structure-regulation-and-tissue-differentiation
+    title: 第 5 章 · 基因组结构、调控与组织分化
+    unit: U02
+    video: rendered
+    estimate_minutes: 20.52
+    measured_minutes: 19.84
+  - slug: 06-genetic-and-developmental-disorders
+    title: 第 6 章 · 遗传与发育性疾病
+    unit: U02
+    video: rendered
+    estimate_minutes: 25.35
+    measured_minutes: 24.60
+  - slug: 07-neoplasia
+    title: 第 7 章 · 肿瘤
+    unit: U02
+    video: rendered
+    estimate_minutes: 23.58
+    measured_minutes: 22.63
+  - slug: 08-infectious-processes
+    title: 第 8 章 · 感染过程
+    unit: U03
+    video: rendered
+    estimate_minutes: 24.55
+    measured_minutes: 23.61
+  - slug: 09-inflammation-and-immunity
+    title: 第 9 章 · 炎症与免疫
+    unit: U03
+    video: rendered
+    estimate_minutes: 25.75
+    measured_minutes: 24.78
+  - slug: 10-alterations-in-immune-function
+    title: 第 10 章 · 免疫功能异常
+    unit: U03
+    video: rendered
+    estimate_minutes: 26.70
+    measured_minutes: 25.29
+  - slug: 11-malignant-disorders-of-white-blood-cells
+    title: 第 11 章 · 白细胞恶性肿瘤
+    unit: U03
+    video: rendered
+    estimate_minutes: 24.60
+    measured_minutes: 23.59
+  - slug: 12-hiv-disease-and-aids
+    title: 第 12 章 · HIV感染与艾滋病
+    unit: U03
+    video: rendered
+    estimate_minutes: 24.78
+    measured_minutes: 24.04
+  - slug: 13-alterations-in-oxygen-transport
+    title: 第 13 章 · 氧运输异常
+    unit: U04
+    video: rendered
+    estimate_minutes: 27.37
+    measured_minutes: 26.75
+  - slug: 14-alterations-in-hemostasis-and-blood-coagulation
+    title: 第 14 章 · 止血与凝血异常
+    unit: U04
+    video: rendered
+    estimate_minutes: 28.40
+    measured_minutes: 27.64
+  - slug: 15-alterations-in-blood-flow
+    title: 第 15 章 · 血流异常
+    unit: U04
+    video: rendered
+    estimate_minutes: 23.80
+    measured_minutes: 23.33
+  - slug: 16-alterations-in-blood-pressure
+    title: 第 16 章 · 血压异常
+    unit: U04
+    video: rendered
+    estimate_minutes: 23.22
+    measured_minutes: 22.92
+  - slug: 17-cardiac-function
+    title: 第 17 章 · 心脏功能
+    unit: U05
+    video: rendered
+    estimate_minutes: 27.05
+    measured_minutes: 26.44
+  - slug: 18-alterations-in-cardiac-function
+    title: 第 18 章 · 心脏功能异常
+    unit: U05
+    video: rendered
+    estimate_minutes: 24.03
+    measured_minutes: 23.52
+  - slug: 19-heart-failure-and-dysrhythmias
+    title: 第 19 章 · 心力衰竭与心律失常
+    unit: U05
+    video: rendered
+    estimate_minutes: 26.18
+    measured_minutes: 25.38
+  - slug: 20-shock
+    title: 第 20 章 · 休克
+    unit: U05
+    video: rendered
+    estimate_minutes: 24.63
+    measured_minutes: 24.21
+  - slug: 21-respiratory-function-and-alterations-in-gas-exchange
+    title: 第 21 章 · 呼吸功能与气体交换异常
+    unit: U06
+    video: rendered
+    estimate_minutes: 29.63
+    measured_minutes: 28.86
+  - slug: 22-obstructive-pulmonary-disorders
+    title: 第 22 章 · 阻塞性肺疾病
+    unit: U06
+    video: rendered
+    estimate_minutes: 29.25
+    measured_minutes: 28.64
+  - slug: 23-restrictive-pulmonary-disorders
+    title: 第 23 章 · 限制性肺疾病
+    unit: U06
+    video: rendered
+    estimate_minutes: 24.93
+    measured_minutes: 24.84
+  - slug: 24-fluid-and-electrolyte-homeostasis-and-imbalances
+    title: 第 24 章 · 水电解质稳态与失衡
+    unit: U07
+    video: rendered
+    estimate_minutes: 28.92
+    measured_minutes: 28.73
+  - slug: 25-acid-base-homeostasis-and-imbalances
+    title: 第 25 章 · 酸碱平衡与失衡
+    unit: U07
+    video: rendered
+    estimate_minutes: 25.47
+    measured_minutes: 25.29
+  - slug: 26-renal-function
+    title: 第 26 章 · 肾脏功能
+    unit: U08
+    video: rendered
+    estimate_minutes: 29.50
+    measured_minutes: 29.09
+  - slug: 27-intrarenal-disorders
+    title: 第 27 章 · 肾内疾病
+    unit: U08
+    video: rendered
+    estimate_minutes: 21.60
+    measured_minutes: 21.51
+  - slug: 28-acute-kidney-injury-and-chronic-kidney-disease
+    title: 第 28 章 · 急性肾损伤与慢性肾脏病
+    unit: U08
+    video: rendered
+    estimate_minutes: 23.07
+    measured_minutes: 22.81
+  - slug: 29-disorders-of-the-lower-urinary-tract
+    title: 第 29 章 · 下尿路疾病
+    unit: U08
+    video: rendered
+    estimate_minutes: 23.73
+    measured_minutes: 23.50
+  - slug: 30-male-genital-and-reproductive-function
+    title: 第 30 章 · 男性生殖功能
+    unit: U09
+    video: rendered
+    estimate_minutes: 25.32
+    measured_minutes: 24.93
+  - slug: 31-alterations-in-male-genital-and-reproductive-function
+    title: 第 31 章 · 男性生殖功能异常
+    unit: U09
+    video: rendered
+    estimate_minutes: 21.75
+    measured_minutes: 21.65
+  - slug: 32-female-genital-and-reproductive-function
+    title: 第 32 章 · 女性生殖功能
+    unit: U09
+    video: rendered
+    estimate_minutes: 21.95
+    measured_minutes: 21.86
+  - slug: 33-alterations-in-female-genital-and-reproductive-function
+    title: 第 33 章 · 女性生殖功能异常
+    unit: U09
+    video: rendered
+    estimate_minutes: 25.30
+    measured_minutes: 24.91
+  - slug: 34-sexually-transmitted-infections
+    title: 第 34 章 · 性传播感染
+    unit: U09
+    video: rendered
+    estimate_minutes: 23.13
+    measured_minutes: 22.85
+  - slug: 35-gastrointestinal-function
+    title: 第 35 章 · 胃肠功能
+    unit: U10
+    video: rendered
+    estimate_minutes: 22.17
+    measured_minutes: 22.00
+  - slug: 36-gastrointestinal-disorders
+    title: 第 36 章 · 胃肠疾病
+    unit: U10
+    video: rendered
+    estimate_minutes: 26.28
+    measured_minutes: 26.03
+  - slug: 37-alterations-in-function-of-the-gallbladder-and-exocrine-pancreas
+    title: 第 37 章 · 胆囊与外分泌胰腺功能异常
+    unit: U10
+    video: rendered
+    estimate_minutes: 21.30
+    measured_minutes: 21.15
+  - slug: 38-liver-diseases
+    title: 第 38 章 · 肝脏疾病
+    unit: U10
+    video: rendered
+    estimate_minutes: 24.20
+    measured_minutes: 23.91
+  - slug: 39-endocrine-physiology-and-mechanisms-of-hypothalamic-pituitary-regulation
+    title: 第 39 章 · 内分泌生理与下丘脑-垂体调控机制
+    unit: U11
+    video: rendered
+    estimate_minutes: 27.25
+    measured_minutes: 27.24
+  - slug: 40-disorders-of-endocrine-function
+    title: 第 40 章 · 内分泌功能紊乱
+    unit: U11
+    video: rendered
+    estimate_minutes: 26.42
+    measured_minutes: 26.12
+  - slug: 41-diabetes-mellitus
+    title: 第 41 章 · 糖尿病
+    unit: U11
+    video: rendered
+    estimate_minutes: 29.27
+    measured_minutes: 28.99
+  - slug: 42-alterations-in-metabolism-and-nutrition
+    title: 第 42 章 · 代谢与营养异常
+    unit: U11
+    video: rendered
+    estimate_minutes: 28.68
+    measured_minutes: 28.36
+  - slug: 43-structure-and-function-of-the-nervous-system
+    title: 第 43 章 · 神经系统结构与功能
+    unit: U12
+    video: rendered
+    estimate_minutes: 23.60
+    measured_minutes: 23.17
+  - slug: 44-acute-disorders-of-brain-function
+    title: 第 44 章 · 脑功能急性疾病
+    unit: U12
+    video: rendered
+    estimate_minutes: 24.97
+    measured_minutes: 24.84
+  - slug: 45-chronic-disorders-of-neurologic-function
+    title: 第 45 章 · 慢性神经功能障碍
+    unit: U12
+    video: rendered
+    estimate_minutes: 25.10
+    measured_minutes: 24.53
+  - slug: 46-alterations-in-special-sensory-function
+    title: 第 46 章 · 特殊感觉功能异常
+    unit: U12
+    video: rendered
+    estimate_minutes: 24.48
+    measured_minutes: 24.22
+  - slug: 47-pain
+    title: 第 47 章 · 疼痛
+    unit: U12
+    video: rendered
+    estimate_minutes: 23.83
+    measured_minutes: 23.75
+  - slug: 48-mental-health-disorders
+    title: 第 48 章 · 精神心理健康障碍
+    unit: U13
+    video: rendered
+    estimate_minutes: 38.05
+    measured_minutes: 37.65
+  - slug: 49-structure-and-function-of-the-musculoskeletal-system
+    title: 第 49 章 · 骨骼肌肉系统结构与功能
+    unit: U14
+    video: rendered
+    estimate_minutes: 29.58
+    measured_minutes: 29.39
+  - slug: 50-alterations-in-musculoskeletal-function-trauma-infection-and-disease
+    title: 第 50 章 · 骨骼肌肉功能异常：创伤、感染与疾病
+    unit: U14
+    video: rendered
+    estimate_minutes: 33.02
+    measured_minutes: 32.62
+  - slug: 51-alterations-in-musculoskeletal-function-rheumatic-disorders
+    title: 第 51 章 · 骨骼肌肉功能异常：风湿性疾病
+    unit: U14
+    video: rendered
+    estimate_minutes: 31.03
+    measured_minutes: 30.51
+  - slug: 52-alterations-in-the-integumentary-system
+    title: 第 52 章 · 皮肤系统异常
+    unit: U15
+    video: rendered
+    estimate_minutes: 30.85
+    measured_minutes: 30.86
+  - slug: 53-burn-injuries
+    title: 第 53 章 · 烧伤
+    unit: U15
+    video: rendered
+    estimate_minutes: 30.50
+    measured_minutes: 30.79

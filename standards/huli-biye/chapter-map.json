@@ -1,0 +1,87 @@
+{
+ "note": "派生课：本库无《护理毕业设计》教材；一章对应毕设一个环节，取四门课的对应单元，并在正文挂 standards/biye 的真实台账锚点。",
+ "chapters": {
+  "01-xuan-ti": {
+   "n": 1,
+   "title": "选题：从护理问题到可评价方案",
+   "units": [
+    "1.1"
+   ],
+   "srcChapters": [
+    "huli-daolun#5"
+   ],
+   "why": "选题用护理程序那一章：评估—诊断—计划—实施—评价这条链，本身就是选题的可评价化模板",
+   "derivedFrom": "huli-daolun 第5章"
+  },
+  "02-zhengju-chaxun": {
+   "n": 2,
+   "title": "证据检索与循证方案设计",
+   "units": [
+    "2.1",
+    "2.2"
+   ],
+   "srcChapters": [
+    "huli-lunli-fagui#13",
+    "jiankang-pinggu#6"
+   ],
+   "why": "科研伦理 + 四域整合判断：前者定「能不能做」，后者定「拿什么量」",
+   "derivedFrom": "huli-lunli-fagui 第13章、jiankang-pinggu 第6章"
+  },
+  "03-ganyu-shixian": {
+   "n": 3,
+   "title": "干预实现与伦理审查",
+   "units": [
+    "3.1",
+    "3.2"
+   ],
+   "srcChapters": [
+    "huli-lunli-fagui#5",
+    "huli-lunli-fagui#6"
+   ],
+   "why": "知情同意 + 隐私伦理合章：干预一旦落到人身上，这两条就是前置条件",
+   "derivedFrom": "huli-lunli-fagui 第5章、huli-lunli-fagui 第6章"
+  },
+  "04-jieju-pingjia": {
+   "n": 4,
+   "title": "指标与结局评价",
+   "units": [
+    "4.1",
+    "4.2"
+   ],
+   "srcChapters": [
+    "huli-guanli-xue#10",
+    "huli-guanli-xue#12"
+   ],
+   "why": "质量控制 + 绩效评价：前者回答「好不好」，后者回答「值不值」",
+   "derivedFrom": "huli-guanli-xue 第10章、huli-guanli-xue 第12章"
+  },
+  "05-lunwen-dabian": {
+   "n": 5,
+   "title": "论文写作与答辩",
+   "units": [
+    "5.1",
+    "5.2"
+   ],
+   "srcChapters": [
+    "huli-guanli-xue#17",
+    "jiankang-pinggu#8"
+   ],
+   "why": "数据驱动 + 评估偏差：写作要把数据讲清，答辩最常被问的恰是偏差",
+   "derivedFrom": "huli-guanli-xue 第17章、jiankang-pinggu 第8章"
+  },
+  "06-zhishi-yijiao": {
+   "n": 6,
+   "title": "知识移交：护理方案与交接",
+   "units": [
+    "6.1",
+    "6.2"
+   ],
+   "srcChapters": [
+    "huli-guanli-xue#14",
+    "huli-daolun#8"
+   ],
+   "why": "信息管理 + 团队协作：移交不是交文档，是交出「别人能接手」的条件",
+   "derivedFrom": "huli-guanli-xue 第14章、huli-daolun 第8章"
+  }
+ }
+}

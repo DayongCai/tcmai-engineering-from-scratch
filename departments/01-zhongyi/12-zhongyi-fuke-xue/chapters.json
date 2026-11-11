@@ -4,63 +4,81 @@
   "chapters": [
     {
       "n": 1,
-      "slug": "01-fuke-fanwei",
-      "title": "妇科学的范围与生理基础",
-      "status": "📋"
+      "slug": "01-xulun",
+      "title": "绪论",
+      "status": "🚧"
     },
     {
       "n": 2,
-      "slug": "02-yuejing-bing",
-      "title": "月经病：周期、经量、痛经",
-      "status": "📋"
+      "slug": "02-shengzhi-shengli",
+      "title": "女性生殖脏器解剖与生理",
+      "status": "🚧"
     },
     {
       "n": 3,
-      "slug": "03-benglou-bijing",
-      "title": "崩漏与闭经：出血的两端",
-      "status": "📋"
+      "slug": "03-bingyin-bingji",
+      "title": "妇科疾病的病因病机",
+      "status": "🚧"
     },
     {
       "n": 4,
-      "slug": "04-daixia-bing",
-      "title": "带下病：分泌物的辨证",
-      "status": "📋"
+      "slug": "04-zhenduan-bianzheng",
+      "title": "妇科疾病的诊断与辨证",
+      "status": "🚧"
     },
     {
       "n": 5,
-      "slug": "05-renshen-bing",
-      "title": "妊娠病：恶阻、胎漏、胎动不安",
-      "status": "📋"
+      "slug": "05-zhiliao",
+      "title": "妇科疾病的治疗",
+      "status": "🚧"
     },
     {
       "n": 6,
-      "slug": "06-chanhou-bing",
-      "title": "产后病：三审与三病",
-      "status": "📋"
+      "slug": "06-yufang-baojian",
+      "title": "妇科预防与保健",
+      "status": "🚧"
     },
     {
       "n": 7,
-      "slug": "07-buzheng",
-      "title": "不孕症：排卵与胞宫",
-      "status": "📋"
+      "slug": "07-yuejing-qiliang-sezhi",
+      "title": "月经病·期量色质异常",
+      "status": "🚧"
     },
     {
       "n": 8,
-      "slug": "08-fuke-zabing",
-      "title": "妇科杂病：癥瘕与脏躁",
-      "status": "📋"
+      "slug": "08-bijing-benglou",
+      "title": "月经病·闭经崩漏与经行诸证",
+      "status": "🚧"
     },
     {
       "n": 9,
-      "slug": "09-zhouqi-yongyao",
-      "title": "妇科方剂的周期用药规律",
-      "status": "📋"
+      "slug": "09-daixia-bing",
+      "title": "带下病",
+      "status": "🚧"
     },
     {
       "n": 10,
-      "slug": "10-zhouqi-shuju",
-      "title": "妇科数据：周期记录与预测模型",
-      "status": "📋"
+      "slug": "10-renshen-bing",
+      "title": "妊娠病",
+      "status": "🚧"
+    },
+    {
+      "n": 11,
+      "slug": "11-chanhou-bing",
+      "title": "产后病",
+      "status": "🚧"
+    },
+    {
+      "n": 12,
+      "slug": "12-fuke-zabing",
+      "title": "妇科杂病",
+      "status": "🚧"
+    },
+    {
+      "n": 13,
+      "slug": "13-jizhen-shuzihua",
+      "title": "妇科急症与数字化AI时代",
+      "status": "🚧"
     }
   ]
 }

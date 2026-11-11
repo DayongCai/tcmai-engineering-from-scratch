@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>第 35 章 · 胃肠功能：四类功能、一条调控链与从症状反推环节 · 幻灯片</title>
+<style>
+
+:root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
+--jade:#1f6f5c;--jade-soft:#e3efe9;--cinnabar:#a8321e;--cinnabar-soft:#f7e6e2;--gold:#a8862a;
+--sans:system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;
+--serif:"Songti SC","Noto Serif SC",Georgia,serif;
+--mono:ui-monospace,"Cascadia Mono",Consolas,monospace;}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#12110f;color:var(--ink);font-family:var(--sans)}
+#deck{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{min-height:100%;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;
+  padding:5vh 7vw;background:var(--paper);border-bottom:1px solid #000}
+.slide-inner{max-width:1000px;width:100%;margin:0 auto}
+.slide-foot{max-width:1000px;width:100%;margin:3vh auto 0;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+h1.big{font-family:var(--serif);font-size:clamp(28px,4.4vw,54px);line-height:1.25;margin:0}
+blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-height:1.6;margin:0;
+  border-left:6px solid var(--gold);padding-left:24px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--jade);
+  text-transform:uppercase;margin-bottom:14px}
+.kicker.warn{color:var(--cinnabar)}
+p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
+.compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
+.compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+/* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
+.math{font-style:italic;font-family:var(--serif)}
+.math-block{display:block;text-align:center;font-family:var(--serif);font-size:1.05em;margin:.8em 0}
+.math-op,.math-text,.math-rm{font-style:normal}
+.math-op{padding:0 .12em}
+.math-cal{font-style:normal}
+.math-bb{font-style:normal;font-weight:700}
+.frac{display:inline-block;vertical-align:middle;text-align:center;font-style:normal;margin:0 .15em;line-height:1.15}
+.frac-num{display:block;padding:0 .3em;border-bottom:1px solid currentColor}
+.frac-den{display:block;padding:0 .3em}
+.math-sqrt{font-style:normal;margin-right:.05em}
+.math-line{border-top:1px solid currentColor;font-style:normal;padding-top:.05em}
+.math-note{font-size:.8em;font-style:normal}
+.figure-host{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+#hud{position:fixed;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#8a8578;
+  background:#faf8f3cc;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
+@media print{.slide{page-break-after:always;min-height:auto}#hud{display:none}}
+</style>
+</head>
+<body>
+<div id="deck">
+<section class="slide" data-i="0">
+  <div class="slide-inner"><h1 class="big">第 35 章 · 胃肠功能：四类功能、一条调控链与从症状反推环节</h1></div>
+  <div class="slide-foot"><span>1 / 27</span><span>title</span></div>
+</section>
+<section class="slide" data-i="1">
+  <div class="slide-inner"><blockquote class="motto">「运动把食物送到合适的位置并以合适的速度通过」——补充·hermes-病理生理学讲义·第35章·35.1（《hermes-病理生理学讲义·第35章·35.1》）</blockquote></div>
+  <div class="slide-foot"><span>2 / 27</span><span>motto</span></div>
+</section>
+<section class="slide" data-i="2">
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">这一章讲的全是正常功能，看起来像生理学的复述：慢波、胃酸、胰液、胆盐、刷状缘酶、屏障四层。可它的用处不在记住这些名词，而在得到一个<strong>反推法</strong>——胃肠病的症状是一组极不特异的词：腹胀、腹痛、腹泻、便秘、体重下降、贫血。同一组词既能由推进太慢引起，也能由推进太快引起；既能由分泌不足引起，也能由分泌过多引起。若不先立起四类功能的链条，这些词就只是六张互不相干的标签，症状再重也读不出环节。本章真正要交的是一句话：症状指向环节，而不是指向病名。</p></div>
+  <div class="slide-foot"><span>3 / 27</span><span>problem</span></div>
+</section>
+<section class="slide" data-i="3">
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（胃肠主诉是最容易被一句话打发的：腹胀说成「消化不好」，腹泻说成「吃坏了」，贫血说成「营养跟不上」。这三句话都跳过环节，直接把现象折成一个笼统结论；一旦这个习惯养成，后面整章的分型都落不到实处）+ 知识积累（本章 10 节、4208 个非空白字符，关键词频现算为「分泌」32 次、「吸收」19 次、「黏膜」16 次、「神经」10 次、「屏障」9 次、「运动」6 次。分泌与吸收占去大半笔墨，运动反而最省——这不是讲义轻视动力，而是动力在 35.2、35.3 两节里已被压成少数几个变量：节律、强度、括约肌的开与合。认不清这个分布，就会把注意力平均分给四条主线，然后在症状面前失去取舍）</p></div>
+  <div class="slide-foot"><span>4 / 27</span><span>roots</span></div>
+</section>
+<section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、四类功能不是四个器官，而是一条链</div>
+                <div class="compact"><p>35.1 先把消化道写成一条从口腔到肛管的肌性管道，管壁由内向外分黏膜层、黏膜下层、肌层与外膜，三层各担一事：黏膜承担分泌、吸收与屏障，黏膜下层承载血管、淋巴与神经，肌层负责运动。随后是本章的骨架句——功能被拆成运动、分泌、消化与吸收、屏障与免疫四条主线，而这四条不是并列的器官功能：</p>
+<blockquote><p>「四条主线不是并列的器官功能，而是同一条链上的四个环节」——补充·hermes-病理生理学讲义·第35章·35.1</p></blockquote>
+<p>链的写法决定了读法。运动负责位置与速度，分泌提供化学环境与酶，消化吸收把大分子拆成可转运的小分子，屏障决定「什么能进来、什么必须挡在外面」。四段首尾相接，任一环失衡，症状都落在同一小组表现上。</p>
+<p>这条链最实用的地方在下半句：</p>
+<blockquote><p>「从症状反推环节，是本章的基本方法」——补充·hermes-病理生理学讲义·第35章·35.1</p></blockquote></div></div>
+  <div class="slide-foot"><span>5 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、四类功能不是四个器官，而是一条链</div>
+                <div class="compact"><p>反推要问三个问题：推进太慢还是太快、分泌不足还是过多、面积不够还是酶不够。三个问题各自对应一组不同的追查方向，也各自对应不同的处理重心——这三问就是本章后面九节的索引。</p></div></div>
+  <div class="slide-foot"><span>6 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、运动：两个变量，四种收缩</div>
+                <div class="compact"><p>35.2 把平滑肌收缩拆成电活动与机械活动两层。起搏细胞是 Cajal 间质细胞，它产生慢波，即基本电节律：</p>
+<blockquote><p>「慢波本身通常不引起收缩，但它设定收缩的节律与最大频率」——补充·hermes-病理生理学讲义·第35章·35.2</p></blockquote>
+<p>慢波定节律与上限，叠加其上的动作电位（钙内流）定强度。两个变量一分开，运动障碍就自动分成两类：起搏与节律异常（ICC 丢失、电活动紊乱），以及兴奋-收缩耦联异常（离子通道、受体与信号通路）。分类不是背出来的，是从两个变量里长出来的。</p>
+<p>收缩形式有四种，各管一件事：蠕动由腔内容物扩张触发，口侧收缩、肛侧舒张，把内容物向前推；分节运动是局限的环形收缩，只混合不推进；紧张性收缩见于括约肌与胃底，维持基础张力；禁食期间还有移行性复合运动，以周期性清扫把残余内容物与细菌推向结肠。第四种形式常被低估——它一减弱，小肠细菌过度生长就有了条件，而这条线索在只问排便习惯的框架里根本看不见。</p>
+<p>讲义在这一节末尾拆掉了一个最常见的等式：</p></div></div>
+  <div class="slide-foot"><span>7 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、运动：两个变量，四种收缩</div>
+                <div class="compact"><blockquote><p>「推进力弱不一定表现为便秘」——补充·hermes-病理生理学讲义·第35章·35.2</p></blockquote>
+<p>推进弱而括约肌协同正常，表现是腹胀与排空延迟；括约肌在排便时反常收缩，表现才是排出困难。两者机制不同，处理方向也不同——同一句「便秘」，底下可能是两种病。</p></div></div>
+  <div class="slide-foot"><span>8 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、括约肌：同一类结构，两个方向的病</div>
+                <div class="compact"><p>35.3 把传输写成一道分段控制的闸门：上、下食管括约肌，幽门，回盲瓣，肛门内、外括约肌。下食管括约肌的张力由肌源性特性、抑制性神经递质与激素共同决定，餐后的一过性松弛是生理性反流的主要机制；松弛过频或基础张力过低，反流才由生理转为病理。</p>
+<p>胃排空遵循液体先于固体、可消化先于不可消化的顺序，并受十二指肠反馈调节：腔内脂肪、酸度升高与高渗都会减慢排空。这是一种保护性的刹车，使小肠有时间处理负荷——把它读成「胃动力差」，方向就反了。传输时间测定把便秘分成慢传输型与排出障碍型，前者推进力不足，后者括约肌协同失调。</p>
+<p>这一节给了一条可以复用到全章的对照：</p>
+<blockquote><p>「同一类结构，两个方向的病变，症状完全相反」——补充·hermes-病理生理学讲义·第35章·35.3</p></blockquote>
+<p>张力过低则内容物逆行，张力过高或不松弛则内容物淤滞。记住这一条，动力性疾病就不再需要逐个记：先问这个括约肌该开还是该关，再问它开得过头还是关得太死。</p></div></div>
+  <div class="slide-foot"><span>9 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">四、胃的分泌：三步换位与三促三抑</div>
+                <div class="compact"><p>35.4 从腺体的细胞构成讲起：壁细胞、主细胞、黏液颈细胞，加上散在的内分泌细胞——G 细胞分泌胃泌素，D 细胞分泌生长抑素，ECL 细胞分泌组胺。</p>
+<p>盐酸分泌的机制被压成「三步换位」：壁细胞内碳酸酐酶把二氧化碳与水合成碳酸，解离出的氢离子由质子泵泵入腺腔换取钾离子；碳酸氢根则经基底侧与氯离子交换进入血液，形成餐后短暂出现的碱潮。这一步的副产品值得记住——胃在泌酸的同时向血里送碱，两件事是同一个动作的两面。</p>
+<p>同一条通路还带出两件必需品。胃蛋白酶原由主细胞分泌，需在酸性环境中自我激活，所以胃酸是蛋白消化的前提；内因子也由壁细胞分泌，它与维生素 B12 结合后在回肠末端被识别吸收。于是「酸少」不只是消化问题，还是吸收问题——这一句把 35.4 与 35.7 提前接上了。</p>
+<p>调节是「三促三抑」：乙酰胆碱、胃泌素与组胺三者协同放大分泌，组胺是共同的最后通路；生长抑素、前列腺素与腔内酸度升高构成的负反馈抑制分泌。讲义由此推出两个现象：</p></div></div>
+  <div class="slide-foot"><span>10 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、胃的分泌：三步换位与三促三抑</div>
+                <div class="compact"><blockquote><p>「抑酸治疗会抬高胃泌素水平，停药时可能出现酸分泌的反跳」——补充·hermes-病理生理学讲义·第35章·35.4</p></blockquote>
+<p>第二个现象是长期强效抑酸使胃内酸度偏低，影响铁与维生素 B12 的吸收并改变腔内菌群。两个现象合起来说明一件事：抑酸不是把一条通路关掉，而是把整个负反馈环整体平移——环一动，远处的指标跟着动。</p></div></div>
+  <div class="slide-foot"><span>11 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">五、胰液与胆汁：酶量与溶媒体积必须匹配</div>
+                <div class="compact"><p>35.5 把外分泌分成两半：腺泡细胞合成酶与酶原，导管细胞分泌富含碳酸氢盐的液体。促胰液素由十二指肠腔内酸度升高触发，作用于导管细胞；胆囊收缩素由脂肪与蛋白分解产物触发，作用于腺泡细胞。二者分工的要点是：</p>
+<blockquote><p>「只有酶没有液体，酶无法被送达并发挥作用」——补充·hermes-病理生理学讲义·第35章·35.5</p></blockquote>
+<p>这句话解释了一类容易被误读的情形：酶本身不缺，缺的是把酶送到的介质。查「酶」查不出问题，不等于分泌功能完好。</p>
+<p>胆汁这一半讲得极省，却埋伏了一个高频记错点。胆盐是胆汁酸与甘氨酸或牛磺酸的结合物，具两亲性，能把脂肪乳化为微胶粒：</p>
+<blockquote><p>「它是物理乳化剂，不是酶」——补充·hermes-病理生理学讲义·第35章·35.5</p></blockquote>
+<p>乳化与水解是两件事。把胆盐当酶，就会在脂肪泻的推理里找错环节。胆盐在回肠末端被主动重吸收，经门静脉回肝，构成肠肝循环，使有限的胆盐池反复使用；胆囊在消化间期浓缩并储存胆汁，进食后收缩排空。</p></div></div>
+  <div class="slide-foot"><span>12 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">五、胰液与胆汁：酶量与溶媒体积必须匹配</div>
+                <div class="compact"><p>小肠的分泌与吸收则同时进行：隐窝细胞分泌氯离子与水，绒毛上皮吸收，净流向决定粪便含水量。分泌侧被持续激活而超出结肠回收能力时，就是分泌性腹泻的原型——这一句是 36.10 分型的前身。</p></div></div>
+  <div class="slide-foot"><span>13 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">六、消化两期与吸收地图</div>
+                <div class="compact"><p>35.6 把消化分两期。腔内消化靠酸、胃蛋白酶与胰酶，把大分子切成寡聚体；膜性消化靠刷状缘酶完成最后一步，并且酶与转运体紧邻，使水解产物就地吸收。讲义对这一设计的评价只有一句：</p>
+<blockquote><p>「水解与转运耦联」——补充·hermes-病理生理学讲义·第35章·35.6</p></blockquote>
+<p>耦联的用处是避免产物在腔内被细菌利用或稀释——效率不是靠酶更强，而是靠位置更近。</p></div></div>
+  <div class="slide-foot"><span>14 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">六、消化两期与吸收地图</div>
+                <div class="compact"><p>三条营养通路的写法各有侧重。碳水化合物：淀粉经唾液与胰淀粉酶切成麦芽糖与极限糊精，刷状缘的麦芽糖酶、蔗糖酶、乳糖酶再水解为单糖；膳食纤维不被人体酶分解，在结肠被菌群发酵为短链脂肪酸，为结肠上皮供能。蛋白质：胃内酸与胃蛋白酶初步水解，小肠内胰蛋白酶、糜蛋白酶与羧肽酶继续切割，刷状缘肽酶切成氨基酸；小肽还可经 PepT1 直接吸收，在氨基酸转运体缺陷时这条通路仍是重要补偿。脂肪走一条最长的链：胆盐乳化 → 胰脂肪酶与共脂肪酶作用 → 单酰甘油与游离脂肪酸 → 与胆盐形成混合微胶粒 → 在上皮表面释放并扩散入胞 → 在内质网重新酯化 → 组装乳糜微粒 → 经淋巴入血。</p>
+<p>脂肪这一链的用处在于它把脂肪泻拆成四类原因，且四类各有不同的伴随表现：</p>
+<blockquote><p>「胰酶不足、胆盐缺乏、黏膜面积减少或淋巴回流受阻」——补充·hermes-病理生理学讲义·第35章·35.6</p></blockquote>
+<p>四类原因对应四种伴随表现，这句话是全章最省力的鉴别框架之一：不看粪便看伴随，伴随指向环节。</p></div></div>
+  <div class="slide-foot"><span>15 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">六、消化两期与吸收地图</div>
+                <div class="compact"><p>35.7 补上部位地图，这张图是解释局限病变症状的钥匙。十二指肠与近端空肠吸收铁与钙，铁以二价形式经转运体进入细胞，胃酸有助于铁的还原与释放；钙的吸收依赖维生素 D 诱导的钙结合蛋白。回肠末端专司维生素 B12-内因子复合物与胆盐的重吸收。结肠主要回收钠与水，受醛固酮调节，并吸收短链脂肪酸。</p>
+<p>地图一立，三条推论自动出现：</p>
+<blockquote><p>「回肠末端切除或病变，同时造成维生素 B12 缺乏（巨幼细胞性贫血）与胆盐丢失」——补充·hermes-病理生理学讲义·第35章·35.7</p></blockquote>
+<p>一处于病变，两个系统受累：B12 缺乏走贫血方向，胆盐丢失走腹泻方向（胆盐进入结肠刺激分泌）。胃大部切除则使铁与维生素 B12 的吸收双重受损；广泛小肠切除导致短肠综合征，剩余黏膜面积不足以维持吸收。讲义还给了一句诊断学上的提醒：吸收障碍的表现是选择性的，因为各营养素依赖的环节不同——脂肪与脂溶性维生素最先受累，随后是蛋白质与矿物质。评估时按营养素逐个核对，而不是只看体重。</p></div></div>
+  <div class="slide-foot"><span>16 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">七、屏障四层与前列腺素</div>
+                <div class="compact"><p>35.8 把黏膜屏障写成四层：黏液-碳酸氢盐层构成物理化学屏障，使上皮表面维持近中性；上皮层靠紧密连接封闭细胞间隙；黏膜免疫层以分泌型 IgA、黏膜相关淋巴组织与派尔集合淋巴结识别并清除抗原；黏膜下血流与修复机制提供能量与细胞更新。</p>
+<p>四层里最容易被低估的是最后一层。血流不是背景条件，而是修复的物质前提——这一点在下一句里被点成机制：</p>
+<blockquote><p>「促进黏液与碳酸氢盐分泌、增加黏膜血流、加速上皮修复」——补充·hermes-病理生理学讲义·第35章·35.8</p></blockquote>
+<p>这是前列腺素的三条保护通路。非甾体抗炎药抑制环氧化酶，三条同时被削弱，这就是药物性溃疡的机制核心，也解释了为什么这类药物在没有酸相关症状的人身上同样能造成黏膜损伤——损伤的门槛不在症状，而在屏障的余量。</p>
+<p>屏障受损后，腔内细菌与抗原易位，激活黏膜免疫，炎症介质又进一步破坏紧密连接，形成通透性升高、炎症、更通透的正反馈。讲义在这里加了一句分寸很紧的限定：</p></div></div>
+  <div class="slide-foot"><span>17 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">七、屏障四层与前列腺素</div>
+                <div class="compact"><blockquote><p>「通透性升高与多种疾病相关，但把它当作独立病因的证据并不充分」——补充·hermes-病理生理学讲义·第35章·35.8</p></blockquote>
+<p>相关不等于因果，这句话在本章后半段反复用得着——尤其是功能性胃肠病那一节。</p></div></div>
+  <div class="slide-foot"><span>18 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">八、肠神经与脑-肠轴：为什么同一刺激有两种症状负荷</div>
+                <div class="compact"><p>35.9 讲肠神经系统：肌间神经丛与黏膜下神经丛，神经元数量庞大，</p>
+<blockquote><p>「能在脱离中枢的情况下独立完成局部反射」——补充·hermes-病理生理学讲义·第35章·35.9</p></blockquote>
+<p>腔内扩张引起口侧收缩、肛侧舒张，就是最典型的一例。但它并非独立王国，持续被交感与副交感通路调制。</p>
+<p>脑-肠轴是双向的：迷走神经以传入为主，把内脏机械与化学信号送往上位中枢；下行通路通过自主神经与 HPA 轴调节动力、分泌与通透性。第三类感受器是肠内分泌细胞：肠嗜铬细胞产生体内大部分的血清素，参与蠕动与分泌反射；L 细胞分泌 GLP-1，I 细胞分泌 CCK。</p>
+<p>由此得到功能性胃肠病的整合模型，讲义把它写成一条箭头链：</p>
+<blockquote><p>「心理社会应激 → 中枢放大与自主神经失衡 → 内脏高敏感 + 动力异常 + 黏膜低度炎症 + 菌群改变 → 症状」——补充·hermes-病理生理学讲义·第35章·35.9</p></blockquote></div></div>
+  <div class="slide-foot"><span>19 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">八、肠神经与脑-肠轴：为什么同一刺激有两种症状负荷</div>
+                <div class="compact"><p>这条链解答了一个常被问偏的问题：决定症状负荷的不是刺激强度单一变量，而是刺激强度与放大增益的乘积。同一个刺激在不同人身上引起完全不同的负荷，不是谁在夸大，而是增益不同。</p></div></div>
+  <div class="slide-foot"><span>20 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">九、生命周期与餐后整合</div>
+                <div class="compact"><p>35.10 只有两段，讲的是把前面八节放回时间轴。新生儿与婴儿的乳糖酶活性相对不足，屏障与免疫尚不完善，下食管括约肌张力偏低，因此溢乳与喂养不耐受常见。讲义对这类情形给了一句很克制的判断：</p>
+<blockquote><p>「这些多为发育性问题，随年龄改善，不宜一律按疾病处理」——补充·hermes-病理生理学讲义·第35章·35.10</p></blockquote>
+<p>老年人则是另一组变化：味觉与嗅觉减退、咀嚼与吞咽协调下降、胃酸偏低、传输减慢与菌群构成改变；同时多种合并用药通过抗胆碱能、抑酸、泻药等机制叠加影响动力与屏障。注意最后一项——药物不是背景，而是机制的一部分。</p>
+<p>整合的落点是餐后反应：进食后胃肠血流增加、动力与分泌被协调激活，胃结肠反射是其一。讲义对此的判断是：</p>
+<blockquote><p>「任何一环失效都以同一组非特异症状出现」——补充·hermes-病理生理学讲义·第35章·35.10</p></blockquote></div></div>
+  <div class="slide-foot"><span>21 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">九、生命周期与餐后整合</div>
+                <div class="compact"><p>所以护理评估要把进食方式、用药、排便习惯、体重趋势与实验室的方向性变化放在同一条时间线上看，而不是孤立解释单个症状。时间线是本章唯一能对抗症状非特异性的工具。</p></div></div>
+  <div class="slide-foot"><span>22 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">十、节级落位：讲义 35.1–35.10</div>
+                <div class="compact"><div class="table-wrap"><table><thead><tr><th>节号</th><th>一句话落位</th></tr></thead><tbody><tr><td>35.1 功能解剖与四类功能</td><td>四类功能是一条链的四环；从症状反推环节是本篇方法</td></tr><tr><td>35.2 运动：慢波与收缩形式</td><td>慢波定节律、动作电位定强度；推进弱不等于便秘</td></tr><tr><td>35.3 括约肌与分段控制</td><td>同一结构两个方向；排空刹车是保护而非动力差</td></tr><tr><td>35.4 胃的分泌</td><td>三步换位带出碱潮与内因子；三促三抑与停药反跳</td></tr><tr><td>35.5 胰液、胆汁与小肠分泌</td><td>酶量与溶媒体积须匹配；胆盐是乳化剂不是酶</td></tr><tr><td>35.6 消化两期</td><td>腔内期与膜性期；脂肪链断开处即脂肪泻的四类原因</td></tr><tr><td>35.7 吸收部位地图</td><td>铁钙在前段、B12 与胆盐在回肠末端；选择性受累</td></tr><tr><td>35.8 屏障四层</td><td>四层结构＋前列腺素三条通路；相关不等于因果</td></tr><tr><td>35.9 肠神经与脑-肠轴</td><td>局部反射可独立完成；症状负荷由刺激乘增益决定</td></tr><tr><td>35.10 生命周期与餐后整合</td><td>发育性问题不宜一律按疾病处理；时间是唯一解药</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>23 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">十、节级落位：讲义 35.1–35.10</div>
+                <div class="compact"><p>十节的次序是链的次序：35.1 定链，35.2 与 35.3 给运动，35.4 与 35.5 给分泌，35.6 与 35.7 给消化吸收，35.8 给屏障，35.9 给调控，35.10 把前九节放回时间轴。若从 35.2 开始读，会把本章读成一份器官功能清单；从 35.1 开始读，才知道每节在链上占了哪一格。</p></div></div>
+  <div class="slide-foot"><span>24 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="24">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>引文只有一层。</strong> 本章引文格式统一为<code>补充·hermes-病理生理学讲义·第35章·N.M</code>，章号等于课程章号，节号逐条真实存在。讲义是本仓库原创的教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义这一章通篇不用数字加计量单位说话，凡可量化处一律改写成方向与类别——增加、减少、偏低、过频、不足。本书照录这一取舍：<strong>描述类别可以，给出取值不行。</strong> 本页的规模与词频由 <code>node code/main.js</code> 现算，但讲义究竟用了几个数值，不由本页断言，凡需核实请回到讲义正文逐节核对。</li><li><strong>不写正常值、参考区间与单位。</strong> 凡遇多少算胃酸偏低、多少算排空延迟的追问，统一回本书不给值，另立数据层、另立来源与校验。</li><li><strong>不作诊断，也不作正常与异常的判定。</strong> 运动、分泌、吸收、屏障在本章只作功能类别；溢乳、腹胀、体重下降只作机制线索，不作任何人的状态判断。</li></ul></div></div>
+  <div class="slide-foot"><span>25 / 27</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="25">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>凡涉个体，一律中性表述、不贴标签、不作疗效断言。</p>
+<ul><li><strong>不写治疗方案。</strong> 讲义只在机制层提抑酸、乳糖回避一类方向；本页不写药物、剂量与疗程，也不写任何检查的操作与判读。</li><li><strong>一处推论被主动收窄。</strong> 通透性升高与多种疾病相关，讲义自己限定它不宜作独立病因；本页照此保留限定，不把它推成病因结论。</li><li><strong>边界声明</strong>：本章只解释讲义给出的四类功能与调节环节的类别，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
+  <div class="slide-foot"><span>26 / 27</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="26">
+  <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
+  <div class="slide-foot"><span>27 / 27</span><span>disclaimer</span></div>
+</section>
+</div>
+<div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>
+<script>/**
+ * [tcmP] figures.js —— 中医概念动画图（纯 SVG + rAF，无依赖）
+ *
+ * 自动挂载：文档里写
+ *     <div data-figure="wuxing-cycle"></div>
+ * 即可。支持悬停暂停；系统开启「减少动态效果」时渲染为静态帧。
+ *
+ * 与 ai-engineering-from-scratch 的 site/figures.js 同构（同样的 el/loop/registry 形态），
+ * 图目换成中医概念：
+ *   yin-yang-sigmoid    阴阳 → 二分类：sigmoid 决策边界扫过，样本左右归属翻转
+ *   wuxing-cycle        五行生克：相生正向流动 + 相克五角星流动
+ *   zangxiang-graph     藏象：脏腑 → 官窍 → 情志 的边逐步点亮
+ *   sizhen-fusion       四诊合参：四通道 → 融合层 → 证候输出
+ *   meridian-lookup     经络腧穴：KD-Tree 空间划分 + 最近邻查询
+ *   junchen-attention   君臣佐使：药味 → 权重矩阵高亮
+ */
+
+(function () {
+  'use strict';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── SVG 小工具 ──
+  function el(name, attrs, kids) {
+    const e = document.createElementNS(NS, name);
+    for (const k in attrs || {}) e.setAttribute(k, attrs[k]);
+    (Array.isArray(kids) ? kids : kids ? [kids] : []).filter(Boolean).forEach((c) => e.appendChild(c));
+    return e;
+  }
+  const txt = (s) => document.createTextNode(s);
+
+  function label(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--sans)', 'font-size': 12, fill: 'var(--muted)' },
+      opts || {}
+    ), [txt(s)]);
+  }
+  function mono(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--mono)', 'font-size': 11, fill: 'var(--muted)', 'letter-spacing': '.1em' },
+      opts || {}
+    ), [txt(s)]);
+  }
+
+  function svgRoot(host, W, H, aria) {
+    const svg = el('svg', {
+      viewBox: `0 0 ${W} ${H}`, width: '100%', role: 'img', 'aria-label': aria || '',
+      style: 'display:block;max-width:100%;height:auto',
+    });
+    host.appendChild(svg);
+    return svg;
+  }
+
+  // 悬停暂停 + 时间归一化
+  function loop(host, fn, period, opts) {
+    period = period || 6400;
+    opts = opts || {};
+    let raf, paused = false, t0 = performance.now();
+    const onTick = (now) => {
+      if (!paused) fn((((now - t0) % period) / period));
+      raf = requestAnimationFrame(onTick);
+    };
+    host.addEventListener('mouseenter', () => { paused = true; });
+    host.addEventListener('mouseleave', () => { paused = false; });
+    if (REDUCED) { fn(opts.staticT == null ? 0.62 : opts.staticT); return function () {}; }
+    raf = requestAnimationFrame(onTick);
+    return () => cancelAnimationFrame(raf);
+  }
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeIO = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const sigmoid = (z) => 1 / (1 + Math.exp(-z));
+
+  const FIGURES = {};
+
+  /* ───────────────────── yin-yang-sigmoid ─────────────────────
+     阴阳 → 二分类。左侧散点：X 轴「寒热倾向」，输出 sigmoid 概率。
+     扫描线扫过阈值，样本随阈值的移动左右换边，右侧给出准确率。
+  */
+  FIGURES['yin-yang-sigmoid'] = function (host) {
+    const W = 720, H = 400, PAD = 54;
+    const svg = svgRoot(host, W, H, '阴阳二分类与 sigmoid 决策边界');
+    const plotW = W - PAD * 2, plotH = H - 150;
+
+    // 样本：12 条八纲典型证候（阴=0 阳=1）
+    const data = [
+      [-2.2, 0], [-1.8, 0], [-1.4, 0], [-1.1, 0], [-0.6, 0], [-0.2, 0],
+      [0.2, 1], [0.6, 1], [1.1, 1], [1.5, 1], [1.9, 1], [2.4, 1],
+    ];
+    const X = (v) => PAD + ((v + 3) / 6) * plotW;
+    const Y = (p) => H - 90 - p * plotH;
+
+    // 坐标轴
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: W - PAD, y2: H - 90, stroke: 'var(--line)' }));
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: PAD, y2: H - 90 - plotH, stroke: 'var(--line)' }));
+    svg.appendChild(mono(PAD, H - 72, '寒 / 阴 →'));
+    svg.appendChild(mono(W - PAD, H - 72, '← 热 / 阳', { 'text-anchor': 'end' }));
+    svg.appendChild(mono(8, PAD - 22, 'P(阳)'));
+    svg.appendChild(mono(W - PAD - 130, 26, 'sigmoid 决策边界'));
+
+    const curve = el('path', { d: '', fill: 'none', stroke: 'var(--jade)', 'stroke-width': 2.5 });
+    svg.appendChild(curve);
+    const threshLine = el('line', { stroke: 'var(--cinnabar)', 'stroke-dasharray': '5 4', 'stroke-width': 1.6 });
+    svg.appendChild(threshLine);
+
+    const pts = data.map(([x, y]) => {
+      const g = el('g', {});
+      const c = el('circle', { r: 6, cx: X(x), cy: H - 90 - 0.5 * plotH, fill: y ? 'var(--cinnabar)' : 'var(--jade)', opacity: 0.85 });
+      const cls = el('text', {
+        x: X(x), y: H - 90 - 0.5 * plotH + 4, 'text-anchor': 'middle',
+        'font-family': 'var(--sans)', 'font-size': 10, fill: '#fff',
+      }, [txt(y ? '阳' : '阴')]);
+      g.appendChild(c); g.appendChild(cls);
+      svg.appendChild(g);
+      return { x, y, c, cls };
+    });
+
+    const accText = label(PAD, 26, '', { fill: 'var(--ink)', 'font-size': 13 });
+    svg.appendChild(accText);
+
+    let pathD = '';
+    for (let i = 0; i <= 60; i += 1) {
+      const xv = -3 + (i / 60) * 6;
+      const p = sigmoid(1.6 * xv + 0.1);
+      pathD += `${i === 0 ? 'M' : 'L'}${X(xv).toFixed(1)},${Y(p).toFixed(1)}`;
+    }
+    curve.setAttribute('d', pathD);
+
+    loop(host, (t) => {
+      // 阈值在 0..1 之间来回扫
+      const thr = 0.15 + 0.7 * easeIO(1 - Math.abs(2 * t - 1));
+      const pThr = 0.1 + thr * 0.85;
+      const xThr = (Math.log(pThr / (1 - pThr)) - 0.1) / 1.6;
+      threshLine.setAttribute('x1', X(xThr));
+      threshLine.setAttribute('x2', X(xThr));
+      threshLine.setAttribute('y1', H - 90 - plotH - 6);
+      threshLine.setAttribute('y2', H - 90);
+
+      let correct = 0;
+      for (const p of pts) {
+        const prob = sigmoid(1.6 * p.x + 0.1);
+        const pred = prob >= pThr ? 1 : 0;
+        if (pred === p.y) correct += 1;
+        p.c.setAttribute('cy', Y(prob));
+        p.cls.setAttribute('y', Y(prob) + 4);
+        p.c.setAttribute('r', pred === p.y ? 7 : 5);
+        p.c.setAttribute('opacity', pred === p.y ? 0.92 : 0.32);
+        p.cls.setAttribute('opacity', pred === p.y ? 1 : 0.25);
+        // 判错的样本画一圈红
+        p.c.setAttribute('stroke', pred === p.y ? 'none' : 'var(--cinnabar)');
+        p.c.setAttribute('stroke-width', pred === p.y ? 0 : 2);
+      }
+      accText.textContent = `阈值 P=${pThr.toFixed(2)} · 准确率 ${correct}/${pts.length} = ${((correct / pts.length) * 100).toFixed(0)}%`;
+    }, 7200);
+  };
+
+  /* ───────────────────── wuxing-cycle ─────────────────────
+     五行生克。外圈相生（顺时针流动），内五角星相克。
+  */
+  FIGURES['wuxing-cycle'] = function (host) {
+    const W = 720, H = 440, cx = W / 2 - 70, cy = H / 2, R = 148;
+    const svg = svgRoot(host, W, H, '五行生克关系');
+    const names = ['木', '火', '土', '金', '水'];
+    const colors = ['var(--jade)', 'var(--cinnabar)', 'var(--gold)', '#8a6d3b', '#2a4d69'];
+    const node = names.map((_, i) => {
+      const a = -Math.PI / 2 + (i / 5) * Math.PI * 2;
+      return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), a };
+    });
+
+    // 相生边（外圈，顺时针 木→火→土→金→水→木）
+    const sheng = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const p = el('path', {
+        d: `M${n.x},${n.y} Q${(n.x + m.x) / 2 + (cy - (n.y + m.y) / 2) * 0.16},${(n.y + m.y) / 2 + ((n.x + m.x) / 2 - cx) * 0.16} ${m.x},${m.y}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.28,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+    // 相克边（五角星）
+    const ke = node.map((n, i) => {
+      const m = node[(i + 2) % 5];
+      const p = el('line', {
+        x1: n.x, y1: n.y, x2: m.x, y2: m.y,
+        stroke: 'var(--cinnabar)', 'stroke-width': 1.4, 'stroke-dasharray': '4 4', opacity: 0.2,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+
+    // 沿边流动的点
+    const flow = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const g = el('circle', { r: 4, fill: 'var(--jade)', cx: n.x, cy: n.y, opacity: 0 });
+      svg.appendChild(g);
+      return { g, from: n, to: m };
+    });
+
+    const nodes = node.map((n, i) => {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: n.x, cy: n.y, r: 30, fill: '#fff', stroke: colors[i], 'stroke-width': 2 }));
+      g.appendChild(el('text', {
+        x: n.x, y: n.y + 8, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 22, fill: colors[i],
+      }, [txt(names[i])]));
+      svg.appendChild(g);
+      return g;
+    });
+
+    // 右栏说明
+    svg.appendChild(mono(W - 190, 60, '相生 (outer)'));
+    svg.appendChild(label(W - 190, 82, '木→火→土→金→水→木', { fill: 'var(--jade)' }));
+    svg.appendChild(mono(W - 190, 130, '相克 (star)'));
+    svg.appendChild(label(W - 190, 152, '木克土 · 土克水 · 水克火', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(label(W - 190, 170, '火克金 · 金克木', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(mono(W - 190, 220, '建模要点'));
+    svg.appendChild(label(W - 190, 242, '5 类 + 有向约束', { fill: 'var(--ink)' }));
+    svg.appendChild(label(W - 190, 262, '纯 softmax 会丢掉', { fill: 'var(--muted)' }));
+    svg.appendChild(label(W - 190, 280, '全部关系信息', { fill: 'var(--muted)' }));
+
+    const capt = label(W - 190, H - 30, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const phase = (t * 5) % 5;
+      for (let i = 0; i < 5; i += 1) {
+        const f = flow[i];
+        const local = clamp01(phase - i);
+        const k = easeIO(local);
+        f.g.setAttribute('cx', lerp(f.from.x, f.to.x, k));
+        f.g.setAttribute('cy', lerp(f.from.y, f.to.y, k));
+        f.g.setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.95 : 0);
+        sheng[i].setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.75 : 0.28);
+        const keOn = phase - i >= 0 && phase - i <= 1.4;
+        ke[i].setAttribute('opacity', keOn ? 0.55 : 0.2);
+      }
+      const active = Math.floor(phase) % 5;
+      nodes.forEach((g, i) => g.querySelector('circle').setAttribute('stroke-width', i === active ? 4 : 2));
+      capt.textContent = `当前传导：${names[active]} → ${names[(active + 1) % 5]}（生） / ${names[active]} 克 ${names[(active + 2) % 5]}`;
+    }, 7000);
+  };
+
+  /* ───────────────────── zangxiang-graph ─────────────────────
+     藏象：五脏 → 官窍 → 情志，边按序点亮。
+  */
+  FIGURES['zangxiang-graph'] = function (host) {
+    const W = 720, H = 430;
+    const svg = svgRoot(host, W, H, '藏象学说的脏腑-官窍-情志关系图');
+
+    const zang = [
+      { n: '肝', x: 110, y: 100, qiao: ['目'], zhi: '怒' },
+      { n: '心', x: 110, y: 210, qiao: ['舌'], zhi: '喜' },
+      { n: '脾', x: 110, y: 320, qiao: ['口'], zhi: '思' },
+      { n: '肺', x: 610, y: 100, qiao: ['鼻'], zhi: '悲' },
+      { n: '肾', x: 610, y: 210, qiao: ['耳'], zhi: '恐' },
+    ];
+    const edges = [];
+
+    for (const z of zang) {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: z.x, cy: z.y, r: 26, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+      g.appendChild(el('text', { x: z.x, y: z.y + 8, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 20, fill: 'var(--cinnabar)' }, [txt(z.n)]));
+      svg.appendChild(g);
+
+      const qx = W / 2 + (z.x < 300 ? -40 : 40);
+      g.appendChild(el('line', { x1: z.x + (z.x < 300 ? 26 : -26), y1: z.y, x2: qx - (z.x < 300 ? 22 : -22), y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+
+      const qg = el('g', {});
+      qg.appendChild(el('rect', { x: qx - 22, y: z.y - 14, width: 44, height: 28, rx: 6, fill: 'var(--jade-soft)', stroke: 'var(--jade)', 'stroke-width': 1.3 }));
+      qg.appendChild(el('text', { x: qx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--jade)' }, [txt(z.qiao[0])]));
+      svg.appendChild(qg);
+
+      const zx = W - 110;
+      g.appendChild(el('line', { x1: qx + 22, y1: z.y, x2: zx - 24, y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      const zg = el('g', {});
+      zg.appendChild(el('circle', { cx: zx, cy: z.y, r: 22, fill: '#fdf1dd', stroke: 'var(--gold)', 'stroke-width': 1.3 }));
+      zg.appendChild(el('text', { x: zx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--gold)' }, [txt(z.zhi)]));
+      svg.appendChild(zg);
+
+      edges.push({ zy: z.y, e1: g.querySelector('line'), e2: g.querySelectorAll('line')[1], qg, zg });
+    }
+
+    svg.appendChild(mono(110 - 30, 40, '藏 / 五藏'));
+    svg.appendChild(mono(W / 2 - 30, 40, '象 / 官窍'));
+    svg.appendChild(mono(W - 110 - 30, 40, '情志'));
+    const capt = label(20, H - 14, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const step = t * 5;
+      edges.forEach((e, i) => {
+        const on = step >= i;
+        e.e1.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        e.e2.setAttribute('stroke', on ? 'var(--gold)' : 'var(--line)');
+        e.qg.setAttribute('opacity', on ? 1 : 0.35);
+        e.zg.setAttribute('opacity', on ? 1 : 0.35);
+      });
+      const cur = zang[Math.min(4, Math.floor(step))];
+      capt.textContent = cur ? `点亮中：${cur.n} 开窍于 ${cur.qiao[0]}，在志为${cur.zhi}` : '';
+    }, 6200, { staticT: 0.99 });
+  };
+
+  /* ───────────────────── sizhen-fusion ─────────────────────
+     四诊合参：四通道 → 融合层 → 证候。演示模态缺失时的降级。
+  */
+  FIGURES['sizhen-fusion'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '四诊合参的多模态融合与模态缺失降级');
+    const chans = [
+      { n: '望', d: '舌象 / 面色', y: 60 },
+      { n: '闻', d: '语声 / 气息', y: 130 },
+      { n: '问', d: '主诉 / 现病史', y: 200 },
+      { n: '切', d: '脉搏波', y: 270 },
+    ];
+    const fx = 330, fy = 165;
+    const outx = 600;
+
+    const fxG = el('g', {});
+    fxG.appendChild(el('rect', { x: fx - 52, y: fy - 46, width: 104, height: 92, rx: 10, fill: '#fff', stroke: 'var(--jade)', 'stroke-width': 2 }));
+    fxG.appendChild(el('text', { x: fx, y: fy - 14, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--jade)' }, [txt('融合层')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 8, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('交叉注意力')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 26, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('+ 缺失掩码')]));
+    svg.appendChild(fxG);
+
+    const outG = el('g', {});
+    outG.appendChild(el('rect', { x: outx - 46, y: fy - 32, width: 92, height: 64, rx: 10, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+    outG.appendChild(el('text', { x: outx, y: fy - 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--cinnabar)' }, [txt('证候')]));
+    outG.appendChild(el('text', { x: outx, y: fy + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('带置信度')]));
+    svg.appendChild(outG);
+
+    svg.appendChild(el('line', { x1: fx + 52, y1: fy, x2: outx - 46, y2: fy, stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+
+    const inG = chans.map((c) => {
+      const g = el('g', {});
+      g.appendChild(el('rect', { x: 24, y: c.y - 24, width: 150, height: 48, rx: 8, fill: '#fff', stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      g.appendChild(el('text', { x: 40, y: c.y - 2, 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--ink)' }, [txt(c.n + '诊')]));
+      g.appendChild(el('text', { x: 40, y: c.y + 16, 'font-size': 11, fill: 'var(--muted)' }, [txt(c.d)]));
+      svg.appendChild(g);
+      const path = el('path', {
+        d: `M174,${c.y} C 250,${c.y} 260,${fy} ${fx - 52},${fy}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.22,
+      });
+      svg.appendChild(path);
+      const dot = el('circle', { r: 4, fill: 'var(--jade)', opacity: 0 });
+      svg.appendChild(dot);
+      return { g, path, dot, y: c.y };
+    });
+
+    const capt = label(24, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    // 循环：全模态 → 缺闻诊 → 缺闻+切 → 恢复
+    const phases = [[1, 1, 1, 1], [1, 0, 1, 1], [1, 0, 1, 0], [1, 1, 1, 1]];
+    loop(host, (t) => {
+      const idx = Math.min(phases.length - 1, Math.floor(t * phases.length));
+      const mask = phases[idx];
+      const missing = [];
+      mask.forEach((m, i) => { if (!m) missing.push(chans[i].n); });
+
+      inG.forEach((c, i) => {
+        const on = mask[i] === 1;
+        c.g.style.opacity = on ? 1 : 0.3;
+        c.path.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        c.path.setAttribute('stroke-dasharray', on ? 'none' : '4 4');
+        c.path.setAttribute('opacity', on ? 0.55 : 0.25);
+        const local = clamp01(t * 4 - idx);
+        c.dot.setAttribute('cx', lerp(174, fx - 52, easeIO(local)));
+        c.dot.setAttribute('cy', lerp(c.y, fy, easeIO(local)));
+        c.dot.setAttribute('opacity', on ? 0.95 : 0);
+      });
+
+      const conf = 0.62 + 0.1 * mask.filter(Boolean).length;
+      outG.style.opacity = 0.4 + 0.6 * conf;
+      capt.textContent = missing.length
+        ? `模态缺失：缺 ${missing.join('、')} → 置信度降至 ${(conf * 100).toFixed(0)}%，系统须显式降级而非静默猜测`
+        : `四诊齐备 → 置信度 ${(conf * 100).toFixed(0)}%`;
+    }, 8800, { staticT: 0.35 });
+  };
+
+  /* ───────────────────── meridian-lookup ─────────────────────
+     腧穴检索：KD-Tree 空间划分 + 最近邻查询。
+  */
+  FIGURES['meridian-lookup'] = function (host) {
+    const W = 720, H = 400, PAD = 40;
+    const svg = svgRoot(host, W, H, '腧穴的空间划分与最近邻检索');
+    const plotW = W - PAD * 2 - 30, plotH = H - 110;
+
+    // 模拟体表腧穴点集（合谷、内关、足三里、三阴交等 18 穴）
+    let seed = 20261012;
+    const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+    const pts = Array.from({ length: 18 }, () => ({ x: PAD + 30 + rnd() * (plotW - 60), y: PAD + 20 + rnd() * (plotH - 40) }));
+
+    // KD-Tree 递归划分线
+    const lines = [];
+    (function build(list, depth) {
+      if (list.length < 2) return;
+      const axis = depth % 2;
+      const sorted = list.slice().sort((a, b) => (axis ? a.y - b.y : a.x - b.x));
+      const med = sorted[Math.floor(sorted.length / 2)];
+      if (axis) {
+        const minX = Math.min(...list.map((p) => p.x));
+        const maxX = Math.max(...list.map((p) => p.x));
+        lines.push({ x1: minX, y1: med.y, x2: maxX, y2: med.y, depth });
+        build(list.filter((p) => p.y < med.y), depth + 1);
+        build(list.filter((p) => p.y >= med.y), depth + 1);
+      } else {
+        const minY = Math.min(...list.map((p) => p.y));
+        const maxY = Math.max(...list.map((p) => p.y));
+        lines.push({ x1: med.x, y1: minY, x2: med.x, y2: maxY, depth });
+        build(list.filter((p) => p.x < med.x), depth + 1);
+        build(list.filter((p) => p.x >= med.x), depth + 1);
+      }
+    })(pts, 0);
+
+    const lineEls = lines.map((l) => {
+      const e = el('line', { x1: l.x1, y1: l.y1, x2: l.x2, y2: l.y2, stroke: 'var(--line)', 'stroke-width': 1, opacity: 0 });
+      svg.appendChild(e);
+      return { e, depth: l.depth };
+    });
+
+    const dotEls = pts.map((p, i) => {
+      const c = el('circle', { cx: p.x, cy: p.y, r: 4.5, fill: 'var(--jade)', opacity: 0.75 });
+      svg.appendChild(c);
+      const t = el('text', { x: p.x + 7, y: p.y + 4, 'font-size': 10, fill: 'var(--muted)', opacity: 0 });
+      t.appendChild(txt(`穴${String(i + 1).padStart(2, '0')}`));
+      svg.appendChild(t);
+      return { c, t, p };
+    });
+
+    const query = el('circle', { r: 8, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 2.2 });
+    svg.appendChild(query);
+    const ring = el('circle', { r: 0, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 1, 'stroke-dasharray': '3 3' });
+    svg.appendChild(ring);
+    const link = el('line', { stroke: 'var(--cinnabar)', 'stroke-width': 1.6, 'stroke-dasharray': '4 3' });
+    svg.appendChild(link);
+
+    const capt = label(PAD, H - 20, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      // 查询点沿弧线游走
+      const ang = t * Math.PI * 2;
+      const qx = PAD + 30 + plotW / 2 + Math.cos(ang) * plotW * 0.33;
+      const qy = PAD + 20 + plotH / 2 + Math.sin(ang) * plotH * 0.32;
+      query.setAttribute('cx', qx);
+      query.setAttribute('cy', qy);
+
+      let best = null;
+      let bestD = Infinity;
+      for (const d of dotEls) {
+        const dd = (d.p.x - qx) ** 2 + (d.p.y - qy) ** 2;
+        if (dd < bestD) { bestD = dd; best = d; }
+        d.c.setAttribute('r', 4.5);
+        d.c.setAttribute('fill', 'var(--jade)');
+        d.t.setAttribute('opacity', 0);
+      }
+      const dist = Math.sqrt(bestD);
+      link.setAttribute('x1', qx); link.setAttribute('y1', qy);
+      link.setAttribute('x2', best.p.x); link.setAttribute('y2', best.p.y);
+      ring.setAttribute('cx', qx); ring.setAttribute('cy', qy);
+      ring.setAttribute('r', dist);
+      best.c.setAttribute('r', 8);
+      best.c.setAttribute('fill', 'var(--cinnabar)');
+      best.t.setAttribute('opacity', 1);
+
+      const step = clamp01(t * 3);
+      lineEls.forEach((l) => l.e.setAttribute('opacity', step > l.depth / 6 ? (0.5 - l.depth * 0.06) : 0));
+
+      capt.textContent = `查询点 → 最近腧穴 ${best.t.textContent} · 平面距离 ${dist.toFixed(1)}px（真实体表须改测地距离）`;
+    }, 11000, { staticT: 0.2 });
+  };
+
+  /* ───────────────────── junchen-attention ─────────────────────
+     君臣佐使 → 注意力权重。列 = 药味，行为权重分配。
+  */
+  FIGURES['junchen-attention'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '君臣佐使的注意力权重分配');
+
+    const herbs = ['桂枝', '芍药', '生姜', '大枣', '甘草'];
+    const roles = ['君', '臣', '佐', '使'];
+    const weights = [
+      [0.52, 0.30, 0.08, 0.06, 0.04],
+      [0.18, 0.44, 0.20, 0.12, 0.06],
+      [0.08, 0.16, 0.40, 0.24, 0.12],
+      [0.04, 0.08, 0.18, 0.32, 0.38],
+    ];
+
+    const GX = 110, GY = 60, CW = 84, CH = 52;
+    svg.appendChild(mono(GX, 34, '方剂：桂枝汤（示例）'));
+
+    herbs.forEach((h, j) => {
+      svg.appendChild(el('text', {
+        x: GX + j * CW + CW / 2, y: GY - 10, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 14, fill: 'var(--ink)',
+      }, [txt(h)]));
+    });
+    roles.forEach((r, i) => {
+      svg.appendChild(el('text', {
+        x: GX - 22, y: GY + i * CH + CH / 2 + 6, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--cinnabar)',
+      }, [txt(r)]));
+    });
+
+    const cells = [];
+    for (let i = 0; i < roles.length; i += 1) {
+      for (let j = 0; j < herbs.length; j += 1) {
+        const r = el('rect', {
+          x: GX + j * CW + 3, y: GY + i * CH + 3, width: CW - 6, height: CH - 6, rx: 6,
+          fill: 'var(--jade)', opacity: 0,
+        });
+        svg.appendChild(r);
+        const tx = el('text', {
+          x: GX + j * CW + CW / 2, y: GY + i * CH + CH / 2 + 5, 'text-anchor': 'middle',
+          'font-family': 'var(--mono)', 'font-size': 12, fill: 'var(--ink)', opacity: 0,
+        });
+        tx.appendChild(txt(weights[i][j].toFixed(2)));
+        svg.appendChild(tx);
+        cells.push({ r, tx, w: weights[i][j], i, j });
+      }
+    }
+
+    // 右侧：软化的权重条
+    const bx = GX + herbs.length * CW + 40;
+    svg.appendChild(mono(bx, 34, '行归一化 (softmax)'));
+    const bars = roles.map((r, i) => {
+      const max = Math.max(...weights[i]);
+      const w = Math.max(...weights[i]);
+      const g = el('g', {});
+      g.appendChild(el('text', { x: bx, y: GY + i * 44 + 10, 'font-size': 12, fill: 'var(--muted)' }, [txt(r + ' 最大: ' + max.toFixed(2))]));
+      const bg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 180, height: 8, rx: 4, fill: 'var(--paper-2)' });
+      g.appendChild(bg);
+      const fg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 0, height: 8, rx: 4, fill: 'var(--jade)' });
+      g.appendChild(fg);
+      svg.appendChild(g);
+      return { fg, w: w, max };
+    });
+
+    svg.appendChild(label(20, H - 40, '结构先验：君药权重最大 → 可作为注意力掩码，让模型学不到"反结构"的配伍', { fill: 'var(--muted)' }));
+    const capt = label(20, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const focusRow = Math.floor(t * 4) % 4;
+      const local = clamp01(t * 4 - Math.floor(t * 4));
+      cells.forEach((c) => {
+        const on = c.i === focusRow;
+        c.r.setAttribute('opacity', on ? c.w * (0.55 + 0.45 * local) : c.w * 0.14);
+        c.tx.setAttribute('opacity', on ? 1 : 0.25);
+      });
+      bars.forEach((b, i) => {
+        b.fg.setAttribute('width', i === focusRow ? 180 * (b.max) * (0.5 + 0.5 * local) : 180 * b.max * 0.35);
+      });
+      capt.textContent = `当前角色：${roles[focusRow]} · 权重最高者为 ${herbs[weights[focusRow].indexOf(Math.max(...weights[focusRow]))]}`;
+    }, 8000, { staticT: 0.1 });
+  };
+
+  /* ───────────────────── 自动挂载 ───────────────────── */
+  function mount(root) {
+    const hosts = (root || document).querySelectorAll('[data-figure]');
+    for (const host of hosts) {
+      if (host.dataset.figureMounted === '1') continue;
+      const fn = FIGURES[host.dataset.figure];
+      if (!fn) {
+        host.innerHTML = `<p class="muted small">未知图形：<code>${host.dataset.figure}</code></p>`;
+        host.dataset.figureMounted = '1';
+        continue;
+      }
+      host.classList.add('figure');
+      fn(host);
+      host.dataset.figureMounted = '1';
+    }
+  }
+
+  window.TCMFigures = { FIGURES, mount };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => mount());
+  } else {
+    mount();
+  }
+  // 单页内动态插入的图形（章节页异步渲染）也能挂上
+  new MutationObserver(() => mount()).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+<script>
+(function(){
+  const deck=document.getElementById('deck');
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+
+  // ── 单帧模式：?shot=N 只渲染第 N 张，供无头浏览器逐帧截图 ──
+  // 截图器需要一张「干净的、正好一屏」的画面，所以这里藏掉其余幻灯片、
+  // 关掉滚动吸附、去掉 HUD，并在 title 上打就绪标记（渲染完成前截图会得到空白）。
+  const shot=new URLSearchParams(location.search).get('shot');
+  if(shot!==null){
+    const n=Math.max(0,Math.min(slides.length-1,Number(shot)||0));
+    slides.forEach((s,idx)=>{ if(idx!==n) s.style.display='none'; });
+    deck.style.overflow='hidden';
+    deck.style.scrollSnapType='none';
+    const hud=document.getElementById('hud');
+    if(hud) hud.style.display='none';
+    const target=slides[n];
+    if(target){ target.style.borderBottom='0'; target.scrollIntoView({block:'start'}); }
+    document.title='SHOT_READY '+n+' of '+slides.length;
+    if(window.TCMFigures)window.TCMFigures.mount(document);
+    // 只读视图：不绑键盘与点击，避免截图过程中页面状态改变
+    return;
+  }
+
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView();}
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    else if(e.key==='p'||e.key==='P'){e.preventDefault();print();}
+  });
+  deck.addEventListener('click',e=>{if(e.target.closest('a'))return;go(i+1);});
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)i=+en.target.dataset.i;});},{root:deck,threshold:.6});
+  slides.forEach(s=>io.observe(s));
+  if(window.TCMFigures)window.TCMFigures.mount(document);
+})();
+</script>
+</body>
+</html>

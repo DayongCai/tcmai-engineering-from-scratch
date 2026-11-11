@@ -1,0 +1,133 @@
+{
+ "note": "派生课：一章一主题，单元按关键词从父课选题；本课内无单元复用。",
+ "chapters": {
+  "01-yuanliu-lilun": {
+   "n": 1,
+   "title": "耳穴诊治的源流与理论",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "耳与经络脏腑的联系是被反复引用的一句话",
+   "derivedFrom": "zhenjiu-xue、jingluo"
+  },
+  "02-jiepou-fenqu": {
+   "n": 2,
+   "title": "耳廓解剖与分区",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "先认清耳廓的沟、脊、窝",
+   "derivedFrom": "zhenjiu-xue、shuxue"
+  },
+  "03-dingwei": {
+   "n": 3,
+   "title": "耳穴定位",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "定位是这门课的地基：差一毫米就换穴",
+   "derivedFrom": "zhenjiu-xue、cifa-jiufa"
+  },
+  "04-zhenduan": {
+   "n": 4,
+   "title": "耳穴诊断",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "望、压、电测三种方法各自的限度",
+   "derivedFrom": "zhenjiu-xue、zhenjiu-zhiliao"
+  },
+  "05-zhiliao-fangfa": {
+   "n": 5,
+   "title": "耳穴治疗方法",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "针、压丸、埋豆、放血：刺激量差别很大",
+   "derivedFrom": "cifa-jiufa、zhenjiu-xue"
+  },
+  "06-neike-yingyong": {
+   "n": 6,
+   "title": "耳穴在内科的应用",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "从失眠、疼痛到功能性胃肠病",
+   "derivedFrom": "zhenjiu-zhiliao、zhenjiu-xue"
+  },
+  "07-fuer-wuguan": {
+   "n": 7,
+   "title": "耳穴在妇儿与五官的应用",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4",
+    "7.5"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "人群不同，禁忌与刺激量都要改",
+   "derivedFrom": "zhenjiu-zhiliao、zhenjiu-xue"
+  },
+  "08-anquan-guifan": {
+   "n": 8,
+   "title": "耳穴操作安全与规范",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4",
+    "8.5"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "软骨感染是这门技术最实在的风险",
+   "derivedFrom": "cifa-jiufa、zhenjiu-xue"
+  }
+ }
+}

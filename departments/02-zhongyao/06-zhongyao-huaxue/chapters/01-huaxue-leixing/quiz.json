@@ -1,0 +1,79 @@
+{
+ "lesson": "01-huaxue-leixing",
+ "title": "中药化学成分的类型与分布",
+ "subject": "06-zhongyao-huaxue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 1 章「中药化学成分的类型与分布」要回答的核心问题是什么？",
+   "options": [
+    "中药里到底有多少类化学成分，分类的依据是什么",
+    "经典提取方法",
+    "现代提取技术",
+    "经典分离方法"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：按颜色分、按溶解性分、按生源分，三套说法都有人用；不用同一套分类，后面的提取分离就无从谈起。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "提分与检识",
+    "结构特征",
+    "理化性质",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（生源途径）重心落在哪一项？",
+   "options": [
+    "甲戊二羟酸途径",
+    "乙酸-丙二酸途径",
+    "莽草酸途径",
+    "氨基酸途径"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "4 个",
+    "6 个",
+    "8 个",
+    "10 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "本课程数值类命中只有 15 处，说明什么？",
+   "options": [
+    "教材常数多以范围或文字表述，可数的值少不等于不量化",
+    "经典提取方法",
+    "现代提取技术",
+    "经典分离方法"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：真正的量化在方法学七项指标里。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/zhongyao-huaxue/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

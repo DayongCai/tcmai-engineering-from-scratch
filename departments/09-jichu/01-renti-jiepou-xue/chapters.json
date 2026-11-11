@@ -1,0 +1,87 @@
+{
+ "slug": "01-renti-jiepou-xue",
+ "title": "人体解剖学",
+ "note": "10 章 = 教材 10 章（1:1）。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xulun",
+   "title": "绪论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-yundong-xitong",
+   "title": "运动系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-xiaohua-xitong",
+   "title": "消化系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-huxi-xitong",
+   "title": "呼吸系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-miniao-xitong",
+   "title": "泌尿系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-shengzhi-xitong",
+   "title": "生殖系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-xunhuan-xitong",
+   "title": "循环系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-neifenmi-xitong",
+   "title": "内分泌系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-ganjueqi",
+   "title": "感觉器",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-shenjing-xitong",
+   "title": "神经系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
+}

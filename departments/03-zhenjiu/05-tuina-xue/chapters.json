@@ -1,66 +1,66 @@
 {
-  "slug": "05-tuina-xue",
-  "title": "推拿学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-yuanliu-yuanli",
-      "title": "推拿的源流与治疗原理",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-shiyingzheng-fengxian",
-      "title": "推拿的适应证、禁忌与风险",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-chengren-buwei",
-      "title": "成人推拿的常用部位与操作",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-xiaoer-tuina",
-      "title": "小儿推拿的特定穴与手法",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-jizhu-tuina",
-      "title": "脊柱推拿与手法安全性",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-jingjian-yaotui",
-      "title": "推拿治疗颈肩腰腿痛",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-neike-fuke",
-      "title": "推拿在内科与妇科的应用",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-lixue-celiang",
-      "title": "推拿的力学测量与剂量",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-liaoxiao-pingjia",
-      "title": "推拿疗效的评价与盲法难题",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-chufang-jilu",
-      "title": "推拿处方的结构化记录",
-      "status": "📋"
-    }
-  ]
+ "slug": "05-tuina-xue",
+ "title": "推拿学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-yuanliu-yuanli",
+   "title": "推拿的源流与治疗原理",
+   "status": "🚧"
+  },
+  {
+   "n": 2,
+   "slug": "02-shiyingzheng-fengxian",
+   "title": "推拿的适应证、禁忌与风险",
+   "status": "🚧"
+  },
+  {
+   "n": 3,
+   "slug": "03-chengren-buwei",
+   "title": "成人推拿的常用部位与操作",
+   "status": "🚧"
+  },
+  {
+   "n": 4,
+   "slug": "04-xiaoer-tuina",
+   "title": "小儿推拿的特定穴与手法",
+   "status": "🚧"
+  },
+  {
+   "n": 5,
+   "slug": "05-jizhu-tuina",
+   "title": "脊柱推拿与手法安全性",
+   "status": "🚧"
+  },
+  {
+   "n": 6,
+   "slug": "06-jingjian-yaotui",
+   "title": "推拿治疗颈肩腰腿痛",
+   "status": "🚧"
+  },
+  {
+   "n": 7,
+   "slug": "07-neike-fuke",
+   "title": "推拿在内科与妇科的应用",
+   "status": "🚧"
+  },
+  {
+   "n": 8,
+   "slug": "08-lixue-celiang",
+   "title": "推拿的力学测量与剂量",
+   "status": "🚧"
+  },
+  {
+   "n": 9,
+   "slug": "09-liaoxiao-pingjia",
+   "title": "推拿疗效的评价与盲法难题",
+   "status": "🚧"
+  },
+  {
+   "n": 10,
+   "slug": "10-chufang-jilu",
+   "title": "推拿处方的结构化记录",
+   "status": "🚧"
+  }
+ ]
 }

@@ -1,0 +1,363 @@
+{
+ "book": "hermes-病理生理学(教材) · 15 单元 / 53 章（Banasik Pathophysiology 8th ed. 目录结构）",
+ "source": {
+  "file": "standards/binglishengli/supplements/jiangyi/知识树.md",
+  "bytes": 11471,
+  "sha256": "2d87668483194d996fdfe52aa1c4539722ec882fe49dad17fa669d6eea7a99a0"
+ },
+ "units": [
+  {
+   "unit": "U01",
+   "title": "病理生理学基本过程（Pathophysiologic Processes）",
+   "stage": 1,
+   "chapters": [
+    {
+     "id": "C01",
+     "title": "病理生理学导论（Introduction to Pathophysiology）"
+    },
+    {
+     "id": "C02",
+     "title": "稳态、异稳态与对应激源的适应性反应（Homeostasis, Allostasis, and Adaptive Responses to Stressors）"
+    }
+   ],
+   "status": "✅ 已交付",
+   "planStatus": "✅ 已交付（本批次）"
+  },
+  {
+   "unit": "U02",
+   "title": "细胞功能（Cellular Function）",
+   "stage": 2,
+   "chapters": [
+    {
+     "id": "C03",
+     "title": "细胞结构与功能（Cell Structure and Function）"
+    },
+    {
+     "id": "C04",
+     "title": "细胞损伤、衰老与死亡（Cell Injury, Aging, and Death）"
+    },
+    {
+     "id": "C05",
+     "title": "基因组结构、调控与组织分化（Genome Structure, Regulation, and Tissue Differentiation）"
+    },
+    {
+     "id": "C06",
+     "title": "遗传与发育性疾病（Genetic and Developmental Disorders）"
+    },
+    {
+     "id": "C07",
+     "title": "肿瘤（Neoplasia）"
+    }
+   ],
+   "status": "✅ 已交付",
+   "planStatus": "⏳ 待写"
+  },
+  {
+   "unit": "U03",
+   "title": "机体防御（Defense）",
+   "stage": 3,
+   "chapters": [
+    {
+     "id": "C08",
+     "title": "感染过程（Infectious Processes）"
+    },
+    {
+     "id": "C09",
+     "title": "炎症与免疫（Inflammation and Immunity）"
+    },
+    {
+     "id": "C10",
+     "title": "免疫功能异常（Alterations in Immune Function）"
+    },
+    {
+     "id": "C11",
+     "title": "白细胞恶性肿瘤（Malignant Disorders of White Blood Cells）"
+    },
+    {
+     "id": "C12",
+     "title": "HIV感染与艾滋病（HIV Disease and AIDS）"
+    }
+   ],
+   "status": "✅ 已交付",
+   "planStatus": "⏳ 待写"
+  },
+  {
+   "unit": "U04",
+   "title": "氧运输、凝血、血流与血压（Oxygen Transport, Blood Coagulation, Blood Flow, and Blood Pressure）",
+   "stage": 4,
+   "chapters": [
+    {
+     "id": "C13",
+     "title": "氧运输异常（Alterations in Oxygen Transport）"
+    },
+    {
+     "id": "C14",
+     "title": "止血与凝血异常（Alterations in Hemostasis and Blood Coagulation）"
+    },
+    {
+     "id": "C15",
+     "title": "血流异常（Alterations in Blood Flow）"
+    },
+    {
+     "id": "C16",
+     "title": "血压异常（Alterations in Blood Pressure）"
+    }
+   ],
+   "status": "✅ 已交付",
+   "planStatus": "⏳ 待写"
+  },
+  {
+   "unit": "U05",
+   "title": "心脏功能（Cardiac Function）",
+   "stage": 5,
+   "chapters": [
+    {
+     "id": "C17",
+     "title": "心脏功能（Cardiac Function）"
+    },
+    {
+     "id": "C18",
+     "title": "心脏功能异常（Alterations in Cardiac Function）"
+    },
+    {
+     "id": "C19",
+     "title": "心力衰竭与心律失常（Heart Failure and Dysrhythmias）"
+    },
+    {
+     "id": "C20",
+     "title": "休克（Shock）"
+    }
+   ],
+   "status": "✅ 已交付",
+   "planStatus": "⏳ 待写"
+  },
+  {
+   "unit": "U06",
+   "title": "呼吸功能（Respiratory Function）",
+   "stage": 6,
+   "chapters": [
+    {
+     "id": "C21",
+     "title": "呼吸功能与气体交换异常（Respiratory Function and Alterations in Gas Exchange）"
+    },
+    {
+     "id": "C22",
+     "title": "阻塞性肺疾病（Obstructive Pulmonary Disorders）"
+    },
+    {
+     "id": "C23",
+     "title": "限制性肺疾病（Restrictive Pulmonary Disorders）"
+    }
+   ],
+   "status": "✅ 已交付",
+   "planStatus": "⏳ 待写"
+  },
+  {
+   "unit": "U07",
+   "title": "水、电解质与酸碱平衡（Fluid, Electrolyte, and Acid-Base Homeostasis）",
+   "stage": 7,
+   "chapters": [
+    {
+     "id": "C24",
+     "title": "水电解质稳态与失衡（Fluid and Electrolyte Homeostasis and Imbalances）"
+    },
+    {
+     "id": "C25",
+     "title": "酸碱平衡与失衡（Acid-Base Homeostasis and Imbalances）"
+    }
+   ],
+   "status": "✅ 已交付",
+   "planStatus": "⏳ 待写"
+  },
+  {
+   "unit": "U08",
+   "title": "肾脏与膀胱功能（Renal and Bladder Function）",
+   "stage": 8,
+   "chapters": [
+    {
+     "id": "C26",
+     "title": "肾脏功能（Renal Function）"
+    },
+    {
+     "id": "C27",
+     "title": "肾内疾病（Intrarenal Disorders）"
+    },
+    {
+     "id": "C28",
+     "title": "急性肾损伤与慢性肾脏病（Acute Kidney Injury and Chronic Kidney Disease）"
+    },
+    {
+     "id": "C29",
+     "title": "下尿路疾病（Disorders of the Lower Urinary Tract）"
+    }
+   ],
+   "status": "✅ 已交付",
+   "planStatus": "⏳ 待写"
+  },
+  {
+   "unit": "U09",
+   "title": "生殖功能（Genital and Reproductive Function）",
+   "stage": 9,
+   "chapters": [
+    {
+     "id": "C30",
+     "title": "男性生殖功能（Male Genital and Reproductive Function）"
+    },
+    {
+     "id": "C31",
+     "title": "男性生殖功能异常（Alterations in Male Genital and Reproductive Function）"
+    },
+    {
+     "id": "C32",
+     "title": "女性生殖功能（Female Genital and Reproductive Function）"
+    },
+    {
+     "id": "C33",
+     "title": "女性生殖功能异常（Alterations in Female Genital and Reproductive Function）"
+    },
+    {
+     "id": "C34",
+     "title": "性传播感染（Sexually Transmitted Infections）"
+    }
+   ],
+   "status": "✅ 已交付",
+   "planStatus": "⏳ 待写"
+  },
+  {
+   "unit": "U10",
+   "title": "胃肠功能（Gastrointestinal Function）",
+   "stage": 10,
+   "chapters": [
+    {
+     "id": "C35",
+     "title": "胃肠功能（Gastrointestinal Function）"
+    },
+    {
+     "id": "C36",
+     "title": "胃肠疾病（Gastrointestinal Disorders）"
+    },
+    {
+     "id": "C37",
+     "title": "胆囊与外分泌胰腺功能异常（Alterations in Function of the Gallbladder and Exocrine Pancreas）"
+    },
+    {
+     "id": "C38",
+     "title": "肝脏疾病（Liver Diseases）"
+    }
+   ],
+   "status": "✅ 已交付",
+   "planStatus": "⏳ 待写"
+  },
+  {
+   "unit": "U11",
+   "title": "内分泌功能、代谢与营养（Endocrine Function, Metabolism, and Nutrition）",
+   "stage": 11,
+   "chapters": [
+    {
+     "id": "C39",
+     "title": "内分泌生理与下丘脑-垂体调控机制（Endocrine Physiology and Mechanisms of Hypothalamic-Pituitary Regulation）"
+    },
+    {
+     "id": "C40",
+     "title": "内分泌功能紊乱（Disorders of Endocrine Function）"
+    },
+    {
+     "id": "C41",
+     "title": "糖尿病（Diabetes Mellitus）"
+    },
+    {
+     "id": "C42",
+     "title": "代谢与营养异常（Alterations in Metabolism and Nutrition）"
+    }
+   ],
+   "status": "✅ 已交付",
+   "planStatus": "⏳ 待写"
+  },
+  {
+   "unit": "U12",
+   "title": "神经功能（Neural Function）",
+   "stage": 12,
+   "chapters": [
+    {
+     "id": "C43",
+     "title": "神经系统结构与功能（Structure and Function of the Nervous System）"
+    },
+    {
+     "id": "C44",
+     "title": "脑功能急性疾病（Acute Disorders of Brain Function）"
+    },
+    {
+     "id": "C45",
+     "title": "慢性神经功能障碍（Chronic Disorders of Neurologic Function）"
+    },
+    {
+     "id": "C46",
+     "title": "特殊感觉功能异常（Alterations in Special Sensory Function）"
+    },
+    {
+     "id": "C47",
+     "title": "疼痛（Pain）"
+    }
+   ],
+   "status": "✅ 已交付",
+   "planStatus": "⏳ 待写"
+  },
+  {
+   "unit": "U13",
+   "title": "神经心理功能（Neuropsychological Function）",
+   "stage": 13,
+   "chapters": [
+    {
+     "id": "C48",
+     "title": "精神心理健康障碍（Mental Health Disorders）"
+    }
+   ],
+   "status": "✅ 已交付",
+   "planStatus": "⏳ 待写"
+  },
+  {
+   "unit": "U14",
+   "title": "骨骼肌肉支持与运动（Musculoskeletal Support and Movement）",
+   "stage": 14,
+   "chapters": [
+    {
+     "id": "C49",
+     "title": "骨骼肌肉系统结构与功能（Structure and Function of the Musculoskeletal System）"
+    },
+    {
+     "id": "C50",
+     "title": "骨骼肌肉功能异常：创伤、感染与疾病（Alterations in Musculoskeletal Function: Trauma, Infection, and Disease）"
+    },
+    {
+     "id": "C51",
+     "title": "骨骼肌肉功能异常：风湿性疾病（Alterations in Musculoskeletal Function: Rheumatic Disorders）"
+    }
+   ],
+   "status": "✅ 已交付",
+   "planStatus": "⏳ 待写"
+  },
+  {
+   "unit": "U15",
+   "title": "皮肤系统（Integumentary System）",
+   "stage": 15,
+   "chapters": [
+    {
+     "id": "C52",
+     "title": "皮肤系统异常（Alterations in the Integumentary System）"
+    },
+    {
+     "id": "C53",
+     "title": "烧伤（Burn Injuries）"
+    }
+   ],
+   "status": "✅ 已交付",
+   "planStatus": "⏳ 待写"
+  }
+ ],
+ "counts": {
+  "units": 15,
+  "chapters": 53,
+  "unitsDone": 15,
+  "chaptersDone": 53
+ }
+}

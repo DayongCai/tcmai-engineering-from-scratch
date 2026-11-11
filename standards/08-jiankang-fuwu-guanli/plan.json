@@ -1,0 +1,154 @@
+{
+ "title": "健康服务管理",
+ "note": "合成课：公共服务与供给侧取《公共管理学》（16 课）的公共服务、基层治理与绩效章；卫生体系侧取《卫生事业管理》（04 课）。",
+ "levels": {
+  "供给与体系": [
+   1,
+   2
+  ],
+  "基层与社区": [
+   3,
+   4
+  ],
+  "绩效与质量": [
+   5,
+   6
+  ],
+  "改革与协同": [
+   7,
+   8
+  ]
+ },
+ "chapters": [
+  {
+   "title": "健康服务的供给主体",
+   "picks": [
+    [
+     "16-gonggong-guanli-xue",
+     9
+    ],
+    [
+     "04-weisheng-shiye-guanli",
+     3
+    ]
+   ]
+  },
+  {
+   "title": "分级诊疗与服务体系",
+   "picks": [
+    [
+     "04-weisheng-shiye-guanli",
+     3
+    ],
+    [
+     "04-weisheng-shiye-guanli",
+     4
+    ]
+   ]
+  },
+  {
+   "title": "基层与社区健康服务",
+   "picks": [
+    [
+     "16-gonggong-guanli-xue",
+     16
+    ],
+    [
+     "04-weisheng-shiye-guanli",
+     4
+    ]
+   ]
+  },
+  {
+   "title": "公共卫生服务管理",
+   "picks": [
+    [
+     "04-weisheng-shiye-guanli",
+     4
+    ],
+    [
+     "16-gonggong-guanli-xue",
+     11
+    ]
+   ]
+  },
+  {
+   "title": "服务质量与绩效评价",
+   "picks": [
+    [
+     "16-gonggong-guanli-xue",
+     10
+    ],
+    [
+     "04-weisheng-shiye-guanli",
+     7
+    ]
+   ]
+  },
+  {
+   "title": "支付方式与激励机制",
+   "picks": [
+    [
+     "04-weisheng-shiye-guanli",
+     6
+    ],
+    [
+     "16-gonggong-guanli-xue",
+     8
+    ]
+   ]
+  },
+  {
+   "title": "健康服务改革与政策",
+   "picks": [
+    [
+     "16-gonggong-guanli-xue",
+     4
+    ],
+    [
+     "16-gonggong-guanli-xue",
+     17
+    ]
+   ]
+  },
+  {
+   "title": "多部门协同与应急",
+   "picks": [
+    [
+     "16-gonggong-guanli-xue",
+     11
+    ],
+    [
+     "04-weisheng-shiye-guanli",
+     8
+    ]
+   ]
+  }
+ ],
+ "views": {
+  "制度与规则": [
+   "制度",
+   "政策",
+   "法规",
+   "规定",
+   "标准",
+   "职责"
+  ],
+  "组织与流程": [
+   "组织",
+   "流程",
+   "部门",
+   "岗位",
+   "运行",
+   "协作"
+  ],
+  "绩效与评价": [
+   "绩效",
+   "评价",
+   "指标",
+   "成本",
+   "质量",
+   "效率"
+  ]
+ }
+}

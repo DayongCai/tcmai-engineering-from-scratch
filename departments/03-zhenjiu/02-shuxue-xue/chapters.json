@@ -1,78 +1,78 @@
 {
-  "slug": "02-shuxue-xue",
-  "title": "腧穴学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-fenlei-dingwei",
-      "title": "腧穴的分类、命名与定位方法",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-gudu-fencun",
-      "title": "骨度分寸与体表标志",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-shou-san-yin",
-      "title": "手三阴经腧穴",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-shou-san-yang",
-      "title": "手三阳经腧穴",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-zu-san-yang",
-      "title": "足三阳经腧穴",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-zu-san-yin",
-      "title": "足三阴经腧穴",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-ren-du-xue",
-      "title": "任督二脉腧穴",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-jingwai-qixue",
-      "title": "经外奇穴与阿是穴",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-teding-xue",
-      "title": "特定穴：五输、原络、俞募",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-zhuzhi-guilv",
-      "title": "腧穴的主治规律与配穴",
-      "status": "📋"
-    },
-    {
-      "n": 11,
-      "slug": "11-weixian-shendu",
-      "title": "危险穴位与针刺安全深度",
-      "status": "🚧"
-    },
-    {
-      "n": 12,
-      "slug": "12-dingwei-sanwei",
-      "title": "腧穴定位的数字化与三维模型",
-      "status": "📋"
-    }
-  ]
+ "slug": "02-shuxue-xue",
+ "title": "腧穴学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-fenlei-dingwei",
+   "title": "腧穴的分类、命名与定位方法",
+   "status": "🚧"
+  },
+  {
+   "n": 2,
+   "slug": "02-gudu-fencun",
+   "title": "骨度分寸与体表标志",
+   "status": "🚧"
+  },
+  {
+   "n": 3,
+   "slug": "03-shou-san-yin",
+   "title": "手三阴经腧穴",
+   "status": "🚧"
+  },
+  {
+   "n": 4,
+   "slug": "04-shou-san-yang",
+   "title": "手三阳经腧穴",
+   "status": "🚧"
+  },
+  {
+   "n": 5,
+   "slug": "05-zu-san-yang",
+   "title": "足三阳经腧穴",
+   "status": "🚧"
+  },
+  {
+   "n": 6,
+   "slug": "06-zu-san-yin",
+   "title": "足三阴经腧穴",
+   "status": "🚧"
+  },
+  {
+   "n": 7,
+   "slug": "07-ren-du-xue",
+   "title": "任督二脉腧穴",
+   "status": "🚧"
+  },
+  {
+   "n": 8,
+   "slug": "08-jingwai-qixue",
+   "title": "经外奇穴与阿是穴",
+   "status": "🚧"
+  },
+  {
+   "n": 9,
+   "slug": "09-teding-xue",
+   "title": "特定穴：五输、原络、俞募",
+   "status": "🚧"
+  },
+  {
+   "n": 10,
+   "slug": "10-zhuzhi-guilv",
+   "title": "腧穴的主治规律与配穴",
+   "status": "🚧"
+  },
+  {
+   "n": 11,
+   "slug": "11-weixian-shendu",
+   "title": "危险穴位与针刺安全深度",
+   "status": "🚧"
+  },
+  {
+   "n": 12,
+   "slug": "12-dingwei-sanwei",
+   "title": "腧穴定位的数字化与三维模型",
+   "status": "🚧"
+  }
+ ]
 }

@@ -1,0 +1,79 @@
+{
+  "lesson": "11-shenxi-guguanjie",
+  "title": "老年肾系与骨关节病证：水、尿、骨、痹、腰",
+  "subject": "19-zhongyi-laonianbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "老年癃闭的处理原则是？",
+      "options": [
+        "闭先导尿减压，再辨证",
+        "先利尿",
+        "先补气",
+        "先观察"
+      ],
+      "correct": 0,
+      "explanation": "教材 11.3.1：急性尿潴留处理与手术指征。"
+    },
+    {
+      "stage": "check",
+      "question": "本章「五病一源」的「源」指？",
+      "options": [
+        "肾虚",
+        "脾虚",
+        "肝郁",
+        "痰瘀"
+      ],
+      "correct": 0,
+      "explanation": "水肿、淋证、癃闭、骨痿、痹证、腰痛皆以肾虚为底。"
+    },
+    {
+      "stage": "check",
+      "question": "外治在老年为何是「另一种风险」？",
+      "options": [
+        "感觉减退易烫伤、骨质疏松易被推拿致骨折",
+        "外治无效",
+        "外治太贵",
+        "外治不便"
+      ],
+      "correct": 0,
+      "explanation": "教材 11.5.1 的艾灸推拿安全警示。"
+    },
+    {
+      "stage": "check",
+      "question": "本章引书数量为？",
+      "options": [
+        "1 部 1 次（全书最少）",
+        "16 部 19 次",
+        "24 部 51 次",
+        "0 部"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算：古籍直接论述少而分散，教材不硬凑。"
+    },
+    {
+      "stage": "post",
+      "question": "骨痿与骨病学第 8 章的分工是？",
+      "options": [
+        "骨病学讲诊断入口（T 值），本章讲功能目标（防跌倒）",
+        "完全相同",
+        "本章讲影像",
+        "骨病学讲功能"
+      ],
+      "correct": 0,
+      "explanation": "同一病的中医专科视角与老年功能视角。"
+    },
+    {
+      "stage": "post",
+      "question": "腰痛在老年须先排查什么？",
+      "options": [
+        "骨质疏松性压缩骨折",
+        "腰肌劳损",
+        "肾虚",
+        "寒湿"
+      ],
+      "correct": 0,
+      "explanation": "教材 11.6.1：含骨折风险排查。"
+    }
+  ]
+}

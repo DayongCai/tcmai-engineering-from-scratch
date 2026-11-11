@@ -1,0 +1,79 @@
+{
+  "lesson": "04-tizhi-zhenghou",
+  "title": "体质与证候：同证异质、同质异证",
+  "subject": "04-zhongyi-tizhi-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "「同证异质」的含义是？",
+      "options": [
+        "同一个证出现在不同体质上",
+        "同一体质发为不同证",
+        "证与质无关",
+        "质决定证型"
+      ],
+      "correct": 0,
+      "explanation": "如气虚证在气虚质是本、在痰湿质是标。"
+    },
+    {
+      "stage": "check",
+      "question": "本章用作「同证异质」代理指标的是？",
+      "options": [
+        "跨课证候（同时出现在 2 门以上临床课）",
+        "证候总数",
+        "体质数",
+        "课程数"
+      ],
+      "correct": 0,
+      "explanation": "10 个跨课证候为候选。"
+    },
+    {
+      "stage": "check",
+      "question": "三条关系中证据最弱的是？",
+      "options": [
+        "体质决定传变（需纵向队列）",
+        "同证异质",
+        "同质异证",
+        "三者相同"
+      ],
+      "correct": 0,
+      "explanation": "本库无纵向数据。"
+    },
+    {
+      "stage": "check",
+      "question": "跨课证候集中在哪三质？",
+      "options": [
+        "血瘀、湿热、阴虚",
+        "气虚、阳虚、痰湿",
+        "气郁、特禀、平和",
+        "九质均分"
+      ],
+      "correct": 0,
+      "explanation": "与第 1 章观察一致。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么要标证据等级？",
+      "options": [
+        "不给弱证据留强结论的位置",
+        "因为规范要求",
+        "因为便于教学",
+        "因为数据不足"
+      ],
+      "correct": 0,
+      "explanation": "本章的核心态度。"
+    },
+    {
+      "stage": "post",
+      "question": "「同质异证」在数据上如何看到？",
+      "options": [
+        "一质对应多证候、多病证",
+        "一质对应一证",
+        "看不出",
+        "只能靠推断"
+      ],
+      "correct": 0,
+      "explanation": "如气虚质 17 证 22 次病证覆盖。"
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+ "slug": "20-weisheng-fa-xue",
+ "title": "卫生法学",
+ "note": "18 章 = 教材 18 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-f1",
+   "title": "卫生法学导论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-f2",
+   "title": "卫生法的基本原则与法律关系",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-f3",
+   "title": "卫生立法与卫生法治",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-f4",
+   "title": "卫生行政与行政执法",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-f5",
+   "title": "医疗机构管理法律制度",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-f6",
+   "title": "卫生技术人员管理法律制度",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-f7",
+   "title": "医疗行为与医疗质量安全法律制度",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-f8",
+   "title": "医疗纠纷预防与处理法律制度",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-f9",
+   "title": "药品管理法律制度",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-f10",
+   "title": "医疗器械、化妆品与消毒产品管理法律制度",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-f11",
+   "title": "公共卫生与疾病预防控制法律制度",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-f12",
+   "title": "基本医疗卫生与健康促进法律制度",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-f13",
+   "title": "医疗保障与医疗救助法律制度",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-f14",
+   "title": "中医药法律制度",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-f15",
+   "title": "食品安全与环境卫生法律制度",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-f16",
+   "title": "生命伦理与新兴技术法律问题",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-f17",
+   "title": "卫生法律监督与权益救济",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-f18",
+   "title": "卫生法学与 tcmP 智能教学平台",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
+}

@@ -1,29 +1,35 @@
 {
-  "slug": "15-huli-yanjiu-zhengxun",
-  "title": "护理研究与循证护理",
-  "en": "Nursing Research & EBP",
-  "deptSlug": "05-huli",
-  "deptTitle": "护理系",
-  "globalN": 75,
-  "type": "Build",
-  "semester": 8,
-  "stage": "zhuang",
-  "stageTitle": "壮",
-  "hours": 54,
-  "bridge": "证据分级→GRADE 算法 / 文献筛选→PRISMA 流程自动化",
-  "chaptersTarget": 8,
-  "chapters": [],
-  "platform": {
-    "id": "tcmP",
-    "coursePath": "platform/courses/05-huli/15-huli-yanjiu-zhengxun",
-    "videosPublished": 0,
-    "status": "planned"
-  },
-  "textbook": {
-    "id": "textbooks",
-    "path": "textbooks/05-huli/15-huli-yanjiu-zhengxun",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
-  }
+ "slug": "15-huli-yanjiu-zhengxun",
+ "title": "护理研究与循证护理",
+ "en": "Nursing Research & EBP",
+ "deptSlug": "05-huli",
+ "deptTitle": "护理系",
+ "globalN": 75,
+ "type": "Build",
+ "semester": 8,
+ "stage": "zhuang",
+ "stageTitle": "壮",
+ "hours": 54,
+ "bridge": "证据分级→GRADE 算法 / 文献筛选→PRISMA 流程自动化",
+ "chaptersTarget": 8,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/05-huli/15-huli-yanjiu-zhengxun",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/05-huli/15-huli-yanjiu-zhengxun",
+  "chaptersWritten": 0,
+  "words": 0,
+  "status": "planned"
+ },
+ "底本": {
+  "kind": "外源",
+  "from": "standards/huli-yanjiu-zhengxun/sources/*.pdf",
+  "dir": "standards/huli-yanjiu-zhengxun",
+  "note": "本库与教材盘均无《护理研究》母本（20 门护理课 663 万字里研究设计仅 2 次），故本课按《补源约定》立为外源课：正文由本库撰写，依据 3 份公开文件的 29 条逐字校勘条文。底本汉字与外源条数分开计。"
+ }
 }

@@ -1,0 +1,112 @@
+{
+ "note": "派生课：本库无该毕设教材；一章一环节，取对应专业课单元，正文挂 standards/biye 台账锚点。",
+ "chapters": {
+  "01-xuan-ti": {
+   "n": 1,
+   "title": "选题：从配穴方案到可检验命题",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5",
+    "1.6",
+    "1.7",
+    "1.8",
+    "1.9",
+    "1.10",
+    "1.11",
+    "1.12",
+    "1.13"
+   ],
+   "srcChapters": [
+    "jingluo#2"
+   ],
+   "why": "腧穴概述切入：穴位是最容易出题的对象（同名穴、异经穴、定位差异），但必须写成可比较的命题",
+   "derivedFrom": "jingluo 第2章"
+  },
+  "02-shuju-zhunbei": {
+   "n": 2,
+   "title": "数据准备：病例、经穴坐标、刺激参数",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6",
+    "2.7",
+    "2.8",
+    "2.9",
+    "2.10",
+    "2.11",
+    "2.12",
+    "2.13"
+   ],
+   "srcChapters": [
+    "jingluo#18",
+    "jingluo#1"
+   ],
+   "why": "经络纵横关系 ＋ 概述：坐标与归属口径不统一，后面的统计全部作废",
+   "derivedFrom": "jingluo 第18章、jingluo 第1章"
+  },
+  "03-fangfa-shixian": {
+   "n": 3,
+   "title": "方法与系统实现",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5",
+    "3.6",
+    "3.7"
+   ],
+   "srcChapters": [
+    "jingluo#19"
+   ],
+   "why": "经络腧穴现代研究：把传统描述转成可测指标的那一段",
+   "derivedFrom": "jingluo 第19章"
+  },
+  "04-liaoxiao-pingjia": {
+   "n": 4,
+   "title": "疗效评价与盲法设计",
+   "units": [
+    "4.1"
+   ],
+   "srcChapters": [
+    "huli-yanjiu-zhengxun#2"
+   ],
+   "why": "借研究方法学一章（跨课引用已登记）：针灸疗效评价的难点是盲法与对照",
+   "derivedFrom": "huli-yanjiu-zhengxun 第2章"
+  },
+  "05-lunwen-dabian": {
+   "n": 5,
+   "title": "论文写作与答辩",
+   "units": [
+    "5.1",
+    "5.2"
+   ],
+   "srcChapters": [
+    "jingluo#20"
+   ],
+   "why": "歌赋与古文献：引文与出处规范，是针灸论文最容易被追问的一块",
+   "derivedFrom": "jingluo 第20章"
+  },
+  "06-zhishi-yijiao": {
+   "n": 6,
+   "title": "知识移交：方案手册与交接",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4"
+   ],
+   "srcChapters": [
+    "jingluo#3"
+   ],
+   "why": "形成与学术发展：移交的第一件事是把「这套说法从哪来」交代清楚",
+   "derivedFrom": "jingluo 第3章"
+  }
+ }
+}

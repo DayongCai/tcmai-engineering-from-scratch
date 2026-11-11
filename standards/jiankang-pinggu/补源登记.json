@@ -1,0 +1,246 @@
+{
+ "note": "健康评估外源补源登记：每条记来源、URL、sha256、页数与逐字校勘结论。查不到的句子不入库（约定见 补源约定.md）。",
+ "convention": "补源约定.md",
+ "sources": {
+  "HIGN-GDS-4": {
+   "file": "HIGN-GDS-4.pdf",
+   "title": "The Geriatric Depression Scale (GDS)",
+   "series": "Hartford Institute for Geriatric Nursing · Try This: Best Practices in Nursing Care to Older Adults · General Assessment Series, Issue Number 4",
+   "revised": "2019",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_4.pdf",
+   "exists": true,
+   "sha256": "0552efc5cab04c0e93d748b794d2feddaa17ec9e493965fc886dadb4d0f44ed3",
+   "bytes": 222014,
+   "pages": 2,
+   "textChars": 15405,
+   "textLayer": true
+  },
+  "HIGN-MentalStatus-3": {
+   "file": "HIGN-MentalStatus-3.pdf",
+   "title": "Mental Status Assessment of Older Adults: The Mini-Cog",
+   "series": "Hartford Institute for Geriatric Nursing · Try This: Best Practices in Nursing Care to Older Adults · General Assessment Series, Issue Number 3",
+   "revised": "2019",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_3.pdf",
+   "exists": true,
+   "sha256": "8e510dbb831f352622d77224b4f0abe368e32484c7549f84ccd0eff69a2707ce",
+   "bytes": 238520,
+   "pages": 2,
+   "textChars": 18985,
+   "textLayer": true
+  },
+  "HIGN-HendrichII-8": {
+   "file": "HIGN-HendrichII-8.pdf",
+   "title": "Fall Risk Assessment for Older Adults: The Hendrich II Fall Risk Model",
+   "series": "Hartford Institute for Geriatric Nursing · Try This: Best Practices in Nursing Care to Older Adults · General Assessment Series, Issue Number 8",
+   "revised": "2016",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_8.pdf",
+   "exists": true,
+   "sha256": "21deae0dcad897054c40e3b4e0e439b3c216e84d4448877cd15155d4ea205d86",
+   "bytes": 202624,
+   "pages": 2,
+   "textChars": 25722,
+   "textLayer": true
+  },
+  "CDC-CheckForSafety": {
+   "file": "CDC-CheckForSafety.pdf",
+   "title": "Check for Safety: A Home Fall Prevention Checklist for Older Adults",
+   "series": "Centers for Disease Control and Prevention · STEADI (Stopping Elderly Accidents, Deaths & Injuries)",
+   "revised": "2017",
+   "url": "https://www.cdc.gov/steadi/pdf/STEADI-Brochure-CheckForSafety-508.pdf",
+   "exists": true,
+   "sha256": "997702f7ef0f4d4d92616c8eb9343d7404dcbcc950dda171751c1d1b1f0f3b45",
+   "bytes": 2692203,
+   "pages": 2,
+   "textChars": 5602,
+   "textLayer": true
+  }
+ },
+ "clauses": [
+  {
+   "id": "E01",
+   "source": "HIGN-GDS-4",
+   "clause": "第1条",
+   "sourceTitle": "The Geriatric Depression Scale (GDS)",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_4.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·The Geriatric Depression Scale (GDS) 第1条"
+  },
+  {
+   "id": "E02",
+   "source": "HIGN-GDS-4",
+   "clause": "第2条",
+   "sourceTitle": "The Geriatric Depression Scale (GDS)",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_4.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·The Geriatric Depression Scale (GDS) 第2条"
+  },
+  {
+   "id": "E03",
+   "source": "HIGN-GDS-4",
+   "clause": "第3条",
+   "sourceTitle": "The Geriatric Depression Scale (GDS)",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_4.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·The Geriatric Depression Scale (GDS) 第3条"
+  },
+  {
+   "id": "E04",
+   "source": "HIGN-GDS-4",
+   "clause": "第4条",
+   "sourceTitle": "The Geriatric Depression Scale (GDS)",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_4.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·The Geriatric Depression Scale (GDS) 第4条"
+  },
+  {
+   "id": "E05",
+   "source": "HIGN-GDS-4",
+   "clause": "第5条",
+   "sourceTitle": "The Geriatric Depression Scale (GDS)",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_4.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·The Geriatric Depression Scale (GDS) 第5条"
+  },
+  {
+   "id": "E06",
+   "source": "HIGN-GDS-4",
+   "clause": "第6条",
+   "sourceTitle": "The Geriatric Depression Scale (GDS)",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_4.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·The Geriatric Depression Scale (GDS) 第6条"
+  },
+  {
+   "id": "E07",
+   "source": "HIGN-MentalStatus-3",
+   "clause": "第1条",
+   "sourceTitle": "Mental Status Assessment of Older Adults: The Mini-Cog",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_3.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Mental Status Assessment of Older Adults: The Mini-Cog 第1条"
+  },
+  {
+   "id": "E08",
+   "source": "HIGN-MentalStatus-3",
+   "clause": "第2条",
+   "sourceTitle": "Mental Status Assessment of Older Adults: The Mini-Cog",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_3.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Mental Status Assessment of Older Adults: The Mini-Cog 第2条"
+  },
+  {
+   "id": "E09",
+   "source": "HIGN-MentalStatus-3",
+   "clause": "第3条",
+   "sourceTitle": "Mental Status Assessment of Older Adults: The Mini-Cog",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_3.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Mental Status Assessment of Older Adults: The Mini-Cog 第3条"
+  },
+  {
+   "id": "E10",
+   "source": "HIGN-HendrichII-8",
+   "clause": "第1条",
+   "sourceTitle": "Fall Risk Assessment for Older Adults: The Hendrich II Fall Risk Model",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_8.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Fall Risk Assessment for Older Adults: The Hendrich II Fall Risk Model 第1条"
+  },
+  {
+   "id": "E11",
+   "source": "HIGN-HendrichII-8",
+   "clause": "第2条",
+   "sourceTitle": "Fall Risk Assessment for Older Adults: The Hendrich II Fall Risk Model",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_8.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Fall Risk Assessment for Older Adults: The Hendrich II Fall Risk Model 第2条"
+  },
+  {
+   "id": "E12",
+   "source": "HIGN-HendrichII-8",
+   "clause": "第3条",
+   "sourceTitle": "Fall Risk Assessment for Older Adults: The Hendrich II Fall Risk Model",
+   "url": "https://hign.org/sites/default/files/2020-06/Try_This_General_Assessment_8.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Fall Risk Assessment for Older Adults: The Hendrich II Fall Risk Model 第3条"
+  },
+  {
+   "id": "E13",
+   "source": "CDC-CheckForSafety",
+   "clause": "第1条",
+   "sourceTitle": "Check for Safety: A Home Fall Prevention Checklist for Older Adults",
+   "url": "https://www.cdc.gov/steadi/pdf/STEADI-Brochure-CheckForSafety-508.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Check for Safety: A Home Fall Prevention Checklist for Older Adults 第1条"
+  },
+  {
+   "id": "E14",
+   "source": "CDC-CheckForSafety",
+   "clause": "第2条",
+   "sourceTitle": "Check for Safety: A Home Fall Prevention Checklist for Older Adults",
+   "url": "https://www.cdc.gov/steadi/pdf/STEADI-Brochure-CheckForSafety-508.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Check for Safety: A Home Fall Prevention Checklist for Older Adults 第2条"
+  },
+  {
+   "id": "E15",
+   "source": "CDC-CheckForSafety",
+   "clause": "第3条",
+   "sourceTitle": "Check for Safety: A Home Fall Prevention Checklist for Older Adults",
+   "url": "https://www.cdc.gov/steadi/pdf/STEADI-Brochure-CheckForSafety-508.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Check for Safety: A Home Fall Prevention Checklist for Older Adults 第3条"
+  },
+  {
+   "id": "E16",
+   "source": "CDC-CheckForSafety",
+   "clause": "第4条",
+   "sourceTitle": "Check for Safety: A Home Fall Prevention Checklist for Older Adults",
+   "url": "https://www.cdc.gov/steadi/pdf/STEADI-Brochure-CheckForSafety-508.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Check for Safety: A Home Fall Prevention Checklist for Older Adults 第4条"
+  },
+  {
+   "id": "E17",
+   "source": "CDC-CheckForSafety",
+   "clause": "第5条",
+   "sourceTitle": "Check for Safety: A Home Fall Prevention Checklist for Older Adults",
+   "url": "https://www.cdc.gov/steadi/pdf/STEADI-Brochure-CheckForSafety-508.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Check for Safety: A Home Fall Prevention Checklist for Older Adults 第5条"
+  },
+  {
+   "id": "E18",
+   "source": "CDC-CheckForSafety",
+   "clause": "第6条",
+   "sourceTitle": "Check for Safety: A Home Fall Prevention Checklist for Older Adults",
+   "url": "https://www.cdc.gov/steadi/pdf/STEADI-Brochure-CheckForSafety-508.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Check for Safety: A Home Fall Prevention Checklist for Older Adults 第6条"
+  }
+ ],
+ "counts": {
+  "sources": 4,
+  "clauses": 18,
+  "verified": 18,
+  "unverified": 0
+ }
+}

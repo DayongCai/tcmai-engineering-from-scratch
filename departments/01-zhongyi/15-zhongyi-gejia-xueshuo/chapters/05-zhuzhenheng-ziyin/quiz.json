@@ -1,0 +1,79 @@
+{
+  "lesson": "05-zhuzhenheng-ziyin",
+  "title": "朱震亨与滋阴论：相火不是实火",
+  "subject": "15-zhongyi-gejia-xueshuo",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "相火的两种状态是？",
+      "options": [
+        "安位为生生之机，妄动为贼邪",
+        "实火与虚火",
+        "表火与里火",
+        "君火与臣火"
+      ],
+      "correct": 0,
+      "explanation": "位置错乱才是病。"
+    },
+    {
+      "stage": "check",
+      "question": "「滋阴降火」中哪一项为主？",
+      "options": [
+        "滋阴为主，降火为辅",
+        "降火为主",
+        "两者等量",
+        "只看证型"
+      ],
+      "correct": 0,
+      "explanation": "只降火不滋阴，火退阴更伤。"
+    },
+    {
+      "stage": "check",
+      "question": "本章命中的分书分布是？",
+      "options": [
+        "伤寒 3 / 金匮 7 / 温病 40",
+        "伤寒 379",
+        "全部在伤寒",
+        "全部在温病"
+      ],
+      "correct": 0,
+      "explanation": "50 条中 40 条在温病，是「影响」的间接证据。"
+    },
+    {
+      "stage": "check",
+      "question": "与张景岳的争点在？",
+      "options": [
+        "「阳」这一侧：有余还是不足",
+        "「阴」这一侧",
+        "有无热",
+        "是否用药"
+      ],
+      "correct": 0,
+      "explanation": "双方都承认阴不足。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么说滋阴与清热不同？",
+      "options": [
+        "滋阴针对阴液不足，清热针对火势，误用会伤正或留邪",
+        "两者相同",
+        "滋阴更猛",
+        "清热更慢"
+      ],
+      "correct": 0,
+      "explanation": "滋阴降火的次序即此。"
+    },
+    {
+      "stage": "post",
+      "question": "两派的用药风险正好互补，指什么？",
+      "options": [
+        "一个怕寒凉伤中，一个怕滋腻碍脾",
+        "一个怕贵，一个怕慢",
+        "一个怕泻，一个怕补",
+        "两者风险相同"
+      ],
+      "correct": 0,
+      "explanation": "故后世常合用。"
+    }
+  ]
+}

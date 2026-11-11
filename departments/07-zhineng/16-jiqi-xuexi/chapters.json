@@ -1,0 +1,135 @@
+{
+ "slug": "16-jiqi-xuexi",
+ "title": "机器学习",
+ "note": "16 章 = 教材 16 章（1:1）。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xulun",
+   "title": "绪论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-moxing-pinggu-yu-xuanze",
+   "title": "模型评估与选择",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-xianxing-moxing",
+   "title": "线性模型",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-juece-shu",
+   "title": "决策树",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-shenjing-wangluo",
+   "title": "神经网络",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-zhichi-xiangliang-ji",
+   "title": "支持向量机",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-beiyesi-fenleiqiu",
+   "title": "贝叶斯分类器",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-jicheng-xuexi",
+   "title": "集成学习",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-julei",
+   "title": "聚类",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-jiangwei-yu-duliang",
+   "title": "降维与度量学习",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-tezheng-xuanze-yu-xishu",
+   "title": "特征选择与稀疏学习",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-jisuan-xuexi-lilun",
+   "title": "计算学习理论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-banyou-jian-xuexi",
+   "title": "半监督学习",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-gailv-tu-moxing",
+   "title": "概率图模型",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-guize-xuexi",
+   "title": "规则学习",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-qianghua-xuexi",
+   "title": "强化学习",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
+}

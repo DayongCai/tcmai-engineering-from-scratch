@@ -1,0 +1,79 @@
+{
+  "lesson": "07-yubing",
+  "title": "郁病：气郁为始，虚损为终",
+  "subject": "20-zhongyi-jingshenbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "郁病的五个证中，最易被忽略的是？",
+      "options": [
+        "肾虚阳郁（须温阳开郁）",
+        "肝气郁结",
+        "气郁化火",
+        "心脾两虚"
+      ],
+      "correct": 0,
+      "explanation": "教材 7.2.1：久病及肾，阳气不伸。"
+    },
+    {
+      "stage": "check",
+      "question": "自杀风险的最高层级是？",
+      "options": [
+        "有具体计划与时间 → 立即转诊",
+        "偶有消极观念",
+        "既往无尝试",
+        "家属陪伴"
+      ],
+      "correct": 0,
+      "explanation": "教材 7.2.2 的转诊红线。"
+    },
+    {
+      "stage": "check",
+      "question": "郁病五证的排列体现什么？",
+      "options": [
+        "病程：从气郁（实）到肾虚阳郁（虚）",
+        "脏腑顺序",
+        "年龄顺序",
+        "季节顺序"
+      ],
+      "correct": 0,
+      "explanation": "与第 3 章虚损链对应。"
+    },
+    {
+      "stage": "check",
+      "question": "本章四位面首位是？",
+      "options": [
+        "情感情绪（98）",
+        "神志意识",
+        "行为言语",
+        "认知睡眠"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么郁病的自杀风险须动态重评？",
+      "options": [
+        "病情波动，一次评估不足以覆盖",
+        "因为规范要求",
+        "因为家属担心",
+        "因为药效慢"
+      ],
+      "correct": 0,
+      "explanation": "教材 7.2.2。"
+    },
+    {
+      "stage": "post",
+      "question": "郁病与现代诊断的对应范围是？",
+      "options": [
+        "抑郁障碍与部分焦虑障碍",
+        "仅精神分裂症",
+        "仅双相障碍",
+        "仅器质性精神障碍"
+      ],
+      "correct": 0,
+      "explanation": "教材 7.1.1。"
+    }
+  ]
+}

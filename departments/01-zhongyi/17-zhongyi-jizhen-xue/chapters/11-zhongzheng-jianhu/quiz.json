@@ -1,0 +1,79 @@
+{
+  "lesson": "11-zhongzheng-jianhu",
+  "title": "急危重症与重症监护协同：分清谁能做",
+  "subject": "17-zhongyi-jizhen-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "脓毒性休克的中西医协同顺序是？",
+      "options": [
+        "先识别与复苏，中医回阳固脱作为协同",
+        "先中医固脱再复苏",
+        "只用中药",
+        "只用西药"
+      ],
+      "correct": 0,
+      "explanation": "教材 11.1.1：中医在第三步，不是替代而是协同。"
+    },
+    {
+      "stage": "check",
+      "question": "MODS 时中医辨治的主线是？",
+      "options": [
+        "扶正固脱（此时已无「邪实可攻」余地）",
+        "峻下攻邪",
+        "发汗解表",
+        "涌吐"
+      ],
+      "correct": 0,
+      "explanation": "教材 11.1.2：多器官受累以固脱为主线。"
+    },
+    {
+      "stage": "check",
+      "question": "GCS 低于多少考虑气道保护？",
+      "options": [
+        "≤8",
+        "≤12",
+        "≤14",
+        "≤3"
+      ],
+      "correct": 0,
+      "explanation": "教材 11.2.1 四条监测中的意识项。"
+    },
+    {
+      "stage": "check",
+      "question": "尿量低于多少提示灌注不足？",
+      "options": [
+        "＜0.5 mL/kg/h",
+        "＜2 mL/kg/h",
+        "＜10 mL/kg/h",
+        "无判据"
+      ],
+      "correct": 0,
+      "explanation": "四条监测项之一。"
+    },
+    {
+      "stage": "post",
+      "question": "脓毒性休克识别的三要素是？",
+      "options": [
+        "感染灶＋低血压＋灌注不足",
+        "发热＋咳嗽＋乏力",
+        "黄疸＋腹水＋肝掌",
+        "抽搐＋昏迷＋瞳孔变化"
+      ],
+      "correct": 0,
+      "explanation": "教材 11.1.1。"
+    },
+    {
+      "stage": "post",
+      "question": "本章引书为 0 说明什么？",
+      "options": [
+        "讲的是现代重症通用能力，古籍无对应内容",
+        "教材遗漏",
+        "中医不参与重症",
+        "统计口径问题"
+      ],
+      "correct": 0,
+      "explanation": "与第 3 章同构——承认学科有「非中医的一半」。"
+    }
+  ]
+}

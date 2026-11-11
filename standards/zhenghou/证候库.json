@@ -1,0 +1,3467 @@
+{
+ "source": {
+  "kind": "跨课程派生底本（本库无《中医证候学》母本工作簿）",
+  "courses": {
+   "waike": {
+    "title": "中医外科学",
+    "units": 325
+   },
+   "erke": {
+    "title": "中医儿科学",
+    "units": 250
+   },
+   "fuke": {
+    "title": "中医妇科学",
+    "units": 325
+   }
+  },
+  "unitsScanned": 900,
+  "classical": {
+   "file": "qhzy-中医诊断学.xlsx",
+   "sheets": {
+    "八纲辨证": {
+     "no": 6,
+     "hanzi": 1746
+    },
+    "病性辨证": {
+     "no": 7,
+     "hanzi": 1757
+    },
+    "脏腑辨证": {
+     "no": 8,
+     "hanzi": 2484
+    },
+    "经络辨证": {
+     "no": 9,
+     "hanzi": 624
+    },
+    "六经辨证": {
+     "no": 10,
+     "hanzi": 743
+    },
+    "卫气营血辨证": {
+     "no": 11,
+     "hanzi": 580
+    },
+    "三焦辨证": {
+     "no": 12,
+     "hanzi": 358
+    }
+   },
+   "sha256": "051d830a627c04cfd6e684f76537c19c691b63590fe3c0ca6bd3efa3ab9c5355"
+  }
+ },
+ "counts": {
+  "zheng": 132,
+  "cross2": 10,
+  "cross3": 0,
+  "families": 14,
+  "bianzhengHanzi": 8292
+ },
+ "families": [
+  {
+   "family": "血瘀",
+   "all": 16,
+   "cross2": 3
+  },
+  {
+   "family": "热毒",
+   "all": 14,
+   "cross2": 1
+  },
+  {
+   "family": "气虚",
+   "all": 14,
+   "cross2": 0
+  },
+  {
+   "family": "湿热",
+   "all": 13,
+   "cross2": 1
+  },
+  {
+   "family": "阴虚",
+   "all": 13,
+   "cross2": 2
+  },
+  {
+   "family": "其他",
+   "all": 11,
+   "cross2": 0
+  },
+  {
+   "family": "血热",
+   "all": 10,
+   "cross2": 0
+  },
+  {
+   "family": "痰湿",
+   "all": 9,
+   "cross2": 0
+  },
+  {
+   "family": "气滞",
+   "all": 7,
+   "cross2": 1
+  },
+  {
+   "family": "阳虚",
+   "all": 7,
+   "cross2": 0
+  },
+  {
+   "family": "风热",
+   "all": 6,
+   "cross2": 0
+  },
+  {
+   "family": "血虚",
+   "all": 5,
+   "cross2": 1
+  },
+  {
+   "family": "风寒",
+   "all": 4,
+   "cross2": 1
+  },
+  {
+   "family": "正虚邪恋",
+   "all": 3,
+   "cross2": 0
+  }
+ ],
+ "positions": [
+  {
+   "position": "肝",
+   "n": 16
+  },
+  {
+   "position": "肾",
+   "n": 11
+  },
+  {
+   "position": "脾",
+   "n": 8
+  },
+  {
+   "position": "肠胃",
+   "n": 8
+  },
+  {
+   "position": "心",
+   "n": 4
+  },
+  {
+   "position": "肺",
+   "n": 2
+  },
+  {
+   "position": "冲任胞宫",
+   "n": 1
+  }
+ ],
+ "zheng": [
+  {
+   "name": "气滞血瘀证",
+   "family": "血瘀",
+   "familyAlt": [
+    "气滞"
+   ],
+   "positions": [],
+   "courses": [
+    "fuke",
+    "waike"
+   ],
+   "courseCount": 2,
+   "chapters": [
+    "7",
+    "8",
+    "9",
+    "10",
+    "12"
+   ],
+   "diseases": [
+    "内痔",
+    "妇人腹痛",
+    "油风",
+    "混合痔",
+    "痛经",
+    "癥瘕",
+    "精浊",
+    "精癃",
+    "经行浮肿",
+    "肉瘤",
+    "肛裂",
+    "肠痈",
+    "蛇串疮",
+    "酒齄鼻",
+    "锁肛痔",
+    "闭经"
+   ],
+   "diseaseCount": 16,
+   "fang": [
+    "膈下逐瘀汤加减（《医林改错》）",
+    "通窍活血汤加减（《医林改错》）",
+    "顺气归脾丸加减（《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "湿热下注证",
+   "family": "湿热",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke",
+    "waike"
+   ],
+   "courseCount": 2,
+   "chapters": [
+    "9",
+    "10",
+    "11"
+   ],
+   "diseases": [
+    "内痔",
+    "外痔",
+    "妊娠小便淋痛",
+    "子痈",
+    "带下过多",
+    "混合痔",
+    "精癃",
+    "肛漏",
+    "股肿",
+    "臁疮",
+    "血精",
+    "阳痿"
+   ],
+   "diseaseCount": 12,
+   "fang": [
+    "龙胆泻肝汤加减（《医方集解》）",
+    "血府逐瘀汤加减（《医林改错》）",
+    "萆薢渗湿汤加减（《疡科心得集》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阴虚火旺证",
+   "family": "阴虚",
+   "familyAlt": [
+    "血热"
+   ],
+   "positions": [],
+   "courses": [
+    "fuke",
+    "waike"
+   ],
+   "courseCount": 2,
+   "chapters": [
+    "5",
+    "7",
+    "8",
+    "10",
+    "12"
+   ],
+   "diseases": [
+    "瘰疬",
+    "精浊",
+    "经行口糜",
+    "肾岩",
+    "脏躁",
+    "血精"
+   ],
+   "diseaseCount": 6,
+   "fang": [
+    "知柏地黄丸加减（《医宗金鉴》）",
+    "逍遥散合二陈汤加减（《太平惠民和剂局方》），常用柴胡、当归、",
+    "六味地黄丸合清骨散加减（《小儿药证直诀》《证治准绳》），常用"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "热毒蕴结证",
+   "family": "热毒",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke",
+    "waike"
+   ],
+   "courseCount": 2,
+   "chapters": [
+    "5",
+    "9"
+   ],
+   "diseases": [
+    "带下过多",
+    "疔",
+    "疖"
+   ],
+   "diseaseCount": 3,
+   "fang": [
+    "五味消毒饮加减（《医宗金鉴》），常用金银花、野菊花、蒲公英、",
+    "清暑汤加减（《外科全生集》），常用连翘、天花粉、赤芍、滑石、",
+    "托里消毒散加减（《医宗金鉴》），常用黄芪、党参、白术、茯苓、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "血虚风燥证",
+   "family": "血虚",
+   "familyAlt": [
+    "风热"
+   ],
+   "positions": [],
+   "courses": [
+    "fuke",
+    "waike"
+   ],
+   "courseCount": 2,
+   "chapters": [
+    "8",
+    "10"
+   ],
+   "diseases": [
+    "妊娠身痒",
+    "湿疮",
+    "白疕"
+   ],
+   "diseaseCount": 3,
+   "fang": [
+    "萆薢渗湿汤加减（《疡科心得集》）",
+    "参苓白术散加减（《太平惠民和剂局方》）",
+    "当归饮子加减（《济生方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "寒凝血瘀证",
+   "family": "血瘀",
+   "familyAlt": [
+    "风寒"
+   ],
+   "positions": [],
+   "courses": [
+    "fuke",
+    "waike"
+   ],
+   "courseCount": 2,
+   "chapters": [
+    "7",
+    "12"
+   ],
+   "diseases": [
+    "冻疮",
+    "痛经"
+   ],
+   "diseaseCount": 2,
+   "fang": [
+    "当归四逆汤加减（《伤寒论》）",
+    "参附汤加减（《校注妇人良方》）",
+    "膈下逐瘀汤加减（《医林改错》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "寒湿凝滞证",
+   "family": "风寒",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke",
+    "waike"
+   ],
+   "courseCount": 2,
+   "chapters": [
+    "11",
+    "12"
+   ],
+   "diseases": [
+    "妇人腹痛",
+    "筋瘤"
+   ],
+   "diseaseCount": 2,
+   "fang": [
+    "补中益气汤加减（《脾胃论》）",
+    "暖肝煎合当归四逆汤加减（《景岳全书》《伤寒论》）",
+    "活血散瘀汤加减（《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "湿热瘀结证",
+   "family": "血瘀",
+   "familyAlt": [
+    "湿热"
+   ],
+   "positions": [],
+   "courses": [
+    "fuke",
+    "waike"
+   ],
+   "courseCount": 2,
+   "chapters": [
+    "11",
+    "12"
+   ],
+   "diseases": [
+    "妇人腹痛",
+    "青蛇毒"
+   ],
+   "diseaseCount": 2,
+   "fang": [
+    "五神汤合萆薢渗湿汤加减（《洞天奥旨》《疡科心得集》）",
+    "四妙勇安汤加减（《验方新编》）",
+    "补肾祛瘀方加减（经验方），亦可选用左归丸合失笑散加减"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肝经郁热证",
+   "family": "气滞",
+   "familyAlt": [],
+   "positions": [
+    "肝"
+   ],
+   "courses": [
+    "fuke",
+    "waike"
+   ],
+   "courseCount": 2,
+   "chapters": [
+    "8",
+    "11"
+   ],
+   "diseases": [
+    "乳汁自出",
+    "蛇串疮"
+   ],
+   "diseaseCount": 2,
+   "fang": [
+    "龙胆泻肝汤加减（《医宗金鉴》）",
+    "除湿胃苓汤加减（《医宗金鉴》）",
+    "桃红四物汤合柴胡疏肝散加减（《医宗金鉴》合《景岳全书》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阴虚津亏证",
+   "family": "阴虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke",
+    "waike"
+   ],
+   "courseCount": 2,
+   "chapters": [
+    "9",
+    "10"
+   ],
+   "diseases": [
+    "妊娠小便淋痛",
+    "肛裂"
+   ],
+   "diseaseCount": 2,
+   "fang": [
+    "凉血地黄汤合麻子仁丸加减（凉血地黄汤出自《外科正宗》，麻子仁",
+    "润肠汤加减（《证治准绳》）",
+    "六磨汤加减（《世医得效方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "气血虚弱证",
+   "family": "血虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7",
+    "8",
+    "10",
+    "11"
+   ],
+   "diseases": [
+    "妊娠眩晕",
+    "滑胎",
+    "痛经",
+    "缺乳",
+    "胎漏、胎动不安",
+    "胎萎不长",
+    "闭经"
+   ],
+   "diseaseCount": 7,
+   "fang": [
+    "八珍汤（《正体类要》）加减",
+    "膈下逐瘀汤加减（《医林改错》）",
+    "少腹逐瘀汤加减（《医林改错》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "湿热蕴结证",
+   "family": "湿热",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8",
+    "9",
+    "10"
+   ],
+   "diseases": [
+    "不育症",
+    "水疝",
+    "粉刺",
+    "精浊",
+    "肛痈",
+    "锁肛痔"
+   ],
+   "diseaseCount": 6,
+   "fang": [
+    "枇杷清肺饮加减（《医宗金鉴》）",
+    "茵陈蒿汤合枇杷清肺饮加减（《伤寒论》合《医宗金鉴》）",
+    "二陈汤合桃红四物汤加减（《太平惠民和剂局方》合《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肝气郁结证",
+   "family": "气滞",
+   "familyAlt": [],
+   "positions": [
+    "肝"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8",
+    "11",
+    "12"
+   ],
+   "diseases": [
+    "不孕症",
+    "产后情志异常",
+    "经行乳房胀痛",
+    "经行情志异常",
+    "脏躁"
+   ],
+   "diseaseCount": 5,
+   "fang": [
+    "逍遥散加减（《局方》）",
+    "一贯煎加减（《柳州医话》）",
+    "生铁落饮加减（《医学心悟》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "气滞痰凝证",
+   "family": "痰湿",
+   "familyAlt": [
+    "气滞"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5",
+    "7",
+    "10"
+   ],
+   "diseases": [
+    "子痈",
+    "瘰疬",
+    "瘿痈",
+    "肉瘿"
+   ],
+   "diseaseCount": 4,
+   "fang": [
+    "逍遥散合二陈汤加减（《太平惠民和剂局方》），常用柴胡、当归、",
+    "六味地黄丸合清骨散加减（《小儿药证直诀》《证治准绳》），常用",
+    "香贝养荣汤加减（《医宗金鉴》），常用香附、贝母、人参、茯苓、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "火毒炽盛证",
+   "family": "热毒",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5",
+    "8",
+    "12"
+   ],
+   "diseases": [
+    "烧伤",
+    "疔",
+    "白疕"
+   ],
+   "diseaseCount": 3,
+   "fang": [
+    "五味消毒饮加减（《医宗金鉴》），常用金银花、野菊花、蒲公英、",
+    "五味消毒饮合黄连解毒汤加减（《医宗金鉴》《外台秘要》），常用",
+    "犀角地黄汤合黄连解毒汤加减（《备急千金要方》《外台秘要》），"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "热毒炽盛证",
+   "family": "热毒",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5",
+    "9",
+    "12"
+   ],
+   "diseases": [
+    "肛痈",
+    "肠痈",
+    "附骨疽"
+   ],
+   "diseaseCount": 3,
+   "fang": [
+    "仙方活命饮合五神汤加减（《校注妇人良方》《外科真诠》），常用",
+    "黄连解毒汤合透脓散加减（《外台秘要》《外科正宗》），常用黄连",
+    "托里消毒散加减（《医宗金鉴》），常用黄芪、党参、白术、茯苓、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肝郁气滞证",
+   "family": "气滞",
+   "familyAlt": [],
+   "positions": [
+    "肝"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7",
+    "10",
+    "12"
+   ],
+   "diseases": [
+    "气瘿",
+    "胆石症",
+    "阳痿"
+   ],
+   "diseaseCount": 3,
+   "fang": [
+    "四海舒郁丸加减（《疡医大全》）",
+    "海藻玉壶汤加减（《医宗金鉴》）",
+    "右归丸合赞育丹加减（《景岳全书》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "脾虚气陷证",
+   "family": "气虚",
+   "familyAlt": [],
+   "positions": [
+    "脾"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "9"
+   ],
+   "diseases": [
+    "内痔",
+    "混合痔",
+    "脱肛"
+   ],
+   "diseaseCount": 3,
+   "fang": [
+    "补中益气汤加减（《脾胃论》）",
+    "凉血地黄汤加减（《外科正宗》）",
+    "地榆散合脏连丸加减（地榆散出自《太平惠民和剂局方》，脏连丸出"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "正虚邪恋证",
+   "family": "正虚邪恋",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5",
+    "9"
+   ],
+   "diseases": [
+    "流注",
+    "肛漏"
+   ],
+   "diseaseCount": 2,
+   "fang": [
+    "黄连解毒汤合犀角地黄汤加减（《外台秘要》《备急千金要方》），",
+    "清暑汤加减（《外科全生集》），常用连翘、天花粉、赤芍、滑石、",
+    "活血散瘀汤加减（《医宗金鉴》），常用当归、赤芍、桃仁、大黄、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "湿热壅滞证",
+   "family": "湿热",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5",
+    "12"
+   ],
+   "diseases": [
+    "有头疽",
+    "肠痈"
+   ],
+   "diseaseCount": 2,
+   "fang": [
+    "仙方活命饮加减（《校注妇人良方》），常用金银花、白芷、贝母、",
+    "仙方活命饮合黄连解毒汤加减（《校注妇人良方》《外台秘要》），",
+    "竹叶黄芪汤加减（《医宗金鉴》），常用人参、黄芪、石膏、半夏、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "湿热瘀阻证",
+   "family": "血瘀",
+   "familyAlt": [
+    "湿热"
+   ],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7",
+    "12"
+   ],
+   "diseases": [
+    "痛经",
+    "癥瘕"
+   ],
+   "diseaseCount": 2,
+   "fang": [
+    "膈下逐瘀汤加减（《医林改错》）",
+    "少腹逐瘀汤加减（《医林改错》）",
+    "清热调血汤加减（《古今医鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "火毒凝结证",
+   "family": "热毒",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "有头疽",
+    "痈"
+   ],
+   "diseaseCount": 2,
+   "fang": [
+    "仙方活命饮加减（《校注妇人良方》），常用金银花、白芷、贝母、",
+    "仙方活命饮合透脓散加减（《校注妇人良方》《外科正宗》），常用",
+    "托里消毒散加减（《医宗金鉴》），常用黄芪、党参、白术、茯苓、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "痰火上扰证",
+   "family": "痰湿",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8",
+    "10"
+   ],
+   "diseases": [
+    "妊娠痫证",
+    "经行情志异常"
+   ],
+   "diseaseCount": 2,
+   "fang": [
+    "逍遥散加减（《局方》）",
+    "生铁落饮加减（《医学心悟》）",
+    "羚角钩藤汤（《通俗伤寒论》）加减"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肾气亏损证",
+   "family": "气虚",
+   "familyAlt": [],
+   "positions": [
+    "肾"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7",
+    "8"
+   ],
+   "diseases": [
+    "痛经",
+    "闭经"
+   ],
+   "diseaseCount": 2,
+   "fang": [
+    "膈下逐瘀汤加减（《医林改错》）",
+    "少腹逐瘀汤加减（《医林改错》）",
+    "清热调血汤加减（《古今医鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肾虚血瘀证",
+   "family": "血瘀",
+   "familyAlt": [],
+   "positions": [
+    "肾"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "妇人腹痛",
+    "癥瘕"
+   ],
+   "diseaseCount": 2,
+   "fang": [
+    "香棱丸加减（《济生方》）",
+    "开郁二陈汤加减，亦可选用苍附导痰丸加减",
+    "银甲丸加减（《王渭川经验方》），若瘀热壅盛亦可选用大黄䗪虫丸"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肾阳不足证",
+   "family": "阳虚",
+   "familyAlt": [],
+   "positions": [
+    "肾"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "不育症",
+    "阳痿"
+   ],
+   "diseaseCount": 2,
+   "fang": [
+    "龙胆泻肝汤加减（《医方集解》）",
+    "右归丸合赞育丹加减（《景岳全书》）",
+    "逍遥散加减（《太平惠民和剂局方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "脾虚湿蕴证",
+   "family": "气虚",
+   "familyAlt": [
+    "痰湿"
+   ],
+   "positions": [
+    "脾"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "湿疮",
+    "蛇串疮"
+   ],
+   "diseaseCount": 2,
+   "fang": [
+    "龙胆泻肝汤加减（《医宗金鉴》）",
+    "除湿胃苓汤加减（《医宗金鉴》）",
+    "桃红四物汤合柴胡疏肝散加减（《医宗金鉴》合《景岳全书》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "血脉瘀阻证",
+   "family": "血瘀",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "11"
+   ],
+   "diseases": [
+    "股肿",
+    "脱疽"
+   ],
+   "diseaseCount": 2,
+   "fang": [
+    "阳和汤加减（《外科全生集》）",
+    "桃红四物汤合血府逐瘀汤加减（《医宗金鉴》《医林改错》）",
+    "四妙勇安汤加减（《验方新编》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "中气下陷证",
+   "family": "气虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "精癃"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "八正散加减（《太平惠民和剂局方》）",
+    "沉香散加减（《三因极一病证方论》）",
+    "济生肾气丸加减（《济生方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "久病伤阳而见寒证",
+   "family": "正虚邪恋",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "erke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "儿科辨证概要"
+   ],
+   "diseaseCount": 1,
+   "fang": [],
+   "aliases": []
+  },
+  {
+   "name": "体虚毒恋证",
+   "family": "热毒",
+   "familyAlt": [
+    "正虚邪恋"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "疖"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "五味消毒饮加减（《医宗金鉴》），常用金银花、野菊花、蒲公英、",
+    "清暑汤加减（《外科全生集》），常用连翘、天花粉、赤芍、滑石、",
+    "托里消毒散加减（《医宗金鉴》），常用黄芪、党参、白术、茯苓、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "余毒攻窜证",
+   "family": "正虚邪恋",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "流注"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "黄连解毒汤合犀角地黄汤加减（《外台秘要》《备急千金要方》），",
+    "清暑汤加减（《外科全生集》），常用连翘、天花粉、赤芍、滑石、",
+    "活血散瘀汤加减（《医宗金鉴》），常用当归、赤芍、桃仁、大黄、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "劳倦伤气证",
+   "family": "气虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "11"
+   ],
+   "diseases": [
+    "筋瘤"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "补中益气汤加减（《脾胃论》）",
+    "暖肝煎合当归四逆汤加减（《景岳全书》《伤寒论》）",
+    "活血散瘀汤加减（《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "外伤瘀滞证",
+   "family": "血瘀",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "11"
+   ],
+   "diseases": [
+    "筋瘤"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "补中益气汤加减（《脾胃论》）",
+    "暖肝煎合当归四逆汤加减（《景岳全书》《伤寒论》）",
+    "活血散瘀汤加减（《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "寒湿内盛证",
+   "family": "风寒",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "水疝"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "五苓散加减（《伤寒论》）",
+    "大分清饮加减（《景岳全书》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "寒湿阻络证",
+   "family": "风寒",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "11"
+   ],
+   "diseases": [
+    "脱疽"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "阳和汤加减（《外科全生集》）",
+    "桃红四物汤合血府逐瘀汤加减（《医宗金鉴》《医林改错》）",
+    "四妙勇安汤加减（《验方新编》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "寒盛阳衰证",
+   "family": "阳虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "冻疮"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "当归四逆汤加减（《伤寒论》）",
+    "参附汤加减（《校注妇人良方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "心火偏亢证",
+   "family": "其他",
+   "familyAlt": [],
+   "positions": [
+    "心"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "妊娠小便淋痛"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "知柏地黄丸（《医宗金鉴》）加减",
+    "导赤散（《小儿药证直诀》）加减",
+    "加味五苓散（《医宗金鉴》）加减"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "心火妄动证",
+   "family": "血热",
+   "familyAlt": [],
+   "positions": [
+    "心"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7"
+   ],
+   "diseases": [
+    "血瘤"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "芩连二母丸合泻心汤加减（《医宗金鉴》）",
+    "调元肾气丸加减（《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "心神失养证",
+   "family": "其他",
+   "familyAlt": [],
+   "positions": [
+    "心"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "脏躁"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "甘麦大枣汤加减（《金匮要略》）",
+    "百合地黄汤加减（《金匮要略》）合甘麦大枣汤",
+    "逍遥散加减（《局方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "心血不足证",
+   "family": "血虚",
+   "familyAlt": [],
+   "positions": [
+    "心"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "11"
+   ],
+   "diseases": [
+    "产后情志异常"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "归脾汤加减（《济生方》）",
+    "逍遥散加减（《太平惠民和剂局方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "惊恐伤肾证",
+   "family": "其他",
+   "familyAlt": [],
+   "positions": [
+    "肾"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "阳痿"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "右归丸合赞育丹加减（《景岳全书》）",
+    "逍遥散加减（《太平惠民和剂局方》）",
+    "龙胆泻肝汤加减（《医方集解》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "感染邪毒证",
+   "family": "其他",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "11"
+   ],
+   "diseases": [
+    "产后发热"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "五味消毒饮合失笑散加减（《医宗金鉴》《太平惠民和剂局方》）",
+    "荆防四物汤加减（《医宗金鉴》）",
+    "补中益气汤加减（《脾胃论》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "暑湿交蒸证",
+   "family": "湿热",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "流注"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "黄连解毒汤合犀角地黄汤加减（《外台秘要》《备急千金要方》），",
+    "清暑汤加减（《外科全生集》），常用连翘、天花粉、赤芍、滑石、",
+    "活血散瘀汤加减（《医宗金鉴》），常用当归、赤芍、桃仁、大黄、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "暑热浸淫证",
+   "family": "湿热",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "疖"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "五味消毒饮加减（《医宗金鉴》），常用金银花、野菊花、蒲公英、",
+    "清暑汤加减（《外科全生集》），常用连翘、天花粉、赤芍、滑石、",
+    "托里消毒散加减（《医宗金鉴》），常用黄芪、党参、白术、茯苓、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "气虚毒滞证",
+   "family": "气虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "有头疽"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "仙方活命饮加减（《校注妇人良方》），常用金银花、白芷、贝母、",
+    "仙方活命饮合黄连解毒汤加减（《校注妇人良方》《外台秘要》），",
+    "竹叶黄芪汤加减（《医宗金鉴》），常用人参、黄芪、石膏、半夏、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "气虚湿阻证",
+   "family": "气虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "11"
+   ],
+   "diseases": [
+    "股肿"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "五神汤合四妙勇安汤加减（《洞天奥旨》《验方新编》）",
+    "血府逐瘀汤加减（《医林改错》）",
+    "防己黄芪汤合苓桂术甘汤加减（《金匮要略》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "气虚血瘀证",
+   "family": "气虚",
+   "familyAlt": [
+    "血瘀"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "11"
+   ],
+   "diseases": [
+    "臁疮"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "三妙丸合萆薢渗湿汤加减（《医学正传》《疡科心得集》）",
+    "参苓白术散加减（《太平惠民和剂局方》）",
+    "补阳还五汤加减（《医林改错》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "气血两亏证",
+   "family": "血虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7"
+   ],
+   "diseases": [
+    "失荣"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "香贝养荣汤加减（《医宗金鉴》）",
+    "阳和汤加减（《外科全生集》）",
+    "人参养荣汤加减（《太平惠民和剂局方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "气血瘀滞证",
+   "family": "血瘀",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "白疕"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "犀角地黄汤加减（《备急千金要方》），或凉血地黄汤加减（《外科",
+    "四物消风饮加减（《医宗金鉴》）",
+    "血府逐瘀汤加减（《医林改错》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "气郁痰结证",
+   "family": "痰湿",
+   "familyAlt": [
+    "气滞"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7"
+   ],
+   "diseases": [
+    "失荣"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "香贝养荣汤加减（《医宗金鉴》）",
+    "阳和汤加减（《外科全生集》）",
+    "人参养荣汤加减（《太平惠民和剂局方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "湿浊瘀结证",
+   "family": "血瘀",
+   "familyAlt": [
+    "痰湿"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7"
+   ],
+   "diseases": [
+    "肾岩"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "三妙丸合散肿溃坚汤加减（三妙丸出《医学正传》，散肿溃坚汤出《",
+    "知柏地黄丸合大补阴丸加减（知柏地黄丸出《医宗金鉴》，大补阴丸"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "湿热毒盛证",
+   "family": "湿热",
+   "familyAlt": [
+    "热毒"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "11"
+   ],
+   "diseases": [
+    "脱疽"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "阳和汤加减（《外科全生集》）",
+    "桃红四物汤合血府逐瘀汤加减（《医宗金鉴》《医林改错》）",
+    "四妙勇安汤加减（《验方新编》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "湿热毒聚证",
+   "family": "湿热",
+   "familyAlt": [
+    "热毒"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "疥疮"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "以外治为主，硫黄软膏（成人10%～20%，儿童5%）自颈以下",
+    "黄连解毒汤合五味消毒饮加减（《外台秘要》引崔氏方合《医宗金鉴"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "湿热毒蕴证",
+   "family": "湿热",
+   "familyAlt": [
+    "热毒"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "丹毒"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "普济消毒饮加减（《东垣试效方》），常用黄芩、黄连、连翘、板蓝",
+    "龙胆泻肝汤加减（《医宗金鉴》），常用龙胆草、黄芩、栀子、泽泻",
+    "五神汤合萆薢渗湿汤加减（《外科真诠》《疡科心得集》），常用茯"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "湿热浸淫证",
+   "family": "湿热",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "湿疮"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "萆薢渗湿汤加减（《疡科心得集》）",
+    "参苓白术散加减（《太平惠民和剂局方》）",
+    "当归饮子加减（《济生方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "湿热瘀滞证",
+   "family": "血瘀",
+   "familyAlt": [
+    "湿热"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "附骨疽"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "仙方活命饮合五神汤加减（《校注妇人良方》《外科真诠》），常用",
+    "黄连解毒汤合透脓散加减（《外台秘要》《外科正宗》），常用黄连",
+    "托里消毒散加减（《医宗金鉴》），常用黄芪、党参、白术、茯苓、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "火毒伤津证",
+   "family": "热毒",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "烧伤"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "黄连解毒汤加减（《外台秘要》）",
+    "犀角地黄汤合黄连解毒汤加减（犀角地黄汤出自《备急千金要方》）",
+    "生脉散合参附汤加减（生脉散出自《内外伤辨惑论》，参附汤出自《"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "热毒伤阴证",
+   "family": "热毒",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "11"
+   ],
+   "diseases": [
+    "脱疽"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "阳和汤加减（《外科全生集》）",
+    "桃红四物汤合血府逐瘀汤加减（《医宗金鉴》《医林改错》）",
+    "四妙勇安汤加减（《验方新编》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "热毒蕴肤证",
+   "family": "热毒",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "酒齄鼻"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "枇杷清肺饮加减（《医宗金鉴》）",
+    "黄连解毒汤合五味消毒饮加减（《外台秘要》引崔氏方合《医宗金鉴",
+    "通窍活血汤加减（《医林改错》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "热盛肉腐证",
+   "family": "血热",
+   "familyAlt": [
+    "热毒"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "痈"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "仙方活命饮加减（《校注妇人良方》），常用金银花、白芷、贝母、",
+    "仙方活命饮合透脓散加减（《校注妇人良方》《外科正宗》），常用",
+    "托里消毒散加减（《医宗金鉴》），常用黄芪、党参、白术、茯苓、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "痰凝气聚证",
+   "family": "痰湿",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7"
+   ],
+   "diseases": [
+    "肉瘤"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "顺气归脾丸加减（《医宗金鉴》）",
+    "二陈汤合桃红四物汤加减（二陈汤出《太平惠民和剂局方》，桃红四"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "痰气郁结证",
+   "family": "痰湿",
+   "familyAlt": [
+    "气滞"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7"
+   ],
+   "diseases": [
+    "气瘿"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "四海舒郁丸加减（《疡医大全》）",
+    "海藻玉壶汤加减（《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "痰湿内阻证",
+   "family": "痰湿",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "不孕症"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "毓麟珠加减（《景岳全书》）",
+    "温胞饮加减（《傅青主女科》）",
+    "养精种玉汤加减（《傅青主女科》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "痰湿瘀滞证",
+   "family": "血瘀",
+   "familyAlt": [
+    "痰湿"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "粉刺"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "枇杷清肺饮加减（《医宗金鉴》）",
+    "茵陈蒿汤合枇杷清肺饮加减（《伤寒论》合《医宗金鉴》）",
+    "二陈汤合桃红四物汤加减（《太平惠民和剂局方》合《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "痰湿瘀结证",
+   "family": "血瘀",
+   "familyAlt": [
+    "痰湿"
+   ],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "癥瘕"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "香棱丸加减（《济生方》）",
+    "开郁二陈汤加减，亦可选用苍附导痰丸加减",
+    "银甲丸加减（《王渭川经验方》），若瘀热壅盛亦可选用大黄䗪虫丸"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "痰湿阻滞证",
+   "family": "痰湿",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "闭经"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "人参养荣汤加减（《局方》）",
+    "加减苁蓉菟丝子丸加减（《中医妇科治疗学》）",
+    "加减一阴煎加减（《景岳全书》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "痰瘀互结证",
+   "family": "痰湿",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7"
+   ],
+   "diseases": [
+    "石瘿"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "海藻玉壶汤合桃红四物汤加减（海藻玉壶汤出《医宗金鉴》）",
+    "知柏地黄丸合海藻玉壶汤加减（《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "瘀滞胞宫证",
+   "family": "血瘀",
+   "familyAlt": [],
+   "positions": [
+    "冲任胞宫"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "不孕症"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "毓麟珠加减（《景岳全书》）",
+    "温胞饮加减（《傅青主女科》）",
+    "养精种玉汤加减（《傅青主女科》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "瘀热伤阴证",
+   "family": "其他",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7"
+   ],
+   "diseases": [
+    "石瘿"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "海藻玉壶汤合桃红四物汤加减（海藻玉壶汤出《医宗金鉴》）",
+    "知柏地黄丸合海藻玉壶汤加减（《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "瘀热壅阻证",
+   "family": "其他",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "经行发热"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "蒿芩地丹四物汤加减（《中医妇科学》）",
+    "补中益气汤加减（《脾胃论》）",
+    "血府逐瘀汤加减（《医林改错》）加牡丹皮"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "瘀血凝滞证",
+   "family": "血瘀",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "流注"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "黄连解毒汤合犀角地黄汤加减（《外台秘要》《备急千金要方》），",
+    "清暑汤加减（《外科全生集》），常用连翘、天花粉、赤芍、滑石、",
+    "活血散瘀汤加减（《医宗金鉴》），常用当归、赤芍、桃仁、大黄、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肝气郁滞证",
+   "family": "气滞",
+   "familyAlt": [],
+   "positions": [
+    "肝"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "11"
+   ],
+   "diseases": [
+    "缺乳"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "通乳丹加减（《傅青主女科》）",
+    "下乳涌泉散加减（《清太医院配方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肝经湿热证",
+   "family": "湿热",
+   "familyAlt": [],
+   "positions": [
+    "肝"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "阴痒"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "龙胆泻肝汤加减（《医宗金鉴》）",
+    "知柏地黄汤加减（《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肝经郁火证",
+   "family": "气滞",
+   "familyAlt": [],
+   "positions": [
+    "肝"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "经行吐衄"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "清肝引经汤加减（《中医妇科学》）",
+    "顺经汤加减（《傅青主女科》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肝肾不足证",
+   "family": "其他",
+   "familyAlt": [],
+   "positions": [
+    "肝",
+    "肾"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "油风"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "神应养真丹加减（《外科正宗》）",
+    "通窍活血汤加减（《医林改错》）",
+    "七宝美髯丹加减（《医方集解》引《积善堂方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肝肾亏损证",
+   "family": "其他",
+   "familyAlt": [],
+   "positions": [
+    "肝",
+    "肾"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "9"
+   ],
+   "diseases": [
+    "带下过少"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "左归丸加减（《景岳全书》）",
+    "小营煎加减（《景岳全书》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肝胃不和证",
+   "family": "气滞",
+   "familyAlt": [],
+   "positions": [
+    "肝",
+    "肠胃"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "妊娠恶阻"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "香砂六君子汤（《古今名医方论》）加生姜",
+    "苏叶黄连汤（《温热经纬》）加半夏、陈皮、竹茹、枇杷叶",
+    "生脉散合增液汤（《温病条辨》）加竹茹、陈皮、枇杷叶、石斛"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肝胆湿热证",
+   "family": "湿热",
+   "familyAlt": [],
+   "positions": [
+    "肝"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "胆石症"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "大柴胡汤加减（《伤寒论》）",
+    "茵陈蒿汤合大柴胡汤加减（《伤寒论》）",
+    "龙胆泻肝汤合大柴胡汤加减（龙胆泻肝汤出自《医方集解》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肝脾湿火证",
+   "family": "湿热",
+   "familyAlt": [],
+   "positions": [
+    "肝",
+    "脾"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "丹毒"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "普济消毒饮加减（《东垣试效方》），常用黄芩、黄连、连翘、板蓝",
+    "龙胆泻肝汤加减（《医宗金鉴》），常用龙胆草、黄芩、栀子、泽泻",
+    "五神汤合萆薢渗湿汤加减（《外科真诠》《疡科心得集》），常用茯"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肝郁血热证",
+   "family": "血热",
+   "familyAlt": [
+    "气滞"
+   ],
+   "positions": [
+    "肝"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7"
+   ],
+   "diseases": [
+    "月经先期"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "补中益气汤加减（《脾胃论》）",
+    "固阴煎加减（《景岳全书》）",
+    "清经散加减（《傅青主女科》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肝郁血瘀证",
+   "family": "血瘀",
+   "familyAlt": [
+    "气滞"
+   ],
+   "positions": [
+    "肝"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "不育症"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "右归丸合五子衍宗丸加减（《景岳全书》《丹溪心法》）",
+    "左归丸合六味地黄丸加减（《景岳全书》《小儿药证直诀》）",
+    "龙胆泻肝汤加减（《医方集解》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肝风内动证",
+   "family": "风热",
+   "familyAlt": [],
+   "positions": [
+    "肝"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "妊娠痫证"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "羚角钩藤汤（《通俗伤寒论》）加减",
+    "牛黄清心丸（《痘疹世医心法》）加减，或黄连解毒汤（《外台秘要"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肺经风热证",
+   "family": "风热",
+   "familyAlt": [],
+   "positions": [
+    "肺"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "粉刺"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "枇杷清肺饮加减（《医宗金鉴》）",
+    "茵陈蒿汤合枇杷清肺饮加减（《伤寒论》合《医宗金鉴》）",
+    "二陈汤合桃红四物汤加减（《太平惠民和剂局方》合《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肺胃热盛证",
+   "family": "血热",
+   "familyAlt": [],
+   "positions": [
+    "肺",
+    "肠胃"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "酒齄鼻"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "枇杷清肺饮加减（《医宗金鉴》）",
+    "黄连解毒汤合五味消毒饮加减（《外台秘要》引崔氏方合《医宗金鉴",
+    "通窍活血汤加减（《医林改错》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肾伏郁火证",
+   "family": "气滞",
+   "familyAlt": [],
+   "positions": [
+    "肾"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7"
+   ],
+   "diseases": [
+    "血瘤"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "芩连二母丸合泻心汤加减（《医宗金鉴》）",
+    "调元肾气丸加减（《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肾气不固证",
+   "family": "气虚",
+   "familyAlt": [],
+   "positions": [
+    "肾"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "9"
+   ],
+   "diseases": [
+    "脱肛"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "补中益气汤加减（《脾胃论》）",
+    "肾气丸加减（《金匮要略》）",
+    "萆薢渗湿汤合补中益气汤加减（萆薢渗湿汤出自《疡科心得集》，补"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肾阳虚损证",
+   "family": "阳虚",
+   "familyAlt": [],
+   "positions": [
+    "肾"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "精浊"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "萆薢分清饮加减（《医学心悟》）",
+    "前列腺汤加减（《经验方》）",
+    "知柏地黄丸加减（《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "肾阳衰微证",
+   "family": "阳虚",
+   "familyAlt": [],
+   "positions": [
+    "肾"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "精癃"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "八正散加减（《太平惠民和剂局方》）",
+    "沉香散加减（《三因极一病证方论》）",
+    "济生肾气丸加减（《济生方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "胃热熏蒸证",
+   "family": "其他",
+   "familyAlt": [],
+   "positions": [
+    "肠胃"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "经行口糜"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "知柏地黄丸加减（《医宗金鉴》）",
+    "凉膈散加减（《局方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "胃肠湿热证",
+   "family": "湿热",
+   "familyAlt": [],
+   "positions": [
+    "肠胃"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "瘾疹"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "消风散加减（《外科正宗》）",
+    "麻黄桂枝各半汤加减（《伤寒论》）",
+    "防风通圣散加减（《宣明论方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "胎火胎毒证",
+   "family": "热毒",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "丹毒"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "普济消毒饮加减（《东垣试效方》），常用黄芩、黄连、连翘、板蓝",
+    "龙胆泻肝汤加减（《医宗金鉴》），常用龙胆草、黄芩、栀子、泽泻",
+    "五神汤合萆薢渗湿汤加减（《外科真诠》《疡科心得集》），常用茯"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "脓毒壅滞证",
+   "family": "热毒",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "胆石症"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "大柴胡汤加减（《伤寒论》）",
+    "茵陈蒿汤合大柴胡汤加减（《伤寒论》）",
+    "龙胆泻肝汤合大柴胡汤加减（龙胆泻肝汤出自《医方集解》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "脓毒蚀骨证",
+   "family": "热毒",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "附骨疽"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "仙方活命饮合五神汤加减（《校注妇人良方》《外科真诠》），常用",
+    "黄连解毒汤合透脓散加减（《外台秘要》《外科正宗》），常用黄连",
+    "托里消毒散加减（《医宗金鉴》），常用黄芪、党参、白术、茯苓、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "脾肾不足证",
+   "family": "其他",
+   "familyAlt": [],
+   "positions": [
+    "脾",
+    "肾"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "胎萎不长"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "八珍汤（《正体类要》）加减",
+    "温土毓麟汤（《傅青主女科》）合寿胎丸（《医学衷中参西录》）加",
+    "长胎白术散（《景岳全书》引《良方》）加减"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "脾胃气虚证",
+   "family": "气虚",
+   "familyAlt": [],
+   "positions": [
+    "脾",
+    "肠胃"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "妊娠恶阻"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "香砂六君子汤（《古今名医方论》）加生姜",
+    "苏叶黄连汤（《温热经纬》）加半夏、陈皮、竹茹、枇杷叶",
+    "生脉散合增液汤（《温病条辨》）加竹茹、陈皮、枇杷叶、石斛"
+   ],
+   "aliases": [
+    "脾胃虚弱证"
+   ]
+  },
+  {
+   "name": "脾虚夹痰证",
+   "family": "气虚",
+   "familyAlt": [
+    "痰湿"
+   ],
+   "positions": [
+    "脾"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "经行眩晕"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "归脾汤加减（《济生方》）",
+    "天麻钩藤饮加减（《杂病证治新义》）",
+    "半夏白术天麻汤加减（《医学心悟》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "脾虚湿盛证",
+   "family": "气虚",
+   "familyAlt": [
+    "痰湿"
+   ],
+   "positions": [
+    "脾"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "11"
+   ],
+   "diseases": [
+    "臁疮"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "三妙丸合萆薢渗湿汤加减（《医学正传》《疡科心得集》）",
+    "参苓白术散加减（《太平惠民和剂局方》）",
+    "补阳还五汤加减（《医林改错》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "脾虚肝旺证",
+   "family": "气虚",
+   "familyAlt": [
+    "气滞"
+   ],
+   "positions": [
+    "肝",
+    "脾"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "妊娠眩晕"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "杞菊地黄丸（《医级》）加减",
+    "半夏白术天麻汤（《医学心悟》）加减",
+    "八珍汤（《正体类要》）加减"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "虫毒蕴肤证",
+   "family": "热毒",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "疥疮"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "以外治为主，硫黄软膏（成人10%～20%，儿童5%）自颈以下",
+    "黄连解毒汤合五味消毒饮加减（《外台秘要》引崔氏方合《医宗金鉴"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "血寒宫冷证",
+   "family": "阳虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "胎萎不长"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "八珍汤（《正体类要》）加减",
+    "温土毓麟汤（《傅青主女科》）合寿胎丸（《医学衷中参西录》）加",
+    "长胎白术散（《景岳全书》引《良方》）加减"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "血枯瘀阻证",
+   "family": "血瘀",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "9"
+   ],
+   "diseases": [
+    "带下过少"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "左归丸加减（《景岳全书》）",
+    "小营煎加减（《景岳全书》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "血气虚弱证",
+   "family": "气虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "经行发热"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "蒿芩地丹四物汤加减（《中医妇科学》）",
+    "补中益气汤加减（《脾胃论》）",
+    "血府逐瘀汤加减（《医林改错》）加牡丹皮"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "血热内蕴证",
+   "family": "血热",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "白疕"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "犀角地黄汤加减（《备急千金要方》），或凉血地黄汤加减（《外科",
+    "四物消风饮加减（《医宗金鉴》）",
+    "血府逐瘀汤加减（《医林改错》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "血热瘀结证",
+   "family": "血热",
+   "familyAlt": [
+    "血瘀"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "11"
+   ],
+   "diseases": [
+    "青蛇毒"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "五神汤合萆薢渗湿汤加减（《洞天奥旨》《疡科心得集》）",
+    "四妙勇安汤加减（《验方新编》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "血热瘀阻证",
+   "family": "血热",
+   "familyAlt": [
+    "血瘀"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "9"
+   ],
+   "diseases": [
+    "外痔"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "萆薢渗湿汤加减（《疡科心得集》）",
+    "凉血地黄汤合四物汤加减（凉血地黄汤出自《外科正宗》，四物汤出"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "血热肠燥证",
+   "family": "血热",
+   "familyAlt": [],
+   "positions": [
+    "肠胃"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "9"
+   ],
+   "diseases": [
+    "肛裂"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "凉血地黄汤合麻子仁丸加减（凉血地黄汤出自《外科正宗》，麻子仁",
+    "润肠汤加减（《证治准绳》）",
+    "六磨汤加减（《世医得效方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "血热风燥证",
+   "family": "血热",
+   "familyAlt": [
+    "风热"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "油风"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "神应养真丹加减（《外科正宗》）",
+    "通窍活血汤加减（《医林改错》）",
+    "七宝美髯丹加减（《医方集解》引《积善堂方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "血虚津亏证",
+   "family": "血虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "11"
+   ],
+   "diseases": [
+    "产后大便难"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "润肠丸加减（《脾胃论》）",
+    "八珍汤加味（《正体类要》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阳盛血热证",
+   "family": "血热",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7"
+   ],
+   "diseases": [
+    "月经先期"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "补中益气汤加减（《脾胃论》）",
+    "固阴煎加减（《景岳全书》）",
+    "清经散加减（《傅青主女科》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阳虚寒凝证",
+   "family": "阳虚",
+   "familyAlt": [
+    "风寒"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "子痈"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "枸橘汤加减（《外科证治全生集》）",
+    "橘核丸加减（《济生方》）",
+    "阳和汤加减（《外科证治全生集》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阳虚痰凝证",
+   "family": "阳虚",
+   "familyAlt": [
+    "痰湿"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "流痰"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "阳和汤加减（《外科全生集》），常用熟地黄、鹿角胶、炮姜、肉桂",
+    "清骨散加减（《证治准绳》），常用银柴胡、胡黄连、秦艽、鳖甲、",
+    "人参养荣汤加减（《太平惠民和剂局方》），常用人参、白术、茯苓"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阴伤胃败证",
+   "family": "阴虚",
+   "familyAlt": [],
+   "positions": [
+    "肠胃"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "烧伤"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "黄连解毒汤加减（《外台秘要》）",
+    "犀角地黄汤合黄连解毒汤加减（犀角地黄汤出自《备急千金要方》）",
+    "生脉散合参附汤加减（生脉散出自《内外伤辨惑论》，参附汤出自《"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阴伤阳脱证",
+   "family": "阴虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "烧伤"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "黄连解毒汤加减（《外台秘要》）",
+    "犀角地黄汤合黄连解毒汤加减（犀角地黄汤出自《备急千金要方》）",
+    "生脉散合参附汤加减（生脉散出自《内外伤辨惑论》，参附汤出自《"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阴毒结聚证",
+   "family": "其他",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7"
+   ],
+   "diseases": [
+    "失荣"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "香贝养荣汤加减（《医宗金鉴》）",
+    "阳和汤加减（《外科全生集》）",
+    "人参养荣汤加减（《太平惠民和剂局方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阴虚内热证",
+   "family": "阴虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "流痰"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "阳和汤加减（《外科全生集》），常用熟地黄、鹿角胶、炮姜、肉桂",
+    "清骨散加减（《证治准绳》），常用银柴胡、胡黄连、秦艽、鳖甲、",
+    "人参养荣汤加减（《太平惠民和剂局方》），常用人参、白术、茯苓"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阴虚夹湿证",
+   "family": "阴虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "9"
+   ],
+   "diseases": [
+    "带下过多"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "完带汤加减（《傅青主女科》）",
+    "内补丸加减（《女科切要》）",
+    "知柏地黄汤加减（《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阴虚毒恋证",
+   "family": "阴虚",
+   "familyAlt": [
+    "热毒"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "9"
+   ],
+   "diseases": [
+    "肛痈"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "黄连解毒汤合透脓散加减（黄连解毒汤出自《外台秘要》，透脓散出",
+    "仙方活命饮加减（《校注妇人良方》）",
+    "青蒿鳖甲汤合三妙丸加减（青蒿鳖甲汤出自《温病条辨》，三妙丸出"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阴虚火炽证",
+   "family": "阴虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "有头疽"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "仙方活命饮加减（《校注妇人良方》），常用金银花、白芷、贝母、",
+    "仙方活命饮合黄连解毒汤加减（《校注妇人良方》《外台秘要》），",
+    "竹叶黄芪汤加减（《医宗金鉴》），常用人参、黄芪、石膏、半夏、"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阴虚肝旺证",
+   "family": "阴虚",
+   "familyAlt": [
+    "气滞"
+   ],
+   "positions": [
+    "肝"
+   ],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "10"
+   ],
+   "diseases": [
+    "妊娠眩晕"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "杞菊地黄丸（《医级》）加减",
+    "半夏白术天麻汤（《医学心悟》）加减",
+    "八珍汤（《正体类要》）加减"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阴虚血热证",
+   "family": "阴虚",
+   "familyAlt": [
+    "血热"
+   ],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7"
+   ],
+   "diseases": [
+    "月经先期"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "补中益气汤加减（《脾胃论》）",
+    "固阴煎加减（《景岳全书》）",
+    "清经散加减（《傅青主女科》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阴虚血燥证",
+   "family": "阴虚",
+   "familyAlt": [
+    "血热"
+   ],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "闭经"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "人参养荣汤加减（《局方》）",
+    "加减苁蓉菟丝子丸加减（《中医妇科治疗学》）",
+    "加减一阴煎加减（《景岳全书》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阴虚邪留证",
+   "family": "阴虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "破伤风"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "玉真散加减（《外科正宗》）",
+    "五虎追风散加减（《晋男史传恩家传方》）",
+    "沙参麦冬汤加减（《温病条辨》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "阴虚阳亢证",
+   "family": "阴虚",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "fuke"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "经行眩晕"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "归脾汤加减（《济生方》）",
+    "天麻钩藤饮加减（《杂病证治新义》）",
+    "半夏白术天麻汤加减（《医学心悟》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "风伤肠络证",
+   "family": "风热",
+   "familyAlt": [],
+   "positions": [
+    "肠胃"
+   ],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "9"
+   ],
+   "diseases": [
+    "内痔"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "凉血地黄汤加减（《外科正宗》）",
+    "地榆散合脏连丸加减（地榆散出自《太平惠民和剂局方》，脏连丸出",
+    "止痛如神汤加减（《医宗金鉴》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "风寒束表证",
+   "family": "风寒",
+   "familyAlt": [
+    "风热"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "瘾疹"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "消风散加减（《外科正宗》）",
+    "麻黄桂枝各半汤加减（《伤寒论》）",
+    "防风通圣散加减（《宣明论方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "风毒入里证",
+   "family": "风热",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "破伤风"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "玉真散加减（《外科正宗》）",
+    "五虎追风散加减（《晋男史传恩家传方》）",
+    "沙参麦冬汤加减（《温病条辨》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "风毒在表证",
+   "family": "风热",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "破伤风"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "玉真散加减（《外科正宗》）",
+    "五虎追风散加减（《晋男史传恩家传方》）",
+    "沙参麦冬汤加减（《温病条辨》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "风火毒证",
+   "family": "热毒",
+   "familyAlt": [
+    "风热"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "12"
+   ],
+   "diseases": [
+    "毒蛇咬伤"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "玉真散加减（《外科正宗》）",
+    "五味消毒饮合犀角地黄汤加减（五味消毒饮出自《医宗金鉴》）",
+    "黄连解毒汤合五虎追风散加减（五虎追风散出自《晋男史传恩家传方"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "风热毒蕴证",
+   "family": "热毒",
+   "familyAlt": [
+    "风热"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "5"
+   ],
+   "diseases": [
+    "丹毒"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "普济消毒饮加减（《东垣试效方》），常用黄芩、黄连、连翘、板蓝",
+    "龙胆泻肝汤加减（《医宗金鉴》），常用龙胆草、黄芩、栀子、泽泻",
+    "五神汤合萆薢渗湿汤加减（《外科真诠》《疡科心得集》），常用茯"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "风热犯表证",
+   "family": "风热",
+   "familyAlt": [],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "8"
+   ],
+   "diseases": [
+    "瘾疹"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "消风散加减（《外科正宗》）",
+    "麻黄桂枝各半汤加减（《伤寒论》）",
+    "防风通圣散加减（《宣明论方》）"
+   ],
+   "aliases": []
+  },
+  {
+   "name": "风热痰凝证",
+   "family": "痰湿",
+   "familyAlt": [
+    "风热"
+   ],
+   "positions": [],
+   "courses": [
+    "waike"
+   ],
+   "courseCount": 1,
+   "chapters": [
+    "7"
+   ],
+   "diseases": [
+    "瘿痈"
+   ],
+   "diseaseCount": 1,
+   "fang": [
+    "牛蒡解肌汤加减（《疡科心得集》）",
+    "柴胡清肝汤加减（《医宗金鉴》）"
+   ],
+   "aliases": []
+  }
+ ]
+}

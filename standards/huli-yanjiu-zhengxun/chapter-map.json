@@ -1,0 +1,101 @@
+{
+ "note": "外源课：一章一个研究环节；单元即章（正文＋外源依据）。locator 用「外源章·」，引用条文用「外源·<标题> 第N条」。",
+ "chapters": {
+  "01-xuanti-wentihua": {
+   "n": 1,
+   "title": "护理研究的选题与问题化",
+   "units": [
+    "1.1"
+   ],
+   "srcChapters": [
+    "外源#P02,P03,P04,W03"
+   ],
+   "why": "选题是整门课的地基：问题化写不出来，后面所有方法与分级都无处安放",
+   "derivedFrom": "PRISMA 2020 expanded checklist 第2条；PRISMA 2020 expanded checklist 第3条；PRISMA 2020 expanded checklist 第4条；Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization 第3条"
+  },
+  "02-liangxing-sheji": {
+   "n": 2,
+   "title": "量性研究与设计类型",
+   "units": [
+    "2.1"
+   ],
+   "srcChapters": [
+    "外源#P05,P10,P11"
+   ],
+   "why": "设计决定能答什么问题：同一批数据，设计选错，结论就只能降级",
+   "derivedFrom": "PRISMA 2020 expanded checklist 第5条；PRISMA 2020 expanded checklist 第10条；PRISMA 2020 expanded checklist 第11条"
+  },
+  "03-zhixing-fangtan": {
+   "n": 3,
+   "title": "质性研究与访谈分析",
+   "units": [
+    "3.1"
+   ],
+   "srcChapters": [
+    "外源#P05,P08,P09"
+   ],
+   "why": "质性研究回答「为什么与怎么样」，它的严谨性靠过程透明而不是靠数字",
+   "derivedFrom": "PRISMA 2020 expanded checklist 第5条；PRISMA 2020 expanded checklist 第8条；PRISMA 2020 expanded checklist 第9条"
+  },
+  "04-liangbiao-xinxiao": {
+   "n": 4,
+   "title": "量表的选择与信效度",
+   "units": [
+    "4.1"
+   ],
+   "srcChapters": [
+    "外源#P13,P14"
+   ],
+   "why": "量表是测量的尺子：尺子没校准，后面所有数都不作数",
+   "derivedFrom": "PRISMA 2020 expanded checklist 第13条；PRISMA 2020 expanded checklist 第14条"
+  },
+  "05-xunzheng-fenji": {
+   "n": 5,
+   "title": "循证护理的证据分级",
+   "units": [
+    "5.1"
+   ],
+   "srcChapters": [
+    "外源#W01,W02,M01,P13,W05"
+   ],
+   "why": "分级不是给研究排名，是把「能信几分」说清楚",
+   "derivedFrom": "Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization 第1条；Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization 第2条；PRISMA 2020 Checklist 第1条；PRISMA 2020 expanded checklist 第13条；Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization 第5条"
+  },
+  "06-jiansuo-xitong": {
+   "n": 6,
+   "title": "文献检索与系统评价",
+   "units": [
+    "6.1"
+   ],
+   "srcChapters": [
+    "外源#P01,P06,P07,P08,M03,P17"
+   ],
+   "why": "检索是可复现的技术活：写不出检索式，结论就无法被复查",
+   "derivedFrom": "PRISMA 2020 expanded checklist 第1条；PRISMA 2020 expanded checklist 第6条；PRISMA 2020 expanded checklist 第7条；PRISMA 2020 expanded checklist 第8条；PRISMA 2020 Checklist 第3条；PRISMA 2020 expanded checklist 第17条"
+  },
+  "07-zhuanhua-shijian": {
+   "n": 7,
+   "title": "证据到实践的转化",
+   "units": [
+    "7.1"
+   ],
+   "srcChapters": [
+    "外源#W06,W07,W08,P15,P16"
+   ],
+   "why": "证据不会自己走进病房：转化是重新做一遍判断，不是转发一篇文献",
+   "derivedFrom": "Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization 第6条；Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization 第7条；Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization 第8条；PRISMA 2020 expanded checklist 第15条；PRISMA 2020 expanded checklist 第16条"
+  },
+  "08-lunli-shencha": {
+   "n": 8,
+   "title": "护理研究中的伦理审查",
+   "units": [
+    "8.1"
+   ],
+   "srcChapters": [
+    "外源#P17,P16,P18,M02"
+   ],
+   "why": "伦理审查不是盖章：它决定这项研究能不能开始，以及数据能不能用",
+   "derivedFrom": "PRISMA 2020 expanded checklist 第17条；PRISMA 2020 expanded checklist 第16条；PRISMA 2020 expanded checklist 第18条；PRISMA 2020 Checklist 第2条"
+  }
+ }
+}

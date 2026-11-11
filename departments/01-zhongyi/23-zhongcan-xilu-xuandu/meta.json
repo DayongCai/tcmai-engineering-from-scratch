@@ -1,0 +1,32 @@
+{
+  "slug": "23-zhongcan-xilu-xuandu",
+  "title": "医学衷中参西录选读",
+  "en": "Selected Readings from Records of Chinese Medicine and Western Medicine",
+  "deptSlug": "01-zhongyi",
+  "deptTitle": "中医系",
+  "globalN": 23,
+  "type": "Reference",
+  "semester": 8,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 36,
+  "bridge": "原文→单元层 / 方证→药物频次与剂量 / 参西→可替换的解释层",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/01-zhongyi/23-zhongcan-xilu-xuandu",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "standards",
+    "path": "standards/zhongcan-xilu",
+    "chaptersWritten": 10,
+    "words": 459728,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "中醫笈成《醫學衷中參西錄》文字化本（底本声明河北人民出版社 1977 年 2 版）",
+    "extractedAt": "2026-11-09"
+  }
+}

@@ -1,0 +1,36 @@
+{
+ "source": {
+  "file": "qhzy-中医耳鼻喉科学.xlsx",
+  "sha256": "35c3785ee30300cc22f11df9dd4a9ee76b091eb37b9f143af4db537a2f45cc4d"
+ },
+ "counts": {
+  "chapters": 12,
+  "units": 205,
+  "hanzi": 184607,
+  "diseases": 52,
+  "digits": 191,
+  "valueLike": 33
+ },
+ "views": {
+  "a": [
+   "耳"
+  ]
+ },
+ "levelsA": {
+  "b": [
+   "耳"
+  ]
+ },
+ "probe": {
+  "view": {
+   "a": 2228
+  },
+  "A_part": {
+   "b": 2228
+  }
+ },
+ "ratio": {
+  "view": 1.0,
+  "A_part": 1.0
+ }
+}

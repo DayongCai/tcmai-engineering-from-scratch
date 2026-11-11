@@ -5,10 +5,15 @@
  *   标题 # ## ### ####   段落   无序/有序列表   引用块
  *   围栏代码块 ```lang    行内代码 `x`    粗体 **x**    斜体 *x*
  *   链接 [t](u)           表格   水平线 ---   行内公式 $...$   块公式 $$...$$
+ *   图片 ![图注](相对路径) —— 独占一行时渲染为 <figure>+<figcaption>
  *   mermaid 围栏 → <pre class="mermaid">
  *
  * 不支持（有意为之，避免引入依赖与 XSS 面）：原始 HTML 片段、任务列表、脚注。
  * 所有文本先转义再结构化，因此文档里写 <script> 只会显示为文字。
+ *
+ * 图片的边界与正文同一原则：只接受仓库内相对路径 + 位图/矢量白名单扩展名。
+ * 外链（http/https）、上跳（..）、绝对路径、data: 一律降级为可见占位，不静默产出空图——
+ * 教材产物是离线单文件，外链图在离线场景必然打不开，悄悄留着比直接标出来更糟。
  */
 
 'use strict';
@@ -21,6 +26,23 @@ function esc(s) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+const IMG_EXT = /\.(svg|png|webp|jpe?g)$/i;
+
+/**
+ * 图片路径白名单。返回可用于 src 的字符串，或 null 表示不放行。
+ * 放行的只有「仓库内相对路径 + 白名单扩展名」，这条规则同时挡住
+ * XSS（javascript: / data:）、离线失效的外链、以及跳出教材目录的上跳路径。
+ */
+function safeImageSrc(src) {
+  const s = String(src == null ? '' : src).trim();
+  if (!s) return null;
+  if (!IMG_EXT.test(s)) return null;
+  if (/^[a-z][a-z0-9+.-]*:/i.test(s) || s.startsWith('//')) return null;  // http: data: javascript: ...
+  if (s.startsWith('/') || s.startsWith('\\')) return null;                // 绝对路径离线无意义
+  if (s.split(/[\\/]/).includes('..')) return null;                        // 不许上跳
+  return s;
 }
 
 function inline(s) {
@@ -41,6 +63,12 @@ function inline(s) {
   t = t.replace(/\$([^$\n]+)\$/g, (_, m) => {
     maths.push({ src: m, block: false });
     return `\u0000M${maths.length - 1}\u0000`;
+  });
+  // 图片：必须排在链接规则之前，否则 ![图注](a.svg) 会被 []() 吃掉前半截变成「!<a>」
+  t = t.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_, alt, src) => {
+    const safe = safeImageSrc(src);
+    if (!safe) return `<span class="img-broken">[图未放行：${alt || src}]</span>`;
+    return `<img class="inline-fig" src="${safe}" alt="${alt}" loading="lazy">`;
   });
   // 链接
   t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, text, href) => {
@@ -107,6 +135,25 @@ function render(markdown) {
     const fig = line.match(/^<div data-figure="([a-z0-9-]+)"><\/div>\s*$/);
     if (fig) {
       out.push(`<div class="figure-host" data-figure="${fig[1]}"></div>`);
+      i += 1;
+      continue;
+    }
+
+    // 独占一行的图片 → figure + figcaption（图注取 alt）
+    // 教材契约要求图有图注，所以 alt 为空时退回文件名，不产出无题图。
+    const figImg = line.match(/^!\[([^\]]*)\]\(([^)\s]+)\)\s*$/);
+    if (figImg) {
+      const safe = safeImageSrc(figImg[2]);
+      const cap = figImg[1].trim();
+      if (safe) {
+        const autoCap = cap || safe.split(/[\\/]/).pop();
+        out.push(
+          `<figure class="fig"><img src="${safe}" alt="${esc(cap || autoCap)}" loading="lazy">` +
+            `<figcaption>${esc(autoCap)}</figcaption></figure>`
+        );
+      } else {
+        out.push(`<figure class="fig fig-broken"><figcaption>［缺图］${esc(cap || figImg[2])}</figcaption></figure>`);
+      }
       i += 1;
       continue;
     }
@@ -179,6 +226,13 @@ function render(markdown) {
     ) {
       buf.push(lines[i]);
       i += 1;
+    }
+    // 兜底：以「|」开头但下一行不是分隔符的行（孤立表格行 / 表格末尾缺分隔）走不到表格分支，
+    // 又进不了段落循环 —— 没有这个哨兵就会 i 不动、out 无限增长，最终 RangeError: Invalid array length。
+    if (!buf.length) {
+      out.push(`<p>${inline(line)}</p>`);
+      i += 1;
+      continue;
     }
     out.push(`<p>${inline(buf.join('\n'))}</p>`);
   }

@@ -1,0 +1,117 @@
+{
+ "title": "口腔内科学",
+ "note": "派生课：库内无口腔内科教材。十章全部取自《中医耳鼻喉科学》第8章（口齿科，20 小节）按顺序切分；与 08 中医口腔科学同源，汉字不相加。根管治疗、用药剂量、手术适应证一律不写。",
+ "views": {
+  "病位（牙·齿·龈·口腔）": [
+   "牙",
+   "齿",
+   "龈",
+   "口腔"
+  ],
+  "症状（痛·肿·溃·血）": [
+   "痛",
+   "肿",
+   "溃",
+   "血"
+  ],
+  "病性（热·火·虚·风）": [
+   "热",
+   "火",
+   "虚",
+   "风"
+  ]
+ },
+ "levels": {
+  "组织与病因": [
+   1,
+   2,
+   3
+  ],
+  "辨证与治法": [
+   4,
+   5
+  ],
+  "病证各论": [
+   6,
+   7,
+   8
+  ],
+  "调护与预防": [
+   9,
+   10
+  ]
+ },
+ "chapters": [
+  {
+   "title": "口腔内科的范围与检查方法",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "口腔的中医解剖与生理",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "病因病机：火、虚与齿龈",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "辨证要点：从齿龈到脏腑",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "治法与外治的边界",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "龋病与牙痛",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "牙周病与牙龈出血",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "口腔黏膜病：口疮与糜烂",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "口臭与口干",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "口腔卫生、调护与预防",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  }
+ ],
+ "splitInto": 10
+}

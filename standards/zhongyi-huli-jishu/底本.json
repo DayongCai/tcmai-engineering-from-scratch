@@ -1,0 +1,144 @@
+{
+ "source": {
+  "file": "qhzy-中医护理适宜技术.xlsx",
+  "sha256": "b2d14d5a8af8a8a1b5d3bc31d6bc9435c377f4cd7a97d7be119d03e79869c3e8",
+  "sheets": 34
+ },
+ "counts": {
+  "chapters": 18,
+  "units": 18,
+  "hanzi": 364171,
+  "diseases": 0,
+  "digits": 568,
+  "valueLike": 0
+ },
+ "chapters": [
+  {
+   "no": "1",
+   "title": "第1章 中医护理适宜技术概述",
+   "units": 1,
+   "hanzi": 19796,
+   "secs": []
+  },
+  {
+   "no": "2",
+   "title": "第2章 适宜技术的特点与应用原则",
+   "units": 1,
+   "hanzi": 20224,
+   "secs": []
+  },
+  {
+   "no": "3",
+   "title": "第3章 实施前准备与评估要求",
+   "units": 1,
+   "hanzi": 20150,
+   "secs": []
+  },
+  {
+   "no": "4",
+   "title": "第4章 腧穴与经络基础",
+   "units": 1,
+   "hanzi": 20552,
+   "secs": []
+  },
+  {
+   "no": "5",
+   "title": "第5章 腧穴按压与穴位贴敷",
+   "units": 1,
+   "hanzi": 20356,
+   "secs": []
+  },
+  {
+   "no": "6",
+   "title": "第6章 艾灸与拔罐",
+   "units": 1,
+   "hanzi": 20296,
+   "secs": []
+  },
+  {
+   "no": "7",
+   "title": "第7章 刮痧与热熨",
+   "units": 1,
+   "hanzi": 20096,
+   "secs": []
+  },
+  {
+   "no": "8",
+   "title": "第8章 耳穴与穴位刺激类技术",
+   "units": 1,
+   "hanzi": 20489,
+   "secs": []
+  },
+  {
+   "no": "9",
+   "title": "第9章 中药熏洗与外敷",
+   "units": 1,
+   "hanzi": 20648,
+   "secs": []
+  },
+  {
+   "no": "10",
+   "title": "第10章 药膳与饮食调护",
+   "units": 1,
+   "hanzi": 20318,
+   "secs": []
+  },
+  {
+   "no": "11",
+   "title": "第11章 情志护理与养生",
+   "units": 1,
+   "hanzi": 19913,
+   "secs": []
+  },
+  {
+   "no": "12",
+   "title": "第12章 传统运动与导引类护理",
+   "units": 1,
+   "hanzi": 20119,
+   "secs": []
+  },
+  {
+   "no": "13",
+   "title": "第13章 常见症状的适宜技术应用",
+   "units": 1,
+   "hanzi": 20086,
+   "secs": []
+  },
+  {
+   "no": "14",
+   "title": "第14章 实施过程中的观察与记录",
+   "units": 1,
+   "hanzi": 20459,
+   "secs": []
+  },
+  {
+   "no": "15",
+   "title": "第15章 安全与风险防范",
+   "units": 1,
+   "hanzi": 20701,
+   "secs": []
+  },
+  {
+   "no": "16",
+   "title": "第16章 效果评价与沟通要求",
+   "units": 1,
+   "hanzi": 20146,
+   "secs": []
+  },
+  {
+   "no": "17",
+   "title": "第17章 技术推广与质量管理要求",
+   "units": 1,
+   "hanzi": 20130,
+   "secs": []
+  },
+  {
+   "no": "18",
+   "title": "第18章 中医护理适宜技术与 tcmP 平台",
+   "units": 1,
+   "hanzi": 19692,
+   "secs": []
+  }
+ ],
+ "diseases": []
+}

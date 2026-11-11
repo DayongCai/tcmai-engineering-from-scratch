@@ -1,0 +1,79 @@
+{
+  "lesson": "02-tizhi-chengyin",
+  "title": "体质的形成：底板与漂移",
+  "subject": "04-zhongyi-tizhi-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "先天与后天的分层说法是？",
+      "options": [
+        "先天定底板，后天定漂移方向",
+        "后天定底板",
+        "两者无关",
+        "只有先天重要"
+      ],
+      "correct": 0,
+      "explanation": "底板决定易感方向，漂移决定当前偏颇。"
+    },
+    {
+      "stage": "check",
+      "question": "先天禀赋的三个来源是？",
+      "options": [
+        "父母禀赋、胎孕调养、禀赋不耐",
+        "饮食、起居、情志",
+        "年龄、性别、地域",
+        "寒热、虚实、表里"
+      ],
+      "correct": 0,
+      "explanation": "本章第一节。"
+    },
+    {
+      "stage": "check",
+      "question": "老年体质的特点是？",
+      "options": [
+        "常两三种兼夹，平和质较少",
+        "多为平和质",
+        "只出现一种质",
+        "与年龄无关"
+      ],
+      "correct": 0,
+      "explanation": "老年病学 3.4.1 原文。"
+    },
+    {
+      "stage": "check",
+      "question": "本章三辨首位是？",
+      "options": [
+        "先天禀赋（9，全课程唯一以此居首）",
+        "证候倾向",
+        "形神特征",
+        "三者相等"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么调养的空间全在「漂移」这一段？",
+      "options": [
+        "底板不可改，漂移可改",
+        "因为先天重要",
+        "因为后天无关",
+        "因为教材如此"
+      ],
+      "correct": 0,
+      "explanation": "这是本章的核心结论。"
+    },
+    {
+      "stage": "post",
+      "question": "地域对体质的影响方向是？",
+      "options": [
+        "东南多湿热、西北多燥寒",
+        "与地域无关",
+        "只有湿度一项",
+        "只影响饮食"
+      ],
+      "correct": 0,
+      "explanation": "后天四变量之一。"
+    }
+  ]
+}

@@ -1,42 +1,55 @@
 {
-  "slug": "14-zhishichanquan-zhuanhua",
-  "title": "中医药知识产权与成果转化",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-leixing-bianjie",
-      "title": "知识产权的类型与边界",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-zhuanli-zhuanxie",
-      "title": "中药专利的撰写与检索",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-jingdian-baohu",
-      "title": "经典名方的保护路径",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-zhuanrang-xuke",
-      "title": "技术转让与许可合同",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-zhuanhua-guzhi",
-      "title": "成果转化的流程与估值",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-mimi-quanshu",
-      "title": "商业秘密与数据权属",
-      "status": "📋"
-    }
-  ]
+ "slug": "14-zhishichanquan-zhuanhua",
+ "title": "知识产权转化",
+ "note": "6 章 = 教材 6 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-ip1",
+   "title": "知识产权的对象：从技术方案到权利",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-ip2",
+   "title": "中医药领域的知识产权形态",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-ip3",
+   "title": "专利：从发明到授权",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-ip4",
+   "title": "成果转化：从实验室到产品",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-ip5",
+   "title": "新兴技术与伦理：知识产权的前沿争议",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-ip6",
+   "title": "侵权、许可纠纷与救济",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

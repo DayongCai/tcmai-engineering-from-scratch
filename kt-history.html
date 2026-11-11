@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>中医药知识树 · 按历史先后演绎</title>
+<style>
+  :root{
+    --bg:#0d0a07; --panel:#1a1610; --panel2:#14100b; --line:#2a2218;
+    --ink:#e8dcc8; --ink2:#c9bda6; --muted:#8f8371; --gold:#c8a15a; --zhu:#b4553f; --jade:#7e9c8a;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Serif SC","Source Han Serif CN","Songti SC",SimSun,serif;
+    -webkit-font-smoothing:antialiased}
+  body{padding:56px 28px 96px;line-height:1.85;font-size:15px}
+  a{color:var(--gold);text-decoration:none;border-bottom:1px dotted rgba(200,161,90,.4)}
+  .wrap{max-width:1160px;margin:0 auto}
+
+  /* ── 头部 ── */
+  .kicker{letter-spacing:.42em;font-size:11px;color:var(--muted);text-transform:uppercase}
+  h1{font-size:40px;margin:14px 0 6px;font-weight:600;letter-spacing:.06em}
+  h1 .thin{color:var(--gold)}
+  .lede{color:var(--ink2);max-width:66ch;margin:10px 0 0}
+  .lede em{font-style:normal;color:var(--gold)}
+
+  .figures{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;margin:34px 0 10px;
+    background:var(--line);border:1px solid var(--line)}
+  .figures div{background:var(--panel);padding:16px 14px}
+  .figures b{display:block;font-size:26px;color:var(--ink);font-variant-numeric:tabular-nums}
+  .figures span{font-size:11.5px;color:var(--muted);letter-spacing:.06em}
+
+  /* ── 判据条 ── */
+  .basis{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 46px;font-size:12px;color:var(--muted)}
+  .basis i{font-style:normal;border:1px solid var(--line);padding:3px 9px;border-radius:2px;background:var(--panel2)}
+  .basis i b{color:var(--ink2);font-weight:500}
+
+  /* ── 时间轴 ── */
+  .rail{position:relative;padding-left:0}
+  .era{display:grid;grid-template-columns:104px 1fr;gap:26px;position:relative}
+  .era + .era{margin-top:34px}
+  .axis{position:relative;text-align:right;padding-top:6px}
+  .axis .no{font-size:13px;color:var(--gold);letter-spacing:.2em}
+  .axis .span{display:block;font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+  .axis:after{content:"";position:absolute;right:-13px;top:14px;width:7px;height:7px;border-radius:50%;
+    background:var(--gold);box-shadow:0 0 0 4px rgba(200,161,90,.12)}
+  .era:not(:last-child) .axis:before{content:"";position:absolute;right:-10px;top:26px;bottom:-40px;
+    width:1px;background:linear-gradient(var(--line),rgba(42,34,24,.2))}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--gold);
+    padding:22px 24px 18px}
+  .card h2{margin:0;font-size:23px;font-weight:600;letter-spacing:.04em}
+  .card h2 small{font-size:12.5px;color:var(--muted);font-weight:400;margin-left:12px;letter-spacing:.02em}
+  .shape{color:var(--ink2);margin:12px 0 0;padding-left:12px;border-left:1px solid rgba(200,161,90,.35)}
+  .cols{display:grid;grid-template-columns:1.05fr 1fr;gap:26px;margin-top:20px}
+  .col h3{margin:0 0 10px;font-size:11.5px;letter-spacing:.22em;color:var(--muted);font-weight:500}
+  .works{list-style:none;margin:0;padding:0}
+  .works li{padding:7px 0;border-top:1px dotted rgba(42,34,24,.9);font-size:13.5px}
+  .works li:first-child{border-top:0}
+  .works .w{color:var(--ink);font-weight:500}
+  .works .t{color:var(--gold);font-size:12px;margin-left:8px}
+  .works .n{display:block;color:var(--muted);font-size:12.5px;line-height:1.65}
+  .people{margin:12px 0 0;font-size:12.5px;color:var(--muted)}
+  .people b{color:var(--ink2);font-weight:400}
+
+  .nodes{list-style:none;margin:0;padding:0}
+  .nodes > li{border:1px solid var(--line);background:var(--panel2);margin-bottom:8px}
+  .nodes summary{cursor:pointer;padding:9px 12px;display:flex;gap:10px;align-items:baseline;
+    list-style:none;font-size:13.5px}
+  .nodes summary::-webkit-details-marker{display:none}
+  .nodes summary .nm{color:var(--ink);font-weight:500}
+  .nodes summary .meta{margin-left:auto;color:var(--muted);font-size:11.5px;white-space:nowrap;
+    font-variant-numeric:tabular-nums}
+  .basis-tag{font-size:10.5px;letter-spacing:.06em;padding:1px 6px;border-radius:2px;
+    border:1px solid rgba(200,161,90,.45);color:var(--gold);white-space:nowrap}
+  .basis-tag.t2{border-color:rgba(126,156,138,.5);color:var(--jade)}
+  .basis-tag.xd{border-color:rgba(180,85,63,.55);color:var(--zhu)}
+  .nodes .why{padding:0 12px 10px;color:var(--muted);font-size:12.5px}
+  .nodes ol{margin:6px 0 12px;padding:0 12px 0 34px;color:var(--ink2);font-size:12.5px}
+  .nodes ol li{padding:2px 0}
+
+  .tally{margin-top:18px;padding-top:12px;border-top:1px solid var(--line);display:flex;
+    gap:18px;font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums;flex-wrap:wrap}
+  .tally b{color:var(--ink2);font-weight:500}
+
+  /* ── 坐标系 ── */
+  section.block{margin-top:64px}
+  .block > h2{font-size:19px;margin:0 0 6px;letter-spacing:.08em}
+  .block > p.note{margin:0 0 20px;color:var(--muted);font-size:13px;max-width:72ch}
+  table.coord{width:100%;border-collapse:collapse;font-size:13px}
+  table.coord th{text-align:left;font-weight:500;color:var(--muted);font-size:11px;
+    letter-spacing:.16em;padding:0 10px 8px;border-bottom:1px solid var(--line)}
+  table.coord td{padding:9px 10px;border-bottom:1px solid rgba(42,34,24,.75);vertical-align:middle}
+  table.coord td.term{color:var(--ink);font-size:15px;white-space:nowrap}
+  table.coord td.term small{display:block;color:var(--muted);font-size:10.5px;letter-spacing:.02em;
+    white-space:normal;max-width:26ch;line-height:1.5;margin-top:2px}
+  table.coord td.origin{color:var(--muted);font-size:12px;white-space:nowrap}
+  table.coord td.num{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink2);white-space:nowrap}
+  .bar{height:7px;background:linear-gradient(90deg,var(--gold),rgba(200,161,90,.25));border-radius:1px}
+
+  /* ── 根冠 ── */
+  .rootcrown{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+    border:1px solid var(--line);margin-top:18px}
+  .rootcrown div{background:var(--panel);padding:24px}
+  .rootcrown h3{margin:0 0 10px;font-size:13px;letter-spacing:.2em;color:var(--gold);font-weight:500}
+  .rootcrown .big{font-size:32px;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.3}
+  .rootcrown p{margin:10px 0 0;color:var(--muted);font-size:12.5px}
+  .rootcrown .jade h3{color:var(--jade)}
+
+  .verdict{margin-top:22px;padding:20px 22px;background:var(--panel2);border:1px solid var(--line);
+    border-left:2px solid var(--zhu);color:var(--ink2);font-size:14px}
+  .verdict b{color:var(--ink)}
+
+  /* ── 缺口 ── */
+  .gaps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .gaps > div{background:var(--panel);padding:18px 20px}
+  .gaps h3{margin:0 0 8px;font-size:12px;letter-spacing:.18em;color:var(--zhu);font-weight:500}
+  .gaps p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.9}
+  .gaps .chip{display:inline-block;border:1px solid var(--line);background:var(--panel2);
+    padding:1px 7px;margin:2px 4px 2px 0;font-size:12px;color:var(--ink2)}
+
+  footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);
+    font-size:11.5px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    body{padding:32px 16px 64px;font-size:14.5px}
+    h1{font-size:27px}
+    .figures{grid-template-columns:repeat(2,1fr)}
+    .era{grid-template-columns:1fr;gap:10px}
+    .axis{text-align:left}.axis:after{display:none}.axis:before{display:none}
+    .axis .span{display:inline;margin-left:10px}
+    .cols{grid-template-columns:1fr;gap:18px}
+    .rootcrown{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">TCMAI · 知识树演绎</div>
+  <h1>中医药知识树 <span class="thin">按历史先后</span></h1>
+  <p class="lede">不是把 188 门课按学期排一遍，而是沿时间倒推：<em>今天树上的每一个结点，是哪一期的坐标系长出来的</em>。
+    分期直接采用仓库《中国医学史》自己的分法（第 2–7 章），典籍源流与本库实测数字分开陈列，坐标系覆盖率由 <span id="ledeHanzi">全量</span>底本现算。</p>
+
+  <div class="figures" id="figures"></div>
+  <div class="basis">
+    <i><b>源流判定</b> 典籍同名 / 学科史通说 —— 史实层，逐条标依据</i>
+    <i><b>本库实测</b> 章数 / 单元数 / 字数 —— 取自 curriculum.json 与 kt-sphere.json</i>
+    <i><b>坐标系命中</b> 全量正文词频 —— 唯一由本库语料直接测出的那一层</i>
+    <i>学派词频（阈值 60）只作旁证，<b>不参与分期计数</b></i>
+  </div>
+
+  <div class="rail" id="rail"></div>
+
+  <section class="block">
+    <h2>坐标系还在承重吗</h2>
+    <p class="note">下面每个词都是一次「加坐标」的产物。统计口径：按该坐标的<b>写法族</b>（词下列出全部成员）在
+      <code>standards/*/units.json</code> 的全部知识单元正文里检索，数出它落在多少个不同学科、多少个不同知识单元——
+      覆盖越宽，说明这条老坐标今天越是被反复调用，而不是被供起来。只数真名会漏：《伤寒论》通篇写「太阳病」，几乎不出现「六经」二字。</p>
+    <table class="coord">
+      <thead><tr><th>坐标词 · 计入写法</th><th>提出于</th><th style="text-align:right">覆盖学科</th>
+        <th style="text-align:right">覆盖单元</th><th style="text-align:right">出现次数</th><th style="width:22%">单元覆盖</th></tr></thead>
+      <tbody id="coordBody"></tbody>
+    </table>
+  </section>
+
+  <section class="block">
+    <h2>根系与冠层</h2>
+    <p class="note">同一棵树的两端：18 门典籍/学派载体（16 断代 + 2 跨代）是根，170 门现代建制学科是冠。数字全部来自本库底本，可复算。</p>
+    <div class="rootcrown" id="rootcrown"></div>
+    <div class="verdict" id="verdict"></div>
+  </section>
+
+  <section class="block">
+    <h2>本库缺口</h2>
+    <p class="note" id="gapNote"></p>
+    <div class="gaps" id="gaps"></div>
+  </section>
+
+  <footer>
+    <span id="footL"></span>
+    <span id="footR">复算：<code>python scripts/build_kt_history.py</code> → <code>python scripts/build_kt_history_html.py</code></span>
+  </footer>
+</div>
+
+<script>
+const DATA = {
+ "generated": "scripts/build_kt_history.py",
+ "basis": {
+  "spine": "仓库《中国医学史》(03-zhongguo-yixue-shi) 第2–7章的分期",
+  "node_basis": [
+   "典籍同名",
+   "学科史通说"
+  ],
+  "measured": "curriculum.json 章数 + data/kt-sphere.json 单元/字数",
+  "coordinates": "standards/*/units.json 全量正文字数命中",
+  "not_evidence": "kt-sphere 的 school/schoolHits 是术语词频（阈值60），只作旁证"
+ },
+ "eras": [
+  {
+   "id": "origin",
+   "span": "远古—西周",
+   "title": "起源",
+   "gist": "经验先于理论",
+   "shape": "没有文本，只有器物与口传：砭石、火、酒、汤液。知识以「术」的形态存在，还不能叫树。",
+   "works": [
+    {
+     "name": "（无成书）",
+     "when": "史前—西周",
+     "note": "砭石、灸焫、汤液、酒，见《中国医学史》第2章"
+    }
+   ],
+   "people": [
+    "巫医",
+    "医缓、医和（春秋）"
+   ],
+   "empty": "本库暂无对应结点 —— 这一期只有器物与口传，没有可挂的底本。",
+   "nodes": [],
+   "measured": {
+    "subjects": 0,
+    "chapters": 0,
+    "units": 0,
+    "hanzi": 0
+   },
+   "bottoms": [],
+   "cross": {
+    "subjects": 0,
+    "chapters": 0,
+    "units": 0,
+    "hanzi": 0
+   }
+  },
+  {
+   "id": "han",
+   "span": "前770—220",
+   "title": "奠基",
+   "gist": "范畴成型：阴阳、五行、藏象、经脉",
+   "shape": "《内经》把身体写成一张「坐标图」：阴阳是二分，五行是五分，藏象是映射表，经脉是连线。此后两千年，中医的每一次扩张都是在这张图上加坐标，而不是换一张图。",
+   "works": [
+    {
+     "name": "《黄帝内经》",
+     "when": "战国—西汉成编",
+     "note": "素问81篇＋灵枢81篇，理论总纲"
+    },
+    {
+     "name": "《难经》",
+     "when": "约东汉",
+     "note": "以问难体补《内经》之未备，独取寸口、八十一难"
+    },
+    {
+     "name": "《神农本草经》",
+     "when": "约东汉",
+     "note": "365 味，三品分类——药物学的第一个分类轴"
+    },
+    {
+     "name": "《伤寒杂病论》",
+     "when": "约200—210",
+     "note": "张仲景；六经辨证＋脏腑杂病，把「证」写成可判定的状态"
+    }
+   ],
+   "people": [
+    "扁鹊（秦越人）",
+    "张仲景",
+    "华佗"
+   ],
+   "nodes": [
+    {
+     "slug": "06-neijing-xuandu",
+     "basis": "典籍同名",
+     "why": "《素问》《灵枢》选读",
+     "title": "内经选读",
+     "dept": "中医系",
+     "chapters": 10,
+     "units": 162,
+     "hanzi": 136032,
+     "school": "ye-tianshi",
+     "schoolHits": 3569,
+     "detail": [
+      "《素问》成书与文本结构",
+      "阴阳应象大论：范畴与映射",
+      "藏象与五脏的系统观",
+      "经脉别论与气血循环",
+      "病机十九条：症状到病机的映射",
+      "诊法与脉要精微论",
+      "治则与标本：决策顺序",
+      "运气七篇：周期与外部变量",
+      "《灵枢》九针与刺法",
+      "内经的量化解读与其边界"
+     ],
+     "coupling": "断代"
+    },
+    {
+     "slug": "07-shanghanlun",
+     "basis": "典籍同名",
+     "why": "《伤寒杂病论》伤寒部分",
+     "title": "伤寒论",
+     "dept": "中医系",
+     "chapters": 12,
+     "units": 398,
+     "hanzi": 14796,
+     "school": "none",
+     "schoolHits": 624,
+     "detail": [
+      "伤寒论的成书、版本与条文结构",
+      "六经辨证的框架：从太阳到厥阴",
+      "太阳病：表证的判定与麻黄汤类",
+      "阳明病：里热实证与承气汤类",
+      "少阳病：半表半里与小柴胡汤",
+      "太阴病：里虚寒与理中汤类",
+      "少阴病：心肾阳虚与四逆汤类",
+      "厥阴病：寒热错杂与乌梅丸",
+      "合病并病：多证并存的判定",
+      "方证对应：症状群 → 方剂的匹配",
+      "伤寒条文的检索与 BM25 复现",
+      "经方剂量的度量衡与折算争议"
+     ],
+     "coupling": "断代"
+    },
+    {
+     "slug": "08-jingui-yaolue",
+     "basis": "典籍同名",
+     "why": "《伤寒杂病论》杂病部分，宋人析出",
+     "title": "金匮要略",
+     "dept": "中医系",
+     "chapters": 10,
+     "units": 402,
+     "hanzi": 31059,
+     "school": "none",
+     "schoolHits": 527,
+     "detail": [
+      "金匮的成书与杂病分类",
+      "脏腑经络先后病：传变与预防",
+      "痉湿暍病：外感杂病的辨识",
+      "百合狐惑阴阳毒：少见病的鉴别",
+      "疟病与中风历节：节律与痹阻",
+      "血痹虚劳：虚损的分层",
+      "痰饮咳嗽：水液代谢的失效",
+      "消渴与淋病：津液与排泄",
+      "妇人病三篇：经带胎产的辨证",
+      "杂病方剂的配伍规律与统计"
+     ],
+     "coupling": "断代"
+    },
+    {
+     "slug": "16-zhongyi-zhexue-shi",
+     "basis": "学科史通说",
+     "why": "阴阳五行、气一元论的思想源头在先秦两汉",
+     "title": "中医哲学史",
+     "dept": "中医系",
+     "chapters": 8,
+     "units": 10,
+     "hanzi": 919,
+     "school": "none",
+     "schoolHits": 0,
+     "detail": [
+      "哲学史研究什么：范畴，不是年表",
+      "气与道：本体论的两个词",
+      "阴阳：从现象到范畴",
+      "五行：分类还是生成",
+      "天人相应：人与环境的关系模型",
+      "形神与心身：医学里的心身问题",
+      "常变与权衡：辨证思维的三条规则",
+      "范畴的结构化与四个层面"
+     ],
+     "coupling": "断代"
+    },
+    {
+     "slug": "01-zhongyaoxue",
+     "basis": "学科史通说",
+     "why": "现代中药学的分类与性能体系承《神农本草经》三品与《本经》序例",
+     "title": "中药学",
+     "dept": "中药系",
+     "chapters": 14,
+     "units": 340,
+     "hanzi": 47844,
+     "school": "liu-wansu",
+     "schoolHits": 885,
+     "detail": [
+      "中药学的研究对象与性能：四气五味",
+      "解表药：发散风寒与风热",
+      "清热药：泻火、解毒与凉血",
+      "泻下药与祛湿药",
+      "温里药与理气药",
+      "消食药、驱虫药与止血药",
+      "活血化瘀药：分类与配伍",
+      "化痰止咳平喘药",
+      "安神药、平肝息风药与开窍药",
+      "补虚药：补气、补血、补阴、补阳",
+      "收涩药与涌吐药",
+      "中药性能的编码化：性味归经 → 向量"
+     ],
+     "coupling": "断代"
+    },
+    {
+     "slug": "03-fangjixue",
+     "basis": "学科史通说",
+     "why": "方剂学以《伤寒论》113 方为配伍范式的原点",
+     "title": "方剂学",
+     "dept": "中药系",
+     "chapters": 15,
+     "units": 0,
+     "hanzi": 0,
+     "school": "none",
+     "schoolHits": 0,
+     "detail": [
+      "方剂与治法：方从法出",
+      "君臣佐使：组方的角色结构",
+      "解表剂：辛温与辛凉的分野",
+      "泻下剂与和解剂",
+      "清热剂与祛暑剂",
+      "温里剂与补益剂",
+      "固涩剂与安神剂",
+      "理气剂与理血剂",
+      "治风剂与治燥剂",
+      "祛湿剂与祛痰剂",
+      "消食剂、驱虫剂与涌吐剂",
+      "方剂配伍的数据化：药物共现网络"
+     ],
+     "coupling": "断代"
+    },
+    {
+     "slug": "01-jingluo-xue",
+     "basis": "学科史通说",
+     "why": "经脉学说定型于《内经》《难经》",
+     "title": "经络学",
+     "dept": "针灸系",
+     "chapters": 10,
+     "units": 104,
+     "hanzi": 214128,
+     "school": "ye-tianshi",
+     "schoolHits": 2996,
+     "detail": [
+      "经络系统的组成与命名",
+      "十二经脉的走向与交接",
+      "奇经八脉的循行与功能",
+      "经别、经筋与皮部",
+      "经络与脏腑的表里配属",
+      "经络的病理反应与诊断意义",
+      "经络图的空间结构与坐标",
+      "经脉流注次序与时间节律",
+      "经络的现代解剖学对应争议",
+      "经络数据的图谱化建库"
+     ],
+     "coupling": "断代"
+    }
+   ],
+   "measured": {
+    "subjects": 7,
+    "chapters": 79,
+    "units": 1416,
+    "hanzi": 444778
+   },
+   "bottoms": [],
+   "cross": {
+    "subjects": 0,
+    "chapters": 0,
+    "units": 0,
+    "hanzi": 0
+   }
+  },
+  {
+   "id": "weijin",
+   "span": "220—960",
+   "title": "集成",
+   "gist": "分科成书，知识从「论」变「书」",
+   "shape": "单篇论述被编成可检索的专书：脉有《脉经》，穴有《甲乙经》，病源有《病源论》，方有《千金》《外台》。知识第一次有了「卷—门—方」的目录结构，也就第一次可被搬运、抄写、考试。",
+   "works": [
+    {
+     "name": "《脉经》",
+     "when": "西晋·王叔和",
+     "note": "10 卷，24 脉，寸关尺分候脏腑"
+    },
+    {
+     "name": "《针灸甲乙经》",
+     "when": "西晋·皇甫谧",
+     "note": "349 穴，按部位分部——腧穴学的第一个坐标"
+    },
+    {
+     "name": "《诸病源候论》",
+     "when": "隋·巢元方",
+     "note": "1739 候，中国第一部病因病候学专著"
+    },
+    {
+     "name": "《备急千金要方》",
+     "when": "唐·孙思邈",
+     "note": "30 卷，232 门，医德（大医精诚）与临床并置"
+    },
+    {
+     "name": "《外台秘要》",
+     "when": "唐·王焘",
+     "note": "40 卷，1104 门，先列病候后列方，文献汇编体的成熟"
+    },
+    {
+     "name": "《新修本草》",
+     "when": "唐·659",
+     "note": "国家颁行的第一部药典性本草，850 种"
+    },
+    {
+     "name": "《雷公炮炙论》",
+     "when": "南朝·雷斅",
+     "note": "炮制成为独立技术门类"
+    }
+   ],
+   "people": [
+    "王叔和",
+    "皇甫谧",
+    "巢元方",
+    "孙思邈",
+    "王焘"
+   ],
+   "nodes": [
+    {
+     "slug": "03-zhenjiu-yiji-xuan",
+     "basis": "典籍同名",
+     "why": "跨代选读：灵枢/素问/难经→甲乙经→宋金元→明清",
+     "coupling": "跨代",
+     "title": "针灸医籍选",
+     "dept": "针灸系",
+     "chapters": 8,
+     "units": 199,
+     "hanzi": 167092,
+     "school": "ye-tianshi",
+     "schoolHits": 2585,
+     "detail": [
+      "《灵枢》选读",
+      "《素问》与《难经》选读",
+      "《针灸甲乙经》与隋唐医论",
+      "宋金元医论",
+      "明清医论",
+      "针灸歌赋",
+      "针灸医案",
+      "医籍选读与数字化"
+     ]
+    },
+    {
+     "slug": "02-shuxue-xue",
+     "basis": "学科史通说",
+     "why": "腧穴归经与定位承《甲乙经》，宋《铜人图经》定型",
+     "title": "腧穴学",
+     "dept": "针灸系",
+     "chapters": 12,
+     "units": 36,
+     "hanzi": 93624,
+     "school": "ye-tianshi",
+     "schoolHits": 1195,
+     "detail": [
+      "腧穴的分类、命名与定位方法",
+      "骨度分寸与体表标志",
+      "手三阴经腧穴",
+      "手三阳经腧穴",
+      "足三阳经腧穴",
+      "足三阴经腧穴",
+      "任督二脉腧穴",
+      "经外奇穴与阿是穴",
+      "特定穴：五输、原络、俞募",
+      "腧穴的主治规律与配穴",
+      "危险穴位与针刺安全深度",
+      "腧穴定位的数字化与三维模型"
+     ],
+     "coupling": "断代"
+    },
+    {
+     "slug": "04-qigong-xue",
+     "basis": "学科史通说",
+     "why": "导引行气在魏晋隋唐成体系（《诸病源候论》导引法）",
+     "title": "中医气功学",
+     "dept": "针灸系",
+     "chapters": 7,
+     "units": 76,
+     "hanzi": 202831,
+     "school": "ye-tianshi",
+     "schoolHits": 3219,
+     "detail": [
+      "学科概论与发展简史",
+      "理论基础与修炼要素",
+      "练功反应与偏差的预防与纠治",
+      "静功与动功",
+      "太极拳、武术内功与健身气功",
+      "辨证施功与临床应用",
+      "现代研究与治未病"
+     ],
+     "coupling": "断代"
+    },
+    {
+     "slug": "08-zhongyao-paozhi-xue",
+     "basis": "学科史通说",
+     "why": "炮制以《雷公炮炙论》为技术起点",
+     "title": "中药炮制学",
+     "dept": "中药系",
+     "chapters": 9,
+     "units": 48,
+     "hanzi": 149085,
+     "school": "liu-wansu",
+     "schoolHits": 1383,
+     "detail": [
+      "炮制的目的与历史源流",
+      "净制与切制：炮制的前处理",
+      "炒法：清炒与加辅料炒",
+      "炙法与酒醋蜜盐的辅料",
+      "煅法与煅淬",
+      "蒸煮燀与发酵",
+      "复制法与特殊炮制",
+      "炮制对成分与药效的影响",
+      "炮制工艺的标准化与质控"
+     ],
+     "coupling": "断代"
+    }
+   ],
+   "measured": {
+    "subjects": 3,
+    "chapters": 28,
+    "units": 160,
+    "hanzi": 445540
+   },
+   "bottoms": [],
+   "cross": {
+    "subjects": 1,
+    "chapters": 8,
+    "units": 199,
+    "hanzi": 167092
+   }
+  },
+  {
+   "id": "songjin",
+   "span": "960—1368",
+   "title": "争鸣与建制",
+   "gist": "国家校书、分科立科、四大家分派",
+   "shape": "两件事同时发生：国家设校正医书局、编《局方》，知识第一次被「标准化出版」；同时金元四大家各自把「病机」推到一个极端，形成可辩论的立场。树从此分叉——同一棵树，长出四种解释世界的角度。",
+   "works": [
+    {
+     "name": "《太平惠民和剂局方》",
+     "when": "宋",
+     "note": "官定成方，配伍与剂型的标准化"
+    },
+    {
+     "name": "《铜人腧穴针灸图经》",
+     "when": "宋·王惟一 1026",
+     "note": "354 穴＋铸铜人，腧穴的官方定本"
+    },
+    {
+     "name": "《小儿药证直诀》",
+     "when": "宋·钱乙",
+     "note": "儿科第一部专科体系书，五脏辨证"
+    },
+    {
+     "name": "《妇人大全良方》",
+     "when": "宋·陈自明 1237",
+     "note": "妇科独立成科"
+    },
+    {
+     "name": "《三因极一病证方论》",
+     "when": "宋·陈言",
+     "note": "三因学说：病因的第一个统一分类"
+    },
+    {
+     "name": "刘完素·火热论",
+     "when": "金",
+     "note": "六气皆从火化，主寒凉"
+    },
+    {
+     "name": "张从正·攻邪论",
+     "when": "金",
+     "note": "病由邪生，汗吐下三法"
+    },
+    {
+     "name": "李杲·脾胃论",
+     "when": "金元",
+     "note": "内伤脾胃，百病由生；升阳益气"
+    },
+    {
+     "name": "朱震亨·滋阴论",
+     "when": "元",
+     "note": "阳有余阴不足，相火妄动"
+    }
+   ],
+   "people": [
+    "钱乙",
+    "陈自明",
+    "刘完素",
+    "张从正",
+    "李杲",
+    "朱震亨"
+   ],
+   "nodes": [
+    {
+     "slug": "15-zhongyi-gejia-xueshuo",
+     "basis": "典籍同名",
+     "why": "各家学说：刘完素→张从正→李杲→朱震亨→张景岳→叶天士",
+     "title": "中医各家学说",
+     "dept": "中医系",
+     "chapters": 8,
+     "units": 10,
+     "hanzi": 1003,
+     "school": "none",
+     "schoolHits": 0,
+     "detail": [
+      "学派的形成：地域、师承与文本",
+      "刘完素与火热论",
+      "张从正与攻邪论",
+      "李杲与脾胃论",
+      "朱震亨与滋阴论",
+      "张景岳与温补学派",
+      "叶天士与温病学派",
+      "学派观点的对照阅读与结构化"
+     ],
+     "coupling": "断代"
+    },
+    {
+     "slug": "13-zhongyi-erke-xue",
+     "basis": "学科史通说",
+     "why": "儿科以钱乙《小儿药证直诀》为专科奠基",
+     "title": "中医儿科学",
+     "dept": "中医系",
+     "chapters": 14,
+     "units": 250,
+     "hanzi": 223234,
+     "school": "ye-tianshi",
+     "schoolHits": 3056,
+     "detail": [
+      "中医儿科学发展概要",
+      "小儿生理病理特点",
+      "小儿生长发育与喂养保健",
+      "儿科四诊概要",
+      "儿科辨证与治法概要",
+      "肺系疾病",
+      "脾系疾病",
+      "心肝系疾病",
+      "肾系疾病",
+      "传染病",
+      "虫证",
+      "新生儿疾病"
+     ],
+     "coupling": "断代"
+    },
+    {
+     "slug": "12-zhongyi-fuke-xue",
+     "basis": "学科史通说",
+     "why": "妇科以陈自明《妇人大全良方》为专科奠基",
+     "title": "中医妇科学",
+     "dept": "中医系",
+     "chapters": 13,
+     "units": 325,
+     "hanzi": 233267,
+     "school": "wang-qingren",
+     "schoolHits": 7962,
+     "detail": [
+      "绪论",
+      "女性生殖脏器解剖与生理",
+      "妇科疾病的病因病机",
+      "妇科疾病的诊断与辨证",
+      "妇科疾病的治疗",
+      "妇科预防与保健",
+      "月经病·期量色质异常",
+      "月经病·闭经崩漏与经行诸证",
+      "带下病",
+      "妊娠病",
+      "产后病",
+      "妇科杂病"
+     ],
+     "coupling": "断代"
+    }
+   ],
+   "measured": {
+    "subjects": 3,
+    "chapters": 35,
+    "units": 585,
+    "hanzi": 457504
+   },
+   "bottoms": [],
+   "cross": {
+    "subjects": 0,
+    "chapters": 0,
+    "units": 0,
+    "hanzi": 0
+   }
+  },
+  {
+   "id": "mingqing",
+   "span": "1368—1911",
+   "title": "温病与考据",
+   "gist": "外感另立坐标，药物学变成分类学",
+   "shape": "伤寒之外，吴又可到叶天士把外感病重新切了一遍：卫气营血是四层状态机，三焦是纵向病位坐标。同一批症状，换一个坐标系，治法次序就变了——这是中医史上最大的一次「范式并存」。同时《本草纲目》把 1892 种药按 16 部 60 类编目，药物学第一次有了可扩展的分类树。",
+   "works": [
+    {
+     "name": "《本草纲目》",
+     "when": "明·李时珍 1578",
+     "note": "52 卷，16 部 60 类，1892 种"
+    },
+    {
+     "name": "《针灸大成》",
+     "when": "明·杨继洲 1601",
+     "note": "针灸集大成，歌赋与手法体系化"
+    },
+    {
+     "name": "《外科正宗》",
+     "when": "明·陈实功 1617",
+     "note": "外科第一部体系性专著"
+    },
+    {
+     "name": "《温疫论》",
+     "when": "明·吴有性 1642",
+     "note": "戾气学说，外感病因的第一次断裂"
+    },
+    {
+     "name": "《医宗金鉴》",
+     "when": "清·1742",
+     "note": "官修教材，院校教育前身"
+    },
+    {
+     "name": "《温病条辨》",
+     "when": "清·吴瑭 1798",
+     "note": "三焦辨证＋上中下焦治法次序"
+    },
+    {
+     "name": "《医林改错》",
+     "when": "清·王清任 1830",
+     "note": "瘀血证治，解剖纠错的第一次尝试"
+    },
+    {
+     "name": "《本草纲目拾遗》",
+     "when": "清·赵学敏 1765",
+     "note": "对《纲目》的增补与纠谬"
+    }
+   ],
+   "people": [
+    "李时珍",
+    "杨继洲",
+    "吴有性",
+    "叶天士",
+    "吴瑭",
+    "王清任"
+   ],
+   "nodes": [
+    {
+     "slug": "09-wenbing-xue",
+     "basis": "典籍同名",
+     "why": "《温疫论》《温热论》《温病条辨》一系",
+     "title": "温病学",
+     "dept": "中医系",
+     "chapters": 10,
+     "units": 630,
+     "hanzi": 87217,
+     "school": "none",
+     "schoolHits": 2093,
+     "detail": [
+      "温病的范围与伤寒的边界",
+      "卫气营血辨证：四层状态机",
+      "三焦辨证：病位的纵向坐标",
+      "风温与春温：新感与伏邪",
+      "暑温与湿温：季节与湿热的耦合",
+      "秋燥与伏暑：燥邪的辨证",
+      "温病舌诊与斑疹的辨识",
+      "清热透邪与养阴的治法次序",
+      "温病条辨的方剂体系",
+      "疫病与公共卫生：历史的建模"
+     ],
+     "coupling": "断代"
+    },
+    {
+     "slug": "11-zhongyi-waike-xue",
+     "basis": "学科史通说",
+     "why": "外科体系化以《外科正宗》为标志",
+     "title": "中医外科学",
+     "dept": "中医系",
+     "chapters": 13,
+     "units": 325,
+     "hanzi": 241350,
+     "school": "wang-qingren",
+     "schoolHits": 4891,
+     "detail": [
+      "中医外科学发展概要",
+      "中医外科疾病的命名与病因病机",
+      "中医外科疾病的辨证",
+      "中医外科疾病的治法",
+      "疮疡",
+      "乳房疾病",
+      "瘿、瘤、岩",
+      "皮肤疾病",
+      "肛门直肠疾病",
+      "泌尿男性疾病",
+      "周围血管疾病",
+      "其他外科疾病"
+     ],
+     "coupling": "断代"
+    },
+    {
+     "slug": "05-zhongyi-wuguan-jingdian",
+     "basis": "典籍同名",
+     "why": "五官科经典选读（明清眼科/喉科专书）",
+     "title": "中医五官科经典选读",
+     "dept": "五官口腔系",
+     "chapters": 6,
+     "units": 40,
+     "hanzi": 88503,
+     "school": "ye-tianshi",
+     "schoolHits": 728,
+     "detail": [
+      "五官经典原文概览",
+      "目与脏腑经络",
+      "耳与肾",
+      "咽喉与肺胃",
+      "病名与证候的历史演变",
+      "经典与临床的对接"
+     ],
+     "coupling": "断代"
+    }
+   ],
+   "measured": {
+    "subjects": 3,
+    "chapters": 29,
+    "units": 995,
+    "hanzi": 417070
+   },
+   "bottoms": [],
+   "cross": {
+    "subjects": 0,
+    "chapters": 0,
+    "units": 0,
+    "hanzi": 0
+   }
+  },
+  {
+   "id": "jindai",
+   "span": "1840—1949",
+   "title": "汇通与转型",
+   "gist": "中西并置，理论开始被检验",
+   "shape": "张锡纯「衷中参西」第一次把两套坐标系并排写进同一张方；恽铁樵、唐宗海尝试用西医术语重述中医。知识形态从「注疏」转向「论文」，为下一期的院校建制铺路。",
+   "works": [
+    {
+     "name": "《医学衷中参西录》",
+     "when": "张锡纯 1918—1934",
+     "note": "中西药并用，重镇潜阳、大气下陷"
+    },
+    {
+     "name": "《中西汇通医书五种》",
+     "when": "唐宗海 1892",
+     "note": "以西医解剖比附中医脏腑"
+    },
+    {
+     "name": "《群经见智录》",
+     "when": "恽铁樵 1922",
+     "note": "首次系统回应「中医是否科学」"
+    }
+   ],
+   "people": [
+    "张锡纯",
+    "唐宗海",
+    "恽铁樵",
+    "裘吉生",
+    "曹炳章"
+   ],
+   "empty": "本库已有独立学科：2026-11 起《医学衷中参西录选读》（10 章 / 534 单元）承载该期，不再是「有底本、无课程」。",
+   "nodes": [
+    {
+     "slug": "03-zhongguo-yixue-shi",
+     "basis": "学科史通说",
+     "why": "通史载体：八章即八期，不给任何单期记功",
+     "coupling": "跨代",
+     "title": "中国医学史",
+     "dept": "中医系",
+     "chapters": 8,
+     "units": 51,
+     "hanzi": 94295,
+     "school": "ye-tianshi",
+     "schoolHits": 417,
+     "detail": [
+      "绪论：医学史的问题与方法",
+      "医药的起源与早期医药",
+      "春秋战国至秦汉：体系的奠基",
+      "魏晋南北朝至隋唐五代：分科与集成",
+      "宋金元：争鸣与建制",
+      "明清：温病与考据",
+      "近代与当代：转型与重建",
+      "少数民族医学、中外交流与数字化"
+     ]
+    },
+    {
+     "slug": "23-zhongcan-xilu-xuandu",
+     "basis": "典籍同名",
+     "why": "《医学衷中参西录》唯一课程载体：五类各取代表作，10 章 534 单元",
+     "title": "医学衷中参西录选读",
+     "dept": "中医系",
+     "chapters": 10,
+     "units": 534,
+     "hanzi": 459728,
+     "school": "wang-qingren",
+     "schoolHits": 7081,
+     "detail": [
+      "一部 1909 年的书为什么叫「衷中参西」",
+      "大气下陷：一个被重新提出的证",
+      "石膏：用量是这本书最容易被误读的地方",
+      "赭石与重镇：降逆的力学",
+      "山药与山萸肉：平补与收敛的一对",
+      "阴虚劳热：资生汤与十全育真汤的方证结构",
+      "吐衄血证：寒降、温降、清降是三条路，不是三张方",
+      "脑充血与脑贫血：全书参西最深的一章",
+      "医案读法：病因—证候—诊断—处方—效果 五段式",
+      "参西坐标的边界：哪里能用，哪里不能用"
+     ],
+     "coupling": "断代"
+    }
+   ],
+   "measured": {
+    "subjects": 1,
+    "chapters": 10,
+    "units": 534,
+    "hanzi": 459728
+   },
+   "bottoms": [],
+   "cross": {
+    "subjects": 1,
+    "chapters": 8,
+    "units": 51,
+    "hanzi": 94295
+   }
+  },
+  {
+   "id": "dangdai",
+   "span": "1956—今",
+   "title": "建制与数字化",
+   "gist": "教材化、实验化，本库即此期的产物",
+   "shape": "1956 年四所中医学院成立，1962 年统编教材把「经典」切成课程；此后实验针灸、中药药理、循证、AI 逐层叠加。今天这棵树上 90% 的枝条是这一期长出来的，但它们的根系全部指向前面五期的坐标。",
+   "works": [
+    {
+     "name": "统编教材体系",
+     "when": "1956—今",
+     "note": "把典籍拆成《中基》《中诊》《中药》《方剂》等课程模块"
+    },
+    {
+     "name": "实验针灸学 / 中药药理",
+     "when": "1960s—",
+     "note": "把针灸与方药送进实验室"
+    },
+    {
+     "name": "本库 tcmai",
+     "when": "2025—2026",
+     "note": "3432 万字底本、19580 个知识单元——本期知识的工程化沉淀"
+    }
+   ],
+   "people": [],
+   "empty": "本期不是没有结点，而是结点太多：170 门建制学科、15,802 个知识单元长在这一期，见下方「根系与冠层」。",
+   "nodes": [],
+   "measured": {
+    "subjects": 0,
+    "chapters": 0,
+    "units": 0,
+    "hanzi": 0
+   },
+   "bottoms": [],
+   "cross": {
+    "subjects": 0,
+    "chapters": 0,
+    "units": 0,
+    "hanzi": 0
+   }
+  }
+ ],
+ "coordinates": [
+  {
+   "term": "气血津液",
+   "era": "han",
+   "note": "物质层坐标",
+   "members": [
+    "气血津液",
+    "气血",
+    "津液"
+   ],
+   "subjects": 117,
+   "units": 2973,
+   "hits": 10285
+  },
+  {
+   "term": "经络",
+   "era": "han",
+   "note": "体表连线坐标",
+   "members": [
+    "经络",
+    "经脉",
+    "络脉"
+   ],
+   "subjects": 118,
+   "units": 2140,
+   "hits": 8411
+  },
+  {
+   "term": "脏腑辨证",
+   "era": "han",
+   "note": "病位坐标的临床化",
+   "members": [
+    "脏腑辨证",
+    "脏腑"
+   ],
+   "subjects": 111,
+   "units": 1834,
+   "hits": 5208
+  },
+  {
+   "term": "阴阳",
+   "era": "han",
+   "note": "《内经》二分坐标",
+   "members": [
+    "阴阳"
+   ],
+   "subjects": 102,
+   "units": 1295,
+   "hits": 3376
+  },
+  {
+   "term": "三焦",
+   "era": "mingqing",
+   "note": "吴瑭纵向病位坐标",
+   "members": [
+    "三焦",
+    "上焦",
+    "中焦",
+    "下焦"
+   ],
+   "subjects": 86,
+   "units": 1032,
+   "hits": 2636
+  },
+  {
+   "term": "藏象",
+   "era": "han",
+   "note": "脏腑功能映射表",
+   "members": [
+    "藏象",
+    "五脏",
+    "六腑"
+   ],
+   "subjects": 81,
+   "units": 788,
+   "hits": 2765
+  },
+  {
+   "term": "六经",
+   "era": "han",
+   "note": "《伤寒论》状态机",
+   "members": [
+    "六经",
+    "太阳病",
+    "阳明病",
+    "少阳病",
+    "太阴病",
+    "少阴病",
+    "厥阴病"
+   ],
+   "subjects": 62,
+   "units": 508,
+   "hits": 914
+  },
+  {
+   "term": "卫气营血",
+   "era": "mingqing",
+   "note": "叶天士四层状态机",
+   "members": [
+    "卫气营血",
+    "卫分",
+    "气分",
+    "营分",
+    "血分"
+   ],
+   "subjects": 92,
+   "units": 504,
+   "hits": 1023
+  },
+  {
+   "term": "五行",
+   "era": "han",
+   "note": "《内经》五分坐标",
+   "members": [
+    "五行"
+   ],
+   "subjects": 50,
+   "units": 216,
+   "hits": 558
+  },
+  {
+   "term": "参西",
+   "era": "jindai",
+   "note": "张锡纯汇通坐标（清末旧译写法，仅文献层）",
+   "members": [
+    "西人",
+    "泰西",
+    "原质",
+    "养气",
+    "炭气",
+    "轻气",
+    "淡气",
+    "脑筋",
+    "铁锈",
+    "微丝"
+   ],
+   "subjects": 37,
+   "units": 183,
+   "hits": 368
+  },
+  {
+   "term": "八纲",
+   "era": "mingqing",
+   "note": "阴阳表里寒热虚实的二维表",
+   "members": [
+    "八纲"
+   ],
+   "subjects": 46,
+   "units": 78,
+   "hits": 148
+  }
+ ],
+ "corpus": {
+  "scannedDirs": 183,
+  "scannedUnits": 19522,
+  "totalUnits": 19742,
+  "totalHanzi": 34464181,
+  "totalSubjects": 189,
+  "totalChapters": 2426
+ },
+ "modern": {
+  "subjects": 170,
+  "chapters": 1943,
+  "units": 15802,
+  "hanzi": 31978174
+ },
+ "schools": [
+  {
+   "name": "刘完素（河间学派）",
+   "dynasty": "金",
+   "claim": "六气皆从火化，主寒凉"
+  },
+  {
+   "name": "张从正（攻邪学派）",
+   "dynasty": "金",
+   "claim": "病由邪生，攻邪已病，汗吐下三法"
+  },
+  {
+   "name": "李杲（补土学派）",
+   "dynasty": "金元",
+   "claim": "内伤脾胃，百病由生；升阳益气"
+  },
+  {
+   "name": "朱震亨（滋阴学派）",
+   "dynasty": "元",
+   "claim": "阳有余阴不足，相火妄动；滋阴降火"
+  },
+  {
+   "name": "张景岳（温补学派）",
+   "dynasty": "明",
+   "claim": "阳非有余，真阴不足；温补命门"
+  },
+  {
+   "name": "叶天士（温病学派）",
+   "dynasty": "清",
+   "claim": "卫气营血辨证，透邪养阴"
+  },
+  {
+   "name": "王清任（活血学派）",
+   "dynasty": "清",
+   "claim": "治病之要诀在明气血，主逐瘀"
+  },
+  {
+   "name": "张锡纯（汇通学派）",
+   "dynasty": "清末民国",
+   "claim": "衷中参西，重镇潜阳与大气下陷"
+  }
+ ],
+ "unattached": [
+  {
+   "dir": "_probe_eh",
+   "units": 205,
+   "hanzi": 184607,
+   "chapters": 12
+  },
+  {
+   "dir": "_probe_yk",
+   "units": 46,
+   "hanzi": 142932,
+   "chapters": 12
+  },
+  {
+   "dir": "guanli-xue-jichu",
+   "units": 198,
+   "hanzi": 282888,
+   "chapters": 18
+  }
+ ],
+ "gaps": {
+  "bottoms": {
+   "withUnits": [
+    {
+     "title": "伤寒论",
+     "slug": "07-shanghanlun",
+     "era": "奠基",
+     "chapters": 12,
+     "coupling": "断代",
+     "dir": "shanghan"
+    },
+    {
+     "title": "金匮要略",
+     "slug": "08-jingui-yaolue",
+     "era": "奠基",
+     "chapters": 10,
+     "coupling": "断代",
+     "dir": "jingui"
+    },
+    {
+     "title": "中药学",
+     "slug": "01-zhongyaoxue",
+     "era": "奠基",
+     "chapters": 14,
+     "coupling": "断代",
+     "dir": "zhongyao-xue"
+    },
+    {
+     "title": "中药炮制学",
+     "slug": "08-zhongyao-paozhi-xue",
+     "era": "集成",
+     "chapters": 9,
+     "coupling": "断代",
+     "dir": "zhongyao-paozhi"
+    },
+    {
+     "title": "中医儿科学",
+     "slug": "13-zhongyi-erke-xue",
+     "era": "争鸣与建制",
+     "chapters": 14,
+     "coupling": "断代",
+     "dir": "erke"
+    },
+    {
+     "title": "温病学",
+     "slug": "09-wenbing-xue",
+     "era": "温病与考据",
+     "chapters": 10,
+     "coupling": "断代",
+     "dir": "wenbing"
+    }
+   ],
+   "rawOnly": [],
+   "none": [
+    {
+     "title": "内经选读",
+     "slug": "06-neijing-xuandu",
+     "era": "奠基",
+     "chapters": 10,
+     "coupling": "断代"
+    },
+    {
+     "title": "中医哲学史",
+     "slug": "16-zhongyi-zhexue-shi",
+     "era": "奠基",
+     "chapters": 8,
+     "coupling": "断代"
+    },
+    {
+     "title": "方剂学",
+     "slug": "03-fangjixue",
+     "era": "奠基",
+     "chapters": 15,
+     "coupling": "断代"
+    },
+    {
+     "title": "经络学",
+     "slug": "01-jingluo-xue",
+     "era": "奠基",
+     "chapters": 10,
+     "coupling": "断代"
+    },
+    {
+     "title": "针灸医籍选",
+     "slug": "03-zhenjiu-yiji-xuan",
+     "era": "集成",
+     "chapters": 8,
+     "coupling": "跨代"
+    },
+    {
+     "title": "腧穴学",
+     "slug": "02-shuxue-xue",
+     "era": "集成",
+     "chapters": 12,
+     "coupling": "断代"
+    },
+    {
+     "title": "中医气功学",
+     "slug": "04-qigong-xue",
+     "era": "集成",
+     "chapters": 7,
+     "coupling": "断代"
+    },
+    {
+     "title": "中医各家学说",
+     "slug": "15-zhongyi-gejia-xueshuo",
+     "era": "争鸣与建制",
+     "chapters": 8,
+     "coupling": "断代"
+    },
+    {
+     "title": "中医妇科学",
+     "slug": "12-zhongyi-fuke-xue",
+     "era": "争鸣与建制",
+     "chapters": 13,
+     "coupling": "断代"
+    },
+    {
+     "title": "中医外科学",
+     "slug": "11-zhongyi-waike-xue",
+     "era": "温病与考据",
+     "chapters": 13,
+     "coupling": "断代"
+    },
+    {
+     "title": "中医五官科经典选读",
+     "slug": "05-zhongyi-wuguan-jingdian",
+     "era": "温病与考据",
+     "chapters": 6,
+     "coupling": "断代"
+    },
+    {
+     "title": "中国医学史",
+     "slug": "03-zhongguo-yixue-shi",
+     "era": "汇通与转型",
+     "chapters": 8,
+     "coupling": "跨代"
+    },
+    {
+     "title": "医学衷中参西录选读",
+     "slug": "23-zhongcan-xilu-xuandu",
+     "era": "汇通与转型",
+     "chapters": 10,
+     "coupling": "断代"
+    }
+   ]
+  },
+  "emptyEras": [
+   {
+    "id": "origin",
+    "title": "起源",
+    "span": "远古—西周"
+   },
+   {
+    "id": "dangdai",
+    "title": "建制与数字化",
+    "span": "1956—今"
+   }
+  ],
+  "thinCoords": [
+   {
+    "term": "八纲",
+    "units": 78,
+    "subjects": 46
+   }
+  ],
+  "note": "原文在库、但没切成 units.json 的，单元层为 0——它们不是「没内容」，而是没进统计口径；底本目录缺席的，才是真要补源。坐标系命中偏低处，须先看这两类缺口，再谈术语稀疏。"
+ },
+ "totals": {
+  "canonSubjects": 19,
+  "canonChapters": 197,
+  "eras": 7
+ }
+};
+
+const num = n => n.toLocaleString("zh-CN");
+const wan = n => (n/10000).toFixed(1).replace(/\.0$/,"") + " 万字";
+const eraName = id => (DATA.eras.find(e=>e.id===id)||{}).title || id;
+
+/* ── 顶部数字 ── */
+(function(){
+  const c = DATA.corpus, t = DATA.totals;
+  const rows = [
+    [DATA.eras.length, "历史分期（含起源与当代）"],
+    [num(c.totalSubjects), "学科结点"],
+    [num(c.totalChapters), "章节"],
+    [num(c.totalUnits), "知识单元"],
+    [wan(c.totalHanzi), "底本正文"],
+  ];
+  document.getElementById("figures").innerHTML = rows.map(([v,l])=>
+    `<div><b>${v}</b><span>${l}</span></div>`).join("");
+  const lede = document.getElementById("ledeHanzi");
+  if (lede) lede.textContent = wan(c.totalHanzi);
+})();
+
+/* ── 时间轴 ── */
+(function(){
+  const roman = ["壹","贰","叁","肆","伍","陆","柒","捌"];
+  const html = DATA.eras.map((e,i)=>{
+    const m = e.measured;
+    const works = e.works.map(w=>
+      `<li><span class="w">${w.name}</span><span class="t">${w.when}</span><span class="n">${w.note}</span></li>`).join("");
+    const people = e.people.length ? `<p class="people"><b>人物</b>　${e.people.join(" · ")}</p>` : "";
+    const nodes = e.nodes.length ? e.nodes.map(n=>{
+      const tag = n.basis === "典籍同名" ? "" : " t2";
+      const cross = n.coupling === "跨代" ? `<span class="basis-tag xd">跨代</span>` : "";
+      const detail = (n.detail && n.detail.length)
+        ? `<ol>${n.detail.map(d=>`<li>${d}</li>`).join("")}</ol>` : "";
+      return `<details><summary><span class="nm">${n.title}</span>${cross}
+        <span class="basis-tag${tag}">${n.basis}</span>
+        <span class="meta">${n.chapters} 章${n.units?" · "+n.units+" 单元":""}</span></summary>
+        <div class="why">${n.why}</div>${detail}</details>`;
+    }).join("") : `<p class="people">${e.empty || "本库暂无对应结点。"}</p>`;
+    const cross = e.cross && e.cross.subjects
+      ? `<span>另：跨代载体 <b>${e.cross.subjects}</b> 学科（不计入本期）</span>` : "";
+    const tally = `<div class="tally">
+      <span>断代结点 <b>${m.subjects}</b> 学科</span><span>章 <b>${m.chapters}</b></span>
+      <span>单元 <b>${m.units}</b></span><span>正文 <b>${wan(m.hanzi)}</b></span>${cross}</div>`;
+    const bottoms = (e.bottoms && e.bottoms.length) ? e.bottoms.map(b=>
+      `<div class="tally" style="border-top:0;color:var(--gold)"><span>底本在库　<b>${b.title}</b></span>
+       <span>${b.units} 单元</span><span>${wan(b.hanzi)}</span>
+       <span style="color:var(--muted)">${b.note||""}</span></div>`).join("") : "";
+    return `<article class="era">
+      <div class="axis"><div class="no">${roman[i]||i+1}</div><div class="span">${e.span}</div></div>
+      <div class="card">
+        <h2>${e.title}<small>${e.gist}</small></h2>
+        <p class="shape">${e.shape}</p>
+        <div class="cols">
+          <div class="col"><h3>典籍 · 人物</h3><ul class="works">${works}</ul>${people}</div>
+          <div class="col"><h3>本库落点（点开看章目）</h3><ul class="nodes" style="list-style:none;padding:0;margin:0">${nodes}</ul></div>
+        </div>
+        ${tally}
+        ${bottoms}
+      </div>
+    </article>`;
+  }).join("");
+  document.getElementById("rail").innerHTML = html;
+})();
+
+/* ── 坐标系 ── */
+(function(){
+  const max = Math.max(...DATA.coordinates.map(r=>r.units));
+  const body = DATA.coordinates.map(r=>`<tr>
+    <td class="term">${r.term}<small>${(r.members||[]).join(" · ")}</small></td>
+    <td class="origin">${eraName(r.era)} · ${r.note}</td>
+    <td class="num">${r.subjects}</td>
+    <td class="num">${num(r.units)}</td>
+    <td class="num">${num(r.hits)}</td>
+    <td><div class="bar" style="width:${Math.max(3,Math.round(r.units/max*100))}%"></div></td>
+  </tr>`).join("");
+  document.getElementById("coordBody").innerHTML = body;
+})();
+
+/* ── 根冠 ── */
+(function(){
+  const canon = DATA.eras.reduce((a,e)=>({s:a.s+e.measured.subjects,c:a.c+e.measured.chapters,
+    u:a.u+e.measured.units,h:a.h+e.measured.hanzi}),{s:0,c:0,u:0,h:0});
+  const cross = DATA.eras.reduce((a,e)=>({s:a.s+(e.cross?e.cross.subjects:0),
+    c:a.c+(e.cross?e.cross.chapters:0),u:a.u+(e.cross?e.cross.units:0),
+    h:a.h+(e.cross?e.cross.hanzi:0)}),{s:0,c:0,u:0,h:0});
+  const mod = DATA.modern, c = DATA.corpus;
+  const pct = v => (v/c.totalUnits*100).toFixed(1) + "%";
+  document.getElementById("rootcrown").innerHTML = `
+    <div><h3>根系 · 典籍与学派</h3>
+      <div class="big">${canon.s + cross.s} <small style="font-size:15px;color:var(--muted)">学科 / ${canon.c + cross.c} 章（${canon.s} 断代 + ${cross.s} 跨代）</small></div>
+      <p>${num(canon.u + cross.u)} 个知识单元，${wan(canon.h + cross.h)}正文 —— 占全库单元的 ${pct(canon.u + cross.u)}。<br/>
+      这 18 门是《内经》《伤寒》《金匮》《温病》《甲乙经》《各家学说》这些有作者、有年代、有版本的结点。</p></div>
+    <div class="jade"><h3>冠层 · 现代建制</h3>
+      <div class="big">${mod.subjects} <small style="font-size:15px;color:var(--muted)">学科 / ${num(mod.chapters)} 章</small></div>
+      <p>${num(mod.units)} 个知识单元，${wan(mod.hanzi)}正文 —— 占 ${pct(mod.units)}。<br/>
+      1956 年院校建制之后按课程切分：护理、药学、骨伤、智能、管理全部长在这一层。</p></div>`;
+
+  const top = DATA.coordinates[0];
+  const han = DATA.coordinates.find(r=>r.term==="阴阳");
+  document.getElementById("verdict").innerHTML = `
+    <b>演绎结论：</b>树是<em>叠加</em>的，不是<em>替换</em>的。冠层里有 ${pct(mod.units)} 的单元写于 1956 年之后，
+    但全库有 <b>${num(top.subjects)}</b> 个学科、<b>${num(top.units)}</b> 个单元在调用「${top.term}」这条秦汉语法；
+    「${han.term}」也仍在 <b>${num(han.subjects)}</b> 个学科里被当作第一分类轴使用。
+    每加一层坐标（六经 → 卫气营血 → 三焦 → 八纲），旧坐标并没有退役，只是各自负责一段判定。
+    这也是本库把经典课放在第 3–5 学期、而不是当"历史背景"的原因：它们是运行时依赖，不是注释。`;
+
+  document.getElementById("footL").innerHTML =
+    `生成 ${DATA.eras.length} 期 · 坐标扫描 ${DATA.corpus.scannedDirs} 个底本目录 / ${num(DATA.corpus.scannedUnits)} 个单元（含未挂课底本；顶部 ${num(DATA.corpus.totalUnits)} 为挂课口径）`;
+})();
+
+/* ── 缺口 ── */
+(function(){
+  const g = DATA.gaps, b = g.bottoms;
+  document.getElementById("gapNote").textContent = g.note;
+  const chips = arr => arr.map(n=>`<span class="chip">${n.title} · ${n.chapters} 章</span>`).join("");
+  const realEmpty = g.emptyEras.filter(e=>e.id!=="origin" && e.id!=="dangdai");
+  const emptyEra = realEmpty.map(e=>`<span class="chip">${e.title} ${e.span}</span>`).join("");
+  const hasRaw = b.rawOnly.map(n=>`${n.title}（${(n.has||[]).join("、")||"原文"}）`).join("；");
+  document.getElementById("gaps").innerHTML = `
+    <div><h3>原文在库 · 未切单元</h3>
+      <p>${chips(b.rawOnly) || "无"}</p>
+      <p style="margin-top:8px">共 ${b.rawOnly.length} 门。原文其实已经在 <code>standards/</code> 里：${hasRaw}。
+      缺的是 <code>units.json</code> 那一道切分，所以它们在单元层与坐标统计里都是 0。</p></div>
+    <div><h3>底本目录缺席</h3>
+      <p>${chips(b.none) || "无"}</p>
+      <p style="margin-top:8px">共 ${b.none.length} 门。这一类才是真要补源——其中《内经》选读、《各家学说》、《针灸医籍选》是根系上最该有底本的三门。</p></div>
+    <div><h3>无独立学科的断代</h3>
+      <p>${emptyEra || "无"}</p>
+      <p style="margin-top:8px">该期在本库没有自己的学科，只在《中国医学史》第7章占一节。要补的是《医学衷中参西录》选读一类载体。
+      覆盖偏窄的坐标：${g.thinCoords.map(c=>`${c.term} ${c.units}`).join(" · ")}。</p></div>`;
+})();
+</script>
+</body>
+</html>

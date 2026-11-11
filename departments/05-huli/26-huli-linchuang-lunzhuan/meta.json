@@ -1,0 +1,40 @@
+{
+  "slug": "26-huli-linchuang-lunzhuan",
+  "title": "护理临床轮转",
+  "en": "Clinical Nursing Rotation",
+  "deptSlug": "05-huli",
+  "deptTitle": "护理系",
+  "globalN": 107,
+  "type": "Clinic",
+  "semester": 9,
+  "stage": "lao",
+  "stageTitle": "老",
+  "hours": 108,
+  "bridge": "护理评估→结构化表单 / 干预→可核查记录 / 结局→护理敏感指标",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/05-huli/26-huli-linchuang-lunzhuan",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/05-huli/26-huli-linchuang-lunzhuan",
+    "chaptersWritten": 6,
+    "words": 3529,
+    "status": "wip",
+    "layer": "handbook",
+    "contract": "handbook-v1",
+    "origin": "handbook",
+    "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
+    "extractedAt": "2026-11-09"
+  },
+  "底本": {
+    "kind": "派生",
+    "from": "standards/{neike,waike,fuchanke,erke,jiwei}-huli 等",
+    "dir": "standards/huli-lunzhuan",
+    "note": "本库无《护理临床轮转》母本；6 站由五门课的 11 个单元派生，locator 一律「派生·」"
+  }
+}

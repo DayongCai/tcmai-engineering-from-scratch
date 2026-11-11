@@ -255,6 +255,44 @@ function renderSubject() {
     : chapters.map((c) => ({ n: c.n, slug: c.chapterSlug, title: c.title, status: '🚧', built: c }));
   const nextUnbuilt = rows.find((r) => !r.built);
 
+  // ── 先修关系：前置 / 后续 / 根课理由 ──
+  // 学生看这一节要能回答两个问题：① 这门课先学什么；② 它如果是根课，凭什么没有前置。
+  // 「凭什么」不写在页面里，只从 data/prereq-roots.json 读 —— 页面不许自己编理由。
+  const pInfo = (DATA.prereqIndex || {})[key] || null;
+  const deptTitleOf = (slug) => (DATA.departments.find((d) => d.slug === slug) || {}).title || slug;
+  const depLink = (x) =>
+    `<a href="subject.html?path=${encodeURIComponent(x.key)}">${esc(x.title)}</a>` +
+    `<span class="small muted"> · 第 ${x.semester == null ? '?' : x.semester} 学期 · ${esc(deptTitleOf(x.dept))}</span>`;
+  const prereqBlock = (() => {
+    if (!pInfo) return '<p class="muted small">先修数据未生成 —— 跑 <code>node scripts/build_catalog.js</code> 再重建站点。</p>';
+    const head = pInfo.prereq.length
+      ? `<div class="card-title">先修链第 ${pInfo.depth} 层 · 前置 ${pInfo.prereq.length} 门</div>`
+      : '<div class="card-title">根课 <span class="tag core">无前置</span></div>';
+    const rootWhy = pInfo.root
+      ? `<p class="small" style="margin-top:8px"><b>为什么它是根课：</b>${esc(pInfo.root)}</p>`
+      : pInfo.prereq.length
+        ? ''
+        : '<p class="small" style="margin-top:8px;color:#b45309">这门课没有前置，也没有在 <code>data/prereq-roots.json</code> 登记理由 —— 按漏声明处理，审计会报。</p>';
+    const pre = pInfo.prereq.length
+      ? `<div class="small" style="margin-top:8px"><b>先学：</b></div><ul class="small">${pInfo.prereq
+          .map((x) => `<li>${depLink(x)}${x.cross ? ' <span class="tag">跨院系</span>' : ''}</li>`)
+          .join('')}</ul>`
+      : '';
+    const post = pInfo.dependents.length
+      ? `<div class="small" style="margin-top:8px"><b>以这门课为前置（${pInfo.dependents.length} 门）：</b></div><ul class="small">${pInfo.dependents
+          .slice(0, 12)
+          .map((x) => `<li>${depLink(x)}</li>`)
+          .join('')}</ul>${
+          pInfo.dependents.length > 12
+            ? `<p class="small muted">…… 另有 ${pInfo.dependents.length - 12} 门未列出。</p>`
+            : ''
+        }`
+      : '<p class="small muted" style="margin-top:8px">没有其他课以它为先修（末端课）。</p>';
+    return `<div class="card">${head}${rootWhy}${pre}${post}
+  <p class="small muted" style="margin-top:10px">口径：先修边是本仓库作者判断，不是教务处文件；根课理由登记在 <code>data/prereq-roots.json</code>，审计（<code>audit_curriculum.js</code> L0）会卡「空前置且未登记」。改边须改 <code>scripts/migrate_prereq.js</code> 后重跑。</p>
+</div>`;
+  })();
+
   return shell('catalog.html', s.title, `
 <div class="breadcrumb"><a href="index.html">总览</a> / <a href="catalog.html?dept=${s.dept.slug}">${esc(s.dept.title)}</a> / ${esc(s.title)}</div>
 <h1>${esc(s.title)}</h1>
@@ -268,6 +306,8 @@ function renderSubject() {
   <div class="count"><b>${String(s.globalN).padStart(3, '0')}</b>学科编号</div>
 </div>
 
+<h2>先修关系</h2>
+${prereqBlock}
 <h2>章节地图（已建 ${chapters.length} / 目标 ${s.chaptersTarget}）</h2>
 ${rows.length === 0
   ? `<p class="muted">该学科尚未定义章节结构。先写 <code>standards/knowledge-structure/${s.dept.slug}.txt</code>，再跑 <code>node scripts/build_knowledge_structure.js</code>。</p>`
@@ -797,7 +837,7 @@ function renderSemtensor() {
   <div class="controls">
     <label class="small muted">数据集
       <select id="st-which">
-        <option value="reference">源实现 · 116 个真实语义单元</option>
+        <option value="reference">源实现 · 117 个真实语义单元</option>
         <option value="neijing">内经 12 语义域</option>
         <option value="shanghan-domain">伤寒论 9 域</option>
         <option value="shanghan">伤寒论 28 集</option>
@@ -850,7 +890,7 @@ function renderSemtensor() {
 三轴同强时趋向三端色的加权混合；镜像不变色；对符号敏感（v 与 −v 必异色）。
 <strong>颜色取方向不取尺度</strong> —— 否则「尺度伸缩不改色」不成立，见规范 §4.1。</p>
 
-<h2>源实现 · 116 个真实语义单元（103 病证 + 六经域 6 + 四系统 4 + 精气神 3）</h2>
+<h2>源实现 · 117 个真实语义单元（104 病证 + 六经域 6 + 四系统 4 + 精气神 3）</h2>
 <p class="small muted">数据取自源实现交付物 <code>standards/semtensor/sources/</code> 内嵌的 <code>DATA.units</code>，
 原样入库、不做二次加工。<strong>这是真实数据，站点默认用它</strong>；
 下方「内经 12 语义域」的球面映射是本仓库的本地约定，只在源数据不可得时才用。</p>

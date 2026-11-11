@@ -1,0 +1,133 @@
+{
+ "note": "派生课：一章一主题；四位面＝章群结构分区。",
+ "chapters": {
+  "01-yuanliu-lilun": {
+   "n": 1,
+   "title": "整脊源流与理论",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5",
+    "1.6"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "整脊不是「掰响」，是可解释的力学与序列调整",
+   "derivedFrom": "zhenggu、shoufa"
+  },
+  "02-jiepou-lixue": {
+   "n": 2,
+   "title": "脊柱解剖与生物力学",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "先懂序列与曲度，再谈复位",
+   "derivedFrom": "zhenggu、gushang-jichu"
+  },
+  "03-yingxiang-pinggu": {
+   "n": 3,
+   "title": "影像评估与适应证",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5",
+    "3.6"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "影像不是用来「找问题」，是用来排除禁忌",
+   "derivedFrom": "gushang-yingxiang、zhenggu"
+  },
+  "04-shoufa-tixi": {
+   "n": 4,
+   "title": "整脊手法体系",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "手法分级：松解、松动、整复三层",
+   "derivedFrom": "zhenggu、shoufa"
+  },
+  "05-jingzhui": {
+   "n": 5,
+   "title": "颈椎整脊",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "颈椎是风险最高的一段",
+   "derivedFrom": "zhenggu、gushang-jizhu-bing"
+  },
+  "06-xiongyaozhui": {
+   "n": 6,
+   "title": "胸腰椎整脊",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "胸椎手法要防肋骨与椎体骨折",
+   "derivedFrom": "zhenggu、gushang-jizhu-bing"
+  },
+  "07-gupen-xiayao": {
+   "n": 7,
+   "title": "骨盆与下肢力线",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4",
+    "7.5"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "骶髂与髋膝踝是一条链",
+   "derivedFrom": "zhenggu、zhiliao"
+  },
+  "08-fengxian-liaoxiao": {
+   "n": 8,
+   "title": "风险、禁忌与疗效评价",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4",
+    "8.5"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "三类禁忌写死：骨折、肿瘤、脊髓压迫",
+   "derivedFrom": "zhenggu、gushang-jizhu-bing"
+  }
+ }
+}

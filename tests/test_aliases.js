@@ -109,7 +109,16 @@ test('分级器不把 composition 当同义：只算「部分证据」，不许�
 
 test('分级器不把 broader 当同义：也只算旁证', () => {
   const EQ = require('../scripts/evidence_quality.js');
-  const r = EQ.assess(extByLabel.get('下焦湿热瘀阻证'));
+  // 用合成来源：只出现上位概念「湿热病证」，**不出现证名本身** ——
+  // 否则 labelHit 会把它判成特指（那是对的，但测不到 relation 的判定）。
+  const r = EQ.assess({
+    label: '下焦湿热瘀阻证',
+    sources: [{
+      title: '湿热病证理论探讨 · 滕州市中医医院',
+      snippet: '古今温病学医家对湿热病证论述较多，一般认为湿热病证是指温病中的一类证候，它包含外感湿热病邪所引起的一类病证。',
+      url: 'http://www.tzszyyy.com/wanghongjing/html/news/90.html',
+    }],
+  });
   assert(r.tier === 'partial', `应判部分证据（旁证），实得 ${r.tier}`);
   assert(r.viaAlias.some((v) => v.relation === 'broader'), '没记下 broader 关系');
 });

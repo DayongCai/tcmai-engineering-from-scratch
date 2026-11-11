@@ -1,0 +1,232 @@
+{
+ "note": "中药新药研发 外源补源登记：每条记来源、URL、sha256、页数与逐字校勘结论。查不到的句子不入库（约定见 补源约定.md）。",
+ "convention": "补源约定.md",
+ "sources": {
+  "WHO-GMP-Herbal-2007": {
+   "file": "WHO-GMP-Herbal-Medicines-2007.pdf",
+   "title": "WHO guidelines on good manufacturing practices (GMP) for herbal medicines",
+   "revised": "2007",
+   "url": "https://iris.who.int/server/api/core/bitstreams/444528f5-6c78-434e-a39d-0bb6c36e4c30/content",
+   "exists": true,
+   "sha256": "4f76eae7cfae96ae7bde433c2c829979b174bc09ac0c73212000b0234c277091",
+   "bytes": 1712156,
+   "pages": 92,
+   "textChars": 402528,
+   "textLayer": true
+  },
+  "WHO-GACP-Medicinal-2003": {
+   "file": "WHO-GACP-Medicinal-Plants-2003.pdf",
+   "title": "WHO guidelines on good agricultural and collection practices (GACP) for medicinal plants",
+   "revised": "2003",
+   "url": "https://iris.who.int/server/api/core/bitstreams/a00d3219-ed33-436a-be13-e3f00763f874/content",
+   "exists": true,
+   "sha256": "ec38f61d08f8c0bcd970a9eb135fbe6b2caca7ce0f1a08cd1d17ebc6415da7dc",
+   "bytes": 606586,
+   "pages": 80,
+   "textChars": 328194,
+   "textLayer": true
+  },
+  "WHO-Quality-Contaminants-2007": {
+   "file": "WHO-Quality-Herbal-Contaminants-2007.pdf",
+   "title": "WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues",
+   "revised": "2007",
+   "url": "https://iris.who.int/server/api/core/bitstreams/31b7f3a0-818d-4496-9bcb-8b65cf02c293/content",
+   "exists": true,
+   "sha256": "e6c8ce92c8021700134ab993404b942d760a3816631769826700393287a333b3",
+   "bytes": 587968,
+   "pages": 118,
+   "textChars": 546611,
+   "textLayer": true
+  },
+  "WHO-Safety-Monitoring-2004": {
+   "file": "WHO-Safety-Monitoring-Herbal-2004.pdf",
+   "title": "WHO guidelines on safety monitoring of herbal medicines in pharmacovigilance systems",
+   "revised": "2004",
+   "url": "https://iris.who.int/bitstreams/3b294cd7-18fc-4c2d-b534-836bf8d33553/download",
+   "exists": true,
+   "sha256": "5a11d4abcee11116be1bd05df93550263dfa222ebcc4701b19375355657033fa",
+   "bytes": 971373,
+   "pages": 82,
+   "textChars": 360570,
+   "textLayer": true
+  }
+ },
+ "clauses": [
+  {
+   "id": "W01",
+   "source": "WHO-GMP-Herbal-2007",
+   "clause": "第1条",
+   "sourceTitle": "WHO guidelines on good manufacturing practices (GMP) for herbal medicines",
+   "url": "https://iris.who.int/server/api/core/bitstreams/444528f5-6c78-434e-a39d-0bb6c36e4c30/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines on good manufacturing practices (GMP) for herbal medicines 第1条"
+  },
+  {
+   "id": "W02",
+   "source": "WHO-GMP-Herbal-2007",
+   "clause": "第2条",
+   "sourceTitle": "WHO guidelines on good manufacturing practices (GMP) for herbal medicines",
+   "url": "https://iris.who.int/server/api/core/bitstreams/444528f5-6c78-434e-a39d-0bb6c36e4c30/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines on good manufacturing practices (GMP) for herbal medicines 第2条"
+  },
+  {
+   "id": "W03",
+   "source": "WHO-GMP-Herbal-2007",
+   "clause": "第3条",
+   "sourceTitle": "WHO guidelines on good manufacturing practices (GMP) for herbal medicines",
+   "url": "https://iris.who.int/server/api/core/bitstreams/444528f5-6c78-434e-a39d-0bb6c36e4c30/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines on good manufacturing practices (GMP) for herbal medicines 第3条"
+  },
+  {
+   "id": "W04",
+   "source": "WHO-GMP-Herbal-2007",
+   "clause": "第4条",
+   "sourceTitle": "WHO guidelines on good manufacturing practices (GMP) for herbal medicines",
+   "url": "https://iris.who.int/server/api/core/bitstreams/444528f5-6c78-434e-a39d-0bb6c36e4c30/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines on good manufacturing practices (GMP) for herbal medicines 第4条"
+  },
+  {
+   "id": "W05",
+   "source": "WHO-GMP-Herbal-2007",
+   "clause": "第5条",
+   "sourceTitle": "WHO guidelines on good manufacturing practices (GMP) for herbal medicines",
+   "url": "https://iris.who.int/server/api/core/bitstreams/444528f5-6c78-434e-a39d-0bb6c36e4c30/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines on good manufacturing practices (GMP) for herbal medicines 第5条"
+  },
+  {
+   "id": "W06",
+   "source": "WHO-GACP-Medicinal-2003",
+   "clause": "第1条",
+   "sourceTitle": "WHO guidelines on good agricultural and collection practices (GACP) for medicinal plants",
+   "url": "https://iris.who.int/server/api/core/bitstreams/a00d3219-ed33-436a-be13-e3f00763f874/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines on good agricultural and collection practices (GACP) for medicinal plants 第1条"
+  },
+  {
+   "id": "W07",
+   "source": "WHO-GACP-Medicinal-2003",
+   "clause": "第2条",
+   "sourceTitle": "WHO guidelines on good agricultural and collection practices (GACP) for medicinal plants",
+   "url": "https://iris.who.int/server/api/core/bitstreams/a00d3219-ed33-436a-be13-e3f00763f874/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines on good agricultural and collection practices (GACP) for medicinal plants 第2条"
+  },
+  {
+   "id": "W08",
+   "source": "WHO-GACP-Medicinal-2003",
+   "clause": "第3条",
+   "sourceTitle": "WHO guidelines on good agricultural and collection practices (GACP) for medicinal plants",
+   "url": "https://iris.who.int/server/api/core/bitstreams/a00d3219-ed33-436a-be13-e3f00763f874/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines on good agricultural and collection practices (GACP) for medicinal plants 第3条"
+  },
+  {
+   "id": "Q01",
+   "source": "WHO-Quality-Contaminants-2007",
+   "clause": "第1条",
+   "sourceTitle": "WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues",
+   "url": "https://iris.who.int/server/api/core/bitstreams/31b7f3a0-818d-4496-9bcb-8b65cf02c293/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues 第1条"
+  },
+  {
+   "id": "Q02",
+   "source": "WHO-Quality-Contaminants-2007",
+   "clause": "第2条",
+   "sourceTitle": "WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues",
+   "url": "https://iris.who.int/server/api/core/bitstreams/31b7f3a0-818d-4496-9bcb-8b65cf02c293/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues 第2条"
+  },
+  {
+   "id": "Q03",
+   "source": "WHO-Quality-Contaminants-2007",
+   "clause": "第3条",
+   "sourceTitle": "WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues",
+   "url": "https://iris.who.int/server/api/core/bitstreams/31b7f3a0-818d-4496-9bcb-8b65cf02c293/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues 第3条"
+  },
+  {
+   "id": "Q04",
+   "source": "WHO-Quality-Contaminants-2007",
+   "clause": "第4条",
+   "sourceTitle": "WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues",
+   "url": "https://iris.who.int/server/api/core/bitstreams/31b7f3a0-818d-4496-9bcb-8b65cf02c293/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues 第4条"
+  },
+  {
+   "id": "Q05",
+   "source": "WHO-Quality-Contaminants-2007",
+   "clause": "第5条",
+   "sourceTitle": "WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues",
+   "url": "https://iris.who.int/server/api/core/bitstreams/31b7f3a0-818d-4496-9bcb-8b65cf02c293/content",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues 第5条"
+  },
+  {
+   "id": "S01",
+   "source": "WHO-Safety-Monitoring-2004",
+   "clause": "第1条",
+   "sourceTitle": "WHO guidelines on safety monitoring of herbal medicines in pharmacovigilance systems",
+   "url": "https://iris.who.int/bitstreams/3b294cd7-18fc-4c2d-b534-836bf8d33553/download",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines on safety monitoring of herbal medicines in pharmacovigilance systems 第1条"
+  },
+  {
+   "id": "S02",
+   "source": "WHO-Safety-Monitoring-2004",
+   "clause": "第2条",
+   "sourceTitle": "WHO guidelines on safety monitoring of herbal medicines in pharmacovigilance systems",
+   "url": "https://iris.who.int/bitstreams/3b294cd7-18fc-4c2d-b534-836bf8d33553/download",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines on safety monitoring of herbal medicines in pharmacovigilance systems 第2条"
+  },
+  {
+   "id": "S03",
+   "source": "WHO-Safety-Monitoring-2004",
+   "clause": "第3条",
+   "sourceTitle": "WHO guidelines on safety monitoring of herbal medicines in pharmacovigilance systems",
+   "url": "https://iris.who.int/bitstreams/3b294cd7-18fc-4c2d-b534-836bf8d33553/download",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines on safety monitoring of herbal medicines in pharmacovigilance systems 第3条"
+  },
+  {
+   "id": "S04",
+   "source": "WHO-Safety-Monitoring-2004",
+   "clause": "第4条",
+   "sourceTitle": "WHO guidelines on safety monitoring of herbal medicines in pharmacovigilance systems",
+   "url": "https://iris.who.int/bitstreams/3b294cd7-18fc-4c2d-b534-836bf8d33553/download",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·WHO guidelines on safety monitoring of herbal medicines in pharmacovigilance systems 第4条"
+  }
+ ],
+ "counts": {
+  "sources": 4,
+  "clauses": 17,
+  "verified": 17,
+  "unverified": 0
+ }
+}

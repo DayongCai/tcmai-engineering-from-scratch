@@ -1,0 +1,79 @@
+{
+ "lesson": "01-zucheng-mingming",
+ "title": "经络系统的组成与命名",
+ "subject": "01-jingluo-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 1 章「经络系统的组成与命名」主要解决什么问题？",
+   "options": [
+    "经络系统的组成与命名",
+    "走向交接与流注次序",
+    "表里关系",
+    "奇经八脉的名称与特点"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：本章要回答的是「经络系统到底由哪几样东西组成，谁管走向、谁管深浅、谁管联络」。"
+  },
+  {
+   "stage": "check",
+   "question": "「经络的概念」属于本章哪一小节？",
+   "options": [
+    "经络的概念",
+    "走向交接与流注次序",
+    "表里关系",
+    "奇经八脉的名称与特点"
+   ],
+   "correct": 0,
+   "explanation": "教材 教材·第1章·1.1.1（1,857 汉字）。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面的重心是哪一类？",
+   "options": [
+    "足三阴",
+    "手三阴",
+    "手三阳",
+    "足三阳"
+   ],
+   "correct": 0,
+   "explanation": "由 `node code/main.js` 现算，见正文第二节的分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "3 个小节",
+    "6 个小节",
+    "13 个小节",
+    "20 个小节"
+   ],
+   "correct": 0,
+   "explanation": "见 `standards/jingluo/chapter-map.json`，并由 `code/main.test.js` 断言。"
+  },
+  {
+   "stage": "post",
+   "question": "本章的数字（单元数/字数/词频）从哪里来？",
+   "options": [
+    "由 standards/jingluo/units.json 现算",
+    "正文里手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "本章不存独立数字；改教材后 `node --test` 会先失败。"
+  },
+  {
+   "stage": "post",
+   "question": "若教材修订导致小节号变化，最先出问题的是哪一步？",
+   "options": [
+    "code/main.test.js 的断言",
+    "走向交接与流注次序",
+    "表里关系",
+    "奇经八脉的名称与特点"
+   ],
+   "correct": 0,
+   "explanation": "测试断言写在可对账的结构上（小节号、规模、重心），因此会先响。"
+  }
+ ]
+}

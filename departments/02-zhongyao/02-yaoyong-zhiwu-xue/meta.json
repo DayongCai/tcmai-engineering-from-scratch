@@ -22,8 +22,11 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/02-zhongyao/02-yaoyong-zhiwu-xue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 12,
+    "words": 216378,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#药用植物学",
+    "extractedAt": "2026-10-21"
   }
 }

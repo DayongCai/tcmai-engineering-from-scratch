@@ -1,0 +1,157 @@
+{
+ "note": "派生课：一章一主题；四位面＝章群结构分区。",
+ "chapters": {
+  "01-shoufa-jichu": {
+   "n": 1,
+   "title": "手法治疗的基础",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "手法的力学：力的大小、方向、作用点",
+   "derivedFrom": "shoufa、zhenggu"
+  },
+  "02-zhenggu-bafa": {
+   "n": 2,
+   "title": "正骨八法与常用手法",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "八法是骨伤手法的主干",
+   "derivedFrom": "zhenggu、shoufa"
+  },
+  "03-ruanzuzhi-shoufa": {
+   "n": 3,
+   "title": "软组织手法",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "滚、揉、拿、按：松解类手法的作用层次",
+   "derivedFrom": "shoufa、tuina"
+  },
+  "04-zhenggu-shoufa": {
+   "n": 4,
+   "title": "整复类手法",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5",
+    "4.6"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "复位是高风险动作：先评估再动手",
+   "derivedFrom": "zhenggu、shoufa"
+  },
+  "05-jingjian": {
+   "n": 5,
+   "title": "颈肩部手法",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "颈椎手法是风险最高的一类",
+   "derivedFrom": "zhenggu、shoufa"
+  },
+  "06-yaotui": {
+   "n": 6,
+   "title": "腰腿部手法",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5",
+    "6.6"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "腰腿痛的手法选择取决于病因",
+   "derivedFrom": "zhenggu、zhiliao"
+  },
+  "07-guanjie-songdong": {
+   "n": 7,
+   "title": "关节松动手法",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "松动与整复不是一回事",
+   "derivedFrom": "shoufa、kangfu-huli"
+  },
+  "08-xiaoer-shoufa": {
+   "n": 8,
+   "title": "小儿骨伤手法",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4",
+    "8.5"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "小儿不是「小号成人」",
+   "derivedFrom": "zhenggu、xiaoer-tuina"
+  },
+  "09-fengxian-jinji": {
+   "n": 9,
+   "title": "风险、禁忌与意外处理",
+   "units": [
+    "9.1",
+    "9.2",
+    "9.3"
+   ],
+   "srcChapters": [
+    "派生#9"
+   ],
+   "why": "三类意外必须写死：骨折、神经、血管",
+   "derivedFrom": "zhenggu、shoufa"
+  },
+  "10-pingjia": {
+   "n": 10,
+   "title": "疗效评价与方案设计",
+   "units": [
+    "10.1",
+    "10.2",
+    "10.3"
+   ],
+   "srcChapters": [
+    "派生#10"
+   ],
+   "why": "手法疗效要能落到可测指标",
+   "derivedFrom": "zhenggu、kangfu-huli"
+  }
+ }
+}

@@ -1,0 +1,79 @@
+{
+  "lesson": "08-bumian-jiaolv",
+  "title": "不寐与焦虑障碍：睡不好是「神不守舍」",
+  "subject": "20-zhongyi-jingshenbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "不寐的核心病机表述是？",
+      "options": [
+        "神不守舍（卫气不入阴）",
+        "气血不足",
+        "肝郁气滞",
+        "痰湿内盛"
+      ],
+      "correct": 0,
+      "explanation": "教材 8.1.1《灵枢·大惑论》。"
+    },
+    {
+      "stage": "check",
+      "question": "不寐四证不包括？",
+      "options": [
+        "肾虚阳郁",
+        "心脾两虚",
+        "阴虚火旺",
+        "痰热内扰"
+      ],
+      "correct": 0,
+      "explanation": "四证：心脾两虚／阴虚火旺／痰热内扰／肝郁化火。"
+    },
+    {
+      "stage": "check",
+      "question": "睡眠卫生的关键一条是？",
+      "options": [
+        "卧床 20 分钟未睡即起身，避免躺着焦虑",
+        "多躺以求入睡",
+        "白天补觉",
+        "睡前饮酒"
+      ],
+      "correct": 0,
+      "explanation": "教材 8.1.2。"
+    },
+    {
+      "stage": "check",
+      "question": "本章数值命中数为？",
+      "options": [
+        "83 处",
+        "0 处",
+        "113 处",
+        "282 处"
+      ],
+      "correct": 0,
+      "explanation": "多为频次与时长描述。"
+    },
+    {
+      "stage": "post",
+      "question": "长期使用镇静安神药的风险是？",
+      "options": [
+        "依赖与认知影响",
+        "无风险",
+        "只影响睡眠",
+        "只影响情绪"
+      ],
+      "correct": 0,
+      "explanation": "教材 8.1.2「安全使用」。"
+    },
+    {
+      "stage": "post",
+      "question": "焦虑四型中「心胆气虚」的特点是？",
+      "options": [
+        "易惊、胆怯、心悸、气短",
+        "烦躁易怒",
+        "胸闷痰多",
+        "五心烦热"
+      ],
+      "correct": 0,
+      "explanation": "教材 8.2.1 分型。"
+    }
+  ]
+}

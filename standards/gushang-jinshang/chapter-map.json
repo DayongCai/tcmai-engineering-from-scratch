@@ -1,0 +1,162 @@
+{
+ "note": "派生课：一章一主题；四位面＝章群结构分区。",
+ "chapters": {
+  "01-jinshang-zonglun": {
+   "n": 1,
+   "title": "筋伤总论",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5",
+    "1.6"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "筋伤不是「软组织损伤」的同义词：中医按筋、肉、骨分层",
+   "derivedFrom": "zhenggu、gushang-jichu"
+  },
+  "02-bingli-fenqi": {
+   "n": 2,
+   "title": "筋伤的病理与分期",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "急性期、缓解期、恢复期，手法强度随期而变",
+   "derivedFrom": "zhenggu、gushang-jichu"
+  },
+  "03-zhencha": {
+   "n": 3,
+   "title": "筋伤的诊查",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "压痛点在哪儿，比疼多久更有信息量",
+   "derivedFrom": "zhenggu、gushang-jichu"
+  },
+  "04-shoufa-guding": {
+   "n": 4,
+   "title": "理筋手法与固定",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5",
+    "4.6"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "先松解再固定，顺序反了会加重",
+   "derivedFrom": "shoufa、zhenggu"
+  },
+  "05-jingbu": {
+   "n": 5,
+   "title": "颈部筋伤",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "落枕与颈型颈椎病常被混为一谈",
+   "derivedFrom": "zhenggu、tuina"
+  },
+  "06-jianbu": {
+   "n": 6,
+   "title": "肩部筋伤",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "肩袖与肩周：一个要练，一个要松",
+   "derivedFrom": "zhenggu、zhiliao"
+  },
+  "07-yaobei": {
+   "n": 7,
+   "title": "腰背部筋伤",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4",
+    "7.5"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "急性腰扭伤与慢性劳损的处理相反",
+   "derivedFrom": "zhenggu、zhiliao"
+  },
+  "08-xihuai": {
+   "n": 8,
+   "title": "膝、踝部筋伤",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4",
+    "8.5"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "韧带与半月板：一个靠固定，一个靠评估",
+   "derivedFrom": "zhenggu、gushang-jichu"
+  },
+  "09-qita": {
+   "n": 9,
+   "title": "其他部位筋伤",
+   "units": [
+    "9.1",
+    "9.2",
+    "9.3",
+    "9.4"
+   ],
+   "srcChapters": [
+    "派生#9"
+   ],
+   "why": "腕、肘、跟腱：小部位大影响",
+   "derivedFrom": "zhenggu、shoufa"
+  },
+  "10-kangfu": {
+   "n": 10,
+   "title": "筋伤的康复与预防",
+   "units": [
+    "10.1",
+    "10.2",
+    "10.3"
+   ],
+   "srcChapters": [
+    "派生#10"
+   ],
+   "why": "复发率取决于恢复期做了什么",
+   "derivedFrom": "kangfu-huli、zhenggu"
+  }
+ }
+}

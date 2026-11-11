@@ -1,0 +1,4222 @@
+{
+ "$generated": "python scripts/asr/build_corrections.py（pypinyin 音节比对，产物可由 --check 复核）",
+ "policy": {
+  "scope": "只校正方名（汤/散/丸/饮），不改动原始 ASR 文本；原文本仍在 sources/asr/*.json 与 transcripts/lec-NN.md",
+  "threshold": "同音节数 + 拼音编辑距离 ≤2 + 候选唯一；同距多候选进 unresolved，不猜",
+  "high": "同音（距离 0），可直接应用",
+  "medium": "一个音节不同（距离 1），可直接应用但需抽看",
+  "low": "两个音节不同（距离 2），应用前建议人核"
+ },
+ "vocabulary": [
+  {
+   "name": "小柴胡汤",
+   "pinyin": "xiao chai hu tang",
+   "source": "第14讲标题"
+  },
+  {
+   "name": "白虎加人参汤",
+   "pinyin": "bai hu jia ren shen tang",
+   "source": "底本「白虎加人参汤主之」×10"
+  },
+  {
+   "name": "五苓散",
+   "pinyin": "wu ling san",
+   "source": "底本「五苓散主之」×10"
+  },
+  {
+   "name": "大陷胸汤",
+   "pinyin": "da xian xiong tang",
+   "source": "底本「大陷胸汤主之」×10"
+  },
+  {
+   "name": "四逆汤",
+   "pinyin": "si ni tang",
+   "source": "FORMULAS（项目已分类）"
+  },
+  {
+   "name": "栀子豉汤",
+   "pinyin": "zhi zi shi tang",
+   "source": "第21讲标题"
+  },
+  {
+   "name": "桂枝汤",
+   "pinyin": "gui zhi tang",
+   "source": "第7讲标题"
+  },
+  {
+   "name": "麻黄汤",
+   "pinyin": "ma huang tang",
+   "source": "第6讲标题"
+  },
+  {
+   "name": "大承气汤",
+   "pinyin": "da cheng qi tang",
+   "source": "第11讲标题"
+  },
+  {
+   "name": "小青龙汤",
+   "pinyin": "xiao qing long tang",
+   "source": "第9讲标题"
+  },
+  {
+   "name": "白虎汤",
+   "pinyin": "bai hu tang",
+   "source": "第21讲标题"
+  },
+  {
+   "name": "小承气汤",
+   "pinyin": "xiao cheng qi tang",
+   "source": "底本「小承气汤主之」×5"
+  },
+  {
+   "name": "葛根汤",
+   "pinyin": "ge gen tang",
+   "source": "底本「葛根汤主之」×4"
+  },
+  {
+   "name": "大青龙汤",
+   "pinyin": "da qing long tang",
+   "source": "第22讲标题"
+  },
+  {
+   "name": "调胃承气汤",
+   "pinyin": "diao wei cheng qi tang",
+   "source": "第11讲标题"
+  },
+  {
+   "name": "抵当汤",
+   "pinyin": "di dang tang",
+   "source": "第12讲标题"
+  },
+  {
+   "name": "柴胡桂枝汤",
+   "pinyin": "chai hu gui zhi tang",
+   "source": "底本「柴胡桂枝汤主之」×4"
+  },
+  {
+   "name": "黄连汤",
+   "pinyin": "huang lian tang",
+   "source": "底本「黄连汤主之」×3"
+  },
+  {
+   "name": "甘草附子汤",
+   "pinyin": "gan cao fu zi tang",
+   "source": "底本「甘草附子汤主之」×3"
+  },
+  {
+   "name": "牡蛎汤",
+   "pinyin": "mu li tang",
+   "source": "底本「牡蛎汤主之」×3"
+  },
+  {
+   "name": "茵陈蒿汤",
+   "pinyin": "yin chen hao tang",
+   "source": "底本「茵陈蒿汤主之」×3"
+  },
+  {
+   "name": "桂枝加葛根汤",
+   "pinyin": "gui zhi jia ge gen tang",
+   "source": "第9讲标题"
+  },
+  {
+   "name": "桂枝加附子汤",
+   "pinyin": "gui zhi jia fu zi tang",
+   "source": "第20讲标题"
+  },
+  {
+   "name": "桂枝去芍药汤",
+   "pinyin": "gui zhi qu shao yao tang",
+   "source": "底本「桂枝去芍药汤主之」×2"
+  },
+  {
+   "name": "去芍药加附子汤",
+   "pinyin": "qu shao yao jia fu zi tang",
+   "source": "底本「去芍药加附子汤主之」×2"
+  },
+  {
+   "name": "葛根加半夏汤",
+   "pinyin": "ge gen jia ban xia tang",
+   "source": "底本「葛根加半夏汤主之」×2"
+  },
+  {
+   "name": "杏子汤",
+   "pinyin": "xing zi tang",
+   "source": "底本「杏子汤主之」×2"
+  },
+  {
+   "name": "干姜附子汤",
+   "pinyin": "gan jiang fu zi tang",
+   "source": "FORMULAS（项目已分类）"
+  },
+  {
+   "name": "新加汤",
+   "pinyin": "xin jia tang",
+   "source": "底本「新加汤主之」×2"
+  },
+  {
+   "name": "桂枝甘草汤",
+   "pinyin": "gui zhi gan cao tang",
+   "source": "底本「桂枝甘草汤主之」×2"
+  },
+  {
+   "name": "桂枝甘草大枣汤",
+   "pinyin": "gui zhi gan cao da zao tang",
+   "source": "底本「桂枝甘草大枣汤主之」×2"
+  },
+  {
+   "name": "茯苓四逆汤",
+   "pinyin": "fu ling si ni tang",
+   "source": "FORMULAS（项目已分类）"
+  },
+  {
+   "name": "茯苓甘草汤",
+   "pinyin": "fu ling gan cao tang",
+   "source": "底本「茯苓甘草汤主之」×2"
+  },
+  {
+   "name": "栀子甘草豉汤",
+   "pinyin": "zhi zi gan cao shi tang",
+   "source": "底本「栀子甘草豉汤主之」×2"
+  },
+  {
+   "name": "栀子生姜豉汤",
+   "pinyin": "zhi zi sheng jiang shi tang",
+   "source": "底本「栀子生姜豉汤主之」×2"
+  },
+  {
+   "name": "栀子厚朴汤",
+   "pinyin": "zhi zi hou po tang",
+   "source": "底本「栀子厚朴汤主之」×2"
+  },
+  {
+   "name": "栀子干姜汤",
+   "pinyin": "zhi zi gan jiang tang",
+   "source": "底本「栀子干姜汤主之」×2"
+  },
+  {
+   "name": "真武汤",
+   "pinyin": "zhen wu tang",
+   "source": "FORMULAS（项目已分类）"
+  },
+  {
+   "name": "小建中汤",
+   "pinyin": "xiao jian zhong tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "龙骨救逆汤",
+   "pinyin": "long gu jiu ni tang",
+   "source": "底本「龙骨救逆汤主之」×2"
+  },
+  {
+   "name": "以柴胡加芒消汤",
+   "pinyin": "yi chai hu jia mang xiao tang",
+   "source": "底本「以柴胡加芒消汤主之」×2"
+  },
+  {
+   "name": "小陷胸汤",
+   "pinyin": "xiao xian xiong tang",
+   "source": "第22讲标题"
+  },
+  {
+   "name": "柴胡桂枝干姜汤",
+   "pinyin": "chai hu gui zhi gan jiang tang",
+   "source": "第15讲标题"
+  },
+  {
+   "name": "十枣汤",
+   "pinyin": "shi zao tang",
+   "source": "底本「十枣汤主之」×2"
+  },
+  {
+   "name": "附子泻心汤",
+   "pinyin": "fu zi xie xin tang",
+   "source": "底本「附子泻心汤主之」×2"
+  },
+  {
+   "name": "生姜泻心汤",
+   "pinyin": "sheng jiang xie xin tang",
+   "source": "底本「生姜泻心汤主之」×2"
+  },
+  {
+   "name": "旋复代赭汤",
+   "pinyin": "xuan fu dai zhe tang",
+   "source": "底本「旋复代赭汤主之」×2"
+  },
+  {
+   "name": "桂枝人参汤",
+   "pinyin": "gui zhi ren shen tang",
+   "source": "底本「桂枝人参汤主之」×2"
+  },
+  {
+   "name": "芩加半夏生姜汤",
+   "pinyin": "qin jia ban xia sheng jiang tang",
+   "source": "底本「芩加半夏生姜汤主之」×2"
+  },
+  {
+   "name": "桂枝附子汤",
+   "pinyin": "gui zhi fu zi tang",
+   "source": "底本「桂枝附子汤主之」×2"
+  },
+  {
+   "name": "去桂加白术汤",
+   "pinyin": "qu gui jia bai zhu tang",
+   "source": "底本「去桂加白术汤主之」×2"
+  },
+  {
+   "name": "炙甘草汤",
+   "pinyin": "zhi gan cao tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "猪苓汤",
+   "pinyin": "zhu ling tang",
+   "source": "底本「猪苓汤主之」×2"
+  },
+  {
+   "name": "吴茱萸汤",
+   "pinyin": "wu zhu yu tang",
+   "source": "FORMULAS（项目已分类）"
+  },
+  {
+   "name": "麻子仁丸",
+   "pinyin": "ma zi ren wan",
+   "source": "底本「麻子仁丸主之」×2"
+  },
+  {
+   "name": "栀子柏皮汤",
+   "pinyin": "zhi zi bai pi tang",
+   "source": "底本「栀子柏皮汤主之」×2"
+  },
+  {
+   "name": "四逆加人参汤",
+   "pinyin": "si ni jia ren shen tang",
+   "source": "底本「四逆加人参汤主之」×2"
+  },
+  {
+   "name": "理中丸",
+   "pinyin": "li zhong wan",
+   "source": "底本「理中丸主之」×2"
+  },
+  {
+   "name": "脉四逆加猪胆汤",
+   "pinyin": "mai si ni jia zhu dan tang",
+   "source": "底本「脉四逆加猪胆汤主之」×2"
+  },
+  {
+   "name": "烧裈散",
+   "pinyin": "shao kun san",
+   "source": "底本「烧裈散主之」×2"
+  },
+  {
+   "name": "枳实栀子汤",
+   "pinyin": "zhi shi zhi zi tang",
+   "source": "底本「枳实栀子汤主之」×2"
+  },
+  {
+   "name": "牡蛎泽泻散",
+   "pinyin": "mu li ze xie san",
+   "source": "底本「牡蛎泽泻散主之」×2"
+  },
+  {
+   "name": "竹叶石膏汤",
+   "pinyin": "zhu ye shi gao tang",
+   "source": "第21讲标题"
+  },
+  {
+   "name": "白术汤",
+   "pinyin": "bai zhu tang",
+   "source": "底本「白术汤主之」×1"
+  },
+  {
+   "name": "桂加茯苓白术汤",
+   "pinyin": "gui jia fu ling bai zhu tang",
+   "source": "底本「桂加茯苓白术汤主之」×1"
+  },
+  {
+   "name": "人参汤",
+   "pinyin": "ren shen tang",
+   "source": "底本「人参汤主之」×1"
+  },
+  {
+   "name": "白术甘草汤",
+   "pinyin": "bai zhu gan cao tang",
+   "source": "底本「白术甘草汤主之」×1"
+  },
+  {
+   "name": "禹余粮丸",
+   "pinyin": "yu yu liang wan",
+   "source": "底本「禹余粮丸主之」×1"
+  },
+  {
+   "name": "大柴胡汤",
+   "pinyin": "da chai hu tang",
+   "source": "第15讲标题"
+  },
+  {
+   "name": "柴胡加芒消汤",
+   "pinyin": "chai hu jia mang xiao tang",
+   "source": "底本「柴胡加芒消汤主之」×1"
+  },
+  {
+   "name": "桂枝加桂汤",
+   "pinyin": "gui zhi jia gui tang",
+   "source": "底本「桂枝加桂汤主之」×1"
+  },
+  {
+   "name": "葛根黄芩黄连汤",
+   "pinyin": "ge gen huang qin huang lian tang",
+   "source": "底本「葛根黄芩黄连汤主之」×1"
+  },
+  {
+   "name": "甘草人参汤",
+   "pinyin": "gan cao ren shen tang",
+   "source": "底本「甘草人参汤主之」×1"
+  },
+  {
+   "name": "桂枝白术甘草汤",
+   "pinyin": "gui zhi bai zhu gan cao tang",
+   "source": "底本「桂枝白术甘草汤主之」×1"
+  },
+  {
+   "name": "芍药甘草附子汤",
+   "pinyin": "shao yao gan cao fu zi tang",
+   "source": "底本「芍药甘草附子汤主之」×1"
+  },
+  {
+   "name": "甘草龙骨牡蛎汤",
+   "pinyin": "gan cao long gu mu li tang",
+   "source": "底本「甘草龙骨牡蛎汤主之」×1"
+  },
+  {
+   "name": "黄连泻心汤",
+   "pinyin": "huang lian xie xin tang",
+   "source": "底本「黄连泻心汤主之」×1"
+  },
+  {
+   "name": "益其甘草泻心汤",
+   "pinyin": "yi qi gan cao xie xin tang",
+   "source": "底本「益其甘草泻心汤主之」×1"
+  },
+  {
+   "name": "大弑胡汤",
+   "pinyin": "da shi hu tang",
+   "source": "底本「大弑胡汤主之」×1"
+  },
+  {
+   "name": "大黄黄连泻心汤",
+   "pinyin": "da huang huang lian xie xin tang",
+   "source": "第11讲标题"
+  },
+  {
+   "name": "甘草泻心汤",
+   "pinyin": "gan cao xie xin tang",
+   "source": "第17讲标题"
+  },
+  {
+   "name": "赤石脂禹余粮汤",
+   "pinyin": "chi shi zhi yu yu liang tang",
+   "source": "FORMULAS（项目已分类）"
+  },
+  {
+   "name": "大气胡汤",
+   "pinyin": "da qi hu tang",
+   "source": "底本「大气胡汤主之」×1"
+  },
+  {
+   "name": "通脉四逆汤",
+   "pinyin": "tong mai si ni tang",
+   "source": "FORMULAS（项目已分类）"
+  },
+  {
+   "name": "黄连轺赤小豆汤",
+   "pinyin": "huang lian yao chi xiao dou tang",
+   "source": "底本「黄连轺赤小豆汤主之」×1"
+  },
+  {
+   "name": "连轺赤小豆汤",
+   "pinyin": "lian yao chi xiao dou tang",
+   "source": "底本「连轺赤小豆汤主之」×1"
+  },
+  {
+   "name": "以蹯胡加芒消汤",
+   "pinyin": "yi fan hu jia mang xiao tang",
+   "source": "底本「以蹯胡加芒消汤主之」×1"
+  },
+  {
+   "name": "当归四逆汤",
+   "pinyin": "dang gui si ni tang",
+   "source": "FORMULAS（项目已分类）"
+  },
+  {
+   "name": "乌梅丸",
+   "pinyin": "wu mei wan",
+   "source": "第20讲标题"
+  },
+  {
+   "name": "苓桂术甘汤",
+   "pinyin": "ling gui shu gan tang",
+   "source": "第20讲标题"
+  },
+  {
+   "name": "麻黄附子细辛汤",
+   "pinyin": "ma huang fu zi xi xin tang",
+   "source": "第9讲标题"
+  },
+  {
+   "name": "麻黄连翘赤小豆汤",
+   "pinyin": "ma huang lian qiao chi xiao dou tang",
+   "source": "第9讲标题"
+  },
+  {
+   "name": "苓甘五味姜辛夏汤",
+   "pinyin": "ling gan wu wei jiang xin xia tang",
+   "source": "第9讲标题"
+  },
+  {
+   "name": "黄芩加半夏生姜汤",
+   "pinyin": "huang qin jia ban xia sheng jiang tang",
+   "source": "第16讲标题"
+  },
+  {
+   "name": "葛根芩连汤",
+   "pinyin": "ge gen qin lian tang",
+   "source": "第16讲标题"
+  },
+  {
+   "name": "四逆散",
+   "pinyin": "si ni san",
+   "source": "第16讲标题"
+  },
+  {
+   "name": "半夏泻心汤",
+   "pinyin": "ban xia xie xin tang",
+   "source": "第17讲标题"
+  },
+  {
+   "name": "白头翁汤",
+   "pinyin": "bai tou weng tang",
+   "source": "第21讲标题"
+  },
+  {
+   "name": "五苓散与桂枝汤",
+   "pinyin": "wu ling san yu gui zhi tang",
+   "source": "第22讲标题"
+  },
+  {
+   "name": "黄连温胆汤",
+   "pinyin": "huang lian wen dan tang",
+   "source": "第22讲标题"
+  },
+  {
+   "name": "黄连阿胶汤",
+   "pinyin": "huang lian e jiao tang",
+   "source": "第22讲标题"
+  },
+  {
+   "name": "麻杏石甘汤",
+   "pinyin": "ma xing shi gan tang",
+   "source": "第22讲标题"
+  },
+  {
+   "name": "麻杏甘石汤",
+   "pinyin": "ma xing gan shi tang",
+   "source": "第8讲标题"
+  },
+  {
+   "name": "桃核承气汤",
+   "pinyin": "tao he cheng qi tang",
+   "source": "第11讲标题"
+  },
+  {
+   "name": "三个承气汤",
+   "pinyin": "san ge cheng qi tang",
+   "source": "第12讲标题"
+  },
+  {
+   "name": "三黄泻心汤",
+   "pinyin": "san huang xie xin tang",
+   "source": "第12讲标题"
+  },
+  {
+   "name": "柴胡桂枝各半汤",
+   "pinyin": "chai hu gui zhi ge ban tang",
+   "source": "第15讲标题"
+  },
+  {
+   "name": "理中汤",
+   "pinyin": "li zhong tang",
+   "source": "第18讲标题"
+  },
+  {
+   "name": "白通汤",
+   "pinyin": "bai tong tang",
+   "source": "FORMULAS（项目已分类）"
+  },
+  {
+   "name": "甘草干姜汤",
+   "pinyin": "gan cao gan jiang tang",
+   "source": "FORMULAS（项目已分类）"
+  },
+  {
+   "name": "生脉散",
+   "pinyin": "sheng mai san",
+   "source": "FORMULAS（项目已分类）"
+  },
+  {
+   "name": "桃红四物汤",
+   "pinyin": "tao hong si wu tang",
+   "source": "FORMULAS（项目已分类）"
+  },
+  {
+   "name": "四妙勇安汤",
+   "pinyin": "si miao yong an tang",
+   "source": "FORMULAS（项目已分类）"
+  },
+  {
+   "name": "温胆汤",
+   "pinyin": "wen dan tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "泻心汤",
+   "pinyin": "xie xin tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "承气汤",
+   "pinyin": "cheng qi tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "四君子汤",
+   "pinyin": "si jun zi tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "四物汤",
+   "pinyin": "si wu tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "八珍汤",
+   "pinyin": "ba zhen tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "十全大补汤",
+   "pinyin": "shi quan da bu tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "补中益气汤",
+   "pinyin": "bu zhong yi qi tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "当归补血汤",
+   "pinyin": "dang gui bu xue tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "归脾汤",
+   "pinyin": "gui pi tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "逍遥散",
+   "pinyin": "xiao yao san",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "平胃散",
+   "pinyin": "ping wei san",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "藿香正气散",
+   "pinyin": "huo xiang zheng qi san",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "参苓白术散",
+   "pinyin": "can ling bai zhu san",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "六味地黄丸",
+   "pinyin": "liu wei di huang wan",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "金匮肾气丸",
+   "pinyin": "jin kui shen qi wan",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "黄芪建中汤",
+   "pinyin": "huang qi jian zhong tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "酸枣仁汤",
+   "pinyin": "suan zao ren tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "甘麦大枣汤",
+   "pinyin": "gan mai da zao tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "血府逐瘀汤",
+   "pinyin": "xue fu zhu yu tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "补阳还五汤",
+   "pinyin": "bu yang hai wu tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "龙胆泻肝汤",
+   "pinyin": "long dan xie gan tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "半夏白术天麻汤",
+   "pinyin": "ban xia bai zhu tian ma tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "银翘散",
+   "pinyin": "yin qiao san",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "桑菊饮",
+   "pinyin": "sang ju yin",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "清营汤",
+   "pinyin": "qing ying tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "犀角地黄汤",
+   "pinyin": "xi jiao di huang tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "黄连解毒汤",
+   "pinyin": "huang lian jie du tang",
+   "source": "通用方名（人工登记）"
+  },
+  {
+   "name": "玉屏风散",
+   "pinyin": "yu ping feng san",
+   "source": "通用方名（人工登记）"
+  }
+ ],
+ "stats": {
+  "vocabulary": 142,
+  "formsScanned": 470,
+  "rules": 59,
+  "high": 23,
+  "medium": 29,
+  "low": 3,
+  "unresolved": 118,
+  "noise": 168,
+  "ignoredSingletons": 388,
+  "human": 4,
+  "terms": 2,
+  "phrases": 3,
+  "points": 1,
+  "totalReplacements": 135
+ },
+ "rules": [
+  {
+   "wrong": "四尼散",
+   "right": "四逆散",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "si ni san",
+   "pinyinRight": "si ni san",
+   "vocabSource": "第16讲标题",
+   "count": 12,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 4,
+     "sec": 3156.0,
+     "raw": "所以四尼散"
+    },
+    {
+     "lecture": 13,
+     "sec": 2682.5,
+     "raw": "四尼散"
+    },
+    {
+     "lecture": 16,
+     "sec": 2584.1,
+     "raw": "四尼散"
+    },
+    {
+     "lecture": 16,
+     "sec": 2586.9,
+     "raw": "四尼散"
+    },
+    {
+     "lecture": 16,
+     "sec": 2592.2,
+     "raw": "四尼散"
+    },
+    {
+     "lecture": 16,
+     "sec": 2661.3,
+     "raw": "四尼散"
+    },
+    {
+     "lecture": 16,
+     "sec": 2675.9,
+     "raw": "所以四尼散"
+    },
+    {
+     "lecture": 16,
+     "sec": 3048.7,
+     "raw": "四尼散"
+    }
+   ],
+   "sample": "所以四尼散 酥干礼皮"
+  },
+  {
+   "wrong": "小财富汤",
+   "right": "小柴胡汤",
+   "method": "人工判定",
+   "level": "human",
+   "basis": "第 13/14/17 讲（14 讲专讲小柴胡汤）「小财富汤本身就可以疏肝理气」",
+   "pinyinWrong": "xiao cai fu tang",
+   "pinyinRight": "xiao chai hu tang",
+   "vocabSource": "人工判定（HUMAN_RULES）",
+   "count": 7,
+   "evidenceLectures": [
+    13,
+    14,
+    17
+   ],
+   "occurrences": [
+    {
+     "lecture": 13,
+     "sec": 91.7,
+     "raw": "小财富汤"
+    },
+    {
+     "lecture": 14,
+     "sec": 937.0,
+     "raw": "小财富汤"
+    },
+    {
+     "lecture": 14,
+     "sec": 1482.0,
+     "raw": "就是小财富汤"
+    },
+    {
+     "lecture": 14,
+     "sec": 1502.1,
+     "raw": "就是小财富汤"
+    },
+    {
+     "lecture": 14,
+     "sec": 2169.2,
+     "raw": "小财富汤"
+    },
+    {
+     "lecture": 14,
+     "sec": 2792.3,
+     "raw": "就是小财富汤"
+    },
+    {
+     "lecture": 17,
+     "sec": 1353.6,
+     "raw": "所以小财富汤"
+    }
+   ],
+   "sample": "小财富汤本身就可以酥干里气"
+  },
+  {
+   "wrong": "五米丸",
+   "right": "乌梅丸",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "wu mi wan",
+   "pinyinRight": "wu mei wan",
+   "vocabSource": "第20讲标题",
+   "count": 6,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 13,
+     "sec": 3504.1,
+     "raw": "五米丸"
+    },
+    {
+     "lecture": 14,
+     "sec": 2385.1,
+     "raw": "五米丸"
+    },
+    {
+     "lecture": 14,
+     "sec": 2397.8,
+     "raw": "那个五米丸"
+    },
+    {
+     "lecture": 14,
+     "sec": 2445.3,
+     "raw": "用五米丸"
+    },
+    {
+     "lecture": 14,
+     "sec": 2514.3,
+     "raw": "五米丸"
+    },
+    {
+     "lecture": 14,
+     "sec": 2570.7,
+     "raw": "所以五米丸"
+    }
+   ],
+   "sample": "五米丸都可以算是佛法"
+  },
+  {
+   "wrong": "五菱散",
+   "right": "五苓散",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "wu ling san",
+   "pinyinRight": "wu ling san",
+   "vocabSource": "底本「五苓散主之」×10",
+   "count": 5,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 2,
+     "sec": 2422.8,
+     "raw": "五菱散"
+    },
+    {
+     "lecture": 2,
+     "sec": 3012.7,
+     "raw": "五菱散"
+    },
+    {
+     "lecture": 9,
+     "sec": 2871.9,
+     "raw": "就是五菱散"
+    },
+    {
+     "lecture": 9,
+     "sec": 2884.2,
+     "raw": "五菱散"
+    },
+    {
+     "lecture": 24,
+     "sec": 419.2,
+     "raw": "五菱散"
+    }
+   ],
+   "sample": "临桂枝肝汤 五菱散"
+  },
+  {
+   "wrong": "五零散",
+   "right": "五苓散",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "wu ling san",
+   "pinyinRight": "wu ling san",
+   "vocabSource": "底本「五苓散主之」×10",
+   "count": 5,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 1,
+     "sec": 925.6,
+     "raw": "五零散"
+    },
+    {
+     "lecture": 1,
+     "sec": 946.3,
+     "raw": "五零散"
+    },
+    {
+     "lecture": 2,
+     "sec": 397.9,
+     "raw": "五零散"
+    },
+    {
+     "lecture": 2,
+     "sec": 408.7,
+     "raw": "五零散"
+    },
+    {
+     "lecture": 15,
+     "sec": 2135.2,
+     "raw": "五零散"
+    }
+   ],
+   "sample": "五零散"
+  },
+  {
+   "wrong": "麻方汤",
+   "right": "麻黄汤",
+   "method": "拼音距离 1",
+   "level": "low",
+   "pinyinWrong": "ma fang tang",
+   "pinyinRight": "ma huang tang",
+   "vocabSource": "第6讲标题",
+   "count": 5,
+   "evidenceLectures": [
+    5
+   ],
+   "occurrences": [
+    {
+     "lecture": 3,
+     "sec": 1436.6,
+     "raw": "用麻方汤"
+    },
+    {
+     "lecture": 5,
+     "sec": 62.7,
+     "raw": "麻方汤"
+    },
+    {
+     "lecture": 5,
+     "sec": 75.5,
+     "raw": "麻方汤"
+    },
+    {
+     "lecture": 5,
+     "sec": 84.9,
+     "raw": "麻方汤"
+    },
+    {
+     "lecture": 5,
+     "sec": 92.0,
+     "raw": "麻方汤"
+    }
+   ],
+   "sample": "用麻方汤自己的脉"
+  },
+  {
+   "wrong": "大财富汤",
+   "right": "大柴胡汤",
+   "method": "人工判定",
+   "level": "human",
+   "basis": "第 13/16/18 讲（15 讲专讲大柴胡汤）",
+   "pinyinWrong": "da cai fu tang",
+   "pinyinRight": "da chai hu tang",
+   "vocabSource": "人工判定（HUMAN_RULES）",
+   "count": 4,
+   "evidenceLectures": [
+    13,
+    16,
+    18
+   ],
+   "occurrences": [
+    {
+     "lecture": 13,
+     "sec": 2313.4,
+     "raw": "大财富汤"
+    },
+    {
+     "lecture": 16,
+     "sec": 999.8,
+     "raw": "大财富汤"
+    },
+    {
+     "lecture": 18,
+     "sec": 120.5,
+     "raw": "大财富汤"
+    },
+    {
+     "lecture": 18,
+     "sec": 132.7,
+     "raw": "大财富汤"
+    }
+   ],
+   "sample": "大财富汤"
+  },
+  {
+   "wrong": "一瓶风散",
+   "right": "玉屏风散",
+   "method": "人工判定",
+   "level": "human",
+   "basis": "第 7 讲（桂枝汤后讲玉屏风散）「桂枝汤、玉屏风散也是个好方法」",
+   "pinyinWrong": "yi ping feng san",
+   "pinyinRight": "yu ping feng san",
+   "vocabSource": "人工判定（HUMAN_RULES）",
+   "count": 3,
+   "evidenceLectures": [
+    9,
+    15
+   ],
+   "occurrences": [
+    {
+     "lecture": 9,
+     "sec": 1509.5,
+     "raw": "和一瓶风散"
+    },
+    {
+     "lecture": 15,
+     "sec": 364.9,
+     "raw": "以喝一个一瓶风散"
+    },
+    {
+     "lecture": 15,
+     "sec": 372.2,
+     "raw": "以喝一个一瓶风散"
+    }
+   ],
+   "sample": "和一瓶风散巩固"
+  },
+  {
+   "wrong": "乌米丸",
+   "right": "乌梅丸",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "wu mi wan",
+   "pinyinRight": "wu mei wan",
+   "vocabSource": "第20讲标题",
+   "count": 3,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 20,
+     "sec": 1684.0,
+     "raw": "所以用乌米丸"
+    },
+    {
+     "lecture": 20,
+     "sec": 1690.4,
+     "raw": "乌米丸"
+    },
+    {
+     "lecture": 20,
+     "sec": 1705.5,
+     "raw": "所以乌米丸"
+    }
+   ],
+   "sample": "所以用乌米丸"
+  },
+  {
+   "wrong": "品味散",
+   "right": "平胃散",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "pin wei san",
+   "pinyinRight": "ping wei san",
+   "vocabSource": "通用方名（人工登记）",
+   "count": 3,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 14,
+     "sec": 2048.8,
+     "raw": "品味散"
+    },
+    {
+     "lecture": 14,
+     "sec": 2066.2,
+     "raw": "品味散"
+    },
+    {
+     "lecture": 14,
+     "sec": 2086.1,
+     "raw": "品味散"
+    }
+   ],
+   "sample": "品味散跟李正堂都是脾胃要"
+  },
+  {
+   "wrong": "大清浓汤",
+   "right": "大青龙汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "da qing nong tang",
+   "pinyinRight": "da qing long tang",
+   "vocabSource": "第22讲标题",
+   "count": 3,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 5,
+     "sec": 62.7,
+     "raw": "大清浓汤"
+    },
+    {
+     "lecture": 5,
+     "sec": 75.5,
+     "raw": "大清浓汤"
+    },
+    {
+     "lecture": 5,
+     "sec": 90.2,
+     "raw": "大清浓汤"
+    }
+   ],
+   "sample": "麻方汤 大清浓汤 麻姓干事汤"
+  },
+  {
+   "wrong": "平衛散",
+   "right": "平胃散",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "ping wei san",
+   "pinyinRight": "ping wei san",
+   "vocabSource": "通用方名（人工登记）",
+   "count": 3,
+   "evidenceLectures": [
+    20
+   ],
+   "occurrences": [
+    {
+     "lecture": 20,
+     "sec": 225.6,
+     "raw": "平衛散"
+    },
+    {
+     "lecture": 20,
+     "sec": 241.2,
+     "raw": "平衛散"
+    },
+    {
+     "lecture": 20,
+     "sec": 246.4,
+     "raw": "用平衛散"
+    }
+   ],
+   "sample": "平衛散是环室内室 湿血昆培 皮"
+  },
+  {
+   "wrong": "李中汤",
+   "right": "理中汤",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "li zhong tang",
+   "pinyinRight": "li zhong tang",
+   "vocabSource": "第18讲标题",
+   "count": 3,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 20,
+     "sec": 64.5,
+     "raw": "李中汤"
+    },
+    {
+     "lecture": 20,
+     "sec": 71.6,
+     "raw": "李中汤"
+    },
+    {
+     "lecture": 20,
+     "sec": 82.2,
+     "raw": "李中汤"
+    }
+   ],
+   "sample": "李中汤是他的首险汤"
+  },
+  {
+   "wrong": "武林散",
+   "right": "五苓散",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "wu lin san",
+   "pinyinRight": "wu ling san",
+   "vocabSource": "底本「五苓散主之」×10",
+   "count": 3,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 20,
+     "sec": 2385.2,
+     "raw": "从武林散"
+    },
+    {
+     "lecture": 21,
+     "sec": 3197.6,
+     "raw": "武林散"
+    },
+    {
+     "lecture": 21,
+     "sec": 3265.4,
+     "raw": "武林散"
+    }
+   ],
+   "sample": "从武林散 林桂石冠 林桂甘枣 富林甘枣"
+  },
+  {
+   "wrong": "温荡汤",
+   "right": "温胆汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "wen dang tang",
+   "pinyinRight": "wen dan tang",
+   "vocabSource": "通用方名（人工登记）",
+   "count": 3,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 24,
+     "sec": 567.1,
+     "raw": "温荡汤"
+    },
+    {
+     "lecture": 24,
+     "sec": 567.1,
+     "raw": "温荡汤"
+    },
+    {
+     "lecture": 24,
+     "sec": 567.1,
+     "raw": "温荡汤"
+    }
+   ],
+   "sample": "事件证明我们这几十年,这条路没有走好,反而把的,正宗的东西丢掉,不变,我举了很多例子吧,大家应该印象很深的吧,温荡汤怎么可以治疗管性病呢,温荡汤为什么可以治疗尿头症呢,温荡汤为什么可以治疗肺脊肺性病呢,疾管炎呢,病疾,你主要砸这个东西吧,"
+  },
+  {
+   "wrong": "猪热市高汤",
+   "right": "竹叶石膏汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "zhu re shi gao tang",
+   "pinyinRight": "zhu ye shi gao tang",
+   "vocabSource": "第21讲标题",
+   "count": 3,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 21,
+     "sec": 1340.7,
+     "raw": "就是猪热市高汤"
+    },
+    {
+     "lecture": 21,
+     "sec": 1343.9,
+     "raw": "猪热市高汤"
+    },
+    {
+     "lecture": 21,
+     "sec": 1352.6,
+     "raw": "猪热市高汤"
+    }
+   ],
+   "sample": "就是猪热市高汤的问题"
+  },
+  {
+   "wrong": "白富汤",
+   "right": "白虎汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "bai fu tang",
+   "pinyinRight": "bai hu tang",
+   "vocabSource": "第21讲标题",
+   "count": 3,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 22,
+     "sec": 332.8,
+     "raw": "白富汤"
+    },
+    {
+     "lecture": 22,
+     "sec": 344.0,
+     "raw": "所以白富汤"
+    },
+    {
+     "lecture": 22,
+     "sec": 346.9,
+     "raw": "和白富汤"
+    }
+   ],
+   "sample": "白富汤和三美山"
+  },
+  {
+   "wrong": "马王汤",
+   "right": "麻黄汤",
+   "method": "人工判定",
+   "level": "human",
+   "basis": "第 6 讲（汗法1 麻黄汤）「马王汤证主治」",
+   "pinyinWrong": "ma wang tang",
+   "pinyinRight": "ma huang tang",
+   "vocabSource": "人工判定（HUMAN_RULES）",
+   "count": 3,
+   "evidenceLectures": [
+    6
+   ],
+   "occurrences": [
+    {
+     "lecture": 6,
+     "sec": 2201.1,
+     "raw": "马王汤"
+    },
+    {
+     "lecture": 6,
+     "sec": 2221.8,
+     "raw": "马王汤"
+    },
+    {
+     "lecture": 6,
+     "sec": 2230.9,
+     "raw": "马王汤"
+    }
+   ],
+   "sample": "马王汤阵"
+  },
+  {
+   "wrong": "黄莲温胆汤",
+   "right": "黄连温胆汤",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "huang lian wen dan tang",
+   "pinyinRight": "huang lian wen dan tang",
+   "vocabSource": "第22讲标题",
+   "count": 3,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 17,
+     "sec": 2312.8,
+     "raw": "黄莲温胆汤"
+    },
+    {
+     "lecture": 17,
+     "sec": 2324.6,
+     "raw": "黄莲温胆汤"
+    },
+    {
+     "lecture": 17,
+     "sec": 2337.2,
+     "raw": "黄莲温胆汤"
+    }
+   ],
+   "sample": "黄莲温胆汤"
+  },
+  {
+   "wrong": "四女散",
+   "right": "四逆散",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "si nv san",
+   "pinyinRight": "si ni san",
+   "vocabSource": "第16讲标题",
+   "count": 2,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 17,
+     "sec": 837.3,
+     "raw": "四女散"
+    },
+    {
+     "lecture": 17,
+     "sec": 857.7,
+     "raw": "四女散"
+    }
+   ],
+   "sample": "四女散这么思维要能治肝胰化吗"
+  },
+  {
+   "wrong": "四季散",
+   "right": "四逆散",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "si ji san",
+   "pinyinRight": "si ni san",
+   "vocabSource": "第16讲标题",
+   "count": 2,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 4,
+     "sec": 3188.8,
+     "raw": "四季散"
+    },
+    {
+     "lecture": 16,
+     "sec": 2453.6,
+     "raw": "这个四季散"
+    }
+   ],
+   "sample": "四季散"
+  },
+  {
+   "wrong": "小金龙汤",
+   "right": "小青龙汤",
+   "method": "拼音距离 1",
+   "level": "low",
+   "pinyinWrong": "xiao jin long tang",
+   "pinyinRight": "xiao qing long tang",
+   "vocabSource": "第9讲标题",
+   "count": 2,
+   "evidenceLectures": [
+    9
+   ],
+   "occurrences": [
+    {
+     "lecture": 9,
+     "sec": 1075.0,
+     "raw": "小金龙汤"
+    },
+    {
+     "lecture": 16,
+     "sec": 919.6,
+     "raw": "小金龙汤"
+    }
+   ],
+   "sample": "小金龙汤啊"
+  },
+  {
+   "wrong": "干燥泄心汤",
+   "right": "甘草泻心汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "gan zao xie xin tang",
+   "pinyinRight": "gan cao xie xin tang",
+   "vocabSource": "第17讲标题",
+   "count": 2,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 17,
+     "sec": 1938.3,
+     "raw": "干燥泄心汤"
+    },
+    {
+     "lecture": 17,
+     "sec": 1941.7,
+     "raw": "干燥泄心汤"
+    }
+   ],
+   "sample": "干燥泄心汤"
+  },
+  {
+   "wrong": "平微散",
+   "right": "平胃散",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "ping wei san",
+   "pinyinRight": "ping wei san",
+   "vocabSource": "通用方名（人工登记）",
+   "count": 2,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 18,
+     "sec": 1766.3,
+     "raw": "所以平微散"
+    },
+    {
+     "lecture": 18,
+     "sec": 1794.5,
+     "raw": "平微散"
+    }
+   ],
+   "sample": "所以平微散的话呢"
+  },
+  {
+   "wrong": "无弥丸",
+   "right": "乌梅丸",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "wu mi wan",
+   "pinyinRight": "wu mei wan",
+   "vocabSource": "第20讲标题",
+   "count": 2,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 20,
+     "sec": 1657.2,
+     "raw": "无弥丸"
+    },
+    {
+     "lecture": 20,
+     "sec": 1671.0,
+     "raw": "无弥丸"
+    }
+   ],
+   "sample": "因此还有一个很重要的房子 无弥丸"
+  },
+  {
+   "wrong": "李正汤",
+   "right": "理中汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "li zheng tang",
+   "pinyinRight": "li zhong tang",
+   "vocabSource": "第18讲标题",
+   "count": 2,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 20,
+     "sec": 264.6,
+     "raw": "李正汤"
+    },
+    {
+     "lecture": 20,
+     "sec": 289.5,
+     "raw": "李正汤"
+    }
+   ],
+   "sample": "李正汤为什么用棺草 棺姜 对吧"
+  },
+  {
+   "wrong": "林桂树干汤",
+   "right": "苓桂术甘汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "lin gui shu gan tang",
+   "pinyinRight": "ling gui shu gan tang",
+   "vocabSource": "第20讲标题",
+   "count": 2,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 20,
+     "sec": 2052.3,
+     "raw": "林桂树干汤"
+    },
+    {
+     "lecture": 20,
+     "sec": 2065.7,
+     "raw": "林桂树干汤"
+    }
+   ],
+   "sample": "林桂树干汤"
+  },
+  {
+   "wrong": "深浆泄心汤",
+   "right": "生姜泻心汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "shen jiang xie xin tang",
+   "pinyinRight": "sheng jiang xie xin tang",
+   "vocabSource": "底本「生姜泻心汤主之」×2",
+   "count": 2,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 17,
+     "sec": 1937.2,
+     "raw": "深浆泄心汤"
+    },
+    {
+     "lecture": 17,
+     "sec": 1948.9,
+     "raw": "深浆泄心汤"
+    }
+   ],
+   "sample": "深浆泄心汤"
+  },
+  {
+   "wrong": "白铜汤",
+   "right": "白通汤",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "bai tong tang",
+   "pinyinRight": "bai tong tang",
+   "vocabSource": "FORMULAS（项目已分类）",
+   "count": 2,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 19,
+     "sec": 1965.0,
+     "raw": "白铜汤"
+    },
+    {
+     "lecture": 19,
+     "sec": 1971.5,
+     "raw": "就是白铜汤"
+    }
+   ],
+   "sample": "白铜汤里边"
+  },
+  {
+   "wrong": "真母汤",
+   "right": "真武汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "zhen mu tang",
+   "pinyinRight": "zhen wu tang",
+   "vocabSource": "FORMULAS（项目已分类）",
+   "count": 2,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 19,
+     "sec": 1632.0,
+     "raw": "真母汤"
+    },
+    {
+     "lecture": 19,
+     "sec": 1639.0,
+     "raw": "真母汤"
+    }
+   ],
+   "sample": "真母汤里面是用山姜的 为什么不用干姜"
+  },
+  {
+   "wrong": "补正义气汤",
+   "right": "补中益气汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "bu zheng yi qi tang",
+   "pinyinRight": "bu zhong yi qi tang",
+   "vocabSource": "通用方名（人工登记）",
+   "count": 2,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 23,
+     "sec": 3261.6,
+     "raw": "就是补正义气汤"
+    },
+    {
+     "lecture": 23,
+     "sec": 3263.1,
+     "raw": "补正义气汤"
+    }
+   ],
+   "sample": "就是补正义气汤"
+  },
+  {
+   "wrong": "谢心汤",
+   "right": "泻心汤",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "xie xin tang",
+   "pinyinRight": "xie xin tang",
+   "vocabSource": "通用方名（人工登记）",
+   "count": 2,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 5,
+     "sec": 11.5,
+     "raw": "谢心汤"
+    },
+    {
+     "lecture": 5,
+     "sec": 11.5,
+     "raw": "谢心汤"
+    }
+   ],
+   "sample": "盖过起来,麻黄汤、桂枝汤、白头翁、财头翁、谢心汤、礼中汤、还有、半夏谢心汤、谢心汤、礼。盖过起来就是这几大类方式,怎么?就这几大类。这里面就有个很细致的工作,大家也很好的去做。"
+  },
+  {
+   "wrong": "貧衛散",
+   "right": "平胃散",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "pin wei san",
+   "pinyinRight": "ping wei san",
+   "vocabSource": "通用方名（人工登记）",
+   "count": 2,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 18,
+     "sec": 1622.0,
+     "raw": "貧衛散"
+    },
+    {
+     "lecture": 18,
+     "sec": 1634.9,
+     "raw": "貧衛散"
+    }
+   ],
+   "sample": "貧衛散跟李正濤在定位上講是完全一致"
+  },
+  {
+   "wrong": "马子仁丸",
+   "right": "麻子仁丸",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "ma zi ren wan",
+   "pinyinRight": "ma zi ren wan",
+   "vocabSource": "底本「麻子仁丸主之」×2",
+   "count": 2,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 13,
+     "sec": 889.5,
+     "raw": "用马子仁丸"
+    },
+    {
+     "lecture": 13,
+     "sec": 909.7,
+     "raw": "用马子仁丸"
+    }
+   ],
+   "sample": "用马子仁丸有效"
+  },
+  {
+   "wrong": "八真汤",
+   "right": "八珍汤",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "ba zhen tang",
+   "pinyinRight": "ba zhen tang",
+   "vocabSource": "通用方名（人工登记）",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 24,
+     "sec": 678.8,
+     "raw": "八真汤"
+    }
+   ],
+   "sample": "八真汤"
+  },
+  {
+   "wrong": "半下泄心汤",
+   "right": "半夏泻心汤",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "ban xia xie xin tang",
+   "pinyinRight": "ban xia xie xin tang",
+   "vocabSource": "第17讲标题",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 17,
+     "sec": 1539.3,
+     "raw": "用半下泄心汤"
+    }
+   ],
+   "sample": "用半下泄心汤"
+  },
+  {
+   "wrong": "半价泄心汤",
+   "right": "半夏泻心汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "ban jia xie xin tang",
+   "pinyinRight": "ban xia xie xin tang",
+   "vocabSource": "第17讲标题",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 17,
+     "sec": 1935.7,
+     "raw": "半价泄心汤"
+    }
+   ],
+   "sample": "半价泄心汤"
+  },
+  {
+   "wrong": "半夏谢信汤",
+   "right": "半夏泻心汤",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "ban xia xie xin tang",
+   "pinyinRight": "ban xia xie xin tang",
+   "vocabSource": "第17讲标题",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 17,
+     "sec": 1407.8,
+     "raw": "半夏谢信汤"
+    }
+   ],
+   "sample": "半夏谢信汤这张方式"
+  },
+  {
+   "wrong": "半夏谢心汤",
+   "right": "半夏泻心汤",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "ban xia xie xin tang",
+   "pinyinRight": "ban xia xie xin tang",
+   "vocabSource": "第17讲标题",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 5,
+     "sec": 11.5,
+     "raw": "半夏谢心汤"
+    }
+   ],
+   "sample": "盖过起来,麻黄汤、桂枝汤、白头翁、财头翁、谢心汤、礼中汤、还有、半夏谢心汤、谢心汤、礼。盖过起来就是这几大类方式,怎么?就这几大类。这里面就有个很细致的工作,大家也很好的去做。"
+  },
+  {
+   "wrong": "四亿散",
+   "right": "四逆散",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "si yi san",
+   "pinyinRight": "si ni san",
+   "vocabSource": "第16讲标题",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 11,
+     "sec": 1550.5,
+     "raw": "四亿散"
+    }
+   ],
+   "sample": "四亿散和小臣记道"
+  },
+  {
+   "wrong": "大宅胡汤",
+   "right": "大柴胡汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "da zhai hu tang",
+   "pinyinRight": "da chai hu tang",
+   "vocabSource": "第15讲标题",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 16,
+     "sec": 955.6,
+     "raw": "就是这个大宅胡汤"
+    }
+   ],
+   "sample": "就是这个大宅胡汤"
+  },
+  {
+   "wrong": "富祖泄心汤",
+   "right": "附子泻心汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "fu zu xie xin tang",
+   "pinyinRight": "fu zi xie xin tang",
+   "vocabSource": "底本「附子泻心汤主之」×2",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 17,
+     "sec": 1927.8,
+     "raw": "富祖泄心汤"
+    }
+   ],
+   "sample": "富祖泄心汤"
+  },
+  {
+   "wrong": "平肥散",
+   "right": "平胃散",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "ping fei san",
+   "pinyinRight": "ping wei san",
+   "vocabSource": "通用方名（人工登记）",
+   "count": 1,
+   "evidenceLectures": [
+    20
+   ],
+   "occurrences": [
+    {
+     "lecture": 20,
+     "sec": 429.0,
+     "raw": "和平肥散"
+    }
+   ],
+   "sample": "和平肥散的健片"
+  },
+  {
+   "wrong": "撕尼散",
+   "right": "四逆散",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "si ni san",
+   "pinyinRight": "si ni san",
+   "vocabSource": "第16讲标题",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 16,
+     "sec": 2895.1,
+     "raw": "撕尼散"
+    }
+   ],
+   "sample": "撕尼散原方叫什么呢"
+  },
+  {
+   "wrong": "泄心汤",
+   "right": "泻心汤",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "xie xin tang",
+   "pinyinRight": "xie xin tang",
+   "vocabSource": "通用方名（人工登记）",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 17,
+     "sec": 1923.4,
+     "raw": "泄心汤"
+    }
+   ],
+   "sample": "泄心汤有五个"
+  },
+  {
+   "wrong": "温坛汤",
+   "right": "温胆汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "wen tan tang",
+   "pinyinRight": "wen dan tang",
+   "vocabSource": "通用方名（人工登记）",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 23,
+     "sec": 198.4,
+     "raw": "温坛汤"
+    }
+   ],
+   "sample": "温坛汤的加钱"
+  },
+  {
+   "wrong": "猪林汤",
+   "right": "猪苓汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "zhu lin tang",
+   "pinyinRight": "zhu ling tang",
+   "vocabSource": "底本「猪苓汤主之」×2",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 22,
+     "sec": 819.3,
+     "raw": "猪林汤"
+    }
+   ],
+   "sample": "猪林汤"
+  },
+  {
+   "wrong": "礼中汤",
+   "right": "理中汤",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "li zhong tang",
+   "pinyinRight": "li zhong tang",
+   "vocabSource": "第18讲标题",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 5,
+     "sec": 11.5,
+     "raw": "礼中汤"
+    }
+   ],
+   "sample": "盖过起来,麻黄汤、桂枝汤、白头翁、财头翁、谢心汤、礼中汤、还有、半夏谢心汤、谢心汤、礼。盖过起来就是这几大类方式,怎么?就这几大类。这里面就有个很细致的工作,大家也很好的去做。"
+  },
+  {
+   "wrong": "贵制汤",
+   "right": "桂枝汤",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "gui zhi tang",
+   "pinyinRight": "gui zhi tang",
+   "vocabSource": "第7讲标题",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 14,
+     "sec": 1482.0,
+     "raw": "贵制汤"
+    }
+   ],
+   "sample": "就是小财富汤 贵制汤一半"
+  },
+  {
+   "wrong": "贵子家父子汤",
+   "right": "桂枝加附子汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "gui zi jia fu zi tang",
+   "pinyinRight": "gui zhi jia fu zi tang",
+   "vocabSource": "第20讲标题",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 2,
+     "sec": 3377.2,
+     "raw": "贵子家父子汤"
+    }
+   ],
+   "sample": "贵子家父子汤"
+  },
+  {
+   "wrong": "贵汁汤",
+   "right": "桂枝汤",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "gui zhi tang",
+   "pinyinRight": "gui zhi tang",
+   "vocabSource": "第7讲标题",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 10,
+     "sec": 1897.5,
+     "raw": "贵汁汤"
+    }
+   ],
+   "sample": "贵汁汤"
+  },
+  {
+   "wrong": "酸枣人汤",
+   "right": "酸枣仁汤",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "suan zao ren tang",
+   "pinyinRight": "suan zao ren tang",
+   "vocabSource": "通用方名（人工登记）",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 14,
+     "sec": 1502.1,
+     "raw": "和酸枣人汤"
+    }
+   ],
+   "sample": "就是小财富汤和酸枣人汤"
+  },
+  {
+   "wrong": "随你散",
+   "right": "四逆散",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "sui ni san",
+   "pinyinRight": "si ni san",
+   "vocabSource": "第16讲标题",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 7,
+     "sec": 1141.7,
+     "raw": "随你散"
+    }
+   ],
+   "sample": "随你散水了"
+  },
+  {
+   "wrong": "麻光汤",
+   "right": "麻黄汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "ma guang tang",
+   "pinyinRight": "ma huang tang",
+   "vocabSource": "第6讲标题",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 6,
+     "sec": 751.4,
+     "raw": "麻光汤"
+    }
+   ],
+   "sample": "麻光汤犯命的"
+  },
+  {
+   "wrong": "麻姓干事汤",
+   "right": "麻杏甘石汤",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "ma xing gan shi tang",
+   "pinyinRight": "ma xing gan shi tang",
+   "vocabSource": "第8讲标题",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 5,
+     "sec": 62.7,
+     "raw": "麻姓干事汤"
+    }
+   ],
+   "sample": "麻方汤 大清浓汤 麻姓干事汤"
+  },
+  {
+   "wrong": "麻子人丸",
+   "right": "麻子仁丸",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "ma zi ren wan",
+   "pinyinRight": "ma zi ren wan",
+   "vocabSource": "底本「麻子仁丸主之」×2",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 13,
+     "sec": 870.8,
+     "raw": "麻子人丸"
+    }
+   ],
+   "sample": "麻子人丸"
+  },
+  {
+   "wrong": "麻烦汤",
+   "right": "麻黄汤",
+   "method": "拼音距离 1",
+   "level": "low",
+   "pinyinWrong": "ma fan tang",
+   "pinyinRight": "ma huang tang",
+   "vocabSource": "第6讲标题",
+   "count": 1,
+   "evidenceLectures": [
+    5
+   ],
+   "occurrences": [
+    {
+     "lecture": 5,
+     "sec": 242.3,
+     "raw": "麻烦汤"
+    }
+   ],
+   "sample": "麻烦汤这一类"
+  },
+  {
+   "wrong": "黄莲文坛汤",
+   "right": "黄连温胆汤",
+   "method": "拼音距离 1",
+   "level": "medium",
+   "pinyinWrong": "huang lian wen tan tang",
+   "pinyinRight": "huang lian wen dan tang",
+   "vocabSource": "第22讲标题",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 10,
+     "sec": 697.2,
+     "raw": "就是黄莲文坛汤"
+    }
+   ],
+   "sample": "就是黄莲文坛汤"
+  },
+  {
+   "wrong": "黄莲汤",
+   "right": "黄连汤",
+   "method": "拼音距离 0（同音）",
+   "level": "high",
+   "pinyinWrong": "huang lian tang",
+   "pinyinRight": "huang lian tang",
+   "vocabSource": "底本「黄连汤主之」×3",
+   "count": 1,
+   "evidenceLectures": [],
+   "occurrences": [
+    {
+     "lecture": 16,
+     "sec": 54.3,
+     "raw": "黄莲汤"
+    }
+   ],
+   "sample": "胸中有乐、胃中有恒、黄莲汤"
+  }
+ ],
+ "phrases": [
+  {
+   "wrong": "北斧汤加人色",
+   "right": "白虎加人参汤",
+   "method": "人工判定（短语层）",
+   "level": "human",
+   "basis": "用户判定：大青龙汤加人参 = 白虎加人参汤（第 21 讲 784.9/789s）",
+   "count": 2,
+   "occurrences": [
+    {
+     "lecture": 21,
+     "sec": 784.9
+    },
+    {
+     "lecture": 21,
+     "sec": 789.0
+    }
+   ],
+   "sample": "所以用北斧汤加人色"
+  },
+  {
+   "wrong": "北斧汤",
+   "right": "白虎汤",
+   "method": "人工判定（短语层）",
+   "level": "human",
+   "basis": "由上式反推：北斧汤 = 白虎汤（第 21 讲 793/809s）",
+   "count": 4,
+   "occurrences": [
+    {
+     "lecture": 21,
+     "sec": 784.9
+    },
+    {
+     "lecture": 21,
+     "sec": 789.0
+    },
+    {
+     "lecture": 21,
+     "sec": 792.9
+    },
+    {
+     "lecture": 21,
+     "sec": 809.5
+    }
+   ],
+   "sample": "所以用北斧汤加人色"
+  },
+  {
+   "wrong": "北斧堂",
+   "right": "白虎汤",
+   "method": "人工判定（短语层）",
+   "level": "human",
+   "basis": "同「北斧汤」（第 22 讲 132/135s，堂/汤同音）",
+   "count": 2,
+   "occurrences": [
+    {
+     "lecture": 22,
+     "sec": 131.8
+    },
+    {
+     "lecture": 22,
+     "sec": 134.7
+    }
+   ],
+   "sample": "用北斧堂的机会是很多的"
+  }
+ ],
+ "terms": [
+  {
+   "wrong": "财头翁",
+   "right": "白头翁",
+   "method": "人工判定（术语层）",
+   "level": "human",
+   "basis": "用户判定：白头翁（白头翁汤之君药）",
+   "count": 1,
+   "occurrences": [
+    {
+     "lecture": 5,
+     "sec": 11.5
+    }
+   ],
+   "sample": "盖过起来,麻黄汤、桂枝汤、白头翁、财头翁、谢心汤、礼中汤、还有、半夏谢心汤、谢心汤、礼。盖过起来就是这几大类方式,怎么?就这几大类。这里面就有个很细致的工作,大家也很好的去做。"
+  },
+  {
+   "wrong": "人色",
+   "right": "人参",
+   "method": "人工判定（术语层）",
+   "level": "human",
+   "basis": "用户判定：第 21 讲「加人色」= 加人参（全语料仅 2 处，无歧义）",
+   "count": 2,
+   "occurrences": [
+    {
+     "lecture": 21,
+     "sec": 784.9
+    },
+    {
+     "lecture": 21,
+     "sec": 789.0
+    }
+   ],
+   "sample": "所以用北斧汤加人色"
+  }
+ ],
+ "points": [
+  {
+   "lecture": 5,
+   "sec": 11.5,
+   "wrong": "礼",
+   "right": "里证",
+   "basis": "用户判定：第 5 讲列举方名后的「礼」= 里证",
+   "method": "人工判定（定点）",
+   "level": "human",
+   "sample": "盖过起来,麻黄汤、桂枝汤、白头翁、财头翁、谢心汤、礼中汤、还有、半夏谢心汤、谢心汤、礼。盖过起来就是这几大类方式,怎么?就这几大类。这里面就有个很细致的工作,大家也很好的去做。"
+  }
+ ],
+ "unresolved": [
+  {
+   "form": "六斤子汤",
+   "count": 3,
+   "reason": "距离 2、非近音，且本讲未以规范形出现「四君子汤」",
+   "candidates": [
+    {
+     "name": "四君子汤",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 19,
+     "sec": 3014.6,
+     "raw": "用六斤子汤",
+     "text": "用六斤子汤加无猪鱼也可以"
+    },
+    {
+     "lecture": 19,
+     "sec": 3022.9,
+     "raw": "用六斤子汤",
+     "text": "用六斤子汤加无猪鱼也可以"
+    }
+   ]
+  },
+  {
+   "form": "方年阿娇汤",
+   "count": 3,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 22,
+     "sec": 905.2,
+     "raw": "方年阿娇汤",
+     "text": "方年阿娇汤"
+    },
+    {
+     "lecture": 22,
+     "sec": 906.2,
+     "raw": "方年阿娇汤",
+     "text": "方年阿娇汤是新来资因"
+    }
+   ]
+  },
+  {
+   "form": "九通的真一成绩汤",
+   "count": 2,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 930.3,
+     "raw": "九通的真一成绩汤",
+     "text": "那就要用五九通的真一成绩汤"
+    },
+    {
+     "lecture": 13,
+     "sec": 935.6,
+     "raw": "九通的真一成绩汤",
+     "text": "用五九通的真一成绩汤"
+    }
+   ]
+  },
+  {
+   "form": "乌明丸",
+   "count": 2,
+   "reason": "距离 1、非近音，且本讲未以规范形出现「乌梅丸」",
+   "candidates": [
+    {
+     "name": "乌梅丸",
+     "dist": 1,
+     "near": false
+    },
+    {
+     "name": "五苓散",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "理中丸",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 14,
+     "sec": 2367.0,
+     "raw": "乌明丸",
+     "text": "乌明丸"
+    },
+    {
+     "lecture": 14,
+     "sec": 2369.7,
+     "raw": "乌明丸",
+     "text": "乌明丸这个方子"
+    }
+   ]
+  },
+  {
+   "form": "平衣散",
+   "count": 2,
+   "reason": "距离 1、非近音，且本讲未以规范形出现「平胃散」",
+   "candidates": [
+    {
+     "name": "平胃散",
+     "dist": 1,
+     "near": false
+    },
+    {
+     "name": "五苓散",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "烧裈散",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 18,
+     "sec": 2108.0,
+     "raw": "平衣散",
+     "text": "诶 平衣散一定要用庄室"
+    },
+    {
+     "lecture": 18,
+     "sec": 2116.5,
+     "raw": "平衣散",
+     "text": "不行 平衣散非常是不搞"
+    }
+   ]
+  },
+  {
+   "form": "有陈药父子李中丸",
+   "count": 2,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 18,
+     "sec": 2446.2,
+     "raw": "有陈药父子李中丸",
+     "text": "而且我们还有陈药父子李中丸"
+    },
+    {
+     "lecture": 18,
+     "sec": 2449.2,
+     "raw": "有陈药父子李中丸",
+     "text": "还有陈药父子李中丸"
+    }
+   ]
+  },
+  {
+   "form": "合吃点金龟生气丸",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 1,
+     "sec": 1043.5,
+     "raw": "合吃点金龟生气丸",
+     "text": "再配合吃点金龟生气丸"
+    }
+   ]
+  },
+  {
+   "form": "双咒与拧脚散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 1,
+     "sec": 2271.0,
+     "raw": "双咒与拧脚散",
+     "text": "我们就是要双咒拧脚 双咒与拧脚散"
+    }
+   ]
+  },
+  {
+   "form": "真正是散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 2,
+     "sec": 580.1,
+     "raw": "真正是散",
+     "text": "真正是散羊"
+    }
+   ]
+  },
+  {
+   "form": "这阳气散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 2,
+     "sec": 601.3,
+     "raw": "这阳气散",
+     "text": "这阳气散脱了"
+    }
+   ]
+  },
+  {
+   "form": "配桂枝拿掉三岗汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 2,
+     "sec": 745.2,
+     "raw": "配桂枝拿掉三岗汤",
+     "text": "麻方不配桂枝拿掉三岗汤"
+    }
+   ]
+  },
+  {
+   "form": "小财富和平衣散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 2,
+     "sec": 1158.3,
+     "raw": "小财富和平衣散",
+     "text": "小财富和平衣散"
+    }
+   ]
+  },
+  {
+   "form": "你像桂枝肝脏汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 2,
+     "sec": 2406.1,
+     "raw": "你像桂枝肝脏汤",
+     "text": "你像桂枝肝脏汤就是两味药"
+    }
+   ]
+  },
+  {
+   "form": "临桂枝肝汤",
+   "count": 1,
+   "reason": "多候选同距",
+   "candidates": [
+    {
+     "name": "桂枝甘草汤",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "苓桂术甘汤",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 2,
+     "sec": 2422.8,
+     "raw": "临桂枝肝汤",
+     "text": "临桂枝肝汤 五菱散"
+    }
+   ]
+  },
+  {
+   "form": "叶连汤",
+   "count": 1,
+   "reason": "距离 1、非近音，且本讲未以规范形出现「黄连汤」",
+   "candidates": [
+    {
+     "name": "黄连汤",
+     "dist": 1,
+     "near": false
+    },
+    {
+     "name": "四逆汤",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "桂枝汤",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 4,
+     "sec": 17.1,
+     "raw": "叶连汤",
+     "text": "叶连汤、发展双方的所在。那么吴九通呢,刚才我说了,他的温病条变呢,送中下三教,以问大师的形式,自问自带,或者叫自调自辩,是吧。吴九通在温病条变,送中下三教啊,很有效的、极大的发展了双方教授。"
+    }
+   ]
+  },
+  {
+   "form": "登言的身杨一味汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 4,
+     "sec": 1851.2,
+     "raw": "登言的身杨一味汤",
+     "text": "李登言的身杨一味汤"
+    }
+   ]
+  },
+  {
+   "form": "身杨一味汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 4,
+     "sec": 1854.0,
+     "raw": "身杨一味汤",
+     "text": "身杨一味汤"
+    }
+   ]
+  },
+  {
+   "form": "方我们讲以四孕散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 4,
+     "sec": 2950.6,
+     "raw": "方我们讲以四孕散",
+     "text": "比方我们讲以四孕散为律"
+    }
+   ]
+  },
+  {
+   "form": "麻方一汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 5,
+     "sec": 67.4,
+     "raw": "麻方一汤",
+     "text": "贵侄 麻方一汤 岳比汤"
+    }
+   ]
+  },
+  {
+   "form": "不可能汗泽而散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 6,
+     "sec": 3017.4,
+     "raw": "对不可能汗泽而散",
+     "text": "所以他就绝对不可能汗泽而散"
+    }
+   ]
+  },
+  {
+   "form": "你熬一碗这个汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 9,
+     "sec": 505.1,
+     "raw": "你熬一碗这个汤",
+     "text": "你熬一碗这个汤给它吃了"
+    }
+   ]
+  },
+  {
+   "form": "也可以说是麻风汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 9,
+     "sec": 1089.6,
+     "raw": "也可以说是麻风汤",
+     "text": "这个房子也可以说是麻风汤的便局"
+    }
+   ]
+  },
+  {
+   "form": "或者用真龙汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 9,
+     "sec": 1484.2,
+     "raw": "或者用真龙汤",
+     "text": "或者用真龙汤"
+    }
+   ]
+  },
+  {
+   "form": "或者用六斤子汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 9,
+     "sec": 1485.9,
+     "raw": "或者用六斤子汤",
+     "text": "或者用六斤子汤"
+    }
+   ]
+  },
+  {
+   "form": "或者用整五汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 9,
+     "sec": 1497.1,
+     "raw": "或者用整五汤",
+     "text": "或者用整五汤"
+    }
+   ]
+  },
+  {
+   "form": "了个小心笼汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 10,
+     "sec": 574.3,
+     "raw": "用了个小心笼汤",
+     "text": "我记得我们六五年级的学生,就是皮脂痕院长那个班的同学,在万载实习,那是五十年代那次了,六十年代,五十年代,一个同学看到这个病人讲,我这背上爬了呢,好多汤呢,就凭这一点,用了个小心笼汤,真是轰动了,好灵了,一下子就舒服了,是啊,环汤水饮了,"
+    }
+   ]
+  },
+  {
+   "form": "他来个麻性关事汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 10,
+     "sec": 680.3,
+     "raw": "他来个麻性关事汤",
+     "text": "我跟他来个麻性关事汤"
+    }
+   ]
+  },
+  {
+   "form": "不会用麻性关事汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 10,
+     "sec": 689.9,
+     "raw": "不会用麻性关事汤",
+     "text": "我还不会用麻性关事汤啊"
+    }
+   ]
+  },
+  {
+   "form": "所有的人生败肚散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 10,
+     "sec": 2029.6,
+     "raw": "所有的人生败肚散",
+     "text": "后来所有的人生败肚散"
+    }
+   ]
+  },
+  {
+   "form": "你像这个马子伦丸",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 11,
+     "sec": 1419.1,
+     "raw": "你像这个马子伦丸",
+     "text": "你像这个马子伦丸啊"
+    }
+   ]
+  },
+  {
+   "form": "我们说桃轮沉浸汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 11,
+     "sec": 2323.1,
+     "raw": "我们说桃轮沉浸汤",
+     "text": "那么这两个方子 我们说桃轮沉浸汤在临床上用得多"
+    }
+   ]
+  },
+  {
+   "form": "桃轮沉浸汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 11,
+     "sec": 2335.0,
+     "raw": "桃轮沉浸汤",
+     "text": "桃轮沉浸汤在临床上用得多"
+    }
+   ]
+  },
+  {
+   "form": "实际上桃轮沉浸汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 11,
+     "sec": 2343.1,
+     "raw": "实际上桃轮沉浸汤",
+     "text": "实际上桃轮沉浸汤就是调味沉浸汤"
+    }
+   ]
+  },
+  {
+   "form": "调味沉浸汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 11,
+     "sec": 2343.1,
+     "raw": "就是调味沉浸汤",
+     "text": "实际上桃轮沉浸汤就是调味沉浸汤"
+    }
+   ]
+  },
+  {
+   "form": "文皮湯用了里中汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 299.4,
+     "raw": "文皮湯用了里中汤",
+     "text": "文皮湯用了里中汤的一半"
+    }
+   ]
+  },
+  {
+   "form": "里面有父子血腥汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 372.5,
+     "raw": "里面有父子血腥汤",
+     "text": "双方论里面有父子血腥汤"
+    }
+   ]
+  },
+  {
+   "form": "而后世有温皮汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 376.8,
+     "raw": "而后世有温皮汤",
+     "text": "而后世有温皮汤"
+    }
+   ]
+  },
+  {
+   "form": "父子血腥汤",
+   "count": 1,
+   "reason": "距离 2、非近音，且本讲未以规范形出现「附子泻心汤」",
+   "candidates": [
+    {
+     "name": "附子泻心汤",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 383.0,
+     "raw": "父子血腥汤",
+     "text": "父子血腥汤重在胃"
+    }
+   ]
+  },
+  {
+   "form": "温皮汤",
+   "count": 1,
+   "reason": "多候选同距",
+   "candidates": [
+    {
+     "name": "温胆汤",
+     "dist": 1,
+     "near": false
+    },
+    {
+     "name": "归脾汤",
+     "dist": 1,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 387.6,
+     "raw": "温皮汤",
+     "text": "温皮汤重在皮"
+    }
+   ]
+  },
+  {
+   "form": "麻倫丸",
+   "count": 1,
+   "reason": "多候选同距",
+   "candidates": [
+    {
+     "name": "麻黄汤",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "理中丸",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "乌梅丸",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 503.4,
+     "raw": "用麻倫丸",
+     "text": "用麻倫丸也下不來"
+    }
+   ]
+  },
+  {
+   "form": "马子轮丸",
+   "count": 1,
+   "reason": "距离 1、非近音，且本讲未以规范形出现「麻子仁丸」",
+   "candidates": [
+    {
+     "name": "麻子仁丸",
+     "dist": 1,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 716.8,
+     "raw": "马子轮丸",
+     "text": "齐皮为药 马子轮丸"
+    }
+   ]
+  },
+  {
+   "form": "皮药马子轮丸",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 722.8,
+     "raw": "叫做皮药马子轮丸",
+     "text": "叫做皮药马子轮丸正"
+    }
+   ]
+  },
+  {
+   "form": "街上也有麻人丸",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 882.1,
+     "raw": "街上也有麻人丸",
+     "text": "街上也有麻人丸卖了"
+    }
+   ]
+  },
+  {
+   "form": "文病几个成绩汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 948.8,
+     "raw": "文病几个成绩汤",
+     "text": "文病几个成绩汤"
+    }
+   ]
+  },
+  {
+   "form": "真一成绩汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 951.7,
+     "raw": "真一成绩汤",
+     "text": "真一成绩汤"
+    }
+   ]
+  },
+  {
+   "form": "瀉白成绩汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 956.8,
+     "raw": "瀉白成绩汤",
+     "text": "瀉白成绩汤"
+    }
+   ]
+  },
+  {
+   "form": "有一个孙家黄荣汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 960.4,
+     "raw": "有一个孙家黄荣汤",
+     "text": "还有一个孙家黄荣汤"
+    }
+   ]
+  },
+  {
+   "form": "一共有五个成绩汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 962.8,
+     "raw": "一共有五个成绩汤",
+     "text": "一共有五个成绩汤"
+    }
+   ]
+  },
+  {
+   "form": "加上一个马子人丸",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 993.8,
+     "raw": "加上一个马子人丸",
+     "text": "再加上一个马子人丸"
+    }
+   ]
+  },
+  {
+   "form": "庄州井三个陈鸡汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 1071.7,
+     "raw": "庄州井三个陈鸡汤",
+     "text": "庄州井三个陈鸡汤呢"
+    }
+   ]
+  },
+  {
+   "form": "还要来个羊汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 1093.3,
+     "raw": "还要来个羊汤",
+     "text": "还要来个羊汤指纹了"
+    }
+   ]
+  },
+  {
+   "form": "个金柜上的圣灶汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 1285.3,
+     "raw": "个金柜上的圣灶汤",
+     "text": "最近我用了两个金柜上的圣灶汤"
+    }
+   ]
+  },
+  {
+   "form": "陶人成绩汤",
+   "count": 1,
+   "reason": "距离 2、非近音，且本讲未以规范形出现「桃核承气汤」",
+   "candidates": [
+    {
+     "name": "桃核承气汤",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 13,
+     "sec": 2311.3,
+     "raw": "陶人成绩汤",
+     "text": "陶人成绩汤"
+    }
+   ]
+  },
+  {
+   "form": "冷卖和干卖大澡汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 14,
+     "sec": 1489.5,
+     "raw": "冷卖和干卖大澡汤",
+     "text": "第二是小财富加冷卖和干卖大澡汤"
+    }
+   ]
+  },
+  {
+   "form": "龙脉和高脉大早汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 14,
+     "sec": 1542.9,
+     "raw": "龙脉和高脉大早汤",
+     "text": "就是财富贵质财富贵财富加龙脉和高脉大早汤"
+    }
+   ]
+  },
+  {
+   "form": "小财富和三早人汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 14,
+     "sec": 1550.8,
+     "raw": "小财富和三早人汤",
+     "text": "小财富和三早人汤"
+    }
+   ]
+  },
+  {
+   "form": "财富献胸汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 14,
+     "sec": 1554.0,
+     "raw": "财富献胸汤",
+     "text": "财富献胸汤"
+    }
+   ]
+  },
+  {
+   "form": "财富血腥汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 14,
+     "sec": 1557.5,
+     "raw": "财富血腥汤",
+     "text": "财富血腥汤"
+    }
+   ]
+  },
+  {
+   "form": "财富五尼散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 14,
+     "sec": 1565.5,
+     "raw": "财富五尼散",
+     "text": "财富五尼散"
+    }
+   ]
+  },
+  {
+   "form": "真如汤跟傅子汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 14,
+     "sec": 2032.1,
+     "raw": "真如汤跟傅子汤",
+     "text": "真如汤跟傅子汤"
+    }
+   ]
+  },
+  {
+   "form": "很大的就是乌明丸",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 14,
+     "sec": 2363.5,
+     "raw": "很大的就是乌明丸",
+     "text": "但是有一个区别很大的就是乌明丸"
+    }
+   ]
+  },
+  {
+   "form": "讲到的某某各半汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 15,
+     "sec": 209.0,
+     "raw": "讲到的某某各半汤",
+     "text": "双方论里面讲到的某某各半汤"
+    }
+   ]
+  },
+  {
+   "form": "说麻方贵旨各半汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 15,
+     "sec": 219.7,
+     "raw": "说麻方贵旨各半汤",
+     "text": "比方说麻方贵旨各半汤"
+    }
+   ]
+  },
+  {
+   "form": "财富贵旨各半汤",
+   "count": 1,
+   "reason": "距离 2、非近音，且本讲未以规范形出现「柴胡桂枝各半汤」",
+   "candidates": [
+    {
+     "name": "柴胡桂枝各半汤",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 15,
+     "sec": 223.2,
+     "raw": "财富贵旨各半汤",
+     "text": "财富贵旨各半汤"
+    }
+   ]
+  },
+  {
+   "form": "才贵过半汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 16,
+     "sec": 119.9,
+     "raw": "才贵过半汤",
+     "text": "才贵过半汤"
+    }
+   ]
+  },
+  {
+   "form": "都喝季三汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 16,
+     "sec": 311.8,
+     "raw": "都喝季三汤",
+     "text": "都喝季三汤"
+    }
+   ]
+  },
+  {
+   "form": "法财富贵制干姜汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 16,
+     "sec": 1000.8,
+     "raw": "法财富贵制干姜汤",
+     "text": "文法财富贵制干姜汤"
+    }
+   ]
+  },
+  {
+   "form": "财富贵制干姜汤",
+   "count": 1,
+   "reason": "距离 2、非近音，且本讲未以规范形出现「柴胡桂枝干姜汤」",
+   "candidates": [
+    {
+     "name": "柴胡桂枝干姜汤",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 16,
+     "sec": 1005.5,
+     "raw": "财富贵制干姜汤",
+     "text": "财富贵制干姜汤"
+    }
+   ]
+  },
+  {
+   "form": "小心龙堂症的还饮",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 16,
+     "sec": 1191.1,
+     "raw": "小心龙堂症的还饮",
+     "text": "小心龙堂症的还饮"
+    }
+   ]
+  },
+  {
+   "form": "能够用半顾瀉心汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 17,
+     "sec": 1577.3,
+     "raw": "能够用半顾瀉心汤",
+     "text": "才能够用半顾瀉心汤"
+    }
+   ]
+  },
+  {
+   "form": "才能用半顾瀉心汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 17,
+     "sec": 1603.0,
+     "raw": "才能用半顾瀉心汤",
+     "text": "才能用半顾瀉心汤"
+    }
+   ]
+  },
+  {
+   "form": "你用半顾瀉心汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 17,
+     "sec": 1613.7,
+     "raw": "你用半顾瀉心汤",
+     "text": "你用半顾瀉心汤"
+    }
+   ]
+  },
+  {
+   "form": "另外肝草血腥汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 17,
+     "sec": 2131.1,
+     "raw": "另外肝草血腥汤",
+     "text": "另外肝草血腥汤"
+    }
+   ]
+  },
+  {
+   "form": "半价血腥汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 17,
+     "sec": 2333.7,
+     "raw": "半价血腥汤",
+     "text": "半价血腥汤在于脾胃"
+    }
+   ]
+  },
+  {
+   "form": "另外是冯清汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 18,
+     "sec": 195.2,
+     "raw": "另外是冯清汤",
+     "text": "另外是冯清汤 智利的"
+    }
+   ]
+  },
+  {
+   "form": "平民散",
+   "count": 1,
+   "reason": "距离 1、非近音，且本讲未以规范形出现「平胃散」",
+   "candidates": [
+    {
+     "name": "平胃散",
+     "dist": 1,
+     "near": false
+    },
+    {
+     "name": "五苓散",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "烧裈散",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 18,
+     "sec": 1649.3,
+     "raw": "所以平民散",
+     "text": "所以平民散應創術 偷薄 瘟印 瘟印中交 陳皮甘草 蘇維藥"
+    }
+   ]
+  },
+  {
+   "form": "平一散",
+   "count": 1,
+   "reason": "距离 1、非近音，且本讲未以规范形出现「平胃散」",
+   "candidates": [
+    {
+     "name": "平胃散",
+     "dist": 1,
+     "near": false
+    },
+    {
+     "name": "五苓散",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "烧裈散",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 18,
+     "sec": 1707.2,
+     "raw": "平一散",
+     "text": "平一散 也是攝體碰大 也是攝子彈"
+    }
+   ]
+  },
+  {
+   "form": "这就是平衣散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 18,
+     "sec": 1736.2,
+     "raw": "这就是平衣散",
+     "text": "这就是平衣散和李正堂的鉴别所在"
+    }
+   ]
+  },
+  {
+   "form": "平衣散是驱散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 18,
+     "sec": 1747.6,
+     "raw": "平衣散是驱散",
+     "text": "平衣散是驱散脾胃韩式的"
+    }
+   ]
+  },
+  {
+   "form": "那么平为散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 18,
+     "sec": 1838.5,
+     "raw": "那么平为散",
+     "text": "那么平为散失 以环视内线为主"
+    }
+   ]
+  },
+  {
+   "form": "椒五枚夹到里中汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 18,
+     "sec": 2763.3,
+     "raw": "椒五枚夹到里中汤",
+     "text": "这也是用川椒五枚夹到里中汤里面"
+    }
+   ]
+  },
+  {
+   "form": "川椒五枚里中汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 18,
+     "sec": 2780.4,
+     "raw": "用川椒五枚里中汤",
+     "text": "那你就用川椒五枚里中汤"
+    }
+   ]
+  },
+  {
+   "form": "连鲤汤",
+   "count": 1,
+   "reason": "距离 1、非近音，且本讲未以规范形出现「牡蛎汤」",
+   "candidates": [
+    {
+     "name": "牡蛎汤",
+     "dist": 1,
+     "near": false
+    },
+    {
+     "name": "四逆汤",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "桂枝汤",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 18,
+     "sec": 2930.1,
+     "raw": "所以这个连鲤汤",
+     "text": "所以这个连鲤汤是个好方式"
+    }
+   ]
+  },
+  {
+   "form": "能起到我们生命散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 19,
+     "sec": 684.3,
+     "raw": "能起到我们生命散",
+     "text": "但是能不能起到我们生命散的作用呢"
+    }
+   ]
+  },
+  {
+   "form": "能不能起到生命散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 19,
+     "sec": 687.5,
+     "raw": "能不能起到生命散",
+     "text": "能不能起到生命散的作用呢"
+    }
+   ]
+  },
+  {
+   "form": "山姜配父子心里散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 19,
+     "sec": 1639.0,
+     "raw": "山姜配父子心里散",
+     "text": "主要是起山姜散水呀 真母汤配合山姜配父子心里散水呀"
+    }
+   ]
+  },
+  {
+   "form": "铜加猪胆之人药汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 19,
+     "sec": 1958.4,
+     "raw": "铜加猪胆之人药汤",
+     "text": "白铜加猪胆之人药汤"
+    }
+   ]
+  },
+  {
+   "form": "两个病都是氧气散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 19,
+     "sec": 2032.2,
+     "raw": "两个病都是氧气散",
+     "text": "这两个病都是氧气散脱的表现"
+    }
+   ]
+  },
+  {
+   "form": "棺姜汤",
+   "count": 1,
+   "reason": "多候选同距",
+   "candidates": [
+    {
+     "name": "四逆汤",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "桂枝汤",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "麻黄汤",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "白虎汤",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 20,
+     "sec": 269.6,
+     "raw": "棺姜汤",
+     "text": "棺草 棺姜汤 加白树 咚啤"
+    }
+   ]
+  },
+  {
+   "form": "阳气如果散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 20,
+     "sec": 932.6,
+     "raw": "阳气如果散",
+     "text": "阳气如果散脱"
+    }
+   ]
+  },
+  {
+   "form": "戴阳都是阳气散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 20,
+     "sec": 1019.3,
+     "raw": "和戴阳都是阳气散",
+     "text": "戒阳和戴阳都是阳气散团的一种表现"
+    }
+   ]
+  },
+  {
+   "form": "石膏是心环而散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 21,
+     "sec": 856.9,
+     "raw": "石膏是心环而散",
+     "text": "石膏是心环而散"
+    }
+   ]
+  },
+  {
+   "form": "大金龙汤",
+   "count": 1,
+   "reason": "距离 1、非近音，且本讲未以规范形出现「大青龙汤」",
+   "candidates": [
+    {
+     "name": "大青龙汤",
+     "dist": 1,
+     "near": false
+    },
+    {
+     "name": "大陷胸汤",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "大承气汤",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 21,
+     "sec": 954.9,
+     "raw": "大金龙汤",
+     "text": "大金龙汤"
+    }
+   ]
+  },
+  {
+   "form": "都是其他心狠有散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 21,
+     "sec": 963.5,
+     "raw": "都是其他心狠有散",
+     "text": "都是其他心狠有散的作用"
+    }
+   ]
+  },
+  {
+   "form": "就加点米汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 21,
+     "sec": 1080.0,
+     "raw": "就加点米汤",
+     "text": "就加点米汤就行了"
+    }
+   ]
+  },
+  {
+   "form": "白虎加什么散",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 21,
+     "sec": 1196.5,
+     "raw": "和白虎加什么散",
+     "text": "和白虎加什么散"
+    }
+   ]
+  },
+  {
+   "form": "财富龙秒汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 21,
+     "sec": 2651.0,
+     "raw": "在财富龙秒汤",
+     "text": "在财富龙秒汤里面"
+    }
+   ]
+  },
+  {
+   "form": "感病可以用背腐汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 22,
+     "sec": 66.9,
+     "raw": "感病可以用背腐汤",
+     "text": "背景就是外感病可以用背腐汤"
+    }
+   ]
+  },
+  {
+   "form": "病也可以用背腐汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 22,
+     "sec": 71.1,
+     "raw": "病也可以用背腐汤",
+     "text": "内伤病也可以用背腐汤"
+    }
+   ]
+  },
+  {
+   "form": "前前的逢年温蛋汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 22,
+     "sec": 680.9,
+     "raw": "前前的逢年温蛋汤",
+     "text": "文文前前的逢年温蛋汤"
+    }
+   ]
+  },
+  {
+   "form": "个月的逢年温蛋汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 22,
+     "sec": 700.5,
+     "raw": "个月的逢年温蛋汤",
+     "text": "已经吃了两三个月的逢年温蛋汤"
+    }
+   ]
+  },
+  {
+   "form": "方便温暖汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 22,
+     "sec": 730.9,
+     "raw": "方便温暖汤",
+     "text": "方便温暖汤以后"
+    }
+   ]
+  },
+  {
+   "form": "单独用直子试汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 22,
+     "sec": 813.4,
+     "raw": "单独用直子试汤",
+     "text": "单独用直子试汤"
+    }
+   ]
+  },
+  {
+   "form": "姬子黄汤",
+   "count": 1,
+   "reason": "距离 2、非近音，且本讲未以规范形出现「栀子豉汤」",
+   "candidates": [
+    {
+     "name": "栀子豉汤",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 22,
+     "sec": 915.5,
+     "raw": "姬子黄汤",
+     "text": "姬子黄汤啊"
+    }
+   ]
+  },
+  {
+   "form": "搞到最后加鸡蛋汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 22,
+     "sec": 1116.5,
+     "raw": "搞到最后加鸡蛋汤",
+     "text": "你不要搞到最后加鸡蛋汤了"
+    }
+   ]
+  },
+  {
+   "form": "小炫氏汤",
+   "count": 1,
+   "reason": "多候选同距",
+   "candidates": [
+    {
+     "name": "小柴胡汤",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "栀子豉汤",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "小青龙汤",
+     "dist": 2,
+     "near": false
+    },
+    {
+     "name": "小承气汤",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 22,
+     "sec": 2025.6,
+     "raw": "小炫氏汤",
+     "text": "小炫氏汤也是黄连配斑侠"
+    }
+   ]
+  },
+  {
+   "form": "如指甲心肌二层汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 22,
+     "sec": 2038.1,
+     "raw": "如指甲心肌二层汤",
+     "text": "还有诸如指甲心肌二层汤发痰"
+    }
+   ]
+  },
+  {
+   "form": "他用小剑中汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 23,
+     "sec": 1257.6,
+     "raw": "他用小剑中汤",
+     "text": "他用小剑中汤"
+    }
+   ]
+  },
+  {
+   "form": "应龟皮汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 23,
+     "sec": 1672.1,
+     "raw": "应龟皮汤",
+     "text": "应龟皮汤也可以"
+    }
+   ]
+  },
+  {
+   "form": "你用香沙溜金子汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 23,
+     "sec": 1678.7,
+     "raw": "你用香沙溜金子汤",
+     "text": "你用香沙溜金子汤也可以"
+    }
+   ]
+  },
+  {
+   "form": "自干燥汤",
+   "count": 1,
+   "reason": "距离 2、非近音，且本讲未以规范形出现「炙甘草汤」",
+   "candidates": [
+    {
+     "name": "炙甘草汤",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 23,
+     "sec": 1954.6,
+     "raw": "自干燥汤",
+     "text": "自干燥汤"
+    }
+   ]
+  },
+  {
+   "form": "不能应自干燥汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 23,
+     "sec": 1961.3,
+     "raw": "不能应自干燥汤",
+     "text": "不能应自干燥汤"
+    }
+   ]
+  },
+  {
+   "form": "应了自干燥汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 23,
+     "sec": 1973.5,
+     "raw": "应了自干燥汤",
+     "text": "应了自干燥汤"
+    }
+   ]
+  },
+  {
+   "form": "而当归补蟹汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 24,
+     "sec": 265.6,
+     "raw": "而当归补蟹汤",
+     "text": "而当归补蟹汤里面"
+    }
+   ]
+  },
+  {
+   "form": "叫它补当归补蟹汤",
+   "count": 1,
+   "reason": "拼音距离 >2 或音节数不同",
+   "samples": [
+    {
+     "lecture": 24,
+     "sec": 271.1,
+     "raw": "叫它补当归补蟹汤",
+     "text": "而叫它补当归补蟹汤"
+    }
+   ]
+  },
+  {
+   "form": "十田大骨汤",
+   "count": 1,
+   "reason": "距离 2、非近音，且本讲未以规范形出现「十全大补汤」",
+   "candidates": [
+    {
+     "name": "十全大补汤",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 24,
+     "sec": 677.6,
+     "raw": "十田大骨汤",
+     "text": "十田大骨汤"
+    }
+   ]
+  },
+  {
+   "form": "四金四汤",
+   "count": 1,
+   "reason": "距离 2、非近音，且本讲未以规范形出现「四君子汤」",
+   "candidates": [
+    {
+     "name": "四君子汤",
+     "dist": 2,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 24,
+     "sec": 691.9,
+     "raw": "四金四汤",
+     "text": "四金四汤"
+    }
+   ]
+  },
+  {
+   "form": "四味汤",
+   "count": 1,
+   "reason": "多候选同距",
+   "candidates": [
+    {
+     "name": "四逆汤",
+     "dist": 1,
+     "near": false
+    },
+    {
+     "name": "四物汤",
+     "dist": 1,
+     "near": false
+    }
+   ],
+   "samples": [
+    {
+     "lecture": 24,
+     "sec": 696.3,
+     "raw": "四味汤",
+     "text": "四味汤"
+    }
+   ]
+  }
+ ],
+ "noiseCount": 168
+}

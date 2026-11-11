@@ -65,6 +65,22 @@ const MAP = {
     note: '零基础学 AI 20 讲',
     subjects: ['01-yixue-rengong-zhineng-daolun', '10-llm-yu-zhongyi-zhinengti'],
   },
+  'shanghan-lectures': {
+    note: '《伤寒论》讲课录像 ASR（4.74 小时，桌面 SHL.mp4）',
+    subjects: ['07-shanghanlun', '15-zhongyi-gejia-xueshuo'],
+  },
+  'neijing-lectures': {
+    note: '《黄帝内经》讲课录像 ASR（11.58 小时，桌面 NJ-MM.mp4）',
+    subjects: ['06-neijing-xuandu', '01-zhongyi-jichu-lilun'],
+  },
+  'qiqing-lectures': {
+    note: '《七情治病》讲课录像 ASR（1.64 小时，桌面 QQZB.mp4）',
+    subjects: ['06-zhongyi-xinli-xue', '14-zhongyi-zhenghou-xue'],
+  },
+  'gainian-lectures': {
+    note: '中医概念与辨证思维讲课录像 ASR（1.49 小时，桌面 LYZB.mp4）',
+    subjects: ['01-zhongyi-jichu-lilun', '14-zhongyi-zhenghou-xue'],
+  },
   tcmscheme: {
     note: '课程图式：章/节/段 + 内涵 + 知识点 + 数学/物理/AI 桥接（3363 段）',
     subjects: [

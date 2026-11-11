@@ -1,0 +1,32 @@
+{
+  "slug": "15-liuxingbing-xue",
+  "title": "流行病学",
+  "en": "Epidemiology",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 135,
+  "type": "Core",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 45,
+  "bridge": "分布描述→统计推断 / 暴发调查→传播模型",
+  "chaptersTarget": 18,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/15-liuxingbing-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/15-liuxingbing-xue",
+    "chaptersWritten": 18,
+    "words": 363370,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#流行病学",
+    "extractedAt": "2026-10-21"
+  }
+}

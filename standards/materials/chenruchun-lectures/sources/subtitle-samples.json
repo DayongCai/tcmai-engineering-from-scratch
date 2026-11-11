@@ -1,0 +1,1376 @@
+{
+ "$note": "本文件是**读屏**所得（对抽帧画面用视觉逐图读出底部字幕），不是平台字幕接口的产物：B 站字幕接口对未登录请求返回空字幕列表（sources/api-player-v2.json 可查），故只能用画面里的硬字幕。每行都带时间码与所属拼图，可在视频里逐条核对；line 为 null 表示该时刻画面无字幕（讲者停顿处），不是漏读。",
+ "method": {
+  "video": "BV1yYoaBuEBc / cid=37739431926（陈瑞春讲伤寒论19-温法2）",
+  "changeDetection": "每 0.5s 取底部 14% 条带 → 灰度 160x24 → 相邻帧平均绝对差 MAD>3.0 判为字幕换行",
+  "stableSegments": 955,
+  "sampling": "稳定段（时长≥1s）等距取中点：主批 120 段（步长 7）、尾批 30 段（覆盖 55 分钟之后）",
+  "grids": "每 10 条字幕带纵向拼接成一张图，条带左上角烧入时间码",
+  "reader": "vision 逐图读屏（人工复核入口 = sources/grids/*.jpg）"
+ },
+ "caveats": [
+  "个别字可能有形近误读（例如「甜睡」疑为「酣睡」、「勘明了」读音与用字待核）—— 已按画面所见记录，未改写",
+  "字幕是逐行出现的，本文件不做跨行合并，因此有的行是不完整句",
+  "字幕在片中有成段缺失（讲者未配字幕的时段），这些位置记为 line=null"
+ ],
+ "coverage": {
+  "sampled": 150,
+  "withText": 100,
+  "blank": 50,
+  "firstSec": 10.5,
+  "lastSec": 3630.5,
+  "videoDurationSec": 3754.78
+ },
+ "samples": [
+  {
+   "idx": 1,
+   "sec": 10.5,
+   "mmss": "00:11",
+   "grid": "grid01.jpg",
+   "row": 1,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 2,
+   "sec": 56.3,
+   "mmss": "00:56",
+   "grid": "grid01.jpg",
+   "row": 2,
+   "line": "生命几乎是到了终极的阶段",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 3,
+   "sec": 87,
+   "mmss": "01:27",
+   "grid": "grid01.jpg",
+   "row": 3,
+   "line": "少阴病 脉微细 但欲寐",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 4,
+   "sec": 107.8,
+   "mmss": "01:48",
+   "grid": "grid01.jpg",
+   "row": 4,
+   "line": "脉微细",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 5,
+   "sec": 128,
+   "mmss": "02:08",
+   "grid": "grid01.jpg",
+   "row": 5,
+   "line": "正因为它气虚血少",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 6,
+   "sec": 154.3,
+   "mmss": "02:34",
+   "grid": "grid01.jpg",
+   "row": 6,
+   "line": "我们正常的人是甜睡了",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 7,
+   "sec": 176,
+   "mmss": "02:56",
+   "grid": "grid01.jpg",
+   "row": 7,
+   "line": "所以但欲寐",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 8,
+   "sec": 195.3,
+   "mmss": "03:15",
+   "grid": "grid01.jpg",
+   "row": 8,
+   "line": "你不跟他说他马上就昏睡过去",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 9,
+   "sec": 221,
+   "mmss": "03:41",
+   "grid": "grid01.jpg",
+   "row": 9,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 10,
+   "sec": 241.5,
+   "mmss": "04:02",
+   "grid": "grid01.jpg",
+   "row": 10,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 11,
+   "sec": 285,
+   "mmss": "04:45",
+   "grid": "grid02.jpg",
+   "row": 1,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 12,
+   "sec": 301.8,
+   "mmss": "05:02",
+   "grid": "grid02.jpg",
+   "row": 2,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 13,
+   "sec": 328.3,
+   "mmss": "05:28",
+   "grid": "grid02.jpg",
+   "row": 3,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 14,
+   "sec": 352.5,
+   "mmss": "05:53",
+   "grid": "grid02.jpg",
+   "row": 4,
+   "line": "那么用什么",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 15,
+   "sec": 379,
+   "mmss": "06:19",
+   "grid": "grid02.jpg",
+   "row": 5,
+   "line": "它是以它的功用来命名的",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 16,
+   "sec": 394,
+   "mmss": "06:34",
+   "grid": "grid02.jpg",
+   "row": 6,
+   "line": "一个是甘草干姜汤",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 17,
+   "sec": 413,
+   "mmss": "06:53",
+   "grid": "grid02.jpg",
+   "row": 7,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 18,
+   "sec": 437,
+   "mmss": "07:17",
+   "grid": "grid02.jpg",
+   "row": 8,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 19,
+   "sec": 460.3,
+   "mmss": "07:40",
+   "grid": "grid02.jpg",
+   "row": 9,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 20,
+   "sec": 482.5,
+   "mmss": "08:03",
+   "grid": "grid02.jpg",
+   "row": 10,
+   "line": "这个坏人就打不进来是不是",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 21,
+   "sec": 506.3,
+   "mmss": "08:26",
+   "grid": "grid03.jpg",
+   "row": 1,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 22,
+   "sec": 524.8,
+   "mmss": "08:45",
+   "grid": "grid03.jpg",
+   "row": 2,
+   "line": "这是个很大的误区啊",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 23,
+   "sec": 544,
+   "mmss": "09:04",
+   "grid": "grid03.jpg",
+   "row": 3,
+   "line": "但是这个四逆汤",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 24,
+   "sec": 566,
+   "mmss": "09:26",
+   "grid": "grid03.jpg",
+   "row": 4,
+   "line": "也就所谓的红参",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 25,
+   "sec": 584,
+   "mmss": "09:44",
+   "grid": "grid03.jpg",
+   "row": 5,
+   "line": "不能插胃管",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 26,
+   "sec": 600.3,
+   "mmss": "10:00",
+   "grid": "grid03.jpg",
+   "row": 6,
+   "line": "你用调羹一掰那个牙就松了",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 27,
+   "sec": 621.5,
+   "mmss": "10:22",
+   "grid": "grid03.jpg",
+   "row": 7,
+   "line": "又没有临床实践经验",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 28,
+   "sec": 641,
+   "mmss": "10:41",
+   "grid": "grid03.jpg",
+   "row": 8,
+   "line": "你在病房你看到病人死怎么挽救他",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 29,
+   "sec": 656,
+   "mmss": "10:56",
+   "grid": "grid03.jpg",
+   "row": 9,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 30,
+   "sec": 673.3,
+   "mmss": "11:13",
+   "grid": "grid03.jpg",
+   "row": 10,
+   "line": "你那点水吊到那里恐怕也救不活",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 31,
+   "sec": 698.3,
+   "mmss": "11:38",
+   "grid": "grid04.jpg",
+   "row": 1,
+   "line": "特别是那些久病",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 32,
+   "sec": 720,
+   "mmss": "12:00",
+   "grid": "grid04.jpg",
+   "row": 2,
+   "line": "突然什么摔倒",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 33,
+   "sec": 755.5,
+   "mmss": "12:36",
+   "grid": "grid04.jpg",
+   "row": 3,
+   "line": "如果他二十分钟都等不及的话",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 34,
+   "sec": 773,
+   "mmss": "12:53",
+   "grid": "grid04.jpg",
+   "row": 4,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 35,
+   "sec": 804.8,
+   "mmss": "13:25",
+   "grid": "grid04.jpg",
+   "row": 5,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 36,
+   "sec": 834.5,
+   "mmss": "13:55",
+   "grid": "grid04.jpg",
+   "row": 6,
+   "line": "一中风马上就口里流涎了",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 37,
+   "sec": 861,
+   "mmss": "14:21",
+   "grid": "grid04.jpg",
+   "row": 7,
+   "line": "吸完了马上又来",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 38,
+   "sec": 882,
+   "mmss": "14:42",
+   "grid": "grid04.jpg",
+   "row": 8,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 39,
+   "sec": 906.5,
+   "mmss": "15:07",
+   "grid": "grid04.jpg",
+   "row": 9,
+   "line": "那个不是说一包药熬两次",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 40,
+   "sec": 945.5,
+   "mmss": "15:46",
+   "grid": "grid04.jpg",
+   "row": 10,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 41,
+   "sec": 977.5,
+   "mmss": "16:18",
+   "grid": "grid05.jpg",
+   "row": 1,
+   "line": "我们是用它回阳救逆",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 42,
+   "sec": 1018.3,
+   "mmss": "16:58",
+   "grid": "grid05.jpg",
+   "row": 2,
+   "line": "亡阳啊",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 43,
+   "sec": 1070.8,
+   "mmss": "17:51",
+   "grid": "grid05.jpg",
+   "row": 3,
+   "line": "就只能用正温回阳",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 44,
+   "sec": 1096.8,
+   "mmss": "18:17",
+   "grid": "grid05.jpg",
+   "row": 4,
+   "line": "像你们解剖图什么东西",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 45,
+   "sec": 1128.5,
+   "mmss": "18:49",
+   "grid": "grid05.jpg",
+   "row": 5,
+   "line": "当时我看到这个东西",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 46,
+   "sec": 1158.5,
+   "mmss": "19:19",
+   "grid": "grid05.jpg",
+   "row": 6,
+   "line": "我们讲的那个四肢厥冷四肢厥逆",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 47,
+   "sec": 1191.3,
+   "mmss": "19:51",
+   "grid": "grid05.jpg",
+   "row": 7,
+   "line": "有一年我在抚州地区",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 48,
+   "sec": 1257,
+   "mmss": "20:57",
+   "grid": "grid05.jpg",
+   "row": 8,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 49,
+   "sec": 1283,
+   "mmss": "21:23",
+   "grid": "grid05.jpg",
+   "row": 9,
+   "line": "我们中医很多东西",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 50,
+   "sec": 1302.3,
+   "mmss": "21:42",
+   "grid": "grid05.jpg",
+   "row": 10,
+   "line": "鼾声如雷肺绝",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 51,
+   "sec": 1323.3,
+   "mmss": "22:03",
+   "grid": "grid06.jpg",
+   "row": 1,
+   "line": "我们这里我们有个老同事老司机",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 52,
+   "sec": 1345.8,
+   "mmss": "22:26",
+   "grid": "grid06.jpg",
+   "row": 2,
+   "line": "后来我说你要高度重视",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 53,
+   "sec": 1367.5,
+   "mmss": "22:48",
+   "grid": "grid06.jpg",
+   "row": 3,
+   "line": "有很多东西你不要说不科学",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 54,
+   "sec": 1389,
+   "mmss": "23:09",
+   "grid": "grid06.jpg",
+   "row": 4,
+   "line": "最近又公布了勘明了",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 55,
+   "sec": 1407.5,
+   "mmss": "23:28",
+   "grid": "grid06.jpg",
+   "row": 5,
+   "line": "你现在还不可能把它挖出来",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 56,
+   "sec": 1447.5,
+   "mmss": "24:08",
+   "grid": "grid06.jpg",
+   "row": 6,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 57,
+   "sec": 1494.8,
+   "mmss": "24:55",
+   "grid": "grid06.jpg",
+   "row": 7,
+   "line": "要用生脉散监制这个阳药",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 58,
+   "sec": 1536.5,
+   "mmss": "25:37",
+   "grid": "grid06.jpg",
+   "row": 8,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 59,
+   "sec": 1560.3,
+   "mmss": "26:00",
+   "grid": "grid06.jpg",
+   "row": 9,
+   "line": "这是伤寒论里面一个主要的部分",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 60,
+   "sec": 1581.5,
+   "mmss": "26:22",
+   "grid": "grid06.jpg",
+   "row": 10,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 61,
+   "sec": 1604.5,
+   "mmss": "26:45",
+   "grid": "grid07.jpg",
+   "row": 1,
+   "line": "你比方说肺源性的心脏病",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 62,
+   "sec": 1629.5,
+   "mmss": "27:10",
+   "grid": "grid07.jpg",
+   "row": 2,
+   "line": "上次可能讲过了",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 63,
+   "sec": 1645,
+   "mmss": "27:25",
+   "grid": "grid07.jpg",
+   "row": 3,
+   "line": "辛以散水",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 64,
+   "sec": 1673,
+   "mmss": "27:53",
+   "grid": "grid07.jpg",
+   "row": 4,
+   "line": "温脾温阳",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 65,
+   "sec": 1703.3,
+   "mmss": "28:23",
+   "grid": "grid07.jpg",
+   "row": 5,
+   "line": "我如果说我在真武汤里面",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 66,
+   "sec": 1733.3,
+   "mmss": "28:53",
+   "grid": "grid07.jpg",
+   "row": 6,
+   "line": "我希望同学们在很多方子里面",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 67,
+   "sec": 1771,
+   "mmss": "29:31",
+   "grid": "grid07.jpg",
+   "row": 7,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 68,
+   "sec": 1792.5,
+   "mmss": "29:53",
+   "grid": "grid07.jpg",
+   "row": 8,
+   "line": "这个问题是值得商榷的",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 69,
+   "sec": 1816.8,
+   "mmss": "30:17",
+   "grid": "grid07.jpg",
+   "row": 9,
+   "line": "也是取它这个通阳",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 70,
+   "sec": 1851,
+   "mmss": "30:51",
+   "grid": "grid07.jpg",
+   "row": 10,
+   "line": "主要是收涩药",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 71,
+   "sec": 1886,
+   "mmss": "31:26",
+   "grid": "grid08.jpg",
+   "row": 1,
+   "line": "那是干姜赤石脂",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 72,
+   "sec": 1921.5,
+   "mmss": "32:02",
+   "grid": "grid08.jpg",
+   "row": 2,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 73,
+   "sec": 1944,
+   "mmss": "32:24",
+   "grid": "grid08.jpg",
+   "row": 3,
+   "line": "有上面的这一些",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 74,
+   "sec": 1965.5,
+   "mmss": "32:46",
+   "grid": "grid08.jpg",
+   "row": 4,
+   "line": "就是在白通汤里边",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 75,
+   "sec": 1992.5,
+   "mmss": "33:13",
+   "grid": "grid08.jpg",
+   "row": 5,
+   "line": "内经讲得甚者从之的意思",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 76,
+   "sec": 2016.3,
+   "mmss": "33:36",
+   "grid": "grid08.jpg",
+   "row": 6,
+   "line": "一个阴盛格阳",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 77,
+   "sec": 2040.5,
+   "mmss": "34:01",
+   "grid": "grid08.jpg",
+   "row": 7,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 78,
+   "sec": 2064,
+   "mmss": "34:24",
+   "grid": "grid08.jpg",
+   "row": 8,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 79,
+   "sec": 2116,
+   "mmss": "35:16",
+   "grid": "grid08.jpg",
+   "row": 9,
+   "line": "有些病人病了很久",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 80,
+   "sec": 2157,
+   "mmss": "35:57",
+   "grid": "grid08.jpg",
+   "row": 10,
+   "line": "会呕吐掉",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 81,
+   "sec": 2181.3,
+   "mmss": "36:21",
+   "grid": "grid09.jpg",
+   "row": 1,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 82,
+   "sec": 2198.5,
+   "mmss": "36:39",
+   "grid": "grid09.jpg",
+   "row": 2,
+   "line": "所谓循衣摸床 撮空理线",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 83,
+   "sec": 2216.8,
+   "mmss": "36:57",
+   "grid": "grid09.jpg",
+   "row": 3,
+   "line": "那么反之",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 84,
+   "sec": 2237.5,
+   "mmss": "37:18",
+   "grid": "grid09.jpg",
+   "row": 4,
+   "line": "我记得印象很深",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 85,
+   "sec": 2255,
+   "mmss": "37:35",
+   "grid": "grid09.jpg",
+   "row": 5,
+   "line": "因为有个外科医生不错的",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 86,
+   "sec": 2272,
+   "mmss": "37:52",
+   "grid": "grid09.jpg",
+   "row": 6,
+   "line": "准备吃饭的时候",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 87,
+   "sec": 2301,
+   "mmss": "38:21",
+   "grid": "grid09.jpg",
+   "row": 7,
+   "line": "现是病人做无意识的动作",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 88,
+   "sec": 2321.8,
+   "mmss": "38:42",
+   "grid": "grid09.jpg",
+   "row": 8,
+   "line": "你讲的就是我们中医",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 89,
+   "sec": 2342.5,
+   "mmss": "39:03",
+   "grid": "grid09.jpg",
+   "row": 9,
+   "line": "阳证可以出现神昏谵语",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 90,
+   "sec": 2363,
+   "mmss": "39:23",
+   "grid": "grid09.jpg",
+   "row": 10,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 91,
+   "sec": 2411.5,
+   "mmss": "40:12",
+   "grid": "grid10.jpg",
+   "row": 1,
+   "line": "像鲜竹沥里面加几滴姜的姜汁",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 92,
+   "sec": 2438,
+   "mmss": "40:38",
+   "grid": "grid10.jpg",
+   "row": 2,
+   "line": "搞社交那个地方没有像样的医院",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 93,
+   "sec": 2466.5,
+   "mmss": "41:07",
+   "grid": "grid10.jpg",
+   "row": 3,
+   "line": "高烧痰又多",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 94,
+   "sec": 2527,
+   "mmss": "42:07",
+   "grid": "grid10.jpg",
+   "row": 4,
+   "line": "这个清热化痰",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 95,
+   "sec": 2564,
+   "mmss": "42:44",
+   "grid": "grid10.jpg",
+   "row": 5,
+   "line": "比方说小儿麻疹合并肺炎",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 96,
+   "sec": 2605.5,
+   "mmss": "43:26",
+   "grid": "grid10.jpg",
+   "row": 6,
+   "line": "中药非常微妙",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 97,
+   "sec": 2648.3,
+   "mmss": "44:08",
+   "grid": "grid10.jpg",
+   "row": 7,
+   "line": "你不要以为实验室的效果好",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 98,
+   "sec": 2687.3,
+   "mmss": "44:47",
+   "grid": "grid10.jpg",
+   "row": 8,
+   "line": "温肾救逆回阳救逆",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 99,
+   "sec": 2744,
+   "mmss": "45:44",
+   "grid": "grid10.jpg",
+   "row": 9,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 100,
+   "sec": 2787.3,
+   "mmss": "46:27",
+   "grid": "grid10.jpg",
+   "row": 10,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 101,
+   "sec": 2811.5,
+   "mmss": "46:52",
+   "grid": "grid11.jpg",
+   "row": 1,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 102,
+   "sec": 2834.5,
+   "mmss": "47:15",
+   "grid": "grid11.jpg",
+   "row": 2,
+   "line": "这个比较单纯",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 103,
+   "sec": 2861,
+   "mmss": "47:41",
+   "grid": "grid11.jpg",
+   "row": 3,
+   "line": "柔肝有",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 104,
+   "sec": 2891.5,
+   "mmss": "48:12",
+   "grid": "grid11.jpg",
+   "row": 4,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 105,
+   "sec": 2917,
+   "mmss": "48:37",
+   "grid": "grid11.jpg",
+   "row": 5,
+   "line": "因为颠顶这一块就是百会",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 106,
+   "sec": 2939.5,
+   "mmss": "48:60",
+   "grid": "grid11.jpg",
+   "row": 6,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 107,
+   "sec": 2959.8,
+   "mmss": "49:20",
+   "grid": "grid11.jpg",
+   "row": 7,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 108,
+   "sec": 2984.8,
+   "mmss": "49:45",
+   "grid": "grid11.jpg",
+   "row": 8,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 109,
+   "sec": 3013.5,
+   "mmss": "50:14",
+   "grid": "grid11.jpg",
+   "row": 9,
+   "line": "用吴茱萸汤也可以",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 110,
+   "sec": 3036.3,
+   "mmss": "50:36",
+   "grid": "grid11.jpg",
+   "row": 10,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 111,
+   "sec": 3056,
+   "mmss": "50:56",
+   "grid": "grid12.jpg",
+   "row": 1,
+   "line": "有时候是三克五克六克",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 112,
+   "sec": 3076,
+   "mmss": "51:16",
+   "grid": "grid12.jpg",
+   "row": 2,
+   "line": "就这个药不好用",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 113,
+   "sec": 3102,
+   "mmss": "51:42",
+   "grid": "grid12.jpg",
+   "row": 3,
+   "line": "实在是那个清涎啊",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 114,
+   "sec": 3124,
+   "mmss": "52:04",
+   "grid": "grid12.jpg",
+   "row": 4,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 115,
+   "sec": 3159,
+   "mmss": "52:39",
+   "grid": "grid12.jpg",
+   "row": 5,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 116,
+   "sec": 3177,
+   "mmss": "52:57",
+   "grid": "grid12.jpg",
+   "row": 6,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 117,
+   "sec": 3196,
+   "mmss": "53:16",
+   "grid": "grid12.jpg",
+   "row": 7,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 118,
+   "sec": 3226.8,
+   "mmss": "53:47",
+   "grid": "grid12.jpg",
+   "row": 8,
+   "line": "这个方子温通血脉",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 119,
+   "sec": 3250.5,
+   "mmss": "54:11",
+   "grid": "grid12.jpg",
+   "row": 9,
+   "line": "还用在脉管炎",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 120,
+   "sec": 3272.8,
+   "mmss": "54:33",
+   "grid": "grid12.jpg",
+   "row": 10,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 121,
+   "sec": 3303,
+   "mmss": "55:03",
+   "grid": "tail-grid01.jpg",
+   "row": 1,
+   "line": "就赶紧吃当归四逆汤合四妙勇安汤",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 122,
+   "sec": 3319,
+   "mmss": "55:19",
+   "grid": "tail-grid01.jpg",
+   "row": 2,
+   "line": "当归四逆汤治疗痛经",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 123,
+   "sec": 3334.3,
+   "mmss": "55:34",
+   "grid": "tail-grid01.jpg",
+   "row": 3,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 124,
+   "sec": 3344.8,
+   "mmss": "55:45",
+   "grid": "tail-grid01.jpg",
+   "row": 4,
+   "line": "子宫内膜增生",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 125,
+   "sec": 3351.5,
+   "mmss": "55:52",
+   "grid": "tail-grid01.jpg",
+   "row": 5,
+   "line": "中医就是这样的",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 126,
+   "sec": 3360.8,
+   "mmss": "56:01",
+   "grid": "tail-grid01.jpg",
+   "row": 6,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 127,
+   "sec": 3372.8,
+   "mmss": "56:13",
+   "grid": "tail-grid01.jpg",
+   "row": 7,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 128,
+   "sec": 3379.8,
+   "mmss": "56:20",
+   "grid": "tail-grid01.jpg",
+   "row": 8,
+   "line": "另外你要认识这样一个问题",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 129,
+   "sec": 3389,
+   "mmss": "56:29",
+   "grid": "tail-grid01.jpg",
+   "row": 9,
+   "line": "寒凝则血滞",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 130,
+   "sec": 3398.5,
+   "mmss": "56:39",
+   "grid": "tail-grid01.jpg",
+   "row": 10,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 131,
+   "sec": 3411,
+   "mmss": "56:51",
+   "grid": "tail-grid02.jpg",
+   "row": 1,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 132,
+   "sec": 3420.5,
+   "mmss": "57:01",
+   "grid": "tail-grid02.jpg",
+   "row": 2,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 133,
+   "sec": 3426.8,
+   "mmss": "57:07",
+   "grid": "tail-grid02.jpg",
+   "row": 3,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 134,
+   "sec": 3442.8,
+   "mmss": "57:23",
+   "grid": "tail-grid02.jpg",
+   "row": 4,
+   "line": "你不要看到这个痛经就想到桃红四物",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 135,
+   "sec": 3451.5,
+   "mmss": "57:32",
+   "grid": "tail-grid02.jpg",
+   "row": 5,
+   "line": "哪有用这个东西呢",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 136,
+   "sec": 3459.5,
+   "mmss": "57:40",
+   "grid": "tail-grid02.jpg",
+   "row": 6,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 137,
+   "sec": 3468.8,
+   "mmss": "57:49",
+   "grid": "tail-grid02.jpg",
+   "row": 7,
+   "line": "所以今后同学们碰到这个病",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 138,
+   "sec": 3477.8,
+   "mmss": "57:58",
+   "grid": "tail-grid02.jpg",
+   "row": 8,
+   "line": "多数都是虚寒",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 139,
+   "sec": 3488.3,
+   "mmss": "58:08",
+   "grid": "tail-grid02.jpg",
+   "row": 9,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 140,
+   "sec": 3505,
+   "mmss": "58:25",
+   "grid": "tail-grid02.jpg",
+   "row": 10,
+   "line": "为什么你就要用活血的药去化瘀呢",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 141,
+   "sec": 3515.3,
+   "mmss": "58:35",
+   "grid": "tail-grid03.jpg",
+   "row": 1,
+   "line": "你这不光用桃仁红花吧",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 142,
+   "sec": 3531.8,
+   "mmss": "58:52",
+   "grid": "tail-grid03.jpg",
+   "row": 2,
+   "line": "用当归四逆汤温通经脉很见效的",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 143,
+   "sec": 3539.5,
+   "mmss": "58:60",
+   "grid": "tail-grid03.jpg",
+   "row": 3,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 144,
+   "sec": 3550.5,
+   "mmss": "59:11",
+   "grid": "tail-grid03.jpg",
+   "row": 4,
+   "line": "它就是中医有效的",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 145,
+   "sec": 3573.5,
+   "mmss": "59:34",
+   "grid": "tail-grid03.jpg",
+   "row": 5,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 146,
+   "sec": 3584.3,
+   "mmss": "59:44",
+   "grid": "tail-grid03.jpg",
+   "row": 6,
+   "line": "谈到了这个当归四逆汤的组方问题",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 147,
+   "sec": 3605.8,
+   "mmss": "60:06",
+   "grid": "tail-grid03.jpg",
+   "row": 7,
+   "line": null,
+   "kind": "none"
+  },
+  {
+   "idx": 148,
+   "sec": 3611,
+   "mmss": "60:11",
+   "grid": "tail-grid03.jpg",
+   "row": 8,
+   "line": "所以我的观点就是",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 149,
+   "sec": 3621.5,
+   "mmss": "60:22",
+   "grid": "tail-grid03.jpg",
+   "row": 9,
+   "line": "没有生姜是不行的",
+   "kind": "subtitle"
+  },
+  {
+   "idx": 150,
+   "sec": 3630.5,
+   "mmss": "60:31",
+   "grid": "tail-grid03.jpg",
+   "row": 10,
+   "line": "那个痛经",
+   "kind": "subtitle"
+  }
+ ]
+}

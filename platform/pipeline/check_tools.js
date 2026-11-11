@@ -67,6 +67,41 @@ const TOOLS = [
       linux: 'sudo apt install pandoc',
     },
   },
+  {
+    // 图的两条链各管一类：matplotlib 管数据图（.py），mermaid 管结构图（.mmd）。
+    // 两者都不是教材正文的必需项 —— 没有图的书仍然是书，所以说 needed:false。
+    name: 'matplotlib',
+    stage: '[textbooks] · 数据图（figures/*.py）',
+    needed: false,
+    find: () => {
+      const m = tools.probeMatplotlib();
+      return m ? m.path : null;
+    },
+    note: () => {
+      const m = tools.probeMatplotlib();
+      return m ? `matplotlib ${m.version}` : '';
+    },
+    install: {
+      win32: 'python -m pip install matplotlib -i https://mirrors.aliyun.com/pypi/simple/',
+      darwin: 'pip3 install matplotlib',
+      linux: 'pip3 install matplotlib',
+    },
+  },
+  {
+    name: 'mermaid',
+    stage: '[textbooks] · 结构图（figures/*.mmd）',
+    needed: false,
+    find: () => {
+      const p = require('node:path').join(__dirname, '..', '..', 'scripts', 'figures', 'vendor', 'mermaid.min.js');
+      return require('node:fs').existsSync(p) ? p : null;
+    },
+    note: () => '10.9.1 · vendor 内置，借 Edge/Chrome 无头渲染',
+    install: {
+      win32: 'curl -sSL -o scripts/figures/vendor/mermaid.min.js https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js',
+      darwin: '同上（见 textbooks/FIGURES.md）',
+      linux: '同上（见 textbooks/FIGURES.md）',
+    },
+  },
 ];
 
 function version(cmd) {
@@ -90,7 +125,7 @@ for (const r of results) {
   console.log(`  ${r.name.padEnd(10)} ${tag}`);
   console.log(`     阶段: ${r.stage}`);
   if (ok) {
-    const v = r.name === 'headless-browser' ? '' : version(r.path);
+    const v = ['headless-browser', 'matplotlib'].includes(r.name) ? '' : version(r.path);
     if (v) console.log(`     版本: ${v}`);
     console.log(`     路径: ${r.path}`);
     if (r.note) console.log(`     后端: ${r.note()}`);

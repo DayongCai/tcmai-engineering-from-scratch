@@ -22,8 +22,21 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/08-wuguan/14-zhongyi-sangyin-yixue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 101,
+    "words": 25940,
+    "status": "wip",
+    "layer": "external-source",
+    "origin": "external",
+    "source": "standards/materials/textbooks-batch/external-registry.json#chonglou-yuyao",
+    "external": {
+      "id": "chonglou-yuyao",
+      "title": "重樓玉鑰",
+      "url": "https://jicheng.tw/tcm/book/%E9%87%8D%E6%A8%93%E7%8E%89%E9%91%B0/index.html",
+      "sha256": "6d565fbe372d0d29535340302a66926bf016a12f181b334815323ff339400c25",
+      "baseText": "北京大學圖書館掃描本",
+      "fetchedAt": "2026-10-21",
+      "coverage": "古籍可对上的部分；现代内容未覆盖"
+    },
+    "extractedAt": "2026-10-21"
   }
 }

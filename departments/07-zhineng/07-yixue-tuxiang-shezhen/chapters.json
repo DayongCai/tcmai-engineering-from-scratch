@@ -1,66 +1,87 @@
 {
-  "slug": "07-yixue-tuxiang-shezhen",
-  "title": "医学图像处理与舌诊客观化",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-caiji-biaoding",
-      "title": "图像的采集、标定与色彩空间",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-yuchuli-fenge",
-      "title": "预处理：去噪、分割与配准",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-juanji-jiegou",
-      "title": "卷积网络的基本结构",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-sheti-fenli",
-      "title": "舌体分割与舌苔分离",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-yanse-wenli",
-      "title": "颜色与纹理特征的量化",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-shujuji-biaozhu",
-      "title": "数据集构建与标注一致性",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-fenlei-huigui",
-      "title": "分类与回归：舌象 → 证候",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-reliitu-jieshi",
-      "title": "模型的可解释性与热力图",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-fahua-wenti",
-      "title": "跨设备与跨人群的泛化",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-xiaodu-yanzheng",
-      "title": "舌诊客观化的效度验证",
-      "status": "📋"
-    }
-  ]
+ "slug": "07-yixue-tuxiang-shezhen",
+ "title": "医学图像识别",
+ "note": "10 章 = 教材 10 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-img1",
+   "title": "中医图像从哪来：舌象、面象与图谱",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-img2",
+   "title": "采集与质控：光照、色卡与重复性",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-img3",
+   "title": "图像特征与降维",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-img4",
+   "title": "卷积与表征学习",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-img5",
+   "title": "分类任务的写法：样本、标签与代价",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-img6",
+   "title": "类别不平衡与误判的代价",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-img7",
+   "title": "集成与稳健性",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-img8",
+   "title": "标注规范与判读一致性",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-img9",
+   "title": "可解释输出：图上看什么",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-img10",
+   "title": "边界：影像不外流、结果不下诊断",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

@@ -103,7 +103,14 @@ function synthEdge(text, outWav) {
     '--text', text,
     '--write-media', outWav,
   ], { encoding: 'utf8' });
-  return r.status === 0;
+  // 退出码 0 不等于出了音频：实测过 edge-tts 远端断开仍 exit 0、留下 0 字节文件，
+  // 后续 ffprobe 拿不到时长，字幕层只好按字数猜——所以这里必须验体积。
+  if (r.status !== 0) return false;
+  try {
+    return fs.statSync(outWav).size >= 1024;
+  } catch {
+    return false;
+  }
 }
 
 function synthSapi(text, outWav) {
@@ -184,13 +191,25 @@ for (const ch of chapters) {
   let made = 0;
   let skipped = 0;
   let failed = 0;
+  // 按章清零：写过累计值，整册跑时第 N 章的实测时长会变成前 N 章之和
+  let chapterSec = 0;
 
   for (const seg of narr.segments) {
     const nnn = String(seg.n).padStart(3, '0');
     const mp3 = path.join(audioDir, `${nnn}.mp3`);
     const wav = path.join(tmpDir, `${ch}-${nnn}.wav`);
 
-    if (!force && (fs.existsSync(mp3) || fs.existsSync(path.join(audioDir, `${nnn}.wav`)))) {
+    const existingOk = [mp3, path.join(audioDir, `${nnn}.wav`)].find((p) => {
+      try { return fs.statSync(p).size >= 1024; } catch { return false; }
+    });
+    if (!force && existingOk) {
+      // 跳过不等于不计时：只累加新合成的秒数会让总时长归零（重跑一次就把实测值冲成 0）。
+      // 所以跳过也要 ffprobe 一遍已存在的文件，把时长补进 totalSec。
+      const existing = existingOk;
+      const dur = probeDuration(existing);
+      if (Number.isFinite(dur)) chapterSec += dur;
+      seg.audio = path.basename(existing);
+      seg.audioSeconds = Number.isFinite(dur) ? Number(dur.toFixed(2)) : seg.audioSeconds ?? null;
       skipped += 1;
       continue;
     }
@@ -199,7 +218,13 @@ for (const ch of chapters) {
     const text = seg.spoken || seg.text;
     if (!seg.spoken) console.log(`     ⚠ 第 ${seg.n} 段无 spoken 字段（旧版讲稿），用 text 合成`);
 
-    const ok = backend.kind === 'edge' ? synthEdge(text, mp3) : synthSapi(text, wav);
+    // edge-tts 偶发「exit 0 但 0 字节」（远端断开）：同一次跑里就地重试一次，
+    // 否则整册批量会卡在某一段，人得手动删文件重跑（05-qi-xue-jin-ye 就是这么卡的）。
+    let ok = backend.kind === 'edge' ? synthEdge(text, mp3) : synthSapi(text, wav);
+    if (!ok) {
+      console.log(`     ↻ 第 ${seg.n} 段首次失败，重试一次`);
+      ok = backend.kind === 'edge' ? synthEdge(text, mp3) : synthSapi(text, wav);
+    }
     if (!ok) {
       console.error(`     ✗ 第 ${seg.n} 段合成失败`);
       failed += 1;
@@ -217,7 +242,7 @@ for (const ch of chapters) {
     // 用 ffprobe 拿真实时长——只有真实时长才能进字幕与进度条
     const target_file = fs.existsSync(mp3) ? mp3 : path.join(audioDir, `${nnn}.wav`);
     const dur = probeDuration(target_file);
-    if (Number.isFinite(dur)) totalSec += dur;
+    if (Number.isFinite(dur)) chapterSec += dur;
 
     seg.audio = path.basename(target_file);
     seg.audioSeconds = Number.isFinite(dur) ? Number(dur.toFixed(2)) : null;
@@ -227,9 +252,29 @@ for (const ch of chapters) {
     console.log(`     ${nnn}.${path.extname(target_file).slice(1)}  ${(dur ? dur.toFixed(1) + 's' : '时长未知').padStart(7)}  ${size.padStart(5)} KB`);
   }
 
+  // 补洞：个别段在合成瞬间 ffprobe 可能瞬时失败（并发跑两个进程时见过），
+  // audioSeconds 会是 null —— 字幕层再探一次就能拿到，两边于是对不上。
+  // 这里统一重探一遍，仍然拿不到就计为失败，不许留 null 混进总时长。
+  for (const seg of narr.segments) {
+    if (seg.audioSeconds !== null && seg.audioSeconds !== undefined) continue;
+    const nnn = String(seg.n).padStart(3, '0');
+    const f = [path.join(audioDir, `${nnn}.mp3`), path.join(audioDir, `${nnn}.wav`)].find((p) => fs.existsSync(p));
+    const dur = f ? probeDuration(f) : NaN;
+    if (Number.isFinite(dur)) {
+      seg.audio = path.basename(f);
+      seg.audioSeconds = Number(dur.toFixed(2));
+      chapterSec += dur;
+      console.log(`     ↩ 第 ${seg.n} 段补探时长 ${dur.toFixed(1)}s`);
+    } else {
+      failed += 1;
+      console.error(`     ✗ 第 ${seg.n} 段无可用时长（文件${f ? '在' : '缺失'}）`);
+    }
+  }
+
   // 回填真实时长到讲稿（估算值保留，便于对照）
   narr.audioBackend = backend.label;
-  narr.audioMeasuredSeconds = Number(totalSec.toFixed(2));
+  narr.audioMeasuredSeconds = Number(chapterSec.toFixed(2));
+  totalSec += chapterSec;
   narr.estimateVsActual = 'estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定';
   fs.writeFileSync(narrPath, `${JSON.stringify(narr, null, 2)}\n`, 'utf8');
 

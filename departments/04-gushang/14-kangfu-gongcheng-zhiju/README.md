@@ -1,77 +1,61 @@
 # 康复工程与支具学
 
-> 支具设计→参数化建模 / 3D 打印→增材制造流程
+**14-kangfu-gongcheng-zhiju** · 骨伤学院 · 8 章 · 33 单元 · 201,028 汉字
 
-| 项目 | 内容 |
-|------|------|
-| 院系 | 🦴 骨伤系 `04-gushang` |
-| 类型 | Build |
-| 学期 | 第 8 学期（🌳 壮·鼎盛 / 大四） |
-| 学时 | 54 |
-| 章节目标 | 8 |
-| 学科编号 | 059 / 120 |
-| 英文名 | Rehab Engineering & Orthotics |
+> 支具的作用只有三种：替代、限制、矫正；材料决定强度，也决定患者愿不愿意戴
 
-## 一、学科定位
+**课程类型：派生课（无独立教材）**。单元正文逐字取自父课，`locator` 一律 `派生·第N章·m.k`，
+`source` 记 `父课:父locator`；本课汉字**不与父课相加**。
 
-康复工程与支具学（Rehab Engineering & Orthotics）是骨伤系的核心学科，聚焦「正骨理筋—骨病退变—运动损伤与康复工程」中的一个完整知识域。
+## 一、父课
 
-## 二、中医 → AI 桥梁
+- `kangfu-huli`
+- `shoufa`
+- `zhenggu`
 
-```text
-支具设计→参数化建模 / 3D 打印→增材制造流程
-```
+## 二、章表
 
-康复工程与支具学 里的每一个传统概念，都被翻译成一个可计算、可验证的工程对象：
-中医概念给出**语义与约束**，AI/工程方法给出**表示与算法**。两者必须能互相回指，
-否则这个章节就还没有写完。
+| # | 章 | 父课来源 | 单元 | 汉字 |
+|--:|---|---|--:|--:|
+| 1 | 康复工程概论 | kangfu-huli、zhenggu | 3 | 37,935 |
+| 2 | 支具分类与材料 | kangfu-huli、zhenggu | 5 | 11,116 |
+| 3 | 脊柱支具 | kangfu-huli、zhenggu | 6 | 11,552 |
+| 4 | 上肢支具 | kangfu-huli、shoufa | 3 | 14,890 |
+| 5 | 下肢支具 | kangfu-huli、zhenggu | 5 | 11,205 |
+| 6 | 矫形鞋与压力治疗 | kangfu-huli、zhenggu | 5 | 11,718 |
+| 7 | 助行器、轮椅与转移辅具 | kangfu-huli、zhenggu | 3 | 51,899 |
+| 8 | 适配评估与随访 | kangfu-huli、jichu-huli | 3 | 50,713 |
 
-## 三、章节地图（目标 8 章）
+## 三、三辨与四位面（实测）
 
-章节尚未编写。运行脚手架开章：
+| 三辨 | 词频 |
+|---|--:|
+| **支具与材料** | **356** |
+| **适配与制作** | **194** |
+| **评估与随访** | **773** |
+
+三辨极差 **4.0×**。三辨 5.1×——「评估/随访」在父课里是高频词（护理文本特点），而「取型/制作」写得少；偏斜如实保留。
+
+| 四位面（章群结构分区） | 汉字 |
+|---|---:|
+| 概论与材料 | 49,051 |
+| 脊柱与上肢 | 26,442 |
+| 下肢与足部 | 22,923 |
+| 辅具与随访 | 102,612 |
+
+四位面极差 **4.5×**（结构分区，不用词频）。
+
+## 四、判据
+
+支具的作用只有三种：替代、限制、矫正；材料决定强度，也决定患者愿不愿意戴。每章要求写清：**适应证与禁忌、操作/适配要点、可核的记录项、随访节点**。
+
+## 五、章内可执行验证
 
 ```bash
-node scripts/scaffold_chapter.js 04-gushang/14-kangfu-gongcheng-zhiju 01-<chapter-slug>
+node scripts/audit_curriculum.js | grep -A2 "14-kangfu-gongcheng-zhiju"
+node tests/test_chapter_code.js | grep -c "14-kangfu-gongcheng-zhiju"
+python scripts/_derive_gs2.py
 ```
 
-编写完成后，把章节索引写进 `chapters.json`，本表的「状态」列由
-`scripts/build_catalog.js` 自动填充。
-
-## 四、章节契约（每章必须满足）
-
-```text
-chapters/NN-<slug>/
-├── docs/zh.md      # MOTTO / PROBLEM / 环境逼迫 / 知识积累 / CONCEPT / BUILD IT / USE IT / SHIP IT
-├── code/           # 可运行、自终止、退出码 0（Node.js 或 Python，见 AGENTS.md 依赖白名单）
-├── quiz.json       # 恰好 6 题 = 1 pre + 3 check + 2 post
-└── outputs/        # 可复用产出物（prompt / skill / agent / mcp / 临床工具）
-```
-
-## 五、教材交付 [textbooks]
-
-```text
-输出: textbooks/04-gushang/14-kangfu-gongcheng-zhiju/
-├── 00-前言.md
-├── 01-第1章-<标题>.md   ...
-└── figures/                # Mermaid / SVG，禁止 ASCII 框图
-```
-
-## 六、平台交付 [tcmP]
-
-```text
-输出: platform/courses/04-gushang/14-kangfu-gongcheng-zhiju/
-├── course.yaml             # 课程元数据 + 章节 → 视频映射
-├── slides/                 # 讲稿 HTML（由 docs/zh.md 派生）
-├── narration/              # TTS 旁白文本 + 音频
-└── video/                  # 成片 MP4（H.264 / 720p 以上）
-```
-
-## 七、进度
-
-| 指标 | 当前 | 目标 |
-|------|------|------|
-| 章节 | 0 | 8 |
-| 视频 | 0 | 8 |
-| 教材字数 | 0 | ≈ 48000 |
-
-> 状态字形：🌱 未开始 ⬚ · 🚧 进行中 · ✅ 完成
+**免责声明：** 本课为教学材料；无独立教材，内容为本库已建课程的**二次编排**。
+手法、支具适配与评定须由执业人员执行，不构成诊疗建议。

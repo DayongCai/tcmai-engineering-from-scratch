@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>第 45 章 · 慢性神经功能障碍：部位与储备，而不是时间与压力 · 幻灯片</title>
+<style>
+
+:root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
+--jade:#1f6f5c;--jade-soft:#e3efe9;--cinnabar:#a8321e;--cinnabar-soft:#f7e6e2;--gold:#a8862a;
+--sans:system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;
+--serif:"Songti SC","Noto Serif SC",Georgia,serif;
+--mono:ui-monospace,"Cascadia Mono",Consolas,monospace;}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#12110f;color:var(--ink);font-family:var(--sans)}
+#deck{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{min-height:100%;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;
+  padding:5vh 7vw;background:var(--paper);border-bottom:1px solid #000}
+.slide-inner{max-width:1000px;width:100%;margin:0 auto}
+.slide-foot{max-width:1000px;width:100%;margin:3vh auto 0;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+h1.big{font-family:var(--serif);font-size:clamp(28px,4.4vw,54px);line-height:1.25;margin:0}
+blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-height:1.6;margin:0;
+  border-left:6px solid var(--gold);padding-left:24px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--jade);
+  text-transform:uppercase;margin-bottom:14px}
+.kicker.warn{color:var(--cinnabar)}
+p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
+.compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
+.compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+/* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
+.math{font-style:italic;font-family:var(--serif)}
+.math-block{display:block;text-align:center;font-family:var(--serif);font-size:1.05em;margin:.8em 0}
+.math-op,.math-text,.math-rm{font-style:normal}
+.math-op{padding:0 .12em}
+.math-cal{font-style:normal}
+.math-bb{font-style:normal;font-weight:700}
+.frac{display:inline-block;vertical-align:middle;text-align:center;font-style:normal;margin:0 .15em;line-height:1.15}
+.frac-num{display:block;padding:0 .3em;border-bottom:1px solid currentColor}
+.frac-den{display:block;padding:0 .3em}
+.math-sqrt{font-style:normal;margin-right:.05em}
+.math-line{border-top:1px solid currentColor;font-style:normal;padding-top:.05em}
+.math-note{font-size:.8em;font-style:normal}
+.figure-host{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+#hud{position:fixed;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#8a8578;
+  background:#faf8f3cc;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
+@media print{.slide{page-break-after:always;min-height:auto}#hud{display:none}}
+</style>
+</head>
+<body>
+<div id="deck">
+<section class="slide" data-i="0">
+  <div class="slide-inner"><h1 class="big">第 45 章 · 慢性神经功能障碍：部位与储备，而不是时间与压力</h1></div>
+  <div class="slide-foot"><span>1 / 27</span><span>title</span></div>
+</section>
+<section class="slide" data-i="1">
+  <div class="slide-inner"><blockquote class="motto">「同一疾病在不同阶段的表现差异，往往大于不同疾病之间的差异」——补充·hermes-病理生理学讲义·第45章·45.1（《hermes-病理生理学讲义·第45章·45.1》）</blockquote></div>
+  <div class="slide-foot"><span>2 / 27</span><span>motto</span></div>
+</section>
+<section class="slide" data-i="2">
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">慢性神经病最省力的学法是按病名背症状清单：阿尔茨海默病记记忆，帕金森病记震颤，多发性硬化记复发缓解，癫痫记抽搐。四张清单背下来能答题，却答不了长期照护里天天出现的那个问题——这一位现在的表现，是病程在走，还是可治的并发症在拖。讲义把继发后果单列成一节不是凑数，而是因为慢性病的关键变量与急性病不同：急性病看时间与压力，慢性病看部位与储备。这一章要交的不是四张清单，是一条把变性、脱髓鞘、癫痫三条主线接进来的判断框架。</p></div>
+  <div class="slide-foot"><span>3 / 27</span><span>problem</span></div>
+</section>
+<section class="slide" data-i="3">
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（面对一位逐渐不肯吃饭、走路拖步、夜里喊叫的家人，问的是“这是不是老了”“要不要去医院”这类没有标准答案的问题。此时需要的不是病名，而是分清哪一部分是原发缺损、哪一部分是可干预的继发后果——这个分法没有人替你补上，它只能在反复的评估里长出来）+ 知识积累（本章 11 节 47 段 3004 汉字的正文里，环路一词落在四节、储备与继发各落在两节，而 45.2、45.5、45.7 三节各自收在同一个意思上：环路与部位决定表现。这个写法说明重心在部位而不在病名——读不出这一点，45.3 与 45.4 就会被当成两套症状记忆，而不是同一条变性逻辑的两处落点）</p></div>
+  <div class="slide-foot"><span>4 / 27</span><span>roots</span></div>
+</section>
+<section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、先把变量换掉（45.1）</div>
+                <div class="compact"><p>急性病那一章问的是“此刻走到哪一步”，慢性病这一章问的是“哪一处环路在退、还剩多少储备”。两个问法对应两套变量：前者是时间与压力，后者是部位与储备。</p>
+<p>讲义把慢性神经功能障碍的共同点概括为四条：神经元不可逆丢失或功能持续受损；病程以年计；代偿储备被逐步消耗；症状由可代偿走向失代偿。四条合起来推出一句很有分量的话：</p>
+<blockquote><p>「同一疾病在不同阶段的表现差异，往往大于不同疾病之间的差异」——补充·hermes-病理生理学讲义·第45章·45.1</p></blockquote>
+<p>这句话改变了分类的意义。按病名分类，是把同一阶段的不同病放在一起；按阶段分类，是把同一病的不同阶段分开看。后者更接近床边，因为床边的困难从来不是“这是什么病”，而是“现在处在哪一段”。</p></div></div>
+  <div class="slide-foot"><span>5 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、先把变量换掉（45.1）</div>
+                <div class="compact"><p>三条主线由此展开：变性（神经元选择性死亡）、脱髓鞘（髓鞘与少突胶质细胞受损而轴突相对保留）、癫痫（兴奋—抑制网络失衡）。三者并非互斥：多发性硬化患者可出现癫痫，阿尔茨海默病可有肌阵挛，卒中后既可有变性样退变也可有癫痫。讲义特意点明这一点，是为了防止读者把三条线读成三个抽屉。</p></div></div>
+  <div class="slide-foot"><span>6 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、变性：一条共同的机制，五处不同的落点（45.2–45.5）</div>
+                <div class="compact"><h3 id="45-2-五条共同机制">45.2 五条共同机制</h3>
+<p>讲义列了五条：蛋白错误折叠与聚集、选择性易损性、能量与清除系统衰竭、神经炎症、朊蛋白病作为极端范例。</p>
+<p>第一条最值得展开。β-淀粉样蛋白、tau、α-突触核蛋白、TDP-43、突变亨廷顿蛋白——构象异常使它们抵抗降解：</p>
+<blockquote><p>「构象异常使其抵抗降解」——补充·hermes-病理生理学讲义·第45章·45.2</p></blockquote>
+<p>抵抗降解只是第一步，第二步才是关键：</p>
+<blockquote><p>「把病理从一个区域传到另一个区域」——补充·hermes-病理生理学讲义·第45章·45.2</p></blockquote>
+<p>这就是“类朊蛋白式播散”。它解释了两件事：为什么变性病往往从一个局限的区域起病，然后按解剖联系扩散；为什么病程以年计而不是以天计——传播靠的是细胞间的接触，速度慢，但方向稳定。帕金森病的“由下而上、逐级播散”假说，用的就是这条机制。</p></div></div>
+  <div class="slide-foot"><span>7 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">二、变性：一条共同的机制，五处不同的落点（45.2–45.5）</div>
+                <div class="compact"><p>第二条（选择性易损性）解释了症状的特异性来源：不同疾病累及不同环路（海马与默认网络、黑质多巴胺神经元、运动神经元、纹状体）。同一个病理蛋白，沉积在不同环路，就是不同的病。</p>
+<p>第三、四条（能量与清除系统衰竭、神经炎症）把变性从“蛋白问题”扩展成“系统问题”：线粒体功能障碍、氧化应激、轴突运输障碍、泛素-蛋白酶体与自噬功能下降，而小胶质细胞的持续激活既清除病理蛋白又释放毒性因子，作用双向。</p>
+<p>第五条是理论上的收口：朊蛋白病证明错误折叠本身即可致病与传播，不需要病原体、不需要基因突变。变性病的“传染性”在这个意义上是一个机制类比，不是一个公共卫生问题。</p>
+<p>机制讲完，讲义立刻回到现实：</p>
+<blockquote><p>「延缓功能丧失、补偿缺损、处理继发问题」——补充·hermes-病理生理学讲义·第45章·45.2</p></blockquote>
+<p>三件事，没有一件是“逆转病因”。这是本章的基调：变性病目前多无法逆转病因，照护的重心在别处。</p>
+<h3 id="45-3-阿尔茨海默病-三联征与三种被误读">45.3 阿尔茨海默病：三联征与三种被误读</h3></div></div>
+  <div class="slide-foot"><span>8 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">二、变性：一条共同的机制，五处不同的落点（45.2–45.5）</div>
+                <div class="compact"><p>病理三联征写得清楚：细胞外 β-淀粉样蛋白斑块、细胞内 tau 神经原纤维缠结、突触与神经元丢失伴脑萎缩（以内侧颞叶与海马最先）。机制要点四条：Aβ 生成与清除失衡（散发型中清除障碍更关键）、tau 过度磷酸化使微管失稳与轴突运输中断、基底前脑胆碱能神经元受累、默认网络连接下降。</p>
+<p>四条里最值得注意的是括号里那句“散发型中清除障碍更关键”。它把 Aβ 从“生产过多”改写成“清理不足”——同一个堆积结果，两种机制，对应两个不同的干预思路。讲义没有展开哪个更好，但把它标出来，读者就知道这里存在分歧。</p>
+<p>临床以情景记忆受损起病：重复提问、丢物、迷路、记不住约定；逐渐累及语言（找词困难）、视空间（穿衣、认路）与执行功能；中晚期出现行为心理症状。讲义补了一句临床上极其重要的话：病程中保留的领域（如社交礼节）常掩盖缺损的严重程度。这句话解释了一个常见的误判——会客时得体的人，可能已经不能独自管钱。</p>
+<p>本节最硬的一句是诊断上的：</p></div></div>
+  <div class="slide-foot"><span>9 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">二、变性：一条共同的机制，五处不同的落点（45.2–45.5）</div>
+                <div class="compact"><blockquote><p>「痴呆不等于阿尔茨海默病」——补充·hermes-病理生理学讲义·第45章·45.3</p></blockquote>
+<p>血管性、路易体、额颞叶变性各有特征。更重要的是必须排除可逆原因：甲状腺功能减退、维生素缺乏、抑郁（假性痴呆）、药物不良反应、硬膜下血肿、正常压力脑积水。讲义把这件事收成一句判断——</p>
+<blockquote><p>「把可逆当不可逆，是这一类疾病最常见的判断错误」——补充·hermes-病理生理学讲义·第45章·45.3</p></blockquote>
+<p>这句话的力度在于它指的不是知识缺口，而是方向性错误：一旦把可逆的当成不可逆的，后面所有的努力都会被取消。</p>
+<h3 id="45-4-帕金森病-环路失衡-不是-多巴胺少了">45.4 帕金森病：环路失衡，不是“多巴胺少了”</h3>
+<p>病理是黑质致密部多巴胺神经元进行性丢失，残存神经元内出现路易小体（α-突触核蛋白）。功能后果讲义写成一个环路账本：直接通路活动下降、间接通路活动增强 → 丘脑-皮层运动输出受抑 → 运动启动困难与动作减少。</p></div></div>
+  <div class="slide-foot"><span>10 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">二、变性：一条共同的机制，五处不同的落点（45.2–45.5）</div>
+                <div class="compact"><p>这个写法比“多巴胺不足所以动不了”精确得多。多巴胺在直接通路上是“开门”的，在间接通路上是“关门”的；同一个递质减少，两条通路的净效应相反，合起来才是运动减少。理解这一层，才能理解为什么单纯补充递质在不同阶段效果不同。</p>
+<p>临床四主征：静止性震颤（搓丸样、情绪紧张时加重、随意运动时减轻）、肌强直（铅管样或齿轮样）、运动迟缓（起步困难、写字变小、面具脸、语音低平）、姿势步态障碍（前倾、慌张步态、冻结）。起病常不对称，自一侧上肢开始——不对称这一条在鉴别上很有用，因为它指向局灶的退变而不是全身性的代谢问题。</p>
+<p>非运动症状的位置值得单独说：</p>
+<blockquote><p>「非运动症状常早于运动症状多年出现」——补充·hermes-病理生理学讲义·第45章·45.4</p></blockquote>
+<p>嗅觉减退、便秘、快速眼动期睡眠行为障碍、抑郁与焦虑。这组症状提示病变并不局限于黑质，支持由下而上、逐级播散的假说。它同时给了临床一个可用的窗口：嗅觉与睡眠问诊可以比运动症状更早提供线索。</p></div></div>
+  <div class="slide-foot"><span>11 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">二、变性：一条共同的机制，五处不同的落点（45.2–45.5）</div>
+                <div class="compact"><p>治疗那一段讲的是“剂末现象”与异动症，机制落在一句话上：</p>
+<blockquote><p>「药物效应取决于受体与储备状态」——补充·hermes-病理生理学讲义·第45章·45.4</p></blockquote>
+<p>突触前多巴胺储存能力下降，血药浓度的波动被直接放大为症状波动。这是药理学上一条很通用的原则：药物的效应不只看剂量，还看靶点还剩多少缓冲。</p>
+<h3 id="45-5-两个极端-als-与亨廷顿病">45.5 两个极端：ALS 与亨廷顿病</h3>
+<p>肌萎缩侧索硬化：上、下运动神经元同时变性，累及皮层、脑干与脊髓前角。表现为肌萎缩与无力（下运动神经元体征）叠加腱反射亢进与病理反射（上运动神经元体征）——这种矛盾组合是其标志；感觉、眼球运动与括约肌多保留。呼吸肌受累是主要死因，吞咽障碍致误吸与营养衰竭是常见并发症。部分患者伴额颞叶谱系的认知与行为改变。</p>
+<p>亨廷顿病：常染色体显性遗传，CAG 三核苷酸重复扩增；纹状体（尾状核）GABA 能神经元丢失 → 舞蹈样不自主运动、执行功能障碍与精神症状。遗传早现（后代发病更早、更重）与重复长度相关，是遗传咨询的核心议题。</p></div></div>
+  <div class="slide-foot"><span>12 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">二、变性：一条共同的机制，五处不同的落点（45.2–45.5）</div>
+                <div class="compact"><p>两病放在一起，是为了收一句：</p>
+<blockquote><p>「同样的病理蛋白，在不同环路沉积就产生完全不同的疾病」——补充·hermes-病理生理学讲义·第45章·45.5</p></blockquote>
+<p>同样的病理蛋白，在不同环路沉积就产生完全不同的疾病。这句是本章的第二个轴：部位。</p></div></div>
+  <div class="slide-foot"><span>13 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">三、脱髓鞘：轴突没死，功能却能全失（45.6–45.7）</div>
+                <div class="compact"><h3 id="45-6-多发性硬化-时间多发-空间多发">45.6 多发性硬化：时间多发 + 空间多发</h3>
+<p>多发性硬化是免疫介导的中枢神经系统白质脱髓鞘，好发于视神经、脑室周围、脊髓、脑干与小脑。</p>
+<blockquote><p>「轴突相对保留，但随病程逐渐丢失，后者决定长期残疾」——补充·hermes-病理生理学讲义·第45章·45.6</p></blockquote>
+<p>这一句把“复发缓解”与“长期残疾”分成两件事：前者由脱髓鞘与炎症决定，后者由轴突的慢性丢失决定。所以“这次发作好了”不等于“病在好转”——两本账，两种趋势。</p>
+<p>机制写得像一条流水线：自身反应性 T 细胞在外周被激活 → 穿越血脑屏障 → 局部炎症、髓鞘破坏与传导阻滞；炎症消退后部分髓鞘可修复，故临床呈复发-缓解。脱髓鞘轴突对温度敏感：体温升高（发热、热水浴、运动）使传导阻滞加重，出现 Uhthoff 现象——症状一过性加重而非新病灶。这与 43.3 的物理约束是同一件事，两章共用同一条机制。</p></div></div>
+  <div class="slide-foot"><span>14 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">三、脱髓鞘：轴突没死，功能却能全失（45.6–45.7）</div>
+                <div class="compact"><p>诊断骨架是时间多发加空间多发。常见表现：视神经炎（单眼视力下降、眼球转动痛、色觉减退）、核间性眼肌麻痹、肢体感觉异常与无力、共济失调、膀胱功能障碍、疲劳（最常见也最易被忽视）。</p>
+<p>讲义在这一节末尾给了一个纯临床的判断：</p>
+<blockquote><p>「症状波动不等于复发」——补充·hermes-病理生理学讲义·第45章·45.6</p></blockquote>
+<p>感染、发热、疲劳、热环境、睡眠不足都可致一过性加重；判断真复发须看持续时间与客观体征，并排除感染与代谢原因。这句话的价值在于它把“波动”与“进展”分开，而这两者对应的处理完全不同。</p>
+<h3 id="45-7-吉兰-巴雷-同一机制-相反体征">45.7 吉兰-巴雷：同一机制，相反体征</h3>
+<p>吉兰-巴雷综合征是急性免疫介导的周围神经脱髓鞘（部分为轴索型），多在感染后一段时间发生，机制是病原抗原与周围神经成分的分子模拟。表现为对称性、上行性弛缓性瘫痪，腱反射消失，可伴感觉异常与自主神经不稳。</p></div></div>
+  <div class="slide-foot"><span>15 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">三、脱髓鞘：轴突没死，功能却能全失（45.6–45.7）</div>
+                <div class="compact"><p>四个危险点：呼吸肌麻痹（观察呼吸费力、说话断续、肺活量下降趋势）、吞咽障碍致误吸、自主神经不稳致血压与心率剧烈波动、深静脉血栓与疼痛。</p>
+<p>讲义把这一节写成了一次对照实验：</p>
+<blockquote><p>「部位决定表现」——补充·hermes-病理生理学讲义·第45章·45.7</p></blockquote>
+<p>同一“脱髓鞘”机制，在中枢表现为反射亢进与病理反射阳性，在周围神经则表现为反射消失与肌萎缩。机制相同、部位不同、体征相反——这是全章反复强调的推理原则，也是 43.10 那张上下运动神经元对照表在慢性病里的第二次兑现。</p></div></div>
+  <div class="slide-foot"><span>16 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">四、癫痫：兴奋与抑制的账（45.8–45.9）</div>
+                <div class="compact"><h3 id="45-8-四个环节">45.8 四个环节</h3>
+<p>癫痫是兴奋与抑制失衡导致的神经元异常同步放电。形成包含四个环节：</p>
+<ul><li><strong>致痫灶</strong>：局部神经元膜兴奋性增高（离子通道改变、抑制性中间神经元丢失、细胞外钾缓冲障碍、谷氨酸能活动增强、胶质细胞功能异常）；</li><li><strong>同步化与募集</strong>：通过突触传递与电场效应使邻近神经元同步放电；</li><li><strong>泛化</strong>：经丘脑-皮层环路与胼胝体扩散为全面性发作；</li><li><strong>发作后状态</strong>：抑制机制启动（GABA、腺苷、离子梯度恢复）与代谢耗竭，表现为嗜睡、意识模糊或局灶无力（Todd 麻痹）。</li></ul>
+<p>四个环节里，第一个是“为什么会有灶”，第二、三个是“灶怎么变成一个发作”，第四个是“发作为什么自己会停”。很多教材只讲前三个，把第四个当作余波；讲义把它单独列出，是因为它解释了发作的自限性与发作后的局灶无力——后者常被误认为新的卒中。</p>
+<p>阈值受多种因素调节：发热、睡眠剥夺、酒精戒断、低血糖、电解质紊乱、闪光刺激、药物相互作用。于是有一句很重要的澄清：</p></div></div>
+  <div class="slide-foot"><span>17 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">四、癫痫：兴奋与抑制的账（45.8–45.9）</div>
+                <div class="compact"><blockquote><p>「有致痫灶不等于总有发作」——补充·hermes-病理生理学讲义·第45章·45.8</p></blockquote>
+<p>灶是结构条件，发作是条件被满足时的事件。这解释了为什么癫痫管理必须同时处理诱因——不是把灶去掉（多数做不到），而是把条件按住。</p>
+<h3 id="45-9-分类与持续状态">45.9 分类与持续状态</h3>
+<p>按起源分局灶性（可伴意识保留或受损，常有先兆，如嗅幻觉、上腹上升感、Déjà vu）与全面性（失神、肌阵挛、强直-阵挛、失张力）；按病因分结构性、遗传性、感染性、代谢性、免疫性与未知。讲义提醒分类的用途：选药方向与预后判断，而非贴标签。</p>
+<p>癫痫持续状态的定义不按分钟数，而按机制：</p>
+<blockquote><p>「发作持续到机体自身终止机制失败」——补充·hermes-病理生理学讲义·第45章·45.9</p></blockquote></div></div>
+  <div class="slide-foot"><span>18 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">四、癫痫：兴奋与抑制的账（45.8–45.9）</div>
+                <div class="compact"><p>这一定义把 45.8 的第四个环节接了上来：正常发作会自己停，持续状态是“停不下来”。机制上是时间依赖性恶化——GABA_A 受体下调与内化、NMDA 受体上调，使同一干预随时间推移效果下降，即越晚越难治。后果包括兴奋毒性损伤、脑水肿、高热、酸中毒、横纹肌溶解、心律失常与吸入性肺炎。</p>
+<p>处理逻辑固定：先稳定气道、呼吸与循环，尽快终止发作，再查找病因。讲义不涉及具体药物与剂量，本书照此执行。</p></div></div>
+  <div class="slide-foot"><span>19 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">五、把原发与继发分开（45.10–45.11）</div>
+                <div class="compact"><h3 id="45-10-一组常被当成-病程本身-的后果">45.10 一组常被当成“病程本身”的后果</h3>
+<p>讲义列出七类继发性、可干预的后果：运动（痉挛、腱反射亢进、阵挛、挛缩、废用性肌萎缩、骨质疏松）、吞咽与营养（误吸、脱水、营养不良、体重下降）、呼吸（通气不足、分泌物清除障碍、睡眠呼吸障碍）、自主神经（体位性低血压、膀胱直肠功能障碍、体温与出汗调节异常）、感觉与疼痛（中枢性疼痛、感觉丧失导致外伤与烫伤）、认知与情绪（注意与执行功能下降、抑郁与焦虑）、社会心理（病耻感、失业、照护者负担与耗竭）。</p>
+<p>这七类没有一类是“神经变性”本身，却都决定生活质量。讲义把它们单列，是为了让读者养成一个分拣动作：看到一个坏转，先问它是原发缺损的延伸，还是可干预的继发后果。</p></div></div>
+  <div class="slide-foot"><span>20 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">五、把原发与继发分开（45.10–45.11）</div>
+                <div class="compact"><p>讲义把这一组称为继发性、可干预的后果，与原发性缺损分栏并列（补充·hermes-病理生理学讲义·第45章·45.10）。这个并列是本章最有实操价值的一处安排，也是护理工作最具价值的着力点：它把“没办法”重新拆成两部分——一部分真的没办法，一部分只是没人管。</p>
+<h3 id="45-11-可塑性与康复的机制">45.11 可塑性与康复的机制</h3>
+<p>可塑性的机制包括：突触效能改变（LTP/LTD）、轴突发芽与侧支形成、皮层代表区重组、网络代偿（对侧半球募集）、髓鞘重塑。可塑性终身存在，但随年龄与抑制性环境（胶质瘢痕、抑制性分子、慢性炎症）而受限。</p>
+<p>康复的机制基础是任务特异性的重复训练：</p>
+<blockquote><p>「训练哪种任务，就重组哪个代表区」——补充·hermes-病理生理学讲义·第45章·45.11</p></blockquote>
+<p>强度、主动性与任务的意义性决定效果，被动维持的效果有限。早期、适量、渐进优于晚期、过量；过度训练可诱发疲劳与疼痛，反而削弱参与。这几句合起来是一条不常见的克制：康复不是越多越好，是越对越好。</p></div></div>
+  <div class="slide-foot"><span>21 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">五、把原发与继发分开（45.10–45.11）</div>
+                <div class="compact"><p>安全照护要点：跌倒与外伤预防（癫痫、痉挛、体位性低血压、视力与视野缺损叠加）、误吸预防（体位、食团性状、进食速度）、皮肤与关节保护、发作时的环境安全与记录（时间、形式、意识、诱因）、用药依从性与相互作用、驾驶与职业限制的告知、照护者培训与 respite 支持。</p></div></div>
+  <div class="slide-foot"><span>22 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">六、把十一节压成一张图</div>
+                <div class="compact"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">45.1 换变量：急性看时间与压力，慢性看部位与储备
+        │  同一病不同阶段的差异 &gt; 不同病之间的差异
+        ▼
+45.2 变性五机制（错误折叠 / 选择性易损 / 能量清除 / 炎症 / 朊蛋白）
+        │  类朊蛋白式播散：病理沿解剖联系逐级扩散
+        ├── 45.3 阿尔茨海默病（内侧颞叶与海马；先排可逆原因）
+        ├── 45.4 帕金森病（黑质 → 基底节环路失衡；非运动症状更早）
+        └── 45.5 ALS / 亨廷顿病（同一机制，不同环路）
+        │
+        ▼
+45.6 多发性硬化（中枢脱髓鞘：反射亢进）· 45.7 吉兰-巴雷（周围：反射消失）
+        │  同一机制，部位决定表现
+        ▼
+45.8 癫痫四环节（灶 → 同步 → 泛化 → 发作后）· 45.9 持续状态（停不下来）
+        │  灶是条件，发作是事件；越晚越难治
+        ▼
+45.10 继发后果七类（可干预，常被当成病程）
+45.11 可塑性与康复（任务特异；早期、适量、渐进）
+        │
+        ▼
+本章的产出：一条“部位 × 储备”的判断框架 + 一个原发/继发的分拣动作</code></pre></div></div></div>
+  <div class="slide-foot"><span>23 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">六、把十一节压成一张图</div>
+                <div class="compact"><p>链上任何一环被跳过，后面都会失真：只读 45.3 与 45.4 不读 45.2，会把两种病记成两套症状；只读 45.6 不读 45.7，会以为脱髓鞘必然表现为反射亢进；读了 45.10 却不做分拣，就会把可干预的并发症当成病程的必然。</p></div></div>
+  <div class="slide-foot"><span>24 / 27</span><span>body</span></div>
+</section>
+<section class="slide" data-i="24">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>引文是讲义正文，不是经典。</strong> 本章引用格式统一为<code>补充·hermes-病理生理学讲义·第N章·N.M</code>，章号等于本课程章号（第 45 章），节号取自讲义 45.1 至 45.11。讲义是本仓库原创教学正文，不是任何外文教材的译本；引用它不等于引用外文教材原文。</li><li><strong>本章丢掉的是什么：数值。</strong> 讲义第 45 章 47 段正文里，数字加计量单位的命中为 0 处（<code>node code/main.js</code> 复算，不照抄声明）。讲义把可量化的地方一律写成方向与类别——进行性、逐渐、一过性、波动——本书照录这个取舍：描述类别可以，给出取值不行。判读量表分数、病程分期、药物剂量这类场景，必须另立数据层，另立来源、版本与校验，并标注不从本书推。</li><li><strong>本章不写数值，也不做换算。</strong> 不写评分阈值、不写分期界值、不写剂量，不把定性描述折算成任何数字；凡遇“多少分算痴呆”“几年算晚期”的追问，统一回答：本书不给值，需另立数据层。</li><li>**本章不作诊断，也不作预后判断。</li></ul></div></div>
+  <div class="slide-foot"><span>25 / 27</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="25">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>** 三条主线与继发后果的分拣都是机制层面的分类，不用于给任何个体定性，也不用于预测病程长短。讲义举的病名只作类别示例。</p>
+<ul><li><strong>词频只描述写法，不描述难度。</strong> 受累环路、储备、继发三词并置，说明讲义把笔墨压在部位与代偿上，不说明癫痫与脱髓鞘可以不学——它们各有整节。同一批词换个词表就会变，本书词表固定在生成脚本里，可复算但不可外推。</li><li><strong>框架不是护理方案。</strong> 第六节那张图说明的是机制之间如何相互约束，不说明任何具体情形的照护顺序。康复强度、进食方式、用药调整均属临床与照护决策，不在本章范围。</li><li><strong>边界声明</strong>：教学边界：本章只说明慢性神经功能障碍的类别与关系，不写数值与单位与正常值，不构成诊断/用药依据；任何个体的状态判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
+  <div class="slide-foot"><span>26 / 27</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="26">
+  <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
+  <div class="slide-foot"><span>27 / 27</span><span>disclaimer</span></div>
+</section>
+</div>
+<div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>
+<script>/**
+ * [tcmP] figures.js —— 中医概念动画图（纯 SVG + rAF，无依赖）
+ *
+ * 自动挂载：文档里写
+ *     <div data-figure="wuxing-cycle"></div>
+ * 即可。支持悬停暂停；系统开启「减少动态效果」时渲染为静态帧。
+ *
+ * 与 ai-engineering-from-scratch 的 site/figures.js 同构（同样的 el/loop/registry 形态），
+ * 图目换成中医概念：
+ *   yin-yang-sigmoid    阴阳 → 二分类：sigmoid 决策边界扫过，样本左右归属翻转
+ *   wuxing-cycle        五行生克：相生正向流动 + 相克五角星流动
+ *   zangxiang-graph     藏象：脏腑 → 官窍 → 情志 的边逐步点亮
+ *   sizhen-fusion       四诊合参：四通道 → 融合层 → 证候输出
+ *   meridian-lookup     经络腧穴：KD-Tree 空间划分 + 最近邻查询
+ *   junchen-attention   君臣佐使：药味 → 权重矩阵高亮
+ */
+
+(function () {
+  'use strict';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── SVG 小工具 ──
+  function el(name, attrs, kids) {
+    const e = document.createElementNS(NS, name);
+    for (const k in attrs || {}) e.setAttribute(k, attrs[k]);
+    (Array.isArray(kids) ? kids : kids ? [kids] : []).filter(Boolean).forEach((c) => e.appendChild(c));
+    return e;
+  }
+  const txt = (s) => document.createTextNode(s);
+
+  function label(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--sans)', 'font-size': 12, fill: 'var(--muted)' },
+      opts || {}
+    ), [txt(s)]);
+  }
+  function mono(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--mono)', 'font-size': 11, fill: 'var(--muted)', 'letter-spacing': '.1em' },
+      opts || {}
+    ), [txt(s)]);
+  }
+
+  function svgRoot(host, W, H, aria) {
+    const svg = el('svg', {
+      viewBox: `0 0 ${W} ${H}`, width: '100%', role: 'img', 'aria-label': aria || '',
+      style: 'display:block;max-width:100%;height:auto',
+    });
+    host.appendChild(svg);
+    return svg;
+  }
+
+  // 悬停暂停 + 时间归一化
+  function loop(host, fn, period, opts) {
+    period = period || 6400;
+    opts = opts || {};
+    let raf, paused = false, t0 = performance.now();
+    const onTick = (now) => {
+      if (!paused) fn((((now - t0) % period) / period));
+      raf = requestAnimationFrame(onTick);
+    };
+    host.addEventListener('mouseenter', () => { paused = true; });
+    host.addEventListener('mouseleave', () => { paused = false; });
+    if (REDUCED) { fn(opts.staticT == null ? 0.62 : opts.staticT); return function () {}; }
+    raf = requestAnimationFrame(onTick);
+    return () => cancelAnimationFrame(raf);
+  }
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeIO = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const sigmoid = (z) => 1 / (1 + Math.exp(-z));
+
+  const FIGURES = {};
+
+  /* ───────────────────── yin-yang-sigmoid ─────────────────────
+     阴阳 → 二分类。左侧散点：X 轴「寒热倾向」，输出 sigmoid 概率。
+     扫描线扫过阈值，样本随阈值的移动左右换边，右侧给出准确率。
+  */
+  FIGURES['yin-yang-sigmoid'] = function (host) {
+    const W = 720, H = 400, PAD = 54;
+    const svg = svgRoot(host, W, H, '阴阳二分类与 sigmoid 决策边界');
+    const plotW = W - PAD * 2, plotH = H - 150;
+
+    // 样本：12 条八纲典型证候（阴=0 阳=1）
+    const data = [
+      [-2.2, 0], [-1.8, 0], [-1.4, 0], [-1.1, 0], [-0.6, 0], [-0.2, 0],
+      [0.2, 1], [0.6, 1], [1.1, 1], [1.5, 1], [1.9, 1], [2.4, 1],
+    ];
+    const X = (v) => PAD + ((v + 3) / 6) * plotW;
+    const Y = (p) => H - 90 - p * plotH;
+
+    // 坐标轴
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: W - PAD, y2: H - 90, stroke: 'var(--line)' }));
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: PAD, y2: H - 90 - plotH, stroke: 'var(--line)' }));
+    svg.appendChild(mono(PAD, H - 72, '寒 / 阴 →'));
+    svg.appendChild(mono(W - PAD, H - 72, '← 热 / 阳', { 'text-anchor': 'end' }));
+    svg.appendChild(mono(8, PAD - 22, 'P(阳)'));
+    svg.appendChild(mono(W - PAD - 130, 26, 'sigmoid 决策边界'));
+
+    const curve = el('path', { d: '', fill: 'none', stroke: 'var(--jade)', 'stroke-width': 2.5 });
+    svg.appendChild(curve);
+    const threshLine = el('line', { stroke: 'var(--cinnabar)', 'stroke-dasharray': '5 4', 'stroke-width': 1.6 });
+    svg.appendChild(threshLine);
+
+    const pts = data.map(([x, y]) => {
+      const g = el('g', {});
+      const c = el('circle', { r: 6, cx: X(x), cy: H - 90 - 0.5 * plotH, fill: y ? 'var(--cinnabar)' : 'var(--jade)', opacity: 0.85 });
+      const cls = el('text', {
+        x: X(x), y: H - 90 - 0.5 * plotH + 4, 'text-anchor': 'middle',
+        'font-family': 'var(--sans)', 'font-size': 10, fill: '#fff',
+      }, [txt(y ? '阳' : '阴')]);
+      g.appendChild(c); g.appendChild(cls);
+      svg.appendChild(g);
+      return { x, y, c, cls };
+    });
+
+    const accText = label(PAD, 26, '', { fill: 'var(--ink)', 'font-size': 13 });
+    svg.appendChild(accText);
+
+    let pathD = '';
+    for (let i = 0; i <= 60; i += 1) {
+      const xv = -3 + (i / 60) * 6;
+      const p = sigmoid(1.6 * xv + 0.1);
+      pathD += `${i === 0 ? 'M' : 'L'}${X(xv).toFixed(1)},${Y(p).toFixed(1)}`;
+    }
+    curve.setAttribute('d', pathD);
+
+    loop(host, (t) => {
+      // 阈值在 0..1 之间来回扫
+      const thr = 0.15 + 0.7 * easeIO(1 - Math.abs(2 * t - 1));
+      const pThr = 0.1 + thr * 0.85;
+      const xThr = (Math.log(pThr / (1 - pThr)) - 0.1) / 1.6;
+      threshLine.setAttribute('x1', X(xThr));
+      threshLine.setAttribute('x2', X(xThr));
+      threshLine.setAttribute('y1', H - 90 - plotH - 6);
+      threshLine.setAttribute('y2', H - 90);
+
+      let correct = 0;
+      for (const p of pts) {
+        const prob = sigmoid(1.6 * p.x + 0.1);
+        const pred = prob >= pThr ? 1 : 0;
+        if (pred === p.y) correct += 1;
+        p.c.setAttribute('cy', Y(prob));
+        p.cls.setAttribute('y', Y(prob) + 4);
+        p.c.setAttribute('r', pred === p.y ? 7 : 5);
+        p.c.setAttribute('opacity', pred === p.y ? 0.92 : 0.32);
+        p.cls.setAttribute('opacity', pred === p.y ? 1 : 0.25);
+        // 判错的样本画一圈红
+        p.c.setAttribute('stroke', pred === p.y ? 'none' : 'var(--cinnabar)');
+        p.c.setAttribute('stroke-width', pred === p.y ? 0 : 2);
+      }
+      accText.textContent = `阈值 P=${pThr.toFixed(2)} · 准确率 ${correct}/${pts.length} = ${((correct / pts.length) * 100).toFixed(0)}%`;
+    }, 7200);
+  };
+
+  /* ───────────────────── wuxing-cycle ─────────────────────
+     五行生克。外圈相生（顺时针流动），内五角星相克。
+  */
+  FIGURES['wuxing-cycle'] = function (host) {
+    const W = 720, H = 440, cx = W / 2 - 70, cy = H / 2, R = 148;
+    const svg = svgRoot(host, W, H, '五行生克关系');
+    const names = ['木', '火', '土', '金', '水'];
+    const colors = ['var(--jade)', 'var(--cinnabar)', 'var(--gold)', '#8a6d3b', '#2a4d69'];
+    const node = names.map((_, i) => {
+      const a = -Math.PI / 2 + (i / 5) * Math.PI * 2;
+      return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), a };
+    });
+
+    // 相生边（外圈，顺时针 木→火→土→金→水→木）
+    const sheng = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const p = el('path', {
+        d: `M${n.x},${n.y} Q${(n.x + m.x) / 2 + (cy - (n.y + m.y) / 2) * 0.16},${(n.y + m.y) / 2 + ((n.x + m.x) / 2 - cx) * 0.16} ${m.x},${m.y}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.28,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+    // 相克边（五角星）
+    const ke = node.map((n, i) => {
+      const m = node[(i + 2) % 5];
+      const p = el('line', {
+        x1: n.x, y1: n.y, x2: m.x, y2: m.y,
+        stroke: 'var(--cinnabar)', 'stroke-width': 1.4, 'stroke-dasharray': '4 4', opacity: 0.2,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+
+    // 沿边流动的点
+    const flow = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const g = el('circle', { r: 4, fill: 'var(--jade)', cx: n.x, cy: n.y, opacity: 0 });
+      svg.appendChild(g);
+      return { g, from: n, to: m };
+    });
+
+    const nodes = node.map((n, i) => {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: n.x, cy: n.y, r: 30, fill: '#fff', stroke: colors[i], 'stroke-width': 2 }));
+      g.appendChild(el('text', {
+        x: n.x, y: n.y + 8, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 22, fill: colors[i],
+      }, [txt(names[i])]));
+      svg.appendChild(g);
+      return g;
+    });
+
+    // 右栏说明
+    svg.appendChild(mono(W - 190, 60, '相生 (outer)'));
+    svg.appendChild(label(W - 190, 82, '木→火→土→金→水→木', { fill: 'var(--jade)' }));
+    svg.appendChild(mono(W - 190, 130, '相克 (star)'));
+    svg.appendChild(label(W - 190, 152, '木克土 · 土克水 · 水克火', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(label(W - 190, 170, '火克金 · 金克木', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(mono(W - 190, 220, '建模要点'));
+    svg.appendChild(label(W - 190, 242, '5 类 + 有向约束', { fill: 'var(--ink)' }));
+    svg.appendChild(label(W - 190, 262, '纯 softmax 会丢掉', { fill: 'var(--muted)' }));
+    svg.appendChild(label(W - 190, 280, '全部关系信息', { fill: 'var(--muted)' }));
+
+    const capt = label(W - 190, H - 30, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const phase = (t * 5) % 5;
+      for (let i = 0; i < 5; i += 1) {
+        const f = flow[i];
+        const local = clamp01(phase - i);
+        const k = easeIO(local);
+        f.g.setAttribute('cx', lerp(f.from.x, f.to.x, k));
+        f.g.setAttribute('cy', lerp(f.from.y, f.to.y, k));
+        f.g.setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.95 : 0);
+        sheng[i].setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.75 : 0.28);
+        const keOn = phase - i >= 0 && phase - i <= 1.4;
+        ke[i].setAttribute('opacity', keOn ? 0.55 : 0.2);
+      }
+      const active = Math.floor(phase) % 5;
+      nodes.forEach((g, i) => g.querySelector('circle').setAttribute('stroke-width', i === active ? 4 : 2));
+      capt.textContent = `当前传导：${names[active]} → ${names[(active + 1) % 5]}（生） / ${names[active]} 克 ${names[(active + 2) % 5]}`;
+    }, 7000);
+  };
+
+  /* ───────────────────── zangxiang-graph ─────────────────────
+     藏象：五脏 → 官窍 → 情志，边按序点亮。
+  */
+  FIGURES['zangxiang-graph'] = function (host) {
+    const W = 720, H = 430;
+    const svg = svgRoot(host, W, H, '藏象学说的脏腑-官窍-情志关系图');
+
+    const zang = [
+      { n: '肝', x: 110, y: 100, qiao: ['目'], zhi: '怒' },
+      { n: '心', x: 110, y: 210, qiao: ['舌'], zhi: '喜' },
+      { n: '脾', x: 110, y: 320, qiao: ['口'], zhi: '思' },
+      { n: '肺', x: 610, y: 100, qiao: ['鼻'], zhi: '悲' },
+      { n: '肾', x: 610, y: 210, qiao: ['耳'], zhi: '恐' },
+    ];
+    const edges = [];
+
+    for (const z of zang) {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: z.x, cy: z.y, r: 26, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+      g.appendChild(el('text', { x: z.x, y: z.y + 8, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 20, fill: 'var(--cinnabar)' }, [txt(z.n)]));
+      svg.appendChild(g);
+
+      const qx = W / 2 + (z.x < 300 ? -40 : 40);
+      g.appendChild(el('line', { x1: z.x + (z.x < 300 ? 26 : -26), y1: z.y, x2: qx - (z.x < 300 ? 22 : -22), y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+
+      const qg = el('g', {});
+      qg.appendChild(el('rect', { x: qx - 22, y: z.y - 14, width: 44, height: 28, rx: 6, fill: 'var(--jade-soft)', stroke: 'var(--jade)', 'stroke-width': 1.3 }));
+      qg.appendChild(el('text', { x: qx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--jade)' }, [txt(z.qiao[0])]));
+      svg.appendChild(qg);
+
+      const zx = W - 110;
+      g.appendChild(el('line', { x1: qx + 22, y1: z.y, x2: zx - 24, y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      const zg = el('g', {});
+      zg.appendChild(el('circle', { cx: zx, cy: z.y, r: 22, fill: '#fdf1dd', stroke: 'var(--gold)', 'stroke-width': 1.3 }));
+      zg.appendChild(el('text', { x: zx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--gold)' }, [txt(z.zhi)]));
+      svg.appendChild(zg);
+
+      edges.push({ zy: z.y, e1: g.querySelector('line'), e2: g.querySelectorAll('line')[1], qg, zg });
+    }
+
+    svg.appendChild(mono(110 - 30, 40, '藏 / 五藏'));
+    svg.appendChild(mono(W / 2 - 30, 40, '象 / 官窍'));
+    svg.appendChild(mono(W - 110 - 30, 40, '情志'));
+    const capt = label(20, H - 14, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const step = t * 5;
+      edges.forEach((e, i) => {
+        const on = step >= i;
+        e.e1.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        e.e2.setAttribute('stroke', on ? 'var(--gold)' : 'var(--line)');
+        e.qg.setAttribute('opacity', on ? 1 : 0.35);
+        e.zg.setAttribute('opacity', on ? 1 : 0.35);
+      });
+      const cur = zang[Math.min(4, Math.floor(step))];
+      capt.textContent = cur ? `点亮中：${cur.n} 开窍于 ${cur.qiao[0]}，在志为${cur.zhi}` : '';
+    }, 6200, { staticT: 0.99 });
+  };
+
+  /* ───────────────────── sizhen-fusion ─────────────────────
+     四诊合参：四通道 → 融合层 → 证候。演示模态缺失时的降级。
+  */
+  FIGURES['sizhen-fusion'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '四诊合参的多模态融合与模态缺失降级');
+    const chans = [
+      { n: '望', d: '舌象 / 面色', y: 60 },
+      { n: '闻', d: '语声 / 气息', y: 130 },
+      { n: '问', d: '主诉 / 现病史', y: 200 },
+      { n: '切', d: '脉搏波', y: 270 },
+    ];
+    const fx = 330, fy = 165;
+    const outx = 600;
+
+    const fxG = el('g', {});
+    fxG.appendChild(el('rect', { x: fx - 52, y: fy - 46, width: 104, height: 92, rx: 10, fill: '#fff', stroke: 'var(--jade)', 'stroke-width': 2 }));
+    fxG.appendChild(el('text', { x: fx, y: fy - 14, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--jade)' }, [txt('融合层')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 8, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('交叉注意力')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 26, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('+ 缺失掩码')]));
+    svg.appendChild(fxG);
+
+    const outG = el('g', {});
+    outG.appendChild(el('rect', { x: outx - 46, y: fy - 32, width: 92, height: 64, rx: 10, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+    outG.appendChild(el('text', { x: outx, y: fy - 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--cinnabar)' }, [txt('证候')]));
+    outG.appendChild(el('text', { x: outx, y: fy + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('带置信度')]));
+    svg.appendChild(outG);
+
+    svg.appendChild(el('line', { x1: fx + 52, y1: fy, x2: outx - 46, y2: fy, stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+
+    const inG = chans.map((c) => {
+      const g = el('g', {});
+      g.appendChild(el('rect', { x: 24, y: c.y - 24, width: 150, height: 48, rx: 8, fill: '#fff', stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      g.appendChild(el('text', { x: 40, y: c.y - 2, 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--ink)' }, [txt(c.n + '诊')]));
+      g.appendChild(el('text', { x: 40, y: c.y + 16, 'font-size': 11, fill: 'var(--muted)' }, [txt(c.d)]));
+      svg.appendChild(g);
+      const path = el('path', {
+        d: `M174,${c.y} C 250,${c.y} 260,${fy} ${fx - 52},${fy}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.22,
+      });
+      svg.appendChild(path);
+      const dot = el('circle', { r: 4, fill: 'var(--jade)', opacity: 0 });
+      svg.appendChild(dot);
+      return { g, path, dot, y: c.y };
+    });
+
+    const capt = label(24, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    // 循环：全模态 → 缺闻诊 → 缺闻+切 → 恢复
+    const phases = [[1, 1, 1, 1], [1, 0, 1, 1], [1, 0, 1, 0], [1, 1, 1, 1]];
+    loop(host, (t) => {
+      const idx = Math.min(phases.length - 1, Math.floor(t * phases.length));
+      const mask = phases[idx];
+      const missing = [];
+      mask.forEach((m, i) => { if (!m) missing.push(chans[i].n); });
+
+      inG.forEach((c, i) => {
+        const on = mask[i] === 1;
+        c.g.style.opacity = on ? 1 : 0.3;
+        c.path.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        c.path.setAttribute('stroke-dasharray', on ? 'none' : '4 4');
+        c.path.setAttribute('opacity', on ? 0.55 : 0.25);
+        const local = clamp01(t * 4 - idx);
+        c.dot.setAttribute('cx', lerp(174, fx - 52, easeIO(local)));
+        c.dot.setAttribute('cy', lerp(c.y, fy, easeIO(local)));
+        c.dot.setAttribute('opacity', on ? 0.95 : 0);
+      });
+
+      const conf = 0.62 + 0.1 * mask.filter(Boolean).length;
+      outG.style.opacity = 0.4 + 0.6 * conf;
+      capt.textContent = missing.length
+        ? `模态缺失：缺 ${missing.join('、')} → 置信度降至 ${(conf * 100).toFixed(0)}%，系统须显式降级而非静默猜测`
+        : `四诊齐备 → 置信度 ${(conf * 100).toFixed(0)}%`;
+    }, 8800, { staticT: 0.35 });
+  };
+
+  /* ───────────────────── meridian-lookup ─────────────────────
+     腧穴检索：KD-Tree 空间划分 + 最近邻查询。
+  */
+  FIGURES['meridian-lookup'] = function (host) {
+    const W = 720, H = 400, PAD = 40;
+    const svg = svgRoot(host, W, H, '腧穴的空间划分与最近邻检索');
+    const plotW = W - PAD * 2 - 30, plotH = H - 110;
+
+    // 模拟体表腧穴点集（合谷、内关、足三里、三阴交等 18 穴）
+    let seed = 20261012;
+    const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+    const pts = Array.from({ length: 18 }, () => ({ x: PAD + 30 + rnd() * (plotW - 60), y: PAD + 20 + rnd() * (plotH - 40) }));
+
+    // KD-Tree 递归划分线
+    const lines = [];
+    (function build(list, depth) {
+      if (list.length < 2) return;
+      const axis = depth % 2;
+      const sorted = list.slice().sort((a, b) => (axis ? a.y - b.y : a.x - b.x));
+      const med = sorted[Math.floor(sorted.length / 2)];
+      if (axis) {
+        const minX = Math.min(...list.map((p) => p.x));
+        const maxX = Math.max(...list.map((p) => p.x));
+        lines.push({ x1: minX, y1: med.y, x2: maxX, y2: med.y, depth });
+        build(list.filter((p) => p.y < med.y), depth + 1);
+        build(list.filter((p) => p.y >= med.y), depth + 1);
+      } else {
+        const minY = Math.min(...list.map((p) => p.y));
+        const maxY = Math.max(...list.map((p) => p.y));
+        lines.push({ x1: med.x, y1: minY, x2: med.x, y2: maxY, depth });
+        build(list.filter((p) => p.x < med.x), depth + 1);
+        build(list.filter((p) => p.x >= med.x), depth + 1);
+      }
+    })(pts, 0);
+
+    const lineEls = lines.map((l) => {
+      const e = el('line', { x1: l.x1, y1: l.y1, x2: l.x2, y2: l.y2, stroke: 'var(--line)', 'stroke-width': 1, opacity: 0 });
+      svg.appendChild(e);
+      return { e, depth: l.depth };
+    });
+
+    const dotEls = pts.map((p, i) => {
+      const c = el('circle', { cx: p.x, cy: p.y, r: 4.5, fill: 'var(--jade)', opacity: 0.75 });
+      svg.appendChild(c);
+      const t = el('text', { x: p.x + 7, y: p.y + 4, 'font-size': 10, fill: 'var(--muted)', opacity: 0 });
+      t.appendChild(txt(`穴${String(i + 1).padStart(2, '0')}`));
+      svg.appendChild(t);
+      return { c, t, p };
+    });
+
+    const query = el('circle', { r: 8, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 2.2 });
+    svg.appendChild(query);
+    const ring = el('circle', { r: 0, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 1, 'stroke-dasharray': '3 3' });
+    svg.appendChild(ring);
+    const link = el('line', { stroke: 'var(--cinnabar)', 'stroke-width': 1.6, 'stroke-dasharray': '4 3' });
+    svg.appendChild(link);
+
+    const capt = label(PAD, H - 20, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      // 查询点沿弧线游走
+      const ang = t * Math.PI * 2;
+      const qx = PAD + 30 + plotW / 2 + Math.cos(ang) * plotW * 0.33;
+      const qy = PAD + 20 + plotH / 2 + Math.sin(ang) * plotH * 0.32;
+      query.setAttribute('cx', qx);
+      query.setAttribute('cy', qy);
+
+      let best = null;
+      let bestD = Infinity;
+      for (const d of dotEls) {
+        const dd = (d.p.x - qx) ** 2 + (d.p.y - qy) ** 2;
+        if (dd < bestD) { bestD = dd; best = d; }
+        d.c.setAttribute('r', 4.5);
+        d.c.setAttribute('fill', 'var(--jade)');
+        d.t.setAttribute('opacity', 0);
+      }
+      const dist = Math.sqrt(bestD);
+      link.setAttribute('x1', qx); link.setAttribute('y1', qy);
+      link.setAttribute('x2', best.p.x); link.setAttribute('y2', best.p.y);
+      ring.setAttribute('cx', qx); ring.setAttribute('cy', qy);
+      ring.setAttribute('r', dist);
+      best.c.setAttribute('r', 8);
+      best.c.setAttribute('fill', 'var(--cinnabar)');
+      best.t.setAttribute('opacity', 1);
+
+      const step = clamp01(t * 3);
+      lineEls.forEach((l) => l.e.setAttribute('opacity', step > l.depth / 6 ? (0.5 - l.depth * 0.06) : 0));
+
+      capt.textContent = `查询点 → 最近腧穴 ${best.t.textContent} · 平面距离 ${dist.toFixed(1)}px（真实体表须改测地距离）`;
+    }, 11000, { staticT: 0.2 });
+  };
+
+  /* ───────────────────── junchen-attention ─────────────────────
+     君臣佐使 → 注意力权重。列 = 药味，行为权重分配。
+  */
+  FIGURES['junchen-attention'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '君臣佐使的注意力权重分配');
+
+    const herbs = ['桂枝', '芍药', '生姜', '大枣', '甘草'];
+    const roles = ['君', '臣', '佐', '使'];
+    const weights = [
+      [0.52, 0.30, 0.08, 0.06, 0.04],
+      [0.18, 0.44, 0.20, 0.12, 0.06],
+      [0.08, 0.16, 0.40, 0.24, 0.12],
+      [0.04, 0.08, 0.18, 0.32, 0.38],
+    ];
+
+    const GX = 110, GY = 60, CW = 84, CH = 52;
+    svg.appendChild(mono(GX, 34, '方剂：桂枝汤（示例）'));
+
+    herbs.forEach((h, j) => {
+      svg.appendChild(el('text', {
+        x: GX + j * CW + CW / 2, y: GY - 10, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 14, fill: 'var(--ink)',
+      }, [txt(h)]));
+    });
+    roles.forEach((r, i) => {
+      svg.appendChild(el('text', {
+        x: GX - 22, y: GY + i * CH + CH / 2 + 6, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--cinnabar)',
+      }, [txt(r)]));
+    });
+
+    const cells = [];
+    for (let i = 0; i < roles.length; i += 1) {
+      for (let j = 0; j < herbs.length; j += 1) {
+        const r = el('rect', {
+          x: GX + j * CW + 3, y: GY + i * CH + 3, width: CW - 6, height: CH - 6, rx: 6,
+          fill: 'var(--jade)', opacity: 0,
+        });
+        svg.appendChild(r);
+        const tx = el('text', {
+          x: GX + j * CW + CW / 2, y: GY + i * CH + CH / 2 + 5, 'text-anchor': 'middle',
+          'font-family': 'var(--mono)', 'font-size': 12, fill: 'var(--ink)', opacity: 0,
+        });
+        tx.appendChild(txt(weights[i][j].toFixed(2)));
+        svg.appendChild(tx);
+        cells.push({ r, tx, w: weights[i][j], i, j });
+      }
+    }
+
+    // 右侧：软化的权重条
+    const bx = GX + herbs.length * CW + 40;
+    svg.appendChild(mono(bx, 34, '行归一化 (softmax)'));
+    const bars = roles.map((r, i) => {
+      const max = Math.max(...weights[i]);
+      const w = Math.max(...weights[i]);
+      const g = el('g', {});
+      g.appendChild(el('text', { x: bx, y: GY + i * 44 + 10, 'font-size': 12, fill: 'var(--muted)' }, [txt(r + ' 最大: ' + max.toFixed(2))]));
+      const bg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 180, height: 8, rx: 4, fill: 'var(--paper-2)' });
+      g.appendChild(bg);
+      const fg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 0, height: 8, rx: 4, fill: 'var(--jade)' });
+      g.appendChild(fg);
+      svg.appendChild(g);
+      return { fg, w: w, max };
+    });
+
+    svg.appendChild(label(20, H - 40, '结构先验：君药权重最大 → 可作为注意力掩码，让模型学不到"反结构"的配伍', { fill: 'var(--muted)' }));
+    const capt = label(20, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const focusRow = Math.floor(t * 4) % 4;
+      const local = clamp01(t * 4 - Math.floor(t * 4));
+      cells.forEach((c) => {
+        const on = c.i === focusRow;
+        c.r.setAttribute('opacity', on ? c.w * (0.55 + 0.45 * local) : c.w * 0.14);
+        c.tx.setAttribute('opacity', on ? 1 : 0.25);
+      });
+      bars.forEach((b, i) => {
+        b.fg.setAttribute('width', i === focusRow ? 180 * (b.max) * (0.5 + 0.5 * local) : 180 * b.max * 0.35);
+      });
+      capt.textContent = `当前角色：${roles[focusRow]} · 权重最高者为 ${herbs[weights[focusRow].indexOf(Math.max(...weights[focusRow]))]}`;
+    }, 8000, { staticT: 0.1 });
+  };
+
+  /* ───────────────────── 自动挂载 ───────────────────── */
+  function mount(root) {
+    const hosts = (root || document).querySelectorAll('[data-figure]');
+    for (const host of hosts) {
+      if (host.dataset.figureMounted === '1') continue;
+      const fn = FIGURES[host.dataset.figure];
+      if (!fn) {
+        host.innerHTML = `<p class="muted small">未知图形：<code>${host.dataset.figure}</code></p>`;
+        host.dataset.figureMounted = '1';
+        continue;
+      }
+      host.classList.add('figure');
+      fn(host);
+      host.dataset.figureMounted = '1';
+    }
+  }
+
+  window.TCMFigures = { FIGURES, mount };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => mount());
+  } else {
+    mount();
+  }
+  // 单页内动态插入的图形（章节页异步渲染）也能挂上
+  new MutationObserver(() => mount()).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+<script>
+(function(){
+  const deck=document.getElementById('deck');
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+
+  // ── 单帧模式：?shot=N 只渲染第 N 张，供无头浏览器逐帧截图 ──
+  // 截图器需要一张「干净的、正好一屏」的画面，所以这里藏掉其余幻灯片、
+  // 关掉滚动吸附、去掉 HUD，并在 title 上打就绪标记（渲染完成前截图会得到空白）。
+  const shot=new URLSearchParams(location.search).get('shot');
+  if(shot!==null){
+    const n=Math.max(0,Math.min(slides.length-1,Number(shot)||0));
+    slides.forEach((s,idx)=>{ if(idx!==n) s.style.display='none'; });
+    deck.style.overflow='hidden';
+    deck.style.scrollSnapType='none';
+    const hud=document.getElementById('hud');
+    if(hud) hud.style.display='none';
+    const target=slides[n];
+    if(target){ target.style.borderBottom='0'; target.scrollIntoView({block:'start'}); }
+    document.title='SHOT_READY '+n+' of '+slides.length;
+    if(window.TCMFigures)window.TCMFigures.mount(document);
+    // 只读视图：不绑键盘与点击，避免截图过程中页面状态改变
+    return;
+  }
+
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView();}
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    else if(e.key==='p'||e.key==='P'){e.preventDefault();print();}
+  });
+  deck.addEventListener('click',e=>{if(e.target.closest('a'))return;go(i+1);});
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)i=+en.target.dataset.i;});},{root:deck,threshold:.6});
+  slides.forEach(s=>io.observe(s));
+  if(window.TCMFigures)window.TCMFigures.mount(document);
+})();
+</script>
+</body>
+</html>

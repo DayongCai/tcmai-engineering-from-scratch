@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>第 12 章 · 数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去 · 幻灯片</title>
+<style>
+
+:root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
+--jade:#1f6f5c;--jade-soft:#e3efe9;--cinnabar:#a8321e;--cinnabar-soft:#f7e6e2;--gold:#a8862a;
+--sans:system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;
+--serif:"Songti SC","Noto Serif SC",Georgia,serif;
+--mono:ui-monospace,"Cascadia Mono",Consolas,monospace;}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#12110f;color:var(--ink);font-family:var(--sans)}
+#deck{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{min-height:100%;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;
+  padding:5vh 7vw;background:var(--paper);border-bottom:1px solid #000}
+.slide-inner{max-width:1000px;width:100%;margin:0 auto}
+.slide-foot{max-width:1000px;width:100%;margin:3vh auto 0;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+h1.big{font-family:var(--serif);font-size:clamp(28px,4.4vw,54px);line-height:1.25;margin:0}
+blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-height:1.6;margin:0;
+  border-left:6px solid var(--gold);padding-left:24px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--jade);
+  text-transform:uppercase;margin-bottom:14px}
+.kicker.warn{color:var(--cinnabar)}
+p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
+.compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
+.compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+/* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
+.math{font-style:italic;font-family:var(--serif)}
+.math-block{display:block;text-align:center;font-family:var(--serif);font-size:1.05em;margin:.8em 0}
+.math-op,.math-text,.math-rm{font-style:normal}
+.math-op{padding:0 .12em}
+.math-cal{font-style:normal}
+.math-bb{font-style:normal;font-weight:700}
+.frac{display:inline-block;vertical-align:middle;text-align:center;font-style:normal;margin:0 .15em;line-height:1.15}
+.frac-num{display:block;padding:0 .3em;border-bottom:1px solid currentColor}
+.frac-den{display:block;padding:0 .3em}
+.math-sqrt{font-style:normal;margin-right:.05em}
+.math-line{border-top:1px solid currentColor;font-style:normal;padding-top:.05em}
+.math-note{font-size:.8em;font-style:normal}
+.figure-host{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+#hud{position:fixed;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#8a8578;
+  background:#faf8f3cc;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
+@media print{.slide{page-break-after:always;min-height:auto}#hud{display:none}}
+</style>
+</head>
+<body>
+<div id="deck">
+<section class="slide" data-i="0">
+  <div class="slide-inner"><h1 class="big">第 12 章 · 数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去</h1></div>
+  <div class="slide-foot"><span>1 / 24</span><span>title</span></div>
+</section>
+<section class="slide" data-i="1">
+  <div class="slide-inner"><blockquote class="motto">「可辅助参考，临床决策以医者为准」——教材·中医内科学·第12章·12.3.1（《中医内科学·第12章 中医内科学的数字化与AI时代》）</blockquote></div>
+  <div class="slide-foot"><span>2 / 24</span><span>motto</span></div>
+</section>
+<section class="slide" data-i="2">
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">前面十一章都能数出证—方对：第 9 章七十一个，第 10 章二十五个，第 11 章三十二个。这一章数出来是零——不是底本缺内容，是这一章的对象换了。它不谈某病某证用什么方，谈的是「辨证这件事能不能被机器处理」。于是问题变成三个可以分开回答的小问题：<strong>什么可以被枚举？什么可以被对齐？什么不能交出去？</strong> 教材自己的回答是：证候要素二十四个可以枚举，编码四种可以对齐，裁量写了七次「以医者为准」。本章只复述这三句，不添第四句。</p></div>
+  <div class="slide-foot"><span>3 / 24</span><span>problem</span></div>
+</section>
+<section class="slide" data-i="3">
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（本章没有辨证论治、没有代表方，前十一章的抽取器在这里得到空数组，容易被误判为底本缺失）+ 知识积累（八小节两两成对，标准与编码、图谱与推理、模型与安全、单元与平台，四对各自画了一条「可做」与「不可做」的界线）</p></div>
+  <div class="slide-foot"><span>4 / 24</span><span>roots</span></div>
+</section>
+<section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">先讲清数据来源</div>
+                <div class="compact"><div class="table-wrap"><table><thead><tr><th>项</th><th>值</th></tr></thead><tbody><tr><td>教材底本</td><td><code>standards/neike/底本.json</code> · 第 12 章 中医内科学的数字化与AI时代</td></tr><tr><td>规模</td><td>4 节 · 8 小节 · 8 条目 · 11503 汉字（正文合计 13243 字符）</td></tr><tr><td>量值</td><td>底本自带量值五处，全部是标准发布的年份与版本号，不是医学数值</td></tr><tr><td>引用格式</td><td><code>教材·中医内科学·第12章·12.1.1</code></td></tr></tbody></table></div>
+<p>这一章是十二个底本章里唯一没有「辨证论治」小节的。<code>hasSyndromeSection()</code> 返回假，<code>pairs()</code> 返回空数组——这两个结果都不是错误，是本章的形状。任何一个跨章统一的抽取器，跑到这一章都会得到零条证—方对；如果它把零当成失败并抛出异常，这一章就永远进不了知识库；如果它把零当成成功，前十一章的抽取失败就会被掩盖。所以本章的单测专门锁住这一点：零是断言，不是容错。</p></div></div>
+  <div class="slide-foot"><span>5 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">先讲清数据来源</div>
+                <div class="compact"><p>八个小节的字数极均匀：最长的一千七百二十九字，最短的一千六百零五字，差不到一成。这与第 9 章（六百字与两千三百字并存）形成极端对照——数字化这一章是按「一个议题一小节」写的，不是按病证写的。</p></div></div>
+  <div class="slide-foot"><span>6 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><h3 id="一-零证-方对-这一章的对象不是病证">一、零证—方对：这一章的对象不是病证</h3>
+<p>前面十一章的组织单位是病证：一节一个病，一小节一个槽位，一个证挂一张代表方。这一章的组织单位是<strong>议题</strong>：标准化、编码、图谱、推理、大模型、安全、病证单元、教学平台。八个议题，八个小节，每个议题各占一节的一半或全部。</p>
+<p>于是「证—方对」这个度量在本章失效。不是因为它没有价值，是因为它量的是另一件事。工程上最容易犯的错，是给所有章节套同一个度量，然后把量不出来的那章标记为「数据不全」。本章的做法是换一套度量，并把这套度量写进代码：证候要素、编码、三元组、边界词——四个新的可数量。</p>
+<p>这套度量也不是我发明的，是教材自己提供的：它把证候拆成要素、把病证编成码、把知识写成三元组、把限制写成「不得」「必须」「以医者为准」。本章只是把它们数出来。</p>
+<h3 id="二-二十四个证候要素-病位八-病性十六">二、二十四个证候要素：病位八，病性十六</h3>
+<p>教材在标准化一节里给了一个极明确的枚举：</p></div></div>
+  <div class="slide-foot"><span>7 / 24</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><blockquote><p>「证候要素是王永炎院士及其团队在证候规范化研究中提出的核心概念」——教材·中医内科学·第12章·12.1.1</p></blockquote>
+<p>同一小节接着把要素分成两组：病位要素八个——心、肝、脾、肺、肾、胃、肠、胆；病性要素十六个——风、寒、暑、湿、燥、火、气滞、血瘀、痰、饮、水停、气虚、血虚、阴虚、阳虚、精亏。</p>
+<p>二十四这个数，是本章唯一一个「可以直接当字段枚举值」的数。它的意义在于：<strong>任意一个证候都可以写成「病位 × 病性」的组合</strong>。教材举了例子，肝阳上亢是病位在肝、病性为阳亢；痰热壅肺是病位在肺、病性为痰与热。两个例子都是二元组，一个是「病位＋单一病性」，一个是「病位＋两个病性」。</p>
+<p>这就把辨证从「给一个名字」变成了「填两个格子」。填格子的好处是可校验：病位必须在八个里选，病性必须在十六个里选，填不出就是要素表不全；坏处是丢信息：证名里的程度、兼夹、病程，要素表装不下。教材自己也知道这一点，所以在同一小节里补了一句——量表是辅助而非替代：</p></div></div>
+  <div class="slide-foot"><span>8 / 24</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><blockquote><p>「证候量表是辨证的辅助工具而非替代，四诊合参、整体审查仍是中医诊断的根本方法」——教材·中医内科学·第12章·12.1.1</p></blockquote>
+<p>这一句是本章的第一条界线：要素化可以做，做到「组合」为止，不要做到「替代」。</p>
+<h3 id="三-编码-四种码-两套标准">三、编码：四种码，两套标准</h3>
+<p>编码一节给的东西比要素更硬：它给了具体的码值。全章出现七次 ICD 形态的编码，去重四种——8B20（中风／脑血管病）、7A00（不寐／失眠障碍）、SA00 与 SE10（传统医学病证模块的起止段）。</p>
+<blockquote><p>「ICD-11在第26章设立补充章节传统医学病证—模块1（TM1），以SA00至SE10编码段收载中医病证分类，使中医病名首次进入国际疾病分类体系」——教材·中医内科学·第12章·12.1.2</p></blockquote>
+<p>四种码分两类：8B20 与 7A00 是<strong>疾病码</strong>，落在现代医学的章节里；SA00 与 SE10 是<strong>传统医学段的端点</strong>，标的是中医病证分类这个整体。教材用前者说明「中西医可以互译」，用后者说明「中医有了自己的段」。</p></div></div>
+  <div class="slide-foot"><span>9 / 24</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>国内标准另有一套：</p>
+<blockquote><p>「国家标准GB/T 16751.2《中医病证分类与代码》是中医病证信息标准化的重要依据。」——教材·中医内科学·第12章·12.1.2</p></blockquote>
+<p>两套标准并行，意味着任何一次落地都要做映射：院内码对 GB/T 码，GB/T 码对 ICD-11 的 TM1 段，疾病码对现代医学章节。教材把这件事写成了一句要求——编码字典要随教材与指南的修订同步维护。工程上这句话的意思是：<strong>码表是有版本的，映射是有时效的</strong>，把码表当常量写死，第一次修订就会错。</p>
+<p>教材同时给编码划了界：</p>
+<blockquote><p>「编码是病证名称的标准化标识，解决的是叫什么、怎么记的问题，并不能替代辨证过程本身」——教材·中医内科学·第12章·12.1.2</p></blockquote>
+<p>这是第二条界线：编码解决「叫什么」，不解决「是什么」。给一个病例打上 SA 段的码，不等于完成了辨证；码只保证这条记录能被检索到。</p>
+<h3 id="四-六个三元组样板-图谱的最小可校验单位">四、六个三元组样板：图谱的最小可校验单位</h3></div></div>
+  <div class="slide-foot"><span>10 / 24</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>知识图谱一节给的是一套结构：节点是实体（病、证、法、方、药），边是关系（辨证为、治以、主方、含）。教材给了六个三元组样板，谓词出现四次：辨证为一次、治以两次、主方一次、含两次。</p>
+<blockquote><p>「知识图谱是以图结构表示实体及其关系的知识库，由节点（实体）与边（关系）构成」——教材·中医内科学·第12章·12.2.1</p></blockquote>
+<p>六个样板拼起来正好是一条完整链：胸痹辨证为心血瘀阻证，心血瘀阻证治以活血化瘀、通脉止痛，该治法主方血府逐瘀汤加减，血府逐瘀汤含桃仁、含红花。另有一个孤立的样板（肝火扰心证治以疏肝泻火、镇心安神），用来说明同一个谓词可以挂在不同证上。</p>
+<p>这六个样板的价值不在内容，在<strong>粒度</strong>：它示范了三元组该写到多细。写到「方含药」为止，不写「药多少克」；写到「证治以法」为止，不写法包含几味药。粒度一旦确定，图谱的边界也就定了——它是一个<strong>骨架</strong>，不是一张处方。</p>
+<p>同一节还给了图谱区别于普通知识库的那条要求：</p></div></div>
+  <div class="slide-foot"><span>11 / 24</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><blockquote><p>「溯源（Provenance）是中医知识图谱区别于一般知识库的关键要求。」——教材·中医内科学·第12章·12.2.1</p></blockquote>
+<p>「无溯源不录入」这句话在教材里是作为红线写的。工程上它的代价很直接：每条三元组都要带出处、版本、章节、录入人、审核人、时间戳，录入成本大约是纯文本录入的数倍。这就是本章的第一个「代价」——可溯源不是免费属性，是每条边上的六个字段。</p>
+<h3 id="五-八小节两两成对-四对-可做-与-不可做">五、八小节两两成对：四对「可做」与「不可做」</h3>
+<p>把八个小节按对读，结构就出来了：</p>
+<div class="table-wrap"><table><thead><tr><th>对</th><th>前一小节（可做）</th><th>后一小节（不可做／须防）</th></tr></thead><tbody><tr><td>12.1</td><td>病证名称与证候诊断标准</td><td>中医病证编码与数据标准</td></tr><tr><td>12.2</td><td>病—证—法—方—药知识图谱</td><td>辨证推理链设计</td></tr><tr><td>12.3</td><td>大模型辅助辨证与方药推荐</td><td>AI辅助的安全与责任</td></tr><tr><td>12.4</td><td>病证单元（BZU）数字化</td><td>岐黄智医教学平台</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>12 / 24</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>四对不是四组并列的介绍，是四组「能力—约束」。第一对讲统一与编码，第二对讲结构与推理，第三对讲生成与幻觉，第四对讲单元与落地。每一对的后半都在回答前半带来的问题：编码带来映射维护，推理带来校验责任，生成带来幻觉风险，单元带来平台治理。</p>
+<p>教材把这条「能力—约束」的对称写在了标题里，但没有一句话点明。数一数小节数（每节恰好两个）就能看出来：四节八小节，二二成对，没有一节是三小节或一小节。</p>
+<h3 id="六-教材自带的边界-二十一次溯源-十三次必须-七次以医者为准">六、教材自带的边界：二十一次溯源、十三次必须、七次以医者为准</h3>
+<p>本章最值得数的是边界词。八个小节里，「溯源」出现二十一次，「必须」十三次，「不得」五次，「不能」五次，「以医者为准」七次，「可辅助参考」五次，「人工审核」两次。</p>
+<blockquote><p>「需要清醒认识，大模型本质上是基于概率的文本生成模型，其知识来自训练语料的统计规律，并非权威知识库本身」——教材·中医内科学·第12章·12.3.1</p></blockquote></div></div>
+  <div class="slide-foot"><span>13 / 24</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><blockquote><p>「幻觉（Hallucination）是大语言模型生成看似合理但实际错误甚至虚构内容的现象」——教材·中医内科学·第12章·12.3.2</p></blockquote>
+<blockquote><p>「主编田德禄教授指出，机器推理的价值在于帮助医者穷尽鉴别、查漏补缺，而辨证的最终裁量必须回归医者自身的临床判断。」——教材·中医内科学·第12章·12.2.2</p></blockquote>
+<p>二十一次「溯源」说明这一章的重心不在「能做什么」，在「怎么证明它做对了」。七次「以医者为准」说明教材对裁量归属没有留模糊空间。这不是免责套话的位置——它出现在推理、模型、编码三节里，每一处都紧跟在一个能力描述之后。</p>
+<p>本章的边界声明因此不是外挂的：教材写了七次，我只数了一次。</p>
+<h3 id="七-本仓接得上的一步-与接不上的一步">七、本仓接得上的一步，与接不上的一步</h3>
+<p>从工程角度看，这一章有四件事是「接得上」的：</p>
+<p>一、要素枚举。二十四个要素是一张闭集表，可以直接做成语义约束——任何证候描述若填不进这二十四个值，就是描述本身有问题，或要素表不全。这是可校验的，不需要任何临床判断。</p></div></div>
+  <div class="slide-foot"><span>14 / 24</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>二、编码对齐。四种码给了四个锚点，配合 GB/T 16751.2 的层级，可以做「病名—证名—码」的三列对照。对齐的产物是一张映射表，不是一个判断。</p>
+<p>三、三元组的粒度。六个样板示范了「写到方含药为止」的粒度，这直接决定了知识库的表结构：病、证、法、方、药五张实体表，四类关系边。</p>
+<p>四、溯源字段。每条边六个字段，是成本，也是可审计性的来源。</p>
+<p>有四件事是「接不上」的，本章不假装接得上：</p>
+<p>一、裁量。教材写了七次以医者为准，工程上只能做到「给出候选与依据」，做不到「替人选」。任何把模型输出当结论的界面，都在越过教材自己划的线。</p>
+<p>二、疗效。这一章通篇不谈某方对某证有效，只谈知识怎么组织。本章因此不写任何疗效断言——不是保守，是底本里没有这个内容。</p>
+<p>三、幻觉的根治。教材把幻觉写成大模型的固有属性（基于概率的生成），给出的对策是检索增强、领域微调、人工审核、溯源核查——四条都是<strong>降低</strong>而非消除。</p></div></div>
+  <div class="slide-foot"><span>15 / 24</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>四、标准的时效。码表随教材修订而变，任何写死的映射都会过期。这一条没有工程解，只有运维解：版本化 + 定期复核。</p>
+<p>这四件「接不上」的事有一个共同点：它们都不是技术能力问题，是<strong>归属问题</strong>。裁量归医者，疗效归临床试验，幻觉归概率模型的本性，时效归运维流程。把它们塞进「待攻克的技术难题」清单，是找错了对象。</p>
+<h3 id="八-一个例子-同一个病例在四个环节里各得到什么">八、一个例子：同一个病例在四个环节里各得到什么</h3>
+<p>把教材给的四类东西按顺序套到一个具体描述上，能看清每一环的产出与边界。假想的描述是：眩晕、头胀痛、急躁易怒、口苦、舌红苔黄、脉弦数——这是教材在推理一节自己用的那组线索。</p>
+<p>第一环，要素化：病位填「肝」，病性填「火」（或按教材的例子写「阳亢」）。产出是两个字段，可校验，不涉及判断对错——填得出，就说明这组线索能落到闭集里。</p></div></div>
+  <div class="slide-foot"><span>16 / 24</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>第二环，编码：若已明确为眩晕／高血压病，疾病码落在现代医学章节；证候码落在 GB/T 16751.2 的心系或肝系病类之下。产出是三个码：病名、证名、以及它们各自的标准号。这一步只解决「叫什么、怎么记」。</p>
+<p>第三环，图谱：从证节点沿边走到治法「平肝潜阳、清火息风」，再走到方「天麻钩藤饮加减」，再走到药。产出是一条路径，四到五条边，每条边都要带出处。教材的六个样板正是这条路径的骨架。</p>
+<p>第四环，生成：把前三步的产物写成一段可读的文字，供人复核。产出是文字，不是结论。教材在这一环上写得最谨慎——概率生成、可能幻觉、必须人工审核、可辅助参考。</p>
+<p>四环走完，得到的是「一组字段 + 三个码 + 一条带出处的路径 + 一段待复核的文字」。没有一环产出「诊断结论」。这不是本课程保守，是教材四节的落点本来就在这里：每一节都在给出一样东西，同时划一条线。</p>
+<h3 id="九-三种度量放在一起看">九、三种度量放在一起看</h3></div></div>
+  <div class="slide-foot"><span>17 / 24</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>本章用四组数（要素、编码、三元组、边界词），前十一章用一组数（证—方对）。把两类数并排，能看清「按病证组织」与「按议题组织」的差别：</p>
+<div class="table-wrap"><table><thead><tr><th></th><th>第 9 章</th><th>第 10 章</th><th>第 11 章</th><th>第 12 章</th></tr></thead><tbody><tr><td>组织单位</td><td>病证</td><td>病证</td><td>病证</td><td>议题</td></tr><tr><td>小节</td><td>55</td><td>25</td><td>40</td><td>8</td></tr><tr><td>证—方对</td><td>71</td><td>25</td><td>32</td><td>0</td></tr><tr><td>特有度量</td><td>跨病复用 6</td><td>零复用</td><td>公卫词 39</td><td>要素 24 · 编码 4</td></tr></tbody></table></div>
+<p>第四列的两个零（证—方对）与两个新数（要素、编码），是同一件事的两面：度量换了，零就不是缺失。</p>
+<h3 id="十-四项校验-教材怎么定义-做对了">十、四项校验：教材怎么定义「做对了」</h3>
+<p>教材没有用「准确率」来定义做对，而是给了四个维度：</p>
+<blockquote><p>「校验工作应从完整性、一致性、可溯源性与安全性四个维度展开。」——教材·中医内科学·第12章·12.2.2</p></blockquote></div></div>
+  <div class="slide-foot"><span>18 / 24</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>完整性查链条是否闭环——辨证之后有没有治法、有没有方、有没有药，缺一环就是断链。一致性查结论是否与权威知识冲突——证与治法是否匹配、方与证是否对应、药物与治法是否相合。可溯源性查每个结论能不能回到三元组与原始文献，回不去的视为无效输出。安全性查配伍禁忌与毒性药物是否被识别。</p>
+<p>四个维度里，只有一致性接近「正确性」，其余三个都是<strong>结构性</strong>的：齐不齐、能不能查、有没有禁忌。这是一个很值得注意的选择——教材没有承诺「结果一定对」，它承诺的是「结果必须完整、可查、不越安全线」。工程上这四个维度都能自动化校验，而「对」不能。</p>
+<p>反馈闭环也是结构性的：发现错误就定位原因（知识缺失、规则冲突、算法偏差），修正后回归测试，把典型错误加进负样本库。三类错误分别追踪：证型误判、方药错配、剂量越界。这三类恰好对应四个维度里的前三个——剂量越界落在安全性上。</p></div></div>
+  <div class="slide-foot"><span>19 / 24</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">引文怎么选</div>
+                <div class="compact"><p>本章引十一条，取法两类。</p>
+<p>第一类是定义与结构句：证候要素的定义、知识图谱的定义、三元组的构成、病证单元的定义、平台的定义。这类句子交代「这是什么」，抽出来仍然完整，最适合引。</p>
+<p>第二类是界线句：编码不替代辨证、量表是辅助而非替代、大模型是概率生成、可辅助参考临床决策以医者为准、机器推理的裁量归医者。这类句子是教材自己划的线，引它们等于引教材的立场。本章的边界章节几乎全靠这一类句子支撑——没有一句是我加的。</p>
+<p>不引的是技术细节（模型架构、图数据库查询、量表统计方法）。它们属于实现层，引进来会让这一章变成技术综述，而教材写它们只是为了说明「这件事已经被工程化到什么程度」。</p></div></div>
+  <div class="slide-foot"><span>20 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">三个可以直接量出来的事实</div>
+                <div class="compact"><p>第一，<strong>零证—方对，二十四要素，四编码，六三元组</strong>。四个数各量一件事，合起来是这一章的全部可数内容。任何一个数变成零（除证—方对），都说明底本或抽取出了问题。</p>
+<p>第二，<strong>八小节两两成对，没有例外</strong>。四节各两小节，标题成对出现，这是本章唯一的结构规律，也是它区别于前十一章的地方——前面按病证分，这里按议题分。</p>
+<p>第三，<strong>边界词的密度</strong>。二十一次溯源、十三次必须、七次以医者为准，三组词加起来四十一处，平均每小节五处。这个密度在前十一章的任何一节里都找不到：那些章的按语各写一次审慎声明，这一章每小节写五处。</p></div></div>
+  <div class="slide-foot"><span>21 / 24</span><span>body</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p><strong>代价一：可溯源不是免费属性。</strong> 每条三元组六个字段（出处、版本、章节、录入、审核、时间），录入成本是纯文本的数倍。教材把它写成红线，工程上它是一条<strong>成本线</strong>：不做，知识不可审计；做，知识库的规模上不去。这一章的选择是不做就不录。</p>
+<p><strong>代价二：要素化会丢信息。</strong> 二十四个要素能表达「病位＋病性」的组合，表达不了程度、兼夹、病程。教材自己补了一句「量表是辅助而非替代」。任何以要素表为唯一表示的系统，都会在「同一个证、轻重不同」这件事上失效。</p>
+<p><strong>代价三：本章没有一个可执行的方剂。</strong> 没有剂量、没有加减、没有煎法。六个三元组里最细的一条是「血府逐瘀汤含桃仁」，连用量都没有。想从这一章取方，取不到；这一章取的是<strong>结构</strong>。</p>
+<p><strong>代价四：统计口径依赖教材措辞。</strong> 「溯源」二十一次这个数，换一版教材若改称「来源标注」，计数会掉。这组数只在说明量级时有意义，不宜当硬指标引用。</p></div></div>
+  <div class="slide-foot"><span>22 / 24</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p><strong>代价五：本章的多数内容会过时。</strong> 模型、图数据库、互操作标准都在换代，教科书对技术的描述更是滞后于工程一线。本章照录教材，不追新，也不因为过时就说它错——它记录的是编写时的形态，判断的是原则（可溯源、可校验、裁量归人），原则比形态活得久。</p>
+<p><strong>边界一：本章不写疗效。</strong> 底本不谈疗效，本章也不谈。任何「某系统提高了辨证准确率」的说法，都不在本章的范围内，也不是本章能验证的。</p>
+<p><strong>边界二：本章不做临床决策。</strong> 教材七次「以医者为准」，本章一次也不越过。文中出现的所有码值、要素、三元组，都是教材的示例，不是给病例下结论的工具。</p>
+<p><strong>边界三：技术名词的时效。</strong> 本章提到的模型、图数据库、互操作标准，都会在几年内换代。教材写的是当时的形态，本章照录，不追新也不评价优劣。</p></div></div>
+  <div class="slide-foot"><span>23 / 24</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
+  <div class="slide-foot"><span>24 / 24</span><span>disclaimer</span></div>
+</section>
+</div>
+<div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>
+<script>/**
+ * [tcmP] figures.js —— 中医概念动画图（纯 SVG + rAF，无依赖）
+ *
+ * 自动挂载：文档里写
+ *     <div data-figure="wuxing-cycle"></div>
+ * 即可。支持悬停暂停；系统开启「减少动态效果」时渲染为静态帧。
+ *
+ * 与 ai-engineering-from-scratch 的 site/figures.js 同构（同样的 el/loop/registry 形态），
+ * 图目换成中医概念：
+ *   yin-yang-sigmoid    阴阳 → 二分类：sigmoid 决策边界扫过，样本左右归属翻转
+ *   wuxing-cycle        五行生克：相生正向流动 + 相克五角星流动
+ *   zangxiang-graph     藏象：脏腑 → 官窍 → 情志 的边逐步点亮
+ *   sizhen-fusion       四诊合参：四通道 → 融合层 → 证候输出
+ *   meridian-lookup     经络腧穴：KD-Tree 空间划分 + 最近邻查询
+ *   junchen-attention   君臣佐使：药味 → 权重矩阵高亮
+ */
+
+(function () {
+  'use strict';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── SVG 小工具 ──
+  function el(name, attrs, kids) {
+    const e = document.createElementNS(NS, name);
+    for (const k in attrs || {}) e.setAttribute(k, attrs[k]);
+    (Array.isArray(kids) ? kids : kids ? [kids] : []).filter(Boolean).forEach((c) => e.appendChild(c));
+    return e;
+  }
+  const txt = (s) => document.createTextNode(s);
+
+  function label(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--sans)', 'font-size': 12, fill: 'var(--muted)' },
+      opts || {}
+    ), [txt(s)]);
+  }
+  function mono(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--mono)', 'font-size': 11, fill: 'var(--muted)', 'letter-spacing': '.1em' },
+      opts || {}
+    ), [txt(s)]);
+  }
+
+  function svgRoot(host, W, H, aria) {
+    const svg = el('svg', {
+      viewBox: `0 0 ${W} ${H}`, width: '100%', role: 'img', 'aria-label': aria || '',
+      style: 'display:block;max-width:100%;height:auto',
+    });
+    host.appendChild(svg);
+    return svg;
+  }
+
+  // 悬停暂停 + 时间归一化
+  function loop(host, fn, period, opts) {
+    period = period || 6400;
+    opts = opts || {};
+    let raf, paused = false, t0 = performance.now();
+    const onTick = (now) => {
+      if (!paused) fn((((now - t0) % period) / period));
+      raf = requestAnimationFrame(onTick);
+    };
+    host.addEventListener('mouseenter', () => { paused = true; });
+    host.addEventListener('mouseleave', () => { paused = false; });
+    if (REDUCED) { fn(opts.staticT == null ? 0.62 : opts.staticT); return function () {}; }
+    raf = requestAnimationFrame(onTick);
+    return () => cancelAnimationFrame(raf);
+  }
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeIO = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const sigmoid = (z) => 1 / (1 + Math.exp(-z));
+
+  const FIGURES = {};
+
+  /* ───────────────────── yin-yang-sigmoid ─────────────────────
+     阴阳 → 二分类。左侧散点：X 轴「寒热倾向」，输出 sigmoid 概率。
+     扫描线扫过阈值，样本随阈值的移动左右换边，右侧给出准确率。
+  */
+  FIGURES['yin-yang-sigmoid'] = function (host) {
+    const W = 720, H = 400, PAD = 54;
+    const svg = svgRoot(host, W, H, '阴阳二分类与 sigmoid 决策边界');
+    const plotW = W - PAD * 2, plotH = H - 150;
+
+    // 样本：12 条八纲典型证候（阴=0 阳=1）
+    const data = [
+      [-2.2, 0], [-1.8, 0], [-1.4, 0], [-1.1, 0], [-0.6, 0], [-0.2, 0],
+      [0.2, 1], [0.6, 1], [1.1, 1], [1.5, 1], [1.9, 1], [2.4, 1],
+    ];
+    const X = (v) => PAD + ((v + 3) / 6) * plotW;
+    const Y = (p) => H - 90 - p * plotH;
+
+    // 坐标轴
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: W - PAD, y2: H - 90, stroke: 'var(--line)' }));
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: PAD, y2: H - 90 - plotH, stroke: 'var(--line)' }));
+    svg.appendChild(mono(PAD, H - 72, '寒 / 阴 →'));
+    svg.appendChild(mono(W - PAD, H - 72, '← 热 / 阳', { 'text-anchor': 'end' }));
+    svg.appendChild(mono(8, PAD - 22, 'P(阳)'));
+    svg.appendChild(mono(W - PAD - 130, 26, 'sigmoid 决策边界'));
+
+    const curve = el('path', { d: '', fill: 'none', stroke: 'var(--jade)', 'stroke-width': 2.5 });
+    svg.appendChild(curve);
+    const threshLine = el('line', { stroke: 'var(--cinnabar)', 'stroke-dasharray': '5 4', 'stroke-width': 1.6 });
+    svg.appendChild(threshLine);
+
+    const pts = data.map(([x, y]) => {
+      const g = el('g', {});
+      const c = el('circle', { r: 6, cx: X(x), cy: H - 90 - 0.5 * plotH, fill: y ? 'var(--cinnabar)' : 'var(--jade)', opacity: 0.85 });
+      const cls = el('text', {
+        x: X(x), y: H - 90 - 0.5 * plotH + 4, 'text-anchor': 'middle',
+        'font-family': 'var(--sans)', 'font-size': 10, fill: '#fff',
+      }, [txt(y ? '阳' : '阴')]);
+      g.appendChild(c); g.appendChild(cls);
+      svg.appendChild(g);
+      return { x, y, c, cls };
+    });
+
+    const accText = label(PAD, 26, '', { fill: 'var(--ink)', 'font-size': 13 });
+    svg.appendChild(accText);
+
+    let pathD = '';
+    for (let i = 0; i <= 60; i += 1) {
+      const xv = -3 + (i / 60) * 6;
+      const p = sigmoid(1.6 * xv + 0.1);
+      pathD += `${i === 0 ? 'M' : 'L'}${X(xv).toFixed(1)},${Y(p).toFixed(1)}`;
+    }
+    curve.setAttribute('d', pathD);
+
+    loop(host, (t) => {
+      // 阈值在 0..1 之间来回扫
+      const thr = 0.15 + 0.7 * easeIO(1 - Math.abs(2 * t - 1));
+      const pThr = 0.1 + thr * 0.85;
+      const xThr = (Math.log(pThr / (1 - pThr)) - 0.1) / 1.6;
+      threshLine.setAttribute('x1', X(xThr));
+      threshLine.setAttribute('x2', X(xThr));
+      threshLine.setAttribute('y1', H - 90 - plotH - 6);
+      threshLine.setAttribute('y2', H - 90);
+
+      let correct = 0;
+      for (const p of pts) {
+        const prob = sigmoid(1.6 * p.x + 0.1);
+        const pred = prob >= pThr ? 1 : 0;
+        if (pred === p.y) correct += 1;
+        p.c.setAttribute('cy', Y(prob));
+        p.cls.setAttribute('y', Y(prob) + 4);
+        p.c.setAttribute('r', pred === p.y ? 7 : 5);
+        p.c.setAttribute('opacity', pred === p.y ? 0.92 : 0.32);
+        p.cls.setAttribute('opacity', pred === p.y ? 1 : 0.25);
+        // 判错的样本画一圈红
+        p.c.setAttribute('stroke', pred === p.y ? 'none' : 'var(--cinnabar)');
+        p.c.setAttribute('stroke-width', pred === p.y ? 0 : 2);
+      }
+      accText.textContent = `阈值 P=${pThr.toFixed(2)} · 准确率 ${correct}/${pts.length} = ${((correct / pts.length) * 100).toFixed(0)}%`;
+    }, 7200);
+  };
+
+  /* ───────────────────── wuxing-cycle ─────────────────────
+     五行生克。外圈相生（顺时针流动），内五角星相克。
+  */
+  FIGURES['wuxing-cycle'] = function (host) {
+    const W = 720, H = 440, cx = W / 2 - 70, cy = H / 2, R = 148;
+    const svg = svgRoot(host, W, H, '五行生克关系');
+    const names = ['木', '火', '土', '金', '水'];
+    const colors = ['var(--jade)', 'var(--cinnabar)', 'var(--gold)', '#8a6d3b', '#2a4d69'];
+    const node = names.map((_, i) => {
+      const a = -Math.PI / 2 + (i / 5) * Math.PI * 2;
+      return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), a };
+    });
+
+    // 相生边（外圈，顺时针 木→火→土→金→水→木）
+    const sheng = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const p = el('path', {
+        d: `M${n.x},${n.y} Q${(n.x + m.x) / 2 + (cy - (n.y + m.y) / 2) * 0.16},${(n.y + m.y) / 2 + ((n.x + m.x) / 2 - cx) * 0.16} ${m.x},${m.y}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.28,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+    // 相克边（五角星）
+    const ke = node.map((n, i) => {
+      const m = node[(i + 2) % 5];
+      const p = el('line', {
+        x1: n.x, y1: n.y, x2: m.x, y2: m.y,
+        stroke: 'var(--cinnabar)', 'stroke-width': 1.4, 'stroke-dasharray': '4 4', opacity: 0.2,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+
+    // 沿边流动的点
+    const flow = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const g = el('circle', { r: 4, fill: 'var(--jade)', cx: n.x, cy: n.y, opacity: 0 });
+      svg.appendChild(g);
+      return { g, from: n, to: m };
+    });
+
+    const nodes = node.map((n, i) => {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: n.x, cy: n.y, r: 30, fill: '#fff', stroke: colors[i], 'stroke-width': 2 }));
+      g.appendChild(el('text', {
+        x: n.x, y: n.y + 8, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 22, fill: colors[i],
+      }, [txt(names[i])]));
+      svg.appendChild(g);
+      return g;
+    });
+
+    // 右栏说明
+    svg.appendChild(mono(W - 190, 60, '相生 (outer)'));
+    svg.appendChild(label(W - 190, 82, '木→火→土→金→水→木', { fill: 'var(--jade)' }));
+    svg.appendChild(mono(W - 190, 130, '相克 (star)'));
+    svg.appendChild(label(W - 190, 152, '木克土 · 土克水 · 水克火', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(label(W - 190, 170, '火克金 · 金克木', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(mono(W - 190, 220, '建模要点'));
+    svg.appendChild(label(W - 190, 242, '5 类 + 有向约束', { fill: 'var(--ink)' }));
+    svg.appendChild(label(W - 190, 262, '纯 softmax 会丢掉', { fill: 'var(--muted)' }));
+    svg.appendChild(label(W - 190, 280, '全部关系信息', { fill: 'var(--muted)' }));
+
+    const capt = label(W - 190, H - 30, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const phase = (t * 5) % 5;
+      for (let i = 0; i < 5; i += 1) {
+        const f = flow[i];
+        const local = clamp01(phase - i);
+        const k = easeIO(local);
+        f.g.setAttribute('cx', lerp(f.from.x, f.to.x, k));
+        f.g.setAttribute('cy', lerp(f.from.y, f.to.y, k));
+        f.g.setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.95 : 0);
+        sheng[i].setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.75 : 0.28);
+        const keOn = phase - i >= 0 && phase - i <= 1.4;
+        ke[i].setAttribute('opacity', keOn ? 0.55 : 0.2);
+      }
+      const active = Math.floor(phase) % 5;
+      nodes.forEach((g, i) => g.querySelector('circle').setAttribute('stroke-width', i === active ? 4 : 2));
+      capt.textContent = `当前传导：${names[active]} → ${names[(active + 1) % 5]}（生） / ${names[active]} 克 ${names[(active + 2) % 5]}`;
+    }, 7000);
+  };
+
+  /* ───────────────────── zangxiang-graph ─────────────────────
+     藏象：五脏 → 官窍 → 情志，边按序点亮。
+  */
+  FIGURES['zangxiang-graph'] = function (host) {
+    const W = 720, H = 430;
+    const svg = svgRoot(host, W, H, '藏象学说的脏腑-官窍-情志关系图');
+
+    const zang = [
+      { n: '肝', x: 110, y: 100, qiao: ['目'], zhi: '怒' },
+      { n: '心', x: 110, y: 210, qiao: ['舌'], zhi: '喜' },
+      { n: '脾', x: 110, y: 320, qiao: ['口'], zhi: '思' },
+      { n: '肺', x: 610, y: 100, qiao: ['鼻'], zhi: '悲' },
+      { n: '肾', x: 610, y: 210, qiao: ['耳'], zhi: '恐' },
+    ];
+    const edges = [];
+
+    for (const z of zang) {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: z.x, cy: z.y, r: 26, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+      g.appendChild(el('text', { x: z.x, y: z.y + 8, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 20, fill: 'var(--cinnabar)' }, [txt(z.n)]));
+      svg.appendChild(g);
+
+      const qx = W / 2 + (z.x < 300 ? -40 : 40);
+      g.appendChild(el('line', { x1: z.x + (z.x < 300 ? 26 : -26), y1: z.y, x2: qx - (z.x < 300 ? 22 : -22), y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+
+      const qg = el('g', {});
+      qg.appendChild(el('rect', { x: qx - 22, y: z.y - 14, width: 44, height: 28, rx: 6, fill: 'var(--jade-soft)', stroke: 'var(--jade)', 'stroke-width': 1.3 }));
+      qg.appendChild(el('text', { x: qx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--jade)' }, [txt(z.qiao[0])]));
+      svg.appendChild(qg);
+
+      const zx = W - 110;
+      g.appendChild(el('line', { x1: qx + 22, y1: z.y, x2: zx - 24, y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      const zg = el('g', {});
+      zg.appendChild(el('circle', { cx: zx, cy: z.y, r: 22, fill: '#fdf1dd', stroke: 'var(--gold)', 'stroke-width': 1.3 }));
+      zg.appendChild(el('text', { x: zx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--gold)' }, [txt(z.zhi)]));
+      svg.appendChild(zg);
+
+      edges.push({ zy: z.y, e1: g.querySelector('line'), e2: g.querySelectorAll('line')[1], qg, zg });
+    }
+
+    svg.appendChild(mono(110 - 30, 40, '藏 / 五藏'));
+    svg.appendChild(mono(W / 2 - 30, 40, '象 / 官窍'));
+    svg.appendChild(mono(W - 110 - 30, 40, '情志'));
+    const capt = label(20, H - 14, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const step = t * 5;
+      edges.forEach((e, i) => {
+        const on = step >= i;
+        e.e1.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        e.e2.setAttribute('stroke', on ? 'var(--gold)' : 'var(--line)');
+        e.qg.setAttribute('opacity', on ? 1 : 0.35);
+        e.zg.setAttribute('opacity', on ? 1 : 0.35);
+      });
+      const cur = zang[Math.min(4, Math.floor(step))];
+      capt.textContent = cur ? `点亮中：${cur.n} 开窍于 ${cur.qiao[0]}，在志为${cur.zhi}` : '';
+    }, 6200, { staticT: 0.99 });
+  };
+
+  /* ───────────────────── sizhen-fusion ─────────────────────
+     四诊合参：四通道 → 融合层 → 证候。演示模态缺失时的降级。
+  */
+  FIGURES['sizhen-fusion'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '四诊合参的多模态融合与模态缺失降级');
+    const chans = [
+      { n: '望', d: '舌象 / 面色', y: 60 },
+      { n: '闻', d: '语声 / 气息', y: 130 },
+      { n: '问', d: '主诉 / 现病史', y: 200 },
+      { n: '切', d: '脉搏波', y: 270 },
+    ];
+    const fx = 330, fy = 165;
+    const outx = 600;
+
+    const fxG = el('g', {});
+    fxG.appendChild(el('rect', { x: fx - 52, y: fy - 46, width: 104, height: 92, rx: 10, fill: '#fff', stroke: 'var(--jade)', 'stroke-width': 2 }));
+    fxG.appendChild(el('text', { x: fx, y: fy - 14, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--jade)' }, [txt('融合层')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 8, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('交叉注意力')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 26, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('+ 缺失掩码')]));
+    svg.appendChild(fxG);
+
+    const outG = el('g', {});
+    outG.appendChild(el('rect', { x: outx - 46, y: fy - 32, width: 92, height: 64, rx: 10, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+    outG.appendChild(el('text', { x: outx, y: fy - 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--cinnabar)' }, [txt('证候')]));
+    outG.appendChild(el('text', { x: outx, y: fy + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('带置信度')]));
+    svg.appendChild(outG);
+
+    svg.appendChild(el('line', { x1: fx + 52, y1: fy, x2: outx - 46, y2: fy, stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+
+    const inG = chans.map((c) => {
+      const g = el('g', {});
+      g.appendChild(el('rect', { x: 24, y: c.y - 24, width: 150, height: 48, rx: 8, fill: '#fff', stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      g.appendChild(el('text', { x: 40, y: c.y - 2, 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--ink)' }, [txt(c.n + '诊')]));
+      g.appendChild(el('text', { x: 40, y: c.y + 16, 'font-size': 11, fill: 'var(--muted)' }, [txt(c.d)]));
+      svg.appendChild(g);
+      const path = el('path', {
+        d: `M174,${c.y} C 250,${c.y} 260,${fy} ${fx - 52},${fy}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.22,
+      });
+      svg.appendChild(path);
+      const dot = el('circle', { r: 4, fill: 'var(--jade)', opacity: 0 });
+      svg.appendChild(dot);
+      return { g, path, dot, y: c.y };
+    });
+
+    const capt = label(24, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    // 循环：全模态 → 缺闻诊 → 缺闻+切 → 恢复
+    const phases = [[1, 1, 1, 1], [1, 0, 1, 1], [1, 0, 1, 0], [1, 1, 1, 1]];
+    loop(host, (t) => {
+      const idx = Math.min(phases.length - 1, Math.floor(t * phases.length));
+      const mask = phases[idx];
+      const missing = [];
+      mask.forEach((m, i) => { if (!m) missing.push(chans[i].n); });
+
+      inG.forEach((c, i) => {
+        const on = mask[i] === 1;
+        c.g.style.opacity = on ? 1 : 0.3;
+        c.path.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        c.path.setAttribute('stroke-dasharray', on ? 'none' : '4 4');
+        c.path.setAttribute('opacity', on ? 0.55 : 0.25);
+        const local = clamp01(t * 4 - idx);
+        c.dot.setAttribute('cx', lerp(174, fx - 52, easeIO(local)));
+        c.dot.setAttribute('cy', lerp(c.y, fy, easeIO(local)));
+        c.dot.setAttribute('opacity', on ? 0.95 : 0);
+      });
+
+      const conf = 0.62 + 0.1 * mask.filter(Boolean).length;
+      outG.style.opacity = 0.4 + 0.6 * conf;
+      capt.textContent = missing.length
+        ? `模态缺失：缺 ${missing.join('、')} → 置信度降至 ${(conf * 100).toFixed(0)}%，系统须显式降级而非静默猜测`
+        : `四诊齐备 → 置信度 ${(conf * 100).toFixed(0)}%`;
+    }, 8800, { staticT: 0.35 });
+  };
+
+  /* ───────────────────── meridian-lookup ─────────────────────
+     腧穴检索：KD-Tree 空间划分 + 最近邻查询。
+  */
+  FIGURES['meridian-lookup'] = function (host) {
+    const W = 720, H = 400, PAD = 40;
+    const svg = svgRoot(host, W, H, '腧穴的空间划分与最近邻检索');
+    const plotW = W - PAD * 2 - 30, plotH = H - 110;
+
+    // 模拟体表腧穴点集（合谷、内关、足三里、三阴交等 18 穴）
+    let seed = 20261012;
+    const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+    const pts = Array.from({ length: 18 }, () => ({ x: PAD + 30 + rnd() * (plotW - 60), y: PAD + 20 + rnd() * (plotH - 40) }));
+
+    // KD-Tree 递归划分线
+    const lines = [];
+    (function build(list, depth) {
+      if (list.length < 2) return;
+      const axis = depth % 2;
+      const sorted = list.slice().sort((a, b) => (axis ? a.y - b.y : a.x - b.x));
+      const med = sorted[Math.floor(sorted.length / 2)];
+      if (axis) {
+        const minX = Math.min(...list.map((p) => p.x));
+        const maxX = Math.max(...list.map((p) => p.x));
+        lines.push({ x1: minX, y1: med.y, x2: maxX, y2: med.y, depth });
+        build(list.filter((p) => p.y < med.y), depth + 1);
+        build(list.filter((p) => p.y >= med.y), depth + 1);
+      } else {
+        const minY = Math.min(...list.map((p) => p.y));
+        const maxY = Math.max(...list.map((p) => p.y));
+        lines.push({ x1: med.x, y1: minY, x2: med.x, y2: maxY, depth });
+        build(list.filter((p) => p.x < med.x), depth + 1);
+        build(list.filter((p) => p.x >= med.x), depth + 1);
+      }
+    })(pts, 0);
+
+    const lineEls = lines.map((l) => {
+      const e = el('line', { x1: l.x1, y1: l.y1, x2: l.x2, y2: l.y2, stroke: 'var(--line)', 'stroke-width': 1, opacity: 0 });
+      svg.appendChild(e);
+      return { e, depth: l.depth };
+    });
+
+    const dotEls = pts.map((p, i) => {
+      const c = el('circle', { cx: p.x, cy: p.y, r: 4.5, fill: 'var(--jade)', opacity: 0.75 });
+      svg.appendChild(c);
+      const t = el('text', { x: p.x + 7, y: p.y + 4, 'font-size': 10, fill: 'var(--muted)', opacity: 0 });
+      t.appendChild(txt(`穴${String(i + 1).padStart(2, '0')}`));
+      svg.appendChild(t);
+      return { c, t, p };
+    });
+
+    const query = el('circle', { r: 8, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 2.2 });
+    svg.appendChild(query);
+    const ring = el('circle', { r: 0, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 1, 'stroke-dasharray': '3 3' });
+    svg.appendChild(ring);
+    const link = el('line', { stroke: 'var(--cinnabar)', 'stroke-width': 1.6, 'stroke-dasharray': '4 3' });
+    svg.appendChild(link);
+
+    const capt = label(PAD, H - 20, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      // 查询点沿弧线游走
+      const ang = t * Math.PI * 2;
+      const qx = PAD + 30 + plotW / 2 + Math.cos(ang) * plotW * 0.33;
+      const qy = PAD + 20 + plotH / 2 + Math.sin(ang) * plotH * 0.32;
+      query.setAttribute('cx', qx);
+      query.setAttribute('cy', qy);
+
+      let best = null;
+      let bestD = Infinity;
+      for (const d of dotEls) {
+        const dd = (d.p.x - qx) ** 2 + (d.p.y - qy) ** 2;
+        if (dd < bestD) { bestD = dd; best = d; }
+        d.c.setAttribute('r', 4.5);
+        d.c.setAttribute('fill', 'var(--jade)');
+        d.t.setAttribute('opacity', 0);
+      }
+      const dist = Math.sqrt(bestD);
+      link.setAttribute('x1', qx); link.setAttribute('y1', qy);
+      link.setAttribute('x2', best.p.x); link.setAttribute('y2', best.p.y);
+      ring.setAttribute('cx', qx); ring.setAttribute('cy', qy);
+      ring.setAttribute('r', dist);
+      best.c.setAttribute('r', 8);
+      best.c.setAttribute('fill', 'var(--cinnabar)');
+      best.t.setAttribute('opacity', 1);
+
+      const step = clamp01(t * 3);
+      lineEls.forEach((l) => l.e.setAttribute('opacity', step > l.depth / 6 ? (0.5 - l.depth * 0.06) : 0));
+
+      capt.textContent = `查询点 → 最近腧穴 ${best.t.textContent} · 平面距离 ${dist.toFixed(1)}px（真实体表须改测地距离）`;
+    }, 11000, { staticT: 0.2 });
+  };
+
+  /* ───────────────────── junchen-attention ─────────────────────
+     君臣佐使 → 注意力权重。列 = 药味，行为权重分配。
+  */
+  FIGURES['junchen-attention'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '君臣佐使的注意力权重分配');
+
+    const herbs = ['桂枝', '芍药', '生姜', '大枣', '甘草'];
+    const roles = ['君', '臣', '佐', '使'];
+    const weights = [
+      [0.52, 0.30, 0.08, 0.06, 0.04],
+      [0.18, 0.44, 0.20, 0.12, 0.06],
+      [0.08, 0.16, 0.40, 0.24, 0.12],
+      [0.04, 0.08, 0.18, 0.32, 0.38],
+    ];
+
+    const GX = 110, GY = 60, CW = 84, CH = 52;
+    svg.appendChild(mono(GX, 34, '方剂：桂枝汤（示例）'));
+
+    herbs.forEach((h, j) => {
+      svg.appendChild(el('text', {
+        x: GX + j * CW + CW / 2, y: GY - 10, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 14, fill: 'var(--ink)',
+      }, [txt(h)]));
+    });
+    roles.forEach((r, i) => {
+      svg.appendChild(el('text', {
+        x: GX - 22, y: GY + i * CH + CH / 2 + 6, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--cinnabar)',
+      }, [txt(r)]));
+    });
+
+    const cells = [];
+    for (let i = 0; i < roles.length; i += 1) {
+      for (let j = 0; j < herbs.length; j += 1) {
+        const r = el('rect', {
+          x: GX + j * CW + 3, y: GY + i * CH + 3, width: CW - 6, height: CH - 6, rx: 6,
+          fill: 'var(--jade)', opacity: 0,
+        });
+        svg.appendChild(r);
+        const tx = el('text', {
+          x: GX + j * CW + CW / 2, y: GY + i * CH + CH / 2 + 5, 'text-anchor': 'middle',
+          'font-family': 'var(--mono)', 'font-size': 12, fill: 'var(--ink)', opacity: 0,
+        });
+        tx.appendChild(txt(weights[i][j].toFixed(2)));
+        svg.appendChild(tx);
+        cells.push({ r, tx, w: weights[i][j], i, j });
+      }
+    }
+
+    // 右侧：软化的权重条
+    const bx = GX + herbs.length * CW + 40;
+    svg.appendChild(mono(bx, 34, '行归一化 (softmax)'));
+    const bars = roles.map((r, i) => {
+      const max = Math.max(...weights[i]);
+      const w = Math.max(...weights[i]);
+      const g = el('g', {});
+      g.appendChild(el('text', { x: bx, y: GY + i * 44 + 10, 'font-size': 12, fill: 'var(--muted)' }, [txt(r + ' 最大: ' + max.toFixed(2))]));
+      const bg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 180, height: 8, rx: 4, fill: 'var(--paper-2)' });
+      g.appendChild(bg);
+      const fg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 0, height: 8, rx: 4, fill: 'var(--jade)' });
+      g.appendChild(fg);
+      svg.appendChild(g);
+      return { fg, w: w, max };
+    });
+
+    svg.appendChild(label(20, H - 40, '结构先验：君药权重最大 → 可作为注意力掩码，让模型学不到"反结构"的配伍', { fill: 'var(--muted)' }));
+    const capt = label(20, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const focusRow = Math.floor(t * 4) % 4;
+      const local = clamp01(t * 4 - Math.floor(t * 4));
+      cells.forEach((c) => {
+        const on = c.i === focusRow;
+        c.r.setAttribute('opacity', on ? c.w * (0.55 + 0.45 * local) : c.w * 0.14);
+        c.tx.setAttribute('opacity', on ? 1 : 0.25);
+      });
+      bars.forEach((b, i) => {
+        b.fg.setAttribute('width', i === focusRow ? 180 * (b.max) * (0.5 + 0.5 * local) : 180 * b.max * 0.35);
+      });
+      capt.textContent = `当前角色：${roles[focusRow]} · 权重最高者为 ${herbs[weights[focusRow].indexOf(Math.max(...weights[focusRow]))]}`;
+    }, 8000, { staticT: 0.1 });
+  };
+
+  /* ───────────────────── 自动挂载 ───────────────────── */
+  function mount(root) {
+    const hosts = (root || document).querySelectorAll('[data-figure]');
+    for (const host of hosts) {
+      if (host.dataset.figureMounted === '1') continue;
+      const fn = FIGURES[host.dataset.figure];
+      if (!fn) {
+        host.innerHTML = `<p class="muted small">未知图形：<code>${host.dataset.figure}</code></p>`;
+        host.dataset.figureMounted = '1';
+        continue;
+      }
+      host.classList.add('figure');
+      fn(host);
+      host.dataset.figureMounted = '1';
+    }
+  }
+
+  window.TCMFigures = { FIGURES, mount };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => mount());
+  } else {
+    mount();
+  }
+  // 单页内动态插入的图形（章节页异步渲染）也能挂上
+  new MutationObserver(() => mount()).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+<script>
+(function(){
+  const deck=document.getElementById('deck');
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+
+  // ── 单帧模式：?shot=N 只渲染第 N 张，供无头浏览器逐帧截图 ──
+  // 截图器需要一张「干净的、正好一屏」的画面，所以这里藏掉其余幻灯片、
+  // 关掉滚动吸附、去掉 HUD，并在 title 上打就绪标记（渲染完成前截图会得到空白）。
+  const shot=new URLSearchParams(location.search).get('shot');
+  if(shot!==null){
+    const n=Math.max(0,Math.min(slides.length-1,Number(shot)||0));
+    slides.forEach((s,idx)=>{ if(idx!==n) s.style.display='none'; });
+    deck.style.overflow='hidden';
+    deck.style.scrollSnapType='none';
+    const hud=document.getElementById('hud');
+    if(hud) hud.style.display='none';
+    const target=slides[n];
+    if(target){ target.style.borderBottom='0'; target.scrollIntoView({block:'start'}); }
+    document.title='SHOT_READY '+n+' of '+slides.length;
+    if(window.TCMFigures)window.TCMFigures.mount(document);
+    // 只读视图：不绑键盘与点击，避免截图过程中页面状态改变
+    return;
+  }
+
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView();}
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    else if(e.key==='p'||e.key==='P'){e.preventDefault();print();}
+  });
+  deck.addEventListener('click',e=>{if(e.target.closest('a'))return;go(i+1);});
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)i=+en.target.dataset.i;});},{root:deck,threshold:.6});
+  slides.forEach(s=>io.observe(s));
+  if(window.TCMFigures)window.TCMFigures.mount(document);
+})();
+</script>
+</body>
+</html>

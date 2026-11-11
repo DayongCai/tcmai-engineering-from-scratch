@@ -55,6 +55,7 @@ site/snapshot/
 
 # 嵌入层派生产物（可由 node scripts/build_embeddings.js 重跑；README.md 入库）
 standards/semtensor/embeddings/index.json
+standards/semtensor/embeddings/docs.fts5.db
 
 # 运行时租约（external_batch 的互斥锁；机器本地状态，不入库）
 .cache/
@@ -65,3 +66,10 @@ standards/semtensor/descriptions/dsu-descriptions.json
 
 # ICD-11 快照与本地库（19.5 MB，版权属 WHO；按 sha256 可重现，见 standards/icd11/README.md）
 data/icd11/
+
+# GitHub 发布令牌（本地存放，绝不入库）
+.github-token
+
+# 工具下载目录与站点打包产物（超过 GitHub 单文件 100MB 限制，不入库）
+.tmp/
+site/content.js

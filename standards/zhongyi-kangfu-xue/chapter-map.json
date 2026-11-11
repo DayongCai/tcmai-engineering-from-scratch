@@ -1,0 +1,159 @@
+{
+ "note": "派生课：一章一主题，单元按关键词从父课选题；本课内无单元复用。",
+ "chapters": {
+  "01-zhongyi-kangfu-gailun": {
+   "n": 1,
+   "title": "中医康复学概论",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "中医康复不是「针灸+锻炼」，是一套辨证—调护体系",
+   "derivedFrom": "zhenjiu-zhiliao、zhongyi-yangsheng-xue"
+  },
+  "02-bianzheng-pingding": {
+   "n": 2,
+   "title": "辨证与功能评定",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "证候与功能是两套坐标，必须同时记",
+   "derivedFrom": "zhenjiu-zhiliao、kangfu-huli"
+  },
+  "03-zhongyao-kangfu": {
+   "n": 3,
+   "title": "中药康复",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "内服与外用两条路",
+   "derivedFrom": "linchuang-zhongyao、zhongyao-xue"
+  },
+  "04-zhenjiu-kangfu": {
+   "n": 4,
+   "title": "针灸康复",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5",
+    "4.6"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "取穴与疗程要跟着功能目标走",
+   "derivedFrom": "zhenjiu-zhiliao、cifa-jiufa"
+  },
+  "05-tuina-kangfu": {
+   "n": 5,
+   "title": "推拿康复",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "手法是康复里最依赖人的一项",
+   "derivedFrom": "zhiliao、shoufa"
+  },
+  "06-qigong-kangfu": {
+   "n": 6,
+   "title": "气功导引康复",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "呼吸与动作的自控训练",
+   "derivedFrom": "qigong"
+  },
+  "07-yinshi-qingzhi": {
+   "n": 7,
+   "title": "饮食与情志康复",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4",
+    "7.5"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "「忌口」与「安心」都有边界",
+   "derivedFrom": "zhongyi-yangsheng-xue、zhongyi-xinli-xue"
+  },
+  "08-zhongfeng-kangfu": {
+   "n": 8,
+   "title": "中风康复",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4",
+    "8.5",
+    "8.6"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "中医康复最成熟的一个病种",
+   "derivedFrom": "zhenjiu-zhiliao、kangfu-huli"
+  },
+  "09-gushang-manbing": {
+   "n": 9,
+   "title": "骨伤与慢病康复",
+   "units": [
+    "9.1",
+    "9.2",
+    "9.3",
+    "9.4",
+    "9.5"
+   ],
+   "srcChapters": [
+    "派生#9"
+   ],
+   "why": "骨折术后与糖尿病、高血压的功能维持",
+   "derivedFrom": "zhenjiu-zhiliao、kangfu-huli"
+  },
+  "10-shequ-jiating": {
+   "n": 10,
+   "title": "社区与家庭康复",
+   "units": [
+    "10.1",
+    "10.2",
+    "10.3"
+   ],
+   "srcChapters": [
+    "派生#10"
+   ],
+   "why": "把康复交到患者家里需要什么条件",
+   "derivedFrom": "shequ-huli-xue、zhongyi-huli-jishu"
+  }
+ }
+}

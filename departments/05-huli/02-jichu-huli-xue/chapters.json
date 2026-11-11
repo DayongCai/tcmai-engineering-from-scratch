@@ -1,66 +1,132 @@
 {
-  "slug": "02-jichu-huli-xue",
-  "title": "基础护理学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-fanwei-lunli",
-      "title": "基础护理的范围与伦理要求",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-wujun-gankong",
-      "title": "无菌技术与感染控制",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-shengming-tizheng",
-      "title": "生命体征的测量与判读",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-geiyao-zhushe",
-      "title": "给药途径与注射技术",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-jingmai-shuye",
-      "title": "静脉输液与并发症",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-yangliao-qidao",
-      "title": "氧疗、吸痰与气道管理",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-daoniao-paixie",
-      "title": "导尿、灌肠与排泄护理",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-yachuang-yufang",
-      "title": "压疮的评估与预防",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-anquan-buliang",
-      "title": "患者安全与不良事件报告",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-caozuo-kaohe",
-      "title": "护理操作的标准与考核",
-      "status": "📋"
-    }
-  ]
+ "slug": "02-jichu-huli-xue",
+ "title": "基础护理学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gaishu-gufan",
+   "title": "护理综合技能概述与训练要求",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-gaishu-gufan/docs/zh.md",
+   "code": "chapters/01-gaishu-gufan/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-anquan-quanyi",
+   "title": "技能操作中的患者安全与权益保护",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-anquan-quanyi/docs/zh.md",
+   "code": "chapters/02-anquan-quanyi/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-shengming-tizheng",
+   "title": "生命体征与一般状况观察技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-shengming-tizheng/docs/zh.md",
+   "code": "chapters/03-shengming-tizheng/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-geiyao-jineng",
+   "title": "给药相关护理技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-geiyao-jineng/docs/zh.md",
+   "code": "chapters/04-geiyao-jineng/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-wujun-shangkou",
+   "title": "无菌技术与伤口护理技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-wujun-shangkou/docs/zh.md",
+   "code": "chapters/05-wujun-shangkou/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-yangliao-qidao",
+   "title": "氧疗与气道护理技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-yangliao-qidao/docs/zh.md",
+   "code": "chapters/06-yangliao-qidao/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-paixie-daoniao",
+   "title": "排泄与导尿护理技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-paixie-daoniao/docs/zh.md",
+   "code": "chapters/07-paixie-daoniao/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-tiwei-zhuanyun",
+   "title": "体位、活动与转运技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-tiwei-zhuanyun/docs/zh.md",
+   "code": "chapters/08-tiwei-zhuanyun/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-jijiu-fuhui",
+   "title": "急救与复苏配合技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-jijiu-fuhui/docs/zh.md",
+   "code": "chapters/09-jijiu-fuhui/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-zhongyi-jineng",
+   "title": "中医护理技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-zhongyi-jineng/docs/zh.md",
+   "code": "chapters/10-zhongyi-jineng/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-weishoushu-xiezuo",
+   "title": "围手术期与专科协作技能",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-weishoushu-xiezuo/docs/zh.md",
+   "code": "chapters/11-weishoushu-xiezuo/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-monixing-xunlian",
+   "title": "综合模拟训练与情景演练",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-monixing-xunlian/docs/zh.md",
+   "code": "chapters/12-monixing-xunlian/code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-kaohe-pingjia",
+   "title": "技能考核与教学团队协作",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/13-kaohe-pingjia/docs/zh.md",
+   "code": "chapters/13-kaohe-pingjia/code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-zhiliang-shequ",
+   "title": "技能风险、质量管理与社区居家",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/14-zhiliang-shequ/docs/zh.md",
+   "code": "chapters/14-zhiliang-shequ/code/main.js"
+  }
+ ]
 }

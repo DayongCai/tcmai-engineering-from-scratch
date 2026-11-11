@@ -1,0 +1,79 @@
+{
+  "lesson": "04-zhenduan",
+  "title": "诊断：精神检查是主证据，量表是辅证",
+  "subject": "20-zhongyi-jingshenbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "精神科诊断的主证据是？",
+      "options": [
+        "精神检查",
+        "量表评分",
+        "血液化验",
+        "影像"
+      ],
+      "correct": 0,
+      "explanation": "教材 4.2.1：量表「可辅助参考」。"
+    },
+    {
+      "stage": "check",
+      "question": "精神检查的四个域是？",
+      "options": [
+        "神志意识／情感情绪／行为言语／认知睡眠",
+        "望闻问切",
+        "寒热虚实",
+        "表里阴阳"
+      ],
+      "correct": 0,
+      "explanation": "与本课程四位面同构。"
+    },
+    {
+      "stage": "check",
+      "question": "风险评估的三问不包括？",
+      "options": [
+        "有无家族史",
+        "有无自伤/自杀观念与计划",
+        "有无伤人观念与计划",
+        "有无走失/跌倒风险"
+      ],
+      "correct": 0,
+      "explanation": "教材 4.2.1：三问在病史采集中完成。"
+    },
+    {
+      "stage": "check",
+      "question": "本章三辨首位是？",
+      "options": [
+        "证候表现（278，全书唯一）",
+        "病因",
+        "病机",
+        "三者相等"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算：全书唯一以证候表现居首的章。"
+    },
+    {
+      "stage": "post",
+      "question": "「望神」为何是精神科第一诊？",
+      "options": [
+        "目光与表情比量表更早反映状态",
+        "因为方便",
+        "因为经典要求",
+        "因为省钱"
+      ],
+      "correct": 0,
+      "explanation": "教材 4.1.1 望神写得最细。"
+    },
+    {
+      "stage": "post",
+      "question": "只用量表代替精神检查的风险是？",
+      "options": [
+        "量表是结构化记录，不能替代观察与问话",
+        "没有风险",
+        "量表不准",
+        "耗时太长"
+      ],
+      "correct": 0,
+      "explanation": "量表为辅助，诊断须综合。"
+    }
+  ]
+}

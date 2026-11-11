@@ -1,0 +1,79 @@
+{
+ "lesson": "06-jiankang-jiaoyu",
+ "title": "健康教育",
+ "subject": "16-huli-xue-daolun",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 6 章「健康教育」要回答的核心问题是什么？",
+   "options": [
+    "健康教育为什么经常「讲了但没变」",
+    "1.1.2 护理学的范畴与体系",
+    "2.1.2 护理理念的演变",
+    "3.1.2 环境"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：因为讲的是知识，要改的是行为：行为改变需要动机、能力与提示三者同时具备，缺一条就回到原样。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "概念与理论",
+    "护理程序",
+    "专业与伦理",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（护理领域）重心落在哪一项？",
+   "options": [
+    "个体",
+    "乙酸-丙二酸途径",
+    "莽草酸途径",
+    "甲戊二羟酸途径"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "1 个",
+    "3 个",
+    "5 个",
+    "7 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "本课程数值类命中只有 15 处，说明什么？",
+   "options": [
+    "教材常数多以范围或文字表述，可数的值少不等于不量化",
+    "1.1.2 护理学的范畴与体系",
+    "2.1.2 护理理念的演变",
+    "3.1.2 环境"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：真正的量化在方法学七项指标里。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/huli-daolun/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

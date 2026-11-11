@@ -1,0 +1,32 @@
+{
+  "slug": "20-xiaoer-tuina-xue",
+  "title": "小儿推拿学",
+  "en": "Pediatric Tuina",
+  "deptSlug": "03-zhenjiu",
+  "deptTitle": "针灸系",
+  "globalN": 50,
+  "type": "Clinic",
+  "semester": 8,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 36,
+  "bridge": "小儿特定穴→部位模板 / 手法量效→剂量模型",
+  "chaptersTarget": 12,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/03-zhenjiu/20-xiaoer-tuina-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/03-zhenjiu/20-xiaoer-tuina-xue",
+    "chaptersWritten": 12,
+    "words": 173455,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#小儿推拿学",
+    "extractedAt": "2026-10-21"
+  }
+}

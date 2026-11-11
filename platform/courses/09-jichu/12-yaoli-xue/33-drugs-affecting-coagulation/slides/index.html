@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>第 33 章 作用于凝血系统药物：一个平衡，四个方向 · 幻灯片</title>
+<style>
+
+:root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
+--jade:#1f6f5c;--jade-soft:#e3efe9;--cinnabar:#a8321e;--cinnabar-soft:#f7e6e2;--gold:#a8862a;
+--sans:system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;
+--serif:"Songti SC","Noto Serif SC",Georgia,serif;
+--mono:ui-monospace,"Cascadia Mono",Consolas,monospace;}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#12110f;color:var(--ink);font-family:var(--sans)}
+#deck{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{min-height:100%;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;
+  padding:5vh 7vw;background:var(--paper);border-bottom:1px solid #000}
+.slide-inner{max-width:1000px;width:100%;margin:0 auto}
+.slide-foot{max-width:1000px;width:100%;margin:3vh auto 0;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+h1.big{font-family:var(--serif);font-size:clamp(28px,4.4vw,54px);line-height:1.25;margin:0}
+blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-height:1.6;margin:0;
+  border-left:6px solid var(--gold);padding-left:24px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--jade);
+  text-transform:uppercase;margin-bottom:14px}
+.kicker.warn{color:var(--cinnabar)}
+p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
+.compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
+.compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+/* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
+.math{font-style:italic;font-family:var(--serif)}
+.math-block{display:block;text-align:center;font-family:var(--serif);font-size:1.05em;margin:.8em 0}
+.math-op,.math-text,.math-rm{font-style:normal}
+.math-op{padding:0 .12em}
+.math-cal{font-style:normal}
+.math-bb{font-style:normal;font-weight:700}
+.frac{display:inline-block;vertical-align:middle;text-align:center;font-style:normal;margin:0 .15em;line-height:1.15}
+.frac-num{display:block;padding:0 .3em;border-bottom:1px solid currentColor}
+.frac-den{display:block;padding:0 .3em}
+.math-sqrt{font-style:normal;margin-right:.05em}
+.math-line{border-top:1px solid currentColor;font-style:normal;padding-top:.05em}
+.math-note{font-size:.8em;font-style:normal}
+.figure-host{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+#hud{position:fixed;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#8a8578;
+  background:#faf8f3cc;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
+@media print{.slide{page-break-after:always;min-height:auto}#hud{display:none}}
+</style>
+</head>
+<body>
+<div id="deck">
+<section class="slide" data-i="0">
+  <div class="slide-inner"><h1 class="big">第 33 章 作用于凝血系统药物：一个平衡，四个方向</h1></div>
+  <div class="slide-foot"><span>1 / 26</span><span>title</span></div>
+</section>
+<section class="slide" data-i="1">
+  <div class="slide-inner"><blockquote class="motto">「作用于凝血系统的药物正是围绕这一平衡的不同环节发挥作用」——教材·药理学·第33章·33.1.1</blockquote></div>
+  <div class="slide-foot"><span>2 / 26</span><span>motto</span></div>
+</section>
+<section class="slide" data-i="2">
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">这一章药名多、靶点多、要盯的项目也多，容易背成一堆互不相干的条目。真正的门槛有两处。第一处是方向：抗凝、溶栓、抗血小板都在往「不让血凝住」的一侧推，促凝血药却在反方向，而教材把它们放进同一章，理由不在药名里。第二处是环节：同是抗凝，肝素加速的是生理性抑制，水蛭素直接按住凝血酶，华法林减少的是因子的合成；三者的起效快慢、可逆性、被什么影响，全由「掐在哪一段」决定。两处都答不出，四类药就只剩四个名字。</p></div>
+  <div class="slide-foot"><span>3 / 26</span><span>problem</span></div>
+</section>
+<section class="slide" data-i="3">
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（床旁问的是「出血了，是不是这个药」；要答这句话，先得知道这个药掐的是平衡的哪一段、掐住之后哪一端先松动，而现场能给的只有一个出血现象）+ 知识积累（本章 4 节 12 小节、19,960 字，四个方向的词频是 80 / 97 / 22 / 8——抗凝与纤溶各占一头，促凝只有 8 次；「出血」85 次铺满全部 12 个小节，「观察」52 次，而承载分类的靶点词最高的也只有 65 次——教材用一个平衡做骨架，却没在骨架与四类药之间铺出台阶）</p></div>
+  <div class="slide-foot"><span>4 / 26</span><span>roots</span></div>
+</section>
+<section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、先把平衡摆出来</div>
+                <div class="compact"><p>33.1.1 开篇没有直接讲药，而是把凝血过程梳理了一遍：凝血因子按启动方式分内源性与外源性两条途径，二者在激活因子Ⅹ之后汇入共同途径，凝血酶原在凝血酶原酶复合物作用下转变为凝血酶，凝血酶水解纤维蛋白原、释放纤维蛋白肽并促使纤维蛋白单体聚合与交联，形成稳定的血凝块。与此同时，机体存在抗凝血酶、蛋白 C 系统与组织因子途径抑制物等生理性抗凝机制，凝血与抗凝在体内维持动态平衡。</p>
+<p>这段铺垫的价值在于它给出了<strong>位置的坐标系</strong>：</p>
+<blockquote><p>「作用于凝血系统的药物正是围绕这一平衡的不同环节发挥作用」——教材·药理学·第33章·33.1.1</p></blockquote></div></div>
+  <div class="slide-foot"><span>5 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、先把平衡摆出来</div>
+                <div class="compact"><p>有了坐标系，四类药就不再是四个抽屉。抗凝血药减少新的纤维蛋白生成，纤维蛋白溶解药清除已沉积的纤维蛋白，抗血小板药抑制血小板参与的起始环节，促凝血药与血容量扩充药则把方向反过来。前三个方向在平衡的同一侧，第四个方向在另一侧——<strong>方向相反的药能同处一章，是因为它们作用于同一个平衡</strong>。这句话听起来像解释，其实是本章全部观察要求的来源：既然是同一个平衡，不良反应就必然落在对侧——抗凝与溶栓的代价是出血，促凝的代价是血栓。</p>
+<p>程序数了四个方向的词频：抗凝 80、纤溶 97、抗血小板 22、促凝 8。这个分布说明教材的笔墨重心在前两个方向，抗血小板与促凝写得较省。省不等于次要，而是因为这两支的机制相对单一：抗血小板的作用集中在活化链的几个节点上，促凝的作用集中在「补什么」上。观察项的数量与词频并不成正比——出血 85 次，覆盖全部 12 个小节，四类药共用同一个观察重点。</p></div></div>
+  <div class="slide-foot"><span>6 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、抗凝四类按靶点切</div>
+                <div class="compact"><p>33.1.3 的分类是本章最要紧的一张表：凝血酶间接抑制药（肝素与低分子肝素）、凝血酶直接抑制药（水蛭素、阿加曲班、达比加群酯）、维生素 K 拮抗药（华法林）、因子Ⅹa 直接抑制药（利伐沙班、阿哌沙班、依度沙班）。</p>
+<blockquote><p>「这一分类的依据是药物作用靶点」——教材·药理学·第33章·33.1.3</p></blockquote>
+<p>教材紧接着加了一句限定，这句限定比分类本身更值得记：分类与给药途径、起效快慢并无一一对应关系，教学中须避免把分类当作等级判定。换句话说，四类不是四级，位置不代表高低。</p>
+<p>四个靶点词在正文里的分布可以印证这一点：凝血酶 65 次、Ⅹa 13 次、维生素 K 48 次、抗凝血酶 14 次。四个词都出现在 33.1 三节里，说明「按靶点分类」不是一句空话，而是正文真在用的切法。其中凝血酶与维生素 K 的次数明显偏高，原因很直接：凝血酶是共同途径的终点，几乎所有抗凝药都要落到「少生成凝血酶」或「抑制凝血酶」上；维生素 K 则牵出华法林的一整节相互作用。</p></div></div>
+  <div class="slide-foot"><span>7 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">三、肝素：加速生理性抑制，而不是新增一种抑制</div>
+                <div class="compact"><p>33.1.1 对肝素的机制写得很具体：肝素分子中特有的戊糖序列与抗凝血酶结合，使抗凝血酶构象改变、活性中心暴露，从而加速抗凝血酶对凝血酶以及因子Ⅹa、Ⅸa、Ⅺa、Ⅻa 等丝氨酸蛋白酶的灭活。凝血酶与因子Ⅹa 对肝素的依赖性并不相同，灭活二者所需分子片段的长短也不同，较长片段可同时结合抗凝血酶与凝血酶。</p>
+<p>这个机制有一个常被忽略的推论：肝素本身不是抑制剂，它是<strong>催化剂</strong>。体内本来就有抗凝血酶，肝素做的是把这条生理性抑制的通路加速。教材用一句话点明了这层意思：</p>
+<blockquote><p>「肝素在体内与体外均有抗凝作用，作用发生迅速」——教材·药理学·第33章·33.1.1</p></blockquote>
+<p>「体内与体外均有」这一条在教学上很有用：它说明这条通路不依赖机体的整体调节，只要有抗凝血酶，加上肝素就能在试管里发生。这与华法林形成鲜明对照——后者体外无效，因为它作用的是肝脏里的合成环节。</p></div></div>
+  <div class="slide-foot"><span>8 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、肝素：加速生理性抑制，而不是新增一种抑制</div>
+                <div class="compact"><p>低分子肝素是同一机制的偏移版本：分子片段较短，对抗凝血酶的亲和力仍保留，但对凝血酶的灭活作用明显减弱，抗凝效应更多体现在对因子Ⅹa 的抑制上。教材对这一偏移的评语，是本章最该记住的分寸：</p>
+<blockquote><p>「作用环节的差别不等于药物之间的优劣与等级判定」——教材·药理学·第33章·33.1.1</p></blockquote>
+<p>体内过程一侧，低分子肝素皮下注射吸收较完全、生物利用度较高、半衰期较普通肝素延长、主要经肾排泄，肾功能状态对蓄积有明显影响。这一条把「为什么肾功能要进观察表」写成了机制结论，而不是一句经验。</p></div></div>
+  <div class="slide-foot"><span>9 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">四、直接抑制药：不依赖抗凝血酶的那条路</div>
+                <div class="compact"><p>33.1.2 的开门句就是这条路的定义：</p>
+<blockquote><p>「凝血酶直接抑制药不依赖抗凝血酶」——教材·药理学·第33章·33.1.2</p></blockquote>
+<p>不依赖抗凝血酶，意味着它不受血浆抗凝血酶水平与血小板因子释放的影响，对游离的凝血酶与已结合于纤维蛋白的凝血酶都能起作用。教材按化学结构把它分成多肽类（水蛭素及其重组制品、比伐卢定）与合成小分子（阿加曲班、达比加群酯）两类，然后做了一件很有教学价值的事：把分子结构与结合方式对应起来。</p>
+<p>凝血酶表面存在催化位点与两个底物识别位点。水蛭素类可同时占据催化位点与其中一处识别位点，形成极为稳定的复合物；阿加曲班主要占据催化位点；达比加群同样作用于催化位点，分子经过设计而具有较高选择性。</p>
+<blockquote><p>「这种结合方式的差别决定了两类药物的作用是否可逆、消退是否迅速」——教材·药理学·第33章·33.1.2</p></blockquote></div></div>
+  <div class="slide-foot"><span>10 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、直接抑制药：不依赖抗凝血酶的那条路</div>
+                <div class="compact"><p>这句话给出了一个可迁移的读法：<strong>同属直接抑制药，给药方式与观察重点却不一样，原因不在药名，而在结合方式</strong>。水蛭素类形成极稳定复合物、经肾排泄、肾功能减退时作用延长；比伐卢定与凝血酶结合后可被缓慢水解，因而作用时间短暂、消退较快；阿加曲班经肝代谢、静脉持续给药、作用出现迅速消退也较快；达比加群酯是前药，口服后经酯酶水解为达比加群，为 P-糖蛋白底物，主要以原形经肾排泄，肾功能减退时蓄积增加。</p>
+<p>这里还有一条对观察有直接影响的说明：由于这类药物不依赖抗凝血酶，常规用于肝素监测的指标不能直接反映其抗凝强度，临床评估更多依靠肾功能状态、合并用药核查与出血征象的观察。<strong>监测手段换了，观察的重心就从「指标读数」转到「征象 + 肾功能 + 合并用药」三件事上</strong>。这是本章把「机制→监测→观察」串起来的第一处。</p></div></div>
+  <div class="slide-foot"><span>11 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">五、华法林：起效慢与相互作用多，是同一机制的两个后果</div>
+                <div class="compact"><p>33.1.3 讲华法林，机制只有一句半：抑制维生素 K 环氧化物还原酶，阻止维生素 K 的循环再生，使还原型维生素 K 不足，进而影响凝血因子Ⅱ、Ⅶ、Ⅸ、Ⅹ以及蛋白 C 与蛋白 S 在肝内的 γ-羧化；羧化不足的前体缺乏与钙离子及磷脂膜结合的能力，释放入血后活性低下。</p>
+<p>真正要理解的是两个后果。第一个是起效慢：</p>
+<blockquote><p>「由于已合成的凝血因子须待消耗后才显现影响，华法林起效较慢」——教材·药理学·第33章·33.1.3</p></blockquote>
+<p>这句话的机制含义是：华法林不改变已经存在于血浆中的因子的活性，它只让新合成的因子不合格。所以要等旧因子代谢掉，效应才显出来。同一句话还解释了「体外无抗凝效应」——体外没有肝细胞，谈不上合成。<strong>一个机制同时解释了三件事</strong>（起效慢、体外无效、对已形成的血栓无直接作用），这种「一因多果」的结构在本章里出现多次，是读这一章的主要方法。</p></div></div>
+  <div class="slide-foot"><span>12 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">五、华法林：起效慢与相互作用多，是同一机制的两个后果</div>
+                <div class="compact"><p>第二个后果是相互作用多。教材把影响因素分三类：影响代谢的药物（药酶诱导剂减弱、抑制剂增强）；影响维生素 K 来源与利用的因素（饮食摄入、广谱抗生素对肠道菌群的影响、胆汁淤积与脂肪吸收不良）；机体状态与遗传因素（肝功能、甲状腺功能、代谢酶多态性）。三类的共同点是——它们都作用在「还原型维生素 K 的供给」这一个节点上。<strong>相互作用的条目可以很长，节点只有一个。</strong></p></div></div>
+  <div class="slide-foot"><span>13 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">六、溶栓：把靶点从「生成」换到「已形成」</div>
+                <div class="compact"><p>33.2.1 的第一句就把溶栓药与抗凝药的分工点明：</p>
+<blockquote><p>「其作用对象是血栓中的纤维蛋白」——教材·药理学·第33章·33.2.1</p></blockquote>
+<p>抗凝药减少新的纤维蛋白生成，溶栓药清除已经沉积的纤维蛋白。教材要求先回顾纤溶系统：纤溶酶原在组织型与尿激酶型纤溶酶原激活剂的作用下转变为纤溶酶，纤溶酶降解纤维蛋白与纤维蛋白原，生成降解产物；体内同时存在纤溶酶原激活物抑制剂与 α2-抗纤溶酶等抑制物，使纤溶过程局限在血栓局部。</p>
+<p>分类按开发顺序与对纤维蛋白的选择性分两代：链激酶与尿激酶属非纤维蛋白选择性；阿替普酶、瑞替普酶与替奈普酶属相对纤维蛋白选择性。</p>
+<blockquote><p>「这一分类反映的是作用的选择性差别，与药物的临床地位并无一一对应关系」——教材·药理学·第33章·33.2.1</p></blockquote></div></div>
+  <div class="slide-foot"><span>14 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">六、溶栓：把靶点从「生成」换到「已形成」</div>
+                <div class="compact"><p>代际的差别在机制层可以讲得很实。链激酶本身不是酶，须与纤溶酶原结合形成复合物后才暴露活性位点，属间接激活剂；它是细菌蛋白，具有抗原性，首次使用即可能出现过敏反应，重复使用可能因抗体中和而影响作用。尿激酶是丝氨酸蛋白酶，直接裂解纤溶酶原分子中的特定肽键，不形成复合物，也不具抗原性。阿替普酶在无纤维蛋白时催化效率很低，与纤维蛋白结合后构象改变、亲和力与催化效率同时提高，使纤溶酶主要在血栓表面生成。</p>
+<p>机制上还有一条必须记住的：纤溶酶的特异性不高。</p>
+<blockquote><p>「纤溶酶的特异性不高」——教材·药理学·第33章·33.2.2</p></blockquote>
+<p>它除纤维蛋白外还可降解纤维蛋白原、因子Ⅴ与因子Ⅷ，因此当纤溶酶大量生成并进入循环时，血液的凝固能力随之下降。<strong>这既是溶栓作用的延伸，也是出血不良反应的基础</strong>——一句话同时解释了作用与不良反应，与第 31 章「作用与不良反应同源」是同一个道理。</p>
+<p>教材对「选择性」的限定写得很克制，值得整句引出：</p></div></div>
+  <div class="slide-foot"><span>15 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">六、溶栓：把靶点从「生成」换到「已形成」</div>
+                <div class="compact"><blockquote><p>「选择性不能被理解为安全性的保证」——教材·药理学·第33章·33.2.2</p></blockquote>
+<p>理由在剂量：这种选择性是相对的，剂量增大时仍可出现全身纤溶状态，大剂量使用时选择性药物的全身纤溶作用同样明显。教材据此不作绝对化表述——<strong>relative 是一个关于剂量的说法，不是一个关于安全性的说法</strong>。</p>
+<p>33.2.3 还有一条教学提醒，讲的是记录的意义：溶栓药半衰期短，停药后纤溶状态很快消退，而血栓形成的机制并未因此消失，故溶栓后通常须继续给予抗凝药；抗凝的强度与疗程须结合溶栓的范围与出血风险确定。这种衔接要求记录中把<strong>溶栓的起止时刻与抗凝的开始时刻明确分开</strong>，便于后续复核时追溯。一句话把「药动学」变成了「记录格式」。</p></div></div>
+  <div class="slide-foot"><span>16 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">七、抗血小板：靶点分布在活化链的不同环节</div>
+                <div class="compact"><p>33.3.1 先写血小板的三步：黏附（糖蛋白与胶原、血管性血友病因子结合）、活化（凝血酶、二磷酸腺苷与血栓素 A2 刺激下形态改变与颗粒释放）、聚集（糖蛋白Ⅱb 与Ⅲa 复合物与纤维蛋白原桥接）。四类药分别落在这些节点上：环氧化酶抑制药（阿司匹林）作用于花生四烯酸代谢；二磷酸腺苷受体拮抗药（氯吡格雷、普拉格雷、替格瑞洛）阻断 P2Y12；糖蛋白Ⅱb 与Ⅲa 受体拮抗药（替罗非班、依替巴肽、阿昔单抗）阻断聚集的最后共同通路；磷酸二酯酶抑制药（双嘧达莫、西洛他唑）升高血小板内环磷酸腺苷。</p>
+<blockquote><p>「靶点不同意味着抑制的彻底程度与出血风险不同」——教材·药理学·第33章·33.3.1</p></blockquote></div></div>
+  <div class="slide-foot"><span>17 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">七、抗血小板：靶点分布在活化链的不同环节</div>
+                <div class="compact"><p>这句话把「分类」与「风险」直接连上了。作用于最后共同通路的药，对多种激动剂引起的聚集均有抑制作用，出血风险也相应突出；作用于单一受体或单一酶的药，抑制的面窄，风险的结构也不同。教材的措辞是「彻底程度」而不是「强弱」，这个用词值得注意——它说的是<strong>被阻断的环节在链条上的位置</strong>，不是药效高低。</p>
+<p>机制的写法按结合方式组织：</p>
+<blockquote><p>「阿司匹林的作用机制是共价修饰」——教材·药理学·第33章·33.3.2</p></blockquote></div></div>
+  <div class="slide-foot"><span>18 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">七、抗血小板：靶点分布在活化链的不同环节</div>
+                <div class="compact"><p>阿司匹林使环氧化酶 1 活性中心的丝氨酸残基乙酰化，酶活性不可逆丧失；血小板无细胞核，不能重新合成环氧化酶，故抑制作用持续至该批血小板被更新。氯吡格雷与普拉格雷是前药，经肝细胞色素 P450 酶系转化为含活性巯基的代谢物，与 P2Y12 受体胞外区的半胱氨酸残基形成二硫键，结合不可逆。替格瑞洛不经代谢活化，直接以原形与 P2Y12 受体结合，结合可逆，停药后功能恢复较快；其抑制腺苷摄取的附加作用使部分患者出现呼吸困难与心动过缓——这一条把「不良反应」直接挂在「机制」上，属于因果说明，不是个体判断。</p>
+<p>给药途径与监测条件的关系在此处第二次出现：替罗非班与依替巴肽经静脉给药，起效迅速，主要经肾排泄，肾功能减退时须评估蓄积带来的出血风险；坎格瑞洛作用迅速而短暂，用于需要即刻抑制血小板聚集的介入学场合，其使用须在具备监护条件的场所进行。<strong>「在具备监护条件的场所使用」不是一句套话，而是给药途径与作用时程共同推出的条件。</strong></p></div></div>
+  <div class="slide-foot"><span>19 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">七、抗血小板：靶点分布在活化链的不同环节</div>
+                <div class="compact"><p>33.3.3 把联合用药讲成一条风险叠加的规则：作用于不同靶点的抗血小板药合用，抑制程度叠加、出血风险叠加，因此联合方案通常以两种作用机制不同的药物搭配并限定用药时间；与抗凝药合用风险进一步升高，须在核对合并用药时特别标注；与非甾体抗炎药合用，胃肠道黏膜损伤的风险叠加；与部分质子泵抑制剂合用，可能通过影响代谢酶而降低氯吡格雷的活化程度。</p>
+<blockquote><p>「出血风险在联合用药、高龄、肾功能减退与既往有消化道损伤史的情形下升高」——教材·药理学·第33章·33.3.3</p></blockquote>
+<p>这句话把「高危」拆成了四个可核对的条件，而不是一个笼统的标签。教材接着明确：描述这些状态时只讲药动学与风险类别，不对任何人群作标签化处理。<strong>条件可以写，人不可以贴标签</strong>——这是本章与第 31、32 章一致的口径。</p></div></div>
+  <div class="slide-foot"><span>20 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">八、促凝与扩容：方向相反，观察同构</div>
+                <div class="compact"><p>33.4 是全章唯一方向相反的一节。促凝血药按作用环节分四类：促进凝血因子活性的药物（维生素 K）、抗纤维蛋白溶解药（氨甲环酸、氨甲苯酸、抑肽酶）、凝血因子制剂（因子Ⅷ与Ⅸ浓缩剂、凝血酶原复合物、纤维蛋白原）、局部止血药与作用于血管与血小板的药物。</p>
+<p>维生素 K 这一类的靶点，教材写得很精确：</p>
+<blockquote><p>「这类药物的靶点不在凝血因子本身，而在凝血因子合成所依赖的辅因子」——教材·药理学·第33章·33.4.1</p></blockquote>
+<p>凝血酶原、因子Ⅶ、Ⅸ、Ⅹ以及蛋白 C 与蛋白 S 都是维生素 K 依赖性因子，其分子中的谷氨酸残基必须在维生素 K 参与下羧化为 γ-羧基谷氨酸，才能与钙离子结合并借助钙桥附着于磷脂膜表面。羧化不全的因子可以合成并释放入血，却缺乏与膜结合的能力，表现为活性低下。这一段与华法林那一节正好对接：华法林抑制环氧化物还原酶打断循环，维生素 K 提供底物削弱这一抑制，二者的作用点恰好相对。<strong>同一个循环，两个方向各写一次，这是本章最漂亮的一处结构对称。</strong></p></div></div>
+  <div class="slide-foot"><span>21 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">八、促凝与扩容：方向相反，观察同构</div>
+                <div class="compact"><p>抗纤维蛋白溶解药的前提被单独点出：</p>
+<blockquote><p>「其应用前提是体内存在纤溶亢进」——教材·药理学·第33章·33.4.2</p></blockquote>
+<p>氨甲环酸是赖氨酸的类似物，竞争性占据纤溶酶原与纤溶酶分子上的赖氨酸结合位点；纤溶酶原须借助这些位点与纤维蛋白结合，才能在被激活后就地降解纤维蛋白，位点被占据后，激活生成的纤溶酶也就不能有效水解纤维蛋白。这一机制决定了它对抗的是纤溶过程，而对已生成的凝血因子没有补充作用——<strong>所以它适用于纤溶亢进，不适用于因子缺乏</strong>。前提与机制在这里是一句话的两面。</p>
+<p>凝血因子制剂的性质则被一句话定死：</p>
+<blockquote><p>「这类药物的作用机制是补充而非调节」——教材·药理学·第33章·33.4.3</p></blockquote></div></div>
+  <div class="slide-foot"><span>22 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">八、促凝与扩容：方向相反，观察同构</div>
+                <div class="compact"><p>补充的对象是血浆中的因子水平与功能完整性；输入后缺失环节被补齐，凝血级联得以正常进行。教材同时给了两条观察含义：不同因子的半衰期差别较大，给药频次因此不同；反复输注含异种蛋白的制剂可产生抑制物，使替代效果下降，这是需要长期观察的问题类别。储存与输注的规范（按标示条件保存、配制后在规定时间内使用、输注前后核对身份与名称与输注量、记录批号）也在此处写明——<strong>留痕在血液制品这一侧最具体，因为它的可追溯性要求最高。</strong></p></div></div>
+  <div class="slide-foot"><span>23 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>引文是教材正文，不是指南条款。</strong> 本章引用格式为「教材·药理学·第N章·N.M.K」，引语逐字取自底本；教材谈相互作用时写的是类别与核对思路，不是处置办法，把它当处置流程用是越界。</li><li><strong>词频只描述写法，不描述难度。</strong> 纤溶 97 次、抗凝 80 次、抗血小板 22 次、促凝 8 次，说明教材在溶栓与抗凝上笔墨最重，不说明另两支可以跳过；出血 85 次覆盖全部 12 个小节，四类药共用同一个观察重点。词表固定在 <code>code/main.js</code>，可复算，不可外推。</li><li><strong>四方向不是排名。</strong> 抗凝、纤溶、抗血小板在同一侧，促凝在另一侧；这一排列说的是作用方向，不是疗效高低，也不是取舍顺序。</li><li><strong>监测指标不给数值。</strong> 教材反复说明只描述需要监测的项目与影响因素的类别，不列具体数值与参照范围；本章据此不写任何监测数值、分度与判定界限。</li><li><strong>12 个小节不是 12 个知识点。</strong> 它们是一条平衡轴上的 12 段；</li></ul></div></div>
+  <div class="slide-foot"><span>24 / 26</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="24">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>33.1.3 的分类表与 33.4.1 的维生素 K 循环是同一处结构的两面，分开背就会丢掉这层对称。</p>
+<ul><li><strong>边界声明</strong>：本章只解释教材的靶点分类、作用机制、体内过程与观察表述要求，<strong>不写量值、不作适应证判定、不作疗效与优越性断言，不构成用药建议</strong>；剂量与用法照底本，任何个体的用药决策须由具备资质的人员依现行法律法规与规范、以现行药品说明书与临床指南为依据作出。</li></ul></div></div>
+  <div class="slide-foot"><span>25 / 26</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="25">
+  <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
+  <div class="slide-foot"><span>26 / 26</span><span>disclaimer</span></div>
+</section>
+</div>
+<div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>
+<script>/**
+ * [tcmP] figures.js —— 中医概念动画图（纯 SVG + rAF，无依赖）
+ *
+ * 自动挂载：文档里写
+ *     <div data-figure="wuxing-cycle"></div>
+ * 即可。支持悬停暂停；系统开启「减少动态效果」时渲染为静态帧。
+ *
+ * 与 ai-engineering-from-scratch 的 site/figures.js 同构（同样的 el/loop/registry 形态），
+ * 图目换成中医概念：
+ *   yin-yang-sigmoid    阴阳 → 二分类：sigmoid 决策边界扫过，样本左右归属翻转
+ *   wuxing-cycle        五行生克：相生正向流动 + 相克五角星流动
+ *   zangxiang-graph     藏象：脏腑 → 官窍 → 情志 的边逐步点亮
+ *   sizhen-fusion       四诊合参：四通道 → 融合层 → 证候输出
+ *   meridian-lookup     经络腧穴：KD-Tree 空间划分 + 最近邻查询
+ *   junchen-attention   君臣佐使：药味 → 权重矩阵高亮
+ */
+
+(function () {
+  'use strict';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── SVG 小工具 ──
+  function el(name, attrs, kids) {
+    const e = document.createElementNS(NS, name);
+    for (const k in attrs || {}) e.setAttribute(k, attrs[k]);
+    (Array.isArray(kids) ? kids : kids ? [kids] : []).filter(Boolean).forEach((c) => e.appendChild(c));
+    return e;
+  }
+  const txt = (s) => document.createTextNode(s);
+
+  function label(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--sans)', 'font-size': 12, fill: 'var(--muted)' },
+      opts || {}
+    ), [txt(s)]);
+  }
+  function mono(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--mono)', 'font-size': 11, fill: 'var(--muted)', 'letter-spacing': '.1em' },
+      opts || {}
+    ), [txt(s)]);
+  }
+
+  function svgRoot(host, W, H, aria) {
+    const svg = el('svg', {
+      viewBox: `0 0 ${W} ${H}`, width: '100%', role: 'img', 'aria-label': aria || '',
+      style: 'display:block;max-width:100%;height:auto',
+    });
+    host.appendChild(svg);
+    return svg;
+  }
+
+  // 悬停暂停 + 时间归一化
+  function loop(host, fn, period, opts) {
+    period = period || 6400;
+    opts = opts || {};
+    let raf, paused = false, t0 = performance.now();
+    const onTick = (now) => {
+      if (!paused) fn((((now - t0) % period) / period));
+      raf = requestAnimationFrame(onTick);
+    };
+    host.addEventListener('mouseenter', () => { paused = true; });
+    host.addEventListener('mouseleave', () => { paused = false; });
+    if (REDUCED) { fn(opts.staticT == null ? 0.62 : opts.staticT); return function () {}; }
+    raf = requestAnimationFrame(onTick);
+    return () => cancelAnimationFrame(raf);
+  }
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeIO = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const sigmoid = (z) => 1 / (1 + Math.exp(-z));
+
+  const FIGURES = {};
+
+  /* ───────────────────── yin-yang-sigmoid ─────────────────────
+     阴阳 → 二分类。左侧散点：X 轴「寒热倾向」，输出 sigmoid 概率。
+     扫描线扫过阈值，样本随阈值的移动左右换边，右侧给出准确率。
+  */
+  FIGURES['yin-yang-sigmoid'] = function (host) {
+    const W = 720, H = 400, PAD = 54;
+    const svg = svgRoot(host, W, H, '阴阳二分类与 sigmoid 决策边界');
+    const plotW = W - PAD * 2, plotH = H - 150;
+
+    // 样本：12 条八纲典型证候（阴=0 阳=1）
+    const data = [
+      [-2.2, 0], [-1.8, 0], [-1.4, 0], [-1.1, 0], [-0.6, 0], [-0.2, 0],
+      [0.2, 1], [0.6, 1], [1.1, 1], [1.5, 1], [1.9, 1], [2.4, 1],
+    ];
+    const X = (v) => PAD + ((v + 3) / 6) * plotW;
+    const Y = (p) => H - 90 - p * plotH;
+
+    // 坐标轴
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: W - PAD, y2: H - 90, stroke: 'var(--line)' }));
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: PAD, y2: H - 90 - plotH, stroke: 'var(--line)' }));
+    svg.appendChild(mono(PAD, H - 72, '寒 / 阴 →'));
+    svg.appendChild(mono(W - PAD, H - 72, '← 热 / 阳', { 'text-anchor': 'end' }));
+    svg.appendChild(mono(8, PAD - 22, 'P(阳)'));
+    svg.appendChild(mono(W - PAD - 130, 26, 'sigmoid 决策边界'));
+
+    const curve = el('path', { d: '', fill: 'none', stroke: 'var(--jade)', 'stroke-width': 2.5 });
+    svg.appendChild(curve);
+    const threshLine = el('line', { stroke: 'var(--cinnabar)', 'stroke-dasharray': '5 4', 'stroke-width': 1.6 });
+    svg.appendChild(threshLine);
+
+    const pts = data.map(([x, y]) => {
+      const g = el('g', {});
+      const c = el('circle', { r: 6, cx: X(x), cy: H - 90 - 0.5 * plotH, fill: y ? 'var(--cinnabar)' : 'var(--jade)', opacity: 0.85 });
+      const cls = el('text', {
+        x: X(x), y: H - 90 - 0.5 * plotH + 4, 'text-anchor': 'middle',
+        'font-family': 'var(--sans)', 'font-size': 10, fill: '#fff',
+      }, [txt(y ? '阳' : '阴')]);
+      g.appendChild(c); g.appendChild(cls);
+      svg.appendChild(g);
+      return { x, y, c, cls };
+    });
+
+    const accText = label(PAD, 26, '', { fill: 'var(--ink)', 'font-size': 13 });
+    svg.appendChild(accText);
+
+    let pathD = '';
+    for (let i = 0; i <= 60; i += 1) {
+      const xv = -3 + (i / 60) * 6;
+      const p = sigmoid(1.6 * xv + 0.1);
+      pathD += `${i === 0 ? 'M' : 'L'}${X(xv).toFixed(1)},${Y(p).toFixed(1)}`;
+    }
+    curve.setAttribute('d', pathD);
+
+    loop(host, (t) => {
+      // 阈值在 0..1 之间来回扫
+      const thr = 0.15 + 0.7 * easeIO(1 - Math.abs(2 * t - 1));
+      const pThr = 0.1 + thr * 0.85;
+      const xThr = (Math.log(pThr / (1 - pThr)) - 0.1) / 1.6;
+      threshLine.setAttribute('x1', X(xThr));
+      threshLine.setAttribute('x2', X(xThr));
+      threshLine.setAttribute('y1', H - 90 - plotH - 6);
+      threshLine.setAttribute('y2', H - 90);
+
+      let correct = 0;
+      for (const p of pts) {
+        const prob = sigmoid(1.6 * p.x + 0.1);
+        const pred = prob >= pThr ? 1 : 0;
+        if (pred === p.y) correct += 1;
+        p.c.setAttribute('cy', Y(prob));
+        p.cls.setAttribute('y', Y(prob) + 4);
+        p.c.setAttribute('r', pred === p.y ? 7 : 5);
+        p.c.setAttribute('opacity', pred === p.y ? 0.92 : 0.32);
+        p.cls.setAttribute('opacity', pred === p.y ? 1 : 0.25);
+        // 判错的样本画一圈红
+        p.c.setAttribute('stroke', pred === p.y ? 'none' : 'var(--cinnabar)');
+        p.c.setAttribute('stroke-width', pred === p.y ? 0 : 2);
+      }
+      accText.textContent = `阈值 P=${pThr.toFixed(2)} · 准确率 ${correct}/${pts.length} = ${((correct / pts.length) * 100).toFixed(0)}%`;
+    }, 7200);
+  };
+
+  /* ───────────────────── wuxing-cycle ─────────────────────
+     五行生克。外圈相生（顺时针流动），内五角星相克。
+  */
+  FIGURES['wuxing-cycle'] = function (host) {
+    const W = 720, H = 440, cx = W / 2 - 70, cy = H / 2, R = 148;
+    const svg = svgRoot(host, W, H, '五行生克关系');
+    const names = ['木', '火', '土', '金', '水'];
+    const colors = ['var(--jade)', 'var(--cinnabar)', 'var(--gold)', '#8a6d3b', '#2a4d69'];
+    const node = names.map((_, i) => {
+      const a = -Math.PI / 2 + (i / 5) * Math.PI * 2;
+      return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), a };
+    });
+
+    // 相生边（外圈，顺时针 木→火→土→金→水→木）
+    const sheng = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const p = el('path', {
+        d: `M${n.x},${n.y} Q${(n.x + m.x) / 2 + (cy - (n.y + m.y) / 2) * 0.16},${(n.y + m.y) / 2 + ((n.x + m.x) / 2 - cx) * 0.16} ${m.x},${m.y}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.28,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+    // 相克边（五角星）
+    const ke = node.map((n, i) => {
+      const m = node[(i + 2) % 5];
+      const p = el('line', {
+        x1: n.x, y1: n.y, x2: m.x, y2: m.y,
+        stroke: 'var(--cinnabar)', 'stroke-width': 1.4, 'stroke-dasharray': '4 4', opacity: 0.2,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+
+    // 沿边流动的点
+    const flow = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const g = el('circle', { r: 4, fill: 'var(--jade)', cx: n.x, cy: n.y, opacity: 0 });
+      svg.appendChild(g);
+      return { g, from: n, to: m };
+    });
+
+    const nodes = node.map((n, i) => {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: n.x, cy: n.y, r: 30, fill: '#fff', stroke: colors[i], 'stroke-width': 2 }));
+      g.appendChild(el('text', {
+        x: n.x, y: n.y + 8, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 22, fill: colors[i],
+      }, [txt(names[i])]));
+      svg.appendChild(g);
+      return g;
+    });
+
+    // 右栏说明
+    svg.appendChild(mono(W - 190, 60, '相生 (outer)'));
+    svg.appendChild(label(W - 190, 82, '木→火→土→金→水→木', { fill: 'var(--jade)' }));
+    svg.appendChild(mono(W - 190, 130, '相克 (star)'));
+    svg.appendChild(label(W - 190, 152, '木克土 · 土克水 · 水克火', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(label(W - 190, 170, '火克金 · 金克木', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(mono(W - 190, 220, '建模要点'));
+    svg.appendChild(label(W - 190, 242, '5 类 + 有向约束', { fill: 'var(--ink)' }));
+    svg.appendChild(label(W - 190, 262, '纯 softmax 会丢掉', { fill: 'var(--muted)' }));
+    svg.appendChild(label(W - 190, 280, '全部关系信息', { fill: 'var(--muted)' }));
+
+    const capt = label(W - 190, H - 30, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const phase = (t * 5) % 5;
+      for (let i = 0; i < 5; i += 1) {
+        const f = flow[i];
+        const local = clamp01(phase - i);
+        const k = easeIO(local);
+        f.g.setAttribute('cx', lerp(f.from.x, f.to.x, k));
+        f.g.setAttribute('cy', lerp(f.from.y, f.to.y, k));
+        f.g.setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.95 : 0);
+        sheng[i].setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.75 : 0.28);
+        const keOn = phase - i >= 0 && phase - i <= 1.4;
+        ke[i].setAttribute('opacity', keOn ? 0.55 : 0.2);
+      }
+      const active = Math.floor(phase) % 5;
+      nodes.forEach((g, i) => g.querySelector('circle').setAttribute('stroke-width', i === active ? 4 : 2));
+      capt.textContent = `当前传导：${names[active]} → ${names[(active + 1) % 5]}（生） / ${names[active]} 克 ${names[(active + 2) % 5]}`;
+    }, 7000);
+  };
+
+  /* ───────────────────── zangxiang-graph ─────────────────────
+     藏象：五脏 → 官窍 → 情志，边按序点亮。
+  */
+  FIGURES['zangxiang-graph'] = function (host) {
+    const W = 720, H = 430;
+    const svg = svgRoot(host, W, H, '藏象学说的脏腑-官窍-情志关系图');
+
+    const zang = [
+      { n: '肝', x: 110, y: 100, qiao: ['目'], zhi: '怒' },
+      { n: '心', x: 110, y: 210, qiao: ['舌'], zhi: '喜' },
+      { n: '脾', x: 110, y: 320, qiao: ['口'], zhi: '思' },
+      { n: '肺', x: 610, y: 100, qiao: ['鼻'], zhi: '悲' },
+      { n: '肾', x: 610, y: 210, qiao: ['耳'], zhi: '恐' },
+    ];
+    const edges = [];
+
+    for (const z of zang) {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: z.x, cy: z.y, r: 26, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+      g.appendChild(el('text', { x: z.x, y: z.y + 8, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 20, fill: 'var(--cinnabar)' }, [txt(z.n)]));
+      svg.appendChild(g);
+
+      const qx = W / 2 + (z.x < 300 ? -40 : 40);
+      g.appendChild(el('line', { x1: z.x + (z.x < 300 ? 26 : -26), y1: z.y, x2: qx - (z.x < 300 ? 22 : -22), y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+
+      const qg = el('g', {});
+      qg.appendChild(el('rect', { x: qx - 22, y: z.y - 14, width: 44, height: 28, rx: 6, fill: 'var(--jade-soft)', stroke: 'var(--jade)', 'stroke-width': 1.3 }));
+      qg.appendChild(el('text', { x: qx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--jade)' }, [txt(z.qiao[0])]));
+      svg.appendChild(qg);
+
+      const zx = W - 110;
+      g.appendChild(el('line', { x1: qx + 22, y1: z.y, x2: zx - 24, y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      const zg = el('g', {});
+      zg.appendChild(el('circle', { cx: zx, cy: z.y, r: 22, fill: '#fdf1dd', stroke: 'var(--gold)', 'stroke-width': 1.3 }));
+      zg.appendChild(el('text', { x: zx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--gold)' }, [txt(z.zhi)]));
+      svg.appendChild(zg);
+
+      edges.push({ zy: z.y, e1: g.querySelector('line'), e2: g.querySelectorAll('line')[1], qg, zg });
+    }
+
+    svg.appendChild(mono(110 - 30, 40, '藏 / 五藏'));
+    svg.appendChild(mono(W / 2 - 30, 40, '象 / 官窍'));
+    svg.appendChild(mono(W - 110 - 30, 40, '情志'));
+    const capt = label(20, H - 14, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const step = t * 5;
+      edges.forEach((e, i) => {
+        const on = step >= i;
+        e.e1.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        e.e2.setAttribute('stroke', on ? 'var(--gold)' : 'var(--line)');
+        e.qg.setAttribute('opacity', on ? 1 : 0.35);
+        e.zg.setAttribute('opacity', on ? 1 : 0.35);
+      });
+      const cur = zang[Math.min(4, Math.floor(step))];
+      capt.textContent = cur ? `点亮中：${cur.n} 开窍于 ${cur.qiao[0]}，在志为${cur.zhi}` : '';
+    }, 6200, { staticT: 0.99 });
+  };
+
+  /* ───────────────────── sizhen-fusion ─────────────────────
+     四诊合参：四通道 → 融合层 → 证候。演示模态缺失时的降级。
+  */
+  FIGURES['sizhen-fusion'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '四诊合参的多模态融合与模态缺失降级');
+    const chans = [
+      { n: '望', d: '舌象 / 面色', y: 60 },
+      { n: '闻', d: '语声 / 气息', y: 130 },
+      { n: '问', d: '主诉 / 现病史', y: 200 },
+      { n: '切', d: '脉搏波', y: 270 },
+    ];
+    const fx = 330, fy = 165;
+    const outx = 600;
+
+    const fxG = el('g', {});
+    fxG.appendChild(el('rect', { x: fx - 52, y: fy - 46, width: 104, height: 92, rx: 10, fill: '#fff', stroke: 'var(--jade)', 'stroke-width': 2 }));
+    fxG.appendChild(el('text', { x: fx, y: fy - 14, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--jade)' }, [txt('融合层')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 8, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('交叉注意力')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 26, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('+ 缺失掩码')]));
+    svg.appendChild(fxG);
+
+    const outG = el('g', {});
+    outG.appendChild(el('rect', { x: outx - 46, y: fy - 32, width: 92, height: 64, rx: 10, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+    outG.appendChild(el('text', { x: outx, y: fy - 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--cinnabar)' }, [txt('证候')]));
+    outG.appendChild(el('text', { x: outx, y: fy + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('带置信度')]));
+    svg.appendChild(outG);
+
+    svg.appendChild(el('line', { x1: fx + 52, y1: fy, x2: outx - 46, y2: fy, stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+
+    const inG = chans.map((c) => {
+      const g = el('g', {});
+      g.appendChild(el('rect', { x: 24, y: c.y - 24, width: 150, height: 48, rx: 8, fill: '#fff', stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      g.appendChild(el('text', { x: 40, y: c.y - 2, 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--ink)' }, [txt(c.n + '诊')]));
+      g.appendChild(el('text', { x: 40, y: c.y + 16, 'font-size': 11, fill: 'var(--muted)' }, [txt(c.d)]));
+      svg.appendChild(g);
+      const path = el('path', {
+        d: `M174,${c.y} C 250,${c.y} 260,${fy} ${fx - 52},${fy}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.22,
+      });
+      svg.appendChild(path);
+      const dot = el('circle', { r: 4, fill: 'var(--jade)', opacity: 0 });
+      svg.appendChild(dot);
+      return { g, path, dot, y: c.y };
+    });
+
+    const capt = label(24, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    // 循环：全模态 → 缺闻诊 → 缺闻+切 → 恢复
+    const phases = [[1, 1, 1, 1], [1, 0, 1, 1], [1, 0, 1, 0], [1, 1, 1, 1]];
+    loop(host, (t) => {
+      const idx = Math.min(phases.length - 1, Math.floor(t * phases.length));
+      const mask = phases[idx];
+      const missing = [];
+      mask.forEach((m, i) => { if (!m) missing.push(chans[i].n); });
+
+      inG.forEach((c, i) => {
+        const on = mask[i] === 1;
+        c.g.style.opacity = on ? 1 : 0.3;
+        c.path.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        c.path.setAttribute('stroke-dasharray', on ? 'none' : '4 4');
+        c.path.setAttribute('opacity', on ? 0.55 : 0.25);
+        const local = clamp01(t * 4 - idx);
+        c.dot.setAttribute('cx', lerp(174, fx - 52, easeIO(local)));
+        c.dot.setAttribute('cy', lerp(c.y, fy, easeIO(local)));
+        c.dot.setAttribute('opacity', on ? 0.95 : 0);
+      });
+
+      const conf = 0.62 + 0.1 * mask.filter(Boolean).length;
+      outG.style.opacity = 0.4 + 0.6 * conf;
+      capt.textContent = missing.length
+        ? `模态缺失：缺 ${missing.join('、')} → 置信度降至 ${(conf * 100).toFixed(0)}%，系统须显式降级而非静默猜测`
+        : `四诊齐备 → 置信度 ${(conf * 100).toFixed(0)}%`;
+    }, 8800, { staticT: 0.35 });
+  };
+
+  /* ───────────────────── meridian-lookup ─────────────────────
+     腧穴检索：KD-Tree 空间划分 + 最近邻查询。
+  */
+  FIGURES['meridian-lookup'] = function (host) {
+    const W = 720, H = 400, PAD = 40;
+    const svg = svgRoot(host, W, H, '腧穴的空间划分与最近邻检索');
+    const plotW = W - PAD * 2 - 30, plotH = H - 110;
+
+    // 模拟体表腧穴点集（合谷、内关、足三里、三阴交等 18 穴）
+    let seed = 20261012;
+    const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+    const pts = Array.from({ length: 18 }, () => ({ x: PAD + 30 + rnd() * (plotW - 60), y: PAD + 20 + rnd() * (plotH - 40) }));
+
+    // KD-Tree 递归划分线
+    const lines = [];
+    (function build(list, depth) {
+      if (list.length < 2) return;
+      const axis = depth % 2;
+      const sorted = list.slice().sort((a, b) => (axis ? a.y - b.y : a.x - b.x));
+      const med = sorted[Math.floor(sorted.length / 2)];
+      if (axis) {
+        const minX = Math.min(...list.map((p) => p.x));
+        const maxX = Math.max(...list.map((p) => p.x));
+        lines.push({ x1: minX, y1: med.y, x2: maxX, y2: med.y, depth });
+        build(list.filter((p) => p.y < med.y), depth + 1);
+        build(list.filter((p) => p.y >= med.y), depth + 1);
+      } else {
+        const minY = Math.min(...list.map((p) => p.y));
+        const maxY = Math.max(...list.map((p) => p.y));
+        lines.push({ x1: med.x, y1: minY, x2: med.x, y2: maxY, depth });
+        build(list.filter((p) => p.x < med.x), depth + 1);
+        build(list.filter((p) => p.x >= med.x), depth + 1);
+      }
+    })(pts, 0);
+
+    const lineEls = lines.map((l) => {
+      const e = el('line', { x1: l.x1, y1: l.y1, x2: l.x2, y2: l.y2, stroke: 'var(--line)', 'stroke-width': 1, opacity: 0 });
+      svg.appendChild(e);
+      return { e, depth: l.depth };
+    });
+
+    const dotEls = pts.map((p, i) => {
+      const c = el('circle', { cx: p.x, cy: p.y, r: 4.5, fill: 'var(--jade)', opacity: 0.75 });
+      svg.appendChild(c);
+      const t = el('text', { x: p.x + 7, y: p.y + 4, 'font-size': 10, fill: 'var(--muted)', opacity: 0 });
+      t.appendChild(txt(`穴${String(i + 1).padStart(2, '0')}`));
+      svg.appendChild(t);
+      return { c, t, p };
+    });
+
+    const query = el('circle', { r: 8, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 2.2 });
+    svg.appendChild(query);
+    const ring = el('circle', { r: 0, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 1, 'stroke-dasharray': '3 3' });
+    svg.appendChild(ring);
+    const link = el('line', { stroke: 'var(--cinnabar)', 'stroke-width': 1.6, 'stroke-dasharray': '4 3' });
+    svg.appendChild(link);
+
+    const capt = label(PAD, H - 20, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      // 查询点沿弧线游走
+      const ang = t * Math.PI * 2;
+      const qx = PAD + 30 + plotW / 2 + Math.cos(ang) * plotW * 0.33;
+      const qy = PAD + 20 + plotH / 2 + Math.sin(ang) * plotH * 0.32;
+      query.setAttribute('cx', qx);
+      query.setAttribute('cy', qy);
+
+      let best = null;
+      let bestD = Infinity;
+      for (const d of dotEls) {
+        const dd = (d.p.x - qx) ** 2 + (d.p.y - qy) ** 2;
+        if (dd < bestD) { bestD = dd; best = d; }
+        d.c.setAttribute('r', 4.5);
+        d.c.setAttribute('fill', 'var(--jade)');
+        d.t.setAttribute('opacity', 0);
+      }
+      const dist = Math.sqrt(bestD);
+      link.setAttribute('x1', qx); link.setAttribute('y1', qy);
+      link.setAttribute('x2', best.p.x); link.setAttribute('y2', best.p.y);
+      ring.setAttribute('cx', qx); ring.setAttribute('cy', qy);
+      ring.setAttribute('r', dist);
+      best.c.setAttribute('r', 8);
+      best.c.setAttribute('fill', 'var(--cinnabar)');
+      best.t.setAttribute('opacity', 1);
+
+      const step = clamp01(t * 3);
+      lineEls.forEach((l) => l.e.setAttribute('opacity', step > l.depth / 6 ? (0.5 - l.depth * 0.06) : 0));
+
+      capt.textContent = `查询点 → 最近腧穴 ${best.t.textContent} · 平面距离 ${dist.toFixed(1)}px（真实体表须改测地距离）`;
+    }, 11000, { staticT: 0.2 });
+  };
+
+  /* ───────────────────── junchen-attention ─────────────────────
+     君臣佐使 → 注意力权重。列 = 药味，行为权重分配。
+  */
+  FIGURES['junchen-attention'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '君臣佐使的注意力权重分配');
+
+    const herbs = ['桂枝', '芍药', '生姜', '大枣', '甘草'];
+    const roles = ['君', '臣', '佐', '使'];
+    const weights = [
+      [0.52, 0.30, 0.08, 0.06, 0.04],
+      [0.18, 0.44, 0.20, 0.12, 0.06],
+      [0.08, 0.16, 0.40, 0.24, 0.12],
+      [0.04, 0.08, 0.18, 0.32, 0.38],
+    ];
+
+    const GX = 110, GY = 60, CW = 84, CH = 52;
+    svg.appendChild(mono(GX, 34, '方剂：桂枝汤（示例）'));
+
+    herbs.forEach((h, j) => {
+      svg.appendChild(el('text', {
+        x: GX + j * CW + CW / 2, y: GY - 10, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 14, fill: 'var(--ink)',
+      }, [txt(h)]));
+    });
+    roles.forEach((r, i) => {
+      svg.appendChild(el('text', {
+        x: GX - 22, y: GY + i * CH + CH / 2 + 6, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--cinnabar)',
+      }, [txt(r)]));
+    });
+
+    const cells = [];
+    for (let i = 0; i < roles.length; i += 1) {
+      for (let j = 0; j < herbs.length; j += 1) {
+        const r = el('rect', {
+          x: GX + j * CW + 3, y: GY + i * CH + 3, width: CW - 6, height: CH - 6, rx: 6,
+          fill: 'var(--jade)', opacity: 0,
+        });
+        svg.appendChild(r);
+        const tx = el('text', {
+          x: GX + j * CW + CW / 2, y: GY + i * CH + CH / 2 + 5, 'text-anchor': 'middle',
+          'font-family': 'var(--mono)', 'font-size': 12, fill: 'var(--ink)', opacity: 0,
+        });
+        tx.appendChild(txt(weights[i][j].toFixed(2)));
+        svg.appendChild(tx);
+        cells.push({ r, tx, w: weights[i][j], i, j });
+      }
+    }
+
+    // 右侧：软化的权重条
+    const bx = GX + herbs.length * CW + 40;
+    svg.appendChild(mono(bx, 34, '行归一化 (softmax)'));
+    const bars = roles.map((r, i) => {
+      const max = Math.max(...weights[i]);
+      const w = Math.max(...weights[i]);
+      const g = el('g', {});
+      g.appendChild(el('text', { x: bx, y: GY + i * 44 + 10, 'font-size': 12, fill: 'var(--muted)' }, [txt(r + ' 最大: ' + max.toFixed(2))]));
+      const bg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 180, height: 8, rx: 4, fill: 'var(--paper-2)' });
+      g.appendChild(bg);
+      const fg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 0, height: 8, rx: 4, fill: 'var(--jade)' });
+      g.appendChild(fg);
+      svg.appendChild(g);
+      return { fg, w: w, max };
+    });
+
+    svg.appendChild(label(20, H - 40, '结构先验：君药权重最大 → 可作为注意力掩码，让模型学不到"反结构"的配伍', { fill: 'var(--muted)' }));
+    const capt = label(20, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const focusRow = Math.floor(t * 4) % 4;
+      const local = clamp01(t * 4 - Math.floor(t * 4));
+      cells.forEach((c) => {
+        const on = c.i === focusRow;
+        c.r.setAttribute('opacity', on ? c.w * (0.55 + 0.45 * local) : c.w * 0.14);
+        c.tx.setAttribute('opacity', on ? 1 : 0.25);
+      });
+      bars.forEach((b, i) => {
+        b.fg.setAttribute('width', i === focusRow ? 180 * (b.max) * (0.5 + 0.5 * local) : 180 * b.max * 0.35);
+      });
+      capt.textContent = `当前角色：${roles[focusRow]} · 权重最高者为 ${herbs[weights[focusRow].indexOf(Math.max(...weights[focusRow]))]}`;
+    }, 8000, { staticT: 0.1 });
+  };
+
+  /* ───────────────────── 自动挂载 ───────────────────── */
+  function mount(root) {
+    const hosts = (root || document).querySelectorAll('[data-figure]');
+    for (const host of hosts) {
+      if (host.dataset.figureMounted === '1') continue;
+      const fn = FIGURES[host.dataset.figure];
+      if (!fn) {
+        host.innerHTML = `<p class="muted small">未知图形：<code>${host.dataset.figure}</code></p>`;
+        host.dataset.figureMounted = '1';
+        continue;
+      }
+      host.classList.add('figure');
+      fn(host);
+      host.dataset.figureMounted = '1';
+    }
+  }
+
+  window.TCMFigures = { FIGURES, mount };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => mount());
+  } else {
+    mount();
+  }
+  // 单页内动态插入的图形（章节页异步渲染）也能挂上
+  new MutationObserver(() => mount()).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+<script>
+(function(){
+  const deck=document.getElementById('deck');
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+
+  // ── 单帧模式：?shot=N 只渲染第 N 张，供无头浏览器逐帧截图 ──
+  // 截图器需要一张「干净的、正好一屏」的画面，所以这里藏掉其余幻灯片、
+  // 关掉滚动吸附、去掉 HUD，并在 title 上打就绪标记（渲染完成前截图会得到空白）。
+  const shot=new URLSearchParams(location.search).get('shot');
+  if(shot!==null){
+    const n=Math.max(0,Math.min(slides.length-1,Number(shot)||0));
+    slides.forEach((s,idx)=>{ if(idx!==n) s.style.display='none'; });
+    deck.style.overflow='hidden';
+    deck.style.scrollSnapType='none';
+    const hud=document.getElementById('hud');
+    if(hud) hud.style.display='none';
+    const target=slides[n];
+    if(target){ target.style.borderBottom='0'; target.scrollIntoView({block:'start'}); }
+    document.title='SHOT_READY '+n+' of '+slides.length;
+    if(window.TCMFigures)window.TCMFigures.mount(document);
+    // 只读视图：不绑键盘与点击，避免截图过程中页面状态改变
+    return;
+  }
+
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView();}
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    else if(e.key==='p'||e.key==='P'){e.preventDefault();print();}
+  });
+  deck.addEventListener('click',e=>{if(e.target.closest('a'))return;go(i+1);});
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)i=+en.target.dataset.i;});},{root:deck,threshold:.6});
+  slides.forEach(s=>io.observe(s));
+  if(window.TCMFigures)window.TCMFigures.mount(document);
+})();
+</script>
+</body>
+</html>

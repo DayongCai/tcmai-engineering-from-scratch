@@ -1,0 +1,79 @@
+{
+  "lesson": "01-xinbing-lunzhuan",
+  "title": "心病科轮转：胸痹与心悸的辨证接诊",
+  "subject": "21-zhongyi-linchuang-lunzhuan",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "心病科轮转的病单来自哪里？",
+      "options": [
+        "《中医内科学》心系章的 9 个「节」",
+        "带教老师经验",
+        "学生自选",
+        "指南推荐"
+      ],
+      "correct": 0,
+      "explanation": "一篇不增不删。"
+    },
+    {
+      "stage": "check",
+      "question": "心系 9 病共有多少项必做动作？",
+      "options": [
+        "45 项（9 病 × 5 小节）",
+        "9 项",
+        "41 项",
+        "50 项"
+      ],
+      "correct": 0,
+      "explanation": "每病固定 5 小节。"
+    },
+    {
+      "stage": "check",
+      "question": "必修 6 病的排序依据是？",
+      "options": [
+        "教材篇幅（汉字量）",
+        "患病率",
+        "难度",
+        "字母序"
+      ],
+      "correct": 0,
+      "explanation": "篇幅是编者权重的表达。"
+    },
+    {
+      "stage": "check",
+      "question": "心系章里哪些病临床主要不归心病科？",
+      "options": [
+        "癫狂、痫病、痴呆、厥证",
+        "心悸、胸痹",
+        "心衰、健忘",
+        "不寐、心悸"
+      ],
+      "correct": 0,
+      "explanation": "分属精神科、脑病科、急诊。"
+    },
+    {
+      "stage": "post",
+      "question": "代表方 41 首是怎么数的？",
+      "options": [
+        "按「代表方：」标记去重",
+        "按药味数",
+        "按方剂书页码",
+        "按出现次数"
+      ],
+      "correct": 0,
+      "explanation": "含合方。"
+    },
+    {
+      "stage": "post",
+      "question": "跨科校验的作用是？",
+      "options": [
+        "确定必须「会认、会接、会转」的病",
+        "减少病数",
+        "提高难度",
+        "无作用"
+      ],
+      "correct": 0,
+      "explanation": "9 病中 5 病跨课。"
+    }
+  ]
+}

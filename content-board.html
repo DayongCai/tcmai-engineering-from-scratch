@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<title>中医药专业内容完整性看板</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  :root{--bg:#0d0a07;--panel:#1a1610;--line:#2a2218;--fg:#efe6d8;--dim:#a08f76;--accent:#d8a657;--ok:#7fb069;--mid:#d8a657;--bad:#c1666b}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:"Noto Serif SC","Source Han Serif CN","Songti SC",SimSun,serif;line-height:1.65}
+  main{max-width:1180px;margin:0 auto;padding:40px 24px 80px}
+  h1{font-size:30px;margin:0 0 6px;letter-spacing:.04em}
+  .sub{color:var(--dim);font-size:13px;margin-bottom:28px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:0 0 34px}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .kpi b{display:block;font-size:24px;color:var(--accent);font-weight:600}
+  .kpi span{font-size:12px;color:var(--dim)}
+  h2{font-size:19px;margin:38px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+  thead th{color:var(--dim);font-weight:500;font-size:12px;letter-spacing:.08em}
+  tbody th{font-weight:600;white-space:nowrap}
+  .have{color:var(--fg);white-space:nowrap}
+  .target,.note{color:var(--dim)}
+  .note ul{margin:6px 0 0;padding-left:16px}
+  .note li{font-size:12.5px;color:var(--bad);opacity:.9}
+  .dim{color:var(--dim);font-size:12px}
+  .bad{color:var(--bad);font-weight:600}
+  .na{color:var(--dim);font-size:12px}
+  .bar{display:inline-block;width:64px;height:6px;background:#241d14;border-radius:3px;overflow:hidden;vertical-align:middle;margin-right:8px}
+  .bar i{display:block;height:100%}
+  .bar.ok i{background:var(--ok)} .bar.mid i{background:var(--mid)} .bar.low i{background:var(--bad)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+  .gap{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--bad);border-radius:8px;padding:14px 16px}
+  .gap h3{margin:0 0 8px;font-size:15px;display:flex;justify-content:space-between;align-items:baseline}
+  .gap .num{color:var(--bad);font-size:20px}
+  .gap ul{margin:0;padding-left:16px;color:var(--dim);font-size:12.5px}
+  .gap .fix{margin:10px 0 0;font-size:12.5px;color:var(--accent)}
+  .src{margin-top:34px;font-size:12px;color:var(--dim)}
+  .src code{color:#c8b18a;background:#181310;padding:1px 5px;border-radius:4px}
+</style></head><body><main>
+  <h1>中医药专业内容完整性看板</h1>
+  <div class="sub">生成于 2026-11-11 20:48:43 · 全部数字运行时从仓库源计算 · 与 <code>npm run dashboard</code>（工程面）、<code>textbook-board.html</code>（教材面）分工</div>
+
+  <div class="kpis">
+    <div class="kpi"><b>189</b><span>学科 / 9 院系</span></div>
+    <div class="kpi"><b>2134<span class="dim">/2154</span></b><span>已建章节 99.07%</span></div>
+    <div class="kpi"><b>127<span class="dim">/189</span></b><span>有教材稿学科</span></div>
+    <div class="kpi"><b>2674.7 万</b><span>教材汉字（非空白字符 3154.4 万）</span></div>
+    <div class="kpi"><b>97</b><span>证候（104 个语义单元）</span></div>
+    <div class="kpi"><b>398</b><span>伤寒条文 / 111 方</span></div>
+    <div class="kpi"><b>3148</b><span>WHO ISTT 术语</span></div>
+    <div class="kpi"><b>24</b><span>已发布视频</span></div>
+  </div>
+
+  <h2>七层专业内容</h2>
+  <table><thead><tr><th>层</th><th>实有</th><th>应有</th><th>覆盖</th><th>说明与缺口</th></tr></thead>
+  <tbody>
+      <tr>
+        <th>① 经典原文</th>
+        <td class="have">内经 10/10 · 伤寒 12/12</td>
+        <td class="target">内经选读 10 · 伤寒论 12 · 金匮要略 10</td>
+        <td><span class="bar mid"><i style="width:68.75%"></i></span><b>68.75%</b></td>
+        <td class="note">伤寒条文 398 条（215 条带方）· 金匮 0 章（无教材）<ul><li>金匮要略 0/10 章（教材缺失）</li><li>内经/伤寒之外无其他经典（难经·神农本草经·温病条辨）</li></ul></td>
+      </tr>
+      <tr>
+        <th>② 证候</th>
+        <td class="have">97 个（104 单元）</td>
+        <td class="target">目标 300+（**本看板假设**，仓库无此指标）</td>
+        <td><span class="bar low"><i style="width:32.33%"></i></span><b>32.33%</b></td>
+        <td class="note">有描述 97 · 有症状 60 · 有 ICD 9 · 有外部证据 97 · 有教材证据 33 · 重复单元 7 对<ul><li>胸阳痹阻、痰瘀互结证 缺：病位词、西医病名、ICD-11 编码、教材上下文、WHO-TCM 代码、病机</li><li>真心痛（阳衰血瘀）证 缺：病性词、西医病名、ICD-11 编码、教材上下文、WHO-TCM 代码、病机</li><li>阳明腑实证/结胸证 缺：病位词、西医病名、ICD-11 编码、教材上下文、WHO-TCM 代码、病机</li></ul></td>
+      </tr>
+      <tr>
+        <th>③ 方剂</th>
+        <td class="have">111 个方名</td>
+        <td class="target">方剂学 10 章 + 方剂字典（组成/功效/主治）</td>
+        <td><span class="na">n/a</span></td>
+        <td class="note">仅从伤寒条文里抽出的方名，无组成/功效/主治字段；方剂学教材 0 章<ul><li>无结构化方剂库（组成·功效·主治·配伍）</li><li>方剂学学科无教材</li></ul></td>
+      </tr>
+      <tr>
+        <th>④ 中药</th>
+        <td class="have">0 条结构化</td>
+        <td class="target">中药学 12 章 · 中药字典（性味/归经/功效/用量）</td>
+        <td><span class="na">n/a</span></td>
+        <td class="note">中药学有教材 30 章正文，但无可计算条目（性味归经未结构化）<ul><li>无中药字典（性味·归经·功效·禁忌）</li><li>中药学已建章节 1/12</li></ul></td>
+      </tr>
+      <tr>
+        <th>⑤ 腧穴</th>
+        <td class="have">0 条结构化</td>
+        <td class="target">腧穴学 12 章 · 腧穴字典（归经/定位/主治）</td>
+        <td><span class="na">n/a</span></td>
+        <td class="note">腧穴学有教材 16 章正文，无穴位条目数据<ul><li>无腧穴字典（归经·定位·主治·操作）</li><li>腧穴学已建章节 1/12</li></ul></td>
+      </tr>
+      <tr>
+        <th>⑥ 术语</th>
+        <td class="have">ISTT 3148 · ICD-11 中文名 472</td>
+        <td class="target">WHO ISTT 全量 · ICD-11 第 26 章中文名 · 仓库术语表</td>
+        <td><span class="bar mid"><i style="width:42.14%"></i></span><b>42.14%</b></td>
+        <td class="note">ICD-11 释义 2394 条 · 仓库 glossary 0 行<ul><li>TM2 648 条无中文题名（WHO 未译）</li><li>仓库术语表仅 139 行，未与 ISTT 打通</li></ul></td>
+      </tr>
+      <tr>
+        <th>⑦ 检索与证据</th>
+        <td class="have">证候证据 97 条</td>
+        <td class="target">每个证候 ≥1 条外部证据 + 可检索语料</td>
+        <td><span class="bar ok"><i style="width:93.27%"></i></span><b>93.27%</b></td>
+        <td class="note">ICD-11 术语层 13306 实体 / 释义 6653<ul><li>7 个证候无外部证据</li></ul></td>
+      </tr></tbody></table>
+
+  <h2>院系矩阵</h2>
+  <table><thead><tr><th>院系</th><th>学科</th><th>章节</th><th>有教材</th><th>教材汉字</th><th>无教材</th><th>过薄</th><th>视频</th></tr></thead>
+  <tbody>
+      <tr>
+        <th>中医系</th>
+        <td>23</td>
+        <td>276<span class="dim">/276</span></td>
+        <td>20<span class="dim">/23</span></td>
+        <td>339.1 万</td>
+        <td class="">3</td>
+        <td class="bad">4</td>
+        <td>24</td>
+      </tr>
+      <tr>
+        <th>中药系</th>
+        <td>21</td>
+        <td>235<span class="dim">/235</span></td>
+        <td>15<span class="dim">/21</span></td>
+        <td>274.2 万</td>
+        <td class="">6</td>
+        <td class="">2</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>针灸系</th>
+        <td>22</td>
+        <td>228<span class="dim">/228</span></td>
+        <td>16<span class="dim">/22</span></td>
+        <td>245.8 万</td>
+        <td class="">6</td>
+        <td class="">2</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>骨伤系</th>
+        <td>17</td>
+        <td>150<span class="dim">/150</span></td>
+        <td>7<span class="dim">/17</span></td>
+        <td>76.9 万</td>
+        <td class="bad">10</td>
+        <td class="">2</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>护理系</th>
+        <td>27</td>
+        <td>348<span class="dim">/348</span></td>
+        <td>23<span class="dim">/27</span></td>
+        <td>687.9 万</td>
+        <td class="">4</td>
+        <td class="">0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>管理系</th>
+        <td>26</td>
+        <td>292<span class="dim">/292</span></td>
+        <td>16<span class="dim">/26</span></td>
+        <td>431.0 万</td>
+        <td class="bad">10</td>
+        <td class="">1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>智能系</th>
+        <td>19</td>
+        <td>166<span class="dim">/166</span></td>
+        <td>6<span class="dim">/19</span></td>
+        <td>24.9 万</td>
+        <td class="bad">13</td>
+        <td class="bad">4</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>五官口腔系</th>
+        <td>17</td>
+        <td>124<span class="dim">/144</span></td>
+        <td>9<span class="dim">/17</span></td>
+        <td>74.0 万</td>
+        <td class="bad">8</td>
+        <td class="bad">5</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>基础医学院</th>
+        <td>17</td>
+        <td>315<span class="dim">/315</span></td>
+        <td>15<span class="dim">/17</span></td>
+        <td>521.0 万</td>
+        <td class="">2</td>
+        <td class="">2</td>
+        <td>0</td>
+      </tr></tbody></table>
+  <p class="sub" style="margin-top:10px">「过薄」= 教材单章汉字 &lt; 8,000；「无教材」= 该学科 textbooks 目录无章文件。</p>
+
+  <h2>缺口清单（按影响排序）</h2>
+  <div class="grid">
+      <article class="gap">
+        <h3>教材缺稿<span class="num">62</span></h3>
+        <ul><li>护理系/基础护理学(14章)</li><li>中医系/中医证候学(12章)</li><li>智能系/大语言模型与中医智能体(12章)</li><li>基础医学院/医学细胞生物学(12章)</li><li>基础医学院/医学遗传学(12章)</li><li>中医系/医学衷中参西录选读(10章)</li><li>中药系/中成药与临床用药(10章)</li><li>中药系/中药毒理学(10章)</li><li>针灸系/中医康复学(10章)</li><li>骨伤系/骨伤解剖学(10章)</li><li>骨伤系/脊柱病学(10章)</li><li>骨伤系/关节病学(10章)</li></ul>
+        <p class="fix">补法：按目标章节数从大到小补稿（先补 14 章的病理生理学、12 章的大语言模型/细胞生物学）</p>
+      </article>
+      <article class="gap">
+        <h3>章节未建<span class="num">20</span></h3>
+        <ul><li>189 学科目标 2154 章，已建 2134</li></ul>
+        <p class="fix">补法：按学科整科推满（内经/伤寒已满科），而不是全库平均铺开</p>
+      </article>
+      <article class="gap">
+        <h3>教材过薄<span class="num">22</span></h3>
+        <ul><li>中医筋伤学 187 字/章</li><li>中医嗓音医学 257 字/章</li><li>骨伤科手法治疗学 468 字/章</li><li>中医美容与皮肤治疗学 532 字/章</li><li>中医信息学 568 字/章</li><li>科研实训与实验设计 575 字/章</li><li>管理实习与实践 590 字/章</li><li>工程实践与系统交付 590 字/章</li><li>中医知识树 636 字/章</li><li>中药专业实践 638 字/章</li><li>另有 14 个结课类学科（毕业设计/知识移交）单章 540/541/543/555/556/569/574/588/588/592/597/621/807/861 字，属体例例外</li></ul>
+        <p class="fix">补法：正文类学科低于 8,000 字/章的优先补写（本科教材单章通常 1–1.5 万字）；结课类不计入</p>
+      </article>
+      <article class="gap">
+        <h3>结构化层缺位<span class="num">3</span></h3>
+        <ul><li>方剂（0 条结构化）</li><li>中药（0 条结构化）</li><li>腧穴（0 条结构化）</li></ul>
+        <p class="fix">补法：从教材正文抽字段（组成/性味归经/定位主治），先做伤寒 111 方</p>
+      </article>
+      <article class="gap">
+        <h3>视频缺位<span class="num">1</span></h3>
+        <ul><li>platform 已发布 0 讲</li></ul>
+        <p class="fix">补法：tcmP 流水线已就绪，选题材（内经/伤寒各 1 讲试水）</p>
+      </article>
+      <article class="gap">
+        <h3>证候重复单元<span class="num">7</span></h3>
+        <ul><li>脾胃湿热证 ×2（DSU-00004 / DSU-00046）</li><li>肝郁脾虚证 ×2（DSU-00006 / DSU-00049）</li><li>肝胆湿热证 ×2（DSU-00007 / DSU-00052）</li><li>肝阳上亢证 ×2（DSU-00008 / DSU-00033）</li><li>脾肾阳虚证 ×2（DSU-00011 / DSU-00072）</li><li>风热犯肺证 ×2（DSU-00025 / DSU-00030）</li><li>痰湿内阻证 ×2（DSU-00038 / DSU-00051）</li></ul>
+        <p class="fix">补法：同一证候不同来源各建一条 → 需人工定「是否合并」；合并前 104 单元 ≠ 104 证候，别拿单元数当证候数</p>
+      </article></div>
+
+  <h2>证候层完整性（97 个证候 · 104 个语义单元）</h2>
+  <table><thead><tr><th>维度</th><th>数量</th><th>覆盖</th></tr></thead><tbody><tr><th>有描述（构词/机理）</th><td>97<span class="dim">/97</span></td><td><span class="bar ok"><i style="width:100%"></i></span><b>100%</b></td></tr><tr><th>有症状词</th><td>60<span class="dim">/97</span></td><td><span class="bar mid"><i style="width:61.86%"></i></span><b>61.86%</b></td></tr><tr><th>有 ICD-11 编码</th><td>9<span class="dim">/97</span></td><td><span class="bar low"><i style="width:9.28%"></i></span><b>9.28%</b></td></tr><tr><th>有外部证据</th><td>97<span class="dim">/97</span></td><td><span class="bar ok"><i style="width:100%"></i></span><b>100%</b></td></tr><tr><th>有教材证据</th><td>33<span class="dim">/97</span></td><td><span class="bar low"><i style="width:34.02%"></i></span><b>34.02%</b></td></tr><tr><th>有 WHO 中医编码</th><td>26<span class="dim">/97</span></td><td><span class="bar low"><i style="width:26.8%"></i></span><b>26.8%</b></td></tr></tbody></table>
+  <p class="sub" style="margin-top:10px"><span class="bad">重复单元 7 对</span>：脾胃湿热证（DSU-00004/DSU-00046）；肝郁脾虚证（DSU-00006/DSU-00049）；肝胆湿热证（DSU-00007/DSU-00052）；肝阳上亢证（DSU-00008/DSU-00033）；脾肾阳虚证（DSU-00011/DSU-00072）；风热犯肺证（DSU-00025/DSU-00030）；痰湿内阻证（DSU-00038/DSU-00051） —— 同证候不同来源各建一条，合并前「104 单元」不等于「97 证候」。</p>
+  <p class="sub" style="margin-top:12px">缺项最多的证候：胸阳痹阻、痰瘀互结证（病位词·西医病名·ICD-11 编码）；真心痛（阳衰血瘀）证（病性词·西医病名·ICD-11 编码）；阳明腑实证/结胸证（病位词·西医病名·ICD-11 编码）；寒湿痹阻证(腰部)（病位词·西医病名·ICD-11 编码）；肝阳上亢证(头部)（病性词·西医病名·ICD-11 编码）；寒哮证（冷哮）（病位词·西医病名·ICD-11 编码）</p>
+
+  <h2>口径与数据源</h2>
+  <div class="src">
+    <div><code>structure</code> ← catalog.json</div><div><code>textbook</code> ← data/textbook-board.json</div><div><code>syndrome</code> ← standards/semtensor/datasets/reference-units.json + descriptions/dsu-descriptions.json + descriptions/external.json</div><div><code>classics</code> ← standards/shanghan/semtensor-398.json</div><div><code>terms</code> ← who-istt-terms.json · standards/icd11/zh-names.json · definitions-en.json · glossary/tcm-terms.md</div><div><code>retrieval</code> ← standards/semtensor/embeddings/index.json + data/icd11/term-index/meta.json</div>
+    <div style="margin-top:8px">盘上章节核对：2134 个章节目录 · 有 docs 2134 · 有 quiz 2134 · 有 outputs 2134</div>
+    <div style="margin-top:12px"><b>口径假设（不是仓库既有指标，别当结论引用）：</b><ul><li>「证候目标 300+」是本看板定的参照线，仓库没有这个指标，覆盖率只作方向参考</li><li>「方剂/中药/腧穴字典」是建议目标，仓库当前没有结构化数据集，覆盖记 n/a 而不是 0%</li><li>教材汉字数取 textbook-board 的 totals.hanzi（[\u4e00-\u9fa5]）；非空白字符另计</li></ul></div>
+  </div>
+</main></body></html>

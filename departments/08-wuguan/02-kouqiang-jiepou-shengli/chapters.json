@@ -1,54 +1,71 @@
 {
-  "slug": "02-kouqiang-jiepou-shengli",
-  "title": "口腔解剖生理学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-yati-zuzhi",
-      "title": "牙体与牙周的组织结构",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-yalie-yaohe",
-      "title": "牙列与咬合关系",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-nieheguanjie",
-      "title": "颞下颌关节的解剖",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-nianmo-xian",
-      "title": "口腔黏膜与唾液腺",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-hemian-shenjing",
-      "title": "颌面部肌肉与神经",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-jujue-tunyan",
-      "title": "口腔的生理功能：咀嚼与吞咽",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-xingtai-celiang",
-      "title": "牙体形态的测量与建模",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-bianyi-fengxian",
-      "title": "解剖变异与临床风险",
-      "status": "📋"
-    }
-  ]
+ "slug": "02-kouqiang-jiepou-shengli",
+ "title": "口腔解剖生理",
+ "note": "8 章 = 教材 8 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-e21",
+   "title": "口腔的境界与分区",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-e22",
+   "title": "牙与牙周组织",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-e23",
+   "title": "颌骨与咀嚼肌",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-e24",
+   "title": "颞下颌关节与咬合",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-e25",
+   "title": "唾液腺与神经支配",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-e26",
+   "title": "咀嚼与吞咽",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-e27",
+   "title": "口腔感觉与味觉",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-e28",
+   "title": "口腔检查与记录",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

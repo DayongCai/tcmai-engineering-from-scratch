@@ -22,8 +22,11 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/03-zhenjiu/07-cifa-jiufa-xue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 12,
+    "words": 234469,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#针法灸法学",
+    "extractedAt": "2026-10-21"
   }
 }

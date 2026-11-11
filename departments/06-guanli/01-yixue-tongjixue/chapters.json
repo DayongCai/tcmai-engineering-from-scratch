@@ -1,66 +1,96 @@
 {
-  "slug": "01-yixue-tongjixue",
-  "title": "医学统计学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-juese-shujuleixing",
-      "title": "统计学的角色与数据类型",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-miaoshu-fenbu",
-      "title": "描述性统计与分布",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-gailv-chouyang",
-      "title": "概率与抽样分布",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-jiashe-pzhi",
-      "title": "假设检验与 p 值",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-t-fangcha",
-      "title": "t 检验与方差分析",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-kaifang-liebiao",
-      "title": "卡方检验与列联表",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-xiangguan-huigui",
-      "title": "相关与线性回归",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-logistic-shengcun",
-      "title": "Logistic 回归与生存分析",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-duochong-jiaoyan",
-      "title": "多重比较与假阳性控制",
-      "status": "🚧"
-    },
-    {
-      "n": 10,
-      "slug": "10-baogao-kefuxian",
-      "title": "统计报告的规范与可复现",
-      "status": "📋"
-    }
-  ]
+ "slug": "01-yixue-tongjixue",
+ "title": "医学统计学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-juese-shujuleixing",
+   "title": "统计学的角色与数据类型",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-juese-shujuleixing/docs/zh.md",
+   "code": "chapters/01-juese-shujuleixing/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-miaoshu-fenbu",
+   "title": "描述性统计与分布",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-miaoshu-fenbu/docs/zh.md",
+   "code": "chapters/02-miaoshu-fenbu/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-gailv-chouyang",
+   "title": "概率与抽样分布",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-gailv-chouyang/docs/zh.md",
+   "code": "chapters/03-gailv-chouyang/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-jiashe-pzhi",
+   "title": "假设检验与 p 值",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-jiashe-pzhi/docs/zh.md",
+   "code": "chapters/04-jiashe-pzhi/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-t-fangcha",
+   "title": "t 检验与方差分析",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-t-fangcha/docs/zh.md",
+   "code": "chapters/05-t-fangcha/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-kaifang-liebiao",
+   "title": "卡方检验与列联表",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-kaifang-liebiao/docs/zh.md",
+   "code": "chapters/06-kaifang-liebiao/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-xiangguan-huigui",
+   "title": "相关与线性回归",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-xiangguan-huigui/docs/zh.md",
+   "code": "chapters/07-xiangguan-huigui/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-logistic-shengcun",
+   "title": "Logistic 回归与生存分析",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-logistic-shengcun/docs/zh.md",
+   "code": "chapters/08-logistic-shengcun/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-duochong-jiaoyan",
+   "title": "多重比较与假阳性控制",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-duochong-jiaoyan/docs/zh.md",
+   "code": "chapters/09-duochong-jiaoyan/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-baogao-kefuxian",
+   "title": "统计报告的规范与可复现",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-baogao-kefuxian/docs/zh.md",
+   "code": "chapters/10-baogao-kefuxian/code/main.js"
+  }
+ ]
 }

@@ -1,0 +1,60 @@
+{
+ "note": "L2 干（院系域）：本库 9 院系；与源 8 域的差异见 mapping.json，不许静默对齐。",
+ "count": 9,
+ "items": [
+  {
+   "id": "D01",
+   "dept": "01-zhongyi",
+   "subjects": 22,
+   "chapters": 252
+  },
+  {
+   "id": "D02",
+   "dept": "02-zhongyao",
+   "subjects": 21,
+   "chapters": 235
+  },
+  {
+   "id": "D03",
+   "dept": "03-zhenjiu",
+   "subjects": 22,
+   "chapters": 228
+  },
+  {
+   "id": "D04",
+   "dept": "04-gushang",
+   "subjects": 17,
+   "chapters": 150
+  },
+  {
+   "id": "D05",
+   "dept": "05-huli",
+   "subjects": 27,
+   "chapters": 348
+  },
+  {
+   "id": "D06",
+   "dept": "06-guanli",
+   "subjects": 26,
+   "chapters": 292
+  },
+  {
+   "id": "D07",
+   "dept": "07-zhineng",
+   "subjects": 19,
+   "chapters": 166
+  },
+  {
+   "id": "D08",
+   "dept": "08-wuguan",
+   "subjects": 17,
+   "chapters": 144
+  },
+  {
+   "id": "D09",
+   "dept": "09-jichu",
+   "subjects": 17,
+   "chapters": 315
+  }
+ ]
+}

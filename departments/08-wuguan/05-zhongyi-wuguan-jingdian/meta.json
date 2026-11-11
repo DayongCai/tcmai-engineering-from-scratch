@@ -22,8 +22,21 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/08-wuguan/05-zhongyi-wuguan-jingdian",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 37,
+    "words": 78905,
+    "status": "wip",
+    "layer": "external-source",
+    "origin": "external",
+    "source": "standards/materials/textbooks-batch/external-registry.json#shenshi-yaohan",
+    "external": {
+      "id": "shenshi-yaohan",
+      "title": "審視瑤函",
+      "url": "https://jicheng.tw/tcm/book/%E5%AF%A9%E8%A6%96%E7%91%A4%E5%87%BD/index.html",
+      "sha256": "b663916b651e9a4fa7039593cd574bf56c861e1352b5d8d12562e89500160413",
+      "baseText": "明崇禎十七年刊本（國家圖書館掃描本）",
+      "fetchedAt": "2026-10-21",
+      "coverage": "古籍可对上的部分；现代内容未覆盖"
+    },
+    "extractedAt": "2026-10-21"
   }
 }

@@ -1,0 +1,38 @@
+{
+ "slug": "16-huli-xue-daolun",
+ "title": "护理学导论",
+ "en": "Introduction to Nursing",
+ "deptSlug": "05-huli",
+ "deptTitle": "护理系",
+ "globalN": 81,
+ "type": "Core",
+ "semester": 2,
+ "stage": "sheng",
+ "stageTitle": "生",
+ "hours": 36,
+ "bridge": "护理程序→流程建模 / 健康行为→预测模型",
+ "chaptersTarget": 18,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/05-huli/16-huli-xue-daolun",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/05-huli/16-huli-xue-daolun",
+  "chaptersWritten": 18,
+  "words": 361064,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#护理学导论",
+  "extractedAt": "2026-10-21"
+ },
+ "底本": {
+  "kind": "教材",
+  "from": "F:/textbooks/qhzy-护理学导论.xlsx",
+  "dir": "standards/huli-daolun",
+  "note": "18 内容章 / 18 单元 / 318,223 汉字；课程与教材 1:1"
+ }
+}

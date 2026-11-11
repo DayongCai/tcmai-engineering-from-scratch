@@ -1,0 +1,79 @@
+{
+  "lesson": "01-fanchou-lun",
+  "title": "哲学史研究什么：范畴，不是年表",
+  "subject": "16-zhongyi-zhexue-shi",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "本课程研究哲学史的方式是？",
+      "options": [
+        "范畴在文本中的分布",
+        "人物年表",
+        "学派对立",
+        "观点罗列"
+      ],
+      "correct": 0,
+      "explanation": "只做可复算的词面统计。"
+    },
+    {
+      "stage": "check",
+      "question": "两部语料的规模是？",
+      "options": [
+        "内经 162 篇 / 490,232 汉字；临床 2,792 条",
+        "内经 81 篇",
+        "临床 398 条",
+        "不可数"
+      ],
+      "correct": 0,
+      "explanation": "内经含素问与灵枢各 81 篇。"
+    },
+    {
+      "stage": "check",
+      "question": "12 个范畴中内经命中最高与最低的是？",
+      "options": [
+        "气 10,855 与 五行 129",
+        "阴阳与道",
+        "天地与权衡",
+        "四时与形神"
+      ],
+      "correct": 0,
+      "explanation": "头尾差约 84 倍。"
+    },
+    {
+      "stage": "check",
+      "question": "五行在临床经典的命中是？",
+      "options": [
+        "0 次",
+        "129 次",
+        "1,028 次",
+        "1,431 次"
+      ],
+      "correct": 0,
+      "explanation": "以关系无处不在，以词一次不见。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么本课程不做学派归属？",
+      "options": [
+        "词面命中不含思想归属，需原书与师承",
+        "因为太难",
+        "因为无价值",
+        "因为学生不需要"
+      ],
+      "correct": 0,
+      "explanation": "材料边界。"
+    },
+    {
+      "stage": "post",
+      "question": "「范畴」在本课程中的操作定义是？",
+      "options": [
+        "可同名检索、且在两个以上层面被使用的词",
+        "任何名词",
+        "任何观点",
+        "书名"
+      ],
+      "correct": 0,
+      "explanation": "概括性表述不合格。"
+    }
+  ]
+}

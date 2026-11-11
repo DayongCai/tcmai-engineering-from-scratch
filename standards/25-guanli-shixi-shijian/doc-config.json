@@ -1,0 +1,66 @@
+{
+ "courseTitle": "管理实习实践",
+ "deptPath": "departments/06-guanli/25-guanli-shixi-shijian",
+ "xlsx": "F:/textbooks/F:/textbooks/qhzy-管理学基础.xlsx",
+ "chain": "实习 → 数据 → 政策 → 改进 → 答辩",
+ "levelLabel": "阶段结构",
+ "objectPressure": "实习的判据是「岗位待得住、数据拿得到、改进说得清」",
+ "reportRule": "记录写：对象与情境、依据的指标、与单元层表述的差异",
+ "gapNote": "sem910 实践课：材料取自既有单元层，阶段结构按 data/new-subjects-chapters.json",
+ "chapterQ": {
+  "01-yiwu-shixi": [
+   "医院职能部门实习（医务与质控）：这一阶段要交付什么",
+   "医院职能部门实习（医务与质控）：本课第 1 章"
+  ],
+  "02-binggan-shixi": [
+   "病案与信息科实习：这一阶段要交付什么",
+   "病案与信息科实习：本课第 2 章"
+  ],
+  "03-yibao-jiesuan": [
+   "医保结算与费用结构分析：这一阶段要交付什么",
+   "医保结算与费用结构分析：本课第 3 章"
+  ],
+  "04-zhengce-diaoyan": [
+   "中医药政策落地调研：这一阶段要交付什么",
+   "中医药政策落地调研：本课第 4 章"
+  ],
+  "05-pdca-gaijin": [
+   "管理改进项目（PDCA）：这一阶段要交付什么",
+   "管理改进项目（PDCA）：本课第 5 章"
+  ],
+  "06-shijian-baogao": [
+   "实践报告与答辩：这一阶段要交付什么",
+   "实践报告与答辩：本课第 6 章"
+  ]
+ },
+ "fallback": {
+  "01-yiwu-shixi": [
+   "《F:/textbooks/管理学基础·医院职能部门实习（医务与质控）》",
+   "第1阶段"
+  ],
+  "02-binggan-shixi": [
+   "《F:/textbooks/管理学基础·病案与信息科实习》",
+   "第2阶段"
+  ],
+  "03-yibao-jiesuan": [
+   "《F:/textbooks/管理学基础·医保结算与费用结构分析》",
+   "第3阶段"
+  ],
+  "04-zhengce-diaoyan": [
+   "《F:/textbooks/管理学基础·中医药政策落地调研》",
+   "第4阶段"
+  ],
+  "05-pdca-gaijin": [
+   "《F:/textbooks/管理学基础·管理改进项目（PDCA）》",
+   "第5阶段"
+  ],
+  "06-shijian-baogao": [
+   "《F:/textbooks/管理学基础·实践报告与答辩》",
+   "第6阶段"
+  ]
+ },
+ "defaultCite": [
+  "《管理实习实践》",
+  "阶段名级"
+ ]
+}

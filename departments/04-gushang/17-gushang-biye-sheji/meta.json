@@ -1,0 +1,34 @@
+{
+  "slug": "17-gushang-biye-sheji",
+  "title": "骨伤毕业设计与知识移交",
+  "en": "Orthopedics Capstone & Handover",
+  "deptSlug": "04-gushang",
+  "deptTitle": "骨伤系",
+  "globalN": 81,
+  "type": "Build",
+  "semester": 10,
+  "stage": "yi",
+  "stageTitle": "已",
+  "hours": 72,
+  "bridge": "复位方案→可量化命题 / 影像与力学→数据 / 结论→可复现流程",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/04-gushang/17-gushang-biye-sheji",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/04-gushang/17-gushang-biye-sheji",
+    "chaptersWritten": 6,
+    "words": 3337,
+    "status": "wip",
+    "layer": "handbook",
+    "contract": "handbook-v1",
+    "origin": "handbook",
+    "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
+    "extractedAt": "2026-11-09"
+  }
+}

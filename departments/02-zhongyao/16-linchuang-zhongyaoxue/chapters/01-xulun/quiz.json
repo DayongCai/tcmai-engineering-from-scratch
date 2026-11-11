@@ -1,0 +1,79 @@
+{
+ "lesson": "01-xulun",
+ "title": "绪论",
+ "subject": "16-linchuang-zhongyaoxue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 1 章「绪论」要回答的核心问题是什么？",
+   "options": [
+    "临床中药学与中药学，差在哪一步",
+    "四气五味",
+    "升降浮沉",
+    "归经"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：中药学回答「这味药是什么」，临床中药学回答「这个证该选哪味、怎么配、什么时候不能用」——同一批药，换的是问题。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "临床应用",
+    "性能与功效",
+    "用法与禁忌",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（病位系统）重心落在哪一项？",
+   "options": [
+    "心肝",
+    "乙酸-丙二酸途径",
+    "莽草酸途径",
+    "甲戊二羟酸途径"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "4 个",
+    "6 个",
+    "8 个",
+    "10 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "本课程数值类命中只有 15 处，说明什么？",
+   "options": [
+    "教材常数多以范围或文字表述，可数的值少不等于不量化",
+    "四气五味",
+    "升降浮沉",
+    "归经"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：真正的量化在方法学七项指标里。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/linchuang-zhongyao/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+  "lesson": "13-gushang-kangfu-pingding",
+  "title": "骨伤系·案例三：康复评定可复现包——社区康复的量表合规盒",
+  "subject": "22-zhongyi-biye-sheji",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "第 13 章属于哪种案例类型？",
+      "options": [
+        "移交层",
+        "综述",
+        "个案报道",
+        "文献计量"
+      ],
+      "correct": 0,
+      "explanation": "移交层的判据是**他人能否在无指导下重跑**：数据、脚本、门禁、README 四"
+    },
+    {
+      "stage": "check",
+      "question": "本章的数据锚点规模是？",
+      "options": [
+        "无现成量表；可复现包口径＝数据＋脚本＋门禁＋README 四件",
+        "无数据，凭经验",
+        "仅有目录结构",
+        "需外部采购"
+      ],
+      "correct": 0,
+      "explanation": "必须报路径与规模。"
+    },
+    {
+      "stage": "check",
+      "question": "本章客户数的推算依据是？",
+      "options": [
+        "基层中医馆 SAM 42,000 × 渗透带中位",
+        "直接手设",
+        "竞品数量",
+        "用户访谈"
+      ],
+      "correct": 0,
+      "explanation": "采用 300"
+    },
+    {
+      "stage": "check",
+      "question": "本章客单与回本期是？",
+      "options": [
+        "¥8,000、9.2 个月",
+        "1 万元、1 个月",
+        "100 万元、5 年",
+        "无法计算"
+      ],
+      "correct": 0,
+      "explanation": "客单占客户年营收 0.267%（IT 预算区间 15,000"
+    },
+    {
+      "stage": "post",
+      "question": "本案 C 端能否输出诊断结论？",
+      "options": [
+        "不能：只做测量与记录，诊断须器械注册",
+        "能，标注参考即可",
+        "能，用户同意即可",
+        "能，免费即可"
+      ],
+      "correct": 0,
+      "explanation": "仅记录与自评：不做诊断、不调整治疗方案"
+    },
+    {
+      "stage": "post",
+      "question": "把三年客户数再砍一半，首先影响什么？",
+      "options": [
+        "回本期显著拉长、部分案转亏",
+        "不影响",
+        "只影响收入不影响毛利",
+        "无意义"
+      ],
+      "correct": 0,
+      "explanation": "敏感性见 ch1 第十节。"
+    }
+  ]
+}

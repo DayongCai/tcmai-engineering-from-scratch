@@ -1,7 +1,7 @@
 {
   "slug": "05-zhongyi-zhishi-tupu",
-  "title": "中医知识图谱",
-  "en": "TCM Knowledge Graph",
+  "title": "中医知识树",
+  "en": "TCM Knowledge Tree",
   "deptSlug": "07-zhineng",
   "deptTitle": "智能系",
   "globalN": 95,
@@ -10,7 +10,7 @@
   "stage": "zhang",
   "stageTitle": "长",
   "hours": 72,
-  "bridge": "实体关系→三元组抽取 / 推理→图神经网络",
+  "bridge": "五级骨架→树结构 / 病证单元→叶节点与图谱经脉",
   "chaptersTarget": 10,
   "chapters": [],
   "platform": {
@@ -22,8 +22,11 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/07-zhineng/05-zhongyi-zhishi-tupu",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 10,
+    "words": 13167,
+    "status": "wip",
+    "layer": "manual-rewrite",
+    "source": "standards/materials/textbooks-batch/registry.json#中医知识树",
+    "extractedAt": "2026-10-21"
   }
 }

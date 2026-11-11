@@ -1,77 +1,68 @@
 # 创伤急救学
 
-> 创伤评分→风险分层 / 急救流程→决策树
+**04-chuangshang-jijiu-xue** · 骨伤学院 · 8 章 · 38 单元 · 135,905 汉字
 
-| 项目 | 内容 |
-|------|------|
-| 院系 | 🦴 骨伤系 `04-gushang` |
-| 类型 | Clinic |
-| 学期 | 第 5 学期（🌿 长·积累 / 大三） |
-| 学时 | 54 |
-| 章节目标 | 8 |
-| 学科编号 | 049 / 120 |
-| 英文名 | Trauma & Emergency Care |
+> 创伤急救的判据是「顺序与时限」：先保命、再保肢、最后谈功能。
 
-## 一、学科定位
+**课程类型：派生课（无独立教材）**。单元正文逐字取自父课，`locator` 一律 `派生·第N章·m.k`；
+本课汉字**不与父课相加**。
 
-创伤急救学（Trauma & Emergency Care）是骨伤系的核心学科，聚焦「正骨理筋—骨病退变—运动损伤与康复工程」中的一个完整知识域。
+## 一、父课
 
-## 二、中医 → AI 桥梁
+- `gushang-jichu`
+- `jijiu-huli`
+- `zhenggu`
 
-```text
-创伤评分→风险分层 / 急救流程→决策树
-```
+## 二、章表
 
-创伤急救学 里的每一个传统概念，都被翻译成一个可计算、可验证的工程对象：
-中医概念给出**语义与约束**，AI/工程方法给出**表示与算法**。两者必须能互相回指，
-否则这个章节就还没有写完。
+| # | 章 | 父课来源 | 单元 | 汉字 |
+|--:|---|---|--:|--:|
+| 1 | 创伤急救总论与评估 | gushang-jichu、jijiu-huli | 2 | 33,912 |
+| 2 | 现场救护与搬运固定 | gushang-jichu、jijiu-huli | 6 | 13,817 |
+| 3 | 出血与休克 | jijiu-huli、gushang-jichu | 5 | 10,362 |
+| 4 | 颅脑与脊柱损伤 | gushang-jichu、jijiu-huli | 6 | 11,476 |
+| 5 | 胸部与腹部创伤 | gushang-jichu、waike | 6 | 7,633 |
+| 6 | 四肢骨折与脱位的急救 | zhenggu、gushang-jichu | 6 | 15,279 |
+| 7 | 烧伤、挤压伤与多发伤 | jijiu-huli、gushang-jichu | 5 | 8,976 |
+| 8 | 灾难救援与转运 | jijiu-huli、gushang-jichu | 2 | 34,450 |
 
-## 三、章节地图（目标 8 章）
+**第 1、8 章各 3.4 万字**，因为父课（急救护理）的「急救总论」「灾难救援」两章本身就是整章长文；
+第 5、7 章较薄（7.6k / 9.0k），因为骨伤科学与外科学在胸腹创伤、烧伤上写得相对少。这是父课文本重心的如实反映。
 
-章节尚未编写。运行脚手架开章：
+## 三、三辨与四位面（实测）
+
+| 三辨 | 词频 |
+|---|--:|
+| **评估与识别** | **670** |
+| **急救措施** | **681** |
+| **风险与转运** | **311** |
+
+三辨极差 **2.2×**。
+
+| 四位面（章群结构分区） | 汉字 |
+|---|---:|
+| 总论与评估 | 33,912 |
+| 现场与休克 | 24,179 |
+| 系统损伤 | 28,085 |
+| 四肢与转运 | 49,729 |
+
+四位面极差 **2.1×**。
+
+## 四、这门课的三条硬顺序
+
+1. **ABCDE 的顺序不能换**：气道 → 呼吸 → 循环 → 意识 → 暴露；换一步就可能漏掉致命伤。
+2. **疑似脊柱损伤：先固定，再搬动**。搬运姿势错，稳定骨折会变成不稳定。
+3. **保肢优先于复位质量**：急救阶段的目标是止血、固定、转运，不是解剖复位。
+
+每章要求写清：**受伤机制、生命体征、处置动作、时限、转运去向**——缺一项就无法复盘。
+
+## 五、章内可执行验证
 
 ```bash
-node scripts/scaffold_chapter.js 04-gushang/04-chuangshang-jijiu-xue 01-<chapter-slug>
+node scripts/audit_curriculum.js | grep -A2 "04-chuangshang-jijiu"
+node tests/test_chapter_code.js | grep -c "04-chuangshang-jijiu"
+python scripts/_derive_jijiu.py
 ```
 
-编写完成后，把章节索引写进 `chapters.json`，本表的「状态」列由
-`scripts/build_catalog.js` 自动填充。
-
-## 四、章节契约（每章必须满足）
-
-```text
-chapters/NN-<slug>/
-├── docs/zh.md      # MOTTO / PROBLEM / 环境逼迫 / 知识积累 / CONCEPT / BUILD IT / USE IT / SHIP IT
-├── code/           # 可运行、自终止、退出码 0（Node.js 或 Python，见 AGENTS.md 依赖白名单）
-├── quiz.json       # 恰好 6 题 = 1 pre + 3 check + 2 post
-└── outputs/        # 可复用产出物（prompt / skill / agent / mcp / 临床工具）
-```
-
-## 五、教材交付 [textbooks]
-
-```text
-输出: textbooks/04-gushang/04-chuangshang-jijiu-xue/
-├── 00-前言.md
-├── 01-第1章-<标题>.md   ...
-└── figures/                # Mermaid / SVG，禁止 ASCII 框图
-```
-
-## 六、平台交付 [tcmP]
-
-```text
-输出: platform/courses/04-gushang/04-chuangshang-jijiu-xue/
-├── course.yaml             # 课程元数据 + 章节 → 视频映射
-├── slides/                 # 讲稿 HTML（由 docs/zh.md 派生）
-├── narration/              # TTS 旁白文本 + 音频
-└── video/                  # 成片 MP4（H.264 / 720p 以上）
-```
-
-## 七、进度
-
-| 指标 | 当前 | 目标 |
-|------|------|------|
-| 章节 | 0 | 8 |
-| 视频 | 0 | 8 |
-| 教材字数 | 0 | ≈ 48000 |
-
-> 状态字形：🌱 未开始 ⬚ · 🚧 进行中 · ✅ 完成
+**免责声明：** 本课为教学材料，**不能替代急救培训与执业资格**。实际急救须由受过训练的人员按现行指南实施；
+本课不给药物剂量与操作参数。

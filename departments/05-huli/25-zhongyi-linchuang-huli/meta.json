@@ -1,0 +1,38 @@
+{
+ "slug": "25-zhongyi-linchuang-huli",
+ "title": "中医临床护理学",
+ "en": "TCM Clinical Nursing",
+ "deptSlug": "05-huli",
+ "deptTitle": "护理系",
+ "globalN": 90,
+ "type": "Clinic",
+ "semester": 8,
+ "stage": "zhuang",
+ "stageTitle": "壮",
+ "hours": 54,
+ "bridge": "病证护理→知识图谱 / 护理方案→路径推荐",
+ "chaptersTarget": 18,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/05-huli/25-zhongyi-linchuang-huli",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/05-huli/25-zhongyi-linchuang-huli",
+  "chaptersWritten": 18,
+  "words": 363392,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#中医临床护理学",
+  "extractedAt": "2026-10-21"
+ },
+ "底本": {
+  "kind": "教材",
+  "from": "F:/textbooks/qhzy-中医临床护理学.xlsx",
+  "dir": "standards/zhongyi-linchuang",
+  "note": "18 内容章 / 18 单元 / 320,017 汉字；课程 18 章按母本骨架重排"
+ }
+}

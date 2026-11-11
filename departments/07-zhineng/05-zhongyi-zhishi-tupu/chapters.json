@@ -1,66 +1,55 @@
 {
-  "slug": "05-zhongyi-zhishi-tupu",
-  "title": "中医知识图谱",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-benti-sheji",
-      "title": "本体设计：概念、属性与关系",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-chouqu-guanxian",
-      "title": "实体与关系的抽取管线",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-tushujuku-chaxun",
-      "title": "图数据库的建模与查询",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-zhishi-ronghe",
-      "title": "知识融合与实体对齐",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-tuili-lujing",
-      "title": "推理：规则、路径与嵌入",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-zhiliang-pinggu",
-      "title": "图谱质量评估",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-tupu-jiansuo",
-      "title": "图谱与检索的联合使用",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-shijian-banben",
-      "title": "时间与版本：知识的演化",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-keshihua",
-      "title": "图谱的可视化",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-juece-zhichi",
-      "title": "从图谱到临床决策支持",
-      "status": "📋"
-    }
-  ]
+ "slug": "05-zhongyi-zhishi-tupu",
+ "title": "中医知识图谱",
+ "note": "6 章 = 教材 6 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-j1",
+   "title": "知识组织（第 1 段）",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-j2",
+   "title": "知识组织（第 2 段）",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-j3",
+   "title": "知识组织（第 3 段）",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-j4",
+   "title": "知识组织（第 4 段）",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-j5",
+   "title": "知识组织（第 5 段）",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-j6",
+   "title": "知识组织（第 6 段）",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

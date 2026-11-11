@@ -1,0 +1,79 @@
+{
+  "lesson": "05-huaxing-guisuiyan-guanjieyan",
+  "title": "化脓性骨髓炎与化脓性关节炎：脓在哪一层",
+  "subject": "18-zhongyi-gubing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "骨髓炎与化脓性关节炎处理不同的根本原因是？",
+      "options": [
+        "脓在骨内还是在关节腔",
+        "年龄不同",
+        "发热高低",
+        "病程长短"
+      ],
+      "correct": 0,
+      "explanation": "脓在哪一层决定引流方式与功能保全重点。"
+    },
+    {
+      "stage": "check",
+      "question": "慢性化脓性骨髓炎的核心病机是？",
+      "options": [
+        "正虚邪恋、死骨留滞",
+        "热毒炽盛",
+        "风寒湿痹",
+        "肝肾亏虚"
+      ],
+      "correct": 0,
+      "explanation": "教材 5.1.2：死骨不去则窦道不敛。"
+    },
+    {
+      "stage": "check",
+      "question": "「托」法在急性期与慢性期的不同含义是？",
+      "options": [
+        "急性期托里排脓，慢性期托毒生肌",
+        "两期相同",
+        "只在急性期用",
+        "只在慢性期用"
+      ],
+      "correct": 0,
+      "explanation": "托法贯穿骨髓炎全程。"
+    },
+    {
+      "stage": "check",
+      "question": "本章的数值命中数为？",
+      "options": [
+        "0 处",
+        "62 处",
+        "47 处",
+        "19 处"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算：教材把剂量留给临床。"
+    },
+    {
+      "stage": "post",
+      "question": "化脓性关节炎为何强调「引流优先于辨证」？",
+      "options": [
+        "关节软骨数天内即可被酶破坏，功能不可逆",
+        "因为不能辨证",
+        "因为中药无效",
+        "因为要拍片"
+      ],
+      "correct": 0,
+      "explanation": "教材 5.2.1 按语：关节破坏与引流。"
+    },
+    {
+      "stage": "post",
+      "question": "三条转诊红线之一是？",
+      "options": [
+        "脓毒败血症征象（高热不退、神志改变、血压下降）",
+        "局部疼痛",
+        "白细胞升高",
+        "窦道存在"
+      ],
+      "correct": 0,
+      "explanation": "教材 5.1.1 按语。"
+    }
+  ]
+}

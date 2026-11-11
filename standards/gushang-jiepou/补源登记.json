@@ -1,0 +1,70 @@
+{
+ "note": "图源探测记录：只为求一张可主张公有领域的骨伤解剖图版。结论＝本轮未取得合规件（补源约定第⑩条：缺口也登记）。",
+ "probedAt": "2026-11-07",
+ "protocol": "补源约定.md（仓库根）",
+ "attempts": [
+  {
+   "host": "upload.wikimedia.org",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Gray188_grays_anatomy.png/200px-Gray188_grays_anatomy.png",
+   "http": "000",
+   "verdict": "连接失败（本机网络不可达）"
+  },
+  {
+   "host": "commons.wikimedia.org",
+   "url": "https://commons.wikimedia.org/wiki/Main_Page",
+   "http": "000",
+   "verdict": "连接失败"
+  },
+  {
+   "host": "archive.org",
+   "url": "https://archive.org/advancedsearch.php?q=grays+anatomy&output=json",
+   "http": "000",
+   "verdict": "连接失败"
+  },
+  {
+   "host": "openlibrary.org",
+   "url": "https://openlibrary.org/",
+   "http": "000",
+   "verdict": "连接失败"
+  },
+  {
+   "host": "en.wikisource.org",
+   "url": "https://en.wikisource.org/wiki/Anatomy_of_the_Human_Body",
+   "http": "000",
+   "verdict": "连接失败"
+  },
+  {
+   "host": "www.bartleby.com",
+   "url": "https://www.bartleby.com/107/",
+   "http": "403",
+   "verdict": "拒绝访问（反爬）"
+  },
+  {
+   "host": "www.gutenberg.org",
+   "url": "https://www.gutenberg.org/ebooks/search/?query=anatomy",
+   "http": "200",
+   "verdict": "可达，但检索无 Gray's Anatomy（1918）；仅有 Surgical Anatomy 等其他书"
+  },
+  {
+   "host": "api.github.com",
+   "url": "https://api.github.com/search/repositories?q=grays+anatomy",
+   "http": "200",
+   "verdict": "可达；检索到 12 个仓库，**均无 license 字段与版本说明**"
+  },
+  {
+   "host": "cdn.jsdelivr.net",
+   "url": "https://cdn.jsdelivr.net/gh/awatson1978/images-grays-anatomy@master/grays.anatomy.anchors/AtlasJoint.jpg",
+   "http": "200",
+   "verdict": "可达，镜像有图，但仓库**无授权声明、无版本出处**，不能据以主张公有领域"
+  }
+ ],
+ "conclusion": {
+  "obtained": 0,
+  "reason": "公有领域骨伤解剖图版的常用源（Wikimedia / archive.org / Wikisource / OpenLibrary）在本机均不可达；可达的 GitHub 镜像无授权与版本说明，达不到《补源约定》对「来源资格＋五项指纹」的要求。",
+  "policy": "未取得即不引入图片；正文以文字解剖描述为准，图版需求入清单，待图源可达或用户提供后再补。"
+ },
+ "nextSteps": [
+  "若用户可提供 Gray's Anatomy 1918 图版原件（或可访问的镜像地址），按本文件格式登记 sha256 后入正文。",
+  "或改用自绘线图：须标「示意图（据本库正文重绘），非教材原图」，不得据图给出教材未给数值。"
+ ]
+}

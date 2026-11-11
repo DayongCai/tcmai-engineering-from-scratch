@@ -1,0 +1,23 @@
+{
+  "_comment": "本学科 docs 用「一、二、三…」中文序号结构。drop/roles 按「标题含该词」匹配（includes），不是前缀——序号在前会让前缀匹配全漏。",
+  "sequential": true,
+  "drop": [
+    "课程信息",
+    "教材小节",
+    "运行与验证",
+    "免责",
+    "补充出处",
+    "教材出处"
+  ],
+  "roles": {
+    "代价与边界": "boundary",
+    "边界三条": "boundary",
+    "边界": "boundary",
+    "免责": "drop",
+    "十二节压成一条链": "chain",
+    "小结": "summary",
+    "自测": "quiz"
+  },
+  "slideSplitChars": 420,
+  "_splitNote": "正文段超过 420 字时按空行（段落边界）拆成多张幻灯片；不切断句子。"
+}

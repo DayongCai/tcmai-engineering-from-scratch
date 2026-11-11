@@ -1,54 +1,78 @@
 {
-  "slug": "15-huli-yanjiu-zhengxun",
-  "title": "护理研究与循证护理",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-xuanti-wentihua",
-      "title": "护理研究的选题与问题化",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-liangxing-sheji",
-      "title": "量性研究与设计类型",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-zhixing-fangtan",
-      "title": "质性研究与访谈分析",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-liangbiao-xinxiao",
-      "title": "量表的选择与信效度",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-xunzheng-fenji",
-      "title": "循证护理的证据分级",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-jiansuo-xitong",
-      "title": "文献检索与系统评价",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-zhuanhua-shijian",
-      "title": "证据到实践的转化",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-lunli-shencha",
-      "title": "护理研究中的伦理审查",
-      "status": "📋"
-    }
-  ]
+ "slug": "15-huli-yanjiu-zhengxun",
+ "title": "护理研究与循证护理",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xuanti-wentihua",
+   "title": "护理研究的选题与问题化",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-xuanti-wentihua/docs/zh.md",
+   "code": "chapters/01-xuanti-wentihua/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-liangxing-sheji",
+   "title": "量性研究与设计类型",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-liangxing-sheji/docs/zh.md",
+   "code": "chapters/02-liangxing-sheji/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-zhixing-fangtan",
+   "title": "质性研究与访谈分析",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-zhixing-fangtan/docs/zh.md",
+   "code": "chapters/03-zhixing-fangtan/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-liangbiao-xinxiao",
+   "title": "量表的选择与信效度",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-liangbiao-xinxiao/docs/zh.md",
+   "code": "chapters/04-liangbiao-xinxiao/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-xunzheng-fenji",
+   "title": "循证护理的证据分级",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-xunzheng-fenji/docs/zh.md",
+   "code": "chapters/05-xunzheng-fenji/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-jiansuo-xitong",
+   "title": "文献检索与系统评价",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-jiansuo-xitong/docs/zh.md",
+   "code": "chapters/06-jiansuo-xitong/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-zhuanhua-shijian",
+   "title": "证据到实践的转化",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-zhuanhua-shijian/docs/zh.md",
+   "code": "chapters/07-zhuanhua-shijian/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-lunli-shencha",
+   "title": "护理研究中的伦理审查",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-lunli-shencha/docs/zh.md",
+   "code": "chapters/08-lunli-shencha/code/main.js"
+  }
+ ]
 }

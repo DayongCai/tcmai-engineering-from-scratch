@@ -1,66 +1,105 @@
 {
-  "slug": "07-zhongyao-yaoli-xue",
-  "title": "中药药理学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-yanjiu-fanshi",
-      "title": "中药药理的研究范式与特殊性",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-yaoxiaoxue",
-      "title": "药效学：量效关系与模型选择",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-jiebiao-yaoli",
-      "title": "解表、清热类药的药理",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-huoxue-yaoli",
-      "title": "活血化瘀与止血类药的药理",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-buxu-mianyi",
-      "title": "补虚类药的免疫调节",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-huatan-anshen",
-      "title": "化痰平喘与安神类药的药理",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-duxing-anquan",
-      "title": "中药的毒性与安全评价",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-yaodai-peiwu",
-      "title": "药代动力学与配伍影响",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-zhengxing-moxing",
-      "title": "动物模型与证候模型的争议",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-zhengju-fenji",
-      "title": "药理证据的分级与临床转化",
-      "status": "📋"
-    }
-  ]
+ "slug": "07-zhongyao-yaoli-xue",
+ "title": "中药药理学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-yanjiu-fanshi",
+   "title": "中药药理的研究范式与特殊性",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-yanjiu-fanshi/docs/zh.md",
+   "code": "chapters/01-yanjiu-fanshi/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-yaoxiaoxue",
+   "title": "药效学：量效关系与模型选择",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-yaoxiaoxue/docs/zh.md",
+   "code": "chapters/02-yaoxiaoxue/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-jiebiao-yaoli",
+   "title": "解表、清热类药的药理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-jiebiao-yaoli/docs/zh.md",
+   "code": "chapters/03-jiebiao-yaoli/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-xiexia-qushi-wenli",
+   "title": "泻下、祛湿、温里与理气类药的药理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-xiexia-qushi-wenli/docs/zh.md",
+   "code": "chapters/04-xiexia-qushi-wenli/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-huoxue-yaoli",
+   "title": "活血化瘀与止血类药的药理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-huoxue-yaoli/docs/zh.md",
+   "code": "chapters/05-huoxue-yaoli/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-buxu-mianyi",
+   "title": "补虚类药的免疫调节",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-buxu-mianyi/docs/zh.md",
+   "code": "chapters/06-buxu-mianyi/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-huatan-anshen",
+   "title": "化痰平喘与安神类药的药理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-huatan-anshen/docs/zh.md",
+   "code": "chapters/07-huatan-anshen/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-duxing-anquan",
+   "title": "中药的毒性与安全评价",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-duxing-anquan/docs/zh.md",
+   "code": "chapters/08-duxing-anquan/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-yaodai-peiwu",
+   "title": "药代动力学与配伍影响",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-yaodai-peiwu/docs/zh.md",
+   "code": "chapters/09-yaodai-peiwu/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-zhengxing-moxing",
+   "title": "动物模型与证候模型的争议",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-zhengxing-moxing/docs/zh.md",
+   "code": "chapters/10-zhengxing-moxing/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-zhengju-fenji",
+   "title": "药理证据的分级与临床转化",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-zhengju-fenji/docs/zh.md",
+   "code": "chapters/11-zhengju-fenji/code/main.js"
+  }
+ ]
 }

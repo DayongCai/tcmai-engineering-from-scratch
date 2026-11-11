@@ -1,0 +1,66 @@
+{
+ "courseTitle": "骨伤临床轮转",
+ "deptPath": "departments/04-gushang/16-gushang-linchuang-lunzhuan",
+ "xlsx": "派生课（无教材）：单元取自骨伤系已建课程",
+ "chain": "正骨科轮转：骨折复位与固定 → 筋伤科轮转：软组织损伤 → 脊柱科轮转 → 关节科轮转 → 急诊创伤与院前处置 → 出科考核与病例复盘",
+ "levelLabel": "章群结构",
+ "objectPressure": "骨伤临床判据始终是「先排危险，再谈手法」；轮转与毕设都要能复述这句话的证据",
+ "reportRule": "记录写：站点/题目、观察或测量项、过程、结果、结论与局限",
+ "gapNote": "无独立教材；章节名与顺序由 data/new-subjects-chapters.json 固定，不得手改",
+ "chapterQ": {
+  "zhenggu-lunzhuan": [
+   "正骨科轮转：骨折复位与固定这一段，能不能独立完成并讲清依据",
+   "先看复位标准，再动手；固定方式决定复查节奏"
+  ],
+  "jinshang-lunzhuan": [
+   "筋伤科轮转：软组织损伤这一段，能不能独立完成并讲清依据",
+   "筋伤科的门诊量大，辨证与手法要同时过关"
+  ],
+  "jizhu-lunzhuan": [
+   "脊柱科轮转这一段，能不能独立完成并讲清依据",
+   "脊柱科先看稳定性与神经，再谈手法"
+  ],
+  "guanjie-lunzhuan": [
+   "关节科轮转这一段，能不能独立完成并讲清依据",
+   "关节科的鉴别比治疗更重要：感染、结核、肿瘤先排"
+  ],
+  "jizhen-chuangshang": [
+   "急诊创伤与院前处置这一段，能不能独立完成并讲清依据",
+   "急诊先保命：ABCDE 顺序不可换"
+  ],
+  "chuke-kaohe": [
+   "出科考核与病例复盘这一段，能不能独立完成并讲清依据",
+   "考核考的不是背，是能不能把一次接诊讲清楚"
+  ]
+ },
+ "fallback": {
+  "zhenggu-lunzhuan": [
+   "《骨伤临床轮转·正骨科轮转：骨折复位与固定》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "jinshang-lunzhuan": [
+   "《骨伤临床轮转·筋伤科轮转：软组织损伤》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "jizhu-lunzhuan": [
+   "《骨伤临床轮转·脊柱科轮转》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "guanjie-lunzhuan": [
+   "《骨伤临床轮转·关节科轮转》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "jizhen-chuangshang": [
+   "《骨伤临床轮转·急诊创伤与院前处置》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "chuke-kaohe": [
+   "《骨伤临床轮转·出科考核与病例复盘》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ]
+ },
+ "defaultCite": [
+  "《骨伤临床轮转》",
+  "派生课篇名"
+ ]
+}

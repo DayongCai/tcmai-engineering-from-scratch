@@ -1,0 +1,226 @@
+{
+ "title": "医学伦理学",
+ "note": "合成课：伦理与法治侧取《卫生法学》（20 课）的生命伦理与权益救济章，数据与隐私伦理取《医学数据安全与隐私》（14 智能课），机构治理取（04 课）。库内无伦理学教材，已在缺口登记声明。",
+ "levels": {
+  "原则与历史": [
+   1,
+   2,
+   3
+  ],
+  "临床伦理": [
+   4,
+   5,
+   6,
+   7
+  ],
+  "研究伦理": [
+   8,
+   9,
+   10,
+   11
+  ],
+  "数据与治理": [
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18
+  ]
+ },
+ "chapters": [
+  {
+   "title": "伦理学的对象：从德性到规范",
+   "picks": [
+    [
+     "20-weisheng-fa-xue",
+     1
+    ]
+   ]
+  },
+  {
+   "title": "生命伦理四原则",
+   "picks": [
+    [
+     "20-weisheng-fa-xue",
+     15
+    ]
+   ]
+  },
+  {
+   "title": "知情同意与代理决定",
+   "picks": [
+    [
+     "20-weisheng-fa-xue",
+     15
+    ],
+    [
+     "yixue-shuju-anquan-yinsi",
+     4
+    ]
+   ]
+  },
+  {
+   "title": "医患关系与告知义务",
+   "picks": [
+    [
+     "20-weisheng-fa-xue",
+     7
+    ]
+   ]
+  },
+  {
+   "title": "隐私与保密",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     4
+    ]
+   ]
+  },
+  {
+   "title": "医疗差错与道歉",
+   "picks": [
+    [
+     "20-weisheng-fa-xue",
+     8
+    ]
+   ]
+  },
+  {
+   "title": "资源分配与公平",
+   "picks": [
+    [
+     "20-weisheng-fa-xue",
+     12
+    ]
+   ]
+  },
+  {
+   "title": "研究伦理与伦理审查",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     4
+    ]
+   ]
+  },
+  {
+   "title": "受试者保护与风险最小化",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     5
+    ]
+   ]
+  },
+  {
+   "title": "动物与替代方法",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     5
+    ]
+   ]
+  },
+  {
+   "title": "利益冲突与科研诚信",
+   "picks": [
+    [
+     "20-weisheng-fa-xue",
+     15
+    ]
+   ]
+  },
+  {
+   "title": "健康数据伦理",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     8
+    ]
+   ]
+  },
+  {
+   "title": "算法与 AI 伦理",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     3
+    ]
+   ]
+  },
+  {
+   "title": "中医伦理传统",
+   "picks": [
+    [
+     "20-weisheng-fa-xue",
+     13
+    ]
+   ]
+  },
+  {
+   "title": "机构伦理委员会",
+   "picks": [
+    [
+     "04-weisheng-shiye-guanli",
+     5
+    ]
+   ]
+  },
+  {
+   "title": "伦理与法律的边界",
+   "picks": [
+    [
+     "20-weisheng-fa-xue",
+     2
+    ]
+   ]
+  },
+  {
+   "title": "救济与责任",
+   "picks": [
+    [
+     "20-weisheng-fa-xue",
+     16
+    ]
+   ]
+  },
+  {
+   "title": "伦理治理趋势",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     7
+    ]
+   ]
+  }
+ ],
+ "views": {
+  "制度与规则": [
+   "制度",
+   "政策",
+   "法规",
+   "规定",
+   "标准",
+   "职责"
+  ],
+  "组织与流程": [
+   "组织",
+   "流程",
+   "部门",
+   "岗位",
+   "运行",
+   "协作"
+  ],
+  "绩效与评价": [
+   "绩效",
+   "评价",
+   "指标",
+   "成本",
+   "质量",
+   "效率"
+  ]
+ }
+}

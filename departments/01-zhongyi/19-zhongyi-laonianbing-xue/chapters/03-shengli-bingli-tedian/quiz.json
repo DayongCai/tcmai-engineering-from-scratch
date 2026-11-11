@@ -1,0 +1,79 @@
+{
+  "lesson": "03-shengli-bingli-tedian",
+  "title": "生理病理特点：衰老是「虚」，也是「瘀与痰」",
+  "subject": "19-zhongyi-laonianbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "衰老三条机理的关系是？",
+      "options": [
+        "肾虚为本、脾虚为化源、痰瘀为产物与加重因素",
+        "三者并列可选其一",
+        "只有肾虚",
+        "只有痰瘀"
+      ],
+      "correct": 0,
+      "explanation": "教材 3.1.2 与 3.3.1：虚为本、痰瘀为标。"
+    },
+    {
+      "stage": "check",
+      "question": "「脑为元神之府」在本章的意义是？",
+      "options": [
+        "给认知衰退在五脏框架里安了位置",
+        "只是比喻",
+        "指心脏",
+        "指肾精"
+      ],
+      "correct": 0,
+      "explanation": "教材 3.2.1 单列脑髓与神明。"
+    },
+    {
+      "stage": "check",
+      "question": "「虚为本、痰瘀为标」的两个可观察落点是？",
+      "options": [
+        "蒙窍与络阻",
+        "寒与热",
+        "表与里",
+        "气与血"
+      ],
+      "correct": 0,
+      "explanation": "教材 3.3.1：痰浊蒙窍、瘀血阻络。"
+    },
+    {
+      "stage": "check",
+      "question": "本章的汉字规模是？",
+      "options": [
+        "23,479（全书第二长）",
+        "9,225（最短）",
+        "28,428",
+        "11,124"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算：8 单元 23,479 汉字。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么只补不化会无效？",
+      "options": [
+        "痰瘀继续积聚，补进去的东西化不开",
+        "因为药不好",
+        "因为脾胃强",
+        "因为年龄太大"
+      ],
+      "correct": 0,
+      "explanation": "老年多虚中夹实，补化须并行。"
+    },
+    {
+      "stage": "post",
+      "question": "「虚而兼滞」指的是？",
+      "options": [
+        "气血虚少且运行不畅",
+        "只有虚",
+        "只有滞",
+        "虚实分离"
+      ],
+      "correct": 0,
+      "explanation": "教材 3.2.2：气血虚少与运行不畅并见。"
+    }
+  ]
+}

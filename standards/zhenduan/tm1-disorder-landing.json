@@ -1,0 +1,1559 @@
+{
+ "generated": "2026-10-28",
+ "inputs": {
+  "base": {
+   "file": "standards/zhenduan/底本.json",
+   "sha256": "4c8cc01c64dc0ec2faceb42678f61698008e5b409597b9b88e6ea21b33a133be",
+   "chapters": 14,
+   "chars": 22215
+  },
+  "zhNames": {
+   "file": "standards/icd11/zh-names.json",
+   "sha256": "d5758951d88bebf906119eaf1a4043bb12c68ffbfabbca52a6bf1ac8648030a1"
+  },
+  "bzu": {
+   "file": "standards/zhenduan/bzu.json",
+   "sha256": "d345e598d0e702818ed864bfabf753b42a142a8deb992550c15c1d00db694533"
+  }
+ },
+ "method": {
+  "question": "ICD-11 TM1 的「病」，这本教材讲了多少种？",
+  "unitScope": "TM1 病 218 条，剔除残余类目 68 条 → 实病 150 条",
+  "exact": "病名在教材正文原样出现（**不去尾字**：否则「肺热病」会被病机「肺热」顶替）",
+  "fragment": "只有 ≥2 字词面片段出现，不构成「收了该病」",
+  "none": "连 2 字片段都没有",
+  "limits": [
+   "《中医诊断学》以症、证为纲，不以病名为纲——病种收录少是**体裁**，不是教材缺陷；不得据此声称「教材缺 N 个病」",
+   "exact 只证明病名在教材里出现过（常作为举例或鉴别对象），不等于教材把它当独立病种立条",
+   "词面法不做语义归并：教材写「喘」不算命中 TM1「喘证」"
+  ]
+ },
+ "stat": {
+  "disorders": 218,
+  "residual": 68,
+  "real": 150,
+  "tally": {
+   "exact": 44,
+   "fragment": 19,
+   "none": 87
+  },
+  "inBzu": 11
+ },
+ "sibling": {
+  "file": "standards/zhenduan/tm1-landing.json",
+  "sha256": "1d756d52b1ab7f631dd4e1256c1f89907a38a1d15543ca76b13ceba22edcfea2",
+  "stat": {
+   "patterns": 254,
+   "residual": 58,
+   "real": 196,
+   "tally": {
+    "exact": 108,
+    "covered": 42,
+    "fragment": 40,
+    "none": 6
+   }
+  }
+ },
+ "rows": [
+  {
+   "code": "SA00",
+   "zh": "胁痛",
+   "en": "Hypochondrium pain disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "胁痛",
+   "lcs": "",
+   "loc": "教材·第4章·4.2.3"
+  },
+  {
+   "code": "SA01",
+   "zh": "黄疸",
+   "en": "Jaundice disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "黄疸",
+   "lcs": "",
+   "loc": "教材·第2章·2.1.2"
+  },
+  {
+   "code": "SA02",
+   "zh": "肝著",
+   "en": "Liver distension disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SA03",
+   "zh": "鼓胀",
+   "en": "Tympanites disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "鼓胀",
+   "lcs": "",
+   "loc": "教材·第2章·2.2.2"
+  },
+  {
+   "code": "SA04",
+   "zh": "肝痈",
+   "en": "Liver abscess disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SA05",
+   "zh": "胆胀",
+   "en": "Gallbladder distension disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SA10",
+   "zh": "惊悸",
+   "en": "Inducible palpitation disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "惊悸",
+   "lcs": "",
+   "loc": "教材·第8章·8.4.2"
+  },
+  {
+   "code": "SA11",
+   "zh": "怔忡",
+   "en": "Spontaneous palpitation disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "怔忡",
+   "lcs": "",
+   "loc": "教材·第8章·8.1.1"
+  },
+  {
+   "code": "SA20",
+   "zh": "真心痛",
+   "en": "True heart pain disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "心痛",
+   "lcs": "心痛",
+   "loc": "教材·第4章·4.2.3"
+  },
+  {
+   "code": "SA50",
+   "zh": "噎膈",
+   "en": "Dysphagia disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SA51",
+   "zh": "胃脘痛",
+   "en": "Stomach ache disorder (TM1)",
+   "inBzu": true,
+   "bucket": "exact",
+   "probe": "胃脘痛",
+   "lcs": "",
+   "loc": "教材·第4章·4.2.3"
+  },
+  {
+   "code": "SA52",
+   "zh": "胃胀",
+   "en": "Epigastric distension disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SA53",
+   "zh": "嘈杂",
+   "en": "Epigastric upset disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SA54",
+   "zh": "食积",
+   "en": "Food retention disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "食积",
+   "lcs": "",
+   "loc": "教材·第2章·2.3.3"
+  },
+  {
+   "code": "SA55",
+   "zh": "泄泻",
+   "en": "Diarrhea disorder (TM1)",
+   "inBzu": true,
+   "bucket": "exact",
+   "probe": "泄泻",
+   "lcs": "",
+   "loc": "教材·第3章·3.1.3"
+  },
+  {
+   "code": "SA56",
+   "zh": "痢疾",
+   "en": "Dysentery disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "痢疾",
+   "lcs": "",
+   "loc": "教材·第4章·4.2.7"
+  },
+  {
+   "code": "SA57",
+   "zh": "便秘",
+   "en": "Constipation disorder (TM1)",
+   "inBzu": true,
+   "bucket": "exact",
+   "probe": "便秘",
+   "lcs": "",
+   "loc": "教材·第4章·4.2.7"
+  },
+  {
+   "code": "SA58",
+   "zh": "腹痛",
+   "en": "Abdominal pain disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "腹痛",
+   "lcs": "",
+   "loc": "教材·第3章·3.1.3"
+  },
+  {
+   "code": "SA59",
+   "zh": "肠痈",
+   "en": "Intestinal abscess disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SA60",
+   "zh": "感冒",
+   "en": "Common cold disorder (TM1)",
+   "inBzu": true,
+   "bucket": "exact",
+   "probe": "感冒",
+   "lcs": "",
+   "loc": "教材·第8章·8.2.1"
+  },
+  {
+   "code": "SA70",
+   "zh": "咳逆",
+   "en": "Cough with dyspnea disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "咳逆",
+   "lcs": "",
+   "loc": "教材·第7章·7.5.2"
+  },
+  {
+   "code": "SA80",
+   "zh": "喘证",
+   "en": "Dyspnea disorder (TM1)",
+   "inBzu": true,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SA81",
+   "zh": "哮病",
+   "en": "Wheezing disorder (TM1)",
+   "inBzu": true,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SA82",
+   "zh": "肺胀",
+   "en": "Lung distension disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "肺胀",
+   "lcs": "",
+   "loc": "教材·第2章·2.2.2"
+  },
+  {
+   "code": "SA83",
+   "zh": "悬饮",
+   "en": "Pleural fluid retention disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "悬饮",
+   "lcs": "",
+   "loc": "教材·第7章·7.5.2"
+  },
+  {
+   "code": "SA84",
+   "zh": "肺热病",
+   "en": "Lung heat disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "肺热",
+   "lcs": "肺热",
+   "loc": "教材·第2章·2.3.4"
+  },
+  {
+   "code": "SA85",
+   "zh": "肺痿",
+   "en": "Lung withering disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SA86",
+   "zh": "结胸",
+   "en": "Chest bind disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "结胸",
+   "lcs": "",
+   "loc": "教材·第5章·5.2.2"
+  },
+  {
+   "code": "SA90",
+   "zh": "石淋",
+   "en": "Stony stranguria disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "石淋",
+   "lcs": "",
+   "loc": "教材·第8章·8.5.2"
+  },
+  {
+   "code": "SA91",
+   "zh": "热淋",
+   "en": "Heat stranguria disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB00",
+   "zh": "肾著",
+   "en": "Kidney stagnation disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB01",
+   "zh": "尿崩",
+   "en": "Flooding urine disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB02",
+   "zh": "遗尿",
+   "en": "Enuresis disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "遗尿",
+   "lcs": "",
+   "loc": "教材·第4章·4.2.7"
+  },
+  {
+   "code": "SB03",
+   "zh": "尿浊",
+   "en": "Turbid urine disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "尿浊",
+   "lcs": "",
+   "loc": "教材·第2章·2.4.1"
+  },
+  {
+   "code": "SB04",
+   "zh": "癃闭",
+   "en": "Dribbling urinary block disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "癃闭",
+   "lcs": "",
+   "loc": "教材·第4章·4.2.7"
+  },
+  {
+   "code": "SB05",
+   "zh": "关格",
+   "en": "Block and repulsion disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB06",
+   "zh": "水肿",
+   "en": "Edema disorders (TM1)",
+   "inBzu": true,
+   "bucket": "exact",
+   "probe": "水肿",
+   "lcs": "",
+   "loc": "教材·第2章·2.2.1"
+  },
+  {
+   "code": "SB06.0",
+   "zh": "肾水",
+   "en": "Kidney edema disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "肾水",
+   "lcs": "",
+   "loc": "教材·第8章·8.6.1"
+  },
+  {
+   "code": "SB06.1",
+   "zh": "风水",
+   "en": "Wind edema disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB07",
+   "zh": "疝气",
+   "en": "Lower abdominal colic disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "疝气",
+   "lcs": "",
+   "loc": "教材·第5章·5.1.2"
+  },
+  {
+   "code": "SB08",
+   "zh": "早泄",
+   "en": "Premature ejaculation disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "早泄",
+   "lcs": "",
+   "loc": "教材·第8章·8.5.1"
+  },
+  {
+   "code": "SB09",
+   "zh": "遗精",
+   "en": "Involuntary ejaculation disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "遗精",
+   "lcs": "",
+   "loc": "教材·第8章·8.5.1"
+  },
+  {
+   "code": "SB0A",
+   "zh": "阳强",
+   "en": "Persistent erection disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB0B",
+   "zh": "阳痿",
+   "en": "Impotence disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB0C",
+   "zh": "不育",
+   "en": "Male infertility disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB30",
+   "zh": "湿疮",
+   "en": "Dampness sore disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB31",
+   "zh": "黄水疮",
+   "en": "Impetigo disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB40",
+   "zh": "疔疮走黄",
+   "en": "Septicemic furunculosis disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB50",
+   "zh": "褥疮",
+   "en": "Bed sore disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB60",
+   "zh": "流注",
+   "en": "Deep multiple abscess disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB61",
+   "zh": "肛痈",
+   "en": "Anal abscess disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB70",
+   "zh": "有头疽",
+   "en": "Headed carbuncle disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB71",
+   "zh": "脚湿气",
+   "en": "Foot dampness itch disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB72",
+   "zh": "圆癣",
+   "en": "Tinea circinate disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB73",
+   "zh": "蛇皮癣",
+   "en": "Dry skin disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB74",
+   "zh": "脱疽",
+   "en": "Gangrene disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB75",
+   "zh": "疣",
+   "en": "Wart disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB76",
+   "zh": "鹅掌风",
+   "en": "Hand dampness itch disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB77",
+   "zh": "丹毒",
+   "en": "Erysipelas disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB78",
+   "zh": "发证",
+   "en": "Cellulitis disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB79",
+   "zh": "鹅口疮",
+   "en": "Thrush disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB7A",
+   "zh": "蛇串疮",
+   "en": "Herpes zoster disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB7B",
+   "zh": "内痔",
+   "en": "Interior haemorrhoid disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB7C",
+   "zh": "肛裂",
+   "en": "Fissured anus disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB80",
+   "zh": "月经先期",
+   "en": "Advanced menstruation disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "月经",
+   "lcs": "月经",
+   "loc": "教材·第4章·4.2.8"
+  },
+  {
+   "code": "SB81",
+   "zh": "月经后期",
+   "en": "Delayed menstruation disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "月经后期",
+   "lcs": "",
+   "loc": "教材·第7章·7.4.2"
+  },
+  {
+   "code": "SB82",
+   "zh": "月经先后无定期",
+   "en": "Irregular menstruation disorders (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "先后无定期",
+   "lcs": "先后无定期",
+   "loc": "教材·第4章·4.2.8"
+  },
+  {
+   "code": "SB90",
+   "zh": "月经过多",
+   "en": "Menorrhagia disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "月经过多",
+   "lcs": "",
+   "loc": "教材·第8章·8.3.1"
+  },
+  {
+   "code": "SB91",
+   "zh": "月经过少",
+   "en": "Decreased menstruation disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "月经过",
+   "lcs": "月经过",
+   "loc": "教材·第8章·8.3.1"
+  },
+  {
+   "code": "SB92",
+   "zh": "经期延长",
+   "en": "Prolonged menstruation disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "经期",
+   "lcs": "经期",
+   "loc": "教材·第4章·4.2.1"
+  },
+  {
+   "code": "SB93",
+   "zh": "崩漏",
+   "en": "Metrorrhagia disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SB94",
+   "zh": "闭经",
+   "en": "Amenorrhea disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "闭经",
+   "lcs": "",
+   "loc": "教材·第7章·7.4.2"
+  },
+  {
+   "code": "SB95",
+   "zh": "绝经前后诸症",
+   "en": "Menopausal disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "后诸症",
+   "lcs": "后诸症",
+   "loc": "教材·第7章·7.4.1"
+  },
+  {
+   "code": "SB96",
+   "zh": "痛经",
+   "en": "Dysmenorrhea disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "痛经",
+   "lcs": "",
+   "loc": "教材·第4章·4.2.8"
+  },
+  {
+   "code": "SC00",
+   "zh": "恶阻",
+   "en": "Morning sickness disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC01",
+   "zh": "胎动不安",
+   "en": "Unstable fetus disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "胎动",
+   "lcs": "胎动",
+   "loc": "教材·第8章·8.5.1"
+  },
+  {
+   "code": "SC02",
+   "zh": "转胞",
+   "en": "Bladder pressure disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC03",
+   "zh": "子痫",
+   "en": "Eclampsia disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC04",
+   "zh": "子悬",
+   "en": "Floating sensation pregnancy disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC10",
+   "zh": "儿枕痛",
+   "en": "Puerperal abdominal pain disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC11",
+   "zh": "产后风",
+   "en": "Puerperal wind disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "产后",
+   "lcs": "产后",
+   "loc": "教材·第5章·5.1.4"
+  },
+  {
+   "code": "SC12",
+   "zh": "缺乳",
+   "en": "Hypogalactia disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC13",
+   "zh": "恶露不绝",
+   "en": "Postpartum lochiorrhea disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC20",
+   "zh": "带下病",
+   "en": "Leukorrhea disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "带下",
+   "lcs": "带下",
+   "loc": "教材·第3章·3.2.1"
+  },
+  {
+   "code": "SC21",
+   "zh": "阴吹",
+   "en": "Vaginal flatus disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC22",
+   "zh": "不孕",
+   "en": "Infertility disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC23",
+   "zh": "石瘕",
+   "en": "Uterine mass disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC24",
+   "zh": "乳癖",
+   "en": "Breast lump disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC50",
+   "zh": "痛痹",
+   "en": "Cold impediment disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC51",
+   "zh": "行痹",
+   "en": "Wind impediment disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC52",
+   "zh": "着痹",
+   "en": "Dampness impediment disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC60",
+   "zh": "转筋",
+   "en": "Muscle spasm disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "转筋",
+   "lcs": "",
+   "loc": "教材·第7章·7.5.1"
+  },
+  {
+   "code": "SC61",
+   "zh": "腰痛",
+   "en": "Lumbago disorder (TM1)",
+   "inBzu": true,
+   "bucket": "exact",
+   "probe": "腰痛",
+   "lcs": "",
+   "loc": "教材·第4章·4.2.3"
+  },
+  {
+   "code": "SC62",
+   "zh": "麻木",
+   "en": "Numbness disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "麻木",
+   "lcs": "",
+   "loc": "教材·第7章·7.4.2"
+  },
+  {
+   "code": "SC63",
+   "zh": "痿证",
+   "en": "Wilting disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "痿证",
+   "lcs": "",
+   "loc": "教材·第2章·2.2.2"
+  },
+  {
+   "code": "SC70",
+   "zh": "高风内障[雀目]",
+   "en": "Night blindness disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "风内",
+   "lcs": "风内",
+   "loc": "教材·第2章·2.2.2"
+  },
+  {
+   "code": "SC71",
+   "zh": "五风内障",
+   "en": "Wind glaucoma disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "风内",
+   "lcs": "风内",
+   "loc": "教材·第2章·2.2.2"
+  },
+  {
+   "code": "SC72",
+   "zh": "胞肿如桃",
+   "en": "Inflammatory eyelid disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC73",
+   "zh": "胞虚如球",
+   "en": "Non-inflammatory eyelid disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC74",
+   "zh": "混睛障",
+   "en": "Corneal opacity disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC75",
+   "zh": "耳鸣",
+   "en": "Tinnitus disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "耳鸣",
+   "lcs": "",
+   "loc": "教材·第4章·4.2.4"
+  },
+  {
+   "code": "SC80",
+   "zh": "暴聋",
+   "en": "Sudden deafness disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC81",
+   "zh": "渐聋",
+   "en": "Gradual deafness disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC90",
+   "zh": "鼻鼽",
+   "en": "Allergic rhinitis disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC91",
+   "zh": "鼻渊",
+   "en": "Nasal sinusitis disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "鼻渊",
+   "lcs": "",
+   "loc": "教材·第3章·3.2.1"
+  },
+  {
+   "code": "SC92",
+   "zh": "喉喑",
+   "en": "Hoarseness disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SC93",
+   "zh": "乳蛾",
+   "en": "Tonsillitis disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "乳蛾",
+   "lcs": "",
+   "loc": "教材·第2章·2.2.1"
+  },
+  {
+   "code": "SD00",
+   "zh": "口僻",
+   "en": "Facial paralysis disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD10",
+   "zh": "偏头风",
+   "en": "Migraine disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD11",
+   "zh": "头风",
+   "en": "Head wind disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD20",
+   "zh": "痉痓",
+   "en": "Convulsion disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD21",
+   "zh": "脑鸣",
+   "en": "Cerebral tinnitus disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD22",
+   "zh": "眩晕",
+   "en": "Vertigo disorder (TM1)",
+   "inBzu": true,
+   "bucket": "exact",
+   "probe": "眩晕",
+   "lcs": "",
+   "loc": "教材·第7章·7.4.1"
+  },
+  {
+   "code": "SD23",
+   "zh": "健忘",
+   "en": "Forgetfulness disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "健忘",
+   "lcs": "",
+   "loc": "教材·第8章·8.1.1"
+  },
+  {
+   "code": "SD24",
+   "zh": "弄舌",
+   "en": "Frequent protrusion of tongue disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD30",
+   "zh": "中风先兆证",
+   "en": "Prodrome of wind stroke disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "中风先兆",
+   "lcs": "中风先兆",
+   "loc": "教材·第2章·2.3.2"
+  },
+  {
+   "code": "SD31",
+   "zh": "中风后遗证",
+   "en": "Sequela of wind stroke disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "中风",
+   "lcs": "中风",
+   "loc": "教材·第2章·2.1.3"
+  },
+  {
+   "code": "SD40",
+   "zh": "厥证",
+   "en": "Syncope disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "厥证",
+   "lcs": "",
+   "loc": "教材·第5章·5.1.2"
+  },
+  {
+   "code": "SD70",
+   "zh": "气瘿",
+   "en": "Qi goiter disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD71",
+   "zh": "消渴",
+   "en": "Wasting thirst disorder (TM1)",
+   "inBzu": true,
+   "bucket": "exact",
+   "probe": "消渴",
+   "lcs": "",
+   "loc": "教材·第3章·3.2.1"
+  },
+  {
+   "code": "SD72",
+   "zh": "虚劳",
+   "en": "Consumptive disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD80",
+   "zh": "百合病",
+   "en": "Lily disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "合病",
+   "lcs": "合病",
+   "loc": "教材·第10章·10.2.1"
+  },
+  {
+   "code": "SD81",
+   "zh": "躁病",
+   "en": "Manic disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD82",
+   "zh": "郁证",
+   "en": "Depression disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD83",
+   "zh": "脏躁",
+   "en": "Uneasiness disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD84",
+   "zh": "不寐",
+   "en": "Insomnia disorder (TM1)",
+   "inBzu": true,
+   "bucket": "exact",
+   "probe": "不寐",
+   "lcs": "",
+   "loc": "教材·第11章·11.1.3"
+  },
+  {
+   "code": "SD85",
+   "zh": "多寐",
+   "en": "Somnolence disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD86",
+   "zh": "痴呆",
+   "en": "Dementia disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "痴呆",
+   "lcs": "",
+   "loc": "教材·第2章·2.1.1"
+  },
+  {
+   "code": "SD87",
+   "zh": "火病",
+   "en": "Repressed fire disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD90",
+   "zh": "时行感冒",
+   "en": "Seasonal cold disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "感冒",
+   "lcs": "感冒",
+   "loc": "教材·第8章·8.2.1"
+  },
+  {
+   "code": "SD91",
+   "zh": "劳瘵",
+   "en": "Fatigue consumption disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD92",
+   "zh": "霍乱",
+   "en": "Severe vomiting and diarrhoea disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD93",
+   "zh": "疟疾",
+   "en": "Alternating fever and chills disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "疟疾",
+   "lcs": "",
+   "loc": "教材·第4章·4.2.1"
+  },
+  {
+   "code": "SD94",
+   "zh": "蠱病",
+   "en": "Parasitic disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SD95",
+   "zh": "流痰",
+   "en": "Flowing phlegm disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SE00",
+   "zh": "暑温",
+   "en": "Summer-heat disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SE01",
+   "zh": "春温",
+   "en": "Spring warmth disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SE02",
+   "zh": "湿温",
+   "en": "Dampness and warmth disorder (TM1)",
+   "inBzu": false,
+   "bucket": "exact",
+   "probe": "湿温",
+   "lcs": "",
+   "loc": "教材·第13章·13.2.1"
+  },
+  {
+   "code": "SE30",
+   "zh": "迟证",
+   "en": "Developmental delay disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SE31",
+   "zh": "变蒸热",
+   "en": "Growth fever disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SE32",
+   "zh": "生长痛",
+   "en": "Growth pain disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "生长",
+   "lcs": "生长",
+   "loc": "教材·第4章·4.2.8"
+  },
+  {
+   "code": "SE33",
+   "zh": "急惊风",
+   "en": "Acute convulsion disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "惊风",
+   "lcs": "惊风",
+   "loc": "教材·第2章·2.1.2"
+  },
+  {
+   "code": "SE34",
+   "zh": "慢惊风",
+   "en": "Recurrent convulsion disorder (TM1)",
+   "inBzu": false,
+   "bucket": "fragment",
+   "probe": "惊风",
+   "lcs": "惊风",
+   "loc": "教材·第2章·2.1.2"
+  },
+  {
+   "code": "SE35",
+   "zh": "客忤",
+   "en": "Fright seizure disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SE36",
+   "zh": "夜啼",
+   "en": "Night crying disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SE37",
+   "zh": "疳病",
+   "en": "Infantile malnutrition disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SE38",
+   "zh": "滞颐",
+   "en": "Dribbling disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SE39",
+   "zh": "臀红",
+   "en": "Diaper dermatitis disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SE3A",
+   "zh": "硬证",
+   "en": "Infant stiffness disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  },
+  {
+   "code": "SE3B",
+   "zh": "软证",
+   "en": "Infant limpness disorder (TM1)",
+   "inBzu": false,
+   "bucket": "none",
+   "probe": "",
+   "lcs": "",
+   "loc": ""
+  }
+ ]
+}

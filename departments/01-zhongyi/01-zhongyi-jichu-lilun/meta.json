@@ -41,8 +41,11 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun",
-    "chaptersWritten": 1,
-    "words": 5665,
-    "status": "wip"
+    "chaptersWritten": 13,
+    "words": 61245,
+    "status": "wip",
+    "layer": "rewrite",
+    "source": "standards/materials/textbooks-batch/registry.json#中医基础理论",
+    "extractedAt": "2026-10-21"
   }
 }

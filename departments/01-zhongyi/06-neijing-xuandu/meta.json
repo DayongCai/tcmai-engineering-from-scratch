@@ -22,8 +22,19 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/01-zhongyi/06-neijing-xuandu",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 31,
+    "words": 214136,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#黄帝内经(通读注释版)",
+    "extractedAt": "2026-10-21"
+  },
+  "底本": {
+    "path": "standards/neijing-xuandu",
+    "sha256": "cb11d3ced197cda2c178a40c2406b0d2bcad10d859ba62c5cd0235f0d5b1c9bf",
+    "pians": 162,
+    "hanzi": 136032,
+    "note": "教材选读本（31 篇类 / 162 篇）；逐字引用以全文 standards/materials/neijing-quanwen（155,206 字）为准，34 篇为节选",
+    "chapterMap": "standards/neijing-xuandu/chapter-map.json"
   }
 }

@@ -1,0 +1,79 @@
+{
+ "lesson": "03-jizhu-bingzheng",
+ "title": "脊柱病证推拿治疗",
+ "subject": "19-tuina-zhiliao-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 3 章「脊柱病证推拿治疗」要回答的核心问题是什么？",
+   "options": [
+    "脊柱病证的推拿方案，为什么颈椎病与腰突的手法几乎一样",
+    "推拿治疗学的概念与范围",
+    "治疗原则",
+    "作用原理"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：教材按病写方案，但手法组合高度重叠；真正的区别在分型、禁忌与手法力度的上限。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（病证部位）重心落在哪一项？",
+   "options": [
+    "脊柱",
+    "四肢关节筋伤",
+    "内科",
+    "妇科儿科五官"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "病证辨识",
+    "手法方案",
+    "疗程调护",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "8 个",
+    "10 个",
+    "12 个",
+    "14 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "三书对账中 Jaccard 高，能否说明两书方案一致？",
+   "options": [
+    "不能，它只比手法集合，不比顺序与剂量",
+    "推拿治疗学的概念与范围",
+    "治疗原则",
+    "作用原理"
+   ],
+   "correct": 0,
+   "explanation": "正文第三节的两处偏倚：只比「用没用」，不比顺序与剂量。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/zhiliao/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "slug": "16-zhongyi-zhexue-shi",
+ "title": "中医哲学史",
+ "en": "History of TCM Philosophy",
+ "deptSlug": "01-zhongyi",
+ "deptTitle": "中医系",
+ "globalN": 16,
+ "type": "Reference",
+ "semester": 2,
+ "stage": "sheng",
+ "stageTitle": "生",
+ "hours": 36,
+ "bridge": "哲学范畴→本体论建模 / 学派演化→谱系聚类",
+ "chaptersTarget": 8,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/01-zhongyi/16-zhongyi-zhexue-shi",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/01-zhongyi/16-zhongyi-zhexue-shi",
+  "chaptersWritten": 8,
+  "words": 29208,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#东方哲学概论",
+  "extractedAt": "2026-10-21"
+ },
+ "standards": {
+  "path": "standards/zhexue",
+  "derived": true,
+  "bases": [
+   "standards/materials/neijing-quanwen",
+   "standards/shanghan",
+   "standards/jingui",
+   "standards/wenbing"
+  ],
+  "cats": 12,
+  "units": 10,
+  "neijingPian": 162,
+  "clinicalTiao": 2792
+ }
+}

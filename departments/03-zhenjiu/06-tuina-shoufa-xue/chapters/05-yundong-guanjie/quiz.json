@@ -1,0 +1,79 @@
+{
+ "lesson": "05-yundong-guanjie",
+ "title": "运动关节类手法",
+ "subject": "06-tuina-shoufa-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 5 章「运动关节类手法」要回答的核心问题是什么？",
+   "options": [
+    "运动关节类手法凭什么被列为高风险",
+    "推拿手法的起源",
+    "推拿手法的发展",
+    "一指禅推拿流派"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：摇、扳、拔伸都要把关节带到活动度极限；极限由解剖与病理共同决定，不由手感决定。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（着力面）重心落在哪一项？",
+   "options": [
+    "肘臂",
+    "指",
+    "掌",
+    "其它"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出，见正文第二节。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "手法动作",
+    "操作要领",
+    "临床应用",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "3 个",
+    "5 个",
+    "7 个",
+    "10 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "「持久、有力、均匀、柔和、深透」为什么不进数值统计？",
+   "options": [
+    "五个词都不带单位，不可数",
+    "推拿手法的起源",
+    "推拿手法的发展",
+    "一指禅推拿流派"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/shoufa/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

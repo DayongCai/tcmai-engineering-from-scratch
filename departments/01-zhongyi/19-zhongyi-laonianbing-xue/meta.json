@@ -1,0 +1,38 @@
+{
+ "slug": "19-zhongyi-laonianbing-xue",
+ "title": "中医老年病学",
+ "en": "TCM Geriatrics",
+ "deptSlug": "01-zhongyi",
+ "deptTitle": "中医系",
+ "globalN": 19,
+ "type": "Reference",
+ "semester": 7,
+ "stage": "zhuang",
+ "stageTitle": "壮",
+ "hours": 36,
+ "bridge": "老年综合征→综合评分 / 多病共存→共病网络",
+ "chaptersTarget": 12,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/01-zhongyi/19-zhongyi-laonianbing-xue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/01-zhongyi/19-zhongyi-laonianbing-xue",
+  "chaptersWritten": 12,
+  "words": 227188,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#中医老年病学",
+  "extractedAt": "2026-10-21"
+ },
+ "standards": {
+  "path": "standards/laonian",
+  "chapters": 12,
+  "units": 77,
+  "hanzi": 186163
+ }
+}

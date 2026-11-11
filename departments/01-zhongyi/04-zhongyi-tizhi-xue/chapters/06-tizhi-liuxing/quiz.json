@@ -1,0 +1,79 @@
+{
+  "lesson": "06-tizhi-liuxing",
+  "title": "体质与疾病易感性：横向数据只能看共现",
+  "subject": "04-zhongyi-tizhi-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "本课程关于体质—疾病关系的证据等级是？",
+      "options": [
+        "横向共现（只能说「更常见」）",
+        "队列研究",
+        "随机对照",
+        "病例对照"
+      ],
+      "correct": 0,
+      "explanation": "证候库是横向数据。"
+    },
+    {
+      "stage": "check",
+      "question": "队列证据能说的话是？",
+      "options": [
+        "发病风险更高",
+        "必然发病",
+        "一定不发病",
+        "与体质无关"
+      ],
+      "correct": 0,
+      "explanation": "即便队列也不能说「必然」。"
+    },
+    {
+      "stage": "check",
+      "question": "用课程分布做替代观察的局限是？",
+      "options": [
+        "它是文本分布，不是人群分布",
+        "没有局限",
+        "无法计算",
+        "与体质无关"
+      ],
+      "correct": 0,
+      "explanation": "记录的是教材写了什么。"
+    },
+    {
+      "stage": "check",
+      "question": "本章四位面首位是？",
+      "options": [
+        "易感（2）",
+        "形态",
+        "功能",
+        "心理"
+      ],
+      "correct": 0,
+      "explanation": "本章重量在证据分级与易感。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么本章必须排在第 6 位？",
+      "options": [
+        "先能稳定判质，才谈质与病的关系",
+        "因为篇幅",
+        "因为教材顺序",
+        "因为数据"
+      ],
+      "correct": 0,
+      "explanation": "否则相关性被测量误差污染。"
+    },
+    {
+      "stage": "post",
+      "question": "面向病人的正确说法是？",
+      "options": [
+        "「这类体质的人这类问题更常见」，不承诺必然",
+        "「你一定会得」",
+        "「与你无关」",
+        "「无法判断」"
+      ],
+      "correct": 0,
+      "explanation": "三种场合话术之一。"
+    }
+  ]
+}

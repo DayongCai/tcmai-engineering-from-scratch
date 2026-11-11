@@ -1,0 +1,79 @@
+{
+  "lesson": "06-dianzheng-kuangzheng",
+  "title": "癫证与狂证：一阴一阳，一静一躁",
+  "subject": "20-zhongyi-jingshenbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "「重阴者癫，重阳者狂」出自？",
+      "options": [
+        "《难经·二十难》",
+        "《素问》",
+        "《灵枢》",
+        "《丹溪心法》"
+      ],
+      "correct": 0,
+      "explanation": "教材 6.1.1 引用。"
+    },
+    {
+      "stage": "check",
+      "question": "癫证与狂证的核心病机分别是？",
+      "options": [
+        "痰气郁结 / 痰火扰神",
+        "痰火 / 痰气",
+        "肾虚 / 肝郁",
+        "瘀血 / 痰湿"
+      ],
+      "correct": 0,
+      "explanation": "教材 6.1.2 与 6.2.1。"
+    },
+    {
+      "stage": "check",
+      "question": "癫狂互相转化的条件是？",
+      "options": [
+        "痰郁化火则癫转狂，火退痰留则狂转癫",
+        "不可转化",
+        "只癫转狂",
+        "只狂转癫"
+      ],
+      "correct": 0,
+      "explanation": "教材 6.2.2。"
+    },
+    {
+      "stage": "check",
+      "question": "本章引书数量为？",
+      "options": [
+        "25 部 42 次（全书最高）",
+        "3 部 5 次",
+        "10 部 13 次",
+        "0 部"
+      ],
+      "correct": 0,
+      "explanation": "癫狂是古籍记载最丰的精神病证。"
+    },
+    {
+      "stage": "post",
+      "question": "狂证为何要把「安全监护」单列？",
+      "options": [
+        "狂证伤人风险最高",
+        "因为药难开",
+        "因为病程长",
+        "因为家属要求"
+      ],
+      "correct": 0,
+      "explanation": "教材 6.2.2 最长单元。"
+    },
+    {
+      "stage": "post",
+      "question": "狂证痰火未清时只用重镇药的问题是？",
+      "options": [
+        "闭门留寇，痰火不得外出",
+        "会伤脾胃",
+        "会致失眠",
+        "会致便秘"
+      ],
+      "correct": 0,
+      "explanation": "先清后镇是次序。"
+    }
+  ]
+}

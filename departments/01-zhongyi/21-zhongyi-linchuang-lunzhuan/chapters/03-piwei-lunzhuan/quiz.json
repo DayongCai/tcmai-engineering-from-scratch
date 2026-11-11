@@ -1,0 +1,79 @@
+{
+  "lesson": "03-piwei-lunzhuan",
+  "title": "脾胃病科轮转：胃痞与泄泻的辨证接诊",
+  "subject": "21-zhongyi-linchuang-lunzhuan",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "脾胃病科 9 病中哪两病最易混？",
+      "options": [
+        "痞满与胃痛",
+        "泄泻与痢疾",
+        "呕吐与呃逆",
+        "便秘与噎膈"
+      ],
+      "correct": 0,
+      "explanation": "症状重叠最严重。"
+    },
+    {
+      "stage": "check",
+      "question": "脾胃科的数值判据是几处？",
+      "options": [
+        "0 处（五科唯一）",
+        "5 处",
+        "3 处",
+        "2 处"
+      ],
+      "correct": 0,
+      "explanation": "教材无可量化表述。"
+    },
+    {
+      "stage": "check",
+      "question": "代表方 45 首在五科中排？",
+      "options": [
+        "第一（最多）",
+        "最少",
+        "第二",
+        "并列"
+      ],
+      "correct": 0,
+      "explanation": "9 个辨证单元共 45 首。"
+    },
+    {
+      "stage": "check",
+      "question": "数值判据 0 对考核的含义是？",
+      "options": [
+        "改为问辨证依据，不问数字",
+        "不用考核",
+        "降低难度",
+        "补编数字"
+      ],
+      "correct": 0,
+      "explanation": "不能编。"
+    },
+    {
+      "stage": "post",
+      "question": "脾胃病科必须做操作里最关键的一项？",
+      "options": [
+        "预防调护（饮食节律）",
+        "按语",
+        "概述",
+        "病因病机"
+      ],
+      "correct": 0,
+      "explanation": "本科以饮食为第一因。"
+    },
+    {
+      "stage": "post",
+      "question": "跨科校验里为什么须注明年龄段？",
+      "options": [
+        "儿童重食积、老年重气虚",
+        "因为字数不同",
+        "因为方剂不同",
+        "无必要"
+      ],
+      "correct": 0,
+      "explanation": "同名病处理原则不同。"
+    }
+  ]
+}

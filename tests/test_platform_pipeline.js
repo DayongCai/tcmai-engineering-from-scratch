@@ -155,8 +155,11 @@ test('每个章节的产物与段数对齐（12 段就该有 12 帧 / 12 段配�
 
     const frames = listOf(path.join(ch.dir, 'frames'), /\.png$/);
     if (frames.length) {
-      assert(frames.length === segs.length,
-        `${ch.key}: 画面帧 ${frames.length} 张 ≠ 段数 ${segs.length} —— 像是渲染到一半失败留下的`);
+      // 拆片之后帧跟着**片**走：片数由 slides/manifest.json 声明；没有 manifest 的学科仍是一段一帧。
+      const mf = path.join(ch.dir, 'slides', 'manifest.json');
+      const expect = fs.existsSync(mf) ? JSON.parse(fs.readFileSync(mf, 'utf8')).slideCount : segs.length;
+      assert(frames.length === expect,
+        `${ch.key}: 画面帧 ${frames.length} 张 ≠ ${fs.existsSync(mf) ? '片数' : '段数'} ${expect} —— 像是渲染到一半失败留下的`);
     }
 
     const segsWithAudio = segs.filter((s) => s.audio).length;

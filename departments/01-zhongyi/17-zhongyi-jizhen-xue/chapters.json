@@ -1,0 +1,138 @@
+{
+ "slug": "17-zhongyi-jizhen-xue",
+ "title": "中医急诊学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xulun",
+   "title": "第1章 绪论",
+   "status": "🚧",
+   "source": {
+    "chapter": 1,
+    "units": 4,
+    "hanzi": 8175
+   }
+  },
+  {
+   "n": 2,
+   "slug": "02-lilun-jichu",
+   "title": "第2章 中医急诊学的理论基础",
+   "status": "🚧",
+   "source": {
+    "chapter": 2,
+    "units": 4,
+    "hanzi": 11134
+   }
+  },
+  {
+   "n": 3,
+   "slug": "03-zhengzhuang-jianbie",
+   "title": "第3章 急诊常见症状的鉴别",
+   "status": "🚧",
+   "source": {
+    "chapter": 3,
+    "units": 4,
+    "hanzi": 13828
+   }
+  },
+  {
+   "n": 4,
+   "slug": "04-jijiu-jishu-fangyao",
+   "title": "第4章 常用急救技术与方药",
+   "status": "🚧",
+   "source": {
+    "chapter": 4,
+    "units": 4,
+    "hanzi": 11483
+   }
+  },
+  {
+   "n": 5,
+   "slug": "05-waigan-rebing",
+   "title": "第5章 外感热病急症",
+   "status": "🚧",
+   "source": {
+    "chapter": 5,
+    "units": 4,
+    "hanzi": 11074
+   }
+  },
+  {
+   "n": 6,
+   "slug": "06-xinnao-jizheng",
+   "title": "第6章 心脑急症",
+   "status": "🚧",
+   "source": {
+    "chapter": 6,
+    "units": 4,
+    "hanzi": 16682
+   }
+  },
+  {
+   "n": 7,
+   "slug": "07-feixi-jizheng",
+   "title": "第7章 肺系急症",
+   "status": "🚧",
+   "source": {
+    "chapter": 7,
+    "units": 4,
+    "hanzi": 11341
+   }
+  },
+  {
+   "n": 8,
+   "slug": "08-piwei-gandan-jizheng",
+   "title": "第8章 脾胃肝胆急症",
+   "status": "🚧",
+   "source": {
+    "chapter": 8,
+    "units": 4,
+    "hanzi": 17450
+   }
+  },
+  {
+   "n": 9,
+   "slug": "09-shenxi-zhongdu",
+   "title": "第9章 肾系与中毒急症",
+   "status": "🚧",
+   "source": {
+    "chapter": 9,
+    "units": 4,
+    "hanzi": 11313
+   }
+  },
+  {
+   "n": 10,
+   "slug": "10-xuezheng-chuangshang",
+   "title": "第10章 血证与创伤急症",
+   "status": "🚧",
+   "source": {
+    "chapter": 10,
+    "units": 4,
+    "hanzi": 11205
+   }
+  },
+  {
+   "n": 11,
+   "slug": "11-zhongzheng-jianhu",
+   "title": "第11章 急危重症与重症监护协同",
+   "status": "🚧",
+   "source": {
+    "chapter": 11,
+    "units": 4,
+    "hanzi": 13702
+   }
+  },
+  {
+   "n": 12,
+   "slug": "12-shuzihua-yujing",
+   "title": "第12章 中医急诊数字化与智能预警",
+   "status": "🚧",
+   "source": {
+    "chapter": 12,
+    "units": 4,
+    "hanzi": 14346
+   }
+  }
+ ]
+}

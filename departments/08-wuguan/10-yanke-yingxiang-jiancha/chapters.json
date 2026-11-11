@@ -1,54 +1,71 @@
 {
-  "slug": "10-yanke-yingxiang-jiancha",
-  "title": "眼科影像与检查技术",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-xiliedeng-jiancha",
-      "title": "裂隙灯与眼前段检查",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-diban-zhaoxiang",
-      "title": "眼底照相与 OCT",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-shiye-jiancha",
-      "title": "视野检查与判读",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-yanya-celiang",
-      "title": "眼压测量与角膜厚度",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-chaosheng-shengwu",
-      "title": "眼部超声与生物测量",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-yingguangsu-zaoying",
-      "title": "荧光素血管造影",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-baogao-zhikong",
-      "title": "影像报告的规范与质控",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-zuhe-jiedu",
-      "title": "检查结果的组合解读",
-      "status": "📋"
-    }
-  ]
+ "slug": "10-yanke-yingxiang-jiancha",
+ "title": "眼科影像检查",
+ "note": "8 章 = 教材 8 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-e101",
+   "title": "影像在眼科的位置：从四诊到仪器",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-e102",
+   "title": "眼与脏腑：影像之外的参照系",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-e103",
+   "title": "外障的影像辅助：胞睑、两眦与白睛",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-e104",
+   "title": "内障与眼底影像",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-e105",
+   "title": "青光眼与视神经的影像线索",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-e106",
+   "title": "眼底出血与糖网的影像随访",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-e107",
+   "title": "影像报告、复查与疗效评价",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-e108",
+   "title": "影像数据的隐私与合规",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

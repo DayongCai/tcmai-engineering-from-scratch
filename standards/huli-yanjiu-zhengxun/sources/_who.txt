@@ -1,0 +1,1709 @@
+Strengthening
+countries’ capacities to adopt
+and adapt evidence-based guidelines
+a handbook for guideline contextualization
+
+Strengthening
+countries’ capacities to adopt
+and adapt evidence-based guidelines
+a handbook for guideline contextualization
+Abstract
+Trustworthy guidelines are the cornerstone of giving evidence-informed advice in response to clinical, public health
+and health policy questions. Tools, validated methods and standards, as well as guidance, are available to support
+those involved in the creation and implementation of guidelines. In order to be most effective and have a chance to
+be implemented, guidelines also need to be fitted to available resources and organizational contexts. This cannot be
+achieved by a simple language translation of guidelines produced by others but requires considerations of context:
+guideline contextualization. This handbook provides a brief overview of main principles and approaches in guideline
+development and contextualization. It also describes 15 steps on how to apply GRADE-ADOLOPMENT for developing
+contextualized recommendations based on source guidelines and local relevant evidence. Reference is also made
+to other useful resources and tools. In addition to the adolopment process, brief information is provided about
+implementation and dissemination as well as about required quality assurance steps.
+ISBN: 978-92-890-6023-3 (print)
+ISBN: 978-92-890-6002-8 (PDF)
+© World Health Organization 2023
+Some rights reserved. This work is available under the Creative Commons Attribution-NonCommercial-ShareAlike
+3.0 IGO licence (CC BY-NC-SA 3.0 IGO; https://creativecommons.org/licenses/by-nc-sa/3.0/igo).
+Under the terms of this licence, you may copy, redistribute and adapt the work for non-commercial purposes, provided
+the work is appropriately cited, as indicated below. In any use of this work, there should be no suggestion that WHO
+endorses any specific organization, products or services. The use of the WHO logo is not permitted. If you adapt
+the work, then you must license your work under the same or equivalent Creative Commons licence. If you create
+a translation of this work, you should add the following disclaimer along with the suggested citation: “This translation
+was not created by the World Health Organization (WHO). WHO is not responsible for the content or accuracy of this
+translation. The original English edition shall be the binding and authentic edition: Strengthening countries’ capacities
+to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization. Copenhagen: WHO
+Regional Office for Europe; 2023”.
+Any mediation relating to disputes arising under the licence shall be conducted in accordance with the mediation rules
+of the World Intellectual Property Organization. (http://www.wipo.int/amc/en/mediation/rules/).
+Suggested citation. Strengthening countries’ capacities to adopt and adapt evidence-based guidelines: a handbook
+for guideline contextualization. Copenhagen: WHO Regional Office for Europe; 2023. Licence: CC BY-NC-SA 3.0 IGO.
+Cataloguing-in-Publication (CIP) data. CIP data are available at http://apps.who.int/iris.
+Sales, rights and licensing. To purchase WHO publications, see http://apps.who.int/bookorders. To submit requests
+for commercial use and queries on rights and licensing, see http://www.who.int/about/licensing.
+Third-party materials. If you wish to reuse material from this work that is attributed to a third party, such as tables,
+figures or images, it is your responsibility to determine whether permission is needed for that reuse and to obtain
+permission from the copyright holder. The risk of claims resulting from infringement of any third-party-owned
+component in the work rests solely with the user.
+General disclaimers. The designations employed and the presentation of the material in this publication do not imply
+the expression of any opinion whatsoever on the part of WHO concerning the legal status of any country, territory, city
+or area or of its authorities, or concerning the delimitation of its frontiers or boundaries. Dotted and dashed lines on
+maps represent approximate border lines for which there may not yet be full agreement.
+The mention of specific companies or of certain manufacturers’ products does not imply that they are endorsed
+or recommended by WHO in preference to others of a similar nature that are not mentioned. Errors and omissions
+excepted, the names of proprietary products are distinguished by initial capital letters.
+All reasonable precautions have been taken by WHO to verify the information contained in this publication. However,
+the published material is being distributed without warranty of any kind, either expressed or implied. The responsibility
+for the interpretation and use of the material lies with the reader. In no event shall WHO be liable for damages arising
+from its use.
+Contents
+ACKNOWLEDGEMENTS .........................................................................................................IV
+ABBREVIATIONS AND ACRONYMS .......................................................................................V
+EXECUTIVE SUMMARY ..........................................................................................................VI
+INTRODUCTION .......................................................................................................................1
+BACKGROUND .........................................................................................................................2
+RATIONALE FOR APPROACH USED .......................................................................................4
+KEY DEFINITIONS AND CONCEPTS .......................................................................................5
+Source guideline ....................................................................................................................................6
+Adoption ..................................................................................................................................................6
+Adaptation ...............................................................................................................................................6
+Adolopment ............................................................................................................................................6
+Contextualization ...................................................................................................................................7
+Expert evidence and opinion ...............................................................................................................7
+The GIN–McMaster Guideline Development Checklist and Tool.................................................7
+The GRADE approach ...........................................................................................................................8
+GRADE-ADOLOPMENT ........................................................................................................................8
+Recommendations and small informative recommendation units .............................................8
+Remarks and good practice statements ..........................................................................................9
+EtD frameworks .....................................................................................................................................9
+ORGANIZATIONAL ASPECTS, MAIN PRINCIPLES AND RESOURCES FOR GUIDELINE
+CONTEXTUALIZATION .........................................................................................................11
+Introduction ..........................................................................................................................................12
+Organization, budget, planning and training ...................................................................................13
+COI and confidentiality .......................................................................................................................15
+Documenting the process and decisions .......................................................................................16
+Groups involved in guideline contextualization .............................................................................16
+Public consultation and stakeholder engagement ......................................................................20
+DETAILED PROCESS AND STEPS FOR CONTEXTUALIZATION ..........................................23
+Introduction to the adolopment process ........................................................................................24
+Steps for the adolopment process ..................................................................................................25
+Feasibility of the 15-step approach .................................................................................................32
+Dissemination and implementation ................................................................................................32
+Quality assurance of adolopment ...................................................................................................33
+CONCLUSION ........................................................................................................................35
+REFERENCES .........................................................................................................................37
+ANNEX. PRACTICAL EXAMPLE OF GUIDELINE ADOLOPMENT .........................................45
+iii
+Acknowledgements
+This handbook was produced in the Unit of Policy and Governance for Health Through the Life Course, Division
+of Country Policies and Systems, WHO Regional Office for Europe, under the leadership of Piroska Ostlin.
+The principal authors were Holger Schünemann (Department of Health Research Methods, Evidence and
+Impact, Michael G. DeGroote Cochrane Centre and McMaster GRADE Centre, WHO Collaborating Centre for
+Infectious Diseases, Research Methods and Recommendations, McMaster University, Hamilton, Canada;
+and Department of Biomedical Sciences, Humanitas University, Milan, Italy) and Marge Reinap (Evidence
+for Policy Development, Policy and Governance for Health Through the Life Course Unit, Division of Country
+Policies and Systems).
+The WHO Regional Office for Europe thanks all those who participated in the development of this handbook.
+Other contributors (in alphabetical order) whose critical review and contributions to the development of the
+handbook are highly acknowledged: Elie Akl (Center for Systematic Reviews of Health Policy and Systems
+Research, American University of Beirut, Lebanon), Pablo Alonso Coello (Centro Cochrane Iberoamericano/
+Centro GRADE, Barcelona, Spain), Miloslav Klugar (Czech National Centre for Evidence-Based Healthcare
+and Knowledge Translation (including the Cochrane Czech Republic, Czech Republic Centre for Evidence-
+Based Healthcare, Joanna Briggs Institute Centre of Excellence and Masaryk University GRADE Centre),
+Brno, Czechia), Tamara Kredo (Cochrane South Africa, South African Medical Research Council, Centre
+for Evidence-based Health Care, Stellenbosch University, South Africa), Kaja-Triin Laisaar (Guideline
+Development Unit, University of Tartu, Estonia), Tamara Lotfi (Michael G. DeGroote Cochrane Centre and
+GRADE Centre, McMaster University, Hamilton, Canada), Michael McCaul (Centre for Evidence-based Health
+Care, Stellenbosch University, South Africa), Reem Mustafa (University of Kansas Medical Center, Kansas
+City, United States of America), Anna Vesper (Guideline Development Unit, University of Tartu, Estonia),
+Juan Jose Yepes-Nuñez (Universidad de los Andes, Medellin, Colombia) and Ray Yuan Zhang (McMaster
+University, Hamilton, Canada).
+The following technical colleagues in the WHO Regional Office for Europe provided feedback and views
+during the technical consultation in March 2022 (in alphabetical order): João Breda, Ana-Paula Coutinho, Jill
+Farrington, Cassie Redlich, Nicole Seguy, Elena Vovc, Martin Weber, Danilo Lo Fo Wong and Askar Yedilbayev.
+iv
+Abbreviations and acronyms
+AGREE Appraisal of Guidelines for Research and Evaluation
+COI conflict of interest
+DOI declaration of interest
+EtD evidence to decision (framework or table)
+GIN Guidelines International Network
+GRADE Grading of Recommendations Assessment, Development and Evaluation
+GRADE-ADOLOPMENT Grading of Recommendations Assessment, Development and Evaluation
+Adaptation, adoption and de novo creation of recommendations of a guideline
+PICO patient/population, interventions, comparators, outcomes
+RIGHT Essential Reporting Items for Practice Guidelines in Healthcare
+ROBIS risk of bias in systematic reviews
+SoF summary of findings (table)
+v
+Executive summary
+Trustworthy guidelines are the cornerstone of giving evidence-informed advice in response to clinical, public
+health and health policy questions. They address those questions by using the best available evidence and
+transparently integrating the judgements of experts and the input of stakeholders in the process.
+Modern guidelines also provide the needed flexibility to individualize care for people with a condition of
+interest or to contextualize them to a policy context. Modern guidelines allow information to be shared with
+other decision-makers and harmonization of processes to avoid duplication and resource waste. While it is
+difficult to consistently demonstrate that the use of guidelines improves population outcomes and increases
+efficiency, there is no viable alternative to utilizing guideline recommendations and decisions based on the
+best available evidence. However, to be trustworthy and provide these gains, guidelines should:
+• be developed by an informed, multidisciplinary panel of experts and representatives from key
+relevant or affected groups;
+• be based on systematic reviews of the relevant evidence or on systematically and transparently
+extracted expert evidence if scientific evidence is missing;
+• consider important population subgroups;
+• consider people’s values and preferences;
+• be based on an explicit and transparent process that minimizes distortions and biases, and that
+appropriately manages any conflict of interest (COI);
+• provide a clear explanation of the logical relationships between alternative care or policy options and
+health outcomes;
+• be explicit about the certainty of the underlying evidence and how it links to the grade or strength of
+recommendations; and
+• be reconsidered, updated and revised as appropriate when important new evidence warrants
+modifications of recommendations.
+Tools, validated methods and standards, as well as guidance, are available to support those involved in the
+creation and implementation of guidelines.
+In order to be most effective and have a chance to be implemented, guidelines also need to be fitting to
+available resources and organizational contexts. This cannot be achieved by a simple language translation of
+the guidelines produced by others but requires considerations of context: guideline contextualization.
+This handbook for guideline contextualization can be used to support actual guideline contextualization
+processes and technical content in capacity-building workshops for Member States. It is also relevant for
+interested WHO staff to understand contextualization of guidelines to country needs through validated
+methods.
+Guidelines can be developed by adopting existing recommendations, adapting existing recommendations
+to the specific context or creating new recommendations de novo. De novo recommendations are required
+in guideline efforts when the source guideline does not address all relevant questions. Monetary and
+vi
+nonmonetary resources, credibility, maximization of uptake and logical arguments should guide the choice of
+the approach and processes. Ideally, the approach chosen will avoid wasting human and financial resources
+by utilizing what has already been achieved. This handbook will help to promote the use of global guidelines
+and their recommendations in the development of new guidelines. The approach utilized is based on the
+Grading of Recommendations Assessment, Development and Evaluation (GRADE) methodology. GRADE
+is the most commonly used methodology for making guideline recommendations and is the method of
+choice for many organizations, including WHO. Adolopment is a neologism referring to the systematic and
+transparent approach to adoption, adaptation and/or de novo development of recommendations to fit the
+context of interest. The GRADE-ADOLOPMENT approach to guideline production, therefore, uses the adoption,
+adaptation and/or de novo creation of context-relevant recommendations with GRADE methodology. If
+the guideline is developed following the GRADE approach, existing summary of findings (SoF) tables and
+evidence to decisions (EtD) frameworks makes guideline adolopment and contextualization very efficient.
+Fifteen steps are described that provide the conceptual underpinning of GRADE-ADOLOPMENT for
+recommendations based on source guidelines and local relevant evidence. Reference is also made
+to other resources and tools. In addition to the adolopment process, brief information is provided about
+implementation and dissemination as well as about required quality assurance steps.
+vii
+
+Introduction
+Introduction 1
+Background
+National and international organizations are increasingly issuing their own guidelines, which can lead to
+multiple guidelines on the same topic. WHO defined a guideline as “a document that contains systematically
+developed evidence-based actionable statements that assist health professionals and recipients of care to
+make informed decisions” (1). This 2003 document goes on to define health interventions as “broadly to
+include not only clinical procedures but also public health and policy actions”.
+Trustworthy guidelines are the cornerstone of giving evidence-based advice regarding clinical, public
+health and health policy issues and provide access to the best available evidence, experts’ judgements and
+stakeholder input. This allows decision-makers to have wide-ranging gains from a single tool: a synthesis
+of the best available research evidence, access to experts and structured and transparent tools that can
+be discussed and revised as necessary. Guidelines following innovative processes also provide the needed
+flexibility to individualize care for people with a condition of interest1 or to contextualize guidelines to a policy
+context. Modern guidelines allow for sharing of information with other decision-makers and can harmonize
+processes to avoid duplication and resource waste (2). While it is difficult to consistently demonstrate
+that the use of guidelines improves population outcomes, increases efficiency and avoids duplication of
+effort, there is no viable alternative to making guideline recommendations and decisions based on the best
+available evidence.
+A number of publications outline what guidelines should cover in order to be trustworthy and provide these
+gains (3–14):
+• be developed by an informed, multidisciplinary panel of experts and representatives from key
+relevant or affected groups;
+• be based on systematic reviews of the relevant evidence or systematically and transparently
+extracted expert evidence if scientific evidence is missing;
+• consider important population subgroups;
+• consider people’s values and preferences;
+• be based on an explicit and transparent process that minimizes distortions and biases, and that
+appropriately manages COIs (10);
+• provide a clear explanation of the logical relationships between alternative care or policy options and
+health outcomes;
+• be explicit about the certainty of the underlying evidence and how it links to the grade or strength of
+recommendations (11–14); and
+• be reconsidered, updated and revised as appropriate when important new evidence warrants
+modifications of recommendations.
+Although developing guidelines that meet those criteria requires skills and resources, there are available tools
+that support guideline development (e.g. checklists or electronic tools). There also are validated methods and
+standards as well as guidance that can support the creators of guidelines. For example, the planning and
+1 Condition of interest is a wide term to encompass both patients with a specific condition and also healthy individuals, such as
+those targeted with screening programmes.
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+2
+a handbook for guideline contextualization
+production of guidelines is facilitated by tools produced by the partnership between the Guidelines International
+Network (GIN) and McMaster University (e.g. the GIN-McMaster Guideline Development Checklist (6,15)). This
+Checklist was developed in response to a demand to support WHO Member States with the planning and
+development of national guidelines (6) that can be integrated in advanced software applications. Guidelines
+developed according to these principles should also be reported according to modern standards, such as
+with the Essential Reporting Items for Practice Guidelines in Healthcare (RIGHT) standards for reporting of
+guidelines (16). In addition, instruments exist to evaluate a guideline’s trustworthiness or the processes for its
+development, such as the Appraisal of Guidelines for Research and Evaluation (AGREE) tool (17), the United
+States Agency for Healthcare Research and Quality’s National Guideline Clearinghouse Extent of Adherence
+to Trustworthy Standards instrument (18) and the PANELVIEW tool (19).
+In order for guidelines to be implemented, they need to be both easy to use and timely and must be relevant
+and responsive to the needs, values and preferences of the target populations or individuals affected by the
+recommendations and their individual risks for the outcomes of interest. In addition, guidelines also need
+to be suitable for the available resource and organizational contexts. On the one hand, it is obvious that this
+cannot be achieved by simply translating guidelines produced in one language to another; yet this approach is
+frequently used. Indeed, guideline recommendations usually change when they are adapted to other settings
+(20). On the other hand, using guidelines developed by others saves resources and time required for conducting
+systematic reviews and producing de novo guidelines. Therefore, contextualization and not simple language
+translation is needed to achieve efficient implementation on different levels and to use existing guidelines
+developed by other organizations: that is, adopting and adapting existing recommendations from sources
+such as WHO, professional societies or national guideline developers. Two key reasons for contextualization
+of existing guidelines are to:
+• assess the factors characterizing local circumstances compared with those in the setting of the
+source guideline in order to make the guideline more implementable in the setting of interest
+(contextualize the recommendations); and
+• ensure optimal and economical use of the existing human and financial resources within a defined
+health system.
+Fortunately, guideline developers are increasingly using transparent approaches in guideline development,
+laying out the criteria, the research evidence and additional considerations leading to judgements about
+the strength and direction of a recommendation (21). This is done using GRADE EtD frameworks (22,23).
+These frameworks help groups of people (guideline development groups or panels) making health-care
+recommendations or decisions to move from evidence to decisions (these major terms are defined and
+outlined in the next section). Using EtD frameworks can help to achieve the transparency needed to adapt or
+adopt recommendations developed by others.
+Introduction 3
+Rationale for approach used
+This document describes an approach to adopt and adapt evidence-based guidelines from WHO and other
+agencies, which are referred to here as source guidelines, to other jurisdictions, such as the regional or country
+level, through systematic, transparent and established means. This will allow scaling-up of implementing
+evidence-based measures and practices related to public health and clinical areas (22,23). A commonly used
+and established approach to achieve this is the GRADE-ADOLOPMENT approach, which combines adoption,
+adaptation and, as needed, de novo development of recommendations (where adolopment is a neologism
+combining the terms).
+This document aims to:
+• provide a guide for contextualization of guidelines, with step-by-step guiding material and a list of
+resources, through the tailoring of available methods and tools for global use, such as GRADE-
+ADOLOPMENT (24), to the context of the WHO European Region and its Member States; and
+• provide a model institutional framework and list the minimum capacities, processes and functions
+needed for contextualization in specific situations (based on the GIN-McMaster Guideline
+Development Checklist (6,15) in line with WHO guideline methods).
+The model framework can be evaluated by countries and will lead to enhanced iterations of the handbook. The
+handbook can be used to provide technical content for capacity-building workshops for Member States and
+for interested WHO staff to understand contextualization of guidelines to specific country situations through
+guideline adolopment. This, in turn, will help to promote the use of global guidelines and their recommendations
+through adoption, adaptation and/or de novo creation of context-relevant recommendations, thus avoiding
+waste of resources by repeating work that has already been done.
+The approach in this document is based on GRADE (8,12,13,22–24) as this is the most commonly used
+methodology for making guideline recommendations and is the method of choice by many organizations,
+including WHO, the United Kingdom’s National Institute for Health and Care Excellence, Cochrane and
+many professional organizations. GRADE is a highly operationalized approach creating transparent
+recommendations, with detailed guidance, handbooks and ongoing scientific development (25). For example,
+GRADE is also the suggested approach in the WHO Region of the Americas for their national evidence-
+informed guidelines (26).
+The document was drafted and revised iteratively from November 2021 to June 2022 with incorporation
+of comments from external reviewers in July–August 2022. There are three sections that follow. The first
+provides an overview of key definitions and concepts in guideline development. The second describes the
+main organizational aspects of the guidelines, as well as main principles and steps for guidelines development
+and contextualization, and the third section provides a step-by-step guide on guideline adolopment.
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+4
+a handbook for guideline contextualization
+Key definitions
+and concepts
+Key definitions and concepts 5
+The following section outlines the key terms and concepts utilized in this handbook.
+Source guideline
+A source guideline is one from another entity (such as WHO headquarters or a guideline-developing agency)
+that has been identified as a guideline that can be adapted or adopted to the context of interest (also see
+modules 7 and 8 in the OpenWHO course on understanding and using WHO guidelines on tuberculosis (27)).
+Adoption
+Adoption means the use of an existing recommendation either unmodified or with minimal changes.
+Ideally, this means that the source guidelines are reviewed and the judgements and decisions that led to
+a specific recommendation are still agreed with. For adoption, the source guideline must provide a clear,
+documented path to the recommendations: from the evaluation of the research to the preparation of the
+recommendation itself. If the path is credible and transparent, the entity responsible for implementation
+must assess the directness and timeliness of the recommendations. Directness refers to the concept that
+the recommendations are appropriate and applicable to the context of the health-care setting of interest,
+for example by addressing populations, interventions and outcomes of interest. To assess if the information
+is up to date, it is usually necessary to re-examine the incorporated evidence to ensure that no new or
+other essential evidence should be added, for example by updating the corresponding evidence synthesis
+performed in the original resource.
+Adaptation
+Adaptation of a recommendation means that reliable recommendations exist that meet the established
+criteria for credibility but that the judgements on the criteria that support the recommendation, or the
+recommendation itself, require updates or changes to be implemented for the health-care setting of interest.
+For example, the new recommendation may need to broaden the population of interest or may need to consider
+local costs that differ from the source guideline recommendation. Any change should be documented and
+the rationale for it transparently described. Because of international use of the term adaptation to refer to all
+processes summarized under adolopment (see GRADE-ADOLOPMENT below), the terms adolopment and
+adaptation are used as methods interchangeably when referring to guideline contextualization that reflects
+the process and concept of making recommendations relevant and implementable to the target setting (see
+the next section). Adaptation of a recommendation is used to specifically refer to a single recommendation.
+Adolopment
+Adolopment is a neologism referring to the systematic and transparent approach to adoption, adaptation
+and/or full development of recommendations to fit the context of interest, alongside and in accordance
+with the GRADE methodology. De novo recommendations are commonly required in guideline efforts as the
+source guideline is unlikely to address all relevant questions for a setting.
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+6
+a handbook for guideline contextualization
+Contextualization
+Contextualization of recommendations describes the process of:
+• acknowledging the need for dialogue and formal consideration of local best available evidence and
+criteria for adopting, adapting or de novo creation of recommendations from an existing trustworthy
+source guideline to the national, local or other level;
+• deciding whether the recommendations are right for that setting; and
+• modifying or adding to the recommendations to optimize their implementation using structured and
+transparent processes.
+This document focuses on GRADE-ADOLOPMENT as a method to contextualize guidelines (24).
+Expert evidence and opinion
+Expert evidence is the observations or experience obtained from a person who is knowledgeable about or
+skilful in a particular area (28). The expert evidence can be treated, if appropriately summarized, in the same
+way as case reports or case series. Expert evidence is not expert opinion (28). The distinction between
+expert evidence and expert opinion is similar to the distinction between the results of a research study
+and the authors’ conclusions, which include interpretation of the results or judgements about them. If an
+expert offers an opinion (a conclusion) and does not clearly describe the basis for that opinion – that is, the
+supporting evidence – it is not possible to know what the evidence is or how trustworthy the opinion is (28).
+A description of expert evidence should, therefore, minimize interpretation of the extent to which the evidence
+does or does not support a conclusion.
+The GIN–McMaster Guideline Development Checklist and Tool
+Since its development in 2014, the GIN–McMaster Guideline Development Checklist and Tool has served as
+one of the most widely used tools to facilitate guideline development (6,15). The Checklist provides guidance
+to countries, WHO and professional organizations about guideline development. It includes overarching areas,
+such as budgeting and planning, education of guideline developers, COI identification and management,
+and documentation. It also includes a publicly available toolbox that can be followed to create trustworthy
+guidelines (15), as well as links to learning tools and training materials. The Checklist has undergone further
+development work since 2014, with extensions in key guideline development areas, such as the production
+of rapid guidelines, considerations of health equity, stakeholder engagement and the incorporation of quality
+indicators into recommendations.
+After its original development under the leadership of scientists at McMaster University, the Checklist
+developed as a partnership between the GIN and McMaster University. GIN is the preeminent organization
+that brings together guideline developers, implementers and other stakeholders. The Checklist is intended for
+use by guideline developers to plan and track the process of guideline development and to help to ensure that
+no key steps are missed, in agreement with other international guideline development standards. It is publicly
+available, with links to learning tools and training materials. The Checklist, translated into many languages
+Key definitions and concepts 7
+and integrated in guideline development apps such as GRADEpro, is the blueprint for the first credentialling
+and certification programme for guideline developers and trainers in guideline development (INGUIDE) (29).
+The GRADE approach
+The GRADE approach provides a transparent framework for assessing the certainty in evidence and for the
+development of recommendations according to transparently described criteria (8,12,14,23). GRADE can be
+used in systematic reviews, health technology assessment and guidelines (30). GRADE is the most commonly
+used methodology for guideline development and is used by over 110 organizations. It has been developed
+with the input of organizations such as WHO, which has developed thousands of recommendations using
+GRADE.
+The GRADE Handbook is included in the GRADEpro website (31) and provides guidance for the writing,
+dissemination, adaptation and implementation tool. GRADE is extensively operationalized with detailed
+guidance, handbooks and tools through ongoing scientific development. GRADE resources are summarized
+by Cochrane Training (32,33).
+GRADE-ADOLOPMENT
+GRADE-ADOLOPMENT is an approach that describes an efficient way for guideline contextualization allowing
+for local, national or regional input, as well as stakeholder involvement and ownership, which is critical in the
+uptake of recommendations (20,24,34–38). The approach allows a systematic and transparent approach to
+adoption, adaptation and/or full development of recommendations to fit the context of interest, alongside
+and in accordance with the GRADE methodology. There are several frameworks for guideline adaptation but
+a recent systematic review judged GRADE-ADOLOPMENT to be most complete (39).
+Recommendations and small informative recommendation units
+A formal recommendation is an actionable statement about the choice between two or more management
+or policy options (interventions) in a specific population and, if relevant, in a specific setting (40). Alternative
+option(s) (i.e. comparator(s)) should be specified in the recommendation if they are not self-evident. GRADE
+offers standardized wording for the pragmatic completion of EtDs by guideline groups (41). These statements
+are the results of a formal deliberation process and contain an explicit and direct link to the bodies of
+evidence, resulting from a systematic literature search and selection, appraisal and extraction processes.
+Recommendations should be made available in small informative recommendation units that cover a topic
+without causing confusion or important gaps (42). Confusion and gaps can arise if single recommendations
+remain uninformative because they depend on other recommendations (e.g. recommendations for or against
+screening for breast cancer in different age groups should always be kept together in small informative
+recommendation units) (42).
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+8
+a handbook for guideline contextualization
+Remarks and good practice statements
+Remarks are often an integral part of a recommendation (40). They are defined as a support for interpretation
+covering the subdomains of the PICO model (patient/population, interventions, comparators, outcomes) and/
+or the conditions framing one or more specific recommendation(s) (e.g. guiding the user on the intervention
+options when the recommendation is conditional). They are not actionable in isolation.
+Remarks should not include actionable suggestions. The recommendation or good practice statement and
+the actual accompanying remark should be seen as an inseparable unit (40). Good practice statements are
+another form of actionable statements that typically should be applicable to all settings and contexts, which
+is why they are good or best practice statements (40,43,44).
+EtD frameworks
+EtD frameworks help groups of people (guideline development groups or panels) to move from evidence
+to health-care recommendations and making decisions. The background includes details of the question
+addressed by the framework, and a summary of key background information. The assessment includes
+factors that should be considered (criteria) for making the decision, judgements that panels must make in
+relation to each criterion, research evidence to inform each of those judgements, and additional considerations
+that inform or justify each judgement. The conclusions that the panel must reach include the type of decision
+or recommendation (e.g. strength and direction of a recommendation), the recommendation, the justification
+for the recommendation, subgroup considerations, implementation considerations and research priorities.
+An example of practical guideline adolopment from the WHO tuberculosis programme is given in Annex 1.
+The interactive EtD framework that allows for adolopment is a tool included in GRADEpro. EtD frameworks
+can create bridges across health decision-makers in the ecosystem of health decisions by linkage through
+the criteria that are used by different health-care actors in order to support recommendations and decisions
+(Fig. 1) (2).
+Fig. 1 illustrates the interconnectiveness of health decisions across disciplines. Although actors in the health
+decision-making ecosystem formulate questions, they often define outcomes differently and consider them
+with a specific perspective rather than refer to a common description that can facilitate communication
+and harmonization (45). Evidence from primary research is synthesized using systematic review methods
+for health technology assessment, guidelines, quality assurance and improvement, coverage decisions,
+essential medicine list decisions and evidence-informed policy-making (2).
+Key definitions and concepts 9
+Fig. 1. Ecosystem of health decision-making
+Questions in health-care systems: PICO
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+10
+a handbook for guideline contextualization
+Legal
+framework
+Health
+Systematic technology
+review assessment
+Evidence from primary
+research
+Ecosystem of health
+decision-making
+airetirc
+DtE
+Guideline
+Evidence­
+Quality Coverage Essential informed
+improvement decisions medicine list policy­
+Regulators* making
+Problem
+Benefits vs harms
+Values
+Costs
+Certainty of the evidence
+Social Equity Pharmaco­ Equity
+Measurability poeial
+Ethical Feasibility Legislation standards Feasibility
+around Regulatory
+Legal Acceptability transparency status and
+market
+availability
+MODELLING
+CONCLUSIONS
+RECOMMENDATIONS NOITATNEMELPMI
+Product
+Users
+DECISIONS OPTIONS
+Public Health
+Clinical
+health system
+Source: Schünemann et al. (2). Reproduced under CC BY 3.0 IGO (https://creativecommons.org/licenses/by/3.0/igo/).
+Regulators, including those in the field of environmental health and risk assessment, often use single or a few
+studies (in the early phases of evidence assessment) but may rely on systematic reviews depending on the
+context and the available evidence. These disciplines have GRADE EtD criteria in common by focusing on the
+problem, health benefits and harms, values (or utilities in the health economy context), cost and the certainty
+that can be placed in the evidence for those criteria. Criteria that are more strongly linked to context often are
+overlapping within (e.g. cost and feasibility) and across (e.g. equity, ethics and acceptability) disciplines and
+may require emphasis depending on the decision-making actor and perspective. These criteria are broadly
+summarized under social, ethical, legal, feasibility, acceptability and equity headings. Legal frameworks may
+prescribe which criteria for decisions are relevant or must be considered in specific jurisdictions. Modelling
+to understand the consequences may be used. Groups or organizations then make recommendations
+or decisions or describe options. Recommendations from health technology assessment and guidelines
+may be directly used by decision-makers. Actors from other disciplines, such as for coverage decisions or
+the national essential medicine list, make decisions directly or based on the recommendations of health
+technology assessments and guidelines. Evidence-informed policy tools lay out contextualized options
+(rather than making specific recommendations). Implementation can take place in the context of research,
+which, together with new evidence, completes the evidence generation and synthesis cycle for revisions of
+recommendations and decisions.
+Organizational
+aspects, main
+principles and
+resources
+for guideline
+contextualization
+Introduction
+Guideline development and adaptation take place through the work of interconnected groups that participate
+in a structured process (not necessarily sequential), following agreed methodology (see the next section on
+the detailed steps for contextualization) and utilizing the best available global and local evidence supported
+by internationally recognized and widely used tools (Fig. 2).
+Fig. 2. The guideline development process
+Organization, budget, planning and training
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+12
+a handbook for guideline contextualization
+snoitaredisnoc
+IOC
+Documenting
+guideline
+development
+process
+and
+decisions
+Priority setting
+Target audience and topic
+selection
+(PICO) Question generation
+Effects (interventions,
+Oversight diagnostic tests)
+committee
+Summarizing evidence Importance of outcomes
+Guideline group and considering additional and interventions,
+Consumers membership and information values, preferences
+and processes Guideline and utilities panel
+stakeholders
+Judging quality, strength or
+certainty of body of evidence Baseline risk, burden of
+disease, resource use,
+effects on equity and
+Working other Information
+groups
+Developing recommendations
+and determining their strength
+Wording of recommendations
+Reporting and peer review
+Dissemination and
+implementation
+Evaluation and use
+Updating
+Source: Schünemann et al. CMAJ. 2014;186(3):E123–42 (6). (© 2014 Canadian Medical Association or its licensors.)
+The process of guideline development should be transparent, well planned and carried out in close cooperation
+with all relevant stakeholders including the relevant health professionals, patients and the public. Furthermore,
+considerations for organization, planning and training encompass the entire guideline development project
+and steps such as documenting the methodology used and decisions made, as well as considering any COI
+occurring during the entire process.
+The guideline group comprises an oversight committee, a guideline panel and various working groups (which
+will include support staff, technical and content experts, evidence synthesis/systematic review groups and
+observers, among others). The oversight committee is tasked to manage and supervise priority setting, such
+as for a ministry of health or professional society, and the selection of a guideline panel. The guideline panel is
+responsible for making recommendations that start with defining the guideline or recommendation question
+that should be answered through the use of summarized evidence from systematic reviews complemented
+by contextual evidence (e.g. costs, acceptability and feasibility) to formulate the new recommendations. This
+evidence should be appraised and assessed for the level of certainty of the underlying evidence. The panel
+will pay careful attention to the formulation of recommendations before they are peer reviewed through
+processes such as submission for public consultation or for publication in a journal.
+Guideline processes do not end with the approval or publication of the guidelines. The guideline developer is
+responsible for dissemination, evaluation and use in many scenarios but not all (e.g. a professional society
+may not be responsible for evaluation of the use of their guidelines). Consequently, every guideline should be
+accompanied by an implementation plan (including measurable outcomes, who is responsible for what in
+the implementation phase and when as well as how it is done) and be followed by monitoring and evaluation.
+Indeed, contextualization is not only a prerequisite but is also part of implementation and, therefore, these two
+aspects should be considered as equally important. There is no implementation without contextualization
+and there should be no contextualization without implementation.
+This section describes the overarching principles and the following section gives the detailed steps for
+guideline adolopment.
+Organization, budget, planning and training
+Mandates, structure, organization and legitimization
+The development of a guideline should start either with an assigned mandate or another documented reason
+that the guideline is required to address a health problem. The mandate may come from a ministry in charge
+of health, a government agency, another official entity or be the result of a priority setting by a professional
+society, a group of professionals or other health-care providers.
+Guideline development and adoption requires setting up a structure for the guideline development groups
+with clear roles, tasks, reporting lines and relationships among the various involved groups (see below). It
+also requires that administrative and other logistic support is available and that someone is responsible and
+accountable for overseeing and facilitating the overall process and quality assurance of guidelines (15).
+It is strongly advised that, for guidelines to be accepted by stakeholders, a formal process, including approval
+of and access to official guidelines, is in place. This will also help with implementation as legitimization will
+increase the credibility of the produced guideline. This, in turn, requires a governance structure, not only for
+the initiation and development but also for approval and implementation efforts.
+Organizational aspects, main principles and resources for guideline contextualization 13
+Budget and planning
+As for any scientific or practical work done in health care, guideline development will require financial resources.
+Guideline developers should avoid the mistake of believing, or making others believe, that guidelines can be
+developed on small budgets. However, in countries with limited resources, using systematic adolopment
+approaches will save resources and is likely to produce guidelines of better quality. For example, resources
+are needed for many aspects, including support for the activity of the designated authority; remuneration
+for staff and members of the guideline development groups; for travel, organizing meetings and providing
+training; and for publishing and dissemination of conclusions. Therefore, securing funding, but with attention
+to COI considerations, is critical for success. Also, many countries already develop guidelines, albeit with
+unknown quality and implementation capability.
+An operational and realistic workplan provides an overview during the process and keeps the guideline
+development group on track; it will include a timeline, milestones, task assignments, steps that require
+documentation of decisions, the proposed methodology for all steps and budget considerations (6,15).
+Budgeting and planning depend on the guideline development context. Defining the context refers to
+understanding and defining the guideline development programme, for example is this within an established
+guideline programme (which requires you to follow the guideline process of the organization) or is it an
+ad hoc group guideline being developed (e.g. applying a specific guideline development approach or one
+from a trusted source such as WHO)?
+Additional resources
+GIN–McMaster Guideline Development Checklist (15)
+WHO Handbook for Guideline Development (46)
+Human resources and training
+Even more than the financial resources, human resources are a common challenge in groups that embark
+on guideline development or adolopment. Even if experience in guideline development is present, those who
+have been previously involved often need additional training and updating of their skills in methods and
+processes in order for the products to be trustworthy according to the criteria laid out in the Introduction to
+this document. In some countries, before embarking on guideline adaptation, awareness needs to be raised
+around the principles and criteria of evidence-based and trustworthy guidelines. This means that capacity-
+building in guideline development methodology is usually required in a country setting and should be part of
+the workplan and funding. This can take place before guideline development efforts are undertaken or with the
+help of an external guideline methodologist, who supports initial efforts and guides the process. Furthermore,
+standardized training, such as through the international guidelines development and certification programme
+INGUIDE (29), an official programme by GIN and partners, should be considered by those in charge.
+Additional resources
+INGUIDE (29)
+Introduction to WHO guidelines and GRADE, including training videos (47)
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+14
+a handbook for guideline contextualization
+COI and confidentiality
+Groups involved in guideline development should be impartial, independent and objective. When developing
+and adapting guidelines, it is essential to avoid situations where various interests can unduly influence the work
+and thus undermine the credibility of the guideline recommendations and jeopardize their implementation.
+A COI is “a divergence between an individual’s private interests and his or her professional obligations such
+that an independent observer might reasonably question whether the individual’s professional actions or
+decisions are motivated by personal gain, such as direct financial, academic advancement, clinical revenue
+streams, or community standing” (10), or more simply, “a financial or intellectual relationship that may impact
+an individual’s ability to approach a scientific question with an open mind” (10,48–50).
+The process of managing COIs starts with the people involved in guideline work reporting any potential
+conflicts using a declaration of interest (DOI) (see Annex 2). A DOI according to WHO is the disclosure of
+any potential or actual COI, which includes financial, professional or other interests relevant to the subject of
+the work or meeting in which an expert may be involved and any possible interest that could be significantly
+affected by the outcome of the meeting or work. The DOI must also include any relevant interests of others
+who are related to the person making the declaration and who may, or may be perceived to, unduly influence
+the expert’s judgement, such as immediate family members, employers, close professional associates or
+any others with whom the expert has a substantial common personal, financial, or professional interest
+(50). A DOI indicates the participants’ financial or nonfinancial interests in an external for-profit or non-
+profit-making organization. While there are no rules prohibiting financial or personal ties to companies or
+organizations, these ties may represent a COI if the company or organization has an interest in a product that
+is the subject of the guideline under development.
+In addition to presenting DOIs prior to the meetings, during the meetings individuals who have direct input
+into the guideline should verbally report any potential COI. In managing the cases of (new) COI, several
+possibilities exist. First, the member may be invited to participate, but only if their conflict is publicly disclosed.
+Secondly, the member may be asked not to participate in a particular portion of the meeting, discussion or
+work that is directly related to their conflict, which will be publicly disclosed. Thirdly, the member may be
+asked to withdraw from the panel entirely (no DOI is necessary). The DOIs will be updated if any new interests
+emerge on an ongoing basis during the guideline development process. Any COI must be reflected in the
+guideline development documentation, with an explanation of what each conflict constituted and how it was
+managed (51).
+In addition, people involved in the guideline development process should commit to keep all information
+confidential unless permission has been obtained from the overseer of the process or the information
+disclosed is in the public domain. A commitment to confidentiality means typically to sign a confidentiality
+agreement with the organization that is developing the new guidelines (51).
+Additional resources
+Chapter 6 on declaration and management of interests in the WHO Handbook for Guideline
+Development (46)
+Preventing and Managing Conflicts of Interest in the Public Sector: Good Practices Guide (52)
+Organizational aspects, main principles and resources for guideline contextualization 15
+Documenting the process and decisions
+One of the main underlying principles contributing to the reliability of guidelines is transparency. In order
+to increase the transparency of the whole process, it is important to ensure that the decision process and
+judgements, as well as evidence used for decision-making, are made explicit and transparent to the reader
+through appropriate documentation, and making the guideline material and information available publicly.
+Some of the tools to facilitate transparent and systematic decision-making as well as documentation are
+the GRADE evidence profiles or SoF tables, which provide a tabular format of the research evidence, and the
+GRADE EtD frameworks, which were specifically developed with WHO and other organizations to achieve
+proper documentation of research evidence, judgements and decisions (22,23). Any changes to the original
+judgements as well as agreement with existing judgements should be documented (see step 9 in the next
+section).
+A tool that facilitates the reporting of guideline development and guideline adaptation for peer-reviewed
+publications is the RIGHT checklist (16), which together with other reporting tools is available from the
+EQUATOR Network (53).
+SoFs and EtDs, if they are available for those who adolop guidelines, are facilitators of effective contextualization
+with minimalization of research waste. Furthermore, registering and identifying registered evidence syntheses
+on the International Prospective Register of Systematic Reviews (PROSPERO) will support others in their
+efforts when using these products.
+Additional resources
+EQUATOR Network (53)
+RIGHT-AD@PT Checklist: A Reporting Tool for Adapted Guidelines in Health Care (54)
+Groups involved in guideline contextualization
+The guideline developer (the organization or professional group in charge of developing a recommendation)
+and the working groups proceed collaboratively and are informed through public involvement. The guideline
+panel is the group of people responsible for agreeing on the recommendations. The guideline panel is
+a subgroup of the guideline development group, which often includes members of a technical team and other
+groups that assemble evidence syntheses or obtain evidence to inform recommendations (e.g. methodologist,
+health economist, evidence synthesis or systematic review team, administrative and coordination support).
+The panel typically reports to an oversight committee or board in the relevant government, national authority
+or body. While deciding how to involve stakeholders early for priority setting and topic selection, the guideline
+developer must also consider how developing formal relationships with stakeholders will enable effective
+dissemination and implementation to support uptake of the guideline. Table 1 shows an overview of the
+required human resources and the roles taken up for those involved (see also Fig. 2). The role of consumers
+and stakeholders is discussed subsequently.
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+16
+a handbook for guideline contextualization
+Table 1. Human resources for guideline contextualization: guideline groups, their members and roles,
+qualifications and responsibilities
+Participant role Qualifications and Responsibilities Voting rights
+specification
+Oversight committee Individuals with training in Oversees the process and No
+guideline methodology and ensures that established
+process evaluation; can be methods are followed
+assembled by a ministry according to set standards
+of health or a professional
+society
+Guideline panel and members
+Overview Consists of experts (including Ensures the quality of the All have voting rights
+people with the condition guideline and quality assurance unless there are direct
+of interest) in the topic area scheme; generates or agrees COIs
+and guideline methodology; on the PICO questions;
+composition should ensure discusses the evidence;
+broad multidisciplinary finalizes and agrees on
+representation, including guideline recommendations
+different levels of health care
+(primary, secondary level) and
+specialization (e.g. clinicians,
+nurses, laboratory specialists)
+as relevant for the topic
+Suggested size 10–15
+depending on the topic
+(e.g. 6 health content experts,
+2 guideline methods experts,
+1 epidemiologist/public
+health/preventive medicine
+specialist with expertise in
+the topic area, 1 patient/
+public representative or other
+stakeholder programme
+manager, 1 health economist)
+Panel chairs Co-chairs, one with Ensure the integrity of the Chair(s) may choose
+methodological expertise and process (methodologist co- only to cast votes when
+one with content expertise chair) and the appropriateness there is a tie among other
+Guideline methodologist of the content being discussed panel members to stay as
+co-chair should have (content expert co-chair); objective as possible and
+experience with chairing in practice, responsible for ensure the integrity of the
+guideline panels as most meeting preparations and process
+of the process and group conduct, ensuring that there
+guidance will be through the is full participation during
+methodology chair; have meetings, that all relevant
+a good understanding of, matters are discussed and that
+and experience with, the effective decisions are made
+guideline development and and carried out
+quality assurance process
+(e.g. INGUIDE certification
+level 3) and also, ideally,
+a background that allows
+understanding of the content
+area.
+Content expertise co-chair
+should be familiar with the
+content/subject matter of the
+guideline
+Organizational aspects, main principles and resources for guideline contextualization 17
+Table 1. contd
+Participant role Qualifications and Responsibilities Voting rights
+specification
+Guideline methodologists Expertise in guideline Contribute to the planning Yes, if no COI
+development process, and conduct of the guideline
+consensus-building development process
+approaches, health
+research methods (clinical)
+epidemiology, public health,
+health economics and/or
+qualitative methods
+Content experts Expertise specific to the Assist with ensuring Yes, if no COI
+guideline content or relevant relevance of the guideline
+fields; recognized experts recommendations,
+demonstrated by appropriate interpretation of research and
+clinical (e.g. responsibility other content the guideline
+for care), public health group considers, in the context
+(e.g. a prevention area), of their field of expertise
+health policy (e.g. advancing
+a health systems intervention)
+or scientific (scientific
+contributions in the area of
+interest) expertise
+Consumer or public May have a deeper Share perspectives and Yes, if no COI
+representatives understanding of people opinions based on their
+impacted by the guideline knowledge of consumer or
+(for a specific condition of personal experiences during
+interest, which encompasses the guideline discussions
+both patients with a specific
+condition and also healthy
+individuals, such as screening
+programmes)
+End-users Health professionals or Provide input on priority Yes, if no COI
+other consumers who will questions, acceptability
+be expected to refer to or of interventions under
+use the guideline; patients or consideration and
+public representatives (listed implementation considerations
+separately) are also a type of through a formal stakeholder
+end-user involvement process
+Working groups and their members
+Overview Experts in specific areas, Depending on the assigned No
+support and administration tasks, these groups provide
+personnel, observers technical expertise and
+products, such as systematic
+review updates and/or
+complement with synthesis of
+locally relevant best available
+evidence for EtD tables, and
+logistic–administrative support
+Scientific/technical support Scientific staff from the Assist the guideline panel No
+personnel organization that produces with research, methodological
+the adoloped guideline support and report/
+(e.g. ministry of health) or recommendation writing as
+technical support people required
+to facilitate the process;
+individuals with relevant
+qualifications (e.g. scientific
+expertise in guidelines,
+project coordination,
+scientific writing)
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+18
+a handbook for guideline contextualization
+Table 1. contd
+Participant role Qualifications and Responsibilities Voting rights
+specification
+Administrative–logistic Individuals with good Assist the guideline panel No
+personnel organizational and with logistics and meeting
+administrative skills from the arrangements
+organization that produces
+the adoloped guideline
+Technical experts With varied qualifications Produce primary or secondary No
+as needed (either content research or provide specific
+or methodology related) input for the guideline
+depending on the guideline/ development group
+quality assurance process
+but not formal guideline
+panel members; brought
+into the guideline process
+as consultants on an ad-hoc
+basis for one or more PICO
+topics
+Leads for evidence synthesis/ Strong methodological Conduct of evidence No
+systematic review teams expertise in evidence synthesis/systematic reviews;
+synthesis, coordination, deliver the draft GRADE
+writing and appropriate evidence profiles and EtD
+communication skills frameworks in GRADEpro
+or similar; coordinate
+activities with guideline group
+and organizational staff;
+communicate with expert
+consultants as necessary
+Members of an evidence Methodological expertise, Support evidence synthesis/ No
+synthesis/systematic review writing and appropriate systematic review conduct
+team communication skills; may
+be trainees in research
+methodology-related topics;
+skilled information specialist
+or librarian and biostatistician
+would be of added value to
+the team
+Content experts for evidence Expertise specific to the Assist with ensuring relevance No
+synthesis/systematic review content that the systematic of the systematic review, the
+team review is addressing interpretation of research and
+other content the guideline
+group considers in the context
+of their field of expertise; may
+be recruited from the guideline
+group
+Observers Involved because of Have no formal role in the No
+technical expertise or process but may provide
+as representatives of specific input, when requested
+stakeholder organizations to do so by the chair(s)
+Additional resource
+Chapter 3.2 on the guideline development group in WHO Handbook for Guideline Development (46)
+Organizational aspects, main principles and resources for guideline contextualization 19
+Public consultation and stakeholder engagement
+Stakeholder engagement is a necessary component of guideline development and implementation and
+can help to ensure a guideline’s feasibility and acceptability by the end-users. Engagement of appropriate
+stakeholders will also facilitate considerations about equity and human rights issues and will support the
+incorporation of guideline recommendations into broader policy and practice. However, while there are
+many stakeholder groups that can be affected by recommendations in guidelines (e.g. patients, consumers,
+providers, general public, researchers and policy-makers) there is as yet no global consensus on how best
+to involve all groups. An extension of the GIN-McMaster Guideline Development Checklist describing best
+practice and approaches to stakeholder involvement is being developed (55). The broad principle is that there
+is little to be lost by including a wide range of stakeholders in the consultation process but a great deal to be
+lost by failing to consult an important stakeholder (56).
+Based on experience in national systems of guideline development, the following issues need to be
+considered and, ideally, documented in a handbook of methods so that they are available before a guideline
+effort starts (34):
+• how to select individual representatives of stakeholder groups
+• what their input will be and how their COIs will be managed, and
+• how the process will be transparently documented.
+Another factor that needs to be considered is the availability and acceptability of different methods for
+stakeholder engagement, for example electronic or written input or face-to-face meetings, as well as the
+resources required and available to ensure meaningful input. It needs to be recognized that some stakeholders,
+such as patient groups, may not have the relevant resources or experience to provide input. Values about and
+preferences for available resources from patient groups from verbal, written and online or in-person input
+should be clarified, especially if a number of guidelines are being developed simultaneously in their area of
+interest (56). Support may need to be provided by the government to allow poorly resourced stakeholders to
+have an effective voice while avoiding the risk of their resorting to funding from sources that raise issues of
+COI, such as the pharmaceutical or food industry.
+Petkovic et al. described four levels of engagement (55).
+Level 1: communication. The stakeholders receive information; they may be present but have no role in
+contributing to the development of the guideline.
+Level 2: consultation. Stakeholders provide their views, thoughts, feedback, opinions or experiences but
+without receiving any commitment that these will be acted upon.
+Level 3: collaboration. Stakeholders are engaged to influence the production of guidelines (e.g. commenting,
+advising, ranking, voting, prioritizing, reaching consensus). Stakeholders provide information that directly
+influences the guideline process but without direct control over decisions.
+Level 4: coproduction. Stakeholders are equal members of the guideline development team and participate
+in all steps of the guideline development process. Stakeholders work together in various roles throughout
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+20
+a handbook for guideline contextualization
+the guideline development process and are involved in collaborative decisions to shape the guideline
+recommendations.
+There are a number of different ways to define different relevant stakeholders (e.g. Petkovic et al. (55)); here
+they are considered as the 10Ps (Table 2).
+Table 2. Examples of potential stakeholders: the 10P groups
+Stakeholder group Possible non-state Description
+actor group
+Patients – Individuals and their family/carers who have experience with
+the condition/disease of interest
+Payers of health research Philanthropic foundations Organizations or entities that fund research projects or
+programmes
+Payers/purchasers of health Private sector entities Private entities responsible for reimbursing the costs of
+services health care
+Peer-review editors Academic institutions Editors of peer-reviewed journals and those involved in peer
+review
+Policy-makers State actors Individuals, organizations and entities that craft public or
+private policy (on health) at any level of government (national,
+provincial or state politicians, scientific advisers)
+Product makers Private sector entities Entities that produce products such as pharmaceuticals,
+vaccines, diagnostic equipment, medical devices, assistive
+devices and medical procedures, and the international
+business associations that represent them
+Programme managers Nongovernmental Entities that deliver health-care programmes/interventions to
+organizations patients or communities
+Providers Nongovernmental Professional medical staff (nurses, physicians, counsellors,
+organizations pharmacists, midwives, community health workers); health-
+care organizations (hospitals, clinics, community health
+centres, community-based health organizations, pharmacies,
+emergency medical service agencies, nursing facilities,
+schools)
+Principal investigators and Academic institutions Researchers, research networks
+researcher teams
+Public – Members of the general population within a defined
+geographical area, excluding patients, caregivers and health
+professionals, living or working with the condition of interest
+Additional resource
+Factors to consider during identification and invitation of individuals in a multistakeholder research
+partnership (57)
+Organizational aspects, main principles and resources for guideline contextualization 21
+
+Detailed process
+and steps for
+contextualization
+Introduction to the adolopment process
+First, it is important to note that if at the end of the adolopment process a recommendation is adopted, adapted
+or de novo created this does not indicate a ranking of its importance or value. An adopted recommendation
+is not of less value than one that has undergone context-specific changes (adapted). This is because if
+a recommendation is relevant for the context without changes, it is as important as one that required
+extensive contextualization. Fig. 3 provides an overview of the general steps in the GRADE-ADOLOPMENT
+approach to contextualization of guidelines. These 15 steps are then outlined below.
+Fig. 3. The GRADE-ADOLOPMENT approach
+Selection of guideline topic 1
+Prioritization of question 2
+Relevant
+Sufficiently credible
+Identification of appropriate source guideline 3 (trustworthy or of
+sufficient quality)
+Relatively recent
+Used GRADE approach
+Matching of source guideline recommendations 4
+to each prioritized question
+5
+14
+yes Matching no
+recommendation
+exist?
+Update systematic 6 De novo development
+review as needed
+7
+EtD from
+source guidelines?
+no yes
+8 Develop EtD Reassess EtD 9
+judgements
+Develop recommendation 10
+11
+Adoloped
+yes no
+recommendation
+similar to source?
+ADOPTED 12 ADAPTED 13 NEW 15
+RECOMMENDATION RECOMMENDATION RECOMMENDATION
+Generally, guideline developers should use the GIN-McMaster Guideline Development Checklist to plan and
+conduct the guideline effort (an extension specifically referring to adaptation is being developed (55)). The
+comprehensive checklist serves those creating guidelines to ensure that no steps are omitted.
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+24
+a handbook for guideline contextualization
+Steps for the adolopment process
+Step 1: selection of guideline topic
+Step 1 can be considered in three stages.
+Identify guideline topics. Several avenues exist to identify topics. Stakeholders can make requests for
+guidelines based on needs assessments or priority-setting exercises. Topics can also be identified
+by evaluating existing guidelines or evidence syntheses to understand the landscape of what is
+available before or after priorities are set by a guideline developer (e.g. a ministry of health), involving
+relevant stakeholders. This requires establishment of an oversight committee that can oversee the
+process (see Table 1).
+Carry out scoping exercise. Such an exercise will identify what guidelines exist on the topic of interest
+and will involve conducting or contracting out the conduct of the exercise. It is helpful to keep in mind
+that a doable topic should be chosen that has a limited number of questions to ensure that those
+involved and asking for the guideline see products in a timely fashion. Therefore, in this step the topic
+can be narrowed down, for example from tuberculosis to screening for and diagnosis of tuberculosis
+but not treatment.
+Create the organizational aspects required. This involves selecting a guideline group (see the previous
+section) that will be responsible for developing the recommendations (be they adopted, adapted or de
+novo). The selection of guideline group members follows established guideline processes (see above),
+such as identifying a multidisciplinary guideline panel with relevant representation.
+Box 1 summarizes some useful sources and websites of specialist medical societies that are relevant to
+the choice of guideline topics (step 1). Databases such as PubMed can also be searched to identify existing
+information.
+Step 2: prioritization of questions
+Guideline questions should be identified and prioritized based on local needs and priorities. Generally, guideline
+questions should focus on areas of controversy that need to be answered by the guideline or on areas where
+changes in policy or practice are needed. For example, a formal process to prioritize key health questions can
+involve reviewing what questions are addressed in the preliminary search for guidelines, existing evidence
+syntheses, surveys of stakeholders or prospective guideline panel members.
+In the original GRADE-ADOLOPMENT process, guideline panel members completed online surveys to rate
+the relative importance of health questions for a country health-care setting that were identified based on
+scoped guidelines (from step 1) using a 9-point Likert-type scale (1, least important; 9, most important),
+and through input of key health-care actors, such as the ministry of health (24). Panellists were asked to
+consider the patient’s perspective and the availability of the interventions but not to exclude questions for
+resource considerations (e.g. potential financial barriers for implementation of the proposed interventions).
+Mean and median importance ratings of questions across those who participated in the process decided
+inclusion in the guideline. To ensure that guidelines comprehensively addressed the topic with a complete
+set of recommendations, questions deemed complementary to those rated as important (e.g. questions
+that together addressed a complete diagnostic strategy; see Recommendations and small informative
+recommendation units in the Key definitions section) were also included. The selected questions were then
+sent to panellists for approval, with opportunity for further input before finalization. Similar approaches are
+used in other guideline adolopment processes (20,58).
+Detailed process and steps for contextualization 25
+Box 1. Useful internet resources
+The following selected sources and websites of specialist medical societies relevant to the topic, in
+addition to PubMed, can be searched to understand what information exists.
+Sources of guidelines (databases)
+• Database of WHO guidelines: WHO guidelines [website]. In: World Health Organization/Publications.
+Geneva: World Health Organization; 2023 (http://www.who.int/publications/guidelines/en/).
+• International database of GRADE guidelines (BIGG): BIGG [website]. Washington: Pan American Health
+Organization; 2023 (http://sites.bvsalud.org/bigg/en/biblio/).
+• National Guideline Clearinghouse: Guidelines and Measure [website]. In: Agency of Healthcare
+Research and Quality (AHRQ)/Programs. Rockville: Agency for Healthcare Research and Quality; 2023
+(http://www.guideline.gov/).
+• The GIN database: Resource [website]. In: Guidelines International Network (GIN). Pitlochry: Guidelines
+International Network; 2023 (http://www.g-i-n.net/get-involved/resources).
+• ECRI Guideline Development Support: Guideline Development Support [website]. In: Emergency
+Care Research Institute/Solutions. Plymouth Meeting: ECRI; 2023 (https://www.ecri.org/solutions/
+guideline-development-support/).
+Sources of general recommendations and EtD frameworks
+• Database of GRADE EtDs and guidelines: Database of GRADE EtD's and Guidelines [website]. In:
+GRADEproGTD; Hamilton: McMaster University; 2023 (http://dbep.gradepro.org/).
+Organizations producing guidelines and health technology assessments
+• United Kingdom National Institute for Health and Care Excellence: NICE: National Institute for Health
+and Care Excellence [website]; 2023 (http://www.nice.org.uk).
+• Canadian Medical Association: CPG Infobase: Clinical Practice Guidelines [website]. In: CMAjoule/
+Clinical tools; 2023 (https://joulecma.ca/cpg/homepage).
+• United States Agency for Healthcare Research and Quality: Agency of Healthcare Research and Quality
+(AHRQ) [website]. Rockville: Agency for Healthcare Research and Quality; 2023 (http://www.ahrq.gov).
+• Scottish Intercollegiate Guidelines Network: SIGN – Healthcare Improvement Scotland [website]; 2023
+(http://www.sign.ac.uk/).
+• GuíaSalud Spain http://www.guiasalud.es
+• Canadian Agency for Drugs and Technologies in Health (CADTH): Canada’s Drug and Health
+Technology Agency [website]. Ottawa: Canadian Agency for Drugs and Technologies in Health; 2023
+(http://www.cadth.ca).
+• EUnetHTA (restricted to members): Advancing cooperation on health technology assessment (HTA)
+and supporting the implementation of the new EU legal framework on HTA [website]. EUnetHTA; 2021
+(https://www.eunethta.eu/). International Network of Agencies for Health Technology Assessment:
+International HTA database [website]. INHATA; 2023 (https://www.inahta.org/hta-database/).
+• Regional Base of Health Technology Assessment Reports of the Americas: COVID-19 [website]. In:
+RedETSA/ BRISA; 2023 (https://sites.bvsalud.org/redetsa/en/brisa/).
+The prioritization process for questions does not differ significantly between original guideline development
+and guideline adaptation projects (24,59,60). However, what distinguishes GRADE-ADOLOPMENT from
+simple guideline adaptation is the fact that the former focuses on priorities for the context as opposed to
+being constrained by what is in one source guideline. In other words, in GRADE-ADOLOPMENT the selection
+of questions is driven by priorities of the local stakeholders (i.e. here are our questions, let us answer them
+through existing guidelines or evidence syntheses).
+Alternatively, to adapt a single guideline into a country context the starting point should be the questions in
+the source guideline, and priority setting then takes place within those questions (59). However, guideline
+panels can decide on whether there are other priority questions that need answering (from the PICO domains)
+and, therefore, require the scope to be broadened from the source guideline by adding additional questions,
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+26
+a handbook for guideline contextualization
+which will be followed through the next steps (59,60). On occasions, guideline panels may identify priorities
+not covered by the original guideline and, therefore, not available for adoption or adaptation. It is important
+for teams conducting GRADE-ADOLOPMENT to avoid dismissing such questions, not only to foster the local
+ownership in the guidelines but also to make them relevant. Rather, such questions can follow a traditional
+de novo development process (see step 15), within the same guideline development or as a follow-up update
+of the guideline.
+Additional resources
+Section 2.3 in Strengthening National Evidence-informed Guideline Programs (26)
+Prioritization approaches in the development of health practice guidelines: a systematic review (59)
+Methodology for the American Society of Hematology VTE guidelines: current best practice, innovations,
+and experience (61)
+The implementation of prioritization exercises in the development and update of health practice
+guidelines: a scoping review (62)
+Step 3: identification of appropriate source guidelines or systematic reviews
+To ensure that all potential source guidelines are identified, a systematic search for existing guidelines needs
+to be conducted. This search should be carried out in consultation with an expert in information retrieval
+(e.g. a librarian, or information scientist) to ensure the use of a sound search strategy. The initial search
+should be broad and without limitation, as guidelines can be difficult to find through electronic databases.
+Guidelines, as identified in step 1 in the scoping exercise and through additional systematic searches, are
+evaluated with the AGREE tool to identify if they address the priority questions, defined in step 2 (63).
+Before a guideline can be used, it should be assessed to understand if it is relevant (i.e. addresses the topic of
+interest), credible (i.e. achieves high enough (>60%) AGREE II instrument scores on the key domains of editorial
+independence and rigour of development), recent (i.e. an update would be unreasonable or the guideline is up
+to date) and whether it is, ideally, based on GRADE. When relevant recommendations were developed using
+GRADE with freely accessible SoFs and EtDs, ideally in compatible electronic format, then it greatly reduces
+the effort and time required. All WHO guidelines are developed using GRADE and are publicly available.
+In the assessment of credibility, for example, a source guideline should specify the methods used to conduct
+the systematic reviews supporting the recommendations. Research evidence to support the relative effects (as
+opposed to absolute effects) of interventions related to a particular recommendation is often globally applicable,
+whereas costs, values and preferences, and the equity, acceptability and feasibility aspects of recommendations
+are local considerations. Consequently, reviewing how these factors were considered in the source guideline
+should be the basis of adopting or adapting recommendations developed by others. Systematic reviews that
+have been carried out to support a recommendation in a source guideline can be assessed for risk of bias using
+the ROBIS (risk of bias in systematic reviews) checklist or AMSTAR 2 tool for methodological quality, which is
+sometimes required to complete the AGREE scoring of a source guideline (64,65).
+If no guideline is identified, groups conducting GRADE-ADOLOPMENT may decide to search for systematic
+reviews about the health effects of the interventions of interest. From the systematic reviews, teams can
+build the EtD framework by adding local evidence about costs, values and preferences, and the equity,
+acceptability and feasibility considerations.
+Detailed process and steps for contextualization 27
+If more than one systematic review is identified for a particular question, teams may decide to combine
+the data from the reviews by conducting their own meta-analysis. If there is limited time or expertise for
+conducting a new meta-analysis, teams may decide to use the results from the more comprehensive
+systematic review (i.e. the most current or the one which includes the greatest body of evidence).
+It is important to emphasize that no trustworthy formal recommendation can be produced if the original
+guideline is not based on a systematic review or there is no independent systematic review available; if that
+is the case teams may be better off starting their own development process (step 15).
+Additional resources
+AGREE II: advancing guideline development, reporting and evaluation in health care (63)
+AMSTAR 2: a critical appraisal tool for systematic reviews that include randomized or non-randomized
+studies of health care interventions, or both (64)
+ROBIS checklist (65)
+Step 4: matching source guideline recommendations to each prioritized question
+Recommendations matching the prioritized questions are searched for within one or more guidelines; that is,
+the process follows a single recommendation as the unit of work.
+To accomplish optimal adaptation, the PICO domains in the source guideline should be matched with the
+prioritized question. It is possible that more than one guideline will need to be used to match the prioritized
+questions or that a new recommendation is required because none of the identified source guidelines
+includes a matching recommendation; for example, two recommendations are from a guideline by WHO, two
+from a guideline by the United Kingdom’s National Institute for Health and Care Excellence and one is created
+de novo. This approach maximizes usefulness for the context and distinguishes GRADE-ADOLOPMENT
+from other adaptation approaches that suggest using existing recommendations in a guideline and their
+adaption, as opposed to focusing on the priorities of the new recommendation, which may be contained in
+several guidelines or not be covered at all. However, it is possible that a guideline developer will choose one
+guideline to be adoloped based on an identified need (e.g. a WHO HIV guideline may be contextualized to
+maximize the uptake of a guideline developed at WHO headquarters). It is also possible that some published
+guidelines do not report on the prioritization or decision process for their questions. It is then advisable to
+contact the source guideline developer to see if source material (such as evidence profiles and EtDs) can be
+shared or if there are relevant proprietary issues that should be observed, such as a WHO technical unit. For
+some organizations, asking for permission to use material (including paying fees) may be required to use
+copyrighted material. Ideally, one or more informed individual(s) involved in developing the source guideline
+should be also involved in the adolopment process, even if just for checking information (66).
+Therefore, the main difference between typical guideline adaptation and guideline adolopment is that
+adolopment focuses on the questions that are relevant or important for a stakeholder, who is wanting to
+adapt and implement a guideline, whereas classic guideline adaptation focuses on a source guideline and
+how it can be applied in a particular new setting. Consequently, adolopment starts with identifying individual
+questions for which a recommendation is necessary and then moves on to look for source guidelines
+and evidence synthesis. Classic guideline adaptation looks for a source guideline for a topic and uses the
+recommendations therein without any prioritization of questions that are relevant for the implementer or the
+opportunity to search across guidelines and evidence syntheses.
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+28
+a handbook for guideline contextualization
+Step 5: does a matching recommendation exist?
+In this step, the question “is there a recommendation in the source guideline(s) that matches the prioritized
+question?” is asked. If a matching recommendation exists, it needs to be decided whether new or updated
+systematic reviews are required (see step 6). If a matching recommendation exists, the creators of the
+original guideline should be contacted with a request for adolopment of the source guideline, assuming that
+the AGREE scores and evaluation of the systematic reviews in the source guidelines are appropriate (see
+step 3). If no matching recommendation exists and this is still the case after checking or considering whether
+the prioritized recommendation could be slightly modified, the new recommendation will require a de novo
+development, which can, however, be based on existing evidence syntheses, such as a Cochrane review, if
+available (see steps 3 and 15).
+Step 6: update systematic review(s) (as needed)
+An existing systematic review may require updating or a new systematic review or other evidence synthesis
+may be required, particularly considering local contextual evidence.
+Criteria for updating, expanding or conducting an evidence synthesis include:
+• the reviews available are outdated (e.g. it is evident that research evidence exists that informs
+a criterion on the EtD but has not been included in the source guideline);
+• the existing recommendation does not include all outcomes of interest for a prioritized question
+(e.g. the local guideline panel determines that quality of life is a critical outcome but the source
+guideline does not consider this outcome in its recommendation); or
+• there is no evidence synthesis that includes evidence about the context of interest for important EtD
+criteria such as values, benefits and harms, feasibility, acceptability, equity and resource use.
+Updated systematic reviews will require that SoFs and EtDs be updated. If SoFs or EtDs were not developed
+in the source guideline they should be developed with the systematic review update.
+Contextualization requires focusing on relevant contextual evidence, including context-specific baseline
+risks, feasibility, acceptability, resource use and equity. This information may or may not have been included
+in the source guideline, but even if included will also be local in nature. For example, a search for evidence
+about how people with the condition of interest value the outcomes in the target setting may be needed, or
+a search for local cost information may be required. This can also include eliciting expert evidence to inform
+the context (28). This step is usually the responsibility of the working group.
+Additional resources
+Section 2.14 in Strengthening National Evidence-informed Guideline Programs (26)
+Step 7: EtD from source guideline
+In this step, the question is asked, “Does the source guideline include a complete EtD framework?”. If not, then
+an EtD should be developed (step 8). If there is one then the EtD will require a review of the judgements made
+in the source guideline (outlined in step 9) and integration of the contextual evidence. This step also includes
+Detailed process and steps for contextualization 29
+checking what EtD criteria are more important for the new setting (e.g. it may not be necessary to obtain
+information about cost–effectiveness if this criterion is not relevant for the destination setting).
+Step 8: develop an EtD
+If no EtD exists, one needs to be developed based on extracting information that explains the rationale for
+the recommendation in the source guideline (if a guideline is judged credible, this information should be
+available in the source guideline). For example, sections referring to equity or acceptability of an intervention
+may be included in the source guideline as narrative but not formally structured in an EtD. However, if not all
+information that is required for an EtD is available in the source guideline, it will lead to an incomplete EtD. In
+that case, a search for evidence supporting judgements of the guideline group on the missing EtD criteria is
+required (as opposed to using the contextual evidence if it was included in an evidence review informing the
+source guideline) (67). It may also be necessary to use expert evidence to complete an EtD. See also step 6.
+It should be recognized that local evidence must often be identified (possibly for updates) in order to
+contextualize and inform the recommendation best. Here, it must also be recognized that contextualization
+should be based on (local, regional, etc.) evidence and not on how things currently are being done; the latter
+is not contextualization and it would not allow for accepting new practice or policy (i.e. the direction and
+strength of a recommendation should be based on evidence from existing circumstances that may modify
+an existing recommendation).
+Step 9: reassess EtD judgements
+Steps 9 and 10 usually take place through a guideline panel meeting (in person but online is also possible)
+convened by the guideline panel chair. The chairs may use the Checklist for Guideline Panel Chairs as a guide
+for preparing, conducting and following up on the meeting (68). The conduct of the meeting, such as COI
+management, documenting plans, necessary quorum, management of disagreements and voting, should be
+developed and agreed before the meeting.
+If EtDs exist for the prioritized recommendations, then they need to be checked for completeness on all
+relevant EtD criteria. If EtDs are available, the judgements in the source recommendation should be reviewed
+and either agreed with or not. Reasons for disagreement should be indicated and documented (e.g. if there
+is new evidence). This process can be carried out in one of three ways.
+1. The original guideline panel judgements are left in place, and the local panel decides whether they
+agree or not. This approach has the advantage of saving time. However, it may limit the discussion,
+especially if panellists are new to the process. Also, it may reduce the ownership of the final
+recommendation. This option may be the most efficient option if the changes to the EtD framework
+are minimal.
+2. The original guideline panel judgements are hidden, and the local panel makes the judgements again.
+This approach usually takes more time since panellists are required to discuss and reach agreement.
+This is probably the best option if significant changes are made to the EtD framework.
+3. A mixed approach combines options 1 and 2. For example, some judgements may be left in place
+while others may be open for discussion. The latter can be done for domains where significant
+changes were introduced to the EtD framework or for domains that are judged a priori very
+content dependent.
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+30
+a handbook for guideline contextualization
+Whatever the approach used for one or for all the recommendations, the selection has to be reported explicitly
+on the adapted guideline.
+Step 10: develop recommendations
+Step 10, like step 9, usually takes place through a guideline panel meeting.
+Steps 8 and 9 will lead to completed and contextualized EtDs that allow formulating a recommendation for the
+destination setting. During the panel meeting, the evidence presented in the EtDs will be discussed, judged and
+recommendations agreed on by the panel. During the deliberations, the research gaps and implementation
+considerations as well as the considerations for monitoring and evaluation may be documented. Monitoring
+and evaluation aspects will inform the drafting of the implementation plan. A search for evidence about
+existing decision thresholds that help to balance health benefits and harms may be helpful (69).
+Step 11: adoloped recommendation similar to source
+If the recommendation is the same as the source recommendation and there are no changes to the judgements
+on the EtD, then the recommendation is an adopted recommendation (step 12). The recommendation is
+adapted (step 13) if the evidence differs because of an update, the recommendation is altered (a judgement
+is changed) or the recommendation is different (e.g. the population is narrower or broader).
+Step 12: adopted recommendation
+The recommendation is labelled as adopted from the source guideline (with reference) and left as is (of
+course it may be translated or may include the name of the organization developing it rather than the name
+of the original organization).
+Step 13: adapted recommendation
+The recommendation is labelled as adapted from the source guideline (with reference) and formulated to
+express the changes.
+Step 14: de novo development
+If step 5 determined that there is no source recommendation, a new recommendation is required (step 15)
+with a full recommendation development process to ensure the quality of the destination guideline. This can
+be based on an existing evidence synthesis from systematic reviews or guidelines. This includes developing
+an EtD for that recommendation if possible.
+Step 15: new recommendation
+By applying trustworthy recommendation development processes, a new recommendation can be developed.
+The process should be documented and reported appropriately, for example by using the RIGHT-AD@PT
+reporting tool (54).
+Detailed process and steps for contextualization 31
+Feasibility of the 15-step approach
+Following all steps explicitly will likely increase the credibility of the adoloped guideline. The approach has
+been used successfully in many cases and, therefore, can be followed (35,37,70–73). However, it may not
+always be feasible to follow all the steps as described above. The key issue is to transparently describe what
+was done and what not.
+Dissemination and implementation
+To successfully implement guidelines, a systematic approach to dissemination and implementation is
+required with responsibilities assigned to stakeholders. Moreover, awareness and approval of the guidelines
+by relevant health professionals, people affected by the recommendations and other relevant stakeholders
+must be achieved, and the activities in this regard must be thoroughly considered and detailed in an
+implementation plan (51). The panel should consider certain actions for implementation simultaneously with
+the development of the guideline.
+An implementation plan should be prepared by the guideline developer and those with skills in implementation
+and approved by the relevant stakeholders. It should be added to the guideline after ensuring that responsible
+parties agree with the plan and the tasks assigned.
+When developing an implementation plan, activities must be planned that take into consideration time
+constraints and requirements, along with the availability of the measurement, an evaluation system and the
+resources required for implementation. If necessary, the implementation process may be divided into several
+stages to accommodate local circumstances or for other reasons. A specific checklist can be developed for
+guideline implementation planning, and supporting literature exists to assist with the process (74).
+To prepare the implementation plan, the following steps will be helpful.
+• Aims and target groups of the implementation activities should be determined with consideration
+for the challenges of current practice, new recommendations for the target setting and target
+groups with their characteristics/specifications, thus ensuring that the guideline is designed and
+disseminated in a way that is appropriate for the end-user.
+• A dissemination strategy should be developed and followed to ensure the guidelines reach the target
+audience.
+• Possible barriers for implementation should be identified and a plan prepared with strategies to
+overcome them. Criteria for adherence and success should be defined, along with the indicators that
+describe them.
+• Linkages with other levers in the health-care system that support behaviour change should be
+identified and explored, including the benefits package (where such a system exists), the “positive
+list” of essential medicines and health products, the procurement system and a monitoring/quality
+improvement system aligned with the clinical guideline recommendations.
+• The need for resources should be assessed. The resources required for implementation should be
+clearly indicated in the operational plan, including funding, staffing and time requirements.
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+32
+a handbook for guideline contextualization
+• Milestones and a schedule should be set out for each implementation activity.
+• Training should be provided to support implementation so that end-users know what the guidelines
+recommend. An education plan could be drafted.
+Existing structures and networks should be used for implementation. Recommendations can be used to
+measure performance, which should be planned in advance (75,76). The implementation process should be
+monitored by setting up a system for regular evaluation (including the above-mentioned criteria) and feedback.
+A forward-looking plan should also ensure that the guidelines are reviewed and updated in a timely manner.
+Quality assurance of adolopment
+Five approaches to quality assurance of the adoloped recommendations are suggested:
+• check the 15 steps of GRADE adolopment for completion
+• report the guidelines using the RIGHT-AD@PT reporting checklist (54)
+• check the group process and use of evidence in the adolopment using the PANELVIEW instrument (17)
+• evaluate if it is possible to have an independent assessment of the credibility of the guidelines, and
+• utilize external peer review.
+Detailed process and steps for contextualization 33
+
+Conclusion
+Contextualization of guidelines is resource saving across settings if existing evidence synthesis and
+guidelines are credible. It avoids duplication but must be done rigorously. This handbook outlines the process
+for achieving optimized contextualization of guidelines. This process starts by identifying recommendations
+from source guidelines, using that information and complementing it with new or contextual evidence. It
+is followed by the description of a process of making a recommendation, following EtD frameworks. It will
+require training and capacity-building, some of which can take place during actual guideline development
+projects where guideline development group members can be trained. Capacity for guideline development
+projects may depend on how much capacity already exists in a country and on the extent of human and
+financial resources available for further capacity-building.
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+36
+a handbook for guideline contextualization
+References
+1. Guidelines for WHO guidelines. Geneva: World Health Organization; 2003 (EIP/GPE/EQC/2003.1;
+https://apps.who.int/iris/handle/10665/68925, accessed 11 January 2023).
+2. Schünemann HJ, Reinap M, Piggott T, Laidmae E, Kohler K, Pold M et al. The ecosystem of health
+decision making: from fragmentation to synergy. Lancet Public Health. 2022;7(4):e378–e90.
+doi: 10.1016/S2468-2667(22)00057-3.
+3. Qaseem A, Forland F, Macbeth F, Ollenschläger G, Phillips S, van der Wees P, Board of
+Trustees of the Guidelines International Network. Guidelines International Network: toward
+international standards for clinical practice guidelines. Ann Intern Med. 2012;156(7):525–31.
+doi: 10.7326/0003-4819-156-7-201204030-00009.
+4. Eccles MP, Grimshaw JM, Shekelle P, Schünemann HJ, Woolf S. Developing clinical practice
+guidelines: target audiences, identifying topics for guidelines, guideline group composition and
+functioning and conflicts of interest. Implement Sci. 2012;7:60. doi: 10.1186/1748-5908-7-60.
+5. Institute of Medicine (US) Committee on Standards for Developing Trustworthy Clinical Practice
+Guidelines. Clinical practice guidelines we can trust. Washington (DC): National Academies
+Press; 2011.
+6. Schünemann HJ, Wiercioch W, Etxeandia I, Falavigna M, Santesso N, Mustafa R et al. Guidelines 2.0:
+systematic development of a comprehensive checklist for a successful guideline enterprise. CMAJ.
+2014;186(3):E123–42. doi: 10.1503/cmaj.131237.
+7. Woolf S, Schünemann HJ, Eccles MP, Grimshaw JM, Shekelle P. Developing clinical practice
+guidelines: types of evidence and outcomes; values and economics, synthesis, grading, and
+presentation and deriving recommendations. Implement Sci. 2012;7:61. doi: 10.1186/1748-5908-7-61.
+8. Schünemann HJ, Best D, Vist G, Oxman AD, Group GW. Letters, numbers, symbols and words:
+how to communicate grades of evidence and recommendations. CMAJ. 2003;169(7):677–80.
+PMID: 14517128.
+9. Oxman AD, Fretheim A, Schünemann HJ. Improving the use of research evidence in guideline
+development: introduction. Health Res Policy Syst. 2006;4:12. doi: 10.1186/1478-4505-4-12.
+10. Schünemann HJ, Al-Ansary LA, Forland F, Kersten S, Komulainen J, Kopp IB et al. Guidelines
+International Network: principles for disclosure of interests and management of conflicts in
+guidelines. Ann Intern Med. 2015;163(7):548–53. doi: 10.7326/M14-1885.
+11. Jaeschke R, O’Byrne PM, Mejza F, Nair P, Lesniak W, Brozek J et al. The safety of long-acting
+beta-agonists among patients with asthma using inhaled corticosteroids: systematic review and
+metaanalysis. Am J Respir Crit Care Med. 2008;178(10):1009–16. doi: 10.1164/rccm.200804-494OC.
+12. Guyatt G, Oxman AD, Akl EA, Kunz R, Vist G, Brozek J et al. GRADE guidelines: 1. Introduction:
+GRADE evidence profiles and summary of findings tables. J Clin Epidemiol. 2011;64(4):383–94.
+doi: 10.1016/j.jclinepi.2010.04.026.
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+38
+a handbook for guideline contextualization
+13. Brozek JL, Akl EA, Alonso-Coello P, Lang D, Jaeschke R, Williams JW et al. Grading quality
+of evidence and strength of recommendations in clinical practice guidelines. Part 1 of 3. An
+overview of the GRADE approach and grading quality of evidence about interventions. Allergy.
+2009;64(5):669–77. doi: 10.1111/j.1398-9995.2010.02530.x.
+14. Atkins D, Best D, Briss PA, Eccles M, Falck-Ytter Y, Flottorp S et al. Grading quality of evidence and
+strength of recommendations. BMJ. 2004;328(7454):1490. doi: 10.1136/bmj.328.7454.1490.
+15. GIN-McMaster guideline development checklist [website]. Hamilton: Guidelines International
+Network, McMaster University; 2023 (https://heigrade.mcmaster.ca/guideline-development/using-
+checklist, accessed 11 January 2023).
+16. Chen Y, Yang K, Marusic A, Qaseem A, Meerpohl JJ, Flottorp S et al. A reporting tool for
+practice guidelines in health care: the RIGHT statement. Ann Intern Med. 2017;166(2):128–32.
+doi: 10.7326/M16-1565.
+17. Brouwers MC, Spithoff K, Lavis J, Kho ME, Makarski J, Florez ID. What to do with all the AGREEs?
+The AGREE portfolio of tools to support the guideline enterprise. J Clin Epidemiol. 2020;125:191–7.
+doi: 10.1016/j.jclinepi.2020.05.025.
+18. Jue JJ, Cunningham S, Lohr K, Shekelle P, Shiffman R, Robbins C et al. Developing and testing
+the Agency for Healthcare Research and Quality’s National Guideline Clearinghouse Extent of
+Adherence to Trustworthy Standards (NEATS) instrument. Ann Intern Med. 2019;170(7):480–7.
+doi: 10.7326/M18-2950.
+19. Wiercioch W, Akl EA, Santesso N, Zhang Y, Morgan RL, Yepes-Nunez JJ et al. Assessing the process
+and outcome of the development of practice guidelines and recommendations: PANELVIEW
+instrument development. CMAJ. 2020;192(40):E1138–45. doi: 10.1503/cmaj.200193.
+20. Neumann I, Izcovich A, Alexander KE, Castano J, Plovnick R, Kunkle R et al. Methodology for
+adaptation of the ASH guidelines for management of venous thromboembolism for the Latin
+American context. Blood Adv. 2021;5(15):3047–52. doi: 10.1182/bloodadvances.2021004268.
+21. Meneses-Echavez JF, Bidonde J, Yepes-Nunez JJ, Poklepovic Pericic T, Puljak L, Bala MM et
+al. Evidence to decision frameworks enabled structured and explicit development of healthcare
+recommendations. J Clin Epidemiol. 2022;150:51–62. doi: 10.1016/j.jclinepi.2022.06.004.
+22. Alonso-Coello P, Oxman AD, Moberg J, Brignardello-Petersen R, Akl EA, Davoli M et al. GRADE
+evidence to decision (EtD) frameworks: a systematic and transparent approach to making
+well informed healthcare choices. 2: Clinical practice guidelines. BMJ. 2016;353:i2089.
+doi: 10.1136/bmj.i2089.
+23. Alonso-Coello P, Schünemann HJ, Moberg J, Brignardello-Petersen R, Akl EA, Davoli M et al. GRADE
+evidence to decision (EtD) frameworks: a systematic and transparent approach to making well
+informed healthcare choices. 1: Introduction. BMJ. 2016;353:i2016. doi: 10.1136/bmj.i2016.
+References 39
+24. Schünemann HJ, Wiercioch W, Brozek J, Etxeandia-Ikobaltzeta I, Mustafa RA, Manja V et al.
+GRADE evidence to decision (EtD) frameworks for adoption, adaptation, and de novo development
+of trustworthy recommendations: GRADE-ADOLOPMENT. J Clin Epidemiol. 2017;81:101–10.
+doi: 10.1016/j.jclinepi.2016.09.009.
+25. McGowan J, Akl EA, Coello PA, Brennan S, Dahm P, Davoli M et al. Update on the JCE GRADE series
+and other GRADE article types. J Clin Epidemiol. 2021;140:163–4. doi: 10.1016/j.jclinepi.2021.05.023.
+26. Strengthening national evidence-informed guideline programs: a tool for adapting and implementing
+guidelines in the Americas. Washington (DC): Pan American Health Organization; 2018 (https://iris.
+paho.org/bitstream/handle/10665.2/49145/9789275120163_eng.pdf?sequence=9&isAllowed=y,
+accessed 11 January 2023).
+27. Understanding and using WHO guidelines on tuberculosis [website]. Geneva: World Health
+Organization; 2023 (https://openwho.org/courses/who-gtb-guidelines, accessed 11 January 2023).
+28. Schünemann HJ, Zhang Y, Oxman AD for the Expert Evidence in Guidelines Group. Distinguishing
+opinion from evidence in guidelines. BMJ. 2019;366:l4606. doi: 10.1136/bmj.l4606.
+29. INGUIDE. International guideline development credentialing & certification program [website].
+Hamilton: Guidelines International Network, McMaster University; 2023 (inguide.org,
+accessed 11 January 2023).
+30. GRADE Working Group [website]. Hamilton: McMaster University; 2023
+(www.gradeworkinggroup.org, accessed 11 January 2023).
+31. GRADEpro [website]. Hamilton: McMaster University; 2023 (https://www.gradepro.org/,
+accessed 11 January 2023).
+32. GRADE approach [website]. London: Cochrane; 2023 (https://training.cochrane.org/grade-approach,
+accessed 11 January 2023).
+33. McMaster GRADE Center. Hamilton: McMaster University; 2023 (https://heigrade.mcmaster.ca/,
+accessed 11 January 2023).
+34. Garner P, Hill S, Schünemann H. Developing and implementing guidelines for health policy and
+clinical practice in Estonia: interim appraisal of progress. Copenhagen: WHO Regional Office for
+Europe; 2015 (https://apps.who.int/iris/handle/10665/350299, accessed 11 January 2023).
+35. Darzi A, Harfouche M, Arayssi T, Alemadi S, Alnaqbi KA, Badsha H et al. Adaptation of the 2015
+American College of Rheumatology treatment guideline for rheumatoid arthritis for the Eastern
+Mediterranean Region: an exemplar of the GRADE Adolopment. Health Qual Life Outcomes.
+2017;15(1):183. doi: 10.1186/s12955-017-0791-9 [correction 15(1):214].
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+40
+a handbook for guideline contextualization
+36. Kallenbach M, Conrad S, Hoffmann F, Matthias K, Gartlehner G, Langer G et al. GRADE Evidence-to-
+Decision-Tabellen für die Übernahme, Anpassung und De-novo-Entwicklung von vertrauenswürdigen
+[GRADE: Using evidence to decision frameworks for adoption, adaptation and de novo generation
+of trustworthy guideline recommendations – GRADE-ADOLOPMENT]. Z Evid Fortbild Qual
+Gesundhwes. 2019;144–145:90–9. doi: 10.1016/j.zefq.2019.06.001.
+37. Reilly JJ, Hughes AR, Janssen X, Hesketh KR, Livingstone S, Hill C et al. GRADE-ADOLOPMENT
+process to develop 24-hour movement behavior recommendations and physical activity
+guidelines for the under 5s in the United Kingdom, 2019. J Phys Act Health. 2020;17(1):101–8.
+doi: 10.1123/jpah.2019-0139.
+38. Tugwell P, Knottnerus JA. Adolopment: a new term added to the clinical epidemiology lexicon. J Clin
+Epidemiol. 2017;81:1–2. doi: 10.1016/j.jclinepi.2017.01.002.
+39. Darzi A, Abou-Jaoude EA, Agarwal A, Lakis C, Wiercioch W, Santesso N et al. Frameworks
+for adaptation of health guidelines: a methodological survey. J Clin Epidemiol. 2017;86:3–10.
+doi: 10.1016/j.jclinepi.2017.01.016.
+40. Lotfi T, Hajizadeh A, Moja L, Akl EA, Piggott T, Kredo T et al. A taxonomy and framework for
+identifying and developing actionable statements in guidelines suggests avoiding informal
+recommendations. J Clin Epidemiol. 2022;141:161–71. doi: 10.1016/j.jclinepi.2021.09.028.
+41. Piggott T, Baldeh T, Dietl B, Wiercoch W, Nieuwlaat R, Santesso N et al. Standardized wording to
+improve efficiency and clarity of GRADE EtD frameworks in health guidelines. J Clin Epidemiol.
+2022;146:106–22. doi: 10.1016/j.jclinepi.2022.01.004.
+42. Schünemann HJ. Getting trustworthy guideline recommendations into practice. BMJ Opinion.
+31 December 2018 (https://blogs.bmj.com/bmj/2018/12/31/holger-j-schunemann-getting-
+trustworthy-guideline-recommendations-into-practice/, accessed 11 January 2023).
+43. Dewidar O, Lotfi T, Langendam MW, Parmelli E, Saz Parkinson Z, Solo K et al. Good or best practice
+statements: proposal for the operationalisation and implementation of GRADE guidance. BMJ Evid
+Based Med. 2022; bmjebm-2022-111962, online ahead of print. doi: 10.1136/bmjebm-2022-111962.
+44. Dewidar O, Lotfi T, Langendam M, Parmelli E, Saz Parkinson Z, Solo K et al. Which actionable
+statements qualify as good practice statements In Covid-19 guidelines? A systematic appraisal. BMJ
+Evid Based Med. 2022;27(6):361–9. doi: 10.1136/bmjebm-2021-111866.
+45. Schünemann HJ, Tunis S, Nieuwlaat R, Wiercioch W, Baldeh T. The SOLAR (Standardized
+Outcomes Linking Across StakeholdeRs) system and hub and spokes model for direct core
+outcome measures in health care and its relation to GRADE. J Clin Epidemiol. 2020;125:216–21.
+doi: 10.1016/j.jclinepi.2020.05.007.
+46. WHO handbook for guideline development, 2nd edition. Geneva: World Health Organization; 2014
+(https://apps.who.int/iris/handle/10665/145714, accessed 11 January 2023).
+References 41
+47. Introduction to WHO guidelines and GRADE. Hamilton: McMaster University; 2020 (https://heigrade.
+mcmaster.ca/learning/guideline-development-learning-modules, accessed 11 January 2023).
+48. Schünemann HJ, Osborne M, Moss J, Manthous C, Wagner G, Sicilian L et al. An official American
+Thoracic Society policy statement: managing conflict of interest in professional societies. Am
+J Respir Crit Care Med. 2009;180(6):564–80. doi: 10.1164/rccm.200901-0126ST.
+49. Traversy G, Barnieh L, Akl EA, Allan GM, Brouwers M, Ganache I et al. Managing conflicts of interest
+in the development of health guidelines. CMAJ. 2021;193(2):E49–54. doi: 10.1503/cmaj.200651.
+50. Declaration of interests for WHO experts. Geneva: World Health Organization; 2023 (https://www.
+who.int/publications/m/item/declaration-of-interests-for-who-experts, accessed 11 January 2023).
+51. Estonian handbook for guidelines development 2020. Tallinn: Estonian Health Insurance Fund;
+2021 (https://tervis.ut.ee/sites/default/files/inline-files/estonian_handbook_for_guidelines_
+development_2020.pdf, accessed 10 January 2023).
+52. World Bank, Organisation for Economic Co-operation and Development, United Nations Office on
+Drugs and Crime. Preventing and managing conflicts of interest in the public sector: good practices
+guide. Washington (DC): World Bank; 2020 (https://www.unodc.org/documents/corruption/
+Publications/2020/Preventing-and-Managing-Conflicts-of-Interest-in-the-Public-Sector-Good-
+Practices-Guide.pdf, accessed 11 January 2023).
+53. Enhancing the quality and transparency of health research [website]. Oxford: UK EQUATOR Centre;
+2023 (https://www.equator-network.org/, accessed 11 January 2023).
+54. Song Y, Alonso-Coello P, Ballesteros M, Cluzeau F, Vernooij RWM, Arayssi T et al. A reporting tool for
+adapted guidelines in health care: the RIGHT-Ad@pt checklist. Ann Intern Med. 2022;175(5):710–19.
+doi: 10.7326/M21-4352.
+55. Petkovic J, Riddle A, Akl EA, Khabsa J, Lytvyn L, Atwere P et al. Protocol for the development
+of guidance for stakeholder engagement in health and healthcare guideline development and
+implementation. Syst Rev. 2020;9(1):21. doi: 10.1186/s13643-020-1272-5.
+56. Options for best practice clinical guideline development in Ukraine: policy brief. Geneva:
+WHO Regional Office for Europe; 2021 (https://apps.who.int/iris/handle/10665/341549,
+accessed 11 January 2023).
+57. Parker R, Tomlinson E, Concannon TW, Akl E, Petkovic J, Welch VA et al. Factors to consider during
+identification and invitation of individuals in a multi-stakeholder research partnership. J Gen Intern
+Med. 2022;37(16):4047–53. doi: 10.1007/s11606-022-07411-w.
+58. Neumann I, Izcovich A, Aguilar R, Basantes GL, Casais P, Colorio CC et al. ASH, ABHH, ACHO,
+Grupo CAHT, Grupo CLAHT, SAH, SBHH, SHU, SOCHIHEM, SOMETH, Sociedad Panameña de
+Hematología, SPH, and SVH 2021 guidelines for management of venous thromboembolism in Latin
+America. Blood Adv. 2021;5(15):3032–46. doi: 10.1182/bloodadvances.2021004267.
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+42
+a handbook for guideline contextualization
+59. El-Harakeh A, Morsi RZ, Fadlallah R, Bou-Karroum L, Lotfi T, Akl EA. Prioritization approaches in
+the development of health practice guidelines: a systematic review. BMC Health Services Res.
+2019;19(1):692. doi: 10.1186/s12913-019-4567-2.
+60. Wiercioch W, Nieuwlaat R, Zhang Y, Alonso-Coello P, Dahm P, Iorio A et al. New methods facilitated
+the process of prioritizing questions and health outcomes in guideline development. J Clin Epidemiol.
+2022;143:91–104. doi: 10.1016/j.jclinepi.2021.11.031.
+61. Wiercioch W, Nieuwlaat R, Akl EA, Kunkle R, Alexander KE, Cuker A et al. Methodology for
+the American Society of Hematology VTE guidelines: current best practice, innovations, and
+experiences. Blood Adv. 2020;4(10):2351–65. doi: 10.1182/bloodadvances.2020001768.
+62. El-Harakeh A, Lotfi T, Ahmad A, Morsi RZ, Fadlallah R, Bou-Karroum L et al. The implementation
+of prioritization exercises in the development and update of health practice guidelines: a scoping
+review. PLOS One. 2020;15(3):e0229249. doi: 10.1371/journal.pone.0229249.
+63. Brouwers M, Kho ME, Browman GP, Burgers JS, Cluzeau F, Feder G for the AGREE Next Steps
+Consortium. AGREE II: advancing guideline development, reporting and evaluation in healthcare.
+CMAJ. 2010;182(18):E839–42. doi: 10.1503/cmaj.090449.
+64. Shea BJ, Reeves BC, Wells G, Thuku M, Hamel C, Moran J et al. AMSTAR 2: a critical appraisal
+tool for systematic reviews that include randomised or non-randomised studies of healthcare
+interventions, or both. BMJ. 2017;358:j4008. doi: 10.1136/bmj.j4008.
+65. Whiting P, Savovic J, Higgins JP, Caldwell DM, Reeves BC, Shea B et al. ROBIS: a new tool to
+assess risk of bias in systematic reviews was developed. J Clin Epidemiol. 2016;69:225–34.
+doi: 10.1016/j.jclinepi.2015.06.005.
+66. He J, Chen WQ, Li N, Shen HB, Li J, Wang Y et al. 中国女性乳腺癌筛查与早诊早治指南(2021，北京)
+[China guideline for the screening and early diagnosis and treatment of female breast cancer
+(2021 Beijing)]. Zhonghua Zhong Liu Za Zhi. 2021;43(4):357–82 [in Chinese]. doi: 10.3760/
+cma.j.cn112152-20210119-00061.
+67. Lotfi T, Stevens A, Akl EA, Falavigna M, Kredo T, Mathew JL et al. Getting trustworthy guidelines
+into the hands of decision-makers and supporting their consideration of contextual factors for
+implementation globally: recommendation mapping of COVID-19 guidelines. J Clin Epidemiol.
+2021;135:182–6. doi: 10.1016/j.jclinepi.2021.03.034.
+68. Checklist for guideline panel chairs. Hamilton: McMaster University;2020 (https://heigrade.
+mcmaster.ca/guideline-development/chair-checklist, accessed 11 January 2023).
+69. Morgano GP, Mbuagbaw L, Santesso N, Xie F, Brozek JL, Siebert U et al. Defining decision thresholds
+for judgments on health benefits and harms using the Grading of Recommendations Assessment,
+Development and Evaluation (GRADE) evidence to decision (EtD) frameworks: a protocol for
+a randomised methodological study (GRADE-THRESHOLD). BMJ Open. 2022;12(3):e053246.
+doi: 10.1136/bmjopen-2021-053246.
+References 43
+70. Falavigna M, Belli KC, Barbosa AN, Zavascki AP, Nastri A, Santana CM et al. Brazilian guidelines for
+the treatment of outpatients with suspected or confirmed COVID-19. A joint guideline of the Brazilian
+Association of Emergency Medicine (ABRAMEDE), Brazilian Medical Association (AMB), Brazilian
+Society of Angiology and Vascular Surgery (SBACV), Brazilian Society of Geriatrics and Gerontology
+(SBGG), Brazilian Society of Infectious Diseases (SBI), Brazilian Society of Family and Community
+Medicine (SBFMC), and Brazilian Thoracic Society (SBPT). Braz J Infect Dis. 2022;26(2):102347.
+doi: 10.1016/j.bjid.2022.102347.
+71. Falavigna M, Stein C, Amaral J, Azevedo LCP, Belli KC, Colpani V et al. Brazilian guidelines for the
+pharmacological treatment of patients hospitalized with COVID-19: joint guideline of Associacao
+Brasileira de Medicina de Emergencia, Associacao de Medicina Intensiva Brasileira, Associacao
+Medica Brasileira, Sociedade Brasileira de Angiologia e Cirurgia Vascular, Sociedade Brasileira
+de Infectologia, Sociedade Brasileira de Pneumologia e Tisiologia, Sociedade Brasileira de
+Reumatologia. Rev Bras Ter Intensiva. 2022;34(1):1–12. doi: 10.5935/0103-507X.20220001-pt.
+72. Okely AD, Ghersi D, Loughran SP, Cliff DP, Shilton T, Jones RA et al. A collaborative approach to
+adopting/adapting guidelines. The Australian 24-hour movement guidelines for children (5–12 years)
+and young people (13–17 years): an integration of physical activity, sedentary behaviour, and sleep.
+Int J Behav Nutr Phys Act. 2022;19(1):2. doi: 10.1186/s12966-021-01236-2.
+73. Okely AD, Ghersi D, Hesketh KD, Santos R, Loughran SP, Cliff DP et al. A collaborative approach to
+adopting/adapting guidelines. The Australian 24-hour movement guidelines for the early years (birth
+to 5 years): an integration of physical activity, sedentary behavior, and sleep. BMC Public Health.
+2017;17(suppl 5):869. doi: 10.1186/s12889-017-4867-6.
+74. Gagliardi AR, Marshall C, Huckson S, James R, Moore V. Developing a checklist for guideline
+implementation planning: review and synthesis of guideline development and implementation advice.
+Implement Sci. 2015;10:19. doi: 10.1186/s13012-015-0205-5.
+75. Piggott T, Langendam M, Parmelli E, Adolfsson J, Akl E, Armstrong D et al. The GIN-McMaster
+Guideline Tool Extension for the Integration of Quality Improvement and Quality Assurance in
+Guidelines: a description of the methods for its development. J Clin Epidemiol. 2022; S0895-
+4356(22)00085-3. doi: 10.1016/j.jclinepi.2022.04.002.
+76. Piggott T, Langendam MW, Parmelli E, Adolfsson J, Akl EA, Armstrong D et al. Integrating quality
+assurance and quality improvement with guidelines: systematic stakeholder-driven development of
+an extension of the Guidelines International Network–McMaster guideline development checklist.
+Ann Intern Med. 2022;175(5):735–9. doi: 10.7326/M21-3977.
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+44
+a handbook for guideline contextualization
+Annex.
+Practical example
+of guideline
+adolopment
+The WHO eTB guidelines platform is a digital platform to promote adolopment of WHO recommendations by
+guideline development groups. Fig. A1.1 shows a conceptualization for how the adolopment process would
+work with the WHO eTB guidelines platform. The process begins with the WHO source guideline, which
+can be obtained from the database of evidence-based recommendations (1). These recommendations are
+updated centrally and that facilitates data linkage to information at the country level to provide input on
+contextualization implementation.
+Fig. A1.1. An example for practical guideline adolopment using the WHO eTB platform
+WHO guidelines WHO Member States ADOLOPMENT IMPLEMENTATION
+Country prioritization of questions
+Select and assess the recommendations
+and the EtD framework
+DATABASE of Update systematic reviews as needed including
+evidence-based data and values from the country itself
+recommendations
+Patients,
+What should clinicians, and all
+a country do with a global
+stakeholders
+This initiative is recommendation?
+designed to promote
+evidence­based Database of
+approaches when updated (live) Adapt Adopt Apart from enhancing
+implementing all the evidence­based access to updated
+components of the recommendations, guidance, the WHO
+a c a c E i n a n i e n n d n r d n n t e d e ( t o s , 3 r g T v u e ( ) 2 a r B d p a i ) t n p , i t S b v p t e o e t e o r d r r n e a l t , r d s v e t s p e e i s p y a fi n g e s o t e t y i a t l d e a e i : r c n t c m ( a i i 1 t v h e n ­ s ) e s d , o l a i c n n n t o h k d f c u a a a a o i n c g c t m n t c i e a r l t p e i , y e r t l e s a ­ x a e l s n t e t c m u e i d v e b a e e d n l c l n e l a t i a z t r i t t n p a a a o a p t t l t ­ l u i i u y o o r t n e n t r m t h e h a b e c o B n e e o d s y d E m i i e r m fi t d e t D m e e t p a i d v n f e s l r e e g n ( s a m l a d e o m / d s a e p a a e s t n i r i p n w i o t e n t g e o n a e g d a r d t t k o o ) f a o B a a g m l y p s l r o e u p o a w e s l d p i d e i c i p n fi d a – r g c t o b i a t w o p y h t r n i i e d t o i a h – i n E r t o e s e t i u D f c , t t s r t d e h s a a e p y e v t T t n e e m h a t B a e u h t t t s g h e l o i o n e s a u f c g r i t i o s s d a a t c l e h a t d u h p l e n d i s e r n d e a v o e e v c e a n s f i t n l d f i u w o o a c e e t r b e i n h l t l t l c e e o o e r f
+WHO Member States or other entities adoloping recommendations would use the WHO source guideline
+and conduct a prioritization process of questions that are relevant for the context. Recommendations that
+are relevant are selected and assessed and the corresponding EtD framework created using tools such as
+GRADEpro. The guideline development group would review the judgments and the evidence within, and
+would update systematic reviews as needed to include contextual data such as data on values from the
+country itself.
+The guideline development group either adapts or adopts a recommendation by assessing the EtD framework
+supporting a recommendation. A recommendation is adapted if judgments on the EtD change based on the
+context or it could be altered if, for example, different judgments or a different population are considered.
+If the new guideline development group agrees with all the judgments made by the guideline development
+group for the source guideline, the new group would adopt the recommendation without modifications.
+This process also enhances implementation by engaging patients, people involved with the condition of
+interest and all other stakeholders relevant for a country setting in the guideline implementation process.
+Strengthening countries’ capacities to adopt and adapt evidence-based guidelines:
+46
+a handbook for guideline contextualization
+This approach will make the process more efficient by avoiding repeating the evidence synthesis and by
+enhancing the use of contextualized data while creating appropriate ownership of the recommendations that
+are relevant for a country or similar setting.
+Reference
+1. eTB guidelines [website]. Geneva: World Health Organization; 2023 (https://tuberculosis.
+evidenceprime.com/, accessed 10 January 2023).
+Annex. Practical example of guideline adolopment 47
+
+
+The WHO Regional Office for Europe
+The World Health Organization (WHO) is a specialized agency of the United Nations
+created in 1948 with the primary responsibility for international health matters and
+public health. The WHO Regional Office for Europe is one of six regional offices
+throughout the world, each with its own programme geared to the particular health
+conditions of the countries it serves.
+Member States
+Albania Greece Portugal
+Andorra Hungary Republic of Moldova
+Armenia Iceland Romania
+Austria Ireland Russian Federation
+Azerbaijan Israel San Marino
+Belarus Italy Serbia
+Belgium Kazakhstan Slovakia
+Bosnia and Herzegovina Kyrgyzstan Slovenia
+Bulgaria Latvia Spain
+Croatia Lithuania Sweden
+Cyprus Luxembourg Switzerland
+Czechia Malta Tajikistan
+Denmark Monaco Türkiye
+Estonia Montenegro Turkmenistan
+Finland Netherlands (Kingdom of the) Ukraine
+France North Macedonia United Kingdom
+Georgia Norway Uzbekistan
+Germany Poland
+World Health Organization
+Regional Office for Europe
+UN City, Marmorvej 51,
+DK-2100 Copenhagen Ø, Denmark
+Tel.: +45 45 33 70 00
+Fax: +45 45 33 70 01
+Email: eurocontact@who.int
+Website: www.who.int/europe

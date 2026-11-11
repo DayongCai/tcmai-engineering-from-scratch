@@ -1,0 +1,32 @@
+{
+  "slug": "13-mianyi-bingyuan-shengwu",
+  "title": "免疫学基础与病原生物学",
+  "en": "Immunology & Pathogen Biology",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 133,
+  "type": "Core",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "免疫应答→多智能体仿真 / 病原谱→分类检索",
+  "chaptersTarget": 15,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/13-mianyi-bingyuan-shengwu",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/13-mianyi-bingyuan-shengwu",
+    "chaptersWritten": 15,
+    "words": 355768,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#免疫学基础与病原生物学",
+    "extractedAt": "2026-10-21"
+  }
+}

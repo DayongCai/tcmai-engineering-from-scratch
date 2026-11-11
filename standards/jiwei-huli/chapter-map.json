@@ -1,0 +1,141 @@
+{
+ "note": "派生课：本库无《急危重症护理学》母本，单元由《急救护理学》318 单元按「重症监护」编法重排；locator 一律「派生·」，source 保留父课行号链。",
+ "chapters": {
+  "01-fenzhen-youxian": {
+   "n": 1,
+   "title": "分诊、优先级与团队协作",
+   "units": [
+    "1.2",
+    "1.3",
+    "1.4"
+   ],
+   "srcChapters": [
+    1,
+    2,
+    3
+   ],
+   "why": "概述、工作模式与预检分诊合章：重症的每一步都要先定「谁先看」",
+   "derivedFrom": "jijiu-huli 第1、2、3章"
+  },
+  "02-fusu-chuchan": {
+   "n": 2,
+   "title": "心搏骤停与心肺复苏、除颤",
+   "units": [
+    "2.2"
+   ],
+   "srcChapters": [
+    5
+   ],
+   "why": "心肺复苏独立成章：唯一以「秒」计的抢救",
+   "derivedFrom": "jijiu-huli 第5章"
+  },
+  "03-xiuke-fusu": {
+   "n": 3,
+   "title": "休克、严重过敏与液体复苏",
+   "units": [
+    "3.2"
+   ],
+   "srcChapters": [
+    6
+   ],
+   "why": "休克与过敏合章：都表现为循环崩溃，处置首步都是评估与通路",
+   "derivedFrom": "jijiu-huli 第6章"
+  },
+  "04-huxishuai-tongqi": {
+   "n": 4,
+   "title": "呼吸急症、呼吸衰竭与通气支持",
+   "units": [
+    "4.2"
+   ],
+   "srcChapters": [
+    7
+   ],
+   "why": "呼吸急症独立成章：重症监护里最常见的器官支持",
+   "derivedFrom": "jijiu-huli 第7章"
+  },
+  "05-zhongdu-huli": {
+   "n": 5,
+   "title": "急性中毒与理化因素损伤",
+   "units": [
+    "5.2",
+    "5.3"
+   ],
+   "srcChapters": [
+    10,
+    12
+   ],
+   "why": "中毒与理化损伤合章：都是「外因入体」，追问暴露史是共同起点",
+   "derivedFrom": "jijiu-huli 第10、12章"
+  },
+  "06-chuangshang-huli": {
+   "n": 6,
+   "title": "创伤与多发伤的重症护理",
+   "units": [
+    "6.2"
+   ],
+   "srcChapters": [
+    11
+   ],
+   "why": "创伤独立成章：多发伤的评估顺序与单病种不同",
+   "derivedFrom": "jijiu-huli 第11章"
+  },
+  "07-jiance-jishu": {
+   "n": 7,
+   "title": "重症监测、常用技术与配合",
+   "units": [
+    "7.2",
+    "7.3"
+   ],
+   "srcChapters": [
+    4,
+    8
+   ],
+   "why": "常用技术 + 胸痛腹痛合章：监测数据要在具体症状上才读得懂",
+   "derivedFrom": "jijiu-huli 第4、8章"
+  },
+  "08-zhentong-zhenwang": {
+   "n": 8,
+   "title": "意识障碍、抽搐与谵妄管理",
+   "units": [
+    "8.2",
+    "8.3"
+   ],
+   "srcChapters": [
+    9,
+    15
+   ],
+   "why": "意识障碍 + 老年特殊人群合章：谵妄在老年重症里最容易被漏",
+   "derivedFrom": "jijiu-huli 第9、15章"
+  },
+  "09-zhuanyun-anquan": {
+   "n": 9,
+   "title": "特殊人群急症与转运安全",
+   "units": [
+    "9.2",
+    "9.3",
+    "9.4"
+   ],
+   "srcChapters": [
+    13,
+    14,
+    16
+   ],
+   "why": "妇产、儿科与灾难群体合章：特殊人群的共同点是「按常规做会出错」",
+   "derivedFrom": "jijiu-huli 第13、14、16章"
+  },
+  "10-lunli-juece": {
+   "n": 10,
+   "title": "抢救记录、质量与伦理决策",
+   "units": [
+    "10.2",
+    "10.3"
+   ],
+   "srcChapters": [
+    17,
+    18
+   ],
+   "why": "质量风险 + 平台合章：抢救记录既是证据也是复盘材料",
+   "derivedFrom": "jijiu-huli 第17、18章"
+  }
+ }
+}

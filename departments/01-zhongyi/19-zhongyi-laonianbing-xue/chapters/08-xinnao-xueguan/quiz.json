@@ -1,0 +1,79 @@
+{
+  "lesson": "08-xinnao-xueguan",
+  "title": "老年心脑血管病证：本虚标实的主战场",
+  "subject": "19-zhongyi-laonianbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "本章四条红线中与「时间窗」直接相关的是？",
+      "options": [
+        "中风",
+        "心悸",
+        "颤证",
+        "郁证"
+      ],
+      "correct": 0,
+      "explanation": "教材 8.4.1 写「中脏腑与急救（时间窗）」。"
+    },
+    {
+      "stage": "check",
+      "question": "痴呆与正常衰老的分界是？",
+      "options": [
+        "是否影响日常功能",
+        "是否忘事",
+        "年龄大小",
+        "是否用药"
+      ],
+      "correct": 0,
+      "explanation": "教材 8.5.1：影响日常功能才是痴呆。"
+    },
+    {
+      "stage": "check",
+      "question": "本章唯一写「自杀风险」的单元是？",
+      "options": [
+        "郁证（8.7.1）",
+        "胸痹心痛",
+        "高血压",
+        "颤证"
+      ],
+      "correct": 0,
+      "explanation": "教材全书唯一一处精神科风险提示。"
+    },
+    {
+      "stage": "check",
+      "question": "高血压单元对中药的定位表述是？",
+      "options": [
+        "降压治疗规范为主，中药为辅助",
+        "中药替代降压药",
+        "不需降压药",
+        "只治症状"
+      ],
+      "correct": 0,
+      "explanation": "教材 8.3.1：降压规范与中药辅助边界。"
+    },
+    {
+      "stage": "post",
+      "question": "老年心脑病为何「症状不典型」？",
+      "options": [
+        "心梗可只表现为乏力、纳差、淡漠",
+        "因为不痛",
+        "因为检查不准",
+        "因为年龄"
+      ],
+      "correct": 0,
+      "explanation": "这是老年病学与内科学最大的实践差别。"
+    },
+    {
+      "stage": "post",
+      "question": "本章数值为 0 说明什么？",
+      "options": [
+        "窗宽与阈值交给指南，教材不重复抄写",
+        "无数值内容",
+        "统计错误",
+        "不涉急症"
+      ],
+      "correct": 0,
+      "explanation": "与急诊学第 6 章同一处理方式。"
+    }
+  ]
+}

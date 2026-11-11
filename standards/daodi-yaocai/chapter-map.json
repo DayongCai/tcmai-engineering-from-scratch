@@ -1,0 +1,133 @@
+{
+ "note": "派生课：一章一主题，单元按关键词从父课选题；无单元复用。",
+ "chapters": {
+  "01-daodi-gainian": {
+   "n": 1,
+   "title": "道地药材的概念与源流",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "先辨「道地」是质量判断还是产地标签",
+   "derivedFrom": "zhongyao-fenxi、zhongyao-huaxue、zhongyao-jianding、zhongyao-paozhi、zhongyao-shangpin、zhongyao-ziyuan"
+  },
+  "02-quhua-fenbu": {
+   "n": 2,
+   "title": "产区分布与区划",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "道地性首先是一条地理事实",
+   "derivedFrom": "zhongyao-fenxi、zhongyao-huaxue、zhongyao-jianding、zhongyao-paozhi、zhongyao-shangpin、zhongyao-ziyuan"
+  },
+  "03-shengtai-pinzhi": {
+   "n": 3,
+   "title": "生态因子与品质形成",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "同一品种换个地方就不是那个味",
+   "derivedFrom": "zhongyao-fenxi、zhongyao-huaxue、zhongyao-jianding、zhongyao-paozhi、zhongyao-shangpin、zhongyao-ziyuan"
+  },
+  "04-jiyuan-pinzhong": {
+   "n": 4,
+   "title": "基原、品种与种质",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "道地的前提是「先认对是什么」",
+   "derivedFrom": "zhongyao-fenxi、zhongyao-huaxue、zhongyao-jianding、zhongyao-paozhi、zhongyao-shangpin、zhongyao-ziyuan"
+  },
+  "05-zaipei-caishou": {
+   "n": 5,
+   "title": "栽培与采收",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "规范化种植改的是变异幅度",
+   "derivedFrom": "zhongyao-fenxi、zhongyao-huaxue、zhongyao-jianding、zhongyao-paozhi、zhongyao-shangpin、zhongyao-ziyuan"
+  },
+  "06-chandi-jiagong": {
+   "n": 6,
+   "title": "产地加工",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "产地那一步决定后续能不能标准化",
+   "derivedFrom": "zhongyao-fenxi、zhongyao-huaxue、zhongyao-jianding、zhongyao-paozhi、zhongyao-shangpin、zhongyao-ziyuan"
+  },
+  "07-guige-dengji": {
+   "n": 7,
+   "title": "规格等级与商品",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4",
+    "7.5"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "等级是市场语言，不等于疗效排序",
+   "derivedFrom": "zhongyao-fenxi、zhongyao-huaxue、zhongyao-jianding、zhongyao-paozhi、zhongyao-shangpin、zhongyao-ziyuan"
+  },
+  "08-pingjia-zhuisu": {
+   "n": 8,
+   "title": "品质评价与追溯",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4",
+    "8.5"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "评价要能落到指标，追溯要能落到地块",
+   "derivedFrom": "zhongyao-fenxi、zhongyao-huaxue、zhongyao-jianding、zhongyao-paozhi、zhongyao-shangpin、zhongyao-ziyuan"
+  }
+ }
+}

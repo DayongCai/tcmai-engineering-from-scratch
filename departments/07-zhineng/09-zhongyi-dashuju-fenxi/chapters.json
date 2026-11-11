@@ -1,54 +1,71 @@
 {
-  "slug": "09-zhongyi-dashuju-fenxi",
-  "title": "中医大数据分析",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-leixing-zhiliang",
-      "title": "中医数据的类型与质量",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-duilie-zhengli",
-      "title": "队列与病案数据的整理",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-pinci-guanlian",
-      "title": "频次统计与关联规则",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-julei-fenxing",
-      "title": "聚类与证候分型",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-pianyi-wajue",
-      "title": "处方规律挖掘的偏倚",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-shijian-xulie",
-      "title": "时间序列与随访数据",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-keshi-fenxi",
-      "title": "可视化与交互分析",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-jieshi-linchuang",
-      "title": "分析结论的临床可解释性",
-      "status": "📋"
-    }
-  ]
+ "slug": "09-zhongyi-dashuju-fenxi",
+ "title": "中医大数据分析",
+ "note": "8 章 = 教材 8 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-s1",
+   "title": "数据的搜集、整理与图表",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-s2",
+   "title": "集中趋势、离散程度与正态分布",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-s3",
+   "title": "抽样误差、参数估计与假设检验",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-s4",
+   "title": "t 检验、方差分析与卡方检验",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-s5",
+   "title": "非参数检验与直线相关回归",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-s6",
+   "title": "多重回归与生存分析",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-s7",
+   "title": "研究设计与诊断试验",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-s8",
+   "title": "卫生统计、中医研究与智能分析",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

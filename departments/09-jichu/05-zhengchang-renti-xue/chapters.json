@@ -1,0 +1,151 @@
+{
+ "slug": "05-zhengchang-renti-xue",
+ "title": "正常人体学",
+ "note": "18 章 = 教材 18 章（1:1）。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gaishu-yu-cengci",
+   "title": "正常人体学概述与人体构造层次",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-xibao-yu-jiben-zuzhi",
+   "title": "细胞与基本组织",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-fasheng-yu-fayu-gaishu",
+   "title": "人体发生与发育概述",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-yundong-xitong",
+   "title": "运动系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-xiaohua-xitong",
+   "title": "消化系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-huxi-xitong",
+   "title": "呼吸系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-miniao-xitong",
+   "title": "泌尿系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-shengzhi-xitong",
+   "title": "生殖系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-maiguan-xitong",
+   "title": "脉管系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-ganjue-qiguan",
+   "title": "感觉器官",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-shenjing-xitong",
+   "title": "神经系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-neifenmi-xitong",
+   "title": "内分泌系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-xueye-yu-neihuanjing",
+   "title": "血液与内环境稳态",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-xunhuan-huxi-tiaojie",
+   "title": "血液循环与呼吸功能调节",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-xiaohua-nengliang-daixie",
+   "title": "消化吸收与能量代谢",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-paixie-tiwen-tiye",
+   "title": "排泄与体温与体液调节",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-zhengti-tiaojie-baohu",
+   "title": "人体功能的整体调节与保护要求",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-pingtai-lianjie",
+   "title": "正常人体学与 tcmP 平台",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
+}

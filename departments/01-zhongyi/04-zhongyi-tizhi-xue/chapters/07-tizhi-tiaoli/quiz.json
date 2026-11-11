@@ -1,0 +1,79 @@
+{
+  "lesson": "07-tizhi-tiaoli",
+  "title": "体质调理与治未病：以平为期",
+  "subject": "04-zhongyi-tizhi-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "体质调理的目标是？",
+      "options": [
+        "以平为期，回到平和",
+        "把某一项推到极致",
+        "消除所有证候",
+        "长期服药"
+      ],
+      "correct": 0,
+      "explanation": "本章核心原则。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么「忌」比「宜」更重要？",
+      "options": [
+        "收益多半来自去掉持续刺激",
+        "因为忌口简单",
+        "因为药物无效",
+        "因为规范要求"
+      ],
+      "correct": 0,
+      "explanation": "持续刺激不断，补也无益。"
+    },
+    {
+      "stage": "check",
+      "question": "三条共同原则不包括？",
+      "options": [
+        "速效为先",
+        "以平为期",
+        "缓图为法",
+        "三辨合一"
+      ],
+      "correct": 0,
+      "explanation": "体质改变以年计。"
+    },
+    {
+      "stage": "check",
+      "question": "治未病三落点是？",
+      "options": [
+        "未病先防、既病防变、瘥后防复",
+        "早、中、晚",
+        "轻、中、重",
+        "上、中、下"
+      ],
+      "correct": 0,
+      "explanation": "本章第三节。"
+    },
+    {
+      "stage": "post",
+      "question": "「三辨合一」指哪三辨？",
+      "options": [
+        "辨体、辨病、辨证",
+        "辨寒热、辨虚实、辨表里",
+        "辨气血、辨脏腑、辨经络",
+        "辨体质、辨年龄、辨性别"
+      ],
+      "correct": 0,
+      "explanation": "只辨体会漏急症，只辨证会忽略长期倾向。"
+    },
+    {
+      "stage": "post",
+      "question": "本章为何不给疗效承诺？",
+      "options": [
+        "调养效果需长期随访，本课程无此类数据",
+        "因为无方药",
+        "因为不重视",
+        "因为规范禁止"
+      ],
+      "correct": 0,
+      "explanation": "这是与养生科普的分界。"
+    }
+  ]
+}

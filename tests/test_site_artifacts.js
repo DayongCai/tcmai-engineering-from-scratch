@@ -31,8 +31,11 @@ test('site/data.js 存在且可执行，挂载 TCMAI_DATA', () => {
   assert.ok(fs.existsSync(path.join(SITE, 'data.js')), '缺 site/data.js —— 先跑 node site/build.js');
   const w = loadGenerated('data.js');
   assert.ok(w.TCMAI_DATA, 'data.js 未挂载 window.TCMAI_DATA');
-  assert.strictEqual(w.TCMAI_DATA.departments.length, 8);
-  assert.strictEqual(w.TCMAI_DATA.counts.subjects, 120);
+  // 院系数 / 学科数都从单一事实来源取：写死会在扩科后静默说谎（2026-10 扩 09-jichu，8→9 / 120→135）
+  const curRaw = JSON.parse(fs.readFileSync(path.join(ROOT, 'curriculum.json'), 'utf8'));
+  assert.strictEqual(w.TCMAI_DATA.departments.length, curRaw.departments.length);
+  const expectedSubjects = curRaw.departments.reduce((a, d) => a + d.subjects.length, 0);
+  assert.strictEqual(w.TCMAI_DATA.counts.subjects, expectedSubjects);
   assert.strictEqual(w.TCMAI_DATA.semesterPlan.length, 10);
 });
 

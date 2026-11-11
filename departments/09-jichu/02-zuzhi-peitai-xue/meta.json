@@ -1,0 +1,32 @@
+{
+  "slug": "02-zuzhi-peitai-xue",
+  "title": "组织学与胚胎学",
+  "en": "Histology & Embryology",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 122,
+  "type": "Core",
+  "semester": 1,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "组织切片→图像分类 / 胚胎分期→时序建模",
+  "chaptersTarget": 20,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/02-zuzhi-peitai-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/02-zuzhi-peitai-xue",
+    "chaptersWritten": 20,
+    "words": 454084,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#组织学与胚胎学",
+    "extractedAt": "2026-10-21"
+  }
+}

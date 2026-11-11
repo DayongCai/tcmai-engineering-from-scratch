@@ -1,0 +1,47 @@
+{
+  "slug": "21-zhongyi-linchuang-lunzhuan",
+  "title": "中医临床轮转",
+  "en": "Clinical Rotation in TCM",
+  "deptSlug": "01-zhongyi",
+  "deptTitle": "中医系",
+  "globalN": 21,
+  "type": "Clinic",
+  "semester": 9,
+  "stage": "lao",
+  "stageTitle": "老",
+  "hours": 108,
+  "bridge": "接诊记录→结构化病历 / 辨证推理→决策日志 / 出科考核→评分量表",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/01-zhongyi/21-zhongyi-linchuang-lunzhuan",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/01-zhongyi/21-zhongyi-linchuang-lunzhuan",
+    "chaptersWritten": 6,
+    "words": 5166,
+    "status": "wip",
+    "layer": "handbook",
+    "contract": "handbook-v1",
+    "origin": "handbook",
+    "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
+    "extractedAt": "2026-11-09"
+  },
+  "standards": {
+    "path": "standards/lunzhuan",
+    "derived": true,
+    "bases": [
+      "standards/neike",
+      "standards/zhenghou"
+    ],
+    "ke": 5,
+    "units": 6,
+    "diseases": 38,
+    "actions": 190,
+    "fang": 179
+  }
+}

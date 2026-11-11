@@ -4,63 +4,183 @@
   "chapters": [
     {
       "n": 1,
-      "slug": "01-zhenghou-gainian",
-      "title": "证候的概念：症状群还是推理节点",
-      "status": "📋"
+      "slug": "01-xulun",
+      "title": "证候是什么：132 个证候的实测",
+      "status": "🚧",
+      "families": [
+        "气虚",
+        "阳虚",
+        "血虚",
+        "阴虚",
+        "血热",
+        "血瘀",
+        "湿热",
+        "痰湿",
+        "热毒",
+        "气滞",
+        "风寒",
+        "风热",
+        "正虚邪恋",
+        "其他"
+      ]
     },
     {
       "n": 2,
       "slug": "02-goucheng-yaosu",
-      "title": "证候的构成要素：病性、病位、病势",
-      "status": "📋"
+      "title": "构成要素：病位×病性×病势",
+      "status": "🚧",
+      "families": [
+        "气虚",
+        "阳虚",
+        "血虚",
+        "阴虚",
+        "血热",
+        "血瘀",
+        "湿热",
+        "痰湿",
+        "热毒",
+        "气滞",
+        "风寒",
+        "风热",
+        "正虚邪恋",
+        "其他"
+      ]
     },
     {
       "n": 3,
       "slug": "03-bagang-cengji",
-      "title": "八纲与脏腑辨证的层级关系",
-      "status": "📋"
+      "title": "七套辨证体系的层级与选用",
+      "status": "🚧",
+      "families": [
+        "气虚",
+        "阳虚",
+        "血虚",
+        "阴虚",
+        "血热",
+        "血瘀",
+        "湿热",
+        "痰湿",
+        "热毒",
+        "气滞",
+        "风寒",
+        "风热",
+        "正虚邪恋",
+        "其他"
+      ]
     },
     {
       "n": 4,
-      "slug": "04-mingming-guifan",
-      "title": "证候命名规范与 ICD-11 对齐",
-      "status": "📋"
+      "slug": "04-qixu-yangxu",
+      "title": "气虚与阳虚：从「不固」到「不温」",
+      "status": "🚧",
+      "families": [
+        "气虚",
+        "阳虚"
+      ]
     },
     {
       "n": 5,
-      "slug": "05-jianbie-zhenduan",
-      "title": "鉴别诊断：相似证候的区分",
-      "status": "📋"
+      "slug": "05-xuexu-yinxu",
+      "title": "血虚与阴虚：源不足与虚火",
+      "status": "🚧",
+      "families": [
+        "血虚",
+        "阴虚"
+      ]
     },
     {
       "n": 6,
-      "slug": "06-yanbian-jianmo",
-      "title": "证候演变：传变与转归的建模",
-      "status": "📋"
+      "slug": "06-xere-reduxudu",
+      "title": "血热与热毒：迫血与壅聚",
+      "status": "🚧",
+      "families": [
+        "血热",
+        "热毒"
+      ]
     },
     {
       "n": 7,
-      "slug": "07-lianghua-quanzhong",
-      "title": "证候的量化：量表与权重",
-      "status": "📋"
+      "slug": "07-tanshi-shire",
+      "title": "痰湿与湿热：同源两路",
+      "status": "🚧",
+      "families": [
+        "痰湿",
+        "湿热"
+      ]
     },
     {
       "n": 8,
-      "slug": "08-nizhuan-tuili",
-      "title": "证候与病机的逆转推理",
-      "status": "📋"
+      "slug": "08-xueyu-qizhi",
+      "title": "血瘀与气滞：不通的两种写法",
+      "status": "🚧",
+      "families": [
+        "血瘀",
+        "气滞"
+      ]
     },
     {
       "n": 9,
-      "slug": "09-shujuku-zhiliang",
-      "title": "证候数据库的设计与质量",
-      "status": "📋"
+      "slug": "09-fenghan-fengre",
+      "title": "风寒、风热与正虚邪恋：外感与残留",
+      "status": "🚧",
+      "families": [
+        "风寒",
+        "风热",
+        "正虚邪恋"
+      ]
     },
     {
       "n": 10,
-      "slug": "10-zhengju-fenji",
-      "title": "证据分级与外部验证",
-      "status": "📋"
+      "slug": "10-qita-cleanup",
+      "title": "「其他」11 证：归类失败的样本",
+      "status": "🚧",
+      "families": [
+        "其他"
+      ]
+    },
+    {
+      "n": 11,
+      "slug": "11-mingming-guifan",
+      "title": "命名规范与 TM1 对齐",
+      "status": "🚧",
+      "families": [
+        "气虚",
+        "阳虚",
+        "血虚",
+        "阴虚",
+        "血热",
+        "血瘀",
+        "湿热",
+        "痰湿",
+        "热毒",
+        "气滞",
+        "风寒",
+        "风热",
+        "正虚邪恋",
+        "其他"
+      ]
+    },
+    {
+      "n": 12,
+      "slug": "12-jianbie-yanbian-lianghua",
+      "title": "鉴别、演变与量化",
+      "status": "🚧",
+      "families": [
+        "气虚",
+        "阳虚",
+        "血虚",
+        "阴虚",
+        "血热",
+        "血瘀",
+        "湿热",
+        "痰湿",
+        "热毒",
+        "气滞",
+        "风寒",
+        "风热",
+        "正虚邪恋",
+        "其他"
+      ]
     }
   ]
 }

@@ -1,0 +1,32 @@
+{
+  "slug": "16-jiqi-xuexi",
+  "title": "机器学习",
+  "en": "Machine Learning",
+  "deptSlug": "07-zhineng",
+  "deptTitle": "智能系",
+  "globalN": 122,
+  "type": "Build",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "模型选择→交叉验证 / 特征→表示学习",
+  "chaptersTarget": 16,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/07-zhineng/16-jiqi-xuexi",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/07-zhineng/16-jiqi-xuexi",
+    "chaptersWritten": 16,
+    "words": 216088,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#机器学习",
+    "extractedAt": "2026-10-21"
+  }
+}

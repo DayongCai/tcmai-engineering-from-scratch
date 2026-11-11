@@ -2,7 +2,7 @@
 /**
  * build_doc_indexes.js — 由 curriculum.json 生成院系索引文件
  *
- *   departments/README.md          八院系总览 + 学期排课视图
+ *   departments/README.md          九院系总览 + 学期排课视图
  *   departments/NN-slug/README.md  单院系学科清单（含文件系统探测的进度）
  *
  * 生成物，勿手工编辑。CI 在 main 分支上重建。
@@ -22,9 +22,9 @@ function glyph(u) {
 }
 
 // ── departments/README.md ──
-let out = `# 八院系 · 院系地图
+let out = `# 九院系 · 院系地图
 
-> 1 领域（中医药）· 8 院系 · 120 学科 · 10 学期 · 5 阶段
+> 1 领域（中医药）· ${cur.counts.departments} 院系 · ${cur.counts.subjects} 学科 · ${cur.domain.scale.semesters} 学期 · ${cur.stages.length} 阶段
 
 ## 生长壮老已 × 学期
 
@@ -97,7 +97,9 @@ for (const d of cur.departments) {
   let s = `# ${d.icon} ${d.title}\n\n`;
   s += `> **${d.en}** · ${d.focus}\n\n`;
   s += `| 指标 | 数值 |\n|------|------|\n`;
-  s += `| 学科数 | ${d.subjects.length} |\n| 总学时 | ${d.hours} |\n| 章节目标 | ${d.chapters} |\n`;
+  const electiveN = d.subjects.filter((x) => x.elective).length;
+  const requiredN = d.subjects.length - electiveN;
+  s += `| 学科数 | ${d.subjects.length}（必修 ${requiredN}${electiveN ? ` + 选修 ${electiveN}` : ''}） |\n| 总学时 | ${d.hours} |\n| 章节目标 | ${d.chapters} |\n`;
   s += `| 已建章节 | ${built} |\n| 涉及学期 | ${[...new Set(d.subjects.map((x) => x.semester))].sort((a, b) => a - b).map((x) => `第${x}`).join(', ')} |\n\n`;
 
   s += `## 学科清单\n\n`;
@@ -106,7 +108,8 @@ for (const d of cur.departments) {
   for (let i = 0; i < d.subjects.length; i += 1) {
     const sub = d.subjects[i];
     const x = st[i];
-    s += `| ${String(sub.n).padStart(2, '0')} | [${sub.title}](${sub.slug}/) | ${sub.en} | ${sub.type} | ${sub.semester} | ${sub.hours} | ${x.built}/${sub.chapters} | ${sub.bridge} | ${x.glyph} |\n`;
+    // 选修课按内容相关性挂在院系下，必须标出来 —— 不标会让读者以为管理系必修有 24 门
+    s += `| ${String(sub.n).padStart(2, '0')} | [${sub.title}](${sub.slug}/) | ${sub.en} | ${sub.type}${sub.elective ? '（选修）' : ''} | ${sub.semester} | ${sub.hours} | ${x.built}/${sub.chapters} | ${sub.bridge} | ${x.glyph} |\n`;
   }
 
   s += `\n## 类型分布\n\n`;
@@ -122,7 +125,7 @@ for (const d of cur.departments) {
   for (const [t, n] of Object.entries(byType)) s += `| ${t} | ${n} | ${typeNote[t] || ''} |\n`;
 
   s += `\n## 学科创建\n\n\`\`\`bash\nnode scripts/scaffold_subject.js --all\nnode scripts/scaffold_chapter.js ${d.slug}/<subject-slug> 01-<chapter-slug> "章节标题"\n\`\`\`\n\n`;
-  s += `← [返回八院系总览](../README.md)\n`;
+  s += `← [返回九院系总览](../README.md)\n`;
 
   fs.writeFileSync(path.join(deptDir, 'README.md'), s, 'utf8');
   console.log(`  ✅ ${d.path}/README.md`);

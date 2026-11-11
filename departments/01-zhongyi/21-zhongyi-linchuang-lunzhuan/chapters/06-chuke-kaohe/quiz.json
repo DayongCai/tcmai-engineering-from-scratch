@@ -1,0 +1,79 @@
+{
+  "lesson": "06-chuke-kaohe",
+  "title": "出科考核与病例复盘（含结构化病历）",
+  "subject": "21-zhongyi-linchuang-lunzhuan",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "出科考核考哪三件？",
+      "options": [
+        "必修病、代表方、数值判据",
+        "背诵、笔试、论文",
+        "态度、出勤、纪律",
+        "病例数、操作数、论文"
+      ],
+      "correct": 0,
+      "explanation": "都可对账。"
+    },
+    {
+      "stage": "check",
+      "question": "五科合计的病数与动作数？",
+      "options": [
+        "38 病 / 190 项",
+        "30 病 / 150 项",
+        "45 病 / 225 项",
+        "60 病 / 300 项"
+      ],
+      "correct": 0,
+      "explanation": "五科相加。"
+    },
+    {
+      "stage": "check",
+      "question": "结构化病历五栏中的关键一栏是？",
+      "options": [
+        "缺项说明（允许写「无」）",
+        "主诉",
+        "既往史",
+        "家族史"
+      ],
+      "correct": 0,
+      "explanation": "不允许留空或编造。"
+    },
+    {
+      "stage": "check",
+      "question": "病例复盘的合格线是？",
+      "options": [
+        "病、证、方三者闭合且说出排除理由",
+        "讲得流畅",
+        "背得全",
+        "写得长"
+      ],
+      "correct": 0,
+      "explanation": "四环含反证。"
+    },
+    {
+      "stage": "post",
+      "question": "脾胃科数值 0 时学生若报出数字，说明？",
+      "options": [
+        "没读懂教材，也没诚实记账",
+        "更用功",
+        "文献补充",
+        "教材错了"
+      ],
+      "correct": 0,
+      "explanation": "缺口须显式写。"
+    },
+    {
+      "stage": "post",
+      "question": "两处必须公开的缺口是？",
+      "options": [
+        "脑病科证候库 0、脾胃科数值 0",
+        "字数少、方数少",
+        "病数少、动作少",
+        "无缺口"
+      ],
+      "correct": 0,
+      "explanation": "写进考核单比补假数字有用。"
+    }
+  ]
+}

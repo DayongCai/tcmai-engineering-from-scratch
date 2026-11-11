@@ -1,0 +1,34 @@
+{
+  "slug": "16-gushang-linchuang-lunzhuan",
+  "title": "骨伤临床轮转",
+  "en": "Orthopedics & Traumatology Rotation",
+  "deptSlug": "04-gushang",
+  "deptTitle": "骨伤系",
+  "globalN": 80,
+  "type": "Clinic",
+  "semester": 9,
+  "stage": "lao",
+  "stageTitle": "老",
+  "hours": 108,
+  "bridge": "复位方案→参数化步骤 / 影像→测量指标 / 随访→功能评分",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/04-gushang/16-gushang-linchuang-lunzhuan",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/04-gushang/16-gushang-linchuang-lunzhuan",
+    "chaptersWritten": 6,
+    "words": 3550,
+    "status": "wip",
+    "layer": "handbook",
+    "contract": "handbook-v1",
+    "origin": "handbook",
+    "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
+    "extractedAt": "2026-11-09"
+  }
+}

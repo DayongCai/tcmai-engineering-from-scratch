@@ -1,0 +1,273 @@
+{
+  "about": "7 条「近名」证候的人工判定表：教材证名 × ICD-11 TM1 最近的单元，逐条判「差在病位、病性，还是只差词面」。判定完，coverage 的②档从「待人工」变成「已判定」。",
+  "generated": "2026-10-28",
+  "basis": {
+    "file": "standards/zhenduan/coverage.json",
+    "note": "本表的 7 条**就是** coverage.json 里 tier=near 的那 7 条；改编 coverage 必须同步改本表，门会比对。",
+    "inputs": {
+      "bzu": "standards/zhenduan/bzu.json",
+      "zhNames": "standards/icd11/zh-names.json（TM1 472 条，其中英文含 pattern 的 254 条为证候单元）",
+      "entities": "data/icd11/entities.ndjson"
+    }
+  },
+  "rule": {
+    "病位": "证候作用的位置：脏腑（肝/心/脾/肺/肾/胃/大肠/膀胱…）、形体（筋骨/肌肤/经络）、部位（腰/头/胸胁）",
+    "病性": "证的属性：寒热虚实、气血水湿痰食、风寒暑湿燥火、气滞气逆气虚、痰湿痰浊寒痰等",
+    "options": {
+      "word-only": "仅词面相近——病位相同、病性相同，只是两套体系用了不同名字，可视为同一证的不同命名",
+      "position": "病位不同——病性相同或相近，但作用部位不是一处（如教材跨脏腑，TM1 只取其中一脏）",
+      "nature": "病性不同——病位相同，但证的属性不同（如气 vs 火、痰湿 vs 痰浊/寒痰）"
+    },
+    "notAllowed": "不许判「等价」：本表只回答「为什么不是同名单元」，不给跨体系等价结论（那属 equivalence 层，另有规格）"
+  },
+  "entries": [
+    {
+      "id": "NJ-01",
+      "bing": "呕吐",
+      "zheng": "肝气犯胃证",
+      "bzuCode": "BZ-B11-Z03",
+      "textbookSide": {
+        "position": "肝、胃",
+        "nature": "气（肝气郁滞，横逆犯胃）"
+      },
+      "tm1Nearest": {
+        "code": "SF5L",
+        "zh": "肝火犯胃证",
+        "en": "Liver fire invading stomach pattern (TM1)"
+      },
+      "alsoConsidered": [
+        {
+          "code": "SF53",
+          "zh": "肝气虚证"
+        },
+        {
+          "code": "SF57",
+          "zh": "肝气郁结证"
+        }
+      ],
+      "tm1Side": {
+        "position": "肝、胃",
+        "nature": "火"
+      },
+      "judgement": "nature",
+      "why": "病位一致（都是肝与胃），差在病性：教材是「气」郁横逆，TM1 近名单元是「火」——气与火是不同病性，不能互代。SF57 肝气郁结证病性是气但不犯胃（无胃这一病位），SF53 肝气虚证是虚证。故 TM1 无「肝气犯胃」这一证。",
+      "consequence": "教材此证在 ICD-11 无独立单元；引用只能引病（呕吐）或按「肝气郁 + 犯胃」两个要素拼，不得引 SF5L 充当。",
+      "positionDiff": false,
+      "natureDiff": true
+    },
+    {
+      "id": "NJ-02",
+      "bing": "泄泻",
+      "zheng": "湿热蕴结证",
+      "bzuCode": "BZ-B12-Z06",
+      "textbookSide": {
+        "position": "肠道（病名泄泻已限定部位）",
+        "nature": "湿热"
+      },
+      "tm1Nearest": {
+        "code": "SF8G",
+        "zh": "大肠湿热证",
+        "en": "Large intestine dampness-heat pattern (TM1)"
+      },
+      "alsoConsidered": [
+        {
+          "code": "SF78",
+          "zh": "湿热蕴脾证"
+        },
+        {
+          "code": "SF5A",
+          "zh": "肝胆湿热证"
+        },
+        {
+          "code": "SF5B",
+          "zh": "肝经湿热证"
+        }
+      ],
+      "tm1Side": {
+        "position": "大肠",
+        "nature": "湿热"
+      },
+      "judgement": "word-only",
+      "why": "病位与病性都对得上：教材「湿热蕴结」在泄泻语境下部位即肠道，TM1 有专门的「大肠湿热证 SF8G」，两者是同一证在不同体系里的命名差异；教材没写部位，是因为病名（泄泻）已经限定了。",
+      "consequence": "这是 7 条里最接近的一条：可视为同证异名（word-only），但**仍不写成等价**——教材证名不带部位，TM1 带部位，引用时须说明「教材证名＋病名共同限定部位」。",
+      "positionDiff": false,
+      "natureDiff": false
+    },
+    {
+      "id": "NJ-03",
+      "bing": "淋证",
+      "zheng": "湿热蕴结证",
+      "bzuCode": "BZ-B18-Z06",
+      "textbookSide": {
+        "position": "膀胱、水道（病名淋证限定）",
+        "nature": "湿热"
+      },
+      "tm1Nearest": {
+        "code": "SF9G",
+        "zh": "膀胱湿热证",
+        "en": "Urinary bladder dampness-heat pattern (TM1)"
+      },
+      "alsoConsidered": [
+        {
+          "code": "SF78",
+          "zh": "湿热蕴脾证"
+        },
+        {
+          "code": "SF5A",
+          "zh": "肝胆湿热证"
+        }
+      ],
+      "tm1Side": {
+        "position": "膀胱",
+        "nature": "湿热"
+      },
+      "judgement": "word-only",
+      "why": "与 NJ-02 同型：淋证病位在膀胱，教材的「湿热蕴结证」在淋证语境下就是膀胱湿热；TM1 的 SF9G 病位、病性完全对得上，差别只在命名粒度。",
+      "consequence": "可视为同证异名（word-only）；引用时同上，须写清「教材证名＋淋证」才等于膀胱湿热。",
+      "positionDiff": false,
+      "natureDiff": false
+    },
+    {
+      "id": "NJ-04",
+      "bing": "便秘",
+      "zheng": "脾胃气虚证",
+      "bzuCode": "BZ-B13-Z05",
+      "textbookSide": {
+        "position": "脾、胃（两脏同病）",
+        "nature": "气虚"
+      },
+      "tm1Nearest": {
+        "code": "SF7C",
+        "zh": "胃气虚证",
+        "en": "Stomach qi deficiency pattern (TM1)"
+      },
+      "alsoConsidered": [
+        {
+          "code": "SE90",
+          "zh": "气虚证"
+        },
+        {
+          "code": "SF78",
+          "zh": "湿热蕴脾证"
+        }
+      ],
+      "tm1Side": {
+        "position": "胃（只取一腑）",
+        "nature": "气虚"
+      },
+      "judgement": "position",
+      "why": "病性同为气虚，差在病位：教材是「脾 + 胃」两脏同病，TM1 把脾胃分列——最近的 SF7C 只覆盖胃，SE90 是不带部位的通用气虚证，两者都不能覆盖「脾胃」这一组合。",
+      "consequence": "教材此证在 ICD-11 无独立单元；若必须挂码，只能挂更宽的 SE90 并注明「教材为脾胃同病，TM1 无对应组合单元」。",
+      "positionDiff": true,
+      "natureDiff": false
+    },
+    {
+      "id": "NJ-05",
+      "bing": "腰痛",
+      "zheng": "风寒湿痹证",
+      "bzuCode": "BZ-B19-Z13",
+      "textbookSide": {
+        "position": "腰、筋骨经络",
+        "nature": "风寒湿（痹阻）"
+      },
+      "tm1Nearest": {
+        "code": "SF7B",
+        "zh": "寒湿困脾证",
+        "en": "Cold-dampness encumbering spleen pattern (TM1)"
+      },
+      "alsoConsidered": [
+        {
+          "code": "SF8C",
+          "zh": "风寒束肺证"
+        }
+      ],
+      "tm1Side": {
+        "position": "脾 / 肺（脏腑）",
+        "nature": "寒湿 / 风寒"
+      },
+      "judgement": "position",
+      "why": "病性方向相近（寒湿、风寒），但病位完全不同：教材的痹证在腰与筋骨经络，TM1 的寒湿、风寒都挂在脏腑上（困脾、束肺）。TM1 里没有「痹」这一层单元，也没有以腰为病位的证候单元。",
+      "consequence": "教材此证在 ICD-11 无对应单元，差了整整一层（形体—经络层缺席）；只能引病名（腰痛 SC61）。",
+      "positionDiff": true,
+      "natureDiff": false
+    },
+    {
+      "id": "NJ-06",
+      "bing": "喘证",
+      "zheng": "痰湿阻肺证",
+      "bzuCode": "BZ-B04-Z07",
+      "textbookSide": {
+        "position": "肺",
+        "nature": "痰湿"
+      },
+      "tm1Nearest": {
+        "code": "SF86",
+        "zh": "痰浊阻肺证",
+        "en": "Phlegm turbidity obstructing lung pattern (TM1)"
+      },
+      "alsoConsidered": [
+        {
+          "code": "SF85",
+          "zh": "寒痰阻肺证"
+        },
+        {
+          "code": "SF7G",
+          "zh": "湿阻肠道证"
+        }
+      ],
+      "tm1Side": {
+        "position": "肺（SF86/SF85 同）",
+        "nature": "痰浊 / 寒痰"
+      },
+      "judgement": "nature",
+      "why": "病位一致（肺），差在痰的性质：教材是「痰湿」，TM1 分得更细——痰浊（SF86，重浊黏滞）与寒痰（SF85，兼寒）。痰湿、痰浊、寒痰是三种病性描述，不能互相顶替。",
+      "consequence": "教材此证在 ICD-11 无同名单元；最近的 SF86 是「痰浊」不是「痰湿」，引用须写明病性差异。",
+      "positionDiff": false,
+      "natureDiff": true
+    },
+    {
+      "id": "NJ-07",
+      "bing": "哮病",
+      "zheng": "痰湿阻肺证",
+      "bzuCode": "BZ-B03-Z07",
+      "textbookSide": {
+        "position": "肺",
+        "nature": "痰湿"
+      },
+      "tm1Nearest": {
+        "code": "SF86",
+        "zh": "痰浊阻肺证",
+        "en": "Phlegm turbidity obstructing lung pattern (TM1)"
+      },
+      "alsoConsidered": [
+        {
+          "code": "SF85",
+          "zh": "寒痰阻肺证"
+        },
+        {
+          "code": "SF7G",
+          "zh": "湿阻肠道证"
+        }
+      ],
+      "tm1Side": {
+        "position": "肺（SF86/SF85 同）",
+        "nature": "痰浊 / 寒痰"
+      },
+      "judgement": "nature",
+      "why": "与 NJ-06 同证同名（教材在喘证、哮病下用同一个证名），判定随之一致：病位同、病性（痰湿 vs 痰浊/寒痰）不同。",
+      "consequence": "同 NJ-06：无同名单元，最近的 SF86 病性不同。",
+      "positionDiff": false,
+      "natureDiff": true
+    }
+  ],
+  "summary": {
+    "total": 7,
+    "byJudgement": {
+      "word-only": 2,
+      "position": 2,
+      "nature": 3
+    },
+    "pending": 0,
+    "reading": "7 条全部判完：2 条只是命名粒度差（同证异名：泄泻/淋证—大肠湿热、膀胱湿热），2 条病位不同（便秘—脾胃 vs 胃；腰痛—腰与筋骨 vs 脏腑），3 条病性不同（呕吐—气 vs 火；喘证/哮病—痰湿 vs 痰浊·寒痰）。"
+  }
+}

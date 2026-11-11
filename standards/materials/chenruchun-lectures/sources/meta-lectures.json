@@ -1,0 +1,252 @@
+{
+  "$generated": "Temp/bili 批处理产物汇总（每讲抽帧与分段统计）",
+  "lectures": [
+    {
+      "no": 20,
+      "frames": 5980,
+      "stableSegments": 705,
+      "textSegments": 376,
+      "outlinedThreshold": 0.0225,
+      "coverageRatio": 0.9997,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 9,
+      "frames": 6304,
+      "stableSegments": 613,
+      "textSegments": 322,
+      "outlinedThreshold": 0.01687,
+      "coverageRatio": 1,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 16,
+      "frames": 7006,
+      "stableSegments": 811,
+      "textSegments": 461,
+      "outlinedThreshold": 0.02838,
+      "coverageRatio": 1,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 17,
+      "frames": 5649,
+      "stableSegments": 732,
+      "textSegments": 443,
+      "outlinedThreshold": 0.02733,
+      "coverageRatio": 0.9998,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 21,
+      "frames": 6912,
+      "stableSegments": 699,
+      "textSegments": 401,
+      "outlinedThreshold": 0.02322,
+      "coverageRatio": 0.9997,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 22,
+      "frames": 4122,
+      "stableSegments": 432,
+      "textSegments": 261,
+      "outlinedThreshold": 0.02562,
+      "coverageRatio": 0.9995,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 23,
+      "frames": 7092,
+      "stableSegments": 950,
+      "textSegments": 636,
+      "outlinedThreshold": 0.02076,
+      "coverageRatio": 1,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 24,
+      "frames": 2177,
+      "stableSegments": 260,
+      "textSegments": 162,
+      "outlinedThreshold": 0.02476,
+      "coverageRatio": 0.9995,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 6,
+      "frames": 6738,
+      "stableSegments": 803,
+      "textSegments": 462,
+      "outlinedThreshold": 0.01735,
+      "coverageRatio": 0.9997,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 7,
+      "frames": 6479,
+      "stableSegments": 851,
+      "textSegments": 462,
+      "outlinedThreshold": 0.01947,
+      "coverageRatio": 0.9998,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 8,
+      "frames": 6738,
+      "stableSegments": 803,
+      "textSegments": 462,
+      "outlinedThreshold": 0.01735,
+      "coverageRatio": 0.9997,
+      "picks": 20,
+      "samplesRead": 0
+    },
+    {
+      "no": 11,
+      "frames": 7699,
+      "stableSegments": 1020,
+      "textSegments": 554,
+      "outlinedThreshold": 0.0194,
+      "coverageRatio": 0.9999,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 12,
+      "frames": 5618,
+      "stableSegments": 729,
+      "textSegments": 381,
+      "outlinedThreshold": 0.02441,
+      "coverageRatio": 1,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 14,
+      "frames": 5693,
+      "stableSegments": 467,
+      "textSegments": 269,
+      "outlinedThreshold": 0.02493,
+      "coverageRatio": 0.9998,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 15,
+      "frames": 5394,
+      "stableSegments": 512,
+      "textSegments": 319,
+      "outlinedThreshold": 0.02575,
+      "coverageRatio": 1,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 18,
+      "frames": 5999,
+      "stableSegments": 704,
+      "textSegments": 449,
+      "outlinedThreshold": 0.02772,
+      "coverageRatio": 0.9998,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 1,
+      "frames": 5782,
+      "stableSegments": 878,
+      "textSegments": 521,
+      "outlinedThreshold": 0.02085,
+      "coverageRatio": 0.9997,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 2,
+      "frames": 8029,
+      "stableSegments": 650,
+      "textSegments": 358,
+      "outlinedThreshold": 0.02136,
+      "coverageRatio": 0.9999,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 3,
+      "frames": 6121,
+      "stableSegments": 606,
+      "textSegments": 350,
+      "outlinedThreshold": 0.01662,
+      "coverageRatio": 0.9998,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 4,
+      "frames": 7009,
+      "stableSegments": 988,
+      "textSegments": 574,
+      "outlinedThreshold": 0.01955,
+      "coverageRatio": 0.9999,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 5,
+      "frames": 2344,
+      "stableSegments": 318,
+      "textSegments": 177,
+      "outlinedThreshold": 0.01604,
+      "coverageRatio": 0.9991,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 10,
+      "frames": 6003,
+      "stableSegments": 583,
+      "textSegments": 338,
+      "outlinedThreshold": 0.01723,
+      "coverageRatio": 0.9998,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 13,
+      "frames": 7635,
+      "stableSegments": 1009,
+      "textSegments": 709,
+      "outlinedThreshold": 0.01951,
+      "coverageRatio": 0.9999,
+      "picks": 20,
+      "samplesRead": 20
+    },
+    {
+      "no": 19,
+      "frames": 7509,
+      "stableSegments": 941,
+      "textSegments": 575,
+      "outlinedThreshold": 0.02253,
+      "coverageRatio": 0.9999,
+      "picks": 20,
+      "samplesRead": 0
+    }
+  ],
+  "totals": {
+    "frames": 146032,
+    "stableSegments": 17064,
+    "textSegments": 10022,
+    "picks": 480,
+    "samplesRead": 440
+  }
+}

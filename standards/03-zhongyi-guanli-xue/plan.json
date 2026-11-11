@@ -1,0 +1,154 @@
+{
+ "title": "中医管理学",
+ "note": "合成课：管理原理取《管理学基础》（17 课），卫生体制与中医专项取《卫生事业管理》（04 课）与《医院管理学》（06 课）的中医章。",
+ "levels": {
+  "原理与决策": [
+   1,
+   2
+  ],
+  "组织与人力": [
+   3,
+   4
+  ],
+  "质量与绩效": [
+   5,
+   6
+  ],
+  "中医专项": [
+   7,
+   8
+  ]
+ },
+ "chapters": [
+  {
+   "title": "中医机构的管理原理",
+   "picks": [
+    [
+     "17-guanli-xue-jichu",
+     1
+    ],
+    [
+     "17-guanli-xue-jichu",
+     3
+    ]
+   ]
+  },
+  {
+   "title": "中医机构的决策与计划",
+   "picks": [
+    [
+     "17-guanli-xue-jichu",
+     4
+    ],
+    [
+     "17-guanli-xue-jichu",
+     5
+    ]
+   ]
+  },
+  {
+   "title": "组织设计与人力资源",
+   "picks": [
+    [
+     "17-guanli-xue-jichu",
+     7
+    ],
+    [
+     "17-guanli-xue-jichu",
+     9
+    ]
+   ]
+  },
+  {
+   "title": "领导、激励与沟通",
+   "picks": [
+    [
+     "17-guanli-xue-jichu",
+     10
+    ],
+    [
+     "17-guanli-xue-jichu",
+     11
+    ]
+   ]
+  },
+  {
+   "title": "质量控制与绩效评价",
+   "picks": [
+    [
+     "17-guanli-xue-jichu",
+     13
+    ],
+    [
+     "04-weisheng-shiye-guanli",
+     7
+    ]
+   ]
+  },
+  {
+   "title": "中医药机构的管理专题",
+   "picks": [
+    [
+     "17-guanli-xue-jichu",
+     17
+    ],
+    [
+     "06-yiyuan-guanli-xue",
+     9
+    ]
+   ]
+  },
+  {
+   "title": "中医医院的运行管理",
+   "picks": [
+    [
+     "06-yiyuan-guanli-xue",
+     3
+    ],
+    [
+     "06-yiyuan-guanli-xue",
+     5
+    ]
+   ]
+  },
+  {
+   "title": "中医政策与治理趋势",
+   "picks": [
+    [
+     "04-weisheng-shiye-guanli",
+     1
+    ],
+    [
+     "04-weisheng-shiye-guanli",
+     8
+    ]
+   ]
+  }
+ ],
+ "views": {
+  "制度与规则": [
+   "制度",
+   "政策",
+   "法规",
+   "规定",
+   "标准",
+   "职责"
+  ],
+  "组织与流程": [
+   "组织",
+   "流程",
+   "部门",
+   "岗位",
+   "运行",
+   "协作"
+  ],
+  "绩效与评价": [
+   "绩效",
+   "评价",
+   "指标",
+   "成本",
+   "质量",
+   "效率"
+  ]
+ }
+}

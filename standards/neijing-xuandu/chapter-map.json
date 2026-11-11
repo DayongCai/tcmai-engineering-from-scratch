@@ -1,0 +1,649 @@
+{
+ "book": "黄帝内经",
+ "xuandu": {
+  "dir": "standards/neijing-xuandu",
+  "pians": 162,
+  "hanzi": 136032
+ },
+ "full": {
+  "file": "standards/materials/neijing-quanwen/content.json",
+  "pians": 162,
+  "hanzi": 155206
+ },
+ "alias": {
+  "五脏生成": "五藏生成",
+  "五脏别论": "五藏别论",
+  "玉机真脏论": "玉机真藏论",
+  "脏气法时论": "藏气法时论",
+  "遗篇·刺法论": "刺法论",
+  "遗篇·本病论": "本病论",
+  "邪气脏腑病形": "邪气藏府病形",
+  "本脏": "本藏",
+  "背腧": "背俞",
+  "上膈": "上隔",
+  "忧恚无言": "忧患无言"
+ },
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-suwen-chengshu",
+   "pians": [
+    {
+     "title": "上古天真论",
+     "fullTitle": "上古天真论",
+     "locator": "黄帝内经·素问·上古天真论（素问第1篇）",
+     "xuanduHanzi": 905,
+     "fullHanzi": 906,
+     "ratio": 0.983,
+     "edition": "full"
+    },
+    {
+     "title": "阴阳应象大论",
+     "fullTitle": "阴阳应象大论",
+     "locator": "黄帝内经·素问·阴阳应象大论（素问第5篇）",
+     "xuanduHanzi": 1885,
+     "fullHanzi": 2031,
+     "ratio": 0.949,
+     "edition": "full"
+    },
+    {
+     "title": "至真要大论",
+     "fullTitle": "至真要大论",
+     "locator": "黄帝内经·素问·至真要大论（素问第74篇）",
+     "xuanduHanzi": 2421,
+     "fullHanzi": 7018,
+     "ratio": 0.191,
+     "edition": "excerpt"
+    },
+    {
+     "title": "九针十二原",
+     "fullTitle": "九针十二原",
+     "locator": "黄帝内经·灵枢·九针十二原（灵枢第1篇）",
+     "xuanduHanzi": 1578,
+     "fullHanzi": 1602,
+     "ratio": 0.974,
+     "edition": "full"
+    }
+   ],
+   "totals": {
+    "xuanduHanzi": 6789,
+    "fullHanzi": 11557,
+    "coverage": 0.5874,
+    "excerpt": 1
+   },
+   "quotes": {
+    "lines": 1,
+    "hitFull": 1,
+    "missing": []
+   }
+  },
+  {
+   "n": 2,
+   "slug": "02-yinyang-yingxiang",
+   "pians": [
+    {
+     "title": "阴阳应象大论",
+     "fullTitle": "阴阳应象大论",
+     "locator": "黄帝内经·素问·阴阳应象大论（素问第5篇）",
+     "xuanduHanzi": 1885,
+     "fullHanzi": 2031,
+     "ratio": 0.949,
+     "edition": "full"
+    },
+    {
+     "title": "阴阳离合论",
+     "fullTitle": "阴阳离合论",
+     "locator": "黄帝内经·素问·阴阳离合论（素问第6篇）",
+     "xuanduHanzi": 455,
+     "fullHanzi": 457,
+     "ratio": 0.991,
+     "edition": "full"
+    },
+    {
+     "title": "阴阳别论",
+     "fullTitle": "阴阳别论",
+     "locator": "黄帝内经·素问·阴阳别论（素问第7篇）",
+     "xuanduHanzi": 640,
+     "fullHanzi": 642,
+     "ratio": 0.988,
+     "edition": "full"
+    },
+    {
+     "title": "生气通天论",
+     "fullTitle": "生气通天论",
+     "locator": "黄帝内经·素问·生气通天论（素问第3篇）",
+     "xuanduHanzi": 875,
+     "fullHanzi": 887,
+     "ratio": 0.984,
+     "edition": "full"
+    },
+    {
+     "title": "四气调神大论",
+     "fullTitle": "四气调神大论",
+     "locator": "黄帝内经·素问·四气调神大论（素问第2篇）",
+     "xuanduHanzi": 618,
+     "fullHanzi": 618,
+     "ratio": 0.998,
+     "edition": "full"
+    }
+   ],
+   "totals": {
+    "xuanduHanzi": 4473,
+    "fullHanzi": 4635,
+    "coverage": 0.965,
+    "excerpt": 0
+   },
+   "quotes": {
+    "lines": 2,
+    "hitFull": 2,
+    "missing": []
+   }
+  },
+  {
+   "n": 3,
+   "slug": "03-zangxiang-xitong",
+   "pians": [
+    {
+     "title": "六节藏象论",
+     "fullTitle": "六节藏象论",
+     "locator": "黄帝内经·素问·六节藏象论（素问第9篇）",
+     "xuanduHanzi": 1023,
+     "fullHanzi": 1178,
+     "ratio": 0.923,
+     "edition": "full"
+    },
+    {
+     "title": "五脏生成",
+     "fullTitle": "五藏生成",
+     "locator": "黄帝内经·素问·五脏生成（素问第10篇）",
+     "xuanduHanzi": 811,
+     "fullHanzi": 857,
+     "ratio": 0.96,
+     "edition": "full"
+    },
+    {
+     "title": "五脏别论",
+     "fullTitle": "五藏别论",
+     "locator": "黄帝内经·素问·五脏别论（素问第11篇）",
+     "xuanduHanzi": 346,
+     "fullHanzi": 355,
+     "ratio": 0.936,
+     "edition": "full"
+    },
+    {
+     "title": "灵兰秘典论",
+     "fullTitle": "灵兰秘典论",
+     "locator": "黄帝内经·素问·灵兰秘典论（素问第8篇）",
+     "xuanduHanzi": 335,
+     "fullHanzi": 334,
+     "ratio": 0.99,
+     "edition": "full"
+    },
+    {
+     "title": "本脏",
+     "fullTitle": "本藏",
+     "locator": "黄帝内经·灵枢·本脏（灵枢第47篇）",
+     "xuanduHanzi": 1673,
+     "fullHanzi": 1717,
+     "ratio": 0.953,
+     "edition": "full"
+    }
+   ],
+   "totals": {
+    "xuanduHanzi": 4188,
+    "fullHanzi": 4441,
+    "coverage": 0.943,
+    "excerpt": 0
+   },
+   "quotes": {
+    "lines": 1,
+    "hitFull": 1,
+    "missing": []
+   }
+  },
+  {
+   "n": 4,
+   "slug": "04-jingmai-bielun",
+   "pians": [
+    {
+     "title": "经脉别论",
+     "fullTitle": "经脉别论",
+     "locator": "黄帝内经·素问·经脉别论（素问第21篇）",
+     "xuanduHanzi": 538,
+     "fullHanzi": 538,
+     "ratio": 0.978,
+     "edition": "full"
+    },
+    {
+     "title": "经脉",
+     "fullTitle": "经脉",
+     "locator": "黄帝内经·灵枢·经脉（灵枢第10篇）",
+     "xuanduHanzi": 3644,
+     "fullHanzi": 4479,
+     "ratio": 0.886,
+     "edition": "excerpt"
+    },
+    {
+     "title": "骨空论",
+     "fullTitle": "骨空论",
+     "locator": "黄帝内经·素问·骨空论（素问第60篇）",
+     "xuanduHanzi": 974,
+     "fullHanzi": 972,
+     "ratio": 0.991,
+     "edition": "full"
+    },
+    {
+     "title": "营气",
+     "fullTitle": "营气",
+     "locator": "黄帝内经·灵枢·营气（灵枢第16篇）",
+     "xuanduHanzi": 298,
+     "fullHanzi": 310,
+     "ratio": 0.97,
+     "edition": "full"
+    },
+    {
+     "title": "经别",
+     "fullTitle": "经别",
+     "locator": "黄帝内经·灵枢·经别（灵枢第11篇）",
+     "xuanduHanzi": 594,
+     "fullHanzi": 612,
+     "ratio": 0.973,
+     "edition": "full"
+    }
+   ],
+   "totals": {
+    "xuanduHanzi": 6048,
+    "fullHanzi": 6911,
+    "coverage": 0.8751,
+    "excerpt": 1
+   },
+   "quotes": {
+    "lines": 4,
+    "hitFull": 4,
+    "missing": []
+   }
+  },
+  {
+   "n": 5,
+   "slug": "05-bingji-shijiu",
+   "pians": [
+    {
+     "title": "至真要大论",
+     "fullTitle": "至真要大论",
+     "locator": "黄帝内经·素问·至真要大论（素问第74篇）",
+     "xuanduHanzi": 2421,
+     "fullHanzi": 7018,
+     "ratio": 0.191,
+     "edition": "excerpt"
+    },
+    {
+     "title": "调经论",
+     "fullTitle": "调经论",
+     "locator": "黄帝内经·素问·调经论（素问第62篇）",
+     "xuanduHanzi": 1990,
+     "fullHanzi": 1970,
+     "ratio": 0.962,
+     "edition": "full"
+    },
+    {
+     "title": "举痛论",
+     "fullTitle": "举痛论",
+     "locator": "黄帝内经·素问·举痛论（素问第39篇）",
+     "xuanduHanzi": 989,
+     "fullHanzi": 1001,
+     "ratio": 0.986,
+     "edition": "full"
+    }
+   ],
+   "totals": {
+    "xuanduHanzi": 5400,
+    "fullHanzi": 9989,
+    "coverage": 0.5406,
+    "excerpt": 1
+   },
+   "quotes": {
+    "lines": 1,
+    "hitFull": 1,
+    "missing": []
+   }
+  },
+  {
+   "n": 6,
+   "slug": "06-zhenfa-maiyao",
+   "pians": [
+    {
+     "title": "脉要精微论",
+     "fullTitle": "脉要精微论",
+     "locator": "黄帝内经·素问·脉要精微论（素问第17篇）",
+     "xuanduHanzi": 1448,
+     "fullHanzi": 1671,
+     "ratio": 0.924,
+     "edition": "full"
+    },
+    {
+     "title": "平人气象论",
+     "fullTitle": "平人气象论",
+     "locator": "黄帝内经·素问·平人气象论（素问第18篇）",
+     "xuanduHanzi": 1187,
+     "fullHanzi": 1189,
+     "ratio": 0.982,
+     "edition": "full"
+    },
+    {
+     "title": "五色",
+     "fullTitle": "五色",
+     "locator": "黄帝内经·灵枢·五色（灵枢第49篇）",
+     "xuanduHanzi": 1165,
+     "fullHanzi": 1235,
+     "ratio": 0.956,
+     "edition": "full"
+    },
+    {
+     "title": "诊要经终论",
+     "fullTitle": "诊要经终论",
+     "locator": "黄帝内经·素问·诊要经终论（素问第16篇）",
+     "xuanduHanzi": 675,
+     "fullHanzi": 711,
+     "ratio": 0.957,
+     "edition": "full"
+    }
+   ],
+   "totals": {
+    "xuanduHanzi": 4475,
+    "fullHanzi": 4806,
+    "coverage": 0.9311,
+    "excerpt": 0
+   },
+   "quotes": {
+    "lines": 2,
+    "hitFull": 2,
+    "missing": []
+   }
+  },
+  {
+   "n": 7,
+   "slug": "07-zhize-biaoben",
+   "pians": [
+    {
+     "title": "至真要大论",
+     "fullTitle": "至真要大论",
+     "locator": "黄帝内经·素问·至真要大论（素问第74篇）",
+     "xuanduHanzi": 2421,
+     "fullHanzi": 7018,
+     "ratio": 0.191,
+     "edition": "excerpt"
+    },
+    {
+     "title": "标本病传论",
+     "fullTitle": "标本病传论",
+     "locator": "黄帝内经·素问·标本病传论（素问第65篇）",
+     "xuanduHanzi": 679,
+     "fullHanzi": 675,
+     "ratio": 0.978,
+     "edition": "full"
+    },
+    {
+     "title": "阴阳应象大论",
+     "fullTitle": "阴阳应象大论",
+     "locator": "黄帝内经·素问·阴阳应象大论（素问第5篇）",
+     "xuanduHanzi": 1885,
+     "fullHanzi": 2031,
+     "ratio": 0.949,
+     "edition": "full"
+    },
+    {
+     "title": "异法方宜论",
+     "fullTitle": "异法方宜论",
+     "locator": "黄帝内经·素问·异法方宜论（素问第12篇）",
+     "xuanduHanzi": 361,
+     "fullHanzi": 360,
+     "ratio": 0.988,
+     "edition": "full"
+    }
+   ],
+   "totals": {
+    "xuanduHanzi": 5346,
+    "fullHanzi": 10084,
+    "coverage": 0.5301,
+    "excerpt": 1
+   },
+   "quotes": {
+    "lines": 8,
+    "hitFull": 8,
+    "missing": []
+   }
+  },
+  {
+   "n": 8,
+   "slug": "08-lunqi-qipian",
+   "pians": [
+    {
+     "title": "天元纪大论",
+     "fullTitle": "天元纪大论",
+     "locator": "黄帝内经·素问·天元纪大论（素问第66篇）",
+     "xuanduHanzi": 1089,
+     "fullHanzi": 1122,
+     "ratio": 0.965,
+     "edition": "full"
+    },
+    {
+     "title": "五运行大论",
+     "fullTitle": "五运行大论",
+     "locator": "黄帝内经·素问·五运行大论（素问第67篇）",
+     "xuanduHanzi": 2869,
+     "fullHanzi": 1666,
+     "ratio": 0.294,
+     "edition": "excerpt"
+    },
+    {
+     "title": "六微旨大论",
+     "fullTitle": "六微旨大论",
+     "locator": "黄帝内经·素问·六微旨大论（素问第68篇）",
+     "xuanduHanzi": 2342,
+     "fullHanzi": 2049,
+     "ratio": 0.34,
+     "edition": "excerpt"
+    },
+    {
+     "title": "气交变大论",
+     "fullTitle": "气交变大论",
+     "locator": "黄帝内经·素问·气交变大论（素问第69篇）",
+     "xuanduHanzi": 3020,
+     "fullHanzi": 2809,
+     "ratio": 0.84,
+     "edition": "excerpt"
+    },
+    {
+     "title": "五常政大论",
+     "fullTitle": "五常政大论",
+     "locator": "黄帝内经·素问·五常政大论（素问第70篇）",
+     "xuanduHanzi": 3474,
+     "fullHanzi": 4071,
+     "ratio": 0.887,
+     "edition": "excerpt"
+    },
+    {
+     "title": "六元正纪大论",
+     "fullTitle": "六元正纪大论",
+     "locator": "黄帝内经·素问·六元正纪大论（素问第71篇）",
+     "xuanduHanzi": 5413,
+     "fullHanzi": 9314,
+     "ratio": 0.666,
+     "edition": "excerpt"
+    },
+    {
+     "title": "至真要大论",
+     "fullTitle": "至真要大论",
+     "locator": "黄帝内经·素问·至真要大论（素问第74篇）",
+     "xuanduHanzi": 2421,
+     "fullHanzi": 7018,
+     "ratio": 0.191,
+     "edition": "excerpt"
+    },
+    {
+     "title": "遗篇·刺法论",
+     "fullTitle": "刺法论",
+     "locator": "黄帝内经·素问·遗篇·刺法论（素问第72篇）",
+     "xuanduHanzi": 1835,
+     "fullHanzi": 3038,
+     "ratio": 0.741,
+     "edition": "excerpt"
+    },
+    {
+     "title": "遗篇·本病论",
+     "fullTitle": "本病论",
+     "locator": "黄帝内经·素问·遗篇·本病论（素问第73篇）",
+     "xuanduHanzi": 1027,
+     "fullHanzi": 4014,
+     "ratio": 0.097,
+     "edition": "excerpt"
+    }
+   ],
+   "totals": {
+    "xuanduHanzi": 23490,
+    "fullHanzi": 35101,
+    "coverage": 0.6692,
+    "excerpt": 8
+   },
+   "quotes": {
+    "lines": 3,
+    "hitFull": 3,
+    "missing": []
+   }
+  },
+  {
+   "n": 9,
+   "slug": "09-lingshu-jiuzhen",
+   "pians": [
+    {
+     "title": "九针十二原",
+     "fullTitle": "九针十二原",
+     "locator": "黄帝内经·灵枢·九针十二原（灵枢第1篇）",
+     "xuanduHanzi": 1578,
+     "fullHanzi": 1602,
+     "ratio": 0.974,
+     "edition": "full"
+    },
+    {
+     "title": "官针",
+     "fullTitle": "官针",
+     "locator": "黄帝内经·灵枢·官针（灵枢第7篇）",
+     "xuanduHanzi": 1023,
+     "fullHanzi": 1032,
+     "ratio": 0.975,
+     "edition": "full"
+    },
+    {
+     "title": "小针解",
+     "fullTitle": "小针解",
+     "locator": "黄帝内经·灵枢·小针解（灵枢第3篇）",
+     "xuanduHanzi": 1003,
+     "fullHanzi": 1011,
+     "ratio": 0.98,
+     "edition": "full"
+    },
+    {
+     "title": "九针论",
+     "fullTitle": "九针论",
+     "locator": "黄帝内经·灵枢·九针论（灵枢第78篇）",
+     "xuanduHanzi": 1432,
+     "fullHanzi": 1662,
+     "ratio": 0.825,
+     "edition": "excerpt"
+    },
+    {
+     "title": "刺节真邪",
+     "fullTitle": "刺节真邪",
+     "locator": "黄帝内经·灵枢·刺节真邪（灵枢第75篇）",
+     "xuanduHanzi": 1226,
+     "fullHanzi": 2211,
+     "ratio": 0.647,
+     "edition": "excerpt"
+    },
+    {
+     "title": "针解",
+     "fullTitle": "针解",
+     "locator": "黄帝内经·素问·针解（素问第54篇）",
+     "xuanduHanzi": 524,
+     "fullHanzi": 571,
+     "ratio": 0.944,
+     "edition": "full"
+    }
+   ],
+   "totals": {
+    "xuanduHanzi": 6786,
+    "fullHanzi": 8089,
+    "coverage": 0.8389,
+    "excerpt": 2
+   },
+   "quotes": {
+    "lines": 1,
+    "hitFull": 1,
+    "missing": []
+   }
+  },
+  {
+   "n": 10,
+   "slug": "10-neijing-lianghua",
+   "pians": [
+    {
+     "title": "经脉别论",
+     "fullTitle": "经脉别论",
+     "locator": "黄帝内经·素问·经脉别论（素问第21篇）",
+     "xuanduHanzi": 538,
+     "fullHanzi": 538,
+     "ratio": 0.978,
+     "edition": "full"
+    },
+    {
+     "title": "阴阳应象大论",
+     "fullTitle": "阴阳应象大论",
+     "locator": "黄帝内经·素问·阴阳应象大论（素问第5篇）",
+     "xuanduHanzi": 1885,
+     "fullHanzi": 2031,
+     "ratio": 0.949,
+     "edition": "full"
+    },
+    {
+     "title": "至真要大论",
+     "fullTitle": "至真要大论",
+     "locator": "黄帝内经·素问·至真要大论（素问第74篇）",
+     "xuanduHanzi": 2421,
+     "fullHanzi": 7018,
+     "ratio": 0.191,
+     "edition": "excerpt"
+    },
+    {
+     "title": "六节藏象论",
+     "fullTitle": "六节藏象论",
+     "locator": "黄帝内经·素问·六节藏象论（素问第9篇）",
+     "xuanduHanzi": 1023,
+     "fullHanzi": 1178,
+     "ratio": 0.923,
+     "edition": "full"
+    },
+    {
+     "title": "九针十二原",
+     "fullTitle": "九针十二原",
+     "locator": "黄帝内经·灵枢·九针十二原（灵枢第1篇）",
+     "xuanduHanzi": 1578,
+     "fullHanzi": 1602,
+     "ratio": 0.974,
+     "edition": "full"
+    }
+   ],
+   "totals": {
+    "xuanduHanzi": 7445,
+    "fullHanzi": 12367,
+    "coverage": 0.602,
+    "excerpt": 1
+   },
+   "quotes": {
+    "lines": 1,
+    "hitFull": 1,
+    "missing": []
+   }
+  }
+ ],
+ "generated": "scripts/wire_neijing_chapters.py"
+}

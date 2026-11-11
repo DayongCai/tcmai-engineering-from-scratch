@@ -1,77 +1,65 @@
 # 针刀医学
 
-> 松解层次→解剖分层模型 / 操作规划→路径规划
+**13-zhendao-yixue** · 针灸推拿学院 · 8 章 · 39 单元 · 74,739 汉字
 
-| 项目 | 内容 |
-|------|------|
-| 院系 | 🪡 针灸系 `03-zhenjiu` |
-| 类型 | Clinic |
-| 学期 | 第 7 学期（🌳 壮·鼎盛 / 大四） |
-| 学时 | 54 |
-| 章节目标 | 8 |
-| 学科编号 | 043 / 120 |
-| 英文名 | Acupotomy Medicine |
+> 针与刀合一，风险也合一：刀口方向、深度、禁忌是第一纪律
 
-## 一、学科定位
+**课程类型：派生课（无独立教材）**。单元正文逐字取自父课，`locator` 一律 `派生·第N章·m.k`，
+`source` 记 `父课:父locator`；本课汉字**不与父课相加**。
 
-针刀医学（Acupotomy Medicine）是针灸系的核心学科，聚焦「经络腧穴—刺法灸法—针灸治疗 与推拿康复的完整链条」中的一个完整知识域。
+## 一、父课
 
-## 二、中医 → AI 桥梁
+- `cifa-jiufa`
+- `gubing`
+- `shiyan-zhenjiu`
+- `tuina`
+- `zhenjiu-xue`
+- `zhenjiu-zhiliao`
 
-```text
-松解层次→解剖分层模型 / 操作规划→路径规划
-```
+## 二、章表
 
-针刀医学 里的每一个传统概念，都被翻译成一个可计算、可验证的工程对象：
-中医概念给出**语义与约束**，AI/工程方法给出**表示与算法**。两者必须能互相回指，
-否则这个章节就还没有写完。
+| # | 章 | 父课来源 | 单元 | 汉字 |
+|--:|---|---|--:|--:|
+| 1 | 针刀医学概论 | cifa-jiufa、zhenjiu-zhiliao | 5 | 7,038 |
+| 2 | 器械、进针与操作规范 | cifa-jiufa、shuxue | 5 | 11,174 |
+| 3 | 软组织解剖与病理 | zhenjiu-zhiliao、tuina | 5 | 11,262 |
+| 4 | 颈肩腰腿痛 | zhenjiu-zhiliao、zhiliao | 5 | 3,236 |
+| 5 | 关节与腱鞘疾病 | zhenjiu-zhiliao、gubing | 5 | 10,986 |
+| 6 | 神经卡压 | zhenjiu-zhiliao、zhenjiu-xue | 5 | 11,230 |
+| 7 | 安全性：禁忌与并发症 | cifa-jiufa、zhenjiu-zhiliao | 5 | 7,831 |
+| 8 | 疗效评价与循证 | shiyan-zhenjiu、zhenjiu-zhiliao | 4 | 11,982 |
 
-## 三、章节地图（目标 8 章）
+## 三、三辨与四位面（实测）
 
-章节尚未编写。运行脚手架开章：
+| 三辨 | 词频 |
+|---|--:|
+| **器械与操作** | **493** |
+| **病理与解剖** | **397** |
+| **病证与安全** | **1259** |
+
+三辨极差 **3.2×**。
+
+| 四位面（章群结构分区） | 汉字 |
+|---|---:|
+| 概论与器械 | 18,212 |
+| 病理与解剖 | 11,262 |
+| 病证 | 25,452 |
+| 安全与证据 | 19,813 |
+
+四位面极差 **2.3×**。这一轴按**章群归属**直接分区，不用词频——
+派生课的关键词统计容易被父课的泛词（「患者」「治疗」）支配，结构分区更诚实。
+
+## 四、判据
+
+针与刀合一，风险也合一：刀口方向、深度、禁忌是第一纪律。本课每章要求写清：**适应证边界、操作要点、可核的记录项、禁忌与风险**。
+
+## 五、章内可执行验证
 
 ```bash
-node scripts/scaffold_chapter.js 03-zhenjiu/13-zhendao-yixue 01-<chapter-slug>
+node scripts/audit_curriculum.js | grep -A2 "13-zhendao-yixue"
+node tests/test_chapter_code.js | grep -c "13-zhendao-yixue"
+python scripts/_derive6_zj.py
 ```
 
-编写完成后，把章节索引写进 `chapters.json`，本表的「状态」列由
-`scripts/build_catalog.js` 自动填充。
-
-## 四、章节契约（每章必须满足）
-
-```text
-chapters/NN-<slug>/
-├── docs/zh.md      # MOTTO / PROBLEM / 环境逼迫 / 知识积累 / CONCEPT / BUILD IT / USE IT / SHIP IT
-├── code/           # 可运行、自终止、退出码 0（Node.js 或 Python，见 AGENTS.md 依赖白名单）
-├── quiz.json       # 恰好 6 题 = 1 pre + 3 check + 2 post
-└── outputs/        # 可复用产出物（prompt / skill / agent / mcp / 临床工具）
-```
-
-## 五、教材交付 [textbooks]
-
-```text
-输出: textbooks/03-zhenjiu/13-zhendao-yixue/
-├── 00-前言.md
-├── 01-第1章-<标题>.md   ...
-└── figures/                # Mermaid / SVG，禁止 ASCII 框图
-```
-
-## 六、平台交付 [tcmP]
-
-```text
-输出: platform/courses/03-zhenjiu/13-zhendao-yixue/
-├── course.yaml             # 课程元数据 + 章节 → 视频映射
-├── slides/                 # 讲稿 HTML（由 docs/zh.md 派生）
-├── narration/              # TTS 旁白文本 + 音频
-└── video/                  # 成片 MP4（H.264 / 720p 以上）
-```
-
-## 七、进度
-
-| 指标 | 当前 | 目标 |
-|------|------|------|
-| 章节 | 0 | 8 |
-| 视频 | 0 | 8 |
-| 教材字数 | 0 | ≈ 48000 |
-
-> 状态字形：🌱 未开始 ⬚ · 🚧 进行中 · ✅ 完成
+**免责声明：** 本课为教学材料；无独立教材，内容取自本库已建课程，属**二次编排**。
+具体操作与剂量须以现行规范与执业人员判断为准，不构成诊疗建议。

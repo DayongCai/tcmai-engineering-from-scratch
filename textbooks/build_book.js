@@ -58,18 +58,91 @@ function textbookDir(subject) {
   return path.join(TBDIR, subject.dept.slug, subject.slug);
 }
 
+// ── 图片内联 ────────────────────────────────────────────────────────────────
+const FIG_MIME = {
+  '.svg': 'image/svg+xml',
+  '.png': 'image/png',
+  '.webp': 'image/webp',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+};
+
+/**
+ * 把章节里的 <img src="figures/x.svg"> 换成 data URI。
+ *
+ * 为什么要内联：本 HTML 的定位是「单文件、离线可读」（见 renderBookHtml 的 footer）。
+ * 产物落在 textbooks/build/，若保留相对路径就得指回 textbooks/<dept>/<subject>/figures/，
+ * 一旦单独传阅或挪动目录立刻断图。内联之后，一本书就是一个可以发出去的文件。
+ *
+ * 为什么用 base64 而不是把 SVG 源码直接嵌进 HTML：同一卷里会有多张图，
+ * 内联 SVG 的 id 与 <style> 会互相污染（渐变、marker、类名撞车），
+ * 而 <img src="data:..."> 天然隔离，且不继承页面的 CSS 变量。
+ */
+function inlineFigures(html, dir) {
+  const figures = [];
+  const out = html.replace(/<img(\s[^>]*?)src="([^"]+)"([^>]*)>/g, (whole, pre, src, post) => {
+    if (/^[a-z][a-z0-9+.-]*:/i.test(src) || src.startsWith('//')) return whole;  // md.js 已挡，双保险
+    const abs = path.join(dir, src);
+    let buf;
+    try {
+      buf = fs.readFileSync(abs);
+    } catch {
+      figures.push({ src, ok: false, reason: '文件不存在' });
+      return `<span class="img-missing">［缺图文件］${src}</span>`;
+    }
+    const mime = FIG_MIME[path.extname(abs).toLowerCase()];
+    if (!mime) {
+      figures.push({ src, ok: false, reason: '扩展名不在白名单' });
+      return `<span class="img-missing">［图格式不支持］${src}</span>`;
+    }
+    figures.push({ src, ok: true, bytes: buf.length });
+    return `<img${pre}src="data:${mime};base64,${buf.toString('base64')}"${post}>`;
+  });
+  return { html: out, figures };
+}
+
+/** 扫描某门学科目录下的图：正文引用 vs 磁盘文件，两边都要对得上 */
+function scanFigures(subject) {
+  const dir = textbookDir(subject);
+  const refs = new Set();
+  const broken = [];
+  for (const f of chapterFiles(subject)) {
+    const t = fs.readFileSync(path.join(dir, f), 'utf8');
+    for (const m of t.matchAll(/!\[[^\]]*\]\(([^)\s]+)\)/g)) {
+      const src = m[1];
+      refs.add(src);
+      if (!fs.existsSync(path.join(dir, src))) broken.push({ file: f, src });
+    }
+  }
+  const figDir = path.join(dir, 'figures');
+  let orphans = [];
+  if (fs.existsSync(figDir)) {
+    for (const f of fs.readdirSync(figDir)) {
+      if (!FIG_MIME[path.extname(f).toLowerCase()]) continue;
+      const rel = `figures/${f}`;
+      if (!refs.has(rel)) orphans.push(rel);
+    }
+  }
+  return { refs: refs.size, broken, orphans };
+}
+
+
 function chapterFiles(subject) {
   const dir = textbookDir(subject);
   if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
-    .filter((f) => /^\d{2}-.*\.md$/.test(f))
+    // 00-前言.md 不是章：它同样匹配 ^\d{2}-，会把章数虚增一门一份（实测 52 门虚增 52 章）
+    .filter((f) => /^\d{2}-.*\.md$/.test(f) && !/^00-/.test(f))
     .sort();
 }
 
 /** 中文字数：按非空白字符计（教材统计惯例） */
 function wordCount(text) {
-  return text.replace(/\s/g, '').length;
+  // 图片引用不计入正文：![图注](figures/x.svg) 里的路径与图注都不是被写的字。
+  // 不这么做的话，给一章加一张图就会把全书字数改成另一个数，而 meta.json 里的
+  // textbook.words 是按正文钉的 —— 「字数可复算」这条契约就当场破了。
+  return text.replace(/!\[[^\]]*\]\([^)]*\)/g, '').replace(/\s/g, '').length;
 }
 
 function volumeSubjects(volume) {
@@ -87,6 +160,8 @@ function runCheck() {
   let totalWords = 0;
   let totalChapters = 0;
   let subjectsWithText = 0;
+  let figRefs = 0;
+  const figProblems = [];
   const missing = [];
 
   for (const volume of volumes.volumes) {
@@ -106,6 +181,11 @@ function runCheck() {
         vWords += wordCount(t);
         vChapters += 1;
       }
+      // 图对账：正文引用的图必须在磁盘上，磁盘上的图必须被正文引用（孤儿图同样是缺陷）
+      const fig = scanFigures(s);
+      figRefs += fig.refs;
+      fig.broken.forEach((b) => figProblems.push(`${s.slug}/${b.file} 引用缺图 → ${b.src}`));
+      fig.orphans.forEach((o) => figProblems.push(`${s.slug}/${o} 未被任何章节引用（孤儿图）`));
     }
     totalWords += vWords;
     totalChapters += vChapters;
@@ -118,6 +198,16 @@ function runCheck() {
   const consistency = checkFactConsistency();
   console.log(`\n  事实一致性抽查: ${consistency.length === 0 ? '通过 ✅' : `${consistency.length} 项 ❌`}`);
   consistency.forEach((c) => console.log(`     - ${c}`));
+
+  // 图对账
+  console.log(`\n  教材插图: ${figRefs} 张被正文引用`);
+  if (figProblems.length === 0) {
+    console.log(`  图对账: 通过 ✅（引用与磁盘文件、孤儿图三方面均无差异）`);
+  } else {
+    console.log(`  图对账: ${figProblems.length} 项 ❌`);
+    figProblems.slice(0, 12).forEach((p) => console.log(`     - ${p}`));
+    if (figProblems.length > 12) console.log(`     … 另有 ${figProblems.length - 12} 项`);
+  }
 
   if (missing.length) {
     console.log(`\n  未开稿的学科 (${missing.length}/${catalog.counts.subjects}):`);
@@ -155,7 +245,9 @@ function checkFactConsistency() {
       for (const f of chapterFiles(s)) {
         const t = fs.readFileSync(path.join(textbookDir(s), f), 'utf8');
         for (const r of rows) {
-          const re = new RegExp(`${r.name}\\s*(?:开窍于|开窍在)\\s*([\\u4e00-\\u9fa5]{1,3})`, 'g');
+          // 只认「开窍于 + 单个官窍字」：源正文里常见「心开窍于舌等」「肺开窍于鼻而喉」，
+          // 用 {1,3} 贪婪会把「舌等」当成官窍名，造出假失败（实测踩到）。
+          const re = new RegExp(`${r.name}\\s*(?:开窍于|开窍在)\\s*([口舌鼻目耳])`, 'g');
           for (const m of t.matchAll(re)) {
             const got = m[1].replace(/[，。、；]$/, '');
             if (got !== r.qiao) {
@@ -215,6 +307,13 @@ function renderBookHtml(volume, subjectCount, chapters, words, chaptersHtml) {
   section.chapter h1{font-size:1.35rem}
   section.chapter h2{font-size:1.1rem;margin-top:2rem}
   section.chapter h3{font-size:1rem;margin-top:1.5rem}
+  figure.fig{margin:1.8rem 0;text-align:center}
+  figure.fig img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff}
+  figure.fig figcaption{color:var(--muted);font-size:.82rem;margin-top:.55rem;line-height:1.6}
+  figure.fig-broken{border:1px dashed #c0392b;background:#fdf1ef;border-radius:8px;padding:.7rem 1rem}
+  figure.fig-broken figcaption{color:#c0392b;margin-top:0}
+  img.inline-fig{max-width:100%;vertical-align:middle}
+  .img-missing,.img-broken{color:#c0392b;font-size:.85em;border:1px dashed #c0392b;border-radius:4px;padding:.05rem .3rem}
   table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.88rem}
   th,td{border:1px solid var(--line);padding:.4rem .6rem;text-align:left}
   th{background:#f3ede2}
@@ -276,6 +375,8 @@ function buildVolume(volume, { pdf }) {
 
   let chapters = 0;
   let words = 0;
+  let figCount = 0;
+  const figBroken = [];
 
   for (const s of subjects) {
     const files = chapterFiles(s);
@@ -290,10 +391,15 @@ function buildVolume(volume, { pdf }) {
       chapters += 1;
       words += wordCount(t);
       const h1 = /^#\s+(.+)$/m.exec(t);
+      const rendered = inlineFigures(mdRenderer.render(t), dir);
+      for (const f of rendered.figures) {
+        figCount += f.ok ? 1 : 0;
+        if (!f.ok) figBroken.push(`${s.slug}/${f}: ${f.reason}`);
+      }
       chaptersHtml.push({
         subject: s.title,
         title: h1 ? h1[1].trim() : f,
-        html: mdRenderer.render(t),
+        html: rendered.html,
       });
     }
   }
@@ -337,7 +443,7 @@ function buildVolume(volume, { pdf }) {
     }
   }
 
-  return { chapters, words, out: mdPath, pdf: pdfPath };
+  return { chapters, words, figures: figCount, figBroken, out: mdPath, pdf: pdfPath };
 }
 
 console.log('═══ [textbooks] 教材汇总 ═══\n');

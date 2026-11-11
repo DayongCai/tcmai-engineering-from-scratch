@@ -1,0 +1,79 @@
+{
+  "lesson": "08-jiegouhua",
+  "title": "范畴的结构化与四个层面",
+  "subject": "16-zhongyi-zhexue-shi",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "本书总结的四个层面是哪些？",
+      "options": [
+        "本体、关系、方法、心身",
+        "气、血、津、液",
+        "上、中、下、表",
+        "阴、阳、虚、实"
+      ],
+      "correct": 0,
+      "explanation": "本课程能用文本支撑的全部范围。"
+    },
+    {
+      "stage": "check",
+      "question": "论说词的判据是？",
+      "options": [
+        "内经高、临床低",
+        "内经低、临床高",
+        "两边都高",
+        "两边都低"
+      ],
+      "correct": 0,
+      "explanation": "道 1,479→30；五行 129→0。"
+    },
+    {
+      "stage": "check",
+      "question": "结构化不能做的事是？",
+      "options": [
+        "判定学派归属与评价高下",
+        "检索",
+        "对照",
+        "追问"
+      ],
+      "correct": 0,
+      "explanation": "只能做三件。"
+    },
+    {
+      "stage": "check",
+      "question": "「哲学如何变成医学」本课程的答案是？",
+      "options": [
+        "通过「操作词」这一层（气、阴阳）",
+        "通过学派传承",
+        "通过典籍翻译",
+        "无法回答"
+      ],
+      "correct": 0,
+      "explanation": "有限但可复算。"
+    },
+    {
+      "stage": "post",
+      "question": "「追问」为何最有价值？",
+      "options": [
+        "把「哲学如何变医学」变成可比较的比例",
+        "因为新颖",
+        "因为简单",
+        "因为可发表"
+      ],
+      "correct": 0,
+      "explanation": "如四时落地、五行未以词落地。"
+    },
+    {
+      "stage": "post",
+      "question": "全书共同的限制是？",
+      "options": [
+        "词频 ≠ 地位",
+        "样本太少",
+        "语料不全",
+        "无法计算"
+      ],
+      "correct": 0,
+      "explanation": "所有结论都受此限制。"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "19-shehui-yixue",
+  "title": "社会医学",
+  "en": "Social Medicine",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 117,
+  "type": "Reference",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 36,
+  "bridge": "健康社会决定因素→回归 / 社区诊断→聚类",
+  "chaptersTarget": 18,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/19-shehui-yixue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/19-shehui-yixue",
+    "chaptersWritten": 18,
+    "words": 359453,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#社会医学",
+    "extractedAt": "2026-10-21"
+  }
+}

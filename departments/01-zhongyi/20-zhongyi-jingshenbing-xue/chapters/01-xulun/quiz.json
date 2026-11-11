@@ -1,0 +1,79 @@
+{
+  "lesson": "01-xulun",
+  "title": "绪论：精神病学研究的是「神」，不是「脑」",
+  "subject": "20-zhongyi-jingshenbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "中医精神病学的核心判据来自哪里？",
+      "options": [
+        "精神检查（观察与问话）",
+        "血液化验",
+        "影像检查",
+        "基因检测"
+      ],
+      "correct": 0,
+      "explanation": "教材 1.1.1：判据靠结构化观察，量表只作辅助。"
+    },
+    {
+      "stage": "check",
+      "question": "中医病名与现代诊断的关系是？",
+      "options": [
+        "给对应关系但不画等号",
+        "完全等同",
+        "毫无关系",
+        "西医诊断无效"
+      ],
+      "correct": 0,
+      "explanation": "两套坐标系：中医按病机立名，现代按症状与病程立。"
+    },
+    {
+      "stage": "check",
+      "question": "「神志病学」这一命名的意义是？",
+      "options": [
+        "学科自觉的标志",
+        "只研究癫证",
+        "只研究郁病",
+        "属内科分支"
+      ],
+      "correct": 0,
+      "explanation": "教材 1.2.2。"
+    },
+    {
+      "stage": "check",
+      "question": "本章三辨第一位是？",
+      "options": [
+        "病因（126）",
+        "病机",
+        "证候表现",
+        "三者相等"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算：绪论先回答「什么在致病」。"
+    },
+    {
+      "stage": "post",
+      "question": "学科三条特点不包括？",
+      "options": [
+        "以影像为诊断依据",
+        "判据靠观察",
+        "安全优先",
+        "疗程长、复发多"
+      ],
+      "correct": 0,
+      "explanation": "教材第 1 章三条：观察判据、安全优先、疗程长。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么安全评估要先于辨证？",
+      "options": [
+        "自杀与伤人风险须即时处置，不能等辨证完成",
+        "因为辨证太慢",
+        "因为药难开",
+        "因为家属要求"
+      ],
+      "correct": 0,
+      "explanation": "第 5、7 章均把安全前置。"
+    }
+  ]
+}

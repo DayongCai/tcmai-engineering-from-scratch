@@ -1,0 +1,150 @@
+{
+ "note": "中药新药研发 外源条文层：只收 sources/ 下 4 份 WHO 文件里逐字可查的整句（约定见 补源约定.md）。原文由脚本按锚点从 PDF 文本层截取（仍是连续子串），保证逐字；中文一栏是本库转述。",
+ "sources": {
+  "WHO-GMP-Herbal-2007": {
+   "file": "WHO-GMP-Herbal-Medicines-2007.pdf",
+   "title": "WHO guidelines on good manufacturing practices (GMP) for herbal medicines",
+   "revised": "2007",
+   "url": "https://iris.who.int/server/api/core/bitstreams/444528f5-6c78-434e-a39d-0bb6c36e4c30/content"
+  },
+  "WHO-GACP-Medicinal-2003": {
+   "file": "WHO-GACP-Medicinal-Plants-2003.pdf",
+   "title": "WHO guidelines on good agricultural and collection practices (GACP) for medicinal plants",
+   "revised": "2003",
+   "url": "https://iris.who.int/server/api/core/bitstreams/a00d3219-ed33-436a-be13-e3f00763f874/content"
+  },
+  "WHO-Quality-Contaminants-2007": {
+   "file": "WHO-Quality-Herbal-Contaminants-2007.pdf",
+   "title": "WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues",
+   "revised": "2007",
+   "url": "https://iris.who.int/server/api/core/bitstreams/31b7f3a0-818d-4496-9bcb-8b65cf02c293/content"
+  },
+  "WHO-Safety-Monitoring-2004": {
+   "file": "WHO-Safety-Monitoring-Herbal-2004.pdf",
+   "title": "WHO guidelines on safety monitoring of herbal medicines in pharmacovigilance systems",
+   "revised": "2004",
+   "url": "https://iris.who.int/bitstreams/3b294cd7-18fc-4c2d-b534-836bf8d33553/download"
+  }
+ },
+ "clauses": [
+  {
+   "id": "W01",
+   "source": "WHO-GMP-Herbal-2007",
+   "clause": "第1条",
+   "原文": "The safety and efficacy of herbal medicines largely depend on their quality.",
+   "zh": "草药的安全性与有效性在很大程度上取决于其质量。"
+  },
+  {
+   "id": "W02",
+   "source": "WHO-GMP-Herbal-2007",
+   "clause": "第2条",
+   "原文": "Requirements and methods for quality control of finished herbal products, particularly for combining/mixing herbal products, are far more complex than for chemical drugs.",
+   "zh": "成品草药的质量控制要求与方法比化学药复杂得多，尤其是多味配伍的产品。"
+  },
+  {
+   "id": "W03",
+   "source": "WHO-GMP-Herbal-2007",
+   "clause": "第3条",
+   "原文": "The manufacturing process is one of the key steps where quality control is required to ensure quality of medicinal products, including herbal medicines.",
+   "zh": "生产过程是需要实施质量控制的关键环节之一。"
+  },
+  {
+   "id": "W04",
+   "source": "WHO-GMP-Herbal-2007",
+   "clause": "第4条",
+   "原文": "The core requirements for GMP for herbal medicines are common to GMP for pharmaceutical products.",
+   "zh": "草药 GMP 的核心要求与药品 GMP 相同，草药只在其上追加专门要求。"
+  },
+  {
+   "id": "W05",
+   "source": "WHO-GMP-Herbal-2007",
+   "clause": "第5条",
+   "原文": "Each Member State should develop its own national GMP for manufacturing herbal medicines that are appropriate to the country’s actual situation.",
+   "zh": "各成员国应制定适合本国实际的国家级草药 GMP——标准要本土化，不能照抄。"
+  },
+  {
+   "id": "W06",
+   "source": "WHO-GACP-Medicinal-2003",
+   "clause": "第1条",
+   "原文": "Quality control directly impacts the safety and efficacy of herbal medicinal products.",
+   "zh": "质量控制直接影响草药产品的安全性与有效性。"
+  },
+  {
+   "id": "W07",
+   "source": "WHO-GACP-Medicinal-2003",
+   "clause": "第2条",
+   "原文": "Good agricultural and collection practices for medicinal plants is only the first step in quality assurance, on which the safety and efficacy of herbal medicinal products directly depend upon, and will also play an important role in the protection of natural resources of medicinal plants for sustainable use.",
+   "zh": "药用植物 GACP 只是保证质量与可持续利用的第一步，不是全部。"
+  },
+  {
+   "id": "W08",
+   "source": "WHO-GACP-Medicinal-2003",
+   "clause": "第3条",
+   "原文": "Safety and quality assurance measures are needed to overcome these problems and to ensure a steady, affordable and sustainable supply of medicinal plant materials of good quality.",
+   "zh": "需要安全与质量保证措施，才能保证药用植材料稳定、可负担、可持续的供应。"
+  },
+  {
+   "id": "Q01",
+   "source": "WHO-Quality-Contaminants-2007",
+   "clause": "第1条",
+   "原文": "The above-mentioned WHO technical documents have introduced some commonly used methods to determine biological, chemical and radionuclear contaminants, as well as pesticide residues.",
+   "zh": "既有 WHO 技术文件已给出测定生物、化学与放射性核素污染物及农药残留的常用方法。"
+  },
+  {
+   "id": "Q02",
+   "source": "WHO-Quality-Contaminants-2007",
+   "clause": "第2条",
+   "原文": "Chemical and microbiological contaminants can result from the use of human excreta, animal manures and sewage as fertilizers.",
+   "zh": "化学与微生物污染可来自以人粪、厩肥与污水作肥料。"
+  },
+  {
+   "id": "Q03",
+   "source": "WHO-Quality-Contaminants-2007",
+   "clause": "第3条",
+   "原文": "Herbs and herbal materials normally carry a large number of bacteria and moulds, often originating in soil or derived from manure.",
+   "zh": "草药与药材通常携带大量细菌与霉菌，多来自土壤或粪肥。"
+  },
+  {
+   "id": "Q04",
+   "source": "WHO-Quality-Contaminants-2007",
+   "clause": "第4条",
+   "原文": "Salmonella and Shigella species must not be present in herbal medicines intended for internal use, at any stage.",
+   "zh": "内服草药在任何阶段都不得检出沙门菌与志贺菌——这是无阈值要求的项目。"
+  },
+  {
+   "id": "Q05",
+   "source": "WHO-Quality-Contaminants-2007",
+   "clause": "第5条",
+   "原文": "Recent research has also demonstrated that herbs may absorb heavy metals during growth.",
+   "zh": "研究显示草药在生长过程中会吸收重金属，因此重金属不只是加工带进来的。"
+  },
+  {
+   "id": "S01",
+   "source": "WHO-Safety-Monitoring-2004",
+   "clause": "第1条",
+   "原文": "Pharmacovigilance is the science and activities relating to the detection, assessment, understanding and prevention of adverse effects or any other possible drug-related problems (see also section 2).",
+   "zh": "药物警戒是对不良反应（及其他药物相关问题）进行发现、评估、理解与预防的科学与活动。"
+  },
+  {
+   "id": "S02",
+   "source": "WHO-Safety-Monitoring-2004",
+   "clause": "第2条",
+   "原文": "The recommended approach is to include herbal medicines in existing national pharmacovigilance systems or, where such systems have not yet been developed, to establish comprehensive national pharmacovigilance systems which incorporate coverage of herbal medicines.",
+   "zh": "推荐把草药纳入既有的国家药物警戒体系，而不是给草药另建一套。"
+  },
+  {
+   "id": "S03",
+   "source": "WHO-Safety-Monitoring-2004",
+   "clause": "第3条",
+   "原文": "The ultimate goal of pharmacovigilance is the safe and proper use of effective medicines of all types.",
+   "zh": "药物警戒的最终目标是让有效药物被安全、恰当地使用。"
+  },
+  {
+   "id": "S04",
+   "source": "WHO-Safety-Monitoring-2004",
+   "clause": "第4条",
+   "原文": "The establishment of regional laboratories specializing in the analysis of herbal products should be considered.",
+   "zh": "建立专门分析草药产品的区域性实验室——监测要靠检验能力支撑。"
+  }
+ ]
+}

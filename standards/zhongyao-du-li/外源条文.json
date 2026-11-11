@@ -1,0 +1,322 @@
+{
+ "note": "外源条文层：只收已落盘 PDF 里逐字可查的句子。原文一栏与 sources/ 下 PDF 完全一致；中文一栏是本库转述，标「转述」不冒充官方译文。",
+ "sources": {
+  "OECD-TG420-2001": {
+   "file": "OECD-TG420-2001.pdf",
+   "title": "OECD Test Guideline 420: Acute Oral Toxicity – Fixed Dose Procedure",
+   "adopted": "2001-12-17",
+   "url": "https://ntp.niehs.nih.gov/sites/default/files/iccvam/suppdocs/feddocs/oecd/oecd_gl420.pdf"
+  },
+  "OECD-TG425-2022": {
+   "file": "OECD-TG425-2022.pdf",
+   "title": "OECD Test Guideline 425: Acute Oral Toxicity – Up-and-Down Procedure",
+   "adopted": "2022-06-30",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/06/test-no-425-acute-oral-toxicity-up-and-down-procedure_g1gh2953/9789264071049-en.pdf"
+  },
+  "OECD-TG408-2025": {
+   "file": "OECD-TG408-2025.pdf",
+   "title": "OECD Test Guideline 408: Repeated Dose 90-day Oral Toxicity Study in Rodents",
+   "adopted": "2025-06-25",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/06/test-no-408-repeated-dose-90-day-oral-toxicity-study-in-rodents_g1gh2931/9789264070707-en.pdf"
+  },
+  "OECD-TG471-2020": {
+   "file": "OECD-TG471-2020.pdf",
+   "title": "OECD Test Guideline 471: Bacterial Reverse Mutation Test",
+   "adopted": "2020",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2020/06/test-no-471-bacterial-reverse-mutation-test_g1gh295b/9789264071247-en.pdf"
+  },
+  "OECD-TG487-2023": {
+   "file": "OECD-TG487-2023.pdf",
+   "title": "OECD Test Guideline 487: In Vitro Mammalian Cell Micronucleus Test",
+   "adopted": "2023",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2023/07/test-no-487-in-vitro-mammalian-cell-micronucleus-test_g1g6fb2a/9789264264861-en.pdf"
+  },
+  "NMPA-古代经典名方-2021": {
+   "file": "NMPA-古代经典名方毒理研究指导原则-征求意见稿-2021.pdf",
+   "title": "古代经典名方中药复方制剂毒理学研究技术指导原则（征求意见稿）",
+   "adopted": "2021-10-12",
+   "url": "https://www.njucm.edu.cn/_upload/article/files/88/5f/2b2540ce4f0985096013d37fd148/5103957a-5553-473e-aa92-1fc73088eb2d.pdf",
+   "status": "征求意见稿（供版本对照；受试物与 GLP 条款已由 2022 年正式稿细化）"
+  },
+  "OECD-TG473-2016": {
+   "file": "OECD-TG473-2016.pdf",
+   "title": "OECD Test Guideline 473: In Vitro Mammalian Chromosomal Aberration Test",
+   "adopted": "2016",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2016/07/test-no-473-in-vitro-mammalian-chromosomal-aberration-test_g1g6ed0e/9789264264649-en.pdf"
+  },
+  "OECD-TG407-2025": {
+   "file": "OECD-TG407-2025.pdf",
+   "title": "OECD Test Guideline 407: Repeated Dose 28-day Oral Toxicity Study in Rodents",
+   "adopted": "2025-06-25",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2008/10/test-no-407-repeated-dose-28-day-oral-toxicity-study-in-rodents_g1gh292f/9789264070684-en.pdf"
+  },
+  "OECD-Genetic-Toxicology-Overview-2017": {
+   "file": "OECD-Genetic-Toxicology-Overview-2017.pdf",
+   "title": "Overview of the set of OECD Genetic Toxicology Test Guidelines and updates performed in 2014-2015",
+   "adopted": "2017",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2017/08/overview-of-the-set-of-oecd-genetic-toxicology-test-guidelines-and-updates-performed-in-2014-2015-second-edition_c7a9416d/61eca5cd-en.pdf"
+  },
+  "OECD-TG474-2016": {
+   "file": "OECD-TG474-2016.pdf",
+   "title": "OECD Test Guideline 474: Mammalian Erythrocyte Micronucleus Test",
+   "adopted": "2016",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2016/07/test-no-474-mammalian-erythrocyte-micronucleus-test_g1g6fb16/9789264264762-en.pdf"
+  },
+  "OECD-TG451-2018": {
+   "file": "OECD-TG451-2018.pdf",
+   "title": "OECD Test Guideline 451: Carcinogenicity Studies",
+   "adopted": "2018",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/06/test-no-451-carcinogenicity-studies_g1gh2955/9789264071186-en.pdf"
+  },
+  "OECD-TG453-2018": {
+   "file": "OECD-TG453-2018.pdf",
+   "title": "OECD Test Guideline 453: Combined Chronic Toxicity/Carcinogenicity Studies",
+   "adopted": "2018",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/06/test-no-453-combined-chronic-toxicity-carcinogenicity-studies_g1gh2959/9789264071223-en.pdf"
+  },
+  "NMPA-毒理研究用样品-试行-2022": {
+   "file": "NMPA-中药新药毒理研究用样品指导原则-试行-2022.pdf",
+   "title": "中药新药毒理研究用样品研究技术指导原则（试行）（2022年第1号）",
+   "adopted": "2022-01-07",
+   "status": "正式发布（试行）",
+   "url": "https://www.cde.org.cn/main/news/viewInfoCommon/837a9b355dcc7f1724194e97c2fa3a29"
+  },
+  "CDE-长期毒性-2007": {
+   "file": "CDE-中药天然药物长期毒性研究指导原则-2007.pdf",
+   "title": "中药、天然药物长期毒性研究技术指导原则（2007）",
+   "adopted": "2007-08-13",
+   "status": "正式发布",
+   "url": "https://pharmwyp.com/posts/56814/7.3%E4%B8%AD%E8%8D%AF/7.3.3%E9%9D%9E%E4%B8%B4%E5%BA%8A/20070813_CDE_%E4%B8%AD%E8%8D%AF%E3%80%81%E5%A4%A9%E7%84%B6%E8%8D%AF%E7%89%A9%E9%95%BF%E6%9C%9F%E6%AF%92%E6%80%A7%E7%A0%94%E7%A9%B6%E6%8A%80%E6%9C%AF%E6%8C%87%E5%AF%BC%E5%8E%9F%E5%88%99.pdf"
+  },
+  "OECD-TG452-2018": {
+   "file": "OECD-TG452-2018.pdf",
+   "title": "OECD Test Guideline 452: Chronic Toxicity Studies",
+   "adopted": "2018",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/06/test-no-452-chronic-toxicity-studies_g1gh2957/9789264071209-en.pdf"
+  },
+  "OECD-TG470-2022": {
+   "file": "OECD-TG470-2022.pdf",
+   "title": "OECD Test Guideline 470: Mammalian Erythrocyte Pig-a Gene Mutation Assay",
+   "adopted": "2022",
+   "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/06/test-no-470-mammalian-erythrocyte-pig-a-gene-mutation-assay_8d5eb84f/4faea90e-en.pdf"
+  }
+ },
+ "clauses": [
+  {
+   "id": "E01",
+   "source": "OECD-TG420-2001",
+   "clause": "第2条",
+   "原文": "Traditional methods for assessing acute toxicity use death of animals as an endpoint. ... The approach avoided using death of animals as an endpoint, and relied instead on the observation of clear signs of toxicity at one of a series of fixed dose levels.",
+   "中文": "转述：传统的急性毒性评价以动物死亡为终点；固定剂量法（FDP）不再以死亡为终点，改为观察某档固定剂量下的明确毒性体征。",
+   "要点": "急性毒性的终点可以从「死」换成「明显中毒」——这是方法学的一次转向，不是操作细节。"
+  },
+  {
+   "id": "E02",
+   "source": "OECD-TG420-2001",
+   "clause": "第8条",
+   "原文": "Groups of animals of a single sex are dosed in a stepwise procedure using the fixed doses of 5, 50, 300 and 2000 mg/kg (exceptionally an additional fixed dose of 5000 mg/kg may be considered, see paragraph 19).",
+   "中文": "转述：单一性别动物按序贯方式给药，固定剂量为 5、50、300、2000 mg/kg，特殊情况可加 5000 mg/kg 一档。",
+   "要点": "四档固定剂量不是任意取的，它们与 GHS 分类的 LD50 切点对齐——剂量档与分类档是同一套刻度。"
+  },
+  {
+   "id": "E03",
+   "source": "OECD-TG425-2022",
+   "clause": "第2条",
+   "原文": "The test procedure described in this Guideline is of value in minimizing the number of animals required to estimate the acute oral toxicity of a chemical. In addition to the estimation of LD50 and confidence intervals, the test allows the observation of signs of toxicity.",
+   "中文": "转述：本程序的价值在于把估计急性经口毒性所需的动物数降到最少；除 LD50 与置信区间外，同时观察毒性体征。",
+   "要点": "LD50 不是一个点，是一个带置信区间的估计——报「LD50 = x」而不报区间，信息量是不完整的。"
+  },
+  {
+   "id": "E04",
+   "source": "OECD-TG408-2025",
+   "clause": "第10条",
+   "原文": "The preferred species is the rat, although other rodent species (e.g., the mouse) may be used. ... The females should be nulliparous and non-pregnant. Dosing should begin as soon as possible after weaning and, in any case, before the animals are nine weeks old. At the commencement of the study the weight variation of animals used should be minimal and not exceed ± 20 % of the mean weight of each sex.",
+   "中文": "转述：首选大鼠；雌性须未产、未孕；给药应尽早开始，最迟不超过 9 周龄；试验开始时同性别动物体重偏离均值不得超过 ±20%。",
+   "要点": "「90 天」不只是天数：周龄上限、产次、体重离散度三条同时成立，结果才可比。"
+  },
+  {
+   "id": "E05",
+   "source": "OECD-TG471-2020",
+   "clause": "第1条",
+   "原文": "The bacterial reverse mutation test uses amino-acid requiring strains of Salmonella typhimurium and Escherichia coli to detect point mutations, which involve substitution, addition or deletion of one or a few DNA base pairs (1)(2)(3).",
+   "中文": "转述：细菌回复突变试验用依赖氨基酸的沙门氏菌与大肠杆菌菌株，检测碱基置换、插入或缺失这类点突变。",
+   "要点": "它测的是点突变，不测染色体断裂——一个试验只回答一个问题，不能互相替代。"
+  },
+  {
+   "id": "E06",
+   "source": "OECD-TG487-2023",
+   "clause": "第7条",
+   "原文": "The mammalian cell MNvit test may employ cultures of cell lines or primary cell cultures, of human or rodent origin. ... it is important, when evaluating chemical hazards to consider the p53 status, genetic (karyotype) stability, DNA repair capacity and origin (rodent versus human) of the cells chosen for testing.",
+   "中文": "转述：体外哺乳动物细胞微核试验可用人源或啮齿类细胞系或原代培养；选细胞时必须考虑 p53 状态、核型稳定性、DNA 修复能力与人/鼠来源。",
+   "要点": "同一个样品换一套细胞，结论可能不同——细胞不是容器，是变量。"
+  },
+  {
+   "id": "E07",
+   "source": "NMPA-古代经典名方-2021",
+   "clause": "二（一）",
+   "原文": "一般情况下，古代经典名方中药复方制剂的毒理学研究一般包括单次给药毒性试验、重复给药毒性试验。若毒理学试验中发现非预期毒性时，应考虑进行追加试验。",
+   "中文": "（本条为中文原文，非转述）",
+   "要点": "中药复方的毒理基线是「单次 + 重复」两项；出现非预期毒性才追加——这是按风险分层的思路，不是全套照做。"
+  },
+  {
+   "id": "E08",
+   "source": "NMPA-古代经典名方-2021",
+   "clause": "二（二）",
+   "原文": "古代经典名方中药复方制剂的毒理学试验应当在经过药物非临床研究质量管理规范认证的机构开展，并遵守《药物非临床研究质量管理规范》（GLP）。",
+   "中文": "（本条为中文原文，非转述）",
+   "要点": "GLP 管的不是「有没有做」，是「做的过程能不能被复核」：机构资质、SOP、原始记录、档案保存。"
+  },
+  {
+   "id": "E09",
+   "source": "NMPA-古代经典名方-2021",
+   "clause": "三（一）",
+   "原文": "受试物质量应稳定、均一、可控，应采用能充分代表上市样品质量属性和安全性的样品。应采用药学研究确定制剂生产工艺后的样品作为受试物。",
+   "中文": "（本条为中文原文，非转述）",
+   "要点": "受试物必须能代表上市样品——用实验室小样做出来的毒理数据，不能替商业化批次担保。"
+  },
+  {
+   "id": "E10",
+   "source": "OECD-TG473-2016",
+   "clause": "第2条",
+   "原文": "The purpose of the in vitro chromosomal aberration test is to identify substances that cause structural chromosomal aberrations in cultured mammalian cells (2) (3) (4). ... This test is not designed to measure aneuploidy. An in vitro micronucleus test (6) would be recommended for the detection of aneuploidy.",
+   "中文": "转述：体外染色体畸变试验用于检出能在培养的哺乳动物细胞中引起结构染色体畸变（染色体型或染色单体型）的物质；本试验不用于检测非整倍体，检测数目异常应改用体外微核试验。",
+   "要点": "畸变试验管「结构」、微核管「结构与数目」——两者不是重复，是分工；TG 473 自己写明「不测非整倍体」。"
+  },
+  {
+   "id": "E11",
+   "source": "OECD-TG407-2025",
+   "clause": "第11条",
+   "原文": "The test chemical is orally administered daily in graduated doses to several groups of experimental animals, one dose level per group for a period of 28 days. ... A 28 day study provides information on the effects of repeated oral exposure and can indicate the need for further longer term studies.",
+   "中文": "转述：受试物按梯度剂量每日经口给药，每组一个剂量，持续 28 天；28 天试验提供重复暴露效应的信息，并可提示是否需要更长周期的试验。",
+   "要点": "28 天是「筛」，不是「替代 90 天」：它的产出之一是「要不要做更长期试验」这个判断。"
+  },
+  {
+   "id": "E12",
+   "source": "OECD-Genetic-Toxicology-Overview-2017",
+   "clause": "第14条",
+   "原文": "A full evaluation of a chemical’s ability to induce the possible types of genetic damage involved in adverse human health outcomes ... includes tests that can detect gene mutation, structural chromosomal damage and aneuploidy. To adequately cover all the genetic endpoints, one must use multiple tests (i.e. a test battery), because no individual test can provide information on all endpoints. ... the selection of: 1) which tests to use, 2) how to combine them into test batteries ... is beyond the purview of the OECD TGs and this document.",
+   "中文": "转述：完整评价遗传损伤要覆盖基因突变、结构染色体损伤与数目异常三类端点，必须用多个试验（即成组）；而「选哪些试验、怎么组合」不属于 OECD 试验准则的管辖范围，由各地区/国际监管文件规定。",
+   "要点": "三端点必须成组，但「三项固定组合」不是 OECD 定的——**组合方式由监管机构定**，这一句是本轮最重要的更正。"
+  },
+  {
+   "id": "E13",
+   "source": "OECD-TG474-2016",
+   "clause": "第2条",
+   "原文": "The mammalian in vivo micronucleus test is especially relevant for assessing genotoxicity because, although they may vary among species, factors of in vivo metabolism, pharmacokinetics and DNA repair processes are active and contribute to the responses. An in vivo assay is also useful for further investigation of genotoxicity detected by an in vitro system.",
+   "中文": "转述：体内微核试验之所以对评价遗传毒性特别相关，是因为体内的代谢、药动学与 DNA 修复过程都在起作用（虽有种属差异）；体内试验也用于对体外系统检出的遗传毒性做进一步追查。",
+   "要点": "这一句就是「体外阳性之后怎么办」的标准答案：用体内试验追查——不是重复体外，是补上代谢、药动与修复这三件体外没有的事。"
+  },
+  {
+   "id": "E14",
+   "source": "OECD-TG474-2016",
+   "clause": "第3条",
+   "原文": "The mammalian in vivo micronucleus test is used for the detection of damage induced by the test chemical to the chromosomes or the mitotic apparatus of erythroblasts. The test evaluates micronucleus formation in erythrocytes sampled either in the bone marrow or peripheral blood cells of animals, usually rodents.",
+   "中文": "转述：体内微核用于检出受试物对成红细胞染色体或纺锤体（有丝分裂装置）造成的损伤；样品取自动物（通常啮齿类）的骨髓或外周血红细胞。",
+   "要点": "取骨髓还是外周血是设计选择：骨髓反映近期暴露，外周血可重复采样——两条路的代价不同。"
+  },
+  {
+   "id": "E15",
+   "source": "OECD-TG451-2018",
+   "clause": "第14条",
+   "原文": "The test chemical is administered daily in graduated doses to several groups of test animals for the majority of their life span, normally by the oral route. ... The animals are observed closely for signs of toxicity and for the development of neoplastic lesions.",
+   "中文": "转述：受试物按梯度剂量每日给药，持续动物**生命的大部分时间**，通常经口；动物被密切观察毒性体征与**肿瘤性病变**的发生。",
+   "要点": "致癌性试验的观察对象不是「中毒」，是「肿瘤性病变」——终点的性质与急性、亚慢性完全不同。"
+  },
+  {
+   "id": "E16",
+   "source": "OECD-TG451-2018",
+   "clause": "第33条",
+   "原文": "The duration of the study will normally be 24 months for rodents, representing the majority of the normal life span of the animals to be used. Shorter or longer study durations may be used, dependent on the lifespan of the strain of the animal species in the study, but should be justified.",
+   "中文": "转述：啮齿类通常 24 个月，相当于其正常寿命的大部分；可依品系寿命缩短或延长，但须说明理由。",
+   "要点": "24 个月不是随意定的整数，是「寿命的大部分」这一原则的具体化——换品系就得重算，且要留理由。"
+  },
+  {
+   "id": "E17",
+   "source": "OECD-TG453-2018",
+   "clause": "第14条",
+   "原文": "The study design consists of two parallel phases, a chronic phase and a carcinogenicity phase (for duration see paragraphs 34 and 35, respectively). ... For the chronic phase, the test chemical is administered daily in graduated doses to several groups of test animals, one dose level per group, normally for a period of 12 months ... This duration is chosen to be sufficiently long to allow any effects of cumulative toxicity to become manifest, without the confounding effects of geriatric changes.",
+   "中文": "转述：合并设计含两个平行阶段——慢性阶段与致癌阶段；慢性阶段通常 12 个月，其长度要足以让蓄积性毒性显现，又避开老年性改变的混杂。",
+   "要点": "12 个月这个长度的理由写得很清楚：**够长到看见蓄积，够短到躲开老年混杂**——这是设计权衡，不是惯例。"
+  },
+  {
+   "id": "E18",
+   "source": "NMPA-毒理研究用样品-试行-2022",
+   "clause": "二（一）",
+   "原文": "毒理研究用受试物质量应稳定、均一、可控，能体现临床试验用样品及申请上市样品的质量属性和安全性。",
+   "中文": "（本条为中文原文，非转述）",
+   "要点": "正式稿把「代表什么」写成了三个定语：临床试验样品、申请上市样品、质量属性与安全性——不是「有代表性」四个字就算。"
+  },
+  {
+   "id": "E19",
+   "source": "NMPA-毒理研究用样品-试行-2022",
+   "clause": "二（二）",
+   "原文": "在毒理研究过程中应加强对研究用样品的质量控制和过程管理，并有完整的原始记录，以保证研究用样品的质量可控和可追溯。",
+   "中文": "（本条为中文原文，非转述）",
+   "要点": "「可控」与「可追溯」是两件事：前者靠质量标准，后者靠原始记录，缺一条 GLP 就不成立。"
+  },
+  {
+   "id": "E20",
+   "source": "NMPA-毒理研究用样品-试行-2022",
+   "clause": "三（一）1",
+   "原文": "应以确定的处方、工艺制备受试物，受试物应为中试及以上规模的样品。",
+   "中文": "（本条为中文原文，非转述）",
+   "要点": "实验室小样不做毒理受试物——规模是硬条件，因为小试工艺与中试工艺常常不是同一条。"
+  },
+  {
+   "id": "E21",
+   "source": "NMPA-毒理研究用样品-试行-2022",
+   "clause": "三（一）3",
+   "原文": "受试物的稳定性研究结果应能保证受试物在毒理学试验给药期限内质量稳定。应明确受试物的贮藏条件、包装和有效期。",
+   "中文": "（本条为中文原文，非转述）",
+   "要点": "稳定性要覆盖的是「给药期限内」，不是「出厂时」——长周期试验里这条最容易漏。"
+  },
+  {
+   "id": "E22",
+   "source": "CDE-长期毒性-2007",
+   "clause": "第 5 节 给药期限",
+   "原文": "临床单次用药的药物，给药期限为 2 周的长期毒性试验通常可支持其进行临床试验和生产。给药期限为 1 个月的长期毒性试验通常可支持临床疗程不超过 2 周的药物进行临床试验。",
+   "中文": "（本条为中文原文，非转述）",
+   "要点": "中药的给药期限不是固定值，而是**跟着临床疗程走**：单次→2 周，疗程≤2 周→1 个月。"
+  },
+  {
+   "id": "E23",
+   "source": "CDE-长期毒性-2007",
+   "clause": "引言 第 1 节 目的",
+   "原文": "长期毒性试验的主要目的应包括以下五个方面：①预测受试物可能引起的临床不良反应，包括不良反应的性质、程度、剂量-反应和时间-反应关系、可逆性等；②推测受试物重复给药的临床毒性靶器官或靶组织；③预测临床试验的起始剂量和重复用药的安全剂量范围；④提示临床试验中需重点监测的指标；⑤为临床试验中的解毒或解救措施提供参考信息。",
+   "中文": "（本条为中文原文，非转述）",
+   "要点": "五个目的里没有一个写「求 LD50」或「求 NOAEL」——长期毒性的产出是**用药信息**，不是几个毒性数字。"
+  },
+  {
+   "id": "E24",
+   "source": "OECD-TG452-2018",
+   "clause": "第13条",
+   "原文": "The test chemical is administered daily in graduated doses to several groups of experimental animals, normally for a period of 12 months, although longer or shorter durations may also be chosen depending on regulatory requirements (see paragraph 33). This duration is chosen to be sufficiently long to allow any effects of cumulative toxicity to become manifest, without the confounding effects of geriatric changes. Deviations from exposure duration of 12 months should be justified, particularly in the case of shorter durations.",
+   "中文": "转述：受试物按梯度剂量每日给药，通常 12 个月；12 个月这个长度要「够长到让蓄积性毒性显现，又避开老年性改变的混杂」；偏离 12 个月须说明理由，缩短尤其要。",
+   "要点": "慢性毒性（452）与合并设计（453）的慢性段用的是**同一句理由**——12 个月不是任意定的，是「蓄积看得见、老年混杂躲得开」这一权衡的解。"
+  },
+  {
+   "id": "E25",
+   "source": "OECD-TG452-2018",
+   "clause": "第33条",
+   "原文": "While this Test Guideline primarily is designed as a 12 month chronic toxicity study, the study design also allows for and can be applied to either shorter (e.g. 6 or 9 months) or longer (e.g. 18 or 24 months) duration studies, depending on the requirements of particular regulatory regimes or for specific mechanistic purposes.",
+   "中文": "转述：本准则以 12 个月为主，但设计允许按监管要求或机制研究需要改为更短（6 或 9 个月）或更长（18 或 24 个月）。",
+   "要点": "「12 个月」是默认值不是教条：6/9 与 18/24 都在准则允许范围内，关键是偏离要有理由——这与中药「给药期限跟临床疗程走」是同一逻辑的两面。"
+  },
+  {
+   "id": "E26",
+   "source": "OECD-TG470-2022",
+   "clause": "第2条",
+   "原文": "The in vivo erythrocyte Pig-a gene mutation assay (hereafter called the Pig-a assay) uses an endogenous mammalian gene, the phosphatidylinositol glycan class A gene (Pig-a), as a reporter of somatic-cell gene mutation. ... For these reasons, the in vivo Pig-a assay can be used to further investigate genotoxic potential detected by in vitro systems.",
+   "中文": "转述：体内红细胞 Pig-a 试验用内源基因（磷脂酰肌醇聚糖 A 类基因）作为体细胞基因突变的报告基因；正因体内吸收、分布、代谢与修复都参与反应，它可用于**追查体外检出的遗传毒性**。",
+   "要点": "Pig-a 与微核（TG 474）分工：微核看**染色体**损伤，Pig-a 看**基因**（点突变）——体内层同样要两类各一。"
+  },
+  {
+   "id": "E27",
+   "source": "OECD-TG470-2022",
+   "clause": "第3条",
+   "原文": "The Pig-a assay can be performed with commonly used strains of rats or mice (1) (see paragraph 28) and the test can be conducted without euthanizing the animals. These properties facilitate integration of the Pig-a assay into many in vivo rodent testing protocols (see paragraphs 8-9 and Annex 2) (2) (3).",
+   "中文": "转述：Pig-a 可用常用大鼠或小鼠品系，且**无需处死动物**即可进行；因此容易并入其他体内啮齿类试验方案。",
+   "要点": "「不处死、可重复采样」是它与微核最大的操作差别——同一批动物可在重复给药试验里顺带取血，省一批动物。"
+  }
+ ]
+}

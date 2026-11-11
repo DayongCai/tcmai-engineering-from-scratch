@@ -1,0 +1,79 @@
+{
+  "lesson": "07-yetianshi-wenbing",
+  "title": "叶天士与温病学派：四层不是四个证",
+  "subject": "15-zhongyi-gejia-xueshuo",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "卫气营血四层在本课程中被理解为？",
+      "options": [
+        "四个位置，不是四个证型",
+        "四个证型",
+        "四个脏腑",
+        "四个方剂"
+      ],
+      "correct": 0,
+      "explanation": "位置决定能不能透。"
+    },
+    {
+      "stage": "check",
+      "question": "「透」法出现在哪两层？",
+      "options": [
+        "卫与营",
+        "气与血",
+        "卫与气",
+        "营与血"
+      ],
+      "correct": 0,
+      "explanation": "邪在深处也要给一条外向的路。"
+    },
+    {
+      "stage": "check",
+      "question": "本章 824 条中伤寒占多少？",
+      "options": [
+        "379 条（单字「气」「血」噪声）",
+        "156 条",
+        "289 条",
+        "0 条"
+      ],
+      "correct": 0,
+      "explanation": "再次说明词表噪声。"
+    },
+    {
+      "stage": "check",
+      "question": "逆传的路径是？",
+      "options": [
+        "卫直入营（跳过气分）",
+        "卫 → 气",
+        "气 → 血",
+        "营 → 血"
+      ],
+      "correct": 0,
+      "explanation": "处理是立即清营开窍。"
+    },
+    {
+      "stage": "post",
+      "question": "六经与四层的关系是？",
+      "options": [
+        "两个不同切面（走向哪经 / 停在哪个深度），可并用",
+        "互相取代",
+        "完全相同",
+        "互不相干"
+      ],
+      "correct": 0,
+      "explanation": "故有「少阳病·气分证」这类复合坐标。"
+    },
+    {
+      "stage": "post",
+      "question": "本章的一处明确欠缺是？",
+      "options": [
+        "温病语料未分书单列统计",
+        "无证据",
+        "无结论",
+        "无案例"
+      ],
+      "correct": 0,
+      "explanation": "属「可补而未补」。"
+    }
+  ]
+}

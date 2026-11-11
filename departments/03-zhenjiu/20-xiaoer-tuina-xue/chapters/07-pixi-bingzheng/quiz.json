@@ -1,0 +1,79 @@
+{
+ "lesson": "07-pixi-bingzheng",
+ "title": "脾系病证",
+ "subject": "20-xiaoer-tuina-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 7 章「脾系病证」要回答的核心问题是什么？",
+   "options": [
+    "小儿腹泻与成人泄泻，推拿方案差在哪",
+    "明清以前",
+    "明清时期",
+    "学术流派"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：同一病证两个名字，两本书的手法集合只重叠三成——差的不只是手法，还有特定穴体系与剂量口径。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（脏腑系统）重心落在哪一项？",
+   "options": [
+    "脾系",
+    "肺系",
+    "心肝系",
+    "肾系与五官"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "病证应用",
+    "手法操作",
+    "特定穴",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "6 个",
+    "8 个",
+    "9 个",
+    "11 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "小儿「脾经」与成人「脾经」是同一个位置吗？",
+   "options": [
+    "不是：成人指足太阴脾经，小儿指拇指桡侧的线状特定穴",
+    "明清以前",
+    "明清时期",
+    "学术流派"
+   ],
+   "correct": 0,
+   "explanation": "第四层对账：同名不同义，名字对得上、位置与用法对不上。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/xiaoer-tuina/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

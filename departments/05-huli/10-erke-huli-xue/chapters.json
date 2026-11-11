@@ -1,54 +1,141 @@
 {
-  "slug": "10-erke-huli-xue",
-  "title": "儿科护理学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-shengzhang-pinggu",
-      "title": "儿童的生长发育与评估",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-tedian-goutong",
-      "title": "儿科护理的特点与沟通",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-xinshenger-huli",
-      "title": "新生儿疾病护理",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-huxi-huli",
-      "title": "儿童呼吸系统疾病护理",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-xiaohua-huli",
-      "title": "儿童消化系统疾病护理",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-chuanran-geli",
-      "title": "儿童传染病护理与隔离",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-jiliang-anquan",
-      "title": "儿童用药剂量与安全",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-yiwaishang-yufang",
-      "title": "儿童意外伤害的预防",
-      "status": "📋"
-    }
-  ]
+ "slug": "10-erke-huli-xue",
+ "title": "儿科护理学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gaishu-moshi",
+   "title": "儿科护理概述与工作模式",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-gaishu-moshi/docs/zh.md",
+   "code": "chapters/01-gaishu-moshi/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-pinggu-jiankang",
+   "title": "儿科护理评估与健康指导",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-pinggu-jiankang/docs/zh.md",
+   "code": "chapters/02-pinggu-jiankang/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-baojian-shengzhang",
+   "title": "儿童保健与生长发育的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-baojian-shengzhang/docs/zh.md",
+   "code": "chapters/03-baojian-shengzhang/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-xinshenger",
+   "title": "新生儿与早产儿的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-xinshenger/docs/zh.md",
+   "code": "chapters/04-xinshenger/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-yingyang",
+   "title": "营养障碍性疾病的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-yingyang/docs/zh.md",
+   "code": "chapters/05-yingyang/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-huxi",
+   "title": "呼吸系统疾病的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-huxi/docs/zh.md",
+   "code": "chapters/06-huxi/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-xiaohua",
+   "title": "消化系统疾病的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-xiaohua/docs/zh.md",
+   "code": "chapters/07-xiaohua/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-xunhuan-xueye",
+   "title": "循环与血液系统疾病的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-xunhuan-xueye/docs/zh.md",
+   "code": "chapters/08-xunhuan-xueye/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-miniao-shenjing",
+   "title": "泌尿与神经系统疾病的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-miniao-shenjing/docs/zh.md",
+   "code": "chapters/09-miniao-shenjing/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-chuanran",
+   "title": "儿童传染性疾病与感染防控的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-chuanran/docs/zh.md",
+   "code": "chapters/10-chuanran/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-jizheng",
+   "title": "儿童急症与意外伤害的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-jizheng/docs/zh.md",
+   "code": "chapters/11-jizheng/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-waike",
+   "title": "儿童外科疾病的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-waike/docs/zh.md",
+   "code": "chapters/12-waike/code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-zhengzhuang-tengtong",
+   "title": "儿童常见症状与疼痛的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/13-zhengzhuang-tengtong/docs/zh.md",
+   "code": "chapters/13-zhengzhuang-tengtong/code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-teshu-manbing",
+   "title": "特殊儿童与慢病儿童的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/14-teshu-manbing/docs/zh.md",
+   "code": "chapters/14-teshu-manbing/code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-baohu-zhiliang",
+   "title": "儿童保护、质量风险与平台",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/15-baohu-zhiliang/docs/zh.md",
+   "code": "chapters/15-baohu-zhiliang/code/main.js"
+  }
+ ]
 }

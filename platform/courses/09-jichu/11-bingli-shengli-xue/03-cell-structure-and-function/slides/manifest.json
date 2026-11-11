@@ -1,0 +1,127 @@
+{
+  "chapter": "03-cell-structure-and-function",
+  "slideCount": 24,
+  "segmentCount": 15,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 23
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 71
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 206
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 244
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 409
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 416
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 211
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 409
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 139
+    },
+    {
+      "n": 10,
+      "segment": 7,
+      "chars": 391
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 282
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 390
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 68
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 369
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 76
+    },
+    {
+      "n": 16,
+      "segment": 10,
+      "chars": 418
+    },
+    {
+      "n": 17,
+      "segment": 10,
+      "chars": 248
+    },
+    {
+      "n": 18,
+      "segment": 11,
+      "chars": 330
+    },
+    {
+      "n": 19,
+      "segment": 12,
+      "chars": 407
+    },
+    {
+      "n": 20,
+      "segment": 12,
+      "chars": 104
+    },
+    {
+      "n": 21,
+      "segment": 13,
+      "chars": 381
+    },
+    {
+      "n": 22,
+      "segment": 14,
+      "chars": 414
+    },
+    {
+      "n": 23,
+      "segment": 14,
+      "chars": 335
+    },
+    {
+      "n": 24,
+      "segment": 15,
+      "chars": 52
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "lesson": "07-gu-zhongliu",
+  "title": "骨肿瘤：先分良恶，再谈阴阳",
+  "subject": "18-zhongyi-gubing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "骨肿瘤的良恶性与中医阴阳的关系是？",
+      "options": [
+        "两套坐标，不可互替",
+        "阴阳即良恶",
+        "阴阳决定良恶",
+        "良恶性决定阴阳"
+      ],
+      "correct": 0,
+      "explanation": "教材 7.1.1：良恶性靠影像与病理，阴阳靠四诊。"
+    },
+    {
+      "stage": "check",
+      "question": "恶性骨肿瘤的骨膜反应典型表现是？",
+      "options": [
+        "葱皮样、Codman 三角",
+        "厚实无破坏",
+        "无骨膜反应",
+        "仅硬化"
+      ],
+      "correct": 0,
+      "explanation": "教材 7.1.1 的良恶性对照。"
+    },
+    {
+      "stage": "check",
+      "question": "骨肉瘤的好发年龄与部位是？",
+      "options": [
+        "10–25 岁，股骨远端与胫骨近端干骺端",
+        "40 岁以上，骨盆",
+        "儿童，颅骨",
+        "老年，脊柱"
+      ],
+      "correct": 0,
+      "explanation": "教材 7.3.1 概述。"
+    },
+    {
+      "stage": "check",
+      "question": "本章的规模是？",
+      "options": [
+        "9 单元 19,155 汉字（全书最长）",
+        "3 单元",
+        "4 单元",
+        "10 单元"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算。"
+    },
+    {
+      "stage": "post",
+      "question": "中医在骨肿瘤中的三句定位是？",
+      "options": [
+        "扶正祛邪为辅、攻毒须监护、不替代病理与手术边界",
+        "可替代手术",
+        "可决定切不切",
+        "只需攻毒"
+      ],
+      "correct": 0,
+      "explanation": "教材 7.1.1 的克制写法。"
+    },
+    {
+      "stage": "post",
+      "question": "骨样骨瘤的特征性表现是？",
+      "options": [
+        "夜间痛，水杨酸类可缓解",
+        "无痛",
+        "白天痛",
+        "只在运动时痛"
+      ],
+      "correct": 0,
+      "explanation": "教材 7.2.1。"
+    }
+  ]
+}

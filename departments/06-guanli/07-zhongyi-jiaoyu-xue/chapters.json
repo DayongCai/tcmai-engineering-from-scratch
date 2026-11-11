@@ -1,54 +1,71 @@
 {
-  "slug": "07-zhongyi-jiaoyu-xue",
-  "title": "中医教育学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-lishi-shitu",
-      "title": "中医教育的历史与师徒制",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-kecheng-tixi",
-      "title": "院校教育的课程体系",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-daijiao-guipai",
-      "title": "临床带教与规培",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-kaohe-nengli",
-      "title": "考核方式与能力评价",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-moni-bingren",
-      "title": "模拟教学与标准化病人",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-sizheng-suyang",
-      "title": "课程思政与职业素养",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-jiaoyu-jishu",
-      "title": "教育技术的应用",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-pingjia-sheji",
-      "title": "教学效果的评价设计",
-      "status": "📋"
-    }
-  ]
+ "slug": "07-zhongyi-jiaoyu-xue",
+ "title": "中医教育学",
+ "note": "8 章 = 教材 8 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-e71",
+   "title": "中医教育的对象与目标",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-e72",
+   "title": "学科建设与人才培养",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-e73",
+   "title": "课程与教学组织",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-e74",
+   "title": "师资与培训体系",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-e75",
+   "title": "教学评价与质量保障",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-e76",
+   "title": "临床教学与师承",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-e77",
+   "title": "中医教育标准化与认证",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-e78",
+   "title": "教育研究与改革趋势",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

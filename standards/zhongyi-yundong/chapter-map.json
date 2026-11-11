@@ -1,0 +1,128 @@
+{
+ "note": "中医运动学派生课：一章一主题；四位面＝章群结构分区。",
+ "chapters": {
+  "01-gailun-yuanliu": {
+   "n": 1,
+   "title": "中医运动学概论与源流",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "导引不是「活动活动」：它有明确的三调操作与剂量",
+   "derivedFrom": "qigong、zhenggu"
+  },
+  "02-lilun-jichu": {
+   "n": 2,
+   "title": "运动的中医理论基础",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "气血、筋骨、脏腑是解释框架，不是修辞",
+   "derivedFrom": "qigong、zhenggu"
+  },
+  "03-gongneng-suzhi": {
+   "n": 3,
+   "title": "运动功能与体能要素",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "力量、柔韧、平衡、耐力四要素各管一段",
+   "derivedFrom": "kangfu-huli、qigong"
+  },
+  "04-daoyin-chufang": {
+   "n": 4,
+   "title": "导引功法与运动处方",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5",
+    "4.6"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "处方要写清练什么、练多久、练到什么程度",
+   "derivedFrom": "qigong、kangfu-huli"
+  },
+  "05-guanjie-jianrou": {
+   "n": 5,
+   "title": "关节活动与柔韧训练",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "先测活动度，再谈牵伸",
+   "derivedFrom": "kangfu-huli、zhenggu"
+  },
+  "06-jili-naili": {
+   "n": 6,
+   "title": "肌力与耐力训练",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "抗阻训练的剂量是次数×组数×负荷",
+   "derivedFrom": "kangfu-huli、shoufa"
+  },
+  "07-pingheng-diedao": {
+   "n": 7,
+   "title": "平衡、协调与跌倒预防",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "跌倒风险是老年人运动干预的第一终点",
+   "derivedFrom": "kangfu-huli、laonian-huli"
+  },
+  "08-shanghai-yufang": {
+   "n": 8,
+   "title": "运动损伤的预防与康复",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4",
+    "8.5",
+    "8.6"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "热身、负荷递增、恢复三件事决定伤不伤",
+   "derivedFrom": "gushang-jinshang、zhenggu"
+  }
+ }
+}

@@ -1,0 +1,692 @@
+{
+ "subject": "22-zhongyi-biye-sheji",
+ "what": "设计／校验／返工三段的真实工时台账；有数据才拆隐性成本，没有就留空。",
+ "schema": [
+  "slug",
+  "段",
+  "人月",
+  "记录人",
+  "日期"
+ ],
+ "rule": [
+  "人月须为正数；0 或负数视为未填",
+  "未填不得参与任何比例计算",
+  "填满某案三段后，该案粗口径可由「细口径 + 三段人月×单价」复算"
+ ],
+ "status": {
+  "已填案数": 15,
+  "待填案数": 11,
+  "已填行数": 45,
+  "来源": "假设·未实测",
+  "说明": "按设计 40%／校验 35%／返工 25% 的假设比例拆分隐性成本；替换为实测值前，任何由此得出的比例不得进入结论。另两类行不是漏填：待建·不拆 33 行（11 案）是成本口径里 `计量` 为空、底本尚未建成，按规则不得按 0 计、也不得按目标体量估；无隐性成本 3 行（1 案）是粗口径等于细口径、没有隐含成本可拆。",
+  "待建案": [
+   "08-zhenjiu-jingluo-diben",
+   "09-zhenjiu-shuxue-guishu",
+   "10-zhenjiu-zhishishu-guadian",
+   "13-gushang-kangfu-pingding",
+   "15-huli-jiaoban-sbar",
+   "16-huli-yangsheng-fangan",
+   "17-guanli-tongji-diben",
+   "18-guanli-fugaidu-baobiao",
+   "19-guanli-zhengce-guadian",
+   "23-wuguan-mianbu-wangzhen",
+   "25-wuguan-guangxue-canliang"
+  ],
+  "无隐性成本案": [
+   "22-zhineng-zhibiao-shibai"
+  ],
+  "待核": [
+   "11 个案中 3 个属针灸系（08-zhenjiu-jingluo-diben, 09-zhenjiu-shuxue-guishu, 10-zhenjiu-zhishishu-guadian）：成本口径的 `计量说明` 仍写「该系底本 0 门，未建成」，而针灸系 2026-11 已建成 8 门课底本。该前提已过期，但重算会改变毕设案的前提（从零建 vs 已有基建），须先定案再改数——本轮只登记，不改数。"
+  ]
+ },
+ "rows": [
+  {
+   "slug": "02-zhongyi-zhenghou-paisheng",
+   "段": "设计",
+   "人月": 0.12,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "02-zhongyi-zhenghou-paisheng",
+   "段": "校验",
+   "人月": 0.1,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "02-zhongyi-zhenghou-paisheng",
+   "段": "返工",
+   "人月": 0.07,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "03-zhongyi-xuepai-cibiao",
+   "段": "设计",
+   "人月": 0.77,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "03-zhongyi-xuepai-cibiao",
+   "段": "校验",
+   "人月": 0.67,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "03-zhongyi-xuepai-cibiao",
+   "段": "返工",
+   "人月": 0.48,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "04-zhongyi-zhexue-fanchou",
+   "段": "设计",
+   "人月": 0.8,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "04-zhongyi-zhexue-fanchou",
+   "段": "校验",
+   "人月": 0.7,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "04-zhongyi-zhexue-fanchou",
+   "段": "返工",
+   "人月": 0.5,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "05-zhongyao-xingzhuang-jiexi",
+   "段": "设计",
+   "人月": 0.92,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "05-zhongyao-xingzhuang-jiexi",
+   "段": "校验",
+   "人月": 0.81,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "05-zhongyao-xingzhuang-jiexi",
+   "段": "返工",
+   "人月": 0.58,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "06-zhongyao-fangji-yaowei",
+   "段": "设计",
+   "人月": 0.6,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "06-zhongyao-fangji-yaowei",
+   "段": "校验",
+   "人月": 0.52,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "06-zhongyao-fangji-yaowei",
+   "段": "返工",
+   "人月": 0.37,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "07-zhongyao-yaoli-nandu",
+   "段": "设计",
+   "人月": 0.49,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "07-zhongyao-yaoli-nandu",
+   "段": "校验",
+   "人月": 0.43,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "07-zhongyao-yaoli-nandu",
+   "段": "返工",
+   "人月": 0.31,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "08-zhenjiu-jingluo-diben",
+   "段": "设计",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "08-zhenjiu-jingluo-diben",
+   "段": "校验",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "08-zhenjiu-jingluo-diben",
+   "段": "返工",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "09-zhenjiu-shuxue-guishu",
+   "段": "设计",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "09-zhenjiu-shuxue-guishu",
+   "段": "校验",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "09-zhenjiu-shuxue-guishu",
+   "段": "返工",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "10-zhenjiu-zhishishu-guadian",
+   "段": "设计",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "10-zhenjiu-zhishishu-guadian",
+   "段": "校验",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "10-zhenjiu-zhishishu-guadian",
+   "段": "返工",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "11-gushang-gubing-qianyi",
+   "段": "设计",
+   "人月": 1.13,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "11-gushang-gubing-qianyi",
+   "段": "校验",
+   "人月": 0.99,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "11-gushang-gubing-qianyi",
+   "段": "返工",
+   "人月": 0.7,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "12-gushang-chuangshang-shijianchuang",
+   "段": "设计",
+   "人月": 0.74,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "12-gushang-chuangshang-shijianchuang",
+   "段": "校验",
+   "人月": 0.65,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "12-gushang-chuangshang-shijianchuang",
+   "段": "返工",
+   "人月": 0.46,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "13-gushang-kangfu-pingding",
+   "段": "设计",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "13-gushang-kangfu-pingding",
+   "段": "校验",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "13-gushang-kangfu-pingding",
+   "段": "返工",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "14-huli-pinggu-diben",
+   "段": "设计",
+   "人月": 1.17,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "14-huli-pinggu-diben",
+   "段": "校验",
+   "人月": 1.02,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "14-huli-pinggu-diben",
+   "段": "返工",
+   "人月": 0.73,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "15-huli-jiaoban-sbar",
+   "段": "设计",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "15-huli-jiaoban-sbar",
+   "段": "校验",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "15-huli-jiaoban-sbar",
+   "段": "返工",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "16-huli-yangsheng-fangan",
+   "段": "设计",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "16-huli-yangsheng-fangan",
+   "段": "校验",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "16-huli-yangsheng-fangan",
+   "段": "返工",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "17-guanli-tongji-diben",
+   "段": "设计",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "17-guanli-tongji-diben",
+   "段": "校验",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "17-guanli-tongji-diben",
+   "段": "返工",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "18-guanli-fugaidu-baobiao",
+   "段": "设计",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "18-guanli-fugaidu-baobiao",
+   "段": "校验",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "18-guanli-fugaidu-baobiao",
+   "段": "返工",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "19-guanli-zhengce-guadian",
+   "段": "设计",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "19-guanli-zhengce-guadian",
+   "段": "校验",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "19-guanli-zhengce-guadian",
+   "段": "返工",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "20-zhineng-icd-jiansuo",
+   "段": "设计",
+   "人月": 0.8,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "20-zhineng-icd-jiansuo",
+   "段": "校验",
+   "人月": 0.7,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "20-zhineng-icd-jiansuo",
+   "段": "返工",
+   "人月": 0.5,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "21-zhineng-yuyi-zhangliang",
+   "段": "设计",
+   "人月": 0.4,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "21-zhineng-yuyi-zhangliang",
+   "段": "校验",
+   "人月": 0.35,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "21-zhineng-yuyi-zhangliang",
+   "段": "返工",
+   "人月": 0.25,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "22-zhineng-zhibiao-shibai",
+   "段": "设计",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "无隐性成本"
+  },
+  {
+   "slug": "22-zhineng-zhibiao-shibai",
+   "段": "校验",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "无隐性成本"
+  },
+  {
+   "slug": "22-zhineng-zhibiao-shibai",
+   "段": "返工",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "无隐性成本"
+  },
+  {
+   "slug": "23-wuguan-mianbu-wangzhen",
+   "段": "设计",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "23-wuguan-mianbu-wangzhen",
+   "段": "校验",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "23-wuguan-mianbu-wangzhen",
+   "段": "返工",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "24-wuguan-fangji-shai",
+   "段": "设计",
+   "人月": 0.6,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "24-wuguan-fangji-shai",
+   "段": "校验",
+   "人月": 0.52,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "24-wuguan-fangji-shai",
+   "段": "返工",
+   "人月": 0.37,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "25-wuguan-guangxue-canliang",
+   "段": "设计",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "25-wuguan-guangxue-canliang",
+   "段": "校验",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "25-wuguan-guangxue-canliang",
+   "段": "返工",
+   "人月": null,
+   "记录人": null,
+   "日期": null,
+   "来源": "待建·不拆"
+  },
+  {
+   "slug": "26-jichu-bingli-diben",
+   "段": "设计",
+   "人月": 1.3,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "26-jichu-bingli-diben",
+   "段": "校验",
+   "人月": 1.14,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "26-jichu-bingli-diben",
+   "段": "返工",
+   "人月": 0.81,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "27-jichu-bingsheng-jiuzhou",
+   "段": "设计",
+   "人月": 0.94,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "27-jichu-bingsheng-jiuzhou",
+   "段": "校验",
+   "人月": 0.82,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "27-jichu-bingsheng-jiuzhou",
+   "段": "返工",
+   "人月": 0.59,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "28-jichu-shengli-zhengchangzhi",
+   "段": "设计",
+   "人月": 1.04,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "28-jichu-shengli-zhengchangzhi",
+   "段": "校验",
+   "人月": 0.91,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  },
+  {
+   "slug": "28-jichu-shengli-zhengchangzhi",
+   "段": "返工",
+   "人月": 0.65,
+   "记录人": "假设·未实测",
+   "日期": "—",
+   "来源": "假设"
+  }
+ ]
+}

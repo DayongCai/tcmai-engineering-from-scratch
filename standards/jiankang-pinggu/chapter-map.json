@@ -1,0 +1,101 @@
+{
+ "note": "健康评估按「适应能力四域」重排：每一章对应一域，四域共用同一个判据——相对个体自己的「从容长寿」目标，该域是否处于最合适状态（不是最高，而是最匹配）。",
+ "chapters": {
+  "01-sishiying-kuangjia": {
+   "n": 1,
+   "title": "四域适应框架与「从容长寿」基线",
+   "units": [
+    "1.1"
+   ],
+   "srcChapters": [
+    "neike-huli#3"
+   ],
+   "why": "先立框架：健康不再是「有没有病」，而是四域适应能力相对个体自己的长寿目标是否合适",
+   "derivedFrom": "neike-huli 第3章"
+  },
+  "02-shengli-shiying": {
+   "n": 2,
+   "title": "生理适应能力：生命体征与一般状态的判读",
+   "units": [
+    "2.1"
+   ],
+   "srcChapters": [
+    "jichu-huli#4"
+   ],
+   "why": "生理域是唯一有客观刻度的域：体温、脉搏、呼吸、血压与一般状态，其余三域都要参照它",
+   "derivedFrom": "jichu-huli 第4章"
+  },
+  "03-xinli-shiying": {
+   "n": 3,
+   "title": "心理适应能力：尊严、自主与情绪的判读",
+   "units": [
+    "3.1"
+   ],
+   "srcChapters": [
+    "jichu-huli#3"
+   ],
+   "why": "心理域没有刻度，只能从「尊严是否被保住、自主是否被削弱、情绪是否还撑得住」三处判",
+   "derivedFrom": "jichu-huli 第3章"
+  },
+  "04-shehui-shiying": {
+   "n": 4,
+   "title": "社会适应能力：角色、家庭与支持的判读",
+   "units": [
+    "4.1"
+   ],
+   "srcChapters": [
+    "laonian-huli#4"
+   ],
+   "why": "社会域的问题常被写成「家庭支持」，但真正要判的是角色是否还在、参与是否还通",
+   "derivedFrom": "laonian-huli 第4章"
+  },
+  "05-huanjing-shiying": {
+   "n": 5,
+   "title": "环境生态适应能力：场所、季节与可达性的判读",
+   "units": [
+    "5.1"
+   ],
+   "srcChapters": [
+    "waike-huli#4"
+   ],
+   "why": "环境域最容易被漏：同一个功能水平，换个居住环境结局就不同",
+   "derivedFrom": "waike-huli 第4章"
+  },
+  "06-zonghe-panduan": {
+   "n": 6,
+   "title": "四域整合判断与量表的使用",
+   "units": [
+    "6.1"
+   ],
+   "srcChapters": [
+    "jichu-huli#14"
+   ],
+   "why": "四域不能各自打分后相加：整合判断要回答「哪一域是短板、短板修补后能否回到最合适」",
+   "derivedFrom": "jichu-huli 第14章"
+  },
+  "07-jilu-goutong": {
+   "n": 7,
+   "title": "评估结果的记录与沟通",
+   "units": [
+    "7.1"
+   ],
+   "srcChapters": [
+    "neike-huli#5"
+   ],
+   "why": "记录与沟通是四域判断能否传递的唯一通道，漏记一域等于漏判一域",
+   "derivedFrom": "neike-huli 第5章"
+  },
+  "08-piancha-zhili": {
+   "n": 8,
+   "title": "评估偏差、过度检查与质量治理",
+   "units": [
+    "8.1"
+   ],
+   "srcChapters": [
+    "neike-huli#17"
+   ],
+   "why": "最后落回偏差：过度检查伤害的是「最合适」这个目标本身",
+   "derivedFrom": "neike-huli 第17章"
+  }
+ }
+}

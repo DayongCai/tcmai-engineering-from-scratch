@@ -1,66 +1,87 @@
 {
-  "slug": "08-zhongyi-kouqiang-kexue",
-  "title": "中医口腔科学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-kouchi-bianzheng",
-      "title": "口齿病的脏腑辨证",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-yatong-yaxuan",
-      "title": "牙痛与牙宣：牙周病的中医辨治",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-kouchuang-nianmo",
-      "title": "口疮与口腔黏膜病",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-kouchou-tuoye",
-      "title": "口臭与唾液异常",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-ganzao-kouqiang",
-      "title": "干燥综合征的口腔表现",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-taixian-baiban",
-      "title": "口腔扁平苔藓与白斑",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-waiyong-hanshu",
-      "title": "中药外用与含漱制剂",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-quanshen-guanxi",
-      "title": "口腔病与全身疾病的关系",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-jilu-guifan",
-      "title": "口腔辨证的记录规范",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-liaoxiao-pingjia",
-      "title": "口腔黏膜病的疗效评价",
-      "status": "📋"
-    }
-  ]
+ "slug": "08-zhongyi-kouqiang-kexue",
+ "title": "中医口腔科学",
+ "note": "10 章 = 教材 10 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-e81",
+   "title": "口腔的中医解剖与生理",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-e82",
+   "title": "口齿疾病的病因病机",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-e83",
+   "title": "口齿疾病的辨证要点",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-e84",
+   "title": "口齿疾病的治法与外治",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-e85",
+   "title": "牙痛与龋病",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-e86",
+   "title": "牙周病与牙龈出血",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-e87",
+   "title": "口疮与口腔黏膜病",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-e88",
+   "title": "口臭与口干",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-e89",
+   "title": "口齿急症与外伤",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-e810",
+   "title": "口齿调护与预防",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

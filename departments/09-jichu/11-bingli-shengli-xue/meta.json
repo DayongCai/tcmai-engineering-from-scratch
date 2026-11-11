@@ -1,0 +1,40 @@
+{
+  "slug": "11-bingli-shengli-xue",
+  "title": "病理生理学",
+  "en": "Pathophysiology",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 131,
+  "type": "Core",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "病机演变→状态机 / 代偿失调→阈值模型",
+  "chaptersTarget": 53,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/11-bingli-shengli-xue",
+    "videosPublished": 0,
+    "status": "rendered",
+    "narrationChapters": 53,
+    "slideDecks": 53,
+    "slides": 1526,
+    "videosRendered": 53,
+    "videoHours": 22.6,
+    "videoBytes": 2276331520
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/11-bingli-shengli-xue",
+    "chaptersWritten": 53,
+    "words": 416461,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/binglishengli/supplements/jiangyi（本仓原创讲义，非教材原文）",
+    "extractedAt": "2026-10-30",
+    "rewrittenChapters": 53,
+    "figures": 40
+  }
+}

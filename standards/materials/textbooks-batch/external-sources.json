@@ -1,0 +1,124 @@
+{
+  "$generated": "手工维护：外源补录清单（公有领域古籍 → [textbooks] 学科）",
+  "note": "只收公有领域古籍的文字化本；源件不入库的规则同 textbooks-batch（入 sha256 + 字节 + 章表）。本清单不并入底本 registry.json，统计分开计。",
+  "provider": {
+    "id": "jicheng",
+    "title": "中醫笈成（漢リポ 文字化本）",
+    "url": "https://jicheng.tw/tcm/",
+    "note": "页面自述底本（多为清代刊本 / 欽定四庫全書本）；抓取为公开页面正文，标注「外源·笈成」"
+  },
+  "rules": {
+    "layer": "external-source",
+    "chapterLevel": "默认 h3（篇/門/證）为章；h1 卷、h2 類 记入章首元数据不单独成章",
+    "script": "原文繁體 → 简体仅做字形转换（opencc t2s），词句不改；两个版本都留档",
+    "label": "引用须标「外源·笈成·<书名> 第N条」，不得标「底本」",
+    "notInBaseRegistry": true
+  },
+  "sources": [
+    {
+      "id": "zhenggu-xinfa",
+      "title": "醫宗金鑑·正骨心法要旨",
+      "path": "醫宗金鑑/正骨心法要旨",
+      "chapterLevel": 3,
+      "subjects": [
+        {
+          "dept": "04-gushang",
+          "slug": "08-gushang-shoufa-zhiliao",
+          "title": "骨伤科手法治疗学",
+          "role": "primary"
+        }
+      ],
+      "why": "手法总论/手法释义/器具总论/头面胸背四肢部伤证，与本课「手法 + 夹缚器具」主线一一对应"
+    },
+    {
+      "id": "shangke-dacheng",
+      "title": "傷科大成",
+      "path": "傷科大成",
+      "chapterLevel": 2,
+      "subjects": [
+        {
+          "dept": "04-gushang",
+          "slug": "07-zhongyi-jinshang-xue",
+          "title": "中医筋伤学",
+          "role": "primary"
+        }
+      ],
+      "why": "伤科专书，筋伤/跌打/骨节错缝的证治条目可分章搬运"
+    },
+    {
+      "id": "wangzhen-zunjing",
+      "title": "望診遵經",
+      "path": "望診遵經",
+      "chapterLevel": 2,
+      "subjects": [
+        {
+          "dept": "08-wuguan",
+          "slug": "03-zhongyi-mianbu-wangzhen",
+          "title": "中医面部望诊学",
+          "role": "primary"
+        }
+      ],
+      "why": "面部气色/五官望诊的专论，是本课的直接原典"
+    },
+    {
+      "id": "shenshi-yaohan",
+      "title": "審視瑤函",
+      "path": "審視瑤函",
+      "chapterLevel": 3,
+      "subjects": [
+        {
+          "dept": "08-wuguan",
+          "slug": "05-zhongyi-wuguan-jingdian",
+          "title": "中医五官科经典选读",
+          "role": "primary"
+        }
+      ],
+      "why": "眼科集成之作（病因/五轮八廓/各证治法），经典选读的眼科主源"
+    },
+    {
+      "id": "chonglou-yuyao",
+      "title": "重樓玉鑰",
+      "path": "重樓玉鑰",
+      "chapterLevel": 3,
+      "subjects": [
+        {
+          "dept": "08-wuguan",
+          "slug": "14-zhongyi-sangyin-yixue",
+          "title": "中医嗓音医学",
+          "role": "primary"
+        }
+      ],
+      "why": "喉科专书（咽喉治法/白喉/喉风），嗓音病证的原典"
+    },
+    {
+      "id": "kouchide-leiyao",
+      "title": "口齒類要",
+      "path": "口齒類要",
+      "chapterLevel": 1,
+      "subjects": [
+        {
+          "dept": "08-wuguan",
+          "slug": "08-zhongyi-kouqiang-kexue",
+          "title": "中医口腔科学",
+          "role": "primary"
+        }
+      ],
+      "why": "口齿专书（齿/舌/唇/口疮），中医口腔科的直接原典"
+    },
+    {
+      "id": "waike-xinfa",
+      "title": "醫宗金鑑·外科心法要訣",
+      "path": "醫宗金鑑/外科心法要訣",
+      "chapterLevel": 3,
+      "subjects": [
+        {
+          "dept": "08-wuguan",
+          "slug": "15-zhongyi-meirong-pifu",
+          "title": "中医美容与皮肤治疗学",
+          "role": "primary"
+        }
+      ],
+      "why": "面部皮肤诸证（面游风/黧黑斑/肺风粉刺等）与外治法的原典"
+    }
+  ]
+}

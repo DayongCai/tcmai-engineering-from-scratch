@@ -112,10 +112,23 @@ for (const ch of chapters) {
 
   const narr = JSON.parse(fs.readFileSync(narrPath, 'utf8'));
   const frames = fs.readdirSync(framesDir).filter((f) => /\.(png|jpg|jpeg)$/i.test(f)).sort();
-  if (frames.length < narr.segments.length) {
-    console.error(`  ✗ ${ch}: frames/ 只有 ${frames.length} 张，需要至少 ${narr.segments.length} 张`);
+  // 拆片之后「片数 ≠ 段数」：靠 slides/manifest.json 把每一段映射到它的若干张片，
+  // 否则第 i 段会配到第 i 张片（内容整体错位，而且错得很像真的）。
+  const manifestPath = path.join(cdir, 'slides', 'manifest.json');
+  const manifest = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, 'utf8')) : null;
+  const needFrames = manifest ? manifest.slideCount : narr.segments.length;
+  if (frames.length < needFrames) {
+    console.error(`  ✗ ${ch}: frames/ 只有 ${frames.length} 张，需要至少 ${needFrames} 张`);
     continue;
   }
+  const slidesOf = (segNo) => {
+    if (!manifest) return [frames[segNo - 1]];
+    return manifest.slides.filter((x) => x.segment === segNo).map((x) => frames[x.n - 1]).filter(Boolean);
+  };
+  const charsOf = (segNo) => {
+    if (!manifest) return 1;
+    return manifest.slides.filter((x) => x.segment === segNo).reduce((a, x) => a + (x.chars || 1), 0);
+  };
 
   fs.mkdirSync(videoDir, { recursive: true });
   const listPath = path.join(cdir, 'concat.txt');
@@ -124,7 +137,7 @@ for (const ch of chapters) {
 
   for (let i = 0; i < narr.segments.length; i += 1) {
     const seg = narr.segments[i];
-    const frame = path.join(framesDir, frames[i]);
+    const segFrames = slidesOf(i + 1).map((f) => path.join(framesDir, f));
     // 配音文件只要**存在**就用，不关心它是哪个 TTS 产的：
     // 人工录音、edge-tts、SAPI、云端 TTS 都可能落在同一个位置，把「谁产的」写死在判据里
     // 会让非 edge-tts 的配音被静默忽略（然后你会以为配音没生效是 TTS 的问题）。
@@ -142,7 +155,16 @@ for (const ch of chapters) {
     const seconds = Number.isFinite(seg.audioSeconds) && seg.audioSeconds > 0
       ? seg.audioSeconds
       : seg.estimateSeconds;
-    const args = ffmpegArgs({ frame, seconds, audioFile: hasAudio ? audioFile : null, out: partFile });
+    // 一段配多张片时按时长按字数分摊，片内字幕与画面才对得上
+    const totalChars = charsOf(i + 1) || 1;
+    const segSlides = manifest ? manifest.slides.filter((x) => x.segment === i + 1) : [];
+    const plans = segFrames.length === 1
+      ? [{ path: segFrames[0], seconds }]
+      : segFrames.map((f, k) => ({
+          path: f,
+          seconds: Math.max(0.4, (seconds * (segSlides[k] ? segSlides[k].chars : 1)) / totalChars),
+        }));
+    const args = ffmpegArgs({ frames: plans, seconds, audioFile: hasAudio ? audioFile : null, out: partFile });
     const r = spawnSync(ffmpeg, args, { encoding: 'utf8' });
     if (r.status !== 0) {
       console.error(`  ✗ ${ch} 第 ${i + 1} 段编码失败:`);
@@ -228,15 +250,33 @@ console.log('成片不入库（见 .gitignore），走 release 附件发布；si
  * 采样率也必须与配音一致：有配音的段是 22050Hz，无配音的段若用 44100Hz 的 anullsrc，
  * 拼接时 `-c copy` 会把不同采样率的流硬接在一起。
  */
-function ffmpegArgs({ frame, seconds, audioFile, out }) {
+function ffmpegArgs({ frames, seconds, audioFile, out }) {
   const hasAudio = audioFile && fs.existsSync(audioFile);
-  const args = ['-y', '-loop', '1', '-i', frame];
+  const args = ['-y'];
+  if (frames.length === 1) {
+    args.push('-loop', '1', '-i', frames[0].path);
+  } else {
+    // 一段多片：每张片各自 -loop 1 -t <停留秒数>，再用 concat 滤镜拼成一段。
+    // 不走 concat demuxer：单张图片只有一帧，demuxer 的 duration 对它不生效，
+    // 实测结果是整段只显示第一张（且时长正好等于第一张的分配值，很容易被当成编码成功）。
+    for (const f of frames) args.push('-loop', '1', '-t', f.seconds.toFixed(3), '-i', f.path);
+  }
+  const audioIdx = frames.length;
   if (hasAudio) args.push('-i', audioFile);
   else args.push('-f', 'lavfi', '-i', 'anullsrc=channel_layout=mono:sample_rate=22050');
+
+  if (frames.length === 1) {
+    args.push('-map', '0:v:0', '-map', `${audioIdx}:a`);
+  } else {
+    const ins = frames.map((_, i) => `[${i}:v]`).join('');
+    args.push(
+      '-filter_complex', `${ins}concat=n=${frames.length}:v=1:a=0,scale=1920:-2,format=yuv420p[v]`,
+      '-map', '[v]', '-map', `${audioIdx}:a`
+    );
+  }
   args.push(
     '-c:v', 'libx264', '-tune', 'stillimage', '-pix_fmt', 'yuv420p', '-r', '25',
     '-c:a', 'aac', '-b:a', '128k',
-    '-vf', 'scale=1920:-2',
     '-t', String(seconds)
   );
   if (hasAudio) args.push('-shortest');

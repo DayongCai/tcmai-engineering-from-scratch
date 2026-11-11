@@ -85,10 +85,14 @@ function linksIn(text) {
   lines.forEach((line, i) => {
     if (/^\s*```/.test(line)) { inFence = !inFence; return; }
     if (inFence) return;                       // 代码块里的不是链接
-    for (const m of line.matchAll(/\[[^\]]*\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g)) {
+    // 行内代码（`…`）里的也不是链接 —— GitHub 不会把它渲染成链接。
+    // 反例（真实踩到过）：CHANGELOG 为了说明「旧渲染器不认 `![图注](x.svg)`」，
+    // 把这句话放进了反引号；不剥行内代码，这段**举例**就会被判成一处真断链。
+    const line2 = line.replace(/`[^`]*`/g, '');
+    for (const m of line2.matchAll(/\[[^\]]*\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g)) {
       out.push({ target: m[1], line: i + 1 });
     }
-    for (const m of line.matchAll(/<a\s+[^>]*href=["']([^"']+)["']/gi)) {
+    for (const m of line2.matchAll(/<a\s+[^>]*href=["']([^"']+)["']/gi)) {
       out.push({ target: m[1], line: i + 1 });
     }
   });

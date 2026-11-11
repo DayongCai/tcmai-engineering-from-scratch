@@ -1,0 +1,60 @@
+{
+  "slug": "19-zhongyao-zhuanye-shijian",
+  "title": "中药专业实践",
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-changdi-diaoyan",
+      "title": "药材市场与产地调研：道地性与商品规格",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/01-changdi-diaoyan/docs/zh.md",
+      "code": "chapters/01-changdi-diaoyan/code/main.js"
+    },
+    {
+      "n": 2,
+      "slug": "02-jianding-shijian",
+      "title": "鉴定实验室实践：性状与显微鉴定",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/02-jianding-shijian/docs/zh.md",
+      "code": "chapters/02-jianding-shijian/code/main.js"
+    },
+    {
+      "n": 3,
+      "slug": "03-paozhi-chejian",
+      "title": "炮制车间实践：工艺与质控点",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/03-paozhi-chejian/docs/zh.md",
+      "code": "chapters/03-paozhi-chejian/code/main.js"
+    },
+    {
+      "n": 4,
+      "slug": "04-zhiji-zhongshi",
+      "title": "制剂中试：处方—工艺—质量",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/04-zhiji-zhongshi/docs/zh.md",
+      "code": "chapters/04-zhiji-zhongshi/code/main.js"
+    },
+    {
+      "n": 5,
+      "slug": "05-yaofang-suifang",
+      "title": "药房与临床用药随访",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/05-yaofang-suifang/docs/zh.md",
+      "code": "chapters/05-yaofang-suifang/code/main.js"
+    },
+    {
+      "n": 6,
+      "slug": "06-shijian-baogao",
+      "title": "实践报告与出站考核",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/06-shijian-baogao/docs/zh.md",
+      "code": "chapters/06-shijian-baogao/code/main.js"
+    }
+  ]
+}

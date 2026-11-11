@@ -1,0 +1,94 @@
+{
+ "slug": "16-zhongyi-zhexue-shi",
+ "title": "中医哲学史",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-fanchou-lun",
+   "title": "哲学史研究什么：范畴，不是年表",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 2,
+    "hanzi": 218
+   }
+  },
+  {
+   "n": 2,
+   "slug": "02-qi-dao",
+   "title": "气与道：本体论的两个词",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 1,
+    "hanzi": 81
+   }
+  },
+  {
+   "n": 3,
+   "slug": "03-yinyang",
+   "title": "阴阳：从现象到范畴",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 1,
+    "hanzi": 89
+   }
+  },
+  {
+   "n": 4,
+   "slug": "04-wuxing",
+   "title": "五行：分类还是生成",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 1,
+    "hanzi": 79
+   }
+  },
+  {
+   "n": 5,
+   "slug": "05-tianren",
+   "title": "天人相应：人与环境的关系模型",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 1,
+    "hanzi": 80
+   }
+  },
+  {
+   "n": 6,
+   "slug": "06-xingshen",
+   "title": "形神与心身：医学里的心身问题",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 1,
+    "hanzi": 87
+   }
+  },
+  {
+   "n": 7,
+   "slug": "07-changbian-quanheng",
+   "title": "常变与权衡：辨证思维的三条规则",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 1,
+    "hanzi": 75
+   }
+  },
+  {
+   "n": 8,
+   "slug": "08-jiegouhua",
+   "title": "范畴的结构化与四个层面",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 2,
+    "hanzi": 174
+   }
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+ "lesson": "10-jiu-baguan",
+ "title": "灸法与拔罐技术",
+ "subject": "24-zhongyi-huli-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 10 章「灸法与拔罐技术」要回答的核心问题是什么？",
+   "options": [
+    "灸与拔罐，风险点分别在哪",
+    "1.1.2 中医护理学的内容与体系",
+    "2.1.2 五行学说的基本内容",
+    "3.1.2 闻诊与问诊要点"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：灸的风险在「热伤与晕灸」，罐的风险在「留罐时间与皮肤破损」；两者的禁忌证有重叠（高热、出血倾向、皮肤破损）。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "评价与记录",
+    "辨证",
+    "施护",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（技术类别）重心落在哪一项？",
+   "options": [
+    "居家与养老",
+    "乙酸-丙二酸途径",
+    "莽草酸途径",
+    "甲戊二羟酸途径"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "1 个",
+    "3 个",
+    "5 个",
+    "7 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "本课程数值类命中只有 15 处，说明什么？",
+   "options": [
+    "教材常数多以范围或文字表述，可数的值少不等于不量化",
+    "1.1.2 中医护理学的内容与体系",
+    "2.1.2 五行学说的基本内容",
+    "3.1.2 闻诊与问诊要点"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：真正的量化在方法学七项指标里。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/zhongyi-huli/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

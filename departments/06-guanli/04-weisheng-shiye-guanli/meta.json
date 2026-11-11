@@ -22,8 +22,11 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/06-guanli/04-weisheng-shiye-guanli",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 18,
+    "words": 278578,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#卫生管理学",
+    "extractedAt": "2026-10-21"
   }
 }

@@ -1,0 +1,32 @@
+{
+  "slug": "07-shenghua-xue",
+  "title": "生物化学",
+  "en": "Biochemistry",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 127,
+  "type": "Core",
+  "semester": 2,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 72,
+  "bridge": "代谢通路→网络流 / 酶动力学→ODE 参数辨识",
+  "chaptersTarget": 21,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/07-shenghua-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/07-shenghua-xue",
+    "chaptersWritten": 21,
+    "words": 478262,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#生物化学",
+    "extractedAt": "2026-10-21"
+  }
+}

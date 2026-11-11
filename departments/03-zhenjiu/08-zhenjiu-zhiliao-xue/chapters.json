@@ -1,78 +1,101 @@
 {
-  "slug": "08-zhenjiu-zhiliao-xue",
-  "title": "针灸治疗学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-bianzheng-xuanxue",
-      "title": "针灸治疗的辨证与选穴原则",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-peixue-chufang",
-      "title": "配穴方法与处方结构",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-zhongfeng-miantan",
-      "title": "内科病证：中风与面瘫",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-toutong-xuanyun",
-      "title": "内科病证：头痛、眩晕、失眠",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-weitong-xiexie",
-      "title": "内科病证：胃痛、泄泻、便秘",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-gushang-tongzheng",
-      "title": "骨伤科病证：颈肩腰腿痛",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-fuke-tongjing",
-      "title": "妇科病证：痛经、月经不调",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-erke-xiexie",
-      "title": "儿科病证：小儿泄泻与遗尿",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-wuguan-tongzheng",
-      "title": "五官科病证：耳鸣、鼻炎、牙痛",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-jizheng-tongzheng",
-      "title": "急症与痛证的针灸处理",
-      "status": "📋"
-    },
-    {
-      "n": 11,
-      "slug": "11-linchuang-duizhao",
-      "title": "针灸临床研究的对照设计",
-      "status": "📋"
-    },
-    {
-      "n": 12,
-      "slug": "12-zhengju-dengji",
-      "title": "针灸疗效的证据等级与争议",
-      "status": "📋"
-    }
-  ]
+ "note": "针灸治疗学 12 章 ← 教材 14 章（1+2、3+4、11+12 合并；第 7 章按节序二分；无单元复用）。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-zhiliao-yuanze",
+   "title": "针灸治疗原则与作用",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-zhenzhi-tedian-chufang",
+   "title": "临床诊治特点与针灸处方",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-tedingxue-yingyong",
+   "title": "特定穴的临床应用",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-toumina-tongzheng",
+   "title": "头面躯体痛证",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-neike-yi",
+   "title": "内科病证（一）",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-neike-er",
+   "title": "内科病证（二）",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-fuerke",
+   "title": "妇儿科病证",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-piwaike",
+   "title": "皮外伤科病证",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-wuguan",
+   "title": "五官科病证",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-jizheng-qita",
+   "title": "急症与其他病证",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-zhiwuliu-zhu",
+   "title": "子午流注与灵龟八法",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-yanjiu-jinzhan",
+   "title": "针灸临床研究进展",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

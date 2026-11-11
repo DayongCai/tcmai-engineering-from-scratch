@@ -1,0 +1,79 @@
+{
+ "lesson": "03-jiben-neirong",
+ "title": "推拿功法基本内容与练功要领",
+ "subject": "18-tuina-gongfa-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 3 章「推拿功法基本内容与练功要领」要回答的核心问题是什么？",
+   "options": [
+    "三调（调身、调息、调心）为什么必须同时练",
+    "推拿功法的概念与范围",
+    "推拿功法学的学科地位",
+    "远古至秦汉"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：只调身是体操，只调息是呼吸训练，只调心是打坐；三者合起来才是「练功」，但教材把三调分章写，容易各练各的。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（功法体系）重心落在哪一项？",
+   "options": [
+    "导引套路",
+    "易筋经",
+    "少林内功",
+    "专项功力"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "调息",
+    "调身",
+    "调心",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "8 个",
+    "10 个",
+    "11 个",
+    "13 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "全库三调中写得最少的是哪一调？",
+   "options": [
+    "调心",
+    "调身",
+    "调息",
+    "三者均等"
+   ],
+   "correct": 0,
+   "explanation": "调身 2,031、调息 1,390、调心 448；不可写的意念只能点到。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/gongfa/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

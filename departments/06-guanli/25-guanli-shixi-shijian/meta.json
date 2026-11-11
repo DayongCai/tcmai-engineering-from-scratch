@@ -1,0 +1,34 @@
+{
+  "slug": "25-guanli-shixi-shijian",
+  "title": "管理实习与实践",
+  "en": "Health Management Internship",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 133,
+  "type": "Clinic",
+  "semester": 9,
+  "stage": "lao",
+  "stageTitle": "老",
+  "hours": 108,
+  "bridge": "管理问题→可测量指标 / 流程→泳道图 / 政策→可核查条款",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/25-guanli-shixi-shijian",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/25-guanli-shixi-shijian",
+    "chaptersWritten": 6,
+    "words": 3538,
+    "status": "wip",
+    "layer": "handbook",
+    "contract": "handbook-v1",
+    "origin": "handbook",
+    "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
+    "extractedAt": "2026-11-09"
+  }
+}

@@ -11,7 +11,7 @@
   "stageTitle": "长",
   "hours": 72,
   "bridge": "外科辨证→图像特征 / 疮疡分期→序列标注",
-  "chaptersTarget": 10,
+  "chaptersTarget": 13,
   "chapters": [],
   "platform": {
     "id": "tcmP",
@@ -22,8 +22,12 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/01-zhongyi/11-zhongyi-waike-xue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 13,
+    "words": 298235,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#中医外科学",
+    "extractedAt": "2026-10-21",
+    "note": "底本已结构化：standards/waike/{底本.json,units.json,METHOD.json}（13 章 / 325 单元 / 241,342 字，sha256 登记）"
   }
 }

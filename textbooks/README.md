@@ -87,6 +87,88 @@ textbooks/
 
 ---
 
+### 改写块（`<!-- REWRITE:BEGIN/END -->`）—— 脚本重渲染不许覆盖人工内容
+
+有的教材目录是**脚本渲染 + 人工改写**两层（例如病理生理学：源正文由讲义切章生成，N.1–N.5 人工写）。
+脚本一跑就会整篇重写，人工写的那几节会被冲掉。约定：
+
+```markdown
+<!-- REWRITE:BEGIN -->
+## 本章要回答的问题
+## N.1 概念与出处
+## N.2 为什么可以这样翻译
+## N.3 这个翻译丢掉了什么
+## N.4 与相邻学科的接口
+## N.5 争议与本项目立场
+## 思考题
+## 延伸阅读
+<!-- REWRITE:END -->
+```
+
+- 渲染脚本**只认这两个标记之间的内容**，整块原样搬回文末；标记外一律重渲染。
+- 改写块必须落在文末（它是「在正文之上加的判断」，不是插在正文中间）。
+- **免责句位置固定：`N.5` 之后、`思考题` 之前。** 不是文末——文末是「延伸阅读」，免责句放在
+  那之后会被当脚注读；放在 N.5 后面，读者读完立场就知道边界在哪。2026-10-31 定为一条，
+  门按位置核（此前 51 章在这个位置、2 章放到文末，两种都「块内含免责句」，但读起来不一样）。
+- 门 `tests/test_binglishengli_textbook.js` 核：块内八节齐、篇幅 ≥1,800 汉字、免责句在
+  「N.5 之后、思考题之前」、引到的节号真实存在、不出现页码类不可核出处、图型与行数合法。
+- 写法与粒度以 `textbooks/09-jichu/11-bingli-shengli-xue/` 的第 1、2、19、20、48 章为样板。
+
+## 操作型章契约（`handbook-v1`）—— 轮转与毕设用
+
+第 9/10 学期的 18 门课（临床轮转 / 专业实践 / 工程实践 / 科研实训 + 毕业设计）**不是讲授型课程**：
+学生要的是当天能执行的流程、能打印的清单、能带教签字的模板，而不是 6000 字论证。
+把这套内容写成论文体，等于把手册写成散文；反过来把学术章放水成清单，等于毁掉上面的硬规则。
+所以本仓库有**两套章契约并存**，按课程性质选用，**判定不靠猜**：
+
+| 契约 | 用于 | 章结构 | 验收 |
+|---|---|---|---|
+| 学术型（默认） | 讲授型学科（1–8 学期） | N.1 概念与出处 → N.5 争议与立场 | `textbooks/README.md` 本页 + 人工审读 |
+| **操作型 `handbook-v1`** | 轮转 / 实践 / 毕设（9–10 学期） | **H.1 问题 → H.2 目标 → H.3 流程 → H.4 清单 → H.5 模板 → H.6 失效 → H.7 考核** | `node scripts/check_handbook_contract.js` |
+
+判定字段：`departments/<dept>/<subject>/meta.json` 的 `textbook.contract`（`handbook-v1` 或省略）。
+操作型章的硬要求：七节齐全 · 流程步骤 ≥4 · 清单 ≥6（`- [ ]`）· 失效 ≥3 · 考核 ≥3 · 模板 ≥4 个字段 ·
+正文 ≥400 汉字 · 必须带免责/边界声明 · 章首必须声明 `handbook-v1`。
+
+### 生成与校核
+
+```bash
+node scripts/build_handbook_textbooks.js          # 从 data/handbook/*.json 渲染 18 门手册
+node scripts/build_handbook_textbooks.js --check   # 重渲染比对 + 篇幅下限
+node scripts/check_handbook_contract.js            # 契约审计（结构/篇幅/声明/契约字段一致性）
+```
+
+内容在 `data/handbook/<dept>__<slug>.json`（作者维护），**脚本只渲染不生成内容** —— 改内容改数据，不改脚本。
+
+### 源正文层 vs 改写层（当前进度的口径）
+
+教材目录里的稿子分**四层**，**必须分清，否则「有字」会被当成「按契约写完」**：
+
+| 层 | 内容 | 谁写的 | 现状 |
+|---|---|---|---|
+| **源正文层（底本）** | 章 / 节 / 小节 / 细目 + 正文段落 | 桌面 100 份学科种子稿（`qhzy-*.xlsx`）逐行抽取 | 已落地 99 门学科 / 1,622 章（2026-10：09-jichu +12、03/05 +15、哲学史/机器学习 +2、选修 17；经络腧穴学按节题拆两门，中医基础理论合并手写改写章） |
+| **源正文层（外源）** | 公有领域古籍正文，按篇/门切章 | `scripts/fetch_external_textbooks.js` 抓取 + `scripts/import_external_textbooks.js` 切分 | 已落地 **7 门 / 755 章**（五官 5 + 骨伤 2）；**不并入底本统计**，见 [EXTERNAL-SOURCES.md](../standards/materials/textbooks-batch/EXTERNAL-SOURCES.md) |
+| **操作型层（手册）** | H.1–H.7 流程/清单/模板/考核 | `data/handbook/*.json` 作者撰写 + `scripts/build_handbook_textbooks.js` 渲染 | 已落地 **18 门 / 108 章**（9 院系 × 轮转 + 毕设），契约 `handbook-v1` |
+| **改写层** | 章首「本章要回答的问题」、N.2–N.5（尤其 N.3「丢掉了什么」） | 人（或人审过的写作） | ⬚ 未撰写 |
+
+四层**分账**：底本 100 门 / 1,622 章；外源 7 门 / 755 章；手册 18 门 / 108 章；合计 125 门 / 2,485 章。
+任何把外源或手册并进底本的数字都是口径错误。外源引用须标「外源·笈成·&lt;书名&gt; 第N条」，不得标「底本」。
+
+源正文层（底本/外源）的每一章首块都写着来源表名 / 书名、sha256 前 16 位与该章字数，可复算：
+
+```bash
+node scripts/import_textbooks.js --check           # 底本逐章对账：文件 ↔ 源工作簿
+node scripts/import_external_textbooks.js --check  # 外源逐章对账：文件 ↔ 留档
+node scripts/build_handbook_textbooks.js --check    # 手册：重渲染比对 + 篇幅下限
+node scripts/check_handbook_contract.js             # 手册契约审计
+```
+
+所以 `build_book.js --check` 报的字数只说明**源正文已入库**，不说明改写层完成。
+抽取账本（100 份的 sha256 / 章表清单 / 逐章字数 / 缺口）见
+[`standards/materials/textbooks-batch/README.md`](../standards/materials/textbooks-batch/README.md)。
+
+---
+
 ## 构建
 
 ```bash
@@ -112,6 +194,22 @@ node textbooks/build_book.js --volume 1 --pdf
 ---
 
 ## 进度追踪
+
+### 院系内教学进度与教材看板（生成物）
+
+```bash
+node scripts/build_textbook_board.js          # 重新生成下面三份
+node scripts/build_textbook_board.js --check   # 重算比对，漂移即退出码 1（已接入 npm run check）
+```
+
+| 产物 | 内容 |
+|---|---|
+| [SCHEDULE.md](SCHEDULE.md) | 9 院系内部教学进度：学期 → 课程顺序 → 周学时（学时 ÷ 18）→ 周次 → 章推进 → 教材章实况 |
+| [../textbook-board.html](../textbook-board.html) | 教材看板：9 院系分布、每项指标的「口径 + 现实锚点 + 复核命令」、缺口清单 |
+| `../data/textbook-board.json` | 上面两份的数据源（逐学科对账矩阵 + 排课结果） |
+
+口径：**周学时 = 学时 ÷ 18**（18 教学周 = 16 讲授 + 1 复习 + 1 考核），学时 ≤ 45 的课另给「前九周」方案；
+院系内顺序 = 学期 ↑ → 类型 Core→Build→Clinic→Reference → 章节目标 ↓ → slug。学期归属不改 `curriculum.json`。
 
 教材进度记在每门学科的 `meta.json` 里：
 

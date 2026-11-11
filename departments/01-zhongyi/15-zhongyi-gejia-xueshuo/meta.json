@@ -1,29 +1,45 @@
 {
-  "slug": "15-zhongyi-gejia-xueshuo",
-  "title": "中医各家学说",
-  "en": "Schools of TCM Thought",
-  "deptSlug": "01-zhongyi",
-  "deptTitle": "中医系",
-  "globalN": 15,
-  "type": "Reference",
-  "semester": 7,
-  "stage": "zhuang",
-  "stageTitle": "壮",
-  "hours": 54,
-  "bridge": "学派对比→文本相似度 / 学术谱系→图网络",
-  "chaptersTarget": 8,
-  "chapters": [],
-  "platform": {
-    "id": "tcmP",
-    "coursePath": "platform/courses/01-zhongyi/15-zhongyi-gejia-xueshuo",
-    "videosPublished": 0,
-    "status": "planned"
-  },
-  "textbook": {
-    "id": "textbooks",
-    "path": "textbooks/01-zhongyi/15-zhongyi-gejia-xueshuo",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
-  }
+ "slug": "15-zhongyi-gejia-xueshuo",
+ "title": "中医各家学说",
+ "en": "Schools of TCM Thought",
+ "deptSlug": "01-zhongyi",
+ "deptTitle": "中医系",
+ "globalN": 15,
+ "type": "Reference",
+ "semester": 7,
+ "stage": "zhuang",
+ "stageTitle": "壮",
+ "hours": 54,
+ "bridge": "学派对比→文本相似度 / 学术谱系→图网络",
+ "chaptersTarget": 8,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/01-zhongyi/15-zhongyi-gejia-xueshuo",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/01-zhongyi/15-zhongyi-gejia-xueshuo",
+  "chaptersWritten": 14,
+  "words": 397230,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#中医各家学说",
+  "extractedAt": "2026-10-21"
+ },
+ "standards": {
+  "path": "standards/gejia",
+  "derived": true,
+  "bases": [
+   "standards/shanghan",
+   "standards/jingui",
+   "standards/wenbing",
+   "standards/zhenghou"
+  ],
+  "schools": 8,
+  "corpus": 2792,
+  "units": 10
+ }
 }

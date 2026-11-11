@@ -1,0 +1,79 @@
+{
+  "lesson": "04-qixu-yangxu",
+  "title": "气虚与阳虚：从「不固」到「不温」",
+  "subject": "14-zhongyi-zhenghou-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "气虚与阳虚的分界主要看哪一项？",
+      "options": [
+        "有无寒象（不温）",
+        "病程长短",
+        "病位在脾还是在肾",
+        "有没有痰"
+      ],
+      "correct": 0,
+      "explanation": "教材 4.1.1：气虚核心是不固/不升，阳虚核心是不温。"
+    },
+    {
+      "stage": "check",
+      "question": "气虚的五个「不」不包括？",
+      "options": [
+        "不温",
+        "不固",
+        "不升",
+        "不摄"
+      ],
+      "correct": 0,
+      "explanation": "不温属阳虚；气虚为不固、不升、不运、不化、不摄。"
+    },
+    {
+      "stage": "check",
+      "question": "本库气虚族与阳虚族合计多少证候？",
+      "options": [
+        "21 个（14＋7）",
+        "14 个",
+        "7 个",
+        "50 个"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算：气虚 14＋阳虚 7＝21，覆盖 26 次病证。"
+    },
+    {
+      "stage": "check",
+      "question": "气虚族跨课证候数量是多少？",
+      "options": [
+        "0 个",
+        "3 个",
+        "7 个",
+        "10 个"
+      ],
+      "correct": 0,
+      "explanation": "各科气虚写法各带病位与兼夹，故零跨课。"
+    },
+    {
+      "stage": "post",
+      "question": "「气虚重了就会阳虚」这句话的成立条件是什么？",
+      "options": [
+        "出现寒象（畏寒肢冷、舌淡胖、脉沉迟）",
+        "病程超过三个月",
+        "年龄大于六十",
+        "用过补气药无效"
+      ],
+      "correct": 0,
+      "explanation": "无寒象的疲乏仍属气虚。"
+    },
+    {
+      "stage": "post",
+      "question": "外科阳虚痰凝证的代表方是？",
+      "options": [
+        "阳和汤",
+        "补中益气汤",
+        "知柏地黄丸",
+        "犀角地黄汤"
+      ],
+      "correct": 0,
+      "explanation": "阳和汤为外科温阳化痰的招牌方。"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "lesson": "11-gu-jixing-ruangu",
+  "title": "骨畸形与骨软骨病：越早越好，且只有一次机会",
+  "subject": "18-zhongyi-gubing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "畸形类疾病的时间窗由什么决定？",
+      "options": [
+        "生长板是否闭合",
+        "疼痛程度",
+        "年龄绝对值",
+        "是否手术"
+      ],
+      "correct": 0,
+      "explanation": "这是本章所有时间窗的物理基础。"
+    },
+    {
+      "stage": "check",
+      "question": "脊柱侧凸的支具治疗区间（生长期）是？",
+      "options": [
+        "Cobb 角 25°–40°",
+        "＜10°",
+        "10°–25°",
+        "＞50°"
+      ],
+      "correct": 0,
+      "explanation": "教材 11.1.2 的 Cobb 角四档。"
+    },
+    {
+      "stage": "check",
+      "question": "先天性髋脱位的早期治疗方式是？",
+      "options": [
+        "支具（Pavlik 类）",
+        "立即手术",
+        "牵引三月",
+        "只做按摩"
+      ],
+      "correct": 0,
+      "explanation": "教材 11.1.1：早筛早干预。"
+    },
+    {
+      "stage": "check",
+      "question": "本章数值命中数为？",
+      "options": [
+        "53 处（全书第二）",
+        "0 处",
+        "62 处",
+        "4 处"
+      ],
+      "correct": 0,
+      "explanation": "集中在 Cobb 角与年龄阈值。"
+    },
+    {
+      "stage": "post",
+      "question": "骨软骨病为何「自限但要减负」？",
+      "options": [
+        "多在骨骺闭合后自限，减负可避免畸形残留",
+        "因为不需治疗",
+        "因为会恶变",
+        "因为会截瘫"
+      ],
+      "correct": 0,
+      "explanation": "教材 11.2.1。"
+    },
+    {
+      "stage": "post",
+      "question": "马蹄内翻足的一线治疗是？",
+      "options": [
+        "Ponseti 序列石膏",
+        "立即手术",
+        "只做支具",
+        "观察至成年"
+      ],
+      "correct": 0,
+      "explanation": "教材 11.1.2。"
+    }
+  ]
+}

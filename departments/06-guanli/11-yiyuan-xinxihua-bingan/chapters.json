@@ -1,54 +1,71 @@
 {
-  "slug": "11-yiyuan-xinxihua-bingan",
-  "title": "医院信息化与病案管理",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-his-jicheng",
-      "title": "HIS 的模块与系统集成",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-bingan-bianma",
-      "title": "病案首页与 ICD 编码",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-bingan-zhikong",
-      "title": "病案质控与首页数据",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-hefaxing-qianming",
-      "title": "电子病历的合法性与电子签名",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-jiesuan-qingdan",
-      "title": "医保结算清单与对账",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-baobiao-koujing",
-      "title": "统计报表与指标口径",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-shangbao-jiekou",
-      "title": "数据上报与监管接口",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-keyan-liyong",
-      "title": "病案数据的科研利用",
-      "status": "📋"
-    }
-  ]
+ "slug": "11-yiyuan-xinxihua-bingan",
+ "title": "医院信息化与病案",
+ "note": "8 章 = 教材 8 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-z111",
+   "title": "医院信息系统的构成",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-z112",
+   "title": "标准、编码与互操作",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-z113",
+   "title": "电子病历与临床信息系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-z114",
+   "title": "病案管理与首页数据",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-z115",
+   "title": "数据质量与统计上报",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-z116",
+   "title": "信息安全与权限",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-z117",
+   "title": "项目实施与验收",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-z118",
+   "title": "智慧医院与规划",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

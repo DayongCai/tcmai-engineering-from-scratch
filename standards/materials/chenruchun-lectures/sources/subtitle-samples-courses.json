@@ -1,0 +1,4025 @@
+{
+  "$generated": "node scripts/import_chenruchun_lectures.js --collect（一次性整理，产物已入库）",
+  "title": "陈瑞春讲伤寒论 · 24 讲全课程读屏抽读",
+  "method": "画面硬字幕读屏。平台字幕接口对未登录请求返回空字幕列表（见 sources/api-player-v2.json）→ 不提平台字幕，改读画面硬字幕。每讲：整片 0.5s 取 1 帧、只取底部字幕窄条（y 90%–99%，640×32 灰度 PGM）→ 相邻帧平均绝对差 MAD>3.0 分组得换行段。",
+  "filter": "有字判据（本次新增）：段中帧的「描边白字」占比 = 亮像素(>190)且四邻含暗像素(<90) 的像素比例，逐讲用 Otsu 定阈值。在第 19 讲 150 条人读样本上实测：精确率 100%、召回 90%、准确率 93%（宽松版「条带亮点占比」只有 79%/81%，已弃用）。因此本批每次抽样都落在有字段上，不再浪费读图额度。",
+  "coverage": {
+    "lecturesProcessed": 24,
+    "lecturesRead": 22,
+    "samples": 440,
+    "withText": 440,
+    "videoDurationSec": 73029,
+    "note": "第 19 讲另有更密的 150 条样本（subtitle-samples.json，每 7 段取 1）；本文件不含其 20 条粗样本，以免同一讲两套编号。"
+  },
+  "duplicateLectures": [
+    {
+      "no": 8,
+      "duplicateOf": 6,
+      "note": "合集第 8 条（大青龙汤 麻杏甘石汤）与第 6 条（汗法1 麻黄汤）是同一份视频：bvid/cid 不同（BV1RMo8BmEuD/37737136335 vs BV12xo8BKEsw/37737137206），但时长同为 3370s，抽帧统计逐位相同（6738 帧 / 803 稳定段 / 462 有字段 / Otsu 阈值 0.01735），20 个抽样时间码完全一致。故第 8 讲不作为独立证据计入，本文件只作记录。"
+    }
+  ],
+  "lectures": [
+    {
+      "no": 20,
+      "bvid": "BV11YoaBuEPF",
+      "cid": 37739432942,
+      "title": "陈瑞春讲伤寒论20-温法3 四逆汤 当归四逆汤 吴茱萸汤 乌梅丸 桂枝加附子汤 苓桂术甘汤",
+      "durSource": 2991,
+      "durMeasured": 2991,
+      "frames": 5980,
+      "fps": 2,
+      "stableSegments": 705,
+      "textSegments": 376,
+      "textRatio": 0.533,
+      "outlinedThreshold": 0.0225,
+      "madThreshold": 3,
+      "coverageRatio": 0.9997,
+      "picks": 20,
+      "grid": "lec-20.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 9,
+      "bvid": "BV1vsJG6VEqk",
+      "cid": 39139934903,
+      "title": "陈瑞春讲伤寒论9-汗法4 麻黄附子细辛汤 小青龙汤 桂枝加葛根汤 麻黄连翘赤小豆汤 当归四逆汤 苓甘五味姜辛夏汤",
+      "durSource": 3152,
+      "durMeasured": 3152,
+      "frames": 6304,
+      "fps": 2,
+      "stableSegments": 613,
+      "textSegments": 322,
+      "textRatio": 0.525,
+      "outlinedThreshold": 0.01687,
+      "madThreshold": 3,
+      "coverageRatio": 1,
+      "picks": 20,
+      "grid": "lec-09.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 16,
+      "bvid": "BV1ybo8BPEvb",
+      "cid": 37737268731,
+      "title": "陈瑞春讲伤寒论16-和法3 黄芩加半夏生姜汤证 葛根芩连汤 四逆散",
+      "durSource": 3503,
+      "durMeasured": 3503,
+      "frames": 7006,
+      "fps": 2,
+      "stableSegments": 811,
+      "textSegments": 461,
+      "textRatio": 0.568,
+      "outlinedThreshold": 0.02838,
+      "madThreshold": 3,
+      "coverageRatio": 1,
+      "picks": 20,
+      "grid": "lec-16.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 17,
+      "bvid": "BV1Txo8BTEFv",
+      "cid": 37737139664,
+      "title": "陈瑞春讲伤寒论17-和法4 半夏泻心汤 甘草泻心汤",
+      "durSource": 2825,
+      "durMeasured": 2825,
+      "frames": 5649,
+      "fps": 2,
+      "stableSegments": 732,
+      "textSegments": 443,
+      "textRatio": 0.605,
+      "outlinedThreshold": 0.02733,
+      "madThreshold": 3,
+      "coverageRatio": 0.9998,
+      "picks": 20,
+      "grid": "lec-17.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 21,
+      "bvid": "BV123oYBVEBr",
+      "cid": 37752409796,
+      "title": "陈瑞春讲伤寒论21-清法1 白虎汤 竹叶石膏汤 栀子豉汤 白头翁汤",
+      "durSource": 3457,
+      "durMeasured": 3457,
+      "frames": 6912,
+      "fps": 2,
+      "stableSegments": 699,
+      "textSegments": 401,
+      "textRatio": 0.574,
+      "outlinedThreshold": 0.02322,
+      "madThreshold": 3,
+      "coverageRatio": 0.9997,
+      "picks": 20,
+      "grid": "lec-21.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 22,
+      "bvid": "BV1WLoYB6E84",
+      "cid": 37752209658,
+      "title": "陈瑞春讲伤寒论22-清法2消法1 白虎汤应用、竹叶石膏汤、五苓散与桂枝汤、黄连温胆汤、白头翁汤、黄连阿胶汤、大青龙汤、麻杏石甘汤、小陷胸汤、消法原则",
+      "durSource": 2062,
+      "durMeasured": 2062,
+      "frames": 4122,
+      "fps": 2,
+      "stableSegments": 432,
+      "textSegments": 261,
+      "textRatio": 0.604,
+      "outlinedThreshold": 0.02562,
+      "madThreshold": 3,
+      "coverageRatio": 0.9995,
+      "picks": 20,
+      "grid": "lec-22.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 23,
+      "bvid": "BV1cnoYBME9o",
+      "cid": 37752210748,
+      "title": "陈瑞春讲伤寒论23-清法·补法 消化系统疾病治疗、肝病治疗、妇科疾病治疗、心律失常治疗、甲状腺疾病治疗、补法运用原则、后世补法发展",
+      "durSource": 3546,
+      "durMeasured": 3546,
+      "frames": 7092,
+      "fps": 2,
+      "stableSegments": 950,
+      "textSegments": 636,
+      "textRatio": 0.669,
+      "outlinedThreshold": 0.02076,
+      "madThreshold": 3,
+      "coverageRatio": 1,
+      "picks": 20,
+      "grid": "lec-23.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 24,
+      "bvid": "BV1nnoYBTEXa",
+      "cid": 37752278442,
+      "title": "陈瑞春讲伤寒论24-补法 中医配伍理论、补气生血原理、阴虚辨证体系、肝病治疗原则、临床思维革新、经典学习、补阳核心法则、气血双补方剂",
+      "durSource": 1089,
+      "durMeasured": 1089,
+      "frames": 2177,
+      "fps": 2,
+      "stableSegments": 260,
+      "textSegments": 162,
+      "textRatio": 0.623,
+      "outlinedThreshold": 0.02476,
+      "madThreshold": 3,
+      "coverageRatio": 0.9995,
+      "picks": 20,
+      "grid": "lec-24.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 6,
+      "bvid": "BV12xo8BKEsw",
+      "cid": 37737137206,
+      "title": "陈瑞春讲伤寒论6-汗法1 麻黄汤",
+      "durSource": 3370,
+      "durMeasured": 3370,
+      "frames": 6738,
+      "fps": 2,
+      "stableSegments": 803,
+      "textSegments": 462,
+      "textRatio": 0.575,
+      "outlinedThreshold": 0.01735,
+      "madThreshold": 3,
+      "coverageRatio": 0.9997,
+      "picks": 20,
+      "grid": "lec-06.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 7,
+      "bvid": "BV1RMo8BmEs1",
+      "cid": 37737136892,
+      "title": "陈瑞春讲伤寒论7-汗法2 桂枝汤",
+      "durSource": 3240,
+      "durMeasured": 3240,
+      "frames": 6479,
+      "fps": 2,
+      "stableSegments": 851,
+      "textSegments": 462,
+      "textRatio": 0.543,
+      "outlinedThreshold": 0.01947,
+      "madThreshold": 3,
+      "coverageRatio": 0.9998,
+      "picks": 20,
+      "grid": "lec-07.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 8,
+      "bvid": "BV1RMo8BmEuD",
+      "cid": 37737136335,
+      "title": "陈瑞春讲伤寒论8-汗法3 大青龙汤 麻杏甘石汤",
+      "durSource": 3370,
+      "durMeasured": 3370,
+      "frames": 6738,
+      "fps": 2,
+      "stableSegments": 803,
+      "textSegments": 462,
+      "textRatio": 0.575,
+      "outlinedThreshold": 0.01735,
+      "madThreshold": 3,
+      "coverageRatio": 0.9997,
+      "picks": 20,
+      "grid": "lec-08.jpg",
+      "duplicateOf": 6,
+      "samplesRead": 0
+    },
+    {
+      "no": 11,
+      "bvid": "BV1haJG6BEi4",
+      "cid": 39139741547,
+      "title": "陈瑞春讲伤寒论11-下法1 大承气汤 调胃承气汤 桃核承气汤 大黄黄连泻心汤",
+      "durSource": 3850,
+      "durMeasured": 3850,
+      "frames": 7699,
+      "fps": 2,
+      "stableSegments": 1020,
+      "textSegments": 554,
+      "textRatio": 0.543,
+      "outlinedThreshold": 0.0194,
+      "madThreshold": 3,
+      "coverageRatio": 0.9999,
+      "picks": 20,
+      "grid": "lec-11.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 12,
+      "bvid": "BV1LpJG6yE4K",
+      "cid": 26025464594,
+      "title": "陈瑞春讲伤寒论12-下法2  舌苔与阳明腑实证 三个承气汤 桃核承气汤 三黄泻心汤  抵当汤",
+      "durSource": 2809,
+      "durMeasured": 2809,
+      "frames": 5618,
+      "fps": 2,
+      "stableSegments": 729,
+      "textSegments": 381,
+      "textRatio": 0.523,
+      "outlinedThreshold": 0.02441,
+      "madThreshold": 3,
+      "coverageRatio": 1,
+      "picks": 20,
+      "grid": "lec-12.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 14,
+      "bvid": "BV11xo8BKEfJ",
+      "cid": 37737139038,
+      "title": "陈瑞春讲伤寒论14-和法1 小柴胡汤",
+      "durSource": 2847,
+      "durMeasured": 2847,
+      "frames": 5693,
+      "fps": 2,
+      "stableSegments": 467,
+      "textSegments": 269,
+      "textRatio": 0.576,
+      "outlinedThreshold": 0.02493,
+      "madThreshold": 3,
+      "coverageRatio": 0.9998,
+      "picks": 20,
+      "grid": "lec-14.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 15,
+      "bvid": "BV12Wo8BqEZB",
+      "cid": 37737140066,
+      "title": "陈瑞春讲伤寒论15-和法2 柴胡桂枝各半汤 大柴胡汤 柴胡桂枝干姜汤",
+      "durSource": 2697,
+      "durMeasured": 2697,
+      "frames": 5394,
+      "fps": 2,
+      "stableSegments": 512,
+      "textSegments": 319,
+      "textRatio": 0.623,
+      "outlinedThreshold": 0.02575,
+      "madThreshold": 3,
+      "coverageRatio": 1,
+      "picks": 20,
+      "grid": "lec-15.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 18,
+      "bvid": "BV1yYoaBuExC",
+      "cid": 37739367108,
+      "title": "陈瑞春讲伤寒论18-温法1 温脾法 理中汤",
+      "durSource": 3000,
+      "durMeasured": 3000,
+      "frames": 5999,
+      "fps": 2,
+      "stableSegments": 704,
+      "textSegments": 449,
+      "textRatio": 0.638,
+      "outlinedThreshold": 0.02772,
+      "madThreshold": 3,
+      "coverageRatio": 0.9998,
+      "picks": 20,
+      "grid": "lec-18.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 1,
+      "bvid": "BV16koaBAE82",
+      "cid": 37739300045,
+      "title": "陈瑞春讲伤寒论1-论治伤寒之学（上） 伤寒论的定位、价值、版本、结构，学习方法论，注本",
+      "durSource": 2892,
+      "durMeasured": 2892,
+      "frames": 5782,
+      "fps": 2,
+      "stableSegments": 878,
+      "textSegments": 521,
+      "textRatio": 0.593,
+      "outlinedThreshold": 0.02085,
+      "madThreshold": 3,
+      "coverageRatio": 0.9997,
+      "picks": 20,
+      "grid": "lec-01.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 2,
+      "bvid": "BV1FkoaBPEDU",
+      "cid": 37739300875,
+      "title": "陈瑞春讲伤寒论2-论治伤寒之学（下）伤寒论与内经、六经辨证实质、临床治疗误区、经典学习、中西医对比、水气病",
+      "durSource": 4015,
+      "durMeasured": 4015,
+      "frames": 8029,
+      "fps": 2,
+      "stableSegments": 650,
+      "textSegments": 358,
+      "textRatio": 0.551,
+      "outlinedThreshold": 0.02136,
+      "madThreshold": 3,
+      "coverageRatio": 0.9999,
+      "picks": 20,
+      "grid": "lec-02.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 3,
+      "bvid": "BV1PeoaBzEHG",
+      "cid": 37739301432,
+      "title": "陈瑞春讲伤寒论3-伤寒论总论1 伤寒论学术地位、如何学习伤寒论、伤寒与温病、中医教育现状、六经辨证规律、叶天士",
+      "durSource": 3061,
+      "durMeasured": 3061,
+      "frames": 6121,
+      "fps": 2,
+      "stableSegments": 606,
+      "textSegments": 350,
+      "textRatio": 0.578,
+      "outlinedThreshold": 0.01662,
+      "madThreshold": 3,
+      "coverageRatio": 0.9998,
+      "picks": 20,
+      "grid": "lec-03.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 4,
+      "bvid": "BV1WeoaBzEBd",
+      "cid": 37739302048,
+      "title": "陈瑞春讲伤寒论4-伤寒论总论2伤寒论与温病条辨、三焦辨证、中医组方、中医药治疗对比、活血化瘀、肿瘤治疗、经典学习、中西医结合",
+      "durSource": 3505,
+      "durMeasured": 3505,
+      "frames": 7009,
+      "fps": 2,
+      "stableSegments": 988,
+      "textSegments": 574,
+      "textRatio": 0.581,
+      "outlinedThreshold": 0.01955,
+      "madThreshold": 3,
+      "coverageRatio": 0.9999,
+      "picks": 20,
+      "grid": "lec-04.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 5,
+      "bvid": "BV1CeoaBBExP",
+      "cid": 37739364906,
+      "title": "陈瑞春讲伤寒论5-伤寒论总论3 经方分类和比较、方剂临床特征、方剂加减、辨证要点对比、学习方法论",
+      "durSource": 1173,
+      "durMeasured": 1173,
+      "frames": 2344,
+      "fps": 2,
+      "stableSegments": 318,
+      "textSegments": 177,
+      "textRatio": 0.557,
+      "outlinedThreshold": 0.01604,
+      "madThreshold": 3,
+      "coverageRatio": 0.9991,
+      "picks": 20,
+      "grid": "lec-05.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 10,
+      "bvid": "BV1geJG6TE8v",
+      "cid": 39139740845,
+      "title": "陈瑞春讲伤寒论10-汗法5·下法1",
+      "durSource": 3002,
+      "durMeasured": 3002,
+      "frames": 6003,
+      "fps": 2,
+      "stableSegments": 583,
+      "textSegments": 338,
+      "textRatio": 0.58,
+      "outlinedThreshold": 0.01723,
+      "madThreshold": 3,
+      "coverageRatio": 0.9998,
+      "picks": 20,
+      "grid": "lec-10.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 13,
+      "bvid": "BV1VtJG63EtB",
+      "cid": 39140131018,
+      "title": "陈瑞春讲伤寒论13-下法3·和法1",
+      "durSource": 3818,
+      "durMeasured": 3818,
+      "frames": 7635,
+      "fps": 2,
+      "stableSegments": 1009,
+      "textSegments": 709,
+      "textRatio": 0.703,
+      "outlinedThreshold": 0.01951,
+      "madThreshold": 3,
+      "coverageRatio": 0.9999,
+      "picks": 20,
+      "grid": "lec-13.jpg",
+      "duplicateOf": null,
+      "samplesRead": 20
+    },
+    {
+      "no": 19,
+      "bvid": "BV1yYoaBuEBc",
+      "cid": 37739431926,
+      "title": "陈瑞春讲伤寒论19-温法2 四逆汤 真武汤 当归四逆汤",
+      "durSource": 3755,
+      "durMeasured": 3755,
+      "frames": 7509,
+      "fps": 2,
+      "stableSegments": 941,
+      "textSegments": 575,
+      "textRatio": 0.611,
+      "outlinedThreshold": 0.02253,
+      "madThreshold": 3,
+      "coverageRatio": 0.9999,
+      "picks": 20,
+      "grid": "lec-19.jpg",
+      "duplicateOf": null,
+      "samplesRead": 0
+    }
+  ],
+  "samples": [
+    {
+      "idx": "20-01",
+      "lecture": 20,
+      "sec": 27,
+      "mmss": "0:27",
+      "line": "温脾实际上就是太阴病的",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-02",
+      "lecture": 20,
+      "sec": 218.3,
+      "mmss": "3:38",
+      "line": "可以讲是湿邪内盛",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-03",
+      "lecture": 20,
+      "sec": 451.8,
+      "mmss": "7:32",
+      "line": "太阴病就是脾阳虚寒",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-04",
+      "lecture": 20,
+      "sec": 603.3,
+      "mmss": "10:03",
+      "line": "如果说你一下没有控制",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-05",
+      "lecture": 20,
+      "sec": 720.8,
+      "mmss": "12:01",
+      "line": "少阴病脉微细 但欲寐",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-06",
+      "lecture": 20,
+      "sec": 820.5,
+      "mmss": "13:41",
+      "line": "参附汤替代也行",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-07",
+      "lecture": 20,
+      "sec": 943.8,
+      "mmss": "15:44",
+      "line": "所以不需要用真武",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-08",
+      "lecture": 20,
+      "sec": 1067.5,
+      "mmss": "17:48",
+      "line": "那个时候汉唐时期没有电灯",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-09",
+      "lecture": 20,
+      "sec": 1253.8,
+      "mmss": "20:54",
+      "line": "可以把它延长了",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-10",
+      "lecture": 20,
+      "sec": 1359,
+      "mmss": "22:39",
+      "line": "长期盼着跟儿子女儿媳妇孙子再见一个面",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-11",
+      "lecture": 20,
+      "sec": 1491.5,
+      "mmss": "24:52",
+      "line": "当归四逆加吴茱萸汤",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-12",
+      "lecture": 20,
+      "sec": 1631,
+      "mmss": "27:11",
+      "line": "吃到喉咙都发烧",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-13",
+      "lecture": 20,
+      "sec": 1745.5,
+      "mmss": "29:06",
+      "line": "清了胆道蛔虫绝对有效",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-14",
+      "lecture": 20,
+      "sec": 1903,
+      "mmss": "31:43",
+      "line": "桂枝加附子汤阳虚兼表",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-15",
+      "lecture": 20,
+      "sec": 2046.5,
+      "mmss": "34:07",
+      "line": "这都属于水气病里面的基本方",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-16",
+      "lecture": 20,
+      "sec": 2156.3,
+      "mmss": "35:56",
+      "line": "或者金匮里面的泽泻汤",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-17",
+      "lecture": 20,
+      "sec": 2300.5,
+      "mmss": "38:21",
+      "line": "所以中医这个用法了",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-18",
+      "lecture": 20,
+      "sec": 2396.3,
+      "mmss": "39:56",
+      "line": "其中有代表意义的我想应当就是苓桂术甘",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-19",
+      "lecture": 20,
+      "sec": 2555.5,
+      "mmss": "42:36",
+      "line": "全部是以温热证为主",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "20-20",
+      "lecture": 20,
+      "sec": 2698,
+      "mmss": "44:58",
+      "line": "善补阳者 阴中求阳",
+      "grid": "lec-20.jpg"
+    },
+    {
+      "idx": "9-01",
+      "lecture": 9,
+      "sec": 26.5,
+      "mmss": "0:27",
+      "line": "它的病机机制是表有寒邪里有阳虚",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-02",
+      "lecture": 9,
+      "sec": 166.3,
+      "mmss": "2:46",
+      "line": "你不要说少阴病",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-03",
+      "lecture": 9,
+      "sec": 361.8,
+      "mmss": "6:02",
+      "line": "如果有四五十岁的人对这个病非常重视",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-04",
+      "lecture": 9,
+      "sec": 544.3,
+      "mmss": "9:04",
+      "line": "特别是年轻的人不要吃",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-05",
+      "lecture": 9,
+      "sec": 653.5,
+      "mmss": "10:54",
+      "line": "不需要你这样去补",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-06",
+      "lecture": 9,
+      "sec": 766.5,
+      "mmss": "12:47",
+      "line": "不能把所谓夹阴伤寒放到里头去",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-07",
+      "lecture": 9,
+      "sec": 952.8,
+      "mmss": "15:53",
+      "line": "你不要小看细辛这个东西",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-08",
+      "lecture": 9,
+      "sec": 1035.8,
+      "mmss": "17:16",
+      "line": "更重要的前面这几个",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-09",
+      "lecture": 9,
+      "sec": 1153.8,
+      "mmss": "19:14",
+      "line": "这是治疗痰饮的必不可少的东西",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-10",
+      "lecture": 9,
+      "sec": 1341.3,
+      "mmss": "22:21",
+      "line": "你去有有他就那种痰是重要特点",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-11",
+      "lecture": 9,
+      "sec": 1552,
+      "mmss": "25:52",
+      "line": "你到时候拉都拉不回来",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-12",
+      "lecture": 9,
+      "sec": 1710.5,
+      "mmss": "28:31",
+      "line": "如果大家感兴趣还可以去翻一翻",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-13",
+      "lecture": 9,
+      "sec": 1834,
+      "mmss": "30:34",
+      "line": "反汗出恶风者 桂枝加葛根汤主之",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-14",
+      "lecture": 9,
+      "sec": 1996.5,
+      "mmss": "33:17",
+      "line": "津液不能蒸腾",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-15",
+      "lecture": 9,
+      "sec": 2154,
+      "mmss": "35:54",
+      "line": "自汗升得很漂亮",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-16",
+      "lecture": 9,
+      "sec": 2378.3,
+      "mmss": "39:38",
+      "line": "你跟流脑拿给你用",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-17",
+      "lecture": 9,
+      "sec": 2515.8,
+      "mmss": "41:56",
+      "line": "这个我要重点跟大家介绍了",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-18",
+      "lecture": 9,
+      "sec": 2647.8,
+      "mmss": "44:08",
+      "line": "就这张方子吃了25包",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-19",
+      "lecture": 9,
+      "sec": 2810.5,
+      "mmss": "46:51",
+      "line": "可以讲解表利水",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "9-20",
+      "lecture": 9,
+      "sec": 2997.3,
+      "mmss": "49:57",
+      "line": "这些我都有是很有临床疗效",
+      "grid": "lec-09.jpg"
+    },
+    {
+      "idx": "16-01",
+      "lecture": 16,
+      "sec": 34,
+      "mmss": "0:34",
+      "line": "上一次的课讲了和法的权变法",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-02",
+      "lecture": 16,
+      "sec": 270.5,
+      "mmss": "4:31",
+      "line": "经常身上不是这里痛",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-03",
+      "lecture": 16,
+      "sec": 496.3,
+      "mmss": "8:16",
+      "line": "请大家注意一个很重要的问题",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-04",
+      "lecture": 16,
+      "sec": 660.5,
+      "mmss": "11:01",
+      "line": "所以中医的抓住病机是非常重要",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-05",
+      "lecture": 16,
+      "sec": 802,
+      "mmss": "13:22",
+      "line": "我们就要根据病机不同来用药",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-06",
+      "lecture": 16,
+      "sec": 989,
+      "mmss": "16:29",
+      "line": "我也问伴有这个可能",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-07",
+      "lecture": 16,
+      "sec": 1163.8,
+      "mmss": "19:24",
+      "line": "这里用柴胡桂枝干姜汤",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-08",
+      "lecture": 16,
+      "sec": 1348.5,
+      "mmss": "22:29",
+      "line": "二四月伤用的比较少",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-09",
+      "lecture": 16,
+      "sec": 1484,
+      "mmss": "24:44",
+      "line": "你就不知道伤寒的发展",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-10",
+      "lecture": 16,
+      "sec": 1672,
+      "mmss": "27:52",
+      "line": "很值得我们推崇",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-11",
+      "lecture": 16,
+      "sec": 1860.5,
+      "mmss": "31:01",
+      "line": "泻过第二次就好了",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-12",
+      "lecture": 16,
+      "sec": 2008.3,
+      "mmss": "33:28",
+      "line": "我要放点枳壳进去",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-13",
+      "lecture": 16,
+      "sec": 2116.5,
+      "mmss": "35:17",
+      "line": "他毕业的时候就跟着我",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-14",
+      "lecture": 16,
+      "sec": 2258.3,
+      "mmss": "37:38",
+      "line": "我们那些书都要烧掉它了",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-15",
+      "lecture": 16,
+      "sec": 2496.5,
+      "mmss": "41:37",
+      "line": "都把它看成是一个鉴别条文",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-16",
+      "lecture": 16,
+      "sec": 2598.5,
+      "mmss": "43:19",
+      "line": "所以这条条文你前面来理解",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-17",
+      "lecture": 16,
+      "sec": 2747,
+      "mmss": "45:47",
+      "line": "它就是疏肝理气",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-18",
+      "lecture": 16,
+      "sec": 2928.5,
+      "mmss": "48:49",
+      "line": "钩藤也有扩张血管的作用",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-19",
+      "lecture": 16,
+      "sec": 3136.5,
+      "mmss": "52:17",
+      "line": "十几岁的女孩没有结婚的也可以有",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "16-20",
+      "lecture": 16,
+      "sec": 3316,
+      "mmss": "55:16",
+      "line": "早晨起来我翻翻书的时候",
+      "grid": "lec-16.jpg"
+    },
+    {
+      "idx": "17-01",
+      "lecture": 17,
+      "sec": 15.8,
+      "mmss": "0:16",
+      "line": "四逆散治疗肋间神经痛",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-02",
+      "lecture": 17,
+      "sec": 133,
+      "mmss": "2:13",
+      "line": "一侧或者整个阴囊肿得很大",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-03",
+      "lecture": 17,
+      "sec": 279,
+      "mmss": "4:39",
+      "line": "铺头是要消炎",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-04",
+      "lecture": 17,
+      "sec": 403.3,
+      "mmss": "6:43",
+      "line": "或者同时有睾丸静脉曲张",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-05",
+      "lecture": 17,
+      "sec": 523.3,
+      "mmss": "8:43",
+      "line": "就是用四逆散本方加青皮郁金",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-06",
+      "lecture": 17,
+      "sec": 659,
+      "mmss": "10:59",
+      "line": "我的标准是这件",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-07",
+      "lecture": 17,
+      "sec": 792.8,
+      "mmss": "13:13",
+      "line": "这个病人开了方子吃了约",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-08",
+      "lecture": 17,
+      "sec": 912.5,
+      "mmss": "15:13",
+      "line": "你不要说他的脾胃功能都没有恢复",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-09",
+      "lecture": 17,
+      "sec": 1036,
+      "mmss": "17:16",
+      "line": "最少吃一年到两年的药",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-10",
+      "lecture": 17,
+      "sec": 1154,
+      "mmss": "19:14",
+      "line": "我摸索到这个规律了",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-11",
+      "lecture": 17,
+      "sec": 1348.3,
+      "mmss": "22:28",
+      "line": "结胸大结胸小结胸定心下痛",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-12",
+      "lecture": 17,
+      "sec": 1494,
+      "mmss": "24:54",
+      "line": "吃了这个也不见效那个也不见效",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-13",
+      "lecture": 17,
+      "sec": 1680.8,
+      "mmss": "28:01",
+      "line": "而且更连用10克",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-14",
+      "lecture": 17,
+      "sec": 1848.5,
+      "mmss": "30:49",
+      "line": "如果打个呃逆幸运舒服的一分儿分钟",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-15",
+      "lecture": 17,
+      "sec": 1993.3,
+      "mmss": "33:13",
+      "line": "西医讲跟内分泌有关",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-16",
+      "lecture": 17,
+      "sec": 2140.8,
+      "mmss": "35:41",
+      "line": "甘草泻心汤铺头可以治疗西医讲的三联症",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-17",
+      "lecture": 17,
+      "sec": 2269,
+      "mmss": "37:49",
+      "line": "温胆汤这张方子是太好了",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-18",
+      "lecture": 17,
+      "sec": 2411.3,
+      "mmss": "40:11",
+      "line": "那半夏泻心汤也不能和",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-19",
+      "lecture": 17,
+      "sec": 2539,
+      "mmss": "42:19",
+      "line": "你像吴又可的达原饮",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "17-20",
+      "lecture": 17,
+      "sec": 2670.8,
+      "mmss": "44:31",
+      "line": "很多病得到很好的应用和发展",
+      "grid": "lec-17.jpg"
+    },
+    {
+      "idx": "21-01",
+      "lecture": 21,
+      "sec": 30.3,
+      "mmss": "0:30",
+      "line": "清法就是一种治疗热邪为病的方法",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-02",
+      "lecture": 21,
+      "sec": 168,
+      "mmss": "2:48",
+      "line": "这个我们要进一步了解它的内在联系",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-03",
+      "lecture": 21,
+      "sec": 511.5,
+      "mmss": "8:32",
+      "line": "总之就是服了发汗的药以后",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-04",
+      "lecture": 21,
+      "sec": 635.5,
+      "mmss": "10:36",
+      "line": "越是热的高的厉害越是恶寒的",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-05",
+      "lecture": 21,
+      "sec": 787.3,
+      "mmss": "13:07",
+      "line": "所以用白虎汤加人参",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-06",
+      "lecture": 21,
+      "sec": 953.8,
+      "mmss": "15:54",
+      "line": "所以我们不妨再回过头去讲",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-07",
+      "lecture": 21,
+      "sec": 1057.3,
+      "mmss": "17:37",
+      "line": "几十年来都没有解密几个",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-08",
+      "lecture": 21,
+      "sec": 1176,
+      "mmss": "19:36",
+      "line": "什么标准加人参呢",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-09",
+      "lecture": 21,
+      "sec": 1265.8,
+      "mmss": "21:06",
+      "line": "吴鞠通提出来了加生脉散",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-10",
+      "lecture": 21,
+      "sec": 1457.8,
+      "mmss": "24:18",
+      "line": "水修这个见效更快",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-11",
+      "lecture": 21,
+      "sec": 1624,
+      "mmss": "27:04",
+      "line": "就是这几味药如法炮制的用上去",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-12",
+      "lecture": 21,
+      "sec": 1761.8,
+      "mmss": "29:22",
+      "line": "牙齿疼如果牙龈肿痛",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-13",
+      "lecture": 21,
+      "sec": 1883.3,
+      "mmss": "31:23",
+      "line": "除掉鼻咽癌的",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-14",
+      "lecture": 21,
+      "sec": 2089,
+      "mmss": "34:49",
+      "line": "还有个很年轻的小伙子",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-15",
+      "lecture": 21,
+      "sec": 2318,
+      "mmss": "38:38",
+      "line": "所以我们山里人是往往过去是",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-16",
+      "lecture": 21,
+      "sec": 2581.3,
+      "mmss": "43:01",
+      "line": "就是更连温胆汤效果好嘛",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-17",
+      "lecture": 21,
+      "sec": 2760.5,
+      "mmss": "46:01",
+      "line": "其头这些东西你掌握了很好",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-18",
+      "lecture": 21,
+      "sec": 2908.3,
+      "mmss": "48:28",
+      "line": "好了两天过了两天又不行",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-19",
+      "lecture": 21,
+      "sec": 3084,
+      "mmss": "51:24",
+      "line": "热利下重待得",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "21-20",
+      "lecture": 21,
+      "sec": 3266.5,
+      "mmss": "54:27",
+      "line": "五苓散温化膀胱之气",
+      "grid": "lec-21.jpg"
+    },
+    {
+      "idx": "22-01",
+      "lecture": 22,
+      "sec": 22.3,
+      "mmss": "0:22",
+      "line": "实际上就是阳明病篇里的一个基本大法",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-02",
+      "lecture": 22,
+      "sec": 96.8,
+      "mmss": "1:37",
+      "line": "就是说有热烘盛的",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-03",
+      "lecture": 22,
+      "sec": 176.5,
+      "mmss": "2:57",
+      "line": "而有胃气它既有一个透散的作用",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-04",
+      "lecture": 22,
+      "sec": 266,
+      "mmss": "4:26",
+      "line": "什么情况下不允许我再翻翻书有是什么",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-05",
+      "lecture": 22,
+      "sec": 428.8,
+      "mmss": "7:09",
+      "line": "有补气生津的作用在这个里面",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-06",
+      "lecture": 22,
+      "sec": 551.8,
+      "mmss": "9:12",
+      "line": "那么五苓散也可以治疗多汗",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-07",
+      "lecture": 22,
+      "sec": 636.5,
+      "mmss": "10:37",
+      "line": "中医的优点千万不要知道这句话",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-08",
+      "lecture": 22,
+      "sec": 736.3,
+      "mmss": "12:16",
+      "line": "突然显得尿比重增加",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-09",
+      "lecture": 22,
+      "sec": 845.8,
+      "mmss": "14:06",
+      "line": "往往就跟着根达汤一块用",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-10",
+      "lecture": 22,
+      "sec": 986.8,
+      "mmss": "16:27",
+      "line": "熬了以后再用阿胶去融化",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-11",
+      "lecture": 22,
+      "sec": 1084,
+      "mmss": "18:04",
+      "line": "用木树和猪苓肉皮",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-12",
+      "lecture": 22,
+      "sec": 1185.5,
+      "mmss": "19:46",
+      "line": "这里的脉更用重比麻黄汤还重一倍",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-13",
+      "lecture": 22,
+      "sec": 1261.8,
+      "mmss": "21:02",
+      "line": "但是这里我就提醒大家一句话",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-14",
+      "lecture": 22,
+      "sec": 1367.8,
+      "mmss": "22:48",
+      "line": "除掉肾有什么白花蛇舌草",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-15",
+      "lecture": 22,
+      "sec": 1435.5,
+      "mmss": "23:56",
+      "line": "会伤肺气会伤胃气",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-16",
+      "lecture": 22,
+      "sec": 1552.5,
+      "mmss": "25:53",
+      "line": "但是它与下法又有区别",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-17",
+      "lecture": 22,
+      "sec": 1606,
+      "mmss": "26:46",
+      "line": "像慢性的肝硬化脾肿大",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-18",
+      "lecture": 22,
+      "sec": 1711.3,
+      "mmss": "28:31",
+      "line": "吃下去就不会有好处",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-19",
+      "lecture": 22,
+      "sec": 1822.8,
+      "mmss": "30:23",
+      "line": "就是厚朴生姜半夏甘草人参汤",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "22-20",
+      "lecture": 22,
+      "sec": 1983.8,
+      "mmss": "33:04",
+      "line": "我们现在有很多所谓冠心病肺心病",
+      "grid": "lec-22.jpg"
+    },
+    {
+      "idx": "23-01",
+      "lecture": 23,
+      "sec": 40.8,
+      "mmss": "0:41",
+      "line": "我可以这样跟大家说",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-02",
+      "lecture": 23,
+      "sec": 161.5,
+      "mmss": "2:42",
+      "line": "所以这是我习惯用的",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-03",
+      "lecture": 23,
+      "sec": 313.3,
+      "mmss": "5:13",
+      "line": "樟树国药局更庆仁栈",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-04",
+      "lecture": 23,
+      "sec": 438.5,
+      "mmss": "7:19",
+      "line": "脾脏也有回缩",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-05",
+      "lecture": 23,
+      "sec": 582.3,
+      "mmss": "9:42",
+      "line": "因为病到这个时候",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-06",
+      "lecture": 23,
+      "sec": 712.3,
+      "mmss": "11:52",
+      "line": "这也是金匮上面的方子",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-07",
+      "lecture": 23,
+      "sec": 834,
+      "mmss": "13:54",
+      "line": "一定要手术掌握掉",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-08",
+      "lecture": 23,
+      "sec": 961,
+      "mmss": "16:01",
+      "line": "达到驱邪的目的",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-09",
+      "lecture": 23,
+      "sec": 1123.5,
+      "mmss": "18:44",
+      "line": "实际上它就是桂枝汤倍芍药加饴糖",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-10",
+      "lecture": 23,
+      "sec": 1349,
+      "mmss": "22:29",
+      "line": "吃了半个月的小建中汤",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-11",
+      "lecture": 23,
+      "sec": 1513.3,
+      "mmss": "25:13",
+      "line": "你的血色素这么低",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-12",
+      "lecture": 23,
+      "sec": 1766.3,
+      "mmss": "29:26",
+      "line": "都会出现几个这样的",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-13",
+      "lecture": 23,
+      "sec": 2018.5,
+      "mmss": "33:39",
+      "line": "我认为这个标准就住这里有",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-14",
+      "lecture": 23,
+      "sec": 2276.3,
+      "mmss": "37:56",
+      "line": "原来是大姑娘",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-15",
+      "lecture": 23,
+      "sec": 2471.8,
+      "mmss": "41:12",
+      "line": "我是取得过疗效的",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-16",
+      "lecture": 23,
+      "sec": 2607,
+      "mmss": "43:27",
+      "line": "起码是十个二十个的我治过都有效",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-17",
+      "lecture": 23,
+      "sec": 2769,
+      "mmss": "46:09",
+      "line": "我们说是要把它读活",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-18",
+      "lecture": 23,
+      "sec": 2957,
+      "mmss": "49:17",
+      "line": "它的特点就是温补",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-19",
+      "lecture": 23,
+      "sec": 3096.3,
+      "mmss": "51:36",
+      "line": "所以它往里温阳不往里补气",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "23-20",
+      "lecture": 23,
+      "sec": 3283,
+      "mmss": "54:43",
+      "line": "我们不是说它没刀低",
+      "grid": "lec-23.jpg"
+    },
+    {
+      "idx": "24-01",
+      "lecture": 24,
+      "sec": 16.5,
+      "mmss": "0:17",
+      "line": "滋养阴血的药",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-02",
+      "lecture": 24,
+      "sec": 87.5,
+      "mmss": "1:28",
+      "line": "这些东西我们要好好的钻一钻",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-03",
+      "lecture": 24,
+      "sec": 146.8,
+      "mmss": "2:27",
+      "line": "这就符合我们中医的生理病理",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-04",
+      "lecture": 24,
+      "sec": 190.8,
+      "mmss": "3:11",
+      "line": "等你红花桃仁干过去不行了",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-05",
+      "lecture": 24,
+      "sec": 223,
+      "mmss": "3:43",
+      "line": "全国各地一片上下都是活血化瘀",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-06",
+      "lecture": 24,
+      "sec": 249,
+      "mmss": "4:09",
+      "line": "一补气这个病人两三天他的精神就来了",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-07",
+      "lecture": 24,
+      "sec": 273.3,
+      "mmss": "4:33",
+      "line": "而叫它当归补血汤",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-08",
+      "lecture": 24,
+      "sec": 335.8,
+      "mmss": "5:36",
+      "line": "吴鞠通《温病条辨》里面有很多养阴的方子",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-09",
+      "lecture": 24,
+      "sec": 393.5,
+      "mmss": "6:34",
+      "line": "我有医生就发的当头了",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-10",
+      "lecture": 24,
+      "sec": 463.8,
+      "mmss": "7:44",
+      "line": "所以阴虚有阴虚",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-11",
+      "lecture": 24,
+      "sec": 512.8,
+      "mmss": "8:33",
+      "line": "但是你不要误会了",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-12",
+      "lecture": 24,
+      "sec": 547.3,
+      "mmss": "9:07",
+      "line": "不要去有内科学了",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-13",
+      "lecture": 24,
+      "sec": 625.5,
+      "mmss": "10:26",
+      "line": "已经吃了两三个月黄连温胆汤了",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-14",
+      "lecture": 24,
+      "sec": 671.8,
+      "mmss": "11:12",
+      "line": "如果说阴阳气血两虚的",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-15",
+      "lecture": 24,
+      "sec": 767,
+      "mmss": "12:47",
+      "line": "那么补肝有什么呢",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-16",
+      "lecture": 24,
+      "sec": 815.8,
+      "mmss": "13:36",
+      "line": "这包括了当归四逆汤肝中养血",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-17",
+      "lecture": 24,
+      "sec": 907.5,
+      "mmss": "15:08",
+      "line": "更多的我讲还要通过临床实践来进一步",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-18",
+      "lecture": 24,
+      "sec": 971.8,
+      "mmss": "16:12",
+      "line": "而且这里还总有几个人多读了两遍伤寒论的人",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-19",
+      "lecture": 24,
+      "sec": 1008.5,
+      "mmss": "16:49",
+      "line": "上一届的毕业的分到石家庄的",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "24-20",
+      "lecture": 24,
+      "sec": 1037.3,
+      "mmss": "17:17",
+      "line": "现在一个月就那么一次两次问个好",
+      "grid": "lec-24.jpg"
+    },
+    {
+      "idx": "6-01",
+      "lecture": 6,
+      "sec": 20.5,
+      "mmss": "0:21",
+      "line": "上一次我们把《伤寒论》的学习方法",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-02",
+      "lecture": 6,
+      "sec": 147,
+      "mmss": "2:27",
+      "line": "尽管有些东西不成熟",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-03",
+      "lecture": 6,
+      "sec": 475.5,
+      "mmss": "7:56",
+      "line": "它基本上是以药对的形式出现",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-04",
+      "lecture": 6,
+      "sec": 780.5,
+      "mmss": "13:01",
+      "line": "具体提到八法是清代的程钟龄",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-05",
+      "lecture": 6,
+      "sec": 958.8,
+      "mmss": "15:59",
+      "line": "比如说我们讲到的汗法",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-06",
+      "lecture": 6,
+      "sec": 1121,
+      "mmss": "18:41",
+      "line": "跟我们临床实际关系非常大",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-07",
+      "lecture": 6,
+      "sec": 1378.3,
+      "mmss": "22:58",
+      "line": "开一上午就有一个新华社江西分社的人",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-08",
+      "lecture": 6,
+      "sec": 1542.3,
+      "mmss": "25:42",
+      "line": "体若燔炭 汗出而散",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-09",
+      "lecture": 6,
+      "sec": 1731,
+      "mmss": "28:51",
+      "line": "就是少需以加银花连翘",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-10",
+      "lecture": 6,
+      "sec": 1919,
+      "mmss": "31:59",
+      "line": "你千万要把这几句话琢磨透了",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-11",
+      "lecture": 6,
+      "sec": 2043.8,
+      "mmss": "34:04",
+      "line": "这个道理讲得非常透彻的",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-12",
+      "lecture": 6,
+      "sec": 2219,
+      "mmss": "36:59",
+      "line": "身疼腰痛 骨节疼痛",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-13",
+      "lecture": 6,
+      "sec": 2360.8,
+      "mmss": "39:21",
+      "line": "这两个地方提到了脉",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-14",
+      "lecture": 6,
+      "sec": 2522.5,
+      "mmss": "42:03",
+      "line": "邪热在表没有伤津",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-15",
+      "lecture": 6,
+      "sec": 2683.8,
+      "mmss": "44:44",
+      "line": "如果说他的恶寒身体疼痛",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-16",
+      "lecture": 6,
+      "sec": 2844.5,
+      "mmss": "47:25",
+      "line": "你这个发汗作用远远比不上强力银翘片",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-17",
+      "lecture": 6,
+      "sec": 2947.8,
+      "mmss": "49:08",
+      "line": "淋巴结炎的一个病人",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-18",
+      "lecture": 6,
+      "sec": 3038.5,
+      "mmss": "50:39",
+      "line": "我跟你说这个病本来三天可以好",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-19",
+      "lecture": 6,
+      "sec": 3155.5,
+      "mmss": "52:36",
+      "line": "这么一个机制在里面",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "6-20",
+      "lecture": 6,
+      "sec": 3274.3,
+      "mmss": "54:34",
+      "line": "吃透了，你就可以在临床上抓到活靶子",
+      "grid": "lec-06.jpg"
+    },
+    {
+      "idx": "7-01",
+      "lecture": 7,
+      "sec": 32.3,
+      "mmss": "0:32",
+      "line": "整个病理趋势是往表",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-02",
+      "lecture": 7,
+      "sec": 220.5,
+      "mmss": "3:41",
+      "line": "这个啬啬恶寒 淅淅恶风",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-03",
+      "lecture": 7,
+      "sec": 374,
+      "mmss": "6:14",
+      "line": "因为桂枝汤是个补药方子",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-04",
+      "lecture": 7,
+      "sec": 680.8,
+      "mmss": "11:21",
+      "line": "所以这些症状那就是表虚",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-05",
+      "lecture": 7,
+      "sec": 837.5,
+      "mmss": "13:58",
+      "line": "桂枝这味药可以在外也可以走内",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-06",
+      "lecture": 7,
+      "sec": 996,
+      "mmss": "16:36",
+      "line": "这才是桂枝汤证重要脉象",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-07",
+      "lecture": 7,
+      "sec": 1139,
+      "mmss": "18:59",
+      "line": "真武汤有附子配生姜水你散水",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-08",
+      "lecture": 7,
+      "sec": 1283,
+      "mmss": "21:23",
+      "line": "要把这些问题解决清楚",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-09",
+      "lecture": 7,
+      "sec": 1418.3,
+      "mmss": "23:38",
+      "line": "说明他是有临床根据的",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-10",
+      "lecture": 7,
+      "sec": 1541.5,
+      "mmss": "25:42",
+      "line": "所以在这个方子里面用的话",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-11",
+      "lecture": 7,
+      "sec": 1651.5,
+      "mmss": "27:32",
+      "line": "这个女的是樟树市的",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-12",
+      "lecture": 7,
+      "sec": 1777,
+      "mmss": "29:37",
+      "line": "反复追问她的病史了",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-13",
+      "lecture": 7,
+      "sec": 1882,
+      "mmss": "31:22",
+      "line": "如果一个还是偶然的巧合",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-14",
+      "lecture": 7,
+      "sec": 2047.8,
+      "mmss": "34:08",
+      "line": "所以我建议同学们从临床的话",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-15",
+      "lecture": 7,
+      "sec": 2166,
+      "mmss": "36:06",
+      "line": "非得用一两天时间你才能把它批清楚",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-16",
+      "lecture": 7,
+      "sec": 2302.3,
+      "mmss": "38:22",
+      "line": "这是表证里边",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-17",
+      "lecture": 7,
+      "sec": 2572,
+      "mmss": "42:52",
+      "line": "脉更桂枝各半汤",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-18",
+      "lecture": 7,
+      "sec": 2717,
+      "mmss": "45:17",
+      "line": "风寒郁遏在表的身必痒",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-19",
+      "lecture": 7,
+      "sec": 2853.5,
+      "mmss": "47:34",
+      "line": "张仲景是一两一两的用",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "7-20",
+      "lecture": 7,
+      "sec": 2996.8,
+      "mmss": "49:57",
+      "line": "这个汗法目的呢是发汗",
+      "grid": "lec-07.jpg"
+    },
+    {
+      "idx": "11-01",
+      "lecture": 11,
+      "sec": 24.5,
+      "mmss": "0:25",
+      "line": "下法是阳明病篇的阳明腑实证的",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-02",
+      "lecture": 11,
+      "sec": 256.5,
+      "mmss": "4:17",
+      "line": "这两省是升里腑",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-03",
+      "lecture": 11,
+      "sec": 461,
+      "mmss": "7:41",
+      "line": "热邪上升影响神昏",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-04",
+      "lecture": 11,
+      "sec": 697,
+      "mmss": "11:37",
+      "line": "这个就可以用大承气汤",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-05",
+      "lecture": 11,
+      "sec": 958.5,
+      "mmss": "15:59",
+      "line": "伤口又暴露在那里",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-06",
+      "lecture": 11,
+      "sec": 1088.3,
+      "mmss": "18:08",
+      "line": "大概也就是半个小时左右",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-07",
+      "lecture": 11,
+      "sec": 1278.8,
+      "mmss": "21:19",
+      "line": "所以大承气汤是峻下清热泻火",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-08",
+      "lecture": 11,
+      "sec": 1458.8,
+      "mmss": "24:19",
+      "line": "芒硝枳头用重这三者都小于大承气汤",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-09",
+      "lecture": 11,
+      "sec": 1598.3,
+      "mmss": "26:38",
+      "line": "用药药和胃暖肝",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-10",
+      "lecture": 11,
+      "sec": 1741.3,
+      "mmss": "29:01",
+      "line": "应该抓住燥结与气滞的病机来辨证选方",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-11",
+      "lecture": 11,
+      "sec": 1908.8,
+      "mmss": "31:49",
+      "line": "天津有个外科的祖师爷",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-12",
+      "lecture": 11,
+      "sec": 2068.8,
+      "mmss": "34:29",
+      "line": "生们需要我们今后往临床上更多的去钻研",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-13",
+      "lecture": 11,
+      "sec": 2275.5,
+      "mmss": "37:56",
+      "line": "一个是热在肠间",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-14",
+      "lecture": 11,
+      "sec": 2403.8,
+      "mmss": "40:04",
+      "line": "也有人用它治疗顽固性的头痛",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-15",
+      "lecture": 11,
+      "sec": 2714,
+      "mmss": "45:14",
+      "line": "所谓新淤久积",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-16",
+      "lecture": 11,
+      "sec": 2923,
+      "mmss": "48:43",
+      "line": "肝硬化如果舌无苔光剥无苔弦硬数大",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-17",
+      "lecture": 11,
+      "sec": 3078.3,
+      "mmss": "51:18",
+      "line": "所以很多要密切观察病人的外在的表现",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-18",
+      "lecture": 11,
+      "sec": 3228,
+      "mmss": "53:48",
+      "line": "也可以治肺胃热盛的咳血",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-19",
+      "lecture": 11,
+      "sec": 3453.3,
+      "mmss": "57:33",
+      "line": "这个王国人更是这样的",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "11-20",
+      "lecture": 11,
+      "sec": 3628,
+      "mmss": "60:28",
+      "line": "有的病人从此以后断了根了",
+      "grid": "lec-11.jpg"
+    },
+    {
+      "idx": "12-01",
+      "lecture": 12,
+      "sec": 20.8,
+      "mmss": "0:21",
+      "line": "下法在伤寒论阳明病篇里面",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-02",
+      "lecture": 12,
+      "sec": 168,
+      "mmss": "2:48",
+      "line": "那是用芒硝大黄的小承气汤",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-03",
+      "lecture": 12,
+      "sec": 384,
+      "mmss": "6:24",
+      "line": "大家要重视的就是这个舌苔",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-04",
+      "lecture": 12,
+      "sec": 538.5,
+      "mmss": "8:59",
+      "line": "少阴证寒证可以舌苔焦",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-05",
+      "lecture": 12,
+      "sec": 718.3,
+      "mmss": "11:58",
+      "line": "舌合我补充提了一下",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-06",
+      "lecture": 12,
+      "sec": 879,
+      "mmss": "14:39",
+      "line": "有的病人因为偏头痛",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-07",
+      "lecture": 12,
+      "sec": 1017.3,
+      "mmss": "16:57",
+      "line": "这个我后面应用经方的",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-08",
+      "lecture": 12,
+      "sec": 1182.3,
+      "mmss": "19:42",
+      "line": "就是单独一味大黄碾成末",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-09",
+      "lecture": 12,
+      "sec": 1286.5,
+      "mmss": "21:27",
+      "line": "同时应该吃清胃清肺热的药",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-10",
+      "lecture": 12,
+      "sec": 1433.3,
+      "mmss": "23:53",
+      "line": "结胸热实应该是胸",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-11",
+      "lecture": 12,
+      "sec": 1543.3,
+      "mmss": "25:43",
+      "line": "张仲景并没有跟你说死",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-12",
+      "lecture": 12,
+      "sec": 1640.8,
+      "mmss": "27:21",
+      "line": "脉象按上去更有力",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-13",
+      "lecture": 12,
+      "sec": 1766.3,
+      "mmss": "29:26",
+      "line": "这些地方的还有那么少重的胸水",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-14",
+      "lecture": 12,
+      "sec": 1900.5,
+      "mmss": "31:41",
+      "line": "有水就必须要有气化",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-15",
+      "lecture": 12,
+      "sec": 2015.8,
+      "mmss": "33:36",
+      "line": "20包药都不一定下得来",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-16",
+      "lecture": 12,
+      "sec": 2107,
+      "mmss": "35:07",
+      "line": "当然你可以根据情况",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-17",
+      "lecture": 12,
+      "sec": 2196.5,
+      "mmss": "36:37",
+      "line": "很快全部水都吸收了",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-18",
+      "lecture": 12,
+      "sec": 2317.3,
+      "mmss": "38:37",
+      "line": "你拿大戟芫花甘遂等重",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-19",
+      "lecture": 12,
+      "sec": 2523.3,
+      "mmss": "42:03",
+      "line": "可想而吃多了以后大便会泻水",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "12-20",
+      "lecture": 12,
+      "sec": 2644,
+      "mmss": "44:04",
+      "line": "我们能不能说在小柴胡汤里面",
+      "grid": "lec-12.jpg"
+    },
+    {
+      "idx": "14-01",
+      "lecture": 14,
+      "sec": 18.8,
+      "mmss": "0:19",
+      "line": "上一次我们讲了下法",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-02",
+      "lecture": 14,
+      "sec": 191,
+      "mmss": "3:11",
+      "line": "我用四逆散治疗习惯性便秘",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-03",
+      "lecture": 14,
+      "sec": 562.5,
+      "mmss": "9:23",
+      "line": "那就可以说桂枝汤也是和法",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-04",
+      "lecture": 14,
+      "sec": 751,
+      "mmss": "12:31",
+      "line": "如果是少阳的表证",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-05",
+      "lecture": 14,
+      "sec": 806.5,
+      "mmss": "13:27",
+      "line": "五十年代六十年代争论这个东西",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-06",
+      "lecture": 14,
+      "sec": 990.5,
+      "mmss": "16:31",
+      "line": "就是柴胡跟今",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-07",
+      "lecture": 14,
+      "sec": 1110.5,
+      "mmss": "18:31",
+      "line": "这就是外感表证",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-08",
+      "lecture": 14,
+      "sec": 1293,
+      "mmss": "21:33",
+      "line": "我就是要吃小柴胡汤好",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-09",
+      "lecture": 14,
+      "sec": 1366.3,
+      "mmss": "22:46",
+      "line": "那么单纯研究小柴胡汤的话",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-10",
+      "lecture": 14,
+      "sec": 1506.5,
+      "mmss": "25:07",
+      "line": "这也是《金匮》方里边有的",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-11",
+      "lecture": 14,
+      "sec": 1602,
+      "mmss": "26:42",
+      "line": "柴胡一陈汤",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-12",
+      "lecture": 14,
+      "sec": 1757,
+      "mmss": "29:17",
+      "line": "就是出了两个具体症状",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-13",
+      "lecture": 14,
+      "sec": 1882.5,
+      "mmss": "31:23",
+      "line": "他是用桂枝通阳",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-14",
+      "lecture": 14,
+      "sec": 2012.3,
+      "mmss": "33:32",
+      "line": "这就是真连汤的主证",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-15",
+      "lecture": 14,
+      "sec": 2091,
+      "mmss": "34:51",
+      "line": "半夏散里面就可以加白术",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-16",
+      "lecture": 14,
+      "sec": 2168.3,
+      "mmss": "36:08",
+      "line": "或者说单纯的呕吐",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-17",
+      "lecture": 14,
+      "sec": 2265.5,
+      "mmss": "37:46",
+      "line": "说李东垣他的脾胃共存",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-18",
+      "lecture": 14,
+      "sec": 2399,
+      "mmss": "39:59",
+      "line": "乌梅丸用待漂亮",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-19",
+      "lecture": 14,
+      "sec": 2612,
+      "mmss": "43:32",
+      "line": "不过乌梅丸不会用",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "14-20",
+      "lecture": 14,
+      "sec": 2680.8,
+      "mmss": "44:41",
+      "line": "顾名思义也就是和法的权宜应变",
+      "grid": "lec-14.jpg"
+    },
+    {
+      "idx": "15-01",
+      "lecture": 15,
+      "sec": 40.8,
+      "mmss": "0:41",
+      "line": "适应于太阳兼少阳证",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-02",
+      "lecture": 15,
+      "sec": 155.5,
+      "mmss": "2:36",
+      "line": "为什么这里要用一句这样的话",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-03",
+      "lecture": 15,
+      "sec": 298.8,
+      "mmss": "4:59",
+      "line": "但是又并不是哪一个关节痛得难受",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-04",
+      "lecture": 15,
+      "sec": 421.3,
+      "mmss": "7:01",
+      "line": "那天我不晓得朋友一个什么念头",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-05",
+      "lecture": 15,
+      "sec": 590.5,
+      "mmss": "9:51",
+      "line": "为什么不见效呢",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-06",
+      "lecture": 15,
+      "sec": 786,
+      "mmss": "13:06",
+      "line": "他说你这个药真定好",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-07",
+      "lecture": 15,
+      "sec": 945.5,
+      "mmss": "15:46",
+      "line": "呕不止 心下急 郁郁微烦者",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-08",
+      "lecture": 15,
+      "sec": 1032.8,
+      "mmss": "17:13",
+      "line": "这里就突出了呕不止",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-09",
+      "lecture": 15,
+      "sec": 1120.8,
+      "mmss": "18:41",
+      "line": "心下急 郁郁微烦",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-10",
+      "lecture": 15,
+      "sec": 1216.8,
+      "mmss": "20:17",
+      "line": "影响胆汁的分泌",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-11",
+      "lecture": 15,
+      "sec": 1293.5,
+      "mmss": "21:34",
+      "line": "你别胡说八道",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-12",
+      "lecture": 15,
+      "sec": 1362,
+      "mmss": "22:42",
+      "line": "川楝子也有毒",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-13",
+      "lecture": 15,
+      "sec": 1430.5,
+      "mmss": "23:51",
+      "line": "所以你不要听这些东西",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-14",
+      "lecture": 15,
+      "sec": 1496.3,
+      "mmss": "24:56",
+      "line": "消炎利胆片等等好多",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-15",
+      "lecture": 15,
+      "sec": 1574,
+      "mmss": "26:14",
+      "line": "我们的微妙之处",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-16",
+      "lecture": 15,
+      "sec": 1637.5,
+      "mmss": "27:18",
+      "line": "这一点大家要注意",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-17",
+      "lecture": 15,
+      "sec": 1695.5,
+      "mmss": "28:16",
+      "line": "我就只能自己头布来做",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-18",
+      "lecture": 15,
+      "sec": 1805.5,
+      "mmss": "30:06",
+      "line": "但头汗出 往来寒热",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-19",
+      "lecture": 15,
+      "sec": 1942.3,
+      "mmss": "32:22",
+      "line": "水走肠间 沥沥有声",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "15-20",
+      "lecture": 15,
+      "sec": 2090.5,
+      "mmss": "34:51",
+      "line": "所以《伤寒论》有些东西",
+      "grid": "lec-15.jpg"
+    },
+    {
+      "idx": "18-01",
+      "lecture": 18,
+      "sec": 12.3,
+      "mmss": "0:12",
+      "line": "和法在八法中应用很",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-02",
+      "lecture": 18,
+      "sec": 200.5,
+      "mmss": "3:21",
+      "line": "这个也是不脾不痛有解",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-03",
+      "lecture": 18,
+      "sec": 347,
+      "mmss": "5:47",
+      "line": "这是消化道疾病的特点",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-04",
+      "lecture": 18,
+      "sec": 491.3,
+      "mmss": "8:11",
+      "line": "所以这一块应当讲在临床上非常重要",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-05",
+      "lecture": 18,
+      "sec": 623.5,
+      "mmss": "10:24",
+      "line": "吴鞠通的很多方都是小柴胡汤变化",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-06",
+      "lecture": 18,
+      "sec": 758,
+      "mmss": "12:38",
+      "line": "你现在比我方便",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-07",
+      "lecture": 18,
+      "sec": 971.5,
+      "mmss": "16:12",
+      "line": "干姜附子等于不软",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-08",
+      "lecture": 18,
+      "sec": 1091.8,
+      "mmss": "18:12",
+      "line": "因为它治疗的方法以温阳为主",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-09",
+      "lecture": 18,
+      "sec": 1225.8,
+      "mmss": "20:26",
+      "line": "就是描绘太阴脾虚寒证的一个重要意义",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-10",
+      "lecture": 18,
+      "sec": 1333.5,
+      "mmss": "22:14",
+      "line": "且服四逆辈也就包括了理中汤的意思",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-11",
+      "lecture": 18,
+      "sec": 1452.3,
+      "mmss": "24:12",
+      "line": "下面理中汤这个方我要说两句",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-12",
+      "lecture": 18,
+      "sec": 1596.5,
+      "mmss": "26:37",
+      "line": "湿应该放在第二位",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-13",
+      "lecture": 18,
+      "sec": 1743.5,
+      "mmss": "29:04",
+      "line": "这两个东西往往你用这个可以",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-14",
+      "lecture": 18,
+      "sec": 1853.3,
+      "mmss": "30:53",
+      "line": "实际上你到临床上去你就有得而来",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-15",
+      "lecture": 18,
+      "sec": 2003,
+      "mmss": "33:23",
+      "line": "西医治风湿就是两个",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-16",
+      "lecture": 18,
+      "sec": 2155.8,
+      "mmss": "35:56",
+      "line": "舌质淡红苔薄腻",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-17",
+      "lecture": 18,
+      "sec": 2266,
+      "mmss": "37:46",
+      "line": "我说不是中医不好是我们自己没有学好",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-18",
+      "lecture": 18,
+      "sec": 2397.8,
+      "mmss": "39:58",
+      "line": "这里我必须介绍一下",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-19",
+      "lecture": 18,
+      "sec": 2527.5,
+      "mmss": "42:08",
+      "line": "这个是要温运更好",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "18-20",
+      "lecture": 18,
+      "sec": 2755.5,
+      "mmss": "45:56",
+      "line": "脾胃的温度改变了",
+      "grid": "lec-18.jpg"
+    },
+    {
+      "idx": "1-01",
+      "lecture": 1,
+      "sec": 18.3,
+      "mmss": "0:18",
+      "line": "学习《伤寒论》的几个有关问题",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-02",
+      "lecture": 1,
+      "sec": 165.8,
+      "mmss": "2:46",
+      "line": "理法方药都是《伤寒论》的核心内容",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-03",
+      "lecture": 1,
+      "sec": 329.5,
+      "mmss": "5:30",
+      "line": "我顺便讲到这里我就讲",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-04",
+      "lecture": 1,
+      "sec": 487.3,
+      "mmss": "8:07",
+      "line": "中医的功夫能力会明显的加强",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-05",
+      "lecture": 1,
+      "sec": 636.5,
+      "mmss": "10:37",
+      "line": "作诗要意在诗外",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-06",
+      "lecture": 1,
+      "sec": 788.5,
+      "mmss": "13:09",
+      "line": "所以这里希望大家在熟读的过程中寻其原意",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-07",
+      "lecture": 1,
+      "sec": 952.8,
+      "mmss": "15:53",
+      "line": "一吃五令散水就多了",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-08",
+      "lecture": 1,
+      "sec": 1104.5,
+      "mmss": "18:25",
+      "line": "与的话清清楚楚",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-09",
+      "lecture": 1,
+      "sec": 1238,
+      "mmss": "20:38",
+      "line": "我们承认温病学说可以讲是",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-10",
+      "lecture": 1,
+      "sec": 1351,
+      "mmss": "22:31",
+      "line": "这一点请大家要下点功夫",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-11",
+      "lecture": 1,
+      "sec": 1482.8,
+      "mmss": "24:43",
+      "line": "太阴是脾阳虚寒",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-12",
+      "lecture": 1,
+      "sec": 1618.3,
+      "mmss": "26:58",
+      "line": "今天上午我们就有了一个女孩子",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-13",
+      "lecture": 1,
+      "sec": 1793.5,
+      "mmss": "29:54",
+      "line": "加强对六经辨证基本规律的理解",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-14",
+      "lecture": 1,
+      "sec": 1923,
+      "mmss": "32:03",
+      "line": "不管你是哪个学科的",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-15",
+      "lecture": 1,
+      "sec": 2031,
+      "mmss": "33:51",
+      "line": "他就只会用柴胡荆芥银花连翘",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-16",
+      "lecture": 1,
+      "sec": 2201.8,
+      "mmss": "36:42",
+      "line": "像涨了洪水以后必有大疫",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-17",
+      "lecture": 1,
+      "sec": 2333.3,
+      "mmss": "38:53",
+      "line": "那么《温病条辨》非常重要",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-18",
+      "lecture": 1,
+      "sec": 2503.8,
+      "mmss": "41:44",
+      "line": "前面的方义新解很多东西是新东西",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-19",
+      "lecture": 1,
+      "sec": 2638.5,
+      "mmss": "43:59",
+      "line": "他说能不能改一下标题",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "1-20",
+      "lecture": 1,
+      "sec": 2762.8,
+      "mmss": "46:03",
+      "line": "这些大家同志们一定要很好的掌握",
+      "grid": "lec-01.jpg"
+    },
+    {
+      "idx": "2-01",
+      "lecture": 2,
+      "sec": 17.5,
+      "mmss": "0:18",
+      "line": "才把熟读伤寒论的一些有关问题作了介绍",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-02",
+      "lecture": 2,
+      "sec": 132.5,
+      "mmss": "2:13",
+      "line": "因此下面有这么几方面的问题",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-03",
+      "lecture": 2,
+      "sec": 707.5,
+      "mmss": "11:48",
+      "line": "所以好多东西你们学了",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-04",
+      "lecture": 2,
+      "sec": 937.5,
+      "mmss": "15:38",
+      "line": "六经所系的脏腑生理病理",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-05",
+      "lecture": 2,
+      "sec": 1301,
+      "mmss": "21:41",
+      "line": "说朝鲜有个学家叫金凤汉",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-06",
+      "lecture": 2,
+      "sec": 1545.5,
+      "mmss": "25:46",
+      "line": "所以好多东西你不搞清楚",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-07",
+      "lecture": 2,
+      "sec": 1648,
+      "mmss": "27:28",
+      "line": "你要天天收到何包里",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-08",
+      "lecture": 2,
+      "sec": 1796.8,
+      "mmss": "29:57",
+      "line": "因为脏腑是物质基础",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-09",
+      "lecture": 2,
+      "sec": 1887.8,
+      "mmss": "31:28",
+      "line": "从气化学说来解释伤寒六经生理病理",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-10",
+      "lecture": 2,
+      "sec": 2059,
+      "mmss": "34:19",
+      "line": "到了三阴是病的最后阶段",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-11",
+      "lecture": 2,
+      "sec": 2178.8,
+      "mmss": "36:19",
+      "line": "那种解释就是跟你兜圈子",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-12",
+      "lecture": 2,
+      "sec": 2415.5,
+      "mmss": "40:16",
+      "line": "风心 肺心 冠心都可以用",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-13",
+      "lecture": 2,
+      "sec": 2587,
+      "mmss": "43:07",
+      "line": "不然的话你搞到里面不晓得",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-14",
+      "lecture": 2,
+      "sec": 2748.3,
+      "mmss": "45:48",
+      "line": "明明是二拗汤",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-15",
+      "lecture": 2,
+      "sec": 2937,
+      "mmss": "48:57",
+      "line": "所以同学们有时间要多到临床上去转",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-16",
+      "lecture": 2,
+      "sec": 3165.5,
+      "mmss": "52:46",
+      "line": "张仲景主要是以证脉来定夺",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-17",
+      "lecture": 2,
+      "sec": 3316.8,
+      "mmss": "55:17",
+      "line": "他的传变规律了",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-18",
+      "lecture": 2,
+      "sec": 3441.3,
+      "mmss": "57:21",
+      "line": "实证多传阳明 虚证容易陷少阴",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-19",
+      "lecture": 2,
+      "sec": 3617.8,
+      "mmss": "60:18",
+      "line": "我说到时候官于择了",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "2-20",
+      "lecture": 2,
+      "sec": 3736,
+      "mmss": "62:16",
+      "line": "这个病人我没有全程跟踪观察好",
+      "grid": "lec-02.jpg"
+    },
+    {
+      "idx": "3-01",
+      "lecture": 3,
+      "sec": 21.3,
+      "mmss": "0:21",
+      "line": "今天下午我们介绍的中心内容",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-02",
+      "lecture": 3,
+      "sec": 127.5,
+      "mmss": "2:08",
+      "line": "可是它又是我们中医的四大经典之一",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-03",
+      "lecture": 3,
+      "sec": 323.8,
+      "mmss": "5:24",
+      "line": "也就是全国中医学院普遍建立",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-04",
+      "lecture": 3,
+      "sec": 446.5,
+      "mmss": "7:27",
+      "line": "所以曾经一度我们两个人",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-05",
+      "lecture": 3,
+      "sec": 558,
+      "mmss": "9:18",
+      "line": "《伤寒论》就是中医临床基础学",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-06",
+      "lecture": 3,
+      "sec": 663,
+      "mmss": "11:03",
+      "line": "这一段话就说到这里",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-07",
+      "lecture": 3,
+      "sec": 809,
+      "mmss": "13:29",
+      "line": "成无己的《注解伤寒论》是完整的",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-08",
+      "lecture": 3,
+      "sec": 946,
+      "mmss": "15:46",
+      "line": "我认为要向大家介绍一下的",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-09",
+      "lecture": 3,
+      "sec": 1225.8,
+      "mmss": "20:26",
+      "line": "实际上《伤寒论》就学了一半",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-10",
+      "lecture": 3,
+      "sec": 1347.8,
+      "mmss": "22:28",
+      "line": "一个是表示风寒表证遏阳化热",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-11",
+      "lecture": 3,
+      "sec": 1561,
+      "mmss": "26:01",
+      "line": "这件断句的话呢",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-12",
+      "lecture": 3,
+      "sec": 1662.8,
+      "mmss": "27:43",
+      "line": "如《伤寒论》里面有几条蓄血证的条文",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-13",
+      "lecture": 3,
+      "sec": 1773,
+      "mmss": "29:33",
+      "line": "以其脏有寒故也",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-14",
+      "lecture": 3,
+      "sec": 1841.8,
+      "mmss": "30:42",
+      "line": "这些都是很大键的地方",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-15",
+      "lecture": 3,
+      "sec": 1966.3,
+      "mmss": "32:46",
+      "line": "六经的提纲",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-16",
+      "lecture": 3,
+      "sec": 2096.5,
+      "mmss": "34:57",
+      "line": "发热恶寒无汗 身体疼痛",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-17",
+      "lecture": 3,
+      "sec": 2268.8,
+      "mmss": "37:49",
+      "line": "尤在泾的《伤寒贯珠集》",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-18",
+      "lecture": 3,
+      "sec": 2397.5,
+      "mmss": "39:58",
+      "line": "搞得你稀里糊涂",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-19",
+      "lecture": 3,
+      "sec": 2547.5,
+      "mmss": "42:28",
+      "line": "成无己的《伤寒论》是以经解经",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "3-20",
+      "lecture": 3,
+      "sec": 2760.8,
+      "mmss": "46:01",
+      "line": "从《伤寒论》来研究仲景的立法和治疗",
+      "grid": "lec-03.jpg"
+    },
+    {
+      "idx": "4-01",
+      "lecture": 4,
+      "sec": 14,
+      "mmss": "0:14",
+      "line": "上面讲到了叶天士发展伤寒的所在",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-02",
+      "lecture": 4,
+      "sec": 203.8,
+      "mmss": "3:24",
+      "line": "我们讲发展一个伤寒的方很不容易",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-03",
+      "lecture": 4,
+      "sec": 362,
+      "mmss": "6:02",
+      "line": "比如说中医这个病",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-04",
+      "lecture": 4,
+      "sec": 528,
+      "mmss": "8:48",
+      "line": "他没有什么就与那几味药",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-05",
+      "lecture": 4,
+      "sec": 700.8,
+      "mmss": "11:41",
+      "line": "我这话讲出来",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-06",
+      "lecture": 4,
+      "sec": 872,
+      "mmss": "14:32",
+      "line": "但是也应该按照中医的治疗规律来摸索",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-07",
+      "lecture": 4,
+      "sec": 1021.3,
+      "mmss": "17:01",
+      "line": "医学的 人文的 外语的",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-08",
+      "lecture": 4,
+      "sec": 1155.5,
+      "mmss": "19:16",
+      "line": "活血化瘀是王清任的发明创造",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-09",
+      "lecture": 4,
+      "sec": 1288.3,
+      "mmss": "21:28",
+      "line": "知道《伤寒论》里面的小柴胡大柴胡吗",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-10",
+      "lecture": 4,
+      "sec": 1456.3,
+      "mmss": "24:16",
+      "line": "他说我从来没有这么病过",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-11",
+      "lecture": 4,
+      "sec": 1701,
+      "mmss": "28:21",
+      "line": "我有一我说你这个药我多吃三包",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-12",
+      "lecture": 4,
+      "sec": 1854.8,
+      "mmss": "30:55",
+      "line": "李东垣的升阳益胃汤",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-13",
+      "lecture": 4,
+      "sec": 2005.3,
+      "mmss": "33:25",
+      "line": "我想王清任的《伤寒论》读得好",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-14",
+      "lecture": 4,
+      "sec": 2165.8,
+      "mmss": "36:06",
+      "line": "我跟他讲了大半个月课",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-15",
+      "lecture": 4,
+      "sec": 2367,
+      "mmss": "39:27",
+      "line": "这里面我就想讲三个问题",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-16",
+      "lecture": 4,
+      "sec": 2515,
+      "mmss": "41:55",
+      "line": "红枣生姜缺一不可",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-17",
+      "lecture": 4,
+      "sec": 2691.8,
+      "mmss": "44:52",
+      "line": "都是入血分活血养血",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-18",
+      "lecture": 4,
+      "sec": 2864.8,
+      "mmss": "47:45",
+      "line": "处处都照顾到了脾胃",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-19",
+      "lecture": 4,
+      "sec": 3105.5,
+      "mmss": "51:46",
+      "line": "从头到脚的病都可以用小柴胡",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "4-20",
+      "lecture": 4,
+      "sec": 3248.3,
+      "mmss": "54:08",
+      "line": "这就是中医的强项",
+      "grid": "lec-04.jpg"
+    },
+    {
+      "idx": "5-01",
+      "lecture": 5,
+      "sec": 38.5,
+      "mmss": "0:39",
+      "line": "还有半夏泻心汤的泻心汤类",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-02",
+      "lecture": 5,
+      "sec": 112.8,
+      "mmss": "1:53",
+      "line": "把这根线条一年起来非常明确",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-03",
+      "lecture": 5,
+      "sec": 171.3,
+      "mmss": "2:51",
+      "line": "还有一个很微妙的地方",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-04",
+      "lecture": 5,
+      "sec": 217.8,
+      "mmss": "3:38",
+      "line": "这个寒热转化",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-05",
+      "lecture": 5,
+      "sec": 266.5,
+      "mmss": "4:27",
+      "line": "《伤寒论》讲的汗过多 其人心下悸",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-06",
+      "lecture": 5,
+      "sec": 327.5,
+      "mmss": "5:28",
+      "line": "你不要小看这两味药的组配了",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-07",
+      "lecture": 5,
+      "sec": 393,
+      "mmss": "6:33",
+      "line": "所以很多东西你们要在临床实践去摸索",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-08",
+      "lecture": 5,
+      "sec": 447,
+      "mmss": "7:27",
+      "line": "芍药甘草两味药",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-09",
+      "lecture": 5,
+      "sec": 490,
+      "mmss": "8:10",
+      "line": "都可以用这个方子",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-10",
+      "lecture": 5,
+      "sec": 527.8,
+      "mmss": "8:48",
+      "line": "但是你从理论上要吃透",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-11",
+      "lecture": 5,
+      "sec": 569.5,
+      "mmss": "9:30",
+      "line": "要治相当大一块",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-12",
+      "lecture": 5,
+      "sec": 630,
+      "mmss": "10:30",
+      "line": "还是吃小柴胡汤好",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-13",
+      "lecture": 5,
+      "sec": 684,
+      "mmss": "11:24",
+      "line": "比方我刚才讲的芍药甘草汤",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-14",
+      "lecture": 5,
+      "sec": 724.8,
+      "mmss": "12:05",
+      "line": "你一定要抓住百合",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-15",
+      "lecture": 5,
+      "sec": 776,
+      "mmss": "12:56",
+      "line": "一秒钟都没有",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-16",
+      "lecture": 5,
+      "sec": 828.8,
+      "mmss": "13:49",
+      "line": "凡是用这个清热化湿的药",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-17",
+      "lecture": 5,
+      "sec": 861.5,
+      "mmss": "14:22",
+      "line": "跑到他们传染科",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-18",
+      "lecture": 5,
+      "sec": 892.3,
+      "mmss": "14:52",
+      "line": "讲了一句很有真知灼见的话",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-19",
+      "lecture": 5,
+      "sec": 929,
+      "mmss": "15:29",
+      "line": "有的时候就是兑百合",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "5-20",
+      "lecture": 5,
+      "sec": 988.5,
+      "mmss": "16:29",
+      "line": "如果炎用百合汤有阴虚",
+      "grid": "lec-05.jpg"
+    },
+    {
+      "idx": "10-01",
+      "lecture": 10,
+      "sec": 26.8,
+      "mmss": "0:27",
+      "line": "也可以说汗法的加减法",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-02",
+      "lecture": 10,
+      "sec": 194,
+      "mmss": "3:14",
+      "line": "那个热会郁蒸出来",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-03",
+      "lecture": 10,
+      "sec": 308.5,
+      "mmss": "5:09",
+      "line": "而且也没有阳明高期的体温",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-04",
+      "lecture": 10,
+      "sec": 438,
+      "mmss": "7:18",
+      "line": "麻黄附子细辛汤",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-05",
+      "lecture": 10,
+      "sec": 525.5,
+      "mmss": "8:46",
+      "line": "他是饮邪伏肺",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-06",
+      "lecture": 10,
+      "sec": 614,
+      "mmss": "10:14",
+      "line": "还有我刚才跟他讲的",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-07",
+      "lecture": 10,
+      "sec": 873,
+      "mmss": "14:33",
+      "line": "就昨天晚上睡了枕头没睡好",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-08",
+      "lecture": 10,
+      "sec": 1090.5,
+      "mmss": "18:11",
+      "line": "我书上介绍了的尿崩症的那个小孩",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-09",
+      "lecture": 10,
+      "sec": 1205.8,
+      "mmss": "20:06",
+      "line": "这就是伤寒论讲义上面所提到的",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-10",
+      "lecture": 10,
+      "sec": 1269,
+      "mmss": "21:09",
+      "line": "不是说一个礼拜喝一次",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-11",
+      "lecture": 10,
+      "sec": 1335.5,
+      "mmss": "22:16",
+      "line": "阳明经证阳明腑证少阳本证",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-12",
+      "lecture": 10,
+      "sec": 1486.3,
+      "mmss": "24:46",
+      "line": "所以你掌握不了的话",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-13",
+      "lecture": 10,
+      "sec": 1586.3,
+      "mmss": "26:26",
+      "line": "在这里需要告诉大家",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-14",
+      "lecture": 10,
+      "sec": 1720.5,
+      "mmss": "28:41",
+      "line": "人参败毒散",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-15",
+      "lecture": 10,
+      "sec": 1843,
+      "mmss": "30:43",
+      "line": "为什么我讲中医难",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-16",
+      "lecture": 10,
+      "sec": 2008.3,
+      "mmss": "33:28",
+      "line": "如果是消鼻沸流待很厉害吃点防风",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-17",
+      "lecture": 10,
+      "sec": 2102.8,
+      "mmss": "35:03",
+      "line": "这是对肝硬化的一个预后是非常准确",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-18",
+      "lecture": 10,
+      "sec": 2301.8,
+      "mmss": "38:22",
+      "line": "一味省需辛温透表",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-19",
+      "lecture": 10,
+      "sec": 2500.5,
+      "mmss": "41:41",
+      "line": "好的东西摆在那里不用",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "10-20",
+      "lecture": 10,
+      "sec": 2616.8,
+      "mmss": "43:37",
+      "line": "现在我们的皮肤科也西化了",
+      "grid": "lec-10.jpg"
+    },
+    {
+      "idx": "13-01",
+      "lecture": 13,
+      "sec": 13.3,
+      "mmss": "0:13",
+      "line": "攻下逐水这两个方法",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-02",
+      "lecture": 13,
+      "sec": 200.8,
+      "mmss": "3:21",
+      "line": "这样然后再合煎一下",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-03",
+      "lecture": 13,
+      "sec": 447,
+      "mmss": "7:27",
+      "line": "用就更难",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-04",
+      "lecture": 13,
+      "sec": 631.8,
+      "mmss": "10:32",
+      "line": "我们搞点小打小闹的工作还是蛮不错的",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-05",
+      "lecture": 13,
+      "sec": 806.3,
+      "mmss": "13:26",
+      "line": "浮萍相搏 这不是博士的这个提手旁",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-06",
+      "lecture": 13,
+      "sec": 971,
+      "mmss": "16:11",
+      "line": "你回去找温病条辨有一下",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-07",
+      "lecture": 13,
+      "sec": 1211.8,
+      "mmss": "20:12",
+      "line": "在我小书里面我提到了",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-08",
+      "lecture": 13,
+      "sec": 1413,
+      "mmss": "23:33",
+      "line": "伤寒论 分之之的 都是救阳的 东西多",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-09",
+      "lecture": 13,
+      "sec": 1633.3,
+      "mmss": "27:13",
+      "line": "我今天大胆讲我不想有没有时间",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-10",
+      "lecture": 13,
+      "sec": 1812.5,
+      "mmss": "30:13",
+      "line": "就是没有形成阳明腑实证",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-11",
+      "lecture": 13,
+      "sec": 2007.8,
+      "mmss": "33:28",
+      "line": "肚子胀是糊涂的 她的肚脐儿也长大了",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-12",
+      "lecture": 13,
+      "sec": 2187.3,
+      "mmss": "36:27",
+      "line": "膈下逐瘀 少腹逐瘀 身痛逐瘀",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-13",
+      "lecture": 13,
+      "sec": 2338.8,
+      "mmss": "38:59",
+      "line": "活血化瘀治疗冠心病",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-14",
+      "lecture": 13,
+      "sec": 2477.3,
+      "mmss": "41:17",
+      "line": "像吴鞠通一样的 他综合得很好",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-15",
+      "lecture": 13,
+      "sec": 2651.8,
+      "mmss": "44:12",
+      "line": "有时候可以合小承气汤",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-16",
+      "lecture": 13,
+      "sec": 2803.5,
+      "mmss": "46:44",
+      "line": "防己黄芪汤",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-17",
+      "lecture": 13,
+      "sec": 2972,
+      "mmss": "49:32",
+      "line": "胆道蛔虫多得很",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-18",
+      "lecture": 13,
+      "sec": 3143,
+      "mmss": "52:23",
+      "line": "没有哪个权威说了算",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-19",
+      "lecture": 13,
+      "sec": 3362.3,
+      "mmss": "56:02",
+      "line": "就是说他的药在表药跟里药同时使用",
+      "grid": "lec-13.jpg"
+    },
+    {
+      "idx": "13-20",
+      "lecture": 13,
+      "sec": 3506,
+      "mmss": "58:26",
+      "line": "都可以算是和法",
+      "grid": "lec-13.jpg"
+    }
+  ]
+}

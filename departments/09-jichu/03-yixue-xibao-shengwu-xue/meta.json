@@ -1,0 +1,29 @@
+{
+  "slug": "03-yixue-xibao-shengwu-xue",
+  "title": "医学细胞生物学",
+  "en": "Medical Cell Biology",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 123,
+  "type": "Core",
+  "semester": 1,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 36,
+  "bridge": "细胞信号→微分方程 / 通路→有向图",
+  "chaptersTarget": 12,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/03-yixue-xibao-shengwu-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/03-yixue-xibao-shengwu-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

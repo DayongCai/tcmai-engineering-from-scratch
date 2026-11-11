@@ -1,0 +1,79 @@
+{
+ "lesson": "01-yanjiu-fanshi",
+ "title": "中药药理的研究范式与特殊性",
+ "subject": "07-zhongyao-yaoli-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 1 章「中药药理的研究范式与特殊性」要回答的核心问题是什么？",
+   "options": [
+    "中药药理研究为什么不能照搬化药的评价范式",
+    "归经",
+    "升降浮沉与毒性",
+    "整体性与多效性"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：化药讲「靶点—剂量—效应」，中药讲「多成分—多靶点—整体调节」；不承认这个差别，实验设计从一开始就错。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "药理作用",
+    "作用机制",
+    "实验证据",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（药物类别）重心落在哪一项？",
+   "options": [
+    "消化与代谢",
+    "乙酸-丙二酸途径",
+    "莽草酸途径",
+    "甲戊二羟酸途径"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "6 个",
+    "8 个",
+    "10 个",
+    "12 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "本课程数值类命中只有 15 处，说明什么？",
+   "options": [
+    "教材常数多以范围或文字表述，可数的值少不等于不量化",
+    "归经",
+    "升降浮沉与毒性",
+    "整体性与多效性"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：真正的量化在方法学七项指标里。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/zhongyao-yaoli/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

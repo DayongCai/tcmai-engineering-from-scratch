@@ -22,8 +22,11 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/06-guanli/09-yiliao-baoxian-jingji",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 18,
+    "words": 383885,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#卫生经济学",
+    "extractedAt": "2026-10-21"
   }
 }

@@ -1,78 +1,132 @@
 {
-  "slug": "07-neike-huli-xue",
-  "title": "内科护理学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-pinggu-kuangjia",
-      "title": "内科护理的评估框架",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-huxi-huli",
-      "title": "呼吸系统疾病护理：慢阻肺与哮喘",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-xunhuan-huli",
-      "title": "循环系统疾病护理：心衰与冠心",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-xiaohua-huli",
-      "title": "消化系统疾病护理：溃疡与肝硬化",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-miniao-huli",
-      "title": "泌尿系统疾病护理：肾病与透析",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-xueye-huli",
-      "title": "血液系统疾病护理：贫血与出血",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-neifenmi-huli",
-      "title": "内分泌疾病护理：糖尿病与甲状腺",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-shenjing-huli",
-      "title": "神经系统疾病护理：卒中与癫痫",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-fengshi-huli",
-      "title": "风湿免疫疾病护理",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-zhongliu-huli",
-      "title": "肿瘤患者的护理与症状管理",
-      "status": "📋"
-    },
-    {
-      "n": 11,
-      "slug": "11-manxing-guanli",
-      "title": "慢性病管理与随访",
-      "status": "📋"
-    },
-    {
-      "n": 12,
-      "slug": "12-zhiliang-zhibiao",
-      "title": "内科护理的质量指标",
-      "status": "📋"
-    }
-  ]
+ "slug": "07-neike-huli-xue",
+ "title": "内科护理学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gaishu-lilun",
+   "title": "内科护理概述与理论基础",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-gaishu-lilun/docs/zh.md",
+   "code": "chapters/01-gaishu-lilun/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-pinggu-guancha",
+   "title": "内科护理评估与病情观察",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-pinggu-guancha/docs/zh.md",
+   "code": "chapters/02-pinggu-guancha/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-jishu-anquan",
+   "title": "内科常用护理技术与安全",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-jishu-anquan/docs/zh.md",
+   "code": "chapters/03-jishu-anquan/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-zhengzhuang-huli",
+   "title": "内科常见症状的护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-zhengzhuang-huli/docs/zh.md",
+   "code": "chapters/04-zhengzhuang-huli/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-yaowu-jingmai",
+   "title": "药物治疗与静脉治疗的护理安全",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-yaowu-jingmai/docs/zh.md",
+   "code": "chapters/05-yaowu-jingmai/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-yingyang-huli",
+   "title": "内科营养支持与饮食护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-yingyang-huli/docs/zh.md",
+   "code": "chapters/06-yingyang-huli/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-huxi-huli",
+   "title": "呼吸系统疾病护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-huxi-huli/docs/zh.md",
+   "code": "chapters/07-huxi-huli/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-xunhuan-huli",
+   "title": "循环系统疾病护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-xunhuan-huli/docs/zh.md",
+   "code": "chapters/08-xunhuan-huli/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-xiaohua-huli",
+   "title": "消化系统疾病护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-xiaohua-huli/docs/zh.md",
+   "code": "chapters/09-xiaohua-huli/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-miniao-huli",
+   "title": "泌尿系统疾病护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-miniao-huli/docs/zh.md",
+   "code": "chapters/10-miniao-huli/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-xueye-huli",
+   "title": "血液系统疾病护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-xueye-huli/docs/zh.md",
+   "code": "chapters/11-xueye-huli/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-neifenmi-huli",
+   "title": "内分泌与代谢性疾病护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-neifenmi-huli/docs/zh.md",
+   "code": "chapters/12-neifenmi-huli/code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-fengshi-shenjing",
+   "title": "风湿免疫与神经系统疾病护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/13-fengshi-shenjing/docs/zh.md",
+   "code": "chapters/13-fengshi-shenjing/code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-chuanran-zhiliang",
+   "title": "传染病护理、质量风险与平台",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/14-chuanran-zhiliang/docs/zh.md",
+   "code": "chapters/14-chuanran-zhiliang/code/main.js"
+  }
+ ]
 }

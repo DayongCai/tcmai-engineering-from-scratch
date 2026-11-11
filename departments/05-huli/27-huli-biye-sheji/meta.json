@@ -1,0 +1,40 @@
+{
+  "slug": "27-huli-biye-sheji",
+  "title": "护理毕业设计与知识移交",
+  "en": "Nursing Capstone & Handover",
+  "deptSlug": "05-huli",
+  "deptTitle": "护理系",
+  "globalN": 108,
+  "type": "Build",
+  "semester": 10,
+  "stage": "yi",
+  "stageTitle": "已",
+  "hours": 72,
+  "bridge": "护理问题→可评价方案 / 证据检索→循证链 / 结局→指标集",
+  "chaptersTarget": 6,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/05-huli/27-huli-biye-sheji",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/05-huli/27-huli-biye-sheji",
+    "chaptersWritten": 6,
+    "words": 3415,
+    "status": "wip",
+    "layer": "handbook",
+    "contract": "handbook-v1",
+    "origin": "handbook",
+    "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
+    "extractedAt": "2026-11-09"
+  },
+  "底本": {
+    "kind": "派生",
+    "from": "standards/{huli-daolun,huli-lunli-fagui,huli-guanli-xue,jiankang-pinggu} ＋ standards/biye",
+    "dir": "standards/huli-biye",
+    "note": "本库无《护理毕业设计》教材；6 环节由四门课的 11 个单元派生，locator 一律「派生·」；每章挂 standards/biye 的真实台账锚点（数字来自 instances/05-huli.json 与 checklists/），不编校名人名"
+  }
+}

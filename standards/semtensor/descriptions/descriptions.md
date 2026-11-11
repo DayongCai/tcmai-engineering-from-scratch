@@ -34,19 +34,57 @@
 
 > 这 7 条是 ICD-11 合称 —— 在《中医疾病名代码（医保版 GB95 / 医保 2.0 版 GB21）》全表里，7 条**都没有正名**（不是没取到，是标准表里没有）。平台层要引用时按**首构件**取国家证名；合称本身不给正名。
 
-> **对齐不是证据**：不改 `externalScope`，也不计入任何覆盖数。被丢弃的构件逐个标状态：`standard`＝表里有独立证名；`nonstandard`＝0 命中，属「文献无证名」。
+> **对齐不是证据**：不改 `externalScope`，也不计入任何覆盖数。被丢弃的构件逐个标状态：`standard`＝**国家证名表**里有独立证名；`nonstandard`＝**国家表** 0 命中。
+
+> 注意两个轴不要混：**国家表没有 ≠ 文献没有**。「瘀毒内结证」「痰湿阻窍证」等国表 0 命中的写法，在中文文献里是实打实的证名（逐条判定见下节「文献通行证名」）。
 
 | 原证名（ICD-11 合称） | 主构件正名（可引用） | 丢弃的构件 |
 |---|---|---|
 | 肺经风热、湿热上蒸证(鼻渊/鼻鼽) | 肺经风热证 | `湿热上蒸证` → 湿热上蒸证（标准名） |
 | 肺经风热、湿热瘀结证 | 肺经风热证 | `湿热瘀结证` → 湿热瘀阻证（标准名） |
-| 风寒外袭、痰湿阻窍证(耳胀/耳闭) | 风寒外袭证 | `痰湿阻窍证` → **文献无证名** |
+| 风寒外袭、痰湿阻窍证(耳胀/耳闭) | 风寒外袭证 | `痰湿阻窍证` → **国家表 0 命中**（文献写法见下节） |
 | 肝火上炎、风火上扰证 | 肝火上炎证 `B04.02.01.02.02.02` | `风火上扰证` → 风火上扰证 `B02.02.11.01`（标准名） |
-| 脾胃虚弱、瘀毒内结证(胃积/反胃) | 脾胃虚证 | `瘀毒内结证` → **文献无证名** |
-| 湿热下注、邪留正伤证 | 湿热下注证 | `邪留正伤证` → **文献无证名** |
-| 血热风盛、瘀毒内蕴证(白疕/松皮癣) | 血热风盛证 | `瘀毒内蕴证` → **文献无证名** |
+| 脾胃虚弱、瘀毒内结证(胃积/反胃) | 脾胃虚证 | `瘀毒内结证` → **国家表 0 命中**（文献写法见下节） |
+| 湿热下注、邪留正伤证 | 湿热下注证 | `邪留正伤证` → **国家表 0 命中**（文献写法见下节） |
+| 血热风盛、瘀毒内蕴证(白疕/松皮癣) | 血热风盛证 | `瘀毒内蕴证` → **国家表 0 命中**（文献写法见下节） |
 
 口径与依据：`standards/semtensor/descriptions/term-alignment.json`；门：`node scripts/term_alignment.js --check`（会拿国家表逐串复核标准名与「无证名」判定）。
+
+## 文献通行证名（弱构件级缺的是「同一来源共现」，不是「名字」）
+
+> 这 12 条是 `scope=component` 的证名：其中 **7 条**是没有并病/因果链标注的**弱证据**，另 5 条已按并病/因果链达标 —— 但两侧写法在文献里叫什么，是同一个命名层问题，所以一并答复。
+> 本节回答命名层的问题：**每个构件，中文文献实际怎么写**。判定四种：`as-pattern`＝文献就是证名；`as-mechanism`＝只有病机/病因句，不能当证名引用；`aligned`＝可换成另一个文献名（给 relation）；`unmapped`＝文献没有这个写法。
+
+> 统计：**可换名 4 个构件位 · 文献无对应 1 条证名**。本节不进证据数 —— 它改的是平台层怎么引用这个构件，不是证据强度。
+
+| 证名 | 构件 | 判定 | 文献写法 | 出处 |
+|---|---|---|---|---|
+| 肺经风热、湿热上蒸证(鼻渊/鼻鼽) | 肺经风热 | 文献即证名 | 同字（即证名） | [shyueyanghospital.com](https://www.shyueyanghospital.com/Html/News/Articles/108532.html) |
+| 肺经风热、湿热上蒸证(鼻渊/鼻鼽) | 湿热上蒸证 | 可换名 | 脾胃湿热上蒸（病位限定） | [suoware.com](https://www.suoware.com/zhuzhizhongyi/3196.html) |
+| 肺经风热、湿热瘀结证 | 肺经风热 | 文献即证名 | 同字（即证名） | [m.baidu.com](https://m.baidu.com/bh/m/detail/ar_5834910491584992593?frsrcid=rec) |
+| 肺经风热、湿热瘀结证 | 湿热瘀结证 | 文献即证名 | 同字（即证名） | [tmbos.org](https://www.tmbos.org/index/article/view/id/25489.html) |
+| 风寒湿痹、内含于心证 | 风寒湿痹 | 文献即证名 | 同字（即证名） | [mingbozh.com](https://mingbozh.com/kepu/fengshixingguanjieyan-faq) |
+| 风寒湿痹、内含于心证 | 内含于心证 | 可换名 | 心痹（上位/病名） | [mingbozh.com](https://mingbozh.com/kepu/fengshixingguanjieyan-faq) |
+| 风寒外袭、痰湿阻窍证(耳胀/耳闭) | 风寒外袭 | 仅病机/病因句 | 无（只作病机/病因） | [news.39.net](https://news.39.net/a/240104/y1lhc0k.html) |
+| 风寒外袭、痰湿阻窍证(耳胀/耳闭) | 痰湿阻窍证 | 文献即证名 | 同字（即证名） | [health.baidu.com](https://health.baidu.com/m/detail/ar_6217353921755907141) |
+| 肝火亢盛、气阴两虚证（瘿病） | 肝火亢盛 | 仅病机/病因句 | 无（只作病机/病因） | [zzzyyy.com](https://zzzyyy.com/zhongyizhongyao/10913.html) |
+| 肝火亢盛、气阴两虚证（瘿病） | 气阴两虚证 | 文献即证名 | 同字（即证名） | [health.baidu.com](https://health.baidu.com/m/detail/ar_6885288784521519359) |
+| 肝火上炎、风火上扰证 | 肝火上炎 | 文献即证名 | 同字（即证名） | [baike.baidu.com](https://baike.baidu.com/item/%E8%82%9D%E7%81%AB%E6%97%BA%E7%9B%9B/2682154) |
+| 肝火上炎、风火上扰证 | 风火上扰证 | 仅病机/病因句 | 无（只作病机/病因） | [cntcm.com.cn](https://www.cntcm.com.cn/content/202408/28/c257529.html) |
+| 脾胃虚弱、瘀毒内结证(胃积/反胃) | 脾胃虚弱 | 仅病机/病因句 | 无（只作病机/病因） | [shzyyzz.shzyyzz.com](https://shzyyzz.shzyyzz.com/rc-pub/front/front-article/download/78749995/lowqualitypdf/%E7%8E%B0%E4%BB%A3%E4%B8%AD%E5%8C%BB%E5%8C%BB%E5%AE%B6%E5%AF%B9%E8%83%83%E7%99%8C%E7%9A%84%E7%97%85%E6%9C%BA%E8%AE%A4%E8%AF%86%E5%8F%8A%E6%B2%BB%E6%B3%95%E5%88%9B%E6%96%B0.pdf) |
+| 脾胃虚弱、瘀毒内结证(胃积/反胃) | 瘀毒内结证 | 可换名 | 瘀毒互结（近形异写） | [zyyfy.com](https://www.zyyfy.com/zyyy_index/article_17623_1.shtml) |
+| 热毒犯肺、痰瘀阻络证(哮喘性支气管肺炎) | 热毒犯肺 | 文献即证名 | 同字（即证名） | [cqcdc.org](https://www.cqcdc.org/index.php?a=shows&catid=84&id=720) |
+| 热毒犯肺、痰瘀阻络证(哮喘性支气管肺炎) | 痰瘀阻络证 | 文献即证名 | 同字（即证名） | [tcm.china.com.cn](http://tcm.china.com.cn/2023-12/01/content_42620152.html) |
+| 肾精亏虚、髓枯血虚证 | 肾精亏虚 | 文献即证名 | 同字（即证名） | [familydoctor.cn](https://www.familydoctor.cn/hlthsci/shenjing-kui-xu-xing-erming-diao-3zhao-kexue-yingdui-gaishan-zhengzhuang-708604.html) |
+| 肾精亏虚、髓枯血虚证 | 髓枯血虚证 | 可换名 | 肾虚髓亏证（只覆盖半边） | `tm1-landing.md` |
+| 湿热下注、邪留正伤证 | 湿热下注 | 文献即证名 | 同字（即证名） | [ndsyy.com](https://www.ndsyy.com/hbynew/info/1116/1190.htm) |
+| 湿热下注、邪留正伤证 | 邪留正伤证 | 文献无对应 | — | — |
+| 痰湿内盛、脾虚不运证 | 痰湿内盛 | 文献即证名 | 同字（即证名） | [yydbzz.com](https://www.yydbzz.com/CN/10.3870/j.issn.1004-0781.2026.02.006) |
+| 痰湿内盛、脾虚不运证 | 脾虚不运证 | 仅病机/病因句 | 无（只作病机/病因） | [zgyydb.ac.cn](https://www.zgyydb.ac.cn/zgyydb/article/html/202604029) |
+| 血热风盛、瘀毒内蕴证(白疕/松皮癣) | 血热风盛 | 文献即证名 | 同字（即证名） | [blog.wenxuecity.com](https://blog.wenxuecity.com/myblog/1771/200806/27979.html) |
+| 血热风盛、瘀毒内蕴证(白疕/松皮癣) | 瘀毒内蕴证 | 仅病机/病因句 | 无（只作病机/病因） | [yxb.iiyiyi.com](https://yxb.iiyiyi.com/m/wiki/42418.html) |
+
+口径与依据：`standards/semtensor/descriptions/literature-names.json`；门：`node scripts/literature_names.js --check` —— 每条引文必须在所指来源的 title+snippet（或 cited 文件）里**逐字命中**，`part` 必须真在证名里，且表不许落后于 `external.json` 的 component 清单。
 
 ### 构词拆不干净的证名（词表缺口，保持可见）
 

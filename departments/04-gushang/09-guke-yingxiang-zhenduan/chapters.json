@@ -1,66 +1,85 @@
 {
-  "slug": "09-guke-yingxiang-zhenduan",
-  "title": "骨科影像诊断学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-xian-yuanli",
-      "title": "X 线的成像原理与阅片顺序",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-guzhe-zhengxiang",
-      "title": "骨折的影像征象与分型",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-ct-sanwei",
-      "title": "CT 的三维重建与骨窗",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-mri-ruanzuzhi",
-      "title": "MRI 的软组织对比",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-jizhu-tuibian",
-      "title": "脊柱影像与椎间盘退变",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-guanjie-ruangu",
-      "title": "关节影像与软骨评估",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-chaosheng-ruanzuzhi",
-      "title": "超声在软组织损伤中的应用",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-guzhishusong-yingxiang",
-      "title": "骨质疏松的影像评估",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-yingxiang-buyizhi",
-      "title": "影像与症状的不一致",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-ai-yuepian",
-      "title": "AI 阅片的假阴性与责任边界",
-      "status": "📋"
-    }
-  ]
+ "note": "骨科影像诊断学：10 章 ← 教材 13 章（无单元复用）。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xulun-jishu",
+   "title": "绪论与影像技术选择",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-zhengchang-jiepou",
+   "title": "骨与关节正常影像解剖",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-jiben-bingbian",
+   "title": "基本病变的影像表现",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-guzhe-tuowei",
+   "title": "骨折与脱位的影像诊断",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-guanjie-chuangshang",
+   "title": "关节创伤与软骨损伤",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-jizhu-sunshang",
+   "title": "脊柱与脊髓损伤",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-jizhu-tuibian",
+   "title": "脊柱退变与相关疾病",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-ganran-yanxing",
+   "title": "感染与炎性疾病",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-guhuaisi-daixie",
+   "title": "骨坏死与代谢性骨病",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-zhongliu-ertong-jieru",
+   "title": "肿瘤、儿童与介入",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

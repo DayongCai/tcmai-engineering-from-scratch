@@ -1,0 +1,32 @@
+{
+ "slug": "17-zhongyi-xinxi-xue",
+ "title": "中医信息学",
+ "en": "TCM Informatics",
+ "deptSlug": "07-zhineng",
+ "deptTitle": "智能系",
+ "globalN": 139,
+ "type": "Reference",
+ "semester": 6,
+ "stage": "zhang",
+ "stageTitle": "长",
+ "hours": 36,
+ "bridge": "信息三元结构→本体 / 三轴编码→向量空间",
+ "chaptersTarget": 34,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/07-zhineng/17-zhongyi-xinxi-xue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/07-zhineng/17-zhongyi-xinxi-xue",
+  "chaptersWritten": 34,
+  "words": 19545,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/zhongyi-xinxi-xue/units.json",
+  "extractedAt": "2026-10-21"
+ }
+}

@@ -1,77 +1,71 @@
 # 运动医学与损伤防护
 
-> 损伤预测→幸存分析 / 负荷管理→时序模型
+**05-yundong-yixue** · 骨伤学院 · 8 章 · 32 单元 · 247,244 汉字
 
-| 项目 | 内容 |
-|------|------|
-| 院系 | 🦴 骨伤系 `04-gushang` |
-| 类型 | Build |
-| 学期 | 第 5 学期（🌿 长·积累 / 大三） |
-| 学时 | 54 |
-| 章节目标 | 8 |
-| 学科编号 | 050 / 120 |
-| 英文名 | Sports Medicine & Injury Prevention |
+> 运动医学的判据是「何时能回到运动」：不是不疼，而是功能达标。
 
-## 一、学科定位
+**课程类型：派生课（无独立教材）**。单元正文逐字取自父课，`locator` 一律 `派生·第N章·m.k`；
+本课汉字**不与父课相加**。
 
-运动医学与损伤防护（Sports Medicine & Injury Prevention）是骨伤系的核心学科，聚焦「正骨理筋—骨病退变—运动损伤与康复工程」中的一个完整知识域。
+## 一、父课
 
-## 二、中医 → AI 桥梁
+- `gushang-jinshang`
+- `gushang-jizhu-bing`
+- `gushang-kangfu-pingding`
+- `gushang-yingxiang`
+- `kangfu-huli`
+- `zhenggu`
+- `zhongyi-yundong`
 
-```text
-损伤预测→幸存分析 / 负荷管理→时序模型
-```
+## 二、章表
 
-运动医学与损伤防护 里的每一个传统概念，都被翻译成一个可计算、可验证的工程对象：
-中医概念给出**语义与约束**，AI/工程方法给出**表示与算法**。两者必须能互相回指，
-否则这个章节就还没有写完。
+| # | 章 | 父课来源 | 单元 | 汉字 |
+|--:|---|---|--:|--:|
+| 1 | 运动医学概论 | zhongyi-yundong、kangfu-huli | 3 | 51,854 |
+| 2 | 运动损伤的机制与分类 | gushang-jinshang、zhenggu | 6 | 11,650 |
+| 3 | 损伤评估与影像 | gushang-kangfu-pingding、gushang-yingxiang | 3 | 21,746 |
+| 4 | 急性损伤处理与康复分期 | gushang-jinshang、kangfu-huli | 3 | 35,950 |
+| 5 | 上肢与下肢常见损伤 | zhenggu、gushang-jinshang | 5 | 11,833 |
+| 6 | 躯干损伤与过用性损伤 | gushang-jinshang、gushang-jizhu-bing | 6 | 11,955 |
+| 7 | 运动防护与体能训练 | zhongyi-yundong、kangfu-huli | 3 | 51,578 |
+| 8 | 重返运动与复发预防 | gushang-kangfu-pingding、kangfu-huli | 3 | 50,678 |
 
-## 三、章节地图（目标 8 章）
+**第 1、7、8 章各 5 万字**（概论、防护训练、重返运动），第 2、5、6 章各 1.1–1.2 万字。
+原因是父课（康复护理、运动学）在「训练与重返」上写得最厚，而部位损伤分散在筋伤与正骨的多章里。如实记录。
 
-章节尚未编写。运行脚手架开章：
+## 三、三辨与四位面（实测）
+
+| 三辨 | 词频 |
+|---|--:|
+| **损伤识别** | **488** |
+| **处理与康复** | **2351** |
+| **评定与重返** | **963** |
+
+三辨极差 **4.8×**——「处理与康复」高达 2351，因为父课（康复护理）以干预为主线写；
+「损伤识别」只有 488，是这门课的真实短板：**教材讲怎么练，讲怎么认伤少**。这个偏斜没有通过换词消除。
+
+| 四位面（章群结构分区） | 汉字 |
+|---|---:|
+| 概论与机制 | 63,504 |
+| 评估与处理 | 57,696 |
+| 部位损伤 | 23,788 |
+| 防护与重返 | 102,256 |
+
+四位面极差 **4.3×**。
+
+## 四、这门课的三个判据
+
+1. **先排危险**：任何运动损伤先排除骨折、脱位、神经血管损伤，再谈软组织；
+2. **分期处理**：急性期目标是控制出血与肿胀，不是「练回来」；
+3. **重返要写数值**：重返运动的标准不能是「感觉好了」，须落到可测指标（活动度、肌力、平衡、专项动作）。
+
+## 五、章内可执行验证
 
 ```bash
-node scripts/scaffold_chapter.js 04-gushang/05-yundong-yixue 01-<chapter-slug>
+node scripts/audit_curriculum.js | grep -A2 "05-yundong-yixue"
+node tests/test_chapter_code.js | grep -c "05-yundong-yixue"
+python scripts/_derive_yundongyixue.py
 ```
 
-编写完成后，把章节索引写进 `chapters.json`，本表的「状态」列由
-`scripts/build_catalog.js` 自动填充。
-
-## 四、章节契约（每章必须满足）
-
-```text
-chapters/NN-<slug>/
-├── docs/zh.md      # MOTTO / PROBLEM / 环境逼迫 / 知识积累 / CONCEPT / BUILD IT / USE IT / SHIP IT
-├── code/           # 可运行、自终止、退出码 0（Node.js 或 Python，见 AGENTS.md 依赖白名单）
-├── quiz.json       # 恰好 6 题 = 1 pre + 3 check + 2 post
-└── outputs/        # 可复用产出物（prompt / skill / agent / mcp / 临床工具）
-```
-
-## 五、教材交付 [textbooks]
-
-```text
-输出: textbooks/04-gushang/05-yundong-yixue/
-├── 00-前言.md
-├── 01-第1章-<标题>.md   ...
-└── figures/                # Mermaid / SVG，禁止 ASCII 框图
-```
-
-## 六、平台交付 [tcmP]
-
-```text
-输出: platform/courses/04-gushang/05-yundong-yixue/
-├── course.yaml             # 课程元数据 + 章节 → 视频映射
-├── slides/                 # 讲稿 HTML（由 docs/zh.md 派生）
-├── narration/              # TTS 旁白文本 + 音频
-└── video/                  # 成片 MP4（H.264 / 720p 以上）
-```
-
-## 七、进度
-
-| 指标 | 当前 | 目标 |
-|------|------|------|
-| 章节 | 0 | 8 |
-| 视频 | 0 | 8 |
-| 教材字数 | 0 | ≈ 48000 |
-
-> 状态字形：🌱 未开始 ⬚ · 🚧 进行中 · ✅ 完成
+**免责声明：** 本课为教学材料。损伤诊断与重返决策须由执业医师与康复治疗师共同判断；
+教材未给的量化阈值本课一律标「父课未给」，不代填。

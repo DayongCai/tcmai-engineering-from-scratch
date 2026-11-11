@@ -1,54 +1,94 @@
 {
-  "slug": "15-zhongyi-gejia-xueshuo",
-  "title": "中医各家学说",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-xuepai-xingcheng",
-      "title": "学派的形成：地域、师承与文本",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-liuwansu-huore",
-      "title": "刘完素与火热论",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-zhangcongzheng-gongxie",
-      "title": "张从正与攻邪论",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-ligao-piwei",
-      "title": "李杲与脾胃论",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-zhuzhenheng-ziyin",
-      "title": "朱震亨与滋阴论",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-zhangjingyue-wenbu",
-      "title": "张景岳与温补学派",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-yetianshi-wenbing",
-      "title": "叶天士与温病学派",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-duibi-jiegouhua",
-      "title": "学派观点的对照阅读与结构化",
-      "status": "📋"
-    }
-  ]
+ "slug": "15-zhongyi-gejia-xueshuo",
+ "title": "中医各家学说",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xuepai-xingcheng",
+   "title": "学派的形成：地域、师承与文本",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 2,
+    "hanzi": 235
+   }
+  },
+  {
+   "n": 2,
+   "slug": "02-liuwansu-huore",
+   "title": "刘完素与火热论",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 1,
+    "hanzi": 111
+   }
+  },
+  {
+   "n": 3,
+   "slug": "03-zhangcongzheng-gongxie",
+   "title": "张从正与攻邪论",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 1,
+    "hanzi": 85
+   }
+  },
+  {
+   "n": 4,
+   "slug": "04-ligao-piwei",
+   "title": "李杲与脾胃论",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 1,
+    "hanzi": 90
+   }
+  },
+  {
+   "n": 5,
+   "slug": "05-zhuzhenheng-ziyin",
+   "title": "朱震亨与滋阴论",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 1,
+    "hanzi": 84
+   }
+  },
+  {
+   "n": 6,
+   "slug": "06-zhangjingyue-wenbu",
+   "title": "张景岳与温补学派",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 1,
+    "hanzi": 101
+   }
+  },
+  {
+   "n": 7,
+   "slug": "07-yetianshi-wenbing",
+   "title": "叶天士与温病学派",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 1,
+    "hanzi": 85
+   }
+  },
+  {
+   "n": 8,
+   "slug": "08-duibi-jiegouhua",
+   "title": "学派观点的对照阅读与结构化",
+   "status": "🚧",
+   "source": {
+    "derived": true,
+    "units": 2,
+    "hanzi": 212
+   }
+  }
+ ]
 }

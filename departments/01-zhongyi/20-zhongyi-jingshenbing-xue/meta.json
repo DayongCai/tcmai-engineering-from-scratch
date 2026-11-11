@@ -1,0 +1,38 @@
+{
+ "slug": "20-zhongyi-jingshenbing-xue",
+ "title": "中医精神病学",
+ "en": "TCM Psychiatry",
+ "deptSlug": "01-zhongyi",
+ "deptTitle": "中医系",
+ "globalN": 20,
+ "type": "Reference",
+ "semester": 8,
+ "stage": "zhuang",
+ "stageTitle": "壮",
+ "hours": 36,
+ "bridge": "神志症状→多标签分类 / 癫狂痫→状态机",
+ "chaptersTarget": 12,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/01-zhongyi/20-zhongyi-jingshenbing-xue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/01-zhongyi/20-zhongyi-jingshenbing-xue",
+  "chaptersWritten": 12,
+  "words": 181695,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#中医精神病学",
+  "extractedAt": "2026-10-21"
+ },
+ "standards": {
+  "path": "standards/jingshen",
+  "chapters": 12,
+  "units": 48,
+  "hanzi": 154254
+ }
+}

@@ -224,9 +224,9 @@ test('[chapter] 未知路径给出提示而非白屏', () => {
 test('[subject] 渲染学科页：章节计数与两条交付轨道', () => {
   const html = render('subject', '?path=01-zhongyi/01-zhongyi-jichu-lilun').html();
   assert.ok(html.includes('中医基础理论'));
-  // 章节地图：声明 10 章、已建 3 章 —— 未建的必须显式标「待写」，不许只显示已建的 3 条
-  assert.ok(html.includes('章节地图（已建 3 / 目标 10）'), '学科页章节地图计数错误');
-  assert.ok((html.match(/待写/g) || []).length >= 7, '未建章节未标「待写」');
+  // 章节地图：10 章全部已建 —— 满科之后页面上不该再出现「待写」
+  assert.ok(html.includes('章节地图（已建 10 / 目标 10）'), '学科页章节地图计数错误');
+  assert.strictEqual((html.match(/待写/g) || []).length, 0, '满科学科不应再标「待写」');
   assert.ok(html.includes('[tcmP]') && html.includes('[textbooks]'), '缺两条交付轨道');
   assert.ok(html.includes('platform/courses/01-zhongyi/01-zhongyi-jichu-lilun/'), '缺平台路径');
 });
@@ -369,4 +369,54 @@ test('进度数据不出本机：localStorage 键固定且不含任何网络上�
   const src = fs.readFileSync(path.join(SITE, 'progress.js'), 'utf8');
   assert.ok(/tcmai:progress:v1/.test(src), '进度键名变了（老用户的进度会丢）');
   assert.ok(!/http/.test(src), 'progress.js 出现 http 字样');
+});
+
+// ── 先修关系：根课要有理由，非根课要有前置与后续 ──────────────
+// 这一节是给学生看的，不是给作者看的。所以断言的是「学生能不能看懂」：
+// 根课必须出现理由原文（来自 data/prereq-roots.json，页面不许自己编），
+// 非根课必须列出前置课并给出可点的链接，跨院系前置必须标出来。
+test('[subject] 根课页显示登记理由，而不是只写「无前置」', () => {
+  const keys = ['01-zhongyi/01-zhongyi-jichu-lilun', '02-zhongyao/02-yaoyong-zhiwu-xue'];
+  const catalog = JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog.json'), 'utf8'));
+  const roots = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'prereq-roots.json'), 'utf8')).roots;
+  const why = new Map(roots.map((r) => [r.key, r.why]));
+  for (const key of keys) {
+    const html = render('subject', `?path=${encodeURIComponent(key)}`).html();
+    assert.ok(/先修关系/.test(html), `${key} 学科页缺「先修关系」一节`);
+    assert.ok(/根课/.test(html), `${key} 是根课，但页面没标「根课」`);
+    const reason = why.get(key);
+    assert.ok(reason, `${key} 不在 prereq-roots.json 里 —— 根课必须有登记理由`);
+    assert.ok(html.includes(reason.slice(0, 24)), `${key} 页面没把登记理由显示出来（只写了「无前置」，等于没回答「凭什么」）`);
+    assert.ok((catalog.prereqIndex[key] || {}).root, `catalog.prereqIndex 没带上根课理由: ${key}`);
+  }
+});
+
+test('[subject] 非根课页列出前置、链深与后续课', () => {
+  const key = '01-zhongyi/10-zhongyi-neike-xue';
+  const catalog = JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog.json'), 'utf8'));
+  const info = catalog.prereqIndex[key];
+  assert.ok(info && info.prereq.length >= 2, '中医内科学应当有多门前置');
+  const html = render('subject', `?path=${encodeURIComponent(key)}`).html();
+  assert.ok(new RegExp(`先修链第 ${info.depth} 层`).test(html), `页面没显示链深（应为第 ${info.depth} 层）`);
+  for (const p of info.prereq) {
+    assert.ok(
+      html.includes(`subject.html?path=${encodeURIComponent(p.key)}`),
+      `前置课 ${p.key} 没有可点链接`
+    );
+    assert.ok(html.includes(p.title), `前置课 ${p.title} 标题缺失`);
+  }
+  assert.ok(/以这门课为前置（\d+ 门）/.test(html), '没列出「以这门课为前置」的后续课');
+  // 前置学期必须严格早于本课：这条是排课正确性的学生侧证据
+  const self = catalog.departments.flatMap((d) => d.subjects).find((s) => s.slug === '10-zhongyi-neike-xue');
+  for (const p of info.prereq) assert.ok(p.semester < self.semester, `前置 ${p.title} 的学期不早于本课`);
+});
+
+test('[subject] 跨院系前置有显式标记', () => {
+  const key = '08-wuguan/04-yanke-guangxue-yanguang';
+  const html = render('subject', `?path=${encodeURIComponent(key)}`).html();
+  assert.ok(/跨院系/.test(html), '跨院系前置没有标「跨院系」，学生会以为是自己院系的课');
+  assert.ok(
+    html.includes(`subject.html?path=${encodeURIComponent('09-jichu/06-shengli-xue')}`),
+    '眼科光学与验光的前置应指向生理学（链接被编码，需按 encodeURIComponent 比对）'
+  );
 });

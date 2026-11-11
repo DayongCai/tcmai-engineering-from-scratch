@@ -1,0 +1,245 @@
+{
+ "note": "针灸学 30 章 = 教材 30 章（1:1）。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xulun",
+   "title": "绪论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-jingluo-zonglun",
+   "title": "经络总论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-shuxue-zonglun",
+   "title": "腧穴总论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-shoutaiyin-feijing",
+   "title": "手太阴肺经及其腧穴",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-shouyangming-dachangjing",
+   "title": "手阳明大肠经及其腧穴",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-zuyangming-weijing",
+   "title": "足阳明胃经及其腧穴",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-zutaiyin-pijing",
+   "title": "足太阴脾经及其腧穴",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-shoushaoyin-xinjing",
+   "title": "手少阴心经及其腧穴",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-shoutaiyang-xiaochangjing",
+   "title": "手太阳小肠经及其腧穴",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-zutaiyang-pangguangjing",
+   "title": "足太阳膀胱经及其腧穴",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-zushaoyin-shenjing",
+   "title": "足少阴肾经及其腧穴",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-shoujueyin-xinbaojing",
+   "title": "手厥阴心包经及其腧穴",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-shoushaoyang-sanjiaojing",
+   "title": "手少阳三焦经及其腧穴",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-zushaoyang-danjing",
+   "title": "足少阳胆经及其腧穴",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-zujueyin-ganjing",
+   "title": "足厥阴肝经及其腧穴",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-dumai",
+   "title": "督脉及其腧穴",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-renmai",
+   "title": "任脉及其腧穴",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-jingwai-qixue",
+   "title": "经外奇穴",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 19,
+   "slug": "19-cijiufa-zonglun",
+   "title": "刺灸法总论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 20,
+   "slug": "20-haozhen-cifa",
+   "title": "毫针刺法",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 21,
+   "slug": "21-jiufa",
+   "title": "灸法",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 22,
+   "slug": "22-baguan-qita-cifa",
+   "title": "拔罐法及其他刺法",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 23,
+   "slug": "23-zhiliao-zonglun",
+   "title": "针灸治疗总论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 24,
+   "slug": "24-tongzheng",
+   "title": "头面躯体痛证",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 25,
+   "slug": "25-neike-bingzheng",
+   "title": "内科病证",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 26,
+   "slug": "26-fuer-bingzheng",
+   "title": "妇儿科病证",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 27,
+   "slug": "27-piwai-bingzheng",
+   "title": "皮肤外科病证",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 28,
+   "slug": "28-wuguan-bingzheng",
+   "title": "五官科病证",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 29,
+   "slug": "29-jizheng-qita",
+   "title": "急症及其他病证",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 30,
+   "slug": "30-xiandai-yanjiu",
+   "title": "针灸现代研究与数字化",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
+}

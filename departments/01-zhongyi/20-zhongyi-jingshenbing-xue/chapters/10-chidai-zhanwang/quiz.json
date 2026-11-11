@@ -1,0 +1,79 @@
+{
+  "lesson": "10-chidai-zhanwang",
+  "title": "痴呆与谵妄：慢的与急的两种「神乱」",
+  "subject": "20-zhongyi-jingshenbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "痴呆与谵妄的第一分界是？",
+      "options": [
+        "意识是否波动",
+        "年龄",
+        "记忆下降程度",
+        "有无幻觉"
+      ],
+      "correct": 0,
+      "explanation": "谵妄的意识波动，痴呆的不是。"
+    },
+    {
+      "stage": "check",
+      "question": "谵妄的处理顺序是？",
+      "options": [
+        "先排查器质性病因，再辨证，同步环境干预",
+        "先安神",
+        "先补髓",
+        "先针灸"
+      ],
+      "correct": 0,
+      "explanation": "教材 10.2.2。"
+    },
+    {
+      "stage": "check",
+      "question": "痴呆四证不包括？",
+      "options": [
+        "气郁化火",
+        "髓海不足",
+        "脾肾两虚",
+        "痰浊蒙窍"
+      ],
+      "correct": 0,
+      "explanation": "四证：髓海不足／脾肾两虚／痰浊蒙窍／瘀血阻窍。"
+    },
+    {
+      "stage": "check",
+      "question": "本章引书数量为？",
+      "options": [
+        "3 部 4 次（全书最少）",
+        "25 部 42 次",
+        "13 部 18 次",
+        "0 部"
+      ],
+      "correct": 0,
+      "explanation": "病名确立较晚，古籍支撑薄。"
+    },
+    {
+      "stage": "post",
+      "question": "谵妄最常见的可逆病因包括？",
+      "options": [
+        "感染、电解质紊乱、药物、缺氧",
+        "遗传",
+        "性格",
+        "季节"
+      ],
+      "correct": 0,
+      "explanation": "教材 10.2.2 的排查项。"
+    },
+    {
+      "stage": "post",
+      "question": "痴呆只补不化为何无效？",
+      "options": [
+        "痰瘀蒙窍者纯补无效，须化痰活血开窍",
+        "因为药量不足",
+        "因为年龄大",
+        "因为诊断错"
+      ],
+      "correct": 0,
+      "explanation": "四证中两证为痰瘀。"
+    }
+  ]
+}

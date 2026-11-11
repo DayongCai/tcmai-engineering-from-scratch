@@ -1,54 +1,71 @@
 {
-  "slug": "11-zhongyi-jiqiren-xue",
-  "title": "中医机器人学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-fenlei-changjing",
-      "title": "医疗机器人的分类与场景",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-yundongxue-zuobiao",
-      "title": "运动学与坐标系",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-likong-roushun",
-      "title": "力控与柔顺控制",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-tuina-jiqiren",
-      "title": "推拿机器人的结构与控制",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-zhenjiu-dingwei",
-      "title": "针灸机器人的定位与进针",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-anquan-jiting",
-      "title": "人机安全与急停设计",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-liaoxiao-pingjia",
-      "title": "机器人操作的疗效评价",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-zhuce-lunli",
-      "title": "器械注册与伦理审查",
-      "status": "📋"
-    }
-  ]
+ "slug": "11-zhongyi-jiqiren-xue",
+ "title": "中医机器人学",
+ "note": "8 章 = 教材 8 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-rob1",
+   "title": "机器人是什么：从器械到执行体",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-rob2",
+   "title": "感知：传感器与信号",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-rob3",
+   "title": "决策：强化学习与序贯选择",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-rob4",
+   "title": "规划与规则约束",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-rob5",
+   "title": "控制与反馈：线性模型的视角",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-rob6",
+   "title": "系统集成与接口",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-rob7",
+   "title": "安全与失效处理",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-rob8",
+   "title": "中医场景：推拿、灸疗机器人的边界",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

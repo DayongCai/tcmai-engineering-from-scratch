@@ -1,0 +1,79 @@
+{
+  "lesson": "18-guanli-fugaidu-baobiao",
+  "title": "管理系·案例二：覆盖度双维报表——院校学科建设的诊断仪",
+  "subject": "22-zhongyi-biye-sheji",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "第 18 章属于哪种案例类型？",
+      "options": [
+        "方法层",
+        "综述",
+        "个案报道",
+        "文献计量"
+      ],
+      "correct": 0,
+      "explanation": "方法层的判据是**消融差**：去掉你加的那一步，结果必须变差或变乱；不变，说明那"
+    },
+    {
+      "stage": "check",
+      "question": "本章的数据锚点规模是？",
+      "options": [
+        "全库已建 405 章 / 目标 2,115（口径取 audit 输出）；中医系 208 章、基础医学院 134 章",
+        "无数据，凭经验",
+        "仅有目录结构",
+        "需外部采购"
+      ],
+      "correct": 0,
+      "explanation": "必须报路径与规模。"
+    },
+    {
+      "stage": "check",
+      "question": "本章客户数的推算依据是？",
+      "options": [
+        "院校 SAM 60 × 渗透带中位",
+        "直接手设",
+        "竞品数量",
+        "用户访谈"
+      ],
+      "correct": 0,
+      "explanation": "采用 14"
+    },
+    {
+      "stage": "check",
+      "question": "本章客单与回本期是？",
+      "options": [
+        "¥22,000、38.4 个月",
+        "1 万元、1 个月",
+        "100 万元、5 年",
+        "无法计算"
+      ],
+      "correct": 0,
+      "explanation": "无营收锚：仅作内部一致性检查（同类案例客单差异不超过 5 倍"
+    },
+    {
+      "stage": "post",
+      "question": "本案为何不做 C 端？",
+      "options": [
+        "个人不订阅覆盖率报表",
+        "技术做不到",
+        "没有数据",
+        "政策禁止"
+      ],
+      "correct": 0,
+      "explanation": "不做：院校诊断报告是 B 端交付"
+    },
+    {
+      "stage": "post",
+      "question": "把三年客户数再砍一半，首先影响什么？",
+      "options": [
+        "回本期显著拉长、部分案转亏",
+        "不影响",
+        "只影响收入不影响毛利",
+        "无意义"
+      ],
+      "correct": 0,
+      "explanation": "敏感性见 ch1 第十节。"
+    }
+  ]
+}

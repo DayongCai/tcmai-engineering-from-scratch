@@ -1,0 +1,67 @@
+{
+ "$generated": "scripts/frames/gap_frames.sh（playurl → ffmpeg HTTP seek → 裁底部 16% → 放大 1000 宽）+ 逐图读出",
+ "why": "这 4 处是「语音正文出处」块里仅剩的无字幕时刻：原来最近的读屏样本在 17–60 秒外，语义对齐无从下手。做法不是提高模型，而是补采——只抓这几个时刻的画面底部字幕带，读出人读原文，并把帧留在仓库里可回图核对。",
+ "method": "单帧用 playurl 的 DASH 视频链 + ffmpeg input seek（-ss 在 -i 之前），只拉目标附近字节，2–3 秒一帧，不整段下载。",
+ "samples": [
+  {
+   "lecture": 5,
+   "sec": 15,
+   "mmss": "0:15",
+   "line": "麻黄汤类",
+   "ref": "g-05-1",
+   "source": "frame",
+   "frameSec": 15,
+   "image": "gap-frames/lec05-0015.jpg",
+   "sha256": "4db476a2cf8220eb469e64d208e908227e0bcc2de30b2893b34f2caa3d31c26a",
+   "note": "0:12 处无字幕，0:15 起出现；4 字，仅够定位"
+  },
+  {
+   "lecture": 4,
+   "sec": 18,
+   "mmss": "0:18",
+   "line": "上面讲到了叶天士发展伤寒的所在",
+   "ref": "g-04-1",
+   "source": "frame",
+   "frameSec": 18,
+   "image": "gap-frames/lec04-0018.jpg",
+   "sha256": "9a57b28d684d1c84b85da4302b98915bb5346bc94014f2a8f967a8df69f20403",
+   "note": "ASR 作「叶连汤、发展双方的所在」，错得对不上；字幕才是原话"
+  },
+  {
+   "lecture": 2,
+   "sec": 20,
+   "mmss": "0:20",
+   "line": "刚才把熟读伤寒论的一些有关问题作了介绍",
+   "ref": "g-02-1",
+   "source": "frame",
+   "frameSec": 20,
+   "image": "gap-frames/lec02-0020.jpg",
+   "sha256": "c1fbb37f155fd1b91e04e541295af7b880f553f75bc3fc1c976c364c1205e84d",
+   "note": "原样本漏了开头「刚」字，此处按帧补全"
+  },
+  {
+   "lecture": 1,
+   "sec": 1082,
+   "mmss": "18:02",
+   "line": "你像内经讲的这些脏腑生理病理的关系",
+   "ref": "g-01-1",
+   "source": "frame",
+   "frameSec": 1082,
+   "image": "gap-frames/lec01-1802.jpg",
+   "sha256": "a7d5ca1a16fb0d55fb707cb482406b03d825b3e4b343273749a47fb7c51bd2fa",
+   "note": "ASR 作「重复生理病理」，帧上是「脏腑」——补采直接改掉一个学术错字"
+  },
+  {
+   "lecture": 1,
+   "sec": 835,
+   "mmss": "13:55",
+   "line": "但是内经是研究我们人体的生理病理",
+   "ref": "g-01-2",
+   "source": "frame",
+   "frameSec": 835,
+   "image": "gap-frames/lec01-1355.jpg",
+   "sha256": "4f95037f64abd424bf57005a84d072a25811535b8fe7654d2f829f84a45b4c14",
+   "note": "13:54 段起处无样本；帧上字幕与 ASR 一致，仅缺句尾"
+  }
+ ]
+}

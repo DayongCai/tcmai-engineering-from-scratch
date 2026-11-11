@@ -1,0 +1,32 @@
+{
+  "slug": "17-gejia-zhenjiu-xueshuo",
+  "title": "各家针灸学说",
+  "en": "Schools of Acupuncture",
+  "deptSlug": "03-zhenjiu",
+  "deptTitle": "针灸系",
+  "globalN": 47,
+  "type": "Reference",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 36,
+  "bridge": "学派观点→文献聚类 / 手法差异→特征对比",
+  "chaptersTarget": 12,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/03-zhenjiu/17-gejia-zhenjiu-xueshuo",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/03-zhenjiu/17-gejia-zhenjiu-xueshuo",
+    "chaptersWritten": 12,
+    "words": 167166,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#各家针灸学说",
+    "extractedAt": "2026-10-21"
+  }
+}

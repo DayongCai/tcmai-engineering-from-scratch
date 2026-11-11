@@ -1,0 +1,79 @@
+{
+  "lesson": "07-changjian-zhengzhuang",
+  "title": "老年常见症状辨治：七个「说不清」的主诉",
+  "subject": "19-zhongyi-laonianbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "老年「纳差与消瘦」中更需要警惕的是？",
+      "options": [
+        "体重下降速度（消瘦是红旗）",
+        "食欲差",
+        "口味改变",
+        "进食慢"
+      ],
+      "correct": 0,
+      "explanation": "教材 7.6.1：消瘦是客观指标，纳差是主观描述。"
+    },
+    {
+      "stage": "check",
+      "question": "本章三条必须转诊的信号不包括？",
+      "options": [
+        "轻度便秘三天未解",
+        "非刻意体重下降超过 5%",
+        "新发剧痛或夜间痛",
+        "便秘伴腹胀呕吐、停止排气"
+      ],
+      "correct": 0,
+      "explanation": "三条红线：消瘦、剧痛、肠梗阻征象。"
+    },
+    {
+      "stage": "check",
+      "question": "老年便秘最常见的两个病机是？",
+      "options": [
+        "气虚推动无力、津亏肠燥",
+        "实热与寒凝",
+        "气滞与食积",
+        "湿热与瘀血"
+      ],
+      "correct": 0,
+      "explanation": "教材 7.3.1：忌峻下。"
+    },
+    {
+      "stage": "check",
+      "question": "本章四位面首位是？",
+      "options": [
+        "脾胃肝胆（350）",
+        "心脑",
+        "肺系",
+        "肾与骨关节"
+      ],
+      "correct": 0,
+      "explanation": "七个症状多从「食」与「便」入手。"
+    },
+    {
+      "stage": "post",
+      "question": "「一症状一方」为何不妥？",
+      "options": [
+        "七个症状常同源（如脾虚致纳差＋便秘＋乏力），应合看",
+        "因为方剂不够",
+        "因为药价",
+        "因为辨证太慢"
+      ],
+      "correct": 0,
+      "explanation": "本章的统一结构是先找共同上游。"
+    },
+    {
+      "stage": "post",
+      "question": "老年眩晕的第一排查项是？",
+      "options": [
+        "血压（以及颈椎与耳源因素）",
+        "只看舌象",
+        "只看脉象",
+        "直接补虚"
+      ],
+      "correct": 0,
+      "explanation": "教材 7.1.1 把排查写在分型之前。"
+    }
+  ]
+}

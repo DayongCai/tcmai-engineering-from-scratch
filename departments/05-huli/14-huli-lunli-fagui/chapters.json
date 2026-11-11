@@ -1,42 +1,60 @@
 {
-  "slug": "14-huli-lunli-fagui",
-  "title": "护理伦理与法规",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-yuanze-kunjing",
-      "title": "护理伦理的原则与困境",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-zhiqing-tongyi",
-      "title": "知情同意与患者自主权",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-yinsi-xinxi",
-      "title": "隐私保护与信息使用",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-chacuo-faze",
-      "title": "护理差错的法与责",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-anning-shengming",
-      "title": "安宁疗护与生命伦理",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-fagui-zhifan",
-      "title": "护理法规与执业规范",
-      "status": "📋"
-    }
-  ]
+ "slug": "14-huli-lunli-fagui",
+ "title": "护理伦理与法规",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-yuanze-kunjing",
+   "title": "护理伦理的原则、困境与决策",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-yuanze-kunjing/docs/zh.md",
+   "code": "chapters/01-yuanze-kunjing/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-zhiqing-tongyi",
+   "title": "知情同意与患者自主权",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-zhiqing-tongyi/docs/zh.md",
+   "code": "chapters/02-zhiqing-tongyi/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-yinsi-xinxi",
+   "title": "隐私保护与信息使用",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-yinsi-xinxi/docs/zh.md",
+   "code": "chapters/03-yinsi-xinxi/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-chacuo-faze",
+   "title": "护理差错与不良事件的法与责",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-chacuo-faze/docs/zh.md",
+   "code": "chapters/04-chacuo-faze/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-anning-shengming",
+   "title": "安宁疗护与生命伦理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-anning-shengming/docs/zh.md",
+   "code": "chapters/05-anning-shengming/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-fagui-zhifan",
+   "title": "护理法规与执业规范",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-fagui-zhifan/docs/zh.md",
+   "code": "chapters/06-fagui-zhifan/code/main.js"
+  }
+ ]
 }

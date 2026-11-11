@@ -1,0 +1,1609 @@
+{
+ "$generated": "python scripts/check_palace_presence.py",
+ "checks": {
+  "gongTotal": 80,
+  "tiaoPerGong": {
+   "3": 1,
+   "4": 4,
+   "5": 71,
+   "6": 4
+  },
+  "videoCoveredTiao": 66,
+  "gongWithVideo": 17,
+  "gongWithoutVideo": [
+   10,
+   11,
+   17,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65,
+   66,
+   67,
+   68,
+   69,
+   70,
+   71,
+   72,
+   73,
+   74,
+   75,
+   76,
+   77,
+   78,
+   79,
+   80
+  ],
+  "anchorSeqLen": 63,
+  "inversionsByTiao": 0,
+  "pairs": 1953,
+  "inversionsByGong": 0,
+  "ceilFit": 263,
+  "ceilTotal": 398
+ },
+ "note": "按 (P号, 秒) 排序即源视频播放顺序；inversions=与条号/宫号反向的锚点对数，0 表示完全同向",
+ "palaces": [
+  {
+   "gong": 1,
+   "name": "G01 承浆宫",
+   "jing": "任脉",
+   "pian": "辨太阳病脉证并治上",
+   "tiao": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "n": 5,
+   "videoTiao": [
+    2,
+    3,
+    4,
+    5
+   ],
+   "videoN": 4,
+   "firstP": 2,
+   "firstSec": 119
+  },
+  {
+   "gong": 2,
+   "name": "G02 紫宫穴",
+   "jing": "任脉",
+   "pian": "辨太阳病脉证并治上",
+   "tiao": [
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "n": 5,
+   "videoTiao": [
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "videoN": 5,
+   "firstP": 3,
+   "firstSec": 64
+  },
+  {
+   "gong": 3,
+   "name": "G03 巨阙宫",
+   "jing": "任脉",
+   "pian": "辨太阳病脉证并治上",
+   "tiao": [
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "n": 5,
+   "videoTiao": [
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "videoN": 5,
+   "firstP": 5,
+   "firstSec": 30
+  },
+  {
+   "gong": 4,
+   "name": "G04 水分宫",
+   "jing": "任脉",
+   "pian": "辨太阳病脉证并治上",
+   "tiao": [
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "n": 5,
+   "videoTiao": [
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "videoN": 5,
+   "firstP": 6,
+   "firstSec": 212
+  },
+  {
+   "gong": 5,
+   "name": "G05 关元宫",
+   "jing": "任脉",
+   "pian": "辨太阳病脉证并治上",
+   "tiao": [
+    21,
+    22,
+    23,
+    24,
+    25
+   ],
+   "n": 5,
+   "videoTiao": [
+    21,
+    22,
+    23,
+    24
+   ],
+   "videoN": 4,
+   "firstP": 8,
+   "firstSec": 177
+  },
+  {
+   "gong": 6,
+   "name": "G06 腰俞宫",
+   "jing": "督脉",
+   "pian": "辨太阳病脉证并治上",
+   "tiao": [
+    26,
+    27,
+    28,
+    29,
+    30
+   ],
+   "n": 5,
+   "videoTiao": [
+    27,
+    28,
+    29,
+    30
+   ],
+   "videoN": 4,
+   "firstP": 10,
+   "firstSec": 22
+  },
+  {
+   "gong": 7,
+   "name": "G07 中枢宫",
+   "jing": "督脉",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+   ],
+   "n": 6,
+   "videoTiao": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+   ],
+   "videoN": 6,
+   "firstP": 13,
+   "firstSec": 80
+  },
+  {
+   "gong": 8,
+   "name": "G08 陶道宫",
+   "jing": "督脉",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    37,
+    38,
+    39,
+    40,
+    41,
+    42
+   ],
+   "n": 6,
+   "videoTiao": [
+    37,
+    40,
+    41
+   ],
+   "videoN": 3,
+   "firstP": 14,
+   "firstSec": 200
+  },
+  {
+   "gong": 9,
+   "name": "G09 后顶宫",
+   "jing": "督脉",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    43,
+    44,
+    45,
+    46,
+    47
+   ],
+   "n": 5,
+   "videoTiao": [
+    46,
+    47
+   ],
+   "videoN": 2,
+   "firstP": 16,
+   "firstSec": 6
+  },
+  {
+   "gong": 10,
+   "name": "G10 神庭宫",
+   "jing": "督脉",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    48,
+    49,
+    50,
+    51,
+    52
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 11,
+   "name": "G11 中府宫",
+   "jing": "手太阴肺经",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    53,
+    54,
+    55,
+    56,
+    57
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 12,
+   "name": "G12 孔最宫",
+   "jing": "手太阴肺经",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    58,
+    59,
+    60,
+    61,
+    62
+   ],
+   "n": 5,
+   "videoTiao": [
+    59,
+    60,
+    61
+   ],
+   "videoN": 3,
+   "firstP": 17,
+   "firstSec": 6
+  },
+  {
+   "gong": 13,
+   "name": "G13 少商宫",
+   "jing": "手太阴肺经",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    63,
+    64,
+    65,
+    66,
+    67
+   ],
+   "n": 5,
+   "videoTiao": [
+    67
+   ],
+   "videoN": 1,
+   "firstP": 18,
+   "firstSec": 7
+  },
+  {
+   "gong": 14,
+   "name": "G14 阳溪宫",
+   "jing": "手阳明大肠经",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    68,
+    69,
+    70,
+    71,
+    72
+   ],
+   "n": 5,
+   "videoTiao": [
+    68,
+    69,
+    70,
+    71,
+    72
+   ],
+   "videoN": 5,
+   "firstP": 18,
+   "firstSec": 165
+  },
+  {
+   "gong": 15,
+   "name": "G15 手三里宫",
+   "jing": "手阳明大肠经",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    73,
+    74,
+    75,
+    76,
+    77
+   ],
+   "n": 5,
+   "videoTiao": [
+    74,
+    76,
+    77
+   ],
+   "videoN": 3,
+   "firstP": 20,
+   "firstSec": 83
+  },
+  {
+   "gong": 16,
+   "name": "G16 肩髃宫",
+   "jing": "手阳明大肠经",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    78,
+    79,
+    80,
+    81,
+    82
+   ],
+   "n": 5,
+   "videoTiao": [
+    78,
+    79,
+    80,
+    81,
+    82
+   ],
+   "videoN": 5,
+   "firstP": 21,
+   "firstSec": 80
+  },
+  {
+   "gong": 17,
+   "name": "G17 迎香宫",
+   "jing": "手阳明大肠经",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    83,
+    84,
+    85,
+    86,
+    87
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 18,
+   "name": "G18 大迎宫",
+   "jing": "足阳明胃经",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    88,
+    89,
+    90,
+    91,
+    92
+   ],
+   "n": 5,
+   "videoTiao": [
+    88,
+    89,
+    90,
+    91,
+    92
+   ],
+   "videoN": 5,
+   "firstP": 23,
+   "firstSec": 18
+  },
+  {
+   "gong": 19,
+   "name": "G19 水突宫",
+   "jing": "足阳明胃经",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    93,
+    94,
+    95,
+    96,
+    97
+   ],
+   "n": 5,
+   "videoTiao": [
+    93,
+    94,
+    95,
+    97
+   ],
+   "videoN": 4,
+   "firstP": 25,
+   "firstSec": 7
+  },
+  {
+   "gong": 20,
+   "name": "G20 屋翳宫",
+   "jing": "足阳明胃经",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    98,
+    99,
+    100,
+    101,
+    102
+   ],
+   "n": 5,
+   "videoTiao": [
+    99,
+    100
+   ],
+   "videoN": 2,
+   "firstP": 28,
+   "firstSec": 6
+  },
+  {
+   "gong": 21,
+   "name": "G21 承满宫",
+   "jing": "足阳明胃经",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    103,
+    104,
+    105,
+    106,
+    107
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 22,
+   "name": "G22 天枢宫",
+   "jing": "足阳明胃经",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    108,
+    109,
+    110,
+    111,
+    112
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 23,
+   "name": "G23 气冲宫",
+   "jing": "足阳明胃经",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    113,
+    114,
+    115,
+    116,
+    117
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 24,
+   "name": "G24 犊鼻宫",
+   "jing": "足阳明胃经",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    118,
+    119,
+    120,
+    121,
+    122
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 25,
+   "name": "G25 丰隆宫",
+   "jing": "足阳明胃经",
+   "pian": "辨太阳病脉证并治中",
+   "tiao": [
+    123,
+    124,
+    125,
+    126,
+    127
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 26,
+   "name": "G26 厉兑宫",
+   "jing": "足阳明胃经",
+   "pian": "辨太阳病脉证并治下",
+   "tiao": [
+    128,
+    129,
+    130,
+    131,
+    132,
+    133
+   ],
+   "n": 6,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 27,
+   "name": "G27 三阴交宫",
+   "jing": "足太阴脾经",
+   "pian": "辨太阳病脉证并治下",
+   "tiao": [
+    134,
+    135,
+    136,
+    137,
+    138
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 28,
+   "name": "G28 箕门宫",
+   "jing": "足太阴脾经",
+   "pian": "辨太阳病脉证并治下",
+   "tiao": [
+    139,
+    140,
+    141,
+    142,
+    143
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 29,
+   "name": "G29 腹哀宫",
+   "jing": "足太阴脾经",
+   "pian": "辨太阳病脉证并治下",
+   "tiao": [
+    144,
+    145,
+    146,
+    147,
+    148
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 30,
+   "name": "G30 大包宫",
+   "jing": "足太阴脾经",
+   "pian": "辨太阳病脉证并治下",
+   "tiao": [
+    149,
+    150,
+    151,
+    152,
+    153
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 31,
+   "name": "G31 通里宫",
+   "jing": "手少阴心经",
+   "pian": "辨太阳病脉证并治下",
+   "tiao": [
+    154,
+    155,
+    156,
+    157,
+    158
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 32,
+   "name": "G32 少泽宫",
+   "jing": "手太阳小肠经",
+   "pian": "辨太阳病脉证并治下",
+   "tiao": [
+    159,
+    160,
+    161,
+    162,
+    163
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 33,
+   "name": "G33 养老宫",
+   "jing": "手太阳小肠经",
+   "pian": "辨太阳病脉证并治下",
+   "tiao": [
+    164,
+    165,
+    166,
+    167,
+    168
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 34,
+   "name": "G34 天宗宫",
+   "jing": "手太阳小肠经",
+   "pian": "辨太阳病脉证并治下",
+   "tiao": [
+    169,
+    170,
+    171,
+    172,
+    173
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 35,
+   "name": "G35 天窗宫",
+   "jing": "手太阳小肠经",
+   "pian": "辨太阳病脉证并治下",
+   "tiao": [
+    174,
+    175,
+    176,
+    177,
+    178
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 36,
+   "name": "G36 攒竹宫",
+   "jing": "足太阳膀胱经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    179,
+    180,
+    181,
+    182,
+    183
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 37,
+   "name": "G37 通天宫",
+   "jing": "足太阳膀胱经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    184,
+    185,
+    186,
+    187,
+    188
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 38,
+   "name": "G38 风门宫",
+   "jing": "足太阳膀胱经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    189,
+    190,
+    191,
+    192,
+    193
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 39,
+   "name": "G39 膈俞宫",
+   "jing": "足太阳膀胱经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    194,
+    195,
+    196,
+    197,
+    198
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 40,
+   "name": "G40 三焦俞宫",
+   "jing": "足太阳膀胱经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    199,
+    200,
+    201,
+    202,
+    203
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 41,
+   "name": "G41 小肠俞宫",
+   "jing": "足太阳膀胱经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    204,
+    205,
+    206,
+    207,
+    208
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 42,
+   "name": "G42 次髎宫",
+   "jing": "足太阳膀胱经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    209,
+    210,
+    211,
+    212,
+    213
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 43,
+   "name": "G43 殷门宫",
+   "jing": "足太阳膀胱经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    214,
+    215,
+    216,
+    217,
+    218
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 44,
+   "name": "G44 魄户宫",
+   "jing": "足太阳膀胱经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    219,
+    220,
+    221,
+    222,
+    223
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 45,
+   "name": "G45 魂门宫",
+   "jing": "足太阳膀胱经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    224,
+    225,
+    226,
+    227,
+    228
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 46,
+   "name": "G46 志室宫",
+   "jing": "足太阳膀胱经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    229,
+    230,
+    231,
+    232,
+    233
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 47,
+   "name": "G47 承山宫",
+   "jing": "足太阳膀胱经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    234,
+    235,
+    236,
+    237,
+    238
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 48,
+   "name": "G48 申脉宫",
+   "jing": "足太阳膀胱经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    239,
+    240,
+    241,
+    242,
+    243
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 49,
+   "name": "G49 至阴宫",
+   "jing": "足太阳膀胱经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    244,
+    245,
+    246,
+    247,
+    248
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 50,
+   "name": "G50 水泉宫",
+   "jing": "足少阴肾经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    249,
+    250,
+    251,
+    252,
+    253
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 51,
+   "name": "G51 阴谷宫",
+   "jing": "足少阴肾经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    254,
+    255,
+    256,
+    257,
+    258
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 52,
+   "name": "G52 中注宫",
+   "jing": "足少阴肾经",
+   "pian": "辨阳明病脉证并治",
+   "tiao": [
+    259,
+    260,
+    261,
+    262
+   ],
+   "n": 4,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 53,
+   "name": "G53 阴都宫",
+   "jing": "足少阴肾经",
+   "pian": "辨少阳病脉证并治",
+   "tiao": [
+    263,
+    264,
+    265,
+    266,
+    267
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 54,
+   "name": "G54 灵墟宫",
+   "jing": "足少阴肾经",
+   "pian": "辨少阳病脉证并治",
+   "tiao": [
+    268,
+    269,
+    270,
+    271,
+    272
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 55,
+   "name": "G55 天泉宫",
+   "jing": "手厥阴心包经",
+   "pian": "辨太阴病脉证并治",
+   "tiao": [
+    273,
+    274,
+    275,
+    276
+   ],
+   "n": 4,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 56,
+   "name": "G56 内关宫",
+   "jing": "手厥阴心包经",
+   "pian": "辨太阴病脉证并治",
+   "tiao": [
+    277,
+    278,
+    279,
+    280
+   ],
+   "n": 4,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 57,
+   "name": "G57 关冲宫",
+   "jing": "手少阳三焦经",
+   "pian": "辨少阴病脉证并治",
+   "tiao": [
+    281,
+    282,
+    283,
+    284,
+    285
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 58,
+   "name": "G58 支沟宫",
+   "jing": "手少阳三焦经",
+   "pian": "辨少阴病脉证并治",
+   "tiao": [
+    286,
+    287,
+    288,
+    289,
+    290
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 59,
+   "name": "G59 清泠渊宫",
+   "jing": "手少阳三焦经",
+   "pian": "辨少阴病脉证并治",
+   "tiao": [
+    291,
+    292,
+    293,
+    294,
+    295
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 60,
+   "name": "G60 天牖宫",
+   "jing": "手少阳三焦经",
+   "pian": "辨少阴病脉证并治",
+   "tiao": [
+    296,
+    297,
+    298,
+    299,
+    300
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 61,
+   "name": "G61 耳门宫",
+   "jing": "手少阳三焦经",
+   "pian": "辨少阴病脉证并治",
+   "tiao": [
+    301,
+    302,
+    303,
+    304,
+    305
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 62,
+   "name": "G62 上关宫",
+   "jing": "足少阳胆经",
+   "pian": "辨少阴病脉证并治",
+   "tiao": [
+    306,
+    307,
+    308,
+    309,
+    310
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 63,
+   "name": "G63 率谷宫",
+   "jing": "足少阳胆经",
+   "pian": "辨少阴病脉证并治",
+   "tiao": [
+    311,
+    312,
+    313,
+    314,
+    315
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 64,
+   "name": "G64 本神宫",
+   "jing": "足少阳胆经",
+   "pian": "辨少阴病脉证并治",
+   "tiao": [
+    316,
+    317,
+    318,
+    319,
+    320
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 65,
+   "name": "G65 承灵宫",
+   "jing": "足少阳胆经",
+   "pian": "辨少阴病脉证并治",
+   "tiao": [
+    321,
+    322,
+    323,
+    324,
+    325
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 66,
+   "name": "G66 辄筋宫",
+   "jing": "足少阳胆经",
+   "pian": "辨厥阴病脉证并治",
+   "tiao": [
+    326,
+    327,
+    328,
+    329,
+    330,
+    331
+   ],
+   "n": 6,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 67,
+   "name": "G67 居髎宫",
+   "jing": "足少阳胆经",
+   "pian": "辨厥阴病脉证并治",
+   "tiao": [
+    332,
+    333,
+    334,
+    335,
+    336
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 68,
+   "name": "G68 阳陵泉宫",
+   "jing": "足少阳胆经",
+   "pian": "辨厥阴病脉证并治",
+   "tiao": [
+    337,
+    338,
+    339,
+    340,
+    341
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 69,
+   "name": "G69 悬钟宫",
+   "jing": "足少阳胆经",
+   "pian": "辨厥阴病脉证并治",
+   "tiao": [
+    342,
+    343,
+    344,
+    345,
+    346
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 70,
+   "name": "G70 足窍阴宫",
+   "jing": "足少阳胆经",
+   "pian": "辨厥阴病脉证并治",
+   "tiao": [
+    347,
+    348,
+    349,
+    350,
+    351
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 71,
+   "name": "G71 蠡沟宫",
+   "jing": "足厥阴肝经",
+   "pian": "辨厥阴病脉证并治",
+   "tiao": [
+    352,
+    353,
+    354,
+    355,
+    356
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 72,
+   "name": "G72 足五里宫",
+   "jing": "足厥阴肝经",
+   "pian": "辨厥阴病脉证并治",
+   "tiao": [
+    357,
+    358,
+    359,
+    360,
+    361
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 73,
+   "name": "G73 承浆宫",
+   "jing": "任脉",
+   "pian": "辨厥阴病脉证并治",
+   "tiao": [
+    362,
+    363,
+    364,
+    365,
+    366
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 74,
+   "name": "G74 紫宫穴",
+   "jing": "任脉",
+   "pian": "辨厥阴病脉证并治",
+   "tiao": [
+    367,
+    368,
+    369,
+    370,
+    371
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 75,
+   "name": "G75 巨阙宫",
+   "jing": "任脉",
+   "pian": "辨厥阴病脉证并治",
+   "tiao": [
+    372,
+    373,
+    374,
+    375,
+    376
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 76,
+   "name": "G76 水分宫",
+   "jing": "任脉",
+   "pian": "辨厥阴病脉证并治",
+   "tiao": [
+    377,
+    378,
+    379,
+    380,
+    381
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 77,
+   "name": "G77 关元宫",
+   "jing": "任脉",
+   "pian": "辨霍乱病脉证并治",
+   "tiao": [
+    382,
+    383,
+    384,
+    385,
+    386
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 78,
+   "name": "G78 腰俞宫",
+   "jing": "督脉",
+   "pian": "辨霍乱病脉证并治",
+   "tiao": [
+    387,
+    388,
+    389,
+    390,
+    391
+   ],
+   "n": 5,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 79,
+   "name": "G79 中枢宫",
+   "jing": "督脉",
+   "pian": "辨阴阳易差后劳复病脉证并治",
+   "tiao": [
+    392,
+    393,
+    394,
+    395
+   ],
+   "n": 4,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  },
+  {
+   "gong": 80,
+   "name": "G80 神道宫",
+   "jing": "督脉",
+   "pian": "辨阴阳易差后劳复病脉证并治",
+   "tiao": [
+    396,
+    397,
+    398
+   ],
+   "n": 3,
+   "videoTiao": [],
+   "videoN": 0,
+   "firstP": null,
+   "firstSec": null
+  }
+ ]
+}

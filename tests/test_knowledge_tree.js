@@ -170,15 +170,19 @@ test('L0–L4 五级齐全，名称是须/根/干/枝/叶', () => {
   });
 });
 
-test('八域齐全，每域学科数 >0，合计 120（与本仓库 120 学科一致）', () => {
+test('八域齐全，每域学科数 >0，合计 120（源材料口径）；本仓库学科数与本仓库声明值一致', () => {
   assert.strictEqual(schema.domains.length, 8, `院系数 ${schema.domains.length}`);
   schema.domains.forEach((d) => assert.ok(d.subjectCount > 0, `${d.code} 学科数为 ${d.subjectCount}`));
   assert.strictEqual(schema.domainTotal, 120, `八域学科合计 ${schema.domainTotal}`);
   // curriculum.json 没有顶层 counts，学科数要自己数（不要依赖不存在的字段）
   const local = JSON.parse(fs.readFileSync(path.join(ROOT, 'curriculum.json'), 'utf8'));
   const localSubjects = local.departments.reduce((a, d) => a + d.subjects.length, 0);
-  assert.strictEqual(localSubjects, 120, `本仓库学科数 ${localSubjects}，不是 120`);
-  assert.strictEqual(local.departments.length, 8, '本仓库院系数不是 8');
+  // 源材料《中医知识树》写书时的 8 域 / 120 学科口径；本仓库已扩到 9 院系（+09-jichu 等），
+  // 且 2026-10 补了第 9/10 学期轮转与毕设。所以「源 120 ≠ 本仓库 N」是有意为之的差异，不是漂移 ——
+  // 断言只钉「本仓库自洽」，不再钉某个历史数字（钉死数字的测试会逼着人改测试而不是改数据）。
+  assert.strictEqual(localSubjects, local.domain.scale.subjects,
+    `本仓库学科数 ${localSubjects} ≠ 声明值 ${local.domain.scale.subjects}`);
+  assert.strictEqual(local.departments.length, 9, '本仓库院系数不是 9（8 域 + 09-jichu）');
 });
 
 test('域码是 D01–D08，且概念丛被记录', () => {
@@ -200,11 +204,14 @@ console.log('\n[5] 与语义张量参考实现的交叉印证');
 const ref = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards', 'semtensor', 'datasets', 'reference-units.json'), 'utf8'));
 const xref = schema.crossReferences.dsuIdentifierSpace;
 
-test('参考实现的 DSU 数与 xlsx 声称的 103 相同', () => {
+test('参考实现的 DSU 数 = xlsx 声称的 103 + 已登记的 1 处拆分', () => {
   const n = ref.units.filter((u) => u.kind === 'dsu').length;
-  assert.strictEqual(n, 103, `参考实现 DSU ${n} 个`);
-  assert.strictEqual(xref.xlsxClaimedCount, 103);
-  assert.strictEqual(xref.referenceDsuCount, 103);
+  // xlsx 那张样例表声称 103；参考实现的 104 多出来的一条来自
+  // `standards/semtensor/descriptions/splice-repairs.json` 里 DSU-00102 的 1→2 拆分
+  // （痰郁气结 / 毒热蕴结）。**源与源不一致的地方要显式记，不许把 104 说成 103。**
+  assert.strictEqual(xref.xlsxClaimedCount, 103, 'xlsx 的声称值变了');
+  assert.strictEqual(n, 104, `参考实现 DSU ${n} 个`);
+  assert.strictEqual(xref.referenceDsuCount, 104);
 });
 
 test('编号三元组逐条吻合：DSU-00001 在两边都是「风寒束表证」', () => {
@@ -217,7 +224,7 @@ test('编号三元组逐条吻合：DSU-00001 在两边都是「风寒束表证�
   assert.strictEqual(one.nameInXlsx, '风寒束表证');
 });
 
-test('零矛盾：xlsx 里出现的证名没有一个是参考实现 103 之外的', () => {
+test('零矛盾：xlsx 里出现的证名没有一个是参考实现 104 之外的', () => {
   assert.strictEqual(xref.contradictions, 0, `发现 ${xref.contradictions} 个外来证名: ${xref.foreignNames.join(', ')}`);
   assert.strictEqual(xref.verdict, '编号空间同源（已按编号+名字核对）');
 });

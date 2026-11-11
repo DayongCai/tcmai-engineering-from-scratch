@@ -1,0 +1,79 @@
+{
+ "lesson": "06-shaolin-neigong",
+ "title": "少林内功",
+ "subject": "18-tuina-gongfa-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 6 章「少林内功」要回答的核心问题是什么？",
+   "options": [
+    "少林内功的桩功为什么要求「蹲裆」而不是「站直」",
+    "推拿功法的概念与范围",
+    "推拿功法学的学科地位",
+    "远古至秦汉"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：下肢静力性负荷是这类功法的核心，但静力训练最枯燥，也最容易被跳过。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（功法体系）重心落在哪一项？",
+   "options": [
+    "少林内功",
+    "易筋经",
+    "导引套路",
+    "专项功力"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "调身",
+    "调息",
+    "调心",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "4 个",
+    "6 个",
+    "7 个",
+    "9 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "本课程数值类命中为什么特别少？",
+   "options": [
+    "功法书多用汉字数字，按阿拉伯数字统计抓不到",
+    "推拿功法的概念与范围",
+    "推拿功法学的学科地位",
+    "远古至秦汉"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：数值少不等于剂量松。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/gongfa/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

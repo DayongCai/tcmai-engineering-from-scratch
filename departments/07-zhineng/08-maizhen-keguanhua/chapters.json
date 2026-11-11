@@ -1,66 +1,87 @@
 {
-  "slug": "08-maizhen-keguanhua",
-  "title": "脉诊客观化与信号处理",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-maibobo-shengli",
-      "title": "脉搏波的生理基础",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-caiji-biaoding",
-      "title": "采集装置与压力标定",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-lvbo-jiaozheng",
-      "title": "滤波与基线漂移校正",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-shiyu-tezheng",
-      "title": "时域特征：主波与重搏波",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-pinyu-xiaobo",
-      "title": "频域与小波分析",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-tezheng-jiangwei",
-      "title": "特征选择与降维",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-maixiang-fenlei",
-      "title": "脉象分类模型",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-geti-chayi",
-      "title": "个体差异与基线建模",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-yizhixing-yanjiu",
-      "title": "与传统脉诊的一致性研究",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-xinhao-zhiliang",
-      "title": "信号质量与可用性判据",
-      "status": "📋"
-    }
-  ]
+ "slug": "08-maizhen-keguanhua",
+ "title": "脉诊客观化",
+ "note": "10 章 = 教材 10 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-m1",
+   "title": "脉象采集：物理基础、传感器与信号质控",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-m2",
+   "title": "朴素贝叶斯与概率判据",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-m3",
+   "title": "特征选择与降维",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-m4",
+   "title": "线性判别与基线模型",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-m5",
+   "title": "决策树与可解释规则",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-m6",
+   "title": "神经网络与表征学习",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-m7",
+   "title": "核方法与支持向量机",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-m8",
+   "title": "集成学习与稳健性",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-m9",
+   "title": "聚类与无监督分型",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-m10",
+   "title": "模型评估与交叉验证",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

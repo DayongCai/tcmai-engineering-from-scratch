@@ -1,0 +1,32 @@
+{
+  "slug": "22-yiyao-renli-ziyuan",
+  "title": "医药人力资源管理",
+  "en": "HR Management in Healthcare",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 120,
+  "type": "Reference",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 36,
+  "bridge": "岗位画像→能力模型 / 排班→运筹优化",
+  "chaptersTarget": 18,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/22-yiyao-renli-ziyuan",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/22-yiyao-renli-ziyuan",
+    "chaptersWritten": 18,
+    "words": 242267,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#医药人力资源管理",
+    "extractedAt": "2026-10-21"
+  }
+}

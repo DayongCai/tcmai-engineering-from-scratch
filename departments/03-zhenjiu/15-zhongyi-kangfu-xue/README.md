@@ -1,77 +1,70 @@
 # 中医康复学
 
-> 辨证施康→规则+ML 混合 / 随访数据→生存分析
+**15-zhongyi-kangfu-xue** · 针灸推拿学院 · 10 章 · 44 单元 · 180,710 汉字
 
-| 项目 | 内容 |
-|------|------|
-| 院系 | 🪡 针灸系 `03-zhenjiu` |
-| 类型 | Clinic |
-| 学期 | 第 7 学期（🌳 壮·鼎盛 / 大四） |
-| 学时 | 72 |
-| 章节目标 | 10 |
-| 学科编号 | 045 / 120 |
-| 英文名 | TCM Rehabilitation |
+> 辨证与功能两套坐标同时记；中医技术要跟功能目标走
 
-## 一、学科定位
+**课程类型：派生课（无独立教材）**。单元正文逐字取自父课，`locator` 一律 `派生·第N章·m.k`，
+`source` 记 `父课:父locator`；本课汉字**不与父课相加**。
 
-中医康复学（TCM Rehabilitation）是针灸系的核心学科，聚焦「经络腧穴—刺法灸法—针灸治疗 与推拿康复的完整链条」中的一个完整知识域。
+## 一、父课
 
-## 二、中医 → AI 桥梁
+- `cifa-jiufa`
+- `kangfu-huli`
+- `linchuang-zhongyao`
+- `qigong`
+- `shequ-huli-xue`
+- `zhenjiu-zhiliao`
+- `zhiliao`
+- `zhongyi-xinli-xue`
+- `zhongyi-yangsheng-xue`
 
-```text
-辨证施康→规则+ML 混合 / 随访数据→生存分析
-```
+## 二、章表
 
-中医康复学 里的每一个传统概念，都被翻译成一个可计算、可验证的工程对象：
-中医概念给出**语义与约束**，AI/工程方法给出**表示与算法**。两者必须能互相回指，
-否则这个章节就还没有写完。
+| # | 章 | 父课来源 | 单元 | 汉字 |
+|--:|---|---|--:|--:|
+| 1 | 中医康复学概论 | zhenjiu-zhiliao、zhongyi-yangsheng-xue | 5 | 7,771 |
+| 2 | 辨证与功能评定 | zhenjiu-zhiliao、kangfu-huli | 3 | 50,812 |
+| 3 | 中药康复 | linchuang-zhongyao、zhongyao-xue | 3 | 15,386 |
+| 4 | 针灸康复 | zhenjiu-zhiliao、cifa-jiufa | 6 | 10,810 |
+| 5 | 推拿康复 | zhiliao、shoufa | 4 | 10,270 |
+| 6 | 气功导引康复 | qigong | 4 | 11,837 |
+| 7 | 饮食与情志康复 | zhongyi-yangsheng-xue、zhongyi-xinli-xue | 5 | 11,507 |
+| 8 | 中风康复 | zhenjiu-zhiliao、kangfu-huli | 6 | 2,493 |
+| 9 | 骨伤与慢病康复 | zhenjiu-zhiliao、kangfu-huli | 5 | 2,106 |
+| 10 | 社区与家庭康复 | shequ-huli-xue、zhongyi-huli-jishu | 3 | 57,718 |
 
-## 三、章节地图（目标 10 章）
+## 三、三辨与四位面（实测）
 
-章节尚未编写。运行脚手架开章：
+| 三辨 | 词频 |
+|---|--:|
+| **中医技术** | **410** |
+| **康复评定** | **924** |
+| **调护与养生** | **507** |
+
+三辨极差 **2.3×**。
+
+| 四位面（章群结构分区） | 汉字 |
+|---|---:|
+| 概论与评定 | 58,583 |
+| 中药与针灸 | 26,196 |
+| 推拿气功与调护 | 33,614 |
+| 病种与社区 | 62,317 |
+
+四位面极差 **2.4×**。这一轴按**章群归属**直接分区，不用词频——
+派生课的关键词统计容易被父课的泛词（「患者」「治疗」）支配，结构分区更诚实。
+
+## 四、判据
+
+辨证与功能两套坐标同时记；中医技术要跟功能目标走。本课每章要求写清：**适应证边界、操作要点、可核的记录项、禁忌与风险**。
+
+## 五、章内可执行验证
 
 ```bash
-node scripts/scaffold_chapter.js 03-zhenjiu/15-zhongyi-kangfu-xue 01-<chapter-slug>
+node scripts/audit_curriculum.js | grep -A2 "15-zhongyi-kangfu-xue"
+node tests/test_chapter_code.js | grep -c "15-zhongyi-kangfu-xue"
+python scripts/_derive6_zj.py
 ```
 
-编写完成后，把章节索引写进 `chapters.json`，本表的「状态」列由
-`scripts/build_catalog.js` 自动填充。
-
-## 四、章节契约（每章必须满足）
-
-```text
-chapters/NN-<slug>/
-├── docs/zh.md      # MOTTO / PROBLEM / 环境逼迫 / 知识积累 / CONCEPT / BUILD IT / USE IT / SHIP IT
-├── code/           # 可运行、自终止、退出码 0（Node.js 或 Python，见 AGENTS.md 依赖白名单）
-├── quiz.json       # 恰好 6 题 = 1 pre + 3 check + 2 post
-└── outputs/        # 可复用产出物（prompt / skill / agent / mcp / 临床工具）
-```
-
-## 五、教材交付 [textbooks]
-
-```text
-输出: textbooks/03-zhenjiu/15-zhongyi-kangfu-xue/
-├── 00-前言.md
-├── 01-第1章-<标题>.md   ...
-└── figures/                # Mermaid / SVG，禁止 ASCII 框图
-```
-
-## 六、平台交付 [tcmP]
-
-```text
-输出: platform/courses/03-zhenjiu/15-zhongyi-kangfu-xue/
-├── course.yaml             # 课程元数据 + 章节 → 视频映射
-├── slides/                 # 讲稿 HTML（由 docs/zh.md 派生）
-├── narration/              # TTS 旁白文本 + 音频
-└── video/                  # 成片 MP4（H.264 / 720p 以上）
-```
-
-## 七、进度
-
-| 指标 | 当前 | 目标 |
-|------|------|------|
-| 章节 | 0 | 10 |
-| 视频 | 0 | 10 |
-| 教材字数 | 0 | ≈ 60000 |
-
-> 状态字形：🌱 未开始 ⬚ · 🚧 进行中 · ✅ 完成
+**免责声明：** 本课为教学材料；无独立教材，内容取自本库已建课程，属**二次编排**。
+具体操作与剂量须以现行规范与执业人员判断为准，不构成诊疗建议。

@@ -1,0 +1,32 @@
+{
+  "slug": "05-zhengchang-renti-xue",
+  "title": "正常人体学",
+  "en": "Normal Human Structure & Function",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 125,
+  "type": "Core",
+  "semester": 2,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 72,
+  "bridge": "结构与功能→多模态融合 / 指标体系→特征工程",
+  "chaptersTarget": 18,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/05-zhengchang-renti-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/05-zhengchang-renti-xue",
+    "chaptersWritten": 18,
+    "words": 406942,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#正常人体学",
+    "extractedAt": "2026-10-21"
+  }
+}

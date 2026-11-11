@@ -1,0 +1,37 @@
+%% 图 4-1 藏象的结构：脏腑分类与脏腑关系
+%% 内容依据：textbooks/01-zhongyi/01-zhongyi-jichu-lilun/04-第4章-藏象系统.md §3.1.2、§3.4.1
+%%   §3.1.2.1「五脏（心、肝、脾、肺、肾）的共同生理特点是化生和贮藏精气，
+%%             藏而不泻，满而不能实」
+%%   §3.1.2.2「六腑（胆、胃、小肠、大肠、膀胱、三焦）的共同生理特点是受盛和传化水谷，
+%%             泻而不藏，实而不能满」
+%%   §3.4.1.1「心主血，肺主气……气为血帅，血为气母」
+%%   §3.4.1.2「脾为后天之本，肾为先天之本。先天温养激发后天，后天补充培育先天」
+%% 注意：本章正文没有「开窍于X」「在志为Y」这类配属表述，故本图不画官窍与情志。
+%% 站点动画图 zangxiang-graph 画了脏腑-官窍-情志，与教材正文不是一个口径，不要照搬。
+graph TD
+    XX["藏象"]
+
+    XX --> ZF["脏腑分类"]
+    XX --> GX["脏腑之间的关系"]
+
+    ZF --> Z["五脏<br/>心·肝·脾·肺·肾"]
+    ZF --> F["六腑<br/>胆·胃·小肠·大肠<br/>膀胱·三焦"]
+    ZF --> QH["奇恒之腑"]
+
+    Z --> Z1["化生贮藏精气<br/>藏而不泻<br/>满而不能实"]
+    F --> F1["受盛传化水谷<br/>泻而不藏<br/>实而不能满"]
+
+    GX --> G1["心与肺<br/>气血相依"]
+    GX --> G2["脾与肾<br/>先后天互助"]
+
+    G1 --> G1a["心主血，肺主气<br/>气为血帅，血为气母"]
+    G2 --> G2a["脾为后天之本<br/>肾为先天之本<br/>先天温养后天<br/>后天补充先天"]
+
+    classDef root fill:#eef2e8,stroke:#4a7c59,stroke-width:2px,color:#1f1b16
+    classDef lv fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.5px,color:#1f1b16
+    classDef item fill:#fbf8f2,stroke:#b9a992,stroke-width:1.1px,color:#1f1b16
+    classDef note fill:#fdf6e8,stroke:#c9a227,stroke-width:1px,color:#6b6156
+    class XX root
+    class ZF,GX,Z,F,QH lv
+    class Z1,F1,G1,G2 item
+    class G1a,G2a note

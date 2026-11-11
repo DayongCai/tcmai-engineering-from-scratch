@@ -1,0 +1,5877 @@
+{
+ "schema": "tcm-video-lessons/1",
+ "generated": "scripts/build_video_lessons.js",
+ "totals": {
+  "subjects": 189,
+  "withVideo": 8,
+  "none": 181,
+  "lectures": 428,
+  "cues": 177254,
+  "durationSec": 594209.082
+ },
+ "subjects": [
+  {
+   "slug": "01-zhongyi-jichu-lilun",
+   "title": "中医基础理论",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 1,
+   "chapters": 10,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 10,
+     "durationSec": 2821.661,
+     "path": "platform/courses/01-zhongyi/01-zhongyi-jichu-lilun",
+     "rows": [
+      {
+       "title": "阴阳学说 → 二分类：从零实现逻辑回归",
+       "durationSec": 348,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "五行学说 → 多分类：从零实现 Softmax",
+       "durationSec": 300,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "藏象学说 → 知识图谱：脏腑关系的图表示",
+       "durationSec": 318,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "绪论：中医学的学科属性与工程化边界",
+       "durationSec": 276,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "气血津液 → 状态向量与守恒约束",
+       "durationSec": 264,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "经络学说 → 图上的路径与可及性",
+       "durationSec": 258,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "病因病机 → 因果图与失效模式",
+       "durationSec": 276,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "防治原则 → 策略选择与代价函数",
+       "durationSec": 264,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "体质与发病 → 先验分布与风险分层",
+       "durationSec": 252,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "用代码讲清一个中医基础理论命题",
+       "durationSec": 264,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 10,
+   "cues": 0,
+   "durationSec": 2821.661,
+   "plan": "departments/01-zhongyi/01-zhongyi-jichu-lilun/video/教案.md"
+  },
+  {
+   "slug": "02-yi-gu-wen",
+   "title": "医古文",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 1,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "03-zhongguo-yixue-shi",
+   "title": "中国医学史",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 1,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "04-zhongyi-tizhi-xue",
+   "title": "中医体质学",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 4,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "05-zhongyi-zhen-duan-xue",
+   "title": "中医诊断学",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 3,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "06-neijing-xuandu",
+   "title": "内经选读",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 3,
+   "chapters": 10,
+   "status": "lectures",
+   "sources": [
+    {
+     "slug": "hdnj-yinpin",
+     "label": "黄帝内经音频理解（逐句字幕）",
+     "kind": "audio-subtitle",
+     "lectures": 162,
+     "cues": 125027,
+     "durationSec": 243110,
+     "path": "standards/materials/hdnj-yinpin",
+     "rows": [
+      {
+       "no": "1-上古天真论",
+       "title": "上古天真论",
+       "cues": 2585,
+       "durationSec": 4801,
+       "bytesCues": 2583
+      },
+      {
+       "no": "2-四气调神大论",
+       "title": "四气调神大论",
+       "cues": 2063,
+       "durationSec": 4269,
+       "bytesCues": 2061
+      },
+      {
+       "no": "3-生气通天论",
+       "title": "生气通天论",
+       "cues": 2440,
+       "durationSec": 5656,
+       "bytesCues": 2438
+      },
+      {
+       "no": "4-金匮真言论",
+       "title": "金匮真言论",
+       "cues": 2410,
+       "durationSec": 4409,
+       "bytesCues": 2408
+      },
+      {
+       "no": "5-阴阳应象大论",
+       "title": "阴阳应象大论",
+       "cues": 2511,
+       "durationSec": 4505,
+       "bytesCues": 2509
+      },
+      {
+       "no": "6-阴阳离合论",
+       "title": "阴阳离合论",
+       "cues": 1821,
+       "durationSec": 3119,
+       "bytesCues": 1819
+      },
+      {
+       "no": "7-阴阳别论",
+       "title": "阴阳别论",
+       "cues": 2154,
+       "durationSec": 3874,
+       "bytesCues": 2152
+      },
+      {
+       "no": "8-灵兰秘典论",
+       "title": "灵兰秘典论",
+       "cues": 1820,
+       "durationSec": 3649,
+       "bytesCues": 1818
+      },
+      {
+       "no": "9-六节藏象论",
+       "title": "六节藏象论",
+       "cues": 2055,
+       "durationSec": 3592,
+       "bytesCues": 2053
+      },
+      {
+       "no": "10-五藏生成篇",
+       "title": "五藏生成篇",
+       "cues": 808,
+       "durationSec": 1400,
+       "bytesCues": 806
+      },
+      {
+       "no": "11-五藏别论",
+       "title": "五藏别论",
+       "cues": 644,
+       "durationSec": 1139,
+       "bytesCues": 642
+      },
+      {
+       "no": "12-异法方宜论",
+       "title": "异法方宜论",
+       "cues": 694,
+       "durationSec": 1488,
+       "bytesCues": 692
+      },
+      {
+       "no": "13-移精变气论",
+       "title": "移精变气论",
+       "cues": 610,
+       "durationSec": 1075,
+       "bytesCues": 608
+      },
+      {
+       "no": "14-汤液醪醴论",
+       "title": "汤液醪醴论",
+       "cues": 1311,
+       "durationSec": 2931,
+       "bytesCues": 1309
+      },
+      {
+       "no": "15-玉版论要",
+       "title": "玉版论要",
+       "cues": 731,
+       "durationSec": 1500,
+       "bytesCues": 720
+      },
+      {
+       "no": "SW16",
+       "title": "SW16",
+       "cues": 1535,
+       "durationSec": 2652,
+       "bytesCues": 1533
+      },
+      {
+       "no": "SW17",
+       "title": "SW17",
+       "cues": 4410,
+       "durationSec": 6905,
+       "bytesCues": 4408
+      },
+      {
+       "no": "SW18",
+       "title": "SW18",
+       "cues": 2189,
+       "durationSec": 3297,
+       "bytesCues": 2187
+      },
+      {
+       "no": "SW19",
+       "title": "SW19",
+       "cues": 2823,
+       "durationSec": 4330,
+       "bytesCues": 2821
+      },
+      {
+       "no": "SW20",
+       "title": "SW20",
+       "cues": 855,
+       "durationSec": 1719,
+       "bytesCues": 853
+      },
+      {
+       "no": "SW21",
+       "title": "SW21",
+       "cues": 769,
+       "durationSec": 1419,
+       "bytesCues": 767
+      },
+      {
+       "no": "SW22",
+       "title": "SW22",
+       "cues": 1693,
+       "durationSec": 2715,
+       "bytesCues": 1691
+      },
+      {
+       "no": "SW23",
+       "title": "SW23",
+       "cues": 821,
+       "durationSec": 1437,
+       "bytesCues": 819
+      },
+      {
+       "no": "SW24",
+       "title": "SW24",
+       "cues": 395,
+       "durationSec": 692,
+       "bytesCues": 393
+      },
+      {
+       "no": "SW25",
+       "title": "SW25",
+       "cues": 736,
+       "durationSec": 1117,
+       "bytesCues": 734
+      },
+      {
+       "no": "SW26",
+       "title": "SW26",
+       "cues": 727,
+       "durationSec": 1325,
+       "bytesCues": 725
+      },
+      {
+       "no": "SW27",
+       "title": "SW27",
+       "cues": 718,
+       "durationSec": 1143,
+       "bytesCues": 716
+      },
+      {
+       "no": "SW28",
+       "title": "SW28",
+       "cues": 1453,
+       "durationSec": 3103,
+       "bytesCues": 1451
+      },
+      {
+       "no": "SW30",
+       "title": "SW30",
+       "cues": 389,
+       "durationSec": 529,
+       "bytesCues": 387
+      },
+      {
+       "no": "SW31",
+       "title": "SW31",
+       "cues": 907,
+       "durationSec": 1380,
+       "bytesCues": 905
+      },
+      {
+       "no": "SW32",
+       "title": "SW32",
+       "cues": 985,
+       "durationSec": 1573,
+       "bytesCues": 983
+      },
+      {
+       "no": "SW33",
+       "title": "SW33",
+       "cues": 787,
+       "durationSec": 1344,
+       "bytesCues": 785
+      },
+      {
+       "no": "SW34",
+       "title": "SW34",
+       "cues": 544,
+       "durationSec": 893,
+       "bytesCues": 542
+      },
+      {
+       "no": "SW35",
+       "title": "SW35",
+       "cues": 1370,
+       "durationSec": 2334,
+       "bytesCues": 1368
+      },
+      {
+       "no": "SW37",
+       "title": "SW37",
+       "cues": 698,
+       "durationSec": 119,
+       "bytesCues": 692
+      },
+      {
+       "no": "SW38",
+       "title": "SW38",
+       "cues": 640,
+       "durationSec": 1124,
+       "bytesCues": 638
+      },
+      {
+       "no": "SW39",
+       "title": "SW39",
+       "cues": 1758,
+       "durationSec": 2514,
+       "bytesCues": 1756
+      },
+      {
+       "no": "SW40",
+       "title": "SW40",
+       "cues": 1361,
+       "durationSec": 2125,
+       "bytesCues": 1359
+      },
+      {
+       "no": "SW41",
+       "title": "SW41",
+       "cues": 1049,
+       "durationSec": 1462,
+       "bytesCues": 1037
+      },
+      {
+       "no": "SW42",
+       "title": "SW42",
+       "cues": 1111,
+       "durationSec": 1603,
+       "bytesCues": 1109
+      },
+      {
+       "no": "SW43",
+       "title": "SW43",
+       "cues": 991,
+       "durationSec": 1624,
+       "bytesCues": 989
+      },
+      {
+       "no": "SW44",
+       "title": "SW44",
+       "cues": 1715,
+       "durationSec": 2618,
+       "bytesCues": 1713
+      },
+      {
+       "no": "SW45",
+       "title": "SW45",
+       "cues": 1760,
+       "durationSec": 3096,
+       "bytesCues": 1758
+      },
+      {
+       "no": "SW46",
+       "title": "SW46",
+       "cues": 1024,
+       "durationSec": 1717,
+       "bytesCues": 1022
+      },
+      {
+       "no": "SW47",
+       "title": "SW47",
+       "cues": 1412,
+       "durationSec": 2298,
+       "bytesCues": 1410
+      },
+      {
+       "no": "SW48",
+       "title": "SW48",
+       "cues": 1704,
+       "durationSec": 2801,
+       "bytesCues": 1702
+      },
+      {
+       "no": "SW49",
+       "title": "SW49",
+       "cues": 1984,
+       "durationSec": 3092,
+       "bytesCues": 1982
+      },
+      {
+       "no": "SW50",
+       "title": "SW50",
+       "cues": 304,
+       "durationSec": 490,
+       "bytesCues": 302
+      },
+      {
+       "no": "SW51",
+       "title": "SW51",
+       "cues": 27,
+       "durationSec": 91,
+       "bytesCues": 25
+      },
+      {
+       "no": "SW52",
+       "title": "SW52",
+       "cues": 388,
+       "durationSec": 643,
+       "bytesCues": 386
+      },
+      {
+       "no": "SW53",
+       "title": "SW53",
+       "cues": 205,
+       "durationSec": 399,
+       "bytesCues": 203
+      },
+      {
+       "no": "SW54",
+       "title": "SW54",
+       "cues": 310,
+       "durationSec": 733,
+       "bytesCues": 308
+      },
+      {
+       "no": "SW55",
+       "title": "SW55",
+       "cues": 591,
+       "durationSec": 1209,
+       "bytesCues": 589
+      },
+      {
+       "no": "SW56",
+       "title": "SW56",
+       "cues": 648,
+       "durationSec": 1085,
+       "bytesCues": 646
+      },
+      {
+       "no": "SW57",
+       "title": "SW57",
+       "cues": 62,
+       "durationSec": 149,
+       "bytesCues": 60
+      },
+      {
+       "no": "SW58",
+       "title": "SW58",
+       "cues": 550,
+       "durationSec": 815,
+       "bytesCues": 548
+      },
+      {
+       "no": "SW59",
+       "title": "SW59",
+       "cues": 19,
+       "durationSec": 55,
+       "bytesCues": 17
+      },
+      {
+       "no": "SW60",
+       "title": "SW60",
+       "cues": 985,
+       "durationSec": 1670,
+       "bytesCues": 983
+      },
+      {
+       "no": "SW61",
+       "title": "SW61",
+       "cues": 846,
+       "durationSec": 1607,
+       "bytesCues": 844
+      },
+      {
+       "no": "SW62",
+       "title": "SW62",
+       "cues": 1652,
+       "durationSec": 3172,
+       "bytesCues": 1650
+      },
+      {
+       "no": "SW63",
+       "title": "SW63",
+       "cues": 1500,
+       "durationSec": 2142,
+       "bytesCues": 1498
+      },
+      {
+       "no": "SW64",
+       "title": "SW64",
+       "cues": 686,
+       "durationSec": 1157,
+       "bytesCues": 684
+      },
+      {
+       "no": "SW65",
+       "title": "SW65",
+       "cues": 637,
+       "durationSec": 1128,
+       "bytesCues": 635
+      },
+      {
+       "no": "SW66",
+       "title": "SW66",
+       "cues": 356,
+       "durationSec": 744,
+       "bytesCues": 354
+      },
+      {
+       "no": "SW67",
+       "title": "SW67",
+       "cues": 95,
+       "durationSec": 847,
+       "bytesCues": 93
+      },
+      {
+       "no": "SW68",
+       "title": "SW68",
+       "cues": 319,
+       "durationSec": 996,
+       "bytesCues": 317
+      },
+      {
+       "no": "SW69",
+       "title": "SW69",
+       "cues": 838,
+       "durationSec": 1572,
+       "bytesCues": 836
+      },
+      {
+       "no": "SW70",
+       "title": "SW70",
+       "cues": 1563,
+       "durationSec": 2740,
+       "bytesCues": 1561
+      },
+      {
+       "no": "SW71",
+       "title": "SW71",
+       "cues": 3661,
+       "durationSec": 6619,
+       "bytesCues": 3659
+      },
+      {
+       "no": "SW72",
+       "title": "SW72",
+       "cues": 1964,
+       "durationSec": 3254,
+       "bytesCues": 1962
+      },
+      {
+       "no": "SW73",
+       "title": "SW73",
+       "cues": 664,
+       "durationSec": 2000,
+       "bytesCues": 662
+      },
+      {
+       "no": "SW74",
+       "title": "SW74",
+       "cues": 1739,
+       "durationSec": 3334,
+       "bytesCues": 1737
+      },
+      {
+       "no": "SW75",
+       "title": "SW75",
+       "cues": 400,
+       "durationSec": 931,
+       "bytesCues": 398
+      },
+      {
+       "no": "SW76",
+       "title": "SW76",
+       "cues": 532,
+       "durationSec": 993,
+       "bytesCues": 530
+      },
+      {
+       "no": "SW77",
+       "title": "SW77",
+       "cues": 830,
+       "durationSec": 1174,
+       "bytesCues": 828
+      },
+      {
+       "no": "SW78",
+       "title": "SW78",
+       "cues": 262,
+       "durationSec": 546,
+       "bytesCues": 260
+      },
+      {
+       "no": "SW79",
+       "title": "SW79",
+       "cues": 755,
+       "durationSec": 1165,
+       "bytesCues": 753
+      },
+      {
+       "no": "SW80",
+       "title": "SW80",
+       "cues": 489,
+       "durationSec": 840,
+       "bytesCues": 477
+      },
+      {
+       "no": "SW81",
+       "title": "SW81",
+       "cues": 354,
+       "durationSec": 658,
+       "bytesCues": 342
+      },
+      {
+       "no": "ls01",
+       "title": "ls01",
+       "cues": 898,
+       "durationSec": 2097,
+       "bytesCues": 896
+      },
+      {
+       "no": "ls02",
+       "title": "ls02",
+       "cues": 1196,
+       "durationSec": 2964,
+       "bytesCues": 1194
+      },
+      {
+       "no": "ls03",
+       "title": "ls03",
+       "cues": 755,
+       "durationSec": 1809,
+       "bytesCues": 753
+      },
+      {
+       "no": "ls04",
+       "title": "ls04",
+       "cues": 1057,
+       "durationSec": 2876,
+       "bytesCues": 1055
+      },
+      {
+       "no": "ls05",
+       "title": "ls05",
+       "cues": 617,
+       "durationSec": 1885,
+       "bytesCues": 615
+      },
+      {
+       "no": "ls06",
+       "title": "ls06",
+       "cues": 783,
+       "durationSec": 1851,
+       "bytesCues": 781
+      },
+      {
+       "no": "ls07",
+       "title": "ls07",
+       "cues": 405,
+       "durationSec": 1007,
+       "bytesCues": 403
+      },
+      {
+       "no": "ls08",
+       "title": "ls08",
+       "cues": 729,
+       "durationSec": 1656,
+       "bytesCues": 727
+      },
+      {
+       "no": "ls09",
+       "title": "ls09",
+       "cues": 757,
+       "durationSec": 2321,
+       "bytesCues": 755
+      },
+      {
+       "no": "ls10",
+       "title": "ls10",
+       "cues": 2003,
+       "durationSec": 4326,
+       "bytesCues": 2001
+      },
+      {
+       "no": "ls11",
+       "title": "ls11",
+       "cues": 249,
+       "durationSec": 648,
+       "bytesCues": 247
+      },
+      {
+       "no": "ls12",
+       "title": "ls12",
+       "cues": 420,
+       "durationSec": 950,
+       "bytesCues": 418
+      },
+      {
+       "no": "ls13",
+       "title": "ls13",
+       "cues": 939,
+       "durationSec": 2364,
+       "bytesCues": 937
+      },
+      {
+       "no": "ls14",
+       "title": "ls14",
+       "cues": 66,
+       "durationSec": 476,
+       "bytesCues": 64
+      },
+      {
+       "no": "ls15",
+       "title": "ls15",
+       "cues": 152,
+       "durationSec": 473,
+       "bytesCues": 150
+      },
+      {
+       "no": "ls16",
+       "title": "ls16",
+       "cues": 148,
+       "durationSec": 348,
+       "bytesCues": 146
+      },
+      {
+       "no": "ls17",
+       "title": "ls17",
+       "cues": 194,
+       "durationSec": 507,
+       "bytesCues": 192
+      },
+      {
+       "no": "ls18",
+       "title": "ls18",
+       "cues": 404,
+       "durationSec": 827,
+       "bytesCues": 402
+      },
+      {
+       "no": "ls19",
+       "title": "ls19",
+       "cues": 519,
+       "durationSec": 1071,
+       "bytesCues": 517
+      },
+      {
+       "no": "ls20",
+       "title": "ls20",
+       "cues": 36,
+       "durationSec": 199,
+       "bytesCues": 34
+      },
+      {
+       "no": "ls21",
+       "title": "ls21",
+       "cues": 247,
+       "durationSec": 770,
+       "bytesCues": 245
+      },
+      {
+       "no": "ls22",
+       "title": "ls22",
+       "cues": 290,
+       "durationSec": 618,
+       "bytesCues": 288
+      },
+      {
+       "no": "ls23",
+       "title": "ls23",
+       "cues": 122,
+       "durationSec": 725,
+       "bytesCues": 120
+      },
+      {
+       "no": "ls25",
+       "title": "ls25",
+       "cues": 155,
+       "durationSec": 410,
+       "bytesCues": 153
+      },
+      {
+       "no": "ls26",
+       "title": "ls26",
+       "cues": 165,
+       "durationSec": 798,
+       "bytesCues": 163
+      },
+      {
+       "no": "ls27",
+       "title": "ls27",
+       "cues": 114,
+       "durationSec": 384,
+       "bytesCues": 112
+      },
+      {
+       "no": "ls28",
+       "title": "ls28",
+       "cues": 684,
+       "durationSec": 1542,
+       "bytesCues": 682
+      },
+      {
+       "no": "ls29",
+       "title": "ls29",
+       "cues": 278,
+       "durationSec": 1490,
+       "bytesCues": 276
+      },
+      {
+       "no": "ls30",
+       "title": "ls30",
+       "cues": 80,
+       "durationSec": 332,
+       "bytesCues": 78
+      },
+      {
+       "no": "ls31",
+       "title": "ls31",
+       "cues": 82,
+       "durationSec": 191,
+       "bytesCues": 80
+      },
+      {
+       "no": "ls24",
+       "title": "ls24",
+       "cues": 185,
+       "durationSec": 504,
+       "bytesCues": 183
+      },
+      {
+       "no": "ls32",
+       "title": "ls32",
+       "cues": 183,
+       "durationSec": 397,
+       "bytesCues": 181
+      },
+      {
+       "no": "ls33",
+       "title": "ls33",
+       "cues": 234,
+       "durationSec": 561,
+       "bytesCues": 232
+      },
+      {
+       "no": "ls34",
+       "title": "ls34",
+       "cues": 86,
+       "durationSec": 255,
+       "bytesCues": 84
+      },
+      {
+       "no": "ls35",
+       "title": "ls35",
+       "cues": 325,
+       "durationSec": 754,
+       "bytesCues": 323
+      },
+      {
+       "no": "ls36",
+       "title": "ls36",
+       "cues": 135,
+       "durationSec": 338,
+       "bytesCues": 133
+      },
+      {
+       "no": "ls37",
+       "title": "ls37",
+       "cues": 340,
+       "durationSec": 790,
+       "bytesCues": 338
+      },
+      {
+       "no": "ls38",
+       "title": "ls38",
+       "cues": 413,
+       "durationSec": 1010,
+       "bytesCues": 411
+      },
+      {
+       "no": "ls39",
+       "title": "ls39",
+       "cues": 134,
+       "durationSec": 488,
+       "bytesCues": 132
+      },
+      {
+       "no": "ls40",
+       "title": "ls40",
+       "cues": 199,
+       "durationSec": 603,
+       "bytesCues": 197
+      },
+      {
+       "no": "ls41",
+       "title": "ls41",
+       "cues": 352,
+       "durationSec": 951,
+       "bytesCues": 350
+      },
+      {
+       "no": "ls42",
+       "title": "ls42",
+       "cues": 341,
+       "durationSec": 730,
+       "bytesCues": 339
+      },
+      {
+       "no": "ls43",
+       "title": "ls43",
+       "cues": 233,
+       "durationSec": 508,
+       "bytesCues": 231
+      },
+      {
+       "no": "ls44",
+       "title": "ls44",
+       "cues": 816,
+       "durationSec": 1542,
+       "bytesCues": 814
+      },
+      {
+       "no": "ls45",
+       "title": "ls45",
+       "cues": 326,
+       "durationSec": 841,
+       "bytesCues": 324
+      },
+      {
+       "no": "ls46",
+       "title": "ls46",
+       "cues": 450,
+       "durationSec": 1032,
+       "bytesCues": 448
+      },
+      {
+       "no": "ls47",
+       "title": "ls47",
+       "cues": 592,
+       "durationSec": 1752,
+       "bytesCues": 590
+      },
+      {
+       "no": "ls48",
+       "title": "ls48",
+       "cues": 515,
+       "durationSec": 1219,
+       "bytesCues": 513
+      },
+      {
+       "no": "ls49",
+       "title": "ls49",
+       "cues": 974,
+       "durationSec": 2097,
+       "bytesCues": 972
+      },
+      {
+       "no": "ls50",
+       "title": "ls50",
+       "cues": 215,
+       "durationSec": 452,
+       "bytesCues": 213
+      },
+      {
+       "no": "ls51",
+       "title": "ls51",
+       "cues": 43,
+       "durationSec": 193,
+       "bytesCues": 41
+      },
+      {
+       "no": "ls52",
+       "title": "ls52",
+       "cues": 132,
+       "durationSec": 389,
+       "bytesCues": 130
+      },
+      {
+       "no": "ls53",
+       "title": "ls53",
+       "cues": 77,
+       "durationSec": 180,
+       "bytesCues": 75
+      },
+      {
+       "no": "ls54",
+       "title": "ls54",
+       "cues": 975,
+       "durationSec": 2390,
+       "bytesCues": 973
+      },
+      {
+       "no": "ls65",
+       "title": "ls65",
+       "cues": 700,
+       "durationSec": 1647,
+       "bytesCues": 698
+      },
+      {
+       "no": "ls55",
+       "title": "ls55",
+       "cues": 159,
+       "durationSec": 347,
+       "bytesCues": 157
+      },
+      {
+       "no": "ls56",
+       "title": "ls56",
+       "cues": 295,
+       "durationSec": 681,
+       "bytesCues": 293
+      },
+      {
+       "no": "ls57",
+       "title": "ls57",
+       "cues": 226,
+       "durationSec": 524,
+       "bytesCues": 224
+      },
+      {
+       "no": "ls58",
+       "title": "ls58",
+       "cues": 156,
+       "durationSec": 382,
+       "bytesCues": 154
+      },
+      {
+       "no": "ls59",
+       "title": "ls59",
+       "cues": 187,
+       "durationSec": 422,
+       "bytesCues": 185
+      },
+      {
+       "no": "ls60",
+       "title": "ls60",
+       "cues": 473,
+       "durationSec": 946,
+       "bytesCues": 471
+      },
+      {
+       "no": "ls61",
+       "title": "ls61",
+       "cues": 137,
+       "durationSec": 287,
+       "bytesCues": 135
+      },
+      {
+       "no": "ls62",
+       "title": "ls62",
+       "cues": 228,
+       "durationSec": 649,
+       "bytesCues": 226
+      },
+      {
+       "no": "ls63",
+       "title": "ls63",
+       "cues": 386,
+       "durationSec": 954,
+       "bytesCues": 384
+      },
+      {
+       "no": "ls64",
+       "title": "ls64",
+       "cues": 735,
+       "durationSec": 1481,
+       "bytesCues": 733
+      },
+      {
+       "no": "ls66",
+       "title": "ls66",
+       "cues": 410,
+       "durationSec": 875,
+       "bytesCues": 408
+      },
+      {
+       "no": "ls67",
+       "title": "ls67",
+       "cues": 295,
+       "durationSec": 541,
+       "bytesCues": 293
+      },
+      {
+       "no": "ls68",
+       "title": "ls68",
+       "cues": 175,
+       "durationSec": 384,
+       "bytesCues": 173
+      },
+      {
+       "no": "ls69",
+       "title": "ls69",
+       "cues": 78,
+       "durationSec": 216,
+       "bytesCues": 76
+      },
+      {
+       "no": "ls70",
+       "title": "ls70",
+       "cues": 55,
+       "durationSec": 132,
+       "bytesCues": 53
+      },
+      {
+       "no": "ls71",
+       "title": "ls71",
+       "cues": 373,
+       "durationSec": 1268,
+       "bytesCues": 371
+      },
+      {
+       "no": "ls72",
+       "title": "ls72",
+       "cues": 628,
+       "durationSec": 1572,
+       "bytesCues": 626
+      },
+      {
+       "no": "ls73",
+       "title": "ls73",
+       "cues": 375,
+       "durationSec": 892,
+       "bytesCues": 373
+      },
+      {
+       "no": "ls74",
+       "title": "ls74",
+       "cues": 383,
+       "durationSec": 1020,
+       "bytesCues": 381
+      },
+      {
+       "no": "ls75",
+       "title": "ls75",
+       "cues": 963,
+       "durationSec": 2652,
+       "bytesCues": 961
+      },
+      {
+       "no": "ls76",
+       "title": "ls76",
+       "cues": 258,
+       "durationSec": 721,
+       "bytesCues": 256
+      },
+      {
+       "no": "ls77",
+       "title": "ls77",
+       "cues": 665,
+       "durationSec": 1490,
+       "bytesCues": 663
+      },
+      {
+       "no": "ls78",
+       "title": "ls78",
+       "cues": 500,
+       "durationSec": 1215,
+       "bytesCues": 498
+      },
+      {
+       "no": "ls79",
+       "title": "ls79",
+       "cues": 390,
+       "durationSec": 757,
+       "bytesCues": 388
+      },
+      {
+       "no": "ls80",
+       "title": "ls80",
+       "cues": 549,
+       "durationSec": 1095,
+       "bytesCues": 547
+      },
+      {
+       "no": "ls81",
+       "title": "ls81",
+       "cues": 377,
+       "durationSec": 790,
+       "bytesCues": 375
+      },
+      {
+       "no": "SW29",
+       "title": "SW29",
+       "cues": 662,
+       "durationSec": 1069,
+       "bytesCues": 660
+      },
+      {
+       "no": "SW36",
+       "title": "SW36",
+       "cues": 1189,
+       "durationSec": 1745,
+       "bytesCues": 1187
+      }
+     ]
+    },
+    {
+     "slug": "wuyishan-suwen30",
+     "label": "武夷山 · 素问 30 讲",
+     "kind": "video-subtitle",
+     "lectures": 30,
+     "cues": 34640,
+     "durationSec": 81066,
+     "path": "standards/materials/wuyishan-suwen30",
+     "rows": [
+      {
+       "no": "wy01",
+       "title": "wy01",
+       "cues": 869,
+       "durationSec": 2291,
+       "bytesCues": 867
+      },
+      {
+       "no": "wy02",
+       "title": "wy02",
+       "cues": 1259,
+       "durationSec": 2859,
+       "bytesCues": 1257
+      },
+      {
+       "no": "wy03",
+       "title": "wy03",
+       "cues": 1373,
+       "durationSec": 3192,
+       "bytesCues": 1371
+      },
+      {
+       "no": "wy04",
+       "title": "wy04",
+       "cues": 1250,
+       "durationSec": 3067,
+       "bytesCues": 1248
+      },
+      {
+       "no": "wy05",
+       "title": "wy05",
+       "cues": 833,
+       "durationSec": 2086,
+       "bytesCues": 831
+      },
+      {
+       "no": "wy06",
+       "title": "wy06",
+       "cues": 930,
+       "durationSec": 2004,
+       "bytesCues": 928
+      },
+      {
+       "no": "wy07",
+       "title": "wy07",
+       "cues": 609,
+       "durationSec": 1514,
+       "bytesCues": 607
+      },
+      {
+       "no": "wy08",
+       "title": "wy08",
+       "cues": 1278,
+       "durationSec": 3111,
+       "bytesCues": 1276
+      },
+      {
+       "no": "wy09",
+       "title": "wy09",
+       "cues": 1466,
+       "durationSec": 3298,
+       "bytesCues": 1464
+      },
+      {
+       "no": "wy10",
+       "title": "wy10",
+       "cues": 1416,
+       "durationSec": 3315,
+       "bytesCues": 1414
+      },
+      {
+       "no": "wy11",
+       "title": "wy11",
+       "cues": 995,
+       "durationSec": 2205,
+       "bytesCues": 993
+      },
+      {
+       "no": "wy12",
+       "title": "wy12",
+       "cues": 1243,
+       "durationSec": 3186,
+       "bytesCues": 1241
+      },
+      {
+       "no": "wy13",
+       "title": "wy13",
+       "cues": 1433,
+       "durationSec": 3354,
+       "bytesCues": 1431
+      },
+      {
+       "no": "wy14",
+       "title": "wy14",
+       "cues": 1069,
+       "durationSec": 2324,
+       "bytesCues": 1067
+      },
+      {
+       "no": "wy15",
+       "title": "wy15",
+       "cues": 1368,
+       "durationSec": 3173,
+       "bytesCues": 1366
+      },
+      {
+       "no": "wy16",
+       "title": "wy16",
+       "cues": 1201,
+       "durationSec": 2874,
+       "bytesCues": 1199
+      },
+      {
+       "no": "wy17",
+       "title": "wy17",
+       "cues": 1286,
+       "durationSec": 3008,
+       "bytesCues": 1284
+      },
+      {
+       "no": "wy18",
+       "title": "wy18",
+       "cues": 1282,
+       "durationSec": 2863,
+       "bytesCues": 1280
+      },
+      {
+       "no": "wy19",
+       "title": "wy19",
+       "cues": 1529,
+       "durationSec": 3506,
+       "bytesCues": 1527
+      },
+      {
+       "no": "wy20",
+       "title": "wy20",
+       "cues": 878,
+       "durationSec": 1816,
+       "bytesCues": 876
+      },
+      {
+       "no": "wy21",
+       "title": "wy21",
+       "cues": 384,
+       "durationSec": 1703,
+       "bytesCues": 382
+      },
+      {
+       "no": "wy22",
+       "title": "wy22",
+       "cues": 1139,
+       "durationSec": 2779,
+       "bytesCues": 1137
+      },
+      {
+       "no": "wy23",
+       "title": "wy23",
+       "cues": 964,
+       "durationSec": 2186,
+       "bytesCues": 962
+      },
+      {
+       "no": "wy24",
+       "title": "wy24",
+       "cues": 1073,
+       "durationSec": 2461,
+       "bytesCues": 1071
+      },
+      {
+       "no": "wy25",
+       "title": "wy25",
+       "cues": 1329,
+       "durationSec": 2795,
+       "bytesCues": 1327
+      },
+      {
+       "no": "wy26",
+       "title": "wy26",
+       "cues": 1105,
+       "durationSec": 2688,
+       "bytesCues": 1103
+      },
+      {
+       "no": "wy27",
+       "title": "wy27",
+       "cues": 1044,
+       "durationSec": 2403,
+       "bytesCues": 1042
+      },
+      {
+       "no": "wy28",
+       "title": "wy28",
+       "cues": 1345,
+       "durationSec": 2879,
+       "bytesCues": 1343
+      },
+      {
+       "no": "wy29",
+       "title": "wy29",
+       "cues": 1401,
+       "durationSec": 3047,
+       "bytesCues": 1399
+      },
+      {
+       "no": "wy30",
+       "title": "wy30",
+       "cues": 1289,
+       "durationSec": 3079,
+       "bytesCues": 1273
+      }
+     ]
+    },
+    {
+     "slug": "neijing-jizhen",
+     "label": "黄帝内经急症救命",
+     "kind": "video-subtitle",
+     "lectures": 3,
+     "cues": 260,
+     "durationSec": 0,
+     "path": "standards/materials/neijing-jizhen",
+     "rows": [
+      {
+       "no": "原文",
+       "title": "原文",
+       "cues": 73,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "病理生理",
+       "title": "病理生理",
+       "cues": 87,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "健康计划",
+       "title": "健康计划",
+       "cues": 100,
+       "durationSec": 0,
+       "bytesCues": 0
+      }
+     ]
+    },
+    {
+     "slug": "neijing-gushi",
+     "label": "内经简版故事",
+     "kind": "video-subtitle",
+     "lectures": 1,
+     "cues": 151,
+     "durationSec": 0,
+     "path": "standards/materials/neijing-gushi",
+     "rows": [
+      {
+       "no": "内经简版故事 V1（病例 × 语义向量图）",
+       "title": "内经简版故事 V1（病例 × 语义向量图）",
+       "cues": 151,
+       "durationSec": 0,
+       "bytesCues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 196,
+   "cues": 160078,
+   "durationSec": 324176,
+   "plan": "departments/01-zhongyi/06-neijing-xuandu/video/教案.md"
+  },
+  {
+   "slug": "07-shanghanlun",
+   "title": "伤寒论",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 4,
+   "chapters": 12,
+   "status": "lectures",
+   "sources": [
+    {
+     "slug": "chenruchun-lectures",
+     "label": "陈瑞春讲伤寒论（B 站 24 讲）",
+     "kind": "bilibili-season",
+     "lectures": 24,
+     "cues": 0,
+     "durationSec": 73029,
+     "path": "standards/materials/chenruchun-lectures",
+     "rows": [
+      {
+       "no": 20,
+       "title": "陈瑞春讲伤寒论20-温法3 四逆汤 当归四逆汤 吴茱萸汤 乌梅丸 桂枝加附子汤 苓桂术甘汤",
+       "cues": 0,
+       "durationSec": 2991,
+       "ref": "BV11YoaBuEPF"
+      },
+      {
+       "no": 9,
+       "title": "陈瑞春讲伤寒论9-汗法4 麻黄附子细辛汤 小青龙汤 桂枝加葛根汤 麻黄连翘赤小豆汤 当归四逆汤 苓甘五味姜辛夏汤",
+       "cues": 0,
+       "durationSec": 3152,
+       "ref": "BV1vsJG6VEqk"
+      },
+      {
+       "no": 16,
+       "title": "陈瑞春讲伤寒论16-和法3 黄芩加半夏生姜汤证 葛根芩连汤 四逆散",
+       "cues": 0,
+       "durationSec": 3503,
+       "ref": "BV1ybo8BPEvb"
+      },
+      {
+       "no": 17,
+       "title": "陈瑞春讲伤寒论17-和法4 半夏泻心汤 甘草泻心汤",
+       "cues": 0,
+       "durationSec": 2825,
+       "ref": "BV1Txo8BTEFv"
+      },
+      {
+       "no": 21,
+       "title": "陈瑞春讲伤寒论21-清法1 白虎汤 竹叶石膏汤 栀子豉汤 白头翁汤",
+       "cues": 0,
+       "durationSec": 3457,
+       "ref": "BV123oYBVEBr"
+      },
+      {
+       "no": 22,
+       "title": "陈瑞春讲伤寒论22-清法2消法1 白虎汤应用、竹叶石膏汤、五苓散与桂枝汤、黄连温胆汤、白头翁汤、黄连阿胶汤、大青龙汤、麻杏石甘汤、小陷胸汤、消法原则",
+       "cues": 0,
+       "durationSec": 2062,
+       "ref": "BV1WLoYB6E84"
+      },
+      {
+       "no": 23,
+       "title": "陈瑞春讲伤寒论23-清法·补法 消化系统疾病治疗、肝病治疗、妇科疾病治疗、心律失常治疗、甲状腺疾病治疗、补法运用原则、后世补法发展",
+       "cues": 0,
+       "durationSec": 3546,
+       "ref": "BV1cnoYBME9o"
+      },
+      {
+       "no": 24,
+       "title": "陈瑞春讲伤寒论24-补法 中医配伍理论、补气生血原理、阴虚辨证体系、肝病治疗原则、临床思维革新、经典学习、补阳核心法则、气血双补方剂",
+       "cues": 0,
+       "durationSec": 1089,
+       "ref": "BV1nnoYBTEXa"
+      },
+      {
+       "no": 6,
+       "title": "陈瑞春讲伤寒论6-汗法1 麻黄汤",
+       "cues": 0,
+       "durationSec": 3370,
+       "ref": "BV12xo8BKEsw"
+      },
+      {
+       "no": 7,
+       "title": "陈瑞春讲伤寒论7-汗法2 桂枝汤",
+       "cues": 0,
+       "durationSec": 3240,
+       "ref": "BV1RMo8BmEs1"
+      },
+      {
+       "no": 8,
+       "title": "陈瑞春讲伤寒论8-汗法3 大青龙汤 麻杏甘石汤",
+       "cues": 0,
+       "durationSec": 3370,
+       "ref": "BV1RMo8BmEuD"
+      },
+      {
+       "no": 11,
+       "title": "陈瑞春讲伤寒论11-下法1 大承气汤 调胃承气汤 桃核承气汤 大黄黄连泻心汤",
+       "cues": 0,
+       "durationSec": 3850,
+       "ref": "BV1haJG6BEi4"
+      },
+      {
+       "no": 12,
+       "title": "陈瑞春讲伤寒论12-下法2  舌苔与阳明腑实证 三个承气汤 桃核承气汤 三黄泻心汤  抵当汤",
+       "cues": 0,
+       "durationSec": 2809,
+       "ref": "BV1LpJG6yE4K"
+      },
+      {
+       "no": 14,
+       "title": "陈瑞春讲伤寒论14-和法1 小柴胡汤",
+       "cues": 0,
+       "durationSec": 2847,
+       "ref": "BV11xo8BKEfJ"
+      },
+      {
+       "no": 15,
+       "title": "陈瑞春讲伤寒论15-和法2 柴胡桂枝各半汤 大柴胡汤 柴胡桂枝干姜汤",
+       "cues": 0,
+       "durationSec": 2697,
+       "ref": "BV12Wo8BqEZB"
+      },
+      {
+       "no": 18,
+       "title": "陈瑞春讲伤寒论18-温法1 温脾法 理中汤",
+       "cues": 0,
+       "durationSec": 3000,
+       "ref": "BV1yYoaBuExC"
+      },
+      {
+       "no": 1,
+       "title": "陈瑞春讲伤寒论1-论治伤寒之学（上） 伤寒论的定位、价值、版本、结构，学习方法论，注本",
+       "cues": 0,
+       "durationSec": 2892,
+       "ref": "BV16koaBAE82"
+      },
+      {
+       "no": 2,
+       "title": "陈瑞春讲伤寒论2-论治伤寒之学（下）伤寒论与内经、六经辨证实质、临床治疗误区、经典学习、中西医对比、水气病",
+       "cues": 0,
+       "durationSec": 4015,
+       "ref": "BV1FkoaBPEDU"
+      },
+      {
+       "no": 3,
+       "title": "陈瑞春讲伤寒论3-伤寒论总论1 伤寒论学术地位、如何学习伤寒论、伤寒与温病、中医教育现状、六经辨证规律、叶天士",
+       "cues": 0,
+       "durationSec": 3061,
+       "ref": "BV1PeoaBzEHG"
+      },
+      {
+       "no": 4,
+       "title": "陈瑞春讲伤寒论4-伤寒论总论2伤寒论与温病条辨、三焦辨证、中医组方、中医药治疗对比、活血化瘀、肿瘤治疗、经典学习、中西医结合",
+       "cues": 0,
+       "durationSec": 3505,
+       "ref": "BV1WeoaBzEBd"
+      },
+      {
+       "no": 5,
+       "title": "陈瑞春讲伤寒论5-伤寒论总论3 经方分类和比较、方剂临床特征、方剂加减、辨证要点对比、学习方法论",
+       "cues": 0,
+       "durationSec": 1173,
+       "ref": "BV1CeoaBBExP"
+      },
+      {
+       "no": 10,
+       "title": "陈瑞春讲伤寒论10-汗法5·下法1",
+       "cues": 0,
+       "durationSec": 3002,
+       "ref": "BV1geJG6TE8v"
+      },
+      {
+       "no": 13,
+       "title": "陈瑞春讲伤寒论13-下法3·和法1",
+       "cues": 0,
+       "durationSec": 3818,
+       "ref": "BV1VtJG63EtB"
+      },
+      {
+       "no": 19,
+       "title": "陈瑞春讲伤寒论19-温法2 四逆汤 真武汤 当归四逆汤",
+       "cues": 0,
+       "durationSec": 3755,
+       "ref": "BV1yYoaBuEBc"
+      }
+     ]
+    },
+    {
+     "slug": "shanghan-quannao",
+     "label": "伤寒论全脑记忆（ASR）",
+     "kind": "asr",
+     "lectures": 29,
+     "cues": 3774,
+     "durationSec": 10859.599999999999,
+     "path": "standards/materials/shanghan-quannao",
+     "rows": [
+      {
+       "no": 1,
+       "title": "第 1 讲",
+       "cues": 149,
+       "durationSec": 514.9,
+       "ref": "faster-whisper-turbo",
+       "peek": "在这期视频开始之前,能先给我一个三言吗?这对我真的很重要。那先背下来装进脑子里才能够在学医生涯中随时调用融汇贯通那本课程我们记忆伤含论的方法呢"
+      },
+      {
+       "no": 2,
+       "title": "第 2 讲",
+       "cues": 107,
+       "durationSec": 321.6,
+       "ref": "faster-whisper-turbo",
+       "peek": "在这期视频开始之前,能先给我一个三言吗?这对我真的很重要。第四条,伤寒一日,太阳受之,脉若静者,为不传也。泼玉兔,若造反,脉朔吉者,为传也。"
+      },
+      {
+       "no": 3,
+       "title": "第 3 讲",
+       "cues": 201,
+       "durationSec": 499.8,
+       "ref": "faster-whisper-turbo",
+       "peek": "在这期视频开始之前,能先给我一个三言吗?这对我真的很重要。我们可以先调整一下格式,做一些标记来构建照相记忆图。太阳病,发热而可,不误寒者为温病。"
+      },
+      {
+       "no": 4,
+       "title": "第 4 讲",
+       "cues": 184,
+       "durationSec": 502.9,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆商寒论原文第七条我们可以做一些格式调整和标记,让文字看起来更有行一些并有发热恶寒者发于阳也"
+      },
+      {
+       "no": 5,
+       "title": "第 5 讲",
+       "cues": 132,
+       "durationSec": 419.6,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆《伤寒论》原文第十一条定人身大热,反欲得医者,热在皮肤,寒在骨髓也。身大寒,反不欲禁医者,寒在皮肤,热在骨髓也。"
+      },
+      {
+       "no": 6,
+       "title": "第 6 讲",
+       "cues": 135,
+       "durationSec": 419.6,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆《伤寒论》原文第十四条太阳病向背强击击,反汗出物风者,桂枝加葛根汤主制本条出现了桂枝加葛根汤"
+      },
+      {
+       "no": 7,
+       "title": "第 7 讲",
+       "cues": 95,
+       "durationSec": 262,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆伤痕论原文第十七条本条对应的记忆桩是神雀那雀号是十七"
+      },
+      {
+       "no": 8,
+       "title": "第 8 讲",
+       "cues": 109,
+       "durationSec": 333.1,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆《伤寒论》原文第20条太阳病、发汗、碎漏不止、其人勿风、小便难、四肢危急、难以屈身者、贵之、家父子汤、主之。我们来运用图像记忆。"
+      },
+      {
+       "no": 9,
+       "title": "第 9 讲",
+       "cues": 159,
+       "durationSec": 455.8,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆沙寒论原文第23条本条的条文呢也比较长我们可以来划分一下分段记忆"
+      },
+      {
+       "no": 10,
+       "title": "第 10 讲",
+       "cues": 118,
+       "durationSec": 385.3,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆《伤寒论》原文第27条太阳病发热恶寒、热多寒少、奈微弱者、此无阳也、不可发汗、疑贵之二、月必一汤。我们来运用全脑图像记忆。"
+      },
+      {
+       "no": 11,
+       "title": "第 11 讲",
+       "cues": 160,
+       "durationSec": 422.8,
+       "ref": "faster-whisper-turbo",
+       "peek": "今天我们来记忆《伤寒》的原文第29条本条的内容比较长,我们可以划分一下,然后逐段记忆我们先看第一部分"
+      },
+      {
+       "no": 12,
+       "title": "第 12 讲",
+       "cues": 178,
+       "durationSec": 510,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆沙寒的原文第30条。本条对应的记忆桩是集中,那集中的谐音是集中,正好呢本条也是对上一条条文的解释,算是集中整理了吧。我们来分段记忆。"
+      },
+      {
+       "no": 13,
+       "title": "第 13 讲",
+       "cues": 162,
+       "durationSec": 471.2,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们进入《变太阳病脉症病治》中篇第31条太阳病、降背墙积积、无汗、乌风、葛根汤、主治"
+      },
+      {
+       "no": 14,
+       "title": "第 14 讲",
+       "cues": 128,
+       "durationSec": 393.2,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆《伤寒论源》文第35条太阳病、头痛发热、身疼、腰痛、骨节疼痛、雾风、无汗而喘者、麻黄汤组织那本条呢算是麻黄汤的正式登场了"
+      },
+      {
+       "no": 15,
+       "title": "第 15 讲",
+       "cues": 149,
+       "durationSec": 475.7,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆《伤寒》的原文第40条伤寒表不解、心下有水气、肝藕、发热而咳、或渴、或利、或噎、或小便不利、少妇满、或传者、小青龙汤主之。本条对应的记忆桩是丰府"
+      },
+      {
+       "no": 16,
+       "title": "第 16 讲",
+       "cues": 109,
+       "durationSec": 331.7,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆《伤寒论》原文第46条本条对应的记忆装饰是信慧我们可以把文字出图放在这个图像上"
+      },
+      {
+       "no": 17,
+       "title": "第 17 讲",
+       "cues": 131,
+       "durationSec": 378.2,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆商函的原文第59条本条对应的记忆桩是列缺那我们来把文字转化成图像"
+      },
+      {
+       "no": 18,
+       "title": "第 18 讲",
+       "cues": 133,
+       "durationSec": 374.3,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆伤寒的原文第67条本条对应的记忆桩是河谷我们来出图记忆"
+      },
+      {
+       "no": 19,
+       "title": "第 19 讲",
+       "cues": 148,
+       "durationSec": 381.5,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆伤痕原文第70条本条对应的记忆桩是温溜本条的序号是70"
+      },
+      {
+       "no": 20,
+       "title": "第 20 讲",
+       "cues": 103,
+       "durationSec": 335,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆山寒乐园文第76条那这一条呢也比较长我们可以来调整一下格式"
+      },
+      {
+       "no": 21,
+       "title": "第 21 讲",
+       "cues": 110,
+       "durationSec": 266.5,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆《伤痕论》原文第七十T条本条对应的记忆桩是必闹那它穴位图像取的是谐音"
+      },
+      {
+       "no": 22,
+       "title": "第 22 讲",
+       "cues": 132,
+       "durationSec": 362.1,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆伤寒论原文第八十条本条对应的记忆桩是天顶我们来出图记忆"
+      },
+      {
+       "no": 23,
+       "title": "第 23 讲",
+       "cues": 137,
+       "durationSec": 384.7,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆伤寒论原文第88到90条第88条汉家重发汉"
+      },
+      {
+       "no": 24,
+       "title": "第 24 讲",
+       "cues": 106,
+       "durationSec": 272.9,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆山寒的原文第91条我们先来看原文,调整一下文字格式本条第一句是讲什么情况下即当旧礼"
+      },
+      {
+       "no": 25,
+       "title": "第 25 讲",
+       "cues": 64,
+       "durationSec": 179.9,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆伤寒问原文第九十三条本条对应的记忆桩是水突我们来出图记忆"
+      },
+      {
+       "no": 26,
+       "title": "第 26 讲",
+       "cues": 102,
+       "durationSec": 308.5,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆沙寒的原文第94条本条对应的记忆桩是气色我们可以一边来简单理解一边出图记忆"
+      },
+      {
+       "no": 27,
+       "title": "第 27 讲",
+       "cues": 145,
+       "durationSec": 340.7,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆山寒的原文第97条本条内容是上一条的延续,也是对小柴湖汤正的进一步解读在记忆之前,我们还是先来了解一下它的意思"
+      },
+      {
+       "no": 28,
+       "title": "第 28 讲",
+       "cues": 116,
+       "durationSec": 316.8,
+       "ref": "faster-whisper-turbo",
+       "peek": "下面我们来记忆《伤寒》的原文第99条本条对应的记忆桩是鹰窗虚伪联想图像是取谐鹰一只老鹰站在窗户上"
+      },
+      {
+       "no": 29,
+       "title": "第 29 讲",
+       "cues": 72,
+       "durationSec": 239.3,
+       "ref": "faster-whisper-turbo",
+       "peek": "为什么中国人说的心是在正中间,老外说起心都在左边?为什么中医常说心为君主之官不受病,可是生活中却有那么多人得心脏病?为什么中医总说五脏六腑而不是六脏六腑?"
+      }
+     ]
+    }
+   ],
+   "lectures": 53,
+   "cues": 3774,
+   "durationSec": 83888.6,
+   "plan": "departments/01-zhongyi/07-shanghanlun/video/教案.md"
+  },
+  {
+   "slug": "08-jingui-yaolue",
+   "title": "金匮要略",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 5,
+   "chapters": 24,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 24,
+     "durationSec": 20659.897,
+     "path": "platform/courses/01-zhongyi/08-jingui-yaolue",
+     "rows": [
+      {
+       "title": "第1章 金匮的成书与杂病分类",
+       "durationSec": 419,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "第2章 脏腑经络先后病：传变与预防",
+       "durationSec": 1178,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "第3章 痉湿暍病：外感杂病的辨识",
+       "durationSec": 1247,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "第4章 百合狐惑阴阳毒：少见病的鉴别",
+       "durationSec": 1213,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "第5章 疟病与中风历节：节律与痹阻",
+       "durationSec": 1297,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "第6章 血痹虚劳：虚损的分层",
+       "durationSec": 1109,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "第7章 痰饮咳嗽：水液代谢的失效",
+       "durationSec": 1309,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "第8章 消渴与淋病：津液与排泄",
+       "durationSec": 809,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "第9章 妇人病三篇：经带胎产的辨证",
+       "durationSec": 1780,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "第10章 杂病方剂的配伍规律与统计",
+       "durationSec": 1204,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "第11章 肺痿肺痈咳嗽上气",
+       "durationSec": 744,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "第12章 奔豚气",
+       "durationSec": 380,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      },
+      {
+       "title": "第13章 胸痹心痛短气",
+       "durationSec": 505,
+       "status": "rendered",
+       "no": 13,
+       "cues": 0
+      },
+      {
+       "title": "第14章 腹满寒疝宿食",
+       "durationSec": 769,
+       "status": "rendered",
+       "no": 14,
+       "cues": 0
+      },
+      {
+       "title": "第15章 五脏风寒积聚",
+       "durationSec": 555,
+       "status": "rendered",
+       "no": 15,
+       "cues": 0
+      },
+      {
+       "title": "第16章 水气",
+       "durationSec": 1010,
+       "status": "rendered",
+       "no": 16,
+       "cues": 0
+      },
+      {
+       "title": "第17章 黄疸",
+       "durationSec": 593,
+       "status": "rendered",
+       "no": 17,
+       "cues": 0
+      },
+      {
+       "title": "第18章 惊悸吐衄下血胸满瘀血",
+       "durationSec": 467,
+       "status": "rendered",
+       "no": 18,
+       "cues": 0
+      },
+      {
+       "title": "第19章 呕吐哕下利",
+       "durationSec": 933,
+       "status": "rendered",
+       "no": 19,
+       "cues": 0
+      },
+      {
+       "title": "第20章 疮痈肠痈浸淫",
+       "durationSec": 423,
+       "status": "rendered",
+       "no": 20,
+       "cues": 0
+      },
+      {
+       "title": "第21章 趺蹶手指臂肿转筋阴狐疝蚘虫",
+       "durationSec": 394,
+       "status": "rendered",
+       "no": 21,
+       "cues": 0
+      },
+      {
+       "title": "第22章 杂疗方",
+       "durationSec": 691,
+       "status": "rendered",
+       "no": 22,
+       "cues": 0
+      },
+      {
+       "title": "第23章 禽兽鱼虫禁忌",
+       "durationSec": 912,
+       "status": "rendered",
+       "no": 23,
+       "cues": 0
+      },
+      {
+       "title": "第24章 果实菜谷禁忌",
+       "durationSec": 716,
+       "status": "rendered",
+       "no": 24,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 24,
+   "cues": 0,
+   "durationSec": 20659.897,
+   "plan": "departments/01-zhongyi/08-jingui-yaolue/video/教案.md"
+  },
+  {
+   "slug": "09-wenbing-xue",
+   "title": "温病学",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 5,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "10-zhongyi-neike-xue",
+   "title": "中医内科学",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 5,
+   "chapters": 14,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 14,
+     "durationSec": 16685.557,
+     "path": "platform/courses/01-zhongyi/10-zhongyi-neike-xue",
+     "rows": [
+      {
+       "title": "第1章 绪论",
+       "durationSec": 1190,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "第2章 中医内科疾病的辨证论治思路与方法",
+       "durationSec": 1457,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "第3章 脏腑辨证纲要与内科治则",
+       "durationSec": 1001,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "第4章 肺系病证",
+       "durationSec": 1049,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "第5章 心系病证",
+       "durationSec": 958,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "第6章 脾胃系病证",
+       "durationSec": 1022,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "第7章 肝系病证",
+       "durationSec": 1181,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "第8章 肾系病证",
+       "durationSec": 1096,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "第9章 气血津液病证",
+       "durationSec": 1031,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "第10章 肢体经络病证",
+       "durationSec": 1193,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "第11章 常见急症与传染病",
+       "durationSec": 1142,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "第12章 中医内科学的数字化与AI时代",
+       "durationSec": 1372,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      },
+      {
+       "title": "第13章 证候—方剂—疗效的因果推断",
+       "durationSec": 1592,
+       "status": "rendered",
+       "no": 13,
+       "cues": 0
+      },
+      {
+       "title": "第14章 内科分型与 ICD-11 的映射",
+       "durationSec": 1402,
+       "status": "rendered",
+       "no": 14,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 14,
+   "cues": 0,
+   "durationSec": 16685.557,
+   "plan": "departments/01-zhongyi/10-zhongyi-neike-xue/video/教案.md"
+  },
+  {
+   "slug": "11-zhongyi-waike-xue",
+   "title": "中医外科学",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 6,
+   "chapters": 13,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "12-zhongyi-fuke-xue",
+   "title": "中医妇科学",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 6,
+   "chapters": 13,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "13-zhongyi-erke-xue",
+   "title": "中医儿科学",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 6,
+   "chapters": 14,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "14-zhongyi-zhenghou-xue",
+   "title": "中医证候学",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 7,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "15-zhongyi-gejia-xueshuo",
+   "title": "中医各家学说",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 7,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "16-zhongyi-zhexue-shi",
+   "title": "中医哲学史",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 2,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "17-zhongyi-jizhen-xue",
+   "title": "中医急诊学",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 8,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "18-zhongyi-gubing-xue",
+   "title": "中医骨病学",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 8,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "19-zhongyi-laonianbing-xue",
+   "title": "中医老年病学",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 7,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "20-zhongyi-jingshenbing-xue",
+   "title": "中医精神病学",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 8,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "23-zhongcan-xilu-xuandu",
+   "title": "医学衷中参西录选读",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 8,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "21-zhongyi-linchuang-lunzhuan",
+   "title": "中医临床轮转",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 9,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "22-zhongyi-biye-sheji",
+   "title": "中医毕业设计与知识移交",
+   "dept": "01-zhongyi",
+   "deptTitle": "中医系",
+   "semester": 10,
+   "chapters": 28,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "01-zhongyaoxue",
+   "title": "中药学",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 2,
+   "chapters": 14,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "02-yaoyong-zhiwu-xue",
+   "title": "药用植物学",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 2,
+   "chapters": 9,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "03-fangjixue",
+   "title": "方剂学",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 3,
+   "chapters": 15,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "04-zhongyao-ziyuan-xue",
+   "title": "中药资源学",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 3,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "05-zhongyao-jianding-xue",
+   "title": "中药鉴定学",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 4,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "06-zhongyao-huaxue",
+   "title": "中药化学",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 4,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "07-zhongyao-yaoli-xue",
+   "title": "中药药理学",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 5,
+   "chapters": 11,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "08-zhongyao-paozhi-xue",
+   "title": "中药炮制学",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 5,
+   "chapters": 9,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "09-zhongyao-yaoji-xue",
+   "title": "中药药剂学",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 5,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "10-zhongyao-fenxi-xue",
+   "title": "中药分析学",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 6,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "11-zhongyao-yaodai-donglixue",
+   "title": "中药药代动力学",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 6,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "12-daodi-yaocai",
+   "title": "道地药材与产地加工",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 6,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "13-zhongchengyao-linchuang",
+   "title": "中成药与临床用药",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 7,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "14-peiwu-yu-jinji",
+   "title": "中药配伍与禁忌",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 7,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "15-zhongyao-xinyao-yanfa",
+   "title": "中药新药研发",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 8,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "16-linchuang-zhongyaoxue",
+   "title": "临床中药学",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 7,
+   "chapters": 15,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "17-zhongyao-shangpin-xue",
+   "title": "中药商品学",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 8,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "18-yaoshi-guanli-xue",
+   "title": "药事管理学",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 7,
+   "chapters": 28,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "19-zhongyao-zhuanye-shijian",
+   "title": "中药专业实践",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 9,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "20-zhongyao-biye-sheji",
+   "title": "中药毕业设计与知识移交",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 10,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "21-zhongyao-du-li-xue",
+   "title": "中药毒理学",
+   "dept": "02-zhongyao",
+   "deptTitle": "中药系",
+   "semester": 6,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "01-jingluo-xue",
+   "title": "经络学",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 2,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "02-shuxue-xue",
+   "title": "腧穴学",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 3,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "03-zhenjiu-yiji-xuan",
+   "title": "针灸医籍选",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 3,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "04-qigong-xue",
+   "title": "中医气功学",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 3,
+   "chapters": 7,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "05-tuina-xue",
+   "title": "推拿学",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 4,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "06-tuina-shoufa-xue",
+   "title": "推拿手法学",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 4,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "07-cifa-jiufa-xue",
+   "title": "刺法灸法学",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 4,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "08-zhenjiu-zhiliao-xue",
+   "title": "针灸治疗学",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 5,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "09-kangfu-yixue-jichu",
+   "title": "康复医学基础",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 5,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "10-shiyan-zhenjiu-xue",
+   "title": "实验针灸学",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 6,
+   "chapters": 11,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "11-wuli-zhiliao",
+   "title": "物理治疗与运动康复",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 6,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "12-erxue-zhenduan-xue",
+   "title": "耳穴诊治学",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 6,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "13-zhendao-yixue",
+   "title": "针刀医学",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 7,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "14-zhenjiu-zhentong-mazui",
+   "title": "针灸镇痛与麻醉",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 7,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "15-zhongyi-kangfu-xue",
+   "title": "中医康复学",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 7,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "16-zhenjiu-xue",
+   "title": "针灸学",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 5,
+   "chapters": 30,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "17-gejia-zhenjiu-xueshuo",
+   "title": "各家针灸学说",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 6,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "18-tuina-gongfa-xue",
+   "title": "推拿功法学",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 4,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "19-tuina-zhiliao-xue",
+   "title": "推拿治疗学",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 7,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "20-xiaoer-tuina-xue",
+   "title": "小儿推拿学",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 8,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "21-zhenjiu-linchuang-lunzhuan",
+   "title": "针灸临床轮转",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 9,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "22-zhenjiu-biye-sheji",
+   "title": "针灸毕业设计与知识移交",
+   "dept": "03-zhenjiu",
+   "deptTitle": "针灸系",
+   "semester": 10,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "01-zhongyi-yundong-xue",
+   "title": "中医运动学",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 4,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "02-yao-shang-jiepou",
+   "title": "骨伤解剖学",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 4,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "03-gushang-kexue-jichu",
+   "title": "中医骨伤科学基础",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 5,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "04-chuangshang-jijiu-xue",
+   "title": "创伤急救学",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 5,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "05-yundong-yixue",
+   "title": "运动医学与损伤防护",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 5,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "06-zhongyi-zhenggu-xue",
+   "title": "中医正骨学",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 6,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "07-zhongyi-jinshang-xue",
+   "title": "中医筋伤学",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 6,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "08-gushang-shoufa-zhiliao",
+   "title": "骨伤科手法治疗学",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 6,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "09-guke-yingxiang-zhenduan",
+   "title": "骨科影像诊断学",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 6,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "10-jizhu-bing-xue",
+   "title": "脊柱病学",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 7,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "11-guanjie-bing-xue",
+   "title": "关节病学",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 7,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "12-guzhishusong-tuibian",
+   "title": "骨质疏松与退行性疾病",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 7,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "13-zhongyi-zhengji-xue",
+   "title": "中医整脊学",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 7,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "14-kangfu-gongcheng-zhiju",
+   "title": "康复工程与支具学",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 8,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "15-gushang-kangfu-pingding",
+   "title": "骨伤康复评定",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 8,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "16-gushang-linchuang-lunzhuan",
+   "title": "骨伤临床轮转",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 9,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "17-gushang-biye-sheji",
+   "title": "骨伤毕业设计与知识移交",
+   "dept": "04-gushang",
+   "deptTitle": "骨伤系",
+   "semester": 10,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "01-zhongyi-huli-jichu",
+   "title": "中医护理学基础",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 2,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "02-jichu-huli-xue",
+   "title": "基础护理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 2,
+   "chapters": 14,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "03-jiankang-pinggu",
+   "title": "健康评估",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 3,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "04-zhongyi-huli-jishu",
+   "title": "中医护理技术",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 3,
+   "chapters": 14,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "05-zhongyi-yangsheng-xue",
+   "title": "中医养生学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 3,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "06-zhongyi-xinli-xue",
+   "title": "中医心理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 4,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "07-neike-huli-xue",
+   "title": "内科护理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 5,
+   "chapters": 14,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "08-waike-huli-xue",
+   "title": "外科护理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 5,
+   "chapters": 13,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "09-fuchanke-huli-xue",
+   "title": "妇产科护理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 6,
+   "chapters": 16,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "10-erke-huli-xue",
+   "title": "儿科护理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 6,
+   "chapters": 15,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "11-shequ-huli-xue",
+   "title": "社区护理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 6,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "12-jiwei-zhengzheng-huli",
+   "title": "急危重症护理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 7,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "13-huli-guanli-xue",
+   "title": "护理管理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 7,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "14-huli-lunli-fagui",
+   "title": "护理伦理与法规",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 7,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "15-huli-yanjiu-zhengxun",
+   "title": "护理研究与循证护理",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 8,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "16-huli-xue-daolun",
+   "title": "护理学导论",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 2,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "17-huli-xinli-xue",
+   "title": "护理心理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 3,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "18-huli-zonghe-jineng",
+   "title": "护理综合技能",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 4,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "19-huli-renwen-goutong",
+   "title": "护理人文修养与沟通",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 3,
+   "chapters": 14,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "20-jijiu-huli-xue",
+   "title": "急救护理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 5,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "21-laonian-huli-xue",
+   "title": "老年护理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 6,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "22-kangfu-huli-xue",
+   "title": "康复护理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 6,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "23-jingshenke-huli-xue",
+   "title": "精神科护理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 7,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "24-zhongyi-huli-xue",
+   "title": "中医护理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 5,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "25-zhongyi-linchuang-huli",
+   "title": "中医临床护理学",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 8,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "26-huli-linchuang-lunzhuan",
+   "title": "护理临床轮转",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 9,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "27-huli-biye-sheji",
+   "title": "护理毕业设计与知识移交",
+   "dept": "05-huli",
+   "deptTitle": "护理系",
+   "semester": 10,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "01-yixue-tongjixue",
+   "title": "医学统计学",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 4,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "02-zhongyiyao-zhengce-fagui",
+   "title": "中医药政策与法规",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 4,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "03-zhongyi-guanli-xue",
+   "title": "中医管理学",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 5,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "04-weisheng-shiye-guanli",
+   "title": "卫生事业管理",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 5,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "05-zhongyi-wenhua-chuanbo",
+   "title": "中医文化传播学",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 5,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "06-yiyuan-guanli-xue",
+   "title": "医院管理学",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 6,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "07-zhongyi-jiaoyu-xue",
+   "title": "中医教育学",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 6,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "08-jiankang-fuwu-guanli",
+   "title": "健康服务与管理",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 6,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "09-yiliao-baoxian-jingji",
+   "title": "医疗保险与卫生经济",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 6,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "10-yixue-xinxi-guanli",
+   "title": "医学信息管理",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 7,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "11-yiyuan-xinxihua-bingan",
+   "title": "医院信息化与病案管理",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 7,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "12-zhongyiyao-biaozhunhua",
+   "title": "中医药标准化",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 7,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "13-linchuang-keyan-fangfa",
+   "title": "临床科研方法学",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 7,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "14-zhishichanquan-zhuanhua",
+   "title": "中医药知识产权与成果转化",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 8,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "15-zhongyi-guojijiaoyu",
+   "title": "中医国际教育与传播",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 8,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "16-gonggong-guanli-xue",
+   "title": "公共管理学",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 6,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "17-guanli-xue-jichu",
+   "title": "管理学基础",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 6,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "18-guanli-xinli-xue",
+   "title": "管理心理学",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 6,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "19-shehui-yixue",
+   "title": "社会医学",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 7,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "20-weisheng-fa-xue",
+   "title": "卫生法学",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 7,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "21-yixue-lunli-xue",
+   "title": "医学伦理学",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 7,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "22-yiyao-renli-ziyuan",
+   "title": "医药人力资源管理",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 7,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "23-yiyuan-kuaiji-caiwu",
+   "title": "医院会计与财务管理",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 8,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "24-zhongyi-jiankang-guanli",
+   "title": "中医健康管理",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 8,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "25-guanli-shixi-shijian",
+   "title": "管理实习与实践",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 9,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "26-guanli-biye-sheji",
+   "title": "管理毕业设计与知识移交",
+   "dept": "06-guanli",
+   "deptTitle": "管理系",
+   "semester": 10,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "01-yixue-rengong-zhineng-daolun",
+   "title": "医学人工智能导论",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 3,
+   "chapters": 8,
+   "status": "lectures",
+   "sources": [
+    {
+     "slug": "zhongyiyao-ai-daolun",
+     "label": "中医药 AI 导论",
+     "kind": "video-subtitle",
+     "lectures": 9,
+     "cues": 4823,
+     "durationSec": 0,
+     "path": "standards/materials/zhongyiyao-ai-daolun",
+     "rows": [
+      {
+       "no": "AI-med-introduce",
+       "title": "AI-med-introduce",
+       "cues": 91,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "PART01",
+       "title": "PART01",
+       "cues": 675,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "PART02",
+       "title": "PART02",
+       "cues": 1084,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "PART03",
+       "title": "PART03",
+       "cues": 734,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "PART04",
+       "title": "PART04",
+       "cues": 898,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "PART05",
+       "title": "PART05",
+       "cues": 555,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "PART06",
+       "title": "PART06",
+       "cues": 617,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "ha-list",
+       "title": "ha-list",
+       "cues": 63,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "AII-hermes",
+       "title": "AII-hermes",
+       "cues": 106,
+       "durationSec": 0,
+       "bytesCues": 0
+      }
+     ]
+    },
+    {
+     "slug": "lingjichu-ai",
+     "label": "零基础学 AI",
+     "kind": "video-subtitle",
+     "lectures": 20,
+     "cues": 8579,
+     "durationSec": 0,
+     "path": "standards/materials/lingjichu-ai",
+     "rows": [
+      {
+       "no": "卷首",
+       "title": "卷首",
+       "cues": 178,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "01_走进人工智能世界",
+       "title": "01_走进人工智能世界",
+       "cues": 201,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "02_AI 核心概念速览",
+       "title": "02_AI 核心概念速览",
+       "cues": 194,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "03_AI 技术生态与工具全景",
+       "title": "03_AI 技术生态与工具全景",
+       "cues": 168,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "04_机器学习原理",
+       "title": "04_机器学习原理",
+       "cues": 463,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "05_深度学习揭秘",
+       "title": "05_深度学习揭秘",
+       "cues": 323,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "06_大语言模型详解",
+       "title": "06_大语言模型详解",
+       "cues": 328,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "07_推理模型与推理计算",
+       "title": "07_推理模型与推理计算",
+       "cues": 1069,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "08_新架构与创新案例",
+       "title": "08_新架构与创新案例",
+       "cues": 1772,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "09_多模态与生成式 AI",
+       "title": "09_多模态与生成式 AI",
+       "cues": 165,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "10_主流 AI 工具使用指南",
+       "title": "10_主流 AI 工具使用指南",
+       "cues": 220,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "11_提示词工程入门",
+       "title": "11_提示词工程入门",
+       "cues": 457,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "12_提示词工程进阶与上下文工程",
+       "title": "12_提示词工程进阶与上下文工程",
+       "cues": 590,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "13_AI 实战应用场景",
+       "title": "13_AI 实战应用场景",
+       "cues": 252,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "14_AI 智能体与多智能体系统",
+       "title": "14_AI 智能体与多智能体系统",
+       "cues": 929,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "15_AI 伦理、安全与未来",
+       "title": "15_AI 伦理、安全与未来",
+       "cues": 145,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "16_AI 硬件与量子计算入门",
+       "title": "16_AI 硬件与量子计算入门",
+       "cues": 661,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "17_附录",
+       "title": "17_附录",
+       "cues": 319,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "18_图目录",
+       "title": "18_图目录",
+       "cues": 76,
+       "durationSec": 0,
+       "bytesCues": 0
+      },
+      {
+       "no": "19_图源码Mermaid",
+       "title": "19_图源码Mermaid",
+       "cues": 69,
+       "durationSec": 0,
+       "bytesCues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 29,
+   "cues": 13402,
+   "durationSec": 0,
+   "plan": "departments/07-zhineng/01-yixue-rengong-zhineng-daolun/video/教案.md"
+  },
+  {
+   "slug": "02-zhongyi-ruanjian-jiagou-xue",
+   "title": "中医软件架构学",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 4,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "03-zhongyi-zhineng-shebei",
+   "title": "中医智能设备与可穿戴设备",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 4,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "04-zhongyi-ziran-yuyan-chuli",
+   "title": "中医自然语言处理",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 5,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "05-zhongyi-zhishi-tupu",
+   "title": "中医知识树",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 5,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "06-zhongyi-zhineng-bianzheng",
+   "title": "中医智能辨证系统",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 6,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "07-yixue-tuxiang-shezhen",
+   "title": "医学图像处理与舌诊客观化",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 6,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "08-maizhen-keguanhua",
+   "title": "脉诊客观化与信号处理",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 6,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "09-zhongyi-dashuju-fenxi",
+   "title": "中医大数据分析",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 6,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "10-llm-yu-zhongyi-zhinengti",
+   "title": "大语言模型与中医智能体",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 7,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "11-zhongyi-jiqiren-xue",
+   "title": "中医机器人学",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 7,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "12-shuzi-renti-xuni-fangzhen",
+   "title": "数字人体与虚拟仿真",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 7,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "13-zhongyi-duomotai-ronghe",
+   "title": "中医多模态数据融合",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 7,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "14-yixue-shuju-anquan-yinsi",
+   "title": "医学数据安全与隐私保护",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 8,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "15-zhongyi-ai-lunli-zhili",
+   "title": "中医AI伦理与治理",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 8,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "16-jiqi-xuexi",
+   "title": "机器学习",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 4,
+   "chapters": 16,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "17-zhongyi-xinxi-xue",
+   "title": "中医信息学",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 6,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "18-zhineng-gongcheng-shijian",
+   "title": "工程实践与系统交付",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 9,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "19-zhineng-biye-sheji",
+   "title": "智能系毕业设计与知识移交",
+   "dept": "07-zhineng",
+   "deptTitle": "智能系",
+   "semester": 10,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "01-erbihou-jiepou-shengli",
+   "title": "耳鼻喉解剖生理学",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 4,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "02-kouqiang-jiepou-shengli",
+   "title": "口腔解剖生理学",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 4,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "03-zhongyi-mianbu-wangzhen",
+   "title": "中医面部望诊学",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 5,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "04-yanke-guangxue-yanguang",
+   "title": "眼科光学与验光",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 5,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "05-zhongyi-wuguan-jingdian",
+   "title": "中医五官科经典选读",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 5,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "06-zhongyi-yanke-xue",
+   "title": "中医眼科学",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 6,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "07-zhongyi-erbihou-xue",
+   "title": "中医耳鼻喉科学",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 6,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "08-zhongyi-kouqiang-kexue",
+   "title": "中医口腔科学",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 6,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "09-kouqiang-neike-xue",
+   "title": "口腔内科学",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 6,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "10-yanke-yingxiang-jiancha",
+   "title": "眼科影像与检查技术",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 6,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "11-kouqiang-hemian-waike",
+   "title": "口腔颌面外科学",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 7,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "12-kouqiang-xiufu-xue",
+   "title": "口腔修复学",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 7,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "13-kouqiang-zhengji-xue",
+   "title": "口腔正畸学",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 7,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "14-zhongyi-sangyin-yixue",
+   "title": "中医嗓音医学",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 7,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "15-zhongyi-meirong-pifu",
+   "title": "中医美容与皮肤治疗学",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 8,
+   "chapters": 8,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "16-wuguan-linchuang-lunzhuan",
+   "title": "五官口腔临床轮转",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 9,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "17-wuguan-biye-sheji",
+   "title": "五官口腔毕业设计与知识移交",
+   "dept": "08-wuguan",
+   "deptTitle": "五官口腔系",
+   "semester": 10,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "01-renti-jiepou-xue",
+   "title": "人体解剖学",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 1,
+   "chapters": 10,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "02-zuzhi-peitai-xue",
+   "title": "组织学与胚胎学",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 1,
+   "chapters": 20,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "03-yixue-xibao-shengwu-xue",
+   "title": "医学细胞生物学",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 1,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "04-yixue-shengwu-xue",
+   "title": "医学生物学",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 2,
+   "chapters": 16,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "05-zhengchang-renti-xue",
+   "title": "正常人体学",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 2,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "06-shengli-xue",
+   "title": "生理学",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 2,
+   "chapters": 11,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "07-shenghua-xue",
+   "title": "生物化学",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 2,
+   "chapters": 21,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "08-jubu-jiepou-xue",
+   "title": "局部解剖学",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 3,
+   "chapters": 9,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "09-yixue-yichuan-xue",
+   "title": "医学遗传学",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 3,
+   "chapters": 12,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "10-bingli-xue",
+   "title": "病理学",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 3,
+   "chapters": 21,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "11-bingli-shengli-xue",
+   "title": "病理生理学",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 4,
+   "chapters": 53,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 53,
+     "durationSec": 81283.011,
+     "path": "platform/courses/09-jichu/11-bingli-shengli-xue",
+     "rows": [
+      {
+       "title": "第 1 章 · 病理生理学导论",
+       "durationSec": 1741,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "第 2 章 · 稳态、异稳态与对应激源的适应性反应",
+       "durationSec": 1607,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "第 3 章 · 细胞结构与功能",
+       "durationSec": 1270,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "第 4 章 · 细胞损伤、衰老与死亡",
+       "durationSec": 1416,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "第 5 章 · 基因组结构、调控与组织分化",
+       "durationSec": 1190,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "第 6 章 · 遗传与发育性疾病",
+       "durationSec": 1476,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "第 7 章 · 肿瘤",
+       "durationSec": 1358,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "第 8 章 · 感染过程",
+       "durationSec": 1417,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "第 9 章 · 炎症与免疫",
+       "durationSec": 1487,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "第 10 章 · 免疫功能异常",
+       "durationSec": 1517,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "第 11 章 · 白细胞恶性肿瘤",
+       "durationSec": 1415,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "第 12 章 · HIV感染与艾滋病",
+       "durationSec": 1442,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      },
+      {
+       "title": "第 13 章 · 氧运输异常",
+       "durationSec": 1605,
+       "status": "rendered",
+       "no": 13,
+       "cues": 0
+      },
+      {
+       "title": "第 14 章 · 止血与凝血异常",
+       "durationSec": 1658,
+       "status": "rendered",
+       "no": 14,
+       "cues": 0
+      },
+      {
+       "title": "第 15 章 · 血流异常",
+       "durationSec": 1400,
+       "status": "rendered",
+       "no": 15,
+       "cues": 0
+      },
+      {
+       "title": "第 16 章 · 血压异常",
+       "durationSec": 1375,
+       "status": "rendered",
+       "no": 16,
+       "cues": 0
+      },
+      {
+       "title": "第 17 章 · 心脏功能",
+       "durationSec": 1586,
+       "status": "rendered",
+       "no": 17,
+       "cues": 0
+      },
+      {
+       "title": "第 18 章 · 心脏功能异常",
+       "durationSec": 1411,
+       "status": "rendered",
+       "no": 18,
+       "cues": 0
+      },
+      {
+       "title": "第 19 章 · 心力衰竭与心律失常",
+       "durationSec": 1523,
+       "status": "rendered",
+       "no": 19,
+       "cues": 0
+      },
+      {
+       "title": "第 20 章 · 休克",
+       "durationSec": 1453,
+       "status": "rendered",
+       "no": 20,
+       "cues": 0
+      },
+      {
+       "title": "第 21 章 · 呼吸功能与气体交换异常",
+       "durationSec": 1732,
+       "status": "rendered",
+       "no": 21,
+       "cues": 0
+      },
+      {
+       "title": "第 22 章 · 阻塞性肺疾病",
+       "durationSec": 1718,
+       "status": "rendered",
+       "no": 22,
+       "cues": 0
+      },
+      {
+       "title": "第 23 章 · 限制性肺疾病",
+       "durationSec": 1490,
+       "status": "rendered",
+       "no": 23,
+       "cues": 0
+      },
+      {
+       "title": "第 24 章 · 水电解质稳态与失衡",
+       "durationSec": 1724,
+       "status": "rendered",
+       "no": 24,
+       "cues": 0
+      },
+      {
+       "title": "第 25 章 · 酸碱平衡与失衡",
+       "durationSec": 1517,
+       "status": "rendered",
+       "no": 25,
+       "cues": 0
+      },
+      {
+       "title": "第 26 章 · 肾脏功能",
+       "durationSec": 1745,
+       "status": "rendered",
+       "no": 26,
+       "cues": 0
+      },
+      {
+       "title": "第 27 章 · 肾内疾病",
+       "durationSec": 1291,
+       "status": "rendered",
+       "no": 27,
+       "cues": 0
+      },
+      {
+       "title": "第 28 章 · 急性肾损伤与慢性肾脏病",
+       "durationSec": 1369,
+       "status": "rendered",
+       "no": 28,
+       "cues": 0
+      },
+      {
+       "title": "第 29 章 · 下尿路疾病",
+       "durationSec": 1410,
+       "status": "rendered",
+       "no": 29,
+       "cues": 0
+      },
+      {
+       "title": "第 30 章 · 男性生殖功能",
+       "durationSec": 1496,
+       "status": "rendered",
+       "no": 30,
+       "cues": 0
+      },
+      {
+       "title": "第 31 章 · 男性生殖功能异常",
+       "durationSec": 1299,
+       "status": "rendered",
+       "no": 31,
+       "cues": 0
+      },
+      {
+       "title": "第 32 章 · 女性生殖功能",
+       "durationSec": 1312,
+       "status": "rendered",
+       "no": 32,
+       "cues": 0
+      },
+      {
+       "title": "第 33 章 · 女性生殖功能异常",
+       "durationSec": 1495,
+       "status": "rendered",
+       "no": 33,
+       "cues": 0
+      },
+      {
+       "title": "第 34 章 · 性传播感染",
+       "durationSec": 1371,
+       "status": "rendered",
+       "no": 34,
+       "cues": 0
+      },
+      {
+       "title": "第 35 章 · 胃肠功能",
+       "durationSec": 1320,
+       "status": "rendered",
+       "no": 35,
+       "cues": 0
+      },
+      {
+       "title": "第 36 章 · 胃肠疾病",
+       "durationSec": 1562,
+       "status": "rendered",
+       "no": 36,
+       "cues": 0
+      },
+      {
+       "title": "第 37 章 · 胆囊与外分泌胰腺功能异常",
+       "durationSec": 1269,
+       "status": "rendered",
+       "no": 37,
+       "cues": 0
+      },
+      {
+       "title": "第 38 章 · 肝脏疾病",
+       "durationSec": 1435,
+       "status": "rendered",
+       "no": 38,
+       "cues": 0
+      },
+      {
+       "title": "第 39 章 · 内分泌生理与下丘脑-垂体调控机制",
+       "durationSec": 1634,
+       "status": "rendered",
+       "no": 39,
+       "cues": 0
+      },
+      {
+       "title": "第 40 章 · 内分泌功能紊乱",
+       "durationSec": 1567,
+       "status": "rendered",
+       "no": 40,
+       "cues": 0
+      },
+      {
+       "title": "第 41 章 · 糖尿病",
+       "durationSec": 1739,
+       "status": "rendered",
+       "no": 41,
+       "cues": 0
+      },
+      {
+       "title": "第 42 章 · 代谢与营养异常",
+       "durationSec": 1702,
+       "status": "rendered",
+       "no": 42,
+       "cues": 0
+      },
+      {
+       "title": "第 43 章 · 神经系统结构与功能",
+       "durationSec": 1390,
+       "status": "rendered",
+       "no": 43,
+       "cues": 0
+      },
+      {
+       "title": "第 44 章 · 脑功能急性疾病",
+       "durationSec": 1490,
+       "status": "rendered",
+       "no": 44,
+       "cues": 0
+      },
+      {
+       "title": "第 45 章 · 慢性神经功能障碍",
+       "durationSec": 1472,
+       "status": "rendered",
+       "no": 45,
+       "cues": 0
+      },
+      {
+       "title": "第 46 章 · 特殊感觉功能异常",
+       "durationSec": 1453,
+       "status": "rendered",
+       "no": 46,
+       "cues": 0
+      },
+      {
+       "title": "第 47 章 · 疼痛",
+       "durationSec": 1425,
+       "status": "rendered",
+       "no": 47,
+       "cues": 0
+      },
+      {
+       "title": "第 48 章 · 精神心理健康障碍",
+       "durationSec": 2259,
+       "status": "rendered",
+       "no": 48,
+       "cues": 0
+      },
+      {
+       "title": "第 49 章 · 骨骼肌肉系统结构与功能",
+       "durationSec": 1763,
+       "status": "rendered",
+       "no": 49,
+       "cues": 0
+      },
+      {
+       "title": "第 50 章 · 骨骼肌肉功能异常：创伤、感染与疾病",
+       "durationSec": 1957,
+       "status": "rendered",
+       "no": 50,
+       "cues": 0
+      },
+      {
+       "title": "第 51 章 · 骨骼肌肉功能异常：风湿性疾病",
+       "durationSec": 1831,
+       "status": "rendered",
+       "no": 51,
+       "cues": 0
+      },
+      {
+       "title": "第 52 章 · 皮肤系统异常",
+       "durationSec": 1852,
+       "status": "rendered",
+       "no": 52,
+       "cues": 0
+      },
+      {
+       "title": "第 53 章 · 烧伤",
+       "durationSec": 1847,
+       "status": "rendered",
+       "no": 53,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 53,
+   "cues": 0,
+   "durationSec": 81283.011,
+   "plan": "departments/09-jichu/11-bingli-shengli-xue/video/教案.md"
+  },
+  {
+   "slug": "12-yaoli-xue",
+   "title": "药理学",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 4,
+   "chapters": 49,
+   "status": "platform",
+   "sources": [
+    {
+     "slug": "platform",
+     "label": "本仓自建视频课（HLS）",
+     "kind": "platform",
+     "lectures": 49,
+     "durationSec": 64694.356,
+     "path": "platform/courses/09-jichu/12-yaoli-xue",
+     "rows": [
+      {
+       "title": "第1章 绪论",
+       "durationSec": 1285,
+       "status": "rendered",
+       "no": 1,
+       "cues": 0
+      },
+      {
+       "title": "第2章 药物效应动力学——药效学",
+       "durationSec": 1789,
+       "status": "rendered",
+       "no": 2,
+       "cues": 0
+      },
+      {
+       "title": "第3章 药物代谢动力学——药动学",
+       "durationSec": 1085,
+       "status": "rendered",
+       "no": 3,
+       "cues": 0
+      },
+      {
+       "title": "第4章 影响药物效应的因素",
+       "durationSec": 1131,
+       "status": "rendered",
+       "no": 4,
+       "cues": 0
+      },
+      {
+       "title": "第5章 传出神经系统药理概论",
+       "durationSec": 1107,
+       "status": "rendered",
+       "no": 5,
+       "cues": 0
+      },
+      {
+       "title": "第6章 拟胆碱药",
+       "durationSec": 1141,
+       "status": "rendered",
+       "no": 6,
+       "cues": 0
+      },
+      {
+       "title": "第7章 有机磷酸酯类及胆碱酯酶复活药",
+       "durationSec": 1245,
+       "status": "rendered",
+       "no": 7,
+       "cues": 0
+      },
+      {
+       "title": "第8章 抗胆碱药",
+       "durationSec": 1096,
+       "status": "rendered",
+       "no": 8,
+       "cues": 0
+      },
+      {
+       "title": "第9章 拟肾上腺素药",
+       "durationSec": 1124,
+       "status": "rendered",
+       "no": 9,
+       "cues": 0
+      },
+      {
+       "title": "第10章 抗肾上腺素药",
+       "durationSec": 1164,
+       "status": "rendered",
+       "no": 10,
+       "cues": 0
+      },
+      {
+       "title": "第11章 局部麻醉药",
+       "durationSec": 1399,
+       "status": "rendered",
+       "no": 11,
+       "cues": 0
+      },
+      {
+       "title": "第12章 全身麻醉药",
+       "durationSec": 1396,
+       "status": "rendered",
+       "no": 12,
+       "cues": 0
+      },
+      {
+       "title": "第13章 镇静催眠药",
+       "durationSec": 1376,
+       "status": "rendered",
+       "no": 13,
+       "cues": 0
+      },
+      {
+       "title": "第14章 抗癫痫药与抗惊厥药",
+       "durationSec": 1493,
+       "status": "rendered",
+       "no": 14,
+       "cues": 0
+      },
+      {
+       "title": "第15章 抗精神失常药",
+       "durationSec": 1235,
+       "status": "rendered",
+       "no": 15,
+       "cues": 0
+      },
+      {
+       "title": "第16章 治疗中枢神经系统退行性疾病药",
+       "durationSec": 1499,
+       "status": "rendered",
+       "no": 16,
+       "cues": 0
+      },
+      {
+       "title": "第17章 解热镇痛抗炎药与抗痛风药",
+       "durationSec": 1530,
+       "status": "rendered",
+       "no": 17,
+       "cues": 0
+      },
+      {
+       "title": "第18章 镇痛药",
+       "durationSec": 1381,
+       "status": "rendered",
+       "no": 18,
+       "cues": 0
+      },
+      {
+       "title": "第19章 中枢兴奋药",
+       "durationSec": 1331,
+       "status": "rendered",
+       "no": 19,
+       "cues": 0
+      },
+      {
+       "title": "第20章 组胺及抗组胺药",
+       "durationSec": 1295,
+       "status": "rendered",
+       "no": 20,
+       "cues": 0
+      },
+      {
+       "title": "第21章 其他影响自体活性物质的药物",
+       "durationSec": 1269,
+       "status": "rendered",
+       "no": 21,
+       "cues": 0
+      },
+      {
+       "title": "第22章 作用于心血管系统离子通道的药物",
+       "durationSec": 1258,
+       "status": "rendered",
+       "no": 22,
+       "cues": 0
+      },
+      {
+       "title": "第23章 治疗慢性心功能不全的药物",
+       "durationSec": 1501,
+       "status": "rendered",
+       "no": 23,
+       "cues": 0
+      },
+      {
+       "title": "第24章 抗高血压药",
+       "durationSec": 1373,
+       "status": "rendered",
+       "no": 24,
+       "cues": 0
+      },
+      {
+       "title": "第25章 抗心绞痛药",
+       "durationSec": 1478,
+       "status": "rendered",
+       "no": 25,
+       "cues": 0
+      },
+      {
+       "title": "第26章 抗心律失常药",
+       "durationSec": 1587,
+       "status": "rendered",
+       "no": 26,
+       "cues": 0
+      },
+      {
+       "title": "第27章 抗动脉粥样硬化药",
+       "durationSec": 1243,
+       "status": "rendered",
+       "no": 27,
+       "cues": 0
+      },
+      {
+       "title": "第28章 利尿药与脱水药",
+       "durationSec": 1352,
+       "status": "rendered",
+       "no": 28,
+       "cues": 0
+      },
+      {
+       "title": "第29章 消化系统药",
+       "durationSec": 1073,
+       "status": "rendered",
+       "no": 29,
+       "cues": 0
+      },
+      {
+       "title": "第30章 呼吸系统药",
+       "durationSec": 1046,
+       "status": "rendered",
+       "no": 30,
+       "cues": 0
+      },
+      {
+       "title": "第31章 子宫兴奋药",
+       "durationSec": 1537,
+       "status": "rendered",
+       "no": 31,
+       "cues": 0
+      },
+      {
+       "title": "第32章 抗贫血药",
+       "durationSec": 1582,
+       "status": "rendered",
+       "no": 32,
+       "cues": 0
+      },
+      {
+       "title": "第33章 作用于凝血系统药物",
+       "durationSec": 1487,
+       "status": "rendered",
+       "no": 33,
+       "cues": 0
+      },
+      {
+       "title": "第34章 肾上腺皮质激素类药",
+       "durationSec": 1649,
+       "status": "rendered",
+       "no": 34,
+       "cues": 0
+      },
+      {
+       "title": "第35章 甲状腺激素与抗甲状腺药",
+       "durationSec": 1078,
+       "status": "rendered",
+       "no": 35,
+       "cues": 0
+      },
+      {
+       "title": "第36章 降血糖药",
+       "durationSec": 976,
+       "status": "rendered",
+       "no": 36,
+       "cues": 0
+      },
+      {
+       "title": "第37章 性激素类药及避孕药",
+       "durationSec": 924,
+       "status": "rendered",
+       "no": 37,
+       "cues": 0
+      },
+      {
+       "title": "第38章 抗病原微生物药物概论",
+       "durationSec": 958,
+       "status": "rendered",
+       "no": 38,
+       "cues": 0
+      },
+      {
+       "title": "第39章 人工合成抗菌药",
+       "durationSec": 1377,
+       "status": "rendered",
+       "no": 39,
+       "cues": 0
+      },
+      {
+       "title": "第40章 β-内酰胺类抗生素",
+       "durationSec": 1482,
+       "status": "rendered",
+       "no": 40,
+       "cues": 0
+      },
+      {
+       "title": "第41章 大环内酯类、林可霉素类及多肽类抗生素",
+       "durationSec": 1398,
+       "status": "rendered",
+       "no": 41,
+       "cues": 0
+      },
+      {
+       "title": "第42章 氨基糖苷类抗生素",
+       "durationSec": 1497,
+       "status": "rendered",
+       "no": 42,
+       "cues": 0
+      },
+      {
+       "title": "第43章 四环素类与氯霉素类",
+       "durationSec": 1188,
+       "status": "rendered",
+       "no": 43,
+       "cues": 0
+      },
+      {
+       "title": "第44章 抗真菌药与抗病毒药",
+       "durationSec": 1042,
+       "status": "rendered",
+       "no": 44,
+       "cues": 0
+      },
+      {
+       "title": "第45章 抗结核病药及抗麻风病药",
+       "durationSec": 1053,
+       "status": "rendered",
+       "no": 45,
+       "cues": 0
+      },
+      {
+       "title": "第46章 抗寄生虫药",
+       "durationSec": 1380,
+       "status": "rendered",
+       "no": 46,
+       "cues": 0
+      },
+      {
+       "title": "第47章 抗恶性肿瘤药",
+       "durationSec": 1445,
+       "status": "rendered",
+       "no": 47,
+       "cues": 0
+      },
+      {
+       "title": "第48章 免疫抑制药",
+       "durationSec": 1681,
+       "status": "rendered",
+       "no": 48,
+       "cues": 0
+      },
+      {
+       "title": "第49章 免疫增强药",
+       "durationSec": 1679,
+       "status": "rendered",
+       "no": 49,
+       "cues": 0
+      }
+     ]
+    }
+   ],
+   "lectures": 49,
+   "cues": 0,
+   "durationSec": 64694.356,
+   "plan": "departments/09-jichu/12-yaoli-xue/video/教案.md"
+  },
+  {
+   "slug": "13-mianyi-bingyuan-shengwu",
+   "title": "免疫学基础与病原生物学",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 4,
+   "chapters": 15,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "14-jibing-xue-jichu",
+   "title": "疾病学基础",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 4,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "15-liuxingbing-xue",
+   "title": "流行病学",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 5,
+   "chapters": 18,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "16-jichu-keyan-shixun",
+   "title": "科研实训与实验设计",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 9,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  },
+  {
+   "slug": "17-jichu-biye-sheji",
+   "title": "基础医学毕业设计与知识移交",
+   "dept": "09-jichu",
+   "deptTitle": "基础医学院",
+   "semester": 10,
+   "chapters": 6,
+   "status": "none",
+   "sources": [],
+   "lectures": 0,
+   "cues": 0,
+   "durationSec": 0,
+   "plan": null
+  }
+ ],
+ "unattached": [
+  {
+   "slug": "chenruchun-shanghan",
+   "shape": "other"
+  },
+  {
+   "slug": "leijing-tuyi",
+   "shape": "text/subtitle"
+  },
+  {
+   "slug": "n-lectures",
+   "shape": "other"
+  },
+  {
+   "slug": "neijing-quanwen",
+   "shape": "text/subtitle"
+  },
+  {
+   "slug": "neijing-yuyi",
+   "shape": "text/subtitle"
+  },
+  {
+   "slug": "neiyin-qiqing",
+   "shape": "text/subtitle"
+  },
+  {
+   "slug": "shanghan-jiagou",
+   "shape": "text/subtitle"
+  },
+  {
+   "slug": "shanghan-qilv",
+   "shape": "other"
+  },
+  {
+   "slug": "tcmscheme",
+   "shape": "text/subtitle"
+  },
+  {
+   "slug": "textbooks-batch",
+   "shape": "other"
+  },
+  {
+   "slug": "waiyin-liuyin",
+   "shape": "text/subtitle"
+  }
+ ]
+}

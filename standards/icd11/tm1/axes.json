@@ -1,0 +1,9558 @@
+{
+ "$about": "ICD-11 TM1 四轴词表（body structures / causal explanations / properties / severity） + 探针组合器：词项与轴序全部来自官方 472 条 TM1 题名的统计，中文构件来自官方 zh/en 对",
+ "meta": {
+  "rule": "Traditional Medicine disorder and pattern are named after the body structures, causal explanations, properties and severity (ICD-11 Reference Guide §3.2.26, PDF p.331)",
+  "source": {
+   "zhNames": "standards\\icd11\\zh-names.json"
+  },
+  "policy": "英文种子人工列，只保留官方题名里 ≥1 次的项（零次进 dropped）；轴序由 ≥2 轴的题名两两计先后；中文构件只收**官方 zh/en 对里读得出来**的（每条带码），官方 472 条里没有的构件（内停/失养/浸淫/互结/晶珠混浊）不补 —— 没有出处就不造",
+  "counts": {
+   "tm1Titles": 472,
+   "parsed": 363,
+   "unparsed": 109,
+   "perAxis": {
+    "locus": 38,
+    "cause": 12,
+    "property": 50,
+    "severity": 5
+   },
+   "dropped": 40,
+   "zhExtensions": 7
+  }
+ },
+ "lexicon": {
+  "locus": [
+   {
+    "en": "liver",
+    "n": 27,
+    "codes": [
+     "SA02",
+     "SA04",
+     "SA0Y",
+     "SA0Z",
+     "SF50",
+     "SF51",
+     "SF52",
+     "SF53",
+     "SF54",
+     "SF55",
+     "SF56",
+     "SF57",
+     "SF58",
+     "SF59",
+     "SF5A",
+     "SF5B",
+     "SF5C",
+     "SF5H",
+     "SF5J",
+     "SF5K",
+     "SF5L",
+     "SF5M",
+     "SF5Y",
+     "SF5Z",
+     "SF6G",
+     "SG2B",
+     "SH62"
+    ]
+   },
+   {
+    "en": "lung",
+    "n": 27,
+    "codes": [
+     "SA82",
+     "SA84",
+     "SA85",
+     "SA8Y",
+     "SA8Z",
+     "SF5M",
+     "SF6K",
+     "SF7L",
+     "SF80",
+     "SF81",
+     "SF82",
+     "SF83",
+     "SF84",
+     "SF85",
+     "SF86",
+     "SF87",
+     "SF88",
+     "SF89",
+     "SF8A",
+     "SF8B",
+     "SF8C",
+     "SF8D",
+     "SF8E",
+     "SF8Y",
+     "SF8Z",
+     "SG20",
+     "SG81"
+    ]
+   },
+   {
+    "en": "heart",
+    "n": 25,
+    "codes": [
+     "SA20",
+     "SA4Y",
+     "SA4Z",
+     "SF14",
+     "SF60",
+     "SF61",
+     "SF62",
+     "SF63",
+     "SF64",
+     "SF65",
+     "SF66",
+     "SF67",
+     "SF68",
+     "SF69",
+     "SF6A",
+     "SF6B",
+     "SF6G",
+     "SF6H",
+     "SF6J",
+     "SF6K",
+     "SF6L",
+     "SF6M",
+     "SF6Y",
+     "SF6Z",
+     "SG24"
+    ]
+   },
+   {
+    "en": "spleen",
+    "n": 22,
+    "codes": [
+     "SA5Y",
+     "SA5Z",
+     "SF5J",
+     "SF6J",
+     "SF70",
+     "SF71",
+     "SF72",
+     "SF73",
+     "SF74",
+     "SF75",
+     "SF76",
+     "SF77",
+     "SF78",
+     "SF79",
+     "SF7A",
+     "SF7B",
+     "SF7K",
+     "SF7L",
+     "SF7M",
+     "SF7Y",
+     "SF7Z",
+     "SG23"
+    ]
+   },
+   {
+    "en": "kidney",
+    "n": 21,
+    "codes": [
+     "SB00",
+     "SB06.0",
+     "SB0Y",
+     "SB0Z",
+     "SF5H",
+     "SF6L",
+     "SF6M",
+     "SF7M",
+     "SF82",
+     "SF90",
+     "SF91",
+     "SF92",
+     "SF93",
+     "SF94",
+     "SF95",
+     "SF96",
+     "SF97",
+     "SF98",
+     "SF9Y",
+     "SF9Z",
+     "SG27"
+    ]
+   },
+   {
+    "en": "meridian",
+    "n": 21,
+    "codes": [
+     "SF5B",
+     "SF5C",
+     "SF63",
+     "SG20",
+     "SG21",
+     "SG22",
+     "SG23",
+     "SG24",
+     "SG25",
+     "SG26",
+     "SG27",
+     "SG28",
+     "SG29",
+     "SG2A",
+     "SG2B",
+     "SG2Y",
+     "SG2Z",
+     "SG3Y",
+     "SG3Z",
+     "SG5Y",
+     "SG5Z"
+    ]
+   },
+   {
+    "en": "phase",
+    "n": 17,
+    "codes": [
+     "SG8Y",
+     "SG8Z",
+     "SG90",
+     "SG91",
+     "SG92",
+     "SG9Y",
+     "SG9Z",
+     "SH01",
+     "SH02",
+     "SH0Y",
+     "SH0Z",
+     "SH10",
+     "SH11",
+     "SH1Y",
+     "SH1Z",
+     "SH3Y",
+     "SH3Z"
+    ]
+   },
+   {
+    "en": "stage",
+    "n": 13,
+    "codes": [
+     "SG60",
+     "SG61",
+     "SG62",
+     "SG63",
+     "SG64",
+     "SG65",
+     "SG6Y",
+     "SG6Z",
+     "SG70",
+     "SG71",
+     "SG72",
+     "SG7Y",
+     "SG7Z"
+    ]
+   },
+   {
+    "en": "intestine",
+    "n": 12,
+    "codes": [
+     "SF6D",
+     "SF6E",
+     "SF6F",
+     "SF7J",
+     "SF8B",
+     "SF8F",
+     "SF8G",
+     "SF8H",
+     "SF8J",
+     "SG21",
+     "SG25",
+     "SH41"
+    ]
+   },
+   {
+    "en": "menstruation",
+    "n": 9,
+    "codes": [
+     "SB80",
+     "SB81",
+     "SB82",
+     "SB8Y",
+     "SB8Z",
+     "SB91",
+     "SB92",
+     "SB9Y",
+     "SB9Z"
+    ]
+   },
+   {
+    "en": "stomach",
+    "n": 9,
+    "codes": [
+     "SA51",
+     "SF5K",
+     "SF5L",
+     "SF7C",
+     "SF7D",
+     "SF7E",
+     "SF7F",
+     "SF7H",
+     "SG22"
+    ]
+   },
+   {
+    "en": "gallbladder",
+    "n": 8,
+    "codes": [
+     "SA05",
+     "SF5A",
+     "SF5D",
+     "SF5E",
+     "SF5F",
+     "SF5G",
+     "SF6H",
+     "SG2A"
+    ]
+   },
+   {
+    "en": "vessel",
+    "n": 8,
+    "codes": [
+     "SG30",
+     "SG31",
+     "SG32",
+     "SG33",
+     "SG34",
+     "SG35",
+     "SG36",
+     "SG37"
+    ]
+   },
+   {
+    "en": "bladder",
+    "n": 7,
+    "codes": [
+     "SC02",
+     "SF9E",
+     "SF9F",
+     "SF9G",
+     "SF9H",
+     "SF9J",
+     "SG26"
+    ]
+   },
+   {
+    "en": "large intestine",
+    "n": 6,
+    "codes": [
+     "SF8F",
+     "SF8G",
+     "SF8H",
+     "SF8J",
+     "SG21",
+     "SH41"
+    ]
+   },
+   {
+    "en": "small intestine",
+    "n": 5,
+    "codes": [
+     "SF6D",
+     "SF6E",
+     "SF6F",
+     "SG25",
+     "SH41"
+    ]
+   },
+   {
+    "en": "body",
+    "n": 4,
+    "codes": [
+     "SD6Y",
+     "SD6Z",
+     "SF4Y",
+     "SF4Z"
+    ]
+   },
+   {
+    "en": "chest",
+    "n": 4,
+    "codes": [
+     "SA2Y",
+     "SA2Z",
+     "SA86",
+     "SH52"
+    ]
+   },
+   {
+    "en": "joint",
+    "n": 4,
+    "codes": [
+     "SC5Y",
+     "SC5Z",
+     "SC6Y",
+     "SC6Z"
+    ]
+   },
+   {
+    "en": "organ",
+    "n": 4,
+    "codes": [
+     "SB2Y",
+     "SB2Z",
+     "SG1Y",
+     "SG1Z"
+    ]
+   },
+   {
+    "en": "reproductive",
+    "n": 4,
+    "codes": [
+     "SC2Y",
+     "SC2Z",
+     "SC4Y",
+     "SC4Z"
+    ]
+   },
+   {
+    "en": "systems",
+    "n": 4,
+    "codes": [
+     "SF5J",
+     "SF5K",
+     "SF6J",
+     "SF6L"
+    ]
+   },
+   {
+    "en": "uterus",
+    "n": 4,
+    "codes": [
+     "SF99",
+     "SF9A",
+     "SF9B",
+     "SF9C"
+    ]
+   },
+   {
+    "en": "muscle",
+    "n": 3,
+    "codes": [
+     "SC60",
+     "SC6Y",
+     "SC6Z"
+    ]
+   },
+   {
+    "en": "skin",
+    "n": 3,
+    "codes": [
+     "SB73",
+     "SB7Y",
+     "SB7Z"
+    ]
+   },
+   {
+    "en": "triple energizer",
+    "n": 3,
+    "codes": [
+     "SG29",
+     "SG7Y",
+     "SG7Z"
+    ]
+   },
+   {
+    "en": "bone",
+    "n": 2,
+    "codes": [
+     "SC6Y",
+     "SC6Z"
+    ]
+   },
+   {
+    "en": "brain",
+    "n": 2,
+    "codes": [
+     "SD4Y",
+     "SD4Z"
+    ]
+   },
+   {
+    "en": "collateral",
+    "n": 2,
+    "codes": [
+     "SG5Y",
+     "SG5Z"
+    ]
+   },
+   {
+    "en": "ear",
+    "n": 2,
+    "codes": [
+     "SC9Y",
+     "SC9Z"
+    ]
+   },
+   {
+    "en": "eye",
+    "n": 2,
+    "codes": [
+     "SC9Y",
+     "SC9Z"
+    ]
+   },
+   {
+    "en": "nose",
+    "n": 2,
+    "codes": [
+     "SC9Y",
+     "SC9Z"
+    ]
+   },
+   {
+    "en": "throat",
+    "n": 2,
+    "codes": [
+     "SC9Y",
+     "SC9Z"
+    ]
+   },
+   {
+    "en": "anus",
+    "n": 1,
+    "codes": [
+     "SB7C"
+    ]
+   },
+   {
+    "en": "back",
+    "n": 1,
+    "codes": [
+     "SH40"
+    ]
+   },
+   {
+    "en": "hypochondrium",
+    "n": 1,
+    "codes": [
+     "SA00"
+    ]
+   },
+   {
+    "en": "marrow",
+    "n": 1,
+    "codes": [
+     "SF95"
+    ]
+   },
+   {
+    "en": "tongue",
+    "n": 1,
+    "codes": [
+     "SD24"
+    ]
+   }
+  ],
+  "cause": [
+   {
+    "en": "heat",
+    "n": 36,
+    "codes": [
+     "SA84",
+     "SA91",
+     "SE00",
+     "SE72",
+     "SE78",
+     "SE7A",
+     "SE84",
+     "SE85",
+     "SF02",
+     "SF59",
+     "SF5A",
+     "SF5B",
+     "SF5F",
+     "SF6E",
+     "SF78",
+     "SF7F",
+     "SF87",
+     "SF88",
+     "SF89",
+     "SF8A",
+     "SF8B",
+     "SF8F",
+     "SF8G",
+     "SF99",
+     "SF9B",
+     "SF9F",
+     "SF9G",
+     "SG81",
+     "SG90",
+     "SG91",
+     "SH01",
+     "SH02",
+     "SH11",
+     "SH52",
+     "SH62",
+     "SH63"
+    ]
+   },
+   {
+    "en": "cold",
+    "n": 22,
+    "codes": [
+     "SA60",
+     "SC50",
+     "SD90",
+     "SE73",
+     "SE78",
+     "SE7A",
+     "SE81",
+     "SF03",
+     "SF5C",
+     "SF5G",
+     "SF6F",
+     "SF7B",
+     "SF7H",
+     "SF7J",
+     "SF85",
+     "SF87",
+     "SF8C",
+     "SF8J",
+     "SF9C",
+     "SF9D",
+     "SF9J",
+     "SH61"
+    ]
+   },
+   {
+    "en": "dampness",
+    "n": 18,
+    "codes": [
+     "SB30",
+     "SB71",
+     "SB76",
+     "SC52",
+     "SE02",
+     "SE82",
+     "SF5A",
+     "SF5B",
+     "SF78",
+     "SF79",
+     "SF7B",
+     "SF7G",
+     "SF8G",
+     "SF9B",
+     "SF9G",
+     "SG80",
+     "SG91",
+     "SG92"
+    ]
+   },
+   {
+    "en": "wind",
+    "n": 16,
+    "codes": [
+     "SB06.1",
+     "SC11",
+     "SC51",
+     "SC71",
+     "SD11",
+     "SD30",
+     "SD31",
+     "SD3Y",
+     "SD3Z",
+     "SE80",
+     "SF15",
+     "SF56",
+     "SF59",
+     "SF8A",
+     "SF8C",
+     "SH50"
+    ]
+   },
+   {
+    "en": "phlegm",
+    "n": 10,
+    "codes": [
+     "SD95",
+     "SF12",
+     "SF13",
+     "SF14",
+     "SF15",
+     "SF5E",
+     "SF85",
+     "SF86",
+     "SF89",
+     "SF9A"
+    ]
+   },
+   {
+    "en": "factor",
+    "n": 9,
+    "codes": [
+     "SE80",
+     "SE81",
+     "SE82",
+     "SE83",
+     "SE84",
+     "SE85",
+     "SE86",
+     "SE8Y",
+     "SE8Z"
+    ]
+   },
+   {
+    "en": "fire",
+    "n": 8,
+    "codes": [
+     "SD87",
+     "SE84",
+     "SF14",
+     "SF58",
+     "SF5L",
+     "SF5M",
+     "SF68",
+     "SF69"
+    ]
+   },
+   {
+    "en": "dryness",
+    "n": 5,
+    "codes": [
+     "SE83",
+     "SF04",
+     "SF8D",
+     "SF8E",
+     "SH63"
+    ]
+   },
+   {
+    "en": "water",
+    "n": 4,
+    "codes": [
+     "SF6A",
+     "SF7A",
+     "SF92",
+     "SF9H"
+    ]
+   },
+   {
+    "en": "food",
+    "n": 2,
+    "codes": [
+     "SA54",
+     "SF73"
+    ]
+   },
+   {
+    "en": "fatigue",
+    "n": 1,
+    "codes": [
+     "SD91"
+    ]
+   },
+   {
+    "en": "fright",
+    "n": 1,
+    "codes": [
+     "SE35"
+    ]
+   }
+  ],
+  "property": [
+   {
+    "en": "deficiency",
+    "n": 52,
+    "codes": [
+     "SE75",
+     "SE79",
+     "SE90",
+     "SF00",
+     "SF10",
+     "SF20",
+     "SF50",
+     "SF51",
+     "SF53",
+     "SF54",
+     "SF5D",
+     "SF5H",
+     "SF60",
+     "SF61",
+     "SF62",
+     "SF64",
+     "SF65",
+     "SF66",
+     "SF6F",
+     "SF6G",
+     "SF6H",
+     "SF6J",
+     "SF6K",
+     "SF6M",
+     "SF70",
+     "SF72",
+     "SF73",
+     "SF75",
+     "SF76",
+     "SF77",
+     "SF79",
+     "SF7A",
+     "SF7C",
+     "SF7E",
+     "SF7L",
+     "SF7M",
+     "SF80",
+     "SF81",
+     "SF82",
+     "SF83",
+     "SF84",
+     "SF8H",
+     "SF8J",
+     "SF90",
+     "SF92",
+     "SF93",
+     "SF94",
+     "SF95",
+     "SF96",
+     "SF97",
+     "SF9D",
+     "SF9J"
+    ]
+   },
+   {
+    "en": "qi",
+    "n": 36,
+    "codes": [
+     "SD70",
+     "SD7Y",
+     "SD7Z",
+     "SE90",
+     "SE91",
+     "SE92",
+     "SE93",
+     "SE94",
+     "SE9Y",
+     "SE9Z",
+     "SF53",
+     "SF57",
+     "SF5D",
+     "SF60",
+     "SF62",
+     "SF65",
+     "SF6A",
+     "SF6D",
+     "SF6H",
+     "SF6K",
+     "SF70",
+     "SF71",
+     "SF72",
+     "SF7C",
+     "SF7D",
+     "SF80",
+     "SF83",
+     "SF90",
+     "SF91",
+     "SF92",
+     "SG90",
+     "SG91",
+     "SG92",
+     "SG9Y",
+     "SG9Z",
+     "SH00"
+    ]
+   },
+   {
+    "en": "yin",
+    "n": 33,
+    "codes": [
+     "SE71",
+     "SF50",
+     "SF5H",
+     "SF64",
+     "SF65",
+     "SF76",
+     "SF7E",
+     "SF81",
+     "SF82",
+     "SF83",
+     "SF93",
+     "SF94",
+     "SG32",
+     "SG34",
+     "SG63",
+     "SG64",
+     "SG65",
+     "SH51",
+     "SH53",
+     "SH60",
+     "SH61",
+     "SH62",
+     "SH63",
+     "SH64",
+     "SH6Y",
+     "SH6Z",
+     "SH70",
+     "SH71",
+     "SH72",
+     "SH73",
+     "SH74",
+     "SH7Y",
+     "SH7Z"
+    ]
+   },
+   {
+    "en": "yang",
+    "n": 30,
+    "codes": [
+     "SE70",
+     "SF51",
+     "SF52",
+     "SF66",
+     "SF67",
+     "SF6M",
+     "SF77",
+     "SF7M",
+     "SF84",
+     "SF94",
+     "SF97",
+     "SG33",
+     "SG35",
+     "SG60",
+     "SG61",
+     "SG62",
+     "SG80",
+     "SH40",
+     "SH41",
+     "SH42",
+     "SH4Y",
+     "SH4Z",
+     "SH50",
+     "SH51",
+     "SH52",
+     "SH53",
+     "SH54",
+     "SH5Y",
+     "SH5Z",
+     "SH71"
+    ]
+   },
+   {
+    "en": "blood",
+    "n": 23,
+    "codes": [
+     "SD7Y",
+     "SD7Z",
+     "SF00",
+     "SF01",
+     "SF02",
+     "SF03",
+     "SF04",
+     "SF0Y",
+     "SF0Z",
+     "SF54",
+     "SF55",
+     "SF61",
+     "SF62",
+     "SF6G",
+     "SF74",
+     "SF75",
+     "SF99",
+     "SF9E",
+     "SH02",
+     "SH10",
+     "SH11",
+     "SH1Y",
+     "SH1Z"
+    ]
+   },
+   {
+    "en": "exterior",
+    "n": 8,
+    "codes": [
+     "SE76",
+     "SF87",
+     "SH40",
+     "SH42",
+     "SH54",
+     "SH60",
+     "SH64",
+     "SH74"
+    ]
+   },
+   {
+    "en": "fluid",
+    "n": 8,
+    "codes": [
+     "SA83",
+     "SD7Y",
+     "SD7Z",
+     "SF10",
+     "SF11",
+     "SF1Y",
+     "SF1Z",
+     "SF8H"
+    ]
+   },
+   {
+    "en": "interior",
+    "n": 8,
+    "codes": [
+     "SB7B",
+     "SE77",
+     "SF56",
+     "SH41",
+     "SH42",
+     "SH54",
+     "SH64",
+     "SH74"
+    ]
+   },
+   {
+    "en": "stagnation",
+    "n": 8,
+    "codes": [
+     "SB00",
+     "SE91",
+     "SF57",
+     "SF5C",
+     "SF6D",
+     "SF72",
+     "SF7J",
+     "SF9C"
+    ]
+   },
+   {
+    "en": "impediment",
+    "n": 7,
+    "codes": [
+     "SA2Y",
+     "SA2Z",
+     "SC50",
+     "SC51",
+     "SC52",
+     "SC5Y",
+     "SC5Z"
+    ]
+   },
+   {
+    "en": "abscess",
+    "n": 6,
+    "codes": [
+     "SA04",
+     "SA59",
+     "SB60",
+     "SB61",
+     "SB6Y",
+     "SB6Z"
+    ]
+   },
+   {
+    "en": "accumulation",
+    "n": 6,
+    "codes": [
+     "SF79",
+     "SF86",
+     "SF99",
+     "SF9E",
+     "SF9F",
+     "SF9H"
+    ]
+   },
+   {
+    "en": "defense",
+    "n": 5,
+    "codes": [
+     "SG80",
+     "SG81",
+     "SG8Y",
+     "SG8Z",
+     "SH00"
+    ]
+   },
+   {
+    "en": "edema",
+    "n": 5,
+    "codes": [
+     "SB06",
+     "SB06.0",
+     "SB06.1",
+     "SB06.Y",
+     "SB06.Z"
+    ]
+   },
+   {
+    "en": "invading",
+    "n": 5,
+    "codes": [
+     "SF5L",
+     "SF5M",
+     "SF7H",
+     "SF8A",
+     "SF8D"
+    ]
+   },
+   {
+    "en": "nutrient",
+    "n": 5,
+    "codes": [
+     "SH00",
+     "SH01",
+     "SH02",
+     "SH0Y",
+     "SH0Z"
+    ]
+   },
+   {
+    "en": "obstructing",
+    "n": 5,
+    "codes": [
+     "SF85",
+     "SF89",
+     "SF9A",
+     "SG80",
+     "SG92"
+    ]
+   },
+   {
+    "en": "pain",
+    "n": 5,
+    "codes": [
+     "SA00",
+     "SA20",
+     "SA58",
+     "SC10",
+     "SE32"
+    ]
+   },
+   {
+    "en": "combined",
+    "n": 4,
+    "codes": [
+     "SH42",
+     "SH54",
+     "SH64",
+     "SH74"
+    ]
+   },
+   {
+    "en": "depletion",
+    "n": 4,
+    "codes": [
+     "SF75",
+     "SF95",
+     "SH51",
+     "SH71"
+    ]
+   },
+   {
+    "en": "disharmony",
+    "n": 4,
+    "codes": [
+     "SF5J",
+     "SF5K",
+     "SF6L",
+     "SH00"
+    ]
+   },
+   {
+    "en": "distension",
+    "n": 4,
+    "codes": [
+     "SA02",
+     "SA05",
+     "SA52",
+     "SA82"
+    ]
+   },
+   {
+    "en": "essence",
+    "n": 4,
+    "codes": [
+     "SF20",
+     "SF2Y",
+     "SF2Z",
+     "SF96"
+    ]
+   },
+   {
+    "en": "excess",
+    "n": 4,
+    "codes": [
+     "SE74",
+     "SE79",
+     "SF6E",
+     "SF8F"
+    ]
+   },
+   {
+    "en": "retention",
+    "n": 4,
+    "codes": [
+     "SA54",
+     "SA83",
+     "SF73",
+     "SF92"
+    ]
+   },
+   {
+    "en": "warmth",
+    "n": 4,
+    "codes": [
+     "SE01",
+     "SE02",
+     "SE0Y",
+     "SE0Z"
+    ]
+   },
+   {
+    "en": "convulsion",
+    "n": 3,
+    "codes": [
+     "SD20",
+     "SE33",
+     "SE34"
+    ]
+   },
+   {
+    "en": "damaging",
+    "n": 3,
+    "codes": [
+     "SF6C",
+     "SF7K",
+     "SF98"
+    ]
+   },
+   {
+    "en": "depression",
+    "n": 3,
+    "codes": [
+     "SD82",
+     "SF55",
+     "SF5E"
+    ]
+   },
+   {
+    "en": "entering",
+    "n": 3,
+    "codes": [
+     "SG90",
+     "SH02",
+     "SH11"
+    ]
+   },
+   {
+    "en": "spirit",
+    "n": 3,
+    "codes": [
+     "SF69",
+     "SF6B",
+     "SF6C"
+    ]
+   },
+   {
+    "en": "block",
+    "n": 2,
+    "codes": [
+     "SB04",
+     "SB05"
+    ]
+   },
+   {
+    "en": "collapse",
+    "n": 2,
+    "codes": [
+     "SE94",
+     "SF67"
+    ]
+   },
+   {
+    "en": "failing",
+    "n": 2,
+    "codes": [
+     "SF74",
+     "SF91"
+    ]
+   },
+   {
+    "en": "flooding",
+    "n": 2,
+    "codes": [
+     "SB01",
+     "SF7A"
+    ]
+   },
+   {
+    "en": "harassing",
+    "n": 2,
+    "codes": [
+     "SF14",
+     "SF69"
+    ]
+   },
+   {
+    "en": "obstruction",
+    "n": 2,
+    "codes": [
+     "SF63",
+     "SF8E"
+    ]
+   },
+   {
+    "en": "sinking",
+    "n": 2,
+    "codes": [
+     "SE93",
+     "SF71"
+    ]
+   },
+   {
+    "en": "stasis",
+    "n": 2,
+    "codes": [
+     "SF01",
+     "SF55"
+    ]
+   },
+   {
+    "en": "turbid",
+    "n": 2,
+    "codes": [
+     "SB03",
+     "SF86"
+    ]
+   },
+   {
+    "en": "ascendant",
+    "n": 1,
+    "codes": [
+     "SF52"
+    ]
+   },
+   {
+    "en": "consumption",
+    "n": 1,
+    "codes": [
+     "SD91"
+    ]
+   },
+   {
+    "en": "dual",
+    "n": 1,
+    "codes": [
+     "SF62"
+    ]
+   },
+   {
+    "en": "hyperactivity",
+    "n": 1,
+    "codes": [
+     "SF52"
+    ]
+   },
+   {
+    "en": "numbness",
+    "n": 1,
+    "codes": [
+     "SC62"
+    ]
+   },
+   {
+    "en": "paralysis",
+    "n": 1,
+    "codes": [
+     "SD00"
+    ]
+   },
+   {
+    "en": "spasm",
+    "n": 1,
+    "codes": [
+     "SC60"
+    ]
+   },
+   {
+    "en": "true",
+    "n": 1,
+    "codes": [
+     "SA20"
+    ]
+   },
+   {
+    "en": "unstable",
+    "n": 1,
+    "codes": [
+     "SC01"
+    ]
+   },
+   {
+    "en": "wheezing",
+    "n": 1,
+    "codes": [
+     "SA81"
+    ]
+   }
+  ],
+  "severity": [
+   {
+    "en": "acute",
+    "n": 1,
+    "codes": [
+     "SE33"
+    ]
+   },
+   {
+    "en": "persistent",
+    "n": 1,
+    "codes": [
+     "SB0A"
+    ]
+   },
+   {
+    "en": "recurrent",
+    "n": 1,
+    "codes": [
+     "SE34"
+    ]
+   },
+   {
+    "en": "severe",
+    "n": 1,
+    "codes": [
+     "SD92"
+    ]
+   },
+   {
+    "en": "sudden",
+    "n": 1,
+    "codes": [
+     "SC80"
+    ]
+   }
+  ]
+ },
+ "zhExtensions": [
+  {
+   "zh": "壅",
+   "en": "obstructing",
+   "codes": [
+    "SF89"
+   ],
+   "why": "痰热壅肺证 = Phlegm heat obstructing the lung pattern"
+  },
+  {
+   "zh": "痹",
+   "en": "impediment",
+   "codes": [
+    "SA2Y",
+    "SC50"
+   ],
+   "why": "胸痹 / 痛痹 = chest / cold impediment disorder"
+  },
+  {
+   "zh": "瘀",
+   "en": "stasis",
+   "codes": [
+    "SF01"
+   ],
+   "why": "血瘀证 = Blood stasis pattern"
+  },
+  {
+   "zh": "阻",
+   "en": "obstruction",
+   "codes": [
+    "SF63"
+   ],
+   "why": "心脉痹阻证 = Heart meridian obstruction pattern"
+  },
+  {
+   "zh": "亏",
+   "en": "depletion",
+   "codes": [
+    "SF75",
+    "SF95"
+   ],
+   "why": "脾虚血亏证 = spleen deficiency and blood depletion"
+  },
+  {
+   "zh": "淫",
+   "en": "factor",
+   "codes": [
+    "SE80",
+    "SE82"
+   ],
+   "why": "风淫证 / 湿淫证 = Wind / Dampness factor pattern"
+  },
+  {
+   "zh": "犯",
+   "en": "invading",
+   "codes": [
+    "SF5L",
+    "SF8A"
+   ],
+   "why": "肝火犯胃证 = liver fire invading the stomach system"
+  }
+ ],
+ "grammar": {
+  "order": [
+   "locus",
+   "severity",
+   "cause",
+   "property"
+  ],
+  "note": "轴序由「出现了 ≥2 个不同轴的官方题名」两两计先后、按多数排定；单轴题名不参与",
+  "precedence": [
+   {
+    "pair": "locus>property",
+    "n": 79
+   },
+   {
+    "pair": "property>locus",
+    "n": 50
+   },
+   {
+    "pair": "locus>cause",
+    "n": 34
+   },
+   {
+    "pair": "cause>property",
+    "n": 32
+   },
+   {
+    "pair": "property>cause",
+    "n": 23
+   },
+   {
+    "pair": "cause>locus",
+    "n": 23
+   },
+   {
+    "pair": "severity>property",
+    "n": 2
+   }
+  ]
+ },
+ "audit": {
+  "droppedSeeds": [
+   {
+    "axis": "locus",
+    "en": "abdomen",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "locus",
+    "en": "mouth",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "locus",
+    "en": "tooth",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "locus",
+    "en": "hair",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "locus",
+    "en": "nail",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "locus",
+    "en": "genitals",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "locus",
+    "en": "neck",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "locus",
+    "en": "limb",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "locus",
+    "en": "sinew",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "cause",
+    "en": "alcohol",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "cause",
+    "en": "emotion",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "cause",
+    "en": "anger",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "cause",
+    "en": "worry",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "cause",
+    "en": "overwork",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "cause",
+    "en": "trauma",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "cause",
+    "en": "insect",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "cause",
+    "en": "parasite",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "cause",
+    "en": "pestilence",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "cause",
+    "en": "summerheat",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "cause",
+    "en": "toxin",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "cause",
+    "en": "poison",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "property",
+    "en": "binding",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "property",
+    "en": "blockage",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "property",
+    "en": "rebellion",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "property",
+    "en": "prolapse",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "property",
+    "en": "atrophy",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "property",
+    "en": "flaccidity",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "property",
+    "en": "itching",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "property",
+    "en": "ulcer",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "property",
+    "en": "erosion",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "property",
+    "en": "failure",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "property",
+    "en": "constrain",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "property",
+    "en": "constraint",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "property",
+    "en": "interaction",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "property",
+    "en": "flood",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "severity",
+    "en": "mild",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "severity",
+    "en": "chronic",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "severity",
+    "en": "profuse",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "severity",
+    "en": "protracted",
+    "why": "官方 472 条题名里 0 次"
+   },
+   {
+    "axis": "severity",
+    "en": "intractable",
+    "why": "官方 472 条题名里 0 次"
+   }
+  ],
+  "extensionIssues": [],
+  "unparsedCodes": [
+   "SA01",
+   "SA03",
+   "SA10",
+   "SA11",
+   "SA1Y",
+   "SA1Z",
+   "SA50",
+   "SA53",
+   "SA55",
+   "SA56",
+   "SA57",
+   "SA70",
+   "SA7Y",
+   "SA7Z",
+   "SA80",
+   "SA90",
+   "SA9Y",
+   "SA9Z",
+   "SB02",
+   "SB07",
+   "SB08",
+   "SB09",
+   "SB0B",
+   "SB0C",
+   "SB31",
+   "SB40",
+   "SB4Y",
+   "SB4Z",
+   "SB50",
+   "SB70",
+   "SB72",
+   "SB74",
+   "SB75",
+   "SB77",
+   "SB78",
+   "SB79",
+   "SB7A",
+   "SB90",
+   "SB93",
+   "SB94",
+   "SB95",
+   "SB96",
+   "SC00",
+   "SC03",
+   "SC04",
+   "SC0Y",
+   "SC0Z",
+   "SC12",
+   "SC13",
+   "SC1Y",
+   "SC1Z",
+   "SC20",
+   "SC21",
+   "SC22",
+   "SC23",
+   "SC24",
+   "SC61",
+   "SC63",
+   "SC70",
+   "SC72",
+   "SC73",
+   "SC74",
+   "SC75",
+   "SC81",
+   "SC8Y",
+   "SC8Z",
+   "SC90",
+   "SC91",
+   "SC92",
+   "SC93",
+   "SD10",
+   "SD1Y",
+   "SD1Z",
+   "SD21",
+   "SD22",
+   "SD23",
+   "SD40",
+   "SD71",
+   "SD72",
+   "SD80",
+   "SD81",
+   "SD83",
+   "SD84",
+   "SD85",
+   "SD86",
+   "SD8Y",
+   "SD8Z",
+   "SD93",
+   "SD94",
+   "SE2Y",
+   "SE2Z",
+   "SE30",
+   "SE31",
+   "SE36",
+   "SE37",
+   "SE38",
+   "SE39",
+   "SE3A",
+   "SE3B",
+   "SE3Y",
+   "SE3Z",
+   "SE5Y",
+   "SE5Z",
+   "SE7Y",
+   "SE7Z",
+   "SH9Y",
+   "SH9Z",
+   "SJ1Y",
+   "SJ1Z"
+  ],
+  "parsedTitles": [
+   {
+    "code": "SA00",
+    "zh": "胁痛",
+    "en": "Hypochondrium pain disorder (TM1)",
+    "axes": [
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "hypochondrium"
+     },
+     {
+      "axis": "property",
+      "en": "pain"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA02",
+    "zh": "肝著",
+    "en": "Liver distension disorder (TM1)",
+    "axes": [
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "property",
+      "en": "distension"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA04",
+    "zh": "肝痈",
+    "en": "Liver abscess disorder (TM1)",
+    "axes": [
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "property",
+      "en": "abscess"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA05",
+    "zh": "胆胀",
+    "en": "Gallbladder distension disorder (TM1)",
+    "axes": [
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "gallbladder"
+     },
+     {
+      "axis": "property",
+      "en": "distension"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA0Y",
+    "zh": "其他特指的肝系病类",
+    "en": "Other specified liver system disorders (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA0Z",
+    "zh": "未特指的肝系病类",
+    "en": "Liver system disorders (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA20",
+    "zh": "真心痛",
+    "en": "True heart pain disorder (TM1)",
+    "axes": [
+     "property",
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "true"
+     },
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "property",
+      "en": "pain"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA2Y",
+    "zh": "其他特指的胸痹",
+    "en": "Other specified chest impediment disorders (TM1)",
+    "axes": [
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "chest"
+     },
+     {
+      "axis": "property",
+      "en": "impediment"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA2Z",
+    "zh": "未特指的胸痹",
+    "en": "Chest impediment disorders (TM1), unspecified",
+    "axes": [
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "chest"
+     },
+     {
+      "axis": "property",
+      "en": "impediment"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA4Y",
+    "zh": "其他特指的心系病类",
+    "en": "Other specified heart system disorders (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA4Z",
+    "zh": "未特指的心系病类",
+    "en": "Heart system disorders (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA51",
+    "zh": "胃脘痛",
+    "en": "Stomach ache disorder (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "stomach"
+     }
+    ],
+    "residual": [
+     "ache"
+    ]
+   },
+   {
+    "code": "SA52",
+    "zh": "胃胀",
+    "en": "Epigastric distension disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "distension"
+     }
+    ],
+    "residual": [
+     "epigastric"
+    ]
+   },
+   {
+    "code": "SA54",
+    "zh": "食积",
+    "en": "Food retention disorder (TM1)",
+    "axes": [
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "food"
+     },
+     {
+      "axis": "property",
+      "en": "retention"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA58",
+    "zh": "腹痛",
+    "en": "Abdominal pain disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "pain"
+     }
+    ],
+    "residual": [
+     "abdominal"
+    ]
+   },
+   {
+    "code": "SA59",
+    "zh": "肠痈",
+    "en": "Intestinal abscess disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "abscess"
+     }
+    ],
+    "residual": [
+     "intestinal"
+    ]
+   },
+   {
+    "code": "SA5Y",
+    "zh": "其他特指的脾系病类",
+    "en": "Other specified spleen system disorders (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA5Z",
+    "zh": "未特指的脾系病类",
+    "en": "Spleen system disorders (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA60",
+    "zh": "感冒",
+    "en": "Common cold disorder (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "cold"
+     }
+    ],
+    "residual": [
+     "common"
+    ]
+   },
+   {
+    "code": "SA81",
+    "zh": "哮病",
+    "en": "Wheezing disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "wheezing"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA82",
+    "zh": "肺胀",
+    "en": "Lung distension disorder (TM1)",
+    "axes": [
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     },
+     {
+      "axis": "property",
+      "en": "distension"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA83",
+    "zh": "悬饮",
+    "en": "Pleural fluid retention disorder (TM1)",
+    "axes": [
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "fluid"
+     },
+     {
+      "axis": "property",
+      "en": "retention"
+     }
+    ],
+    "residual": [
+     "pleural"
+    ]
+   },
+   {
+    "code": "SA84",
+    "zh": "肺热病",
+    "en": "Lung heat disorder (TM1)",
+    "axes": [
+     "locus",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA85",
+    "zh": "肺痿",
+    "en": "Lung withering disorder (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     }
+    ],
+    "residual": [
+     "withering"
+    ]
+   },
+   {
+    "code": "SA86",
+    "zh": "结胸",
+    "en": "Chest bind disorder (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "chest"
+     }
+    ],
+    "residual": [
+     "bind"
+    ]
+   },
+   {
+    "code": "SA8Y",
+    "zh": "其他特指的肺系病类",
+    "en": "Other specified lung system disorders (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA8Z",
+    "zh": "未特指的肺系病类",
+    "en": "Lung system disorders (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SA91",
+    "zh": "热淋",
+    "en": "Heat stranguria disorder (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": [
+     "stranguria"
+    ]
+   },
+   {
+    "code": "SB00",
+    "zh": "肾著",
+    "en": "Kidney stagnation disorder (TM1)",
+    "axes": [
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "property",
+      "en": "stagnation"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SB01",
+    "zh": "尿崩",
+    "en": "Flooding urine disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "flooding"
+     }
+    ],
+    "residual": [
+     "urine"
+    ]
+   },
+   {
+    "code": "SB03",
+    "zh": "尿浊",
+    "en": "Turbid urine disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "turbid"
+     }
+    ],
+    "residual": [
+     "urine"
+    ]
+   },
+   {
+    "code": "SB04",
+    "zh": "癃闭",
+    "en": "Dribbling urinary block disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "block"
+     }
+    ],
+    "residual": [
+     "dribbling",
+     "urinary"
+    ]
+   },
+   {
+    "code": "SB05",
+    "zh": "关格",
+    "en": "Block and repulsion disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "block"
+     }
+    ],
+    "residual": [
+     "repulsion"
+    ]
+   },
+   {
+    "code": "SB06",
+    "zh": "水肿",
+    "en": "Edema disorders (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "edema"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SB06.0",
+    "zh": "肾水",
+    "en": "Kidney edema disorder (TM1)",
+    "axes": [
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "property",
+      "en": "edema"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SB06.1",
+    "zh": "风水",
+    "en": "Wind edema disorder (TM1)",
+    "axes": [
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "wind"
+     },
+     {
+      "axis": "property",
+      "en": "edema"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SB06.Y",
+    "zh": "其他特指的水肿",
+    "en": "Other specified edema disorders (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "edema"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SB06.Z",
+    "zh": "未特指的水肿",
+    "en": "Edema disorders (TM1), unspecified",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "edema"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SB0A",
+    "zh": "阳强",
+    "en": "Persistent erection disorder (TM1)",
+    "axes": [
+     "severity"
+    ],
+    "values": [
+     {
+      "axis": "severity",
+      "en": "persistent"
+     }
+    ],
+    "residual": [
+     "erection"
+    ]
+   },
+   {
+    "code": "SB0Y",
+    "zh": "其他特指的肾系病类",
+    "en": "Other specified kidney system disorders (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "kidney"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SB0Z",
+    "zh": "未特指的肾系病类",
+    "en": "Kidney system disorders (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "kidney"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SB2Y",
+    "zh": "其他特指的脏腑系统疾病",
+    "en": "Other specified organ system disorders (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "organ"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SB2Z",
+    "zh": "未特指的脏腑系统疾病",
+    "en": "Organ system disorders (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "organ"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SB30",
+    "zh": "湿疮",
+    "en": "Dampness sore disorder (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "dampness"
+     }
+    ],
+    "residual": [
+     "sore"
+    ]
+   },
+   {
+    "code": "SB60",
+    "zh": "流注",
+    "en": "Deep multiple abscess disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "abscess"
+     }
+    ],
+    "residual": [
+     "deep",
+     "multiple"
+    ]
+   },
+   {
+    "code": "SB61",
+    "zh": "肛痈",
+    "en": "Anal abscess disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "abscess"
+     }
+    ],
+    "residual": [
+     "anal"
+    ]
+   },
+   {
+    "code": "SB6Y",
+    "zh": "其他特指的痈证",
+    "en": "Other specified abscess disorders (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "abscess"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SB6Z",
+    "zh": "未特指的痈证",
+    "en": "Abscess disorders (TM1), unspecified",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "abscess"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SB71",
+    "zh": "脚湿气",
+    "en": "Foot dampness itch disorder (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "dampness"
+     }
+    ],
+    "residual": [
+     "foot",
+     "itch"
+    ]
+   },
+   {
+    "code": "SB73",
+    "zh": "蛇皮癣",
+    "en": "Dry skin disorder (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "skin"
+     }
+    ],
+    "residual": [
+     "dry"
+    ]
+   },
+   {
+    "code": "SB76",
+    "zh": "鹅掌风",
+    "en": "Hand dampness itch disorder (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "dampness"
+     }
+    ],
+    "residual": [
+     "hand",
+     "itch"
+    ]
+   },
+   {
+    "code": "SB7B",
+    "zh": "内痔",
+    "en": "Interior haemorrhoid disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "interior"
+     }
+    ],
+    "residual": [
+     "haemorrhoid"
+    ]
+   },
+   {
+    "code": "SB7C",
+    "zh": "肛裂",
+    "en": "Fissured anus disorder (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "anus"
+     }
+    ],
+    "residual": [
+     "fissured"
+    ]
+   },
+   {
+    "code": "SB7Y",
+    "zh": "其他特指的皮肤粘膜系统病类",
+    "en": "Other specified skin and mucosa system disorders (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "skin"
+     }
+    ],
+    "residual": [
+     "mucosa"
+    ]
+   },
+   {
+    "code": "SB7Z",
+    "zh": "未特指的皮肤粘膜系统病类",
+    "en": "Skin and mucosa system disorders (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "skin"
+     }
+    ],
+    "residual": [
+     "mucosa"
+    ]
+   },
+   {
+    "code": "SB80",
+    "zh": "月经先期",
+    "en": "Advanced menstruation disorder (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "menstruation"
+     }
+    ],
+    "residual": [
+     "advanced"
+    ]
+   },
+   {
+    "code": "SB81",
+    "zh": "月经后期",
+    "en": "Delayed menstruation disorder (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "menstruation"
+     }
+    ],
+    "residual": [
+     "delayed"
+    ]
+   },
+   {
+    "code": "SB82",
+    "zh": "月经先后无定期",
+    "en": "Irregular menstruation disorders (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "menstruation"
+     }
+    ],
+    "residual": [
+     "irregular"
+    ]
+   },
+   {
+    "code": "SB8Y",
+    "zh": "其他特指的月经周期病类",
+    "en": "Other specified menstruation cycle disorders (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "menstruation"
+     }
+    ],
+    "residual": [
+     "cycle"
+    ]
+   },
+   {
+    "code": "SB8Z",
+    "zh": "未特指的月经周期病类",
+    "en": "Menstruation cycle disorders (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "menstruation"
+     }
+    ],
+    "residual": [
+     "cycle"
+    ]
+   },
+   {
+    "code": "SB91",
+    "zh": "月经过少",
+    "en": "Decreased menstruation disorder (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "menstruation"
+     }
+    ],
+    "residual": [
+     "decreased"
+    ]
+   },
+   {
+    "code": "SB92",
+    "zh": "经期延长",
+    "en": "Prolonged menstruation disorder (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "menstruation"
+     }
+    ],
+    "residual": [
+     "prolonged"
+    ]
+   },
+   {
+    "code": "SB9Y",
+    "zh": "其他特指的月经病类",
+    "en": "Other specified menstruation associated disorders (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "menstruation"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SB9Z",
+    "zh": "未特指的月经病类",
+    "en": "Menstruation associated disorders (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "menstruation"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SC01",
+    "zh": "胎动不安",
+    "en": "Unstable fetus disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "unstable"
+     }
+    ],
+    "residual": [
+     "fetus"
+    ]
+   },
+   {
+    "code": "SC02",
+    "zh": "转胞",
+    "en": "Bladder pressure disorder (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "bladder"
+     }
+    ],
+    "residual": [
+     "pressure"
+    ]
+   },
+   {
+    "code": "SC10",
+    "zh": "儿枕痛",
+    "en": "Puerperal abdominal pain disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "pain"
+     }
+    ],
+    "residual": [
+     "puerperal",
+     "abdominal"
+    ]
+   },
+   {
+    "code": "SC11",
+    "zh": "产后风",
+    "en": "Puerperal wind disorder (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "wind"
+     }
+    ],
+    "residual": [
+     "puerperal"
+    ]
+   },
+   {
+    "code": "SC2Y",
+    "zh": "其他特指的其他女性生殖系统病类",
+    "en": "Other specified other female reproductive system associated disorders (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "reproductive"
+     }
+    ],
+    "residual": [
+     "female"
+    ]
+   },
+   {
+    "code": "SC2Z",
+    "zh": "未特指的其他女性生殖系统病类",
+    "en": "Other female reproductive system associated disorders (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "reproductive"
+     }
+    ],
+    "residual": [
+     "female"
+    ]
+   },
+   {
+    "code": "SC4Y",
+    "zh": "其他特指的女性生殖系统病类（包括分娩）",
+    "en": "Other specified female reproductive system disorders (TM1) (including childbirth)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "reproductive"
+     }
+    ],
+    "residual": [
+     "female",
+     "including",
+     "childbirth"
+    ]
+   },
+   {
+    "code": "SC4Z",
+    "zh": "未特指的女性生殖系统病类（包括分娩）",
+    "en": "Female reproductive system disorders (TM1) (including childbirth), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "reproductive"
+     }
+    ],
+    "residual": [
+     "female",
+     "including",
+     "childbirth"
+    ]
+   },
+   {
+    "code": "SC50",
+    "zh": "痛痹",
+    "en": "Cold impediment disorder (TM1)",
+    "axes": [
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "cold"
+     },
+     {
+      "axis": "property",
+      "en": "impediment"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SC51",
+    "zh": "行痹",
+    "en": "Wind impediment disorder (TM1)",
+    "axes": [
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "wind"
+     },
+     {
+      "axis": "property",
+      "en": "impediment"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SC52",
+    "zh": "着痹",
+    "en": "Dampness impediment disorder (TM1)",
+    "axes": [
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "dampness"
+     },
+     {
+      "axis": "property",
+      "en": "impediment"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SC5Y",
+    "zh": "其他特指的痹病",
+    "en": "Other specified joint impediment disorders (TM1)",
+    "axes": [
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "joint"
+     },
+     {
+      "axis": "property",
+      "en": "impediment"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SC5Z",
+    "zh": "未特指的痹病",
+    "en": "Joint impediment disorders (TM1), unspecified",
+    "axes": [
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "joint"
+     },
+     {
+      "axis": "property",
+      "en": "impediment"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SC60",
+    "zh": "转筋",
+    "en": "Muscle spasm disorder (TM1)",
+    "axes": [
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "muscle"
+     },
+     {
+      "axis": "property",
+      "en": "spasm"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SC62",
+    "zh": "麻木",
+    "en": "Numbness disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "numbness"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SC6Y",
+    "zh": "其他特指的骨、关节和肌肉系统病类",
+    "en": "Other specified bone, joint and muscle system disorders (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "bone"
+     },
+     {
+      "axis": "locus",
+      "en": "joint"
+     },
+     {
+      "axis": "locus",
+      "en": "muscle"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SC6Z",
+    "zh": "未特指的骨、关节和肌肉系统病类",
+    "en": "Bone, joint and muscle system disorders (TM1), unspecified",
+    "axes": [
+     "locus",
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "bone"
+     },
+     {
+      "axis": "locus",
+      "en": "joint"
+     },
+     {
+      "axis": "locus",
+      "en": "muscle"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SC71",
+    "zh": "五风内障",
+    "en": "Wind glaucoma disorder (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "wind"
+     }
+    ],
+    "residual": [
+     "glaucoma"
+    ]
+   },
+   {
+    "code": "SC80",
+    "zh": "暴聋",
+    "en": "Sudden deafness disorder (TM1)",
+    "axes": [
+     "severity"
+    ],
+    "values": [
+     {
+      "axis": "severity",
+      "en": "sudden"
+     }
+    ],
+    "residual": [
+     "deafness"
+    ]
+   },
+   {
+    "code": "SC9Y",
+    "zh": "其他特指的眼、耳、鼻和喉系统病类",
+    "en": "Other specified eye, ear, nose and throat system disorders (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "eye"
+     },
+     {
+      "axis": "locus",
+      "en": "ear"
+     },
+     {
+      "axis": "locus",
+      "en": "nose"
+     },
+     {
+      "axis": "locus",
+      "en": "throat"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SC9Z",
+    "zh": "未特指的眼、耳、鼻和喉系统病类",
+    "en": "Eye, ear, nose and throat system disorders (TM1), unspecified",
+    "axes": [
+     "locus",
+     "locus",
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "eye"
+     },
+     {
+      "axis": "locus",
+      "en": "ear"
+     },
+     {
+      "axis": "locus",
+      "en": "nose"
+     },
+     {
+      "axis": "locus",
+      "en": "throat"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SD00",
+    "zh": "口僻",
+    "en": "Facial paralysis disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "paralysis"
+     }
+    ],
+    "residual": [
+     "facial"
+    ]
+   },
+   {
+    "code": "SD11",
+    "zh": "头风",
+    "en": "Head wind disorder (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "wind"
+     }
+    ],
+    "residual": [
+     "head"
+    ]
+   },
+   {
+    "code": "SD20",
+    "zh": "痉痓",
+    "en": "Convulsion disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "convulsion"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SD24",
+    "zh": "弄舌",
+    "en": "Frequent protrusion of tongue disorder (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "tongue"
+     }
+    ],
+    "residual": [
+     "frequent",
+     "protrusion"
+    ]
+   },
+   {
+    "code": "SD30",
+    "zh": "中风先兆证",
+    "en": "Prodrome of wind stroke disorder (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "wind"
+     }
+    ],
+    "residual": [
+     "prodrome",
+     "stroke"
+    ]
+   },
+   {
+    "code": "SD31",
+    "zh": "中风后遗证",
+    "en": "Sequela of wind stroke disorder (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "wind"
+     }
+    ],
+    "residual": [
+     "sequela",
+     "stroke"
+    ]
+   },
+   {
+    "code": "SD3Y",
+    "zh": "其他特指的中风",
+    "en": "Other specified wind stroke disorders (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "wind"
+     }
+    ],
+    "residual": [
+     "stroke"
+    ]
+   },
+   {
+    "code": "SD3Z",
+    "zh": "未特指的中风",
+    "en": "Wind stroke disorders (TM1), unspecified",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "wind"
+     }
+    ],
+    "residual": [
+     "stroke"
+    ]
+   },
+   {
+    "code": "SD4Y",
+    "zh": "其他特指的脑系病类",
+    "en": "Other specified brain system disorders (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "brain"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SD4Z",
+    "zh": "未特指的脑系病类",
+    "en": "Brain system disorders (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "brain"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SD6Y",
+    "zh": "其他特指的其他身体系统疾病",
+    "en": "Other specified other body system disorders (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "body"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SD6Z",
+    "zh": "未特指的其他身体系统疾病",
+    "en": "Other body system disorders (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "body"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SD70",
+    "zh": "气瘿",
+    "en": "Qi goiter disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "qi"
+     }
+    ],
+    "residual": [
+     "goiter"
+    ]
+   },
+   {
+    "code": "SD7Y",
+    "zh": "其他特指的气血津液病类",
+    "en": "Other specified qi, blood and fluid disorders (TM1)",
+    "axes": [
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "property",
+      "en": "fluid"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SD7Z",
+    "zh": "未特指的气血津液病类",
+    "en": "Qi, blood and fluid disorders (TM1), unspecified",
+    "axes": [
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "property",
+      "en": "fluid"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SD82",
+    "zh": "郁证",
+    "en": "Depression disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "depression"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SD87",
+    "zh": "火病",
+    "en": "Repressed fire disorder (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "fire"
+     }
+    ],
+    "residual": [
+     "repressed"
+    ]
+   },
+   {
+    "code": "SD90",
+    "zh": "时行感冒",
+    "en": "Seasonal cold disorder (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "cold"
+     }
+    ],
+    "residual": [
+     "seasonal"
+    ]
+   },
+   {
+    "code": "SD91",
+    "zh": "劳瘵",
+    "en": "Fatigue consumption disorder (TM1)",
+    "axes": [
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "fatigue"
+     },
+     {
+      "axis": "property",
+      "en": "consumption"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SD92",
+    "zh": "霍乱",
+    "en": "Severe vomiting and diarrhoea disorder (TM1)",
+    "axes": [
+     "severity"
+    ],
+    "values": [
+     {
+      "axis": "severity",
+      "en": "severe"
+     }
+    ],
+    "residual": [
+     "vomiting",
+     "diarrhoea"
+    ]
+   },
+   {
+    "code": "SD95",
+    "zh": "流痰",
+    "en": "Flowing phlegm disorder (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "phlegm"
+     }
+    ],
+    "residual": [
+     "flowing"
+    ]
+   },
+   {
+    "code": "SE00",
+    "zh": "暑温",
+    "en": "Summer-heat disorder (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": [
+     "summer"
+    ]
+   },
+   {
+    "code": "SE01",
+    "zh": "春温",
+    "en": "Spring warmth disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "warmth"
+     }
+    ],
+    "residual": [
+     "spring"
+    ]
+   },
+   {
+    "code": "SE02",
+    "zh": "湿温",
+    "en": "Dampness and warmth disorder (TM1)",
+    "axes": [
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "dampness"
+     },
+     {
+      "axis": "property",
+      "en": "warmth"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE0Y",
+    "zh": "其他特指的温病",
+    "en": "Other specified warmth disorders (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "warmth"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE0Z",
+    "zh": "未特指的温病",
+    "en": "Warmth disorders (TM1), unspecified",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "warmth"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE32",
+    "zh": "生长痛",
+    "en": "Growth pain disorder (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "pain"
+     }
+    ],
+    "residual": [
+     "growth"
+    ]
+   },
+   {
+    "code": "SE33",
+    "zh": "急惊风",
+    "en": "Acute convulsion disorder (TM1)",
+    "axes": [
+     "severity",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "severity",
+      "en": "acute"
+     },
+     {
+      "axis": "property",
+      "en": "convulsion"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE34",
+    "zh": "慢惊风",
+    "en": "Recurrent convulsion disorder (TM1)",
+    "axes": [
+     "severity",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "severity",
+      "en": "recurrent"
+     },
+     {
+      "axis": "property",
+      "en": "convulsion"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE35",
+    "zh": "客忤",
+    "en": "Fright seizure disorder (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "fright"
+     }
+    ],
+    "residual": [
+     "seizure"
+    ]
+   },
+   {
+    "code": "SE70",
+    "zh": "阳证",
+    "en": "Yang pattern (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE71",
+    "zh": "阴证",
+    "en": "Yin pattern (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE72",
+    "zh": "热证",
+    "en": "Heat pattern (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE73",
+    "zh": "寒证",
+    "en": "Cold pattern (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "cold"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE74",
+    "zh": "实证",
+    "en": "Excess pattern (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "excess"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE75",
+    "zh": "虚证",
+    "en": "Deficiency pattern (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE76",
+    "zh": "表证",
+    "en": "Exterior pattern (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "exterior"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE77",
+    "zh": "里证",
+    "en": "Interior pattern (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "interior"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE78",
+    "zh": "寒热中间证",
+    "en": "Moderate (Heat/Cold) pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "cause",
+      "en": "cold"
+     }
+    ],
+    "residual": [
+     "moderate"
+    ]
+   },
+   {
+    "code": "SE79",
+    "zh": "虚实中间证",
+    "en": "Medium (Excess/Deficiency) pattern (TM1)",
+    "axes": [
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "excess"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": [
+     "medium"
+    ]
+   },
+   {
+    "code": "SE7A",
+    "zh": "寒热错杂证",
+    "en": "Tangled cold and heat pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "cold"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": [
+     "tangled"
+    ]
+   },
+   {
+    "code": "SE80",
+    "zh": "风淫证",
+    "en": "Wind factor pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "wind"
+     },
+     {
+      "axis": "cause",
+      "en": "factor"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE81",
+    "zh": "寒淫证",
+    "en": "Cold factor pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "cold"
+     },
+     {
+      "axis": "cause",
+      "en": "factor"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE82",
+    "zh": "湿淫证",
+    "en": "Dampness factor pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "dampness"
+     },
+     {
+      "axis": "cause",
+      "en": "factor"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE83",
+    "zh": "燥淫证",
+    "en": "Dryness factor pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "dryness"
+     },
+     {
+      "axis": "cause",
+      "en": "factor"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE84",
+    "zh": "火热淫证",
+    "en": "Fire-heat factor pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "fire"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "cause",
+      "en": "factor"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE85",
+    "zh": "暑淫证",
+    "en": "Summer-heat factor pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "cause",
+      "en": "factor"
+     }
+    ],
+    "residual": [
+     "summer"
+    ]
+   },
+   {
+    "code": "SE86",
+    "zh": "疫疠证",
+    "en": "Pestilent factor pattern (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "factor"
+     }
+    ],
+    "residual": [
+     "pestilent"
+    ]
+   },
+   {
+    "code": "SE8Y",
+    "zh": "其他特指的外感证",
+    "en": "Other specified environmental factor patterns (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "factor"
+     }
+    ],
+    "residual": [
+     "environmental"
+    ]
+   },
+   {
+    "code": "SE8Z",
+    "zh": "未特指的外感证",
+    "en": "Environmental factor patterns (TM1), unspecified",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "factor"
+     }
+    ],
+    "residual": [
+     "environmental"
+    ]
+   },
+   {
+    "code": "SE90",
+    "zh": "气虚证",
+    "en": "Qi deficiency pattern (TM1)",
+    "axes": [
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE91",
+    "zh": "气滞证",
+    "en": "Qi stagnation pattern (TM1)",
+    "axes": [
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "stagnation"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE92",
+    "zh": "气逆证",
+    "en": "Qi uprising pattern (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "qi"
+     }
+    ],
+    "residual": [
+     "uprising"
+    ]
+   },
+   {
+    "code": "SE93",
+    "zh": "气陷证",
+    "en": "Qi sinking pattern (TM1)",
+    "axes": [
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "sinking"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE94",
+    "zh": "气脱证",
+    "en": "Qi collapse pattern (TM1)",
+    "axes": [
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "collapse"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE9Y",
+    "zh": "其他特指的气证",
+    "en": "Other specified qi patterns (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "qi"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SE9Z",
+    "zh": "未特指的气证",
+    "en": "Qi patterns (TM1), unspecified",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "qi"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF00",
+    "zh": "血虚证",
+    "en": "Blood deficiency pattern (TM1)",
+    "axes": [
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF01",
+    "zh": "血瘀证",
+    "en": "Blood stasis pattern (TM1)",
+    "axes": [
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "property",
+      "en": "stasis"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF02",
+    "zh": "血热证",
+    "en": "Blood heat pattern (TM1)",
+    "axes": [
+     "property",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF03",
+    "zh": "血寒证",
+    "en": "Blood cold pattern (TM1)",
+    "axes": [
+     "property",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "cause",
+      "en": "cold"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF04",
+    "zh": "血燥证",
+    "en": "Blood dryness pattern (TM1)",
+    "axes": [
+     "property",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "cause",
+      "en": "dryness"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF0Y",
+    "zh": "其他特指的血证",
+    "en": "Other specified blood patterns (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "blood"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF0Z",
+    "zh": "未特指的血证",
+    "en": "Blood patterns (TM1), unspecified",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "blood"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF10",
+    "zh": "津液亏虚证",
+    "en": "Fluid deficiency pattern (TM1)",
+    "axes": [
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "fluid"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF11",
+    "zh": "水毒证",
+    "en": "Fluid disturbance pattern (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "fluid"
+     }
+    ],
+    "residual": [
+     "disturbance"
+    ]
+   },
+   {
+    "code": "SF12",
+    "zh": "燥痰证",
+    "en": "Dry-phlegm pattern (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "phlegm"
+     }
+    ],
+    "residual": [
+     "dry"
+    ]
+   },
+   {
+    "code": "SF13",
+    "zh": "湿痰证",
+    "en": "Damp phlegm pattern (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "phlegm"
+     }
+    ],
+    "residual": [
+     "damp"
+    ]
+   },
+   {
+    "code": "SF14",
+    "zh": "痰火扰心证",
+    "en": "Phlegm-fire harassing the heart system pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "phlegm"
+     },
+     {
+      "axis": "cause",
+      "en": "fire"
+     },
+     {
+      "axis": "property",
+      "en": "harassing"
+     },
+     {
+      "axis": "locus",
+      "en": "heart"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF15",
+    "zh": "风痰证",
+    "en": "Wind-phlegm pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "wind"
+     },
+     {
+      "axis": "cause",
+      "en": "phlegm"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF1Y",
+    "zh": "其他特指的津液证",
+    "en": "Other specified fluid patterns (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "fluid"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF1Z",
+    "zh": "未特指的津液证",
+    "en": "Fluid patterns (TM1), unspecified",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "fluid"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF20",
+    "zh": "精虚证",
+    "en": "Essence deficiency pattern (TM1)",
+    "axes": [
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "essence"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF2Y",
+    "zh": "其他特指的精证",
+    "en": "Other specified essence patterns (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "essence"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF2Z",
+    "zh": "未特指的精证",
+    "en": "Essence patterns (TM1), unspecified",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "essence"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF4Y",
+    "zh": "其他特指的气血津液证",
+    "en": "Other specified body constituents patterns (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "body"
+     }
+    ],
+    "residual": [
+     "constituents"
+    ]
+   },
+   {
+    "code": "SF4Z",
+    "zh": "未特指的气血津液证",
+    "en": "Body constituents patterns (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "body"
+     }
+    ],
+    "residual": [
+     "constituents"
+    ]
+   },
+   {
+    "code": "SF50",
+    "zh": "肝阴虚证",
+    "en": "Liver yin deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF51",
+    "zh": "肝阳虚证",
+    "en": "Liver yang deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF52",
+    "zh": "肝阳上亢证",
+    "en": "Liver yang ascendant hyperactivity pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "ascendant"
+     },
+     {
+      "axis": "property",
+      "en": "hyperactivity"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF53",
+    "zh": "肝气虚证",
+    "en": "Liver qi deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF54",
+    "zh": "肝血虚证",
+    "en": "Liver blood deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF55",
+    "zh": "肝郁血瘀证",
+    "en": "Liver depression and blood stasis pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "property",
+      "en": "depression"
+     },
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "property",
+      "en": "stasis"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF56",
+    "zh": "肝风内动证",
+    "en": "Liver wind stirring the interior pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "cause",
+      "en": "wind"
+     },
+     {
+      "axis": "property",
+      "en": "interior"
+     }
+    ],
+    "residual": [
+     "stirring"
+    ]
+   },
+   {
+    "code": "SF57",
+    "zh": "肝气郁结证",
+    "en": "Liver qi stagnation pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "stagnation"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF58",
+    "zh": "肝火上炎证",
+    "en": "Liver fire flaming upward pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "cause",
+      "en": "fire"
+     }
+    ],
+    "residual": [
+     "flaming",
+     "upward"
+    ]
+   },
+   {
+    "code": "SF59",
+    "zh": "肝热动风证",
+    "en": "Liver heat stirring wind pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "cause",
+      "en": "wind"
+     }
+    ],
+    "residual": [
+     "stirring"
+    ]
+   },
+   {
+    "code": "SF5A",
+    "zh": "肝胆湿热证",
+    "en": "Liver-gallbladder dampness-heat pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "locus",
+      "en": "gallbladder"
+     },
+     {
+      "axis": "cause",
+      "en": "dampness"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF5B",
+    "zh": "肝经湿热证",
+    "en": "Liver meridian dampness-heat pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "locus",
+      "en": "meridian"
+     },
+     {
+      "axis": "cause",
+      "en": "dampness"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF5C",
+    "zh": "寒滞肝脉证",
+    "en": "Liver meridian cold stagnation pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "locus",
+      "en": "meridian"
+     },
+     {
+      "axis": "cause",
+      "en": "cold"
+     },
+     {
+      "axis": "property",
+      "en": "stagnation"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF5D",
+    "zh": "胆气虚证",
+    "en": "Gallbladder qi deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "gallbladder"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF5E",
+    "zh": "胆郁痰扰证",
+    "en": "Gallbladder depression with phlegm harassment pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "gallbladder"
+     },
+     {
+      "axis": "property",
+      "en": "depression"
+     },
+     {
+      "axis": "cause",
+      "en": "phlegm"
+     }
+    ],
+    "residual": [
+     "harassment"
+    ]
+   },
+   {
+    "code": "SF5F",
+    "zh": "胆热证",
+    "en": "Gallbladder heat pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "gallbladder"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF5G",
+    "zh": "胆寒证",
+    "en": "Gallbladder cold pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "gallbladder"
+     },
+     {
+      "axis": "cause",
+      "en": "cold"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF5H",
+    "zh": "肝肾阴虚证",
+    "en": "Liver and kidney yin deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF5J",
+    "zh": "肝脾不和证",
+    "en": "Disharmony of liver and spleen systems pattern (TM1)",
+    "axes": [
+     "property",
+     "locus",
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "disharmony"
+     },
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "locus",
+      "en": "spleen"
+     },
+     {
+      "axis": "locus",
+      "en": "systems"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF5K",
+    "zh": "肝胃不和证",
+    "en": "Disharmony of liver and stomach systems pattern (TM1)",
+    "axes": [
+     "property",
+     "locus",
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "disharmony"
+     },
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "locus",
+      "en": "stomach"
+     },
+     {
+      "axis": "locus",
+      "en": "systems"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF5L",
+    "zh": "肝火犯胃证",
+    "en": "Liver fire invading the stomach system pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "cause",
+      "en": "fire"
+     },
+     {
+      "axis": "property",
+      "en": "invading"
+     },
+     {
+      "axis": "locus",
+      "en": "stomach"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF5M",
+    "zh": "肝火犯肺证",
+    "en": "Liver fire invading the lung system pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "cause",
+      "en": "fire"
+     },
+     {
+      "axis": "property",
+      "en": "invading"
+     },
+     {
+      "axis": "locus",
+      "en": "lung"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF5Y",
+    "zh": "其他特指的肝系证类",
+    "en": "Other specified liver system patterns (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF5Z",
+    "zh": "未特指的肝系证类",
+    "en": "Liver system patterns (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF60",
+    "zh": "心气虚证",
+    "en": "Heart qi deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF61",
+    "zh": "心血虚证",
+    "en": "Heart blood deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF62",
+    "zh": "心气血两虚证",
+    "en": "Dual deficiency of heart qi and blood pattern (TM1)",
+    "axes": [
+     "property",
+     "property",
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "dual"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     },
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "blood"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF63",
+    "zh": "心脉痹阻证",
+    "en": "Heart meridian obstruction pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "locus",
+      "en": "meridian"
+     },
+     {
+      "axis": "property",
+      "en": "obstruction"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF64",
+    "zh": "心阴虚证",
+    "en": "Heart yin deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF65",
+    "zh": "心气阴两虚证",
+    "en": "Deficiency of heart qi and yin pattern (TM1)",
+    "axes": [
+     "property",
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "deficiency"
+     },
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "yin"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF66",
+    "zh": "心阳虚证",
+    "en": "Heart yang deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF67",
+    "zh": "心阳暴脱证",
+    "en": "Heart yang collapse pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "collapse"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF68",
+    "zh": "心火上炎证",
+    "en": "Heart fire flaming upward pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "cause",
+      "en": "fire"
+     }
+    ],
+    "residual": [
+     "flaming",
+     "upward"
+    ]
+   },
+   {
+    "code": "SF69",
+    "zh": "热扰心神证",
+    "en": "Fire harassing heart spirit pattern (TM1)",
+    "axes": [
+     "cause",
+     "property",
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "fire"
+     },
+     {
+      "axis": "property",
+      "en": "harassing"
+     },
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "property",
+      "en": "spirit"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF6A",
+    "zh": "水气凌心证",
+    "en": "Water qi intimidating the heart system pattern (TM1)",
+    "axes": [
+     "cause",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "water"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "locus",
+      "en": "heart"
+     }
+    ],
+    "residual": [
+     "intimidating"
+    ]
+   },
+   {
+    "code": "SF6B",
+    "zh": "心神不宁证",
+    "en": "Heart spirit restlessness pattern (TM1)",
+    "axes": [
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "property",
+      "en": "spirit"
+     }
+    ],
+    "residual": [
+     "restlessness"
+    ]
+   },
+   {
+    "code": "SF6C",
+    "zh": "忧伤神气证",
+    "en": "Anxiety damaging the spirit pattern (TM1)",
+    "axes": [
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "damaging"
+     },
+     {
+      "axis": "property",
+      "en": "spirit"
+     }
+    ],
+    "residual": [
+     "anxiety"
+    ]
+   },
+   {
+    "code": "SF6D",
+    "zh": "小肠气滞证",
+    "en": "Small intestine qi stagnation pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "small intestine"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "stagnation"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF6E",
+    "zh": "小肠实热证",
+    "en": "Small intestine excess heat pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "small intestine"
+     },
+     {
+      "axis": "property",
+      "en": "excess"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF6F",
+    "zh": "小肠虚寒证",
+    "en": "Small intestine deficiency cold pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "small intestine"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     },
+     {
+      "axis": "cause",
+      "en": "cold"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF6G",
+    "zh": "心肝血虚证",
+    "en": "Heart and liver blood deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF6H",
+    "zh": "心胆气虚证",
+    "en": "Heart and gallbladder qi deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "locus",
+      "en": "gallbladder"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF6J",
+    "zh": "心脾两虚证",
+    "en": "Heart and spleen systems deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "locus",
+      "en": "spleen"
+     },
+     {
+      "axis": "locus",
+      "en": "systems"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF6K",
+    "zh": "心肺气虚证",
+    "en": "Heart and lung qi deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "locus",
+      "en": "lung"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF6L",
+    "zh": "心肾不交证",
+    "en": "Heart and kidney systems disharmony pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "locus",
+      "en": "systems"
+     },
+     {
+      "axis": "property",
+      "en": "disharmony"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF6M",
+    "zh": "心肾阳虚证",
+    "en": "Heart and kidney yang deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF6Y",
+    "zh": "其他特指的心系证类",
+    "en": "Other specified heart system patterns (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF6Z",
+    "zh": "未特指的心系证类",
+    "en": "Heart system patterns (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF70",
+    "zh": "脾气虚证",
+    "en": "Spleen qi deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF71",
+    "zh": "脾气下陷证",
+    "en": "Spleen qi sinking pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "sinking"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF72",
+    "zh": "脾虚气滞证",
+    "en": "Spleen deficiency with qi stagnation pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "stagnation"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF73",
+    "zh": "脾虚食积证",
+    "en": "Spleen deficiency with food retention pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     },
+     {
+      "axis": "cause",
+      "en": "food"
+     },
+     {
+      "axis": "property",
+      "en": "retention"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF74",
+    "zh": "脾不统血证",
+    "en": "Spleen failing to control the blood pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     },
+     {
+      "axis": "property",
+      "en": "failing"
+     },
+     {
+      "axis": "property",
+      "en": "blood"
+     }
+    ],
+    "residual": [
+     "control"
+    ]
+   },
+   {
+    "code": "SF75",
+    "zh": "脾虚血亏证",
+    "en": "Spleen deficiency and blood depletion pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     },
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "property",
+      "en": "depletion"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF76",
+    "zh": "脾阴虚证",
+    "en": "Spleen yin deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     },
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF77",
+    "zh": "脾阳虚证",
+    "en": "Spleen yang deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     },
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF78",
+    "zh": "湿热蕴脾证",
+    "en": "Dampness-heat encumbering the spleen system pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "dampness"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "locus",
+      "en": "spleen"
+     }
+    ],
+    "residual": [
+     "encumbering"
+    ]
+   },
+   {
+    "code": "SF79",
+    "zh": "脾虚湿困证",
+    "en": "Spleen deficiency with dampness accumulation pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     },
+     {
+      "axis": "cause",
+      "en": "dampness"
+     },
+     {
+      "axis": "property",
+      "en": "accumulation"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF7A",
+    "zh": "脾虚水泛证",
+    "en": "Spleen deficiency with water flooding pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     },
+     {
+      "axis": "cause",
+      "en": "water"
+     },
+     {
+      "axis": "property",
+      "en": "flooding"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF7B",
+    "zh": "寒湿困脾证",
+    "en": "Cold-dampness encumbering the spleen system pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "cold"
+     },
+     {
+      "axis": "cause",
+      "en": "dampness"
+     },
+     {
+      "axis": "locus",
+      "en": "spleen"
+     }
+    ],
+    "residual": [
+     "encumbering"
+    ]
+   },
+   {
+    "code": "SF7C",
+    "zh": "胃气虚证",
+    "en": "Stomach qi deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "stomach"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF7D",
+    "zh": "胃气上逆证",
+    "en": "Stomach qi uprising pattern (TM1)",
+    "axes": [
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "stomach"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     }
+    ],
+    "residual": [
+     "uprising"
+    ]
+   },
+   {
+    "code": "SF7E",
+    "zh": "胃阴虚证",
+    "en": "Stomach yin deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "stomach"
+     },
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF7F",
+    "zh": "胃热证",
+    "en": "Stomach heat pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "stomach"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF7G",
+    "zh": "湿阻肠道证",
+    "en": "Dampness in the intestines pattern (TM1)",
+    "axes": [
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "dampness"
+     }
+    ],
+    "residual": [
+     "intestines"
+    ]
+   },
+   {
+    "code": "SF7H",
+    "zh": "寒邪犯胃证",
+    "en": "Cold invading the stomach system pattern (TM1)",
+    "axes": [
+     "cause",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "cold"
+     },
+     {
+      "axis": "property",
+      "en": "invading"
+     },
+     {
+      "axis": "locus",
+      "en": "stomach"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF7J",
+    "zh": "寒滞肠道证",
+    "en": "Intestine cold stagnation pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "intestine"
+     },
+     {
+      "axis": "cause",
+      "en": "cold"
+     },
+     {
+      "axis": "property",
+      "en": "stagnation"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF7K",
+    "zh": "思伤脾气证",
+    "en": "Anxiety damaging the spleen system pattern (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "damaging"
+     },
+     {
+      "axis": "locus",
+      "en": "spleen"
+     }
+    ],
+    "residual": [
+     "anxiety"
+    ]
+   },
+   {
+    "code": "SF7L",
+    "zh": "肺脾两虚证",
+    "en": "Lung and spleen deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     },
+     {
+      "axis": "locus",
+      "en": "spleen"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF7M",
+    "zh": "脾肾阳虚证",
+    "en": "Spleen and kidney yang deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     },
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF7Y",
+    "zh": "其他特指的脾系证类",
+    "en": "Other specified spleen system patterns (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF7Z",
+    "zh": "未特指的脾系证类",
+    "en": "Spleen system patterns (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF80",
+    "zh": "肺气虚证",
+    "en": "Lung qi deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF81",
+    "zh": "肺阴虚证",
+    "en": "Lung yin deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     },
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF82",
+    "zh": "肺肾阴虚证",
+    "en": "Lung and kidney yin deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     },
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF83",
+    "zh": "肺气阴两虚证",
+    "en": "Lung qi and yin deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF84",
+    "zh": "肺阳虚证",
+    "en": "Lung yang deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     },
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF85",
+    "zh": "寒痰阻肺证",
+    "en": "Cold phlegm obstructing the lung pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "cold"
+     },
+     {
+      "axis": "cause",
+      "en": "phlegm"
+     },
+     {
+      "axis": "property",
+      "en": "obstructing"
+     },
+     {
+      "axis": "locus",
+      "en": "lung"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF86",
+    "zh": "痰浊阻肺证",
+    "en": "Turbid phlegm accumulation in the lung pattern (TM1)",
+    "axes": [
+     "property",
+     "cause",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "turbid"
+     },
+     {
+      "axis": "cause",
+      "en": "phlegm"
+     },
+     {
+      "axis": "property",
+      "en": "accumulation"
+     },
+     {
+      "axis": "locus",
+      "en": "lung"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF87",
+    "zh": "表寒肺热证",
+    "en": "Exterior cold with lung heat pattern (TM1)",
+    "axes": [
+     "property",
+     "cause",
+     "locus",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "exterior"
+     },
+     {
+      "axis": "cause",
+      "en": "cold"
+     },
+     {
+      "axis": "locus",
+      "en": "lung"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF88",
+    "zh": "肺热炽盛证",
+    "en": "Intense congestion of lung heat pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": [
+     "intense",
+     "congestion"
+    ]
+   },
+   {
+    "code": "SF89",
+    "zh": "痰热壅肺证",
+    "en": "Phlegm heat obstructing the lung pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "phlegm"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "property",
+      "en": "obstructing"
+     },
+     {
+      "axis": "locus",
+      "en": "lung"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF8A",
+    "zh": "风热犯肺证",
+    "en": "Wind-heat invading the lung pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "wind"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "property",
+      "en": "invading"
+     },
+     {
+      "axis": "locus",
+      "en": "lung"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF8B",
+    "zh": "肺热移肠证",
+    "en": "Lung heat transmitting into the intestine pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "locus",
+      "en": "intestine"
+     }
+    ],
+    "residual": [
+     "transmitting",
+     "into"
+    ]
+   },
+   {
+    "code": "SF8C",
+    "zh": "风寒束肺证",
+    "en": "Wind-cold fettering the lung pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "wind"
+     },
+     {
+      "axis": "cause",
+      "en": "cold"
+     },
+     {
+      "axis": "locus",
+      "en": "lung"
+     }
+    ],
+    "residual": [
+     "fettering"
+    ]
+   },
+   {
+    "code": "SF8D",
+    "zh": "燥邪犯肺证",
+    "en": "Dryness invading the lung pattern (TM1)",
+    "axes": [
+     "cause",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "dryness"
+     },
+     {
+      "axis": "property",
+      "en": "invading"
+     },
+     {
+      "axis": "locus",
+      "en": "lung"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF8E",
+    "zh": "肺燥肠闭证",
+    "en": "Lung dryness with intestinal obstruction pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     },
+     {
+      "axis": "cause",
+      "en": "dryness"
+     },
+     {
+      "axis": "property",
+      "en": "obstruction"
+     }
+    ],
+    "residual": [
+     "intestinal"
+    ]
+   },
+   {
+    "code": "SF8F",
+    "zh": "大肠实热证",
+    "en": "Large intestine excess heat pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "large intestine"
+     },
+     {
+      "axis": "property",
+      "en": "excess"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF8G",
+    "zh": "大肠湿热证",
+    "en": "Large intestine dampness heat pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "large intestine"
+     },
+     {
+      "axis": "cause",
+      "en": "dampness"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF8H",
+    "zh": "大肠津亏证",
+    "en": "Large intestine fluid deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "large intestine"
+     },
+     {
+      "axis": "property",
+      "en": "fluid"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF8J",
+    "zh": "大肠虚寒证",
+    "en": "Large intestine deficiency cold pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "large intestine"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     },
+     {
+      "axis": "cause",
+      "en": "cold"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF8Y",
+    "zh": "其他特指的肺系证类",
+    "en": "Other specified lung system patterns (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF8Z",
+    "zh": "未特指的肺系证类",
+    "en": "Lung system patterns (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF90",
+    "zh": "肾气虚证",
+    "en": "Kidney qi deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF91",
+    "zh": "肾不纳气证",
+    "en": "Kidney failing to receive qi pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "property",
+      "en": "failing"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     }
+    ],
+    "residual": [
+     "receive"
+    ]
+   },
+   {
+    "code": "SF92",
+    "zh": "肾气虚水泛证",
+    "en": "Kidney qi deficiency with water retention pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property",
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     },
+     {
+      "axis": "cause",
+      "en": "water"
+     },
+     {
+      "axis": "property",
+      "en": "retention"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF93",
+    "zh": "肾阴虚证",
+    "en": "Kidney yin deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF94",
+    "zh": "肾阴阳两虚证",
+    "en": "Kidney yin and yang deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF95",
+    "zh": "肾虚髓亏证",
+    "en": "Kidney deficiency with marrow depletion pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     },
+     {
+      "axis": "locus",
+      "en": "marrow"
+     },
+     {
+      "axis": "property",
+      "en": "depletion"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF96",
+    "zh": "肾精亏虚证",
+    "en": "Kidney essence deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "property",
+      "en": "essence"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF97",
+    "zh": "肾阳虚证",
+    "en": "Kidney yang deficiency pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF98",
+    "zh": "惊恐伤肾证",
+    "en": "Fear damaging the kidney system pattern (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "damaging"
+     },
+     {
+      "axis": "locus",
+      "en": "kidney"
+     }
+    ],
+    "residual": [
+     "fear"
+    ]
+   },
+   {
+    "code": "SF99",
+    "zh": "胞宫血热证",
+    "en": "Blood and heat accumulation in the uterus pattern (TM1)",
+    "axes": [
+     "property",
+     "cause",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "property",
+      "en": "accumulation"
+     },
+     {
+      "axis": "locus",
+      "en": "uterus"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF9A",
+    "zh": "痰凝胞宫证",
+    "en": "Phlegm obstructing the uterus pattern (TM1)",
+    "axes": [
+     "cause",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "phlegm"
+     },
+     {
+      "axis": "property",
+      "en": "obstructing"
+     },
+     {
+      "axis": "locus",
+      "en": "uterus"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF9B",
+    "zh": "胞宫湿热证",
+    "en": "Dampness-heat in the uterus pattern (TM1)",
+    "axes": [
+     "cause",
+     "cause",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "dampness"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "locus",
+      "en": "uterus"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF9C",
+    "zh": "寒凝胞宫证",
+    "en": "Cold stagnation in the uterus pattern (TM1)",
+    "axes": [
+     "cause",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "cold"
+     },
+     {
+      "axis": "property",
+      "en": "stagnation"
+     },
+     {
+      "axis": "locus",
+      "en": "uterus"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF9D",
+    "zh": "胞宫虚寒证",
+    "en": "Uterine deficiency cold pattern (TM1)",
+    "axes": [
+     "property",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "deficiency"
+     },
+     {
+      "axis": "cause",
+      "en": "cold"
+     }
+    ],
+    "residual": [
+     "uterine"
+    ]
+   },
+   {
+    "code": "SF9E",
+    "zh": "膀胱蓄血证",
+    "en": "Blood accumulation in the bladder pattern (TM1)",
+    "axes": [
+     "property",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "property",
+      "en": "accumulation"
+     },
+     {
+      "axis": "locus",
+      "en": "bladder"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF9F",
+    "zh": "膀胱蕴热证",
+    "en": "Bladder heat accumulation pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "bladder"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "property",
+      "en": "accumulation"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF9G",
+    "zh": "膀胱湿热证",
+    "en": "Bladder dampness-heat pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "bladder"
+     },
+     {
+      "axis": "cause",
+      "en": "dampness"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF9H",
+    "zh": "膀胱蓄水证",
+    "en": "Bladder water accumulation pattern (TM1)",
+    "axes": [
+     "locus",
+     "cause",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "bladder"
+     },
+     {
+      "axis": "cause",
+      "en": "water"
+     },
+     {
+      "axis": "property",
+      "en": "accumulation"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF9J",
+    "zh": "膀胱虚寒证",
+    "en": "Bladder deficiency cold pattern (TM1)",
+    "axes": [
+     "locus",
+     "property",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "bladder"
+     },
+     {
+      "axis": "property",
+      "en": "deficiency"
+     },
+     {
+      "axis": "cause",
+      "en": "cold"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF9Y",
+    "zh": "其他特指的肾系证类",
+    "en": "Other specified kidney system patterns (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "kidney"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SF9Z",
+    "zh": "未特指的肾系证类",
+    "en": "Kidney system patterns (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "kidney"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG1Y",
+    "zh": "其他特指的脏腑证",
+    "en": "Other specified organ system patterns (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "organ"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG1Z",
+    "zh": "未特指的脏腑证",
+    "en": "Organ system patterns (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "organ"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG20",
+    "zh": "手太阴肺经证",
+    "en": "Lung meridian pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "lung"
+     },
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG21",
+    "zh": "手阳明大肠经证",
+    "en": "Large intestine meridian pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "large intestine"
+     },
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG22",
+    "zh": "足阳明胃经证",
+    "en": "Stomach meridian pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "stomach"
+     },
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG23",
+    "zh": "足太阴脾经证",
+    "en": "Spleen meridian pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "spleen"
+     },
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG24",
+    "zh": "手少阴心经证",
+    "en": "Heart meridian pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "heart"
+     },
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG25",
+    "zh": "手太阳小肠经证",
+    "en": "Small intestine meridian pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "small intestine"
+     },
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG26",
+    "zh": "足太阳膀胱经证",
+    "en": "Bladder meridian pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "bladder"
+     },
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG27",
+    "zh": "足少阴肾经证",
+    "en": "Kidney meridian pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "kidney"
+     },
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG28",
+    "zh": "手厥阴心包经证",
+    "en": "Pericardium meridian pattern (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": [
+     "pericardium"
+    ]
+   },
+   {
+    "code": "SG29",
+    "zh": "手少阳三焦经证",
+    "en": "Triple energizer meridian pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "triple energizer"
+     },
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG2A",
+    "zh": "足少阳胆经证",
+    "en": "Gallbladder meridian pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "gallbladder"
+     },
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG2B",
+    "zh": "足厥阴肝经证",
+    "en": "Liver meridian pattern (TM1)",
+    "axes": [
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG2Y",
+    "zh": "其他特指的十二正经证",
+    "en": "Other specified main Meridian Patterns (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": [
+     "main"
+    ]
+   },
+   {
+    "code": "SG2Z",
+    "zh": "未特指的十二正经证",
+    "en": "Main Meridian Patterns (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": [
+     "main"
+    ]
+   },
+   {
+    "code": "SG30",
+    "zh": "督脉病证",
+    "en": "Governor vessel pattern (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "vessel"
+     }
+    ],
+    "residual": [
+     "governor"
+    ]
+   },
+   {
+    "code": "SG31",
+    "zh": "任脉病证",
+    "en": "Conception vessel pattern (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "vessel"
+     }
+    ],
+    "residual": [
+     "conception"
+    ]
+   },
+   {
+    "code": "SG32",
+    "zh": "阴蹻脉病证",
+    "en": "Yin heel vessel pattern (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "locus",
+      "en": "vessel"
+     }
+    ],
+    "residual": [
+     "heel"
+    ]
+   },
+   {
+    "code": "SG33",
+    "zh": "阳蹻脉病证",
+    "en": "Yang heel vessel pattern (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "locus",
+      "en": "vessel"
+     }
+    ],
+    "residual": [
+     "heel"
+    ]
+   },
+   {
+    "code": "SG34",
+    "zh": "阴维脉病证",
+    "en": "Yin link vessel pattern (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "locus",
+      "en": "vessel"
+     }
+    ],
+    "residual": [
+     "link"
+    ]
+   },
+   {
+    "code": "SG35",
+    "zh": "阳维脉病证",
+    "en": "Yang link vessel pattern (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "locus",
+      "en": "vessel"
+     }
+    ],
+    "residual": [
+     "link"
+    ]
+   },
+   {
+    "code": "SG36",
+    "zh": "冲脉病证",
+    "en": "Thoroughfare vessel pattern (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "vessel"
+     }
+    ],
+    "residual": [
+     "thoroughfare"
+    ]
+   },
+   {
+    "code": "SG37",
+    "zh": "带脉病证",
+    "en": "Belt vessel pattern (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "vessel"
+     }
+    ],
+    "residual": [
+     "belt"
+    ]
+   },
+   {
+    "code": "SG3Y",
+    "zh": "其他特指的奇经八脉证",
+    "en": "Other specified extra Meridian Patterns (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": [
+     "extra"
+    ]
+   },
+   {
+    "code": "SG3Z",
+    "zh": "未特指的奇经八脉证",
+    "en": "Extra Meridian Patterns (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "meridian"
+     }
+    ],
+    "residual": [
+     "extra"
+    ]
+   },
+   {
+    "code": "SG5Y",
+    "zh": "其他特指的经络证",
+    "en": "Other specified meridian and collateral patterns (TM1)",
+    "axes": [
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "meridian"
+     },
+     {
+      "axis": "locus",
+      "en": "collateral"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG5Z",
+    "zh": "未特指的经络证",
+    "en": "Meridian and collateral patterns (TM1), unspecified",
+    "axes": [
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "meridian"
+     },
+     {
+      "axis": "locus",
+      "en": "collateral"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG60",
+    "zh": "太阳病证",
+    "en": "Early yang stage pattern (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "locus",
+      "en": "stage"
+     }
+    ],
+    "residual": [
+     "early"
+    ]
+   },
+   {
+    "code": "SG61",
+    "zh": "阳明病证",
+    "en": "Middle yang stage pattern (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "locus",
+      "en": "stage"
+     }
+    ],
+    "residual": [
+     "middle"
+    ]
+   },
+   {
+    "code": "SG62",
+    "zh": "少阳病证",
+    "en": "Late yang stage pattern (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "locus",
+      "en": "stage"
+     }
+    ],
+    "residual": [
+     "late"
+    ]
+   },
+   {
+    "code": "SG63",
+    "zh": "太阴病证",
+    "en": "Early yin stage pattern (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "locus",
+      "en": "stage"
+     }
+    ],
+    "residual": [
+     "early"
+    ]
+   },
+   {
+    "code": "SG64",
+    "zh": "少阴病证",
+    "en": "Middle yin stage pattern (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "locus",
+      "en": "stage"
+     }
+    ],
+    "residual": [
+     "middle"
+    ]
+   },
+   {
+    "code": "SG65",
+    "zh": "厥阴病证",
+    "en": "Late yin stage pattern (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "locus",
+      "en": "stage"
+     }
+    ],
+    "residual": [
+     "late"
+    ]
+   },
+   {
+    "code": "SG6Y",
+    "zh": "其他特指的六经证",
+    "en": "Other specified six stage patterns (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "stage"
+     }
+    ],
+    "residual": [
+     "six"
+    ]
+   },
+   {
+    "code": "SG6Z",
+    "zh": "未特指的六经证",
+    "en": "Six stage patterns (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "stage"
+     }
+    ],
+    "residual": [
+     "six"
+    ]
+   },
+   {
+    "code": "SG70",
+    "zh": "上焦证",
+    "en": "Upper energizer stage patterns (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "stage"
+     }
+    ],
+    "residual": [
+     "upper",
+     "energizer"
+    ]
+   },
+   {
+    "code": "SG71",
+    "zh": "中焦证",
+    "en": "Middle energizer stage patterns (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "stage"
+     }
+    ],
+    "residual": [
+     "middle",
+     "energizer"
+    ]
+   },
+   {
+    "code": "SG72",
+    "zh": "下焦证",
+    "en": "Lower energizer stage patterns (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "stage"
+     }
+    ],
+    "residual": [
+     "lower",
+     "energizer"
+    ]
+   },
+   {
+    "code": "SG7Y",
+    "zh": "其他特指的三焦证",
+    "en": "Other specified triple energizer stage patterns (TM1)",
+    "axes": [
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "triple energizer"
+     },
+     {
+      "axis": "locus",
+      "en": "stage"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG7Z",
+    "zh": "未特指的三焦证",
+    "en": "Triple energizer stage patterns (TM1), unspecified",
+    "axes": [
+     "locus",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "triple energizer"
+     },
+     {
+      "axis": "locus",
+      "en": "stage"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG80",
+    "zh": "湿遏卫阳证",
+    "en": "Dampness obstructing the defense yang pattern (TM1)",
+    "axes": [
+     "cause",
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "dampness"
+     },
+     {
+      "axis": "property",
+      "en": "obstructing"
+     },
+     {
+      "axis": "property",
+      "en": "defense"
+     },
+     {
+      "axis": "property",
+      "en": "yang"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG81",
+    "zh": "温邪侵袭肺卫证",
+    "en": "Heat attacking the lung defense pattern (TM1)",
+    "axes": [
+     "cause",
+     "locus",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "locus",
+      "en": "lung"
+     },
+     {
+      "axis": "property",
+      "en": "defense"
+     }
+    ],
+    "residual": [
+     "attacking"
+    ]
+   },
+   {
+    "code": "SG8Y",
+    "zh": "其他特指的卫分证",
+    "en": "Other specified defense phase patterns (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "defense"
+     },
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG8Z",
+    "zh": "未特指的卫分证",
+    "en": "Defense phase patterns (TM1), unspecified",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "defense"
+     },
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG90",
+    "zh": "热入气分证",
+    "en": "Heat entering the qi phase pattern (TM1)",
+    "axes": [
+     "cause",
+     "property",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "property",
+      "en": "entering"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG91",
+    "zh": "气分湿热证",
+    "en": "Qi phase dampness and heat pattern (TM1)",
+    "axes": [
+     "property",
+     "locus",
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "locus",
+      "en": "phase"
+     },
+     {
+      "axis": "cause",
+      "en": "dampness"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG92",
+    "zh": "湿阻气分证",
+    "en": "Dampness obstructing the qi phase pattern (TM1)",
+    "axes": [
+     "cause",
+     "property",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "dampness"
+     },
+     {
+      "axis": "property",
+      "en": "obstructing"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG9Y",
+    "zh": "其他特指的气分证",
+    "en": "Other specified qi phase patterns (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SG9Z",
+    "zh": "未特指的气分证",
+    "en": "Qi phase patterns (TM1), unspecified",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SH00",
+    "zh": "营卫不和证",
+    "en": "Nutrient qi and defense qi disharmony pattern (TM1)",
+    "axes": [
+     "property",
+     "property",
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "nutrient"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "defense"
+     },
+     {
+      "axis": "property",
+      "en": "qi"
+     },
+     {
+      "axis": "property",
+      "en": "disharmony"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SH01",
+    "zh": "热入营分证",
+    "en": "Heat in the nutrient phase pattern(TM1)",
+    "axes": [
+     "cause",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "property",
+      "en": "nutrient"
+     },
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SH02",
+    "zh": "热入营血证",
+    "en": "Heat entering the nutrient and blood phase pattern (TM1)",
+    "axes": [
+     "cause",
+     "property",
+     "property",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "property",
+      "en": "entering"
+     },
+     {
+      "axis": "property",
+      "en": "nutrient"
+     },
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SH0Y",
+    "zh": "其他特指的营分证",
+    "en": "Other specified nutrient phase patterns (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "nutrient"
+     },
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SH0Z",
+    "zh": "未特指的营分证",
+    "en": "Nutrient phase patterns (TM1), unspecified",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "nutrient"
+     },
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SH10",
+    "zh": "血分证",
+    "en": "Blood phase pattern (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SH11",
+    "zh": "热入血分证",
+    "en": "Heat entering the blood phase pattern(TM1)",
+    "axes": [
+     "cause",
+     "property",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "cause",
+      "en": "heat"
+     },
+     {
+      "axis": "property",
+      "en": "entering"
+     },
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SH1Y",
+    "zh": "其他特指的血分证",
+    "en": "Other specified blood phase patterns (TM1)",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SH1Z",
+    "zh": "未特指的血分证",
+    "en": "Blood phase patterns (TM1), unspecified",
+    "axes": [
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "blood"
+     },
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": []
+   },
+   {
+    "code": "SH3Y",
+    "zh": "其他特指的卫气营血证",
+    "en": "Other specified four phase patterns (TM1)",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": [
+     "four"
+    ]
+   },
+   {
+    "code": "SH3Z",
+    "zh": "未特指的卫气营血证",
+    "en": "Four phase patterns (TM1), unspecified",
+    "axes": [
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "locus",
+      "en": "phase"
+     }
+    ],
+    "residual": [
+     "four"
+    ]
+   },
+   {
+    "code": "SH40",
+    "zh": "太阳人外感腰脊病证",
+    "en": "Large yang type exterior origin lower back pattern (TM1)",
+    "axes": [
+     "property",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "exterior"
+     },
+     {
+      "axis": "locus",
+      "en": "back"
+     }
+    ],
+    "residual": [
+     "large",
+     "origin",
+     "lower"
+    ]
+   },
+   {
+    "code": "SH41",
+    "zh": "太阳人内触小肠病证",
+    "en": "Large yang type interior origin small intestine pattern (TM1)",
+    "axes": [
+     "property",
+     "property",
+     "locus"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "interior"
+     },
+     {
+      "axis": "locus",
+      "en": "small intestine"
+     }
+    ],
+    "residual": [
+     "large",
+     "origin"
+    ]
+   },
+   {
+    "code": "SH42",
+    "zh": "太阳人表里兼病证",
+    "en": "Large yang type exterior interior combined pattern (TM1)",
+    "axes": [
+     "property",
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "exterior"
+     },
+     {
+      "axis": "property",
+      "en": "interior"
+     },
+     {
+      "axis": "property",
+      "en": "combined"
+     }
+    ],
+    "residual": [
+     "large"
+    ]
+   },
+   {
+    "code": "SH4Y",
+    "zh": "其他特指的太阳人病证",
+    "en": "Other specified large yang type patterns (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     }
+    ],
+    "residual": [
+     "large"
+    ]
+   },
+   {
+    "code": "SH4Z",
+    "zh": "未特指的太阳人病证",
+    "en": "Large yang type patterns (TM1), unspecified",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     }
+    ],
+    "residual": [
+     "large"
+    ]
+   },
+   {
+    "code": "SH50",
+    "zh": "少阳人少阳伤风证",
+    "en": "Small yang type lesser yang wind damage pattern (TM1)",
+    "axes": [
+     "property",
+     "property",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "cause",
+      "en": "wind"
+     }
+    ],
+    "residual": [
+     "small",
+     "lesser",
+     "damage"
+    ]
+   },
+   {
+    "code": "SH51",
+    "zh": "少阳人亡阴证",
+    "en": "Small yang type yin depletion pattern (TM1)",
+    "axes": [
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "depletion"
+     }
+    ],
+    "residual": [
+     "small"
+    ]
+   },
+   {
+    "code": "SH52",
+    "zh": "少阳人胸膈热证",
+    "en": "Small yang type chest heat congested pattern (TM1)",
+    "axes": [
+     "property",
+     "locus",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "locus",
+      "en": "chest"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": [
+     "small",
+     "congested"
+    ]
+   },
+   {
+    "code": "SH53",
+    "zh": "少阳人阴虚证",
+    "en": "Small yang type yin deficit pattern (TM1)",
+    "axes": [
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "yin"
+     }
+    ],
+    "residual": [
+     "small",
+     "deficit"
+    ]
+   },
+   {
+    "code": "SH54",
+    "zh": "少阳人表里兼病证",
+    "en": "Small yang type exterior interior combined pattern (TM1)",
+    "axes": [
+     "property",
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "exterior"
+     },
+     {
+      "axis": "property",
+      "en": "interior"
+     },
+     {
+      "axis": "property",
+      "en": "combined"
+     }
+    ],
+    "residual": [
+     "small"
+    ]
+   },
+   {
+    "code": "SH5Y",
+    "zh": "其他特指的少阳人病证",
+    "en": "Other specified small yang type patterns (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     }
+    ],
+    "residual": [
+     "small"
+    ]
+   },
+   {
+    "code": "SH5Z",
+    "zh": "未特指的少阳人病证",
+    "en": "Small yang type patterns (TM1), unspecified",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yang"
+     }
+    ],
+    "residual": [
+     "small"
+    ]
+   },
+   {
+    "code": "SH60",
+    "zh": "太阴人背顀表病证",
+    "en": "Large yin type supraspinal exterior pattern (TM1)",
+    "axes": [
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "exterior"
+     }
+    ],
+    "residual": [
+     "large",
+     "supraspinal"
+    ]
+   },
+   {
+    "code": "SH61",
+    "zh": "太阴人胃脘寒证",
+    "en": "Large yin type esophagus cold pattern (TM1)",
+    "axes": [
+     "property",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "cause",
+      "en": "cold"
+     }
+    ],
+    "residual": [
+     "large",
+     "esophagus"
+    ]
+   },
+   {
+    "code": "SH62",
+    "zh": "太阴人肝热证",
+    "en": "Large yin type liver heat pattern (TM1)",
+    "axes": [
+     "property",
+     "locus",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "locus",
+      "en": "liver"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": [
+     "large"
+    ]
+   },
+   {
+    "code": "SH63",
+    "zh": "太阴人燥热证",
+    "en": "Large yin type dryness heat pattern (TM1)",
+    "axes": [
+     "property",
+     "cause",
+     "cause"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "cause",
+      "en": "dryness"
+     },
+     {
+      "axis": "cause",
+      "en": "heat"
+     }
+    ],
+    "residual": [
+     "large"
+    ]
+   },
+   {
+    "code": "SH64",
+    "zh": "太阴人表里兼病证",
+    "en": "Large yin type exterior Interior combined pattern (TM1)",
+    "axes": [
+     "property",
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "exterior"
+     },
+     {
+      "axis": "property",
+      "en": "interior"
+     },
+     {
+      "axis": "property",
+      "en": "combined"
+     }
+    ],
+    "residual": [
+     "large"
+    ]
+   },
+   {
+    "code": "SH6Y",
+    "zh": "其他特指的太阴人病证",
+    "en": "Other specified large yin type patterns (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     }
+    ],
+    "residual": [
+     "large"
+    ]
+   },
+   {
+    "code": "SH6Z",
+    "zh": "未特指的太阴人病证",
+    "en": "Large yin type patterns (TM1), unspecified",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     }
+    ],
+    "residual": [
+     "large"
+    ]
+   },
+   {
+    "code": "SH70",
+    "zh": "少阴人郁狂证",
+    "en": "Small yin type congestive hyperpsychotic pattern (TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     }
+    ],
+    "residual": [
+     "small",
+     "congestive",
+     "hyperpsychotic"
+    ]
+   },
+   {
+    "code": "SH71",
+    "zh": "少阴人亡阳证",
+    "en": "Small yin type yang depletion pattern (TM1)",
+    "axes": [
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "yang"
+     },
+     {
+      "axis": "property",
+      "en": "depletion"
+     }
+    ],
+    "residual": [
+     "small"
+    ]
+   },
+   {
+    "code": "SH72",
+    "zh": "少阴人太阴证",
+    "en": "Small yin type greater yin pattern (TM1)",
+    "axes": [
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "yin"
+     }
+    ],
+    "residual": [
+     "small",
+     "greater"
+    ]
+   },
+   {
+    "code": "SH73",
+    "zh": "少阴人少阴证",
+    "en": "Small yin type lesser yin pattern (TM1)",
+    "axes": [
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "yin"
+     }
+    ],
+    "residual": [
+     "small",
+     "lesser"
+    ]
+   },
+   {
+    "code": "SH74",
+    "zh": "少阴人表里兼病证",
+    "en": "Small yin type exterior interior combined pattern (TM1)",
+    "axes": [
+     "property",
+     "property",
+     "property",
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     },
+     {
+      "axis": "property",
+      "en": "exterior"
+     },
+     {
+      "axis": "property",
+      "en": "interior"
+     },
+     {
+      "axis": "property",
+      "en": "combined"
+     }
+    ],
+    "residual": [
+     "small"
+    ]
+   },
+   {
+    "code": "SH7Y",
+    "zh": "其他特指的少阴人病证",
+    "en": "Other specified small yin type patterns(TM1)",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     }
+    ],
+    "residual": [
+     "small"
+    ]
+   },
+   {
+    "code": "SH7Z",
+    "zh": "未特指的少阴人病证",
+    "en": "Small yin type patterns(TM1), unspecified",
+    "axes": [
+     "property"
+    ],
+    "values": [
+     {
+      "axis": "property",
+      "en": "yin"
+     }
+    ],
+    "residual": [
+     "small"
+    ]
+   }
+  ]
+ }
+}

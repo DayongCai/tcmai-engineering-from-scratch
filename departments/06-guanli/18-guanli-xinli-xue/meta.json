@@ -1,0 +1,32 @@
+{
+  "slug": "18-guanli-xinli-xue",
+  "title": "管理心理学",
+  "en": "Managerial Psychology",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 116,
+  "type": "Reference",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 36,
+  "bridge": "动机理论→行为模型 / 团队互动→社会网络",
+  "chaptersTarget": 18,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/18-guanli-xinli-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/18-guanli-xinli-xue",
+    "chaptersWritten": 18,
+    "words": 291606,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#管理心理学",
+    "extractedAt": "2026-10-21"
+  }
+}

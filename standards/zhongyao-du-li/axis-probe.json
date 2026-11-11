@@ -1,0 +1,28 @@
+{
+ "counts": {
+  "chapters": 10,
+  "units": 138,
+  "hanzi": 19787,
+  "sourceUnits": 340,
+  "uniqueSource": 66,
+  "digits": 525,
+  "valueLike": 141
+ },
+ "probe": {
+  "view": {
+   "毒性成分": 50,
+   "毒性表现": 208,
+   "减毒与救治": 293
+  },
+  "organ": {
+   "肝": 143,
+   "肾": 135,
+   "心与神经": 83,
+   "生殖与遗传": 102
+  }
+ },
+ "ratio": {
+  "view": 5.9,
+  "organ": 1.7
+ }
+}

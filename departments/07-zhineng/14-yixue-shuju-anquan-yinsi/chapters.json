@@ -1,54 +1,71 @@
 {
-  "slug": "14-yixue-shuju-anquan-yinsi",
-  "title": "医学数据安全与隐私保护",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-mingan-fenji",
-      "title": "医疗数据的敏感性与分级",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-qubiaoshi-fengxian",
-      "title": "去标识化与重识别风险",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-jiami-tuomin",
-      "title": "加密、脱敏与令牌化",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-fangwen-shenji",
-      "title": "访问控制与审计",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-lianbang-yinsi",
-      "title": "联邦学习与隐私计算",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-chujing-hegui",
-      "title": "数据出境的合规要求",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-shijian-xiangying",
-      "title": "安全事件响应与演练",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-lunli-shencha",
-      "title": "数据伦理审查的要点",
-      "status": "📋"
-    }
-  ]
+ "slug": "14-yixue-shuju-anquan-yinsi",
+ "title": "医学数据安全与隐私",
+ "note": "8 章 = 教材 8 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-e1",
+   "title": "信息标准与编码基础",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-e2",
+   "title": "标准落地的合规要求",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-e3",
+   "title": "政策法规与伦理总则",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-e4",
+   "title": "伦理审查与知情同意",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-e5",
+   "title": "信息安全体系与风险",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-e6",
+   "title": "访问控制与加密备份",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-e7",
+   "title": "病案与医疗数据管理",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-e8",
+   "title": "数据治理与隐私保护",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

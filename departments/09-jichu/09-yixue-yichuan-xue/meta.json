@@ -1,0 +1,29 @@
+{
+  "slug": "09-yixue-yichuan-xue",
+  "title": "医学遗传学",
+  "en": "Medical Genetics",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 129,
+  "type": "Core",
+  "semester": 3,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 36,
+  "bridge": "家系→贝叶斯网络 / 基因型—表型→关联分析",
+  "chaptersTarget": 12,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/09-yixue-yichuan-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/09-yixue-yichuan-xue",
+    "chaptersWritten": 0,
+    "words": 0,
+    "status": "planned"
+  }
+}

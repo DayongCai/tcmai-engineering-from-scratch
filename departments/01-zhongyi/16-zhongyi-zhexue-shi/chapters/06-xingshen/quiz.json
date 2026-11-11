@@ -1,0 +1,79 @@
+{
+  "lesson": "06-xingshen",
+  "title": "形神与心身：医学里的心身问题",
+  "subject": "16-zhongyi-zhexue-shi",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "形神关系的两句是？",
+      "options": [
+        "形为神之宅，神为形之主",
+        "形神二元",
+        "神即是形",
+        "形即是神"
+      ],
+      "correct": 0,
+      "explanation": "单向依赖 + 反向作用。"
+    },
+    {
+      "stage": "check",
+      "question": "形神双向链的两个方向是？",
+      "options": [
+        "形病及神、神病及形",
+        "只有形及神",
+        "只有神及形",
+        "互不相干"
+      ],
+      "correct": 0,
+      "explanation": "解释了治神以治形。"
+    },
+    {
+      "stage": "check",
+      "question": "形神与志意的内经命中是？",
+      "options": [
+        "1,431 与 1,900",
+        "10,855 与 1,479",
+        "129 与 383",
+        "0 与 0"
+      ],
+      "correct": 0,
+      "explanation": "密度中低。"
+    },
+    {
+      "stage": "check",
+      "question": "心身问题的三层处理不含？",
+      "options": [
+        "以方测证",
+        "调气血补脏腑",
+        "安神开窍疏肝",
+        "以治神改善形"
+      ],
+      "correct": 0,
+      "explanation": "第三层是形神之间的互治。"
+    },
+    {
+      "stage": "post",
+      "question": "「以神代形」的风险是？",
+      "options": [
+        "把所有躯体症状归为心因，漏掉器质病",
+        "用药过多",
+        "辨证过细",
+        "无风险"
+      ],
+      "correct": 0,
+      "explanation": "反向越界。"
+    },
+    {
+      "stage": "post",
+      "question": "本章与精神病学第 7 章的接口在？",
+      "options": [
+        "郁病可致纳差消瘦（神病及形）",
+        "概念相同",
+        "方药相同",
+        "无接口"
+      ],
+      "correct": 0,
+      "explanation": "接口在临床，不在概念。"
+    }
+  ]
+}

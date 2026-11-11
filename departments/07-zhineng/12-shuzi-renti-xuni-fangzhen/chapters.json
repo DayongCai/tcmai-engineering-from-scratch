@@ -1,54 +1,71 @@
 {
-  "slug": "12-shuzi-renti-xuni-fangzhen",
-  "title": "数字人体与虚拟仿真",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-jihe-biaoshi",
-      "title": "人体建模的几何表示",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-youxianyuan-fangzhen",
-      "title": "有限元与生物力学仿真",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-xuewei-sanwei",
-      "title": "针灸穴位的三维定位",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-vr-jiaoxue",
-      "title": "虚拟现实在教学中的应用",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-chujue-xunlian",
-      "title": "触觉反馈与操作训练",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-yanzheng-fangfa",
-      "title": "仿真结果的验证方法",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-shoushu-yanlian",
-      "title": "介入与手术的虚拟演练",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-chaju-fenxi",
-      "title": "仿真与真实病例的差距",
-      "status": "📋"
-    }
-  ]
+ "slug": "12-shuzi-renti-xuni-fangzhen",
+ "title": "数字人体虚拟仿真",
+ "note": "8 章 = 教材 8 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-dh1",
+   "title": "数字人体的概念与来源",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-dh2",
+   "title": "数据从哪里来：体表、影像与传感",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-dh3",
+   "title": "结构与层级：把人体写成知识组织",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-dh4",
+   "title": "建模：降维、嵌入与参数化",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-dh5",
+   "title": "人群分型与聚类",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-dh6",
+   "title": "仿真结果怎么验：评估与对照",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-dh7",
+   "title": "可视化与交互：系统怎么长",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-dh8",
+   "title": "隐私：人体数据是敏感信息",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

@@ -1,0 +1,112 @@
+{
+  "chapter": "16-pian14-shuiqi",
+  "slideCount": 21,
+  "segmentCount": 10,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 34
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 66
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 26
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 81
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 415
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 398
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 185
+    },
+    {
+      "n": 8,
+      "segment": 5,
+      "chars": 407
+    },
+    {
+      "n": 9,
+      "segment": 5,
+      "chars": 256
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 375
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 111
+    },
+    {
+      "n": 12,
+      "segment": 8,
+      "chars": 201
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 328
+    },
+    {
+      "n": 14,
+      "segment": 9,
+      "chars": 405
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 401
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 219
+    },
+    {
+      "n": 17,
+      "segment": 9,
+      "chars": 418
+    },
+    {
+      "n": 18,
+      "segment": 9,
+      "chars": 418
+    },
+    {
+      "n": 19,
+      "segment": 9,
+      "chars": 298
+    },
+    {
+      "n": 20,
+      "segment": 9,
+      "chars": 411
+    },
+    {
+      "n": 21,
+      "segment": 10,
+      "chars": 52
+    }
+  ]
+}

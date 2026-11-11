@@ -1,0 +1,79 @@
+{
+  "lesson": "02-liuwansu-huore",
+  "title": "刘完素与火热论：把「火」抬成终点",
+  "subject": "15-zhongyi-gejia-xueshuo",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "刘完素的核心命题是？",
+      "options": [
+        "六气皆从火化",
+        "病由邪生",
+        "内伤脾胃",
+        "阳非有余"
+      ],
+      "correct": 0,
+      "explanation": "把火从诸邪之一提升为转化终点。"
+    },
+    {
+      "stage": "check",
+      "question": "刘完素词表在 2,792 条中的命中是？",
+      "options": [
+        "637 条（22.8%）",
+        "7 条",
+        "1,476 条",
+        "68 条"
+      ],
+      "correct": 0,
+      "explanation": "伤寒 219 / 金匮 122 / 温病 296。"
+    },
+    {
+      "stage": "check",
+      "question": "刘完素与朱震亨的分歧在？",
+      "options": [
+        "热的来源：外邪转化 vs 相火妄动",
+        "有无热",
+        "是否用药",
+        "是否辨证"
+      ],
+      "correct": 0,
+      "explanation": "两者都承认「热」是核心问题。"
+    },
+    {
+      "stage": "check",
+      "question": "本章关联的证候族合计？",
+      "options": [
+        "37 证 61 次病证覆盖，跨 2 课",
+        "23 证",
+        "43 证",
+        "7 证"
+      ],
+      "correct": 0,
+      "explanation": "热毒、血热、湿热三族。"
+    },
+    {
+      "stage": "post",
+      "question": "637 条为什么不能说明「河间派条文最多」？",
+      "options": [
+        "条文出自伤寒、金匮、温病，不是河间原书",
+        "因为统计错",
+        "因为样本小",
+        "因为词不对"
+      ],
+      "correct": 0,
+      "explanation": "词面命中只能说明分布。"
+    },
+    {
+      "stage": "post",
+      "question": "「燥亦能化火」在可核性上属于？",
+      "options": [
+        "部分可核（「燥」字命中稀少）",
+        "完全不可核",
+        "完全可核",
+        "与主张无关"
+      ],
+      "correct": 0,
+      "explanation": "本章主张三句之一。"
+    }
+  ]
+}

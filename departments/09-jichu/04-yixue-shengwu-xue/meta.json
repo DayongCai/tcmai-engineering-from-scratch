@@ -1,0 +1,32 @@
+{
+  "slug": "04-yixue-shengwu-xue",
+  "title": "医学生物学",
+  "en": "Medical Biology",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 124,
+  "type": "Core",
+  "semester": 2,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 36,
+  "bridge": "遗传变异→序列比对 / 进化→系统发生树",
+  "chaptersTarget": 16,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/04-yixue-shengwu-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/04-yixue-shengwu-xue",
+    "chaptersWritten": 16,
+    "words": 365868,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#医学生物学",
+    "extractedAt": "2026-10-21"
+  }
+}

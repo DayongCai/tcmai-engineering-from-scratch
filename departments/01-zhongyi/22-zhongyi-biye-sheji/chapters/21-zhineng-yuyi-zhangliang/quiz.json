@@ -1,0 +1,79 @@
+{
+  "lesson": "21-zhineng-yuyi-zhangliang",
+  "title": "智能系·案例二：三维极坐标张量——中医语义表示的邻域稳定性",
+  "subject": "22-zhongyi-biye-sheji",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "第 21 章属于哪种案例类型？",
+      "options": [
+        "方法层",
+        "综述",
+        "个案报道",
+        "文献计量"
+      ],
+      "correct": 0,
+      "explanation": "方法层的判据是**消融差**：去掉你加的那一步，结果必须变差或变乱；不变，说明那"
+    },
+    {
+      "stage": "check",
+      "question": "本章的数据锚点规模是？",
+      "options": [
+        "semtensor 目录 8 项（annotations／datasets／descriptions／embeddings／equivalence／sources）",
+        "无数据，凭经验",
+        "仅有目录结构",
+        "需外部采购"
+      ],
+      "correct": 0,
+      "explanation": "必须报路径与规模。"
+    },
+    {
+      "stage": "check",
+      "question": "本章客户数的推算依据是？",
+      "options": [
+        "药企与器械 SAM 200 × 渗透带中位",
+        "直接手设",
+        "竞品数量",
+        "用户访谈"
+      ],
+      "correct": 0,
+      "explanation": "采用 16"
+    },
+    {
+      "stage": "check",
+      "question": "本章客单与回本期是？",
+      "options": [
+        "¥40,000、27.1 个月",
+        "1 万元、1 个月",
+        "100 万元、5 年",
+        "无法计算"
+      ],
+      "correct": 0,
+      "explanation": "无营收锚：仅作内部一致性检查（同类案例客单差异不超过 5 倍"
+    },
+    {
+      "stage": "post",
+      "question": "本案为何不做 C 端？",
+      "options": [
+        "个人无使用场景",
+        "技术做不到",
+        "没有数据",
+        "政策禁止"
+      ],
+      "correct": 0,
+      "explanation": "不做：表示层检验是研发工具"
+    },
+    {
+      "stage": "post",
+      "question": "把三年客户数再砍一半，首先影响什么？",
+      "options": [
+        "回本期显著拉长、部分案转亏",
+        "不影响",
+        "只影响收入不影响毛利",
+        "无意义"
+      ],
+      "correct": 0,
+      "explanation": "敏感性见 ch1 第十节。"
+    }
+  ]
+}

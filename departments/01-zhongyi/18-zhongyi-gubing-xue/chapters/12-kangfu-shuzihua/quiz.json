@@ -1,0 +1,79 @@
+{
+  "lesson": "12-kangfu-shuzihua",
+  "title": "康复与数字化：把「动静结合」变成可执行的动作",
+  "subject": "18-zhongyi-gubing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "练功疗法的红线是？",
+      "options": [
+        "练后疼痛持续超过 2 小时或次日加重",
+        "练后疲劳",
+        "练后出汗",
+        "练后口渴"
+      ],
+      "correct": 0,
+      "explanation": "教材 12.1.1：痛不加重是判据。"
+    },
+    {
+      "stage": "check",
+      "question": "康复的三层是？",
+      "options": [
+        "评定、治疗、维持",
+        "轻、中、重",
+        "急、缓、康",
+        "内治、外治、手术"
+      ],
+      "correct": 0,
+      "explanation": "教材 12.1.1 的分层。"
+    },
+    {
+      "stage": "check",
+      "question": "数字化在骨病中的定位是？",
+      "options": [
+        "可辅助参考，不替代医师判断",
+        "完全替代",
+        "禁止使用",
+        "只用于科研"
+      ],
+      "correct": 0,
+      "explanation": "教材在每处 AI 表述后都加「可辅助参考」。"
+    },
+    {
+      "stage": "check",
+      "question": "本章哪项数据为 0？",
+      "options": [
+        "数值命中 0 处",
+        "引书 0 部",
+        "单元 0 个",
+        "汉字 0 字"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算：本章讲架构与流程。"
+    },
+    {
+      "stage": "post",
+      "question": "「手术边界」被写进哪一处数据结构？",
+      "options": [
+        "骨病知识图谱（病—证—法—方—手术边界）",
+        "康复评定表",
+        "实验室清单",
+        "影像报告"
+      ],
+      "correct": 0,
+      "explanation": "教材 12.2.2。"
+    },
+    {
+      "stage": "post",
+      "question": "动静结合在急性炎症期如何安排？",
+      "options": [
+        "患处制动，邻近关节活动",
+        "全部制动",
+        "全部活动",
+        "只做被动活动"
+      ],
+      "correct": 0,
+      "explanation": "教材 12.1.1 三种情形之一。"
+    }
+  ]
+}

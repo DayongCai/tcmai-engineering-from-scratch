@@ -1,0 +1,32 @@
+{
+  "slug": "10-bingli-xue",
+  "title": "病理学",
+  "en": "Pathology",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 130,
+  "type": "Core",
+  "semester": 3,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 72,
+  "bridge": "病变形态→病理图像分类 / 病机演变→因果图",
+  "chaptersTarget": 21,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/10-bingli-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/10-bingli-xue",
+    "chaptersWritten": 21,
+    "words": 477254,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#病理学",
+    "extractedAt": "2026-10-21"
+  }
+}

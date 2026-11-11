@@ -22,8 +22,21 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/08-wuguan/15-zhongyi-meirong-pifu",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 381,
+    "words": 202647,
+    "status": "wip",
+    "layer": "external-source",
+    "origin": "external",
+    "source": "standards/materials/textbooks-batch/external-registry.json#waike-xinfa",
+    "external": {
+      "id": "waike-xinfa",
+      "title": "醫宗金鑑·外科心法要訣",
+      "url": "https://jicheng.tw/tcm/book/%E9%86%AB%E5%AE%97%E9%87%91%E9%91%91/%E5%A4%96%E7%A7%91%E5%BF%83%E6%B3%95%E8%A6%81%E8%A8%A3/index.html",
+      "sha256": "9989a4279eff2b9db6169cbb8b159e3ac5ead8eaf8b21550037c730a92111794",
+      "baseText": "《御纂醫宗金鑑》，光緒十八年（1892）上海五彩書局石印本（香港中文大學圖書館掃描本），外科卷一至卷十六；《欽定四庫全書·子部五·醫家類·御纂醫宗金鑑》卷六十一至卷七十六（漢リポ掃描及文字化本）",
+      "fetchedAt": "2026-10-21",
+      "coverage": "古籍可对上的部分；现代内容未覆盖"
+    },
+    "extractedAt": "2026-10-21"
   }
 }

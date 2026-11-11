@@ -1,0 +1,168 @@
+{
+ "slug": "17-zhongyao-shangpin-xue",
+ "title": "中药商品学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-daolun",
+   "title": "中药商品学导论",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-daolun/docs/zh.md",
+   "code": "chapters/01-daolun/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-lishi-liutong",
+   "title": "中药商品的历史与流通演变",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-lishi-liutong/docs/zh.md",
+   "code": "chapters/02-lishi-liutong/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-fenlei-mingming",
+   "title": "中药商品的分类与命名",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-fenlei-mingming/docs/zh.md",
+   "code": "chapters/03-fenlei-mingming/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-daodi-chanqu",
+   "title": "道地药材与产区",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-daodi-chanqu/docs/zh.md",
+   "code": "chapters/04-daodi-chanqu/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-zhiliang-biaozhun",
+   "title": "中药商品的质量标准体系",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-zhiliang-biaozhun/docs/zh.md",
+   "code": "chapters/05-zhiliang-biaozhun/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-jianding-fangfa",
+   "title": "中药商品的鉴定方法",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-jianding-fangfa/docs/zh.md",
+   "code": "chapters/06-jianding-fangfa/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-guige-dengji",
+   "title": "中药材商品的规格等级",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-guige-dengji/docs/zh.md",
+   "code": "chapters/07-guige-dengji/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-yinpian",
+   "title": "中药饮片商品",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-yinpian/docs/zh.md",
+   "code": "chapters/08-yinpian/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-zhongchengyao",
+   "title": "中成药商品",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-zhongchengyao/docs/zh.md",
+   "code": "chapters/09-zhongchengyao/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-baozhuang-chucang",
+   "title": "中药商品的包装与贮藏养护",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-baozhuang-chucang/docs/zh.md",
+   "code": "chapters/10-baozhuang-chucang/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-jingying-zhiliang",
+   "title": "中药商品的经营与质量管理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-jingying-zhiliang/docs/zh.md",
+   "code": "chapters/11-jingying-zhiliang/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-jiage-shichang",
+   "title": "中药商品的价格与市场",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-jiage-shichang/docs/zh.md",
+   "code": "chapters/12-jiage-shichang/code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-pinpai-zhishi",
+   "title": "中药商品的品牌与知识产权",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/13-pinpai-zhishi/docs/zh.md",
+   "code": "chapters/13-pinpai-zhishi/code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-teshu-guanli",
+   "title": "特殊管理的中药商品",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/14-teshu-guanli/docs/zh.md",
+   "code": "chapters/14-teshu-guanli/code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-guomao-maoyi",
+   "title": "中药商品的国际贸易",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/15-guomao-maoyi/docs/zh.md",
+   "code": "chapters/15-guomao-maoyi/code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-jianguan-hegui",
+   "title": "中药商品的监管与合规",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/16-jianguan-hegui/docs/zh.md",
+   "code": "chapters/16-jianguan-hegui/code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-fengxian-zhuisu",
+   "title": "中药商品的质量风险与追溯",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/17-fengxian-zhuisu/docs/zh.md",
+   "code": "chapters/17-fengxian-zhuisu/code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-jiaoxue-pingtai",
+   "title": "中药商品学与 tcmP 智能教学平台",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/18-jiaoxue-pingtai/docs/zh.md",
+   "code": "chapters/18-jiaoxue-pingtai/code/main.js"
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "16-wuguan-linchuang-lunzhuan",
+  "title": "五官口腔临床轮转",
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-yanke-lunzhuan",
+      "title": "眼科门诊轮转",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/01-yanke-lunzhuan/docs/zh.md",
+      "code": "chapters/01-yanke-lunzhuan/code/main.js"
+    },
+    {
+      "n": 2,
+      "slug": "02-erbihou-lunzhuan",
+      "title": "耳鼻喉科门诊轮转",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/02-erbihou-lunzhuan/docs/zh.md",
+      "code": "chapters/02-erbihou-lunzhuan/code/main.js"
+    },
+    {
+      "n": 3,
+      "slug": "03-kouqiang-neike",
+      "title": "口腔内科轮转",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/03-kouqiang-neike/docs/zh.md",
+      "code": "chapters/03-kouqiang-neike/code/main.js"
+    },
+    {
+      "n": 4,
+      "slug": "04-hemian-waike",
+      "title": "口腔颌面外科轮转",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/04-hemian-waike/docs/zh.md",
+      "code": "chapters/04-hemian-waike/code/main.js"
+    },
+    {
+      "n": 5,
+      "slug": "05-tese-zhiliao",
+      "title": "中医五官特色治疗轮转",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/05-tese-zhiliao/docs/zh.md",
+      "code": "chapters/05-tese-zhiliao/code/main.js"
+    },
+    {
+      "n": 6,
+      "slug": "06-chuke-kaohe",
+      "title": "出科考核与病例复盘",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/06-chuke-kaohe/docs/zh.md",
+      "code": "chapters/06-chuke-kaohe/code/main.js"
+    }
+  ]
+}

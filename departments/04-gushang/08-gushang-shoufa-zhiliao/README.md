@@ -1,77 +1,66 @@
 # 骨伤科手法治疗学
 
-> 手法力学→力反馈控制 / 疗效→纵向数据分析
+**08-gushang-shoufa-zhiliao** · 骨伤学院 · 10 章 · 42 单元 · 172,947 汉字
 
-| 项目 | 内容 |
-|------|------|
-| 院系 | 🦴 骨伤系 `04-gushang` |
-| 类型 | Build |
-| 学期 | 第 6 学期（🌿 长·积累 / 大三） |
-| 学时 | 72 |
-| 章节目标 | 10 |
-| 学科编号 | 053 / 120 |
-| 英文名 | Orthopedic Manual Therapy |
+> 手法的力学三要素是力的大小、方向、作用点；风险最高的动作往往收益也最大
 
-## 一、学科定位
+**课程类型：派生课（无独立教材）**。单元正文逐字取自父课，`locator` 一律 `派生·第N章·m.k`，
+`source` 记 `父课:父locator`；本课汉字**不与父课相加**。
 
-骨伤科手法治疗学（Orthopedic Manual Therapy）是骨伤系的核心学科，聚焦「正骨理筋—骨病退变—运动损伤与康复工程」中的一个完整知识域。
+## 一、父课
 
-## 二、中医 → AI 桥梁
+- `kangfu-huli`
+- `shoufa`
+- `tuina`
+- `xiaoer-tuina`
+- `zhenggu`
+- `zhiliao`
 
-```text
-手法力学→力反馈控制 / 疗效→纵向数据分析
-```
+## 二、章表
 
-骨伤科手法治疗学 里的每一个传统概念，都被翻译成一个可计算、可验证的工程对象：
-中医概念给出**语义与约束**，AI/工程方法给出**表示与算法**。两者必须能互相回指，
-否则这个章节就还没有写完。
+| # | 章 | 父课来源 | 单元 | 汉字 |
+|--:|---|---|--:|--:|
+| 1 | 手法治疗的基础 | shoufa、zhenggu | 3 | 15,648 |
+| 2 | 正骨八法与常用手法 | zhenggu、shoufa | 5 | 11,237 |
+| 3 | 软组织手法 | shoufa、tuina | 3 | 16,504 |
+| 4 | 整复类手法 | zhenggu、shoufa | 6 | 11,714 |
+| 5 | 颈肩部手法 | zhenggu、shoufa | 5 | 11,586 |
+| 6 | 腰腿部手法 | zhenggu、zhiliao | 6 | 11,675 |
+| 7 | 关节松动手法 | shoufa、kangfu-huli | 3 | 21,895 |
+| 8 | 小儿骨伤手法 | zhenggu、xiaoer-tuina | 5 | 11,209 |
+| 9 | 风险、禁忌与意外处理 | zhenggu、shoufa | 3 | 11,045 |
+| 10 | 疗效评价与方案设计 | zhenggu、kangfu-huli | 3 | 50,434 |
 
-## 三、章节地图（目标 10 章）
+## 三、三辨与四位面（实测）
 
-章节尚未编写。运行脚手架开章：
+| 三辨 | 词频 |
+|---|--:|
+| **手法技术** | **1398** |
+| **适应证与量** | **346** |
+| **风险与禁忌** | **1066** |
+
+三辨极差 **4.0×**。
+
+| 四位面（章群结构分区） | 汉字 |
+|---|---:|
+| 基础与手法 | 43,389 |
+| 整复与部位 | 23,300 |
+| 部位与小儿 | 44,779 |
+| 安全与评价 | 61,479 |
+
+四位面极差 **2.6×**。派生课一律用结构分区：父课的泛词（「治疗」「患者」「手法」）会把关键词轴压成假平衡。
+
+## 四、判据
+
+手法的力学三要素是力的大小、方向、作用点；风险最高的动作往往收益也最大。每章要求写清：**部位与病程、必须排除的危险诊断、处理顺序、可核的随访指标**。
+
+## 五、章内可执行验证
 
 ```bash
-node scripts/scaffold_chapter.js 04-gushang/08-gushang-shoufa-zhiliao 01-<chapter-slug>
+node scripts/audit_curriculum.js | grep -A2 "08-gushang-shoufa-zhiliao"
+node tests/test_chapter_code.js | grep -c "08-gushang-shoufa-zhiliao"
+python scripts/_derive_gs.py
 ```
 
-编写完成后，把章节索引写进 `chapters.json`，本表的「状态」列由
-`scripts/build_catalog.js` 自动填充。
-
-## 四、章节契约（每章必须满足）
-
-```text
-chapters/NN-<slug>/
-├── docs/zh.md      # MOTTO / PROBLEM / 环境逼迫 / 知识积累 / CONCEPT / BUILD IT / USE IT / SHIP IT
-├── code/           # 可运行、自终止、退出码 0（Node.js 或 Python，见 AGENTS.md 依赖白名单）
-├── quiz.json       # 恰好 6 题 = 1 pre + 3 check + 2 post
-└── outputs/        # 可复用产出物（prompt / skill / agent / mcp / 临床工具）
-```
-
-## 五、教材交付 [textbooks]
-
-```text
-输出: textbooks/04-gushang/08-gushang-shoufa-zhiliao/
-├── 00-前言.md
-├── 01-第1章-<标题>.md   ...
-└── figures/                # Mermaid / SVG，禁止 ASCII 框图
-```
-
-## 六、平台交付 [tcmP]
-
-```text
-输出: platform/courses/04-gushang/08-gushang-shoufa-zhiliao/
-├── course.yaml             # 课程元数据 + 章节 → 视频映射
-├── slides/                 # 讲稿 HTML（由 docs/zh.md 派生）
-├── narration/              # TTS 旁白文本 + 音频
-└── video/                  # 成片 MP4（H.264 / 720p 以上）
-```
-
-## 七、进度
-
-| 指标 | 当前 | 目标 |
-|------|------|------|
-| 章节 | 0 | 10 |
-| 视频 | 0 | 10 |
-| 教材字数 | 0 | ≈ 60000 |
-
-> 状态字形：🌱 未开始 ⬚ · 🚧 进行中 · ✅ 完成
+**免责声明：** 本课为教学材料；无独立教材，内容为本库已建课程的**二次编排**。
+具体操作、剂量与手术指征须由执业人员判断，不构成诊疗建议。

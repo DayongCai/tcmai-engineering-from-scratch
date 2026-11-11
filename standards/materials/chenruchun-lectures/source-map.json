@@ -1,0 +1,546 @@
+{
+  "$generated": "node scripts/import_chenruchun_lectures.js",
+  "slug": "chenruchun-lectures",
+  "title": "陈瑞春讲伤寒论 · 24 讲（讲稿证据 + 对读验证）",
+  "source": {
+    "kind": "video-page + screen-read subtitles（全 24 讲）",
+    "page": {
+      "url": "https://www.bilibili.com/video/BV1yYoaBuEBc/",
+      "file": "standards/materials/chenruchun-lectures/sources/bilibili-video-page.html",
+      "sha256": "603ad2c30bdf0c23aadd15b1444b80141c71bec04fd59fa73398eb6a2e24c707"
+    },
+    "subtitles": {
+      "lecture19": {
+        "file": "standards/materials/chenruchun-lectures/sources/subtitle-samples.json",
+        "sha256": "a9d6984ac3c49bc054976c5497ee8f35675be92e027d9681f55ca197b1eb8ce6",
+        "samples": 150
+      },
+      "courses": {
+        "file": "standards/materials/chenruchun-lectures/sources/subtitle-samples-courses.json",
+        "sha256": "84810a438de3b4209b625606177eb2777abd8a3549c2484559d6b148e0acd358",
+        "samples": 440,
+        "lectures": 22
+      },
+      "method": "画面硬字幕读屏。平台字幕接口对未登录请求返回空字幕列表（见 sources/api-player-v2.json）→ 不提平台字幕，改读画面硬字幕。每讲：整片 0.5s 取 1 帧、只取底部字幕窄条（y 90%–99%，640×32 灰度 PGM）→ 相邻帧平均绝对差 MAD>3.0 分组得换行段。",
+      "filter": "有字判据（本次新增）：段中帧的「描边白字」占比 = 亮像素(>190)且四邻含暗像素(<90) 的像素比例，逐讲用 Otsu 定阈值。在第 19 讲 150 条人读样本上实测：精确率 100%、召回 90%、准确率 93%（宽松版「条带亮点占比」只有 79%/81%，已弃用）。因此本批每次抽样都落在有字段上，不再浪费读图额度。",
+      "apiNote": "平台字幕接口未登录 → 返回空字幕列表（subtitles:[]，见 sources/api-player-v2.json），故改用画面硬字幕读屏"
+    },
+    "videoFiles": {
+      "committed": false,
+      "measuredTotalSeconds": 73029,
+      "why": "24 讲 360p 合计约 3 GB，可由 bvid/cid 重新取链 → 不入库（第 19 讲留了 api-playurl.json）"
+    },
+    "duplicates": [
+      {
+        "no": 8,
+        "duplicateOf": 6,
+        "note": "合集第 8 条（大青龙汤 麻杏甘石汤）与第 6 条（汗法1 麻黄汤）是同一份视频：bvid/cid 不同（BV1RMo8BmEuD/37737136335 vs BV12xo8BKEsw/37737137206），但时长同为 3370s，抽帧统计逐位相同（6738 帧 / 803 稳定段 / 462 有字段 / Otsu 阈值 0.01735），20 个抽样时间码完全一致。故第 8 讲不作为独立证据计入，本文件只作记录。"
+      }
+    ]
+  },
+  "season": {
+    "id": 7962512,
+    "title": "陈瑞春讲伤寒论24讲-含目录、字幕",
+    "episodes": 24,
+    "totalDurSource": 73029,
+    "totalDurMeasured": 73029,
+    "faAgg": {
+      "总论": 5,
+      "汗法": 5,
+      "下法": 3,
+      "和法": 4,
+      "温法": 3,
+      "清法": 2,
+      "清法·补法": 1,
+      "补法": 1
+    }
+  },
+  "perLecture": [
+    {
+      "no": 1,
+      "bvid": "BV16koaBAE82",
+      "title": "陈瑞春讲伤寒论1-论治伤寒之学（上） 伤寒论的定位、价值、版本、结构，学习方法论，注本",
+      "durMeasured": 2892,
+      "fa": "总论",
+      "textSegments": 521,
+      "samples": 20
+    },
+    {
+      "no": 2,
+      "bvid": "BV1FkoaBPEDU",
+      "title": "陈瑞春讲伤寒论2-论治伤寒之学（下）伤寒论与内经、六经辨证实质、临床治疗误区、经典学习、中西医对比、水气病",
+      "durMeasured": 4015,
+      "fa": "总论",
+      "textSegments": 358,
+      "samples": 20
+    },
+    {
+      "no": 3,
+      "bvid": "BV1PeoaBzEHG",
+      "title": "陈瑞春讲伤寒论3-伤寒论总论1 伤寒论学术地位、如何学习伤寒论、伤寒与温病、中医教育现状、六经辨证规律、叶天士",
+      "durMeasured": 3061,
+      "fa": "总论",
+      "textSegments": 350,
+      "samples": 20
+    },
+    {
+      "no": 4,
+      "bvid": "BV1WeoaBzEBd",
+      "title": "陈瑞春讲伤寒论4-伤寒论总论2伤寒论与温病条辨、三焦辨证、中医组方、中医药治疗对比、活血化瘀、肿瘤治疗、经典学习、中西医结合",
+      "durMeasured": 3505,
+      "fa": "总论",
+      "textSegments": 574,
+      "samples": 20
+    },
+    {
+      "no": 5,
+      "bvid": "BV1CeoaBBExP",
+      "title": "陈瑞春讲伤寒论5-伤寒论总论3 经方分类和比较、方剂临床特征、方剂加减、辨证要点对比、学习方法论",
+      "durMeasured": 1173,
+      "fa": "总论",
+      "textSegments": 177,
+      "samples": 20
+    },
+    {
+      "no": 6,
+      "bvid": "BV12xo8BKEsw",
+      "title": "陈瑞春讲伤寒论6-汗法1 麻黄汤",
+      "durMeasured": 3370,
+      "fa": "汗法",
+      "textSegments": 462,
+      "samples": 20
+    },
+    {
+      "no": 7,
+      "bvid": "BV1RMo8BmEs1",
+      "title": "陈瑞春讲伤寒论7-汗法2 桂枝汤",
+      "durMeasured": 3240,
+      "fa": "汗法",
+      "textSegments": 462,
+      "samples": 20
+    },
+    {
+      "no": 8,
+      "bvid": "BV1RMo8BmEuD",
+      "title": "陈瑞春讲伤寒论8-汗法3 大青龙汤 麻杏甘石汤",
+      "durMeasured": 3370,
+      "fa": "汗法",
+      "textSegments": 462,
+      "samples": 0
+    },
+    {
+      "no": 9,
+      "bvid": "BV1vsJG6VEqk",
+      "title": "陈瑞春讲伤寒论9-汗法4 麻黄附子细辛汤 小青龙汤 桂枝加葛根汤 麻黄连翘赤小豆汤 当归四逆汤 苓甘五味姜辛夏汤",
+      "durMeasured": 3152,
+      "fa": "汗法",
+      "textSegments": 322,
+      "samples": 20
+    },
+    {
+      "no": 10,
+      "bvid": "BV1geJG6TE8v",
+      "title": "陈瑞春讲伤寒论10-汗法5·下法1",
+      "durMeasured": 3002,
+      "fa": "汗法",
+      "textSegments": 338,
+      "samples": 20
+    },
+    {
+      "no": 11,
+      "bvid": "BV1haJG6BEi4",
+      "title": "陈瑞春讲伤寒论11-下法1 大承气汤 调胃承气汤 桃核承气汤 大黄黄连泻心汤",
+      "durMeasured": 3850,
+      "fa": "下法",
+      "textSegments": 554,
+      "samples": 20
+    },
+    {
+      "no": 12,
+      "bvid": "BV1LpJG6yE4K",
+      "title": "陈瑞春讲伤寒论12-下法2  舌苔与阳明腑实证 三个承气汤 桃核承气汤 三黄泻心汤  抵当汤",
+      "durMeasured": 2809,
+      "fa": "下法",
+      "textSegments": 381,
+      "samples": 20
+    },
+    {
+      "no": 13,
+      "bvid": "BV1VtJG63EtB",
+      "title": "陈瑞春讲伤寒论13-下法3·和法1",
+      "durMeasured": 3818,
+      "fa": "下法",
+      "textSegments": 709,
+      "samples": 20
+    },
+    {
+      "no": 14,
+      "bvid": "BV11xo8BKEfJ",
+      "title": "陈瑞春讲伤寒论14-和法1 小柴胡汤",
+      "durMeasured": 2847,
+      "fa": "和法",
+      "textSegments": 269,
+      "samples": 20
+    },
+    {
+      "no": 15,
+      "bvid": "BV12Wo8BqEZB",
+      "title": "陈瑞春讲伤寒论15-和法2 柴胡桂枝各半汤 大柴胡汤 柴胡桂枝干姜汤",
+      "durMeasured": 2697,
+      "fa": "和法",
+      "textSegments": 319,
+      "samples": 20
+    },
+    {
+      "no": 16,
+      "bvid": "BV1ybo8BPEvb",
+      "title": "陈瑞春讲伤寒论16-和法3 黄芩加半夏生姜汤证 葛根芩连汤 四逆散",
+      "durMeasured": 3503,
+      "fa": "和法",
+      "textSegments": 461,
+      "samples": 20
+    },
+    {
+      "no": 17,
+      "bvid": "BV1Txo8BTEFv",
+      "title": "陈瑞春讲伤寒论17-和法4 半夏泻心汤 甘草泻心汤",
+      "durMeasured": 2825,
+      "fa": "和法",
+      "textSegments": 443,
+      "samples": 20
+    },
+    {
+      "no": 18,
+      "bvid": "BV1yYoaBuExC",
+      "title": "陈瑞春讲伤寒论18-温法1 温脾法 理中汤",
+      "durMeasured": 3000,
+      "fa": "温法",
+      "textSegments": 449,
+      "samples": 20
+    },
+    {
+      "no": 19,
+      "bvid": "BV1yYoaBuEBc",
+      "title": "陈瑞春讲伤寒论19-温法2 四逆汤 真武汤 当归四逆汤",
+      "durMeasured": 3755,
+      "fa": "温法",
+      "textSegments": 575,
+      "samples": 0
+    },
+    {
+      "no": 20,
+      "bvid": "BV11YoaBuEPF",
+      "title": "陈瑞春讲伤寒论20-温法3 四逆汤 当归四逆汤 吴茱萸汤 乌梅丸 桂枝加附子汤 苓桂术甘汤",
+      "durMeasured": 2991,
+      "fa": "温法",
+      "textSegments": 376,
+      "samples": 20
+    },
+    {
+      "no": 21,
+      "bvid": "BV123oYBVEBr",
+      "title": "陈瑞春讲伤寒论21-清法1 白虎汤 竹叶石膏汤 栀子豉汤 白头翁汤",
+      "durMeasured": 3457,
+      "fa": "清法",
+      "textSegments": 401,
+      "samples": 20
+    },
+    {
+      "no": 22,
+      "bvid": "BV1WLoYB6E84",
+      "title": "陈瑞春讲伤寒论22-清法2消法1 白虎汤应用、竹叶石膏汤、五苓散与桂枝汤、黄连温胆汤、白头翁汤、黄连阿胶汤、大青龙汤、麻杏石甘汤、小陷胸汤、消法原则",
+      "durMeasured": 2062,
+      "fa": "清法",
+      "textSegments": 261,
+      "samples": 20
+    },
+    {
+      "no": 23,
+      "bvid": "BV1cnoYBME9o",
+      "title": "陈瑞春讲伤寒论23-清法·补法 消化系统疾病治疗、肝病治疗、妇科疾病治疗、心律失常治疗、甲状腺疾病治疗、补法运用原则、后世补法发展",
+      "durMeasured": 3546,
+      "fa": "清法·补法",
+      "textSegments": 636,
+      "samples": 20
+    },
+    {
+      "no": 24,
+      "bvid": "BV1nnoYBTEXa",
+      "title": "陈瑞春讲伤寒论24-补法 中医配伍理论、补气生血原理、阴虚辨证体系、肝病治疗原则、临床思维革新、经典学习、补阳核心法则、气血双补方剂",
+      "durMeasured": 1089,
+      "fa": "补法",
+      "textSegments": 162,
+      "samples": 20
+    }
+  ],
+  "baseLink": {
+    "file": "standards/shanghan/底本.json",
+    "formulas": [
+      {
+        "name": "四逆汤",
+        "hits": 26,
+        "domains": {
+          "太阳病": 6,
+          "少阳病": 1,
+          "阳明病": 1,
+          "汗吐下诸可不可": 15,
+          "厥阴病": 1,
+          "太阴病": 2
+        },
+        "foreign": null
+      },
+      {
+        "name": "干姜附子汤",
+        "hits": 4,
+        "domains": {
+          "太阳病": 2,
+          "汗吐下诸可不可": 1,
+          "太阴病": 1
+        },
+        "foreign": null
+      },
+      {
+        "name": "茯苓四逆汤",
+        "hits": 4,
+        "domains": {
+          "太阳病": 2,
+          "汗吐下诸可不可": 1,
+          "太阴病": 1
+        },
+        "foreign": null
+      },
+      {
+        "name": "通脉四逆汤",
+        "hits": 1,
+        "domains": {
+          "太阳病": 1
+        },
+        "foreign": null
+      },
+      {
+        "name": "真武汤",
+        "hits": 4,
+        "domains": {
+          "太阳病": 2,
+          "汗吐下诸可不可": 2
+        },
+        "foreign": null
+      },
+      {
+        "name": "白通汤",
+        "hits": 1,
+        "domains": {
+          "太阳病": 1
+        },
+        "foreign": null
+      },
+      {
+        "name": "吴茱萸汤",
+        "hits": 2,
+        "domains": {
+          "少阳病": 1,
+          "阳明病": 1
+        },
+        "foreign": null
+      },
+      {
+        "name": "甘草干姜汤",
+        "hits": 7,
+        "domains": {
+          "太阳病": 4,
+          "汗吐下诸可不可": 3
+        },
+        "foreign": null
+      },
+      {
+        "name": "当归四逆汤",
+        "hits": 2,
+        "domains": {
+          "汗吐下诸可不可": 1,
+          "厥阴病": 1
+        },
+        "foreign": null
+      },
+      {
+        "name": "赤石脂禹余粮汤",
+        "hits": 2,
+        "domains": {
+          "太阳病": 2
+        },
+        "foreign": null
+      },
+      {
+        "name": "生脉散",
+        "hits": 0,
+        "domains": {},
+        "foreign": "后世方（补益气阴一类，见于李东垣《内外伤辨惑论》系统）"
+      },
+      {
+        "name": "桃红四物汤",
+        "hits": 0,
+        "domains": {},
+        "foreign": "后世方（《医宗金鉴》）"
+      },
+      {
+        "name": "四妙勇安汤",
+        "hits": 0,
+        "domains": {},
+        "foreign": "后世方（《验方新编》）"
+      }
+    ]
+  },
+  "prevDeliverable": {
+    "path": "J:/Users/user/Desktop/伤寒论临床应用.xlsx",
+    "sha256": "57b7de7537740e9f74579ceb420c0ed7246b4c5bb5c5c37d4ea7087267193dae",
+    "state": "live",
+    "note": "本机《伤寒论临床应用.xlsx》与快照一致（sha256 57b7de753774…）",
+    "formulas": 33,
+    "inferenceRows": 9
+  },
+  "crossCheck": {
+    "covered": 23,
+    "dual": 13,
+    "notCovered": [
+      "桂枝甘草汤",
+      "柴胡加龙骨牡蛎汤",
+      "当归芍药散",
+      "肾著汤",
+      "麻黄杏仁薏苡甘草汤",
+      "茵陈蒿汤",
+      "柏叶汤",
+      "甘麦大枣汤",
+      "酸枣仁汤",
+      "炙甘草汤"
+    ],
+    "verifyRows": 16
+  },
+  "measured": [
+    {
+      "id": "01",
+      "name": "01学法",
+      "domain": "方法（讲稿证据）",
+      "body": 12,
+      "total": 25,
+      "chars": 2136
+    },
+    {
+      "id": "02",
+      "name": "02学术思想",
+      "domain": "思想（讲稿证据）",
+      "body": 12,
+      "total": 25,
+      "chars": 2649
+    },
+    {
+      "id": "03",
+      "name": "03分析逻辑",
+      "domain": "逻辑（讲稿证据）",
+      "body": 14,
+      "total": 27,
+      "chars": 2533
+    },
+    {
+      "id": "04",
+      "name": "04本讲方证",
+      "domain": "第 19 讲出现的方（整理）",
+      "body": 10,
+      "total": 22,
+      "chars": 1626
+    },
+    {
+      "id": "05",
+      "name": "05讲稿抽读",
+      "domain": "原话证据（第 19 讲密样本 150 条）",
+      "body": 150,
+      "total": 161,
+      "chars": 5222
+    },
+    {
+      "id": "06",
+      "name": "06全课程抽读",
+      "domain": "原话证据（22 讲 × 20 条）",
+      "body": 440,
+      "total": 452,
+      "chars": 15687
+    },
+    {
+      "id": "07",
+      "name": "07八法体系",
+      "domain": "24 讲合集（逐讲实测）",
+      "body": 24,
+      "total": 36,
+      "chars": 3889
+    },
+    {
+      "id": "08",
+      "name": "08底本交叉",
+      "domain": "方 × 《伤寒论》底本（第 19 讲）",
+      "body": 13,
+      "total": 24,
+      "chars": 1645
+    },
+    {
+      "id": "09",
+      "name": "09全课程方证交叉",
+      "domain": "上一份 33 方 × 24 讲覆盖",
+      "body": 33,
+      "total": 45,
+      "chars": 3019
+    },
+    {
+      "id": "10",
+      "name": "10对读验证",
+      "domain": "与《伤寒论临床应用.xlsx》对读",
+      "body": 16,
+      "total": 29,
+      "chars": 4079
+    },
+    {
+      "id": "11",
+      "name": "11病理生理对读",
+      "domain": "病理生理学家 hermesagent 专题",
+      "body": 11,
+      "total": 24,
+      "chars": 1836
+    },
+    {
+      "id": "12",
+      "name": "12讲稿全文·19讲",
+      "domain": "正文（语音转写 ASR·第 19 讲）",
+      "body": 972,
+      "total": 984,
+      "chars": 32610
+    },
+    {
+      "id": "13",
+      "name": "13讲稿全文·全课程",
+      "domain": "正文（语音转写 ASR·其余各讲）",
+      "body": 21329,
+      "total": 21341,
+      "chars": 535654
+    },
+    {
+      "id": "14",
+      "name": "14字幕对照校核",
+      "domain": "字幕（人读）× ASR 逐条对照",
+      "body": 545,
+      "total": 557,
+      "chars": 38009
+    },
+    {
+      "id": "16",
+      "name": "16术语纠错表",
+      "domain": "术语校正 × 人读字幕佐证",
+      "body": 64,
+      "total": 77,
+      "chars": 5045
+    }
+  ],
+  "readme": {
+    "files": [
+      "讲稿抽读.md",
+      "讲稿抽读-全课程.md"
+    ]
+  },
+  "note": "交付物（xlsx）落在本机桌面；本目录保存视频页原件、接口返回、逐讲统计、两份读屏样本与 39 张拼图证据。重建：node scripts/import_chenruchun_lectures.js"
+}

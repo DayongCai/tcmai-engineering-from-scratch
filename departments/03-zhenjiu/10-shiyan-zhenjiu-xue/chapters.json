@@ -1,66 +1,93 @@
 {
-  "slug": "10-shiyan-zhenjiu-xue",
-  "title": "实验针灸学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-duixiang-fangfa",
-      "title": "实验针灸学的对象与方法",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-xuewei-zuzhi",
-      "title": "穴位的组织学与理化特性",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-shenjing-jizhi",
-      "title": "针刺效应的神经机制",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-zhenci-zhentong",
-      "title": "针刺镇痛的内源性调控",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-mianyi-neifen",
-      "title": "针刺对免疫与内分泌的影响",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-xuewei-duizhao",
-      "title": "动物实验的穴位定位与对照",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-canshu-biaozhun",
-      "title": "针刺参数的标准化：频率与强度",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-dianshengli-yingxiang",
-      "title": "电生理与功能影像的观测",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-kechongfu-wenti",
-      "title": "实验结果的可重复性问题",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-zhuanhua-lujing",
-      "title": "从机制到临床的转化路径",
-      "status": "📋"
-    }
-  ]
+ "note": "实验针灸学 11 章 ← 教材 13 章（10+11 合并、12+13 合并；无单元复用）。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xulun-dingwei",
+   "title": "绪论与学科定位",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-shuxue-xingtai",
+   "title": "腧穴的形态结构与功能",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-jingluo-xianxiang",
+   "title": "经络现象的现代研究",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-xiaoying-tedian",
+   "title": "针灸作用的效应与特点",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-zhentong-jizhi",
+   "title": "针灸镇痛作用与机制",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-shenjing-tiaojie",
+   "title": "针灸对神经系统的调节",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-neifen-mianyi",
+   "title": "针灸对内分泌与免疫系统的调节",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-xunhuan-huxi-xiaohua",
+   "title": "针灸对循环、呼吸、消化系统的调节",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-miniao-shengzhi-yundong",
+   "title": "针灸对泌尿、生殖、运动系统的作用",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-fangfa-moxing",
+   "title": "研究方法与动物模型",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-xunzheng-qianyan",
+   "title": "循证针灸学与前沿",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

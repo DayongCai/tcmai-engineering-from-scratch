@@ -1,0 +1,151 @@
+{
+ "slug": "14-jibing-xue-jichu",
+ "title": "疾病学基础",
+ "note": "18 章 = 教材 18 章（1:1）。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gaishu-jibing-gainian",
+   "title": "疾病学基础概述与疾病概念",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-sunshang-yu-shiying",
+   "title": "细胞与组织的损伤与适应",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-yanzheng-yu-xiufu",
+   "title": "炎症与修复",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-xunhuan-zhangai",
+   "title": "血液循环障碍",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-shuidianjie-suojian-wenluan",
+   "title": "水电解质与酸碱平衡紊乱",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-queyang-yu-fare",
+   "title": "缺氧与发热",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-xiuke-yu-yingji",
+   "title": "休克与应激",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-zhongliu",
+   "title": "肿瘤",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-xinxueguan-jibing",
+   "title": "心血管系统疾病",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-huxi-xitong-jibing",
+   "title": "呼吸系统疾病",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-xiaohua-miniao-jibing",
+   "title": "消化与泌尿系统疾病",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-mianyi-bingyuan-jibing",
+   "title": "免疫与病原相关疾病",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-yaowu-zuoyong-jichu",
+   "title": "药物作用基础",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-kangganran-kangyan",
+   "title": "抗感染与抗炎治疗基础",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-zhongliu-manxingbing-zhiliao",
+   "title": "肿瘤与慢性病治疗基础",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-jibing-fangzhi-kangfu",
+   "title": "疾病防治与康复基础",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-lunli-yu-goutong",
+   "title": "疾病学基础的伦理与沟通要求",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-pingtai-lianjie",
+   "title": "疾病学基础与 tcmP 平台",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
+}

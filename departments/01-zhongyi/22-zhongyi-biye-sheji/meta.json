@@ -1,0 +1,41 @@
+{
+  "slug": "22-zhongyi-biye-sheji",
+  "title": "中医毕业设计与知识移交",
+  "en": "TCM Capstone & Knowledge Handover",
+  "deptSlug": "01-zhongyi",
+  "deptTitle": "中医系",
+  "globalN": 22,
+  "type": "Build",
+  "semester": 10,
+  "stage": "yi",
+  "stageTitle": "已",
+  "hours": 72,
+  "bridge": "临床问题→可验证命题 / 病例与条文→数据集 / 结论→可复现包",
+  "chaptersTarget": 28,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/01-zhongyi/22-zhongyi-biye-sheji",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/01-zhongyi/22-zhongyi-biye-sheji",
+    "chaptersWritten": 28,
+    "words": 22586,
+    "status": "wip",
+    "layer": "handbook",
+    "contract": "handbook-v1",
+    "origin": "handbook",
+    "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
+    "extractedAt": "2026-11-09"
+  },
+  "standards": {
+    "path": "standards/biye",
+    "derived": true,
+    "depts": 9,
+    "cases": 27,
+    "chapters": 28
+  }
+}

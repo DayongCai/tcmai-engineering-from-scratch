@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>第 7 章 · 肿瘤：一串约束被逐条突破的累积 · 幻灯片</title>
+<style>
+
+:root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
+--jade:#1f6f5c;--jade-soft:#e3efe9;--cinnabar:#a8321e;--cinnabar-soft:#f7e6e2;--gold:#a8862a;
+--sans:system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;
+--serif:"Songti SC","Noto Serif SC",Georgia,serif;
+--mono:ui-monospace,"Cascadia Mono",Consolas,monospace;}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#12110f;color:var(--ink);font-family:var(--sans)}
+#deck{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{min-height:100%;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;
+  padding:5vh 7vw;background:var(--paper);border-bottom:1px solid #000}
+.slide-inner{max-width:1000px;width:100%;margin:0 auto}
+.slide-foot{max-width:1000px;width:100%;margin:3vh auto 0;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+h1.big{font-family:var(--serif);font-size:clamp(28px,4.4vw,54px);line-height:1.25;margin:0}
+blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-height:1.6;margin:0;
+  border-left:6px solid var(--gold);padding-left:24px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--jade);
+  text-transform:uppercase;margin-bottom:14px}
+.kicker.warn{color:var(--cinnabar)}
+p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
+.compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
+.compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+/* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
+.math{font-style:italic;font-family:var(--serif)}
+.math-block{display:block;text-align:center;font-family:var(--serif);font-size:1.05em;margin:.8em 0}
+.math-op,.math-text,.math-rm{font-style:normal}
+.math-op{padding:0 .12em}
+.math-cal{font-style:normal}
+.math-bb{font-style:normal;font-weight:700}
+.frac{display:inline-block;vertical-align:middle;text-align:center;font-style:normal;margin:0 .15em;line-height:1.15}
+.frac-num{display:block;padding:0 .3em;border-bottom:1px solid currentColor}
+.frac-den{display:block;padding:0 .3em}
+.math-sqrt{font-style:normal;margin-right:.05em}
+.math-line{border-top:1px solid currentColor;font-style:normal;padding-top:.05em}
+.math-note{font-size:.8em;font-style:normal}
+.figure-host{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+#hud{position:fixed;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#8a8578;
+  background:#faf8f3cc;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
+@media print{.slide{page-break-after:always;min-height:auto}#hud{display:none}}
+</style>
+</head>
+<body>
+<div id="deck">
+<section class="slide" data-i="0">
+  <div class="slide-inner"><h1 class="big">第 7 章 · 肿瘤：一串约束被逐条突破的累积</h1></div>
+  <div class="slide-foot"><span>1 / 26</span><span>title</span></div>
+</section>
+<section class="slide" data-i="1">
+  <div class="slide-inner"><blockquote class="motto">「的本质，就是上述约束被逐条突破的过程」——补充·hermes-病理生理学讲义·第7章·7.1（《hermes-病理生理学讲义·第7章·7.1》）</blockquote></div>
+  <div class="slide-foot"><span>2 / 26</span><span>motto</span></div>
+</section>
+<section class="slide" data-i="2">
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">一个肿块摆在面前，最省事的讲法是「它长得像什么、叫什么名字、分几期」。这套讲法能应付考试，却答不出这门课真正要问的那句：<strong>它凭什么能长下去</strong>。肿瘤的特殊之处不在形态，而在它把正常组织赖以自限的六条约束逐条拆掉了——不依赖外源信号也能增殖、铺满一层还继续长、脱离基质不死、该凋亡的细胞不凋亡、带着损伤的 DNA 照常分裂、端粒不再缩短。这一章要交的不是一张病名表，而是<strong>一张被拆掉的约束清单</strong>，以及「哪一处拆解对应哪一类可干预的环节」。</p></div>
+  <div class="slide-foot"><span>3 / 26</span><span>problem</span></div>
+</section>
+<section class="slide" data-i="3">
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（讨论课上有人拿着影像报告说「这是良性，切了就没事」，你被要求说清：良性与恶性差的究竟是形态、是生长方式、还是「能不能自己停下来」；讲义能把类别给你，却不会替你把这三层分开）+ 知识积累（本章 11 节、5037 个非空白字符、88 段；观察词表里「免疫」16 次、「增殖」11 次、「凋亡」8 次、「转移」8 次、「分化」6 次。重心落在免疫与增殖，而不是落在「命名」上——因为讲义把命名压缩在 7.2 一节、257 字里，却给了 7.4 一节 467 字讲基因、7.8 一节讲免疫编辑。认不清这个分布，就会把一章当成名词表来背，然后发现后面每一节都用不上）</p></div>
+  <div class="slide-foot"><span>4 / 26</span><span>roots</span></div>
+</section>
+<section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、先看负片：7.1 讲的是平时为什么不长</div>
+                <div class="compact"><p>7.1 的标题是回顾，位置却在最前。这不是排版习惯，而是全章的取景方式：<strong>先讲清正常的自限机制，后面每一条病理改变才有对照物</strong>。讲义列了六项，逐项都对应一处可被拆掉的约束。</p>
+<p>第一项是信号依赖：</p>
+<blockquote><p>「正常情况下信号依赖外源配体，具」——补充·hermes-病理生理学讲义·第7章·7.1</p></blockquote>
+<p>这句话的重点在后半句的修饰——可逆与依赖。正常细胞增殖是被「叫」起来的，叫的人走了就停；肿瘤细胞的差别不是「叫得更响」，而是不再需要有人叫。</p>
+<p>第二项是接触抑制与密度依赖，第三项是锚定依赖。第三项讲义写得很具体：</p>
+<blockquote><p>「正常上皮细胞须附着于基质才能增殖，脱离基质则凋亡」——补充·hermes-病理生理学讲义·第7章·7.1</p></blockquote>
+<p>括号里给了这一现象的名字（失巢凋亡）。这个名字在后面 7.6 会第二次出现，那时它换了一个位置——从描述正常细胞的死法，变成描述转移中的肿瘤细胞必须逃避的死法。同一个词在两节里各站一边，这是本章最值得注意的写法。</p></div></div>
+  <div class="slide-foot"><span>5 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、先看负片：7.1 讲的是平时为什么不长</div>
+                <div class="compact"><p>第四项与第五项是凋亡清除与 DNA 修复加检查点。第六项是端粒：</p>
+<blockquote><p>「正常体细胞端粒随分裂缩短」——补充·hermes-病理生理学讲义·第7章·7.1</p></blockquote>
+<p>讲义把这一条称为复制性屏障，作用是「限制无限增殖」。六条加起来，就是 7.1 末句那句总纲的证据链：</p>
+<blockquote><p>「多步骤、多基因改变累积」——补充·hermes-病理生理学讲义·第7章·7.1</p></blockquote>
+<p>注意这句话的语法：它否定的不是一次突变能不能致癌这个技术问题，而是<strong>单一事件式的解释方式</strong>。六条约束各自有各自的看守，拆一条只让细胞松一格；要走完全程，得逐条拆。</p></div></div>
+  <div class="slide-foot"><span>6 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">二、定义与命名：自主性是唯一硬判据（7.2）</div>
+                <div class="compact"><p>7.2 只有 257 字，却是全章最容易被读轻的一节。定义的关键不在「团块」，而在两个限定：</p>
+<blockquote><p>「其生长不受机体正常调控，且在病因去除后仍持续存在」——补充·hermes-病理生理学讲义·第7章·7.2</p></blockquote>
+<p>第一句管「不受调控」，第二句管「去了因还在」。第二句是真正的分水岭：炎症性增生、修复性增生在病因去除后会退，肿瘤不会。所以「自主性」不是形容词，是一条可操作的判据——去掉刺激，看它停不停。</p>
+<p>命名规则按「组织来源 + 良恶性」两轴展开，讲义给的表格六行：上皮、间叶、淋巴造血、神经、生殖细胞、幼稚组织。这张表的用处是让读者从名字反推来源与行为，而不是背名字。讲义随即点出例外：</p>
+<blockquote><p>「并非真性肿瘤，而是局部组织异常混合生长」——补充·hermes-病理生理学讲义·第7章·7.2</p></blockquote>
+<p>这是错构瘤。把它单列，是因为名字里带「瘤」而行为上不自主——正好从反面证明：命名是惯例，判据是自主性。两者冲突时，判据优先。</p></div></div>
+  <div class="slide-foot"><span>7 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">三、两把尺子：分级看分化，分期看扩散（7.3）</div>
+                <div class="compact"><p>7.3 把形态学判据拆成两组，一组描述细胞，一组描述范围。</p>
+<p>细胞那一组：良性「分化好，异型性小，包膜完整，生长缓慢」；恶性则走向另一端，「细胞大小形态不一、核大深染、核质比增高」，并有病理性核分裂。这一组描述的是<strong>细胞还像不像它原来该有的样子</strong>。</p>
+<p>范围那一组由分级与分期分担。讲义把两者的分工写死了：</p>
+<blockquote><p>「分级反映生物学侵袭性，分期反映疾病进程」——补充·hermes-病理生理学讲义·第7章·7.3</p></blockquote>
+<p>这句话是本节最实用的一句。分级答的是这个肿瘤本身有多凶，分期答的是它已经走到哪。同一句话在临床上常被混用，混用的后果是把「凶」当成「晚」，或把「晚」当成「凶」——前者让人过度悲观，后者让人过度乐观。</p>
+<p>本节还有一处提醒，防止把「良性」读成「无害」：</p>
+<blockquote><p>「但位于关键部位（如颅内、气道）仍可致命」——补充·hermes-病理生理学讲义·第7章·7.3</p></blockquote>
+<p>良性说的是行为学（不浸润、不转移），不是后果学。位置可以单独决定后果，这与「自主性」是两个维度。</p></div></div>
+  <div class="slide-foot"><span>8 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">三、两把尺子：分级看分化，分期看扩散（7.3）</div>
+                <div class="compact"><p>癌前那一段是全章的过渡：异型增生「指上皮细胞出现排列紊乱与细胞学异型但未突破基底膜」，未突破者为癌前，突破者即浸润癌；原位癌则是「异型细胞累及上皮全层而未突破基底膜的状态」。三者的差别只有一件事——<strong>基底膜破没破</strong>。这条界线之所以重要，是因为它同时是病理判据与干预窗口：线之前可逆，线之后按浸润处理。</p></div></div>
+  <div class="slide-foot"><span>9 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">四、三类基因与两次打击（7.4）</div>
+                <div class="compact"><p>7.4 是全章最长的一节（467 字），也是最像机制的一节。讲义把参与改变的基因分三类，三类的失效方式互不相同。</p>
+<p>第一类原癌基因，走「功能获得」：</p>
+<blockquote><p>「只需一个等位基因改变即可」——补充·hermes-病理生理学讲义·第7章·7.4</p></blockquote>
+<p>一个等位基因就够——因为它是「踩油门」的基因，踩下去就有效，不需要两个一起踩。活化方式三种：点突变、基因扩增、染色体易位。易位那一条讲义举了两个方向：把强启动子搬到基因旁边（表达量上去），或拼出融合基因产生持续活化的激酶（活性下不来）。</p>
+<p>第二类抑癌基因，走「功能丧失」，因此需要两次：</p>
+<blockquote><p>「抑癌基因正常时限制增殖、促进修复或诱导凋亡」——补充·hermes-病理生理学讲义·第7章·7.4</p></blockquote></div></div>
+  <div class="slide-foot"><span>10 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">四、三类基因与两次打击（7.4）</div>
+                <div class="compact"><p>两个等位基因都失效才松闸，这就是二次打击学说的内容。讲义顺手把家族性与散发性放进同一个框架解释：家族性出生时已带一个突变，「故发病早、常双侧或多发」；散发者需在同一细胞里先后两次体细胞突变，故发病晚、多单侧。<strong>同一个机制解释两种流行病学面貌</strong>，这是本节最漂亮的一处。</p>
+<p>第三类 DNA 修复基因，位置特殊：</p>
+<blockquote><p>「错配修复、核苷酸切除修复、双链断裂修复基因的失活不直接驱动增殖」——补充·hermes-病理生理学讲义·第7章·7.4</p></blockquote>
+<p>它不踩油门也不松闸，它拆的是「校对」。后果不是某一条通路被打开，而是整体突变率上去，让前两类的改变更快攒够。讲义把这个后果叫突变表型——名字起得准：表型是「变得容易变」。</p>
+<p>三类基因之上是时间轴。讲义用结直肠癌给出四步路径，并下了一句判断：</p>
+<blockquote><p>「说明癌变是渐进演化而非一次跳跃」——补充·hermes-病理生理学讲义·第7章·7.4</p></blockquote></div></div>
+  <div class="slide-foot"><span>11 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">五、起始与促进：可干预的两段（7.5）</div>
+                <div class="compact"><p>7.5 讲致癌因素，但真正有结构的不是那张类别表（化学、物理、病毒、细菌、遗传易感、激素代谢、生活方式），而是表下面那个两阶段模型：</p>
+<blockquote><p>「起始剂造成不可逆的 DNA 改变，促进剂本身不致癌但反复刺激使起始细胞扩增」——补充·hermes-病理生理学讲义·第7章·7.5</p></blockquote>
+<p>这句话把「致癌」拆成两个可分别处理的动作：起始是<strong>质变</strong>，一次就够，且不可逆；促进是<strong>量变</strong>，需要反复，且可停。两段的性质不同，干预的意义也不同：</p>
+<blockquote><p>「也解释了去除促进因素后风险可下降」——补充·hermes-病理生理学讲义·第7章·7.5</p></blockquote>
+<p>由此得到本节的核心推论——「致癌作用常需长期、反复暴露」。这句话解释了两件日常现象：为什么暴露与发病之间常隔很久（要攒够起始事件），以及为什么戒烟之后风险仍会逐年下降（促进被撤掉了，虽然已起始的细胞还在）。</p></div></div>
+  <div class="slide-foot"><span>12 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">六、级联七步与种子土壤（7.6）</div>
+                <div class="compact"><p>7.6 讲转移，讲义第一句就定了它的地位：</p>
+<blockquote><p>「是恶性肿瘤最本质的生物学特征，也是主要致死原因」——补充·hermes-病理生理学讲义·第7章·7.6</p></blockquote>
+<p>「最本质」三个字值得停一下。前面五节讲的都是细胞自己失控，这一节讲的是细胞离开原地还能活——后者比前者难得多，因为它要求细胞在四个陌生环境里连续过关：脱离同类的黏附、穿过基底膜、在血流里不死、在异地长起来。</p>
+<p>七步级联可以按这四个关卡归组。第一关是脱离：黏附分子下调，细胞松解。第二关是获得运动与降解能力，核心是上皮-间质转化：</p>
+<blockquote><p>「上皮细胞获得间质表型，运动与侵袭能力增强，同时获得干性特征」——补充·hermes-病理生理学讲义·第7章·7.6</p></blockquote>
+<p>括号里那句「同时获得干性特征」不是补充说明，而是解释转移为什么难治：能走的那批细胞，恰好也是最像干细胞的那批。</p></div></div>
+  <div class="slide-foot"><span>13 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">六、级联七步与种子土壤（7.6）</div>
+                <div class="compact"><p>第三关是在循环中存活，靠逃避失巢凋亡与免疫杀伤（7.1 那个词在这里回来了）。第四关是定植与血管生成——没有新生血管，微转移灶长不过某个尺寸，所以血管生成是「从灶到瘤」的门槛。</p>
+<p>七步之后是方向问题。讲义给了三条途径（淋巴道、血道、种植性）与一个学说：</p>
+<blockquote><p>「取决于该处的微环境、血流分布与趋化因子谱」——补充·hermes-病理生理学讲义·第7章·7.6</p></blockquote>
+<p>种子与土壤。这个比喻的用处是把为什么这种瘤爱去那个器官这个问题从偶然变成可解释：种子要有相应的土壤，土壤由血流与趋化因子塑造。</p></div></div>
+  <div class="slide-foot"><span>14 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">七、全身效应：不属于「占位」的那一半（7.7）</div>
+                <div class="compact"><p>7.7 一一列出肿块解释不了的那批表现。最典型的是恶病质：</p>
+<blockquote><p>「进行性体重下降、肌肉与脂肪消耗、厌食与代谢紊乱」——补充·hermes-病理生理学讲义·第7章·7.7</p></blockquote>
+<p>关键在两处限定。一是「不能单靠增加摄食逆转」——它否掉了多吃点就好了这个常识性建议；二是机制归到炎症因子（肿瘤坏死因子-α、白细胞介素-6），也就是说，它是<strong>全身炎症状态</strong>的产物，不是局部压迫的产物。</p>
+<p>第二类是副肿瘤综合征，讲义给的界定很清楚——「与肿瘤直接侵占无关」，即效应在远处、由分泌物或免疫交叉反应造成。它最有价值的一句是关于时序的：</p>
+<blockquote><p>「可先于肿瘤被发现，具提示价值」——补充·hermes-病理生理学讲义·第7章·7.7</p></blockquote>
+<p>「提示」这个词在本书里有一贯的用法：只指方向，不作结论。远处效应出现，提示需要往肿瘤方向查，不提示「就是肿瘤」。</p></div></div>
+  <div class="slide-foot"><span>15 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">七、全身效应：不属于「占位」的那一半（7.7）</div>
+                <div class="compact"><p>本节末尾列了一组护理评估维度（体重与肌肉量、食欲与摄食能力、疼痛、疲乏、感染征象、情绪与睡眠）。这组维度的共同点是<strong>都能被观察、都不能被单次测量定性</strong>，与本章铁律一致：写类别，不写取值。</p></div></div>
+  <div class="slide-foot"><span>16 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">八、免疫编辑：三阶段与一个反证（7.8）</div>
+                <div class="compact"><p>7.8 是本章与第 9、10 两章的接口。免疫系统对肿瘤有监视功能，但监视的结果不是「有或没有」，而是一个三阶段的动态过程：清除、平衡、逃逸。中间那一阶段最容易被忽略：</p>
+<blockquote><p>「残余肿瘤细胞被控制但不被完全清除」——补充·hermes-病理生理学讲义·第7章·7.8</p></blockquote>
+<p>平衡期的存在解释了一个临床困惑：为什么有的肿瘤能在体内「潜伏」很久才出现。它不是没长，而是被压着长。</p>
+<p>逃逸机制讲义列了五条（抗原下调或丢失、MHC 一类分子表达降低、分泌免疫抑制因子、招募调节性与抑制性细胞、上调检查点分子）。这一串读下来会发现它们分成两类：一类让 T 细胞<strong>认不出</strong>，一类让 T 细胞<strong>认出了也动不了</strong>。检查点抑制剂对应的是第二类，所以讲义那句判断成立：</p>
+<blockquote><p>「这也说明免疫逃逸是可被药理学逆转的机制」——补充·hermes-病理生理学讲义·第7章·7.8</p></blockquote></div></div>
+  <div class="slide-foot"><span>17 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">八、免疫编辑：三阶段与一个反证（7.8）</div>
+                <div class="compact"><p>同一节末尾还有一处反证，讲得极省：免疫治疗的副作用（自身免疫样反应）恰好印证了检查点在维持自身耐受中的作用。<strong>治病的机制与致病的机制是同一套</strong>——这句话在本章反复出现，7.5 的两阶段、7.6 的失巢凋亡、这里都是。</p></div></div>
+  <div class="slide-foot"><span>18 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">九、诊断的层次与两条误读（7.9）</div>
+                <div class="compact"><p>7.9 按层次列类别，不给判读标准。五个层次：病理学、影像学、实验室、分子病理、分级与分期。层次之间的关系是本节的重点，讲义写得很直：</p>
+<blockquote><p>「组织学与细胞学检查是确诊的」——补充·hermes-病理生理学讲义·第7章·7.9</p></blockquote>
+<p>只有病理是确诊层，其余都是定位、筛选、随访或分层。肿瘤标志物的位置最容易被抬错，讲义给了两个限定：一是用途「主要用于疗效监测与随访」，二是原因——「因其在良性疾病中也可升高」。由此得到本节要背的两句对称判断：</p>
+<blockquote><p>「标志物正常不能排除肿瘤，标志物升高不等于患癌」——补充·hermes-病理生理学讲义·第7章·7.9</p></blockquote>
+<p>这两句之所以要成对记，是因为它们的错误方向相反：前者导致漏，后者导致吓。讲义把这一处点名成「最容易出错的地方」，不是修辞——向患者解释检查结果时，一处措辞就能改变一个人的整周睡眠。</p></div></div>
+  <div class="slide-foot"><span>19 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">十、三级预防与筛查的边界（7.10）</div>
+                <div class="compact"><p>7.10 把干预排成三级：病因预防、早发现早处理、康复与功能维护。三级之中，一级预防的证据最硬，讲义点名一项：</p>
+<blockquote><p>「控烟是投入产出比最高的单项措施」——补充·hermes-病理生理学讲义·第7章·7.10</p></blockquote>
+<p>二级预防是筛查，讲义没有把它写成「越早越好」，而是列了四个前提：该肿瘤的患病率、有无可检测的癌前阶段、检测方法的准确性与可接受性、阳性后的处理链条是否完善。四个前提里后两个最容易被忽略——<strong>查得出来而接不住，等于没查</strong>。</p>
+<p>筛查的边界也写了，两条：</p>
+<blockquote><p>「筛查可能带来假阳性所致的焦虑与过度检查」——补充·hermes-病理生理学讲义·第7章·7.10</p></blockquote>
+<p>另一条是惰性病变的过度处理（过度诊断）。两者合起来说明一件事：筛查的收益是人群层面的净收益，不是每个个体的必然收益，所以「而非对所有人一律适用」。这句话与本书的一贯口径同构——类别可以推广，个体判断不能。</p></div></div>
+  <div class="slide-foot"><span>20 / 26</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">十一、临床联系与护理角色（7.11）</div>
+                <div class="compact"><p>7.11 用四个例子把前面的机制落地：肺癌、结直肠癌、乳腺癌、宫颈癌。每个例子都只挂在一条机制上，不做展开。</p>
+<p>肺癌挂在暴露剂量与年限上，「与吸烟剂量和年限强相关」；结直肠癌挂在时间轴上，「多数经腺瘤-癌序列演变」，所以它是二级预防效益最明确的一类——因为癌前阶段可查、可切、可随访；乳腺癌挂在激素暴露与遗传易感上，分期与受体状态决定治疗类别；宫颈癌挂在病因明确上，疫苗与筛查结合即可显著降低发病，讲义称它是「病因明确 + 癌前可查」的典范。</p>
+<p>护理角色那一句，是本章唯一带伦理要求的地方：</p>
+<blockquote><p>「沟通中应避免绝对化表述，尊重患者的知情与决策权」——补充·hermes-病理生理学讲义·第7章·7.11</p></blockquote>
+<p>这句话与 7.9 那两条对称判断是一件事的两面：诊断层的事交给病理，解释层的事要注意措辞的分寸。本书对一切举例的用法也在这里：例子只作类别示例，不作个体判断。</p></div></div>
+  <div class="slide-foot"><span>21 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">十二、把十一节压成一条链</div>
+                <div class="compact"><div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">7.1 六条自限约束（信号依赖 · 接触抑制 · 锚定依赖 · 凋亡清除 · 修复与检查点 · 端粒）
+        │  癌变 = 六条被逐条拆掉，因此是累积而非一次跳跃
+        ▼
+7.2 定义（自主性：去因仍在） · 命名（来源 + 良恶性）
+        ▼
+7.3 形态判据（分化 / 异型性 / 基底膜） · 两把尺子（分级看分化，分期看扩散）
+        ▼
+7.4 三类基因（原癌获得 · 抑癌两次打击 · 修复基因抬高突变率）
+        ▼
+7.5 致癌因素 → 两阶段（起始不可逆 / 促进可停）
+        ▼
+7.6 转移七步（脱离 → 转化 → 降解 → 侵袭 → 入脉管 → 穿出 → 定植与血管生成）
+        ▼
+7.7 全身效应（恶病质 · 副肿瘤 · 造血免疫 · 症状群 · 梗阻 · 代谢）
+        ▼
+7.8 免疫编辑（清除 → 平衡 → 逃逸）
+        ▼
+7.9 诊断层次（病理确诊 / 影像定位 / 标志物随访 / 分子分层）
+        ▼
+7.10 三级预防（控烟最硬 / 筛查有四前提与两条边界）
+        ▼
+7.11 四个例子各挂一条机制 + 沟通边界</code></pre></div></div></div>
+  <div class="slide-foot"><span>22 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">十二、把十一节压成一条链</div>
+                <div class="compact"><p>链上任何一环被跳过都会出问题：跳过 7.1，7.4 的三类基因就只是名词；跳过 7.3 的基底膜，癌前与浸润的界线就消失；跳过 7.8，靶向与免疫治疗那一整块就没有落点。</p></div></div>
+  <div class="slide-foot"><span>23 / 26</span><span>body</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>引文是讲义正文，不是经典，也不是译本。</strong> 本章引用格式统一为<code>补充·hermes-病理生理学讲义·第7章·7.M</code>。讲义是本仓库原创的简体中文教学正文，按另一套 53 章目录编写，章号与课程章号 1:1；它不引自任何外文教材，引用它不等于引用外文教材原文。</li><li><strong>不引底本。</strong> 代用底本《疾病学基础》与讲义章目不对齐，本章一字不引。两套分类的差别只在需要时作一处提示，不折算字数、不混合标注。</li><li><strong>本章丢掉了什么：数值。</strong> 讲义这一章 5037 个非空白字符里，数字加计量单位的命中为 0 处（<code>node code/main.js</code> 复算，不照抄声明）。讲义的处理是把所有可量化的地方改成类别与方向——增多、减少、升高、降低、可逆、不可逆。本书照录这一取舍：<strong>描述类别可以，给出取值不行。</strong></li><li><strong>本章不写数值，也不做换算。</strong> 不写正常值、参考区间与单位，也不把「分化好」「异型性小」这类定性描述折算成任何分级数字。</li></ul></div></div>
+  <div class="slide-foot"><span>24 / 26</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="24">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>凡遇「几级算差」「多少算高」的追问，统一回：本书不给值，需另立数据层。</p>
+<ul><li><strong>本章不作诊断，也不作良恶性的判定。</strong> 分级、分期、标志物在本章只作类别使用，不用于给任何个体定性。「良性」「恶性」是行为学类别，不是对某一份报告的结论。</li><li><strong>词频只描述写法，不描述难度。</strong> 免疫 16 次、增殖 11 次，说明讲义把重心放在免疫与增殖上，不说明命名与形态可以不学——7.2、7.3 两节正是后面各节的入口。同一批数字换个词表就会变，本书词表固定在 <code>code/main.js</code> 里，可复算但不可外推。</li><li><strong>边界声明</strong>：本章只解释讲义给出的类别与环节，<strong>不写数值与单位与正常值，不作正常与异常判定，不构成诊断、治疗或用药依据</strong>；任何个体的判断须由具备资质的人员依现行规范作出。</li></ul></div></div>
+  <div class="slide-foot"><span>25 / 26</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="25">
+  <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
+  <div class="slide-foot"><span>26 / 26</span><span>disclaimer</span></div>
+</section>
+</div>
+<div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>
+<script>/**
+ * [tcmP] figures.js —— 中医概念动画图（纯 SVG + rAF，无依赖）
+ *
+ * 自动挂载：文档里写
+ *     <div data-figure="wuxing-cycle"></div>
+ * 即可。支持悬停暂停；系统开启「减少动态效果」时渲染为静态帧。
+ *
+ * 与 ai-engineering-from-scratch 的 site/figures.js 同构（同样的 el/loop/registry 形态），
+ * 图目换成中医概念：
+ *   yin-yang-sigmoid    阴阳 → 二分类：sigmoid 决策边界扫过，样本左右归属翻转
+ *   wuxing-cycle        五行生克：相生正向流动 + 相克五角星流动
+ *   zangxiang-graph     藏象：脏腑 → 官窍 → 情志 的边逐步点亮
+ *   sizhen-fusion       四诊合参：四通道 → 融合层 → 证候输出
+ *   meridian-lookup     经络腧穴：KD-Tree 空间划分 + 最近邻查询
+ *   junchen-attention   君臣佐使：药味 → 权重矩阵高亮
+ */
+
+(function () {
+  'use strict';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── SVG 小工具 ──
+  function el(name, attrs, kids) {
+    const e = document.createElementNS(NS, name);
+    for (const k in attrs || {}) e.setAttribute(k, attrs[k]);
+    (Array.isArray(kids) ? kids : kids ? [kids] : []).filter(Boolean).forEach((c) => e.appendChild(c));
+    return e;
+  }
+  const txt = (s) => document.createTextNode(s);
+
+  function label(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--sans)', 'font-size': 12, fill: 'var(--muted)' },
+      opts || {}
+    ), [txt(s)]);
+  }
+  function mono(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--mono)', 'font-size': 11, fill: 'var(--muted)', 'letter-spacing': '.1em' },
+      opts || {}
+    ), [txt(s)]);
+  }
+
+  function svgRoot(host, W, H, aria) {
+    const svg = el('svg', {
+      viewBox: `0 0 ${W} ${H}`, width: '100%', role: 'img', 'aria-label': aria || '',
+      style: 'display:block;max-width:100%;height:auto',
+    });
+    host.appendChild(svg);
+    return svg;
+  }
+
+  // 悬停暂停 + 时间归一化
+  function loop(host, fn, period, opts) {
+    period = period || 6400;
+    opts = opts || {};
+    let raf, paused = false, t0 = performance.now();
+    const onTick = (now) => {
+      if (!paused) fn((((now - t0) % period) / period));
+      raf = requestAnimationFrame(onTick);
+    };
+    host.addEventListener('mouseenter', () => { paused = true; });
+    host.addEventListener('mouseleave', () => { paused = false; });
+    if (REDUCED) { fn(opts.staticT == null ? 0.62 : opts.staticT); return function () {}; }
+    raf = requestAnimationFrame(onTick);
+    return () => cancelAnimationFrame(raf);
+  }
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeIO = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const sigmoid = (z) => 1 / (1 + Math.exp(-z));
+
+  const FIGURES = {};
+
+  /* ───────────────────── yin-yang-sigmoid ─────────────────────
+     阴阳 → 二分类。左侧散点：X 轴「寒热倾向」，输出 sigmoid 概率。
+     扫描线扫过阈值，样本随阈值的移动左右换边，右侧给出准确率。
+  */
+  FIGURES['yin-yang-sigmoid'] = function (host) {
+    const W = 720, H = 400, PAD = 54;
+    const svg = svgRoot(host, W, H, '阴阳二分类与 sigmoid 决策边界');
+    const plotW = W - PAD * 2, plotH = H - 150;
+
+    // 样本：12 条八纲典型证候（阴=0 阳=1）
+    const data = [
+      [-2.2, 0], [-1.8, 0], [-1.4, 0], [-1.1, 0], [-0.6, 0], [-0.2, 0],
+      [0.2, 1], [0.6, 1], [1.1, 1], [1.5, 1], [1.9, 1], [2.4, 1],
+    ];
+    const X = (v) => PAD + ((v + 3) / 6) * plotW;
+    const Y = (p) => H - 90 - p * plotH;
+
+    // 坐标轴
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: W - PAD, y2: H - 90, stroke: 'var(--line)' }));
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: PAD, y2: H - 90 - plotH, stroke: 'var(--line)' }));
+    svg.appendChild(mono(PAD, H - 72, '寒 / 阴 →'));
+    svg.appendChild(mono(W - PAD, H - 72, '← 热 / 阳', { 'text-anchor': 'end' }));
+    svg.appendChild(mono(8, PAD - 22, 'P(阳)'));
+    svg.appendChild(mono(W - PAD - 130, 26, 'sigmoid 决策边界'));
+
+    const curve = el('path', { d: '', fill: 'none', stroke: 'var(--jade)', 'stroke-width': 2.5 });
+    svg.appendChild(curve);
+    const threshLine = el('line', { stroke: 'var(--cinnabar)', 'stroke-dasharray': '5 4', 'stroke-width': 1.6 });
+    svg.appendChild(threshLine);
+
+    const pts = data.map(([x, y]) => {
+      const g = el('g', {});
+      const c = el('circle', { r: 6, cx: X(x), cy: H - 90 - 0.5 * plotH, fill: y ? 'var(--cinnabar)' : 'var(--jade)', opacity: 0.85 });
+      const cls = el('text', {
+        x: X(x), y: H - 90 - 0.5 * plotH + 4, 'text-anchor': 'middle',
+        'font-family': 'var(--sans)', 'font-size': 10, fill: '#fff',
+      }, [txt(y ? '阳' : '阴')]);
+      g.appendChild(c); g.appendChild(cls);
+      svg.appendChild(g);
+      return { x, y, c, cls };
+    });
+
+    const accText = label(PAD, 26, '', { fill: 'var(--ink)', 'font-size': 13 });
+    svg.appendChild(accText);
+
+    let pathD = '';
+    for (let i = 0; i <= 60; i += 1) {
+      const xv = -3 + (i / 60) * 6;
+      const p = sigmoid(1.6 * xv + 0.1);
+      pathD += `${i === 0 ? 'M' : 'L'}${X(xv).toFixed(1)},${Y(p).toFixed(1)}`;
+    }
+    curve.setAttribute('d', pathD);
+
+    loop(host, (t) => {
+      // 阈值在 0..1 之间来回扫
+      const thr = 0.15 + 0.7 * easeIO(1 - Math.abs(2 * t - 1));
+      const pThr = 0.1 + thr * 0.85;
+      const xThr = (Math.log(pThr / (1 - pThr)) - 0.1) / 1.6;
+      threshLine.setAttribute('x1', X(xThr));
+      threshLine.setAttribute('x2', X(xThr));
+      threshLine.setAttribute('y1', H - 90 - plotH - 6);
+      threshLine.setAttribute('y2', H - 90);
+
+      let correct = 0;
+      for (const p of pts) {
+        const prob = sigmoid(1.6 * p.x + 0.1);
+        const pred = prob >= pThr ? 1 : 0;
+        if (pred === p.y) correct += 1;
+        p.c.setAttribute('cy', Y(prob));
+        p.cls.setAttribute('y', Y(prob) + 4);
+        p.c.setAttribute('r', pred === p.y ? 7 : 5);
+        p.c.setAttribute('opacity', pred === p.y ? 0.92 : 0.32);
+        p.cls.setAttribute('opacity', pred === p.y ? 1 : 0.25);
+        // 判错的样本画一圈红
+        p.c.setAttribute('stroke', pred === p.y ? 'none' : 'var(--cinnabar)');
+        p.c.setAttribute('stroke-width', pred === p.y ? 0 : 2);
+      }
+      accText.textContent = `阈值 P=${pThr.toFixed(2)} · 准确率 ${correct}/${pts.length} = ${((correct / pts.length) * 100).toFixed(0)}%`;
+    }, 7200);
+  };
+
+  /* ───────────────────── wuxing-cycle ─────────────────────
+     五行生克。外圈相生（顺时针流动），内五角星相克。
+  */
+  FIGURES['wuxing-cycle'] = function (host) {
+    const W = 720, H = 440, cx = W / 2 - 70, cy = H / 2, R = 148;
+    const svg = svgRoot(host, W, H, '五行生克关系');
+    const names = ['木', '火', '土', '金', '水'];
+    const colors = ['var(--jade)', 'var(--cinnabar)', 'var(--gold)', '#8a6d3b', '#2a4d69'];
+    const node = names.map((_, i) => {
+      const a = -Math.PI / 2 + (i / 5) * Math.PI * 2;
+      return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), a };
+    });
+
+    // 相生边（外圈，顺时针 木→火→土→金→水→木）
+    const sheng = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const p = el('path', {
+        d: `M${n.x},${n.y} Q${(n.x + m.x) / 2 + (cy - (n.y + m.y) / 2) * 0.16},${(n.y + m.y) / 2 + ((n.x + m.x) / 2 - cx) * 0.16} ${m.x},${m.y}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.28,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+    // 相克边（五角星）
+    const ke = node.map((n, i) => {
+      const m = node[(i + 2) % 5];
+      const p = el('line', {
+        x1: n.x, y1: n.y, x2: m.x, y2: m.y,
+        stroke: 'var(--cinnabar)', 'stroke-width': 1.4, 'stroke-dasharray': '4 4', opacity: 0.2,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+
+    // 沿边流动的点
+    const flow = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const g = el('circle', { r: 4, fill: 'var(--jade)', cx: n.x, cy: n.y, opacity: 0 });
+      svg.appendChild(g);
+      return { g, from: n, to: m };
+    });
+
+    const nodes = node.map((n, i) => {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: n.x, cy: n.y, r: 30, fill: '#fff', stroke: colors[i], 'stroke-width': 2 }));
+      g.appendChild(el('text', {
+        x: n.x, y: n.y + 8, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 22, fill: colors[i],
+      }, [txt(names[i])]));
+      svg.appendChild(g);
+      return g;
+    });
+
+    // 右栏说明
+    svg.appendChild(mono(W - 190, 60, '相生 (outer)'));
+    svg.appendChild(label(W - 190, 82, '木→火→土→金→水→木', { fill: 'var(--jade)' }));
+    svg.appendChild(mono(W - 190, 130, '相克 (star)'));
+    svg.appendChild(label(W - 190, 152, '木克土 · 土克水 · 水克火', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(label(W - 190, 170, '火克金 · 金克木', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(mono(W - 190, 220, '建模要点'));
+    svg.appendChild(label(W - 190, 242, '5 类 + 有向约束', { fill: 'var(--ink)' }));
+    svg.appendChild(label(W - 190, 262, '纯 softmax 会丢掉', { fill: 'var(--muted)' }));
+    svg.appendChild(label(W - 190, 280, '全部关系信息', { fill: 'var(--muted)' }));
+
+    const capt = label(W - 190, H - 30, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const phase = (t * 5) % 5;
+      for (let i = 0; i < 5; i += 1) {
+        const f = flow[i];
+        const local = clamp01(phase - i);
+        const k = easeIO(local);
+        f.g.setAttribute('cx', lerp(f.from.x, f.to.x, k));
+        f.g.setAttribute('cy', lerp(f.from.y, f.to.y, k));
+        f.g.setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.95 : 0);
+        sheng[i].setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.75 : 0.28);
+        const keOn = phase - i >= 0 && phase - i <= 1.4;
+        ke[i].setAttribute('opacity', keOn ? 0.55 : 0.2);
+      }
+      const active = Math.floor(phase) % 5;
+      nodes.forEach((g, i) => g.querySelector('circle').setAttribute('stroke-width', i === active ? 4 : 2));
+      capt.textContent = `当前传导：${names[active]} → ${names[(active + 1) % 5]}（生） / ${names[active]} 克 ${names[(active + 2) % 5]}`;
+    }, 7000);
+  };
+
+  /* ───────────────────── zangxiang-graph ─────────────────────
+     藏象：五脏 → 官窍 → 情志，边按序点亮。
+  */
+  FIGURES['zangxiang-graph'] = function (host) {
+    const W = 720, H = 430;
+    const svg = svgRoot(host, W, H, '藏象学说的脏腑-官窍-情志关系图');
+
+    const zang = [
+      { n: '肝', x: 110, y: 100, qiao: ['目'], zhi: '怒' },
+      { n: '心', x: 110, y: 210, qiao: ['舌'], zhi: '喜' },
+      { n: '脾', x: 110, y: 320, qiao: ['口'], zhi: '思' },
+      { n: '肺', x: 610, y: 100, qiao: ['鼻'], zhi: '悲' },
+      { n: '肾', x: 610, y: 210, qiao: ['耳'], zhi: '恐' },
+    ];
+    const edges = [];
+
+    for (const z of zang) {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: z.x, cy: z.y, r: 26, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+      g.appendChild(el('text', { x: z.x, y: z.y + 8, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 20, fill: 'var(--cinnabar)' }, [txt(z.n)]));
+      svg.appendChild(g);
+
+      const qx = W / 2 + (z.x < 300 ? -40 : 40);
+      g.appendChild(el('line', { x1: z.x + (z.x < 300 ? 26 : -26), y1: z.y, x2: qx - (z.x < 300 ? 22 : -22), y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+
+      const qg = el('g', {});
+      qg.appendChild(el('rect', { x: qx - 22, y: z.y - 14, width: 44, height: 28, rx: 6, fill: 'var(--jade-soft)', stroke: 'var(--jade)', 'stroke-width': 1.3 }));
+      qg.appendChild(el('text', { x: qx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--jade)' }, [txt(z.qiao[0])]));
+      svg.appendChild(qg);
+
+      const zx = W - 110;
+      g.appendChild(el('line', { x1: qx + 22, y1: z.y, x2: zx - 24, y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      const zg = el('g', {});
+      zg.appendChild(el('circle', { cx: zx, cy: z.y, r: 22, fill: '#fdf1dd', stroke: 'var(--gold)', 'stroke-width': 1.3 }));
+      zg.appendChild(el('text', { x: zx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--gold)' }, [txt(z.zhi)]));
+      svg.appendChild(zg);
+
+      edges.push({ zy: z.y, e1: g.querySelector('line'), e2: g.querySelectorAll('line')[1], qg, zg });
+    }
+
+    svg.appendChild(mono(110 - 30, 40, '藏 / 五藏'));
+    svg.appendChild(mono(W / 2 - 30, 40, '象 / 官窍'));
+    svg.appendChild(mono(W - 110 - 30, 40, '情志'));
+    const capt = label(20, H - 14, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const step = t * 5;
+      edges.forEach((e, i) => {
+        const on = step >= i;
+        e.e1.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        e.e2.setAttribute('stroke', on ? 'var(--gold)' : 'var(--line)');
+        e.qg.setAttribute('opacity', on ? 1 : 0.35);
+        e.zg.setAttribute('opacity', on ? 1 : 0.35);
+      });
+      const cur = zang[Math.min(4, Math.floor(step))];
+      capt.textContent = cur ? `点亮中：${cur.n} 开窍于 ${cur.qiao[0]}，在志为${cur.zhi}` : '';
+    }, 6200, { staticT: 0.99 });
+  };
+
+  /* ───────────────────── sizhen-fusion ─────────────────────
+     四诊合参：四通道 → 融合层 → 证候。演示模态缺失时的降级。
+  */
+  FIGURES['sizhen-fusion'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '四诊合参的多模态融合与模态缺失降级');
+    const chans = [
+      { n: '望', d: '舌象 / 面色', y: 60 },
+      { n: '闻', d: '语声 / 气息', y: 130 },
+      { n: '问', d: '主诉 / 现病史', y: 200 },
+      { n: '切', d: '脉搏波', y: 270 },
+    ];
+    const fx = 330, fy = 165;
+    const outx = 600;
+
+    const fxG = el('g', {});
+    fxG.appendChild(el('rect', { x: fx - 52, y: fy - 46, width: 104, height: 92, rx: 10, fill: '#fff', stroke: 'var(--jade)', 'stroke-width': 2 }));
+    fxG.appendChild(el('text', { x: fx, y: fy - 14, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--jade)' }, [txt('融合层')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 8, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('交叉注意力')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 26, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('+ 缺失掩码')]));
+    svg.appendChild(fxG);
+
+    const outG = el('g', {});
+    outG.appendChild(el('rect', { x: outx - 46, y: fy - 32, width: 92, height: 64, rx: 10, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+    outG.appendChild(el('text', { x: outx, y: fy - 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--cinnabar)' }, [txt('证候')]));
+    outG.appendChild(el('text', { x: outx, y: fy + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('带置信度')]));
+    svg.appendChild(outG);
+
+    svg.appendChild(el('line', { x1: fx + 52, y1: fy, x2: outx - 46, y2: fy, stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+
+    const inG = chans.map((c) => {
+      const g = el('g', {});
+      g.appendChild(el('rect', { x: 24, y: c.y - 24, width: 150, height: 48, rx: 8, fill: '#fff', stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      g.appendChild(el('text', { x: 40, y: c.y - 2, 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--ink)' }, [txt(c.n + '诊')]));
+      g.appendChild(el('text', { x: 40, y: c.y + 16, 'font-size': 11, fill: 'var(--muted)' }, [txt(c.d)]));
+      svg.appendChild(g);
+      const path = el('path', {
+        d: `M174,${c.y} C 250,${c.y} 260,${fy} ${fx - 52},${fy}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.22,
+      });
+      svg.appendChild(path);
+      const dot = el('circle', { r: 4, fill: 'var(--jade)', opacity: 0 });
+      svg.appendChild(dot);
+      return { g, path, dot, y: c.y };
+    });
+
+    const capt = label(24, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    // 循环：全模态 → 缺闻诊 → 缺闻+切 → 恢复
+    const phases = [[1, 1, 1, 1], [1, 0, 1, 1], [1, 0, 1, 0], [1, 1, 1, 1]];
+    loop(host, (t) => {
+      const idx = Math.min(phases.length - 1, Math.floor(t * phases.length));
+      const mask = phases[idx];
+      const missing = [];
+      mask.forEach((m, i) => { if (!m) missing.push(chans[i].n); });
+
+      inG.forEach((c, i) => {
+        const on = mask[i] === 1;
+        c.g.style.opacity = on ? 1 : 0.3;
+        c.path.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        c.path.setAttribute('stroke-dasharray', on ? 'none' : '4 4');
+        c.path.setAttribute('opacity', on ? 0.55 : 0.25);
+        const local = clamp01(t * 4 - idx);
+        c.dot.setAttribute('cx', lerp(174, fx - 52, easeIO(local)));
+        c.dot.setAttribute('cy', lerp(c.y, fy, easeIO(local)));
+        c.dot.setAttribute('opacity', on ? 0.95 : 0);
+      });
+
+      const conf = 0.62 + 0.1 * mask.filter(Boolean).length;
+      outG.style.opacity = 0.4 + 0.6 * conf;
+      capt.textContent = missing.length
+        ? `模态缺失：缺 ${missing.join('、')} → 置信度降至 ${(conf * 100).toFixed(0)}%，系统须显式降级而非静默猜测`
+        : `四诊齐备 → 置信度 ${(conf * 100).toFixed(0)}%`;
+    }, 8800, { staticT: 0.35 });
+  };
+
+  /* ───────────────────── meridian-lookup ─────────────────────
+     腧穴检索：KD-Tree 空间划分 + 最近邻查询。
+  */
+  FIGURES['meridian-lookup'] = function (host) {
+    const W = 720, H = 400, PAD = 40;
+    const svg = svgRoot(host, W, H, '腧穴的空间划分与最近邻检索');
+    const plotW = W - PAD * 2 - 30, plotH = H - 110;
+
+    // 模拟体表腧穴点集（合谷、内关、足三里、三阴交等 18 穴）
+    let seed = 20261012;
+    const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+    const pts = Array.from({ length: 18 }, () => ({ x: PAD + 30 + rnd() * (plotW - 60), y: PAD + 20 + rnd() * (plotH - 40) }));
+
+    // KD-Tree 递归划分线
+    const lines = [];
+    (function build(list, depth) {
+      if (list.length < 2) return;
+      const axis = depth % 2;
+      const sorted = list.slice().sort((a, b) => (axis ? a.y - b.y : a.x - b.x));
+      const med = sorted[Math.floor(sorted.length / 2)];
+      if (axis) {
+        const minX = Math.min(...list.map((p) => p.x));
+        const maxX = Math.max(...list.map((p) => p.x));
+        lines.push({ x1: minX, y1: med.y, x2: maxX, y2: med.y, depth });
+        build(list.filter((p) => p.y < med.y), depth + 1);
+        build(list.filter((p) => p.y >= med.y), depth + 1);
+      } else {
+        const minY = Math.min(...list.map((p) => p.y));
+        const maxY = Math.max(...list.map((p) => p.y));
+        lines.push({ x1: med.x, y1: minY, x2: med.x, y2: maxY, depth });
+        build(list.filter((p) => p.x < med.x), depth + 1);
+        build(list.filter((p) => p.x >= med.x), depth + 1);
+      }
+    })(pts, 0);
+
+    const lineEls = lines.map((l) => {
+      const e = el('line', { x1: l.x1, y1: l.y1, x2: l.x2, y2: l.y2, stroke: 'var(--line)', 'stroke-width': 1, opacity: 0 });
+      svg.appendChild(e);
+      return { e, depth: l.depth };
+    });
+
+    const dotEls = pts.map((p, i) => {
+      const c = el('circle', { cx: p.x, cy: p.y, r: 4.5, fill: 'var(--jade)', opacity: 0.75 });
+      svg.appendChild(c);
+      const t = el('text', { x: p.x + 7, y: p.y + 4, 'font-size': 10, fill: 'var(--muted)', opacity: 0 });
+      t.appendChild(txt(`穴${String(i + 1).padStart(2, '0')}`));
+      svg.appendChild(t);
+      return { c, t, p };
+    });
+
+    const query = el('circle', { r: 8, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 2.2 });
+    svg.appendChild(query);
+    const ring = el('circle', { r: 0, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 1, 'stroke-dasharray': '3 3' });
+    svg.appendChild(ring);
+    const link = el('line', { stroke: 'var(--cinnabar)', 'stroke-width': 1.6, 'stroke-dasharray': '4 3' });
+    svg.appendChild(link);
+
+    const capt = label(PAD, H - 20, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      // 查询点沿弧线游走
+      const ang = t * Math.PI * 2;
+      const qx = PAD + 30 + plotW / 2 + Math.cos(ang) * plotW * 0.33;
+      const qy = PAD + 20 + plotH / 2 + Math.sin(ang) * plotH * 0.32;
+      query.setAttribute('cx', qx);
+      query.setAttribute('cy', qy);
+
+      let best = null;
+      let bestD = Infinity;
+      for (const d of dotEls) {
+        const dd = (d.p.x - qx) ** 2 + (d.p.y - qy) ** 2;
+        if (dd < bestD) { bestD = dd; best = d; }
+        d.c.setAttribute('r', 4.5);
+        d.c.setAttribute('fill', 'var(--jade)');
+        d.t.setAttribute('opacity', 0);
+      }
+      const dist = Math.sqrt(bestD);
+      link.setAttribute('x1', qx); link.setAttribute('y1', qy);
+      link.setAttribute('x2', best.p.x); link.setAttribute('y2', best.p.y);
+      ring.setAttribute('cx', qx); ring.setAttribute('cy', qy);
+      ring.setAttribute('r', dist);
+      best.c.setAttribute('r', 8);
+      best.c.setAttribute('fill', 'var(--cinnabar)');
+      best.t.setAttribute('opacity', 1);
+
+      const step = clamp01(t * 3);
+      lineEls.forEach((l) => l.e.setAttribute('opacity', step > l.depth / 6 ? (0.5 - l.depth * 0.06) : 0));
+
+      capt.textContent = `查询点 → 最近腧穴 ${best.t.textContent} · 平面距离 ${dist.toFixed(1)}px（真实体表须改测地距离）`;
+    }, 11000, { staticT: 0.2 });
+  };
+
+  /* ───────────────────── junchen-attention ─────────────────────
+     君臣佐使 → 注意力权重。列 = 药味，行为权重分配。
+  */
+  FIGURES['junchen-attention'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '君臣佐使的注意力权重分配');
+
+    const herbs = ['桂枝', '芍药', '生姜', '大枣', '甘草'];
+    const roles = ['君', '臣', '佐', '使'];
+    const weights = [
+      [0.52, 0.30, 0.08, 0.06, 0.04],
+      [0.18, 0.44, 0.20, 0.12, 0.06],
+      [0.08, 0.16, 0.40, 0.24, 0.12],
+      [0.04, 0.08, 0.18, 0.32, 0.38],
+    ];
+
+    const GX = 110, GY = 60, CW = 84, CH = 52;
+    svg.appendChild(mono(GX, 34, '方剂：桂枝汤（示例）'));
+
+    herbs.forEach((h, j) => {
+      svg.appendChild(el('text', {
+        x: GX + j * CW + CW / 2, y: GY - 10, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 14, fill: 'var(--ink)',
+      }, [txt(h)]));
+    });
+    roles.forEach((r, i) => {
+      svg.appendChild(el('text', {
+        x: GX - 22, y: GY + i * CH + CH / 2 + 6, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--cinnabar)',
+      }, [txt(r)]));
+    });
+
+    const cells = [];
+    for (let i = 0; i < roles.length; i += 1) {
+      for (let j = 0; j < herbs.length; j += 1) {
+        const r = el('rect', {
+          x: GX + j * CW + 3, y: GY + i * CH + 3, width: CW - 6, height: CH - 6, rx: 6,
+          fill: 'var(--jade)', opacity: 0,
+        });
+        svg.appendChild(r);
+        const tx = el('text', {
+          x: GX + j * CW + CW / 2, y: GY + i * CH + CH / 2 + 5, 'text-anchor': 'middle',
+          'font-family': 'var(--mono)', 'font-size': 12, fill: 'var(--ink)', opacity: 0,
+        });
+        tx.appendChild(txt(weights[i][j].toFixed(2)));
+        svg.appendChild(tx);
+        cells.push({ r, tx, w: weights[i][j], i, j });
+      }
+    }
+
+    // 右侧：软化的权重条
+    const bx = GX + herbs.length * CW + 40;
+    svg.appendChild(mono(bx, 34, '行归一化 (softmax)'));
+    const bars = roles.map((r, i) => {
+      const max = Math.max(...weights[i]);
+      const w = Math.max(...weights[i]);
+      const g = el('g', {});
+      g.appendChild(el('text', { x: bx, y: GY + i * 44 + 10, 'font-size': 12, fill: 'var(--muted)' }, [txt(r + ' 最大: ' + max.toFixed(2))]));
+      const bg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 180, height: 8, rx: 4, fill: 'var(--paper-2)' });
+      g.appendChild(bg);
+      const fg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 0, height: 8, rx: 4, fill: 'var(--jade)' });
+      g.appendChild(fg);
+      svg.appendChild(g);
+      return { fg, w: w, max };
+    });
+
+    svg.appendChild(label(20, H - 40, '结构先验：君药权重最大 → 可作为注意力掩码，让模型学不到"反结构"的配伍', { fill: 'var(--muted)' }));
+    const capt = label(20, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const focusRow = Math.floor(t * 4) % 4;
+      const local = clamp01(t * 4 - Math.floor(t * 4));
+      cells.forEach((c) => {
+        const on = c.i === focusRow;
+        c.r.setAttribute('opacity', on ? c.w * (0.55 + 0.45 * local) : c.w * 0.14);
+        c.tx.setAttribute('opacity', on ? 1 : 0.25);
+      });
+      bars.forEach((b, i) => {
+        b.fg.setAttribute('width', i === focusRow ? 180 * (b.max) * (0.5 + 0.5 * local) : 180 * b.max * 0.35);
+      });
+      capt.textContent = `当前角色：${roles[focusRow]} · 权重最高者为 ${herbs[weights[focusRow].indexOf(Math.max(...weights[focusRow]))]}`;
+    }, 8000, { staticT: 0.1 });
+  };
+
+  /* ───────────────────── 自动挂载 ───────────────────── */
+  function mount(root) {
+    const hosts = (root || document).querySelectorAll('[data-figure]');
+    for (const host of hosts) {
+      if (host.dataset.figureMounted === '1') continue;
+      const fn = FIGURES[host.dataset.figure];
+      if (!fn) {
+        host.innerHTML = `<p class="muted small">未知图形：<code>${host.dataset.figure}</code></p>`;
+        host.dataset.figureMounted = '1';
+        continue;
+      }
+      host.classList.add('figure');
+      fn(host);
+      host.dataset.figureMounted = '1';
+    }
+  }
+
+  window.TCMFigures = { FIGURES, mount };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => mount());
+  } else {
+    mount();
+  }
+  // 单页内动态插入的图形（章节页异步渲染）也能挂上
+  new MutationObserver(() => mount()).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+<script>
+(function(){
+  const deck=document.getElementById('deck');
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+
+  // ── 单帧模式：?shot=N 只渲染第 N 张，供无头浏览器逐帧截图 ──
+  // 截图器需要一张「干净的、正好一屏」的画面，所以这里藏掉其余幻灯片、
+  // 关掉滚动吸附、去掉 HUD，并在 title 上打就绪标记（渲染完成前截图会得到空白）。
+  const shot=new URLSearchParams(location.search).get('shot');
+  if(shot!==null){
+    const n=Math.max(0,Math.min(slides.length-1,Number(shot)||0));
+    slides.forEach((s,idx)=>{ if(idx!==n) s.style.display='none'; });
+    deck.style.overflow='hidden';
+    deck.style.scrollSnapType='none';
+    const hud=document.getElementById('hud');
+    if(hud) hud.style.display='none';
+    const target=slides[n];
+    if(target){ target.style.borderBottom='0'; target.scrollIntoView({block:'start'}); }
+    document.title='SHOT_READY '+n+' of '+slides.length;
+    if(window.TCMFigures)window.TCMFigures.mount(document);
+    // 只读视图：不绑键盘与点击，避免截图过程中页面状态改变
+    return;
+  }
+
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView();}
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    else if(e.key==='p'||e.key==='P'){e.preventDefault();print();}
+  });
+  deck.addEventListener('click',e=>{if(e.target.closest('a'))return;go(i+1);});
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)i=+en.target.dataset.i;});},{root:deck,threshold:.6});
+  slides.forEach(s=>io.observe(s));
+  if(window.TCMFigures)window.TCMFigures.mount(document);
+})();
+</script>
+</body>
+</html>

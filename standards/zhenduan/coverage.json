@@ -1,0 +1,1435 @@
+{
+ "generated": "2026-10-28",
+ "inputs": {
+  "bzu": {
+   "file": "standards/zhenduan/bzu.json",
+   "sha256": "d345e598d0e702818ed864bfabf753b42a142a8deb992550c15c1d00db694533"
+  },
+  "zhNames": {
+   "file": "standards/icd11/zh-names.json",
+   "sha256": "d5758951d88bebf906119eaf1a4043bb12c68ffbfabbca52a6bf1ac8648030a1",
+   "tm1": 472,
+   "patterns": 254
+  },
+  "entities": {
+   "file": "data/icd11/entities.ndjson",
+   "sha256": "12c7e6bf744b8242ffdf1e1afe2289d08946e7baddf0752d6ff2717dcd18ea5f",
+   "total": 13960,
+   "ch26": 1002,
+   "ch26WithDef": 0
+  }
+ },
+ "method": {
+  "scope": "BZU 26 单元 → 18 病；本分析聚焦「仅 1 证」的 12 个病",
+  "matchRules": [
+   "exact：去「证」后完全相同",
+   "contain：一方包含另一方（≥2 字）",
+   "keyword：最长公共子串 ≥2 字（仅词面重合，不当等价）",
+   "none：以上都不成立"
+  ],
+  "whyNotSemantic": "不做同义归并：「湿热蕴结」与「大肠湿热」是两个证候，归并会把「近名」错算成「同名」",
+  "definitionLayer": "第 26 章在 entities.ndjson 里 hasDefinition 全为 false，故「有证候单元」≠「有释义」"
+ },
+ "stat": {
+  "bing": 18,
+  "units": 26,
+  "onlyOne": 12,
+  "tally": {
+   "exact": 5,
+   "contain": 1,
+   "keyword": 6,
+   "none": 0
+  },
+  "tier": {
+   "same": 5,
+   "near": 7,
+   "missing": 0
+  },
+  "withDisorder": 8,
+  "disorderNear": [
+   "头痛",
+   "中风",
+   "淋证"
+  ],
+  "noDisorder": [
+   "呕吐"
+  ],
+  "noUnit": 0,
+  "nearJudged": 7,
+  "nearPending": 0,
+  "byVerdict": {
+   "word-only": 2,
+   "position": 2,
+   "nature": 3
+  },
+  "ch26Entities": 1002,
+  "ch26WithDef": 0
+ },
+ "rows": [
+  {
+   "bing": "不寐",
+   "zheng": "心脾两虚证",
+   "bzuCode": "BZ-B07-Z08",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SD84",
+     "zh": "不寐",
+     "en": "Insomnia disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "exact",
+    "tier": "same",
+    "why": "",
+    "shared": "",
+    "hits": [
+     {
+      "code": "SF6J",
+      "zh": "心脾两虚证",
+      "en": "Heart and spleen systems deficiency pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "头痛",
+   "zheng": "肝阳上亢证",
+   "bzuCode": "BZ-B20-Z04",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SD1Y",
+     "zh": "其他特指的头痛",
+     "en": "Other specified headache disorders (TM1)"
+    },
+    {
+     "code": "SD1Z",
+     "zh": "未特指的头痛",
+     "en": "Headache disorders (TM1), unspecified"
+    }
+   ],
+   "disorderMatch": "contain",
+   "patternMatch": {
+    "how": "exact",
+    "tier": "same",
+    "why": "",
+    "shared": "",
+    "hits": [
+     {
+      "code": "SF52",
+      "zh": "肝阳上亢证",
+      "en": "Liver yang ascendant hyperactivity pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "中风",
+   "zheng": "肝阳上亢证",
+   "bzuCode": "BZ-B09-Z04",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SD30",
+     "zh": "中风先兆证",
+     "en": "Prodrome of wind stroke disorder (TM1)"
+    },
+    {
+     "code": "SD31",
+     "zh": "中风后遗证",
+     "en": "Sequela of wind stroke disorder (TM1)"
+    },
+    {
+     "code": "SD3Y",
+     "zh": "其他特指的中风",
+     "en": "Other specified wind stroke disorders (TM1)"
+    }
+   ],
+   "disorderMatch": "contain",
+   "patternMatch": {
+    "how": "exact",
+    "tier": "same",
+    "why": "",
+    "shared": "",
+    "hits": [
+     {
+      "code": "SF52",
+      "zh": "肝阳上亢证",
+      "en": "Liver yang ascendant hyperactivity pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "呕吐",
+   "zheng": "肝气犯胃证",
+   "bzuCode": "BZ-B11-Z03",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [],
+   "disorderMatch": "none",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "TM1 有「肝火犯胃证 SF5L」，病机是火不是气；「肝气犯胃」无对应单元",
+    "shared": "肝气",
+    "hits": [
+     {
+      "code": "SF53",
+      "zh": "肝气虚证",
+      "en": "Liver qi deficiency pattern (TM1)"
+     },
+     {
+      "code": "SF57",
+      "zh": "肝气郁结证",
+      "en": "Liver qi stagnation pattern (TM1)"
+     },
+     {
+      "code": "SF5L",
+      "zh": "肝火犯胃证",
+      "en": "Liver fire invading the stomach system pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": {
+    "id": "NJ-01",
+    "verdict": "nature",
+    "why": "病位一致（都是肝与胃），差在病性：教材是「气」郁横逆，TM1 近名单元是「火」——气与火是不同病性，不能互代。SF57 肝气郁结证病性是气但不犯胃（无胃这一病位），SF53 肝气虚证是虚证。故 TM1 无「肝气犯胃」这一证。",
+    "consequence": "教材此证在 ICD-11 无独立单元；引用只能引病（呕吐）或按「肝气郁 + 犯胃」两个要素拼，不得引 SF5L 充当。",
+    "nearest": {
+     "code": "SF5L",
+     "zh": "肝火犯胃证",
+     "en": "Liver fire invading stomach pattern (TM1)"
+    },
+    "textbookSide": {
+     "position": "肝、胃",
+     "nature": "气（肝气郁滞，横逆犯胃）"
+    },
+    "tm1Side": {
+     "position": "肝、胃",
+     "nature": "火"
+    },
+    "positionDiff": false,
+    "natureDiff": true
+   }
+  },
+  {
+   "bing": "泄泻",
+   "zheng": "湿热蕴结证",
+   "bzuCode": "BZ-B12-Z06",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SA55",
+     "zh": "泄泻",
+     "en": "Diarrhea disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "TM1 的湿热按病位分列（湿热蕴脾 SF78 / 肝胆湿热 SF5A / 肝经湿热 SF5B / 大肠湿热 SF8G / 膀胱湿热 SF9G），无「蕴结」这类跨部位证名",
+    "shared": "湿热蕴",
+    "hits": [
+     {
+      "code": "SF78",
+      "zh": "湿热蕴脾证",
+      "en": "Dampness-heat encumbering the spleen system pattern (TM1)"
+     },
+     {
+      "code": "SF5A",
+      "zh": "肝胆湿热证",
+      "en": "Liver-gallbladder dampness-heat pattern (TM1)"
+     },
+     {
+      "code": "SF5B",
+      "zh": "肝经湿热证",
+      "en": "Liver meridian dampness-heat pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": {
+    "id": "NJ-02",
+    "verdict": "word-only",
+    "why": "病位与病性都对得上：教材「湿热蕴结」在泄泻语境下部位即肠道，TM1 有专门的「大肠湿热证 SF8G」，两者是同一证在不同体系里的命名差异；教材没写部位，是因为病名（泄泻）已经限定了。",
+    "consequence": "这是 7 条里最接近的一条：可视为同证异名（word-only），但**仍不写成等价**——教材证名不带部位，TM1 带部位，引用时须说明「教材证名＋病名共同限定部位」。",
+    "nearest": {
+     "code": "SF8G",
+     "zh": "大肠湿热证",
+     "en": "Large intestine dampness-heat pattern (TM1)"
+    },
+    "textbookSide": {
+     "position": "肠道（病名泄泻已限定部位）",
+     "nature": "湿热"
+    },
+    "tm1Side": {
+     "position": "大肠",
+     "nature": "湿热"
+    },
+    "positionDiff": false,
+    "natureDiff": false
+   }
+  },
+  {
+   "bing": "便秘",
+   "zheng": "脾胃气虚证",
+   "bzuCode": "BZ-B13-Z05",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SA57",
+     "zh": "便秘",
+     "en": "Constipation disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "contain",
+    "tier": "near",
+    "why": "TM1 只有更宽的「气虚证 SE90」与「胃气虚证 SF7C」，没有「脾胃气虚证」——脾与胃在 TM1 是分开列的",
+    "shared": "",
+    "hits": [
+     {
+      "code": "SE90",
+      "zh": "气虚证",
+      "en": "Qi deficiency pattern (TM1)"
+     },
+     {
+      "code": "SF7C",
+      "zh": "胃气虚证",
+      "en": "Stomach qi deficiency pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": {
+    "id": "NJ-04",
+    "verdict": "position",
+    "why": "病性同为气虚，差在病位：教材是「脾 + 胃」两脏同病，TM1 把脾胃分列——最近的 SF7C 只覆盖胃，SE90 是不带部位的通用气虚证，两者都不能覆盖「脾胃」这一组合。",
+    "consequence": "教材此证在 ICD-11 无独立单元；若必须挂码，只能挂更宽的 SE90 并注明「教材为脾胃同病，TM1 无对应组合单元」。",
+    "nearest": {
+     "code": "SF7C",
+     "zh": "胃气虚证",
+     "en": "Stomach qi deficiency pattern (TM1)"
+    },
+    "textbookSide": {
+     "position": "脾、胃（两脏同病）",
+     "nature": "气虚"
+    },
+    "tm1Side": {
+     "position": "胃（只取一腑）",
+     "nature": "气虚"
+    },
+    "positionDiff": true,
+    "natureDiff": false
+   }
+  },
+  {
+   "bing": "淋证",
+   "zheng": "湿热蕴结证",
+   "bzuCode": "BZ-B18-Z06",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SA90",
+     "zh": "石淋",
+     "en": "Stony stranguria disorder (TM1)"
+    },
+    {
+     "code": "SA91",
+     "zh": "热淋",
+     "en": "Heat stranguria disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "contain",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "TM1 的湿热按病位分列（湿热蕴脾 SF78 / 肝胆湿热 SF5A / 肝经湿热 SF5B / 大肠湿热 SF8G / 膀胱湿热 SF9G），无「蕴结」这类跨部位证名",
+    "shared": "湿热蕴",
+    "hits": [
+     {
+      "code": "SF78",
+      "zh": "湿热蕴脾证",
+      "en": "Dampness-heat encumbering the spleen system pattern (TM1)"
+     },
+     {
+      "code": "SF5A",
+      "zh": "肝胆湿热证",
+      "en": "Liver-gallbladder dampness-heat pattern (TM1)"
+     },
+     {
+      "code": "SF5B",
+      "zh": "肝经湿热证",
+      "en": "Liver meridian dampness-heat pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": {
+    "id": "NJ-03",
+    "verdict": "word-only",
+    "why": "与 NJ-02 同型：淋证病位在膀胱，教材的「湿热蕴结证」在淋证语境下就是膀胱湿热；TM1 的 SF9G 病位、病性完全对得上，差别只在命名粒度。",
+    "consequence": "可视为同证异名（word-only）；引用时同上，须写清「教材证名＋淋证」才等于膀胱湿热。",
+    "nearest": {
+     "code": "SF9G",
+     "zh": "膀胱湿热证",
+     "en": "Urinary bladder dampness-heat pattern (TM1)"
+    },
+    "textbookSide": {
+     "position": "膀胱、水道（病名淋证限定）",
+     "nature": "湿热"
+    },
+    "tm1Side": {
+     "position": "膀胱",
+     "nature": "湿热"
+    },
+    "positionDiff": false,
+    "natureDiff": false
+   }
+  },
+  {
+   "bing": "水肿",
+   "zheng": "肾阳虚证",
+   "bzuCode": "BZ-B15-Z09",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SB06",
+     "zh": "水肿",
+     "en": "Edema disorders (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "exact",
+    "tier": "same",
+    "why": "",
+    "shared": "",
+    "hits": [
+     {
+      "code": "SF97",
+      "zh": "肾阳虚证",
+      "en": "Kidney yang deficiency pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "腰痛",
+   "zheng": "风寒湿痹证",
+   "bzuCode": "BZ-B19-Z13",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SC61",
+     "zh": "腰痛",
+     "en": "Lumbago disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "TM1 的寒湿/风寒都挂在脏腑上（寒湿困脾 SF7B / 风寒束肺 SF8C），没有「痹」这一层单元",
+    "shared": "寒湿",
+    "hits": [
+     {
+      "code": "SF7B",
+      "zh": "寒湿困脾证",
+      "en": "Cold-dampness encumbering the spleen system pattern (TM1)"
+     },
+     {
+      "code": "SF8C",
+      "zh": "风寒束肺证",
+      "en": "Wind-cold fettering the lung pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": {
+    "id": "NJ-05",
+    "verdict": "position",
+    "why": "病性方向相近（寒湿、风寒），但病位完全不同：教材的痹证在腰与筋骨经络，TM1 的寒湿、风寒都挂在脏腑上（困脾、束肺）。TM1 里没有「痹」这一层单元，也没有以腰为病位的证候单元。",
+    "consequence": "教材此证在 ICD-11 无对应单元，差了整整一层（形体—经络层缺席）；只能引病名（腰痛 SC61）。",
+    "nearest": {
+     "code": "SF7B",
+     "zh": "寒湿困脾证",
+     "en": "Cold-dampness encumbering spleen pattern (TM1)"
+    },
+    "textbookSide": {
+     "position": "腰、筋骨经络",
+     "nature": "风寒湿（痹阻）"
+    },
+    "tm1Side": {
+     "position": "脾 / 肺（脏腑）",
+     "nature": "寒湿 / 风寒"
+    },
+    "positionDiff": true,
+    "natureDiff": false
+   }
+  },
+  {
+   "bing": "消渴",
+   "zheng": "肾阴虚证",
+   "bzuCode": "BZ-B16-Z10",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SD71",
+     "zh": "消渴",
+     "en": "Wasting thirst disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "exact",
+    "tier": "same",
+    "why": "",
+    "shared": "",
+    "hits": [
+     {
+      "code": "SF93",
+      "zh": "肾阴虚证",
+      "en": "Kidney yin deficiency pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "喘证",
+   "zheng": "痰湿阻肺证",
+   "bzuCode": "BZ-B04-Z07",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SA80",
+     "zh": "喘证",
+     "en": "Dyspnea disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "TM1 有「痰浊阻肺 SF86」与「寒痰阻肺 SF85」，痰的性质不同（湿/浊/寒），不是同一证候",
+    "shared": "湿阻",
+    "hits": [
+     {
+      "code": "SF7G",
+      "zh": "湿阻肠道证",
+      "en": "Dampness in the intestines pattern (TM1)"
+     },
+     {
+      "code": "SF85",
+      "zh": "寒痰阻肺证",
+      "en": "Cold phlegm obstructing the lung pattern (TM1)"
+     },
+     {
+      "code": "SF86",
+      "zh": "痰浊阻肺证",
+      "en": "Turbid phlegm accumulation in the lung pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": {
+    "id": "NJ-06",
+    "verdict": "nature",
+    "why": "病位一致（肺），差在痰的性质：教材是「痰湿」，TM1 分得更细——痰浊（SF86，重浊黏滞）与寒痰（SF85，兼寒）。痰湿、痰浊、寒痰是三种病性描述，不能互相顶替。",
+    "consequence": "教材此证在 ICD-11 无同名单元；最近的 SF86 是「痰浊」不是「痰湿」，引用须写明病性差异。",
+    "nearest": {
+     "code": "SF86",
+     "zh": "痰浊阻肺证",
+     "en": "Phlegm turbidity obstructing lung pattern (TM1)"
+    },
+    "textbookSide": {
+     "position": "肺",
+     "nature": "痰湿"
+    },
+    "tm1Side": {
+     "position": "肺（SF86/SF85 同）",
+     "nature": "痰浊 / 寒痰"
+    },
+    "positionDiff": false,
+    "natureDiff": true
+   }
+  },
+  {
+   "bing": "哮病",
+   "zheng": "痰湿阻肺证",
+   "bzuCode": "BZ-B03-Z07",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SA81",
+     "zh": "哮病",
+     "en": "Wheezing disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "TM1 有「痰浊阻肺 SF86」与「寒痰阻肺 SF85」，痰的性质不同（湿/浊/寒），不是同一证候",
+    "shared": "湿阻",
+    "hits": [
+     {
+      "code": "SF7G",
+      "zh": "湿阻肠道证",
+      "en": "Dampness in the intestines pattern (TM1)"
+     },
+     {
+      "code": "SF85",
+      "zh": "寒痰阻肺证",
+      "en": "Cold phlegm obstructing the lung pattern (TM1)"
+     },
+     {
+      "code": "SF86",
+      "zh": "痰浊阻肺证",
+      "en": "Turbid phlegm accumulation in the lung pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": {
+    "id": "NJ-07",
+    "verdict": "nature",
+    "why": "与 NJ-06 同证同名（教材在喘证、哮病下用同一个证名），判定随之一致：病位同、病性（痰湿 vs 痰浊/寒痰）不同。",
+    "consequence": "同 NJ-06：无同名单元，最近的 SF86 病性不同。",
+    "nearest": {
+     "code": "SF86",
+     "zh": "痰浊阻肺证",
+     "en": "Phlegm turbidity obstructing lung pattern (TM1)"
+    },
+    "textbookSide": {
+     "position": "肺",
+     "nature": "痰湿"
+    },
+    "tm1Side": {
+     "position": "肺（SF86/SF85 同）",
+     "nature": "痰浊 / 寒痰"
+    },
+    "positionDiff": false,
+    "natureDiff": true
+   }
+  }
+ ],
+ "allBing": [
+  {
+   "bing": "感冒",
+   "zheng": "风寒束表证",
+   "bzuCode": "BZ-B01-Z01",
+   "unitCount": 2,
+   "onlyOne": false,
+   "disorder": [
+    {
+     "code": "SA60",
+     "zh": "感冒",
+     "en": "Common cold disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "",
+    "shared": "风寒束",
+    "hits": [
+     {
+      "code": "SF8C",
+      "zh": "风寒束肺证",
+      "en": "Wind-cold fettering the lung pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "咳嗽",
+   "zheng": "痰湿阻肺证",
+   "bzuCode": "BZ-B02-Z07",
+   "unitCount": 2,
+   "onlyOne": false,
+   "disorder": [
+    {
+     "code": "SA7Y",
+     "zh": "其他特指的咳嗽",
+     "en": "Other specified cough disorders (TM1)"
+    },
+    {
+     "code": "SA7Z",
+     "zh": "未特指的咳嗽",
+     "en": "Cough disorders (TM1), unspecified"
+    }
+   ],
+   "disorderMatch": "contain",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "TM1 有「痰浊阻肺 SF86」与「寒痰阻肺 SF85」，痰的性质不同（湿/浊/寒），不是同一证候",
+    "shared": "湿阻",
+    "hits": [
+     {
+      "code": "SF7G",
+      "zh": "湿阻肠道证",
+      "en": "Dampness in the intestines pattern (TM1)"
+     },
+     {
+      "code": "SF85",
+      "zh": "寒痰阻肺证",
+      "en": "Cold phlegm obstructing the lung pattern (TM1)"
+     },
+     {
+      "code": "SF86",
+      "zh": "痰浊阻肺证",
+      "en": "Turbid phlegm accumulation in the lung pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "胸痹",
+   "zheng": "心脉瘀阻证",
+   "bzuCode": "BZ-B06-Z14",
+   "unitCount": 3,
+   "onlyOne": false,
+   "disorder": [
+    {
+     "code": "SA2Y",
+     "zh": "其他特指的胸痹",
+     "en": "Other specified chest impediment disorders (TM1)"
+    },
+    {
+     "code": "SA2Z",
+     "zh": "未特指的胸痹",
+     "en": "Chest impediment disorders (TM1), unspecified"
+    }
+   ],
+   "disorderMatch": "contain",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "",
+    "shared": "心脉",
+    "hits": [
+     {
+      "code": "SF63",
+      "zh": "心脉痹阻证",
+      "en": "Heart meridian obstruction pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "心悸",
+   "zheng": "心脾两虚证",
+   "bzuCode": "BZ-B05-Z08",
+   "unitCount": 2,
+   "onlyOne": false,
+   "disorder": [
+    {
+     "code": "SA1Y",
+     "zh": "其他特指的心悸",
+     "en": "Other specified palpitation disorders (TM1)"
+    },
+    {
+     "code": "SA1Z",
+     "zh": "未特指的心悸",
+     "en": "Palpitation disorders (TM1), unspecified"
+    }
+   ],
+   "disorderMatch": "contain",
+   "patternMatch": {
+    "how": "exact",
+    "tier": "same",
+    "why": "",
+    "shared": "",
+    "hits": [
+     {
+      "code": "SF6J",
+      "zh": "心脾两虚证",
+      "en": "Heart and spleen systems deficiency pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "不寐",
+   "zheng": "心脾两虚证",
+   "bzuCode": "BZ-B07-Z08",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SD84",
+     "zh": "不寐",
+     "en": "Insomnia disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "exact",
+    "tier": "same",
+    "why": "",
+    "shared": "",
+    "hits": [
+     {
+      "code": "SF6J",
+      "zh": "心脾两虚证",
+      "en": "Heart and spleen systems deficiency pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "眩晕",
+   "zheng": "肝阳上亢证",
+   "bzuCode": "BZ-B08-Z04",
+   "unitCount": 2,
+   "onlyOne": false,
+   "disorder": [
+    {
+     "code": "SD22",
+     "zh": "眩晕",
+     "en": "Vertigo disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "exact",
+    "tier": "same",
+    "why": "",
+    "shared": "",
+    "hits": [
+     {
+      "code": "SF52",
+      "zh": "肝阳上亢证",
+      "en": "Liver yang ascendant hyperactivity pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "头痛",
+   "zheng": "肝阳上亢证",
+   "bzuCode": "BZ-B20-Z04",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SD1Y",
+     "zh": "其他特指的头痛",
+     "en": "Other specified headache disorders (TM1)"
+    },
+    {
+     "code": "SD1Z",
+     "zh": "未特指的头痛",
+     "en": "Headache disorders (TM1), unspecified"
+    }
+   ],
+   "disorderMatch": "contain",
+   "patternMatch": {
+    "how": "exact",
+    "tier": "same",
+    "why": "",
+    "shared": "",
+    "hits": [
+     {
+      "code": "SF52",
+      "zh": "肝阳上亢证",
+      "en": "Liver yang ascendant hyperactivity pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "中风",
+   "zheng": "肝阳上亢证",
+   "bzuCode": "BZ-B09-Z04",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SD30",
+     "zh": "中风先兆证",
+     "en": "Prodrome of wind stroke disorder (TM1)"
+    },
+    {
+     "code": "SD31",
+     "zh": "中风后遗证",
+     "en": "Sequela of wind stroke disorder (TM1)"
+    },
+    {
+     "code": "SD3Y",
+     "zh": "其他特指的中风",
+     "en": "Other specified wind stroke disorders (TM1)"
+    }
+   ],
+   "disorderMatch": "contain",
+   "patternMatch": {
+    "how": "exact",
+    "tier": "same",
+    "why": "",
+    "shared": "",
+    "hits": [
+     {
+      "code": "SF52",
+      "zh": "肝阳上亢证",
+      "en": "Liver yang ascendant hyperactivity pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "胃脘痛",
+   "zheng": "肝气犯胃证",
+   "bzuCode": "BZ-B10-Z03",
+   "unitCount": 3,
+   "onlyOne": false,
+   "disorder": [
+    {
+     "code": "SA51",
+     "zh": "胃脘痛",
+     "en": "Stomach ache disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "TM1 有「肝火犯胃证 SF5L」，病机是火不是气；「肝气犯胃」无对应单元",
+    "shared": "肝气",
+    "hits": [
+     {
+      "code": "SF53",
+      "zh": "肝气虚证",
+      "en": "Liver qi deficiency pattern (TM1)"
+     },
+     {
+      "code": "SF57",
+      "zh": "肝气郁结证",
+      "en": "Liver qi stagnation pattern (TM1)"
+     },
+     {
+      "code": "SF5L",
+      "zh": "肝火犯胃证",
+      "en": "Liver fire invading the stomach system pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "呕吐",
+   "zheng": "肝气犯胃证",
+   "bzuCode": "BZ-B11-Z03",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [],
+   "disorderMatch": "none",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "TM1 有「肝火犯胃证 SF5L」，病机是火不是气；「肝气犯胃」无对应单元",
+    "shared": "肝气",
+    "hits": [
+     {
+      "code": "SF53",
+      "zh": "肝气虚证",
+      "en": "Liver qi deficiency pattern (TM1)"
+     },
+     {
+      "code": "SF57",
+      "zh": "肝气郁结证",
+      "en": "Liver qi stagnation pattern (TM1)"
+     },
+     {
+      "code": "SF5L",
+      "zh": "肝火犯胃证",
+      "en": "Liver fire invading the stomach system pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": {
+    "id": "NJ-01",
+    "verdict": "nature",
+    "why": "病位一致（都是肝与胃），差在病性：教材是「气」郁横逆，TM1 近名单元是「火」——气与火是不同病性，不能互代。SF57 肝气郁结证病性是气但不犯胃（无胃这一病位），SF53 肝气虚证是虚证。故 TM1 无「肝气犯胃」这一证。",
+    "consequence": "教材此证在 ICD-11 无独立单元；引用只能引病（呕吐）或按「肝气郁 + 犯胃」两个要素拼，不得引 SF5L 充当。",
+    "nearest": {
+     "code": "SF5L",
+     "zh": "肝火犯胃证",
+     "en": "Liver fire invading stomach pattern (TM1)"
+    },
+    "textbookSide": {
+     "position": "肝、胃",
+     "nature": "气（肝气郁滞，横逆犯胃）"
+    },
+    "tm1Side": {
+     "position": "肝、胃",
+     "nature": "火"
+    },
+    "positionDiff": false,
+    "natureDiff": true
+   }
+  },
+  {
+   "bing": "泄泻",
+   "zheng": "湿热蕴结证",
+   "bzuCode": "BZ-B12-Z06",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SA55",
+     "zh": "泄泻",
+     "en": "Diarrhea disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "TM1 的湿热按病位分列（湿热蕴脾 SF78 / 肝胆湿热 SF5A / 肝经湿热 SF5B / 大肠湿热 SF8G / 膀胱湿热 SF9G），无「蕴结」这类跨部位证名",
+    "shared": "湿热蕴",
+    "hits": [
+     {
+      "code": "SF78",
+      "zh": "湿热蕴脾证",
+      "en": "Dampness-heat encumbering the spleen system pattern (TM1)"
+     },
+     {
+      "code": "SF5A",
+      "zh": "肝胆湿热证",
+      "en": "Liver-gallbladder dampness-heat pattern (TM1)"
+     },
+     {
+      "code": "SF5B",
+      "zh": "肝经湿热证",
+      "en": "Liver meridian dampness-heat pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": {
+    "id": "NJ-02",
+    "verdict": "word-only",
+    "why": "病位与病性都对得上：教材「湿热蕴结」在泄泻语境下部位即肠道，TM1 有专门的「大肠湿热证 SF8G」，两者是同一证在不同体系里的命名差异；教材没写部位，是因为病名（泄泻）已经限定了。",
+    "consequence": "这是 7 条里最接近的一条：可视为同证异名（word-only），但**仍不写成等价**——教材证名不带部位，TM1 带部位，引用时须说明「教材证名＋病名共同限定部位」。",
+    "nearest": {
+     "code": "SF8G",
+     "zh": "大肠湿热证",
+     "en": "Large intestine dampness-heat pattern (TM1)"
+    },
+    "textbookSide": {
+     "position": "肠道（病名泄泻已限定部位）",
+     "nature": "湿热"
+    },
+    "tm1Side": {
+     "position": "大肠",
+     "nature": "湿热"
+    },
+    "positionDiff": false,
+    "natureDiff": false
+   }
+  },
+  {
+   "bing": "便秘",
+   "zheng": "脾胃气虚证",
+   "bzuCode": "BZ-B13-Z05",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SA57",
+     "zh": "便秘",
+     "en": "Constipation disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "contain",
+    "tier": "near",
+    "why": "TM1 只有更宽的「气虚证 SE90」与「胃气虚证 SF7C」，没有「脾胃气虚证」——脾与胃在 TM1 是分开列的",
+    "shared": "",
+    "hits": [
+     {
+      "code": "SE90",
+      "zh": "气虚证",
+      "en": "Qi deficiency pattern (TM1)"
+     },
+     {
+      "code": "SF7C",
+      "zh": "胃气虚证",
+      "en": "Stomach qi deficiency pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": {
+    "id": "NJ-04",
+    "verdict": "position",
+    "why": "病性同为气虚，差在病位：教材是「脾 + 胃」两脏同病，TM1 把脾胃分列——最近的 SF7C 只覆盖胃，SE90 是不带部位的通用气虚证，两者都不能覆盖「脾胃」这一组合。",
+    "consequence": "教材此证在 ICD-11 无独立单元；若必须挂码，只能挂更宽的 SE90 并注明「教材为脾胃同病，TM1 无对应组合单元」。",
+    "nearest": {
+     "code": "SF7C",
+     "zh": "胃气虚证",
+     "en": "Stomach qi deficiency pattern (TM1)"
+    },
+    "textbookSide": {
+     "position": "脾、胃（两脏同病）",
+     "nature": "气虚"
+    },
+    "tm1Side": {
+     "position": "胃（只取一腑）",
+     "nature": "气虚"
+    },
+    "positionDiff": true,
+    "natureDiff": false
+   }
+  },
+  {
+   "bing": "淋证",
+   "zheng": "湿热蕴结证",
+   "bzuCode": "BZ-B18-Z06",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SA90",
+     "zh": "石淋",
+     "en": "Stony stranguria disorder (TM1)"
+    },
+    {
+     "code": "SA91",
+     "zh": "热淋",
+     "en": "Heat stranguria disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "contain",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "TM1 的湿热按病位分列（湿热蕴脾 SF78 / 肝胆湿热 SF5A / 肝经湿热 SF5B / 大肠湿热 SF8G / 膀胱湿热 SF9G），无「蕴结」这类跨部位证名",
+    "shared": "湿热蕴",
+    "hits": [
+     {
+      "code": "SF78",
+      "zh": "湿热蕴脾证",
+      "en": "Dampness-heat encumbering the spleen system pattern (TM1)"
+     },
+     {
+      "code": "SF5A",
+      "zh": "肝胆湿热证",
+      "en": "Liver-gallbladder dampness-heat pattern (TM1)"
+     },
+     {
+      "code": "SF5B",
+      "zh": "肝经湿热证",
+      "en": "Liver meridian dampness-heat pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": {
+    "id": "NJ-03",
+    "verdict": "word-only",
+    "why": "与 NJ-02 同型：淋证病位在膀胱，教材的「湿热蕴结证」在淋证语境下就是膀胱湿热；TM1 的 SF9G 病位、病性完全对得上，差别只在命名粒度。",
+    "consequence": "可视为同证异名（word-only）；引用时同上，须写清「教材证名＋淋证」才等于膀胱湿热。",
+    "nearest": {
+     "code": "SF9G",
+     "zh": "膀胱湿热证",
+     "en": "Urinary bladder dampness-heat pattern (TM1)"
+    },
+    "textbookSide": {
+     "position": "膀胱、水道（病名淋证限定）",
+     "nature": "湿热"
+    },
+    "tm1Side": {
+     "position": "膀胱",
+     "nature": "湿热"
+    },
+    "positionDiff": false,
+    "natureDiff": false
+   }
+  },
+  {
+   "bing": "水肿",
+   "zheng": "肾阳虚证",
+   "bzuCode": "BZ-B15-Z09",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SB06",
+     "zh": "水肿",
+     "en": "Edema disorders (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "exact",
+    "tier": "same",
+    "why": "",
+    "shared": "",
+    "hits": [
+     {
+      "code": "SF97",
+      "zh": "肾阳虚证",
+      "en": "Kidney yang deficiency pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "腰痛",
+   "zheng": "风寒湿痹证",
+   "bzuCode": "BZ-B19-Z13",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SC61",
+     "zh": "腰痛",
+     "en": "Lumbago disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "TM1 的寒湿/风寒都挂在脏腑上（寒湿困脾 SF7B / 风寒束肺 SF8C），没有「痹」这一层单元",
+    "shared": "寒湿",
+    "hits": [
+     {
+      "code": "SF7B",
+      "zh": "寒湿困脾证",
+      "en": "Cold-dampness encumbering the spleen system pattern (TM1)"
+     },
+     {
+      "code": "SF8C",
+      "zh": "风寒束肺证",
+      "en": "Wind-cold fettering the lung pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": {
+    "id": "NJ-05",
+    "verdict": "position",
+    "why": "病性方向相近（寒湿、风寒），但病位完全不同：教材的痹证在腰与筋骨经络，TM1 的寒湿、风寒都挂在脏腑上（困脾、束肺）。TM1 里没有「痹」这一层单元，也没有以腰为病位的证候单元。",
+    "consequence": "教材此证在 ICD-11 无对应单元，差了整整一层（形体—经络层缺席）；只能引病名（腰痛 SC61）。",
+    "nearest": {
+     "code": "SF7B",
+     "zh": "寒湿困脾证",
+     "en": "Cold-dampness encumbering spleen pattern (TM1)"
+    },
+    "textbookSide": {
+     "position": "腰、筋骨经络",
+     "nature": "风寒湿（痹阻）"
+    },
+    "tm1Side": {
+     "position": "脾 / 肺（脏腑）",
+     "nature": "寒湿 / 风寒"
+    },
+    "positionDiff": true,
+    "natureDiff": false
+   }
+  },
+  {
+   "bing": "消渴",
+   "zheng": "肾阴虚证",
+   "bzuCode": "BZ-B16-Z10",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SD71",
+     "zh": "消渴",
+     "en": "Wasting thirst disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "exact",
+    "tier": "same",
+    "why": "",
+    "shared": "",
+    "hits": [
+     {
+      "code": "SF93",
+      "zh": "肾阴虚证",
+      "en": "Kidney yin deficiency pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": null
+  },
+  {
+   "bing": "喘证",
+   "zheng": "痰湿阻肺证",
+   "bzuCode": "BZ-B04-Z07",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SA80",
+     "zh": "喘证",
+     "en": "Dyspnea disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "TM1 有「痰浊阻肺 SF86」与「寒痰阻肺 SF85」，痰的性质不同（湿/浊/寒），不是同一证候",
+    "shared": "湿阻",
+    "hits": [
+     {
+      "code": "SF7G",
+      "zh": "湿阻肠道证",
+      "en": "Dampness in the intestines pattern (TM1)"
+     },
+     {
+      "code": "SF85",
+      "zh": "寒痰阻肺证",
+      "en": "Cold phlegm obstructing the lung pattern (TM1)"
+     },
+     {
+      "code": "SF86",
+      "zh": "痰浊阻肺证",
+      "en": "Turbid phlegm accumulation in the lung pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": {
+    "id": "NJ-06",
+    "verdict": "nature",
+    "why": "病位一致（肺），差在痰的性质：教材是「痰湿」，TM1 分得更细——痰浊（SF86，重浊黏滞）与寒痰（SF85，兼寒）。痰湿、痰浊、寒痰是三种病性描述，不能互相顶替。",
+    "consequence": "教材此证在 ICD-11 无同名单元；最近的 SF86 是「痰浊」不是「痰湿」，引用须写明病性差异。",
+    "nearest": {
+     "code": "SF86",
+     "zh": "痰浊阻肺证",
+     "en": "Phlegm turbidity obstructing lung pattern (TM1)"
+    },
+    "textbookSide": {
+     "position": "肺",
+     "nature": "痰湿"
+    },
+    "tm1Side": {
+     "position": "肺（SF86/SF85 同）",
+     "nature": "痰浊 / 寒痰"
+    },
+    "positionDiff": false,
+    "natureDiff": true
+   }
+  },
+  {
+   "bing": "哮病",
+   "zheng": "痰湿阻肺证",
+   "bzuCode": "BZ-B03-Z07",
+   "unitCount": 1,
+   "onlyOne": true,
+   "disorder": [
+    {
+     "code": "SA81",
+     "zh": "哮病",
+     "en": "Wheezing disorder (TM1)"
+    }
+   ],
+   "disorderMatch": "exact",
+   "patternMatch": {
+    "how": "keyword",
+    "tier": "near",
+    "why": "TM1 有「痰浊阻肺 SF86」与「寒痰阻肺 SF85」，痰的性质不同（湿/浊/寒），不是同一证候",
+    "shared": "湿阻",
+    "hits": [
+     {
+      "code": "SF7G",
+      "zh": "湿阻肠道证",
+      "en": "Dampness in the intestines pattern (TM1)"
+     },
+     {
+      "code": "SF85",
+      "zh": "寒痰阻肺证",
+      "en": "Cold phlegm obstructing the lung pattern (TM1)"
+     },
+     {
+      "code": "SF86",
+      "zh": "痰浊阻肺证",
+      "en": "Turbid phlegm accumulation in the lung pattern (TM1)"
+     }
+    ]
+   },
+   "hasDefinition": false,
+   "judgement": {
+    "id": "NJ-07",
+    "verdict": "nature",
+    "why": "与 NJ-06 同证同名（教材在喘证、哮病下用同一个证名），判定随之一致：病位同、病性（痰湿 vs 痰浊/寒痰）不同。",
+    "consequence": "同 NJ-06：无同名单元，最近的 SF86 病性不同。",
+    "nearest": {
+     "code": "SF86",
+     "zh": "痰浊阻肺证",
+     "en": "Phlegm turbidity obstructing lung pattern (TM1)"
+    },
+    "textbookSide": {
+     "position": "肺",
+     "nature": "痰湿"
+    },
+    "tm1Side": {
+     "position": "肺（SF86/SF85 同）",
+     "nature": "痰浊 / 寒痰"
+    },
+    "positionDiff": false,
+    "natureDiff": true
+   }
+  }
+ ]
+}

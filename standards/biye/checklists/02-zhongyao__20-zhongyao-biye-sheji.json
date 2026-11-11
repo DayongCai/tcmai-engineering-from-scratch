@@ -1,0 +1,56 @@
+{
+ "subject": "20-zhongyao-biye-sheji",
+ "dept": "02-zhongyao",
+ "title": "中药专业毕业设计",
+ "通用检查表": "standards/biye/通用检查表.md",
+ "现状": {
+  "学科数": 21,
+  "已建章节": 150,
+  "可用底本": [
+   "standards/zhongyao/drugs.json",
+   "standards/fangji/formulas.json",
+   "standards/yaoli/底本.json"
+  ],
+  "底本缺口": []
+ },
+ "七项": {
+  "1": {
+   "status": "齐备",
+   "说明": "四类数字已落盘：`instances/<dept>.json` 的 item2／item3 锚列 ＋ `假设集.json` 的 S1–S23 来源表",
+   "证据": "standards/fangji/formulas.json"
+  },
+  "2": {
+   "status": "齐备",
+   "说明": "中医类医院 SAM 6,498 × 带中位 5.5% × 成熟度 → 71 家（隐含渗透 1.093%，判定 合理）",
+   "证据": "standards/yaoli/底本.json"
+  },
+  "3": {
+   "status": "齐备",
+   "说明": "客单 30,000 元；客单 3 万 ÷ 医院年营收 9,100 万 = 0.03%；≤ IT 预算（约 91–182 万）的 3.3%；判定 带内",
+   "证据": "standards/zhongyao/drugs.json"
+  },
+  "4": {
+   "status": "齐备",
+   "说明": "成本侧四档 + 收入侧五档已算；首次转亏客户数系数 = 0.05",
+   "证据": "standards/fangji/formulas.json"
+  },
+  "5": {
+   "status": "齐备",
+   "说明": "本科目底本均已入库，无不可计资产",
+   "证据": "standards/yaoli/底本.json"
+  },
+  "6": {
+   "status": "齐备",
+   "说明": "81 行全部标来源：假设 45（15 案）／待建·不拆 33／无隐性成本 3；`python scripts/check_biye_timelog.py` exit 0",
+   "证据": "standards/zhongyao/drugs.json"
+  },
+  "7": {
+   "status": "齐备",
+   "说明": "`python scripts/build_biye_instances.py` 一条命令复算本系三套数字（见 `instances/02-zhongyao.json`）",
+   "证据": "standards/fangji/formulas.json"
+  }
+ },
+ "欠账": [],
+ "复算": "python scripts/build_biye_checklist.py --check",
+ "免责声明": "本表为教学口径，不构成商业承诺、投资建议或法律意见。"
+}

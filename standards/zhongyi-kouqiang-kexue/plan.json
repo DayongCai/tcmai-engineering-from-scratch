@@ -1,0 +1,121 @@
+{
+ "title": "中医口腔科学",
+ "note": "派生课：底本《中医耳鼻喉科学》口齿科章（第8章，20 小节）按顺序切成 10 讲；不另立来源，汉字不与父课相加。",
+ "views": {
+  "病位与解剖": [
+   "耳",
+   "鼻",
+   "咽喉",
+   "口腔",
+   "眼",
+   "部位"
+  ],
+  "病性与证候": [
+   "热",
+   "虚",
+   "风",
+   "湿",
+   "痰",
+   "瘀"
+  ],
+  "诊法与治法": [
+   "诊断",
+   "辨证",
+   "治法",
+   "方药",
+   "外治",
+   "调护"
+  ]
+ },
+ "levels": {
+  "前段": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "中段": [
+   6,
+   7,
+   8
+  ],
+  "后段": [
+   9,
+   10
+  ]
+ },
+ "splitInto": 10,
+ "chapters": [
+  {
+   "title": "口腔的中医解剖与生理",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "口齿疾病的病因病机",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "口齿疾病的辨证要点",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "口齿疾病的治法与外治",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "牙痛与龋病",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "牙周病与牙龈出血",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "口疮与口腔黏膜病",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "口臭与口干",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "口齿急症与外伤",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  },
+  {
+   "title": "口齿调护与预防",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 8
+   }
+  }
+ ]
+}

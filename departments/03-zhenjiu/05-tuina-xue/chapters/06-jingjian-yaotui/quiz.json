@@ -1,0 +1,79 @@
+{
+ "lesson": "06-jingjian-yaotui",
+ "title": "推拿治疗颈肩腰腿痛",
+ "subject": "05-tuina-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 6 章「推拿治疗颈肩腰腿痛」要回答的核心问题是什么？",
+   "options": [
+    "同一套手法治颈椎病与腰突，凭什么剂量不同",
+    "推拿的起源",
+    "推拿的发展",
+    "一指禅推拿流派"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：教材按病写手法组合，但真正决定疗效的是力度与时程，这两项在文本里常写成「适中」「适度」。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "手法操作",
+    "作用机理",
+    "临床应用",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（作用）重心落在哪一项？",
+   "options": [
+    "滑利关节",
+    "疏通经络",
+    "理筋整复",
+    "调整脏腑"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "9 个",
+    "11 个",
+    "14 个",
+    "18 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "「力度适中」为什么不计入数值类命中？",
+   "options": [
+    "它不是可数单位，无法复现",
+    "教材没写力度",
+    "统计脚本有 bug",
+    "力度不重要"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：剂量最常写成不可数的表述。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/tuina/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+  "lesson": "11-qita-zhangai",
+  "title": "其他精神障碍：酒、儿童、围产期",
+  "subject": "20-zhongyi-jingshenbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "酒精戒断最危险的并发症是？",
+      "options": [
+        "震颤谵妄（可致命）",
+        "失眠",
+        "焦虑",
+        "食欲下降"
+      ],
+      "correct": 0,
+      "explanation": "教材 11.1.2。"
+    },
+    {
+      "stage": "check",
+      "question": "儿童精神障碍本章讲的两类是？",
+      "options": [
+        "多动与抽动",
+        "孤独症与精神分裂",
+        "抑郁与焦虑",
+        "强迫与恐惧"
+      ],
+      "correct": 0,
+      "explanation": "教材 11.2.1。"
+    },
+    {
+      "stage": "check",
+      "question": "围产期抑郁须评估的阈值是？",
+      "options": [
+        "产后情绪低落持续两周以上并影响照料婴儿",
+        "出现一次哭泣",
+        "产后三天情绪波动",
+        "家属反映"
+      ],
+      "correct": 0,
+      "explanation": "教材 11.2.2。"
+    },
+    {
+      "stage": "check",
+      "question": "本章数值命中数为？",
+      "options": [
+        "113 处",
+        "0 处",
+        "282 处",
+        "7 处"
+      ],
+      "correct": 0,
+      "explanation": "多为饮酒量与病程。"
+    },
+    {
+      "stage": "post",
+      "question": "三类病人为何容易漏诊？",
+      "options": [
+        "他们分散在内科、儿科、妇产科而非精神科",
+        "因为罕见",
+        "因为症状轻",
+        "因为无药"
+      ],
+      "correct": 0,
+      "explanation": "本章的落点是「在别的科里想到它」。"
+    },
+    {
+      "stage": "post",
+      "question": "酒依赖的两个阶段是？",
+      "options": [
+        "依赖与戒断",
+        "急性与慢性",
+        "轻度与重度",
+        "男与女"
+      ],
+      "correct": 0,
+      "explanation": "教材 11.1.1–11.1.2。"
+    }
+  ]
+}

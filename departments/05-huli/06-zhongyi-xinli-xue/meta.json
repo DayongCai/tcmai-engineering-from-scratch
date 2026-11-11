@@ -1,29 +1,38 @@
 {
-  "slug": "06-zhongyi-xinli-xue",
-  "title": "中医心理学",
-  "en": "TCM Psychology",
-  "deptSlug": "05-huli",
-  "deptTitle": "护理系",
-  "globalN": 66,
-  "type": "Core",
-  "semester": 4,
-  "stage": "sheng",
-  "stageTitle": "生",
-  "hours": 54,
-  "bridge": "情志辨证→情绪分类 NLP / 五志相胜→博弈模型",
-  "chaptersTarget": 8,
-  "chapters": [],
-  "platform": {
-    "id": "tcmP",
-    "coursePath": "platform/courses/05-huli/06-zhongyi-xinli-xue",
-    "videosPublished": 0,
-    "status": "planned"
-  },
-  "textbook": {
-    "id": "textbooks",
-    "path": "textbooks/05-huli/06-zhongyi-xinli-xue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
-  }
+ "slug": "06-zhongyi-xinli-xue",
+ "title": "中医心理学",
+ "en": "TCM Psychology",
+ "deptSlug": "05-huli",
+ "deptTitle": "护理系",
+ "globalN": 66,
+ "type": "Core",
+ "semester": 4,
+ "stage": "sheng",
+ "stageTitle": "生",
+ "hours": 54,
+ "bridge": "情志辨证→情绪分类 NLP / 五志相胜→博弈模型",
+ "chaptersTarget": 8,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/05-huli/06-zhongyi-xinli-xue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/05-huli/06-zhongyi-xinli-xue",
+  "chaptersWritten": 12,
+  "words": 180894,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#中医心理学",
+  "extractedAt": "2026-10-21"
+ },
+ "底本": {
+  "kind": "教材",
+  "from": "F:/textbooks/qhzy-中医心理学.xlsx",
+  "dir": "standards/zhongyi-xinli-xue",
+  "note": "12 内容章 / 48 单元 / 155,635 汉字；课程 8 章按母本骨架重排"
+ }
 }

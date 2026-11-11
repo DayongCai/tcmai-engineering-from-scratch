@@ -1,0 +1,57 @@
+{
+  "chapter": "10-siwei-fangfa",
+  "slideCount": 10,
+  "segmentCount": 10,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 20
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 77
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 71
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 77
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 245
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 367
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 375
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 219
+    },
+    {
+      "n": 9,
+      "segment": 9,
+      "chars": 151
+    },
+    {
+      "n": 10,
+      "segment": 10,
+      "chars": 52
+    }
+  ]
+}

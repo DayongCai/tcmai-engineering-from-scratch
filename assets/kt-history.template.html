@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>中医药知识树 · 按历史先后演绎</title>
+<style>
+  :root{
+    --bg:#0d0a07; --panel:#1a1610; --panel2:#14100b; --line:#2a2218;
+    --ink:#e8dcc8; --ink2:#c9bda6; --muted:#8f8371; --gold:#c8a15a; --zhu:#b4553f; --jade:#7e9c8a;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Serif SC","Source Han Serif CN","Songti SC",SimSun,serif;
+    -webkit-font-smoothing:antialiased}
+  body{padding:56px 28px 96px;line-height:1.85;font-size:15px}
+  a{color:var(--gold);text-decoration:none;border-bottom:1px dotted rgba(200,161,90,.4)}
+  .wrap{max-width:1160px;margin:0 auto}
+
+  /* ── 头部 ── */
+  .kicker{letter-spacing:.42em;font-size:11px;color:var(--muted);text-transform:uppercase}
+  h1{font-size:40px;margin:14px 0 6px;font-weight:600;letter-spacing:.06em}
+  h1 .thin{color:var(--gold)}
+  .lede{color:var(--ink2);max-width:66ch;margin:10px 0 0}
+  .lede em{font-style:normal;color:var(--gold)}
+
+  .figures{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;margin:34px 0 10px;
+    background:var(--line);border:1px solid var(--line)}
+  .figures div{background:var(--panel);padding:16px 14px}
+  .figures b{display:block;font-size:26px;color:var(--ink);font-variant-numeric:tabular-nums}
+  .figures span{font-size:11.5px;color:var(--muted);letter-spacing:.06em}
+
+  /* ── 判据条 ── */
+  .basis{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 46px;font-size:12px;color:var(--muted)}
+  .basis i{font-style:normal;border:1px solid var(--line);padding:3px 9px;border-radius:2px;background:var(--panel2)}
+  .basis i b{color:var(--ink2);font-weight:500}
+
+  /* ── 时间轴 ── */
+  .rail{position:relative;padding-left:0}
+  .era{display:grid;grid-template-columns:104px 1fr;gap:26px;position:relative}
+  .era + .era{margin-top:34px}
+  .axis{position:relative;text-align:right;padding-top:6px}
+  .axis .no{font-size:13px;color:var(--gold);letter-spacing:.2em}
+  .axis .span{display:block;font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+  .axis:after{content:"";position:absolute;right:-13px;top:14px;width:7px;height:7px;border-radius:50%;
+    background:var(--gold);box-shadow:0 0 0 4px rgba(200,161,90,.12)}
+  .era:not(:last-child) .axis:before{content:"";position:absolute;right:-10px;top:26px;bottom:-40px;
+    width:1px;background:linear-gradient(var(--line),rgba(42,34,24,.2))}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--gold);
+    padding:22px 24px 18px}
+  .card h2{margin:0;font-size:23px;font-weight:600;letter-spacing:.04em}
+  .card h2 small{font-size:12.5px;color:var(--muted);font-weight:400;margin-left:12px;letter-spacing:.02em}
+  .shape{color:var(--ink2);margin:12px 0 0;padding-left:12px;border-left:1px solid rgba(200,161,90,.35)}
+  .cols{display:grid;grid-template-columns:1.05fr 1fr;gap:26px;margin-top:20px}
+  .col h3{margin:0 0 10px;font-size:11.5px;letter-spacing:.22em;color:var(--muted);font-weight:500}
+  .works{list-style:none;margin:0;padding:0}
+  .works li{padding:7px 0;border-top:1px dotted rgba(42,34,24,.9);font-size:13.5px}
+  .works li:first-child{border-top:0}
+  .works .w{color:var(--ink);font-weight:500}
+  .works .t{color:var(--gold);font-size:12px;margin-left:8px}
+  .works .n{display:block;color:var(--muted);font-size:12.5px;line-height:1.65}
+  .people{margin:12px 0 0;font-size:12.5px;color:var(--muted)}
+  .people b{color:var(--ink2);font-weight:400}
+
+  .nodes{list-style:none;margin:0;padding:0}
+  .nodes > li{border:1px solid var(--line);background:var(--panel2);margin-bottom:8px}
+  .nodes summary{cursor:pointer;padding:9px 12px;display:flex;gap:10px;align-items:baseline;
+    list-style:none;font-size:13.5px}
+  .nodes summary::-webkit-details-marker{display:none}
+  .nodes summary .nm{color:var(--ink);font-weight:500}
+  .nodes summary .meta{margin-left:auto;color:var(--muted);font-size:11.5px;white-space:nowrap;
+    font-variant-numeric:tabular-nums}
+  .basis-tag{font-size:10.5px;letter-spacing:.06em;padding:1px 6px;border-radius:2px;
+    border:1px solid rgba(200,161,90,.45);color:var(--gold);white-space:nowrap}
+  .basis-tag.t2{border-color:rgba(126,156,138,.5);color:var(--jade)}
+  .basis-tag.xd{border-color:rgba(180,85,63,.55);color:var(--zhu)}
+  .nodes .why{padding:0 12px 10px;color:var(--muted);font-size:12.5px}
+  .nodes ol{margin:6px 0 12px;padding:0 12px 0 34px;color:var(--ink2);font-size:12.5px}
+  .nodes ol li{padding:2px 0}
+
+  .tally{margin-top:18px;padding-top:12px;border-top:1px solid var(--line);display:flex;
+    gap:18px;font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums;flex-wrap:wrap}
+  .tally b{color:var(--ink2);font-weight:500}
+
+  /* ── 坐标系 ── */
+  section.block{margin-top:64px}
+  .block > h2{font-size:19px;margin:0 0 6px;letter-spacing:.08em}
+  .block > p.note{margin:0 0 20px;color:var(--muted);font-size:13px;max-width:72ch}
+  table.coord{width:100%;border-collapse:collapse;font-size:13px}
+  table.coord th{text-align:left;font-weight:500;color:var(--muted);font-size:11px;
+    letter-spacing:.16em;padding:0 10px 8px;border-bottom:1px solid var(--line)}
+  table.coord td{padding:9px 10px;border-bottom:1px solid rgba(42,34,24,.75);vertical-align:middle}
+  table.coord td.term{color:var(--ink);font-size:15px;white-space:nowrap}
+  table.coord td.term small{display:block;color:var(--muted);font-size:10.5px;letter-spacing:.02em;
+    white-space:normal;max-width:26ch;line-height:1.5;margin-top:2px}
+  table.coord td.origin{color:var(--muted);font-size:12px;white-space:nowrap}
+  table.coord td.num{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink2);white-space:nowrap}
+  .bar{height:7px;background:linear-gradient(90deg,var(--gold),rgba(200,161,90,.25));border-radius:1px}
+
+  /* ── 根冠 ── */
+  .rootcrown{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+    border:1px solid var(--line);margin-top:18px}
+  .rootcrown div{background:var(--panel);padding:24px}
+  .rootcrown h3{margin:0 0 10px;font-size:13px;letter-spacing:.2em;color:var(--gold);font-weight:500}
+  .rootcrown .big{font-size:32px;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.3}
+  .rootcrown p{margin:10px 0 0;color:var(--muted);font-size:12.5px}
+  .rootcrown .jade h3{color:var(--jade)}
+
+  .verdict{margin-top:22px;padding:20px 22px;background:var(--panel2);border:1px solid var(--line);
+    border-left:2px solid var(--zhu);color:var(--ink2);font-size:14px}
+  .verdict b{color:var(--ink)}
+
+  /* ── 缺口 ── */
+  .gaps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .gaps > div{background:var(--panel);padding:18px 20px}
+  .gaps h3{margin:0 0 8px;font-size:12px;letter-spacing:.18em;color:var(--zhu);font-weight:500}
+  .gaps p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.9}
+  .gaps .chip{display:inline-block;border:1px solid var(--line);background:var(--panel2);
+    padding:1px 7px;margin:2px 4px 2px 0;font-size:12px;color:var(--ink2)}
+
+  footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);
+    font-size:11.5px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    body{padding:32px 16px 64px;font-size:14.5px}
+    h1{font-size:27px}
+    .figures{grid-template-columns:repeat(2,1fr)}
+    .era{grid-template-columns:1fr;gap:10px}
+    .axis{text-align:left}.axis:after{display:none}.axis:before{display:none}
+    .axis .span{display:inline;margin-left:10px}
+    .cols{grid-template-columns:1fr;gap:18px}
+    .rootcrown{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">TCMAI · 知识树演绎</div>
+  <h1>中医药知识树 <span class="thin">按历史先后</span></h1>
+  <p class="lede">不是把 188 门课按学期排一遍，而是沿时间倒推：<em>今天树上的每一个结点，是哪一期的坐标系长出来的</em>。
+    分期直接采用仓库《中国医学史》自己的分法（第 2–7 章），典籍源流与本库实测数字分开陈列，坐标系覆盖率由 <span id="ledeHanzi">全量</span>底本现算。</p>
+
+  <div class="figures" id="figures"></div>
+  <div class="basis">
+    <i><b>源流判定</b> 典籍同名 / 学科史通说 —— 史实层，逐条标依据</i>
+    <i><b>本库实测</b> 章数 / 单元数 / 字数 —— 取自 curriculum.json 与 kt-sphere.json</i>
+    <i><b>坐标系命中</b> 全量正文词频 —— 唯一由本库语料直接测出的那一层</i>
+    <i>学派词频（阈值 60）只作旁证，<b>不参与分期计数</b></i>
+  </div>
+
+  <div class="rail" id="rail"></div>
+
+  <section class="block">
+    <h2>坐标系还在承重吗</h2>
+    <p class="note">下面每个词都是一次「加坐标」的产物。统计口径：按该坐标的<b>写法族</b>（词下列出全部成员）在
+      <code>standards/*/units.json</code> 的全部知识单元正文里检索，数出它落在多少个不同学科、多少个不同知识单元——
+      覆盖越宽，说明这条老坐标今天越是被反复调用，而不是被供起来。只数真名会漏：《伤寒论》通篇写「太阳病」，几乎不出现「六经」二字。</p>
+    <table class="coord">
+      <thead><tr><th>坐标词 · 计入写法</th><th>提出于</th><th style="text-align:right">覆盖学科</th>
+        <th style="text-align:right">覆盖单元</th><th style="text-align:right">出现次数</th><th style="width:22%">单元覆盖</th></tr></thead>
+      <tbody id="coordBody"></tbody>
+    </table>
+  </section>
+
+  <section class="block">
+    <h2>根系与冠层</h2>
+    <p class="note">同一棵树的两端：18 门典籍/学派载体（16 断代 + 2 跨代）是根，170 门现代建制学科是冠。数字全部来自本库底本，可复算。</p>
+    <div class="rootcrown" id="rootcrown"></div>
+    <div class="verdict" id="verdict"></div>
+  </section>
+
+  <section class="block">
+    <h2>本库缺口</h2>
+    <p class="note" id="gapNote"></p>
+    <div class="gaps" id="gaps"></div>
+  </section>
+
+  <footer>
+    <span id="footL"></span>
+    <span id="footR">复算：<code>python scripts/build_kt_history.py</code> → <code>python scripts/build_kt_history_html.py</code></span>
+  </footer>
+</div>
+
+<script>
+const DATA = __DATA__;
+
+const num = n => n.toLocaleString("zh-CN");
+const wan = n => (n/10000).toFixed(1).replace(/\.0$/,"") + " 万字";
+const eraName = id => (DATA.eras.find(e=>e.id===id)||{}).title || id;
+
+/* ── 顶部数字 ── */
+(function(){
+  const c = DATA.corpus, t = DATA.totals;
+  const rows = [
+    [DATA.eras.length, "历史分期（含起源与当代）"],
+    [num(c.totalSubjects), "学科结点"],
+    [num(c.totalChapters), "章节"],
+    [num(c.totalUnits), "知识单元"],
+    [wan(c.totalHanzi), "底本正文"],
+  ];
+  document.getElementById("figures").innerHTML = rows.map(([v,l])=>
+    `<div><b>${v}</b><span>${l}</span></div>`).join("");
+  const lede = document.getElementById("ledeHanzi");
+  if (lede) lede.textContent = wan(c.totalHanzi);
+})();
+
+/* ── 时间轴 ── */
+(function(){
+  const roman = ["壹","贰","叁","肆","伍","陆","柒","捌"];
+  const html = DATA.eras.map((e,i)=>{
+    const m = e.measured;
+    const works = e.works.map(w=>
+      `<li><span class="w">${w.name}</span><span class="t">${w.when}</span><span class="n">${w.note}</span></li>`).join("");
+    const people = e.people.length ? `<p class="people"><b>人物</b>　${e.people.join(" · ")}</p>` : "";
+    const nodes = e.nodes.length ? e.nodes.map(n=>{
+      const tag = n.basis === "典籍同名" ? "" : " t2";
+      const cross = n.coupling === "跨代" ? `<span class="basis-tag xd">跨代</span>` : "";
+      const detail = (n.detail && n.detail.length)
+        ? `<ol>${n.detail.map(d=>`<li>${d}</li>`).join("")}</ol>` : "";
+      return `<details><summary><span class="nm">${n.title}</span>${cross}
+        <span class="basis-tag${tag}">${n.basis}</span>
+        <span class="meta">${n.chapters} 章${n.units?" · "+n.units+" 单元":""}</span></summary>
+        <div class="why">${n.why}</div>${detail}</details>`;
+    }).join("") : `<p class="people">${e.empty || "本库暂无对应结点。"}</p>`;
+    const cross = e.cross && e.cross.subjects
+      ? `<span>另：跨代载体 <b>${e.cross.subjects}</b> 学科（不计入本期）</span>` : "";
+    const tally = `<div class="tally">
+      <span>断代结点 <b>${m.subjects}</b> 学科</span><span>章 <b>${m.chapters}</b></span>
+      <span>单元 <b>${m.units}</b></span><span>正文 <b>${wan(m.hanzi)}</b></span>${cross}</div>`;
+    const bottoms = (e.bottoms && e.bottoms.length) ? e.bottoms.map(b=>
+      `<div class="tally" style="border-top:0;color:var(--gold)"><span>底本在库　<b>${b.title}</b></span>
+       <span>${b.units} 单元</span><span>${wan(b.hanzi)}</span>
+       <span style="color:var(--muted)">${b.note||""}</span></div>`).join("") : "";
+    return `<article class="era">
+      <div class="axis"><div class="no">${roman[i]||i+1}</div><div class="span">${e.span}</div></div>
+      <div class="card">
+        <h2>${e.title}<small>${e.gist}</small></h2>
+        <p class="shape">${e.shape}</p>
+        <div class="cols">
+          <div class="col"><h3>典籍 · 人物</h3><ul class="works">${works}</ul>${people}</div>
+          <div class="col"><h3>本库落点（点开看章目）</h3><ul class="nodes" style="list-style:none;padding:0;margin:0">${nodes}</ul></div>
+        </div>
+        ${tally}
+        ${bottoms}
+      </div>
+    </article>`;
+  }).join("");
+  document.getElementById("rail").innerHTML = html;
+})();
+
+/* ── 坐标系 ── */
+(function(){
+  const max = Math.max(...DATA.coordinates.map(r=>r.units));
+  const body = DATA.coordinates.map(r=>`<tr>
+    <td class="term">${r.term}<small>${(r.members||[]).join(" · ")}</small></td>
+    <td class="origin">${eraName(r.era)} · ${r.note}</td>
+    <td class="num">${r.subjects}</td>
+    <td class="num">${num(r.units)}</td>
+    <td class="num">${num(r.hits)}</td>
+    <td><div class="bar" style="width:${Math.max(3,Math.round(r.units/max*100))}%"></div></td>
+  </tr>`).join("");
+  document.getElementById("coordBody").innerHTML = body;
+})();
+
+/* ── 根冠 ── */
+(function(){
+  const canon = DATA.eras.reduce((a,e)=>({s:a.s+e.measured.subjects,c:a.c+e.measured.chapters,
+    u:a.u+e.measured.units,h:a.h+e.measured.hanzi}),{s:0,c:0,u:0,h:0});
+  const cross = DATA.eras.reduce((a,e)=>({s:a.s+(e.cross?e.cross.subjects:0),
+    c:a.c+(e.cross?e.cross.chapters:0),u:a.u+(e.cross?e.cross.units:0),
+    h:a.h+(e.cross?e.cross.hanzi:0)}),{s:0,c:0,u:0,h:0});
+  const mod = DATA.modern, c = DATA.corpus;
+  const pct = v => (v/c.totalUnits*100).toFixed(1) + "%";
+  document.getElementById("rootcrown").innerHTML = `
+    <div><h3>根系 · 典籍与学派</h3>
+      <div class="big">${canon.s + cross.s} <small style="font-size:15px;color:var(--muted)">学科 / ${canon.c + cross.c} 章（${canon.s} 断代 + ${cross.s} 跨代）</small></div>
+      <p>${num(canon.u + cross.u)} 个知识单元，${wan(canon.h + cross.h)}正文 —— 占全库单元的 ${pct(canon.u + cross.u)}。<br/>
+      这 18 门是《内经》《伤寒》《金匮》《温病》《甲乙经》《各家学说》这些有作者、有年代、有版本的结点。</p></div>
+    <div class="jade"><h3>冠层 · 现代建制</h3>
+      <div class="big">${mod.subjects} <small style="font-size:15px;color:var(--muted)">学科 / ${num(mod.chapters)} 章</small></div>
+      <p>${num(mod.units)} 个知识单元，${wan(mod.hanzi)}正文 —— 占 ${pct(mod.units)}。<br/>
+      1956 年院校建制之后按课程切分：护理、药学、骨伤、智能、管理全部长在这一层。</p></div>`;
+
+  const top = DATA.coordinates[0];
+  const han = DATA.coordinates.find(r=>r.term==="阴阳");
+  document.getElementById("verdict").innerHTML = `
+    <b>演绎结论：</b>树是<em>叠加</em>的，不是<em>替换</em>的。冠层里有 ${pct(mod.units)} 的单元写于 1956 年之后，
+    但全库有 <b>${num(top.subjects)}</b> 个学科、<b>${num(top.units)}</b> 个单元在调用「${top.term}」这条秦汉语法；
+    「${han.term}」也仍在 <b>${num(han.subjects)}</b> 个学科里被当作第一分类轴使用。
+    每加一层坐标（六经 → 卫气营血 → 三焦 → 八纲），旧坐标并没有退役，只是各自负责一段判定。
+    这也是本库把经典课放在第 3–5 学期、而不是当"历史背景"的原因：它们是运行时依赖，不是注释。`;
+
+  document.getElementById("footL").innerHTML =
+    `生成 ${DATA.eras.length} 期 · 坐标扫描 ${DATA.corpus.scannedDirs} 个底本目录 / ${num(DATA.corpus.scannedUnits)} 个单元（含未挂课底本；顶部 ${num(DATA.corpus.totalUnits)} 为挂课口径）`;
+})();
+
+/* ── 缺口 ── */
+(function(){
+  const g = DATA.gaps, b = g.bottoms;
+  document.getElementById("gapNote").textContent = g.note;
+  const chips = arr => arr.map(n=>`<span class="chip">${n.title} · ${n.chapters} 章</span>`).join("");
+  const realEmpty = g.emptyEras.filter(e=>e.id!=="origin" && e.id!=="dangdai");
+  const emptyEra = realEmpty.map(e=>`<span class="chip">${e.title} ${e.span}</span>`).join("");
+  const hasRaw = b.rawOnly.map(n=>`${n.title}（${(n.has||[]).join("、")||"原文"}）`).join("；");
+  document.getElementById("gaps").innerHTML = `
+    <div><h3>原文在库 · 未切单元</h3>
+      <p>${chips(b.rawOnly) || "无"}</p>
+      <p style="margin-top:8px">共 ${b.rawOnly.length} 门。原文其实已经在 <code>standards/</code> 里：${hasRaw}。
+      缺的是 <code>units.json</code> 那一道切分，所以它们在单元层与坐标统计里都是 0。</p></div>
+    <div><h3>底本目录缺席</h3>
+      <p>${chips(b.none) || "无"}</p>
+      <p style="margin-top:8px">共 ${b.none.length} 门。这一类才是真要补源——其中《内经》选读、《各家学说》、《针灸医籍选》是根系上最该有底本的三门。</p></div>
+    <div><h3>无独立学科的断代</h3>
+      <p>${emptyEra || "无"}</p>
+      <p style="margin-top:8px">该期在本库没有自己的学科，只在《中国医学史》第7章占一节。要补的是《医学衷中参西录》选读一类载体。
+      覆盖偏窄的坐标：${g.thinCoords.map(c=>`${c.term} ${c.units}`).join(" · ")}。</p></div>`;
+})();
+</script>
+</body>
+</html>

@@ -112,6 +112,41 @@ function findTts() {
   return onPath('edge-tts') || onPath('espeak-ng') || onPath('espeak') || null;
 }
 
+/**
+ * 作图工具链（textbooks 插图用）。
+ *
+ * python 自身进 PATH 不代表能作图 —— matplotlib 是独立的一层依赖，
+ * 所以这里探测的是「python + matplotlib 能不能 import」，而不是「有没有 python」。
+ * mermaid-cli 由 npm 全局安装，bin 落在 npm prefix 下，常常不在 PATH 上
+ * （本项目就把 node 装在 Hermes 自带的 versions/<ver>/node 里），所以要按落点再找一遍。
+ */
+function findPython() {
+  return onPath('python') || onPath('python3');
+}
+
+function probeMatplotlib() {
+  const py = findPython();
+  if (!py) return null;
+  const r = spawnSync(py, ['-c', 'import matplotlib,sys;sys.stdout.write(matplotlib.__version__)'], {
+    encoding: 'utf8',
+  });
+  if (r.status !== 0) return null;
+  return { path: py, version: String(r.stdout || '').trim() };
+}
+
+function findMmdc() {
+  const direct = onPath('mmdc');
+  if (direct) return direct;
+  const home = os.homedir();
+  const roaming = process.env.APPDATA || path.join(home, 'AppData', 'Roaming');
+  return inDirs(process.platform === 'win32' ? 'mmdc.cmd' : 'mmdc', [
+    path.join(home, 'bin'),
+    path.join(roaming, 'npm'),
+    path.join(home, '.npm-global', 'bin'),
+    '/usr/local/bin',
+  ]);
+}
+
 function findPandoc() {
   return onPath('pandoc');
 }
@@ -143,5 +178,8 @@ module.exports = {
   findTts,
   findTtsBackend,
   findPandoc,
+  findPython,
+  probeMatplotlib,
+  findMmdc,
   BROWSER_PATHS,
 };

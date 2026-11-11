@@ -1,29 +1,35 @@
 {
-  "slug": "15-zhongyao-xinyao-yanfa",
-  "title": "中药新药研发",
-  "en": "New TCM Drug Development",
-  "deptSlug": "02-zhongyao",
-  "deptTitle": "中药系",
-  "globalN": 30,
-  "type": "Build",
-  "semester": 8,
-  "stage": "zhuang",
-  "stageTitle": "壮",
-  "hours": 72,
-  "bridge": "研发管线→项目管理 / 临床试验→A/B 试验设计",
-  "chaptersTarget": 10,
-  "chapters": [],
-  "platform": {
-    "id": "tcmP",
-    "coursePath": "platform/courses/02-zhongyao/15-zhongyao-xinyao-yanfa",
-    "videosPublished": 0,
-    "status": "planned"
-  },
-  "textbook": {
-    "id": "textbooks",
-    "path": "textbooks/02-zhongyao/15-zhongyao-xinyao-yanfa",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
-  }
+ "slug": "15-zhongyao-xinyao-yanfa",
+ "title": "中药新药研发",
+ "en": "New TCM Drug Development",
+ "deptSlug": "02-zhongyao",
+ "deptTitle": "中药系",
+ "globalN": 30,
+ "type": "Build",
+ "semester": 8,
+ "stage": "zhuang",
+ "stageTitle": "壮",
+ "hours": 72,
+ "bridge": "研发管线→项目管理 / 临床试验→A/B 试验设计",
+ "chaptersTarget": 8,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/02-zhongyao/15-zhongyao-xinyao-yanfa",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/02-zhongyao/15-zhongyao-xinyao-yanfa",
+  "chaptersWritten": 0,
+  "words": 0,
+  "status": "planned"
+ },
+ "底本": {
+  "kind": "外源",
+  "from": "standards/zhongyao-xinyao/sources/*.pdf",
+  "dir": "standards/zhongyao-xinyao",
+  "note": "本库与教材盘均无《中药新药研发》教材；按《补源约定》立为外源课：4 份 WHO 文件 / 17 条逐字校勘条文，正文由本库撰写。中国注册程序（NMPA）因站点 412 未落盘，登记为缺口，不以 WHO 文件冒充中国法规。"
+ }
 }

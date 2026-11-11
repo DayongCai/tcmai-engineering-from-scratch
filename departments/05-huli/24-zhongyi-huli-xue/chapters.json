@@ -1,0 +1,168 @@
+{
+ "slug": "24-zhongyi-huli-xue",
+ "title": "中医护理学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gaishu",
+   "title": "中医护理学概述",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-gaishu/docs/zh.md",
+   "code": "chapters/01-gaishu/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-lilun-jichu",
+   "title": "中医护理的理论基础",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-lilun-jichu/docs/zh.md",
+   "code": "chapters/02-lilun-jichu/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-pinggu-fangfa",
+   "title": "中医护理的评估方法",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-pinggu-fangfa/docs/zh.md",
+   "code": "chapters/03-pinggu-fangfa/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-tizhi-shihu",
+   "title": "辨体质与施护",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-tizhi-shihu/docs/zh.md",
+   "code": "chapters/04-tizhi-shihu/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-zhenghou-shihu",
+   "title": "常见证候的辨证施护",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-zhenghou-shihu/docs/zh.md",
+   "code": "chapters/05-zhenghou-shihu/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-neike-shihu",
+   "title": "内科常见病证的辨证施护",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-neike-shihu/docs/zh.md",
+   "code": "chapters/06-neike-shihu/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-waike-fuke",
+   "title": "外科与妇科病证的辨证施护",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-waike-fuke/docs/zh.md",
+   "code": "chapters/07-waike-fuke/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-erke-laonian",
+   "title": "儿科与老年病证的辨证施护",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-erke-laonian/docs/zh.md",
+   "code": "chapters/08-erke-laonian/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-jishu-zonglun",
+   "title": "中医护理技术总论",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-jishu-zonglun/docs/zh.md",
+   "code": "chapters/09-jishu-zonglun/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-jiu-baguan",
+   "title": "灸法与拔罐技术",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-jiu-baguan/docs/zh.md",
+   "code": "chapters/10-jiu-baguan/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-guasha-tuina",
+   "title": "刮痧、推拿与穴位技术",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-guasha-tuina/docs/zh.md",
+   "code": "chapters/11-guasha-tuina/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-waizhi-xunxi",
+   "title": "中药外治与熏洗技术",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-waizhi-xunxi/docs/zh.md",
+   "code": "chapters/12-waizhi-xunxi/code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-yinshi-qingzhi",
+   "title": "饮食与情志护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/13-yinshi-qingzhi/docs/zh.md",
+   "code": "chapters/13-yinshi-qingzhi/code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-wenshu-jilu",
+   "title": "中医护理文书与记录",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/14-wenshu-jilu/docs/zh.md",
+   "code": "chapters/14-wenshu-jilu/code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-anquan-zhiliang",
+   "title": "中医护理安全与质量",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/15-anquan-zhiliang/docs/zh.md",
+   "code": "chapters/15-anquan-zhiliang/code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-shequ-jujia",
+   "title": "社区与居家中医护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/16-shequ-jujia/docs/zh.md",
+   "code": "chapters/16-shequ-jujia/code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-pingtai-duijie",
+   "title": "中医护理学与 tcmP 平台",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/17-pingtai-duijie/docs/zh.md",
+   "code": "chapters/17-pingtai-duijie/code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-shixun-kaohe",
+   "title": "中医护理技术实训与考核导引",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/18-shixun-kaohe/docs/zh.md",
+   "code": "chapters/18-shixun-kaohe/code/main.js"
+  }
+ ]
+}

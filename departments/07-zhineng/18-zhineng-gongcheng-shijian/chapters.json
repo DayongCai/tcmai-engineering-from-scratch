@@ -1,0 +1,60 @@
+{
+  "slug": "18-zhineng-gongcheng-shijian",
+  "title": "工程实践与系统交付",
+  "chapters": [
+    {
+      "n": 1,
+      "slug": "01-xuqiu-hegui",
+      "title": "需求与数据合规评估",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/01-xuqiu-hegui/docs/zh.md",
+      "code": "chapters/01-xuqiu-hegui/code/main.js"
+    },
+    {
+      "n": 2,
+      "slug": "02-jiagou-jiekou",
+      "title": "系统架构与接口实现",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/02-jiagou-jiekou/docs/zh.md",
+      "code": "chapters/02-jiagou-jiekou/code/main.js"
+    },
+    {
+      "n": 3,
+      "slug": "03-xunlian-pingce",
+      "title": "模型训练与评测流水线",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/03-xunlian-pingce/docs/zh.md",
+      "code": "chapters/03-xunlian-pingce/code/main.js"
+    },
+    {
+      "n": 4,
+      "slug": "04-bushu-huidu",
+      "title": "临床部署与灰度验证",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/04-bushu-huidu/docs/zh.md",
+      "code": "chapters/04-bushu-huidu/code/main.js"
+    },
+    {
+      "n": 5,
+      "slug": "05-yunwei-fupan",
+      "title": "运维、监控与事故复盘",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/05-yunwei-fupan/docs/zh.md",
+      "code": "chapters/05-yunwei-fupan/code/main.js"
+    },
+    {
+      "n": 6,
+      "slug": "06-yanshou-wendang",
+      "title": "交付验收与文档",
+      "status": "🚧",
+      "kind": "core",
+      "docs": "chapters/06-yanshou-wendang/docs/zh.md",
+      "code": "chapters/06-yanshou-wendang/code/main.js"
+    }
+  ]
+}

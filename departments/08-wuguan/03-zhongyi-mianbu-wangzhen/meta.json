@@ -22,8 +22,21 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/08-wuguan/03-zhongyi-mianbu-wangzhen",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 101,
+    "words": 75637,
+    "status": "wip",
+    "layer": "external-source",
+    "origin": "external",
+    "source": "standards/materials/textbooks-batch/external-registry.json#wangzhen-zunjing",
+    "external": {
+      "id": "wangzhen-zunjing",
+      "title": "望診遵經",
+      "url": "https://jicheng.tw/tcm/book/%E6%9C%9B%E8%A8%BA%E9%81%B5%E7%B6%93/index.html",
+      "sha256": "4bfa7129a8f949c4c02fe8d31c158c20363c6113f118cdb3620fce4e1090d2c2",
+      "baseText": "北京大學圖書館掃描本",
+      "fetchedAt": "2026-10-21",
+      "coverage": "古籍可对上的部分；现代内容未覆盖"
+    },
+    "extractedAt": "2026-10-21"
   }
 }

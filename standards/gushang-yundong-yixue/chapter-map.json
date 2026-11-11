@@ -1,0 +1,125 @@
+{
+ "note": "运动医学与损伤防护 派生课：一章一主题；四位面＝章群结构分区。",
+ "chapters": {
+  "01-gailun": {
+   "n": 1,
+   "title": "运动医学概论",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "运动医学管的是「能不能练、练多少、何时回归」",
+   "derivedFrom": "zhongyi-yundong、kangfu-huli"
+  },
+  "02-sunshang-jizhi": {
+   "n": 2,
+   "title": "运动损伤的机制与分类",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "急性与过用性损伤的机制完全不同",
+   "derivedFrom": "gushang-jinshang、zhenggu"
+  },
+  "03-pinggu-yingxiang": {
+   "n": 3,
+   "title": "损伤评估与影像",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "先排骨折与神经血管，再谈软组织",
+   "derivedFrom": "gushang-kangfu-pingding、gushang-yingxiang"
+  },
+  "04-jixing-chuli": {
+   "n": 4,
+   "title": "急性损伤处理与康复分期",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "急性期目标不是「练回来」，是控制出血与肿胀",
+   "derivedFrom": "gushang-jinshang、kangfu-huli"
+  },
+  "05-sizhi-sunshang": {
+   "n": 5,
+   "title": "上肢与下肢常见损伤",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "踝、膝、肩、肘：四条高发线",
+   "derivedFrom": "zhenggu、gushang-jinshang"
+  },
+  "06-qugan-guoyong": {
+   "n": 6,
+   "title": "躯干损伤与过用性损伤",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5",
+    "6.6"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "过用性损伤的本质是负荷与恢复不匹配",
+   "derivedFrom": "gushang-jinshang、gushang-jizhu-bing"
+  },
+  "07-fanghu-xunlian": {
+   "n": 7,
+   "title": "运动防护与体能训练",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "热身、负荷递增、恢复三件事决定伤不伤",
+   "derivedFrom": "zhongyi-yundong、kangfu-huli"
+  },
+  "08-chongfan-yundong": {
+   "n": 8,
+   "title": "重返运动与复发预防",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "重返标准要写数值，不写「感觉好了」",
+   "derivedFrom": "gushang-kangfu-pingding、kangfu-huli"
+  }
+ }
+}

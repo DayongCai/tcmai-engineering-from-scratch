@@ -1,54 +1,71 @@
 {
-  "slug": "03-zhongyi-guanli-xue",
-  "title": "中医管理学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-tedian-nanti",
-      "title": "中医机构的特点与管理难题",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-keshi-liucheng",
-      "title": "中医科室的设置与流程",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-shicheng-guanli",
-      "title": "名医工作室与师承管理",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-zhiliang-pingjia",
-      "title": "中医服务质量评价",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-tese-lianghua",
-      "title": "中医特色优势的量化",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-jixiao-jizhi",
-      "title": "绩效与激励机制",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-pinpai-chuanbo",
-      "title": "中医机构的品牌与传播",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-pdca-shuju",
-      "title": "管理改进的 PDCA 与数据",
-      "status": "📋"
-    }
-  ]
+ "slug": "03-zhongyi-guanli-xue",
+ "title": "中医管理学",
+ "note": "8 章 = 教材 8 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-z31",
+   "title": "中医机构的管理原理",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-z32",
+   "title": "中医机构的决策与计划",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-z33",
+   "title": "组织设计与人力资源",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-z34",
+   "title": "领导、激励与沟通",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-z35",
+   "title": "质量控制与绩效评价",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-z36",
+   "title": "中医药机构的管理专题",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-z37",
+   "title": "中医医院的运行管理",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-z38",
+   "title": "中医政策与治理趋势",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

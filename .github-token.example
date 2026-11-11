@@ -1,0 +1,3 @@
+# 把 GitHub fine-grained 令牌粘到本文件（只留一行，不要引号、不要空格）
+# 权限：Repository permissions → Contents: Read and write；Releases: Read and write
+# 本文件已在 .gitignore 里，绝不会入库；脚本也从不回显它。

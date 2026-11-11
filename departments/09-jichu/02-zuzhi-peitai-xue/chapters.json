@@ -1,0 +1,167 @@
+{
+ "slug": "02-zuzhi-peitai-xue",
+ "title": "组织学与胚胎学",
+ "note": "20 章 = 教材 20 章（1:1）。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-zuzhixue-xulun",
+   "title": "组织学绪论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-shangpi-zuzhi",
+   "title": "上皮组织",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-jiedi-zuzhi",
+   "title": "结缔组织",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-ji-zuzhi",
+   "title": "肌组织",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-shenjing-zuzhi",
+   "title": "神经组织",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-shenjing-xitong",
+   "title": "神经系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-xunhuan-xitong",
+   "title": "循环系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-mianyi-xitong",
+   "title": "免疫系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-xiaohua-xitong",
+   "title": "消化系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-huxi-xitong",
+   "title": "呼吸系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-miniao-xitong",
+   "title": "泌尿系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-pifu",
+   "title": "皮肤",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-yan-he-er",
+   "title": "眼和耳",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-neifenmi-xitong",
+   "title": "内分泌系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-nanxing-shengzhi-xitong",
+   "title": "男性生殖系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-nvxing-shengzhi-xitong",
+   "title": "女性生殖系统",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-peitaixue-xulun",
+   "title": "胚胎学绪论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-zaoqi-fasheng",
+   "title": "人体胚胎早期发生",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 19,
+   "slug": "19-qiguan-fasheng",
+   "title": "器官的发生",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 20,
+   "slug": "20-xiantianxing-jixing",
+   "title": "先天性畸形",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "18-tuina-gongfa-xue",
+  "title": "推拿功法学",
+  "en": "Tuina Exercise Therapy",
+  "deptSlug": "03-zhenjiu",
+  "deptTitle": "针灸系",
+  "globalN": 48,
+  "type": "Build",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "功法动作→骨骼运动学 / 呼吸—动作耦合→时序对齐",
+  "chaptersTarget": 12,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/03-zhenjiu/18-tuina-gongfa-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/03-zhenjiu/18-tuina-gongfa-xue",
+    "chaptersWritten": 12,
+    "words": 111893,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#推拿功法学",
+    "extractedAt": "2026-10-21"
+  }
+}

@@ -146,14 +146,127 @@ node scripts/icd11_embeddings.js --sample 600
 距离用余弦而非欧氏、不做 SVD 降维、抽样而非全量、只做 TF-IDF 一支
 （论文 PubMedBERT 1-符号 92.33%）。可比的是**方向与幅度**，以及相对随机基线的倍数。
 
+## 本机标准源镜像
+
+WHO 的公开发布文件（全表中/英、打印版、统计列表、映射表、变更包、指南）已镜像到本机
+**`D:\ICD11-source`**（18 个文件 / 34.6 MB，带 sha256 清单），构建时**优先取镜像、离线可跑**。
+定义/索引词/父链只在 `id.who.int`（需凭据），镜像里没有 —— 缺口逐条写清。
+
+```bash
+npm run icd11:mirror           # 建/更新镜像（免凭据）
+npm run icd11:mirror:verify    # 重算 sha256 与清单比对
+```
+
+细则：[`MIRROR.md`](MIRROR.md)。
+
+## 释义（定义段）：名字级 → 释义级
+
+WHO 的 API 注册是人工的（表单 + 邮箱 → client id/secret），**没有免凭据通道**；
+但**释义本身在打印版 PDF 里**，公开可下。已从镜像里的 `print-ICD-11-MMS-en.zip`（2,563 页）
+抽出 **2,394 条**定义段 → `definitions-en.json`；与第三方快照的 6,501 条合并后，
+术语层有 **6,653 个实体**带释义正文。
+
+检索侧加了**分腿约束**：`evidenceMin: 'definition'` 只回有释义的条目；每条命中带
+`evidence: 'definition' | 'name'`。**第 26 章（证候）在 WHO 源头没有释义**，
+所以证候永远是名字级，约束会把它们全挡掉 —— 那是事实，不是 bug。
+
+细则：[`DEFINITIONS.md`](DEFINITIONS.md)。
+
+```bash
+npm run icd11:definitions         # 从打印版 PDF 重抽（约 20 s）
+npm run icd11:definitions:check   # 自检：条数 / 第 26 章为 0 / 1A00 锚点
+```
+
+## 术语嵌入层：从「能查编码」到「能用术语找编码」
+
+> `scripts/icd11_terms.js` · 产物在 `data/icd11/term-index/`（随 `data/icd11/` 不入版本库）
+> 测试：`tests/test_icd11_terms.js` · 上游规格：Cremaschi et al. (2025) *Decoding the mind*，
+> ESWA 279:127191，§3.1–§4.1
+
+上面那些用法都是**按编码/标题精确查**。到这一步「口苦咽干 → 哪个 ICD-11 编码」在本仓库是做不到的 ——
+`icd11_embeddings.js` 只出评测指标，不建可查的库。术语嵌入层补的就是这个。
+
+**两类可嵌入单元**（论文 §4.1「一条疾病 = 向量库里的一条 chunk」）：
+
+| 单元 | 条数 | 文本 |
+|---|---|---|
+| `entity` | **13,306** | `Disorder Name / (官方中文名) / Disorder Code / Disorder symptoms / Chapter / Inclusions / Index terms` |
+| `term` | **61,846** | `Term: {索引词或中文名} → Maps to disorder: {标题} ({编码})` |
+
+`term` 单元是「**术语嵌入性编程**」的落点：10,855 个实体的索引词去重成 61,130 条独立向量，
+再加 **472 条 WHO 官方中文名单元**（第 26 章 TM1 **全量**，含 173 条 **pattern 证候**），
+**命中术语就带着编码回来**，不必先命中整段定义。
+
+检索 = 向量（TF-IDF·余弦）∪ FTS5 词袋 ∪ **同名通道**，RRF k=60，默认 top-4（论文经验值）。
+词表 20,000（按文档频次截断）· nnz 1,202,315 · CSR 9.5 MB · 建库约 28 s。
+
+> **第 26 章不是一个体系**。472 条带 `(TM1)`（中医/日韩：脏腑、六经、卫气营血），
+> 648 条带 `(TM2)`（Module II：阿育吠陀的 *Vata predominant*、悉达的 *Varmam and Marmam*）。
+> 快照只收了其中 876 条，剩下的 244 条（含 126 条带中文名的 TM1）由 WHO 发布文件补齐，
+> 标 `synthetic:true` —— 见 `tm1/README.md` §六。
+> 单元带 `module` 字段，`runSearch({modules:['TM1']})` 只拦 TM2、**不拦第 1–25 章**
+> —— 参考指南 §2.23.24 要的就是「WM 诊断 + TM1 证候」并列编码。依据见
+> [`standards/icd11/tm1/README.md`](tm1/README.md)（官方命名的四轴原文 + 中文名表）。
+
+```bash
+npm run icd11:terms                              # 建库（全量）
+npm run icd11:terms:stats                        # 只读现状
+node scripts/icd11_terms.js --query "insomnia" --k 4
+node scripts/icd11_terms.js --query "胁痛" --module TM1   # 同名通道：官方中文名直落自身
+```
+
+**中文走「语义张量等价映射」，不是硬查英文索引。**
+源快照是英文，中文在术语层上的字面命中率是 **0** —— 这条不美化。中文面由
+`scripts/lib_equivalence.js` 接上：**等价 = 同一个张量点**（`standards/semtensor/equivalence/`），
+把中文形式换成同一个点上的英文成员 / 组合探针 / 词表直译，再去打英文索引：
+
+| 查询 | 探针（级别） | top-1 |
+|---|---|---|
+| 痰热壅肺证 | `phlegm + heat + lung + pattern/syndrome`（D 组合） | SF89 Phlegm heat obstructing the lung pattern (TM1) |
+| 阴虚肺燥证 | `yin deficiency + lung + dryness + …`（D 组合） | SF81 Lung yin deficiency pattern (TM1) |
+| 失眠 | `inability to sleep`（E 词表，WHO 2.3.53） | MG41 Sleep disturbance, not elsewhere classified |
+| 胁痛 | **（不需要探针）官方中文名** | SA00 Hypochondrium pain disorder (TM1) |
+
+中文有**两条腿**，各管一段，不许混着说：
+
+1. **字面通道 · 官方中文名**：第 26 章 472 个 TM1 实体（含全部 173 条 pattern 证候）有 WHO 官方中文名
+   （`standards/icd11/zh-names.json`，WHO Simple Tabulation 2025-01 中译本原件），
+   查询逐字相同就走**同名通道**排第一。回查 **472/472（100%）**。
+2. **等价通道**：其余中文（证候名、症状词）经等价类换成英文探针，再打英文索引。
+
+中文直查（`npm run icd11:terms:eval`，104 证候，排除 TM2）：**top-1 落到 TM1 103 · top-4 含 TM1 104 · 无命中 0**。
+复合证名的英文探针由**四轴组合器**生成（`build_tm1_axes.js`：切词 → 逐片归轴 → 按官方轴序重排 → 查同构先例），
+不再按出现顺序硬拼 —— 依据是 Reference Guide §3.2.26 的命名句，见 [`tm1/README.md`](tm1/README.md) §五。
+「含 TM2 时同样 88」—— 分账是**防错**（不把阿育吠陀的近邻当中医证候），不是提分。
+
+词表是 `standards/semtensor/descriptions/who-istt-terms.json`（WHO ISTT 2007 全量 3,148 条，
+代码+英文+繁简中文+书页，**入库**；PDF 属 WHO 版权不入库，按 sha256 可重现）：
+
+```bash
+python scripts/who_istt_terms.py --check        # 体检：锚点 + 26 条已核 who-tcm 对读
+node scripts/lib_zh_en.js --coverage            # 104 证候的切词覆盖率
+```
+
+**口径差（明写）**：论文用 LangChain + ChromaDB + 稠密 embedding，本层是 TF-IDF 稀疏 + 余弦，
+语义泛化弱于稠密向量；论文的 "diagnostical requirements" 取自 ICD-11-CDDR（本仓库无此书），
+本层改用 Chapter + Inclusions 两个真实字段，**不拿别的文字冒充 CDDR 正文**；论文数据是第 6 章
+719 条，本快照是全 26 章 13,960 条，**不宣称复现论文的 76.1%**。
+
 ## 还没做到的
 
 - **中文标题**：规格的通道1 是「中文搜索 → Foundation ID」。本地库是**英文** MMS；
-  中文要凭据走 WHO API 的 `Accept-Language: zh`（或源平台的 zh 版本）。**目前没有凭据，所以中文通道未验证过。**
+  中文要凭据走 WHO API 的 `Accept-Language: zh`（或源平台的 zh 版本）。**目前没有凭据，所以 WHO 中文通道未验证过。**
+  现状分两半，别混着说：
+  · 第 26 章 **TM1 侧 472 条全部有 WHO 官方中文名**（`zh-names.json`，含 SF/SG/SH 173 条 pattern 证候），
+    逐字查询回自身 472/472；
+  · **TM2（Module II）在 WHO 中译本里整章无中文名** —— 源头缺，648 条，只能标注不能编；
+  · 其余中文经**语义张量等价映射**（`standards/semtensor/equivalence/`）换成英文再检索，
+    104 个证候里 93 个能译（89.4%），中文直查 top-1 落到 TM1 的 103/104 —— 都是**术语级**的桥，
+    不是 ICD-11 中文条目本身。
 - **Foundation → MMS 的映射**：规格的 `code_by_id` 语义是「Foundation ID → MMS 标准编码」。
   我的库里 `id` 已是 MMS 侧 id，**没有真正的 Foundation→MMS 跨组件映射**（那需要 Foundation 数据）。
-- **全文检索**：本地库只按标题子串匹配（`--search`）。规格的 FTS5/BM25 在
-  `scripts/build_embeddings.js` 里实现，两者尚未接起来。
+- **全文检索**：已由术语嵌入层的 FTS5（`docs_terms` 词袋 + `docs_substr` trigram 子串）接上；
+  `icd11_client.js --search` 仍是标题子串，两条路并存、未合并 —— 合并前需要先定「谁是谁的索引」。
 - **不报 trustworthiness / continuity**：那两项衡量降维保真度，而本仓库不做
   t-SNE/UMAP/SVD，没有低维坐标可比。函数在 `lib_metrics.js` 里实现并单测，
   硬填一个假坐标只会得出无意义的数。

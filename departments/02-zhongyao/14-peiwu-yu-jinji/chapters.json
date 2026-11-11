@@ -1,54 +1,69 @@
 {
-  "slug": "14-peiwu-yu-jinji",
-  "title": "中药配伍与禁忌",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-qinqing-xiangxu",
-      "title": "七情：单行、相须、相使",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-xiangwei-xiangfan",
-      "title": "相畏、相杀、相恶、相反",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-shiba-fan",
-      "title": "十八反与十九畏的文献考据",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-renshen-jinji",
-      "title": "妊娠禁忌与毒性药材",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-shiyan-yanzheng",
-      "title": "配伍禁忌的实验验证方法",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-jiliang-paozhi",
-      "title": "剂量与炮制对配伍的影响",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-peiwu-chongtu",
-      "title": "配伍规则的图表示与冲突检测",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-chacuo-genyin",
-      "title": "临床配伍差错的根因分析",
-      "status": "📋"
-    }
-  ]
+ "note": "14-中药配伍与禁忌（派生课）：单元取自父课，locator 一律「派生·」；无单元复用。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-qiqing-lilun",
+   "title": "七情与配伍理论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-junchenzuoshi",
+   "title": "君臣佐使与组方",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-shihba-fan",
+   "title": "十八反与十九畏",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-renshen-jinji",
+   "title": "妊娠与哺乳期禁忌",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-zhenghou-jinji",
+   "title": "证候禁忌",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-zhongxi-lianyong",
+   "title": "中西药联用禁忌",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-duyao-peiwu",
+   "title": "毒性药的配伍",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-fangfa-pingjia",
+   "title": "配伍研究的证据方法",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

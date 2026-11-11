@@ -1,0 +1,77 @@
+{
+  "chapter": "01-chengshu-zabing",
+  "slideCount": 14,
+  "segmentCount": 10,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 30
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 82
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 130
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 69
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 349
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 306
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 349
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 285
+    },
+    {
+      "n": 9,
+      "segment": 7,
+      "chars": 120
+    },
+    {
+      "n": 10,
+      "segment": 8,
+      "chars": 387
+    },
+    {
+      "n": 11,
+      "segment": 9,
+      "chars": 54
+    },
+    {
+      "n": 12,
+      "segment": 9,
+      "chars": 467
+    },
+    {
+      "n": 13,
+      "segment": 9,
+      "chars": 99
+    },
+    {
+      "n": 14,
+      "segment": 10,
+      "chars": 52
+    }
+  ]
+}

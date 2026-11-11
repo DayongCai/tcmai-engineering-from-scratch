@@ -1,0 +1,92 @@
+{
+ "note": "骨伤毕业设计与知识移交 派生课：章名与顺序来自 data/new-subjects-chapters.json（脚本断言一致）。",
+ "chapters": {
+  "xuan-ti": {
+   "n": 1,
+   "title": "选题：从复位方案到可量化命题",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "毕设题目必须能被测量，否则写不出结论",
+   "derivedFrom": "gushang-kangfu-pingding、gushang-jichu"
+  },
+  "yingxiang-shuju": {
+   "n": 2,
+   "title": "影像与生物力学数据准备",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "影像与力学数据要能复算，不能只贴图",
+   "derivedFrom": "gushang-yingxiang、zhenggu"
+  },
+  "shoufa-zhiju": {
+   "n": 3,
+   "title": "手法与支具的系统实现",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "实现部分要写清「怎么做、谁做、做多久」",
+   "derivedFrom": "gushang-shoufa-zhiliao、gushang-kangfu-gongcheng"
+  },
+  "liaoxiao-pingjia": {
+   "n": 4,
+   "title": "疗效与并发症评价",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "没有并发症统计的疗效结论不成立",
+   "derivedFrom": "gushang-kangfu-pingding、gushang-jinshang"
+  },
+  "lunwen-dabian": {
+   "n": 5,
+   "title": "论文写作与答辩",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "论文的每一句话都要能回到数据",
+   "derivedFrom": "huli-yanjiu-zhengxun、gushang-kangfu-pingding"
+  },
+  "zhishi-yijiao": {
+   "n": 6,
+   "title": "知识移交：操作规范与交接",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "移交的标准是别人拿着能照做",
+   "derivedFrom": "gushang-chuangshang-jijiu、gushang-jichu"
+  }
+ }
+}

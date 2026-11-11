@@ -1,77 +1,77 @@
 # 骨伤解剖学
 
-> 断层解剖→三维重建 / 定位→坐标系变换
+**02-yao-shang-jiepou** · 骨伤学院 · 10 章 · 49 单元 · 124,237 汉字
 
-| 项目 | 内容 |
-|------|------|
-| 院系 | 🦴 骨伤系 `04-gushang` |
-| 类型 | Core |
-| 学期 | 第 4 学期（🌱 生·启蒙 / 大一–大二） |
-| 学时 | 72 |
-| 章节目标 | 10 |
-| 学科编号 | 047 / 120 |
-| 英文名 | Musculoskeletal Anatomy |
+> 解剖学的判据是「摸得到、指得出、看得懂」：体表能定位，影像能对上。
 
-## 一、学科定位
+**课程类型：派生课（无独立教材、无图版）**。单元正文逐字取自父课，`locator` 一律 `派生·第N章·m.k`。
 
-骨伤解剖学（Musculoskeletal Anatomy）是骨伤系的核心学科，聚焦「正骨理筋—骨病退变—运动损伤与康复工程」中的一个完整知识域。
+## 一、父课
 
-## 二、中医 → AI 桥梁
+- `gushang-jichu`
+- `gushang-jizhu-bing`
+- `gushang-yingxiang`
+- `shoufa`
+- `zhenggu`
 
-```text
-断层解剖→三维重建 / 定位→坐标系变换
-```
+## 二、章表
 
-骨伤解剖学 里的每一个传统概念，都被翻译成一个可计算、可验证的工程对象：
-中医概念给出**语义与约束**，AI/工程方法给出**表示与算法**。两者必须能互相回指，
-否则这个章节就还没有写完。
+| # | 章 | 父课来源 | 单元 | 汉字 |
+|--:|---|---|--:|--:|
+| 1 | 骨的形态与构造 | gushang-jichu、zhenggu | 5 | 11,860 |
+| 2 | 骨的发生、生长与骨化 | gushang-jichu、zhenggu | 6 | 11,986 |
+| 3 | 关节结构与运动学 | zhenggu、kangfu-huli | 4 | 11,661 |
+| 4 | 肌、肌腱与筋膜 | shoufa、tuina | 3 | 17,659 |
+| 5 | 神经与血管走行 | zhenggu、gushang-yingxiang | 5 | 11,751 |
+| 6 | 脊柱解剖 | gushang-jichu、gushang-jizhu-bing | 6 | 11,756 |
+| 7 | 上肢解剖 | zhenggu、gushang-jichu | 4 | 11,909 |
+| 8 | 下肢解剖 | zhenggu、gushang-jichu | 5 | 11,759 |
+| 9 | 体表标志与定位 | zhenggu、gushang-jichu | 6 | 11,951 |
+| 10 | 影像解剖对照 | gushang-yingxiang、gushang-jichu | 5 | 11,945 |
 
-## 三、章节地图（目标 10 章）
+## 三、三辨与四位面（实测）
 
-章节尚未编写。运行脚手架开章：
+| 三辨 | 词频 |
+|---|--:|
+| **骨与关节结构** | **762** |
+| **肌与神经血管** | **839** |
+| **体表与影像** | **709** |
+
+三辨极差 **1.2×**——三条解剖视角在父课里几乎等重，这是本库最平的一套三辨之一。
+
+| 四位面（章群结构分区） | 汉字 |
+|---|---:|
+| 骨与关节结构 | 35,507 |
+| 肌与软组织 | 17,659 |
+| 神经血管与脊柱 | 23,507 |
+| 部位与影像 | 47,564 |
+
+四位面极差 **2.7×**。
+
+## 四、图版：本轮一张也没拿到（如实记）
+
+按你的指示先探测公有领域图源，实测 9 个源、**0 张取得**：
+
+| 源 | 状态 |
+|---|---|
+| Wikimedia / archive.org / Wikisource / OpenLibrary | **不可达（000）** |
+| Bartleby（Gray's 在线版） | 403 反爬 |
+| Gutenberg | 可达，但**没有** Gray's Anatomy 1918 |
+| jsDelivr（GitHub 镜像） | 可达有图，但**无授权声明、无版本出处** |
+
+所以本课**只有文字，没有图**。两份文件把这件事写清：
+- `standards/gushang-jiepou/补源登记.json`——9 次探测的 URL、状态、结论；
+- `图版清单.md`——10 条图版需求、状态、候选来源，以及三条可选路径。
+
+**没有拿 AI 生成解剖图，也没有把镜像图说成公有领域**——前者错一处即误导，后者是无授权主张。
+
+## 五、章内可执行验证
 
 ```bash
-node scripts/scaffold_chapter.js 04-gushang/02-yao-shang-jiepou 01-<chapter-slug>
+node scripts/audit_curriculum.js | grep -A2 "02-yao-shang-jiepou"
+node tests/test_chapter_code.js | grep -c "02-yao-shang-jiepou"
+python scripts/_derive_jiepou.py
 ```
 
-编写完成后，把章节索引写进 `chapters.json`，本表的「状态」列由
-`scripts/build_catalog.js` 自动填充。
-
-## 四、章节契约（每章必须满足）
-
-```text
-chapters/NN-<slug>/
-├── docs/zh.md      # MOTTO / PROBLEM / 环境逼迫 / 知识积累 / CONCEPT / BUILD IT / USE IT / SHIP IT
-├── code/           # 可运行、自终止、退出码 0（Node.js 或 Python，见 AGENTS.md 依赖白名单）
-├── quiz.json       # 恰好 6 题 = 1 pre + 3 check + 2 post
-└── outputs/        # 可复用产出物（prompt / skill / agent / mcp / 临床工具）
-```
-
-## 五、教材交付 [textbooks]
-
-```text
-输出: textbooks/04-gushang/02-yao-shang-jiepou/
-├── 00-前言.md
-├── 01-第1章-<标题>.md   ...
-└── figures/                # Mermaid / SVG，禁止 ASCII 框图
-```
-
-## 六、平台交付 [tcmP]
-
-```text
-输出: platform/courses/04-gushang/02-yao-shang-jiepou/
-├── course.yaml             # 课程元数据 + 章节 → 视频映射
-├── slides/                 # 讲稿 HTML（由 docs/zh.md 派生）
-├── narration/              # TTS 旁白文本 + 音频
-└── video/                  # 成片 MP4（H.264 / 720p 以上）
-```
-
-## 七、进度
-
-| 指标 | 当前 | 目标 |
-|------|------|------|
-| 章节 | 0 | 10 |
-| 视频 | 0 | 10 |
-| 教材字数 | 0 | ≈ 60000 |
-
-> 状态字形：🌱 未开始 ⬚ · 🚧 进行中 · ✅ 完成
+**免责声明：** 本课为教学材料，无图版；解剖定位与影像判读以正规解剖学图谱与影像资料为准，
+本课不构成诊疗依据。

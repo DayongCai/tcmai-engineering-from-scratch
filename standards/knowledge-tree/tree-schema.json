@@ -154,11 +154,11 @@
       "available": true,
       "claim": "两套资料都声称 103 个病证单元",
       "verdict": "编号空间同源（已按编号+名字核对）",
-      "referenceDsuCount": 103,
+      "referenceDsuCount": 104,
       "xlsxClaimedCount": 103,
       "idTriplesInXlsx": 1,
       "nameOverlap": 13,
-      "nameOverlapOf": 103,
+      "nameOverlapOf": 104,
       "contradictions": 0,
       "foreignNames": [],
       "checks": [

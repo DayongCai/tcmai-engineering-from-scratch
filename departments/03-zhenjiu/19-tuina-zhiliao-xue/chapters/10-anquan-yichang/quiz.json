@@ -1,0 +1,79 @@
+{
+ "lesson": "10-anquan-yichang",
+ "title": "推拿治疗安全与异常处理",
+ "subject": "19-tuina-zhiliao-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 10 章「推拿治疗安全与异常处理」要回答的核心问题是什么？",
+   "options": [
+    "推拿出事，多数出在哪一步",
+    "推拿治疗学的概念与范围",
+    "治疗原则",
+    "作用原理"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：不是手法本身，是「没做排除」——禁忌证漏筛、影像未看、力度超限。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（病证部位）重心落在哪一项？",
+   "options": [
+    "脊柱",
+    "四肢关节筋伤",
+    "内科",
+    "妇科儿科五官"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "手法方案",
+    "病证辨识",
+    "疗程调护",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "2 个",
+    "4 个",
+    "6 个",
+    "8 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "治疗学里「疗程调护」的词频只有「手法方案」的四成，说明什么？",
+   "options": [
+    "疗程与调护写得最少，而这正是复发最多的地方",
+    "推拿治疗学的概念与范围",
+    "治疗原则",
+    "作用原理"
+   ],
+   "correct": 0,
+   "explanation": "正文第二节：守的部分最薄。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/zhiliao/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

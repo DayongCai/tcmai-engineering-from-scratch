@@ -1,0 +1,222 @@
+{
+ "title": "社会医学",
+ "note": "合成课：社会与政策侧取《公共管理学》（16 课），卫生体系与健康决定因素侧取《卫生事业管理》（04 课），测量侧取《医学统计学》（01 课）。库内无社会医学教材，已在缺口登记声明。",
+ "levels": {
+  "社会与健康": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "体系与政策": [
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "测量与评价": [
+   10,
+   11,
+   12,
+   13
+  ],
+  "干预与治理": [
+   14,
+   15,
+   16,
+   17,
+   18
+  ]
+ },
+ "chapters": [
+  {
+   "title": "社会医学的对象与方法",
+   "picks": [
+    [
+     "04-weisheng-shiye-guanli",
+     1
+    ]
+   ]
+  },
+  {
+   "title": "健康的社会决定因素",
+   "picks": [
+    [
+     "16-gonggong-guanli-xue",
+     9
+    ]
+   ]
+  },
+  {
+   "title": "社会分层与健康公平",
+   "picks": [
+    [
+     "16-gonggong-guanli-xue",
+     4
+    ]
+   ]
+  },
+  {
+   "title": "行为、生活方式与健康",
+   "picks": [
+    [
+     "24-zhongyi-jiankang-guanli",
+     1
+    ]
+   ]
+  },
+  {
+   "title": "卫生服务体系与社会",
+   "picks": [
+    [
+     "04-weisheng-shiye-guanli",
+     3
+    ]
+   ]
+  },
+  {
+   "title": "基层与社区卫生",
+   "picks": [
+    [
+     "04-weisheng-shiye-guanli",
+     4
+    ]
+   ]
+  },
+  {
+   "title": "医疗保障与社会救助",
+   "picks": [
+    [
+     "09-yiliao-baoxian-jingji",
+     5
+    ]
+   ]
+  },
+  {
+   "title": "卫生政策的社会过程",
+   "picks": [
+    [
+     "04-weisheng-shiye-guanli",
+     2
+    ]
+   ]
+  },
+  {
+   "title": "卫生资源与公平配置",
+   "picks": [
+    [
+     "04-weisheng-shiye-guanli",
+     3
+    ]
+   ]
+  },
+  {
+   "title": "健康测量的指标体系",
+   "picks": [
+    [
+     "01-yixue-tongjixue",
+     2
+    ]
+   ]
+  },
+  {
+   "title": "调查设计与抽样",
+   "picks": [
+    [
+     "01-yixue-tongjixue",
+     3
+    ]
+   ]
+  },
+  {
+   "title": "生命统计与疾病统计",
+   "picks": [
+    [
+     "01-yixue-tongjixue",
+     9
+    ]
+   ]
+  },
+  {
+   "title": "评价方法与经济学视角",
+   "picks": [
+    [
+     "09-yiliao-baoxian-jingji",
+     7
+    ]
+   ]
+  },
+  {
+   "title": "健康促进与干预",
+   "picks": [
+    [
+     "24-zhongyi-jiankang-guanli",
+     12
+    ]
+   ]
+  },
+  {
+   "title": "社区干预的组织",
+   "picks": [
+    [
+     "16-gonggong-guanli-xue",
+     16
+    ]
+   ]
+  },
+  {
+   "title": "弱势人群与健康照护",
+   "picks": [
+    [
+     "04-weisheng-shiye-guanli",
+     5
+    ]
+   ]
+  },
+  {
+   "title": "社会医学与中医",
+   "picks": [
+    [
+     "24-zhongyi-jiankang-guanli",
+     14
+    ]
+   ]
+  },
+  {
+   "title": "治理与改革趋势",
+   "picks": [
+    [
+     "16-gonggong-guanli-xue",
+     17
+    ]
+   ]
+  }
+ ],
+ "views": {
+  "制度与规则": [
+   "制度",
+   "政策",
+   "法规",
+   "规定",
+   "标准",
+   "职责"
+  ],
+  "组织与流程": [
+   "组织",
+   "流程",
+   "部门",
+   "岗位",
+   "运行",
+   "协作"
+  ],
+  "绩效与评价": [
+   "绩效",
+   "评价",
+   "指标",
+   "成本",
+   "质量",
+   "效率"
+  ]
+ }
+}

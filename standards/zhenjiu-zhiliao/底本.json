@@ -1,0 +1,116 @@
+{
+ "source": {
+  "file": "qhzy-针灸治疗学.xlsx",
+  "sha256": "0dce1130861b70c422e211eabbf635081f6c20a8f3ead6d89bf491bff6bb3851",
+  "sheets": 30
+ },
+ "counts": {
+  "chapters": 14,
+  "units": 2,
+  "hanzi": 2888,
+  "diseases": 0,
+  "digits": 167,
+  "valueLike": 1
+ },
+ "chapters": [
+  {
+   "no": "1",
+   "title": "第1章 针灸治疗原则",
+   "units": 0,
+   "hanzi": 0,
+   "secs": []
+  },
+  {
+   "no": "2",
+   "title": "第2章 针灸治疗作用",
+   "units": 0,
+   "hanzi": 0,
+   "secs": []
+  },
+  {
+   "no": "3",
+   "title": "第3章 针灸临床诊治特点",
+   "units": 0,
+   "hanzi": 0,
+   "secs": []
+  },
+  {
+   "no": "4",
+   "title": "第4章 针灸处方",
+   "units": 0,
+   "hanzi": 0,
+   "secs": []
+  },
+  {
+   "no": "5",
+   "title": "第5章 特定穴的临床应用",
+   "units": 1,
+   "hanzi": 1124,
+   "secs": []
+  },
+  {
+   "no": "6",
+   "title": "第6章 头面躯体痛证",
+   "units": 0,
+   "hanzi": 0,
+   "secs": []
+  },
+  {
+   "no": "7",
+   "title": "第7章 内科病证",
+   "units": 0,
+   "hanzi": 0,
+   "secs": []
+  },
+  {
+   "no": "8",
+   "title": "第8章 妇儿科病证",
+   "units": 0,
+   "hanzi": 0,
+   "secs": []
+  },
+  {
+   "no": "9",
+   "title": "第9章 皮外伤科病证",
+   "units": 0,
+   "hanzi": 0,
+   "secs": []
+  },
+  {
+   "no": "10",
+   "title": "第10章 五官科病证",
+   "units": 0,
+   "hanzi": 0,
+   "secs": []
+  },
+  {
+   "no": "11",
+   "title": "第11章 急症",
+   "units": 0,
+   "hanzi": 0,
+   "secs": []
+  },
+  {
+   "no": "12",
+   "title": "第12章 其他病证",
+   "units": 0,
+   "hanzi": 0,
+   "secs": []
+  },
+  {
+   "no": "13",
+   "title": "第13章 子午流注针法与灵龟八法",
+   "units": 1,
+   "hanzi": 1764,
+   "secs": []
+  },
+  {
+   "no": "14",
+   "title": "第14章 针灸临床研究进展",
+   "units": 0,
+   "hanzi": 0,
+   "secs": []
+  }
+ ],
+ "groups": []
+}

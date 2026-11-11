@@ -1,0 +1,79 @@
+{
+  "lesson": "04-wuxing",
+  "title": "五行：分类还是生成",
+  "subject": "16-zhongyi-zhexue-shi",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "五行的两种读法是？",
+      "options": [
+        "分类与生成",
+        "寒与热",
+        "表与里",
+        "虚与实"
+      ],
+      "correct": 0,
+      "explanation": "临床用生成（生克传变）。"
+    },
+    {
+      "stage": "check",
+      "question": "「五行」在内经与临床的命中是？",
+      "options": [
+        "129 / 0",
+        "10,855 / 1,520",
+        "1,479 / 30",
+        "1,083 / 232"
+      ],
+      "correct": 0,
+      "explanation": "以词罕见、以关系无处不在。"
+    },
+    {
+      "stage": "check",
+      "question": "「肝病传脾，当先实脾」对应哪种关系？",
+      "options": [
+        "相乘（木克土太过）",
+        "相生",
+        "相侮",
+        "无关系"
+      ],
+      "correct": 0,
+      "explanation": "也属母病及子式的传变。"
+    },
+    {
+      "stage": "check",
+      "question": "阴阳与五行的分工是？",
+      "options": [
+        "阴阳定病性，五行定病位与传变",
+        "两者相同",
+        "五行定病性",
+        "阴阳定传变"
+      ],
+      "correct": 0,
+      "explanation": "结构不同：两分 vs 五分带生克。"
+    },
+    {
+      "stage": "post",
+      "question": "以词频否定五行为何错误？",
+      "options": [
+        "词频只证明「词在」，不证明「思想在」",
+        "因为统计错",
+        "因为样本小",
+        "因为没用"
+      ],
+      "correct": 0,
+      "explanation": "关系藏在术语里。"
+    },
+    {
+      "stage": "post",
+      "question": "把五行当物种表会导致什么？",
+      "options": [
+        "争论某物该归哪一行，而临床不靠这个",
+        "辨证更准",
+        "传变更清",
+        "无后果"
+      ],
+      "correct": 0,
+      "explanation": "归类不产生判断。"
+    }
+  ]
+}

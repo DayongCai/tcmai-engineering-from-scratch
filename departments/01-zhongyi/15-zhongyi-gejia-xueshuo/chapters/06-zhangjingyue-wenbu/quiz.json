@@ -1,0 +1,79 @@
+{
+  "lesson": "06-zhangjingyue-wenbu",
+  "title": "张景岳与温补学派：阳非有余",
+  "subject": "15-zhongyi-gejia-xueshuo",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "张景岳的两句判断是？",
+      "options": [
+        "阳非有余，真阴亦不足",
+        "阳有余，阴不足",
+        "阳常有余，阴常不足",
+        "阴阳俱有余"
+      ],
+      "correct": 0,
+      "explanation": "与朱震亨正相反，但与「阴不足」相同。"
+    },
+    {
+      "stage": "check",
+      "question": "本章命中为何最低？",
+      "options": [
+        "命门、真阴、元阳是明代才成体系的词",
+        "温补派不重要",
+        "统计错误",
+        "样本缺失"
+      ],
+      "correct": 0,
+      "explanation": "7 条中伤寒、金匮均为 0。"
+    },
+    {
+      "stage": "check",
+      "question": "教材中阴虚与阳虚证候数的比是？",
+      "options": [
+        "18 : 7（约 2.6 倍）",
+        "7 : 18",
+        "1 : 1",
+        "37 : 7"
+      ],
+      "correct": 0,
+      "explanation": "病证覆盖差 4 倍。"
+    },
+    {
+      "stage": "check",
+      "question": "1,476 与 7 构成的是？",
+      "options": [
+        "词表噪声的两个极端",
+        "学派重要性的排序",
+        "样本量的差异",
+        "统计误差"
+      ],
+      "correct": 0,
+      "explanation": "这正是第 1 章的警示。"
+    },
+    {
+      "stage": "post",
+      "question": "阴虚多于阳虚的三种可能解释是？",
+      "options": [
+        "教材取材偏重、临床阳虚较少、阳虚被归入气虚",
+        "只有一种解释",
+        "无可解释",
+        "统计必然"
+      ],
+      "correct": 0,
+      "explanation": "三种都需要数据，本课程给不出。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么要把「7 条」与「关联 34 证」并列给出？",
+      "options": [
+        "前者是文本分布，后者是临床结构",
+        "为了好看",
+        "为了凑数",
+        "因为规范要求"
+      ],
+      "correct": 0,
+      "explanation": "两个数字放在一起才看得出「词晚而病在」。"
+    }
+  ]
+}

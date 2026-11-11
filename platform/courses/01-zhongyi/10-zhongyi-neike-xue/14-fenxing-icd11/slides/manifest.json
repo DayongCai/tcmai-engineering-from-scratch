@@ -1,0 +1,162 @@
+{
+  "chapter": "14-fenxing-icd11",
+  "slideCount": 31,
+  "segmentCount": 16,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 33
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 78
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 254
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 153
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 35
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 426
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 384
+    },
+    {
+      "n": 8,
+      "segment": 6,
+      "chars": 309
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 400
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 211
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 372
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 135
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 269
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 396
+    },
+    {
+      "n": 15,
+      "segment": 8,
+      "chars": 338
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 316
+    },
+    {
+      "n": 17,
+      "segment": 9,
+      "chars": 306
+    },
+    {
+      "n": 18,
+      "segment": 10,
+      "chars": 412
+    },
+    {
+      "n": 19,
+      "segment": 10,
+      "chars": 419
+    },
+    {
+      "n": 20,
+      "segment": 10,
+      "chars": 310
+    },
+    {
+      "n": 21,
+      "segment": 11,
+      "chars": 385
+    },
+    {
+      "n": 22,
+      "segment": 11,
+      "chars": 176
+    },
+    {
+      "n": 23,
+      "segment": 12,
+      "chars": 336
+    },
+    {
+      "n": 24,
+      "segment": 12,
+      "chars": 194
+    },
+    {
+      "n": 25,
+      "segment": 12,
+      "chars": 337
+    },
+    {
+      "n": 26,
+      "segment": 13,
+      "chars": 363
+    },
+    {
+      "n": 27,
+      "segment": 14,
+      "chars": 415
+    },
+    {
+      "n": 28,
+      "segment": 14,
+      "chars": 147
+    },
+    {
+      "n": 29,
+      "segment": 15,
+      "chars": 393
+    },
+    {
+      "n": 30,
+      "segment": 15,
+      "chars": 390
+    },
+    {
+      "n": 31,
+      "segment": 16,
+      "chars": 52
+    }
+  ]
+}

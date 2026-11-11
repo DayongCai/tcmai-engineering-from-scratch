@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>第 10 章 · 174 个方里，只有 165 个能算配伍 · 幻灯片</title>
+<style>
+
+:root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
+--jade:#1f6f5c;--jade-soft:#e3efe9;--cinnabar:#a8321e;--cinnabar-soft:#f7e6e2;--gold:#a8862a;
+--sans:system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;
+--serif:"Songti SC","Noto Serif SC",Georgia,serif;
+--mono:ui-monospace,"Cascadia Mono",Consolas,monospace;}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#12110f;color:var(--ink);font-family:var(--sans)}
+#deck{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{min-height:100%;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;
+  padding:5vh 7vw;background:var(--paper);border-bottom:1px solid #000}
+.slide-inner{max-width:1000px;width:100%;margin:0 auto}
+.slide-foot{max-width:1000px;width:100%;margin:3vh auto 0;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+h1.big{font-family:var(--serif);font-size:clamp(28px,4.4vw,54px);line-height:1.25;margin:0}
+blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-height:1.6;margin:0;
+  border-left:6px solid var(--gold);padding-left:24px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--jade);
+  text-transform:uppercase;margin-bottom:14px}
+.kicker.warn{color:var(--cinnabar)}
+p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
+.compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
+.compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+/* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
+.math{font-style:italic;font-family:var(--serif)}
+.math-block{display:block;text-align:center;font-family:var(--serif);font-size:1.05em;margin:.8em 0}
+.math-op,.math-text,.math-rm{font-style:normal}
+.math-op{padding:0 .12em}
+.math-cal{font-style:normal}
+.math-bb{font-style:normal;font-weight:700}
+.frac{display:inline-block;vertical-align:middle;text-align:center;font-style:normal;margin:0 .15em;line-height:1.15}
+.frac-num{display:block;padding:0 .3em;border-bottom:1px solid currentColor}
+.frac-den{display:block;padding:0 .3em}
+.math-sqrt{font-style:normal;margin-right:.05em}
+.math-line{border-top:1px solid currentColor;font-style:normal;padding-top:.05em}
+.math-note{font-size:.8em;font-style:normal}
+.figure-host{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+#hud{position:fixed;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#8a8578;
+  background:#faf8f3cc;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
+@media print{.slide{page-break-after:always;min-height:auto}#hud{display:none}}
+</style>
+</head>
+<body>
+<div id="deck">
+<section class="slide" data-i="0">
+  <div class="slide-inner"><h1 class="big">第 10 章 · 174 个方里，只有 165 个能算配伍</h1></div>
+  <div class="slide-foot"><span>1 / 30</span><span>title</span></div>
+</section>
+<section class="slide" data-i="1">
+  <div class="slide-inner"><blockquote class="motto">「病痰饮者，当以温药和之。」——《金匮要略·痰饮咳嗽病脉证并治第十二》第 15 条（外源·笈成·金匱要略方論 第12篇·第15条）</blockquote></div>
+  <div class="slide-foot"><span>2 / 30</span><span>motto</span></div>
+</section>
+<section class="slide" data-i="2">
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">讲配伍最容易滑向两句话——「经方以甘草为调和诸药之君」和「君臣佐使分明」。前一句在统计上确实成立（甘草 68 方居首，41.2%），后一句在这本书里<strong>根本没有原文依据</strong>：402 条里没有一处写「君」「臣」「佐」「使」。于是学生背下了「君臣佐使」四个字，却不知道它在金匮里是后人补的框架；也不知道「甘草用得最多」与「甘草是君」是两件完全不同的事——前者可数，后者要靠剂量与主治反推，而反推的覆盖率只有 27.3%。</p></div>
+  <div class="slide-foot"><span>3 / 30</span><span>problem</span></div>
+</section>
+<section class="slide" data-i="3">
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（金匮无教材底本，方文只能从外源古籍里解析，而外源的「药名」列混着炮制法、校勘夹注、甚至整句煎法）+ 知识积累（728 次药味出现 × 清洗规则 × 药对共现 ÷ 方剂规模 = 一套能被复算、也能被证伪的配伍描述）</p></div>
+  <div class="slide-foot"><span>4 / 30</span><span>roots</span></div>
+</section>
+<section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">先讲清口径：174 不是统计总体</div>
+                <div class="compact"><div class="table-wrap"><table><thead><tr><th>量</th><th>值</th><th>能不能进配伍统计</th></tr></thead><tbody><tr><td>方（有方名即计）</td><td>174</td><td>—</td></tr><tr><td><strong>有方文的方</strong></td><td><strong>165</strong></td><td>✅ 唯一总体</td></tr><tr><td>互见方（药文在他篇）</td><td>9</td><td>❌ 药味为空</td></tr></tbody></table></div>
+<p>那 9 个互见方是：第 10 篇 大承气汤、第 14 篇 越婢加术汤、第 14 篇 杏子汤、第 17 篇 四逆汤、第 19 篇 藜芦甘草汤、第 21 篇 当归生姜羊肉汤、第 22 篇 当归芍药散、第 22 篇 小建中汤、第 22 篇 膏发煎。底本给它们标了 <code>refOnly: true</code>，<code>ingredients</code> 是空数组。</p>
+<p>为什么必须把这 9 个剔出去，不是洁癖：配伍统计的分母是「方」，分子是「药」。一个空数组的方在三种算法里都会变成假样本——</p></div></div>
+  <div class="slide-foot"><span>5 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">先讲清口径：174 不是统计总体</div>
+                <div class="compact"><ol><li><strong>平均药味数</strong>：9 个 0 味方混进去，均值从 4.41 被拉到 4.18（728 ÷ 174），凭空造出一个「经方平均 4 味」的假精度；</li><li><strong>药对共现</strong>：它和任何药都不共现，等于给每个药对的分母加了 9 个「本该共现却没共现」的方，共现率一律被稀释；</li><li><strong>「君臣佐使」代理</strong>：空方连剂量都没有，却会被算成一个「不可判」样本，让「不可判」的比例虚高。</li></ol>
+<p>所以本章所有频次、药对、规模、君臣代理，分母一律是 <strong>165</strong>。凡出现「174」，都只是「方名数」，不是统计总体。同理，174 也不是「全书方数」——条文里提名的方（如「可与大承气汤」这类承前省方）本库压根没立条目，本章不替它补。</p></div></div>
+  <div class="slide-foot"><span>6 / 30</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact dense"><h3 id="一-不清洗会把一味药拆成几味-165-154">一、不清洗会把一味药拆成几味：165 → 154</h3>
+<p>底本的「药名」列不是纯药名。原样取 <code>herbSimp</code> 去重得 <strong>165 味</strong>（这也是第 1 章报的数）；按规则清洗后是 <strong>154 味</strong>。728 次药味出现一次不少——清洗只改写法，不增删行。</p>
+<p>被并掉的 13 种写法（净减 11 味）长这样（原样 → 清洗后）：</p>
+<div class="table-wrap"><table><thead><tr><th>原样（底本药名格）</th><th>清洗后</th><th>触发的规则</th></tr></thead><tbody><tr><td><code>甘草如指大</code></td><td>甘草</td><td>去「如指大」</td></tr><tr><td><code>半夏大者洗</code></td><td>半夏</td><td>去「大者」「洗」</td></tr><tr><td><code>枳实大者</code> / <code>甘遂大者</code></td><td>枳实 / 甘遂</td><td>去「大者」</td></tr><tr><td><code>大附子</code> / <code>用大附子</code></td><td>附子</td><td>去「用」+ 别名</td></tr><tr><td><code>白术各等分</code></td><td>白术</td><td>去「各等分」</td></tr><tr><td><code>茵陈蒿末</code></td><td>茵陈蒿</td><td>去「末」</td></tr><tr><td><code>水蛭百枚</code></td><td>水蛭</td><td>剂量串从药名尾巴剥掉</td></tr><tr><td><code>鸡子黄.</code> / <code>滑石.</code></td><td>鸡子黄 / 滑石</td><td>去尾部句读</td></tr><tr><td><code>生姜汁</code> / <code>生地黄汁.</code></td><td>生姜 / 生地黄</td><td>去剂型后缀</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>7 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><blockquote><p>历史：v1 留档还把双行夹注并进药名格（<code>茯苓⟨三两⟩⟨一法四两。⟩</code>、<code>半夏大者洗⟨八枚⟩⟨一法半升⟩</code>、<code>蜀椒⟨一两⟩⟨一法二分⟩</code>）。v2 已在解析层把夹注与剂量拆成独立单元格，实测带 <code>⟨⟩</code> 的药名行归零；「去夹注」这条规则留在 <code>cleanHerb</code> 里只作旧留档兼容，在 v2 上不触发。</p></blockquote>
+<p><strong>这不是排版问题，是排名问题。</strong> 不清洗，甘草记 67（另一方的 <code>甘草如指大</code> 会被单列成一味），清洗后 68；生姜 36 → 37；半夏 29 → 30；白术 18 → 19；附子 16 → 18（<code>大附子</code>、<code>用大附子</code> 各 1）；枳实 12 → 13；滑石 4 → 5；甘遂 2 → 3。名次随之动四处：附子从第 13 升到第 12（麻黄退到 13），白术与 人参 同为 19 方而白术排前。高频药的顺序因此会变，而「哪味药用得最多」正是这一章要回答的第一个问题。</p></div></div>
+  <div class="slide-foot"><span>8 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>清洗规则按顺序写死在 <code>cleanHerb</code> 的注释里：去 <code>⟨…⟩</code> 夹注 → 去尾部句读 → 去尾部剂量串 → 循环去炮制/修治尾巴（炮、炙、洗、去皮、去节、去皮尖、去心、切、碎、擘、熬、烧、末、汁、大者、如指大、各、各等分） → 去头部「用」 → 少量显式别名。两条硬约束必须记住：</p>
+<ul><li><strong>只剥尾巴，不剥头</strong>。首字是药名的一部分：剥「干」会把干姜变成姜、把干地黄变成地黄，两味药立刻并成一味。</li><li><strong>剂量串剥空要回退</strong>。「百合」= 百 + 合（合是容量单位），量词规则一视同仁地切，百合就会被切成空串。代码里 <code>if (afterDose) s = afterDose;</code> 这一句就是这道闸。</li></ul></div></div>
+  <div class="slide-foot"><span>9 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>v2 拆列后，校勘残行 0 行、单元格错位判定 0 行——728 行药味全部落在「可用」这一类（v1 是 680 可用 + 2 残行 + 3 错位）。唯一残留是 <strong>百合洗方</strong>：整句煎法（「右以百合一升，以水一斗，渍之一宿……」）被拆成 7 个短格，每格都短于 8 字且不含句读，长度/句读那道错位闸拦不住，于是被当成 7 味药计进了 728 与 154。这七格（右以、以水、渍之、以洗身、洗已、食煮饼、勿以盐豉也）在 Top 20 与药对里都只出现 1 次，不影响排名与门槛，但会让「不同药 154 味」多算 7 味；本章不替底本改数据，只把它点名（见「代价与边界」）。</p>
+<h3 id="二-高频药-top-20-分母-165">二、高频药 Top 20（分母 165）</h3></div></div>
+  <div class="slide-foot"><span>10 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>#</th><th>药</th><th>出现方数</th><th>出现率</th></tr></thead><tbody><tr><td>1</td><td>甘草</td><td>68</td><td>41.2%</td></tr><tr><td>2</td><td>桂枝</td><td>41</td><td>24.8%</td></tr><tr><td>3</td><td>生姜</td><td>37</td><td>22.4%</td></tr><tr><td>4</td><td>大枣</td><td>32</td><td>19.4%</td></tr><tr><td>5</td><td>半夏</td><td>30</td><td>18.2%</td></tr><tr><td>6</td><td>芍药</td><td>28</td><td>17.0%</td></tr><tr><td>7</td><td>茯苓</td><td>26</td><td>15.8%</td></tr><tr><td>8</td><td>干姜</td><td>24</td><td>14.5%</td></tr><tr><td>9</td><td>大黄</td><td>21</td><td>12.7%</td></tr><tr><td>10</td><td>白术</td><td>19</td><td>11.5%</td></tr><tr><td>11</td><td>人参</td><td>19</td><td>11.5%</td></tr><tr><td>12</td><td>附子</td><td>18</td><td>10.9%</td></tr><tr><td>13</td><td>麻黄</td><td>17</td><td>10.3%</td></tr><tr><td>14</td><td>黄芩</td><td>13</td><td>7.9%</td></tr><tr><td>15</td><td>枳实</td><td>13</td><td>7.9%</td></tr><tr><td>16</td><td>细辛</td><td>12</td><td>7.3%</td></tr><tr><td>17</td><td>杏仁</td><td>12</td><td>7.3%</td></tr><tr><td>18</td><td>厚朴</td><td>11</td><td>6.7%</td></tr><tr><td>19</td><td>当归</td><td>10</td><td>6.1%</td></tr><tr><td>20</td><td>石膏</td><td>10</td><td>6.1%</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>11 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>前 20 味合计 461 次，占可用药味行 728 的 63.3%。这条曲线不是「用药偏好」，是<strong>方剂骨架的复用</strong>：甘草出现在四成一的方里，说明它在金匮里的功能更接近「方剂的默认件」而非某证的专属药；桂枝 + 生姜 + 大枣 + 芍药 同时在前 6，指向的是桂枝汤类方在杂病里的移植。</p>
+<h3 id="三-药对-同方共现-8-方共-35-对">三、药对：同方共现 ≥8 方共 35 对</h3>
+<p>计数单位是「方」不是「次数」：一方里两味药各出现两次也只算一次共现。门槛取 8 方（165 的 5%），低于 5% 的共现大半是「某方特有的两味」，不构成结构。</p></div></div>
+  <div class="slide-foot"><span>12 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact denser"><div class="table-wrap"><table><thead><tr><th>药对</th><th>方数</th><th>共现率</th></tr></thead><tbody><tr><td>桂枝 + 甘草</td><td>28</td><td>17.0%</td></tr><tr><td>大枣 + 甘草</td><td>27</td><td>16.4%</td></tr><tr><td>甘草 + 生姜</td><td>25</td><td>15.2%</td></tr><tr><td>大枣 + 生姜</td><td>24</td><td>14.5%</td></tr><tr><td>桂枝 + 生姜</td><td>19</td><td>11.5%</td></tr><tr><td>甘草 + 芍药</td><td>18</td><td>10.9%</td></tr><tr><td>桂枝 + 芍药</td><td>17</td><td>10.3%</td></tr><tr><td>半夏 + 甘草</td><td>16</td><td>9.7%</td></tr><tr><td>大枣 + 桂枝</td><td>16</td><td>9.7%</td></tr><tr><td>干姜 + 甘草</td><td>15</td><td>9.1%</td></tr><tr><td>甘草 + 麻黄</td><td>14</td><td>8.5%</td></tr><tr><td>甘草 + 茯苓</td><td>13</td><td>7.9%</td></tr><tr><td>生姜 + 芍药</td><td>13</td><td>7.9%</td></tr><tr><td>半夏 + 生姜</td><td>12</td><td>7.3%</td></tr><tr><td>半夏 + 干姜</td><td>11</td><td>6.7%</td></tr><tr><td>大枣 + 芍药</td><td>11</td><td>6.7%</td></tr><tr><td>甘草 + 白术</td><td>11</td><td>6.7%</td></tr><tr><td>甘草 + 附子</td><td>11</td><td>6.7%</td></tr><tr><td>人参 + 甘草</td><td>11</td><td>6.7%</td></tr><tr><td>桂枝 + 茯苓</td><td>10</td><td>6.1%</td></tr><tr><td>半夏 + 大枣</td><td>9</td><td>5.5%</td></tr><tr><td>甘草 + 黄芩</td><td>9</td><td>5.5%</td></tr><tr><td>人参 + 半夏</td><td>9</td><td>5.5%</td></tr><tr><td>杏仁 + 甘草</td><td>9</td><td>5.5%</td></tr><tr><td>白术 + 茯苓</td><td>8</td><td>4.8%</td></tr><tr><td>半夏 + 黄芩</td><td>8</td><td>4.8%</td></tr><tr><td>半夏 + 芍药</td><td>8</td><td>4.8%</td></tr><tr><td>半夏 + 细辛</td><td>8</td><td>4.8%</td></tr><tr><td>大黄 + 枳实</td><td>8</td><td>4.8%</td></tr><tr><td>甘草 + 石膏</td><td>8</td><td>4.8%</td></tr><tr><td>干姜 + 细辛</td><td>8</td><td>4.8%</td></tr><tr><td>人参 + 大枣</td><td>8</td><td>4.8%</td></tr><tr><td>人参 + 干姜</td><td>8</td><td>4.8%</td></tr><tr><td>人参 + 桂枝</td><td>8</td><td>4.8%</td></tr><tr><td>生姜 + 麻黄</td><td>8</td><td>4.8%</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>13 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>读法有四层：</p></div></div>
+  <div class="slide-foot"><span>14 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact dense"><ol><li><strong>甘草 + 桂枝（28 方）与生姜 + 大枣（24 方）不是两对药，是一套结构。</strong> 甘草—桂枝—生姜—大枣 四个两两组合全部进了前 4，说明它们同进同出：这是桂枝汤的骨架，被反复拆开用在杂病各篇。把它读成「桂枝配甘草」会丢掉真正的信息——真正的共现体是「四味骨架 + 一味变量」（变量是芍药、麻黄、茯苓或附子）。</li><li><strong>甘草几乎是一个乘数</strong>：35 对里有 14 对含甘草。含甘草药对的方数，落在另一味药方数的 53%–84% 之间（半夏 16/30、芍药 18/28、干姜 15/24、生姜 25/37、桂枝 28/41、大枣 27/32）——多数方在配某味药时顺手配甘草，但<strong>没有配满</strong>。这个「没有配满」才是信号。</li><li><strong>大黄是一处明显的例外</strong>：大黄 21 方（第 9 位），与甘草共现只有 4 方，连 8 方的门槛都够不上。也就是说，频率最高与第 9 高的两味药，在本书里几乎不同框。后世有「甘草缓大黄之泻」的说法可作解释，但那是后世的解释，<strong>本章的数据只能证明「不同框」这个事实</strong>，不能证明因果。</li><li><strong>两对反例说明门槛有效</strong>：大黄 + 枳实 8 方（承气类）、半夏 + 黄芩 8 方（呕而肠鸣、心下痞类），都是<strong>方族内部</strong>的固定搭配，不是全书通配。它们在表里位置靠后，恰恰因为金匮的杂病谱太宽。</li></ol></div></div>
+  <div class="slide-foot"><span>15 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact dense"><h3 id="四-方剂规模-1-23-味-峰值-3-味">四、方剂规模：1–23 味，峰值 3 味</h3>
+<p>v2 没有药名格错位方（v1 曾因此只进 154 方），进分布的是全部 165 方：均值 <strong>4.41 味</strong>，中位 <strong>4 味</strong>，2–10 味覆盖 <strong>148 方（89.7%）</strong>。</p>
+<div class="table-wrap"><table><thead><tr><th>药味数</th><th>方数</th><th></th><th>药味数</th><th>方数</th></tr></thead><tbody><tr><td>1</td><td>13</td><td></td><td>7</td><td>12</td></tr><tr><td>2</td><td>30</td><td></td><td>8</td><td>4</td></tr><tr><td><strong>3</strong></td><td><strong>34</strong></td><td></td><td>9</td><td>7</td></tr><tr><td>4</td><td>21</td><td></td><td>10</td><td>2</td></tr><tr><td>5</td><td>26</td><td></td><td>12</td><td>2</td></tr><tr><td>6</td><td>12</td><td></td><td>21</td><td>1</td></tr><tr><td></td><td></td><td></td><td>23</td><td>1</td></tr></tbody></table></div>
+<p>实测支持集是 <code>{1,2,3,4,5,6,7,8,9,10,12,21,23}</code>——<strong>没有 11 味，也没有 13–20 味</strong>。这一点值得记住：常被引用的「经方多在 2–15 味之间」在这本书里不成立。真实的形状是「一个 1–10 的密集主峰 + 两个孤立的丸剂离群点」。</p></div></div>
+  <div class="slide-foot"><span>16 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact dense"><ul><li><strong>最小方 1 味，12 方</strong>：第 2 篇 一物瓜蒂汤、第 3 篇 苦参汤 / 雄黄薰、第 7 篇 皂荚丸、第 10 篇 乌头煎 / 乌头桂枝汤、第 13 篇 文蛤散、第 17 篇 诃黎勒散、第 19 篇 鸡矢白散、第 22 篇 红蓝花酒 / 蛇床子散 / 狼牙汤。第 2 篇 一物瓜蒂汤的方文只有两个字「瓜蒂」，连剂量都没写——原文：「太阳中暍，身热疼重，而脉微弱，此以夏月伤冷水，水行皮中所致也，一物瓜蒂汤主之。」（外源·笈成·金匱要略方論 第2篇·第27条）单味方不是「简方」，是<strong>病机单一到不需要配伍</strong>的方。</li><li><strong>最大方 23 味</strong>：第 4 篇 鳖甲煎丸（外源·笈成·金匱要略方論 第4篇·第2条）。原文「此结为症瘕，名曰疟母，急治之，宜鳖甲煎丸」，方后自述「右二十三味」——与代码算出的 23 完全一致，这是本章唯一能拿原文自身校验的极值。次大是第 6 篇 薯蓣丸 21 味（原文「虚劳诸不足，风气百疾，薯蓣丸主之」，方后自述「右二十一味」）。两个 20 味以上的方都是<strong>丸剂</strong>：丸者缓也，多味是为了覆盖「虚劳诸不足」这种没有单一主证的状态，不是为了堆药。</li></ul></div></div>
+  <div class="slide-foot"><span>17 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact dense"><h3 id="五-君臣佐使-只能做近似-这是代理指标-不是原书标注">五、「君臣佐使」只能做近似——这是代理指标，不是原书标注</h3>
+<p>先把话说死：<strong>金匮 402 条没有一处标注君臣佐使</strong>。「君臣佐使」是《素问·至真要大论》立的组方原则，被后世拿来解释经方；把它当成原书的字段去统计，是伪造史料。</p>
+<p>本章只能给一个<strong>可计算、可复现、可被证伪</strong>的代理：<strong>君 ≈ 该方中剂量最大的一味</strong>。为了让这个代理不像占卜，先把「算不出来」的方如实分类：</p>
+<div class="table-wrap"><table><thead><tr><th>状态</th><th>方数</th><th>含义</th></tr></thead><tbody><tr><td>唯一最大</td><td>37</td><td>代理判定出「君」</td></tr><tr><td>并列最大</td><td>8</td><td>同族内并列，君臣不唯一</td></tr><tr><td>写「等分」</td><td>8</td><td>原文明说等分，本就不分君臣</td></tr><tr><td>跨族（两 + 枚 / 两 + 升）</td><td>76</td><td>重量/容量/计数三族不可折算</td></tr><tr><td>缺剂量</td><td>36</td><td>底本这 85 个剂量格是空的</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>18 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>合计 165，其中<strong>可判 45 方 = 27.3%</strong>。这个覆盖率本身就是结论：<strong>用剂量复原君臣，在这本书上只解释得动四分之一强的方</strong>。剩下 120 方卡在三处——跨族混排 76（「一两桂枝配十二枚大枣」无法折算）、剂量空缺 36、同族并列 8。任何声称「已复原金匮君臣佐使」的说法，都要先解释这 120 个方怎么办。</p>
+<p>在可判的 45 方里（唯一最大 37 + 等分 8），唯一最大者的分布是：甘草 4（甘草干姜汤、桔梗汤、王不留行散、竹皮大丸）、百合 2、泽泻 2、茯苓 2、大黄 2、生姜 2，其余 23 味各 1。甘草 4 次居首，但请注意对比：<strong>甘草在 68 个方里出现（41.2%），却只在 4 个方里是剂量最大者</strong>。「用得最多」和「当君」是两条完全不同的曲线，把它们混为一谈，是本章最想拆掉的那个错觉。</p></div></div>
+  <div class="slide-foot"><span>19 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>并列的 8 方更像经方的真相：鳖甲煎丸（鳖甲、赤硝并列）、乌头赤石脂丸（蜀椒、干姜、赤石脂）、赤丸（茯苓、半夏）、瓜蒂散（瓜蒂、赤小豆）、白头翁汤（黄连、黄柏、秦皮）、当归贝母苦参丸（三味并列）、白头翁加甘草阿胶汤（秦皮、黄连、柏皮）、土瓜根散（四味并列）。<strong>经方常用「等分」与「等量」结构</strong>，剂量上根本不给你一个唯一的君。</p>
+<h3 id="六-跨篇-内伤-112-方-vs-妇人-22-方">六、跨篇：内伤 112 方 vs 妇人 22 方</h3></div></div>
+  <div class="slide-foot"><span>20 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact dense"><div class="table-wrap"><table><thead><tr><th>药</th><th>内伤（112 方）</th><th>妇人（22 方）</th><th>差</th></tr></thead><tbody><tr><td>甘草</td><td>48 · 42.9%</td><td>5 · 22.7%</td><td>+20.1</td></tr><tr><td>生姜</td><td>29 · 25.9%</td><td>3 · 13.6%</td><td>+12.3</td></tr><tr><td>桂枝</td><td>28 · 25.0%</td><td>5 · 22.7%</td><td>+2.3</td></tr><tr><td>半夏</td><td>25 · 22.3%</td><td>3 · 13.6%</td><td>+8.7</td></tr><tr><td>大枣</td><td>25 · 22.3%</td><td>2 · 9.1%</td><td>+13.2</td></tr><tr><td>干姜</td><td>20 · 17.9%</td><td>1 · 4.5%</td><td>+13.3</td></tr><tr><td>芍药</td><td>16 · 14.3%</td><td>6 · 27.3%</td><td>−13.0</td></tr><tr><td>附子</td><td>13 · 11.6%</td><td>1 · 4.5%</td><td>+7.1</td></tr><tr><td>芎䓖</td><td>3 · 2.7%</td><td>4 · 18.2%</td><td>−15.5</td></tr><tr><td>当归</td><td>4 · 3.6%</td><td>4 · 18.2%</td><td>−14.6</td></tr><tr><td>桃仁</td><td>2 · 1.8%</td><td>3 · 13.6%</td><td>−11.9</td></tr><tr><td>阿胶</td><td>3 · 2.7%</td><td>3 · 13.6%</td><td>−11.0</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>21 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="21">
+  <div class="slide-inner"><div class="kicker">核心概念</div>
+                <div class="compact"><p>内伤篇（6–10、12–19）是「甘草 + 姜枣 + 半夏 + 茯苓 + 附子」的天下：温、降、利、补，对应的是痰饮、呕利、腹满、虚劳这一大片。妇人篇（20–22）换了一套骨架：<strong>芍药升到第一（27.3%），芎䓖 2.7%→18.2%，当归 3.6%→18.2%，桃仁 1.8%→13.6%，阿胶 2.7%→13.6%</strong>——养血、活血、润燥。第 22 篇 温经汤一方就把这个签名写全了：「曾经半产，瘀血在少腹不去……当以温经汤主之」（外源·笈成·金匱要略方論 第22篇·第9条），方中吴茱萸 当归 芎䓖 芍药 人参 桂枝 阿胶 生姜 牡丹皮 甘草 半夏 麦门冬 十二味，恰是「妇人骨架 + 内伤骨架」的叠加。</p>
+<p>注意样本量：妇人只有 22 方，4 方之差就是 18 个百分点。<strong>22 方的百分比不能当结论用</strong>，只能当「方向」。这也正是本章最后一条边界。</p></div></div>
+  <div class="slide-foot"><span>22 / 30</span><span>concept</span></div>
+</section>
+<section class="slide" data-i="22">
+  <div class="slide-inner"><div class="kicker">BUILD IT · 从零实现</div>
+                <div class="compact dense"><div class="codeblock"><div class="codeblock-lang">js</div><pre><code class="lang-js">// code/main.js
+cleanHerb(raw)     // 药名清洗：去夹注/句读/剂量/炮制尾/各；返 ok | note | misplaced
+parseDose(dose)    // 剂量解析：重量折两、容量折合、计数原值；族间不折算
+population()       // 174 = 165 有方文 + 9 互见（与 counts 字段对账）
+frequencies()      // 频次：出现方数 / 出现率（分母 165）
+herbPairs(8)       // 药对：同方共现 ≥8 方
+sizeDist()         // 规模：剔除错位方后的药味数分布
+junProxy()         // 君臣代理：只判得动同族剂量，其余如实归类
+selfCountCheck()   // 用原文「右N味」反查解析器
+crossSection(6)    // 内伤 vs 妇人</code></pre></div>
+<p>运行：</p>
+<div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash">node code/main.js
+node --test code/main.test.js</code></pre></div></div></div>
+  <div class="slide-foot"><span>23 / 30</span><span>build</span></div>
+</section>
+<section class="slide" data-i="23">
+  <div class="slide-inner"><div class="kicker">BUILD IT · 从零实现</div>
+                <div class="compact"><p>预期输出（实测）：165 有方文 / 174 · 药名 165 → 154 · 药味行 728（可用 728·残行 0·错位 0）· 药对 35 对 · 均值 4.41 味 · 君臣可判 45 方 · 自校验 148 方自述、148 一致。</p></div></div>
+  <div class="slide-foot"><span>24 / 30</span><span>build</span></div>
+</section>
+<section class="slide" data-i="24">
+  <div class="slide-inner"><div class="kicker">验证</div>
+                <div class="compact"><div class="codeblock"><div class="codeblock-lang">bash</div><pre><code class="lang-bash">python scripts/build_jingui_text.py --check   # sha256 + 篇/条/方 与留档一致
+node code/main.js
+node --test code/main.test.js</code></pre></div>
+<p>最强的一道验证不是单测，是<strong>原文自校验</strong>：165 个有方文的方里，148 方的煎服法以「右N味」收尾。拿这个 N 去比代码解析出的药味数，<strong>148 方全对，0 方不一致</strong>。剩下 17 方没有这句（煎服法写成「右锉」「右为散」「右先以水洗百合」的变体，或像 百合洗方 那样根本没立煎服法），只能靠别的办法校验，所以它们不进这道分母。</p></div></div>
+  <div class="slide-foot"><span>25 / 30</span><span>verify</span></div>
+</section>
+<section class="slide" data-i="25">
+  <div class="slide-inner"><div class="kicker">验证</div>
+                <div class="compact"><p>这条 148:148 是 v2 才拿到的。v1 曾是 139 方自述、129 一致、10 不一致，那 10 方当时就是缺陷清单：橘皮竹茹汤（原文「右六味」，解析 0）、越婢加术汤（「右二味」，解析 0）是单元格错位，乌头桂枝汤（「右五味」，解析 1）是合方结构（同条另立「桂枝汤方」五味），枳实薤白桂枝汤、大青龙汤、木防己汤、蒲灰散、茱萸汤、白头翁汤、王不留行散 7 方各差 1 味。v2 把药名格按单元格拆开、把 越婢加术汤 归为互见方（<code>refOnly</code>）之后，这 10 个不一致全部归零——注释里那句「比任何人工抽查都硬」不是修辞：解析器写错时，它会自己叫；解析器修好了，它也会自己安静。</p></div></div>
+  <div class="slide-foot"><span>26 / 30</span><span>verify</span></div>
+</section>
+<section class="slide" data-i="26">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>外源不是校勘本。</strong> 引文只保证「等于笈成留档页面的字」。药名格里的夹注、错位本身是留档的产物，本章的清洗规则是对这些产物的补丁，不是对宋本的校勘。</li><li><strong>清洗 ≠ 异名归并。</strong> 本章只合并「同一味药的不同写法」（半夏 / 半夏大者洗）。薯蓣与山药、黄耆与黄芪、蜀椒与川椒、牡丹与牡丹皮、栝蒌根与栝蒌实、干地黄与生地黄，一律分列。要做异名归并得先有药名典，那是另一个工程；现在做，等于把结论建在记忆上。</li><li><strong>药名格错位：v1 有三方，v2 归零（历史记录）。</strong> v1 的橘皮竹茹汤（整行药文挤在一格，原文自述六味）、越婢加术汤（原文是「方见上，于内加白术四味」的加减指引，下一条方名被挤进药名格）、百合洗方（整句煎法当成药名）让规模分布只能算 154 = 157 − 3。v2 拆列后：橘皮竹茹汤归位为六味、与「右六味」对上；越婢加术汤改判互见方（<code>refOnly</code>，药味为空），不再作为 0 味假样本混进分母；错位判定命中 0 方，<strong>165 方全量可判</strong>。</li></ul></div></div>
+  <div class="slide-foot"><span>27 / 30</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="27">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact dense"><p>残留一处没修干净：百合洗方 的煎法句被拆成 7 个短格（右以、以水、渍之、以洗身、洗已、食煮饼、勿以盐豉也），每格都短于判定阈值，于是仍被算成 7 味，计进了 728 与 154；它没有「右N味」自述，因此不进 148 自校验，但「不同药 154 味」里有 7 个是它贡献的伪药名。修它要动底本的药名格，属于 <code>standards/jingui/</code> 的活，本章不越界改数据。</p>
+<ul><li><strong>剂量三族不可通约。</strong> 一两与一升不可换算，本章不发明换算率，所以 76 方因跨族不可判。若强行给「一升≈十两」这类约定，君臣代理的覆盖率能冲到六成以上，但那是把假设当数据。</li><li><strong>「君臣佐使」是代理指标，不是原书标注。</strong> 原书无一处标注；本章的「君」只等于「方内同族剂量最大者」，覆盖率 27.3%，且 8 方并列。凡引用本章结论，须写明「按剂量代理」四字。</li><li><strong>妇人 22 方，百分比只表方向。</strong> 4 方即 18 个百分点，不足以下「妇人病以养血为主」这类断语，只能说「签名偏向芍药/芎䓖/当归/阿胶」。</li></ul></div></div>
+  <div class="slide-foot"><span>28 / 30</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="28">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>174 不是全书方数。</strong> 它只含「有方文 + 互见」的方名；条文提名的方未立项，未计。</li><li><strong>不能据本章处方。</strong> 频次与药对是文本统计，不含证候、禁忌、煎服法与剂量安全边界；任何用药须回原文与药典，由执业医师判断。</li></ul>
+<blockquote><p><strong>免责声明：</strong> 本章条文引自外源 <code>standards/jingui/</code>（来源与 sha256 见该目录 README），教材底本缺此学科；全章为文本统计与口径分析，数字均由 <code>code/main.js</code> 复算，<strong>不构成诊疗依据</strong>，不可用于自行处方。</p></blockquote></div></div>
+  <div class="slide-foot"><span>29 / 30</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="29">
+  <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
+  <div class="slide-foot"><span>30 / 30</span><span>disclaimer</span></div>
+</section>
+</div>
+<div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>
+<script>/**
+ * [tcmP] figures.js —— 中医概念动画图（纯 SVG + rAF，无依赖）
+ *
+ * 自动挂载：文档里写
+ *     <div data-figure="wuxing-cycle"></div>
+ * 即可。支持悬停暂停；系统开启「减少动态效果」时渲染为静态帧。
+ *
+ * 与 ai-engineering-from-scratch 的 site/figures.js 同构（同样的 el/loop/registry 形态），
+ * 图目换成中医概念：
+ *   yin-yang-sigmoid    阴阳 → 二分类：sigmoid 决策边界扫过，样本左右归属翻转
+ *   wuxing-cycle        五行生克：相生正向流动 + 相克五角星流动
+ *   zangxiang-graph     藏象：脏腑 → 官窍 → 情志 的边逐步点亮
+ *   sizhen-fusion       四诊合参：四通道 → 融合层 → 证候输出
+ *   meridian-lookup     经络腧穴：KD-Tree 空间划分 + 最近邻查询
+ *   junchen-attention   君臣佐使：药味 → 权重矩阵高亮
+ */
+
+(function () {
+  'use strict';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── SVG 小工具 ──
+  function el(name, attrs, kids) {
+    const e = document.createElementNS(NS, name);
+    for (const k in attrs || {}) e.setAttribute(k, attrs[k]);
+    (Array.isArray(kids) ? kids : kids ? [kids] : []).filter(Boolean).forEach((c) => e.appendChild(c));
+    return e;
+  }
+  const txt = (s) => document.createTextNode(s);
+
+  function label(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--sans)', 'font-size': 12, fill: 'var(--muted)' },
+      opts || {}
+    ), [txt(s)]);
+  }
+  function mono(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--mono)', 'font-size': 11, fill: 'var(--muted)', 'letter-spacing': '.1em' },
+      opts || {}
+    ), [txt(s)]);
+  }
+
+  function svgRoot(host, W, H, aria) {
+    const svg = el('svg', {
+      viewBox: `0 0 ${W} ${H}`, width: '100%', role: 'img', 'aria-label': aria || '',
+      style: 'display:block;max-width:100%;height:auto',
+    });
+    host.appendChild(svg);
+    return svg;
+  }
+
+  // 悬停暂停 + 时间归一化
+  function loop(host, fn, period, opts) {
+    period = period || 6400;
+    opts = opts || {};
+    let raf, paused = false, t0 = performance.now();
+    const onTick = (now) => {
+      if (!paused) fn((((now - t0) % period) / period));
+      raf = requestAnimationFrame(onTick);
+    };
+    host.addEventListener('mouseenter', () => { paused = true; });
+    host.addEventListener('mouseleave', () => { paused = false; });
+    if (REDUCED) { fn(opts.staticT == null ? 0.62 : opts.staticT); return function () {}; }
+    raf = requestAnimationFrame(onTick);
+    return () => cancelAnimationFrame(raf);
+  }
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeIO = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const sigmoid = (z) => 1 / (1 + Math.exp(-z));
+
+  const FIGURES = {};
+
+  /* ───────────────────── yin-yang-sigmoid ─────────────────────
+     阴阳 → 二分类。左侧散点：X 轴「寒热倾向」，输出 sigmoid 概率。
+     扫描线扫过阈值，样本随阈值的移动左右换边，右侧给出准确率。
+  */
+  FIGURES['yin-yang-sigmoid'] = function (host) {
+    const W = 720, H = 400, PAD = 54;
+    const svg = svgRoot(host, W, H, '阴阳二分类与 sigmoid 决策边界');
+    const plotW = W - PAD * 2, plotH = H - 150;
+
+    // 样本：12 条八纲典型证候（阴=0 阳=1）
+    const data = [
+      [-2.2, 0], [-1.8, 0], [-1.4, 0], [-1.1, 0], [-0.6, 0], [-0.2, 0],
+      [0.2, 1], [0.6, 1], [1.1, 1], [1.5, 1], [1.9, 1], [2.4, 1],
+    ];
+    const X = (v) => PAD + ((v + 3) / 6) * plotW;
+    const Y = (p) => H - 90 - p * plotH;
+
+    // 坐标轴
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: W - PAD, y2: H - 90, stroke: 'var(--line)' }));
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: PAD, y2: H - 90 - plotH, stroke: 'var(--line)' }));
+    svg.appendChild(mono(PAD, H - 72, '寒 / 阴 →'));
+    svg.appendChild(mono(W - PAD, H - 72, '← 热 / 阳', { 'text-anchor': 'end' }));
+    svg.appendChild(mono(8, PAD - 22, 'P(阳)'));
+    svg.appendChild(mono(W - PAD - 130, 26, 'sigmoid 决策边界'));
+
+    const curve = el('path', { d: '', fill: 'none', stroke: 'var(--jade)', 'stroke-width': 2.5 });
+    svg.appendChild(curve);
+    const threshLine = el('line', { stroke: 'var(--cinnabar)', 'stroke-dasharray': '5 4', 'stroke-width': 1.6 });
+    svg.appendChild(threshLine);
+
+    const pts = data.map(([x, y]) => {
+      const g = el('g', {});
+      const c = el('circle', { r: 6, cx: X(x), cy: H - 90 - 0.5 * plotH, fill: y ? 'var(--cinnabar)' : 'var(--jade)', opacity: 0.85 });
+      const cls = el('text', {
+        x: X(x), y: H - 90 - 0.5 * plotH + 4, 'text-anchor': 'middle',
+        'font-family': 'var(--sans)', 'font-size': 10, fill: '#fff',
+      }, [txt(y ? '阳' : '阴')]);
+      g.appendChild(c); g.appendChild(cls);
+      svg.appendChild(g);
+      return { x, y, c, cls };
+    });
+
+    const accText = label(PAD, 26, '', { fill: 'var(--ink)', 'font-size': 13 });
+    svg.appendChild(accText);
+
+    let pathD = '';
+    for (let i = 0; i <= 60; i += 1) {
+      const xv = -3 + (i / 60) * 6;
+      const p = sigmoid(1.6 * xv + 0.1);
+      pathD += `${i === 0 ? 'M' : 'L'}${X(xv).toFixed(1)},${Y(p).toFixed(1)}`;
+    }
+    curve.setAttribute('d', pathD);
+
+    loop(host, (t) => {
+      // 阈值在 0..1 之间来回扫
+      const thr = 0.15 + 0.7 * easeIO(1 - Math.abs(2 * t - 1));
+      const pThr = 0.1 + thr * 0.85;
+      const xThr = (Math.log(pThr / (1 - pThr)) - 0.1) / 1.6;
+      threshLine.setAttribute('x1', X(xThr));
+      threshLine.setAttribute('x2', X(xThr));
+      threshLine.setAttribute('y1', H - 90 - plotH - 6);
+      threshLine.setAttribute('y2', H - 90);
+
+      let correct = 0;
+      for (const p of pts) {
+        const prob = sigmoid(1.6 * p.x + 0.1);
+        const pred = prob >= pThr ? 1 : 0;
+        if (pred === p.y) correct += 1;
+        p.c.setAttribute('cy', Y(prob));
+        p.cls.setAttribute('y', Y(prob) + 4);
+        p.c.setAttribute('r', pred === p.y ? 7 : 5);
+        p.c.setAttribute('opacity', pred === p.y ? 0.92 : 0.32);
+        p.cls.setAttribute('opacity', pred === p.y ? 1 : 0.25);
+        // 判错的样本画一圈红
+        p.c.setAttribute('stroke', pred === p.y ? 'none' : 'var(--cinnabar)');
+        p.c.setAttribute('stroke-width', pred === p.y ? 0 : 2);
+      }
+      accText.textContent = `阈值 P=${pThr.toFixed(2)} · 准确率 ${correct}/${pts.length} = ${((correct / pts.length) * 100).toFixed(0)}%`;
+    }, 7200);
+  };
+
+  /* ───────────────────── wuxing-cycle ─────────────────────
+     五行生克。外圈相生（顺时针流动），内五角星相克。
+  */
+  FIGURES['wuxing-cycle'] = function (host) {
+    const W = 720, H = 440, cx = W / 2 - 70, cy = H / 2, R = 148;
+    const svg = svgRoot(host, W, H, '五行生克关系');
+    const names = ['木', '火', '土', '金', '水'];
+    const colors = ['var(--jade)', 'var(--cinnabar)', 'var(--gold)', '#8a6d3b', '#2a4d69'];
+    const node = names.map((_, i) => {
+      const a = -Math.PI / 2 + (i / 5) * Math.PI * 2;
+      return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), a };
+    });
+
+    // 相生边（外圈，顺时针 木→火→土→金→水→木）
+    const sheng = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const p = el('path', {
+        d: `M${n.x},${n.y} Q${(n.x + m.x) / 2 + (cy - (n.y + m.y) / 2) * 0.16},${(n.y + m.y) / 2 + ((n.x + m.x) / 2 - cx) * 0.16} ${m.x},${m.y}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.28,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+    // 相克边（五角星）
+    const ke = node.map((n, i) => {
+      const m = node[(i + 2) % 5];
+      const p = el('line', {
+        x1: n.x, y1: n.y, x2: m.x, y2: m.y,
+        stroke: 'var(--cinnabar)', 'stroke-width': 1.4, 'stroke-dasharray': '4 4', opacity: 0.2,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+
+    // 沿边流动的点
+    const flow = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const g = el('circle', { r: 4, fill: 'var(--jade)', cx: n.x, cy: n.y, opacity: 0 });
+      svg.appendChild(g);
+      return { g, from: n, to: m };
+    });
+
+    const nodes = node.map((n, i) => {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: n.x, cy: n.y, r: 30, fill: '#fff', stroke: colors[i], 'stroke-width': 2 }));
+      g.appendChild(el('text', {
+        x: n.x, y: n.y + 8, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 22, fill: colors[i],
+      }, [txt(names[i])]));
+      svg.appendChild(g);
+      return g;
+    });
+
+    // 右栏说明
+    svg.appendChild(mono(W - 190, 60, '相生 (outer)'));
+    svg.appendChild(label(W - 190, 82, '木→火→土→金→水→木', { fill: 'var(--jade)' }));
+    svg.appendChild(mono(W - 190, 130, '相克 (star)'));
+    svg.appendChild(label(W - 190, 152, '木克土 · 土克水 · 水克火', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(label(W - 190, 170, '火克金 · 金克木', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(mono(W - 190, 220, '建模要点'));
+    svg.appendChild(label(W - 190, 242, '5 类 + 有向约束', { fill: 'var(--ink)' }));
+    svg.appendChild(label(W - 190, 262, '纯 softmax 会丢掉', { fill: 'var(--muted)' }));
+    svg.appendChild(label(W - 190, 280, '全部关系信息', { fill: 'var(--muted)' }));
+
+    const capt = label(W - 190, H - 30, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const phase = (t * 5) % 5;
+      for (let i = 0; i < 5; i += 1) {
+        const f = flow[i];
+        const local = clamp01(phase - i);
+        const k = easeIO(local);
+        f.g.setAttribute('cx', lerp(f.from.x, f.to.x, k));
+        f.g.setAttribute('cy', lerp(f.from.y, f.to.y, k));
+        f.g.setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.95 : 0);
+        sheng[i].setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.75 : 0.28);
+        const keOn = phase - i >= 0 && phase - i <= 1.4;
+        ke[i].setAttribute('opacity', keOn ? 0.55 : 0.2);
+      }
+      const active = Math.floor(phase) % 5;
+      nodes.forEach((g, i) => g.querySelector('circle').setAttribute('stroke-width', i === active ? 4 : 2));
+      capt.textContent = `当前传导：${names[active]} → ${names[(active + 1) % 5]}（生） / ${names[active]} 克 ${names[(active + 2) % 5]}`;
+    }, 7000);
+  };
+
+  /* ───────────────────── zangxiang-graph ─────────────────────
+     藏象：五脏 → 官窍 → 情志，边按序点亮。
+  */
+  FIGURES['zangxiang-graph'] = function (host) {
+    const W = 720, H = 430;
+    const svg = svgRoot(host, W, H, '藏象学说的脏腑-官窍-情志关系图');
+
+    const zang = [
+      { n: '肝', x: 110, y: 100, qiao: ['目'], zhi: '怒' },
+      { n: '心', x: 110, y: 210, qiao: ['舌'], zhi: '喜' },
+      { n: '脾', x: 110, y: 320, qiao: ['口'], zhi: '思' },
+      { n: '肺', x: 610, y: 100, qiao: ['鼻'], zhi: '悲' },
+      { n: '肾', x: 610, y: 210, qiao: ['耳'], zhi: '恐' },
+    ];
+    const edges = [];
+
+    for (const z of zang) {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: z.x, cy: z.y, r: 26, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+      g.appendChild(el('text', { x: z.x, y: z.y + 8, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 20, fill: 'var(--cinnabar)' }, [txt(z.n)]));
+      svg.appendChild(g);
+
+      const qx = W / 2 + (z.x < 300 ? -40 : 40);
+      g.appendChild(el('line', { x1: z.x + (z.x < 300 ? 26 : -26), y1: z.y, x2: qx - (z.x < 300 ? 22 : -22), y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+
+      const qg = el('g', {});
+      qg.appendChild(el('rect', { x: qx - 22, y: z.y - 14, width: 44, height: 28, rx: 6, fill: 'var(--jade-soft)', stroke: 'var(--jade)', 'stroke-width': 1.3 }));
+      qg.appendChild(el('text', { x: qx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--jade)' }, [txt(z.qiao[0])]));
+      svg.appendChild(qg);
+
+      const zx = W - 110;
+      g.appendChild(el('line', { x1: qx + 22, y1: z.y, x2: zx - 24, y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      const zg = el('g', {});
+      zg.appendChild(el('circle', { cx: zx, cy: z.y, r: 22, fill: '#fdf1dd', stroke: 'var(--gold)', 'stroke-width': 1.3 }));
+      zg.appendChild(el('text', { x: zx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--gold)' }, [txt(z.zhi)]));
+      svg.appendChild(zg);
+
+      edges.push({ zy: z.y, e1: g.querySelector('line'), e2: g.querySelectorAll('line')[1], qg, zg });
+    }
+
+    svg.appendChild(mono(110 - 30, 40, '藏 / 五藏'));
+    svg.appendChild(mono(W / 2 - 30, 40, '象 / 官窍'));
+    svg.appendChild(mono(W - 110 - 30, 40, '情志'));
+    const capt = label(20, H - 14, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const step = t * 5;
+      edges.forEach((e, i) => {
+        const on = step >= i;
+        e.e1.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        e.e2.setAttribute('stroke', on ? 'var(--gold)' : 'var(--line)');
+        e.qg.setAttribute('opacity', on ? 1 : 0.35);
+        e.zg.setAttribute('opacity', on ? 1 : 0.35);
+      });
+      const cur = zang[Math.min(4, Math.floor(step))];
+      capt.textContent = cur ? `点亮中：${cur.n} 开窍于 ${cur.qiao[0]}，在志为${cur.zhi}` : '';
+    }, 6200, { staticT: 0.99 });
+  };
+
+  /* ───────────────────── sizhen-fusion ─────────────────────
+     四诊合参：四通道 → 融合层 → 证候。演示模态缺失时的降级。
+  */
+  FIGURES['sizhen-fusion'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '四诊合参的多模态融合与模态缺失降级');
+    const chans = [
+      { n: '望', d: '舌象 / 面色', y: 60 },
+      { n: '闻', d: '语声 / 气息', y: 130 },
+      { n: '问', d: '主诉 / 现病史', y: 200 },
+      { n: '切', d: '脉搏波', y: 270 },
+    ];
+    const fx = 330, fy = 165;
+    const outx = 600;
+
+    const fxG = el('g', {});
+    fxG.appendChild(el('rect', { x: fx - 52, y: fy - 46, width: 104, height: 92, rx: 10, fill: '#fff', stroke: 'var(--jade)', 'stroke-width': 2 }));
+    fxG.appendChild(el('text', { x: fx, y: fy - 14, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--jade)' }, [txt('融合层')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 8, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('交叉注意力')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 26, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('+ 缺失掩码')]));
+    svg.appendChild(fxG);
+
+    const outG = el('g', {});
+    outG.appendChild(el('rect', { x: outx - 46, y: fy - 32, width: 92, height: 64, rx: 10, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+    outG.appendChild(el('text', { x: outx, y: fy - 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--cinnabar)' }, [txt('证候')]));
+    outG.appendChild(el('text', { x: outx, y: fy + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('带置信度')]));
+    svg.appendChild(outG);
+
+    svg.appendChild(el('line', { x1: fx + 52, y1: fy, x2: outx - 46, y2: fy, stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+
+    const inG = chans.map((c) => {
+      const g = el('g', {});
+      g.appendChild(el('rect', { x: 24, y: c.y - 24, width: 150, height: 48, rx: 8, fill: '#fff', stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      g.appendChild(el('text', { x: 40, y: c.y - 2, 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--ink)' }, [txt(c.n + '诊')]));
+      g.appendChild(el('text', { x: 40, y: c.y + 16, 'font-size': 11, fill: 'var(--muted)' }, [txt(c.d)]));
+      svg.appendChild(g);
+      const path = el('path', {
+        d: `M174,${c.y} C 250,${c.y} 260,${fy} ${fx - 52},${fy}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.22,
+      });
+      svg.appendChild(path);
+      const dot = el('circle', { r: 4, fill: 'var(--jade)', opacity: 0 });
+      svg.appendChild(dot);
+      return { g, path, dot, y: c.y };
+    });
+
+    const capt = label(24, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    // 循环：全模态 → 缺闻诊 → 缺闻+切 → 恢复
+    const phases = [[1, 1, 1, 1], [1, 0, 1, 1], [1, 0, 1, 0], [1, 1, 1, 1]];
+    loop(host, (t) => {
+      const idx = Math.min(phases.length - 1, Math.floor(t * phases.length));
+      const mask = phases[idx];
+      const missing = [];
+      mask.forEach((m, i) => { if (!m) missing.push(chans[i].n); });
+
+      inG.forEach((c, i) => {
+        const on = mask[i] === 1;
+        c.g.style.opacity = on ? 1 : 0.3;
+        c.path.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        c.path.setAttribute('stroke-dasharray', on ? 'none' : '4 4');
+        c.path.setAttribute('opacity', on ? 0.55 : 0.25);
+        const local = clamp01(t * 4 - idx);
+        c.dot.setAttribute('cx', lerp(174, fx - 52, easeIO(local)));
+        c.dot.setAttribute('cy', lerp(c.y, fy, easeIO(local)));
+        c.dot.setAttribute('opacity', on ? 0.95 : 0);
+      });
+
+      const conf = 0.62 + 0.1 * mask.filter(Boolean).length;
+      outG.style.opacity = 0.4 + 0.6 * conf;
+      capt.textContent = missing.length
+        ? `模态缺失：缺 ${missing.join('、')} → 置信度降至 ${(conf * 100).toFixed(0)}%，系统须显式降级而非静默猜测`
+        : `四诊齐备 → 置信度 ${(conf * 100).toFixed(0)}%`;
+    }, 8800, { staticT: 0.35 });
+  };
+
+  /* ───────────────────── meridian-lookup ─────────────────────
+     腧穴检索：KD-Tree 空间划分 + 最近邻查询。
+  */
+  FIGURES['meridian-lookup'] = function (host) {
+    const W = 720, H = 400, PAD = 40;
+    const svg = svgRoot(host, W, H, '腧穴的空间划分与最近邻检索');
+    const plotW = W - PAD * 2 - 30, plotH = H - 110;
+
+    // 模拟体表腧穴点集（合谷、内关、足三里、三阴交等 18 穴）
+    let seed = 20261012;
+    const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+    const pts = Array.from({ length: 18 }, () => ({ x: PAD + 30 + rnd() * (plotW - 60), y: PAD + 20 + rnd() * (plotH - 40) }));
+
+    // KD-Tree 递归划分线
+    const lines = [];
+    (function build(list, depth) {
+      if (list.length < 2) return;
+      const axis = depth % 2;
+      const sorted = list.slice().sort((a, b) => (axis ? a.y - b.y : a.x - b.x));
+      const med = sorted[Math.floor(sorted.length / 2)];
+      if (axis) {
+        const minX = Math.min(...list.map((p) => p.x));
+        const maxX = Math.max(...list.map((p) => p.x));
+        lines.push({ x1: minX, y1: med.y, x2: maxX, y2: med.y, depth });
+        build(list.filter((p) => p.y < med.y), depth + 1);
+        build(list.filter((p) => p.y >= med.y), depth + 1);
+      } else {
+        const minY = Math.min(...list.map((p) => p.y));
+        const maxY = Math.max(...list.map((p) => p.y));
+        lines.push({ x1: med.x, y1: minY, x2: med.x, y2: maxY, depth });
+        build(list.filter((p) => p.x < med.x), depth + 1);
+        build(list.filter((p) => p.x >= med.x), depth + 1);
+      }
+    })(pts, 0);
+
+    const lineEls = lines.map((l) => {
+      const e = el('line', { x1: l.x1, y1: l.y1, x2: l.x2, y2: l.y2, stroke: 'var(--line)', 'stroke-width': 1, opacity: 0 });
+      svg.appendChild(e);
+      return { e, depth: l.depth };
+    });
+
+    const dotEls = pts.map((p, i) => {
+      const c = el('circle', { cx: p.x, cy: p.y, r: 4.5, fill: 'var(--jade)', opacity: 0.75 });
+      svg.appendChild(c);
+      const t = el('text', { x: p.x + 7, y: p.y + 4, 'font-size': 10, fill: 'var(--muted)', opacity: 0 });
+      t.appendChild(txt(`穴${String(i + 1).padStart(2, '0')}`));
+      svg.appendChild(t);
+      return { c, t, p };
+    });
+
+    const query = el('circle', { r: 8, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 2.2 });
+    svg.appendChild(query);
+    const ring = el('circle', { r: 0, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 1, 'stroke-dasharray': '3 3' });
+    svg.appendChild(ring);
+    const link = el('line', { stroke: 'var(--cinnabar)', 'stroke-width': 1.6, 'stroke-dasharray': '4 3' });
+    svg.appendChild(link);
+
+    const capt = label(PAD, H - 20, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      // 查询点沿弧线游走
+      const ang = t * Math.PI * 2;
+      const qx = PAD + 30 + plotW / 2 + Math.cos(ang) * plotW * 0.33;
+      const qy = PAD + 20 + plotH / 2 + Math.sin(ang) * plotH * 0.32;
+      query.setAttribute('cx', qx);
+      query.setAttribute('cy', qy);
+
+      let best = null;
+      let bestD = Infinity;
+      for (const d of dotEls) {
+        const dd = (d.p.x - qx) ** 2 + (d.p.y - qy) ** 2;
+        if (dd < bestD) { bestD = dd; best = d; }
+        d.c.setAttribute('r', 4.5);
+        d.c.setAttribute('fill', 'var(--jade)');
+        d.t.setAttribute('opacity', 0);
+      }
+      const dist = Math.sqrt(bestD);
+      link.setAttribute('x1', qx); link.setAttribute('y1', qy);
+      link.setAttribute('x2', best.p.x); link.setAttribute('y2', best.p.y);
+      ring.setAttribute('cx', qx); ring.setAttribute('cy', qy);
+      ring.setAttribute('r', dist);
+      best.c.setAttribute('r', 8);
+      best.c.setAttribute('fill', 'var(--cinnabar)');
+      best.t.setAttribute('opacity', 1);
+
+      const step = clamp01(t * 3);
+      lineEls.forEach((l) => l.e.setAttribute('opacity', step > l.depth / 6 ? (0.5 - l.depth * 0.06) : 0));
+
+      capt.textContent = `查询点 → 最近腧穴 ${best.t.textContent} · 平面距离 ${dist.toFixed(1)}px（真实体表须改测地距离）`;
+    }, 11000, { staticT: 0.2 });
+  };
+
+  /* ───────────────────── junchen-attention ─────────────────────
+     君臣佐使 → 注意力权重。列 = 药味，行为权重分配。
+  */
+  FIGURES['junchen-attention'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '君臣佐使的注意力权重分配');
+
+    const herbs = ['桂枝', '芍药', '生姜', '大枣', '甘草'];
+    const roles = ['君', '臣', '佐', '使'];
+    const weights = [
+      [0.52, 0.30, 0.08, 0.06, 0.04],
+      [0.18, 0.44, 0.20, 0.12, 0.06],
+      [0.08, 0.16, 0.40, 0.24, 0.12],
+      [0.04, 0.08, 0.18, 0.32, 0.38],
+    ];
+
+    const GX = 110, GY = 60, CW = 84, CH = 52;
+    svg.appendChild(mono(GX, 34, '方剂：桂枝汤（示例）'));
+
+    herbs.forEach((h, j) => {
+      svg.appendChild(el('text', {
+        x: GX + j * CW + CW / 2, y: GY - 10, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 14, fill: 'var(--ink)',
+      }, [txt(h)]));
+    });
+    roles.forEach((r, i) => {
+      svg.appendChild(el('text', {
+        x: GX - 22, y: GY + i * CH + CH / 2 + 6, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--cinnabar)',
+      }, [txt(r)]));
+    });
+
+    const cells = [];
+    for (let i = 0; i < roles.length; i += 1) {
+      for (let j = 0; j < herbs.length; j += 1) {
+        const r = el('rect', {
+          x: GX + j * CW + 3, y: GY + i * CH + 3, width: CW - 6, height: CH - 6, rx: 6,
+          fill: 'var(--jade)', opacity: 0,
+        });
+        svg.appendChild(r);
+        const tx = el('text', {
+          x: GX + j * CW + CW / 2, y: GY + i * CH + CH / 2 + 5, 'text-anchor': 'middle',
+          'font-family': 'var(--mono)', 'font-size': 12, fill: 'var(--ink)', opacity: 0,
+        });
+        tx.appendChild(txt(weights[i][j].toFixed(2)));
+        svg.appendChild(tx);
+        cells.push({ r, tx, w: weights[i][j], i, j });
+      }
+    }
+
+    // 右侧：软化的权重条
+    const bx = GX + herbs.length * CW + 40;
+    svg.appendChild(mono(bx, 34, '行归一化 (softmax)'));
+    const bars = roles.map((r, i) => {
+      const max = Math.max(...weights[i]);
+      const w = Math.max(...weights[i]);
+      const g = el('g', {});
+      g.appendChild(el('text', { x: bx, y: GY + i * 44 + 10, 'font-size': 12, fill: 'var(--muted)' }, [txt(r + ' 最大: ' + max.toFixed(2))]));
+      const bg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 180, height: 8, rx: 4, fill: 'var(--paper-2)' });
+      g.appendChild(bg);
+      const fg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 0, height: 8, rx: 4, fill: 'var(--jade)' });
+      g.appendChild(fg);
+      svg.appendChild(g);
+      return { fg, w: w, max };
+    });
+
+    svg.appendChild(label(20, H - 40, '结构先验：君药权重最大 → 可作为注意力掩码，让模型学不到"反结构"的配伍', { fill: 'var(--muted)' }));
+    const capt = label(20, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const focusRow = Math.floor(t * 4) % 4;
+      const local = clamp01(t * 4 - Math.floor(t * 4));
+      cells.forEach((c) => {
+        const on = c.i === focusRow;
+        c.r.setAttribute('opacity', on ? c.w * (0.55 + 0.45 * local) : c.w * 0.14);
+        c.tx.setAttribute('opacity', on ? 1 : 0.25);
+      });
+      bars.forEach((b, i) => {
+        b.fg.setAttribute('width', i === focusRow ? 180 * (b.max) * (0.5 + 0.5 * local) : 180 * b.max * 0.35);
+      });
+      capt.textContent = `当前角色：${roles[focusRow]} · 权重最高者为 ${herbs[weights[focusRow].indexOf(Math.max(...weights[focusRow]))]}`;
+    }, 8000, { staticT: 0.1 });
+  };
+
+  /* ───────────────────── 自动挂载 ───────────────────── */
+  function mount(root) {
+    const hosts = (root || document).querySelectorAll('[data-figure]');
+    for (const host of hosts) {
+      if (host.dataset.figureMounted === '1') continue;
+      const fn = FIGURES[host.dataset.figure];
+      if (!fn) {
+        host.innerHTML = `<p class="muted small">未知图形：<code>${host.dataset.figure}</code></p>`;
+        host.dataset.figureMounted = '1';
+        continue;
+      }
+      host.classList.add('figure');
+      fn(host);
+      host.dataset.figureMounted = '1';
+    }
+  }
+
+  window.TCMFigures = { FIGURES, mount };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => mount());
+  } else {
+    mount();
+  }
+  // 单页内动态插入的图形（章节页异步渲染）也能挂上
+  new MutationObserver(() => mount()).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+<script>
+(function(){
+  const deck=document.getElementById('deck');
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+
+  // ── 单帧模式：?shot=N 只渲染第 N 张，供无头浏览器逐帧截图 ──
+  // 截图器需要一张「干净的、正好一屏」的画面，所以这里藏掉其余幻灯片、
+  // 关掉滚动吸附、去掉 HUD，并在 title 上打就绪标记（渲染完成前截图会得到空白）。
+  const shot=new URLSearchParams(location.search).get('shot');
+  if(shot!==null){
+    const n=Math.max(0,Math.min(slides.length-1,Number(shot)||0));
+    slides.forEach((s,idx)=>{ if(idx!==n) s.style.display='none'; });
+    deck.style.overflow='hidden';
+    deck.style.scrollSnapType='none';
+    const hud=document.getElementById('hud');
+    if(hud) hud.style.display='none';
+    const target=slides[n];
+    if(target){ target.style.borderBottom='0'; target.scrollIntoView({block:'start'}); }
+    document.title='SHOT_READY '+n+' of '+slides.length;
+    if(window.TCMFigures)window.TCMFigures.mount(document);
+    // 只读视图：不绑键盘与点击，避免截图过程中页面状态改变
+    return;
+  }
+
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView();}
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    else if(e.key==='p'||e.key==='P'){e.preventDefault();print();}
+  });
+  deck.addEventListener('click',e=>{if(e.target.closest('a'))return;go(i+1);});
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)i=+en.target.dataset.i;});},{root:deck,threshold:.6});
+  slides.forEach(s=>io.observe(s));
+  if(window.TCMFigures)window.TCMFigures.mount(document);
+})();
+</script>
+</body>
+</html>

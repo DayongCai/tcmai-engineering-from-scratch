@@ -1,0 +1,79 @@
+{
+ "lesson": "01-fangfa-yanzheng",
+ "title": "分析方法的验证与数据处理",
+ "subject": "10-zhongyao-fenxi-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 1 章「分析方法的验证与数据处理」要回答的核心问题是什么？",
+   "options": [
+    "方法验证的七项参数，为什么缺一项就不能用",
+    "研究对象与任务",
+    "中药分析学与相关学科",
+    "中药质量标准概述"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：准确度、精密度、专属性、线性、范围、检测限、耐用性——每一项对应一个具体的失败方式，不是打勾表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "数据与限度",
+    "样品处理",
+    "测定条件",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（分析目的）重心落在哪一项？",
+   "options": [
+    "含量测定",
+    "乙酸-丙二酸途径",
+    "莽草酸途径",
+    "甲戊二羟酸途径"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "4 个",
+    "6 个",
+    "8 个",
+    "10 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "本课程数值类命中只有 15 处，说明什么？",
+   "options": [
+    "教材常数多以范围或文字表述，可数的值少不等于不量化",
+    "研究对象与任务",
+    "中药分析学与相关学科",
+    "中药质量标准概述"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：真正的量化在方法学七项指标里。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/zhongyao-fenxi/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "20-weisheng-fa-xue",
+  "title": "卫生法学",
+  "en": "Health Law",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 118,
+  "type": "Reference",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 36,
+  "bridge": "法条检索→规则化 / 医疗纠纷→案例推理",
+  "chaptersTarget": 18,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/20-weisheng-fa-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/20-weisheng-fa-xue",
+    "chaptersWritten": 18,
+    "words": 355790,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#卫生法学",
+    "extractedAt": "2026-10-21"
+  }
+}

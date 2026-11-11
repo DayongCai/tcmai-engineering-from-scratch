@@ -1,0 +1,567 @@
+{
+ "code": 0,
+ "message": "OK",
+ "ttl": 1,
+ "data": {
+  "bvid": "BV13shNz8ECv",
+  "aid": 114959161761281,
+  "videos": 29,
+  "tid": 208,
+  "tid_v2": 2084,
+  "tname": "",
+  "tname_v2": "",
+  "copyright": 1,
+  "pic": "http://i0.hdslb.com/bfs/archive/4e289aa1e9119975d51f2ce04affb474a774cc17.jpg",
+  "title": "《伤寒论》原文全脑记忆 398条快速记忆法！【记忆宫殿】无痛快速记《伤寒论》，三分钟教会你方法。| 医学| 考试| 学霸| 考试",
+  "pubdate": 1754137976,
+  "ctime": 1754137976,
+  "desc": "",
+  "desc_v2": null,
+  "state": 0,
+  "duration": 10871,
+  "rights": {
+   "bp": 0,
+   "elec": 0,
+   "download": 1,
+   "movie": 0,
+   "pay": 0,
+   "hd5": 0,
+   "no_reprint": 1,
+   "autoplay": 1,
+   "ugc_pay": 0,
+   "is_cooperation": 0,
+   "ugc_pay_preview": 0,
+   "no_background": 0,
+   "clean_mode": 0,
+   "is_stein_gate": 0,
+   "is_360": 0,
+   "no_share": 0,
+   "arc_pay": 0,
+   "free_watch": 0
+  },
+  "owner": {
+   "mid": 3546932886637179,
+   "name": "面包卷要上岸",
+   "face": "https://i0.hdslb.com/bfs/face/a5a5fa7775952bc1f915d320a44c7639edaa09ca.jpg"
+  },
+  "stat": {
+   "aid": 114959161761281,
+   "view": 12487,
+   "danmaku": 2,
+   "reply": 11,
+   "favorite": 624,
+   "coin": 51,
+   "share": 51,
+   "now_rank": 0,
+   "his_rank": 0,
+   "like": 186,
+   "dislike": 0,
+   "evaluation": "",
+   "vt": 0
+  },
+  "argue_info": {
+   "argue_msg": "",
+   "argue_type": 0,
+   "argue_link": ""
+  },
+  "dynamic": "",
+  "cid": 31444635593,
+  "dimension": {
+   "width": 1280,
+   "height": 720,
+   "rotate": 0
+  },
+  "premiere": null,
+  "teenage_mode": 0,
+  "is_chargeable_season": false,
+  "is_story": false,
+  "is_upower_exclusive": false,
+  "is_upower_play": false,
+  "is_upower_preview": false,
+  "enable_vt": 0,
+  "vt_display": "",
+  "is_upower_exclusive_with_qa": false,
+  "is_hua_sheng": false,
+  "no_cache": false,
+  "pages": [
+   {
+    "cid": 31444635593,
+    "page": 1,
+    "from": "vupload",
+    "part": "01 《伤寒论》原文全脑记忆-（序）",
+    "duration": 515,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 720,
+     "rotate": 0
+    },
+    "first_frame": "http://i1.hdslb.com/bfs/storyff/n250802tx1gytvsbbguxi3iltw14cxhn_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444635622,
+    "page": 2,
+    "from": "vupload",
+    "part": "02 《伤寒论》原文全脑记忆（第4、5条）",
+    "duration": 322,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 720,
+     "rotate": 0
+    },
+    "first_frame": "http://i2.hdslb.com/bfs/storyff/n250802tx2x9zgft6odf37195rdtagky_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697150,
+    "page": 3,
+    "from": "vupload",
+    "part": "03 《伤寒论》原文全脑记忆（第6条）",
+    "duration": 500,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 720,
+     "rotate": 0
+    },
+    "first_frame": "http://i2.hdslb.com/bfs/storyff/n250802txtrhlltuv463wbh10uuc0dyd_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697091,
+    "page": 4,
+    "from": "vupload",
+    "part": "04 《伤寒论》原文全脑记忆（第7-10条）",
+    "duration": 503,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i1.hdslb.com/bfs/storyff/n250802txv6e8ph50zgkjd8qbxbveukt_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444635566,
+    "page": 5,
+    "from": "vupload",
+    "part": "05 《伤寒论》原文全脑记忆（第11-13条）",
+    "duration": 420,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i2.hdslb.com/bfs/storyff/n250802txvpgxnontpxpq2f0x4pg91u2_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697163,
+    "page": 6,
+    "from": "vupload",
+    "part": "06 《伤寒论》原文全脑记忆第14-16条",
+    "duration": 420,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i2.hdslb.com/bfs/storyff/n250802tx2t5p58zl9abh0uqhie58yx1_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697223,
+    "page": 7,
+    "from": "vupload",
+    "part": "07 《伤寒论》原文全脑记忆（第17-19条）",
+    "duration": 262,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i0.hdslb.com/bfs/storyff/n250802txierx2dghgv5h2b3qkcnzvmh_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697172,
+    "page": 8,
+    "from": "vupload",
+    "part": "08 《伤寒论》原文全脑记忆（第20-22条）",
+    "duration": 334,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i0.hdslb.com/bfs/storyff/n250802tx2yqffbzgg6el124oqe02scx_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697242,
+    "page": 9,
+    "from": "vupload",
+    "part": "09 《伤寒论》原文全脑记忆（第23-24条）",
+    "duration": 456,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i1.hdslb.com/bfs/storyff/n250802tx3n5m8930u2ntg2sqsh2wdd3_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697249,
+    "page": 10,
+    "from": "vupload",
+    "part": "10 《伤寒论》原文全脑记忆（第27-28）",
+    "duration": 386,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i2.hdslb.com/bfs/storyff/n250802tx1p2hqaajk03seyz43en0he6_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697258,
+    "page": 11,
+    "from": "vupload",
+    "part": "11 《伤寒论》原文全脑记忆（第29条）",
+    "duration": 423,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i0.hdslb.com/bfs/storyff/n250802txrj2unzb2rtv328cghmkdpic_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697278,
+    "page": 12,
+    "from": "vupload",
+    "part": "12 《伤寒论》原文全脑记忆（第30条）",
+    "duration": 510,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i1.hdslb.com/bfs/storyff/n250802tx2d45w2qg45ksps512c3z3y1_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697351,
+    "page": 13,
+    "from": "vupload",
+    "part": "13 《伤寒论》原文全脑记忆（第31-34条）",
+    "duration": 472,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i0.hdslb.com/bfs/storyff/n250802txw2c6q9mmnz1f3npzviunilm_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697361,
+    "page": 14,
+    "from": "vupload",
+    "part": "14 《伤寒论》原文全脑记忆（第35-37条）",
+    "duration": 394,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i2.hdslb.com/bfs/storyff/n250802tx3inavhrsw5yt639y8ix85pn_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697303,
+    "page": 15,
+    "from": "vupload",
+    "part": "15 《伤寒论》原文全脑记忆（第40-41条）",
+    "duration": 476,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i2.hdslb.com/bfs/storyff/n250802tx31p7fp0d7mz153e4y6zexpl_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697313,
+    "page": 16,
+    "from": "vupload",
+    "part": "16 《伤寒论》原文全脑记忆（第46-47条）",
+    "duration": 332,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i1.hdslb.com/bfs/storyff/n250802txt5z8fen0ebgy31ff2df2nr1_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697423,
+    "page": 17,
+    "from": "vupload",
+    "part": "17 《伤寒论》原文全脑记忆（第59-61条）",
+    "duration": 379,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i1.hdslb.com/bfs/storyff/n250802tx13qw2wowiswxa3ny99zshj9_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697391,
+    "page": 18,
+    "from": "vupload",
+    "part": "18 《伤寒论》原文全脑记忆（第67-69条）",
+    "duration": 375,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i1.hdslb.com/bfs/storyff/n250802tx1tqnau9w24odc1vz6o72eer_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697400,
+    "page": 19,
+    "from": "vupload",
+    "part": "19 《伤寒论》原文全脑记忆（第70-72条）",
+    "duration": 382,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i0.hdslb.com/bfs/storyff/n250802tx2a55hxpp61po134ydwecxvl_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697457,
+    "page": 20,
+    "from": "vupload",
+    "part": "20 《伤寒论》原文全脑记忆（第76条）",
+    "duration": 335,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i2.hdslb.com/bfs/storyff/n250802tx3ehnuz7m4zydq1999jal02l_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697419,
+    "page": 21,
+    "from": "vupload",
+    "part": "21 《伤寒论》原文全脑记忆（第77-79条）",
+    "duration": 267,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i0.hdslb.com/bfs/storyff/n250802tx3m0sax2oagg3j327btihfvg_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697466,
+    "page": 22,
+    "from": "vupload",
+    "part": "22 伤寒论原文全脑记忆（第80-82条）",
+    "duration": 363,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i1.hdslb.com/bfs/storyff/n250802txvmnv403irgi6atgo29uu6yq_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697641,
+    "page": 23,
+    "from": "vupload",
+    "part": "23 伤寒论原文全脑记忆（第88-90条）",
+    "duration": 385,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i2.hdslb.com/bfs/storyff/n250802txu7pognaznx4832vm1a0whpp_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697580,
+    "page": 24,
+    "from": "vupload",
+    "part": "24 伤寒论原文全脑记忆(第91-92条)",
+    "duration": 273,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i1.hdslb.com/bfs/storyff/n250802tx3sjarovnkjrse2ven53f4u0_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697598,
+    "page": 25,
+    "from": "vupload",
+    "part": "25 《伤寒论》原文全脑记忆（第93条）",
+    "duration": 180,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i1.hdslb.com/bfs/storyff/n250802tx1nahzjt4k02vl1es3ud8pp7_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697656,
+    "page": 26,
+    "from": "vupload",
+    "part": "26 《伤寒论》原文全脑记忆（第94-95条）",
+    "duration": 309,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i2.hdslb.com/bfs/storyff/n250802tx1xq76bnilujep4i94jmvk96_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697614,
+    "page": 27,
+    "from": "vupload",
+    "part": "27 《伤寒论》原文全脑记忆（第97条）",
+    "duration": 341,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i0.hdslb.com/bfs/storyff/n250802tx2jprrdz4442j13t9swctsq0_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697674,
+    "page": 28,
+    "from": "vupload",
+    "part": "28 《伤寒论》原文全脑记忆（第99-100条）",
+    "duration": 317,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i0.hdslb.com/bfs/storyff/n250802tx3k6wn1cxuwza92q4v1pv3we_firsti.jpg",
+    "ctime": 1754137976
+   },
+   {
+    "cid": 31444697689,
+    "page": 29,
+    "from": "vupload",
+    "part": "29 ：图说中医之《心与心包》",
+    "duration": 240,
+    "vid": "",
+    "weblink": "",
+    "dimension": {
+     "width": 1280,
+     "height": 718,
+     "rotate": 0
+    },
+    "first_frame": "http://i0.hdslb.com/bfs/storyff/n250802tx25qnlfw1662e91x3zoz9e51_firsti.jpg",
+    "ctime": 1754137976
+   }
+  ],
+  "subtitle": {
+   "allow_submit": false,
+   "list": []
+  },
+  "is_season_display": false,
+  "user_garb": {
+   "url_image_ani_cut": ""
+  },
+  "honor_reply": {},
+  "like_icon": "",
+  "need_jump_bv": false,
+  "disable_show_up_info": false,
+  "is_story_play": 0,
+  "is_view_self": false
+ }
+}

@@ -1,54 +1,71 @@
 {
-  "slug": "02-zhongyiyao-zhengce-fagui",
-  "title": "中医药政策与法规",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-zhongyiyaofa",
-      "title": "中医药法的框架与要点",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-zhiye-yisheng",
-      "title": "执业医师与诊所管理",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-zhuce-jianguan",
-      "title": "中药注册与生产监管",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-yiliao-yaoshi",
-      "title": "医疗机构与药事管理",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-yibao-zhifu",
-      "title": "医保政策与支付方式",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-biaozhun-zhishi",
-      "title": "中医药标准与知识产权",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-hegui-anli",
-      "title": "合规风险与法律责任的案例",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-zhengce-bijiao",
-      "title": "政策文本的检索与比较",
-      "status": "📋"
-    }
-  ]
+ "slug": "02-zhongyiyao-zhengce-fagui",
+ "title": "中医药政策法规",
+ "note": "8 章 = 教材 8 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-z21",
+   "title": "卫生法与中医药法的法理基础",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-z22",
+   "title": "立法、执法与行政责任",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-z23",
+   "title": "机构与人员管理制度",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-z24",
+   "title": "医疗行为与质量安全",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-z25",
+   "title": "药品、器械与消毒产品监管",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-z26",
+   "title": "公共卫生与健康促进法制",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-z27",
+   "title": "中医药法律制度与政策工具",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-z28",
+   "title": "新兴技术立法与权益救济",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

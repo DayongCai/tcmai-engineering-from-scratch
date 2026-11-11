@@ -1,0 +1,107 @@
+{
+  "chapter": "03-zangfu-bianzheng-gangyao",
+  "slideCount": 20,
+  "segmentCount": 12,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 30
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 58
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 214
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 126
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 404
+    },
+    {
+      "n": 6,
+      "segment": 5,
+      "chars": 383
+    },
+    {
+      "n": 7,
+      "segment": 5,
+      "chars": 398
+    },
+    {
+      "n": 8,
+      "segment": 5,
+      "chars": 307
+    },
+    {
+      "n": 9,
+      "segment": 6,
+      "chars": 396
+    },
+    {
+      "n": 10,
+      "segment": 6,
+      "chars": 146
+    },
+    {
+      "n": 11,
+      "segment": 7,
+      "chars": 396
+    },
+    {
+      "n": 12,
+      "segment": 7,
+      "chars": 61
+    },
+    {
+      "n": 13,
+      "segment": 8,
+      "chars": 387
+    },
+    {
+      "n": 14,
+      "segment": 8,
+      "chars": 232
+    },
+    {
+      "n": 15,
+      "segment": 9,
+      "chars": 402
+    },
+    {
+      "n": 16,
+      "segment": 9,
+      "chars": 150
+    },
+    {
+      "n": 17,
+      "segment": 10,
+      "chars": 339
+    },
+    {
+      "n": 18,
+      "segment": 11,
+      "chars": 409
+    },
+    {
+      "n": 19,
+      "segment": 11,
+      "chars": 139
+    },
+    {
+      "n": 20,
+      "segment": 12,
+      "chars": 52
+    }
+  ]
+}

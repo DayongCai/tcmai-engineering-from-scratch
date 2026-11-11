@@ -1,0 +1,168 @@
+{
+ "slug": "20-jijiu-huli-xue",
+ "title": "急救护理学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gaishu",
+   "title": "急救护理学概述",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-gaishu/docs/zh.md",
+   "code": "chapters/01-gaishu/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-moshi-tuandui",
+   "title": "急救护理的工作模式与团队协作",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-moshi-tuandui/docs/zh.md",
+   "code": "chapters/02-moshi-tuandui/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-pinggu-fenzhen",
+   "title": "急救评估与预检分诊",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-pinggu-fenzhen/docs/zh.md",
+   "code": "chapters/03-pinggu-fenzhen/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-jishu-peihe",
+   "title": "急救常用技术与配合",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-jishu-peihe/docs/zh.md",
+   "code": "chapters/04-jishu-peihe/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-xinbo-junting",
+   "title": "心搏骤停与心肺复苏的护理配合",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-xinbo-junting/docs/zh.md",
+   "code": "chapters/05-xinbo-junting/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-xiuke-guomin",
+   "title": "休克与严重过敏反应的急救护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-xiuke-guomin/docs/zh.md",
+   "code": "chapters/06-xiuke-guomin/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-huxi-jizheng",
+   "title": "呼吸急症的急救护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-huxi-jizheng/docs/zh.md",
+   "code": "chapters/07-huxi-jizheng/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-xiongton-futong",
+   "title": "胸痛与急性腹痛的急救护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-xiongton-futong/docs/zh.md",
+   "code": "chapters/08-xiongton-futong/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-yishi-chouchu",
+   "title": "意识障碍与抽搐的急救护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-yishi-chouchu/docs/zh.md",
+   "code": "chapters/09-yishi-chouchu/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-zhongdu-yiwai",
+   "title": "急性中毒与意外伤害的急救护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-zhongdu-yiwai/docs/zh.md",
+   "code": "chapters/10-zhongdu-yiwai/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-chuangshang",
+   "title": "创伤急救护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-chuangshang/docs/zh.md",
+   "code": "chapters/11-chuangshang/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-huanjing-liliao",
+   "title": "环境与理化因素所致急症的急救护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-huanjing-liliao/docs/zh.md",
+   "code": "chapters/12-huanjing-liliao/code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-fuchanke",
+   "title": "妇产科急症的急救护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/13-fuchanke/docs/zh.md",
+   "code": "chapters/13-fuchanke/code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-erke",
+   "title": "儿科急症的急救护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/14-erke/docs/zh.md",
+   "code": "chapters/14-erke/code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-laonian-teshu",
+   "title": "老年与特殊人群急症的急救护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/15-laonian-teshu/docs/zh.md",
+   "code": "chapters/15-laonian-teshu/code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-zainan-qunti",
+   "title": "灾难与群体伤害的急救护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/16-zainan-qunti/docs/zh.md",
+   "code": "chapters/16-zainan-qunti/code/main.js"
+  },
+  {
+   "n": 17,
+   "slug": "17-zhiliang-fengxian",
+   "title": "急救护理质量与风险管理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/17-zhiliang-fengxian/docs/zh.md",
+   "code": "chapters/17-zhiliang-fengxian/code/main.js"
+  },
+  {
+   "n": 18,
+   "slug": "18-pingtai",
+   "title": "急救护理学与教学平台",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/18-pingtai/docs/zh.md",
+   "code": "chapters/18-pingtai/code/main.js"
+  }
+ ]
+}

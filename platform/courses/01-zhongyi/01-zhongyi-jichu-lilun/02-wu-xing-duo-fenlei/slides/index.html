@@ -26,11 +26,16 @@ blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-
   text-transform:uppercase;margin-bottom:14px}
 .kicker.warn{color:var(--cinnabar)}
 p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
-.compact{font-size:clamp(14px,1.35vw,18px);line-height:1.75;max-height:64vh;overflow:auto}
-.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em}
-.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:13px}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
-.compact table{border-collapse:collapse;font-size:13px;width:100%}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
 .compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
 /* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
 .math{font-style:italic;font-family:var(--serif)}
@@ -80,7 +85,7 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 </section>
 <section class="slide" data-i="6">
   <div class="slide-inner"><div class="kicker">核心概念</div>
-                <div class="compact"><h3 id="中医-五行与生克">中医：五行与生克</h3>
+                <div class="compact denser"><h3 id="中医-五行与生克">中医：五行与生克</h3>
 <p>《尚书·洪范》给出五行的名目与次序；《素问·五运行大论》等篇给出相生相克的关系：</p>
 <div class="codeblock"><div class="codeblock-lang">text</div><pre><code class="lang-text">相生：木 → 火 → 土 → 金 → 水 → 木   （外圈，顺时针）
 相克：木克土 · 土克水 · 水克火 · 火克金 · 金克木  （五角星）</code></pre></div>
@@ -109,7 +114,7 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 </section>
 <section class="slide" data-i="7">
   <div class="slide-inner"><div class="kicker">BUILD IT · 从零实现</div>
-                <div class="compact"><p>两件事：softmax（带数值稳定），以及把生克写成可求导的 hinge 约束。</p>
+                <div class="compact dense"><p>两件事：softmax（带数值稳定），以及把生克写成可求导的 hinge 约束。</p>
 <div class="codeblock"><div class="codeblock-lang">javascript</div><pre><code class="lang-javascript">function softmax(z) {
   const m = Math.max(...z);
   const e = z.map((v) =&gt; Math.exp(v - m));   // ← 减 max：正确性要求，不是优化

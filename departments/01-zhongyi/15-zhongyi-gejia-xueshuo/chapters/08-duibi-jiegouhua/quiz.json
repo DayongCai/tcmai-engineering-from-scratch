@@ -1,0 +1,79 @@
+{
+  "lesson": "08-duibi-jiegouhua",
+  "title": "对照阅读与结构化：一张表里放八派",
+  "subject": "15-zhongyi-gejia-xueshuo",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "八派对账表最不该怎么读？",
+      "options": [
+        "读排序（命中高低）",
+        "读主张",
+        "读关联证候",
+        "读跨课"
+      ],
+      "correct": 0,
+      "explanation": "命中主要反映词表噪声。"
+    },
+    {
+      "stage": "check",
+      "question": "哪处分歧不能用「病种不同」解释？",
+      "options": [
+        "朱震亨「阳有余」与张景岳「阳非有余」",
+        "攻与补",
+        "伤寒与温病",
+        "汗与下"
+      ],
+      "correct": 0,
+      "explanation": "同一病人两侧判断相反。"
+    },
+    {
+      "stage": "check",
+      "question": "结构化能做的事情是？",
+      "options": [
+        "检索、对照、谱系（需原书）",
+        "判定归属",
+        "评价高下",
+        "预测疗效"
+      ],
+      "correct": 0,
+      "explanation": "不能做的是归属与高下。"
+    },
+    {
+      "stage": "check",
+      "question": "第三种解释（词的问题）为何危险？",
+      "options": [
+        "容易把真实分歧抹平成「其实是一回事」",
+        "因为不准确",
+        "因为无证据",
+        "因为太复杂"
+      ],
+      "correct": 0,
+      "explanation": "顺序是：先标词义差异，再判断是否同一件事。"
+    },
+    {
+      "stage": "post",
+      "question": "「原文 / 词面统计 / 教材概括 / 个人推断」四层里，哪一层不能写成结论？",
+      "options": [
+        "个人推断",
+        "原文",
+        "词面统计",
+        "教材概括"
+      ],
+      "correct": 0,
+      "explanation": "四层须分清。"
+    },
+    {
+      "stage": "post",
+      "question": "八派之争留给今天最有用的东西是？",
+      "options": [
+        "同一件事可以有几种讲法，以及各自的代价",
+        "某一派的方",
+        "某个人的结论",
+        "一套标准答案"
+      ],
+      "correct": 0,
+      "explanation": "学派的终点是判断力，不是站队。"
+    }
+  ]
+}

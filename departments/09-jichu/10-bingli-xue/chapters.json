@@ -1,0 +1,132 @@
+{
+ "slug": "10-bingli-xue",
+ "title": "病理学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xulun",
+   "title": "绪论",
+   "status": "🚧"
+  },
+  {
+   "n": 2,
+   "slug": "02-jibing-gailun",
+   "title": "疾病概论",
+   "status": "🚧"
+  },
+  {
+   "n": 3,
+   "slug": "03-shiying-sunshang-xiufu",
+   "title": "细胞和组织的适应、损伤与修复",
+   "status": "🚧"
+  },
+  {
+   "n": 4,
+   "slug": "04-jubu-xueye-xunhuan-zhangai",
+   "title": "局部血液循环障碍",
+   "status": "🚧"
+  },
+  {
+   "n": 5,
+   "slug": "05-yanzheng",
+   "title": "炎症",
+   "status": "🚧"
+  },
+  {
+   "n": 6,
+   "slug": "06-zhongliu",
+   "title": "肿瘤",
+   "status": "🚧"
+  },
+  {
+   "n": 7,
+   "slug": "07-shui-dianjiezhi-wenluan",
+   "title": "水、电解质代谢紊乱",
+   "status": "🚧"
+  },
+  {
+   "n": 8,
+   "slug": "08-shuizhong",
+   "title": "水肿",
+   "status": "🚧"
+  },
+  {
+   "n": 9,
+   "slug": "09-suanjian-pingheng-wenluan",
+   "title": "酸碱平衡紊乱",
+   "status": "🚧"
+  },
+  {
+   "n": 10,
+   "slug": "10-queyang",
+   "title": "缺氧",
+   "status": "🚧"
+  },
+  {
+   "n": 11,
+   "slug": "11-fare",
+   "title": "发热",
+   "status": "🚧"
+  },
+  {
+   "n": 12,
+   "slug": "12-yingji-jibing",
+   "title": "应激与疾病",
+   "status": "🚧"
+  },
+  {
+   "n": 13,
+   "slug": "13-xiuke",
+   "title": "休克",
+   "status": "🚧"
+  },
+  {
+   "n": 14,
+   "slug": "14-dic",
+   "title": "弥散性血管内凝血",
+   "status": "🚧"
+  },
+  {
+   "n": 15,
+   "slug": "15-queshangzaiguanzhu-sunshang",
+   "title": "缺血-再灌注损伤",
+   "status": "🚧"
+  },
+  {
+   "n": 16,
+   "slug": "16-xinxueguan-jibing",
+   "title": "心血管系统疾病",
+   "status": "🚧"
+  },
+  {
+   "n": 17,
+   "slug": "17-huxi-jibing",
+   "title": "呼吸系统疾病",
+   "status": "🚧"
+  },
+  {
+   "n": 18,
+   "slug": "18-xiaohua-jibing",
+   "title": "消化系统疾病",
+   "status": "🚧"
+  },
+  {
+   "n": 19,
+   "slug": "19-miniao-shengzhi-jibing",
+   "title": "泌尿及生殖系统疾病",
+   "status": "🚧"
+  },
+  {
+   "n": 20,
+   "slug": "20-shenjing-neifenmi-jibing",
+   "title": "常见神经及内分泌系统疾病",
+   "status": "🚧"
+  },
+  {
+   "n": 21,
+   "slug": "21-chuanranbing-jishengchong",
+   "title": "常见传染病及寄生虫病",
+   "status": "🚧"
+  }
+ ]
+}

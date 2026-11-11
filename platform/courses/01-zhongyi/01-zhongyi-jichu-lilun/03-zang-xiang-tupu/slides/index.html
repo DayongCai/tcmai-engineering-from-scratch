@@ -26,11 +26,16 @@ blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-
   text-transform:uppercase;margin-bottom:14px}
 .kicker.warn{color:var(--cinnabar)}
 p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
-.compact{font-size:clamp(14px,1.35vw,18px);line-height:1.75;max-height:64vh;overflow:auto}
-.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em}
-.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:13px}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:hidden}
+.compact.dense{font-size:clamp(16px,1.42vw,22px);line-height:1.6;max-height:80vh}
+.compact.dense table{font-size:14px}
+.compact.denser{font-size:clamp(14px,1.22vw,18px);line-height:1.5;max-height:82vh}
+.compact.denser table{font-size:12px}
+.compact.denser pre{font-size:12px}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
 .compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
-.compact table{border-collapse:collapse;font-size:13px;width:100%}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
 .compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
 /* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
 .math{font-style:italic;font-family:var(--serif)}
@@ -80,7 +85,7 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 </section>
 <section class="slide" data-i="6">
   <div class="slide-inner"><div class="kicker">核心概念</div>
-                <div class="compact"><h3 id="中医-藏与象">中医：藏与象</h3>
+                <div class="compact denser"><h3 id="中医-藏与象">中医：藏与象</h3>
 <p>《素问·五藏别论》：「所谓五藏者，藏精气而不泻也。」——「藏」指藏于内的脏腑功能。
 「象」指这些功能表现于外的征象。</p>
 <p>关键在于<strong>藏象的核心是「联系」，不是「属性清单」</strong>：</p>
@@ -110,7 +115,7 @@ g.in.get('目')   // → [{ type:'开窍于', from:'肝' }]</code></pre></div>
 </section>
 <section class="slide" data-i="7">
   <div class="slide-inner"><div class="kicker">BUILD IT · 从零实现</div>
-                <div class="compact"><p>先定本体，再灌数据：</p>
+                <div class="compact denser"><p>先定本体，再灌数据：</p>
 <div class="codeblock"><div class="codeblock-lang">javascript</div><pre><code class="lang-javascript">const NODE_TYPES = ['脏', '腑', '官窍', '情志', '形体', '华', '液', '五行'];
 const EDGE_TYPES = ['相表里', '开窍于', '在志为', '在体为', '其华在', '化为', '属五行', '相生', '相克'];</code></pre></div>
 <p>相表里是对称关系，两侧都要建边：</p>

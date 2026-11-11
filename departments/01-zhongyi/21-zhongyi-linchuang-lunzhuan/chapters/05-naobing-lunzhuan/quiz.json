@@ -1,0 +1,79 @@
+{
+  "lesson": "05-naobing-lunzhuan",
+  "title": "脑病科轮转：眩晕与中风的辨证接诊",
+  "subject": "21-zhongyi-linchuang-lunzhuan",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "脑病科为何要跨章取病？",
+      "options": [
+        "教材按脏腑分章，没有脑病章",
+        "因为病太多",
+        "因为篇幅不够",
+        "因为新设科室"
+      ],
+      "correct": 0,
+      "explanation": "科室按病种收人。"
+    },
+    {
+      "stage": "check",
+      "question": "脑病科 6 病取自哪两章？",
+      "options": [
+        "肝系病证与心系病证",
+        "肺系与肾系",
+        "脾胃系与肝系",
+        "气血津液与肢体经络"
+      ],
+      "correct": 0,
+      "explanation": "头痛眩晕中风＋痫病痴呆厥证。"
+    },
+    {
+      "stage": "check",
+      "question": "脑病科证候库同名证为何是 0？",
+      "options": [
+        "证候库派生自外、儿、妇，内科病名不在其中",
+        "因为没证",
+        "因为统计错",
+        "因为教材缺"
+      ],
+      "correct": 0,
+      "explanation": "层的缺口，不是病的缺口。"
+    },
+    {
+      "stage": "check",
+      "question": "脑病科字数在五科中的位置？",
+      "options": [
+        "最少（24,964）",
+        "最多",
+        "第三",
+        "并列第一"
+      ],
+      "correct": 0,
+      "explanation": "跨章取病，非完整章。"
+    },
+    {
+      "stage": "post",
+      "question": "补救证候库 0 命中的两条办法是？",
+      "options": [
+        "用内科辨证小节作证名；把证候库扩到内科",
+        "删掉该科",
+        "改成 0 不考",
+        "引用外源"
+      ],
+      "correct": 0,
+      "explanation": "第二条列为待办。"
+    },
+    {
+      "stage": "post",
+      "question": "中风在轮转要求里最重要的动作是？",
+      "options": [
+        "按语（误作眩晕的后果）",
+        "概述",
+        "病因病机",
+        "预防调护"
+      ],
+      "correct": 0,
+      "explanation": "时间窗病，误判代价最大。"
+    }
+  ]
+}

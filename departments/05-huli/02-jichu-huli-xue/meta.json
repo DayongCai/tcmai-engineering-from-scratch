@@ -1,29 +1,35 @@
 {
-  "slug": "02-jichu-huli-xue",
-  "title": "基础护理学",
-  "en": "Fundamental Nursing",
-  "deptSlug": "05-huli",
-  "deptTitle": "护理系",
-  "globalN": 62,
-  "type": "Core",
-  "semester": 2,
-  "stage": "sheng",
-  "stageTitle": "生",
-  "hours": 72,
-  "bridge": "护理操作→标准作业流程 / 生命体征→异常检测",
-  "chaptersTarget": 10,
-  "chapters": [],
-  "platform": {
-    "id": "tcmP",
-    "coursePath": "platform/courses/05-huli/02-jichu-huli-xue",
-    "videosPublished": 0,
-    "status": "planned"
-  },
-  "textbook": {
-    "id": "textbooks",
-    "path": "textbooks/05-huli/02-jichu-huli-xue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
-  }
+ "slug": "02-jichu-huli-xue",
+ "title": "基础护理学",
+ "en": "Fundamental Nursing",
+ "deptSlug": "05-huli",
+ "deptTitle": "护理系",
+ "globalN": 62,
+ "type": "Core",
+ "semester": 2,
+ "stage": "sheng",
+ "stageTitle": "生",
+ "hours": 72,
+ "bridge": "护理操作→标准作业流程 / 生命体征→异常检测",
+ "chaptersTarget": 14,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/05-huli/02-jichu-huli-xue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/05-huli/02-jichu-huli-xue",
+  "chaptersWritten": 0,
+  "words": 0,
+  "status": "planned"
+ },
+ "底本": {
+  "kind": "教材",
+  "from": "F:/textbooks/qhzy-护理综合技能.xlsx",
+  "dir": "standards/jichu-huli",
+  "note": "18 内容章 / 18 单元 / 355,351 汉字；母本为「技能训练与考核」视角，课程 14 章按母本骨架重排"
+ }
 }

@@ -46,6 +46,12 @@ if (!fs.existsSync(subjectDir)) {
   process.exit(1);
 }
 
+// 学科级分段映射（可选）：本仓默认按七段模板切，但不是每门课都长成那样。
+// 病理生理学的 docs 是「一、二、三…」的中文序号结构，不认识就会被当 null 静默丢掉——
+// 那正是「有字但旁白只有 5 段」的成因。给该学科一份 narration-map.json 即可按前缀认。
+const mapPath = path.join(subjectDir, 'narration-map.json');
+const MAP = fs.existsSync(mapPath) ? JSON.parse(fs.readFileSync(mapPath, 'utf8')) : null;
+
 const chaptersDir = path.join(subjectDir, 'chapters');
 if (!fs.existsSync(chaptersDir)) {
   console.error(`✗ 学科下没有 chapters/ 目录`);
@@ -68,9 +74,9 @@ const targets = chapterArg ? [chapterArg] : chapters;
 function segment(md) {
   const lines = md.replace(/\r\n/g, '\n').split('\n');
   const segs = [];
-  const push = (role, text, slide) => {
+  const push = (role, text, slide, heading) => {
     const t = text.trim();
-    if (t) segs.push({ role, text: t, slide });
+    if (t) segs.push(heading ? { role, text: t, slide, heading } : { role, text: t, slide });
   };
 
   // 头部三元组
@@ -89,15 +95,13 @@ function segment(md) {
   let inFence = false;
 
   const flush = () => {
-    if (!section) return;
+    if (!section || !section.id) return;
     const body = buf.join('\n').trim();
     if (!body) return;
-    if (section.id === 'objectives') push('objectives', body, 'objectives');
-    else if (section.id === 'concept') push('concept', body, 'concept');
-    else if (section.id === 'build') push('build', body, 'build');
-    else if (section.id === 'use') push('use', body, 'use');
-    else if (section.id === 'ship') push('ship', body, 'ship');
-    else if (section.id === 'verify') push('verify', body, 'verify');
+    // role 与 slide 同名：objectives/concept/build/use/ship/verify 是七段模板的角色，
+    // body/boundary/chain/summary 来自学科级 narration-map.json。
+    // 带上小节标题：幻灯片抬头要用它（否则正文片只有一段字，读者不知道自己在第几节）
+    push(section.id, body, section.id, section.heading);
   };
 
   const SECTION_IDS = [
@@ -120,7 +124,21 @@ function segment(md) {
       flush();
       buf = [];
       const found = SECTION_IDS.find(([name]) => h[1].startsWith(name));
-      section = found ? { id: found[1] } : { id: null };
+      if (found) {
+        section = { id: found[1], heading: h[1].trim() };
+        continue;
+      }
+      // 学科映射：drop 里的整节跳过（如「课程信息」「免责」），其余按前缀给 role，缺省 body
+      section = { id: null };
+      if (MAP && MAP.sequential) {
+        // 用 includes 而不是 startsWith：本册的节标题带中文序号（「十、代价与边界」），
+        // 前缀匹配会把所有带序号的节都漏掉——第一版就是这么漏掉 4 章的 boundary 段。
+        const dropped = (MAP.drop || []).some((kw) => h[1].includes(kw));
+        if (!dropped) {
+          const hit = Object.keys(MAP.roles || {}).find((kw) => h[1].includes(kw));
+          section = { id: hit ? MAP.roles[hit] : 'body', heading: h[1].trim() };
+        }
+      }
       continue;
     }
     // 图形占位单独成段，供幻灯片挂载

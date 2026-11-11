@@ -1,0 +1,79 @@
+{
+  "lesson": "09-feixi-bingzheng",
+  "title": "老年肺系病证：正虚受邪的五个出口",
+  "subject": "19-zhongyi-laonianbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "老年肺系感染最需要记住的临床经验是？",
+      "options": [
+        "可以无发热，仅表现为纳差、淡漠、跌倒",
+        "一定高热",
+        "一定有咳嗽",
+        "一定有痰"
+      ],
+      "correct": 0,
+      "explanation": "教材 9.4.1：正虚受邪，「无热性感染」。"
+    },
+    {
+      "stage": "check",
+      "question": "喘证与肺胀的两期两法是？",
+      "options": [
+        "发作期化痰降气平喘，缓解期补肺健脾纳肾",
+        "两期同法",
+        "只治发作期",
+        "只治缓解期"
+      ],
+      "correct": 0,
+      "explanation": "教材 9.2.1。"
+    },
+    {
+      "stage": "check",
+      "question": "肺痨与肺部感染单元中中药的定位是？",
+      "options": [
+        "与抗感染协同，不替代",
+        "替代抗感染",
+        "无需抗感染",
+        "只用中药"
+      ],
+      "correct": 0,
+      "explanation": "教材 9.3.1：治法方药与抗感染协同。"
+    },
+    {
+      "stage": "check",
+      "question": "本章的规模是？",
+      "options": [
+        "5 单元 9,225 汉字（全书最短）",
+        "8 单元",
+        "7 单元",
+        "6 单元"
+      ],
+      "correct": 0,
+      "explanation": "由 code/main.js 现算。"
+    },
+    {
+      "stage": "post",
+      "question": "老年外感「预防优先」具体指什么？",
+      "options": [
+        "调护包含疫苗接种等预防措施",
+        "多吃药",
+        "多休息",
+        "隔离"
+      ],
+      "correct": 0,
+      "explanation": "教材 9.4.1 标注「现代认识」。"
+    },
+    {
+      "stage": "post",
+      "question": "老年喘为何要排查心源性因素？",
+      "options": [
+        "老年喘常兼心衰，非单纯肺病",
+        "因为肺不重要",
+        "因为心脏更常见",
+        "因为要拍片"
+      ],
+      "correct": 0,
+      "explanation": "教材与临床共识均强调鉴别。"
+    }
+  ]
+}

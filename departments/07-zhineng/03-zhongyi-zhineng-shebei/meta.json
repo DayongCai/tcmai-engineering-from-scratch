@@ -22,8 +22,11 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/07-zhineng/03-zhongyi-zhineng-shebei",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 26,
+    "words": 12224,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#中医智能仪器与可穿戴设备",
+    "extractedAt": "2026-10-21"
   }
 }

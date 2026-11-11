@@ -11,7 +11,7 @@
   "stageTitle": "壮",
   "hours": 72,
   "bridge": "证候→本体建模 / 证型标准化→嵌入聚类",
-  "chaptersTarget": 10,
+  "chaptersTarget": 12,
   "chapters": [],
   "platform": {
     "id": "tcmP",
@@ -25,5 +25,11 @@
     "chaptersWritten": 0,
     "words": 0,
     "status": "planned"
+  },
+  "standards": {
+    "path": "standards/zhenghou",
+    "layer": "跨课程派生底本（外科325+儿科250+妇科325=900单元）",
+    "zheng": 132,
+    "classical": "中医诊断学第6–12章"
   }
 }

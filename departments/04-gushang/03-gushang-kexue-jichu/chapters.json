@@ -1,66 +1,85 @@
 {
-  "slug": "03-gushang-kexue-jichu",
-  "title": "中医骨伤科学基础",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-fanwei-yuanliu",
-      "title": "骨伤科的范围与学术源流",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-bingyin-fenlei",
-      "title": "损伤的病因与分类",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-weiyi-fuwei",
-      "title": "骨折的移位机制与复位原理",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-jinshang-xiufu",
-      "title": "筋伤的病理与修复过程",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-bianzheng-qixue",
-      "title": "骨伤辨证：气血、经络与脏腑",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-neizhi-fenqi",
-      "title": "骨伤的内治法与分期用药",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-waizhi-guding",
-      "title": "骨伤的外治法与固定",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-gongneng-duanlian",
-      "title": "功能锻炼与康复介入",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-fengxian-bingfa",
-      "title": "骨伤科的风险与并发症",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-pingjia-liangbiao",
-      "title": "骨伤疗效评价的量表体系",
-      "status": "📋"
-    }
-  ]
+ "note": "中医骨伤科学基础：10 章 ← 教材 11 章（无单元复用）。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-jianshi-bingyin",
+   "title": "发展简史与病因病机",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-linchuang-zhencha",
+   "title": "骨伤病的临床诊查",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-zhiliao-fangfa",
+   "title": "骨伤病的治疗方法",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-chuangshang-jijiu",
+   "title": "创伤急救",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-guzhe-yi",
+   "title": "骨折（一）：总论与上肢",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-guzhe-er",
+   "title": "骨折（二）：下肢与躯干",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-tuowei",
+   "title": "脱位",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-jinshang",
+   "title": "筋伤",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-neishang-gubing",
+   "title": "内伤与骨病",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-kangfu-shuzihua",
+   "title": "骨伤康复与数字化",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

@@ -1,77 +1,65 @@
 # 骨质疏松与退行性疾病
 
-> 骨密度→回归预测 / 骨折风险→FRAX 类模型
+**12-guzhishusong-tuibian** · 骨伤学院 · 8 章 · 33 单元 · 181,406 汉字
 
-| 项目 | 内容 |
-|------|------|
-| 院系 | 🦴 骨伤系 `04-gushang` |
-| 类型 | Build |
-| 学期 | 第 7 学期（🌳 壮·鼎盛 / 大四） |
-| 学时 | 54 |
-| 章节目标 | 8 |
-| 学科编号 | 057 / 120 |
-| 英文名 | Osteoporosis & Degenerative Disease |
+> 骨密度是数、不是结论；防跌倒比补钙更快见效
 
-## 一、学科定位
+**课程类型：派生课（无独立教材）**。单元正文逐字取自父课，`locator` 一律 `派生·第N章·m.k`，
+`source` 记 `父课:父locator`；本课汉字**不与父课相加**。
 
-骨质疏松与退行性疾病（Osteoporosis & Degenerative Disease）是骨伤系的核心学科，聚焦「正骨理筋—骨病退变—运动损伤与康复工程」中的一个完整知识域。
+## 一、父课
 
-## 二、中医 → AI 桥梁
+- `gushang-bing`
+- `gushang-yingxiang`
+- `kangfu-huli`
+- `laonian-huli`
+- `linchuang-zhongyao`
+- `zhenggu`
+- `zhongyao-xue`
 
-```text
-骨密度→回归预测 / 骨折风险→FRAX 类模型
-```
+## 二、章表
 
-骨质疏松与退行性疾病 里的每一个传统概念，都被翻译成一个可计算、可验证的工程对象：
-中医概念给出**语义与约束**，AI/工程方法给出**表示与算法**。两者必须能互相回指，
-否则这个章节就还没有写完。
+| # | 章 | 父课来源 | 单元 | 汉字 |
+|--:|---|---|--:|--:|
+| 1 | 骨代谢基础 | gushang-bing、zhongyao-xue | 6 | 11,673 |
+| 2 | 诊断与骨折风险评估 | gushang-bing、kangfu-huli | 3 | 21,294 |
+| 3 | 骨质疏松症 | gushang-bing、zhenggu | 3 | 11,513 |
+| 4 | 骨关节炎 | gushang-bing、zhenggu | 4 | 10,578 |
+| 5 | 退行性变的影像评估 | gushang-yingxiang、gushang-bing | 5 | 11,702 |
+| 6 | 药物与非药物治疗 | gushang-bing、linchuang-zhongyao | 6 | 11,837 |
+| 7 | 运动康复与跌倒预防 | kangfu-huli、laonian-huli | 3 | 51,365 |
+| 8 | 长期管理与随访 | kangfu-huli、laonian-huli | 3 | 51,444 |
 
-## 三、章节地图（目标 8 章）
+## 三、三辨与四位面（实测）
 
-章节尚未编写。运行脚手架开章：
+| 三辨 | 词频 |
+|---|--:|
+| **骨代谢** | **250** |
+| **诊断与评估** | **785** |
+| **治疗与管理** | **740** |
+
+三辨极差 **3.1×**。
+
+| 四位面（章群结构分区） | 汉字 |
+|---|---:|
+| 基础与诊断 | 32,967 |
+| 骨质疏松与退变 | 22,091 |
+| 影像与药物 | 23,539 |
+| 康复与长期管理 | 102,809 |
+
+四位面极差 **4.7×**。派生课一律用结构分区：父课的泛词（「治疗」「患者」「手法」）会把关键词轴压成假平衡。
+
+## 四、判据
+
+骨密度是数、不是结论；防跌倒比补钙更快见效。每章要求写清：**部位与病程、必须排除的危险诊断、处理顺序、可核的随访指标**。
+
+## 五、章内可执行验证
 
 ```bash
-node scripts/scaffold_chapter.js 04-gushang/12-guzhishusong-tuibian 01-<chapter-slug>
+node scripts/audit_curriculum.js | grep -A2 "12-guzhishusong-tuibian"
+node tests/test_chapter_code.js | grep -c "12-guzhishusong-tuibian"
+python scripts/_derive_gs.py
 ```
 
-编写完成后，把章节索引写进 `chapters.json`，本表的「状态」列由
-`scripts/build_catalog.js` 自动填充。
-
-## 四、章节契约（每章必须满足）
-
-```text
-chapters/NN-<slug>/
-├── docs/zh.md      # MOTTO / PROBLEM / 环境逼迫 / 知识积累 / CONCEPT / BUILD IT / USE IT / SHIP IT
-├── code/           # 可运行、自终止、退出码 0（Node.js 或 Python，见 AGENTS.md 依赖白名单）
-├── quiz.json       # 恰好 6 题 = 1 pre + 3 check + 2 post
-└── outputs/        # 可复用产出物（prompt / skill / agent / mcp / 临床工具）
-```
-
-## 五、教材交付 [textbooks]
-
-```text
-输出: textbooks/04-gushang/12-guzhishusong-tuibian/
-├── 00-前言.md
-├── 01-第1章-<标题>.md   ...
-└── figures/                # Mermaid / SVG，禁止 ASCII 框图
-```
-
-## 六、平台交付 [tcmP]
-
-```text
-输出: platform/courses/04-gushang/12-guzhishusong-tuibian/
-├── course.yaml             # 课程元数据 + 章节 → 视频映射
-├── slides/                 # 讲稿 HTML（由 docs/zh.md 派生）
-├── narration/              # TTS 旁白文本 + 音频
-└── video/                  # 成片 MP4（H.264 / 720p 以上）
-```
-
-## 七、进度
-
-| 指标 | 当前 | 目标 |
-|------|------|------|
-| 章节 | 0 | 8 |
-| 视频 | 0 | 8 |
-| 教材字数 | 0 | ≈ 48000 |
-
-> 状态字形：🌱 未开始 ⬚ · 🚧 进行中 · ✅ 完成
+**免责声明：** 本课为教学材料；无独立教材，内容为本库已建课程的**二次编排**。
+具体操作、剂量与手术指征须由执业人员判断，不构成诊疗建议。

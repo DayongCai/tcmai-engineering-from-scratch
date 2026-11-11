@@ -1,0 +1,79 @@
+{
+  "lesson": "12-duobing-gongcun-zhihui-yanglao",
+  "title": "多病共存与智慧养老：把「一人多病」变成可管理的结构",
+  "subject": "19-zhongyi-laonianbing-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "多病共存三步法的核心是哪一步？",
+      "options": [
+        "判主次矛盾（哪个病在恶化、哪个药在添乱）",
+        "列出诊断",
+        "开方",
+        "做检查"
+      ],
+      "correct": 0,
+      "explanation": "教材 12.1.1：失败多不是治错病，而是治错先后。"
+    },
+    {
+      "stage": "check",
+      "question": "四类要盯的高风险药不包括？",
+      "options": [
+        "维生素与钙剂",
+        "镇静催眠类",
+        "降压与利尿",
+        "降糖药"
+      ],
+      "correct": 0,
+      "explanation": "教材 12.1.2 的四类。"
+    },
+    {
+      "stage": "check",
+      "question": "衰弱与肌少症的关键认识是？",
+      "options": [
+        "衰弱是可逆的，值得干预",
+        "不可逆",
+        "只影响老人",
+        "无需干预"
+      ],
+      "correct": 0,
+      "explanation": "教材 12.2.1 标注现代认识。"
+    },
+    {
+      "stage": "check",
+      "question": "本章对 AI 的三处表述都是？",
+      "options": [
+        "「可辅助参考」",
+        "完全替代",
+        "禁止使用",
+        "只用于科研"
+      ],
+      "correct": 0,
+      "explanation": "与急诊学第 12 章、骨病学第 12 章一致。"
+    },
+    {
+      "stage": "post",
+      "question": "多病共存的第一要务为什么是做减法？",
+      "options": [
+        "药物与干预叠加本身即风险",
+        "因为药贵",
+        "因为老人抗拒",
+        "因为医保"
+      ],
+      "correct": 0,
+      "explanation": "用药精简是教材 12.1.2 的核心动作。"
+    },
+    {
+      "stage": "post",
+      "question": "老年低血糖为何比高血糖更危险？",
+      "options": [
+        "可致跌倒、意识障碍、心脑血管事件",
+        "因为难测",
+        "因为无药",
+        "因为少见"
+      ],
+      "correct": 0,
+      "explanation": "教材 12.1.2 与第 10 章均强调。"
+    }
+  ]
+}

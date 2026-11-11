@@ -64,6 +64,7 @@ const dataJs =
       semesterPlan: catalog.semesterPlan,
       departments: catalog.departments,
       chapterIndex,
+      prereqIndex: catalog.prereqIndex || {},
     },
     null,
     2

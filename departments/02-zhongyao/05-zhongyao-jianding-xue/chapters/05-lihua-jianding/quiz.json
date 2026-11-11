@@ -1,0 +1,79 @@
+{
+ "lesson": "05-lihua-jianding",
+ "title": "理化鉴定：薄层与色谱指纹",
+ "subject": "05-zhongyao-jianding-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 5 章「理化鉴定：薄层与色谱指纹」要回答的核心问题是什么？",
+   "options": [
+    "薄层斑点对上了，能不能判为同一批",
+    "中药鉴定学的定义",
+    "主要任务",
+    "发展概况"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：Rf 相同只说明极性相近；还要看指纹图谱的整体相似度、特征峰的相对比例，以及含量测定是否落在限度内。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "检查方法",
+    "特征描述",
+    "质量限度",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（鉴定四法）重心落在哪一项？",
+   "options": [
+    "理化",
+    "乙酸-丙二酸途径",
+    "莽草酸途径",
+    "甲戊二羟酸途径"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "4 个",
+    "6 个",
+    "8 个",
+    "10 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "本课程数值类命中只有 15 处，说明什么？",
+   "options": [
+    "教材常数多以范围或文字表述，可数的值少不等于不量化",
+    "中药鉴定学的定义",
+    "主要任务",
+    "发展概况"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：真正的量化在方法学七项指标里。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/zhongyao-jianding/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

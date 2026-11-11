@@ -1,54 +1,69 @@
 {
-  "slug": "15-gushang-kangfu-pingding",
-  "title": "骨伤康复评定",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-kuangjia-shiji",
-      "title": "康复评定的框架与时机",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-huodongdu-jili",
-      "title": "关节活动度与肌力测量",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-tengtong-liangbiao",
-      "title": "疼痛与功能的量表选择",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-butai-pingding",
-      "title": "步态分析与平衡评定",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-shougongneng-richang",
-      "title": "手功能与日常生活能力",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-yingxiang-xiangguan",
-      "title": "影像与功能指标的相关性",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-xindu-chayi",
-      "title": "评定的信度与最小临床差异",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-chufang-mubiao",
-      "title": "康复处方的目标与调整",
-      "status": "📋"
-    }
-  ]
+ "note": "骨伤康复评定 派生课：8 章，单元取自父课（locator 派生·），本课内无复用。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-pingding-gailun",
+   "title": "康复评定概论",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-guanjie-jili",
+   "title": "关节活动度与肌力评定",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-pingheng-butai",
+   "title": "平衡与步态评定",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-adl-shenghuo",
+   "title": "日常生活活动与生活质量",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-tengtong-xinli",
+   "title": "疼痛与心理评定",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-yingxiang-gongneng",
+   "title": "影像与功能的对应",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-liangbiao",
+   "title": "评定量表的选择与信效度",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-baogao-suifang",
+   "title": "评定报告与随访",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

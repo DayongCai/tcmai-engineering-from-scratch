@@ -1,78 +1,78 @@
 {
-  "slug": "06-zhongyao-huaxue",
-  "title": "中药化学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-huaxue-leixing",
-      "title": "中药化学成分的类型与分布",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-tiqu-fenli",
-      "title": "提取分离：溶剂、色谱与制备",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-shengwujian",
-      "title": "生物碱类：结构与活性",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-huangtong",
-      "title": "黄酮类：结构与显色",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-tielei-huiyou",
-      "title": "萜类与挥发油",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-zaogan-lei",
-      "title": "皂苷类：溶血与表面活性",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-kun-xiangdousu",
-      "title": "醌类与香豆素",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-duotang-rouzhi",
-      "title": "多糖与鞣质",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-jiegou-bopu",
-      "title": "结构鉴定：波谱解析入门",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-yaoxiao-wuzhi",
-      "title": "有效成分与药效物质基础",
-      "status": "📋"
-    },
-    {
-      "n": 11,
-      "slug": "11-hanshang-ceding",
-      "title": "成分含量测定与方法学验证",
-      "status": "📋"
-    },
-    {
-      "n": 12,
-      "slug": "12-chengfen-badian",
-      "title": "成分—靶点网络与活性预测",
-      "status": "📋"
-    }
-  ]
+ "slug": "06-zhongyao-huaxue",
+ "title": "中药化学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-huaxue-leixing",
+   "title": "中药化学成分的类型与分布",
+   "status": "🚧"
+  },
+  {
+   "n": 2,
+   "slug": "02-tiqu-fenli",
+   "title": "提取分离：溶剂、色谱与制备",
+   "status": "🚧"
+  },
+  {
+   "n": 3,
+   "slug": "03-shengwujian",
+   "title": "生物碱类：结构与活性",
+   "status": "🚧"
+  },
+  {
+   "n": 4,
+   "slug": "04-huangtong",
+   "title": "黄酮类：结构与显色",
+   "status": "🚧"
+  },
+  {
+   "n": 5,
+   "slug": "05-tielei-huiyou",
+   "title": "萜类与挥发油",
+   "status": "🚧"
+  },
+  {
+   "n": 6,
+   "slug": "06-zaogan-lei",
+   "title": "皂苷类：溶血与表面活性",
+   "status": "🚧"
+  },
+  {
+   "n": 7,
+   "slug": "07-kun-xiangdousu",
+   "title": "醌类与香豆素",
+   "status": "🚧"
+  },
+  {
+   "n": 8,
+   "slug": "08-duotang-rouzhi",
+   "title": "多糖与鞣质",
+   "status": "🚧"
+  },
+  {
+   "n": 9,
+   "slug": "09-jiegou-bopu",
+   "title": "结构鉴定：波谱解析入门",
+   "status": "🚧"
+  },
+  {
+   "n": 10,
+   "slug": "10-yaoxiao-wuzhi",
+   "title": "有效成分与药效物质基础",
+   "status": "🚧"
+  },
+  {
+   "n": 11,
+   "slug": "11-hanshang-ceding",
+   "title": "成分含量测定与方法学验证",
+   "status": "🚧"
+  },
+  {
+   "n": 12,
+   "slug": "12-chengfen-badian",
+   "title": "成分—靶点网络与活性预测",
+   "status": "🚧"
+  }
+ ]
 }

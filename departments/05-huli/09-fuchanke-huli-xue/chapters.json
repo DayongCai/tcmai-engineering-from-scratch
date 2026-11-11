@@ -1,54 +1,150 @@
 {
-  "slug": "09-fuchanke-huli-xue",
-  "title": "妇产科护理学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-shengzhi-shengli",
-      "title": "女性生殖系统的生理",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-yunqi-jianhu",
-      "title": "孕期监护与产前检查",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-fenmian-huli",
-      "title": "分娩期的护理与产程",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-chanru-huli",
-      "title": "产褥期的护理与康复",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-gaowei-zhuanzhen",
-      "title": "高危妊娠的识别与转诊",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-fuke-weishu",
-      "title": "妇科手术的围术期护理",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-zhongliu-huali",
-      "title": "妇科肿瘤与化疗护理",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-muru-xinshenger",
-      "title": "母乳喂养与新生儿护理",
-      "status": "📋"
-    }
-  ]
+ "slug": "09-fuchanke-huli-xue",
+ "title": "妇产科护理学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-gaishu-moshi",
+   "title": "妇产科护理概述与工作模式",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-gaishu-moshi/docs/zh.md",
+   "code": "chapters/01-gaishu-moshi/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-pinggu-zhidao",
+   "title": "妇产科护理评估与健康指导",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-pinggu-zhidao/docs/zh.md",
+   "code": "chapters/02-pinggu-zhidao/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-renshen-qi",
+   "title": "妊娠期护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-renshen-qi/docs/zh.md",
+   "code": "chapters/03-renshen-qi/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-fenmian-qi",
+   "title": "分娩期护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-fenmian-qi/docs/zh.md",
+   "code": "chapters/04-fenmian-qi/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-chanru-qi",
+   "title": "产褥期护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-chanru-qi/docs/zh.md",
+   "code": "chapters/05-chanru-qi/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-gaowei-renshen",
+   "title": "高危妊娠与妊娠并发症护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-gaowei-renshen/docs/zh.md",
+   "code": "chapters/06-gaowei-renshen/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-fenmian-bingfazheng",
+   "title": "分娩并发症护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-fenmian-bingfazheng/docs/zh.md",
+   "code": "chapters/07-fenmian-bingfazheng/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-xinshenger-weichan",
+   "title": "新生儿与围产期护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-xinshenger-weichan/docs/zh.md",
+   "code": "chapters/08-xinshenger-weichan/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-chanke-shoushu",
+   "title": "产科手术与麻醉的护理配合",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-chanke-shoushu/docs/zh.md",
+   "code": "chapters/09-chanke-shoushu/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-fuke-jibing",
+   "title": "女性生殖系统疾病护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-fuke-jibing/docs/zh.md",
+   "code": "chapters/10-fuke-jibing/code/main.js"
+  },
+  {
+   "n": 11,
+   "slug": "11-fuke-zhongliu",
+   "title": "妇科肿瘤护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/11-fuke-zhongliu/docs/zh.md",
+   "code": "chapters/11-fuke-zhongliu/code/main.js"
+  },
+  {
+   "n": 12,
+   "slug": "12-fuke-shoushu",
+   "title": "妇科手术护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/12-fuke-shoushu/docs/zh.md",
+   "code": "chapters/12-fuke-shoushu/code/main.js"
+  },
+  {
+   "n": 13,
+   "slug": "13-shengzhi-neifenmi",
+   "title": "生殖内分泌与不孕症护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/13-shengzhi-neifenmi/docs/zh.md",
+   "code": "chapters/13-shengzhi-neifenmi/code/main.js"
+  },
+  {
+   "n": 14,
+   "slug": "14-jihua-shengzhi",
+   "title": "计划生育与生殖健康护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/14-jihua-shengzhi/docs/zh.md",
+   "code": "chapters/14-jihua-shengzhi/code/main.js"
+  },
+  {
+   "n": 15,
+   "slug": "15-funv-baojian",
+   "title": "妇女保健与社区护理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/15-funv-baojian/docs/zh.md",
+   "code": "chapters/15-funv-baojian/code/main.js"
+  },
+  {
+   "n": 16,
+   "slug": "16-zhiliang-pingtai",
+   "title": "妇产科护理质量风险与平台",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/16-zhiliang-pingtai/docs/zh.md",
+   "code": "chapters/16-zhiliang-pingtai/code/main.js"
+  }
+ ]
 }

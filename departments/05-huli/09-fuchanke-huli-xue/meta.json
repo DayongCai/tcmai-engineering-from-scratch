@@ -1,29 +1,38 @@
 {
-  "slug": "09-fuchanke-huli-xue",
-  "title": "妇产科护理学",
-  "en": "OB/GYN Nursing",
-  "deptSlug": "05-huli",
-  "deptTitle": "护理系",
-  "globalN": 69,
-  "type": "Clinic",
-  "semester": 6,
-  "stage": "zhang",
-  "stageTitle": "长",
-  "hours": 54,
-  "bridge": "产程→阶段状态机 / 母婴数据→联合建模",
-  "chaptersTarget": 8,
-  "chapters": [],
-  "platform": {
-    "id": "tcmP",
-    "coursePath": "platform/courses/05-huli/09-fuchanke-huli-xue",
-    "videosPublished": 0,
-    "status": "planned"
-  },
-  "textbook": {
-    "id": "textbooks",
-    "path": "textbooks/05-huli/09-fuchanke-huli-xue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
-  }
+ "slug": "09-fuchanke-huli-xue",
+ "title": "妇产科护理学",
+ "en": "OB/GYN Nursing",
+ "deptSlug": "05-huli",
+ "deptTitle": "护理系",
+ "globalN": 69,
+ "type": "Clinic",
+ "semester": 6,
+ "stage": "zhang",
+ "stageTitle": "长",
+ "hours": 54,
+ "bridge": "产程→阶段状态机 / 母婴数据→联合建模",
+ "chaptersTarget": 16,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/05-huli/09-fuchanke-huli-xue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/05-huli/09-fuchanke-huli-xue",
+  "chaptersWritten": 18,
+  "words": 357483,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#妇产科护理学",
+  "extractedAt": "2026-10-21"
+ },
+ "底本": {
+  "kind": "教材",
+  "from": "F:/textbooks/qhzy-妇产科护理学.xlsx",
+  "dir": "standards/fuchanke-huli",
+  "note": "18 内容章 / 18 单元 / 313,316 汉字；课程 16 章按母本骨架重排"
+ }
 }

@@ -1,0 +1,32 @@
+{
+  "slug": "16-zhenjiu-xue",
+  "title": "针灸学",
+  "en": "Acupuncture & Moxibustion",
+  "deptSlug": "03-zhenjiu",
+  "deptTitle": "针灸系",
+  "globalN": 46,
+  "type": "Core",
+  "semester": 5,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 72,
+  "bridge": "经穴配伍→组合优化 / 刺灸参数→剂量—反应",
+  "chaptersTarget": 30,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/03-zhenjiu/16-zhenjiu-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/03-zhenjiu/16-zhenjiu-xue",
+    "chaptersWritten": 30,
+    "words": 342303,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#针灸学",
+    "extractedAt": "2026-10-21"
+  }
+}

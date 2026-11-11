@@ -1,0 +1,42 @@
+{
+ "slug": "17-huli-xinli-xue",
+ "title": "护理心理学",
+ "en": "Nursing Psychology",
+ "deptSlug": "05-huli",
+ "deptTitle": "护理系",
+ "globalN": 82,
+ "type": "Core",
+ "semester": 3,
+ "stage": "sheng",
+ "stageTitle": "生",
+ "hours": 36,
+ "bridge": "心理评估量表→心理测量 / 情绪识别→多模态",
+ "chaptersTarget": 18,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/05-huli/17-huli-xinli-xue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/05-huli/17-huli-xinli-xue",
+  "chaptersWritten": 18,
+  "words": 375879,
+  "status": "wip",
+  "layer": "source-body",
+  "source": "standards/materials/textbooks-batch/registry.json#护理心理学",
+  "extractedAt": "2026-10-21"
+ },
+ "底本": {
+  "kind": "教材",
+  "from": {
+   "file": "qhzy-护理心理学.xlsx",
+   "sha256": "c79dbc284c59fade42163b6a29c60025406a3ebe393a0b8fe556a69c58bf8d41",
+   "script": "scripts/build_huli_course.py"
+  },
+  "dir": "standards/huli-xinli-xue",
+  "note": "18 内容章 / 18 单元 / 334,685 汉字；课程 18 章按母本骨架重排"
+ }
+}

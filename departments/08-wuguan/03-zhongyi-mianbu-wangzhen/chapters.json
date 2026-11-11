@@ -1,54 +1,71 @@
 {
-  "slug": "03-zhongyi-mianbu-wangzhen",
-  "title": "中医面部望诊学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-yuanliu-yuanli",
-      "title": "面部望诊的源流与原理",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-fenqu-zangfu",
-      "title": "面部分区与脏腑配属",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-mianse-panduan",
-      "title": "面色与光泽的判断",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-wuguan-xingtai",
-      "title": "五官形态与分泌物",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-caiji-biaozhun",
-      "title": "面部图像采集的标准化",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-yanse-lianghua",
-      "title": "面色特征的量化与色卡",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-yizhixing-yanjiu",
-      "title": "望诊与问诊的一致性",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-juxian-wupan",
-      "title": "面部望诊的局限与误判",
-      "status": "📋"
-    }
-  ]
+ "slug": "03-zhongyi-mianbu-wangzhen",
+ "title": "中医面部望诊",
+ "note": "8 章 = 教材 8 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-e31",
+   "title": "望诊的原理与部位",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-e32",
+   "title": "面部色泽与五色",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-e33",
+   "title": "眼部望诊",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-e34",
+   "title": "鼻部望诊",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-e35",
+   "title": "口唇与齿龈",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-e36",
+   "title": "咽喉望诊",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-e37",
+   "title": "舌与口腔黏膜",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-e38",
+   "title": "望诊记录与复核",
+   "status": "🚧",
+   "docs": "docs/zh.md",
+   "code": "code/main.js"
+  }
+ ]
 }

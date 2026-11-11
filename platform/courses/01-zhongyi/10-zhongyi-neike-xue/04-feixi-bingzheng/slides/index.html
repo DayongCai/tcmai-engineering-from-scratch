@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>第 4 章 肺系病证：八个病证，一套模板，一张鉴别网 · 幻灯片</title>
+<style>
+
+:root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
+--jade:#1f6f5c;--jade-soft:#e3efe9;--cinnabar:#a8321e;--cinnabar-soft:#f7e6e2;--gold:#a8862a;
+--sans:system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;
+--serif:"Songti SC","Noto Serif SC",Georgia,serif;
+--mono:ui-monospace,"Cascadia Mono",Consolas,monospace;}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#12110f;color:var(--ink);font-family:var(--sans)}
+#deck{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{min-height:100%;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;
+  padding:5vh 7vw;background:var(--paper);border-bottom:1px solid #000}
+.slide-inner{max-width:1000px;width:100%;margin:0 auto}
+.slide-foot{max-width:1000px;width:100%;margin:3vh auto 0;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+h1.big{font-family:var(--serif);font-size:clamp(28px,4.4vw,54px);line-height:1.25;margin:0}
+blockquote.motto{font-family:var(--serif);font-size:clamp(20px,2.6vw,34px);line-height:1.6;margin:0;
+  border-left:6px solid var(--gold);padding-left:24px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--jade);
+  text-transform:uppercase;margin-bottom:14px}
+.kicker.warn{color:var(--cinnabar)}
+p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var(--serif)}
+.compact{font-size:clamp(19px,1.75vw,27px);line-height:1.85;max-height:70vh;overflow:auto}
+.compact h2,.compact h3{font-family:var(--serif);margin:.6em 0 .3em;font-size:1.15em}
+.compact pre{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:15px}
+.compact code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 4px;font-family:var(--mono)}
+.compact table{border-collapse:collapse;font-size:16px;width:100%}
+.compact th,.compact td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+/* 公式（与 site/style.css 同一套规则，保证幻灯片与站点显示一致） */
+.math{font-style:italic;font-family:var(--serif)}
+.math-block{display:block;text-align:center;font-family:var(--serif);font-size:1.05em;margin:.8em 0}
+.math-op,.math-text,.math-rm{font-style:normal}
+.math-op{padding:0 .12em}
+.math-cal{font-style:normal}
+.math-bb{font-style:normal;font-weight:700}
+.frac{display:inline-block;vertical-align:middle;text-align:center;font-style:normal;margin:0 .15em;line-height:1.15}
+.frac-num{display:block;padding:0 .3em;border-bottom:1px solid currentColor}
+.frac-den{display:block;padding:0 .3em}
+.math-sqrt{font-style:normal;margin-right:.05em}
+.math-line{border-top:1px solid currentColor;font-style:normal;padding-top:.05em}
+.math-note{font-size:.8em;font-style:normal}
+.figure-host{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+#hud{position:fixed;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;color:#8a8578;
+  background:#faf8f3cc;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
+@media print{.slide{page-break-after:always;min-height:auto}#hud{display:none}}
+</style>
+</head>
+<body>
+<div id="deck">
+<section class="slide" data-i="0">
+  <div class="slide-inner"><h1 class="big">第 4 章 肺系病证：八个病证，一套模板，一张鉴别网</h1></div>
+  <div class="slide-foot"><span>1 / 21</span><span>title</span></div>
+</section>
+<section class="slide" data-i="1">
+  <div class="slide-inner"><blockquote class="motto">「感冒是感受触冒风邪或时行病毒，引起肺卫功能失调」——教材·中医内科学·第4章·4.1（《中医内科学·第4章 肺系病证》）</blockquote></div>
+  <div class="slide-foot"><span>2 / 21</span><span>motto</span></div>
+</section>
+<section class="slide" data-i="2">
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">这一章 8 节 40 个小节，是全书写得最厚的一章。八个病证并列排下来，读法很容易变成「一个病一个病背」：感冒四个证、咳嗽七个证、哮病五个证、喘证实虚各若干……背完只记得证名，答不出「为什么哮病要分发作期与缓解期而感冒不必」「肺痈为什么要按四期走」「肺痿和肺痈都咳吐浊沫，凭什么分开」。本章真正的结构只有两件东西：<strong>一个模板重复八遍</strong>（概述—病因病机—辨证论治—预防调护—按语），和<strong>一张把八个病串起来的鉴别网</strong>。抓住这两件，40 个小节就只是八次填表。</p></div>
+  <div class="slide-foot"><span>3 / 21</span><span>problem</span></div>
+</section>
+<section class="slide" data-i="3">
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（第一次读各论，八个病证的症状互相重叠——咳嗽见于哮病、喘证、肺胀、肺痨，痰中带血见于咳嗽、肺痨、肺痈，学生分不清哪一个症状才是该病的眼目）+ 知识积累（病名界定 × 病因病机 × 分型逻辑 × 鉴别眼目 × 调护重点 = 一张能定位任何肺系病证的网）</p></div>
+  <div class="slide-foot"><span>4 / 21</span><span>roots</span></div>
+</section>
+<section class="slide" data-i="4">
+  <div class="slide-inner"><div class="kicker">一、八个病名，八句定义</div>
+                <div class="compact"><p>教材给每个病证的开篇都是一句定义，定义里藏着该病的眼目。八句连起来读，能看出这一章是怎么切分的。</p>
+<blockquote><p>「感冒是感受触冒风邪或时行病毒，引起肺卫功能失调」——教材·中医内科学·第4章·4.1（《中医内科学·第4章·4.1》）</p></blockquote>
+<blockquote><p>「咳嗽是指肺失宣降，肺气上逆作声，咯吐痰液而言」——教材·中医内科学·第4章·4.2（《中医内科学·第4章·4.2》）</p></blockquote>
+<blockquote><p>「哮病是一种发作性的痰鸣气喘疾患」——教材·中医内科学·第4章·4.3（《中医内科学·第4章·4.3》）</p></blockquote>
+<blockquote><p>「喘证是以呼吸困难，甚至张口抬肩，鼻翼煽动，不能平卧为临床特征的病证」——教材·中医内科学·第4章·4.4（《中医内科学·第4章·4.4》）</p></blockquote>
+<blockquote><p>「肺痈是肺叶生疮，形成脓疡的一种病证」——教材·中医内科学·第4章·4.5（《中医内科学·第4章·4.5》）</p></blockquote>
+<blockquote><p>「肺痨是具有传染性的慢性虚弱性疾病」——教材·中医内科学·第4章·4.6（《中医内科学·第4章·4.6》）</p></blockquote></div></div>
+  <div class="slide-foot"><span>5 / 21</span><span>body</span></div>
+</section>
+<section class="slide" data-i="5">
+  <div class="slide-inner"><div class="kicker">一、八个病名，八句定义</div>
+                <div class="compact"><blockquote><p>「肺胀是多种慢性肺系疾患反复发作，迁延不愈，导致肺气胀满，不能敛降的一种病证」——教材·中医内科学·第4章·4.7（《中医内科学·第4章·4.7》）</p></blockquote>
+<blockquote><p>「肺痿是指肺叶痿弱不用，为肺脏的慢性虚损性疾患」——教材·中医内科学·第4章·4.8（《中医内科学·第4章·4.8》）</p></blockquote>
+<p>八句定义各自扣住一个不同的维度：</p></div></div>
+  <div class="slide-foot"><span>6 / 21</span><span>body</span></div>
+</section>
+<section class="slide" data-i="6">
+  <div class="slide-inner"><div class="kicker">一、八个病名，八句定义</div>
+                <div class="compact"><div class="table-wrap"><table><thead><tr><th>病证</th><th>定义扣住的维度</th><th>眼目</th></tr></thead><tbody><tr><td>感冒</td><td>病因（风邪、时行病毒）＋病位（肺卫）</td><td>鼻塞流涕、恶寒发热，病程短</td></tr><tr><td>咳嗽</td><td>病机（肺失宣降）＋主症（气逆作声、咯痰）</td><td>以咳为主症，无痰鸣、无喘促为主</td></tr><tr><td>哮病</td><td>发作性＋痰鸣</td><td>喉中哮鸣有声，有夙根，反复发作</td></tr><tr><td>喘证</td><td>主症（呼吸困难）</td><td>呼吸急促困难，张口抬肩，不兼哮鸣者居多</td></tr><tr><td>肺痈</td><td>病理形态（肺叶生疮、脓疡）</td><td>咳吐腥臭浊痰，甚则脓血相兼</td></tr><tr><td>肺痨</td><td>传染性＋慢性虚弱</td><td>咳嗽、咯血、潮热、盗汗、消瘦</td></tr><tr><td>肺胀</td><td>病程（久病迁延）＋病机（气胀满不敛降）</td><td>胸部膨满，憋闷如塞，病程绵长</td></tr><tr><td>肺痿</td><td>病理形态（肺叶痿弱不用）＋性质（虚损）</td><td>咳吐浊唾涎沫，发病缓</td></tr></tbody></table></div></div></div>
+  <div class="slide-foot"><span>7 / 21</span><span>body</span></div>
+</section>
+<section class="slide" data-i="7">
+  <div class="slide-inner"><div class="kicker">一、八个病名，八句定义</div>
+                <div class="compact"><p>八句定义里没有一句是靠单一症状成立的。感冒靠病因与病位，咳嗽靠病机与主症，哮病靠发作性与痰鸣，喘证靠主症形态，肺痈与肺痿靠病理形态，肺痨靠传染性，肺胀靠病程与病机。<strong>这就是为什么八个病的症状会重叠而病名不会重叠</strong>——每一句定义都额外绑了一个非症状的维度。</p></div></div>
+  <div class="slide-foot"><span>8 / 21</span><span>body</span></div>
+</section>
+<section class="slide" data-i="8">
+  <div class="slide-inner"><div class="kicker">二、同一个模板，重复八遍</div>
+                <div class="compact"><p>八节的内部结构完全一致，都是五个小节：概述、病因病机、辨证论治、预防调护、按语。<code>code/main.js</code> 数了一遍，40 个小节正好是这个模板乘八。</p>
+<p>模板的顺序本身是一条推理链：</p>
+<ol><li><strong>概述</strong>给定义、源流与主症——回答「这是什么病」。</li><li><strong>病因病机</strong>给病因、病位、病性与传变——回答「为什么得、坏在哪」。</li><li><strong>辨证论治</strong>给辨证要点、治疗原则、分型与方药——回答「怎么分、怎么治」。</li><li><strong>预防调护</strong>给避邪、扶正、护理与随访——回答「治完怎么防」。</li><li><strong>按语</strong>把前四节收成几句判断，并点出危候——回答「这一病最要紧的是什么」。</li></ol>
+<p>这五段的顺序不能换。换掉任何一段，后面都会塌：没有概述的定义，病因病机就无处落；没有病因病机，分型就成了症状拼盘；没有分型，按语里的「辨治之要」就没有对象。</p></div></div>
+  <div class="slide-foot"><span>9 / 21</span><span>body</span></div>
+</section>
+<section class="slide" data-i="9">
+  <div class="slide-inner"><div class="kicker">二、同一个模板，重复八遍</div>
+                <div class="compact"><p><code>code/main.js</code> 还数出两个很稳定的现象。第一个：<strong>每一节最厚的那一小节都是「辨证论治」</strong>，八个都对得上；其余四格都压在六百到八百字之间（全章最薄的一格是 4.7.1，五百八十八字）。八个辨证论治格合计接近全章的一半，其中五节的分型篇幅在两千三百到两千九百字之间。这说明教材把力气压在「怎么分型」上，而不是压在病名解释或调护清单上。</p></div></div>
+  <div class="slide-foot"><span>10 / 21</span><span>body</span></div>
+</section>
+<section class="slide" data-i="10">
+  <div class="slide-inner"><div class="kicker">三、辨证论治格的两种组织法</div>
+                <div class="compact"><p>同样是辨证论治，八个病证的组织法并不一样。看清这一点，才不会被「证型数量」吓住。</p>
+<p><strong>第一种是按病因与病性横切。</strong> 感冒分风寒束表、风热犯表、暑湿伤表，另立气虚感冒与阴虚感冒；咳嗽分外感（风寒袭肺、风热犯肺、风燥伤肺）与内伤（痰湿蕴肺、痰热郁肺、肝火犯肺、肺阴亏耗）。这一种的组织逻辑是「外邪有几种、内伤有几种」，证与证之间是并列的。</p>
+<p><strong>第二种是按病程分期纵切。</strong> 肺痈分初期、成痈期、溃脓期、恢复期，四期是同一件事的四个阶段，不能互换次序；肺痨分肺阴亏损、阴虚火旺、气阴耗伤、阴阳两虚，四证是阴虚由轻到重的四个台阶；肺胀分发作期（外寒里饮、痰浊壅肺、痰热郁肺、痰蒙神窍、阳虚水泛）与缓解期（肺肾气虚）。</p></div></div>
+  <div class="slide-foot"><span>11 / 21</span><span>body</span></div>
+</section>
+<section class="slide" data-i="11">
+  <div class="slide-inner"><div class="kicker">三、辨证论治格的两种组织法</div>
+                <div class="compact"><p><strong>第三种是按虚实两分再各自展开。</strong> 喘证先分实喘与虚喘，实喘再分风寒壅肺、表寒肺热、痰热郁肺、痰浊阻肺、肺气郁痹，虚喘分肺气虚耗与肾虚不纳。哮病同构：发作期以邪实为主（冷哮、热哮、寒包热哮、风痰哮、虚哮），缓解期以正虚为主（肺脾气虚、肺肾两虚）。</p>
+<p>三种组织法对应三种临床问题：横切回答「这一次是哪一种邪」，纵切回答「现在到了哪一期」，两分回答「该攻还是该补」。同一章里三种都有，说明教材不是按统一格式填表，而是按每个病的实际矛盾选格式。</p></div></div>
+  <div class="slide-foot"><span>12 / 21</span><span>body</span></div>
+</section>
+<section class="slide" data-i="12">
+  <div class="slide-inner"><div class="kicker">四、一张鉴别网：三组眼目</div>
+                <div class="compact"><p>八个病证的症状大量重叠，教材靠三组眼目把它们分开。</p>
+<p><strong>第一组：病程与宿根。</strong> 感冒病程短、无明显传染性（时行感冒除外）；咳嗽可长可短；哮病有夙根、反复发作；喘证可急可缓；肺胀是久病迁延的结果；肺痿是慢性虚损。哮病与喘证最易混，教材给的对举是：哮病有宿根、反复发作、发作时喉中哮鸣有声；喘证以呼吸急促困难为主、不兼哮鸣者居多。<strong>有哮鸣的是哮，无哮鸣的是喘</strong>——但教材补了「居多」二字，因为喘证也可兼哮鸣，此时要看有无宿根与反复发作。</p>
+<p><strong>第二组：虚实与缓急。</strong> 肺痈属实热，咳吐脓血腥臭，发病急；肺痿属虚，咳吐浊唾涎沫，发病缓。这一组对举同时分开了虚实与缓急两件事，是本章最经济的一组鉴别。喘证内部也用这一组：实喘呼吸深长有余、呼出为快、气粗声高、脉数有力；虚喘呼吸短促难续、深吸为快、气怯声低、脉象微弱。</p>
+<p><strong>第三组：痰之色质与病位。</strong> 教材在咳嗽一节把这条写成了通则：</p></div></div>
+  <div class="slide-foot"><span>13 / 21</span><span>body</span></div>
+</section>
+<section class="slide" data-i="13">
+  <div class="slide-inner"><div class="kicker">四、一张鉴别网：三组眼目</div>
+                <div class="compact"><blockquote><p>「脾为生痰之源，肺为贮痰之器」——教材·中医内科学·第4章·4.2（《中医内科学·第4章·4.2》）</p></blockquote>
+<p>痰白稀薄属寒，痰黄稠厚属热，痰多泡沫属风痰，痰中带血多属热伤肺络或阴虚火旺，脓痰腥臭多属肺痈。同一句「痰中带血」，在咳嗽里指向热伤肺络或阴虚，在肺痨里是四大主症之一，在肺痈里是溃脓期的重候——<strong>同一个症状在不同病里的权重完全不同</strong>，这正是必须靠病名先定范围的原因。</p>
+<p>这一网还可以数出来。<code>code/main.js</code> 统计了八个病名在「自己的节」与「别的节」各被提多少次：咳嗽在别节被提五十多次，是八个病名里最高的一个——因为它同时是症状名，咳嗽见于哮病、喘证、肺胀、肺痨。这个数字本身就是一条判断：<strong>病名与症状同名的那一个，最容易被误认</strong>。所以教材在 4.2.3 必须给出「以咳为主症、不兼哮鸣」这类眼目，否则咳嗽病会被扩成半个肺系。相对地，肺痿在别节的引用次数不多，说明它的边界最清楚——「肺叶痿弱不用」这个定义没有第二个病会撞上。</p></div></div>
+  <div class="slide-foot"><span>14 / 21</span><span>body</span></div>
+</section>
+<section class="slide" data-i="14">
+  <div class="slide-inner"><div class="kicker">五、病因病机：一条主线，三个变量</div>
+                <div class="compact"><p>八节的病因病机写法各异，但共用一条主线：<strong>外邪犯肺 → 肺失宣降 → 津液不归正化 → 痰 → 久病及脾肾 → 虚</strong>。</p>
+<p>感冒停在前两段：外邪犯肺卫，肺失宣降，病位浅、病程短。咳嗽走到第三段：外感咳嗽是邪犯肺系、津聚为痰；内伤咳嗽是脏腑失调、内邪干肺，教材把它归成三因（情志、饮食、肺脏自病）。哮病把「痰」提到根本位置：</p>
+<blockquote><p>「内有壅塞之气，外有非时之感，膈有胶固之痰」——教材·中医内科学·第4章·4.3（《中医内科学·第4章·4.3》）</p></blockquote>
+<p>三句合起来就是哮病的发病公式：伏痰为夙根，外感为诱因，二者相合而发。教材对哮病病因的第一句是「以内伏宿痰为根本，外邪、饮食、情志、劳倦为诱因」——<strong>根本与诱因分写，是哮病与喘证在病机上最根本的差别</strong>。</p></div></div>
+  <div class="slide-foot"><span>15 / 21</span><span>body</span></div>
+</section>
+<section class="slide" data-i="15">
+  <div class="slide-inner"><div class="kicker">五、病因病机：一条主线，三个变量</div>
+                <div class="compact"><p>肺痈走的是另一条支线：热毒壅肺，热壅血瘀，蕴毒化脓，肉腐成痈。教材把它的病理性质定为「属实、属热，后期可兼气阴两伤」。肺痨则把「虫」引入：痨虫感染与正气虚弱相合而成，教材给的两句判断是「邪之所凑，其气必虚」与「壮者气行则已，怯者着而为病」——同一虫，感而发病与否取决于正气。</p>
+<p>肺胀是这条主线的终点：</p>
+<blockquote><p>「本于肺脾肾虚损，标于痰浊水饮瘀血壅滞」——教材·中医内科学·第4章·4.7（《中医内科学·第4章·4.7》）</p></blockquote>
+<p>一句话把本虚标实写完。肺痿则是虚损到底之后的状态：肺叶痿弱不用，教材把它定为「属虚损之证，当辨虚热、虚寒而治之」。</p>
+<p>把八节的主线排开，会看到一条清晰的纵深：感冒（卫表）→ 咳嗽（肺）→ 哮病（肺＋伏痰）→ 喘证（肺肾）→ 肺痈（肺＋热毒）→ 肺痨（肺＋虫＋正虚）→ 肺胀（肺脾肾＋痰瘀水）→ 肺痿（肺叶失养）。<strong>病位越来越深，正虚越来越重，病理因素越来越多</strong>。这一章的节序不是随意排的，而是按这条纵深排的。</p></div></div>
+  <div class="slide-foot"><span>16 / 21</span><span>body</span></div>
+</section>
+<section class="slide" data-i="16">
+  <div class="slide-inner"><div class="kicker">六、按语：每节最后那一小节在做什么</div>
+                <div class="compact"><p>八个「按语」小节字数都在六百到七百五十之间，是全章最薄的一组，但位置最关键。它做三件事。</p>
+<p>第一件，收一句总纲。感冒的按语是「把握肺卫表证之共性，分清风寒、风热、暑湿之个性，兼顾虚人感冒之特殊性」；哮病是「掌握夙根与诱因之关系，分清发作期与缓解期，发作治标、缓解治本」。总纲的作用是给整节一个可以复述的骨架。</p>
+<p>第二件，点出危候。喘证的按语写得最重：喘促持续不解、汗出肢冷、脉微欲绝者为喘脱之兆，当急回阳固脱。肺痈的按语点了大量咯血为危候，当急予止血、防窒息。肺胀的按语点了痰蒙神窍与喘脱。<strong>危候都写在按语里，而不写在分型里</strong>——因为危候不属于任何一型，它是所有型的共同终点。</p>
+<p>第三件，给一句分寸。肺痈的按语是「脓未成者重在消散，脓已成者重在速排」；肺痿的按语是「虚热者清润，虚寒者温补」。分寸句往往是一对反义结构，因为这一病的治法本来就有两个相反的方向。</p></div></div>
+  <div class="slide-foot"><span>17 / 21</span><span>body</span></div>
+</section>
+<section class="slide" data-i="17">
+  <div class="slide-inner"><div class="kicker">七、预防调护：八节里最容易被跳过的一格</div>
+                <div class="compact"><p>预防调护在白话教材里常被读成附论，但这一章的八个小节里有几条是本章最有操作性的内容。</p>
+<p>感冒的调护给的是「避邪与扶正」两端：避邪（增减衣被、少去公共场所、居室通风）、扶正（锻炼、益气固表）。咳嗽给的是「避风寒、适寒温」与戒烟。哮病给的是「避免诱因」：已知过敏原、刺激性气味、气候变化、饮食忌口。喘证给的是呼吸功能锻炼（腹式呼吸、缩唇呼吸）与耐寒锻炼。肺痈给的是排痰（体位引流、拍背）与口腔清洁。肺痨给的是控制传染源、切断传播途径、保护易感人群三段。肺胀给的是戒烟与康复锻炼。肺痿给的是防治原发病与护津。</p>
+<p>八节合起来，调护的重点可以归成四条：<strong>避诱因（哮病、喘证）、戒烟（咳嗽、肺胀）、排痰（肺痈）、防传染（肺痨）</strong>。这四条都不是治法的补充，而是各自病的发病机制的直接推论——诱因是哮病的触发点，烟是肺胀最重要的病因，脓痰是肺痈的关键，传染是肺痨的定义性特征。</p></div></div>
+  <div class="slide-foot"><span>18 / 21</span><span>body</span></div>
+</section>
+<section class="slide" data-i="18">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><ul><li><strong>底本本章确有量值，本课程一律不引。</strong> 4.2.5 与 4.7.5 两节末尾的「现代认识」段各带现代医学的时限与比例（咳嗽按病程分急性、亚急性、慢性；肺功能的诊断界值），程序数出五处数字＋单位。它们不是中医的剂量，但同样是量值，本书的正文一律不写、不引、不改写成参考区间。凡需数值，回底本。</li><li><strong>引文是教材正文，不是经典。</strong> 本章引用格式为「教材·中医内科学·第N章·N.M」。教材引《素问》《灵枢》《金匮要略》的地方是转述与节引；要引经典原文，须回原书核对，本书的引文门管不到那一层。</li><li><strong>八个病证不是八个模板。</strong> 辨证论治格有三种组织法（横切、纵切、虚实两分），本章的「模板」只指五小节的顺序，不指分型的写法。</li><li><strong>字数只描述写法，不描述重要性。</strong> 辨证论治格最厚，是因为要装下全部分型；按语最薄，但它承担了危候提示，重要性不成正比。统计口径固定在 <code>code/main.js</code> 里，可复算，不可外推。</li><li>**本章不逐一复述证型与方药。</li></ul></div></div>
+  <div class="slide-foot"><span>19 / 21</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="19">
+  <div class="slide-inner"><div class="kicker">代价与边界</div>
+                <div class="compact"><p>** 分型名称与代表方只在落位表里点到名字，不给组成、不给剂量、不给加减法。要这些，回底本。</p>
+<ul><li><strong>鉴别眼目是压缩。</strong> 三组眼目能分开八个病，但临床上重叠情形更多，教材各节的「鉴别」段还有更细的对举，本章只留主干。</li><li><strong>边界声明</strong>：本章只解释肺系八个病证的界定、病机主线、分型组织法与鉴别眼目，<strong>不写量值、不作诊断、不作证候判定、不作疗效与优越性断言，不构成诊断与用药依据</strong>；剂量与用法照底本，任何个体的诊治决策须由具备资质的人员依现行法律法规与规范、以现行教材与临床指南为依据作出。</li></ul></div></div>
+  <div class="slide-foot"><span>20 / 21</span><span>boundary</span></div>
+</section>
+<section class="slide" data-i="20">
+  <div class="slide-inner"><div class="kicker warn">免责声明</div><p class="lead">本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。</p></div>
+  <div class="slide-foot"><span>21 / 21</span><span>disclaimer</span></div>
+</section>
+</div>
+<div id="hud">← → 翻页 · 空格下一页 · Home/End 首尾 · p 打印/导出 PDF</div>
+<script>/**
+ * [tcmP] figures.js —— 中医概念动画图（纯 SVG + rAF，无依赖）
+ *
+ * 自动挂载：文档里写
+ *     <div data-figure="wuxing-cycle"></div>
+ * 即可。支持悬停暂停；系统开启「减少动态效果」时渲染为静态帧。
+ *
+ * 与 ai-engineering-from-scratch 的 site/figures.js 同构（同样的 el/loop/registry 形态），
+ * 图目换成中医概念：
+ *   yin-yang-sigmoid    阴阳 → 二分类：sigmoid 决策边界扫过，样本左右归属翻转
+ *   wuxing-cycle        五行生克：相生正向流动 + 相克五角星流动
+ *   zangxiang-graph     藏象：脏腑 → 官窍 → 情志 的边逐步点亮
+ *   sizhen-fusion       四诊合参：四通道 → 融合层 → 证候输出
+ *   meridian-lookup     经络腧穴：KD-Tree 空间划分 + 最近邻查询
+ *   junchen-attention   君臣佐使：药味 → 权重矩阵高亮
+ */
+
+(function () {
+  'use strict';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── SVG 小工具 ──
+  function el(name, attrs, kids) {
+    const e = document.createElementNS(NS, name);
+    for (const k in attrs || {}) e.setAttribute(k, attrs[k]);
+    (Array.isArray(kids) ? kids : kids ? [kids] : []).filter(Boolean).forEach((c) => e.appendChild(c));
+    return e;
+  }
+  const txt = (s) => document.createTextNode(s);
+
+  function label(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--sans)', 'font-size': 12, fill: 'var(--muted)' },
+      opts || {}
+    ), [txt(s)]);
+  }
+  function mono(x, y, s, opts) {
+    return el('text', Object.assign(
+      { x, y, 'font-family': 'var(--mono)', 'font-size': 11, fill: 'var(--muted)', 'letter-spacing': '.1em' },
+      opts || {}
+    ), [txt(s)]);
+  }
+
+  function svgRoot(host, W, H, aria) {
+    const svg = el('svg', {
+      viewBox: `0 0 ${W} ${H}`, width: '100%', role: 'img', 'aria-label': aria || '',
+      style: 'display:block;max-width:100%;height:auto',
+    });
+    host.appendChild(svg);
+    return svg;
+  }
+
+  // 悬停暂停 + 时间归一化
+  function loop(host, fn, period, opts) {
+    period = period || 6400;
+    opts = opts || {};
+    let raf, paused = false, t0 = performance.now();
+    const onTick = (now) => {
+      if (!paused) fn((((now - t0) % period) / period));
+      raf = requestAnimationFrame(onTick);
+    };
+    host.addEventListener('mouseenter', () => { paused = true; });
+    host.addEventListener('mouseleave', () => { paused = false; });
+    if (REDUCED) { fn(opts.staticT == null ? 0.62 : opts.staticT); return function () {}; }
+    raf = requestAnimationFrame(onTick);
+    return () => cancelAnimationFrame(raf);
+  }
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeIO = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+  const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+  const sigmoid = (z) => 1 / (1 + Math.exp(-z));
+
+  const FIGURES = {};
+
+  /* ───────────────────── yin-yang-sigmoid ─────────────────────
+     阴阳 → 二分类。左侧散点：X 轴「寒热倾向」，输出 sigmoid 概率。
+     扫描线扫过阈值，样本随阈值的移动左右换边，右侧给出准确率。
+  */
+  FIGURES['yin-yang-sigmoid'] = function (host) {
+    const W = 720, H = 400, PAD = 54;
+    const svg = svgRoot(host, W, H, '阴阳二分类与 sigmoid 决策边界');
+    const plotW = W - PAD * 2, plotH = H - 150;
+
+    // 样本：12 条八纲典型证候（阴=0 阳=1）
+    const data = [
+      [-2.2, 0], [-1.8, 0], [-1.4, 0], [-1.1, 0], [-0.6, 0], [-0.2, 0],
+      [0.2, 1], [0.6, 1], [1.1, 1], [1.5, 1], [1.9, 1], [2.4, 1],
+    ];
+    const X = (v) => PAD + ((v + 3) / 6) * plotW;
+    const Y = (p) => H - 90 - p * plotH;
+
+    // 坐标轴
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: W - PAD, y2: H - 90, stroke: 'var(--line)' }));
+    svg.appendChild(el('line', { x1: PAD, y1: H - 90, x2: PAD, y2: H - 90 - plotH, stroke: 'var(--line)' }));
+    svg.appendChild(mono(PAD, H - 72, '寒 / 阴 →'));
+    svg.appendChild(mono(W - PAD, H - 72, '← 热 / 阳', { 'text-anchor': 'end' }));
+    svg.appendChild(mono(8, PAD - 22, 'P(阳)'));
+    svg.appendChild(mono(W - PAD - 130, 26, 'sigmoid 决策边界'));
+
+    const curve = el('path', { d: '', fill: 'none', stroke: 'var(--jade)', 'stroke-width': 2.5 });
+    svg.appendChild(curve);
+    const threshLine = el('line', { stroke: 'var(--cinnabar)', 'stroke-dasharray': '5 4', 'stroke-width': 1.6 });
+    svg.appendChild(threshLine);
+
+    const pts = data.map(([x, y]) => {
+      const g = el('g', {});
+      const c = el('circle', { r: 6, cx: X(x), cy: H - 90 - 0.5 * plotH, fill: y ? 'var(--cinnabar)' : 'var(--jade)', opacity: 0.85 });
+      const cls = el('text', {
+        x: X(x), y: H - 90 - 0.5 * plotH + 4, 'text-anchor': 'middle',
+        'font-family': 'var(--sans)', 'font-size': 10, fill: '#fff',
+      }, [txt(y ? '阳' : '阴')]);
+      g.appendChild(c); g.appendChild(cls);
+      svg.appendChild(g);
+      return { x, y, c, cls };
+    });
+
+    const accText = label(PAD, 26, '', { fill: 'var(--ink)', 'font-size': 13 });
+    svg.appendChild(accText);
+
+    let pathD = '';
+    for (let i = 0; i <= 60; i += 1) {
+      const xv = -3 + (i / 60) * 6;
+      const p = sigmoid(1.6 * xv + 0.1);
+      pathD += `${i === 0 ? 'M' : 'L'}${X(xv).toFixed(1)},${Y(p).toFixed(1)}`;
+    }
+    curve.setAttribute('d', pathD);
+
+    loop(host, (t) => {
+      // 阈值在 0..1 之间来回扫
+      const thr = 0.15 + 0.7 * easeIO(1 - Math.abs(2 * t - 1));
+      const pThr = 0.1 + thr * 0.85;
+      const xThr = (Math.log(pThr / (1 - pThr)) - 0.1) / 1.6;
+      threshLine.setAttribute('x1', X(xThr));
+      threshLine.setAttribute('x2', X(xThr));
+      threshLine.setAttribute('y1', H - 90 - plotH - 6);
+      threshLine.setAttribute('y2', H - 90);
+
+      let correct = 0;
+      for (const p of pts) {
+        const prob = sigmoid(1.6 * p.x + 0.1);
+        const pred = prob >= pThr ? 1 : 0;
+        if (pred === p.y) correct += 1;
+        p.c.setAttribute('cy', Y(prob));
+        p.cls.setAttribute('y', Y(prob) + 4);
+        p.c.setAttribute('r', pred === p.y ? 7 : 5);
+        p.c.setAttribute('opacity', pred === p.y ? 0.92 : 0.32);
+        p.cls.setAttribute('opacity', pred === p.y ? 1 : 0.25);
+        // 判错的样本画一圈红
+        p.c.setAttribute('stroke', pred === p.y ? 'none' : 'var(--cinnabar)');
+        p.c.setAttribute('stroke-width', pred === p.y ? 0 : 2);
+      }
+      accText.textContent = `阈值 P=${pThr.toFixed(2)} · 准确率 ${correct}/${pts.length} = ${((correct / pts.length) * 100).toFixed(0)}%`;
+    }, 7200);
+  };
+
+  /* ───────────────────── wuxing-cycle ─────────────────────
+     五行生克。外圈相生（顺时针流动），内五角星相克。
+  */
+  FIGURES['wuxing-cycle'] = function (host) {
+    const W = 720, H = 440, cx = W / 2 - 70, cy = H / 2, R = 148;
+    const svg = svgRoot(host, W, H, '五行生克关系');
+    const names = ['木', '火', '土', '金', '水'];
+    const colors = ['var(--jade)', 'var(--cinnabar)', 'var(--gold)', '#8a6d3b', '#2a4d69'];
+    const node = names.map((_, i) => {
+      const a = -Math.PI / 2 + (i / 5) * Math.PI * 2;
+      return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), a };
+    });
+
+    // 相生边（外圈，顺时针 木→火→土→金→水→木）
+    const sheng = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const p = el('path', {
+        d: `M${n.x},${n.y} Q${(n.x + m.x) / 2 + (cy - (n.y + m.y) / 2) * 0.16},${(n.y + m.y) / 2 + ((n.x + m.x) / 2 - cx) * 0.16} ${m.x},${m.y}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.28,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+    // 相克边（五角星）
+    const ke = node.map((n, i) => {
+      const m = node[(i + 2) % 5];
+      const p = el('line', {
+        x1: n.x, y1: n.y, x2: m.x, y2: m.y,
+        stroke: 'var(--cinnabar)', 'stroke-width': 1.4, 'stroke-dasharray': '4 4', opacity: 0.2,
+      });
+      svg.appendChild(p);
+      return p;
+    });
+
+    // 沿边流动的点
+    const flow = node.map((n, i) => {
+      const m = node[(i + 1) % 5];
+      const g = el('circle', { r: 4, fill: 'var(--jade)', cx: n.x, cy: n.y, opacity: 0 });
+      svg.appendChild(g);
+      return { g, from: n, to: m };
+    });
+
+    const nodes = node.map((n, i) => {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: n.x, cy: n.y, r: 30, fill: '#fff', stroke: colors[i], 'stroke-width': 2 }));
+      g.appendChild(el('text', {
+        x: n.x, y: n.y + 8, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 22, fill: colors[i],
+      }, [txt(names[i])]));
+      svg.appendChild(g);
+      return g;
+    });
+
+    // 右栏说明
+    svg.appendChild(mono(W - 190, 60, '相生 (outer)'));
+    svg.appendChild(label(W - 190, 82, '木→火→土→金→水→木', { fill: 'var(--jade)' }));
+    svg.appendChild(mono(W - 190, 130, '相克 (star)'));
+    svg.appendChild(label(W - 190, 152, '木克土 · 土克水 · 水克火', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(label(W - 190, 170, '火克金 · 金克木', { fill: 'var(--cinnabar)' }));
+    svg.appendChild(mono(W - 190, 220, '建模要点'));
+    svg.appendChild(label(W - 190, 242, '5 类 + 有向约束', { fill: 'var(--ink)' }));
+    svg.appendChild(label(W - 190, 262, '纯 softmax 会丢掉', { fill: 'var(--muted)' }));
+    svg.appendChild(label(W - 190, 280, '全部关系信息', { fill: 'var(--muted)' }));
+
+    const capt = label(W - 190, H - 30, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const phase = (t * 5) % 5;
+      for (let i = 0; i < 5; i += 1) {
+        const f = flow[i];
+        const local = clamp01(phase - i);
+        const k = easeIO(local);
+        f.g.setAttribute('cx', lerp(f.from.x, f.to.x, k));
+        f.g.setAttribute('cy', lerp(f.from.y, f.to.y, k));
+        f.g.setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.95 : 0);
+        sheng[i].setAttribute('opacity', phase - i >= 0 && phase - i <= 1 ? 0.75 : 0.28);
+        const keOn = phase - i >= 0 && phase - i <= 1.4;
+        ke[i].setAttribute('opacity', keOn ? 0.55 : 0.2);
+      }
+      const active = Math.floor(phase) % 5;
+      nodes.forEach((g, i) => g.querySelector('circle').setAttribute('stroke-width', i === active ? 4 : 2));
+      capt.textContent = `当前传导：${names[active]} → ${names[(active + 1) % 5]}（生） / ${names[active]} 克 ${names[(active + 2) % 5]}`;
+    }, 7000);
+  };
+
+  /* ───────────────────── zangxiang-graph ─────────────────────
+     藏象：五脏 → 官窍 → 情志，边按序点亮。
+  */
+  FIGURES['zangxiang-graph'] = function (host) {
+    const W = 720, H = 430;
+    const svg = svgRoot(host, W, H, '藏象学说的脏腑-官窍-情志关系图');
+
+    const zang = [
+      { n: '肝', x: 110, y: 100, qiao: ['目'], zhi: '怒' },
+      { n: '心', x: 110, y: 210, qiao: ['舌'], zhi: '喜' },
+      { n: '脾', x: 110, y: 320, qiao: ['口'], zhi: '思' },
+      { n: '肺', x: 610, y: 100, qiao: ['鼻'], zhi: '悲' },
+      { n: '肾', x: 610, y: 210, qiao: ['耳'], zhi: '恐' },
+    ];
+    const edges = [];
+
+    for (const z of zang) {
+      const g = el('g', {});
+      g.appendChild(el('circle', { cx: z.x, cy: z.y, r: 26, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+      g.appendChild(el('text', { x: z.x, y: z.y + 8, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 20, fill: 'var(--cinnabar)' }, [txt(z.n)]));
+      svg.appendChild(g);
+
+      const qx = W / 2 + (z.x < 300 ? -40 : 40);
+      g.appendChild(el('line', { x1: z.x + (z.x < 300 ? 26 : -26), y1: z.y, x2: qx - (z.x < 300 ? 22 : -22), y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+
+      const qg = el('g', {});
+      qg.appendChild(el('rect', { x: qx - 22, y: z.y - 14, width: 44, height: 28, rx: 6, fill: 'var(--jade-soft)', stroke: 'var(--jade)', 'stroke-width': 1.3 }));
+      qg.appendChild(el('text', { x: qx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--jade)' }, [txt(z.qiao[0])]));
+      svg.appendChild(qg);
+
+      const zx = W - 110;
+      g.appendChild(el('line', { x1: qx + 22, y1: z.y, x2: zx - 24, y2: z.y, stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      const zg = el('g', {});
+      zg.appendChild(el('circle', { cx: zx, cy: z.y, r: 22, fill: '#fdf1dd', stroke: 'var(--gold)', 'stroke-width': 1.3 }));
+      zg.appendChild(el('text', { x: zx, y: z.y + 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--gold)' }, [txt(z.zhi)]));
+      svg.appendChild(zg);
+
+      edges.push({ zy: z.y, e1: g.querySelector('line'), e2: g.querySelectorAll('line')[1], qg, zg });
+    }
+
+    svg.appendChild(mono(110 - 30, 40, '藏 / 五藏'));
+    svg.appendChild(mono(W / 2 - 30, 40, '象 / 官窍'));
+    svg.appendChild(mono(W - 110 - 30, 40, '情志'));
+    const capt = label(20, H - 14, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const step = t * 5;
+      edges.forEach((e, i) => {
+        const on = step >= i;
+        e.e1.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        e.e2.setAttribute('stroke', on ? 'var(--gold)' : 'var(--line)');
+        e.qg.setAttribute('opacity', on ? 1 : 0.35);
+        e.zg.setAttribute('opacity', on ? 1 : 0.35);
+      });
+      const cur = zang[Math.min(4, Math.floor(step))];
+      capt.textContent = cur ? `点亮中：${cur.n} 开窍于 ${cur.qiao[0]}，在志为${cur.zhi}` : '';
+    }, 6200, { staticT: 0.99 });
+  };
+
+  /* ───────────────────── sizhen-fusion ─────────────────────
+     四诊合参：四通道 → 融合层 → 证候。演示模态缺失时的降级。
+  */
+  FIGURES['sizhen-fusion'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '四诊合参的多模态融合与模态缺失降级');
+    const chans = [
+      { n: '望', d: '舌象 / 面色', y: 60 },
+      { n: '闻', d: '语声 / 气息', y: 130 },
+      { n: '问', d: '主诉 / 现病史', y: 200 },
+      { n: '切', d: '脉搏波', y: 270 },
+    ];
+    const fx = 330, fy = 165;
+    const outx = 600;
+
+    const fxG = el('g', {});
+    fxG.appendChild(el('rect', { x: fx - 52, y: fy - 46, width: 104, height: 92, rx: 10, fill: '#fff', stroke: 'var(--jade)', 'stroke-width': 2 }));
+    fxG.appendChild(el('text', { x: fx, y: fy - 14, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--jade)' }, [txt('融合层')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 8, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('交叉注意力')]));
+    fxG.appendChild(el('text', { x: fx, y: fy + 26, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('+ 缺失掩码')]));
+    svg.appendChild(fxG);
+
+    const outG = el('g', {});
+    outG.appendChild(el('rect', { x: outx - 46, y: fy - 32, width: 92, height: 64, rx: 10, fill: 'var(--cinnabar-soft)', stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+    outG.appendChild(el('text', { x: outx, y: fy - 6, 'text-anchor': 'middle', 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--cinnabar)' }, [txt('证候')]));
+    outG.appendChild(el('text', { x: outx, y: fy + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, [txt('带置信度')]));
+    svg.appendChild(outG);
+
+    svg.appendChild(el('line', { x1: fx + 52, y1: fy, x2: outx - 46, y2: fy, stroke: 'var(--cinnabar)', 'stroke-width': 1.6 }));
+
+    const inG = chans.map((c) => {
+      const g = el('g', {});
+      g.appendChild(el('rect', { x: 24, y: c.y - 24, width: 150, height: 48, rx: 8, fill: '#fff', stroke: 'var(--line)', 'stroke-width': 1.4 }));
+      g.appendChild(el('text', { x: 40, y: c.y - 2, 'font-family': 'var(--serif)', 'font-size': 15, fill: 'var(--ink)' }, [txt(c.n + '诊')]));
+      g.appendChild(el('text', { x: 40, y: c.y + 16, 'font-size': 11, fill: 'var(--muted)' }, [txt(c.d)]));
+      svg.appendChild(g);
+      const path = el('path', {
+        d: `M174,${c.y} C 250,${c.y} 260,${fy} ${fx - 52},${fy}`,
+        fill: 'none', stroke: 'var(--jade)', 'stroke-width': 1.6, opacity: 0.22,
+      });
+      svg.appendChild(path);
+      const dot = el('circle', { r: 4, fill: 'var(--jade)', opacity: 0 });
+      svg.appendChild(dot);
+      return { g, path, dot, y: c.y };
+    });
+
+    const capt = label(24, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    // 循环：全模态 → 缺闻诊 → 缺闻+切 → 恢复
+    const phases = [[1, 1, 1, 1], [1, 0, 1, 1], [1, 0, 1, 0], [1, 1, 1, 1]];
+    loop(host, (t) => {
+      const idx = Math.min(phases.length - 1, Math.floor(t * phases.length));
+      const mask = phases[idx];
+      const missing = [];
+      mask.forEach((m, i) => { if (!m) missing.push(chans[i].n); });
+
+      inG.forEach((c, i) => {
+        const on = mask[i] === 1;
+        c.g.style.opacity = on ? 1 : 0.3;
+        c.path.setAttribute('stroke', on ? 'var(--jade)' : 'var(--line)');
+        c.path.setAttribute('stroke-dasharray', on ? 'none' : '4 4');
+        c.path.setAttribute('opacity', on ? 0.55 : 0.25);
+        const local = clamp01(t * 4 - idx);
+        c.dot.setAttribute('cx', lerp(174, fx - 52, easeIO(local)));
+        c.dot.setAttribute('cy', lerp(c.y, fy, easeIO(local)));
+        c.dot.setAttribute('opacity', on ? 0.95 : 0);
+      });
+
+      const conf = 0.62 + 0.1 * mask.filter(Boolean).length;
+      outG.style.opacity = 0.4 + 0.6 * conf;
+      capt.textContent = missing.length
+        ? `模态缺失：缺 ${missing.join('、')} → 置信度降至 ${(conf * 100).toFixed(0)}%，系统须显式降级而非静默猜测`
+        : `四诊齐备 → 置信度 ${(conf * 100).toFixed(0)}%`;
+    }, 8800, { staticT: 0.35 });
+  };
+
+  /* ───────────────────── meridian-lookup ─────────────────────
+     腧穴检索：KD-Tree 空间划分 + 最近邻查询。
+  */
+  FIGURES['meridian-lookup'] = function (host) {
+    const W = 720, H = 400, PAD = 40;
+    const svg = svgRoot(host, W, H, '腧穴的空间划分与最近邻检索');
+    const plotW = W - PAD * 2 - 30, plotH = H - 110;
+
+    // 模拟体表腧穴点集（合谷、内关、足三里、三阴交等 18 穴）
+    let seed = 20261012;
+    const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+    const pts = Array.from({ length: 18 }, () => ({ x: PAD + 30 + rnd() * (plotW - 60), y: PAD + 20 + rnd() * (plotH - 40) }));
+
+    // KD-Tree 递归划分线
+    const lines = [];
+    (function build(list, depth) {
+      if (list.length < 2) return;
+      const axis = depth % 2;
+      const sorted = list.slice().sort((a, b) => (axis ? a.y - b.y : a.x - b.x));
+      const med = sorted[Math.floor(sorted.length / 2)];
+      if (axis) {
+        const minX = Math.min(...list.map((p) => p.x));
+        const maxX = Math.max(...list.map((p) => p.x));
+        lines.push({ x1: minX, y1: med.y, x2: maxX, y2: med.y, depth });
+        build(list.filter((p) => p.y < med.y), depth + 1);
+        build(list.filter((p) => p.y >= med.y), depth + 1);
+      } else {
+        const minY = Math.min(...list.map((p) => p.y));
+        const maxY = Math.max(...list.map((p) => p.y));
+        lines.push({ x1: med.x, y1: minY, x2: med.x, y2: maxY, depth });
+        build(list.filter((p) => p.x < med.x), depth + 1);
+        build(list.filter((p) => p.x >= med.x), depth + 1);
+      }
+    })(pts, 0);
+
+    const lineEls = lines.map((l) => {
+      const e = el('line', { x1: l.x1, y1: l.y1, x2: l.x2, y2: l.y2, stroke: 'var(--line)', 'stroke-width': 1, opacity: 0 });
+      svg.appendChild(e);
+      return { e, depth: l.depth };
+    });
+
+    const dotEls = pts.map((p, i) => {
+      const c = el('circle', { cx: p.x, cy: p.y, r: 4.5, fill: 'var(--jade)', opacity: 0.75 });
+      svg.appendChild(c);
+      const t = el('text', { x: p.x + 7, y: p.y + 4, 'font-size': 10, fill: 'var(--muted)', opacity: 0 });
+      t.appendChild(txt(`穴${String(i + 1).padStart(2, '0')}`));
+      svg.appendChild(t);
+      return { c, t, p };
+    });
+
+    const query = el('circle', { r: 8, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 2.2 });
+    svg.appendChild(query);
+    const ring = el('circle', { r: 0, fill: 'none', stroke: 'var(--cinnabar)', 'stroke-width': 1, 'stroke-dasharray': '3 3' });
+    svg.appendChild(ring);
+    const link = el('line', { stroke: 'var(--cinnabar)', 'stroke-width': 1.6, 'stroke-dasharray': '4 3' });
+    svg.appendChild(link);
+
+    const capt = label(PAD, H - 20, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      // 查询点沿弧线游走
+      const ang = t * Math.PI * 2;
+      const qx = PAD + 30 + plotW / 2 + Math.cos(ang) * plotW * 0.33;
+      const qy = PAD + 20 + plotH / 2 + Math.sin(ang) * plotH * 0.32;
+      query.setAttribute('cx', qx);
+      query.setAttribute('cy', qy);
+
+      let best = null;
+      let bestD = Infinity;
+      for (const d of dotEls) {
+        const dd = (d.p.x - qx) ** 2 + (d.p.y - qy) ** 2;
+        if (dd < bestD) { bestD = dd; best = d; }
+        d.c.setAttribute('r', 4.5);
+        d.c.setAttribute('fill', 'var(--jade)');
+        d.t.setAttribute('opacity', 0);
+      }
+      const dist = Math.sqrt(bestD);
+      link.setAttribute('x1', qx); link.setAttribute('y1', qy);
+      link.setAttribute('x2', best.p.x); link.setAttribute('y2', best.p.y);
+      ring.setAttribute('cx', qx); ring.setAttribute('cy', qy);
+      ring.setAttribute('r', dist);
+      best.c.setAttribute('r', 8);
+      best.c.setAttribute('fill', 'var(--cinnabar)');
+      best.t.setAttribute('opacity', 1);
+
+      const step = clamp01(t * 3);
+      lineEls.forEach((l) => l.e.setAttribute('opacity', step > l.depth / 6 ? (0.5 - l.depth * 0.06) : 0));
+
+      capt.textContent = `查询点 → 最近腧穴 ${best.t.textContent} · 平面距离 ${dist.toFixed(1)}px（真实体表须改测地距离）`;
+    }, 11000, { staticT: 0.2 });
+  };
+
+  /* ───────────────────── junchen-attention ─────────────────────
+     君臣佐使 → 注意力权重。列 = 药味，行为权重分配。
+  */
+  FIGURES['junchen-attention'] = function (host) {
+    const W = 720, H = 380;
+    const svg = svgRoot(host, W, H, '君臣佐使的注意力权重分配');
+
+    const herbs = ['桂枝', '芍药', '生姜', '大枣', '甘草'];
+    const roles = ['君', '臣', '佐', '使'];
+    const weights = [
+      [0.52, 0.30, 0.08, 0.06, 0.04],
+      [0.18, 0.44, 0.20, 0.12, 0.06],
+      [0.08, 0.16, 0.40, 0.24, 0.12],
+      [0.04, 0.08, 0.18, 0.32, 0.38],
+    ];
+
+    const GX = 110, GY = 60, CW = 84, CH = 52;
+    svg.appendChild(mono(GX, 34, '方剂：桂枝汤（示例）'));
+
+    herbs.forEach((h, j) => {
+      svg.appendChild(el('text', {
+        x: GX + j * CW + CW / 2, y: GY - 10, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 14, fill: 'var(--ink)',
+      }, [txt(h)]));
+    });
+    roles.forEach((r, i) => {
+      svg.appendChild(el('text', {
+        x: GX - 22, y: GY + i * CH + CH / 2 + 6, 'text-anchor': 'middle',
+        'font-family': 'var(--serif)', 'font-size': 16, fill: 'var(--cinnabar)',
+      }, [txt(r)]));
+    });
+
+    const cells = [];
+    for (let i = 0; i < roles.length; i += 1) {
+      for (let j = 0; j < herbs.length; j += 1) {
+        const r = el('rect', {
+          x: GX + j * CW + 3, y: GY + i * CH + 3, width: CW - 6, height: CH - 6, rx: 6,
+          fill: 'var(--jade)', opacity: 0,
+        });
+        svg.appendChild(r);
+        const tx = el('text', {
+          x: GX + j * CW + CW / 2, y: GY + i * CH + CH / 2 + 5, 'text-anchor': 'middle',
+          'font-family': 'var(--mono)', 'font-size': 12, fill: 'var(--ink)', opacity: 0,
+        });
+        tx.appendChild(txt(weights[i][j].toFixed(2)));
+        svg.appendChild(tx);
+        cells.push({ r, tx, w: weights[i][j], i, j });
+      }
+    }
+
+    // 右侧：软化的权重条
+    const bx = GX + herbs.length * CW + 40;
+    svg.appendChild(mono(bx, 34, '行归一化 (softmax)'));
+    const bars = roles.map((r, i) => {
+      const max = Math.max(...weights[i]);
+      const w = Math.max(...weights[i]);
+      const g = el('g', {});
+      g.appendChild(el('text', { x: bx, y: GY + i * 44 + 10, 'font-size': 12, fill: 'var(--muted)' }, [txt(r + ' 最大: ' + max.toFixed(2))]));
+      const bg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 180, height: 8, rx: 4, fill: 'var(--paper-2)' });
+      g.appendChild(bg);
+      const fg = el('rect', { x: bx, y: GY + i * 44 + 18, width: 0, height: 8, rx: 4, fill: 'var(--jade)' });
+      g.appendChild(fg);
+      svg.appendChild(g);
+      return { fg, w: w, max };
+    });
+
+    svg.appendChild(label(20, H - 40, '结构先验：君药权重最大 → 可作为注意力掩码，让模型学不到"反结构"的配伍', { fill: 'var(--muted)' }));
+    const capt = label(20, H - 16, '', { fill: 'var(--ink)' });
+    svg.appendChild(capt);
+
+    loop(host, (t) => {
+      const focusRow = Math.floor(t * 4) % 4;
+      const local = clamp01(t * 4 - Math.floor(t * 4));
+      cells.forEach((c) => {
+        const on = c.i === focusRow;
+        c.r.setAttribute('opacity', on ? c.w * (0.55 + 0.45 * local) : c.w * 0.14);
+        c.tx.setAttribute('opacity', on ? 1 : 0.25);
+      });
+      bars.forEach((b, i) => {
+        b.fg.setAttribute('width', i === focusRow ? 180 * (b.max) * (0.5 + 0.5 * local) : 180 * b.max * 0.35);
+      });
+      capt.textContent = `当前角色：${roles[focusRow]} · 权重最高者为 ${herbs[weights[focusRow].indexOf(Math.max(...weights[focusRow]))]}`;
+    }, 8000, { staticT: 0.1 });
+  };
+
+  /* ───────────────────── 自动挂载 ───────────────────── */
+  function mount(root) {
+    const hosts = (root || document).querySelectorAll('[data-figure]');
+    for (const host of hosts) {
+      if (host.dataset.figureMounted === '1') continue;
+      const fn = FIGURES[host.dataset.figure];
+      if (!fn) {
+        host.innerHTML = `<p class="muted small">未知图形：<code>${host.dataset.figure}</code></p>`;
+        host.dataset.figureMounted = '1';
+        continue;
+      }
+      host.classList.add('figure');
+      fn(host);
+      host.dataset.figureMounted = '1';
+    }
+  }
+
+  window.TCMFigures = { FIGURES, mount };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => mount());
+  } else {
+    mount();
+  }
+  // 单页内动态插入的图形（章节页异步渲染）也能挂上
+  new MutationObserver(() => mount()).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+<script>
+(function(){
+  const deck=document.getElementById('deck');
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+
+  // ── 单帧模式：?shot=N 只渲染第 N 张，供无头浏览器逐帧截图 ──
+  // 截图器需要一张「干净的、正好一屏」的画面，所以这里藏掉其余幻灯片、
+  // 关掉滚动吸附、去掉 HUD，并在 title 上打就绪标记（渲染完成前截图会得到空白）。
+  const shot=new URLSearchParams(location.search).get('shot');
+  if(shot!==null){
+    const n=Math.max(0,Math.min(slides.length-1,Number(shot)||0));
+    slides.forEach((s,idx)=>{ if(idx!==n) s.style.display='none'; });
+    deck.style.overflow='hidden';
+    deck.style.scrollSnapType='none';
+    const hud=document.getElementById('hud');
+    if(hud) hud.style.display='none';
+    const target=slides[n];
+    if(target){ target.style.borderBottom='0'; target.scrollIntoView({block:'start'}); }
+    document.title='SHOT_READY '+n+' of '+slides.length;
+    if(window.TCMFigures)window.TCMFigures.mount(document);
+    // 只读视图：不绑键盘与点击，避免截图过程中页面状态改变
+    return;
+  }
+
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView();}
+  addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    else if(e.key==='p'||e.key==='P'){e.preventDefault();print();}
+  });
+  deck.addEventListener('click',e=>{if(e.target.closest('a'))return;go(i+1);});
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)i=+en.target.dataset.i;});},{root:deck,threshold:.6});
+  slides.forEach(s=>io.observe(s));
+  if(window.TCMFigures)window.TCMFigures.mount(document);
+})();
+</script>
+</body>
+</html>

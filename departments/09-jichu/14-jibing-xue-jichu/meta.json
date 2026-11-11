@@ -1,0 +1,32 @@
+{
+  "slug": "14-jibing-xue-jichu",
+  "title": "疾病学基础",
+  "en": "Foundations of Disease",
+  "deptSlug": "09-jichu",
+  "deptTitle": "基础医学院",
+  "globalN": 134,
+  "type": "Core",
+  "semester": 4,
+  "stage": "sheng",
+  "stageTitle": "生",
+  "hours": 54,
+  "bridge": "病因—病理—表现→因果链 / 疾病命名→ICD-11 编码",
+  "chaptersTarget": 18,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/09-jichu/14-jibing-xue-jichu",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/09-jichu/14-jibing-xue-jichu",
+    "chaptersWritten": 18,
+    "words": 403040,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#疾病学基础",
+    "extractedAt": "2026-10-21"
+  }
+}

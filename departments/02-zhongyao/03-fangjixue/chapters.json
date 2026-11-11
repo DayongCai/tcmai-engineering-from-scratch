@@ -6,73 +6,91 @@
       "n": 1,
       "slug": "01-fangfa-ducong",
       "title": "方剂与治法：方从法出",
-      "status": "📋"
+      "status": "🚧"
     },
     {
       "n": 2,
       "slug": "02-junchen-zuoshi",
       "title": "君臣佐使：组方的角色结构",
-      "status": "📋"
+      "status": "🚧"
     },
     {
       "n": 3,
       "slug": "03-jiebiaoji",
       "title": "解表剂：辛温与辛凉的分野",
-      "status": "📋"
+      "status": "🚧"
     },
     {
       "n": 4,
       "slug": "04-xiexia-hejie",
       "title": "泻下剂与和解剂",
-      "status": "📋"
+      "status": "🚧"
     },
     {
       "n": 5,
       "slug": "05-qingre-qushu",
       "title": "清热剂与祛暑剂",
-      "status": "📋"
+      "status": "🚧"
     },
     {
       "n": 6,
       "slug": "06-wenli-buyi",
       "title": "温里剂与补益剂",
-      "status": "📋"
+      "status": "🚧"
     },
     {
       "n": 7,
       "slug": "07-guse-anshen",
       "title": "固涩剂与安神剂",
-      "status": "📋"
+      "status": "🚧"
     },
     {
       "n": 8,
       "slug": "08-liqi-lixue",
       "title": "理气剂与理血剂",
-      "status": "📋"
+      "status": "🚧"
     },
     {
       "n": 9,
       "slug": "09-zhifeng-zhizao",
       "title": "治风剂与治燥剂",
-      "status": "📋"
+      "status": "🚧"
     },
     {
       "n": 10,
       "slug": "10-qushi-qutan",
       "title": "祛湿剂与祛痰剂",
-      "status": "📋"
+      "status": "🚧"
     },
     {
       "n": 11,
       "slug": "11-xiaoshi-quchong",
       "title": "消食剂、驱虫剂与涌吐剂",
-      "status": "📋"
+      "status": "🚧"
     },
     {
       "n": 12,
       "slug": "12-peiwu-gongxian",
       "title": "方剂配伍的数据化：药物共现网络",
-      "status": "📋"
+      "status": "🚧"
+    },
+    {
+      "n": 13,
+      "slug": "13-jixing-jianfu",
+      "title": "剂型与煎服法：方剂的物理形态",
+      "status": "🚧"
+    },
+    {
+      "n": 14,
+      "slug": "14-biaoli-yongyang",
+      "title": "表里双解与治痈疡：六首方的两个方向",
+      "status": "🚧"
+    },
+    {
+      "n": 15,
+      "slug": "15-fangzheng-ai",
+      "title": "方证对应与 AI：第24章的四个层次",
+      "status": "🚧"
     }
   ]
 }

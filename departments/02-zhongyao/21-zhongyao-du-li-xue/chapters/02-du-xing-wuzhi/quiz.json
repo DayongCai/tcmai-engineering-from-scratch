@@ -1,0 +1,79 @@
+{
+ "lesson": "02-du-xing-wuzhi",
+ "title": "毒性物质基础：成分类型与矿物药",
+ "subject": "21-zhongyao-du-li-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 2 章「毒性物质基础：成分类型与矿物药」要回答的核心问题是什么？",
+   "options": [
+    "为什么有毒的总是那几类成分",
+    "5.5.1 毒性的概念",
+    "马钱子",
+    "5.5.2 有毒中药的应用"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：生物碱与强心苷有明确的受体或离子通道靶点，剂量稍过就跨过治疗窗；矿物药的问题不在成分复杂，而在重金属不可代谢。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "减毒与救治",
+    "毒性成分",
+    "毒性表现",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（靶器官）重心落在哪一项？",
+   "options": [
+    "心与神经",
+    "乙酸-丙二酸途径",
+    "莽草酸途径",
+    "甲戊二羟酸途径"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "13 个",
+    "15 个",
+    "17 个",
+    "19 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "本课程数值类命中只有 15 处，说明什么？",
+   "options": [
+    "教材常数多以范围或文字表述，可数的值少不等于不量化",
+    "5.5.1 毒性的概念",
+    "马钱子",
+    "5.5.2 有毒中药的应用"
+   ],
+   "correct": 0,
+   "explanation": "正文「数字的边界」段：真正的量化在方法学七项指标里。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/zhongyao-du-li/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

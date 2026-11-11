@@ -1,0 +1,138 @@
+{
+ "title": "医学人工智能导论",
+ "note": "合成课：八个专题各取一门已建课的导论/概论章，单元逐字保留原 locator（机器学习 / 中医信息学 / 中医智能设备 / 软件架构 / 知识图谱 / 大数据 / 数据安全）。",
+ "views": {
+  "问题与场景": [
+   "问题",
+   "场景",
+   "需求",
+   "应用",
+   "临床",
+   "任务"
+  ],
+  "方法与模型": [
+   "方法",
+   "模型",
+   "算法",
+   "数据",
+   "特征",
+   "学习"
+  ],
+  "治理与责任": [
+   "伦理",
+   "隐私",
+   "责任",
+   "标准",
+   "法规",
+   "安全"
+  ]
+ },
+ "levels": {
+  "起步与场景": [
+   1,
+   2
+  ],
+  "设备与系统": [
+   3,
+   4
+  ],
+  "知识与数据": [
+   5,
+   6
+  ],
+  "治理与地图": [
+   7,
+   8
+  ]
+ },
+ "chapters": [
+  {
+   "title": "什么是医学人工智能",
+   "picks": [
+    [
+     "jiqi-xuexi",
+     1
+    ]
+   ]
+  },
+  {
+   "title": "中医信息化的来路",
+   "picks": [
+    [
+     "zhongyi-xinxi-xue",
+     1
+    ],
+    [
+     "zhongyi-xinxi-xue",
+     2
+    ]
+   ]
+  },
+  {
+   "title": "从可穿戴到四诊仪",
+   "picks": [
+    [
+     "zhongyi-zhineng-yiqi",
+     1
+    ],
+    [
+     "zhongyi-zhineng-yiqi",
+     2
+    ],
+    [
+     "zhongyi-zhineng-yiqi",
+     3
+    ]
+   ]
+  },
+  {
+   "title": "系统的形状：从 HIS 到智能体",
+   "picks": [
+    [
+     "zhongyi-ruanjian-jiagou",
+     1
+    ]
+   ]
+  },
+  {
+   "title": "知识怎么放进机器",
+   "picks": [
+    [
+     "zhongyi-zhishishu",
+     1
+    ],
+    [
+     "zhongyi-zhishishu",
+     2
+    ]
+   ]
+  },
+  {
+   "title": "统计、数据与模型的边界",
+   "picks": [
+    [
+     "zhongyi-dashuju-fenxi",
+     1
+    ]
+   ]
+  },
+  {
+   "title": "伦理、隐私与责任",
+   "picks": [
+    [
+     "yixue-shuju-anquan-yinsi",
+     3
+    ]
+   ]
+  },
+  {
+   "title": "学科地图与学习方法",
+   "picks": [
+    [
+     "jiqi-xuexi",
+     2
+    ]
+   ]
+  }
+ ]
+}

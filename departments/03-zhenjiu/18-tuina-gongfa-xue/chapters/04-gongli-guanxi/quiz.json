@@ -1,0 +1,79 @@
+{
+ "lesson": "04-gongli-guanxi",
+ "title": "推拿功法与手法功力",
+ "subject": "18-tuina-gongfa-xue",
+ "questions": [
+  {
+   "stage": "pre",
+   "question": "第 4 章「推拿功法与手法功力」要回答的核心问题是什么？",
+   "options": [
+    "手法做不出来，到底是手法没学会，还是功力不够",
+    "推拿功法的概念与范围",
+    "推拿功法学的学科地位",
+    "远古至秦汉"
+   ],
+   "correct": 0,
+   "explanation": "见 docs/zh.md 的 PROBLEM 段：手法学讲「沉肩垂肘、持久有力」，功法学讲「易筋经、桩功」；两本书各自都对，合起来才回答得了这个问题。"
+  },
+  {
+   "stage": "check",
+   "question": "本章四位面（功法体系）重心落在哪一项？",
+   "options": [
+    "专项功力",
+    "易筋经",
+    "少林内功",
+    "导引套路"
+   ],
+   "correct": 0,
+   "explanation": "见正文第二节分布表。"
+  },
+  {
+   "stage": "check",
+   "question": "本章三辨中命中最多的维度是？",
+   "options": [
+    "调身",
+    "调息",
+    "调心",
+    "三者大致相当"
+   ],
+   "correct": 0,
+   "explanation": "由单元层词频相加得出。"
+  },
+  {
+   "stage": "check",
+   "question": "本章共取教材几个小节？",
+   "options": [
+    "2 个",
+    "4 个",
+    "5 个",
+    "7 个"
+   ],
+   "correct": 0,
+   "explanation": "见 chapter-map.json。"
+  },
+  {
+   "stage": "post",
+   "question": "第五层对账里唯一的功力缺口是哪一类？",
+   "options": [
+    "指力",
+    "腕力",
+    "臂力",
+    "腰腿力"
+   ],
+   "correct": 0,
+   "explanation": "密度比 0.76，其余三类均 ≥1；而手法学里最吃指力的是一指禅推法。"
+  },
+  {
+   "stage": "post",
+   "question": "本章数字的来源是哪一层？",
+   "options": [
+    "standards/gongfa/units.json",
+    "正文手打",
+    "模型按印象生成",
+    "教材翻页估算"
+   ],
+   "correct": 0,
+   "explanation": "数据层可复算，正文不存独立数字。"
+  }
+ ]
+}

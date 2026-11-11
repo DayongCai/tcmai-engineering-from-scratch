@@ -1,0 +1,82 @@
+{
+ "courseTitle": "针刀医学",
+ "deptPath": "departments/03-zhenjiu/13-zhendao-yixue",
+ "xlsx": "派生课（无教材）：单元取自针灸系与护理系已建课程，见 units.json source",
+ "chain": "针刀医学概论 → 器械、进针与操作规范 → 软组织解剖与病理 → 颈肩腰腿痛 → 关节与腱鞘疾病 → 神经卡压 → 安全性：禁忌与并发症 → 疗效评价与循证",
+ "levelLabel": "观察视角",
+ "objectPressure": "派生课的判断力来自把父课的片段重排成一条决策链",
+ "reportRule": "父课教材与现行规范（须注明出处）",
+ "gapNote": "无独立教材；未覆盖主题见各章 why 与 README",
+ "chapterQ": {
+  "01-zhendao-gailun": [
+   "针刀医学概论的核心判据是什么",
+   "「针」与「刀」合一的器械，风险也随之合一"
+  ],
+  "02-qixie-guifan": [
+   "器械、进针与操作规范的核心判据是什么",
+   "刀口方向是这门技术的第一条纪律"
+  ],
+  "03-ruanzuzhi-bingli": [
+   "软组织解剖与病理的核心判据是什么",
+   "粘连、瘢痕、挛缩：三种可触的病理"
+  ],
+  "04-jingjian-yaotui": [
+   "颈肩腰腿痛的核心判据是什么",
+   "针刀最主要的适应证群"
+  ],
+  "05-guanjie-jianqiao": [
+   "关节与腱鞘疾病的核心判据是什么",
+   "膝、踝、肘、腕：进针点与安全三角"
+  ],
+  "06-shenjing-kaya": [
+   "神经卡压的核心判据是什么",
+   "麻木与放射痛要追问到具体神经"
+  ],
+  "07-anquan-jinji": [
+   "安全性：禁忌与并发症的核心判据是什么",
+   "感染、出血、神经损伤三件事必须写死"
+  ],
+  "08-liaoxiao-zhengju": [
+   "疗效评价与循证的核心判据是什么",
+   "针刀的证据基础目前薄在哪里"
+  ]
+ },
+ "fallback": {
+  "01-zhendao-gailun": [
+   "《针刀医学·针刀医学概论》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "02-qixie-guifan": [
+   "《针刀医学·器械、进针与操作规范》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "03-ruanzuzhi-bingli": [
+   "《针刀医学·软组织解剖与病理》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "04-jingjian-yaotui": [
+   "《针刀医学·颈肩腰腿痛》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "05-guanjie-jianqiao": [
+   "《针刀医学·关节与腱鞘疾病》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "06-shenjing-kaya": [
+   "《针刀医学·神经卡压》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "07-anquan-jinji": [
+   "《针刀医学·安全性：禁忌与并发症》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "08-liaoxiao-zhengju": [
+   "《针刀医学·疗效评价与循证》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ]
+ },
+ "defaultCite": [
+  "《针刀医学》",
+  "派生课篇名"
+ ]
+}

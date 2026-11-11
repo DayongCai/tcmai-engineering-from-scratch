@@ -1,0 +1,32 @@
+{
+ "_note": "跨课引用登记表。check_scaffold_paths.py 默认把「指向别课的 standards 目录」判为脚手架残留；本表登记合法跨课引用，每条必须写理由。新增条目要能回答：这一课为什么必须读那一课的底本？答不上来就不该登记，应改代码。",
+ "01-zhongyi/10-zhongyi-neike-xue": {
+  "fangji": "第 13 章「证方疗效」按方剂学方剂层（standards/fangji/formulas.json，114 首）现算，是本章唯一的数字来源",
+  "icd11": "第 14 章「分型与 ICD-11 映射」要读 ICD-11 传统医学章节镜像（D:\\ICD11-source 落库后的 standards/icd11）",
+  "semtensor": "证候描述的术语对齐与相似度计算依赖全库语义张量（standards/semtensor），内科是它的下游使用者之一"
+ },
+ "01-zhongyi/22-zhongyi-biye-sheji": {
+  "icd11": "毕设选题须落到 ICD-11 传统医学章节编码上，28 章里多章引用",
+  "zhenghou": "证候派生案按《中医证候学》单元库立项",
+  "zhongyao": "中药类毕设按《中药学》药物库立项",
+  "fangji": "方剂类毕设按方剂库立项",
+  "zhenduan": "诊断类毕设按《中医诊断学》单元库立项",
+  "knowledge-tree": "毕设选择依据来自全库知识树",
+  "gejia": "学派类毕设按《各家针灸学说》立项",
+  "zhexue": "中医哲学类毕设按《中医哲学》立项",
+  "yaoli": "药理类毕设按药理学单元库立项",
+  "neike": "内科类毕设按内科学单元库立项",
+  "gubing": "骨伤类毕设按《中医骨伤科学》立项",
+  "jizhen": "急诊类毕设按《中医急诊学》立项",
+  "semtensor": "毕设的证候一致性检查复用语义张量",
+  "bingli": "病理类毕设按病理学单元库立项",
+  "binglishengli": "病理生理类毕设按其单元库立项",
+  "shengli": "生理类毕设按生理学单元库立项"
+ },
+ "02-zhongyao/19-zhongyao-zhuanye-shijian": {
+  "zhongyao-xue": "第 1 章「产地调研」的量值锚点直接引《中药学》药物库（standards/zhongyao-xue/药物库.json，340 味），调研表按这 340 味逐味落产区—规格—批次，是本课唯一的全量清单"
+ },
+ "01-zhongyi/06-neijing-xuandu": {
+  "materials": "内经选读逐字引用的权威源是全文语料层 standards/materials/neijing-quanwen（162 篇 · 155,206 字，旧 .xls 导入，带译文/按语）；教材选读本 neijing-xuandu 只占 87.7%，其中 34 篇为节选，所以章内引文必须以 materials 侧核字"
+ }
+}

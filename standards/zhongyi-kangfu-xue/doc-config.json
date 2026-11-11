@@ -1,0 +1,98 @@
+{
+ "courseTitle": "中医康复学",
+ "deptPath": "departments/03-zhenjiu/15-zhongyi-kangfu-xue",
+ "xlsx": "派生课（无教材）：单元取自针灸系与护理系已建课程，见 units.json source",
+ "chain": "中医康复学概论 → 辨证与功能评定 → 中药康复 → 针灸康复 → 推拿康复 → 气功导引康复 → 饮食与情志康复 → 中风康复 → 骨伤与慢病康复 → 社区与家庭康复",
+ "levelLabel": "观察视角",
+ "objectPressure": "派生课的判断力来自把父课的片段重排成一条决策链",
+ "reportRule": "父课教材与现行规范（须注明出处）",
+ "gapNote": "无独立教材；未覆盖主题见各章 why 与 README",
+ "chapterQ": {
+  "01-zhongyi-kangfu-gailun": [
+   "中医康复学概论的核心判据是什么",
+   "中医康复不是「针灸+锻炼」，是一套辨证—调护体系"
+  ],
+  "02-bianzheng-pingding": [
+   "辨证与功能评定的核心判据是什么",
+   "证候与功能是两套坐标，必须同时记"
+  ],
+  "03-zhongyao-kangfu": [
+   "中药康复的核心判据是什么",
+   "内服与外用两条路"
+  ],
+  "04-zhenjiu-kangfu": [
+   "针灸康复的核心判据是什么",
+   "取穴与疗程要跟着功能目标走"
+  ],
+  "05-tuina-kangfu": [
+   "推拿康复的核心判据是什么",
+   "手法是康复里最依赖人的一项"
+  ],
+  "06-qigong-kangfu": [
+   "气功导引康复的核心判据是什么",
+   "呼吸与动作的自控训练"
+  ],
+  "07-yinshi-qingzhi": [
+   "饮食与情志康复的核心判据是什么",
+   "「忌口」与「安心」都有边界"
+  ],
+  "08-zhongfeng-kangfu": [
+   "中风康复的核心判据是什么",
+   "中医康复最成熟的一个病种"
+  ],
+  "09-gushang-manbing": [
+   "骨伤与慢病康复的核心判据是什么",
+   "骨折术后与糖尿病、高血压的功能维持"
+  ],
+  "10-shequ-jiating": [
+   "社区与家庭康复的核心判据是什么",
+   "把康复交到患者家里需要什么条件"
+  ]
+ },
+ "fallback": {
+  "01-zhongyi-kangfu-gailun": [
+   "《中医康复学·中医康复学概论》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "02-bianzheng-pingding": [
+   "《中医康复学·辨证与功能评定》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "03-zhongyao-kangfu": [
+   "《中医康复学·中药康复》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "04-zhenjiu-kangfu": [
+   "《中医康复学·针灸康复》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "05-tuina-kangfu": [
+   "《中医康复学·推拿康复》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "06-qigong-kangfu": [
+   "《中医康复学·气功导引康复》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "07-yinshi-qingzhi": [
+   "《中医康复学·饮食与情志康复》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "08-zhongfeng-kangfu": [
+   "《中医康复学·中风康复》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "09-gushang-manbing": [
+   "《中医康复学·骨伤与慢病康复》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ],
+  "10-shequ-jiating": [
+   "《中医康复学·社区与家庭康复》",
+   "派生课：篇名为本课程章名，出处见 units.json 的 source 字段"
+  ]
+ },
+ "defaultCite": [
+  "《中医康复学》",
+  "派生课篇名"
+ ]
+}

@@ -1,0 +1,79 @@
+{
+  "lesson": "04-ligao-piwei",
+  "title": "李杲与脾胃论：内伤也会发热",
+  "subject": "15-zhongyi-gejia-xueshuo",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "李杲区分的两类发热是？",
+      "options": [
+        "外感发热与内伤发热",
+        "实热与虚热",
+        "表热与里热",
+        "高热与低热"
+      ],
+      "correct": 0,
+      "explanation": "内伤发热补中气即退。"
+    },
+    {
+      "stage": "check",
+      "question": "「阴火」与刘完素之「火」的差别是？",
+      "options": [
+        "阴火来自中气下陷后的虚性亢奋",
+        "两者相同",
+        "阴火是外邪",
+        "阴火是实火"
+      ],
+      "correct": 0,
+      "explanation": "这是两派的分水岭。"
+    },
+    {
+      "stage": "check",
+      "question": "本章命中的分书分布是？",
+      "options": [
+        "伤寒 14 / 金匮 17 / 温病 37",
+        "伤寒 379 / 温病 289",
+        "全部在伤寒",
+        "全部在温病"
+      ],
+      "correct": 0,
+      "explanation": "合计 68 条。"
+    },
+    {
+      "stage": "check",
+      "question": "气虚族在证候层的规模是？",
+      "options": [
+        "17 证、22 次病证覆盖、跨 0 课",
+        "37 证",
+        "7 证",
+        "43 证"
+      ],
+      "correct": 0,
+      "explanation": "零跨课是本课程提出的一个问题。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么 68 条的低命中有重要意义？",
+      "options": [
+        "低命中恰恰说明它是经典未回答的新问题",
+        "说明脾胃论不重要",
+        "说明统计错",
+        "说明词表错"
+      ],
+      "correct": 0,
+      "explanation": "低命中 + 高影响。"
+    },
+    {
+      "stage": "post",
+      "question": "与张景岳的分工是？",
+      "options": [
+        "补中焦 vs 补下焦",
+        "补 vs 攻",
+        "清 vs 温",
+        "表 vs 里"
+      ],
+      "correct": 0,
+      "explanation": "两者都是补，路线不同。"
+    }
+  ]
+}

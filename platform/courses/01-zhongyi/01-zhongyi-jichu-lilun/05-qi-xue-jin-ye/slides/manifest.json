@@ -1,0 +1,57 @@
+{
+  "chapter": "05-qi-xue-jin-ye",
+  "slideCount": 10,
+  "segmentCount": 10,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 30
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 72
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 84
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 82
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 315
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 290
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 411
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 290
+    },
+    {
+      "n": 9,
+      "segment": 9,
+      "chars": 206
+    },
+    {
+      "n": 10,
+      "segment": 10,
+      "chars": 52
+    }
+  ]
+}

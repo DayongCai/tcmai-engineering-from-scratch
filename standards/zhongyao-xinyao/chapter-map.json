@@ -1,0 +1,101 @@
+{
+ "note": "外源课：一章一段证据链；单元即章（正文＋外源依据）。locator 用「外源章·」。",
+ "chapters": {
+  "01-lujing-zhiku": {
+   "n": 1,
+   "title": "研发路径与证据链：从药材到上市",
+   "units": [
+    "1.1"
+   ],
+   "srcChapters": [
+    "外源#W01,W02,W04"
+   ],
+   "why": "先立框架：中药新药不是「做一个药」，而是「把一条质量—安全证据链做实」",
+   "derivedFrom": "WHO guidelines on good manufacturing practices (GMP) for herbal medicines 第1条；WHO guidelines on good manufacturing practices (GMP) for herbal medicines 第2条；WHO guidelines on good manufacturing practices (GMP) for herbal medicines 第4条"
+  },
+  "02-gacp-yaocai": {
+   "n": 2,
+   "title": "药材源头：GACP 与可持续供应",
+   "units": [
+    "2.1"
+   ],
+   "srcChapters": [
+    "外源#W06,W07,W08"
+   ],
+   "why": "源头这一段决定上限：药材不稳定，后面所有工艺都是给波动做补偿",
+   "derivedFrom": "WHO guidelines on good agricultural and collection practices (GACP) for medicinal plants 第1条；WHO guidelines on good agricultural and collection practices (GACP) for medicinal plants 第2条；WHO guidelines on good agricultural and collection practices (GACP) for medicinal plants 第3条"
+  },
+  "03-gmp-shengchan": {
+   "n": 3,
+   "title": "生产：GMP 与关键控制点",
+   "units": [
+    "3.1"
+   ],
+   "srcChapters": [
+    "外源#W03,W05"
+   ],
+   "why": "生产这一段的任务不是「做得出来」，而是「每次做得一样」",
+   "derivedFrom": "WHO guidelines on good manufacturing practices (GMP) for herbal medicines 第3条；WHO guidelines on good manufacturing practices (GMP) for herbal medicines 第5条"
+  },
+  "04-zhiliang-biaozhiwu": {
+   "n": 4,
+   "title": "质量控制：标志物、指纹图谱与质量标准",
+   "units": [
+    "4.1"
+   ],
+   "srcChapters": [
+    "外源#Q01,Q05"
+   ],
+   "why": "质量这一段回答一个问题：凭什么说这批和那批一样",
+   "derivedFrom": "WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues 第1条；WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues 第5条"
+  },
+  "05-wuranwu-canyu": {
+   "n": 5,
+   "title": "污染物与残留：限度、来源与检验",
+   "units": [
+    "5.1"
+   ],
+   "srcChapters": [
+    "外源#Q02,Q03,Q04"
+   ],
+   "why": "污染物这一段没有「差不多」：要么在限度内，要么不合格",
+   "derivedFrom": "WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues 第2条；WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues 第3条；WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues 第4条"
+  },
+  "06-shangshi-jiankong": {
+   "n": 6,
+   "title": "上市后：安全性监测与药物警戒",
+   "units": [
+    "6.1"
+   ],
+   "srcChapters": [
+    "外源#S01,S02,S03,S04"
+   ],
+   "why": "上市不是终点：前四段证明「能不能用」，这一段回答「用久了会怎样」",
+   "derivedFrom": "WHO guidelines on safety monitoring of herbal medicines in pharmacovigilance systems 第1条；WHO guidelines on safety monitoring of herbal medicines in pharmacovigilance systems 第2条；WHO guidelines on safety monitoring of herbal medicines in pharmacovigilance systems 第3条；WHO guidelines on safety monitoring of herbal medicines in pharmacovigilance systems 第4条"
+  },
+  "07-zhuce-ziliao": {
+   "n": 7,
+   "title": "注册资料：技术要求如何落成可审评的文件",
+   "units": [
+    "7.1"
+   ],
+   "srcChapters": [
+    "外源#W02,Q04,W05"
+   ],
+   "why": "这一章讲「怎么写」，不是「怎么过」：资料的组织方式决定审评能否看懂",
+   "derivedFrom": "WHO guidelines on good manufacturing practices (GMP) for herbal medicines 第2条；WHO guidelines for assessing quality of herbal medicines with reference to contaminants and residues 第4条；WHO guidelines on good manufacturing practices (GMP) for herbal medicines 第5条"
+  },
+  "08-chanye-jiaofu": {
+   "n": 8,
+   "title": "产业化与知识移交",
+   "units": [
+    "8.1"
+   ],
+   "srcChapters": [
+    "外源#W07,S03"
+   ],
+   "why": "最后一段：把研发成果变成别人能接手的东西",
+   "derivedFrom": "WHO guidelines on good agricultural and collection practices (GACP) for medicinal plants 第2条；WHO guidelines on safety monitoring of herbal medicines in pharmacovigilance systems 第3条"
+  }
+ }
+}

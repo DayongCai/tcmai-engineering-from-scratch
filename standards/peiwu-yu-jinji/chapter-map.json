@@ -1,0 +1,135 @@
+{
+ "note": "派生课：一章一主题，单元按关键词从父课选题；无单元复用。",
+ "chapters": {
+  "01-qiqing-lilun": {
+   "n": 1,
+   "title": "七情与配伍理论",
+   "units": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5",
+    "1.6"
+   ],
+   "srcChapters": [
+    "派生#1"
+   ],
+   "why": "七情不是修辞，是七种相互作用",
+   "derivedFrom": "fangji、linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-paozhi、zhongyao-xue、zhongyao-yaoli"
+  },
+  "02-junchenzuoshi": {
+   "n": 2,
+   "title": "君臣佐使与组方",
+   "units": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5"
+   ],
+   "srcChapters": [
+    "派生#2"
+   ],
+   "why": "结构决定一张方子的重心",
+   "derivedFrom": "fangji、linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-paozhi、zhongyao-xue、zhongyao-yaoli"
+  },
+  "03-shihba-fan": {
+   "n": 3,
+   "title": "十八反与十九畏",
+   "units": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5",
+    "3.6"
+   ],
+   "srcChapters": [
+    "派生#3"
+   ],
+   "why": "本课最硬的一张清单",
+   "derivedFrom": "fangji、linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-paozhi、zhongyao-xue、zhongyao-yaoli"
+  },
+  "04-renshen-jinji": {
+   "n": 4,
+   "title": "妊娠与哺乳期禁忌",
+   "units": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5"
+   ],
+   "srcChapters": [
+    "派生#4"
+   ],
+   "why": "禁忌的对象是人，不只是药",
+   "derivedFrom": "fangji、linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-paozhi、zhongyao-xue、zhongyao-yaoli"
+  },
+  "05-zhenghou-jinji": {
+   "n": 5,
+   "title": "证候禁忌",
+   "units": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5"
+   ],
+   "srcChapters": [
+    "派生#5"
+   ],
+   "why": "同病异治的另一面：同药异禁",
+   "derivedFrom": "fangji、linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-paozhi、zhongyao-xue、zhongyao-yaoli"
+  },
+  "06-zhongxi-lianyong": {
+   "n": 6,
+   "title": "中西药联用禁忌",
+   "units": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5"
+   ],
+   "srcChapters": [
+    "派生#6"
+   ],
+   "why": "最容易被忽略的一类相互作用",
+   "derivedFrom": "fangji、linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-paozhi、zhongyao-xue、zhongyao-yaoli"
+  },
+  "07-duyao-peiwu": {
+   "n": 7,
+   "title": "毒性药的配伍",
+   "units": [
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4",
+    "7.5"
+   ],
+   "srcChapters": [
+    "派生#7"
+   ],
+   "why": "减毒是配伍最古老的目的",
+   "derivedFrom": "fangji、linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-paozhi、zhongyao-xue、zhongyao-yaoli"
+  },
+  "08-fangfa-pingjia": {
+   "n": 8,
+   "title": "配伍研究的证据方法",
+   "units": [
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4",
+    "8.5"
+   ],
+   "srcChapters": [
+    "派生#8"
+   ],
+   "why": "从文献经验到可验证的证据",
+   "derivedFrom": "fangji、linchuang-zhongyao、zhongyao-du-li、zhongyao-fenxi、zhongyao-paozhi、zhongyao-xue、zhongyao-yaoli"
+  }
+ }
+}

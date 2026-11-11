@@ -1,0 +1,32 @@
+{
+  "slug": "17-guanli-xue-jichu",
+  "title": "管理学基础",
+  "en": "Foundations of Management",
+  "deptSlug": "06-guanli",
+  "deptTitle": "管理系",
+  "globalN": 115,
+  "type": "Reference",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 36,
+  "bridge": "管理职能→流程建模 / 决策→效用函数",
+  "chaptersTarget": 18,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/06-guanli/17-guanli-xue-jichu",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/06-guanli/17-guanli-xue-jichu",
+    "chaptersWritten": 18,
+    "words": 371850,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#管理学基础",
+    "extractedAt": "2026-10-21"
+  }
+}

@@ -1,90 +1,184 @@
 {
-  "slug": "10-zhongyi-neike-xue",
-  "title": "中医内科学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-feixi-kesou",
-      "title": "肺系病证：咳嗽与喘证",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-feiyong-feiwei",
-      "title": "肺痈肺痿：化脓与萎弱",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-xinxi-bingzheng",
-      "title": "心系病证：心悸、胸痹、不寐",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-piwei-bingzheng",
-      "title": "脾胃病证：胃痛、痞满、呕吐",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-changbing-xiexie",
-      "title": "肠病：泄泻、痢疾、便秘",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-gandan-bingzheng",
-      "title": "肝胆病证：胁痛、黄疸、眩晕",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-shenxi-bingzheng",
-      "title": "肾系病证：水肿、淋证、癃闭",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-qixue-jinye-bing",
-      "title": "气血津液病证：郁证、血证、消渴",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-zhiti-jingluo",
-      "title": "肢体经络病证：痹证、痿证、腰痛",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-zhongfeng",
-      "title": "中风：从闭证脱证到分型救治",
-      "status": "📋"
-    },
-    {
-      "n": 11,
-      "slug": "11-xulao-fare",
-      "title": "虚劳与内伤发热：慢性耗损",
-      "status": "📋"
-    },
-    {
-      "n": 12,
-      "slug": "12-neike-bingan",
-      "title": "内科病案的辨证路径复现",
-      "status": "📋"
-    },
-    {
-      "n": 13,
-      "slug": "13-zhengfang-liaoxiao",
-      "title": "证候—方剂—疗效的因果推断",
-      "status": "📋"
-    },
-    {
-      "n": 14,
-      "slug": "14-fenxing-icd11",
-      "title": "内科分型与 ICD-11 的映射",
-      "status": "📋"
-    }
-  ]
+ "slug": "10-zhongyi-neike-xue",
+ "title": "中医内科学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-xulun",
+   "title": "第1章 绪论",
+   "unit": "总论",
+   "status": "✅",
+   "source": {
+    "chapter": 1,
+    "secs": 3,
+    "subs": 6,
+    "hanzi": 6920
+   }
+  },
+  {
+   "n": 2,
+   "slug": "02-bianzheng-silu",
+   "title": "第2章 中医内科疾病的辨证论治思路与方法",
+   "unit": "总论",
+   "status": "✅",
+   "source": {
+    "chapter": 2,
+    "secs": 5,
+    "subs": 17,
+    "hanzi": 17521
+   }
+  },
+  {
+   "n": 3,
+   "slug": "03-zangfu-bianzheng-gangyao",
+   "title": "第3章 脏腑辨证纲要与内科治则",
+   "unit": "总论",
+   "status": "✅",
+   "source": {
+    "chapter": 3,
+    "secs": 8,
+    "subs": 25,
+    "hanzi": 21814
+   }
+  },
+  {
+   "n": 4,
+   "slug": "04-feixi-bingzheng",
+   "title": "第4章 肺系病证",
+   "unit": "病证各论",
+   "status": "✅",
+   "source": {
+    "chapter": 4,
+    "secs": 8,
+    "subs": 40,
+    "hanzi": 38900
+   }
+  },
+  {
+   "n": 5,
+   "slug": "05-xinxi-bingzheng",
+   "title": "第5章 心系病证",
+   "unit": "病证各论",
+   "status": "✅",
+   "source": {
+    "chapter": 5,
+    "secs": 9,
+    "subs": 45,
+    "hanzi": 35350
+   }
+  },
+  {
+   "n": 6,
+   "slug": "06-piwei-bingzheng",
+   "title": "第6章 脾胃系病证",
+   "unit": "病证各论",
+   "status": "✅",
+   "source": {
+    "chapter": 6,
+    "secs": 9,
+    "subs": 45,
+    "hanzi": 38439
+   }
+  },
+  {
+   "n": 7,
+   "slug": "07-ganxi-bingzheng",
+   "title": "第7章 肝系病证",
+   "unit": "病证各论",
+   "status": "✅",
+   "source": {
+    "chapter": 7,
+    "secs": 9,
+    "subs": 48,
+    "hanzi": 37483
+   }
+  },
+  {
+   "n": 8,
+   "slug": "08-shenxi-bingzheng",
+   "title": "第8章 肾系病证",
+   "unit": "病证各论",
+   "status": "✅",
+   "source": {
+    "chapter": 8,
+    "secs": 6,
+    "subs": 30,
+    "hanzi": 26217
+   }
+  },
+  {
+   "n": 9,
+   "slug": "09-qixue-jinye-bingzheng",
+   "title": "第9章 气血津液病证",
+   "unit": "病证各论",
+   "status": "✅",
+   "source": {
+    "chapter": 9,
+    "secs": 9,
+    "subs": 55,
+    "hanzi": 41421
+   }
+  },
+  {
+   "n": 10,
+   "slug": "10-zhiti-jingluo-bingzheng",
+   "title": "第10章 肢体经络病证",
+   "unit": "病证各论",
+   "status": "✅",
+   "source": {
+    "chapter": 10,
+    "secs": 5,
+    "subs": 25,
+    "hanzi": 24641
+   }
+  },
+  {
+   "n": 11,
+   "slug": "11-jizheng-chuanranbing",
+   "title": "第11章 常见急症与传染病",
+   "unit": "病证各论",
+   "status": "✅",
+   "source": {
+    "chapter": 11,
+    "secs": 8,
+    "subs": 40,
+    "hanzi": 29617
+   }
+  },
+  {
+   "n": 12,
+   "slug": "12-shuzihua-ai",
+   "title": "第12章 中医内科学的数字化与AI时代",
+   "unit": "拓展",
+   "status": "✅",
+   "source": {
+    "chapter": 12,
+    "secs": 4,
+    "subs": 8,
+    "hanzi": 11503
+   }
+  },
+  {
+   "n": 13,
+   "slug": "13-zhengfang-liaoxiao",
+   "title": "第13章 证候—方剂—疗效的因果推断",
+   "unit": "综合",
+   "status": "✅",
+   "source": {
+    "chapter": null,
+    "synthesis": true
+   }
+  },
+  {
+   "n": 14,
+   "slug": "14-fenxing-icd11",
+   "title": "第14章 内科分型与 ICD-11 的映射",
+   "unit": "综合",
+   "status": "✅",
+   "source": {
+    "chapter": null,
+    "synthesis": true
+   }
+  }
+ ]
 }

@@ -1,0 +1,105 @@
+{
+ "title": "中医嗓音医学",
+ "note": "派生课：底本《中医耳鼻喉科学》咽喉科章（第7章，30 小节）按顺序切成 8 讲；汉字不与父课相加。",
+ "views": {
+  "病位与解剖": [
+   "耳",
+   "鼻",
+   "咽喉",
+   "口腔",
+   "眼",
+   "部位"
+  ],
+  "病性与证候": [
+   "热",
+   "虚",
+   "风",
+   "湿",
+   "痰",
+   "瘀"
+  ],
+  "诊法与治法": [
+   "诊断",
+   "辨证",
+   "治法",
+   "方药",
+   "外治",
+   "调护"
+  ]
+ },
+ "levels": {
+  "前段": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "中段": [
+   5,
+   6
+  ],
+  "后段": [
+   7,
+   8
+  ]
+ },
+ "splitInto": 8,
+ "chapters": [
+  {
+   "title": "咽喉的中医解剖与生理",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 7
+   }
+  },
+  {
+   "title": "咽喉病的病因病机",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 7
+   }
+  },
+  {
+   "title": "咽喉病的辨证",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 7
+   }
+  },
+  {
+   "title": "咽喉病的治法",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 7
+   }
+  },
+  {
+   "title": "喉痹与乳蛾",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 7
+   }
+  },
+  {
+   "title": "喉喑与失音",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 7
+   }
+  },
+  {
+   "title": "声带疾病与用嗓卫生",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 7
+   }
+  },
+  {
+   "title": "咽喉急症与调护",
+   "split": {
+    "src": "zhongyi-erbihou-xue",
+    "chapter": 7
+   }
+  }
+ ]
+}

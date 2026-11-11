@@ -1,0 +1,79 @@
+{
+  "lesson": "28-jichu-shengli-zhengchangzhi",
+  "title": "基础医学院·案例三：生理正常值表——可复现的参考区间交付",
+  "subject": "22-zhongyi-biye-sheji",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "第 28 章属于哪种案例类型？",
+      "options": [
+        "移交层",
+        "综述",
+        "个案报道",
+        "文献计量"
+      ],
+      "correct": 0,
+      "explanation": "移交层的判据是**他人能否在无指导下重跑**：数据、脚本、门禁、README 四"
+    },
+    {
+      "stage": "check",
+      "question": "本章的数据锚点规模是？",
+      "options": [
+        "shengli 132 单元 / 228,672 汉字 / 数值 0",
+        "无数据，凭经验",
+        "仅有目录结构",
+        "需外部采购"
+      ],
+      "correct": 0,
+      "explanation": "必须报路径与规模。"
+    },
+    {
+      "stage": "check",
+      "question": "本章客户数的推算依据是？",
+      "options": [
+        "中医类医院 SAM 6,498 × 渗透带中位",
+        "直接手设",
+        "竞品数量",
+        "用户访谈"
+      ],
+      "correct": 0,
+      "explanation": "采用 90"
+    },
+    {
+      "stage": "check",
+      "question": "本章客单与回本期是？",
+      "options": [
+        "¥18,000、13.7 个月",
+        "1 万元、1 个月",
+        "100 万元、5 年",
+        "无法计算"
+      ],
+      "correct": 0,
+      "explanation": "客单占客户年营收 0.02%（IT 预算区间 910,000"
+    },
+    {
+      "stage": "post",
+      "question": "本案 C 端能否输出诊断结论？",
+      "options": [
+        "不能：只做测量与记录，诊断须器械注册",
+        "能，标注参考即可",
+        "能，用户同意即可",
+        "能，免费即可"
+      ],
+      "correct": 0,
+      "explanation": "仅解释参考区间：不得对个体作诊断结论；引用须标版本与单位"
+    },
+    {
+      "stage": "post",
+      "question": "把三年客户数再砍一半，首先影响什么？",
+      "options": [
+        "回本期显著拉长、部分案转亏",
+        "不影响",
+        "只影响收入不影响毛利",
+        "无意义"
+      ],
+      "correct": 0,
+      "explanation": "敏感性见 ch1 第十节。"
+    }
+  ]
+}

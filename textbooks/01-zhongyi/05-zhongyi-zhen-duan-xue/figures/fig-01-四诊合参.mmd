@@ -1,0 +1,28 @@
+%% 图 1-1 四诊合参与辨证的关系
+%% 内容依据：textbooks/01-zhongyi/05-zhongyi-zhen-duan-xue/01-第1章-绪论与AI时代学习体系.md §1.3.2.2
+%%   原文「望、闻、问、切四诊从不同角度收集病情资料，各有侧重与局限，必须四诊并用、
+%%   相互印证、综合分析，才能全面把握病情。'四诊合参'反对单凭一诊（尤忌单凭脉诊）草率断病」
+%% 四诊与辨证的章序：望诊（第2章）· 闻诊（第3章）· 问诊（第4章）· 切诊（第5章）→
+%%   八纲辨证（第6章）· 病性辨证（第7章）· 脏腑辨证（第8章）
+%% 本图只画「四诊 → 合参 → 辨证」这一层关系，各诊的具体内容见各自章节。
+graph LR
+    W["望诊"] --> H["四诊合参"]
+    N["闻诊"] --> H
+    Q["问诊"] --> H
+    C["切诊"] --> H
+
+    H --> B["辨证"]
+    B --> B1["八纲辨证"]
+    B --> B2["病性辨证"]
+    B --> B3["脏腑辨证"]
+
+    H -. "反对" .-> F["单凭一诊<br/>尤忌单凭脉诊"]
+
+    classDef diag fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.5px,color:#1f1b16
+    classDef hub fill:#eef2e8,stroke:#4a7c59,stroke-width:2.2px,color:#1f1b16
+    classDef item fill:#fbf8f2,stroke:#b9a992,stroke-width:1.1px,color:#1f1b16
+    classDef warn fill:#fdf1ef,stroke:#b5443a,stroke-width:1.2px,color:#6b6156
+    class W,N,Q,C diag
+    class H hub
+    class B,B1,B2,B3 item
+    class F warn

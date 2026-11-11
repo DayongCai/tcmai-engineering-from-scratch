@@ -1,54 +1,71 @@
 {
-  "slug": "15-zhongyi-meirong-pifu",
-  "title": "中医美容与皮肤治疗学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-lilun-fanwei",
-      "title": "中医美容的理论与范围",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-pifu-fenxing",
-      "title": "面部皮肤的分型与评估",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-cuochuang-bianzhi",
-      "title": "痤疮的中医辨治",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-huangheban-suse",
-      "title": "黄褐斑与色素性疾病",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-tuofa-toupi",
-      "title": "脱发与头皮疾病",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-zhenjiu-meirong",
-      "title": "针灸美容与埋线",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-mianmo-waiyong",
-      "title": "中药面膜与外用制剂",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-fengxian-tongyi",
-      "title": "美容治疗的风险与知情同意",
-      "status": "📋"
-    }
-  ]
+ "slug": "15-zhongyi-meirong-pifu",
+ "title": "中医美容皮肤",
+ "note": "8 章 = 教材 8 章。",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-shechuanchuang",
+   "title": "蛇串疮（带状疱疹）",
+   "status": "🚧",
+   "docs": "chapters/01-shechuanchuang/docs/zh.md",
+   "code": "chapters/01-shechuanchuang/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-shichuang",
+   "title": "湿疮（湿疹）",
+   "status": "🚧",
+   "docs": "chapters/02-shichuang/docs/zh.md",
+   "code": "chapters/02-shichuang/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-yinzhen",
+   "title": "瘾疹（荨麻疹）",
+   "status": "🚧",
+   "docs": "chapters/03-yinzhen/docs/zh.md",
+   "code": "chapters/03-yinzhen/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-baipi",
+   "title": "白疕（银屑病）",
+   "status": "🚧",
+   "docs": "chapters/04-baipi/docs/zh.md",
+   "code": "chapters/04-baipi/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-youfeng",
+   "title": "油风（脱发）",
+   "status": "🚧",
+   "docs": "chapters/05-youfeng/docs/zh.md",
+   "code": "chapters/05-youfeng/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-fenci",
+   "title": "粉刺（痤疮）",
+   "status": "🚧",
+   "docs": "chapters/06-fenci/docs/zh.md",
+   "code": "chapters/06-fenci/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-jiuzhabi",
+   "title": "酒齄鼻（玫瑰痤疮）",
+   "status": "🚧",
+   "docs": "chapters/07-jiuzhabi/docs/zh.md",
+   "code": "chapters/07-jiuzhabi/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-yaodu-jiechuang",
+   "title": "药毒与疥疮：鉴别与边界",
+   "status": "🚧",
+   "docs": "chapters/08-yaodu-jiechuang/docs/zh.md",
+   "code": "chapters/08-yaodu-jiechuang/code/main.js"
+  }
+ ]
 }

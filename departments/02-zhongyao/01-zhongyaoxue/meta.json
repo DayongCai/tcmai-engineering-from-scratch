@@ -11,7 +11,7 @@
   "stageTitle": "生",
   "hours": 90,
   "bridge": "四气五味归经→词嵌入 / 功效相似度→余弦距离",
-  "chaptersTarget": 12,
+  "chaptersTarget": 14,
   "chapters": [],
   "platform": {
     "id": "tcmP",
@@ -22,8 +22,11 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/02-zhongyao/01-zhongyaoxue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 30,
+    "words": 76577,
+    "status": "wip",
+    "layer": "source-body",
+    "source": "standards/materials/textbooks-batch/registry.json#中药学",
+    "extractedAt": "2026-10-21"
   }
 }
