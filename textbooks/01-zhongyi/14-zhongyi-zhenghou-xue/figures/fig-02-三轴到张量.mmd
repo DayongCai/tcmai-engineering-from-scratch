@@ -1,0 +1,25 @@
+%% 图 2 三轴怎么乘成一张张量
+%% 内容依据：textbooks/01-zhongyi/14-zhongyi-zhenghou-xue/00-凡例与使用.md §3
+graph TB
+  L1["位 locus<br/>22 证位 + 62 候位"]
+  L2["性 cause·property<br/>12 门 + 45 类"]
+  L3["态 property<br/>99 态 × 6 族"]
+  T["稀疏张量<br/>位 × 类 × 态<br/>实测非零格 1052"]
+  C1["一个候 = 一个格子"]
+  C2["格内计数 = 该书收到多少候"]
+  U1["检索：位＋态 → 候选证候"]
+  U2["相似：同一门内量距离"]
+  U3["教学：一格一条自检题"]
+  L1 --> T
+  L2 --> T
+  L3 --> T
+  T --> C1 --> C2
+  T --> U1
+  T --> U2
+  T --> U3
+  classDef ax fill:#1a1610,stroke:#c8a05a,color:#f4e8d0
+  classDef core fill:#2a1f14,stroke:#e0a85a,color:#fff4dc
+  classDef use fill:#101820,stroke:#5a8fc8,color:#e6f0ff
+  class L1,L2,L3 ax
+  class T,C1,C2 core
+  class U1,U2,U3 use

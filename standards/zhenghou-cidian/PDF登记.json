@@ -1,0 +1,40 @@
+{
+ "$about": "《中医证候学》三册扫描件的登记：sha256 / 页数 / 目录条数 / 取用方式。本仓库不携带 PDF（约 280 MB），只携带由它抽出的目录原点与判定记录。",
+ "edition": {
+  "title": "中医证候学",
+  "volumes": ["上", "中", "下"],
+  "author": "李洪成，李新平，李新晔 编著",
+  "note": "三册连续编码（上册末·中册首·下册首均接续页码）；中册起于印张 736，下册起于印张 1540，末页印张 2290。"
+ },
+ "files": [
+  {"volume": "上", "file": "1-中医证候学上.pdf", "pages": 791, "sha256": "0ea465b9f3a091814401d8ceeb9b7cd9ccc4d5c089bf5474c9e4342b2f341e44", "producer": "FreePic2Pdf - 2.01", "textLayer": "无（纯图象，pymupdf get_text 为 0 字符）", "outline": 2268, "outlineNote": "书签即全书目录（含第十二章至附录），第 606 页之后的书签目标页失效（page=-1），文字仍完整"},
+  {"volume": "中", "file": "2-中医证候学中.pdf", "pages": 854, "sha256": "059fd687a7d9ee2cad82217e1d3216e9433dea7cbc418594bee5c9d7f208c5fa", "producer": "FreePic2Pdf - 2.01", "textLayer": "无", "outline": 803, "outlineNote": "书签只有页码占位（1…800），无标题 —— 目录文字改由上册 outline 提供"},
+  {"volume": "下", "file": "3-中医证候学下.pdf", "pages": 763, "sha256": "ca039478505f1ff1c438b5ed2a84b604fab862b399ec1a5a2bbc673306655f50", "producer": "FreePic2Pdf - 2.01", "textLayer": "无", "outline": 761, "outlineNote": "同上；元数据 title=中医证候学（下册）"}
+ ],
+ "derivation": {
+  "tocSource": "1-中医证候学上.pdf 的 bookmarks（pymupdf get_toc），逐条无改写落盘为 目录原文.txt",
+  "tocLines": 2268,
+  "tocFormat": "层级\\t页\\t标题；层级全为 1（扫描件书签未分级），层级由标题内的「第N章／第N节／一、／（一）」还原",
+  "pageFieldCaveat": "页字段在第 606 页之后为 -1：书签目标失效，不是条目缺失。本层只当「顺序」用，不当页码用。",
+  "readingUsed": "目录全文 + 20 处正文抽样（上册 p58/85/87/88，中册 p55/300，下册 p6/745/755），无整册 OCR"
+ },
+ "declared": {
+  "note": "书内自述的数字，作为对账的另一端（本层不采信，只用来暴露差异）",
+  "men": 12,
+  "lei": 45,
+  "zheng": 291,
+  "hou": 1870,
+  "appendix": ["附录一：75证象一览表", "附录二：322病候一览表"]
+ },
+ "verified": {
+  "men": 12,
+  "lei": 45,
+  "zhengInstances": 291,
+  "zhengCodes": 290,
+  "houInstances": 1866,
+  "houCodes": 1858,
+  "houNumbers": 320,
+  "houNames": 329,
+  "note": "书内 1870 候 vs 目录 1866 条：差 4 条已在 结构.json 的校勘差异里逐门登记（寒 +1 / 湿 −1 / 饮 +2 / 食 +2）"
+ }
+}

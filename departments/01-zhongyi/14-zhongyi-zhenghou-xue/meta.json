@@ -11,6 +11,15 @@
   "stageTitle": "壮",
   "hours": 72,
   "bridge": "证候→本体建模 / 证型标准化→嵌入聚类",
+  "volume": {
+    "kind": "辞典（操作手册型）",
+    "note": "本学科以辞典体例编写：目录与正文按「门→类→证→候」四级展开，不受教材篇幅限制，也不受教学学时限制；72 学时只是课程层的最低排课时数，不是内容上限。",
+    "men": 12,
+    "lei": 45,
+    "zheng": 291,
+    "hou": 1866,
+    "tensorCells": 1052
+  },
   "chaptersTarget": 12,
   "chapters": [],
   "platform": {
@@ -22,14 +31,41 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/01-zhongyi/14-zhongyi-zhenghou-xue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 12,
+    "words": 208605,
+    "files": 18,
+    "figures": 9,
+    "status": "done",
+    "appendices": [
+      "A 位性态总表",
+      "B ICD-11 命名原则对照",
+      "C 数据与接口",
+      "D 症状反查索引（百姓入口）",
+      "E 应用工程手册（CI/CD）"
+    ]
   },
   "standards": {
-    "path": "standards/zhenghou",
-    "layer": "跨课程派生底本（外科325+儿科250+妇科325=900单元）",
-    "zheng": 132,
-    "classical": "中医诊断学第6–12章"
-  }
+    "path": "standards/zhenghou-cidian",
+    "layer": "《中医证候学》三册目录层（2268 条书签）→ 四级结构与三轴张量",
+    "source": {
+      "edition": "李洪成，李新平，李新晔 编著；上中下三册（扫描件 2408 页，无文字层）",
+      "sha256": [
+        "0ea465b9f3a091814401d8ceeb9b7cd9ccc4d5c089bf5474c9e4342b2f341e44",
+        "059fd687a7d9ee2cad82217e1d3216e9433dea7cbc418594bee5c9d7f208c5fa",
+        "ca039478505f1ff1c438b5ed2a84b604fab862b399ec1a5a2bbc673306655f50"
+      ]
+    },
+    "legacy": {
+      "path": "standards/zhenghou",
+      "layer": "旧派生层：四门临床课 900 单元 → 132 证（14 族）",
+      "relation": "作为「另一套命名」的对照保留；与本层 291 证的完全同名者只有 4 条（见辞典附录 B.5）"
+    }
+  },
+  "gates": [
+    "python scripts/build_zhenghou_cidian.py --check",
+    "node tests/test_zhenghou_cidian.js",
+    "node scripts/audit_curriculum.js",
+    "node tests/test_chapter_code.js",
+    "node scripts/figures/check_provenance.js"
+  ]
 }

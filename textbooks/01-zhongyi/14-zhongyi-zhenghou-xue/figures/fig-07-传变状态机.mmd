@@ -1,0 +1,32 @@
+%% 图 7 传变状态机：本证 / 转证 / 变证
+%% 内容依据：textbooks/01-zhongyi/14-zhongyi-zhenghou-xue/00-凡例与使用.md §3
+graph LR
+  subgraph S0["入口"]
+    IN["四诊 ctx"]
+  end
+  subgraph S1["证（类目）"]
+    B["本证<br/>标准证型"]
+    Z["转证<br/>同证换位"]
+    V["变证<br/>换性/换门"]
+  end
+  subgraph S2["候（亚目·六个开关族）"]
+    F1["失守"]
+    F2["郁"]
+    F3["虚"]
+    F4["火"]
+    F5["陷逆"]
+    F6["脱绝"]
+  end
+  OUT["危候 = 真<br/>立即就医"]
+  IN --> B
+  B --> Z
+  B --> V
+  Z --> V
+  B --> F1
+  B --> F2
+  B --> F3
+  B --> F4
+  B --> F5
+  B --> F6
+  F6 --> OUT
+  F5 --> OUT

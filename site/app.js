@@ -42,6 +42,9 @@ const NAV = [
   ['paths.html', '学习路径'],
   ['glossary.html', '术语表'],
   ['semtensor.html', '语义张量'],
+  // 证候辞典是独立页（scripts/build_zhenghou_site.js 生成，单文件离线可用），
+  // 不放进 site/pages.js 的 PAGES —— 那一套会生成空壳并覆盖它。
+  ['zhenghou.html', '证候辞典'],
   ['about.html', '关于'],
 ];
 

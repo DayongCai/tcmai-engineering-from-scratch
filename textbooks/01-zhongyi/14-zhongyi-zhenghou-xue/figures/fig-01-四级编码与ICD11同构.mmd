@@ -1,0 +1,29 @@
+%% 图 1 四级编码与 ICD-11 同构
+%% 内容依据：textbooks/01-zhongyi/14-zhongyi-zhenghou-xue/00-凡例与使用.md §2
+graph LR
+  subgraph ICD["ICD-11 MMS"]
+    direction TB
+    I1["Chapter 章"]
+    I2["Block 块"]
+    I3["Category 类目"]
+    I4["Subcategory 亚目"]
+    I1 --> I2 --> I3 --> I4
+  end
+  subgraph BEN["中医证候学（本书）"]
+    direction TB
+    B1["门 M01…M12"]
+    B2["类 L01…L45"]
+    B3["证 Lnn-Zmm"]
+    B4["候 Lnn-Zmm-Hnnn"]
+    B1 --> B2 --> B3 --> B4
+  end
+  I1 -.->|同构| B1
+  I2 -.->|原书编码不改| B2
+  I3 -.->|唯一父链| B3
+  I4 -.->|只追加不改父码| B4
+  FULL["全码 M01-L01-Z01-H001"]
+  B4 --> FULL
+  classDef ben fill:#1a1610,stroke:#c8a05a,color:#f4e8d0
+  classDef icd fill:#101820,stroke:#5a8fc8,color:#e6f0ff
+  class B1,B2,B3,B4,FULL ben
+  class I1,I2,I3,I4 icd

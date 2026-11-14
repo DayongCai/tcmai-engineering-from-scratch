@@ -77,6 +77,46 @@ jobs:
           path: site/
           retention-days: 14
 
+  # ── 阻断门：证候辞典（数据层 → 编码器 → 接口 → 百姓页） ─────────
+  #
+  # 为什么单列一个 job：这条线的东西（build_zhenghou_cidian.py / zhenghou_encode.js /
+  # zhenghou_api.js / site/zhenghou.html）以前只在本地 npm run check 里跑，
+  # CI 管不到 —— 换句话说，改坏了没人拦。这里四层一次跑完：
+  #   数据（--check 幂等）→ 编码器（15 黄金样例）→ 接口（9+1 断言）→ 页面（5 断言）。
+  # 只用 Python 标准库，不需要 pip 装任何东西。
+  zhenghou:
+    name: "证候辞典：数据 / 编码器 / 接口 / 百姓页"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 数据层幂等（structures / 语素 / 张量 / 18+ 件辞典）
+        run: python scripts/build_zhenghou_cidian.py --check
+
+      - name: 辞典断言（结构 / 正文 / 图注 / 全文转写）
+        run: node --test tests/test_zhenghou_cidian.js
+
+      - name: 编码器黄金样例（12 门 + 两条危候 + 负例）
+        run: |
+          node scripts/zhenghou_encode.js --check
+          node --test tests/test_zhenghou_encode.js
+
+      - name: 接口层自检（/health /encode /search /hou /openapi.json）
+        run: |
+          node scripts/zhenghou_api.js --check
+          node --test tests/test_zhenghou_api.js
+
+      - name: 百姓页与内核同源（页面内核 == 接口结论）
+        run: |
+          node scripts/build_zhenghou_site.js --check
+          node --test tests/test_zhenghou_site.js
+
   # ── 咨询门：README 计数漂移（main 上自愈，PR 上只提示） ──────
   counts-drift:
     name: "README 计数一致性（咨询）"
@@ -111,6 +151,9 @@ jobs:
           node scripts/build_doc_indexes.js
           node site/pages.js
           node site/build.js
+          # 证候辞典：数据层（正文层 JSON 变了就要重出 19 件）与百姓页
+          python scripts/build_zhenghou_cidian.py || true
+          node scripts/build_zhenghou_site.js || true
 
       - name: 同步 README 计数块
         run: node scripts/check_readme_counts.js --fix
@@ -122,7 +165,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add catalog.json ROADMAP.md departments/ site/ learning-paths/ README.md
+          git add catalog.json ROADMAP.md departments/ site/ learning-paths/ README.md standards/zhenghou-cidian/ textbooks/01-zhongyi/14-zhongyi-zhenghou-xue/
           if git diff --cached --quiet; then
             echo "无生成物变更"
           else
