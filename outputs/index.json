@@ -108167,9 +108167,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/01-duixiang-sanlei/outputs/skill-duixiang-sanlei.md",
       "title": "修复学的对象：三类缺损与老年患者",
-      "name": null,
+      "name": "duixiang-sanlei",
       "description": "修复学的对象：三类缺损与老年患者——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 417
     },
     {
@@ -108197,9 +108197,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/02-zong-yuanze/outputs/skill-zong-yuanze.md",
       "title": "修复总原则：安全、有效、微创、健康、知情同意、姑息",
-      "name": null,
+      "name": "zong-yuanze",
       "description": "修复总原则：安全、有效、微创、健康、知情同意、姑息——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 431
     },
     {
@@ -108227,9 +108227,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/03-pinggu-quanshen/outputs/skill-pinggu-quanshen.md",
       "title": "修复前全身评估：疾病、用药与口腔治疗史",
-      "name": null,
+      "name": "pinggu-quanshen",
       "description": "修复前全身评估：疾病、用药与口腔治疗史——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 423
     },
     {
@@ -108257,9 +108257,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/04-kouqiang-jiancha/outputs/skill-kouqiang-jiancha.md",
       "title": "修复前口腔检查与影像：七项增龄变化与片子的选择",
-      "name": null,
+      "name": "kouqiang-jiancha",
       "description": "修复前口腔检查与影像：七项增龄变化与片子的选择——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 432
     },
     {
@@ -108287,9 +108287,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/05-shuqian-chuli/outputs/skill-shuqian-chuli.md",
       "title": "修复前处理、健康宣教与形式选择",
-      "name": null,
+      "name": "shuqian-chuli",
       "description": "修复前处理、健康宣教与形式选择——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 413
     },
     {
@@ -108317,9 +108317,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/06-quankou-yinmo/outputs/skill-quankou-yinmo.md",
       "title": "全口义齿的印模与模型：初印模、个别托盘、终印模",
-      "name": null,
+      "name": "quankou-yinmo",
       "description": "全口义齿的印模与模型：初印模、个别托盘、终印模——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 429
     },
     {
@@ -108347,9 +108347,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/07-yipang-cadcam/outputs/skill-yipang-cadcam.md",
       "title": "椅旁 CAD/CAM 固定义齿：适应证、预备与后处理",
-      "name": null,
+      "name": "yipang-cadcam",
       "description": "椅旁 CAD/CAM 固定义齿：适应证、预备与后处理——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 431
     },
     {
@@ -108377,9 +108377,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/08-cailiao-tiaohe/outputs/skill-cailiao-tiaohe.md",
       "title": "材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化",
-      "name": null,
+      "name": "cailiao-tiaohe",
       "description": "材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 430
     },
     {
@@ -108407,9 +108407,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/09-citie-fucha/outputs/skill-citie-fucha.md",
       "title": "瓷贴面的复查与并发症：功能、美学、生物学三条线",
-      "name": null,
+      "name": "citie-fucha",
       "description": "瓷贴面的复查与并发症：功能、美学、生物学三条线——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 427
     },
     {
@@ -108437,9 +108437,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/10-piaobai/outputs/skill-piaobai.md",
       "title": "牙齿漂白：着色类型、适应证、方法与风险",
-      "name": null,
+      "name": "piaobai",
       "description": "牙齿漂白：着色类型、适应证、方法与风险——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 415
     },
     {
@@ -108467,9 +108467,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/01-duixiang-congye/outputs/skill-duixiang-congye.md",
       "title": "隐形矫治的对象与从业要求",
-      "name": null,
+      "name": "duixiang-congye",
       "description": "隐形矫治的对象与从业要求——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 415
     },
     {
@@ -108497,9 +108497,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/02-zhiliao-fengxian/outputs/skill-zhiliao-fengxian.md",
       "title": "治疗风险：依从性、移动偏差与并发症",
-      "name": null,
+      "name": "zhiliao-fengxian",
       "description": "治疗风险：依从性、移动偏差与并发症——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 426
     },
     {
@@ -108527,9 +108527,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/03-shiyingzheng/outputs/skill-shiyingzheng.md",
       "title": "适应证与可预测性分级",
-      "name": null,
+      "name": "shiyingzheng",
       "description": "适应证与可预测性分级——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 408
     },
     {
@@ -108557,9 +108557,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/04-ziliao-caiji/outputs/skill-ziliao-caiji.md",
       "title": "资料采集：影像与数字模型",
-      "name": null,
+      "name": "ziliao-caiji",
       "description": "资料采集：影像与数字模型——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 412
     },
     {
@@ -108587,9 +108587,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/05-fangan-sheji/outputs/skill-fangan-sheji.md",
       "title": "方案设计流程：目标、虚拟排牙、顺序与附件",
-      "name": null,
+      "name": "fangan-sheji",
       "description": "方案设计流程：目标、虚拟排牙、顺序与附件——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 428
     },
     {
@@ -108617,9 +108617,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/06-tui-moya/outputs/skill-tui-moya.md",
       "title": "推磨牙向远中：适应证、禁忌与设计",
-      "name": null,
+      "name": "tui-moya",
       "description": "推磨牙向远中：适应证、禁忌与设计——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 416
     },
     {
@@ -108647,9 +108647,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/07-linmian-quyou/outputs/skill-linmian-quyou.md",
       "title": "邻面去釉：适应证、禁忌与操作规范",
-      "name": null,
+      "name": "linmian-quyou",
       "description": "邻面去釉：适应证、禁忌与操作规范——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 421
     },
     {
@@ -108677,9 +108677,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/08-fenbu-yidong/outputs/skill-fenbu-yidong.md",
       "title": "分步移动：为什么不能一次到位",
-      "name": null,
+      "name": "fenbu-yidong",
       "description": "分步移动：为什么不能一次到位——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 416
     },
     {
@@ -108707,9 +108707,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/09-jianxi-baochi/outputs/skill-jianxi-baochi.md",
       "title": "儿童间隙管理：五类保持器与选择",
-      "name": null,
+      "name": "jianxi-baochi",
       "description": "儿童间隙管理：五类保持器与选择——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 419
     },
     {
@@ -108737,9 +108737,9 @@
       "kind": "skill",
       "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/10-yiwei-chuneilie/outputs/skill-yiwei-chuneilie.md",
       "title": "异位萌出与唇腭裂序列中的正畸",
-      "name": null,
+      "name": "yiwei-chuneilie",
       "description": "异位萌出与唇腭裂序列中的正畸——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
-      "version": null,
+      "version": "1.0.0",
       "chars": 419
     },
     {
