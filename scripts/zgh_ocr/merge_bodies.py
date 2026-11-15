@@ -16,15 +16,15 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from _paths import DATA  # noqa: E402  数据目录（scratch，不进 git）
+from _paths import DATA, doors_file  # noqa: E402  数据目录（scratch，不进 git）＋门区间规格
 sys.path.insert(0, HERE)
 import parse_records as P  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(HERE))
 STD = os.path.join(ROOT, "standards", "zhenghou-cidian")
 
-DOORS = json.load(open(os.path.join(DATA, "门区间.json"), encoding="utf-8")) \
-    if os.path.exists(os.path.join(DATA, "门区间.json")) else {}
+_DOORS_PATH = doors_file()
+DOORS = json.load(open(_DOORS_PATH, encoding="utf-8")) if os.path.exists(_DOORS_PATH) else {}
 # JOBS: (门码, 卷, PDF起, PDF止, 门名, 书内章题)
 JOBS = [(m, d["vol"], d["from"], d["to"], d["name"], "第%d章 %s" % (d["chap"], d["name"]))
         for m, d in sorted(DOORS.items()) if m.startswith("M")] or [
@@ -55,19 +55,68 @@ def fix_code(code, expect):
     return code, None
 
 
-def _norm_code(s):
-    """码归一：连接号统一半角，数字位里的字母纠回数字（OCR 把 L42 认成 LA2、Z03 认成 ZO3）。
+def _close(a, b):
+    """两个候名是否「OCR 形近」：同长且只差一个字，或差一个字里有一个是常见形近对。
 
-    只动「L/Z/H 前缀后面的那几位」，前缀本身不动；映射表只收 0-9 的常见误认，
-    不猜字母本身（A→4、O→0、I/l→1、S→5、B→8、G→6、T→7）。
+    只用于**同门内唯一空位**的归位判定，判完就记账（码纠正），不做静默合并。
+    形近对只收这本扫描件里真见过的：怫/佛、燔/蟠、炽/识、宣/宜、侯/候。
     """
-    table = str.maketrans({"A": "4", "O": "0", "o": "0", "I": "1", "l": "1",
-                           "S": "5", "B": "8", "G": "6", "T": "7", "Q": "0", "D": "0",
-                           "U": "0", "V": "0", "J": "1", "L": "1"})
+    if a == b:
+        return True
+    if len(a) != len(b):
+        return False
+    diff = [(x, y) for x, y in zip(a, b) if x != y]
+    if len(diff) != 1:
+        return False
+    pairs = {"怫佛", "燔蟠", "炽识", "宣宜", "虚虑", "郁都", "滞带", "灼的", "养痒"}
+    x, y = diff[0]
+    return (x + y) in pairs or (y + x) in pairs
+
+
+def _norm_code(s):
+    """码归一：连接号、杂字符、位置补前缀、OCR 形近字，一次纠到底。
+
+    实测到的四种坏法（都在这本书里真实出现过）：
+      L11-Z18-H29%6   → 码里混进 %（印张 656 肝阳失宣候）
+      L25-Z20-.H083   → 多一个点（印张 1312 枢机郁滞候）
+      L36-Z16-HU83    → H 后面的 0 被认成 U（印张 1755 枢机郁滞候）
+      144-Z21-H216    → L44 的 L 被认成 1（印张 731 阴虚失养候）
+
+    规则：
+      1. 先删掉分隔符以外的杂字符（% . · , ’ 空格）；
+      2. 按连接号切段；首段 M## 原样保留；
+      3. 其余段**按位置**补前缀：第 1 段 L、第 2 段 Z、第 3 段 H（段本身已带字母则不补）；
+      4. 数字体里的形近字纠正（A→4、O→0、U→0、I/l→1、S→5、B→8、G→6、T→7 …）；
+      5. L 段的数字体若形如 144（3 位且以 1 开头），去掉首位的 1 —— 那是 "L44" 被认成 "144"。
+    只做这些确定性替换，不猜「H29 应该是 H296」这类需要上下文的判断。
+    """
+    junk = re.sub(r"[^0-9A-Za-z\u4e00\u2014\u2013\u2015\-_.· ]", "", str(s))
+    parts = [p for p in re.split(r"[\u4e00\u2014\u2013\u2015\-_.·\s]+", junk.upper()) if p]
+    if not parts:
+        return str(s).upper()
     out = []
-    for part in re.split(r"[－—–一_]", str(s).upper()):
-        m = re.match(r"^([LZH])(.*)$", part)
-        out.append(m.group(1) + m.group(2).translate(table) if m else part)
+    body_idx = 0
+    for p in parts:
+        if re.match(r"^M\d+$", p):
+            out.append(p)
+            continue
+        pos_letter = ("L", "Z", "H")[min(body_idx, 2)]
+        body_idx += 1
+        if p[:1] in ("L", "Z", "H"):
+            letter, body = p[0], p[1:]
+        else:
+            letter, body = pos_letter, p
+        # 一号两用的后缀（L05-Z13b）必须先摘下来：末位 B 会被下面的形近字表翻成 8、A 翻成 4。
+        suffix = ""
+        if len(body) > 1 and body[-1] in ("A", "B", "C"):
+            suffix, body = body[-1].lower(), body[:-1]
+        body = body.translate(str.maketrans({"A": "4", "O": "0", "U": "0", "I": "1", "l": "1",
+                                             "S": "5", "B": "8", "G": "6", "T": "7",
+                                             "Q": "0", "D": "0", "V": "0", "J": "1"}))
+        body = re.sub(r"[^0-9A-Z]", "", body)
+        if letter == "L" and len(body) == 3 and body.startswith("1"):
+            body = body[1:]
+        out.append(letter + body + suffix)
     return "-".join(out)
 
 
@@ -130,6 +179,31 @@ def main():
                         code = _c
                         break
             if code not in expect:
+                # 最后一招：**按候名归位**。码被 OCR 认坏到改不回来（如 LA2/ZO3 之外的花样）时，
+                # 若本门里还空着、候名一模一样的槽位只有一个，就认这一条，并记进 码纠正。
+                # 只在「唯一」时动手：同名两处空着就不动，宁可不匹配，也不把正文塞错地方。
+                _zh = r["zh"].replace("侯", "候")
+                _cand = [c for c, v in expect.items()
+                         if v["zh"] == _zh and c not in items and c.startswith(men + "-")]
+                if len(_cand) == 1 and r.get("chars", 0) >= 80:
+                    fixes.append({"raw": r["code"], "fixed": _cand[0], "zh": _zh,
+                                  "why": "按候名归位（码认坏，本门同名空位唯一）"})
+                    code = _cand[0]
+            if code not in expect:
+                # 兜底顺序的最后一道：**形近字归位**。码认坏了、候名的字也被 OCR 认歪一个
+                # （佛/怫、蟠/燔），这时按「同门 + 只差一个常用形近字 + 空位唯一」认下来并记账。
+                # 前置条件：这条记录本身有正文（chars ≥ 80）—— 只有标题、没有正文的记录
+                # 不许占位，否则会造出「有条目、零字数」的空壳（实测出现过一条）。
+                _zh = r["zh"].replace("侯", "候")
+                if r.get("chars", 0) >= 80:
+                    _cand = [c for c, v in expect.items()
+                             if c not in items and c.startswith(men + "-")
+                             and _close(_zh, v["zh"]) and v["zh"] != _zh]
+                    if len(_cand) == 1:
+                        fixes.append({"raw": r["code"], "fixed": _cand[0], "zh": expect[_cand[0]]["zh"],
+                                      "ocrZh": _zh, "why": "形近字归位（同门空位唯一）"})
+                        code = _cand[0]
+            if code not in expect:
                 unmatched.append({"code": code, "zh": r["zh"], "page": r["page"]})
                 continue
             # 码在、但候名对不上：先看是不是「一号两用」的另一半（…Z13b），
@@ -143,6 +217,16 @@ def main():
                         fixes.append({"raw": r["code"], "fixed": _c, "zh": _zh})
                         code, zh_ok = _c, True
                         break
+            if not zh_ok:
+                # 书印码与目录不一致（如书印 H315、目录 H316）：码在、名字不是它的。
+                # 若本门里「同名且还空着」的槽位唯一，按名字归位 —— 拿错码去覆盖别的候，
+                # 比留一个缺条更糟：那会把甲的正文写进乙的条目里。
+                _zh = r["zh"].replace("侯", "候")
+                _cand = [c for c, v in expect.items() if v["zh"] == _zh and c not in items]
+                if len(_cand) == 1 and _cand[0] != code:
+                    fixes.append({"raw": r["code"], "fixed": _cand[0], "zh": _zh,
+                                  "why": "书印码与目录不一致，按候名归位"})
+                    code, zh_ok = _cand[0], True
             items[code] = {
                 "zh": expect[code]["zh"],
                 "zheng": expect[code]["zheng"],

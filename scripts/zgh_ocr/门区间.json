@@ -1,0 +1,23 @@
+{
+ "$about": "十二门 OCR 页区间（PDF 页序号，1-based）。extra = 章界落在邻近卷的补段：页眉不印章名，靠页/候比反推。这份是**规格**，进 git；运行时的页数据仍在 scratch/zgh_ocr/（可重生）。",
+ "M01": { "men": "M01", "name": "风证门", "chap": 2, "vol": "shang", "pdf": "1-中医证候学上.pdf", "from": 85, "to": 274 },
+ "M02": { "men": "M02", "name": "寒证门", "chap": 3, "vol": "shang", "pdf": "1-中医证候学上.pdf", "from": 275, "to": 408 },
+ "M03": { "men": "M03", "name": "暑证门", "chap": 4, "vol": "shang", "pdf": "1-中医证候学上.pdf", "from": 409, "to": 490 },
+ "M04": {
+  "men": "M04", "name": "湿证门", "chap": 5, "vol": "shang", "pdf": "1-中医证候学上.pdf", "from": 491, "to": 787,
+  "extra": [["zhong", 50, 54]],
+  "extraWhy": "中册 50–54 是湿门章尾（印张 1281–1285），页眉不印章名，主区间只覆盖上册，不补则湿门末几证整段漏掉"
+ },
+ "M05": { "men": "M05", "name": "燥证门", "chap": 6, "vol": "zhong", "pdf": "2-中医证候学中.pdf", "from": 55, "to": 204 },
+ "M06": { "men": "M06", "name": "火证（热证）门", "chap": 7, "vol": "zhong", "pdf": "2-中医证候学中.pdf", "from": 205, "to": 598 },
+ "M07": { "men": "M07", "name": "气证门", "chap": 8, "vol": "zhong", "pdf": "2-中医证候学中.pdf", "from": 599, "to": 704 },
+ "M08": { "men": "M08", "name": "瘀证门", "chap": 9, "vol": "zhong", "pdf": "2-中医证候学中.pdf", "from": 705, "to": 853 },
+ "M09": {
+  "men": "M09", "name": "痰证门", "chap": 10, "vol": "xia", "pdf": "3-中医证候学下.pdf", "from": 10, "to": 189,
+  "extra": [["xia", 1, 9]],
+  "extraWhy": "下册 1–9 是痰门章首（印张 1540–1548，脾胃湿痰停胃本证起），主区间从下册 10 起，不补则痰门首证 4 候全缺"
+ },
+ "M10": { "men": "M10", "name": "饮证门", "chap": 11, "vol": "xia", "pdf": "3-中医证候学下.pdf", "from": 190, "to": 317 },
+ "M11": { "men": "M11", "name": "食证门", "chap": 12, "vol": "xia", "pdf": "3-中医证候学下.pdf", "from": 318, "to": 383 },
+ "M12": { "men": "M12", "name": "虚证门", "chap": 13, "vol": "xia", "pdf": "3-中医证候学下.pdf", "from": 384, "to": 760 }
+}
