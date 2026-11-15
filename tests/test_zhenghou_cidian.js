@@ -137,6 +137,40 @@ test('C1 辞典 22 个文件齐备（凡例 + 12 章 + 9 附录）', () => {
   for (const a of ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']) assert.ok(files.some((f) => f.startsWith('附录' + a)), '缺附录' + a);
 });
 
+test('C1g 缺条核实与码归位：三条缺条都带原页依据、归位不留双份', () => {
+  const gap = JSON.parse(fs.readFileSync(path.join(STD, '缺口登记.json'), 'utf8'));
+  const codes = new Set();
+  for (const m of ['M01','M02','M03','M04','M05','M06','M07','M08','M09','M10','M11','M12']) {
+    const f = path.join(STD, `正文-${m}.json`);
+    if (!fs.existsSync(f)) continue;
+    for (const c of (JSON.parse(fs.readFileSync(f, 'utf8')).校勘.缺条 || [])) codes.add(c);
+  }
+  const checked = gap['缺条核实'] || [];
+  assert.strictEqual(checked.length, codes.size, '缺条核实条数 != 实际缺条数');
+  for (const c of codes) assert.ok(checked.some(x => x.code === c), '缺条未核实：' + c);
+  for (const x of checked) {
+    assert.ok(x.结论 && x.依据 && x.处理, '核实缺字段：' + x.code);
+    assert.ok(x.依据.length >= 40, '依据太薄（要写印张与页上所见）：' + x.code);
+  }
+  const moved = gap['码归位'] || [];
+  assert.strictEqual(moved.length, 2, '归位条数应为 2');
+  for (const m of moved) {
+    assert.ok(m.from && m.to && m.why && m.page, '归位缺字段');
+    assert.ok(m.why.length >= 30, '归位依据太薄：' + m.from);
+  }
+  // 归位后不许两边都在
+  for (const m of moved) {
+    const [men] = m.from.split('-');
+    const items = JSON.parse(fs.readFileSync(path.join(STD, `正文-${men}.json`), 'utf8')).items;
+    assert.ok(!items[m.from], '归位后旧键仍在：' + m.from);
+    assert.ok(items[m.to], '归位后新键缺失：' + m.to);
+  }
+  // 参考书目吴方医案：回原页核过，必须留结论
+  const bib = JSON.parse(fs.readFileSync(path.join(STD, '参考书目.json'), 'utf8'));
+  const wu = bib.items.find(x => x.title === '吴方医案');
+  assert.ok(wu && wu['核对'] && wu['核对'].includes('2294'), '吴方医案缺原页核对结论');
+});
+
 test('C1f 态根对照表自洽：判定和=总次、映射必带病机、待核必带依据、附录 G 有 G.7', () => {
   const r = JSON.parse(fs.readFileSync(path.join(STD, '态根-病机对照.json'), 'utf8'));
   const c = r.counts;

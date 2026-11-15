@@ -23,6 +23,9 @@ import parse_records as P  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(HERE))
 STD = os.path.join(ROOT, "standards", "zhenghou-cidian")
 
+FIX_PATH = os.path.join(HERE, "归位表.json")
+FIXES = json.load(open(FIX_PATH, encoding="utf-8"))["items"] if os.path.exists(FIX_PATH) else []
+
 _DOORS_PATH = doors_file()
 DOORS = json.load(open(_DOORS_PATH, encoding="utf-8")) if os.path.exists(_DOORS_PATH) else {}
 # JOBS: (门码, 卷, PDF起, PDF止, 门名, 书内章题)
@@ -271,6 +274,25 @@ def main():
                 if r.get("ocrName"):
                     items[code]["ocrName"] = r["ocrName"]
                 recovered.append(code)
+        # ── 码归位：原书印刷码与目录码冲突、且已回原页看过图的那几条 ──────────
+        applied = []
+        for e in FIXES:
+            if not e["from"].startswith(men + "-") or e["from"] not in items:
+                continue
+            it = items[e["from"]]
+            if e.get("page") and it.get("page") != e["page"]:
+                raise SystemExit("✗ 归位表页码不符：%s 实际 %s，表里写 %s"
+                                 % (e["from"], it.get("page"), e["page"]))
+            del items[e["from"]]
+            if e.get("to"):
+                if e["to"] in items:
+                    raise SystemExit("✗ 归位目标已被占用：%s" % e["to"])
+                it["movedFrom"] = e["from"]
+                it["moveWhy"] = e["why"]
+                items[e["to"]] = it
+            applied.append({"from": e["from"], "to": e.get("to"),
+                            "page": it.get("page"), "why": e["why"]})
+
         got = len(items)
         payload = {
             "$about": "《中医证候学》%s（%s）的候级正文（OCR）。字段原样保留，出处为印张页码。" % (book, men),
@@ -293,10 +315,11 @@ def main():
                 "codeFixes": len(fixes),
                 "recovered": len(recovered),
                 "conflicts": sum(1 for v in items.values() if v.get("codeConflict")),
+                "moved": len(applied),
                 "pageFrom": min((v["page"] for v in items.values()), default=None),
                 "pageTo": max((v["page"] for v in items.values()), default=None),
             },
-            "校勘": {"未匹配": unmatched, "重码": dup, "码纠正": fixes,
+            "校勘": {"未匹配": unmatched, "重码": dup, "码纠正": fixes, "归位": applied,
                       "缺条": [c for c in expect if c not in items]},
             "items": items,
         }
@@ -305,6 +328,8 @@ def main():
         if write:
             open(out, "w", encoding="utf-8", newline="\n").write(txt)
         c = payload["counts"]
+        if applied:
+            print("   归位 %d 条：%s" % (len(applied), "；".join("%s→%s" % (a["from"], a["to"] or "(删)") for a in applied)))
         print("%s %s: 期望 %d · 解析 %d · 命中 %d · 缺 %d · 未匹配 %d · 重码 %d · 码纠正 %d · 名不符 %d · 正文 %.1f 万字"
               % (men, name, c["expected"], c["parsed"], c["matched"], c["missing"],
                  c["unmatched"], c["duplicates"], c["codeFixes"], c["nameMismatch"], c["chars"] / 10000))

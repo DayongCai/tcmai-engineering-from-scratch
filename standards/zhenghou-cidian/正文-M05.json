@@ -29,6 +29,7 @@
   "codeFixes": 5,
   "recovered": 6,
   "conflicts": 4,
+  "moved": 0,
   "pageFrom": 736,
   "pageTo": 884
  },
@@ -89,6 +90,7 @@
     "why": "按候名归位（码认坏，本门同名空位唯一）"
    }
   ],
+  "归位": [],
   "缺条": []
  },
  "items": {

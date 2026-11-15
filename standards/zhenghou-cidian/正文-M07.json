@@ -29,6 +29,7 @@
   "codeFixes": 0,
   "recovered": 0,
   "conflicts": 0,
+  "moved": 0,
   "pageFrom": 1280,
   "pageTo": 1383
  },
@@ -36,6 +37,7 @@
   "未匹配": [],
   "重码": [],
   "码纠正": [],
+  "归位": [],
   "缺条": []
  },
  "items": {

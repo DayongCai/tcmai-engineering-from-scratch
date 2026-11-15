@@ -29,6 +29,7 @@
   "codeFixes": 2,
   "recovered": 4,
   "conflicts": 2,
+  "moved": 0,
   "pageFrom": 1919,
   "pageTo": 2288
  },
@@ -48,6 +49,7 @@
     "why": "书印码与目录不一致，按候名归位"
    }
   ],
+  "归位": [],
   "缺条": [
    "M12-L44-Z21-H216"
   ]

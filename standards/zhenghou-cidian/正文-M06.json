@@ -29,6 +29,7 @@
   "codeFixes": 3,
   "recovered": 4,
   "conflicts": 3,
+  "moved": 0,
   "pageFrom": 887,
   "pageTo": 1277
  },
@@ -67,6 +68,7 @@
     "why": "书印码与目录不一致，按候名归位"
    }
   ],
+  "归位": [],
   "缺条": []
  },
  "items": {

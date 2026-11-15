@@ -34,6 +34,12 @@ PUB_RE = re.compile(r"([\u4e00-\u9fa5（）()]{4,20}(?:出版社|书局|书店|�
 
 # 只收「与传世书名对照后确定」的形近字误认；改了就记 ocrTitle，可回查。
 # 不收把握不足的（如「吴方医案」可能是「吴氏医案」，先留着待核，不硬改）。
+# 回原页看过图、确认无需改动的条目（写结论 + 印张 + 互证，别只写「已核」）
+CHECKED = {
+    "吴方医案": "印张 2294 原页作《吴方医案》：景德镇市中医院整理，景德镇人民出版社，1960 —— 与 OCR 一致，不改。"
+                "正文另有互证：病案引《吴方医案》21（印张 1846）、64（1564）、81（1580）三处，书名用法相同。",
+}
+
 TITLE_FIX = {
     "牌胃论": "脾胃论",
     "金医钩玄": "金匮钩玄",
@@ -120,10 +126,13 @@ def main():
                 continue
             seen[key] = printed
             fixed = TITLE_FIX.get(title)
-            items.append({"n": len(items) + 1, "title": fixed or title,
-                          "ocrTitle": title if fixed else None,
-                          "author": author, "publisher": pub, "year": year,
-                          "page": printed, "raw": flat})
+            rec = {"n": len(items) + 1, "title": fixed or title,
+                   "ocrTitle": title if fixed else None,
+                   "author": author, "publisher": pub, "year": year,
+                   "page": printed, "raw": flat}
+            if (fixed or title) in CHECKED:
+                rec["核对"] = CHECKED[fixed or title]
+            items.append(rec)
 
     doc = {
         "$about": "原书「参考书目」（印张 2293–2296）。一条一行，书名以《》为准；"
