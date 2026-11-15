@@ -98,6 +98,29 @@ function load() {
   for (const t of tai['态']) taiFam.set(t.zh, t['族'] || '其他');
   const houWei = new Set(wei['候位'].map((w) => w.zh));
 
+  // 附录一「75 证象」的机器索引（可缺省：文件不存在就整体退化为「不判名」）
+  // 为什么要有它：位/性语素能算「像哪一证」，但算不出「这个证象名在原书里到底有没有」。
+  // 原表是「部位 × 病机」的合法格，用它做的校验是**硬边界**，不是相似度。
+  let xiang = null;
+  try {
+    const X = jread(path.join(STD, '证象-合法组合.json'));
+    const phraseSet = new Set(X['phrases'] || []);
+    const cellOf = new Map();      // 表内写法 → {col,row}
+    for (const [col, m] of Object.entries(X['byWei'] || {})) {
+      for (const [row, text] of Object.entries(m)) cellOf.set(text, { col, row });
+    }
+    xiang = {
+      phraseSet, cellOf,
+      rows: new Set(X['rows'] || []),
+      byWei: X['byWei'] || {},
+      // 位前缀在格内文字里常带修饰字（阳 → 阳气、阴 → 阴液、津 → 津气/津液、营 → 营气、血 → 血液）
+      prefixVariants: { 阳: ['阳气'], 阴: ['阴液'], 津: ['津气', '津液'], 营: ['营气'], 血: ['血液'] },
+      count: X['count'] || 0,
+    };
+  } catch (e) {
+    xiang = null;
+  }
+
   // 证扁平表
   const zheng = [];
   for (const m of struct.men) {
@@ -107,7 +130,7 @@ function load() {
       }
     }
   }
-  return { struct, wei, xing, tai, weiTerms, xingTerms, termIdx, taiFam, houWei, zheng, alias, danger };
+  return { struct, wei, xing, tai, weiTerms, xingTerms, termIdx, taiFam, houWei, zheng, alias, danger, xiang };
 }
 
 // ─────────────────────────── 归一 ───────────────────────────
@@ -192,8 +215,55 @@ function pickHou(z, ctxTerms, rawTerms, db) {
 }
 // ─────────────────────── 追问策略（弱证据怎么补一问） ───────────────────────
 //
+// ─────────────────────── 名形校验（附录一：75 证象） ───────────────────────
+//
+// 「部位 × 病机」在原书是一张 19×13 的合法矩阵（附录一）。这里用它当**硬边界**：
+// 名字能拆成「表内位 + 表内病机」且该格有字 → 合法；格空 → 原书没有这个说法；
+// 拆不开 → 不判（说清「不在附录一词表内」），绝不因为拆不开就判错。
+function validateName(db, raw) {
+  const s = String(raw == null ? '' : raw).replace(/\s/g, '').replace(/[候证]$/, '');
+  if (!db.xiang) {
+    return { 名: s, ok: null, 说明: '未载入附录一索引（缺 证象-合法组合.json），不判' };
+  }
+  if (!s) return { 名: s, ok: null, 说明: '空名' };
+
+  if (db.xiang.phraseSet.has(s)) {
+    const cell = db.xiang.cellOf.get(s) || {};
+    return { 名: s, ok: true, 位: cell.col, 病机: cell.row, 表内写法: s,
+      说明: `附录一「${cell.col}×${cell.row}」这一格就是它` };
+  }
+
+  // 拆：最长位前缀（含 阳气/阴液/津气/血液 这类变体）+ 最长病机后缀
+  const cols = Object.keys(db.xiang.byWei).sort((a, b) => b.length - a.length);
+  let col = null;
+  let usedPrefix = '';
+  for (const c of cols) {
+    for (const p of [c, ...(db.xiang.prefixVariants[c] || [])]) {
+      if (s.startsWith(p) && p.length > usedPrefix.length) { col = c; usedPrefix = p; }
+    }
+  }
+  let row = null;
+  for (const r of db.xiang.rows) {
+    if (!s.endsWith(r)) continue;
+    if (!row || r.length > row.length) row = r;
+  }
+  if (!col || !row) {
+    return { 名: s, ok: null,
+      说明: '拆不成「表内位 + 表内病机」，可能不是证象名（如证名/候名/症状串），不判' };
+  }
+  const cell = (db.xiang.byWei[col] || {})[row];
+  if (cell) {
+    return { 名: s, ok: true, 位: col, 病机: row, 表内写法: cell,
+      说明: cell === s ? '原表此格写法一致' : `组合合法，但原表写作「${cell}」` };
+  }
+  const sameCol = Object.entries(db.xiang.byWei[col] || {}).map(([r, t]) => `${r}→${t}`);
+  return { 名: s, ok: false, 位: col, 病机: row,
+    说明: `附录一「${col}×${row}」是空格：原书没有「${s}」这个证象`,
+    该位合法组合: sameCol };
+}
+
 // 为什么要有这一段：百姓只会说两句（「干咳、嗓子干」），位与性各命中 1 个，
-// 算法只能给 weak。此时**不该硬答，也不该判空** —— 应该问一句能加一分的话。
+// 算法只能给 weak。此时**不该硬答、也不该判空** —— 应该问一句能加一分的话。
 // 规则极简：哪一维薄，就问那一维；两边都薄，先问位（位比性更容易问清）。
 function followUps(best, unmatched) {
   if (!best) {
@@ -219,6 +289,7 @@ function encode(db, ctx) {
   const vocabHits = [];        // 只是「辞典里认识这个词」，不参与位/性计分
   const unmatched = [];        // 一个词表项都没碰到的原词
   const dangerRaw = [];        // 危象词（口语）：命中即分流就医，不做位/性计分
+  const nameChecks = [];       // 名形校验：附录一「部位×病机」的合法性判定（不参与计分）
   for (const r of rawTerms) {
     const hits = normalizeAll(db, r);
     if (hits.length) { matched.push(...hits); continue; }
@@ -236,6 +307,11 @@ function encode(db, ctx) {
     }
     if (db.taiFam.has(t)) { vocabHits.push({ raw: t, term: t, how: 'vocab-态' }); continue; }
     if (db.houWei.has(t)) { vocabHits.push({ raw: t, term: t, how: 'vocab-候位' }); continue; }
+    // 附录一证象：认得出（合法格）就记一笔、不参与位/性计分；
+    // 判定为「原表空格」的，也要留下来 —— 这是回答「为什么没匹配上」的依据，不是错误。
+    const vn = validateName(db, t);
+    if (vn.ok === true) { vocabHits.push({ raw: t, term: vn.表内写法, how: 'vocab-证象' }); nameChecks.push(vn); continue; }
+    if (vn.ok === false) { nameChecks.push(vn); unmatched.push(r); continue; }
     unmatched.push(r);
   }
 
@@ -295,6 +371,7 @@ function encode(db, ctx) {
       主候: hou ? hou.full : null,
       主候名: hou ? hou.zh : null,
       主候族: hou ? hou['族'] : null,
+      主候名形校验: hou ? validateName(db, hou.zh).ok : null,
       开关组: famMix(c.z, db.taiFam),
       治法动作: (() => {
         const w = db.wei['证位'].find((q) => q.zh === c.z.wei) || {};
@@ -312,6 +389,7 @@ function encode(db, ctx) {
     危候: out.some((c) => c['危候']) || dangerRaw.length > 0,
     危象词: dangerRaw,
     未收录词: unmatched,
+    名形校验: nameChecks,
     // 追问：只在证据不足时给；strong 时为空数组 —— 不要没事也问，烦人也是错
     追问: (out.length && out[0]['强度'] === 'strong') ? [] : followUps(out[0], unmatched),
     提示: out.length
@@ -326,6 +404,9 @@ function printResult(r) {
   const L = [];
   L.push('归一：' + (r['归一'].length ? r['归一'].map((n) => `${n.原词}→${n.词表}(${n.方式})`).join('  ') : '（无）'));
   if (r['未收录词'].length) L.push('未收录：' + r['未收录词'].join('  '));
+  for (const n of (r['名形校验'] || [])) {
+    L.push(`名形校验：${n.名} → ${n.ok === true ? '合法' : n.ok === false ? '原表无此格' : '不判'}（${n.说明}）`);
+  }
   if (!r['候选'].length) {
     L.push('候选：0 条');
     L.push(r['提示']);
@@ -381,6 +462,12 @@ function main() {
   if (argv.includes('--all') || argv.includes('--check')) {
     return runCases(db, argv.includes('--check'));
   }
+  const ni = argv.indexOf('--name');
+  if (ni >= 0) {
+    const v = validateName(db, argv[ni + 1]);
+    console.log(JSON.stringify(v, null, 1));
+    return v.ok === false ? 2 : 0;
+  }
   const ci = argv.indexOf('--ctx');
   const ji = argv.indexOf('--json');
   let ctx;
@@ -390,6 +477,7 @@ function main() {
     console.log('用法：');
     console.log('  node scripts/zhenghou_encode.js --ctx "恶寒重 无汗 脉浮紧"');
     console.log('  node scripts/zhenghou_encode.js --json \'{"恶寒重":true,"无汗":true}\'');
+    console.log('  node scripts/zhenghou_encode.js --name 腠理不宣   # 名形校验（附录一）');
     console.log('  node scripts/zhenghou_encode.js --all      # 12+2 条黄金样例');
     return 1;
   }
@@ -404,4 +492,4 @@ if (require.main === module) {
   process.exit(main());
 }
 
-module.exports = { load, encode, normalize, normalizeAll, splitTerms, MAX_CAND };
+module.exports = { load, encode, normalize, normalizeAll, splitTerms, validateName, MAX_CAND };

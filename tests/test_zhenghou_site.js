@@ -69,3 +69,19 @@ test('S5 追问策略在页面内核里同样生效（弱证据不判空）', ()
   const strong = CORE.encode(D, '拉肚子 没胃口 没劲');
   assert.deepStrictEqual(strong.ask, [], 'strong 时不该追问');
 });
+
+test('S6 名形校验页面与 Node 同结论（附录一 72 格）', () => {
+  const D = buildData();
+  const enc = require(path.join(ROOT, 'scripts', 'zhenghou_encode.js'));
+  const db = enc.load();
+  const names = ['腠理不宣', '气机郁结', '血滞瘀结', '阳气闭塞', '腠理枯竭', '气机腐败', '心脉痹阻'];
+  for (const n of names) {
+    const a = CORE.validateName(D, n);
+    const b = enc.validateName(db, n);
+    assert.strictEqual(a.ok, b.ok, n + ' 判定不一致：页面 ' + a.ok + ' / Node ' + b.ok);
+    if (a.ok === true) assert.strictEqual(a['表内写法'], b['表内写法'], n + ' 表内写法不一致');
+  }
+  const page = fs.readFileSync(PAGE, 'utf8');
+  assert.ok(page.includes('名形校验'), '页面没有名形校验的展示位');
+  assert.ok(page.includes('附录一'), '页面没有标注数据出处');
+});

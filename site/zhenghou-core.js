@@ -60,6 +60,7 @@
     const danger = data.danger || {};
 
     const matched = [];   // {raw, term}
+    const nameChecks = [];
     const dangerRaw = [];
     const unmatched = [];
 
@@ -71,7 +72,13 @@
       // 别名：口语 → 词表说法；别名词本身再走三路匹配
       const canon = alias[t] || t;
       const hits = matchTerm(idx, canon);
-      if (hits.size === 0) { unmatched.push(t); continue; }
+      if (hits.size === 0) {
+        // 证象名（部位×病机）不算匹配词，但要留下判定 —— 回答「为什么没配上」。
+        const vn = validateName(data, t);
+        if (vn.ok !== null) nameChecks.push(vn);
+        unmatched.push(t);
+        continue;
+      }
       for (const [term, how] of hits) matched.push({ raw: t, term, how: raw === canon ? how : 'alias' });
     }
 
@@ -122,8 +129,47 @@
       danger: dangerOn,
       dangerTerms: dangerRaw,
       unmatched,
+      nameChecks,
       ask: (out.length && out[0].tier === 'strong') ? [] : followUps(out[0], unmatched),
     };
+  }
+
+  // ── 名形校验（附录一 75 证象矩阵）──────────────────────────────
+  // 与 scripts/zhenghou_encode.js 同规则：合法格→true，空格→false，拆不开→null（不判）。
+  function validateName(data, raw) {
+    const X = data.xiang;
+    const s = String(raw == null ? '' : raw).replace(/\s/g, '').replace(/[候证]$/, '');
+    if (!X) return { 名: s, ok: null, 说明: '页面未载入附录一索引，不判' };
+    if (!s) return { 名: s, ok: null, 说明: '空名' };
+    const phrases = X.phrases || [];
+    if (phrases.indexOf(s) >= 0) {
+      let cell = null;
+      Object.keys(X.byWei || {}).forEach((col) => {
+        Object.keys(X.byWei[col]).forEach((row) => {
+          if (X.byWei[col][row] === s) cell = { col, row };
+        });
+      });
+      return { 名: s, ok: true, 位: cell ? cell.col : null, 病机: cell ? cell.row : null,
+        表内写法: s, 说明: '附录一此格就是它' };
+    }
+    const variants = { 阳: ['阳气'], 阴: ['阴液'], 津: ['津气', '津液'], 营: ['营气'], 血: ['血液'] };
+    const cols = Object.keys(X.byWei || {}).sort((a, b) => b.length - a.length);
+    let col = null; let used = '';
+    cols.forEach((c) => {
+      [c].concat(variants[c] || []).forEach((p) => {
+        if (s.indexOf(p) === 0 && p.length > used.length) { col = c; used = p; }
+      });
+    });
+    let row = null;
+    (X.rows || []).forEach((r) => {
+      if (s.slice(-r.length) === r && (!row || r.length > row.length)) row = r;
+    });
+    if (!col || !row) return { 名: s, ok: null, 说明: '拆不成「表内位 + 表内病机」，不判' };
+    const cell = (X.byWei[col] || {})[row];
+    if (cell) return { 名: s, ok: true, 位: col, 病机: row, 表内写法: cell,
+      说明: cell === s ? '原表此格写法一致' : '组合合法，原表写作「' + cell + '」' };
+    return { 名: s, ok: false, 位: col, 病机: row,
+      说明: '附录一「' + col + '×' + row + '」是空格：原书没有这个证象' };
   }
 
   function followUps(best, unmatched) {
@@ -138,5 +184,5 @@
     return ask;
   }
 
-  return { splitTerms, index, encode, followUps };
+  return { splitTerms, index, encode, followUps, validateName };
 }));

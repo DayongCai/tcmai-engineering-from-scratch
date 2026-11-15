@@ -101,10 +101,76 @@ test('E9 归一规则可解释：每条命中都写了方式', () => {
   const r = enc.encode(db, '无汗 脉浮紧');
   assert.ok(r['归一'].length >= 2);
   for (const n of r['归一']) {
-    assert.ok(['exact', 'contains', 'prefix', 'vocab-态', 'vocab-候位'].includes(n['方式']), '未知方式 ' + n['方式']);
+    assert.ok(['exact', 'contains', 'prefix', 'vocab-态', 'vocab-候位', 'vocab-证象'].includes(n['方式']), '未知方式 ' + n['方式']);
     assert.ok(n['原词'] && n['词表']);
   }
   // 「无汗」应同时落到类语素（精确）与位语素（前缀 无汗或少汗）
   const wu = r['归一'].filter((n) => n['原词'] === '无汗').map((n) => n['词表']);
   assert.ok(wu.includes('无汗') && wu.includes('无汗或少汗'), '无汗应双落：' + wu.join(','));
+});
+
+// ── N 名形校验（附录一：75 证象矩阵）─────────────────────────
+// 这组断言的意义：位/性语素能算「像哪一证」，但算不出「这个说法原书里到底有没有」。
+// 附录一那张 19×13 矩阵给的是硬边界；这里盯三件事 —— 合法格认得出、空格判得出、拆不开不判。
+
+test('N1 合法格：腠理不宣 = 附录一「腠理×不宣」', () => {
+  const v = enc.validateName(db, '腠理不宣');
+  assert.strictEqual(v.ok, true);
+  assert.strictEqual(v['位'], '腠理');
+  assert.strictEqual(v['病机'], '不宣');
+  assert.strictEqual(v['表内写法'], '腠理不宣');
+});
+
+test('N2 表内写法与常见说法不同也能认：气机郁结属「气机×不通」', () => {
+  const v = enc.validateName(db, '气机郁结');
+  assert.strictEqual(v.ok, true);
+  assert.strictEqual(v['位'], '气机');
+  assert.strictEqual(v['病机'], '不通');
+});
+
+test('N3 空格必须判否，并给出该位合法组合', () => {
+  const v = enc.validateName(db, '腠理枯竭');
+  assert.strictEqual(v.ok, false);
+  assert.ok(v['说明'].includes('空格'), v['说明']);
+  assert.ok(Array.isArray(v['该位合法组合']) && v['该位合法组合'].length >= 3);
+  assert.ok(v['该位合法组合'].some((x) => x.includes('腠理不宣')));
+});
+
+test('N4 拆不开就不判（ok=null），不许因为认不出就判错', () => {
+  const v = enc.validateName(db, '心脉痹阻');
+  assert.strictEqual(v.ok, null);
+  assert.ok(v['说明'].includes('不判'), v['说明']);
+  assert.strictEqual(enc.validateName(db, '').ok, null);
+});
+
+test('N5 接进 /encode：证象词只记不判分，且不影响位/性', () => {
+  const base = enc.encode(db, '怕冷 无汗');
+  const withX = enc.encode(db, '怕冷 无汗 腠理不宣');
+  assert.ok(withX['名形校验'].some((n) => n['名'] === '腠理不宣' && n.ok === true), '名形校验没记上');
+  assert.ok(withX['归一'].some((n) => n['方式'] === 'vocab-证象'), '归一没有 vocab-证象');
+  const a = base['候选'][0];
+  const b = withX['候选'][0];
+  assert.strictEqual(a.full, b.full, '证象词不该改变首选证');
+  assert.strictEqual(a['命中位'], b['命中位'], '证象词不该加位分');
+  assert.strictEqual(a['命中性'], b['命中性'], '证象词不该加性分');
+});
+
+test('N6 索引与附录一逐格对齐：72 格、每格都有位与病机', () => {
+  const X = JSON.parse(fs.readFileSync(
+    path.join(ROOT, 'standards', 'zhenghou-cidian', '证象-合法组合.json'), 'utf8'));
+  assert.strictEqual(X.count, 72, '证象格数 ' + X.count);
+  assert.strictEqual(X.phrases.length, 72);
+  let n = 0;
+  for (const [col, m] of Object.entries(X.byWei)) {
+    assert.ok(X.cols.includes(col), '未登记的列 ' + col);
+    for (const [row, text] of Object.entries(m)) {
+      n += 1;
+      assert.ok(X.rows.includes(row), '未登记的行 ' + row);
+      assert.ok(text.length >= 3, '格内文字异常：' + text);
+    }
+  }
+  // 同一格可能有两个写法（原表「气机×不宁」= 气机冲逆 / 气机逆乱），
+  // byWei 里只留 canonical，另一个记在 multiText —— 两者相加必须回到 72。
+  const extra = Object.values(X.multiText || {}).reduce((k, v) => k + (v.length - 1), 0);
+  assert.strictEqual(n + extra, 72, '格数对不上：byWei ' + n + ' + multi ' + extra);
 });

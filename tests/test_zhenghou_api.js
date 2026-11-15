@@ -146,3 +146,25 @@ test('A9 危象词走「包含」而非精确：裹着状语也要认', () => {
     assert.ok(r['危候'], q + ' 应触发危候');
   }
 });
+
+test('A11 /name 三态与 /encode 的 nameChecks 字段', async () => {
+  const ok = await get('/name?q=' + encodeURIComponent('腠理不宣'));
+  assert.strictEqual(ok.status, 200);
+  assert.strictEqual(ok.body.ok, true);
+  assert.strictEqual(ok.body['位'], '腠理');
+
+  const bad = await get('/name?q=' + encodeURIComponent('腠理枯竭'));
+  assert.strictEqual(bad.status, 200, '200 只代表服务活着');
+  assert.strictEqual(bad.body.ok, false);
+  assert.ok(Array.isArray(bad.body['该位合法组合']) || bad.body['说明'].includes('空格'));
+
+  const undecided = await get('/name?q=' + encodeURIComponent('心脉痹阻'));
+  assert.strictEqual(undecided.body.ok, null, '拆不开必须判 null，不许判错');
+
+  const miss = await get('/name');
+  assert.strictEqual(miss.status, 400, '缺 q 应 400');
+
+  const e = await post('/encode', { text: '怕冷 无汗 腠理不宣' });
+  assert.ok(Array.isArray(e.body.nameChecks) && e.body.nameChecks.length >= 1, '/encode 没带 nameChecks');
+  assert.strictEqual(e.body.nameChecks[0].ok, true);
+});

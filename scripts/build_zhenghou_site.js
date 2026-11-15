@@ -35,8 +35,13 @@ function buildData() {
   const tai = read('语素-态.json');
   const alias = read('口语别名.json');
   const qa = read('问答样例.json');
+  // 附录一「75 证象」索引：页面用它与接口同口径做名形校验（合法格 / 空格 / 不判）
+  let xiang = null;
+  try { xiang = read('证象-合法组合.json'); } catch (e) { xiang = null; }
 
   const famOf = Object.fromEntries((tai.态 || []).map((t) => [t.zh, t.族 || '其他']));
+
+  const xiangData = xiang;
 
   const men = struct.men.map((m) => ({
     code: m.code, zh: m.zh, n: m.n,
@@ -81,6 +86,7 @@ function buildData() {
     hou,
     famGrid, fams: FAMS,
     alias: alias.别名 || {}, danger: alias.危象 || {},
+    xiang: xiangData,
     qa: (qa.用例 || []).map((c) => ({ id: c.id, text: c.text, 期望门: c.期望门, 危: c.期望危候 })),
   };
 }
@@ -197,6 +203,15 @@ function html(data) {
 
   // ── 主诉 → 候选 ─────────────────────────────────────────
   function render(out) {
+    // 名形校验（附录一）：合法格标绿、原表空格标灰红、拆不开不显示 —— 只解释，不改结论
+    function nameLines(list) {
+      if (!list || !list.length) return '';
+      return '<p class="hint">名形校验（附录一 · 部位×病机）：' + list.map(function (n) {
+        var mark = n.ok === true ? '合法' : (n.ok === false ? '原表无此格' : '不判');
+        return '<code>' + n.名 + '</code> ' + mark + ' — ' + n.说明;
+      }).join('；') + '</p>';
+    }
+
     if (out.danger) {
       $('out').innerHTML = '<p class="danger">⚠ 检测到危象词：' + out.dangerTerms.join('、')
         + '。请立即就医或拨打急救电话，不要在家观察。</p>';
@@ -205,7 +220,8 @@ function html(data) {
     if (!out.candidates.length) {
       $('out').innerHTML = '<p class="hint">没有落到任何证。'
         + (out.unmatched.length ? '未收录：' + out.unmatched.join('、') : '') + '</p>'
-        + (out.ask.length ? '<p class="ask">可以再补一句：' + out.ask.map(function (a) { return a.问; }).join(' ') + '</p>' : '');
+        + (out.ask.length ? '<p class="ask">可以再补一句：' + out.ask.map(function (a) { return a.问; }).join(' ') + '</p>' : '')
+        + nameLines(out.nameChecks);
       return;
     }
     var rows = out.candidates.map(function (c) {
@@ -215,7 +231,7 @@ function html(data) {
         + ' · 位命中 ' + c.位命中 + ' · 性命中 ' + c.性命中 + ' · ' + c.full + '</div></div>';
     }).join('');
     var ask = out.ask.length ? '<p class="ask">证据还不够，可以再补一句：' + out.ask.map(function (a) { return a.问; }).join(' ') + '</p>' : '';
-    $('out').innerHTML = rows + ask;
+    $('out').innerHTML = rows + ask + nameLines(out.nameChecks);
   }
   $('go').addEventListener('click', function () { render(C.encode(D, $('q').value)); });
   $('q').addEventListener('keydown', function (e) { if (e.key === 'Enter') render(C.encode(D, $('q').value)); });

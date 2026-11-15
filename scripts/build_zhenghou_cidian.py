@@ -2022,6 +2022,25 @@ def render_appendix_g(struct):
     A("| 形态 | 部位 + 病机（腠理不宣） | 病机片段（不宣 / 蕴蒸） |")
     A("| 用途 | 校验候名/证名里的组合是否合法 | 给候打「这一步坏在哪」的标签 |")
     A("")
+    A("## G.5 这张表已经接进编码器（不是只躺在附录里）")
+    A("")
+    A("上面 72 格被编成 `standards/zhenghou-cidian/证象-合法组合.json`（部位×病机 → 格内文字），"
+      "编码器新增 `validateName()`，只在**提示层**用，不改候选、不改分数：")
+    A("")
+    A("| 输入 | 判定 | 说明 |")
+    A("|---|---|---|")
+    A("| 腠理不宣 | **true** | 附录一「腠理×不宣」这一格就是它 |")
+    A("| 气机郁结 | **true** | 组合等于「气机×不通」，表内写法一致 |")
+    A("| 腠理枯竭 | **false** | 该格是空格：原书没有这个证象，回「腠理不宣 / 腠理不调 / 腠理不实」等该位合法组合 |")
+    A("| 心脉痹阻 | **null** | 拆不成「表内位 + 表内病机」，**不判**——认不出不等于错 |")
+    A("")
+    A("三处入口：`node scripts/zhenghou_encode.js --name 腠理不宣`、`/encode` 响应的 `nameChecks[]`、"
+      "`GET /name?q=`；百姓页跑同一套判定，页面与 Node 由 S6 对齐测试盯着。")
+    A("")
+    A("**为什么只做提示不改分**：合法格只有 72 个，而候名 1866 条里大量说法不在表内（如「卫气失宣」"
+      "是「卫气 + 失宣」，表里只有「不宣」）。拿它当分数门槛会把大半候选误杀；当提示用，"
+      "既能回答「这个说法原书有没有」，又能指出「原表怎么写」。")
+    A("")
     return NL.join(L)
 
 
@@ -2177,6 +2196,35 @@ def main():
         "计数": struct["counts"],
     }
     out.append((os.path.join(STD, "缺口登记.json"), jdump(gap, STD, "缺口登记.json")))
+
+    # 证象合法组合（附录 G 的机器可用形态）：编码器用它校验「部位×病机」是否在原表里。
+    # 只做索引与查询，不改一个字：cells 就是附录-证象.json 的 cells。
+    zx = _load_json_optional("附录-证象.json")
+    if zx:
+        by_wei = {}
+        multi = {}
+        for c in zx["cells"]:
+            slot = by_wei.setdefault(c["col"], {})
+            if c["row"] in slot and slot[c["row"]] != c["text"]:
+                # 同一格有两个写法（原表「气机×不宁」既有「气机冲逆」也有「气机逆乱」）：
+                # 保留第一个作 canonical，另一个记进 multiText，两个都算合法。
+                multi.setdefault("%s×%s" % (c["col"], c["row"]), [slot[c["row"]]]).append(c["text"])
+                continue
+            slot[c["row"]] = c["text"]
+        legal = {
+            "$about": "附录一（75 证象）的机器索引：部位×病机 → 原表格内文字。"
+                      "编码器 validateName() 只用这张表判「这个证象名在原书里有没有」，"
+                      "表里没有就是没有，不做相似推断。",
+            "source": "附录-证象.json",
+            "page": zx.get("source", {}).get("printed"),
+            "rows": zx.get("rows", []),
+            "cols": zx.get("cols", []),
+            "count": len(zx["cells"]),
+            "byWei": by_wei,
+            "multiText": multi,
+            "phrases": sorted({c["text"] for c in zx["cells"]}),
+        }
+        out.append((os.path.join(STD, "证象-合法组合.json"), jdump(legal, STD, "证象-合法组合.json")))
 
     index_all(struct)
     out.append((os.path.join(TB, "00-凡例与使用.md"), render_vol0(struct, tensor, men)))

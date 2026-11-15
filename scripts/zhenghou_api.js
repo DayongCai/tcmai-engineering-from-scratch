@@ -110,6 +110,15 @@ const OPENAPI = {
         responses: { 200: { description: '候详情' }, 404: { description: '码不在辞典内' } },
       },
     },
+    '/name': {
+      get: {
+        summary: '名形校验：这个「部位×病机」说法在原书附录一里有没有',
+        description: '返回 ok=true（表内此格）/ false（该格为空，原书无此说）/ null（拆不开，不判）。'
+          + ' 只查附录一那张 19×13 矩阵，不做相似推断。',
+        parameters: [{ name: 'q', in: 'query', required: true, schema: { type: 'string' }, example: '腠理不宣' }],
+        responses: { 200: { description: '判定结果（含 位/病机/表内写法 或 该位合法组合）' }, 400: { description: '缺 q' } },
+      },
+    },
   },
 };
 
@@ -134,6 +143,7 @@ function handleEncode(body) {
       candidates: cands,
       normalized: r['归一'] || [],
       unmatched: r['未收录词'] || [],
+      nameChecks: r['名形校验'] || [],
       danger: !!r['危候'],
       ask: r['追问'] || [],
       reason: cands.length ? null : (r['提示'] || 'no_candidate'),
@@ -164,6 +174,13 @@ function server() {
     }
     if (req.method === 'GET' && p === '/openapi.json') return json(res, 200, OPENAPI);
 
+    if (req.method === 'GET' && p === '/name') {
+      const q = (u.searchParams.get('q') || '').trim();
+      if (!q) return json(res, 400, { error: 'need_q' });
+      const v = zencode.validateName(DB, q);
+      // 200 只代表「服务活着」，判定结果看 ok：true/false/null 三态，null 是「不判」
+      return json(res, 200, v);
+    }
     if (req.method === 'GET' && p === '/search') {
       const q = (u.searchParams.get('q') || '').trim();
       if (!q) return json(res, 400, { error: 'need_q' });
@@ -252,7 +269,7 @@ if (require.main === module) {
     const port = i >= 0 ? Number(args[i + 1]) : Number(process.env.PORT || 8787);
     server().listen(port, '127.0.0.1', () => {
       console.log(`疾病证候单元 API → http://127.0.0.1:${port}`);
-      console.log('  GET  /health  /openapi.json  /search?q=  /hou?code=');
+      console.log('  GET  /health  /openapi.json  /search?q=  /hou?code=  /name?q=');
       console.log('  POST /encode  {"text":"怕冷 没汗 头身疼"}');
     });
   }
