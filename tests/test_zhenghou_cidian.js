@@ -157,8 +157,24 @@ test('C1f 态根对照表自洽：判定和=总次、映射必带病机、待核
   const enc = require(path.join(ROOT, 'scripts', 'zhenghou_encode.js'));
   const out = enc.encode(enc.load(), '怕冷 无汗');
   assert.ok(!JSON.stringify(out).includes('态根'), '编码器不该消费这张表');
+  // 待核 8 根的「位×根」细表
+  const pending = r.roots.filter(x => x.判定 === '待核');
+  const subAll = pending.flatMap(x => x.细分 || []);
+  assert.strictEqual(subAll.reduce((a, b) => a + b.次数, 0), c['按判定']['待核'],
+    '待核明细覆盖不全（细分次数之和 != 待核总次）');
+  const subHit = subAll.filter(y => y.判定 === '映射').reduce((a, b) => a + b.次数, 0);
+  assert.strictEqual(subHit, c['待核细分落格次数'], '细分落格次数对不上');
+  for (const y of subAll) {
+    assert.ok(['映射', '表外', '低频待核', '未细分'].includes(y.判定), '未知细分判定：' + y.判定);
+    assert.ok(y.依据 && y.依据.length >= 6, '细分缺依据：' + y.位 + '×' + y.次数);
+    if (y.判定 === '映射') assert.ok(y.原表该格, '映射项在原表没有这一格：' + y.位 + '｜' + y.病机);
+    else assert.strictEqual(y.病机, null);
+  }
+  assert.strictEqual(c['细分后可解释'],
+    1468 + c['映射项能真正落格的次数'] + c['待核细分落格次数'], '可解释累计算错');
   const md = fs.readFileSync(path.join(TB, '附录G-证象总表.md'), 'utf8');
   assert.ok(md.includes('G.7') && md.includes('不接进计分'), '附录 G 缺 G.7 或不接进计分声明');
+  assert.ok(md.includes('G.8'), '附录 G 缺 G.8 细表');
 });
 
 test('C1e 证象组合质检自洽：分类和=标签总次、证象型明细可回查、附录 G 有 G.6', () => {
