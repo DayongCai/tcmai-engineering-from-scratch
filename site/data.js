@@ -110,12 +110,12 @@ window.TCMAI_DATA = {
     "hours": 11547,
     "semesters": 10,
     "stages": 5,
-    "chaptersBuilt": 2134,
-    "subjectsDone": 187,
+    "chaptersBuilt": 2154,
+    "subjectsDone": 189,
     "subjectsWip": 0,
-    "subjectsPlanned": 2,
+    "subjectsPlanned": 0,
     "videos": 150,
-    "textbookChapters": 2570
+    "textbookChapters": 2606
   },
   "semesterPlan": [
     {
@@ -2216,17 +2216,21 @@ window.TCMAI_DATA = {
             "slideDecks": 24,
             "slides": 478,
             "videosRendered": 24,
-            "videoHours": 5.72,
-            "videoBytes": 510484074,
+            "videoHours": 5.74,
+            "videoBytes": 512033479,
             "audioSegments": 245,
             "_note": "videosPublished = 已进 platform/media-release.json 的讲数（HLS 打包完成）；videosRendered = 已渲染成片数。"
           },
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/08-jingui-yaolue",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 24,
+            "words": 703867,
+            "status": "wip",
+            "layer": "source-body+commentary",
+            "source": "standards/jingui/底本.json（外源·笈成）+ standards/jingui/gushiwen/（外源·古诗文网，校勘）",
+            "generatedAt": "2026-11-11",
+            "_note": "24 章 = N.1 原文全录（402 条）+ N.2-N.5 人工论述 + 现算数据表；逐条词解/释义与逐方方解未做，见 00-前言.md §五。"
           }
         },
         {
@@ -2460,9 +2464,18 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/14-zhongyi-zhenghou-xue",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 12,
+            "words": 208605,
+            "files": 18,
+            "figures": 9,
+            "status": "done",
+            "appendices": [
+              "A 位性态总表",
+              "B ICD-11 命名原则对照",
+              "C 数据与接口",
+              "D 症状反查索引（百姓入口）",
+              "E 应用工程手册（CI/CD）"
+            ]
           }
         },
         {
@@ -8172,10 +8185,10 @@ window.TCMAI_DATA = {
           "stage": "zhuang",
           "hours": 72,
           "chaptersTarget": 10,
-          "chaptersBuilt": 0,
-          "pct": 0,
-          "status": "planned",
-          "glyph": "⬚",
+          "chaptersBuilt": 10,
+          "pct": 100,
+          "status": "done",
+          "glyph": "✅",
           "bridge": "义齿设计→参数化 CAD / 咬合重建→力学优化",
           "path": "departments/08-wuguan/12-kouqiang-xiufu-xue",
           "prereq": [
@@ -8206,10 +8219,10 @@ window.TCMAI_DATA = {
           "stage": "zhuang",
           "hours": 72,
           "chaptersTarget": 10,
-          "chaptersBuilt": 0,
-          "pct": 0,
-          "status": "planned",
-          "glyph": "⬚",
+          "chaptersBuilt": 10,
+          "pct": 100,
+          "status": "done",
+          "glyph": "✅",
           "bridge": "头影测量→关键点检测 / 拔牙决策→分类模型",
           "path": "departments/08-wuguan/13-kouqiang-zhengji-xue",
           "prereq": [
@@ -10037,75 +10050,75 @@ window.TCMAI_DATA = {
     "01-zhongyi/14-zhongyi-zhenghou-xue": [
       {
         "n": 1,
-        "slug": "01-xulun",
-        "title": "证候是什么：132 个证候的实测",
-        "status": "🚧"
+        "slug": "01-feng-men",
+        "title": "风证门",
+        "status": "✅"
       },
       {
         "n": 2,
-        "slug": "02-goucheng-yaosu",
-        "title": "构成要素：病位×病性×病势",
-        "status": "🚧"
+        "slug": "02-han-men",
+        "title": "寒证门",
+        "status": "✅"
       },
       {
         "n": 3,
-        "slug": "03-bagang-cengji",
-        "title": "七套辨证体系的层级与选用",
-        "status": "🚧"
+        "slug": "03-shu-men",
+        "title": "暑证门",
+        "status": "✅"
       },
       {
         "n": 4,
-        "slug": "04-qixu-yangxu",
-        "title": "气虚与阳虚：从「不固」到「不温」",
-        "status": "🚧"
+        "slug": "04-shi-men",
+        "title": "湿证门",
+        "status": "✅"
       },
       {
         "n": 5,
-        "slug": "05-xuexu-yinxu",
-        "title": "血虚与阴虚：源不足与虚火",
-        "status": "🚧"
+        "slug": "05-zao-men",
+        "title": "燥证门",
+        "status": "✅"
       },
       {
         "n": 6,
-        "slug": "06-xere-reduxudu",
-        "title": "血热与热毒：迫血与壅聚",
-        "status": "🚧"
+        "slug": "06-huo-men",
+        "title": "火证门",
+        "status": "✅"
       },
       {
         "n": 7,
-        "slug": "07-tanshi-shire",
-        "title": "痰湿与湿热：同源两路",
-        "status": "🚧"
+        "slug": "07-qi-men",
+        "title": "气证门",
+        "status": "✅"
       },
       {
         "n": 8,
-        "slug": "08-xueyu-qizhi",
-        "title": "血瘀与气滞：不通的两种写法",
-        "status": "🚧"
+        "slug": "08-yu-men",
+        "title": "瘀证门",
+        "status": "✅"
       },
       {
         "n": 9,
-        "slug": "09-fenghan-fengre",
-        "title": "风寒、风热与正虚邪恋：外感与残留",
-        "status": "🚧"
+        "slug": "09-tan-men",
+        "title": "痰证门",
+        "status": "✅"
       },
       {
         "n": 10,
-        "slug": "10-qita-cleanup",
-        "title": "「其他」11 证：归类失败的样本",
-        "status": "🚧"
+        "slug": "10-yin-men",
+        "title": "饮证门",
+        "status": "✅"
       },
       {
         "n": 11,
-        "slug": "11-mingming-guifan",
-        "title": "命名规范与 TM1 对齐",
-        "status": "🚧"
+        "slug": "11-shiji-men",
+        "title": "食证门",
+        "status": "✅"
       },
       {
         "n": 12,
-        "slug": "12-jianbie-yanbian-lianghua",
-        "title": "鉴别、演变与量化",
-        "status": "🚧"
+        "slug": "12-xu-men",
+        "title": "虚证门",
+        "status": "✅"
       }
     ],
     "01-zhongyi/15-zhongyi-gejia-xueshuo": [
@@ -20153,125 +20166,125 @@ window.TCMAI_DATA = {
     "08-wuguan/12-kouqiang-xiufu-xue": [
       {
         "n": 1,
-        "slug": "01-xiufuti-shiying",
-        "title": "修复体的类型与适应证",
-        "status": "📋"
+        "slug": "01-duixiang-sanlei",
+        "title": "修复学的对象：三类缺损与老年患者",
+        "status": "🚧"
       },
       {
         "n": 2,
-        "slug": "02-guding-yichi",
-        "title": "固定义齿的设计",
-        "status": "📋"
+        "slug": "02-zong-yuanze",
+        "title": "修复总原则：安全、有效、微创、健康、知情同意、姑息",
+        "status": "🚧"
       },
       {
         "n": 3,
-        "slug": "03-kezhai-yichi",
-        "title": "可摘局部义齿",
-        "status": "📋"
+        "slug": "03-pinggu-quanshen",
+        "title": "修复前全身评估：疾病、用药与口腔治疗史",
+        "status": "🚧"
       },
       {
         "n": 4,
-        "slug": "04-quankou-yaohe",
-        "title": "全口义齿与咬合重建",
-        "status": "📋"
+        "slug": "04-kouqiang-jiancha",
+        "title": "修复前口腔检查与影像：七项增龄变化与片子的选择",
+        "status": "🚧"
       },
       {
         "n": 5,
-        "slug": "05-zhongzhi-shengwu",
-        "title": "种植体的生物学基础",
-        "status": "📋"
+        "slug": "05-shuqian-chuli",
+        "title": "修复前处理、健康宣教与形式选择",
+        "status": "🚧"
       },
       {
         "n": 6,
-        "slug": "06-zhongzhi-liucheng",
-        "title": "种植修复的流程",
-        "status": "📋"
+        "slug": "06-quankou-yinmo",
+        "title": "全口义齿的印模与模型：初印模、个别托盘、终印模",
+        "status": "🚧"
       },
       {
         "n": 7,
-        "slug": "07-qianti-guan",
-        "title": "牙体缺损的嵌体与冠",
-        "status": "📋"
+        "slug": "07-yipang-cadcam",
+        "title": "椅旁 CAD/CAM 固定义齿：适应证、预备与后处理",
+        "status": "🚧"
       },
       {
         "n": 8,
-        "slug": "08-cailiao-gongyi",
-        "title": "修复材料与加工工艺",
-        "status": "📋"
+        "slug": "08-cailiao-tiaohe",
+        "title": "材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化",
+        "status": "🚧"
       },
       {
         "n": 9,
-        "slug": "09-yaohe-tiaozheng",
-        "title": "咬合调整与并发症",
-        "status": "📋"
+        "slug": "09-citie-fucha",
+        "title": "瓷贴面的复查与并发症：功能、美学、生物学三条线",
+        "status": "🚧"
       },
       {
         "n": 10,
-        "slug": "10-suifang-shibai",
-        "title": "修复体的随访与失败分析",
-        "status": "📋"
+        "slug": "10-piaobai",
+        "title": "牙齿漂白：着色类型、适应证、方法与风险",
+        "status": "🚧"
       }
     ],
     "08-wuguan/13-kouqiang-zhengji-xue": [
       {
         "n": 1,
-        "slug": "01-cuohe-fenlei",
-        "title": "错颌畸形的分类",
-        "status": "📋"
+        "slug": "01-duixiang-congye",
+        "title": "隐形矫治的对象与从业要求",
+        "status": "🚧"
       },
       {
         "n": 2,
-        "slug": "02-shengzhang-shiji",
-        "title": "生长发育与矫治时机",
-        "status": "📋"
+        "slug": "02-zhiliao-fengxian",
+        "title": "治疗风险：依从性、移动偏差与并发症",
+        "status": "🚧"
       },
       {
         "n": 3,
-        "slug": "03-guding-lixue",
-        "title": "固定矫治器的力学",
-        "status": "📋"
+        "slug": "03-shiyingzheng",
+        "title": "适应证与可预测性分级",
+        "status": "🚧"
       },
       {
         "n": 4,
-        "slug": "04-yinxing-shuzihua",
-        "title": "隐形矫治与数字化设计",
-        "status": "📋"
+        "slug": "04-ziliao-caiji",
+        "title": "资料采集：影像与数字模型",
+        "status": "🚧"
       },
       {
         "n": 5,
-        "slug": "05-baya-juece",
-        "title": "拔牙与不拔牙的决策",
-        "status": "📋"
+        "slug": "05-fangan-sheji",
+        "title": "方案设计流程：目标、虚拟排牙、顺序与附件",
+        "status": "🚧"
       },
       {
         "n": 6,
-        "slug": "06-zhikang-kongzhi",
-        "title": "支抗控制",
-        "status": "📋"
+        "slug": "06-tui-moya",
+        "title": "推磨牙向远中：适应证、禁忌与设计",
+        "status": "🚧"
       },
       {
         "n": 7,
-        "slug": "07-lianhe-zhiliao",
-        "title": "正畸与牙周、修复的联合",
-        "status": "📋"
+        "slug": "07-linmian-quyou",
+        "title": "邻面去釉：适应证、禁忌与操作规范",
+        "status": "🚧"
       },
       {
         "n": 8,
-        "slug": "08-fengxian-bingfa",
-        "title": "矫治中的风险与并发症",
-        "status": "📋"
+        "slug": "08-fenbu-yidong",
+        "title": "分步移动：为什么不能一次到位",
+        "status": "🚧"
       },
       {
         "n": 9,
-        "slug": "09-baochi-fufa",
-        "title": "保持与复发",
-        "status": "📋"
+        "slug": "09-jianxi-baochi",
+        "title": "儿童间隙管理：五类保持器与选择",
+        "status": "🚧"
       },
       {
         "n": 10,
-        "slug": "10-touying-celiang",
-        "title": "疗效评价与头影测量",
-        "status": "📋"
+        "slug": "10-yiwei-chuneilie",
+        "title": "异位萌出与唇腭裂序列中的正畸",
+        "status": "🚧"
       }
     ],
     "08-wuguan/14-zhongyi-sangyin-yixue": [

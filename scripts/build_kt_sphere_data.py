@@ -30,6 +30,16 @@ STD_ALIAS = {
     'bingli-shengli-xue': 'binglishengli',
     # 汇通期：课程名带「选读」，底本目录按书名起（zhongcan-xilu）。不补这条，534 单元挂不上课。
     'zhongcan-xilu-xuandu': 'zhongcan-xilu',
+    # 2026-11-13：四大基础课 + 药理学的教材底本目录按简称起（jichu/zhenduan/fangji/yaoli），
+    # 单元层由 scripts/build_textbook_units.py 从各自底本切出。不补这四条，
+    # 中基 165 + 中诊 105 + 方剂 138 + 药理 588 单元在球面与知识树里是隐形的。
+    'zhongyi-jichu-lilun': 'jichu',
+    'zhongyi-zhen-duan-xue': 'zhenduan',
+    'fangjixue': 'fangji',
+    'yaoli-xue': 'yaoli',
+    # 2026-11-13：中医证候学的单元层（87 单元 / 8,292 汉字）从辨证篇切出，目录按篇名起（zhenghou）。
+    # 不补这条，这 87 单元在球面与知识树里是隐形的（此前 189 门里唯一的无单元学科）。
+    'zhongyi-zhenghou-xue': 'zhenghou',
 }
 
 

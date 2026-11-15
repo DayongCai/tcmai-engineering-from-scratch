@@ -2,7 +2,7 @@
 
 > 本章节由 `scripts/build_outputs_index.js` **生成**，请勿手改；重跑脚本同步。
 
-> **4268** 件产出物 · 覆盖 **2134** 个章节 · prompt 2134 · skill 2134
+> **4308** 件产出物 · 覆盖 **2154** 个章节 · prompt 2154 · skill 2154
 
 ## 这是什么
 
@@ -23,24 +23,24 @@
 | --- | --- | --- | :-: |
 | ☯️ 中医系 | 中医基础理论 | 10 | 20 |
 | ☯️ 中医系 | 医古文 | 8 | 16 |
-| ☯️ 中医系 | 中国医学史 | 8 | 48 |
+| ☯️ 中医系 | 中国医学史 | 8 | 46 |
 | ☯️ 中医系 | 中医体质学 | 8 | 16 |
 | ☯️ 中医系 | 中医诊断学 | 12 | 24 |
 | ☯️ 中医系 | 内经选读 | 10 | 20 |
 | ☯️ 中医系 | 伤寒论 | 12 | 24 |
 | ☯️ 中医系 | 金匮要略 | 24 | 48 |
 | ☯️ 中医系 | 温病学 | 10 | 20 |
-| ☯️ 中医系 | 中医内科学 | 14 | 64 |
+| ☯️ 中医系 | 中医内科学 | 14 | 62 |
 | ☯️ 中医系 | 中医外科学 | 13 | 28 |
-| ☯️ 中医系 | 中医妇科学 | 13 | 60 |
+| ☯️ 中医系 | 中医妇科学 | 13 | 58 |
 | ☯️ 中医系 | 中医儿科学 | 14 | 30 |
-| ☯️ 中医系 | 中医证候学 | 12 | 56 |
+| ☯️ 中医系 | 中医证候学 | 12 | 24 |
 | ☯️ 中医系 | 中医各家学说 | 8 | 16 |
 | ☯️ 中医系 | 中医哲学史 | 8 | 16 |
-| ☯️ 中医系 | 中医急诊学 | 12 | 66 |
+| ☯️ 中医系 | 中医急诊学 | 12 | 64 |
 | ☯️ 中医系 | 中医骨病学 | 12 | 26 |
-| ☯️ 中医系 | 中医老年病学 | 12 | 56 |
-| ☯️ 中医系 | 中医精神病学 | 12 | 70 |
+| ☯️ 中医系 | 中医老年病学 | 12 | 54 |
+| ☯️ 中医系 | 中医精神病学 | 12 | 68 |
 | ☯️ 中医系 | 医学衷中参西录选读 | 10 | 20 |
 | ☯️ 中医系 | 中医临床轮转 | 6 | 20 |
 | ☯️ 中医系 | 中医毕业设计与知识移交 | 28 | 56 |
@@ -59,7 +59,7 @@
 | 🌾 中药系 | 中成药与临床用药 | 10 | 20 |
 | 🌾 中药系 | 中药配伍与禁忌 | 8 | 16 |
 | 🌾 中药系 | 中药新药研发 | 8 | 16 |
-| 🌾 中药系 | 临床中药学 | 15 | 62 |
+| 🌾 中药系 | 临床中药学 | 15 | 60 |
 | 🌾 中药系 | 中药商品学 | 18 | 38 |
 | 🌾 中药系 | 药事管理学 | 28 | 56 |
 | 🌾 中药系 | 中药专业实践 | 6 | 14 |
@@ -80,7 +80,7 @@
 | 🪡 针灸系 | 针刀医学 | 8 | 16 |
 | 🪡 针灸系 | 针灸镇痛与麻醉 | 8 | 16 |
 | 🪡 针灸系 | 中医康复学 | 10 | 20 |
-| 🪡 针灸系 | 针灸学 | 30 | 92 |
+| 🪡 针灸系 | 针灸学 | 30 | 90 |
 | 🪡 针灸系 | 各家针灸学说 | 12 | 30 |
 | 🪡 针灸系 | 推拿功法学 | 12 | 36 |
 | 🪡 针灸系 | 推拿治疗学 | 12 | 28 |
@@ -172,7 +172,7 @@
 | 🤖 智能系 | 中医多模态数据融合 | 10 | 20 |
 | 🤖 智能系 | 医学数据安全与隐私保护 | 8 | 32 |
 | 🤖 智能系 | 中医AI伦理与治理 | 8 | 16 |
-| 🤖 智能系 | 机器学习 | 16 | 64 |
+| 🤖 智能系 | 机器学习 | 16 | 62 |
 | 🤖 智能系 | 中医信息学 | 6 | 12 |
 | 🤖 智能系 | 工程实践与系统交付 | 6 | 12 |
 | 🤖 智能系 | 智能系毕业设计与知识移交 | 6 | 54 |
@@ -187,25 +187,27 @@
 | 👁️ 五官口腔系 | 口腔内科学 | 10 | 20 |
 | 👁️ 五官口腔系 | 眼科影像与检查技术 | 8 | 16 |
 | 👁️ 五官口腔系 | 口腔颌面外科学 | 10 | 20 |
+| 👁️ 五官口腔系 | 口腔修复学 | 10 | 20 |
+| 👁️ 五官口腔系 | 口腔正畸学 | 10 | 20 |
 | 👁️ 五官口腔系 | 中医嗓音医学 | 8 | 16 |
 | 👁️ 五官口腔系 | 中医美容与皮肤治疗学 | 8 | 16 |
 | 👁️ 五官口腔系 | 五官口腔临床轮转 | 6 | 20 |
 | 👁️ 五官口腔系 | 五官口腔毕业设计与知识移交 | 6 | 56 |
-| 🧬 基础医学院 | 人体解剖学 | 10 | 56 |
+| 🧬 基础医学院 | 人体解剖学 | 10 | 54 |
 | 🧬 基础医学院 | 组织学与胚胎学 | 20 | 42 |
 | 🧬 基础医学院 | 医学细胞生物学 | 12 | 24 |
-| 🧬 基础医学院 | 医学生物学 | 16 | 64 |
+| 🧬 基础医学院 | 医学生物学 | 16 | 62 |
 | 🧬 基础医学院 | 正常人体学 | 18 | 40 |
-| 🧬 基础医学院 | 生理学 | 11 | 56 |
-| 🧬 基础医学院 | 生物化学 | 21 | 74 |
-| 🧬 基础医学院 | 局部解剖学 | 9 | 52 |
+| 🧬 基础医学院 | 生理学 | 11 | 54 |
+| 🧬 基础医学院 | 生物化学 | 21 | 72 |
+| 🧬 基础医学院 | 局部解剖学 | 9 | 50 |
 | 🧬 基础医学院 | 医学遗传学 | 12 | 24 |
-| 🧬 基础医学院 | 病理学 | 21 | 74 |
+| 🧬 基础医学院 | 病理学 | 21 | 72 |
 | 🧬 基础医学院 | 病理生理学 | 53 | 106 |
 | 🧬 基础医学院 | 药理学 | 49 | 98 |
 | 🧬 基础医学院 | 免疫学基础与病原生物学 | 15 | 30 |
 | 🧬 基础医学院 | 疾病学基础 | 18 | 40 |
-| 🧬 基础医学院 | 流行病学 | 18 | 72 |
+| 🧬 基础医学院 | 流行病学 | 18 | 70 |
 | 🧬 基础医学院 | 科研实训与实验设计 | 6 | 12 |
 | 🧬 基础医学院 | 基础医学毕业设计与知识移交 | 6 | 54 |
 
@@ -397,8 +399,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
@@ -1213,8 +1213,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
@@ -1502,8 +1500,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
@@ -1777,145 +1773,113 @@
 
 > Build · 第 7 学期 · 已产出 12 章
 
-#### 第 1 章 · 绪论：医学史的问题与方法
+#### 第 1 章 · 风证门（M01）
 
-`14-zhongyi-zhenghou-xue/chapters/01-xulun/`
-
-| 类型 | 标题 | 说明 | 字数 | 文件 |
-| --- | --- | --- | :-: | --- |
-| prompt | 绪论：医学史的问题与方法 · 提示词 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/03-zhongguo-yixue-shi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论：医学史的问题与方法 | 绪论：医学史的问题与方法——按「起源 → 奠基 → 分科 → 争鸣 → 集成 → 转型 → 当代与交流」走一遍本章判据 | 383 | [`skill-xulun.md`](../departments/01-zhongyi/03-zhongguo-yixue-shi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | Prompt：给一个病证判位置——「归属—来路—读法」三问 | — | 1928 | [`prompt-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 先看人再看病 · 可装载技能 | — | 430 | [`skill-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 病名坐标 | — | 317 | [`prompt-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 病名坐标 · 可装载技能 | — | 431 | [`skill-01-xulun.md`](../departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 用本章内容做一件事：绪论 | — | 406 | [`prompt-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | — | 502 | [`skill-01-xulun.md`](../departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 444 | [`prompt-01-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据 | 369 | [`skill-xulun.md`](../departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 432 | [`prompt-01-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「问题与评估 → 经典模型 → 进阶与集成 → 应用与前沿」走一遍本章判据 | 350 | [`skill-xulun.md`](../departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 442 | [`prompt-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据 | 365 | [`skill-xulun.md`](../departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 443 | [`prompt-01-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 绪论 | 绪论——按「细胞（结构 → 行为 → 工程）→ 遗传（分子 → 传递 → 群体）→ 临床与中医」走一遍本章判据 | 366 | [`skill-xulun.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | Prompt：把「因为有调节」拆成一条回路 | — | 1639 | [`prompt-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | Skill：绪论——研究对象、三个水平与调节框架 | 把一个「因为有调节」的生理现象拆成受控量—感受—整合—效应—反馈回路，并守住不给数值的边界 | 1387 | [`skill-xulun.md`](../departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 450 | [`prompt-xulun.md`](../departments/09-jichu/07-shenghua-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据 | 366 | [`skill-xulun.md`](../departments/09-jichu/07-shenghua-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 绪论 · 提示词 | — | 437 | [`prompt-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | 绪论 | 绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据 | 359 | [`skill-xulun.md`](../departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | Prompt：把「我看到一块病变」写成一条可核对的描述链 | — | 1701 | [`prompt-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md) |
-| skill | Skill：绪论——研究对象、观察层次与描述边界 | 把一次病理形态观察整理成「层次—所见—联系—待核实—判断去向」的可核对描述链，并守住不写数值与不下判断的边界 | 1421 | [`skill-xulun.md`](../departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-| prompt | 流行病学绪论 · 提示词 | — | 463 | [`prompt-01-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 流行病学绪论 | 流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据 | 382 | [`skill-xulun.md`](../departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md) |
-
-#### 第 2 章 · 构成要素：病位 × 病性 × 病势
-
-`14-zhongyi-zhenghou-xue/chapters/02-goucheng-yaosu/`
+`14-zhongyi-zhenghou-xue/chapters/01-feng-men/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 坐标补全 | — | 426 | [`prompt-02-goucheng-yaosu.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-goucheng-yaosu/outputs/prompt-02-goucheng-yaosu.md) |
-| skill | 坐标补全 · 可装载技能 | — | 433 | [`skill-02-goucheng-yaosu.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-goucheng-yaosu/outputs/skill-02-goucheng-yaosu.md) |
+| prompt | 风证门 · 提示词：把一章门变成一次可复述的判定 | — | 484 | [`prompt-feng-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-feng-men/outputs/prompt-feng-men.md) |
+| skill | feng-men | 用「门→类→证→候」四级编码解析 风门（M01）的证候条目，输出可复算的全码与态。 | 563 | [`skill-feng-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-feng-men/outputs/skill-feng-men.md) |
 
-#### 第 3 章 · 七套辨证体系的层级与选用
+#### 第 2 章 · 寒证门（M02）
 
-`14-zhongyi-zhenghou-xue/chapters/03-bagang-cengji/`
-
-| 类型 | 标题 | 说明 | 字数 | 文件 |
-| --- | --- | --- | :-: | --- |
-| prompt | 体系选单 | — | 404 | [`prompt-03-bagang-cengji.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-bagang-cengji/outputs/prompt-03-bagang-cengji.md) |
-| skill | 体系选单 · 可装载技能 | — | 442 | [`skill-03-bagang-cengji.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-bagang-cengji/outputs/skill-03-bagang-cengji.md) |
-
-#### 第 4 章 · 气虚与阳虚：从「不固」到「不温」
-
-`14-zhongyi-zhenghou-xue/chapters/04-qixu-yangxu/`
+`14-zhongyi-zhenghou-xue/chapters/02-han-men/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 气阳分辨 | — | 415 | [`prompt-04-qixu-yangxu.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-qixu-yangxu/outputs/prompt-04-qixu-yangxu.md) |
-| skill | 气阳分辨 · 可装载技能 | — | 438 | [`skill-04-qixu-yangxu.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-qixu-yangxu/outputs/skill-04-qixu-yangxu.md) |
+| prompt | 寒证门 · 提示词：把一章门变成一次可复述的判定 | — | 478 | [`prompt-han-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-han-men/outputs/prompt-han-men.md) |
+| skill | han-men | 用「门→类→证→候」四级编码解析 寒门（M02）的证候条目，输出可复算的全码与态。 | 557 | [`skill-han-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-han-men/outputs/skill-han-men.md) |
 
-#### 第 5 章 · 血虚与阴虚：源不足与虚火
+#### 第 3 章 · 暑证门（M03）
 
-`14-zhongyi-zhenghou-xue/chapters/05-xuexu-yinxu/`
-
-| 类型 | 标题 | 说明 | 字数 | 文件 |
-| --- | --- | --- | :-: | --- |
-| prompt | 血阴分辨 | — | 405 | [`prompt-05-xuexu-yinxu.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-xuexu-yinxu/outputs/prompt-05-xuexu-yinxu.md) |
-| skill | 血阴分辨 · 可装载技能 | — | 428 | [`skill-05-xuexu-yinxu.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-xuexu-yinxu/outputs/skill-05-xuexu-yinxu.md) |
-
-#### 第 6 章 · 血热与热毒：迫血与壅聚
-
-`14-zhongyi-zhenghou-xue/chapters/06-xere-reduxudu/`
+`14-zhongyi-zhenghou-xue/chapters/03-shu-men/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 热的两路 | — | 409 | [`prompt-06-xere-reduxudu.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-xere-reduxudu/outputs/prompt-06-xere-reduxudu.md) |
-| skill | 热的两路 · 可装载技能 | — | 458 | [`skill-06-xere-reduxudu.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-xere-reduxudu/outputs/skill-06-xere-reduxudu.md) |
+| prompt | 暑证门 · 提示词：把一章门变成一次可复述的判定 | — | 476 | [`prompt-shu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-shu-men/outputs/prompt-shu-men.md) |
+| skill | shu-men | 用「门→类→证→候」四级编码解析 暑门（M03）的证候条目，输出可复算的全码与态。 | 557 | [`skill-shu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-shu-men/outputs/skill-shu-men.md) |
 
-#### 第 7 章 · 痰湿与湿热：同源两路
+#### 第 4 章 · 湿证门（M04）
 
-`14-zhongyi-zhenghou-xue/chapters/07-tanshi-shire/`
-
-| 类型 | 标题 | 说明 | 字数 | 文件 |
-| --- | --- | --- | :-: | --- |
-| prompt | 苔味二分 | — | 390 | [`prompt-07-tanshi-shire.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-tanshi-shire/outputs/prompt-07-tanshi-shire.md) |
-| skill | 苔味二分 · 可装载技能 | — | 437 | [`skill-07-tanshi-shire.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-tanshi-shire/outputs/skill-07-tanshi-shire.md) |
-
-#### 第 8 章 · 血瘀与气滞：不通的两种写法
-
-`14-zhongyi-zhenghou-xue/chapters/08-xueyu-qizhi/`
+`14-zhongyi-zhenghou-xue/chapters/04-shi-men/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 定与走 | — | 399 | [`prompt-08-xueyu-qizhi.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-xueyu-qizhi/outputs/prompt-08-xueyu-qizhi.md) |
-| skill | 定与走 · 可装载技能 | — | 430 | [`skill-08-xueyu-qizhi.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-xueyu-qizhi/outputs/skill-08-xueyu-qizhi.md) |
+| prompt | 湿证门 · 提示词：把一章门变成一次可复述的判定 | — | 480 | [`prompt-shi-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-shi-men/outputs/prompt-shi-men.md) |
+| skill | shi-men | 用「门→类→证→候」四级编码解析 湿门（M04）的证候条目，输出可复算的全码与态。 | 559 | [`skill-shi-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-shi-men/outputs/skill-shi-men.md) |
 
-#### 第 9 章 · 风寒、风热与正虚邪恋：外感与残留
+#### 第 5 章 · 燥证门（M05）
 
-`14-zhongyi-zhenghou-xue/chapters/09-fenghan-fengre/`
-
-| 类型 | 标题 | 说明 | 字数 | 文件 |
-| --- | --- | --- | :-: | --- |
-| prompt | 三段定位 | — | 404 | [`prompt-09-fenghan-fengre.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-fenghan-fengre/outputs/prompt-09-fenghan-fengre.md) |
-| skill | 三段定位 · 可装载技能 | — | 429 | [`skill-09-fenghan-fengre.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-fenghan-fengre/outputs/skill-09-fenghan-fengre.md) |
-
-#### 第 10 章 · 「其他」11 证：归类失败的样本
-
-`14-zhongyi-zhenghou-xue/chapters/10-qita-cleanup/`
+`14-zhongyi-zhenghou-xue/chapters/05-zao-men/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 归类五问 | — | 443 | [`prompt-10-qita-cleanup.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-qita-cleanup/outputs/prompt-10-qita-cleanup.md) |
-| skill | 归类五问 · 可装载技能 | — | 495 | [`skill-10-qita-cleanup.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-qita-cleanup/outputs/skill-10-qita-cleanup.md) |
+| prompt | 燥证门 · 提示词：把一章门变成一次可复述的判定 | — | 490 | [`prompt-zao-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-zao-men/outputs/prompt-zao-men.md) |
+| skill | zao-men | 用「门→类→证→候」四级编码解析 燥门（M05）的证候条目，输出可复算的全码与态。 | 565 | [`skill-zao-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-zao-men/outputs/skill-zao-men.md) |
 
-#### 第 11 章 · 命名规范与 TM1 对齐
+#### 第 6 章 · 火证门（M06）
 
-`14-zhongyi-zhenghou-xue/chapters/11-mingming-guifan/`
-
-| 类型 | 标题 | 说明 | 字数 | 文件 |
-| --- | --- | --- | :-: | --- |
-| prompt | 证名拆栏 | — | 423 | [`prompt-11-mingming-guifan.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-mingming-guifan/outputs/prompt-11-mingming-guifan.md) |
-| skill | 证名拆栏 · 可装载技能 | — | 442 | [`skill-11-mingming-guifan.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-mingming-guifan/outputs/skill-11-mingming-guifan.md) |
-
-#### 第 12 章 · 鉴别、演变与量化
-
-`14-zhongyi-zhenghou-xue/chapters/12-jianbie-yanbian-lianghua/`
+`14-zhongyi-zhenghou-xue/chapters/06-huo-men/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 三分单 | — | 439 | [`prompt-12-jianbie-yanbian-lianghua.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-jianbie-yanbian-lianghua/outputs/prompt-12-jianbie-yanbian-lianghua.md) |
-| skill | 三分单 · 可装载技能 | — | 450 | [`skill-12-jianbie-yanbian-lianghua.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-jianbie-yanbian-lianghua/outputs/skill-12-jianbie-yanbian-lianghua.md) |
+| prompt | 火证门 · 提示词：把一章门变成一次可复述的判定 | — | 498 | [`prompt-huo-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-huo-men/outputs/prompt-huo-men.md) |
+| skill | huo-men | 用「门→类→证→候」四级编码解析 火门（M06）的证候条目，输出可复算的全码与态。 | 571 | [`skill-huo-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-huo-men/outputs/skill-huo-men.md) |
+
+#### 第 7 章 · 气证门（M07）
+
+`14-zhongyi-zhenghou-xue/chapters/07-qi-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 气证门 · 提示词：把一章门变成一次可复述的判定 | — | 487 | [`prompt-qi-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-qi-men/outputs/prompt-qi-men.md) |
+| skill | qi-men | 用「门→类→证→候」四级编码解析 气门（M07）的证候条目，输出可复算的全码与态。 | 562 | [`skill-qi-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-qi-men/outputs/skill-qi-men.md) |
+
+#### 第 8 章 · 瘀证门（M08）
+
+`14-zhongyi-zhenghou-xue/chapters/08-yu-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 瘀证门 · 提示词：把一章门变成一次可复述的判定 | — | 484 | [`prompt-yu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-yu-men/outputs/prompt-yu-men.md) |
+| skill | yu-men | 用「门→类→证→候」四级编码解析 瘀门（M08）的证候条目，输出可复算的全码与态。 | 561 | [`skill-yu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-yu-men/outputs/skill-yu-men.md) |
+
+#### 第 9 章 · 痰证门（M09）
+
+`14-zhongyi-zhenghou-xue/chapters/09-tan-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 痰证门 · 提示词：把一章门变成一次可复述的判定 | — | 493 | [`prompt-tan-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-tan-men/outputs/prompt-tan-men.md) |
+| skill | tan-men | 用「门→类→证→候」四级编码解析 痰门（M09）的证候条目，输出可复算的全码与态。 | 568 | [`skill-tan-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-tan-men/outputs/skill-tan-men.md) |
+
+#### 第 10 章 · 饮证门（M10）
+
+`14-zhongyi-zhenghou-xue/chapters/10-yin-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 饮证门 · 提示词：把一章门变成一次可复述的判定 | — | 482 | [`prompt-yin-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-yin-men/outputs/prompt-yin-men.md) |
+| skill | yin-men | 用「门→类→证→候」四级编码解析 饮门（M10）的证候条目，输出可复算的全码与态。 | 561 | [`skill-yin-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-yin-men/outputs/skill-yin-men.md) |
+
+#### 第 11 章 · 食证门（M11）
+
+`14-zhongyi-zhenghou-xue/chapters/11-shiji-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 食证门 · 提示词：把一章门变成一次可复述的判定 | — | 481 | [`prompt-shiji-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-shiji-men/outputs/prompt-shiji-men.md) |
+| skill | shiji-men | 用「门→类→证→候」四级编码解析 食门（M11）的证候条目，输出可复算的全码与态。 | 564 | [`skill-shiji-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-shiji-men/outputs/skill-shiji-men.md) |
+
+#### 第 12 章 · 虚证门（M12）
+
+`14-zhongyi-zhenghou-xue/chapters/12-xu-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 虚证门 · 提示词：把一章门变成一次可复述的判定 | — | 486 | [`prompt-xu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-xu-men/outputs/prompt-xu-men.md) |
+| skill | xu-men | 用「门→类→证→候」四级编码解析 虚门（M12）的证候条目，输出可复算的全码与态。 | 561 | [`skill-xu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-xu-men/outputs/skill-xu-men.md) |
 
 ### 中医各家学说
 
@@ -2085,8 +2049,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
@@ -2353,8 +2315,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
@@ -2497,8 +2457,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
@@ -4503,8 +4461,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
@@ -6672,8 +6628,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
@@ -16834,8 +16788,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
@@ -18124,6 +18076,194 @@
 | prompt | 病历、知情同意与转诊 · 提示词 | — | 473 | [`prompt-10-e1110.md`](../departments/08-wuguan/11-kouqiang-hemian-waike/chapters/10-e1110/outputs/prompt-10-e1110.md) |
 | skill | 病历、知情同意与转诊 | 病历、知情同意与转诊——按「范围 → 解剖 → 病因 → 辨证 → 治法 → 病证 → 急症 → 合规」走一遍本章判据 | 374 | [`skill-e1110.md`](../departments/08-wuguan/11-kouqiang-hemian-waike/chapters/10-e1110/outputs/skill-e1110.md) |
 
+### 口腔修复学
+
+> Clinic · 第 7 学期 · 已产出 10 章
+
+#### 第 1 章 · 修复学的对象：三类缺损与老年患者
+
+`12-kouqiang-xiufu-xue/chapters/01-duixiang-sanlei/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 修复学的对象：三类缺损与老年患者 · 提示词 | — | 515 | [`prompt-01-duixiang-sanlei.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/01-duixiang-sanlei/outputs/prompt-01-duixiang-sanlei.md) |
+| skill | 修复学的对象：三类缺损与老年患者 | 修复学的对象：三类缺损与老年患者——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 417 | [`skill-duixiang-sanlei.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/01-duixiang-sanlei/outputs/skill-duixiang-sanlei.md) |
+
+#### 第 2 章 · 修复总原则：安全、有效、微创、健康、知情同意、姑息
+
+`12-kouqiang-xiufu-xue/chapters/02-zong-yuanze/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 修复总原则：安全、有效、微创、健康、知情同意、姑息 · 提示词 | — | 550 | [`prompt-02-zong-yuanze.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/02-zong-yuanze/outputs/prompt-02-zong-yuanze.md) |
+| skill | 修复总原则：安全、有效、微创、健康、知情同意、姑息 | 修复总原则：安全、有效、微创、健康、知情同意、姑息——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 431 | [`skill-zong-yuanze.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/02-zong-yuanze/outputs/skill-zong-yuanze.md) |
+
+#### 第 3 章 · 修复前全身评估：疾病、用药与口腔治疗史
+
+`12-kouqiang-xiufu-xue/chapters/03-pinggu-quanshen/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 修复前全身评估：疾病、用药与口腔治疗史 · 提示词 | — | 524 | [`prompt-03-pinggu-quanshen.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/03-pinggu-quanshen/outputs/prompt-03-pinggu-quanshen.md) |
+| skill | 修复前全身评估：疾病、用药与口腔治疗史 | 修复前全身评估：疾病、用药与口腔治疗史——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 423 | [`skill-pinggu-quanshen.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/03-pinggu-quanshen/outputs/skill-pinggu-quanshen.md) |
+
+#### 第 4 章 · 修复前口腔检查与影像：七项增龄变化与片子的选择
+
+`12-kouqiang-xiufu-xue/chapters/04-kouqiang-jiancha/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 修复前口腔检查与影像：七项增龄变化与片子的选择 · 提示词 | — | 536 | [`prompt-04-kouqiang-jiancha.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/04-kouqiang-jiancha/outputs/prompt-04-kouqiang-jiancha.md) |
+| skill | 修复前口腔检查与影像：七项增龄变化与片子的选择 | 修复前口腔检查与影像：七项增龄变化与片子的选择——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 432 | [`skill-kouqiang-jiancha.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/04-kouqiang-jiancha/outputs/skill-kouqiang-jiancha.md) |
+
+#### 第 5 章 · 修复前处理、健康宣教与形式选择
+
+`12-kouqiang-xiufu-xue/chapters/05-shuqian-chuli/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 修复前处理、健康宣教与形式选择 · 提示词 | — | 520 | [`prompt-05-shuqian-chuli.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/05-shuqian-chuli/outputs/prompt-05-shuqian-chuli.md) |
+| skill | 修复前处理、健康宣教与形式选择 | 修复前处理、健康宣教与形式选择——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 413 | [`skill-shuqian-chuli.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/05-shuqian-chuli/outputs/skill-shuqian-chuli.md) |
+
+#### 第 6 章 · 全口义齿的印模与模型：初印模、个别托盘、终印模
+
+`12-kouqiang-xiufu-xue/chapters/06-quankou-yinmo/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 全口义齿的印模与模型：初印模、个别托盘、终印模 · 提示词 | — | 548 | [`prompt-06-quankou-yinmo.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/06-quankou-yinmo/outputs/prompt-06-quankou-yinmo.md) |
+| skill | 全口义齿的印模与模型：初印模、个别托盘、终印模 | 全口义齿的印模与模型：初印模、个别托盘、终印模——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 429 | [`skill-quankou-yinmo.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/06-quankou-yinmo/outputs/skill-quankou-yinmo.md) |
+
+#### 第 7 章 · 椅旁 CAD/CAM 固定义齿：适应证、预备与后处理
+
+`12-kouqiang-xiufu-xue/chapters/07-yipang-cadcam/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 椅旁 CAD/CAM 固定义齿：适应证、预备与后处理 · 提示词 | — | 583 | [`prompt-07-yipang-cadcam.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/07-yipang-cadcam/outputs/prompt-07-yipang-cadcam.md) |
+| skill | 椅旁 CAD/CAM 固定义齿：适应证、预备与后处理 | 椅旁 CAD/CAM 固定义齿：适应证、预备与后处理——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 431 | [`skill-yipang-cadcam.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/07-yipang-cadcam/outputs/skill-yipang-cadcam.md) |
+
+#### 第 8 章 · 材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化
+
+`12-kouqiang-xiufu-xue/chapters/08-cailiao-tiaohe/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化 · 提示词 | — | 584 | [`prompt-08-cailiao-tiaohe.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/08-cailiao-tiaohe/outputs/prompt-08-cailiao-tiaohe.md) |
+| skill | 材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化 | 材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 430 | [`skill-cailiao-tiaohe.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/08-cailiao-tiaohe/outputs/skill-cailiao-tiaohe.md) |
+
+#### 第 9 章 · 瓷贴面的复查与并发症：功能、美学、生物学三条线
+
+`12-kouqiang-xiufu-xue/chapters/09-citie-fucha/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 瓷贴面的复查与并发症：功能、美学、生物学三条线 · 提示词 | — | 548 | [`prompt-09-citie-fucha.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/09-citie-fucha/outputs/prompt-09-citie-fucha.md) |
+| skill | 瓷贴面的复查与并发症：功能、美学、生物学三条线 | 瓷贴面的复查与并发症：功能、美学、生物学三条线——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 427 | [`skill-citie-fucha.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/09-citie-fucha/outputs/skill-citie-fucha.md) |
+
+#### 第 10 章 · 牙齿漂白：着色类型、适应证、方法与风险
+
+`12-kouqiang-xiufu-xue/chapters/10-piaobai/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 牙齿漂白：着色类型、适应证、方法与风险 · 提示词 | — | 582 | [`prompt-10-piaobai.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/10-piaobai/outputs/prompt-10-piaobai.md) |
+| skill | 牙齿漂白：着色类型、适应证、方法与风险 | 牙齿漂白：着色类型、适应证、方法与风险——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据 | 415 | [`skill-piaobai.md`](../departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/10-piaobai/outputs/skill-piaobai.md) |
+
+### 口腔正畸学
+
+> Clinic · 第 7 学期 · 已产出 10 章
+
+#### 第 1 章 · 隐形矫治的对象与从业要求
+
+`13-kouqiang-zhengji-xue/chapters/01-duixiang-congye/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 隐形矫治的对象与从业要求 · 提示词 | — | 506 | [`prompt-01-duixiang-congye.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/01-duixiang-congye/outputs/prompt-01-duixiang-congye.md) |
+| skill | 隐形矫治的对象与从业要求 | 隐形矫治的对象与从业要求——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 415 | [`skill-duixiang-congye.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/01-duixiang-congye/outputs/skill-duixiang-congye.md) |
+
+#### 第 2 章 · 治疗风险：依从性、移动偏差与并发症
+
+`13-kouqiang-zhengji-xue/chapters/02-zhiliao-fengxian/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 治疗风险：依从性、移动偏差与并发症 · 提示词 | — | 513 | [`prompt-02-zhiliao-fengxian.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/02-zhiliao-fengxian/outputs/prompt-02-zhiliao-fengxian.md) |
+| skill | 治疗风险：依从性、移动偏差与并发症 | 治疗风险：依从性、移动偏差与并发症——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 426 | [`skill-zhiliao-fengxian.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/02-zhiliao-fengxian/outputs/skill-zhiliao-fengxian.md) |
+
+#### 第 3 章 · 适应证与可预测性分级
+
+`13-kouqiang-zhengji-xue/chapters/03-shiyingzheng/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 适应证与可预测性分级 · 提示词 | — | 492 | [`prompt-03-shiyingzheng.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/03-shiyingzheng/outputs/prompt-03-shiyingzheng.md) |
+| skill | 适应证与可预测性分级 | 适应证与可预测性分级——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 408 | [`skill-shiyingzheng.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/03-shiyingzheng/outputs/skill-shiyingzheng.md) |
+
+#### 第 4 章 · 资料采集：影像与数字模型
+
+`13-kouqiang-zhengji-xue/chapters/04-ziliao-caiji/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 资料采集：影像与数字模型 · 提示词 | — | 502 | [`prompt-04-ziliao-caiji.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/04-ziliao-caiji/outputs/prompt-04-ziliao-caiji.md) |
+| skill | 资料采集：影像与数字模型 | 资料采集：影像与数字模型——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 412 | [`skill-ziliao-caiji.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/04-ziliao-caiji/outputs/skill-ziliao-caiji.md) |
+
+#### 第 5 章 · 方案设计流程：目标、虚拟排牙、顺序与附件
+
+`13-kouqiang-zhengji-xue/chapters/05-fangan-sheji/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 方案设计流程：目标、虚拟排牙、顺序与附件 · 提示词 | — | 522 | [`prompt-05-fangan-sheji.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/05-fangan-sheji/outputs/prompt-05-fangan-sheji.md) |
+| skill | 方案设计流程：目标、虚拟排牙、顺序与附件 | 方案设计流程：目标、虚拟排牙、顺序与附件——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 428 | [`skill-fangan-sheji.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/05-fangan-sheji/outputs/skill-fangan-sheji.md) |
+
+#### 第 6 章 · 推磨牙向远中：适应证、禁忌与设计
+
+`13-kouqiang-zhengji-xue/chapters/06-tui-moya/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 推磨牙向远中：适应证、禁忌与设计 · 提示词 | — | 522 | [`prompt-06-tui-moya.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/06-tui-moya/outputs/prompt-06-tui-moya.md) |
+| skill | 推磨牙向远中：适应证、禁忌与设计 | 推磨牙向远中：适应证、禁忌与设计——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 416 | [`skill-tui-moya.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/06-tui-moya/outputs/skill-tui-moya.md) |
+
+#### 第 7 章 · 邻面去釉：适应证、禁忌与操作规范
+
+`13-kouqiang-zhengji-xue/chapters/07-linmian-quyou/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 邻面去釉：适应证、禁忌与操作规范 · 提示词 | — | 522 | [`prompt-07-linmian-quyou.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/07-linmian-quyou/outputs/prompt-07-linmian-quyou.md) |
+| skill | 邻面去釉：适应证、禁忌与操作规范 | 邻面去釉：适应证、禁忌与操作规范——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 421 | [`skill-linmian-quyou.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/07-linmian-quyou/outputs/skill-linmian-quyou.md) |
+
+#### 第 8 章 · 分步移动：为什么不能一次到位
+
+`13-kouqiang-zhengji-xue/chapters/08-fenbu-yidong/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 分步移动：为什么不能一次到位 · 提示词 | — | 512 | [`prompt-08-fenbu-yidong.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/08-fenbu-yidong/outputs/prompt-08-fenbu-yidong.md) |
+| skill | 分步移动：为什么不能一次到位 | 分步移动：为什么不能一次到位——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 416 | [`skill-fenbu-yidong.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/08-fenbu-yidong/outputs/skill-fenbu-yidong.md) |
+
+#### 第 9 章 · 儿童间隙管理：五类保持器与选择
+
+`13-kouqiang-zhengji-xue/chapters/09-jianxi-baochi/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 儿童间隙管理：五类保持器与选择 · 提示词 | — | 532 | [`prompt-09-jianxi-baochi.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/09-jianxi-baochi/outputs/prompt-09-jianxi-baochi.md) |
+| skill | 儿童间隙管理：五类保持器与选择 | 儿童间隙管理：五类保持器与选择——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 419 | [`skill-jianxi-baochi.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/09-jianxi-baochi/outputs/skill-jianxi-baochi.md) |
+
+#### 第 10 章 · 异位萌出与唇腭裂序列中的正畸
+
+`13-kouqiang-zhengji-xue/chapters/10-yiwei-chuneilie/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 异位萌出与唇腭裂序列中的正畸 · 提示词 | — | 529 | [`prompt-10-yiwei-chuneilie.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/10-yiwei-chuneilie/outputs/prompt-10-yiwei-chuneilie.md) |
+| skill | 异位萌出与唇腭裂序列中的正畸 | 异位萌出与唇腭裂序列中的正畸——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据 | 419 | [`skill-yiwei-chuneilie.md`](../departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/10-yiwei-chuneilie/outputs/skill-yiwei-chuneilie.md) |
+
 ### 中医嗓音医学
 
 > Build · 第 7 学期 · 已产出 8 章
@@ -18462,8 +18602,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
@@ -18890,8 +19028,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
@@ -19240,8 +19376,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
@@ -19377,8 +19511,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
@@ -19602,8 +19734,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
@@ -19833,8 +19963,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
@@ -21293,8 +21421,6 @@
 | skill | Skill：绪论——学科界定、范围、源流与读法 | 把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界 | 1622 | [`skill-xulun.md`](../departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md) |
 | prompt | 一个病名归轴：五类 → 轴位 → 年龄 → 判据 | — | 600 | [`prompt-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 病名归轴 · 可装载技能 | — | 399 | [`skill-01-xulun.md`](../departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
-| prompt | 四概念分界 | — | 467 | [`prompt-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
-| skill | 四概念分界 · 可装载技能 | — | 470 | [`skill-01-xulun.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 急与慢的分界 | — | 393 | [`prompt-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |
 | skill | 急与慢的分界 · 可装载技能 | — | 436 | [`skill-01-xulun.md`](../departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md) |
 | prompt | 先看人再看病 | — | 329 | [`prompt-01-xulun.md`](../departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md) |

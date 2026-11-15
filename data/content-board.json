@@ -1,6 +1,6 @@
 {
  "$generated": "node scripts/build_content_board.js",
- "generatedAt": "2026-11-11 20:48:43",
+ "generatedAt": "2026-11-14 11:24:17",
  "rules": {
   "structure": "catalog.json（SSOT）",
   "chapters": "catalog.chaptersBuilt + 盘上 departments/*/*/chapters/* 目录核对",
@@ -13,12 +13,12 @@
   "subjects": 189,
   "hours": 11547,
   "chaptersTarget": 2154,
-  "chaptersBuilt": 2134,
-  "chaptersPct": 99.07,
-  "textbookSubjects": 127,
-  "textbookChapters": 2584,
-  "hanzi": 26746613,
-  "nonWs": 31544031,
+  "chaptersBuilt": 2154,
+  "chaptersPct": 100,
+  "textbookSubjects": 128,
+  "textbookChapters": 2596,
+  "hanzi": 29253856,
+  "nonWs": 35282661,
   "syndromes": 97,
   "syndromeUnits": 104,
   "shanghanTiao": 398,
@@ -115,10 +115,9 @@
  "gaps": [
   {
    "kind": "教材缺稿",
-   "n": 62,
+   "n": 61,
    "detail": [
     "护理系/基础护理学(14章)",
-    "中医系/中医证候学(12章)",
     "智能系/大语言模型与中医智能体(12章)",
     "基础医学院/医学细胞生物学(12章)",
     "基础医学院/医学遗传学(12章)",
@@ -128,15 +127,16 @@
     "针灸系/中医康复学(10章)",
     "骨伤系/骨伤解剖学(10章)",
     "骨伤系/脊柱病学(10章)",
-    "骨伤系/关节病学(10章)"
+    "骨伤系/关节病学(10章)",
+    "护理系/急危重症护理学(10章)"
    ],
    "fix": "按目标章节数从大到小补稿（先补 14 章的病理生理学、12 章的大语言模型/细胞生物学）"
   },
   {
    "kind": "章节未建",
-   "n": 20,
+   "n": 0,
    "detail": [
-    "189 学科目标 2154 章，已建 2134"
+    "189 学科目标 2154 章，已建 2154"
    ],
    "fix": "按学科整科推满（内经/伤寒已满科），而不是全库平均铺开"
   },
@@ -199,10 +199,10 @@
    "subjects": 23,
    "chaptersTarget": 276,
    "chaptersBuilt": 276,
-   "textbookSubjects": 20,
-   "hanzi": 3390731,
+   "textbookSubjects": 21,
+   "hanzi": 5897974,
    "thin": 4,
-   "noBook": 3,
+   "noBook": 2,
    "videos": 24
   },
   {
@@ -289,7 +289,7 @@
    "title": "五官口腔系",
    "subjects": 17,
    "chaptersTarget": 144,
-   "chaptersBuilt": 124,
+   "chaptersBuilt": 144,
    "textbookSubjects": 9,
    "hanzi": 740281,
    "thin": 5,
@@ -311,10 +311,10 @@
   }
  ],
  "disk": {
-  "dirs": 2134,
-  "withDocs": 2134,
-  "withQuiz": 2134,
-  "withOutputs": 2134,
+  "dirs": 2154,
+  "withDocs": 2154,
+  "withQuiz": 2154,
+  "withOutputs": 2154,
   "mismatched": []
  },
  "syndromeDetail": {

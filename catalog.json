@@ -111,12 +111,12 @@
     "hours": 11547,
     "semesters": 10,
     "stages": 5,
-    "chaptersBuilt": 2134,
-    "subjectsDone": 187,
+    "chaptersBuilt": 2154,
+    "subjectsDone": 189,
     "subjectsWip": 0,
-    "subjectsPlanned": 2,
+    "subjectsPlanned": 0,
     "videos": 150,
-    "textbookChapters": 2570
+    "textbookChapters": 2606
   },
   "semesterPlan": [
     {
@@ -7457,17 +7457,21 @@
             "slideDecks": 24,
             "slides": 478,
             "videosRendered": 24,
-            "videoHours": 5.72,
-            "videoBytes": 510484074,
+            "videoHours": 5.74,
+            "videoBytes": 512033479,
             "audioSegments": 245,
             "_note": "videosPublished = 已进 platform/media-release.json 的讲数（HLS 打包完成）；videosRendered = 已渲染成片数。"
           },
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/08-jingui-yaolue",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 24,
+            "words": 703867,
+            "status": "wip",
+            "layer": "source-body+commentary",
+            "source": "standards/jingui/底本.json（外源·笈成）+ standards/jingui/gushiwen/（外源·古诗文网，校勘）",
+            "generatedAt": "2026-11-11",
+            "_note": "24 章 = N.1 原文全录（402 条）+ N.2-N.5 人工论述 + 现算数据表；逐条词解/释义与逐方方解未做，见 00-前言.md §五。"
           }
         },
         {
@@ -7701,9 +7705,18 @@
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/14-zhongyi-zhenghou-xue",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 12,
+            "words": 208605,
+            "files": 18,
+            "figures": 9,
+            "status": "done",
+            "appendices": [
+              "A 位性态总表",
+              "B ICD-11 命名原则对照",
+              "C 数据与接口",
+              "D 症状反查索引（百姓入口）",
+              "E 应用工程手册（CI/CD）"
+            ]
           }
         },
         {
@@ -13413,10 +13426,10 @@
           "stage": "zhuang",
           "hours": 72,
           "chaptersTarget": 10,
-          "chaptersBuilt": 0,
-          "pct": 0,
-          "status": "planned",
-          "glyph": "⬚",
+          "chaptersBuilt": 10,
+          "pct": 100,
+          "status": "done",
+          "glyph": "✅",
           "bridge": "义齿设计→参数化 CAD / 咬合重建→力学优化",
           "path": "departments/08-wuguan/12-kouqiang-xiufu-xue",
           "prereq": [
@@ -13447,10 +13460,10 @@
           "stage": "zhuang",
           "hours": 72,
           "chaptersTarget": 10,
-          "chaptersBuilt": 0,
-          "pct": 0,
-          "status": "planned",
-          "glyph": "⬚",
+          "chaptersBuilt": 10,
+          "pct": 100,
+          "status": "done",
+          "glyph": "✅",
           "bridge": "头影测量→关键点检测 / 拔牙决策→分类模型",
           "path": "departments/08-wuguan/13-kouqiang-zhengji-xue",
           "prereq": [

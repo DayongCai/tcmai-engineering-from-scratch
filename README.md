@@ -8,7 +8,7 @@
 </p>
 
 <!-- COUNTS:START (由 scripts/build_catalog.js 生成 — 请勿手工编辑) -->
-**9** 院系 &nbsp;·&nbsp; **189** 学科 &nbsp;·&nbsp; **2154** 章节 &nbsp;·&nbsp; **11547** 学时 &nbsp;·&nbsp; 已建 **2134** 章 &nbsp;·&nbsp; 视频 **150** / 教材章节 **2570**
+**9** 院系 &nbsp;·&nbsp; **189** 学科 &nbsp;·&nbsp; **2154** 章节 &nbsp;·&nbsp; **11547** 学时 &nbsp;·&nbsp; 已建 **2154** 章 &nbsp;·&nbsp; 视频 **150** / 教材章节 **2606**
 <!-- COUNTS:END -->
 
 <p align="center">

@@ -38,13 +38,13 @@
   .src code{color:#c8b18a;background:#181310;padding:1px 5px;border-radius:4px}
 </style></head><body><main>
   <h1>中医药专业内容完整性看板</h1>
-  <div class="sub">生成于 2026-11-11 20:48:43 · 全部数字运行时从仓库源计算 · 与 <code>npm run dashboard</code>（工程面）、<code>textbook-board.html</code>（教材面）分工</div>
+  <div class="sub">生成于 2026-11-14 11:24:17 · 全部数字运行时从仓库源计算 · 与 <code>npm run dashboard</code>（工程面）、<code>textbook-board.html</code>（教材面）分工</div>
 
   <div class="kpis">
     <div class="kpi"><b>189</b><span>学科 / 9 院系</span></div>
-    <div class="kpi"><b>2134<span class="dim">/2154</span></b><span>已建章节 99.07%</span></div>
-    <div class="kpi"><b>127<span class="dim">/189</span></b><span>有教材稿学科</span></div>
-    <div class="kpi"><b>2674.7 万</b><span>教材汉字（非空白字符 3154.4 万）</span></div>
+    <div class="kpi"><b>2154<span class="dim">/2154</span></b><span>已建章节 100%</span></div>
+    <div class="kpi"><b>128<span class="dim">/189</span></b><span>有教材稿学科</span></div>
+    <div class="kpi"><b>2925.4 万</b><span>教材汉字（非空白字符 3528.3 万）</span></div>
     <div class="kpi"><b>97</b><span>证候（104 个语义单元）</span></div>
     <div class="kpi"><b>398</b><span>伤寒条文 / 111 方</span></div>
     <div class="kpi"><b>3148</b><span>WHO ISTT 术语</span></div>
@@ -111,9 +111,9 @@
         <th>中医系</th>
         <td>23</td>
         <td>276<span class="dim">/276</span></td>
-        <td>20<span class="dim">/23</span></td>
-        <td>339.1 万</td>
-        <td class="">3</td>
+        <td>21<span class="dim">/23</span></td>
+        <td>589.8 万</td>
+        <td class="">2</td>
         <td class="bad">4</td>
         <td>24</td>
       </tr>
@@ -180,7 +180,7 @@
       <tr>
         <th>五官口腔系</th>
         <td>17</td>
-        <td>124<span class="dim">/144</span></td>
+        <td>144<span class="dim">/144</span></td>
         <td>9<span class="dim">/17</span></td>
         <td>74.0 万</td>
         <td class="bad">8</td>
@@ -202,13 +202,13 @@
   <h2>缺口清单（按影响排序）</h2>
   <div class="grid">
       <article class="gap">
-        <h3>教材缺稿<span class="num">62</span></h3>
-        <ul><li>护理系/基础护理学(14章)</li><li>中医系/中医证候学(12章)</li><li>智能系/大语言模型与中医智能体(12章)</li><li>基础医学院/医学细胞生物学(12章)</li><li>基础医学院/医学遗传学(12章)</li><li>中医系/医学衷中参西录选读(10章)</li><li>中药系/中成药与临床用药(10章)</li><li>中药系/中药毒理学(10章)</li><li>针灸系/中医康复学(10章)</li><li>骨伤系/骨伤解剖学(10章)</li><li>骨伤系/脊柱病学(10章)</li><li>骨伤系/关节病学(10章)</li></ul>
+        <h3>教材缺稿<span class="num">61</span></h3>
+        <ul><li>护理系/基础护理学(14章)</li><li>智能系/大语言模型与中医智能体(12章)</li><li>基础医学院/医学细胞生物学(12章)</li><li>基础医学院/医学遗传学(12章)</li><li>中医系/医学衷中参西录选读(10章)</li><li>中药系/中成药与临床用药(10章)</li><li>中药系/中药毒理学(10章)</li><li>针灸系/中医康复学(10章)</li><li>骨伤系/骨伤解剖学(10章)</li><li>骨伤系/脊柱病学(10章)</li><li>骨伤系/关节病学(10章)</li><li>护理系/急危重症护理学(10章)</li></ul>
         <p class="fix">补法：按目标章节数从大到小补稿（先补 14 章的病理生理学、12 章的大语言模型/细胞生物学）</p>
       </article>
       <article class="gap">
-        <h3>章节未建<span class="num">20</span></h3>
-        <ul><li>189 学科目标 2154 章，已建 2134</li></ul>
+        <h3>章节未建<span class="num">0</span></h3>
+        <ul><li>189 学科目标 2154 章，已建 2154</li></ul>
         <p class="fix">补法：按学科整科推满（内经/伤寒已满科），而不是全库平均铺开</p>
       </article>
       <article class="gap">
@@ -240,7 +240,7 @@
   <h2>口径与数据源</h2>
   <div class="src">
     <div><code>structure</code> ← catalog.json</div><div><code>textbook</code> ← data/textbook-board.json</div><div><code>syndrome</code> ← standards/semtensor/datasets/reference-units.json + descriptions/dsu-descriptions.json + descriptions/external.json</div><div><code>classics</code> ← standards/shanghan/semtensor-398.json</div><div><code>terms</code> ← who-istt-terms.json · standards/icd11/zh-names.json · definitions-en.json · glossary/tcm-terms.md</div><div><code>retrieval</code> ← standards/semtensor/embeddings/index.json + data/icd11/term-index/meta.json</div>
-    <div style="margin-top:8px">盘上章节核对：2134 个章节目录 · 有 docs 2134 · 有 quiz 2134 · 有 outputs 2134</div>
+    <div style="margin-top:8px">盘上章节核对：2154 个章节目录 · 有 docs 2154 · 有 quiz 2154 · 有 outputs 2154</div>
     <div style="margin-top:12px"><b>口径假设（不是仓库既有指标，别当结论引用）：</b><ul><li>「证候目标 300+」是本看板定的参照线，仓库没有这个指标，覆盖率只作方向参考</li><li>「方剂/中药/腧穴字典」是建议目标，仓库当前没有结构化数据集，覆盖记 n/a 而不是 0%</li><li>教材汉字数取 textbook-board 的 totals.hanzi（[\u4e00-\u9fa5]）；非空白字符另计</li></ul></div>
   </div>
 </main></body></html>

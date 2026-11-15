@@ -2,11 +2,11 @@
   "$generated": "node scripts/build_outputs_index.js",
   "note": "可复用产出物的根级索引。契约见 CONTRIBUTING.md；每章的产物是生成物，索引是它们的生成物。",
   "counts": {
-    "items": 4268,
-    "chaptersWithOutputs": 2134,
+    "items": 4308,
+    "chaptersWithOutputs": 2154,
     "byKind": {
-      "prompt": 2134,
-      "skill": 2134
+      "prompt": 2154,
+      "skill": 2154
     },
     "gaps": 0
   },
@@ -443,20 +443,6 @@
                   "title": "病名归轴 · 可装载技能",
                   "description": null,
                   "chars": 399
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
                 },
                 {
                   "kind": "prompt",
@@ -2406,20 +2392,6 @@
                 },
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
-                },
-                {
-                  "kind": "prompt",
                   "file": "departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
                   "title": "急与慢的分界",
                   "description": null,
@@ -3228,20 +3200,6 @@
                 },
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
-                },
-                {
-                  "kind": "prompt",
                   "file": "departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
                   "title": "急与慢的分界",
                   "description": null,
@@ -3989,466 +3947,242 @@
           "semester": 7,
           "chapters": [
             {
-              "chapter": "01-xulun",
-              "title": "第 1 章 · 绪论：医学史的问题与方法",
+              "chapter": "01-feng-men",
+              "title": "第 1 章 · 风证门（M01）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/03-zhongguo-yixue-shi/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "绪论：医学史的问题与方法 · 提示词",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-feng-men/outputs/prompt-feng-men.md",
+                  "title": "风证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
-                  "chars": 467
+                  "chars": 484
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/03-zhongguo-yixue-shi/chapters/01-xulun/outputs/skill-xulun.md",
-                  "title": "绪论：医学史的问题与方法",
-                  "description": "绪论：医学史的问题与方法——按「起源 → 奠基 → 分科 → 争鸣 → 集成 → 转型 → 当代与交流」走一遍本章判据",
-                  "chars": 383
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/prompt-xulun.md",
-                  "title": "Prompt：给一个病证判位置——「归属—来路—读法」三问",
-                  "description": null,
-                  "chars": 1928
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/10-zhongyi-neike-xue/chapters/01-xulun/outputs/skill-xulun.md",
-                  "title": "Skill：绪论——学科界定、范围、源流与读法",
-                  "description": "把任何一个中医内科病证或治法放回「归属—来路—层次—读法—边界」五格，并守住不写量值、不下诊断的边界",
-                  "chars": 1622
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "一个病名归轴：五类 → 轴位 → 年龄 → 判据",
-                  "description": null,
-                  "chars": 600
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "病名归轴 · 可装载技能",
-                  "description": null,
-                  "chars": 399
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "急与慢的分界",
-                  "description": null,
-                  "chars": 393
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "急与慢的分界 · 可装载技能",
-                  "description": null,
-                  "chars": 436
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "先看人再看病",
-                  "description": null,
-                  "chars": 329
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "先看人再看病 · 可装载技能",
-                  "description": null,
-                  "chars": 430
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "病名坐标",
-                  "description": null,
-                  "chars": 317
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/20-zhongyi-jingshenbing-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "病名坐标 · 可装载技能",
-                  "description": null,
-                  "chars": 431
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "用本章内容做一件事：绪论",
-                  "description": null,
-                  "chars": 406
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "绪论",
-                  "description": null,
-                  "chars": 502
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "绪论 · 提示词",
-                  "description": null,
-                  "chars": 444
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/03-zhenjiu/16-zhenjiu-xue/chapters/01-xulun/outputs/skill-xulun.md",
-                  "title": "绪论",
-                  "description": "绪论——按「绪论 → 经络总论 → 腧穴总论 → 十四经与奇穴 → 刺灸法 → 治疗各论 → 现代研究」走一遍本章判据",
-                  "chars": 369
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "绪论 · 提示词",
-                  "description": null,
-                  "chars": 432
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/07-zhineng/16-jiqi-xuexi/chapters/01-xulun/outputs/skill-xulun.md",
-                  "title": "绪论",
-                  "description": "绪论——按「问题与评估 → 经典模型 → 进阶与集成 → 应用与前沿」走一遍本章判据",
-                  "chars": 350
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md",
-                  "title": "绪论 · 提示词",
-                  "description": null,
-                  "chars": 442
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/09-jichu/01-renti-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md",
-                  "title": "绪论",
-                  "description": "绪论——按「运动 → 内脏 → 脉管与内分泌 → 神经：由支架到内脏，再到支配」走一遍本章判据",
-                  "chars": 365
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "绪论 · 提示词",
-                  "description": null,
-                  "chars": 443
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/09-jichu/04-yixue-shengwu-xue/chapters/01-xulun/outputs/skill-xulun.md",
-                  "title": "绪论",
-                  "description": "绪论——按「细胞（结构 → 行为 → 工程）→ 遗传（分子 → 传递 → 群体）→ 临床与中医」走一遍本章判据",
-                  "chars": 366
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/prompt-xulun.md",
-                  "title": "Prompt：把「因为有调节」拆成一条回路",
-                  "description": null,
-                  "chars": 1639
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/09-jichu/06-shengli-xue/chapters/01-xulun/outputs/skill-xulun.md",
-                  "title": "Skill：绪论——研究对象、三个水平与调节框架",
-                  "description": "把一个「因为有调节」的生理现象拆成受控量—感受—整合—效应—反馈回路，并守住不给数值的边界",
-                  "chars": 1387
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/09-jichu/07-shenghua-xue/chapters/01-xulun/outputs/prompt-xulun.md",
-                  "title": "绪论 · 提示词",
-                  "description": null,
-                  "chars": 450
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/09-jichu/07-shenghua-xue/chapters/01-xulun/outputs/skill-xulun.md",
-                  "title": "绪论",
-                  "description": "绪论——按「物质（结构性质）→ 代谢（能量与调节）→ 信息（复制转录翻译）→ 技术」走一遍本章判据",
-                  "chars": 366
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/prompt-xulun.md",
-                  "title": "绪论 · 提示词",
-                  "description": null,
-                  "chars": 437
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/09-jichu/08-jubu-jiepou-xue/chapters/01-xulun/outputs/skill-xulun.md",
-                  "title": "绪论",
-                  "description": "绪论——按「层次 → 通道 → 间隙 → 毗邻：由浅入深地读一个局部」走一遍本章判据",
-                  "chars": 359
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/prompt-xulun.md",
-                  "title": "Prompt：把「我看到一块病变」写成一条可核对的描述链",
-                  "description": null,
-                  "chars": 1701
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/09-jichu/10-bingli-xue/chapters/01-xulun/outputs/skill-xulun.md",
-                  "title": "Skill：绪论——研究对象、观察层次与描述边界",
-                  "description": "把一次病理形态观察整理成「层次—所见—联系—待核实—判断去向」的可核对描述链，并守住不写数值与不下判断的边界",
-                  "chars": 1421
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "流行病学绪论 · 提示词",
-                  "description": null,
-                  "chars": 463
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/09-jichu/15-liuxingbing-xue/chapters/01-xulun/outputs/skill-xulun.md",
-                  "title": "流行病学绪论",
-                  "description": "流行病学绪论——按「描述（分布与测量）→ 分析（病例对照与队列）→ 推断（因果与偏倚）→ 应用（监测与循证）」走一遍本章判据",
-                  "chars": 382
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-feng-men/outputs/skill-feng-men.md",
+                  "title": "feng-men",
+                  "description": "用「门→类→证→候」四级编码解析 风门（M01）的证候条目，输出可复算的全码与态。",
+                  "chars": 563
                 }
               ]
             },
             {
-              "chapter": "02-goucheng-yaosu",
-              "title": "第 2 章 · 构成要素：病位 × 病性 × 病势",
+              "chapter": "02-han-men",
+              "title": "第 2 章 · 寒证门（M02）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-goucheng-yaosu/outputs/prompt-02-goucheng-yaosu.md",
-                  "title": "坐标补全",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-han-men/outputs/prompt-han-men.md",
+                  "title": "寒证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
-                  "chars": 426
+                  "chars": 478
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-goucheng-yaosu/outputs/skill-02-goucheng-yaosu.md",
-                  "title": "坐标补全 · 可装载技能",
-                  "description": null,
-                  "chars": 433
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-han-men/outputs/skill-han-men.md",
+                  "title": "han-men",
+                  "description": "用「门→类→证→候」四级编码解析 寒门（M02）的证候条目，输出可复算的全码与态。",
+                  "chars": 557
                 }
               ]
             },
             {
-              "chapter": "03-bagang-cengji",
-              "title": "第 3 章 · 七套辨证体系的层级与选用",
+              "chapter": "03-shu-men",
+              "title": "第 3 章 · 暑证门（M03）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-bagang-cengji/outputs/prompt-03-bagang-cengji.md",
-                  "title": "体系选单",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-shu-men/outputs/prompt-shu-men.md",
+                  "title": "暑证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
-                  "chars": 404
+                  "chars": 476
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-bagang-cengji/outputs/skill-03-bagang-cengji.md",
-                  "title": "体系选单 · 可装载技能",
-                  "description": null,
-                  "chars": 442
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-shu-men/outputs/skill-shu-men.md",
+                  "title": "shu-men",
+                  "description": "用「门→类→证→候」四级编码解析 暑门（M03）的证候条目，输出可复算的全码与态。",
+                  "chars": 557
                 }
               ]
             },
             {
-              "chapter": "04-qixu-yangxu",
-              "title": "第 4 章 · 气虚与阳虚：从「不固」到「不温」",
+              "chapter": "04-shi-men",
+              "title": "第 4 章 · 湿证门（M04）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-qixu-yangxu/outputs/prompt-04-qixu-yangxu.md",
-                  "title": "气阳分辨",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-shi-men/outputs/prompt-shi-men.md",
+                  "title": "湿证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
-                  "chars": 415
+                  "chars": 480
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-qixu-yangxu/outputs/skill-04-qixu-yangxu.md",
-                  "title": "气阳分辨 · 可装载技能",
-                  "description": null,
-                  "chars": 438
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-shi-men/outputs/skill-shi-men.md",
+                  "title": "shi-men",
+                  "description": "用「门→类→证→候」四级编码解析 湿门（M04）的证候条目，输出可复算的全码与态。",
+                  "chars": 559
                 }
               ]
             },
             {
-              "chapter": "05-xuexu-yinxu",
-              "title": "第 5 章 · 血虚与阴虚：源不足与虚火",
+              "chapter": "05-zao-men",
+              "title": "第 5 章 · 燥证门（M05）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-xuexu-yinxu/outputs/prompt-05-xuexu-yinxu.md",
-                  "title": "血阴分辨",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-zao-men/outputs/prompt-zao-men.md",
+                  "title": "燥证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
-                  "chars": 405
+                  "chars": 490
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-xuexu-yinxu/outputs/skill-05-xuexu-yinxu.md",
-                  "title": "血阴分辨 · 可装载技能",
-                  "description": null,
-                  "chars": 428
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-zao-men/outputs/skill-zao-men.md",
+                  "title": "zao-men",
+                  "description": "用「门→类→证→候」四级编码解析 燥门（M05）的证候条目，输出可复算的全码与态。",
+                  "chars": 565
                 }
               ]
             },
             {
-              "chapter": "06-xere-reduxudu",
-              "title": "第 6 章 · 血热与热毒：迫血与壅聚",
+              "chapter": "06-huo-men",
+              "title": "第 6 章 · 火证门（M06）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-xere-reduxudu/outputs/prompt-06-xere-reduxudu.md",
-                  "title": "热的两路",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-huo-men/outputs/prompt-huo-men.md",
+                  "title": "火证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
-                  "chars": 409
+                  "chars": 498
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-xere-reduxudu/outputs/skill-06-xere-reduxudu.md",
-                  "title": "热的两路 · 可装载技能",
-                  "description": null,
-                  "chars": 458
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-huo-men/outputs/skill-huo-men.md",
+                  "title": "huo-men",
+                  "description": "用「门→类→证→候」四级编码解析 火门（M06）的证候条目，输出可复算的全码与态。",
+                  "chars": 571
                 }
               ]
             },
             {
-              "chapter": "07-tanshi-shire",
-              "title": "第 7 章 · 痰湿与湿热：同源两路",
+              "chapter": "07-qi-men",
+              "title": "第 7 章 · 气证门（M07）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-tanshi-shire/outputs/prompt-07-tanshi-shire.md",
-                  "title": "苔味二分",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-qi-men/outputs/prompt-qi-men.md",
+                  "title": "气证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
-                  "chars": 390
+                  "chars": 487
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-tanshi-shire/outputs/skill-07-tanshi-shire.md",
-                  "title": "苔味二分 · 可装载技能",
-                  "description": null,
-                  "chars": 437
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-qi-men/outputs/skill-qi-men.md",
+                  "title": "qi-men",
+                  "description": "用「门→类→证→候」四级编码解析 气门（M07）的证候条目，输出可复算的全码与态。",
+                  "chars": 562
                 }
               ]
             },
             {
-              "chapter": "08-xueyu-qizhi",
-              "title": "第 8 章 · 血瘀与气滞：不通的两种写法",
+              "chapter": "08-yu-men",
+              "title": "第 8 章 · 瘀证门（M08）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-xueyu-qizhi/outputs/prompt-08-xueyu-qizhi.md",
-                  "title": "定与走",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-yu-men/outputs/prompt-yu-men.md",
+                  "title": "瘀证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
-                  "chars": 399
+                  "chars": 484
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-xueyu-qizhi/outputs/skill-08-xueyu-qizhi.md",
-                  "title": "定与走 · 可装载技能",
-                  "description": null,
-                  "chars": 430
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-yu-men/outputs/skill-yu-men.md",
+                  "title": "yu-men",
+                  "description": "用「门→类→证→候」四级编码解析 瘀门（M08）的证候条目，输出可复算的全码与态。",
+                  "chars": 561
                 }
               ]
             },
             {
-              "chapter": "09-fenghan-fengre",
-              "title": "第 9 章 · 风寒、风热与正虚邪恋：外感与残留",
+              "chapter": "09-tan-men",
+              "title": "第 9 章 · 痰证门（M09）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-fenghan-fengre/outputs/prompt-09-fenghan-fengre.md",
-                  "title": "三段定位",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-tan-men/outputs/prompt-tan-men.md",
+                  "title": "痰证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
-                  "chars": 404
+                  "chars": 493
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-fenghan-fengre/outputs/skill-09-fenghan-fengre.md",
-                  "title": "三段定位 · 可装载技能",
-                  "description": null,
-                  "chars": 429
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-tan-men/outputs/skill-tan-men.md",
+                  "title": "tan-men",
+                  "description": "用「门→类→证→候」四级编码解析 痰门（M09）的证候条目，输出可复算的全码与态。",
+                  "chars": 568
                 }
               ]
             },
             {
-              "chapter": "10-qita-cleanup",
-              "title": "第 10 章 · 「其他」11 证：归类失败的样本",
+              "chapter": "10-yin-men",
+              "title": "第 10 章 · 饮证门（M10）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-qita-cleanup/outputs/prompt-10-qita-cleanup.md",
-                  "title": "归类五问",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-yin-men/outputs/prompt-yin-men.md",
+                  "title": "饮证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
-                  "chars": 443
+                  "chars": 482
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-qita-cleanup/outputs/skill-10-qita-cleanup.md",
-                  "title": "归类五问 · 可装载技能",
-                  "description": null,
-                  "chars": 495
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-yin-men/outputs/skill-yin-men.md",
+                  "title": "yin-men",
+                  "description": "用「门→类→证→候」四级编码解析 饮门（M10）的证候条目，输出可复算的全码与态。",
+                  "chars": 561
                 }
               ]
             },
             {
-              "chapter": "11-mingming-guifan",
-              "title": "第 11 章 · 命名规范与 TM1 对齐",
+              "chapter": "11-shiji-men",
+              "title": "第 11 章 · 食证门（M11）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-mingming-guifan/outputs/prompt-11-mingming-guifan.md",
-                  "title": "证名拆栏",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-shiji-men/outputs/prompt-shiji-men.md",
+                  "title": "食证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
-                  "chars": 423
+                  "chars": 481
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-mingming-guifan/outputs/skill-11-mingming-guifan.md",
-                  "title": "证名拆栏 · 可装载技能",
-                  "description": null,
-                  "chars": 442
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-shiji-men/outputs/skill-shiji-men.md",
+                  "title": "shiji-men",
+                  "description": "用「门→类→证→候」四级编码解析 食门（M11）的证候条目，输出可复算的全码与态。",
+                  "chars": 564
                 }
               ]
             },
             {
-              "chapter": "12-jianbie-yanbian-lianghua",
-              "title": "第 12 章 · 鉴别、演变与量化",
+              "chapter": "12-xu-men",
+              "title": "第 12 章 · 虚证门（M12）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-jianbie-yanbian-lianghua/outputs/prompt-12-jianbie-yanbian-lianghua.md",
-                  "title": "三分单",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-xu-men/outputs/prompt-xu-men.md",
+                  "title": "虚证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
-                  "chars": 439
+                  "chars": 486
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-jianbie-yanbian-lianghua/outputs/skill-12-jianbie-yanbian-lianghua.md",
-                  "title": "三分单 · 可装载技能",
-                  "description": null,
-                  "chars": 450
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-xu-men/outputs/skill-xu-men.md",
+                  "title": "xu-men",
+                  "description": "用「门→类→证→候」四级编码解析 虚门（M12）的证候条目，输出可复算的全码与态。",
+                  "chars": 561
                 }
               ]
             }
@@ -4841,20 +4575,6 @@
                   "title": "病名归轴 · 可装载技能",
                   "description": null,
                   "chars": 399
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
                 },
                 {
                   "kind": "prompt",
@@ -5648,20 +5368,6 @@
                 },
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
-                },
-                {
-                  "kind": "prompt",
                   "file": "departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
                   "title": "急与慢的分界",
                   "description": null,
@@ -6117,20 +5823,6 @@
                   "title": "病名归轴 · 可装载技能",
                   "description": null,
                   "chars": 399
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
                 },
                 {
                   "kind": "prompt",
@@ -10828,20 +10520,6 @@
                   "title": "病名归轴 · 可装载技能",
                   "description": null,
                   "chars": 399
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
                 },
                 {
                   "kind": "prompt",
@@ -16081,20 +15759,6 @@
                   "title": "病名归轴 · 可装载技能",
                   "description": null,
                   "chars": 399
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
                 },
                 {
                   "kind": "prompt",
@@ -41834,20 +41498,6 @@
                 },
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
-                },
-                {
-                  "kind": "prompt",
                   "file": "departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
                   "title": "急与慢的分界",
                   "description": null,
@@ -45026,6 +44676,422 @@
           ]
         },
         {
+          "subject": "口腔修复学",
+          "slug": "12-kouqiang-xiufu-xue",
+          "type": "Clinic",
+          "semester": 7,
+          "chapters": [
+            {
+              "chapter": "01-duixiang-sanlei",
+              "title": "第 1 章 · 修复学的对象：三类缺损与老年患者",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/01-duixiang-sanlei/outputs/prompt-01-duixiang-sanlei.md",
+                  "title": "修复学的对象：三类缺损与老年患者 · 提示词",
+                  "description": null,
+                  "chars": 515
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/01-duixiang-sanlei/outputs/skill-duixiang-sanlei.md",
+                  "title": "修复学的对象：三类缺损与老年患者",
+                  "description": "修复学的对象：三类缺损与老年患者——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+                  "chars": 417
+                }
+              ]
+            },
+            {
+              "chapter": "02-zong-yuanze",
+              "title": "第 2 章 · 修复总原则：安全、有效、微创、健康、知情同意、姑息",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/02-zong-yuanze/outputs/prompt-02-zong-yuanze.md",
+                  "title": "修复总原则：安全、有效、微创、健康、知情同意、姑息 · 提示词",
+                  "description": null,
+                  "chars": 550
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/02-zong-yuanze/outputs/skill-zong-yuanze.md",
+                  "title": "修复总原则：安全、有效、微创、健康、知情同意、姑息",
+                  "description": "修复总原则：安全、有效、微创、健康、知情同意、姑息——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+                  "chars": 431
+                }
+              ]
+            },
+            {
+              "chapter": "03-pinggu-quanshen",
+              "title": "第 3 章 · 修复前全身评估：疾病、用药与口腔治疗史",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/03-pinggu-quanshen/outputs/prompt-03-pinggu-quanshen.md",
+                  "title": "修复前全身评估：疾病、用药与口腔治疗史 · 提示词",
+                  "description": null,
+                  "chars": 524
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/03-pinggu-quanshen/outputs/skill-pinggu-quanshen.md",
+                  "title": "修复前全身评估：疾病、用药与口腔治疗史",
+                  "description": "修复前全身评估：疾病、用药与口腔治疗史——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+                  "chars": 423
+                }
+              ]
+            },
+            {
+              "chapter": "04-kouqiang-jiancha",
+              "title": "第 4 章 · 修复前口腔检查与影像：七项增龄变化与片子的选择",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/04-kouqiang-jiancha/outputs/prompt-04-kouqiang-jiancha.md",
+                  "title": "修复前口腔检查与影像：七项增龄变化与片子的选择 · 提示词",
+                  "description": null,
+                  "chars": 536
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/04-kouqiang-jiancha/outputs/skill-kouqiang-jiancha.md",
+                  "title": "修复前口腔检查与影像：七项增龄变化与片子的选择",
+                  "description": "修复前口腔检查与影像：七项增龄变化与片子的选择——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+                  "chars": 432
+                }
+              ]
+            },
+            {
+              "chapter": "05-shuqian-chuli",
+              "title": "第 5 章 · 修复前处理、健康宣教与形式选择",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/05-shuqian-chuli/outputs/prompt-05-shuqian-chuli.md",
+                  "title": "修复前处理、健康宣教与形式选择 · 提示词",
+                  "description": null,
+                  "chars": 520
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/05-shuqian-chuli/outputs/skill-shuqian-chuli.md",
+                  "title": "修复前处理、健康宣教与形式选择",
+                  "description": "修复前处理、健康宣教与形式选择——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+                  "chars": 413
+                }
+              ]
+            },
+            {
+              "chapter": "06-quankou-yinmo",
+              "title": "第 6 章 · 全口义齿的印模与模型：初印模、个别托盘、终印模",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/06-quankou-yinmo/outputs/prompt-06-quankou-yinmo.md",
+                  "title": "全口义齿的印模与模型：初印模、个别托盘、终印模 · 提示词",
+                  "description": null,
+                  "chars": 548
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/06-quankou-yinmo/outputs/skill-quankou-yinmo.md",
+                  "title": "全口义齿的印模与模型：初印模、个别托盘、终印模",
+                  "description": "全口义齿的印模与模型：初印模、个别托盘、终印模——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+                  "chars": 429
+                }
+              ]
+            },
+            {
+              "chapter": "07-yipang-cadcam",
+              "title": "第 7 章 · 椅旁 CAD/CAM 固定义齿：适应证、预备与后处理",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/07-yipang-cadcam/outputs/prompt-07-yipang-cadcam.md",
+                  "title": "椅旁 CAD/CAM 固定义齿：适应证、预备与后处理 · 提示词",
+                  "description": null,
+                  "chars": 583
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/07-yipang-cadcam/outputs/skill-yipang-cadcam.md",
+                  "title": "椅旁 CAD/CAM 固定义齿：适应证、预备与后处理",
+                  "description": "椅旁 CAD/CAM 固定义齿：适应证、预备与后处理——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+                  "chars": 431
+                }
+              ]
+            },
+            {
+              "chapter": "08-cailiao-tiaohe",
+              "title": "第 8 章 · 材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/08-cailiao-tiaohe/outputs/prompt-08-cailiao-tiaohe.md",
+                  "title": "材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化 · 提示词",
+                  "description": null,
+                  "chars": 584
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/08-cailiao-tiaohe/outputs/skill-cailiao-tiaohe.md",
+                  "title": "材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化",
+                  "description": "材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+                  "chars": 430
+                }
+              ]
+            },
+            {
+              "chapter": "09-citie-fucha",
+              "title": "第 9 章 · 瓷贴面的复查与并发症：功能、美学、生物学三条线",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/09-citie-fucha/outputs/prompt-09-citie-fucha.md",
+                  "title": "瓷贴面的复查与并发症：功能、美学、生物学三条线 · 提示词",
+                  "description": null,
+                  "chars": 548
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/09-citie-fucha/outputs/skill-citie-fucha.md",
+                  "title": "瓷贴面的复查与并发症：功能、美学、生物学三条线",
+                  "description": "瓷贴面的复查与并发症：功能、美学、生物学三条线——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+                  "chars": 427
+                }
+              ]
+            },
+            {
+              "chapter": "10-piaobai",
+              "title": "第 10 章 · 牙齿漂白：着色类型、适应证、方法与风险",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/10-piaobai/outputs/prompt-10-piaobai.md",
+                  "title": "牙齿漂白：着色类型、适应证、方法与风险 · 提示词",
+                  "description": null,
+                  "chars": 582
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/10-piaobai/outputs/skill-piaobai.md",
+                  "title": "牙齿漂白：着色类型、适应证、方法与风险",
+                  "description": "牙齿漂白：着色类型、适应证、方法与风险——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+                  "chars": 415
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subject": "口腔正畸学",
+          "slug": "13-kouqiang-zhengji-xue",
+          "type": "Clinic",
+          "semester": 7,
+          "chapters": [
+            {
+              "chapter": "01-duixiang-congye",
+              "title": "第 1 章 · 隐形矫治的对象与从业要求",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/01-duixiang-congye/outputs/prompt-01-duixiang-congye.md",
+                  "title": "隐形矫治的对象与从业要求 · 提示词",
+                  "description": null,
+                  "chars": 506
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/01-duixiang-congye/outputs/skill-duixiang-congye.md",
+                  "title": "隐形矫治的对象与从业要求",
+                  "description": "隐形矫治的对象与从业要求——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+                  "chars": 415
+                }
+              ]
+            },
+            {
+              "chapter": "02-zhiliao-fengxian",
+              "title": "第 2 章 · 治疗风险：依从性、移动偏差与并发症",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/02-zhiliao-fengxian/outputs/prompt-02-zhiliao-fengxian.md",
+                  "title": "治疗风险：依从性、移动偏差与并发症 · 提示词",
+                  "description": null,
+                  "chars": 513
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/02-zhiliao-fengxian/outputs/skill-zhiliao-fengxian.md",
+                  "title": "治疗风险：依从性、移动偏差与并发症",
+                  "description": "治疗风险：依从性、移动偏差与并发症——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+                  "chars": 426
+                }
+              ]
+            },
+            {
+              "chapter": "03-shiyingzheng",
+              "title": "第 3 章 · 适应证与可预测性分级",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/03-shiyingzheng/outputs/prompt-03-shiyingzheng.md",
+                  "title": "适应证与可预测性分级 · 提示词",
+                  "description": null,
+                  "chars": 492
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/03-shiyingzheng/outputs/skill-shiyingzheng.md",
+                  "title": "适应证与可预测性分级",
+                  "description": "适应证与可预测性分级——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+                  "chars": 408
+                }
+              ]
+            },
+            {
+              "chapter": "04-ziliao-caiji",
+              "title": "第 4 章 · 资料采集：影像与数字模型",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/04-ziliao-caiji/outputs/prompt-04-ziliao-caiji.md",
+                  "title": "资料采集：影像与数字模型 · 提示词",
+                  "description": null,
+                  "chars": 502
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/04-ziliao-caiji/outputs/skill-ziliao-caiji.md",
+                  "title": "资料采集：影像与数字模型",
+                  "description": "资料采集：影像与数字模型——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+                  "chars": 412
+                }
+              ]
+            },
+            {
+              "chapter": "05-fangan-sheji",
+              "title": "第 5 章 · 方案设计流程：目标、虚拟排牙、顺序与附件",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/05-fangan-sheji/outputs/prompt-05-fangan-sheji.md",
+                  "title": "方案设计流程：目标、虚拟排牙、顺序与附件 · 提示词",
+                  "description": null,
+                  "chars": 522
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/05-fangan-sheji/outputs/skill-fangan-sheji.md",
+                  "title": "方案设计流程：目标、虚拟排牙、顺序与附件",
+                  "description": "方案设计流程：目标、虚拟排牙、顺序与附件——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+                  "chars": 428
+                }
+              ]
+            },
+            {
+              "chapter": "06-tui-moya",
+              "title": "第 6 章 · 推磨牙向远中：适应证、禁忌与设计",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/06-tui-moya/outputs/prompt-06-tui-moya.md",
+                  "title": "推磨牙向远中：适应证、禁忌与设计 · 提示词",
+                  "description": null,
+                  "chars": 522
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/06-tui-moya/outputs/skill-tui-moya.md",
+                  "title": "推磨牙向远中：适应证、禁忌与设计",
+                  "description": "推磨牙向远中：适应证、禁忌与设计——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+                  "chars": 416
+                }
+              ]
+            },
+            {
+              "chapter": "07-linmian-quyou",
+              "title": "第 7 章 · 邻面去釉：适应证、禁忌与操作规范",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/07-linmian-quyou/outputs/prompt-07-linmian-quyou.md",
+                  "title": "邻面去釉：适应证、禁忌与操作规范 · 提示词",
+                  "description": null,
+                  "chars": 522
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/07-linmian-quyou/outputs/skill-linmian-quyou.md",
+                  "title": "邻面去釉：适应证、禁忌与操作规范",
+                  "description": "邻面去釉：适应证、禁忌与操作规范——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+                  "chars": 421
+                }
+              ]
+            },
+            {
+              "chapter": "08-fenbu-yidong",
+              "title": "第 8 章 · 分步移动：为什么不能一次到位",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/08-fenbu-yidong/outputs/prompt-08-fenbu-yidong.md",
+                  "title": "分步移动：为什么不能一次到位 · 提示词",
+                  "description": null,
+                  "chars": 512
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/08-fenbu-yidong/outputs/skill-fenbu-yidong.md",
+                  "title": "分步移动：为什么不能一次到位",
+                  "description": "分步移动：为什么不能一次到位——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+                  "chars": 416
+                }
+              ]
+            },
+            {
+              "chapter": "09-jianxi-baochi",
+              "title": "第 9 章 · 儿童间隙管理：五类保持器与选择",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/09-jianxi-baochi/outputs/prompt-09-jianxi-baochi.md",
+                  "title": "儿童间隙管理：五类保持器与选择 · 提示词",
+                  "description": null,
+                  "chars": 532
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/09-jianxi-baochi/outputs/skill-jianxi-baochi.md",
+                  "title": "儿童间隙管理：五类保持器与选择",
+                  "description": "儿童间隙管理：五类保持器与选择——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+                  "chars": 419
+                }
+              ]
+            },
+            {
+              "chapter": "10-yiwei-chuneilie",
+              "title": "第 10 章 · 异位萌出与唇腭裂序列中的正畸",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/10-yiwei-chuneilie/outputs/prompt-10-yiwei-chuneilie.md",
+                  "title": "异位萌出与唇腭裂序列中的正畸 · 提示词",
+                  "description": null,
+                  "chars": 529
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/10-yiwei-chuneilie/outputs/skill-yiwei-chuneilie.md",
+                  "title": "异位萌出与唇腭裂序列中的正畸",
+                  "description": "异位萌出与唇腭裂序列中的正畸——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+                  "chars": 419
+                }
+              ]
+            }
+          ]
+        },
+        {
           "subject": "中医嗓音医学",
           "slug": "14-zhongyi-sangyin-yixue",
           "type": "Build",
@@ -46039,20 +46105,6 @@
                   "title": "病名归轴 · 可装载技能",
                   "description": null,
                   "chars": 399
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
                 },
                 {
                   "kind": "prompt",
@@ -47172,20 +47224,6 @@
                 },
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
-                },
-                {
-                  "kind": "prompt",
                   "file": "departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
                   "title": "急与慢的分界",
                   "description": null,
@@ -48120,20 +48158,6 @@
                 },
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
-                },
-                {
-                  "kind": "prompt",
                   "file": "departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
                   "title": "急与慢的分界",
                   "description": null,
@@ -48583,20 +48607,6 @@
                   "title": "病名归轴 · 可装载技能",
                   "description": null,
                   "chars": 399
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
                 },
                 {
                   "kind": "prompt",
@@ -49235,20 +49245,6 @@
                   "title": "病名归轴 · 可装载技能",
                   "description": null,
                   "chars": 399
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
                 },
                 {
                   "kind": "prompt",
@@ -49909,20 +49905,6 @@
                   "title": "病名归轴 · 可装载技能",
                   "description": null,
                   "chars": 399
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
                 },
                 {
                   "kind": "prompt",
@@ -53321,20 +53303,6 @@
                   "title": "病名归轴 · 可装载技能",
                   "description": null,
                   "chars": 399
-                },
-                {
-                  "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-                  "title": "四概念分界",
-                  "description": null,
-                  "chars": 467
-                },
-                {
-                  "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-                  "title": "四概念分界 · 可装载技能",
-                  "description": null,
-                  "chars": 470
                 },
                 {
                   "kind": "prompt",
@@ -59129,360 +59097,360 @@
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "01-xulun",
-      "chapterTitle": "第 1 章 · 证候是什么：132 个证候的实测",
+      "chapter": "01-feng-men",
+      "chapterTitle": "第 1 章 · 风证门（M01）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/prompt-01-xulun.md",
-      "title": "四概念分界",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-feng-men/outputs/prompt-feng-men.md",
+      "title": "风证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 467
+      "chars": 484
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "01-xulun",
-      "chapterTitle": "第 1 章 · 证候是什么：132 个证候的实测",
+      "chapter": "01-feng-men",
+      "chapterTitle": "第 1 章 · 风证门（M01）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-xulun/outputs/skill-01-xulun.md",
-      "title": "四概念分界 · 可装载技能",
-      "name": null,
-      "description": null,
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-feng-men/outputs/skill-feng-men.md",
+      "title": "feng-men",
+      "name": "feng-men",
+      "description": "用「门→类→证→候」四级编码解析 风门（M01）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 470
+      "chars": 563
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "02-goucheng-yaosu",
-      "chapterTitle": "第 2 章 · 构成要素：病位 × 病性 × 病势",
+      "chapter": "02-han-men",
+      "chapterTitle": "第 2 章 · 寒证门（M02）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-goucheng-yaosu/outputs/prompt-02-goucheng-yaosu.md",
-      "title": "坐标补全",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-han-men/outputs/prompt-han-men.md",
+      "title": "寒证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 426
+      "chars": 478
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "02-goucheng-yaosu",
-      "chapterTitle": "第 2 章 · 构成要素：病位 × 病性 × 病势",
+      "chapter": "02-han-men",
+      "chapterTitle": "第 2 章 · 寒证门（M02）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-goucheng-yaosu/outputs/skill-02-goucheng-yaosu.md",
-      "title": "坐标补全 · 可装载技能",
-      "name": null,
-      "description": null,
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-han-men/outputs/skill-han-men.md",
+      "title": "han-men",
+      "name": "han-men",
+      "description": "用「门→类→证→候」四级编码解析 寒门（M02）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 433
+      "chars": 557
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "03-bagang-cengji",
-      "chapterTitle": "第 3 章 · 七套辨证体系的层级与选用",
+      "chapter": "03-shu-men",
+      "chapterTitle": "第 3 章 · 暑证门（M03）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-bagang-cengji/outputs/prompt-03-bagang-cengji.md",
-      "title": "体系选单",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-shu-men/outputs/prompt-shu-men.md",
+      "title": "暑证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 404
+      "chars": 476
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "03-bagang-cengji",
-      "chapterTitle": "第 3 章 · 七套辨证体系的层级与选用",
+      "chapter": "03-shu-men",
+      "chapterTitle": "第 3 章 · 暑证门（M03）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-bagang-cengji/outputs/skill-03-bagang-cengji.md",
-      "title": "体系选单 · 可装载技能",
-      "name": null,
-      "description": null,
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-shu-men/outputs/skill-shu-men.md",
+      "title": "shu-men",
+      "name": "shu-men",
+      "description": "用「门→类→证→候」四级编码解析 暑门（M03）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 442
+      "chars": 557
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "04-qixu-yangxu",
-      "chapterTitle": "第 4 章 · 气虚与阳虚：从「不固」到「不温」",
+      "chapter": "04-shi-men",
+      "chapterTitle": "第 4 章 · 湿证门（M04）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-qixu-yangxu/outputs/prompt-04-qixu-yangxu.md",
-      "title": "气阳分辨",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-shi-men/outputs/prompt-shi-men.md",
+      "title": "湿证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 415
+      "chars": 480
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "04-qixu-yangxu",
-      "chapterTitle": "第 4 章 · 气虚与阳虚：从「不固」到「不温」",
+      "chapter": "04-shi-men",
+      "chapterTitle": "第 4 章 · 湿证门（M04）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-qixu-yangxu/outputs/skill-04-qixu-yangxu.md",
-      "title": "气阳分辨 · 可装载技能",
-      "name": null,
-      "description": null,
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-shi-men/outputs/skill-shi-men.md",
+      "title": "shi-men",
+      "name": "shi-men",
+      "description": "用「门→类→证→候」四级编码解析 湿门（M04）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 438
+      "chars": 559
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "05-xuexu-yinxu",
-      "chapterTitle": "第 5 章 · 血虚与阴虚：源不足与虚火",
+      "chapter": "05-zao-men",
+      "chapterTitle": "第 5 章 · 燥证门（M05）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-xuexu-yinxu/outputs/prompt-05-xuexu-yinxu.md",
-      "title": "血阴分辨",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-zao-men/outputs/prompt-zao-men.md",
+      "title": "燥证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 405
+      "chars": 490
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "05-xuexu-yinxu",
-      "chapterTitle": "第 5 章 · 血虚与阴虚：源不足与虚火",
+      "chapter": "05-zao-men",
+      "chapterTitle": "第 5 章 · 燥证门（M05）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-xuexu-yinxu/outputs/skill-05-xuexu-yinxu.md",
-      "title": "血阴分辨 · 可装载技能",
-      "name": null,
-      "description": null,
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-zao-men/outputs/skill-zao-men.md",
+      "title": "zao-men",
+      "name": "zao-men",
+      "description": "用「门→类→证→候」四级编码解析 燥门（M05）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 428
+      "chars": 565
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "06-xere-reduxudu",
-      "chapterTitle": "第 6 章 · 血热与热毒：迫血与壅聚",
+      "chapter": "06-huo-men",
+      "chapterTitle": "第 6 章 · 火证门（M06）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-xere-reduxudu/outputs/prompt-06-xere-reduxudu.md",
-      "title": "热的两路",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-huo-men/outputs/prompt-huo-men.md",
+      "title": "火证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 409
+      "chars": 498
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "06-xere-reduxudu",
-      "chapterTitle": "第 6 章 · 血热与热毒：迫血与壅聚",
+      "chapter": "06-huo-men",
+      "chapterTitle": "第 6 章 · 火证门（M06）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-xere-reduxudu/outputs/skill-06-xere-reduxudu.md",
-      "title": "热的两路 · 可装载技能",
-      "name": null,
-      "description": null,
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-huo-men/outputs/skill-huo-men.md",
+      "title": "huo-men",
+      "name": "huo-men",
+      "description": "用「门→类→证→候」四级编码解析 火门（M06）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 458
+      "chars": 571
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "07-tanshi-shire",
-      "chapterTitle": "第 7 章 · 痰湿与湿热：同源两路",
+      "chapter": "07-qi-men",
+      "chapterTitle": "第 7 章 · 气证门（M07）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-tanshi-shire/outputs/prompt-07-tanshi-shire.md",
-      "title": "苔味二分",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-qi-men/outputs/prompt-qi-men.md",
+      "title": "气证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 390
+      "chars": 487
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "07-tanshi-shire",
-      "chapterTitle": "第 7 章 · 痰湿与湿热：同源两路",
+      "chapter": "07-qi-men",
+      "chapterTitle": "第 7 章 · 气证门（M07）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-tanshi-shire/outputs/skill-07-tanshi-shire.md",
-      "title": "苔味二分 · 可装载技能",
-      "name": null,
-      "description": null,
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-qi-men/outputs/skill-qi-men.md",
+      "title": "qi-men",
+      "name": "qi-men",
+      "description": "用「门→类→证→候」四级编码解析 气门（M07）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 437
+      "chars": 562
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "08-xueyu-qizhi",
-      "chapterTitle": "第 8 章 · 血瘀与气滞：不通的两种写法",
+      "chapter": "08-yu-men",
+      "chapterTitle": "第 8 章 · 瘀证门（M08）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-xueyu-qizhi/outputs/prompt-08-xueyu-qizhi.md",
-      "title": "定与走",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-yu-men/outputs/prompt-yu-men.md",
+      "title": "瘀证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 399
+      "chars": 484
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "08-xueyu-qizhi",
-      "chapterTitle": "第 8 章 · 血瘀与气滞：不通的两种写法",
+      "chapter": "08-yu-men",
+      "chapterTitle": "第 8 章 · 瘀证门（M08）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-xueyu-qizhi/outputs/skill-08-xueyu-qizhi.md",
-      "title": "定与走 · 可装载技能",
-      "name": null,
-      "description": null,
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-yu-men/outputs/skill-yu-men.md",
+      "title": "yu-men",
+      "name": "yu-men",
+      "description": "用「门→类→证→候」四级编码解析 瘀门（M08）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 430
+      "chars": 561
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "09-fenghan-fengre",
-      "chapterTitle": "第 9 章 · 风寒、风热与正虚邪恋：外感与残留",
+      "chapter": "09-tan-men",
+      "chapterTitle": "第 9 章 · 痰证门（M09）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-fenghan-fengre/outputs/prompt-09-fenghan-fengre.md",
-      "title": "三段定位",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-tan-men/outputs/prompt-tan-men.md",
+      "title": "痰证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 404
+      "chars": 493
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "09-fenghan-fengre",
-      "chapterTitle": "第 9 章 · 风寒、风热与正虚邪恋：外感与残留",
+      "chapter": "09-tan-men",
+      "chapterTitle": "第 9 章 · 痰证门（M09）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-fenghan-fengre/outputs/skill-09-fenghan-fengre.md",
-      "title": "三段定位 · 可装载技能",
-      "name": null,
-      "description": null,
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-tan-men/outputs/skill-tan-men.md",
+      "title": "tan-men",
+      "name": "tan-men",
+      "description": "用「门→类→证→候」四级编码解析 痰门（M09）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 429
+      "chars": 568
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "10-qita-cleanup",
-      "chapterTitle": "第 10 章 · 「其他」11 证：归类失败的样本",
+      "chapter": "10-yin-men",
+      "chapterTitle": "第 10 章 · 饮证门（M10）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-qita-cleanup/outputs/prompt-10-qita-cleanup.md",
-      "title": "归类五问",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-yin-men/outputs/prompt-yin-men.md",
+      "title": "饮证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 443
+      "chars": 482
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "10-qita-cleanup",
-      "chapterTitle": "第 10 章 · 「其他」11 证：归类失败的样本",
+      "chapter": "10-yin-men",
+      "chapterTitle": "第 10 章 · 饮证门（M10）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-qita-cleanup/outputs/skill-10-qita-cleanup.md",
-      "title": "归类五问 · 可装载技能",
-      "name": null,
-      "description": null,
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-yin-men/outputs/skill-yin-men.md",
+      "title": "yin-men",
+      "name": "yin-men",
+      "description": "用「门→类→证→候」四级编码解析 饮门（M10）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 495
+      "chars": 561
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "11-mingming-guifan",
-      "chapterTitle": "第 11 章 · 命名规范与 TM1 对齐",
+      "chapter": "11-shiji-men",
+      "chapterTitle": "第 11 章 · 食证门（M11）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-mingming-guifan/outputs/prompt-11-mingming-guifan.md",
-      "title": "证名拆栏",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-shiji-men/outputs/prompt-shiji-men.md",
+      "title": "食证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 423
+      "chars": 481
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "11-mingming-guifan",
-      "chapterTitle": "第 11 章 · 命名规范与 TM1 对齐",
+      "chapter": "11-shiji-men",
+      "chapterTitle": "第 11 章 · 食证门（M11）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-mingming-guifan/outputs/skill-11-mingming-guifan.md",
-      "title": "证名拆栏 · 可装载技能",
-      "name": null,
-      "description": null,
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-shiji-men/outputs/skill-shiji-men.md",
+      "title": "shiji-men",
+      "name": "shiji-men",
+      "description": "用「门→类→证→候」四级编码解析 食门（M11）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 442
+      "chars": 564
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "12-jianbie-yanbian-lianghua",
-      "chapterTitle": "第 12 章 · 鉴别、演变与量化",
+      "chapter": "12-xu-men",
+      "chapterTitle": "第 12 章 · 虚证门（M12）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-jianbie-yanbian-lianghua/outputs/prompt-12-jianbie-yanbian-lianghua.md",
-      "title": "三分单",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-xu-men/outputs/prompt-xu-men.md",
+      "title": "虚证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 439
+      "chars": 486
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "12-jianbie-yanbian-lianghua",
-      "chapterTitle": "第 12 章 · 鉴别、演变与量化",
+      "chapter": "12-xu-men",
+      "chapterTitle": "第 12 章 · 虚证门（M12）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-jianbie-yanbian-lianghua/outputs/skill-12-jianbie-yanbian-lianghua.md",
-      "title": "三分单 · 可装载技能",
-      "name": null,
-      "description": null,
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-xu-men/outputs/skill-xu-men.md",
+      "title": "xu-men",
+      "name": "xu-men",
+      "description": "用「门→类→证→候」四级编码解析 虚门（M12）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 450
+      "chars": 561
     },
     {
       "dept": "中医系",
@@ -108173,6 +108141,606 @@
       "description": "病历、知情同意与转诊——按「范围 → 解剖 → 病因 → 辨证 → 治法 → 病证 → 急症 → 合规」走一遍本章判据",
       "version": null,
       "chars": 374
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "01-duixiang-sanlei",
+      "chapterTitle": "第 1 章 · 修复学的对象：三类缺损与老年患者",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/01-duixiang-sanlei/outputs/prompt-01-duixiang-sanlei.md",
+      "title": "修复学的对象：三类缺损与老年患者 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 515
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "01-duixiang-sanlei",
+      "chapterTitle": "第 1 章 · 修复学的对象：三类缺损与老年患者",
+      "kind": "skill",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/01-duixiang-sanlei/outputs/skill-duixiang-sanlei.md",
+      "title": "修复学的对象：三类缺损与老年患者",
+      "name": null,
+      "description": "修复学的对象：三类缺损与老年患者——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+      "version": null,
+      "chars": 417
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "02-zong-yuanze",
+      "chapterTitle": "第 2 章 · 修复总原则：安全、有效、微创、健康、知情同意、姑息",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/02-zong-yuanze/outputs/prompt-02-zong-yuanze.md",
+      "title": "修复总原则：安全、有效、微创、健康、知情同意、姑息 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 550
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "02-zong-yuanze",
+      "chapterTitle": "第 2 章 · 修复总原则：安全、有效、微创、健康、知情同意、姑息",
+      "kind": "skill",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/02-zong-yuanze/outputs/skill-zong-yuanze.md",
+      "title": "修复总原则：安全、有效、微创、健康、知情同意、姑息",
+      "name": null,
+      "description": "修复总原则：安全、有效、微创、健康、知情同意、姑息——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+      "version": null,
+      "chars": 431
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "03-pinggu-quanshen",
+      "chapterTitle": "第 3 章 · 修复前全身评估：疾病、用药与口腔治疗史",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/03-pinggu-quanshen/outputs/prompt-03-pinggu-quanshen.md",
+      "title": "修复前全身评估：疾病、用药与口腔治疗史 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 524
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "03-pinggu-quanshen",
+      "chapterTitle": "第 3 章 · 修复前全身评估：疾病、用药与口腔治疗史",
+      "kind": "skill",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/03-pinggu-quanshen/outputs/skill-pinggu-quanshen.md",
+      "title": "修复前全身评估：疾病、用药与口腔治疗史",
+      "name": null,
+      "description": "修复前全身评估：疾病、用药与口腔治疗史——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+      "version": null,
+      "chars": 423
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "04-kouqiang-jiancha",
+      "chapterTitle": "第 4 章 · 修复前口腔检查与影像：七项增龄变化与片子的选择",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/04-kouqiang-jiancha/outputs/prompt-04-kouqiang-jiancha.md",
+      "title": "修复前口腔检查与影像：七项增龄变化与片子的选择 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 536
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "04-kouqiang-jiancha",
+      "chapterTitle": "第 4 章 · 修复前口腔检查与影像：七项增龄变化与片子的选择",
+      "kind": "skill",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/04-kouqiang-jiancha/outputs/skill-kouqiang-jiancha.md",
+      "title": "修复前口腔检查与影像：七项增龄变化与片子的选择",
+      "name": null,
+      "description": "修复前口腔检查与影像：七项增龄变化与片子的选择——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+      "version": null,
+      "chars": 432
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "05-shuqian-chuli",
+      "chapterTitle": "第 5 章 · 修复前处理、健康宣教与形式选择",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/05-shuqian-chuli/outputs/prompt-05-shuqian-chuli.md",
+      "title": "修复前处理、健康宣教与形式选择 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 520
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "05-shuqian-chuli",
+      "chapterTitle": "第 5 章 · 修复前处理、健康宣教与形式选择",
+      "kind": "skill",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/05-shuqian-chuli/outputs/skill-shuqian-chuli.md",
+      "title": "修复前处理、健康宣教与形式选择",
+      "name": null,
+      "description": "修复前处理、健康宣教与形式选择——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+      "version": null,
+      "chars": 413
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "06-quankou-yinmo",
+      "chapterTitle": "第 6 章 · 全口义齿的印模与模型：初印模、个别托盘、终印模",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/06-quankou-yinmo/outputs/prompt-06-quankou-yinmo.md",
+      "title": "全口义齿的印模与模型：初印模、个别托盘、终印模 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 548
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "06-quankou-yinmo",
+      "chapterTitle": "第 6 章 · 全口义齿的印模与模型：初印模、个别托盘、终印模",
+      "kind": "skill",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/06-quankou-yinmo/outputs/skill-quankou-yinmo.md",
+      "title": "全口义齿的印模与模型：初印模、个别托盘、终印模",
+      "name": null,
+      "description": "全口义齿的印模与模型：初印模、个别托盘、终印模——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+      "version": null,
+      "chars": 429
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "07-yipang-cadcam",
+      "chapterTitle": "第 7 章 · 椅旁 CAD/CAM 固定义齿：适应证、预备与后处理",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/07-yipang-cadcam/outputs/prompt-07-yipang-cadcam.md",
+      "title": "椅旁 CAD/CAM 固定义齿：适应证、预备与后处理 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 583
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "07-yipang-cadcam",
+      "chapterTitle": "第 7 章 · 椅旁 CAD/CAM 固定义齿：适应证、预备与后处理",
+      "kind": "skill",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/07-yipang-cadcam/outputs/skill-yipang-cadcam.md",
+      "title": "椅旁 CAD/CAM 固定义齿：适应证、预备与后处理",
+      "name": null,
+      "description": "椅旁 CAD/CAM 固定义齿：适应证、预备与后处理——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+      "version": null,
+      "chars": 431
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "08-cailiao-tiaohe",
+      "chapterTitle": "第 8 章 · 材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/08-cailiao-tiaohe/outputs/prompt-08-cailiao-tiaohe.md",
+      "title": "材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 584
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "08-cailiao-tiaohe",
+      "chapterTitle": "第 8 章 · 材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化",
+      "kind": "skill",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/08-cailiao-tiaohe/outputs/skill-cailiao-tiaohe.md",
+      "title": "材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化",
+      "name": null,
+      "description": "材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+      "version": null,
+      "chars": 430
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "09-citie-fucha",
+      "chapterTitle": "第 9 章 · 瓷贴面的复查与并发症：功能、美学、生物学三条线",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/09-citie-fucha/outputs/prompt-09-citie-fucha.md",
+      "title": "瓷贴面的复查与并发症：功能、美学、生物学三条线 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 548
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "09-citie-fucha",
+      "chapterTitle": "第 9 章 · 瓷贴面的复查与并发症：功能、美学、生物学三条线",
+      "kind": "skill",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/09-citie-fucha/outputs/skill-citie-fucha.md",
+      "title": "瓷贴面的复查与并发症：功能、美学、生物学三条线",
+      "name": null,
+      "description": "瓷贴面的复查与并发症：功能、美学、生物学三条线——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+      "version": null,
+      "chars": 427
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "10-piaobai",
+      "chapterTitle": "第 10 章 · 牙齿漂白：着色类型、适应证、方法与风险",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/10-piaobai/outputs/prompt-10-piaobai.md",
+      "title": "牙齿漂白：着色类型、适应证、方法与风险 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 582
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔修复学",
+      "subjectSlug": "12-kouqiang-xiufu-xue",
+      "chapter": "10-piaobai",
+      "chapterTitle": "第 10 章 · 牙齿漂白：着色类型、适应证、方法与风险",
+      "kind": "skill",
+      "file": "departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/10-piaobai/outputs/skill-piaobai.md",
+      "title": "牙齿漂白：着色类型、适应证、方法与风险",
+      "name": null,
+      "description": "牙齿漂白：着色类型、适应证、方法与风险——按「对象与原则 → 评估与检查 → 形式选择 → 印模与模型 → 椅旁 CAD/CAM → 材料与粘接 → 复查与漂白」走一遍本章判据",
+      "version": null,
+      "chars": 415
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "01-duixiang-congye",
+      "chapterTitle": "第 1 章 · 隐形矫治的对象与从业要求",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/01-duixiang-congye/outputs/prompt-01-duixiang-congye.md",
+      "title": "隐形矫治的对象与从业要求 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 506
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "01-duixiang-congye",
+      "chapterTitle": "第 1 章 · 隐形矫治的对象与从业要求",
+      "kind": "skill",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/01-duixiang-congye/outputs/skill-duixiang-congye.md",
+      "title": "隐形矫治的对象与从业要求",
+      "name": null,
+      "description": "隐形矫治的对象与从业要求——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+      "version": null,
+      "chars": 415
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "02-zhiliao-fengxian",
+      "chapterTitle": "第 2 章 · 治疗风险：依从性、移动偏差与并发症",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/02-zhiliao-fengxian/outputs/prompt-02-zhiliao-fengxian.md",
+      "title": "治疗风险：依从性、移动偏差与并发症 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 513
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "02-zhiliao-fengxian",
+      "chapterTitle": "第 2 章 · 治疗风险：依从性、移动偏差与并发症",
+      "kind": "skill",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/02-zhiliao-fengxian/outputs/skill-zhiliao-fengxian.md",
+      "title": "治疗风险：依从性、移动偏差与并发症",
+      "name": null,
+      "description": "治疗风险：依从性、移动偏差与并发症——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+      "version": null,
+      "chars": 426
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "03-shiyingzheng",
+      "chapterTitle": "第 3 章 · 适应证与可预测性分级",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/03-shiyingzheng/outputs/prompt-03-shiyingzheng.md",
+      "title": "适应证与可预测性分级 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 492
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "03-shiyingzheng",
+      "chapterTitle": "第 3 章 · 适应证与可预测性分级",
+      "kind": "skill",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/03-shiyingzheng/outputs/skill-shiyingzheng.md",
+      "title": "适应证与可预测性分级",
+      "name": null,
+      "description": "适应证与可预测性分级——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+      "version": null,
+      "chars": 408
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "04-ziliao-caiji",
+      "chapterTitle": "第 4 章 · 资料采集：影像与数字模型",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/04-ziliao-caiji/outputs/prompt-04-ziliao-caiji.md",
+      "title": "资料采集：影像与数字模型 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 502
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "04-ziliao-caiji",
+      "chapterTitle": "第 4 章 · 资料采集：影像与数字模型",
+      "kind": "skill",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/04-ziliao-caiji/outputs/skill-ziliao-caiji.md",
+      "title": "资料采集：影像与数字模型",
+      "name": null,
+      "description": "资料采集：影像与数字模型——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+      "version": null,
+      "chars": 412
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "05-fangan-sheji",
+      "chapterTitle": "第 5 章 · 方案设计流程：目标、虚拟排牙、顺序与附件",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/05-fangan-sheji/outputs/prompt-05-fangan-sheji.md",
+      "title": "方案设计流程：目标、虚拟排牙、顺序与附件 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 522
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "05-fangan-sheji",
+      "chapterTitle": "第 5 章 · 方案设计流程：目标、虚拟排牙、顺序与附件",
+      "kind": "skill",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/05-fangan-sheji/outputs/skill-fangan-sheji.md",
+      "title": "方案设计流程：目标、虚拟排牙、顺序与附件",
+      "name": null,
+      "description": "方案设计流程：目标、虚拟排牙、顺序与附件——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+      "version": null,
+      "chars": 428
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "06-tui-moya",
+      "chapterTitle": "第 6 章 · 推磨牙向远中：适应证、禁忌与设计",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/06-tui-moya/outputs/prompt-06-tui-moya.md",
+      "title": "推磨牙向远中：适应证、禁忌与设计 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 522
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "06-tui-moya",
+      "chapterTitle": "第 6 章 · 推磨牙向远中：适应证、禁忌与设计",
+      "kind": "skill",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/06-tui-moya/outputs/skill-tui-moya.md",
+      "title": "推磨牙向远中：适应证、禁忌与设计",
+      "name": null,
+      "description": "推磨牙向远中：适应证、禁忌与设计——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+      "version": null,
+      "chars": 416
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "07-linmian-quyou",
+      "chapterTitle": "第 7 章 · 邻面去釉：适应证、禁忌与操作规范",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/07-linmian-quyou/outputs/prompt-07-linmian-quyou.md",
+      "title": "邻面去釉：适应证、禁忌与操作规范 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 522
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "07-linmian-quyou",
+      "chapterTitle": "第 7 章 · 邻面去釉：适应证、禁忌与操作规范",
+      "kind": "skill",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/07-linmian-quyou/outputs/skill-linmian-quyou.md",
+      "title": "邻面去釉：适应证、禁忌与操作规范",
+      "name": null,
+      "description": "邻面去釉：适应证、禁忌与操作规范——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+      "version": null,
+      "chars": 421
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "08-fenbu-yidong",
+      "chapterTitle": "第 8 章 · 分步移动：为什么不能一次到位",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/08-fenbu-yidong/outputs/prompt-08-fenbu-yidong.md",
+      "title": "分步移动：为什么不能一次到位 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 512
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "08-fenbu-yidong",
+      "chapterTitle": "第 8 章 · 分步移动：为什么不能一次到位",
+      "kind": "skill",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/08-fenbu-yidong/outputs/skill-fenbu-yidong.md",
+      "title": "分步移动：为什么不能一次到位",
+      "name": null,
+      "description": "分步移动：为什么不能一次到位——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+      "version": null,
+      "chars": 416
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "09-jianxi-baochi",
+      "chapterTitle": "第 9 章 · 儿童间隙管理：五类保持器与选择",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/09-jianxi-baochi/outputs/prompt-09-jianxi-baochi.md",
+      "title": "儿童间隙管理：五类保持器与选择 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 532
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "09-jianxi-baochi",
+      "chapterTitle": "第 9 章 · 儿童间隙管理：五类保持器与选择",
+      "kind": "skill",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/09-jianxi-baochi/outputs/skill-jianxi-baochi.md",
+      "title": "儿童间隙管理：五类保持器与选择",
+      "name": null,
+      "description": "儿童间隙管理：五类保持器与选择——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+      "version": null,
+      "chars": 419
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "10-yiwei-chuneilie",
+      "chapterTitle": "第 10 章 · 异位萌出与唇腭裂序列中的正畸",
+      "kind": "prompt",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/10-yiwei-chuneilie/outputs/prompt-10-yiwei-chuneilie.md",
+      "title": "异位萌出与唇腭裂序列中的正畸 · 提示词",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 529
+    },
+    {
+      "dept": "五官口腔系",
+      "deptSlug": "08-wuguan",
+      "subject": "口腔正畸学",
+      "subjectSlug": "13-kouqiang-zhengji-xue",
+      "chapter": "10-yiwei-chuneilie",
+      "chapterTitle": "第 10 章 · 异位萌出与唇腭裂序列中的正畸",
+      "kind": "skill",
+      "file": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/10-yiwei-chuneilie/outputs/skill-yiwei-chuneilie.md",
+      "title": "异位萌出与唇腭裂序列中的正畸",
+      "name": null,
+      "description": "异位萌出与唇腭裂序列中的正畸——按「对象与风险 → 适应证分级 → 资料采集 → 方案设计 → 远移/去釉/分步 → 儿童间隙 → 序列治疗」走一遍本章判据",
+      "version": null,
+      "chars": 419
     },
     {
       "dept": "五官口腔系",

@@ -136,7 +136,7 @@
      "why": "《伤寒杂病论》杂病部分，宋人析出",
      "title": "金匮要略",
      "dept": "中医系",
-     "chapters": 10,
+     "chapters": 24,
      "units": 402,
      "hanzi": 31059,
      "school": "none",
@@ -151,7 +151,9 @@
       "痰饮咳嗽：水液代谢的失效",
       "消渴与淋病：津液与排泄",
       "妇人病三篇：经带胎产的辨证",
-      "杂病方剂的配伍规律与统计"
+      "杂病方剂的配伍规律与统计",
+      "肺痿肺痈咳嗽上气",
+      "奔豚气"
      ],
      "coupling": "断代"
     },
@@ -212,10 +214,10 @@
      "title": "方剂学",
      "dept": "中药系",
      "chapters": 15,
-     "units": 0,
-     "hanzi": 0,
-     "school": "none",
-     "schoolHits": 0,
+     "units": 138,
+     "hanzi": 358836,
+     "school": "ye-tianshi",
+     "schoolHits": 6914,
      "detail": [
       "方剂与治法：方从法出",
       "君臣佐使：组方的角色结构",
@@ -260,9 +262,9 @@
    ],
    "measured": {
     "subjects": 7,
-    "chapters": 79,
-    "units": 1416,
-    "hanzi": 444778
+    "chapters": 93,
+    "units": 1554,
+    "hanzi": 803614
    },
    "bottoms": [],
    "cross": {
@@ -879,9 +881,9 @@
     "气血",
     "津液"
    ],
-   "subjects": 117,
-   "units": 2973,
-   "hits": 10285
+   "subjects": 121,
+   "units": 3127,
+   "hits": 10774
   },
   {
    "term": "经络",
@@ -892,9 +894,9 @@
     "经脉",
     "络脉"
    ],
-   "subjects": 118,
-   "units": 2140,
-   "hits": 8411
+   "subjects": 122,
+   "units": 2209,
+   "hits": 8580
   },
   {
    "term": "脏腑辨证",
@@ -904,9 +906,9 @@
     "脏腑辨证",
     "脏腑"
    ],
-   "subjects": 111,
-   "units": 1834,
-   "hits": 5208
+   "subjects": 115,
+   "units": 1913,
+   "hits": 5354
   },
   {
    "term": "阴阳",
@@ -915,9 +917,9 @@
    "members": [
     "阴阳"
    ],
-   "subjects": 102,
-   "units": 1295,
-   "hits": 3376
+   "subjects": 107,
+   "units": 1348,
+   "hits": 3496
   },
   {
    "term": "三焦",
@@ -929,9 +931,9 @@
     "中焦",
     "下焦"
    ],
-   "subjects": 86,
-   "units": 1032,
-   "hits": 2636
+   "subjects": 90,
+   "units": 1130,
+   "hits": 2998
   },
   {
    "term": "藏象",
@@ -942,9 +944,24 @@
     "五脏",
     "六腑"
    ],
-   "subjects": 81,
-   "units": 788,
-   "hits": 2765
+   "subjects": 85,
+   "units": 815,
+   "hits": 2810
+  },
+  {
+   "term": "卫气营血",
+   "era": "mingqing",
+   "note": "叶天士四层状态机",
+   "members": [
+    "卫气营血",
+    "卫分",
+    "气分",
+    "营分",
+    "血分"
+   ],
+   "subjects": 97,
+   "units": 569,
+   "hits": 1261
   },
   {
    "term": "六经",
@@ -959,24 +976,9 @@
     "少阴病",
     "厥阴病"
    ],
-   "subjects": 62,
-   "units": 508,
-   "hits": 914
-  },
-  {
-   "term": "卫气营血",
-   "era": "mingqing",
-   "note": "叶天士四层状态机",
-   "members": [
-    "卫气营血",
-    "卫分",
-    "气分",
-    "营分",
-    "血分"
-   ],
-   "subjects": 92,
-   "units": 504,
-   "hits": 1023
+   "subjects": 66,
+   "units": 560,
+   "hits": 1020
   },
   {
    "term": "五行",
@@ -985,9 +987,9 @@
    "members": [
     "五行"
    ],
-   "subjects": 50,
-   "units": 216,
-   "hits": 558
+   "subjects": 53,
+   "units": 228,
+   "hits": 585
   },
   {
    "term": "参西",
@@ -1005,9 +1007,9 @@
     "铁锈",
     "微丝"
    ],
-   "subjects": 37,
-   "units": 183,
-   "hits": 368
+   "subjects": 40,
+   "units": 195,
+   "hits": 396
   },
   {
    "term": "八纲",
@@ -1016,24 +1018,24 @@
    "members": [
     "八纲"
    ],
-   "subjects": 46,
-   "units": 78,
-   "hits": 148
+   "subjects": 48,
+   "units": 88,
+   "hits": 161
   }
  ],
  "corpus": {
-  "scannedDirs": 183,
-  "scannedUnits": 19522,
-  "totalUnits": 19742,
-  "totalHanzi": 34464181,
+  "scannedDirs": 190,
+  "scannedUnits": 20625,
+  "totalUnits": 20845,
+  "totalHanzi": 35932942,
   "totalSubjects": 189,
-  "totalChapters": 2426
+  "totalChapters": 2553
  },
  "modern": {
   "subjects": 170,
   "chapters": 1943,
-  "units": 15802,
-  "hanzi": 31978174
+  "units": 16767,
+  "hanzi": 33088099
  },
  "schools": [
   {
@@ -1112,7 +1114,7 @@
      "title": "金匮要略",
      "slug": "08-jingui-yaolue",
      "era": "奠基",
-     "chapters": 10,
+     "chapters": 24,
      "coupling": "断代",
      "dir": "jingui"
     },
@@ -1123,6 +1125,14 @@
      "chapters": 14,
      "coupling": "断代",
      "dir": "zhongyao-xue"
+    },
+    {
+     "title": "方剂学",
+     "slug": "03-fangjixue",
+     "era": "奠基",
+     "chapters": 15,
+     "coupling": "断代",
+     "dir": "fangji"
     },
     {
      "title": "中药炮制学",
@@ -1163,13 +1173,6 @@
      "slug": "16-zhongyi-zhexue-shi",
      "era": "奠基",
      "chapters": 8,
-     "coupling": "断代"
-    },
-    {
-     "title": "方剂学",
-     "slug": "03-fangjixue",
-     "era": "奠基",
-     "chapters": 15,
      "coupling": "断代"
     },
     {
@@ -1259,15 +1262,15 @@
   "thinCoords": [
    {
     "term": "八纲",
-    "units": 78,
-    "subjects": 46
+    "units": 88,
+    "subjects": 48
    }
   ],
   "note": "原文在库、但没切成 units.json 的，单元层为 0——它们不是「没内容」，而是没进统计口径；底本目录缺席的，才是真要补源。坐标系命中偏低处，须先看这两类缺口，再谈术语稀疏。"
  },
  "totals": {
   "canonSubjects": 19,
-  "canonChapters": 197,
+  "canonChapters": 211,
   "eras": 7
  }
 }

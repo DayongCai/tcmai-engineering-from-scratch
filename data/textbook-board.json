@@ -1,6 +1,6 @@
 {
   "$generated": "node scripts/build_textbook_board.js",
-  "generatedAt": "2026-11-12",
+  "generatedAt": "2026-11-14",
   "rules": {
     "weeks": 18,
     "teachWeeks": 16,
@@ -19,32 +19,32 @@
     "electives": 18,
     "hours": 11547,
     "chaptersTarget": 2154,
-    "textbookSubjects": 127,
-    "baseSubjects": 102,
+    "textbookSubjects": 128,
+    "baseSubjects": 103,
     "extSubjects": 7,
     "hbSubjects": 18,
-    "baseHours": 5895,
+    "baseHours": 5967,
     "extHours": 414,
     "hbHours": 1620,
-    "baseChapters": 1699,
+    "baseChapters": 1711,
     "extChapters": 755,
     "hbChapters": 130,
-    "baseNonWs": 30704710,
+    "baseNonWs": 34443340,
     "extNonWs": 711393,
     "hbNonWs": 127928,
-    "coverageBaseHours": 51.1,
-    "coverageBaseSubjects": 54,
-    "textbookHours": 7929,
-    "chapters": 2584,
-    "hanzi": 26746613,
-    "nonWs": 31544031,
-    "metaWords": 30253360,
+    "coverageBaseHours": 51.7,
+    "coverageBaseSubjects": 54.5,
+    "textbookHours": 8001,
+    "chapters": 2596,
+    "hanzi": 29253856,
+    "nonWs": 35282661,
+    "metaWords": 30461965,
     "registryChapters": 1621,
     "registryChars": 28596788,
     "registryFiles": 100,
     "registrySubjects": 101,
-    "coverageSubjects": 67.2,
-    "coverageHours": 68.7,
+    "coverageSubjects": 67.7,
+    "coverageHours": 69.3,
     "semesters": 10
   },
   "prereqStats": {
@@ -127,7 +127,7 @@
       "subjects": 35,
       "hours": 1926,
       "weekly": 107,
-      "textbooks": 14,
+      "textbooks": 15,
       "depts": 8
     },
     {
@@ -829,13 +829,13 @@
           "bridge": "证候→本体建模 / 证型标准化→嵌入聚类",
           "textbook": {
             "dir": "textbooks/01-zhongyi/14-zhongyi-zhenghou-xue",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
+            "exists": true,
+            "chapters": 12,
+            "hanzi": 2507243,
+            "nonWs": 3738630,
+            "metaChapters": 12,
+            "metaWords": 208605,
+            "status": "done",
             "layer": null,
             "origin": "base",
             "external": null,
@@ -856,9 +856,7 @@
             "depth": 5,
             "order": 17
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "01-zhongyi",
@@ -2126,13 +2124,13 @@
           "bridge": "证候→本体建模 / 证型标准化→嵌入聚类",
           "textbook": {
             "dir": "textbooks/01-zhongyi/14-zhongyi-zhenghou-xue",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
+            "exists": true,
+            "chapters": 12,
+            "hanzi": 2507243,
+            "nonWs": 3738630,
+            "metaChapters": 12,
+            "metaWords": 208605,
+            "status": "done",
             "layer": null,
             "origin": "base",
             "external": null,
@@ -2153,9 +2151,7 @@
             "depth": 5,
             "order": 17
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "01-zhongyi",
@@ -2780,7 +2776,7 @@
           "count": 3,
           "hours": 162,
           "weekly": 9,
-          "textbooks": 2,
+          "textbooks": 3,
           "subjects": [
             {
               "order": 15,
@@ -2830,8 +2826,8 @@
               "halfTerm": null,
               "chaptersTarget": 12,
               "chaptersPerWeek": 0.8,
-              "chapters": 0,
-              "status": "planned",
+              "chapters": 12,
+              "status": "done",
               "origin": "base",
               "prereqCount": 3,
               "depth": 5
@@ -2995,26 +2991,26 @@
         "electives": 5,
         "hours": 1458,
         "chaptersTarget": 276,
-        "textbookSubjects": 20,
-        "baseSubjects": 18,
+        "textbookSubjects": 21,
+        "baseSubjects": 19,
         "extSubjects": 0,
         "hbSubjects": 2,
-        "baseHours": 1116,
+        "baseHours": 1188,
         "extHours": 0,
         "hbHours": 180,
-        "baseChapters": 250,
+        "baseChapters": 262,
         "extChapters": 0,
         "hbChapters": 34,
-        "baseNonWs": 4201590,
+        "baseNonWs": 7940220,
         "extNonWs": 0,
         "hbNonWs": 43262,
-        "coverageBaseHours": 76.5,
-        "textbookHours": 1296,
-        "chapters": 284,
-        "hanzi": 3390731,
-        "nonWs": 4244852,
-        "coverageSubjects": 87,
-        "coverageHours": 88.9,
+        "coverageBaseHours": 81.5,
+        "textbookHours": 1368,
+        "chapters": 296,
+        "hanzi": 5897974,
+        "nonWs": 7983482,
+        "coverageSubjects": 91.3,
+        "coverageHours": 93.8,
         "semesterSpan": "1–10",
         "peakWeekly": 14,
         "peakSemester": 5
@@ -23065,14 +23061,6 @@
           "note": "未入库"
         },
         {
-          "slug": "14-zhongyi-zhenghou-xue",
-          "title": "中医证候学",
-          "type": "Build",
-          "semester": 7,
-          "hours": 72,
-          "note": "未入库"
-        },
-        {
           "slug": "23-zhongcan-xilu-xuandu",
           "title": "医学衷中参西录选读",
           "type": "Reference",
@@ -23658,10 +23646,10 @@
   "checks": {
     "curriculumSubjects": 189,
     "curriculumHours": 11547,
-    "diskChapters": 2584,
-    "diskHanzi": 26746613,
+    "diskChapters": 2596,
+    "diskHanzi": 29253856,
     "registryFiles": 100,
-    "subjectsWithoutTextbook": 62,
+    "subjectsWithoutTextbook": 61,
     "unmatchedRegistrySubjects": []
   }
 }

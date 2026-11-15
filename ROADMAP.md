@@ -3,7 +3,7 @@
 全部院系、学科、章节的状态追踪。本文件由 `scripts/build_roadmap.js` 从
 `curriculum.json` 与文件系统实测状态生成；**勿手工编辑**。
 
-总计划学时 **11547** 小时 · 章节目标 **2154** · 已建章节 **2134**
+总计划学时 **11547** 小时 · 章节目标 **2154** · 已建章节 **2154**
 
 **图例:** ✅ 完成 &nbsp;·&nbsp; 🚧 进行中 &nbsp;·&nbsp; ⬚ 计划
 
@@ -12,9 +12,9 @@
 | 维度 | 已完成 | 总量 | 完成率 |
 |------|-------|------|-------|
 | 院系 | — | 9 | — |
-| 学科 | 187 | 189 | 98.9% |
+| 学科 | 189 | 189 | 100.0% |
 | 学科（进行中） | 0 | 189 | 0.0% |
-| 章节 | 2134 | 2154 | 99.07% |
+| 章节 | 2154 | 2154 | 100.00% |
 
 ## 阶段视图（生长壮老已）
 
@@ -22,7 +22,7 @@
 |------|------|------|------|------|---------|---------|------|
 | 🌱 生·启蒙 | 1, 2, 3, 4 | 大一–大二 | 56 | 3402 | 730 | 730 | ✅ |
 | 🌿 长·积累 | 5, 6 | 大三 | 62 | 3789 | 709 | 709 | ✅ |
-| 🌳 壮·鼎盛 | 7, 8 | 大四 | 53 | 2736 | 585 | 565 | 🚧 |
+| 🌳 壮·鼎盛 | 7, 8 | 大四 | 53 | 2736 | 585 | 585 | ✅ |
 | 🍂 老·固化 | 9 | 大五上 | 9 | 972 | 54 | 54 | ✅ |
 | 🔄 已·转型 | 10 | 大五下 | 9 | 648 | 76 | 76 | ✅ |
 
@@ -212,8 +212,8 @@
 | 12 | [数字人体与虚拟仿真](departments/07-zhineng/12-shuzi-renti-xuni-fangzhen/) | 智能系 | Build | 54 | 8/8 | ✅ |
 | 13 | [中医多模态数据融合](departments/07-zhineng/13-zhongyi-duomotai-ronghe/) | 智能系 | Build | 72 | 10/10 | ✅ |
 | 11 | [口腔颌面外科学](departments/08-wuguan/11-kouqiang-hemian-waike/) | 五官口腔系 | Clinic | 72 | 10/10 | ✅ |
-| 12 | [口腔修复学](departments/08-wuguan/12-kouqiang-xiufu-xue/) | 五官口腔系 | Clinic | 72 | 0/10 | ⬚ |
-| 13 | [口腔正畸学](departments/08-wuguan/13-kouqiang-zhengji-xue/) | 五官口腔系 | Clinic | 72 | 0/10 | ⬚ |
+| 12 | [口腔修复学](departments/08-wuguan/12-kouqiang-xiufu-xue/) | 五官口腔系 | Clinic | 72 | 10/10 | ✅ |
+| 13 | [口腔正畸学](departments/08-wuguan/13-kouqiang-zhengji-xue/) | 五官口腔系 | Clinic | 72 | 10/10 | ✅ |
 | 14 | [中医嗓音医学](departments/08-wuguan/14-zhongyi-sangyin-yixue/) | 五官口腔系 | Build | 54 | 8/8 | ✅ |
 
 ### 第 8 学期 · 🌳壮（18 门 / 810 学时 / 198 章）
@@ -280,13 +280,13 @@
 | 05 | [中医诊断学](departments/01-zhongyi/05-zhongyi-zhen-duan-xue/) | 3 | Core | 90 | 12/12 | 0 | 27465 字 | ✅ |
 | 06 | [内经选读](departments/01-zhongyi/06-neijing-xuandu/) | 3 | Core | 72 | 10/10 | 0 | 214136 字 | ✅ |
 | 07 | [伤寒论](departments/01-zhongyi/07-shanghanlun/) | 4 | Core | 90 | 12/12 | 0 | 118973 字 | ✅ |
-| 08 | [金匮要略](departments/01-zhongyi/08-jingui-yaolue/) | 5 | Core | 72 | 24/24 | 24 | 0 字 | ✅ |
+| 08 | [金匮要略](departments/01-zhongyi/08-jingui-yaolue/) | 5 | Core | 72 | 24/24 | 24 | 703867 字 | ✅ |
 | 09 | [温病学](departments/01-zhongyi/09-wenbing-xue/) | 5 | Core | 72 | 10/10 | 0 | 231982 字 | ✅ |
 | 10 | [中医内科学](departments/01-zhongyi/10-zhongyi-neike-xue/) | 5 | Clinic | 108 | 14/14 | 0 | 405580 字 | ✅ |
 | 11 | [中医外科学](departments/01-zhongyi/11-zhongyi-waike-xue/) | 6 | Clinic | 72 | 13/13 | 0 | 298235 字 | ✅ |
 | 12 | [中医妇科学](departments/01-zhongyi/12-zhongyi-fuke-xue/) | 6 | Clinic | 72 | 13/13 | 0 | 288344 字 | ✅ |
 | 13 | [中医儿科学](departments/01-zhongyi/13-zhongyi-erke-xue/) | 6 | Clinic | 72 | 14/14 | 0 | 275093 字 | ✅ |
-| 14 | [中医证候学](departments/01-zhongyi/14-zhongyi-zhenghou-xue/) | 7 | Build | 72 | 12/12 | 0 | 0 字 | ✅ |
+| 14 | [中医证候学](departments/01-zhongyi/14-zhongyi-zhenghou-xue/) | 7 | Build | 72 | 12/12 | 0 | 126458 字 | ✅ |
 | 15 | [中医各家学说](departments/01-zhongyi/15-zhongyi-gejia-xueshuo/) | 7 | Reference | 54 | 8/8 | 0 | 397230 字 | ✅ |
 | 16 | [中医哲学史](departments/01-zhongyi/16-zhongyi-zhexue-shi/) | 2 | Reference | 36 | 8/8 | 0 | 29208 字 | ✅ |
 | 17 | [中医急诊学](departments/01-zhongyi/17-zhongyi-jizhen-xue/) | 8 | Reference | 36 | 12/12 | 0 | 179742 字 | ✅ |
@@ -459,7 +459,7 @@
 | 18 | [工程实践与系统交付](departments/07-zhineng/18-zhineng-gongcheng-shijian/) | 9 | Build | 108 | 6/6 | 0 | 3539 字 | ✅ |
 | 19 | [智能系毕业设计与知识移交](departments/07-zhineng/19-zhineng-biye-sheji/) | 10 | Build | 72 | 6/6 | 0 | 3256 字 | ✅ |
 
-### 👁️ 五官口腔系 — 🚧（124/144 章 · 1098 学时）
+### 👁️ 五官口腔系 — ✅（144/144 章 · 1098 学时）
 
 | # | 学科 | 学期 | 类型 | 学时 | 章节 | 视频 [tcmP] | 教材 [textbooks] | 状态 |
 |---|---|------|------|------|------|-----------|---------------|------|
@@ -474,8 +474,8 @@
 | 09 | [口腔内科学](departments/08-wuguan/09-kouqiang-neike-xue/) | 6 | Clinic | 72 | 10/10 | 0 | 0 字 | ✅ |
 | 10 | [眼科影像与检查技术](departments/08-wuguan/10-yanke-yingxiang-jiancha/) | 6 | Build | 54 | 8/8 | 0 | 0 字 | ✅ |
 | 11 | [口腔颌面外科学](departments/08-wuguan/11-kouqiang-hemian-waike/) | 7 | Clinic | 72 | 10/10 | 0 | 0 字 | ✅ |
-| 12 | [口腔修复学](departments/08-wuguan/12-kouqiang-xiufu-xue/) | 7 | Clinic | 72 | 0/10 | 0 | 0 字 | ⬚ |
-| 13 | [口腔正畸学](departments/08-wuguan/13-kouqiang-zhengji-xue/) | 7 | Clinic | 72 | 0/10 | 0 | 0 字 | ⬚ |
+| 12 | [口腔修复学](departments/08-wuguan/12-kouqiang-xiufu-xue/) | 7 | Clinic | 72 | 10/10 | 0 | 0 字 | ✅ |
+| 13 | [口腔正畸学](departments/08-wuguan/13-kouqiang-zhengji-xue/) | 7 | Clinic | 72 | 10/10 | 0 | 0 字 | ✅ |
 | 14 | [中医嗓音医学](departments/08-wuguan/14-zhongyi-sangyin-yixue/) | 7 | Build | 54 | 8/8 | 0 | 25940 字 | ✅ |
 | 15 | [中医美容与皮肤治疗学](departments/08-wuguan/15-zhongyi-meirong-pifu/) | 8 | Build | 54 | 8/8 | 0 | 202647 字 | ✅ |
 | 16 | [五官口腔临床轮转](departments/08-wuguan/16-wuguan-linchuang-lunzhuan/) | 9 | Clinic | 108 | 6/6 | 0 | 3579 字 | ✅ |

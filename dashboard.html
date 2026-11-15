@@ -60,24 +60,24 @@
   <div class="kpis">
     <div class="kpi"><div class="k">领域 / 院系</div><div class="v">1 / 9</div></div>
     <div class="kpi"><div class="k">学科</div><div class="v">189</div></div>
-    <div class="kpi"><div class="k">章节（目标）</div><div class="v">2140</div></div>
-    <div class="kpi"><div class="k">已建章节</div><div class="v">2120<small>99.07%</small></div></div>
-    <div class="kpi"><div class="k">书稿文件</div><div class="v">1675<small>md · 外源 755 · 手册 130</small></div></div>
-    <div class="kpi"><div class="k">视频成片</div><div class="v">126</div></div>
-    <div class="kpi"><div class="k">产出物</div><div class="v">4240<small>undefined 章</small></div></div>
-    <div class="kpi"><div class="k">测试套件</div><div class="v">89</div></div>
-    <div class="kpi"><div class="k">扫描 md</div><div class="v">9525<small>0 断链</small></div></div>
+    <div class="kpi"><div class="k">章节（目标）</div><div class="v">2154</div></div>
+    <div class="kpi"><div class="k">已建章节</div><div class="v">2154<small>100.00%</small></div></div>
+    <div class="kpi"><div class="k">书稿文件</div><div class="v">1699<small>md · 外源 755 · 手册 130</small></div></div>
+    <div class="kpi"><div class="k">视频成片</div><div class="v">150</div></div>
+    <div class="kpi"><div class="k">产出物</div><div class="v">4308<small>undefined 章</small></div></div>
+    <div class="kpi"><div class="k">测试套件</div><div class="v">96</div></div>
+    <div class="kpi"><div class="k">扫描 md</div><div class="v">9662<small>0 断链</small></div></div>
     <div class="kpi"><div class="k">版本</div><div class="v">1.44.0</div></div>
   </div>
 
   <h2>项目逻辑 · 数据流</h2>
   <div class="flow">
     <div class="step"><div class="n">桌面源资料</div><div class="d">108 项 · 45 xlsx / 16 docx / 4 旧 .xls</div><div class="r">解析入库，绝不手抄</div></div>
-    <div class="step"><div class="n">standards/</div><div class="d">198 个域 · 带 sources/ 原件 + sha256</div><div class="r">派生物（content.json）不入库</div></div>
-    <div class="step"><div class="n">curriculum.json</div><div class="d">单一事实来源</div><div class="r">1 领域 / 9 院系 / 189 学科 / 2140 章节</div></div>
-    <div class="step"><div class="n">departments/</div><div class="d">课程骨架（章节契约：docs + code + quiz + outputs）</div><div class="r">已建 2120 章</div></div>
+    <div class="step"><div class="n">standards/</div><div class="d">200 个域 · 带 sources/ 原件 + sha256</div><div class="r">派生物（content.json）不入库</div></div>
+    <div class="step"><div class="n">curriculum.json</div><div class="d">单一事实来源</div><div class="r">1 领域 / 9 院系 / 189 学科 / 2154 章节</div></div>
+    <div class="step"><div class="n">departments/</div><div class="d">课程骨架（章节契约：docs + code + quiz + outputs）</div><div class="r">已建 2154 章</div></div>
     <div class="step"><div class="n">[tcmP] + [textbooks]</div><div class="d">两条交付物线</div><div class="r">站点/视频 · 教材/书</div></div>
-    <div class="step"><div class="n">质量门</div><div class="d">L0–L3 审计 · 链接 · 计数 · 产出物索引</div><div class="r">89 套件</div></div>
+    <div class="step"><div class="n">质量门</div><div class="d">L0–L3 审计 · 链接 · 计数 · 产出物索引</div><div class="r">96 套件</div></div>
   </div>
 
   <h2>工作流状态</h2>
@@ -87,19 +87,19 @@
     <tr><td>[tcmP] 平台 · 站点</td><td><span class="pill s-done">已完成</span></td>
         <td>site/ 9 个页面 · data/content/semtensor-spec/manifest/stats 生成于构建<div class="why">静态站 + 单文件离线快照；Range 请求与路径穿越防护已测</div></td></tr>
     <tr><td>[tcmP] 平台 · 视频流水线</td><td><span class="pill s-done">已完成</span></td>
-        <td>126 成片 · 1892 配音 · 3231 帧 · 252 幻灯片/讲稿件<div class="why">TTS 降级链 edge-tts → Windows SAPI → 人工；时长用实测配音时长；字幕对视音差逐章实测（毫秒级）</div></td></tr>
+        <td>150 成片 · 2137 配音 · 3709 帧 · 300 幻灯片/讲稿件<div class="why">TTS 降级链 edge-tts → Windows SAPI → 人工；时长用实测配音时长；字幕对视音差逐章实测（毫秒级）</div></td></tr>
     <tr><td>[textbooks] 教材 · 内容</td><td><span class="pill s-active">进行中</span></td>
-        <td>5 卷 · 已写 1675 章（底本）+ 755 章（外源）+ 130 章（手册）· 构建产物 6 件<div class="why">教材正文 = 章节 docx 的 docs/zh.md 汇总；同时出单文件书 HTML（不需要 pandoc）</div></td></tr>
+        <td>5 卷 · 已写 1699 章（底本）+ 755 章（外源）+ 130 章（手册）· 构建产物 6 件<div class="why">教材正文 = 章节 docx 的 docs/zh.md 汇总；同时出单文件书 HTML（不需要 pandoc）</div></td></tr>
     <tr><td>课程骨架 · 学科/章节</td><td><span class="pill s-active">进行中</span></td>
-        <td>189 学科已建目录 · 已建章节 2120/2140（99.07%）<div class="why">curriculum.json 为单一事实来源；审计对 120 个空学科全绿是第一个里程碑</div></td></tr>
+        <td>189 学科已建目录 · 已建章节 2154/2154（100.00%）<div class="why">curriculum.json 为单一事实来源；审计对 120 个空学科全绿是第一个里程碑</div></td></tr>
     <tr><td>源资料入库</td><td><span class="pill s-done">已完成</span></td>
-        <td>standards/ 198 个域：01-yixue-tongjixue · 02-zhongyiyao-zhengce-fagui · 03-zhongyi-guanli-xue · 04-weisheng-shiye-guanli · 05-zhongyi-wenhua-chuanbo · 06-yiyuan-guanli-xue · 07-zhongyi-jiaoyu-xue · 08-jiankang-fuwu-guanli · 09-yiliao-baoxian-jingji · 10-yixue-xinxi-guanli · 11-yiyuan-xinxihua-bingan · 12-zhongyiyao-biaozhunhua · 13-linchuang-keyan-fangfa · 15-zhongyi-guojijiaoyu · 16-gonggong-guanli-xue · 17-guanli-xue-jichu · 18-guanli-xinli-xue · 19-shehui-yixue · 20-weisheng-fa-xue · 21-yixue-lunli-xue · 22-yiyao-renli-ziyuan · 23-yiyuan-kuaiji-caiwu · 24-zhongyi-jiankang-guanli · 25-guanli-shixi-shijian · 26-guanli-biye-sheji · bingli · binglishengli · biye · cifa-jiufa · daodi-yaocai · endpoints · erbihou-jiepou-shengli · erke · erke-huli · erxue-zhenduan-xue · fangji · fuchanke-huli · fuke · gejia · gongfa · guanli-xue-jichu · gubing · gushang-bing · gushang-biye · gushang-chuangshang-jijiu · gushang-guzhishusong · gushang-jichu · gushang-jiepou · gushang-jinshang · gushang-jizhu-bing · gushang-kangfu-gongcheng · gushang-kangfu-pingding · gushang-lunzhuan · gushang-shoufa-zhiliao · gushang-yingxiang · gushang-yundong-yixue · gushang-zhengji · huli-biye · huli-daolun · huli-guanli-xue · huli-lunli-fagui · huli-lunzhuan · huli-renwen-goutong · huli-xinli-xue · huli-yanjiu-zhengxun · huli-zonghe-jineng · icd11 · jiankang-pinggu · jibing-xue-jichu · jichu · jichu-biye-sheji · jichu-huli · jichu-keyan-shixun · jijiu-huli · jingluo · jingshen · jingshenke-huli-xue · jingui · jiqi-xuexi · jiwei-huli · jizhen · jubu-jiepou-xue · kangfu-huli · kangfu-yixue-jichu · knowledge-structure · knowledge-tree · kouqiang-hemian-waike · kouqiang-jiepou-shengli · kouqiang-neike-xue · laonian · laonian-huli · leijing-tuyi · linchuang-zhongyao · liuxingbing-xue · llm-yu-zhongyi-zhinengti · lunzhuan · maizhen-keguanhua · materials · mianyi-bingyuan-shengwu · neijing-xuandu · neike · neike-huli · peiwu-yu-jinji · qigong · renti-jiepou-xue · semtensor · shanghan · shenghua-xue · shengli · shequ-huli-xue · shiyan-zhenjiu · shoufa · shuxue · shuzi-renti-xuni-fangzhen · tizhi · tuina · waike · waike-huli · wenbing · wuguan-biye-sheji · wuguan-linchuang-lunzhuan · wuli-zhiliao · xiaoer-tuina · yanke-guangxue-yanguang · yanke-yingxiang-jiancha · yaoli · yaoshi-guanli · yaoyong-zhiwu-xue · yiguwen · yixue-rengong-zhineng-daolun · yixue-shengwu-xue · yixue-shuju-anquan-yinsi · yixue-tuxiang-shezhen · yixue-xibao-shengwu-xue · yixue-yichuan-xue · zhendao-yixue · zhenduan · zhengchang-renti-xue · zhenggu · zhenghou · zhenjiu-biye · zhenjiu-gejia · zhenjiu-lunzhuan2 · zhenjiu-xue · zhenjiu-yiji · zhenjiu-zhentong-mazui · zhenjiu-zhiliao · zhexue · zhiliao · zhineng-biye-sheji · zhineng-gongcheng-shijian · zhishichanquan-zhuanhua · zhongcan-xilu · zhongchengyao-linchuang · zhongguo-yixue-shi · zhongyao · zhongyao-biye · zhongyao-du-li · zhongyao-fenxi · zhongyao-huaxue · zhongyao-jianding · zhongyao-paozhi · zhongyao-shangpin · zhongyao-shijian · zhongyao-xinyao · zhongyao-xue · zhongyao-yaodai-donglixue · zhongyao-yaoji · zhongyao-yaoli · zhongyao-ziyuan · zhongyi-ai-lunli-zhili · zhongyi-dashuju-fenxi · zhongyi-duomotai-ronghe · zhongyi-erbihou-xue · zhongyi-huli · zhongyi-huli-jichu · zhongyi-huli-jishu · zhongyi-jiqiren-xue · zhongyi-kangfu-xue · zhongyi-kouqiang-kexue · zhongyi-linchuang · zhongyi-meirong-pifu · zhongyi-mianbu-wangzhen · zhongyi-ruanjian-jiagou · zhongyi-sangyin-yixue · zhongyi-wuguan-jingdian · zhongyi-xinli-xue · zhongyi-xinxi-xue · zhongyi-yangsheng-xue · zhongyi-yanke-xue · zhongyi-yundong · zhongyi-zhineng-bianzheng · zhongyi-zhineng-yiqi · zhongyi-zhishishu · zhongyi-ziran-yuyan-chuli · zuzhi-peitai-xue · _probe_eh · _probe_yk<div class="why">解析入库、绝不手抄；各带 sources/ 原件 + sha256 溯源；派生 content.json 不入库</div></td></tr>
+        <td>standards/ 200 个域：01-yixue-tongjixue · 02-zhongyiyao-zhengce-fagui · 03-zhongyi-guanli-xue · 04-weisheng-shiye-guanli · 05-zhongyi-wenhua-chuanbo · 06-yiyuan-guanli-xue · 07-zhongyi-jiaoyu-xue · 08-jiankang-fuwu-guanli · 09-yiliao-baoxian-jingji · 10-yixue-xinxi-guanli · 11-yiyuan-xinxihua-bingan · 12-zhongyiyao-biaozhunhua · 13-linchuang-keyan-fangfa · 15-zhongyi-guojijiaoyu · 16-gonggong-guanli-xue · 17-guanli-xue-jichu · 18-guanli-xinli-xue · 19-shehui-yixue · 20-weisheng-fa-xue · 21-yixue-lunli-xue · 22-yiyao-renli-ziyuan · 23-yiyuan-kuaiji-caiwu · 24-zhongyi-jiankang-guanli · 25-guanli-shixi-shijian · 26-guanli-biye-sheji · bingli · binglishengli · biye · cifa-jiufa · daodi-yaocai · endpoints · erbihou-jiepou-shengli · erke · erke-huli · erxue-zhenduan-xue · fangji · fuchanke-huli · fuke · gejia · gongfa · guanli-xue-jichu · gubing · gushang-bing · gushang-biye · gushang-chuangshang-jijiu · gushang-guzhishusong · gushang-jichu · gushang-jiepou · gushang-jinshang · gushang-jizhu-bing · gushang-kangfu-gongcheng · gushang-kangfu-pingding · gushang-lunzhuan · gushang-shoufa-zhiliao · gushang-yingxiang · gushang-yundong-yixue · gushang-zhengji · huli-biye · huli-daolun · huli-guanli-xue · huli-lunli-fagui · huli-lunzhuan · huli-renwen-goutong · huli-xinli-xue · huli-yanjiu-zhengxun · huli-zonghe-jineng · icd11 · jiankang-pinggu · jibing-xue-jichu · jichu · jichu-biye-sheji · jichu-huli · jichu-keyan-shixun · jijiu-huli · jingluo · jingshen · jingshenke-huli-xue · jingui · jiqi-xuexi · jiwei-huli · jizhen · jubu-jiepou-xue · kangfu-huli · kangfu-yixue-jichu · knowledge-structure · knowledge-tree · kouqiang-hemian-waike · kouqiang-jiepou-shengli · kouqiang-neike-xue · kouqiang-xiufu · kouqiang-zhengji · laonian · laonian-huli · leijing-tuyi · linchuang-zhongyao · liuxingbing-xue · llm-yu-zhongyi-zhinengti · lunzhuan · maizhen-keguanhua · materials · mianyi-bingyuan-shengwu · neijing-xuandu · neike · neike-huli · peiwu-yu-jinji · qigong · renti-jiepou-xue · semtensor · shanghan · shenghua-xue · shengli · shequ-huli-xue · shiyan-zhenjiu · shoufa · shuxue · shuzi-renti-xuni-fangzhen · tizhi · tuina · waike · waike-huli · wenbing · wuguan-biye-sheji · wuguan-linchuang-lunzhuan · wuli-zhiliao · xiaoer-tuina · yanke-guangxue-yanguang · yanke-yingxiang-jiancha · yaoli · yaoshi-guanli · yaoyong-zhiwu-xue · yiguwen · yixue-rengong-zhineng-daolun · yixue-shengwu-xue · yixue-shuju-anquan-yinsi · yixue-tuxiang-shezhen · yixue-xibao-shengwu-xue · yixue-yichuan-xue · zhendao-yixue · zhenduan · zhengchang-renti-xue · zhenggu · zhenghou · zhenjiu-biye · zhenjiu-gejia · zhenjiu-lunzhuan2 · zhenjiu-xue · zhenjiu-yiji · zhenjiu-zhentong-mazui · zhenjiu-zhiliao · zhexue · zhiliao · zhineng-biye-sheji · zhineng-gongcheng-shijian · zhishichanquan-zhuanhua · zhongcan-xilu · zhongchengyao-linchuang · zhongguo-yixue-shi · zhongyao · zhongyao-biye · zhongyao-du-li · zhongyao-fenxi · zhongyao-huaxue · zhongyao-jianding · zhongyao-paozhi · zhongyao-shangpin · zhongyao-shijian · zhongyao-xinyao · zhongyao-xue · zhongyao-yaodai-donglixue · zhongyao-yaoji · zhongyao-yaoli · zhongyao-ziyuan · zhongyi-ai-lunli-zhili · zhongyi-dashuju-fenxi · zhongyi-duomotai-ronghe · zhongyi-erbihou-xue · zhongyi-huli · zhongyi-huli-jichu · zhongyi-huli-jishu · zhongyi-jiqiren-xue · zhongyi-kangfu-xue · zhongyi-kouqiang-kexue · zhongyi-linchuang · zhongyi-meirong-pifu · zhongyi-mianbu-wangzhen · zhongyi-ruanjian-jiagou · zhongyi-sangyin-yixue · zhongyi-wuguan-jingdian · zhongyi-xinli-xue · zhongyi-xinxi-xue · zhongyi-yangsheng-xue · zhongyi-yanke-xue · zhongyi-yundong · zhongyi-zhineng-bianzheng · zhongyi-zhineng-yiqi · zhongyi-zhishishu · zhongyi-ziran-yuyan-chuli · zuzhi-peitai-xue · _probe_eh · _probe_yk<div class="why">解析入库、绝不手抄；各带 sources/ 原件 + sha256 溯源；派生 content.json 不入库</div></td></tr>
     <tr><td>嵌入层（embedding-code 规格）</td><td><span class="pill s-block">受阻</span></td>
         <td>8 组件实现 7（⑦ 已补）· 字段供给：证候 103/103 · 病 12/103 · ICD 7/103 · 其余 0/103<div class="why">轮廓系数 -0.067（≈随机）· 端点行为复现 1/3 —— 卡在「没有描述可嵌入」</div></td></tr>
     <tr><td>ICD-11 客户端（规格 ⑦）</td><td><span class="pill s-active">进行中</span></td>
         <td>本地库 13960 实体（MMS 2025-01）· 仓库 7 个编码 7/7 解析<div class="why">WHO API 通道需凭据（无凭据一律 401，本机未配置）；中文标题通道**未验证**</div></td></tr>
     <tr><td>质量门 · 审计与测试</td><td><span class="pill s-done">已完成</span></td>
-        <td>审计 L0–L3 · 89 个测试套件（91 个测试文件）· 链接扫描 9525 个 md（0 断链） · npm run check 四道门<div class="why">L3 内容层实测抓到 2 处契约违约；文档事实核对测试已 4 次抓到过期数字</div></td></tr>
+        <td>审计 L0–L3 · 96 个测试套件（98 个测试文件）· 链接扫描 9662 个 md（0 断链） · npm run check 四道门<div class="why">L3 内容层实测抓到 2 处契约违约；文档事实核对测试已 4 次抓到过期数字</div></td></tr>
     </tbody>
   </table>
 
@@ -141,18 +141,18 @@
 
   <h2>最近提交</h2>
   <div class="card git">
-    <div>f3b2843  <b>ix(descriptions): 12 条为 component 全体，弱证据是其中 7 条（原句误述）</b></div>
-    <div>f34ef6c  <b>ata(external): 文献通行证名层（12 条合称 × 24 个构件位，24 条判定全部逐字可溯）</b></div>
-    <div>ee1d019  <b>ata(external): 构件级证据重查清单（12 条 + 生成脚本）</b></div>
-    <div>8036a99  <b>est(semtensor): 把术语对齐的不变量接进证候描述门（对象不多不少 · 不许洗进整串级）</b></div>
-    <div>53138ed  <b>eat(semtensor): 术语对齐（取主构件）—— 7 条 ICD-11 合称落到国家证名表正名，不改证据分级</b></div>
-    <div>501e4d7  <b>ata(external): 构件级探底第四轮（整页复核+国家医保证名表否定性核验，0 条升整串级）</b></div>
-    <div>08146e1  <b>ata(external): 补齐上批遗漏的 descriptions.md（整串 85/97 · 因果链 3 · 构件 7）</b></div>
-    <div>ef73319  <b>ata(external): 构件级探底第三轮 6 条（湿热火毒蕴结·蛇串疮升整串级；整串 84→85 · 因果链 4→3 · 弱构件级 7 不变）</b></div>
-    <div>1d36a67  <b>ata(external): 构件级探底第二轮（+6 源 · 4 条升整串级 · 6 条确认检索无解）</b></div>
-    <div>e9031ca  <b>ata(external): 构件级探底 8 条 · 髓海不足/肾虚痰瘀升整串级（整串 79→80 · 构件级弱 8→7 · 0 失败）</b></div>
-    <div>0ba620a  <b>ata(who-tcm): 2007 版原文表格解析补 25 条代码（1→26 条 · 23 个不同代码）</b></div>
-    <div>7916217  <b>ata(external): 因果链判定 4 条达标（整串 79 · 并病 5 · 因果 1→5 · 构件级 12→8）</b></div>
+    <div>af1ebf2b <b>feat(jingui): 统稿 + 方族比较表 + 类方鉴别 30 对；24 讲重出并重发 HLS</b></div>
+    <div>f3b2843b <b>fix(descriptions): 12 条为 component 全体，弱证据是其中 7 条（原句误述）</b></div>
+    <div>f34ef6cc <b>data(external): 文献通行证名层（12 条合称 × 24 个构件位，24 条判定全部逐字可溯）</b></div>
+    <div>ee1d019d <b>data(external): 构件级证据重查清单（12 条 + 生成脚本）</b></div>
+    <div>8036a99b <b>test(semtensor): 把术语对齐的不变量接进证候描述门（对象不多不少 · 不许洗进整串级）</b></div>
+    <div>53138ed7 <b>feat(semtensor): 术语对齐（取主构件）—— 7 条 ICD-11 合称落到国家证名表正名，不改证据分级</b></div>
+    <div>501e4d7a <b>data(external): 构件级探底第四轮（整页复核+国家医保证名表否定性核验，0 条升整串级）</b></div>
+    <div>08146e1e <b>data(external): 补齐上批遗漏的 descriptions.md（整串 85/97 · 因果链 3 · 构件 7）</b></div>
+    <div>ef73319c <b>data(external): 构件级探底第三轮 6 条（湿热火毒蕴结·蛇串疮升整串级；整串 84→85 · 因果链 4→3 · 弱构件级 7 不变）</b></div>
+    <div>1d36a67a <b>data(external): 构件级探底第二轮（+6 源 · 4 条升整串级 · 6 条确认检索无解）</b></div>
+    <div>e9031ca9 <b>data(external): 构件级探底 8 条 · 髓海不足/肾虚痰瘀升整串级（整串 79→80 · 构件级弱 8→7 · 0 失败）</b></div>
+    <div>0ba620a7 <b>data(who-tcm): 2007 版原文表格解析补 25 条代码（1→26 条 · 23 个不同代码）</b></div>
   </div>
 
   <footer>

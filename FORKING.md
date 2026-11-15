@@ -15,7 +15,7 @@
 分不清这两者，改造出来会是一个字段名都改过、但读起来还是别人的东西的壳。
 
 本仓库就是按这个流程，从 `D:\ai-engineering-from-scratch source code` 出发建成的：
-**1 领域 · 9 院系 · 188 学科（必修 171 + 选修 17）· 2154 章节 · 11547 学时 · 10 学期 · 5 阶段**。
+**1 领域 · 9 院系 · 189 学科（必修 172 + 选修 17）· 2154 章节 · 11547 学时 · 10 学期 · 5 阶段**。
 
 ---
 
@@ -75,7 +75,7 @@
 | `phases/NN-slug/` | `departments/NN-dept/` | 9 |
 | 一个 phase | 一个院系（系） | 9 |
 | `phases/NN/MM-lesson/` | `departments/NN/MM-subject/` | 187 |
-| 一课（lesson） | 一个学科（subject，一门课 = 一种教材） | 188 |
+| 一课（lesson） | 一个学科（subject，一门课 = 一种教材） | 189 |
 | — | `chapters/NN-slug/`（学科下的章节） | 2042 |
 | — | 学期 × 5 阶段（生长壮老已） | 10 学期 |
 
@@ -90,12 +90,12 @@
 本仓库的实际顺序：
 
 ```
-1. 写 curriculum.json（1 领域 / 9 院系 / 188 学科）      → 数据层
+1. 写 curriculum.json（1 领域 / 9 院系 / 189 学科）      → 数据层
 2. 写 scripts/lib.js 展开 + scaffold_subject/chapter.js  → 生成骨架
 3. 写 audit_curriculum.js（L0 数据 / L1 结构 / L2 契约 / L3 内容）
-4. 让审计对 188 个空学科全绿                            ← 关键里程碑
+4. 让审计对 189 个空学科全绿                            ← 关键里程碑
 5. 写 build_catalog / build_doc_indexes / build_roadmap  → 索引与站点
-6. 写全套测试（现在 89 个套件）
+6. 写全套测试（现在 96 个套件）
 7. 然后才开始写第 1 章的内容
 ```
 
@@ -164,10 +164,10 @@
 |---|---|---|
 | 课程审计（L0–L3） | `npm run audit` | 三层 0 错误 |
 | 计数一致性 | `npm run counts` | README 声明与 catalog.json 逐项对齐 |
-| 链接完整性 | `npm run links` | 扫描 9599 个 md，0 断链 |
+| 链接完整性 | `npm run links` | 扫描 9682 个 md，0 断链 |
 | 产出物索引 | `npm run outputs` | 6 件产物 / 3 章，`--check` 不漂移 |
 | 项目看板 | `npm run dashboard` | KPI 与源独立重算一致 |
-| 测试套件 | `npm test` | 89 个套件全绿 |
+| 测试套件 | `npm test` | 96 个套件全绿 |
 | 成片产物契约 | `npm run tcmP:check` | 七段三方齐备、产物与段数对齐、不许是占位 |
 
 `npm run check` = 审计 + 计数 + 链接 `--strict` + 产出物索引 `--check` + 账本 `--check` + 架构 `--check` + 成片产物契约，CI 上跑这一条。
@@ -231,7 +231,7 @@ node -e "…对每个候选 resolve 后 existsSync，打印 ✅/❌…"
 对策是把检查**前置到 `npm run check` 的第一道**（2 秒，不再靠事后跑 2–3 分钟的全量门）：
 
 ```bash
-python scripts/check_scaffold_paths.py            # 扫全部 188 学科
+python scripts/check_scaffold_paths.py            # 扫全部 189 学科
 python scripts/check_scaffold_paths.py --quiet    # check 链里用这个，只报错行
 python scripts/check_scaffold_paths.py departments/02-zhongyao/10-zhongyao-fenxi-xue
 ```
