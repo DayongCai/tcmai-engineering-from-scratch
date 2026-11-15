@@ -1,66 +1,96 @@
 {
-  "slug": "13-kouqiang-zhengji-xue",
-  "title": "口腔正畸学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-cuohe-fenlei",
-      "title": "错颌畸形的分类",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-shengzhang-shiji",
-      "title": "生长发育与矫治时机",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-guding-lixue",
-      "title": "固定矫治器的力学",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-yinxing-shuzihua",
-      "title": "隐形矫治与数字化设计",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-baya-juece",
-      "title": "拔牙与不拔牙的决策",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-zhikang-kongzhi",
-      "title": "支抗控制",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-lianhe-zhiliao",
-      "title": "正畸与牙周、修复的联合",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-fengxian-bingfa",
-      "title": "矫治中的风险与并发症",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-baochi-fufa",
-      "title": "保持与复发",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-touying-celiang",
-      "title": "疗效评价与头影测量",
-      "status": "📋"
-    }
-  ]
+ "slug": "13-kouqiang-zhengji-xue",
+ "title": "口腔正畸学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-duixiang-congye",
+   "title": "隐形矫治的对象与从业要求",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-duixiang-congye/docs/zh.md",
+   "code": "chapters/01-duixiang-congye/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-zhiliao-fengxian",
+   "title": "治疗风险：依从性、移动偏差与并发症",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-zhiliao-fengxian/docs/zh.md",
+   "code": "chapters/02-zhiliao-fengxian/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-shiyingzheng",
+   "title": "适应证与可预测性分级",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-shiyingzheng/docs/zh.md",
+   "code": "chapters/03-shiyingzheng/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-ziliao-caiji",
+   "title": "资料采集：影像与数字模型",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-ziliao-caiji/docs/zh.md",
+   "code": "chapters/04-ziliao-caiji/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-fangan-sheji",
+   "title": "方案设计流程：目标、虚拟排牙、顺序与附件",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-fangan-sheji/docs/zh.md",
+   "code": "chapters/05-fangan-sheji/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-tui-moya",
+   "title": "推磨牙向远中：适应证、禁忌与设计",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-tui-moya/docs/zh.md",
+   "code": "chapters/06-tui-moya/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-linmian-quyou",
+   "title": "邻面去釉：适应证、禁忌与操作规范",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-linmian-quyou/docs/zh.md",
+   "code": "chapters/07-linmian-quyou/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-fenbu-yidong",
+   "title": "分步移动：为什么不能一次到位",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-fenbu-yidong/docs/zh.md",
+   "code": "chapters/08-fenbu-yidong/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-jianxi-baochi",
+   "title": "儿童间隙管理：五类保持器与选择",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-jianxi-baochi/docs/zh.md",
+   "code": "chapters/09-jianxi-baochi/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-yiwei-chuneilie",
+   "title": "异位萌出与唇腭裂序列中的正畸",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-yiwei-chuneilie/docs/zh.md",
+   "code": "chapters/10-yiwei-chuneilie/code/main.js"
+  }
+ ]
 }

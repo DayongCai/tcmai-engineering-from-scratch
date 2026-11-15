@@ -1,0 +1,396 @@
+{
+ "note": "kouqiang-zhengji 外源补源登记：每条记来源、URL、五项指纹与逐字校勘结论。查不到的句子不入库（补源约定.md）。",
+ "convention": "补源约定.md",
+ "sources": {
+  "ZJ": {
+   "title": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "issuer": "中华口腔医学会（正畸专业委员会提出）",
+   "date": "2021-06-25 发布 / 2021-07-01 实施",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "file": "T-CHSA-003-2021-口腔正畸无托槽隐形矫治技术指南.pdf",
+   "exists": true,
+   "sha256": "9920f20930d0e718dc0f04e5b8903d90d659616441c7be8a02b50e260c9b2f0e",
+   "bytes": 563731,
+   "pages": 10,
+   "textChars": 10928,
+   "textLayer": true
+  },
+  "CL": {
+   "title": "T/CHSA 001-2022 唇腭裂序列治疗指南",
+   "issuer": "中华口腔医学会",
+   "date": "2022 发布（2024-02-18 公告转载）",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858302897.pdf",
+   "file": "T-CHSA-001-2022-唇腭裂序列治疗指南.pdf",
+   "exists": true,
+   "sha256": "b836d98a2cc0bbfde23e9c9b5190a2ecac8194d7419b247dbafe32d2a3725030",
+   "bytes": 413897,
+   "pages": 11,
+   "textChars": 14465,
+   "textLayer": true
+  },
+  "JX": {
+   "title": "T/CHSA 010-2022 儿童间隙保持器临床应用专家共识",
+   "issuer": "中华口腔医学会",
+   "date": "2022 发布（2024-02-18 公告转载）",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858624769.pdf",
+   "file": "T-CHSA-010-2022-儿童间隙保持器临床应用专家共识.pdf",
+   "exists": true,
+   "sha256": "e3cf54d7a8db73554d56f9a25edfe13bcb24d8d1d2a8c120fab3e7214f86a5e6",
+   "bytes": 424149,
+   "pages": 14,
+   "textChars": 13921,
+   "textLayer": true
+  },
+  "YY": {
+   "title": "T/CHSA 005—2022 上颌第一恒磨牙异位萌出临床诊疗专家共识",
+   "issuer": "中华口腔医学会",
+   "date": "2022 发布（2024-02-18 公告转载）",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858451973.pdf",
+   "file": "T-CHSA-005-2022-上颌第一恒磨牙异位萌出临床诊疗专家共识.pdf",
+   "exists": true,
+   "sha256": "27549331db897420aafd66fd3412ff6e6e03969a524965cf4f4129645c87a3ed",
+   "bytes": 563094,
+   "pages": 12,
+   "textChars": 14145,
+   "textLayer": true
+  }
+ },
+ "clauses": [
+  {
+   "id": "Z01",
+   "source": "ZJ",
+   "clause": "第1条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第1条"
+  },
+  {
+   "id": "Z02",
+   "source": "ZJ",
+   "clause": "第4.1条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第4.1条"
+  },
+  {
+   "id": "Z03",
+   "source": "ZJ",
+   "clause": "第4.2条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第4.2条"
+  },
+  {
+   "id": "Z04",
+   "source": "ZJ",
+   "clause": "第4.3条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第4.3条"
+  },
+  {
+   "id": "Z05",
+   "source": "ZJ",
+   "clause": "第5.1.1条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第5.1.1条"
+  },
+  {
+   "id": "Z06",
+   "source": "ZJ",
+   "clause": "第5.2.2条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第5.2.2条"
+  },
+  {
+   "id": "Z07",
+   "source": "ZJ",
+   "clause": "第5.2.3条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第5.2.3条"
+  },
+  {
+   "id": "Z08",
+   "source": "ZJ",
+   "clause": "第5.3条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第5.3条"
+  },
+  {
+   "id": "Z09",
+   "source": "ZJ",
+   "clause": "第6.1条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第6.1条"
+  },
+  {
+   "id": "Z10",
+   "source": "ZJ",
+   "clause": "第6.1.1条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第6.1.1条"
+  },
+  {
+   "id": "Z11",
+   "source": "ZJ",
+   "clause": "第6.1.2条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第6.1.2条"
+  },
+  {
+   "id": "Z12",
+   "source": "ZJ",
+   "clause": "第6.1.3条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第6.1.3条"
+  },
+  {
+   "id": "Z13",
+   "source": "ZJ",
+   "clause": "第6.2条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第6.2条"
+  },
+  {
+   "id": "Z14",
+   "source": "ZJ",
+   "clause": "第6.2.1条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第6.2.1条"
+  },
+  {
+   "id": "Z15",
+   "source": "ZJ",
+   "clause": "第6.2.2条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第6.2.2条"
+  },
+  {
+   "id": "Z16",
+   "source": "ZJ",
+   "clause": "第6.2.3条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第6.2.3条"
+  },
+  {
+   "id": "Z17",
+   "source": "ZJ",
+   "clause": "第6.3.1条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第6.3.1条"
+  },
+  {
+   "id": "Z18",
+   "source": "ZJ",
+   "clause": "第6.3.2条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第6.3.2条"
+  },
+  {
+   "id": "Z19",
+   "source": "ZJ",
+   "clause": "第6.3.3条",
+   "sourceTitle": "T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860321177.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第6.3.3条"
+  },
+  {
+   "id": "L01",
+   "source": "CL",
+   "clause": "第7条",
+   "sourceTitle": "T/CHSA 001-2022 唇腭裂序列治疗指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858302897.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001-2022 唇腭裂序列治疗指南 第7条"
+  },
+  {
+   "id": "L02",
+   "source": "CL",
+   "clause": "第4条",
+   "sourceTitle": "T/CHSA 001-2022 唇腭裂序列治疗指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858302897.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001-2022 唇腭裂序列治疗指南 第4条"
+  },
+  {
+   "id": "L03",
+   "source": "CL",
+   "clause": "第8条",
+   "sourceTitle": "T/CHSA 001-2022 唇腭裂序列治疗指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858302897.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001-2022 唇腭裂序列治疗指南 第8条"
+  },
+  {
+   "id": "J01",
+   "source": "JX",
+   "clause": "第4.1条",
+   "sourceTitle": "T/CHSA 010-2022 儿童间隙保持器临床应用专家共识",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858624769.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 010-2022 儿童间隙保持器临床应用专家共识 第4.1条"
+  },
+  {
+   "id": "J02",
+   "source": "JX",
+   "clause": "第4.2条",
+   "sourceTitle": "T/CHSA 010-2022 儿童间隙保持器临床应用专家共识",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858624769.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 010-2022 儿童间隙保持器临床应用专家共识 第4.2条"
+  },
+  {
+   "id": "J03",
+   "source": "JX",
+   "clause": "第4.4条",
+   "sourceTitle": "T/CHSA 010-2022 儿童间隙保持器临床应用专家共识",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858624769.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 010-2022 儿童间隙保持器临床应用专家共识 第4.4条"
+  },
+  {
+   "id": "J04",
+   "source": "JX",
+   "clause": "第5.1条",
+   "sourceTitle": "T/CHSA 010-2022 儿童间隙保持器临床应用专家共识",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858624769.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 010-2022 儿童间隙保持器临床应用专家共识 第5.1条"
+  },
+  {
+   "id": "J05",
+   "source": "JX",
+   "clause": "第5.3条",
+   "sourceTitle": "T/CHSA 010-2022 儿童间隙保持器临床应用专家共识",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858624769.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 010-2022 儿童间隙保持器临床应用专家共识 第5.3条"
+  },
+  {
+   "id": "J06",
+   "source": "JX",
+   "clause": "第5.5条",
+   "sourceTitle": "T/CHSA 010-2022 儿童间隙保持器临床应用专家共识",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858624769.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 010-2022 儿童间隙保持器临床应用专家共识 第5.5条"
+  },
+  {
+   "id": "J07",
+   "source": "JX",
+   "clause": "第6条",
+   "sourceTitle": "T/CHSA 010-2022 儿童间隙保持器临床应用专家共识",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858624769.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 010-2022 儿童间隙保持器临床应用专家共识 第6条"
+  },
+  {
+   "id": "Y01",
+   "source": "YY",
+   "clause": "第4条",
+   "sourceTitle": "T/CHSA 005—2022 上颌第一恒磨牙异位萌出临床诊疗专家共识",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858451973.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 005—2022 上颌第一恒磨牙异位萌出临床诊疗专家共识 第4条"
+  },
+  {
+   "id": "Y02",
+   "source": "YY",
+   "clause": "第5条",
+   "sourceTitle": "T/CHSA 005—2022 上颌第一恒磨牙异位萌出临床诊疗专家共识",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858451973.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 005—2022 上颌第一恒磨牙异位萌出临床诊疗专家共识 第5条"
+  },
+  {
+   "id": "Y03",
+   "source": "YY",
+   "clause": "第6条",
+   "sourceTitle": "T/CHSA 005—2022 上颌第一恒磨牙异位萌出临床诊疗专家共识",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858451973.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 005—2022 上颌第一恒磨牙异位萌出临床诊疗专家共识 第6条"
+  },
+  {
+   "id": "Y04",
+   "source": "YY",
+   "clause": "第7条",
+   "sourceTitle": "T/CHSA 005—2022 上颌第一恒磨牙异位萌出临床诊疗专家共识",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858451973.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 005—2022 上颌第一恒磨牙异位萌出临床诊疗专家共识 第7条"
+  }
+ ],
+ "counts": {
+  "sources": 4,
+  "clauses": 33,
+  "verified": 33,
+  "unverified": 0
+ }
+}

@@ -7,7 +7,7 @@
 | 学科数 | 17（必修 17） |
 | 总学时 | 1098 |
 | 章节目标 | 144 |
-| 已建章节 | 124 |
+| 已建章节 | 144 |
 | 涉及学期 | 第4, 第5, 第6, 第7, 第8, 第9, 第10 |
 
 ## 学科清单
@@ -25,8 +25,8 @@
 | 09 | [口腔内科学](09-kouqiang-neike-xue/) | Oral Medicine | Clinic | 6 | 72 | 10/10 | 龋病分级→有序分类 / X 线影像→语义分割 | ✅ |
 | 10 | [眼科影像与检查技术](10-yanke-yingxiang-jiancha/) | Ophthalmic Imaging & Examination | Build | 6 | 54 | 8/8 | OCT/眼底→CNN / 视野检查→缺损图谱分析 | ✅ |
 | 11 | [口腔颌面外科学](11-kouqiang-hemian-waike/) | Oral & Maxillofacial Surgery | Clinic | 7 | 72 | 10/10 | 颌面重建→三维规划 / 手术导航→配准算法 | ✅ |
-| 12 | [口腔修复学](12-kouqiang-xiufu-xue/) | Prosthodontics | Clinic | 7 | 72 | 0/10 | 义齿设计→参数化 CAD / 咬合重建→力学优化 | ⬚ |
-| 13 | [口腔正畸学](13-kouqiang-zhengji-xue/) | Orthodontics | Clinic | 7 | 72 | 0/10 | 头影测量→关键点检测 / 拔牙决策→分类模型 | ⬚ |
+| 12 | [口腔修复学](12-kouqiang-xiufu-xue/) | Prosthodontics | Clinic | 7 | 72 | 10/10 | 义齿设计→参数化 CAD / 咬合重建→力学优化 | ✅ |
+| 13 | [口腔正畸学](13-kouqiang-zhengji-xue/) | Orthodontics | Clinic | 7 | 72 | 10/10 | 头影测量→关键点检测 / 拔牙决策→分类模型 | ✅ |
 | 14 | [中医嗓音医学](14-zhongyi-sangyin-yixue/) | TCM Voice Medicine | Build | 7 | 54 | 8/8 | 嗓音信号→谱图分类 / 发声训练→生物反馈 | ✅ |
 | 15 | [中医美容与皮肤治疗学](15-zhongyi-meirong-pifu/) | TCM Cosmetology & Dermatology | Build | 8 | 54 | 8/8 | 皮肤图像→病变分割 / 面部年轻化→图像评价 | ✅ |
 | 16 | [五官口腔临床轮转](16-wuguan-linchuang-lunzhuan/) | ENT & Stomatology Rotation | Clinic | 9 | 108 | 6/6 | 专科检查→结构化字段 / 影像→测量 / 疗效→专科评分 | ✅ |

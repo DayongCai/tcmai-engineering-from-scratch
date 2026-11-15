@@ -1,0 +1,1018 @@
+{
+ "note": "kouqiang-xiufu 外源补源登记：每条记来源、URL、五项指纹与逐字校勘结论。查不到的句子不入库（补源约定.md）。",
+ "convention": "补源约定.md",
+ "sources": {
+  "LN": {
+   "title": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "issuer": "中华口腔医学会（口腔修复学专业委员会提出）",
+   "date": "2021-06-25 发布 / 2021-07-01 实施",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "file": "T-CHSA-001-2021-老年患者口腔修复指南.pdf",
+   "exists": true,
+   "sha256": "a96bd24d56c7c93d11c8c9036b8115f866cdbc9507dab60480636b69d6cc47ae",
+   "bytes": 493441,
+   "pages": 11,
+   "textChars": 8674,
+   "textLayer": true
+  },
+  "CT": {
+   "title": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "issuer": "中华口腔医学会",
+   "date": "2019-12-31 发布 / 2020-01-31 实施",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "file": "T-CHSA-001-2019-瓷贴面粘接技术操作规范.pdf",
+   "exists": true,
+   "sha256": "ceab4abdf4a3218f0efc5be2eb7ad39299cce1c6ee89121c6a6a1fe2be452a1d",
+   "bytes": 653275,
+   "pages": 11,
+   "textChars": 13068,
+   "textLayer": true
+  },
+  "PB": {
+   "title": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "issuer": "中华口腔医学会",
+   "date": "2021-06-25 发布 / 2021-07-01 实施",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "file": "T-CHSA-002-2021-牙齿漂白治疗技术操作指南.pdf",
+   "exists": true,
+   "sha256": "a98c6366374ded14d7b70f0f4a12f95fa0299a68c468a14b095e87ac9b5804d3",
+   "bytes": 600116,
+   "pages": 13,
+   "textChars": 12959,
+   "textLayer": true
+  },
+  "QK": {
+   "title": "T/CHSA 006—2022 全口义齿修复的印模与模型制作规范",
+   "issuer": "中华口腔医学会",
+   "date": "2022 发布（2024-02-18 公告转载）",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858483881.pdf",
+   "file": "T-CHSA-006-2022-全口义齿修复的印模与模型制作规范.pdf",
+   "exists": true,
+   "sha256": "7a4a717acd09c1dc79770fc00ac9e62a9fe612c18d6fefabf28317238ae59a6b",
+   "bytes": 367314,
+   "pages": 11,
+   "textChars": 10971,
+   "textLayer": true
+  },
+  "SM": {
+   "title": "T/CHSA 003—2022 牙科水门汀材料调和操作规范",
+   "issuer": "中华口腔医学会",
+   "date": "2022 发布（2024-02-18 公告转载）",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858385229.pdf",
+   "file": "T-CHSA-003-2022-牙科水门汀材料调和操作规范.pdf",
+   "exists": true,
+   "sha256": "b0815afb74b60e97b6e5fa82bc1a3196c30e498786a73e43c556cd51dfd584ce",
+   "bytes": 296910,
+   "pages": 10,
+   "textChars": 5114,
+   "textLayer": true
+  },
+  "CC": {
+   "title": "T/CHSA 014-2022 椅旁全瓷修复技术指南",
+   "issuer": "中华口腔医学会",
+   "date": "2022 发布（2024-02-18 公告转载）",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858819409.pdf",
+   "file": "T-CHSA-014-2022-椅旁全瓷修复技术指南.pdf",
+   "exists": true,
+   "sha256": "2f84336662f68bf157ced38e00f97753157fee2a071d3538f93a373155e8980d",
+   "bytes": 409641,
+   "pages": 11,
+   "textChars": 9991,
+   "textLayer": true
+  },
+  "RC": {
+   "title": "T/CHSA 013—2022 树脂陶瓷复合材料椅旁CAD/CAM修复技术指南",
+   "issuer": "中华口腔医学会",
+   "date": "2022 发布（2024-02-18 公告转载）",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858769809.pdf",
+   "file": "T-CHSA-013-2022-树脂陶瓷复合材料椅旁CADCAM修复技术指南.pdf",
+   "exists": true,
+   "sha256": "fe782798b9ac0b94201ce2b3a556d011e73fb15878772a24959d8334fac44504",
+   "bytes": 7022565,
+   "pages": 9,
+   "textChars": 8921,
+   "textLayer": true
+  },
+  "SLM": {
+   "title": "T/CHSA 012—2022 选择性激光熔化金属修复技术的临床应用专家共识",
+   "issuer": "中华口腔医学会",
+   "date": "2022 发布（2024-02-18 公告转载）",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858719229.pdf",
+   "file": "T-CHSA-012-2022-选择性激光熔化金属修复技术临床应用专家共识.pdf",
+   "exists": true,
+   "sha256": "78eebf2934b8f40ef4da30ac2ad4aa167a9154527ae2ec5ac146ed51064d2009",
+   "bytes": 433798,
+   "pages": 11,
+   "textChars": 10970,
+   "textLayer": true
+  }
+ },
+ "clauses": [
+  {
+   "id": "E01",
+   "source": "LN",
+   "clause": "第1条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第1条"
+  },
+  {
+   "id": "E02",
+   "source": "LN",
+   "clause": "第3.1条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第3.1条"
+  },
+  {
+   "id": "E03",
+   "source": "LN",
+   "clause": "第3.2条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第3.2条"
+  },
+  {
+   "id": "E04",
+   "source": "LN",
+   "clause": "第3.4条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第3.4条"
+  },
+  {
+   "id": "E05",
+   "source": "LN",
+   "clause": "第3.5条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第3.5条"
+  },
+  {
+   "id": "E06",
+   "source": "LN",
+   "clause": "第3.6条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第3.6条"
+  },
+  {
+   "id": "E07",
+   "source": "LN",
+   "clause": "第4.1条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第4.1条"
+  },
+  {
+   "id": "E08",
+   "source": "LN",
+   "clause": "第4.2条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第4.2条"
+  },
+  {
+   "id": "E09",
+   "source": "LN",
+   "clause": "第4.3条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第4.3条"
+  },
+  {
+   "id": "E10",
+   "source": "LN",
+   "clause": "第4.4条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第4.4条"
+  },
+  {
+   "id": "E11",
+   "source": "LN",
+   "clause": "第4.5条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第4.5条"
+  },
+  {
+   "id": "E12",
+   "source": "LN",
+   "clause": "第4.6条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第4.6条"
+  },
+  {
+   "id": "E13",
+   "source": "LN",
+   "clause": "第5.1.1条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.1.1条"
+  },
+  {
+   "id": "E14",
+   "source": "LN",
+   "clause": "第5.1.2条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.1.2条"
+  },
+  {
+   "id": "E15",
+   "source": "LN",
+   "clause": "第5.1.3条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.1.3条"
+  },
+  {
+   "id": "E16",
+   "source": "LN",
+   "clause": "第5.2.1条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.2.1条"
+  },
+  {
+   "id": "E17",
+   "source": "LN",
+   "clause": "第5.2.2条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.2.2条"
+  },
+  {
+   "id": "E18",
+   "source": "LN",
+   "clause": "第5.2.3条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.2.3条"
+  },
+  {
+   "id": "E19",
+   "source": "LN",
+   "clause": "第5.2.4条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.2.4条"
+  },
+  {
+   "id": "E20",
+   "source": "LN",
+   "clause": "第5.3条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.3条"
+  },
+  {
+   "id": "E21",
+   "source": "LN",
+   "clause": "第5.4.1条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.4.1条"
+  },
+  {
+   "id": "E22",
+   "source": "LN",
+   "clause": "第5.4.2条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.4.2条"
+  },
+  {
+   "id": "E23",
+   "source": "LN",
+   "clause": "第5.4.3条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.4.3条"
+  },
+  {
+   "id": "E24",
+   "source": "LN",
+   "clause": "第5.5.1条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.5.1条"
+  },
+  {
+   "id": "E25",
+   "source": "LN",
+   "clause": "第5.5.2条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.5.2条"
+  },
+  {
+   "id": "E26",
+   "source": "LN",
+   "clause": "第5.5.3条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.5.3条"
+  },
+  {
+   "id": "E27",
+   "source": "LN",
+   "clause": "第5.6条",
+   "sourceTitle": "T/CHSA 001—2021 老年患者口腔修复指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.6条"
+  },
+  {
+   "id": "E28",
+   "source": "CT",
+   "clause": "第1条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第1条"
+  },
+  {
+   "id": "E29",
+   "source": "CT",
+   "clause": "第3条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第3条"
+  },
+  {
+   "id": "E30",
+   "source": "CT",
+   "clause": "第4.1条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第4.1条"
+  },
+  {
+   "id": "E31",
+   "source": "CT",
+   "clause": "第4.2条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第4.2条"
+  },
+  {
+   "id": "E32",
+   "source": "CT",
+   "clause": "第4.3条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第4.3条"
+  },
+  {
+   "id": "E33",
+   "source": "CT",
+   "clause": "第4.4条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第4.4条"
+  },
+  {
+   "id": "E34",
+   "source": "CT",
+   "clause": "第5.1条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第5.1条"
+  },
+  {
+   "id": "E35",
+   "source": "CT",
+   "clause": "第5.2条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第5.2条"
+  },
+  {
+   "id": "E36",
+   "source": "CT",
+   "clause": "第6条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第6条"
+  },
+  {
+   "id": "E37",
+   "source": "CT",
+   "clause": "第7条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第7条"
+  },
+  {
+   "id": "E38",
+   "source": "CT",
+   "clause": "第8条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第8条"
+  },
+  {
+   "id": "E39",
+   "source": "CT",
+   "clause": "第9.1条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第9.1条"
+  },
+  {
+   "id": "E40",
+   "source": "CT",
+   "clause": "第9.2条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第9.2条"
+  },
+  {
+   "id": "E41",
+   "source": "CT",
+   "clause": "第9.3条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第9.3条"
+  },
+  {
+   "id": "E42",
+   "source": "CT",
+   "clause": "第10.1条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第10.1条"
+  },
+  {
+   "id": "E43",
+   "source": "CT",
+   "clause": "第10.2条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第10.2条"
+  },
+  {
+   "id": "E44",
+   "source": "CT",
+   "clause": "第10.3条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第10.3条"
+  },
+  {
+   "id": "E45",
+   "source": "CT",
+   "clause": "第10.4条",
+   "sourceTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第10.4条"
+  },
+  {
+   "id": "E46",
+   "source": "PB",
+   "clause": "第4.1条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第4.1条"
+  },
+  {
+   "id": "E47",
+   "source": "PB",
+   "clause": "第4.2条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第4.2条"
+  },
+  {
+   "id": "E48",
+   "source": "PB",
+   "clause": "第5.1条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第5.1条"
+  },
+  {
+   "id": "E49",
+   "source": "PB",
+   "clause": "第5.2条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第5.2条"
+  },
+  {
+   "id": "E50",
+   "source": "PB",
+   "clause": "第6条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第6条"
+  },
+  {
+   "id": "E51",
+   "source": "PB",
+   "clause": "第7.1条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第7.1条"
+  },
+  {
+   "id": "E52",
+   "source": "PB",
+   "clause": "第7.2条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第7.2条"
+  },
+  {
+   "id": "E53",
+   "source": "PB",
+   "clause": "第7.3条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第7.3条"
+  },
+  {
+   "id": "E54",
+   "source": "PB",
+   "clause": "第8.1条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第8.1条"
+  },
+  {
+   "id": "E55",
+   "source": "PB",
+   "clause": "第8.2条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第8.2条"
+  },
+  {
+   "id": "E56",
+   "source": "PB",
+   "clause": "第8.3条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第8.3条"
+  },
+  {
+   "id": "E57",
+   "source": "PB",
+   "clause": "第8.4条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第8.4条"
+  },
+  {
+   "id": "E58",
+   "source": "PB",
+   "clause": "第9条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第9条"
+  },
+  {
+   "id": "E59",
+   "source": "PB",
+   "clause": "第10.1条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第10.1条"
+  },
+  {
+   "id": "E60",
+   "source": "PB",
+   "clause": "第11.1条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第11.1条"
+  },
+  {
+   "id": "E61",
+   "source": "PB",
+   "clause": "第11.2条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第11.2条"
+  },
+  {
+   "id": "E62",
+   "source": "PB",
+   "clause": "第12.1条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第12.1条"
+  },
+  {
+   "id": "E63",
+   "source": "PB",
+   "clause": "第12.2条",
+   "sourceTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 002—2021 牙齿漂白治疗技术操作指南 第12.2条"
+  },
+  {
+   "id": "Q01",
+   "source": "QK",
+   "clause": "第4条",
+   "sourceTitle": "T/CHSA 006—2022 全口义齿修复的印模与模型制作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858483881.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 006—2022 全口义齿修复的印模与模型制作规范 第4条"
+  },
+  {
+   "id": "Q02",
+   "source": "QK",
+   "clause": "第4.3条",
+   "sourceTitle": "T/CHSA 006—2022 全口义齿修复的印模与模型制作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858483881.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 006—2022 全口义齿修复的印模与模型制作规范 第4.3条"
+  },
+  {
+   "id": "Q03",
+   "source": "QK",
+   "clause": "第5条",
+   "sourceTitle": "T/CHSA 006—2022 全口义齿修复的印模与模型制作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858483881.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 006—2022 全口义齿修复的印模与模型制作规范 第5条"
+  },
+  {
+   "id": "Q04",
+   "source": "QK",
+   "clause": "第5.1条",
+   "sourceTitle": "T/CHSA 006—2022 全口义齿修复的印模与模型制作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858483881.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 006—2022 全口义齿修复的印模与模型制作规范 第5.1条"
+  },
+  {
+   "id": "Q05",
+   "source": "QK",
+   "clause": "第5.3条",
+   "sourceTitle": "T/CHSA 006—2022 全口义齿修复的印模与模型制作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858483881.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 006—2022 全口义齿修复的印模与模型制作规范 第5.3条"
+  },
+  {
+   "id": "Q06",
+   "source": "QK",
+   "clause": "第5.4条",
+   "sourceTitle": "T/CHSA 006—2022 全口义齿修复的印模与模型制作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858483881.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 006—2022 全口义齿修复的印模与模型制作规范 第5.4条"
+  },
+  {
+   "id": "Q07",
+   "source": "QK",
+   "clause": "第5.6条",
+   "sourceTitle": "T/CHSA 006—2022 全口义齿修复的印模与模型制作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858483881.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 006—2022 全口义齿修复的印模与模型制作规范 第5.6条"
+  },
+  {
+   "id": "M01",
+   "source": "SM",
+   "clause": "第4条",
+   "sourceTitle": "T/CHSA 003—2022 牙科水门汀材料调和操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858385229.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2022 牙科水门汀材料调和操作规范 第4条"
+  },
+  {
+   "id": "M02",
+   "source": "SM",
+   "clause": "第5条",
+   "sourceTitle": "T/CHSA 003—2022 牙科水门汀材料调和操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858385229.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2022 牙科水门汀材料调和操作规范 第5条"
+  },
+  {
+   "id": "M03",
+   "source": "SM",
+   "clause": "第6.3条",
+   "sourceTitle": "T/CHSA 003—2022 牙科水门汀材料调和操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858385229.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2022 牙科水门汀材料调和操作规范 第6.3条"
+  },
+  {
+   "id": "M04",
+   "source": "SM",
+   "clause": "第6.4条",
+   "sourceTitle": "T/CHSA 003—2022 牙科水门汀材料调和操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858385229.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2022 牙科水门汀材料调和操作规范 第6.4条"
+  },
+  {
+   "id": "M05",
+   "source": "SM",
+   "clause": "第7条",
+   "sourceTitle": "T/CHSA 003—2022 牙科水门汀材料调和操作规范",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858385229.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 003—2022 牙科水门汀材料调和操作规范 第7条"
+  },
+  {
+   "id": "C01",
+   "source": "CC",
+   "clause": "第4条",
+   "sourceTitle": "T/CHSA 014-2022 椅旁全瓷修复技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858819409.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 014-2022 椅旁全瓷修复技术指南 第4条"
+  },
+  {
+   "id": "C02",
+   "source": "CC",
+   "clause": "第5条",
+   "sourceTitle": "T/CHSA 014-2022 椅旁全瓷修复技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858819409.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 014-2022 椅旁全瓷修复技术指南 第5条"
+  },
+  {
+   "id": "C03",
+   "source": "CC",
+   "clause": "第6条",
+   "sourceTitle": "T/CHSA 014-2022 椅旁全瓷修复技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858819409.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 014-2022 椅旁全瓷修复技术指南 第6条"
+  },
+  {
+   "id": "C04",
+   "source": "CC",
+   "clause": "第7条",
+   "sourceTitle": "T/CHSA 014-2022 椅旁全瓷修复技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858819409.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 014-2022 椅旁全瓷修复技术指南 第7条"
+  },
+  {
+   "id": "C05",
+   "source": "CC",
+   "clause": "第8条",
+   "sourceTitle": "T/CHSA 014-2022 椅旁全瓷修复技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858819409.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 014-2022 椅旁全瓷修复技术指南 第8条"
+  },
+  {
+   "id": "C06",
+   "source": "CC",
+   "clause": "第9条",
+   "sourceTitle": "T/CHSA 014-2022 椅旁全瓷修复技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858819409.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 014-2022 椅旁全瓷修复技术指南 第9条"
+  },
+  {
+   "id": "C07",
+   "source": "CC",
+   "clause": "第10条",
+   "sourceTitle": "T/CHSA 014-2022 椅旁全瓷修复技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858819409.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 014-2022 椅旁全瓷修复技术指南 第10条"
+  },
+  {
+   "id": "C08",
+   "source": "CC",
+   "clause": "第11条",
+   "sourceTitle": "T/CHSA 014-2022 椅旁全瓷修复技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858819409.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 014-2022 椅旁全瓷修复技术指南 第11条"
+  },
+  {
+   "id": "R01",
+   "source": "RC",
+   "clause": "第4条",
+   "sourceTitle": "T/CHSA 013—2022 树脂陶瓷复合材料椅旁CAD/CAM修复技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858769809.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 013—2022 树脂陶瓷复合材料椅旁CAD/CAM修复技术指南 第4条"
+  },
+  {
+   "id": "R02",
+   "source": "RC",
+   "clause": "第6条",
+   "sourceTitle": "T/CHSA 013—2022 树脂陶瓷复合材料椅旁CAD/CAM修复技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858769809.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 013—2022 树脂陶瓷复合材料椅旁CAD/CAM修复技术指南 第6条"
+  },
+  {
+   "id": "R03",
+   "source": "RC",
+   "clause": "第11条",
+   "sourceTitle": "T/CHSA 013—2022 树脂陶瓷复合材料椅旁CAD/CAM修复技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858769809.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 013—2022 树脂陶瓷复合材料椅旁CAD/CAM修复技术指南 第11条"
+  },
+  {
+   "id": "R04",
+   "source": "RC",
+   "clause": "第12条",
+   "sourceTitle": "T/CHSA 013—2022 树脂陶瓷复合材料椅旁CAD/CAM修复技术指南",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858769809.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 013—2022 树脂陶瓷复合材料椅旁CAD/CAM修复技术指南 第12条"
+  },
+  {
+   "id": "S01",
+   "source": "SLM",
+   "clause": "第4条",
+   "sourceTitle": "T/CHSA 012—2022 选择性激光熔化金属修复技术的临床应用专家共识",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858719229.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 012—2022 选择性激光熔化金属修复技术的临床应用专家共识 第4条"
+  },
+  {
+   "id": "S02",
+   "source": "SLM",
+   "clause": "第6条",
+   "sourceTitle": "T/CHSA 012—2022 选择性激光熔化金属修复技术的临床应用专家共识",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858719229.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 012—2022 选择性激光熔化金属修复技术的临床应用专家共识 第6条"
+  },
+  {
+   "id": "S03",
+   "source": "SLM",
+   "clause": "第7条",
+   "sourceTitle": "T/CHSA 012—2022 选择性激光熔化金属修复技术的临床应用专家共识",
+   "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858719229.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·T/CHSA 012—2022 选择性激光熔化金属修复技术的临床应用专家共识 第7条"
+  }
+ ],
+ "counts": {
+  "sources": 8,
+  "clauses": 90,
+  "verified": 90,
+  "unverified": 0
+ }
+}

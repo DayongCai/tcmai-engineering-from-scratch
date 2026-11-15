@@ -1,66 +1,96 @@
 {
-  "slug": "12-kouqiang-xiufu-xue",
-  "title": "口腔修复学",
-  "chapters": [
-    {
-      "n": 1,
-      "slug": "01-xiufuti-shiying",
-      "title": "修复体的类型与适应证",
-      "status": "📋"
-    },
-    {
-      "n": 2,
-      "slug": "02-guding-yichi",
-      "title": "固定义齿的设计",
-      "status": "📋"
-    },
-    {
-      "n": 3,
-      "slug": "03-kezhai-yichi",
-      "title": "可摘局部义齿",
-      "status": "📋"
-    },
-    {
-      "n": 4,
-      "slug": "04-quankou-yaohe",
-      "title": "全口义齿与咬合重建",
-      "status": "📋"
-    },
-    {
-      "n": 5,
-      "slug": "05-zhongzhi-shengwu",
-      "title": "种植体的生物学基础",
-      "status": "📋"
-    },
-    {
-      "n": 6,
-      "slug": "06-zhongzhi-liucheng",
-      "title": "种植修复的流程",
-      "status": "📋"
-    },
-    {
-      "n": 7,
-      "slug": "07-qianti-guan",
-      "title": "牙体缺损的嵌体与冠",
-      "status": "📋"
-    },
-    {
-      "n": 8,
-      "slug": "08-cailiao-gongyi",
-      "title": "修复材料与加工工艺",
-      "status": "📋"
-    },
-    {
-      "n": 9,
-      "slug": "09-yaohe-tiaozheng",
-      "title": "咬合调整与并发症",
-      "status": "📋"
-    },
-    {
-      "n": 10,
-      "slug": "10-suifang-shibai",
-      "title": "修复体的随访与失败分析",
-      "status": "📋"
-    }
-  ]
+ "slug": "12-kouqiang-xiufu-xue",
+ "title": "口腔修复学",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "01-duixiang-sanlei",
+   "title": "修复学的对象：三类缺损与老年患者",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/01-duixiang-sanlei/docs/zh.md",
+   "code": "chapters/01-duixiang-sanlei/code/main.js"
+  },
+  {
+   "n": 2,
+   "slug": "02-zong-yuanze",
+   "title": "修复总原则：安全、有效、微创、健康、知情同意、姑息",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/02-zong-yuanze/docs/zh.md",
+   "code": "chapters/02-zong-yuanze/code/main.js"
+  },
+  {
+   "n": 3,
+   "slug": "03-pinggu-quanshen",
+   "title": "修复前全身评估：疾病、用药与口腔治疗史",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/03-pinggu-quanshen/docs/zh.md",
+   "code": "chapters/03-pinggu-quanshen/code/main.js"
+  },
+  {
+   "n": 4,
+   "slug": "04-kouqiang-jiancha",
+   "title": "修复前口腔检查与影像：七项增龄变化与片子的选择",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/04-kouqiang-jiancha/docs/zh.md",
+   "code": "chapters/04-kouqiang-jiancha/code/main.js"
+  },
+  {
+   "n": 5,
+   "slug": "05-shuqian-chuli",
+   "title": "修复前处理、健康宣教与形式选择",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/05-shuqian-chuli/docs/zh.md",
+   "code": "chapters/05-shuqian-chuli/code/main.js"
+  },
+  {
+   "n": 6,
+   "slug": "06-quankou-yinmo",
+   "title": "全口义齿的印模与模型：初印模、个别托盘、终印模",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/06-quankou-yinmo/docs/zh.md",
+   "code": "chapters/06-quankou-yinmo/code/main.js"
+  },
+  {
+   "n": 7,
+   "slug": "07-yipang-cadcam",
+   "title": "椅旁 CAD/CAM 固定义齿：适应证、预备与后处理",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/07-yipang-cadcam/docs/zh.md",
+   "code": "chapters/07-yipang-cadcam/code/main.js"
+  },
+  {
+   "n": 8,
+   "slug": "08-cailiao-tiaohe",
+   "title": "材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/08-cailiao-tiaohe/docs/zh.md",
+   "code": "chapters/08-cailiao-tiaohe/code/main.js"
+  },
+  {
+   "n": 9,
+   "slug": "09-citie-fucha",
+   "title": "瓷贴面的复查与并发症：功能、美学、生物学三条线",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/09-citie-fucha/docs/zh.md",
+   "code": "chapters/09-citie-fucha/code/main.js"
+  },
+  {
+   "n": 10,
+   "slug": "10-piaobai",
+   "title": "牙齿漂白：着色类型、适应证、方法与风险",
+   "status": "🚧",
+   "kind": "core",
+   "docs": "chapters/10-piaobai/docs/zh.md",
+   "code": "chapters/10-piaobai/code/main.js"
+  }
+ ]
 }
