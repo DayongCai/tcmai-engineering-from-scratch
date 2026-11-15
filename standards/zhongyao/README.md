@@ -98,3 +98,16 @@ node tests/test_zhongyao_text.js                 # 门：10 项
 - 反畏清单**从第 7 章原文解析**（不手打）：40 对（十八反 30 · 十九畏 10）；`乌头（川乌、草乌、附子）`按族展开，`川乌草乌畏犀角`拆成两条。
 - 各论踩清单 **0 处**；教材自己只标了 1 条（硫黄 不宜与朴硝（芒硝）同用 · 十九畏）。21 对的两味都在各论，教材一次没写在一起——**总论讲原则、各论不落点，第三次出现**（前两次：产地 0 味、升降浮沉无逐药标注）。
 - 未收进各论的清单药名 8 个：密陀僧、巴豆、水银、狼毒、白蔹、草乌、藜芦、赤石脂。
+
+## 8. 单元层在 `standards/zhongyao-xue/`（别名，不是本目录）
+
+本目录有**底本**（`底本.json`、`drugs.json`、`gates.json`、`pairing.json`），**没有** `units.json`。
+单元层在隔壁：`standards/zhongyao-xue/units.json`（340 单元 · 47,844 汉字 · 带药物库与 `axis-probe.json`），
+由 `python scripts/build_zhongyao_xue_text.py` 从**同一本** `qhzy-中药学.xlsx` 切出（sha256 同为 `6934bceb…`）。
+
+课程 slug 是 `01-zhongyaoxue`，底本目录叫 `zhongyao`、单元层目录叫 `zhongyao-xue`，三者不同名，
+所以三层口径与知识树靠**别名表**解析：`STD_ALIAS['zhongyaoxue'] = 'zhongyao-xue'`
+（`scripts/build_kt_sphere_data.py` 与 `scripts/audit_textbook_gaps.py` 各一份，改一处必须改两处）。
+
+**不要**在本目录再放一份 `units.json`：2026-11-13 试过（`scripts/build_textbook_units.py` 的通用切法，
+342 单元 / 48,217 汉字），与 `zhongyao-xue` 那份同源不同切，属双份单元层，两边迟早漂移，已删除。

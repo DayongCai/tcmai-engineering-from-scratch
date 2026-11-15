@@ -94,3 +94,18 @@
 ## 6. 与课程 10 章的关系
 
 教材 **13 章**（含第 13 章平台度量与附篇五运六气），课程 **10 章**（把教材第 2 章拆成阴阳/五行两章，把第 3 章独立为藏象，把第 7+9 章合为病因病机，把第 8+12 章合为体质与发病）。两套口径并存，`textbook-board` 记 13、`chapters.json` 记 10，不许混写。
+
+## 7. 单元层（units.json，2026-11-13 补）
+
+| 项 | 值 |
+|---|---|
+| 切分 | 一小节一单元：章＝底本章，节＝底本节，小节＝单元 |
+| 规模 | **165 单元** · 13 章 · 37,430 汉字 |
+| locator | `教材·第N章·N.M.K`，沿用底本四级编号，可逐字回查 `底本.json` |
+| 轴 | **不设三辨/四位面**：本底本没有那套编排，硬套一套词表算出来的是脚本的轴，不是教材的轴。只带 `measure`（digits / valueLike / listItems）与 `counts` |
+| 重建 | `python scripts/build_textbook_units.py jichu`；校验 `python scripts/build_textbook_units.py --check`（已并入 `npm run check`） |
+
+为什么补这一层（不是格式洁癖）：本课此前只有「底本 + 正文」两层，`standards/jichu/units.json` 缺席，
+`scripts/build_kt_sphere_data.py` 与 `scripts/build_kt_history.py` 只扫 `standards/*/units.json`，
+于是知识树与语义张量球面把本课记成**单元 0**——内容在库里，却不在统计口径里。
+补上之后知识点按「一节一单元」进树，`brief` 取底本条目名（`items`），`goals` 取正文里的【学习目标】。

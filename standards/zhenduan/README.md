@@ -156,3 +156,18 @@ node tests/test_zhenduan_chapters.js                # 10 项门（含 quiz 语�
 ```
 
 **一处必须记住的坐标系差异**：课程第 5 章（问诊）对应教材第 4 章，课程第 8 章（脏腑辨证）对应教材第 8 章，课程第 10 章对应教材第 10+11+12 章。所以引证写成「教材·第4章·4.2.1」而课程章号是 5——`apply_quiz_cites.js` 因此改为**从 sub 推章号**，不取课程章号。
+
+## 10. 单元层（units.json，2026-11-13 补）
+
+| 项 | 值 |
+|---|---|
+| 切分 | 一小节一单元：章＝底本章，节＝底本节，小节＝单元 |
+| 规模 | **105 单元** · 14 章 · 17,636 汉字 |
+| locator | `教材·第N章·N.M.K`，沿用底本四级编号，可逐字回查 `底本.json` |
+| 轴 | **不设三辨/四位面**：本底本没有那套编排，硬套一套词表算出来的是脚本的轴，不是教材的轴。只带 `measure`（digits / valueLike / listItems）与 `counts` |
+| 重建 | `python scripts/build_textbook_units.py zhenduan`；校验 `python scripts/build_textbook_units.py --check`（已并入 `npm run check`） |
+
+为什么补这一层（不是格式洁癖）：本课此前只有「底本 + 正文」两层，`standards/zhenduan/units.json` 缺席，
+`scripts/build_kt_sphere_data.py` 与 `scripts/build_kt_history.py` 只扫 `standards/*/units.json`，
+于是知识树与语义张量球面把本课记成**单元 0**——内容在库里，却不在统计口径里。
+补上之后知识点按「一节一单元」进树，`brief` 取底本条目名（`items`），`goals` 取正文里的【学习目标】。
