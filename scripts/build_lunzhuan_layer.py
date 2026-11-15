@@ -219,7 +219,9 @@ def main():
                "source": "standards/neike/units.json（病名／5 动作／辨证论治与代表方）＋ standards/zhenghou/证候库.json（132 证白名单）",
                "counts": counts, "actions": ACTIONS, "ke": ke_stats},
               open(os.path.join(OUT, '科室库.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-    json.dump({"subject": SUBJECT, "counts": counts, "units": units_out},
+    json.dump({"subject": SUBJECT,
+               "source": "派生：standards/neike/units.json（节＝病，384 单元）＋ standards/zhenghou/证候库.json（132 证白名单）；流程课，无章节式教材",
+               "counts": counts, "units": units_out},
               open(os.path.join(OUT, 'units.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     json.dump({"subject": SUBJECT,
                "why": "《中医临床轮转》是流程课，无章节式教材。本层从 standards/neike 的 384 个单元按「节＝病」聚合出 5 个轮转科室的病单；动作取教材每病固定的 5 小节；考核证据取「辨证论治」小节数、代表方数、证候库同名证数（白名单匹配，不用开放式正则）；科室与教材章不是一一对应（脑病科跨肝系与心系两章取 6 病）。",

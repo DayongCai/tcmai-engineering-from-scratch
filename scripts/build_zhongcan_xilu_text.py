@@ -91,6 +91,25 @@ def sha256_of(path: str) -> str:
     return h.hexdigest()
 
 
+def recorded_fetched_at() -> str:
+    """抓取日期是**事实记录**，不是「今天」。
+
+    原实现写 time.strftime("%Y-%m-%d")，于是 --check 每天必然报 DRIFT（底本 sha 变 →
+    单元层 sha 变 → README 变），整条 npm run check 在每个新的一天都从这一步断掉。
+    改为：已有底本里记的日期照旧沿用，只有首次建库（无底本）才落到今天。
+    """
+    p = os.path.join(OUT, "底本.json")
+    if os.path.exists(p):
+        try:
+            old = json.load(io.open(p, encoding="utf-8"))
+            v = (old.get("source") or {}).get("fetchedAt")
+            if isinstance(v, str) and re.match(r"^\d{4}-\d{2}-\d{2}$", v):
+                return v
+        except Exception:
+            pass
+    return time.strftime("%Y-%m-%d")
+
+
 def fetch() -> None:
     """抓取并留档。服务器会在 ~3MB 处重置连接，所以用 Range 续传直到 </html>。"""
     os.makedirs(SRC_DIR, exist_ok=True)
@@ -211,7 +230,7 @@ def build() -> tuple[dict, dict, dict]:
             "edition": EDITION,
             "bytes": len(raw),
             "sha256": sha256_of(SRC),
-            "fetchedAt": time.strftime("%Y-%m-%d"),
+            "fetchedAt": recorded_fetched_at(),
         },
         "t2s": "opencc t2s（仅字形）",
         "structure": "五大類（醫方·藥物·醫論·醫話·醫案）→ 篇 → 條目 → 段（div data-sec=p）",

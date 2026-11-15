@@ -28,9 +28,17 @@ def hanzi(s):
     return len(HANZI.findall(s or ""))
 
 
-def excerpt(prose, limit=900):
-    """取单元正文的前若干句，作为「逐单元读」的引子（不改写原文）。"""
+def excerpt(prose, limit=900, markdown=False):
+    """取单元正文作为「逐单元读」的引子（不改写原文）。
+
+    markdown=True 时保留段落与标题结构（外源课用：正文里带「## 条文原文与转述」，
+    压成一整段会把条文块和引文一起压没），并放宽截断。
+    """
     t = re.sub(r"【[^】]*】", "", prose)
+    if markdown:
+        t = "\n".join(ln.rstrip() for ln in t.strip().split("\n"))
+        t = re.sub(r"\n{3,}", "\n\n", t)
+        return t if len(t) <= limit else t[:limit].rstrip() + "……"
     t = re.sub(r"\s+", " ", t).strip()
     if len(t) <= limit:
         return t
@@ -131,7 +139,7 @@ def build_doc(sub, cfg, cm, slug, units, ax, meta):
     for u in units:
         L.append(f"### {u['sub']} {u['title']}")
         L.append("")
-        L.append(excerpt(u["prose"]))
+        L.append(excerpt(u["prose"], cfg.get("excerptLimit", 900), bool(cfg.get("preserveMarkdown"))))
         L.append("")
         L.append(f"*单元规模：{u['hanzi']:,} 汉字；出处 `{u['locator']}`；本单元数值类命中 {u['measure']['valueLike']}。*")
         L.append("")

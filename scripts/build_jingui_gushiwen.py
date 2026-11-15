@@ -125,6 +125,25 @@ def count_chars(paras: list) -> int:
     return sum(len(HANZI.findall(p)) for p in paras)
 
 
+def recorded_fetched_at() -> str:
+    """抓取日期是事实记录，不是「今天」。
+
+    原实现写 time.strftime("%Y-%m-%d")，而 main() 在 --check 分支之前就 write_outputs()，
+    于是每次 `npm run check` 都会把 fetchedAt 改成当天、把工作区改脏（一道会自己写盘的校验门）。
+    改为：档里已有日期就沿用，只有首次建库才落今天；--check 分支也不再写盘。
+    """
+    p = os.path.join(OUT, "gushiwen.json")
+    if os.path.exists(p):
+        try:
+            old = json.load(io.open(p, encoding="utf-8"))
+            v = (old.get("source") or {}).get("fetchedAt")
+            if isinstance(v, str) and re.match(r"^\d{4}-\d{2}-\d{2}$", v):
+                return v
+        except Exception:
+            pass
+    return time.strftime("%Y-%m-%d")
+
+
 def build() -> dict:
     idx_raw = open(os.path.join(RAW, "index.html"), "rb").read()
     idx = parse_index(idx_raw.decode("utf-8", "replace"))
@@ -165,7 +184,7 @@ def build() -> dict:
             "indexRaw": "raw/index.html",
             "indexBytes": len(idx_raw),
             "indexSha256": sha256_bytes(idx_raw),
-            "fetchedAt": time.strftime("%Y-%m-%d"),
+            "fetchedAt": recorded_fetched_at(),
             "book": "金匮要略",
             "author": "张仲景（东汉）",
             "role": "第二见证（校勘用），不替代笈成本；引用单列",
@@ -316,6 +335,8 @@ def main() -> int:
         do_fetch()
     meta = build()
     cmp = compare(meta)
+    if "--check" in argv:
+        return do_check(meta, cmp)
     write_outputs(meta, cmp)
     print("  → standards/jingui/gushiwen/gushiwen.json（%d 篇 / %d 字）" % (
         meta["counts"]["pian"], meta["counts"]["chars"]))

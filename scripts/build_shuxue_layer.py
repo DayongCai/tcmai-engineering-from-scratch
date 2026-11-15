@@ -200,7 +200,10 @@ def main():
                           "derivedFrom": "standards/jingluo/units.json"},
                "counts": counts, "points": points},
               open(os.path.join(OUT, "穴位库.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    json.dump({"counts": counts, "views": VIEWS, "levels": LEVELS,
+    json.dump({"source": {"file": os.path.basename(SRC), "sha256": hashlib.sha256(open(SRC, "rb").read()).hexdigest(),
+                          "derivedFrom": "standards/jingluo/units.json",
+                          "external": "GB/T 12346-2021《经穴名称与定位》：国标 362 条，教材 253 条对齐，外源补入 109 条（见 补源登记.json）"},
+               "counts": counts, "views": VIEWS, "levels": LEVELS,
                "chapters": [{"no": c["n"], "title": c["title"], "units": len(c["units"])}
                             for c in sorted(CHAPTER_MAP.values(), key=lambda x: x["n"])],
                "units": units},

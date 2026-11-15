@@ -1,4 +1,10 @@
 {
+ "source": {
+  "file": "qhzy-经络腧穴学.xlsx",
+  "sha256": "a630e66b5a4609ab6734d4ba933cb080be715dbb4bb428f0f95f83ed3dafaa0b",
+  "derivedFrom": "standards/jingluo/units.json",
+  "external": "GB/T 12346-2021《经穴名称与定位》：国标 362 条，教材 253 条对齐，外源补入 109 条（见 补源登记.json）"
+ },
  "counts": {
   "points": 270,
   "pointsWithRedline": 44,

@@ -88,12 +88,18 @@ test('spoken 里不含代码块、表格与 Markdown 标记', () => {
 
 test('spoken 里不含 LaTeX 源码（公式须转成可读文本）', () => {
   const problems = [];
+  // Windows 路径不是 LaTeX：`E:\textbooks\qhzy-中医基础理论.xlsx` 里的 `\textbooks`
+  // 会被 `\\[a-zA-Z]{2,}` 命中，报成「残留 LaTeX」，而它只是念出来的一个文件位置。
+  // 先把路径整段剔掉再判（只剔 `盘符:\…` 这一段，范围到空白或中文标点为止），
+  // 这样 `\frac`／`\text{}` 这类真 LaTeX 仍然会被抓住。
+  const WINDOWS_PATH = /[A-Za-z]:\\[^\s，。；：、（）「」『』《》]*/g;
   for (const { file, json } of all) {
     for (const s of json.segments) {
-      if (/\\[a-zA-Z]{2,}/.test(s.spoken)) {
-        problems.push(`${file} 第 ${s.n} 段（${s.role}）残留 LaTeX: ${(s.spoken.match(/\\[a-zA-Z]{2,}[^\s]*/) || [])[0]}`);
+      const spoken = String(s.spoken || '').replace(WINDOWS_PATH, '〈路径〉');
+      if (/\\[a-zA-Z]{2,}/.test(spoken)) {
+        problems.push(`${file} 第 ${s.n} 段（${s.role}）残留 LaTeX: ${(spoken.match(/\\[a-zA-Z]{2,}[^\s]*/) || [])[0]}`);
       }
-      if (/\$/.test(s.spoken)) problems.push(`${file} 第 ${s.n} 段（${s.role}）残留公式定界符 $`);
+      if (/\$/.test(spoken)) problems.push(`${file} 第 ${s.n} 段（${s.role}）残留公式定界符 $`);
     }
   }
   assert.deepStrictEqual(problems, [], problems.join('\n'));
