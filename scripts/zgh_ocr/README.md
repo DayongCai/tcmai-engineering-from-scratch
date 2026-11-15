@@ -42,3 +42,27 @@ PDF 默认找 `~/Desktop/中医证候学/{1-上,2-中,3-下}.pdf`；换位置用
 
 同一体例的扫描件，改三处即可：`_paths.PDF_DIR`、`门区间.json`（章界）、`结构.json`（目录层）。
 `parse_records.py` 的字段名表（`FIELD_RE`）是按本书版式定的，换书要先抽两页核对字段名。
+
+## 改正文层之后，必须连带重跑这三件（踩过的坑）
+
+`正文-M*.json` 是下游三件产物的底本。搬条、归位、补条之后只跑辞典 `--check` 是不够的——CI 会在
+`audit_xiangzuhe.py --check` 那一步报「漂移」，而这时提交已经推上去了。
+
+```
+1) python scripts/zgh_ocr/audit_xiangzuhe.py      → 证象组合-质检.json（逐条带 page，最容易被 page 变化撞红）
+2) python scripts/zgh_ocr/build_root_map.py       → 态根-病机对照.json（次数分布跟着条数走）
+3) python scripts/build_zhenghou_cidian.py        → 辞典 99 件（附录 G 的 G.6/G.7/G.8 引用上面两份）
+再跑 npm run rebuild:all，最后 npm run check
+```
+
+顺序不能倒：G.6 的表格直接读 `证象组合-质检.json`，先重建辞典会把旧数据烙进产物。
+
+## 归位表（码搬运）的纪律
+
+`归位表.json` 每条必须带 `from / to / page / why`：
+
+- `page` 是校对条件——`merge_bodies.py` 搬之前比对，不符就 `SystemExit`，**不许凭候名搬**；
+- `to` 为空 = 删掉重复挂靠的键；
+- `why` 必须写出原页标题原文与证名（谁能复查），结论同步进 `缺口登记.json` 的 `码归位`。
+
+反面教材：曾经凭「名字像」把 肾阴虚炽候 挂在肝肾湿热证下，实际原页标题写的是脾肾湿热证。
