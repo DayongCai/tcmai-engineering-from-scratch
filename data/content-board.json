@@ -1,6 +1,6 @@
 {
  "$generated": "node scripts/build_content_board.js",
- "generatedAt": "2026-11-15 09:56:52",
+ "generatedAt": "2026-11-15 11:36:59",
  "rules": {
   "structure": "catalog.json（SSOT）",
   "chapters": "catalog.chaptersBuilt + 盘上 departments/*/*/chapters/* 目录核对",
@@ -17,8 +17,8 @@
   "chaptersPct": 100,
   "textbookSubjects": 128,
   "textbookChapters": 2596,
-  "hanzi": 29253856,
-  "nonWs": 35282661,
+  "hanzi": 29248255,
+  "nonWs": 35275101,
   "syndromes": 97,
   "syndromeUnits": 104,
   "shanghanTiao": 398,
@@ -200,7 +200,7 @@
    "chaptersTarget": 276,
    "chaptersBuilt": 276,
    "textbookSubjects": 21,
-   "hanzi": 5897974,
+   "hanzi": 5892373,
    "thin": 4,
    "noBook": 2,
    "videos": 24
