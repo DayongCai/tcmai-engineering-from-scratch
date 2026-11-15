@@ -37,6 +37,23 @@ JOBS = [(m, d["vol"], d["from"], d["to"], d["name"], "第%d章 %s" % (d["chap"],
 ONLY = [a for a in sys.argv[1:] if a.startswith("M")]   # 只跑指定门：python merge_bodies.py M01 M04
 
 
+def printed_alias(men):
+    """目录里「同一个印刷码」挂着两个 full 码的情形（原书一号两用）。
+
+    例：热痰证的「肺气失宣候」目录记 code=L33-Z12-H226、full=M09-L32-Z12-H226；
+    痰火证的同名候 code 也写 L33-Z12-H226、full=M09-L33-Z12-H226 —— 目录自己就承认这一码两解。
+    只有这种「印刷码相同、full 不同」才进表；其余同名候不碰。
+    """
+    st = json.load(open(os.path.join(STD, "结构.json"), encoding="utf-8"))
+    m = next(x for x in st["men"] if x["code"] == men)
+    out = {}
+    for l in m["lei"]:
+        for z in l["zhengList"]:
+            for h in z["houList"]:
+                out.setdefault(_norm_code(men + "-" + h["code"]), []).append(h["full"])
+    return {k: v for k, v in out.items() if len(v) > 1}
+
+
 def expected_codes(men):
     st = json.load(open(os.path.join(STD, "结构.json"), encoding="utf-8"))
     m = next(x for x in st["men"] if x["code"] == men)
@@ -129,6 +146,7 @@ def main():
         if ONLY and men not in ONLY:
             continue
         expect, m = expected_codes(men)
+        ALIAS = printed_alias(men)
         recs = P.parse_vol(vol, a, b, men)
         # 补段：章界页有时落在前一卷末尾（页眉不印章名），序列范围会漏掉 —— 一并解析
         for _ev, _ea, _eb in DOORS.get(men, {}).get("extra", []):
@@ -137,6 +155,7 @@ def main():
         unmatched = []
         fixes = []
         dup = []
+        same = []      # 同码双证分派（原书一个印刷码用在两个证里）
         for r in recs:
             # 书内码是 L18-Z12-H042；结构.json 的键是加了门码的全码 M06-L18-Z12-H042。
             # OCR 常把连接号认成「一」或全角横线，这里统一成半角，否则同一条会既算
@@ -163,7 +182,30 @@ def main():
                         fixes.append({"raw": r["code"], "fixed": _c, "zh": _zh0})
                         code = _c
                         break
-            if code in items:
+            # ── 同码双证（原书一号两用第 2 类）────────────────────────────
+            # 例：M09 痰门「肺胃热痰证 L32-Z12」与「肺胃痰火证 L33-Z12」，书里都把候印成
+            # L33-Z12-H234 —— 印刷码相同，目录里是两个不同证的槽。这里不按「先到先占」，
+            # 而是按**目录顺序**把同名候的第 k 条记录分给第 k 个槽：书内次序 = 目录次序。
+            # 只在「同名候的候选码只有类位不同、且都还没占」时动手，其余照旧记重码。
+            _zh0 = r["zh"].replace("侯", "候")
+            _cands = [c for c, v in expect.items() if v["zh"] == _zh0 and c.startswith(men + "-")]
+            # ── 印刷码两解（原书一号两用）────────────────────────────────
+            # 判据不靠猜：看**目录自己**是不是把这个印刷码挂到了两个 full 码上（printed_alias）。
+            # 是，就按目录顺序分派：书内先出现的记录给前一个槽。目录只挂一个的，一概不动。
+            _alias = ALIAS.get(code) or []
+            if len(_alias) == 2 and all(x in expect for x in _alias):
+                _free = [x for x in _alias if x not in items]
+                if _free:
+                    if _free[0] != code:
+                        same.append({"raw": r["code"], "fixed": _free[0], "zh": r["zh"].replace("侯", "候"),
+                                     "page": r.get("page"),
+                                     "why": "印刷码两解：目录把同一码挂在两个证上，按目录顺序分派"})
+                        fixes.append({"raw": r["code"], "fixed": _free[0], "zh": r["zh"].replace("侯", "候")})
+                    code = _free[0]
+                elif code in items:
+                    dup.append(r["code"])
+                    continue
+            elif code in items:
                 dup.append(code)
                 continue
             fixed, note = fix_code(code, expect)
@@ -320,6 +362,7 @@ def main():
                 "pageTo": max((v["page"] for v in items.values()), default=None),
             },
             "校勘": {"未匹配": unmatched, "重码": dup, "码纠正": fixes, "归位": applied,
+                      "同码双证": same,
                       "缺条": [c for c in expect if c not in items]},
             "items": items,
         }

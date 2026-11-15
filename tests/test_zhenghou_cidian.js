@@ -153,7 +153,7 @@ test('C1g 缺条核实与码归位：三条缺条都带原页依据、归位不�
     assert.ok(x.依据.length >= 40, '依据太薄（要写印张与页上所见）：' + x.code);
   }
   const moved = gap['码归位'] || [];
-  assert.strictEqual(moved.length, 2, '归位条数应为 2');
+  assert.strictEqual(moved.length, 1, '归位条数应为 1（M09 那条改由印刷码两解分派）');
   for (const m of moved) {
     assert.ok(m.from && m.to && m.why && m.page, '归位缺字段');
     assert.ok(m.why.length >= 30, '归位依据太薄：' + m.from);
@@ -165,6 +165,19 @@ test('C1g 缺条核实与码归位：三条缺条都带原页依据、归位不�
     assert.ok(!items[m.from], '归位后旧键仍在：' + m.from);
     assert.ok(items[m.to], '归位后新键缺失：' + m.to);
   }
+  // 已解决的缺条：不许再出现在 缺条 里，且必须写明怎么解的
+  for (const x of (gap['缺条已解决'] || [])) {
+    assert.ok(!codes.has(x.code), '已解决的缺条仍缺：' + x.code);
+    assert.ok(x.原判 && x.现解 && x.现解.length >= 30, '已解决条目缺解释：' + x.code);
+  }
+  // 印刷码两解的分派：每条都要带页码与依据，且落到的必须不是原码
+  const split = gap['同码分派'] || [];
+  assert.ok(split.length >= 5, '同码分派应至少 5 条，实际 ' + split.length);
+  for (const s2 of split) {
+    assert.ok(s2.from && s2.to && s2.page && s2.why, '同码分派缺字段');
+    assert.notStrictEqual(s2.from, s2.to, '同码分派没换码：' + s2.from);
+  }
+
   // 参考书目吴方医案：回原页核过，必须留结论
   const bib = JSON.parse(fs.readFileSync(path.join(STD, '参考书目.json'), 'utf8'));
   const wu = bib.items.find(x => x.title === '吴方医案');
