@@ -127,14 +127,30 @@ test('B4 每个证名都能拆成「位 + 类性 + 证」，每个候名都能�
 
 // ── C 正文层 ──────────────────────────────────────────────
 
-test('C1 辞典 21 个文件齐备（凡例 + 12 章 + 8 附录）', () => {
+test('C1 辞典 22 个文件齐备（凡例 + 12 章 + 9 附录）', () => {
   const files = fs.readdirSync(TB).filter((f) => f.endsWith('.md'));
-  assert.strictEqual(files.length, 21, '实为 ' + files.length + '：' + files.join(', '));
+  assert.strictEqual(files.length, 22, '实为 ' + files.length + '：' + files.join(', '));
   assert.ok(files.some((f) => f.startsWith('00-')));
   for (let i = 1; i <= 12; i += 1) {
     assert.ok(files.some((f) => f.startsWith(String(i).padStart(2, '0') + '-第' + i + '章-')), '缺第 ' + i + ' 章');
   }
-  for (const a of ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']) assert.ok(files.some((f) => f.startsWith('附录' + a)), '缺附录' + a);
+  for (const a of ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']) assert.ok(files.some((f) => f.startsWith('附录' + a)), '缺附录' + a);
+});
+
+test('C1d 附录 I 参考书目：144 条齐、每条有书名与印张、校名不超原书条数', () => {
+  const b = JSON.parse(fs.readFileSync(path.join(STD, '参考书目.json'), 'utf8'));
+  assert.ok(b.count >= 140, '参考书目只有 ' + b.count + ' 条');
+  assert.strictEqual(b.items.length, b.count, 'count 与 items 不一致');
+  for (const it of b.items) {
+    assert.ok(it.title && it.title.length >= 2, '无书名：' + JSON.stringify(it).slice(0, 80));
+    assert.ok(it.page >= 2290 && it.page <= 2299, '印张越界：' + it.page);
+    assert.ok(Object.prototype.hasOwnProperty.call(it, 'author'), '缺 author 字段');
+  }
+  const fixed = b.items.filter((x) => x.ocrTitle);
+  assert.ok(fixed.length <= 20, '校名 ' + fixed.length + ' 条，超出人工核过的范围');
+  const md = fs.readFileSync(path.join(TB, '附录I-参考书目.md'), 'utf8');
+  assert.ok(md.includes('金匮要略') && md.includes('脾胃论'), '附录 I 缺关键书名');
+  assert.ok((md.match(/^\| \d+ \|/gm) || []).length >= 140, '附录 I 表格行数不足');
 });
 
 test('C1c 附录 G/H 是真表，不是占位：322 病候逐号齐、证象格数与声明相符', () => {

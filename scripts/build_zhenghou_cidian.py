@@ -2080,6 +2080,62 @@ def render_appendix_h(struct):
     return NL.join(L)
 
 
+def render_appendix_i(struct):
+    """附录 I · 参考书目（原书书末 144 条）"""
+    b = _load_json_optional("参考书目.json")
+    L = []
+    A = L.append
+    A("# 附录 I · 参考书目（原书书末「参考书目」全 144 条）")
+    A("")
+    A("> 原书在正文与附录之后另有「参考书目」四页（印张 2293–2296），共 144 条。"
+      "这份逐条落库：书名 / 著者 / 出版者 / 年份 / 印张页码。它是这部辞典**引证范围**的边界 —— "
+      "凡是标「原书正文」的段落，出处都能在这 144 条里找到源头；不在此列的医籍，本辞典不引用。")
+    A("")
+    if not b:
+        A("（缺 `standards/zhenghou-cidian/参考书目.json`，先跑 `python scripts/zgh_ocr/parse_biblio.py`。）")
+        return NL.join(L)
+    items = b.get("items", [])
+    kj = b.get("校勘", {})
+    A("## I.1 口径")
+    A("")
+    A("| 项 | 值 |")
+    A("|---|---|")
+    A("| 条数 | **%d** |" % len(items))
+    A("| 页 | %s |" % "、".join(str(p) for p in b.get("pages", [])))
+    A("| 校名（OCR 形近字已改，原样存 `ocrTitle`） | %d 条 |" % len([x for x in items if x.get("ocrTitle")]))
+    A("| 无年份 | %d 条（多为「民国年间手抄本」类） |" % len([x for x in items if not x["year"]]))
+    A("| 无出版者 | %d 条 |" % len([x for x in items if not x["publisher"]]))
+    A("| 重复（同书名同年份） | %d 条 |" % len(kj.get("重复", [])))
+    A("")
+    A("**为什么单列一附录**：这部辞典的每条候正文都标了印张页码，但页码只说明「书里第几页」，"
+      "不说明「这一页引的是哪家的书」。有了参考书目，读者能顺着 `原书 → 参考书目 → 原典` 三层回查，"
+      "而不是只信我转述。")
+    A("")
+    A("## I.2 全表")
+    A("")
+    A("| # | 书名 | 著者／整理者 | 出版者 | 年份 | 印张 |")
+    A("|---|---|---|---|---|---|")
+    for x in items:
+        title = x["title"]
+        if x.get("ocrTitle"):
+            title = "%s（原印「%s」）" % (x["title"], x["ocrTitle"])
+        A("| %d | %s | %s | %s | %s | %s |" % (
+            x["n"], title, x["author"] or "—", x["publisher"] or "—", x["year"] or "—", x["page"]))
+    A("")
+    A("## I.3 校勘")
+    A("")
+    A("- 续行并入 **%d** 处（OCR 把一条书目的出版者/年份甩到下一框，已拼回上一条）。"
+      % len(kj.get("续行并入", [])))
+    A("- 跳过 **%d** 行（页眉、页码、残行，逐条列在 `参考书目.json·校勘.跳过的行`）。"
+      % len(kj.get("跳过的行", [])))
+    if kj.get("重复"):
+        A("- 重复 **%d** 条：%s" % (len(kj["重复"]), "、".join(d["text"] for d in kj["重复"])))
+    A("- 校名只收「与传世书名对照后确定」的形近字（如 金医钩玄 → 金匮钩玄、医骗 → 医碥）；"
+      "把握不足的保留原样（如「吴方医案」），列进 `缺口登记.md` 待人工核。")
+    A("")
+    return NL.join(L)
+
+
 def main():
     struct, tensor, men = build()
     tm1names = load_tm1()
@@ -2135,6 +2191,7 @@ def main():
     out.append((os.path.join(TB, "附录F-百姓问句黄金集.md"), render_appendix_f()))
     out.append((os.path.join(TB, "附录G-证象总表.md"), render_appendix_g(struct)))
     out.append((os.path.join(TB, "附录H-病候总表.md"), render_appendix_h(struct)))
+    out.append((os.path.join(TB, "附录I-参考书目.md"), render_appendix_i(struct)))
 
     # 课程层
     for m in men:
