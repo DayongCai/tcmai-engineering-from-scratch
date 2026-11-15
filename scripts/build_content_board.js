@@ -35,6 +35,35 @@ const OUT_HTML = path.join(ROOT, 'content-board.html');
 
 const readJson = (p) => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8')); } catch { return null; } };
 const exists = (p) => fs.existsSync(path.join(ROOT, p));
+
+/**
+ * 「生成于」不取运行时刻，取**源文件最后修改时间**（departments 下的 md）。
+ *
+ * 理由：`new Date()` 写进产物 = 每天必报 drift，内容没改也红；红线变噪音就没人看了。
+ * 改成源 mtime 后，看板上的日期回答的是「这份统计反映的是哪天的源」。
+ * 排除本脚本产物（data/content-board.json、content-board.html）以避免自我回路。
+ */
+const SELF_FILES = new Set([OUT_JSON, OUT_HTML]);
+function sourceDate(startDirs) {
+  let newest = 0;
+  const walk = (dir) => {
+    let ents;
+    try { ents = fs.readdirSync(dir, { withFileTypes: true }); } catch { return; }
+    for (const e of ents) {
+      const p = path.join(dir, e.name);
+      if (SELF_FILES.has(p)) continue;
+      if (e.isDirectory()) walk(p);
+      else if (/\.(md|json)$/i.test(e.name)) {
+        try { const m = fs.statSync(p).mtimeMs; if (m > newest) newest = m; } catch { /* 跳过读不到的 */ }
+      }
+    }
+  };
+  for (const d of startDirs) walk(path.join(ROOT, d));
+  if (!newest) return '1970-01-01 00:00:00';
+  const d = new Date(newest);
+  const p2 = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p2(d.getMonth() + 1)}-${p2(d.getDate())} ${p2(d.getHours())}:${p2(d.getMinutes())}:${p2(d.getSeconds())}`;
+}
 const sum = (a, f) => a.reduce((n, x) => n + (f(x) || 0), 0);
 const pct = (a, b) => (b ? Number(((a / b) * 100).toFixed(2)) : null);
 const fmt = (n) => (n >= 1e8 ? `${(n / 1e8).toFixed(2)} 亿` : n >= 1e4 ? `${(n / 1e4).toFixed(1)} 万` : String(n));
@@ -360,7 +389,7 @@ function build() {
 
   const doc = {
     $generated: 'node scripts/build_content_board.js',
-    generatedAt: new Date().toISOString().slice(0, 19).replace('T', ' '),
+    generatedAt: sourceDate(['departments', 'standards']),
     rules: {
       structure: 'catalog.json（SSOT）',
       chapters: 'catalog.chaptersBuilt + 盘上 departments/*/*/chapters/* 目录核对',

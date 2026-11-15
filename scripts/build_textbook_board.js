@@ -50,10 +50,48 @@ const TYPE_RANK = { Core: 0, Build: 1, Clinic: 2, Reference: 3 };
 const TYPE_LABEL = { Core: '核心', Build: '工程', Clinic: '临床', Reference: '参考' };
 const STAGE_GLYPH = { sheng: '🌱', zhang: '🌿', zhuang: '🌳', lao: '🍂', yi: '🔄' };
 
-const TODAY = (() => {
-  const d = new Date();
+/**
+ * 产物里的「生成日期」不取运行时刻，而取**底本自身的最后修改时间**。
+ *
+ * 为什么：把 `new Date()` 写进产物，等于每天第一次重跑都报 drift —— 内容一个字没改，
+ * 却因为「今天是几号」被判成不一致，久了 everyone 学会无视红叉。
+ * 取底本 mtime 后语义变成「这份看板反映的是哪一天的底本」，内容不变则日期不变。
+ *
+ * 排除自身产物（SCHEDULE.md）：它是本脚本写出的文件，把它算进来会形成回路 ——
+ * 每写一次 mtime 就是此刻，下一天又漂。目录里只认 `.md`，卷册 json 另计。
+ */
+const SELF_OUTPUT = path.join(ROOT, OUT_MD);
+
+function sourceDate(startDirs) {
+  let newest = 0;
+  const walk = (dir) => {
+    let ents;
+    try {
+      ents = fs.readdirSync(dir, { withFileTypes: true });
+    } catch {
+      return;
+    }
+    for (const e of ents) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) {
+        walk(p);
+      } else if (/\.md$/i.test(e.name) && p !== SELF_OUTPUT) {
+        try {
+          const m = fs.statSync(p).mtimeMs;
+          if (m > newest) newest = m;
+        } catch {
+          /* 读不到就跳过，不因单个文件失败整体退出 */
+        }
+      }
+    }
+  };
+  for (const d of startDirs) walk(path.join(ROOT, d));
+  if (!newest) return '1970-01-01';
+  const d = new Date(newest);
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-})();
+}
+
+const TODAY = sourceDate(['textbooks']);   // 底本最新改动日（不含本脚本产物）
 
 const readJson = (p) => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8'));
 const abs = (p) => path.join(ROOT, p);
@@ -884,6 +922,11 @@ const outputs = [
 ];
 
 if (CHECK) {
+  // 日期戳不参与一致性判定：它取底本 mtime，换机器/重切工作区时 mtime 会变，
+  // 但内容没变。若把日期算进判据，CI 上每次全新 checkout 都会红 —— 红线就成了噪音。
+  const stripStamp = (s) =>
+    s.replace(/("generatedAt"\s*:\s*")[^"]*(")/g, '$1<date>$2')
+      .replace(/(生成日期\s*)\d{4}-\d{2}-\d{2}/g, '$1<date>');
   let drift = 0;
   for (const [rel, content] of outputs) {
     const p = abs(rel);
@@ -892,7 +935,7 @@ if (CHECK) {
       drift += 1;
       continue;
     }
-    if (fs.readFileSync(p, 'utf8') !== content) {
+    if (stripStamp(fs.readFileSync(p, 'utf8')) !== stripStamp(content)) {
       console.error(`✗ 漂移: ${rel} 与重算结果不一致`);
       drift += 1;
     }

@@ -1,6 +1,6 @@
 {
   "$generated": "node scripts/build_textbook_board.js",
-  "generatedAt": "2026-11-15",
+  "generatedAt": "2026-11-14",
   "rules": {
     "weeks": 18,
     "teachWeeks": 16,
