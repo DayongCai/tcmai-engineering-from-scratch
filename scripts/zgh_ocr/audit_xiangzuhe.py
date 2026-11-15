@@ -42,6 +42,20 @@ WEI_ABBR = {
 }
 
 
+# ── 人工回原页核过的两个结论（印张号写在依据里，可复查）───────────────────
+# 1) OCR 截首：原页印张 85 作「腠理不宣」，OCR 掉首字成「理不宣」→ 可修；
+# 2) 另三条**不是 OCR 错**，是原书自己的说法，附录一确实没有这一格：
+#    经气不宣（印张 85）、阴虚失养（印张 839）、阴热蕴炽（印张 842）。
+CURATED = {
+    "理不宣": ("clipped", "腠理不宣", "OCR 丢首字；原页印张 85 作「腠理不宣」"),
+}
+EXTERNAL = {
+    "经气不宣": "原页印张 85 即写「经气不宣」——附录一没有「经气」这个位（只有经脉/气机）",
+    "阴虚失养": "原页印张 839 即写「阴虚失养」——附录一作「阴液失养」（阴×不养）",
+    "阴热蕴炽": "原页印张 842 即写「阴热蕴炽」——附录一作「阴液蕴炽」（阴×蕴炽）",
+}
+
+
 def load_tai():
     return {t["zh"] for t in json.load(open(os.path.join(STD, "语素-态.json"), encoding="utf-8"))["态"]}
 
@@ -144,12 +158,19 @@ def main():
                     if not v:
                         continue
                     kind, col, row = classify_xiang(v, X, cells)
+                    rec = {"code": code, "zh": it.get("zh"), "page": it.get("page"), "label": v,
+                           "判定": kind, "位": col, "病机": row}
+                    if v in CURATED and CURATED[v][0] == kind:
+                        rec["原页核对"] = CURATED[v][2]
+                        rec["更正后"] = CURATED[v][1]
+                        rec["更正后判定"] = classify_xiang(CURATED[v][1], X, cells)[0]
+                    if v in EXTERNAL:
+                        rec["原页核对"] = EXTERNAL[v]
+                        rec["表外"] = True
                     xiang_cls[kind] += 1
                     door["证象:" + kind] += 1
                     if kind != "exact":
-                        xiang_detail.append({"men": men, "code": code, "zh": it.get("zh"),
-                                             "page": it.get("page"), "label": v, "判定": kind,
-                                             "位": col, "病机": row})
+                        xiang_detail.append(rec)
                 continue
 
             xiang_forms["标签型（位缩写+态缩写）"] += 1
@@ -217,6 +238,8 @@ def main():
             "标签出现总次": sum(tag_cnt.values()),
         },
         "证象型明细": xiang_detail,
+        "证象型说明": "clipped 一条已回原页核实（理不宣→腠理不宣）；unknown 三条同样是原页写法，"
+                      "不是 OCR 错，附录一确实没有对应格 —— 明细里逐条标了「原页核对」。",
         "标签型未解释明细": {k: dict(v.most_common()) for k, v in tag_unexplained.items()},
         "标签Top40": dict(tag_cnt.most_common(40)),
         "perDoor": per_door,

@@ -137,6 +137,30 @@ test('C1 辞典 22 个文件齐备（凡例 + 12 章 + 9 附录）', () => {
   for (const a of ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']) assert.ok(files.some((f) => f.startsWith('附录' + a)), '缺附录' + a);
 });
 
+test('C1f 态根对照表自洽：判定和=总次、映射必带病机、待核必带依据、附录 G 有 G.7', () => {
+  const r = JSON.parse(fs.readFileSync(path.join(STD, '态根-病机对照.json'), 'utf8'));
+  const c = r.counts;
+  const sum = Object.values(c['按判定']).reduce((a, b) => a + b, 0);
+  assert.strictEqual(sum, c['出现总次'], '判定之和 != 出现总次');
+  const rootsSum = r.roots.reduce((a, x) => a + x.次数, 0);
+  assert.strictEqual(rootsSum, c['出现总次'], '逐根次数之和 != 出现总次');
+  for (const x of r.roots) {
+    assert.ok(['映射', '性质不映', '待核', '噪声'].includes(x.判定), '未知判定：' + x.判定);
+    assert.ok(x.依据 && x.依据.length >= 8, '缺依据：' + x.态根);
+    if (x.判定 === '映射') {
+      assert.ok(x.病机, '映射项缺病机：' + x.态根);
+      assert.ok(typeof x.可落格次数 === 'number', '映射项缺可落格次数：' + x.态根);
+    }
+    if (x.判定 === '性质不映' || x.判定 === '噪声') assert.strictEqual(x.病机, null);
+  }
+  // 不接进计分：编码器输出里不许出现「态根」/「映射」相关字段
+  const enc = require(path.join(ROOT, 'scripts', 'zhenghou_encode.js'));
+  const out = enc.encode(enc.load(), '怕冷 无汗');
+  assert.ok(!JSON.stringify(out).includes('态根'), '编码器不该消费这张表');
+  const md = fs.readFileSync(path.join(TB, '附录G-证象总表.md'), 'utf8');
+  assert.ok(md.includes('G.7') && md.includes('不接进计分'), '附录 G 缺 G.7 或不接进计分声明');
+});
+
 test('C1e 证象组合质检自洽：分类和=标签总次、证象型明细可回查、附录 G 有 G.6', () => {
   const q = JSON.parse(fs.readFileSync(path.join(STD, '证象组合-质检.json'), 'utf8'));
   const c = q.counts;
