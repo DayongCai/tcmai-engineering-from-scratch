@@ -17,7 +17,7 @@
 | 原书正文 | **十二门 1863/1866 条候逐条 OCR**（330.8 万字原文，带印张页码）· 缺 3 条已登记 |
 | 接口 | `node scripts/zhenghou_api.js`（/health /encode /search /hou /name /openapi.json）· 11 条接口断言 |
 | 名形校验 | 附录一 72 格 → `证象-合法组合.json` → `validateName()`（true/false/null 三态）· `/encode` 的 `nameChecks[]` · 只提示不改分 |
-| 百姓入口 | `site/zhenghou.html`（单文件离线页）· `口语别名.json`（90 条口语 + 17 条危象词）· `问答样例.json`（12 条黄金问句） |
+| 百姓入口 | `site/zhenghou.html`（单文件离线页）· `口语别名.json`（138 条口语 + 17 条危象词，覆盖头痛/二便/睡眠/情绪四域）· `问答样例.json`（12 条黄金问句） |
 | 平台接入 | 站点导航「证候辞典」→ `site/zhenghou.html`（由 `scripts/build_zhenghou_site.js` 生成，`--check` 幂等） |
 | CI | `.github/workflows/curriculum.yml` 的 `zhenghou` job：数据 --check → 19 条辞典断言 → 15 黄金样例 → 10 接口断言 → 5 页面断言 |
 | 可复现 | OCR 管线在 `scripts/zgh_ocr/`（已进 git；数据在 scratch，可重跑；`pip install pymupdf rapidocr_onnxruntime`） |
