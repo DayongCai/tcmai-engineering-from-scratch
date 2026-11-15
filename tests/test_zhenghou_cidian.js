@@ -137,6 +137,23 @@ test('C1 辞典 22 个文件齐备（凡例 + 12 章 + 9 附录）', () => {
   for (const a of ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']) assert.ok(files.some((f) => f.startsWith('附录' + a)), '缺附录' + a);
 });
 
+test('C1e 证象组合质检自洽：分类和=标签总次、证象型明细可回查、附录 G 有 G.6', () => {
+  const q = JSON.parse(fs.readFileSync(path.join(STD, '证象组合-质检.json'), 'utf8'));
+  const c = q.counts;
+  assert.ok(c['有证象组合字段'] > 1700, '字段数 ' + c['有证象组合字段']);
+  const forms = Object.values(c['字段形态']).reduce((a, b) => a + b, 0);
+  assert.strictEqual(forms, c['有证象组合字段'], '字段形态之和 != 有字段条数');
+  const cls = Object.values(c['标签型判定']).reduce((a, b) => a + b, 0);
+  assert.strictEqual(cls, c['标签出现总次'], '标签分类之和 != 标签出现总次');
+  assert.ok(c['证象型判定'] && typeof c['证象型判定'] === 'object');
+  for (const r of q['证象型明细']) {
+    assert.ok(r['判定'] && r['label'] && r['page'], '明细缺字段：' + JSON.stringify(r));
+  }
+  const md = fs.readFileSync(path.join(TB, '附录G-证象总表.md'), 'utf8');
+  assert.ok(md.includes('G.6'), '附录 G 缺 G.6');
+  assert.ok(md.includes('不是同一套词'), 'G.6 没写出结论');
+});
+
 test('C1d 附录 I 参考书目：144 条齐、每条有书名与印张、校名不超原书条数', () => {
   const b = JSON.parse(fs.readFileSync(path.join(STD, '参考书目.json'), 'utf8'));
   assert.ok(b.count >= 140, '参考书目只有 ' + b.count + ' 条');
