@@ -127,14 +127,35 @@ test('B4 每个证名都能拆成「位 + 类性 + 证」，每个候名都能�
 
 // ── C 正文层 ──────────────────────────────────────────────
 
-test('C1 辞典 19 个文件齐备（凡例 + 12 章 + 6 附录）', () => {
+test('C1 辞典 21 个文件齐备（凡例 + 12 章 + 8 附录）', () => {
   const files = fs.readdirSync(TB).filter((f) => f.endsWith('.md'));
-  assert.strictEqual(files.length, 19, '实为 ' + files.length + '：' + files.join(', '));
+  assert.strictEqual(files.length, 21, '实为 ' + files.length + '：' + files.join(', '));
   assert.ok(files.some((f) => f.startsWith('00-')));
   for (let i = 1; i <= 12; i += 1) {
     assert.ok(files.some((f) => f.startsWith(String(i).padStart(2, '0') + '-第' + i + '章-')), '缺第 ' + i + ' 章');
   }
-  for (const a of ['A', 'B', 'C', 'D', 'E', 'F']) assert.ok(files.some((f) => f.startsWith('附录' + a)), '缺附录' + a);
+  for (const a of ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']) assert.ok(files.some((f) => f.startsWith('附录' + a)), '缺附录' + a);
+});
+
+test('C1c 附录 G/H 是真表，不是占位：322 病候逐号齐、证象格数与声明相符', () => {
+  const bh = JSON.parse(fs.readFileSync(path.join(STD, '附录-病候.json'), 'utf8'));
+  assert.strictEqual(bh.count, 322, '附录二条数 ' + bh.count);
+  assert.deepStrictEqual(bh.校勘.缺号, [], '附录二缺号：' + JSON.stringify(bh.校勘.缺号));
+  const hs = Object.keys(bh.items);
+  assert.strictEqual(hs.length, 322, '病候号条数 ' + hs.length);
+  for (const h of hs) assert.match(h, /^H\d{3}$/, '病候号格式：' + h);
+  const zx = JSON.parse(fs.readFileSync(path.join(STD, '附录-证象.json'), 'utf8'));
+  assert.ok(zx.cells.length >= 70, '证象格只有 ' + zx.cells.length);
+  assert.strictEqual(zx.cells.length, zx.count, 'count 与 cells 不一致');
+  for (const c of zx.cells) {
+    assert.ok(zx.rows.includes(c.row), '未登记的行标：' + c.row);
+    assert.ok(zx.cols.includes(c.col), '未登记的列标：' + c.col);
+    assert.ok(c.text.length >= 3, '格内文字过短：' + c.text);
+  }
+  const g = fs.readFileSync(path.join(TB, '附录G-证象总表.md'), 'utf8');
+  const hh = fs.readFileSync(path.join(TB, '附录H-病候总表.md'), 'utf8');
+  assert.ok(g.includes('腠理不宣') && g.includes('脱绝'), '附录 G 缺关键格');
+  assert.ok(hh.includes('H001') && hh.includes('H322'), '附录 H 缺首尾病候号');
 });
 
 test('C1b 附录 D（百姓反查）与附录 E（工程手册）内容达标', () => {

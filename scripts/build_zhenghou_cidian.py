@@ -1946,6 +1946,140 @@ def render_appendix_f():
     return NL.join(L)
 
 
+def _load_json_optional(name):
+    p = os.path.join(STD, name)
+    if not os.path.exists(p):
+        return None
+    with open(p, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def render_appendix_g(struct):
+    """附录 G · 证象总表（原书附录一，75 证象 / 实测 72 格）"""
+    zx = _load_json_optional("附录-证象.json")
+    L = []
+    A = L.append
+    A("# 附录 G · 证象总表（原书附录一：75 证象一览表）")
+    A("")
+    A("> 这一附录是补回来的：上一版我在缺口登记里写「附录一/二在扫描件里找不到」，**那是错的**。"
+      "两张表就印在印张 2290–2292（下册 PDF 第 756–758 页），只是它们不在门/类/证/候四级目录里，"
+      "按章范围扫自然看不见。错误已改，数据已落库。")
+    A("")
+    if not zx:
+        A("（缺 `standards/zhenghou-cidian/附录-证象.json`，先跑 `python scripts/zgh_ocr/parse_appendix.py`。）")
+        return NL.join(L)
+    A("## G.1 这张表在说什么")
+    A("")
+    A("原表是一张**矩阵**：行是病机（不宣 / 不利 / 不通 / 闭塞 / 不降 / 不升 / 蕴蒸 / 蕴灼 / 蕴炽 / "
+      "腐败 / 溃乱 / 不和 / 不宁 / 不振 / 不养 / 不荣 / 不固 / 枯竭 / 脱绝），"
+      "列是部位与属性（腠理 · 经脉 · 络脉 · 清空 · 清窍 · 气机 · 神志 · 津 · 液 · 营 · 血 · 阳 · 阴）。"
+      "格内文字就是「部位 + 病机」拼出来的证象，例如 **腠理 × 不宣 = 腠理不宣**。")
+    A("")
+    A("用工程的话说：这是本书的**证象词法表** —— 它不是证、不是候，而是「证候名里那些两字组合」的"
+      "合法词库。候名的尾巴（态）从这里取，证的名称（部位+病机）也从这里取。")
+    A("")
+    A("| 项 | 实测 | 怎么来的 |")
+    A("|---|---|---|")
+    A("| 行（病机） | **%d** | 原表左列竖排字，逐行读 |" % len(zx.get("rows", [])))
+    A("| 列（位/属性） | **%d** | 原表两级表头 |" % len(zx.get("cols", [])))
+    A("| 格（证象） | **%d** | 300 DPI 渲染页逐象限人工读表；每格用字回 OCR 兑现 |" % zx.get("count", 0))
+    A("| 书名声明 | %d | 原页标题「附录一：75证象一览表」 |" % zx.get("declare", 75))
+    A("")
+    A("**为什么是人工读表而不是自动解析**：OCR 把格内两个字拆成两个文本框（「腠理」「不宣」），"
+      "又把表头拆成单字（「腧」「理」），自动拼格会整列错位。宁可慢，不可错 —— "
+      "自动拼出来的 103 个「格」里有一半是错的，人工读的 72 格每一格都能回页兑现。")
+    A("")
+    A("## G.2 逐行总表")
+    A("")
+    A("| 病机 | 该行出现的证象（列 · 格内文字） |")
+    A("|---|---|")
+    for row in zx.get("rows", []):
+        cells = [c for c in zx.get("cells", []) if c["row"] == row]
+        if not cells:
+            A("| %s | —（本行在表上为空） |" % row)
+            continue
+        A("| %s | %s |" % (row, " · ".join("**%s** %s" % (c["col"], c["text"]) for c in cells)))
+    A("")
+    gap = zx.get("校勘", {})
+    A("## G.3 差额与校验")
+    A("")
+    A("- 读到 **%d 格**，书名声明 **%d**，差 **%s** 格。" % (
+        gap.get("读到格数", zx.get("count", 0)), gap.get("书名声明", 75), gap.get("差", "?")))
+    A("- %s" % gap.get("差额说明", "（未填）"))
+    A("- 表右侧另有一窄列性质注记：%s —— 它是行性质的标注，不是格，未计入。" %
+      "、".join(gap.get("表右侧性质注记", [])))
+    A("- 方法：%s" % gap.get("方法", ""))
+    A("")
+    A("## G.4 与 108 态的关系（别混）")
+    A("")
+    A("附录 A.5 的 **108 态**是从 1866 条候名**尾部实测**得来（失宣、蕴蒸、郁结…），"
+      "本附录的 **%d 格证象**是原书表格里**部位+病机**的组合。两者词形大量重合，但不是一回事：" %
+      zx.get("count", 0))
+    A("")
+    A("| | 证象（本附录） | 态（附录 A.5） |")
+    A("|---|---|---|")
+    A("| 出处 | 原书附录一原表 | 候名尾部实测 |")
+    A("| 形态 | 部位 + 病机（腠理不宣） | 病机片段（不宣 / 蕴蒸） |")
+    A("| 用途 | 校验候名/证名里的组合是否合法 | 给候打「这一步坏在哪」的标签 |")
+    A("")
+    return NL.join(L)
+
+
+def render_appendix_h(struct):
+    """附录 H · 病候总表（原书附录二，322 条）"""
+    bh = _load_json_optional("附录-病候.json")
+    L = []
+    A = L.append
+    A("# 附录 H · 病候总表（原书附录二：322 病候一览表）")
+    A("")
+    A("> 原表在印张 2291–2292，四列流水，每条一个病候号（H001–H322）+ 候名。"
+      "这份是**机器解析**（同号同名的正则抓取），322/322 齐、缺号 0、同号异名 0。")
+    A("")
+    if not bh:
+        A("（缺 `standards/zhenghou-cidian/附录-病候.json`，先跑 `python scripts/zgh_ocr/parse_appendix.py`。）")
+        return NL.join(L)
+    items = bh.get("items", {})
+    kj = bh.get("校勘", {})
+    A("## H.1 一句话说清它和正文层的关系")
+    A("")
+    A("正文层是按**门→类→证→候**组织的 1866 条候实例；本表是按**病候号**索引的 **322 个病候**。"
+      "同一个候号会跨证复用（例如 083 在气门、饮门都出现），所以 322 ≠ 1866：")
+    A("")
+    A("| | 候实例（正文层） | 病候（本附录） |")
+    A("|---|---|---|")
+    A("| 计数 | **%d** 条 | **%d** 条 |" % (struct["counts"]["houInstances"], len(items)))
+    A("| 主键 | 全码 M01-L01-Z01-H001 | 病候号 H001 |")
+    A("| 出处 | 各门正文（OCR 逐条） | 书末附录二原表 |")
+    A("")
+    A("## H.2 全表（按病候号）")
+    A("")
+    A("| 号 | 附录二原表写法 | 结构层同号写法 | 备注 |")
+    A("|---|---|---|---|")
+    for h in sorted(items):
+        v = items[h]
+        names = v.get("structNames") or []
+        shown = "、".join(names) if names else "—（结构层无同号）"
+        note = ""
+        if v.get("nameGuess"):
+            note = "原表字形与结构层不同，疑为「%s」" % v["nameGuess"]
+        elif names and v["name"] not in names:
+            note = "原表写法与结构层不一致"
+        A("| %s | %s | %s | %s |" % (h, v["name"], shown, note or "一致"))
+    A("")
+    A("## H.3 校勘")
+    A("")
+    A("- 页：%s" % "、".join(str(p) for p in bh.get("pages", [])))
+    A("- 缺号：%s" % ("无" if not kj.get("缺号") else "、".join("H%03d" % n for n in kj["缺号"])))
+    A("- 同号异名：%s" % ("无" if not kj.get("同号异名") else "%d 处" % len(kj["同号异名"])))
+    A("- 形近命中（原表字形与结构层只差一个已知形近字）：**%d** 条 —— 这些**没有改名**，"
+      "原样保留原表写法，另给 `nameGuess` 供检索时兼容。" % kj.get("形近命中", 0))
+    A("")
+    A("**这份表怎么用**：APP 里用户报的是「西医病名 + 症状」，落到证需要的是「病候号 → 候」这条索引。"
+      "有了 322 条，`/hou?code=` 之外还能按**病候号**查：同一号在不同门下的证，一次列全。")
+    A("")
+    return NL.join(L)
+
+
 def main():
     struct, tensor, men = build()
     tm1names = load_tm1()
@@ -1966,7 +2100,10 @@ def main():
                 "、".join(MEN_SHORT.get(k, k) for k in sorted(BODY_SRC)),
                 sum(v.get("chars", 0) for v in BODY.values()) / 10000.0,
                 struct["counts"]["houInstances"] - len(BODY)),
-            "附录一（75证象一览表）与附录二（322病候一览表）在扫描件中未找到对应页（目录有条目，正文末页止于印张 2290 的医案），故本层的 108 态表是从候名尾部实测得来，不是抄附录。",
+            ("附录一（75 证象）与附录二（322 病候）**已落库**：原表在印张 2290–2292（下册 PDF 756–758 页），"
+             "不在四级目录里，早先按章范围扫漏掉、被误记为「扫描件没有」。现 附录二 322/322 机器解析、"
+             "附录一 72 格人工读表（书名声明 75，差 4 格在 附录-证象.json 的 校勘 里逐条交代）。"
+             "注：附录 A.5 的 108 态仍是从候名尾部实测得来，与附录一不是一回事，别混。"),
             ("正文层逐条校勘：书内印刷码的 L/Z 与目录码不一致 %d 条（以目录为准配对，原印刷码留在 items[*].codeConflict）；"
              "目录有、扫描正文找不到 %d 条（列在 正文层校勘.缺条）；书内有、目录没有 %d 条（列在 未匹配）；"
              "同码出现两次 %d 条。") % (
@@ -1996,6 +2133,8 @@ def main():
     out.append((os.path.join(TB, "附录D-症状反查索引.md"), render_appendix_d(struct, men)))
     out.append((os.path.join(TB, "附录E-应用工程手册.md"), render_appendix_e(struct, tensor)))
     out.append((os.path.join(TB, "附录F-百姓问句黄金集.md"), render_appendix_f()))
+    out.append((os.path.join(TB, "附录G-证象总表.md"), render_appendix_g(struct)))
+    out.append((os.path.join(TB, "附录H-病候总表.md"), render_appendix_h(struct)))
 
     # 课程层
     for m in men:
