@@ -286,7 +286,7 @@
 | 11 | [中医外科学](departments/01-zhongyi/11-zhongyi-waike-xue/) | 6 | Clinic | 72 | 13/13 | 0 | 298235 字 | ✅ |
 | 12 | [中医妇科学](departments/01-zhongyi/12-zhongyi-fuke-xue/) | 6 | Clinic | 72 | 13/13 | 0 | 288344 字 | ✅ |
 | 13 | [中医儿科学](departments/01-zhongyi/13-zhongyi-erke-xue/) | 6 | Clinic | 72 | 14/14 | 0 | 275093 字 | ✅ |
-| 14 | [中医证候学](departments/01-zhongyi/14-zhongyi-zhenghou-xue/) | 7 | Build | 72 | 12/12 | 0 | 126458 字 | ✅ |
+| 14 | [中医证候学](departments/01-zhongyi/14-zhongyi-zhenghou-xue/) | 7 | Build | 72 | 12/12 | 0 | 208605 字 | ✅ |
 | 15 | [中医各家学说](departments/01-zhongyi/15-zhongyi-gejia-xueshuo/) | 7 | Reference | 54 | 8/8 | 0 | 397230 字 | ✅ |
 | 16 | [中医哲学史](departments/01-zhongyi/16-zhongyi-zhexue-shi/) | 2 | Reference | 36 | 8/8 | 0 | 29208 字 | ✅ |
 | 17 | [中医急诊学](departments/01-zhongyi/17-zhongyi-jizhen-xue/) | 8 | Reference | 36 | 12/12 | 0 | 179742 字 | ✅ |

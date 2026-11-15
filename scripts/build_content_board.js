@@ -59,10 +59,12 @@ function sourceDate(startDirs) {
     }
   };
   for (const d of startDirs) walk(path.join(ROOT, d));
-  if (!newest) return '1970-01-01 00:00:00';
+  if (!newest) return '1970-01-01';
   const d = new Date(newest);
   const p2 = (n) => String(n).padStart(2, '0');
-  return `${d.getFullYear()}-${p2(d.getMonth() + 1)}-${p2(d.getDate())} ${p2(d.getHours())}:${p2(d.getMinutes())}:${p2(d.getSeconds())}`;
+  // 只到「日」，不到秒：产物每次重出都会改写源文件 mtime，秒级时间戳等于每次重建都换一行，
+  // 而真正想回答的是「这份统计反映哪天的源」。同日重建 → 同一行 → 干净 diff。
+  return `${d.getFullYear()}-${p2(d.getMonth() + 1)}-${p2(d.getDate())}`;
 }
 const sum = (a, f) => a.reduce((n, x) => n + (f(x) || 0), 0);
 const pct = (a, b) => (b ? Number(((a / b) * 100).toFixed(2)) : null);
