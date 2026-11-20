@@ -34,6 +34,10 @@ const MIME = {
   '.mp4': 'video/mp4',
   '.webm': 'video/webm',
   '.mp3': 'audio/mpeg',
+  // 教材成品也要能直接从预览服务器拿到：不认扩展名时浏览器只会存成 octet-stream，
+  // EPUB 阅读器插件/移动端就不会接管（2026-11-19 实测 Content-Type 是 application/octet-stream）。
+  '.epub': 'application/epub+zip',
+  '.pdf': 'application/pdf',
   '.md': 'text/markdown; charset=utf-8',
   '.py': 'text/plain; charset=utf-8',
   '.mjs': 'text/javascript; charset=utf-8',

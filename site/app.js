@@ -42,6 +42,7 @@ const NAV = [
   ['paths.html', '学习路径'],
   ['glossary.html', '术语表'],
   ['semtensor.html', '语义张量'],
+  ['books.html', '教材'],
   // 证候辞典是独立页（scripts/build_zhenghou_site.js 生成，单文件离线可用），
   // 不放进 site/pages.js 的 PAGES —— 那一套会生成空壳并覆盖它。
   ['zhenghou.html', '证候辞典'],
@@ -666,6 +667,83 @@ function renderGlossary() {
 `);
 }
 
+// ── 页面：教材 ──
+/**
+ * 教材成品页。
+ *
+ * 数据来自 site/books-data.js（scripts/build_books_data.js 生成）：它把「清单说有什么」
+ * 与「盘上真有什么」分开记录 —— 只读 series.json 的话，删掉产物后页面仍会显示可下载，
+ * 点开就是 404。
+ *
+ * 下载链接指向 ../textbooks/build/…：`npm run serve` 会把仓库根映射进来，
+ * 所以本地预览即可直接下载；部署时把 textbooks/build/ 一并同步即可（不需要站点内拷贝）。
+ */
+function renderBooks() {
+  const B = window.TCMAI_BOOKS || { available: false, volumes: [], totals: {} };
+  const mb = (a) => (a && a.ok ? `${(a.bytes / 1048576).toFixed(1)} MB` : '未构建');
+  const link = (a, label, cls = 'btn') => (a && a.ok
+    ? `<a class="${cls}" href="../${a.path}" download>${label} · ${mb(a)}</a>`
+    : `<span class="tag">${label} 未构建</span>`);
+
+  if (!B.available) {
+    return shell('books.html', '教材', `
+<h1>教材 · 五卷本</h1>
+<p class="lede">教材成品尚未构建 —— ${esc(B.reason || '还没有生成 series.json')}。</p>
+<p>构建命令（EPUB 需要 pandoc，PDF 另需 xelatex）：</p>
+<pre><code>npm run textbooks:epub     # 五卷 EPUB
+npm run textbooks:pdf      # 五卷 PDF
+npm run textbooks:publish:check</code></pre>
+<p class="small muted">源稿在 <code>textbooks/</code>（随仓库分发），成品在 <code>textbooks/build/</code>（不入库）。
+章契约与四层口径见 <a href="../textbooks/README.md">textbooks/README.md</a>。</p>`);
+  }
+
+  const cards = B.volumes.map((v) => `
+  <div class="card">
+    <div class="card-title">${esc(v.glyph)} 第 ${v.n} 卷 · ${esc(v.title)}</div>
+    <div class="card-sub">${esc(v.subtitle)}</div>
+    <div class="card-meta">
+      第 ${v.semesters.join('、')} 学期 · <b>${v.chapters}</b> 章 · <b>${v.words.toLocaleString('en-US')}</b> 字
+    </div>
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem">
+      ${link(v.epub, 'EPUB')}
+      ${link(v.pdf, 'PDF')}
+      ${link(v.html, '单文件 HTML', 'btn ghost')}
+    </div>
+  </div>`).join('');
+
+  return shell('books.html', '教材', `
+<h1>教材 · 五卷本 · ${B.totals.chapters} 章</h1>
+<p class="lede">《${esc(B.series)}》把 189 门学科按「生 · 长 · 壮 · 老 · 已」分成五卷。
+每章首块写明底本表 / 外源书名、抽取指纹与该章字数 —— 数字可复算，写错就过不了门。</p>
+
+<div class="counts">
+  <div class="count"><b>${B.totals.volumes}</b>卷</div>
+  <div class="count"><b>${B.totals.chapters}</b>章</div>
+  <div class="count"><b>${(B.totals.words / 1e4).toFixed(1)} 万</b>字</div>
+  <div class="count"><b>${B.totals.epubOnDisk ?? B.totals.epub}</b>EPUB</div>
+  <div class="count"><b>${B.totals.pdfOnDisk ?? B.totals.pdf}</b>PDF</div>
+</div>
+
+<h2>三种形态怎么用</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>形态</th><th>适合</th><th>说明</th></tr></thead>
+  <tbody>
+    <tr><td><b>EPUB</b></td><td>手机 / 平板 / 阅读器</td><td>可重排、可调字号；卷内为「卷首说明 → 院系部页 → 学科页 → 前置 / 章 / 附录」，封面上的章数与字数是出书时实测</td></tr>
+    <tr><td><b>PDF</b></td><td>打印 / 引用</td><td>固定版式，单卷体量大（卷一 7,178 页），建议按卷下载</td></tr>
+    <tr><td><b>单文件 HTML</b></td><td>桌面 / 离线</td><td>双击即读、零依赖；公式与插图已内联，整本就是一个文件</td></tr>
+  </tbody>
+</table></div>
+
+<h2>逐卷下载</h2>
+<div class="grid cols-2">${cards}</div>
+
+<p class="small muted" style="margin-top:2rem">
+数据源：<code>scripts/build_books_data.js</code> 读 <code>textbooks/build/series.json</code> 并逐个核盘上文件；
+章契约（N.1–N.5、免责句位置、四层口径）见 <a href="../textbooks/README.md">textbooks/README.md</a>。
+对外分发（Release 附件）用 <code>npm run textbooks:publish</code>。教育用途，不构成临床诊疗建议。
+</p>`);
+}
+
 // ── 页面：关于 ──
 function renderAbout() {
   const tracks = DATA.tracks || {};
@@ -1045,6 +1123,7 @@ const ROUTES = {
   paths: renderPaths,
   glossary: renderGlossary,
   semtensor: renderSemtensor,
+  books: renderBooks,
   about: renderAbout,
 };
 

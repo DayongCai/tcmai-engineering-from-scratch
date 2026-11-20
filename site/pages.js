@@ -26,6 +26,7 @@ const PAGES = [
   ['paths', '学习路径', '学习路径 — 临床型 / 工程型 / 科研型 / 教学型 / 复合型'],
   ['glossary', '术语表', '双术语表 — 中医术语 / AI 术语 / 桥梁对照'],
   ['semtensor', '语义张量', '三维极坐标语义张量 — 颜色赋值公理、母子父三球与语义域分布'],
+  ['books', '教材', '五卷教材成品 — EPUB / PDF / 单文件 HTML，逐卷章数与实测字数'],
   ['about', '关于', '关于本平台 — 架构、数据管线与免责声明'],
 ];
 
@@ -40,6 +41,7 @@ const SCRIPTS = [
   'data.js',
   'semtensor-spec.js',
   'content.js',
+  'books-data.js',
   'progress.js',
   'semtensor.js',
   'sphere.js',

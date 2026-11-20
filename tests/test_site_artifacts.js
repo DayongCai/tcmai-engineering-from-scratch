@@ -25,7 +25,7 @@ function loadGenerated(file) {
   return sandbox.window;
 }
 
-const PAGES = ['index', 'catalog', 'subject', 'chapter', 'roadmap', 'paths', 'glossary', 'about'];
+const PAGES = ['index', 'catalog', 'subject', 'chapter', 'roadmap', 'paths', 'glossary', 'books', 'about'];
 
 test('site/data.js 存在且可执行，挂载 TCMAI_DATA', () => {
   assert.ok(fs.existsSync(path.join(SITE, 'data.js')), '缺 site/data.js —— 先跑 node site/build.js');
