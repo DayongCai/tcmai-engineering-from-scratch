@@ -1,0 +1,304 @@
+{
+  "$generated": "手工维护：教材开稿登记（无底本表，按团体标准撰写层逐章登记依据）",
+  "subject": "08-wuguan/12-kouqiang-xiufu-xue",
+  "title": "口腔修复学",
+  "teachingChapters": 10,
+  "why": "本课无底本表（不是从某本教材抽取），教材稿按 8 份中华口腔医学会团体标准搭建：90 条条文逐条登记在 standards/kouqiang-xiufu/外源条文.json，全部通过 sha256 与逐字校勘。章目 10 章与教学计划 10 章对齐，第 1 章先出样板，其余 9 章按同一契约续写。",
+  "layerNote": "全部章节为「本库撰写层」——不是源正文层，不得声称摘自某本教材；每条依据可回条号。",
+  "chapters": [
+    {
+      "no": 1,
+      "file": "textbooks/08-wuguan/12-kouqiang-xiufu-xue/01-第1章-术语与原则.md",
+      "title": "术语与原则：团标为什么要先定义，再谈技术",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2882,
+        "citations": 20,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-xiufu/外源条文.json",
+          "note": "90 条 T/CHSA 团标条文；本章引 20 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-xiufu/补源登记.json",
+          "note": "8 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-xiufu/专题-修复操作流程.md",
+          "note": "同 90 条条文按临床流程的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 90/90 逐字可查；node tests/test_source_topics.js → 本章 20 处引用可核、1 段摘句逐字命中"
+    },
+    {
+      "no": 2,
+      "file": "textbooks/08-wuguan/12-kouqiang-xiufu-xue/02-第2章-术前评估.md",
+      "title": "术前评估：全身风险先于口腔方案",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2326,
+        "citations": 14,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-xiufu/外源条文.json",
+          "note": "90 条 T/CHSA 团标条文；本章引 14 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-xiufu/补源登记.json",
+          "note": "8 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-xiufu/专题-修复操作流程.md",
+          "note": "同 90 条条文按临床流程的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 90/90 逐字可查；node tests/test_source_topics.js → 本章 14 处引用可核、1 段摘句逐字命中"
+    },
+    {
+      "no": 3,
+      "file": "textbooks/08-wuguan/12-kouqiang-xiufu-xue/03-第3章-修复前处理与宣教.md",
+      "title": "修复前处理与口腔健康宣教",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2176,
+        "citations": 9,
+        "quotes": 0
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-xiufu/外源条文.json",
+          "note": "90 条 T/CHSA 团标条文；本章引 9 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-xiufu/补源登记.json",
+          "note": "8 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-xiufu/专题-修复操作流程.md",
+          "note": "同 90 条条文按临床流程的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 90/90 逐字可查；node tests/test_source_topics.js → 本章 9 处引用可核、0 段摘句逐字命中"
+    },
+    {
+      "no": 4,
+      "file": "textbooks/08-wuguan/12-kouqiang-xiufu-xue/04-第4章-可摘局部义齿与姑息治疗.md",
+      "title": "可摘局部义齿：形式选择与姑息治疗",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2268,
+        "citations": 10,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-xiufu/外源条文.json",
+          "note": "90 条 T/CHSA 团标条文；本章引 10 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-xiufu/补源登记.json",
+          "note": "8 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-xiufu/专题-修复操作流程.md",
+          "note": "同 90 条条文按临床流程的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 90/90 逐字可查；node tests/test_source_topics.js → 本章 10 处引用可核、1 段摘句逐字命中"
+    },
+    {
+      "no": 5,
+      "file": "textbooks/08-wuguan/12-kouqiang-xiufu-xue/05-第5章-全口义齿印模与模型.md",
+      "title": "全口义齿：印模与模型的四道工序",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2254,
+        "citations": 13,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-xiufu/外源条文.json",
+          "note": "90 条 T/CHSA 团标条文；本章引 13 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-xiufu/补源登记.json",
+          "note": "8 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-xiufu/专题-修复操作流程.md",
+          "note": "同 90 条条文按临床流程的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 90/90 逐字可查；node tests/test_source_topics.js → 本章 13 处引用可核、1 段摘句逐字命中"
+    },
+    {
+      "no": 6,
+      "file": "textbooks/08-wuguan/12-kouqiang-xiufu-xue/06-第6章-固定修复与粘接链.md",
+      "title": "固定修复与粘接链：顺序不可交换",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2137,
+        "citations": 13,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-xiufu/外源条文.json",
+          "note": "90 条 T/CHSA 团标条文；本章引 13 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-xiufu/补源登记.json",
+          "note": "8 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-xiufu/专题-修复操作流程.md",
+          "note": "同 90 条条文按临床流程的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 90/90 逐字可查；node tests/test_source_topics.js → 本章 13 处引用可核、1 段摘句逐字命中"
+    },
+    {
+      "no": 7,
+      "file": "textbooks/08-wuguan/12-kouqiang-xiufu-xue/07-第7章-牙齿漂白.md",
+      "title": "牙齿漂白：先分型，再定方案，最后谈维护",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2422,
+        "citations": 20,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-xiufu/外源条文.json",
+          "note": "90 条 T/CHSA 团标条文；本章引 20 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-xiufu/补源登记.json",
+          "note": "8 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-xiufu/专题-修复操作流程.md",
+          "note": "同 90 条条文按临床流程的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 90/90 逐字可查；node tests/test_source_topics.js → 本章 20 处引用可核、1 段摘句逐字命中"
+    },
+    {
+      "no": 8,
+      "file": "textbooks/08-wuguan/12-kouqiang-xiufu-xue/08-第8章-椅旁数字化修复.md",
+      "title": "椅旁数字化修复：参数比品牌重要",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2532,
+        "citations": 26,
+        "quotes": 2
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-xiufu/外源条文.json",
+          "note": "90 条 T/CHSA 团标条文；本章引 26 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-xiufu/补源登记.json",
+          "note": "8 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-xiufu/专题-修复操作流程.md",
+          "note": "同 90 条条文按临床流程的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 90/90 逐字可查；node tests/test_source_topics.js → 本章 26 处引用可核、2 段摘句逐字命中"
+    },
+    {
+      "no": 9,
+      "file": "textbooks/08-wuguan/12-kouqiang-xiufu-xue/09-第9章-并发症与失败分析.md",
+      "title": "并发症与失败分析：按位置找因",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2169,
+        "citations": 14,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-xiufu/外源条文.json",
+          "note": "90 条 T/CHSA 团标条文；本章引 14 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-xiufu/补源登记.json",
+          "note": "8 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-xiufu/专题-修复操作流程.md",
+          "note": "同 90 条条文按临床流程的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 90/90 逐字可查；node tests/test_source_topics.js → 本章 14 处引用可核、1 段摘句逐字命中"
+    },
+    {
+      "no": 10,
+      "file": "textbooks/08-wuguan/12-kouqiang-xiufu-xue/10-第10章-维护与随访.md",
+      "title": "维护与随访：修复体的第二段寿命",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1884,
+        "citations": 10,
+        "quotes": 0
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-xiufu/外源条文.json",
+          "note": "90 条 T/CHSA 团标条文；本章引 10 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-xiufu/补源登记.json",
+          "note": "8 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-xiufu/专题-修复操作流程.md",
+          "note": "同 90 条条文按临床流程的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 90/90 逐字可查；node tests/test_source_topics.js → 本章 10 处引用可核、0 段摘句逐字命中"
+    }
+  ],
+  "mode": "开稿",
+  "textbookChaptersAfter": 10,
+  "note": "10 章已全部写完（每章均过 tests/test_source_topics.js 的引用门与 tests/test_textbook_supplement.js 的八节契约）。原 planned 章节全部落地，不再保留计划态。",
+  "textbookChaptersBefore": 0
+}

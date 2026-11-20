@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（中医管理的判据是「目标可量、责任到岗、偏差可纠」）+ 知识积累（本章 22 单元 31,702 汉字；三辨主 **组织与流程 454**；四位面（章群结构）主 **组织与人力 31702**；引书 **78 部 127 次**；数值类命中 0）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 226 单元 / 393,720 汉字）；单元层 `standards/03-zhongyi-guanli-xue/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 226 单元 / 393,720 汉字）；单元层 `standards/03-zhongyi-guanli-xue/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -206,7 +206,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py 03-zhongyi-guanli-xue "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py 03-zhongyi-guanli-xue "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py 03-zhongyi-guanli-xue                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/24-zhongyi-huli-xue/07-waike-fuke/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 64.56,
+  "estimatedCues": 0,
+  "videoSeconds": 64.588667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.25,
+      "seconds": 4.25,
+      "estimated": false,
+      "text": "第 7 章 · 外科与妇科病证的辨证施护",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.25,
+      "end": 22.59,
+      "seconds": 18.34,
+      "estimated": false,
+      "text": "「《外科正宗·痈疽治法总论》」——本章讲外科妇科护理，教材无篇名级引文；疮疡治法纲领出于此篇，篇名按此补足，非本章原文篇名。本章要回答的是：外科与妇科护理，共同的前提是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 22.59,
+      "end": 32.38,
+      "seconds": 9.79,
+      "estimated": false,
+      "text": "是「局部与整体的关系」：外科看疮疡的深浅与走窜，妇科看经带胎产的周期——都要把局部放回整体判断。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 32.38,
+      "end": 53.26,
+      "seconds": 20.88,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 1 单元 16,644 汉字；三辨主 施护 297；四位面（技术类别）主 病区住院 24；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 53.26,
+      "end": 64.56,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

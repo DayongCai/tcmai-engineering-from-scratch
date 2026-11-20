@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/03-zhongguo-yixue-shi/03-chunqiu-qinhan/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 63.04,
+  "estimatedCues": 0,
+  "videoSeconds": 63.078667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.51,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "第 3 章 · 春秋战国至秦汉：体系的奠基",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.51,
+      "end": 20.45,
+      "seconds": 15.94,
+      "estimated": false,
+      "text": "「《中国医学史·春秋战国至秦汉：体系的奠基》」——教材第 3、4 章。本章要回答的是：春秋战国至秦汉：体系的奠基：这一段医学史的主线是什么，凭什么这么说。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.45,
+      "end": 25.99,
+      "seconds": 5.54,
+      "estimated": false,
+      "text": "春秋战国至秦汉：体系的奠基：教材第 3、4 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 25.99,
+      "end": 51.74,
+      "seconds": 25.75,
+      "estimated": false,
+      "text": "环境逼迫（医学史的判据是「人物—著作—制度」三件套：谁写的、写了什么、当时怎么组织医疗）+ 知识积累（本章 9 单元 17,638 汉字；三辨主 医家与著作 92；四位面（时代阶段）主 起源与奠基 17638；引书 154 部 401 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 51.74,
+      "end": 63.04,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

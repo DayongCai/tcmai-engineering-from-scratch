@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/06-guanli/08-jiankang-fuwu-guanli/06-z86/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 55.03,
+  "estimatedCues": 0,
+  "videoSeconds": 55.052667,
+  "videoMinusNarrationSeconds": 0.023,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.48,
+      "seconds": 3.48,
+      "estimated": false,
+      "text": "第 6 章 · 支付方式与激励机制",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.48,
+      "end": 16.39,
+      "seconds": 12.91,
+      "estimated": false,
+      "text": "「《F:/textbooks/机器学习·支付方式与激励机制》」——教材第6章。本章要回答的是：支付方式与激励机制：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 16.39,
+      "end": 20.28,
+      "seconds": 3.89,
+      "estimated": false,
+      "text": "支付方式与激励机制：本课第 6 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 20.28,
+      "end": 43.73,
+      "seconds": 23.45,
+      "estimated": false,
+      "text": "环境逼迫（健康服务的判据是「谁提供、给谁用、怎么评」）+ 知识积累（本章 43 单元 54,503 汉字；三辨主 制度与规则 422；四位面（章群结构）主 绩效与质量 54503；引书 122 部 210 次；数值类命中 19）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 43.73,
+      "end": 55.03,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

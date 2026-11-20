@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（工程实践的判据是「可复现—可评测—可交付」三件，缺一件就不算做完）+ 知识积累（本章 26 单元 25,754 汉字；三辨主 **质量与评测 230**；四位面（阶段结构）主 **训练与部署 25754**；引书 **3 部 7 次**；数值类命中 19）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（6 内容章 / 81 单元 / 107,597 汉字）；单元层 `standards/zhineng-gongcheng-shijian/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（6 内容章 / 81 单元 / 107,597 汉字）；单元层 `standards/zhineng-gongcheng-shijian/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -229,7 +229,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py zhineng-gongcheng-shijian "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py zhineng-gongcheng-shijian "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py zhineng-gongcheng-shijian                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

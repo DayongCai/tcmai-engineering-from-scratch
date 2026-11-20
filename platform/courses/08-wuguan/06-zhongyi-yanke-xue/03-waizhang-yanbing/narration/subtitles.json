@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/08-wuguan/06-zhongyi-yanke-xue/03-waizhang-yanbing/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 55.38,
+  "estimatedCues": 0,
+  "videoSeconds": 55.422667,
+  "videoMinusNarrationSeconds": 0.043,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.75,
+      "seconds": 4.75,
+      "estimated": false,
+      "text": "第 3 章 · 外障眼病：胞睑、两眦、白睛",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.75,
+      "end": 17.97,
+      "seconds": 13.22,
+      "estimated": false,
+      "text": "「《中医眼科学·外障眼病：胞睑、两眦、白睛》」——第3章。本章要回答的是：外障眼病：胞睑、两眦、白睛：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 17.97,
+      "end": 23.08,
+      "seconds": 5.11,
+      "estimated": false,
+      "text": "外障眼病：胞睑、两眦、白睛：本课第 3 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 23.08,
+      "end": 44.08,
+      "seconds": 21,
+      "estimated": false,
+      "text": "环境逼迫（眼科看病的判据是「定位到轮、定性到邪、治法有出处」）+ 知识积累（本章 3 单元 7,506 汉字；三辨主 病位与病性 84；四位面（章群结构）主 内障 152；引书 16 部 18 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 44.08,
+      "end": 55.38,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

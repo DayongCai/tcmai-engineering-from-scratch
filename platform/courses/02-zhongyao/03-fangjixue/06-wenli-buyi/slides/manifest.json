@@ -1,0 +1,42 @@
+{
+  "chapter": "06-wenli-buyi",
+  "slideCount": 7,
+  "segmentCount": 7,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 20
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 107
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 119
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 116
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 226
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 356
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 52
+    }
+  ]
+}

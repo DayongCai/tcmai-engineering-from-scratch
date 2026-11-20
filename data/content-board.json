@@ -1,6 +1,6 @@
 {
  "$generated": "node scripts/build_content_board.js",
- "generatedAt": "2026-11-15",
+ "generatedAt": "2026-11-20",
  "rules": {
   "structure": "catalog.json（SSOT）",
   "chapters": "catalog.chaptersBuilt + 盘上 departments/*/*/chapters/* 目录核对",
@@ -12,13 +12,13 @@
   "departments": 9,
   "subjects": 189,
   "hours": 11547,
-  "chaptersTarget": 2154,
-  "chaptersBuilt": 2154,
+  "chaptersTarget": 2166,
+  "chaptersBuilt": 2166,
   "chaptersPct": 100,
-  "textbookSubjects": 128,
-  "textbookChapters": 2596,
-  "hanzi": 29243120,
-  "nonWs": 35267949,
+  "textbookSubjects": 138,
+  "textbookChapters": 2690,
+  "hanzi": 30254731,
+  "nonWs": 36587200,
   "syndromes": 97,
   "syndromeUnits": 104,
   "shanghanTiao": 398,
@@ -115,20 +115,20 @@
  "gaps": [
   {
    "kind": "教材缺稿",
-   "n": 61,
+   "n": 51,
    "detail": [
     "护理系/基础护理学(14章)",
     "智能系/大语言模型与中医智能体(12章)",
-    "基础医学院/医学细胞生物学(12章)",
     "基础医学院/医学遗传学(12章)",
     "中医系/医学衷中参西录选读(10章)",
     "中药系/中成药与临床用药(10章)",
-    "中药系/中药毒理学(10章)",
     "针灸系/中医康复学(10章)",
     "骨伤系/骨伤解剖学(10章)",
     "骨伤系/脊柱病学(10章)",
     "骨伤系/关节病学(10章)",
-    "护理系/急危重症护理学(10章)"
+    "护理系/急危重症护理学(10章)",
+    "智能系/中医软件架构学(10章)",
+    "智能系/中医自然语言处理(10章)"
    ],
    "fix": "按目标章节数从大到小补稿（先补 14 章的病理生理学、12 章的大语言模型/细胞生物学）"
   },
@@ -136,25 +136,25 @@
    "kind": "章节未建",
    "n": 0,
    "detail": [
-    "189 学科目标 2154 章，已建 2154"
+    "189 学科目标 2166 章，已建 2166"
    ],
    "fix": "按学科整科推满（内经/伤寒已满科），而不是全库平均铺开"
   },
   {
    "kind": "教材过薄",
-   "n": 22,
+   "n": 29,
    "detail": [
     "中医筋伤学 187 字/章",
     "中医嗓音医学 257 字/章",
     "骨伤科手法治疗学 468 字/章",
     "中医美容与皮肤治疗学 532 字/章",
     "中医信息学 568 字/章",
-    "科研实训与实验设计 575 字/章",
-    "管理实习与实践 590 字/章",
-    "工程实践与系统交付 590 字/章",
     "中医知识树 636 字/章",
-    "中药专业实践 638 字/章",
-    "另有 14 个结课类学科（毕业设计/知识移交）单章 540/541/543/555/556/569/574/588/588/592/597/621/807/861 字，属体例例外"
+    "中医智能设备与可穿戴设备 645 字/章",
+    "中医面部望诊学 749 字/章",
+    "中医口腔科学 1033 字/章",
+    "管理实习与实践 1253 字/章",
+    "另有 14 个结课类学科（毕业设计/知识移交）单章 1002/1193/1266/1354/1357/1417/1454/1471/1475/1486/1493/1514/1556/1568 字，属体例例外"
    ],
    "fix": "正文类学科低于 8,000 字/章的优先补写（本科教材单章通常 1–1.5 万字）；结课类不计入"
   },
@@ -197,12 +197,12 @@
    "slug": "01-zhongyi",
    "title": "中医系",
    "subjects": 23,
-   "chaptersTarget": 276,
-   "chaptersBuilt": 276,
-   "textbookSubjects": 21,
-   "hanzi": 5887238,
-   "thin": 4,
-   "noBook": 2,
+   "chaptersTarget": 288,
+   "chaptersBuilt": 288,
+   "textbookSubjects": 22,
+   "hanzi": 5943345,
+   "thin": 5,
+   "noBook": 1,
    "videos": 24
   },
   {
@@ -212,10 +212,10 @@
    "subjects": 21,
    "chaptersTarget": 235,
    "chaptersBuilt": 235,
-   "textbookSubjects": 15,
-   "hanzi": 2741661,
-   "thin": 2,
-   "noBook": 6,
+   "textbookSubjects": 17,
+   "hanzi": 2856555,
+   "thin": 4,
+   "noBook": 4,
    "videos": 0
   },
   {
@@ -226,7 +226,7 @@
    "chaptersTarget": 228,
    "chaptersBuilt": 228,
    "textbookSubjects": 16,
-   "hanzi": 2458284,
+   "hanzi": 2504492,
    "thin": 2,
    "noBook": 6,
    "videos": 0
@@ -239,7 +239,7 @@
    "chaptersTarget": 150,
    "chaptersBuilt": 150,
    "textbookSubjects": 7,
-   "hanzi": 768739,
+   "hanzi": 791622,
    "thin": 2,
    "noBook": 10,
    "videos": 0
@@ -251,10 +251,10 @@
    "subjects": 27,
    "chaptersTarget": 348,
    "chaptersBuilt": 348,
-   "textbookSubjects": 23,
-   "hanzi": 6878648,
-   "thin": 0,
-   "noBook": 4,
+   "textbookSubjects": 25,
+   "hanzi": 6919411,
+   "thin": 2,
+   "noBook": 2,
    "videos": 0
   },
   {
@@ -264,10 +264,10 @@
    "subjects": 26,
    "chaptersTarget": 292,
    "chaptersBuilt": 292,
-   "textbookSubjects": 16,
-   "hanzi": 4309737,
+   "textbookSubjects": 17,
+   "hanzi": 4674310,
    "thin": 1,
-   "noBook": 10,
+   "noBook": 9,
    "videos": 0
   },
   {
@@ -277,10 +277,10 @@
    "subjects": 19,
    "chaptersTarget": 166,
    "chaptersBuilt": 166,
-   "textbookSubjects": 6,
-   "hanzi": 248639,
+   "textbookSubjects": 7,
+   "hanzi": 351140,
    "thin": 4,
-   "noBook": 13,
+   "noBook": 12,
    "videos": 0
   },
   {
@@ -290,10 +290,10 @@
    "subjects": 17,
    "chaptersTarget": 144,
    "chaptersBuilt": 144,
-   "textbookSubjects": 9,
-   "hanzi": 740281,
-   "thin": 5,
-   "noBook": 8,
+   "textbookSubjects": 11,
+   "hanzi": 792834,
+   "thin": 7,
+   "noBook": 6,
    "videos": 0
   },
   {
@@ -303,18 +303,18 @@
    "subjects": 17,
    "chaptersTarget": 315,
    "chaptersBuilt": 315,
-   "textbookSubjects": 15,
-   "hanzi": 5209893,
+   "textbookSubjects": 16,
+   "hanzi": 5421022,
    "thin": 2,
-   "noBook": 2,
+   "noBook": 1,
    "videos": 0
   }
  ],
  "disk": {
-  "dirs": 2154,
-  "withDocs": 2154,
-  "withQuiz": 2154,
-  "withOutputs": 2154,
+  "dirs": 2166,
+  "withDocs": 2166,
+  "withQuiz": 2166,
+  "withOutputs": 2166,
   "mismatched": []
  },
  "syndromeDetail": {

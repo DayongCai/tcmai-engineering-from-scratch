@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/10-bingli-xue/09-suanjian-pingheng-wenluan/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 99.14,
+  "estimatedCues": 0,
+  "videoSeconds": 99.178667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 6.43,
+      "seconds": 6.43,
+      "estimated": false,
+      "text": "第 9 章 · 酸碱平衡紊乱：把「偏酸偏碱」拆成方向与原发环节",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 6.43,
+      "end": 20.78,
+      "seconds": 14.35,
+      "estimated": false,
+      "text": "「酸碱平衡是指机体通过多种调节机制使体液的酸碱度维持在相对恒定范围的过程。」——教材·第9章·9.1.1（《病理学·第9章·9.1.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.78,
+      "end": 45.12,
+      "seconds": 24.34,
+      "estimated": false,
+      "text": "「代谢性酸中毒」「呼吸性碱中毒」这八个字你能默写，四型的名字也能背全。可给你三项指标的变化方向——一个往下、一个往上、第三个也往下——你答不出这是单纯型还是混合型，更答不出代偿够不够。名字背得出，方向读不出；方向读不出，本章就只剩八个名词。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 45.12,
+      "end": 87.84,
+      "seconds": 42.72,
+      "estimated": false,
+      "text": "环境逼迫（带教老师把三项指标的方向念出来问「这是什么紊乱」，学生只能把四个名字逐个试一遍；换成问「原发变化在哪一头、代偿往哪边走」，就彻底断线）+ 知识积累（本章 12 个单元、20,430 字的词频结构显示：形态 101 次与机制 98 次几乎持平，四层级里细胞 86 次居首——这是全书少有的「没有肉眼病灶」的一章；三个调节环节各占一个单元、四个指标名覆盖 5 到 11 个单元，而「原发方向与代偿方向相反」这条判据只在 9.3.3 一个单元里被写成一句话）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 87.84,
+      "end": 99.14,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/06-guanli/20-weisheng-fa-xue/03-f3/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 53.55,
+  "estimatedCues": 0,
+  "videoSeconds": 53.592667,
+  "videoMinusNarrationSeconds": 0.043,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.62,
+      "seconds": 3.62,
+      "estimated": false,
+      "text": "第 3 章 · 卫生立法与卫生法治",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.62,
+      "end": 15.04,
+      "seconds": 11.42,
+      "estimated": false,
+      "text": "「《卫生法学·卫生立法与卫生法治》」——教材第3章。本章要回答的是：卫生立法与卫生法治：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 15.04,
+      "end": 19.14,
+      "seconds": 4.1,
+      "estimated": false,
+      "text": "卫生立法与卫生法治：本课第 3 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 19.14,
+      "end": 42.25,
+      "seconds": 23.11,
+      "estimated": false,
+      "text": "环境逼迫（卫生法学的判据是「找出义务主体与责任条款」，不是背条文）+ 知识积累（本章 11 单元 15,306 汉字；三辨主 制度与规则 192；四位面（章群结构）主 总论与法治 15306；引书 8 部 17 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 42.25,
+      "end": 53.55,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

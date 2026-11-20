@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（知识产权转化的判据是「权利属谁、能不能转、转了怎么分」——三问答不上就别签）+ 知识积累（本章 5 单元 6,836 汉字；三辨主 **中医药与技术 117**；四位面（章群结构）主 **权利基础 6836**；引书 **11 部 29 次**；数值类命中 8）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-卫生法学.xlsx`（6 内容章 / 44 单元 / 64,467 汉字）；单元层 `standards/zhishichanquan-zhuanhua/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-卫生法学.xlsx`（6 内容章 / 44 单元 / 64,467 汉字）；单元层 `standards/zhishichanquan-zhuanhua/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -103,7 +103,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py zhishichanquan-zhuanhua "F:/textbooks/F:/textbooks/qhzy-卫生法学.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py zhishichanquan-zhuanhua "F:/textbooks/qhzy-卫生法学.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py zhishichanquan-zhuanhua                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

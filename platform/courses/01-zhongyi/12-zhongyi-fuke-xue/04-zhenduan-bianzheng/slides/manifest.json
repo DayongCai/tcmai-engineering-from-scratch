@@ -1,0 +1,37 @@
+{
+  "chapter": "04-zhenduan-bianzheng",
+  "slideCount": 6,
+  "segmentCount": 6,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 21
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 49
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 131
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 127
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 128
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 52
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/07-zhineng/10-llm-yu-zhongyi-zhinengti/04-llm4/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 54.91,
+  "estimatedCues": 0,
+  "videoSeconds": 54.944667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.31,
+      "seconds": 3.31,
+      "estimated": false,
+      "text": "第 4 章 · 概率图与序列生成",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.31,
+      "end": 15.93,
+      "seconds": 12.62,
+      "estimated": false,
+      "text": "「《F:/textbooks/机器学习·概率图与序列生成》」——教材第4章。本章要回答的是：概率图与序列生成：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 15.93,
+      "end": 19.63,
+      "seconds": 3.7,
+      "estimated": false,
+      "text": "概率图与序列生成：本课第 4 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 19.63,
+      "end": 43.61,
+      "seconds": 23.98,
+      "estimated": false,
+      "text": "环境逼迫（大模型的判据是「说得出依据、测得出底线」：测不出幻觉率的模型不许进临床流程）+ 知识积累（本章 14 单元 11,200 汉字；三辨主 表示与生成 147；四位面（章群结构）主 概率与学习 11200；引书 2 部 5 次；数值类命中 3）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 43.61,
+      "end": 54.91,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

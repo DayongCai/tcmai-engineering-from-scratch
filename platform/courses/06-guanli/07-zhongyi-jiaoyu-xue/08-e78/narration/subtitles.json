@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/06-guanli/07-zhongyi-jiaoyu-xue/08-e78/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 55.39,
+  "estimatedCues": 0,
+  "videoSeconds": 55.418667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.46,
+      "seconds": 3.46,
+      "estimated": false,
+      "text": "第 8 章 · 教育研究与改革趋势",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.46,
+      "end": 16.35,
+      "seconds": 12.89,
+      "estimated": false,
+      "text": "「《F:/textbooks/机器学习·教育研究与改革趋势》」——教材第8章。本章要回答的是：教育研究与改革趋势：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 16.35,
+      "end": 20.19,
+      "seconds": 3.84,
+      "estimated": false,
+      "text": "教育研究与改革趋势：本课第 8 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 20.19,
+      "end": 44.09,
+      "seconds": 23.9,
+      "estimated": false,
+      "text": "环境逼迫（教育学的判据是「目标可测、过程可查、结果可评」）+ 知识积累（本章 22 单元 33,629 汉字；三辨主 组织与流程 255；四位面（章群结构）主 国际与趋势 33629；引书 95 部 136 次；数值类命中 6）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 44.09,
+      "end": 55.39,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

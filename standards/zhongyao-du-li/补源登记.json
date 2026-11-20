@@ -195,6 +195,76 @@
    "pages": 43,
    "textChars": 138053,
    "textLayer": true
+  },
+  "PM-HILI-2019": {
+   "file": "PM-HILI-Frontiers-2019.txt",
+   "title": "Polygonum multiflorum-Induced Liver Injury: Clinical Characteristics, Risk Factors, Material Basis, Action Mechanism and Current Challenges",
+   "url": "https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2019.01467/full",
+   "issuer": "Frontiers in Pharmacology · 2019 · 官方开放获取全文（存为去标签文本快照）",
+   "note": "HILI 与何首乌肝损伤的综述；条号为本库按摘句顺序编的序号，非原文条号",
+   "exists": true,
+   "sha256": "84cda6437cfe0759d013c22931923ae2f828e210e442b7a6ebfa965d914474ca",
+   "bytes": 113408,
+   "pages": null,
+   "textChars": 111832,
+   "textLayer": true,
+   "kind": "text-snapshot"
+  },
+  "TP-HILI-2022": {
+   "file": "Triptolide-Hepatotoxicity-PMC9449346.txt",
+   "title": "The molecular pathogenesis of triptolide-induced hepatotoxicity",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9449346/",
+   "issuer": "PMC · 2022 · 开放获取全文（存为去标签文本快照）",
+   "note": "雷公藤甲素（triptolide）肝毒性机制；条号为本库序号",
+   "exists": true,
+   "sha256": "2cc8b60450deb0eebfa045f70b1431b2a2ce0768b87e756dab65be55eebebe61",
+   "bytes": 84199,
+   "pages": null,
+   "textChars": 83227,
+   "textLayer": true,
+   "kind": "text-snapshot"
+  },
+  "AAN-2023": {
+   "file": "Aristolochic-Acid-Nephropathy-PMC10565449.txt",
+   "title": "Overview of aristolochic acid nephropathy: an update",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10565449/",
+   "issuer": "PMC · 2023 · 开放获取全文（存为去标签文本快照）",
+   "note": "马兜铃酸肾病（AAN）综述；条号为本库序号",
+   "exists": true,
+   "sha256": "65ae87f369cde3152a6dd83fb87b3f5f4c2f40af8d50cd3763112b935f3f6325",
+   "bytes": 58227,
+   "pages": null,
+   "textChars": 57627,
+   "textLayer": true,
+   "kind": "text-snapshot"
+  },
+  "ACONITINE-2018": {
+   "file": "Aconitine-Toxicity-PMC7241456.txt",
+   "title": "Research progress of aconitine toxicity and forensic analysis of aconitine poisoning",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7241456/",
+   "issuer": "PMC · 2018 · 开放获取全文（存为去标签文本快照）",
+   "note": "乌头碱毒性与中毒分析；条号为本库序号",
+   "exists": true,
+   "sha256": "820bad66717fbdc07a34ef9674817f00f09e8a6ba157ed804b8c4bb4748f5b7c",
+   "bytes": 42790,
+   "pages": null,
+   "textChars": 42273,
+   "textLayer": true,
+   "kind": "text-snapshot"
+  },
+  "SHIBAFAN-2013": {
+   "file": "TCM-Incompatibility-PMC3858019.txt",
+   "title": "Study on Incompatibility of Traditional Chinese Medicine: Evidence from Formula Network, Chemical Space, and Metabolism Room",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3858019/",
+   "issuer": "PMC · 2013 · 开放获取全文（存为去标签文本快照）",
+   "note": "十八反十九畏的方剂网络/化学空间证据；条号为本库序号",
+   "exists": true,
+   "sha256": "10ec2eee845bac5f8024296375cc66b49d956a23eab336cdc2fee62e34609826",
+   "bytes": 39668,
+   "pages": null,
+   "textChars": 39175,
+   "textLayer": true,
+   "kind": "text-snapshot"
   }
  },
  "clauses": [
@@ -467,12 +537,202 @@
    "verified": true,
    "missing": [],
    "locator": "外源·OECD Test Guideline 470: Mammalian Erythrocyte Pig-a Gene Mutation Assay 第3条"
+  },
+  {
+   "id": "L01",
+   "source": "PM-HILI-2019",
+   "clause": "第1条",
+   "sourceTitle": "Polygonum multiflorum-Induced Liver Injury: Clinical Characteristics, Risk Factors, Material Basis, Action Mechanism and Current Challenges",
+   "url": "https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2019.01467/full",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Polygonum multiflorum-Induced Liver Injury: Clinical Characteristics, Risk Factors, Material Basis, Action Mechanism and Current Challenges 第1条"
+  },
+  {
+   "id": "L02",
+   "source": "PM-HILI-2019",
+   "clause": "第2条",
+   "sourceTitle": "Polygonum multiflorum-Induced Liver Injury: Clinical Characteristics, Risk Factors, Material Basis, Action Mechanism and Current Challenges",
+   "url": "https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2019.01467/full",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Polygonum multiflorum-Induced Liver Injury: Clinical Characteristics, Risk Factors, Material Basis, Action Mechanism and Current Challenges 第2条"
+  },
+  {
+   "id": "L03",
+   "source": "TP-HILI-2022",
+   "clause": "第1条",
+   "sourceTitle": "The molecular pathogenesis of triptolide-induced hepatotoxicity",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9449346/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·The molecular pathogenesis of triptolide-induced hepatotoxicity 第1条"
+  },
+  {
+   "id": "L04",
+   "source": "TP-HILI-2022",
+   "clause": "第2条",
+   "sourceTitle": "The molecular pathogenesis of triptolide-induced hepatotoxicity",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9449346/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·The molecular pathogenesis of triptolide-induced hepatotoxicity 第2条"
+  },
+  {
+   "id": "L05",
+   "source": "TP-HILI-2022",
+   "clause": "第3条",
+   "sourceTitle": "The molecular pathogenesis of triptolide-induced hepatotoxicity",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9449346/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·The molecular pathogenesis of triptolide-induced hepatotoxicity 第3条"
+  },
+  {
+   "id": "L06",
+   "source": "AAN-2023",
+   "clause": "第1条",
+   "sourceTitle": "Overview of aristolochic acid nephropathy: an update",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10565449/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Overview of aristolochic acid nephropathy: an update 第1条"
+  },
+  {
+   "id": "L07",
+   "source": "AAN-2023",
+   "clause": "第2条",
+   "sourceTitle": "Overview of aristolochic acid nephropathy: an update",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10565449/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Overview of aristolochic acid nephropathy: an update 第2条"
+  },
+  {
+   "id": "L08",
+   "source": "AAN-2023",
+   "clause": "第3条",
+   "sourceTitle": "Overview of aristolochic acid nephropathy: an update",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10565449/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Overview of aristolochic acid nephropathy: an update 第3条"
+  },
+  {
+   "id": "L09",
+   "source": "AAN-2023",
+   "clause": "第4条",
+   "sourceTitle": "Overview of aristolochic acid nephropathy: an update",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10565449/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Overview of aristolochic acid nephropathy: an update 第4条"
+  },
+  {
+   "id": "L10",
+   "source": "ACONITINE-2018",
+   "clause": "第1条",
+   "sourceTitle": "Research progress of aconitine toxicity and forensic analysis of aconitine poisoning",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7241456/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Research progress of aconitine toxicity and forensic analysis of aconitine poisoning 第1条"
+  },
+  {
+   "id": "L11",
+   "source": "ACONITINE-2018",
+   "clause": "第2条",
+   "sourceTitle": "Research progress of aconitine toxicity and forensic analysis of aconitine poisoning",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7241456/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Research progress of aconitine toxicity and forensic analysis of aconitine poisoning 第2条"
+  },
+  {
+   "id": "L12",
+   "source": "ACONITINE-2018",
+   "clause": "第3条",
+   "sourceTitle": "Research progress of aconitine toxicity and forensic analysis of aconitine poisoning",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7241456/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Research progress of aconitine toxicity and forensic analysis of aconitine poisoning 第3条"
+  },
+  {
+   "id": "L13",
+   "source": "ACONITINE-2018",
+   "clause": "第4条",
+   "sourceTitle": "Research progress of aconitine toxicity and forensic analysis of aconitine poisoning",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7241456/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Research progress of aconitine toxicity and forensic analysis of aconitine poisoning 第4条"
+  },
+  {
+   "id": "L14",
+   "source": "ACONITINE-2018",
+   "clause": "第5条",
+   "sourceTitle": "Research progress of aconitine toxicity and forensic analysis of aconitine poisoning",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7241456/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Research progress of aconitine toxicity and forensic analysis of aconitine poisoning 第5条"
+  },
+  {
+   "id": "L15",
+   "source": "ACONITINE-2018",
+   "clause": "第6条",
+   "sourceTitle": "Research progress of aconitine toxicity and forensic analysis of aconitine poisoning",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7241456/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Research progress of aconitine toxicity and forensic analysis of aconitine poisoning 第6条"
+  },
+  {
+   "id": "L16",
+   "source": "SHIBAFAN-2013",
+   "clause": "第1条",
+   "sourceTitle": "Study on Incompatibility of Traditional Chinese Medicine: Evidence from Formula Network, Chemical Space, and Metabolism Room",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3858019/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Study on Incompatibility of Traditional Chinese Medicine: Evidence from Formula Network, Chemical Space, and Metabolism Room 第1条"
+  },
+  {
+   "id": "L17",
+   "source": "SHIBAFAN-2013",
+   "clause": "第2条",
+   "sourceTitle": "Study on Incompatibility of Traditional Chinese Medicine: Evidence from Formula Network, Chemical Space, and Metabolism Room",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3858019/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Study on Incompatibility of Traditional Chinese Medicine: Evidence from Formula Network, Chemical Space, and Metabolism Room 第2条"
+  },
+  {
+   "id": "L18",
+   "source": "SHIBAFAN-2013",
+   "clause": "第3条",
+   "sourceTitle": "Study on Incompatibility of Traditional Chinese Medicine: Evidence from Formula Network, Chemical Space, and Metabolism Room",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3858019/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Study on Incompatibility of Traditional Chinese Medicine: Evidence from Formula Network, Chemical Space, and Metabolism Room 第3条"
+  },
+  {
+   "id": "L19",
+   "source": "SHIBAFAN-2013",
+   "clause": "第4条",
+   "sourceTitle": "Study on Incompatibility of Traditional Chinese Medicine: Evidence from Formula Network, Chemical Space, and Metabolism Room",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3858019/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Study on Incompatibility of Traditional Chinese Medicine: Evidence from Formula Network, Chemical Space, and Metabolism Room 第4条"
   }
  ],
  "counts": {
-  "sources": 16,
-  "clauses": 27,
-  "verified": 27,
+  "sources": 21,
+  "clauses": 46,
+  "verified": 46,
   "unverified": 0
  }
 }

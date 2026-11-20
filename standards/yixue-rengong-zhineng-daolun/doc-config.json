@@ -1,7 +1,7 @@
 {
  "courseTitle": "医学人工智能导论",
  "deptPath": "departments/07-zhineng/01-yixue-rengong-zhineng-daolun",
- "xlsx": "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx",
+ "xlsx": "F:/textbooks/qhzy-机器学习.xlsx",
  "chain": "问题与场景 → 设备与系统 → 知识与数据 → 治理与地图",
  "levelLabel": "章群结构",
  "objectPressure": "导论的判据是「说清边界」：这门技术能做什么、不能做什么、出问题谁负责",

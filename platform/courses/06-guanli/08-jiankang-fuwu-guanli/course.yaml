@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 06-guanli/08-jiankang-fuwu-guanli
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/06-guanli/08-jiankang-fuwu-guanli/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 08-jiankang-fuwu-guanli
+title: 健康服务与管理
+en: Health Services & Management
+dept: 06-guanli
+dept_title: 管理系
+semester: 6
+stage: zhang
+hours: 54
+chapters_target: 8
+bridge: 健康档案→数据治理 / 干预方案→推荐系统
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-z81
+    title: 第1章 健康服务的供给主体
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.91
+  - slug: 02-z82
+    title: 第2章 分级诊疗与服务体系
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.91
+  - slug: 03-z83
+    title: 第3章 基层与社区健康服务
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.92
+  - slug: 04-z84
+    title: 第4章 公共卫生服务管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.9
+  - slug: 05-z85
+    title: 第5章 服务质量与绩效评价
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.91
+  - slug: 06-z86
+    title: 第6章 支付方式与激励机制
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.92
+  - slug: 07-z87
+    title: 第7章 健康服务改革与政策
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.93
+  - slug: 08-z88
+    title: 第8章 多部门协同与应急
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.9

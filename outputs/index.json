@@ -2,11 +2,11 @@
   "$generated": "node scripts/build_outputs_index.js",
   "note": "可复用产出物的根级索引。契约见 CONTRIBUTING.md；每章的产物是生成物，索引是它们的生成物。",
   "counts": {
-    "items": 4308,
-    "chaptersWithOutputs": 2154,
+    "items": 4332,
+    "chaptersWithOutputs": 2166,
     "byKind": {
-      "prompt": 2154,
-      "skill": 2154
+      "prompt": 2166,
+      "skill": 2166
     },
     "gaps": 0
   },
@@ -3947,242 +3947,482 @@
           "semester": 7,
           "chapters": [
             {
-              "chapter": "01-feng-men",
-              "title": "第 1 章 · 风证门（M01）",
+              "chapter": "01-s01-bing-zheng-hou",
+              "title": "第 1 章 · 病·证·候：三级诊断的含义与分界",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-feng-men/outputs/prompt-feng-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-s01-bing-zheng-hou/outputs/prompt-s01-bing-zheng-hou.md",
+                  "title": "课堂产出模板 · 第 1 章 病·证·候：三级诊断的含义与分界",
+                  "description": null,
+                  "chars": 660
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-s01-bing-zheng-hou/outputs/skill-s01-bing-zheng-hou.md",
+                  "title": "技能卡 · 第 1 章 病·证·候：三级诊断的含义与分界",
+                  "description": "中医证候学第 1 章「病·证·候：三级诊断的含义与分界」的可复用技能卡：病、证、候三个词在日常中医里被当同义词用，写病案时混着写，读别人病案时也就读不出层级。 用概论给的判据逐条对，产出可复核的证名与候名。",
+                  "chars": 540
+                }
+              ]
+            },
+            {
+              "chapter": "02-s02-zheng-de-neirong",
+              "title": "第 2 章 · 证的内容与结构：病因·病位·病机",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-s02-zheng-de-neirong/outputs/prompt-s02-zheng-de-neirong.md",
+                  "title": "课堂产出模板 · 第 2 章 证的内容与结构：病因·病位·病机",
+                  "description": null,
+                  "chars": 660
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-s02-zheng-de-neirong/outputs/skill-s02-zheng-de-neirong.md",
+                  "title": "技能卡 · 第 2 章 证的内容与结构：病因·病位·病机",
+                  "description": "中医证候学第 2 章「证的内容与结构：病因·病位·病机」的可复用技能卡：把证当「症状的集合」是最普遍的错法：症状越列越多，判断却越来越说不清。 用概论给的判据逐条对，产出可复核的证名与候名。",
+                  "chars": 524
+                }
+              ]
+            },
+            {
+              "chapter": "03-s03-mingming-yu-fenlei",
+              "title": "第 3 章 · 证的命名与分类：十二门·四十五类·二十一病位",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-s03-mingming-yu-fenlei/outputs/prompt-s03-mingming-yu-fenlei.md",
+                  "title": "课堂产出模板 · 第 3 章 证的命名与分类：十二门·四十五类·二十一病位",
+                  "description": null,
+                  "chars": 666
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-s03-mingming-yu-fenlei/outputs/skill-s03-mingming-yu-fenlei.md",
+                  "title": "技能卡 · 第 3 章 证的命名与分类：十二门·四十五类·二十一病位",
+                  "description": "中医证候学第 3 章「证的命名与分类：十二门·四十五类·二十一病位」的可复用技能卡：证的命名历来有十五种以上的写法：六经名证、卫气营血名证、脏腑名证、病机名证、症状名证。 用概论给的判据逐条对，产出可复核的证名与候名。",
+                  "chars": 555
+                }
+              ]
+            },
+            {
+              "chapter": "04-s04-neihan-waiyan",
+              "title": "第 4 章 · 证的内涵与外延：边界、兼夹与临界态",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-s04-neihan-waiyan/outputs/prompt-s04-neihan-waiyan.md",
+                  "title": "课堂产出模板 · 第 4 章 证的内涵与外延：边界、兼夹与临界态",
+                  "description": null,
+                  "chars": 661
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-s04-neihan-waiyan/outputs/skill-s04-neihan-waiyan.md",
+                  "title": "技能卡 · 第 4 章 证的内涵与外延：边界、兼夹与临界态",
+                  "description": "中医证候学第 4 章「证的内涵与外延：边界、兼夹与临界态」的可复用技能卡：证的边界被当成无限可延伸：一个「肝郁」可以往里塞进任何症状，往外接到任何别的证。 用概论给的判据逐条对，产出可复核的证名与候名。",
+                  "chars": 533
+                }
+              ]
+            },
+            {
+              "chapter": "05-s05-chuanbian",
+              "title": "第 5 章 · 证的传变：病位·病因·邪正三条轴",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-s05-chuanbian/outputs/prompt-s05-chuanbian.md",
+                  "title": "课堂产出模板 · 第 5 章 证的传变：病位·病因·邪正三条轴",
+                  "description": null,
+                  "chars": 660
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-s05-chuanbian/outputs/skill-s05-chuanbian.md",
+                  "title": "技能卡 · 第 5 章 证的传变：病位·病因·邪正三条轴",
+                  "description": "中医证候学第 5 章「证的传变：病位·病因·邪正三条轴」的可复用技能卡：传变被讲成时间表：几天到哪一经、几日入哪一脏。 用概论给的判据逐条对，产出可复核的证名与候名。",
+                  "chars": 494
+                }
+              ]
+            },
+            {
+              "chapter": "06-s06-qiuyin-shang",
+              "title": "第 6 章 · 辨证求因（上）：风·寒·热·暑·湿·燥的识别",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-s06-qiuyin-shang/outputs/prompt-s06-qiuyin-shang.md",
+                  "title": "课堂产出模板 · 第 6 章 辨证求因（上）：风·寒·热·暑·湿·燥的识别",
+                  "description": null,
+                  "chars": 666
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-s06-qiuyin-shang/outputs/skill-s06-qiuyin-shang.md",
+                  "title": "技能卡 · 第 6 章 辨证求因（上）：风·寒·热·暑·湿·燥的识别",
+                  "description": "中医证候学第 6 章「辨证求因（上）：风·寒·热·暑·湿·燥的识别」的可复用技能卡：「求因」被简化成「对症状」：见到恶寒就是寒、见到发热就是热。 用概论给的判据逐条对，产出可复核的证名与候名。",
+                  "chars": 523
+                }
+              ]
+            },
+            {
+              "chapter": "07-s07-qiuyin-xia",
+              "title": "第 7 章 · 辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-s07-qiuyin-xia/outputs/prompt-s07-qiuyin-xia.md",
+                  "title": "课堂产出模板 · 第 7 章 辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别",
+                  "description": null,
+                  "chars": 672
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-s07-qiuyin-xia/outputs/skill-s07-qiuyin-xia.md",
+                  "title": "技能卡 · 第 7 章 辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别",
+                  "description": "中医证候学第 7 章「辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别」的可复用技能卡：外因六淫有季节与天气可依，内生的气、瘀、痰、饮、水、食、虫与虚证没有季节标签，只能靠病机形态认。 用概论给的判据逐条对，产出可复核的证名与候名。",
+                  "chars": 569
+                }
+              ]
+            },
+            {
+              "chapter": "08-s08-sheny-in-dingwei",
+              "title": "第 8 章 · 审因定位：十二类病因的定位法与定位表",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-s08-sheny-in-dingwei/outputs/prompt-s08-sheny-in-dingwei.md",
+                  "title": "课堂产出模板 · 第 8 章 审因定位：十二类病因的定位法与定位表",
+                  "description": null,
+                  "chars": 662
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-s08-sheny-in-dingwei/outputs/skill-s08-sheny-in-dingwei.md",
+                  "title": "技能卡 · 第 8 章 审因定位：十二类病因的定位法与定位表",
+                  "description": "中医证候学第 8 章「审因定位：十二类病因的定位法与定位表」的可复用技能卡：求因之后最常见的错误是「因位张冠李戴」：风寒一定写肺卫、湿一定写脾胃、火一定写心胃。 用概论给的判据逐条对，产出可复核的证名与候名。",
+                  "chars": 543
+                }
+              ]
+            },
+            {
+              "chapter": "09-s09-jianbie-quishe",
+              "title": "第 9 章 · 证的鉴别与取舍：真假、兼夹与两因两位规则",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-s09-jianbie-quishe/outputs/prompt-s09-jianbie-quishe.md",
+                  "title": "课堂产出模板 · 第 9 章 证的鉴别与取舍：真假、兼夹与两因两位规则",
+                  "description": null,
+                  "chars": 664
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-s09-jianbie-quishe/outputs/skill-s09-jianbie-quishe.md",
+                  "title": "技能卡 · 第 9 章 证的鉴别与取舍：真假、兼夹与两因两位规则",
+                  "description": "中医证候学第 9 章「证的鉴别与取舍：真假、兼夹与两因两位规则」的可复用技能卡：鉴别被当成「找不同症状」，于是越鉴越细，最后每条都能自圆其说。 用概论给的判据逐条对，产出可复核的证名与候名。",
+                  "chars": 523
+                }
+              ]
+            },
+            {
+              "chapter": "10-s10-lunzhi",
+              "title": "第 10 章 · 证的论治：从证名到治法与隐性病因病位",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-s10-lunzhi/outputs/prompt-s10-lunzhi.md",
+                  "title": "课堂产出模板 · 第 10 章 证的论治：从证名到治法与隐性病因病位",
+                  "description": null,
+                  "chars": 663
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-s10-lunzhi/outputs/skill-s10-lunzhi.md",
+                  "title": "技能卡 · 第 10 章 证的论治：从证名到治法与隐性病因病位",
+                  "description": "中医证候学第 10 章「证的论治：从证名到治法与隐性病因病位」的可复用技能卡：把论治当成「对证型选方」：证名对上了，方子却常常不对——因为证名只标两个病因两个病位，实际存在的第三、第四个不写名字，却必须治。 用概论给的判据逐条对，产出可复核的证名与候名。",
+                  "chars": 580
+                }
+              ]
+            },
+            {
+              "chapter": "11-s11-cidian-caozuo",
+              "title": "第 11 章 · 辞典操作：编码、检索与统计口径",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-s11-cidian-caozuo/outputs/prompt-s11-cidian-caozuo.md",
+                  "title": "课堂产出模板 · 第 11 章 辞典操作：编码、检索与统计口径",
+                  "description": null,
+                  "chars": 660
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-s11-cidian-caozuo/outputs/skill-s11-cidian-caozuo.md",
+                  "title": "技能卡 · 第 11 章 辞典操作：编码、检索与统计口径",
+                  "description": "中医证候学第 11 章「辞典操作：编码、检索与统计口径」的可复用技能卡：1866 条候、291 个证、45 类、12 门，靠翻书能查，靠记忆不行，靠模糊搜索会串门。 用概论给的判据逐条对，产出可复核的证名与候名。",
+                  "chars": 536
+                }
+              ]
+            },
+            {
+              "chapter": "12-s12-zonghe-shicao",
+              "title": "第 12 章 · 综合实操：从主诉到证候单元的全流程",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-s12-zonghe-shicao/outputs/prompt-s12-zonghe-shicao.md",
+                  "title": "课堂产出模板 · 第 12 章 综合实操：从主诉到证候单元的全流程",
+                  "description": null,
+                  "chars": 662
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-s12-zonghe-shicao/outputs/skill-s12-zonghe-shicao.md",
+                  "title": "技能卡 · 第 12 章 综合实操：从主诉到证候单元的全流程",
+                  "description": "中医证候学第 12 章「综合实操：从主诉到证候单元的全流程」的可复用技能卡：前面十一章各自成立，一到真实病例就散：求因与定位混着做，证名与治法对不上，写出来的病案别人复核不了。 用概论给的判据逐条对，产出可复核的证名与候名。",
+                  "chars": 556
+                }
+              ]
+            },
+            {
+              "chapter": "13-m01-feng-men",
+              "title": "第 13 章 · 风证门（M01）",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/13-m01-feng-men/outputs/prompt-m01-feng-men.md",
                   "title": "风证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
                   "chars": 484
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-feng-men/outputs/skill-feng-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/13-m01-feng-men/outputs/skill-m01-feng-men.md",
                   "title": "feng-men",
                   "description": "用「门→类→证→候」四级编码解析 风门（M01）的证候条目，输出可复算的全码与态。",
-                  "chars": 563
+                  "chars": 567
                 }
               ]
             },
             {
-              "chapter": "02-han-men",
-              "title": "第 2 章 · 寒证门（M02）",
+              "chapter": "14-m02-han-men",
+              "title": "第 14 章 · 寒证门（M02）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-han-men/outputs/prompt-han-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/14-m02-han-men/outputs/prompt-m02-han-men.md",
                   "title": "寒证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
                   "chars": 478
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-han-men/outputs/skill-han-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/14-m02-han-men/outputs/skill-m02-han-men.md",
                   "title": "han-men",
                   "description": "用「门→类→证→候」四级编码解析 寒门（M02）的证候条目，输出可复算的全码与态。",
-                  "chars": 557
+                  "chars": 561
                 }
               ]
             },
             {
-              "chapter": "03-shu-men",
-              "title": "第 3 章 · 暑证门（M03）",
+              "chapter": "15-m03-shu-men",
+              "title": "第 15 章 · 暑证门（M03）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-shu-men/outputs/prompt-shu-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/15-m03-shu-men/outputs/prompt-m03-shu-men.md",
                   "title": "暑证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
                   "chars": 476
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-shu-men/outputs/skill-shu-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/15-m03-shu-men/outputs/skill-m03-shu-men.md",
                   "title": "shu-men",
                   "description": "用「门→类→证→候」四级编码解析 暑门（M03）的证候条目，输出可复算的全码与态。",
-                  "chars": 557
+                  "chars": 561
                 }
               ]
             },
             {
-              "chapter": "04-shi-men",
-              "title": "第 4 章 · 湿证门（M04）",
+              "chapter": "16-m04-shi-men",
+              "title": "第 16 章 · 湿证门（M04）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-shi-men/outputs/prompt-shi-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/16-m04-shi-men/outputs/prompt-m04-shi-men.md",
                   "title": "湿证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
                   "chars": 480
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-shi-men/outputs/skill-shi-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/16-m04-shi-men/outputs/skill-m04-shi-men.md",
                   "title": "shi-men",
                   "description": "用「门→类→证→候」四级编码解析 湿门（M04）的证候条目，输出可复算的全码与态。",
-                  "chars": 559
+                  "chars": 563
                 }
               ]
             },
             {
-              "chapter": "05-zao-men",
-              "title": "第 5 章 · 燥证门（M05）",
+              "chapter": "17-m05-zao-men",
+              "title": "第 17 章 · 燥证门（M05）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-zao-men/outputs/prompt-zao-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/17-m05-zao-men/outputs/prompt-m05-zao-men.md",
                   "title": "燥证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
                   "chars": 490
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-zao-men/outputs/skill-zao-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/17-m05-zao-men/outputs/skill-m05-zao-men.md",
                   "title": "zao-men",
                   "description": "用「门→类→证→候」四级编码解析 燥门（M05）的证候条目，输出可复算的全码与态。",
-                  "chars": 565
+                  "chars": 569
                 }
               ]
             },
             {
-              "chapter": "06-huo-men",
-              "title": "第 6 章 · 火证门（M06）",
+              "chapter": "18-m06-huo-men",
+              "title": "第 18 章 · 火证门（M06）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-huo-men/outputs/prompt-huo-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/18-m06-huo-men/outputs/prompt-m06-huo-men.md",
                   "title": "火证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
                   "chars": 498
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-huo-men/outputs/skill-huo-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/18-m06-huo-men/outputs/skill-m06-huo-men.md",
                   "title": "huo-men",
                   "description": "用「门→类→证→候」四级编码解析 火门（M06）的证候条目，输出可复算的全码与态。",
-                  "chars": 571
+                  "chars": 575
                 }
               ]
             },
             {
-              "chapter": "07-qi-men",
-              "title": "第 7 章 · 气证门（M07）",
+              "chapter": "19-m07-qi-men",
+              "title": "第 19 章 · 气证门（M07）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-qi-men/outputs/prompt-qi-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/19-m07-qi-men/outputs/prompt-m07-qi-men.md",
                   "title": "气证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
                   "chars": 487
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-qi-men/outputs/skill-qi-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/19-m07-qi-men/outputs/skill-m07-qi-men.md",
                   "title": "qi-men",
                   "description": "用「门→类→证→候」四级编码解析 气门（M07）的证候条目，输出可复算的全码与态。",
-                  "chars": 562
+                  "chars": 566
                 }
               ]
             },
             {
-              "chapter": "08-yu-men",
-              "title": "第 8 章 · 瘀证门（M08）",
+              "chapter": "20-m08-yu-men",
+              "title": "第 20 章 · 瘀证门（M08）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-yu-men/outputs/prompt-yu-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/20-m08-yu-men/outputs/prompt-m08-yu-men.md",
                   "title": "瘀证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
                   "chars": 484
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-yu-men/outputs/skill-yu-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/20-m08-yu-men/outputs/skill-m08-yu-men.md",
                   "title": "yu-men",
                   "description": "用「门→类→证→候」四级编码解析 瘀门（M08）的证候条目，输出可复算的全码与态。",
-                  "chars": 561
+                  "chars": 565
                 }
               ]
             },
             {
-              "chapter": "09-tan-men",
-              "title": "第 9 章 · 痰证门（M09）",
+              "chapter": "21-m09-tan-men",
+              "title": "第 21 章 · 痰证门（M09）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-tan-men/outputs/prompt-tan-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/21-m09-tan-men/outputs/prompt-m09-tan-men.md",
                   "title": "痰证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
                   "chars": 493
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-tan-men/outputs/skill-tan-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/21-m09-tan-men/outputs/skill-m09-tan-men.md",
                   "title": "tan-men",
                   "description": "用「门→类→证→候」四级编码解析 痰门（M09）的证候条目，输出可复算的全码与态。",
-                  "chars": 568
+                  "chars": 572
                 }
               ]
             },
             {
-              "chapter": "10-yin-men",
-              "title": "第 10 章 · 饮证门（M10）",
+              "chapter": "22-m10-yin-men",
+              "title": "第 22 章 · 饮证门（M10）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-yin-men/outputs/prompt-yin-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/22-m10-yin-men/outputs/prompt-m10-yin-men.md",
                   "title": "饮证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
                   "chars": 482
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-yin-men/outputs/skill-yin-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/22-m10-yin-men/outputs/skill-m10-yin-men.md",
                   "title": "yin-men",
                   "description": "用「门→类→证→候」四级编码解析 饮门（M10）的证候条目，输出可复算的全码与态。",
-                  "chars": 561
+                  "chars": 565
                 }
               ]
             },
             {
-              "chapter": "11-shiji-men",
-              "title": "第 11 章 · 食证门（M11）",
+              "chapter": "23-m11-shiji-men",
+              "title": "第 23 章 · 食证门（M11）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-shiji-men/outputs/prompt-shiji-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/23-m11-shiji-men/outputs/prompt-m11-shiji-men.md",
                   "title": "食证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
                   "chars": 481
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-shiji-men/outputs/skill-shiji-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/23-m11-shiji-men/outputs/skill-m11-shiji-men.md",
                   "title": "shiji-men",
                   "description": "用「门→类→证→候」四级编码解析 食门（M11）的证候条目，输出可复算的全码与态。",
-                  "chars": 564
+                  "chars": 568
                 }
               ]
             },
             {
-              "chapter": "12-xu-men",
-              "title": "第 12 章 · 虚证门（M12）",
+              "chapter": "24-m12-xu-men",
+              "title": "第 24 章 · 虚证门（M12）",
               "outputs": [
                 {
                   "kind": "prompt",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-xu-men/outputs/prompt-xu-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/24-m12-xu-men/outputs/prompt-m12-xu-men.md",
                   "title": "虚证门 · 提示词：把一章门变成一次可复述的判定",
                   "description": null,
                   "chars": 486
                 },
                 {
                   "kind": "skill",
-                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-xu-men/outputs/skill-xu-men.md",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/24-m12-xu-men/outputs/skill-m12-xu-men.md",
                   "title": "xu-men",
                   "description": "用「门→类→证→候」四级编码解析 虚门（M12）的证候条目，输出可复算的全码与态。",
-                  "chars": 561
+                  "chars": 565
                 }
               ]
             }
@@ -59097,10 +59337,370 @@
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "01-feng-men",
-      "chapterTitle": "第 1 章 · 风证门（M01）",
+      "chapter": "01-s01-bing-zheng-hou",
+      "chapterTitle": "第 1 章 · 病·证·候：三级诊断的含义与分界",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-feng-men/outputs/prompt-feng-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-s01-bing-zheng-hou/outputs/prompt-s01-bing-zheng-hou.md",
+      "title": "课堂产出模板 · 第 1 章 病·证·候：三级诊断的含义与分界",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 660
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "01-s01-bing-zheng-hou",
+      "chapterTitle": "第 1 章 · 病·证·候：三级诊断的含义与分界",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-s01-bing-zheng-hou/outputs/skill-s01-bing-zheng-hou.md",
+      "title": "技能卡 · 第 1 章 病·证·候：三级诊断的含义与分界",
+      "name": "s01-bing-zheng-hou",
+      "description": "中医证候学第 1 章「病·证·候：三级诊断的含义与分界」的可复用技能卡：病、证、候三个词在日常中医里被当同义词用，写病案时混着写，读别人病案时也就读不出层级。 用概论给的判据逐条对，产出可复核的证名与候名。",
+      "version": "1.0.0",
+      "chars": 540
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "02-s02-zheng-de-neirong",
+      "chapterTitle": "第 2 章 · 证的内容与结构：病因·病位·病机",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-s02-zheng-de-neirong/outputs/prompt-s02-zheng-de-neirong.md",
+      "title": "课堂产出模板 · 第 2 章 证的内容与结构：病因·病位·病机",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 660
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "02-s02-zheng-de-neirong",
+      "chapterTitle": "第 2 章 · 证的内容与结构：病因·病位·病机",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-s02-zheng-de-neirong/outputs/skill-s02-zheng-de-neirong.md",
+      "title": "技能卡 · 第 2 章 证的内容与结构：病因·病位·病机",
+      "name": "s02-zheng-de-neirong",
+      "description": "中医证候学第 2 章「证的内容与结构：病因·病位·病机」的可复用技能卡：把证当「症状的集合」是最普遍的错法：症状越列越多，判断却越来越说不清。 用概论给的判据逐条对，产出可复核的证名与候名。",
+      "version": "1.0.0",
+      "chars": 524
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "03-s03-mingming-yu-fenlei",
+      "chapterTitle": "第 3 章 · 证的命名与分类：十二门·四十五类·二十一病位",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-s03-mingming-yu-fenlei/outputs/prompt-s03-mingming-yu-fenlei.md",
+      "title": "课堂产出模板 · 第 3 章 证的命名与分类：十二门·四十五类·二十一病位",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 666
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "03-s03-mingming-yu-fenlei",
+      "chapterTitle": "第 3 章 · 证的命名与分类：十二门·四十五类·二十一病位",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-s03-mingming-yu-fenlei/outputs/skill-s03-mingming-yu-fenlei.md",
+      "title": "技能卡 · 第 3 章 证的命名与分类：十二门·四十五类·二十一病位",
+      "name": "s03-mingming-yu-fenlei",
+      "description": "中医证候学第 3 章「证的命名与分类：十二门·四十五类·二十一病位」的可复用技能卡：证的命名历来有十五种以上的写法：六经名证、卫气营血名证、脏腑名证、病机名证、症状名证。 用概论给的判据逐条对，产出可复核的证名与候名。",
+      "version": "1.0.0",
+      "chars": 555
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "04-s04-neihan-waiyan",
+      "chapterTitle": "第 4 章 · 证的内涵与外延：边界、兼夹与临界态",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-s04-neihan-waiyan/outputs/prompt-s04-neihan-waiyan.md",
+      "title": "课堂产出模板 · 第 4 章 证的内涵与外延：边界、兼夹与临界态",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 661
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "04-s04-neihan-waiyan",
+      "chapterTitle": "第 4 章 · 证的内涵与外延：边界、兼夹与临界态",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-s04-neihan-waiyan/outputs/skill-s04-neihan-waiyan.md",
+      "title": "技能卡 · 第 4 章 证的内涵与外延：边界、兼夹与临界态",
+      "name": "s04-neihan-waiyan",
+      "description": "中医证候学第 4 章「证的内涵与外延：边界、兼夹与临界态」的可复用技能卡：证的边界被当成无限可延伸：一个「肝郁」可以往里塞进任何症状，往外接到任何别的证。 用概论给的判据逐条对，产出可复核的证名与候名。",
+      "version": "1.0.0",
+      "chars": 533
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "05-s05-chuanbian",
+      "chapterTitle": "第 5 章 · 证的传变：病位·病因·邪正三条轴",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-s05-chuanbian/outputs/prompt-s05-chuanbian.md",
+      "title": "课堂产出模板 · 第 5 章 证的传变：病位·病因·邪正三条轴",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 660
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "05-s05-chuanbian",
+      "chapterTitle": "第 5 章 · 证的传变：病位·病因·邪正三条轴",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-s05-chuanbian/outputs/skill-s05-chuanbian.md",
+      "title": "技能卡 · 第 5 章 证的传变：病位·病因·邪正三条轴",
+      "name": "s05-chuanbian",
+      "description": "中医证候学第 5 章「证的传变：病位·病因·邪正三条轴」的可复用技能卡：传变被讲成时间表：几天到哪一经、几日入哪一脏。 用概论给的判据逐条对，产出可复核的证名与候名。",
+      "version": "1.0.0",
+      "chars": 494
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "06-s06-qiuyin-shang",
+      "chapterTitle": "第 6 章 · 辨证求因（上）：风·寒·热·暑·湿·燥的识别",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-s06-qiuyin-shang/outputs/prompt-s06-qiuyin-shang.md",
+      "title": "课堂产出模板 · 第 6 章 辨证求因（上）：风·寒·热·暑·湿·燥的识别",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 666
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "06-s06-qiuyin-shang",
+      "chapterTitle": "第 6 章 · 辨证求因（上）：风·寒·热·暑·湿·燥的识别",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-s06-qiuyin-shang/outputs/skill-s06-qiuyin-shang.md",
+      "title": "技能卡 · 第 6 章 辨证求因（上）：风·寒·热·暑·湿·燥的识别",
+      "name": "s06-qiuyin-shang",
+      "description": "中医证候学第 6 章「辨证求因（上）：风·寒·热·暑·湿·燥的识别」的可复用技能卡：「求因」被简化成「对症状」：见到恶寒就是寒、见到发热就是热。 用概论给的判据逐条对，产出可复核的证名与候名。",
+      "version": "1.0.0",
+      "chars": 523
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "07-s07-qiuyin-xia",
+      "chapterTitle": "第 7 章 · 辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-s07-qiuyin-xia/outputs/prompt-s07-qiuyin-xia.md",
+      "title": "课堂产出模板 · 第 7 章 辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 672
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "07-s07-qiuyin-xia",
+      "chapterTitle": "第 7 章 · 辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-s07-qiuyin-xia/outputs/skill-s07-qiuyin-xia.md",
+      "title": "技能卡 · 第 7 章 辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别",
+      "name": "s07-qiuyin-xia",
+      "description": "中医证候学第 7 章「辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别」的可复用技能卡：外因六淫有季节与天气可依，内生的气、瘀、痰、饮、水、食、虫与虚证没有季节标签，只能靠病机形态认。 用概论给的判据逐条对，产出可复核的证名与候名。",
+      "version": "1.0.0",
+      "chars": 569
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "08-s08-sheny-in-dingwei",
+      "chapterTitle": "第 8 章 · 审因定位：十二类病因的定位法与定位表",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-s08-sheny-in-dingwei/outputs/prompt-s08-sheny-in-dingwei.md",
+      "title": "课堂产出模板 · 第 8 章 审因定位：十二类病因的定位法与定位表",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 662
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "08-s08-sheny-in-dingwei",
+      "chapterTitle": "第 8 章 · 审因定位：十二类病因的定位法与定位表",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-s08-sheny-in-dingwei/outputs/skill-s08-sheny-in-dingwei.md",
+      "title": "技能卡 · 第 8 章 审因定位：十二类病因的定位法与定位表",
+      "name": "s08-sheny-in-dingwei",
+      "description": "中医证候学第 8 章「审因定位：十二类病因的定位法与定位表」的可复用技能卡：求因之后最常见的错误是「因位张冠李戴」：风寒一定写肺卫、湿一定写脾胃、火一定写心胃。 用概论给的判据逐条对，产出可复核的证名与候名。",
+      "version": "1.0.0",
+      "chars": 543
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "09-s09-jianbie-quishe",
+      "chapterTitle": "第 9 章 · 证的鉴别与取舍：真假、兼夹与两因两位规则",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-s09-jianbie-quishe/outputs/prompt-s09-jianbie-quishe.md",
+      "title": "课堂产出模板 · 第 9 章 证的鉴别与取舍：真假、兼夹与两因两位规则",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 664
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "09-s09-jianbie-quishe",
+      "chapterTitle": "第 9 章 · 证的鉴别与取舍：真假、兼夹与两因两位规则",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-s09-jianbie-quishe/outputs/skill-s09-jianbie-quishe.md",
+      "title": "技能卡 · 第 9 章 证的鉴别与取舍：真假、兼夹与两因两位规则",
+      "name": "s09-jianbie-quishe",
+      "description": "中医证候学第 9 章「证的鉴别与取舍：真假、兼夹与两因两位规则」的可复用技能卡：鉴别被当成「找不同症状」，于是越鉴越细，最后每条都能自圆其说。 用概论给的判据逐条对，产出可复核的证名与候名。",
+      "version": "1.0.0",
+      "chars": 523
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "10-s10-lunzhi",
+      "chapterTitle": "第 10 章 · 证的论治：从证名到治法与隐性病因病位",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-s10-lunzhi/outputs/prompt-s10-lunzhi.md",
+      "title": "课堂产出模板 · 第 10 章 证的论治：从证名到治法与隐性病因病位",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 663
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "10-s10-lunzhi",
+      "chapterTitle": "第 10 章 · 证的论治：从证名到治法与隐性病因病位",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-s10-lunzhi/outputs/skill-s10-lunzhi.md",
+      "title": "技能卡 · 第 10 章 证的论治：从证名到治法与隐性病因病位",
+      "name": "s10-lunzhi",
+      "description": "中医证候学第 10 章「证的论治：从证名到治法与隐性病因病位」的可复用技能卡：把论治当成「对证型选方」：证名对上了，方子却常常不对——因为证名只标两个病因两个病位，实际存在的第三、第四个不写名字，却必须治。 用概论给的判据逐条对，产出可复核的证名与候名。",
+      "version": "1.0.0",
+      "chars": 580
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "11-s11-cidian-caozuo",
+      "chapterTitle": "第 11 章 · 辞典操作：编码、检索与统计口径",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-s11-cidian-caozuo/outputs/prompt-s11-cidian-caozuo.md",
+      "title": "课堂产出模板 · 第 11 章 辞典操作：编码、检索与统计口径",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 660
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "11-s11-cidian-caozuo",
+      "chapterTitle": "第 11 章 · 辞典操作：编码、检索与统计口径",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-s11-cidian-caozuo/outputs/skill-s11-cidian-caozuo.md",
+      "title": "技能卡 · 第 11 章 辞典操作：编码、检索与统计口径",
+      "name": "s11-cidian-caozuo",
+      "description": "中医证候学第 11 章「辞典操作：编码、检索与统计口径」的可复用技能卡：1866 条候、291 个证、45 类、12 门，靠翻书能查，靠记忆不行，靠模糊搜索会串门。 用概论给的判据逐条对，产出可复核的证名与候名。",
+      "version": "1.0.0",
+      "chars": 536
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "12-s12-zonghe-shicao",
+      "chapterTitle": "第 12 章 · 综合实操：从主诉到证候单元的全流程",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-s12-zonghe-shicao/outputs/prompt-s12-zonghe-shicao.md",
+      "title": "课堂产出模板 · 第 12 章 综合实操：从主诉到证候单元的全流程",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 662
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "12-s12-zonghe-shicao",
+      "chapterTitle": "第 12 章 · 综合实操：从主诉到证候单元的全流程",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-s12-zonghe-shicao/outputs/skill-s12-zonghe-shicao.md",
+      "title": "技能卡 · 第 12 章 综合实操：从主诉到证候单元的全流程",
+      "name": "s12-zonghe-shicao",
+      "description": "中医证候学第 12 章「综合实操：从主诉到证候单元的全流程」的可复用技能卡：前面十一章各自成立，一到真实病例就散：求因与定位混着做，证名与治法对不上，写出来的病案别人复核不了。 用概论给的判据逐条对，产出可复核的证名与候名。",
+      "version": "1.0.0",
+      "chars": 556
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "13-m01-feng-men",
+      "chapterTitle": "第 13 章 · 风证门（M01）",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/13-m01-feng-men/outputs/prompt-m01-feng-men.md",
       "title": "风证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
@@ -59112,25 +59712,25 @@
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "01-feng-men",
-      "chapterTitle": "第 1 章 · 风证门（M01）",
+      "chapter": "13-m01-feng-men",
+      "chapterTitle": "第 13 章 · 风证门（M01）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-feng-men/outputs/skill-feng-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/13-m01-feng-men/outputs/skill-m01-feng-men.md",
       "title": "feng-men",
-      "name": "feng-men",
+      "name": "m01-feng-men",
       "description": "用「门→类→证→候」四级编码解析 风门（M01）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 563
+      "chars": 567
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "02-han-men",
-      "chapterTitle": "第 2 章 · 寒证门（M02）",
+      "chapter": "14-m02-han-men",
+      "chapterTitle": "第 14 章 · 寒证门（M02）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-han-men/outputs/prompt-han-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/14-m02-han-men/outputs/prompt-m02-han-men.md",
       "title": "寒证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
@@ -59142,25 +59742,25 @@
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "02-han-men",
-      "chapterTitle": "第 2 章 · 寒证门（M02）",
+      "chapter": "14-m02-han-men",
+      "chapterTitle": "第 14 章 · 寒证门（M02）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-han-men/outputs/skill-han-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/14-m02-han-men/outputs/skill-m02-han-men.md",
       "title": "han-men",
-      "name": "han-men",
+      "name": "m02-han-men",
       "description": "用「门→类→证→候」四级编码解析 寒门（M02）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 557
+      "chars": 561
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "03-shu-men",
-      "chapterTitle": "第 3 章 · 暑证门（M03）",
+      "chapter": "15-m03-shu-men",
+      "chapterTitle": "第 15 章 · 暑证门（M03）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-shu-men/outputs/prompt-shu-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/15-m03-shu-men/outputs/prompt-m03-shu-men.md",
       "title": "暑证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
@@ -59172,25 +59772,25 @@
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "03-shu-men",
-      "chapterTitle": "第 3 章 · 暑证门（M03）",
+      "chapter": "15-m03-shu-men",
+      "chapterTitle": "第 15 章 · 暑证门（M03）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-shu-men/outputs/skill-shu-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/15-m03-shu-men/outputs/skill-m03-shu-men.md",
       "title": "shu-men",
-      "name": "shu-men",
+      "name": "m03-shu-men",
       "description": "用「门→类→证→候」四级编码解析 暑门（M03）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 557
+      "chars": 561
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "04-shi-men",
-      "chapterTitle": "第 4 章 · 湿证门（M04）",
+      "chapter": "16-m04-shi-men",
+      "chapterTitle": "第 16 章 · 湿证门（M04）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-shi-men/outputs/prompt-shi-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/16-m04-shi-men/outputs/prompt-m04-shi-men.md",
       "title": "湿证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
@@ -59202,25 +59802,25 @@
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "04-shi-men",
-      "chapterTitle": "第 4 章 · 湿证门（M04）",
+      "chapter": "16-m04-shi-men",
+      "chapterTitle": "第 16 章 · 湿证门（M04）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-shi-men/outputs/skill-shi-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/16-m04-shi-men/outputs/skill-m04-shi-men.md",
       "title": "shi-men",
-      "name": "shi-men",
+      "name": "m04-shi-men",
       "description": "用「门→类→证→候」四级编码解析 湿门（M04）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 559
+      "chars": 563
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "05-zao-men",
-      "chapterTitle": "第 5 章 · 燥证门（M05）",
+      "chapter": "17-m05-zao-men",
+      "chapterTitle": "第 17 章 · 燥证门（M05）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-zao-men/outputs/prompt-zao-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/17-m05-zao-men/outputs/prompt-m05-zao-men.md",
       "title": "燥证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
@@ -59232,25 +59832,25 @@
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "05-zao-men",
-      "chapterTitle": "第 5 章 · 燥证门（M05）",
+      "chapter": "17-m05-zao-men",
+      "chapterTitle": "第 17 章 · 燥证门（M05）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-zao-men/outputs/skill-zao-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/17-m05-zao-men/outputs/skill-m05-zao-men.md",
       "title": "zao-men",
-      "name": "zao-men",
+      "name": "m05-zao-men",
       "description": "用「门→类→证→候」四级编码解析 燥门（M05）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 565
+      "chars": 569
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "06-huo-men",
-      "chapterTitle": "第 6 章 · 火证门（M06）",
+      "chapter": "18-m06-huo-men",
+      "chapterTitle": "第 18 章 · 火证门（M06）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-huo-men/outputs/prompt-huo-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/18-m06-huo-men/outputs/prompt-m06-huo-men.md",
       "title": "火证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
@@ -59262,25 +59862,25 @@
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "06-huo-men",
-      "chapterTitle": "第 6 章 · 火证门（M06）",
+      "chapter": "18-m06-huo-men",
+      "chapterTitle": "第 18 章 · 火证门（M06）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-huo-men/outputs/skill-huo-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/18-m06-huo-men/outputs/skill-m06-huo-men.md",
       "title": "huo-men",
-      "name": "huo-men",
+      "name": "m06-huo-men",
       "description": "用「门→类→证→候」四级编码解析 火门（M06）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 571
+      "chars": 575
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "07-qi-men",
-      "chapterTitle": "第 7 章 · 气证门（M07）",
+      "chapter": "19-m07-qi-men",
+      "chapterTitle": "第 19 章 · 气证门（M07）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-qi-men/outputs/prompt-qi-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/19-m07-qi-men/outputs/prompt-m07-qi-men.md",
       "title": "气证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
@@ -59292,25 +59892,25 @@
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "07-qi-men",
-      "chapterTitle": "第 7 章 · 气证门（M07）",
+      "chapter": "19-m07-qi-men",
+      "chapterTitle": "第 19 章 · 气证门（M07）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-qi-men/outputs/skill-qi-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/19-m07-qi-men/outputs/skill-m07-qi-men.md",
       "title": "qi-men",
-      "name": "qi-men",
+      "name": "m07-qi-men",
       "description": "用「门→类→证→候」四级编码解析 气门（M07）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 562
+      "chars": 566
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "08-yu-men",
-      "chapterTitle": "第 8 章 · 瘀证门（M08）",
+      "chapter": "20-m08-yu-men",
+      "chapterTitle": "第 20 章 · 瘀证门（M08）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-yu-men/outputs/prompt-yu-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/20-m08-yu-men/outputs/prompt-m08-yu-men.md",
       "title": "瘀证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
@@ -59322,25 +59922,25 @@
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "08-yu-men",
-      "chapterTitle": "第 8 章 · 瘀证门（M08）",
+      "chapter": "20-m08-yu-men",
+      "chapterTitle": "第 20 章 · 瘀证门（M08）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-yu-men/outputs/skill-yu-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/20-m08-yu-men/outputs/skill-m08-yu-men.md",
       "title": "yu-men",
-      "name": "yu-men",
+      "name": "m08-yu-men",
       "description": "用「门→类→证→候」四级编码解析 瘀门（M08）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 561
+      "chars": 565
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "09-tan-men",
-      "chapterTitle": "第 9 章 · 痰证门（M09）",
+      "chapter": "21-m09-tan-men",
+      "chapterTitle": "第 21 章 · 痰证门（M09）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-tan-men/outputs/prompt-tan-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/21-m09-tan-men/outputs/prompt-m09-tan-men.md",
       "title": "痰证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
@@ -59352,25 +59952,25 @@
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "09-tan-men",
-      "chapterTitle": "第 9 章 · 痰证门（M09）",
+      "chapter": "21-m09-tan-men",
+      "chapterTitle": "第 21 章 · 痰证门（M09）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-tan-men/outputs/skill-tan-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/21-m09-tan-men/outputs/skill-m09-tan-men.md",
       "title": "tan-men",
-      "name": "tan-men",
+      "name": "m09-tan-men",
       "description": "用「门→类→证→候」四级编码解析 痰门（M09）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 568
+      "chars": 572
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "10-yin-men",
-      "chapterTitle": "第 10 章 · 饮证门（M10）",
+      "chapter": "22-m10-yin-men",
+      "chapterTitle": "第 22 章 · 饮证门（M10）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-yin-men/outputs/prompt-yin-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/22-m10-yin-men/outputs/prompt-m10-yin-men.md",
       "title": "饮证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
@@ -59382,25 +59982,25 @@
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "10-yin-men",
-      "chapterTitle": "第 10 章 · 饮证门（M10）",
+      "chapter": "22-m10-yin-men",
+      "chapterTitle": "第 22 章 · 饮证门（M10）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-yin-men/outputs/skill-yin-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/22-m10-yin-men/outputs/skill-m10-yin-men.md",
       "title": "yin-men",
-      "name": "yin-men",
+      "name": "m10-yin-men",
       "description": "用「门→类→证→候」四级编码解析 饮门（M10）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 561
+      "chars": 565
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "11-shiji-men",
-      "chapterTitle": "第 11 章 · 食证门（M11）",
+      "chapter": "23-m11-shiji-men",
+      "chapterTitle": "第 23 章 · 食证门（M11）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-shiji-men/outputs/prompt-shiji-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/23-m11-shiji-men/outputs/prompt-m11-shiji-men.md",
       "title": "食证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
@@ -59412,25 +60012,25 @@
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "11-shiji-men",
-      "chapterTitle": "第 11 章 · 食证门（M11）",
+      "chapter": "23-m11-shiji-men",
+      "chapterTitle": "第 23 章 · 食证门（M11）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-shiji-men/outputs/skill-shiji-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/23-m11-shiji-men/outputs/skill-m11-shiji-men.md",
       "title": "shiji-men",
-      "name": "shiji-men",
+      "name": "m11-shiji-men",
       "description": "用「门→类→证→候」四级编码解析 食门（M11）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 564
+      "chars": 568
     },
     {
       "dept": "中医系",
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "12-xu-men",
-      "chapterTitle": "第 12 章 · 虚证门（M12）",
+      "chapter": "24-m12-xu-men",
+      "chapterTitle": "第 24 章 · 虚证门（M12）",
       "kind": "prompt",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-xu-men/outputs/prompt-xu-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/24-m12-xu-men/outputs/prompt-m12-xu-men.md",
       "title": "虚证门 · 提示词：把一章门变成一次可复述的判定",
       "name": null,
       "description": null,
@@ -59442,15 +60042,15 @@
       "deptSlug": "01-zhongyi",
       "subject": "中医证候学",
       "subjectSlug": "14-zhongyi-zhenghou-xue",
-      "chapter": "12-xu-men",
-      "chapterTitle": "第 12 章 · 虚证门（M12）",
+      "chapter": "24-m12-xu-men",
+      "chapterTitle": "第 24 章 · 虚证门（M12）",
       "kind": "skill",
-      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-xu-men/outputs/skill-xu-men.md",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/24-m12-xu-men/outputs/skill-m12-xu-men.md",
       "title": "xu-men",
-      "name": "xu-men",
+      "name": "m12-xu-men",
       "description": "用「门→类→证→候」四级编码解析 虚门（M12）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
-      "chars": 561
+      "chars": 565
     },
     {
       "dept": "中医系",

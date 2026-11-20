@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/02-zhongyao/03-fangjixue/chapters/10-qushi-qutan/docs/zh.md",
+  "course": "03-fangjixue",
+  "dept": "02-zhongyao",
+  "chapter": "10-qushi-qutan",
+  "title": "第 10 章 · 祛湿剂与祛痰剂：湿与痰是两条路，不是两级",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 95,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 10 章 · 祛湿剂与祛痰剂：湿与痰是两条路，不是两级",
+      "slide": "title",
+      "spoken": "第 10 章 · 祛湿剂与祛痰剂：湿与痰是两条路，不是两级",
+      "estimateSeconds": 5,
+      "audio": "001.mp3",
+      "audioSeconds": 6
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「诸湿肿满，皆属于脾。」——《素问·至真要大论》",
+      "slide": "title",
+      "spoken": "「诸湿肿满，皆属于脾。」——《素问·至真要大论》",
+      "estimateSeconds": 5,
+      "audio": "002.mp3",
+      "audioSeconds": 5.04
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "病人舌苔白腻、身体沉重、咳嗽有痰。你手上有十六首方，却说不清该从平胃散这一路走，还是从二陈汤这一路走。老师说\"湿聚成痰\"，你便以为祛湿与祛痰是同一类药的两个强度档——于是把辛温燥湿的方用在燥痰上，病人越吃越干。",
+      "slide": "problem",
+      "spoken": "病人舌苔白腻、身体沉重、咳嗽有痰。你手上有十六首方，却说不清该从平胃散这一路走，还是从二陈汤这一路走。老师说\"湿聚成痰\"，你便以为祛湿与祛痰是同一类药的两个强度档——于是把辛温燥湿的方用在燥痰上，病人越吃越干。",
+      "estimateSeconds": 23,
+      "audio": "003.mp3",
+      "audioSeconds": 21.79
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫(跟诊时必须在十几首方里当场定一首，方向错了就是药错了) + 知识积累(湿的四个坐标 × 痰的四分法 = 见到苔腻痰多能先定类、再定方，而不是凭方名猜)",
+      "slide": "roots",
+      "spoken": "环境逼迫(跟诊时必须在十几首方里当场定一首，方向错了就是药错了) + 知识积累(湿的四个坐标 × 痰的四分法 = 见到苔腻痰多能先定类、再定方，而不是凭方名猜)",
+      "estimateSeconds": 16,
+      "audio": "004.mp3",
+      "audioSeconds": 15.86
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "text": "- 说出祛湿剂五个节的划分依据（病位 + 寒热），并各举一首代表方\n- 说出祛痰剂四个节的划分依据（痰的性质：湿、热、燥、风），并指出二陈汤为何是祖方\n- 用共享药味的数据解释：为什么同一味茯苓既能出现在祛湿方里，也能出现在祛痰方里\n- 认出湿与痰的判别点不是痰的多少，而是水液停聚的部位与性质\n- 判断一章的君臣佐使抽取覆盖率说明了什么、不能说明什么",
+      "slide": "objectives",
+      "heading": "学习目标",
+      "spoken": "说出祛湿剂五个节的划分依据（病位 + 寒热），并各举一首代表方\n说出祛痰剂四个节的划分依据（痰的性质：湿、热、燥、风），并指出二陈汤为何是祖方\n用共享药味的数据解释：为什么同一味茯苓既能出现在祛湿方里，也能出现在祛痰方里\n认出湿与痰的判别点不是痰的多少，而是水液停聚的部位与性质\n判断一章的君臣佐使抽取覆盖率说明了什么、不能说明什么",
+      "estimateSeconds": 35,
+      "audio": "005.mp3",
+      "audioSeconds": 35.4
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 95.4,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

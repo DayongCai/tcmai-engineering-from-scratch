@@ -1,0 +1,67 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/02-zhongyao/19-zhongyao-zhuanye-shijian/chapters/06-shijian-baogao/docs/zh.md",
+  "course": "19-zhongyao-zhuanye-shijian",
+  "dept": "02-zhongyao",
+  "chapter": "06-shijian-baogao",
+  "title": "第 6 章 · 实践报告与出站考核",
+  "segmentCount": 5,
+  "estimateTotalSeconds": 62,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 6 章 · 实践报告与出站考核",
+      "slide": "title",
+      "spoken": "第 6 章 · 实践报告与出站考核",
+      "estimateSeconds": 3,
+      "audio": "001.mp3",
+      "audioSeconds": 3.5
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「《中药专业实践·第6章》」——派生课无本章原文篇名；量值锚点见 README。本章要回答的是：实践报告与出站考核这一站的核心判据是什么。",
+      "slide": "title",
+      "spoken": "「《中药专业实践·第6章》」——派生课无本章原文篇名；量值锚点见 README。本章要回答的是：实践报告与出站考核这一站的核心判据是什么。",
+      "estimateSeconds": 15,
+      "audio": "002.mp3",
+      "audioSeconds": 13.42
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "资源调查研究：把实践写成可复核的报告，靠的就是调查方法与数据。",
+      "slide": "problem",
+      "spoken": "资源调查研究：把实践写成可复核的报告，靠的就是调查方法与数据。",
+      "estimateSeconds": 7,
+      "audio": "003.mp3",
+      "audioSeconds": 7.08
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（中药专业实践的失败大多是「只在实验室做过，没在产地和车间做过」：同一批药材，产地与车间看到的是两回事）+ 知识积累（本章 5 单元 12,477 汉字；三辨主 **记录与考核 77**；四位面（实践场景）主 **调研与取样 31**；引书 **8 部 15 次**；数值类命中 0）",
+      "slide": "roots",
+      "spoken": "环境逼迫（中药专业实践的失败大多是「只在实验室做过，没在产地和车间做过」：同一批药材，产地与车间看到的是两回事）+ 知识积累（本章 5 单元 12,477 汉字；三辨主 记录与考核 77；四位面（实践场景）主 调研与取样 31；引书 8 部 15 次；数值类命中 0）",
+      "estimateSeconds": 26,
+      "audio": "004.mp3",
+      "audioSeconds": 26.4
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "005.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 61.7,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

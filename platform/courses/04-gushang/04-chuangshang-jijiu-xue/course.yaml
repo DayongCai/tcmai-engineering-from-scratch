@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 04-gushang/04-chuangshang-jijiu-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/04-gushang/04-chuangshang-jijiu-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 04-chuangshang-jijiu-xue
+title: 创伤急救学
+en: Trauma & Emergency Care
+dept: 04-gushang
+dept_title: 骨伤系
+semester: 5
+stage: zhang
+hours: 54
+chapters_target: 8
+bridge: 创伤评分→风险分层 / 急救流程→决策树
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-jijiu-gailun
+    title: 第1章 创伤急救总论与评估
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.02
+  - slug: 02-xianchang-huli
+    title: 第2章 现场救护与搬运固定
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.99
+  - slug: 03-chuxue-shuke
+    title: 第3章 出血与休克
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.95
+  - slug: 04-lunao-jizhu
+    title: 第4章 颅脑与脊柱损伤
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.95
+  - slug: 05-xiongfu
+    title: 第5章 胸部与腹部创伤
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.96
+  - slug: 06-sizhi-guzhe-tuowei
+    title: 第6章 四肢骨折与脱位的急救
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.99
+  - slug: 07-shaoshang-jishang
+    title: 第7章 烧伤、挤压伤与多发伤
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97
+  - slug: 08-zainan-zhuanyun
+    title: 第8章 灾难救援与转运
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97

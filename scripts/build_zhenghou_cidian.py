@@ -859,7 +859,7 @@ def render_vol0(struct, tensor, men):
     A("| 层 | 位置 | 关系 |")
     A("|---|---|---|")
     A("| 底本层（本辞典自有） | `standards/zhenghou-cidian/` | 目录原文 + 四级结构 + 三张语素表 + 张量 |")
-    A("| 课程层 | `departments/01-zhongyi/14-zhongyi-zhenghou-xue/` | 12 章 = 12 门，每章带 code/quiz/outputs |")
+    A("| 课程层 | `departments/01-zhongyi/14-zhongyi-zhenghou-xue/` | 12 章按三基编排（基本理论 1–4 · 基本方法 5–9 · 基本技能 10–12），由 `scripts/build_zhenghou_sanji.py` 生成；各论十二门在本书（教材层） |")
     A("| 跨课程派生层（旧） | `standards/zhenghou/证候库.json` | 四门临床课派生的 132 证，作为「另一套命名」的对照（见附录 B） |")
     A("| 规范层 | `standards/icd11/tm1/axes.json` | ICD-11 TM1 四轴词表（官方 472 条题名统计） |")
     A("")
@@ -883,9 +883,9 @@ def render_vol0(struct, tensor, men):
     A("")
     A("## 8 插图：语义张量的十二张图")
     A("")
-    A("九张图分四组：**结构**（图 1–2，编码与张量怎么搭）、**密度**（图 3–4，1052 个非零格落在哪）、"
-      "**粒度**（图 5–6，291 证与 1866 候的粗细）、**工程**（图 7–9，状态机、数据流、百姓入口的覆盖）。"
-      "每张图都有源文件，改数据重跑即重画。")
+    A("十二张图分四组：**结构**（图 1–2，编码与张量怎么搭）、**密度**（图 3–4，1052 个非零格落在哪）、"
+      "**粒度**（图 5–6，291 证与 1866 候的粗细）、**工程**（图 7–12，状态机、APP 数据流、反查覆盖、危候热力、六段流水线、四层数据栈）。"
+      "每张图都有源文件（`figures/*.mmd` / `*.py`），改数据重跑即重画。")
     A("")
     A("### 图 1 四级编码与 ICD-11 同构")
     A("")
@@ -2444,69 +2444,12 @@ def main():
     out.append((os.path.join(TB, "附录H-病候总表.md"), render_appendix_h(struct)))
     out.append((os.path.join(TB, "附录I-参考书目.md"), render_appendix_i(struct)))
 
-    # 课程层
-    for m in men:
-        slug = chapter_slug(m)
-        # audit 的基准名 = 章目录名去掉「NN-」前缀（skill 的 frontmatter.name 必须等于它）
-        base = re.sub(r"^\d+-", "", slug)
-        cdir = os.path.join(DEPT, "chapters", slug)
-        stat = {
-            "men": len(men),
-            "houInstances": struct["counts"]["houInstances"],
-            "hou": sum(len(z["houList"]) for l in m["lei"] for z in l["zhengList"]),
-        }
-        wei = {}
-        tai = {}
-        for l in m["lei"]:
-            for z in l["zhengList"]:
-                for h in z["houList"]:
-                    wei[h["wei"]] = wei.get(h["wei"], 0) + 1
-                    tai[h["tai"]] = tai.get(h["tai"], 0) + 1
-        wtop = sorted(wei.items(), key=lambda kv: (-kv[1], str(kv[0])))
-        ttop = sorted(tai.items(), key=lambda kv: (-kv[1], str(kv[0])))
-        stat["wei_top"] = " ｜ ".join("%s×%d" % (k, v) for k, v in wtop[:6])
-        stat["tai_top"] = " ｜ ".join("%s×%d" % (k, v) for k, v in ttop[:6])
-        stat["per_zheng"] = stat["hou"] / max(1, sum(len(l["zhengList"]) for l in m["lei"]))
-
-        out.append((os.path.join(cdir, "docs", "zh.md"), render_doc(m, stat)))
-        out.append((os.path.join(cdir, "quiz.json"), render_quiz(m)))
-        out.append((os.path.join(cdir, "outputs", "prompt-%s.md" % base), render_prompt(m, base)))
-        out.append((os.path.join(cdir, "outputs", "skill-%s.md" % base), render_skill(m, base)))
-        # 旧命名（带 NN- 前缀）若还在，删掉，避免 outputs 里出现两对
-        for stale in ("prompt-%s.md" % slug, "skill-%s.md" % slug):
-            sp = os.path.join(cdir, "outputs", stale)
-            if os.path.exists(sp):
-                os.remove(sp)
-        out.append((os.path.join(cdir, "code", "main.js"), render_code_main(m)))
-        out.append((os.path.join(cdir, "code", "main.test.js"), render_code_test(m)))
-
-    # 课程层索引：chapters.json
-    idx = {
-        "slug": "14-zhongyi-zhenghou-xue",
-        "title": "中医证候学",
-        "volume": "辞典（操作手册型）",
-        "chapters": [
-            {"n": m["n"], "slug": chapter_slug(m), "title": SLUG_ZH[m["code"]], "status": "✅",
-             "code": m["code"], "lei": [l["code"] for l in m["lei"]],
-             "zheng": sum(len(l["zhengList"]) for l in m["lei"]),
-             "hou": sum(len(z["houList"]) for l in m["lei"] for z in l["zhengList"])}
-            for m in men
-        ],
-    }
-    out.append((os.path.join(DEPT, "chapters.json"), json.dumps(idx, ensure_ascii=False, indent=2) + "\n"))
+    # 课程层不在本脚本里出：2026-11-13 起课程正文按「基本理论—基本方法—基本技能」三基编排，
+    # 由 scripts/build_zhenghou_sanji.py 生成（母本＝概论十节）。本脚本只负责辞典侧：
+    # standards/zhenghou-cidian/* + textbooks/01-zhongyi/14-zhongyi-zhenghou-xue/*。
 
     for path, text in out:
         emit(path, text)
-
-    # 旧章节目录必须清掉（slug 已变），否则 audit 会看到 24 个章目录
-    keep = {os.path.join(DEPT, "chapters", chapter_slug(m)) for m in men}
-    croot = os.path.join(DEPT, "chapters")
-    removed = []
-    if os.path.isdir(croot):
-        for name in sorted(os.listdir(croot)):
-            p = os.path.join(croot, name)
-            if os.path.isdir(p) and p not in keep:
-                removed.append(name)
 
     print("═══ 中医证候学 · 疾病证候单元辞典 ═══")
     print("  门 %d · 类 %d · 证 %d · 候 %d · 张量非零格 %d" % (
@@ -2517,8 +2460,6 @@ def main():
         len(struct["校对"]["证名拆分失败"]), len(struct["校对"]["候名拆分失败"]),
         len(struct["校对"]["证码重复"])))
     print("  产物 %d 个文件" % len(out))
-    if removed:
-        print("  ⚠ 旧章节目录 %d 个待删（slug 已变）: %s" % (len(removed), ", ".join(removed)))
     if CHECK:
         if DRIFT:
             print("\n❌ DRIFT %d 个文件与底本不一致：" % len(DRIFT))

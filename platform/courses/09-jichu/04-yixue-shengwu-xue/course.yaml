@@ -1,0 +1,126 @@
+# [tcmP] 课程编排 · 09-jichu/04-yixue-shengwu-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/09-jichu/04-yixue-shengwu-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 04-yixue-shengwu-xue
+title: 医学生物学
+en: Medical Biology
+dept: 09-jichu
+dept_title: 基础医学院
+semester: 2
+stage: sheng
+hours: 36
+chapters_target: 16
+bridge: 遗传变异→序列比对 / 进化→系统发生树
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xulun
+    title: 第1章 绪论
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.13
+    measured_minutes: 1.12
+  - slug: 02-yixue-xibao-shengwuxue-gailun
+    title: 第2章 医学细胞生物学概论
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.04
+  - slug: 03-xibao-gaishu
+    title: 第3章 细胞概述
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.04
+  - slug: 04-xibaomo
+    title: 第4章 细胞膜
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1
+  - slug: 05-xibao-zhi
+    title: 第5章 细胞质
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.13
+    measured_minutes: 1.14
+  - slug: 06-xibao-he
+    title: 第6章 细胞核
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1
+  - slug: 07-zengzhi-fenhua-shuailao-siwang
+    title: 第7章 细胞增殖、分化、衰老和死亡
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.15
+    measured_minutes: 1.18
+  - slug: 08-ganxibao-yu-xibao-gongcheng
+    title: 第8章 干细胞和细胞工程
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.01
+  - slug: 09-yixue-yichuanxue-gailun
+    title: 第9章 医学遗传学概述
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.01
+  - slug: 10-jiyin-ji-jiyin-tubian
+    title: 第10章 基因及基因突变
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1
+  - slug: 11-dan-jiyin-yichuan
+    title: 第11章 单基因遗传与单基因遗传病
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.06
+  - slug: 12-duo-jiyin-yichuan
+    title: 第12章 多基因遗传与多基因遗传病
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.02
+  - slug: 13-renlei-ranse-ti-yu-ranse-ti-bing
+    title: 第13章 人类染色体与染色体病
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.1
+  - slug: 14-qunti-yichuan-xue
+    title: 第14章 群体遗传学
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.05
+  - slug: 15-linchuang-yichuan-xue
+    title: 第15章 临床遗传学
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.17
+    measured_minutes: 1.18
+  - slug: 16-zhongyi-yichuan-xue
+    title: 第16章 中医遗传学
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.15
+    measured_minutes: 1.13

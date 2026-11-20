@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/16-huli-xue-daolun/01-fazhan-daolun/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 67.91,
+  "estimatedCues": 0,
+  "videoSeconds": 67.942667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.91,
+      "seconds": 3.91,
+      "estimated": false,
+      "text": "第 1 章 · 护理学的发展与护理学导论",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.91,
+      "end": 24.33,
+      "seconds": 20.42,
+      "estimated": false,
+      "text": "「《护理札记·第一章》」——本章讲护理学发展，教材无篇名级引文；南丁格尔对环境与观察的论述出于此篇，篇名按该书体例补足，非本章原文篇名。本章要回答的是：护理从「做什么」变成「为什么这么做」，发生在哪一步。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 24.33,
+      "end": 34.96,
+      "seconds": 10.63,
+      "estimated": false,
+      "text": "发生在南丁格尔之后：她把护理从「照护劳动」变成「有依据的照护」——记录、统计、环境改造，都是为了让做法可追溯。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 34.96,
+      "end": 56.61,
+      "seconds": 21.65,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 1 单元 18,025 汉字；三辨主 概念与理论 813；四位面（护理领域）主 机构与社会 111；引书 2 部 4 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 56.61,
+      "end": 67.91,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

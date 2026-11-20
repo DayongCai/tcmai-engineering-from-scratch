@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 04-gushang/14-kangfu-gongcheng-zhiju
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 14-kangfu-gongcheng-zhiju
+title: 康复工程与支具学
+en: Rehab Engineering & Orthotics
+dept: 04-gushang
+dept_title: 骨伤系
+semester: 8
+stage: zhuang
+hours: 54
+chapters_target: 8
+bridge: 支具设计→参数化建模 / 3D 打印→增材制造流程
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-gailun
+    title: 第1章 康复工程概论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1
+  - slug: 02-fenlei-cailiao
+    title: 第2章 支具分类与材料
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 0.99
+  - slug: 03-jizhu-zhiju
+    title: 第3章 脊柱支具
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.95
+  - slug: 04-shangzhi-zhiju
+    title: 第4章 上肢支具
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.94
+  - slug: 05-xiazhi-zhiju
+    title: 第5章 下肢支具
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.95
+  - slug: 06-zuxie-yali
+    title: 第6章 矫形鞋与压力治疗
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1
+  - slug: 07-zhuxing-fuzhu
+    title: 第7章 助行器、轮椅与转移辅具
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 08-pinggu-suifang
+    title: 第8章 适配评估与随访
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.98

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/10-bingli-xue/04-jubu-xueye-xunhuan-zhangai/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 91.37,
+  "estimatedCues": 0,
+  "videoSeconds": 91.388667,
+  "videoMinusNarrationSeconds": 0.019,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.81,
+      "seconds": 5.81,
+      "estimated": false,
+      "text": "第 4 章 · 局部血液循环障碍：把「血怎么了」写成一条单向链",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.81,
+      "end": 20.38,
+      "seconds": 14.57,
+      "estimated": false,
+      "text": "「局部血液循环障碍指某一局部组织或器官内血液的含量与流动状态发生改变的类别。」——教材·第4章·4.1.1（《病理学·第4章·4.1.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.38,
+      "end": 42.56,
+      "seconds": 22.18,
+      "estimated": false,
+      "text": "「淤血、血栓、栓塞、梗死」四个词你能默写，可一具标本摆在面前——切面暗红、边界清楚、呈楔形——你答不出它走到了链上的哪一段。四个词都能背，四段顺序说不清；顺序说不清，形态就只能靠记，记不住就只剩「血出了问题」这一句。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 42.56,
+      "end": 80.07,
+      "seconds": 37.51,
+      "estimated": false,
+      "text": "环境逼迫（带教老师指着切面问「这是栓塞还是梗死」，学生把两个词并排念一遍，接不下去；换成问「栓子停下来之后，下游那一段组织还活不活」，就彻底断线）+ 知识积累（本章 12 个单元、20,556 字的词频结构显示：形态 532 次、机制 116 次、病因 4 次，教材把八成以上的笔墨给了「看得见什么」，而「四段怎么接」只在 4.1.1 与 4.4.3 两个单元里被写成完整链条——形态是齐的，顺序是散的）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 80.07,
+      "end": 91.37,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

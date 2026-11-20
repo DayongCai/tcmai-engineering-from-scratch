@@ -23,12 +23,12 @@
     "id": "textbooks",
     "path": "textbooks/07-zhineng/18-zhineng-gongcheng-shijian",
     "chaptersWritten": 6,
-    "words": 3539,
+    "words": 7714,
     "status": "wip",
     "layer": "handbook",
     "contract": "handbook-v1",
     "origin": "handbook",
     "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-    "extractedAt": "2026-11-09"
+    "extractedAt": "2026-11-20"
   }
 }

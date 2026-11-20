@@ -381,6 +381,7 @@ function report() {
   for (const [k, v] of Object.entries(h)) console.log(`    ${k}: ${v}`);
   const c = crossCheck();
   console.log(`  校勘：古诗文网本第 ${c.pian} 篇 ${c.paras} 段 / ${c.chars} 字（sha256 ${c.sha8}…）`);
+  console.log('  教学边界：本输出为《金匮要略》文本结构统计，外源·笈成留档可复算，不构成诊疗依据。');
 }
 
 module.exports = { PIAN_NO, GS_NO, PIAN, ARTICLES, GSPIAN, RULES, cps, totals, hits, formulaTable, crossCheck };

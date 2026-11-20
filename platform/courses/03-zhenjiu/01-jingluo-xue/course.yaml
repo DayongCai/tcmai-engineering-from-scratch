@@ -1,0 +1,88 @@
+# [tcmP] 课程编排 · 03-zhenjiu/01-jingluo-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/03-zhenjiu/01-jingluo-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；渲染后用 ledger 重算状态。
+
+id: 01-jingluo-xue
+title: 经络学
+en: Meridian Theory
+dept: 03-zhenjiu
+dept_title: 针灸系
+semester: 2
+stage: sheng
+hours: 72
+chapters_target: 10
+bridge: 经络循行→图结构 / 路径查询→图遍历
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-zucheng-mingming
+    title: 第1章 经络系统的组成与命名
+    video: rendered
+    segments: 5
+    estimate_minutes: 1.08
+    measured_minutes: 1.13
+  - slug: 02-shier-jingmai
+    title: 第2章 十二经脉的走向与交接
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.12
+    measured_minutes: 1.15
+  - slug: 03-qijing-bamai
+    title: 第3章 奇经八脉的循行与功能
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.13
+  - slug: 04-jingbie-jinjing
+    title: 第4章 经别、经筋与皮部
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.13
+    measured_minutes: 1.14
+  - slug: 05-biaoli-peishu
+    title: 第5章 经络与脏腑的表里配属
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.11
+  - slug: 06-bingli-fanying
+    title: 第6章 经络的病理反应与诊断意义
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.1
+  - slug: 07-jingluo-kongjian
+    title: 第7章 经络图的空间结构与坐标
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.11
+  - slug: 08-liuzhu-shijian
+    title: 第8章 经脉流注次序与时间节律
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.14
+  - slug: 09-jiepou-zhengyi
+    title: 第9章 经络的现代解剖学对应争议
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.1
+  - slug: 10-tupu-jianku
+    title: 第10章 经络数据的图谱化建库
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.15

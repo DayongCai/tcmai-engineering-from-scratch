@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/03-jiankang-pinggu/03-xinli-shiying/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 64.98,
+  "estimatedCues": 0,
+  "videoSeconds": 65.018667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.66,
+      "seconds": 5.66,
+      "estimated": false,
+      "text": "第 3 章 · 心理适应能力：尊严、自主与情绪的判读",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.66,
+      "end": 22.08,
+      "seconds": 16.42,
+      "estimated": false,
+      "text": "「《健康评估·第3章》」——派生课无本章原文篇名，引父课单元；非本章原文篇名。本章要回答的是：心理适应能力：尊严、自主与情绪的判读这一章的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 22.08,
+      "end": 30.74,
+      "seconds": 8.66,
+      "estimated": false,
+      "text": "心理域没有刻度，只能从「尊严是否被保住、自主是否被削弱、情绪是否还撑得住」三处判。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 30.74,
+      "end": 53.68,
+      "seconds": 22.94,
+      "estimated": false,
+      "text": "环境逼迫（四域里任何一域掉出「最合适」，其余三域的代偿都会在数月内被耗尽）+ 知识积累（本章 1 单元 20,119 汉字；三辨主 记录与沟通 345；四位面（适应能力四域）主 环境生态适应 45；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 53.68,
+      "end": 64.98,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

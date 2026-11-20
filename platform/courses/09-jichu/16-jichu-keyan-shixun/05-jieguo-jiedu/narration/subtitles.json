@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/16-jichu-keyan-shixun/05-jieguo-jiedu/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 60.25,
+  "estimatedCues": 0,
+  "videoSeconds": 60.292667,
+  "videoMinusNarrationSeconds": 0.043,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.55,
+      "seconds": 3.55,
+      "estimated": false,
+      "text": "第 5 章 · 结果解读与可重复性",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.55,
+      "end": 16.82,
+      "seconds": 13.27,
+      "estimated": false,
+      "text": "「〔派生〕结果解读与可重复性」——材料：流行病学第12章。本章要回答的是：结果解读与可重复性：这一站要交什么、怎么算过关。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 16.82,
+      "end": 23.37,
+      "seconds": 6.55,
+      "estimated": false,
+      "text": "结果解读与可重复性：实训第 5 站，材料取自流行病学第12章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 23.37,
+      "end": 48.95,
+      "seconds": 25.58,
+      "estimated": false,
+      "text": "环境逼迫（实训课的判据是「做得到—记得下—复得了」三件套：动手规范、记录完整、结果可重复）+ 知识积累（本章 12 单元 17,535 汉字；三辨主 设计与对照 297；四位面（实训站）主 数据与结果 17535；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 48.95,
+      "end": 60.25,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

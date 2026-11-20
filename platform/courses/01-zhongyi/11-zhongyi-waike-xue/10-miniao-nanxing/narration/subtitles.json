@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/11-zhongyi-waike-xue/10-miniao-nanxing/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 92.02,
+  "estimatedCues": 0,
+  "videoSeconds": 92.044667,
+  "videoMinusNarrationSeconds": 0.025,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.93,
+      "seconds": 5.93,
+      "estimated": false,
+      "text": "第 10 章 · 泌尿男性疾病：三个系统，三条不可错过的红线",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.93,
+      "end": 17.69,
+      "seconds": 11.76,
+      "estimated": false,
+      "text": "「凡男子阳痿不起，多由命门火衰，精气虚冷，或以七情劳倦，损伤生阳之气」——教材·第10章·10.5.1（《景岳全书》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 17.69,
+      "end": 46.71,
+      "seconds": 29.02,
+      "estimated": false,
+      "text": "这一章的七个病证分属三套完全不同的系统：腺体与感染（子痈、精浊、血精）、排尿（精癃）、生殖（阳痿、不育症）、以及阴囊内的一包水（水疝）。学生常把它们当成「一串男科病」一起背，于是丢掉三件真正救命的事——睾丸扭转（6 小时内不处理就坏死）、急性尿潴留（尿不出就是急症）、睾丸肿瘤（硬、重、透光阴性）。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 46.71,
+      "end": 76.21,
+      "seconds": 29.5,
+      "estimated": false,
+      "text": "环境逼迫（男科门诊最大的风险是「先按炎症治两周」：把扭转当附睾炎、把肿瘤当鞘膜积液）+ 知识积累（本章 35 个单元、26,896 字里，病因 300 次居三辨首位、脏腑 139 次居四位面首位——七个病证的病机几乎都落在肾、肝、脾与精室、膀胱，而鉴别靠的是体检动作与影像，不是症状描述）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 76.21,
+      "end": 80.72,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 80.72,
+      "end": 92.02,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

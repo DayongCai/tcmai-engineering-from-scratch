@@ -1,0 +1,105 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/01-zhongyaoxue/12-xingneng-bianma/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 9,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 209.7,
+  "estimatedCues": 0,
+  "videoSeconds": 209.728667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.18,
+      "seconds": 5.18,
+      "estimated": false,
+      "text": "第 12 章 · 中药性能的编码化：性味归经 ， 向量",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.18,
+      "end": 12.07,
+      "seconds": 6.89,
+      "estimated": false,
+      "text": "「药有酸咸甘苦辛五味，又有寒热温凉四气。」——《神农本草经·序录》",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 12.07,
+      "end": 24.86,
+      "seconds": 12.79,
+      "estimated": false,
+      "text": "你能背「麻黄辛、微苦，温，归肺、膀胱经」，但当有人问「哪几味药和麻黄性能最接近」，你只能凭印象点几味，说不出「接近」是按什么算的。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 24.86,
+      "end": 37.44,
+      "seconds": 12.58,
+      "estimated": false,
+      "text": "环境逼迫(方剂替换、药源短缺时要现场找替代药) + 知识积累(四气五味归经 × 向量空间 = 一个能排序、能解释维度的相似度)",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 37.44,
+      "end": 63.5,
+      "seconds": 26.06,
+      "estimated": false,
+      "text": "把「性味归经」这种表格文字，变成一个定长向量，并说明每个维度代表什么 用余弦相似度排序近似药材，并指出相似度不能代表什么 说清「四气」的有序性（寒，凉，平，温，热）为什么不能用 one-hot 编码 在同一份数据上，比较欧氏距离与余弦相似度给出的排序差异",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "concept",
+      "start": 63.5,
+      "end": 138.21,
+      "seconds": 74.71,
+      "estimated": false,
+      "text": "中医：性能是一个多维描述 四气描述作用趋向（寒凉清热、温热散寒），五味描述功能类别（辛散、甘补、酸收、苦泄、咸软），归经描述作用部位。《神农本草经·序录》把性味并举，后世才把归经补进体系。三者不是并列的标签，而是三个不同性质的轴：气是有序轴，味与归经是类别轴。 这一点决定了编码方式：气可以用一个整数（寒=-2 … 热=+2），味与归经必须用 0/1 的多位向量。 AI/工程：混合编码与余弦相似度 其中 q 是气（一维整数）， t1..t5 是辛甘酸苦咸五位， m1..m12 是十二归经位。 相似度用余弦： cos(va,vb)=va·vb‖va‖‖vb‖ 。 必须记住的局限：余弦把 12 个归经维度等权处理，而临床上「同归肺经」与「同归膀胱经」的临床意义并不相同；它也不含剂量、炮制、配伍信息。所以它回答的是「性能描述接近」，不是「可以互换」。",
+      "audio": "006.mp3"
+    },
+    {
+      "n": 7,
+      "role": "build",
+      "start": 138.21,
+      "end": 185.73,
+      "seconds": 47.52,
+      "estimated": false,
+      "text": "教材·第5章·5.1 的原话是「四气（四性）指药物寒、热、温、凉四种药性（另有平性，实际仍偏于温凉）」—— 这一句就定了编码：四气是有序轴，不是类别。所以第 0 维取轴值而不是 one-hot。 这一版与前几版的差别：本章第一版用 12 味手打示例，数据与教材对不上（石膏的四气在示例里写作「大寒 = −2」， 但教材原段写的是「性大寒」——手抄时把一个词换成了一个数）。现在改成从 standards/zhongyao/drugs.json 现算， 287 味药的性味归经全部来自教材「来源与性味归经」段，一个字不手抄。",
+      "audio": "007.mp3"
+    },
+    {
+      "n": 8,
+      "role": "verify",
+      "start": 185.73,
+      "end": 198.4,
+      "seconds": 12.67,
+      "estimated": false,
+      "text": "实际输出（287 味全库、21 维、余弦 top5）： 这组结果本身就是本章最重要的一课：排在第一位的未必是临床上的替代品。",
+      "audio": "008.mp3"
+    },
+    {
+      "n": 9,
+      "role": "disclaimer",
+      "start": 198.4,
+      "end": 209.7,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "009.mp3"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/20-zhongyao-biye-sheji/01-xuan-ti/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 66.5,
+  "estimatedCues": 0,
+  "videoSeconds": 66.538667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.78,
+      "seconds": 4.78,
+      "estimated": false,
+      "text": "第 1 章 · 选题：从质量标志物到可验证假设",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.78,
+      "end": 21.53,
+      "seconds": 16.75,
+      "estimated": false,
+      "text": "「《中药毕业设计与知识移交·第1章》」——派生课无本章原文篇名；台账锚点见 standards/biye/。本章要回答的是：选题：从质量标志物到可验证假设这一环节的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 21.53,
+      "end": 29.88,
+      "seconds": 8.35,
+      "estimated": false,
+      "text": "从质量标准与标准化切入：中药毕设的选题几乎都落在「用什么指标能证明质量一致」上。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 29.88,
+      "end": 55.2,
+      "seconds": 25.32,
+      "estimated": false,
+      "text": "环境逼迫（中药毕设的失败大多是「指标先定、样品不代表性」：做了一年，结论只对那批样成立）+ 知识积累（本章 4 单元 13,663 汉字；三辨主 实施与分析 234；四位面（毕设环节）主 移交与规范 284；引书 12 部 22 次；数值类命中 1）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 55.2,
+      "end": 66.5,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

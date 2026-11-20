@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/14-peiwu-yu-jinji/08-fangfa-pingjia/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 55.53,
+  "estimatedCues": 0,
+  "videoSeconds": 55.568667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.19,
+      "seconds": 3.19,
+      "estimated": false,
+      "text": "第 8 章 · 配伍研究的证据方法",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.19,
+      "end": 19.17,
+      "seconds": 15.98,
+      "estimated": false,
+      "text": "「《中药配伍与禁忌·配伍研究的证据方法》」——派生课：篇名为本课程章名，出处见 units.json 的 source 字段。本章要回答的是：配伍研究的证据方法的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 19.17,
+      "end": 22.39,
+      "seconds": 3.22,
+      "estimated": false,
+      "text": "从文献经验到可验证的证据。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 22.39,
+      "end": 44.23,
+      "seconds": 21.84,
+      "estimated": false,
+      "text": "环境逼迫（派生课的判断力来自「把父课的片段重新排成一条决策链」）+ 知识积累（本章 5 单元 12,550 汉字；三辨主 证据与机制 210；四位面（观察视角）主 评价方法 276；引书 4 部 13 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 44.23,
+      "end": 55.53,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

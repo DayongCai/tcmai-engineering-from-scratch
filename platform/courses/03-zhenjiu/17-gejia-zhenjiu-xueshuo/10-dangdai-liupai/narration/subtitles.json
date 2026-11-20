@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/17-gejia-zhenjiu-xueshuo/10-dangdai-liupai/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 67.12,
+  "estimatedCues": 0,
+  "videoSeconds": 67.152667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.26,
+      "seconds": 3.26,
+      "estimated": false,
+      "text": "第 10 章 · 当代针灸学术流派",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.26,
+      "end": 14.18,
+      "seconds": 10.92,
+      "estimated": false,
+      "text": "「《灵枢·九针十二原》」——教材·第10章·10.1.2。本章要回答的是：当代三大流派凭什么被称为流派。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.18,
+      "end": 31.39,
+      "seconds": 17.21,
+      "estimated": false,
+      "text": "流派认定依赖师承与技法标识，教材写得克制，容易被读成「名家介绍」。这不是记忆量的问题，是判据的问题：没有判据，任何一个医家都可以被讲成「他很重视针灸」，而这句话什么也没说。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 31.39,
+      "end": 55.82,
+      "seconds": 24.43,
+      "estimated": false,
+      "text": "环境逼迫（针灸的技术动作只在具体医家的手上被改动，脱离人物与年代，手法就成了没有来路的规矩）+ 知识积累（本章 24 单元 13,797 汉字；三辨主 临证应用 360；四位面（时代）主 明清近代 102；引书 29 部 61 次；数值类命中 5）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 55.82,
+      "end": 67.12,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

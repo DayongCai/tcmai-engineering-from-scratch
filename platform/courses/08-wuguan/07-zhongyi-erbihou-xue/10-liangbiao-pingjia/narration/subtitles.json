@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/08-wuguan/07-zhongyi-erbihou-xue/10-liangbiao-pingjia/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 54.36,
+  "estimatedCues": 0,
+  "videoSeconds": 54.388667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.84,
+      "seconds": 3.84,
+      "estimated": false,
+      "text": "第 10 章 · 耳鼻喉疗效的量表评价",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.84,
+      "end": 15.65,
+      "seconds": 11.81,
+      "estimated": false,
+      "text": "「《中医耳鼻喉科学·耳鼻喉疗效的量表评价》」——第10章。本章要回答的是：耳鼻喉疗效的量表评价：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 15.65,
+      "end": 19.68,
+      "seconds": 4.03,
+      "estimated": false,
+      "text": "耳鼻喉疗效的量表评价：本课第 10 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 19.68,
+      "end": 43.06,
+      "seconds": 23.38,
+      "estimated": false,
+      "text": "环境逼迫（耳鼻喉的判据是「定位到窍、定性到邪、急症先保命」）+ 知识积累（本章 12 单元 12,995 汉字；三辨主 耳鼻口齿病位 278；四位面（章群结构）主 咽喉·口齿·急症 12995；引书 4 部 6 次；数值类命中 3）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 43.06,
+      "end": 54.36,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

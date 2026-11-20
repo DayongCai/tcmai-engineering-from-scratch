@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 03-zhenjiu/09-kangfu-yixue-jichu
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/03-zhenjiu/09-kangfu-yixue-jichu/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 09-kangfu-yixue-jichu
+title: 康复医学基础
+en: Foundations of Rehabilitation
+dept: 03-zhenjiu
+dept_title: 针灸系
+semester: 5
+stage: zhang
+hours: 54
+chapters_target: 8
+bridge: 功能评定→量表计分 / 康复计划→路径搜索
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-kangfu-gailun
+    title: 第1章 康复医学概论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.93
+  - slug: 02-gongneng-pingding
+    title: 第2章 功能评定
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.89
+  - slug: 03-yundong-gongneng
+    title: 第3章 运动功能与训练
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.95
+  - slug: 04-richeng-shenghuo
+    title: 第4章 日常生活活动与作业治疗
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.98
+  - slug: 05-yanyu-yinshi
+    title: 第5章 言语、吞咽与认知康复
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99
+  - slug: 06-kangfu-huli
+    title: 第6章 康复护理与并发症预防
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99
+  - slug: 07-shequ-changqi
+    title: 第7章 社区与长期照护
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.93
+  - slug: 08-tuandui-lunli
+    title: 第8章 康复团队与伦理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.9

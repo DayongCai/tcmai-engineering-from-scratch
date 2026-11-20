@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/06-shengli-xue/04-xueye-xunhuan/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 131.73,
+  "estimatedCues": 0,
+  "videoSeconds": 131.742667,
+  "videoMinusNarrationSeconds": 0.013,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 6.02,
+      "seconds": 6.02,
+      "estimated": false,
+      "text": "第 4 章 · 血液循环：泵血·血管·调节·器官循环",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 6.02,
+      "end": 21.31,
+      "seconds": 15.29,
+      "estimated": false,
+      "text": "「压力梯度是血液流动的直接动力，血液总是由压力较高的腔室或血管流向压力较低的腔室或血管」——教材·第4章·4.1.2（《生理学·第4章·4.1.2》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 21.31,
+      "end": 42.24,
+      "seconds": 20.93,
+      "estimated": false,
+      "text": "你能背出「收缩期射血、舒张期充盈」，但被问「为什么心室一收缩，心肌自己的供血反而减少」，多数人答不上来。原因不在记性，而在你把「泵」和「管」当成两章分开背了——它们描述的是同一个闭环：泵造压差，管把压差耗成流量。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 42.24,
+      "end": 64.37,
+      "seconds": 22.13,
+      "estimated": false,
+      "text": "环境逼迫（听心音、摸脉搏、看监护屏，每个动作都要求你当场说出「此刻是哪一相、哪个瓣膜在动」，说不出来就接不上老师下一句）+ 知识积累（瓣膜状态 × 压力方向 × 容积方向 = 一个能把任一心动瞬间归位的判别式，而不是四句要背的话）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 64.37,
+      "end": 120.43,
+      "seconds": 56.06,
+      "estimated": false,
+      "text": "能用「泵—管—液」一个闭环解释血液循环，并说出压力梯度为什么是唯一动力 能用两个瓣膜状态加收缩期或舒张期，把任一心动瞬间判断到时相，并说明容积方向为什么是推论而不是输入 能说清心肌为什么不会强直收缩，以及闰盘与细胞外钙各自解决了什么问题 能按结构把血管分成四类功能血管，并解释口径为什么是血压调节最有力的杠杆 能把动脉血压的四条形成条件逐条回教材正文核对，并说明缺任一条会怎样 能说清神经、体液、自身调节三者的时间尺度差别，以及压力感受性反射为什么会「失灵」 能用词频剖面证明本章以机能为轴，并指认「组织」这一层落在哪一节",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 120.43,
+      "end": 131.73,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

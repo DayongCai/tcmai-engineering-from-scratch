@@ -1,32 +1,33 @@
 {
-  "slug": "07-cifa-jiufa-xue",
-  "title": "刺法灸法学",
-  "en": "Acupuncture & Moxibustion Techniques",
-  "deptSlug": "03-zhenjiu",
-  "deptTitle": "针灸系",
-  "globalN": 37,
-  "type": "Core",
-  "semester": 4,
-  "stage": "sheng",
-  "stageTitle": "生",
-  "hours": 72,
-  "bridge": "进针角度→几何参数 / 得气→肌电特征",
-  "chaptersTarget": 10,
-  "chapters": [],
-  "platform": {
-    "id": "tcmP",
-    "coursePath": "platform/courses/03-zhenjiu/07-cifa-jiufa-xue",
-    "videosPublished": 0,
-    "status": "planned"
-  },
-  "textbook": {
-    "id": "textbooks",
-    "path": "textbooks/03-zhenjiu/07-cifa-jiufa-xue",
-    "chaptersWritten": 12,
-    "words": 234469,
-    "status": "wip",
-    "layer": "source-body",
-    "source": "standards/materials/textbooks-batch/registry.json#针法灸法学",
-    "extractedAt": "2026-10-21"
-  }
+ "slug": "07-cifa-jiufa-xue",
+ "title": "刺法灸法学",
+ "en": "Acupuncture & Moxibustion Techniques",
+ "deptSlug": "03-zhenjiu",
+ "deptTitle": "针灸系",
+ "globalN": 37,
+ "type": "Core",
+ "semester": 4,
+ "stage": "sheng",
+ "stageTitle": "生",
+ "hours": 72,
+ "bridge": "进针角度→几何参数 / 得气→肌电特征",
+ "chaptersTarget": 10,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/03-zhenjiu/07-cifa-jiufa-xue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/03-zhenjiu/07-cifa-jiufa-xue",
+  "chaptersWritten": 12,
+  "words": 258468,
+  "status": "wip",
+  "layer": "source+rewrite",
+  "source": "standards/materials/textbooks-batch/registry.json#针法灸法学",
+  "extractedAt": "2026-10-21",
+  "note": "12 章 / 216,348 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+ }
 }

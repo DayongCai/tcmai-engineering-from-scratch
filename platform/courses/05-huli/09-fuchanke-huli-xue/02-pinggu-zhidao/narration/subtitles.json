@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/09-fuchanke-huli-xue/02-pinggu-zhidao/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 62.59,
+  "estimatedCues": 0,
+  "videoSeconds": 62.618667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.2,
+      "seconds": 4.2,
+      "estimated": false,
+      "text": "第 2 章 · 妇产科护理评估与健康指导",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.2,
+      "end": 22.97,
+      "seconds": 18.77,
+      "estimated": false,
+      "text": "「《妇产科护理学·第3章 妇产科护理评估与健康指导》」——教材第 3 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：妇产科护理评估与健康指导这一章的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 22.97,
+      "end": 28.87,
+      "seconds": 5.9,
+      "estimated": false,
+      "text": "评估独立成章：孕产与妇科的评估维度不同，基线要先定。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 28.87,
+      "end": 51.29,
+      "seconds": 22.42,
+      "estimated": false,
+      "text": "环境逼迫（妇产科同时照护两条生命，且同一个人在不同阶段（孕、产、褥）的判据完全不同）+ 知识积累（本章 1 单元 17,090 汉字；三辨主 孕期监护 69；四位面（孕产阶段）主 孕期 16；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 51.29,
+      "end": 62.59,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

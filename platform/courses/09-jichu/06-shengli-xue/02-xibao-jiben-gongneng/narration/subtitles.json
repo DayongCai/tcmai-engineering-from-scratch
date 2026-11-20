@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/06-shengli-xue/02-xibao-jiben-gongneng/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 84.7,
+  "estimatedCues": 0,
+  "videoSeconds": 84.718667,
+  "videoMinusNarrationSeconds": 0.019,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.85,
+      "seconds": 4.85,
+      "estimated": false,
+      "text": "第 2 章 · 细胞的基本功能：一条从膜到肌丝的链",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.85,
+      "end": 18.15,
+      "seconds": 13.3,
+      "estimated": false,
+      "text": "「它以脂质双分子层为骨架，以膜蛋白为功能载体，以膜糖为识别与黏附的标识成分」——教材·第2章·2.1.1（《生理学·第2章·2.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 18.15,
+      "end": 40.88,
+      "seconds": 22.73,
+      "estimated": false,
+      "text": "问你「骨骼肌为什么收缩」，你能答「因为有动作电位」。再问一句「动作电位怎么变成肌肉缩短」，中间三个环节（横管传导、钙的释放、肌丝的滑行）就说不上来了。链条断了三节，剩下的头尾两句都是背下来的，一遇到「哪个环节被阻断会出现什么」就整段塌掉。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 40.88,
+      "end": 73.4,
+      "seconds": 32.52,
+      "estimated": false,
+      "text": "环境逼迫（实验课上给出一段记录，问「这一段变化来自哪一类通道的哪一种状态」，学生能说出「去极化」，说不出通道的状态名，更接不上「所以此时兴奋性如何」）+ 知识积累（本章 12 个单元的词频显示形态 572 次高于机能 381 次、细胞层 320 次为全书最高，而「钙」42 次里有 32 次挤在一个单元中——链条有重心，但重心不等于全线贯通）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 73.4,
+      "end": 84.7,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

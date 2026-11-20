@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 07-zhineng/01-yixue-rengong-zhineng-daolun
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/07-zhineng/01-yixue-rengong-zhineng-daolun/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 01-yixue-rengong-zhineng-daolun
+title: 医学人工智能导论
+en: Introduction to Medical AI
+dept: 07-zhineng
+dept_title: 智能系
+semester: 3
+stage: sheng
+hours: 54
+chapters_target: 8
+bridge: 从零实现感知机 / 梯度下降 / 交叉验证
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-g1
+    title: 第1章 什么是医学人工智能
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.9
+  - slug: 02-g2
+    title: 第2章 中医信息化的来路
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.9
+  - slug: 03-g3
+    title: 第3章 从可穿戴到四诊仪
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.91
+  - slug: 04-g4
+    title: 第4章 系统的形状：从 HIS 到智能体
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 0.99
+  - slug: 05-g5
+    title: 第5章 知识怎么放进机器
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.9
+  - slug: 06-g6
+    title: 第6章 统计、数据与模型的边界
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.98
+  - slug: 07-g7
+    title: 第7章 伦理、隐私与责任
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.92
+  - slug: 08-g8
+    title: 第8章 学科地图与学习方法
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.93

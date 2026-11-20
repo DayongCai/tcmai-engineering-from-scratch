@@ -1,0 +1,37 @@
+{
+  "chapter": "14-biaoli-yongyang",
+  "slideCount": 6,
+  "segmentCount": 6,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 22
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 134
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 308
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 189
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 295
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 52
+    }
+  ]
+}

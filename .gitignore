@@ -19,6 +19,8 @@ platform/**/frames/
 platform/**/narration/audio/
 platform/**/concat.txt
 platform/**/tmp/
+# 批量成片的单实例锁（内容是本机 PID，换机器无意义）
+platform/.video-batch.lock
 platform/**/__pycache__/
 
 # 教材排版产物

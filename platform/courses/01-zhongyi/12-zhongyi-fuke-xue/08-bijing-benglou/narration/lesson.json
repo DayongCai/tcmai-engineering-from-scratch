@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/08-bijing-benglou/docs/zh.md",
+  "course": "12-zhongyi-fuke-xue",
+  "dept": "01-zhongyi",
+  "chapter": "08-bijing-benglou",
+  "title": "第 8 章 · 月经病（二）：闭经、崩漏与十二个「经行」病",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 87,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 8 章 · 月经病（二）：闭经、崩漏与十二个「经行」病",
+      "slide": "title",
+      "spoken": "第 8 章 · 月经病（二）：闭经、崩漏与十二个「经行」病",
+      "estimateSeconds": 5,
+      "audio": "001.mp3",
+      "audioSeconds": 5.38
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「阴虚阳搏谓之崩」——教材·第8章·8.2.1（《素问·阴阳别论》）",
+      "slide": "title",
+      "spoken": "「阴虚阳搏谓之崩」——教材·第8章·8.2.1（《素问·阴阳别论》）",
+      "estimateSeconds": 7,
+      "audio": "002.mp3",
+      "audioSeconds": 6.65
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "本章 14 个病证分两类：**两个极端**（闭经＝不出血，崩漏＝出血不止）与**十二个「经行×」**（每逢经期出现的固定症状）。学生容易把后者当独立小病一个个背，其实它们共用一条机制：**经期血下注冲任，一身气血重新分配，某处本已不足的地方就露出来**。所以「经行头痛、眩晕、身痛、泄泻、浮肿」全都可以用同一句话解释。",
+      "slide": "problem",
+      "spoken": "本章 14 个病证分两类：两个极端（闭经＝不出血，崩漏＝出血不止）与十二个「经行×」（每逢经期出现的固定症状）。学生容易把后者当独立小病一个个背，其实它们共用一条机制：经期血下注冲任，一身气血重新分配，某处本已不足的地方就露出来。所以「经行头痛、眩晕、身痛、泄泻、浮肿」全都可以用同一句话解释。",
+      "estimateSeconds": 32,
+      "audio": "003.mp3",
+      "audioSeconds": 29.98
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（崩漏属「妇科疑难危急重症」，出血量与时间都可能危及生命；而经行诸证必须在「经净自止」这一条上与器质病分开）+ 知识积累（本章 70 单元、43,274 字，全课程最长；**病机 391** 居三辨首位、**肾 157** 居四位面首位；**引书 37 部 78 次，全课程最高**）",
+      "slide": "roots",
+      "spoken": "环境逼迫（崩漏属「妇科疑难危急重症」，出血量与时间都可能危及生命；而经行诸证必须在「经净自止」这一条上与器质病分开）+ 知识积累（本章 70 单元、43,274 字，全课程最长；病机 391 居三辨首位、肾 157 居四位面首位；引书 37 部 78 次，全课程最高）",
+      "estimateSeconds": 27,
+      "audio": "004.mp3",
+      "audioSeconds": 27.24
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "text": "```bash\ncd departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/08-bijing-benglou\nnode code/main.js\nnode --test code/main.test.js\n```",
+      "slide": "verify",
+      "heading": "验证",
+      "spoken": "这一段以代码实现为主，请看画面上的代码块。",
+      "estimateSeconds": 5,
+      "audio": "005.mp3",
+      "audioSeconds": 4.51
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 85.06,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/03-fangjixue/01-fangfa-ducong/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 97.64,
+  "estimatedCues": 0,
+  "videoSeconds": 97.670667,
+  "videoMinusNarrationSeconds": 0.031,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.7,
+      "seconds": 3.7,
+      "estimated": false,
+      "text": "第 1 章 · 方剂与治法：方从法出",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.7,
+      "end": 11.74,
+      "seconds": 8.04,
+      "estimated": false,
+      "text": "「方从法出，法随证立」——教材·第2章·2.1.1（《方剂学·第2章·2.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 11.74,
+      "end": 25.54,
+      "seconds": 13.8,
+      "estimated": false,
+      "text": "你能背出麻黄汤四味药，但被问「你的治法是什么」，答案往往只是一个方名。治法说不出来，就谈不上「随证加减」——因为加减的尺度由法决定，不由方决定。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 25.54,
+      "end": 42.08,
+      "seconds": 16.54,
+      "estimated": false,
+      "text": "环境逼迫（跟诊时老师问「你打算怎么治」，学生报方名、报不出法，再追问一句兼夹就断线）+ 知识积累（治法分层 × 八法的可数边界 = 一条能落到方剂上的法，而不是一个漂亮的词）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 42.08,
+      "end": 86.34,
+      "seconds": 44.26,
+      "estimated": false,
+      "text": "能把「方从法出，法随证立」拆成两个方向，并各举一个反例说明违反它会怎样 能说清治法的四层结构（治则 ， 治疗大法 ， 具体治法 ， 方药），并指出八法在这四层里的位置 能用 formulas.json 现算八法的分布，得到 52 首属八法、62 首不属八法，并解释这 62 首为什么不是「无法」 能说明「一法多方」在汗法内部的三节分野（辛温 4 / 辛凉 3 / 扶正 1），为第 3 章解表剂做准备 能指出按「章」判法与按「节名」判法的差别，以及后者会造成的虚增（清法 13 ， 18）",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 86.34,
+      "end": 97.64,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

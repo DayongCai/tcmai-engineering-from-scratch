@@ -147,8 +147,35 @@ function findMmdc() {
   ]);
 }
 
+/**
+ * pandoc 的常见落地位置。
+ * 本仓库不把 pandoc 塞进版本库：它只是排版工具，产物（*.epub / *.pdf）才入库外的成品。
+ * 探测顺序与 ffmpeg 一致：先在 PATH，再看镜像安装落点（platform/README.md 的说明用的是
+ * %LOCALAPPDATA%\pandoc），最后看 winget / Program Files。
+ */
 function findPandoc() {
-  return onPath('pandoc');
+  const onIt = onPath('pandoc');
+  if (onIt) return onIt;
+  const home = os.homedir();
+  const local = process.env.LOCALAPPDATA || path.join(home, 'AppData', 'Local');
+  const dirs = [path.join(local, 'pandoc')];
+  // 镜像安装会解出 pandoc-<ver>/pandoc.exe 这种带版本号的目录，展开一层
+  for (const base of [...dirs]) {
+    try {
+      for (const e of fs.readdirSync(base, { withFileTypes: true })) {
+        if (e.isDirectory()) dirs.push(path.join(base, e.name));
+      }
+    } catch { /* 目录不存在 */ }
+  }
+  dirs.push(
+    path.join(local, 'Microsoft', 'WinGet', 'Links'),
+    'C:/Program Files/Pandoc',
+    'C:/Program Files (x86)/Pandoc',
+    '/usr/local/bin',
+    '/opt/homebrew/bin',
+    '/usr/bin'
+  );
+  return inDirs(process.platform === 'win32' ? 'pandoc.exe' : 'pandoc', dirs.filter(Boolean));
 }
 
 /** 可选 TTS 后端：edge-tts（音质最好）或 Windows SAPI（离线可用） */
@@ -168,6 +195,31 @@ function findTtsBackend() {
   return { kind: null, label: '不可用（既无 edge-tts，也无中文离线语音）', path: null };
 }
 
+/**
+ * xelatex（PDF 引擎）：MiKTeX / TeX Live 的常见落点。
+ * 单独探测的理由与 pandoc 相同 —— 装好了但不在 PATH 上是常态（MiKTeX 默认装进用户目录）。
+ * 找不到就返回 null，由调用方明确报「PDF 不可用」，绝不降级成一份坏 PDF。
+ */
+function findXelatex() {
+  const onIt = onPath('xelatex');
+  if (onIt) return onIt;
+  const home = os.homedir();
+  const local = process.env.LOCALAPPDATA || path.join(home, 'AppData', 'Local');
+  const dirs = [
+    path.join(local, 'Programs', 'MiKTeX', 'miktex', 'bin', 'x64'),
+    path.join(local, 'Programs', 'MiKTeX', 'miktex', 'bin'),
+    path.join(local, 'Programs', 'MiKTeX', 'miktex', 'bin', 'internal'),
+    'C:/Program Files/MiKTeX/miktex/bin/x64',
+    'C:/Program Files/MiKTeX/miktex/bin',
+    'C:/texlive/2024/bin/windows',
+    'C:/texlive/2023/bin/windows',
+    '/usr/local/texlive/2024/bin/x86_64-linux',
+    '/Library/TeX/texbin',
+    '/usr/bin',
+  ];
+  return inDirs(process.platform === 'win32' ? 'xelatex.exe' : 'xelatex', dirs.filter(Boolean));
+}
+
 module.exports = {
   onPath,
   inDirs,
@@ -178,6 +230,7 @@ module.exports = {
   findTts,
   findTtsBackend,
   findPandoc,
+  findXelatex,
   findPython,
   probeMatplotlib,
   findMmdc,

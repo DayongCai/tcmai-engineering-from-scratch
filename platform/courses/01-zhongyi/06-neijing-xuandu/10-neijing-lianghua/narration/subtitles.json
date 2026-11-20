@@ -1,0 +1,105 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/06-neijing-xuandu/10-neijing-lianghua/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 9,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 251.56,
+  "estimatedCues": 0,
+  "videoSeconds": 251.578667,
+  "videoMinusNarrationSeconds": 0.019,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 6.84,
+      "seconds": 6.84,
+      "estimated": false,
+      "text": "第 10 章 · 内经的量化解读与其边界：一张「能算什么／不能算什么」的表",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 6.84,
+      "end": 12.82,
+      "seconds": 5.98,
+      "estimated": false,
+      "text": "「合于四时五脏阴阳，揆度以为常也。」——《素问·经脉别论》",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 12.82,
+      "end": 35.55,
+      "seconds": 22.73,
+      "estimated": false,
+      "text": "九章下来你手上有九种量化工具：篇目体量、偏侧值、五元组、路径图、十九条反查、条件核对、治序规则、运气推演、九针折算。有人接着问「那你算算这个证候的概率」「算算这个方多久见效」——工具不会拒绝，因为它们不知道自己不该回答。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 35.55,
+      "end": 43.85,
+      "seconds": 8.3,
+      "estimated": false,
+      "text": "环境逼迫(量化了就要被追问) + 知识积累(九种手法 × 失效模式 = 一张知道何时停手的表)",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 43.85,
+      "end": 69.7,
+      "seconds": 25.85,
+      "estimated": false,
+      "text": "说出九种手法各自「能算的那一格」与「不能算的那一格」，而不是笼统地说「能量化」 用三律判断一个新请求该不该接：结构 vs 效力、区间 vs 点值、缺项留痕 认出每类手法最常见的失效模式，并说明它长什么样 给自己写一条「停手规则」：什么情况下必须回答「这不可算」",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "concept",
+      "start": 69.7,
+      "end": 216.96,
+      "seconds": 147.26,
+      "estimated": false,
+      "text": "九种手法的登记表（本章正文） 代码核对结果：9/9 章登记完整、9/9 章三件套在磁盘上齐全、9/9 章引用的数字/关键词都能在该章 docs 里逐字找到。 最后这一条不是装饰：本章引用的每个数（561,111、脏 5、天符 12、2.31…）都由代码回到对应章正文里检索一遍。收尾章最容易被写成凭记忆的总结，所以它必须能自证。 三律 律一：结构可算，效力不可算。 九种手法算的全是结构——数量、顺序、归属、可达性、区间。没有一种能算效力：疗效、预后、应验。这不是技术不足，是参数不在文本里。文本能告诉你「十九条里火类最多」，不能告诉你「火类证候更好治」。 律二：区间优于点值。 凡是基准会漂的地方，都给区间：九针 1.6 寸 ， 3.70–3.76 cm；经方三两 ， 41.25 / 46.88 / 9 g 三档并列。给点值的诱惑在于好看，代价是把不确定度藏起来——读者以为你算准了。 律三：缺项留痕。 null ≠ 0：第 2 章里「无证据」必须记 null，不能记 0，否则「没有倾向」和「中性」混为一谈。 未判定 ≠ 正常：第 7 章的预后判据只覆盖 13/45 条，其余「未判定」，不是「没事」。 「缺失」要写出来：第 3 章的脾句是唯一不规则项，标注它比删掉它更有信息量。 判据三问（接到请求先用） 三问都过了，才轮到选手法。 本章自身的边界 登记表是作者归纳，不是原文所有。原文没有「九种量化手法」这种说法。 只覆盖本书九章。《伤寒论》那套（频次、BM25、剂量折算、预后分层）失效模式不同——例如频次偏倚、负样本缺失、枚重不可折。混着讲会把两套边界搅在一起。 三律是经验规则，不是定理。它们来自这九章踩过的坑，换语料要重验。",
+      "audio": "006.mp3"
+    },
+    {
+      "n": 7,
+      "role": "build",
+      "start": 216.96,
+      "end": 221.47,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "007.mp3"
+    },
+    {
+      "n": 8,
+      "role": "verify",
+      "start": 221.47,
+      "end": 240.26,
+      "seconds": 18.79,
+      "estimated": false,
+      "text": "预期：coverage().total === 9 且 bad 为空；auditChapters() 9/9 ok；verifyEvidence() 9/9 ok；classify('效力').verdict === '不可算'；classify('疗效预测') 抛错。 <!-- neijing:begin →",
+      "audio": "008.mp3"
+    },
+    {
+      "n": 9,
+      "role": "disclaimer",
+      "start": 240.26,
+      "end": 251.56,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "009.mp3"
+    }
+  ]
+}

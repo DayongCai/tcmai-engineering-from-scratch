@@ -106,16 +106,16 @@ window.TCMAI_DATA = {
   "counts": {
     "departments": 9,
     "subjects": 189,
-    "chapters": 2154,
+    "chapters": 2166,
     "hours": 11547,
     "semesters": 10,
     "stages": 5,
-    "chaptersBuilt": 2154,
+    "chaptersBuilt": 2166,
     "subjectsDone": 189,
     "subjectsWip": 0,
     "subjectsPlanned": 0,
-    "videos": 150,
-    "textbookChapters": 2606
+    "videos": 2154,
+    "textbookChapters": 2692
   },
   "semesterPlan": [
     {
@@ -1246,7 +1246,7 @@ window.TCMAI_DATA = {
       "stageTitle": "壮",
       "years": "大四",
       "hours": 1926,
-      "chapters": 387,
+      "chapters": 399,
       "subjects": [
         {
           "slug": "14-zhongyi-zhenghou-xue",
@@ -1930,7 +1930,7 @@ window.TCMAI_DATA = {
       "focus": "理法方药的内核：基础理论、经典、临床各科",
       "path": "departments/01-zhongyi",
       "hours": 1458,
-      "chapters": 276,
+      "chapters": 288,
       "subjects": [
         {
           "n": 1,
@@ -2067,9 +2067,12 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/04-zhongyi-tizhi-xue",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 8,
+            "words": 25293,
+            "status": "wip",
+            "layer": "derived",
+            "source": "standards/tizhi/units.json（派生底本：132 证候 → 9 体质倾向；参照 laonian 3.4.1 九质定义）",
+            "note": "派生底本·薄章：8 章 / 15,364 汉字（章均 1,920），低于学术型 6,000 字基准，已按薄章标注。"
           }
         },
         {
@@ -2178,8 +2181,8 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/07-shanghanlun",
-            "chaptersWritten": 10,
-            "words": 118973,
+            "chaptersWritten": 12,
+            "words": 129165,
             "status": "wip",
             "layer": "source-body",
             "source": "standards/materials/textbooks-batch/registry.json#伤寒论讲义",
@@ -2310,8 +2313,8 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/10-zhongyi-neike-xue",
-            "chaptersWritten": 12,
-            "words": 405580,
+            "chaptersWritten": 14,
+            "words": 421791,
             "status": "wip",
             "layer": "source-body",
             "source": "standards/materials/textbooks-batch/registry.json#中医内科学",
@@ -2443,8 +2446,8 @@ window.TCMAI_DATA = {
           "semester": 7,
           "stage": "zhuang",
           "hours": 72,
-          "chaptersTarget": 12,
-          "chaptersBuilt": 12,
+          "chaptersTarget": 24,
+          "chaptersBuilt": 24,
           "pct": 100,
           "status": "done",
           "glyph": "✅",
@@ -2774,13 +2777,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/21-zhongyi-linchuang-lunzhuan",
             "chaptersWritten": 6,
-            "words": 5166,
+            "words": 9408,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         },
         {
@@ -2814,13 +2817,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/22-zhongyi-biye-sheji",
             "chaptersWritten": 28,
-            "words": 22586,
+            "words": 28060,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         }
       ]
@@ -2939,11 +2942,12 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/03-fangjixue",
             "chaptersWritten": 24,
-            "words": 435341,
+            "words": 474732,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#方剂学",
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "note": "24 章 / 387,691 汉字。24 章；正文为源正文层，判断层见章末 REWRITE 块；第 24 章含 AI 平台层，本方药判断不越界。"
           }
         },
         {
@@ -3014,11 +3018,12 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/05-zhongyao-jianding-xue",
             "chaptersWritten": 12,
-            "words": 186359,
+            "words": 203942,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#中药鉴定学",
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "note": "12 章 / 168,990 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -3051,11 +3056,12 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/06-zhongyao-huaxue",
             "chaptersWritten": 12,
-            "words": 233962,
+            "words": 252828,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#中药化学",
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "note": "12 章 / 206,959 汉字。12 章；正文为源正文层（import_textbooks 逐字抽取），判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -3089,11 +3095,12 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/07-zhongyao-yaoli-xue",
             "chaptersWritten": 12,
-            "words": 232861,
+            "words": 250487,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#中药药理学",
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "note": "12 章 / 211,245 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -3127,11 +3134,12 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/08-zhongyao-paozhi-xue",
             "chaptersWritten": 12,
-            "words": 174240,
+            "words": 192488,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#中药炮制学",
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "note": "12 章 / 162,741 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -3202,11 +3210,12 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/10-zhongyao-fenxi-xue",
             "chaptersWritten": 12,
-            "words": 176143,
+            "words": 194531,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#中药分析",
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "note": "12 章 / 162,415 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -3380,9 +3389,9 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/15-zhongyao-xinyao-yanfa",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 8,
+            "words": 25330,
+            "status": "wip"
           }
         },
         {
@@ -3529,13 +3538,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/19-zhongyao-zhuanye-shijian",
             "chaptersWritten": 6,
-            "words": 3830,
+            "words": 8349,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         },
         {
@@ -3569,13 +3578,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/20-zhongyao-biye-sheji",
             "chaptersWritten": 6,
-            "words": 3529,
+            "words": 7157,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         },
         {
@@ -3608,9 +3617,9 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/02-zhongyao/21-zhongyao-du-li-xue",
-            "chaptersWritten": 0,
-            "words": 0,
-            "kind": "派生"
+            "chaptersWritten": 10,
+            "words": 31593,
+            "status": "wip"
           }
         }
       ]
@@ -3731,11 +3740,12 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/03-zhenjiu/03-zhenjiu-yiji-xuan",
             "chaptersWritten": 10,
-            "words": 208975,
+            "words": 228808,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#针灸医籍选读",
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "note": "10 章 / 185,275 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -3880,11 +3890,12 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/03-zhenjiu/07-cifa-jiufa-xue",
             "chaptersWritten": 12,
-            "words": 234469,
+            "words": 258468,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#针法灸法学",
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "note": "12 章 / 216,348 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -4278,11 +4289,12 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/03-zhenjiu/18-tuina-gongfa-xue",
             "chaptersWritten": 12,
-            "words": 111893,
+            "words": 130912,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#推拿功法学",
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "note": "12 章 / 108,366 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -4392,13 +4404,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan",
             "chaptersWritten": 6,
-            "words": 3728,
+            "words": 8503,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         },
         {
@@ -4432,13 +4444,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/03-zhenjiu/22-zhenjiu-biye-sheji",
             "chaptersWritten": 6,
-            "words": 3445,
+            "words": 8847,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         }
       ]
@@ -4554,11 +4566,12 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/04-gushang/03-gushang-kexue-jichu",
             "chaptersWritten": 11,
-            "words": 370455,
+            "words": 395106,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#中医骨伤科学",
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "note": "11 章 / 327,500 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -5044,13 +5057,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/04-gushang/16-gushang-linchuang-lunzhuan",
             "chaptersWritten": 6,
-            "words": 3550,
+            "words": 8125,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         },
         {
@@ -5084,13 +5097,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/04-gushang/17-gushang-biye-sheji",
             "chaptersWritten": 6,
-            "words": 3337,
+            "words": 8918,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         }
       ]
@@ -5205,9 +5218,9 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/05-huli/03-jiankang-pinggu",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 8,
+            "words": 23474,
+            "status": "wip"
           }
         },
         {
@@ -5646,9 +5659,9 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/05-huli/15-huli-yanjiu-zhengxun",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 8,
+            "words": 27847,
+            "status": "wip"
           }
         },
         {
@@ -6053,13 +6066,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/05-huli/26-huli-linchuang-lunzhuan",
             "chaptersWritten": 6,
-            "words": 3529,
+            "words": 8144,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         },
         {
@@ -6093,13 +6106,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/05-huli/27-huli-biye-sheji",
             "chaptersWritten": 6,
-            "words": 3415,
+            "words": 8725,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         }
       ]
@@ -6565,9 +6578,11 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/06-guanli/13-linchuang-keyan-fangfa",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 8,
+            "words": 431050,
+            "status": "wip",
+            "layer": "source",
+            "source": "standards/13-linchuang-keyan-fangfa/units.json（合成底本：卫生统计学 18 章 + 卫生信息管理 3 章）"
           }
         },
         {
@@ -6995,13 +7010,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/06-guanli/25-guanli-shixi-shijian",
             "chaptersWritten": 6,
-            "words": 3538,
+            "words": 7516,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         },
         {
@@ -7035,13 +7050,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/06-guanli/26-guanli-biye-sheji",
             "chaptersWritten": 6,
-            "words": 3241,
+            "words": 8959,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         }
       ]
@@ -7687,13 +7702,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/07-zhineng/18-zhineng-gongcheng-shijian",
             "chaptersWritten": 6,
-            "words": 3539,
+            "words": 7714,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         },
         {
@@ -7727,13 +7742,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/07-zhineng/19-zhineng-biye-sheji",
             "chaptersWritten": 6,
-            "words": 3256,
+            "words": 8826,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         }
       ]
@@ -8203,9 +8218,9 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/12-kouqiang-xiufu-xue",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 10,
+            "words": 37023,
+            "status": "wip"
           }
         },
         {
@@ -8237,9 +8252,9 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/13-kouqiang-zhengji-xue",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 10,
+            "words": 30882,
+            "status": "wip"
           }
         },
         {
@@ -8370,13 +8385,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/16-wuguan-linchuang-lunzhuan",
             "chaptersWritten": 6,
-            "words": 3579,
+            "words": 7598,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         },
         {
@@ -8410,13 +8425,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/17-wuguan-biye-sheji",
             "chaptersWritten": 6,
-            "words": 3244,
+            "words": 9084,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         }
       ]
@@ -8460,11 +8475,12 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/09-jichu/01-renti-jiepou-xue",
             "chaptersWritten": 10,
-            "words": 228077,
+            "words": 247558,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#人体解剖学",
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "note": "10 章 / 224,457 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -8529,9 +8545,12 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/09-jichu/03-yixue-xibao-shengwu-xue",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 12,
+            "words": 205699,
+            "status": "wip",
+            "layer": "derived",
+            "source": "standards/yixue-xibao-shengwu-xue/units.json（派生底本：144 单元；母本 组织学与胚胎学 / 生理学 / 生物化学）",
+            "note": "12 章 / 165,055 汉字（章均 13,754），达学术型 6,000 字线。"
           }
         },
         {
@@ -8640,11 +8659,12 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/09-jichu/06-shengli-xue",
             "chaptersWritten": 11,
-            "words": 252809,
+            "words": 274755,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#生理学",
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "note": "11 章 / 251,977 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -8715,11 +8735,12 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/09-jichu/08-jubu-jiepou-xue",
             "chaptersWritten": 9,
-            "words": 212583,
+            "words": 230130,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "source": "standards/materials/textbooks-batch/registry.json#局部解剖学",
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "note": "9 章 / 206,436 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
           }
         },
         {
@@ -9032,13 +9053,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/09-jichu/16-jichu-keyan-shixun",
             "chaptersWritten": 6,
-            "words": 3451,
+            "words": 7544,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         },
         {
@@ -9072,13 +9093,13 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/09-jichu/17-jichu-biye-sheji",
             "chaptersWritten": 6,
-            "words": 3330,
+            "words": 9337,
             "status": "wip",
             "layer": "handbook",
             "contract": "handbook-v1",
             "origin": "handbook",
             "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-            "extractedAt": "2026-11-09"
+            "extractedAt": "2026-11-20"
           }
         }
       ]
@@ -10050,74 +10071,146 @@ window.TCMAI_DATA = {
     "01-zhongyi/14-zhongyi-zhenghou-xue": [
       {
         "n": 1,
-        "slug": "01-feng-men",
-        "title": "风证门",
+        "slug": "01-s01-bing-zheng-hou",
+        "title": "病·证·候：三级诊断的含义与分界",
         "status": "✅"
       },
       {
         "n": 2,
-        "slug": "02-han-men",
-        "title": "寒证门",
+        "slug": "02-s02-zheng-de-neirong",
+        "title": "证的内容与结构：病因·病位·病机",
         "status": "✅"
       },
       {
         "n": 3,
-        "slug": "03-shu-men",
-        "title": "暑证门",
+        "slug": "03-s03-mingming-yu-fenlei",
+        "title": "证的命名与分类：十二门·四十五类·二十一病位",
         "status": "✅"
       },
       {
         "n": 4,
-        "slug": "04-shi-men",
-        "title": "湿证门",
+        "slug": "04-s04-neihan-waiyan",
+        "title": "证的内涵与外延：边界、兼夹与临界态",
         "status": "✅"
       },
       {
         "n": 5,
-        "slug": "05-zao-men",
-        "title": "燥证门",
+        "slug": "05-s05-chuanbian",
+        "title": "证的传变：病位·病因·邪正三条轴",
         "status": "✅"
       },
       {
         "n": 6,
-        "slug": "06-huo-men",
-        "title": "火证门",
+        "slug": "06-s06-qiuyin-shang",
+        "title": "辨证求因（上）：风·寒·热·暑·湿·燥的识别",
         "status": "✅"
       },
       {
         "n": 7,
-        "slug": "07-qi-men",
-        "title": "气证门",
+        "slug": "07-s07-qiuyin-xia",
+        "title": "辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别",
         "status": "✅"
       },
       {
         "n": 8,
-        "slug": "08-yu-men",
-        "title": "瘀证门",
+        "slug": "08-s08-sheny-in-dingwei",
+        "title": "审因定位：十二类病因的定位法与定位表",
         "status": "✅"
       },
       {
         "n": 9,
-        "slug": "09-tan-men",
-        "title": "痰证门",
+        "slug": "09-s09-jianbie-quishe",
+        "title": "证的鉴别与取舍：真假、兼夹与两因两位规则",
         "status": "✅"
       },
       {
         "n": 10,
-        "slug": "10-yin-men",
-        "title": "饮证门",
+        "slug": "10-s10-lunzhi",
+        "title": "证的论治：从证名到治法与隐性病因病位",
         "status": "✅"
       },
       {
         "n": 11,
-        "slug": "11-shiji-men",
-        "title": "食证门",
+        "slug": "11-s11-cidian-caozuo",
+        "title": "辞典操作：编码、检索与统计口径",
         "status": "✅"
       },
       {
         "n": 12,
-        "slug": "12-xu-men",
-        "title": "虚证门",
+        "slug": "12-s12-zonghe-shicao",
+        "title": "综合实操：从主诉到证候单元的全流程",
+        "status": "✅"
+      },
+      {
+        "n": 13,
+        "slug": "13-m01-feng-men",
+        "title": "风门（各论·M01）",
+        "status": "✅"
+      },
+      {
+        "n": 14,
+        "slug": "14-m02-han-men",
+        "title": "寒门（各论·M02）",
+        "status": "✅"
+      },
+      {
+        "n": 15,
+        "slug": "15-m03-shu-men",
+        "title": "暑门（各论·M03）",
+        "status": "✅"
+      },
+      {
+        "n": 16,
+        "slug": "16-m04-shi-men",
+        "title": "湿门（各论·M04）",
+        "status": "✅"
+      },
+      {
+        "n": 17,
+        "slug": "17-m05-zao-men",
+        "title": "燥门（各论·M05）",
+        "status": "✅"
+      },
+      {
+        "n": 18,
+        "slug": "18-m06-huo-men",
+        "title": "火门（各论·M06）",
+        "status": "✅"
+      },
+      {
+        "n": 19,
+        "slug": "19-m07-qi-men",
+        "title": "气门（各论·M07）",
+        "status": "✅"
+      },
+      {
+        "n": 20,
+        "slug": "20-m08-yu-men",
+        "title": "瘀门（各论·M08）",
+        "status": "✅"
+      },
+      {
+        "n": 21,
+        "slug": "21-m09-tan-men",
+        "title": "痰门（各论·M09）",
+        "status": "✅"
+      },
+      {
+        "n": 22,
+        "slug": "22-m10-yin-men",
+        "title": "饮门（各论·M10）",
+        "status": "✅"
+      },
+      {
+        "n": 23,
+        "slug": "23-m11-shiji-men",
+        "title": "食门（各论·M11）",
+        "status": "✅"
+      },
+      {
+        "n": 24,
+        "slug": "24-m12-xu-men",
+        "title": "虚门（各论·M12）",
         "status": "✅"
       }
     ],

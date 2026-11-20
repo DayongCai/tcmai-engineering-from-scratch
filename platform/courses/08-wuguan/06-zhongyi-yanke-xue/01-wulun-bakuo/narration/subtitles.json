@@ -1,0 +1,105 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/08-wuguan/06-zhongyi-yanke-xue/01-wulun-bakuo/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 9,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 178.89,
+  "estimatedCues": 0,
+  "videoSeconds": 178.918667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 7.32,
+      "seconds": 7.32,
+      "estimated": false,
+      "text": "第 1 章 · 五轮八廓学说与眼的脏腑配属：一张能查、也能被质疑的映射表",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 7.32,
+      "end": 13.51,
+      "seconds": 6.19,
+      "estimated": false,
+      "text": "「五轮者，五脏之精华所发也。」——《银海精微·五轮八廓总论》",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 13.51,
+      "end": 28.13,
+      "seconds": 14.62,
+      "estimated": false,
+      "text": "病人白睛红、黑睛有翳、瞳神不清，你知道该「从肺、从肝、从肾」想，但说不清这三个判断的依据是同一套映射，也说不出这套映射在古代就有分歧。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 28.13,
+      "end": 40.61,
+      "seconds": 12.48,
+      "estimated": false,
+      "text": "环境逼迫(眼科门诊要在几分钟内把局部体征落到脏腑) + 知识积累(五轮学说 × 可查的映射表 = 一套既能用、又能标出争议的编码)",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 40.61,
+      "end": 69.84,
+      "seconds": 29.23,
+      "estimated": false,
+      "text": "背下并写清五轮与五脏的对应（肉轮—脾、血轮—心、气轮—肺、风轮—肝、水轮—肾）及各轮解剖范围 把「局部体征 ， 轮位 ， 脏腑」做成三级查表，并在表里标注版本与争议 说清八廓与五轮的关系，以及为什么八廓的配属在历代文献里并不统一 指出「配属」与「辨证」不是一回事：映射给出思考方向，不给诊断结论",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "concept",
+      "start": 69.84,
+      "end": 147.48,
+      "seconds": 77.64,
+      "estimated": false,
+      "text": "中医：五轮是分区，八廓是另一套分区 《银海精微》把眼由外向内分为肉轮（胞睑）、血轮（两眦）、气轮（白睛）、风轮（黑睛）、水轮（瞳神），分别配属脾、心、肺、肝、肾。这是一套空间分区 + 脏腑归约的模型：看到哪一区的病变，就先想到它对应的脏。 八廓是另一套分区，历代配属不同（有以八卦方位配、有以脏腑配、有以部位配），《审视瑶函》与《银海精微》的写法就不完全一致。这一点必须讲清：五轮相对稳定，八廓相对不稳定。教材把八廓放在次要位置，是有理由的。 AI/工程：把映射做成带版本的表 一张可用的映射表至少要有三列：体征定位（哪一区的什么表现）、轮位、脏腑；再加两列元数据：出处、争议标记。 工程上这意味着：不要把「白睛红 ， 肺热」写成一条规则常量，而要写成一条带 source 与 disputed 字段的记录。否则三年后没人说得清这条规则从哪来，也没法在有新版本时只替换有争议的部分。",
+      "audio": "006.mp3"
+    },
+    {
+      "n": 7,
+      "role": "build",
+      "start": 147.48,
+      "end": 155.57,
+      "seconds": 8.09,
+      "estimated": false,
+      "text": "八廓单列为 BAKUO，并带 disputed: true —— 不是「不能用」，而是「用的时候必须说明版本」。",
+      "audio": "007.mp3"
+    },
+    {
+      "n": 8,
+      "role": "verify",
+      "start": 155.57,
+      "end": 167.59,
+      "seconds": 12.02,
+      "estimated": false,
+      "text": "预期：输入「白睛红赤」返回气轮/肺；输入「胞睑红肿」返回肉轮/脾；输入四不像的描述返回 null 并提示「无法定位，不得强行归轮」。",
+      "audio": "008.mp3"
+    },
+    {
+      "n": 9,
+      "role": "disclaimer",
+      "start": 167.59,
+      "end": 178.89,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "009.mp3"
+    }
+  ]
+}

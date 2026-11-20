@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 06-guanli/11-yiyuan-xinxihua-bingan
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 11-yiyuan-xinxihua-bingan
+title: 医院信息化与病案管理
+en: Hospital IT & Medical Records
+dept: 06-guanli
+dept_title: 管理系
+semester: 7
+stage: zhuang
+hours: 54
+chapters_target: 8
+bridge: 病案首页→编码 NLP / HIS 集成→接口编排
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-z111
+    title: 第1章 医院信息系统的构成
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.91
+  - slug: 02-z112
+    title: 第2章 标准、编码与互操作
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.93
+  - slug: 03-z113
+    title: 第3章 电子病历与临床信息系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.95
+  - slug: 04-z114
+    title: 第4章 病案管理与首页数据
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.92
+  - slug: 05-z115
+    title: 第5章 数据质量与统计上报
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.93
+  - slug: 06-z116
+    title: 第6章 信息安全与权限
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.88
+  - slug: 07-z117
+    title: 第7章 项目实施与验收
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.9
+  - slug: 08-z118
+    title: 第8章 智慧医院与规划
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.88

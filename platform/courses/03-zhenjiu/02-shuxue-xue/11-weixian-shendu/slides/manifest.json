@@ -1,0 +1,52 @@
+{
+  "chapter": "11-weixian-shendu",
+  "slideCount": 9,
+  "segmentCount": 9,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 33
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 28
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 79
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 58
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 144
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 439
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 262
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 121
+    },
+    {
+      "n": 9,
+      "segment": 9,
+      "chars": 52
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/16-linchuang-zhongyaoxue/11-huatan-anshen/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 56.71,
+  "estimatedCues": 0,
+  "videoSeconds": 56.738667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.32,
+      "seconds": 4.32,
+      "estimated": false,
+      "text": "第 11 章 · 化痰止咳平喘药与安神药",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.32,
+      "end": 16.13,
+      "seconds": 11.81,
+      "estimated": false,
+      "text": "「《素问·经脉别论》」——教材·第11章·11.1.1。本章要回答的是：化痰与安神，两件不相干的事为什么在一章。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 16.13,
+      "end": 23.43,
+      "seconds": 7.3,
+      "estimated": false,
+      "text": "痰可扰心（痰浊蒙蔽）、神可因痰不安；临床上「化痰以安神」是常见路径。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 23.43,
+      "end": 45.41,
+      "seconds": 21.98,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 5 单元 24,287 汉字；三辨主 临床应用 475；四位面（病位系统）主 肺系 1250；引书 32 部 53 次；数值类命中 1）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 45.41,
+      "end": 56.71,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

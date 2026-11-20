@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 04-gushang/15-gushang-kangfu-pingding
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/04-gushang/15-gushang-kangfu-pingding/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 15-gushang-kangfu-pingding
+title: 骨伤康复评定
+en: Orthopedic Rehab Assessment
+dept: 04-gushang
+dept_title: 骨伤系
+semester: 8
+stage: zhuang
+hours: 54
+chapters_target: 8
+bridge: 评定量表→信效度分析 / 康复进度→增长曲线模型
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-pingding-gailun
+    title: 第1章 康复评定概论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.98
+  - slug: 02-guanjie-jili
+    title: 第2章 关节活动度与肌力评定
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.05
+  - slug: 03-pingheng-butai
+    title: 第3章 平衡与步态评定
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.98
+  - slug: 04-adl-shenghuo
+    title: 第4章 日常生活活动与生活质量
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.03
+  - slug: 05-tengtong-xinli
+    title: 第5章 疼痛与心理评定
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.99
+  - slug: 06-yingxiang-gongneng
+    title: 第6章 影像与功能的对应
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.97
+  - slug: 07-liangbiao
+    title: 第7章 评定量表的选择与信效度
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1
+  - slug: 08-baogao-suifang
+    title: 第8章 评定报告与随访
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.97

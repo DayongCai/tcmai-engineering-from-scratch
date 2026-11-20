@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/21-zhongyao-du-li-xue/09-shiyan-anquan-pingjia/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 80.44,
+  "estimatedCues": 0,
+  "videoSeconds": 80.462667,
+  "videoMinusNarrationSeconds": 0.023,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 7.61,
+      "seconds": 7.61,
+      "estimated": false,
+      "text": "第 9 章 · 毒理实验与安全评价：LD50、亚慢性、遗传毒性与 GLP",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 7.61,
+      "end": 33.91,
+      "seconds": 26.3,
+      "estimated": false,
+      "text": "「《药物非临床研究质量管理规范·第一章 总则》」——本章为外源章，引文来自 OECD 试验准则与药监局毒理研究技术指导原则；GLP 属部门规章，篇名按其章次补足，非本章教材原文。本章要回答的是：教材说「有毒」，实验要回答「毒到什么剂量」——这一步只能靠外源标准。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 33.91,
+      "end": 49.2,
+      "seconds": 15.29,
+      "estimated": false,
+      "text": "前八章的判据全部来自教材标注，没有一条是实验数据；LD50 与置信区间、90 天重复给药、遗传毒性三项、GLP 的数据可复核，这四样都不在《中药学》里。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 49.2,
+      "end": 69.14,
+      "seconds": 19.94,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 20 单元 1,930 汉字；三辨主 毒性表现 17；四位面（靶器官）主 生殖与遗传 6；引书 1 部 1 次；数值类命中 12）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 69.14,
+      "end": 80.44,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

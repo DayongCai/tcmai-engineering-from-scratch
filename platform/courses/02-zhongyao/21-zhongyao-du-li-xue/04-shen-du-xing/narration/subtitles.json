@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/21-zhongyao-du-li-xue/04-shen-du-xing/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 63.06,
+  "estimatedCues": 0,
+  "videoSeconds": 63.102667,
+  "videoMinusNarrationSeconds": 0.043,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.03,
+      "seconds": 4.03,
+      "estimated": false,
+      "text": "第 4 章 · 肾毒性：马兜铃酸的教训",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.03,
+      "end": 20.49,
+      "seconds": 16.46,
+      "estimated": false,
+      "text": "「《中国药典·一部》」——药典一部已取消含马兜铃酸品种的药用部位，此为可查的分卷依据；篇名按此补足，非本章原文篇名。本章要回答的是：马兜铃酸事件改写了什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.49,
+      "end": 31.6,
+      "seconds": 11.11,
+      "estimated": false,
+      "text": "改写三件事：成分安全（含马兜铃酸品种被取消药用部位）、命名规范（关木通与木通分清）、以及「道地」不等于「安全」。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 31.6,
+      "end": 51.76,
+      "seconds": 20.16,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 14 单元 1,962 汉字；三辨主 减毒与救治 13；四位面（靶器官）主 肾 63；引书 0 部 0 次；数值类命中 18）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 51.76,
+      "end": 63.06,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

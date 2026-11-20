@@ -2,183 +2,300 @@
   "slug": "14-zhongyi-zhenghou-xue",
   "title": "中医证候学",
   "volume": "辞典（操作手册型）",
+  "structure": "基本理论（1–4 章）· 基本方法（5–9 章）· 基本技能（10–12 章）",
   "chapters": [
     {
       "n": 1,
-      "slug": "01-feng-men",
-      "title": "风证门",
+      "slug": "01-s01-bing-zheng-hou",
+      "title": "病·证·候：三级诊断的含义与分界",
       "status": "✅",
-      "code": "M01",
-      "lei": [
-        "L01",
-        "L02",
-        "L03",
-        "L04"
+      "code": "S01",
+      "part": "基本理论",
+      "secs": [
+        1
       ],
-      "zheng": 19,
-      "hou": 152
+      "units": 1,
+      "judge": "阶段与整体"
     },
     {
       "n": 2,
-      "slug": "02-han-men",
-      "title": "寒证门",
+      "slug": "02-s02-zheng-de-neirong",
+      "title": "证的内容与结构：病因·病位·病机",
       "status": "✅",
-      "code": "M02",
-      "lei": [
-        "L05",
-        "L06",
-        "L07"
+      "code": "S02",
+      "part": "基本理论",
+      "secs": [
+        2,
+        4
       ],
-      "zheng": 15,
-      "hou": 113
+      "units": 2,
+      "judge": "三要素"
     },
     {
       "n": 3,
-      "slug": "03-shu-men",
-      "title": "暑证门",
+      "slug": "03-s03-mingming-yu-fenlei",
+      "title": "证的命名与分类：十二门·四十五类·二十一病位",
       "status": "✅",
-      "code": "M03",
-      "lei": [
-        "L08",
-        "L09"
+      "code": "S03",
+      "part": "基本理论",
+      "secs": [
+        5,
+        6
       ],
-      "zheng": 7,
-      "hou": 67
+      "units": 2,
+      "judge": "以因命名"
     },
     {
       "n": 4,
-      "slug": "04-shi-men",
-      "title": "湿证门",
+      "slug": "04-s04-neihan-waiyan",
+      "title": "证的内涵与外延：边界、兼夹与临界态",
       "status": "✅",
-      "code": "M04",
-      "lei": [
-        "L10",
-        "L11",
-        "L12"
+      "code": "S04",
+      "part": "基本理论",
+      "secs": [
+        7
       ],
-      "zheng": 25,
-      "hou": 249
+      "units": 1,
+      "judge": "临界态"
     },
     {
       "n": 5,
-      "slug": "05-zao-men",
-      "title": "燥证门",
+      "slug": "05-s05-chuanbian",
+      "title": "证的传变：病位·病因·邪正三条轴",
       "status": "✅",
-      "code": "M05",
-      "lei": [
-        "L13",
-        "L14",
-        "L15",
-        "L16",
-        "L17"
+      "code": "S05",
+      "part": "基本方法",
+      "secs": [
+        8
       ],
-      "zheng": 17,
-      "hou": 119
+      "units": 42,
+      "judge": "火化水化"
     },
     {
       "n": 6,
-      "slug": "06-huo-men",
-      "title": "火证门",
+      "slug": "06-s06-qiuyin-shang",
+      "title": "辨证求因（上）：风·寒·热·暑·湿·燥的识别",
       "status": "✅",
-      "code": "M06",
-      "lei": [
-        "L18",
-        "L19",
-        "L20",
-        "L21",
-        "L22",
-        "L23"
+      "code": "S06",
+      "part": "基本方法",
+      "secs": [
+        9
       ],
-      "zheng": 60,
-      "hou": 313
+      "units": 11,
+      "judge": "病因特征"
     },
     {
       "n": 7,
-      "slug": "07-qi-men",
-      "title": "气证门",
+      "slug": "07-s07-qiuyin-xia",
+      "title": "辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别",
       "status": "✅",
-      "code": "M07",
-      "lei": [
-        "L24",
-        "L25",
-        "L26",
-        "L27"
+      "code": "S07",
+      "part": "基本方法",
+      "secs": [
+        9
       ],
-      "zheng": 24,
-      "hou": 98
+      "units": 10,
+      "judge": "内生之因"
     },
     {
       "n": 8,
-      "slug": "08-yu-men",
-      "title": "瘀证门",
+      "slug": "08-s08-sheny-in-dingwei",
+      "title": "审因定位：十二类病因的定位法与定位表",
       "status": "✅",
-      "code": "M08",
-      "lei": [
-        "L28",
-        "L29",
-        "L30"
+      "code": "S08",
+      "part": "基本方法",
+      "secs": [
+        9
       ],
-      "zheng": 22,
-      "hou": 126
+      "units": 16,
+      "judge": "位之所主"
     },
     {
       "n": 9,
-      "slug": "09-tan-men",
-      "title": "痰证门",
+      "slug": "09-s09-jianbie-quishe",
+      "title": "证的鉴别与取舍：真假、兼夹与两因两位规则",
       "status": "✅",
-      "code": "M09",
-      "lei": [
-        "L31",
-        "L32",
-        "L33",
-        "L34",
-        "L35"
+      "code": "S09",
+      "part": "基本方法",
+      "secs": [
+        7,
+        9
       ],
-      "zheng": 27,
-      "hou": 159
+      "units": 4,
+      "judge": "以实掩虚"
     },
     {
       "n": 10,
-      "slug": "10-yin-men",
-      "title": "饮证门",
+      "slug": "10-s10-lunzhi",
+      "title": "证的论治：从证名到治法与隐性病因病位",
       "status": "✅",
-      "code": "M10",
-      "lei": [
-        "L36",
-        "L37",
-        "L38"
+      "code": "S10",
+      "part": "基本技能",
+      "secs": [
+        10
       ],
-      "zheng": 21,
-      "hou": 101
+      "units": 1,
+      "judge": "证名为标帜"
     },
     {
       "n": 11,
-      "slug": "11-shiji-men",
-      "title": "食证门",
+      "slug": "11-s11-cidian-caozuo",
+      "title": "辞典操作：编码、检索与统计口径",
       "status": "✅",
-      "code": "M11",
-      "lei": [
-        "L39",
-        "L40",
-        "L41"
+      "code": "S11",
+      "part": "基本技能",
+      "secs": [
+        6
       ],
-      "zheng": 10,
-      "hou": 62
+      "units": 1,
+      "judge": "三码一树"
     },
     {
       "n": 12,
-      "slug": "12-xu-men",
-      "title": "虚证门",
+      "slug": "12-s12-zonghe-shicao",
+      "title": "综合实操：从主诉到证候单元的全流程",
+      "status": "✅",
+      "code": "S12",
+      "part": "基本技能",
+      "secs": [
+        2,
+        4,
+        10
+      ],
+      "units": 6,
+      "judge": "一例到底"
+    },
+    {
+      "n": 13,
+      "slug": "13-m01-feng-men",
+      "title": "风门（各论·M01）",
+      "status": "✅",
+      "code": "M01",
+      "part": "各论",
+      "secs": [],
+      "units": 0,
+      "judge": "门内判据"
+    },
+    {
+      "n": 14,
+      "slug": "14-m02-han-men",
+      "title": "寒门（各论·M02）",
+      "status": "✅",
+      "code": "M02",
+      "part": "各论",
+      "secs": [],
+      "units": 0,
+      "judge": "门内判据"
+    },
+    {
+      "n": 15,
+      "slug": "15-m03-shu-men",
+      "title": "暑门（各论·M03）",
+      "status": "✅",
+      "code": "M03",
+      "part": "各论",
+      "secs": [],
+      "units": 0,
+      "judge": "门内判据"
+    },
+    {
+      "n": 16,
+      "slug": "16-m04-shi-men",
+      "title": "湿门（各论·M04）",
+      "status": "✅",
+      "code": "M04",
+      "part": "各论",
+      "secs": [],
+      "units": 0,
+      "judge": "门内判据"
+    },
+    {
+      "n": 17,
+      "slug": "17-m05-zao-men",
+      "title": "燥门（各论·M05）",
+      "status": "✅",
+      "code": "M05",
+      "part": "各论",
+      "secs": [],
+      "units": 0,
+      "judge": "门内判据"
+    },
+    {
+      "n": 18,
+      "slug": "18-m06-huo-men",
+      "title": "火门（各论·M06）",
+      "status": "✅",
+      "code": "M06",
+      "part": "各论",
+      "secs": [],
+      "units": 0,
+      "judge": "门内判据"
+    },
+    {
+      "n": 19,
+      "slug": "19-m07-qi-men",
+      "title": "气门（各论·M07）",
+      "status": "✅",
+      "code": "M07",
+      "part": "各论",
+      "secs": [],
+      "units": 0,
+      "judge": "门内判据"
+    },
+    {
+      "n": 20,
+      "slug": "20-m08-yu-men",
+      "title": "瘀门（各论·M08）",
+      "status": "✅",
+      "code": "M08",
+      "part": "各论",
+      "secs": [],
+      "units": 0,
+      "judge": "门内判据"
+    },
+    {
+      "n": 21,
+      "slug": "21-m09-tan-men",
+      "title": "痰门（各论·M09）",
+      "status": "✅",
+      "code": "M09",
+      "part": "各论",
+      "secs": [],
+      "units": 0,
+      "judge": "门内判据"
+    },
+    {
+      "n": 22,
+      "slug": "22-m10-yin-men",
+      "title": "饮门（各论·M10）",
+      "status": "✅",
+      "code": "M10",
+      "part": "各论",
+      "secs": [],
+      "units": 0,
+      "judge": "门内判据"
+    },
+    {
+      "n": 23,
+      "slug": "23-m11-shiji-men",
+      "title": "食门（各论·M11）",
+      "status": "✅",
+      "code": "M11",
+      "part": "各论",
+      "secs": [],
+      "units": 0,
+      "judge": "门内判据"
+    },
+    {
+      "n": 24,
+      "slug": "24-m12-xu-men",
+      "title": "虚门（各论·M12）",
       "status": "✅",
       "code": "M12",
-      "lei": [
-        "L42",
-        "L43",
-        "L44",
-        "L45"
-      ],
-      "zheng": 44,
-      "hou": 307
+      "part": "各论",
+      "secs": [],
+      "units": 0,
+      "judge": "门内判据"
     }
   ]
 }

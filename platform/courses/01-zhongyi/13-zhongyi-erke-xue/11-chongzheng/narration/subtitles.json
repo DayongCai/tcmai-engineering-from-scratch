@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/13-zhongyi-erke-xue/11-chongzheng/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 71.45,
+  "estimatedCues": 0,
+  "videoSeconds": 71.474667,
+  "videoMinusNarrationSeconds": 0.025,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.78,
+      "seconds": 4.78,
+      "estimated": false,
+      "text": "第 11 章 · 虫证：看得见的虫，与看不见的堵",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.78,
+      "end": 13.23,
+      "seconds": 8.45,
+      "estimated": false,
+      "text": "「肠中有虫瘕及蛟蛕，皆不可取以小针」——教材·第11章·11.1.1（《灵枢·厥病》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 13.23,
+      "end": 35.62,
+      "seconds": 22.39,
+      "estimated": false,
+      "text": "两种虫证，一个在夜间看得见（蛲虫），一个看不见却会堵（蛔虫）。学生记得住「面黄肌瘦」，却漏掉两个真危险：蛔厥（钻入胆道，剧痛肢冷）与虫瘕（聚结成团、肠梗阻）。教材把它们单列成证型，正是因为这两型已经不是「打虫」能解决的。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 35.62,
+      "end": 55.64,
+      "seconds": 20.02,
+      "estimated": false,
+      "text": "环境逼迫（卫生条件与集体生活决定感染率；蛲虫在家庭与托幼机构内反复互相传播）+ 知识积累（本章只有 2 病证 10 单元、7,031 字——病因 63 居三辨首位，因为虫证的判据几乎全在「怎么感染的」与「虫在哪里」）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 55.64,
+      "end": 60.15,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 60.15,
+      "end": 71.45,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

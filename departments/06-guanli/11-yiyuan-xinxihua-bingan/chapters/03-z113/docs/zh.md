@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（信息化的判据是「数据可溯源、病案可对齐、权限可追」）+ 知识积累（本章 22 单元 32,790 汉字；三辨主 **制度与规则 162**；四位面（章群结构）主 **病历与病案 32790**；引书 **19 部 20 次**；数值类命中 0）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 220 单元 / 328,015 汉字）；单元层 `standards/11-yiyuan-xinxihua-bingan/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 220 单元 / 328,015 汉字）；单元层 `standards/11-yiyuan-xinxihua-bingan/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -206,7 +206,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py 11-yiyuan-xinxihua-bingan "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py 11-yiyuan-xinxihua-bingan "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py 11-yiyuan-xinxihua-bingan                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

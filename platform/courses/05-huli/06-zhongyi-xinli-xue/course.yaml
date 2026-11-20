@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 05-huli/06-zhongyi-xinli-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/05-huli/06-zhongyi-xinli-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 06-zhongyi-xinli-xue
+title: 中医心理学
+en: TCM Psychology
+dept: 05-huli
+dept_title: 护理系
+semester: 4
+stage: sheng
+hours: 54
+chapters_target: 8
+bridge: 情志辨证→情绪分类 NLP / 五志相胜→博弈模型
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-lilun-kuangjia
+    title: 第1章 中医心理学的理论框架
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.98
+  - slug: 02-qiqing-zhizhi
+    title: 第2章 七情学说与情志致病
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.99
+  - slug: 03-wuzhi-zangfu
+    title: 第3章 五志与脏腑的关系
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.06
+  - slug: 04-qingzhibing-pinggu
+    title: 第4章 情志病的辨证与评估
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.98
+  - slug: 05-shudao-xiangsheng
+    title: 第5章 心理疏导与情志相胜
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1.01
+  - slug: 06-shenxin-ganyu
+    title: 第6章 身心疾病的中医干预
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.01
+  - slug: 07-liangbiao-juxian
+    title: 第7章 心理量表的使用与局限
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1.01
+  - slug: 08-duizhao-sheji
+    title: 第8章 心理干预研究的对照设计
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1

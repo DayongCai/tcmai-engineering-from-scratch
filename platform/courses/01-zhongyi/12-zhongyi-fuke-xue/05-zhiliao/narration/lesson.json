@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/05-zhiliao/docs/zh.md",
+  "course": "12-zhongyi-fuke-xue",
+  "dept": "01-zhongyi",
+  "chapter": "05-zhiliao",
+  "title": "第 5 章 · 治疗：六法一位，加一个「按周期换挡」",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 84,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 5 章 · 治疗：六法一位，加一个「按周期换挡」",
+      "slide": "title",
+      "spoken": "第 5 章 · 治疗：六法一位，加一个「按周期换挡」",
+      "estimateSeconds": 5,
+      "audio": "001.mp3",
+      "audioSeconds": 4.9
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「外治之理，即内治之理，外治之药，即内治之药，所异者法耳」——教材·第5章·5.2.1（《理瀹骈文》）",
+      "slide": "title",
+      "spoken": "「外治之理，即内治之理，外治之药，即内治之药，所异者法耳」——教材·第5章·5.2.1（《理瀹骈文》）",
+      "estimateSeconds": 11,
+      "audio": "002.mp3",
+      "audioSeconds": 10.37
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "妇科治法看起来只是内科治法换了名字。真正不同的是两件事：一是**六法的排序**（补肾居首、疏肝次之、健脾第三——这个顺序就是第 3 章病机权重的镜像）；二是**同一法在不同周期时相要用不同的方**（调周法）。学生常犯的错是「辨证对了，时机错了」——经后期用活血、经前期用滋腻，都会坏事。",
+      "slide": "problem",
+      "spoken": "妇科治法看起来只是内科治法换了名字。真正不同的是两件事：一是六法的排序（补肾居首、疏肝次之、健脾第三——这个顺序就是第 3 章病机权重的镜像）；二是同一法在不同周期时相要用不同的方（调周法）。学生常犯的错是「辨证对了，时机错了」——经后期用活血、经前期用滋腻，都会坏事。",
+      "estimateSeconds": 29,
+      "audio": "003.mp3",
+      "audioSeconds": 27.98
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（同一病人在一个周期里要换四次治法方向，而每次只有 5–7 天窗口）+ 知识积累（本章 9 单元、10,679 字，**证候表现 78** 居三辨首位、肝脾 18 居四位面首位；**引书 29 部 60 次，总论最高**——因为每一法都要落到具体方书）",
+      "slide": "roots",
+      "spoken": "环境逼迫（同一病人在一个周期里要换四次治法方向，而每次只有 5–7 天窗口）+ 知识积累（本章 9 单元、10,679 字，证候表现 78 居三辨首位、肝脾 18 居四位面首位；引书 29 部 60 次，总论最高——因为每一法都要落到具体方书）",
+      "estimateSeconds": 23,
+      "audio": "004.mp3",
+      "audioSeconds": 23.09
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "text": "```bash\ncd departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/05-zhiliao\nnode code/main.js\nnode --test code/main.test.js\n```",
+      "slide": "verify",
+      "heading": "验证",
+      "spoken": "这一段以代码实现为主，请看画面上的代码块。",
+      "estimateSeconds": 5,
+      "audio": "005.mp3",
+      "audioSeconds": 4.51
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 82.15,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

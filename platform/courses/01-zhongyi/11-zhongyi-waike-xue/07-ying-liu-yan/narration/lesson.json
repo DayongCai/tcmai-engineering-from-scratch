@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/11-zhongyi-waike-xue/chapters/07-ying-liu-yan/docs/zh.md",
+  "course": "11-zhongyi-waike-xue",
+  "dept": "01-zhongyi",
+  "chapter": "07-ying-liu-yan",
+  "title": "第 7 章 · 瘿、瘤、岩：一条「质地轴」，八个病证",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 89,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 7 章 · 瘿、瘤、岩：一条「质地轴」，八个病证",
+      "slide": "title",
+      "spoken": "第 7 章 · 瘿、瘤、岩：一条「质地轴」，八个病证",
+      "estimateSeconds": 5,
+      "audio": "001.mp3",
+      "audioSeconds": 5.21
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「坚硬不可移者，名曰石瘿」——教材·第7章·7.4.1（《三因极一病证方论·瘿瘤证治》）",
+      "slide": "title",
+      "spoken": "「坚硬不可移者，名曰石瘿」——教材·第7章·7.4.1（《三因极一病证方论·瘿瘤证治》）",
+      "estimateSeconds": 10,
+      "audio": "002.mp3",
+      "audioSeconds": 8.86
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "学生能背「气瘿弥漫、肉瘿如丸、石瘿如石」，但面对一个颈前肿块答不出最关键的一件事：**这个块该不该马上做病理**。八个病证被分成三类（瘿、瘤、岩），真正的分野不在名称，而在**质地与活动度**这两个可触摸的判据上；摸不出这一层，就会把石瘿放在「观察」里。",
+      "slide": "problem",
+      "spoken": "学生能背「气瘿弥漫、肉瘿如丸、石瘿如石」，但面对一个颈前肿块答不出最关键的一件事：这个块该不该马上做病理。八个病证被分成三类（瘿、瘤、岩），真正的分野不在名称，而在质地与活动度这两个可触摸的判据上；摸不出这一层，就会把石瘿放在「观察」里。",
+      "estimateSeconds": 26,
+      "audio": "003.mp3",
+      "audioSeconds": 23.95
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（颈前肿块与体表肿块最常被「先观察三个月」，而石瘿、失荣、肾岩三类都属「一经发现立即转诊」）+ 知识积累（本章 40 个单元、25,320 字里局部表现 257 次居首，全身只有 48 次——说明癌类病证的判据仍写在局部：硬、不平、不移；四位面没有一极独占，正是因为这八个病横跨颈前、体表与全身淋巴结）",
+      "slide": "roots",
+      "spoken": "环境逼迫（颈前肿块与体表肿块最常被「先观察三个月」，而石瘿、失荣、肾岩三类都属「一经发现立即转诊」）+ 知识积累（本章 40 个单元、25,320 字里局部表现 257 次居首，全身只有 48 次——说明癌类病证的判据仍写在局部：硬、不平、不移；四位面没有一极独占，正是因为这八个病横跨颈前、体表与全身淋巴结）",
+      "estimateSeconds": 32,
+      "audio": "004.mp3",
+      "audioSeconds": 31.51
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "text": "```bash\ncd departments/01-zhongyi/11-zhongyi-waike-xue/chapters/07-ying-liu-yan\nnode code/main.js\nnode --test code/main.test.js\n```",
+      "slide": "verify",
+      "heading": "验证",
+      "spoken": "这一段以代码实现为主，请看画面上的代码块。",
+      "estimateSeconds": 5,
+      "audio": "005.mp3",
+      "audioSeconds": 4.51
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 85.34,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

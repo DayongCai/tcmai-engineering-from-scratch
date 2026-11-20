@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/07-cifa-jiufa-xue/06-tezhong-zhenfa/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 68.78,
+  "estimatedCues": 0,
+  "videoSeconds": 68.808667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 6.55,
+      "seconds": 6.55,
+      "estimated": false,
+      "text": "第 6 章 · 特种针法：三棱针、皮肤针、火针、挑刺、芒针",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 6.55,
+      "end": 27.53,
+      "seconds": 20.98,
+      "estimated": false,
+      "text": "「《针法灸法学·特种针法：三棱针、皮肤针、火针、挑刺、芒针》」——教材篇名级；课程章号对应教材第 6 章。本章要回答的是：特种针法：三棱针、皮肤针、火针、挑刺、芒针的手上功夫要练到什么程度才算会。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 27.53,
+      "end": 32.14,
+      "seconds": 4.61,
+      "estimated": false,
+      "text": "同一根针，换个形制就是另一套适应证与禁忌。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 32.14,
+      "end": 57.48,
+      "seconds": 25.34,
+      "estimated": false,
+      "text": "环境逼迫（这门课的判据不是「知道」，而是「做对」——角度、深度、灸量、留针时间都可被旁人复核）+ 知识积累（本章 20 单元 15,777 汉字；三辨主 器械与技术 104；四位面（技术谱系）主 刺法技术 179；引书 5 部 7 次；数值类命中 54）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 57.48,
+      "end": 68.78,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+# [tcmP] 课程编排 · 01-zhongyi/18-zhongyi-gubing-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/01-zhongyi/18-zhongyi-gubing-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 18-zhongyi-gubing-xue
+title: 中医骨病学
+en: TCM Osteopathy
+dept: 01-zhongyi
+dept_title: 中医系
+semester: 8
+stage: zhuang
+hours: 36
+chapters_target: 12
+bridge: 骨病分型→影像分类 / 方药→规则库
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-gaishu-yuanliu
+    title: 第1章 第1章 中医骨病学概论与源流
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.28
+    measured_minutes: 1.22
+  - slug: 02-fenlei-bingyin-bingji
+    title: 第2章 第2章 骨病的分类和病因病机
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.2
+    measured_minutes: 1.15
+  - slug: 03-linchuang-zhencha
+    title: 第3章 第3章 骨病的临床诊查
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.18
+    measured_minutes: 1.19
+  - slug: 04-zhiliao-fangfa
+    title: 第4章 第4章 骨病的治疗方法
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.09
+  - slug: 05-huaxing-guisuiyan-guanjieyan
+    title: 第5章 第5章 化脓性骨髓炎与化脓性关节炎
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.22
+    measured_minutes: 1.23
+  - slug: 06-gu-guanjie-jiehe
+    title: 第6章 第6章 骨与关节结核
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.08
+  - slug: 07-gu-zhongliu
+    title: 第7章 第7章 骨肿瘤
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.23
+    measured_minutes: 1.23
+  - slug: 08-gu-daixie
+    title: 第8章 第8章 骨代谢性疾病
+    segments: 6
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1
+  - slug: 09-gu-quexue-xingsi
+    title: 第9章 第9章 骨缺血性坏死
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.08
+  - slug: 10-tuixing-mianyixing
+    title: 第10章 第10章 骨关节退行性与免疫性疾病
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.17
+    measured_minutes: 1.13
+  - slug: 11-gu-jixing-ruangu
+    title: 第11章 第11章 骨畸形与骨软骨病
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1
+  - slug: 12-kangfu-shuzihua
+    title: 第12章 第12章 骨病康复与数字化AI时代
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.17
+    measured_minutes: 1.13

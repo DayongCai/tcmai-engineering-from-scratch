@@ -1,0 +1,67 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/04-linchuang-shiji/docs/zh.md",
+  "course": "18-yaoshi-guanli-xue",
+  "dept": "02-zhongyao",
+  "chapter": "04-linchuang-shiji",
+  "title": "第 4 章 · 药物临床试验：分期、伦理与备案",
+  "segmentCount": 5,
+  "estimateTotalSeconds": 70,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 4 章 · 药物临床试验：分期、伦理与备案",
+      "slide": "title",
+      "spoken": "第 4 章 · 药物临床试验：分期、伦理与备案",
+      "estimateSeconds": 4,
+      "audio": "001.mp3",
+      "audioSeconds": 4.9
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「《药品注册管理办法（总局令第 27 号，2020）·第二十条》」——外源课：条文依据为「外源·药品注册管理办法（总局令第 27 号，2020） 第二十条」，非教材原文篇名。本章要回答的是：药物临床试验：分期、伦理与备案这一环节的核心判据是什么。",
+      "slide": "title",
+      "spoken": "「《药品注册管理办法（总局令第 27 号，2020）·第二十条》」——外源课：条文依据为「外源·药品注册管理办法（总局令第 27 号，2020） 第二十条」，非教材原文篇名。本章要回答的是：药物临床试验：分期、伦理与备案这一环节的核心判据是什么。",
+      "estimateSeconds": 26,
+      "audio": "002.mp3",
+      "audioSeconds": 24.02
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "临床试验是唯一直接在人身上取证的环节，因此它的每一步都被前置约束。",
+      "slide": "problem",
+      "spoken": "临床试验是唯一直接在人身上取证的环节，因此它的每一步都被前置约束。",
+      "estimateSeconds": 7,
+      "audio": "003.mp3",
+      "audioSeconds": 7.66
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（药事管理的失误大多不是「不知道该做什么」，而是「做了但没留证据、变了但没报」）+ 知识积累（本章 1 单元 1,107 汉字；三辨主 **研究与试验 52**；四位面（制度环节）主 **研制 47**；引书 **1 部 1 次**；数值类命中 0）",
+      "slide": "roots",
+      "spoken": "环境逼迫（药事管理的失误大多不是「不知道该做什么」，而是「做了但没留证据、变了但没报」）+ 知识积累（本章 1 单元 1,107 汉字；三辨主 研究与试验 52；四位面（制度环节）主 研制 47；引书 1 部 1 次；数值类命中 0）",
+      "estimateSeconds": 22,
+      "audio": "004.mp3",
+      "audioSeconds": 21.34
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "005.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 69.22,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

@@ -1,0 +1,79 @@
+{
+  "lesson": "22-m10-yin-men",
+  "title": "饮证门",
+  "subject": "14-zhongyi-zhenghou-xue",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "本门（饮门）的判据词是下面哪一个？",
+      "options": [
+        "清稀有定处",
+        "动",
+        "冷",
+        "季节＋耗气"
+      ],
+      "correct": 0,
+      "explanation": "门解一节定的判据词是「清稀有定处」；其余三个是别的门的判据词，混用就会串门。"
+    },
+    {
+      "stage": "check",
+      "question": "本书 饮门一共收了多少证、多少候？",
+      "options": [
+        "21 证 101 候",
+        "19证152候",
+        "15证112候",
+        "7证67候"
+      ],
+      "correct": 0,
+      "explanation": "由 standards/zhenghou-cidian/结构.json 现算：21 证 101 候。"
+    },
+    {
+      "stage": "check",
+      "question": "水饮证类的书内原码是哪一个？",
+      "options": [
+        "L36",
+        "L38",
+        "M10",
+        "Z01"
+      ],
+      "correct": 0,
+      "explanation": "类码是 L 系列，L01–L45 连续；M 码是门码（本层新增），Z/H 是证与候。"
+    },
+    {
+      "stage": "check",
+      "question": "候名尾部的「不化」属于态轴的哪一族？",
+      "options": [
+        "失守",
+        "郁",
+        "虚",
+        "其他"
+      ],
+      "correct": 0,
+      "explanation": "态表里「不化」归 失守 族：该气化的没有气化（阳不化气、清阳不化）。"
+    },
+    {
+      "stage": "post",
+      "question": "把「脾胃水饮证」拆成位与性，正确的一组是？",
+      "options": [
+        "脾胃 + 水饮",
+        "水饮 + 脾胃",
+        "饮 + 水饮",
+        "脾胃 + 证"
+      ],
+      "correct": 0,
+      "explanation": "证名 = 位 + 类性 + 「证」；位来自证名前段，性来自所隶类目。"
+    },
+    {
+      "stage": "post",
+      "question": "本门共 101 条候，其编码规则是？",
+      "options": [
+        "证码 + `-Hnnn`，序号沿用原书不重排",
+        "门码 + 顺序号",
+        "类码 + 证码 + 顺序号（与证无关）",
+        "按出现页码重排"
+      ],
+      "correct": 0,
+      "explanation": "候码 = Lnn-Zmm-Hnnn，第四级只追加不改父码；这是 ICD-11 亚目扩展的最小实现。"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/04-qigong-xue/03-fanying-piancha/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 63.2,
+  "estimatedCues": 0,
+  "videoSeconds": 63.230667,
+  "videoMinusNarrationSeconds": 0.031,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.3,
+      "seconds": 4.3,
+      "estimated": false,
+      "text": "第 3 章 · 练功反应与偏差的预防与纠治",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.3,
+      "end": 21.08,
+      "seconds": 16.78,
+      "estimated": false,
+      "text": "「《中医气功学·练功反应与偏差的预防与纠治》」——教材篇名级；课程章号对应教材第 5 章。本章要回答的是：练功反应与偏差的预防与纠治这一段，学完能不能自己按规格做一遍。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 21.08,
+      "end": 28.4,
+      "seconds": 7.32,
+      "estimated": false,
+      "text": "这门课与其他课最大的不同：练错了会出偏差，这一章讲怎么识别、怎么停。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 28.4,
+      "end": 51.9,
+      "seconds": 23.5,
+      "estimated": false,
+      "text": "环境逼迫（气功课的风险在于「自己练」：姿势、呼吸、意守任何一项越界都可能出偏差）+ 知识积累（本章 6 单元 14,470 汉字；三辨主 功法操作 239；四位面（三调与临床）主 调息 45；引书 12 部 24 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 51.9,
+      "end": 63.2,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

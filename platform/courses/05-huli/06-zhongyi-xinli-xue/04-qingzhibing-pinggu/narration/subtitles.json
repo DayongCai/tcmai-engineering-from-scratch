@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/06-zhongyi-xinli-xue/04-qingzhibing-pinggu/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 58.87,
+  "estimatedCues": 0,
+  "videoSeconds": 58.902667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.24,
+      "seconds": 3.24,
+      "estimated": false,
+      "text": "第 4 章 · 情志病的辨证与评估",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.24,
+      "end": 18.41,
+      "seconds": 15.17,
+      "estimated": false,
+      "text": "「《中医心理学·第4章》」——教材第 4 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：情志病的辨证与评估这一章的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 18.41,
+      "end": 22.85,
+      "seconds": 4.44,
+      "estimated": false,
+      "text": "辨证评估独立成章：情志病要先辨得清。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 22.85,
+      "end": 47.57,
+      "seconds": 24.72,
+      "estimated": false,
+      "text": "环境逼迫（情志既能致病也能治病，同一情绪在不同脏腑上有不同落点，辨不清就只能泛泛安慰）+ 知识积累（本章 4 单元 11,547 汉字；三辨主 情志病因 313；四位面（疗法类别）主 认知与行为 8；引书 13 部 21 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 47.57,
+      "end": 58.87,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

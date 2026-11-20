@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/05-zhongyao-jianding-xue/05-lihua-jianding/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 58.56,
+  "estimatedCues": 0,
+  "videoSeconds": 58.572667,
+  "videoMinusNarrationSeconds": 0.013,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.13,
+      "seconds": 4.13,
+      "estimated": false,
+      "text": "第 5 章 · 理化鉴定：薄层与色谱指纹",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.13,
+      "end": 14.86,
+      "seconds": 10.73,
+      "estimated": false,
+      "text": "「《本草纲目·水部》」——教材·第7章·7.1.1。本章要回答的是：薄层斑点对上了，能不能判为同一批。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.86,
+      "end": 25.59,
+      "seconds": 10.73,
+      "estimated": false,
+      "text": "Rf 相同只说明极性相近；还要看指纹图谱的整体相似度、特征峰的相对比例，以及含量测定是否落在限度内。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 25.59,
+      "end": 47.26,
+      "seconds": 21.67,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 4 单元 16,678 汉字；三辨主 检查方法 595；四位面（鉴定四法）主 理化 331；引书 12 部 45 次；数值类命中 5）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 47.26,
+      "end": 58.56,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

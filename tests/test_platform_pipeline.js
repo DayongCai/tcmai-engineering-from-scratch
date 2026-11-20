@@ -28,13 +28,18 @@ const path = require('node:path');
 const ROOT = path.resolve(__dirname, '..');
 const COURSES = path.join(ROOT, 'platform', 'courses');
 const PIPELINE = path.join(ROOT, 'platform', 'pipeline');
+// 判据集中在一处：本文件扫真实产物，tests/test_media_floors.js 打正负例，两边必须同一份逻辑
+const { videoFloorOk, audioFloorOk } = require(path.join(PIPELINE, 'media_floor.js'));
 
 /** 体积下限（字节）—— 取自本机实测产物，留足余量 */
 const MIN = {
-  videoFull: 1024 * 1024,   // 成片 5.61 MB 实测 → 下限 1 MB
+  videoFull: 1024 * 1024,   // 成片 5.61 MB 实测 → 下限 1 MB（旧口径，已被 videoFloor + 码率判据取代，保留供别处引用）
+  videoFloor: 200 * 1024,   // 成片绝对下限：短章实测 0.95–1.0 MB，200 KB 只挡占位/截断
   videoPart: 8 * 1024,      // 单分片 0.09 MB 实测 → 下限 8 KB
   frame: 5 * 1024,          // 单帧 40 KB 实测   → 下限 5 KB
-  audio: 10 * 1024,         // 单段配音 86 KB 实测 → 下限 10 KB
+  audio: 4 * 1024,          // 单段配音：96 kbps → 12 KB/s，最短的「章标题」段实测 9.6 KB（0.8 秒）；
+                            // 4 KB ≈ 0.3 秒真实音频，占位文件是 0 字节，仍能拦住 touch/截断
+  audioFull: 10 * 1024,     // 旧口径（正文段 86 KB 实测），保留供对照
   slide: 2 * 1024,          // 幻灯片 43 KB 实测  → 下限 2 KB
 };
 
@@ -186,10 +191,28 @@ test('每个章节的产物与段数对齐（12 段就该有 12 帧 / 12 段配�
 
 // ── 四、产物不许是占位 ──────────────────────────────────────
 
-test('成片与各段产物不许是占位（有体积下限；一个 touch 骗不过）', () => {
+test('成片与各段产物不许是占位（体积 × 时长双下限；一个 touch 骗不过）', () => {
   for (const ch of chapters) {
+    // 成片单独判：**用「体积 ÷ 时长」而不是一刀切 1 MB**。
+    // 2026-11-18 实测：经络学/中医哲学史这类 5 段短章成片只有 0.95–1.0 MB，
+    // 一刀切会把真片判成占位；而只降阈值又会让「截断的片子」过关。
+    // 本机实测码率 18–20 KB/s（1080p25 静态画面），下限取 6 KB/s，留足 3 倍余量。
+    const mp4 = path.join(ch.dir, 'video', 'lesson.mp4');
+    if (fs.existsSync(mp4)) {
+      const bytes = size(mp4);
+      let seconds = 0;
+      const lp = path.join(ch.dir, 'narration', 'lesson.json');
+      if (fs.existsSync(lp)) {
+        try {
+          const L = JSON.parse(fs.readFileSync(lp, 'utf8'));
+          seconds = Number(L.audioMeasuredSeconds) || 0;
+        } catch { /* 讲稿坏了由别的门管 */ }
+      }
+      const v = videoFloorOk(bytes, seconds);
+      assert(v.ok, `${ch.key}: 成片 video/lesson.mp4 ${v.why} —— 像是占位或截断`);
+    }
+
     const checks = [
-      ['video/lesson.mp4', MIN.videoFull, '成片'],
       ['slides/index.html', MIN.slide, '幻灯片'],
       ['narration/subtitles.vtt', 200, '字幕'],
     ];
@@ -199,9 +222,27 @@ test('成片与各段产物不许是占位（有体积下限；一个 touch 骗�
       const s = size(p);
       assert(s >= min, `${ch.key}: ${label} ${rel} 只有 ${s} 字节（下限 ${min}）—— 像是占位文件`);
     }
+    // 配音单独判：**体积 ÷ 该段实测时长 ≥ 4 KB/s**（不是一刀切 10 KB）。
+    // 实测 3,610 段：edge-tts 直出的 mp3 是 ~48 kbps（5.85–5.92 KB/s，不是 ffmpeg 的 96k ——
+    // 96k 只在 SAPI wav 转码时生效）。最短的「章标题」段 0.8–2.5 秒，文件 9.6–15 KB，
+    // 一刀切 10 KB 会误判；而截断一半的段只有 ~2.9 KB/s，4 KB/s 的下限正好拦得住。
+    const audioDir = path.join(ch.dir, 'narration', 'audio');
+    const audioSec = new Map();
+    const lp2 = path.join(ch.dir, 'narration', 'lesson.json');
+    if (fs.existsSync(lp2)) {
+      try {
+        const L = JSON.parse(fs.readFileSync(lp2, 'utf8'));
+        for (const seg of L.segments || []) if (seg.audio && seg.audioSeconds) audioSec.set(seg.audio, seg.audioSeconds);
+      } catch { /* 讲稿坏了由别的门管 */ }
+    }
+    for (const f of listOf(audioDir, /\.mp3$/)) {
+      const bytes = size(path.join(audioDir, f));
+      const a = audioFloorOk(bytes, audioSec.get(f));
+      assert(a.ok, `${ch.key}: 配音 ${f} ${a.why} —— 像是占位或截断`);
+    }
+
     for (const [dir, re, min, label] of [
       ['frames', /\.png$/, MIN.frame, '画面帧'],
-      ['narration/audio', /\.mp3$/, MIN.audio, '配音'],
       ['video', /^part-\d+\.mp4$/, MIN.videoPart, '视频分片'],
     ]) {
       const d = path.join(ch.dir, dir);

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/02-yi-gu-wen/04-duanju-jinyi/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 60.4,
+  "estimatedCues": 0,
+  "videoSeconds": 60.432667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.38,
+      "seconds": 3.38,
+      "estimated": false,
+      "text": "第 4 章 · 断句、标点与今译",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.38,
+      "end": 19.17,
+      "seconds": 15.79,
+      "estimated": false,
+      "text": "「《医古文·断句、标点与今译》」——教材篇名级；课程章号对应教材第 6、7 章。本章要回答的是：读完断句、标点与今译，能独立读懂一段未经标点的医经原文吗。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 19.17,
+      "end": 23.54,
+      "seconds": 4.37,
+      "estimated": false,
+      "text": "断句是理解的检验：断错一处，句意全变。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 23.54,
+      "end": 49.1,
+      "seconds": 25.56,
+      "estimated": false,
+      "text": "环境逼迫（医古文的判据不是「背了多少通假字」，而是拿到一段无标点原文能否断句、能译对）+ 知识积累（本章 4 单元 14,012 汉字；三辨主 语法句读 202；四位面（教材四板块）主 语言通论 14012；引书 48 部 166 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 49.1,
+      "end": 60.4,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
  "courseTitle": "中医教育学",
  "deptPath": "departments/06-guanli/07-zhongyi-jiaoyu-xue",
- "xlsx": "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx",
+ "xlsx": "F:/textbooks/qhzy-机器学习.xlsx",
  "chain": "学科 → 培养 → 教学 → 评价",
  "levelLabel": "章群结构",
  "objectPressure": "教育学的判据是「目标可测、过程可查、结果可评」",

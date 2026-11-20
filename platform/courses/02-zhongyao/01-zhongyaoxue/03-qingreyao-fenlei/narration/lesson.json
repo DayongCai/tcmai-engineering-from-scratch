@@ -1,0 +1,67 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/02-zhongyao/01-zhongyaoxue/chapters/03-qingreyao-fenlei/docs/zh.md",
+  "course": "01-zhongyaoxue",
+  "dept": "02-zhongyao",
+  "chapter": "03-qingreyao-fenlei",
+  "title": "第 3 章 · 清热药：泻火、解毒与凉血",
+  "segmentCount": 5,
+  "estimateTotalSeconds": 111,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 3 章 · 清热药：泻火、解毒与凉血",
+      "slide": "title",
+      "spoken": "第 3 章 · 清热药：泻火、解毒与凉血",
+      "estimateSeconds": 3,
+      "audio": "001.mp3",
+      "audioSeconds": 4.34
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「石膏功效清热泻火、除烦止渴、敛疮生肌（煅）」——《中药学·第10章·10.1.1》",
+      "slide": "title",
+      "spoken": "「石膏功效清热泻火、除烦止渴、敛疮生肌（煅）」——《中药学·第10章·10.1.1》",
+      "estimateSeconds": 9,
+      "audio": "002.mp3",
+      "audioSeconds": 8.11
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "第 9 章解表药里，四气是个杀手字段——9.1 全温/微温、9.2 全凉/寒/微寒，21 味零错分，一切按气一分就开。到了第 10 章，同一个字段彻底失效：**36 味清热药 36 味都在寒侧**（大寒 1、寒 26、微寒 9），无一味温、热、凉、平；五节里每一节都以「寒」为主。于是「按四气给清热药分组」这件事，得到的是一格 36 行的表。要分开五节，只能换字段——而真正干净的判据既不是四气也不是五味，是**节名本身就是功效首词**：36 味里 34 味的功效句含有本节关键词（94.4%），例外只有决明子与白薇两味。",
+      "slide": "problem",
+      "spoken": "第 9 章解表药里，四气是个杀手字段——9.1 全温/微温、9.2 全凉/寒/微寒，21 味零错分，一切按气一分就开。到了第 10 章，同一个字段彻底失效：36 味清热药 36 味都在寒侧（大寒 1、寒 26、微寒 9），无一味温、热、凉、平；五节里每一节都以「寒」为主。于是「按四气给清热药分组」这件事，得到的是一格 36 行的表。要分开五节，只能换字段——而真正干净的判据既不是四气也不是五味，是节名本身就是功效首词：36 味里 34 味的功效句含有本节关键词（94.4%），例外只有决明子与白薇两味。",
+      "estimateSeconds": 51,
+      "audio": "003.mp3",
+      "audioSeconds": 50.21
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（清热药是全书体量最大的各论章之一：36 味、6,193 字、占全书 9.70%，仅次于解表药之后就要背的一整柜子药；而「清热药都寒」这条印象，会让所有按四气建的索引塌成一格，且塌得不出错、不报警）＋ 知识积累（同一个字段的区分力随章而变：四气在解表药章是判据、在清热药章是噪声。这句话只有把两章都逐药统计过才立得住，单看一章永远发现不了）",
+      "slide": "roots",
+      "spoken": "环境逼迫（清热药是全书体量最大的各论章之一：36 味、6,193 字、占全书 9.70%，仅次于解表药之后就要背的一整柜子药；而「清热药都寒」这条印象，会让所有按四气建的索引塌成一格，且塌得不出错、不报警）＋ 知识积累（同一个字段的区分力随章而变：四气在解表药章是判据、在清热药章是噪声。这句话只有把两章都逐药统计过才立得住，单看一章永远发现不了）",
+      "estimateSeconds": 37,
+      "audio": "004.mp3",
+      "audioSeconds": 35.93
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "005.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 109.9,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/14-zhongyi-zhenghou-xue/01-feng-men/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 53.22,
+  "estimatedCues": 0,
+  "videoSeconds": 53.252667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.05,
+      "seconds": 3.05,
+      "estimated": false,
+      "text": "第 1 章 · 风证门（M01）",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.05,
+      "end": 9.07,
+      "seconds": 6.02,
+      "estimated": false,
+      "text": "「风者，善行而数变」——动处即风，定处非风（《素问·风论》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 9.07,
+      "end": 21.21,
+      "seconds": 12.14,
+      "estimated": false,
+      "text": "风证最容易犯的错是把「动」都算作风：震颤是风，抽搐是风，但眩晕也可能是虚、是痰。不先立判据，风门就成了垃圾桶。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 21.21,
+      "end": 41.92,
+      "seconds": 20.71,
+      "estimated": false,
+      "text": "环境逼迫（同一批证候在各科教材与本书里叫法不同，不先固定层级就无法比较、无法编码）＋知识积累（本书把「证」再切成「候」，12 门共 1866 条候，体量超出任何单科教材的编排能力，只能靠码与坐标来管）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 41.92,
+      "end": 53.22,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

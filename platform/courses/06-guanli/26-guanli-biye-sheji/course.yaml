@@ -1,0 +1,66 @@
+# [tcmP] 课程编排 · 06-guanli/26-guanli-biye-sheji
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/06-guanli/26-guanli-biye-sheji/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 26-guanli-biye-sheji
+title: 管理毕业设计与知识移交
+en: Management Capstone & Handover
+dept: 06-guanli
+dept_title: 管理系
+semester: 10
+stage: yi
+hours: 72
+chapters_target: 6
+bridge: 管理问题→可测量命题 / 数据→指标定义 / 结论→可执行方案
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xuan-ti
+    title: 第1章 选题：从管理问题到可测量命题
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99
+  - slug: 02-shuju-zhibiao
+    title: 第2章 数据获取与指标定义
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.9
+  - slug: 03-fangan-shixian
+    title: 第3章 分析与方案实现
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.86
+  - slug: 04-xiaoguo-pingjia
+    title: 第4章 效果评价与成本-效益
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.91
+  - slug: 05-lunwen-dabian
+    title: 第5章 论文写作与答辩
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.86
+  - slug: 06-zhishi-yijiao
+    title: 第6章 知识移交：制度文件与交接
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.95

@@ -1,0 +1,179 @@
+{
+  "$generated": "手工维护：教材章数 < 教学计划章数的『按设计不一致』决案登记。看板读到这里的课，把 chapters-short（异常）改成 chapters-short-decided（已决口径），两个数字仍原样显示。改任何一侧章数都要来改这里，否则决案立刻过期。",
+  "convention": "只看板与 tests/test_textbook_supplement.js 读本文件；教材内容本身不受影响。",
+  "decisions": [
+    {
+      "subject": "02-zhongyao/18-yaoshi-guanli-xue",
+      "title": "药事管理学",
+      "decidedAt": "2026-11-15",
+      "teachingChapters": 28,
+      "textbookChapters": 20,
+      "decision": "两轴并存，不拆教材、不并课程：教材 20 章按『学科体系』组织（一类制度一章），教学计划 28 章按『法规流程』组织（一条流程一章）。这是两套不同的切分轴，不是 20 章欠 8 章。法规操作层内容已在附录承载。",
+      "rejectedOptions": [
+        {
+          "option": "拆既有教材第 5/6/7/9 章为 12 章（20 → 28）",
+          "why": "底本源表只有 20 章，scripts/import_textbooks.js --check 要求教材 ↔ 源表逐章对应；拆章会立刻造出 8 章无底本的重复稿（内容与第 5/6/7/9 章逐句重复），并使 底本 统计虚增 8 章。"
+        },
+        {
+          "option": "把 28 章教学计划合并为 20（改课程侧）",
+          "why": "按 standards/yaoshi-guanli/补章登记.json 的 28→20 映射实测：28 个教学章落在 10 个教材章上，其中 5 个教材章吞掉 18 个教学章（教材3←11+12+19+20+22、教材5←1–8、教材6←14+25+26、教材7←15+16+27+28、教材9←18+23+24），另有 10 个教材章没有教学章对应。合并等于删 8 个章目录、重写 13 章 docs/quiz/outputs 契约，并改动 2154 章节的审计基数与 11547 学时，代价与风险远大于收益。"
+        }
+      ],
+      "evidence": [
+        "standards/yaoshi-guanli/补章登记.json → noSupplement.mapping（28 条映射，probe 关键词 28/28 在所指教材章内命中，无落点 0）",
+        "textbooks/02-zhongyao/18-yaoshi-guanli-xue/附录A-法规操作专题.md（8 个法规操作专题，106 条外源条文逐字可查，不当章、不计章数）",
+        "tests/test_yaoshi_guanli_supplement.js（引用门：13 处引用可核 + 13 段摘句逐字）",
+        "textbooks/02-zhongyao/18-yaoshi-guanli-xue/附录B-教学章与教材章对照.md（28 行换算表 + 按教材章聚合 + 10 个无教学章位的教材章，读者可见）"
+      ],
+      "reviewIf": "教学计划章数、底本源表章数，或 补章登记.json 的 mapping 任一侧变化时，本决案作废，须重议并同步改本文件的 teachingChapters / textbookChapters / mappingStats。",
+      "reviewedBy": "hermes-agent（口径核对当日实测：教材 20 章 / 教学 28 章 / 映射 28 条）",
+      "mappingStats": {
+        "$note": "由 standards/yaoshi-guanli/补章登记.json 的 noSupplement.mapping 现算；门（tests/test_textbook_supplement.js §6）会重算比对，不一致即报错",
+        "planCount": 28,
+        "textbookChaptersCovered": 10,
+        "multiToOneChapters": 5,
+        "plansMergedIntoMulti": 18,
+        "textbookChaptersWithoutPlan": 10,
+        "oneToManyPlans": 0,
+        "chaptersAbsorbed": 0
+      }
+    },
+    {
+      "subject": "03-zhenjiu/02-shuxue-xue",
+      "title": "腧穴学",
+      "decidedAt": "2026-11-16",
+      "teachingChapters": 12,
+      "textbookChapters": 16,
+      "decision": "两轴并存，不补章、不重排：教材 16 章按底本逐经组织（概述 1 + 十二经各 1 章 + 奇经 + 经外奇穴 + 现代研究），教学 12 章按知识模块组织（分类定位、骨度分寸、四个经组、任督、经外、特定穴、主治规律、危险穴位、数字化）。教材「多 4 章」是 8（逐经多）与 4（概述被拆）相抵的算术结果，不是 4 个可补的空白章。",
+      "rejectedOptions": [
+        {
+          "option": "在教学计划末尾追加 4 条新章（12 → 16，凑数）",
+          "why": "没有任何 4 个「教材有、教学无」的知识块可填：教材 16 章的内容已被现有 12 章全覆盖（12 经 → 4 个经组；概述 → 5 个模块章）。硬加 4 条只会造出与现有章重复的教学章，并把 2154 章节 / 11547 学时的审计基数虚增。"
+        },
+        {
+          "option": "按教材逐经重排教学计划（12 → 16，拆 8 并 4）",
+          "why": "技术上可行且能真正做到 1:1：把 4 个经组章拆成 12 个逐经章（+8），把分类定位/骨度分寸/特定穴/主治规律/危险穴位 5 章并为 1 个概述章（−4），净 +4 得 16 章。但代价是删 5 个概述类章目录、4 个经组章目录，新建 8 个逐经章目录，并重写全部 docs/quiz/outputs 契约；教学按模块教（骨度、特定穴单列）比逐经更好排课，收益不足以抵成本。需要时可作为独立任务重议。"
+        }
+      ],
+      "mappingStats": {
+        "$note": "由 standards/shuxue/补章登记.json 的 noSupplement.mapping 现算；门会重算比对",
+        "planCount": 12,
+        "textbookChaptersCovered": 16,
+        "multiToOneChapters": 1,
+        "plansMergedIntoMulti": 4,
+        "textbookChaptersWithoutPlan": 0,
+        "oneToManyPlans": 4,
+        "chaptersAbsorbed": 8
+      },
+      "evidence": [
+        "standards/shuxue/补章登记.json → noSupplement.mapping（12 行；教材章号逐条列出，12 经章按经组挂到 4 个教学章）",
+        "textbooks/03-zhenjiu/02-shuxue-xue/附录B-教学章与教材章对照.md（12 行换算表 + 教材 16 章反向索引，读者可见）",
+        "contentGaps：教学第 11「针刺安全深度」、第 12「数字化与三维模型」在教材无对应内容（grep 实测 0 命中）——这是内容缺口，已在补章登记里单列"
+      ],
+      "reviewIf": "教学计划章数、底本源表章数或 mapping 任一侧变化时本决案作废；若要按教材逐经重排教学计划，见 rejectedOptions 第 2 条的实施口径。",
+      "reviewedBy": "hermes-agent（2026-11-16 实测：教材 16 章 / 教学 12 章 / 映射 12 行 / 教材章全覆盖 / 无空章可补）"
+    },
+    {
+      "subject": "01-zhongyi/02-yi-gu-wen",
+      "title": "医古文",
+      "decidedAt": "2026-11-16",
+      "teachingChapters": 8,
+      "textbookChapters": 12,
+      "decision": "两轴并存，不拆散教材、不给教学加章：教材按底本逐块切 12 章（概论/工具书/汉字/词汇/语法/断句/今译/传记/医经/方书/医话/数字人文），教学按 8 个模块合并（概论+工具书、汉字+词汇、语法、断句+标点+今译、传记、医经、序文+医话、数字人文）。教材多出的 4 章不是空白内容，是切分粒度差。",
+      "rejectedOptions": [
+        {
+          "option": "按教材章数把教学计划补齐（加章凑数）",
+          "why": "教学现有每章都能在教材里找到落点，没有「教材有、教学无」的空白知识块可补；硬加章只会与现有章重复，并虚增 2154 章节 / 11547 学时的审计基数。"
+        },
+        {
+          "option": "把教材并成与教学同数（拆散重排）",
+          "why": "教材逐章对应底本源表（`import_textbooks.js --check` 硬要求），合并会破坏对应关系并需重写全部章正文；教学按模块合并本身就是为排课服务的，两边各自合理。"
+        }
+      ],
+      "mappingStats": {
+        "$note": "由 standards/<slug>/补章登记.json 的 noSupplement.mapping 现算；门会重算比对",
+        "planCount": 8,
+        "textbookChaptersCovered": 12,
+        "multiToOneChapters": 0,
+        "plansMergedIntoMulti": 0,
+        "textbookChaptersWithoutPlan": 0,
+        "oneToManyPlans": 4,
+        "chaptersAbsorbed": 4
+      },
+      "evidence": [
+        "standards/02-yi-gu-wen/补章登记.json → noSupplement.mapping（8 行）",
+        "textbooks/01-zhongyi/02-yi-gu-wen/附录B-教学章与教材章对照.md（换算表 + 反向索引）"
+      ],
+      "reviewIf": "教学计划章数、底本源表章数或 mapping 任一侧变化时本决案作废，须重议。",
+      "reviewedBy": "hermes-agent（2026-11-16 实测：教材 12 章 / 教学 8 章）"
+    },
+    {
+      "subject": "01-zhongyi/03-zhongguo-yixue-shi",
+      "title": "中国医学史",
+      "decidedAt": "2026-11-16",
+      "teachingChapters": 8,
+      "textbookChapters": 12,
+      "decision": "两轴并存，不拆散教材、不给教学加章：教材按底本**分期**切 12 章（每个朝代一节），教学按 8 个时段合并（春秋战国+秦汉、魏晋南北朝+隋唐五代、近代+当代、少数民族+中外交流+数字化）。教材多出的 4 章不是空白内容，是切分粒度差。",
+      "rejectedOptions": [
+        {
+          "option": "按教材章数把教学计划补齐（加章凑数）",
+          "why": "教学现有每章都能在教材里找到落点，没有「教材有、教学无」的空白知识块可补；硬加章只会与现有章重复，并虚增 2154 章节 / 11547 学时的审计基数。"
+        },
+        {
+          "option": "把教材并成与教学同数（拆散重排）",
+          "why": "教材逐章对应底本源表（`import_textbooks.js --check` 硬要求），合并会破坏对应关系并需重写全部章正文；教学按模块合并本身就是为排课服务的，两边各自合理。"
+        }
+      ],
+      "mappingStats": {
+        "$note": "由 standards/<slug>/补章登记.json 的 noSupplement.mapping 现算；门会重算比对",
+        "planCount": 8,
+        "textbookChaptersCovered": 12,
+        "multiToOneChapters": 0,
+        "plansMergedIntoMulti": 0,
+        "textbookChaptersWithoutPlan": 0,
+        "oneToManyPlans": 4,
+        "chaptersAbsorbed": 4
+      },
+      "evidence": [
+        "standards/03-zhongguo-yixue-shi/补章登记.json → noSupplement.mapping（8 行）",
+        "textbooks/01-zhongyi/03-zhongguo-yixue-shi/附录B-教学章与教材章对照.md（换算表 + 反向索引）"
+      ],
+      "reviewIf": "教学计划章数、底本源表章数或 mapping 任一侧变化时本决案作废，须重议。",
+      "reviewedBy": "hermes-agent（2026-11-16 实测：教材 12 章 / 教学 8 章）"
+    },
+    {
+      "subject": "01-zhongyi/01-zhongyi-jichu-lilun",
+      "title": "中医基础理论",
+      "decidedAt": "2026-11-16",
+      "teachingChapters": 10,
+      "textbookChapters": 13,
+      "decision": "两轴并存，不拆散教材、不给教学加章：教材按底本体系切 13 章（含形体官窍、养生康复两块），教学按 10 个专题组织：病因/发病/病机合成一章，阴阳与五行分列，另设「中医思维方法」。教材第 7 章（形体与官窍）与第 12 章（养生与康复）**教学侧无独立章位**，内容由教学第 3 章（藏象）与第 8 章（防治原则）带过。教材多出的 3 章不是空白内容，是切分粒度差。",
+      "rejectedOptions": [
+        {
+          "option": "按教材章数把教学计划补齐（加章凑数）",
+          "why": "教学现有每章都能在教材里找到落点，没有「教材有、教学无」的空白知识块可补；硬加章只会与现有章重复，并虚增 2154 章节 / 11547 学时的审计基数。"
+        },
+        {
+          "option": "把教材并成与教学同数（拆散重排）",
+          "why": "教材逐章对应底本源表（`import_textbooks.js --check` 硬要求），合并会破坏对应关系并需重写全部章正文；教学按模块合并本身就是为排课服务的，两边各自合理。"
+        }
+      ],
+      "mappingStats": {
+        "$note": "由 standards/<slug>/补章登记.json 的 noSupplement.mapping 现算；门会重算比对",
+        "planCount": 10,
+        "textbookChaptersCovered": 11,
+        "multiToOneChapters": 2,
+        "plansMergedIntoMulti": 2,
+        "textbookChaptersWithoutPlan": 2,
+        "oneToManyPlans": 2,
+        "chaptersAbsorbed": 3
+      },
+      "evidence": [
+        "standards/01-zhongyi-jichu-lilun/补章登记.json → noSupplement.mapping（10 行）",
+        "textbooks/01-zhongyi/01-zhongyi-jichu-lilun/附录B-教学章与教材章对照.md（换算表 + 反向索引）"
+      ],
+      "reviewIf": "教学计划章数、底本源表章数或 mapping 任一侧变化时本决案作废，须重议。",
+      "reviewedBy": "hermes-agent（2026-11-16 实测：教材 13 章 / 教学 10 章）"
+    }
+  ]
+}

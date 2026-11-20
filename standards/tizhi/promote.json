@@ -1,0 +1,104 @@
+{
+  "dept": "01-zhongyi",
+  "slug": "tizhi",
+  "courseTitle": "中医体质学",
+  "mode": "derived",
+  "note": "派生底本课：无同名母本教材，底本由证候层反向聚合（132 证候 → 9 体质倾向），参照《老年病学》九质通行定义。8 教学章 = 8 教材章，章名沿用教学章名（内容一致，无需重命名）。",
+  "basis": {
+    "evidence": "standards/tizhi/units.json（13 单元；由 scripts/build_tizhi_layer.py 从 standards/zhenghou/证候库.json 132 证候 / 14 族聚合）",
+    "reference": "standards/laonian/units.json#3.4.1（九质通行定义，2,286 汉字）",
+    "method": "standards/tizhi/METHOD.json"
+  },
+  "chapters": [
+    {
+      "n": 1,
+      "teaching": 1,
+      "teachingSlug": "01-tizhi-gainian",
+      "title": "体质的概念与九种体质类型",
+      "src": [],
+      "question": "体质与证候、疾病、性格，四者的分界在哪一条线上？"
+    },
+    {
+      "n": 2,
+      "teaching": 2,
+      "teachingSlug": "02-tizhi-chengyin",
+      "title": "体质的成因：先天与后天",
+      "src": [],
+      "question": "同一个人的体质，哪些部分改不了，哪些部分可以调？"
+    },
+    {
+      "n": 3,
+      "teaching": 3,
+      "teachingSlug": "03-tizhi-liangbiao",
+      "title": "体质量表与判定",
+      "src": [],
+      "question": "八个维度各打一分，凭什么能判成一种体质？"
+    },
+    {
+      "n": 4,
+      "teaching": 4,
+      "teachingSlug": "04-tizhi-zhenghou",
+      "title": "体质与证候的关系",
+      "src": [],
+      "question": "「痰湿质的人得了气虚证」，该写体质还是写证候？"
+    },
+    {
+      "n": 5,
+      "teaching": 5,
+      "teachingSlug": "05-tizhi-tezheng",
+      "title": "九种体质的特征",
+      "src": [],
+      "question": "说某人「是阳虚质」，最少要给出哪几域证据？"
+    },
+    {
+      "n": 6,
+      "teaching": 6,
+      "teachingSlug": "06-tizhi-liuxing",
+      "title": "体质的流行分布与影响因素",
+      "src": [],
+      "question": "一个地区的体质构成比，能说明这个地区的健康水平吗？"
+    },
+    {
+      "n": 7,
+      "teaching": 7,
+      "teachingSlug": "07-tizhi-tiaoli",
+      "title": "体质的调理与干预",
+      "src": [],
+      "question": "调体质与治证候，为什么不能开同一张方？"
+    },
+    {
+      "n": 8,
+      "teaching": 8,
+      "teachingSlug": "08-tizhi-wucha",
+      "title": "体质判定的常见误区",
+      "src": [],
+      "question": "把体质当证候、把倾向当诊断，代价分别是什么？"
+    }
+  ],
+  "knownIssues": [
+    "本课无同名母本教材：底本为派生底本（132 证候 → 9 体质倾向），正文每章约 1,100 汉字，低于学术型教材 6,000 字基准。教材章按「派生底本·薄章」显式标注，不以 6,000 字冒充。",
+    "`standards/tizhi/units.json` 只有 13 单元（第 3 章 4 个、其余 1–2 个），单元层粒度远粗于临床科研方法学的 231 单元；N.1 表因此按「派生 locator」列出，不是逐节 locator。"
+  ],
+  "subject": "04-zhongyi-tizhi-xue",
+  "derivedDesc": "无同名母本教材，底本由证候层反向聚合而来（132 证候 → 9 体质倾向）",
+  "disclaimer": "本章为教学整理，不构成诊断或治疗建议；体质判定与调理须由具备资质的人员依规范作出。",
+  "interfaces": [
+    {
+      "course": "《中医证候学》",
+      "how": "体质是证候的易感背景，证候是当下的病理概括，两者分级记录。"
+    },
+    {
+      "course": "《中医诊断学》",
+      "how": "四诊信息是四域证据的来源，本章只取与体质稳定相关的部分。"
+    },
+    {
+      "course": "《老年病学》",
+      "how": "九质通行定义取自该课 3.4.1，老年体质分层报告的口径也在那里。"
+    },
+    {
+      "course": "《中医养生与康复》",
+      "how": "调质的方向与节奏进入养生方案，但方药与剂量不在本课。"
+    }
+  ],
+  "summaryPoint": "判定先分两层：稳定的背景（体质）与当下的状态（证候），证据按四域分别计。"
+}

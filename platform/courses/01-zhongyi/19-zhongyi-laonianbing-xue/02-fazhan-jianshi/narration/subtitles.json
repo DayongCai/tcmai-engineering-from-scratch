@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/19-zhongyi-laonianbing-xue/02-fazhan-jianshi/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 66.31,
+  "estimatedCues": 0,
+  "videoSeconds": 66.328667,
+  "videoMinusNarrationSeconds": 0.019,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.42,
+      "seconds": 4.42,
+      "estimated": false,
+      "text": "第 2 章 · 发展简史：从「养老」到「老年病学」",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.42,
+      "end": 13.47,
+      "seconds": 9.05,
+      "estimated": false,
+      "text": "「缘老人之性，皆厌于药而喜于食」——教材·第2章·2.2.1（《养老奉亲书·饮食调治》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 13.47,
+      "end": 29.84,
+      "seconds": 16.37,
+      "estimated": false,
+      "text": "老年病学的历史不是一部「病」的历史，是一部「怎么对待老人」的历史：先秦讲养老，宋元出专著，明清讲调养，近现代才成为学科。学生若只记书名，会漏掉这条观念线索。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 29.84,
+      "end": 50.5,
+      "seconds": 20.66,
+      "estimated": false,
+      "text": "环境逼迫（老龄化使「养老」变成公共问题）+ 知识积累（本章 6 单元 11,124 汉字，三辨主病机 113、四位面主脾胃肝胆 179——历代养老著作的共同落点都在「脾胃与饮食」；引书 37 部 51 次，为全书第二）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 50.5,
+      "end": 55.01,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 55.01,
+      "end": 66.31,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

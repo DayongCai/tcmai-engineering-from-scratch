@@ -1,0 +1,66 @@
+# [tcmP] 课程编排 · 08-wuguan/16-wuguan-linchuang-lunzhuan
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 16-wuguan-linchuang-lunzhuan
+title: 五官口腔临床轮转
+en: ENT & Stomatology Rotation
+dept: 08-wuguan
+dept_title: 五官口腔系
+semester: 9
+stage: lao
+hours: 108
+chapters_target: 6
+bridge: 专科检查→结构化字段 / 影像→测量 / 疗效→专科评分
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-yanke-lunzhuan
+    title: 第1章 眼科门诊轮转
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.84
+  - slug: 02-erbihou-lunzhuan
+    title: 第2章 耳鼻喉科门诊轮转
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.89
+  - slug: 03-kouqiang-neike
+    title: 第3章 口腔内科轮转
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.83
+  - slug: 04-hemian-waike
+    title: 第4章 口腔颌面外科轮转
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.87
+  - slug: 05-tese-zhiliao
+    title: 第5章 中医五官特色治疗轮转
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.91
+  - slug: 06-chuke-kaohe
+    title: 第6章 出科考核与病例复盘
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.9

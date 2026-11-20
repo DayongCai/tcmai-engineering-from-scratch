@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/17-jichu-biye-sheji/01-xuan-ti/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 64.34,
+  "estimatedCues": 0,
+  "videoSeconds": 64.374667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.58,
+      "seconds": 4.58,
+      "estimated": false,
+      "text": "第 1 章 · 选题：从机制假设到可检验实验",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.58,
+      "end": 20.52,
+      "seconds": 15.94,
+      "estimated": false,
+      "text": "「〔派生〕选题：从机制假设到可检验实验」——材料：流行病学第16章。本章要回答的是：选题：从机制假设到可检验实验：这一阶段要交什么、怎么算过关。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.52,
+      "end": 28.7,
+      "seconds": 8.18,
+      "estimated": false,
+      "text": "选题：从机制假设到可检验实验：毕设第 1 阶段，材料取自流行病学第16章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 28.7,
+      "end": 53.04,
+      "seconds": 24.34,
+      "estimated": false,
+      "text": "环境逼迫（毕设的判据是「问题—证据—可复算」三件套：问得出、证得了、别人算得出）+ 知识积累（本章 12 单元 17,750 汉字；三辨主 记录与数据 233；四位面（毕设阶段）主 选题与方案 17750；引书 1 部 4 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 53.04,
+      "end": 64.34,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/10-erke-huli-xue/07-xiaohua/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 59.41,
+  "estimatedCues": 0,
+  "videoSeconds": 59.452667,
+  "videoMinusNarrationSeconds": 0.043,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.36,
+      "seconds": 3.36,
+      "estimated": false,
+      "text": "第 7 章 · 消化系统疾病的护理",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.36,
+      "end": 20.47,
+      "seconds": 17.11,
+      "estimated": false,
+      "text": "「《儿科护理学·第8章 消化系统疾病的护理》」——教材第 8 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：消化系统疾病的护理这一章的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.47,
+      "end": 25.29,
+      "seconds": 4.82,
+      "estimated": false,
+      "text": "消化系统独立成章：补液与脱水判断是主线。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 25.29,
+      "end": 48.11,
+      "seconds": 22.82,
+      "estimated": false,
+      "text": "环境逼迫（儿童不能自述、代偿窗窄、剂量按体重算，观察要更密、沟通要走家长）+ 知识积累（本章 1 单元 18,387 汉字；三辨主 疾病护理 382；四位面（系统）主 学龄前与学龄 18；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 48.11,
+      "end": 59.41,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

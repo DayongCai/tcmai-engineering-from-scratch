@@ -1,0 +1,66 @@
+# [tcmP] 课程编排 · 01-zhongyi/21-zhongyi-linchuang-lunzhuan
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/01-zhongyi/21-zhongyi-linchuang-lunzhuan/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 21-zhongyi-linchuang-lunzhuan
+title: 中医临床轮转
+en: Clinical Rotation in TCM
+dept: 01-zhongyi
+dept_title: 中医系
+semester: 9
+stage: lao
+hours: 108
+chapters_target: 6
+bridge: 接诊记录→结构化病历 / 辨证推理→决策日志 / 出科考核→评分量表
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xinbing-lunzhuan
+    title: 第1章 心病科轮转：胸痹与心悸的辨证接诊
+    segments: 6
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.97
+  - slug: 02-feibing-lunzhuan
+    title: 第2章 肺病科轮转：咳嗽与喘证的辨证接诊
+    segments: 6
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.98
+  - slug: 03-piwei-lunzhuan
+    title: 第3章 脾胃病科轮转：胃痞与泄泻的辨证接诊
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 04-shenbing-lunzhuan
+    title: 第4章 肾病科轮转：水肿与淋证的辨证接诊
+    segments: 6
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.98
+  - slug: 05-naobing-lunzhuan
+    title: 第5章 脑病科轮转：眩晕与中风的辨证接诊
+    segments: 6
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 0.98
+  - slug: 06-chuke-kaohe
+    title: 第6章 出科考核与病例复盘（含结构化病历）
+    segments: 6
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 0.98

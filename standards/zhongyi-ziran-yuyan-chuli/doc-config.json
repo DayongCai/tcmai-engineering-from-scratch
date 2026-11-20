@@ -1,7 +1,7 @@
 {
  "courseTitle": "中医自然语言处理",
  "deptPath": "departments/07-zhineng/04-zhongyi-ziran-yuyan-chuli",
- "xlsx": "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx",
+ "xlsx": "F:/textbooks/qhzy-机器学习.xlsx",
  "chain": "语料与术语 → 概率与分类 → 标注与规则 → 评测与边界",
  "levelLabel": "章群结构",
  "objectPressure": "文本处理的判据是「抽得出、说得清出处、退得回人」：抽不准就标不确定，不许编",

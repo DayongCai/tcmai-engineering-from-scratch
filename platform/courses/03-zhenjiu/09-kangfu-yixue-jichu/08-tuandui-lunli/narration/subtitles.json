@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/09-kangfu-yixue-jichu/08-tuandui-lunli/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 53.79,
+  "estimatedCues": 0,
+  "videoSeconds": 53.814667,
+  "videoMinusNarrationSeconds": 0.025,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 2.98,
+      "seconds": 2.98,
+      "estimated": false,
+      "text": "第 8 章 · 康复团队与伦理",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 2.98,
+      "end": 18.34,
+      "seconds": 15.36,
+      "estimated": false,
+      "text": "「《康复医学基础·康复团队与伦理》」——派生课：篇名为本课程章名，出处见 units.json 的 source 字段。本章要回答的是：康复团队与伦理的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 18.34,
+      "end": 20.96,
+      "seconds": 2.62,
+      "estimated": false,
+      "text": "团队分工与「谁说了算」。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 20.96,
+      "end": 42.49,
+      "seconds": 21.53,
+      "estimated": false,
+      "text": "环境逼迫（派生课的判断力来自把父课的片段重排成一条决策链）+ 知识积累（本章 3 单元 60,055 汉字；三辨主 照护与团队 191；四位面（观察视角）主 社区与团队 60055；引书 1 部 1 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 42.49,
+      "end": 53.79,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

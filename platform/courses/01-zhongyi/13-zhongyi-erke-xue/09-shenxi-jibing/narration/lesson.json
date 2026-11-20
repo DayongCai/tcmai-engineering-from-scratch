@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/13-zhongyi-erke-xue/chapters/09-shenxi-jibing/docs/zh.md",
+  "course": "13-zhongyi-erke-xue",
+  "dept": "01-zhongyi",
+  "chapter": "09-shenxi-jibing",
+  "title": "第 9 章 · 肾系疾病：一条水液通道，两个年龄界值",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 84,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 9 章 · 肾系疾病：一条水液通道，两个年龄界值",
+      "slide": "title",
+      "spoken": "第 9 章 · 肾系疾病：一条水液通道，两个年龄界值",
+      "estimateSeconds": 5,
+      "audio": "001.mp3",
+      "audioSeconds": 5.33
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「其本在肾，其末在肺，皆积水也」——教材·第9章·9.1.1（《素问·水热穴论》）",
+      "slide": "title",
+      "spoken": "「其本在肾，其末在肺，皆积水也」——教材·第9章·9.1.1（《素问·水热穴论》）",
+      "estimateSeconds": 9,
+      "audio": "002.mp3",
+      "audioSeconds": 8.5
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "本章六个病证横跨三件事：**水（水肿、肾病）、尿（尿频、遗尿）、长（五迟五软、性早熟）**。它们的共同点是「界值」——水肿要看血压与尿量、遗尿要看 3 岁、性早熟要看 8 岁（女）／9 岁（男）、五迟五软要按月龄里程碑对。学生常犯的错是只记病名与方名，不记界值，于是「尿床」被当成病、「性早熟」被漏掉。",
+      "slide": "problem",
+      "spoken": "本章六个病证横跨三件事：水（水肿、肾病）、尿（尿频、遗尿）、长（五迟五软、性早熟）。它们的共同点是「界值」——水肿要看血压与尿量、遗尿要看 3 岁、性早熟要看 8 岁（女）／9 岁（男）、五迟五软要按月龄里程碑对。学生常犯的错是只记病名与方名，不记界值，于是「尿床」被当成病、「性早熟」被漏掉。",
+      "estimateSeconds": 31,
+      "audio": "003.mp3",
+      "audioSeconds": 29.38
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（水液代谢失常常在几天内从「眼睑浮肿」进展到「抽搐」——肾炎的三大危象都是急症）+ 知识积累（本章 30 单元、22,538 字，**病因 145** 居三辨首位、**肾系 701** 居四位面首位；引书 34 部 81 次，水肿的古典论述最密集）",
+      "slide": "roots",
+      "spoken": "环境逼迫（水液代谢失常常在几天内从「眼睑浮肿」进展到「抽搐」——肾炎的三大危象都是急症）+ 知识积累（本章 30 单元、22,538 字，病因 145 居三辨首位、肾系 701 居四位面首位；引书 34 部 81 次，水肿的古典论述最密集）",
+      "estimateSeconds": 23,
+      "audio": "004.mp3",
+      "audioSeconds": 24
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "text": "```bash\ncd departments/01-zhongyi/13-zhongyi-erke-xue/chapters/09-shenxi-jibing\nnode code/main.js\nnode --test code/main.test.js\n```",
+      "slide": "verify",
+      "heading": "验证",
+      "spoken": "这一段以代码实现为主，请看画面上的代码块。",
+      "estimateSeconds": 5,
+      "audio": "005.mp3",
+      "audioSeconds": 4.51
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 83.02,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

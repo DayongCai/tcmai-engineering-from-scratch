@@ -1,0 +1,314 @@
+Research progress of aconitine toxicity and forensic analysis of aconitine poisoning - PMC
+Skip to main content
+An official website of the United States government
+Here's how you know
+Here's how you know
+Official websites use .gov
+A
+.gov website belongs to an official
+government organization in the United States.
+Secure .gov websites use HTTPS
+A lock (
+Lock
+Locked padlock icon
+) or https:// means you've safely
+connected to the .gov website. Share sensitive
+information only on official, secure websites.
+Search
+Log in
+Dashboard
+Publications
+Account settings
+Log out
+Search…
+Search NCBI
+Primary site navigation
+Search
+Logged in as:
+Dashboard
+Publications
+Account settings
+Log in
+Search PMC Full-Text Archive
+Search in PMC
+Journal List
+User Guide
+PERMALINK
+Copy
+As a library, NLM provides access to scientific literature. Inclusion in an NLM database does not imply endorsement of, or agreement with,
+the contents by NLM or the National Institutes of Health.
+Learn more:
+PMC Disclaimer
+|
+PMC Copyright Notice
+Forensic Sci Res
+. 2018 Apr 9;5(1):25–31. doi: 10.1080/20961790.2018.1452346
+Search in PMC
+Search in PubMed
+View in NLM Catalog
+Add to search
+Research progress of aconitine toxicity and forensic analysis of aconitine poisoning
+Xiangting Gao
+Xiangting Gao
+a Department of Forensic Medicine, Soochow University, Suzhou, China;
+Find articles by Xiangting Gao
+a , Jun Hu
+Jun Hu
+a Department of Forensic Medicine, Soochow University, Suzhou, China;
+b Laboratory of Biomedical Technology, Jiangsu Vocational College of Medicine, Yancheng, China;
+Find articles by Jun Hu
+a, b , Xincai Zhang
+Xincai Zhang
+a Department of Forensic Medicine, Soochow University, Suzhou, China;
+Find articles by Xincai Zhang
+a , Yuanyi Zuo
+Yuanyi Zuo
+a Department of Forensic Medicine, Soochow University, Suzhou, China;
+c Department of Forensic Sciences, Binhai People’s Hospital, Yancheng, China
+Find articles by Yuanyi Zuo
+a, c , Yun Wang
+Yun Wang
+a Department of Forensic Medicine, Soochow University, Suzhou, China;
+Find articles by Yun Wang
+a , Shaohua Zhu
+Shaohua Zhu
+a Department of Forensic Medicine, Soochow University, Suzhou, China;
+Find articles by Shaohua Zhu
+a, ✉
+Author information
+Article notes
+Copyright and License information
+a Department of Forensic Medicine, Soochow University, Suzhou, China;
+b Laboratory of Biomedical Technology, Jiangsu Vocational College of Medicine, Yancheng, China;
+c Department of Forensic Sciences, Binhai People’s Hospital, Yancheng, China
+✉ CONTACT Shaohua Zhu zhushaohua@suda.edu.cn
+Received 2017 Dec 6; Accepted 2018 Mar 12; Collection date 2020.
+2018 The Author(s). Published by Taylor & Francis Group on behalf of the Academy of Forensic Science.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License ( http://creativecommons.org/licenses/by/4.0/ ), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.
+PMC Copyright notice
+PMCID: PMC7241456 PMID: 32490307
+Abstract
+Chinese herbal medicines have been extensively used in China and other countries for centuries. Aconitine, a diterpenoid alkaloid extracted from Aconitum plants, has anti-inflammatory and analgesic activities, but can also induce severe arrhythmia and neurotoxicity. Aconitine poisoning accidents caused by misuse, suicide, or homicide have been reported in recent years. In China, fatal aconitine poisoning can occasionally happen on account of accidental ingestion of some wild plants or consumption of herbal decoction made from the roots of Aconitum plants. However, it is rather difficult for forensic experts to find the specific results in present forensic autopsy of aconitine-induced death. To further clarify its potential risk following the widespread application of aconitine, toxicological characteristics and pharmacokinetics of aconitine are reviewed. Moreover, gastrointestinal, neurological, and cardiovascular symptoms were observed frequently in aconitine poisoning cases. In addition, the review also aims at providing some convincing evidences for forensic experts to identify unexplained death with postmortem examination.
+Keywords: Forensic sciences, aconitine, toxic effects, metabolic characteristics
+Introduction
+Herbal medicines are commonly used in China and other countries to treat various diseases due to its natural, harmless and less adverse effects for thousands of years. Traditional Chinese medicines are processed by soaking or boiling before consumption to reduce the toxicity [ 1 ]. In general, herbal poisoning may frequently occur because of inadequate processing and preparation, overdose, contamination, misidentification, and even in some suicidal or homicidal cases. Aconitum plants have been extensively applied to treat multiple diseases in China and some other Asian countries [ 2–4 ]. Previous studies [ 5 , 6 ] on Aconitum plants have showed its pharmacological properties such as anti-inflammation, analgesia, and anti-rheumatism. Aconitine is one of the major bioactive alkaloids extracted from Monkshood ( Aconitum napellus ), a plant getting its name for its blue to purple coloured flowers that resembles a monk’s hood [ 7 ]. Aconitine belongs to the Aconitum genus of Ranunculaceae family and is frequently employed in herbal medicines for its anti-inflammatory, analgesic, anti-rheumatic, and cardiotonic actions [ 8–10 ]. In addition, aconitine could also suppress tumour growth and induce cell apoptosis by NF-ĸB signalling pathway in human pancreatic cancer, indicating that aconitine may serve as a potent therapeutic strategy for the treatment of several cancers [ 11 ]. However, the application of aconitine has been limited in clinical practice due to its toxic effects on the heart and nervous system.
+With the increasing popularity of herbal drugs, herb-induced fatal poisoning cases have frequently happened as a result of inappropriate use of herbs in recent years. Aconitine, one of the abundant and high bioactive diterpenoid alkaloids, has a narrow therapeutic index, and it also brings great challenges to identify its appropriate dosage. As far as we know, aconitine poisoning cases occasionally happen in China and some other parts of Asia. For example, people are accustomed to making medicinal liquor or herbal decoctions containing aconitine for treating illness and enhancing health in some rural areas of China [ 12 ]. Thus, it is of great concern that improper process and use can lead to severe poisonous cases or even unexpected death. In addition, aconitine poisoning can also happen in some accidental ingestions, suicide or homicide cases. Previous studies [ 13 , 14 ] revealed the half-maximally lethal dose (LD50) aconitine for mice is 1.8 mg/kg by oral administration, and the minimum lethal dose of oral administration in humans is evaluated to be 1–2 mg. Monoester diterpenoid alkaloids (MDAs) are considered as hydrolysed products of diester diterpenoid alkaloids (DDAs). The LD50 of aconitine for mice by intravenous injection is approximately 38 times of its hydrolysates [ 15 , 16 ]. Symptoms of aconitine poisoning frequently appear within 2 h or even several minutes via oral ingestion, indicating that it can be easily absorbed with oral administration. It has been demonstrated that aconitine can also be absorbed into systemic circulation through the human skin, leading to fatal and non-fatal poisoning [ 17 ]. Furthermore, aconitine poisoning may present with abnormities symptoms of gastrointestinal, neurologic, and cardiovascular system [ 18 ]. However, there is no specific antidote and the current treatment is mainly based on the supporting therapies. Nevertheless, it was reported that there were some effective treatment methods or medicines to improve cardiac arrhythmias in aconitine-induced poisoning accidents including charcoal hemoperfusion, amiodarone, magnesium, and lidocaine [ 19–21 ].
+On the one hand, aconitine is very unstable and decomposed easily in the human body. On the other hand, it is not detected routinely for common toxicology analysis in present forensic practice. Meanwhile, little attention is paid to aconitine poisoning in current clinical practice and medicolegal expertise. Consequently, it is worth noting that the history of use of herbal medication or wild plants should be taken into consideration in exploring unexplained death.
+In this paper, we review the toxicological properties and pharmacokinetics of aconitine. We also attempt to describe the autopsy results so as to provide some references for dealing with unexplained death in present forensic practice.
+The pharmacokinetic studies and determination method of aconitine
+The ester groups combining with C8 and C14 are considered to be primarily responsible for the high toxicity of aconitine, while hydrolysis of esters can reduce its toxicity dramatically [ 22 ]. Aconitine is well known for its pharmacology actions, but also recognized as a toxic ingredient that needs to be processed properly in order to use it safely for humans. Aconitine can be hydro-lysed to less toxic benzyl aconine and aconine derivatives [ 23 ]. Considering that the therapeutic dose and the toxic dose of aconitine is close, it is crucial to use safely as a medicine in clinical applications. Indeed, establishment of the pharmacokinetic parameters of aconitine would be essential to make it play better pharmacological effects in clinics. Cytochrome P450 (CYP450) enzymes, belonging to membrane-bound hemoproteins, are involved in approximately 80% of phase I metabolism of drugs and play important roles in oxidative metabolism of drugs and exogenous substances [ 24–26 ]. CYP3A has been found to be the dominant CYP450 expressed in both liver and intestine, and it principally catalyses phase I metabolism of various alkaloids in human intestine and liver microsomes [ 27 ]. Whether CYP450 enzymes are involved in aconitine metabolism has also been further investigated. It has been reported that aconitine is mainly metabolized by CYP3A and CYP1A1/2 into less toxicity derivatives in rat liver microsomes [ 28 ]. In addition, further studies showed that aconitine can be converted into several CYP-mediated metabolites in human liver microsomes, and isoforms of CYP including CYP 3A4/5 and 2D6 were primarily responsible for the metabolism of aconitine [ 29 ].
+It should be noted that the detection of aconitine concentrations in body fluids plays a vital role in clinic and forensic toxicology analysis of suspected poisoning incidents. As aconitine can decompose or metabolize rapidly, it is also difficult to detect aconitine contents in human body fluids. In previous studies, some methods have been employed for detecting aconitine such as capillary electrophoresis, gas chromatography-mass spectrometry, and high performance liquid chromatography [ 30 , 31 ]. However, low selectivity and sensitivity have restricted the application of these methods to some extent. At present, liquid chromatography tandem-mass spectrometry (LC-MS/MS) has developed a valid and precise method to analyse aconitine contents in blood and urine samples [ 32–34 ]. Taking into account that aconitine is metabolized fast into several derivatives in animal and human models, accordingly, the findings of aconitine and primary metabolites in blood, urine, or in herb medicine samples together with the important clinical manifestations, will provide some indispensable evidences of aconitine poisoning in present forensic practice.
+Symptoms of aconitine poisoning and pathological changes in postmortem examination
+Aconitine, which has a narrow therapeutic window, is considered to be the principal highly toxic DDA in Aconitum alkaloids. The incubation period between ingestion of aconitine and the onset of symptoms may be as short as several minutes, indicating that aconitine can be absorbed rapidly after oral administration by the upper gastrointestinal tract. It has been reported that aconitine can reach relatively high concentrations in the liver, kidney, and heart following oral intake of aconitine [ 35 ]. Patients with aconitine poisoning generally present with a series of gastrointestinal, cardiovascular, and neurologic symptoms [ 36 , 37 ]. The gastrointestinal features can be nausea, vomiting, diarrhoea, and abdominal pain. Neurologic symptoms include numbness in mouth and limbs, paraesthesia, central nervous system depression, respiratory muscle depression, convulsions, and seizures. Cardiovascular manifestations predominantly include hypotension, palpitations, chest pain, bradycardia, sinus tachycardia, ventricular tachycardia, and ventricular fibrillation. Furthermore, the severity of symptoms appears to be related to the doses and time of exposure to aconitine. In particular, aconitine is also quickly decomposed or eliminated with a short half-life [ 38 ]. Thus, it is difficult for forensic specialists to identify death caused by aconitine poisoning with postmortem examination.
+The signs of asphyxia are observed at autopsy including facial and nail bed cyanosis. Foamy liquid can be seen in the endotracheal cavity. The postmortem examination may find haemorrhagic points distributed on the surface of the heart and lungs [ 39 , 40 ]. Moreover, the microscopic examination has been reported to reveal bilateral intrapulmonary haemorrhage and oedema, congestion of multiple organs, and bilateral pleural effusions in different degrees [ 41 ]. It is worth noting that eosinophilic granulocytes can also be observed in the lungs, liver, pancreas, spleen, and gastrointestinal mucosal tissue [ 42 ].
+The results of toxicological analysis are rather important for forensic identification of aconitine poisoning. So far, LC-MS/MS is a sensitive and validated method to identify toxic plant alkaloids [ 43 ]. It is necessary for forensic pathologists to exclude the presence of physical injury and fatal diseases. Meanwhile, the results of toxicological analysis showed that aconitine and its derivatives were positive and other toxic substances and illegal drugs were negative in blood, gastric content, or urine samples of victims. In this situation, death was generally considered to be caused by aconitine poisoning.
+Toxic effects of aconitine
+It is rather difficult to define precisely the therapeutic dose and toxic dose of aconitine because of its narrow therapeutic index. The cardiotoxicity and neurotoxicity caused by inadequate consumption of aconitine have been occasionally reported in recent years [ 42 , 44 ]. Therefore, the public should be warned of the risk of aconitine poisoning.
+Toxic mechanisms of aconitine in cardiac system
+Previous studies have revealed that aconitine could induce various types of life-threatening arrhythmias such as bradyarrhythmia, nodal tachycardia, cardiac fibrillation, bidirectional ventricular tachycardia, and intraventricular block [ 45–47 ]. In vivo experiment using murine model has confirmed that aconitine could suppress the progression of systemic lupus erythematosus and attenuate the pathologic impairment [ 48 ]. Aconitine-induced arrhythmias were observed in isolated rabbit atria, and results showed that aconitine might directly stimulate sinus node and inhibit the propagation of impulses in some degree [ 49 ]. Emerging evidences indicated that aconitine could block the inactivation of voltage-dependent sodium channels at the resting membrane potential causing sustained Na + influx, therefore leading to arrhythmia [ 50 , 51 ]. The aconitine-induced blockade of HERG and Kv1.5 in Xenopus laevis oocytes is considered to be one of the mechanisms of cardiac arrhythmias [ 52 ]. Moreover, in H9c2 cells and cultured neonatal rat cardiomyocytes, aconitine could produce the inhibition effect on ultrarapid-delayed rectifier K + current in a time- and dose-dependent manner [ 53 ].
+Ca 2+ is one of the important second messengers and plays crucial roles in the process of cells signal transduction and electrical activity of myocardial cells [ 54–57 ]. Meanwhile, disruption of the intracellular Ca 2+ homeostasis is an important mechanism of arrhythmic toxicity of aconitine [ 51 ]. It is well known that aconitine can induce abnormities of spontaneous beating rate, amplitude of spontaneous oscillations, intracellular Ca 2+ signals, and increase the relative intracellular Ca 2+ concentration in cultured primary cardiomyocytes, indicating that disruption of intracellular Ca 2+ homeostasis may contribute to arrhythmic toxicity in aconitine-treated cardiomyocytes [ 58 ]. Calcium regulatory proteins, including NCX1, RyR2, DHPR, and SERCA2a in sarcoplasmic reticulum, are capable of maintaining intracellular calcium homeostasis in myocardial cells [ 59 ]. Previous publications have described that aconitine could damage myocardial cells, increase the expression of RyR2 and decrease the expression of NCX1, DHPR-α1 significantly, thus leading to the unbalance of intracellular calcium homeostasis [ 60 ]. The results of current research provided strong evidences that aconitine-induced arrhythmia was associated with intracellular Ca 2+ signals and pre-treatment with aconitine reduced the sarcoplasmic reticulum Ca 2+ -ATPase expression, increased the expression of Na + /Ca 2+ exchange in rat ventricular myocytes, which is consistent with the previous studies [ 61 , 62 ].
+Connexin 43 (Cx43) is the principal gap junction protein in heart [ 63 ]. Previous studies have demonstrated that Ser368, a protein kinase C site, is involved in the regulation of gap junction function. It is well known that the Ser368 remains phosphorylation status under normal circumstances [ 64 , 65 ]. Aconitine could induce Cx43 and protein kinase C-a dephosphorylation and alter Ca 2+ oscillation frequency, which probably is associated with cellular signal transduction, finally leading to cardiac toxicity in cultured neonatal rats cardiomyocytes [ 66 ].
+More importantly, aconitine could also shorten action potential duration, reduce L-type calcium currents, thereby contributing to the proarrhythmic effects in human-induced pluripotent stem cell-derived cardiomyocytes. The effects of aconitine-caused arrhythmia and underlying mechanisms were further studied in human cardiomyocytes model [ 67 ]. In addition, it is noteworthy that the Na + –Ca 2+ exchange (NCX) system plays a vital role in regulating cardiac contractility and electrical activity in different animal modes. KB-R9743 (KBR), a selective inhibitor of NCX in cardiac muscle, is capable of inhibiting aconitine-induced arrhythmias in guinea pigs and isolated ventricular myocytes [ 62 , 68 ].
+Drug–DNA interaction is regarded as one of the reasons of the DNA damage of some drugs [ 69 ]. The cytotoxicities of aconitine were further investigated in rat myocardial cells H9c2. The results showed that aconitine could exhibit cytotoxic activities including promotion of the apoptotic rate, inhibition of the growth of myocardial cells, and interaction with DNA by intercalation and electrostatic binding, implying that the aconitine-induced cardiac toxicity and DNA injury are correlated in a certain degree [ 70 ]. Our study showed that aconitine could induce apoptosis of H9c2 cells at least in part via mitochondria-dependent apoptotic pathway [ 71 ]. However, the specific mechanism remains unknown and still needs further study.
+Toxic effects of aconitine on nervous system
+The neurotoxic effects of aconitine have been researched in different cell types. For example, it was reported that aconitine could block neuromuscular transmission and cause depolarization in mice and frog skeletal muscles [ 72 , 73 ]. More importantly, aconitine was reported to decrease the amplitude and block end-plate potentials and nerve action potentials, which contributes to neuromuscular blockade accompanied by excessive presynaptic depolarization in the isolated phrenic nerve-diaphragm muscles of rats [ 74 ]. Interestingly, a piece of published report demonstrated that aconitine could suppress delayed rectifier K + current in differentiated NG108-15 neuronal cells and alterations in action potentials caused by aconitine might be concerned with abnormal neuronal excitability [ 75 ]. Moreover, it has been confirmed that aconitine can induce epileptiform activity in rat neocortical and hippocampal slices with acute and extended excitatory effects [ 76 , 77 ].
+Other toxic effects of aconitine
+Published studies have indicated that aconitine has evident toxic effects on the growth of embryos and morphogenesis in rat embryos cultured model. It has been reported that aconitine could cause cardiac defect, irregular somites, and brain malformation during the period of organ formation, suggesting that teratogenesis may be induced by aconitine in the process of embryonic development [ 78 ]. The long-term physiological effects of aconitine were also further investigated in mice by detecting the rectal temperature, body weight, and by electrocardiogram, and the results revealed that the toxicity of aconitine might be decreased accompanied by chronic administrations and evaluated metabolic activity of aconitine [ 79 , 80 ]. P-glycoprotein, encoded by the MDR1 gene, is one of the important transporters in the apical member of mucosal cells in the intestine and excretes toxic substances into the intestinal lumen [ 81 ]. It should be stressed that aconitine could dramatically increase the P-glycoprotein levels in mice and LS174T and Caco-2 cells, concomitantly reducing acute toxicity of aconitine and other drugs toxicity by drug–drug interactions [ 82 ].
+Conclusions and future prospects
+With the widespread use of Chinese herb medicines, herbs-induced poisoning may be frequently encountered in the world. Aconitum plants are used in China and some Asian countries for treatment of various common medical problems such as pains, rheumatoid arthritis, and cardiac disorders [ 83 ]. Aconitum alkaloids, mainly containing aconitine, hypaconitine, and mesaconitine, are important representatives derived from the roots of plants in Aconitum genus. Aconitine, a high bioactive diterpenoid alkaloid derived from Aconitum plants, has great medicinal value, but also can cause serious poisonous cases. Despite this, based on the accumulation of traditional processing experiences and new techniques, aconitine can also be adequately processed to reduce its toxic effects and play better pharmacological effects. In our present review, we describe the toxicological effects of aconitine and further analyse aconitine poisoning cases in forensic practice. Further assessment of the underlying pharmacological properties and its safety profile are also required for better evaluation of its potential for clinical applications in future.
+Authors’ contributions
+Xiangting Gao participated in the data analysis, and drafted the manuscript; Jun Hu, Xincai Zhang, Yuanyi Zuo, and Yun Wang collected the data, and Shaohua Zhu conceived the idea, analysed the data, and revised the manuscript. All authors contributed to the final text and approved it.
+Compliance with ethical standards
+This article does not contain any studies with human participants or animals performed by any of authors.
+Disclosure statement
+The authors declare that they have no conflict of interest.
+Funding
+This study was supported by the National Natural Science Foundation of China [grant number 81571848] and the Priority Academic Program Development of Jiangsu Higher Education Institutions.
+References
+1. Singhuber J, Zhu M, Prinz S, et al.
+Aconitum in traditional Chinese medicine: a valuable drug or an unpredictable risk?
+J Ethnopharmacol. 2009;126:18–30. [ DOI ] [ PubMed ] [ Google Scholar ]
+2. Chen JH, Lee CY, Liau BC, et al.
+Determination of aconitine-type alkaloids as markers in fuzi ( Aconitum carmichaeli ) by LC/(+)ESI/MS 3 . J Pharm Biomed Anal. 2008;48:1105–1111. [ DOI ] [ PubMed ] [ Google Scholar ]
+3. Dai PM, Wang Y, Ye L, et al.
+Pharmacokinetic comparisons of benzoylmesaconine in rats using ultra-performance liquid chromatography-tandem mass spectrometry after administration of pure benzoylmesaconine and Wutou decoction. Molecules. 2014;19: 16757–16769. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+4. Yan Y, Zhang A, Dong H, et al.
+Toxicity and detoxification effects of herbal caowu via ultra performance liquid chromatography/mass spectrometry metabolomics analyzed using pattern recognition method. Pharmacogn Mag. 2017;13:683–692. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+5. Wang CF, Gerner P, Wang SY, et al.
+Bulleyaconitine A isolated from Aconitum plant displays long-acting local anesthetic properties in vitro and in vivo . Anesthesiology. 2007;107:82–90. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+6. Guo Q, Xia H, Shi G, et al.
+Aconicarmisulfonine A, a sulfonated C20-diterpenoid alkaloid from the lateral roots of Aconitum carmichaelii . Org Lett. 2018;20:816–819. [ DOI ] [ PubMed ] [ Google Scholar ]
+7. Dyer S. Plant exposures: wilderness medicine. Emerg Med Clin North Am. 2004;22:299–313. [ DOI ] [ PubMed ] [ Google Scholar ]
+8. Arlt EM, Keller T, Wittmann H, et al.
+Fatal aconitine intoxication or thyroid storm? A case report. Leg Med (Tokyo). 2012;14:154–156. [ DOI ] [ PubMed ] [ Google Scholar ]
+9. Pullela R, Young L, Gallagher B, et al.
+A case of fatal aconitine poisoning by Monkshood ingestion. J Forensic Sci. 2008;53:491–494. [ DOI ] [ PubMed ] [ Google Scholar ]
+10. Chan TY, Tomlinson B, Critchley JA, et al.
+Herb-induced aconitine poisoning presenting as tetraplegia. Vet Hum Toxicol. 1994;36:133–134. [ PubMed ] [ Google Scholar ]
+11. Ji BL, Xia LP, Zhou FX, et al.
+Aconitine induces cell apoptosis in human pancreatic cancer via NF-κB signaling pathway. Eur Rev Med Pharmacol Sci. 2016;20:4955–4964. [ PubMed ] [ Google Scholar ]
+12. Lin CC, Chan TY, Deng JF. Clinical features and management of herb-induced aconitine poisoning. Ann Emerg Med. 2004;43:574–579. [ DOI ] [ PubMed ] [ Google Scholar ]
+13. Sato H, Yamada C, Konno C, et al.
+Pharmacological actions of aconitine alkaloids. Tohoku J Exp Med. 1979;128:175–187. [ DOI ] [ PubMed ] [ Google Scholar ]
+14. Fujita Y, Terui K, Fujita M, et al.
+Five cases of aconite poisoning: toxicokinetics of aconitines. J Anal Toxicol. 2007;31:132–137. [ DOI ] [ PubMed ] [ Google Scholar ]
+15. Zhou YP, Liu WH, Zeng GY, et al. [The toxicity of aconitine and its analogs and their effects on cardiac contractile function]. Yao Xue Xue Bao. 1984;19:641–646. Chinese. [ PubMed ] [ Google Scholar ]
+16. Zhang M, Peng CS, Li XB. Human intestine and liver microsomal metabolic differences between C19-diester and monoester diterpenoid alkaloids from the roots of Aconitum carmichaelii Debx. Toxicol In Vitro. 2017;45:318–333. [ DOI ] [ PubMed ] [ Google Scholar ]
+17. Chan TY. Aconite poisoning following the percutaneous absorption of Aconitum alkaloids. Forensic Sci Int. 2012;223:25–27. [ DOI ] [ PubMed ] [ Google Scholar ]
+18. Chan TY. Aconitum alkaloid poisoning related to the culinary uses of aconite roots. Toxins (Basel). 2014;6:2605–2611. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+19. Chen X, Wu R, Jin H, et al.
+Successful rescue of a patient with acute aconitine poisoning complicated by polycystic renal hemorrhage. J Nippon Med Sch. 2015;82:257–261. [ DOI ] [ PubMed ] [ Google Scholar ]
+20. Yeih DF, Chiang FT, Huang SK. Successful treatment of aconitine induced life threatening ventricular tachyarrhythmia with amiodarone. Heart. 2000;84:E8. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+21. Lin CC, Chou HL, Lin JL. Acute aconitine poisoned patients with ventricular arrhythmias successfully reversed by charcoal hemoperfusion. Am J Emerg Med. 2002;20:66–67. [ DOI ] [ PubMed ] [ Google Scholar ]
+22. Li TF, Gong N, Wang YX. Ester hydrolysis differentially reduces aconitine-induced anti-hypersensitivity and acute neurotoxicity: involvement of spinal micro-glial dynorphin expression and implications for Aconitum processing. Front Pharmacol. 2016;7:367. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+23. Chan TY, Critchley JA. Usage and adverse effects of Chinese herbal medicines. Hum Exp Toxicol. 1996;15: 5–12. [ DOI ] [ PubMed ] [ Google Scholar ]
+24. Nebert DW, Dalton TP. The role of cytochrome P450 enzymes in endogenous signalling pathways and environmental carcinogenesis. Nat Rev Cancer. 2006;6: 947–960. [ DOI ] [ PubMed ] [ Google Scholar ]
+25. Omura T. Forty years of cytochrome P450. Biochem Biophys Res Commun. 1999;266:690–698. [ DOI ] [ PubMed ] [ Google Scholar ]
+26. Wilkinson GR. Cytochrome P4503A (CYP3A) metabolism: prediction of in vivo activity in humans. J Pharmacokinet Biopharm. 1996;24:475–490. [ DOI ] [ PubMed ] [ Google Scholar ]
+27. Galetin A, Gertz M, Houston JB. Potential role of intestinal first-pass metabolism in the prediction of drug-drug interactions. Expert Opin Drug Metab Toxicol. 2008;4:909–922. [ DOI ] [ PubMed ] [ Google Scholar ]
+28. Wang Y, Wang S, Liu Y, et al.
+Characterization of metabolites and cytochrome P450 isoforms involved in the microsomal metabolism of aconitine. J Chromatogr B Analyt Technol Biomed Life Sci. 2006;844:292–300. [ DOI ] [ PubMed ] [ Google Scholar ]
+29. Tang L, Ye L, Lv C, et al.
+Involvement of CYP3A4/5 and CYP2D6 in the metabolism of aconitine using human liver microsomes and recombinant CYP450 enzymes. Toxicol Lett. 2011;202:47–54. [ DOI ] [ PubMed ] [ Google Scholar ]
+30. Sun A, Chen D, Bi P. [Determination of the aconitine alkaloids in traditional Chinese medicine chuanwu and caowu by high performance capillary electrophoresis (HPCE)]. Se Pu. 1999;17:67–69. Chinese. [ PubMed ] [ Google Scholar ]
+31. Xie Y, Jiang ZH, Zhou H, et al.
+Simultaneous determination of six Aconitum alkaloids in proprietary Chinese medicines by high-performance liquid chromatography. J Chromatogr A. 2005;1093:195–203. [ DOI ] [ PubMed ] [ Google Scholar ]
+32. Plaisance P, Lurie KG, Vicaut E, et al.
+A comparison of standard cardiopulmonary resuscitation and active compression-decompression resuscitation for out-of-hospital cardiac arrest. French Active Compression-Decompression Cardiopulmonary Resuscitation Study Group. N Engl J Med. 1999;341:569–575. [ DOI ] [ PubMed ] [ Google Scholar ]
+33. Usui K, Hayashizaki Y, Hashiyada M, et al.
+Simultaneous determination of 11 aconitum alkaloids in human serum and urine using liquid chromatography-tandem mass spectrometry. Leg Med (Tokyo). 2012;14: 126–133. [ DOI ] [ PubMed ] [ Google Scholar ]
+34. He H, Yan F. Relative quantification of the metabolite of aconitine in rat urine by LC-ESI-MS/MS and its application to pharmacokinetics. Anal Sci. 2012;28: 1203–1205. [ DOI ] [ PubMed ] [ Google Scholar ]
+35. Wang Z, Ye M, Xing J, et al. [Determination of aconitine distribution in acute toxic rats by HPLC-MS]. Se Pu. 2005;23:316. Chinese. [ PubMed ] [ Google Scholar ]
+36. Chan TY, Tomlinson B, Tse LK, et al.
+Aconitine poisoning due to Chinese herbal medicines: a review. Vet Hum Toxicol. 1994;36:452–455. [ PubMed ] [ Google Scholar ]
+37. Ohuchi S, Izumoto H, Kamata J, et al. [A case of aconitine poisoning saved with cardiopulmonary bypass]. Kyobu Geka. 2000;53:541–544. Japanese. [ PubMed ] [ Google Scholar ]
+38. Tang L, Gong Y, Lv C, et al.
+Pharmacokinetics of aconitine as the targeted marker of fuzi ( Aconitum carmichaeli ) following single and multiple oral administrations of Fuzi extracts in rat by UPLC/MS/MS. J Ethnopharmacol. 2012;141:736–741. [ DOI ] [ PubMed ] [ Google Scholar ]
+39. Pullela R, Young L, Gallagher B, et al.
+A case of fatal aconitine poisoning by Monkshood ingestion. J Forensic Sci. 2008;53:491–494. [ DOI ] [ PubMed ] [ Google Scholar ]
+40. Dickens P, Tai YT, But PP, et al.
+Fatal accidental aconitine poisoning following ingestion of Chinese herbal medicine: a report of two cases. Forensic Sci Int. 1994;67:55–58. [ DOI ] [ PubMed ] [ Google Scholar ]
+41. Mori A, Mukaida M, Ishiyama I, et al. [Homicidal poisoning by aconite: report of a case from the viewpoint of clinical forensic medicine]. Nihon Hoigaku Zasshi. 1990;44:352–357. Japanese. [ PubMed ] [ Google Scholar ]
+42. Li H, Liu L, Zhu S, et al.
+Case reports of aconite poisoning in mainland China from 2004 to 2015: a retrospective analysis. J Forensic Leg Med. 2016;42: 68–73. [ DOI ] [ PubMed ] [ Google Scholar ]
+43. Ng SW, Ching CK, Chan AY, et al.
+Simultaneous detection of 22 toxic plant alkaloids ( aconitum alkaloids, solanaceous tropane alkaloids, sophora alkaloids, strychnos alkaloids and colchicine) in human urine and herbal samples using liquid chromatography-tandem mass spectrometry. J Chromatogr B Analyt Technol Biomed Life Sci. 2013;942–943:63–69. [ DOI ] [ PubMed ] [ Google Scholar ]
+44. Chan TY. Aconitum alkaloid poisoning related to the culinary uses of aconite roots. Toxins (Basel). 2014;6: 2605–2611. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+45. Chan TY. Aconite poisoning presenting as hypotension and bradycardia. Hum Exp Toxicol. 2009;28:795– 797. [ DOI ] [ PubMed ] [ Google Scholar ]
+46. Smith SW, Shah RR, Hunt JL, et al.
+Bidirectional ventricular tachycardia resulting from herbal aconite poisoning. Ann Emerg Med. 2005;45:100–101. [ DOI ] [ PubMed ] [ Google Scholar ]
+47. Yim KM, Tse ML, Lau FL. Reversible intraventricular conduction defect in aconitine poisoning. Singapore Med J. 2009;50:e302–e305. [ PubMed ] [ Google Scholar ]
+48. Li X, Gu L, Yang L, et al.
+Aconitine: a potential novel treatment for systemic lupus erythematosus. J Pharmacol Sci. 2017;133:115–121. [ DOI ] [ PubMed ] [ Google Scholar ]
+49. Yelnosky J, Clark BB. The response of isolated rabbit atria to aconitine. Br J Pharmacol Chemother. 1960;15:448–453. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+50. Wang SY, Wang GK. Voltage-gated sodium channels as primary targets of diverse lipid-soluble neurotoxins. Cell Signal. 2003;15:151–159. [ DOI ] [ PubMed ] [ Google Scholar ]
+51. Wright SN. Comparison of aconitine-modified human heart (hH1) and rat skeletal (μ1) muscle Na + channels: an important role for external Na + ions. J Physiol. 2002;538:759–771. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+52. Li Y, Tu D, Xiao H, et al.
+Aconitine blocks HERG and Kv1.5 potassium channels. J Ethnopharmacol. 2010; 131:187–195. [ DOI ] [ PubMed ] [ Google Scholar ]
+53. Wang YJ, Chen BS, Lin MW, et al.
+Time-dependent block of ultrarapid-delayed rectifier K + currents by aconitine, a potent cardiotoxin, in heart-derived H9c2 myoblasts and in neonatal rat ventricular myocytes. Toxicol Sci. 2008;106:454–463. [ DOI ] [ PubMed ] [ Google Scholar ]
+54. Bagur R, Hajnoczky G. Intracellular Ca 2+ sensing: its role in calcium homeostasis and signaling. Mol Cell. 2017;66:780–788. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+55. Fang YC, Chou CT, Liang WZ, et al.
+Effect of tetramethylpyrazine (TMP) on Ca 2+ signal transduction and cell viability in a model of renal tubular cells. J Biochem Mol Toxicol. 2017. doi: 10.1002/jbt.21952 [ DOI ] [ PubMed ] [ Google Scholar ]
+56. Morgan AJ, Platt FM, Lloyd-Evans E, et al.
+Molecular mechanisms of endolysosomal Ca 2+ signalling in health and disease. Biochem J. 2011;439:349–374. [ DOI ] [ PubMed ] [ Google Scholar ]
+57. Fleig A, Parekh AB. New insights into Ca 2+ channel function in health and disease. J Physiol. 2017;595: 2997–2998. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+58. Fu M, Wu M, Wang JF, et al.
+Disruption of the intra-cellular Ca 2+ homeostasis in the cardiac excitation-contraction coupling is a crucial mechanism of arrhythmic toxicity in aconitine-induced cardiomyocytes. Biochem Biophys Res Commun. 2007;354:929–936. [ DOI ] [ PubMed ] [ Google Scholar ]
+59. Ketzer LA, Arruda AP, Carvalho DP, et al.
+Cardiac sarcoplasmic reticulum Ca 2+ -ATPase: heat production and phospholamban alterations promoted by cold exposure and thyroid hormone. Am J Physiol Heart Circ Physiol. 2009;297:H556–H563. [ DOI ] [ PubMed ] [ Google Scholar ]
+60. Zhang Y, Yu L, Jin W, et al.
+Reducing toxicity and increasing efficiency: aconitine with liquiritin and glycyrrhetinic acid regulate calcium regulatory proteins in rat myocardial cell. Afr J Tradit Complement Altern Med. 2017;14:69–79. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+61. Zhou YH, Piao XM, Liu X, et al.
+Arrhythmogenesis toxicity of aconitine is related to intracellular Ca 2+ signals. Int J Med Sci. 2013;10:1242–1249. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+62. Amran MS, Hashimoto K, Homma N. Effects of sodium-calcium exchange inhibitors, KB-R7943 and SEA0400, on aconitine-induced arrhythmias in guinea pigs in vivo , in vitro , and in computer simulation studies. J Pharmacol Exp Ther. 2004;310:83–89. [ DOI ] [ PubMed ] [ Google Scholar ]
+63. Dhein S. Gap junction channels in the cardiovascular system: pharmacological and physiological modulation. Trends Pharmacol Sci. 1998;19:229–241. [ DOI ] [ PubMed ] [ Google Scholar ]
+64. Bao X, Reuss L, Altenberg GA. Regulation of purified and reconstituted connexin 43 hemichannels by protein kinase C-mediated phosphorylation of Serine 368. J Biol Chem. 2004;279:20058–20066. [ DOI ] [ PubMed ] [ Google Scholar ]
+65. Lampe PD, TenBroek EM, Burt JM, et al.
+Phosphorylation of connexion 43 on serine 368 by protein kinase C regulates gap junctional communication. J Cell Biol. 2000;149:1503–1512. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+66. Zhang SW, Liu Y, Huang GZ, et al.
+Aconitine alters connexin43 phosphorylation status and [Ca 2+ ] oscillation patterns in cultured ventricular myocytes of neonatal rats. Toxicol In Vitro. 2007;21:1476–1485. [ DOI ] [ PubMed ] [ Google Scholar ]
+67. Wu J, Wang X, Chung YY, et al.
+L-type calcium channel inhibition contributes to the proarrhythmic effects of aconitine in human cardiomyocytes. PLoS One. 2017;12:e168435. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+68. MacDonald AC, Howlett SE. Differential effects of the sodium calcium exchange inhibitor, KB-R7943, on ischemia and reperfusion injury in isolated guinea pig ventricular myocytes. Eur J Pharmacol. 2008;580:214–223. [ DOI ] [ PubMed ] [ Google Scholar ]
+69. Nitzsche D, Melzig MF, Arlt VM. Evaluation of the cytotoxicity and genotoxicity of aristolochic acid I —
+a component of Aristolochiaceae plant extracts used in homeopathy. Environ Toxicol Pharmacol. 2013;35: 325–334. [ DOI ] [ PubMed ] [ Google Scholar ]
+70. Liu F, Tan X, Han X, et al.
+Cytotoxicity of Aconitum alkaloid and its interaction with calf thymus DNA by multi-spectroscopic techniques. Sci Rep. 2017; 7:14509. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+71. Gao X, Zhang X, Hu J, et al.
+Aconitine induces apoptosis in H9c2 cardiac cells via mitochondria-mediated pathway. Mol Med Rep. 2018;17:284–292. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+72. Nanasi PP, Kiss T, Danko M, et al.
+Different actions of aconitine and veratrum alkaloids on frog skeletal muscle. Gen Pharmacol. 1990;21:863–868. [ DOI ] [ PubMed ] [ Google Scholar ]
+73. Muroi M, Kimura I, Kimura M. Blocking effects of hypaconitine and aconitine on nerve action potentials in phrenic nerve-diaphragm muscles of mice. Neuropharmacology. 1990;29:567–572. [ DOI ] [ PubMed ] [ Google Scholar ]
+74. Onur R, Bozdagi O, Ayata C. Effects of aconitine on neurotransmitter release in the rat neuromuscular junction. Neuropharmacology. 1995;34:1139–1145. [ DOI ] [ PubMed ] [ Google Scholar ]
+75. Lin MW, Wang YJ, Liu SI, et al.
+Characterization of aconitine-induced block of delayed rectifier K + current in differentiated NG108-15 neuronal cells. Neuropharmacology. 2008;54:912–923. [ DOI ] [ PubMed ] [ Google Scholar ]
+76. Voss LJ, Voss JM, McLeay L, et al.
+Aconitine induces prolonged seizure-like events in rat neocortical brain slices. Eur J Pharmacol. 2008;584:291–296. [ DOI ] [ PubMed ] [ Google Scholar ]
+77. Ameri A, Shi Q, Aschoff J, et al.
+Electrophysiological effects of aconitine in rat hippocampal slices. Neuropharmacology. 1996;35:13–22. [ DOI ] [ PubMed ] [ Google Scholar ]
+78. Xiao K, Wang L, Liu Y, et al.
+Study of aconitine toxicity in rat embryos in vitro . Birth Defects Res B Dev Reprod Toxicol. 2007;80:208–212. [ DOI ] [ PubMed ] [ Google Scholar ]
+79. Wada K, Nihira M, Ohno Y. Effects of chronic administrations of aconitine on body weight and rectal temperature in mice. J Ethnopharmacol. 2006;105:89–94. [ DOI ] [ PubMed ] [ Google Scholar ]
+80. Wada K, Nihira M, Hayakawa H, et al.
+Effects of long-term administrations of aconitine on electrocardiogram and tissue concentrations of aconitine and its metabolites in mice. Forensic Sci Int. 2005;148:21–29. [ DOI ] [ PubMed ] [ Google Scholar ]
+81. Su CY. [Role of P-glycoprotein in pharmacokinetics and its clinical implications]. Yao Xue Xue Bao. 2005; 40:673–679. Chinese. [ PubMed ] [ Google Scholar ]
+82. Wu J, Lin N, Li F, et al.
+Induction of P-glycoprotein expression and activity by Aconitum alkaloids: implication for clinical drug-drug interactions. Sci Rep. 2016;6:25343. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+83. Zhang P, Zhang F, Wang Z, et al. [Simultaneous determination of four trace aconitum alkaloids in urine using ultra performance liquid chromatography-mass spectrometry]. Se Pu. 2013;31:211–217. Chinese. [ DOI ] [ PubMed ] [ Google Scholar ]
+Articles from Forensic Sciences Research are provided here courtesy of Oxford University Press
+ACTIONS
+View on publisher site
+PDF (616.1 KB)
+Cite
+Collections
+Permalink
+PERMALINK
+Copy
+RESOURCES
+Similar articles
+Cited by other articles
+Links to NCBI Databases
+Cite
+Copy
+Download .nbib
+.nbib
+Format:
+AMA
+APA
+MLA
+NLM
+Add to Collections
+Create a new collection
+Add to an existing collection
+Name your collection
+*
+Choose a collection
+Unable to load your collection due to an error
+Please try again
+Add
+Cancel
+Follow NCBI
+NCBI on X (formerly known as Twitter)
+NCBI on Facebook
+NCBI on LinkedIn
+NCBI on GitHub
+NCBI RSS feed
+Connect with NLM
+NLM on X (formerly known as Twitter)
+NLM on Facebook
+NLM on YouTube
+National Library of Medicine
+8600 Rockville Pike
+Bethesda, MD 20894
+Web Policies
+FOIA
+HHS Vulnerability Disclosure
+Help
+Accessibility
+Careers
+NLM
+NIH
+HHS
+USA.gov
+Back to Top

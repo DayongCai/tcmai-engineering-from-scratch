@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/19-tuina-zhiliao-xue/12-shuzihua-ai/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 55.97,
+  "estimatedCues": 0,
+  "videoSeconds": 55.998667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.32,
+      "seconds": 4.32,
+      "estimated": false,
+      "text": "第 12 章 · 推拿治疗数字化与AI时代",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.32,
+      "end": 16.13,
+      "seconds": 11.81,
+      "estimated": false,
+      "text": "「《医宗金鉴·正骨心法要旨》」——教材·第12章·12.1.1。本章要回答的是：把治疗方案数字化，最先丢掉的是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 16.13,
+      "end": 24.03,
+      "seconds": 7.9,
+      "estimated": false,
+      "text": "手法组合可以结构化，力度与手感不能；数字化最容易把「因人而异」抹成「标准流程」。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 24.03,
+      "end": 44.67,
+      "seconds": 20.64,
+      "estimated": false,
+      "text": "环境逼迫（病人来了是为治病，不是为学手法；方案错了，手法越熟越糟）+ 知识积累（本章 3 单元 6,052 汉字；三辨主 手法方案 126；四位面（病证部位）主 脊柱 33；引书 6 部 6 次；数值类命中 2）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 44.67,
+      "end": 55.97,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """图 2-1 阴阳 → 二分类：权重符号与 sigmoid 的互补性
 
-内容依据：textbooks/01-zhongyi/01-zhongyi-jichu-lilun/02-第2章-阴阳：从对立范畴到二分类.md §2.2
+内容依据：textbooks/01-zhongyi/01-zhongyi-jichu-lilun/02-第2章-阴阳：从对立范畴到二分类.md §N.2
   「把输出写成硬标签（0 或 1）会立刻损失一个东西：程度」
   「p = σ(z) = 1/(1+e^{-z}),  z = w^Tx + b」
   「(1) 保留了强度。p = 0.55 与 p = 0.95 在临床上对应完全不同的处置思路」

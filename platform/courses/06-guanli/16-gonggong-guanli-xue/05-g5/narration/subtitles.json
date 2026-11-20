@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/06-guanli/16-gonggong-guanli-xue/05-g5/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 52.46,
+  "estimatedCues": 0,
+  "videoSeconds": 52.498667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 2.83,
+      "seconds": 2.83,
+      "estimated": false,
+      "text": "第 5 章 · 公共政策分析",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 2.83,
+      "end": 12.55,
+      "seconds": 9.72,
+      "estimated": false,
+      "text": "「《公共管理学·公共政策分析》」——教材第5章。本章要回答的是：公共政策分析：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 12.55,
+      "end": 15.77,
+      "seconds": 3.22,
+      "estimated": false,
+      "text": "公共政策分析：本课第 5 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 15.77,
+      "end": 41.16,
+      "seconds": 25.39,
+      "estimated": false,
+      "text": "环境逼迫（公共管理的判据是「谁授权、对谁负责、怎么评」三问，答不上就不是公共管理）+ 知识积累（本章 10 单元 14,078 汉字；三辨主 制度与规则 385；四位面（章群结构）主 职能与政策 14078；引书 33 部 50 次；数值类命中 68）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 41.16,
+      "end": 52.46,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

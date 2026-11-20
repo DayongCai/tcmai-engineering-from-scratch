@@ -1,0 +1,140 @@
+{
+  "$generated": "手工维护：腧穴学「教材 16 章 vs 教学 12 章」的口径登记。教学按知识模块切 12 章，教材按底本逐经切 16 章；第 11、12 章在教材无章位，内容补在 附录A（不计章数）。",
+  "subject": "03-zhenjiu/02-shuxue-xue",
+  "title": "腧穴学",
+  "teachingChapters": 12,
+  "textbookChaptersBefore": 16,
+  "textbookChaptersAfter": 16,
+  "chapters": [],
+  "noSupplement": {
+    "reason": "教材 16 章来自底本源表（经络腧穴学）：概述 1 + 十二经各 1 章（12）+ 奇经八脉 1 + 经外奇穴 1 + 现代研究 1。教学计划 12 章按知识模块切：分类定位、骨度分寸、手三阴/手三阳/足三阳/足三阴（4 个经组）、任督、经外奇穴、特定穴、主治规律、危险穴位、数字化。教材「多 4 章」不是漏登记，而是两个方向的差相抵：教材逐经多 8 章（12 经 vs 4 经组），教学把概述拆成 5 章多 4 章。「+4」是算术巧合。",
+    "verdict": "口径差（两把尺子）。不补章、不拆教材；教学侧若要与教材 1:1，须做真重排（见 standards/口径决案.json 的 rejectedOptions），代价是删 5 个概述类章目录、12 个经组章目录改为逐经 12 章、重写 docs/quiz/outputs 契约。",
+    "mapping": [
+      {
+        "plan": 1,
+        "title": "腧穴的分类、命名与定位方法",
+        "textbookChapters": [
+          2
+        ],
+        "probe": "定位"
+      },
+      {
+        "plan": 2,
+        "title": "骨度分寸与体表标志",
+        "textbookChapters": [
+          2
+        ],
+        "probe": "骨度分寸"
+      },
+      {
+        "plan": 3,
+        "title": "手三阴经腧穴",
+        "textbookChapters": [
+          4,
+          8,
+          12
+        ],
+        "probe": "手太阴"
+      },
+      {
+        "plan": 4,
+        "title": "手三阳经腧穴",
+        "textbookChapters": [
+          5,
+          9,
+          13
+        ],
+        "probe": "手阳明"
+      },
+      {
+        "plan": 5,
+        "title": "足三阳经腧穴",
+        "textbookChapters": [
+          6,
+          10,
+          14
+        ],
+        "probe": "足阳明"
+      },
+      {
+        "plan": 6,
+        "title": "足三阴经腧穴",
+        "textbookChapters": [
+          7,
+          11,
+          15
+        ],
+        "probe": "足太阴"
+      },
+      {
+        "plan": 7,
+        "title": "任督二脉腧穴",
+        "textbookChapters": [
+          16
+        ],
+        "probe": "督脉"
+      },
+      {
+        "plan": 8,
+        "title": "经外奇穴与阿是穴",
+        "textbookChapters": [
+          17
+        ],
+        "probe": "经外奇穴"
+      },
+      {
+        "plan": 9,
+        "title": "特定穴：五输、原络、俞募",
+        "textbookChapters": [
+          2
+        ],
+        "probe": "特定穴"
+      },
+      {
+        "plan": 10,
+        "title": "腧穴的主治规律与配穴",
+        "textbookChapters": [
+          2
+        ],
+        "probe": "主治规律"
+      },
+      {
+        "plan": 11,
+        "title": "危险穴位与针刺安全深度",
+        "textbookChapters": [
+          2
+        ],
+        "probe": "危险",
+        "appendix": "textbooks/03-zhenjiu/02-shuxue-xue/附录A-针刺安全深度与数字化定位.md",
+        "appendixProbe": "安全深度"
+      },
+      {
+        "plan": 12,
+        "title": "腧穴定位的数字化与三维模型",
+        "textbookChapters": [
+          19
+        ],
+        "probe": "现代研究",
+        "appendix": "textbooks/03-zhenjiu/02-shuxue-xue/附录A-针刺安全深度与数字化定位.md",
+        "appendixProbe": "数字化"
+      }
+    ],
+    "contentGaps": [],
+    "verifiedBy": "2026-11-16：教学 12 章 → 教材 16 章映射（12 行，教材章号逐条列出）；probe 在所指教材章内 grep 命中；「三维/数字化」实测 0 命中，已记入 contentGaps",
+    "contentGapsFilled": [
+      {
+        "plan": 11,
+        "title": "危险穴位与针刺安全深度",
+        "how": "补在附录A 第二、三节：四类危险结构（胸肺/颅颈延髓/眼/大血管神经干）+ 三步闸门（骨度定位→解剖余量→体型校正）",
+        "evidence": "standards/shuxue/穴位库-全经穴.json：362 穴中 44 穴有「安全红线」，19 穴明写「不可深刺/不可向内上下」；词频心11/肺9/神经8/气胸7/延髓4"
+      },
+      {
+        "plan": 12,
+        "title": "腧穴定位的数字化与三维模型",
+        "how": "补在附录A 第四节：坐标化→三维配准→误差溯源→可复现 四步，每步给可验收判据（配准残差 ≤5 mm、重复配准差异 < 单次误差 1/3）",
+        "evidence": "穴位库-国标.json 提供 GB/T 12346-2021 条款级定位（locator 形如「外源·GB/T 12346-2021 第5.1.1条」），可直接做机器对照"
+      }
+    ],
+    "contentGapNote": "原先记的两条内容缺口（安全深度专节、数字化）已由 附录A 补上（教材章数不变，附录不计章）；若将来要把它们做成独立章，需先补影像/解剖测量底本，现不编毫米级数值。"
+  }
+}

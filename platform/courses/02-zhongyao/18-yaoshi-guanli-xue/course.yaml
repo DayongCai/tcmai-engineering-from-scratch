@@ -1,0 +1,198 @@
+# [tcmP] 课程编排 · 02-zhongyao/18-yaoshi-guanli-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 18-yaoshi-guanli-xue
+title: 药事管理学
+en: Pharmacy Administration
+dept: 02-zhongyao
+dept_title: 中药系
+semester: 7
+stage: zhuang
+hours: 36
+chapters_target: 28
+bridge: 药政流程→BPMN / 合规检查→规则引擎
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-dingyi-fenlei
+    title: 第1章 药品注册的定义与分类管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.13
+    measured_minutes: 1.11
+  - slug: 02-shenqingren
+    title: 第2章 申请人资格与法律责任
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.06
+  - slug: 03-shangshi-qian
+    title: 第3章 上市前研究：药学、药理毒理与临床
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.17
+    measured_minutes: 1.16
+  - slug: 04-linchuang-shiji
+    title: 第4章 药物临床试验：分期、伦理与备案
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.17
+    measured_minutes: 1.15
+  - slug: 05-anquan-biangeng
+    title: 第5章 试验期间的安全报告与变更控制
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.17
+    measured_minutes: 1.12
+  - slug: 06-shenping
+    title: 第6章 审评与审批：结论怎么形成
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.12
+    measured_minutes: 1.12
+  - slug: 07-hecha-jianyan
+    title: 第7章 注册核查与注册检验
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.07
+  - slug: 08-jiakuai
+    title: 第8章 加快通道：突破性治疗、附条件批准、优先审评
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.17
+    measured_minutes: 1.18
+  - slug: 09-shangshi-hou
+    title: 第9章 上市后变更与再注册
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.12
+    measured_minutes: 1.1
+  - slug: 10-zhongyao-tese
+    title: 第10章 中药注册的特殊性
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.08
+  - slug: 11-dingyi-shiyong
+    title: 第11章 药品的定义与适用范围
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.02
+  - slug: 12-chiyouren
+    title: 第12章 上市许可持有人制度：一个人对全生命周期负责
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.2
+    measured_minutes: 1.13
+  - slug: 13-zhuisu
+    title: 第13章 药品追溯制度
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.01
+  - slug: 14-shengchan
+    title: 第14章 药品生产：许可与 GMP
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.06
+  - slug: 15-jingying
+    title: 第15章 药品经营：许可与 GSP
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.06
+  - slug: 16-fenlei-wangluo-guanggao
+    title: 第16章 处方药分类、网络销售与广告管制
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.08
+  - slug: 17-yiliaojigou
+    title: 第17章 医疗机构药事管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.04
+  - slug: 18-shangshihou-jiancha
+    title: 第18章 上市后管理与不良反应监测
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.12
+    measured_minutes: 1.06
+  - slug: 19-jialieyao
+    title: 第19章 假药与劣药的认定
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.02
+  - slug: 20-falv-zeren-chubei
+    title: 第20章 法律责任与药品储备供应
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.07
+  - slug: 21-jialie-jianyan-huomian
+    title: 第21章 假劣药的检验与豁免
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.12
+    measured_minutes: 1.1
+  - slug: 22-shishitiao-zengliang
+    title: 第22章 实施条例的增量：委托、网络、免责与激励
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.22
+    measured_minutes: 1.2
+  - slug: 23-yaojing-tixi
+    title: 第23章 药物警戒体系：谁负责、谁执行、靠什么运转
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.17
+    measured_minutes: 1.12
+  - slug: 24-geren-xinhao-fengxian
+    title: 第24章 从个例报告到风险控制：时限、信号与定期报告
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.2
+    measured_minutes: 1.16
+  - slug: 25-gmp-tixi-rendyuan
+    title: 第25章 GMP 的体系要求与关键人员
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.12
+    measured_minutes: 1.09
+  - slug: 26-gmp-sigen-zhizhu
+    title: 第26章 GMP 的四根支柱：验证、变更、偏差、回顾
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.2
+    measured_minutes: 1.17
+  - slug: 27-gsp-zuzhi
+    title: 第27章 GSP 的组织条件：体系、人员与设施
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.17
+    measured_minutes: 1.14
+  - slug: 28-gsp-sizhizhu
+    title: 第28章 GSP 的四个支点：验收、储存、记录、冷链
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.2
+    measured_minutes: 1.18

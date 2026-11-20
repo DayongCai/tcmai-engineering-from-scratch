@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/04-gushang/07-zhongyi-jinshang-xue/04-shoufa-guding/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 58.15,
+  "estimatedCues": 0,
+  "videoSeconds": 58.184667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.1,
+      "seconds": 3.1,
+      "estimated": false,
+      "text": "第 4 章 · 理筋手法与固定",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.1,
+      "end": 18.36,
+      "seconds": 15.26,
+      "estimated": false,
+      "text": "「《中医筋伤学·理筋手法与固定》」——派生课：篇名为本课程章名，出处见 units.json 的 source 字段。本章要回答的是：理筋手法与固定的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 18.36,
+      "end": 21.91,
+      "seconds": 3.55,
+      "estimated": false,
+      "text": "先松解再固定，顺序反了会加重。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 21.91,
+      "end": 46.85,
+      "seconds": 24.94,
+      "estimated": false,
+      "text": "环境逼迫（骨伤课的共同判据：先排危险（感染/结核/肿瘤/神经血管），再谈手法与康复）+ 知识积累（本章 6 单元 11,620 汉字；三辨主 手法治疗 241；四位面（章群结构）主 病理与手法 11620；引书 4 部 11 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 46.85,
+      "end": 58.15,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

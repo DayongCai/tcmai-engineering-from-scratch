@@ -1,9 +1,9 @@
 {
   "schema": "tcm-media-bundle/1",
-  "generatedAt": "2026-11-10T19:57:41.949Z",
+  "generatedAt": "2026-11-16T08:13:24.668Z",
   "partMaxBytes": 1717986918.4,
-  "totalChapters": 126,
-  "totalBytes": 7046789120,
+  "totalChapters": 150,
+  "totalBytes": 7840747520,
   "bundles": [
     {
       "course": "01-zhongyi/01-zhongyi-jichu-lilun",
@@ -85,7 +85,173 @@
         }
       ],
       "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
-      "packedAt": "2026-11-10T19:57:26.678Z"
+      "packedAt": "2026-11-16T08:11:12.081Z"
+    },
+    {
+      "course": "01-zhongyi/08-jingui-yaolue",
+      "title": "金匮要略",
+      "version": "v1",
+      "chapterCount": 24,
+      "totalDurationSec": 20659.897,
+      "totalBytes": 787124242,
+      "partMaxBytes": 1717986918.4,
+      "parts": [
+        {
+          "part": 1,
+          "file": "08-jingui-yaolue-v1-part-01.tar",
+          "bytes": 793958400,
+          "sha256": "7925d63b09a82d3617fd251a066a817a9cbbabae6d0dc96eeb3bf155278edae9",
+          "chapters": [
+            {
+              "slug": "01-chengshu-zabing",
+              "title": "第1章 金匮的成书与杂病分类",
+              "bytes": 15196506,
+              "durationSec": 418.795
+            },
+            {
+              "slug": "02-zangfu-chuanbian",
+              "title": "第2章 脏腑经络先后病：传变与预防",
+              "bytes": 45125135,
+              "durationSec": 1177.91
+            },
+            {
+              "slug": "03-jing-shi-ye",
+              "title": "第3章 痉湿暍病：外感杂病的辨识",
+              "bytes": 46506883,
+              "durationSec": 1246.87
+            },
+            {
+              "slug": "04-baihe-huhuo",
+              "title": "第4章 百合狐惑阴阳毒：少见病的鉴别",
+              "bytes": 46230511,
+              "durationSec": 1213.19
+            },
+            {
+              "slug": "05-nueb-zhongfeng",
+              "title": "第5章 疟病与中风历节：节律与痹阻",
+              "bytes": 47959576,
+              "durationSec": 1297.46
+            },
+            {
+              "slug": "06-pibai-xulao",
+              "title": "第6章 血痹虚劳：虚损的分层",
+              "bytes": 44666956,
+              "durationSec": 1109.61
+            },
+            {
+              "slug": "07-tanyin-kesou",
+              "title": "第7章 痰饮咳嗽：水液代谢的失效",
+              "bytes": 48196777,
+              "durationSec": 1309.02
+            },
+            {
+              "slug": "08-xiaoke-linbing",
+              "title": "第8章 消渴与淋病：津液与排泄",
+              "bytes": 30132757,
+              "durationSec": 809.62
+            },
+            {
+              "slug": "09-furen-sanpian",
+              "title": "第9章 妇人病三篇：经带胎产的辨证",
+              "bytes": 65605711,
+              "durationSec": 1779.39
+            },
+            {
+              "slug": "10-zabing-peiwu",
+              "title": "第10章 杂病方剂的配伍规律与统计",
+              "bytes": 47347067,
+              "durationSec": 1204.16
+            },
+            {
+              "slug": "11-pian7-feiwei-feiyong",
+              "title": "第11章 肺痿肺痈咳嗽上气",
+              "bytes": 29103687,
+              "durationSec": 744.095
+            },
+            {
+              "slug": "12-pian8-bentun",
+              "title": "第12章 奔豚气",
+              "bytes": 14380402,
+              "durationSec": 380.605
+            },
+            {
+              "slug": "13-pian9-xiongbi",
+              "title": "第13章 胸痹心痛短气",
+              "bytes": 19134609,
+              "durationSec": 504.643
+            },
+            {
+              "slug": "14-pian10-fuman-shanjia",
+              "title": "第14章 腹满寒疝宿食",
+              "bytes": 29916518,
+              "durationSec": 768.645
+            },
+            {
+              "slug": "15-pian11-zangfu-jiju",
+              "title": "第15章 五脏风寒积聚",
+              "bytes": 22058502,
+              "durationSec": 554.925
+            },
+            {
+              "slug": "16-pian14-shuiqi",
+              "title": "第16章 水气",
+              "bytes": 40426582,
+              "durationSec": 1010.145
+            },
+            {
+              "slug": "17-pian15-huangdan",
+              "title": "第17章 黄疸",
+              "bytes": 22756232,
+              "durationSec": 592.971
+            },
+            {
+              "slug": "18-pian16-jingji-tunv",
+              "title": "第18章 惊悸吐衄下血胸满瘀血",
+              "bytes": 17773259,
+              "durationSec": 467.639
+            },
+            {
+              "slug": "19-pian17-outu-yueli",
+              "title": "第19章 呕吐哕下利",
+              "bytes": 36276920,
+              "durationSec": 933.105
+            },
+            {
+              "slug": "20-pian18-chuangyong",
+              "title": "第20章 疮痈肠痈浸淫",
+              "bytes": 16072699,
+              "durationSec": 423.189
+            },
+            {
+              "slug": "21-pian19-fujue-shanchong",
+              "title": "第21章 趺蹶手指臂肿转筋阴狐疝蚘虫",
+              "bytes": 14221488,
+              "durationSec": 394.371
+            },
+            {
+              "slug": "22-pian23-zaliaofang",
+              "title": "第22章 杂疗方",
+              "bytes": 26973631,
+              "durationSec": 691.033
+            },
+            {
+              "slug": "23-pian24-qinshou-jinji",
+              "title": "第23章 禽兽鱼虫禁忌",
+              "bytes": 34398480,
+              "durationSec": 912.017
+            },
+            {
+              "slug": "24-pian25-guoshi-jinji",
+              "title": "第24章 果实菜谷禁忌",
+              "bytes": 26663354,
+              "durationSec": 716.489
+            }
+          ],
+          "sourceBytes": 787124242
+        }
+      ],
+      "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
+      "packedAt": "2026-11-16T08:12:35.303Z"
     },
     {
       "course": "01-zhongyi/10-zhongyi-neike-xue",
@@ -191,7 +357,7 @@
         }
       ],
       "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
-      "packedAt": "2026-11-10T19:57:28.211Z"
+      "packedAt": "2026-11-16T08:12:40.037Z"
     },
     {
       "course": "09-jichu/11-bingli-shengli-xue",
@@ -549,7 +715,7 @@
         }
       ],
       "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
-      "packedAt": "2026-11-10T19:57:35.863Z"
+      "packedAt": "2026-11-16T08:13:05.692Z"
     },
     {
       "course": "09-jichu/12-yaoli-xue",
@@ -874,7 +1040,7 @@
         }
       ],
       "note": "解压：tar -xf <part>.tar -C <目标目录>；各卷互不重叠，按章切分，可单独解压其中一卷。",
-      "packedAt": "2026-11-10T19:57:41.948Z"
+      "packedAt": "2026-11-16T08:13:24.667Z"
     }
   ],
   "uploadHint": "GitHub: gh release upload media-v1 <file>；或 rclone copy 到对象存储的 /v1/offline/ 前缀。"

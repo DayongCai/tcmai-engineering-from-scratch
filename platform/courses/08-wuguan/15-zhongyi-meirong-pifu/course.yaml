@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 08-wuguan/15-zhongyi-meirong-pifu
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/08-wuguan/15-zhongyi-meirong-pifu/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 15-zhongyi-meirong-pifu
+title: 中医美容与皮肤治疗学
+en: TCM Cosmetology & Dermatology
+dept: 08-wuguan
+dept_title: 五官口腔系
+semester: 8
+stage: zhuang
+hours: 54
+chapters_target: 8
+bridge: 皮肤图像→病变分割 / 面部年轻化→图像评价
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-shechuanchuang
+    title: 第1章 蛇串疮（带状疱疹）
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.95
+  - slug: 02-shichuang
+    title: 第2章 湿疮（湿疹）
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.9
+  - slug: 03-yinzhen
+    title: 第3章 瘾疹（荨麻疹）
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.92
+  - slug: 04-baipi
+    title: 第4章 白疕（银屑病）
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.92
+  - slug: 05-youfeng
+    title: 第5章 油风（脱发）
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.9
+  - slug: 06-fenci
+    title: 第6章 粉刺（痤疮）
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.9
+  - slug: 07-jiuzhabi
+    title: 第7章 酒齄鼻（玫瑰痤疮）
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.94
+  - slug: 08-yaodu-jiechuang
+    title: 第8章 药毒与疥疮：鉴别与边界
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1

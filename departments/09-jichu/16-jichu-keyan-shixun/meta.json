@@ -23,12 +23,12 @@
     "id": "textbooks",
     "path": "textbooks/09-jichu/16-jichu-keyan-shixun",
     "chaptersWritten": 6,
-    "words": 3451,
+    "words": 7544,
     "status": "wip",
     "layer": "handbook",
     "contract": "handbook-v1",
     "origin": "handbook",
     "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-    "extractedAt": "2026-11-09"
+    "extractedAt": "2026-11-20"
   }
 }

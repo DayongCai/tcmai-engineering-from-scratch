@@ -23,12 +23,12 @@
     "id": "textbooks",
     "path": "textbooks/06-guanli/26-guanli-biye-sheji",
     "chaptersWritten": 6,
-    "words": 3241,
+    "words": 8959,
     "status": "wip",
     "layer": "handbook",
     "contract": "handbook-v1",
     "origin": "handbook",
     "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-    "extractedAt": "2026-11-09"
+    "extractedAt": "2026-11-20"
   }
 }

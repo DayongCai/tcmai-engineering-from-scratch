@@ -1,0 +1,66 @@
+# [tcmP] 课程编排 · 07-zhineng/03-zhongyi-zhineng-shebei
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 03-zhongyi-zhineng-shebei
+title: 中医智能设备与可穿戴设备
+en: TCM Smart Devices & Wearables
+dept: 07-zhineng
+dept_title: 智能系
+semester: 4
+stage: sheng
+hours: 72
+chapters_target: 10
+bridge: 脉象/舌象采集→传感器融合 / 边缘推理→模型量化
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-q1
+    title: 第1章 绪论——从器械到可穿戴：中医／学科定位与认知地图：120 ／可感测物理量四元：光子 · ／中医智能仪器的分类与可穿戴形
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.4
+    measured_minutes: 1.36
+  - slug: 02-q2
+    title: 第2章 生理信号通道／数据标准与互操作／信号质量与设备质控／Holter 心律检测与 H／脉象与舌象的客观化／多模态融合与四诊合参
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.43
+    measured_minutes: 1.36
+  - slug: 03-q3
+    title: 第3章 中医药通用六快：吃 _ 喝 ／健康自动评价：从可穿戴数据到／临床应用与可穿戴场景／智能中医学：概念与「象—素—
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.33
+    measured_minutes: 1.34
+  - slug: 04-q4
+    title: 第4章 智能四诊数据采集（与四元 _／智能中医诊疗标准化：数据 ·／典型应用：中医慢性疼痛智能诊／智慧中医学：内涵、任务与教材／智慧中医伦理要求与基本条件
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.55
+    measured_minutes: 1.56
+  - slug: 05-q5
+    title: 第5章 智能装备 · 扩展现实 · ／智慧中医综合实训：设备清单与／伦理、安全与展望（含实验）／光遗传学与神经调控（2026
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.37
+    measured_minutes: 1.31
+  - slug: 06-q6
+    title: 第6章 科技布局与未来（含实验）／发展前景与展望（含实验）／实验（扩展：四元捕获 · 六
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.2
+    measured_minutes: 1.17

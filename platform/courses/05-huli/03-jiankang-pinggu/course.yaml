@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 05-huli/03-jiankang-pinggu
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/05-huli/03-jiankang-pinggu/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 03-jiankang-pinggu
+title: 健康评估
+en: Health Assessment
+dept: 05-huli
+dept_title: 护理系
+semester: 3
+stage: sheng
+hours: 54
+chapters_target: 8
+bridge: 问诊查体→结构化采集 / 异常体征→规则+ML 判别
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-sishiying-kuangjia
+    title: 第1章 四域适应框架与「从容长寿」基线
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.04
+  - slug: 02-shengli-shiying
+    title: 第2章 生理适应能力：生命体征与一般状态的判读
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.08
+  - slug: 03-xinli-shiying
+    title: 第3章 心理适应能力：尊严、自主与情绪的判读
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.08
+  - slug: 04-shehui-shiying
+    title: 第4章 社会适应能力：角色、家庭与支持的判读
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.07
+  - slug: 05-huanjing-shiying
+    title: 第5章 环境生态适应能力：场所、季节与可达性的判读
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.07
+  - slug: 06-zonghe-panduan
+    title: 第6章 四域整合判断与量表的使用
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.04
+  - slug: 07-jilu-goutong
+    title: 第7章 评估结果的记录与沟通
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.98
+  - slug: 08-piancha-zhili
+    title: 第8章 评估偏差、过度检查与质量治理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1

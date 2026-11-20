@@ -1,0 +1,105 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/07-shanghanlun/06-taiyin-xuhan/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 9,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 203.07,
+  "estimatedCues": 0,
+  "videoSeconds": 203.102667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.83,
+      "seconds": 5.83,
+      "estimated": false,
+      "text": "第 6 章 · 太阴病：一条提纲撑起的一章，理中丸不在这一篇",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.83,
+      "end": 17.88,
+      "seconds": 12.05,
+      "estimated": false,
+      "text": "「太阴之为病，腹满而吐，食不下，自利益甚，时腹自痛，下之必胸下结硬。」——《伤寒论·辨太阴病脉证并治》（篇 23）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 17.88,
+      "end": 35.06,
+      "seconds": 17.18,
+      "estimated": false,
+      "text": "教材说「太阴病，理中汤主之」「自利不渴者，属太阴，宜服四逆辈」。你打开底本一查：理中丸 5 处，全在霍乱篇；「自利不渴」0 处；「四逆辈」0 处。太阴这一经，底本只给你一条提纲。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 35.06,
+      "end": 45.33,
+      "seconds": 10.27,
+      "estimated": false,
+      "text": "环境逼迫(要讲太阴病却无篇可依) + 知识积累(逐篇拆解 × 证据链核对 = 知道哪句能引、哪句是拼合)",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 45.33,
+      "end": 72.88,
+      "seconds": 27.55,
+      "estimated": false,
+      "text": "逐字引出太阴提纲，并对比篇 27 的异文（「若下之」/「下之必」） 用实测说明太阴篇在底本里的真实状态：1 条提纲 + 186 条混编 + 7 条目录残片 说清「理中丸 ， 太阴病」这条教材链条在底本里断在哪一环 写一个证据链核对器：给定「结论←条文」的映射，逐环报「命中/缺失/跨篇」",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "concept",
+      "start": 72.88,
+      "end": 171.54,
+      "seconds": 98.66,
+      "estimated": false,
+      "text": "底本里的太阴，被切成三块 所以「太阴病域 194 条」这个数字是真的，但可用的太阴条文只有 1 条提纲，其余是混编与目录。 提纲的两个版本 太阴之为病，腹满而吐，食不下，自利益甚，时腹自痛，下之必胸下结硬。——（篇 23） 太阴之为病，腹满而吐，食不下，自利益甚，时腹自痛，若下之，必胸下结硬。——（篇 27 第 1 条） 差别在「下之必」与「若下之，必」：前者是断言，后者是条件。这一字之差会改变条文性质——是「误下必然结硬」还是「若误下则会结硬」。本章两版并列，不择一。 教材链条断在哪一环 教材常见的推理链是： 逐环核对底本： 结论不是「教材错」，而是：「太阴—理中丸」这条链，是靠跨篇拼合与后世补充成立的，不是太阴篇内部的原文。讲这一章时，引提纲可以引原句；引「理中丸主之」必须标「霍乱篇」，不能标「太阴篇」。 与阳明腹满的鉴别 两经都有腹满，原文给的分辨点不在「满」，而在吐利与寒热： 太阴：腹满而吐，自利益甚，时腹自痛（虚寒，喜温按） 阳明：腹满潮热，大便硬，谵语（实热，拒按） 这个对照可以只用词频与共现算出，不需要背——这也正是代码要做的事。",
+      "audio": "006.mp3"
+    },
+    {
+      "n": 7,
+      "role": "build",
+      "start": 171.54,
+      "end": 176.05,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "007.mp3"
+    },
+    {
+      "n": 8,
+      "role": "verify",
+      "start": 176.05,
+      "end": 191.77,
+      "seconds": 15.72,
+      "estimated": false,
+      "text": "预期：splitPian() 报 12 篇 isToc: true；chainCheck 对「自利不渴」「四逆辈」返回 missing，对「理中丸」返回 crossPian: true；differentiate() 给出太阴/阳明各自的词共现条数。",
+      "audio": "008.mp3"
+    },
+    {
+      "n": 9,
+      "role": "disclaimer",
+      "start": 191.77,
+      "end": 203.07,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "009.mp3"
+    }
+  ]
+}

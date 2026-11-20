@@ -1,0 +1,47 @@
+{
+  "chapter": "14-dic",
+  "slideCount": 8,
+  "segmentCount": 8,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 23
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 88
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 158
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 175
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 521
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 323
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 106
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 52
+    }
+  ]
+}

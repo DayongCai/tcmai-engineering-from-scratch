@@ -1,0 +1,90 @@
+# [tcmP] 课程编排 · 03-zhenjiu/05-tuina-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/03-zhenjiu/05-tuina-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 05-tuina-xue
+title: 推拿学
+en: Tui Na (Chinese Massage)
+dept: 03-zhenjiu
+dept_title: 针灸系
+semester: 4
+stage: sheng
+hours: 72
+chapters_target: 10
+bridge: 手法参数→力-时曲线 / 疗效评价→量表分析
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-yuanliu-yuanli
+    title: 第1章 推拿的源流与治疗原理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 0.99
+  - slug: 02-shiyingzheng-fengxian
+    title: 第2章 推拿的适应证、禁忌与风险
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.94
+  - slug: 03-chengren-buwei
+    title: 第3章 成人推拿的常用部位与操作
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 04-xiaoer-tuina
+    title: 第4章 小儿推拿的特定穴与手法
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.98
+  - slug: 05-jizhu-tuina
+    title: 第5章 脊柱推拿与手法安全性
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.95
+  - slug: 06-jingjian-yaotui
+    title: 第6章 推拿治疗颈肩腰腿痛
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97
+  - slug: 07-neike-fuke
+    title: 第7章 推拿在内科与妇科的应用
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.94
+  - slug: 08-lixue-celiang
+    title: 第8章 推拿的力学测量与剂量
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.91
+  - slug: 09-liaoxiao-pingjia
+    title: 第9章 推拿疗效的评价与盲法难题
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.93
+  - slug: 10-chufang-jilu
+    title: 第10章 推拿处方的结构化记录
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.92

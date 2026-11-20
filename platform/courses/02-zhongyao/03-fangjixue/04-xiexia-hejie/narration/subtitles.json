@@ -1,0 +1,85 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/03-fangjixue/04-xiexia-hejie/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 7,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 149.55,
+  "estimatedCues": 0,
+  "videoSeconds": 149.588667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.86,
+      "seconds": 5.86,
+      "estimated": false,
+      "text": "第 4 章 · 泻下剂与和解剂：下与和，方向相反的两个「通」",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.86,
+      "end": 27.84,
+      "seconds": 21.98,
+      "estimated": false,
+      "text": "「承者顺也，气者胃气也」——教材·第6章·6.1.4。阳明燥结而胃气不通，非顺承其气、荡涤其积，不能复其通降之常。这句话把「承气」二字拆开讲完了：承的不是药力，是胃气的方向。（《方剂学·第6章·6.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 27.84,
+      "end": 47.35,
+      "seconds": 19.51,
+      "estimated": false,
+      "text": "你背得出大承气汤四味，也能说出小柴胡汤七味，但病人一句「大便不通、肚子胀、还发烧」，你却说不清该往下推还是往两边和；更说不通的是——为什么只有四味药的大承气汤最猛，而十味药的黄龙汤反而要慢慢来。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 47.35,
+      "end": 70.05,
+      "seconds": 22.7,
+      "estimated": false,
+      "text": "环境逼迫(急诊与门诊里「便秘」和「发热」是同一句话的两种读法：里实可下、少阳不可下，误下一剂就可能把表邪引入里) + 知识积累(把 11 首方读成 11 个药味集合，用相似度与子集关系算「类方」与「合方」，下与和的分野才从口诀变成可核对的差集)",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 70.05,
+      "end": 116.39,
+      "seconds": 46.34,
+      "estimated": false,
+      "text": "说清「下」与「和」不是力度差别，而是方向差别：一个把邪从大肠推出去，一个把枢机在表里之间转开 用 formulas.json 现算本章规模：11 方 / 67 药位 / 去重 34 味 / 每方平均 6.1 味，并解释那 1 条被剔出的抽取残句 把每首方读成一个药味集合，用 Jaccard 排出「最近邻」，指出最高相似对（小柴胡汤 ~ 半夏泻心汤 0.56）为什么不能互换 用真子集关系找出本章唯一的合方边：大承气汤（4 味）⊂ 黄龙汤（10 味） 复述两个反例：药味数不度量峻猛度；相似度高不度量可替换性",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "build",
+      "start": 116.39,
+      "end": 138.25,
+      "seconds": 21.86,
+      "estimated": false,
+      "text": "code/main.js 做的事只有四步：读 formulas.json ， 按章号 ['6','7'] 过滤出 11 方 ， 每方取 composition.herbs 并按噪声判据清洗 ， 算频次、Jaccard、子集、角色覆盖、逐节药位。文中所有数字都是它打印出来的，包括那两个反例。",
+      "audio": "006.mp3"
+    },
+    {
+      "n": 7,
+      "role": "disclaimer",
+      "start": 138.25,
+      "end": 149.55,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "007.mp3"
+    }
+  ]
+}

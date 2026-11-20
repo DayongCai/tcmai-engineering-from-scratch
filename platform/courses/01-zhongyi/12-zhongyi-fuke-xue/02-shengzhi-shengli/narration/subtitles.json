@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/12-zhongyi-fuke-xue/02-shengzhi-shengli/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 82.5,
+  "estimatedCues": 0,
+  "videoSeconds": 82.538667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.75,
+      "seconds": 4.75,
+      "estimated": false,
+      "text": "第 2 章 · 生殖脏器与生理：一台四段的发动机",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.75,
+      "end": 11.85,
+      "seconds": 7.1,
+      "estimated": false,
+      "text": "「阴搏阳别，谓之有子」——教材·第2章·2.4.2（《素问·阴阳别论》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 11.85,
+      "end": 37.67,
+      "seconds": 25.82,
+      "estimated": false,
+      "text": "这一章是全书唯一讲「正常」的章。学生常跳过它去背病证，结果所有辨证都悬空：不知道为什么经间期带下会变稀、为什么妊娠脉是滑、为什么哺乳期不来月经还能怀孕。教材把答案放在四个节律里：月经周期（阴阳消长）、带下（随周期变）、妊娠（血聚养胎）、乳汁（血化为乳）。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 37.67,
+      "end": 66.69,
+      "seconds": 29.02,
+      "estimated": false,
+      "text": "环境逼迫（同一生理现象在周期不同时相含义相反：经间期带下多而稀是「氤氲之候」，经前带下稠是阳气渐盛；把两者当病就会误治）+ 知识积累（本章 12 单元、11,647 字，病机 162 居三辨首位、肾 81 居四位面首位；数值 19 处——初潮年龄、周期天数、经期天数、经量都在其中）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 66.69,
+      "end": 71.2,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 71.2,
+      "end": 82.5,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

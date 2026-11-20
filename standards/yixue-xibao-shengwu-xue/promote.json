@@ -1,0 +1,140 @@
+{
+  "dept": "09-jichu",
+  "slug": "yixue-xibao-shengwu-xue",
+  "subject": "03-yixue-xibao-shengwu-xue",
+  "courseTitle": "医学细胞生物学",
+  "mode": "derived",
+  "note": "派生底本课：无独立教材，144 单元由三本母本（组织学与胚胎学 / 生理学 / 生物化学）派生，12 章 × 12 单元，单元 locator 为「派生·第N章·X.Y」，母本位置记在 source。章名与教学章一致，12↔12 一对一。",
+  "basis": {
+    "evidence": "standards/yixue-xibao-shengwu-xue/units.json（144 单元 / 246,311 汉字 / 12 章；母本：组织学与胚胎学、生理学、生物化学）",
+    "reference": "standards/zuzhi-peitai-xue/units.json（组织学与胚胎学：形态描述与观察方法）",
+    "method": "scripts/_derive_xbsw.py（派生脚本）"
+  },
+  "chapters": [
+    {
+      "n": 1,
+      "teaching": 1,
+      "teachingSlug": "01-xibao-shengwuxue-gailun",
+      "title": "细胞生物学概论",
+      "src": [],
+      "question": "从「看得见的结构」到「测得出的分子」，细胞生物学的观察方式变了几次？"
+    },
+    {
+      "n": 2,
+      "teaching": 2,
+      "teachingSlug": "02-xibaomo-yu-kuamo-yunshu",
+      "title": "细胞膜与跨膜运输",
+      "src": [],
+      "question": "一道膜，凭什么同时做到「挡住不该进的」与「放过必须进的」？"
+    },
+    {
+      "n": 3,
+      "teaching": 3,
+      "teachingSlug": "03-xibao-lianjie-yu-nianfu",
+      "title": "细胞连接与细胞黏附",
+      "src": [],
+      "question": "细胞之间靠什么既连得住，又留得住通道？"
+    },
+    {
+      "n": 4,
+      "teaching": 4,
+      "teachingSlug": "04-xibao-waijizhi",
+      "title": "细胞外基质与细胞微环境",
+      "src": [],
+      "question": "细胞外的「非细胞成分」，如何决定细胞的行为？"
+    },
+    {
+      "n": 5,
+      "teaching": 5,
+      "teachingSlug": "05-xibao-gujia-yu-yundong",
+      "title": "细胞骨架与细胞运动",
+      "src": [],
+      "question": "细胞没有肌肉，靠什么产生定向的力与位移？"
+    },
+    {
+      "n": 6,
+      "teaching": 6,
+      "teachingSlug": "06-shenjingyuan-xinxi-chuandi",
+      "title": "神经元与细胞间信息传递",
+      "src": [],
+      "question": "一次电信号，如何变成下一个细胞听得懂的化学语言？"
+    },
+    {
+      "n": 7,
+      "teaching": 7,
+      "teachingSlug": "07-xibaohe-yu-ransezhi",
+      "title": "细胞核与染色质",
+      "src": [],
+      "question": "两米长的 DNA，怎么装进几微米的核里，还能被精确读取？"
+    },
+    {
+      "n": 8,
+      "teaching": 8,
+      "teachingSlug": "08-jiyin-biaoda-tiaokong",
+      "title": "基因表达调控",
+      "src": [],
+      "question": "同一个基因组，为什么长出了几百种细胞？"
+    },
+    {
+      "n": 9,
+      "teaching": 9,
+      "teachingSlug": "09-xibao-zhouqi-yu-dna-fuzhi",
+      "title": "细胞周期与 DNA 复制",
+      "src": [],
+      "question": "复制一次就分一次，细胞凭什么不早不晚地按下开关？"
+    },
+    {
+      "n": 10,
+      "teaching": 10,
+      "teachingSlug": "10-danbaizhi-hecheng-yu-xibao-gongneng",
+      "title": "蛋白质合成与细胞功能",
+      "src": [],
+      "question": "从 mRNA 到有功能的蛋白，中间隔着几道关卡？"
+    },
+    {
+      "n": 11,
+      "teaching": 11,
+      "teachingSlug": "11-xibao-fenhua-yu-qiguan-fasheng",
+      "title": "细胞分化与器官发生",
+      "src": [],
+      "question": "一群相同的细胞，怎么排成了一个有形状的器官？"
+    },
+    {
+      "n": 12,
+      "teaching": 12,
+      "teachingSlug": "12-xibao-yu-fenzi-jishu",
+      "title": "细胞与分子常用技术",
+      "src": [],
+      "question": "每一项细胞技术，能回答什么问题，又回答不了什么？"
+    }
+  ],
+  "knownIssues": [
+    "本课无独立教材：144 单元由三本母本派生（组织学与胚胎学 / 生理学 / 生物化学），单元 layer 记 `派生·第N章·X.Y`，母本位置在 `source`（如「组织学与胚胎学:教材·第1章·1.1.1」）。教材章 N.1 同时给出两列，读者可回母本核。",
+    "派生底本的固有风险：同一单元可能同时来自两本母本，术语口径未必一致（如「基膜」在组织学与细胞生物学里的成分界定）。教材章只写单元层已归一的口径，冲突处留待 N.5 说明。"
+  ],
+  "derivedDesc": "无独立教材，144 单元由三本母本（组织学与胚胎学 / 生理学 / 生物化学）派生",
+  "disclaimer": "本章为教学整理，不构成诊断或治疗建议；细胞与分子实验的结论须由研究者依设计与资料独立判断。",
+  "interfaces": [
+    {
+      "course": "《组织学与胚胎学》",
+      "how": "提供形态描述与观察方法，本章的细胞层面结论要能落回组织层面的位置。"
+    },
+    {
+      "course": "《生理学》",
+      "how": "功能在器官与系统层的整合，本章给出细胞与分子层的机制前提。"
+    },
+    {
+      "course": "《生物化学》",
+      "how": "分子结构与代谢通路是本课程的物质基础，两者共用同一套术语。"
+    },
+    {
+      "course": "《病理学》",
+      "how": "细胞损伤、适应与死亡的概念直接建立在第 9、11 章的周期与分化之上。"
+    },
+    {
+      "course": "《医学细胞生物学实验》",
+      "how": "第 12 章的技术在此转为操作训练，判据与边界同源。"
+    }
+  ],
+  "summaryPoint": "结构与功能的对应要在同一层级上成立：组织层看位置，分子层看机制，跨层不能互推。"
+}

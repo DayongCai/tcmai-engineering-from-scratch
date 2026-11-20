@@ -1,0 +1,85 @@
+{
+  "$generated": "手工维护：医古文「教材 12 章 vs 教学 8 章」的口径登记（两把尺子，不补章）。",
+  "subject": "01-zhongyi/02-yi-gu-wen",
+  "title": "医古文",
+  "teachingChapters": 8,
+  "textbookChaptersBefore": 12,
+  "textbookChaptersAfter": 12,
+  "chapters": [],
+  "noSupplement": {
+    "reason": "教材按底本逐块切 12 章（概论/工具书/汉字/词汇/语法/断句/今译/传记/医经/方书/医话/数字人文），教学按 8 个模块合并（概论+工具书、汉字+词汇、语法、断句+标点+今译、传记、医经、序文+医话、数字人文）。",
+    "verdict": "口径差（两把尺子）：教材按底本切分，教学按模块合并。不补章、不拆散；换算表见教材 附录B，读者可逐条查对。",
+    "mapping": [
+      {
+        "plan": 1,
+        "title": "医古文概论与工具书",
+        "textbookChapters": [
+          1,
+          2
+        ],
+        "probe": "工具书"
+      },
+      {
+        "plan": 2,
+        "title": "汉字与词汇",
+        "textbookChapters": [
+          3,
+          4
+        ],
+        "probe": "词汇"
+      },
+      {
+        "plan": 3,
+        "title": "语法",
+        "textbookChapters": [
+          5
+        ],
+        "probe": "语法"
+      },
+      {
+        "plan": 4,
+        "title": "断句、标点与今译",
+        "textbookChapters": [
+          6,
+          7
+        ],
+        "probe": "断句"
+      },
+      {
+        "plan": 5,
+        "title": "医家传记文选",
+        "textbookChapters": [
+          8
+        ],
+        "probe": "传记"
+      },
+      {
+        "plan": 6,
+        "title": "医经医论文选",
+        "textbookChapters": [
+          9
+        ],
+        "probe": "医经"
+      },
+      {
+        "plan": 7,
+        "title": "方书本草序文与医话医案",
+        "textbookChapters": [
+          10,
+          11
+        ],
+        "probe": "医话"
+      },
+      {
+        "plan": 8,
+        "title": "医古文与数字人文",
+        "textbookChapters": [
+          12
+        ],
+        "probe": "数字人文"
+      }
+    ],
+    "contentGaps": [],
+    "verifiedBy": "2026-11-16：教学 8 章 → 教材 12 章映射 8 行；probe 在所指教材章内 grep 命中"
+  }
+}

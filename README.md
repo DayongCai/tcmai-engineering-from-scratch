@@ -8,7 +8,7 @@
 </p>
 
 <!-- COUNTS:START (由 scripts/build_catalog.js 生成 — 请勿手工编辑) -->
-**9** 院系 &nbsp;·&nbsp; **189** 学科 &nbsp;·&nbsp; **2154** 章节 &nbsp;·&nbsp; **11547** 学时 &nbsp;·&nbsp; 已建 **2154** 章 &nbsp;·&nbsp; 视频 **150** / 教材章节 **2606**
+**9** 院系 &nbsp;·&nbsp; **189** 学科 &nbsp;·&nbsp; **2166** 章节 &nbsp;·&nbsp; **11547** 学时 &nbsp;·&nbsp; 已建 **2166** 章 &nbsp;·&nbsp; 视频 **2154** / 教材章节 **2692**
 <!-- COUNTS:END -->
 
 <p align="center">
@@ -146,17 +146,28 @@ npm run site     # 构建站点 → site/data.js
 npm run serve    # 本地预览 http://localhost:7788
 ```
 
-### 📚 [textbooks] 187 门学科教材
+### 📚 [textbooks] 189 门学科教材
 
 每章一份教材稿，与课程文档同源不同体：文档讲"怎么做"，教材讲"为什么这样做"。
+**现状（2026-11-15 实测）：128 门有稿 / 2,596 章 / 3,527 万字**，覆盖 189 门学科里的 128 门；
+其余 61 门是派生/合成课（正文复用母课，见 [textbooks/README.md](textbooks/README.md) 的四层分账）。
 
 ```text
 textbooks/<dept>/<subject>/
 ├── 00-前言.md
-├── 01-第1章-<标题>.md      # 每章 ≈ 6000 字，附 Mermaid/SVG 图
-├── figures/
-└── build/                  # 由 scripts/build_book.js 汇成 PDF / EPUB 分卷
+├── 01-第1章-<标题>.md      # 源正文层：来源表名 + sha256 + 本章字数，可逐章复算
+├── figures/                # Mermaid / SVG / matplotlib，源文件与产物成对
+└── build/                  # 五卷汇总（不入库，--all 约 10 秒重建）
 ```
+
+```bash
+npm run deliver              # 一次性：重建站点投影 + 五卷教材 + 自检（章数/一致性/图对账）
+npm run textbooks:book -- --all        # 只出五卷：build/volume-{1..5}-*.{md,html}
+npm run textbooks:book:check           # 校核：2,596 章口径 + 图对账 + 事实一致性（有问题退出码 1）
+npm run textbooks:board                # 教材看板：9 院系 × 189 学科的逐门对账
+```
+
+单文件 HTML 是**成品**（自包含、可离线双击、目录可点、带免责）；PDF 需 `pandoc`（本机缺失，缺时不生成占位件）。
 
 #### 已有外部教材稿（导入，非手写）
 

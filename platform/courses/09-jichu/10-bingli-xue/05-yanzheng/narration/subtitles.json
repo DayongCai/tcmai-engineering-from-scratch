@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/10-bingli-xue/05-yanzheng/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 110.74,
+  "estimatedCues": 0,
+  "videoSeconds": 110.758667,
+  "videoMinusNarrationSeconds": 0.019,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.69,
+      "seconds": 5.69,
+      "estimated": false,
+      "text": "第 5 章 · 炎症：把「防御性反应」拆成损伤与应答两笔账",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.69,
+      "end": 17.14,
+      "seconds": 11.45,
+      "estimated": false,
+      "text": "「炎症是具有血管系统的活体组织对损伤因子所发生的防御性反应」——教材·第5章·5.1.1（《病理学·第5章·5.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 17.14,
+      "end": 46.3,
+      "seconds": 29.16,
+      "estimated": false,
+      "text": "「红、肿、热、痛、功能障碍」五个字你背得出，填空题也写过。可换一个问法——一张切片摆在面前，凭什么说它是渗出性炎而不是变质性炎——五个字一个也用不上。会背五个字，不等于会读一张片；会读一张片，不等于说得出它凭什么长成这样。「防御性反应」这五个字里藏着的限定条件，才是这一章真正要交的东西。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 46.3,
+      "end": 99.44,
+      "seconds": 53.14,
+      "estimated": false,
+      "text": "环境逼迫（带教老师把切片推到你面前，问「这一片凭什么归到渗出性炎」，学生只能把「变质、渗出、增生」三个词再念一遍，指不出渗出物在哪一层、细胞是哪一类；老师换个问法「这三样里哪一样最突出」，答案立刻可判——但没有人教过「最突出」是可以按类别看、按部位看的）+ 知识积累（本章 12 个单元、20,593 字的词频结构显示：形态 611 次、机制 126 次、病因 11 次。教材几乎把全部笔墨给了「长什么样」，机制只占一个零头，病因只够开个头——所以本章的知识骨架是形态分类学，不是病因学，也不是机制学。认不清这一点，就会拿病因去回答形态问题）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 99.44,
+      "end": 110.74,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

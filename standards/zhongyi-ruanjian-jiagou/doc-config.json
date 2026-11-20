@@ -1,7 +1,7 @@
 {
  "courseTitle": "中医软件架构",
  "deptPath": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue",
- "xlsx": "F:/textbooks/F:/textbooks/qhzy-卫生信息管理.xlsx",
+ "xlsx": "F:/textbooks/qhzy-卫生信息管理.xlsx",
  "chain": "系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧",
  "levelLabel": "章群结构",
  "objectPressure": "软件架构的判据是「模块—接口—数据流」三件套，缺一条就无法交接",

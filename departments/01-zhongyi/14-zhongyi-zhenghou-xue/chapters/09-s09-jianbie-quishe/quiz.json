@@ -1,0 +1,80 @@
+{
+  "lesson": "09-s09-jianbie-quishe",
+  "title": "证的鉴别与取舍：真假、兼夹与两因两位规则",
+  "subject": "14-zhongyi-zhenghou-xue",
+  "stage": "三基·基本方法",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "真寒假热的脉象特点是？",
+      "options": [
+        "滑数有力",
+        "大而无根",
+        "沉实",
+        "细涩"
+      ],
+      "correct": 1,
+      "explanation": "浮阳外越，脉大而无根。"
+    },
+    {
+      "stage": "check",
+      "question": "「大实有羸状，至虚有盛候」说明？",
+      "options": [
+        "虚证更常见",
+        "表层症状可与本质相反",
+        "实证必重",
+        "脉诊无用"
+      ],
+      "correct": 1,
+      "explanation": "所以要看脉、舌、喜恶、按之痛否。"
+    },
+    {
+      "stage": "check",
+      "question": "兼证与夹证的区别是？",
+      "options": [
+        "兼证是外因叠加，夹证是外因与内因并存",
+        "兼证更重",
+        "夹证只出现在儿科",
+        "两者同义"
+      ],
+      "correct": 0,
+      "explanation": "概论的定义如此。"
+    },
+    {
+      "stage": "check",
+      "question": "不写进证名的病因病位，用什么表示其存在？",
+      "options": [
+        "省略不写",
+        "以候表示",
+        "写在病程里",
+        "单独出一份补充诊断"
+      ],
+      "correct": 1,
+      "explanation": "这是取舍规则：候有码，可回查。"
+    },
+    {
+      "stage": "post",
+      "question": "取舍时最先看什么？",
+      "options": [
+        "症状轻重",
+        "当前病程阶段与主导病因病位",
+        "患者主诉",
+        "编码顺序"
+      ],
+      "correct": 1,
+      "explanation": "主导由病程阶段与因位两侧共同决定。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么「包罗万象的大证名」不可取？",
+      "options": [
+        "字数太多",
+        "无法核对与编码，且掩盖主导",
+        "古籍没有",
+        "患者看不懂"
+      ],
+      "correct": 1,
+      "explanation": "可比性与可回查性都依赖限定。"
+    }
+  ]
+}

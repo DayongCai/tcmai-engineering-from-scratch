@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/08-zhenjiu-zhiliao-xue/04-toumina-tongzheng/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 58.92,
+  "estimatedCues": 0,
+  "videoSeconds": 58.948667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 2.93,
+      "seconds": 2.93,
+      "estimated": false,
+      "text": "第 4 章 · 头面躯体痛证",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 2.93,
+      "end": 16.47,
+      "seconds": 13.54,
+      "estimated": false,
+      "text": "「《针灸治疗学·头面躯体痛证》」——教材篇名级；课程章号对应教材第 6 章。本章要回答的是：头面躯体痛证的处方能不能被别人照着做出来。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 16.47,
+      "end": 23.14,
+      "seconds": 6.67,
+      "estimated": false,
+      "text": "痛证是针灸最常被验证的一块，也是「取穴—手法—疗程」链条最完整的一块。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 23.14,
+      "end": 47.62,
+      "seconds": 24.48,
+      "estimated": false,
+      "text": "环境逼迫（治疗学的判据是「处方可照做」：主穴、配穴、操作、疗程四件齐了才叫处方）+ 知识积累（本章 26 单元 8,659 汉字；三辨主 治法与处方 95；四位面（病证门类）主 痛证 251；引书 21 部 27 次；数值类命中 20）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 47.62,
+      "end": 58.92,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

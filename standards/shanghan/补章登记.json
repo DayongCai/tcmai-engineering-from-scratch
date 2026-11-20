@@ -1,0 +1,58 @@
+{
+  "$generated": "手工维护：教材补章登记（无底本表的章，逐章登记依据）",
+  "subject": "01-zhongyi/07-shanghanlun",
+  "title": "伤寒论",
+  "teachingChapters": 12,
+  "textbookChaptersBefore": 10,
+  "why": "底本 qhzy-伤寒论讲义.xlsx 只有十卷（10 章，对应《伤寒论》卷第一至卷第十）；教学计划 12 章，缺第 11、12 章两块综合内容（条文检索与可复现 / 经方剂量折算），底本无对应卷次，故按「本库撰写层」补写，不冒充源正文层。",
+  "chapters": [
+    {
+      "no": 11,
+      "file": "textbooks/01-zhongyi/07-shanghanlun/11-第11章-条文的检索与可复现.md",
+      "title": "条文的检索与「查不到」的诚实",
+      "layer": "本库撰写层",
+      "bases": [
+        {
+          "kind": "课程文档",
+          "path": "departments/01-zhongyi/07-shanghanlun/chapters/11-tiaowen-jiansuo/docs/zh.md",
+          "note": "BM25 参数、金标、弃答阈值与余量均在该文档与 code/main.js 内可复算"
+        },
+        {
+          "kind": "语料",
+          "path": "standards/shanghan/底本.json",
+          "note": "1,760 条，逐条带篇次与条号"
+        },
+        {
+          "kind": "经典",
+          "ref": "《伤寒论·辨太阳病脉证并治中》",
+          "note": "「但见一证便是，不必悉具」"
+        }
+      ],
+      "verified": "2026-11-15：数字取自课程文档 code/main.js 输出；引文为篇名级；语料条数可现数"
+    },
+    {
+      "no": 12,
+      "file": "textbooks/01-zhongyi/07-shanghanlun/12-第12章-经方剂量的三把尺.md",
+      "title": "经方剂量的三把尺",
+      "layer": "本库撰写层",
+      "bases": [
+        {
+          "kind": "课程文档",
+          "path": "departments/01-zhongyi/07-shanghanlun/chapters/12-jiliang-zhesuan/docs/zh.md",
+          "note": "三档折算、单位条数、甘草差异、宋人校语均可复算"
+        },
+        {
+          "kind": "语料",
+          "path": "standards/shanghan/底本.json",
+          "note": "方文、方后注与宋人校语"
+        },
+        {
+          "kind": "经典",
+          "ref": "《伤寒论·辨太阳病脉证并治》",
+          "note": "「桂枝三两，去皮」及桂枝汤方后注"
+        }
+      ],
+      "verified": "2026-11-15：三档 41.25 / 46.88 / 9 g 与 5.21 倍来自课程文档实测；1 斤 220–250 g 为学界通行区间，本章未复核原器"
+    }
+  ]
+}

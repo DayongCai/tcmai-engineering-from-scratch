@@ -1,32 +1,33 @@
 {
-  "slug": "06-shengli-xue",
-  "title": "生理学",
-  "en": "Physiology",
-  "deptSlug": "09-jichu",
-  "deptTitle": "基础医学院",
-  "globalN": 126,
-  "type": "Core",
-  "semester": 2,
-  "stage": "sheng",
-  "stageTitle": "生",
-  "hours": 72,
-  "bridge": "稳态调节→反馈控制 / 生理信号→时间序列",
-  "chaptersTarget": 11,
-  "chapters": [],
-  "platform": {
-    "id": "tcmP",
-    "coursePath": "platform/courses/09-jichu/06-shengli-xue",
-    "videosPublished": 0,
-    "status": "planned"
-  },
-  "textbook": {
-    "id": "textbooks",
-    "path": "textbooks/09-jichu/06-shengli-xue",
-    "chaptersWritten": 11,
-    "words": 252809,
-    "status": "wip",
-    "layer": "source-body",
-    "source": "standards/materials/textbooks-batch/registry.json#生理学",
-    "extractedAt": "2026-10-21"
-  }
+ "slug": "06-shengli-xue",
+ "title": "生理学",
+ "en": "Physiology",
+ "deptSlug": "09-jichu",
+ "deptTitle": "基础医学院",
+ "globalN": 126,
+ "type": "Core",
+ "semester": 2,
+ "stage": "sheng",
+ "stageTitle": "生",
+ "hours": 72,
+ "bridge": "稳态调节→反馈控制 / 生理信号→时间序列",
+ "chaptersTarget": 11,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/09-jichu/06-shengli-xue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/09-jichu/06-shengli-xue",
+  "chaptersWritten": 11,
+  "words": 274755,
+  "status": "wip",
+  "layer": "source+rewrite",
+  "source": "standards/materials/textbooks-batch/registry.json#生理学",
+  "extractedAt": "2026-10-21",
+  "note": "11 章 / 251,977 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
+ }
 }

@@ -235,6 +235,14 @@ for (const ch of chapters) {
 }
 
 console.log(`\n完成: ${built}/${chapters.length} 个章节成片`);
+if (built < chapters.length) {
+  // 打印「0/N 个章节成片」却 exit 0 = 没有门：批量脚本会把它当成功，继续往下跑，
+  // 然后 course.yaml 与台账里留下一条「流水线全绿但没有成片」的糊涂账
+  // （2026-11-19 口腔内科学 07-e97 就是这么漏过去的：001.mp3 是 0 字节，ffmpeg 报 Invalid data）。
+  console.error(`✗ ${chapters.length - built} 章未出成片 —— 失败原因见上方各章日志`);
+  console.log('成片不入库（见 .gitignore），走 release 附件发布；site/build.js 会自动在章节页挂上播放器。');
+  process.exit(1);
+}
 console.log('成片不入库（见 .gitignore），走 release 附件发布；site/build.js 会自动在章节页挂上播放器。');
 
 /**

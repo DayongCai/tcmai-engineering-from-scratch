@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/06-guanli/19-shehui-yixue/14-z1914/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 54.04,
+  "estimatedCues": 0,
+  "videoSeconds": 54.072667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.29,
+      "seconds": 3.29,
+      "estimated": false,
+      "text": "第 14 章 · 健康促进与干预",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.29,
+      "end": 15.72,
+      "seconds": 12.43,
+      "estimated": false,
+      "text": "「《F:/textbooks/机器学习·健康促进与干预》」——教材第14章。本章要回答的是：健康促进与干预：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 15.72,
+      "end": 19.44,
+      "seconds": 3.72,
+      "estimated": false,
+      "text": "健康促进与干预：本课第 14 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 19.44,
+      "end": 42.74,
+      "seconds": 23.3,
+      "estimated": false,
+      "text": "环境逼迫（社会医学的判据是「差异量得出、机制说得清、干预可评」）+ 知识积累（本章 11 单元 15,934 汉字；三辨主 绩效与评价 124；四位面（章群结构）主 干预与治理 15934；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 42.74,
+      "end": 54.04,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

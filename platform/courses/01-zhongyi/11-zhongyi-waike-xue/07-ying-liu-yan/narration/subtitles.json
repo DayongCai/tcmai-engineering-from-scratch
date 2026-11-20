@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/11-zhongyi-waike-xue/07-ying-liu-yan/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 85.34,
+  "estimatedCues": 0,
+  "videoSeconds": 85.368667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.21,
+      "seconds": 5.21,
+      "estimated": false,
+      "text": "第 7 章 · 瘿、瘤、岩：一条「质地轴」，八个病证",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.21,
+      "end": 14.07,
+      "seconds": 8.86,
+      "estimated": false,
+      "text": "「坚硬不可移者，名曰石瘿」——教材·第7章·7.4.1（《三因极一病证方论·瘿瘤证治》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.07,
+      "end": 38.02,
+      "seconds": 23.95,
+      "estimated": false,
+      "text": "学生能背「气瘿弥漫、肉瘿如丸、石瘿如石」，但面对一个颈前肿块答不出最关键的一件事：这个块该不该马上做病理。八个病证被分成三类（瘿、瘤、岩），真正的分野不在名称，而在质地与活动度这两个可触摸的判据上；摸不出这一层，就会把石瘿放在「观察」里。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 38.02,
+      "end": 69.53,
+      "seconds": 31.51,
+      "estimated": false,
+      "text": "环境逼迫（颈前肿块与体表肿块最常被「先观察三个月」，而石瘿、失荣、肾岩三类都属「一经发现立即转诊」）+ 知识积累（本章 40 个单元、25,320 字里局部表现 257 次居首，全身只有 48 次——说明癌类病证的判据仍写在局部：硬、不平、不移；四位面没有一极独占，正是因为这八个病横跨颈前、体表与全身淋巴结）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 69.53,
+      "end": 74.04,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 74.04,
+      "end": 85.34,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

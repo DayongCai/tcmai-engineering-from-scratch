@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/07-zhineng/11-zhongyi-jiqiren-xue/02-rob2/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 55.02,
+  "estimatedCues": 0,
+  "videoSeconds": 55.062667,
+  "videoMinusNarrationSeconds": 0.043,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.5,
+      "seconds": 3.5,
+      "estimated": false,
+      "text": "第 2 章 · 感知：传感器与信号",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.5,
+      "end": 16.7,
+      "seconds": 13.2,
+      "estimated": false,
+      "text": "「《F:/textbooks/机器学习·感知：传感器与信号》」——教材第2章。本章要回答的是：感知：传感器与信号：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 16.7,
+      "end": 20.73,
+      "seconds": 4.03,
+      "estimated": false,
+      "text": "感知：传感器与信号：本课第 2 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 20.73,
+      "end": 43.72,
+      "seconds": 22.99,
+      "estimated": false,
+      "text": "环境逼迫（机器人学的判据是「停得下来」：任何动作都要有可验证的停止条件与责任人）+ 知识积累（本章 26 单元 1,625 汉字；三辨主 感知与执行 18；四位面（章群结构）主 感知与场景 1625；引书 0 部 0 次；数值类命中 1）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 43.72,
+      "end": 55.02,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

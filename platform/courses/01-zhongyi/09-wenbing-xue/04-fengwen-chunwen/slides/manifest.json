@@ -1,0 +1,47 @@
+{
+  "chapter": "04-fengwen-chunwen",
+  "slideCount": 8,
+  "segmentCount": 8,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 35
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 57
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 140
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 70
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 1040
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 262
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 95
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 52
+    }
+  ]
+}

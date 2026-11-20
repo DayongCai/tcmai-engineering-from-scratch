@@ -1,0 +1,120 @@
+# [tcmP] 课程编排 · 09-jichu/13-mianyi-bingyuan-shengwu
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/09-jichu/13-mianyi-bingyuan-shengwu/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 13-mianyi-bingyuan-shengwu
+title: 免疫学基础与病原生物学
+en: Immunology & Pathogen Biology
+dept: 09-jichu
+dept_title: 基础医学院
+semester: 4
+stage: sheng
+hours: 54
+chapters_target: 15
+bridge: 免疫应答→多智能体仿真 / 病原谱→分类检索
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-mianyi-xulun
+    title: 第1章 免疫学绪论
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1
+  - slug: 02-kangyuan
+    title: 第2章 抗原
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.96
+  - slug: 03-mianyi-fenzi
+    title: 第3章 免疫分子
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 0.98
+  - slug: 04-mianyi-xibao
+    title: 第4章 免疫细胞
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 0.98
+  - slug: 05-mianyi-yingda
+    title: 第5章 免疫应答
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 0.98
+  - slug: 06-chaomin-fanying
+    title: 第6章 超敏反应
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1
+  - slug: 07-mianyi-yingyong
+    title: 第7章 免疫学应用
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.01
+  - slug: 08-bingyuan-xulun
+    title: 第8章 病原生物学绪论
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.04
+  - slug: 09-xijun-zonglun
+    title: 第9章 细菌学总论
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 10-changjian-xijun
+    title: 第10章 常见致病细菌
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.05
+  - slug: 11-bingdu-zonglun
+    title: 第11章 病毒学总论
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 12-changjian-bingdu
+    title: 第12章 常见致病病毒
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.04
+  - slug: 13-zhenjunxue
+    title: 第13章 真菌学
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1
+  - slug: 14-jishengchong-gaishu
+    title: 第14章 医学寄生虫学概述
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.08
+  - slug: 15-changjian-jishengchong
+    title: 第15章 常见致病寄生虫
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.05

@@ -1,0 +1,37 @@
+{
+  "chapter": "10-shenjing-xitong",
+  "slideCount": 6,
+  "segmentCount": 6,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 24
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 79
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 255
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 137
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 197
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 52
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/09-kangfu-yixue-jichu/02-gongneng-pingding/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 53.63,
+  "estimatedCues": 0,
+  "videoSeconds": 53.672667,
+  "videoMinusNarrationSeconds": 0.043,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 2.35,
+      "seconds": 2.35,
+      "estimated": false,
+      "text": "第 2 章 · 功能评定",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 2.35,
+      "end": 16.58,
+      "seconds": 14.23,
+      "estimated": false,
+      "text": "「《康复医学基础·功能评定》」——派生课：篇名为本课程章名，出处见 units.json 的 source 字段。本章要回答的是：功能评定的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 16.58,
+      "end": 19.89,
+      "seconds": 3.31,
+      "estimated": false,
+      "text": "没有评定量表，康复就没有终点。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 19.89,
+      "end": 42.33,
+      "seconds": 22.44,
+      "estimated": false,
+      "text": "环境逼迫（派生课的判断力来自把父课的片段重排成一条决策链）+ 知识积累（本章 3 单元 51,270 汉字；三辨主 照护与团队 437；四位面（观察视角）主 评定与功能 51270；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 42.33,
+      "end": 53.63,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

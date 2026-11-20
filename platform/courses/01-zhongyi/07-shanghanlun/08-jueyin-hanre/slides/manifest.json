@@ -1,0 +1,52 @@
+{
+  "chapter": "08-jueyin-hanre",
+  "slideCount": 9,
+  "segmentCount": 9,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 21
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 59
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 53
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 42
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 136
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 916
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 115
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 174
+    },
+    {
+      "n": 9,
+      "segment": 9,
+      "chars": 52
+    }
+  ]
+}

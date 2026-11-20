@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/08-waike-huli-xue/12-shoushushi-mazui/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 61.75,
+  "estimatedCues": 0,
+  "videoSeconds": 61.772667,
+  "videoMinusNarrationSeconds": 0.023,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.56,
+      "seconds": 4.56,
+      "estimated": false,
+      "text": "第 12 章 · 手术室护理与麻醉复苏期护理",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.56,
+      "end": 22.25,
+      "seconds": 17.69,
+      "estimated": false,
+      "text": "「《外科护理学·第15章 手术室护理》」——教材第 15 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：手术室护理与麻醉复苏期护理这一章的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 22.25,
+      "end": 27.58,
+      "seconds": 5.33,
+      "estimated": false,
+      "text": "手术室与麻醉复苏合章：都在手术当日的时间窗内。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 27.58,
+      "end": 50.45,
+      "seconds": 22.87,
+      "estimated": false,
+      "text": "环境逼迫（外科病人一次手术就跨越四个阶段，护理要在每个阶段回答不同的问题）+ 知识积累（本章 2 单元 34,499 汉字；三辨主 术中术后照护 286；四位面（术式类别）主 心胸与泌尿 6；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 50.45,
+      "end": 61.75,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

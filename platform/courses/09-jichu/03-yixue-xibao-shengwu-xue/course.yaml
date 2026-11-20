@@ -1,0 +1,102 @@
+# [tcmP] 课程编排 · 09-jichu/03-yixue-xibao-shengwu-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/09-jichu/03-yixue-xibao-shengwu-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 03-yixue-xibao-shengwu-xue
+title: 医学细胞生物学
+en: Medical Cell Biology
+dept: 09-jichu
+dept_title: 基础医学院
+semester: 1
+stage: sheng
+hours: 36
+chapters_target: 12
+bridge: 细胞信号→微分方程 / 通路→有向图
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xibao-shengwuxue-gailun
+    title: 第1章 细胞生物学概论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.98
+  - slug: 02-xibaomo-yu-kuamo-yunshu
+    title: 第2章 细胞膜与跨膜运输
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97
+  - slug: 03-xibao-lianjie-yu-nianfu
+    title: 第3章 细胞连接与细胞黏附
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.02
+  - slug: 04-xibao-waijizhi
+    title: 第4章 细胞外基质与细胞微环境
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.06
+  - slug: 05-xibao-gujia-yu-yundong
+    title: 第5章 细胞骨架与细胞运动
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.01
+  - slug: 06-shenjingyuan-xinxi-chuandi
+    title: 第6章 神经元与细胞间信息传递
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.05
+  - slug: 07-xibaohe-yu-ransezhi
+    title: 第7章 细胞核与染色质
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.97
+  - slug: 08-jiyin-biaoda-tiaokong
+    title: 第8章 基因表达调控
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.96
+  - slug: 09-xibao-zhouqi-yu-dna-fuzhi
+    title: 第9章 细胞周期与 DNA 复制
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 10-danbaizhi-hecheng-yu-xibao-gongneng
+    title: 第10章 蛋白质合成与细胞功能
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 11-xibao-fenhua-yu-qiguan-fasheng
+    title: 第11章 细胞分化与器官发生
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.1
+  - slug: 12-xibao-yu-fenzi-jishu
+    title: 第12章 细胞与分子常用技术
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.01

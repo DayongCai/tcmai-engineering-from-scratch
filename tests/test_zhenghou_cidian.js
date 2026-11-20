@@ -366,18 +366,80 @@ test('C7 正文层可复现：OCR 管线脚本全部在仓库里（不在 scratc
   assert.deepStrictEqual(bad, [], '脚本仍在引用 scratch 下的旧代码路径');
 });
 
-test('C4 课程层 12 章目录与 chapters.json 一致', () => {
+test('C4 课程层 24 章目录与 chapters.json 一致（三基 12 + 各论 12）', () => {
   const idx = read(path.join(DEPT, 'chapters.json'));
-  assert.strictEqual(idx.chapters.length, 12);
+  assert.strictEqual(idx.chapters.length, 24);
+  const codes = new Set();
   for (const c of idx.chapters) {
     const dir = path.join(DEPT, 'chapters', c.slug);
     assert.ok(fs.existsSync(dir), '缺章节目录 ' + c.slug);
     for (const f of ['docs/zh.md', 'quiz.json']) assert.ok(fs.existsSync(path.join(dir, f)), c.slug + ' 缺 ' + f);
-    assert.strictEqual(c.code, 'M' + String(c.n).padStart(2, '0'));
+    assert.ok(!codes.has(c.code), '章码重复：' + c.code);
+    codes.add(c.code);
+    if (c.part === '各论') {
+      // 各论十二门：章码即辞典门码 M01…M12，另有门内判据
+      assert.match(c.code, /^M\d{2}$/, '各论章码应为 M01…M12：' + c.slug);
+      assert.deepStrictEqual(c.secs, [], '各论章不该映射概论节：' + c.slug);
+    } else {
+      assert.ok(['基本理论', '基本方法', '基本技能'].includes(c.part), '缺三基归属：' + c.slug);
+      assert.match(c.code, /^S\d{2}$/, '三基章码应为 S01…S12：' + c.slug + ' = ' + c.code);
+      assert.ok(Array.isArray(c.secs) && c.secs.length >= 1, '缺概论节映射：' + c.slug);
+    }
+  }
+  // 顺序必须是 理论 4 → 方法 5 → 技能 3 → 各论 12
+  const parts = idx.chapters.map((c) => c.part);
+  assert.deepStrictEqual(parts, [
+    '基本理论', '基本理论', '基本理论', '基本理论',
+    '基本方法', '基本方法', '基本方法', '基本方法', '基本方法',
+    '基本技能', '基本技能', '基本技能',
+    '各论', '各论', '各论', '各论', '各论', '各论', '各论', '各论', '各论', '各论', '各论', '各论',
+  ]);
+});
+
+test('C5 三基章都引概论原文（locator 可回查），各论章都落到辞典门码', () => {
+  const un = read(path.join(ROOT, 'standards', 'zhenghou', 'units.json'));
+  const locs = new Set(un.units.map((u) => u.locator));
+  const idx = read(path.join(DEPT, 'chapters.json'));
+  const menCodes = new Set(struct.men.map((m) => m.code));
+  for (const c of idx.chapters) {
+    const md = fs.readFileSync(path.join(DEPT, 'chapters', c.slug, 'docs', 'zh.md'), 'utf8');
+    if (c.part === '各论') {
+      assert.ok(menCodes.has(c.code), c.slug + ' 的门码不在结构.json：' + c.code);
+      assert.ok(new RegExp('\\b' + c.code + '\\b').test(md), c.slug + ' 正文没写自己的门码 ' + c.code);
+      assert.ok(/L\d{2}/.test(md), c.slug + ' 正文没有类码 L');
+      continue;
+    }
+    assert.ok(md.includes('概论原文'), c.slug + ' 缺「概论原文」一节');
+    const cited = [...md.matchAll(/`(概论·第[一二三四五六七八九十]+节[^`]*)`/g)].map((m) => m[1]);
+    assert.ok(cited.length >= 1, c.slug + ' 没有一条 `概论·…` 引证');
+    for (const loc of cited) assert.ok(locs.has(loc), c.slug + ' 引证回查不到：' + loc);
   }
 });
 
 // ── D 校验层（缺口只许变多、不许悄悄变少） ──────────────────
+
+test('C8 四级编码目录树：路径与结构.json 逐级对齐', () => {
+  const tree = path.join(STD, '四级目录');
+  assert.ok(fs.existsSync(tree), '缺四级目录树 —— 请跑 python scripts/build_zhenghou_tree.py');
+  const idx = read(path.join(STD, '四级目录索引.json'));
+  assert.strictEqual(idx.counts.men, struct.counts.men);
+  assert.strictEqual(idx.counts.hou, struct.counts.houInstances);
+  assert.strictEqual(idx.entries.length, struct.counts.houInstances);
+  let miss = 0;
+  for (const e of idx.entries) {
+    const p = path.join(STD, e.path);
+    if (!fs.existsSync(p)) { miss += 1; continue; }
+    const md = fs.readFileSync(p, 'utf8');
+    assert.ok(md.startsWith('---\ncode: ' + e.full), '候文件 frontmatter 与索引不符：' + e.path);
+  }
+  assert.strictEqual(miss, 0, '索引里有 ' + miss + ' 条路径不存在');
+  // 目录名必须带码：M01-…证门 / L01-…证类 / L01-Z01-… / H001-….md
+  for (const m of struct.men) {
+    const hit = fs.readdirSync(tree).filter((d) => d.startsWith(m.code + '-'));
+    assert.strictEqual(hit.length, 1, '门目录缺或多：' + m.code);
+    assert.ok(hit[0].endsWith('证门'), '门目录名须以「证门」结尾：' + hit[0]);
+  }
+});
 
 test('D1 校对差异 ≥10 条，且都带 declare/actual', () => {
   const diffs = struct['校对']['差异'];

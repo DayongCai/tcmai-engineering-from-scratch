@@ -1,32 +1,33 @@
 {
-  "slug": "03-fangjixue",
-  "title": "方剂学",
-  "en": "TCM Formulary",
-  "deptSlug": "02-zhongyao",
-  "deptTitle": "中药系",
-  "globalN": 18,
-  "type": "Core",
-  "semester": 3,
-  "stage": "sheng",
-  "stageTitle": "生",
-  "hours": 90,
-  "bridge": "君臣佐使→缩放点积注意力 / 类方鉴别→对比学习",
-  "chaptersTarget": 15,
-  "chapters": [],
-  "platform": {
-    "id": "tcmP",
-    "coursePath": "platform/courses/02-zhongyao/03-fangjixue",
-    "videosPublished": 0,
-    "status": "planned"
-  },
-  "textbook": {
-    "id": "textbooks",
-    "path": "textbooks/02-zhongyao/03-fangjixue",
-    "chaptersWritten": 24,
-    "words": 435341,
-    "status": "wip",
-    "layer": "source-body",
-    "source": "standards/materials/textbooks-batch/registry.json#方剂学",
-    "extractedAt": "2026-10-21"
-  }
+ "slug": "03-fangjixue",
+ "title": "方剂学",
+ "en": "TCM Formulary",
+ "deptSlug": "02-zhongyao",
+ "deptTitle": "中药系",
+ "globalN": 18,
+ "type": "Core",
+ "semester": 3,
+ "stage": "sheng",
+ "stageTitle": "生",
+ "hours": 90,
+ "bridge": "君臣佐使→缩放点积注意力 / 类方鉴别→对比学习",
+ "chaptersTarget": 15,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/02-zhongyao/03-fangjixue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/02-zhongyao/03-fangjixue",
+  "chaptersWritten": 24,
+  "words": 474732,
+  "status": "wip",
+  "layer": "source+rewrite",
+  "source": "standards/materials/textbooks-batch/registry.json#方剂学",
+  "extractedAt": "2026-10-21",
+  "note": "24 章 / 387,691 汉字。24 章；正文为源正文层，判断层见章末 REWRITE 块；第 24 章含 AI 平台层，本方药判断不越界。"
+ }
 }

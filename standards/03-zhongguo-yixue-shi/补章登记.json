@@ -1,0 +1,85 @@
+{
+  "$generated": "手工维护：中国医学史「教材 12 章 vs 教学 8 章」的口径登记（两把尺子，不补章）。",
+  "subject": "01-zhongyi/03-zhongguo-yixue-shi",
+  "title": "中国医学史",
+  "teachingChapters": 8,
+  "textbookChaptersBefore": 12,
+  "textbookChaptersAfter": 12,
+  "chapters": [],
+  "noSupplement": {
+    "reason": "教材按底本**分期**切 12 章（每个朝代一节），教学按 8 个时段合并（春秋战国+秦汉、魏晋南北朝+隋唐五代、近代+当代、少数民族+中外交流+数字化）。",
+    "verdict": "口径差（两把尺子）：教材按底本切分，教学按模块合并。不补章、不拆散；换算表见教材 附录B，读者可逐条查对。",
+    "mapping": [
+      {
+        "plan": 1,
+        "title": "绪论：医学史的问题与方法",
+        "textbookChapters": [
+          1
+        ],
+        "probe": "绪论"
+      },
+      {
+        "plan": 2,
+        "title": "医药的起源与早期医药",
+        "textbookChapters": [
+          2
+        ],
+        "probe": "起源"
+      },
+      {
+        "plan": 3,
+        "title": "春秋战国至秦汉：体系的奠基",
+        "textbookChapters": [
+          3,
+          4
+        ],
+        "probe": "春秋"
+      },
+      {
+        "plan": 4,
+        "title": "魏晋南北朝至隋唐五代：分科与集成",
+        "textbookChapters": [
+          5,
+          6
+        ],
+        "probe": "魏晋"
+      },
+      {
+        "plan": 5,
+        "title": "宋金元：争鸣与建制",
+        "textbookChapters": [
+          7
+        ],
+        "probe": "宋金元"
+      },
+      {
+        "plan": 6,
+        "title": "明清：温病与考据",
+        "textbookChapters": [
+          8
+        ],
+        "probe": "明清"
+      },
+      {
+        "plan": 7,
+        "title": "近代与当代：转型与重建",
+        "textbookChapters": [
+          9,
+          10
+        ],
+        "probe": "近代"
+      },
+      {
+        "plan": 8,
+        "title": "少数民族医学、中外交流与数字化",
+        "textbookChapters": [
+          11,
+          12
+        ],
+        "probe": "少数民族"
+      }
+    ],
+    "contentGaps": [],
+    "verifiedBy": "2026-11-16：教学 8 章 → 教材 12 章映射 8 行；probe 在所指教材章内 grep 命中"
+  }
+}

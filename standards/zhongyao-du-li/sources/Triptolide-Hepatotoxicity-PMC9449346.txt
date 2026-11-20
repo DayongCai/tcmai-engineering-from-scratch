@@ -1,0 +1,718 @@
+The molecular pathogenesis of triptolide-induced hepatotoxicity - PMC
+Skip to main content
+An official website of the United States government
+Here's how you know
+Here's how you know
+Official websites use .gov
+A
+.gov website belongs to an official
+government organization in the United States.
+Secure .gov websites use HTTPS
+A lock (
+Lock
+Locked padlock icon
+) or https:// means you've safely
+connected to the .gov website. Share sensitive
+information only on official, secure websites.
+Search
+Log in
+Dashboard
+Publications
+Account settings
+Log out
+Search…
+Search NCBI
+Primary site navigation
+Search
+Logged in as:
+Dashboard
+Publications
+Account settings
+Log in
+Search PMC Full-Text Archive
+Search in PMC
+Journal List
+User Guide
+PERMALINK
+Copy
+As a library, NLM provides access to scientific literature. Inclusion in an NLM database does not imply endorsement of, or agreement with,
+the contents by NLM or the National Institutes of Health.
+Learn more:
+PMC Disclaimer
+|
+PMC Copyright Notice
+Front Pharmacol
+. 2022 Aug 24;13:979307. doi: 10.3389/fphar.2022.979307
+Search in PMC
+Search in PubMed
+View in NLM Catalog
+Add to search
+The molecular pathogenesis of triptolide-induced hepatotoxicity
+Yeqing Hu
+Yeqing Hu
+1
+Institute of Cardiovascular Disease, Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Shanghai, China
+2
+Institute of Cardiovascular Disease of Integrated Traditional Chinese Medicine and Western Medicine, Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Shanghai, China
+3
+Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Branch of National Clinical Research Center for Chinese Medicine Cardiology, Shanghai, China
+Find articles by Yeqing Hu
+1, 2, 3 , Qiguo Wu
+Qiguo Wu
+4
+Department of Pharmacy, Anqing Medical College, Anqing, China
+Find articles by Qiguo Wu
+4 , Yulin Wang
+Yulin Wang
+1
+Institute of Cardiovascular Disease, Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Shanghai, China
+2
+Institute of Cardiovascular Disease of Integrated Traditional Chinese Medicine and Western Medicine, Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Shanghai, China
+3
+Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Branch of National Clinical Research Center for Chinese Medicine Cardiology, Shanghai, China
+Find articles by Yulin Wang
+1, 2, 3 , Haibo Zhang
+Haibo Zhang
+1
+Institute of Cardiovascular Disease, Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Shanghai, China
+2
+Institute of Cardiovascular Disease of Integrated Traditional Chinese Medicine and Western Medicine, Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Shanghai, China
+3
+Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Branch of National Clinical Research Center for Chinese Medicine Cardiology, Shanghai, China
+Find articles by Haibo Zhang
+1, 2, 3 , Xueying Liu
+Xueying Liu
+1
+Institute of Cardiovascular Disease, Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Shanghai, China
+2
+Institute of Cardiovascular Disease of Integrated Traditional Chinese Medicine and Western Medicine, Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Shanghai, China
+3
+Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Branch of National Clinical Research Center for Chinese Medicine Cardiology, Shanghai, China
+Find articles by Xueying Liu
+1, 2, 3 , Hua Zhou
+Hua Zhou
+1
+Institute of Cardiovascular Disease, Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Shanghai, China
+2
+Institute of Cardiovascular Disease of Integrated Traditional Chinese Medicine and Western Medicine, Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Shanghai, China
+3
+Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Branch of National Clinical Research Center for Chinese Medicine Cardiology, Shanghai, China
+Find articles by Hua Zhou
+1, 2, 3, * , Tao Yang
+Tao Yang
+1
+Institute of Cardiovascular Disease, Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Shanghai, China
+2
+Institute of Cardiovascular Disease of Integrated Traditional Chinese Medicine and Western Medicine, Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Shanghai, China
+3
+Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Branch of National Clinical Research Center for Chinese Medicine Cardiology, Shanghai, China
+5
+Shanghai Key Laboratory of Traditional Chinese Clinical Medicine, Shanghai, China
+Find articles by Tao Yang
+1, 2, 3, 5, *
+Author information
+Article notes
+Copyright and License information
+1
+Institute of Cardiovascular Disease, Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Shanghai, China
+2
+Institute of Cardiovascular Disease of Integrated Traditional Chinese Medicine and Western Medicine, Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Shanghai, China
+3
+Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine, Branch of National Clinical Research Center for Chinese Medicine Cardiology, Shanghai, China
+4
+Department of Pharmacy, Anqing Medical College, Anqing, China
+5
+Shanghai Key Laboratory of Traditional Chinese Clinical Medicine, Shanghai, China
+Edited by:
+Fareeha Anwar , Riphah International University, Pakistan
+Reviewed by:
+Ling Fu , Arthur Riggs Diabetes and Metabolism Research Institute, United States
+Rongtao Li , Kunming University of Science and Technology, China
+Yuan Wei , Jiangsu University, China
+✉ *Correspondence: Tao Yang, yangtao@shutcm.edu.cn ; Hua Zhou, zhouhua@shutcm.edu.cn
+This article was submitted to Predictive Toxicology, a section of the journal Frontiers in Pharmacology
+Received 2022 Jun 27; Accepted 2022 Aug 2; Collection date 2022.
+Copyright © 2022 Hu, Wu, Wang, Zhang, Liu, Zhou and Yang.
+This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms.
+PMC Copyright notice
+PMCID: PMC9449346 PMID: 36091841
+Abstract
+Triptolide (TP) is the major pharmacologically active ingredient and toxic component of Tripterygium wilfordii Hook. f. However, its clinical potential is limited by a narrow therapeutic window and multiple organ toxicity, especially hepatotoxicity. Furthermore, TP-induced hepatotoxicity shows significant inter-individual variability. Over the past few decades, research has been devoted to the study of TP-induced hepatotoxicity and its mechanism. In this review, we summarized the mechanism of TP-induced hepatotoxicity. Studies have demonstrated that TP-induced hepatotoxicity is associated with CYP450s, P-glycoprotein (P-gp), oxidative stress, excessive autophagy, apoptosis, metabolic disorders, immunity, and the gut microbiota. These new findings provide a comprehensive understanding of TP-induced hepatotoxicity and detoxification.
+Keywords: triptolide, hepatotoxicity, CYP450s, oxidative stress, immunity
+1 Introduction
+Tripterygium wilfordii Hook. F ( Tw HF), the dried root or root xylem of Tripterygium wilfordii Hook. f. Tw HF and its preparations, have been widely used to treat autoimmune and inflammatory diseases because of its significant anti-inflammatory and immunosuppressive effects ( Luo et al., 2019 ). Triptolide (TP) is a diterpene triepoxide, which is the major pharmacologically active ingredient and toxic component of Tw HF ( Xi et al., 2017 ). TP has attracted the attention of researchers because of its high potential for clinical application, such as its anti-inflammatory, anti-cancer, anti-immune, and anti-oxidant effects ( Guo et al., 2016 ; Yu et al., 2021 ; Gao et al., 2022 ; Song et al., 2022 ). However, its clinical potential is limited by a narrow therapeutic window and multiple organ toxicity, especially hepatotoxicity ( Zhou et al., 2012 ; Xi et al., 2017 ).
+The data on adverse reactions (ADRs) of Tw HF preparations containing TP released by the National Adverse Drug Reaction Monitoring Center of China shows that 839 cases of ADRs caused by Tw HF preparations from 2004 to September 2011, mainly manifested as drug-induced hepatitis and renal insufficiency. Furthermore, there are 472 cases of ADRs were reported in Tripterygium wilfordii polyglycosides from 1 September 2014 to 31 August 2019 and 54 cases (11.44%) of which were abnormal liver function. It was reported that the distribution concentration of TP in rat liver was more than three times that of other tissues, which might be the reason for the significant hepatotoxicity among the multi-organ toxicities ( Mei et al., 2012 ). Clinically, the hepatotoxicity caused by Tw HF and its preparations containing TP is mainly manifested as acute hepatitis, with symptoms such as nausea, fatigue, anorexia, increased serum alanine transaminase (ALT)and aspartate aminotransferase (AST) levels, and obvious cholestasis ( Yang et al., 2018 ). Focal necrosis, inflammatory cell infiltration, cell degeneration, apoptosis, and bile duct hyperplasia are the common pathological manifestations in TP-induced hepatotoxicity ( Wang X. Z. et al., 2018 ; Zou et al., 2020 ).
+The hepatotoxicity mechanisms of TP are quite complex and show significant inter-individual variability. Researchers have explored the mechanism of TP-induced hepatotoxicity. Therefore, this review will provide a comprehensive analysis of the toxicological mechanism of TP to promote our understanding of TP-induced hepatotoxicity and detoxification.
+2 The mechanisms of TP-induced hepatotoxicity
+2.1 CYP450s and P-gp mediated hepatotoxicity
+TP, an active electrophile containing three epoxide groups, can bind covalently to a 90-kda protein, XPB (Xeroderma pigmentosum, complementation group B), thereby inhibiting XPB’s ATPase activity, which might be the underlying reason for the toxicity of TP ( Titov et al., 2011 ). Opening the epoxide ring of TP can reduce its toxicity ( Zhang and Li, 2004 ). Clinically, the therapeutic dose of , TW HF tablets is about 4-6 tablets/d, which is equal to 400–600 μg/d TP ( Qu et al., 2015 ). In addition, the effective dose of TP could reach 400 μg/kg administered continuously for 40 days in the animal experiments ( Pan et al., 2017 ). However, the acute toxicity study showed that administration of 500 μg/kg in mice could cause liver injury ( Wang et al., 2016 ), and the acute toxicity dose converted into 60 kg of human is 2,400 μg. These data implicate a narrow therapeutic window of TP and a slight excess of TP can lead to the risk of hepatotoxicity. Furthermore, studies have demonstrated that TP-induced hepatotoxicity is dose- and time-dependent ( Yuan et al., 2019a ; Zhao J. et al., 2020 ). In addition, cytochrome P450 (CYP) enzymes are involved in TP metabolism and P-glycoprotein (P-gp) is involved in TP transport, which affects the in vivo processing of TP ( Xue et al., 2011 ; Zhang et al., 2016 ). Therefore, the abnormal increase TP exposure caused by CYP450s and P-gp, which leads to the increase of TP’s direct hepatotoxicity, is an important factor for its hepatotoxicity.
+2.1.1 CYP450s
+2.1.1.1 Abnormal metabolism of CYP450 enzyme systems
+CYP450s, a superfamily of enzymes, catalyze phase I oxidation and reduction of endogenous and xenobiotics substances ( Nebert and Dalton, 2006 ). Studies have demonstrated that CYP450-mediated phase I metabolism of TP is the major pathway for reducing hepatotoxicity. Glutathione (GSH)-conjugated phase II metabolism induces mild detoxification and plays a minor role in TP-induced hepatotoxicity ( Du et al., 2014 ; Li et al., 2015 ). Comparing liver-specific CYP450 reductase knockout mice and wild-type mice, the inactivation of hepatic CYP450 could significantly increase TP bioavailability and levels in liver tissue, leading to increased hepatotoxicity ( Xue et al., 2011 ). Similarly, the CYP450 enzyme inhibitor 1-aminobenzotriazole or the CYP450 enzyme activator phenobarbital could increase or decrease the TP level, thereby modulating TP-induced primary rat hepatocyte toxicity ( Jin et al., 2019 ). However, compared with wild-type mice, there were no significant differences in hepatotoxicity and pharmacokinetics in mice with low levels of extrahepatic CYP450 reductase, demonstrating that extrahepatic CYP450 has no effect on TP-induced hepatotoxicity ( Wei et al., 2018 ). These studies confirmed the important role of hepatic CYP450 enzyme-mediated TP metabolism in TP-induced hepatotoxicity.
+CYP450 isoforms make different contributions to TP metabolism and hepatotoxicity. CYP3A4 and CYP2C19 are involved in the metabolism of TP in male human liver microsomes, and CYP3A4 is the main isoform responsible for its hydroxylation ( Li et al., 2008 ). Dexamethasone, a CYP3A inducer, increases TP metabolism and reduces TP-induced hepatotoxicity in rats ( Ye et al., 2010 ). Another in vitro experiment confirmed that CYP3A-mediated TP metabolism can modulate TP-induced hepatotoxicity ( Shen et al., 2014 ).
+TP has been investigated to inhibit CYP450s. It was reported that TP exposure has a weak and time-dependent inhibitory effect on CYP3A in rat liver microsomes and hepatocytes ( Shen et al., 2014 ). Likewise, TP inhibited the activity of human hepatic CYP1A2 and CYP3A4, but not other CYP450 isoforms, such as CYP2A6, 2E1, 2D6, 2C9, 2C19, and 2C8 ( Zhang et al., 2017 ). Furthermore, long-term oral administration of TP could significantly inhibit the expression and activity of CYP3A4 in rats ( Zhang et al., 2014 ). Researchers further investigated the effect of TP on the six major subtypes of CYP450 (1A2, 2C9, 2C19, 2D6, 2E1, and 3A). The result showed that continuous gavage of TP for 28 days could inhibit the activity and expression of CYP450 isoforms 3A, 2C9, 2C19, and 2E1 and cause hepatotoxicity in rats ( Lu et al., 2017 ). In addition, TP could inhibit the transcriptional activation of the pregnane X receptor (PXR), thereby inhibiting the expression and function of metabolic detoxification enzymes, especially CYP3A4, which ultimately led to reduced metabolic elimination of TP and increased hepatotoxicity ( Zheng et al., 2021 ). From the above studies, we speculated that the inhibitory effect of TP on CYP450s can cause alterations in TP metabolism and hepatotoxicity. However, whether TP inhibits CYP2E1 and CYP2C9 remains controversial.
+Besides, studies have shown that CYP450s are also involved in endogenous substance metabolism and reactive oxygen species (ROS) production. A metabolomic study showed that TP treatment induced metabolic disorders, such as changes in carnitine, lysophosphatidylcholine (LPC), and a series of amino acids in female mice, and regulating the activity of CYP3A4 can modulate LPC levels, amino acid levels, the glutathione (GSH)/Glutathione disulfide (GSSG) ratio, and oxidative stress, thereby altering TP-induced hepatotoxicity ( Xiao et al., 2020 ). Moreover, the TP-induced increase in CYP2E1 expression induces hepatic oxidative stress ( Jiang et al., 2021 ). In C57 mice and IHHA-1 cell models, CYP2E1 expression was upregulated after TP exposure, which not only directly increased ROS levels, but also increased the expression of nuclear factor kappa B (NF-κB) (p65) to mediate oxidative stress and inflammatory responses ( Jiang et al., 2021 ).
+2.1.1.2 Sex differences, genetic polymorphisms and circadian rhythms
+A significant difference in the hepatotoxicity of TP was found between different sexes in rats. The expression of CYP3A2, which is involved in TP metabolism, is higher in male rats than in female rats, a factor that makes females more susceptible to TP-induced hepatotoxicity ( Liu et al., 2010 ). Inhibiting the expression and activity of CYP3A2 in male neonatal rats could eliminate the sex-dependent differences in TP metabolism ( Liu et al., 2011 ).
+Synonymous nucleotide polymorphisms can affect gene expression and function. Chen et al. established stable HepG2 cells with lentiviral vectors expressing either CYP2E1-1263C/wt or CYP2E1-1263T/mt constructs to investigate the effect of synonymous SNP rs2515641 on CYP2E1 expression, and found that both the mRNA and protein expression levels of CYP2E1 were significantly decreased, and the ALT level of CYP2E1-1263T/mt recombinant cells was increased compared with that in the CYP2E1-1263C/wt recombinant cells after TP treatment for 48 h, indicating that synonymous mutation rs2515641 induced susceptibility to TP-induced hepatotoxicity by affecting CYP2E1 mRNA and protein expression ( Chen et al., 2020 ).
+Clock proteins affect drug metabolism and drug detoxification by regulating CYP450s ( Zhao et al., 2019 ). A pharmacokinetic experiment showed that gavage with TwHF at Zeitgeber time 2 (ZT2) generated higher plasma concentrations of TP and more severe liver injury compared with ZT14 dosing, which was associated with circadian expression of hepatic CYP3A11 regulated by the circadian clock ( Zhao H. et al., 2020 ). Likewise, the core clock gene Bmal1 (encoding brain and muscle ARNT-like 1) controls the circadian rhythm of CYP3A11 by regulating D-box binding PAR BZIP transcription factor (DBP)/hepatocyte nuclear factor 4 alpha (HNF4α), TP-induced hepatotoxicity exhibited more severe daytime (ZT2/8) than nighttime (ZT14/20) toxicity ( Lin et al., 2019 ).
+2.1.2 P-gp
+P-gp, an efflux transporter, attenuates intestinal absorption, limits penetration of the blood-brain barrier, and mediates biliary and urinary excretion of substrate drugs ( Zamek-Gliszczynski et al., 2021 ). The bidirectional transport of TP across Caco-2 cells was investigated in vitro , which showed that the transport of TP in Caco-2 cells was significantly increased in the basolateral to the apical direction and was abolished in the presence of the P-gp inhibitor, verapamil, indicating that P-gp is involved in intestinal absorption of TP ( Gong et al., 2015 ). A Rhodamine-123 uptake assay confirmed that TP did not affect the activity of P-gp in Caco-2 Cells ( Zhang et al., 2017 ). Therefore, P-gp protein activity does not change when TP is used alone, and the absorption of TP might not be altered. However, when TP is combined with drugs that interfere with P-gp activity, the absorption of TP, which might lead to changes in hepatotoxicity.
+TP is mainly secreted in bile ( Liu et al., 2014 ). A recent study showed that P-gp is involved in TP clearance and detoxification in a Sandwich-cultured rat hepatocyte model, and identified TP as a P-gp substrate using a rat Mdr1 (the gene responsible for encoding the P-gp protein) membrane ATPase assay ( Zhuang et al., 2013 ). Small interfering RNA (siRNA) and the specific inhibitor tariquidar were used to downregulate hepatic P-gp levels, which significantly increased the plasma and hepatic exposure of TP in mice, resulting in severe hepatotoxicity ( Kong et al., 2015 ). The above research indicates that hepatic P-gp regulates TP-induced hepatotoxicity by affecting its clearance.
+2.2 Oxidative stress mediated hepatotoxicity
+Oxidative stress (OS) is caused by an imbalance between oxidation and antioxidants. OS causes lipid and DNA damage, leading to organelle dysfunction and damage ( Pole et al., 2016 ; Campbell and Colgan, 2019 ). Numerous in vivo and in vitro studies have found that administration of TP causes an increase in ROS and malondialdehyde (MDA), and a decrease in superoxide dismutase (SOD), catalase (CAT), glutathione-S-transferase (GST) and GSH ( Li et al., 2014 ; Jiang et al., 2021 ). Thus, TP-induced hepatotoxicity is associated with oxidative stress.
+2.2.1 Mitochondrial oxidative stress
+Mitochondria are important sites for biosynthetic processes that regulate stress responses ( Vakifahmetoglu-Norberg et al., 2017 ). TP increased the mitochondrial membrane transmembrane potential (Δ Ψ m) in a concentration-dependent manner in HepG2 and HL7702 cells, which increased oxidative stress ( Fu et al., 2011 ; Fu et al., 2013 ). In addition, TP inhibited the activity of mitochondrial respiratory chain complexes I and IV in a concentration-dependent manner, leading to obstruction of electron flow, causing the accumulation of electrons in the upstream respiratory chain complex, which reacts with oxygen through the upstream complex to form superoxide anion radical (O 2− ), thereby increasing ROS and inducing oxidative stress ( Fu et al., 2011 ). Moreover, in mice, inhibition of the mitochondrial respiratory chain by TP induced secondary β-oxidative damage, microvesicular steatosis, increased lactate and ROS, and decreased GSH, resulting in liver injury ( Fu et al., 2011 ). Moreover, TP caused mitochondrial dysfunction by inducing mitochondrial swelling and permeability in female rat liver mitochondria ( Fu et al., 2013 ). Notably, in a rat model of TP-induced hepatotoxicity, TP upregulated the expression of the mitochondrial fission-related, dynamin-related protein 1 (Drp1), leading to disturbances in mitochondrial dynamics and mitochondrial dysfunction, such as increased ROS, DNA membrane depolarization, decreased ATP production, and decreased mitochondrial DNA copy number ( Hasnat et al., 2019 ; Hasnat et al., 2020 ). Taken together, these studies proved the importance of mitochondrial oxidative stress in TP-induced hepatotoxicity.
+2.2.2 Imbalance of antioxidant
+In addition to oxidative stress caused by TP-induced mitochondrial dysfunction, oxidative stress caused by TP-induced imbalance of cellular antioxidant protect systems is also an important mechanism of TP-induced hepatotoxicity.
+Nuclear factor erythroid 2-related factor 2 (Nrf2) is a redox-sensitive transcription factor that regulates cellular oxidative stress ( Lee et al., 2005 ). Upregulating NRF2 expression can reduce TP-induced HepG2 cytotoxicity, whereas silencing NRF2 can raised oxidative stress and aggravated triptolide-induced cytotoxicity in HepG2 and L02 cells ( Li et al., 2014 ; Zhou et al., 2017 ). Also, treatment with the canonical Nrf2 agonist sulforaphane (SFN) attenuated TP-induced hepatotoxicity by reducing oxidative stress in mice ( Li et al., 2014 ). In vitro , TP enhanced NRF2 expression, induced Nrf2 nuclear translocation, increased Nrf2 adenine-uridine rich element (ARE)-binding activity, increased heme oxygenase 1 (HO-1) and NAD(P)H quinone dehydrogenase 1 (NQO1) expression in L-02 and HepG2 cells ( Zhou et al., 2017 ). MicroRNA-155 (miR-155), an endogenous non-coding small RNA, was upregulated in a TP concentration-dependent manner, resulting in downregulation of the Nrf2 signaling pathway, and inhibition of miR-155 reversed the downregulation of the Nrf2 signaling pathway by TP and alleviated TP-induced hepatotoxicity ( Li et al., 2021 ). Furthermore, TP treatment can inhibit the endogenous peroxisome proliferator-activated receptor alpha (PPARα) signaling pathway, leading to increased long-chain acylcarnitines in mouse serum, which in turn activated the Notch-Nrf2 pathway to protect against TP-induced hepatotoxicity ( Hu et al., 2019 ). According to the above research, there is controversy regarding whether TP inhibits or upregulates Nrf2. What is clear, however, is that activation of Nrf2 protects can against TP-induced hepatotoxicity.
+Activation of the Notch1 signaling pathway has been shown to reduce oxidative stress in injured tissues ( Cai et al., 2022 ). The thioredoxin (TRX) system is a key antioxidant system against oxidative stress ( Lu and Holmgren, 2014 ). A study demonstrated that TP could inhibit Notch1 expression, impaired the antioxidant activity of TRX through the phosphatase and tensin homolog (PTEN)/protein kinase B (AKT)/thioredoxin interacting protein (Txnip) signaling pathway, and caused oxidative damage ( Shen et al., 2019 ).
+Taken together, oxidative stress is involved in TP-induced hepatotoxicity, and regulation of Drp1, or activation of Nrf2 and Notch1 can alleviate oxidative stress and TP-induced hepatotoxicity.
+2.3 Excessive autophagy-mediated hepatotoxicity
+Autophagy is a lysosomal degradation pathway through which cellular contents, such as damaged organelles and proteins, are recycled ( Xie and Klionsky, 2007 ). A study showed that TP-induced oxidative stress led to a time- and dose-dependent increase in autophagy-related proteins Beclin1 and membrane-bound microtubule-associated protein light chain 3 (LC3II). The study identified the presence of autophagosomes by transmission electron microscopy, and inhibition of autophagy decreased cell viability and enhanced apoptosis in a TP-induced HL7702 cytotoxicity model ( Wei et al., 2019 ). This indicated that autophagy plays a protective role in TP-induced hepatotoxicity. Yet, in another in vitro experiment, it was shown that TP exposure led to excessive autophagy induced by endoplasmic reticulum stress (ERS) through the PERK-ATF4-CHOP pathway. Co-treatment with the autophagy agonist RAPA increased TP-induced cytotoxicity and apoptosis, while co-treatment with the autophagy inhibitor 3-MA decreased TP-induced cytotoxicity and apoptosis ( Zhang et al., 2022b ). This may due to the unclarified role that autophagy plays in the TP-induced hepatotoxicity. Appropriate autophagy can protect TP-induced hepatotoxicity, while excessive autophagy aggravates TP-induced hepatotoxicity.
+Besides, electron microscopy showed obvious mitophagy in TP-treated rat liver tissue, and mitophagy was related to the disturbance of mitochondrial function and dynamics caused by the TP-induced increase in Drp1 ( Hasnat et al., 2019 ). However, that study did not further verify the role of mitophagy in TP-induced hepatotoxicity. Furthermore, another study found that TP-induced ERS could induce excessive mitophagy in HepaRG cells. Co-treatment with Mdivi-1, a specific inhibitor of mitophagy could alleviate TP-induced HepaRG cytotoxicity ( Zhang et al., 2022c ).
+Collectively, TP-induced ERS lead to excessive autophagy, and modulation of autophagy can alleviate TP-induced hepatotoxicity.
+2.4 Apoptosis-mediated hepatotoxicity
+Apoptosis is a programmed death process that is mainly triggered by two basic pathways: The death receptor pathway and the mitochondrial pathway, both of which ultimately lead to the activation of caspases ( Dara and Kaplowitz, 2017 ; Galluzzi et al., 2018 ). Using transcriptomic techniques, among apoptosis-related genes, 46 genes were upregulated and 43 genes were downregulated in TP-induced hepatotoxicity in Wistar rats ( Wang et al., 2013 ). In another transcriptomics study, TP-induced apoptosis through regulating the phosphatidylinositol-4,5-bisphosphate 3-kinase (PI3K)/AKT signaling pathway, the tumor necrosis factor alpha (TNFα) signaling pathway, the mitogen-activated protein kinase (MAPK) signaling pathway, and the P53 signaling pathway; however, these pathways have not been further validated ( Zhao J. et al., 2020 ). These studies indicated that apoptosis is associated with TP-induced hepatotoxicity.
+TP exposure caused loss of mitochondrial membrane potential and the release of cytochrome c from mitochondria into the cytoplasm, which leads to downregulation of the level of the anti-apoptotic protein, B-cell CLL/lymphoma 2 (Bcl-2), upregulation of the level of the pro-apoptotic protein BCL2 associated X (Bax) and the tumor suppressor protein P53, and an increase in the activity of caspase 9 and caspase 3, ultimately causing apoptosis in L-02 cells ( Yao et al., 2008 ). An in-depth study showed that TP treatment induced dysfunction and altered dynamics of mitochondria by causing the translocation of Drp1 from the cytoplasm to the mitochondrial outer membrane, with concomitant release of cytochrome c from mitochondria into the cytoplasm, which activated caspase 3, leading to apoptosis ( Hasnat et al., 2020 ). TP caused an increase in ROS by inhibiting Notch1, which ultimately induced apoptosis, and upregulating the expression of Notch1 can reduce apoptosis and alleviate TP-induced hepatotoxicity ( Shen et al., 2019 ). In general, TP-induced mitochondrial damage and oxidative stress are important factors in triggering apoptosis.
+2.5 Hepatotoxicity mediated by metabolic disorders
+Bile duct hyperplasia and lipid accumulation were observed in the histological manifestations of TP-induced hepatotoxicity ( Fu et al., 2011 ; Jin et al., 2015 ), which indicated that metabolic disorders are involved in TP-induced hepatotoxicity.
+2.5.1 Bile acid metabolism
+The farnesoid X receptor (FXR) is a ligand-activated transcription factor that activates certain genes involved in phases II and III of xenobiotic metabolism, protecting the liver from toxic metabolites and xenobiotics ( Lee et al., 2010 ). Pretreatment with the FXR activator, GW4046, has been shown to maintain metabolism homeostasis and attenuate TP-induced hepatotoxicity by increasing gene expression related to phase II and phase III xenobiotic metabolism ( Jin et al., 2015 ). Besides, FXR also plays a key role in maintaining hepatic bile acid homeostasis ( Molinaro and Marschall, 2022 ). Additionally, sirtuin 1 (Sirt1) regulates FXR activation, and depletion of hepatic Sirt1 reduces FXR signaling ( García-Rodríguez et al., 2014 ). TP suppressed the Sirt1/FXR signaling pathway by inhibiting Sirt1 activity, which led to a decrease in the expression of the bile salt export pump (BSEP), an increase in the expression of bile acid synthesis rate-limiting enzyme CYP7A, and a decrease in the expression of gluconeogenesis proteins glucose-6-phosphatase catalytic subunit (G6PC) and phosphoenolpyruvate carboxykinase 2, mitochondrial (PEPCK), resulting in the destruction of bile acid homeostasis and gluconeogenesis, thus causing liver injury in rats ( Yang et al., 2017 ). Zhou et al. ( Zou et al., 2020 ) found that TP induced the activation of iNKT cells, which in turn led to decreased expression of the cholestasis-related nuclear receptor FXR, transporter organic anion-transporting polypeptide 1b2 (OATP1B2), and CYP450 enzymes, which was also responsible for aggravating cholestatic liver injury.
+2.5.2 Lipid metabolism
+A study suggests that sex differences in TP-induced hepatotoxicity might be related to dyslipidemia. Continuous gavage of TP resulted in significant upregulation of the liver X receptor-alpha (LXR)/sterol regulatory element binding transcription factor 1 (SREBP-1) signaling axis in females, while male rats showed only slight changes, resulting in more lipid droplets in TP-treated female rats than in TP-treated male rats, which might be a factor in the sex differences in TP-induced hepatotoxicity ( Jiang et al., 2016 ). In addition, targeted fatty acids analysis showed that TP exposure induced significant changes in fatty acid levels in the livers of rats and mice ( Li et al., 2017 ; Liu et al., 2021 ).
+2.5.3 Other metabolisms
+Moreover, several untargeted metabolomics studies showed that a variety of metabolic pathway disorders can be found in TP-induced hepatotoxicity, including glutathione metabolism, purine metabolism, and glycerophospholipid metabolism ( Zhao J. et al., 2020 ; Yang et al., 2022 ). Additionally, targeted amino acid and sphingolipid analysis revealed that TP exposure induced changes in amino acid and sphingolipid metabolism profiles ( Qu et al., 2015 ; Hu et al., 2021 ). However, no in-depth research has been carried out.
+2.6 Immune-mediated hepatotoxicity
+As an immune organ, the liver is enriched with a large number of innate immune cells, such as neutrophils, Kupffer cells (KCs), dendritic cells (DCs), and natural killer cells (NKs), as well as adaptive immune cells, such as T cells and B cells. Evidence demonstrates that the immune response is closely linked to the development of drug-induced liver injury (DILI) ( Jiang et al., 2020 ; Nguyen et al., 2022 ).
+2.6.1 The innate immune system
+NLR family pyrin domain containing 3 (NLRP3), a multi-protein complex assembled in response to the activation of intracellular pattern recognition receptors (PRRs), is an important component of the innate immune system. NLRP3 can be activated by damage-related molecular patterns (DAMPs) produced by damaged cells and pathogen-related molecular patterns (PAMPs) generated by enterohepatic axis pathogens ( Kanneganti et al., 2007 ; Yu et al., 2022 ). Activation of the NLRP3 inflammasome releases inflammatory factors IL-1β and IL-18, which initiate an inflammatory cascade ( Baroja-Mazo et al., 2014 ; Bruchard et al., 2015 ; Tsai et al., 2017 ). Research has shown that activation of the TLR4-MYD88 innate immune signal transduction adaptor (Myd88)-NF-κB pathway and oxidative stress by TP are involved in the overactivation of the NLRP3 inflammasome, which releases a large amount of IL-1β and increases the recruitment of neutrophils and macrophages, thereby aggravating liver injury ( Yuan et al., 2019a ). A single dose of Ac-Yvad-Cmk (a Caspase 1 inhibitor) injected before TP administration could effectively protect against TP-induced hepatotoxicity ( Yuan et al., 2019a ).
+Hepatic macrophages are the most abundant hepatic immune cells which play a vital role in maintaining hepatic homeostasis and contribute to the progression of DILI ( Tsuji et al., 2020 ). Several studies have shown that TP inhibited the phagocytosis of macrophages, increased the number of macrophages, and modulated the polarization of macrophages in mice ( Wang L. et al., 2018 ; Liu L. et al., 2022 ). what’s more, in a study of TP-induced acute hepatotoxicity, researchers found that depletion of macrophages using clodronate liposomes pretreatment could suppress the inflammatory response and alleviated TP-induced hepatotoxicity ( Zhao, 2018 ).
+Neutrophils, the innate immune cells, are the most abundant leukocytes in mammals ( Tang et al., 2021 ). It has been found that neutrophils increasingly infiltrate the liver following TP treatment because of activation of the NLRP3 inflammasome, induction of the TLR4 and TLR9 signaling pathway, release of inflammatory factors, or activation of other immune cells ( Wang X.z. et al., 2018 ; Wang X. Z. et al., 2018 ; Yuan et al., 2019a ). A study showed that neutrophil infiltration had little effect on TP-induced hepatotoxicity, because depletion of neutrophils only showed mild protection against TP-induced hepatotoxicity ( Wang X. Z. et al., 2018 ).
+Natural Killer T (NKT) cells express both NK and T cell surface markers, linking innate and adaptive immunity ( Kaer et al., 2011 ). Among them, invariant NKT (iNKT) cells are a subset of cells that cause liver inflammation and play a pathogenic role ( Maricic et al., 2018 ; Marrero et al., 2018 ; Nong et al., 2020 ). NKT, especially iNKT, cells are increasingly activated in the liver after TP administration, resulting from the upregulation of the Toll-like receptor (TLR) signaling pathway, which mainly releases the Th1 cytokine interferon gamma (IFN-γ), recruits neutrophils and macrophages, and causes hepatotoxicity ( Wang X.z. et al., 2018 ). Further research demonstrated that TP-activated iNKT cells released significantly increased levels of the Th2 cytokine, IL-4, thereby inhibiting type 2 NKT cells and promoting the expression of C-X-C motif chemokine ligand 10 (CXCL10), intercellular adhesion molecule 1 (ICAM-1), and early growth response 1 (Egr-1), resulting in downregulated expression levels of liver nuclear receptor FXR, bile acid transporter organic anion-transporting polypeptide 2b1 (OATP2B1), and CYP450 enzymes, ultimately exacerbating TP-induced cholestatic liver injury ( Zou et al., 2020 ).
+2.6.2 The adaptive immune system
+The balance of T helper cell 17 (Th17)/regulatory T cell (Treg) in adaptive immune cells is crucial to maintain immune homeostasis ( Liu et al., 2018 ; Lee et al., 2021 ). Tregs have anti-inflammatory effects that suppress immune responses. In contrast, Th17s have pro-inflammatory effects to promote immune responses. Increased levels of Th17s and their related cytokine IL-17, but decreased levels of Treg cells and their related cytokine IL-10, were observed in TP-induced hepatotoxicity ( Wang et al., 2014a ). Another study found the number of Tres was reduced by TP-mediated upregulation of suppressor of cytokine signaling (SOCS) and Notch signaling, resulting in a Th17/Treg imbalance and aggravated TP-induced hepatotoxicity ( Wang et al., 2016 ). Furthermore, in mice, IL-17 produced by Th17s contributed to TP-induced hepatotoxicity ( Wang et al., 2014b ).
+2.6.3 Liver immune homeostasis
+Mild bacterial-derived lipopolysaccharide (LPS) in the gut could enter the liver through the portal vein. Under physiological conditions, the hepatic immune system protects the host from the adverse effects of low-dose LPS, while mice that were gavaged daily with TP for 7 days showed disrupted liver immune homeostasis, evidenced by the liver’s inability to detoxify the harmful response induced by a non-hepatotoxic dose of LPS ( Yuan et al., 2019b ). Researchers further found that the imbalance of hepatic immune homeostasis was caused by TP-induced inhibition of NF-κB-dependent transcriptional activity and CASP8 and FADD like apoptosis regulator (CFLAR, also known as FLIP) production ( Yuan et al., 2020 ). Furthermore, TP inhibited the phagocytic function of macrophages, increased the number of macrophages, and regulated macrophages polarization in the mouse liver, resulting in an amplification of the inflammatory response to a non-hepatotoxic dose of LPS and exacerbated hepatotoxicity ( Wang L. et al., 2018 ; Liu L. et al., 2022 ). Recently, it was found that the immune disorder caused by a TP-induced Th17/Treg imbalance was also the cause of liver intolerance to a non-hepatotoxic dose of LPS in TP-induced acute hepatotoxicity ( Zhang H. et al., 2022 ). Hence, TP treatment led to an imbalance of immune homeostasis in the liver, making the liver susceptible to external factors, such as LPS, thereby aggravating liver damage.
+2.7 Gut microbiota mediated hepatotoxicity
+The close connection between the liver and the gut, such as the “gut-liver axis” and “enterohepatic circulation” means that the gut microbiota has an important impact on the efficacy and toxicity of drugs ( Kashyap et al., 2017 ; Wilson and Nicholson, 2017 ; Andrade et al., 2019 ). Enzymes or metabolites derived from the gut microbiota alter DILI by affecting the in vivo processing of drugs ( Gong et al., 2018 ; Yip et al., 2018 ; Li et al., 2019 ). Moreover, the gut microbiota and its metabolites can regulate liver injury by influencing immunity and the gut barrier ( Sun et al., 2020 ; Yan et al., 2022 ).
+In recent years, researchers have focused on the association between the gut microbiota and TP-induced hepatotoxicity. An in vitro experiment on SD rat colon contents demonstrated that TP could be metabolized by the gut microbiota and the content of TP showed a downward trend over time, with a decrease of 3% at 6 h, 16% at 12 h, and 45% at 24 h ( Peng et al., 2020 ). In mice, TP injection after antibiotic depletion of the gut microbiota increased TP-induced hepatotoxicity, and the mechanism was related to metabolic disorders. Gut microbiota-derived propionate was reported to defend against TP-induced hepatotoxicity through metabolic intervention ( Huang et al., 2020 ). Considering that most TP-containing drugs are delivered orally, our study further demonstrated that gut microbiota disturbances induced by antibiotic pretreatment exacerbated oral TP-induced hepatotoxicity, which is associated with an aggravated NLRP3-mediated inflammatory response and increased TP absorption ( Liu Y. T. et al., 2022 ).
+3 Conclusion
+The pathogenesis of TP-induced hepatotoxicity is complicated, and the occurrence of TP-induced hepatotoxicity is the result of the interaction of multiple factors. In summary, the mechanisms of TP-induced hepatotoxicity are mainly related to CYP450s, P-gp, oxidative stress, excessive autophagy, apoptosis, metabolic disorders, immunity, and the gut microbiota ( Figure 1 ).
+FIGURE 1.
+Open in a new tab
+Schematic diagram of molecular pathogenesis of TP-induced hepatotoxicity. This figure shows that TP-induced hepatotoxicity is mainly related to CYP450s, P-gp, oxidative stress, excessive autophagy, apoptosis, metabolic disorders, immunity, and the gut microbiota. ↑: upregulation; ↓: downregulation; ┬: inhibition.
+In this section, we propose an overall hypothesis for a possible mechanism of TP-induced hepatotoxicity. TP-induce hepatotoxicity is dose-dependently ( Yuan et al., 2019a ; Zhao J. et al., 2020 ). Therefore, hepatic CYP450s and P-gp, which affect TP exposure, play a vital role in TP-induced hepatotoxicity. Some factors such as the continuous use of TP, combined with drugs affecting CYP450s and P-gp, antibiotic abuse, circadian rhythm, and sex differences, should affect the level of TP in the liver. TP itself is hepatotoxic ( Titov et al., 2011 ), and direct liver toxicity due to excessive exposure to TP, such as oxidative stress, excessive autophagy, apoptosis, metabolic disorders, etc. Cell damage caused by direct hepatotoxicity releases danger signals, such as DAMPs, which can activate the innate and adaptive immune systems, such as activation of NLRP3, recruitment of macrophages, Th17s, etc., and then a large number of pro-inflammatory factors will be released. The inflammatory response further aggravates liver injury by promoting cell death, inducing excessive autophagy and metabolic disorders, etc. In addition, the imbalance of hepatic immune homeostasis caused by changes in immune cells makes the liver sensitive to external factors, such as LPS, then aggravates hepatotoxicity. Furthermore, gut microbiota mediates the hepatotoxicity of TP by affecting TP in vivo exposure, metabolic homeostasis, and immunity ( Figure 2 ).
+FIGURE 2.
+Open in a new tab
+Hypothesis of molecular pathogenesis of TP-induced hepatotoxicity. CYP450 enzymes are involved in TP metabolism and P-gp is involved in TP transport. Some factors such as the continuous use of TP, combined with drugs affecting CYP450s and P-gp, antibiotic abuse, circadian rhythm, and sex differences, should affect the level of TP in the liver. TP itself is hepatotoxic and direct liver toxicity due to excessive exposure to TP, such as oxidative stress, excessive autophagy, apoptosis, metabolic disorders, etc. Cell damage caused by direct hepatotoxicity releases danger signals, such as DAMPs, which can activate the innate and adaptive immune systems, and then a large number of pro-inflammatory factors will be released. The inflammatory response further aggravates liver injury by promoting cell death, inducing excessive autophagy and metabolic disorders, etc. In addition, the imbalance of hepatic immune homeostasis caused by changes in immune cells makes the liver sensitive to external factors, such as LPS, then aggravates hepatotoxicity. Furthermore, gut microbiota mediates the hepatotoxicity of TP by affecting TP in vivo exposure, metabolic homeostasis, and immunity. ↓: downregulation of CYP450s and p-gp; ↑: abnormal increase TP exposure.
+Moreover, a comprehensive analysis of the toxicological mechanisms of TP could advance our understanding of the detoxification effect of TP. Increasing the expression of hepatic CYP450s and P-gp, activating Nrf2, Notch1, FXR, inhibiting excessive autophagy, regulating mitochondrial fission protein Drp1, and suppressing immune hyperactivation, are expected to become key strategies for TP detoxification. Studies show that there are variety of drugs, such as chlorogenic acid ( Wang J. M. et al., 2018 ), and Catalpol ( Zhang et al., 2022b ), etc., alleviated TP-induced hepatotoxicity by modulating key targets or biological processes such as Nrf2, and autophagy ( Table 1 ).
+TABLE 1.
+Detoxification strategies for TP.
+Drug
+Model
+Treatment
+Effector Mechanisms
+References
+Arctiin
+BALB/C mice
+pretreatment with Arctiin (500 mg/kg i.g. 12), TP (0.6 mg/kg, i.g. 24 h)
+Nrf2
+Zhou et al. (2020)
+HepG2 cells
+pretreatment with Arctiin (50 μM, 12 h), TP (50 nM, 12 h)
+Catalpol
+HepaRG cells
+pretreatment with Catalpol (40 μg/L 12 h), TP (20 μg/L 12 h)
+inhibit excessive autophagy
+Zhang et al. (2022b)
+Catalpol
+Female SD Rats
+TP (1.2 mg/kg) + Catalpol (2.4, 24, 240 mg/kg) i.g. 14d
+regulate phase I and II detoxification enzymes of TP
+Fu et al. (2020)
+L-02 cells
+pretreated with Catalpol (2 μg/ml, 10 μg/ml, 50 μg/ml, and 250 μg/ml 12 h). TP (20 μg/ml 36 h)
+HepG2 cells
+pretreated with Catalpol (0.4 μg/ml, 2 μg/ml, and 10 μg/ml, 12 h), TP (40 μg/ml, 36 h)
+Chlorogenic acid
+Male Kunming mice
+pretreatment with Chlorogenic acid (10,20 and 40 mg/kg, i.g. 7 d), TP (1 mg/kg, i.g. 24 h)
+Nrf2
+Wang et al. (2018a)
+Epigallocatechin-3-gallate
+Female C57BL/6 mice
+pretreated with Epigallocatechin-3-gallate (5 mg/kg, i.g. 10d), TP (0.5 mg/kg, i.g. 22 h)
+Th17/Treg balance
+Yu et al. (2016)
+Isoliquiritigenin
+Male ICR mice
+pretreatment with Isoliquiritigenin (25 and 50 mg/kg i.g. 7 d), TP (1.0 mg/kg, i.p. 24 h))
+Nrf2, bile acid metabolic homeostasis
+Hou et al. (2018)
+L-02 cells
+pretreatment with Isoliquiritigenin (2.5,5.0, 7.5 μM 12 h); TP (50 nM, 24 h)
+Isoliquiritigenin
+Male ICR mice
+pretreatment with Isoliquiritigenin (50 mg/kg i.g. 7d), TP (1.0 mg/kg, i.p. 6 h), Isoliquiritigenin (50 mg/kg i.g. 18 h)
+Nrf2
+Cao et al. (2016)
+Licorice root extract
+Male Wistar rats
+pretreatment with Licorice root extract (120,240 and 480 mg/kg, i.g. 7 d), TP (0.6 mg/kg, i.g. 18 h)
+Nrf2
+Tan et al. (2018)
+L-02 cells
+pretreatment with Licorice root extract (30, 60, and 90 μg/ml, 24 h), TP (80 nM, 18 h)
+magnesium isoglycyrrhizinate
+Male Wistar rats
+pretreatment with magnesium isoglycyrrhizinate (13.5 mg/kg, i.g. 7 d), TP (0.6 mg/kg, i.g. 18 h)
+Nrf2
+Tan et al. (2018)
+L-02 cells
+pretreatment with magnesium isoglycyrrhizinate (30 μg/ml, 24 h), TP (80 nM, 18 h)
+Quercetin
+Female C57BL/6 mice
+pretreatment Quercetin (20, 50 and 80 mg/kg i.g. 10 d), TP (0.5 mg/kg, i.g. 22 h)
+Th17/Treg balance
+Wei et al. (2017)
+Vitamin C
+Male C57/BL6 mice
+pretreatment Vitamin C (250 mg/kg i.g. 12 and 24 h), TP (1.0 mg/kg, i.p. 24 h)
+mitigation of oxidative stress
+Xu et al. (2019)
+Open in a new tab
+However, research on the mechanism of TP-induced hepatotoxicity lacks depth. For example, studies have found that the role of autophagy in a model of TP-induced hepatotoxicity is controversial. It seems that proper autophagy protects TP-induced hepatotoxicity, yet excessive autophagy increases TP-induced hepatotoxicity ( Wei et al., 2019 ; Zhang et al., 2022b ). However, there is currently no clear indicator to determine the extent of autophagy in TP-induced hepatotoxicity, and it cannot tell us how to regulate autophagy. Therefore, it is necessary to develop appropriate experimental models to clarify the role of autophagy in TP-induced hepatotoxicity and look for the key indicators or biomarkers. Furthermore, multiple mechanisms have been demonstrated to be involved in TP-induced hepatotoxicity while reduce the expression of these targets does not seem to significantly alleviate TP-induced hepatotoxicity. This suggests that TP-induced hepatotoxicity is caused by the interaction of multiple factors and the key pathogenesis of TP-induced hepatotoxicity has not yet been identified. Thus, key pathogenic mechanisms need to be discovered and validated for detoxification strategies for TP-induced hepatotoxicity.
+Author contributions
+YH and QW drafted the manuscript and edited the manuscript. YW, HZ, and XL participated in preparing the figures and collected the literatures. TY and HZ revised the draft. All authors read and approved the submitted version.
+Funding
+This work was supported by the Three-year Action Plan of Shanghai Shenkang Medical Development Center (grant numbers SHDC2020CR1053B and SHDC2020CR6012-003), the Science and Technology Support Project of Shanghai Science and Technology Commission (grant numbers 20S21901800, 18401900700 and 18401932800), and Three-Year Action Plan for Development of TCM in Shanghai (ZY3-CCCX-2-1003).
+Conflict of interest
+The authors declare that the research was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest.
+Publisher’s note
+All claims expressed in this article are solely those of the authors and do not necessarily represent those of their affiliated organizations, or those of the publisher, the editors and the reviewers. Any product that may be evaluated in this article, or claim that may be made by its manufacturer, is not guaranteed or endorsed by the publisher.
+References
+Andrade R. J., Chalasani N., Bjornsson E. S., Suzuki A., Kullak-Ublick G. A., Watkins P. B., et al. (2019). Drug-induced liver injury. Nat. Rev. Dis. Prim.
+5 (1), 58. 10.1038/s41572-019-0105-0
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Baroja-Mazo A., Martín-Sánchez F. G. A. I., Martínez C. M. A.-I., Compan J., Barberà-Cremades M., et al. (2014). The NLRP3 inflammasome is released as a particulate danger signal that amplifies the inflammatory response.
+Nat. Immunol.
+15 (8), 738–748. 10.1038/ni.2919
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Bruchard M., Rebé C., Derangère V., Togbé D., Ryffel B., Boidot R., et al. (2015). The receptor NLRP3 is a transcriptional regulator of TH2 differentiation. Nat. Immunol.
+16 (8), 859–870. 10.1038/ni.3202
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Cai W., Shen K., Ji P., Jia Y., Han S., Zhang W., et al. (2022). The Notch pathway attenuates burn-induced acute lung injury in rats by repressing reactive oxygen species. Burns Trauma
+10, tkac008. 10.1093/burnst/tkac008
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Campbell E. L., Colgan S. P. (2019). Control and dysregulation of redox signalling in the gastrointestinal tract. Nat. Rev. Gastroenterol. Hepatol.
+16 (2), 106–120. 10.1038/s41575-018-0079-5
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Cao L., Yan M., Ma Y. X., Zhang B. K., Fang P. F., Xiang D. X., et al. (2016). Isoliquiritigenin protects against triptolide-induced hepatotoxicity in mice through Nrf2 activation. Pharmazie
+71 (7), 394–397. 10.1691/ph.2016.6535
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Chen K., Guo R., Wei C. (2020). Synonymous mutation rs2515641 affects CYP2E1 mRNA and protein expression and susceptibility to drug-induced liver injury. Pharmacogenomics
+21 (7), 459–470. 10.2217/pgs-2019-0151
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Dara L., Kaplowitz N. (2017). “Cell death in drug-induced liver injury,” in Cellular injury in liver diseases (Berlin, Germany: Springer; ), 1–35. [ Google Scholar ]
+Du F., Liu Z., Li X., Xing J. (2014). Metabolic pathways leading to detoxification of triptolide, a major active component of the herbal medicine Tripterygium wilfordii. J. Appl. Toxicol.
+34 (8), 878–884. 10.1002/jat.2906
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Fu L., Zhou L., Geng S., Li M., Lu W., Lu Y., et al. (2020). Catalpol coordinately regulates phase I and II detoxification enzymes of Triptolide through CAR and NRF2 pathways to reduce Triptolide-induced hepatotoxicity. Biomed. Pharmacother.
+129, 110379. 10.1016/j.biopha.2020.110379
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Fu Q., Huang X., Shu B., Xue M., Zhang P., Wang T., et al. (2011). Inhibition of mitochondrial respiratory chain is involved in triptolide-induced liver injury. Fitoterapia
+82 (8), 1241–1248. 10.1016/j.fitote.2011.08.019
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Fu Q., Jiang Z. Z., Zhang L. Y. (2013). Impairment of triptolide on liver mitochondria in isolated liver mitochondria and HL7702 cell line. Chin. J. Integr. Med.
+19 (9), 683–688. 10.1007/s11655-012-1265-x
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Galluzzi L., Vitale I., Aaronson S. A., Abrams J. M., Adam D., Agostinis P., et al. (2018). Molecular mechanisms of cell death: Recommendations of the nomenclature committee on cell death 2018. Cell Death Differ.
+25 (3), 486–541. 10.1038/s41418-017-0012-4
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Gao J., Liang Z., Zhao F., Liu X., Ma N. (2022). Triptolide inhibits oxidative stress and inflammation via the microRNA-155-5p/brain-derived neurotrophic factor to reduce podocyte injury in mice with diabetic nephropathy. Bioengineered
+13 (5), 12275–12288. 10.1080/21655979.2022.2067293
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ] [ Retracted ]
+García-Rodríguez J., Barbier-Torres L., Fernández-Álvarez S., Gutiérrez-de Juan V., Monte M., Halilbasic E., et al. (2014). SIRT1 controls liver regeneration by regulating bile acid metabolism through farnesoid X receptor and mammalian target of rapamycin signaling. Hepatology
+59 (5), 1972–1983. 10.1002/hep.26971
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Gong S., Lan T., Zeng L., Luo H., Yang X., Li N., et al. (2018). Gut microbiota mediates diurnal variation of acetaminophen induced acute liver injury in mice. J. Hepatol.
+69 (1), 51–59. 10.1016/j.jhep.2018.02.024
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Gong X., Chen Y., Wu Y. (2015). Absorption and metabolism characteristics of triptolide as determined by a sensitive and reliable LC-MS/MS method. Molecules
+20 (5), 8928–8940. 10.3390/molecules20058928
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Guo X., Xue M., Li C., Yang W., Wang S., Ma Z., et al. (2016). Protective effects of triptolide on TLR4 mediated autoimmune and inflammatory response induced myocardial fibrosis in diabetic cardiomyopathy. J. Ethnopharmacol.
+193, 333–344. 10.1016/j.jep.2016.08.029
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Hasnat M., Yuan Z., Naveed M., Khan A., Raza F., Xu D., et al. (2019). Drp1-associated mitochondrial dysfunction and mitochondrial autophagy: A novel mechanism in triptolide-induced hepatotoxicity. Cell Biol. Toxicol.
+35 (3), 267–280. 10.1007/s10565-018-9447-8
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Hasnat M., Yuan Z., Ullah A., Naveed M., Raza F., Baig M., et al. (2020). Mitochondria-dependent apoptosis in triptolide-induced hepatotoxicity is associated with the Drp1 activation. Toxicol. Mech. Methods
+30 (2), 124–133. 10.1080/15376516.2019.1669247
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Hou Z., Chen L., Fang P., Cai H., Tang H., Peng Y., et al. (2018). Mechanisms of triptolide-induced hepatotoxicity and protective effect of combined use of isoliquiritigenin: Possible roles of Nrf2 and hepatic transporters. Front. Pharmacol.
+9, 226. 10.3389/fphar.2018.00226
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Hu C., Li H., Wu L., Ke J., Yu X., Xiong Y., et al. (2021). Metabolic profiling of 19 amino acids in triptolide-induced liver injured rats by gas chromatography-triple quadrupole mass spectrometry. Hum. Exp. Toxicol.
+40 (10), 1685–1697. 10.1177/09603271211006167
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Hu D. D., Zhao Q., Cheng Y., Xiao X. R., Huang J. F., Qu Y., et al. (2019). The protective roles of PPARα activation in triptolide-induced liver injury.
+Toxicol. Sci.
+171, 1–12. 10.1093/toxsci/kfz146
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Huang J. F., Zhao Q., Dai M. Y., Xiao X. R., Zhang T., Zhu W. F., et al. (2020). Gut microbiota protects from triptolide-induced hepatotoxicity: Key role of propionate and its downstream signalling events. Pharmacol. Res.
+155, 104752. 10.1016/j.phrs.2020.104752
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Jiang H. Y., Bao Y. N., Lin F. M., Jin Y. (2021). Triptolide regulates oxidative stress and inflammation leading to hepatotoxicity via inducing CYP2E1. Hum. Exp. Toxicol.
+40 (12), S775–S787. 10.1177/09603271211056330
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Jiang W., Dai T., Xie S., Ding L., Huang L., Dai R. (2020). Roles of diclofenac and its metabolites in immune activation associated with acute hepatotoxicity in TgCYP3A4/hPXR-humanized mice. Int. Immunopharmacol.
+86, 106723. 10.1016/j.intimp.2020.106723
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Jiang Z., Huang X., Huang S., Guo H., Wang L., Li X., et al. (2016). Sex-related differences of lipid metabolism induced by triptolide: The possible role of the lxrα/SREBP-1 signaling pathway.
+Front. Pharmacol.
+7, 87. 10.3389/fphar.2016.00087
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Jin C., Wu Z., Wang L., Kanai Y., He X. (2019). CYP450s-Activity relations of celastrol to interact with triptolide reveal the reasons of hepatotoxicity of Tripterygium wilfordii. Molecules
+24 (11), E2162. 10.3390/molecules24112162
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Jin J., Sun X., Zhao Z., Wang W., Qiu Y., Fu X., et al. (2015). Activation of the farnesoid X receptor attenuates triptolide-induced liver toxicity. Phytomedicine
+22 (10), 894–901. 10.1016/j.phymed.2015.06.007
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Kaer L. V., Parekh V. V., Wu L. (2011). Invariant natural killer T cells: Bridging innate and adaptive immunity. Cell Tissue Res.
+343 (1), 43–55. 10.1007/s00441-010-1023-3
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Kanneganti T. D., Lamkanfi M., Nunez G. (2007). Intracellular NOD-like receptors in host defense and disease. Immunity
+27 (4), 549–559. 10.1016/j.immuni.2007.10.002
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Kashyap P. C., Chia N., Nelson H., Segal E., Elinav E. (2017). Microbiome at the frontier of personalized medicine. Mayo Clin. Proc.
+92 (12), 1855–1864. 10.1016/j.mayocp.2017.10.004
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Kong L. L., Zhuang X. M., Yang H. Y., Yuan M., Xu L., Li H. (2015). Inhibition of P-glycoprotein gene expression and function enhances triptolide-induced hepatotoxicity in mice. Sci. Rep.
+5, 11747. 10.1038/srep11747
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Lee F. Y., de Aguiar Vallim T. Q., Chong H. K., Zhang Y., Liu Y., Jones S. A., et al. (2010). Activation of the farnesoid X receptor provides protection against acetaminophen-induced hepatic toxicity. Mol. Endocrinol.
+24 (8), 1626–1636. 10.1210/me.2010-0117
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Lee J. M., Li J., Johnson D. A., Stein T. D., Kraft A. D., Calkins M. J., et al. (2005). Nrf2, a multi-organ protector?
+FASEB J. official Publ. Fed. Am. Soc. Exp. Biol.
+19 (9), 1061–1066. 10.1096/fj.04-2591hyp
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Lee S. K., Park M. J., Jhun J. Y., Beak J. A., Choi J. Y., Rye J. Y., et al. (2021). Combination treatment with metformin and tacrolimus improves systemic immune cellular homeostasis by modulating Treg and Th17 imbalance. Front. Immunol.
+11, 581728. 10.3389/fimmu.2020.581728
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Li J., Shen F., Guan C., Wang W., Sun X., Fu X., et al. (2014). Activation of Nrf2 protects against triptolide-induced hepatotoxicity. PLoS One
+9 (7), e100685. 10.1371/journal.pone.0100685
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Li M., Hu T., Tie C., Qu L., Zheng H., Zhang J. (2017). Quantitative proteomics and targeted fatty acids analysis reveal the damage of triptolide in liver and kidney. Proteomics
+17 (22), 1700001. 10.1002/pmic.201700001
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Li W., Liu Y., He Y. Q., Zhang J. W., Gao Y., Ge G. B., et al. (2008). Characterization of triptolide hydroxylation by cytochrome P450 in human and rat liver microsomes. Xenobiotica.
+38 (12), 1551–1565. 10.1080/00498250802503359
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Li X. X., Du F. Y., Liu H. X., Ji J. B., Xing J. (2015). Investigation of the active components in Tripterygium wilfordii leading to its acute hepatotoxicty and nephrotoxicity. J. Ethnopharmacol.
+162, 238–243. 10.1016/j.jep.2015.01.004
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Li Y., Guo L., Hou Z., Gong H., Yan M., Zhang B. (2021). Role of MicroRNA-155 in triptolide-induced hepatotoxicity via the nrf2-dependent pathway. J. Ethnopharmacol.
+281, 114489. 10.1016/j.jep.2021.114489
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Li Y., Pan H., Li X., Jiang N., Huang L., Lu Y., et al. (2019). Role of intestinal microbiota-mediated genipin dialdehyde intermediate formation in geniposide-induced hepatotoxicity in rats. Toxicol. Appl. Pharmacol.
+377, 114624. 10.1016/j.taap.2019.114624
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Lin Y., Wang S., Zhou Z., Guo L., Yu F., Wu B. (2019). Bmal1 regulates circadian expression of cytochrome P450 3a11 and drug metabolism in mice. Commun. Biol.
+2, 378. 10.1038/s42003-019-0607-z
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Liu J., Li W., Zhu W., He W., Zhao H., Xiang Y., et al. (2018). Chronic intermittent hypoxia promotes the development of experimental non-alcoholic steatohepatitis by modulating Treg/Th17 differentiation. Acta Biochim. Biophys. Sin.
+50, 1200–1210. 10.1093/abbs/gmy131
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Liu J., Zhou X., Chen X. Y., Zhong D. F. (2014). Excretion of [3H]triptolide and its metabolites in rats after oral administration. Acta Pharmacol. Sin.
+35 (4), 549–554. 10.1038/aps.2013.192
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Liu L., Jiang Z., Huang X., Liu J., Zhang J., Xiao J., et al. (2011). Disappearance of sexual dimorphism in triptolide metabolism in monosodium glutamate treated neonatal rats. Arzneimittelforschung.
+61 (2), 98–103. 10.1055/s-0031-1296174
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Liu L., Jiang Z., Liu J., Huang X., Wang T., Liu J., et al. (2010). Sex differences in subacute toxicity and hepatic microsomal metabolism of triptolide in rats. Toxicology
+271 (1-2), 57–63. 10.1016/j.tox.2010.03.004
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Liu L., Zhang X., Xing X., Mohammed I., Xu X. T., Jiang Z. Z., et al. (2022a). Triptolide induces liver injury by regulating macrophage recruitment and polarization via the Nrf2 signaling pathway. Oxid. Med. Cell. Longev.
+2022, 1492239. 10.1155/2022/1492239
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Liu X., Hu C., Li H., Wu L., Xiong Y., Tang X., et al. (2021). Metabolic profiling of fatty acids in Tripterygium wilfordii multiglucoside- and triptolide-induced liver-injured rats. Open Life Sci.
+16 (1), 184–197. 10.1515/biol-2021-0016
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Liu Y. T., Hu Y. Q., Wang Y. L., Huang K., Chen G. F., Zhou H., et al. (2022b). Antibiotic pretreatment promotes orally-administered triptolide absorption and aggravates hepatotoxicity and intestinal injury in mice. J. Ethnopharmacol.
+292, 115224. 10.1016/j.jep.2022.115224
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Lu J., Holmgren A. (2014). The thioredoxin antioxidant system. Free Radic. Biol. Med.
+66, 75–87. 10.1016/j.freeradbiomed.2013.07.036
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Lu Y., Xie T., Zhang Y., Zhou F., Ruan J., Zhu W., et al. (2017). Triptolide Induces hepatotoxicity via inhibition of CYP450s in Rat liver microsomes. BMC Complement. Altern. Med.
+17 (1), 15. 10.1186/s12906-016-1504-3
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Luo D., Zuo Z., Zhao H., Tan Y., Xiao C. (2019). Immunoregulatory effects of Tripterygium wilfordii Hook F and its extracts in clinical practice. Front. Med.
+13 (5), 556–563. 10.1007/s11684-018-0649-5
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Maricic I., Marrero I., Eguchi A., Nakamura R., Johnson C. D., Dasgupta S., et al. (2018). Differential activation of hepatic invariant NKT cell subsets plays a key role in progression of nonalcoholic steatohepatitis. J. Immunol.
+201 (10), 3017–3035. 10.4049/jimmunol.1800614
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Marrero I., Maricic I., Feldstein A. E., Loomba R., Kumar V., Rivera-Nieves J., et al. (2018). Complex network of NKT cell subsets controls immune homeostasis in liver and gut. Front. Immunol.
+9, 2082. 10.3389/fimmu.2018.02082
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Mei X. A., Yan Z. A., Xjl A., Zzj B., Liang Z. C., Shl A., et al. (2012). Comparison of toxicokinetic and tissue distribution of triptolide-loaded solid lipid nanoparticles vs free triptolide in rats. Eur. J. Pharm. Sci.
+47 (4), 713–717. 10.1016/j.ejps.2012.05.012
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Molinaro A., Marschall H. (2022). Bile acid metabolism and FXR-mediated effects in human cholestatic liver disorders. Biochem. Soc. Trans.
+50 (1), 361–373. 10.1042/bst20210658
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Nebert D. W., Dalton T. P. (2006). The role of cytochrome P450 enzymes in endogenous signalling pathways and environmental carcinogenesis. Nat. Rev. Cancer
+6 (12), 947–960. 10.1038/nrc2015
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Nguyen N., Umbaugh D., Sanchez-Guerrero G., Ramachandran A., Jaeschke H. (2022). Kupffer cells regulate liver recovery through induction of chemokine receptor CXCR2 on hepatocytes after acetaminophen overdose in mice. Arch. Toxicol.
+96 (1), 305–320. 10.1007/s00204-021-03183-0
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Nong C., Zou M., Xue R., Bai L., Liu L., Jiang Z., et al. (2020). The role of invariant natural killer T cells in experimental xenobiotic-induced cholestatic hepatotoxicity. Biomed. Pharmacother.
+122, 109579. 10.1016/j.biopha.2019.109579
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Pan Y., Meng M., Zheng N., Cao Z., Yang P., Xi X., et al. (2017). Targeting of multiple senescence-promoting genes and signaling pathways by triptonide induces complete senescence of acute myeloid leukemia cells. Biochem. Pharmacol.
+126, 34–50. 10.1016/j.bcp.2016.11.024
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Peng R., Ma S. R., Fu J., Han P., Pan L. B., Zhang Z. W., et al. (2020). Transforming of triptolide into characteristic metabolites by the gut microbiota. Molecules
+25 (3), 606. 10.3390/molecules25030606
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Pole A., Dimri M., Dimri G. P. (2016). Oxidative stress, cellular senescence and ageing. AIMS Mol. Sci.
+3 (3), 300–324. 10.3934/molsci.2016.3.300
+[ DOI ] [ Google Scholar ]
+Qu L., Qu F., Jia Z., Wang C., Wu C., Zhang J. (2015). Integrated targeted sphingolipidomics and transcriptomics reveal abnormal sphingolipid metabolism as a novel mechanism of the hepatotoxicity and nephrotoxicity of triptolide. J. Ethnopharmacol.
+170, 28–38. 10.1016/j.jep.2015.05.010
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Shen F., Xiong Z., Kong J., Wang L., Cheng Y., Jin J., et al. (2019). Triptolide impairs thioredoxin system by suppressing Notch1-mediated PTEN/Akt/Txnip signaling in hepatocytes. Toxicol. Lett.
+300, 105–115. 10.1016/j.toxlet.2018.10.024
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Shen G., Zhuang X., Xiao W., Kong L., Tan Y., Li H. (2014). Role of CYP3A in regulating hepatic clearance and hepatotoxicity of triptolide in rat liver microsomes and sandwich-cultured hepatocytes. Food Chem. Toxicol.
+71, 90–96. 10.1016/j.fct.2014.05.020
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Song X., He H., Zhang Y., Fan J., Wang L. (2022). Mechanisms of action of triptolide against colorectal cancer: Insights from proteomic and phosphoproteomic analyses. Aging
+14 (7), 3084–3104. 10.18632/aging.203992
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Sun J., Zhao F., Lin B., Feng J., Wu X., Liu Y., et al. (2020). Gut microbiota participates in antithyroid drug induced liver injury through the lipopolysaccharide related signaling pathway. Front. Pharmacol.
+11, 598170. 10.3389/fphar.2020.598170
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Tan Q. Y., Hu Q., Zhu S. N., Jia L. L., Xiao J., Su H. Z., et al. (2018). Licorice root extract and magnesium isoglycyrrhizinate protect against triptolide-induced hepatotoxicity via up-regulation of the Nrf2 pathway. Drug Deliv.
+25 (1), 1213–1223. 10.1080/10717544.2018.1472676
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Tang J., Yan Z., Feng Q., Yu L., Wang H. (2021). The roles of neutrophils in the pathogenesis of liver diseases. Front. Immunol.
+12, 625472. 10.3389/fimmu.2021.625472
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Titov D. V., Gilman B., He Q. L., Bhat S., Low W. K., Dang Y., et al. (2011). XPB, a subunit of TFIIH, is a target of the natural product triptolide. Nat. Chem. Biol.
+7 (3), 182–188. 10.1038/nchembio.522
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Tsai Y. L., Hua K. F., Chen A., Wei C. W., Chen W. S., Wu C. Y., et al. (2017). NLRP3 inflammasome: Pathogenic role and potential therapeutic target for IgA nephropathy. Sci. Rep.
+7, 41123. 10.1038/srep41123
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Tsuji Y., Kuramochi M., Golbar H. M., Izawa T., Kuwamura M., Yamate J. (2020). Acetaminophen-induced rat hepatotoxicity based on M1/M2-macrophage polarization, in possible relation to damage-associated molecular patterns and autophagy. Int. J. Mol. Sci.
+21 (23), E8998. 10.3390/ijms21238998
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Vakifahmetoglu-Norberg H., Ouchida A., Norberg E. (2017). The role of mitochondria in metabolism and cell death. Biochem. Biophys. Res. Commun.
+482 (3), 426–431. 10.1016/j.bbrc.2016.11.088
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Wang J., Jiang Z., Ji J., Wang X., Wang T., Zhang Y., et al. (2013). Gene expression profiling and pathway analysis of hepatotoxicity induced by triptolide in Wistar rats. Food Chem. Toxicol.
+58, 495–505. 10.1016/j.fct.2013.04.039
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Wang J. M., Chen R. X., Zhang L. L., Ding N. N., Liu C., Cui Y., et al. (2018a).
+In vivo protective effects of chlorogenic acid against triptolide-induced hepatotoxicity and its mechanism. Pharm. Biol.
+56 (1), 626–631. 10.1080/13880209.2018.1527370
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Wang L., Xu D., Li L., Xing X., Liu L., Ismail Abdelmotalab M., et al. (2018b). Possible role of hepatic macrophage recruitment and activation in triptolide-induced hepatotoxicity. Toxicol. Lett.
+299, 32–39. 10.1016/j.toxlet.2018.08.017
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Wang X., Jiang Z., Cao W., Yuan Z., Sun L., Zhang L. (2014a). Th17/Treg imbalance in triptolide-induced liver injury. Fitoterapia
+93, 245–251. 10.1016/j.fitote.2014.01.006
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Wang X., Jiang Z., Xing M., Fu J., Su Y., Sun L., et al. (2014b). Interleukin-17 mediates triptolide-induced liver injury in mice. Food Chem. Toxicol.
+71, 33–41. 10.1016/j.fct.2014.06.004
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Wang X., Sun L., Zhang L., Jiang Z. (2016). Effect of adoptive transfer or depletion of regulatory T cells on triptolide-induced liver injury. Front. Pharmacol.
+7, 99. 10.3389/fphar.2016.00099
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Wang X. z., Xue R. f., Zhang S. y., Zheng Y. t., Zhang L. y., Jiang Z. z. (2018c). Activation of natural killer T cells contributes to triptolide-induced liver injury in mice. Acta Pharmacol. Sin.
+39 (12), 1847–1854. 10.1038/s41401-018-0084-9
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Wang X. Z., Zhang S. Y., Xu Y., Zhang L. Y., Jiang Z. Z. (2018d). The role of neutrophils in triptolide-induced liver injury. Chin. J. Nat. Med.
+16 (9), 653–664. 10.1016/s1875-5364(18)30105-5
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Wei C. B., Tao K., Jiang R., Zhou L. D., Zhang Q. H., Yuan C. S. (2017). Quercetin protects mouse liver against triptolide-induced hepatic injury by restoring Th17/Treg balance through Tim-3 and TLR4-MyD88-NF-κB pathway.
+Int. Immunopharmacol.
+53, 73–82. 10.1016/j.intimp.2017.09.026
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Wei Y. M., Luan Z. H., Liu B. W., Wang Y. H., Chang Y. X., Xue H. Q., et al. (2019). Autophagy in triptolide-mediated cytotoxicity in hepatic cells. Int. J. Toxicol.
+38 (5), 436–444. 10.1177/1091581819864518
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Wei Y., Wang D., Chen M., Ouyang Z., Wang S., Gu J. (2018). Extrahepatic cytochrome P450s play an insignificant role in triptolide-induced toxicity. Chin. Med.
+13, 23. 10.1186/s13020-018-0179-8
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Wilson I. D., Nicholson J. K. (2017). Gut microbiome interactions with drug metabolism, efficacy, and toxicity. Transl. Res.
+179, 204–222. 10.1016/j.trsl.2016.08.002
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Xi C., Peng S., Wu Z., Zhou Q., Zhou J. (2017). Toxicity of triptolide and the molecular mechanisms involved. Biomed. Pharmacother.
+90, 531–541. 10.1016/j.biopha.2017.04.003
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Xiao X., Zhang T., Huang J., Zhao Q., Li F. (2020). Effect of CYP3A4 on liver injury induced by triptolide. Biomed. Chromatogr.
+34 (8), e4864. 10.1002/bmc.4864
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Xie Z., Klionsky D. (2007). Autophagosome formation: Core machinery and adaptations. Nat. Cell Biol.
+9 (10), 1102–1109. 10.1038/ncb1007-1102
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Xu P., Li Y., Yu Z., Yang L., Shang R., Yan Z. (2019). Protective effect of vitamin C on triptolide-induced acute hepatotoxicity in mice through mitigation of oxidative stress. An. Acad. Bras. Cienc.
+91 (2), e20181257. 10.1590/0001-3765201920181257
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Xue X., Gong L., Qi X., Wu Y., Xing G., Yao J., et al. (2011). Knockout of hepatic P450 reductase aggravates triptolide-induced toxicity. Toxicol. Lett.
+205 (1), 47–54. 10.1016/j.toxlet.2011.05.003
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Yan M., Zhao C., Lu S., Cui J., Sun Z., Liu X., et al. (2022). Trimethylamine N-oxide exacerbates acetaminophen-induced liver injury by interfering with macrophage-mediated liver regeneration. J. Cell. Physiol.
+237 (1), 897–910. 10.1002/jcp.30568
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Yang J., Sun L., Wang L., Hassan H. M., Wang X., Hylemon P. B., et al. (2017). Activation of Sirt1/FXR signaling pathway attenuates triptolide-induced hepatotoxicity in rats. Front. Pharmacol.
+8, 260. 10.3389/fphar.2017.00260
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Yang T., Wang Y. L., Zhang Y. L., Liu Y. T., Tao Y. Y., Zhou H., et al. (2022). The protective effect of Capparis spinosa fruit on triptolide-induced acute liver injury: A metabolomics-based systematic study. J. Funct. Foods
+90, 104989. 10.1016/j.jff.2022.104989
+[ DOI ] [ Google Scholar ]
+Yang T., Zhang Y., Zhu T., Xing L., Liu Y. t., Liu C. h. (2018). A preliminary study on clinical characteristics and Toxicology mechanism of Tripterygium wilfordii induced liver injury. Mod. Traditional Chin. Med. Materia Medica-World Sci. Technol.
+20 (11), 2027–2032. 10.11842/wst.2018.11.021
+[ DOI ] [ Google Scholar ]
+Yao J., Jiang Z., Duan W., Huang J., Zhang L., Hu L., et al. (2008). Involvement of mitochondrial pathway in triptolide-induced cytotoxicity in human normal liver L-02 cells. Biol. Pharm. Bull.
+31 (4), 592–597. 10.1248/bpb.31.592
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Ye X., Li W., Yan Y., Mao C., Cai R., Xu H., et al. (2010). Effects of cytochrome P4503A inducer dexamethasone on the metabolism and toxicity of triptolide in rat. Toxicol. Lett.
+192 (2), 212–220. 10.1016/j.toxlet.2009.10.028
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Yip L. Y., Aw C. C., Lee S. H., Hong Y. S., Ku H. C., Xu W. H., et al. (2018). The liver-gut microbiota axis modulates hepatotoxicity of tacrine in the rat. Hepatology
+67 (1), 282–295. 10.1002/hep.29327
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Yu G., Zhou L., Zeng B., Huang J., She X. (2021). The antioxidant effect of triptolide contributes to the therapy in a collagen-induced arthritis rat model. Redox Rep.
+26 (1), 197–202. 10.1080/13510002.2021.2004047
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Yu L., Hong W., Lu S., Li Y., Guan Y., Weng X., et al. (2022). The NLRP3 inflammasome in non-alcoholic fatty liver disease and steatohepatitis: Therapeutic targets and treatment. Front. Pharmacol.
+13, 780496. 10.3389/fphar.2022.780496
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Yu S. J., Jiang R., Mazzu Y. Z., Wei C. B., Sun Z. L., Zhang Y. Z., et al. (2016). Epigallocatechin-3-gallate prevents triptolide-induced hepatic injury by restoring the Th17/treg balance in mice. Am. J. Chin. Med.
+44 (6), 1221–1236. 10.1142/S0192415X16500683
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Yuan Z., Hasnat M., Liang P., Yuan Z., Zhang H., Sun L., et al. (2019a). The role of inflammasome activation in Triptolide-induced acute liver toxicity. Int. Immunopharmacol.
+75, 105754. 10.1016/j.intimp.2019.105754
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Yuan Z., Yuan Z., Hasnat M., Zhang H., Liang P., Sun L., et al. (2020). A new perspective of triptolide-associated hepatotoxicity: The relevance of NF- kappa B and NF- kappa B-mediated cellular FLICE-inhibitory protein. Acta Pharm. Sin. B
+10 (5), 861–877. 10.1016/j.apsb.2020.02.009
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Yuan Z., Zhang H., Hasnat M., Ding J., Chen X., Liang P., et al. (2019b). A new perspective of triptolide-associated hepatotoxicity: Liver hypersensitivity upon LPS stimulation. Toxicology
+414, 45–56. 10.1016/j.tox.2019.01.005
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Zamek-Gliszczynski M. J., Patel M., Yang X., Lutz J. D., Chu X., Brouwer K. L. R., et al. (2021). Intestinal P-gp and putative hepatic OATP1B induction: International transporter consortium perspective on drug development implications. Clin. Pharmacol. Ther.
+109 (1), 55–64. 10.1002/cpt.1916
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Zhang f., Li Y. c. (2004). Progress in structure modification of Triptolide. Acta Pharm. Sin.
+39 (10), 857–864. 10.16438/j.0513-4870.2004.10.020
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Zhang H., Ya G., Rui H. (2017). Inhibitory effects of triptolide on human liver cytochrome P450 enzymes and P-glycoprotein. Eur. J. Drug Metab. Pharmacokinet.
+42 (1), 89–98. 10.1007/s13318-016-0323-8
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Zhang H., Yuan Z., Zhu Y., Yuan Z., Wang J., Nong C., et al. (2022a). Th17/Treg imbalance mediates hepatic intolerance to exogenous lipopolysaccharide and exacerbates liver injury in triptolide induced excessive immune response. J. Ethnopharmacol.
+295, 115422. 10.1016/j.jep.2022.115422
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Zhang L., Li C., Fu L., Yu Z., Xu G., Zhou J., et al. (2022b). Protection of catalpol against triptolide-induced hepatotoxicity by inhibiting excessive autophagy via the PERK-ATF4-CHOP pathway. PeerJ
+10, e12759. 10.7717/peerj.12759
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Zhang L., Zhou J., Feng Z., Jiang B., Li C., Zhou L., et al. (2022c). Qingluo tongbi formula alleviates hepatotoxicity induced by Tripterygium wilfordii Hook. F. By regulating excessive mitophagy through the PERK-ATF4 pathway. Front. Pharmacol.
+13, 918466. 10.3389/fphar.2022.918466
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Zhang X. F., Liu J., Ye F., Ji S. G., Zhang N., Cao R. S., et al. (2014). Effects of triptolide on the pharmacokinetics of cyclophosphamide in rats: A possible role of cytochrome P3A4 inhibition. Chin. J. Integr. Med.
+20 (7), 534–539. 10.1007/s11655-014-1710-0
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Zhang Y., Li J., Lei X., Zhang T., Liu G., Yang M., et al. (2016). Influence of verapamil on pharmacokinetics of triptolide in rats. Eur. J. Drug Metab. Pharmacokinet.
+41 (4), 449–456. 10.1007/s13318-015-0275-4
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Zhao H., Tong Y., Lu D., Wu B. (2020a). Circadian clock regulates hepatotoxicity of Tripterygium wilfordii through modulation of metabolism. J. Pharm. Pharmacol.
+72 (12), 1854–1864. 10.1111/jphp.13299
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Zhao J. (2018). Study on the mechanism of triptolide-induced liver injury. China, Hebei, Shijiazhuang: Ph. D., Hebei Medical University. [ Google Scholar ]
+Zhao J., Xie C., Wang K., Takahashi S., Krausz K. W., Lu D., et al. (2020b). Comprehensive analysis of transcriptomics and metabolomics to understand triptolide-induced liver injury in mice. Toxicol. Lett.
+333, 290–302. 10.1016/j.toxlet.2020.08.007
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Zhao M., Zhao H., Deng J., Guo L., Wu B. (2019). Role of the CLOCK protein in liver detoxification. Br. J. Pharmacol.
+176 (24), 4639–4652. 10.1111/bph.14828
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Zheng N., Wei A., Wu T., Long L., Yang H., Li H., et al. (2021). Triptolide and atorvastatin synergistically promote hepatotoxicity in cultured hepatocytes and female Sprague-Dawley rats by inhibiting pregnane X receptor-mediated transcriptional activation of CYP3A4. Toxicol. Lett.
+342, 85–94. 10.1016/j.toxlet.2021.02.008
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Zhou L. L., Zhou C., Liang X. W., Feng Z., Liu Z. P., Wang H. L., et al. (2017). Self-protection against triptolide-induced toxicity in human hepatic cells via Nrf2-ARE-NQO1 pathway. Chin. J. Integr. Med.
+23 (12), 929–936. 10.1007/s11655-017-2546-6
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Zhou Y., Xia L., Yao W., Han J., Wang G. (2020). Arctiin antagonizes triptolide-induced hepatotoxicity via activation of Nrf2 pathway. Biomed. Res. Int.
+2020, 2508952. 10.1155/2020/2508952
+[ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+Zhou Z. L., Yang Y. X., Ding J., Li Y. C., Miao Z. H. (2012). Triptolide: Structural modifications, structure-activity relationships, bioactivities, clinical development and mechanisms. Nat. Prod. Rep.
+29 (4), 457–475. 10.1039/c2np00088a
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Zhuang X. M., Shen G. L., Xiao W. B., Tan Y., Lu C., Li H. (2013). Assessment of the roles of P-glycoprotein and cytochrome P450 in triptolide-induced liver toxicity in sandwich-cultured rat hepatocyte model. Drug Metab. Dispos.
+41 (12), 2158–2165. 10.1124/dmd.113.054056
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Zou M., Nong C., Yu Z., Cai H., Jiang Z., Xue R., et al. (2020). The role of invariant natural killer T cells and associated immunoregulatory factors in triptolide-induced cholestatic liver injury. Food Chem. Toxicol.
+146, 111777. 10.1016/j.fct.2020.111777
+[ DOI ] [ PubMed ] [ Google Scholar ]
+Articles from Frontiers in Pharmacology are provided here courtesy of Frontiers Media SA
+ACTIONS
+View on publisher site
+PDF (1.3 MB)
+Cite
+Collections
+Permalink
+PERMALINK
+Copy
+RESOURCES
+Similar articles
+Cited by other articles
+Links to NCBI Databases
+Cite
+Copy
+Download .nbib
+.nbib
+Format:
+AMA
+APA
+MLA
+NLM
+Add to Collections
+Create a new collection
+Add to an existing collection
+Name your collection
+*
+Choose a collection
+Unable to load your collection due to an error
+Please try again
+Add
+Cancel
+Follow NCBI
+NCBI on X (formerly known as Twitter)
+NCBI on Facebook
+NCBI on LinkedIn
+NCBI on GitHub
+NCBI RSS feed
+Connect with NLM
+NLM on X (formerly known as Twitter)
+NLM on Facebook
+NLM on YouTube
+National Library of Medicine
+8600 Rockville Pike
+Bethesda, MD 20894
+Web Policies
+FOIA
+HHS Vulnerability Disclosure
+Help
+Accessibility
+Careers
+NLM
+NIH
+HHS
+USA.gov
+Back to Top

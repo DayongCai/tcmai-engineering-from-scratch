@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（数据分析的判据是「变量—分布—检验—解释」四步，跳步就没有结论）+ 知识积累（本章 22 单元 33,200 汉字；三辨主 **设计与评价 373**；四位面（章群结构）主 **设计与应用 193**；引书 **0 部 0 次**；数值类命中 63）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-卫生统计学.xlsx`（8 内容章 / 198 单元 / 282,420 汉字）；单元层 `standards/zhongyi-dashuju-fenxi/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-卫生统计学.xlsx`（8 内容章 / 198 单元 / 282,420 汉字）；单元层 `standards/zhongyi-dashuju-fenxi/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -206,7 +206,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py zhongyi-dashuju-fenxi "F:/textbooks/F:/textbooks/qhzy-卫生统计学.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py zhongyi-dashuju-fenxi "F:/textbooks/qhzy-卫生统计学.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py zhongyi-dashuju-fenxi                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

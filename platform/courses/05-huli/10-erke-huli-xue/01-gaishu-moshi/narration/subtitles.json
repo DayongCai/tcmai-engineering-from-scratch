@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/10-erke-huli-xue/01-gaishu-moshi/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 61.7,
+  "estimatedCues": 0,
+  "videoSeconds": 61.722667,
+  "videoMinusNarrationSeconds": 0.023,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.79,
+      "seconds": 3.79,
+      "estimated": false,
+      "text": "第 1 章 · 儿科护理概述与工作模式",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.79,
+      "end": 21.12,
+      "seconds": 17.33,
+      "estimated": false,
+      "text": "「《儿科护理学·第1章 儿科护理学概述》」——教材第 1 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：儿科护理概述与工作模式这一章的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 21.12,
+      "end": 27.41,
+      "seconds": 6.29,
+      "estimated": false,
+      "text": "概述与工作模式合章：先讲儿科护理的对象特殊性与团队协作。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 27.41,
+      "end": 50.4,
+      "seconds": 22.99,
+      "estimated": false,
+      "text": "环境逼迫（儿童不能自述、代偿窗窄、剂量按体重算，观察要更密、沟通要走家长）+ 知识积累（本章 2 单元 38,182 汉字；三辨主 疾病护理 551；四位面（系统）主 学龄前与学龄 27；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 50.4,
+      "end": 61.7,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

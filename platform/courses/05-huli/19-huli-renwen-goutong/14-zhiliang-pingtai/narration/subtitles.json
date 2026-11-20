@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/19-huli-renwen-goutong/14-zhiliang-pingtai/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 58.36,
+  "estimatedCues": 0,
+  "videoSeconds": 58.398667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.39,
+      "seconds": 4.39,
+      "estimated": false,
+      "text": "第 14 章 · 人文修养与护理质量、平台",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.39,
+      "end": 21.38,
+      "seconds": 16.99,
+      "estimated": false,
+      "text": "「《护理人文修养与沟通·第17章》」——教材第 17 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：人文修养与护理质量、平台这一章的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 21.38,
+      "end": 25.36,
+      "seconds": 3.98,
+      "estimated": false,
+      "text": "质量与平台合章：人文也要能被评价。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 25.36,
+      "end": 47.06,
+      "seconds": 21.7,
+      "estimated": false,
+      "text": "环境逼迫（沟通的难点不在说什么，而在「对方能不能听进去、听完愿不愿意配合」）+ 知识积累（本章 2 单元 40,873 汉字；三辨主 沟通技巧 329；四位面（沟通场景）主 患者 90；引书 1 部 1 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 47.06,
+      "end": 58.36,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

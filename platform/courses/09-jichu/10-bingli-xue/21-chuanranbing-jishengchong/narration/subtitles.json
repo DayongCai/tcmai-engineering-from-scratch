@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/10-bingli-xue/21-chuanranbing-jishengchong/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 97.55,
+  "estimatedCues": 0,
+  "videoSeconds": 97.588667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 6.55,
+      "seconds": 6.55,
+      "estimated": false,
+      "text": "第 21 章 · 常见传染病及寄生虫病：九种病，一张对照表",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 6.55,
+      "end": 19.13,
+      "seconds": 12.58,
+      "estimated": false,
+      "text": "「结核病是病理学末篇传染病与寄生虫病的首个观察对象」——教材·第21章·21.1.1（《病理学·第21章·21.1.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 19.13,
+      "end": 53.35,
+      "seconds": 34.22,
+      "estimated": false,
+      "text": "九种病，每种的病原、部位、基本病变、并发症都背过，考卷上能写满。可一到切片讨论就露底：一张肠壁溃疡的图，问「这是伤寒还是细菌性痢疾」，学生只能凭印象猜。真正的差别不在病名，在三个可数的东西——溃疡的长轴与肠管长轴什么关系、边缘什么形状、底有多深。本章的全部内容，就是把九种病压进这张三维表里：部位、基本病变、特征形态。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 53.35,
+      "end": 86.25,
+      "seconds": 32.9,
+      "estimated": false,
+      "text": "环境逼迫（带教老师把两张肠壁溃疡的切片并排放，问「哪一张是沿肠管长轴走的」，学生才发现自己从没注意过溃疡的方向，只记住了「椭圆形」与「不规则」两个形容词）+ 知识积累（本章 12 个单元、20,385 字里，「溃疡」出现 68 次、覆盖 9 个单元，是全章最通用的形态单位；而「干酪样坏死」只覆盖 3 个单元——教材把对照的维度摆齐了，却没有一处把维度列成表）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 86.25,
+      "end": 97.55,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

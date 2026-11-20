@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（社会医学的判据是「差异量得出、机制说得清、干预可评」）+ 知识积累（本章 22 单元 22,409 汉字；三辨主 **绩效与评价 298**；四位面（章群结构）主 **干预与治理 22409**；引书 **47 部 81 次**；数值类命中 0）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（18 内容章 / 338 单元 / 438,472 汉字）；单元层 `standards/19-shehui-yixue/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（18 内容章 / 338 单元 / 438,472 汉字）；单元层 `standards/19-shehui-yixue/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -206,7 +206,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py 19-shehui-yixue "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py 19-shehui-yixue "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py 19-shehui-yixue                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

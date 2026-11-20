@@ -1,0 +1,372 @@
+Overview of aristolochic acid nephropathy: an update - PMC
+Skip to main content
+An official website of the United States government
+Here's how you know
+Here's how you know
+Official websites use .gov
+A
+.gov website belongs to an official
+government organization in the United States.
+Secure .gov websites use HTTPS
+A lock (
+Lock
+Locked padlock icon
+) or https:// means you've safely
+connected to the .gov website. Share sensitive
+information only on official, secure websites.
+Search
+Log in
+Dashboard
+Publications
+Account settings
+Log out
+Search…
+Search NCBI
+Primary site navigation
+Search
+Logged in as:
+Dashboard
+Publications
+Account settings
+Log in
+Search PMC Full-Text Archive
+Search in PMC
+Journal List
+User Guide
+PERMALINK
+Copy
+As a library, NLM provides access to scientific literature. Inclusion in an NLM database does not imply endorsement of, or agreement with,
+the contents by NLM or the National Institutes of Health.
+Learn more:
+PMC Disclaimer
+|
+PMC Copyright Notice
+Kidney Res Clin Pract
+. 2023 Jun 15;42(5):579–590. doi: 10.23876/j.krcp.22.211
+Search in PMC
+Search in PubMed
+View in NLM Catalog
+Add to search
+Overview of aristolochic acid nephropathy: an update
+Qingqing Zhou
+Qingqing Zhou
+1 Division of Renal, Department of Medicine, Peking University First Hospital, Beijing, China
+2 Institute of Nephrology, Peking University, Beijing, China
+Find articles by Qingqing Zhou
+1, 2 , Lei Jiang
+Lei Jiang
+1 Division of Renal, Department of Medicine, Peking University First Hospital, Beijing, China
+2 Institute of Nephrology, Peking University, Beijing, China
+3 Research Units of Diagnosis and Treatment of Immune-mediated Kidney Diseases, Chinese Academy of Medical Sciences, Beijing, China
+Find articles by Lei Jiang
+1, 2, 3 , Tao Su
+Tao Su
+1 Division of Renal, Department of Medicine, Peking University First Hospital, Beijing, China
+2 Institute of Nephrology, Peking University, Beijing, China
+3 Research Units of Diagnosis and Treatment of Immune-mediated Kidney Diseases, Chinese Academy of Medical Sciences, Beijing, China
+Find articles by Tao Su
+1, 2, 3 , Gang Liu
+Gang Liu
+1 Division of Renal, Department of Medicine, Peking University First Hospital, Beijing, China
+2 Institute of Nephrology, Peking University, Beijing, China
+3 Research Units of Diagnosis and Treatment of Immune-mediated Kidney Diseases, Chinese Academy of Medical Sciences, Beijing, China
+Find articles by Gang Liu
+1, 2, 3, ✉, * , Li Yang
+Li Yang
+1 Division of Renal, Department of Medicine, Peking University First Hospital, Beijing, China
+2 Institute of Nephrology, Peking University, Beijing, China
+3 Research Units of Diagnosis and Treatment of Immune-mediated Kidney Diseases, Chinese Academy of Medical Sciences, Beijing, China
+Find articles by Li Yang
+1, 2, 3, ✉, *
+Author information
+Article notes
+Copyright and License information
+1 Division of Renal, Department of Medicine, Peking University First Hospital, Beijing, China
+2 Institute of Nephrology, Peking University, Beijing, China
+3 Research Units of Diagnosis and Treatment of Immune-mediated Kidney Diseases, Chinese Academy of Medical Sciences, Beijing, China
+✉ Correspondence: Gang Liu Division of Renal, Department of Medicine, Peking University First Hospital, 8 Xishiku Street, Xicheng District, Beijing 100034, China. E-mail: lg2018@vip.163.com
+✉ Li Yang Division of Renal, Department of Medicine, Peking University First Hospital, 8 Xishiku Street, Xicheng District, Beijing 100034, China E-mail: li.yang@bjmu.edu.cn
+* Gang Liu and Li Yang contributed equally to this study as co-corresponding authors.
+Received 2022 Sep 20; Revised 2022 Dec 31; Accepted 2023 Jan 16; Issue date 2023 Sep.
+Copyright © 2023 The Korean Society of Nephrology
+This is an Open Access article distributed under the terms of the Creative Commons Attribution Non-Commercial and No Derivatives License ( http://creativecommons.org/licenses/by-nc-nd/4.0/ ) which permits unrestricted non-commercial use, distribution of the material without any modifications, and reproduction in any medium, provided the original works properly cited.
+PMC Copyright notice
+PMCID: PMC10565449 PMID: 37448287
+Abstract
+Aristolochic acid nephropathy (AAN) is a rapidly progressive renal interstitial fibrosis caused by medical or environmental exposure to aristolochic acid (AA). Since the outbreak of AAN in Belgium was reported nearly 30 years ago, the safety of herbal remedies has drawn considerable attention, and AAN has become a global public health problem. Breakthroughs have been made to better understand the disease, including the toxicity of AAs, the possible mechanisms of AAN, the disease patterns, and the pathological features; however, some critical problems remain unresolved. Because of the insidious onset of the disease, the incidence of AAN and the prevalence of exposure to AAs are unknown and might be largely underestimated. During the past decades, AA-containing herbs have been strictly administrated in many regions and the occurrence of AAN has declined sharply, yet cases of AAN are still sporadically reported. Despite the progress in the understanding of the disease’s pathogenesis, there is no effective treatment for delaying or reversing the renal deterioration caused by AAN. Therefore, the risk of exposure to AAs should be taken seriously by public health workers and clinicians. In this review, we updated the latest data on AAN, summarized the advances throughout these years, and put forward some challenges for future research.
+Keywords: Aristolochic acids, Aristolochic acid nephropathy, Herbal therapy, Interstitial nephropathy, Renal tubular dysfunction
+Introduction
+In 1964, a Chinese doctor named Songhan Wu first described two patients with acute renal failure after excessive intake of Aristolochia manshuriensis , yet the nephrotoxicity of Aristolochia was not taken seriously at that time [ 1 ]. In the early 1990s, a group of Belgian scholars reported that a cohort of young female patients suffered from rapidly progressive interstitial renal fibrosis [ 2 ]. The onset of the epidemic was attributed to continuous consumption of the same slimming pills containing Chinese herbs; therefore, this new type of kidney disease was initially termed “Chinese herbs nephropathy” [ 2 ]. Very soon after, researchers revealed that roots of Stephania tetrandra (Pin Yin: Han Fang Ji), an original component in the slimming regimen, were mistakenly replaced with roots of an aristolochic acid (AA)-containing herb called Aristolochia fangchi (Pin Yin: Guang Fang Ji), because they both belong to the “Fang Ji” family in traditional Chinese medicine and share similar names in Pin Yin [ 3 , 4 ]. Further studies then identified AA as the causative agent, leading to the renaming of this renal tubulointerstitial disease as “aristolochic acid nephropathy” (AAN) [ 5 ]. Furthermore, AA exposure has been proven to be associated with a high incidence of urothelial carcinoma [ 6 , 7 ]. Since its discovery, cases related to AA intoxication have been reported all over the world, and AA exposure has received considerable attention [ 8 ]. Due to its hidden onset, the incidence of AAN could be largely underestimated, especially in Asia [ 8 ]. As traditional medicines are extremely popular in Asia, the wide application of Aristolochia , as well as the frequent substitution of botanical products by AA-containing herbs, increased the potential risk of AAN [ 8 – 10 ]. Despite the banning of Aristolochia in many countries, botanical remedies containing AA are still accessible and sporadic cases are occasionally reported, reminding clinicians not to overlook the harm of AA exposure [ 11 ].
+Epidemiology of aristolochic acid nephropathy
+The outbreak of AAN in Belgium first reported in the early 1990s included nine female patients [ 2 ], but the number of patients involved rose to more than a hundred in 1998 [ 12 ]. Cases with similar or different phenotypes related to AA nephrotoxicity were reported thereafter in Europe [ 13 – 16 ], the United States [ 17 ], China [ 18 , 19 ], Japan [ 20 , 21 ], Korea [ 22 ], Australia [ 23 ], and Bangladesh [ 24 ], illustrating that AA-containing herbs were widely used for treating an assortment of diseases. Due to its insidious onset, low awareness, as well as lack of strict diagnostic criteria, the prevalence of AAN remains largely unknown and is probably underestimated, especially in Asia [ 8 ]. Thousands of cases have been reported in China in the past decades among patients previously diagnosed with chronic tubulointerstitial nephritis of unknown origin [ 25 ]. At our center in Beijing, 300 patients were diagnosed with AAN between 1997 and 2006 [ 18 ]. As for Korea and Japan, the number of persons affected by AAN appears to be relatively lower than in China [ 21 , 22 ]. Although no cases of AAN have been reported in India, the high proportion of patients with chronic interstitial nephritis among the chronic kidney disease (CKD) population might be associated with dietary and environmental AA exposure [ 26 , 27 ]. In the Balkan region, so-called Balkan endemic nephropathy is regarded as an endemic type of AAN with similar clinical and pathological features; it occurs after the chronic ingestion of food made from flour contaminated by the seeds of Aristolochia clematitis [ 28 ].
+When it comes to risk factors, the cumulative dose of AA ingestion has been proven to be correlated with progressive renal dysfunction [ 25 ]. According to a survey conducted in China, regular use of nephrotoxic medications (analgesics or AA-containing pills) increased the risk of renal impairment (odds ratio [OR], 2.19) [ 29 ], and a cumulative dose of over 0.5-g aristolochic acid I (AA-I) intake was tightly associated with a higher CKD incidence (OR, 5.625) [ 30 ]. In recent years, the number of patients with newly diagnosed AAN has reduced sharply because of the warning and strict supervision of AA-containing herbs in many countries, yet sporadic cases are reported occasionally, reminding clinicians to take AA exposure seriously.
+Aristolochic acid: the culprit
+Herbs containing aristolochic acids
+AAs are found in the plants of the genus Aristolochia and Asarum belonging to the Aristolochiaceae family, which are widely distributed worldwide [ 31 ]. Herbal remedies of Aristolochia can date back to more than 2,500 years ago in Europe, and at least 1,500 years ago in China [ 32 ]. Throughout the long history, AA-containing medications have been utilized to treat various diseases and indications, including eczema, headaches, colds, chronic pain, infections, inflammatory diseases, snake bites, as well as obstetrical and gynecological diseases [ 31 , 33 – 35 ]. At least seven species of Aristolochia , as well as four species of Asarum , are used medicinally ( Table 1 ) [ 36 , 37 ]. In the clinical practice of traditional Chinese medicine, dozens of AA-containing herbs have been reported, including Ma Dou Ling (Aristolochiae Fructus), Guan Mu Tong ( A. manshuriensis Caulis), Qing Mu Xiang (Aristolochiae Radix), Guang Fang Ji ( A. fangchi Radix), Tian Xian Teng (Aristolochiae Herba), Xi Xin (Asari Radix et Rhizoma), etc. [ 31 , 38 ]. A number of Chinese patent medicines have been tested with the content of AA, some of which were associated with AAN in previously reported cases [ 31 ].
+Table 1.
+Common aristolochic acid-containing herbs in medicinal use
+Genus
+Species
+Aristolochia
+Aristolochia clematitis L. (known as birthwort, located in Europe)
+Aristolochia serpentaria L. (virginia snakeroot, North America)
+Aristolochia indica L. (Indian birthwort, Asia)
+Aristolichia debilis Sieb. et Zucc. (China)
+Aristolochia bracteolata Lam. (Africa)
+Aristolochia acuminata Lam (India)
+Aristolochia trilobata L. (Central/South America, Caribbean)
+Asarum
+Asarum heteropoides f. mandshuricum (Maxim.) Kitag (China)
+Asarum sieboldii Miq. (China)
+Asarum europaeum L. (Europe)
+Asarum canadense L. (North America)
+Open in a new tab
+Metabolism of aristolochic acids
+AA is a generic term for a family of structurally related nitrophenanthrene carboxylic acids [ 39 ]. Among all those compounds, AA-I and aristolochic acid II (AA-II) are the most common components extracted from the Aristolochia species (the structures of AA-I and AA-II are shown in Fig. 1 ) [ 40 ]. In human cells, AA-I and AA-II are mainly reduced to aristolactams (ALs), including AL-I, AL-Ia, AL-II, etc. ( Fig. 1 ) [ 41 ]. During the metabolic process, AA-I and AA-II are activated to reactive cyclic nitrenium ions with delocalized charge, which then preferentially react with purines in the DNA to form AL-DNA adducts (predominantly dA-AAI and dG-AAI) [ 39 , 40 , 42 ]. The AL-DNA adducts, mainly located in the renal cortex and urothelium, might give rise to mutations in the TP53 tumor-suppressor gene, leading to urothelial malignancies [ 40 ].
+Figure 1. Metabolism of aristolochic acids in human cells.
+Open in a new tab
+The pharmacodynamics of AAs has been studied in animal models. After oral administration or intravenous injection, AAs are promptly absorbed in blood circulation and bind to plasma proteins, and are then distributed throughout the body [ 43 , 44 ]. AAs are first concentrated in the liver, and they are then transferred to the kidneys. The AA-albumin binding components are not filtrated through the glomerulus but flow further through the peritubular capillaries, where AAs are transferred to the nearby proximal tubular epithelial cells (PTECs) via organic anion transporters (OATs) [ 44 – 46 ]. A study demonstrated that the distribution ratio of AA in the liver went down several days later, yet it remained high in the kidneys even after 40 days, implying its accumulation and slow elimination in the kidneys [ 46 ]. In humans, AA and its metabolites could be detected in the plasma of approximately half of AAN patients even after over 18 months of AA withdrawal [ 18 ]. Taken together, the organ-specific accumulation and the slow elimination of AAs shed light on possible mechanisms of how AAs persistently do harm to the kidneys and ultimately result in chronic AAN.
+Toxicity of aristolochic acids
+Although AA-I is regarded to be responsible for AA-related diseases in previous studies, other members of the AA family, as well as their intermediates in the process of metabolism, also show nephrotoxicity. A few in vitro and in vivo studies demonstrated that compounds like AL-I, 7-methoxy-AL-IV, AL-IVa, etc., also do harm to PTECs [ 47 – 50 ]. More interestingly, some of them even show much stronger nephrotoxicity than AA-I in several studies [ 47 , 49 , 50 ]. Structurally, the nitro and methoxy groups play crucial roles in AA-mediated intoxication [ 51 , 52 ]. These findings indicate that some nephrotoxic constituents of the AA family, besides AA-I, might contribute to the pathogenesis of AAN in AA-containing herbs or other species, which remind researchers that more attention and stricter supervision of such compounds are required in the future for the sake of herbal safety.
+Clinical manifestations and pathology
+Clinical patterns of aristolochic acid nephropathy
+The initial presentation of AAN turns out to be silent, and renal dysfunction is often discovered by routine blood tests [ 8 ]. Nonspecific symptoms including nausea, fatigue, poor appetite, and edema occur in some AAN cases [ 18 , 22 ]. According to a previous study conducted by our center including 300 patients diagnosed as AAN between 1997 and 2006 with 2 to 156 months of follow-up, three clinical subtypes were defined [ 18 ]: chronic AAN, acute AAN, and renal tubular dysfunction ( Table 2 ).
+Table 2.
+Clinical patterns and pathological features of AAN
+Chronic AAN a
+Acute AAN b
+Renal tubular dysfunction AAN c
+Clinical syndrome
+Chronic progressive renal failure
+Acute kidney injury
+Renal tubular dysfunction and/or Fanconi syndrome
+Clinical manifestations
+No overt symptoms
+Gastrointestinal abnormality
+Gastrointestinal abnormality
+Kidney atrophy
+Polyuria or nocturia
+Hypertension
+Hypertension
+Anemia
+Anemia
+Pathological features
+Extensive paucicellular interstitial fibrosis with diffuse atrophy and focal dilation of tubules
+Acute tubular necrosis with broad areas of naked TBM and lack of cellular regeneration
+Much less degree of tubular necrosis and exfoliation than acute AAN
+Dosage of AA-I digestion
+Large cumulative dosage in a long period
+Continuous or excessive intake in a short period
+Long-term intermittent intake with the lowest cumulative dosage
+Clinical outcome
+Progressive renal dysfunction, with an eGFR changing rate from –21.6 to 5.2 mL/min/yr [ 18 ]
+Develop to CKD stage 4/5 within 1–7 years [ 18 ]
+Remain normal Scr level with partial alleviation of renal tubular dysfunction [ 18 ]
+Open in a new tab
+AA-I, aristolochic acid I; AAN, aristolochic acid nephropathy; CKD, chronic kidney disease; eGFR, estimated glomerular filtration rate; Scr, serum creatinine; TBM, tubular basement membrane.
+a Patients who had history of long-term AA-I ingestion and presented with persistently elevated Scr level and decreased eGFR at different degrees for over 3 months, or accompanied by kidney atrophy revealed by ultrasound examination though the duration of abnormal Scr level was imprecise were defined as chronic AAN.
+b Patients presenting with AKI or a sudden elevation of Scr level within 3 months after termination of AA-I intake were defined as acute AAN.
+c Patients with normal Scr level and obvious renal tubular dysfunction after AA-I intake were defined as renal tubular dysfunction AAN.
+Chronic aristolochic acid nephropathy
+Over 90% of patients were reported to suffer from chronic AAN with decreased estimated glomerular filtration rate (eGFR) at different degrees, and most of them developed rapid progression to end-stage renal disease (ESRD) (median eGFR change, –3.5 mL/min/yr). These patients had taken the lowest AA-I dose per day, yet usually had the longest history and large cumulative dosage of AA ingestion.
+Acute aristolochic acid nephropathy
+Approximately 5% of patients were shown to present with nonoliguric acute kidney injury and developed acute or subacute renal failure, which is often caused by continuous or excessive use of Chinese medicine decoctions containing AA in a short period of time.
+Renal tubular dysfunction aristolochic acid nephropathy
+Less than 3% of patients with intermittent and lowest cumulative AA-I intake showed varying degrees of renal tubular dysfunction or Fanconi syndrome.
+In addition, hypertension, elevated serum creatine, as well as anemia presenting earlier and more severe than anticipated from the progression of renal failure, are usually seen in physical examinations and laboratory tests [ 53 ]. Urinalysis is unremarkable in most cases. Mild proteinuria and glycosuria can be detected in some patients [ 8 , 54 ]. Tubular-derived proteinuria is confirmed by the increased level of five kinds of low molecular weight proteins in urinalysis, including β2-microglobulin, α1-microglobulin, cystatin C, retinal-binding protein, and Clara cell protein [ 55 ]. Furthermore, levels of urinary neutral endopeptidase, a 94-kDa ectoenzyme of proximal tubule brush border, decrease significantly in patients with moderate renal failure and are almost undetectable in those with ESRD, indicating the loss of integrity of proximal tubules [ 56 ]. Taken together, all these findings imply that proximal tubules are the main target of AA-containing herbs.
+Pathology of aristolochic acid nephropathy
+Macroscopically, the kidneys of patients with chronic AAN are detected as shrunken and asymmetric, with the thinning of renal parenchyma on ultrasound testing [ 57 ]. Microscopically, the renal pathology of AAN often has certain characteristics. The immunopathological examination of renal tissue biopsy is usually negative. In patients taking excessive drugs containing AA, light microscopic examination shows severe injury of tubular epithelial cells similar to acute tubular necrosis, including severe cell degeneration and necrosis or disintegration with naked tubular basement membrane [ 57 , 58 ]. The lesions appear to be diffuse or multifocal and are characterized by the lack of regeneration of tubular epithelial cells [ 58 ]. As for those with long-term intermittent AA consumption, the main pathological feature is extensive paucicellular interstitial fibrosis accompanied by apparent atrophy of proximal tubules, which starts predominantly from the superficial cortex and then progresses to the deep cortex, whereas little infiltration of interstitial inflammatory cells can be observed [ 2 , 57 , 59 ]. The glomeruli remain relatively spared. Furthermore, loss of peritubular capillaries and ischemic shrinkage of glomeruli are detected in some cases [ 58 ]. Apart from the lesions mentioned above, the swelling of organelles in the interstitial microvascular endothelial cells as well as the stratification or even rupture of the basement membrane are shown on electron microscopic examination.
+Association with urothelial malignancies
+Approximately 30% to 40% of AAN patients are accompanied by urinary translational cell carcinoma (TCC), which might be detected before or after the diagnosis of AAN, after over 10-year withdrawal of AA-containing herbs, or even after kidney transplantation [ 60 – 62 ]. Tumors can be observed multifocally throughout the whole urinary system, including the renal pelvis, ureter, and bladder with a high recurrence rate. Visible or invisible hematuria is regarded as the most common initial symptom, and flank pain occurs in about 20% of patients [ 63 ]. Abnormal urinary cytology, though not sensitive enough, indicates the existence of TCC [ 63 ]. Computed tomography (CT) urography or magnetic resonance urography, as well as invasive examinations, including cystoscopy, ureteroscopy, and simultaneous biopsy, assist with accurate diagnosis and tumor staging [ 63 ]. Furthermore, the long-term existence of AA-derived DNA adducts and the TP53 mutation spectra also serve as powerful biomarkers of AA exposure [ 40 , 64 ].
+Pathogenesis of aristolochic acid nephropathy
+Breakthroughs on the pathogenesis of AAN have been made in the last few decades. Possible mechanisms of how AAs damage the kidney tissues are concluded as follows ( Fig. 2 ).
+Figure 2. Possible mechanisms of aristolochic acid nephropathy.
+Open in a new tab
+CTGF, connecting tissue growth factor; PTC, peritubular capillary; PTEC, proximal tubular epithelial cell; TGF-β1, transforming growth factor beta 1; VEGF, vascular endothelial growth factor.
+Direct nephrotoxicity
+AAs exert dose-dependent damage to renal tubules, leading to apoptosis and necrosis of PTECs via p53-mediated signaling [ 65 ].
+Impairment of cell repair
+Under normal circumstances, the tubular epithelial cells have strong capability for self-repair. After renal tubules are injured by nephrotoxic drugs, those spared or slightly injured tubular epithelial cells soon start their self-repair procedures by proliferating. However, renal biopsy shows lack of cell regeneration in patients with AAN, suggesting that AAs might somehow disrupt the self-repair process. Previous studies have demonstrated that exposure to AAs results in epithelial cell cycle arrest in the G2/M phase and reduced expression of epidermal growth factor, yet such inhibition cannot be reversed even after removal of extracellular AAs [ 66 , 67 ].
+Chronic hypoxia and ischemic injury
+Pathologically, a severe loss of peritubular capillaries (PTCs), as well as disrupted PTC lumina, strongly suggest that the injury of vascular endothelial cells might participate in AAN pathophysiology [ 58 ]. Cytotoxicity of AAs, decreased expression of vascular endothelial growth factor, as well as imbalance between the vasoactive factors, are associated with upregulation of hypoxia-inducible factor alpha and reduction of vascular network, illustrating that chronic hypoxia and ischemic injury might partially give rise to interstitial fibrosis and defect of cellular proliferation [ 58 , 68 – 71 ].
+Infiltration of inflammatory cells
+Though some cases are characterized by little infiltration of interstitial inflammatory cells, recent studies show that the immune system participates in AAN progression [ 72 ]. Innate immune cells, such as monocytes/macrophages, as well as adaptive immune cells, including both T lymphocytes and B lymphocytes, are detected in the medullary rays and in the outer medullae [ 72 – 74 ]. Inhibition of immune cell infiltration or suppression of relative inflammatory signaling pathways dramatically attenuates renal fibrosis [ 72 , 73 , 75 ]. Besides, the fact that steroid therapy might slow down the deterioration of renal dysfunction in AAN patients provides evidence for this immune-related process [ 76 , 77 ].
+Activation of profibrotic signaling
+Overexpression of profibrotic factors and massive production of extracellular matrix deposition are detected, suggesting that activation of profibrotic signaling plays an indispensable role in renal firosis [ 58 , 66 ]. After stimulation of AA, the tubular epithelial cells that were arrested in the G2/M phase tend to transfer to a profibrotic phenotype by excreting transforming growth factor beta 1 (TGF-β1) and connecting tissue growth factor, which further promote the activation of fibroblasts into myofibroblasts, and the production of collagen via TGF-β/Smad3-dependent and JNK/MAP kinase-dependent mechanisms [ 66 , 78 , 79 ].
+Diagnosis
+No universally accepted diagnostic criteria of AAN have been reached worldwide so far. In clinical practice, the diagnosis of AAN is usually based on the history of AA-containing medication intake, clinical manifestation of renal tubular injury or impaired renal function, and typical renal histopathology displaying hypocellular interstitial fibrosis [ 25 ]. Additionally, the detection of AA-derived DNA adducts in patients’ renal/urinary tract tissues as well as AA and its metabolites in the blood/urinary samples support AA exposure [ 64 ]. Tubulointerstitial diseases caused by other reasons should be evaluated and differentiated from AAN in every suspected patient before a definite diagnosis is made. For patients with complex history of using several nephrotoxic medications (including AA-containing herbs, analgesics, antibiotics, etc.), different drug-induced nephropathies should be discriminated by the combination of clinical course and pathological manifestations.
+Management
+Treatment and surveillance
+Unfortunately, there is no effective treatment for AAN. Several studies have demonstrated that steroid therapy delayed the progression of renal failure in some cases [ 76 , 77 ], supporting the hypothesis that immune factors could be involved in the progression of AAN [ 74 ]. Nevertheless, the long-term effect of steroid therapy on AAN and whether the benefits outweigh the side effects remain ambiguous. Renin-angiotensin system modulation by salt depletion and pharmacologic blockade with angiotensin-converting enzyme inhibitors (ACEIs) or angiotensin-receptor blockers are indispensable to managing CKD, yet no evidence supports that this strategy might improve renal function or slow down disease progression in AAN patients [ 80 ].
+The principles of AAN management are similar to CKD patients of other causes, which include controlling blood pressure, treating complications, preventing infection, and time preparing for renal replacement therapy [ 25 ]. Because of the high incidence and recurrence rate of TCC in AAN patients, simultaneous bilateral nephroureterectomy has been recommended when performing renal transplantation surgery or at the start of dialysis [ 7 , 25 , 61 ]. Since the occurrence of TCC in bladder turns out to be much lower than that in renal pelvis and ureter, routine cystectomy seems unnecessary in most cases [ 7 ].
+For further surveillance, routine urinary cytologic evaluation should be performed in all patients with AAN, yet more invasive methods are required due to its poor sensitivity. It has been suggested that yearly CT and ureteroscopy should be performed on patients who do not undergo the removal of bilateral native kidneys and ureters, whereas regular cystoscopy and bladder biopsy should be offered to patients every 6 months after nephroureterectomy [ 25 ]. If AA-derived DNA adducts are positive in the bladder specimens, which suggests a much higher risk of developing TCC in the bladder, cystectomy should be considered [ 25 ].
+In recent years, advances have been made in understanding the pathogenesis of AAN, and new therapies and pharmaceutical targets have been explored in animal models. Drugs with the effect of inhibiting OATs can block the entry of AAs into PTECs in animal models, leading to prevention of cellular injury and AA accumulation [ 81 ]. A recent study in rat model indicated that chymase-induced ACE-independent angiotensin II formation participates in kidney injury in AAN, and chymase inhibitor (with or without ACEI) significantly mitigates the progression of AAN, which might be a potential therapeutic target in the future [ 82 ]. In addition, the anti-renal fibrosis effects of some traditional Chinese formulas (such as Dahuang Fuzi Decoction [ 83 ], Fuzheng Huayu Recipe [ 84 ], Kangxianling [ 85 ], etc.) have been proven and might provide a viable approach for treating AAN as well as CKD induced by other causes [ 86 ]. Furthermore, the anti-fibrotic and regenerative effects of mesenchymal stem cells and their extracellular vesicles have been attested in animal models of AAN [ 87 , 88 ].
+Prognosis
+The prognosis of AAN is worse than tubulointerstitial renal diseases caused by other reasons, with irreversible renal dysfunction in most cases and a much lower 2-year kidney survival rate of only 17% [ 54 ]. In the light of follow-up data in our center, cumulative dose of AA ingestion turns out to be the decisive factor for the progression and outcome of AAN patients [ 18 ]. A small proportion of cases develop rapidly progressive renal failure to ESRD within a year. Some patients presenting with acute AAN and those with tubular dysfunction AAN might have a partial recovery after cessation of AA-containing medication and timely treatment. However, most patients undergo chronic deterioration of renal function and have to turn to renal replacement therapy after years of progression.
+Prevention
+Due to the nephrotoxicity and carcinogenicity of AAs, prevention of exposure to AAs has become a global public health priority. Regulatory authorities of many countries have sent out warnings against AA-containing remedies, and products with AAs have been banned and restricted in the drug markets. In the United States, the Food and Drug Administration issued an alert about the danger of AAs in 2001 [ 25 ]. In Europe, the enforcement of the 2004 European Directive on Traditional Herbal Medicinal Products in 2011 has imposed a ban on AA-containing remedies [ 25 ]. The Korea Food and Drug Administration has forbidden the use of AA-containing ingredients since 2005 in Korea [ 22 ]. Taiwan and Hong Kong laid embargoes on such herbal medications in 2003 and 2004, respectively. Here in mainland China, the medicinal standards for several species of Aristolochia , including Guan Mu Tong ( A. manshuriensis Caulis), Guang Fang Ji ( A. fangchi Radix), and Qing Mu Xiang (Aristolochiae Radix), were canceled from the “Chinese Pharmacopoeia” in 2004 [ 89 , 90 ], followed by the cancellation of Ma Dou Ling (Aristolochiae Fructus) and Tian Xian Teng (Aristolochiae Herba) in the latest version released in 2020 [ 91 ]. The National Medical Products Administration of China has stressed that the nephrotoxicity of AA-related patent medications must be marked clearly on the labels, and those AA-containing patent drugs and preparations are accessible only under the strict instructions given by licensed professional practitioners of traditional Chinese medicine [ 90 ]. Apart from official regulations, public education on the importance of rational use of herbal remedies is quite necessary for improving awareness of drug safety.
+It is encouraging that the occurrence of AAN has decreased significantly, illustrating that those measures are quite effective in preventing exposure to AAs. Nevertheless, cases with newly-onset AAN are still occasionally detected nowadays, reminding clinicians not to let down their guard on AAN. Because of the poor prognosis and rapid progression of the AAN, it is important for doctors to identify the disease early and perform timely interventions.
+Conclusion and perspectives
+Since the first report of AA-related nephropathy, a great number of breakthroughs in understanding the pathogenesis of AAN have been made throughout these years. However, there still exist considerable challenges that require further investigation. The lack of universally accepted diagnostic criteria makes it harder for early and accurate diagnoses. Though specific biomarkers like AL-DNA adducts have been found, noninvasive biomarkers for AAN and exposure to AAs should be developed. Furthermore, potential therapeutic targets and remedies for reversing or delaying disease progression should be explored to improve the outcomes of patients with AAN. Lastly, strict regulation on AA-containing medications is required in the future to diminish this preventable disease. As such, there is still a long way to go to defeat AAN completely.
+Footnotes
+Conflicts of interest
+All authors have no conflicts of interest to declare.
+Funding
+This work was supported by grants from the National Natural Science Foundation of China (No. 82130021), the Beijing Young Scientist Program (No. BJJWZYJH01201910001006), the CAMS Innovation Fund for Medical Sciences (No. 2019-I2M-5-046, 2020-JKCS-009), and the PKU-Baidu Fund (No. 2020BD026, 2020BD044).
+Data sharing statement
+The data presented in this study are available on request from the corresponding author.
+Authors’ contributions
+Conceptualization: QZ, GL, LY
+Project administration, Supervision, Validation: GL, LY
+Visualization: QZ, LJ
+Writing–original draft: QZ
+Writing–review & editing: LJ, TS, GL, LY
+All authors read and approved the final manuscript.
+References
+1. Wu H. [Report of two cases of acute renal failure caused by Mu Tong] Jiangsu J Tradit Chin Med. 1964;10:12–13. In Chinese. [ Google Scholar ]
+2. Vanherweghem JL, Depierreux M, Tielemans C, et al. Rapidly progressive interstitial renal fibrosis in young women: association with slimming regimen including Chinese herbs. Lancet. 1993;341:387–391. doi: 10.1016/0140-6736(93)92984-2. [ DOI ] [ PubMed ] [ Google Scholar ]
+3. But PP. Need for correct identification of herbs in herbal poisoning. Lancet. 1993;341:637. [ PubMed ] [ Google Scholar ]
+4. Vanhaelen M, Vanhaelen-Fastre R, But P, Vanherweghem JL. Identification of aristolochic acid in Chinese herbs. Lancet. 1994;343:174. doi: 10.1016/s0140-6736(94)90964-4. [ DOI ] [ PubMed ] [ Google Scholar ]
+5. Gillerot G, Jadoul M, Arlt VM, et al. Aristolochic acid nephropathy in a Chinese patient: time to abandon the term “Chinese herbs nephropathy”? Am J Kidney Dis. 2001;38:E26. doi: 10.1053/ajkd.2001.28624. [ DOI ] [ PubMed ] [ Google Scholar ]
+6. Cosyns JP, Jadoul M, Squifflet JP, Van Cangh PJ, van Ypersele de Strihou C. Urothelial malignancy in nephropathy due to Chinese herbs. Lancet. 1994;344:188. doi: 10.1016/s0140-6736(94)92786-3. [ DOI ] [ PubMed ] [ Google Scholar ]
+7. Nortier JL, Martinez MC, Schmeiser HH, et al. Urothelial carcinoma associated with the use of a Chinese herb (Aristolochia fangchi) N Engl J Med. 2000;342:1686–1692. doi: 10.1056/NEJM200006083422301. [ DOI ] [ PubMed ] [ Google Scholar ]
+8. Debelle FD, Vanherweghem JL, Nortier JL. Aristolochic acid nephropathy: a worldwide problem. Kidney Int. 2008;74:158–169. doi: 10.1038/ki.2008.129. [ DOI ] [ PubMed ] [ Google Scholar ]
+9. Jadot I, Declèves AE, Nortier J, Caron N. An integrated view of aristolochic acid nephropathy: update of the literature. Int J Mol Sci. 2017;18:297. doi: 10.3390/ijms18020297. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+10. Lai MN, Lai JN, Chen PC, et al. Increased risks of chronic kidney disease associated with prescribed Chinese herbal products suspected to contain aristolochic acid. Nephrology (Carlton) 2009;14:227–234. doi: 10.1111/j.1440-1797.2008.01061.x. [ DOI ] [ PubMed ] [ Google Scholar ]
+11. Gold LS, Slone TH. Aristolochic acid, an herbal carcinogen, sold on the Web after FDA alert. N Engl J Med. 2003;349:1576–1577. doi: 10.1056/NEJM200310163491619. [ DOI ] [ PubMed ] [ Google Scholar ]
+12. Vanherweghem LJ. Misuse of herbal remedies: the case of an outbreak of terminal renal failure in Belgium (Chinese herbs nephropathy) J Altern Complement Med. 1998;4:9–13. doi: 10.1089/acm.1998.4.1-9. [ DOI ] [ PubMed ] [ Google Scholar ]
+13. Lord GM, Tagore R, Cook T, Gower P, Pusey CD. Nephropathy caused by Chinese herbs in the UK. Lancet. 1999;354:481–482. doi: 10.1016/S0140-6736(99)03380-2. [ DOI ] [ PubMed ] [ Google Scholar ]
+14. Pena JM, Borras M, Ramos J, Montoliu J. Rapidly progressive interstitial renal fibrosis due to a chronic intake of a herb (Aristolochia pistolochia) infusion. Nephrol Dial Transplant. 1996;11:1359–1360. [ PubMed ] [ Google Scholar ]
+15. Stengel B, Jones E. [End-stage renal insufficiency associated with Chinese herbal consumption in France] Nephrologie. 1998;19:15–20. In French. [ PubMed ] [ Google Scholar ]
+16. Krumme B, Endmeir R, Vanhaelen M, Walb D. Reversible Fanconi syndrome after ingestion of a Chinese herbal ‘remedy’ containing aristolochic acid. Nephrol Dial Transplant. 2001;16:400–402. doi: 10.1093/ndt/16.2.400. [ DOI ] [ PubMed ] [ Google Scholar ]
+17. Meyer MM, Chen TP, Bennett WM. Chinese herb nephropathy. Proc (Bayl Univ Med Cent) 2000;13:334–337. [ PMC free article ] [ PubMed ] [ Google Scholar ]
+18. Yang L, Su T, Li XM, et al. Aristolochic acid nephropathy: variation in presentation and prognosis. Nephrol Dial Transplant. 2012;27:292–298. doi: 10.1093/ndt/gfr291. [ DOI ] [ PubMed ] [ Google Scholar ]
+19. Yang CS, Lin CH, Chang SH, Hsu HC. Rapidly progressive fibrosing interstitial nephritis associated with Chinese herbal drugs. Am J Kidney Dis. 2000;35:313–318. doi: 10.1016/s0272-6386(00)70343-x. [ DOI ] [ PubMed ] [ Google Scholar ]
+20. Tanaka A, Nishida R, Maeda K, Sugawara A, Kuwahara T. Chinese herb nephropathy in Japan presents adult-onset Fanconi syndrome: could different components of aristolochic acids cause a different type of Chinese herb nephropathy? Clin Nephrol. 2000;53:301–306. [ PubMed ] [ Google Scholar ]
+21. Tanaka A, Nishida R, Yoshida T, Koshikawa M, Goto M, Kuwahara T. Outbreak of Chinese herb nephropathy in Japan: are there any differences from Belgium? Intern Med. 2001;40:296–300. doi: 10.2169/internalmedicine.40.296. [ DOI ] [ PubMed ] [ Google Scholar ]
+22. Ban TH, Min JW, Seo C, et al. Update of aristolochic acid nephropathy in Korea. Korean J Intern Med. 2018;33:961–969. doi: 10.3904/kjim.2016.288. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+23. Chau W, Ross R, Li JY, Yong TY, Klebe S, Barbara JA. Nephropathy associated with use of a Chinese herbal product containing aristolochic acid. Med J Aust. 2011;194:367–368. doi: 10.5694/j.1326-5377.2011.tb03011.x. [ DOI ] [ PubMed ] [ Google Scholar ]
+24. Michl J, Jennings HM, Kite GC, Ingrouille MJ, Simmonds MS, Heinrich M. Is aristolochic acid nephropathy a widespread problem in developing countries?: a case study of Aristolochia indica L. in Bangladesh using an ethnobotanical-phytochemical approach. J Ethnopharmacol. 2013;149:235–244. doi: 10.1016/j.jep.2013.06.028. [ DOI ] [ PubMed ] [ Google Scholar ]
+25. Gökmen MR, Cosyns JP, Arlt VM, et al. The epidemiology, diagnosis, and management of aristolochic acid nephropathy: a narrative review. Ann Intern Med. 2013;158:469–477. doi: 10.7326/0003-4819-158-6-201303190-00006. [ DOI ] [ PubMed ] [ Google Scholar ]
+26. Vanherweghem JL. Aristolochia sp and chronic interstitial nephropathies in Indians. Lancet. 1997;349:1399. doi: 10.1016/S0140-6736(05)63243-6. [ DOI ] [ PubMed ] [ Google Scholar ]
+27. Ball S, Cook T, Hulme B, Palmer A, Taube D. The diagnosis and racial origin of 394 patients undergoing renal biopsy: an association between Indian race and interstitial nephritis. Nephrol Dial Transplant. 1997;12:71–77. doi: 10.1093/ndt/12.1.71. [ DOI ] [ PubMed ] [ Google Scholar ]
+28. Jelaković B, Dika Ž, Arlt VM, et al. Balkan endemic nephropathy and the causative role of aristolochic acid. Semin Nephrol. 2019;39:284–296. doi: 10.1016/j.semnephrol.2019.02.007. [ DOI ] [ PubMed ] [ Google Scholar ]
+29. Zhang L, Zhang P, Wang F, et al. Prevalence and factors associated with CKD: a population study from Beijing. Am J Kidney Dis. 2008;51:373–384. doi: 10.1053/j.ajkd.2007.11.009. [ DOI ] [ PubMed ] [ Google Scholar ]
+30. Su T, Zhang L, Li X, Zuo L, Zhang P, Wang H. Regular use of nephrotoxic medications is an independent risk factor for chronic kidney disease: results from a Chinese population study. Nephrol Dial Transplant. 2011;26:1916–1923. doi: 10.1093/ndt/gfq679. [ DOI ] [ PubMed ] [ Google Scholar ]
+31. Han J, Xian Z, Zhang Y, Liu J, Liang A. Systematic overview of aristolochic acids: nephrotoxicity, carcinogenicity, and underlying mechanisms. Front Pharmacol. 2019;10:648. doi: 10.3389/fphar.2019.00648. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+32. Grollman AP. Aristolochic acid nephropathy: Harbinger of a global iatrogenic disease. Environ Mol Mutagen. 2013;54:1–7. doi: 10.1002/em.21756. [ DOI ] [ PubMed ] [ Google Scholar ]
+33. Kuo PC, Li YC, Wu TS. Chemical constituents and pharmacology of the Aristolochia (mădōu ling) species. J Tradit Complement Med. 2012;2:249–266. doi: 10.1016/s2225-4110(16)30111-0. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+34. Li YL, Tian M, Yu J, Shang MY, Cai SQ. Studies on morphology and aristolochic acid analogue constituents of Asarum campaniflorum and a comparison with two official species of Asari radix et rhizoma. J Nat Med. 2010;64:442–451. doi: 10.1007/s11418-010-0433-6. [ DOI ] [ PubMed ] [ Google Scholar ]
+35. Bhattacharjee P, Bera I, Chakraborty S, Ghoshal N, Bhattacharyya D. Aristolochic acid and its derivatives as inhibitors of snake venom L-amino acid oxidase. Toxicon. 2017;138:1–17. doi: 10.1016/j.toxicon.2017.08.003. [ DOI ] [ PubMed ] [ Google Scholar ]
+36. Heinrich M, Chan J, Wanke S, Neinhuis C, Simmonds MS. Local uses of Aristolochia species and content of nephrotoxic aristolochic acid 1 and 2: a global assessment based on bibliographic sources. J Ethnopharmacol. 2009;125:108–144. doi: 10.1016/j.jep.2009.05.028. [ DOI ] [ PubMed ] [ Google Scholar ]
+37. Michl J, Bello O, Kite GC, Simmonds MS, Heinrich M. Medicinally used Asarum species: high-resolution LC-MS analysis of aristolochic acid analogs and in vitro toxicity screening in HK-2 cells. Front Pharmacol. 2017;8:215. doi: 10.3389/fphar.2017.00215. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+38. Wu KM, Farrelly JG, Upton R, Chen J. Complexities of the herbal nomenclature system in traditional Chinese medicine (TCM): lessons learned from the misuse of Aristolochia-related species and the importance of the pharmaceutical name during botanical drug product development. Phytomedicine. 2007;14:273–279. doi: 10.1016/j.phymed.2006.05.009. [ DOI ] [ PubMed ] [ Google Scholar ]
+39. Michl J, Ingrouille MJ, Simmonds MS, Heinrich M. Naturally occurring aristolochic acid analogues and their toxicities. Nat Prod Rep. 2014;31:676–693. doi: 10.1039/c3np70114j. [ DOI ] [ PubMed ] [ Google Scholar ]
+40. Chen CH, Dickman KG, Moriya M, et al. Aristolochic acid-associated urothelial cancer in Taiwan. Proc Natl Acad Sci U S A. 2012;109:8241–8246. doi: 10.1073/pnas.1119920109. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+41. Chan W, Cui L, Xu G, Cai Z. Study of the phase I and phase II metabolism of nephrotoxin aristolochic acid by liquid chromatography/tandem mass spectrometry. Rapid Commun Mass Spectrom. 2006;20:1755–1760. doi: 10.1002/rcm.2513. [ DOI ] [ PubMed ] [ Google Scholar ]
+42. Arlt VM, Stiborova M, Schmeiser HH. Aristolochic acid as a probable human cancer hazard in herbal remedies: a review. Mutagenesis. 2002;17:265–277. doi: 10.1093/mutage/17.4.265. [ DOI ] [ PubMed ] [ Google Scholar ]
+43. Shibutani S, Dong H, Suzuki N, Ueda S, Miller F, Grollman AP. Selective toxicity of aristolochic acids I and II. Drug Metab Dispos. 2007;35:1217–1222. doi: 10.1124/dmd.107.014688. [ DOI ] [ PubMed ] [ Google Scholar ]
+44. Dickman KG, Sweet DH, Bonala R, Ray T, Wu A. Physiological and molecular characterization of aristolochic acid transport by the kidney. J Pharmacol Exp Ther. 2011;338:588–597. doi: 10.1124/jpet.111.180984. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+45. Nigam SK, Bush KT, Martovetsky G, et al. The organic anion transporter (OAT) family: a systems biology perspective. Physiol Rev. 2015;95:83–123. doi: 10.1152/physrev.00025.2013. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+46. Su T, Qu L, Zhang CL, Cai SQ, Li XM. [Studies on pharmacodynamic characteristics of aristolochic acid I in rats] Zhongguo Zhong Yao Za Zhi. 2004;29:676–681. In Chinese. [ PubMed ] [ Google Scholar ]
+47. Li J, Zhang L, Jiang Z, et al. Toxicities of aristolochic acid I and aristololactam I in cultured renal epithelial cells. Toxicol In Vitro. 2010;24:1092–1097. doi: 10.1016/j.tiv.2010.03.012. [ DOI ] [ PubMed ] [ Google Scholar ]
+48. Wang C, Zhang Y, Chen D, Weng H, Li H, Lu Y. Oral subacute nephrotoxicity of aristololactam I in rats. Toxicology. 2022;475:153228. doi: 10.1016/j.tox.2022.153228. [ DOI ] [ PubMed ] [ Google Scholar ]
+49. Zhang CY, Wang X, Su T, et al. New aristolochic acid, aristololactam and renal cytotoxic constituents from the stem and leaves of Aristolochia contorta. Pharmazie. 2005;60:785–788. [ PubMed ] [ Google Scholar ]
+50. Wen YJ, Su T, Tang JW, et al. Cytotoxicity of phenanthrenes extracted from Aristolochia contorta in human proximal tubular epithelial cell line. Nephron Exp Nephrol. 2006;103:e95–e102. doi: 10.1159/000092194. [ DOI ] [ PubMed ] [ Google Scholar ]
+51. Balachandran P, Wei F, Lin RC, Khan IA, Pasco DS. Structure activity relationships of aristolochic acid analogues: toxicity in cultured renal epithelial cells. Kidney Int. 2005;67:1797–1805. doi: 10.1111/j.1523-1755.2005.00277.x. [ DOI ] [ PubMed ] [ Google Scholar ]
+52. Liu Q, Wang Q, Yang X, Shen X, Zhang B. Differential cytotoxic effects of denitroaristolochic acid II and aristolochic acids on renal epithelial cells. Toxicol Lett. 2009;184:5–12. doi: 10.1016/j.toxlet.2008.10.020. [ DOI ] [ PubMed ] [ Google Scholar ]
+53. van Ypersele de Strihou C, Vanherweghem JL. The tragic paradigm of Chinese herbs nephropathy. Nephrol Dial Transplant. 1995;10:157–160. [ PubMed ] [ Google Scholar ]
+54. Reginster F, Jadoul M, van Ypersele de Strihou C. Chinese herbs nephropathy presentation, natural history and fate after transplantation. Nephrol Dial Transplant. 1997;12:81–86. doi: 10.1093/ndt/12.1.81. [ DOI ] [ PubMed ] [ Google Scholar ]
+55. Kabanda A, Jadoul M, Lauwerys R, Bernard A, van Ypersele de Strihou C. Low molecular weight proteinuria in Chinese herbs nephropathy. Kidney Int. 1995;48:1571–1576. doi: 10.1038/ki.1995.449. [ DOI ] [ PubMed ] [ Google Scholar ]
+56. Nortier JL, Deschodt-Lanckman MM, Simon S, et al. Proximal tubular injury in Chinese herbs nephropathy: monitoring by neutral endopeptidase enzymuria. Kidney Int. 1997;51:288–293. doi: 10.1038/ki.1997.35. [ DOI ] [ PubMed ] [ Google Scholar ]
+57. Li X, Yang L, Yu Y, et al. [Tubulointerstitial nephropathy induced by Mu Tong and its clinicopathological features] Chin J Intern Med. 2001;10:36–42. In Chinese. [ Google Scholar ]
+58. Yang L, Li X, Wang H. Possible mechanisms explaining the tendency towards interstitial fibrosis in aristolochic acid-induced acute tubular necrosis. Nephrol Dial Transplant. 2007;22:445–456. doi: 10.1093/ndt/gfl556. [ DOI ] [ PubMed ] [ Google Scholar ]
+59. Yang L, Li XM, Wang HY. [A comparative study of manchurian Dutchmanspipe and antibiotics induced acute tubular necrosis in renal cellular biological features] Zhongguo Zhong Xi Yi Jie He Za Zhi. 2003;23:329–334. In Chinese. [ PubMed ] [ Google Scholar ]
+60. Cosyns JP, Jadoul M, Squifflet JP, Wese FX, van Ypersele de Strihou C. Urothelial lesions in Chinese-herb nephropathy. Am J Kidney Dis. 1999;33:1011–1017. doi: 10.1016/S0272-6386(99)70136-8. [ DOI ] [ PubMed ] [ Google Scholar ]
+61. Lemy A, Wissing KM, Rorive S, et al. Late onset of bladder urothelial carcinoma after kidney transplantation for end-stage aristolochic acid nephropathy: a case series with 15-year follow-up. Am J Kidney Dis. 2008;51:471–477. doi: 10.1053/j.ajkd.2007.11.015. [ DOI ] [ PubMed ] [ Google Scholar ]
+62. Li WH, Yang L, Su T, Song Y, Li XM. [Influence of taking aristolochic acid-containing Chinese drugs on occurrence of urinary transitional cell cancer in uremic uremic patients undergoing dialysis] Zhonghua Yi Xue Za Zhi. 2005;85:2487–2491. In Chinese. [ PubMed ] [ Google Scholar ]
+63. Rouprêt M, Babjuk M, Burger M, et al. European Association of Urology guidelines on upper urinary tract urothelial carcinoma: 2020 update. Eur Urol. 2021;79:62–79. doi: 10.1016/j.eururo.2020.05.042. [ DOI ] [ PubMed ] [ Google Scholar ]
+64. Stiborová M, Arlt VM, Schmeiser HH. DNA adducts formed by aristolochic acid are unique biomarkers of exposure and explain the initiation phase of upper urothelial cancer. Int J Mol Sci. 2017;18:2144. doi: 10.3390/ijms18102144. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+65. Zhou L, Fu P, Huang XR, Liu F, Lai KN, Lan HY. Activation of p53 promotes renal injury in acute aristolochic acid nephropathy. J Am Soc Nephrol. 2010;21:31–41. doi: 10.1681/ASN.2008111133. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+66. Yang L, Besschetnova TY, Brooks CR, Shah JV, Bonventre JV. Epithelial cell cycle arrest in G2/M mediates kidney fibrosis after injury. Nat Med. 2010;16:535–543. doi: 10.1038/nm.2144. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+67. Zhou N, Yang L, Shang P, Tang J, Wang X, Li X. [Changes of aristolochic acid-1 induced proliferation inhibition after removal of the stimulant in renal tubular epithelial cell culture] Chin J Blood Purif. 2007;8:431–434. In Chinese. [ Google Scholar ]
+68. Sun D, Feng J, Dai C, et al. Role of peritubular capillary loss and hypoxia in progressive tubulointerstitial fibrosis in a rat model of aristolochic acid nephropathy. Am J Nephrol. 2006;26:363–371. doi: 10.1159/000094778. [ DOI ] [ PubMed ] [ Google Scholar ]
+69. Declèves AÉ, Jadot I, Colombaro V, et al. Protective effect of nitric oxide in aristolochic acid-induced toxic acute kidney injury: an old friend with new assets. Exp Physiol. 2016;101:193–206. doi: 10.1113/EP085333. [ DOI ] [ PubMed ] [ Google Scholar ]
+70. Wen YJ, Qu L, Li XM. Ischemic injury underlies the pathogenesis of aristolochic acid-induced acute kidney injury. Transl Res. 2008;152:38–46. doi: 10.1016/j.trsl.2008.05.002. [ DOI ] [ PubMed ] [ Google Scholar ]
+71. Zhao H, Jiang N, Han Y, et al. Aristolochic acid induces renal fibrosis by arresting proximal tubular cells in G2/M phase mediated by HIF-1α. FASEB J. 2020;34:12599–12614. doi: 10.1096/fj.202000949R. [ DOI ] [ PubMed ] [ Google Scholar ]
+72. Pozdzik AA, Berton A, Schmeiser HH, et al. Aristolochic acid nephropathy revisited: a place for innate and adaptive immunity? Histopathology. 2010;56:449–463. doi: 10.1111/j.1365-2559.2010.03509.x. [ DOI ] [ PubMed ] [ Google Scholar ]
+73. Dai XY, Huang XR, Zhou L, et al. Targeting c-fms kinase attenuates chronic aristolochic acid nephropathy in mice. Oncotarget. 2016;7:10841–10856. doi: 10.18632/oncotarget.7460. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+74. Pozdzik AA, Salmon IJ, Husson CP, et al. Patterns of interstitial inflammation during the evolution of renal injury in experimental aristolochic acid nephropathy. Nephrol Dial Transplant. 2008;23:2480–2491. doi: 10.1093/ndt/gfn140. [ DOI ] [ PubMed ] [ Google Scholar ]
+75. Sasaki K, Terker AS, Tang J, et al. Macrophage interferon regulatory factor 4 deletion ameliorates aristolochic acid nephropathy via reduced migration and increased apoptosis. JCI Insight. 2022;7:e150723. doi: 10.1172/jci.insight.150723. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+76. Vanherweghem JL, Abramowicz D, Tielemans C, Depierreux M. Effects of steroids on the progression of renal failure in chronic interstitial renal fibrosis: a pilot study in Chinese herbs nephropathy. Am J Kidney Dis. 1996;27:209–215. doi: 10.1016/s0272-6386(96)90542-9. [ DOI ] [ PubMed ] [ Google Scholar ]
+77. Martinez MC, Nortier J, Vereerstraeten P, Vanherweghem JL. Steroid therapy in chronic interstitial renal fibrosis: the case of Chinese-herb nephropathy. Nephrol Dial Transplant. 2002;17:2033–2034. doi: 10.1093/ndt/17.11.2033-a. [ DOI ] [ PubMed ] [ Google Scholar ]
+78. Zhou L, Fu P, Huang XR, et al. Mechanism of chronic aristolochic acid nephropathy: role of Smad3. Am J Physiol Renal Physiol. 2010;298:F1006–F1017. doi: 10.1152/ajprenal.00675.2009. [ DOI ] [ PubMed ] [ Google Scholar ]
+79. Pozdzik AA, Salmon IJ, Debelle FD, et al. Aristolochic acid induces proximal tubule apoptosis and epithelial to mesenchymal transformation. Kidney Int. 2008;73:595–607. doi: 10.1038/sj.ki.5002714. [ DOI ] [ PubMed ] [ Google Scholar ]
+80. Debelle FD, Nortier JL, Husson CP, et al. The renin-angiotensin system blockade does not prevent renal interstitial fibrosis induced by aristolochic acids. Kidney Int. 2004;66:1815–1825. doi: 10.1111/j.1523-1755.2004.00905.x. [ DOI ] [ PubMed ] [ Google Scholar ]
+81. Baudoux TE, Pozdzik AA, Arlt VM, et al. Probenecid prevents acute tubular necrosis in a mouse model of aristolochic acid nephropathy. Kidney Int. 2012;82:1105–1113. doi: 10.1038/ki.2012.264. [ DOI ] [ PubMed ] [ Google Scholar ]
+82. Hsieh WY, Chang TH, Chang HF, et al. Renal chymase-dependent pathway for angiotensin II formation mediated acute kidney injury in a mouse model of aristolochic acid I-induced acute nephropathy. PLoS One. 2019;14:e0210656. doi: 10.1371/journal.pone.0210656. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+83. Shui GX, Sang D, Yin X, Cai Y, Sun W. Dahuang Fuzi Decoction attenuates renal fibrosis and ameliorates mitochondrial dysfunction in chronic aristolochic acid nephropathy. Evid Based Complement Alternat Med. 2017;2017:9536458. doi: 10.1155/2017/9536458. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+84. Wang QL, Tao YY, Xie HD, Liu CH, Liu P. Fuzheng Huayu recipe, a traditional Chinese compound herbal medicine, attenuates renal interstitial fibrosis via targeting the miR-21/PTEN/AKT axis. J Integr Med. 2020;18:505–513. doi: 10.1016/j.joim.2020.08.006. [ DOI ] [ PubMed ] [ Google Scholar ]
+85. Jiang Y, Zhu Y, Zhen T, et al. Transcriptomic analysis of the mechanisms of alleviating renal interstitial fibrosis using the traditional Chinese medicine Kangxianling in a rat model. Sci Rep. 2020;10:10682. doi: 10.1038/s41598-020-67690-3. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+86. Liu Y, Chen DQ, Han JX, Zhao TT, Li SJ. A review of traditional Chinese medicine in treating renal interstitial fibrosis via endoplasmic reticulum stress-mediated apoptosis. Biomed Res Int. 2021;2021:6667791. doi: 10.1155/2021/6667791. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+87. Kholia S, Herrera Sanchez MB, Cedrino M, et al. Mesenchymal stem cell derived extracellular vesicles ameliorate kidney injury in aristolochic acid nephropathy. Front Cell Dev Biol. 2020;8:188. doi: 10.3389/fcell.2020.00188. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+88. Yang Y, Geng X, Chi K, et al. Ultrasound enhances the therapeutic potential of mesenchymal stem cells wrapped in greater omentum for aristolochic acid nephropathy. Stem Cell Res Ther. 2021;12:261. doi: 10.1186/s13287-021-02243-7. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ]
+89. Zhao L. [Discussion on regulation of traditional Chinese medicine and Chinese herbal decoction] China Food Drug Admin. 2019;10:52–67. In Chinese. [ Google Scholar ]
+90. National Medical Products Administration . National Medical Products Administration; c2004. Notice on strengthening the supervision and administration of 6 kinds of herbs and preparations [Internet] [cited 2022 Jul 3]. Available from: https://www.nmpa.gov.cn/xxgk/fgwj/gzwj/gzwjyp/20040805010101598.html . [ Google Scholar ]
+91. Chinese Pharmacopoeia Commission . Chinese pharmacopoeia. China Medical Science Press; 2020. [ Google Scholar ]
+Articles from Kidney Research and Clinical Practice are provided here courtesy of Korean Society of Nephrology
+ACTIONS
+View on publisher site
+PDF (1.7 MB)
+Cite
+Collections
+Permalink
+PERMALINK
+Copy
+RESOURCES
+Similar articles
+Cited by other articles
+Links to NCBI Databases
+Cite
+Copy
+Download .nbib
+.nbib
+Format:
+AMA
+APA
+MLA
+NLM
+Add to Collections
+Create a new collection
+Add to an existing collection
+Name your collection
+*
+Choose a collection
+Unable to load your collection due to an error
+Please try again
+Add
+Cancel
+Follow NCBI
+NCBI on X (formerly known as Twitter)
+NCBI on Facebook
+NCBI on LinkedIn
+NCBI on GitHub
+NCBI RSS feed
+Connect with NLM
+NLM on X (formerly known as Twitter)
+NLM on Facebook
+NLM on YouTube
+National Library of Medicine
+8600 Rockville Pike
+Bethesda, MD 20894
+Web Policies
+FOIA
+HHS Vulnerability Disclosure
+Help
+Accessibility
+Careers
+NLM
+NIH
+HHS
+USA.gov
+Back to Top

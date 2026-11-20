@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/07-zhineng/11-zhongyi-jiqiren-xue/05-rob5/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 58.1,
+  "estimatedCues": 0,
+  "videoSeconds": 58.122667,
+  "videoMinusNarrationSeconds": 0.023,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.25,
+      "seconds": 4.25,
+      "estimated": false,
+      "text": "第 5 章 · 控制与反馈：线性模型的视角",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.25,
+      "end": 18.84,
+      "seconds": 14.59,
+      "estimated": false,
+      "text": "「《F:/textbooks/机器学习·控制与反馈：线性模型的视角》」——教材第5章。本章要回答的是：控制与反馈：线性模型的视角：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 18.84,
+      "end": 23.47,
+      "seconds": 4.63,
+      "estimated": false,
+      "text": "控制与反馈：线性模型的视角：本课第 5 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 23.47,
+      "end": 46.8,
+      "seconds": 23.33,
+      "estimated": false,
+      "text": "环境逼迫（机器人学的判据是「停得下来」：任何动作都要有可验证的停止条件与责任人）+ 知识积累（本章 13 单元 13,259 汉字；三辨主 决策与规划 41；四位面（章群结构）主 控制 13259；引书 2 部 4 次；数值类命中 2）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 46.8,
+      "end": 58.1,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

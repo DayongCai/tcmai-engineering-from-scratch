@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（国际教育的判据是「标准对得上、学历认得了、边界说得清」）+ 知识积累（本章 6 单元 10,426 汉字；三辨主 **制度与规则 12**；四位面（章群结构）主 **历史与标准 10426**；引书 **68 部 76 次**；数值类命中 0）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（6 内容章 / 119 单元 / 82,428 汉字）；单元层 `standards/15-zhongyi-guojijiaoyu/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（6 内容章 / 119 单元 / 82,428 汉字）；单元层 `standards/15-zhongyi-guojijiaoyu/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -120,7 +120,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py 15-zhongyi-guojijiaoyu "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py 15-zhongyi-guojijiaoyu "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py 15-zhongyi-guojijiaoyu                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

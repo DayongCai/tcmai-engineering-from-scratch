@@ -143,6 +143,11 @@ def main():
 
     for f in files:
         d = json.load(open(f, encoding="utf-8"))
+        if "men" not in d:
+            # 正文-概论.json 是总论层（节/小节/条目），没有门与候字段；
+            # 这道审计只算十二门 1866 条候的证象组合，遇到总论层跳过并说明。
+            print("  · 跳过 %s（总论层，无 men/items）" % os.path.basename(f))
+            continue
         men = d["men"]
         door = Counter()
         for code, it in d["items"].items():

@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 08-wuguan/03-zhongyi-mianbu-wangzhen
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/08-wuguan/03-zhongyi-mianbu-wangzhen/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 03-zhongyi-mianbu-wangzhen
+title: 中医面部望诊学
+en: TCM Facial Inspection
+dept: 08-wuguan
+dept_title: 五官口腔系
+semester: 5
+stage: zhang
+hours: 54
+chapters_target: 8
+bridge: 面色分区→图像配准 / 面色分类→色彩直方图
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-e31
+    title: 第1章 望诊的原理与部位
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.87
+  - slug: 02-e32
+    title: 第2章 面部色泽与五色
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.87
+  - slug: 03-e33
+    title: 第3章 眼部望诊
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.85
+  - slug: 04-e34
+    title: 第4章 鼻部望诊
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.85
+  - slug: 05-e35
+    title: 第5章 口唇与齿龈
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.86
+  - slug: 06-e36
+    title: 第6章 咽喉望诊
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.85
+  - slug: 07-e37
+    title: 第7章 舌与口腔黏膜
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.88
+  - slug: 08-e38
+    title: 第8章 望诊记录与复核
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.87

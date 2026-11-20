@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/23-jingshenke-huli-xue/12-jinshi-shuimian/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 59.59,
+  "estimatedCues": 0,
+  "videoSeconds": 59.618667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.82,
+      "seconds": 3.82,
+      "estimated": false,
+      "text": "第 12 章 · 进食与睡眠障碍的护理",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.82,
+      "end": 19.71,
+      "seconds": 15.89,
+      "estimated": false,
+      "text": "「《精神科护理学·第12章》」——教材第 12 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：进食与睡眠障碍的护理这一章的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 19.71,
+      "end": 24.17,
+      "seconds": 4.46,
+      "estimated": false,
+      "text": "进食与睡眠合章：都靠行为与家庭配合。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 24.17,
+      "end": 48.29,
+      "seconds": 24.12,
+      "estimated": false,
+      "text": "环境逼迫（精神科护理的第一职责是「不出事」：自伤、伤人、走失的判断与处置先于一切治疗配合）+ 知识积累（本章 1 单元 19,272 汉字；三辨主 护理干预 199；四位面（服务形态）主 精神分裂症 0；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 48.29,
+      "end": 59.59,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

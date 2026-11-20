@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/11-zhongyi-waike-xue/05-chuangyang/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 96.3,
+  "estimatedCues": 0,
+  "videoSeconds": 96.332667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.63,
+      "seconds": 4.63,
+      "estimated": false,
+      "text": "第 5 章 · 疮疡：十个病证，同一套五段模板",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.63,
+      "end": 21.48,
+      "seconds": 16.85,
+      "estimated": false,
+      "text": "「疖是生于肌肤浅表部位、以局部红肿热痛为主要表现的急性化脓性疾病，其特点是肿势局限、根脚浅、范围小，出脓即愈」——教材·第5章·5.1.1（《中医外科学·第5章》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 21.48,
+      "end": 43.94,
+      "seconds": 22.46,
+      "estimated": false,
+      "text": "学生把十个病证的「概述」都背下来了，却答不出一个更硬的问题：为什么同样的红肿热痛，疖出脓即愈，疔却能走黄死人，有头疽会内陷，附骨疽要烂到骨头？如果十个病证各背一遍，脑子会变成十个孤岛；真正要抓的是同一套五段模板里，哪一项变了。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 43.94,
+      "end": 80.49,
+      "seconds": 36.55,
+      "estimated": false,
+      "text": "环境逼迫（疮疡是外科门诊量最大的一类，误判的代价集中在两处：把疔当疖挤压，把有头疽的「平塌」当好转）+ 知识积累（本章 50 个单元、31,002 字，结构极整齐：10 个病证 × 5 段（概述／病因病机／辨证论治／预防调护／按语），说明教材刻意用同一模板承载不同深浅的疾病；而词频重心落在病机（455）与全身（259）而非局部，说明疮疡章真正的难点是「何以成脓」与「何时走黄内陷」）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 80.49,
+      "end": 85,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 85,
+      "end": 96.3,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/23-zhongcan-xilu-xuandu/03-shigao/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 127.19,
+  "estimatedCues": 0,
+  "videoSeconds": 127.222667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.35,
+      "seconds": 5.35,
+      "estimated": false,
+      "text": "第 3 章 · 石膏：用量是这本书最容易被误读的地方",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.35,
+      "end": 19.87,
+      "seconds": 14.52,
+      "estimated": false,
+      "text": "「石膏之质原为硫养轻钙化合而成，其性凉而能散，有透表解肌之力，为清阳明胃腑实热之圣药，无论」——医学衷中参西录·二、药物·1．石膏解",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 19.87,
+      "end": 28.82,
+      "seconds": 8.95,
+      "estimated": false,
+      "text": "「石膏大寒伤胃」是教材共识，学生读到「石膏用至数两」时只会当奇闻，不去看他给出的前提条件。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 28.82,
+      "end": 49.63,
+      "seconds": 20.81,
+      "estimated": false,
+      "text": "环境逼迫（医学衷中参西录选读在本仓库没有教材底本，唯一可引的是外源文字化本；不复算就只剩口号） + 知识积累（本章取 3 单元 15,700 字；实测药物频次、剂量命中 134 处、参西 13 次、引书 14 部）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "concept",
+      "start": 49.63,
+      "end": 115.89,
+      "seconds": 66.26,
+      "estimated": false,
+      "text": "一、先把「数两」落在文本上 石膏解 3 单元 15,700 字，本章剂量型命中 134 处，最大用量写法集中在「两」本位。关键不在数字大小，而在他每次放量都同时写三件事：脉象（洪滑）、证候（大渴大汗）、以及煎服法（徐徐饮、分次服）。三者缺一，他自己也不放。 二、为什么他敢：因为他把「伤胃」拆成了可观察的条件 教材说「石膏伤胃」，他的处理是把它变成条件句：胃无实热而用石膏才伤胃；有实热则石膏是「凉而能散」。这不是修辞，是可证伪的判据——用错了会泻，用对了会热退而食进。 三、参西在这里登场 石膏解开篇即写「硫养轻钙化合而成」（即硫酸钙），这是他给「凉而能散」找的物理解释。本章实测该章参西命中 13 次——参西是为了解释药性，不是为了替代辨证。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 115.89,
+      "end": 127.19,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+# [tcmP] 课程编排 · 06-guanli/06-yiyuan-guanli-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/06-guanli/06-yiyuan-guanli-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 06-yiyuan-guanli-xue
+title: 医院管理学
+en: Hospital Management
+dept: 06-guanli
+dept_title: 管理系
+semester: 6
+stage: zhang
+hours: 72
+chapters_target: 10
+bridge: 门诊流程→排队论仿真 / 床位调度→离散事件仿真
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-y1
+    title: 第1章 绪论与基本原理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.88
+  - slug: 02-y2
+    title: 第2章 组织与人力资源
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.87
+  - slug: 03-y3
+    title: 第3章 医疗与护理管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.88
+  - slug: 04-y4
+    title: 第4章 药事·医技与感染
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.91
+  - slug: 05-y5
+    title: 第5章 质量与财务管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.88
+  - slug: 06-y6
+    title: 第6章 绩效与信息
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.85
+  - slug: 07-y7
+    title: 第7章 后勤设备与科教
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.89
+  - slug: 08-y8
+    title: 第8章 战略与风险
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.87
+  - slug: 09-y9
+    title: 第9章 文化与中医医院
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.89
+  - slug: 10-y10
+    title: 第10章 社区服务与数字医院
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.92

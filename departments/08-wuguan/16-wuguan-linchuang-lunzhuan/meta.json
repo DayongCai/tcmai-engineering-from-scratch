@@ -23,12 +23,12 @@
     "id": "textbooks",
     "path": "textbooks/08-wuguan/16-wuguan-linchuang-lunzhuan",
     "chaptersWritten": 6,
-    "words": 3579,
+    "words": 7598,
     "status": "wip",
     "layer": "handbook",
     "contract": "handbook-v1",
     "origin": "handbook",
     "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-    "extractedAt": "2026-11-09"
+    "extractedAt": "2026-11-20"
   }
 }

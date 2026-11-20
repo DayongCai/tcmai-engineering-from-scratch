@@ -1,0 +1,47 @@
+{
+  "chapter": "01-wenbing-fanwei",
+  "slideCount": 8,
+  "segmentCount": 8,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 25
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 51
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 152
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 97
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 2584
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 752
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 193
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 52
+    }
+  ]
+}

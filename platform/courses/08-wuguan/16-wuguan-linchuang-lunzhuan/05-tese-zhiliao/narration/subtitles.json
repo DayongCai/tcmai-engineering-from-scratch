@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/08-wuguan/16-wuguan-linchuang-lunzhuan/05-tese-zhiliao/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 54.88,
+  "estimatedCues": 0,
+  "videoSeconds": 54.902667,
+  "videoMinusNarrationSeconds": 0.023,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.62,
+      "seconds": 3.62,
+      "estimated": false,
+      "text": "第 5 章 · 中医五官特色治疗轮转",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.62,
+      "end": 17.08,
+      "seconds": 13.46,
+      "estimated": false,
+      "text": "「《F:/textbooks/中医眼科学·中医五官特色治疗轮转》」——第5阶段。本章要回答的是：中医五官特色治疗轮转：这一阶段要交付什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 17.08,
+      "end": 21.09,
+      "seconds": 4.01,
+      "estimated": false,
+      "text": "中医五官特色治疗轮转：本课第 5 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 21.09,
+      "end": 43.58,
+      "seconds": 22.49,
+      "estimated": false,
+      "text": "环境逼迫（轮转的判据是「接得住、查得清、交得出」）+ 知识积累（本章 40 单元 28,568 汉字；三辨主 检查与影像 71；四位面（阶段结构）主 口腔与特色治疗 28568；引书 27 部 62 次；数值类命中 1）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 43.58,
+      "end": 54.88,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

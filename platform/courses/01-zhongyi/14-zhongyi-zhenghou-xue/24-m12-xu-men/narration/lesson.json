@@ -1,0 +1,67 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-xu-men/docs/zh.md",
+  "course": "14-zhongyi-zhenghou-xue",
+  "dept": "01-zhongyi",
+  "chapter": "12-xu-men",
+  "title": "第 12 章 · 虚证门（M12）",
+  "segmentCount": 5,
+  "estimateTotalSeconds": 56,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 12 章 · 虚证门（M12）",
+      "slide": "title",
+      "spoken": "第 12 章 · 虚证门（M12）",
+      "estimateSeconds": 3,
+      "audio": "001.mp3",
+      "audioSeconds": 3.22
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「精气夺则虚」——虚是「该有的不足」，不是「有病」（《素问·通评虚实论》）",
+      "slide": "title",
+      "spoken": "「精气夺则虚」——虚是「该有的不足」，不是「有病」（《素问·通评虚实论》）",
+      "estimateSeconds": 8,
+      "audio": "002.mp3",
+      "audioSeconds": 6.19
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "虚证 44 证 307 候，是第二大门。它最容易犯的错是「见弱即虚」与「虚不受补」：虚有明确判据（久、缓、弱、濡），不是安慰性诊断。",
+      "slide": "problem",
+      "spoken": "虚证 44 证 307 候，是第二大门。它最容易犯的错是「见弱即虚」与「虚不受补」：虚有明确判据（久、缓、弱、濡），不是安慰性诊断。",
+      "estimateSeconds": 13,
+      "audio": "003.mp3",
+      "audioSeconds": 13.32
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（同一批证候在各科教材与本书里叫法不同，不先固定层级就无法比较、无法编码）＋知识积累（本书把「证」再切成「候」，12 门共 1866 条候，体量超出任何单科教材的编排能力，只能靠码与坐标来管）",
+      "slide": "roots",
+      "spoken": "环境逼迫（同一批证候在各科教材与本书里叫法不同，不先固定层级就无法比较、无法编码）＋知识积累（本书把「证」再切成「候」，12 门共 1866 条候，体量超出任何单科教材的编排能力，只能靠码与坐标来管）",
+      "estimateSeconds": 21,
+      "audio": "004.mp3",
+      "audioSeconds": 20.71
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "005.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 54.74,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

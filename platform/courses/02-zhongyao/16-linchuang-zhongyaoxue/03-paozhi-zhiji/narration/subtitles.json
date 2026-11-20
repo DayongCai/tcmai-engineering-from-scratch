@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/16-linchuang-zhongyaoxue/03-paozhi-zhiji/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 54.96,
+  "estimatedCues": 0,
+  "videoSeconds": 54.988667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.19,
+      "seconds": 3.19,
+      "estimated": false,
+      "text": "第 3 章 · 中药的炮制与制剂",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.19,
+      "end": 14.71,
+      "seconds": 11.52,
+      "estimated": false,
+      "text": "「《神农本草经·序录》」——教材·第3章·3.1.3。本章要回答的是：同一味药，生用与制用为什么是两个适应证。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.71,
+      "end": 23.04,
+      "seconds": 8.33,
+      "estimated": false,
+      "text": "炮制改变的是偏性：生姜发散、干姜温中、炮姜止血——同一植物，三个临床角色。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 23.04,
+      "end": 43.66,
+      "seconds": 20.62,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 5 单元 17,522 汉字；三辨主 临床应用 157；四位面（病位系统）主 心肝 200；引书 8 部 18 次；数值类命中 2）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 43.66,
+      "end": 54.96,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

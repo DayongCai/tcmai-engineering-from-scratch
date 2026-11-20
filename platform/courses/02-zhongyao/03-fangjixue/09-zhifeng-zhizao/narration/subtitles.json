@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/03-fangjixue/09-zhifeng-zhizao/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 114.55,
+  "estimatedCues": 0,
+  "videoSeconds": 114.578667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.35,
+      "seconds": 5.35,
+      "estimated": false,
+      "text": "第 9 章 · 治风剂与治燥剂：外邪与内伤的两条线",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.35,
+      "end": 14.28,
+      "seconds": 8.93,
+      "estimated": false,
+      "text": "「肝肾阴虚、肝阳偏亢」——教材·第17章·17.2.2（《方剂学·第17章·17.2》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.28,
+      "end": 51.31,
+      "seconds": 37.03,
+      "estimated": false,
+      "text": "教材第17、18章共 27,766 字、11 首方，四个节恰好是四种「邪从哪来」：疏散外风（风从外入）、平息内风（风从内生）、轻宣外燥（燥从外受）、滋阴润燥（燥从内耗）。这四节的方名都含同一个字，病因位置却相反——川芎茶调散治的是外感风邪头痛，镇肝息风汤治的是肝肾阴虚、肝阳偏亢的内中风；杏苏散治外感凉燥，麦门冬汤治肺胃阴伤。分清内外是本章第一道关。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 51.31,
+      "end": 103.25,
+      "seconds": 51.94,
+      "estimated": false,
+      "text": "环境逼迫（治风与治燥的临床第一步都是定位：外邪在表还是在里、燥在肺卫还是在肺胃；教材把「外风/内风」「外燥/内燥」各拆成两个节，就是要人在四个节之间做二选一，而四节的方在症状描述上高度相似——都写头痛、都写咳嗽、都写口干）＋ 知识积累（11 首方按六段/方写，每方 2,470–2,610 字；更关键的是，治风六方全部在方源段自报味数「凡N味」，这是全课唯一一处教材自己给出的结构数字，恰好成了校验组成抽取层的标尺——六首里五首相符，剩下的牵正散多出一截用法串；而消风散方源段那段「须加辨明者」，还让同名方成了最难的一关）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 103.25,
+      "end": 114.55,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

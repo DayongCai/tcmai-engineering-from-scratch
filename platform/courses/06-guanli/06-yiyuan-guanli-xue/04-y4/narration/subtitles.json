@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/06-guanli/06-yiyuan-guanli-xue/04-y4/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 54.43,
+  "estimatedCues": 0,
+  "videoSeconds": 54.458667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.34,
+      "seconds": 3.34,
+      "estimated": false,
+      "text": "第 4 章 · 药事·医技与感染",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.34,
+      "end": 14.16,
+      "seconds": 10.82,
+      "estimated": false,
+      "text": "「《医院管理学·药事·医技与感染》」——教材第4章。本章要回答的是：药事·医技与感染：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.16,
+      "end": 18,
+      "seconds": 3.84,
+      "estimated": false,
+      "text": "药事·医技与感染：本课第 4 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 18,
+      "end": 43.13,
+      "seconds": 25.13,
+      "estimated": false,
+      "text": "环境逼迫（医院管理的判据是「流程有人负责、质量有指标、风险有预案」）+ 知识积累（本章 12 单元 41,242 汉字；三辨主 制度与规则 323；四位面（章群结构）主 业务与质量 41242；引书 83 部 176 次；数值类命中 105）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 43.13,
+      "end": 54.43,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

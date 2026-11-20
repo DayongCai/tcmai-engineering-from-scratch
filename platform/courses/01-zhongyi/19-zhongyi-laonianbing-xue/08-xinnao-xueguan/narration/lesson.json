@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/08-xinnao-xueguan/docs/zh.md",
+  "course": "19-zhongyi-laonianbing-xue",
+  "dept": "01-zhongyi",
+  "chapter": "08-xinnao-xueguan",
+  "title": "第 8 章 · 老年心脑血管病证：本虚标实的主战场",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 75,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 8 章 · 老年心脑血管病证：本虚标实的主战场",
+      "slide": "title",
+      "spoken": "第 8 章 · 老年心脑血管病证：本虚标实的主战场",
+      "estimateSeconds": 5,
+      "audio": "001.mp3",
+      "audioSeconds": 5.18
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「夫脉当取太过不及，阳微阴弦，即胸痹而痛」——教材·第8章·8.1.1（《金匮要略·胸痹心痛短气病脉证治》）",
+      "slide": "title",
+      "spoken": "「夫脉当取太过不及，阳微阴弦，即胸痹而痛」——教材·第8章·8.1.1（《金匮要略·胸痹心痛短气病脉证治》）",
+      "estimateSeconds": 12,
+      "audio": "002.mp3",
+      "audioSeconds": 11.06
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "心脑血管病是老年病学的第一大章（28,428 汉字），也是学生最容易「按内科学背」的一章。但老年心脑病的两个特点改变了全部判断：**症状不典型**（心梗可只表现为乏力）与**多病共存**（中风病人常同时有高血压、糖尿病、痴呆）。",
+      "slide": "problem",
+      "spoken": "心脑血管病是老年病学的第一大章（28,428 汉字），也是学生最容易「按内科学背」的一章。但老年心脑病的两个特点改变了全部判断：症状不典型（心梗可只表现为乏力）与多病共存（中风病人常同时有高血压、糖尿病、痴呆）。",
+      "estimateSeconds": 23,
+      "audio": "003.mp3",
+      "audioSeconds": 21.48
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（急症时间窗以分钟计，而老人常延迟就诊）+ 知识积累（本章 7 单元 **28,428 汉字（全书最长）**，三辨主**病机 630**；四位面主**心脑 707（全书最高）**；引书 27 部 33 次；数值 0）",
+      "slide": "roots",
+      "spoken": "环境逼迫（急症时间窗以分钟计，而老人常延迟就诊）+ 知识积累（本章 7 单元 28,428 汉字（全书最长），三辨主病机 630；四位面主心脑 707（全书最高）；引书 27 部 33 次；数值 0）",
+      "estimateSeconds": 19,
+      "audio": "004.mp3",
+      "audioSeconds": 19.94
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "text": "```bash\ncd departments/01-zhongyi/19-zhongyi-laonianbing-xue/chapters/08-xinnao-xueguan\nnode code/main.js && node --test code/main.test.js\n```",
+      "slide": "verify",
+      "heading": "验证",
+      "spoken": "这一段以代码实现为主，请看画面上的代码块。",
+      "estimateSeconds": 5,
+      "audio": "005.mp3",
+      "audioSeconds": 4.51
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 73.49,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

@@ -1,0 +1,52 @@
+{
+  "chapter": "12-xingneng-bianma",
+  "slideCount": 9,
+  "segmentCount": 9,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 21
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 33
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 65
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 57
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 130
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 525
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 587
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 326
+    },
+    {
+      "n": 9,
+      "segment": 9,
+      "chars": 52
+    }
+  ]
+}

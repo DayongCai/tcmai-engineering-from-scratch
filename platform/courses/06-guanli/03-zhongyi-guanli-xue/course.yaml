@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 06-guanli/03-zhongyi-guanli-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/06-guanli/03-zhongyi-guanli-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 03-zhongyi-guanli-xue
+title: 中医管理学
+en: TCM Management
+dept: 06-guanli
+dept_title: 管理系
+semester: 5
+stage: zhang
+hours: 54
+chapters_target: 8
+bridge: 科室绩效→多指标评价 / 资源配置→线性规划
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-z31
+    title: 第1章 中医机构的管理原理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.91
+  - slug: 02-z32
+    title: 第2章 中医机构的决策与计划
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.92
+  - slug: 03-z33
+    title: 第3章 组织设计与人力资源
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.92
+  - slug: 04-z34
+    title: 第4章 领导、激励与沟通
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.92
+  - slug: 05-z35
+    title: 第5章 质量控制与绩效评价
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.93
+  - slug: 06-z36
+    title: 第6章 中医药机构的管理专题
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.94
+  - slug: 07-z37
+    title: 第7章 中医医院的运行管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.92
+  - slug: 08-z38
+    title: 第8章 中医政策与治理趋势
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.92

@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（多模态的判据不是「数据多」，是「多出来的一模态带来了可测量的增益」）+ 知识积累（本章 15 单元 1,792 汉字；三辨主 **采集与信号 15**；四位面（章群结构）主 **采集与处理 1792**；引书 **3 部 3 次**；数值类命中 0）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（10 内容章 / 145 单元 / 79,199 汉字）；单元层 `standards/zhongyi-duomotai-ronghe/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（10 内容章 / 145 单元 / 79,199 汉字）；单元层 `standards/zhongyi-duomotai-ronghe/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -164,7 +164,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py zhongyi-duomotai-ronghe "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py zhongyi-duomotai-ronghe "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py zhongyi-duomotai-ronghe                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

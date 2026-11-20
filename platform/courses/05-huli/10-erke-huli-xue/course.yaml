@@ -1,0 +1,120 @@
+# [tcmP] 课程编排 · 05-huli/10-erke-huli-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/05-huli/10-erke-huli-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 10-erke-huli-xue
+title: 儿科护理学
+en: Pediatric Nursing
+dept: 05-huli
+dept_title: 护理系
+semester: 6
+stage: zhang
+hours: 54
+chapters_target: 15
+bridge: 儿童生长发育→曲线拟合 / 用药剂量→体重规则
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-gaishu-moshi
+    title: 第1章 儿科护理概述与工作模式
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.03
+  - slug: 02-pinggu-jiankang
+    title: 第2章 儿科护理评估与健康指导
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.04
+  - slug: 03-baojian-shengzhang
+    title: 第3章 儿童保健与生长发育的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.02
+  - slug: 04-xinshenger
+    title: 第4章 新生儿与早产儿的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99
+  - slug: 05-yingyang
+    title: 第5章 营养障碍性疾病的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1
+  - slug: 06-huxi
+    title: 第6章 呼吸系统疾病的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.98
+  - slug: 07-xiaohua
+    title: 第7章 消化系统疾病的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99
+  - slug: 08-xunhuan-xueye
+    title: 第8章 循环与血液系统疾病的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.02
+  - slug: 09-miniao-shenjing
+    title: 第9章 泌尿与神经系统疾病的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.04
+  - slug: 10-chuanran
+    title: 第10章 儿童传染性疾病与感染防控的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.05
+  - slug: 11-jizheng
+    title: 第11章 儿童急症与意外伤害的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.04
+  - slug: 12-waike
+    title: 第12章 儿童外科疾病的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1.01
+  - slug: 13-zhengzhuang-tengtong
+    title: 第13章 儿童常见症状与疼痛的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.06
+  - slug: 14-teshu-manbing
+    title: 第14章 特殊儿童与慢病儿童的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.03
+  - slug: 15-baohu-zhiliang
+    title: 第15章 儿童保护、质量风险与平台
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.06

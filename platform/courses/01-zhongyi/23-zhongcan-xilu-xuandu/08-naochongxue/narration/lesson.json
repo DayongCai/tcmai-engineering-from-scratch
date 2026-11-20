@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/23-zhongcan-xilu-xuandu/chapters/08-naochongxue/docs/zh.md",
+  "course": "23-zhongcan-xilu-xuandu",
+  "dept": "01-zhongyi",
+  "chapter": "08-naochongxue",
+  "title": "第 8 章 · 脑充血与脑贫血：全书参西最深的一章",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 132,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 8 章 · 脑充血与脑贫血：全书参西最深的一章",
+      "slide": "title",
+      "spoken": "第 8 章 · 脑充血与脑贫血：全书参西最深的一章",
+      "estimateSeconds": 5,
+      "audio": "001.mp3",
+      "audioSeconds": 5.28
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「脑充血病之说倡自西人，而浅见者流恒讥中医不知此病，其人盖生平未见《内经》者也」——医学衷中参西录·三、医论·58．论脑充血之原因及治法",
+      "slide": "title",
+      "spoken": "「脑充血病之说倡自西人，而浅见者流恒讥中医不知此病，其人盖生平未见《内经》者也」——医学衷中参西录·三、医论·58．论脑充血之原因及治法",
+      "estimateSeconds": 15,
+      "audio": "002.mp3",
+      "audioSeconds": 14.88
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "学生把「脑充血」当西医名词直接对应「高血压」，于是把镇肝熄风汤当成降压方，忽略了他给出的脉证条件。",
+      "slide": "problem",
+      "spoken": "学生把「脑充血」当西医名词直接对应「高血压」，于是把镇肝熄风汤当成降压方，忽略了他给出的脉证条件。",
+      "estimateSeconds": 11,
+      "audio": "003.mp3",
+      "audioSeconds": 10.34
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（医学衷中参西录选读在本仓库没有教材底本，唯一可引的是外源文字化本；不复算就只剩口号） + 知识积累（本章取 10 单元 10,722 字；实测药物频次、剂量命中 208 处、参西 42 次、引书 7 部）",
+      "slide": "roots",
+      "spoken": "环境逼迫（医学衷中参西录选读在本仓库没有教材底本，唯一可引的是外源文字化本；不复算就只剩口号） + 知识积累（本章取 10 单元 10,722 字；实测药物频次、剂量命中 208 处、参西 42 次、引书 7 部）",
+      "estimateSeconds": 21,
+      "audio": "004.mp3",
+      "audioSeconds": 20.78
+    },
+    {
+      "n": 5,
+      "role": "concept",
+      "text": "### 一、先看命名的两层：西医的解剖 + 中医的脉证\n\n医案·（四）脑充血门 6 案 4983 字，医论部分另有多篇专论。他用「脑充血」描述病位（血上冲于脑），用「脉弦长有力、头目胀痛」描述可观察的征象——两套语言并置，但判定仍以脉证为准。\n\n### 二、参西在这里的密度\n\n本章参西命中 42 次，是全书密度最高的一组：论脑充血之原因及治法（16）、论脑贫血痿废治法（7）、论脑充血证可预防及其证误名中风之由（5）、论脑贫血治法（3）、脑充血头疼（3）。密集处集中在他要把「血上冲」讲成一个可理解的物理过程（血压、血管、脑筋）。\n\n### 三、因此它不是降压方\n\n镇肝熄风汤的前提是「脉弦长有力、上盛下虚」；脉虚者用之，会把本已不足的下焦再压一层。参西给了病位，没给适应证——适应证仍是脉证。",
+      "slide": "concept",
+      "heading": "核心概念",
+      "spoken": "一、先看命名的两层：西医的解剖 + 中医的脉证\n医案·（四）脑充血门 6 案 4983 字，医论部分另有多篇专论。他用「脑充血」描述病位（血上冲于脑），用「脉弦长有力、头目胀痛」描述可观察的征象——两套语言并置，但判定仍以脉证为准。\n二、参西在这里的密度\n本章参西命中 42 次，是全书密度最高的一组：论脑充血之原因及治法（16）、论脑贫血痿废治法（7）、论脑充血证可预防及其证误名中风之由（5）、论脑贫血治法（3）、脑充血头疼（3）。密集处集中在他要把「血上冲」讲成一个可理解的物理过程（血压、血管、脑筋）。\n三、因此它不是降压方\n镇肝熄风汤的前提是「脉弦长有力、上盛下虚」；脉虚者用之，会把本已不足的下焦再压一层。参西给了病位，没给适应证——适应证仍是脉证。",
+      "estimateSeconds": 69,
+      "audio": "005.mp3",
+      "audioSeconds": 67.68
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 130.27,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

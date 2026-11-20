@@ -1,0 +1,47 @@
+{
+  "chapter": "10-yibing-gongwei",
+  "slideCount": 8,
+  "segmentCount": 8,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 36
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 148
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 209
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 126
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 2749
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 370
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 170
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 52
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/22-zhongyi-biye-sheji/22-zhineng-zhibiao-shibai/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 57.26,
+  "estimatedCues": 0,
+  "videoSeconds": 57.288667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 7.37,
+      "seconds": 7.37,
+      "estimated": false,
+      "text": "第 22 章 · 智能系·案例三：指标与失效移交包——医疗 AI 的可审计交付",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 7.37,
+      "end": 14.88,
+      "seconds": 7.51,
+      "estimated": false,
+      "text": "「微妙在脉，不可不察」——教材·第22章·22.1（《素问·脉要精微论》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.88,
+      "end": 31.75,
+      "seconds": 16.87,
+      "estimated": false,
+      "text": "只报平均指标算不算完成？失效案例要报到什么粒度才可复现？ 本章还要回答：谁会用、他付多少、客户数从哪来、多久回本、AI 解决了什么、能不能卖给个人（多数不能）。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 31.75,
+      "end": 41.45,
+      "seconds": 9.7,
+      "estimated": false,
+      "text": "环境逼迫（毕设要落到可交付的假设与判据上）+ 知识积累（本库该院系资产已可支撑一次真实计算）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 41.45,
+      "end": 45.96,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 45.96,
+      "end": 57.26,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

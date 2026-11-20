@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/11-zhongyi-waike-xue/04-zhifa/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 76.8,
+  "estimatedCues": 0,
+  "videoSeconds": 76.818667,
+  "videoMinusNarrationSeconds": 0.019,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 6.05,
+      "seconds": 6.05,
+      "estimated": false,
+      "text": "第 4 章 · 治法：消、托、补不是三个选项，是一条时间轴",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 6.05,
+      "end": 12.84,
+      "seconds": 6.79,
+      "estimated": false,
+      "text": "「外之症则必根于其内也」——教材·第4章·4.1.1（《外科正宗》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 12.84,
+      "end": 34.66,
+      "seconds": 21.82,
+      "estimated": false,
+      "text": "学生能背「初起消、成脓托、溃后补」，但真到换药时答不出三件事：什么时候必须切开？脓已成而正虚，是先托还是先切？溃后脓水清稀不收口，补气还是补血、补哪一脏？把三法当三个并列选项，就会在时间轴上选错格。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 34.66,
+      "end": 60.99,
+      "seconds": 26.33,
+      "estimated": false,
+      "text": "环境逼迫（外科最常见的处置争议集中在「切早了」与「切晚了」两端：切早了伤气血、切晚了脓毒内攻）+ 知识积累（本章 7 个单元、12,765 字里引书达 24 部、63 次，是全课程引书最密的一章——说明三法与外治技术是历代反复校订过的操作知识，不是一句话口诀）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 60.99,
+      "end": 65.5,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 65.5,
+      "end": 76.8,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

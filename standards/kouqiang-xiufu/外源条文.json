@@ -8,56 +8,64 @@
    "issuer": "中华口腔医学会（口腔修复学专业委员会提出）",
    "date": "2021-06-25 发布 / 2021-07-01 实施",
    "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860245273.pdf",
-   "file": "T-CHSA-001-2021-老年患者口腔修复指南.pdf"
+   "file": "T-CHSA-001-2021-老年患者口腔修复指南.pdf",
+   "shortTitle": "T/CHSA 001—2021 老年患者口腔修复指南"
   },
   "CT": {
    "title": "T/CHSA 001—2019 瓷贴面粘接技术操作规范",
    "issuer": "中华口腔医学会",
    "date": "2019-12-31 发布 / 2020-01-31 实施",
    "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860627989.pdf",
-   "file": "T-CHSA-001-2019-瓷贴面粘接技术操作规范.pdf"
+   "file": "T-CHSA-001-2019-瓷贴面粘接技术操作规范.pdf",
+   "shortTitle": "T/CHSA 001—2019 瓷贴面粘接技术操作规范"
   },
   "PB": {
    "title": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南",
    "issuer": "中华口腔医学会",
    "date": "2021-06-25 发布 / 2021-07-01 实施",
    "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021860277345.pdf",
-   "file": "T-CHSA-002-2021-牙齿漂白治疗技术操作指南.pdf"
+   "file": "T-CHSA-002-2021-牙齿漂白治疗技术操作指南.pdf",
+   "shortTitle": "T/CHSA 002—2021 牙齿漂白治疗技术操作指南"
   },
   "QK": {
    "title": "T/CHSA 006—2022 全口义齿修复的印模与模型制作规范",
    "issuer": "中华口腔医学会",
    "date": "2022 发布（2024-02-18 公告转载）",
    "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858483881.pdf",
-   "file": "T-CHSA-006-2022-全口义齿修复的印模与模型制作规范.pdf"
+   "file": "T-CHSA-006-2022-全口义齿修复的印模与模型制作规范.pdf",
+   "shortTitle": "T/CHSA 006—2022 全口义齿修复的印模与模型制作规范"
   },
   "SM": {
    "title": "T/CHSA 003—2022 牙科水门汀材料调和操作规范",
    "issuer": "中华口腔医学会",
    "date": "2022 发布（2024-02-18 公告转载）",
    "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858385229.pdf",
-   "file": "T-CHSA-003-2022-牙科水门汀材料调和操作规范.pdf"
+   "file": "T-CHSA-003-2022-牙科水门汀材料调和操作规范.pdf",
+   "shortTitle": "T/CHSA 003—2022 牙科水门汀材料调和操作规范"
   },
   "CC": {
    "title": "T/CHSA 014-2022 椅旁全瓷修复技术指南",
    "issuer": "中华口腔医学会",
    "date": "2022 发布（2024-02-18 公告转载）",
    "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858819409.pdf",
-   "file": "T-CHSA-014-2022-椅旁全瓷修复技术指南.pdf"
+   "file": "T-CHSA-014-2022-椅旁全瓷修复技术指南.pdf",
+   "shortTitle": "T/CHSA 014-2022 椅旁全瓷修复技术指南"
   },
   "RC": {
    "title": "T/CHSA 013—2022 树脂陶瓷复合材料椅旁CAD/CAM修复技术指南",
    "issuer": "中华口腔医学会",
    "date": "2022 发布（2024-02-18 公告转载）",
    "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858769809.pdf",
-   "file": "T-CHSA-013-2022-树脂陶瓷复合材料椅旁CADCAM修复技术指南.pdf"
+   "file": "T-CHSA-013-2022-树脂陶瓷复合材料椅旁CADCAM修复技术指南.pdf",
+   "shortTitle": "T/CHSA 013—2022 树脂陶瓷复合材料椅旁CAD/CAM修复技术指南"
   },
   "SLM": {
    "title": "T/CHSA 012—2022 选择性激光熔化金属修复技术的临床应用专家共识",
    "issuer": "中华口腔医学会",
    "date": "2022 发布（2024-02-18 公告转载）",
    "url": "http://www.ahskqyxh.com/UploadFiles/202402/2024021858719229.pdf",
-   "file": "T-CHSA-012-2022-选择性激光熔化金属修复技术临床应用专家共识.pdf"
+   "file": "T-CHSA-012-2022-选择性激光熔化金属修复技术临床应用专家共识.pdf",
+   "shortTitle": "T/CHSA 012—2022 选择性激光熔化金属修复技术的临床应用专家共识"
   }
  },
  "clauses": [

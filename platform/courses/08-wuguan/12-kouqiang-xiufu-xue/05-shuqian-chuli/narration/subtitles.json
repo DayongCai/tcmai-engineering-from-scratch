@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/08-wuguan/12-kouqiang-xiufu-xue/05-shuqian-chuli/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 67.75,
+  "estimatedCues": 0,
+  "videoSeconds": 67.778667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.02,
+      "seconds": 5.02,
+      "estimated": false,
+      "text": "第 5 章 · 修复前处理、健康宣教与形式选择",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.02,
+      "end": 27.82,
+      "seconds": 22.8,
+      "estimated": false,
+      "text": "「《老年患者口腔修复指南·第5.4.1条》」——外源课：条文依据为「外源·T/CHSA 001—2021 老年患者口腔修复指南 第5.4.1条」，非教材原文篇名。本章要回答的是：修复前处理、健康宣教与形式选择这一环的判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 27.82,
+      "end": 33.15,
+      "seconds": 5.33,
+      "estimated": false,
+      "text": "先治病再修牙：三段处理决定修复体的寿命上限。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 33.15,
+      "end": 56.45,
+      "seconds": 23.3,
+      "estimated": false,
+      "text": "环境逼迫（修复的失败大多不是「技术不会」，而是「该做的评估没做、该说的风险没说、该验的环节没验」）+ 知识积累（本章 1 单元 2,664 汉字；三辨主 修复形式 98；四位面（缺损类型）主 牙体缺损 17；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 56.45,
+      "end": 67.75,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

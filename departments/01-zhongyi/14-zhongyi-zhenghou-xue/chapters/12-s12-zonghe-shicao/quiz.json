@@ -1,0 +1,80 @@
+{
+  "lesson": "12-s12-zonghe-shicao",
+  "title": "综合实操：从主诉到证候单元的全流程",
+  "subject": "14-zhongyi-zhenghou-xue",
+  "stage": "三基·基本技能",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "七步工序的第一步产物是？",
+      "options": [
+        "证名",
+        "证象清单",
+        "治则",
+        "方剂"
+      ],
+      "correct": 1,
+      "explanation": "先归象：症象、脉象、舌象 → 证象。"
+    },
+    {
+      "stage": "check",
+      "question": "证名与候名的构成分别是？",
+      "options": [
+        "病层+病机 / 病因+病位",
+        "病因+病位 / 病层+病机状态",
+        "都按病因+病位",
+        "都按症状组合"
+      ],
+      "correct": 1,
+      "explanation": "两者层级不同，写混会导致编码挂不上。"
+    },
+    {
+      "stage": "check",
+      "question": "第 6 步「排除记录」的作用是？",
+      "options": [
+        "存档",
+        "让别人看出你鉴别过",
+        "凑字数",
+        "便于计费"
+      ],
+      "correct": 1,
+      "explanation": "可复核性依赖排除记录。"
+    },
+    {
+      "stage": "check",
+      "question": "样例「恶寒发热无汗、头身疼痛、鼻塞流清涕、苔薄白、脉浮紧」的证名是？",
+      "options": [
+        "风热犯肺证",
+        "肺卫风寒证",
+        "风寒束表证",
+        "太阳伤寒证"
+      ],
+      "correct": 1,
+      "explanation": "按本书命名法：病因风寒 + 病位肺卫。"
+    },
+    {
+      "stage": "post",
+      "question": "第 7 步在本课的边界是？",
+      "options": [
+        "给出完整处方",
+        "只到治法方向，不给方药与剂量",
+        "给出剂量",
+        "给出疗程"
+      ],
+      "correct": 1,
+      "explanation": "处方属临床行为，课程只讲规则。"
+    },
+    {
+      "stage": "post",
+      "question": "复核一次辨证的标准是？",
+      "options": [
+        "症状对得上",
+        "别人能复算出同样的证名与候名",
+        "医生同意",
+        "编码存在"
+      ],
+      "correct": 1,
+      "explanation": "可复算才算完成。"
+    }
+  ]
+}

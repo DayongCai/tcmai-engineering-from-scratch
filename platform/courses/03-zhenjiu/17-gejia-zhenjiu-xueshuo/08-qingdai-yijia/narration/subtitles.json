@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/17-gejia-zhenjiu-xueshuo/08-qingdai-yijia/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 77.49,
+  "estimatedCues": 0,
+  "videoSeconds": 77.528667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.6,
+      "seconds": 3.6,
+      "estimated": false,
+      "text": "第 8 章 · 清代针灸医家学术思想",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.6,
+      "end": 23.74,
+      "seconds": 20.14,
+      "estimated": false,
+      "text": "「《医宗金鉴·刺灸心法要诀》」——教材·第8章·8.2.1（教材正文只写书名《医宗金鉴》；篇名按该书子目补足：卷七十九–八十六《刺灸心法要诀》）。本章要回答的是：清代「重灸轻针」是学术选择还是环境所迫。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 23.74,
+      "end": 40.73,
+      "seconds": 16.99,
+      "estimated": false,
+      "text": "清代针法受限与灸法盛行并存，读成「衰落」或「发展」都是单向叙事。这不是记忆量的问题，是判据的问题：没有判据，任何一个医家都可以被讲成「他很重视针灸」，而这句话什么也没说。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 40.73,
+      "end": 66.19,
+      "seconds": 25.46,
+      "estimated": false,
+      "text": "环境逼迫（针灸的技术动作只在具体医家的手上被改动，脱离人物与年代，手法就成了没有来路的规矩）+ 知识积累（本章 12 单元 12,087 汉字；三辨主 临证应用 261；四位面（时代）主 明清近代 187；引书 44 部 217 次；数值类命中 15）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 66.19,
+      "end": 77.49,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

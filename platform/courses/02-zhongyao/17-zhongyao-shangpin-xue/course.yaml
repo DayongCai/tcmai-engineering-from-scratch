@@ -1,0 +1,138 @@
+# [tcmP] 课程编排 · 02-zhongyao/17-zhongyao-shangpin-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 17-zhongyao-shangpin-xue
+title: 中药商品学
+en: Chinese Materia Medica Commerce
+dept: 02-zhongyao
+dept_title: 中药系
+semester: 8
+stage: zhuang
+hours: 36
+chapters_target: 18
+bridge: 商品规格→分级模型 / 流通数据→供应链图
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-daolun
+    title: 第1章 中药商品学导论
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.08
+  - slug: 02-lishi-liutong
+    title: 第2章 中药商品的历史与流通演变
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 03-fenlei-mingming
+    title: 第3章 中药商品的分类与命名
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.06
+  - slug: 04-daodi-chanqu
+    title: 第4章 道地药材与产区
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.02
+  - slug: 05-zhiliang-biaozhun
+    title: 第5章 中药商品的质量标准体系
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.04
+  - slug: 06-jianding-fangfa
+    title: 第6章 中药商品的鉴定方法
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.05
+  - slug: 07-guige-dengji
+    title: 第7章 中药材商品的规格等级
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 08-yinpian
+    title: 第8章 中药饮片商品
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.02
+  - slug: 09-zhongchengyao
+    title: 第9章 中成药商品
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.04
+  - slug: 10-baozhuang-chucang
+    title: 第10章 中药商品的包装与贮藏养护
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.05
+  - slug: 11-jingying-zhiliang
+    title: 第11章 中药商品的经营与质量管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.12
+  - slug: 12-jiage-shichang
+    title: 第12章 中药商品的价格与市场
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.07
+  - slug: 13-pinpai-zhishi
+    title: 第13章 中药商品的品牌与知识产权
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.06
+  - slug: 14-teshu-guanli
+    title: 第14章 特殊管理的中药商品
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.06
+  - slug: 15-guomao-maoyi
+    title: 第15章 中药商品的国际贸易
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.1
+  - slug: 16-jianguan-hegui
+    title: 第16章 中药商品的监管与合规
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.02
+  - slug: 17-fengxian-zhuisu
+    title: 第17章 中药商品的质量风险与追溯
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.12
+    measured_minutes: 1.11
+  - slug: 18-jiaoxue-pingtai
+    title: 第18章 中药商品学与 tcmP 智能教学平台
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.11

@@ -1,29 +1,31 @@
 {
-  "slug": "13-linchuang-keyan-fangfa",
-  "title": "临床科研方法学",
-  "en": "Clinical Research Methodology",
-  "deptSlug": "06-guanli",
-  "deptTitle": "管理系",
-  "globalN": 88,
-  "type": "Build",
-  "semester": 7,
-  "stage": "zhuang",
-  "stageTitle": "壮",
-  "hours": 54,
-  "bridge": "试验设计→随机化算法 / 真实世界研究→因果推断",
-  "chaptersTarget": 8,
-  "chapters": [],
-  "platform": {
-    "id": "tcmP",
-    "coursePath": "platform/courses/06-guanli/13-linchuang-keyan-fangfa",
-    "videosPublished": 0,
-    "status": "planned"
-  },
-  "textbook": {
-    "id": "textbooks",
-    "path": "textbooks/06-guanli/13-linchuang-keyan-fangfa",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
-  }
+ "slug": "13-linchuang-keyan-fangfa",
+ "title": "临床科研方法学",
+ "en": "Clinical Research Methodology",
+ "deptSlug": "06-guanli",
+ "deptTitle": "管理系",
+ "globalN": 88,
+ "type": "Build",
+ "semester": 7,
+ "stage": "zhuang",
+ "stageTitle": "壮",
+ "hours": 54,
+ "bridge": "试验设计→随机化算法 / 真实世界研究→因果推断",
+ "chaptersTarget": 8,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/06-guanli/13-linchuang-keyan-fangfa",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/06-guanli/13-linchuang-keyan-fangfa",
+  "chaptersWritten": 8,
+  "words": 431050,
+  "status": "wip",
+  "layer": "source",
+  "source": "standards/13-linchuang-keyan-fangfa/units.json（合成底本：卫生统计学 18 章 + 卫生信息管理 3 章）"
+ }
 }

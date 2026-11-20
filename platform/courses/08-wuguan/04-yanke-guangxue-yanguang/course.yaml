@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 08-wuguan/04-yanke-guangxue-yanguang
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 04-yanke-guangxue-yanguang
+title: 眼科光学与验光
+en: Ophthalmic Optics & Refraction
+dept: 08-wuguan
+dept_title: 五官口腔系
+semester: 5
+stage: zhang
+hours: 54
+chapters_target: 8
+bridge: 屈光计算→光学公式 / 验光数据→球柱换算
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-e41
+    title: 第1章 眼的光学结构
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.84
+  - slug: 02-e42
+    title: 第2章 屈光不正的类型
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.85
+  - slug: 03-e43
+    title: 第3章 视力与对比敏感度
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.86
+  - slug: 04-e44
+    title: 第4章 验光原理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.82
+    measured_minutes: 0.81
+  - slug: 05-e45
+    title: 第5章 镜片与矫正
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.83
+  - slug: 06-e46
+    title: 第6章 儿童屈光与弱视
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.87
+  - slug: 07-e47
+    title: 第7章 屈光手术与边界
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.87
+  - slug: 08-e48
+    title: 第8章 验光记录与安全
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.85

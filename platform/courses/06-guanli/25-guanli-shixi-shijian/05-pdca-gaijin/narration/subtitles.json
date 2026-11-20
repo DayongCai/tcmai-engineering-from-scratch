@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/06-guanli/25-guanli-shixi-shijian/05-pdca-gaijin/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 55.75,
+  "estimatedCues": 0,
+  "videoSeconds": 55.778667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.7,
+      "seconds": 3.7,
+      "estimated": false,
+      "text": "第 5 章 · 管理改进项目（PDCA）",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.7,
+      "end": 17.28,
+      "seconds": 13.58,
+      "estimated": false,
+      "text": "「《F:/textbooks/管理学基础·管理改进项目（PDCA）》」——第5阶段。本章要回答的是：管理改进项目（PDCA）：这一阶段要交付什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 17.28,
+      "end": 21.36,
+      "seconds": 4.08,
+      "estimated": false,
+      "text": "管理改进项目（PDCA）：本课第 5 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 21.36,
+      "end": 44.45,
+      "seconds": 23.09,
+      "estimated": false,
+      "text": "环境逼迫（实习的判据是「岗位待得住、数据拿得到、改进说得清」）+ 知识积累（本章 11 单元 13,407 汉字；三辨主 问题与数据 146；四位面（阶段结构）主 收尾 13407；引书 25 部 35 次；数值类命中 20）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 44.45,
+      "end": 55.75,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

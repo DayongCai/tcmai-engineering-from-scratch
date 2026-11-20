@@ -81,7 +81,7 @@ ffmpeg           ✅ 可用（gh-proxy 镜像安装，见下文）
 ffprobe          ✅ 可用   → 成片时长可实测校验
 headless-browser ✅ 可用   (msedge.exe)  → 第 3.5 段画面帧导出
 tts              ✅ 可用   (Windows SAPI · Microsoft Huihui Desktop，离线)
-pandoc           ⬚ 缺失   → [textbooks] 的 PDF/EPUB 排版不可用（Markdown 汇总可用）
+pandoc           ✅ 可用   (3.5 · %LOCALAPPDATA%\pandoc) → [textbooks] EPUB 排版（PDF 另需 xelatex）
 ```
 
 2026-11-10 起十章**全部走完整链**（1920×1080 / 25fps / 每章 10–12 段配音，均带 mov_text 字幕轨）：
@@ -104,9 +104,61 @@ pandoc           ⬚ 缺失   → [textbooks] 的 PDF/EPUB 排版不可用（Mar
 那是「画面比配音长 +21.8s」修复**之前**的旧值，修复后没回头改（2026-10-15 才发现）。
 音轨 `aac`（非静音）；逐章数字随时可用 `npm run tcmP:check` 复核。
 
----
+### 成片台账：视频到底生成了没有
 
-## 配音：为什么有三条链
+仓库里有三本账，各管一层，**不许互相顶替**：
+
+| 台账 | 文件 | 数什么 | 谁核 |
+|---|---|---|---|
+| 语料 | `VIDEO-LESSONS.md` | 189 门学科里**有没有**网络课语料、多少讲/语句/时长 | `node scripts/build_video_lessons.js --check` |
+| 成片 | `platform/RENDER-LEDGER.md` + `data/video-artifacts.json` | 每章**实物**：mp4 实测时长 / 字幕 / 帧 / 配音 / 分镜 | `node scripts/build_video_ledger.js --check` + `tests/test_video_ledger.js` |
+| 挂接 | `data/video-textbook-links.json` | 每讲 → 教学章 → 教材章 | `node scripts/build_video_textbook_links.js --check` |
+
+```bash
+node scripts/build_video_ledger.js            # 逐章 ffprobe 实测，落台账 + 人读版
+node scripts/build_video_ledger.js --check    # 有实物就核实物；干净克隆上明说「跳过实物校验」
+```
+
+`rendered` 的判据是六件齐：`video/lesson.mp4` 存在 且 `ffprobe` 时长 > 0 且 `subtitles.vtt` 在
+且 `frames/*.png` > 0 且 `narration/audio/*.mp3` > 0 且 `lesson.json` 有 segments。
+任何一条不满足就是 `partial`，不写成 rendered。**时长只认 ffprobe**——
+`course.yaml` 的 `estimate_minutes` 是按字数估算，`measured_minutes` 必须与实测差 ≤0.5 分钟，
+超了就是有一处过期（这一条也在 `--check` 里）。
+
+> 2026-11-19 实测：**2,154 / 2,154 章全部成片**（88.7 小时 / 7.29 GB），逐学期推进
+> （1:68 · 2:151 · 3:184 · 4:327 · 5:295 · 6:414 · 7:387 · 8:198 · 9:54 · 10:76）。
+
+### 编排入口：没有 course.yaml 就没有视频
+
+视频流水线每一步都以 `platform/courses/<dept>/<subject>/course.yaml` 的章清单为输入。
+189 门学科里，此前只有 5 门有这个文件 —— 其余 184 门**不是内容不够，是没有编排入口**。
+
+```bash
+node scripts/scaffold_course_yaml.js 03-zhenjiu/01-jingluo-xue   # 单门
+node scripts/scaffold_course_yaml.js --all                       # 全部有正文的学科
+node scripts/scaffold_course_yaml.js --check                     # 门：编排章清单 ↔ 磁盘 docs/zh.md
+```
+
+- 只收**有 `docs/zh.md` 的章**：没有正文的章进了编排，`extract_narration.js` 第一步就会退出。
+- 生成的 `video: planned` 意思是「可渲染」，不是「已渲染」；状态词只有五档
+  （`planned / narration-ready / slides-ready / rendered / published`），渲染后以成片台账为准。
+- 已存在的 course.yaml **不覆盖**（那几门带实测数字），`--force` 才重写。
+- `--check` 是幂等门的反向用法：章目录加了/删了而编排没跟上，就红。
+
+### 批量成片：一门课一次跑完，状态自动回写
+
+```bash
+node scripts/build_video_batch.js 03-zhenjiu/01-jingluo-xue            # 全课
+node scripts/build_video_batch.js 03-zhenjiu/01-jingluo-xue --resume   # 跳过已成片的章
+node scripts/build_video_batch.js <course> --chapter <slug>            # 单章
+node scripts/build_video_batch.js <course> --dry                       # 只列计划，不动磁盘
+```
+
+六个阶段串起来跑（讲稿 → 幻灯片 → 画面帧 → 配音 → 字幕 → 成片），**任一阶段失败即停在该章**并打印最后四行报错；成片真的落盘且 `lesson.json` 有实测时长之后，才把
+`video: rendered / segments / estimate_minutes / measured_minutes` 回写 course.yaml（数字取 `estimateTotalSeconds` 与 `audioMeasuredSeconds`，不手估）。
+有章失败就 exit 1 —— 「跑完了」和「有几章没跑成」不能混成一句话。
+
+---
 
 成片流水线里最脆的一环是 TTS —— 它跟「内容写得好不好」毫无关系，却能整体卡住出片。
 所以 `synthesize_narration.js` 按可用性依次尝试，并把**实际用了哪条链**写进讲稿 JSON 与日志：
@@ -191,8 +243,10 @@ stage: sheng
 chapters:
   - slug: 01-yin-yang-er-fenlei
     title: 阴阳学说 → 二分类：从零实现逻辑回归
-    video: pending        # pending | rendered | published
-    duration_estimate: 18 # 分钟
+    video: rendered       # planned | narration-ready | slides-ready | rendered | published
+    segments: 12
+    estimate_minutes: 5.8 # 按字数估算（lesson.json 的 estimateTotalSeconds）
+    measured_minutes: 5.79 # TTS/ffprobe 实测（audioMeasuredSeconds）
 ```
 
 `chapters[].slug` 必须与 `departments/<dept>/<subject>/chapters/` 下的目录名一致，

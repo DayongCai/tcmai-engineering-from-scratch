@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/20-xiaoer-tuina-xue/11-baojian-tuina/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 58.13,
+  "estimatedCues": 0,
+  "videoSeconds": 58.154667,
+  "videoMinusNarrationSeconds": 0.025,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 2.93,
+      "seconds": 2.93,
+      "estimated": false,
+      "text": "第 11 章 · 小儿保健推拿",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 2.93,
+      "end": 14.55,
+      "seconds": 11.62,
+      "estimated": false,
+      "text": "「《备急千金要方·少小婴孺方》」——教材·第11章·11.1.1。本章要回答的是：保健推拿与治疗推拿的边界在哪。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.55,
+      "end": 23.17,
+      "seconds": 8.62,
+      "estimated": false,
+      "text": "同一套手法，保健用是「常做轻做」，治疗用是「辨证加量」；界限不在手法，在目的与指征。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 23.17,
+      "end": 46.83,
+      "seconds": 23.66,
+      "estimated": false,
+      "text": "环境逼迫（患儿不会说「轻一点」，也不会说「还是痛」；所有判断只能从神色、哭声与腹部软硬读出来）+ 知识积累（本章 3 单元 7,855 汉字；三辨主 手法操作 157；四位面（脏腑系统）主 脾系 72；引书 8 部 10 次；数值类命中 87）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 46.83,
+      "end": 58.13,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

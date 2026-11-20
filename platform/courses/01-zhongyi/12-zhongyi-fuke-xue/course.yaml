@@ -1,0 +1,108 @@
+# [tcmP] 课程编排 · 01-zhongyi/12-zhongyi-fuke-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 12-zhongyi-fuke-xue
+title: 中医妇科学
+en: TCM Gynecology
+dept: 01-zhongyi
+dept_title: 中医系
+semester: 6
+stage: zhang
+hours: 72
+chapters_target: 13
+bridge: 月经周期→周期序列模型 / 妇科辨证→智能体
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xulun
+    title: 第1章 绪论
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.55
+    measured_minutes: 1.54
+  - slug: 02-shengzhi-shengli
+    title: 第2章 女性生殖脏器解剖与生理
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.4
+    measured_minutes: 1.38
+  - slug: 03-bingyin-bingji
+    title: 第3章 妇科疾病的病因病机
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.33
+    measured_minutes: 1.31
+  - slug: 04-zhenduan-bianzheng
+    title: 第4章 妇科疾病的诊断与辨证
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.45
+    measured_minutes: 1.39
+  - slug: 05-zhiliao
+    title: 第5章 妇科疾病的治疗
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.4
+    measured_minutes: 1.37
+  - slug: 06-yufang-baojian
+    title: 第6章 妇科预防与保健
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.53
+    measured_minutes: 1.5
+  - slug: 07-yuejing-qiliang-sezhi
+    title: 第7章 月经病·期量色质异常
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.52
+    measured_minutes: 1.44
+  - slug: 08-bijing-benglou
+    title: 第8章 月经病·闭经崩漏与经行诸证
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.45
+    measured_minutes: 1.42
+  - slug: 09-daixia-bing
+    title: 第9章 带下病
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.27
+    measured_minutes: 1.22
+  - slug: 10-renshen-bing
+    title: 第10章 妊娠病
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.38
+    measured_minutes: 1.36
+  - slug: 11-chanhou-bing
+    title: 第11章 产后病
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.47
+    measured_minutes: 1.45
+  - slug: 12-fuke-zabing
+    title: 第12章 妇科杂病
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.48
+    measured_minutes: 1.44
+  - slug: 13-jizhen-shuzihua
+    title: 第13章 妇科急症与数字化AI时代
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.32
+    measured_minutes: 1.31

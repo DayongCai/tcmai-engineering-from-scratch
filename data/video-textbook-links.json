@@ -1,0 +1,7950 @@
+{
+ "schema": "video-textbook-links/v1",
+ "derivedFrom": "data/video-lessons.json（scripts/build_video_lessons.js）",
+ "note": "讲 → 教学章 → 教材章 三线挂接。needs-segmentation 表示讲数多于教学章数，未强行分配（不许平摊冒充挂接）；no-textbook 表示该课没有教材稿。",
+ "totals": {
+  "courses": 8,
+  "lectures": 428,
+  "linkedCourses": 5,
+  "linkedLectures": 364,
+  "needsSegmentation": [
+   "07-shanghanlun"
+  ],
+  "noTextbook": []
+ },
+ "courses": [
+  {
+   "dept": "01-zhongyi",
+   "slug": "01-zhongyi-jichu-lilun",
+   "title": "中医基础理论",
+   "semester": 1,
+   "videoStatus": "platform",
+   "lectures": 10,
+   "teachingChapters": 10,
+   "textbookChapters": 13,
+   "mappedBy": "noSupplement.mapping",
+   "status": "linked",
+   "linkedLectures": 10,
+   "unlinkedLectures": 0,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "阴阳学说 → 二分类：从零实现逻辑回归",
+     "durationSec": 348,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "阴阳学说 → 二分类：从零实现逻辑回归"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "阴阳：从对立范畴到二分类",
+       "file": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun/02-第2章-阴阳：从对立范畴到二分类.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "五行学说 → 多分类：从零实现 Softmax",
+     "durationSec": 300,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "五行学说 → 多分类：从零实现 Softmax"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "哲学基础与思维方法",
+       "file": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun/03-第3章-哲学基础与思维方法.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "藏象学说 → 知识图谱：脏腑关系的图表示",
+     "durationSec": 318,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "藏象学说 → 知识图谱：脏腑关系的图表示"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "藏象系统",
+       "file": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun/04-第4章-藏象系统.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "绪论：中医学的学科属性与工程化边界",
+     "durationSec": 276,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "绪论：中医学的学科属性与工程化边界"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "绪论与AI时代学习体系",
+       "file": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun/01-第1章-绪论与AI时代学习体系.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "气血津液 → 状态向量与守恒约束",
+     "durationSec": 264,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "气血津液 → 状态向量与守恒约束"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "精气血津液神",
+       "file": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun/05-第5章-精气血津液神.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "经络学说 → 图上的路径与可及性",
+     "durationSec": 258,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "经络学说 → 图上的路径与可及性"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "经络系统",
+       "file": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun/06-第6章-经络系统.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "病因病机 → 因果图与失效模式",
+     "durationSec": 276,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "病因病机 → 因果图与失效模式"
+     },
+     "textbook": [
+      {
+       "no": 8,
+       "title": "病因",
+       "file": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun/08-第8章-病因.md"
+      },
+      {
+       "no": 9,
+       "title": "发病",
+       "file": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun/09-第9章-发病.md"
+      },
+      {
+       "no": 10,
+       "title": "病机",
+       "file": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun/10-第10章-病机.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "防治原则 → 策略选择与代价函数",
+     "durationSec": 264,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "防治原则 → 策略选择与代价函数"
+     },
+     "textbook": [
+      {
+       "no": 11,
+       "title": "防治原则",
+       "file": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun/11-第11章-防治原则.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "体质与发病 → 先验分布与风险分层",
+     "durationSec": 252,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "体质与发病 → 先验分布与风险分层"
+     },
+     "textbook": [
+      {
+       "no": 13,
+       "title": "体质学说与体质辨识",
+       "file": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun/13-第13章-体质学说与体质辨识.md"
+      },
+      {
+       "no": 9,
+       "title": "发病",
+       "file": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun/09-第9章-发病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "用代码讲清一个中医基础理论命题",
+     "durationSec": 264,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "中医思维方法：形式化能做到与做不到的"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "哲学基础与思维方法",
+       "file": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun/03-第3章-哲学基础与思维方法.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "01-zhongyi",
+   "slug": "06-neijing-xuandu",
+   "title": "内经选读",
+   "semester": 3,
+   "videoStatus": "lectures",
+   "lectures": 196,
+   "teachingChapters": 10,
+   "textbookChapters": 31,
+   "mappedBy": null,
+   "status": "partial",
+   "linkedLectures": 178,
+   "unlinkedLectures": 18,
+   "rows": [
+    {
+     "lectureNo": "1-上古天真论",
+     "title": "上古天真论",
+     "durationSec": 4801,
+     "cues": 2585,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "素问·养生总纲",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/01-第1章-素问·养生总纲.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第1篇"
+    },
+    {
+     "lectureNo": "2-四气调神大论",
+     "title": "四气调神大论",
+     "durationSec": 4269,
+     "cues": 2063,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "素问·养生总纲",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/01-第1章-素问·养生总纲.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第2篇"
+    },
+    {
+     "lectureNo": "3-生气通天论",
+     "title": "生气通天论",
+     "durationSec": 5656,
+     "cues": 2440,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "素问·养生总纲",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/01-第1章-素问·养生总纲.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第3篇"
+    },
+    {
+     "lectureNo": "4-金匮真言论",
+     "title": "金匮真言论",
+     "durationSec": 4409,
+     "cues": 2410,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "素问·养生总纲",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/01-第1章-素问·养生总纲.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第4篇"
+    },
+    {
+     "lectureNo": "5-阴阳应象大论",
+     "title": "阴阳应象大论",
+     "durationSec": 4505,
+     "cues": 2511,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 2,
+       "title": "素问·阴阳学说",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/02-第2章-素问·阴阳学说.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第5篇"
+    },
+    {
+     "lectureNo": "6-阴阳离合论",
+     "title": "阴阳离合论",
+     "durationSec": 3119,
+     "cues": 1821,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 2,
+       "title": "素问·阴阳学说",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/02-第2章-素问·阴阳学说.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第6篇"
+    },
+    {
+     "lectureNo": "7-阴阳别论",
+     "title": "阴阳别论",
+     "durationSec": 3874,
+     "cues": 2154,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 2,
+       "title": "素问·阴阳学说",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/02-第2章-素问·阴阳学说.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第7篇"
+    },
+    {
+     "lectureNo": "8-灵兰秘典论",
+     "title": "灵兰秘典论",
+     "durationSec": 3649,
+     "cues": 1820,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 3,
+       "title": "素问·藏象",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/03-第3章-素问·藏象.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第8篇"
+    },
+    {
+     "lectureNo": "9-六节藏象论",
+     "title": "六节藏象论",
+     "durationSec": 3592,
+     "cues": 2055,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 3,
+       "title": "素问·藏象",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/03-第3章-素问·藏象.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第9篇"
+    },
+    {
+     "lectureNo": "10-五藏生成篇",
+     "title": "五藏生成篇",
+     "durationSec": 1400,
+     "cues": 808,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 3,
+       "title": "素问·藏象",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/03-第3章-素问·藏象.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第10篇"
+    },
+    {
+     "lectureNo": "11-五藏别论",
+     "title": "五藏别论",
+     "durationSec": 1139,
+     "cues": 644,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 3,
+       "title": "素问·藏象",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/03-第3章-素问·藏象.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第11篇"
+    },
+    {
+     "lectureNo": "12-异法方宜论",
+     "title": "异法方宜论",
+     "durationSec": 1488,
+     "cues": 694,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 4,
+       "title": "素问·诊法总论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/04-第4章-素问·诊法总论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第12篇"
+    },
+    {
+     "lectureNo": "13-移精变气论",
+     "title": "移精变气论",
+     "durationSec": 1075,
+     "cues": 610,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 4,
+       "title": "素问·诊法总论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/04-第4章-素问·诊法总论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第13篇"
+    },
+    {
+     "lectureNo": "14-汤液醪醴论",
+     "title": "汤液醪醴论",
+     "durationSec": 2931,
+     "cues": 1311,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 4,
+       "title": "素问·诊法总论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/04-第4章-素问·诊法总论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第14篇"
+    },
+    {
+     "lectureNo": "15-玉版论要",
+     "title": "玉版论要",
+     "durationSec": 1500,
+     "cues": 731,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 4,
+       "title": "素问·诊法总论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/04-第4章-素问·诊法总论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第15篇"
+    },
+    {
+     "lectureNo": "SW16",
+     "title": "SW16",
+     "durationSec": 2652,
+     "cues": 1535,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 4,
+       "title": "素问·诊法总论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/04-第4章-素问·诊法总论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第16篇"
+    },
+    {
+     "lectureNo": "SW17",
+     "title": "SW17",
+     "durationSec": 6905,
+     "cues": 4410,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 5,
+       "title": "素问·脉学",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/05-第5章-素问·脉学.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第17篇"
+    },
+    {
+     "lectureNo": "SW18",
+     "title": "SW18",
+     "durationSec": 3297,
+     "cues": 2189,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 5,
+       "title": "素问·脉学",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/05-第5章-素问·脉学.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第18篇"
+    },
+    {
+     "lectureNo": "SW19",
+     "title": "SW19",
+     "durationSec": 4330,
+     "cues": 2823,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 5,
+       "title": "素问·脉学",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/05-第5章-素问·脉学.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第19篇"
+    },
+    {
+     "lectureNo": "SW20",
+     "title": "SW20",
+     "durationSec": 1719,
+     "cues": 855,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 5,
+       "title": "素问·脉学",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/05-第5章-素问·脉学.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第20篇"
+    },
+    {
+     "lectureNo": "SW21",
+     "title": "SW21",
+     "durationSec": 1419,
+     "cues": 769,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 6,
+       "title": "素问·经脉血气",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/06-第6章-素问·经脉血气.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第21篇"
+    },
+    {
+     "lectureNo": "SW22",
+     "title": "SW22",
+     "durationSec": 2715,
+     "cues": 1693,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 6,
+       "title": "素问·经脉血气",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/06-第6章-素问·经脉血气.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第22篇"
+    },
+    {
+     "lectureNo": "SW23",
+     "title": "SW23",
+     "durationSec": 1437,
+     "cues": 821,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 6,
+       "title": "素问·经脉血气",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/06-第6章-素问·经脉血气.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第23篇"
+    },
+    {
+     "lectureNo": "SW24",
+     "title": "SW24",
+     "durationSec": 692,
+     "cues": 395,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 6,
+       "title": "素问·经脉血气",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/06-第6章-素问·经脉血气.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第24篇"
+    },
+    {
+     "lectureNo": "SW25",
+     "title": "SW25",
+     "durationSec": 1117,
+     "cues": 736,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 7,
+       "title": "素问·针刺保命",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/07-第7章-素问·针刺保命.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第25篇"
+    },
+    {
+     "lectureNo": "SW26",
+     "title": "SW26",
+     "durationSec": 1325,
+     "cues": 727,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 7,
+       "title": "素问·针刺保命",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/07-第7章-素问·针刺保命.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第26篇"
+    },
+    {
+     "lectureNo": "SW27",
+     "title": "SW27",
+     "durationSec": 1143,
+     "cues": 718,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 7,
+       "title": "素问·针刺保命",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/07-第7章-素问·针刺保命.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第27篇"
+    },
+    {
+     "lectureNo": "SW28",
+     "title": "SW28",
+     "durationSec": 3103,
+     "cues": 1453,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 7,
+       "title": "素问·针刺保命",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/07-第7章-素问·针刺保命.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第28篇"
+    },
+    {
+     "lectureNo": "SW30",
+     "title": "SW30",
+     "durationSec": 529,
+     "cues": 389,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 7,
+       "title": "素问·针刺保命",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/07-第7章-素问·针刺保命.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第30篇"
+    },
+    {
+     "lectureNo": "SW31",
+     "title": "SW31",
+     "durationSec": 1380,
+     "cues": 907,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 8,
+       "title": "素问·热病论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/08-第8章-素问·热病论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第31篇"
+    },
+    {
+     "lectureNo": "SW32",
+     "title": "SW32",
+     "durationSec": 1573,
+     "cues": 985,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 8,
+       "title": "素问·热病论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/08-第8章-素问·热病论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第32篇"
+    },
+    {
+     "lectureNo": "SW33",
+     "title": "SW33",
+     "durationSec": 1344,
+     "cues": 787,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 8,
+       "title": "素问·热病论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/08-第8章-素问·热病论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第33篇"
+    },
+    {
+     "lectureNo": "SW34",
+     "title": "SW34",
+     "durationSec": 893,
+     "cues": 544,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 8,
+       "title": "素问·热病论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/08-第8章-素问·热病论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第34篇"
+    },
+    {
+     "lectureNo": "SW35",
+     "title": "SW35",
+     "durationSec": 2334,
+     "cues": 1370,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 9,
+       "title": "素问·疟咳论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/09-第9章-素问·疟咳论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第35篇"
+    },
+    {
+     "lectureNo": "SW37",
+     "title": "SW37",
+     "durationSec": 119,
+     "cues": 698,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 9,
+       "title": "素问·疟咳论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/09-第9章-素问·疟咳论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第37篇"
+    },
+    {
+     "lectureNo": "SW38",
+     "title": "SW38",
+     "durationSec": 1124,
+     "cues": 640,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 9,
+       "title": "素问·疟咳论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/09-第9章-素问·疟咳论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第38篇"
+    },
+    {
+     "lectureNo": "SW39",
+     "title": "SW39",
+     "durationSec": 2514,
+     "cues": 1758,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 10,
+       "title": "素问·痛腹腰痛",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/10-第10章-素问·痛腹腰痛.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第39篇"
+    },
+    {
+     "lectureNo": "SW40",
+     "title": "SW40",
+     "durationSec": 2125,
+     "cues": 1361,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 10,
+       "title": "素问·痛腹腰痛",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/10-第10章-素问·痛腹腰痛.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第40篇"
+    },
+    {
+     "lectureNo": "SW41",
+     "title": "SW41",
+     "durationSec": 1462,
+     "cues": 1049,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 10,
+       "title": "素问·痛腹腰痛",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/10-第10章-素问·痛腹腰痛.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第41篇"
+    },
+    {
+     "lectureNo": "SW42",
+     "title": "SW42",
+     "durationSec": 1603,
+     "cues": 1111,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 11,
+       "title": "素问·风痹痿厥",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/11-第11章-素问·风痹痿厥.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第42篇"
+    },
+    {
+     "lectureNo": "SW43",
+     "title": "SW43",
+     "durationSec": 1624,
+     "cues": 991,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 11,
+       "title": "素问·风痹痿厥",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/11-第11章-素问·风痹痿厥.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第43篇"
+    },
+    {
+     "lectureNo": "SW44",
+     "title": "SW44",
+     "durationSec": 2618,
+     "cues": 1715,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 11,
+       "title": "素问·风痹痿厥",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/11-第11章-素问·风痹痿厥.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第44篇"
+    },
+    {
+     "lectureNo": "SW45",
+     "title": "SW45",
+     "durationSec": 3096,
+     "cues": 1760,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 11,
+       "title": "素问·风痹痿厥",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/11-第11章-素问·风痹痿厥.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第45篇"
+    },
+    {
+     "lectureNo": "SW46",
+     "title": "SW46",
+     "durationSec": 1717,
+     "cues": 1024,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 12,
+       "title": "素问·奇病脉解",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/12-第12章-素问·奇病脉解.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第46篇"
+    },
+    {
+     "lectureNo": "SW47",
+     "title": "SW47",
+     "durationSec": 2298,
+     "cues": 1412,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 12,
+       "title": "素问·奇病脉解",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/12-第12章-素问·奇病脉解.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第47篇"
+    },
+    {
+     "lectureNo": "SW48",
+     "title": "SW48",
+     "durationSec": 2801,
+     "cues": 1704,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 12,
+       "title": "素问·奇病脉解",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/12-第12章-素问·奇病脉解.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第48篇"
+    },
+    {
+     "lectureNo": "SW49",
+     "title": "SW49",
+     "durationSec": 3092,
+     "cues": 1984,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 12,
+       "title": "素问·奇病脉解",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/12-第12章-素问·奇病脉解.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第49篇"
+    },
+    {
+     "lectureNo": "SW50",
+     "title": "SW50",
+     "durationSec": 490,
+     "cues": 304,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 13,
+       "title": "素问·刺法刺禁",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/13-第13章-素问·刺法刺禁.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第50篇"
+    },
+    {
+     "lectureNo": "SW51",
+     "title": "SW51",
+     "durationSec": 91,
+     "cues": 27,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 13,
+       "title": "素问·刺法刺禁",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/13-第13章-素问·刺法刺禁.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第51篇"
+    },
+    {
+     "lectureNo": "SW52",
+     "title": "SW52",
+     "durationSec": 643,
+     "cues": 388,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 13,
+       "title": "素问·刺法刺禁",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/13-第13章-素问·刺法刺禁.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第52篇"
+    },
+    {
+     "lectureNo": "SW53",
+     "title": "SW53",
+     "durationSec": 399,
+     "cues": 205,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 13,
+       "title": "素问·刺法刺禁",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/13-第13章-素问·刺法刺禁.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第53篇"
+    },
+    {
+     "lectureNo": "SW54",
+     "title": "SW54",
+     "durationSec": 733,
+     "cues": 310,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 13,
+       "title": "素问·刺法刺禁",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/13-第13章-素问·刺法刺禁.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第54篇"
+    },
+    {
+     "lectureNo": "SW55",
+     "title": "SW55",
+     "durationSec": 1209,
+     "cues": 591,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 13,
+       "title": "素问·刺法刺禁",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/13-第13章-素问·刺法刺禁.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第55篇"
+    },
+    {
+     "lectureNo": "SW56",
+     "title": "SW56",
+     "durationSec": 1085,
+     "cues": 648,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 14,
+       "title": "素问·经络腧穴",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/14-第14章-素问·经络腧穴.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第56篇"
+    },
+    {
+     "lectureNo": "SW57",
+     "title": "SW57",
+     "durationSec": 149,
+     "cues": 62,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 14,
+       "title": "素问·经络腧穴",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/14-第14章-素问·经络腧穴.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第57篇"
+    },
+    {
+     "lectureNo": "SW58",
+     "title": "SW58",
+     "durationSec": 815,
+     "cues": 550,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 14,
+       "title": "素问·经络腧穴",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/14-第14章-素问·经络腧穴.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第58篇"
+    },
+    {
+     "lectureNo": "SW59",
+     "title": "SW59",
+     "durationSec": 55,
+     "cues": 19,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 14,
+       "title": "素问·经络腧穴",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/14-第14章-素问·经络腧穴.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第59篇"
+    },
+    {
+     "lectureNo": "SW60",
+     "title": "SW60",
+     "durationSec": 1670,
+     "cues": 985,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 14,
+       "title": "素问·经络腧穴",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/14-第14章-素问·经络腧穴.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第60篇"
+    },
+    {
+     "lectureNo": "SW61",
+     "title": "SW61",
+     "durationSec": 1607,
+     "cues": 846,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 14,
+       "title": "素问·经络腧穴",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/14-第14章-素问·经络腧穴.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第61篇"
+    },
+    {
+     "lectureNo": "SW62",
+     "title": "SW62",
+     "durationSec": 3172,
+     "cues": 1652,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 15,
+       "title": "素问·调经缪刺",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/15-第15章-素问·调经缪刺.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第62篇"
+    },
+    {
+     "lectureNo": "SW63",
+     "title": "SW63",
+     "durationSec": 2142,
+     "cues": 1500,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 15,
+       "title": "素问·调经缪刺",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/15-第15章-素问·调经缪刺.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第63篇"
+    },
+    {
+     "lectureNo": "SW64",
+     "title": "SW64",
+     "durationSec": 1157,
+     "cues": 686,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 15,
+       "title": "素问·调经缪刺",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/15-第15章-素问·调经缪刺.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第64篇"
+    },
+    {
+     "lectureNo": "SW65",
+     "title": "SW65",
+     "durationSec": 1128,
+     "cues": 637,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 15,
+       "title": "素问·调经缪刺",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/15-第15章-素问·调经缪刺.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第65篇"
+    },
+    {
+     "lectureNo": "SW66",
+     "title": "SW66",
+     "durationSec": 744,
+     "cues": 356,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 16,
+       "title": "素问·运气七篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/16-第16章-素问·运气七篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第66篇"
+    },
+    {
+     "lectureNo": "SW67",
+     "title": "SW67",
+     "durationSec": 847,
+     "cues": 95,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 16,
+       "title": "素问·运气七篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/16-第16章-素问·运气七篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第67篇"
+    },
+    {
+     "lectureNo": "SW68",
+     "title": "SW68",
+     "durationSec": 996,
+     "cues": 319,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 16,
+       "title": "素问·运气七篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/16-第16章-素问·运气七篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第68篇"
+    },
+    {
+     "lectureNo": "SW69",
+     "title": "SW69",
+     "durationSec": 1572,
+     "cues": 838,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 16,
+       "title": "素问·运气七篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/16-第16章-素问·运气七篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第69篇"
+    },
+    {
+     "lectureNo": "SW70",
+     "title": "SW70",
+     "durationSec": 2740,
+     "cues": 1563,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 16,
+       "title": "素问·运气七篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/16-第16章-素问·运气七篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第70篇"
+    },
+    {
+     "lectureNo": "SW71",
+     "title": "SW71",
+     "durationSec": 6619,
+     "cues": 3661,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 16,
+       "title": "素问·运气七篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/16-第16章-素问·运气七篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第71篇"
+    },
+    {
+     "lectureNo": "SW72",
+     "title": "SW72",
+     "durationSec": 3254,
+     "cues": 1964,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 16,
+       "title": "素问·运气七篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/16-第16章-素问·运气七篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第72篇"
+    },
+    {
+     "lectureNo": "SW73",
+     "title": "SW73",
+     "durationSec": 2000,
+     "cues": 664,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 16,
+       "title": "素问·运气七篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/16-第16章-素问·运气七篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第73篇"
+    },
+    {
+     "lectureNo": "SW74",
+     "title": "SW74",
+     "durationSec": 3334,
+     "cues": 1739,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 16,
+       "title": "素问·运气七篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/16-第16章-素问·运气七篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第74篇"
+    },
+    {
+     "lectureNo": "SW75",
+     "title": "SW75",
+     "durationSec": 931,
+     "cues": 400,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 17,
+       "title": "素问·医论杂篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/17-第17章-素问·医论杂篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第75篇"
+    },
+    {
+     "lectureNo": "SW76",
+     "title": "SW76",
+     "durationSec": 993,
+     "cues": 532,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 17,
+       "title": "素问·医论杂篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/17-第17章-素问·医论杂篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第76篇"
+    },
+    {
+     "lectureNo": "SW77",
+     "title": "SW77",
+     "durationSec": 1174,
+     "cues": 830,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 17,
+       "title": "素问·医论杂篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/17-第17章-素问·医论杂篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第77篇"
+    },
+    {
+     "lectureNo": "SW78",
+     "title": "SW78",
+     "durationSec": 546,
+     "cues": 262,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 17,
+       "title": "素问·医论杂篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/17-第17章-素问·医论杂篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第78篇"
+    },
+    {
+     "lectureNo": "SW79",
+     "title": "SW79",
+     "durationSec": 1165,
+     "cues": 755,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 17,
+       "title": "素问·医论杂篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/17-第17章-素问·医论杂篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第79篇"
+    },
+    {
+     "lectureNo": "SW80",
+     "title": "SW80",
+     "durationSec": 840,
+     "cues": 489,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 17,
+       "title": "素问·医论杂篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/17-第17章-素问·医论杂篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第80篇"
+    },
+    {
+     "lectureNo": "SW81",
+     "title": "SW81",
+     "durationSec": 658,
+     "cues": 354,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 17,
+       "title": "素问·医论杂篇",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/17-第17章-素问·医论杂篇.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第81篇"
+    },
+    {
+     "lectureNo": "ls01",
+     "title": "ls01",
+     "durationSec": 2097,
+     "cues": 898,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 18,
+       "title": "灵枢·针道原穴",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/18-第18章-灵枢·针道原穴.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第1篇"
+    },
+    {
+     "lectureNo": "ls02",
+     "title": "ls02",
+     "durationSec": 2964,
+     "cues": 1196,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 18,
+       "title": "灵枢·针道原穴",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/18-第18章-灵枢·针道原穴.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第2篇"
+    },
+    {
+     "lectureNo": "ls03",
+     "title": "ls03",
+     "durationSec": 1809,
+     "cues": 755,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 18,
+       "title": "灵枢·针道原穴",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/18-第18章-灵枢·针道原穴.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第3篇"
+    },
+    {
+     "lectureNo": "ls04",
+     "title": "ls04",
+     "durationSec": 2876,
+     "cues": 1057,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 18,
+       "title": "灵枢·针道原穴",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/18-第18章-灵枢·针道原穴.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第4篇"
+    },
+    {
+     "lectureNo": "ls05",
+     "title": "ls05",
+     "durationSec": 1885,
+     "cues": 617,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 19,
+       "title": "灵枢·根结针法",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/19-第19章-灵枢·根结针法.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第5篇"
+    },
+    {
+     "lectureNo": "ls06",
+     "title": "ls06",
+     "durationSec": 1851,
+     "cues": 783,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 19,
+       "title": "灵枢·根结针法",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/19-第19章-灵枢·根结针法.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第6篇"
+    },
+    {
+     "lectureNo": "ls07",
+     "title": "ls07",
+     "durationSec": 1007,
+     "cues": 405,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 19,
+       "title": "灵枢·根结针法",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/19-第19章-灵枢·根结针法.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第7篇"
+    },
+    {
+     "lectureNo": "ls08",
+     "title": "ls08",
+     "durationSec": 1656,
+     "cues": 729,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 19,
+       "title": "灵枢·根结针法",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/19-第19章-灵枢·根结针法.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第8篇"
+    },
+    {
+     "lectureNo": "ls09",
+     "title": "ls09",
+     "durationSec": 2321,
+     "cues": 757,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 19,
+       "title": "灵枢·根结针法",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/19-第19章-灵枢·根结针法.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第9篇"
+    },
+    {
+     "lectureNo": "ls10",
+     "title": "ls10",
+     "durationSec": 4326,
+     "cues": 2003,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 20,
+       "title": "灵枢·经脉经别",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/20-第20章-灵枢·经脉经别.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第10篇"
+    },
+    {
+     "lectureNo": "ls11",
+     "title": "ls11",
+     "durationSec": 648,
+     "cues": 249,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 20,
+       "title": "灵枢·经脉经别",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/20-第20章-灵枢·经脉经别.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第11篇"
+    },
+    {
+     "lectureNo": "ls12",
+     "title": "ls12",
+     "durationSec": 950,
+     "cues": 420,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 20,
+       "title": "灵枢·经脉经别",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/20-第20章-灵枢·经脉经别.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第12篇"
+    },
+    {
+     "lectureNo": "ls13",
+     "title": "ls13",
+     "durationSec": 2364,
+     "cues": 939,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 21,
+       "title": "灵枢·经筋骨度",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/21-第21章-灵枢·经筋骨度.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第13篇"
+    },
+    {
+     "lectureNo": "ls14",
+     "title": "ls14",
+     "durationSec": 476,
+     "cues": 66,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 21,
+       "title": "灵枢·经筋骨度",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/21-第21章-灵枢·经筋骨度.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第14篇"
+    },
+    {
+     "lectureNo": "ls15",
+     "title": "ls15",
+     "durationSec": 473,
+     "cues": 152,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 21,
+       "title": "灵枢·经筋骨度",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/21-第21章-灵枢·经筋骨度.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第15篇"
+    },
+    {
+     "lectureNo": "ls16",
+     "title": "ls16",
+     "durationSec": 348,
+     "cues": 148,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 21,
+       "title": "灵枢·经筋骨度",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/21-第21章-灵枢·经筋骨度.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第16篇"
+    },
+    {
+     "lectureNo": "ls17",
+     "title": "ls17",
+     "durationSec": 507,
+     "cues": 194,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 21,
+       "title": "灵枢·经筋骨度",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/21-第21章-灵枢·经筋骨度.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第17篇"
+    },
+    {
+     "lectureNo": "ls18",
+     "title": "ls18",
+     "durationSec": 827,
+     "cues": 404,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 22,
+       "title": "灵枢·营卫气血",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/22-第22章-灵枢·营卫气血.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第18篇"
+    },
+    {
+     "lectureNo": "ls19",
+     "title": "ls19",
+     "durationSec": 1071,
+     "cues": 519,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 22,
+       "title": "灵枢·营卫气血",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/22-第22章-灵枢·营卫气血.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第19篇"
+    },
+    {
+     "lectureNo": "ls20",
+     "title": "ls20",
+     "durationSec": 199,
+     "cues": 36,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 22,
+       "title": "灵枢·营卫气血",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/22-第22章-灵枢·营卫气血.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第20篇"
+    },
+    {
+     "lectureNo": "ls21",
+     "title": "ls21",
+     "durationSec": 770,
+     "cues": 247,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 22,
+       "title": "灵枢·营卫气血",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/22-第22章-灵枢·营卫气血.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第21篇"
+    },
+    {
+     "lectureNo": "ls22",
+     "title": "ls22",
+     "durationSec": 618,
+     "cues": 290,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 23,
+       "title": "灵枢·病证刺治",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/23-第23章-灵枢·病证刺治.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第22篇"
+    },
+    {
+     "lectureNo": "ls23",
+     "title": "ls23",
+     "durationSec": 725,
+     "cues": 122,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 23,
+       "title": "灵枢·病证刺治",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/23-第23章-灵枢·病证刺治.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第23篇"
+    },
+    {
+     "lectureNo": "ls25",
+     "title": "ls25",
+     "durationSec": 410,
+     "cues": 155,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 23,
+       "title": "灵枢·病证刺治",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/23-第23章-灵枢·病证刺治.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第25篇"
+    },
+    {
+     "lectureNo": "ls26",
+     "title": "ls26",
+     "durationSec": 798,
+     "cues": 165,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 23,
+       "title": "灵枢·病证刺治",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/23-第23章-灵枢·病证刺治.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第26篇"
+    },
+    {
+     "lectureNo": "ls27",
+     "title": "ls27",
+     "durationSec": 384,
+     "cues": 114,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 23,
+       "title": "灵枢·病证刺治",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/23-第23章-灵枢·病证刺治.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第27篇"
+    },
+    {
+     "lectureNo": "ls28",
+     "title": "ls28",
+     "durationSec": 1542,
+     "cues": 684,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 23,
+       "title": "灵枢·病证刺治",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/23-第23章-灵枢·病证刺治.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第28篇"
+    },
+    {
+     "lectureNo": "ls29",
+     "title": "ls29",
+     "durationSec": 1490,
+     "cues": 278,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 24,
+       "title": "灵枢·脏腑身形",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/24-第24章-灵枢·脏腑身形.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第29篇"
+    },
+    {
+     "lectureNo": "ls30",
+     "title": "ls30",
+     "durationSec": 332,
+     "cues": 80,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 24,
+       "title": "灵枢·脏腑身形",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/24-第24章-灵枢·脏腑身形.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第30篇"
+    },
+    {
+     "lectureNo": "ls31",
+     "title": "ls31",
+     "durationSec": 191,
+     "cues": 82,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 24,
+       "title": "灵枢·脏腑身形",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/24-第24章-灵枢·脏腑身形.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第31篇"
+    },
+    {
+     "lectureNo": "ls24",
+     "title": "ls24",
+     "durationSec": 504,
+     "cues": 185,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 23,
+       "title": "灵枢·病证刺治",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/23-第23章-灵枢·病证刺治.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第24篇"
+    },
+    {
+     "lectureNo": "ls32",
+     "title": "ls32",
+     "durationSec": 397,
+     "cues": 183,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 24,
+       "title": "灵枢·脏腑身形",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/24-第24章-灵枢·脏腑身形.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第32篇"
+    },
+    {
+     "lectureNo": "ls33",
+     "title": "ls33",
+     "durationSec": 561,
+     "cues": 234,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 24,
+       "title": "灵枢·脏腑身形",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/24-第24章-灵枢·脏腑身形.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第33篇"
+    },
+    {
+     "lectureNo": "ls34",
+     "title": "ls34",
+     "durationSec": 255,
+     "cues": 86,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 24,
+       "title": "灵枢·脏腑身形",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/24-第24章-灵枢·脏腑身形.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第34篇"
+    },
+    {
+     "lectureNo": "ls35",
+     "title": "ls35",
+     "durationSec": 754,
+     "cues": 325,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 24,
+       "title": "灵枢·脏腑身形",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/24-第24章-灵枢·脏腑身形.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第35篇"
+    },
+    {
+     "lectureNo": "ls36",
+     "title": "ls36",
+     "durationSec": 338,
+     "cues": 135,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 25,
+       "title": "灵枢·津液清浊",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/25-第25章-灵枢·津液清浊.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第36篇"
+    },
+    {
+     "lectureNo": "ls37",
+     "title": "ls37",
+     "durationSec": 790,
+     "cues": 340,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 25,
+       "title": "灵枢·津液清浊",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/25-第25章-灵枢·津液清浊.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第37篇"
+    },
+    {
+     "lectureNo": "ls38",
+     "title": "ls38",
+     "durationSec": 1010,
+     "cues": 413,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 25,
+       "title": "灵枢·津液清浊",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/25-第25章-灵枢·津液清浊.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第38篇"
+    },
+    {
+     "lectureNo": "ls39",
+     "title": "ls39",
+     "durationSec": 488,
+     "cues": 134,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 25,
+       "title": "灵枢·津液清浊",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/25-第25章-灵枢·津液清浊.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第39篇"
+    },
+    {
+     "lectureNo": "ls40",
+     "title": "ls40",
+     "durationSec": 603,
+     "cues": 199,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 25,
+       "title": "灵枢·津液清浊",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/25-第25章-灵枢·津液清浊.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第40篇"
+    },
+    {
+     "lectureNo": "ls41",
+     "title": "ls41",
+     "durationSec": 951,
+     "cues": 352,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 26,
+       "title": "灵枢·梦诊天年",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/26-第26章-灵枢·梦诊天年.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第41篇"
+    },
+    {
+     "lectureNo": "ls42",
+     "title": "ls42",
+     "durationSec": 730,
+     "cues": 341,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 26,
+       "title": "灵枢·梦诊天年",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/26-第26章-灵枢·梦诊天年.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第42篇"
+    },
+    {
+     "lectureNo": "ls43",
+     "title": "ls43",
+     "durationSec": 508,
+     "cues": 233,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 26,
+       "title": "灵枢·梦诊天年",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/26-第26章-灵枢·梦诊天年.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第43篇"
+    },
+    {
+     "lectureNo": "ls44",
+     "title": "ls44",
+     "durationSec": 1542,
+     "cues": 816,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 26,
+       "title": "灵枢·梦诊天年",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/26-第26章-灵枢·梦诊天年.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第44篇"
+    },
+    {
+     "lectureNo": "ls45",
+     "title": "ls45",
+     "durationSec": 841,
+     "cues": 326,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 26,
+       "title": "灵枢·梦诊天年",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/26-第26章-灵枢·梦诊天年.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第45篇"
+    },
+    {
+     "lectureNo": "ls46",
+     "title": "ls46",
+     "durationSec": 1032,
+     "cues": 450,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 26,
+       "title": "灵枢·梦诊天年",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/26-第26章-灵枢·梦诊天年.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第46篇"
+    },
+    {
+     "lectureNo": "ls47",
+     "title": "ls47",
+     "durationSec": 1752,
+     "cues": 592,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 26,
+       "title": "灵枢·梦诊天年",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/26-第26章-灵枢·梦诊天年.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第47篇"
+    },
+    {
+     "lectureNo": "ls48",
+     "title": "ls48",
+     "durationSec": 1219,
+     "cues": 515,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 27,
+       "title": "灵枢·色诊禁服",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/27-第27章-灵枢·色诊禁服.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第48篇"
+    },
+    {
+     "lectureNo": "ls49",
+     "title": "ls49",
+     "durationSec": 2097,
+     "cues": 974,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 27,
+       "title": "灵枢·色诊禁服",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/27-第27章-灵枢·色诊禁服.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第49篇"
+    },
+    {
+     "lectureNo": "ls50",
+     "title": "ls50",
+     "durationSec": 452,
+     "cues": 215,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 27,
+       "title": "灵枢·色诊禁服",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/27-第27章-灵枢·色诊禁服.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第50篇"
+    },
+    {
+     "lectureNo": "ls51",
+     "title": "ls51",
+     "durationSec": 193,
+     "cues": 43,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 27,
+       "title": "灵枢·色诊禁服",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/27-第27章-灵枢·色诊禁服.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第51篇"
+    },
+    {
+     "lectureNo": "ls52",
+     "title": "ls52",
+     "durationSec": 389,
+     "cues": 132,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 27,
+       "title": "灵枢·色诊禁服",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/27-第27章-灵枢·色诊禁服.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第52篇"
+    },
+    {
+     "lectureNo": "ls53",
+     "title": "ls53",
+     "durationSec": 180,
+     "cues": 77,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 27,
+       "title": "灵枢·色诊禁服",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/27-第27章-灵枢·色诊禁服.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第53篇"
+    },
+    {
+     "lectureNo": "ls54",
+     "title": "ls54",
+     "durationSec": 2390,
+     "cues": 975,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 27,
+       "title": "灵枢·色诊禁服",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/27-第27章-灵枢·色诊禁服.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第54篇"
+    },
+    {
+     "lectureNo": "ls65",
+     "title": "ls65",
+     "durationSec": 1647,
+     "cues": 700,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 29,
+       "title": "灵枢·五音通天",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/29-第29章-灵枢·五音通天.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第65篇"
+    },
+    {
+     "lectureNo": "ls55",
+     "title": "ls55",
+     "durationSec": 347,
+     "cues": 159,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 27,
+       "title": "灵枢·色诊禁服",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/27-第27章-灵枢·色诊禁服.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第55篇"
+    },
+    {
+     "lectureNo": "ls56",
+     "title": "ls56",
+     "durationSec": 681,
+     "cues": 295,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 27,
+       "title": "灵枢·色诊禁服",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/27-第27章-灵枢·色诊禁服.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第56篇"
+    },
+    {
+     "lectureNo": "ls57",
+     "title": "ls57",
+     "durationSec": 524,
+     "cues": 226,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 28,
+       "title": "灵枢·水胀五形",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/28-第28章-灵枢·水胀五形.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第57篇"
+    },
+    {
+     "lectureNo": "ls58",
+     "title": "ls58",
+     "durationSec": 382,
+     "cues": 156,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 28,
+       "title": "灵枢·水胀五形",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/28-第28章-灵枢·水胀五形.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第58篇"
+    },
+    {
+     "lectureNo": "ls59",
+     "title": "ls59",
+     "durationSec": 422,
+     "cues": 187,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 28,
+       "title": "灵枢·水胀五形",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/28-第28章-灵枢·水胀五形.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第59篇"
+    },
+    {
+     "lectureNo": "ls60",
+     "title": "ls60",
+     "durationSec": 946,
+     "cues": 473,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 28,
+       "title": "灵枢·水胀五形",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/28-第28章-灵枢·水胀五形.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第60篇"
+    },
+    {
+     "lectureNo": "ls61",
+     "title": "ls61",
+     "durationSec": 287,
+     "cues": 137,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 28,
+       "title": "灵枢·水胀五形",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/28-第28章-灵枢·水胀五形.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第61篇"
+    },
+    {
+     "lectureNo": "ls62",
+     "title": "ls62",
+     "durationSec": 649,
+     "cues": 228,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 28,
+       "title": "灵枢·水胀五形",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/28-第28章-灵枢·水胀五形.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第62篇"
+    },
+    {
+     "lectureNo": "ls63",
+     "title": "ls63",
+     "durationSec": 954,
+     "cues": 386,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 28,
+       "title": "灵枢·水胀五形",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/28-第28章-灵枢·水胀五形.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第63篇"
+    },
+    {
+     "lectureNo": "ls64",
+     "title": "ls64",
+     "durationSec": 1481,
+     "cues": 735,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 28,
+       "title": "灵枢·水胀五形",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/28-第28章-灵枢·水胀五形.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第64篇"
+    },
+    {
+     "lectureNo": "ls66",
+     "title": "ls66",
+     "durationSec": 875,
+     "cues": 410,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 29,
+       "title": "灵枢·五音通天",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/29-第29章-灵枢·五音通天.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第66篇"
+    },
+    {
+     "lectureNo": "ls67",
+     "title": "ls67",
+     "durationSec": 541,
+     "cues": 295,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 29,
+       "title": "灵枢·五音通天",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/29-第29章-灵枢·五音通天.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第67篇"
+    },
+    {
+     "lectureNo": "ls68",
+     "title": "ls68",
+     "durationSec": 384,
+     "cues": 175,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 29,
+       "title": "灵枢·五音通天",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/29-第29章-灵枢·五音通天.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第68篇"
+    },
+    {
+     "lectureNo": "ls69",
+     "title": "ls69",
+     "durationSec": 216,
+     "cues": 78,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 29,
+       "title": "灵枢·五音通天",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/29-第29章-灵枢·五音通天.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第69篇"
+    },
+    {
+     "lectureNo": "ls70",
+     "title": "ls70",
+     "durationSec": 132,
+     "cues": 55,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 29,
+       "title": "灵枢·五音通天",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/29-第29章-灵枢·五音通天.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第70篇"
+    },
+    {
+     "lectureNo": "ls71",
+     "title": "ls71",
+     "durationSec": 1268,
+     "cues": 373,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 29,
+       "title": "灵枢·五音通天",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/29-第29章-灵枢·五音通天.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第71篇"
+    },
+    {
+     "lectureNo": "ls72",
+     "title": "ls72",
+     "durationSec": 1572,
+     "cues": 628,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 29,
+       "title": "灵枢·五音通天",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/29-第29章-灵枢·五音通天.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第72篇"
+    },
+    {
+     "lectureNo": "ls73",
+     "title": "ls73",
+     "durationSec": 892,
+     "cues": 375,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 30,
+       "title": "灵枢·官能九宫",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/30-第30章-灵枢·官能九宫.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第73篇"
+    },
+    {
+     "lectureNo": "ls74",
+     "title": "ls74",
+     "durationSec": 1020,
+     "cues": 383,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 30,
+       "title": "灵枢·官能九宫",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/30-第30章-灵枢·官能九宫.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第74篇"
+    },
+    {
+     "lectureNo": "ls75",
+     "title": "ls75",
+     "durationSec": 2652,
+     "cues": 963,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 30,
+       "title": "灵枢·官能九宫",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/30-第30章-灵枢·官能九宫.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第75篇"
+    },
+    {
+     "lectureNo": "ls76",
+     "title": "ls76",
+     "durationSec": 721,
+     "cues": 258,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 30,
+       "title": "灵枢·官能九宫",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/30-第30章-灵枢·官能九宫.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第76篇"
+    },
+    {
+     "lectureNo": "ls77",
+     "title": "ls77",
+     "durationSec": 1490,
+     "cues": 665,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 30,
+       "title": "灵枢·官能九宫",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/30-第30章-灵枢·官能九宫.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第77篇"
+    },
+    {
+     "lectureNo": "ls78",
+     "title": "ls78",
+     "durationSec": 1215,
+     "cues": 500,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 31,
+       "title": "灵枢·九针痈疽",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/31-第31章-灵枢·九针痈疽.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第78篇"
+    },
+    {
+     "lectureNo": "ls79",
+     "title": "ls79",
+     "durationSec": 757,
+     "cues": 390,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 31,
+       "title": "灵枢·九针痈疽",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/31-第31章-灵枢·九针痈疽.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第79篇"
+    },
+    {
+     "lectureNo": "ls80",
+     "title": "ls80",
+     "durationSec": 1095,
+     "cues": 549,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 31,
+       "title": "灵枢·九针痈疽",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/31-第31章-灵枢·九针痈疽.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第80篇"
+    },
+    {
+     "lectureNo": "ls81",
+     "title": "ls81",
+     "durationSec": 790,
+     "cues": 377,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 31,
+       "title": "灵枢·九针痈疽",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/31-第31章-灵枢·九针痈疽.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:灵枢第81篇"
+    },
+    {
+     "lectureNo": "SW29",
+     "title": "SW29",
+     "durationSec": 1069,
+     "cues": 662,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 7,
+       "title": "素问·针刺保命",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/07-第7章-素问·针刺保命.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第29篇"
+    },
+    {
+     "lectureNo": "SW36",
+     "title": "SW36",
+     "durationSec": 1745,
+     "cues": 1189,
+     "source": "audio-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 9,
+       "title": "素问·疟咳论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/09-第9章-素问·疟咳论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-pian:素问第36篇"
+    },
+    {
+     "lectureNo": "wy01",
+     "title": "wy01",
+     "durationSec": 2291,
+     "cues": 869,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "wy02",
+     "title": "wy02",
+     "durationSec": 2859,
+     "cues": 1259,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "wy03",
+     "title": "wy03",
+     "durationSec": 3192,
+     "cues": 1373,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "wy04",
+     "title": "wy04",
+     "durationSec": 3067,
+     "cues": 1250,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "wy05",
+     "title": "wy05",
+     "durationSec": 2086,
+     "cues": 833,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "素问·养生总纲",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/01-第1章-素问·养生总纲.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·金匮真言论（素问第4篇）"
+    },
+    {
+     "lectureNo": "wy06",
+     "title": "wy06",
+     "durationSec": 2004,
+     "cues": 930,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 2,
+       "title": "素问·阴阳学说",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/02-第2章-素问·阴阳学说.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·阴阳应象大论（素问第5篇）"
+    },
+    {
+     "lectureNo": "wy07",
+     "title": "wy07",
+     "durationSec": 1514,
+     "cues": 609,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 2,
+       "title": "素问·阴阳学说",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/02-第2章-素问·阴阳学说.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·阴阳应象大论（素问第5篇）"
+    },
+    {
+     "lectureNo": "wy08",
+     "title": "wy08",
+     "durationSec": 3111,
+     "cues": 1278,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "wy09",
+     "title": "wy09",
+     "durationSec": 3298,
+     "cues": 1466,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 2,
+       "title": "素问·阴阳学说",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/02-第2章-素问·阴阳学说.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·阴阳离合论（素问第6篇）"
+    },
+    {
+     "lectureNo": "wy10",
+     "title": "wy10",
+     "durationSec": 3315,
+     "cues": 1416,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "wy11",
+     "title": "wy11",
+     "durationSec": 2205,
+     "cues": 995,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "wy12",
+     "title": "wy12",
+     "durationSec": 3186,
+     "cues": 1243,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 3,
+       "title": "素问·藏象",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/03-第3章-素问·藏象.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·六节藏象论（素问第9篇）"
+    },
+    {
+     "lectureNo": "wy13",
+     "title": "wy13",
+     "durationSec": 3354,
+     "cues": 1433,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 3,
+       "title": "素问·藏象",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/03-第3章-素问·藏象.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·五脏生成（素问第10篇）"
+    },
+    {
+     "lectureNo": "wy14",
+     "title": "wy14",
+     "durationSec": 2324,
+     "cues": 1069,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "wy15",
+     "title": "wy15",
+     "durationSec": 3173,
+     "cues": 1368,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 4,
+       "title": "素问·诊法总论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/04-第4章-素问·诊法总论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·移精变气论（素问第13篇）"
+    },
+    {
+     "lectureNo": "wy16",
+     "title": "wy16",
+     "durationSec": 2874,
+     "cues": 1201,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "素问·养生总纲",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/01-第1章-素问·养生总纲.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·上古天真论（素问第1篇）"
+    },
+    {
+     "lectureNo": "wy17",
+     "title": "wy17",
+     "durationSec": 3008,
+     "cues": 1286,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 4,
+       "title": "素问·诊法总论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/04-第4章-素问·诊法总论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·汤液醪醴论（素问第14篇）"
+    },
+    {
+     "lectureNo": "wy18",
+     "title": "wy18",
+     "durationSec": 2863,
+     "cues": 1282,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 4,
+       "title": "素问·诊法总论",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/04-第4章-素问·诊法总论.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·诊要经终论（素问第16篇）"
+    },
+    {
+     "lectureNo": "wy19",
+     "title": "wy19",
+     "durationSec": 3506,
+     "cues": 1529,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "wy20",
+     "title": "wy20",
+     "durationSec": 1816,
+     "cues": 878,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "wy21",
+     "title": "wy21",
+     "durationSec": 1703,
+     "cues": 384,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "wy22",
+     "title": "wy22",
+     "durationSec": 2779,
+     "cues": 1139,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 5,
+       "title": "素问·脉学",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/05-第5章-素问·脉学.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·平人气象论（素问第18篇）"
+    },
+    {
+     "lectureNo": "wy23",
+     "title": "wy23",
+     "durationSec": 2186,
+     "cues": 964,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "wy24",
+     "title": "wy24",
+     "durationSec": 2461,
+     "cues": 1073,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 5,
+       "title": "素问·脉学",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/05-第5章-素问·脉学.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·三部九候论（素问第20篇）"
+    },
+    {
+     "lectureNo": "wy25",
+     "title": "wy25",
+     "durationSec": 2795,
+     "cues": 1329,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "wy26",
+     "title": "wy26",
+     "durationSec": 2688,
+     "cues": 1105,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 6,
+       "title": "素问·经脉血气",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/06-第6章-素问·经脉血气.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·脏气法时论（素问第22篇）"
+    },
+    {
+     "lectureNo": "wy27",
+     "title": "wy27",
+     "durationSec": 2403,
+     "cues": 1044,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 6,
+       "title": "素问·经脉血气",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/06-第6章-素问·经脉血气.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·脏气法时论（素问第22篇）"
+    },
+    {
+     "lectureNo": "wy28",
+     "title": "wy28",
+     "durationSec": 2879,
+     "cues": 1345,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "wy29",
+     "title": "wy29",
+     "durationSec": 3047,
+     "cues": 1401,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 7,
+       "title": "素问·针刺保命",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/07-第7章-素问·针刺保命.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·宝命全形论（素问第25篇）"
+    },
+    {
+     "lectureNo": "wy30",
+     "title": "wy30",
+     "durationSec": 3079,
+     "cues": 1289,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 7,
+       "title": "素问·针刺保命",
+       "file": "textbooks/01-zhongyi/06-neijing-xuandu/07-第7章-素问·针刺保命.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:黄帝内经·素问·八正神明论（素问第26篇）"
+    },
+    {
+     "lectureNo": "原文",
+     "title": "原文",
+     "durationSec": 0,
+     "cues": 73,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "病理生理",
+     "title": "病理生理",
+     "durationSec": 0,
+     "cues": 87,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "健康计划",
+     "title": "健康计划",
+     "durationSec": 0,
+     "cues": 100,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "内经简版故事 V1（病例 × 语义向量图）",
+     "title": "内经简版故事 V1（病例 × 语义向量图）",
+     "durationSec": 0,
+     "cues": 151,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "01-zhongyi",
+   "slug": "07-shanghanlun",
+   "title": "伤寒论",
+   "semester": 4,
+   "videoStatus": "lectures",
+   "lectures": 53,
+   "teachingChapters": 12,
+   "textbookChapters": 12,
+   "mappedBy": "teaching=textbook 序号",
+   "status": "needs-segmentation",
+   "linkedLectures": 30,
+   "unlinkedLectures": 23,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "陈瑞春讲伤寒论1-论治伤寒之学（上） 伤寒论的定位、价值、版本、结构，学习方法论，注本",
+     "durationSec": 2892,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 10,
+       "title": "《伤寒论》卷第十",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/10-第10章-《伤寒论》卷第十.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "伤寒论",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 1,
+     "title": "第 1 讲",
+     "durationSec": 514.9,
+     "cues": 149,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "陈瑞春讲伤寒论2-论治伤寒之学（下）伤寒论与内经、六经辨证实质、临床治疗误区、经典学习、中西医对比、水气病",
+     "durationSec": 4015,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 10,
+       "title": "《伤寒论》卷第十",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/10-第10章-《伤寒论》卷第十.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "伤寒论",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "第 2 讲",
+     "durationSec": 321.6,
+     "cues": 107,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "《伤寒论》卷第一",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/01-第1章-《伤寒论》卷第一.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:undefined"
+    },
+    {
+     "lectureNo": 3,
+     "title": "陈瑞春讲伤寒论3-伤寒论总论1 伤寒论学术地位、如何学习伤寒论、伤寒与温病、中医教育现状、六经辨证规律、叶天士",
+     "durationSec": 3061,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 10,
+       "title": "《伤寒论》卷第十",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/10-第10章-《伤寒论》卷第十.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "伤寒论",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "第 3 讲",
+     "durationSec": 499.8,
+     "cues": 201,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "陈瑞春讲伤寒论4-伤寒论总论2伤寒论与温病条辨、三焦辨证、中医组方、中医药治疗对比、活血化瘀、肿瘤治疗、经典学习、中西医结合",
+     "durationSec": 3505,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 3,
+       "title": "《伤寒论》卷第三",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/03-第3章-《伤寒论》卷第三.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "活血化瘀",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "第 4 讲",
+     "durationSec": 502.9,
+     "cues": 184,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "《伤寒论》卷第一",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/01-第1章-《伤寒论》卷第一.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:undefined"
+    },
+    {
+     "lectureNo": 5,
+     "title": "陈瑞春讲伤寒论5-伤寒论总论3 经方分类和比较、方剂临床特征、方剂加减、辨证要点对比、学习方法论",
+     "durationSec": 1173,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 10,
+       "title": "《伤寒论》卷第十",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/10-第10章-《伤寒论》卷第十.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "伤寒论",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "第 5 讲",
+     "durationSec": 419.6,
+     "cues": 132,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "《伤寒论》卷第一",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/01-第1章-《伤寒论》卷第一.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:undefined"
+    },
+    {
+     "lectureNo": 6,
+     "title": "陈瑞春讲伤寒论6-汗法1 麻黄汤",
+     "durationSec": 3370,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 2,
+       "title": "《伤寒论》卷第二",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/02-第2章-《伤寒论》卷第二.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:麻黄汤"
+    },
+    {
+     "lectureNo": 6,
+     "title": "第 6 讲",
+     "durationSec": 419.6,
+     "cues": 135,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "《伤寒论》卷第一",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/01-第1章-《伤寒论》卷第一.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:undefined"
+    },
+    {
+     "lectureNo": 7,
+     "title": "陈瑞春讲伤寒论7-汗法2 桂枝汤",
+     "durationSec": 3240,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "《伤寒论》卷第一",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/01-第1章-《伤寒论》卷第一.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:桂枝汤"
+    },
+    {
+     "lectureNo": 7,
+     "title": "第 7 讲",
+     "durationSec": 262,
+     "cues": 95,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "陈瑞春讲伤寒论8-汗法3 大青龙汤 麻杏甘石汤",
+     "durationSec": 3370,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 2,
+       "title": "《伤寒论》卷第二",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/02-第2章-《伤寒论》卷第二.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:大青龙汤"
+    },
+    {
+     "lectureNo": 8,
+     "title": "第 8 讲",
+     "durationSec": 333.1,
+     "cues": 109,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "陈瑞春讲伤寒论9-汗法4 麻黄附子细辛汤 小青龙汤 桂枝加葛根汤 麻黄连翘赤小豆汤 当归四逆汤 苓甘五味姜辛夏汤",
+     "durationSec": 3152,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 2,
+       "title": "《伤寒论》卷第二",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/02-第2章-《伤寒论》卷第二.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:麻黄附子细辛汤"
+    },
+    {
+     "lectureNo": 9,
+     "title": "第 9 讲",
+     "durationSec": 455.8,
+     "cues": 159,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "陈瑞春讲伤寒论10-汗法5·下法1",
+     "durationSec": 3002,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "《伤寒论》卷第一",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/01-第1章-《伤寒论》卷第一.md"
+      },
+      {
+       "no": 2,
+       "title": "《伤寒论》卷第二",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/02-第2章-《伤寒论》卷第二.md"
+      },
+      {
+       "no": 4,
+       "title": "《伤寒论》卷第四",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/04-第4章-《伤寒论》卷第四.md"
+      }
+     ],
+     "linkedBy": "method",
+     "keyword": null,
+     "unitEvidence": "method:汗法+下法→章1,2,4"
+    },
+    {
+     "lectureNo": 10,
+     "title": "第 10 讲",
+     "durationSec": 385.3,
+     "cues": 118,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 11,
+     "title": "陈瑞春讲伤寒论11-下法1 大承气汤 调胃承气汤 桃核承气汤 大黄黄连泻心汤",
+     "durationSec": 3850,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 4,
+       "title": "《伤寒论》卷第四",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/04-第4章-《伤寒论》卷第四.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:大承气汤"
+    },
+    {
+     "lectureNo": 11,
+     "title": "第 11 讲",
+     "durationSec": 422.8,
+     "cues": 160,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 12,
+     "title": "陈瑞春讲伤寒论12-下法2  舌苔与阳明腑实证 三个承气汤 桃核承气汤 三黄泻心汤  抵当汤",
+     "durationSec": 2809,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 2,
+       "title": "《伤寒论》卷第二",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/02-第2章-《伤寒论》卷第二.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:舌苔与阳明腑实证"
+    },
+    {
+     "lectureNo": 12,
+     "title": "第 12 讲",
+     "durationSec": 510,
+     "cues": 178,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 13,
+     "title": "陈瑞春讲伤寒论13-下法3·和法1",
+     "durationSec": 3818,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "《伤寒论》卷第一",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/01-第1章-《伤寒论》卷第一.md"
+      },
+      {
+       "no": 2,
+       "title": "《伤寒论》卷第二",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/02-第2章-《伤寒论》卷第二.md"
+      },
+      {
+       "no": 3,
+       "title": "《伤寒论》卷第三",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/03-第3章-《伤寒论》卷第三.md"
+      }
+     ],
+     "linkedBy": "method",
+     "keyword": null,
+     "unitEvidence": "method:下法+和法→章1,2,3"
+    },
+    {
+     "lectureNo": 13,
+     "title": "第 13 讲",
+     "durationSec": 471.2,
+     "cues": 162,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 14,
+     "title": "陈瑞春讲伤寒论14-和法1 小柴胡汤",
+     "durationSec": 2847,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 2,
+       "title": "《伤寒论》卷第二",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/02-第2章-《伤寒论》卷第二.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:小柴胡汤"
+    },
+    {
+     "lectureNo": 14,
+     "title": "第 14 讲",
+     "durationSec": 393.2,
+     "cues": 128,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 15,
+     "title": "陈瑞春讲伤寒论15-和法2 柴胡桂枝各半汤 大柴胡汤 柴胡桂枝干姜汤",
+     "durationSec": 2697,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 3,
+       "title": "《伤寒论》卷第三",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/03-第3章-《伤寒论》卷第三.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:柴胡桂枝各半汤"
+    },
+    {
+     "lectureNo": 15,
+     "title": "第 15 讲",
+     "durationSec": 475.7,
+     "cues": 149,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 2,
+       "title": "《伤寒论》卷第二",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/02-第2章-《伤寒论》卷第二.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:undefined"
+    },
+    {
+     "lectureNo": 16,
+     "title": "陈瑞春讲伤寒论16-和法3 黄芩加半夏生姜汤证 葛根芩连汤 四逆散",
+     "durationSec": 3503,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 3,
+       "title": "《伤寒论》卷第三",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/03-第3章-《伤寒论》卷第三.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:黄芩加半夏生姜汤证"
+    },
+    {
+     "lectureNo": 16,
+     "title": "第 16 讲",
+     "durationSec": 331.7,
+     "cues": 109,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 17,
+     "title": "陈瑞春讲伤寒论17-和法4 半夏泻心汤 甘草泻心汤",
+     "durationSec": 2825,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 3,
+       "title": "《伤寒论》卷第三",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/03-第3章-《伤寒论》卷第三.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:半夏泻心汤"
+    },
+    {
+     "lectureNo": 17,
+     "title": "第 17 讲",
+     "durationSec": 378.2,
+     "cues": 131,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 18,
+     "title": "陈瑞春讲伤寒论18-温法1 温脾法 理中汤",
+     "durationSec": 3000,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 4,
+       "title": "《伤寒论》卷第四",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/04-第4章-《伤寒论》卷第四.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "理中汤",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 18,
+     "title": "第 18 讲",
+     "durationSec": 374.3,
+     "cues": 133,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 19,
+     "title": "陈瑞春讲伤寒论19-温法2 四逆汤 真武汤 当归四逆汤",
+     "durationSec": 3755,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 8,
+       "title": "《伤寒论》卷第八",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/08-第8章-《伤寒论》卷第八.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:四逆汤"
+    },
+    {
+     "lectureNo": 19,
+     "title": "第 19 讲",
+     "durationSec": 381.5,
+     "cues": 148,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 20,
+     "title": "陈瑞春讲伤寒论20-温法3 四逆汤 当归四逆汤 吴茱萸汤 乌梅丸 桂枝加附子汤 苓桂术甘汤",
+     "durationSec": 2991,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 8,
+       "title": "《伤寒论》卷第八",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/08-第8章-《伤寒论》卷第八.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:四逆汤"
+    },
+    {
+     "lectureNo": 20,
+     "title": "第 20 讲",
+     "durationSec": 335,
+     "cues": 103,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 21,
+     "title": "陈瑞春讲伤寒论21-清法1 白虎汤 竹叶石膏汤 栀子豉汤 白头翁汤",
+     "durationSec": 3457,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 8,
+       "title": "《伤寒论》卷第八",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/08-第8章-《伤寒论》卷第八.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:白虎汤"
+    },
+    {
+     "lectureNo": 21,
+     "title": "第 21 讲",
+     "durationSec": 266.5,
+     "cues": 110,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 22,
+     "title": "陈瑞春讲伤寒论22-清法2消法1 白虎汤应用、竹叶石膏汤、五苓散与桂枝汤、黄连温胆汤、白头翁汤、黄连阿胶汤、大青龙汤、麻杏石甘汤、小陷胸汤、消法原则",
+     "durationSec": 2062,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 2,
+       "title": "《伤寒论》卷第二",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/02-第2章-《伤寒论》卷第二.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:清法2消法"
+    },
+    {
+     "lectureNo": 22,
+     "title": "第 22 讲",
+     "durationSec": 362.1,
+     "cues": 132,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 23,
+     "title": "陈瑞春讲伤寒论23-清法·补法 消化系统疾病治疗、肝病治疗、妇科疾病治疗、心律失常治疗、甲状腺疾病治疗、补法运用原则、后世补法发展",
+     "durationSec": 3546,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 4,
+       "title": "《伤寒论》卷第四",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/04-第4章-《伤寒论》卷第四.md"
+      }
+     ],
+     "linkedBy": "keyword",
+     "keyword": "心律失常",
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 23,
+     "title": "第 23 讲",
+     "durationSec": 384.7,
+     "cues": 137,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 24,
+     "title": "陈瑞春讲伤寒论24-补法 中医配伍理论、补气生血原理、阴虚辨证体系、肝病治疗原则、临床思维革新、经典学习、补阳核心法则、气血双补方剂",
+     "durationSec": 1089,
+     "cues": 0,
+     "source": "bilibili-season",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 4,
+       "title": "《伤寒论》卷第四",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/04-第4章-《伤寒论》卷第四.md"
+      }
+     ],
+     "linkedBy": "method",
+     "keyword": null,
+     "unitEvidence": "method:补法→章4"
+    },
+    {
+     "lectureNo": 24,
+     "title": "第 24 讲",
+     "durationSec": 272.9,
+     "cues": 106,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 25,
+     "title": "第 25 讲",
+     "durationSec": 179.9,
+     "cues": 64,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 26,
+     "title": "第 26 讲",
+     "durationSec": 308.5,
+     "cues": 102,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 2,
+       "title": "《伤寒论》卷第二",
+       "file": "textbooks/01-zhongyi/07-shanghanlun/02-第2章-《伤寒论》卷第二.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "lecture-map:undefined"
+    },
+    {
+     "lectureNo": 27,
+     "title": "第 27 讲",
+     "durationSec": 340.7,
+     "cues": 145,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 28,
+     "title": "第 28 讲",
+     "durationSec": 316.8,
+     "cues": 116,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 29,
+     "title": "第 29 讲",
+     "durationSec": 239.3,
+     "cues": 72,
+     "source": "asr",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "01-zhongyi",
+   "slug": "08-jingui-yaolue",
+   "title": "金匮要略",
+   "semester": 5,
+   "videoStatus": "platform",
+   "lectures": 24,
+   "teachingChapters": 24,
+   "textbookChapters": 24,
+   "mappedBy": "teaching=textbook 序号",
+   "status": "linked",
+   "linkedLectures": 24,
+   "unlinkedLectures": 0,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "第1章 金匮的成书与杂病分类",
+     "durationSec": 419,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "金匮的成书与杂病分类"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "金匮的成书与杂病分类",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/01-第1章-金匮的成书与杂病分类.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "第2章 脏腑经络先后病：传变与预防",
+     "durationSec": 1178,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "脏腑经络先后病：传变与预防"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "脏腑经络先后病：传变与预防",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/02-第2章-脏腑经络先后病：传变与预防.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "第3章 痉湿暍病：外感杂病的辨识",
+     "durationSec": 1247,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "痉湿暍病：外感杂病的辨识"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "痉湿暍病：外感杂病的辨识",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/03-第3章-痉湿暍病：外感杂病的辨识.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "第4章 百合狐惑阴阳毒：少见病的鉴别",
+     "durationSec": 1213,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "百合狐惑阴阳毒：少见病的鉴别"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "百合狐惑阴阳毒：少见病的鉴别",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/04-第4章-百合狐惑阴阳毒：少见病的鉴别.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "第5章 疟病与中风历节：节律与痹阻",
+     "durationSec": 1297,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "疟病与中风历节：节律与痹阻"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "疟病与中风历节：节律与痹阻",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/05-第5章-疟病与中风历节：节律与痹阻.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "第6章 血痹虚劳：虚损的分层",
+     "durationSec": 1109,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "血痹虚劳：虚损的分层"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "血痹虚劳：虚损的分层",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/06-第6章-血痹虚劳：虚损的分层.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "第7章 痰饮咳嗽：水液代谢的失效",
+     "durationSec": 1309,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "痰饮咳嗽：水液代谢的失效"
+     },
+     "textbook": [
+      {
+       "no": 7,
+       "title": "痰饮咳嗽：水液代谢的失效",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/07-第7章-痰饮咳嗽：水液代谢的失效.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "第8章 消渴与淋病：津液与排泄",
+     "durationSec": 809,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "消渴与淋病：津液与排泄"
+     },
+     "textbook": [
+      {
+       "no": 8,
+       "title": "消渴与淋病：津液与排泄",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/08-第8章-消渴与淋病：津液与排泄.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "第9章 妇人病三篇：经带胎产的辨证",
+     "durationSec": 1780,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "妇人病三篇：经带胎产的辨证"
+     },
+     "textbook": [
+      {
+       "no": 9,
+       "title": "妇人病三篇：经带胎产的辨证",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/09-第9章-妇人病三篇：经带胎产的辨证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "第10章 杂病方剂的配伍规律与统计",
+     "durationSec": 1204,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "杂病方剂的配伍规律与统计"
+     },
+     "textbook": [
+      {
+       "no": 10,
+       "title": "杂病方剂的配伍规律与统计",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/10-第10章-杂病方剂的配伍规律与统计.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 11,
+     "title": "第11章 肺痿肺痈咳嗽上气",
+     "durationSec": 744,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 11,
+      "title": "肺痿肺痈咳嗽上气"
+     },
+     "textbook": [
+      {
+       "no": 11,
+       "title": "肺痿肺痈咳嗽上气",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/11-第11章-肺痿肺痈咳嗽上气.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 12,
+     "title": "第12章 奔豚气",
+     "durationSec": 380,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 12,
+      "title": "奔豚气"
+     },
+     "textbook": [
+      {
+       "no": 12,
+       "title": "奔豚气",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/12-第12章-奔豚气.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 13,
+     "title": "第13章 胸痹心痛短气",
+     "durationSec": 505,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 13,
+      "title": "胸痹心痛短气"
+     },
+     "textbook": [
+      {
+       "no": 13,
+       "title": "胸痹心痛短气",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/13-第13章-胸痹心痛短气.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 14,
+     "title": "第14章 腹满寒疝宿食",
+     "durationSec": 769,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 14,
+      "title": "腹满寒疝宿食"
+     },
+     "textbook": [
+      {
+       "no": 14,
+       "title": "腹满寒疝宿食",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/14-第14章-腹满寒疝宿食.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 15,
+     "title": "第15章 五脏风寒积聚",
+     "durationSec": 555,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 15,
+      "title": "五脏风寒积聚"
+     },
+     "textbook": [
+      {
+       "no": 15,
+       "title": "五脏风寒积聚",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/15-第15章-五脏风寒积聚.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 16,
+     "title": "第16章 水气",
+     "durationSec": 1010,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 16,
+      "title": "水气"
+     },
+     "textbook": [
+      {
+       "no": 16,
+       "title": "水气",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/16-第16章-水气.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 17,
+     "title": "第17章 黄疸",
+     "durationSec": 593,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 17,
+      "title": "黄疸"
+     },
+     "textbook": [
+      {
+       "no": 17,
+       "title": "黄疸",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/17-第17章-黄疸.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 18,
+     "title": "第18章 惊悸吐衄下血胸满瘀血",
+     "durationSec": 467,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 18,
+      "title": "惊悸吐衄下血胸满瘀血"
+     },
+     "textbook": [
+      {
+       "no": 18,
+       "title": "惊悸吐衄下血胸满瘀血",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/18-第18章-惊悸吐衄下血胸满瘀血.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 19,
+     "title": "第19章 呕吐哕下利",
+     "durationSec": 933,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 19,
+      "title": "呕吐哕下利"
+     },
+     "textbook": [
+      {
+       "no": 19,
+       "title": "呕吐哕下利",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/19-第19章-呕吐哕下利.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 20,
+     "title": "第20章 疮痈肠痈浸淫",
+     "durationSec": 423,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 20,
+      "title": "疮痈肠痈浸淫"
+     },
+     "textbook": [
+      {
+       "no": 20,
+       "title": "疮痈肠痈浸淫",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/20-第20章-疮痈肠痈浸淫.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 21,
+     "title": "第21章 趺蹶手指臂肿转筋阴狐疝蚘虫",
+     "durationSec": 394,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 21,
+      "title": "趺蹶手指臂肿转筋阴狐疝蚘虫"
+     },
+     "textbook": [
+      {
+       "no": 21,
+       "title": "趺蹶手指臂肿转筋阴狐疝蚘虫",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/21-第21章-趺蹶手指臂肿转筋阴狐疝蚘虫.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 22,
+     "title": "第22章 杂疗方",
+     "durationSec": 691,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 22,
+      "title": "杂疗方"
+     },
+     "textbook": [
+      {
+       "no": 22,
+       "title": "杂疗方",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/22-第22章-杂疗方.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 23,
+     "title": "第23章 禽兽鱼虫禁忌",
+     "durationSec": 912,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 23,
+      "title": "禽兽鱼虫禁忌"
+     },
+     "textbook": [
+      {
+       "no": 23,
+       "title": "禽兽鱼虫禁忌",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/23-第23章-禽兽鱼虫禁忌.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 24,
+     "title": "第24章 果实菜谷禁忌",
+     "durationSec": 716,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 24,
+      "title": "果实菜谷禁忌"
+     },
+     "textbook": [
+      {
+       "no": 24,
+       "title": "果实菜谷禁忌",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/24-第24章-果实菜谷禁忌.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "01-zhongyi",
+   "slug": "10-zhongyi-neike-xue",
+   "title": "中医内科学",
+   "semester": 5,
+   "videoStatus": "platform",
+   "lectures": 14,
+   "teachingChapters": 14,
+   "textbookChapters": 14,
+   "mappedBy": "teaching=textbook 序号",
+   "status": "linked",
+   "linkedLectures": 14,
+   "unlinkedLectures": 0,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "第1章 绪论",
+     "durationSec": 1190,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "第1章 绪论"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "绪论",
+       "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/01-第1章-绪论.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "第2章 中医内科疾病的辨证论治思路与方法",
+     "durationSec": 1457,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "第2章 中医内科疾病的辨证论治思路与方法"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "中医内科疾病的辨证论治思路与方法",
+       "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/02-第2章-中医内科疾病的辨证论治思路与方法.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "第3章 脏腑辨证纲要与内科治则",
+     "durationSec": 1001,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "第3章 脏腑辨证纲要与内科治则"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "脏腑辨证纲要与内科治则",
+       "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/03-第3章-脏腑辨证纲要与内科治则.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "第4章 肺系病证",
+     "durationSec": 1049,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "第4章 肺系病证"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "肺系病证",
+       "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/04-第4章-肺系病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "第5章 心系病证",
+     "durationSec": 958,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "第5章 心系病证"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "心系病证",
+       "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/05-第5章-心系病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "第6章 脾胃系病证",
+     "durationSec": 1022,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "第6章 脾胃系病证"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "脾胃系病证",
+       "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/06-第6章-脾胃系病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "第7章 肝系病证",
+     "durationSec": 1181,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "第7章 肝系病证"
+     },
+     "textbook": [
+      {
+       "no": 7,
+       "title": "肝系病证",
+       "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/07-第7章-肝系病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "第8章 肾系病证",
+     "durationSec": 1096,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "第8章 肾系病证"
+     },
+     "textbook": [
+      {
+       "no": 8,
+       "title": "肾系病证",
+       "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/08-第8章-肾系病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "第9章 气血津液病证",
+     "durationSec": 1031,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "第9章 气血津液病证"
+     },
+     "textbook": [
+      {
+       "no": 9,
+       "title": "气血津液病证",
+       "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/09-第9章-气血津液病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "第10章 肢体经络病证",
+     "durationSec": 1193,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "第10章 肢体经络病证"
+     },
+     "textbook": [
+      {
+       "no": 10,
+       "title": "肢体经络病证",
+       "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/10-第10章-肢体经络病证.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 11,
+     "title": "第11章 常见急症与传染病",
+     "durationSec": 1142,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 11,
+      "title": "第11章 常见急症与传染病"
+     },
+     "textbook": [
+      {
+       "no": 11,
+       "title": "常见急症与传染病",
+       "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/11-第11章-常见急症与传染病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 12,
+     "title": "第12章 中医内科学的数字化与AI时代",
+     "durationSec": 1372,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 12,
+      "title": "第12章 中医内科学的数字化与AI时代"
+     },
+     "textbook": [
+      {
+       "no": 12,
+       "title": "中医内科学的数字化与AI时代",
+       "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/12-第12章-中医内科学的数字化与AI时代.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 13,
+     "title": "第13章 证候—方剂—疗效的因果推断",
+     "durationSec": 1592,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 13,
+      "title": "第13章 证候—方剂—疗效的因果推断"
+     },
+     "textbook": [
+      {
+       "no": 13,
+       "title": "证候方剂疗效的因果边界",
+       "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/13-第13章-证候方剂疗效的因果边界.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 14,
+     "title": "第14章 内科分型与 ICD-11 的映射",
+     "durationSec": 1402,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 14,
+      "title": "第14章 内科分型与 ICD-11 的映射"
+     },
+     "textbook": [
+      {
+       "no": 14,
+       "title": "内科分型与ICD-11映射",
+       "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/14-第14章-内科分型与ICD-11映射.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "07-zhineng",
+   "slug": "01-yixue-rengong-zhineng-daolun",
+   "title": "医学人工智能导论",
+   "semester": 3,
+   "videoStatus": "lectures",
+   "lectures": 29,
+   "teachingChapters": 8,
+   "textbookChapters": 8,
+   "mappedBy": "teaching=textbook 序号",
+   "status": "partial",
+   "linkedLectures": 6,
+   "unlinkedLectures": 23,
+   "rows": [
+    {
+     "lectureNo": "AI-med-introduce",
+     "title": "AI-med-introduce",
+     "durationSec": 0,
+     "cues": 91,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "PART01",
+     "title": "PART01",
+     "durationSec": 0,
+     "cues": 675,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "PART02",
+     "title": "PART02",
+     "durationSec": 0,
+     "cues": 1084,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "PART03",
+     "title": "PART03",
+     "durationSec": 0,
+     "cues": 734,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "PART04",
+     "title": "PART04",
+     "durationSec": 0,
+     "cues": 898,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "PART05",
+     "title": "PART05",
+     "durationSec": 0,
+     "cues": 555,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "PART06",
+     "title": "PART06",
+     "durationSec": 0,
+     "cues": 617,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "ha-list",
+     "title": "ha-list",
+     "durationSec": 0,
+     "cues": 63,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "AII-hermes",
+     "title": "AII-hermes",
+     "durationSec": 0,
+     "cues": 106,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "卷首",
+     "title": "卷首",
+     "durationSec": 0,
+     "cues": 178,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "01_走进人工智能世界",
+     "title": "01_走进人工智能世界",
+     "durationSec": 0,
+     "cues": 201,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "02_AI 核心概念速览",
+     "title": "02_AI 核心概念速览",
+     "durationSec": 0,
+     "cues": 194,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "什么是医学人工智能",
+       "file": "textbooks/07-zhineng/01-yixue-rengong-zhineng-daolun/01-第1章-什么是医学人工智能.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:核心概念速览"
+    },
+    {
+     "lectureNo": "03_AI 技术生态与工具全景",
+     "title": "03_AI 技术生态与工具全景",
+     "durationSec": 0,
+     "cues": 168,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "04_机器学习原理",
+     "title": "04_机器学习原理",
+     "durationSec": 0,
+     "cues": 463,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "什么是医学人工智能",
+       "file": "textbooks/07-zhineng/01-yixue-rengong-zhineng-daolun/01-第1章-什么是医学人工智能.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:机器学习原理"
+    },
+    {
+     "lectureNo": "05_深度学习揭秘",
+     "title": "05_深度学习揭秘",
+     "durationSec": 0,
+     "cues": 323,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "什么是医学人工智能",
+       "file": "textbooks/07-zhineng/01-yixue-rengong-zhineng-daolun/01-第1章-什么是医学人工智能.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:深度学习揭秘"
+    },
+    {
+     "lectureNo": "06_大语言模型详解",
+     "title": "06_大语言模型详解",
+     "durationSec": 0,
+     "cues": 328,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "07_推理模型与推理计算",
+     "title": "07_推理模型与推理计算",
+     "durationSec": 0,
+     "cues": 1069,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "08_新架构与创新案例",
+     "title": "08_新架构与创新案例",
+     "durationSec": 0,
+     "cues": 1772,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "09_多模态与生成式 AI",
+     "title": "09_多模态与生成式 AI",
+     "durationSec": 0,
+     "cues": 165,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 3,
+       "title": "从可穿戴到四诊仪",
+       "file": "textbooks/07-zhineng/01-yixue-rengong-zhineng-daolun/03-第3章-从可穿戴到四诊仪.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:多模态与生成式"
+    },
+    {
+     "lectureNo": "10_主流 AI 工具使用指南",
+     "title": "10_主流 AI 工具使用指南",
+     "durationSec": 0,
+     "cues": 220,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "11_提示词工程入门",
+     "title": "11_提示词工程入门",
+     "durationSec": 0,
+     "cues": 457,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "12_提示词工程进阶与上下文工程",
+     "title": "12_提示词工程进阶与上下文工程",
+     "durationSec": 0,
+     "cues": 590,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "13_AI 实战应用场景",
+     "title": "13_AI 实战应用场景",
+     "durationSec": 0,
+     "cues": 252,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "14_AI 智能体与多智能体系统",
+     "title": "14_AI 智能体与多智能体系统",
+     "durationSec": 0,
+     "cues": 929,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 1,
+       "title": "什么是医学人工智能",
+       "file": "textbooks/07-zhineng/01-yixue-rengong-zhineng-daolun/01-第1章-什么是医学人工智能.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:智能体与多智能体系统"
+    },
+    {
+     "lectureNo": "15_AI 伦理、安全与未来",
+     "title": "15_AI 伦理、安全与未来",
+     "durationSec": 0,
+     "cues": 145,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [
+      {
+       "no": 7,
+       "title": "伦理、隐私与责任",
+       "file": "textbooks/07-zhineng/01-yixue-rengong-zhineng-daolun/07-第7章-伦理、隐私与责任.md"
+      }
+     ],
+     "linkedBy": "unit",
+     "keyword": null,
+     "unitEvidence": "unit-body:安全与未来"
+    },
+    {
+     "lectureNo": "16_AI 硬件与量子计算入门",
+     "title": "16_AI 硬件与量子计算入门",
+     "durationSec": 0,
+     "cues": 661,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "17_附录",
+     "title": "17_附录",
+     "durationSec": 0,
+     "cues": 319,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "18_图目录",
+     "title": "18_图目录",
+     "durationSec": 0,
+     "cues": 76,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": "19_图源码Mermaid",
+     "title": "19_图源码Mermaid",
+     "durationSec": 0,
+     "cues": 69,
+     "source": "video-subtitle",
+     "teaching": null,
+     "textbook": [],
+     "linkedBy": null,
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "09-jichu",
+   "slug": "11-bingli-shengli-xue",
+   "title": "病理生理学",
+   "semester": 4,
+   "videoStatus": "platform",
+   "lectures": 53,
+   "teachingChapters": 53,
+   "textbookChapters": 53,
+   "mappedBy": "teaching=textbook 序号",
+   "status": "linked",
+   "linkedLectures": 53,
+   "unlinkedLectures": 0,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "第 1 章 · 病理生理学导论",
+     "durationSec": 1741,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "病理生理学导论"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "病理生理学导论",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/01-第1章-病理生理学导论.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "第 2 章 · 稳态、异稳态与对应激源的适应性反应",
+     "durationSec": 1607,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "稳态、异稳态与对应激源的适应性反应"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "稳态、异稳态与对应激源的适应性反应",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/02-第2章-稳态、异稳态与对应激源的适应性反应.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "第 3 章 · 细胞结构与功能",
+     "durationSec": 1270,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "细胞结构与功能"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "细胞结构与功能",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/03-第3章-细胞结构与功能.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "第 4 章 · 细胞损伤、衰老与死亡",
+     "durationSec": 1416,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "细胞损伤、衰老与死亡"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "细胞损伤、衰老与死亡",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/04-第4章-细胞损伤、衰老与死亡.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "第 5 章 · 基因组结构、调控与组织分化",
+     "durationSec": 1190,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "基因组结构、调控与组织分化"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "基因组结构、调控与组织分化",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/05-第5章-基因组结构、调控与组织分化.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "第 6 章 · 遗传与发育性疾病",
+     "durationSec": 1476,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "遗传与发育性疾病"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "遗传与发育性疾病",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/06-第6章-遗传与发育性疾病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "第 7 章 · 肿瘤",
+     "durationSec": 1358,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "肿瘤"
+     },
+     "textbook": [
+      {
+       "no": 7,
+       "title": "肿瘤",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/07-第7章-肿瘤.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "第 8 章 · 感染过程",
+     "durationSec": 1417,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "感染过程"
+     },
+     "textbook": [
+      {
+       "no": 8,
+       "title": "感染过程",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/08-第8章-感染过程.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "第 9 章 · 炎症与免疫",
+     "durationSec": 1487,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "炎症与免疫"
+     },
+     "textbook": [
+      {
+       "no": 9,
+       "title": "炎症与免疫",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/09-第9章-炎症与免疫.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "第 10 章 · 免疫功能异常",
+     "durationSec": 1517,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "免疫功能异常"
+     },
+     "textbook": [
+      {
+       "no": 10,
+       "title": "免疫功能异常",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/10-第10章-免疫功能异常.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 11,
+     "title": "第 11 章 · 白细胞恶性肿瘤",
+     "durationSec": 1415,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 11,
+      "title": "白细胞恶性肿瘤"
+     },
+     "textbook": [
+      {
+       "no": 11,
+       "title": "白细胞恶性肿瘤",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/11-第11章-白细胞恶性肿瘤.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 12,
+     "title": "第 12 章 · HIV感染与艾滋病",
+     "durationSec": 1442,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 12,
+      "title": "HIV感染与艾滋病"
+     },
+     "textbook": [
+      {
+       "no": 12,
+       "title": "HIV感染与艾滋病",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/12-第12章-HIV感染与艾滋病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 13,
+     "title": "第 13 章 · 氧运输异常",
+     "durationSec": 1605,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 13,
+      "title": "氧运输异常"
+     },
+     "textbook": [
+      {
+       "no": 13,
+       "title": "氧运输异常",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/13-第13章-氧运输异常.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 14,
+     "title": "第 14 章 · 止血与凝血异常",
+     "durationSec": 1658,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 14,
+      "title": "止血与凝血异常"
+     },
+     "textbook": [
+      {
+       "no": 14,
+       "title": "止血与凝血异常",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/14-第14章-止血与凝血异常.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 15,
+     "title": "第 15 章 · 血流异常",
+     "durationSec": 1400,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 15,
+      "title": "血流异常"
+     },
+     "textbook": [
+      {
+       "no": 15,
+       "title": "血流异常",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/15-第15章-血流异常.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 16,
+     "title": "第 16 章 · 血压异常",
+     "durationSec": 1375,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 16,
+      "title": "血压异常"
+     },
+     "textbook": [
+      {
+       "no": 16,
+       "title": "血压异常",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/16-第16章-血压异常.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 17,
+     "title": "第 17 章 · 心脏功能",
+     "durationSec": 1586,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 17,
+      "title": "心脏功能"
+     },
+     "textbook": [
+      {
+       "no": 17,
+       "title": "心脏功能",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/17-第17章-心脏功能.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 18,
+     "title": "第 18 章 · 心脏功能异常",
+     "durationSec": 1411,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 18,
+      "title": "心脏功能异常"
+     },
+     "textbook": [
+      {
+       "no": 18,
+       "title": "心脏功能异常",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/18-第18章-心脏功能异常.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 19,
+     "title": "第 19 章 · 心力衰竭与心律失常",
+     "durationSec": 1523,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 19,
+      "title": "心力衰竭与心律失常"
+     },
+     "textbook": [
+      {
+       "no": 19,
+       "title": "心力衰竭与心律失常",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/19-第19章-心力衰竭与心律失常.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 20,
+     "title": "第 20 章 · 休克",
+     "durationSec": 1453,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 20,
+      "title": "休克"
+     },
+     "textbook": [
+      {
+       "no": 20,
+       "title": "休克",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/20-第20章-休克.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 21,
+     "title": "第 21 章 · 呼吸功能与气体交换异常",
+     "durationSec": 1732,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 21,
+      "title": "呼吸功能与气体交换异常"
+     },
+     "textbook": [
+      {
+       "no": 21,
+       "title": "呼吸功能与气体交换异常",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/21-第21章-呼吸功能与气体交换异常.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 22,
+     "title": "第 22 章 · 阻塞性肺疾病",
+     "durationSec": 1718,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 22,
+      "title": "阻塞性肺疾病"
+     },
+     "textbook": [
+      {
+       "no": 22,
+       "title": "阻塞性肺疾病",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/22-第22章-阻塞性肺疾病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 23,
+     "title": "第 23 章 · 限制性肺疾病",
+     "durationSec": 1490,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 23,
+      "title": "限制性肺疾病"
+     },
+     "textbook": [
+      {
+       "no": 23,
+       "title": "限制性肺疾病",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/23-第23章-限制性肺疾病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 24,
+     "title": "第 24 章 · 水电解质稳态与失衡",
+     "durationSec": 1724,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 24,
+      "title": "水电解质稳态与失衡"
+     },
+     "textbook": [
+      {
+       "no": 24,
+       "title": "水电解质稳态与失衡",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/24-第24章-水电解质稳态与失衡.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 25,
+     "title": "第 25 章 · 酸碱平衡与失衡",
+     "durationSec": 1517,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 25,
+      "title": "酸碱平衡与失衡"
+     },
+     "textbook": [
+      {
+       "no": 25,
+       "title": "酸碱平衡与失衡",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/25-第25章-酸碱平衡与失衡.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 26,
+     "title": "第 26 章 · 肾脏功能",
+     "durationSec": 1745,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 26,
+      "title": "肾脏功能"
+     },
+     "textbook": [
+      {
+       "no": 26,
+       "title": "肾脏功能",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/26-第26章-肾脏功能.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 27,
+     "title": "第 27 章 · 肾内疾病",
+     "durationSec": 1291,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 27,
+      "title": "肾内疾病"
+     },
+     "textbook": [
+      {
+       "no": 27,
+       "title": "肾内疾病",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/27-第27章-肾内疾病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 28,
+     "title": "第 28 章 · 急性肾损伤与慢性肾脏病",
+     "durationSec": 1369,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 28,
+      "title": "急性肾损伤与慢性肾脏病"
+     },
+     "textbook": [
+      {
+       "no": 28,
+       "title": "急性肾损伤与慢性肾脏病",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/28-第28章-急性肾损伤与慢性肾脏病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 29,
+     "title": "第 29 章 · 下尿路疾病",
+     "durationSec": 1410,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 29,
+      "title": "下尿路疾病"
+     },
+     "textbook": [
+      {
+       "no": 29,
+       "title": "下尿路疾病",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/29-第29章-下尿路疾病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 30,
+     "title": "第 30 章 · 男性生殖功能",
+     "durationSec": 1496,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 30,
+      "title": "男性生殖功能"
+     },
+     "textbook": [
+      {
+       "no": 30,
+       "title": "男性生殖功能",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/30-第30章-男性生殖功能.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 31,
+     "title": "第 31 章 · 男性生殖功能异常",
+     "durationSec": 1299,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 31,
+      "title": "男性生殖功能异常"
+     },
+     "textbook": [
+      {
+       "no": 31,
+       "title": "男性生殖功能异常",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/31-第31章-男性生殖功能异常.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 32,
+     "title": "第 32 章 · 女性生殖功能",
+     "durationSec": 1312,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 32,
+      "title": "女性生殖功能"
+     },
+     "textbook": [
+      {
+       "no": 32,
+       "title": "女性生殖功能",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/32-第32章-女性生殖功能.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 33,
+     "title": "第 33 章 · 女性生殖功能异常",
+     "durationSec": 1495,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 33,
+      "title": "女性生殖功能异常"
+     },
+     "textbook": [
+      {
+       "no": 33,
+       "title": "女性生殖功能异常",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/33-第33章-女性生殖功能异常.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 34,
+     "title": "第 34 章 · 性传播感染",
+     "durationSec": 1371,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 34,
+      "title": "性传播感染"
+     },
+     "textbook": [
+      {
+       "no": 34,
+       "title": "性传播感染",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/34-第34章-性传播感染.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 35,
+     "title": "第 35 章 · 胃肠功能",
+     "durationSec": 1320,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 35,
+      "title": "胃肠功能"
+     },
+     "textbook": [
+      {
+       "no": 35,
+       "title": "胃肠功能",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/35-第35章-胃肠功能.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 36,
+     "title": "第 36 章 · 胃肠疾病",
+     "durationSec": 1562,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 36,
+      "title": "胃肠疾病"
+     },
+     "textbook": [
+      {
+       "no": 36,
+       "title": "胃肠疾病",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/36-第36章-胃肠疾病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 37,
+     "title": "第 37 章 · 胆囊与外分泌胰腺功能异常",
+     "durationSec": 1269,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 37,
+      "title": "胆囊与外分泌胰腺功能异常"
+     },
+     "textbook": [
+      {
+       "no": 37,
+       "title": "胆囊与外分泌胰腺功能异常",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/37-第37章-胆囊与外分泌胰腺功能异常.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 38,
+     "title": "第 38 章 · 肝脏疾病",
+     "durationSec": 1435,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 38,
+      "title": "肝脏疾病"
+     },
+     "textbook": [
+      {
+       "no": 38,
+       "title": "肝脏疾病",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/38-第38章-肝脏疾病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 39,
+     "title": "第 39 章 · 内分泌生理与下丘脑-垂体调控机制",
+     "durationSec": 1634,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 39,
+      "title": "内分泌生理与下丘脑-垂体调控机制"
+     },
+     "textbook": [
+      {
+       "no": 39,
+       "title": "内分泌生理与下丘脑-垂体调控机制",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/39-第39章-内分泌生理与下丘脑-垂体调控机制.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 40,
+     "title": "第 40 章 · 内分泌功能紊乱",
+     "durationSec": 1567,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 40,
+      "title": "内分泌功能紊乱"
+     },
+     "textbook": [
+      {
+       "no": 40,
+       "title": "内分泌功能紊乱",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/40-第40章-内分泌功能紊乱.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 41,
+     "title": "第 41 章 · 糖尿病",
+     "durationSec": 1739,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 41,
+      "title": "糖尿病"
+     },
+     "textbook": [
+      {
+       "no": 41,
+       "title": "糖尿病",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/41-第41章-糖尿病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 42,
+     "title": "第 42 章 · 代谢与营养异常",
+     "durationSec": 1702,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 42,
+      "title": "代谢与营养异常"
+     },
+     "textbook": [
+      {
+       "no": 42,
+       "title": "代谢与营养异常",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/42-第42章-代谢与营养异常.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 43,
+     "title": "第 43 章 · 神经系统结构与功能",
+     "durationSec": 1390,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 43,
+      "title": "神经系统结构与功能"
+     },
+     "textbook": [
+      {
+       "no": 43,
+       "title": "神经系统结构与功能",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/43-第43章-神经系统结构与功能.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 44,
+     "title": "第 44 章 · 脑功能急性疾病",
+     "durationSec": 1490,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 44,
+      "title": "脑功能急性疾病"
+     },
+     "textbook": [
+      {
+       "no": 44,
+       "title": "脑功能急性疾病",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/44-第44章-脑功能急性疾病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 45,
+     "title": "第 45 章 · 慢性神经功能障碍",
+     "durationSec": 1472,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 45,
+      "title": "慢性神经功能障碍"
+     },
+     "textbook": [
+      {
+       "no": 45,
+       "title": "慢性神经功能障碍",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/45-第45章-慢性神经功能障碍.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 46,
+     "title": "第 46 章 · 特殊感觉功能异常",
+     "durationSec": 1453,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 46,
+      "title": "特殊感觉功能异常"
+     },
+     "textbook": [
+      {
+       "no": 46,
+       "title": "特殊感觉功能异常",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/46-第46章-特殊感觉功能异常.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 47,
+     "title": "第 47 章 · 疼痛",
+     "durationSec": 1425,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 47,
+      "title": "疼痛"
+     },
+     "textbook": [
+      {
+       "no": 47,
+       "title": "疼痛",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/47-第47章-疼痛.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 48,
+     "title": "第 48 章 · 精神心理健康障碍",
+     "durationSec": 2259,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 48,
+      "title": "精神心理健康障碍"
+     },
+     "textbook": [
+      {
+       "no": 48,
+       "title": "精神心理健康障碍",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/48-第48章-精神心理健康障碍.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 49,
+     "title": "第 49 章 · 骨骼肌肉系统结构与功能",
+     "durationSec": 1763,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 49,
+      "title": "骨骼肌肉系统结构与功能"
+     },
+     "textbook": [
+      {
+       "no": 49,
+       "title": "骨骼肌肉系统结构与功能",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/49-第49章-骨骼肌肉系统结构与功能.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 50,
+     "title": "第 50 章 · 骨骼肌肉功能异常：创伤、感染与疾病",
+     "durationSec": 1957,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 50,
+      "title": "骨骼肌肉功能异常：创伤、感染与疾病"
+     },
+     "textbook": [
+      {
+       "no": 50,
+       "title": "骨骼肌肉功能异常：创伤、感染与疾病",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/50-第50章-骨骼肌肉功能异常：创伤、感染与疾病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 51,
+     "title": "第 51 章 · 骨骼肌肉功能异常：风湿性疾病",
+     "durationSec": 1831,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 51,
+      "title": "骨骼肌肉功能异常：风湿性疾病"
+     },
+     "textbook": [
+      {
+       "no": 51,
+       "title": "骨骼肌肉功能异常：风湿性疾病",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/51-第51章-骨骼肌肉功能异常：风湿性疾病.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 52,
+     "title": "第 52 章 · 皮肤系统异常",
+     "durationSec": 1852,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 52,
+      "title": "皮肤系统异常"
+     },
+     "textbook": [
+      {
+       "no": 52,
+       "title": "皮肤系统异常",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/52-第52章-皮肤系统异常.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 53,
+     "title": "第 53 章 · 烧伤",
+     "durationSec": 1847,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 53,
+      "title": "烧伤"
+     },
+     "textbook": [
+      {
+       "no": 53,
+       "title": "烧伤",
+       "file": "textbooks/09-jichu/11-bingli-shengli-xue/53-第53章-烧伤.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  },
+  {
+   "dept": "09-jichu",
+   "slug": "12-yaoli-xue",
+   "title": "药理学",
+   "semester": 4,
+   "videoStatus": "platform",
+   "lectures": 49,
+   "teachingChapters": 49,
+   "textbookChapters": 49,
+   "mappedBy": "teaching=textbook 序号",
+   "status": "linked",
+   "linkedLectures": 49,
+   "unlinkedLectures": 0,
+   "rows": [
+    {
+     "lectureNo": 1,
+     "title": "第1章 绪论",
+     "durationSec": 1285,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 1,
+      "title": "第1章 绪论"
+     },
+     "textbook": [
+      {
+       "no": 1,
+       "title": "绪论",
+       "file": "textbooks/09-jichu/12-yaoli-xue/01-第1章-绪论.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 2,
+     "title": "第2章 药物效应动力学——药效学",
+     "durationSec": 1789,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 2,
+      "title": "第2章 药物效应动力学——药效学"
+     },
+     "textbook": [
+      {
+       "no": 2,
+       "title": "药物效应动力学——药效学",
+       "file": "textbooks/09-jichu/12-yaoli-xue/02-第2章-药物效应动力学——药效学.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 3,
+     "title": "第3章 药物代谢动力学——药动学",
+     "durationSec": 1085,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 3,
+      "title": "第3章 药物代谢动力学——药动学"
+     },
+     "textbook": [
+      {
+       "no": 3,
+       "title": "药物代谢动力学——药动学",
+       "file": "textbooks/09-jichu/12-yaoli-xue/03-第3章-药物代谢动力学——药动学.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 4,
+     "title": "第4章 影响药物效应的因素",
+     "durationSec": 1131,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 4,
+      "title": "第4章 影响药物效应的因素"
+     },
+     "textbook": [
+      {
+       "no": 4,
+       "title": "影响药物效应的因素",
+       "file": "textbooks/09-jichu/12-yaoli-xue/04-第4章-影响药物效应的因素.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 5,
+     "title": "第5章 传出神经系统药理概论",
+     "durationSec": 1107,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 5,
+      "title": "第5章 传出神经系统药理概论"
+     },
+     "textbook": [
+      {
+       "no": 5,
+       "title": "传出神经系统药理概论",
+       "file": "textbooks/09-jichu/12-yaoli-xue/05-第5章-传出神经系统药理概论.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 6,
+     "title": "第6章 拟胆碱药",
+     "durationSec": 1141,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 6,
+      "title": "第6章 拟胆碱药"
+     },
+     "textbook": [
+      {
+       "no": 6,
+       "title": "拟胆碱药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/06-第6章-拟胆碱药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 7,
+     "title": "第7章 有机磷酸酯类及胆碱酯酶复活药",
+     "durationSec": 1245,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 7,
+      "title": "第7章 有机磷酸酯类及胆碱酯酶复活药"
+     },
+     "textbook": [
+      {
+       "no": 7,
+       "title": "有机磷酸酯类及胆碱酯酶复活药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/07-第7章-有机磷酸酯类及胆碱酯酶复活药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 8,
+     "title": "第8章 抗胆碱药",
+     "durationSec": 1096,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 8,
+      "title": "第8章 抗胆碱药"
+     },
+     "textbook": [
+      {
+       "no": 8,
+       "title": "抗胆碱药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/08-第8章-抗胆碱药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 9,
+     "title": "第9章 拟肾上腺素药",
+     "durationSec": 1124,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 9,
+      "title": "第9章 拟肾上腺素药"
+     },
+     "textbook": [
+      {
+       "no": 9,
+       "title": "拟肾上腺素药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/09-第9章-拟肾上腺素药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 10,
+     "title": "第10章 抗肾上腺素药",
+     "durationSec": 1164,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 10,
+      "title": "第10章 抗肾上腺素药"
+     },
+     "textbook": [
+      {
+       "no": 10,
+       "title": "抗肾上腺素药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/10-第10章-抗肾上腺素药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 11,
+     "title": "第11章 局部麻醉药",
+     "durationSec": 1399,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 11,
+      "title": "第11章 局部麻醉药"
+     },
+     "textbook": [
+      {
+       "no": 11,
+       "title": "局部麻醉药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/11-第11章-局部麻醉药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 12,
+     "title": "第12章 全身麻醉药",
+     "durationSec": 1396,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 12,
+      "title": "第12章 全身麻醉药"
+     },
+     "textbook": [
+      {
+       "no": 12,
+       "title": "全身麻醉药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/12-第12章-全身麻醉药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 13,
+     "title": "第13章 镇静催眠药",
+     "durationSec": 1376,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 13,
+      "title": "第13章 镇静催眠药"
+     },
+     "textbook": [
+      {
+       "no": 13,
+       "title": "镇静催眠药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/13-第13章-镇静催眠药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 14,
+     "title": "第14章 抗癫痫药与抗惊厥药",
+     "durationSec": 1493,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 14,
+      "title": "第14章 抗癫痫药与抗惊厥药"
+     },
+     "textbook": [
+      {
+       "no": 14,
+       "title": "抗癫痫药与抗惊厥药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/14-第14章-抗癫痫药与抗惊厥药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 15,
+     "title": "第15章 抗精神失常药",
+     "durationSec": 1235,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 15,
+      "title": "第15章 抗精神失常药"
+     },
+     "textbook": [
+      {
+       "no": 15,
+       "title": "抗精神失常药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/15-第15章-抗精神失常药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 16,
+     "title": "第16章 治疗中枢神经系统退行性疾病药",
+     "durationSec": 1499,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 16,
+      "title": "第16章 治疗中枢神经系统退行性疾病药"
+     },
+     "textbook": [
+      {
+       "no": 16,
+       "title": "治疗中枢神经系统退行性疾病药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/16-第16章-治疗中枢神经系统退行性疾病药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 17,
+     "title": "第17章 解热镇痛抗炎药与抗痛风药",
+     "durationSec": 1530,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 17,
+      "title": "第17章 解热镇痛抗炎药与抗痛风药"
+     },
+     "textbook": [
+      {
+       "no": 17,
+       "title": "解热镇痛抗炎药与抗痛风药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/17-第17章-解热镇痛抗炎药与抗痛风药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 18,
+     "title": "第18章 镇痛药",
+     "durationSec": 1381,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 18,
+      "title": "第18章 镇痛药"
+     },
+     "textbook": [
+      {
+       "no": 18,
+       "title": "镇痛药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/18-第18章-镇痛药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 19,
+     "title": "第19章 中枢兴奋药",
+     "durationSec": 1331,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 19,
+      "title": "第19章 中枢兴奋药"
+     },
+     "textbook": [
+      {
+       "no": 19,
+       "title": "中枢兴奋药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/19-第19章-中枢兴奋药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 20,
+     "title": "第20章 组胺及抗组胺药",
+     "durationSec": 1295,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 20,
+      "title": "第20章 组胺及抗组胺药"
+     },
+     "textbook": [
+      {
+       "no": 20,
+       "title": "组胺及抗组胺药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/20-第20章-组胺及抗组胺药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 21,
+     "title": "第21章 其他影响自体活性物质的药物",
+     "durationSec": 1269,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 21,
+      "title": "第21章 其他影响自体活性物质的药物"
+     },
+     "textbook": [
+      {
+       "no": 21,
+       "title": "其他影响自体活性物质的药物",
+       "file": "textbooks/09-jichu/12-yaoli-xue/21-第21章-其他影响自体活性物质的药物.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 22,
+     "title": "第22章 作用于心血管系统离子通道的药物",
+     "durationSec": 1258,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 22,
+      "title": "第22章 作用于心血管系统离子通道的药物"
+     },
+     "textbook": [
+      {
+       "no": 22,
+       "title": "作用于心血管系统离子通道的药物",
+       "file": "textbooks/09-jichu/12-yaoli-xue/22-第22章-作用于心血管系统离子通道的药物.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 23,
+     "title": "第23章 治疗慢性心功能不全的药物",
+     "durationSec": 1501,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 23,
+      "title": "第23章 治疗慢性心功能不全的药物"
+     },
+     "textbook": [
+      {
+       "no": 23,
+       "title": "治疗慢性心功能不全的药物",
+       "file": "textbooks/09-jichu/12-yaoli-xue/23-第23章-治疗慢性心功能不全的药物.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 24,
+     "title": "第24章 抗高血压药",
+     "durationSec": 1373,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 24,
+      "title": "第24章 抗高血压药"
+     },
+     "textbook": [
+      {
+       "no": 24,
+       "title": "抗高血压药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/24-第24章-抗高血压药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 25,
+     "title": "第25章 抗心绞痛药",
+     "durationSec": 1478,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 25,
+      "title": "第25章 抗心绞痛药"
+     },
+     "textbook": [
+      {
+       "no": 25,
+       "title": "抗心绞痛药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/25-第25章-抗心绞痛药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 26,
+     "title": "第26章 抗心律失常药",
+     "durationSec": 1587,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 26,
+      "title": "第26章 抗心律失常药"
+     },
+     "textbook": [
+      {
+       "no": 26,
+       "title": "抗心律失常药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/26-第26章-抗心律失常药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 27,
+     "title": "第27章 抗动脉粥样硬化药",
+     "durationSec": 1243,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 27,
+      "title": "第27章 抗动脉粥样硬化药"
+     },
+     "textbook": [
+      {
+       "no": 27,
+       "title": "抗动脉粥样硬化药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/27-第27章-抗动脉粥样硬化药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 28,
+     "title": "第28章 利尿药与脱水药",
+     "durationSec": 1352,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 28,
+      "title": "第28章 利尿药与脱水药"
+     },
+     "textbook": [
+      {
+       "no": 28,
+       "title": "利尿药与脱水药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/28-第28章-利尿药与脱水药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 29,
+     "title": "第29章 消化系统药",
+     "durationSec": 1073,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 29,
+      "title": "第29章 消化系统药"
+     },
+     "textbook": [
+      {
+       "no": 29,
+       "title": "消化系统药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/29-第29章-消化系统药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 30,
+     "title": "第30章 呼吸系统药",
+     "durationSec": 1046,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 30,
+      "title": "第30章 呼吸系统药"
+     },
+     "textbook": [
+      {
+       "no": 30,
+       "title": "呼吸系统药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/30-第30章-呼吸系统药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 31,
+     "title": "第31章 子宫兴奋药",
+     "durationSec": 1537,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 31,
+      "title": "第31章 子宫兴奋药"
+     },
+     "textbook": [
+      {
+       "no": 31,
+       "title": "子宫兴奋药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/31-第31章-子宫兴奋药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 32,
+     "title": "第32章 抗贫血药",
+     "durationSec": 1582,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 32,
+      "title": "第32章 抗贫血药"
+     },
+     "textbook": [
+      {
+       "no": 32,
+       "title": "抗贫血药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/32-第32章-抗贫血药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 33,
+     "title": "第33章 作用于凝血系统药物",
+     "durationSec": 1487,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 33,
+      "title": "第33章 作用于凝血系统药物"
+     },
+     "textbook": [
+      {
+       "no": 33,
+       "title": "作用于凝血系统药物",
+       "file": "textbooks/09-jichu/12-yaoli-xue/33-第33章-作用于凝血系统药物.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 34,
+     "title": "第34章 肾上腺皮质激素类药",
+     "durationSec": 1649,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 34,
+      "title": "第34章 肾上腺皮质激素类药"
+     },
+     "textbook": [
+      {
+       "no": 34,
+       "title": "肾上腺皮质激素类药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/34-第34章-肾上腺皮质激素类药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 35,
+     "title": "第35章 甲状腺激素与抗甲状腺药",
+     "durationSec": 1078,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 35,
+      "title": "第35章 甲状腺激素与抗甲状腺药"
+     },
+     "textbook": [
+      {
+       "no": 35,
+       "title": "甲状腺激素与抗甲状腺药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/35-第35章-甲状腺激素与抗甲状腺药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 36,
+     "title": "第36章 降血糖药",
+     "durationSec": 976,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 36,
+      "title": "第36章 降血糖药"
+     },
+     "textbook": [
+      {
+       "no": 36,
+       "title": "降血糖药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/36-第36章-降血糖药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 37,
+     "title": "第37章 性激素类药及避孕药",
+     "durationSec": 924,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 37,
+      "title": "第37章 性激素类药及避孕药"
+     },
+     "textbook": [
+      {
+       "no": 37,
+       "title": "性激素类药及避孕药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/37-第37章-性激素类药及避孕药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 38,
+     "title": "第38章 抗病原微生物药物概论",
+     "durationSec": 958,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 38,
+      "title": "第38章 抗病原微生物药物概论"
+     },
+     "textbook": [
+      {
+       "no": 38,
+       "title": "抗病原微生物药物概论",
+       "file": "textbooks/09-jichu/12-yaoli-xue/38-第38章-抗病原微生物药物概论.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 39,
+     "title": "第39章 人工合成抗菌药",
+     "durationSec": 1377,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 39,
+      "title": "第39章 人工合成抗菌药"
+     },
+     "textbook": [
+      {
+       "no": 39,
+       "title": "人工合成抗菌药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/39-第39章-人工合成抗菌药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 40,
+     "title": "第40章 β-内酰胺类抗生素",
+     "durationSec": 1482,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 40,
+      "title": "第40章 β-内酰胺类抗生素"
+     },
+     "textbook": [
+      {
+       "no": 40,
+       "title": "β-内酰胺类抗生素",
+       "file": "textbooks/09-jichu/12-yaoli-xue/40-第40章-β-内酰胺类抗生素.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 41,
+     "title": "第41章 大环内酯类、林可霉素类及多肽类抗生素",
+     "durationSec": 1398,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 41,
+      "title": "第41章 大环内酯类、林可霉素类及多肽类抗生素"
+     },
+     "textbook": [
+      {
+       "no": 41,
+       "title": "大环内酯类、林可霉素类及多肽类抗生素",
+       "file": "textbooks/09-jichu/12-yaoli-xue/41-第41章-大环内酯类、林可霉素类及多肽类抗生素.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 42,
+     "title": "第42章 氨基糖苷类抗生素",
+     "durationSec": 1497,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 42,
+      "title": "第42章 氨基糖苷类抗生素"
+     },
+     "textbook": [
+      {
+       "no": 42,
+       "title": "氨基糖苷类抗生素",
+       "file": "textbooks/09-jichu/12-yaoli-xue/42-第42章-氨基糖苷类抗生素.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 43,
+     "title": "第43章 四环素类与氯霉素类",
+     "durationSec": 1188,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 43,
+      "title": "第43章 四环素类与氯霉素类"
+     },
+     "textbook": [
+      {
+       "no": 43,
+       "title": "四环素类与氯霉素类",
+       "file": "textbooks/09-jichu/12-yaoli-xue/43-第43章-四环素类与氯霉素类.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 44,
+     "title": "第44章 抗真菌药与抗病毒药",
+     "durationSec": 1042,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 44,
+      "title": "第44章 抗真菌药与抗病毒药"
+     },
+     "textbook": [
+      {
+       "no": 44,
+       "title": "抗真菌药与抗病毒药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/44-第44章-抗真菌药与抗病毒药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 45,
+     "title": "第45章 抗结核病药及抗麻风病药",
+     "durationSec": 1053,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 45,
+      "title": "第45章 抗结核病药及抗麻风病药"
+     },
+     "textbook": [
+      {
+       "no": 45,
+       "title": "抗结核病药及抗麻风病药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/45-第45章-抗结核病药及抗麻风病药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 46,
+     "title": "第46章 抗寄生虫药",
+     "durationSec": 1380,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 46,
+      "title": "第46章 抗寄生虫药"
+     },
+     "textbook": [
+      {
+       "no": 46,
+       "title": "抗寄生虫药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/46-第46章-抗寄生虫药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 47,
+     "title": "第47章 抗恶性肿瘤药",
+     "durationSec": 1445,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 47,
+      "title": "第47章 抗恶性肿瘤药"
+     },
+     "textbook": [
+      {
+       "no": 47,
+       "title": "抗恶性肿瘤药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/47-第47章-抗恶性肿瘤药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 48,
+     "title": "第48章 免疫抑制药",
+     "durationSec": 1681,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 48,
+      "title": "第48章 免疫抑制药"
+     },
+     "textbook": [
+      {
+       "no": 48,
+       "title": "免疫抑制药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/48-第48章-免疫抑制药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    },
+    {
+     "lectureNo": 49,
+     "title": "第49章 免疫增强药",
+     "durationSec": 1679,
+     "cues": 0,
+     "source": "platform",
+     "teaching": {
+      "no": 49,
+      "title": "第49章 免疫增强药"
+     },
+     "textbook": [
+      {
+       "no": 49,
+       "title": "免疫增强药",
+       "file": "textbooks/09-jichu/12-yaoli-xue/49-第49章-免疫增强药.md"
+      }
+     ],
+     "linkedBy": "order",
+     "keyword": null,
+     "unitEvidence": null
+    }
+   ]
+  }
+ ]
+}

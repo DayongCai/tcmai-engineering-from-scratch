@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/06-shengli-xue/05-huxi/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 131.23,
+  "estimatedCues": 0,
+  "videoSeconds": 131.248667,
+  "videoMinusNarrationSeconds": 0.019,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.78,
+      "seconds": 5.78,
+      "estimated": false,
+      "text": "第 5 章 · 呼吸：通气·换气·气体运输·呼吸调节",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.78,
+      "end": 20.95,
+      "seconds": 15.17,
+      "estimated": false,
+      "text": "「气体分子总是从分压较高的区域向分压较低的区域净移动，扩散的动力来自两侧气体之间的分压差」——教材·第5章·5.2.1（《生理学·第5章·5.2.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.95,
+      "end": 43.61,
+      "seconds": 22.66,
+      "estimated": false,
+      "text": "你能背出「缺氧刺激呼吸」，但被问「那为什么给缺氧的人吸纯氧有时反而更危险」，就答不上来了；能背出「浅而快的呼吸不好」，却说不出好在哪、坏在哪。呼吸这一章的方向题特别多，而方向答错的代价比记不住更大——它不会让你少得一分，会让你把机制理解反。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 43.61,
+      "end": 66.36,
+      "seconds": 22.75,
+      "estimated": false,
+      "text": "环境逼迫（在病房里看到一个呼吸急促的人，你必须当场判断这是「通气够但效率低」还是「通气真的不够」，两种情况的处理方向不同）+ 知识积累（分压差 × 无效腔 × 通气血流匹配 = 一套能对任何呼吸现象给出方向判断的框架，而不是一堆并列的名词）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 66.36,
+      "end": 119.93,
+      "seconds": 53.57,
+      "estimated": false,
+      "text": "能用「外呼吸—运输—内呼吸」一条链说明呼吸的三个环节，并指出每一环的驱动力 能说清平静呼气为什么是被动的，胸膜腔内负压解决了什么问题 能用无效腔解释「每分通气量够、肺泡通气量不够」，并判出浅快与深慢的方向差 能说明分压差是扩散的唯一动力，并解释二氧化碳分压差小却扩散顺利的原因 能说清通气血流比值「两个方向都错」，并分辨无效腔样与分流样 能画出氧解离曲线的形状意义，并说出四个使曲线右移的因素 能指出二氧化碳与低氧在化学感受器上的分工差别，以及为什么这条最容易背反 能用词频剖面说明本章为什么组织层最厚",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 119.93,
+      "end": 131.23,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

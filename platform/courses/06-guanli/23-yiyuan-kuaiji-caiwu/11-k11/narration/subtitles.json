@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/06-guanli/23-yiyuan-kuaiji-caiwu/11-k11/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 55.83,
+  "estimatedCues": 0,
+  "videoSeconds": 55.860667,
+  "videoMinusNarrationSeconds": 0.031,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.18,
+      "seconds": 4.18,
+      "estimated": false,
+      "text": "第 11 章 · 医院资金管理与筹资投资",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.18,
+      "end": 17.21,
+      "seconds": 13.03,
+      "estimated": false,
+      "text": "「《医院会计与财务管理·医院资金管理与筹资投资》」——教材第11章。本章要回答的是：医院资金管理与筹资投资：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 17.21,
+      "end": 21.75,
+      "seconds": 4.54,
+      "estimated": false,
+      "text": "医院资金管理与筹资投资：本课第 11 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 21.75,
+      "end": 44.53,
+      "seconds": 22.78,
+      "estimated": false,
+      "text": "环境逼迫（财务的判据是「账实相符、钱从哪里来到哪里去说得清」）+ 知识积累（本章 11 单元 16,294 汉字；三辨主 制度与规则 95；四位面（章群结构）主 内控与信息化 16294；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 44.53,
+      "end": 55.83,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

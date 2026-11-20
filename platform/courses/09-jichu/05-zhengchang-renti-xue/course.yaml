@@ -1,0 +1,138 @@
+# [tcmP] 课程编排 · 09-jichu/05-zhengchang-renti-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/09-jichu/05-zhengchang-renti-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 05-zhengchang-renti-xue
+title: 正常人体学
+en: Normal Human Structure & Function
+dept: 09-jichu
+dept_title: 基础医学院
+semester: 2
+stage: sheng
+hours: 72
+chapters_target: 18
+bridge: 结构与功能→多模态融合 / 指标体系→特征工程
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-gaishu-yu-cengci
+    title: 第1章 正常人体学概述与人体构造层次
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.08
+  - slug: 02-xibao-yu-jiben-zuzhi
+    title: 第2章 细胞与基本组织
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.97
+  - slug: 03-fasheng-yu-fayu-gaishu
+    title: 第3章 人体发生与发育概述
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1
+  - slug: 04-yundong-xitong
+    title: 第4章 运动系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 05-xiaohua-xitong
+    title: 第5章 消化系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 06-huxi-xitong
+    title: 第6章 呼吸系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 07-miniao-xitong
+    title: 第7章 泌尿系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 08-shengzhi-xitong
+    title: 第8章 生殖系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 09-maiguan-xitong
+    title: 第9章 脉管系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.95
+  - slug: 10-ganjue-qiguan
+    title: 第10章 感觉器官
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 11-shenjing-xitong
+    title: 第11章 神经系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.95
+  - slug: 12-neifenmi-xitong
+    title: 第12章 内分泌系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.98
+  - slug: 13-xueye-yu-neihuanjing
+    title: 第13章 血液与内环境稳态
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 14-xunhuan-huxi-tiaojie
+    title: 第14章 血液循环与呼吸功能调节
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.07
+  - slug: 15-xiaohua-nengliang-daixie
+    title: 第15章 消化吸收与能量代谢
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.05
+  - slug: 16-paixie-tiwen-tiye
+    title: 第16章 排泄与体温与体液调节
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.06
+  - slug: 17-zhengti-tiaojie-baohu
+    title: 第17章 人体功能的整体调节与保护要求
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.09
+  - slug: 18-pingtai-lianjie
+    title: 第18章 正常人体学与 tcmP 平台
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.08

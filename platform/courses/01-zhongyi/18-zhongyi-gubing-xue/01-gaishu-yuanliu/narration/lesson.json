@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/18-zhongyi-gubing-xue/chapters/01-gaishu-yuanliu/docs/zh.md",
+  "course": "18-zhongyi-gubing-xue",
+  "dept": "01-zhongyi",
+  "chapter": "01-gaishu-yuanliu",
+  "title": "第 1 章 · 概论与源流：骨病学的边界先与骨折筋伤划清",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 77,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 1 章 · 概论与源流：骨病学的边界先与骨折筋伤划清",
+      "slide": "title",
+      "spoken": "第 1 章 · 概论与源流：骨病学的边界先与骨折筋伤划清",
+      "estimateSeconds": 5,
+      "audio": "001.mp3",
+      "audioSeconds": 5.78
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「肾气热，则腰脊不举，骨枯而髓减，发为骨痿」——教材·第1章·1.2.1（《素问·痿论》）",
+      "slide": "title",
+      "spoken": "「肾气热，则腰脊不举，骨枯而髓减，发为骨痿」——教材·第1章·1.2.1（《素问·痿论》）",
+      "estimateSeconds": 10,
+      "audio": "002.mp3",
+      "audioSeconds": 9.17
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "骨病学与骨伤科学同属骨伤科，学生第一件事就是分不清边界：骨折、筋伤、脱位是「伤」，骨髓炎、骨结核、骨肿瘤、骨质疏松、骨坏死是「病」。分不清的后果很具体——把骨肿瘤的夜间痛当软组织劳损、把骨结核的冷脓肿当普通感染，都发生在边界模糊的那一步。",
+      "slide": "problem",
+      "spoken": "骨病学与骨伤科学同属骨伤科，学生第一件事就是分不清边界：骨折、筋伤、脱位是「伤」，骨髓炎、骨结核、骨肿瘤、骨质疏松、骨坏死是「病」。分不清的后果很具体——把骨肿瘤的夜间痛当软组织劳损、把骨结核的冷脓肿当普通感染，都发生在边界模糊的那一步。",
+      "estimateSeconds": 26,
+      "audio": "003.mp3",
+      "audioSeconds": 25.18
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（同一病人可同时有伤与病，如病理性骨折）+ 知识积累（本章 4 单元 9,005 汉字，三辨主**病机 100**——源流章谈的是「为什么会病」，不是「怎么治」；引书 **38 部 60 次**，为全书最高）",
+      "slide": "roots",
+      "spoken": "环境逼迫（同一病人可同时有伤与病，如病理性骨折）+ 知识积累（本章 4 单元 9,005 汉字，三辨主病机 100——源流章谈的是「为什么会病」，不是「怎么治」；引书 38 部 60 次，为全书最高）",
+      "estimateSeconds": 20,
+      "audio": "004.mp3",
+      "audioSeconds": 17.4
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "text": "```bash\ncd departments/01-zhongyi/18-zhongyi-gubing-xue/chapters/01-gaishu-yuanliu\nnode code/main.js\nnode --test code/main.test.js\n```",
+      "slide": "verify",
+      "heading": "验证",
+      "spoken": "这一段以代码实现为主，请看画面上的代码块。",
+      "estimateSeconds": 5,
+      "audio": "005.mp3",
+      "audioSeconds": 4.51
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 73.34,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

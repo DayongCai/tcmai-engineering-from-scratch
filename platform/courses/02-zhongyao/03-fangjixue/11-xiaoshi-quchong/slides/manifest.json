@@ -1,0 +1,37 @@
+{
+  "chapter": "11-xiaoshi-quchong",
+  "slideCount": 6,
+  "segmentCount": 6,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 26
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 21
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 127
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 70
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 146
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 52
+    }
+  ]
+}

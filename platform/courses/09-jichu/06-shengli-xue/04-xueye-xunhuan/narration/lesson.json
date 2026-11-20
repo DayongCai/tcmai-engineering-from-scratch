@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/09-jichu/06-shengli-xue/chapters/04-xueye-xunhuan/docs/zh.md",
+  "course": "06-shengli-xue",
+  "dept": "09-jichu",
+  "chapter": "04-xueye-xunhuan",
+  "title": "第 4 章 · 血液循环：泵血·血管·调节·器官循环",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 133,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 4 章 · 血液循环：泵血·血管·调节·器官循环",
+      "slide": "title",
+      "spoken": "第 4 章 · 血液循环：泵血·血管·调节·器官循环",
+      "estimateSeconds": 5,
+      "audio": "001.mp3",
+      "audioSeconds": 6.02
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「压力梯度是血液流动的直接动力，血液总是由压力较高的腔室或血管流向压力较低的腔室或血管」——教材·第4章·4.1.2（《生理学·第4章·4.1.2》）",
+      "slide": "title",
+      "spoken": "「压力梯度是血液流动的直接动力，血液总是由压力较高的腔室或血管流向压力较低的腔室或血管」——教材·第4章·4.1.2（《生理学·第4章·4.1.2》）",
+      "estimateSeconds": 16,
+      "audio": "002.mp3",
+      "audioSeconds": 15.29
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "你能背出「收缩期射血、舒张期充盈」，但被问「为什么心室一收缩，心肌自己的供血反而减少」，多数人答不上来。原因不在记性，而在你把「泵」和「管」当成两章分开背了——它们描述的是同一个闭环：泵造压差，管把压差耗成流量。",
+      "slide": "problem",
+      "spoken": "你能背出「收缩期射血、舒张期充盈」，但被问「为什么心室一收缩，心肌自己的供血反而减少」，多数人答不上来。原因不在记性，而在你把「泵」和「管」当成两章分开背了——它们描述的是同一个闭环：泵造压差，管把压差耗成流量。",
+      "estimateSeconds": 23,
+      "audio": "003.mp3",
+      "audioSeconds": 20.93
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（听心音、摸脉搏、看监护屏，每个动作都要求你当场说出「此刻是哪一相、哪个瓣膜在动」，说不出来就接不上老师下一句）+ 知识积累（瓣膜状态 × 压力方向 × 容积方向 = 一个能把任一心动瞬间归位的判别式，而不是四句要背的话）",
+      "slide": "roots",
+      "spoken": "环境逼迫（听心音、摸脉搏、看监护屏，每个动作都要求你当场说出「此刻是哪一相、哪个瓣膜在动」，说不出来就接不上老师下一句）+ 知识积累（瓣膜状态 × 压力方向 × 容积方向 = 一个能把任一心动瞬间归位的判别式，而不是四句要背的话）",
+      "estimateSeconds": 23,
+      "audio": "004.mp3",
+      "audioSeconds": 22.13
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "text": "- 能用「泵—管—液」一个闭环解释血液循环，并说出压力梯度为什么是唯一动力\n- 能用两个瓣膜状态加收缩期或舒张期，把任一心动瞬间判断到时相，并说明容积方向为什么是推论而不是输入\n- 能说清心肌为什么不会强直收缩，以及闰盘与细胞外钙各自解决了什么问题\n- 能按结构把血管分成四类功能血管，并解释口径为什么是血压调节最有力的杠杆\n- 能把动脉血压的四条形成条件逐条回教材正文核对，并说明缺任一条会怎样\n- 能说清神经、体液、自身调节三者的时间尺度差别，以及压力感受性反射为什么会「失灵」\n- 能用词频剖面证明本章以机能为轴，并指认「组织」这一层落在哪一节",
+      "slide": "objectives",
+      "heading": "学习目标",
+      "spoken": "能用「泵—管—液」一个闭环解释血液循环，并说出压力梯度为什么是唯一动力\n能用两个瓣膜状态加收缩期或舒张期，把任一心动瞬间判断到时相，并说明容积方向为什么是推论而不是输入\n能说清心肌为什么不会强直收缩，以及闰盘与细胞外钙各自解决了什么问题\n能按结构把血管分成四类功能血管，并解释口径为什么是血压调节最有力的杠杆\n能把动脉血压的四条形成条件逐条回教材正文核对，并说明缺任一条会怎样\n能说清神经、体液、自身调节三者的时间尺度差别，以及压力感受性反射为什么会「失灵」\n能用词频剖面证明本章以机能为轴，并指认「组织」这一层落在哪一节",
+      "estimateSeconds": 55,
+      "audio": "005.mp3",
+      "audioSeconds": 56.06
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 131.74,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

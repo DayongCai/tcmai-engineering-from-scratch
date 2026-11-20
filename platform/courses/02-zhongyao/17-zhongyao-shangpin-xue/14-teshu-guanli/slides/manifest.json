@@ -1,0 +1,32 @@
+{
+  "chapter": "14-teshu-guanli",
+  "slideCount": 5,
+  "segmentCount": 5,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 14
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 90
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 42
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 108
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 52
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+# [tcmP] 课程编排 · 05-huli/08-waike-huli-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/05-huli/08-waike-huli-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 08-waike-huli-xue
+title: 外科护理学
+en: Surgical Nursing
+dept: 05-huli
+dept_title: 护理系
+semester: 5
+stage: zhang
+hours: 72
+chapters_target: 13
+bridge: 围手术期→流程编排 / 并发症→风险预测
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-gaishu-moshi
+    title: 第1章 外科护理概述与工作模式
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.01
+  - slug: 02-weishoushu-jichu
+    title: 第2章 围手术期护理基础
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1
+  - slug: 03-pinggu-jishu
+    title: 第3章 外科护理评估、记录与常用技术
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.05
+  - slug: 04-ganran-yeti
+    title: 第4章 感染防控与液体治疗、管路护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.03
+  - slug: 05-bingfazheng
+    title: 第5章 围手术期并发症的预防与护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.04
+  - slug: 06-puwai
+    title: 第6章 普通外科疾病护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97
+  - slug: 07-shenwai
+    title: 第7章 神经外科疾病护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.99
+  - slug: 08-xiongwai
+    title: 第8章 心胸外科疾病护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99
+  - slug: 09-miniao
+    title: 第9章 泌尿外科疾病护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.98
+  - slug: 10-guke
+    title: 第10章 骨科疾病护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 11-xueguan-shaoshang
+    title: 第11章 血管外科与烧伤整形护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.02
+  - slug: 12-shoushushi-mazui
+    title: 第12章 手术室护理与麻醉复苏期护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.03
+  - slug: 13-zhiliang-pingtai
+    title: 第13章 外科护理质量风险与平台
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.02

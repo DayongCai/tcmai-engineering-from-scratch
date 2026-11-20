@@ -98,18 +98,32 @@ const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'tcmai-tts-'));
 
 function synthEdge(text, outWav) {
   // edge-tts 只能输出 mp3；先出 mp3，后续若需转码由 ffmpeg 处理
+  // timeout 必给：edge-tts 在远端掐断时会**无限挂着**（2026-11-18 实测：第 4 章第 5 段
+  // 挂 20 分钟不返回，整批 58 章就停在那里）。超时被杀 → 走下面的重试 / SAPI 降级，
+  // 而不是让一条挂死的子进程拖住整批。
   const r = spawnSync(edgeTts, [
     '--voice', 'zh-CN-XiaoxiaoNeural',
     '--text', text,
     '--write-media', outWav,
-  ], { encoding: 'utf8' });
+  ], { encoding: 'utf8', timeout: 150000 });
   // 退出码 0 不等于出了音频：实测过 edge-tts 远端断开仍 exit 0、留下 0 字节文件，
   // 后续 ffprobe 拿不到时长，字幕层只好按字数猜——所以这里必须验体积。
-  if (r.status !== 0) return false;
+  if (r.error || r.status !== 0) {
+    // 把 stderr 尾巴带出来：之前只打「合成失败」，遇到整章 0 秒时无从判断是网络、限流还是文本问题
+    const tail = String(r.stderr || r.error?.message || '').trim().split('\n').slice(-2).join(' | ');
+    if (tail) console.error(`     · edge-tts: ${tail}`);
+    return false;
+  }
   try {
     return fs.statSync(outWav).size >= 1024;
   } catch {
     return false;
+  } finally {
+    // 失败时把 0 字节残留删掉：留着它会让 build_video 读到「Invalid data」，
+    // 而人看到的是一个「存在但打不开」的 mp3（这比缺文件更难查）。
+    try {
+      if (fs.statSync(outWav).size < 1024) fs.unlinkSync(outWav);
+    } catch { /* 没生成过就算了 */ }
   }
 }
 
@@ -270,6 +284,20 @@ for (const ch of chapters) {
       console.error(`     ✗ 第 ${seg.n} 段无可用时长（文件${f ? '在' : '缺失'}）`);
     }
   }
+
+  // 收尾清扫：把本章 <1 KB 的 mp3 删掉。
+  // 为什么不在失败当场删就够了：edge-tts 被 timeout 杀掉后仍会留下 0 字节文件，
+  // 而删除时刻可能早于它落盘（实测 03-fangfa-xiaorong 的 004/005 就是这样漏下的）。
+  // 留着它们，下一轮 build_video 会读到「Invalid data」——一个「存在但打不开」的假配音。
+  let swept = 0;
+  for (const f of fs.readdirSync(audioDir)) {
+    if (!f.endsWith('.mp3')) continue;
+    const p = path.join(audioDir, f);
+    try {
+      if (fs.statSync(p).size < 1024) { fs.unlinkSync(p); swept += 1; }
+    } catch { /* 并发删掉了 */ }
+  }
+  if (swept) console.log(`     ⚠ 清掉 ${swept} 个空/损坏的 mp3（<1 KB）`);
 
   // 回填真实时长到讲稿（估算值保留，便于对照）
   narr.audioBackend = backend.label;

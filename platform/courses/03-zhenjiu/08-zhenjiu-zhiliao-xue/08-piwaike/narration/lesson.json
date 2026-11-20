@@ -1,0 +1,67 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/08-piwaike/docs/zh.md",
+  "course": "08-zhenjiu-zhiliao-xue",
+  "dept": "03-zhenjiu",
+  "chapter": "08-piwaike",
+  "title": "第 8 章 · 皮外伤科病证",
+  "segmentCount": 5,
+  "estimateTotalSeconds": 56,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 8 章 · 皮外伤科病证",
+      "slide": "title",
+      "spoken": "第 8 章 · 皮外伤科病证",
+      "estimateSeconds": 3,
+      "audio": "001.mp3",
+      "audioSeconds": 2.93
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「《针灸治疗学·皮外伤科病证》」——教材篇名级；课程章号对应教材第 9 章。本章要回答的是：皮外伤科病证的处方能不能被别人照着做出来。",
+      "slide": "title",
+      "spoken": "「《针灸治疗学·皮外伤科病证》」——教材篇名级；课程章号对应教材第 9 章。本章要回答的是：皮外伤科病证的处方能不能被别人照着做出来。",
+      "estimateSeconds": 14,
+      "audio": "002.mp3",
+      "audioSeconds": 13.68
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "皮损局部与远端配穴并用，围刺与放血在此出现。",
+      "slide": "problem",
+      "spoken": "皮损局部与远端配穴并用，围刺与放血在此出现。",
+      "estimateSeconds": 5,
+      "audio": "003.mp3",
+      "audioSeconds": 5.4
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（治疗学的判据是「处方可照做」：主穴、配穴、操作、疗程四件齐了才叫处方）+ 知识积累（本章 66 单元 17,152 汉字；三辨主 **治法与处方 182**；四位面（病证门类）主 **痛证 133**；引书 **37 部 48 次**；数值类命中 30）",
+      "slide": "roots",
+      "spoken": "环境逼迫（治疗学的判据是「处方可照做」：主穴、配穴、操作、疗程四件齐了才叫处方）+ 知识积累（本章 66 单元 17,152 汉字；三辨主 治法与处方 182；四位面（病证门类）主 痛证 133；引书 37 部 48 次；数值类命中 30）",
+      "estimateSeconds": 23,
+      "audio": "004.mp3",
+      "audioSeconds": 25.3
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "005.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 58.61,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

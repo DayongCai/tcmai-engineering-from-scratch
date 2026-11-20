@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/02-shuxue-xue/03-shou-san-yin/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 55.62,
+  "estimatedCues": 0,
+  "videoSeconds": 55.652667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 2.93,
+      "seconds": 2.93,
+      "estimated": false,
+      "text": "第 3 章 · 手三阴经腧穴",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 2.93,
+      "end": 13.92,
+      "seconds": 10.99,
+      "estimated": false,
+      "text": "「《灵枢·九针十二原》」——教材·第4章·4.3.1。本章要回答的是：手三阴经的穴位为什么集中在肘以下。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 13.92,
+      "end": 23.78,
+      "seconds": 9.86,
+      "estimated": false,
+      "text": "上肢阴经的分布与经脉循行方向一致，但只背「某某穴在某处」，就说不出为什么大多数要穴在肘腕之间。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 23.78,
+      "end": 44.32,
+      "seconds": 20.54,
+      "estimated": false,
+      "text": "环境逼迫（取穴是在人身上完成的，位置差一线，疗效差一层）+ 知识积累（本章 3 单元 11,114 汉字；三辨主 主治 380；四位面（部位）主 四肢 409；引书 3 部；数值类命中 269）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 44.32,
+      "end": 55.62,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

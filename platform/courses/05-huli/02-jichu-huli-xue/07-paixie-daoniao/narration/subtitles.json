@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/02-jichu-huli-xue/07-paixie-daoniao/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 63.04,
+  "estimatedCues": 0,
+  "videoSeconds": 63.072667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.48,
+      "seconds": 3.48,
+      "estimated": false,
+      "text": "第 7 章 · 排泄与导尿护理技能",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.48,
+      "end": 21.5,
+      "seconds": 18.02,
+      "estimated": false,
+      "text": "「《护理综合技能·第八章 排泄与导尿护理类技能》」——本章讲排泄与导尿，教材无篇名级引文；篇名按该书章目补足，非本章原文篇名。本章要回答的是：导尿最该被记住的风险是哪一条。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 21.5,
+      "end": 30.19,
+      "seconds": 8.69,
+      "estimated": false,
+      "text": "导管相关尿路感染：留置时间是最强的危险因素，所以「是否需要留置」比「怎么插」更决定结局。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 30.19,
+      "end": 51.74,
+      "seconds": 21.55,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 1 单元 19,816 汉字；三辨主 观察与评价 470；四位面（操作环节）主 排泄与体位 69；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 51.74,
+      "end": 63.04,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

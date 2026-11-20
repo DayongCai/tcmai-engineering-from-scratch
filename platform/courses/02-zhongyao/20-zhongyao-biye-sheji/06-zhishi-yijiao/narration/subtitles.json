@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/20-zhongyao-biye-sheji/06-zhishi-yijiao/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 62.15,
+  "estimatedCues": 0,
+  "videoSeconds": 62.182667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.1,
+      "seconds": 4.1,
+      "estimated": false,
+      "text": "第 6 章 · 知识移交：实验记录与交接",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.1,
+      "end": 20.18,
+      "seconds": 16.08,
+      "estimated": false,
+      "text": "「《中药毕业设计与知识移交·第6章》」——派生课无本章原文篇名；台账锚点见 standards/biye/。本章要回答的是：知识移交：实验记录与交接这一环节的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.18,
+      "end": 26.08,
+      "seconds": 5.9,
+      "estimated": false,
+      "text": "把方法交出去：工艺与质量的数字化记录，是移交的全部内容。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 26.08,
+      "end": 50.85,
+      "seconds": 24.77,
+      "estimated": false,
+      "text": "环境逼迫（中药毕设的失败大多是「指标先定、样品不代表性」：做了一年，结论只对那批样成立）+ 知识积累（本章 4 单元 13,843 汉字；三辨主 实施与分析 190；四位面（毕设环节）主 实施与验证 158；引书 6 部 11 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 50.85,
+      "end": 62.15,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

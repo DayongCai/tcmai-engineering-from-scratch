@@ -1,0 +1,156 @@
+# [tcmP] 课程编排 · 09-jichu/10-bingli-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/09-jichu/10-bingli-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 10-bingli-xue
+title: 病理学
+en: Pathology
+dept: 09-jichu
+dept_title: 基础医学院
+semester: 3
+stage: sheng
+hours: 72
+chapters_target: 21
+bridge: 病变形态→病理图像分类 / 病机演变→因果图
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xulun
+    title: 第1章 绪论
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.55
+    measured_minutes: 1.45
+  - slug: 02-jibing-gailun
+    title: 第2章 疾病概论
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.77
+    measured_minutes: 1.62
+  - slug: 03-shiying-sunshang-xiufu
+    title: 第3章 细胞和组织的适应、损伤与修复
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.8
+    measured_minutes: 1.73
+  - slug: 04-jubu-xueye-xunhuan-zhangai
+    title: 第4章 局部血液循环障碍
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.6
+    measured_minutes: 1.52
+  - slug: 05-yanzheng
+    title: 第5章 炎症
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.95
+    measured_minutes: 1.85
+  - slug: 06-zhongliu
+    title: 第6章 肿瘤
+    segments: 5
+    video: rendered
+    estimate_minutes: 2.12
+    measured_minutes: 1.99
+  - slug: 07-shui-dianjiezhi-wenluan
+    title: 第7章 水、电解质代谢紊乱
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.98
+    measured_minutes: 1.87
+  - slug: 08-shuizhong
+    title: 第8章 水肿
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.68
+    measured_minutes: 1.61
+  - slug: 09-suanjian-pingheng-wenluan
+    title: 第9章 酸碱平衡紊乱
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.75
+    measured_minutes: 1.65
+  - slug: 10-queyang
+    title: 第10章 缺氧
+    segments: 5
+    video: rendered
+    estimate_minutes: 2.03
+    measured_minutes: 1.92
+  - slug: 11-fare
+    title: 第11章 发热
+    segments: 5
+    video: rendered
+    estimate_minutes: 2.05
+    measured_minutes: 1.95
+  - slug: 12-yingji-jibing
+    title: 第12章 应激与疾病
+    segments: 5
+    video: rendered
+    estimate_minutes: 2.22
+    measured_minutes: 2.09
+  - slug: 13-xiuke
+    title: 第13章 休克
+    segments: 8
+    video: rendered
+    estimate_minutes: 4.73
+    measured_minutes: 4.37
+  - slug: 14-dic
+    title: 第14章 弥散性血管内凝血
+    segments: 8
+    video: rendered
+    estimate_minutes: 4.23
+    measured_minutes: 4.08
+  - slug: 15-queshangzaiguanzhu-sunshang
+    title: 第15章 缺血-再灌注损伤
+    segments: 8
+    video: rendered
+    estimate_minutes: 4.68
+    measured_minutes: 4.62
+  - slug: 16-xinxueguan-jibing
+    title: 第16章 心血管系统疾病
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.68
+    measured_minutes: 1.58
+  - slug: 17-huxi-jibing
+    title: 第17章 呼吸系统疾病
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.57
+    measured_minutes: 1.5
+  - slug: 18-xiaohua-jibing
+    title: 第18章 消化系统疾病
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.6
+    measured_minutes: 1.54
+  - slug: 19-miniao-shengzhi-jibing
+    title: 第19章 泌尿及生殖系统疾病
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.87
+    measured_minutes: 1.76
+  - slug: 20-shenjing-neifenmi-jibing
+    title: 第20章 常见神经及内分泌系统疾病
+    segments: 5
+    video: rendered
+    estimate_minutes: 2.07
+    measured_minutes: 1.9
+  - slug: 21-chuanranbing-jishengchong
+    title: 第21章 常见传染病及寄生虫病
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.68
+    measured_minutes: 1.63

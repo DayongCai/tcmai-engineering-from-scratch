@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（文本处理的判据是「抽得出、说得清出处、退得回人」：抽不准就标不确定，不许编）+ 知识积累（本章 13 单元 11,644 汉字；三辨主 **模型与推断 393**；四位面（章群结构）主 **标注与规则 11644**；引书 **2 部 2 次**；数值类命中 0）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（10 内容章 / 148 单元 / 71,254 汉字）；单元层 `standards/zhongyi-ziran-yuyan-chuli/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（10 内容章 / 148 单元 / 71,254 汉字）；单元层 `standards/zhongyi-ziran-yuyan-chuli/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -152,7 +152,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py zhongyi-ziran-yuyan-chuli "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py zhongyi-ziran-yuyan-chuli "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py zhongyi-ziran-yuyan-chuli                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

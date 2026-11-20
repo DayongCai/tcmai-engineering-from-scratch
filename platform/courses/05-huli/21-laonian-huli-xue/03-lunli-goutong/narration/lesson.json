@@ -1,0 +1,67 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/05-huli/21-laonian-huli-xue/chapters/03-lunli-goutong/docs/zh.md",
+  "course": "21-laonian-huli-xue",
+  "dept": "05-huli",
+  "chapter": "03-lunli-goutong",
+  "title": "第 3 章 · 老年护理伦理与沟通",
+  "segmentCount": 5,
+  "estimateTotalSeconds": 61,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 3 章 · 老年护理伦理与沟通",
+      "slide": "title",
+      "spoken": "第 3 章 · 老年护理伦理与沟通",
+      "estimateSeconds": 3,
+      "audio": "001.mp3",
+      "audioSeconds": 3.31
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「《老年护理学·第3章 老年护理伦理与沟通》」——教材第 3 章章目级引文；教材无篇名级引文，**非本章原文篇名**。本章要回答的是：老年护理伦理与沟通这一章的核心判据是什么。",
+      "slide": "title",
+      "spoken": "「《老年护理学·第3章 老年护理伦理与沟通》」——教材第 3 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：老年护理伦理与沟通这一章的核心判据是什么。",
+      "estimateSeconds": 18,
+      "audio": "002.mp3",
+      "audioSeconds": 17.02
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "伦理与沟通独立成章：尊严、自主与知情同意先于技术。",
+      "slide": "problem",
+      "spoken": "伦理与沟通独立成章：尊严、自主与知情同意先于技术。",
+      "estimateSeconds": 5,
+      "audio": "003.mp3",
+      "audioSeconds": 6.05
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（老年照护的对象是「功能」不是「诊断」，同一种病在两位老人身上的照护方案可以完全不同）+ 知识积累（本章 1 单元 17,299 汉字；三辨主 **慢病与照护 234**；四位面（照护落点）主 **心血管与呼吸 0**；引书 **0 部 0 次**；数值类命中 0）",
+      "slide": "roots",
+      "spoken": "环境逼迫（老年照护的对象是「功能」不是「诊断」，同一种病在两位老人身上的照护方案可以完全不同）+ 知识积累（本章 1 单元 17,299 汉字；三辨主 慢病与照护 234；四位面（照护落点）主 心血管与呼吸 0；引书 0 部 0 次；数值类命中 0）",
+      "estimateSeconds": 24,
+      "audio": "004.mp3",
+      "audioSeconds": 24.65
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "005.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 62.33,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

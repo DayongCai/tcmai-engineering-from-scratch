@@ -1,0 +1,138 @@
+# [tcmP] 课程编排 · 05-huli/16-huli-xue-daolun
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/05-huli/16-huli-xue-daolun/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 16-huli-xue-daolun
+title: 护理学导论
+en: Introduction to Nursing
+dept: 05-huli
+dept_title: 护理系
+semester: 2
+stage: sheng
+hours: 36
+chapters_target: 18
+bridge: 护理程序→流程建模 / 健康行为→预测模型
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-fazhan-daolun
+    title: 第1章 护理学的发展与护理学导论
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.15
+    measured_minutes: 1.13
+  - slug: 02-linian-jiazhiguan
+    title: 第2章 护理理念与护理专业价值观
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 03-jiben-gainian
+    title: 第3章 护理学的基本概念与理论
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.07
+  - slug: 04-huanhuan-goutong
+    title: 第4章 护患关系与沟通
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1
+  - slug: 05-huli-chengxu
+    title: 第5章 护理程序
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1
+  - slug: 06-jiankang-jiaoyu
+    title: 第6章 健康教育
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 0.99
+  - slug: 07-lunli-falv
+    title: 第7章 护理伦理与法律
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.08
+  - slug: 08-zhuanye-tuandui
+    title: 第8章 护理专业与团队协作
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.04
+  - slug: 09-zhiye-suyang
+    title: 第9章 护理职业素养与人文关怀
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.04
+  - slug: 10-shengming-tizheng
+    title: 第10章 生命体征观察与基础护理技术概论
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 11-huanzhe-anquan
+    title: 第11章 患者安全与护理质量
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.06
+  - slug: 12-shushi-xiuxi
+    title: 第12章 舒适、休息与活动
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.03
+  - slug: 13-yingyang-paixie
+    title: 第13章 营养与排泄的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99
+  - slug: 14-geiyao-zhiliao
+    title: 第14章 给药与治疗的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.02
+  - slug: 15-zhongyi-huli-jichu
+    title: 第15章 中医护理基础与应用
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.08
+  - slug: 16-teshu-renqun
+    title: 第16章 特殊人群的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 17-shequ-jiankang
+    title: 第17章 社区护理与健康管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.06
+  - slug: 18-pingtai-duijie
+    title: 第18章 护理学导论与 tcmP 平台
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.04

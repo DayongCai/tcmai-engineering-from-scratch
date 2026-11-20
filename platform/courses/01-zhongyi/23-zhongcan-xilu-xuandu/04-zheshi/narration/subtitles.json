@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/23-zhongcan-xilu-xuandu/04-zheshi/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 128.77,
+  "estimatedCues": 0,
+  "videoSeconds": 128.808667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.03,
+      "seconds": 4.03,
+      "estimated": false,
+      "text": "第 4 章 · 赭石与重镇：降逆的力学",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.03,
+      "end": 14.49,
+      "seconds": 10.46,
+      "estimated": false,
+      "text": "「治阴阳两虚，喘逆迫促，有将脱之势」——医学衷中参西录·一、医方·（四）治喘息方·1．参赭镇气汤",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.49,
+      "end": 25.03,
+      "seconds": 10.54,
+      "estimated": false,
+      "text": "学生把重镇药当同一类「沉降药」，见呕逆喘咳就堆砌，结果气更逆——因为没分清是胃气、肝气还是冲气上逆。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 25.03,
+      "end": 46.05,
+      "seconds": 21.02,
+      "estimated": false,
+      "text": "环境逼迫（医学衷中参西录选读在本仓库没有教材底本，唯一可引的是外源文字化本；不复算就只剩口号） + 知识积累（本章取 10 单元 14,306 字；实测药物频次、剂量命中 165 处、参西 33 次、引书 8 部）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "concept",
+      "start": 46.05,
+      "end": 117.47,
+      "seconds": 71.42,
+      "estimated": false,
+      "text": "一、赭石解：先定「降什么」，再谈用量 赭石解 10 单元 14,306 字。他给的定位是「降胃气、镇冲气、平肝气」三件事，而不是笼统的「重镇安神」。三件事对应三种脉证，所以同一个赭石在喘息方、吐衄方里配伍完全不同。 二、喘息三方：同一味赭石，三种搭档 治喘息方 3 首（参赭镇气汤、薯蓣纳气汤、滋培汤）。参赭镇气汤以赭石配人参（降中寓补），薯蓣纳气汤以山药代人参（降中寓敛），滋培汤则重在培中。本章实测本组药物频次：生杭芍 6 次、生赭石 3 次、生芡实 3 次、生山药 3 次、生龙骨 3 次、萸肉 2 次。 三、重镇药的方向错误最贵 重镇药一旦方向错（该升而用降），代价是气陷、胸闷、食欲退——比用错清热药更难挽回，因为它压的是「本已不足」的气。所以这一章的重点不是记药，是记脉。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 117.47,
+      "end": 128.77,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

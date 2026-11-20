@@ -1,0 +1,114 @@
+# [tcmP] 课程编排 · 01-zhongyi/13-zhongyi-erke-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/01-zhongyi/13-zhongyi-erke-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 13-zhongyi-erke-xue
+title: 中医儿科学
+en: TCM Pediatrics
+dept: 01-zhongyi
+dept_title: 中医系
+semester: 6
+stage: zhang
+hours: 72
+chapters_target: 14
+bridge: 小儿剂量→规则引擎 / 儿科辨证→ReAct 智能体
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-fazhan-gaishu
+    title: 第1章 中医儿科学发展概要
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.48
+    measured_minutes: 1.4
+  - slug: 02-shengli-bingli-tedian
+    title: 第2章 小儿生理病理特点
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.47
+    measured_minutes: 1.4
+  - slug: 03-shengzhang-yangyu-baojian
+    title: 第3章 小儿生长发育与喂养保健
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.5
+    measured_minutes: 1.4
+  - slug: 04-erke-sizhen
+    title: 第4章 儿科四诊概要
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.25
+    measured_minutes: 1.22
+  - slug: 05-bianzheng-zhifa
+    title: 第5章 儿科辨证与治法概要
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.42
+    measured_minutes: 1.38
+  - slug: 06-feixi-jibing
+    title: 第6章 肺系疾病
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.27
+    measured_minutes: 1.26
+  - slug: 07-pixi-jibing
+    title: 第7章 脾系疾病
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.37
+    measured_minutes: 1.37
+  - slug: 08-xingan-jibing
+    title: 第8章 心肝系疾病
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.43
+    measured_minutes: 1.4
+  - slug: 09-shenxi-jibing
+    title: 第9章 肾系疾病
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.4
+    measured_minutes: 1.38
+  - slug: 10-chuanranbing
+    title: 第10章 传染病
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.25
+    measured_minutes: 1.21
+  - slug: 11-chongzheng
+    title: 第11章 虫证
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.25
+    measured_minutes: 1.19
+  - slug: 12-xinshenger-jibing
+    title: 第12章 新生儿疾病
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.3
+    measured_minutes: 1.29
+  - slug: 13-qita-bingzheng
+    title: 第13章 其他病证
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.27
+    measured_minutes: 1.23
+  - slug: 14-jizhen-shuzihua
+    title: 第14章 儿科急症与数字化AI时代
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.17
+    measured_minutes: 1.14

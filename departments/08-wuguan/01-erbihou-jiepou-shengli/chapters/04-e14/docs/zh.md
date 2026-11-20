@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（解剖生理的判据是「结构对得上、功能说得出」）+ 知识积累（本章 30 单元 25,985 汉字；三辨主 **病性与证候 762**；四位面（章群结构）主 **鼻与咽喉 25985**；引书 **31 部 65 次**；数值类命中 0）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 131 单元 / 147,846 汉字）；单元层 `standards/erbihou-jiepou-shengli/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 131 单元 / 147,846 汉字）；单元层 `standards/erbihou-jiepou-shengli/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -289,7 +289,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py erbihou-jiepou-shengli "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py erbihou-jiepou-shengli "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py erbihou-jiepou-shengli                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

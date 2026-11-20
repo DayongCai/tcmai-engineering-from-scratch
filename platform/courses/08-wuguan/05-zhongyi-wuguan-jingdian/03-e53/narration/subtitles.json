@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/08-wuguan/05-zhongyi-wuguan-jingdian/03-e53/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 49.27,
+  "estimatedCues": 0,
+  "videoSeconds": 49.298667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 2.33,
+      "seconds": 2.33,
+      "estimated": false,
+      "text": "第 3 章 · 耳与肾",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 2.33,
+      "end": 12.91,
+      "seconds": 10.58,
+      "estimated": false,
+      "text": "「《F:/textbooks/机器学习·耳与肾》」——教材第3章。本章要回答的是：耳与肾：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 12.91,
+      "end": 15.65,
+      "seconds": 2.74,
+      "estimated": false,
+      "text": "耳与肾：本课第 3 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 15.65,
+      "end": 37.97,
+      "seconds": 22.32,
+      "estimated": false,
+      "text": "环境逼迫（经典的判据是「引文可查、训释有据、不乱套现代概念」）+ 知识积累（本章 8 单元 8,124 汉字；三辨主 病位与解剖 340；四位面（章群结构）主 耳咽喉 8124；引书 36 部 59 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 37.97,
+      "end": 49.27,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

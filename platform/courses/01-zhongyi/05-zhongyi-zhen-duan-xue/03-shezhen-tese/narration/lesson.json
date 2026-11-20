@@ -1,0 +1,67 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/03-shezhen-tese/docs/zh.md",
+  "course": "05-zhongyi-zhen-duan-xue",
+  "dept": "01-zhongyi",
+  "chapter": "03-shezhen-tese",
+  "title": "第 3 章 · 舌诊：27 个特征词，是望诊里唯一能拆成「离散取值」的部分",
+  "segmentCount": 5,
+  "estimateTotalSeconds": 68,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 3 章 · 舌诊：27 个特征词，是望诊里唯一能拆成「离散取值」的部分",
+      "slide": "title",
+      "spoken": "第 3 章 · 舌诊：27 个特征词，是望诊里唯一能拆成「离散取值」的部分",
+      "estimateSeconds": 7,
+      "audio": "001.mp3",
+      "audioSeconds": 7.34
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「舌为心之苗（心开窍于舌），舌又为脾之外候；足太阴脾经、足少阴肾经、足厥阴肝经等均络于舌本。」——《中医诊断学·第2章·2.3.1》（教材）",
+      "slide": "title",
+      "spoken": "「舌为心之苗（心开窍于舌），舌又为脾之外候；足太阴脾经、足少阴肾经、足厥阴肝经等均络于舌本。」——《中医诊断学·第2章·2.3.1》（教材）",
+      "estimateSeconds": 15,
+      "audio": "002.mp3",
+      "audioSeconds": 14.52
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "老师说「舌淡红苔薄白」，你觉得懂了。但让你把舌象拆成可存档的字段——舌色取哪几个值、舌形有几种、苔质到底六项还是七项——你得回教材一格格数。数完你会发现：苔质是 **7** 项，不是常说的 6 项。",
+      "slide": "problem",
+      "spoken": "老师说「舌淡红苔薄白」，你觉得懂了。但让你把舌象拆成可存档的字段——舌色取哪几个值、舌形有几种、苔质到底六项还是七项——你得回教材一格格数。数完你会发现：苔质是 7 项，不是常说的 6 项。",
+      "estimateSeconds": 20,
+      "audio": "003.mp3",
+      "audioSeconds": 18.96
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（病历里只能写「舌淡红苔薄白」六个字，无法归档、无法复核） + 知识积累（27 个特征词 × 五组离散取值 = 一份可以直译成字段表的舌象模型）",
+      "slide": "roots",
+      "spoken": "环境逼迫（病历里只能写「舌淡红苔薄白」六个字，无法归档、无法复核） + 知识积累（27 个特征词 × 五组离散取值 = 一份可以直译成字段表的舌象模型）",
+      "estimateSeconds": 15,
+      "audio": "004.mp3",
+      "audioSeconds": 15.02
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "005.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 67.15,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

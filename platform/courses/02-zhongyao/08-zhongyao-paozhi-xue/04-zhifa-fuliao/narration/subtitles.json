@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/08-zhongyao-paozhi-xue/04-zhifa-fuliao/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 63.55,
+  "estimatedCues": 0,
+  "videoSeconds": 63.578667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.6,
+      "seconds": 3.6,
+      "estimated": false,
+      "text": "第 4 章 · 炙法与酒醋蜜盐的辅料",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.6,
+      "end": 21.58,
+      "seconds": 17.98,
+      "estimated": false,
+      "text": "「《本草纲目·序例》」——本章讲炙法与辅料，教材无篇名级引文；纲目序例载辅料用法，篇名按此补足，非本章原文篇名。本章要回答的是：酒、醋、蜜、盐水，辅料凭什么改变药性。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 21.58,
+      "end": 30.36,
+      "seconds": 8.78,
+      "estimated": false,
+      "text": "辅料是「引药」的载体：酒上行、醋入肝、蜜润肺、盐下行；同一味药换辅料，归经就变了。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 30.36,
+      "end": 52.25,
+      "seconds": 21.89,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 8 单元 23,953 汉字；三辨主 工艺操作 986；四位面（制法大类）主 火制 741；引书 6 部 47 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 52.25,
+      "end": 63.55,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

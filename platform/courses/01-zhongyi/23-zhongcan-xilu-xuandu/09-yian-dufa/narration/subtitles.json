@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/23-zhongcan-xilu-xuandu/09-yian-dufa/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 113.75,
+  "estimatedCues": 0,
+  "videoSeconds": 113.788667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.62,
+      "seconds": 5.62,
+      "estimated": false,
+      "text": "第 9 章 · 医案读法：病因—证候—诊断—处方—效果 五段式",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.62,
+      "end": 16.97,
+      "seconds": 11.35,
+      "estimated": false,
+      "text": "「盐山范××，年五十余，素有肺痨，发时咳嗽连连，微兼喘促」——医学衷中参西录·四、医话·1．临症随笔",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 16.97,
+      "end": 24.36,
+      "seconds": 7.39,
+      "estimated": false,
+      "text": "学生把医案当故事读，读完只记得「某方治好了某人」，学不到可复用的判读顺序。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 24.36,
+      "end": 45.67,
+      "seconds": 21.31,
+      "estimated": false,
+      "text": "环境逼迫（医学衷中参西录选读在本仓库没有教材底本，唯一可引的是外源文字化本；不复算就只剩口号） + 知识积累（本章取 22 单元 18,597 字；实测药物频次、剂量命中 453 处、参西 9 次、引书 2 部）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "concept",
+      "start": 45.67,
+      "end": 102.45,
+      "seconds": 56.78,
+      "estimated": false,
+      "text": "一、五段式：一张可核对的表 本组 21 案逐条数五段的出现率：病因 20、证候 21、诊断 18、处方 21、效果 21（分母 21 案）。覆盖率越高，说明这张表越是被当作硬格式。 二、为什么先写「病因」而不是「症状」 顺序本身就是方法：先把起病链条写清（外感余热、劳碌过度、情志），再写当下证候。顺序反了，方就成了「对症」，无法复用到同类起病的人身上。 三、医话是他的「未定稿区」 医话 47 条多是答问与随笔，格式松、结论留余地，但恰恰是方法论的现场：答问多、结论留余地，且常自陈「此证若在他人，必用某药」。读医案学「怎么判」，读医话学「为什么这样判」。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 102.45,
+      "end": 113.75,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

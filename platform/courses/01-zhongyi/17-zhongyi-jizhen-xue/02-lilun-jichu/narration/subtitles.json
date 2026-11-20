@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/17-zhongyi-jizhen-xue/02-lilun-jichu/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 58.44,
+  "estimatedCues": 0,
+  "videoSeconds": 58.474667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.78,
+      "seconds": 4.78,
+      "estimated": false,
+      "text": "第 2 章 · 理论基础：邪盛正衰与气机逆乱",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.78,
+      "end": 12.08,
+      "seconds": 7.3,
+      "estimated": false,
+      "text": "「谨守病机，各司其属」——教材·第2章·2.1.2（《素问·至真要大论》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 12.08,
+      "end": 26,
+      "seconds": 13.92,
+      "estimated": false,
+      "text": "内科的病机讲「失调」，急诊的病机讲「离决」——程度不同，处理方式就完全不同。学生把内科的「气虚」直接搬到休克病人身上，就会漏掉那半小时的窗口。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 26,
+      "end": 42.63,
+      "seconds": 16.63,
+      "estimated": false,
+      "text": "环境逼迫（急症病机变化以小时计，来不及「缓图」）+ 知识积累（本章 4 单元 11,134 汉字，三辨主病因 122，为全书最高——急诊理论的重心在「什么在攻」，不在「虚在哪」）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 42.63,
+      "end": 47.14,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 47.14,
+      "end": 58.44,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

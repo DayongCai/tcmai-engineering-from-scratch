@@ -1,0 +1,66 @@
+# [tcmP] 课程编排 · 08-wuguan/17-wuguan-biye-sheji
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/08-wuguan/17-wuguan-biye-sheji/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 17-wuguan-biye-sheji
+title: 五官口腔毕业设计与知识移交
+en: ENT & Stomatology Capstone
+dept: 08-wuguan
+dept_title: 五官口腔系
+semester: 10
+stage: yi
+hours: 72
+chapters_target: 6
+bridge: 专科问题→可验证命题 / 检查数据→特征 / 结论→可复现路径
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xuan-ti
+    title: 第1章 选题：从专科问题到可验证命题
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 02-jiancha-shuju
+    title: 第2章 影像与功能检查数据准备
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.91
+  - slug: 03-fangfa-shixian
+    title: 第3章 方法与系统实现
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.86
+  - slug: 04-liaoxiao-anquan
+    title: 第4章 疗效与安全性评价
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.9
+  - slug: 05-lunwen-dabian
+    title: 第5章 论文写作与答辩
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.87
+  - slug: 06-zhishi-yijiao
+    title: 第6章 知识移交：诊疗路径与交接
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.94

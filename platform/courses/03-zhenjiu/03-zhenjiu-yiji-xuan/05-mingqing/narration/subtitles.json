@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/03-zhenjiu-yiji-xuan/05-mingqing/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 57.07,
+  "estimatedCues": 0,
+  "videoSeconds": 57.108667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 2.4,
+      "seconds": 2.4,
+      "estimated": false,
+      "text": "第 5 章 · 明清医论",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 2.4,
+      "end": 15.58,
+      "seconds": 13.18,
+      "estimated": false,
+      "text": "「《针灸医籍选读·明清医论》」——教材篇名级；课程章号对应教材第 7 章。本章要回答的是：读这段原文，能读出哪一条可用的针法主张。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 15.58,
+      "end": 20.21,
+      "seconds": 4.63,
+      "estimated": false,
+      "text": "《针灸大成》集大成，明清进入总结与普及期。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 20.21,
+      "end": 45.77,
+      "seconds": 25.56,
+      "estimated": false,
+      "text": "环境逼迫（医籍课的判据是「分得清」：哪句是原文、哪句是注家的话、哪句是教材作者的按语）+ 知识积累（本章 24 单元 14,636 汉字；三辨主 临证应用 442；四位面（医籍文体）主 针灸歌赋 126；引书 46 部 183 次；数值类命中 5）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 45.77,
+      "end": 57.07,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（大模型的判据是「说得出依据、测得出底线」：测不出幻觉率的模型不许进临床流程）+ 知识积累（本章 13 单元 9,673 汉字；三辨主 **训练与对齐 67**；四位面（章群结构）主 **基础与表示 9673**；引书 **4 部 6 次**；数值类命中 3）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（12 内容章 / 167 单元 / 130,037 汉字）；单元层 `standards/llm-yu-zhongyi-zhinengti/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（12 内容章 / 167 单元 / 130,037 汉字）；单元层 `standards/llm-yu-zhongyi-zhinengti/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -152,7 +152,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py llm-yu-zhongyi-zhinengti "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py llm-yu-zhongyi-zhinengti "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py llm-yu-zhongyi-zhinengti                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

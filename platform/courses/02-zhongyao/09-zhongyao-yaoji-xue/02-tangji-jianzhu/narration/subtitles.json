@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/09-zhongyao-yaoji-xue/02-tangji-jianzhu/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 58.25,
+  "estimatedCues": 0,
+  "videoSeconds": 58.274667,
+  "videoMinusNarrationSeconds": 0.025,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.5,
+      "seconds": 3.5,
+      "estimated": false,
+      "text": "第 2 章 · 汤剂与煎煮工艺的参数",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.5,
+      "end": 15.24,
+      "seconds": 11.74,
+      "estimated": false,
+      "text": "「《素问·汤液醪醴论》」——教材·第4章·4.2.2。本章要回答的是：一剂汤药，先煎后下、文火武火，差在哪。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 15.24,
+      "end": 26.26,
+      "seconds": 11.02,
+      "estimated": false,
+      "text": "煎煮是唯一由患者在自家完成的剂型工艺：加水量、火候、时间都是可写的参数，患者拿到的却常只有一句「适量」。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 26.26,
+      "end": 46.95,
+      "seconds": 20.69,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 4 单元 16,130 汉字；三辨主 工艺 282；四位面（给药途径）主 溶液型 64；引书 7 部 16 次；数值类命中 23）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 46.95,
+      "end": 58.25,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

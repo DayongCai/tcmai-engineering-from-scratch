@@ -1,0 +1,114 @@
+# [tcmP] 课程编排 · 05-huli/04-zhongyi-huli-jishu
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/05-huli/04-zhongyi-huli-jishu/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 04-zhongyi-huli-jishu
+title: 中医护理技术
+en: TCM Nursing Techniques
+dept: 05-huli
+dept_title: 护理系
+semester: 3
+stage: sheng
+hours: 54
+chapters_target: 14
+bridge: 拔罐艾灸刮痧→操作参数化 / 不良反应→监测预警
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-gaishu
+    title: 第1章 中医护理适宜技术概述与特点
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.01
+  - slug: 02-qiandu-pinggu
+    title: 第2章 实施前准备与评估要求
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.98
+  - slug: 03-shuxue-jingluo
+    title: 第3章 腧穴与经络基础
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97
+  - slug: 04-anmo-tiefu
+    title: 第4章 腧穴按压与穴位贴敷
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99
+  - slug: 05-aijiu-baguan
+    title: 第5章 艾灸与拔罐
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.96
+  - slug: 06-guasha-reyun
+    title: 第6章 刮痧与热熨
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.93
+  - slug: 07-erxue-ciji
+    title: 第7章 耳穴与穴位刺激类技术
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1
+  - slug: 08-xunxi-waifu
+    title: 第8章 中药熏洗与外敷
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.96
+  - slug: 09-yaoshan-yinshi
+    title: 第9章 药膳与饮食调护
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.94
+  - slug: 10-qingzhi-yangsheng
+    title: 第10章 情志护理与养生
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.96
+  - slug: 11-chuantong-yundong
+    title: 第11章 传统运动与导引类护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.98
+  - slug: 12-zhengzhuang-yingyong
+    title: 第12章 常见症状的适宜技术应用
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1
+  - slug: 13-guancha-anquan
+    title: 第13章 观察记录、安全与效果评价
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.03
+  - slug: 14-tuiguang-pingtai
+    title: 第14章 技术推广、质量管理与平台
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.02

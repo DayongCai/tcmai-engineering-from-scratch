@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/03-fangjixue/08-liqi-lixue/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 123.1,
+  "estimatedCues": 0,
+  "videoSeconds": 123.118667,
+  "videoMinusNarrationSeconds": 0.019,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.45,
+      "seconds": 5.45,
+      "estimated": false,
+      "text": "第 8 章 · 理气剂与理血剂：气为血帅，血为气母",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.45,
+      "end": 13.97,
+      "seconds": 8.52,
+      "estimated": false,
+      "text": "「中风之气虚血瘀证」——教材·第16章·16.1.3（《方剂学·第16章·16.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 13.97,
+      "end": 66.22,
+      "seconds": 52.25,
+      "estimated": false,
+      "text": "这是全课篇幅最大的一章：教材第15、16章合计 34,084 字、16 首方，比第 7 章多 6,984 字、多 7 首方，占全书 9.50%。可章节一长，最容易出的错不是漏方，是把「理气」与「理血」当成两套互不相干的方。数据不支持这种分法：两章共用药 10 味，甘草出现在 16 首方里的 9 首（56%），当归 6 首、川芎 5 首、桃仁 5 首。理气方与理血方共用同一批「通用件」，真正的分界不在药，而在谁当君药、谁打头阵——血府逐瘀汤以桃仁、红花为君，补阳还五汤以生黄芪为君，同一味川芎在两方里都是「血中之气药」的佐使角色。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 66.22,
+      "end": 111.8,
+      "seconds": 45.58,
+      "estimated": false,
+      "text": "环境逼迫（气滞与血瘀在临床上互为因果：气行则血行，气滞则血瘀，血瘀又反过来阻气；教材把理气、理血两章排在相邻位置，要求学者在同一口气里分辨「先病气还是先病血」，而 16 首方里既有纯理气的越鞠丸，也有气血并治的血府逐瘀汤，边界必须当场说清）＋ 知识积累（两章都按六段/方写，每方 2,081–2,244 字，每段 346.8–373.9 字；122 个药位里 10 味药跨 3 首以上方出现，构成一套「通用件」，模板与通用件共同制造了「方方相似」的错觉）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 111.8,
+      "end": 123.1,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/06-guanli/20-weisheng-fa-xue/15-f15/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 57.36,
+  "estimatedCues": 0,
+  "videoSeconds": 57.378667,
+  "videoMinusNarrationSeconds": 0.019,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.49,
+      "seconds": 4.49,
+      "estimated": false,
+      "text": "第 15 章 · 食品安全与环境卫生法律制度",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.49,
+      "end": 17.47,
+      "seconds": 12.98,
+      "estimated": false,
+      "text": "「《卫生法学·食品安全与环境卫生法律制度》」——教材第15章。本章要回答的是：食品安全与环境卫生法律制度：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 17.47,
+      "end": 22.56,
+      "seconds": 5.09,
+      "estimated": false,
+      "text": "食品安全与环境卫生法律制度：本课第 15 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 22.56,
+      "end": 46.06,
+      "seconds": 23.5,
+      "estimated": false,
+      "text": "环境逼迫（卫生法学的判据是「找出义务主体与责任条款」，不是背条文）+ 知识积累（本章 11 单元 16,968 汉字；三辨主 制度与规则 184；四位面（章群结构）主 公卫与救济 16968；引书 12 部 18 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 46.06,
+      "end": 57.36,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

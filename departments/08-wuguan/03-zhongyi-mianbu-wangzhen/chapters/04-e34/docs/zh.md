@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（望诊的判据是「部位说得准、征象有出处、结论可复核」）+ 知识积累（本章 35 单元 27,724 汉字；三辨主 **病位与解剖 881**；四位面（章群结构）主 **眼与鼻 27724**；引书 **36 部 83 次**；数值类命中 0）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 113 单元 / 128,700 汉字）；单元层 `standards/zhongyi-mianbu-wangzhen/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 113 单元 / 128,700 汉字）；单元层 `standards/zhongyi-mianbu-wangzhen/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -324,7 +324,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py zhongyi-mianbu-wangzhen "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py zhongyi-mianbu-wangzhen "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py zhongyi-mianbu-wangzhen                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

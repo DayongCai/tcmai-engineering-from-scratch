@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/06-guanli/06-yiyuan-guanli-xue/07-y7/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 53.25,
+  "estimatedCues": 0,
+  "videoSeconds": 53.278667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.14,
+      "seconds": 3.14,
+      "estimated": false,
+      "text": "第 7 章 · 后勤设备与科教",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.14,
+      "end": 13.44,
+      "seconds": 10.3,
+      "estimated": false,
+      "text": "「《医院管理学·后勤设备与科教》」——教材第7章。本章要回答的是：后勤设备与科教：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 13.44,
+      "end": 16.97,
+      "seconds": 3.53,
+      "estimated": false,
+      "text": "后勤设备与科教：本课第 7 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 16.97,
+      "end": 41.95,
+      "seconds": 24.98,
+      "estimated": false,
+      "text": "环境逼迫（医院管理的判据是「流程有人负责、质量有指标、风险有预案」）+ 知识积累（本章 12 单元 37,083 汉字；三辨主 绩效与评价 222；四位面（章群结构）主 绩效与后勤 37083；引书 85 部 129 次；数值类命中 101）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 41.95,
+      "end": 53.25,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

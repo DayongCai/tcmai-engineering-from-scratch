@@ -1,0 +1,90 @@
+# [tcmP] 课程编排 · 02-zhongyao/13-zhongchengyao-linchuang
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/02-zhongyao/13-zhongchengyao-linchuang/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 13-zhongchengyao-linchuang
+title: 中成药与临床用药
+en: Patent Medicines in Clinical Use
+dept: 02-zhongyao
+dept_title: 中药系
+semester: 7
+stage: zhuang
+hours: 72
+chapters_target: 10
+bridge: 联合用药→推荐系统 / 不良反应→异常检测
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-gailun-fenlei
+    title: 第1章 中成药概论与分类
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.93
+  - slug: 02-jixing-gongyi
+    title: 第2章 剂型与制备工艺
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.93
+  - slug: 03-zhiliang-biaozhun
+    title: 第3章 质量标准与检验
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.91
+  - slug: 04-zhusheji
+    title: 第4章 中药注射剂与特殊剂型
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 05-neike-yongyao
+    title: 第5章 内科常用中成药
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.94
+  - slug: 06-fuke-erke
+    title: 第6章 妇科与儿科用药
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.92
+  - slug: 07-gushang-pifu
+    title: 第7章 骨伤与皮肤科用药
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.92
+  - slug: 08-lianhe-yongyao
+    title: 第8章 联合用药与相互作用
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.95
+  - slug: 09-buliang-fanying
+    title: 第9章 不良反应与监测
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.89
+  - slug: 10-heli-yongyao
+    title: 第10章 合理使用与处方审核
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.96

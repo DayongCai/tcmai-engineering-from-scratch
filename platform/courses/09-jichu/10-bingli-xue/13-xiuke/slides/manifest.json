@@ -1,0 +1,47 @@
+{
+  "chapter": "13-xiuke",
+  "slideCount": 8,
+  "segmentCount": 8,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 26
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 103
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 172
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 192
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 669
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 272
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 121
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 52
+    }
+  ]
+}

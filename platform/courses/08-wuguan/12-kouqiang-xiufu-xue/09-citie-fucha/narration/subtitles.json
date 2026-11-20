@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/08-wuguan/12-kouqiang-xiufu-xue/09-citie-fucha/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 71.18,
+  "estimatedCues": 0,
+  "videoSeconds": 71.214667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 6.34,
+      "seconds": 6.34,
+      "estimated": false,
+      "text": "第 9 章 · 瓷贴面的复查与并发症：功能、美学、生物学三条线",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 6.34,
+      "end": 30.92,
+      "seconds": 24.58,
+      "estimated": false,
+      "text": "「《瓷贴面粘接技术操作规范·第9.1条》」——外源课：条文依据为「外源·T/CHSA 001—2019 瓷贴面粘接技术操作规范 第9.1条」，非教材原文篇名。本章要回答的是：瓷贴面的复查与并发症：功能、美学、生物学三条线这一环的判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 30.92,
+      "end": 36.46,
+      "seconds": 5.54,
+      "estimated": false,
+      "text": "复查不是看一眼：三条评价线各自能抓到不同的失败。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 36.46,
+      "end": 59.88,
+      "seconds": 23.42,
+      "estimated": false,
+      "text": "环境逼迫（修复的失败大多不是「技术不会」，而是「该做的评估没做、该说的风险没说、该验的环节没验」）+ 知识积累（本章 1 单元 2,671 汉字；三辨主 修复形式 97；四位面（缺损类型）主 牙体缺损 91；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 59.88,
+      "end": 71.18,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/06-neijing-xuandu/09-lingshu-jiuzhen/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 9,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 204.91,
+  "estimatedCues": 0,
+  "videoSeconds": 204.930667,
+  "videoMinusNarrationSeconds": 0.021,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.74,
+      "seconds": 5.74,
+      "estimated": false,
+      "text": "第 9 章 · 《灵枢·九针十二原》：九种针不是九种型号",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.74,
+      "end": 12.39,
+      "seconds": 6.65,
+      "estimated": false,
+      "text": "「九针之名，各不同形者，针穷其所当补泻也。」——《素问·针解》",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 12.39,
+      "end": 28.81,
+      "seconds": 16.42,
+      "estimated": false,
+      "text": "你能背出「镵针、员针、鍉针、锋针、铍针、员利针、毫针、长针、大针」，但说不清哪一种该用在什么部位、为什么长度差到四倍，也说不清「一寸六分」在今天是多少毫米。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 28.81,
+      "end": 43.31,
+      "seconds": 14.5,
+      "estimated": false,
+      "text": "环境逼迫(临证选针凭习惯，出了问题说不清为什么选它) + 知识积累(原文规格表 × 折算与用途 = 一份能查、能算出尺寸、能说明不确定性的选针依据)",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 43.31,
+      "end": 70.81,
+      "seconds": 27.5,
+      "estimated": false,
+      "text": "列出九针的名称、长度与主治（据《灵枢·九针十二原》与《灵枢·官针》两篇原文） 说清「九针」是按用途与形制分的，不是同一支针的九个粗细规格 用汉制折算给出九针的厘米区间，并说明这个折算为什么只能是区间 写一个选针器：给定部位与目的，返回候选针具 + 原文依据 + 不确定项",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "concept",
+      "start": 70.81,
+      "end": 173.72,
+      "seconds": 102.91,
+      "estimated": false,
+      "text": "原文：两篇各说一半 《灵枢·九针十二原》给形制与用途： 镵针者，头大末锐，去泻阳气。员针者，针如卵形，揩摩分间，不得伤肌肉者，以泻分气。鍉针者，锋如黍粟之锐，主按脉，勿陷以致其气。 《灵枢·官针》给取法与本治： 镵针者，取法于巾针，去末寸半，卒锐之，长一寸六分，主热在头身也。二曰员针，取法于絮针，筩其身而卵其锋，长一寸六分，主治分间气。三曰鍉针，取法于黍粟之锐，长三寸半，主按脉取气，令邪出。 两篇合起来才是完整的规格表。只读一篇，你会知道「镵针泻阳气」却不知道它多长；只读另一篇，你知道长度却不知道为什么要那个形。 规格表（据上述两篇，长度单位为「寸」） 一眼可看出它不是「型号序列」：最短的三支（1.6 寸）用途完全不同（泻阳、摩分间、放血），最长的一支（7 寸）专为深部痹阻；形制决定用途，长度只是形制的一部分。 折算：一寸是多少 汉制一寸常按 2.3 cm 左右估算，于是九针落在约 3.7–16.1 cm。但这是区间而不是定值：汉代尺度的考古实测本身有分布，且「寸」在不同时期不同。所以任何「某针 = 某毫米」的说法都必须带换算依据，否则是把不确定性藏起来。",
+      "audio": "006.mp3"
+    },
+    {
+      "n": 7,
+      "role": "build",
+      "start": 173.72,
+      "end": 178.23,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "007.mp3"
+    },
+    {
+      "n": 8,
+      "role": "verify",
+      "start": 178.23,
+      "end": 193.61,
+      "seconds": 15.38,
+      "estimated": false,
+      "text": "预期：toCm(1.6) 返回约 3.70–3.76 cm；pick('脓') 命中铍针与锋针两条，并给出各自原文依据；pick('深痹') 命中长针。 <!-- neijing:begin →",
+      "audio": "008.mp3"
+    },
+    {
+      "n": 9,
+      "role": "disclaimer",
+      "start": 193.61,
+      "end": 204.91,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "009.mp3"
+    }
+  ]
+}

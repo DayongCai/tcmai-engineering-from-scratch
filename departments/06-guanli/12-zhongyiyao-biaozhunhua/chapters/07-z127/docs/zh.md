@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（标准化的判据是「术语唯一、映射可核、落地可测」）+ 知识积累（本章 46 单元 50,279 汉字；三辨主 **绩效与评价 474**；四位面（章群结构）主 **规划与专题 50279**；引书 **14 部 17 次**；数值类命中 3）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 246 单元 / 298,778 汉字）；单元层 `standards/12-zhongyiyao-biaozhunhua/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 246 单元 / 298,778 汉字）；单元层 `standards/12-zhongyiyao-biaozhunhua/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -350,7 +350,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py 12-zhongyiyao-biaozhunhua "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py 12-zhongyiyao-biaozhunhua "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py 12-zhongyiyao-biaozhunhua                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

@@ -1,7 +1,7 @@
 {
  "courseTitle": "医学数据安全与隐私",
  "deptPath": "departments/07-zhineng/14-yixue-shuju-anquan-yinsi",
- "xlsx": "F:/textbooks/F:/textbooks/qhzy-卫生信息管理.xlsx",
+ "xlsx": "F:/textbooks/qhzy-卫生信息管理.xlsx",
  "chain": "法规与标准 → 技术与风险 → 隐私与伦理 → 治理与运营",
  "levelLabel": "章群结构",
  "objectPressure": "数据安全的判据是「谁能看—看了做什么—出了事谁负责」三问，答不上就不许上生产",

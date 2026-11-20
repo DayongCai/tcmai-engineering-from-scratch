@@ -1,0 +1,66 @@
+# [tcmP] 课程编排 · 06-guanli/14-zhishichanquan-zhuanhua
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/06-guanli/14-zhishichanquan-zhuanhua/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 14-zhishichanquan-zhuanhua
+title: 中医药知识产权与成果转化
+en: TCM IP & Commercialization
+dept: 06-guanli
+dept_title: 管理系
+semester: 8
+stage: zhuang
+hours: 36
+chapters_target: 6
+bridge: 专利检索→文本相似 / 转化路径→决策支持
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-ip1
+    title: 第1章 知识产权的对象：从技术方案到权利
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 02-ip2
+    title: 第2章 中医药领域的知识产权形态
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.96
+  - slug: 03-ip3
+    title: 第3章 专利：从发明到授权
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.94
+  - slug: 04-ip4
+    title: 第4章 成果转化：从实验室到产品
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.98
+  - slug: 05-ip5
+    title: 第5章 新兴技术与伦理：知识产权的前沿争议
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.06
+  - slug: 06-ip6
+    title: 第6章 侵权、许可纠纷与救济
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.98

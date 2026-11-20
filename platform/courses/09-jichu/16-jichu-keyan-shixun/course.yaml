@@ -1,0 +1,66 @@
+# [tcmP] 课程编排 · 09-jichu/16-jichu-keyan-shixun
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/09-jichu/16-jichu-keyan-shixun/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 16-jichu-keyan-shixun
+title: 科研实训与实验设计
+en: Research Training & Experimental Design
+dept: 09-jichu
+dept_title: 基础医学院
+semester: 9
+stage: lao
+hours: 108
+chapters_target: 6
+bridge: 假设→对照设计 / 原始记录→可复算数据 / 统计→效应量
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-shiyanshi-anquan
+    title: 第1章 实验室安全与规范
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.05
+  - slug: 02-shiyan-sheji
+    title: 第2章 实验设计与对照设置
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.99
+  - slug: 03-xingtai-fenzi
+    title: 第3章 形态学与分子实验实训
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.09
+  - slug: 04-shuju-tongji
+    title: 第4章 数据采集与统计分析
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 1
+  - slug: 05-jieguo-jiedu
+    title: 第5章 结果解读与可重复性
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 1
+  - slug: 06-shixun-baogao
+    title: 第6章 实训报告与考核
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.04

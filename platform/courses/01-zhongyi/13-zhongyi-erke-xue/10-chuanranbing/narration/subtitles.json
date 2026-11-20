@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/13-zhongyi-erke-xue/10-chuanranbing/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 72.36,
+  "estimatedCues": 0,
+  "videoSeconds": 72.394667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.42,
+      "seconds": 4.42,
+      "estimated": false,
+      "text": "第 10 章 · 传染病：一张「发热—出疹」时间表",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.42,
+      "end": 11.33,
+      "seconds": 6.91,
+      "estimated": false,
+      "text": "「麻为阳毒，以透为顺」——教材·第10章·10.1.1（《麻科活人全书》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 11.33,
+      "end": 30.53,
+      "seconds": 19.2,
+      "estimated": false,
+      "text": "八个时行病的第一句话几乎都是「发热、出疹」。学生记不住谁是谁，是因为按病名背；教材的判据其实排在一张时间表上：发热第几天出疹、疹从哪儿起、退疹后留下什么。谁把这张表画出来，谁就不会混。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 30.53,
+      "end": 56.55,
+      "seconds": 26.02,
+      "estimated": false,
+      "text": "环境逼迫（同一季节、同一托幼机构里同时流行数种出疹病；隔离与报告要求各不同）+ 知识积累（本章 40 单元、29,002 字，证候表现 400 居三辨首位、肺系 291 居四位面首位；数值 187 处，全课程最高——潜伏期、隔离期、接种月龄都写成了可核的数）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 56.55,
+      "end": 61.06,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 61.06,
+      "end": 72.36,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

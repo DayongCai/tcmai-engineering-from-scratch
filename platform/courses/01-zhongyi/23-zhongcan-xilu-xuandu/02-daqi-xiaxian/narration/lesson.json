@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/23-zhongcan-xilu-xuandu/chapters/02-daqi-xiaxian/docs/zh.md",
+  "course": "23-zhongcan-xilu-xuandu",
+  "dept": "01-zhongyi",
+  "chapter": "02-daqi-xiaxian",
+  "title": "第 2 章 · 大气下陷：一个被重新提出的证",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 136,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 2 章 · 大气下陷：一个被重新提出的证",
+      "slide": "title",
+      "spoken": "第 2 章 · 大气下陷：一个被重新提出的证",
+      "estimateSeconds": 4,
+      "audio": "001.mp3",
+      "audioSeconds": 4.27
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「治胸中大气下陷，气短不足以息」——医学衷中参西录·一、医方·（三）治大气下陷方·1．升陷汤",
+      "slide": "title",
+      "spoken": "「治胸中大气下陷，气短不足以息」——医学衷中参西录·一、医方·（三）治大气下陷方·1．升陷汤",
+      "estimateSeconds": 10,
+      "audio": "002.mp3",
+      "audioSeconds": 9.72
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "教材只写「气虚下陷」，学生见到升陷汤四方（升陷、回阳、理郁、醒脾）分不清各自适应证。",
+      "slide": "problem",
+      "spoken": "教材只写「气虚下陷」，学生见到升陷汤四方（升陷、回阳、理郁、醒脾）分不清各自适应证。",
+      "estimateSeconds": 9,
+      "audio": "003.mp3",
+      "audioSeconds": 9.24
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（医学衷中参西录选读在本仓库没有教材底本，唯一可引的是外源文字化本；不复算就只剩口号） + 知识积累（本章取 13 单元 19,279 字；实测药物频次、剂量命中 206 处、参西 7 次、引书 13 部）",
+      "slide": "roots",
+      "spoken": "环境逼迫（医学衷中参西录选读在本仓库没有教材底本，唯一可引的是外源文字化本；不复算就只剩口号） + 知识积累（本章取 13 单元 19,279 字；实测药物频次、剂量命中 206 处、参西 7 次、引书 13 部）",
+      "estimateSeconds": 21,
+      "audio": "004.mp3",
+      "audioSeconds": 21.24
+    },
+    {
+      "n": 5,
+      "role": "concept",
+      "text": "### 一、四张升陷方，差别不在主药而在「兼什么」\n\n治大气下陷方 4 首 13 单元 19,279 字：升陷汤、回阳升陷汤、理郁升陷汤、醒脾升陷汤。四方的共同骨架是**黄芪—升麻—柴胡—桔梗**（升提），差异全部落在兼证上：回阳加附子干姜（兼阳衰）、理郁加理气药（兼气滞）、醒脾加健脾药（兼脾虚）。本章实测这几味药在本组原文里的出现次数：生箭耆 9 次、生怀山药 7 次、知母 5 次、生麦芽 5 次、甘草 4 次、生杭芍 4 次。\n\n### 二、医案部分：气病门里「大气下陷」被一案一案坐实\n\n本组医案 9 案，明确写「大气下陷」的 8 案。这就是张锡纯的写法：先立证名，再用一案一案去把它坐实；证名不是凭空的，是被复用出来的。\n\n### 三、与「中气不足」的边界\n\n中气不足讲的是脾胃运化之力，大气下陷讲的是**胸中气机的升举**——所以升陷汤主药是黄芪而非党参，配伍必用升麻柴胡。这条边界如果混掉，四方就退化成「都是补气」，选方只能靠记。",
+      "slide": "concept",
+      "heading": "核心概念",
+      "spoken": "一、四张升陷方，差别不在主药而在「兼什么」\n治大气下陷方 4 首 13 单元 19,279 字：升陷汤、回阳升陷汤、理郁升陷汤、醒脾升陷汤。四方的共同骨架是黄芪—升麻—柴胡—桔梗（升提），差异全部落在兼证上：回阳加附子干姜（兼阳衰）、理郁加理气药（兼气滞）、醒脾加健脾药（兼脾虚）。本章实测这几味药在本组原文里的出现次数：生箭耆 9 次、生怀山药 7 次、知母 5 次、生麦芽 5 次、甘草 4 次、生杭芍 4 次。\n二、医案部分：气病门里「大气下陷」被一案一案坐实\n本组医案 9 案，明确写「大气下陷」的 8 案。这就是张锡纯的写法：先立证名，再用一案一案去把它坐实；证名不是凭空的，是被复用出来的。\n三、与「中气不足」的边界\n中气不足讲的是脾胃运化之力，大气下陷讲的是胸中气机的升举——所以升陷汤主药是黄芪而非党参，配伍必用升麻柴胡。这条边界如果混掉，四方就退化成「都是补气」，选方只能靠记。",
+      "estimateSeconds": 81,
+      "audio": "005.mp3",
+      "audioSeconds": 80.4
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 136.18,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

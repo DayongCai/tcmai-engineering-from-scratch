@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/04-qigong-xue/06-bianzheng-shigong/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 62.13,
+  "estimatedCues": 0,
+  "videoSeconds": 62.168667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.46,
+      "seconds": 3.46,
+      "estimated": false,
+      "text": "第 6 章 · 辨证施功与临床应用",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.46,
+      "end": 20.21,
+      "seconds": 16.75,
+      "estimated": false,
+      "text": "「《中医气功学·辨证施功与临床应用》」——教材篇名级；课程章号对应教材第 10、11、12 章。本章要回答的是：辨证施功与临床应用这一段，学完能不能自己按规格做一遍。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.21,
+      "end": 26.59,
+      "seconds": 6.38,
+      "estimated": false,
+      "text": "辨证施功是本学科的方法论核心：什么证、选什么功、练多久。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 26.59,
+      "end": 50.83,
+      "seconds": 24.24,
+      "estimated": false,
+      "text": "环境逼迫（气功课的风险在于「自己练」：姿势、呼吸、意守任何一项越界都可能出偏差）+ 知识积累（本章 14 单元 37,671 汉字；三辨主 功法操作 563；四位面（三调与临床）主 调息 156；引书 25 部 57 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 50.83,
+      "end": 62.13,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

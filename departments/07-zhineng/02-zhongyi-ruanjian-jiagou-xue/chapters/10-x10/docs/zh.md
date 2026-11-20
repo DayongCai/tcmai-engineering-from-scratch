@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（软件架构的判据是「模块—接口—数据流」三件套，缺一条就无法交接）+ 知识积累（本章 11 单元 16,821 汉字；三辨主 **数据与标准 242**；四位面（章群结构）主 **中医与智慧 16821**；引书 **0 部 0 次**；数值类命中 0）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-卫生信息管理.xlsx`（10 内容章 / 110 单元 / 165,163 汉字）；单元层 `standards/zhongyi-ruanjian-jiagou/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-卫生信息管理.xlsx`（10 内容章 / 110 单元 / 165,163 汉字）；单元层 `standards/zhongyi-ruanjian-jiagou/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -140,7 +140,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py zhongyi-ruanjian-jiagou "F:/textbooks/F:/textbooks/qhzy-卫生信息管理.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py zhongyi-ruanjian-jiagou "F:/textbooks/qhzy-卫生信息管理.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py zhongyi-ruanjian-jiagou                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

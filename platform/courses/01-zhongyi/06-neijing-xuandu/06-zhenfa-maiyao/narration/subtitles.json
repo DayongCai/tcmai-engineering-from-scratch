@@ -1,0 +1,105 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/06-neijing-xuandu/06-zhenfa-maiyao/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 9,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 199.52,
+  "estimatedCues": 0,
+  "videoSeconds": 199.530667,
+  "videoMinusNarrationSeconds": 0.011,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.62,
+      "seconds": 5.62,
+      "estimated": false,
+      "text": "第 6 章 · 《脉要精微论》：先把诊断条件管住，再谈脉象",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.62,
+      "end": 18.34,
+      "seconds": 12.72,
+      "estimated": false,
+      "text": "「诊法常以平旦，阴气未动，阳气未散，饮食未进，经脉未盛，络脉调匀，气血未乱，故乃可诊有过之脉。」——《素问·脉要精微论》",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 18.34,
+      "end": 32.31,
+      "seconds": 13.97,
+      "estimated": false,
+      "text": "你在门诊随手搭脉，出诊记录写「脉弦」，但没人知道病人刚爬了三层楼、刚喝完咖啡、刚吵完架——同一个「弦」，可能来自病，也可能来自你没管住的条件。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 32.31,
+      "end": 45.13,
+      "seconds": 12.82,
+      "estimated": false,
+      "text": "环境逼迫(门诊条件无法像经典要求那样理想) + 知识积累(原文条件清单 × 偏差记录 = 一份能说明「这次测量在什么条件下成立」的记录)",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 45.13,
+      "end": 72.71,
+      "seconds": 27.58,
+      "estimated": false,
+      "text": "背出原文给的四个条件（阴气未动、阳气未散、饮食未进、气血未乱）并说明各自影响什么 说出「平旦诊法」的实质：控制变量，不是规定时间 用原文的脉象四条（长、短、数、大）说明「同一属性两个方向」的判读结构 写一个采集条件检查器：不满足时输出偏差项，而不是拒绝测量",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "concept",
+      "start": 72.71,
+      "end": 163,
+      "seconds": 90.29,
+      "estimated": false,
+      "text": "原文：先条件，后脉 诊法常以平旦，阴气未动，阳气未散，饮食未进，经脉未盛，络脉调匀，气血未乱，故乃可诊有过之脉。——《素问·脉要精微论》 夫脉者，血之府也。长则气治，短则气病，数则烦心，大则病进。——同上 第一句常被读成「要早上看病」，其实它列的是四个变量：阳气（活动）、饮食、经脉盛衰、气血乱否。平旦只是这四项同时归零的那个时点。换句话说，原文讲的是对照条件，不是时辰崇拜。 第二句给了四个脉象与四条判读：长/短是一对（气之治与病），数/大是另一对（烦心与病进）。注意它没有给「正常脉」，只给方向——这与后世二十八脉的体系不同，读的时候不能互套。 为什么条件会改写结论 同一病人，刚运动后脉多数、餐后脉多滑、情绪激动后脉多弦。若不记录条件，这些都由「病」来背。原文的四个条件恰好对应四类干扰：活动（阳气）、进食（饮食）、时相（经脉盛衰）、情绪（气血乱）。 工程上的推论很直接：脉象记录不是单个值，而是「值 + 条件 + 偏差项」。缺条件，值就不可比。",
+      "audio": "006.mp3"
+    },
+    {
+      "n": 7,
+      "role": "build",
+      "start": 163,
+      "end": 167.51,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "007.mp3"
+    },
+    {
+      "n": 8,
+      "role": "verify",
+      "start": 167.51,
+      "end": 188.22,
+      "seconds": 20.71,
+      "estimated": false,
+      "text": "预期：checkCondition({rested:false, fasted:true, calm:true, hour:15}) 返回 ok:false，偏差项含「未静息」「非平旦（15 时）」，并给出「记录偏差后仍可测量」的建议；PULSES 四条各带原文与边界。 <!-- neijing:begin →",
+      "audio": "008.mp3"
+    },
+    {
+      "n": 9,
+      "role": "disclaimer",
+      "start": 188.22,
+      "end": 199.52,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "009.mp3"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/17-zhongyao-shangpin-xue/01-daolun/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 64.58,
+  "estimatedCues": 0,
+  "videoSeconds": 64.618667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 2.98,
+      "seconds": 2.98,
+      "estimated": false,
+      "text": "第 1 章 · 中药商品学导论",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 2.98,
+      "end": 19.9,
+      "seconds": 16.92,
+      "estimated": false,
+      "text": "「《中国药典·一部》」——本章讲商品学导论，教材无篇名级引文；药典一部为商品法定依据，篇名按体例补足，非本章原文篇名。本章要回答的是：中药材不是农产品，为什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 19.9,
+      "end": 31.18,
+      "seconds": 11.28,
+      "estimated": false,
+      "text": "农产品按产地与外观定价，中药材还要按成分与疗效定等：同一批货，含量不够就不能入药——它是「有法定标准的商品」。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 31.18,
+      "end": 53.28,
+      "seconds": 22.1,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 1 单元 9,636 汉字；三辨主 商品属性 173；四位面（商品形态）主 监管与追溯 228；引书 22 部 42 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 53.28,
+      "end": 64.58,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

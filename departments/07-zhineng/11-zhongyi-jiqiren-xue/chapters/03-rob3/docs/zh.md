@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（机器人学的判据是「停得下来」：任何动作都要有可验证的停止条件与责任人）+ 知识积累（本章 14 单元 11,869 汉字；三辨主 **决策与规划 162**；四位面（章群结构）主 **决策与规划 11869**；引书 **2 部 2 次**；数值类命中 6）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 114 单元 / 67,767 汉字）；单元层 `standards/zhongyi-jiqiren-xue/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 114 单元 / 67,767 汉字）；单元层 `standards/zhongyi-jiqiren-xue/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -158,7 +158,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py zhongyi-jiqiren-xue "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py zhongyi-jiqiren-xue "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py zhongyi-jiqiren-xue                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

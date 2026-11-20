@@ -47,6 +47,14 @@ def main():
             reg['sources'][key] = {**meta, 'exists': False}
             continue
         sha = hashlib.sha256(open(p, 'rb').read()).hexdigest()
+        if p.lower().endswith(('.txt', '.md')):
+            # 文本快照（PMC 等开放获取页去标签落盘）：无页数，文本层即文件本身
+            txt = open(p, encoding='utf-8').read()
+            texts[key] = txt
+            reg['sources'][key] = {**meta, 'exists': True, 'sha256': sha, 'bytes': os.path.getsize(p),
+                                   'pages': None, 'textChars': len(txt),
+                                   'textLayer': len(txt) > 2000, 'kind': 'text-snapshot'}
+            continue
         with pdfplumber.open(p) as pdf:
             pages = len(pdf.pages)
             flat = "\n".join((pg.extract_text() or "") for pg in pdf.pages)
@@ -85,7 +93,9 @@ def main():
 
     print(f"来源 {len(reg['sources'])} · 条文 {reg['counts']['clauses']} · 逐字可查 {ok}")
     for s, m in reg['sources'].items():
-        print(f"  {s:24} {m.get('pages', '—'):>2} 页 · {m.get('textChars', 0):>6} 字符 · "
+        pg = m.get('pages')
+        unit = f'{pg:>2} 页' if pg else '文本快照'
+        print(f"  {s:24} {unit} · {m.get('textChars', 0):>6} 字符 · "
               f"{(m.get('sha256') or '')[:16]}… · 文本层 {m.get('textLayer')}")
     for c in reg['clauses']:
         if not c['verified']:

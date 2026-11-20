@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/07-zhineng/17-zhongyi-xinxi-xue/01-d1/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 96.26,
+  "estimatedCues": 0,
+  "videoSeconds": 96.298667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 19.22,
+      "seconds": 19.22,
+      "estimated": false,
+      "text": "第 1 章 · 公理 0 · 三为枢纽：信息／公理 1 · 中边结构：完备／公理 2 · 去中降维：从证／公理 3 · 自乘升维：从症／公理 4 · 阴阳互含：显的／公理 5 · 尺度伸缩：编码／三维极坐标：坐标系与符号",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 19.22,
+      "end": 45.98,
+      "seconds": 26.76,
+      "estimated": false,
+      "text": "「《中医信息学·公理 0 · 三为枢纽：信息／公》」——教材第1章。本章要回答的是：公理 0 · 三为枢纽：信息／公理 1 · 中边结构：完备／公理 2 · 去中降维：从证／公理 3 · 自乘升维：从症／公理 4 · 阴阳互含：显的／公理 5 · 尺度伸缩：编码／三维极坐标：坐标系与符号：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 45.98,
+      "end": 65.16,
+      "seconds": 19.18,
+      "estimated": false,
+      "text": "公理 0 · 三为枢纽：信息／公理 1 · 中边结构：完备／公理 2 · 去中降维：从证／公理 3 · 自乘升维：从症／公理 4 · 阴阳互含：显的／公理 5 · 尺度伸缩：编码／三维极坐标：坐标系与符号：本课第 1 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 65.16,
+      "end": 84.96,
+      "seconds": 19.8,
+      "estimated": false,
+      "text": "环境逼迫（信息学的判据是「标准—表示—检索」三件套）+ 知识积累（本章 41 单元 1,558 汉字；三辨主 方法与技术 7；四位面（章群结构）主 位面1 1558；引书 0 部 0 次；数值类命中 4）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 84.96,
+      "end": 96.26,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

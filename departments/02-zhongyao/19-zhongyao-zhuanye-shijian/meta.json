@@ -23,13 +23,13 @@
     "id": "textbooks",
     "path": "textbooks/02-zhongyao/19-zhongyao-zhuanye-shijian",
     "chaptersWritten": 6,
-    "words": 3830,
+    "words": 8349,
     "status": "wip",
     "layer": "handbook",
     "contract": "handbook-v1",
     "origin": "handbook",
     "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-    "extractedAt": "2026-11-09"
+    "extractedAt": "2026-11-20"
   },
   "底本": {
     "kind": "派生",

@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（脉诊客观化的判据是「可测—可复现—可解释」三关，缺一关就只是仪器读数）+ 知识积累（本章 14 单元 12,322 汉字；三辨主 **数据与特征 284**；四位面（章群结构）主 **采集·特征·评估 12322**；引书 **1 部 1 次**；数值类命中 12）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-中医智能仪器与可穿戴设备.xlsx`（10 内容章 / 136 单元 / 121,529 汉字）；单元层 `standards/maizhen-keguanhua/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-中医智能仪器与可穿戴设备.xlsx`（10 内容章 / 136 单元 / 121,529 汉字）；单元层 `standards/maizhen-keguanhua/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -158,7 +158,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py maizhen-keguanhua "F:/textbooks/F:/textbooks/qhzy-中医智能仪器与可穿戴设备.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py maizhen-keguanhua "F:/textbooks/qhzy-中医智能仪器与可穿戴设备.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py maizhen-keguanhua                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

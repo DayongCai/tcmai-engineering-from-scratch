@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/01-jingluo-xue/06-bingli-fanying/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 66.02,
+  "estimatedCues": 0,
+  "videoSeconds": 66.048667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.06,
+      "seconds": 4.06,
+      "estimated": false,
+      "text": "第 6 章 · 经络的病理反应与诊断意义",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.06,
+      "end": 16.35,
+      "seconds": 12.29,
+      "estimated": false,
+      "text": "「《灵枢·经脉》」——教材·第4章·4.1.2。本章要回答的是：经脉病候与脏腑病候的边界在哪，循经感传算不算证据。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 16.35,
+      "end": 31.78,
+      "seconds": 15.43,
+      "estimated": false,
+      "text": "病候是经络学最像临床的一节，也最容易把「教科书描述」当成「临床证据」。分不清的具体后果不是考试扣分，而是动手时把不该扎的地方扎了、把该查的经脉漏了。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 31.78,
+      "end": 54.72,
+      "seconds": 22.94,
+      "estimated": false,
+      "text": "环境逼迫（针灸临床以经脉为坐标系，取穴、配穴、辨经都从这里出发，教材无从回避）+ 知识积累（本章 13 单元 18,047 汉字；三辨主 循行 413；四位面主 手三阴 58；引书 4 部 27 次；数值类命中 32）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 54.72,
+      "end": 66.02,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

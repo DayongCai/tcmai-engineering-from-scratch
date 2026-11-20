@@ -1,0 +1,138 @@
+# [tcmP] 课程编排 · 06-guanli/23-yiyuan-kuaiji-caiwu
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/06-guanli/23-yiyuan-kuaiji-caiwu/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 23-yiyuan-kuaiji-caiwu
+title: 医院会计与财务管理
+en: Hospital Accounting & Finance
+dept: 06-guanli
+dept_title: 管理系
+semester: 8
+stage: zhuang
+hours: 36
+chapters_target: 18
+bridge: 成本核算→作业成本法 / 预算→时间序列
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-k1
+    title: 第1章 医院会计与财务管理概论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.91
+  - slug: 02-k2
+    title: 第2章 医院财务管理的制度环境
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.9
+  - slug: 03-k3
+    title: 第3章 医院会计基础
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.82
+    measured_minutes: 0.84
+  - slug: 04-k4
+    title: 第4章 医院财务报告与财务分析
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.92
+  - slug: 05-k5
+    title: 第5章 医院资产的核算与管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.88
+  - slug: 06-k6
+    title: 第6章 医院负债与净资产的核算与管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.95
+  - slug: 07-k7
+    title: 第7章 医院收入、费用与结余的核算
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.95
+  - slug: 08-k8
+    title: 第8章 医院成本核算
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.85
+  - slug: 09-k9
+    title: 第9章 医院成本分析与成本管控
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.92
+  - slug: 10-k10
+    title: 第10章 医院预算管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.84
+  - slug: 11-k11
+    title: 第11章 医院资金管理与筹资投资
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.93
+  - slug: 12-k12
+    title: 第12章 医院内部控制与财务风险管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.95
+  - slug: 13-k13
+    title: 第13章 医院绩效管理与成本效益分析
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 14-k14
+    title: 第14章 医院财务监督与内部审计
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.93
+  - slug: 15-k15
+    title: 第15章 医院财务信息化与智能财务
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.95
+  - slug: 16-k16
+    title: 第16章 医院财务数据治理与决策支持
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97
+  - slug: 17-k17
+    title: 第17章 医院财务管理的改革与发展
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.93
+  - slug: 18-k18
+    title: 第18章 医院会计与财务管理与 tcmP 平台
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1

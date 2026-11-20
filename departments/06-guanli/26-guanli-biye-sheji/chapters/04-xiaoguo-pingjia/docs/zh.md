@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（毕设的判据是「命题可测、指标可溯、方案可接」）+ 知识积累（本章 33 单元 48,148 汉字；三辨主 **方法与执行 361**；四位面（阶段结构）主 **中期 48148**；引书 **15 部 41 次**；数值类命中 1）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-管理学基础.xlsx`（6 内容章 / 143 单元 / 210,326 汉字）；单元层 `standards/26-guanli-biye-sheji/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-管理学基础.xlsx`（6 内容章 / 143 单元 / 210,326 汉字）；单元层 `standards/26-guanli-biye-sheji/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -271,7 +271,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py 26-guanli-biye-sheji "F:/textbooks/F:/textbooks/qhzy-管理学基础.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py 26-guanli-biye-sheji "F:/textbooks/qhzy-管理学基础.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py 26-guanli-biye-sheji                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

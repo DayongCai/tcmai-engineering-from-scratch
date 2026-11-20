@@ -1,0 +1,102 @@
+# [tcmP] 课程编排 · 04-gushang/06-zhongyi-zhenggu-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/04-gushang/06-zhongyi-zhenggu-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 06-zhongyi-zhenggu-xue
+title: 中医正骨学
+en: TCM Bone-setting
+dept: 04-gushang
+dept_title: 骨伤系
+semester: 6
+stage: zhang
+hours: 90
+chapters_target: 12
+bridge: 复位手法→力学仿真 / 骨折分型→图像分类
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xulun-lilun
+    title: 第1章 绪论与理论基础
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97
+  - slug: 02-shoufa-gailun
+    title: 第2章 正骨手法概论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.94
+  - slug: 03-zhenggu-bafa
+    title: 第3章 正骨八法与常用手法
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1.02
+  - slug: 04-guzhe-zonglun
+    title: 第4章 骨折总论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.94
+  - slug: 05-shangzhi-guzhe
+    title: 第5章 上肢骨折
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.96
+  - slug: 06-xiazhi-guzhe
+    title: 第6章 下肢骨折
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.94
+  - slug: 07-qugan-guzhe
+    title: 第7章 躯干与骨盆骨折
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.95
+  - slug: 08-guanjie-tuowei
+    title: 第8章 关节脱位
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.93
+  - slug: 09-jinshang-zonglun
+    title: 第9章 筋伤总论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.93
+  - slug: 10-jingjian-yaotui
+    title: 第10章 颈肩腰腿筋伤
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.96
+  - slug: 11-sizhi-xiaoer
+    title: 第11章 四肢关节筋伤与小儿骨伤
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.05
+  - slug: 12-gubing-kangfu
+    title: 第12章 骨病与康复
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.98

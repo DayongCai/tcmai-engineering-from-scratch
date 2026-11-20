@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/16-huli-xue-daolun/07-lunli-falv/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 64.97,
+  "estimatedCues": 0,
+  "videoSeconds": 64.998667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3,
+      "seconds": 3,
+      "estimated": false,
+      "text": "第 7 章 · 护理伦理与法律",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3,
+      "end": 22.32,
+      "seconds": 19.32,
+      "estimated": false,
+      "text": "「《护士条例·第三章 权利和义务》」——本章讲伦理与法律，教材无篇名级引文；护士权利义务的法定条款在此章，篇名按条例体例补足，非本章原文篇名。本章要回答的是：伦理与法律，哪个先管住护士。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 22.32,
+      "end": 32.69,
+      "seconds": 10.37,
+      "estimated": false,
+      "text": "法律管底线（能做什么、必须记什么），伦理管取舍（该不该做、先做谁）；底线清楚之后，取舍才是真问题。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 32.69,
+      "end": 53.67,
+      "seconds": 20.98,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 1 单元 17,745 汉字；三辨主 概念与理论 460；四位面（护理领域）主 个体 207；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 53.67,
+      "end": 64.97,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

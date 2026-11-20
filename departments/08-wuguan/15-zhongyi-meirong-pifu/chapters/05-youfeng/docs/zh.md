@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（美容皮肤的判据是「皮损说得清、证候辨得准、处置有禁忌」——美容项目不等于医疗处置）+ 知识积累（本章 5 单元 3,661 汉字；三辨主 **血分（血·虚·瘀） 111**；四位面（章群结构）主 **脱发与粉刺 3661**；引书 **7 部 9 次**；数值类命中 1）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-中医外科学.xlsx`（8 内容章 / 45 单元 / 33,374 汉字）；单元层 `standards/zhongyi-meirong-pifu/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-中医外科学.xlsx`（8 内容章 / 45 单元 / 33,374 汉字）；单元层 `standards/zhongyi-meirong-pifu/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -122,7 +122,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py zhongyi-meirong-pifu "F:/textbooks/F:/textbooks/qhzy-中医外科学.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py zhongyi-meirong-pifu "F:/textbooks/qhzy-中医外科学.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py zhongyi-meirong-pifu                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

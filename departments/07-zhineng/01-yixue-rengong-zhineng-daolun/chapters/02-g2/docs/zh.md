@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（导论的判据是「说清边界」：这门技术能做什么、不能做什么、出问题谁负责）+ 知识积累（本章 68 单元 3,319 汉字；三辨主 **方法与模型 35**；四位面（章群结构）主 **起步与场景 3319**；引书 **5 部 5 次**；数值类命中 5）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 212 单元 / 90,764 汉字）；单元层 `standards/yixue-rengong-zhineng-daolun/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 212 单元 / 90,764 汉字）；单元层 `standards/yixue-rengong-zhineng-daolun/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -482,7 +482,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py yixue-rengong-zhineng-daolun "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py yixue-rengong-zhineng-daolun "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py yixue-rengong-zhineng-daolun                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

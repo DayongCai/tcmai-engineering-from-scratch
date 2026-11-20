@@ -1,0 +1,105 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/07-shanghanlun/04-yangming-li/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 9,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 231.89,
+  "estimatedCues": 0,
+  "videoSeconds": 231.904667,
+  "videoMinusNarrationSeconds": 0.015,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 6.36,
+      "seconds": 6.36,
+      "estimated": false,
+      "text": "第 4 章 · 阳明病里实证：三承气不是三档火力，是三道门槛",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 6.36,
+      "end": 21.82,
+      "seconds": 15.46,
+      "estimated": false,
+      "text": "「阳明病，脉迟，汗出不恶寒，身重短气，腹满潮热，大便硬，大承气汤主之。若腹大满不通者，与小承气汤。」——《伤寒论·辨阳明病脉证并治》（篇 8）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 21.82,
+      "end": 39.87,
+      "seconds": 18.05,
+      "estimated": false,
+      "text": "你把三承气当成「轻—中—重」三档，病人腹满潮热就往上加码。但原文这两句是同一基础证的两个分支：都是腹满潮热，一个大便硬用大承气，一个腹大满不通改用小承气——加码方向在这里是反的。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 39.87,
+      "end": 47.91,
+      "seconds": 8.04,
+      "estimated": false,
+      "text": "环境逼迫(临床要选方) + 知识积累(逐条条件表 × 异文标注 = 能说明「凭什么这一档」)",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 47.91,
+      "end": 75.85,
+      "seconds": 27.94,
+      "estimated": false,
+      "text": "逐字引出阳明提纲与三承气的分层条件，说明「痞满燥实」各自对应哪些原文词 解释为什么「腹大满不通」反而用小承气（气机壅塞 vs 燥屎内结的区别） 认出底本里的异文标注（「玉函云：与小承气汤」）并说明它如何改变选方 写一个分层判定器：输出档位、命中条件、缺失条件与不排除项",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "concept",
+      "start": 75.85,
+      "end": 185.48,
+      "seconds": 109.63,
+      "estimated": false,
+      "text": "阳明提纲与它的夹注 阳明之为病，胃家实，一作寒是也。——《伤寒论·辨阳明病脉证并治》（篇 9） 「胃家实」三字是全篇入口。夹注「一作寒是也」提示另有版本作「胃家寒」——这直接把提纲的判据反转。本章按主流读法取「胃家实」，但保留夹注，因为删掉它会假装版本一致。 一条原文，两个分支 阳明病，脉迟，汗出不恶寒，身重短气，腹满潮热，大便硬，大承气汤主之。若腹大满不通者，与小承气汤。——（篇 8） 拆开看条件： 大便硬是燥屎成形的标志，故用大承气直下；腹大满不通是气机壅塞为主，燥屎未必坚，故小承气轻下。所以「更重的症状用更轻的方」并不矛盾——两个分支的目标不同：一个攻燥屎，一个通壅气。 异文会改方 发汗后，恶寒者，虚故也。不恶寒但热者，实也，当和胃气，与调胃承气汤。方三十三玉函云：与小承气汤。——（篇 5） 同一处，《玉函》给的是小承气。底本把两个说法并列保留了。这件事对工程的启示很直接：方名不是铁值，是带版本的值。任何「条文，方」的映射表都必须留一个 variant 字段，否则你在做的是一个静默二选一。 实测规模 注意「大承气汤」79 条远超另两方之和——与第 3 章同理，大量出现是在禁忌与误治条里（「不可与大承气汤」之类），频次不代表首选率。",
+      "audio": "006.mp3"
+    },
+    {
+      "n": 7,
+      "role": "build",
+      "start": 185.48,
+      "end": 205.78,
+      "seconds": 20.3,
+      "estimated": false,
+      "text": "判定规则（全部来自原文词）： 大便硬 + 潮热 + 腹满 ， 大承气汤 腹大满不通 + 潮热（无大便硬）， 小承气汤 但热不恶寒、无腹满硬满 ， 调胃承气汤（和胃气） 其余 ， 不足以定档，并列出还缺哪些条件",
+      "audio": "007.mp3"
+    },
+    {
+      "n": 8,
+      "role": "verify",
+      "start": 205.78,
+      "end": 220.59,
+      "seconds": 14.81,
+      "estimated": false,
+      "text": "预期：grade({大便硬:true, 潮热:true, 腹满:true}) ， 大承气汤；grade({腹大满不通:true, 潮热:true}) ， 小承气汤；grade({}) ， 不足以定档且 missing 非空。",
+      "audio": "008.mp3"
+    },
+    {
+      "n": 9,
+      "role": "disclaimer",
+      "start": 220.59,
+      "end": 231.89,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "009.mp3"
+    }
+  ]
+}

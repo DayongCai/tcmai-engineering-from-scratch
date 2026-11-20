@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/09-zhongyao-yaoji-xue/09-shengwu-liyongdu/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 62.72,
+  "estimatedCues": 0,
+  "videoSeconds": 62.762667,
+  "videoMinusNarrationSeconds": 0.043,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.72,
+      "seconds": 3.72,
+      "estimated": false,
+      "text": "第 9 章 · 生物利用度与体外释放",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.72,
+      "end": 21.02,
+      "seconds": 17.3,
+      "estimated": false,
+      "text": "「《中国药典·四部》」——本章讲生物利用度与释放度，教材无篇名级引文；药典四部收载相关指导原则，篇名按此补足。本章要回答的是：体外释放度合格，能不能推出体内一定有效。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 21.02,
+      "end": 31.24,
+      "seconds": 10.22,
+      "estimated": false,
+      "text": "不能。释放度是体外替代指标，体外—体内相关性（IVIVC）要单独验证，教材在这一节只说「可以提示」。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 31.24,
+      "end": 51.42,
+      "seconds": 20.18,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 2 单元 7,245 汉字；三辨主 质量 245；四位面（给药途径）主 混悬与固体 13；引书 4 部 7 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 51.42,
+      "end": 62.72,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

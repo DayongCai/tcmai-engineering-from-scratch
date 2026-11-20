@@ -1,0 +1,66 @@
+# [tcmP] 课程编排 · 05-huli/27-huli-biye-sheji
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/05-huli/27-huli-biye-sheji/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 27-huli-biye-sheji
+title: 护理毕业设计与知识移交
+en: Nursing Capstone & Handover
+dept: 05-huli
+dept_title: 护理系
+semester: 10
+stage: yi
+hours: 72
+chapters_target: 6
+bridge: 护理问题→可评价方案 / 证据检索→循证链 / 结局→指标集
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xuan-ti
+    title: 第1章 选题：从护理问题到可评价方案
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.03
+  - slug: 02-zhengju-chaxun
+    title: 第2章 证据检索与循证方案设计
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 0.98
+  - slug: 03-ganyu-shixian
+    title: 第3章 干预实现与伦理审查
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 0.98
+  - slug: 04-jieju-pingjia
+    title: 第4章 指标与结局评价
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 0.96
+  - slug: 05-lunwen-dabian
+    title: 第5章 论文写作与答辩
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 0.97
+  - slug: 06-zhishi-yijiao
+    title: 第6章 知识移交：护理方案与交接
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1

@@ -1,0 +1,52 @@
+{
+  "chapter": "01-chengshu-banben",
+  "slideCount": 9,
+  "segmentCount": 9,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 32
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 49
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 70
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 66
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 161
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 784
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 222
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 153
+    },
+    {
+      "n": 9,
+      "segment": 9,
+      "chars": 52
+    }
+  ]
+}

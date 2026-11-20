@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/22-zhongyi-biye-sheji/24-wuguan-fangji-shai/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 60.89,
+  "estimatedCues": 0,
+  "videoSeconds": 60.908667,
+  "videoMinusNarrationSeconds": 0.019,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 7.8,
+      "seconds": 7.8,
+      "estimated": false,
+      "text": "第 24 章 · 五官口腔系·案例二：114 方五官筛——专科中成药的选品依据",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 7.8,
+      "end": 19.01,
+      "seconds": 11.21,
+      "estimated": false,
+      "text": "「十二经脉，三百六十五络，其血气皆上于面而走空窍」——教材·第24章·24.1（《灵枢·邪气脏腑病形》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 19.01,
+      "end": 35.38,
+      "seconds": 16.37,
+      "estimated": false,
+      "text": "按「方中出现五官专药」筛方，与按「教材主治」筛方，结果差多少？ 本章还要回答：谁会用、他付多少、客户数从哪来、多久回本、AI 解决了什么、能不能卖给个人（多数不能）。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 35.38,
+      "end": 45.08,
+      "seconds": 9.7,
+      "estimated": false,
+      "text": "环境逼迫（毕设要落到可交付的假设与判据上）+ 知识积累（本库该院系资产已可支撑一次真实计算）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 45.08,
+      "end": 49.59,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 49.59,
+      "end": 60.89,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

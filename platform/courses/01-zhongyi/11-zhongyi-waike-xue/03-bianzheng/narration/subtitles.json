@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/11-zhongyi-waike-xue/03-bianzheng/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 81.22,
+  "estimatedCues": 0,
+  "videoSeconds": 81.244667,
+  "videoMinusNarrationSeconds": 0.025,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.02,
+      "seconds": 5.02,
+      "estimated": false,
+      "text": "第 3 章 · 辨证：外科的判据长在「看得见的地方」",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.02,
+      "end": 15.1,
+      "seconds": 10.08,
+      "estimated": false,
+      "text": "「疡科之证，在上部者，俱属风温风热，风性上行故也」——教材·第3章·3.2.1（《疡科心得集》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 15.1,
+      "end": 39.39,
+      "seconds": 24.29,
+      "estimated": false,
+      "text": "学生能背「红肿热痛为阳证」，可面对一个真实的疮面，却说不清该先看哪一项、看到什么程度算「成脓」、什么算「逆证」。于是辨证退化成形容词对号：红＝热、痛＝实。真正要判断的是三件事——阴阳（方向）、部位（归经与风险）、脓与溃疡（可外治的窗口）。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 39.39,
+      "end": 65.41,
+      "seconds": 26.02,
+      "estimated": false,
+      "text": "环境逼迫（外科纠纷里高频出现的一句是「当时以为只是发炎」——把成脓判成未成脓、把逆证判成顺证）+ 知识积累（本章 7 个单元、9,388 字里三辨重心压在局部表现（144 次），远高于病因；这说明教材把外科辨证的判据明确放在可观察的局部，而不是靠推算内因）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 65.41,
+      "end": 69.92,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 69.92,
+      "end": 81.22,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/23-zhongcan-xilu-xuandu/02-daqi-xiaxian/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 136.17,
+  "estimatedCues": 0,
+  "videoSeconds": 136.212667,
+  "videoMinusNarrationSeconds": 0.043,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.27,
+      "seconds": 4.27,
+      "estimated": false,
+      "text": "第 2 章 · 大气下陷：一个被重新提出的证",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.27,
+      "end": 13.99,
+      "seconds": 9.72,
+      "estimated": false,
+      "text": "「治胸中大气下陷，气短不足以息」——医学衷中参西录·一、医方·（三）治大气下陷方·1．升陷汤",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 13.99,
+      "end": 23.23,
+      "seconds": 9.24,
+      "estimated": false,
+      "text": "教材只写「气虚下陷」，学生见到升陷汤四方（升陷、回阳、理郁、醒脾）分不清各自适应证。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 23.23,
+      "end": 44.47,
+      "seconds": 21.24,
+      "estimated": false,
+      "text": "环境逼迫（医学衷中参西录选读在本仓库没有教材底本，唯一可引的是外源文字化本；不复算就只剩口号） + 知识积累（本章取 13 单元 19,279 字；实测药物频次、剂量命中 206 处、参西 7 次、引书 13 部）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "concept",
+      "start": 44.47,
+      "end": 124.87,
+      "seconds": 80.4,
+      "estimated": false,
+      "text": "一、四张升陷方，差别不在主药而在「兼什么」 治大气下陷方 4 首 13 单元 19,279 字：升陷汤、回阳升陷汤、理郁升陷汤、醒脾升陷汤。四方的共同骨架是黄芪—升麻—柴胡—桔梗（升提），差异全部落在兼证上：回阳加附子干姜（兼阳衰）、理郁加理气药（兼气滞）、醒脾加健脾药（兼脾虚）。本章实测这几味药在本组原文里的出现次数：生箭耆 9 次、生怀山药 7 次、知母 5 次、生麦芽 5 次、甘草 4 次、生杭芍 4 次。 二、医案部分：气病门里「大气下陷」被一案一案坐实 本组医案 9 案，明确写「大气下陷」的 8 案。这就是张锡纯的写法：先立证名，再用一案一案去把它坐实；证名不是凭空的，是被复用出来的。 三、与「中气不足」的边界 中气不足讲的是脾胃运化之力，大气下陷讲的是胸中气机的升举——所以升陷汤主药是黄芪而非党参，配伍必用升麻柴胡。这条边界如果混掉，四方就退化成「都是补气」，选方只能靠记。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 124.87,
+      "end": 136.17,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

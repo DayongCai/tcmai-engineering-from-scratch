@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/06-guanli/21-yixue-lunli-xue/16-z2116/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 53.77,
+  "estimatedCues": 0,
+  "videoSeconds": 53.812667,
+  "videoMinusNarrationSeconds": 0.043,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.43,
+      "seconds": 3.43,
+      "estimated": false,
+      "text": "第 16 章 · 伦理与法律的边界",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.43,
+      "end": 15.98,
+      "seconds": 12.55,
+      "estimated": false,
+      "text": "「《F:/textbooks/机器学习·伦理与法律的边界》」——教材第16章。本章要回答的是：伦理与法律的边界：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 15.98,
+      "end": 19.77,
+      "seconds": 3.79,
+      "estimated": false,
+      "text": "伦理与法律的边界：本课第 16 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 19.77,
+      "end": 42.47,
+      "seconds": 22.7,
+      "estimated": false,
+      "text": "环境逼迫（伦理的判据是「谁受损、谁同意、谁负责」）+ 知识积累（本章 11 单元 15,478 汉字；三辨主 制度与规则 156；四位面（章群结构）主 数据与治理 15478；引书 26 部 78 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 42.47,
+      "end": 53.77,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

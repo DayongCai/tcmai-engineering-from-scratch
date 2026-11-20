@@ -1,6 +1,6 @@
 {
   "$generated": "node scripts/build_textbook_board.js",
-  "generatedAt": "2026-11-15",
+  "generatedAt": "2026-11-20",
   "rules": {
     "weeks": 18,
     "teachWeeks": 16,
@@ -12,39 +12,46 @@
     "chapterCount": "textbooks/<dept>/<subject>/NN-第N章-*.md 文件数（不含 00-前言）",
     "hanziCount": "上述文件 [\\u4e00-\\u9fa5] 字符数"
   },
+  "gapBodyStats": {
+    "gapSubjects": 51,
+    "gapWithBody": 51,
+    "gapWithBodyChapters": 446,
+    "gapWithBodyChars": 4399049,
+    "gapNoBody": 0
+  },
   "totals": {
     "departments": 9,
     "subjects": 189,
     "mandatory": 171,
     "electives": 18,
     "hours": 11547,
-    "chaptersTarget": 2154,
-    "textbookSubjects": 128,
-    "baseSubjects": 103,
+    "chaptersTarget": 2166,
+    "textbookSubjects": 138,
+    "baseSubjects": 113,
     "extSubjects": 7,
     "hbSubjects": 18,
-    "baseHours": 5967,
+    "baseHours": 6543,
     "extHours": 414,
     "hbHours": 1620,
-    "baseChapters": 1711,
+    "baseChapters": 1805,
     "extChapters": 755,
     "hbChapters": 130,
-    "baseNonWs": 34428628,
+    "baseNonWs": 35639447,
     "extNonWs": 711393,
-    "hbNonWs": 127928,
-    "coverageBaseHours": 51.7,
-    "coverageBaseSubjects": 54.5,
-    "textbookHours": 8001,
-    "chapters": 2596,
-    "hanzi": 29243120,
-    "nonWs": 35267949,
-    "metaWords": 30461965,
+    "hbNonWs": 236360,
+    "coverageBaseHours": 56.7,
+    "coverageBaseSubjects": 59.8,
+    "textbookHours": 8577,
+    "chapters": 2690,
+    "hanzi": 30254731,
+    "nonWs": 36587200,
+    "metaWords": 31690658,
     "registryChapters": 1621,
     "registryChars": 28596788,
     "registryFiles": 100,
     "registrySubjects": 101,
-    "coverageSubjects": 67.7,
-    "coverageHours": 69.3,
+    "coverageSubjects": 73,
+    "coverageHours": 74.3,
     "semesters": 10
   },
   "prereqStats": {
@@ -67,7 +74,7 @@
       "subjects": 6,
       "hours": 324,
       "weekly": 18,
-      "textbooks": 5,
+      "textbooks": 6,
       "depts": 2
     },
     {
@@ -87,7 +94,7 @@
       "subjects": 16,
       "hours": 936,
       "weekly": 52,
-      "textbooks": 13,
+      "textbooks": 15,
       "depts": 6
     },
     {
@@ -97,7 +104,7 @@
       "subjects": 23,
       "hours": 1458,
       "weekly": 81,
-      "textbooks": 16,
+      "textbooks": 17,
       "depts": 9
     },
     {
@@ -117,7 +124,7 @@
       "subjects": 37,
       "hours": 2196,
       "weekly": 122,
-      "textbooks": 24,
+      "textbooks": 25,
       "depts": 8
     },
     {
@@ -127,7 +134,7 @@
       "subjects": 35,
       "hours": 1926,
       "weekly": 107,
-      "textbooks": 15,
+      "textbooks": 18,
       "depts": 8
     },
     {
@@ -137,7 +144,7 @@
       "subjects": 18,
       "hours": 810,
       "weekly": 45,
-      "textbooks": 9,
+      "textbooks": 11,
       "depts": 8
     },
     {
@@ -188,8 +195,8 @@
             "dir": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun",
             "exists": true,
             "chapters": 13,
-            "hanzi": 46046,
-            "nonWs": 63034,
+            "hanzi": 68364,
+            "nonWs": 95748,
             "metaChapters": 13,
             "metaWords": 61245,
             "status": "wip",
@@ -333,14 +340,14 @@
           "bridge": "九种体质→多分类 / 体质问卷→特征工程",
           "textbook": {
             "dir": "textbooks/01-zhongyi/04-zhongyi-tizhi-xue",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
-            "layer": null,
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 15380,
+            "nonWs": 25293,
+            "metaChapters": 8,
+            "metaWords": 25293,
+            "status": "wip",
+            "layer": "derived",
             "origin": "base",
             "external": null,
             "registry": null
@@ -359,9 +366,7 @@
             "depth": 2,
             "order": 8
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "01-zhongyi",
@@ -479,11 +484,11 @@
           "textbook": {
             "dir": "textbooks/01-zhongyi/07-shanghanlun",
             "exists": true,
-            "chapters": 10,
-            "hanzi": 95646,
-            "nonWs": 122594,
-            "metaChapters": 10,
-            "metaWords": 118973,
+            "chapters": 12,
+            "hanzi": 99829,
+            "nonWs": 129165,
+            "metaChapters": 12,
+            "metaWords": 129165,
             "status": "wip",
             "layer": "source-body",
             "origin": "base",
@@ -512,7 +517,8 @@
             "order": 7
           },
           "flags": [
-            "chapters-short"
+            "registry-disk-chapters",
+            "registry-meta-chars"
           ]
         },
         {
@@ -626,11 +632,11 @@
           "textbook": {
             "dir": "textbooks/01-zhongyi/10-zhongyi-neike-xue",
             "exists": true,
-            "chapters": 12,
-            "hanzi": 335032,
-            "nonWs": 414334,
-            "metaChapters": 12,
-            "metaWords": 405580,
+            "chapters": 14,
+            "hanzi": 339542,
+            "nonWs": 421791,
+            "metaChapters": 14,
+            "metaWords": 421791,
             "status": "wip",
             "layer": "source-body",
             "origin": "base",
@@ -660,7 +666,8 @@
             "order": 11
           },
           "flags": [
-            "chapters-short"
+            "registry-disk-chapters",
+            "registry-meta-chars"
           ]
         },
         {
@@ -825,7 +832,7 @@
           "semester": 7,
           "stageId": "zhuang",
           "hours": 72,
-          "chaptersTarget": 12,
+          "chaptersTarget": 24,
           "bridge": "证候→本体建模 / 证型标准化→嵌入聚类",
           "textbook": {
             "dir": "textbooks/01-zhongyi/14-zhongyi-zhenghou-xue",
@@ -845,7 +852,7 @@
             "weekly": 4,
             "weeks": "1–18",
             "teachWeeks": 16,
-            "chaptersPerWeek": 0.8,
+            "chaptersPerWeek": 1.5,
             "halfTerm": null,
             "prereq": [
               "01-zhongyi/05-zhongyi-zhen-duan-xue",
@@ -856,7 +863,9 @@
             "depth": 5,
             "order": 17
           },
-          "flags": []
+          "flags": [
+            "chapters-short"
+          ]
         },
         {
           "dept": "01-zhongyi",
@@ -1238,10 +1247,10 @@
             "dir": "textbooks/01-zhongyi/21-zhongyi-linchuang-lunzhuan",
             "exists": true,
             "chapters": 6,
-            "hanzi": 5166,
-            "nonWs": 7316,
+            "hanzi": 9408,
+            "nonWs": 13105,
             "metaChapters": 6,
-            "metaWords": 5166,
+            "metaWords": 9408,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -1283,10 +1292,10 @@
             "dir": "textbooks/01-zhongyi/22-zhongyi-biye-sheji",
             "exists": true,
             "chapters": 28,
-            "hanzi": 22586,
-            "nonWs": 35946,
+            "hanzi": 28060,
+            "nonWs": 40768,
             "metaChapters": 28,
-            "metaWords": 22586,
+            "metaWords": 28060,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -1329,8 +1338,8 @@
             "dir": "textbooks/01-zhongyi/01-zhongyi-jichu-lilun",
             "exists": true,
             "chapters": 13,
-            "hanzi": 46046,
-            "nonWs": 63034,
+            "hanzi": 68364,
+            "nonWs": 95748,
             "metaChapters": 13,
             "metaWords": 61245,
             "status": "wip",
@@ -1626,11 +1635,11 @@
           "textbook": {
             "dir": "textbooks/01-zhongyi/07-shanghanlun",
             "exists": true,
-            "chapters": 10,
-            "hanzi": 95646,
-            "nonWs": 122594,
-            "metaChapters": 10,
-            "metaWords": 118973,
+            "chapters": 12,
+            "hanzi": 99829,
+            "nonWs": 129165,
+            "metaChapters": 12,
+            "metaWords": 129165,
             "status": "wip",
             "layer": "source-body",
             "origin": "base",
@@ -1659,7 +1668,8 @@
             "order": 7
           },
           "flags": [
-            "chapters-short"
+            "registry-disk-chapters",
+            "registry-meta-chars"
           ]
         },
         {
@@ -1678,14 +1688,14 @@
           "bridge": "九种体质→多分类 / 体质问卷→特征工程",
           "textbook": {
             "dir": "textbooks/01-zhongyi/04-zhongyi-tizhi-xue",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
-            "layer": null,
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 15380,
+            "nonWs": 25293,
+            "metaChapters": 8,
+            "metaWords": 25293,
+            "status": "wip",
+            "layer": "derived",
             "origin": "base",
             "external": null,
             "registry": null
@@ -1704,9 +1714,7 @@
             "depth": 2,
             "order": 8
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "01-zhongyi",
@@ -1819,11 +1827,11 @@
           "textbook": {
             "dir": "textbooks/01-zhongyi/10-zhongyi-neike-xue",
             "exists": true,
-            "chapters": 12,
-            "hanzi": 335032,
-            "nonWs": 414334,
-            "metaChapters": 12,
-            "metaWords": 405580,
+            "chapters": 14,
+            "hanzi": 339542,
+            "nonWs": 421791,
+            "metaChapters": 14,
+            "metaWords": 421791,
             "status": "wip",
             "layer": "source-body",
             "origin": "base",
@@ -1853,7 +1861,8 @@
             "order": 11
           },
           "flags": [
-            "chapters-short"
+            "registry-disk-chapters",
+            "registry-meta-chars"
           ]
         },
         {
@@ -2120,7 +2129,7 @@
           "semester": 7,
           "stageId": "zhuang",
           "hours": 72,
-          "chaptersTarget": 12,
+          "chaptersTarget": 24,
           "bridge": "证候→本体建模 / 证型标准化→嵌入聚类",
           "textbook": {
             "dir": "textbooks/01-zhongyi/14-zhongyi-zhenghou-xue",
@@ -2140,7 +2149,7 @@
             "weekly": 4,
             "weeks": "1–18",
             "teachWeeks": 16,
-            "chaptersPerWeek": 0.8,
+            "chaptersPerWeek": 1.5,
             "halfTerm": null,
             "prereq": [
               "01-zhongyi/05-zhongyi-zhen-duan-xue",
@@ -2151,7 +2160,9 @@
             "depth": 5,
             "order": 17
           },
-          "flags": []
+          "flags": [
+            "chapters-short"
+          ]
         },
         {
           "dept": "01-zhongyi",
@@ -2379,10 +2390,10 @@
             "dir": "textbooks/01-zhongyi/21-zhongyi-linchuang-lunzhuan",
             "exists": true,
             "chapters": 6,
-            "hanzi": 5166,
-            "nonWs": 7316,
+            "hanzi": 9408,
+            "nonWs": 13105,
             "metaChapters": 6,
-            "metaWords": 5166,
+            "metaWords": 9408,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -2424,10 +2435,10 @@
             "dir": "textbooks/01-zhongyi/22-zhongyi-biye-sheji",
             "exists": true,
             "chapters": 28,
-            "hanzi": 22586,
-            "nonWs": 35946,
+            "hanzi": 28060,
+            "nonWs": 40768,
             "metaChapters": 28,
-            "metaWords": 22586,
+            "metaWords": 28060,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -2604,7 +2615,7 @@
           "count": 2,
           "hours": 144,
           "weekly": 8,
-          "textbooks": 1,
+          "textbooks": 2,
           "subjects": [
             {
               "order": 7,
@@ -2617,7 +2628,7 @@
               "halfTerm": null,
               "chaptersTarget": 12,
               "chaptersPerWeek": 0.8,
-              "chapters": 10,
+              "chapters": 12,
               "status": "wip",
               "origin": "base",
               "prereqCount": 3,
@@ -2634,8 +2645,8 @@
               "halfTerm": null,
               "chaptersTarget": 8,
               "chaptersPerWeek": 0.5,
-              "chapters": 0,
-              "status": "planned",
+              "chapters": 8,
+              "status": "wip",
               "origin": "base",
               "prereqCount": 2,
               "depth": 2
@@ -2697,7 +2708,7 @@
               "halfTerm": null,
               "chaptersTarget": 14,
               "chaptersPerWeek": 0.9,
-              "chapters": 12,
+              "chapters": 14,
               "status": "wip",
               "origin": "base",
               "prereqCount": 4,
@@ -2824,8 +2835,8 @@
               "hours": 72,
               "weekly": 4,
               "halfTerm": null,
-              "chaptersTarget": 12,
-              "chaptersPerWeek": 0.8,
+              "chaptersTarget": 24,
+              "chaptersPerWeek": 1.5,
               "chapters": 12,
               "status": "done",
               "origin": "base",
@@ -2990,27 +3001,27 @@
         "mandatory": 18,
         "electives": 5,
         "hours": 1458,
-        "chaptersTarget": 276,
-        "textbookSubjects": 21,
-        "baseSubjects": 19,
+        "chaptersTarget": 288,
+        "textbookSubjects": 22,
+        "baseSubjects": 20,
         "extSubjects": 0,
         "hbSubjects": 2,
-        "baseHours": 1188,
+        "baseHours": 1242,
         "extHours": 0,
         "hbHours": 180,
-        "baseChapters": 262,
+        "baseChapters": 274,
         "extChapters": 0,
         "hbChapters": 34,
-        "baseNonWs": 7925508,
+        "baseNonWs": 7997543,
         "extNonWs": 0,
-        "hbNonWs": 43262,
-        "coverageBaseHours": 81.5,
-        "textbookHours": 1368,
-        "chapters": 296,
-        "hanzi": 5887238,
-        "nonWs": 7968770,
-        "coverageSubjects": 91.3,
-        "coverageHours": 93.8,
+        "hbNonWs": 53873,
+        "coverageBaseHours": 85.2,
+        "textbookHours": 1422,
+        "chapters": 308,
+        "hanzi": 5943345,
+        "nonWs": 8051416,
+        "coverageSubjects": 95.7,
+        "coverageHours": 97.5,
         "semesterSpan": "1–10",
         "peakWeekly": 14,
         "peakSemester": 5
@@ -3138,12 +3149,12 @@
             "dir": "textbooks/02-zhongyao/03-fangjixue",
             "exists": true,
             "chapters": 24,
-            "hanzi": 367198,
-            "nonWs": 447436,
+            "hanzi": 387691,
+            "nonWs": 474732,
             "metaChapters": 24,
-            "metaWords": 435341,
+            "metaWords": 474732,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -3168,7 +3179,9 @@
             "depth": 2,
             "order": 4
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "02-zhongyao",
@@ -3237,12 +3250,12 @@
             "dir": "textbooks/02-zhongyao/05-zhongyao-jianding-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 159199,
-            "nonWs": 191233,
+            "hanzi": 168990,
+            "nonWs": 203942,
             "metaChapters": 12,
-            "metaWords": 186359,
+            "metaWords": 203942,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -3267,7 +3280,9 @@
             "depth": 2,
             "order": 6
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "02-zhongyao",
@@ -3287,12 +3302,12 @@
             "dir": "textbooks/02-zhongyao/06-zhongyao-huaxue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 196220,
-            "nonWs": 238748,
+            "hanzi": 206959,
+            "nonWs": 252828,
             "metaChapters": 12,
-            "metaWords": 233962,
+            "metaWords": 252828,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -3316,7 +3331,9 @@
             "depth": 2,
             "order": 5
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "02-zhongyao",
@@ -3336,12 +3353,12 @@
             "dir": "textbooks/02-zhongyao/07-zhongyao-yaoli-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 201224,
-            "nonWs": 237636,
+            "hanzi": 211245,
+            "nonWs": 250487,
             "metaChapters": 12,
-            "metaWords": 232861,
+            "metaWords": 250487,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -3366,7 +3383,9 @@
             "depth": 4,
             "order": 9
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "02-zhongyao",
@@ -3386,12 +3405,12 @@
             "dir": "textbooks/02-zhongyao/08-zhongyao-paozhi-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 152312,
-            "nonWs": 179011,
+            "hanzi": 162741,
+            "nonWs": 192488,
             "metaChapters": 12,
-            "metaWords": 174240,
+            "metaWords": 192488,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -3416,7 +3435,9 @@
             "depth": 3,
             "order": 8
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "02-zhongyao",
@@ -3485,12 +3506,12 @@
             "dir": "textbooks/02-zhongyao/10-zhongyao-fenxi-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 151813,
-            "nonWs": 181004,
+            "hanzi": 162415,
+            "nonWs": 194531,
             "metaChapters": 12,
-            "metaWords": 176143,
+            "metaWords": 194531,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -3515,7 +3536,9 @@
             "depth": 4,
             "order": 11
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "02-zhongyao",
@@ -3718,13 +3741,13 @@
           "bridge": "研发管线→项目管理 / 临床试验→A/B 试验设计",
           "textbook": {
             "dir": "textbooks/02-zhongyao/15-zhongyao-xinyao-yanfa",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 15578,
+            "nonWs": 25330,
+            "metaChapters": 8,
+            "metaWords": 25330,
+            "status": "wip",
             "layer": null,
             "origin": "base",
             "external": null,
@@ -3744,9 +3767,7 @@
             "depth": 6,
             "order": 19
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "02-zhongyao",
@@ -3904,8 +3925,13 @@
             "order": 14
           },
           "flags": [
-            "chapters-short"
-          ]
+            "chapters-short-decided"
+          ],
+          "decision": {
+            "decidedAt": "2026-11-15",
+            "decision": "两轴并存，不拆教材、不并课程：教材 20 章按『学科体系』组织（一类制度一章），教学计划 28 章按『法规流程』组织（一条流程一章）。这是两套不同的切分轴，不是 20 章欠 8 章。法规操作层内容已在附录承载。",
+            "reviewIf": "教学计划章数、底本源表章数，或 补章登记.json 的 mapping 任一侧变化时，本决案作废，须重议并同步改本文件的 teachingChapters / textbookChapters / mappingStats。"
+          }
         },
         {
           "dept": "02-zhongyao",
@@ -3925,10 +3951,10 @@
             "dir": "textbooks/02-zhongyao/19-zhongyao-zhuanye-shijian",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3830,
-            "nonWs": 5649,
+            "hanzi": 8349,
+            "nonWs": 11597,
             "metaChapters": 6,
-            "metaWords": 3830,
+            "metaWords": 8349,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -3970,10 +3996,10 @@
             "dir": "textbooks/02-zhongyao/20-zhongyao-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3529,
-            "nonWs": 5317,
+            "hanzi": 7157,
+            "nonWs": 10177,
             "metaChapters": 6,
-            "metaWords": 3529,
+            "metaWords": 7157,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -4012,12 +4038,13 @@
           "bridge": "毒性剂量→安全窗计算 / 不良反应信号→统计检验",
           "textbook": {
             "dir": "textbooks/02-zhongyao/21-zhongyao-du-li-xue",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
+            "exists": true,
+            "chapters": 10,
+            "hanzi": 19094,
+            "nonWs": 31593,
+            "metaChapters": 10,
+            "metaWords": 31593,
+            "status": "wip",
             "layer": null,
             "origin": "base",
             "external": null,
@@ -4037,9 +4064,7 @@
             "depth": 5,
             "order": 12
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         }
       ],
       "ordered": [
@@ -4206,12 +4231,12 @@
             "dir": "textbooks/02-zhongyao/03-fangjixue",
             "exists": true,
             "chapters": 24,
-            "hanzi": 367198,
-            "nonWs": 447436,
+            "hanzi": 387691,
+            "nonWs": 474732,
             "metaChapters": 24,
-            "metaWords": 435341,
+            "metaWords": 474732,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -4236,7 +4261,9 @@
             "depth": 2,
             "order": 4
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "02-zhongyao",
@@ -4256,12 +4283,12 @@
             "dir": "textbooks/02-zhongyao/06-zhongyao-huaxue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 196220,
-            "nonWs": 238748,
+            "hanzi": 206959,
+            "nonWs": 252828,
             "metaChapters": 12,
-            "metaWords": 233962,
+            "metaWords": 252828,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -4285,7 +4312,9 @@
             "depth": 2,
             "order": 5
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "02-zhongyao",
@@ -4305,12 +4334,12 @@
             "dir": "textbooks/02-zhongyao/05-zhongyao-jianding-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 159199,
-            "nonWs": 191233,
+            "hanzi": 168990,
+            "nonWs": 203942,
             "metaChapters": 12,
-            "metaWords": 186359,
+            "metaWords": 203942,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -4335,7 +4364,9 @@
             "depth": 2,
             "order": 6
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "02-zhongyao",
@@ -4404,12 +4435,12 @@
             "dir": "textbooks/02-zhongyao/08-zhongyao-paozhi-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 152312,
-            "nonWs": 179011,
+            "hanzi": 162741,
+            "nonWs": 192488,
             "metaChapters": 12,
-            "metaWords": 174240,
+            "metaWords": 192488,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -4434,7 +4465,9 @@
             "depth": 3,
             "order": 8
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "02-zhongyao",
@@ -4454,12 +4487,12 @@
             "dir": "textbooks/02-zhongyao/07-zhongyao-yaoli-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 201224,
-            "nonWs": 237636,
+            "hanzi": 211245,
+            "nonWs": 250487,
             "metaChapters": 12,
-            "metaWords": 232861,
+            "metaWords": 250487,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -4484,7 +4517,9 @@
             "depth": 4,
             "order": 9
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "02-zhongyao",
@@ -4550,12 +4585,12 @@
             "dir": "textbooks/02-zhongyao/10-zhongyao-fenxi-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 151813,
-            "nonWs": 181004,
+            "hanzi": 162415,
+            "nonWs": 194531,
             "metaChapters": 12,
-            "metaWords": 176143,
+            "metaWords": 194531,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -4580,7 +4615,9 @@
             "depth": 4,
             "order": 11
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "02-zhongyao",
@@ -4598,12 +4635,13 @@
           "bridge": "毒性剂量→安全窗计算 / 不良反应信号→统计检验",
           "textbook": {
             "dir": "textbooks/02-zhongyao/21-zhongyao-du-li-xue",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
+            "exists": true,
+            "chapters": 10,
+            "hanzi": 19094,
+            "nonWs": 31593,
+            "metaChapters": 10,
+            "metaWords": 31593,
+            "status": "wip",
             "layer": null,
             "origin": "base",
             "external": null,
@@ -4623,9 +4661,7 @@
             "depth": 5,
             "order": 12
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "02-zhongyao",
@@ -4724,8 +4760,13 @@
             "order": 14
           },
           "flags": [
-            "chapters-short"
-          ]
+            "chapters-short-decided"
+          ],
+          "decision": {
+            "decidedAt": "2026-11-15",
+            "decision": "两轴并存，不拆教材、不并课程：教材 20 章按『学科体系』组织（一类制度一章），教学计划 28 章按『法规流程』组织（一条流程一章）。这是两套不同的切分轴，不是 20 章欠 8 章。法规操作层内容已在附录承载。",
+            "reviewIf": "教学计划章数、底本源表章数，或 补章登记.json 的 mapping 任一侧变化时，本决案作废，须重议并同步改本文件的 teachingChapters / textbookChapters / mappingStats。"
+          }
         },
         {
           "dept": "02-zhongyao",
@@ -4941,13 +4982,13 @@
           "bridge": "研发管线→项目管理 / 临床试验→A/B 试验设计",
           "textbook": {
             "dir": "textbooks/02-zhongyao/15-zhongyao-xinyao-yanfa",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 15578,
+            "nonWs": 25330,
+            "metaChapters": 8,
+            "metaWords": 25330,
+            "status": "wip",
             "layer": null,
             "origin": "base",
             "external": null,
@@ -4967,9 +5008,7 @@
             "depth": 6,
             "order": 19
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "02-zhongyao",
@@ -4989,10 +5028,10 @@
             "dir": "textbooks/02-zhongyao/19-zhongyao-zhuanye-shijian",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3830,
-            "nonWs": 5649,
+            "hanzi": 8349,
+            "nonWs": 11597,
             "metaChapters": 6,
-            "metaWords": 3830,
+            "metaWords": 8349,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -5034,10 +5073,10 @@
             "dir": "textbooks/02-zhongyao/20-zhongyao-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3529,
-            "nonWs": 5317,
+            "hanzi": 7157,
+            "nonWs": 10177,
             "metaChapters": 6,
-            "metaWords": 3529,
+            "metaWords": 7157,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -5271,7 +5310,7 @@
           "count": 4,
           "hours": 234,
           "weekly": 13,
-          "textbooks": 1,
+          "textbooks": 2,
           "subjects": [
             {
               "order": 10,
@@ -5318,7 +5357,8 @@
               "halfTerm": null,
               "chaptersTarget": 10,
               "chaptersPerWeek": 0.6,
-              "chapters": 0,
+              "chapters": 10,
+              "status": "wip",
               "origin": "base",
               "prereqCount": 2,
               "depth": 5
@@ -5436,7 +5476,7 @@
           "count": 2,
           "hours": 108,
           "weekly": 6,
-          "textbooks": 1,
+          "textbooks": 2,
           "subjects": [
             {
               "order": 18,
@@ -5469,8 +5509,8 @@
               "halfTerm": null,
               "chaptersTarget": 8,
               "chaptersPerWeek": 0.5,
-              "chapters": 0,
-              "status": "planned",
+              "chapters": 8,
+              "status": "wip",
               "origin": "base",
               "prereqCount": 2,
               "depth": 6
@@ -5542,26 +5582,26 @@
         "electives": 3,
         "hours": 1368,
         "chaptersTarget": 235,
-        "textbookSubjects": 15,
-        "baseSubjects": 13,
+        "textbookSubjects": 17,
+        "baseSubjects": 15,
         "extSubjects": 0,
         "hbSubjects": 2,
-        "baseHours": 828,
+        "baseHours": 954,
         "extHours": 0,
         "hbHours": 180,
-        "baseChapters": 203,
+        "baseChapters": 221,
         "extChapters": 0,
         "hbChapters": 12,
-        "baseNonWs": 3263008,
+        "baseNonWs": 3413871,
         "extNonWs": 0,
-        "hbNonWs": 10966,
-        "coverageBaseHours": 60.5,
-        "textbookHours": 1008,
-        "chapters": 215,
-        "hanzi": 2741661,
-        "nonWs": 3273974,
-        "coverageSubjects": 71.4,
-        "coverageHours": 73.7,
+        "hbNonWs": 21774,
+        "coverageBaseHours": 69.7,
+        "textbookHours": 1134,
+        "chapters": 233,
+        "hanzi": 2856555,
+        "nonWs": 3435645,
+        "coverageSubjects": 81,
+        "coverageHours": 82.9,
         "semesterSpan": "2–10",
         "peakWeekly": 13,
         "peakSemester": 6
@@ -5692,12 +5732,12 @@
             "dir": "textbooks/03-zhenjiu/03-zhenjiu-yiji-xuan",
             "exists": true,
             "chapters": 10,
-            "hanzi": 173962,
-            "nonWs": 213423,
+            "hanzi": 185275,
+            "nonWs": 228816,
             "metaChapters": 10,
-            "metaWords": 208975,
+            "metaWords": 228808,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -5721,7 +5761,9 @@
             "depth": 1,
             "order": 2
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "03-zhenjiu",
@@ -5892,12 +5934,12 @@
             "dir": "textbooks/03-zhenjiu/07-cifa-jiufa-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 202689,
-            "nonWs": 239852,
+            "hanzi": 216348,
+            "nonWs": 258468,
             "metaChapters": 12,
-            "metaWords": 234469,
+            "metaWords": 258468,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -5921,7 +5963,9 @@
             "depth": 3,
             "order": 7
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "03-zhenjiu",
@@ -6419,12 +6463,12 @@
             "dir": "textbooks/03-zhenjiu/18-tuina-gongfa-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 97307,
-            "nonWs": 116728,
+            "hanzi": 108366,
+            "nonWs": 130912,
             "metaChapters": 12,
-            "metaWords": 111893,
+            "metaWords": 130912,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -6448,7 +6492,9 @@
             "depth": 2,
             "order": 5
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "03-zhenjiu",
@@ -6571,10 +6617,10 @@
             "dir": "textbooks/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3728,
-            "nonWs": 5675,
+            "hanzi": 8503,
+            "nonWs": 11824,
             "metaChapters": 6,
-            "metaWords": 3728,
+            "metaWords": 8503,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -6615,10 +6661,10 @@
             "dir": "textbooks/03-zhenjiu/22-zhenjiu-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3445,
-            "nonWs": 5266,
+            "hanzi": 8847,
+            "nonWs": 11965,
             "metaChapters": 6,
-            "metaWords": 3445,
+            "metaWords": 8847,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -6710,12 +6756,12 @@
             "dir": "textbooks/03-zhenjiu/03-zhenjiu-yiji-xuan",
             "exists": true,
             "chapters": 10,
-            "hanzi": 173962,
-            "nonWs": 213423,
+            "hanzi": 185275,
+            "nonWs": 228816,
             "metaChapters": 10,
-            "metaWords": 208975,
+            "metaWords": 228808,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -6739,7 +6785,9 @@
             "depth": 1,
             "order": 2
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "03-zhenjiu",
@@ -6861,12 +6909,12 @@
             "dir": "textbooks/03-zhenjiu/18-tuina-gongfa-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 97307,
-            "nonWs": 116728,
+            "hanzi": 108366,
+            "nonWs": 130912,
             "metaChapters": 12,
-            "metaWords": 111893,
+            "metaWords": 130912,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -6890,7 +6938,9 @@
             "depth": 2,
             "order": 5
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "03-zhenjiu",
@@ -6959,12 +7009,12 @@
             "dir": "textbooks/03-zhenjiu/07-cifa-jiufa-xue",
             "exists": true,
             "chapters": 12,
-            "hanzi": 202689,
-            "nonWs": 239852,
+            "hanzi": 216348,
+            "nonWs": 258468,
             "metaChapters": 12,
-            "metaWords": 234469,
+            "metaWords": 258468,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -6988,7 +7038,9 @@
             "depth": 3,
             "order": 7
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "03-zhenjiu",
@@ -7639,10 +7691,10 @@
             "dir": "textbooks/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3728,
-            "nonWs": 5675,
+            "hanzi": 8503,
+            "nonWs": 11824,
             "metaChapters": 6,
-            "metaWords": 3728,
+            "metaWords": 8503,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -7683,10 +7735,10 @@
             "dir": "textbooks/03-zhenjiu/22-zhenjiu-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3445,
-            "nonWs": 5266,
+            "hanzi": 8847,
+            "nonWs": 11965,
             "metaChapters": 6,
-            "metaWords": 3445,
+            "metaWords": 8847,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -8219,14 +8271,14 @@
         "baseChapters": 198,
         "extChapters": 0,
         "hbChapters": 12,
-        "baseNonWs": 2947777,
+        "baseNonWs": 2995970,
         "extNonWs": 0,
-        "hbNonWs": 10941,
+        "hbNonWs": 23789,
         "coverageBaseHours": 62.3,
         "textbookHours": 1044,
         "chapters": 210,
-        "hanzi": 2458284,
-        "nonWs": 2958718,
+        "hanzi": 2504492,
+        "nonWs": 3019759,
         "coverageSubjects": 72.7,
         "coverageHours": 75.3,
         "semesterSpan": "2–10",
@@ -8351,12 +8403,12 @@
             "dir": "textbooks/04-gushang/03-gushang-kexue-jichu",
             "exists": true,
             "chapters": 11,
-            "hanzi": 314773,
-            "nonWs": 377765,
+            "hanzi": 327500,
+            "nonWs": 395106,
             "metaChapters": 11,
-            "metaWords": 370455,
+            "metaWords": 395106,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -8381,7 +8433,9 @@
             "depth": 2,
             "order": 3
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "04-gushang",
@@ -8976,10 +9030,10 @@
             "dir": "textbooks/04-gushang/16-gushang-linchuang-lunzhuan",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3550,
-            "nonWs": 5423,
+            "hanzi": 8125,
+            "nonWs": 11345,
             "metaChapters": 6,
-            "metaWords": 3550,
+            "metaWords": 8125,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -9021,10 +9075,10 @@
             "dir": "textbooks/04-gushang/17-gushang-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3337,
-            "nonWs": 5121,
+            "hanzi": 8918,
+            "nonWs": 11808,
             "metaChapters": 6,
-            "metaWords": 3337,
+            "metaWords": 8918,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -9158,12 +9212,12 @@
             "dir": "textbooks/04-gushang/03-gushang-kexue-jichu",
             "exists": true,
             "chapters": 11,
-            "hanzi": 314773,
-            "nonWs": 377765,
+            "hanzi": 327500,
+            "nonWs": 395106,
             "metaChapters": 11,
-            "metaWords": 370455,
+            "metaWords": 395106,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -9188,7 +9242,9 @@
             "depth": 2,
             "order": 3
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "04-gushang",
@@ -9783,10 +9839,10 @@
             "dir": "textbooks/04-gushang/16-gushang-linchuang-lunzhuan",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3550,
-            "nonWs": 5423,
+            "hanzi": 8125,
+            "nonWs": 11345,
             "metaChapters": 6,
-            "metaWords": 3550,
+            "metaWords": 8125,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -9828,10 +9884,10 @@
             "dir": "textbooks/04-gushang/17-gushang-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3337,
-            "nonWs": 5121,
+            "hanzi": 8918,
+            "nonWs": 11808,
             "metaChapters": 6,
-            "metaWords": 3337,
+            "metaWords": 8918,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -10246,14 +10302,14 @@
         "baseChapters": 39,
         "extChapters": 122,
         "hbChapters": 12,
-        "baseNonWs": 849132,
+        "baseNonWs": 866473,
         "extNonWs": 82758,
-        "hbNonWs": 10544,
+        "hbNonWs": 23153,
         "coverageBaseHours": 20.3,
         "textbookHours": 558,
         "chapters": 173,
-        "hanzi": 768739,
-        "nonWs": 942434,
+        "hanzi": 791622,
+        "nonWs": 972384,
         "coverageSubjects": 41.2,
         "coverageHours": 48.4,
         "semesterSpan": "4–10",
@@ -10377,13 +10433,13 @@
           "bridge": "问诊查体→结构化采集 / 异常体征→规则+ML 判别",
           "textbook": {
             "dir": "textbooks/05-huli/03-jiankang-pinggu",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 14877,
+            "nonWs": 23474,
+            "metaChapters": 8,
+            "metaWords": 23474,
+            "status": "wip",
             "layer": null,
             "origin": "base",
             "external": null,
@@ -10403,9 +10459,7 @@
             "depth": 2,
             "order": 7
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "05-huli",
@@ -10967,13 +11021,13 @@
           "bridge": "证据分级→GRADE 算法 / 文献筛选→PRISMA 流程自动化",
           "textbook": {
             "dir": "textbooks/05-huli/15-huli-yanjiu-zhengxun",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 15961,
+            "nonWs": 27847,
+            "metaChapters": 8,
+            "metaWords": 27847,
+            "status": "wip",
             "layer": null,
             "origin": "base",
             "external": null,
@@ -10992,9 +11046,7 @@
             "depth": 1,
             "order": 24
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "05-huli",
@@ -11522,10 +11574,10 @@
             "dir": "textbooks/05-huli/26-huli-linchuang-lunzhuan",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3529,
-            "nonWs": 5391,
+            "hanzi": 8144,
+            "nonWs": 11460,
             "metaChapters": 6,
-            "metaWords": 3529,
+            "metaWords": 8144,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -11567,10 +11619,10 @@
             "dir": "textbooks/05-huli/27-huli-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3415,
-            "nonWs": 5209,
+            "hanzi": 8725,
+            "nonWs": 11599,
             "metaChapters": 6,
-            "metaWords": 3415,
+            "metaWords": 8725,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -11906,13 +11958,13 @@
           "bridge": "问诊查体→结构化采集 / 异常体征→规则+ML 判别",
           "textbook": {
             "dir": "textbooks/05-huli/03-jiankang-pinggu",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 14877,
+            "nonWs": 23474,
+            "metaChapters": 8,
+            "metaWords": 23474,
+            "status": "wip",
             "layer": null,
             "origin": "base",
             "external": null,
@@ -11932,9 +11984,7 @@
             "depth": 2,
             "order": 7
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "05-huli",
@@ -12751,13 +12801,13 @@
           "bridge": "证据分级→GRADE 算法 / 文献筛选→PRISMA 流程自动化",
           "textbook": {
             "dir": "textbooks/05-huli/15-huli-yanjiu-zhengxun",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 15961,
+            "nonWs": 27847,
+            "metaChapters": 8,
+            "metaWords": 27847,
+            "status": "wip",
             "layer": null,
             "origin": "base",
             "external": null,
@@ -12776,9 +12826,7 @@
             "depth": 1,
             "order": 24
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "05-huli",
@@ -12848,10 +12896,10 @@
             "dir": "textbooks/05-huli/26-huli-linchuang-lunzhuan",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3529,
-            "nonWs": 5391,
+            "hanzi": 8144,
+            "nonWs": 11460,
             "metaChapters": 6,
-            "metaWords": 3529,
+            "metaWords": 8144,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -12893,10 +12941,10 @@
             "dir": "textbooks/05-huli/27-huli-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3415,
-            "nonWs": 5209,
+            "hanzi": 8725,
+            "nonWs": 11599,
             "metaChapters": 6,
-            "metaWords": 3415,
+            "metaWords": 8725,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -12995,7 +13043,7 @@
           "count": 5,
           "hours": 234,
           "weekly": 13,
-          "textbooks": 4,
+          "textbooks": 5,
           "subjects": [
             {
               "order": 4,
@@ -13065,8 +13113,8 @@
               "halfTerm": null,
               "chaptersTarget": 8,
               "chaptersPerWeek": 0.5,
-              "chapters": 0,
-              "status": "planned",
+              "chapters": 8,
+              "status": "wip",
               "origin": "base",
               "prereqCount": 2,
               "depth": 2
@@ -13416,7 +13464,7 @@
           "count": 2,
           "hours": 108,
           "weekly": 6,
-          "textbooks": 1,
+          "textbooks": 2,
           "subjects": [
             {
               "order": 24,
@@ -13429,8 +13477,8 @@
               "halfTerm": null,
               "chaptersTarget": 8,
               "chaptersPerWeek": 0.5,
-              "chapters": 0,
-              "status": "planned",
+              "chapters": 8,
+              "status": "wip",
               "origin": "base",
               "prereqCount": 1,
               "depth": 1
@@ -13519,26 +13567,26 @@
         "electives": 0,
         "hours": 1494,
         "chaptersTarget": 348,
-        "textbookSubjects": 23,
-        "baseSubjects": 21,
+        "textbookSubjects": 25,
+        "baseSubjects": 23,
         "extSubjects": 0,
         "hbSubjects": 2,
-        "baseHours": 1062,
+        "baseHours": 1170,
         "extHours": 0,
         "hbHours": 180,
-        "baseChapters": 366,
+        "baseChapters": 382,
         "extChapters": 0,
         "hbChapters": 12,
-        "baseNonWs": 7726337,
+        "baseNonWs": 7777658,
         "extNonWs": 0,
-        "hbNonWs": 10600,
-        "coverageBaseHours": 71.1,
-        "textbookHours": 1242,
-        "chapters": 378,
-        "hanzi": 6878648,
-        "nonWs": 7736937,
-        "coverageSubjects": 85.2,
-        "coverageHours": 83.1,
+        "hbNonWs": 23059,
+        "coverageBaseHours": 78.3,
+        "textbookHours": 1350,
+        "chapters": 394,
+        "hanzi": 6919411,
+        "nonWs": 7800717,
+        "coverageSubjects": 92.6,
+        "coverageHours": 90.4,
         "semesterSpan": "2–10",
         "peakWeekly": 15,
         "peakSemester": 5
@@ -14129,14 +14177,14 @@
           "bridge": "试验设计→随机化算法 / 真实世界研究→因果推断",
           "textbook": {
             "dir": "textbooks/06-guanli/13-linchuang-keyan-fangfa",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
-            "layer": null,
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 354877,
+            "nonWs": 431050,
+            "metaChapters": 8,
+            "metaWords": 431050,
+            "status": "wip",
+            "layer": "source",
             "origin": "base",
             "external": null,
             "registry": null
@@ -14154,9 +14202,7 @@
             "depth": 1,
             "order": 17
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "06-guanli",
@@ -14732,10 +14778,10 @@
             "dir": "textbooks/06-guanli/25-guanli-shixi-shijian",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3538,
-            "nonWs": 5370,
+            "hanzi": 7516,
+            "nonWs": 10551,
             "metaChapters": 6,
-            "metaWords": 3538,
+            "metaWords": 7516,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -14777,10 +14823,10 @@
             "dir": "textbooks/06-guanli/26-guanli-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3241,
-            "nonWs": 5025,
+            "hanzi": 8959,
+            "nonWs": 11965,
             "metaChapters": 6,
-            "metaWords": 3241,
+            "metaWords": 8959,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -15582,14 +15628,14 @@
           "bridge": "试验设计→随机化算法 / 真实世界研究→因果推断",
           "textbook": {
             "dir": "textbooks/06-guanli/13-linchuang-keyan-fangfa",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
-            "layer": null,
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 354877,
+            "nonWs": 431050,
+            "metaChapters": 8,
+            "metaWords": 431050,
+            "status": "wip",
+            "layer": "source",
             "origin": "base",
             "external": null,
             "registry": null
@@ -15607,9 +15653,7 @@
             "depth": 1,
             "order": 17
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "06-guanli",
@@ -15985,10 +16029,10 @@
             "dir": "textbooks/06-guanli/25-guanli-shixi-shijian",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3538,
-            "nonWs": 5370,
+            "hanzi": 7516,
+            "nonWs": 10551,
             "metaChapters": 6,
-            "metaWords": 3538,
+            "metaWords": 7516,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -16030,10 +16074,10 @@
             "dir": "textbooks/06-guanli/26-guanli-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3241,
-            "nonWs": 5025,
+            "hanzi": 8959,
+            "nonWs": 11965,
             "metaChapters": 6,
-            "metaWords": 3241,
+            "metaWords": 8959,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -16318,7 +16362,7 @@
           "count": 8,
           "hours": 360,
           "weekly": 20,
-          "textbooks": 5,
+          "textbooks": 6,
           "subjects": [
             {
               "order": 13,
@@ -16402,8 +16446,8 @@
               "halfTerm": null,
               "chaptersTarget": 8,
               "chaptersPerWeek": 0.5,
-              "chapters": 0,
-              "status": "planned",
+              "chapters": 8,
+              "status": "wip",
               "origin": "base",
               "prereqCount": 1,
               "depth": 1
@@ -16627,26 +16671,26 @@
         "electives": 9,
         "hours": 1296,
         "chaptersTarget": 292,
-        "textbookSubjects": 16,
-        "baseSubjects": 14,
+        "textbookSubjects": 17,
+        "baseSubjects": 15,
         "extSubjects": 0,
         "hbSubjects": 2,
-        "baseHours": 630,
+        "baseHours": 684,
         "extHours": 0,
         "hbHours": 180,
-        "baseChapters": 254,
+        "baseChapters": 262,
         "extChapters": 0,
         "hbChapters": 12,
-        "baseNonWs": 5044071,
+        "baseNonWs": 5475121,
         "extNonWs": 0,
-        "hbNonWs": 10395,
-        "coverageBaseHours": 48.6,
-        "textbookHours": 810,
-        "chapters": 266,
-        "hanzi": 4309737,
-        "nonWs": 5054466,
-        "coverageSubjects": 61.5,
-        "coverageHours": 62.5,
+        "hbNonWs": 22516,
+        "coverageBaseHours": 52.8,
+        "textbookHours": 864,
+        "chapters": 274,
+        "hanzi": 4674310,
+        "nonWs": 5497637,
+        "coverageSubjects": 65.4,
+        "coverageHours": 66.7,
         "semesterSpan": "4–10",
         "peakWeekly": 20,
         "peakSemester": 7
@@ -16676,10 +16720,10 @@
           "bridge": "感知机→从零实现 / 梯度下降→手写训练循环 / 交叉验证→泛化评估",
           "textbook": {
             "dir": "textbooks/07-zhineng/01-yixue-rengong-zhineng-daolun",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 92756,
+            "nonWs": 119450,
             "metaChapters": 0,
             "metaWords": 0,
             "status": "planned",
@@ -16706,7 +16750,8 @@
             "order": 1
           },
           "flags": [
-            "no-textbook"
+            "meta-disk-mismatch",
+            "registry-disk-chapters"
           ]
         },
         {
@@ -17480,10 +17525,10 @@
             "dir": "textbooks/07-zhineng/18-zhineng-gongcheng-shijian",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3539,
-            "nonWs": 5339,
+            "hanzi": 7714,
+            "nonWs": 10784,
             "metaChapters": 6,
-            "metaWords": 3539,
+            "metaWords": 7714,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -17524,10 +17569,10 @@
             "dir": "textbooks/07-zhineng/19-zhineng-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3256,
-            "nonWs": 5066,
+            "hanzi": 8826,
+            "nonWs": 11796,
             "metaChapters": 6,
-            "metaWords": 3256,
+            "metaWords": 8826,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -17568,10 +17613,10 @@
           "bridge": "感知机→从零实现 / 梯度下降→手写训练循环 / 交叉验证→泛化评估",
           "textbook": {
             "dir": "textbooks/07-zhineng/01-yixue-rengong-zhineng-daolun",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 92756,
+            "nonWs": 119450,
             "metaChapters": 0,
             "metaWords": 0,
             "status": "planned",
@@ -17598,7 +17643,8 @@
             "order": 1
           },
           "flags": [
-            "no-textbook"
+            "meta-disk-mismatch",
+            "registry-disk-chapters"
           ]
         },
         {
@@ -18372,10 +18418,10 @@
             "dir": "textbooks/07-zhineng/18-zhineng-gongcheng-shijian",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3539,
-            "nonWs": 5339,
+            "hanzi": 7714,
+            "nonWs": 10784,
             "metaChapters": 6,
-            "metaWords": 3539,
+            "metaWords": 7714,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -18416,10 +18462,10 @@
             "dir": "textbooks/07-zhineng/19-zhineng-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3256,
-            "nonWs": 5066,
+            "hanzi": 8826,
+            "nonWs": 11796,
             "metaChapters": 6,
-            "metaWords": 3256,
+            "metaWords": 8826,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -18452,7 +18498,7 @@
           "count": 1,
           "hours": 54,
           "weekly": 3,
-          "textbooks": 0,
+          "textbooks": 1,
           "subjects": [
             {
               "order": 1,
@@ -18465,7 +18511,7 @@
               "halfTerm": null,
               "chaptersTarget": 8,
               "chaptersPerWeek": 0.5,
-              "chapters": 0,
+              "chapters": 8,
               "status": "planned",
               "origin": "base",
               "prereqCount": 0,
@@ -18873,26 +18919,26 @@
         "electives": 1,
         "hours": 1260,
         "chaptersTarget": 166,
-        "textbookSubjects": 6,
-        "baseSubjects": 4,
+        "textbookSubjects": 7,
+        "baseSubjects": 5,
         "extSubjects": 0,
         "hbSubjects": 2,
-        "baseHours": 234,
+        "baseHours": 288,
         "extHours": 0,
         "hbHours": 180,
-        "baseChapters": 86,
+        "baseChapters": 94,
         "extChapters": 0,
         "hbChapters": 12,
-        "baseNonWs": 391271,
+        "baseNonWs": 510721,
         "extNonWs": 0,
-        "hbNonWs": 10405,
-        "coverageBaseHours": 18.6,
-        "textbookHours": 414,
-        "chapters": 98,
-        "hanzi": 248639,
-        "nonWs": 401676,
-        "coverageSubjects": 31.6,
-        "coverageHours": 32.9,
+        "hbNonWs": 22580,
+        "coverageBaseHours": 22.9,
+        "textbookHours": 468,
+        "chapters": 106,
+        "hanzi": 351140,
+        "nonWs": 533301,
+        "coverageSubjects": 36.8,
+        "coverageHours": 37.1,
         "semesterSpan": "3–10",
         "peakWeekly": 17,
         "peakSemester": 6
@@ -19458,13 +19504,13 @@
           "bridge": "义齿设计→参数化 CAD / 咬合重建→力学优化",
           "textbook": {
             "dir": "textbooks/08-wuguan/12-kouqiang-xiufu-xue",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
+            "exists": true,
+            "chapters": 10,
+            "hanzi": 23050,
+            "nonWs": 37023,
+            "metaChapters": 10,
+            "metaWords": 37023,
+            "status": "wip",
             "layer": null,
             "origin": "base",
             "external": null,
@@ -19483,9 +19529,7 @@
             "depth": 2,
             "order": 11
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -19503,13 +19547,13 @@
           "bridge": "头影测量→关键点检测 / 拔牙决策→分类模型",
           "textbook": {
             "dir": "textbooks/08-wuguan/13-kouqiang-zhengji-xue",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
+            "exists": true,
+            "chapters": 10,
+            "hanzi": 19644,
+            "nonWs": 30882,
+            "metaChapters": 10,
+            "metaWords": 30882,
+            "status": "wip",
             "layer": null,
             "origin": "base",
             "external": null,
@@ -19528,9 +19572,7 @@
             "depth": 2,
             "order": 12
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -19658,10 +19700,10 @@
             "dir": "textbooks/08-wuguan/16-wuguan-linchuang-lunzhuan",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3579,
-            "nonWs": 5426,
+            "hanzi": 7598,
+            "nonWs": 10603,
             "metaChapters": 6,
-            "metaWords": 3579,
+            "metaWords": 7598,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -19703,10 +19745,10 @@
             "dir": "textbooks/08-wuguan/17-wuguan-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3244,
-            "nonWs": 5021,
+            "hanzi": 9084,
+            "nonWs": 11975,
             "metaChapters": 6,
-            "metaWords": 3244,
+            "metaWords": 9084,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -20237,13 +20279,13 @@
           "bridge": "义齿设计→参数化 CAD / 咬合重建→力学优化",
           "textbook": {
             "dir": "textbooks/08-wuguan/12-kouqiang-xiufu-xue",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
+            "exists": true,
+            "chapters": 10,
+            "hanzi": 23050,
+            "nonWs": 37023,
+            "metaChapters": 10,
+            "metaWords": 37023,
+            "status": "wip",
             "layer": null,
             "origin": "base",
             "external": null,
@@ -20262,9 +20304,7 @@
             "depth": 2,
             "order": 11
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -20282,13 +20322,13 @@
           "bridge": "头影测量→关键点检测 / 拔牙决策→分类模型",
           "textbook": {
             "dir": "textbooks/08-wuguan/13-kouqiang-zhengji-xue",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
+            "exists": true,
+            "chapters": 10,
+            "hanzi": 19644,
+            "nonWs": 30882,
+            "metaChapters": 10,
+            "metaWords": 30882,
+            "status": "wip",
             "layer": null,
             "origin": "base",
             "external": null,
@@ -20307,9 +20347,7 @@
             "depth": 2,
             "order": 12
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -20483,10 +20521,10 @@
             "dir": "textbooks/08-wuguan/16-wuguan-linchuang-lunzhuan",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3579,
-            "nonWs": 5426,
+            "hanzi": 7598,
+            "nonWs": 10603,
             "metaChapters": 6,
-            "metaWords": 3579,
+            "metaWords": 7598,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -20528,10 +20566,10 @@
             "dir": "textbooks/08-wuguan/17-wuguan-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3244,
-            "nonWs": 5021,
+            "hanzi": 9084,
+            "nonWs": 11975,
             "metaChapters": 6,
-            "metaWords": 3244,
+            "metaWords": 9084,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -20773,7 +20811,7 @@
           "count": 4,
           "hours": 270,
           "weekly": 15,
-          "textbooks": 1,
+          "textbooks": 3,
           "subjects": [
             {
               "order": 11,
@@ -20786,8 +20824,8 @@
               "halfTerm": null,
               "chaptersTarget": 10,
               "chaptersPerWeek": 0.6,
-              "chapters": 0,
-              "status": "planned",
+              "chapters": 10,
+              "status": "wip",
               "origin": "base",
               "prereqCount": 1,
               "depth": 2
@@ -20803,8 +20841,8 @@
               "halfTerm": null,
               "chaptersTarget": 10,
               "chaptersPerWeek": 0.6,
-              "chapters": 0,
-              "status": "planned",
+              "chapters": 10,
+              "status": "wip",
               "origin": "base",
               "prereqCount": 1,
               "depth": 2
@@ -20939,26 +20977,26 @@
         "electives": 0,
         "hours": 1098,
         "chaptersTarget": 144,
-        "textbookSubjects": 9,
-        "baseSubjects": 2,
+        "textbookSubjects": 11,
+        "baseSubjects": 4,
         "extSubjects": 5,
         "hbSubjects": 2,
-        "baseHours": 144,
+        "baseHours": 288,
         "extHours": 270,
         "hbHours": 180,
-        "baseChapters": 24,
+        "baseChapters": 44,
         "extChapters": 633,
         "hbChapters": 12,
-        "baseNonWs": 406987,
+        "baseNonWs": 474892,
         "extNonWs": 628635,
-        "hbNonWs": 10447,
-        "coverageBaseHours": 13.1,
-        "textbookHours": 594,
-        "chapters": 669,
-        "hanzi": 740281,
-        "nonWs": 1046069,
-        "coverageSubjects": 52.9,
-        "coverageHours": 54.1,
+        "hbNonWs": 22578,
+        "coverageBaseHours": 26.2,
+        "textbookHours": 738,
+        "chapters": 689,
+        "hanzi": 792834,
+        "nonWs": 1126105,
+        "coverageSubjects": 64.7,
+        "coverageHours": 67.2,
         "semesterSpan": "4–10",
         "peakWeekly": 19,
         "peakSemester": 6
@@ -20990,12 +21028,12 @@
             "dir": "textbooks/09-jichu/01-renti-jiepou-xue",
             "exists": true,
             "chapters": 10,
-            "hanzi": 213075,
-            "nonWs": 232133,
+            "hanzi": 224457,
+            "nonWs": 247558,
             "metaChapters": 10,
-            "metaWords": 228077,
+            "metaWords": 247558,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -21017,7 +21055,9 @@
             "depth": 0,
             "order": 3
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "09-jichu",
@@ -21082,14 +21122,14 @@
           "bridge": "细胞信号→微分方程 / 通路→有向图",
           "textbook": {
             "dir": "textbooks/09-jichu/03-yixue-xibao-shengwu-xue",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
-            "layer": null,
+            "exists": true,
+            "chapters": 12,
+            "hanzi": 165727,
+            "nonWs": 205699,
+            "metaChapters": 12,
+            "metaWords": 205699,
+            "status": "wip",
+            "layer": "derived",
             "origin": "base",
             "external": null,
             "registry": null
@@ -21108,9 +21148,7 @@
             "depth": 0,
             "order": 2
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "09-jichu",
@@ -21232,12 +21270,12 @@
             "dir": "textbooks/09-jichu/06-shengli-xue",
             "exists": true,
             "chapters": 11,
-            "hanzi": 238404,
-            "nonWs": 257184,
+            "hanzi": 251977,
+            "nonWs": 274755,
             "metaChapters": 11,
-            "metaWords": 252809,
+            "metaWords": 274755,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -21262,7 +21300,9 @@
             "depth": 1,
             "order": 7
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "09-jichu",
@@ -21331,12 +21371,12 @@
             "dir": "textbooks/09-jichu/08-jubu-jiepou-xue",
             "exists": true,
             "chapters": 9,
-            "hanzi": 196089,
-            "nonWs": 216164,
+            "hanzi": 206436,
+            "nonWs": 230130,
             "metaChapters": 9,
-            "metaWords": 212583,
+            "metaWords": 230130,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -21361,7 +21401,9 @@
             "depth": 2,
             "order": 10
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "09-jichu",
@@ -21727,10 +21769,10 @@
             "dir": "textbooks/09-jichu/16-jichu-keyan-shixun",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3451,
-            "nonWs": 5246,
+            "hanzi": 7544,
+            "nonWs": 10572,
             "metaChapters": 6,
-            "metaWords": 3451,
+            "metaWords": 7544,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -21772,10 +21814,10 @@
             "dir": "textbooks/09-jichu/17-jichu-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3330,
-            "nonWs": 5122,
+            "hanzi": 9337,
+            "nonWs": 12466,
             "metaChapters": 6,
-            "metaWords": 3330,
+            "metaWords": 9337,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -21863,14 +21905,14 @@
           "bridge": "细胞信号→微分方程 / 通路→有向图",
           "textbook": {
             "dir": "textbooks/09-jichu/03-yixue-xibao-shengwu-xue",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
-            "layer": null,
+            "exists": true,
+            "chapters": 12,
+            "hanzi": 165727,
+            "nonWs": 205699,
+            "metaChapters": 12,
+            "metaWords": 205699,
+            "status": "wip",
+            "layer": "derived",
             "origin": "base",
             "external": null,
             "registry": null
@@ -21889,9 +21931,7 @@
             "depth": 0,
             "order": 2
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "09-jichu",
@@ -21911,12 +21951,12 @@
             "dir": "textbooks/09-jichu/01-renti-jiepou-xue",
             "exists": true,
             "chapters": 10,
-            "hanzi": 213075,
-            "nonWs": 232133,
+            "hanzi": 224457,
+            "nonWs": 247558,
             "metaChapters": 10,
-            "metaWords": 228077,
+            "metaWords": 247558,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -21938,7 +21978,9 @@
             "depth": 0,
             "order": 3
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "09-jichu",
@@ -22109,12 +22151,12 @@
             "dir": "textbooks/09-jichu/06-shengli-xue",
             "exists": true,
             "chapters": 11,
-            "hanzi": 238404,
-            "nonWs": 257184,
+            "hanzi": 251977,
+            "nonWs": 274755,
             "metaChapters": 11,
-            "metaWords": 252809,
+            "metaWords": 274755,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -22139,7 +22181,9 @@
             "depth": 1,
             "order": 7
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "09-jichu",
@@ -22259,12 +22303,12 @@
             "dir": "textbooks/09-jichu/08-jubu-jiepou-xue",
             "exists": true,
             "chapters": 9,
-            "hanzi": 196089,
-            "nonWs": 216164,
+            "hanzi": 206436,
+            "nonWs": 230130,
             "metaChapters": 9,
-            "metaWords": 212583,
+            "metaWords": 230130,
             "status": "wip",
-            "layer": "source-body",
+            "layer": "source+rewrite",
             "origin": "base",
             "external": null,
             "registry": {
@@ -22289,7 +22333,9 @@
             "depth": 2,
             "order": 10
           },
-          "flags": []
+          "flags": [
+            "registry-meta-chars"
+          ]
         },
         {
           "dept": "09-jichu",
@@ -22555,10 +22601,10 @@
             "dir": "textbooks/09-jichu/16-jichu-keyan-shixun",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3451,
-            "nonWs": 5246,
+            "hanzi": 7544,
+            "nonWs": 10572,
             "metaChapters": 6,
-            "metaWords": 3451,
+            "metaWords": 7544,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -22600,10 +22646,10 @@
             "dir": "textbooks/09-jichu/17-jichu-biye-sheji",
             "exists": true,
             "chapters": 6,
-            "hanzi": 3330,
-            "nonWs": 5122,
+            "hanzi": 9337,
+            "nonWs": 12466,
             "metaChapters": 6,
-            "metaWords": 3330,
+            "metaWords": 9337,
             "status": "wip",
             "layer": "handbook",
             "origin": "handbook",
@@ -22636,7 +22682,7 @@
           "count": 3,
           "hours": 162,
           "weekly": 9,
-          "textbooks": 2,
+          "textbooks": 3,
           "subjects": [
             {
               "order": 1,
@@ -22669,8 +22715,8 @@
               },
               "chaptersTarget": 12,
               "chaptersPerWeek": 0.8,
-              "chapters": 0,
-              "status": "planned",
+              "chapters": 12,
+              "status": "wip",
               "origin": "base",
               "prereqCount": 0,
               "depth": 0
@@ -23020,26 +23066,26 @@
         "electives": 0,
         "hours": 1035,
         "chaptersTarget": 315,
-        "textbookSubjects": 15,
-        "baseSubjects": 13,
+        "textbookSubjects": 16,
+        "baseSubjects": 14,
         "extSubjects": 0,
         "hbSubjects": 2,
-        "baseHours": 783,
+        "baseHours": 819,
         "extHours": 0,
         "hbHours": 180,
-        "baseChapters": 279,
+        "baseChapters": 291,
         "extChapters": 0,
         "hbChapters": 12,
-        "baseNonWs": 5874537,
+        "baseNonWs": 6127198,
         "extNonWs": 0,
-        "hbNonWs": 10368,
-        "coverageBaseHours": 75.7,
-        "textbookHours": 963,
-        "chapters": 291,
-        "hanzi": 5209893,
-        "nonWs": 5884905,
-        "coverageSubjects": 88.2,
-        "coverageHours": 93,
+        "hbNonWs": 23038,
+        "coverageBaseHours": 79.1,
+        "textbookHours": 999,
+        "chapters": 303,
+        "hanzi": 5421022,
+        "nonWs": 6150236,
+        "coverageSubjects": 94.1,
+        "coverageHours": 96.5,
         "semesterSpan": "1–10",
         "peakWeekly": 14,
         "peakSemester": 2
@@ -23053,20 +23099,16 @@
       "icon": "☯️",
       "missing": [
         {
-          "slug": "04-zhongyi-tizhi-xue",
-          "title": "中医体质学",
-          "type": "Core",
-          "semester": 4,
-          "hours": 54,
-          "note": "未入库"
-        },
-        {
           "slug": "23-zhongcan-xilu-xuandu",
           "title": "医学衷中参西录选读",
           "type": "Reference",
           "semester": 8,
           "hours": 36,
-          "note": "未入库"
+          "body": {
+            "chapters": 10,
+            "chars": 18477
+          },
+          "note": "教学章已有正文（10 章 / 1.8 万字），未接教材出版线"
         }
       ]
     },
@@ -23081,7 +23123,11 @@
           "type": "Build",
           "semester": 6,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 52144
+          },
+          "note": "教学章已有正文（8 章 / 5.2 万字），未接教材出版线"
         },
         {
           "slug": "12-daodi-yaocai",
@@ -23089,7 +23135,11 @@
           "type": "Reference",
           "semester": 6,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 53145
+          },
+          "note": "教学章已有正文（8 章 / 5.3 万字），未接教材出版线"
         },
         {
           "slug": "13-zhongchengyao-linchuang",
@@ -23097,7 +23147,11 @@
           "type": "Clinic",
           "semester": 7,
           "hours": 72,
-          "note": "未入库"
+          "body": {
+            "chapters": 10,
+            "chars": 66244
+          },
+          "note": "教学章已有正文（10 章 / 6.6 万字），未接教材出版线"
         },
         {
           "slug": "14-peiwu-yu-jinji",
@@ -23105,23 +23159,11 @@
           "type": "Build",
           "semester": 7,
           "hours": 54,
-          "note": "未入库"
-        },
-        {
-          "slug": "15-zhongyao-xinyao-yanfa",
-          "title": "中药新药研发",
-          "type": "Build",
-          "semester": 8,
-          "hours": 72,
-          "note": "未入库"
-        },
-        {
-          "slug": "21-zhongyao-du-li-xue",
-          "title": "中药毒理学",
-          "type": "Core",
-          "semester": 6,
-          "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 41481
+          },
+          "note": "教学章已有正文（8 章 / 4.1 万字），未接教材出版线"
         }
       ]
     },
@@ -23136,7 +23178,11 @@
           "type": "Core",
           "semester": 5,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 41746
+          },
+          "note": "教学章已有正文（8 章 / 4.2 万字），未接教材出版线"
         },
         {
           "slug": "11-wuli-zhiliao",
@@ -23144,7 +23190,11 @@
           "type": "Build",
           "semester": 6,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 46419
+          },
+          "note": "教学章已有正文（8 章 / 4.6 万字），未接教材出版线"
         },
         {
           "slug": "12-erxue-zhenduan-xue",
@@ -23152,7 +23202,11 @@
           "type": "Build",
           "semester": 6,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 49389
+          },
+          "note": "教学章已有正文（8 章 / 4.9 万字），未接教材出版线"
         },
         {
           "slug": "13-zhendao-yixue",
@@ -23160,7 +23214,11 @@
           "type": "Clinic",
           "semester": 7,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 49558
+          },
+          "note": "教学章已有正文（8 章 / 5.0 万字），未接教材出版线"
         },
         {
           "slug": "14-zhenjiu-zhentong-mazui",
@@ -23168,7 +23226,11 @@
           "type": "Build",
           "semester": 7,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 44432
+          },
+          "note": "教学章已有正文（8 章 / 4.4 万字），未接教材出版线"
         },
         {
           "slug": "15-zhongyi-kangfu-xue",
@@ -23176,7 +23238,11 @@
           "type": "Clinic",
           "semester": 7,
           "hours": 72,
-          "note": "未入库"
+          "body": {
+            "chapters": 10,
+            "chars": 56367
+          },
+          "note": "教学章已有正文（10 章 / 5.6 万字），未接教材出版线"
         }
       ]
     },
@@ -23191,7 +23257,11 @@
           "type": "Core",
           "semester": 4,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 49684
+          },
+          "note": "教学章已有正文（8 章 / 5.0 万字），未接教材出版线"
         },
         {
           "slug": "02-yao-shang-jiepou",
@@ -23199,7 +23269,11 @@
           "type": "Core",
           "semester": 4,
           "hours": 72,
-          "note": "未入库"
+          "body": {
+            "chapters": 10,
+            "chars": 62906
+          },
+          "note": "教学章已有正文（10 章 / 6.3 万字），未接教材出版线"
         },
         {
           "slug": "04-chuangshang-jijiu-xue",
@@ -23207,7 +23281,11 @@
           "type": "Clinic",
           "semester": 5,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 50580
+          },
+          "note": "教学章已有正文（8 章 / 5.1 万字），未接教材出版线"
         },
         {
           "slug": "05-yundong-yixue",
@@ -23215,7 +23293,11 @@
           "type": "Build",
           "semester": 5,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 47163
+          },
+          "note": "教学章已有正文（8 章 / 4.7 万字），未接教材出版线"
         },
         {
           "slug": "10-jizhu-bing-xue",
@@ -23223,7 +23305,11 @@
           "type": "Clinic",
           "semester": 7,
           "hours": 72,
-          "note": "未入库"
+          "body": {
+            "chapters": 10,
+            "chars": 61090
+          },
+          "note": "教学章已有正文（10 章 / 6.1 万字），未接教材出版线"
         },
         {
           "slug": "11-guanjie-bing-xue",
@@ -23231,7 +23317,11 @@
           "type": "Clinic",
           "semester": 7,
           "hours": 72,
-          "note": "未入库"
+          "body": {
+            "chapters": 10,
+            "chars": 74379
+          },
+          "note": "教学章已有正文（10 章 / 7.4 万字），未接教材出版线"
         },
         {
           "slug": "12-guzhishusong-tuibian",
@@ -23239,7 +23329,11 @@
           "type": "Build",
           "semester": 7,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 46264
+          },
+          "note": "教学章已有正文（8 章 / 4.6 万字），未接教材出版线"
         },
         {
           "slug": "13-zhongyi-zhengji-xue",
@@ -23247,7 +23341,11 @@
           "type": "Clinic",
           "semester": 7,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 51943
+          },
+          "note": "教学章已有正文（8 章 / 5.2 万字），未接教材出版线"
         },
         {
           "slug": "14-kangfu-gongcheng-zhiju",
@@ -23255,7 +23353,11 @@
           "type": "Build",
           "semester": 8,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 47395
+          },
+          "note": "教学章已有正文（8 章 / 4.7 万字），未接教材出版线"
         },
         {
           "slug": "15-gushang-kangfu-pingding",
@@ -23263,7 +23365,11 @@
           "type": "Build",
           "semester": 8,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 41489
+          },
+          "note": "教学章已有正文（8 章 / 4.1 万字），未接教材出版线"
         }
       ]
     },
@@ -23278,15 +23384,11 @@
           "type": "Core",
           "semester": 2,
           "hours": 72,
-          "note": "未入库"
-        },
-        {
-          "slug": "03-jiankang-pinggu",
-          "title": "健康评估",
-          "type": "Core",
-          "semester": 3,
-          "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 14,
+            "chars": 49595
+          },
+          "note": "教学章已有正文（14 章 / 5.0 万字），未接教材出版线"
         },
         {
           "slug": "12-jiwei-zhengzheng-huli",
@@ -23294,15 +23396,11 @@
           "type": "Clinic",
           "semester": 7,
           "hours": 72,
-          "note": "未入库"
-        },
-        {
-          "slug": "15-huli-yanjiu-zhengxun",
-          "title": "护理研究与循证护理",
-          "type": "Build",
-          "semester": 8,
-          "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 10,
+            "chars": 40105
+          },
+          "note": "教学章已有正文（10 章 / 4.0 万字），未接教材出版线"
         }
       ]
     },
@@ -23317,7 +23415,11 @@
           "type": "Core",
           "semester": 4,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 184852
+          },
+          "note": "教学章已有正文（8 章 / 18.5 万字），未接教材出版线"
         },
         {
           "slug": "03-zhongyi-guanli-xue",
@@ -23325,7 +23427,11 @@
           "type": "Core",
           "semester": 5,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 216956
+          },
+          "note": "教学章已有正文（8 章 / 21.7 万字），未接教材出版线"
         },
         {
           "slug": "05-zhongyi-wenhua-chuanbo",
@@ -23333,7 +23439,11 @@
           "type": "Reference",
           "semester": 5,
           "hours": 36,
-          "note": "未入库"
+          "body": {
+            "chapters": 6,
+            "chars": 108622
+          },
+          "note": "教学章已有正文（6 章 / 10.9 万字），未接教材出版线"
         },
         {
           "slug": "07-zhongyi-jiaoyu-xue",
@@ -23341,7 +23451,11 @@
           "type": "Build",
           "semester": 6,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 111012
+          },
+          "note": "教学章已有正文（8 章 / 11.1 万字），未接教材出版线"
         },
         {
           "slug": "08-jiankang-fuwu-guanli",
@@ -23349,7 +23463,11 @@
           "type": "Build",
           "semester": 6,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 269093
+          },
+          "note": "教学章已有正文（8 章 / 26.9 万字），未接教材出版线"
         },
         {
           "slug": "11-yiyuan-xinxihua-bingan",
@@ -23357,7 +23475,11 @@
           "type": "Build",
           "semester": 7,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 215350
+          },
+          "note": "教学章已有正文（8 章 / 21.5 万字），未接教材出版线"
         },
         {
           "slug": "12-zhongyiyao-biaozhunhua",
@@ -23365,15 +23487,11 @@
           "type": "Build",
           "semester": 7,
           "hours": 54,
-          "note": "未入库"
-        },
-        {
-          "slug": "13-linchuang-keyan-fangfa",
-          "title": "临床科研方法学",
-          "type": "Build",
-          "semester": 7,
-          "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 205116
+          },
+          "note": "教学章已有正文（8 章 / 20.5 万字），未接教材出版线"
         },
         {
           "slug": "14-zhishichanquan-zhuanhua",
@@ -23381,7 +23499,11 @@
           "type": "Reference",
           "semester": 8,
           "hours": 36,
-          "note": "未入库"
+          "body": {
+            "chapters": 6,
+            "chars": 50316
+          },
+          "note": "教学章已有正文（6 章 / 5.0 万字），未接教材出版线"
         },
         {
           "slug": "15-zhongyi-guojijiaoyu",
@@ -23389,7 +23511,11 @@
           "type": "Reference",
           "semester": 8,
           "hours": 36,
-          "note": "未入库"
+          "body": {
+            "chapters": 6,
+            "chars": 69426
+          },
+          "note": "教学章已有正文（6 章 / 6.9 万字），未接教材出版线"
         }
       ]
     },
@@ -23399,20 +23525,16 @@
       "icon": "🤖",
       "missing": [
         {
-          "slug": "01-yixue-rengong-zhineng-daolun",
-          "title": "医学人工智能导论",
-          "type": "Core",
-          "semester": 3,
-          "hours": 54,
-          "note": "未入库"
-        },
-        {
           "slug": "02-zhongyi-ruanjian-jiagou-xue",
           "title": "中医软件架构学",
           "type": "Build",
           "semester": 4,
           "hours": 72,
-          "note": "未入库"
+          "body": {
+            "chapters": 10,
+            "chars": 118570
+          },
+          "note": "教学章已有正文（10 章 / 11.9 万字），未接教材出版线"
         },
         {
           "slug": "04-zhongyi-ziran-yuyan-chuli",
@@ -23420,7 +23542,11 @@
           "type": "Build",
           "semester": 5,
           "hours": 72,
-          "note": "未入库"
+          "body": {
+            "chapters": 10,
+            "chars": 87196
+          },
+          "note": "教学章已有正文（10 章 / 8.7 万字），未接教材出版线"
         },
         {
           "slug": "06-zhongyi-zhineng-bianzheng",
@@ -23428,7 +23554,11 @@
           "type": "Build",
           "semester": 6,
           "hours": 72,
-          "note": "未入库"
+          "body": {
+            "chapters": 10,
+            "chars": 87365
+          },
+          "note": "教学章已有正文（10 章 / 8.7 万字），未接教材出版线"
         },
         {
           "slug": "07-yixue-tuxiang-shezhen",
@@ -23436,7 +23566,11 @@
           "type": "Build",
           "semester": 6,
           "hours": 72,
-          "note": "未入库"
+          "body": {
+            "chapters": 10,
+            "chars": 93306
+          },
+          "note": "教学章已有正文（10 章 / 9.3 万字），未接教材出版线"
         },
         {
           "slug": "08-maizhen-keguanhua",
@@ -23444,7 +23578,11 @@
           "type": "Build",
           "semester": 6,
           "hours": 72,
-          "note": "未入库"
+          "body": {
+            "chapters": 10,
+            "chars": 123653
+          },
+          "note": "教学章已有正文（10 章 / 12.4 万字），未接教材出版线"
         },
         {
           "slug": "09-zhongyi-dashuju-fenxi",
@@ -23452,7 +23590,11 @@
           "type": "Build",
           "semester": 6,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 192338
+          },
+          "note": "教学章已有正文（8 章 / 19.2 万字），未接教材出版线"
         },
         {
           "slug": "10-llm-yu-zhongyi-zhinengti",
@@ -23460,7 +23602,11 @@
           "type": "Build",
           "semester": 7,
           "hours": 90,
-          "note": "未入库"
+          "body": {
+            "chapters": 12,
+            "chars": 136649
+          },
+          "note": "教学章已有正文（12 章 / 13.7 万字），未接教材出版线"
         },
         {
           "slug": "11-zhongyi-jiqiren-xue",
@@ -23468,7 +23614,11 @@
           "type": "Build",
           "semester": 7,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 74274
+          },
+          "note": "教学章已有正文（8 章 / 7.4 万字），未接教材出版线"
         },
         {
           "slug": "12-shuzi-renti-xuni-fangzhen",
@@ -23476,7 +23626,11 @@
           "type": "Build",
           "semester": 7,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 73260
+          },
+          "note": "教学章已有正文（8 章 / 7.3 万字），未接教材出版线"
         },
         {
           "slug": "13-zhongyi-duomotai-ronghe",
@@ -23484,7 +23638,11 @@
           "type": "Build",
           "semester": 7,
           "hours": 72,
-          "note": "未入库"
+          "body": {
+            "chapters": 10,
+            "chars": 94227
+          },
+          "note": "教学章已有正文（10 章 / 9.4 万字），未接教材出版线"
         },
         {
           "slug": "14-yixue-shuju-anquan-yinsi",
@@ -23492,7 +23650,11 @@
           "type": "Build",
           "semester": 8,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 54566
+          },
+          "note": "教学章已有正文（8 章 / 5.5 万字），未接教材出版线"
         },
         {
           "slug": "15-zhongyi-ai-lunli-zhili",
@@ -23500,7 +23662,11 @@
           "type": "Build",
           "semester": 8,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 53906
+          },
+          "note": "教学章已有正文（8 章 / 5.4 万字），未接教材出版线"
         }
       ]
     },
@@ -23515,7 +23681,11 @@
           "type": "Core",
           "semester": 4,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 129550
+          },
+          "note": "教学章已有正文（8 章 / 13.0 万字），未接教材出版线"
         },
         {
           "slug": "02-kouqiang-jiepou-shengli",
@@ -23523,7 +23693,11 @@
           "type": "Core",
           "semester": 4,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 109960
+          },
+          "note": "教学章已有正文（8 章 / 11.0 万字），未接教材出版线"
         },
         {
           "slug": "04-yanke-guangxue-yanguang",
@@ -23531,7 +23705,11 @@
           "type": "Build",
           "semester": 5,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 42366
+          },
+          "note": "教学章已有正文（8 章 / 4.2 万字），未接教材出版线"
         },
         {
           "slug": "09-kouqiang-neike-xue",
@@ -23539,7 +23717,11 @@
           "type": "Clinic",
           "semester": 6,
           "hours": 72,
-          "note": "未入库"
+          "body": {
+            "chapters": 10,
+            "chars": 34834
+          },
+          "note": "教学章已有正文（10 章 / 3.5 万字），未接教材出版线"
         },
         {
           "slug": "10-yanke-yingxiang-jiancha",
@@ -23547,7 +23729,11 @@
           "type": "Build",
           "semester": 6,
           "hours": 54,
-          "note": "未入库"
+          "body": {
+            "chapters": 8,
+            "chars": 51454
+          },
+          "note": "教学章已有正文（8 章 / 5.1 万字），未接教材出版线"
         },
         {
           "slug": "11-kouqiang-hemian-waike",
@@ -23555,23 +23741,11 @@
           "type": "Clinic",
           "semester": 7,
           "hours": 72,
-          "note": "未入库"
-        },
-        {
-          "slug": "12-kouqiang-xiufu-xue",
-          "title": "口腔修复学",
-          "type": "Clinic",
-          "semester": 7,
-          "hours": 72,
-          "note": "未入库"
-        },
-        {
-          "slug": "13-kouqiang-zhengji-xue",
-          "title": "口腔正畸学",
-          "type": "Clinic",
-          "semester": 7,
-          "hours": 72,
-          "note": "未入库"
+          "body": {
+            "chapters": 10,
+            "chars": 143134
+          },
+          "note": "教学章已有正文（10 章 / 14.3 万字），未接教材出版线"
         }
       ]
     },
@@ -23581,20 +23755,16 @@
       "icon": "🧬",
       "missing": [
         {
-          "slug": "03-yixue-xibao-shengwu-xue",
-          "title": "医学细胞生物学",
-          "type": "Core",
-          "semester": 1,
-          "hours": 36,
-          "note": "未入库"
-        },
-        {
           "slug": "09-yixue-yichuan-xue",
           "title": "医学遗传学",
           "type": "Core",
           "semester": 3,
           "hours": 36,
-          "note": "未入库"
+          "body": {
+            "chapters": 12,
+            "chars": 125703
+          },
+          "note": "教学章已有正文（12 章 / 12.6 万字），未接教材出版线"
         }
       ]
     }
@@ -23613,25 +23783,124 @@
       "slug": "01-zhongyi/07-shanghanlun",
       "title": "伤寒论",
       "flags": [
-        "chapters-short"
+        "registry-disk-chapters",
+        "registry-meta-chars"
       ],
-      "detail": "教材 10 章 < 教学计划 12 章"
+      "detail": "源表 10 章 → 磁盘 12 章（+2）；源表 118,973 字 → meta 129,165 字（+10,192）"
     },
     {
       "slug": "01-zhongyi/10-zhongyi-neike-xue",
       "title": "中医内科学",
       "flags": [
+        "registry-disk-chapters",
+        "registry-meta-chars"
+      ],
+      "detail": "源表 12 章 → 磁盘 14 章（+2）；源表 405,580 字 → meta 421,791 字（+16,211）"
+    },
+    {
+      "slug": "01-zhongyi/14-zhongyi-zhenghou-xue",
+      "title": "中医证候学",
+      "flags": [
         "chapters-short"
       ],
-      "detail": "教材 12 章 < 教学计划 14 章"
+      "detail": "教材 12 章 < 教学计划 24 章"
+    },
+    {
+      "slug": "02-zhongyao/03-fangjixue",
+      "title": "方剂学",
+      "flags": [
+        "registry-meta-chars"
+      ],
+      "detail": "源表 435,341 字 → meta 474,732 字（+39,391）"
+    },
+    {
+      "slug": "02-zhongyao/05-zhongyao-jianding-xue",
+      "title": "中药鉴定学",
+      "flags": [
+        "registry-meta-chars"
+      ],
+      "detail": "源表 186,359 字 → meta 203,942 字（+17,583）"
+    },
+    {
+      "slug": "02-zhongyao/06-zhongyao-huaxue",
+      "title": "中药化学",
+      "flags": [
+        "registry-meta-chars"
+      ],
+      "detail": "源表 233,962 字 → meta 252,828 字（+18,866）"
+    },
+    {
+      "slug": "02-zhongyao/07-zhongyao-yaoli-xue",
+      "title": "中药药理学",
+      "flags": [
+        "registry-meta-chars"
+      ],
+      "detail": "源表 232,861 字 → meta 250,487 字（+17,626）"
+    },
+    {
+      "slug": "02-zhongyao/08-zhongyao-paozhi-xue",
+      "title": "中药炮制学",
+      "flags": [
+        "registry-meta-chars"
+      ],
+      "detail": "源表 174,240 字 → meta 192,488 字（+18,248）"
+    },
+    {
+      "slug": "02-zhongyao/10-zhongyao-fenxi-xue",
+      "title": "中药分析学",
+      "flags": [
+        "registry-meta-chars"
+      ],
+      "detail": "源表 176,143 字 → meta 194,531 字（+18,388）"
     },
     {
       "slug": "02-zhongyao/18-yaoshi-guanli-xue",
       "title": "药事管理学",
       "flags": [
-        "chapters-short"
+        "chapters-short-decided"
       ],
-      "detail": "教材 20 章 < 教学计划 28 章"
+      "detail": "教材 20 章 < 教学计划 28 章：已决口径（2026-11-15 决议，两套切分轴并存）"
+    },
+    {
+      "slug": "03-zhenjiu/03-zhenjiu-yiji-xuan",
+      "title": "针灸医籍选",
+      "flags": [
+        "registry-meta-chars"
+      ],
+      "detail": "源表 208,975 字 → meta 228,808 字（+19,833）"
+    },
+    {
+      "slug": "03-zhenjiu/07-cifa-jiufa-xue",
+      "title": "刺法灸法学",
+      "flags": [
+        "registry-meta-chars"
+      ],
+      "detail": "源表 234,469 字 → meta 258,468 字（+23,999）"
+    },
+    {
+      "slug": "03-zhenjiu/18-tuina-gongfa-xue",
+      "title": "推拿功法学",
+      "flags": [
+        "registry-meta-chars"
+      ],
+      "detail": "源表 111,893 字 → meta 130,912 字（+19,019）"
+    },
+    {
+      "slug": "04-gushang/03-gushang-kexue-jichu",
+      "title": "中医骨伤科学基础",
+      "flags": [
+        "registry-meta-chars"
+      ],
+      "detail": "源表 370,455 字 → meta 395,106 字（+24,651）"
+    },
+    {
+      "slug": "07-zhineng/01-yixue-rengong-zhineng-daolun",
+      "title": "医学人工智能导论",
+      "flags": [
+        "meta-disk-mismatch",
+        "registry-disk-chapters"
+      ],
+      "detail": "源表 0 章 → 磁盘 8 章（+8）；meta 0 章 ≠ 磁盘 8 章"
     },
     {
       "slug": "07-zhineng/05-zhongyi-zhishi-tupu",
@@ -23641,15 +23910,39 @@
         "manual-source"
       ],
       "detail": "源表 11,351 字 → meta 13,167 字（+1,816）；registry status=manual：人工整理层，非纯抽取"
+    },
+    {
+      "slug": "09-jichu/01-renti-jiepou-xue",
+      "title": "人体解剖学",
+      "flags": [
+        "registry-meta-chars"
+      ],
+      "detail": "源表 228,077 字 → meta 247,558 字（+19,481）"
+    },
+    {
+      "slug": "09-jichu/06-shengli-xue",
+      "title": "生理学",
+      "flags": [
+        "registry-meta-chars"
+      ],
+      "detail": "源表 252,809 字 → meta 274,755 字（+21,946）"
+    },
+    {
+      "slug": "09-jichu/08-jubu-jiepou-xue",
+      "title": "局部解剖学",
+      "flags": [
+        "registry-meta-chars"
+      ],
+      "detail": "源表 212,583 字 → meta 230,130 字（+17,547）"
     }
   ],
   "checks": {
     "curriculumSubjects": 189,
     "curriculumHours": 11547,
-    "diskChapters": 2596,
-    "diskHanzi": 29243120,
+    "diskChapters": 2690,
+    "diskHanzi": 30254731,
     "registryFiles": 100,
-    "subjectsWithoutTextbook": 61,
+    "subjectsWithoutTextbook": 51,
     "unmatchedRegistrySubjects": []
   }
 }

@@ -1,0 +1,102 @@
+# [tcmP] 课程编排 · 03-zhenjiu/02-shuxue-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/03-zhenjiu/02-shuxue-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 02-shuxue-xue
+title: 腧穴学
+en: Acupoint Theory
+dept: 03-zhenjiu
+dept_title: 针灸系
+semester: 3
+stage: sheng
+hours: 90
+chapters_target: 12
+bridge: 腧穴定位→三维坐标 / 取穴→KD-Tree 最近邻
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-fenlei-dingwei
+    title: 第1章 腧穴的分类、命名与定位方法
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.93
+  - slug: 02-gudu-fencun
+    title: 第2章 骨度分寸与体表标志
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.94
+  - slug: 03-shou-san-yin
+    title: 第3章 手三阴经腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.93
+  - slug: 04-shou-san-yang
+    title: 第4章 手三阳经腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.92
+  - slug: 05-zu-san-yang
+    title: 第5章 足三阳经腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.96
+  - slug: 06-zu-san-yin
+    title: 第6章 足三阴经腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.91
+  - slug: 07-ren-du-xue
+    title: 第7章 任督二脉腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 08-jingwai-qixue
+    title: 第8章 经外奇穴与阿是穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.98
+  - slug: 09-teding-xue
+    title: 第9章 特定穴：五输、原络、俞募
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.92
+  - slug: 10-zhuzhi-guilv
+    title: 第10章 腧穴的主治规律与配穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.89
+  - slug: 11-weixian-shendu
+    title: 第11章 危险穴位与针刺安全深度
+    segments: 9
+    video: rendered
+    estimate_minutes: 3.03
+    measured_minutes: 2.99
+  - slug: 12-dingwei-sanwei
+    title: 第12章 腧穴定位的数字化与三维模型
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.96

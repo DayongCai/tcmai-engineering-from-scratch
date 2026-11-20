@@ -1,0 +1,111 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/07-shanghanlun/chapters/03-taiyang-biao/docs/zh.md",
+  "course": "07-shanghanlun",
+  "dept": "01-zhongyi",
+  "chapter": "03-taiyang-biao",
+  "title": "第 3 章 · 太阳病表证：有汗与无汗之外，还有 129 条「发热」被写成了异体字",
+  "segmentCount": 9,
+  "estimateTotalSeconds": 236,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 3 章 · 太阳病表证：有汗与无汗之外，还有 129 条「发热」被写成了异体字",
+      "slide": "title",
+      "spoken": "第 3 章 · 太阳病表证：有汗与无汗之外，还有 129 条「发热」被写成了异体字",
+      "estimateSeconds": 8,
+      "audio": "001.mp3",
+      "audioSeconds": 7.8
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「太阳病，头痛发热，身疼恶风，无汗而喘者，麻黄汤主之。」——《伤寒论·辨太阳病脉证并治中》",
+      "slide": "title",
+      "spoken": "「太阳病，头痛发热，身疼恶风，无汗而喘者，麻黄汤主之。」——《伤寒论·辨太阳病脉证并治中》",
+      "estimateSeconds": 10,
+      "audio": "002.mp3",
+      "audioSeconds": 9.62
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "你想统计「发热」在全书出现多少次，用检索工具一查——39 条。可正文里明明到处都是发热。你漏掉的那 124 条，写的是「发𤍠」：𤍠 是一个不在 GB2312 里的异体字。",
+      "slide": "problem",
+      "spoken": "你想统计「发热」在全书出现多少次，用检索工具一查——39 条。可正文里明明到处都是发热。你漏掉的那 124 条，写的是「发𤍠」：𤍠 是一个不在 GB2312 里的异体字。",
+      "estimateSeconds": 18,
+      "audio": "003.mp3",
+      "audioSeconds": 16.73
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫(要按症状检索条文) + 知识积累(归一化表 × 判定规则 = 可复核的检索层)",
+      "slide": "roots",
+      "spoken": "环境逼迫(要按症状检索条文) + 知识积累(归一化表 × 判定规则 = 可复核的检索层)",
+      "estimateSeconds": 8,
+      "audio": "004.mp3",
+      "audioSeconds": 8.42
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "text": "- 用原文说清太阳表证的两条分支：中风（汗出、脉缓）与伤寒（无汗、脉浮紧、喘）各自的条件\n- 说出为什么「脉缓」不等于慢，「脉紧」不等于快——它们描述的是紧张度\n- 建一张异体字归一化表，让「发热」的检索不漏条\n- 写一个表证判定器：输入症状集，输出分支、代表方与依据条号，并报「不排除项」",
+      "slide": "objectives",
+      "heading": "学习目标",
+      "spoken": "用原文说清太阳表证的两条分支：中风（汗出、脉缓）与伤寒（无汗、脉浮紧、喘）各自的条件\n说出为什么「脉缓」不等于慢，「脉紧」不等于快——它们描述的是紧张度\n建一张异体字归一化表，让「发热」的检索不漏条\n写一个表证判定器：输入症状集，输出分支、代表方与依据条号，并报「不排除项」",
+      "estimateSeconds": 29,
+      "audio": "005.mp3",
+      "audioSeconds": 27.98
+    },
+    {
+      "n": 6,
+      "role": "concept",
+      "text": "### 两条分支的原文条件\n\n> 太阳病，发热汗出恶风，脉缓者，名为中风。——《伤寒论·辨太阳病脉证并治》（篇 4）\n>\n> 太阳中风，阳浮而阴弱。阳浮者，热自发，阴弱者汗自出，啬啬恶寒，淅淅恶风，翕翕发热，鼻鸣干呕者，桂枝汤主之。——《伤寒论·辨太阳病脉证并治》（篇 4，方一）\n>\n> 太阳病，头痛发热，身疼恶风，无汗而喘者，麻黄汤主之。——《伤寒论·辨太阳病脉证并治中》（篇 5）\n\n三条放在一起，「有汗 / 无汗」是分水岭，「脉缓 / 脉浮紧」是佐证，「喘 / 干呕」是旁证。注意桂枝汤条的自我解释：**阳浮者热自发，阴弱者汗自出**——原文自己在给机制，这是《伤寒论》里少见的「条文带注释」写法。\n\n### 实测规模（本章全部数字可复算）\n\n| 指标 | 实测 |\n|---|--:|\n| 太阳病域条文 | **566 条 / 4 篇** |\n| 「桂枝汤」出现 | **134 条** |\n| 「麻黄汤」出现 | **44 条** |\n| 「汗出」 | **224 条** |\n| 「无汗」 | **38 条** |\n| 「恶寒」 | **107 条** |\n| 「发热」（正体） | **39 条** |\n| 「发𤍠」（异体） | **129 条** |\n| 归一后「发热」 | **163 条**（129 + 39 − 5 条两形并存） |\n\n最后两行的意义：**不归一化，检索「发热」会漏 124 条（43%）**。这不是排版问题，是检索层的正确性问题——你的症状索引会静默丢掉三分之二的证据。\n\n### 桂枝汤 134 条说明了什么\n\n桂枝汤出现 134 次，麻黄汤 44 次，比例约 3:1。但这不是「桂枝汤更重要」的证明——桂枝汤大量出现在**禁忌、误治、变证**的条文里（「桂枝汤不中与之」「先与桂枝汤」之类），出现频次高恰恰因为它是基准方，被反复当作对照。用频次当权重，会把「被反复否定」读成「最常用」。",
+      "slide": "concept",
+      "heading": "核心概念",
+      "spoken": "两条分支的原文条件\n太阳病，发热汗出恶风，脉缓者，名为中风。——《伤寒论·辨太阳病脉证并治》（篇 4）\n太阳中风，阳浮而阴弱。阳浮者，热自发，阴弱者汗自出，啬啬恶寒，淅淅恶风，翕翕发热，鼻鸣干呕者，桂枝汤主之。——《伤寒论·辨太阳病脉证并治》（篇 4，方一）\n太阳病，头痛发热，身疼恶风，无汗而喘者，麻黄汤主之。——《伤寒论·辨太阳病脉证并治中》（篇 5）\n三条放在一起，「有汗 / 无汗」是分水岭，「脉缓 / 脉浮紧」是佐证，「喘 / 干呕」是旁证。注意桂枝汤条的自我解释：阳浮者热自发，阴弱者汗自出——原文自己在给机制，这是《伤寒论》里少见的「条文带注释」写法。\n实测规模（本章全部数字可复算）\n最后两行的意义：不归一化，检索「发热」会漏 124 条（43%）。这不是排版问题，是检索层的正确性问题——你的症状索引会静默丢掉三分之二的证据。\n桂枝汤 134 条说明了什么\n桂枝汤出现 134 次，麻黄汤 44 次，比例约 3:1。但这不是「桂枝汤更重要」的证明——桂枝汤大量出现在禁忌、误治、变证的条文里（「桂枝汤不中与之」「先与桂枝汤」之类），出现频次高恰恰因为它是基准方，被反复当作对照。用频次当权重，会把「被反复否定」读成「最常用」。",
+      "estimateSeconds": 108,
+      "audio": "006.mp3",
+      "audioSeconds": 104.69
+    },
+    {
+      "n": 7,
+      "role": "build",
+      "text": "```js\n// code/main.js\nnormalize(text)      // 𤍠→热 等异体归一，返回 {text, replaced}\nsearch(needle)       // 双向检索：raw 命中 vs normalized 命中，报漏检\nclassify({sweat, pulse, dyspnea, vomiting})  // 中风/伤寒/不确定 + 依据\n```",
+      "slide": "build",
+      "heading": "BUILD IT：从零实现",
+      "spoken": "这一段以代码实现为主，请看画面上的代码块。",
+      "estimateSeconds": 5,
+      "audio": "007.mp3",
+      "audioSeconds": 4.51
+    },
+    {
+      "n": 8,
+      "role": "verify",
+      "text": "```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：`search('发热')` 返回 raw 39 / normalized 163，漏检 124（129 条含异体，其中 5 条同时含正体）；`classify({sweat: true, pulse: '缓'})` → 中风/桂枝汤；`classify({sweat: false, pulse: '浮紧', dyspnea: true})` → 伤寒/麻黄汤；`classify({})` → 不确定，且不猜。",
+      "slide": "verify",
+      "heading": "验证",
+      "spoken": "预期：search('发热') 返回 raw 39 / normalized 163，漏检 124（129 条含异体，其中 5 条同时含正体）；classify({sweat: true, pulse: '缓'}) ， 中风/桂枝汤；classify({sweat: false, pulse: '浮紧', dyspnea: true}) ， 伤寒/麻黄汤；classify({}) ， 不确定，且不猜。",
+      "estimateSeconds": 39,
+      "audio": "008.mp3",
+      "audioSeconds": 25.18
+    },
+    {
+      "n": 9,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "009.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 216.24,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

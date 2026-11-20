@@ -1,7 +1,7 @@
 {
  "courseTitle": "中医机器人学",
  "deptPath": "departments/07-zhineng/11-zhongyi-jiqiren-xue",
- "xlsx": "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx",
+ "xlsx": "F:/textbooks/qhzy-机器学习.xlsx",
  "chain": "感知 → 决策 → 控制 → 集成 → 安全",
  "levelLabel": "章群结构",
  "objectPressure": "机器人学的判据是「停得下来」：任何动作都要有可验证的停止条件与责任人",

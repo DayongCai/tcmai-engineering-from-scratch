@@ -1020,7 +1020,8 @@ function main() {
       console.log(`  · ${r.authoredFinal ? '改写层定稿' : '手写稿定稿'} ${r.subject.dept.slug}/${r.subject.slug}（源 ${ft.chapters} 章留档）← ${r.base}`);
       // 手写稿的进度也要如实进 meta：读目录里已有的章文件，不许估
       const mdir = path.join(TBDIR, r.subject.dept.slug, r.subject.slug);
-      const mfiles = fs.existsSync(mdir) ? fs.readdirSync(mdir).filter((f) => /^\d{2}-第\d+章-.*\.md$/.test(f)) : [];
+      // 章号允许三位（外源古籍学科章数过百），与 build_book.js / 教材看板同口径
+      const mfiles = fs.existsSync(mdir) ? fs.readdirSync(mdir).filter((f) => /^\d+-第\d+章-.*\.md$/.test(f)) : [];
       const mwords = mfiles.reduce((acc, f) => acc + fs.readFileSync(path.join(mdir, f), 'utf8').replace(/\s/g, '').length, 0);
       const mmeta = path.join(ROOT, r.subject.path, 'meta.json');
       if (fs.existsSync(mmeta)) {

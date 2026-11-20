@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 05-huli/05-zhongyi-yangsheng-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/05-huli/05-zhongyi-yangsheng-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 05-zhongyi-yangsheng-xue
+title: 中医养生学
+en: TCM Health Cultivation
+dept: 05-huli
+dept_title: 护理系
+semester: 3
+stage: sheng
+hours: 54
+chapters_target: 8
+bridge: 体质养生→个性化推荐 / 生活处方→规则引擎
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-jiben-yuanze
+    title: 第1章 养生的基本原则：天人相应
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.04
+  - slug: 02-sishi-yangsheng
+    title: 第2章 四时养生与节气调摄
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99
+  - slug: 03-yinshi-tizhi
+    title: 第3章 饮食养生与体质配膳
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1
+  - slug: 04-qingzhi-yangsheng
+    title: 第4章 情志养生与疏泄
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.97
+  - slug: 05-yundong-gongfa
+    title: 第5章 运动养生与传统功法
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99
+  - slug: 06-qiju-shuimian
+    title: 第6章 起居作息与睡眠
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 07-zhiweibing-jiankang
+    title: 第7章 治未病与健康管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.99
+  - slug: 08-xiaoguo-celiang
+    title: 第8章 养生干预的效果测量
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.08

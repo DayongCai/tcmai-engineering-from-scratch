@@ -1,0 +1,102 @@
+# [tcmP] 课程编排 · 03-zhenjiu/08-zhenjiu-zhiliao-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/03-zhenjiu/08-zhenjiu-zhiliao-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 08-zhenjiu-zhiliao-xue
+title: 针灸治疗学
+en: Acupuncture Therapeutics
+dept: 03-zhenjiu
+dept_title: 针灸系
+semester: 5
+stage: zhang
+hours: 90
+chapters_target: 12
+bridge: 处方配穴→组合优化 / 疗效预测→分类模型
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-zhiliao-yuanze
+    title: 第1章 针灸治疗原则与作用
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.01
+  - slug: 02-zhenzhi-tedian-chufang
+    title: 第2章 临床诊治特点与针灸处方
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.02
+  - slug: 03-tedingxue-yingyong
+    title: 第3章 特定穴的临床应用
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.98
+  - slug: 04-toumina-tongzheng
+    title: 第4章 头面躯体痛证
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.98
+  - slug: 05-neike-yi
+    title: 第5章 内科病证（一）
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1
+  - slug: 06-neike-er
+    title: 第6章 内科病证（二）
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.96
+  - slug: 07-fuerke
+    title: 第7章 妇儿科病证
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.99
+  - slug: 08-piwaike
+    title: 第8章 皮外伤科病证
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.98
+  - slug: 09-wuguan
+    title: 第9章 五官科病证
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1
+  - slug: 10-jizheng-qita
+    title: 第10章 急症与其他病证
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.03
+  - slug: 11-zhiwuliu-zhu
+    title: 第11章 子午流注与灵龟八法
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.02
+  - slug: 12-yanjiu-jinzhan
+    title: 第12章 针灸临床研究进展
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.98

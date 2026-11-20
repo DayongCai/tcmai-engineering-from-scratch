@@ -6,21 +6,150 @@
    "title": "PRISMA 2020 expanded checklist",
    "series": "PRISMA 2020 statement（Page MJ et al., BMJ 2021;372:n71）配套的扩展核对表",
    "revised": "2021",
-   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf"
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist.pdf",
+   "shortTitle": "PRISMA 2020 expanded checklist"
   },
   "PRISMA-2020-checklist": {
    "file": "PRISMA-2020-checklist.pdf",
    "title": "PRISMA 2020 Checklist",
    "series": "PRISMA 2020 statement 27 条核对表",
    "revised": "2020",
-   "url": "https://www.prisma-statement.org/s/PRISMA_2020_checklist.pdf"
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_checklist.pdf",
+   "shortTitle": "PRISMA 2020 Checklist"
   },
   "WHO-Guideline-Contextualization": {
    "file": "WHO-Evidence-based-guidelines-capacities.pdf",
    "title": "Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization",
    "series": "World Health Organization 指南本土化手册（含 GRADE 与 GRADE-ADOLOPMENT）",
    "revised": "2023",
-   "url": "https://iris.who.int/server/api/core/bitstreams/63282011-3089-4189-b09d-40fc555fbafe/content"
+   "url": "https://iris.who.int/server/api/core/bitstreams/63282011-3089-4189-b09d-40fc555fbafe/content",
+   "shortTitle": "Strengthening countries' capacities to adopt and adapt evidence-based guidelines: a handbook for guideline contextualization"
+  },
+  "ROBIS-guidance": {
+   "title": "ROBIS: Guidance on how to use ROBIS（University of Bristol，2016）",
+   "file": "ROBIS-guidance.pdf",
+   "url": "https://www.bristol.ac.uk/media-library/sites/social-community-medicine/robis/robisguidancedocument.pdf",
+   "issuer": "University of Bristol · ROBIS 工具组",
+   "series": "ROBIS/GRADE/PRISMA 补源（2026-11-15）",
+   "shortTitle": "ROBIS Guidance on how to use ROBIS"
+  },
+  "ROBIS-1.2-tool": {
+   "title": "ROBIS: Tool to assess risk of bias in systematic reviews（Version 1.2 表格件）",
+   "file": "ROBIS-1.2-tool.pdf",
+   "url": "https://www.bristol.ac.uk/media-library/sites/social-community-medicine/robis/ROBIS%201.2%20Clean.pdf",
+   "issuer": "University of Bristol · ROBIS 工具组",
+   "series": "ROBIS/GRADE/PRISMA 补源（2026-11-15）",
+   "shortTitle": "ROBIS Tool 1.2"
+  },
+  "GRADE-cochrane-howto": {
+   "title": "How to GRADE the quality of the evidence（Cochrane CCCG 补充作者指引）",
+   "file": "GRADE-cochrane-howto.pdf",
+   "url": "https://colorectal.cochrane.org/sites/colorectal.cochrane.org/files/uploads/how_to_grade.pdf",
+   "issuer": "Cochrane Colorectal Cancer Group",
+   "series": "ROBIS/GRADE/PRISMA 补源（2026-11-15）",
+   "shortTitle": "How to GRADE the quality of the evidence"
+  },
+  "GRADE-handbook-2013": {
+   "title": "GRADE Handbook（Handbook for grading the quality of evidence and the strength of recommendations, Updated October 2013）",
+   "file": "GRADE-handbook-2013.pdf",
+   "url": "https://www.rama.mahidol.ac.th/ceb/sites/default/files/public/pdf/journal_club/2017/GRADE%20handbook.pdf",
+   "issuer": "GRADE Working Group（本库所存为 Mahidol University CEB 镜像件）",
+   "series": "ROBIS/GRADE/PRISMA 补源（2026-11-15）",
+   "note": "原件在库（49 页 / 3.78 MB），但 PDF 文本层为双栏交错（右半句落在相邻栏），逐字切片不可靠 —— 按 补源约定「查不到的句子不入库」，本题条文 0 条；GRADE 条文由 GRADE-cochrane-howto 承载，Handbook 供查阅章节结构（5.2 降级五因素 / 5.3 升级三因素 / 6.1 强弱推荐）。",
+   "shortTitle": "GRADE Handbook 2013"
+  },
+  "PRISMA-2020-flow-diagram": {
+   "title": "PRISMA 2020 flow diagram（四联图模板：new SRs / updated SRs）",
+   "file": "flow-diagrams/PRISMA_2020_flow_diagram_new_SRs_v1.docx",
+   "url": "https://www.prisma-statement.org/s/PRISMA_2020_flow_diagram_new_SRs_v1-lml8.docx",
+   "issuer": "PRISMA 官方站点（docx 模板，官方未提供 PDF）",
+   "series": "ROBIS/GRADE/PRISMA 补源（2026-11-15）",
+   "note": "图件非条文：官方仅提供 .docx 模板，两份模板（new SRs / updated SRs）存于 sources/flow-diagrams/，sha256 与字节数见 补源登记.json 的 flowDiagrams；不进入条文逐字校勘口径。",
+   "shortTitle": "PRISMA 2020 flow diagram"
+  },
+  "COCHRANE-ch06": {
+   "title": "Cochrane Handbook for Systematic Reviews of Interventions · Chapter 6: Choosing effect measures and computing estimates of effect (v6)",
+   "shortTitle": "Cochrane Handbook Ch6 效应量",
+   "file": "Cochrane-handbook-ch06-effect-measures.pdf",
+   "url": "https://training.cochrane.org/handbook/current/chapter-06",
+   "issuer": "Cochrane（官方在线版，本库为官方页面 headless 打印快照）",
+   "series": "研究方法/统计推断/质性/检索 补源（2026-11-15）"
+  },
+  "COCHRANE-ch08": {
+   "title": "Cochrane Handbook · Chapter 8: Assessing risk of bias in a randomized trial (v6)",
+   "shortTitle": "Cochrane Handbook Ch8 偏倚风险",
+   "file": "Cochrane-handbook-ch08-risk-of-bias.pdf",
+   "url": "https://training.cochrane.org/handbook/current/chapter-08",
+   "issuer": "Cochrane（官方在线版，本库为官方页面 headless 打印快照）",
+   "series": "研究方法/统计推断/质性/检索 补源（2026-11-15）"
+  },
+  "COCHRANE-ch10": {
+   "title": "Cochrane Handbook · Chapter 10: Analysing data and undertaking meta-analyses (v6)",
+   "shortTitle": "Cochrane Handbook Ch10 数据分析",
+   "file": "Cochrane-handbook-ch10-meta-analysis.pdf",
+   "url": "https://training.cochrane.org/handbook/current/chapter-10",
+   "issuer": "Cochrane（官方在线版，本库为官方页面 headless 打印快照）",
+   "series": "研究方法/统计推断/质性/检索 补源（2026-11-15）"
+  },
+  "JBI-qual": {
+   "title": "JBI Checklist for Qualitative Research（Joanna Briggs Institute 批判性评价清单）",
+   "shortTitle": "JBI 质性研究核查表",
+   "file": "JBI-checklist-qualitative-research.pdf",
+   "url": "https://jbi.global/sites/default/files/2020-08/Checklist_for_Qualitative_Research.pdf",
+   "issuer": "JBI（Joanna Briggs Institute）",
+   "series": "研究方法/统计推断/质性/检索 补源（2026-11-15）"
+  },
+  "JBI-sr": {
+   "title": "JBI Checklist for Systematic Reviews and Research Syntheses（批判性评价清单）",
+   "shortTitle": "JBI 系统评价核查表",
+   "file": "JBI-checklist-systematic-reviews.pdf",
+   "url": "https://jbi.global/sites/default/files/2020-08/Checklist_for_Systematic_Reviews_and_Research_Syntheses.pdf",
+   "issuer": "JBI（Joanna Briggs Institute）",
+   "series": "研究方法/统计推断/质性/检索 补源（2026-11-15）"
+  },
+  "JBI-cross": {
+   "title": "JBI Checklist for Analytical Cross Sectional Studies（批判性评价清单）",
+   "shortTitle": "JBI 横断面研究核查表",
+   "file": "JBI-checklist-analytical-cross-sectional.pdf",
+   "url": "https://jbi.global/sites/default/files/2020-08/Checklist_for_Analytical_Cross_Sectional_Studies.pdf",
+   "issuer": "JBI（Joanna Briggs Institute）",
+   "series": "研究方法/统计推断/质性/检索 补源（2026-11-15）"
+  },
+  "COCHRANE-ch04": {
+   "title": "Cochrane Handbook · Chapter 4: Searching for and selecting studies (v6)",
+   "shortTitle": "Cochrane Handbook Ch4 检索",
+   "file": "Cochrane-handbook-ch04-searching.pdf",
+   "url": "https://training.cochrane.org/handbook/current/chapter-04",
+   "issuer": "Cochrane（官方在线版，本库为官方页面 headless 打印快照）",
+   "series": "研究方法/统计推断/质性/检索 补源（2026-11-15）"
+  },
+  "JBI-manual-2024": {
+   "title": "JBI Manual for Evidence Synthesis（2024 年 11 月版，481 页）",
+   "shortTitle": "JBI 证据综合手册",
+   "file": "JBI-manual-for-evidence-synthesis-2024.pdf",
+   "url": "https://hotus.fi/wp-content/uploads/2025/10/jbi-manual-for-evidence-synthesis-nov-2024.pdf",
+   "issuer": "JBI（Joanna Briggs Institute）；本库所存为 Hotus（芬兰护理研究基金会）镜像件",
+   "series": "研究方法/统计推断/质性/检索 补源（2026-11-15）",
+   "referenceOnly": true,
+   "note": "整本 21.5 MB / 481 页，仅作常备查阅（章节结构：1 系统评价 / 2 质性证据 / 3 有效性 / 5 文本与专家意见）。不进逐字校勘语料（每页三等分栏提取会让 npm run check 从 ~3 分钟涨到 5 分钟以上），故条文 0 条；条文由同口径的三份 JBI 核查表承载。若将来要为「循证实践」章补条，把 referenceOnly 去掉再挂锚点即可。"
+  },
+  "COSMIN-RoB-2017": {
+   "title": "COSMIN Risk of Bias checklist（Dec 2017, for studies of measurement properties）",
+   "shortTitle": "COSMIN 偏倚风险清单",
+   "file": "COSMIN-risk-of-bias-checklist-2017.pdf",
+   "url": "https://cosmin.nl/wp-content/uploads/COSMIN_risk-of-bias-checklist_dec-2017.pdf",
+   "issuer": "COSMIN initiative（Amsterdam UMC）",
+   "series": "量表信效度/伦理 补源（2026-11-15）",
+   "note": "清单为表单体，条文取 Box 处的九项测量属性标题（逐字子串）；各 Box 内的评分格用于评价单个研究，不作条文引用。"
+  },
+  "ETHICS-2023": {
+   "title": "涉及人的生命科学和医学研究伦理审查办法（国卫科教发〔2023〕4号）",
+   "shortTitle": "伦理审查办法 2023",
+   "file": "ethics-review-measures-2023.txt",
+   "url": "https://www.nhc.gov.cn/wjw/c100375/202302/902b4a1dc3af4aba862a6387e6e376dc.shtml",
+   "issuer": "国家卫生健康委等四部门（本库所存为北京大学医学部伦理委员会转载页的正文快照，已去标签）",
+   "series": "量表信效度/伦理 补源（2026-11-15）",
+   "note": "nhc.gov.cn 原页对本库 IP 返回 412（反爬），故正文取自北大医学部伦理委员会转载页（同文），只保留第一章至第五十四条正文。"
   }
  },
  "clauses": [
@@ -226,6 +355,440 @@
    "clause": "第8条",
    "原文": "Trustworthy guidelines are the cornerstone of giving evidence-informed advice in response to clinical, public health and health policy questions.",
    "zh": "可信的指南，是就临床、公共卫生与卫生政策问题给出循证建议的基石。"
+  },
+  {
+   "id": "R01",
+   "source": "ROBIS-guidance",
+   "clause": "第1条",
+   "原文": "Phase 2 aims to identify areas where bias may be introduced into the systematic review.",
+   "zh": ""
+  },
+  {
+   "id": "R02",
+   "source": "ROBIS-guidance",
+   "clause": "第2条",
+   "原文": "It involves the assessment of four domains to cover key review processes: study eligibility criteria; identification and selection of studies; data collection and study appraisal; and synthesis and findings.",
+   "zh": ""
+  },
+  {
+   "id": "R03",
+   "source": "ROBIS-guidance",
+   "clause": "第3条",
+   "原文": "Each domain comprises three sections: information used to support the judgment, signalling questions, and judgment of concern about risk of bias.",
+   "zh": ""
+  },
+  {
+   "id": "R04",
+   "source": "ROBIS-guidance",
+   "clause": "第4条",
+   "原文": "The domains should be considered sequentially and not assessed as stand-alone units.",
+   "zh": ""
+  },
+  {
+   "id": "R05",
+   "source": "ROBIS-guidance",
+   "clause": "第5条",
+   "原文": "The signalling questions are answered as “Yes”, “Probably Yes”, “Probably No”, “No” and “No Information”, with “Yes” indicating low concerns.",
+   "zh": ""
+  },
+  {
+   "id": "R06",
+   "source": "ROBIS-guidance",
+   "clause": "第6条",
+   "原文": "The subsequent level of concern about bias associated with each domain is then judged as “low,” “high,” or “unclear.” This rating was chosen rather than a rating of “Yes”, “No” or “Unclear”, because such a rating would either have meant that “Yes” was a bad thing in contrast to the phrasing of all signalling questions, or concern questions would have been worded awkwardly.",
+   "zh": ""
+  },
+  {
+   "id": "R07",
+   "source": "ROBIS-guidance",
+   "clause": "第7条",
+   "原文": "If the answers to all signalling questions for a domain are “Yes” or “Probably Yes”, then level of concern can be judged as low.",
+   "zh": ""
+  },
+  {
+   "id": "R08",
+   "source": "ROBIS-guidance",
+   "clause": "第8条",
+   "原文": "The first domain aims to assess whether primary study eligibility criteria were pre-specified, clear and appropriate to the review question.",
+   "zh": ""
+  },
+  {
+   "id": "R09",
+   "source": "ROBIS-guidance",
+   "clause": "第9条",
+   "原文": "This domain aims to assess whether any primary studies that would have met the inclusion criteria were not included in the review.",
+   "zh": ""
+  },
+  {
+   "id": "R10",
+   "source": "ROBIS-guidance",
+   "clause": "第10条",
+   "原文": "The third domain aims to assess whether bias may have been introduced through the data collection or risk of bias assessment processes.",
+   "zh": ""
+  },
+  {
+   "id": "R11",
+   "source": "ROBIS-guidance",
+   "clause": "第11条",
+   "原文": "The final phase considers whether the systematic review as a whole is at risk of bias.",
+   "zh": ""
+  },
+  {
+   "id": "R12",
+   "source": "ROBIS-guidance",
+   "clause": "第12条",
+   "原文": "The first signalling question for this phase asks whether the interpretation of findings addresses all of the concerns identified in domains 1 to 4.",
+   "zh": ""
+  },
+  {
+   "id": "RB1",
+   "source": "ROBIS-1.2-tool",
+   "clause": "第1条",
+   "原文": "ROBIS is designed to assess the risk of bias in reviews with questions relating to interventions, aetiology, diagnosis and prognosis.",
+   "zh": ""
+  },
+  {
+   "id": "G01",
+   "source": "GRADE-cochrane-howto",
+   "clause": "第1条",
+   "原文": "GRADE is a system for assessing the quality of the evidence of each outcome in a review against eight criteria (including risk of bias, indirectness, inconsistency, imprecision, and publication bias).",
+   "zh": ""
+  },
+  {
+   "id": "G02",
+   "source": "GRADE-cochrane-howto",
+   "clause": "第2条",
+   "原文": "In the GRADE system, the quality of evidence for each outcome is graded as HIGH, MODERATE, LOW or VERY LOW.",
+   "zh": ""
+  },
+  {
+   "id": "G03",
+   "source": "GRADE-cochrane-howto",
+   "clause": "第3条",
+   "原文": "A HIGH rating means that, having assessed all of the potential problems with the evidence quality, we can be confident in our effect estimate.",
+   "zh": ""
+  },
+  {
+   "id": "G04",
+   "source": "GRADE-cochrane-howto",
+   "clause": "第4条",
+   "原文": "Note that VERY LOW is the lowest quality rating, no matter how many reasons for downgrading quality there may be.",
+   "zh": ""
+  },
+  {
+   "id": "G05",
+   "source": "GRADE-cochrane-howto",
+   "clause": "第5条",
+   "原文": "These assessments reflect the degree of confidence we can have in our effect estimate.",
+   "zh": ""
+  },
+  {
+   "id": "G06",
+   "source": "GRADE-cochrane-howto",
+   "clause": "第6条",
+   "原文": "The GRADE system rates the quality of evidence for each outcome, from a rating of HIGH to VERY LOW.",
+   "zh": ""
+  },
+  {
+   "id": "G07",
+   "source": "GRADE-cochrane-howto",
+   "clause": "第7条",
+   "原文": "There are several steps involved in moving from the risk of bias assessment for an individual study to a judgement about the overall risk of bias per outcome.",
+   "zh": ""
+  },
+  {
+   "id": "E01",
+   "source": "COCHRANE-ch06",
+   "clause": "第1条",
+   "原文": "Effect measures can broadly be divided into ratio measures and difference measures (sometimes also called relative and absolute measures, respectively).",
+   "zh": ""
+  },
+  {
+   "id": "E02",
+   "source": "COCHRANE-ch06",
+   "clause": "第2条",
+   "原文": "Risk ratios describe the multiplication of the risk that occurs with use of the experimental intervention.",
+   "zh": ""
+  },
+  {
+   "id": "E03",
+   "source": "COCHRANE-ch06",
+   "clause": "第3条",
+   "原文": "Odds ratios, like odds, are more difficult to interpret (Sinclair and Bracken 1994, Sackett et al 1996).",
+   "zh": ""
+  },
+  {
+   "id": "E04",
+   "source": "COCHRANE-ch06",
+   "clause": "第4条",
+   "原文": "The mean difference (MD, or more correctly, ʻdifference in meansʼ) is a standard statistic that measures the absolute difference between the mean value in two groups of a randomized trial.",
+   "zh": ""
+  },
+  {
+   "id": "B01",
+   "source": "COCHRANE-ch08",
+   "clause": "第1条",
+   "原文": "RoB 2 is structured into a fixed set of domains of bias, focusing on different aspects of trial design, conduct and reporting.",
+   "zh": ""
+  },
+  {
+   "id": "B02",
+   "source": "COCHRANE-ch08",
+   "clause": "第2条",
+   "原文": "Within each domain, a series of questions (ʻsignalling questionsʼ) aim to elicit information about features of the trial that are relevant to risk of bias.",
+   "zh": ""
+  },
+  {
+   "id": "B03",
+   "source": "COCHRANE-ch08",
+   "clause": "第3条",
+   "原文": "Answers to signalling questions and judgements about risk of bias should be supported by written justifications.",
+   "zh": ""
+  },
+  {
+   "id": "MA01",
+   "source": "COCHRANE-ch10",
+   "clause": "第1条",
+   "原文": "The commonly used methods for meta-analysis follow the following basic principles: 1.",
+   "zh": ""
+  },
+  {
+   "id": "MA02",
+   "source": "COCHRANE-ch10",
+   "clause": "第2条",
+   "原文": "A fixed-effect meta-analysis using the inverse-variance method calculates a weighted average as: ∑𝑌 (1/SE2) 𝑖 𝑖 generic inverse-variance weighted average= , ∑(1/SE2) 𝑖 where Y is the intervention effect estimated in the ith study, SE is the standard error of that i i estimate, and the summation is across all studies.",
+   "zh": ""
+  },
+  {
+   "id": "MA03",
+   "source": "COCHRANE-ch10",
+   "clause": "第3条",
+   "原文": "The random-effects meta-analysis approach incorporates an assumption that the different studies are estimating different, yet related, intervention effects (DerSimonian and Laird 1986, Borenstein et al 2010).",
+   "zh": ""
+  },
+  {
+   "id": "MA04",
+   "source": "COCHRANE-ch10",
+   "clause": "第4条",
+   "原文": "A fixed-effect meta-analysis provides a result that may be viewed as a ʻtypical intervention effectʼ from the studies included in the analysis.",
+   "zh": ""
+  },
+  {
+   "id": "MA05",
+   "source": "COCHRANE-ch10",
+   "clause": "第5条",
+   "原文": "Subgroup analyses involve splitting all the participant data into subgroups, often in order to make comparisons between them.",
+   "zh": ""
+  },
+  {
+   "id": "MA06",
+   "source": "COCHRANE-ch10",
+   "clause": "第6条",
+   "原文": "Sensitivity analyses are sometimes confused with subgroup analysis.",
+   "zh": ""
+  },
+  {
+   "id": "Q01",
+   "source": "JBI-qual",
+   "clause": "第1条",
+   "原文": "Congruity between the stated philosophical perspective and the research methodology Does the report clearly state the philosophical or theoretical premises on which the study is based?",
+   "zh": ""
+  },
+  {
+   "id": "Q02",
+   "source": "JBI-qual",
+   "clause": "第2条",
+   "原文": "Congruity between the research methodology and the research question or objectives Is the study methodology appropriate for addressing the research question?",
+   "zh": ""
+  },
+  {
+   "id": "Q03",
+   "source": "JBI-qual",
+   "clause": "第3条",
+   "原文": "Congruity between the research methodology and the methods used to collect data Are the data collection methods appropriate to the methodology?",
+   "zh": ""
+  },
+  {
+   "id": "Q04",
+   "source": "JBI-qual",
+   "clause": "第4条",
+   "原文": "Congruity between the research methodology and the representation and analysis of data Are the data analyzed and represented in ways that are congruent with the stated methodological position?",
+   "zh": ""
+  },
+  {
+   "id": "S01",
+   "source": "JBI-sr",
+   "clause": "第1条",
+   "原文": "Is the review question clearly and explicitly stated?",
+   "zh": ""
+  },
+  {
+   "id": "S02",
+   "source": "JBI-sr",
+   "clause": "第2条",
+   "原文": "Critical appraisal or some similar assessment of the quality of the literature included in a systematic review is essential.",
+   "zh": ""
+  },
+  {
+   "id": "S03",
+   "source": "JBI-sr",
+   "clause": "第3条",
+   "原文": "Ideally a review should present recommendations for policy and practice.",
+   "zh": ""
+  },
+  {
+   "id": "C01",
+   "source": "JBI-cross",
+   "clause": "第1条",
+   "原文": "Were the criteria for inclusion in the sample clearly defined?",
+   "zh": ""
+  },
+  {
+   "id": "C02",
+   "source": "JBI-cross",
+   "clause": "第2条",
+   "原文": "Was the exposure measured in a valid and reliable way?",
+   "zh": ""
+  },
+  {
+   "id": "C03",
+   "source": "JBI-cross",
+   "clause": "第3条",
+   "原文": "Was appropriate statistical analysis used?",
+   "zh": ""
+  },
+  {
+   "id": "H01",
+   "source": "COCHRANE-ch04",
+   "clause": "第1条",
+   "原文": "Searches should aim for high sensitivity, which may result in relatively low precision.",
+   "zh": ""
+  },
+  {
+   "id": "H02",
+   "source": "COCHRANE-ch04",
+   "clause": "第2条",
+   "原文": "Search strategies should avoid using too many different search concepts but a wide variety of search terms should be combined with OR within each included concept.",
+   "zh": ""
+  },
+  {
+   "id": "H03",
+   "source": "COCHRANE-ch04",
+   "clause": "第3条",
+   "原文": "Searches should capture as many studies as possible that meet the eligibility criteria, ensuring that relevant time periods and sources are covered and not restricted by language or publication status (see MECIR Box 4.3.a).",
+   "zh": ""
+  },
+  {
+   "id": "H04",
+   "source": "COCHRANE-ch04",
+   "clause": "第4条",
+   "原文": "Searching beyond MEDLINE is important not only for ensuring that as many relevant studies as possible are identified, but also to minimize selection bias for those that are found.",
+   "zh": ""
+  },
+  {
+   "id": "K01",
+   "source": "COSMIN-RoB-2017",
+   "clause": "第1条",
+   "原文": "Box 2. Content validity",
+   "zh": ""
+  },
+  {
+   "id": "K02",
+   "source": "COSMIN-RoB-2017",
+   "clause": "第2条",
+   "原文": "Box 3. Structural validity",
+   "zh": ""
+  },
+  {
+   "id": "K03",
+   "source": "COSMIN-RoB-2017",
+   "clause": "第3条",
+   "原文": "Box 4. Internal consistency",
+   "zh": ""
+  },
+  {
+   "id": "K04",
+   "source": "COSMIN-RoB-2017",
+   "clause": "第4条",
+   "原文": "Box 6. Reliability",
+   "zh": ""
+  },
+  {
+   "id": "K05",
+   "source": "COSMIN-RoB-2017",
+   "clause": "第5条",
+   "原文": "Box 7. Measurement error",
+   "zh": ""
+  },
+  {
+   "id": "K06",
+   "source": "COSMIN-RoB-2017",
+   "clause": "第6条",
+   "原文": "Box 9. Hypotheses testing for construct validity",
+   "zh": ""
+  },
+  {
+   "id": "K07",
+   "source": "COSMIN-RoB-2017",
+   "clause": "第7条",
+   "原文": "Box 10. Responsiveness",
+   "zh": ""
+  },
+  {
+   "id": "L01",
+   "source": "ETHICS-2023",
+   "clause": "第4条",
+   "原文": "第四条 伦理审查工作及相关人员应当遵守中华人民共和国宪法、法律和有关法规。",
+   "zh": ""
+  },
+  {
+   "id": "L02",
+   "source": "ETHICS-2023",
+   "clause": "第17条",
+   "原文": "第十七条 涉及人的生命科学和医学研究应当具有科学价值和社会价值，不得违反国家相关法律法规，遵循国际公认的伦理准则，不得损害公共利益，并符合以下基本要求：\n （一）控制风险。",
+   "zh": ""
+  },
+  {
+   "id": "L03",
+   "source": "ETHICS-2023",
+   "clause": "第18条",
+   "原文": "第十八条 涉及人的生命科学和医学研究的研究者在申请初始伦理审查时应当向伦理审查委员会提交下列材料：\n （一）研究材料诚信承诺书；\n （二）伦理审查申请表；\n （三）研究人员信息、研究所涉及的相关机构的合法资质证明以及研究经费来源说明；\n （四）研究方案、相关资料，包括文献综述、临床前研究和动物实验数据等资料；\n （五）知情同意书；\n （六）生物样本、信息数据的来源证明；\n （七）科学性论证意见；\n （八）利益冲突申明；\n （九）招募广告及其发布形式；\n （十）研究成果的发布形式说明；\n （十一）伦理审查委员会认为需要提交的其他相关材料。",
+   "zh": ""
+  },
+  {
+   "id": "L04",
+   "source": "ETHICS-2023",
+   "clause": "第21条",
+   "原文": "第二十一条 伦理审查委员会批准研究的基本标准是：\n （一）研究具有科学价值和社会价值,不违反法律法规的规定，不损害公共利益；\n （二）研究参与者权利得到尊重，隐私权和个人信息得到保护；\n （三）研究方案科学；\n （四）研究参与者的纳入和排除的标准科学而公平；\n （五）风险受益比合理，风险最小化；\n （六）知情同意规范、有效；\n （七）研究机构和研究者能够胜任；\n （八）研究结果发布方式、内容、时间合理；\n （九）研究者遵守科研规范与诚信。",
+   "zh": ""
+  },
+  {
+   "id": "L05",
+   "source": "ETHICS-2023",
+   "clause": "第25条",
+   "原文": "第二十五条 对已批准实施的研究，研究者应当按要求及时提交研究进展、严重不良事件，方案偏离、暂停、终止，研究完成等各类报告。",
+   "zh": ""
+  },
+  {
+   "id": "L06",
+   "source": "ETHICS-2023",
+   "clause": "第33条",
+   "原文": "第三十三条 研究者开展研究前，应当获得研究参与者自愿签署的知情同意书。",
+   "zh": ""
+  },
+  {
+   "id": "L07",
+   "source": "ETHICS-2023",
+   "clause": "第34条",
+   "原文": "第三十四条 研究参与者为无民事行为能力人或者限制民事行为能力人的，应当获得其监护人的书面知情同意。",
+   "zh": ""
+  },
+  {
+   "id": "L08",
+   "source": "ETHICS-2023",
+   "clause": "第38条",
+   "原文": "第三十八条 研究过程中发生下列情形时，研究者应当再次获取研究参与者的知情同意：\n （一）与研究参与者相关的研究内容发生实质性变化的；\n （二）与研究相关的风险实质性提高或者增加的；\n （三）研究参与者民事行为能力等级提高的。",
+   "zh": ""
   }
  ]
 }

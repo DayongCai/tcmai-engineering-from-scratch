@@ -1,0 +1,67 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/06-qiezhen-maixiang/docs/zh.md",
+  "course": "05-zhongyi-zhen-duan-xue",
+  "dept": "01-zhongyi",
+  "chapter": "06-qiezhen-maixiang",
+  "title": "第 6 章 · 切诊：给了「28 脉」的名号，标题只拼得出 27 个脉名",
+  "segmentCount": 5,
+  "estimateTotalSeconds": 102,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 6 章 · 切诊：给了「28 脉」的名号，标题只拼得出 27 个脉名",
+      "slide": "title",
+      "spoken": "第 6 章 · 切诊：给了「28 脉」的名号，标题只拼得出 27 个脉名",
+      "estimateSeconds": 6,
+      "audio": "001.mp3",
+      "audioSeconds": 6.72
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「常见病脉（28脉之要）：浮脉（举之有余、按之不足）主表证」——《中医诊断学·第5章·5.1.2》",
+      "slide": "title",
+      "spoken": "「常见病脉（28脉之要）：浮脉（举之有余、按之不足）主表证」——《中医诊断学·第5章·5.1.2》",
+      "estimateSeconds": 11,
+      "audio": "002.mp3",
+      "audioSeconds": 9.77
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "教材在 5.1.2 的正文开头写下「28 脉之要」，随后两段确实把 28 个脉一个不落地讲完了。可当你只读段标题——`浮沉迟数虚实洪细弦紧滑涩濡弱微` 与 `结代促、长短短脉、革牢、动脉、疾脉、散脉、芤脉、伏脉`——把它们拼起来，得到的是 27 个脉名，不是 28 个。差的这一个是谁？是解析漏了，还是教材标题漏了？如果不把这件事查清，任何「按标题建 28 脉索引」的做法都会静默少一格，而且少的那一格不会报错。",
+      "slide": "problem",
+      "spoken": "教材在 5.1.2 的正文开头写下「28 脉之要」，随后两段确实把 28 个脉一个不落地讲完了。可当你只读段标题——浮沉迟数虚实洪细弦紧滑涩濡弱微 与 结代促、长短短脉、革牢、动脉、疾脉、散脉、芤脉、伏脉——把它们拼起来，得到的是 27 个脉名，不是 28 个。差的这一个是谁？是解析漏了，还是教材标题漏了？如果不把这件事查清，任何「按标题建 28 脉索引」的做法都会静默少一格，而且少的那一格不会报错。",
+      "estimateSeconds": 41,
+      "audio": "003.mp3",
+      "audioSeconds": 40.75
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（脉诊是切诊里唯一被反复考试、反复引用的部分，2,030 字中有 1,545 字压在脉诊上，读者被迫先背脉名再谈脉理，于是「脉名表是否完整」成了第一道关卡） + 知识积累（教材把 28 脉拆成「12 + 16」两段叙述、却只用「15 + 12」两个标题去指代，标题与正文之间的这一层错位，只有在逐字清点后才会显形）",
+      "slide": "roots",
+      "spoken": "环境逼迫（脉诊是切诊里唯一被反复考试、反复引用的部分，2,030 字中有 1,545 字压在脉诊上，读者被迫先背脉名再谈脉理，于是「脉名表是否完整」成了第一道关卡） + 知识积累（教材把 28 脉拆成「12 + 16」两段叙述、却只用「15 + 12」两个标题去指代，标题与正文之间的这一层错位，只有在逐字清点后才会显形）",
+      "estimateSeconds": 33,
+      "audio": "004.mp3",
+      "audioSeconds": 30.12
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "005.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 98.66,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

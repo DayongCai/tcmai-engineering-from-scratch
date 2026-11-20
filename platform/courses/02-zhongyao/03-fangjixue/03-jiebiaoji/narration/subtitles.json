@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/03-fangjixue/03-jiebiaoji/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 103.24,
+  "estimatedCues": 0,
+  "videoSeconds": 103.268667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.15,
+      "seconds": 4.15,
+      "estimated": false,
+      "text": "第 3 章 · 解表剂：辛温与辛凉的分野",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.15,
+      "end": 13.44,
+      "seconds": 9.29,
+      "estimated": false,
+      "text": "「麻黄汤与桂枝汤同属辛温解表之剂」——教材·第5章·5.1.1（《方剂学·第5章·5.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 13.44,
+      "end": 31.7,
+      "seconds": 18.26,
+      "estimated": false,
+      "text": "你能说出「辛温解表」「辛凉解表」两个词，但给你「发热，微恶风寒，咽喉肿痛，口渴欲饮」，你选麻黄汤还是银翘散？多数人靠「感觉像风寒还是风热」——而这套感觉一旦遇到「麻黄出现在辛凉方里」就崩了。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 31.7,
+      "end": 47.32,
+      "seconds": 15.62,
+      "estimated": false,
+      "text": "环境逼迫（门诊遇到外感初起，凭印象抓一首方，服后不效也说不清错在哪一步）+ 知识积累（汗法三节 × 五味共现 = 一条能用「有汗/无汗、咽痛/不渴」判出来的分野）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 47.32,
+      "end": 91.94,
+      "seconds": 44.62,
+      "estimated": false,
+      "text": "能说出辛温四首方各自的兼夹（表实、表虚、夹湿兼里热、外寒内饮），并为每一首举出鉴别要点 能用「有汗/无汗、脉浮紧/浮缓」区分麻黄汤与桂枝汤，而不是靠方名顺序 能说清辛凉三首的「平剂／轻剂／重剂」不是凉的程度，而是病位深浅 能解释为什么麻黄同时出现在辛温与辛凉两节，以及「寒温由配伍决定」的判据 能指出败毒散单列一节的理由（虚实夹杂、扶正与解表并行） 能读懂 code/main.js 的药味共现输出，并知道 37 这个药名数里含 1 个非药名",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 91.94,
+      "end": 103.24,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

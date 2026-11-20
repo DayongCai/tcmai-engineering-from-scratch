@@ -1,0 +1,67 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/09-jichu/05-zhengchang-renti-xue/chapters/12-neifenmi-xitong/docs/zh.md",
+  "course": "05-zhengchang-renti-xue",
+  "dept": "09-jichu",
+  "chapter": "12-neifenmi-xitong",
+  "title": "第 12 章 · 内分泌系统",
+  "segmentCount": 5,
+  "estimateTotalSeconds": 58,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 12 章 · 内分泌系统",
+      "slide": "title",
+      "spoken": "第 12 章 · 内分泌系统",
+      "estimateSeconds": 3,
+      "audio": "001.mp3",
+      "audioSeconds": 2.74
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「《正常人体学·内分泌系统》」——教材第12章；章号一一对应。本章要回答的是：内分泌系统：这一章的判据是什么，什么算「看懂了」。",
+      "slide": "title",
+      "spoken": "「《正常人体学·内分泌系统》」——教材第12章；章号一一对应。本章要回答的是：内分泌系统：这一章的判据是什么，什么算「看懂了」。",
+      "estimateSeconds": 14,
+      "audio": "002.mp3",
+      "audioSeconds": 12.62
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "内分泌系统：这一章的判据与边界。",
+      "slide": "problem",
+      "spoken": "内分泌系统：这一章的判据与边界。",
+      "estimateSeconds": 3,
+      "audio": "003.mp3",
+      "audioSeconds": 3.72
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（正常人体学的判据是「层次—结构—功能」三件套：说得清在哪一层、由什么构成、维持什么，才算认得）+ 知识积累（本章 12 单元 20,544 汉字；三辨主 **功能与调节 248**；四位面（教材篇结构）主 **中篇·系统解剖与组织 20544**；引书 **0 部 0 次**；数值类命中 0）",
+      "slide": "roots",
+      "spoken": "环境逼迫（正常人体学的判据是「层次—结构—功能」三件套：说得清在哪一层、由什么构成、维持什么，才算认得）+ 知识积累（本章 12 单元 20,544 汉字；三辨主 功能与调节 248；四位面（教材篇结构）主 中篇·系统解剖与组织 20544；引书 0 部 0 次；数值类命中 0）",
+      "estimateSeconds": 27,
+      "audio": "004.mp3",
+      "audioSeconds": 28.15
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "005.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 58.54,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

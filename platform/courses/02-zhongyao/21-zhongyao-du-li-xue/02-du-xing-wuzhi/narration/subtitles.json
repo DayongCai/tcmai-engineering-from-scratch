@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/21-zhongyao-du-li-xue/02-du-xing-wuzhi/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 63.53,
+  "estimatedCues": 0,
+  "videoSeconds": 63.558667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.73,
+      "seconds": 4.73,
+      "estimated": false,
+      "text": "第 2 章 · 毒性物质基础：成分类型与矿物药",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.73,
+      "end": 19.85,
+      "seconds": 15.12,
+      "estimated": false,
+      "text": "「《中国药典·一部》」——药典一部对毒性药材标注「有大毒/有毒/有小毒」；篇名按此补足，非本章原文篇名。本章要回答的是：为什么有毒的总是那几类成分。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 19.85,
+      "end": 31.95,
+      "seconds": 12.1,
+      "estimated": false,
+      "text": "生物碱与强心苷有明确的受体或离子通道靶点，剂量稍过就跨过治疗窗；矿物药的问题不在成分复杂，而在重金属不可代谢。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 31.95,
+      "end": 52.23,
+      "seconds": 20.28,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 13 单元 2,082 汉字；三辨主 减毒与救治 37；四位面（靶器官）主 心与神经 19；引书 1 部 1 次；数值类命中 11）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 52.23,
+      "end": 63.53,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

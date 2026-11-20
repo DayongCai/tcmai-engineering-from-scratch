@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/13-jizhen-shuzihua/docs/zh.md",
+  "course": "12-zhongyi-fuke-xue",
+  "dept": "01-zhongyi",
+  "chapter": "13-jizhen-shuzihua",
+  "title": "第 13 章 · 妇科急症与数字化：四类急症，一条可算的链",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 79,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 13 章 · 妇科急症与数字化：四类急症，一条可算的链",
+      "slide": "title",
+      "spoken": "第 13 章 · 妇科急症与数字化：四类急症，一条可算的链",
+      "estimateSeconds": 5,
+      "audio": "001.mp3",
+      "audioSeconds": 6
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「不治已病治未病」——教材·第13章·13.3.2（《素问·四气调神大论》）",
+      "slide": "title",
+      "spoken": "「不治已病治未病」——教材·第13章·13.3.2（《素问·四气调神大论》）",
+      "estimateSeconds": 8,
+      "audio": "002.mp3",
+      "audioSeconds": 7.56
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "这一章把全书最危险的部分与最抽象的部分放在一起。连接点在于：**急症要求「几秒内认出四类之一」，数字化要求「把这条识别写成可复现的判据」**。教材 13.1.1 引《景岳全书》「**血脱者当益其气**」——六字既是急救原则，也是一个可以被写成规则的条件句。",
+      "slide": "problem",
+      "spoken": "这一章把全书最危险的部分与最抽象的部分放在一起。连接点在于：急症要求「几秒内认出四类之一」，数字化要求「把这条识别写成可复现的判据」。教材 13.1.1 引《景岳全书》「血脱者当益其气」——六字既是急救原则，也是一个可以被写成规则的条件句。",
+      "estimateSeconds": 26,
+      "audio": "003.mp3",
+      "audioSeconds": 24.05
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（妇科急症常在数分钟到数小时内决定结局：异位妊娠破裂、产后大出血、子痫抽搐）+ 知识积累（本章 7 单元、10,337 字，证候表现 45、**胞宫 18** 居四位面首位——因为四类急症全部落在胞宫与冲任上；数值 23 处，多为时间与比例）",
+      "slide": "roots",
+      "spoken": "环境逼迫（妇科急症常在数分钟到数小时内决定结局：异位妊娠破裂、产后大出血、子痫抽搐）+ 知识积累（本章 7 单元、10,337 字，证候表现 45、胞宫 18 居四位面首位——因为四类急症全部落在胞宫与冲任上；数值 23 处，多为时间与比例）",
+      "estimateSeconds": 24,
+      "audio": "004.mp3",
+      "audioSeconds": 25.03
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "text": "```bash\ncd departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/13-jizhen-shuzihua\nnode code/main.js\nnode --test code/main.test.js\n```",
+      "slide": "verify",
+      "heading": "验证",
+      "spoken": "这一段以代码实现为主，请看画面上的代码块。",
+      "estimateSeconds": 5,
+      "audio": "005.mp3",
+      "audioSeconds": 4.51
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 78.46,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

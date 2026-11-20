@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/09-jichu/06-shengli-xue/chapters/07-nengliang-tiwen/docs/zh.md",
+  "course": "06-shengli-xue",
+  "dept": "09-jichu",
+  "chapter": "07-nengliang-tiwen",
+  "title": "第 7 章 · 能量代谢与体温：产与散的两本账",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 128,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 7 章 · 能量代谢与体温：产与散的两本账",
+      "slide": "title",
+      "spoken": "第 7 章 · 能量代谢与体温：产与散的两本账",
+      "estimateSeconds": 4,
+      "audio": "001.mp3",
+      "audioSeconds": 4.7
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「产热与散热在调节的作用下保持动态的平衡」——教材·第7章·7.2.2（《生理学·第7章·7.2》）",
+      "slide": "title",
+      "spoken": "「产热与散热在调节的作用下保持动态的平衡」——教材·第7章·7.2.2（《生理学·第7章·7.2》）",
+      "estimateSeconds": 11,
+      "audio": "002.mp3",
+      "audioSeconds": 10.18
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "问「体温多少算正常」，多数人能报出一个数；再问「寒冷时人为什么要先打寒战、再缩血管、最后才觉得冷」，答案就塌成一句「产热增加、散热减少」。可这八个字说不清三件事的先后，也说不清它们各自解决了哪一半问题。数字好记，关系难说——而这一章能给你的，恰恰只有关系。",
+      "slide": "problem",
+      "spoken": "问「体温多少算正常」，多数人能报出一个数；再问「寒冷时人为什么要先打寒战、再缩血管、最后才觉得冷」，答案就塌成一句「产热增加、散热减少」。可这八个字说不清三件事的先后，也说不清它们各自解决了哪一半问题。数字好记，关系难说——而这一章能给你的，恰恰只有关系。",
+      "estimateSeconds": 28,
+      "audio": "003.mp3",
+      "audioSeconds": 25.87
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（门诊与生活里所有人都在问「发烧没有」「代谢高不高」，追问一步就露底：说不清产热与散热各自由什么改变，就只剩一个数可以当答案）+ 知识积累（把「产热来源 / 散热方式 / 调节环节」三组类别搭成一张双向表，使每一次体温变动都能落到「哪一侧被改写」上，而不是落到一个读数上）",
+      "slide": "roots",
+      "spoken": "环境逼迫（门诊与生活里所有人都在问「发烧没有」「代谢高不高」，追问一步就露底：说不清产热与散热各自由什么改变，就只剩一个数可以当答案）+ 知识积累（把「产热来源 / 散热方式 / 调节环节」三组类别搭成一张双向表，使每一次体温变动都能落到「哪一侧被改写」上，而不是落到一个读数上）",
+      "estimateSeconds": 29,
+      "audio": "004.mp3",
+      "audioSeconds": 25.18
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "text": "- 能用「产热侧 / 散热侧 / 调节环节」三栏说清一次体温变动的来路，而不是只报一个读数\n- 能列出产热的器官类别与形式类别（寒战 / 非寒战），并说明安静与活动时产热主力为何不同\n- 能列出散热的四条途径，并说明主力随环境类别如何换位\n- 能说明调定点是一个「参照水平」而不是一个固定数值，以及围绕它展开的效应方向\n- 能解释本章后 6 个单元（观察要点、记录复核、表述用语、边界要求）为什么占了篇幅的一半\n- 能说出本章代码里那个「推不出」的分支为什么必须存在",
+      "slide": "objectives",
+      "heading": "学习目标",
+      "spoken": "能用「产热侧 / 散热侧 / 调节环节」三栏说清一次体温变动的来路，而不是只报一个读数\n能列出产热的器官类别与形式类别（寒战 / 非寒战），并说明安静与活动时产热主力为何不同\n能列出散热的四条途径，并说明主力随环境类别如何换位\n能说明调定点是一个「参照水平」而不是一个固定数值，以及围绕它展开的效应方向\n能解释本章后 6 个单元（观察要点、记录复核、表述用语、边界要求）为什么占了篇幅的一半\n能说出本章代码里那个「推不出」的分支为什么必须存在",
+      "estimateSeconds": 45,
+      "audio": "005.mp3",
+      "audioSeconds": 43.97
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 121.2,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

@@ -1,0 +1,120 @@
+# [tcmP] 课程编排 · 02-zhongyao/16-linchuang-zhongyaoxue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/02-zhongyao/16-linchuang-zhongyaoxue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 16-linchuang-zhongyaoxue
+title: 临床中药学
+en: Clinical Chinese Materia Medica
+dept: 02-zhongyao
+dept_title: 中药系
+semester: 7
+stage: zhuang
+hours: 36
+chapters_target: 15
+bridge: 证—药对应→关联规则 / 配伍禁忌→约束求解
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xulun
+    title: 第1章 绪论
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 0.97
+  - slug: 02-jiben-lilun
+    title: 第2章 中药的基本理论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.93
+  - slug: 03-paozhi-zhiji
+    title: 第3章 中药的炮制与制剂
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.92
+  - slug: 04-yongfa-jiliang
+    title: 第4章 中药的用法与剂量
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.95
+  - slug: 05-jiebiao
+    title: 第5章 解表药
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.9
+  - slug: 06-qingre
+    title: 第6章 清热药
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.91
+  - slug: 07-xiexia-qushi
+    title: 第7章 泻下药与祛风湿药
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.95
+  - slug: 08-huashi-lijin
+    title: 第8章 化湿药与利水渗湿药
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.92
+  - slug: 09-wenli-liqi-xiaoshi
+    title: 第9章 温里药·理气药·消食药
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.98
+  - slug: 10-zhixue-huoxue
+    title: 第10章 止血药与活血化瘀药
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 11-huatan-anshen
+    title: 第11章 化痰止咳平喘药与安神药
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.95
+  - slug: 12-pinggan-kaiqiao
+    title: 第12章 平肝息风药与开窍药
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.95
+  - slug: 13-buxu
+    title: 第13章 补虚药
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.93
+  - slug: 14-shoushe-yongtu
+    title: 第14章 收涩药与涌吐药
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.95
+  - slug: 15-gongdu-badu
+    title: 第15章 攻毒杀虫止痒药与拔毒化腐生肌药
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.02

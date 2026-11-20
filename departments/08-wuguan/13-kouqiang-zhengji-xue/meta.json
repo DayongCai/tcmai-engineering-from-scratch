@@ -1,35 +1,35 @@
 {
- "slug": "13-kouqiang-zhengji-xue",
- "title": "口腔正畸学",
- "en": "Orthodontics",
- "deptSlug": "08-wuguan",
- "deptTitle": "五官口腔系",
- "globalN": 118,
- "type": "Clinic",
- "semester": 7,
- "stage": "zhuang",
- "stageTitle": "壮",
- "hours": 72,
- "bridge": "头影测量→关键点检测 / 拔牙决策→分类模型",
- "chaptersTarget": 10,
- "chapters": [],
- "platform": {
-  "id": "tcmP",
-  "coursePath": "platform/courses/08-wuguan/13-kouqiang-zhengji-xue",
-  "videosPublished": 0,
-  "status": "planned"
- },
- "textbook": {
-  "id": "textbooks",
-  "path": "textbooks/08-wuguan/13-kouqiang-zhengji-xue",
-  "chaptersWritten": 0,
-  "words": 0,
-  "status": "planned"
- },
- "底本": {
-  "kind": "外源",
-  "from": "standards/kouqiang-zhengji/sources/",
-  "dir": "standards/kouqiang-zhengji",
-  "note": "本库无《口腔正畸学》教材；按《补源约定》立为外源课，依据 4 份中华口腔医学会团体标准（33 条逐字校勘）。教科书不收（D 级）。"
- }
+  "slug": "13-kouqiang-zhengji-xue",
+  "title": "口腔正畸学",
+  "en": "Orthodontics",
+  "deptSlug": "08-wuguan",
+  "deptTitle": "五官口腔系",
+  "globalN": 118,
+  "type": "Clinic",
+  "semester": 7,
+  "stage": "zhuang",
+  "stageTitle": "壮",
+  "hours": 72,
+  "bridge": "头影测量→关键点检测 / 拔牙决策→分类模型",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/08-wuguan/13-kouqiang-zhengji-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/08-wuguan/13-kouqiang-zhengji-xue",
+    "chaptersWritten": 10,
+    "words": 30882,
+    "status": "wip"
+  },
+  "底本": {
+    "kind": "外源",
+    "from": "standards/kouqiang-zhengji/sources/",
+    "dir": "standards/kouqiang-zhengji",
+    "note": "本库无《口腔正畸学》教材；按《补源约定》立为外源课，依据 4 份中华口腔医学会团体标准（33 条逐字校勘）。教科书不收（D 级）。"
+  }
 }

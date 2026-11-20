@@ -1,0 +1,32 @@
+{
+  "chapter": "02-e102",
+  "slideCount": 5,
+  "segmentCount": 5,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 17
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 74
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 20
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 117
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 52
+    }
+  ]
+}

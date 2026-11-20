@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/11-zhongyi-waike-xue/12-qita-waike/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 92.76,
+  "estimatedCues": 0,
+  "videoSeconds": 92.788667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.76,
+      "seconds": 5.76,
+      "estimated": false,
+      "text": "第 12 章 · 其他外科疾病：六证，四类「先救命再治病」",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.76,
+      "end": 18,
+      "seconds": 12.24,
+      "estimated": false,
+      "text": "「本病发病急、变化快，蛇毒内攻可危及生命，属于中医外科急症」——教材·第12章·12.3.1（《中医外科学·第12章》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 18,
+      "end": 47.81,
+      "seconds": 29.81,
+      "estimated": false,
+      "text": "本章六个病证彼此毫无关系（冻疮、烧伤、毒蛇咬伤、破伤风、肠痈、胆石症），学生常按「杂病」跳过。但它们有一个共同结构：都有一个决定生死的时限——烧伤的面积与吸入性损伤、蛇伤的呼吸麻痹、破伤风的喉痉挛、肠痈的穿孔、胆石症的化脓性胆管炎、冻疮的深部坏死。错过时限，后面所有辨证都没有意义。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 47.81,
+      "end": 76.95,
+      "seconds": 29.14,
+      "estimated": false,
+      "text": "环境逼迫（这一章是「急症误判」最集中的一章：把肠痈当胃痛、把破伤风当颈项强痛、把蛇伤当普通咬伤观察）+ 知识积累（本章 30 个单元、16,711 字里，三辨重心在病因（130 次）、四位面重心在全身（76 次，62.3%）——六证的判据是「什么伤／什么毒」与「全身反应有多重」，而不是局部形态）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 76.95,
+      "end": 81.46,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 81.46,
+      "end": 92.76,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/08-piwei-gandan-jizheng/docs/zh.md",
+  "course": "17-zhongyi-jizhen-xue",
+  "dept": "01-zhongyi",
+  "chapter": "08-piwei-gandan-jizheng",
+  "title": "第 8 章 · 脾胃肝胆急症：吐泻、急腹症、急黄",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 60,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 8 章 · 脾胃肝胆急症：吐泻、急腹症、急黄",
+      "slide": "title",
+      "spoken": "第 8 章 · 脾胃肝胆急症：吐泻、急腹症、急黄",
+      "estimateSeconds": 4,
+      "audio": "001.mp3",
+      "audioSeconds": 5.28
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「诸呕吐酸，暴注下迫，皆属于热」——教材·第8章·8.1.1（《素问·至真要大论》）",
+      "slide": "title",
+      "spoken": "「诸呕吐酸，暴注下迫，皆属于热」——教材·第8章·8.1.1（《素问·至真要大论》）",
+      "estimateSeconds": 9,
+      "audio": "002.mp3",
+      "audioSeconds": 8.26
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "暴吐暴泻看着像「肠胃炎」，实际可能是霍乱、可能是急腹症的前驱、也可能是中毒。本章的难点不是辨证，是**先排除需要外科与公卫介入的那几种**。",
+      "slide": "problem",
+      "spoken": "暴吐暴泻看着像「肠胃炎」，实际可能是霍乱、可能是急腹症的前驱、也可能是中毒。本章的难点不是辨证，是先排除需要外科与公卫介入的那几种。",
+      "estimateSeconds": 14,
+      "audio": "003.mp3",
+      "audioSeconds": 13.85
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（吐泻导致脱水与电解质紊乱，进展以小时计）+ 知识积累（本章 4 单元 **17,450 汉字（全书第一）**、数值 **76 处（全书第一）**——消化系统急症的量化程度最高）",
+      "slide": "roots",
+      "spoken": "环境逼迫（吐泻导致脱水与电解质紊乱，进展以小时计）+ 知识积累（本章 4 单元 17,450 汉字（全书第一）、数值 76 处（全书第一）——消化系统急症的量化程度最高）",
+      "estimateSeconds": 17,
+      "audio": "004.mp3",
+      "audioSeconds": 16.18
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "text": "```bash\ncd departments/01-zhongyi/17-zhongyi-jizhen-xue/chapters/08-piwei-gandan-jizheng\nnode code/main.js && node --test code/main.test.js\n```",
+      "slide": "verify",
+      "heading": "验证",
+      "spoken": "这一段以代码实现为主，请看画面上的代码块。",
+      "estimateSeconds": 5,
+      "audio": "005.mp3",
+      "audioSeconds": 4.51
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 59.38,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

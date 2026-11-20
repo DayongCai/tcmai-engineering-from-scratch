@@ -1,0 +1,90 @@
+# [tcmP] 课程编排 · 08-wuguan/12-kouqiang-xiufu-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/08-wuguan/12-kouqiang-xiufu-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 12-kouqiang-xiufu-xue
+title: 口腔修复学
+en: Prosthodontics
+dept: 08-wuguan
+dept_title: 五官口腔系
+semester: 7
+stage: zhuang
+hours: 72
+chapters_target: 10
+bridge: 义齿设计→参数化 CAD / 咬合重建→力学优化
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-duixiang-sanlei
+    title: 第1章 修复学的对象：三类缺损与老年患者
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.13
+    measured_minutes: 1.12
+  - slug: 02-zong-yuanze
+    title: 第2章 修复总原则：安全、有效、微创、健康、知情同意、姑息
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.18
+    measured_minutes: 1.2
+  - slug: 03-pinggu-quanshen
+    title: 第3章 修复前全身评估：疾病、用药与口腔治疗史
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.2
+    measured_minutes: 1.21
+  - slug: 04-kouqiang-jiancha
+    title: 第4章 修复前口腔检查与影像：七项增龄变化与片子的选择
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.22
+    measured_minutes: 1.19
+  - slug: 05-shuqian-chuli
+    title: 第5章 修复前处理、健康宣教与形式选择
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.13
+    measured_minutes: 1.13
+  - slug: 06-quankou-yinmo
+    title: 第6章 全口义齿的印模与模型：初印模、个别托盘、终印模
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.2
+    measured_minutes: 1.19
+  - slug: 07-yipang-cadcam
+    title: 第7章 椅旁 CAD/CAM 固定义齿：适应证、预备与后处理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.18
+    measured_minutes: 1.15
+  - slug: 08-cailiao-tiaohe
+    title: 第8章 材料调和与粘接工艺链：水门汀、酸蚀、硅烷、固化
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.2
+    measured_minutes: 1.22
+  - slug: 09-citie-fucha
+    title: 第9章 瓷贴面的复查与并发症：功能、美学、生物学三条线
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.18
+    measured_minutes: 1.19
+  - slug: 10-piaobai
+    title: 第10章 牙齿漂白：着色类型、适应证、方法与风险
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.18
+    measured_minutes: 1.18

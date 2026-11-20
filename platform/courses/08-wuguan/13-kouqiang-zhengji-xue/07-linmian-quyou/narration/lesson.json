@@ -1,0 +1,67 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/08-wuguan/13-kouqiang-zhengji-xue/chapters/07-linmian-quyou/docs/zh.md",
+  "course": "13-kouqiang-zhengji-xue",
+  "dept": "08-wuguan",
+  "chapter": "07-linmian-quyou",
+  "title": "第 7 章 · 邻面去釉：适应证、禁忌与操作规范",
+  "segmentCount": 5,
+  "estimateTotalSeconds": 69,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 7 章 · 邻面去釉：适应证、禁忌与操作规范",
+      "slide": "title",
+      "spoken": "第 7 章 · 邻面去釉：适应证、禁忌与操作规范",
+      "estimateSeconds": 4,
+      "audio": "001.mp3",
+      "audioSeconds": 5.28
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「《口腔正畸无托槽隐形矫治技术指南·第6.2条》」——外源课：条文依据为「外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第6.2条」，非教材原文篇名。本章要回答的是：邻面去釉：适应证、禁忌与操作规范这一环的判据是什么。",
+      "slide": "title",
+      "spoken": "「《口腔正畸无托槽隐形矫治技术指南·第6.2条》」——外源课：条文依据为「外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第6.2条」，非教材原文篇名。本章要回答的是：邻面去釉：适应证、禁忌与操作规范这一环的判据是什么。",
+      "estimateSeconds": 26,
+      "audio": "002.mp3",
+      "audioSeconds": 24.72
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "去釉是「削足适履」：动的是釉质，不可逆。",
+      "slide": "problem",
+      "spoken": "去釉是「削足适履」：动的是釉质，不可逆。",
+      "estimateSeconds": 4,
+      "audio": "003.mp3",
+      "audioSeconds": 4.2
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（正畸的失误大多不是「不会排牙」，而是「适应证定级错、资料不足、分步没设计、窗口错过」）+ 知识积累（本章 1 单元 2,129 汉字；三辨主 **生物力学与移动 80**；四位面（治疗场景）主 **隐形矫治 20**；引书 **0 部 0 次**；数值类命中 0）",
+      "slide": "roots",
+      "spoken": "环境逼迫（正畸的失误大多不是「不会排牙」，而是「适应证定级错、资料不足、分步没设计、窗口错过」）+ 知识积累（本章 1 单元 2,129 汉字；三辨主 生物力学与移动 80；四位面（治疗场景）主 隐形矫治 20；引书 0 部 0 次；数值类命中 0）",
+      "estimateSeconds": 24,
+      "audio": "004.mp3",
+      "audioSeconds": 24.02
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "005.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 69.53,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

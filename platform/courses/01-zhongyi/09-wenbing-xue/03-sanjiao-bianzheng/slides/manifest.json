@@ -1,0 +1,47 @@
+{
+  "chapter": "03-sanjiao-bianzheng",
+  "slideCount": 8,
+  "segmentCount": 8,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 31
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 50
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 139
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 69
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 972
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 275
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 108
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 52
+    }
+  ]
+}

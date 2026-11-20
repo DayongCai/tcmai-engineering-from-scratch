@@ -1,0 +1,66 @@
+# [tcmP] 课程编排 · 04-gushang/16-gushang-linchuang-lunzhuan
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 16-gushang-linchuang-lunzhuan
+title: 骨伤临床轮转
+en: Orthopedics & Traumatology Rotation
+dept: 04-gushang
+dept_title: 骨伤系
+semester: 9
+stage: lao
+hours: 108
+chapters_target: 6
+bridge: 复位方案→参数化步骤 / 影像→测量指标 / 随访→功能评分
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-zhenggu-lunzhuan
+    title: 第1章 正骨科轮转：骨折复位与固定
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.1
+  - slug: 02-jinshang-lunzhuan
+    title: 第2章 筋伤科轮转：软组织损伤
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.08
+  - slug: 03-jizhu-lunzhuan
+    title: 第3章 脊柱科轮转
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.99
+  - slug: 04-guanjie-lunzhuan
+    title: 第4章 关节科轮转
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 05-jizhen-chuangshang
+    title: 第5章 急诊创伤与院前处置
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.05
+  - slug: 06-chuke-kaohe
+    title: 第6章 出科考核与病例复盘
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.03

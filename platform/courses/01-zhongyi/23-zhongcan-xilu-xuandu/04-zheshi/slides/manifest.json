@@ -1,0 +1,37 @@
+{
+  "chapter": "04-zheshi",
+  "slideCount": 6,
+  "segmentCount": 6,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 15
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 48
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 50
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 95
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 332
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 52
+    }
+  ]
+}

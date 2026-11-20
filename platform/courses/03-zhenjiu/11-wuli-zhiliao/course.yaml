@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 03-zhenjiu/11-wuli-zhiliao
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/03-zhenjiu/11-wuli-zhiliao/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 11-wuli-zhiliao
+title: 物理治疗与运动康复
+en: Physiotherapy & Sports Rehab
+dept: 03-zhenjiu
+dept_title: 针灸系
+semester: 6
+stage: zhang
+hours: 54
+chapters_target: 8
+bridge: 运动处方→个性化推荐 / 步态数据→时序分类
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-wuli-gailun
+    title: 第1章 物理治疗概论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.93
+  - slug: 02-dianliao
+    title: 第2章 电疗与电针
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.9
+  - slug: 03-reliao-guangliao
+    title: 第3章 热疗与光疗
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.9
+  - slug: 04-lengliao-chaosheng
+    title: 第4章 冷疗、超声与牵引
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.97
+  - slug: 05-yundong-jichu
+    title: 第5章 运动疗法基础
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.94
+  - slug: 06-guanjie-jili
+    title: 第6章 关节活动与肌力训练
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97
+  - slug: 07-pingheng-butai
+    title: 第7章 平衡、协调与步态训练
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97
+  - slug: 08-fangan-fengxian
+    title: 第8章 运动康复方案与风险控制
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99

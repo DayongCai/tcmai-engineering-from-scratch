@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/15-zhongyi-gejia-xueshuo/01-xuepai-xingcheng/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 67.1,
+  "estimatedCues": 0,
+  "videoSeconds": 67.128667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.61,
+      "seconds": 4.61,
+      "estimated": false,
+      "text": "第 1 章 · 学派的形成：地域、师承与文本",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.61,
+      "end": 13.44,
+      "seconds": 8.83,
+      "estimated": false,
+      "text": "「医之治病也，一病而治各不同，皆愈何也？」——教材·第1章·1.1（《素问·异法方宜论》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 13.44,
+      "end": 32.23,
+      "seconds": 18.79,
+      "estimated": false,
+      "text": "「金元四大家」四个字学生都会背，但很少有人能回答：为什么是那个时代、那个地方、那四个人？把学派当成四个标签贴上去，结果是记住了名字、丢掉了问题——学派真正教人的，是同一件事可以有四种讲法。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 32.23,
+      "end": 51.29,
+      "seconds": 19.06,
+      "estimated": false,
+      "text": "环境逼迫（临床上同一个人可以被四位医家开出四张不同的方）+ 知识积累（本课程无同名母本，底本由本库已结构化的 2,792 条经典条文派生：伤寒 1,760、金匮 402、温病 630）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 51.29,
+      "end": 55.8,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 55.8,
+      "end": 67.1,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

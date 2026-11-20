@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/09-daixia-bing/docs/zh.md",
+  "course": "12-zhongyi-fuke-xue",
+  "dept": "01-zhongyi",
+  "chapter": "09-daixia-bing",
+  "title": "第 9 章 · 带下病：多与少，两种方向",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 76,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 9 章 · 带下病：多与少，两种方向",
+      "slide": "title",
+      "spoken": "第 9 章 · 带下病：多与少，两种方向",
+      "estimateSeconds": 3,
+      "audio": "001.mp3",
+      "audioSeconds": 4.32
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「任脉为病……女子带下瘕聚」——教材·第9章·9.1.1（《素问·骨空论》）",
+      "slide": "title",
+      "spoken": "「任脉为病……女子带下瘕聚」——教材·第9章·9.1.1（《素问·骨空论》）",
+      "estimateSeconds": 8,
+      "audio": "002.mp3",
+      "audioSeconds": 7.54
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "带下病看起来只有「量多」一种。教材却把它拆成**过多**与**过少**两个方向，而且后者常被漏诊——因为患者不会主动说「我分泌物少了」，只会说「干、痛、不舒服」。方向一反，治法从「除湿止带」变成「滋营养精」，用错则越治越干。",
+      "slide": "problem",
+      "spoken": "带下病看起来只有「量多」一种。教材却把它拆成过多与过少两个方向，而且后者常被漏诊——因为患者不会主动说「我分泌物少了」，只会说「干、痛、不舒服」。方向一反，治法从「除湿止带」变成「滋营养精」，用错则越治越干。",
+      "estimateSeconds": 23,
+      "audio": "003.mp3",
+      "audioSeconds": 20.86
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（带下的量、色、质、味四栏必须合看，单看「量多」会把湿热与脾虚混为一谈）+ 知识积累（本章 10 单元、8,536 字，**证候表现 160** 居三辨首位、肾 35 居四位面首位；引书 13 部 18 次——带下病的方几乎全出自《傅青主女科》与《金匮》系统）",
+      "slide": "roots",
+      "spoken": "环境逼迫（带下的量、色、质、味四栏必须合看，单看「量多」会把湿热与脾虚混为一谈）+ 知识积累（本章 10 单元、8,536 字，证候表现 160 居三辨首位、肾 35 居四位面首位；引书 13 部 18 次——带下病的方几乎全出自《傅青主女科》与《金匮》系统）",
+      "estimateSeconds": 26,
+      "audio": "004.mp3",
+      "audioSeconds": 24.82
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "text": "```bash\ncd departments/01-zhongyi/12-zhongyi-fuke-xue/chapters/09-daixia-bing\nnode code/main.js\nnode --test code/main.test.js\n```",
+      "slide": "verify",
+      "heading": "验证",
+      "spoken": "这一段以代码实现为主，请看画面上的代码块。",
+      "estimateSeconds": 5,
+      "audio": "005.mp3",
+      "audioSeconds": 4.51
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 73.34,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

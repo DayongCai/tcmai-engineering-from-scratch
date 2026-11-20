@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 01-zhongyi/03-zhongguo-yixue-shi
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/01-zhongyi/03-zhongguo-yixue-shi/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 03-zhongguo-yixue-shi
+title: 中国医学史
+en: History of Chinese Medicine
+dept: 01-zhongyi
+dept_title: 中医系
+semester: 1
+stage: sheng
+hours: 36
+chapters_target: 8
+bridge: 医史脉络→时间图谱 / 学派演化→谱系聚类
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xulun
+    title: 第1章 绪论：医学史的问题与方法
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97
+  - slug: 02-qiyuan-yu-zaoqi
+    title: 第2章 医药的起源与早期医药
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.94
+  - slug: 03-chunqiu-qinhan
+    title: 第3章 春秋战国至秦汉：体系的奠基
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.05
+  - slug: 04-weijin-suitang
+    title: 第4章 魏晋南北朝至隋唐五代：分科与集成
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.1
+  - slug: 05-songjinyuan
+    title: 第5章 宋金元：争鸣与建制
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.95
+  - slug: 06-mingqing
+    title: 第6章 明清：温病与考据
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.94
+  - slug: 07-jindai-dangdai
+    title: 第7章 近代与当代：转型与重建
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.01
+  - slug: 08-shaoshu-jiaoliu-shuzi
+    title: 第8章 少数民族医学、中外交流与数字化
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.07

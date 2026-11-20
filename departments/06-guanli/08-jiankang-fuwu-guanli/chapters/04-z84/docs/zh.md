@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（健康服务的判据是「谁提供、给谁用、怎么评」）+ 知识积累（本章 33 单元 42,568 汉字；三辨主 **制度与规则 277**；四位面（章群结构）主 **基层与社区 42568**；引书 **74 部 146 次**；数值类命中 0）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 282 单元 / 333,940 汉字）；单元层 `standards/08-jiankang-fuwu-guanli/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 282 单元 / 333,940 汉字）；单元层 `standards/08-jiankang-fuwu-guanli/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -272,7 +272,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py 08-jiankang-fuwu-guanli "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py 08-jiankang-fuwu-guanli "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py 08-jiankang-fuwu-guanli                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

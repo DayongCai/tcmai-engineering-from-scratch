@@ -1,0 +1,102 @@
+# [tcmP] 课程编排 · 01-zhongyi/05-zhongyi-zhen-duan-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/01-zhongyi/05-zhongyi-zhen-duan-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 05-zhongyi-zhen-duan-xue
+title: 中医诊断学
+en: TCM Diagnostics
+dept: 01-zhongyi
+dept_title: 中医系
+semester: 3
+stage: sheng
+hours: 90
+chapters_target: 12
+bridge: 四诊→多模态特征 / 八纲→多维分类
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-sizhen-zonglun
+    title: 第1章 四诊总论：信息采集的偏差与信度
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.05
+  - slug: 02-wangzhen-shense
+    title: 第2章 望诊：神色形态 → 图像特征
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.17
+    measured_minutes: 1.19
+  - slug: 03-shezhen-tese
+    title: 第3章 舌诊：舌质舌苔 → 颜色与纹理特征
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.13
+    measured_minutes: 1.12
+  - slug: 04-wenzhen-shengyin
+    title: 第4章 闻诊：声音与气味 → 声学与气味谱
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.07
+  - slug: 05-wenzhen-wenjuan
+    title: 第5章 问诊：十问 → 结构化问卷设计
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.12
+    measured_minutes: 1.05
+  - slug: 06-qiezhen-maixiang
+    title: 第6章 切诊：脉象的物理基础与取脉
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.7
+    measured_minutes: 1.64
+  - slug: 07-bagang-bianzheng
+    title: 第7章 八纲辨证 → 四维特征空间
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.95
+    measured_minutes: 1.89
+  - slug: 08-zangfu-bianzheng
+    title: 第8章 脏腑辨证 → 规则表与权重
+    segments: 9
+    video: rendered
+    estimate_minutes: 3.65
+    measured_minutes: 3.34
+  - slug: 09-qixue-bianzheng
+    title: 第9章 气血津液辨证 → 状态判定
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.65
+    measured_minutes: 1.68
+  - slug: 10-liujing-weifen
+    title: 第10章 六经与卫气营血 → 序列状态机
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.73
+    measured_minutes: 1.66
+  - slug: 11-zhenghou-guifan
+    title: 第11章 证候规范化：ICD-11 与术语对齐
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.23
+    measured_minutes: 1.24
+  - slug: 12-zhenduan-wucha
+    title: 第12章 诊断推理的误差来源与可解释性
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.2
+    measured_minutes: 1.14

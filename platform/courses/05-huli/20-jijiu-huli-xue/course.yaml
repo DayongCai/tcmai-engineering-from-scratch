@@ -1,0 +1,138 @@
+# [tcmP] 课程编排 · 05-huli/20-jijiu-huli-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/05-huli/20-jijiu-huli-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 20-jijiu-huli-xue
+title: 急救护理学
+en: Emergency Nursing
+dept: 05-huli
+dept_title: 护理系
+semester: 5
+stage: zhang
+hours: 54
+chapters_target: 18
+bridge: 急救流程→决策树 / 生命体征→异常检测
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-gaishu
+    title: 第1章 急救护理学概述
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.97
+  - slug: 02-moshi-tuandui
+    title: 第2章 急救护理的工作模式与团队协作
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 03-pinggu-fenzhen
+    title: 第3章 急救评估与预检分诊
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1
+  - slug: 04-jishu-peihe
+    title: 第4章 急救常用技术与配合
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.02
+  - slug: 05-xinbo-junting
+    title: 第5章 心搏骤停与心肺复苏的护理配合
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.05
+  - slug: 06-xiuke-guomin
+    title: 第6章 休克与严重过敏反应的急救护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 07-huxi-jizheng
+    title: 第7章 呼吸急症的急救护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1
+  - slug: 08-xiongton-futong
+    title: 第8章 胸痛与急性腹痛的急救护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.02
+  - slug: 09-yishi-chouchu
+    title: 第9章 意识障碍与抽搐的急救护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.02
+  - slug: 10-zhongdu-yiwai
+    title: 第10章 急性中毒与意外伤害的急救护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.05
+  - slug: 11-chuangshang
+    title: 第11章 创伤急救护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.98
+  - slug: 12-huanjing-liliao
+    title: 第12章 环境与理化因素所致急症的急救护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.09
+  - slug: 13-fuchanke
+    title: 第13章 妇产科急症的急救护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.02
+  - slug: 14-erke
+    title: 第14章 儿科急症的急救护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1
+  - slug: 15-laonian-teshu
+    title: 第15章 老年与特殊人群急症的急救护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.06
+  - slug: 16-zainan-qunti
+    title: 第16章 灾难与群体伤害的急救护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.04
+  - slug: 17-zhiliang-fengxian
+    title: 第17章 急救护理质量与风险管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.03
+  - slug: 18-pingtai
+    title: 第18章 急救护理学与教学平台
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.02

@@ -1,0 +1,90 @@
+# [tcmP] 课程编排 · 01-zhongyi/09-wenbing-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/01-zhongyi/09-wenbing-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 09-wenbing-xue
+title: 温病学
+en: Warm Disease Theory
+dept: 01-zhongyi
+dept_title: 中医系
+semester: 5
+stage: zhang
+hours: 72
+chapters_target: 10
+bridge: 卫气营血→分层状态机 / 传变→时序模型
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-wenbing-fanwei
+    title: 第1章 温病的范围与伤寒的边界
+    segments: 8
+    video: rendered
+    estimate_minutes: 9.43
+    measured_minutes: 9.27
+  - slug: 02-weiqi-yingxue
+    title: 第2章 卫气营血辨证：四层状态机
+    segments: 9
+    video: rendered
+    estimate_minutes: 11.48
+    measured_minutes: 10.91
+  - slug: 03-sanjiao-bianzheng
+    title: 第3章 三焦辨证：病位的纵向坐标
+    segments: 8
+    video: rendered
+    estimate_minutes: 2.78
+    measured_minutes: 2.69
+  - slug: 04-fengwen-chunwen
+    title: 第4章 风温与春温：新感与伏邪
+    segments: 8
+    video: rendered
+    estimate_minutes: 3.68
+    measured_minutes: 3.65
+  - slug: 05-shuwen-shiwen
+    title: 第5章 暑温与湿温：季节与湿热的耦合
+    segments: 8
+    video: rendered
+    estimate_minutes: 11.57
+    measured_minutes: 11.32
+  - slug: 06-qiuzzao-fushu
+    title: 第6章 秋燥与伏暑：燥邪的辨证
+    segments: 8
+    video: rendered
+    estimate_minutes: 3.57
+    measured_minutes: 3.56
+  - slug: 07-wenbing-shezhen
+    title: 第7章 温病舌诊与斑疹的辨识
+    segments: 8
+    video: rendered
+    estimate_minutes: 3.3
+    measured_minutes: 3.33
+  - slug: 08-qingre-yangyin
+    title: 第8章 清热透邪与养阴的治法次序
+    segments: 8
+    video: rendered
+    estimate_minutes: 2.8
+    measured_minutes: 2.76
+  - slug: 09-tiaobian-fangji
+    title: 第9章 温病条辨的方剂体系
+    segments: 8
+    video: rendered
+    estimate_minutes: 3.42
+    measured_minutes: 3.47
+  - slug: 10-yibing-gongwei
+    title: 第10章 疫病与公共卫生：历史的建模
+    segments: 8
+    video: rendered
+    estimate_minutes: 9.23
+    measured_minutes: 8.8

@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/06-shengli-xue/09-neifenmi/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 129.4,
+  "estimatedCues": 0,
+  "videoSeconds": 129.428667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.82,
+      "seconds": 4.82,
+      "estimated": false,
+      "text": "第 9 章 · 内分泌：谁作用于谁，而不是多少",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.82,
+      "end": 15.21,
+      "seconds": 10.39,
+      "estimated": false,
+      "text": "「激素不提供物质与能量，只把调节信息带到靶细胞」——教材·第9章·9.1.2（《生理学·第9章·9.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 15.21,
+      "end": 48.67,
+      "seconds": 33.46,
+      "estimated": false,
+      "text": "说起内分泌，多数人的第一反应是「激素高了 / 低了」。可教材给的第一句话就把这条路堵上了：激素不是原料，是信息。信息只能说清「谁对谁说、说什么方向」，说不出「说了多大声」。于是本章所有真正的问题都变成同一种形状——这条激素在哪一层、作用于谁、走的是哪条反馈、受体在膜上还是在核里。答不出这四问，「高了低了」就只是一句没有下文的判断。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 48.67,
+      "end": 72.84,
+      "seconds": 24.17,
+      "estimated": false,
+      "text": "环境逼迫（临床与科普里激素问题几乎总以「某某高了」的形式出现，逼你必须先把「作用于谁」说清，否则连「高了好不好」都无从谈起）+ 知识积累（把「链的四层 × 反馈的三类 × 受体的两个位置」搭成一张定位表，使每一句「激素乱了」都能被改写成「哪一层、哪一类反馈、哪一侧受体」）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 72.84,
+      "end": 118.1,
+      "seconds": 45.26,
+      "estimated": false,
+      "text": "能说出激素的五项一般特征，并用「信息传递」这一项解释为什么本章不给浓度 能由激素的溶解性推出受体位置、转导途径与时程特征，而不是背分子名称 能画出下丘脑—腺垂体—靶腺—外周组织的调节链，并指出下丘脑的两条输出为什么不同 能按「谁反馈给谁」区分长反馈、短反馈、超短反馈，并说明为什么以负反馈为主 能说明神经垂体为什么「不能合成激素」，以及这一结构事实改变了什么 能区分协同、拮抗、允许三种相互作用，并指出允许作用最容易被漏掉的原因",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 118.1,
+      "end": 129.4,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

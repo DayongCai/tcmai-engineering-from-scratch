@@ -1,0 +1,138 @@
+# [tcmP] 课程编排 · 05-huli/24-zhongyi-huli-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/05-huli/24-zhongyi-huli-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 24-zhongyi-huli-xue
+title: 中医护理学
+en: TCM Nursing
+dept: 05-huli
+dept_title: 护理系
+semester: 5
+stage: zhang
+hours: 54
+chapters_target: 18
+bridge: 辨证施护→规则+ML / 中医护理技术→操作本体
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-gaishu
+    title: 第1章 中医护理学概述
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.12
+    measured_minutes: 1.09
+  - slug: 02-lilun-jichu
+    title: 第2章 中医护理的理论基础
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.12
+    measured_minutes: 1.12
+  - slug: 03-pinggu-fangfa
+    title: 第3章 中医护理的评估方法
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.01
+  - slug: 04-tizhi-shihu
+    title: 第4章 辨体质与施护
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.04
+  - slug: 05-zhenghou-shihu
+    title: 第5章 常见证候的辨证施护
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.05
+  - slug: 06-neike-shihu
+    title: 第6章 内科常见病证的辨证施护
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.09
+  - slug: 07-waike-fuke
+    title: 第7章 外科与妇科病证的辨证施护
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.08
+  - slug: 08-erke-laonian
+    title: 第8章 儿科与老年病证的辨证施护
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.06
+  - slug: 09-jishu-zonglun
+    title: 第9章 中医护理技术总论
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.04
+  - slug: 10-jiu-baguan
+    title: 第10章 灸法与拔罐技术
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.04
+  - slug: 11-guasha-tuina
+    title: 第11章 刮痧、推拿与穴位技术
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.08
+  - slug: 12-waizhi-xunxi
+    title: 第12章 中药外治与熏洗技术
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.06
+  - slug: 13-yinshi-qingzhi
+    title: 第13章 饮食与情志护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.03
+  - slug: 14-wenshu-jilu
+    title: 第14章 中医护理文书与记录
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.06
+  - slug: 15-anquan-zhiliang
+    title: 第15章 中医护理安全与质量
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.04
+  - slug: 16-shequ-jujia
+    title: 第16章 社区与居家中医护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.07
+  - slug: 17-pingtai-duijie
+    title: 第17章 中医护理学与 tcmP 平台
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.08
+  - slug: 18-shixun-kaohe
+    title: 第18章 中医护理技术实训与考核导引
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.08

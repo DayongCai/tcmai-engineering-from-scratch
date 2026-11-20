@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（颌面外科的判据是「先保气道、再定层次、后谈处置」；顺序错了就是事故）+ 知识积累（本章 7 单元 9,185 汉字；三辨主 **病性（热·毒·虚） 205**；四位面（章群结构）主 **病因辨证治法 9185**；引书 **7 部 9 次**；数值类命中 0）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（10 内容章 / 154 单元 / 148,366 汉字）；单元层 `standards/kouqiang-hemian-waike/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（10 内容章 / 154 单元 / 148,366 汉字）；单元层 `standards/kouqiang-hemian-waike/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -135,7 +135,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py kouqiang-hemian-waike "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py kouqiang-hemian-waike "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py kouqiang-hemian-waike                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

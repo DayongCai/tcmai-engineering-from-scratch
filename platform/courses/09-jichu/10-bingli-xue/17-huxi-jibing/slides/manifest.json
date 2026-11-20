@@ -1,0 +1,32 @@
+{
+  "chapter": "17-huxi-jibing",
+  "slideCount": 5,
+  "segmentCount": 5,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 24
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 67
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 106
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 185
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 52
+    }
+  ]
+}

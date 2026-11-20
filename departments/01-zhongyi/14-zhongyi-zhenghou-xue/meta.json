@@ -18,9 +18,24 @@
     "lei": 45,
     "zheng": 291,
     "hou": 1866,
-    "tensorCells": 1052
+    "tensorCells": 1052,
+    "course": {
+      "note": "课程正文分两部分：1–12 章按「基本理论—基本方法—基本技能」三基编排（母本＝《中医证候学》第一章 病证概论，上卷印张 113–139，10 节 / 27,241 汉字，由 scripts/build_zhenghou_sanji.py 生成）；13–24 章为各论十二门（风…虚），直接取自辞典目录层（standards/zhenghou-cidian/结构.json），与 textbooks/ 的 12 章辞典正文同源。",
+      "sanji": {
+        "基本理论": "第 1–4 章（概论节 1–7）",
+        "基本方法": "第 5–9 章（概论节 7–9）",
+        "基本技能": "第 10–12 章（概论节 10 + 辞典操作）",
+        "各论": "第 13–24 章（十二门 M01–M12）"
+      },
+      "units": {
+        "file": "standards/zhenghou/units.json",
+        "count": 51,
+        "hanzi": 27241,
+        "script": "scripts/build_zhenghou_units.py"
+      }
+    }
   },
-  "chaptersTarget": 12,
+  "chaptersTarget": 24,
   "chapters": [],
   "platform": {
     "id": "tcmP",
@@ -59,6 +74,11 @@
       "path": "standards/zhenghou",
       "layer": "旧派生层：四门临床课 900 单元 → 132 证（14 族）",
       "relation": "作为「另一套命名」的对照保留；与本层 291 证的完全同名者只有 4 条（见辞典附录 B.5）"
+    },
+    "motherText": {
+      "file": "standards/zhenghou-cidian/正文-概论.json",
+      "layer": "概论十节的结构化正文（OCR 逐字，含校勘）",
+      "script": "scripts/zgh_ocr/parse_gl.py"
     }
   },
   "gates": [

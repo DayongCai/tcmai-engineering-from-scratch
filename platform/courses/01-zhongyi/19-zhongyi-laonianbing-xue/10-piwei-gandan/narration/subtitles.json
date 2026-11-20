@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/19-zhongyi-laonianbing-xue/10-piwei-gandan/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 68.65,
+  "estimatedCues": 0,
+  "videoSeconds": 68.676667,
+  "videoMinusNarrationSeconds": 0.027,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.26,
+      "seconds": 5.26,
+      "estimated": false,
+      "text": "第 10 章 · 老年脾胃肝胆病证：能吃，才谈得上治",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.26,
+      "end": 13.4,
+      "seconds": 8.14,
+      "estimated": false,
+      "text": "「脾胃者，仓廪之官，五味出焉」——教材·第10章·10.1.1（《素问·灵兰秘典论》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 13.4,
+      "end": 32.34,
+      "seconds": 18.94,
+      "estimated": false,
+      "text": "「顾护脾胃」在别处是原则，在本章是前提：老人吃不下、吸收不了，任何补泻都无意义。本章六病（胃痞胃痛、噎膈纳呆、泄泻、消渴、胁痛肝病、胆胀）看似分散，共同点都是「入口到出口」这条线。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 32.34,
+      "end": 52.84,
+      "seconds": 20.5,
+      "estimated": false,
+      "text": "环境逼迫（老年消化功能衰退＋多重用药伤胃）+ 知识积累（本章 7 单元 14,197 汉字，三辨主病机 269；四位面主脾胃肝胆 786（全书最高）；引书 16 部 19 次；数值 384（全书最高））",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 52.84,
+      "end": 57.35,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 57.35,
+      "end": 68.65,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

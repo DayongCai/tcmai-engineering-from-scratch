@@ -23,13 +23,13 @@
     "id": "textbooks",
     "path": "textbooks/05-huli/27-huli-biye-sheji",
     "chaptersWritten": 6,
-    "words": 3415,
+    "words": 8725,
     "status": "wip",
     "layer": "handbook",
     "contract": "handbook-v1",
     "origin": "handbook",
     "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-    "extractedAt": "2026-11-09"
+    "extractedAt": "2026-11-20"
   },
   "底本": {
     "kind": "派生",

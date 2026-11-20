@@ -1,0 +1,105 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/02-shuxue-xue/11-weixian-shendu/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 9,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 179.54,
+  "estimatedCues": 0,
+  "videoSeconds": 179.558667,
+  "videoMinusNarrationSeconds": 0.019,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 7.13,
+      "seconds": 7.13,
+      "estimated": false,
+      "text": "第 11 章 · 危险穴位与针刺安全深度：把「不可深刺」变成一道可算的闸门",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 7.13,
+      "end": 13.2,
+      "seconds": 6.07,
+      "estimated": false,
+      "text": "「刺缺盆中内陷，气泄，令人喘咳逆。」——《素问·刺禁论》",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 13.2,
+      "end": 29.04,
+      "seconds": 15.84,
+      "estimated": false,
+      "text": "教材上写着「风池向鼻尖方向刺 0.8–1.2 寸，不可向内上方深刺」，你记住了这句话，却说不清「多深算深」、也说不清同一个穴位在胖人和瘦人身上为什么不是同一个数。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 29.04,
+      "end": 41.26,
+      "seconds": 12.22,
+      "estimated": false,
+      "text": "环境逼迫(进针时没人替你算深度，手感也不可靠) + 知识积累(解剖 × 分段线性模型 = 一个按体型给上限、越界就报错的校验器)",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 41.26,
+      "end": 70.54,
+      "seconds": 29.28,
+      "estimated": false,
+      "text": "说清「安全深度」不是一个固定数字，而是由穴位局部解剖 + 体型共同决定的区间上界 用分段线性函数把 BMI 映射成软组织厚度系数，并解释为什么不用线性外推 实现一个进针前校验器：给定穴位、体型、进针方向与计划深度，返回「允许 / 警告 / 禁止」 指出这个模型在哪些情况下必须由人来否决",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "concept",
+      "start": 70.54,
+      "end": 151.44,
+      "seconds": 80.9,
+      "estimated": false,
+      "text": "中医：刺禁的位置与方向 《素问·刺禁论》把危险穴位写成后果，而不是写成数字：「刺缺盆中内陷，气泄，令人喘咳逆」「刺脊间中髓，为伛」。后世《针灸甲乙经》把这些部位逐一落到具体穴名。教材于是给出「深度 + 方向 + 禁忌」三件套，但深度给的是成人中等体型的参考值。 临床上真正决定风险的是三件事：针尖到重要结构（肺、血管、脊髓、神经干）的距离、进针方向、以及病人当时的体位与呼吸时相。三件事里没有一件是「寸」能单独表达的。 AI/工程：分段线性 + 方向向量 把安全深度写成 k 按体型分四档：BMI < 18.5 取 0.8；18.5 ≤ BMI < 24 取 1.0；24 ≤ BMI < 28 取 1.25；BMI ≥ 28 取 1.4。 再乘方向惩罚：向内上方进针（朝颅腔/胸腔）时 dmax 直接置零——这不是「更深」，而是方向本身禁止。这一步是本课的重点：把「方向」从注释里提出来，变成可执行的分支。",
+      "audio": "006.mp3"
+    },
+    {
+      "n": 7,
+      "role": "build",
+      "start": 151.44,
+      "end": 155.95,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "007.mp3"
+    },
+    {
+      "n": 8,
+      "role": "verify",
+      "start": 155.95,
+      "end": 168.24,
+      "seconds": 12.29,
+      "estimated": false,
+      "text": "预期：风池在 BMI 22、方向「向鼻尖」、计划 1.0 寸时返回 allow；同样深度改成「内上方」时返回 forbid，理由指向椎动脉。",
+      "audio": "008.mp3"
+    },
+    {
+      "n": 9,
+      "role": "disclaimer",
+      "start": 168.24,
+      "end": 179.54,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "009.mp3"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/02-jichu-huli-xue/05-wujun-shangkou/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 66.46,
+  "estimatedCues": 0,
+  "videoSeconds": 66.478667,
+  "videoMinusNarrationSeconds": 0.019,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.01,
+      "seconds": 4.01,
+      "estimated": false,
+      "text": "第 5 章 · 无菌技术与伤口护理技能",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.01,
+      "end": 23.86,
+      "seconds": 19.85,
+      "estimated": false,
+      "text": "「《医院消毒卫生标准·术语和定义》」——本章讲无菌技术与伤口护理，教材无篇名级引文；无菌与消毒的定义出自该标准，篇名按此补足，非本章原文篇名。本章要回答的是：无菌操作失败最常见的原因是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 23.86,
+      "end": 34.16,
+      "seconds": 10.3,
+      "estimated": false,
+      "text": "不是污染，是「看起来还无菌」：无菌区一旦被跨越、被溅湿、暴露过久，外观没有变化，无菌状态已经没了。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 34.16,
+      "end": 55.16,
+      "seconds": 21,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 1 单元 20,107 汉字；三辨主 操作规范 519；四位面（操作环节）主 排泄与体位 43；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 55.16,
+      "end": 66.46,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

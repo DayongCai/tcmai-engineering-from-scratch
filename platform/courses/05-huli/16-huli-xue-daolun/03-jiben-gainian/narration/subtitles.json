@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/16-huli-xue-daolun/03-jiben-gainian/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 64.46,
+  "estimatedCues": 0,
+  "videoSeconds": 64.488667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.7,
+      "seconds": 3.7,
+      "estimated": false,
+      "text": "第 3 章 · 护理学的基本概念与理论",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.7,
+      "end": 22.08,
+      "seconds": 18.38,
+      "estimated": false,
+      "text": "「《护理学导论·第三章》」——本章讲四个基本概念，教材无篇名级引文；篇名按章节体例补足，非本章原文篇名。本章要回答的是：人、环境、健康、护理，四个概念为什么要一起定义。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 22.08,
+      "end": 31.51,
+      "seconds": 9.43,
+      "estimated": false,
+      "text": "因为它们是互为定义的：改一个，其余三个都变。只讲「护理」不讲「人」，护理就退化成操作集合。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 31.51,
+      "end": 53.16,
+      "seconds": 21.65,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 1 单元 17,615 汉字；三辨主 概念与理论 1184；四位面（护理领域）主 个体 131；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 53.16,
+      "end": 64.46,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

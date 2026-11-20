@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/03-yixue-xibao-shengwu-xue/03-xibao-lianjie-yu-nianfu/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 60.96,
+  "estimatedCues": 0,
+  "videoSeconds": 60.994667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.46,
+      "seconds": 3.46,
+      "estimated": false,
+      "text": "第 3 章 · 细胞连接与细胞黏附",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.46,
+      "end": 17.36,
+      "seconds": 13.9,
+      "estimated": false,
+      "text": "「〔派生〕细胞连接与细胞黏附」——母本：组织学与胚胎学第2章。本章要回答的是：细胞连接与细胞黏附：这一章的判据是什么，什么算「看懂了」。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 17.36,
+      "end": 24.51,
+      "seconds": 7.15,
+      "estimated": false,
+      "text": "细胞连接与细胞黏附：本课第 3 章，正文逐字取自组织学与胚胎学。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 24.51,
+      "end": 49.66,
+      "seconds": 25.15,
+      "estimated": false,
+      "text": "环境逼迫（细胞生物学的判据是「结构—功能—方法」三件套：看得见什么、靠什么实现、用什么看见）+ 知识积累（本章 12 单元 20,265 汉字；三辨主 结构与成分 292；四位面（章群结构）主 膜与胞外环境 20265；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 49.66,
+      "end": 60.96,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

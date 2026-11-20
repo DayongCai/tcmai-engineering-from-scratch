@@ -1,0 +1,66 @@
+# [tcmP] 课程编排 · 08-wuguan/05-zhongyi-wuguan-jingdian
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/08-wuguan/05-zhongyi-wuguan-jingdian/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 05-zhongyi-wuguan-jingdian
+title: 中医五官科经典选读
+en: Selected ENT/Stomato Classics
+dept: 08-wuguan
+dept_title: 五官口腔系
+semester: 5
+stage: zhang
+hours: 36
+chapters_target: 6
+bridge: 原文检索→向量库 / 方证归纳→规则抽取
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-e51
+    title: 第1章 五官经典原文概览
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.88
+  - slug: 02-e52
+    title: 第2章 目与脏腑经络
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.87
+  - slug: 03-e53
+    title: 第3章 耳与肾
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.82
+  - slug: 04-e54
+    title: 第4章 咽喉与肺胃
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.84
+  - slug: 05-e55
+    title: 第5章 病名与证候的历史演变
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.93
+  - slug: 06-e56
+    title: 第6章 经典与临床的对接
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.89

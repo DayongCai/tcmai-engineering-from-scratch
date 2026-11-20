@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 01-zhongyi/16-zhongyi-zhexue-shi
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/01-zhongyi/16-zhongyi-zhexue-shi/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 16-zhongyi-zhexue-shi
+title: 中医哲学史
+en: History of TCM Philosophy
+dept: 01-zhongyi
+dept_title: 中医系
+semester: 2
+stage: sheng
+hours: 36
+chapters_target: 8
+bridge: 哲学范畴→本体论建模 / 学派演化→谱系聚类
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-fanchou-lun
+    title: 第1章 哲学史研究什么：范畴，不是年表
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.13
+    measured_minutes: 1.12
+  - slug: 02-qi-dao
+    title: 第2章 气与道：本体论的两个词
+    segments: 6
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.94
+  - slug: 03-yinyang
+    title: 第3章 阴阳：从现象到范畴
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.06
+  - slug: 04-wuxing
+    title: 第4章 五行：分类还是生成
+    segments: 6
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 0.99
+  - slug: 05-tianren
+    title: 第5章 天人相应：人与环境的关系模型
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.09
+  - slug: 06-xingshen
+    title: 第6章 形神与心身：医学里的心身问题
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.08
+  - slug: 07-changbian-quanheng
+    title: 第7章 常变与权衡：辨证思维的三条规则
+    segments: 6
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.04
+  - slug: 08-jiegouhua
+    title: 第8章 范畴的结构化与四个层面
+    segments: 6
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.92

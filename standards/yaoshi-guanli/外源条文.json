@@ -5,21 +5,24 @@
    "file": "药品注册管理办法-2020.pdf",
    "title": "药品注册管理办法（国家市场监督管理总局令第 27 号，2020-01-22 公布，2020-07-01 施行）",
    "revised": "2020",
-   "url": "（用户提供，官方发布件；附件名《药品管理法》实为同一文件，见 缺口登记.md）"
+   "url": "（用户提供，官方发布件；附件名《药品管理法》实为同一文件，见 缺口登记.md）",
+   "shortTitle": "药品注册管理办法"
   },
   "NPC-药品管理法-2019": {
    "file": "药品管理法-2019.pdf",
    "title": "中华人民共和国药品管理法（2019 年 8 月 26 日第十三届全国人民代表大会常务委员会第十二次会议第二次修订，2019-12-01 施行）",
    "revised": "2019",
    "url": "https://faolex.fao.org/docs/pdf/chn217458.pdf",
-   "note": "中国全国人大法律文本，经 FAOLEX（联合国粮农组织法律数据库）收录版本取得；本机未取到中国人大网一手文件（flk.npc.gov.cn 与 gov.cn 均无可用响应），已登记为缺口。"
+   "note": "中国全国人大法律文本，经 FAOLEX（联合国粮农组织法律数据库）收录版本取得；本机未取到中国人大网一手文件（flk.npc.gov.cn 与 gov.cn 均无可用响应），已登记为缺口。",
+   "shortTitle": "中华人民共和国药品管理法"
   },
   "STATE-实施条例-828": {
    "file": "实施条例-828.html",
    "title": "中华人民共和国药品管理法实施条例（国务院令第 828 号，2026-01-16 公布，2026-05-15 施行）",
    "revised": "2026",
    "url": "https://www.gov.cn/gongbao/2026/issue_12546/202602/content_7057461.html",
-   "note": "来源：中国政府网·国务院公报 2026 年第 4 号（官方发布页，HTML 无 PDF）；落盘为原页 HTML，校勘时按标签剥离取正文。"
+   "note": "来源：中国政府网·国务院公报 2026 年第 4 号（官方发布页，HTML 无 PDF）；落盘为原页 HTML，校勘时按标签剥离取正文。",
+   "shortTitle": "药品管理法实施条例"
   },
   "NMPA-GVP-2021": {
    "file": "药物警戒质量管理规范.doc",
@@ -27,13 +30,15 @@
    "revised": "2021",
    "url": "（用户提供官方发布件，.doc 原件）",
    "textfile": "GVP-2021.txt",
-   "note": "原件为 .doc（旧版 Word）；文本副本 GVP-2021.txt 由 Word COM 转 .docx 后经 python-docx 抽取，未做任何改写；校勘走 txt 通道，原件 sha256 另行登记。"
+   "note": "原件为 .doc（旧版 Word）；文本副本 GVP-2021.txt 由 Word COM 转 .docx 后经 python-docx 抽取，未做任何改写；校勘走 txt 通道，原件 sha256 另行登记。",
+   "shortTitle": "药物警戒质量管理规范"
   },
   "MOH-GMP-2010": {
    "file": "GMP-2010.pdf",
    "title": "药品生产质量管理规范（2010 年修订，卫生部令第 79 号，2011-03-01 施行）",
    "revised": "2010",
-   "url": "（用户提供官方发布件，PDF）"
+   "url": "（用户提供官方发布件，PDF）",
+   "shortTitle": "药品生产质量管理规范"
   },
   "MOH-GSP-2016": {
    "file": "GSP-2016.docx",
@@ -41,7 +46,8 @@
    "revised": "2016",
    "url": "（用户提供官方发布件，.docx 原件）",
    "textfile": "GSP-2016.txt",
-   "note": "原件为 .docx；文本副本 GSP-2016.txt 由 python-docx 直接抽取（未做改写），校勘走 txt 通道。"
+   "note": "原件为 .docx；文本副本 GSP-2016.txt 由 python-docx 直接抽取（未做改写），校勘走 txt 通道。",
+   "shortTitle": "药品经营质量管理规范"
   },
   "NMPA-ZYFENLEI-2020": {
    "file": "中药注册分类-2020-68.doc",
@@ -49,7 +55,8 @@
    "revised": "2020",
    "url": "https://www.nmpa.gov.cn/directory/web/nmpa/images/1601282559497048444.doc",
    "textfile": "中药注册分类-2020-68.txt",
-   "note": "原件为 .doc（NMPA 附件直链可取，页面本体 412）；文本副本由 Word COM→docx→python-docx 抽取，未改写。该文件非「第X条」体例，条文 id 按段落锚点编号（Z01–Z14）。"
+   "note": "原件为 .doc（NMPA 附件直链可取，页面本体 412）；文本副本由 Word COM→docx→python-docx 抽取，未改写。该文件非「第X条」体例，条文 id 按段落锚点编号（Z01–Z14）。",
+   "shortTitle": "中药注册分类及申报资料要求"
   }
  },
  "clauses": [

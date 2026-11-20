@@ -1,0 +1,105 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/06-neijing-xuandu/05-bingji-shijiu/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 9,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 237.39,
+  "estimatedCues": 0,
+  "videoSeconds": 237.394667,
+  "videoMinusNarrationSeconds": 0.005,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.14,
+      "seconds": 5.14,
+      "estimated": false,
+      "text": "第 5 章 · 病机十九条：十九句话里，五脏只占五条",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.14,
+      "end": 14.91,
+      "seconds": 9.77,
+      "estimated": false,
+      "text": "「谨守病机，各司其属，有者求之，无者求之，盛者责之，虚者责之。」——《素问·至真要大论》",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.91,
+      "end": 30.46,
+      "seconds": 15.55,
+      "estimated": false,
+      "text": "你听人引用「诸风掉眩，皆属于肝」，就以为十九条讲的是五脏辨证；真去数一遍，会发现十九条里只有五条归脏腑，其余十四条讲的是六气与上下——比例完全不是你以为的那样。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 30.46,
+      "end": 43.04,
+      "seconds": 12.58,
+      "estimated": false,
+      "text": "环境逼迫(写病机分析时只会套「肝风内动」这一条) + 知识积累(原文精读 × 结构化计数 = 一份能按症状反查、能报出分布的病机表)",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 43.04,
+      "end": 66.97,
+      "seconds": 23.93,
+      "estimated": false,
+      "text": "背出十九条并按「所属」分类：脏腑 5 · 火 5 · 热 4 · 湿 1 · 风 1 · 寒 1 · 上 1 · 下 1 说清「皆属于」是归纳式的提示，不是排他性的诊断法则 把十九条做成一张可按症状反查的表，并输出每条的证据边界 指出十九条缺什么（例如没有「燥」、没有「痰」）",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "concept",
+      "start": 66.97,
+      "end": 199.57,
+      "seconds": 132.6,
+      "estimated": false,
+      "text": "原文（《素问·至真要大论》，据仓库内 neijing-quanwen 原件） 诸风掉眩，皆属于肝。诸寒收引，皆属于肾。诸气膹郁，皆属于肺。诸湿肿满，皆属于脾。诸热瞀瘈，皆属于火。诸痛痒疮，皆属于心。诸厥固泄，皆属于下。诸痿喘呕，皆属于上。诸禁鼓慄，如丧神守，皆属于火。诸痉项强，皆属于湿。诸逆冲上，皆属于火。诸胀腹大，皆属于热。诸躁狂越，皆属于火。诸暴强直，皆属于风。诸病有声，鼓之如鼓，皆属于热。诸病胕肿，疼酸惊骇，皆属于火。诸转反戾，水液浑浊，皆属于热。诸病水液，澄澈清冷，皆属于寒。诸呕吐酸，暴注下迫，皆属于热。 紧接其后的是读法：「谨守病机，各司其属，有者求之，无者求之，盛者责之，虚者责之」。这十六个字比十九条本身更重要：它要求对「有」与「无」都做核对，即条文提示的方向要验证，没提示的方向也要查。 结构：五脏占 5/19，六气占 12/19 这张表能立刻纠正两个常见误读：其一，十九条不是脏腑辨证纲领（脏腑只占 5 条）；其二，「属于火」有 5 条，是十九条里最大的单一类别——刘完素后来专论火热，源头在这里。 AI/工程：把「皆属于」写成带边界的索引 编码难点不在存表，而在不许把提示写成判据。所以每条记录必须带三个字段：症状线索（原文起句）、所属、边界（本条不能排除什么）。检索时只返回到条文，不返回证型；命中多条时全部列出——十九条里「热」有四条，一个症状同时命中两条是常态，取第一条就是制造偏见。",
+      "audio": "006.mp3"
+    },
+    {
+      "n": 7,
+      "role": "build",
+      "start": 199.57,
+      "end": 204.08,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "007.mp3"
+    },
+    {
+      "n": 8,
+      "role": "verify",
+      "start": 204.08,
+      "end": 226.09,
+      "seconds": 22.01,
+      "estimated": false,
+      "text": "预期：distribution() 输出 脏 5 · 火 5 · 热 4 · 湿 1 · 风 1 · 寒 1 · 部位 2，合计 19（上、下同属「部位」，两者不分开计）；检索「水液」同时命中第 17、18 两条（浑浊属热、澄澈清冷属寒），代码不许只给一条。 <!-- neijing:begin →",
+      "audio": "008.mp3"
+    },
+    {
+      "n": 9,
+      "role": "disclaimer",
+      "start": 226.09,
+      "end": 237.39,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "009.mp3"
+    }
+  ]
+}

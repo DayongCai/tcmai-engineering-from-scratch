@@ -1,0 +1,58 @@
+{
+  "$generated": "手工维护：教材补章登记（无底本表的章，逐章登记依据）",
+  "subject": "01-zhongyi/10-zhongyi-neike-xue",
+  "title": "中医内科学",
+  "teachingChapters": 14,
+  "textbookChaptersBefore": 12,
+  "why": "底本 qhzy-中医内科学.xlsx 为 12 章（绪论 + 辨证方法 + 脏腑纲要 + 八系病证 + 数字化），教学计划第 13、14 章（证候—方剂—疗效的因果边界 / 内科分型与 ICD-11 映射）底本无对应内容，故按「本库撰写层」补写。",
+  "chapters": [
+    {
+      "no": 13,
+      "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/13-第13章-证候方剂疗效的因果边界.md",
+      "title": "证候—方剂—疗效：链上哪一段有量",
+      "layer": "本库撰写层",
+      "bases": [
+        {
+          "kind": "课程文档",
+          "path": "departments/01-zhongyi/10-zhongyi-neike-xue/chapters/13-zhengfang-liaoxiao/docs/zh.md",
+          "note": "312 条三元组、词频、同名命中、八法覆盖由 code/main.js 现算"
+        },
+        {
+          "kind": "底本",
+          "path": "standards/neike/底本.json",
+          "note": "12 章 / 83 节 / 1,816 段 / 329,826 汉字；章内引文按 教材·中医内科学·第N章·M.K 回查"
+        },
+        {
+          "kind": "方剂层",
+          "path": "standards/fangji/formulas.json",
+          "note": "114 首 / 836 药位 / 246 味"
+        }
+      ],
+      "verified": "2026-11-15：疗效 117 次 vs 有效率类 0 次、同名命中 69、八法 52/114 均为课程文档实测值"
+    },
+    {
+      "no": 14,
+      "file": "textbooks/01-zhongyi/10-zhongyi-neike-xue/14-第14章-内科分型与ICD-11映射.md",
+      "title": "内科分型与 ICD-11：能对上的三十二个，和不能对上的四类",
+      "layer": "本库撰写层",
+      "bases": [
+        {
+          "kind": "课程文档",
+          "path": "departments/01-zhongyi/10-zhongyi-neike-xue/chapters/14-fenxing-icd11/docs/zh.md",
+          "note": "逐字比对、残类判定与四类落点由 code/main.js 现算"
+        },
+        {
+          "kind": "ICD-11 中译本",
+          "path": "standards/icd11/zh-names.json",
+          "note": "1,120 行（TM1 472 带中文名 + TM2 648 无中文名），发布版 2026-01"
+        },
+        {
+          "kind": "术语对齐",
+          "path": "standards/semtensor/descriptions/term-alignment.json",
+          "note": "7 条现成对齐结论"
+        }
+      ],
+      "verified": "2026-11-15：病名 32/63、证名 21/287 为逐字同名结果；未声称 WHO 注册（id.who.int 实测 401）"
+    }
+  ]
+}

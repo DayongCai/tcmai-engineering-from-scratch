@@ -1,0 +1,90 @@
+# [tcmP] 课程编排 · 08-wuguan/06-zhongyi-yanke-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/08-wuguan/06-zhongyi-yanke-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 06-zhongyi-yanke-xue
+title: 中医眼科学
+en: TCM Ophthalmology
+dept: 08-wuguan
+dept_title: 五官口腔系
+semester: 6
+stage: zhang
+hours: 72
+chapters_target: 10
+bridge: 五轮八廓→分层模型 / 眼底图像→病灶检测
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-wulun-bakuo
+    title: 第1章 五轮八廓学说与眼的脏腑配属
+    segments: 9
+    video: rendered
+    estimate_minutes: 3.17
+    measured_minutes: 2.98
+  - slug: 02-sizhen-shili
+    title: 第2章 眼科四诊与视力检查
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.8
+    measured_minutes: 0.85
+  - slug: 03-waizhang-yanbing
+    title: 第3章 外障眼病：胞睑、两眦、白睛
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.92
+  - slug: 04-neizhang-yanbing
+    title: 第4章 内障眼病：瞳神与眼底
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.87
+  - slug: 05-jinshi-pilao
+    title: 第5章 近视与视疲劳的中医干预
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.86
+  - slug: 06-ganyan-jianbanxian
+    title: 第6章 干眼与睑板腺功能障碍
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.87
+  - slug: 07-qingguangyan-shishenjing
+    title: 第7章 青光眼与视神经病变
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.8
+    measured_minutes: 0.86
+  - slug: 08-dichuxue-tangwang
+    title: 第8章 眼底出血与糖网的中医治疗
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.9
+  - slug: 09-waizhi-yonganquan
+    title: 第9章 眼科外治法与用药安全
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.88
+  - slug: 10-liaoxiao-suifang
+    title: 第10章 眼科疗效评价与随访
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.86

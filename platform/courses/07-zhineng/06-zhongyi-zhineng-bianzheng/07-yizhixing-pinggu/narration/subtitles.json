@@ -1,0 +1,105 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/07-zhineng/06-zhongyi-zhineng-bianzheng/07-yizhixing-pinggu/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 9,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 168.75,
+  "estimatedCues": 0,
+  "videoSeconds": 168.770667,
+  "videoMinusNarrationSeconds": 0.021,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 6.24,
+      "seconds": 6.24,
+      "estimated": false,
+      "text": "第 7 章 · 与医生诊断的一致性评估：kappa 高就说明系统靠谱吗",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 6.24,
+      "end": 12.46,
+      "seconds": 6.22,
+      "estimated": false,
+      "text": "「诊法常以平旦，阴气未动，阳气未散。」——《素问·脉要精微论》",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 12.46,
+      "end": 25.4,
+      "seconds": 12.94,
+      "estimated": false,
+      "text": "你的辨证系统与三位医生的一致率是 82%，你在答辩上说「达到临床可用水平」，评委问「kappa 多少、医生的诊断彼此一致吗」，你答不上来。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 25.4,
+      "end": 36.61,
+      "seconds": 11.21,
+      "estimated": false,
+      "text": "环境逼迫(要拿一致性数字去论证系统可用) + 知识积累(混淆矩阵 × kappa = 一个能区分「真的对上」与「碰巧对上」的评估)",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 36.61,
+      "end": 63.95,
+      "seconds": 27.34,
+      "estimated": false,
+      "text": "从混淆矩阵算出原始一致率与 Cohen's kappa，并解释两者差在哪 说清「患病率极高或极低时 kappa 会失真」这一悖论，并给出替代指标 用医生之间的 kappa 作为上界参照：系统的一致性不可能长期高于人类彼此的一致性 指出「一致 ≠ 正确」：医生之间一致地错，系统跟着错也会得高分",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "concept",
+      "start": 63.95,
+      "end": 137.63,
+      "seconds": 73.68,
+      "estimated": false,
+      "text": "中医：一致性评估的前提是先固定诊法条件 《素问·脉要精微论》强调「诊法常以平旦」，说的是诊断要在条件受控时进行。这句话在今天的含义是：如果两位医生看同一个病人的时间、体位、问诊深度都不同，他们的不一致里混着测量误差，不能全算作判断差异。评估系统与医生的一致性之前，先要评估医生彼此的一致性——后者是这套评估的噪声底。 AI/工程：kappa 与它的陷阱 po 是观察一致率， pe 是「按各自边际分布随机猜」的期望一致率。kappa 的含义是「扣掉碰巧对上之后的一致程度」。 三个必须同时报告： po 、 κ 、以及边际分布（各类占比）。因为当某一类占 90% 时，系统全判这一类就能拿到 0.9 的 po ，而 κ 可能接近 0——反过来，当两类各占 50% 且几乎全对时， κ 也会被压得比直觉低。这就是著名的 kappa 悖论，替代方案是 PABAK 或 Gwet 的 AC1。",
+      "audio": "006.mp3"
+    },
+    {
+      "n": 7,
+      "role": "build",
+      "start": 137.63,
+      "end": 142.14,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "007.mp3"
+    },
+    {
+      "n": 8,
+      "role": "verify",
+      "start": 142.14,
+      "end": 157.45,
+      "seconds": 15.31,
+      "estimated": false,
+      "text": "预期：一个「全判同一类」的退化矩阵 po=0.857 但 κ=0 ，与一个均衡且几乎全对的矩阵（ κ≈0.94 ）形成对照——这正是答辩时最容易被问到的那一处。",
+      "audio": "008.mp3"
+    },
+    {
+      "n": 9,
+      "role": "disclaimer",
+      "start": 157.45,
+      "end": 168.75,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "009.mp3"
+    }
+  ]
+}

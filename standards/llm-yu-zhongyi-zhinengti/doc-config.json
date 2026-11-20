@@ -1,7 +1,7 @@
 {
  "courseTitle": "大模型与中医智能体",
  "deptPath": "departments/07-zhineng/10-llm-yu-zhongyi-zhinengti",
- "xlsx": "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx",
+ "xlsx": "F:/textbooks/qhzy-机器学习.xlsx",
  "chain": "基础与表示 → 概率与学习 → 知识·对齐·评测 → 工程与治理",
  "levelLabel": "章群结构",
  "objectPressure": "大模型的判据是「说得出依据、测得出底线」：测不出幻觉率的模型不许进临床流程",

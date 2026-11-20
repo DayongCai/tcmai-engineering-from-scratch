@@ -1,0 +1,255 @@
+{
+  "$generated": "手工维护：教材开稿登记（无底本表，按外源条文撰写层逐章登记依据）",
+  "subject": "05-huli/15-huli-yanjiu-zhengxun",
+  "title": "护理研究与循证护理",
+  "mode": "开稿",
+  "teachingChapters": 8,
+  "textbookChaptersBefore": 0,
+  "textbookChaptersAfter": 8,
+  "why": "本课无底本表，教材按 16 份外源（PRISMA 2020 / WHO 指南手册 / ROBIS / GRADE / Cochrane Handbook Ch4·Ch6·Ch8·Ch10 / 三份 JBI 核查表 / JBI 手册镜像）撰写：76 条条文逐字登记在 standards/huli-yanjiu-zhengxun/外源条文.json，全部通过 sha256 与逐字校勘。章目与教学计划 8 章逐条对齐。",
+  "layerNote": "全部章节为「本库撰写层」——不是源正文层；英文外源条文保留英文原句作引文，不做「中译当引文」。",
+  "chapters": [
+    {
+      "no": 1,
+      "file": "textbooks/05-huli/15-huli-yanjiu-zhengxun/01-第1章-护理研究的选题与问题化.md",
+      "title": "护理研究的选题与问题化",
+      "teachingTitle": "护理研究的选题与问题化",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2026,
+        "citations": 14,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/huli-yanjiu-zhengxun/外源条文.json",
+          "note": "76 条；本章引 PRISMA 2020 expanded checklist 第3–5/17 条、WHO 手册 第3条、Cochrane Ch4 第2条、JBI 横断面核查表 第1条"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/huli-yanjiu-zhengxun/补源登记.json",
+          "note": "16 份来源 sha256 / 页数 / 文本层由 build_huli_yanjiu_sources.py --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/huli-yanjiu-zhengxun/专题-循证报告核查.md",
+          "note": "第九节给出各章取条入口，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：build_huli_yanjiu_sources.py --check → 91/91 逐字可查；tests/test_source_topics.js → 本章 14 处引用可核、1 段摘句逐字"
+    },
+    {
+      "no": 2,
+      "file": "textbooks/05-huli/15-huli-yanjiu-zhengxun/02-第2章-量性研究与设计类型.md",
+      "title": "量性研究与设计类型",
+      "teachingTitle": "量性研究与设计类型",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2036,
+        "citations": 12,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/huli-yanjiu-zhengxun/外源条文.json",
+          "note": "76 条；本章依据：外源·Cochrane Handbook Ch8 偏倚风险 第1–3 条；外源·JBI 横断面研究核查表 第1–3 条"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/huli-yanjiu-zhengxun/补源登记.json",
+          "note": "16 份来源 sha256 / 页数 / 文本层由 build_huli_yanjiu_sources.py --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/huli-yanjiu-zhengxun/专题-循证报告核查.md",
+          "note": "第九节给出各章取条入口"
+        }
+      ],
+      "verified": "2026-11-15：build_huli_yanjiu_sources.py --check → 91/91 逐字可查；tests/test_source_topics.js → 本章 12 处引用可核、1 段摘句逐字"
+    },
+    {
+      "no": 3,
+      "file": "textbooks/05-huli/15-huli-yanjiu-zhengxun/03-第3章-质性研究与访谈分析.md",
+      "title": "质性研究与访谈分析",
+      "teachingTitle": "质性研究与访谈分析",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1937,
+        "citations": 8,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/huli-yanjiu-zhengxun/外源条文.json",
+          "note": "76 条；本章依据：外源·JBI 质性研究核查表 第1–4 条；外源·JBI 系统评价核查表 第2条"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/huli-yanjiu-zhengxun/补源登记.json",
+          "note": "16 份来源 sha256 / 页数 / 文本层由 build_huli_yanjiu_sources.py --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/huli-yanjiu-zhengxun/专题-循证报告核查.md",
+          "note": "第九节给出各章取条入口"
+        }
+      ],
+      "verified": "2026-11-15：build_huli_yanjiu_sources.py --check → 91/91 逐字可查；tests/test_source_topics.js → 本章 8 处引用可核、1 段摘句逐字"
+    },
+    {
+      "no": 4,
+      "file": "textbooks/05-huli/15-huli-yanjiu-zhengxun/04-第4章-量表的选择与信效度.md",
+      "title": "量表的选择与信效度",
+      "teachingTitle": "量表的选择与信效度",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2019,
+        "citations": 12,
+        "quotes": 0
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/huli-yanjiu-zhengxun/外源条文.json",
+          "note": "91 条；本章依据：COSMIN 偏倚风险清单 第1–7 条（九项测量属性中的七项）；JBI 横断面研究核查表 第2–3 条"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/huli-yanjiu-zhengxun/补源登记.json",
+          "note": "18 份来源 sha256 / 页数 / 文本层由 build_huli_yanjiu_sources.py --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/huli-yanjiu-zhengxun/专题-循证报告核查.md",
+          "note": "第九节给出各章取条入口"
+        }
+      ],
+      "verified": "2026-11-15：build_huli_yanjiu_sources.py --check → 91/91 逐字可查；tests/test_source_topics.js → 本章 12 处引用可核、0 段摘句逐字"
+    },
+    {
+      "no": 5,
+      "file": "textbooks/05-huli/15-huli-yanjiu-zhengxun/05-第5章-循证护理的证据分级.md",
+      "title": "循证护理的证据分级",
+      "teachingTitle": "循证护理的证据分级",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1956,
+        "citations": 13,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/huli-yanjiu-zhengxun/外源条文.json",
+          "note": "91 条；本章依据：How to GRADE 第1–5 条；ROBIS Guidance 第2/7/11 条；JBI 系统评价核查表 第2条"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/huli-yanjiu-zhengxun/补源登记.json",
+          "note": "18 份来源 sha256 / 页数 / 文本层由 build_huli_yanjiu_sources.py --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/huli-yanjiu-zhengxun/专题-循证报告核查.md",
+          "note": "第九节给出各章取条入口"
+        }
+      ],
+      "verified": "2026-11-15：build_huli_yanjiu_sources.py --check → 91/91 逐字可查；tests/test_source_topics.js → 本章 13 处引用可核、1 段摘句逐字"
+    },
+    {
+      "no": 6,
+      "file": "textbooks/05-huli/15-huli-yanjiu-zhengxun/06-第6章-文献检索与系统评价.md",
+      "title": "文献检索与系统评价",
+      "teachingTitle": "文献检索与系统评价",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1844,
+        "citations": 13,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/huli-yanjiu-zhengxun/外源条文.json",
+          "note": "91 条；本章依据：Cochrane Ch4 第1–4 条；JBI 系统评价核查表 第1–3 条；ROBIS 第11条；PRISMA 2020 全套"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/huli-yanjiu-zhengxun/补源登记.json",
+          "note": "18 份来源 sha256 / 页数 / 文本层由 build_huli_yanjiu_sources.py --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/huli-yanjiu-zhengxun/专题-循证报告核查.md",
+          "note": "第九节给出各章取条入口"
+        }
+      ],
+      "verified": "2026-11-15：build_huli_yanjiu_sources.py --check → 91/91 逐字可查；tests/test_source_topics.js → 本章 13 处引用可核、1 段摘句逐字"
+    },
+    {
+      "no": 7,
+      "file": "textbooks/05-huli/15-huli-yanjiu-zhengxun/07-第7章-证据到实践的转化.md",
+      "title": "证据到实践的转化",
+      "teachingTitle": "证据到实践的转化",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1955,
+        "citations": 11,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/huli-yanjiu-zhengxun/外源条文.json",
+          "note": "91 条；本章依据：WHO 手册 第4/6/7/8 条（adolopment / 本土化）；How to GRADE 第5条；JBI 系统评价核查表 第3条"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/huli-yanjiu-zhengxun/补源登记.json",
+          "note": "18 份来源 sha256 / 页数 / 文本层由 build_huli_yanjiu_sources.py --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/huli-yanjiu-zhengxun/专题-循证报告核查.md",
+          "note": "第九节给出各章取条入口"
+        }
+      ],
+      "verified": "2026-11-15：build_huli_yanjiu_sources.py --check → 91/91 逐字可查；tests/test_source_topics.js → 本章 11 处引用可核、1 段摘句逐字"
+    },
+    {
+      "no": 8,
+      "file": "textbooks/05-huli/15-huli-yanjiu-zhengxun/08-第8章-护理研究中的伦理审查.md",
+      "title": "护理研究中的伦理审查",
+      "teachingTitle": "护理研究中的伦理审查",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2188,
+        "citations": 9,
+        "quotes": 0
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/huli-yanjiu-zhengxun/外源条文.json",
+          "note": "91 条；本章依据：伦理审查办法 2023 第4、17、18、21、25、33、34、38 条"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/huli-yanjiu-zhengxun/补源登记.json",
+          "note": "18 份来源 sha256 / 页数 / 文本层由 build_huli_yanjiu_sources.py --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/huli-yanjiu-zhengxun/专题-循证报告核查.md",
+          "note": "第九节给出各章取条入口"
+        }
+      ],
+      "verified": "2026-11-15：build_huli_yanjiu_sources.py --check → 91/91 逐字可查；tests/test_source_topics.js → 本章 9 处引用可核、0 段摘句逐字"
+    }
+  ],
+  "planned": [],
+  "note": "8 章已全部写完（1–8 章，与教学计划逐条同名同序）。全部过 tests/test_source_topics.js 的引用门与 tests/test_textbook_supplement.js 的八节契约；第 4、8 章的底本为第三批补源（COSMIN / 伦理审查办法）。"
+}

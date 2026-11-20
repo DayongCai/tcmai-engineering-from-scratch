@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（文化传播的判据是「有出处、不神化、能复核」）+ 知识积累（本章 6 单元 10,426 汉字；三辨主 **组织与流程 14**；四位面（章群结构）主 **典籍与近现代 10426**；引书 **68 部 76 次**；数值类命中 0）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（6 内容章 / 107 单元 / 171,890 汉字）；单元层 `standards/05-zhongyi-wenhua-chuanbo/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（6 内容章 / 107 单元 / 171,890 汉字）；单元层 `standards/05-zhongyi-wenhua-chuanbo/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -121,7 +121,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py 05-zhongyi-wenhua-chuanbo "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py 05-zhongyi-wenhua-chuanbo "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py 05-zhongyi-wenhua-chuanbo                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

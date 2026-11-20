@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/06-shengli-xue/10-shenjing-xitong/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 156.48,
+  "estimatedCues": 0,
+  "videoSeconds": 156.514667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.74,
+      "seconds": 5.74,
+      "estimated": false,
+      "text": "第 10 章 · 神经系统：全章最密的一节不是电，是抑制",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.74,
+      "end": 20.84,
+      "seconds": 15.1,
+      "estimated": false,
+      "text": "「传入侧支性抑制与回返性抑制都属于负反馈性质的调节，体现了中枢活动自我限制与协调的关系」——教材·第10章·10.2.2（《生理学·第10章·10.2.2》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.84,
+      "end": 74.38,
+      "seconds": 53.54,
+      "estimated": false,
+      "text": "学神经系统的人几乎都从「电」开始找数：膜电位是正是负、阈值多高、放电多快、传导多迅速、突触延搁多长。这一章一个都不给。更反直觉的是，你原以为最该有数的那一节——大脑皮层的生物电活动（10.4.1，1,717 字）——全节只有 10 次三视角与四层级命中，密度为每千字 5.8，是全章最疏的一节；而全章最密的一节是「中枢抑制」（10.2.2，126 次命中，密度 73.6，其中机能一项就占 110 次）。这本书把神经系统写成了「谁兴奋谁、谁抑制谁、谁整合谁」，而不是「多大、多少、多快」。你不换一套读法，就会觉得它什么都没说。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 74.38,
+      "end": 102.58,
+      "seconds": 28.2,
+      "estimated": false,
+      "text": "环境逼迫（考场与临床都在要值：反射怎么分级、肌张力怎么记、脑电怎么描述，教材不给，学生只好去别处补，补来的值与书里的关系对不上，两边都记不牢） + 知识积累（12 小节逐节的字数、三视角与四层级词频、数值核验合成一张账，把这章「哪一节只剩关系、哪一节还有结构」摊开，读法才有依据）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 102.58,
+      "end": 145.18,
+      "seconds": 42.6,
+      "estimated": false,
+      "text": "说出神经系统一章的四节是怎样切的：结构基础、中枢规律、运动与内脏调节、高级功能 说出三视角与四层级在本章的命中分布，并解释「组织」层为什么一次都没出现 用「兴奋与抑制的关系」复述中枢抑制的两个类别，不再依赖任何数值 把「膜电位、阈值、频率、延搁」四类常见数值问题，改写成方向与关系的问法 判断一节文字的密度高低说明了什么、不说明什么 说清本书不给值是取舍而不是遗漏，并知道要值时必须另立数据层",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 145.18,
+      "end": 156.48,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

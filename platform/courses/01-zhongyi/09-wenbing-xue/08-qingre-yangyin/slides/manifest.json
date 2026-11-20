@@ -1,0 +1,47 @@
+{
+  "chapter": "08-qingre-yangyin",
+  "slideCount": 8,
+  "segmentCount": 8,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 31
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 57
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 143
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 66
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 989
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 281
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 95
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 52
+    }
+  ]
+}

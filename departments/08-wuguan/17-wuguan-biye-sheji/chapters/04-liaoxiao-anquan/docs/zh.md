@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（毕设的判据是「命题可验、数据可溯、结论可接」）+ 知识积累（本章 49 单元 60,341 汉字；三辨主 **检查与影像 168**；四位面（阶段结构）主 **中段 60341**；引书 **58 部 149 次**；数值类命中 4）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-中医眼科学.xlsx`（6 内容章 / 90 单元 / 125,368 汉字）；单元层 `standards/wuguan-biye-sheji/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-中医眼科学.xlsx`（6 内容章 / 90 单元 / 125,368 汉字）；单元层 `standards/wuguan-biye-sheji/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -421,7 +421,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py wuguan-biye-sheji "F:/textbooks/F:/textbooks/qhzy-中医眼科学.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py wuguan-biye-sheji "F:/textbooks/qhzy-中医眼科学.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py wuguan-biye-sheji                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

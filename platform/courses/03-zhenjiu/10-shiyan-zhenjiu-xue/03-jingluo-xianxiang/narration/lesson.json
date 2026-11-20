@@ -1,0 +1,67 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/03-jingluo-xianxiang/docs/zh.md",
+  "course": "10-shiyan-zhenjiu-xue",
+  "dept": "03-zhenjiu",
+  "chapter": "03-jingluo-xianxiang",
+  "title": "第 3 章 · 经络现象的现代研究",
+  "segmentCount": 5,
+  "estimateTotalSeconds": 56,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 3 章 · 经络现象的现代研究",
+      "slide": "title",
+      "spoken": "第 3 章 · 经络现象的现代研究",
+      "estimateSeconds": 3,
+      "audio": "001.mp3",
+      "audioSeconds": 3.38
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「《实验针灸学·经络现象的现代研究》」——教材篇名级；课程章号对应教材第 3 章。本章要回答的是：经络现象的现代研究要回答的实验问题是什么。",
+      "slide": "title",
+      "spoken": "「《实验针灸学·经络现象的现代研究》」——教材篇名级；课程章号对应教材第 3 章。本章要回答的是：经络现象的现代研究要回答的实验问题是什么。",
+      "estimateSeconds": 15,
+      "audio": "002.mp3",
+      "audioSeconds": 14.04
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "循经感传与经络实质：现象先行，解释在后。",
+      "slide": "problem",
+      "spoken": "循经感传与经络实质：现象先行，解释在后。",
+      "estimateSeconds": 4,
+      "audio": "003.mp3",
+      "audioSeconds": 5.11
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（实验针灸学的难点不是记住结论，而是分清「有证据」「有机制解释」「只有推测」）+ 知识积累（本章 4 单元 12,566 汉字；三辨主 **方法与技术 86**；四位面（研究层次）主 **现象与结构 208**；引书 **3 部 9 次**；数值类命中 0）",
+      "slide": "roots",
+      "spoken": "环境逼迫（实验针灸学的难点不是记住结论，而是分清「有证据」「有机制解释」「只有推测」）+ 知识积累（本章 4 单元 12,566 汉字；三辨主 方法与技术 86；四位面（研究层次）主 现象与结构 208；引书 3 部 9 次；数值类命中 0）",
+      "estimateSeconds": 23,
+      "audio": "004.mp3",
+      "audioSeconds": 22.85
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "005.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 56.69,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

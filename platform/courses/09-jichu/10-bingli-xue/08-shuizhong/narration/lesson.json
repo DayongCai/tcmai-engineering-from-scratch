@@ -1,0 +1,67 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/09-jichu/10-bingli-xue/chapters/08-shuizhong/docs/zh.md",
+  "course": "10-bingli-xue",
+  "dept": "09-jichu",
+  "chapter": "08-shuizhong",
+  "title": "第 8 章 · 水肿：把「水多了」拆成两个平衡",
+  "segmentCount": 5,
+  "estimateTotalSeconds": 101,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 8 章 · 水肿：把「水多了」拆成两个平衡",
+      "slide": "title",
+      "spoken": "第 8 章 · 水肿：把「水多了」拆成两个平衡",
+      "estimateSeconds": 4,
+      "audio": "001.mp3",
+      "audioSeconds": 4.63
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「水肿是指过多液体在组织间隙或体腔内积聚的病理过程。」——教材·第8章·8.1.1（《病理学·第8章·8.1.1》）",
+      "slide": "title",
+      "spoken": "「水肿是指过多液体在组织间隙或体腔内积聚的病理过程。」——教材·第8章·8.1.1（《病理学·第8章·8.1.1》）",
+      "estimateSeconds": 13,
+      "audio": "002.mp3",
+      "audioSeconds": 11.95
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "这句话你能一字不改地背下来，甚至能补一句「按范围分局部性与全身性」。可换一个问法——这多出来的水，是血管里漏出来的，还是根本没排出去——你只剩「两个都有」。两条账混成一本，水肿的分类就只能是记忆题：心性从下肢开始、肾性从眼睑开始、肝性有腹水，背得下来，也说不出为什么。",
+      "slide": "problem",
+      "spoken": "这句话你能一字不改地背下来，甚至能补一句「按范围分局部性与全身性」。可换一个问法——这多出来的水，是血管里漏出来的，还是根本没排出去——你只剩「两个都有」。两条账混成一本，水肿的分类就只能是记忆题：心性从下肢开始、肾性从眼睑开始、肝性有腹水，背得下来，也说不出为什么。",
+      "estimateSeconds": 29,
+      "audio": "003.mp3",
+      "audioSeconds": 26.98
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（带教老师指着一双凹陷性水肿的下肢问「这是心还是肾」，学生把「心性从下垂部位开始、肾性从眼睑开始」念一遍就停；换成问「哪一本账先失衡、哪一本账是跟着坏的」，就彻底断线）+ 知识积累（本章 12 个单元、20,630 字的词频结构显示：机制 233 次居首、形态 177 次次之、病因 1 次几乎不提；四条机制类别各自覆盖 5 到 9 个单元，而「两条账怎么接」只在 8.1.3 一个单元里被写成完整关系——机制是满的，接口是单点的）",
+      "slide": "roots",
+      "spoken": "环境逼迫（带教老师指着一双凹陷性水肿的下肢问「这是心还是肾」，学生把「心性从下垂部位开始、肾性从眼睑开始」念一遍就停；换成问「哪一本账先失衡、哪一本账是跟着坏的」，就彻底断线）+ 知识积累（本章 12 个单元、20,630 字的词频结构显示：机制 233 次居首、形态 177 次次之、病因 1 次几乎不提；四条机制类别各自覆盖 5 到 9 个单元，而「两条账怎么接」只在 8.1.3 一个单元里被写成完整关系——机制是满的，接口是单点的）",
+      "estimateSeconds": 44,
+      "audio": "004.mp3",
+      "audioSeconds": 41.54
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "005.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 96.41,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

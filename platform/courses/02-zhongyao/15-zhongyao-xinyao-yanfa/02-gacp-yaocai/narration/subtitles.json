@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/15-zhongyao-xinyao-yanfa/02-gacp-yaocai/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 62.21,
+  "estimatedCues": 0,
+  "videoSeconds": 62.244667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.9,
+      "seconds": 4.9,
+      "estimated": false,
+      "text": "第 2 章 · 药材源头：GACP 与可持续供应",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.9,
+      "end": 20.33,
+      "seconds": 15.43,
+      "estimated": false,
+      "text": "「《中药新药研发·第2章》」——外源课无教材篇名，引外源条文；非教材原文篇名。本章要回答的是：药材源头：GACP 与可持续供应这一段的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.33,
+      "end": 27.15,
+      "seconds": 6.82,
+      "estimated": false,
+      "text": "源头这一段决定上限：药材不稳定，后面所有工艺都是给波动做补偿。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 27.15,
+      "end": 50.91,
+      "seconds": 23.76,
+      "estimated": false,
+      "text": "环境逼迫（中药新药的失败大多不是「做不出来」，而是「证不明」：源头、批间、监测任一段缺口，整条链就断）+ 知识积累（本章 1 单元 1,124 汉字；三辨主 工艺与产业化 7；四位面（证据链段）主 源头 21；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 50.91,
+      "end": 62.21,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

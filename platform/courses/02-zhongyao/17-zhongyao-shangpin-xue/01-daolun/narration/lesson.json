@@ -1,0 +1,67 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/02-zhongyao/17-zhongyao-shangpin-xue/chapters/01-daolun/docs/zh.md",
+  "course": "17-zhongyao-shangpin-xue",
+  "dept": "02-zhongyao",
+  "chapter": "01-daolun",
+  "title": "第 1 章 · 中药商品学导论",
+  "segmentCount": 5,
+  "estimateTotalSeconds": 64,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 1 章 · 中药商品学导论",
+      "slide": "title",
+      "spoken": "第 1 章 · 中药商品学导论",
+      "estimateSeconds": 3,
+      "audio": "001.mp3",
+      "audioSeconds": 2.98
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「《中国药典·一部》」——本章讲商品学导论，教材无篇名级引文；药典一部为商品法定依据，篇名按体例补足，**非本章原文篇名**。本章要回答的是：中药材不是农产品，为什么。",
+      "slide": "title",
+      "spoken": "「《中国药典·一部》」——本章讲商品学导论，教材无篇名级引文；药典一部为商品法定依据，篇名按体例补足，非本章原文篇名。本章要回答的是：中药材不是农产品，为什么。",
+      "estimateSeconds": 17,
+      "audio": "002.mp3",
+      "audioSeconds": 16.92
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "农产品按产地与外观定价，中药材还要按成分与疗效定等：同一批货，含量不够就不能入药——它是「有法定标准的商品」。",
+      "slide": "problem",
+      "spoken": "农产品按产地与外观定价，中药材还要按成分与疗效定等：同一批货，含量不够就不能入药——它是「有法定标准的商品」。",
+      "estimateSeconds": 12,
+      "audio": "003.mp3",
+      "audioSeconds": 11.28
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 1 单元 9,636 汉字；三辨主 **商品属性 173**；四位面（商品形态）主 **监管与追溯 228**；引书 **22 部 42 次**；数值类命中 0）",
+      "slide": "roots",
+      "spoken": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 1 单元 9,636 汉字；三辨主 商品属性 173；四位面（商品形态）主 监管与追溯 228；引书 22 部 42 次；数值类命中 0）",
+      "estimateSeconds": 21,
+      "audio": "004.mp3",
+      "audioSeconds": 22.1
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "005.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 64.58,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

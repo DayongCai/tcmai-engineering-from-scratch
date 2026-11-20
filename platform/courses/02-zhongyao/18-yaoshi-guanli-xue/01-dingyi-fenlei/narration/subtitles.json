@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/18-yaoshi-guanli-xue/01-dingyi-fenlei/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 66.33,
+  "estimatedCues": 0,
+  "videoSeconds": 66.352667,
+  "videoMinusNarrationSeconds": 0.023,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.1,
+      "seconds": 4.1,
+      "estimated": false,
+      "text": "第 1 章 · 药品注册的定义与分类管理",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.1,
+      "end": 27.21,
+      "seconds": 23.11,
+      "estimated": false,
+      "text": "「《药品注册管理办法（总局令第 27 号，2020）·第三条》」——外源课：条文依据为「外源·药品注册管理办法（总局令第 27 号，2020） 第三条」，非教材原文篇名。本章要回答的是：药品注册的定义与分类管理这一环节的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 27.21,
+      "end": 33.5,
+      "seconds": 6.29,
+      "estimated": false,
+      "text": "先定边界：药事管理管的是「准入—过程—退出」，注册是第一道准入。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 33.5,
+      "end": 55.03,
+      "seconds": 21.53,
+      "estimated": false,
+      "text": "环境逼迫（药事管理的失误大多不是「不知道该做什么」，而是「做了但没留证据、变了但没报」）+ 知识积累（本章 1 单元 1,278 汉字；三辨主 注册与审评 52；四位面（制度环节）主 注册 51；引书 1 部 1 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 55.03,
+      "end": 66.33,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "chapter": "02-weiqi-yingxue",
+  "slideCount": 9,
+  "segmentCount": 9,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 25
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 107
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 199
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 111
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 2816
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 484
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 203
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 195
+    },
+    {
+      "n": 9,
+      "segment": 9,
+      "chars": 52
+    }
+  ]
+}

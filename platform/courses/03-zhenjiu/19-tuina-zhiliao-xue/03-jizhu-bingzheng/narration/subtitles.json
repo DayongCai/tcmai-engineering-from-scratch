@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/19-tuina-zhiliao-xue/03-jizhu-bingzheng/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 57.95,
+  "estimatedCues": 0,
+  "videoSeconds": 57.982667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.38,
+      "seconds": 3.38,
+      "estimated": false,
+      "text": "第 3 章 · 脊柱病证推拿治疗",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.38,
+      "end": 15.67,
+      "seconds": 12.29,
+      "estimated": false,
+      "text": "「《素问·痹论》」——教材·第3章·3.1.1。本章要回答的是：脊柱病证的推拿方案，为什么颈椎病与腰突的手法几乎一样。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 15.67,
+      "end": 24.31,
+      "seconds": 8.64,
+      "estimated": false,
+      "text": "教材按病写方案，但手法组合高度重叠；真正的区别在分型、禁忌与手法力度的上限。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 24.31,
+      "end": 46.65,
+      "seconds": 22.34,
+      "estimated": false,
+      "text": "环境逼迫（病人来了是为治病，不是为学手法；方案错了，手法越熟越糟）+ 知识积累（本章 8 单元 18,254 汉字；三辨主 病证辨识 262；四位面（病证部位）主 脊柱 667；引书 7 部 22 次；数值类命中 93）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 46.65,
+      "end": 57.95,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

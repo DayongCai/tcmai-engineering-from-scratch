@@ -5,7 +5,7 @@ window.TCMAI_BOOKS = {
   "totals": {
     "volumes": 5,
     "chapters": 2690,
-    "words": 36527962,
+    "words": 36585388,
     "epub": 5,
     "epubOnDisk": 5,
     "pdfOnDisk": 5
@@ -159,25 +159,25 @@ window.TCMAI_BOOKS = {
       "audience": "毕业设计期学生",
       "focus": "工具书、毕业论文写作指南、教学法",
       "chapters": 76,
-      "words": 77093,
+      "words": 134519,
       "epub": {
         "path": "textbooks/build/volume-5-yi.epub",
-        "bytes": 307791,
+        "bytes": 391409,
         "ok": true
       },
       "pdf": {
         "path": "textbooks/build/volume-5-yi.pdf",
-        "bytes": 501010,
+        "bytes": 712499,
         "ok": true
       },
       "html": {
         "path": "textbooks/build/volume-5-yi.html",
-        "bytes": 320203,
+        "bytes": 504457,
         "ok": true
       },
       "md": {
         "path": "textbooks/build/volume-5-yi.md",
-        "bytes": 220436,
+        "bytes": 391573,
         "ok": true
       }
     }

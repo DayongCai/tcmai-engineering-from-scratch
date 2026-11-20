@@ -1,0 +1,90 @@
+# [tcmP] 课程编排 · 09-jichu/01-renti-jiepou-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/09-jichu/01-renti-jiepou-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 01-renti-jiepou-xue
+title: 人体解剖学
+en: Human Anatomy
+dept: 09-jichu
+dept_title: 基础医学院
+semester: 1
+stage: sheng
+hours: 72
+chapters_target: 10
+bridge: 解剖结构→本体图谱 / 断层影像→空间配准
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xulun
+    title: 第1章 绪论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.95
+  - slug: 02-yundong-xitong
+    title: 第2章 运动系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.96
+  - slug: 03-xiaohua-xitong
+    title: 第3章 消化系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.93
+  - slug: 04-huxi-xitong
+    title: 第4章 呼吸系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.93
+  - slug: 05-miniao-xitong
+    title: 第5章 泌尿系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.92
+  - slug: 06-shengzhi-xitong
+    title: 第6章 生殖系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.93
+  - slug: 07-xunhuan-xitong
+    title: 第7章 循环系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 08-neifenmi-xitong
+    title: 第8章 内分泌系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.96
+  - slug: 09-ganjueqi
+    title: 第9章 感觉器
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.94
+  - slug: 10-shenjing-xitong
+    title: 第10章 神经系统
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.94

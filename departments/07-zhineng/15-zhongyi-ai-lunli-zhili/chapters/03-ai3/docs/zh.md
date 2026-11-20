@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（l）+ 知识积累（本章 5 单元 7,000 汉字；三辨主 **法规与责任 50**；四位面（章群结构）主 **隐私与伦理 7000**；引书 **0 部 0 次**；数值类命中 0）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 44 单元 / 64,541 汉字）；单元层 `standards/zhongyi-ai-lunli-zhili/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 44 单元 / 64,541 汉字）；单元层 `standards/zhongyi-ai-lunli-zhili/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -104,7 +104,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py zhongyi-ai-lunli-zhili "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py zhongyi-ai-lunli-zhili "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py zhongyi-ai-lunli-zhili                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

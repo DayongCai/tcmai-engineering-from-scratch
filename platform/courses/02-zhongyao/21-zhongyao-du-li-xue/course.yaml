@@ -1,0 +1,90 @@
+# [tcmP] 课程编排 · 02-zhongyao/21-zhongyao-du-li-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/02-zhongyao/21-zhongyao-du-li-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 21-zhongyao-du-li-xue
+title: 中药毒理学
+en: TCM Toxicology
+dept: 02-zhongyao
+dept_title: 中药系
+semester: 6
+stage: zhang
+hours: 54
+chapters_target: 10
+bridge: 毒性剂量→安全窗计算 / 不良反应信号→统计检验
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-du-xing-gainian
+    title: 第1章 毒理学的对象：剂量、分级与安全窗
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.09
+  - slug: 02-du-xing-wuzhi
+    title: 第2章 毒性物质基础：成分类型与矿物药
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.06
+  - slug: 03-gan-du-xing
+    title: 第3章 肝毒性：为什么肝最先受损
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.06
+  - slug: 04-shen-du-xing
+    title: 第4章 肾毒性：马兜铃酸的教训
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.05
+  - slug: 05-xin-shen-jing-du-xing
+    title: 第5章 心与神经毒性：乌头碱的半小时
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.07
+  - slug: 06-shengzhi-du-xing
+    title: 第6章 生殖与遗传毒性：妊娠禁忌的分级
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.17
+    measured_minutes: 1.13
+  - slug: 07-peiwu-paozhi-jian-du
+    title: 第7章 配伍与炮制减毒：十八反十九畏怎么读
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.17
+    measured_minutes: 1.16
+  - slug: 08-jian-ce-anquan-bianjie
+    title: 第8章 不良反应监测与安全边界
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.13
+    measured_minutes: 1.11
+  - slug: 09-shiyan-anquan-pingjia
+    title: 第9章 毒理实验与安全评价：LD50、亚慢性、遗传毒性与 GLP
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.37
+    measured_minutes: 1.34
+  - slug: 10-zhiyanxing-changqi
+    title: 第10章 致癌性与长期暴露：从「中毒」到「肿瘤」的终点
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.28
+    measured_minutes: 1.24

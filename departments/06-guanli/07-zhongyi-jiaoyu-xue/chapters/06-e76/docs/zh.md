@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（教育学的判据是「目标可测、过程可查、结果可评」）+ 知识积累（本章 23 单元 50,206 汉字；三辨主 **制度与规则 360**；四位面（章群结构）主 **评价与质量 50206**；引书 **102 部 177 次**；数值类命中 10）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 163 单元 / 160,088 汉字）；单元层 `standards/07-zhongyi-jiaoyu-xue/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 163 单元 / 160,088 汉字）；单元层 `standards/07-zhongyi-jiaoyu-xue/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -212,7 +212,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py 07-zhongyi-jiaoyu-xue "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py 07-zhongyi-jiaoyu-xue "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py 07-zhongyi-jiaoyu-xue                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

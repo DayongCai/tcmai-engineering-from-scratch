@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/18-zhongyi-gubing-xue/05-huaxing-guisuiyan-guanjieyan/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 73.61,
+  "estimatedCues": 0,
+  "videoSeconds": 73.644667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.74,
+      "seconds": 5.74,
+      "estimated": false,
+      "text": "第 5 章 · 化脓性骨髓炎与化脓性关节炎：脓在哪一层",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.74,
+      "end": 17.98,
+      "seconds": 12.24,
+      "estimated": false,
+      "text": "「寒邪客于经络之中则血泣，血泣则不通，不通则卫气归之，不得复反，故痈肿」——教材·第5章·5.1.1（《灵枢·痈疽》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 17.98,
+      "end": 39.1,
+      "seconds": 21.12,
+      "estimated": false,
+      "text": "骨髓炎与化脓性关节炎都是「化脓」，但脓在骨内还是在关节腔，处理完全不同：一个要引流加清死骨，一个要关节穿刺引流加保功能。学生常把两者混为一谈，于是把关节化脓当骨内感染拖，关节软骨几天内就被破坏。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 39.1,
+      "end": 57.8,
+      "seconds": 18.7,
+      "estimated": false,
+      "text": "环境逼迫（急性化脓进展以天计，慢性化脓以年计）+ 知识积累（本章仅 3 单元但 13,721 汉字，四位面主骨蚀 235（全书最高）；数值 0——教材在此章几乎不写数值，剂量交给临床）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 57.8,
+      "end": 62.31,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 62.31,
+      "end": 73.61,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

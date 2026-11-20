@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/18-zhongyi-gubing-xue/04-zhiliao-fangfa/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 65.49,
+  "estimatedCues": 0,
+  "videoSeconds": 65.522667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.97,
+      "seconds": 4.97,
+      "estimated": false,
+      "text": "第 4 章 · 治疗方法：五条路，先定边界再选路",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.97,
+      "end": 13.56,
+      "seconds": 8.59,
+      "estimated": false,
+      "text": "「坚者削之，留者攻之，结者散之」——教材·第4章·4.1.2（《素问·至真要大论》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 13.56,
+      "end": 31.44,
+      "seconds": 17.88,
+      "estimated": false,
+      "text": "骨病的治疗手段多（内治、外治、手法、固定牵引、手术、练功康复），学生容易「见什么用什么」。教材的写法是先给原则再给手段：分期论治 + 攻补兼施 + 顾护脾胃，然后才是五条路。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 31.44,
+      "end": 49.68,
+      "seconds": 18.24,
+      "estimated": false,
+      "text": "环境逼迫（骨病疗程长，须在「攻」与「补」之间反复换挡）+ 知识积累（本章 10 单元 16,234 汉字，为全书单元最多；引书 23 部 37 次；数值 6——治法章几乎不带量，因为剂量须个体化）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 49.68,
+      "end": 54.19,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 54.19,
+      "end": 65.49,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

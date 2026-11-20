@@ -1,29 +1,32 @@
 {
-  "slug": "03-yixue-xibao-shengwu-xue",
-  "title": "医学细胞生物学",
-  "en": "Medical Cell Biology",
-  "deptSlug": "09-jichu",
-  "deptTitle": "基础医学院",
-  "globalN": 123,
-  "type": "Core",
-  "semester": 1,
-  "stage": "sheng",
-  "stageTitle": "生",
-  "hours": 36,
-  "bridge": "细胞信号→微分方程 / 通路→有向图",
-  "chaptersTarget": 12,
-  "chapters": [],
-  "platform": {
-    "id": "tcmP",
-    "coursePath": "platform/courses/09-jichu/03-yixue-xibao-shengwu-xue",
-    "videosPublished": 0,
-    "status": "planned"
-  },
-  "textbook": {
-    "id": "textbooks",
-    "path": "textbooks/09-jichu/03-yixue-xibao-shengwu-xue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
-  }
+ "slug": "03-yixue-xibao-shengwu-xue",
+ "title": "医学细胞生物学",
+ "en": "Medical Cell Biology",
+ "deptSlug": "09-jichu",
+ "deptTitle": "基础医学院",
+ "globalN": 123,
+ "type": "Core",
+ "semester": 1,
+ "stage": "sheng",
+ "stageTitle": "生",
+ "hours": 36,
+ "bridge": "细胞信号→微分方程 / 通路→有向图",
+ "chaptersTarget": 12,
+ "chapters": [],
+ "platform": {
+  "id": "tcmP",
+  "coursePath": "platform/courses/09-jichu/03-yixue-xibao-shengwu-xue",
+  "videosPublished": 0,
+  "status": "planned"
+ },
+ "textbook": {
+  "id": "textbooks",
+  "path": "textbooks/09-jichu/03-yixue-xibao-shengwu-xue",
+  "chaptersWritten": 12,
+  "words": 205699,
+  "status": "wip",
+  "layer": "derived",
+  "source": "standards/yixue-xibao-shengwu-xue/units.json（派生底本：144 单元；母本 组织学与胚胎学 / 生理学 / 生物化学）",
+  "note": "12 章 / 165,055 汉字（章均 13,754），达学术型 6,000 字线。"
+ }
 }

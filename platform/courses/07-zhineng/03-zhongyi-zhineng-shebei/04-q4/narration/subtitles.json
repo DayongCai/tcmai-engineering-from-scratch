@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/07-zhineng/03-zhongyi-zhineng-shebei/04-q4/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 93.81,
+  "estimatedCues": 0,
+  "videoSeconds": 93.832667,
+  "videoMinusNarrationSeconds": 0.023,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 16.73,
+      "seconds": 16.73,
+      "estimated": false,
+      "text": "第 4 章 · 智能四诊数据采集（与四元 _／智能中医诊疗标准化：数据 ·／典型应用：中医慢性疼痛智能诊／智慧中医学：内涵、任务与教材／智慧中医伦理要求与基本条件",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 16.73,
+      "end": 44.11,
+      "seconds": 27.38,
+      "estimated": false,
+      "text": "「《中医智能仪器与可穿戴设备·智能四诊数据采集（与四元 _／智》」——教材第4章。本章要回答的是：智能四诊数据采集（与四元 _／智能中医诊疗标准化：数据 ·／典型应用：中医慢性疼痛智能诊／智慧中医学：内涵、任务与教材／智慧中医伦理要求与基本条件：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 44.11,
+      "end": 61.2,
+      "seconds": 17.09,
+      "estimated": false,
+      "text": "智能四诊数据采集（与四元 _／智能中医诊疗标准化：数据 ·／典型应用：中医慢性疼痛智能诊／智慧中医学：内涵、任务与教材／智慧中医伦理要求与基本条件：本课第 4 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 61.2,
+      "end": 82.51,
+      "seconds": 21.31,
+      "estimated": false,
+      "text": "环境逼迫（智能设备的判据是「物理量—采集链路—质控指标」三件套）+ 知识积累（本章 18 单元 1,663 汉字；三辨主 方法与技术 27；四位面（章群结构）主 位面2 1663；引书 3 部 4 次；数值类命中 1）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 82.51,
+      "end": 93.81,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

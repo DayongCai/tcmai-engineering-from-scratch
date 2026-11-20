@@ -1,0 +1,313 @@
+{
+  "$generated": "手工维护：教材开稿登记（无底本表，按团体标准撰写层逐章登记依据）",
+  "subject": "08-wuguan/13-kouqiang-zhengji-xue",
+  "title": "口腔正畸学",
+  "mode": "开稿",
+  "teachingChapters": 10,
+  "textbookChaptersBefore": 0,
+  "textbookChaptersAfter": 10,
+  "why": "本课无底本表，教材按 4 份中华口腔医学会团体标准／专家共识搭建：33 条条文逐条登记在 standards/kouqiang-zhengji/外源条文.json，全部通过 sha256 与逐字校勘。章目与教学计划 10 章逐条对齐。",
+  "layerNote": "全部章节为「本库撰写层」——不是源正文层，不得声称摘自某本教材；每条依据可回条号。",
+  "chapters": [
+    {
+      "no": 1,
+      "file": "textbooks/08-wuguan/13-kouqiang-zhengji-xue/01-第1章-隐形矫治的对象与从业要求.md",
+      "title": "隐形矫治的对象与从业要求",
+      "teachingTitle": "隐形矫治的对象与从业要求",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2093,
+        "citations": 7,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-zhengji/外源条文.json",
+          "note": "33 条 T/CHSA 团标/共识条文；本章引 7 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-zhengji/补源登记.json",
+          "note": "4 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-zhengji/专题-正畸操作路径.md",
+          "note": "同 33 条条文按诊疗路径的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 33/33 逐字可查；node tests/test_source_topics.js → 本章 7 处引用可核、1 段摘句逐字命中"
+    },
+    {
+      "no": 2,
+      "file": "textbooks/08-wuguan/13-kouqiang-zhengji-xue/02-第2章-治疗风险.md",
+      "title": "治疗风险：依从性、移动偏差与并发症",
+      "teachingTitle": "治疗风险：依从性、移动偏差与并发症",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2042,
+        "citations": 9,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-zhengji/外源条文.json",
+          "note": "33 条 T/CHSA 团标/共识条文；本章引 9 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-zhengji/补源登记.json",
+          "note": "4 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-zhengji/专题-正畸操作路径.md",
+          "note": "同 33 条条文按诊疗路径的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 33/33 逐字可查；node tests/test_source_topics.js → 本章 9 处引用可核、1 段摘句逐字命中"
+    },
+    {
+      "no": 3,
+      "file": "textbooks/08-wuguan/13-kouqiang-zhengji-xue/03-第3章-适应证与可预测性分级.md",
+      "title": "适应证与可预测性分级",
+      "teachingTitle": "适应证与可预测性分级",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1978,
+        "citations": 8,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-zhengji/外源条文.json",
+          "note": "33 条 T/CHSA 团标/共识条文；本章引 8 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-zhengji/补源登记.json",
+          "note": "4 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-zhengji/专题-正畸操作路径.md",
+          "note": "同 33 条条文按诊疗路径的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 33/33 逐字可查；node tests/test_source_topics.js → 本章 8 处引用可核、1 段摘句逐字命中"
+    },
+    {
+      "no": 4,
+      "file": "textbooks/08-wuguan/13-kouqiang-zhengji-xue/04-第4章-资料采集.md",
+      "title": "资料采集：影像与数字模型",
+      "teachingTitle": "资料采集：影像与数字模型",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1910,
+        "citations": 5,
+        "quotes": 0
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-zhengji/外源条文.json",
+          "note": "33 条 T/CHSA 团标/共识条文；本章引 5 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-zhengji/补源登记.json",
+          "note": "4 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-zhengji/专题-正畸操作路径.md",
+          "note": "同 33 条条文按诊疗路径的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 33/33 逐字可查；node tests/test_source_topics.js → 本章 5 处引用可核、0 段摘句逐字命中"
+    },
+    {
+      "no": 5,
+      "file": "textbooks/08-wuguan/13-kouqiang-zhengji-xue/05-第5章-方案设计流程.md",
+      "title": "方案设计流程：目标、虚拟排牙、顺序与附件",
+      "teachingTitle": "方案设计流程：目标、虚拟排牙、顺序与附件",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1891,
+        "citations": 7,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-zhengji/外源条文.json",
+          "note": "33 条 T/CHSA 团标/共识条文；本章引 7 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-zhengji/补源登记.json",
+          "note": "4 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-zhengji/专题-正畸操作路径.md",
+          "note": "同 33 条条文按诊疗路径的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 33/33 逐字可查；node tests/test_source_topics.js → 本章 7 处引用可核、1 段摘句逐字命中"
+    },
+    {
+      "no": 6,
+      "file": "textbooks/08-wuguan/13-kouqiang-zhengji-xue/06-第6章-推磨牙向远中.md",
+      "title": "推磨牙向远中：适应证、禁忌与设计",
+      "teachingTitle": "推磨牙向远中：适应证、禁忌与设计",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1986,
+        "citations": 7,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-zhengji/外源条文.json",
+          "note": "33 条 T/CHSA 团标/共识条文；本章引 7 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-zhengji/补源登记.json",
+          "note": "4 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-zhengji/专题-正畸操作路径.md",
+          "note": "同 33 条条文按诊疗路径的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 33/33 逐字可查；node tests/test_source_topics.js → 本章 7 处引用可核、1 段摘句逐字命中"
+    },
+    {
+      "no": 7,
+      "file": "textbooks/08-wuguan/13-kouqiang-zhengji-xue/07-第7章-邻面去釉.md",
+      "title": "邻面去釉：适应证、禁忌与操作规范",
+      "teachingTitle": "邻面去釉：适应证、禁忌与操作规范",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1931,
+        "citations": 6,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-zhengji/外源条文.json",
+          "note": "33 条 T/CHSA 团标/共识条文；本章引 6 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-zhengji/补源登记.json",
+          "note": "4 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-zhengji/专题-正畸操作路径.md",
+          "note": "同 33 条条文按诊疗路径的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 33/33 逐字可查；node tests/test_source_topics.js → 本章 6 处引用可核、1 段摘句逐字命中"
+    },
+    {
+      "no": 8,
+      "file": "textbooks/08-wuguan/13-kouqiang-zhengji-xue/08-第8章-分步移动.md",
+      "title": "分步移动：为什么不能一次到位",
+      "teachingTitle": "分步移动：为什么不能一次到位",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1842,
+        "citations": 7,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-zhengji/外源条文.json",
+          "note": "33 条 T/CHSA 团标/共识条文；本章引 7 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-zhengji/补源登记.json",
+          "note": "4 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-zhengji/专题-正畸操作路径.md",
+          "note": "同 33 条条文按诊疗路径的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 33/33 逐字可查；node tests/test_source_topics.js → 本章 7 处引用可核、1 段摘句逐字命中"
+    },
+    {
+      "no": 9,
+      "file": "textbooks/08-wuguan/13-kouqiang-zhengji-xue/09-第9章-儿童间隙管理.md",
+      "title": "儿童间隙管理：五类保持器与选择",
+      "teachingTitle": "儿童间隙管理：五类保持器与选择",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1869,
+        "citations": 9,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-zhengji/外源条文.json",
+          "note": "33 条 T/CHSA 团标/共识条文；本章引 9 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-zhengji/补源登记.json",
+          "note": "4 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-zhengji/专题-正畸操作路径.md",
+          "note": "同 33 条条文按诊疗路径的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 33/33 逐字可查；node tests/test_source_topics.js → 本章 9 处引用可核、1 段摘句逐字命中"
+    },
+    {
+      "no": 10,
+      "file": "textbooks/08-wuguan/13-kouqiang-zhengji-xue/10-第10章-异位萌出与唇腭裂序列.md",
+      "title": "异位萌出与唇腭裂序列中的正畸",
+      "teachingTitle": "异位萌出与唇腭裂序列中的正畸",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2102,
+        "citations": 11,
+        "quotes": 2
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/kouqiang-zhengji/外源条文.json",
+          "note": "33 条 T/CHSA 团标/共识条文；本章引 11 处「外源·<团标名> 第N条」，逐条落在登记内且 verified"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/kouqiang-zhengji/补源登记.json",
+          "note": "4 份团标 sha256 / bytes / 页数 / 文本层由 build_kouqiang_sources.py --all --check 现算"
+        },
+        {
+          "kind": "专题",
+          "path": "standards/kouqiang-zhengji/专题-正畸操作路径.md",
+          "note": "同 33 条条文按诊疗路径的重组稿，本章 N.4 与之互链"
+        }
+      ],
+      "verified": "2026-11-15：python scripts/build_kouqiang_sources.py --all --check → 33/33 逐字可查；node tests/test_source_topics.js → 本章 11 处引用可核、2 段摘句逐字命中"
+    }
+  ]
+}

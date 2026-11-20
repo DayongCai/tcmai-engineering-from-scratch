@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/08-wuguan/13-kouqiang-zhengji-xue/08-fenbu-yidong/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 67.37,
+  "estimatedCues": 0,
+  "videoSeconds": 67.394667,
+  "videoMinusNarrationSeconds": 0.025,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.06,
+      "seconds": 4.06,
+      "estimated": false,
+      "text": "第 8 章 · 分步移动：为什么不能一次到位",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.06,
+      "end": 28.59,
+      "seconds": 24.53,
+      "estimated": false,
+      "text": "「《口腔正畸无托槽隐形矫治技术指南·第6.3.1条》」——外源课：条文依据为「外源·T/CHSA 003—2021 口腔正畸无托槽隐形矫治技术指南 第6.3.1条」，非教材原文篇名。本章要回答的是：分步移动：为什么不能一次到位这一环的判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 28.59,
+      "end": 32.09,
+      "seconds": 3.5,
+      "estimated": false,
+      "text": "一次移动三颗牙，等于三颗都不动。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 32.09,
+      "end": 56.07,
+      "seconds": 23.98,
+      "estimated": false,
+      "text": "环境逼迫（正畸的失误大多不是「不会排牙」，而是「适应证定级错、资料不足、分步没设计、窗口错过」）+ 知识积累（本章 1 单元 1,197 汉字；三辨主 生物力学与移动 58；四位面（治疗场景）主 隐形矫治 18；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 56.07,
+      "end": 67.37,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

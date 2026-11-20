@@ -1,0 +1,47 @@
+{
+  "chapter": "07-shaoyin-xuyang",
+  "slideCount": 8,
+  "segmentCount": 8,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 24
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 47
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 76
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 40
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 1476
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 141
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 162
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 52
+    }
+  ]
+}

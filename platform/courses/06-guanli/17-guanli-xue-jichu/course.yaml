@@ -1,0 +1,138 @@
+# [tcmP] 课程编排 · 06-guanli/17-guanli-xue-jichu
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/06-guanli/17-guanli-xue-jichu/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 17-guanli-xue-jichu
+title: 管理学基础
+en: Foundations of Management
+dept: 06-guanli
+dept_title: 管理系
+semester: 6
+stage: zhang
+hours: 36
+chapters_target: 18
+bridge: 管理职能→流程建模 / 决策→效用函数
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-m1
+    title: 第1章 管理与管理学
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.82
+    measured_minutes: 0.84
+  - slug: 02-m2
+    title: 第2章 管理理论的形成与发展
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.89
+  - slug: 03-m3
+    title: 第3章 管理的基本原理与方法
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.88
+  - slug: 04-m4
+    title: 第4章 决策
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.78
+    measured_minutes: 0.78
+  - slug: 05-m5
+    title: 第5章 计划
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.78
+    measured_minutes: 0.77
+  - slug: 06-m6
+    title: 第6章 战略管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.82
+    measured_minutes: 0.82
+  - slug: 07-m7
+    title: 第7章 组织设计与组织结构
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.88
+  - slug: 08-m8
+    title: 第8章 组织变革与组织文化
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.87
+  - slug: 09-m9
+    title: 第9章 人力资源管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.82
+    measured_minutes: 0.85
+  - slug: 10-m10
+    title: 第10章 领导
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.78
+    measured_minutes: 0.79
+  - slug: 11-m11
+    title: 第11章 激励
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.8
+    measured_minutes: 0.79
+  - slug: 12-m12
+    title: 第12章 沟通
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.78
+    measured_minutes: 0.8
+  - slug: 13-m13
+    title: 第13章 控制
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.8
+    measured_minutes: 0.8
+  - slug: 14-m14
+    title: 第14章 管理创新与创业
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.88
+  - slug: 15-m15
+    title: 第15章 管理伦理与社会责任
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.89
+  - slug: 16-m16
+    title: 第16章 管理信息系统与数字化管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.95
+  - slug: 17-m17
+    title: 第17章 中医药机构管理（中医专题）
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.93
+  - slug: 18-m18
+    title: 第18章 管理学基础与AI教学平台
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.93

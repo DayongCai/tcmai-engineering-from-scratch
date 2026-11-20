@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/04-gushang/03-gushang-kexue-jichu/06-guzhe-er/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 62.83,
+  "estimatedCues": 0,
+  "videoSeconds": 62.858667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.7,
+      "seconds": 3.7,
+      "estimated": false,
+      "text": "第 6 章 · 骨折（二）：下肢与躯干",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.7,
+      "end": 22.35,
+      "seconds": 18.65,
+      "estimated": false,
+      "text": "「《中医骨伤科学基础·骨折（二）：下肢与躯干》」——教材篇名级；课程章号对应教材第 6b 章。本章要回答的是：骨折（二）：下肢与躯干这一章，学完能不能独立完成一次中医骨伤科学基础的判定。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 22.35,
+      "end": 26.26,
+      "seconds": 3.91,
+      "estimated": false,
+      "text": "负重骨与脊柱：固定强度与并发症。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 26.26,
+      "end": 51.53,
+      "seconds": 25.27,
+      "estimated": false,
+      "text": "环境逼迫（骨伤科的第一条纪律是「先诊断、再动手」：分类、诊查、治疗三步不能跳）+ 知识积累（本章 20 单元 40,358 汉字；三辨主 手法与固定 511；四位面（章群结构）主 骨折 40358；引书 14 部 155 次；数值类命中 37）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 51.53,
+      "end": 62.83,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

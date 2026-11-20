@@ -1,0 +1,106 @@
+{
+  "$generated": "手工维护：中医基础理论「教材 13 章 vs 教学 10 章」的口径登记（两把尺子，不补章）。",
+  "subject": "01-zhongyi/01-zhongyi-jichu-lilun",
+  "title": "中医基础理论",
+  "teachingChapters": 10,
+  "textbookChaptersBefore": 13,
+  "textbookChaptersAfter": 13,
+  "chapters": [],
+  "noSupplement": {
+    "reason": "教材按底本体系切 13 章（含形体官窍、养生康复两块），教学按 10 个专题组织：病因/发病/病机合成一章，阴阳与五行分列，另设「中医思维方法」。教材第 7 章（形体与官窍）与第 12 章（养生与康复）**教学侧无独立章位**，内容由教学第 3 章（藏象）与第 8 章（防治原则）带过。",
+    "verdict": "口径差（两把尺子）：教材按底本切分，教学按模块合并。不补章、不拆散；换算表见教材 附录B，读者可逐条查对。",
+    "mapping": [
+      {
+        "plan": 1,
+        "title": "阴阳学说 → 二分类：从零实现逻辑回归",
+        "textbookChapters": [
+          2
+        ],
+        "probe": "阴阳"
+      },
+      {
+        "plan": 2,
+        "title": "五行学说 → 多分类：从零实现 Softmax",
+        "textbookChapters": [
+          3
+        ],
+        "probe": "五行"
+      },
+      {
+        "plan": 3,
+        "title": "藏象学说 → 知识图谱：脏腑关系的图表示",
+        "textbookChapters": [
+          4
+        ],
+        "probe": "藏象"
+      },
+      {
+        "plan": 4,
+        "title": "绪论：中医学的学科属性与工程化边界",
+        "textbookChapters": [
+          1
+        ],
+        "probe": "绪论"
+      },
+      {
+        "plan": 5,
+        "title": "气血津液 → 状态向量与守恒约束",
+        "textbookChapters": [
+          5
+        ],
+        "probe": "津液"
+      },
+      {
+        "plan": 6,
+        "title": "经络学说 → 图上的路径与可及性",
+        "textbookChapters": [
+          6
+        ],
+        "probe": "经络"
+      },
+      {
+        "plan": 7,
+        "title": "病因病机 → 因果图与失效模式",
+        "textbookChapters": [
+          8,
+          9,
+          10
+        ],
+        "probe": "病因"
+      },
+      {
+        "plan": 8,
+        "title": "防治原则 → 策略选择与代价函数",
+        "textbookChapters": [
+          11
+        ],
+        "probe": "防治原则"
+      },
+      {
+        "plan": 9,
+        "title": "体质与发病 → 先验分布与风险分层",
+        "textbookChapters": [
+          13,
+          9
+        ],
+        "probe": "体质"
+      },
+      {
+        "plan": 10,
+        "title": "中医思维方法：形式化能做到与做不到的",
+        "textbookChapters": [
+          3
+        ],
+        "probe": "思维方法"
+      }
+    ],
+    "contentGaps": [],
+    "verifiedBy": "2026-11-16：教学 10 章 → 教材 13 章映射 10 行；probe 在所指教材章内 grep 命中",
+    "textbookChaptersWithoutPlan": [
+      7,
+      12
+    ],
+    "withoutPlanNote": "这些教材章在教学计划里没有独立章位，内容由相邻教学章带过；不是缺内容，是教学按专题合并的结果。",
+    "extraNote": "教材 13 章 = 底本源表 12 章 + 本库改写层新增第 3 章「哲学基础与思维方法」；故 board 的 registry-disk-chapters（源表 12 → 磁盘 13）是预期的，不是漂移。"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/05-huli/19-huli-renwen-goutong/chapters/06-teshu-qingjing/docs/zh.md",
+  "course": "19-huli-renwen-goutong",
+  "dept": "05-huli",
+  "chapter": "06-teshu-qingjing",
+  "title": "第 6 章 · 特殊情境的沟通要求",
+  "segmentCount": 5,
+  "estimateTotalSeconds": 57,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 6 章 · 特殊情境的沟通要求",
+      "slide": "title",
+      "spoken": "第 6 章 · 特殊情境的沟通要求",
+      "estimateSeconds": 3,
+      "audio": "001.mp3",
+      "audioSeconds": 3.41
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「《护理人文修养与沟通·第6章》」——教材第 6 章章目级引文；教材无篇名级引文，**非本章原文篇名**。本章要回答的是：特殊情境的沟通要求这一章的核心判据是什么。",
+      "slide": "title",
+      "spoken": "「《护理人文修养与沟通·第6章》」——教材第 6 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：特殊情境的沟通要求这一章的核心判据是什么。",
+      "estimateSeconds": 17,
+      "audio": "002.mp3",
+      "audioSeconds": 15.94
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "特殊情境独立成章：坏消息、冲突、投诉都在这里。",
+      "slide": "problem",
+      "spoken": "特殊情境独立成章：坏消息、冲突、投诉都在这里。",
+      "estimateSeconds": 5,
+      "audio": "003.mp3",
+      "audioSeconds": 5.64
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（沟通的难点不在说什么，而在「对方能不能听进去、听完愿不愿意配合」）+ 知识积累（本章 1 单元 20,878 汉字；三辨主 **沟通技巧 320**；四位面（沟通场景）主 **家属 26**；引书 **0 部 0 次**；数值类命中 0）",
+      "slide": "roots",
+      "spoken": "环境逼迫（沟通的难点不在说什么，而在「对方能不能听进去、听完愿不愿意配合」）+ 知识积累（本章 1 单元 20,878 汉字；三辨主 沟通技巧 320；四位面（沟通场景）主 家属 26；引书 0 部 0 次；数值类命中 0）",
+      "estimateSeconds": 21,
+      "audio": "004.mp3",
+      "audioSeconds": 21.79
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "005.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 58.08,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

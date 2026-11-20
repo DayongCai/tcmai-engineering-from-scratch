@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/05-zhongyi-zhen-duan-xue/03-shezhen-tese/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 67.14,
+  "estimatedCues": 0,
+  "videoSeconds": 67.182667,
+  "videoMinusNarrationSeconds": 0.043,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 7.34,
+      "seconds": 7.34,
+      "estimated": false,
+      "text": "第 3 章 · 舌诊：27 个特征词，是望诊里唯一能拆成「离散取值」的部分",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 7.34,
+      "end": 21.86,
+      "seconds": 14.52,
+      "estimated": false,
+      "text": "「舌为心之苗（心开窍于舌），舌又为脾之外候；足太阴脾经、足少阴肾经、足厥阴肝经等均络于舌本。」——《中医诊断学·第2章·2.3.1》（教材）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 21.86,
+      "end": 40.82,
+      "seconds": 18.96,
+      "estimated": false,
+      "text": "老师说「舌淡红苔薄白」，你觉得懂了。但让你把舌象拆成可存档的字段——舌色取哪几个值、舌形有几种、苔质到底六项还是七项——你得回教材一格格数。数完你会发现：苔质是 7 项，不是常说的 6 项。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 40.82,
+      "end": 55.84,
+      "seconds": 15.02,
+      "estimated": false,
+      "text": "环境逼迫（病历里只能写「舌淡红苔薄白」六个字，无法归档、无法复核） + 知识积累（27 个特征词 × 五组离散取值 = 一份可以直译成字段表的舌象模型）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 55.84,
+      "end": 67.14,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

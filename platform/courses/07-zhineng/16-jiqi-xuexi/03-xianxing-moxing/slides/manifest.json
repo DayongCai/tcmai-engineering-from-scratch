@@ -1,0 +1,32 @@
+{
+  "chapter": "03-xianxing-moxing",
+  "slideCount": 5,
+  "segmentCount": 5,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 8
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 59
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 16
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 127
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 52
+    }
+  ]
+}

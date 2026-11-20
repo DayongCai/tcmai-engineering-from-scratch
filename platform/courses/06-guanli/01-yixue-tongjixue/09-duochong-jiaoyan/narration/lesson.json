@@ -1,0 +1,111 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/06-guanli/01-yixue-tongjixue/chapters/09-duochong-jiaoyan/docs/zh.md",
+  "course": "01-yixue-tongjixue",
+  "dept": "06-guanli",
+  "chapter": "09-duochong-jiaoyan",
+  "title": "第 9 章 · 多重比较与假阳性控制：为什么「做了 20 个指标，总有 1 个显著」",
+  "segmentCount": 9,
+  "estimateTotalSeconds": 215,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 9 章 · 多重比较与假阳性控制：为什么「做了 20 个指标，总有 1 个显著」",
+      "slide": "title",
+      "spoken": "第 9 章 · 多重比较与假阳性控制：为什么「做了 20 个指标，总有 1 个显著」",
+      "estimateSeconds": 7,
+      "audio": "001.mp3",
+      "audioSeconds": 6.98
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「谨守病机，各司其属。」——《素问·至真要大论》",
+      "slide": "title",
+      "spoken": "「谨守病机，各司其属。」——《素问·至真要大论》",
+      "estimateSeconds": 5,
+      "audio": "002.mp3",
+      "audioSeconds": 5.16
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "一份中医证候研究里测了 20 个指标，其中 1 个 p=0.03，你把它写成「具有统计学意义」，审稿人一句「你校正了吗」就把结论推翻了。",
+      "slide": "problem",
+      "spoken": "一份中医证候研究里测了 20 个指标，其中 1 个 p=0.03，你把它写成「具有统计学意义」，审稿人一句「你校正了吗」就把结论推翻了。",
+      "estimateSeconds": 14,
+      "audio": "003.mp3",
+      "audioSeconds": 12.17
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫(毕业与晋升都要「阳性结果」，指标越加越多) + 知识积累(多重比较 × 错误发现率 = 一套能在分析前就定好、事后不被质疑的判定规则)",
+      "slide": "roots",
+      "spoken": "环境逼迫(毕业与晋升都要「阳性结果」，指标越加越多) + 知识积累(多重比较 × 错误发现率 = 一套能在分析前就定好、事后不被质疑的判定规则)",
+      "estimateSeconds": 14,
+      "audio": "004.mp3",
+      "audioSeconds": 13.63
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "text": "- 说清「做 20 次独立检验、α=0.05，至少一次假阳性的概率约 64%」是怎么算出来的\n- 实现 Bonferroni 与 Benjamini–Hochberg（BH）两种校正，并说明各自控制的是什么\n- 判断一份结果表该用哪一种校正，并写出理由\n- 指出校正**不能**挽救什么（比如事先没定主结局、事后挑指标）",
+      "slide": "objectives",
+      "heading": "学习目标",
+      "spoken": "说清「做 20 次独立检验、α=0.05，至少一次假阳性的概率约 64%」是怎么算出来的\n实现 Bonferroni 与 Benjamini–Hochberg（BH）两种校正，并说明各自控制的是什么\n判断一份结果表该用哪一种校正，并写出理由\n指出校正不能挽救什么（比如事先没定主结局、事后挑指标）",
+      "estimateSeconds": 30,
+      "audio": "005.mp3",
+      "audioSeconds": 27.24
+    },
+    {
+      "n": 6,
+      "role": "concept",
+      "text": "### 为什么要校正\n\n《医学统计学·方差分析》一章在讲完两两比较后专门提醒：多组间反复比较会放大第一类错误。原因很简单：\n\n$$P(\\text{至少一次假阳性})=1-(1-\\alpha)^m$$\n\n$m=20$、$\\alpha=0.05$ 时约 0.64。也就是说，**什么都不做的研究，二十个指标里几乎必然有一个「显著」**。\n\n### 两种校正，控制的是不同的东西\n\n- **Bonferroni**：$\\alpha'=\\alpha/m$，控制**族错误率（FWER）**——任意一次假阳性的概率。保守，指标多时几乎全灭。\n- **BH（Benjamini–Hochberg）**：把 p 值升序排列，找到最大的 $k$ 使 $p_{(k)}\\le \\frac{k}{m}\\alpha$，则前 $k$ 个拒绝。控制**错误发现率（FDR）**——被宣称的发现里假阳性的**比例**。探索性研究通常更合适。\n\n关键区别：FWER 问「我有没有说错一次」，FDR 问「我说对的那批里错了多少比例」。前者适合确证性研究，后者适合筛选。\n\nFWER 一侧还有一个比 Bonferroni 更聪明的做法：**Holm 逐步法**。把 p 值升序排列后，第一个与 $\\alpha/m$ 比较，第二个与 $\\alpha/(m-1)$ 比较，一旦某一步不显著就停止，之后的一律不拒绝。它同样控制 FWER，但在真有多个效应时比 Bonferroni 更容易留住结果。本课先实现 Bonferroni 与 BH 两条，是因为它们分别代表「最保守」与「按比例控制」两个极端，把这两个搞懂，中间的变体都是同一思路的调整。",
+      "slide": "concept",
+      "heading": "核心概念",
+      "spoken": "为什么要校正\n《医学统计学·方差分析》一章在讲完两两比较后专门提醒：多组间反复比较会放大第一类错误。原因很简单：\n m=20 、 α=0.05 时约 0.64。也就是说，什么都不做的研究，二十个指标里几乎必然有一个「显著」。\n两种校正，控制的是不同的东西\nBonferroni： α'=α/m ，控制族错误率（FWER）——任意一次假阳性的概率。保守，指标多时几乎全灭。\nBH（Benjamini–Hochberg）：把 p 值升序排列，找到最大的 k 使 p(k)≤ kmα ，则前 k 个拒绝。控制错误发现率（FDR）——被宣称的发现里假阳性的比例。探索性研究通常更合适。\n关键区别：FWER 问「我有没有说错一次」，FDR 问「我说对的那批里错了多少比例」。前者适合确证性研究，后者适合筛选。\nFWER 一侧还有一个比 Bonferroni 更聪明的做法：Holm 逐步法。把 p 值升序排列后，第一个与 α/m 比较，第二个与 α/(m-1) 比较，一旦某一步不显著就停止，之后的一律不拒绝。它同样控制 FWER，但在真有多个效应时比 Bonferroni 更容易留住结果。本课先实现 Bonferroni 与 BH 两条，是因为它们分别代表「最保守」与「按比例控制」两个极端，把这两个搞懂，中间的变体都是同一思路的调整。",
+      "estimateSeconds": 113,
+      "audio": "006.mp3",
+      "audioSeconds": 104.93
+    },
+    {
+      "n": 7,
+      "role": "build",
+      "text": "```js\nfunction bh(pvalues, alpha = 0.05) {\n  const idx = pvalues.map((p, i) => ({ p, i })).sort((a, b) => a.p - b.p);\n  let k = 0;\n  idx.forEach((x, rank) => { if (x.p <= ((rank + 1) / idx.length) * alpha) k = rank + 1; });\n  return { k, rejected: idx.slice(0, k).map((x) => x.i) };  // 注意：拒绝的是\"前 k 个\"\n}\n```",
+      "slide": "build",
+      "heading": "BUILD IT：从零实现",
+      "spoken": "这一段以代码实现为主，请看画面上的代码块。",
+      "estimateSeconds": 5,
+      "audio": "007.mp3",
+      "audioSeconds": 4.51
+    },
+    {
+      "n": 8,
+      "role": "verify",
+      "text": "```bash\nnode code/main.js\nnode --test code/main.test.js\n```\n\n预期：给出的 10 个 p 值中，Bonferroni 只留下 1 个（p=0.001），BH 留下 2 个（0.001、0.008）——差异恰好说明两种口径的取舍。",
+      "slide": "verify",
+      "heading": "验证",
+      "spoken": "预期：给出的 10 个 p 值中，Bonferroni 只留下 1 个（p=0.001），BH 留下 2 个（0.001、0.008）——差异恰好说明两种口径的取舍。",
+      "estimateSeconds": 16,
+      "audio": "008.mp3",
+      "audioSeconds": 13.37
+    },
+    {
+      "n": 9,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "009.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 199.3,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

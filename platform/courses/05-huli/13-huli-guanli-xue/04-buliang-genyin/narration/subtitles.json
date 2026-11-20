@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/13-huli-guanli-xue/04-buliang-genyin/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 59.13,
+  "estimatedCues": 0,
+  "videoSeconds": 59.162667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.08,
+      "seconds": 4.08,
+      "estimated": false,
+      "text": "第 4 章 · 不良事件、根因与纠纷处理",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.08,
+      "end": 20.06,
+      "seconds": 15.98,
+      "estimated": false,
+      "text": "「《护理管理学·第11章》」——教材第 11 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：不良事件、根因与纠纷处理这一章的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.06,
+      "end": 25.51,
+      "seconds": 5.45,
+      "estimated": false,
+      "text": "安全、安全文化、投诉纠纷合章：三者是一条线。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 25.51,
+      "end": 47.83,
+      "seconds": 22.32,
+      "estimated": false,
+      "text": "环境逼迫（护理管理管的是「有限人力下的质量」，所有工具最后都要落回人与流程）+ 知识积累（本章 3 单元 59,111 汉字；三辨主 人力与法规 603；四位面（管理职能）主 组织与人力 386；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 47.83,
+      "end": 59.13,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

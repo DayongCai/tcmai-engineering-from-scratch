@@ -377,6 +377,36 @@ const departments = cur.departments.map((dept) => {
 });
 
 const allRows = departments.flatMap((d) => d.subjects);
+
+// ── 口径决案：教材章 < 教学章 若已在 standards/口径决案.json 登记为「按设计」，
+//    就不再算异常（chapters-short），改记 chapters-short-decided —— 两个数字仍原样显示。
+//    决案里的章数若与实测不符，则回退成异常并追加 decision-stale，绝不静默通过。
+{
+  let decided = [];
+  try {
+    const dp = abs('standards/口径决案.json');
+    if (fs.existsSync(dp)) decided = JSON.parse(fs.readFileSync(dp, 'utf8')).decisions || [];
+  } catch (e) {
+    console.warn('  ⚠ 口径决案.json 读取失败：' + e.message);
+  }
+  if (decided.length) {
+    for (const r of allRows) {
+      const d = decided.find((x) => x.subject === `${r.dept || ''}/${r.slug}`) ||
+        decided.find((x) => `${r.deptSlug || ''}/${r.slug}` === x.subject) ||
+        decided.find((x) => x.subject.endsWith('/' + r.slug));
+      // 两个方向都要能进决案：教材少于教学（chapters-short）与教材多于教学（chapters-over）
+      const dir = r.flags.includes('chapters-short') ? 'short'
+        : r.flags.includes('chapters-over') ? 'over' : null;
+      if (!d || !dir) continue;
+      if (d.teachingChapters === r.chaptersTarget && d.textbookChapters === r.textbook.chapters) {
+        r.flags = r.flags.filter((f) => f !== `chapters-${dir}`).concat(`chapters-${dir}-decided`);
+        r.decision = { decidedAt: d.decidedAt, decision: d.decision, reviewIf: d.reviewIf };
+      } else {
+        r.flags.push('decision-stale');
+      }
+    }
+  }
+}
 const withBook = allRows.filter((r) => r.textbook.chapters > 0);
 const baseRowsAll = allRows.filter((r) => r.textbook.chapters > 0 && r.textbook.origin === 'base');
 const extRowsAll = allRows.filter((r) => r.textbook.chapters > 0 && r.textbook.origin === 'external');
@@ -435,6 +465,16 @@ function detailOf(r) {
     parts.push(`源表 ${fmtInt(reg.chars)} 字 → meta ${fmtInt(r.textbook.metaWords)} 字（${d > 0 ? '+' : ''}${fmtInt(d)}）`);
   }
   if (r.flags.includes('chapters-short')) parts.push(`教材 ${r.textbook.chapters} 章 < 教学计划 ${r.chaptersTarget} 章`);
+  if (r.flags.includes('chapters-over')) parts.push(`教材 ${r.textbook.chapters} 章 > 教学计划 ${r.chaptersTarget} 章`);
+  if (r.flags.includes('chapters-over-decided')) {
+    parts.push(`教材 ${r.textbook.chapters} 章 > 教学计划 ${r.chaptersTarget} 章：已决口径` +
+      (r.decision ? `（${r.decision.decidedAt} 决议，两套切分轴并存）` : ''));
+  }
+  if (r.flags.includes('chapters-short-decided')) {
+    parts.push(`教材 ${r.textbook.chapters} 章 < 教学计划 ${r.chaptersTarget} 章：已决口径` +
+      (r.decision ? `（${r.decision.decidedAt} 决议，两套切分轴并存）` : ''));
+  }
+  if (r.flags.includes('decision-stale')) parts.push('决案过期：口径决案.json 记的章数与实测不符，须重议');
   if (r.flags.includes('manual-source')) parts.push('registry status=manual：人工整理层，非纯抽取');
   if (r.flags.includes('no-body')) parts.push('源表只有大纲、无正文');
   if (r.flags.includes('meta-disk-mismatch')) parts.push(`meta ${r.textbook.metaChapters} 章 ≠ 磁盘 ${r.textbook.chapters} 章`);
@@ -447,14 +487,47 @@ const exceptions = allRows
   .filter((r) => !(r.flags.length === 1 && r.flags[0] === 'external-source'))
   .map((r) => ({ slug: `${r.dept}/${r.slug}`, title: r.title, flags: r.flags, detail: detailOf(r) }));
 
+// 教学章正文实况：departments/<dept>/<slug>/chapters/*/docs/zh.md 的章数与去空白字数。
+// 为什么看板要报这个：教材章数只数 textbooks/，但很多课已在教学章里写了正文——
+// 笼统写「未入库」会让人以为「没写」，把 20 万字的课判成零。
+function bodyOf(deptSlug, slug) {
+  const dir = abs(path.join('departments', deptSlug, slug, 'chapters'));
+  if (!fs.existsSync(dir)) return { chapters: 0, chars: 0 };
+  let chapters = 0;
+  let chars = 0;
+  for (const c of fs.readdirSync(dir)) {
+    const f = path.join(dir, c, 'docs', 'zh.md');
+    if (!fs.existsSync(f)) continue;
+    chapters += 1;
+    chars += fs.readFileSync(f, 'utf8').replace(/\s/g, '').length;
+  }
+  return { chapters, chars };
+}
+
 const gapsByDept = departments.map((d) => ({
   slug: d.slug,
   title: d.title,
   icon: d.icon,
   missing: d.subjects
     .filter((r) => !(r.textbook.chapters > 0))
-    .map((r) => ({ slug: r.slug, title: r.title, type: r.type, semester: r.semester, hours: r.hours, note: r.flags.includes('no-body') ? '源表无正文（大纲表）' : '未入库' })),
+    .map((r) => {
+      const body = bodyOf(d.slug, r.slug);
+      let note = '未入库';
+      if (r.flags.includes('no-body')) note = '源表无正文（大纲表）';
+      else if (body.chapters > 0) note = `教学章已有正文（${body.chapters} 章 / ${(body.chars / 10000).toFixed(1)} 万字），未接教材出版线`;
+      return { slug: r.slug, title: r.title, type: r.type, semester: r.semester, hours: r.hours, body, note };
+    }),
 }));
+
+const gapAll = gapsByDept.flatMap((d) => d.missing);
+const gapWithBody = gapAll.filter((m) => m.body && m.body.chapters > 0);
+const gapBodyStats = {
+  gapSubjects: gapAll.length,
+  gapWithBody: gapWithBody.length,
+  gapWithBodyChapters: gapWithBody.reduce((a, m) => a + m.body.chapters, 0),
+  gapWithBodyChars: gapWithBody.reduce((a, m) => a + m.body.chars, 0),
+  gapNoBody: gapAll.filter((m) => !m.body || !m.body.chapters).length,
+};
 
 // ── 排课（五卷 × 学期 的全局负荷）─────────────────────────────────────
 const semesterPlan = [];
@@ -489,6 +562,7 @@ const payload = {
     chapterCount: 'textbooks/<dept>/<subject>/NN-第N章-*.md 文件数（不含 00-前言）',
     hanziCount: '上述文件 [\\u4e00-\\u9fa5] 字符数',
   },
+  gapBodyStats,
   totals,
   prereqStats,
   semesterPlan,
@@ -589,7 +663,16 @@ function renderMarkdown() {
   L.push('> 外源只覆盖「古籍能对上的部分」：不含现代检查、手术、评定量表与器械参数。');
   L.push('> 引用须标「外源·笈成·<书名> 第N条」，不得标「底本」。约定见 `standards/materials/textbooks-batch/EXTERNAL-SOURCES.md`。');
   L.push('');
-  L.push('## 缺口清单（本节数字 = 看板「未入库」列的明细）');
+  L.push('## 缺口清单（教材出版线未接；不等于没写）');
+  L.push('');
+  L.push(`本节 ${gapBodyStats.gapSubjects} 门课里，**${gapBodyStats.gapWithBody} 门已在教学章写了正文**（${gapBodyStats.gapWithBodyChapters} 章 / ${(gapBodyStats.gapWithBodyChars / 10000).toFixed(1)} 万字），`);
+  L.push(`只是没进 \`textbooks/\` 出版流水线（无底本逐章对应、无改写层、不进五卷）；真正「源表无正文」的 ${gapBodyStats.gapNoBody} 门。`);
+  L.push('');
+  L.push('| 判定 | 门数 | 含义 |');
+  L.push('|---|--:|---|');
+  L.push(`| 教材线已接 | ${totals.textbookSubjects} | \`textbooks/\` 有章，进五卷与看板章数 |`);
+  L.push(`| 有正文、未接出版线 | ${gapBodyStats.gapWithBody} | 教学章 ${gapBodyStats.gapWithBodyChapters} 章 / ${(gapBodyStats.gapWithBodyChars / 10000).toFixed(1)} 万字，可直接改写成教材稿 |`);
+  L.push(`| 源表无正文 | ${gapBodyStats.gapNoBody} | 只有大纲表，得先补底本 |`);
   L.push('');
   for (const g of gapsByDept) {
     L.push(`### ${g.icon} ${g.title} · 缺 ${g.missing.length} 门`);
@@ -881,7 +964,19 @@ function renderHtml() {
   H.push('<h4>其它对账缺口</h4>');
   H.push('<div class="meta">这些不是「没做」，是「做了但口径/形态与契约有差」，逐条登记便于复算。</div><ul>');
   const shortCh = allRows.filter((r) => r.flags.includes('chapters-short'));
+  const overCh = allRows.filter((r) => r.flags.includes('chapters-over'));
   H.push(`<li><b>教材章数 &lt; 章节目标</b>：${shortCh.length} 门 —— ${shortCh.map((r) => `${r.title}（${r.textbook.chapters}/${r.chaptersTarget}）`).join('、') || '无'}。教学计划章数没有稿子支撑，排课到这些章只能讲提纲。</li>`);
+  const decidedShort = allRows.filter((r) => r.flags.includes('chapters-short-decided'));
+  const decidedOver = allRows.filter((r) => r.flags.includes('chapters-over-decided'));
+  if (decidedShort.length) {
+    H.push(`<li><b>教材章 &lt; 教学章（已决口径，非欠账）</b>：${decidedShort.length} 门 —— ${decidedShort
+      .map((r) => `${r.title}（教材 ${r.textbook.chapters} / 教学 ${r.chaptersTarget}${r.decision ? '，' + r.decision.decidedAt + ' 决议' : ''}）`)
+      .join('、')}。决案见 <code>standards/口径决案.json</code>：两套切分轴并存（教材按学科体系、教学按法规流程），不拆教材（会破坏底本逐章对应）、不并课程（要删 8 个章目录并重写 13 章契约）。</li>`);
+  }
+  const stale = allRows.filter((r) => r.flags.includes('decision-stale'));
+  if (stale.length) {
+    H.push(`<li><b>决案过期</b>：${stale.length} 门 —— ${stale.map((r) => `${r.title}（教材 ${r.textbook.chapters} / 教学 ${r.chaptersTarget}）`).join('、')}。决案里记的章数与实测不符，须重议并改 <code>standards/口径决案.json</code>。</li>`);
+  }
   const noBody = allRows.filter((r) => r.flags.includes('no-body'));
   H.push(`<li><b>源表只有大纲</b>：${noBody.length} 门 —— ${noBody.map((r) => r.title).join('、') || '无'}。</li>`);
   const manual = allRows.filter((r) => r.flags.includes('manual-source'));

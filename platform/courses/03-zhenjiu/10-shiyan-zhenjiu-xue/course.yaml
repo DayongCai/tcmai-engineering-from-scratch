@@ -1,0 +1,96 @@
+# [tcmP] 课程编排 · 03-zhenjiu/10-shiyan-zhenjiu-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/03-zhenjiu/10-shiyan-zhenjiu-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 10-shiyan-zhenjiu-xue
+title: 实验针灸学
+en: Experimental Acupuncture
+dept: 03-zhenjiu
+dept_title: 针灸系
+semester: 6
+stage: zhang
+hours: 72
+chapters_target: 10
+bridge: 动物实验→统计设计 / 电针参数→响应曲面
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xulun-dingwei
+    title: 第1章 绪论与学科定位
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.95
+  - slug: 02-shuxue-xingtai
+    title: 第2章 腧穴的形态结构与功能
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.96
+  - slug: 03-jingluo-xianxiang
+    title: 第3章 经络现象的现代研究
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.94
+  - slug: 04-xiaoying-tedian
+    title: 第4章 针灸作用的效应与特点
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.93
+  - slug: 05-zhentong-jizhi
+    title: 第5章 针灸镇痛作用与机制
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.94
+  - slug: 06-shenjing-tiaojie
+    title: 第6章 针灸对神经系统的调节
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.97
+  - slug: 07-neifen-mianyi
+    title: 第7章 针灸对内分泌与免疫系统的调节
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1
+  - slug: 08-xunhuan-huxi-xiaohua
+    title: 第8章 针灸对循环、呼吸、消化系统的调节
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.03
+  - slug: 09-miniao-shengzhi-yundong
+    title: 第9章 针灸对泌尿、生殖、运动系统的作用
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.02
+  - slug: 10-fangfa-moxing
+    title: 第10章 研究方法与动物模型
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.96
+  - slug: 11-xunzheng-qianyan
+    title: 第11章 循证针灸学与前沿
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.97

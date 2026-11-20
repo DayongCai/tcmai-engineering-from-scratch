@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/03-zhenjiu-yiji-xuan/06-gefu/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 58.74,
+  "estimatedCues": 0,
+  "videoSeconds": 58.772667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 2.45,
+      "seconds": 2.45,
+      "estimated": false,
+      "text": "第 6 章 · 针灸歌赋",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 2.45,
+      "end": 15.6,
+      "seconds": 13.15,
+      "estimated": false,
+      "text": "「《针灸医籍选读·针灸歌赋》」——教材篇名级；课程章号对应教材第 8 章。本章要回答的是：读这段原文，能读出哪一条可用的针法主张。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 15.6,
+      "end": 21.74,
+      "seconds": 6.14,
+      "estimated": false,
+      "text": "歌赋是古代的「口袋教材」：押韵即记忆法，也最容易以讹传讹。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 21.74,
+      "end": 47.44,
+      "seconds": 25.7,
+      "estimated": false,
+      "text": "环境逼迫（医籍课的判据是「分得清」：哪句是原文、哪句是注家的话、哪句是教材作者的按语）+ 知识积累（本章 34 单元 22,905 汉字；三辨主 临证应用 690；四位面（医籍文体）主 针灸歌赋 415；引书 44 部 269 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 47.44,
+      "end": 58.74,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

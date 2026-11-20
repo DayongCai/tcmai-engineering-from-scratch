@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/04-zhongyi-tizhi-xue/chapters/08-tizhi-wucha/docs/zh.md",
+  "course": "04-zhongyi-tizhi-xue",
+  "dept": "01-zhongyi",
+  "chapter": "08-tizhi-wucha",
+  "title": "第 8 章 · 可重复性与测量误差：四域各自计量，再谈结论",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 64,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 8 章 · 可重复性与测量误差：四域各自计量，再谈结论",
+      "slide": "title",
+      "spoken": "第 8 章 · 可重复性与测量误差：四域各自计量，再谈结论",
+      "estimateSeconds": 5,
+      "audio": "001.mp3",
+      "audioSeconds": 6.1
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「诊病不问其始，忧患饮食之失节……此治之一失也」——教材·第8章·8.1（《素问·征四失论》）",
+      "slide": "title",
+      "spoken": "「诊病不问其始，忧患饮食之失节……此治之一失也」——教材·第8章·8.1（《素问·征四失论》）",
+      "estimateSeconds": 10,
+      "audio": "002.mp3",
+      "audioSeconds": 9.31
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "体质研究最容易出的一类错误，不是判错质，而是**没检查自己的测量是否稳定**。同一人两周内两次结果不同、两位医师判断不一致、量表改版后数据不可合并——这三种情况会让所有后续结论失效。",
+      "slide": "problem",
+      "spoken": "体质研究最容易出的一类错误，不是判错质，而是没检查自己的测量是否稳定。同一人两周内两次结果不同、两位医师判断不一致、量表改版后数据不可合并——这三种情况会让所有后续结论失效。",
+      "estimateSeconds": 19,
+      "audio": "003.mp3",
+      "audioSeconds": 18.1
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（体质判定要用于科研与健康管理，必须可重复）+ 知识积累（本章 1 单元，四位面主形态；数值 0——误差章讲的是指标，不是阈值）",
+      "slide": "roots",
+      "spoken": "环境逼迫（体质判定要用于科研与健康管理，必须可重复）+ 知识积累（本章 1 单元，四位面主形态；数值 0——误差章讲的是指标，不是阈值）",
+      "estimateSeconds": 14,
+      "audio": "004.mp3",
+      "audioSeconds": 13.63
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "text": "```bash\ncd departments/01-zhongyi/04-zhongyi-tizhi-xue/chapters/08-tizhi-wucha\nnode code/main.js && node --test code/main.test.js\n```",
+      "slide": "verify",
+      "heading": "验证",
+      "spoken": "这一段以代码实现为主，请看画面上的代码块。",
+      "estimateSeconds": 5,
+      "audio": "005.mp3",
+      "audioSeconds": 4.51
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 62.95,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

@@ -99,6 +99,41 @@
    "title": "OECD Test Guideline 470: Mammalian Erythrocyte Pig-a Gene Mutation Assay",
    "adopted": "2022",
    "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/06/test-no-470-mammalian-erythrocyte-pig-a-gene-mutation-assay_8d5eb84f/4faea90e-en.pdf"
+  },
+  "PM-HILI-2019": {
+   "file": "PM-HILI-Frontiers-2019.txt",
+   "title": "Polygonum multiflorum-Induced Liver Injury: Clinical Characteristics, Risk Factors, Material Basis, Action Mechanism and Current Challenges",
+   "url": "https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2019.01467/full",
+   "issuer": "Frontiers in Pharmacology · 2019 · 官方开放获取全文（存为去标签文本快照）",
+   "note": "HILI 与何首乌肝损伤的综述；条号为本库按摘句顺序编的序号，非原文条号"
+  },
+  "TP-HILI-2022": {
+   "file": "Triptolide-Hepatotoxicity-PMC9449346.txt",
+   "title": "The molecular pathogenesis of triptolide-induced hepatotoxicity",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9449346/",
+   "issuer": "PMC · 2022 · 开放获取全文（存为去标签文本快照）",
+   "note": "雷公藤甲素（triptolide）肝毒性机制；条号为本库序号"
+  },
+  "AAN-2023": {
+   "file": "Aristolochic-Acid-Nephropathy-PMC10565449.txt",
+   "title": "Overview of aristolochic acid nephropathy: an update",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10565449/",
+   "issuer": "PMC · 2023 · 开放获取全文（存为去标签文本快照）",
+   "note": "马兜铃酸肾病（AAN）综述；条号为本库序号"
+  },
+  "ACONITINE-2018": {
+   "file": "Aconitine-Toxicity-PMC7241456.txt",
+   "title": "Research progress of aconitine toxicity and forensic analysis of aconitine poisoning",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7241456/",
+   "issuer": "PMC · 2018 · 开放获取全文（存为去标签文本快照）",
+   "note": "乌头碱毒性与中毒分析；条号为本库序号"
+  },
+  "SHIBAFAN-2013": {
+   "file": "TCM-Incompatibility-PMC3858019.txt",
+   "title": "Study on Incompatibility of Traditional Chinese Medicine: Evidence from Formula Network, Chemical Space, and Metabolism Room",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3858019/",
+   "issuer": "PMC · 2013 · 开放获取全文（存为去标签文本快照）",
+   "note": "十八反十九畏的方剂网络/化学空间证据；条号为本库序号"
   }
  },
  "clauses": [
@@ -317,6 +352,139 @@
    "原文": "The Pig-a assay can be performed with commonly used strains of rats or mice (1) (see paragraph 28) and the test can be conducted without euthanizing the animals. These properties facilitate integration of the Pig-a assay into many in vivo rodent testing protocols (see paragraphs 8-9 and Annex 2) (2) (3).",
    "中文": "转述：Pig-a 可用常用大鼠或小鼠品系，且**无需处死动物**即可进行；因此容易并入其他体内啮齿类试验方案。",
    "要点": "「不处死、可重复采样」是它与微核最大的操作差别——同一批动物可在重复给药试验里顺带取血，省一批动物。"
+  },
+  {
+   "id": "L01",
+   "source": "PM-HILI-2019",
+   "clause": "第1条",
+   "原文": "Herb-induced liver injury (HILI) refers to liver damage caused by TCMs, natural medicines and related preparations, resulting in adverse reactions such as dermatitis, nausea, vomiting, diarrhea, thrombocytopenia, coagulopathy, mental state changes, hepatotoxicity, nephrotoxicity, and electrolyte imbalance ( Dag et al., 2014 ; Divya et al., 2016 ; Ming et al., 2017 ; Awortwe et al., 2018 ).",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L02",
+   "source": "PM-HILI-2019",
+   "clause": "第2条",
+   "原文": "This study was aimed at reviewing the status of research on liver injury due to PM, including clinical characteristics, risk factors, material basis research and mechanism of action, with a view to understanding PM-induced hepatotoxicity, and taking reasonable and effective measures to prevent it.",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L03",
+   "source": "TP-HILI-2022",
+   "clause": "第1条",
+   "原文": "Triptolide (TP) is the major pharmacologically active ingredient and toxic component of Tripterygium wilfordii Hook.",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L04",
+   "source": "TP-HILI-2022",
+   "clause": "第2条",
+   "原文": "However, its clinical potential is limited by a narrow therapeutic window and multiple organ toxicity, especially hepatotoxicity.",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L05",
+   "source": "TP-HILI-2022",
+   "clause": "第3条",
+   "原文": "Studies have demonstrated that TP-induced hepatotoxicity is associated with CYP450s, P-glycoprotein (P-gp), oxidative stress, excessive autophagy, apoptosis, metabolic disorders, immunity, and the gut microbiota.",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L06",
+   "source": "AAN-2023",
+   "clause": "第1条",
+   "原文": "Aristolochic acid nephropathy (AAN) is a rapidly progressive renal interstitial fibrosis caused by medical or environmental exposure to aristolochic acid (AA).",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L07",
+   "source": "AAN-2023",
+   "clause": "第2条",
+   "原文": "In the early 1990s, a group of Belgian scholars reported that a cohort of young female patients suffered from rapidly progressive interstitial renal fibrosis [ 2 ].",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L08",
+   "source": "AAN-2023",
+   "clause": "第3条",
+   "原文": "When it comes to risk factors, the cumulative dose of AA ingestion has been proven to be correlated with progressive renal dysfunction [ 25 ].",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L09",
+   "source": "AAN-2023",
+   "clause": "第4条",
+   "原文": "In the Balkan region, so-called Balkan endemic nephropathy is regarded as an endemic type of AAN with similar clinical and pathological features; it occurs after the chronic ingestion of food made from flour contaminated by the seeds of Aristolochia clematitis [ 28 ].",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L10",
+   "source": "ACONITINE-2018",
+   "clause": "第1条",
+   "原文": "Aconitine, a diterpenoid alkaloid extracted from Aconitum plants, has anti-inflammatory and analgesic activities, but can also induce severe arrhythmia and neurotoxicity.",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L11",
+   "source": "ACONITINE-2018",
+   "clause": "第2条",
+   "原文": "Symptoms of aconitine poisoning frequently appear within 2 h or even several minutes via oral ingestion, indicating that it can be easily absorbed with oral administration.",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L12",
+   "source": "ACONITINE-2018",
+   "clause": "第3条",
+   "原文": "The ester groups combining with C8 and C14 are considered to be primarily responsible for the high toxicity of aconitine, while hydrolysis of esters can reduce its toxicity dramatically [ 22 ].",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L13",
+   "source": "ACONITINE-2018",
+   "clause": "第4条",
+   "原文": "Monoester diterpenoid alkaloids (MDAs) are considered as hydrolysed products of diester diterpenoid alkaloids (DDAs).",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L14",
+   "source": "ACONITINE-2018",
+   "clause": "第5条",
+   "原文": "The LD50 of aconitine for mice by intravenous injection is approximately 38 times of its hydrolysates [ 15 , 16 ].",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L15",
+   "source": "ACONITINE-2018",
+   "clause": "第6条",
+   "原文": "Moreover, gastrointestinal, neurological, and cardiovascular symptoms were observed frequently in aconitine poisoning cases.",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L16",
+   "source": "SHIBAFAN-2013",
+   "clause": "第1条",
+   "原文": "The properties of the medicine pairs in “eighteen antagonisms and nineteen mutual inhibitors,” an ancient rule for TCM incompatibility, were studied based on the TCM formula network, chemical space, and metabolism room.",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L17",
+   "source": "SHIBAFAN-2013",
+   "clause": "第2条",
+   "原文": "The lines of evidence derived from our work demonstrated that the ancient rule of TCM incompatibility, “eighteen antagonisms and nineteen mutual inhibitors,” is probably scientifically based.",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L18",
+   "source": "SHIBAFAN-2013",
+   "clause": "第3条",
+   "原文": "The theory of TCM incompatibility is the fundamental principle that should be followed for correct clinical medication, which has a direct relationship with effectiveness and safety of TCM formulas.",
+   "zh": "（转述见教材正文，不作官方译文）"
+  },
+  {
+   "id": "L19",
+   "source": "SHIBAFAN-2013",
+   "clause": "第4条",
+   "原文": "However, up to present, interpreting ancient theory of TCM in modern scientific language is still a challenging problem for us to make clear the traditional subjects, like the incompatibility of TCM.",
+   "zh": "（转述见教材正文，不作官方译文）"
   }
  ]
 }

@@ -1,0 +1,90 @@
+# [tcmP] 课程编排 · 04-gushang/03-gushang-kexue-jichu
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/04-gushang/03-gushang-kexue-jichu/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 03-gushang-kexue-jichu
+title: 中医骨伤科学基础
+en: Foundations of TCM Orthopedics
+dept: 04-gushang
+dept_title: 骨伤系
+semester: 5
+stage: zhang
+hours: 72
+chapters_target: 10
+bridge: 筋骨辨证→分层规则 / 损伤分类→多标签分类
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-jianshi-bingyin
+    title: 第1章 发展简史与病因病机
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.07
+  - slug: 02-linchuang-zhencha
+    title: 第2章 骨伤病的临床诊查
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.07
+  - slug: 03-zhiliao-fangfa
+    title: 第3章 骨伤病的治疗方法
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.04
+  - slug: 04-chuangshang-jijiu
+    title: 第4章 创伤急救
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.98
+  - slug: 05-guzhe-yi
+    title: 第5章 骨折（一）：总论与上肢
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.07
+  - slug: 06-guzhe-er
+    title: 第6章 骨折（二）：下肢与躯干
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.05
+  - slug: 07-tuowei
+    title: 第7章 脱位
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.96
+  - slug: 08-jinshang
+    title: 第8章 筋伤
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99
+  - slug: 09-neishang-gubing
+    title: 第9章 内伤与骨病
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.01
+  - slug: 10-kangfu-shuzihua
+    title: 第10章 骨伤康复与数字化
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.97

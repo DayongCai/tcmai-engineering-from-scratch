@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/08-zhenjiu-zhiliao-xue/01-zhiliao-yuanze/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 60.89,
+  "estimatedCues": 0,
+  "videoSeconds": 60.924667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.34,
+      "seconds": 3.34,
+      "estimated": false,
+      "text": "第 1 章 · 针灸治疗原则与作用",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.34,
+      "end": 18.53,
+      "seconds": 15.19,
+      "estimated": false,
+      "text": "「《针灸治疗学·针灸治疗原则与作用》」——教材篇名级；课程章号对应教材第 1、2 章。本章要回答的是：针灸治疗原则与作用的处方能不能被别人照着做出来。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 18.53,
+      "end": 25.61,
+      "seconds": 7.08,
+      "estimated": false,
+      "text": "先讲清「为什么这样治」：治神守气、补虚泻实、清热温寒、治病求本。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 25.61,
+      "end": 49.59,
+      "seconds": 23.98,
+      "estimated": false,
+      "text": "环境逼迫（治疗学的判据是「处方可照做」：主穴、配穴、操作、疗程四件齐了才叫处方）+ 知识积累（本章 22 单元 6,492 汉字；三辨主 操作与疗程 100；四位面（病证门类）主 内科病证 11；引书 33 部 52 次；数值类命中 1）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 49.59,
+      "end": 60.89,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/07-zhineng/16-jiqi-xuexi/15-guize-xuexi/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 55.1,
+  "estimatedCues": 0,
+  "videoSeconds": 55.134667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 2.66,
+      "seconds": 2.66,
+      "estimated": false,
+      "text": "第 15 章 · 规则学习",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 2.66,
+      "end": 14.76,
+      "seconds": 12.1,
+      "estimated": false,
+      "text": "「《机器学习·规则学习》」——教材第15章；章号一一对应。本章要回答的是：规则学习：这一章的判据是什么，什么算「会用」。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.76,
+      "end": 18.1,
+      "seconds": 3.34,
+      "estimated": false,
+      "text": "规则学习：可解释性与覆盖。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 18.1,
+      "end": 43.8,
+      "seconds": 25.7,
+      "estimated": false,
+      "text": "环境逼迫（机器学习的判据是「假设—损失—泛化」三件套：假设空间多大、损失怎么定、泛化凭什么保证）+ 知识积累（本章 13 单元 11,644 汉字；三辨主 模型与算法 38；四位面（章群结构）主 应用与前沿 11644；引书 2 部 2 次；数值类命中 1）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 43.8,
+      "end": 55.1,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

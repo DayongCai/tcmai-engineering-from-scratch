@@ -1,0 +1,47 @@
+{
+  "chapter": "06-qiuzzao-fushu",
+  "slideCount": 8,
+  "segmentCount": 8,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 32
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 73
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 156
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 82
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 1107
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 318
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 95
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 52
+    }
+  ]
+}

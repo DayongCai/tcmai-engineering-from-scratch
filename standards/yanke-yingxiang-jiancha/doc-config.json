@@ -1,7 +1,7 @@
 {
  "courseTitle": "眼科影像检查",
  "deptPath": "departments/08-wuguan/10-yanke-yingxiang-jiancha",
- "xlsx": "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx",
+ "xlsx": "F:/textbooks/qhzy-机器学习.xlsx",
  "chain": "检查 → 解剖 → 病位 → 随访 → 合规",
  "levelLabel": "章群结构",
  "objectPressure": "影像的判据是「为什么做、看到什么、谁来复核」——答不上就不做",

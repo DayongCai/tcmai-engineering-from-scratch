@@ -1,7 +1,7 @@
 {
  "courseTitle": "智能工程实践",
  "deptPath": "departments/07-zhineng/18-zhineng-gongcheng-shijian",
- "xlsx": "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx",
+ "xlsx": "F:/textbooks/qhzy-机器学习.xlsx",
  "chain": "需求 → 架构 → 训练 → 部署 → 运维 → 交付",
  "levelLabel": "阶段结构",
  "objectPressure": "工程实践的判据是「可复现—可评测—可交付」三件，缺一件就不算做完",

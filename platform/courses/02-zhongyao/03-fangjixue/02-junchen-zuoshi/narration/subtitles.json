@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/03-fangjixue/02-junchen-zuoshi/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 101.85,
+  "estimatedCues": 0,
+  "videoSeconds": 101.878667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.1,
+      "seconds": 4.1,
+      "estimated": false,
+      "text": "第 2 章 · 君臣佐使：组方的角色结构",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.1,
+      "end": 14.3,
+      "seconds": 10.2,
+      "estimated": false,
+      "text": "「主病之谓君，佐君之谓臣，应臣之为使」——教材·第3章·3.1.1（《方剂学·第3章·3.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.3,
+      "end": 30.76,
+      "seconds": 16.46,
+      "estimated": false,
+      "text": "你能背出麻黄汤四味药，被问「哪一味是君药、凭什么」时，答案往往是「麻黄，因为它写在第一个」。位置不是判据，药力才是——而药力看不见，所以这一章必须给出一条能复核的判据。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 30.76,
+      "end": 45.02,
+      "seconds": 14.26,
+      "estimated": false,
+      "text": "环境逼迫（跟诊时老师问「这首方君药是哪味、为什么」，答「麻黄最重要」等于没答）+ 知识积累（四角色职责 × 药力判据 = 一份能逐药归位、并说明理由的方解）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 45.02,
+      "end": 90.55,
+      "seconds": 45.53,
+      "estimated": false,
+      "text": "能说出君、臣、佐、使各自解决什么问题，并解释「佐」为什么还要分佐助、佐制、反佐 能用「药力」而不是「用量」「排序」判断君药，并举出用量最大却不是君药的例子 能把 114 首方里的角色齐备度数出来：有君 105、三角色以上 80、四角色齐 18 能解释为什么 9 首方「抽不到君药」时要留空，而不是按用量最大者代填 能指出一药兼数职的方（如桂枝汤之芍药居臣与佐），并说明方解该怎么写 能区分组成变化的三种形式：药味加减、药量增减、剂型更换",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 90.55,
+      "end": 101.85,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

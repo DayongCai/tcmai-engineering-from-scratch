@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/12-zhongyi-fuke-xue/06-yufang-baojian/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 89.97,
+  "estimatedCues": 0,
+  "videoSeconds": 90.008667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.92,
+      "seconds": 4.92,
+      "estimated": false,
+      "text": "第 6 章 · 预防与保健：五个阶段，一套「别做什么」",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.92,
+      "end": 16.94,
+      "seconds": 12.02,
+      "estimated": false,
+      "text": "「七七，任脉虚，太冲脉衰少，天癸竭，地道不通，故形坏而无子也」——教材·第6章·6.3.2（《素问·上古天真论》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 16.94,
+      "end": 45.96,
+      "seconds": 29.02,
+      "estimated": false,
+      "text": "保健章最容易被读成「多喝水、早点睡」。教材的写法不同：它按五个阶段（经期、孕期、产褥期、哺乳期、绝经期）逐个给出「此期身体处于什么状态 ， 因此禁止做什么」。每一条都对应一个具体病（经期受寒，痛经；孕期提重，胎动不安；产褥当风，产后身痛）。学生记不住，是因为只记禁令不记机制。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 45.96,
+      "end": 74.16,
+      "seconds": 28.2,
+      "estimated": false,
+      "text": "环境逼迫（五个阶段的身体状态互不相同：经期血室正开、孕期胎元未固、产后百脉空虚、哺乳期血化为乳、绝经期天癸将竭——同一条「避寒」在不同阶段的理由完全不同）+ 知识积累（本章 6 单元、7,258 字，证候表现 86 居三辨首位、肝脾 11 居四位面首位；数值 0——本章以行为规范为主）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 74.16,
+      "end": 78.67,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 78.67,
+      "end": 89.97,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/04-zhongyao-ziyuan-xue/03-yewai-diaocha/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 60.59,
+  "estimatedCues": 0,
+  "videoSeconds": 60.628667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.39,
+      "seconds": 4.39,
+      "estimated": false,
+      "text": "第 3 章 · 野生资源的调查与蕴藏量估算",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.39,
+      "end": 15.77,
+      "seconds": 11.38,
+      "estimated": false,
+      "text": "「《神农本草经·序录》」——教材·第3章·3.1.1。本章要回答的是：蕴藏量怎么估，为什么估值区间总是很宽。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 15.77,
+      "end": 27.31,
+      "seconds": 11.54,
+      "estimated": false,
+      "text": "靠样方外推：样方面积、出现频率、单株重量、可利用比例四步相乘，每一步都有误差，所以区间宽是方法本身的性质。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 27.31,
+      "end": 49.29,
+      "seconds": 21.98,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 9 单元 24,201 汉字；三辨主 资源基础 525；四位面（利用状态）主 植物资源 372；引书 13 部 34 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 49.29,
+      "end": 60.59,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

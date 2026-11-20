@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/08-wuguan/16-wuguan-linchuang-lunzhuan/01-yanke-lunzhuan/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 50.11,
+  "estimatedCues": 0,
+  "videoSeconds": 50.138667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 2.83,
+      "seconds": 2.83,
+      "estimated": false,
+      "text": "第 1 章 · 眼科门诊轮转",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 2.83,
+      "end": 14.81,
+      "seconds": 11.98,
+      "estimated": false,
+      "text": "「《F:/textbooks/中医眼科学·眼科门诊轮转》」——第1阶段。本章要回答的是：眼科门诊轮转：这一阶段要交付什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.81,
+      "end": 18.1,
+      "seconds": 3.29,
+      "estimated": false,
+      "text": "眼科门诊轮转：本课第 1 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 18.1,
+      "end": 38.81,
+      "seconds": 20.71,
+      "estimated": false,
+      "text": "环境逼迫（轮转的判据是「接得住、查得清、交得出」）+ 知识积累（本章 4 单元 10,769 汉字；三辨主 辨证与诊断 62；四位面（阶段结构）主 门诊与检查 10769；引书 6 部 6 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 38.81,
+      "end": 50.11,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

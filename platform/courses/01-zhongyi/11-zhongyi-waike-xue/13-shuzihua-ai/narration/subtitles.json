@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/11-zhongyi-waike-xue/13-shuzihua-ai/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 88.9,
+  "estimatedCues": 0,
+  "videoSeconds": 88.924667,
+  "videoMinusNarrationSeconds": 0.025,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 6.7,
+      "seconds": 6.7,
+      "estimated": false,
+      "text": "第 13 章 · 数字化与 AI 时代：把「看得见的判据」变成可计算的字段",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 6.7,
+      "end": 16.47,
+      "seconds": 9.77,
+      "estimated": false,
+      "text": "「痈疽原是火毒生，经络阻隔气血凝」——教材·第13章·13.1.1（《医宗金鉴·外科心法要诀》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 16.47,
+      "end": 47.79,
+      "seconds": 31.32,
+      "estimated": false,
+      "text": "前十二章反复在做一件事：把局部征象读准（红活还是灰暗、应指还是不应指、条索还是大片、硬还是软）。可这些判据一旦离开纸面就无法复用——一病多名（脱疽／脱骨疽／十指零落）、一名多病（疽有有头无头）、异名同病（瘰疬／马刀侠瘿）让病历、统计与随访全都对不上。数字化的第一件事不是上 AI，而是把判据写成字段。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 47.79,
+      "end": 73.09,
+      "seconds": 25.3,
+      "estimated": false,
+      "text": "环境逼迫（同一个疮面在三次门诊里被写成三种描述，随访无法比较；跨机构统计时病名对不上编码）+ 知识积累（本章只有 6 个单元、9,438 字，是三辨/四位面统计最「平」的一章——它谈的不是病位与病因，而是表示方法：编码、图谱、影像、结构化单元与平台）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 73.09,
+      "end": 77.6,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 77.6,
+      "end": 88.9,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+# [tcmP] 课程编排 · 03-zhenjiu/16-zhenjiu-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/03-zhenjiu/16-zhenjiu-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 16-zhenjiu-xue
+title: 针灸学
+en: Acupuncture & Moxibustion
+dept: 03-zhenjiu
+dept_title: 针灸系
+semester: 5
+stage: zhang
+hours: 72
+chapters_target: 30
+bridge: 经穴配伍→组合优化 / 刺灸参数→剂量—反应
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xulun
+    title: 第1章 绪论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.96
+  - slug: 02-jingluo-zonglun
+    title: 第2章 经络总论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.99
+  - slug: 03-shuxue-zonglun
+    title: 第3章 腧穴总论
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.03
+  - slug: 04-shoutaiyin-feijing
+    title: 第4章 手太阴肺经及其腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.09
+  - slug: 05-shouyangming-dachangjing
+    title: 第5章 手阳明大肠经及其腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.05
+  - slug: 06-zuyangming-weijing
+    title: 第6章 足阳明胃经及其腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.08
+  - slug: 07-zutaiyin-pijing
+    title: 第7章 足太阴脾经及其腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.05
+  - slug: 08-shoushaoyin-xinjing
+    title: 第8章 手少阴心经及其腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.03
+  - slug: 09-shoutaiyang-xiaochangjing
+    title: 第9章 手太阳小肠经及其腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.05
+  - slug: 10-zutaiyang-pangguangjing
+    title: 第10章 足太阳膀胱经及其腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.06
+  - slug: 11-zushaoyin-shenjing
+    title: 第11章 足少阴肾经及其腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.04
+  - slug: 12-shoujueyin-xinbaojing
+    title: 第12章 手厥阴心包经及其腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.05
+  - slug: 13-shoushaoyang-sanjiaojing
+    title: 第13章 手少阳三焦经及其腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.06
+  - slug: 14-zushaoyang-danjing
+    title: 第14章 足少阳胆经及其腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.07
+  - slug: 15-zujueyin-ganjing
+    title: 第15章 足厥阴肝经及其腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.04
+  - slug: 16-dumai
+    title: 第16章 督脉及其腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1.01
+  - slug: 17-renmai
+    title: 第17章 任脉及其腧穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1.02
+  - slug: 18-jingwai-qixue
+    title: 第18章 经外奇穴
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99
+  - slug: 19-cijiufa-zonglun
+    title: 第19章 刺灸法总论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1
+  - slug: 20-haozhen-cifa
+    title: 第20章 毫针刺法
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.02
+  - slug: 21-jiufa
+    title: 第21章 灸法
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.96
+  - slug: 22-baguan-qita-cifa
+    title: 第22章 拔罐法及其他刺法
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.08
+  - slug: 23-zhiliao-zonglun
+    title: 第23章 针灸治疗总论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.03
+  - slug: 24-tongzheng
+    title: 第24章 头面躯体痛证
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.04
+  - slug: 25-neike-bingzheng
+    title: 第25章 内科病证
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1.01
+  - slug: 26-fuer-bingzheng
+    title: 第26章 妇儿科病证
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99
+  - slug: 27-piwai-bingzheng
+    title: 第27章 皮肤外科病证
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1
+  - slug: 28-wuguan-bingzheng
+    title: 第28章 五官科病证
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.99
+  - slug: 29-jizheng-qita
+    title: 第29章 急症及其他病证
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.02
+  - slug: 30-xiandai-yanjiu
+    title: 第30章 针灸现代研究与数字化
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.05

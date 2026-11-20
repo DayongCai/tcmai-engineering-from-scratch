@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/09-fuchanke-huli-xue/06-gaowei-renshen/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 63.53,
+  "estimatedCues": 0,
+  "videoSeconds": 63.548667,
+  "videoMinusNarrationSeconds": 0.019,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.25,
+      "seconds": 4.25,
+      "estimated": false,
+      "text": "第 6 章 · 高危妊娠与妊娠并发症护理",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.25,
+      "end": 23.07,
+      "seconds": 18.82,
+      "estimated": false,
+      "text": "「《妇产科护理学·第7章 高危妊娠与妊娠并发症护理》」——教材第 7 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：高危妊娠与妊娠并发症护理这一章的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 23.07,
+      "end": 29.12,
+      "seconds": 6.05,
+      "estimated": false,
+      "text": "高危妊娠独立成章：风险分层决定随访密度与转诊时机。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 29.12,
+      "end": 52.23,
+      "seconds": 23.11,
+      "estimated": false,
+      "text": "环境逼迫（妇产科同时照护两条生命，且同一个人在不同阶段（孕、产、褥）的判据完全不同）+ 知识积累（本章 1 单元 17,884 汉字；三辨主 孕期监护 228；四位面（孕产阶段）主 孕期 70；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 52.23,
+      "end": 63.53,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

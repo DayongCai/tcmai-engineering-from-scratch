@@ -1,0 +1,265 @@
+{
+  "$generated": "手工维护：教材开稿登记（无底本表，按外源条文撰写层逐章登记依据）",
+  "subject": "02-zhongyao/21-zhongyao-du-li-xue",
+  "title": "中药毒理学",
+  "mode": "开稿",
+  "teachingChapters": 10,
+  "textbookChaptersBefore": 0,
+  "textbookChaptersAfter": 10,
+  "why": "本课无底本表。46 条外源分两层：① 实验方法与注册要求（12 份 OECD 测试指南 + 4 份国内指导原则，27 条）；② 机制与实例文献（何首乌肝损伤综述、雷公藤甲素肝毒性、马兜铃酸肾病综述、乌头碱毒性与中毒分析、十八反十九畏方剂网络研究，5 份 19 条）。两层合起来支撑 10 章，章目与教学计划逐条对齐。",
+  "layerNote": "全部章节为「本库撰写层」——不是源正文层；英文条文保留英文原句作引文，中译只作转述不冒充引文。",
+  "chapters": [
+    {
+      "no": 1,
+      "file": "textbooks/02-zhongyao/21-zhongyao-du-li-xue/01-第1章-毒理学的对象.md",
+      "title": "毒理学的对象：剂量、分级与安全窗",
+      "teachingTitle": "毒理学的对象：剂量、分级与安全窗",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1908,
+        "citations": 4,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-du-li/外源条文.json",
+          "note": "46 条（12 份 OECD 测试指南 + 4 份国内指导原则 + 5 份机制/实例文献）；本章取 E01–E03（TG 420 第2/8 条、TG 425 第2条）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/zhongyao-du-li/补源登记.json",
+          "note": "21 份来源 sha256 / 页数或文本快照 / 逐字校勘，46/46 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 2,
+      "file": "textbooks/02-zhongyao/21-zhongyao-du-li-xue/02-第2章-毒性物质基础.md",
+      "title": "毒性物质基础：成分类型与矿物药",
+      "teachingTitle": "毒性物质基础：成分类型与矿物药",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2011,
+        "citations": 6,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-du-li/外源条文.json",
+          "note": "46 条（12 份 OECD 测试指南 + 4 份国内指导原则 + 5 份机制/实例文献）；本章取 E09、E18–E21（受试物质量与代表上市样品）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/zhongyao-du-li/补源登记.json",
+          "note": "21 份来源 sha256 / 页数或文本快照 / 逐字校勘，46/46 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 3,
+      "file": "textbooks/02-zhongyao/21-zhongyao-du-li-xue/03-第3章-肝毒性.md",
+      "title": "肝毒性：为什么肝最先受损",
+      "teachingTitle": "肝毒性：为什么肝最先受损",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1955,
+        "citations": 7,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-du-li/外源条文.json",
+          "note": "46 条（12 份 OECD 测试指南 + 4 份国内指导原则 + 5 份机制/实例文献）；本章取 L01–L05（HILI 定义、何首乌研究现状、triptolide 双面性与八条机制）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/zhongyao-du-li/补源登记.json",
+          "note": "21 份来源 sha256 / 页数或文本快照 / 逐字校勘，46/46 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 4,
+      "file": "textbooks/02-zhongyao/21-zhongyao-du-li-xue/04-第4章-肾毒性-马兜铃酸的教训.md",
+      "title": "肾毒性：马兜铃酸的教训",
+      "teachingTitle": "肾毒性：马兜铃酸的教训",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1928,
+        "citations": 8,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-du-li/外源条文.json",
+          "note": "46 条（12 份 OECD 测试指南 + 4 份国内指导原则 + 5 份机制/实例文献）；本章取 L06–L09（AAN 定义、比利时队列、累积剂量、巴尔干地方性）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/zhongyao-du-li/补源登记.json",
+          "note": "21 份来源 sha256 / 页数或文本快照 / 逐字校勘，46/46 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 5,
+      "file": "textbooks/02-zhongyao/21-zhongyao-du-li-xue/05-第5章-心与神经毒性.md",
+      "title": "心与神经毒性：乌头碱的半小时",
+      "teachingTitle": "心与神经毒性：乌头碱的半小时",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1879,
+        "citations": 10,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-du-li/外源条文.json",
+          "note": "46 条（12 份 OECD 测试指南 + 4 份国内指导原则 + 5 份机制/实例文献）；本章取 L10–L15（双面性、2 小时发作、C8/C14 酯基、MDA/DDA、38 倍、三系统症状）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/zhongyao-du-li/补源登记.json",
+          "note": "21 份来源 sha256 / 页数或文本快照 / 逐字校勘，46/46 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 6,
+      "file": "textbooks/02-zhongyao/21-zhongyao-du-li-xue/06-第6章-生殖与遗传毒性.md",
+      "title": "生殖与遗传毒性：妊娠禁忌的分级",
+      "teachingTitle": "生殖与遗传毒性：妊娠禁忌的分级",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1911,
+        "citations": 8,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-du-li/外源条文.json",
+          "note": "46 条（12 份 OECD 测试指南 + 4 份国内指导原则 + 5 份机制/实例文献）；本章取 E05、E06、E10、E12–E14、E26、E27（Ames / 473 / 487 / 474 / 470 / 总览）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/zhongyao-du-li/补源登记.json",
+          "note": "21 份来源 sha256 / 页数或文本快照 / 逐字校勘，46/46 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 7,
+      "file": "textbooks/02-zhongyao/21-zhongyao-du-li-xue/07-第7章-配伍与炮制减毒.md",
+      "title": "配伍与炮制减毒：十八反十九畏怎么读",
+      "teachingTitle": "配伍与炮制减毒：十八反十九畏怎么读",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1810,
+        "citations": 13,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-du-li/外源条文.json",
+          "note": "46 条（12 份 OECD 测试指南 + 4 份国内指导原则 + 5 份机制/实例文献）；本章取 L16–L19（十八反十九畏的方剂网络与化学空间证据）+ L12–L14（水解减毒）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/zhongyao-du-li/补源登记.json",
+          "note": "21 份来源 sha256 / 页数或文本快照 / 逐字校勘，46/46 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 8,
+      "file": "textbooks/02-zhongyao/21-zhongyao-du-li-xue/08-第8章-不良反应监测与安全边界.md",
+      "title": "不良反应监测与安全边界",
+      "teachingTitle": "不良反应监测与安全边界",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1917,
+        "citations": 5,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-du-li/外源条文.json",
+          "note": "46 条（12 份 OECD 测试指南 + 4 份国内指导原则 + 5 份机制/实例文献）；本章取 E07、E08、E22、E23（经典名方毒理范围与 GLP、长期毒性目的与给药期限）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/zhongyao-du-li/补源登记.json",
+          "note": "21 份来源 sha256 / 页数或文本快照 / 逐字校勘，46/46 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 9,
+      "file": "textbooks/02-zhongyao/21-zhongyao-du-li-xue/09-第9章-毒理实验与安全评价.md",
+      "title": "毒理实验与安全评价：LD50、亚慢性、遗传毒性与 GLP",
+      "teachingTitle": "毒理实验与安全评价：LD50、亚慢性、遗传毒性与 GLP",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1955,
+        "citations": 8,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-du-li/外源条文.json",
+          "note": "46 条（12 份 OECD 测试指南 + 4 份国内指导原则 + 5 份机制/实例文献）；本章取 E04、E08、E11、E15–E17、E22–E25（28/90 天、慢性、致癌、合并设计、GLP）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/zhongyao-du-li/补源登记.json",
+          "note": "21 份来源 sha256 / 页数或文本快照 / 逐字校勘，46/46 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 10,
+      "file": "textbooks/02-zhongyao/21-zhongyao-du-li-xue/10-第10章-致癌性与长期暴露.md",
+      "title": "致癌性与长期暴露：从「中毒」到「肿瘤」的终点",
+      "teachingTitle": "致癌性与长期暴露：从「中毒」到「肿瘤」的终点",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1820,
+        "citations": 6,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-du-li/外源条文.json",
+          "note": "46 条（12 份 OECD 测试指南 + 4 份国内指导原则 + 5 份机制/实例文献）；本章取 E15–E17、E24、E25（TG 451 / 452 / 453 的期限与设计）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/zhongyao-du-li/补源登记.json",
+          "note": "21 份来源 sha256 / 页数或文本快照 / 逐字校勘，46/46 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    }
+  ],
+  "planned": [],
+  "note": "10 章已全部写完（2026-11-16）。机制章（3/4/5/7）依据的是第四批补源的文本快照；条文条号为本库按摘句顺序编的序号，非原文条号，已在 sources.note 注明。"
+}

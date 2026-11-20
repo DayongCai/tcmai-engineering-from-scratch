@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 07-zhineng/12-shuzi-renti-xuni-fangzhen
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/07-zhineng/12-shuzi-renti-xuni-fangzhen/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 12-shuzi-renti-xuni-fangzhen
+title: 数字人体与虚拟仿真
+en: Digital Human & Simulation
+dept: 07-zhineng
+dept_title: 智能系
+semester: 7
+stage: zhuang
+hours: 54
+chapters_target: 8
+bridge: 经络三维建模→网格几何 / 虚拟针刺→碰撞检测
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-dh1
+    title: 第1章 数字人体的概念与来源
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.9
+  - slug: 02-dh2
+    title: 第2章 数据从哪里来：体表、影像与传感
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.99
+  - slug: 03-dh3
+    title: 第3章 结构与层级：把人体写成知识组织
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 0.98
+  - slug: 04-dh4
+    title: 第4章 建模：降维、嵌入与参数化
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.96
+  - slug: 05-dh5
+    title: 第5章 人群分型与聚类
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.88
+  - slug: 06-dh6
+    title: 第6章 仿真结果怎么验：评估与对照
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.95
+  - slug: 07-dh7
+    title: 第7章 可视化与交互：系统怎么长
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.94
+  - slug: 08-dh8
+    title: 第8章 隐私：人体数据是敏感信息
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.96

@@ -1,0 +1,67 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/02-zhongyao/18-yaoshi-guanli-xue/chapters/20-falv-zeren-chubei/docs/zh.md",
+  "course": "18-yaoshi-guanli-xue",
+  "dept": "02-zhongyao",
+  "chapter": "20-falv-zeren-chubei",
+  "title": "第 20 章 · 法律责任与药品储备供应",
+  "segmentCount": 5,
+  "estimateTotalSeconds": 66,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 20 章 · 法律责任与药品储备供应",
+      "slide": "title",
+      "spoken": "第 20 章 · 法律责任与药品储备供应",
+      "estimateSeconds": 3,
+      "audio": "001.mp3",
+      "audioSeconds": 4.08
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「《中华人民共和国药品管理法（2019）·第一百一十八条》」——外源课：条文依据为「外源·中华人民共和国药品管理法（2019） 第一百一十八条」，非教材原文篇名。本章要回答的是：法律责任与药品储备供应这一环节的核心判据是什么。",
+      "slide": "title",
+      "spoken": "「《中华人民共和国药品管理法（2019）·第一百一十八条》」——外源课：条文依据为「外源·中华人民共和国药品管理法（2019） 第一百一十八条」，非教材原文篇名。本章要回答的是：法律责任与药品储备供应这一环节的核心判据是什么。",
+      "estimateSeconds": 24,
+      "audio": "002.mp3",
+      "audioSeconds": 21.82
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "最后两件事：违法要付什么代价，以及药短缺时国家做什么。",
+      "slide": "problem",
+      "spoken": "最后两件事：违法要付什么代价，以及药短缺时国家做什么。",
+      "estimateSeconds": 6,
+      "audio": "003.mp3",
+      "audioSeconds": 6.07
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（药事管理的失误大多不是「不知道该做什么」，而是「做了但没留证据、变了但没报」）+ 知识积累（本章 1 单元 1,104 汉字；三辨主 **质量与责任 7**；四位面（制度环节）主 **监管 6**；引书 **2 部 2 次**；数值类命中 0）",
+      "slide": "roots",
+      "spoken": "环境逼迫（药事管理的失误大多不是「不知道该做什么」，而是「做了但没留证据、变了但没报」）+ 知识积累（本章 1 单元 1,104 汉字；三辨主 质量与责任 7；四位面（制度环节）主 监管 6；引书 2 部 2 次；数值类命中 0）",
+      "estimateSeconds": 22,
+      "audio": "004.mp3",
+      "audioSeconds": 21
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "005.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 64.27,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/06-tuina-shoufa-xue/07-xunlian-pingjia/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 53.37,
+  "estimatedCues": 0,
+  "videoSeconds": 53.402667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.65,
+      "seconds": 3.65,
+      "estimated": false,
+      "text": "第 7 章 · 手法训练的评价与反馈",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.65,
+      "end": 13.97,
+      "seconds": 10.32,
+      "estimated": false,
+      "text": "「《易筋经·总论》」——教材·第4章·4.1.1。本章要回答的是：手法怎么练，练到什么程度算合格。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 13.97,
+      "end": 21.89,
+      "seconds": 7.92,
+      "estimated": false,
+      "text": "功力训练（易筋经、指力腕力）与手法训练（频率稳定性）是两件事，教材分开写。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 21.89,
+      "end": 42.07,
+      "seconds": 20.18,
+      "estimated": false,
+      "text": "环境逼迫（手法是手上的事，说到与做到之间隔着几年功夫）+ 知识积累（本章 5 单元 20,449 汉字；三辨主 手法动作 480；四位面（着力面）主 肘臂 117；引书 5 部 8 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 42.07,
+      "end": 53.37,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

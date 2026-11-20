@@ -1,0 +1,216 @@
+{
+  "$generated": "手工维护：教材开稿登记（无底本表，按外源条文 + 本项目框架撰写层逐章登记依据）",
+  "subject": "05-huli/03-jiankang-pinggu",
+  "title": "健康评估",
+  "mode": "开稿",
+  "teachingChapters": 8,
+  "textbookChaptersBefore": 0,
+  "textbookChaptersAfter": 8,
+  "why": "本课无底本表。外源 6 份 25 条：4 份评估工具说明（GDS-15 / Mini-Cog / Hendrich II / CDC 家庭安全清单，18 条）+ WHO Decade of Healthy Ageing 2019（内在能力与功能发挥框架，4 条）+ 内在能力结构综述（3 条）。教材的「四域适应框架」是**本项目对 WHO 框架的本土化改编**，不是 WHO 原文四域——每章 N.1 已分列「外部依据」与「本项目框架」。",
+  "layerNote": "全部章节为「本库撰写层」——不是源正文层；英文条文保留英文原句作引文，中译只作转述。",
+  "frameworkNote": "四域（生理/心理/社会/环境）为本项目自研改编：WHO 只给「内在能力」与「功能发挥五域」，没有「四域适应框架」一词。凡框架本体处一律标注「本项目框架」，不得冒称 WHO 原文。",
+  "chapters": [
+    {
+      "no": 1,
+      "file": "textbooks/05-huli/03-jiankang-pinggu/01-第1章-四域适应框架与从容长寿基线.md",
+      "title": "四域适应框架与「从容长寿」基线",
+      "teachingTitle": "四域适应框架与「从容长寿」基线",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1818,
+        "citations": 6,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/jiankang-pinggu/外源条文.json",
+          "note": "25 条（4 份 HIGN/CDC 评估工具 + WHO Decade 2019 + 内在能力综述）；本章取 W01–W04（WHO 内在能力与功能发挥五域、环境界定）+ W07"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/jiankang-pinggu/补源登记.json",
+          "note": "6 份来源 sha256 / 页数或文本快照 / 逐字校勘，25/25 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 2,
+      "file": "textbooks/05-huli/03-jiankang-pinggu/02-第2章-生理适应能力.md",
+      "title": "生理适应能力：生命体征与一般状态的判读",
+      "teachingTitle": "生理适应能力：生命体征与一般状态的判读",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1837,
+        "citations": 3,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/jiankang-pinggu/外源条文.json",
+          "note": "25 条（4 份 HIGN/CDC 评估工具 + WHO Decade 2019 + 内在能力综述）；本章取 E07–E12（Mini-Cog 三条、Hendrich II 三条）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/jiankang-pinggu/补源登记.json",
+          "note": "6 份来源 sha256 / 页数或文本快照 / 逐字校勘，25/25 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 3,
+      "file": "textbooks/05-huli/03-jiankang-pinggu/03-第3章-心理适应能力.md",
+      "title": "心理适应能力：尊严、自主与情绪的判读",
+      "teachingTitle": "心理适应能力：尊严、自主与情绪的判读",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1861,
+        "citations": 2,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/jiankang-pinggu/外源条文.json",
+          "note": "25 条（4 份 HIGN/CDC 评估工具 + WHO Decade 2019 + 内在能力综述）；本章取 E01–E06（GDS 六条：来源、计分方向、分层、耗时、非自然老化、简版）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/jiankang-pinggu/补源登记.json",
+          "note": "6 份来源 sha256 / 页数或文本快照 / 逐字校勘，25/25 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 4,
+      "file": "textbooks/05-huli/03-jiankang-pinggu/04-第4章-社会适应能力.md",
+      "title": "社会适应能力：角色、家庭与支持的判读",
+      "teachingTitle": "社会适应能力：角色、家庭与支持的判读",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1875,
+        "citations": 3,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/jiankang-pinggu/外源条文.json",
+          "note": "25 条（4 份 HIGN/CDC 评估工具 + WHO Decade 2019 + 内在能力综述）；本章取 W02–W04、W06（功能发挥含关系与贡献；环境含人与关系、政策与服务）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/jiankang-pinggu/补源登记.json",
+          "note": "6 份来源 sha256 / 页数或文本快照 / 逐字校勘，25/25 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 5,
+      "file": "textbooks/05-huli/03-jiankang-pinggu/05-第5章-环境生态适应能力.md",
+      "title": "环境生态适应能力：场所、季节与可达性的判读",
+      "teachingTitle": "环境生态适应能力：场所、季节与可达性的判读",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1837,
+        "citations": 3,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/jiankang-pinggu/外源条文.json",
+          "note": "25 条（4 份 HIGN/CDC 评估工具 + WHO Decade 2019 + 内在能力综述）；本章取 E13–E18（CDC 家庭安全清单六条）+ W04"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/jiankang-pinggu/补源登记.json",
+          "note": "6 份来源 sha256 / 页数或文本快照 / 逐字校勘，25/25 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 6,
+      "file": "textbooks/05-huli/03-jiankang-pinggu/06-第6章-四域整合判断与量表的使用.md",
+      "title": "四域整合判断与量表的使用",
+      "teachingTitle": "四域整合判断与量表的使用",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1832,
+        "citations": 4,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/jiankang-pinggu/外源条文.json",
+          "note": "25 条（4 份 HIGN/CDC 评估工具 + WHO Decade 2019 + 内在能力综述）；本章取 E03、E04、E06、E07、E09、E11、E12（三份工具的耗时、适配、分层与复评）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/jiankang-pinggu/补源登记.json",
+          "note": "6 份来源 sha256 / 页数或文本快照 / 逐字校勘，25/25 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 7,
+      "file": "textbooks/05-huli/03-jiankang-pinggu/07-第7章-评估结果的记录与沟通.md",
+      "title": "评估结果的记录与沟通",
+      "teachingTitle": "评估结果的记录与沟通",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1917,
+        "citations": 5,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/jiankang-pinggu/外源条文.json",
+          "note": "25 条（4 份 HIGN/CDC 评估工具 + WHO Decade 2019 + 内在能力综述）；本章取 E04、E07、E09、W02、W06（分诊定位、耗时、功能发挥定义）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/jiankang-pinggu/补源登记.json",
+          "note": "6 份来源 sha256 / 页数或文本快照 / 逐字校勘，25/25 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    },
+    {
+      "no": 8,
+      "file": "textbooks/05-huli/03-jiankang-pinggu/08-第8章-评估偏差过度检查与质量治理.md",
+      "title": "评估偏差、过度检查与质量治理",
+      "teachingTitle": "评估偏差、过度检查与质量治理",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1900,
+        "citations": 4,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/jiankang-pinggu/外源条文.json",
+          "note": "25 条（4 份 HIGN/CDC 评估工具 + WHO Decade 2019 + 内在能力综述）；本章取 E03、E05、E08、E09、E10、E11（解释条件、非自然老化、不推荐普筛、分诊定位、多因素、复评）"
+        },
+        {
+          "kind": "校勘登记",
+          "path": "standards/jiankang-pinggu/补源登记.json",
+          "note": "6 份来源 sha256 / 页数或文本快照 / 逐字校勘，25/25 verified"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字"
+    }
+  ],
+  "planned": [],
+  "note": "8 章已全部写完（2026-11-16）。社会域与环境域无国际量表入库，评估用结构化问诊与 CDC 清单，已在正文标注为本项目做法。"
+}

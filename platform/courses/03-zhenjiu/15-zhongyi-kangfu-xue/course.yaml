@@ -1,0 +1,90 @@
+# [tcmP] 课程编排 · 03-zhenjiu/15-zhongyi-kangfu-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/03-zhenjiu/15-zhongyi-kangfu-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 15-zhongyi-kangfu-xue
+title: 中医康复学
+en: TCM Rehabilitation
+dept: 03-zhenjiu
+dept_title: 针灸系
+semester: 7
+stage: zhuang
+hours: 72
+chapters_target: 10
+bridge: 辨证施康→规则+ML 混合 / 随访数据→生存分析
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-zhongyi-kangfu-gailun
+    title: 第1章 中医康复学概论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 02-bianzheng-pingding
+    title: 第2章 辨证与功能评定
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.92
+  - slug: 03-zhongyao-kangfu
+    title: 第3章 中药康复
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.88
+  - slug: 04-zhenjiu-kangfu
+    title: 第4章 针灸康复
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.89
+  - slug: 05-tuina-kangfu
+    title: 第5章 推拿康复
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.9
+  - slug: 06-qigong-kangfu
+    title: 第6章 气功导引康复
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.92
+  - slug: 07-yinshi-qingzhi
+    title: 第7章 饮食与情志康复
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.93
+  - slug: 08-zhongfeng-kangfu
+    title: 第8章 中风康复
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.87
+  - slug: 09-gushang-manbing
+    title: 第9章 骨伤与慢病康复
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.92
+  - slug: 10-shequ-jiating
+    title: 第10章 社区与家庭康复
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.94

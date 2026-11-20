@@ -1,35 +1,35 @@
 {
- "slug": "21-zhongyao-du-li-xue",
- "title": "中药毒理学",
- "en": "TCM Toxicology",
- "deptSlug": "02-zhongyao",
- "deptTitle": "中药系",
- "globalN": 25,
- "type": "Core",
- "semester": 6,
- "stage": "zhang",
- "stageTitle": "长",
- "hours": 54,
- "bridge": "毒性剂量→安全窗计算 / 不良反应信号→统计检验",
- "chaptersTarget": 10,
- "chapters": [],
- "platform": {
-  "id": "tcmP",
-  "coursePath": "platform/courses/02-zhongyao/21-zhongyao-du-li-xue",
-  "videosPublished": 0,
-  "status": "planned"
- },
- "textbook": {
-  "id": "textbooks",
-  "path": "textbooks/02-zhongyao/21-zhongyao-du-li-xue",
-  "chaptersWritten": 0,
-  "words": 0,
-  "kind": "派生"
- },
- "底本": {
-  "kind": "派生",
-  "from": "standards/zhongyao-xue/units.json",
-  "dir": "standards/zhongyao-du-li",
-  "note": "本库无《中药毒理学》母本；第 1–8 章由《中药学》340 单元按毒理学主题重排（派生·），第 9 章为外源章：OECD 试验准则 5 份 + 国家药监局毒理研究技术指导原则 1 份，locator 一律「外源·」，逐字校勘见 补源登记.json"
- }
+  "slug": "21-zhongyao-du-li-xue",
+  "title": "中药毒理学",
+  "en": "TCM Toxicology",
+  "deptSlug": "02-zhongyao",
+  "deptTitle": "中药系",
+  "globalN": 25,
+  "type": "Core",
+  "semester": 6,
+  "stage": "zhang",
+  "stageTitle": "长",
+  "hours": 54,
+  "bridge": "毒性剂量→安全窗计算 / 不良反应信号→统计检验",
+  "chaptersTarget": 10,
+  "chapters": [],
+  "platform": {
+    "id": "tcmP",
+    "coursePath": "platform/courses/02-zhongyao/21-zhongyao-du-li-xue",
+    "videosPublished": 0,
+    "status": "planned"
+  },
+  "textbook": {
+    "id": "textbooks",
+    "path": "textbooks/02-zhongyao/21-zhongyao-du-li-xue",
+    "chaptersWritten": 10,
+    "words": 31593,
+    "status": "wip"
+  },
+  "底本": {
+    "kind": "派生",
+    "from": "standards/zhongyao-xue/units.json",
+    "dir": "standards/zhongyao-du-li",
+    "note": "本库无《中药毒理学》母本；第 1–8 章由《中药学》340 单元按毒理学主题重排（派生·），第 9 章为外源章：OECD 试验准则 5 份 + 国家药监局毒理研究技术指导原则 1 份，locator 一律「外源·」，逐字校勘见 补源登记.json"
+  }
 }

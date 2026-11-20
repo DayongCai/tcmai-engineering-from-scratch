@@ -1,0 +1,37 @@
+{
+  "chapter": "12-peiwu-gongxian",
+  "slideCount": 6,
+  "segmentCount": 6,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 20
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 72
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 181
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 126
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 265
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 52
+    }
+  ]
+}

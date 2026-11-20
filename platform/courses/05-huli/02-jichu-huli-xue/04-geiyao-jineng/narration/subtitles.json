@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/02-jichu-huli-xue/04-geiyao-jineng/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 61.75,
+  "estimatedCues": 0,
+  "videoSeconds": 61.784667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.1,
+      "seconds": 3.1,
+      "estimated": false,
+      "text": "第 4 章 · 给药相关护理技能",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.1,
+      "end": 20.4,
+      "seconds": 17.3,
+      "estimated": false,
+      "text": "「《护理综合技能·第五章 给药相关护理技能》」——本章讲给药技能，教材无篇名级引文；篇名按该书章目补足，非本章原文篇名。本章要回答的是：给药差错的绝大多数发生在哪一步。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.4,
+      "end": 29.11,
+      "seconds": 8.71,
+      "estimated": false,
+      "text": "不在穿刺，在核对与转抄：同一药名不同剂型、同一剂量不同单位，都是「看起来对」的错误。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 29.11,
+      "end": 50.45,
+      "seconds": 21.34,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 1 单元 19,691 汉字；三辨主 观察与评价 386；四位面（操作环节）主 注射给药 28；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 50.45,
+      "end": 61.75,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

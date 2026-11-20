@@ -81,7 +81,8 @@ test('zip 中央目录可解析，且 OOXML 必需条目都在', () => {
 // ── 2. 教材稿形状 ─────────────────────────────────────────────────────
 console.log('\n[2] 教材稿形状');
 
-const chapterFiles = fs.readdirSync(TB).filter((f) => /^\d{2}-.*\.md$/.test(f)).sort();
+// 章号允许三位：外源古籍学科章数过百（100-第100章…），写死 \d{2} 会把它们漏在书外
+const chapterFiles = fs.readdirSync(TB).filter((f) => /^\d{2,}-.*\.md$/.test(f)).sort((a, b) => parseInt(a, 10) - parseInt(b, 10) || a.localeCompare(b, 'zh'));
 const sourceMap = JSON.parse(fs.readFileSync(path.join(STD, 'source-map.json'), 'utf8'));
 
 test('生成 11 个文件（00-前言 + 10 章）', () => {

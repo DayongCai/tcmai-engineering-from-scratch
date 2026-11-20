@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/06-shengli-xue/06-xiaohua-xishou/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 136.7,
+  "estimatedCues": 0,
+  "videoSeconds": 136.728667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.4,
+      "seconds": 5.4,
+      "estimated": false,
+      "text": "第 6 章 · 消化和吸收：分泌·运动·吸收与调节",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.4,
+      "end": 20.18,
+      "seconds": 14.78,
+      "estimated": false,
+      "text": "「机械性消化与化学性消化的关系表现为相辅相成，机械性消化为化学性消化创造条件」——教材·第6章·6.1.1（《生理学·第6章·6.1.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.18,
+      "end": 46.08,
+      "seconds": 25.9,
+      "estimated": false,
+      "text": "你能背出胃里有壁细胞和主细胞，但被问「为什么胃能分泌盐酸却不会把自己消化掉」、「为什么脂肪排空最慢」、「为什么吃肉之后血糖不会立刻升高」，答案往往落到「因为消化需要时间」这种没有信息量的话上。消化这一章的题，几乎全是次序题与去向题：谁先谁后、谁走哪条路、谁主谁次。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 46.08,
+      "end": 70.01,
+      "seconds": 23.93,
+      "estimated": false,
+      "text": "环境逼迫（问诊时患者说「吃点东西就胀」「吃了油的就不舒服」，你必须当场把这两句翻译成「排空与运动」「脂类的消化与吸收」两件不同的机制，而不是都归成「脾胃虚弱」）+ 知识积累（分泌—运动—吸收三段 × 血液与淋巴两条去向 = 一条能把任何消化道症状放回机制坐标的路径）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 70.01,
+      "end": 125.4,
+      "seconds": 55.39,
+      "estimated": false,
+      "text": "能说清机械性消化与化学性消化互为条件的关系，并举一个「只有一半」的反例 能说出消化道平滑肌区别于骨骼肌的四条特性，以及慢波为什么「本身不引起收缩」 能说清消化液四类成分各自负责什么，以及为什么分泌是主动过程 能画出调节的三层次（局部反射 / 外来神经 / 激素），并说出外来神经只调「活动水平」 能排出胃排空的速度次序，并解释为什么脂肪最慢 能说出胰液酶原激活的顺序与自我保护机制，以及胆汁为什么不含消化酶仍能助消化 能按物质类别判出吸收去向（血液还是淋巴），并说明小肠为什么是吸收主场 能用三章对照说明本章为什么以器官层为绝对重心",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 125.4,
+      "end": 136.7,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

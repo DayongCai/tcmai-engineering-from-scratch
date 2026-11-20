@@ -1,7 +1,7 @@
 {
  "courseTitle": "脉诊客观化",
  "deptPath": "departments/07-zhineng/08-maizhen-keguanhua",
- "xlsx": "F:/textbooks/F:/textbooks/qhzy-中医智能仪器与可穿戴设备.xlsx",
+ "xlsx": "F:/textbooks/qhzy-中医智能仪器与可穿戴设备.xlsx",
  "chain": "采集与特征 → 线性与树 → 网络与核 → 概率与集成",
  "levelLabel": "章群结构",
  "objectPressure": "脉诊客观化的判据是「可测—可复现—可解释」三关，缺一关就只是仪器读数",

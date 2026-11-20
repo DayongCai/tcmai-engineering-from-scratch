@@ -28,6 +28,20 @@
    "series": "Centers for Disease Control and Prevention · STEADI (Stopping Elderly Accidents, Deaths & Injuries)",
    "revised": "2017",
    "url": "https://www.cdc.gov/steadi/pdf/STEADI-Brochure-CheckForSafety-508.pdf"
+  },
+  "WHO-DECADE-2019": {
+   "file": "WHO-Decade-of-Healthy-Ageing-update-2019.pdf",
+   "title": "Decade of Healthy Ageing 2020-2030: update March 2019",
+   "url": "https://www.who.int/docs/default-source/documents/decade-of-health-ageing/decade-healthy-ageing-update-march-2019.pdf",
+   "issuer": "World Health Organization · 2019 · 官方 PDF",
+   "note": "内在能力（intrinsic capacity）与功能发挥（functional ability）五域的作者定义；条号为本库按摘句顺序编的序号"
+  },
+  "PM-IC-2022": {
+   "file": "Intrinsic-Capacity-Recent-Advances-PMC8947834.txt",
+   "title": "Intrinsic Capacity in Older Adults: Recent Advances",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8947834/",
+   "issuer": "PMC · 2022 · 开放获取全文（存为去标签文本快照）",
+   "note": "内在能力五因子（心理/感觉/认知/活力/运动）的实证结构；条号为本库序号"
   }
  },
  "clauses": [
@@ -156,6 +170,55 @@
    "clause": "第6条",
    "原文": "Put in a nightlight so you can see where you’re walking.",
    "zh": "在走道装夜灯，让人看清脚下。"
+  },
+  {
+   "id": "W01",
+   "source": "WHO-DECADE-2019",
+   "clause": "第1条",
+   "原文": "Intrinsic capacity comprises all the mental and physical capacities that a person can draw on and includes their ability to walk, think, see, hear and remember.",
+   "zh": "（转述见教材正文）"
+  },
+  {
+   "id": "W02",
+   "source": "WHO-DECADE-2019",
+   "clause": "第2条",
+   "原文": "Functional ability is about having the capabilities that enable people to be and do what they have reason to value.",
+   "zh": "（转述见教材正文）"
+  },
+  {
+   "id": "W03",
+   "source": "WHO-DECADE-2019",
+   "clause": "第3条",
+   "原文": "There are five key domains of functional ability, each of which can be enhanced (or constrained) by environmental factors.",
+   "zh": "（转述见教材正文）"
+  },
+  {
+   "id": "W04",
+   "source": "WHO-DECADE-2019",
+   "clause": "第4条",
+   "原文": "Environments include the home, community and broader society, and all the factors within them such as the built environment, people and their relationships, attitudes and values, health and social policies, the systems that support them and the services that they implement.",
+   "zh": "（转述见教材正文）"
+  },
+  {
+   "id": "W05",
+   "source": "PM-IC-2022",
+   "clause": "第1条",
+   "原文": "IC refers to the sum of an individual's physical and mental abilities.",
+   "zh": "（转述见教材正文）"
+  },
+  {
+   "id": "W06",
+   "source": "PM-IC-2022",
+   "clause": "第2条",
+   "原文": "functional ability is described as “the health-related attributes that enable people to be and to do what they have reason to value” [ 5 ].",
+   "zh": "（转述见教材正文）"
+  },
+  {
+   "id": "W07",
+   "source": "PM-IC-2022",
+   "clause": "第3条",
+   "原文": "found that five subfactors (psychological, sensory, cognitive, vitality, and locomotor) formed a structure to better predict future functioning, which is consistent with the findings of Cesari.",
+   "zh": "（转述见教材正文）"
   }
  ]
 }

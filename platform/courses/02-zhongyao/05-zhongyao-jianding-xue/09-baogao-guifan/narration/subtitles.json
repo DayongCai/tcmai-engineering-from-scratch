@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/05-zhongyao-jianding-xue/09-baogao-guifan/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 61.75,
+  "estimatedCues": 0,
+  "videoSeconds": 61.784667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.82,
+      "seconds": 3.82,
+      "estimated": false,
+      "text": "第 9 章 · 鉴定报告的规范与可追溯",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.82,
+      "end": 20.33,
+      "seconds": 16.51,
+      "estimated": false,
+      "text": "「《中国药典·四部》」——本章讲程序与报告，教材无篇名级引文；药典四部收载取样与检验通则，篇名按此补足。本章要回答的是：鉴定报告里最容易被忽略的是哪一栏。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.33,
+      "end": 29.79,
+      "seconds": 9.46,
+      "estimated": false,
+      "text": "取样与留样：取样不随机，后面的数据再准也不代表这批货；留样不封存，出了问题就无从复核。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 29.79,
+      "end": 50.45,
+      "seconds": 20.66,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 3 单元 10,104 汉字；三辨主 质量限度 461；四位面（鉴定四法）主 性状 71；引书 5 部 25 次；数值类命中 1）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 50.45,
+      "end": 61.75,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

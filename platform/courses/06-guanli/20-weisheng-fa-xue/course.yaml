@@ -1,0 +1,138 @@
+# [tcmP] 课程编排 · 06-guanli/20-weisheng-fa-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/06-guanli/20-weisheng-fa-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 20-weisheng-fa-xue
+title: 卫生法学
+en: Health Law
+dept: 06-guanli
+dept_title: 管理系
+semester: 7
+stage: zhuang
+hours: 36
+chapters_target: 18
+bridge: 法条检索→规则化 / 医疗纠纷→案例推理
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-f1
+    title: 第1章 卫生法学导论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.82
+    measured_minutes: 0.84
+  - slug: 02-f2
+    title: 第2章 卫生法的基本原则与法律关系
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.95
+  - slug: 03-f3
+    title: 第3章 卫生立法与卫生法治
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.89
+  - slug: 04-f4
+    title: 第4章 卫生行政与行政执法
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.88
+  - slug: 05-f5
+    title: 第5章 医疗机构管理法律制度
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.89
+  - slug: 06-f6
+    title: 第6章 卫生技术人员管理法律制度
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.92
+  - slug: 07-f7
+    title: 第7章 医疗行为与医疗质量安全法律制度
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.98
+  - slug: 08-f8
+    title: 第8章 医疗纠纷预防与处理法律制度
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.93
+  - slug: 09-f9
+    title: 第9章 药品管理法律制度
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.83
+    measured_minutes: 0.87
+  - slug: 10-f10
+    title: 第10章 医疗器械、化妆品与消毒产品管理法律制度
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.03
+  - slug: 11-f11
+    title: 第11章 公共卫生与疾病预防控制法律制度
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.97
+  - slug: 12-f12
+    title: 第12章 基本医疗卫生与健康促进法律制度
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.97
+  - slug: 13-f13
+    title: 第13章 医疗保障与医疗救助法律制度
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.95
+  - slug: 14-f14
+    title: 第14章 中医药法律制度
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.87
+  - slug: 15-f15
+    title: 第15章 食品安全与环境卫生法律制度
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.96
+  - slug: 16-f16
+    title: 第16章 生命伦理与新兴技术法律问题
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.97
+  - slug: 17-f17
+    title: 第17章 卫生法律监督与权益救济
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.94
+  - slug: 18-f18
+    title: 第18章 卫生法学与 tcmP 智能教学平台
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.99

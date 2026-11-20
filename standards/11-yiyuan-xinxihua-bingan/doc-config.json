@@ -1,7 +1,7 @@
 {
  "courseTitle": "医院信息化与病案",
  "deptPath": "departments/06-guanli/11-yiyuan-xinxihua-bingan",
- "xlsx": "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx",
+ "xlsx": "F:/textbooks/qhzy-机器学习.xlsx",
  "chain": "系统 → 标准 → 病历 → 病案 → 质量",
  "levelLabel": "章群结构",
  "objectPressure": "信息化的判据是「数据可溯源、病案可对齐、权限可追」",

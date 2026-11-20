@@ -36,7 +36,7 @@ def norm(s):
     return re.sub(r'\s+', '', s)
 
 
-def main():
+def main(check=False):
     reg = {"note": "药事管理学 外源补源登记：每条记来源、URL、sha256、页数与逐字校勘结论。"
                    "查不到的句子不入库（约定见 补源约定.md）。",
            "convention": "补源约定.md", "sources": {}, "clauses": []}
@@ -88,11 +88,34 @@ def main():
             'verified': verified,
             'missing': [x[:60] for x in miss],
             'locator': f"外源·{CLAUSES['sources'].get(c['source'], {}).get('title', c['source'])} {c['clause']}",
+            # 原文净值：只删页眉/页脚/孤立页码这些**版式痕迹**，其余一字不动。
+            # 为什么需要：原文里的「现- 1 -X国家市场监督管理总局发布…」是从 PDF 文本层带出来的版式垃圾，
+            # 照抄进教材就成了「引文里混着页眉」。引用一律取净值，比对仍走 norm()。
+            '原文净值': PAGE_JUNK.sub('', c['原文']).strip(),
         })
     reg['counts'] = {'sources': len(reg['sources']), 'clauses': len(reg['clauses']),
-                     'verified': ok, 'unverified': len(reg['clauses']) - ok}
-    json.dump(reg, open(os.path.join(D, '补源登记.json'), 'w', encoding='utf-8'),
-              ensure_ascii=False, indent=1)
+                     'verified': ok, 'unverified': len(reg['clauses']) - ok,
+                     'junkPolluted': sum(1 for c in CLAUSES['clauses'] if PAGE_JUNK.search(c['原文']))}
+    out_path = os.path.join(D, '补源登记.json')
+
+    if check:
+        # 幂等门：sources/ 或 外源条文.json 变了没重跑，登记就会过期。
+        # 只比这三块（note/convention 是静态文案，不算事实）。
+        if not os.path.exists(out_path):
+            print('✗ 缺 补源登记.json（先跑 python scripts/build_yaoshi_guanli_sources.py）')
+            return 1
+        old = json.load(open(out_path, encoding='utf-8'))
+        for k in ('sources', 'clauses', 'counts'):
+            a = json.dumps(old.get(k), ensure_ascii=False, sort_keys=True)
+            b = json.dumps(reg.get(k), ensure_ascii=False, sort_keys=True)
+            if a != b:
+                print(f'✗ DRIFT {k}：补源登记与重算不一致 —— 改过 sources/ 或 外源条文.json 就重跑本脚本')
+                return 1
+        print(f"✅ 补源登记与重算一致：来源 {len(reg['sources'])} · 条文 {reg['counts']['clauses']} · "
+              f"逐字可查 {reg['counts']['verified']} · 原文带页眉污染 {reg['counts']['junkPolluted']}（引用取 原文净值）")
+        return 0
+
+    json.dump(reg, open(out_path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
     print(f"来源 {len(reg['sources'])} · 条文 {reg['counts']['clauses']} · 逐字可查 {ok}")
     for s, m in reg['sources'].items():
@@ -101,7 +124,9 @@ def main():
     for c in reg['clauses']:
         if not c['verified']:
             print('  ✗ 未通过', c['id'], c['missing'])
+    return 0
 
 
 if __name__ == '__main__':
-    main()
+    import sys
+    sys.exit(main(check='--check' in sys.argv))

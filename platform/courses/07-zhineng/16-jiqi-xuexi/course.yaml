@@ -1,0 +1,126 @@
+# [tcmP] 课程编排 · 07-zhineng/16-jiqi-xuexi
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/07-zhineng/16-jiqi-xuexi/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 16-jiqi-xuexi
+title: 机器学习
+en: Machine Learning
+dept: 07-zhineng
+dept_title: 智能系
+semester: 4
+stage: sheng
+hours: 54
+chapters_target: 16
+bridge: 模型选择→交叉验证 / 特征→表示学习
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xulun
+    title: 第1章 绪论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.92
+  - slug: 02-moxing-pinggu-yu-xuanze
+    title: 第2章 模型评估与选择
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.95
+  - slug: 03-xianxing-moxing
+    title: 第3章 线性模型
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.93
+  - slug: 04-juece-shu
+    title: 第4章 决策树
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.9
+  - slug: 05-shenjing-wangluo
+    title: 第5章 神经网络
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.92
+  - slug: 06-zhichi-xiangliang-ji
+    title: 第6章 支持向量机
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.92
+  - slug: 07-beiyesi-fenleiqiu
+    title: 第7章 贝叶斯分类器
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.95
+  - slug: 08-jicheng-xuexi
+    title: 第8章 集成学习
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.91
+  - slug: 09-julei
+    title: 第9章 聚类
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.89
+  - slug: 10-jiangwei-yu-duliang
+    title: 第10章 降维与度量学习
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.94
+  - slug: 11-tezheng-xuanze-yu-xishu
+    title: 第11章 特征选择与稀疏学习
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.98
+  - slug: 12-jisuan-xuexi-lilun
+    title: 第12章 计算学习理论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.94
+  - slug: 13-banyou-jian-xuexi
+    title: 第13章 半监督学习
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.93
+  - slug: 14-gailv-tu-moxing
+    title: 第14章 概率图模型
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.91
+  - slug: 15-guize-xuexi
+    title: 第15章 规则学习
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.92
+  - slug: 16-qianghua-xuexi
+    title: 第16章 强化学习
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.92

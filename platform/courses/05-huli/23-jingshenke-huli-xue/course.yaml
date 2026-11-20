@@ -1,0 +1,138 @@
+# [tcmP] 课程编排 · 05-huli/23-jingshenke-huli-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/05-huli/23-jingshenke-huli-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 23-jingshenke-huli-xue
+title: 精神科护理学
+en: Psychiatric Nursing
+dept: 05-huli
+dept_title: 护理系
+semester: 7
+stage: zhuang
+hours: 36
+chapters_target: 18
+bridge: 精神症状→多标签分类 / 风险评估→预测
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-gaishu
+    title: 第1章 精神科护理学概述
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97
+  - slug: 02-bingyin-zhengzhuang
+    title: 第2章 精神障碍的病因与症状学基础
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1
+  - slug: 03-jiben-jineng
+    title: 第3章 基本技能与治疗配合
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1
+  - slug: 04-jixing-weiji
+    title: 第4章 急性期与危机状态的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 1
+  - slug: 05-jingshen-fenlie
+    title: 第5章 精神分裂症及相关障碍的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1
+  - slug: 06-yiyu-shuangxiang
+    title: 第6章 抑郁与双相障碍的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.98
+  - slug: 07-jiaolv-yingji
+    title: 第7章 焦虑与应激相关障碍的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1
+  - slug: 08-qiangpo-tixing
+    title: 第8章 强迫与躯体形式相关障碍的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.02
+  - slug: 09-qizhi-laonian
+    title: 第9章 器质性与老年精神障碍的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.01
+  - slug: 10-wuzhi-yila
+    title: 第10章 精神活性物质相关障碍的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.01
+  - slug: 11-erke-qingshaonian
+    title: 第11章 儿童与青少年精神障碍的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.01
+  - slug: 12-jinshi-shuimian
+    title: 第12章 进食与睡眠障碍的护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99
+  - slug: 13-kangfu-huli
+    title: 第13章 精神障碍病人的康复护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1
+  - slug: 14-anquan-fengxian
+    title: 第14章 精神科护理安全与风险管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1.01
+  - slug: 15-renji-goutong
+    title: 第15章 精神科的人际关系与沟通
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.01
+  - slug: 16-falv-lunli
+    title: 第16章 精神科护理的法律与伦理实践
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.01
+  - slug: 17-shequ-jingshen
+    title: 第17章 精神卫生服务与社区精神科护理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1.04
+  - slug: 18-pingtai
+    title: 第18章 精神科护理学与教学平台
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1.01

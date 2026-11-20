@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/21-zhongyi-linchuang-lunzhuan/06-chuke-kaohe/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 59.05,
+  "estimatedCues": 0,
+  "videoSeconds": 59.092667,
+  "videoMinusNarrationSeconds": 0.043,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.92,
+      "seconds": 4.92,
+      "estimated": false,
+      "text": "第 6 章 · 出科考核与病例复盘（含结构化病历）",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.92,
+      "end": 13.56,
+      "seconds": 8.64,
+      "estimated": false,
+      "text": "「圣人之治病也，必知天地阴阳，四时经纪」——教材·第6章·6.1（《素问·疏五过论》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 13.56,
+      "end": 30.74,
+      "seconds": 17.18,
+      "estimated": false,
+      "text": "出科考核最容易变成「讲一段心得」。这一章把它改成三件可核的事：必修病能不能各讲一遍、辨证论治小节里的代表方能不能对上号、数值判据能不能报出。做不到的，就是没做到。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 30.74,
+      "end": 43.24,
+      "seconds": 12.5,
+      "estimated": false,
+      "text": "环境逼迫（轮转要交接、要考核、要留痕）+ 知识积累（本章 1 单元；五科合计 38 病 190 项动作 163,870 汉字）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 43.24,
+      "end": 47.75,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 47.75,
+      "end": 59.05,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

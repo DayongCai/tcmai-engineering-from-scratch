@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/06-shengli-xue/11-ganjue-qiguan/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 145.34,
+  "estimatedCues": 0,
+  "videoSeconds": 145.362667,
+  "videoMinusNarrationSeconds": 0.023,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 7.37,
+      "seconds": 7.37,
+      "estimated": false,
+      "text": "第 11 章 · 感觉器官：全书最容易被写成参数表的一章，给了最多的「不给值」",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 7.37,
+      "end": 18.17,
+      "seconds": 10.8,
+      "estimated": false,
+      "text": "「听阈与最大可听阈之间的范围称为听域」——教材·第11章·11.3.1（《生理学·第11章·11.3.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 18.17,
+      "end": 65.64,
+      "seconds": 47.47,
+      "estimated": false,
+      "text": "视力、视野、听阈、色觉——感觉器官是生理学里最像检查报告的一章。你带着一张验光单来读它，会发现这张单子上没有一栏能对上。本章 20,527 字里，数值型为 0，27 个阿拉伯数字全是列表序号；「不写数值与单位」这类边界句出现了 38 次，是 11 章里最多的一章（最少的一章是第10章，4 次），密度为每千字 1.9。同时「组织」层只命中 5 次，而「细胞」层 105 次里有 48 次挤在视网膜一节。这本书把感官写成一件事：适宜刺激 ， 换能 ， 编码 ， 适应；不是一张参数表。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 65.64,
+      "end": 96.19,
+      "seconds": 30.55,
+      "estimated": false,
+      "text": "环境逼迫（验光、听力筛查、视野检查、色觉图都在给值，学生把「检查报告」当成了教材的替身，背书时找的是栏目而不是关系，一旦被追问「这个值为什么是这个值」就答不上来） + 知识积累（132 个单元的三视角与四层级词频、逐节的数值核验、以及「不给值」声明在 12 小节里的逐节分布，合成一张能看见这本书在哪一段开始防守的账）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 96.19,
+      "end": 134.04,
+      "seconds": 37.85,
+      "estimated": false,
+      "text": "说出感受器四条一般特性（适宜刺激、换能、编码、适应）各自解决什么问题 说出本章三视角里「形态」为何压过「机能」，并与第10章对照 说出「组织」层在本章只出现两次、合计五次说明了什么 把视力、视野、听阈、屈光四类检查栏目改写成类别与关系的问法 解释本章为何要说 38 次「不写数值与单位」，而不认为这是废话 说清感觉功能的观察要求（六要素）与本课程的口径边界",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 134.04,
+      "end": 145.34,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

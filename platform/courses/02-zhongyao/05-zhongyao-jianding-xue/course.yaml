@@ -1,0 +1,90 @@
+# [tcmP] 课程编排 · 02-zhongyao/05-zhongyao-jianding-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/02-zhongyao/05-zhongyao-jianding-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 05-zhongyao-jianding-xue
+title: 中药鉴定学
+en: Identification of Chinese Materia Medica
+dept: 02-zhongyao
+dept_title: 中药系
+semester: 4
+stage: sheng
+hours: 72
+chapters_target: 10
+bridge: 性状鉴别→图像分类 / 显微鉴别→纹理特征
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-jianding-yiju
+    title: 第1章 鉴定的依据：药典、标准与性状
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.02
+  - slug: 02-laiyuan-jianding
+    title: 第2章 来源鉴定：基原与拉丁名核对
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.03
+  - slug: 03-xingzhuang-jianding
+    title: 第3章 性状鉴定：形色气味的大小与比例
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 1.01
+  - slug: 04-xianwei-jianding
+    title: 第4章 显微鉴定：组织与粉末特征
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.97
+  - slug: 05-lihua-jianding
+    title: 第5章 理化鉴定：薄层与色谱指纹
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.98
+  - slug: 06-weipin-jianbie
+    title: 第6章 常见伪品与混淆品的鉴别
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.1
+  - slug: 07-guizhong-zhenwei
+    title: 第7章 贵重药材的真伪判定
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.09
+  - slug: 08-dna-tiaoxingma
+    title: 第8章 DNA 条形码与分子鉴定
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.09
+  - slug: 09-baogao-guifan
+    title: 第9章 鉴定报告的规范与可追溯
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.03
+  - slug: 10-tuxiang-wupan
+    title: 第10章 图像识别在性状鉴定中的误判分析
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.07
+    measured_minutes: 1.07

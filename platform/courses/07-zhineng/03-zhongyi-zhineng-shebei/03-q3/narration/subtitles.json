@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/07-zhineng/03-zhongyi-zhineng-shebei/03-q3/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 80.32,
+  "estimatedCues": 0,
+  "videoSeconds": 80.358667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 12.55,
+      "seconds": 12.55,
+      "estimated": false,
+      "text": "第 3 章 · 中医药通用六快：吃 _ 喝 ／健康自动评价：从可穿戴数据到／临床应用与可穿戴场景／智能中医学：概念与「象—素—",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 12.55,
+      "end": 35.37,
+      "seconds": 22.82,
+      "estimated": false,
+      "text": "「《中医智能仪器与可穿戴设备·中医药通用六快：吃 _ 喝 ／健》」——教材第3章。本章要回答的是：中医药通用六快：吃 _ 喝 ／健康自动评价：从可穿戴数据到／临床应用与可穿戴场景／智能中医学：概念与「象—素—：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 35.37,
+      "end": 48.16,
+      "seconds": 12.79,
+      "estimated": false,
+      "text": "中医药通用六快：吃 _ 喝 ／健康自动评价：从可穿戴数据到／临床应用与可穿戴场景／智能中医学：概念与「象—素—：本课第 3 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 48.16,
+      "end": 69.02,
+      "seconds": 20.86,
+      "estimated": false,
+      "text": "环境逼迫（智能设备的判据是「物理量—采集链路—质控指标」三件套）+ 知识积累（本章 17 单元 1,555 汉字；三辨主 方法与技术 18；四位面（章群结构）主 位面2 1555；引书 1 部 2 次；数值类命中 6）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 69.02,
+      "end": 80.32,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

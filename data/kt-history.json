@@ -882,8 +882,8 @@
     "津液"
    ],
    "subjects": 121,
-   "units": 3127,
-   "hits": 10774
+   "units": 3137,
+   "hits": 10807
   },
   {
    "term": "经络",
@@ -895,8 +895,8 @@
     "络脉"
    ],
    "subjects": 122,
-   "units": 2209,
-   "hits": 8580
+   "units": 2213,
+   "hits": 8584
   },
   {
    "term": "脏腑辨证",
@@ -908,7 +908,7 @@
    ],
    "subjects": 115,
    "units": 1913,
-   "hits": 5354
+   "hits": 5347
   },
   {
    "term": "阴阳",
@@ -918,8 +918,8 @@
     "阴阳"
    ],
    "subjects": 107,
-   "units": 1348,
-   "hits": 3496
+   "units": 1349,
+   "hits": 3502
   },
   {
    "term": "三焦",
@@ -933,7 +933,7 @@
    ],
    "subjects": 90,
    "units": 1130,
-   "hits": 2998
+   "hits": 2995
   },
   {
    "term": "藏象",
@@ -944,9 +944,9 @@
     "五脏",
     "六腑"
    ],
-   "subjects": 85,
-   "units": 815,
-   "hits": 2810
+   "subjects": 84,
+   "units": 814,
+   "hits": 2808
   },
   {
    "term": "卫气营血",
@@ -960,8 +960,8 @@
     "血分"
    ],
    "subjects": 97,
-   "units": 569,
-   "hits": 1261
+   "units": 566,
+   "hits": 1252
   },
   {
    "term": "六经",
@@ -977,8 +977,8 @@
     "厥阴病"
    ],
    "subjects": 66,
-   "units": 560,
-   "hits": 1020
+   "units": 556,
+   "hits": 1009
   },
   {
    "term": "五行",
@@ -1018,24 +1018,24 @@
    "members": [
     "八纲"
    ],
-   "subjects": 48,
-   "units": 88,
-   "hits": 161
+   "subjects": 47,
+   "units": 84,
+   "hits": 156
   }
  ],
  "corpus": {
   "scannedDirs": 190,
-  "scannedUnits": 20625,
-  "totalUnits": 20845,
-  "totalHanzi": 35932942,
+  "scannedUnits": 20588,
+  "totalUnits": 20809,
+  "totalHanzi": 35951887,
   "totalSubjects": 189,
-  "totalChapters": 2553
+  "totalChapters": 2547
  },
  "modern": {
   "subjects": 170,
   "chapters": 1943,
-  "units": 16767,
-  "hanzi": 33088099
+  "units": 16731,
+  "hanzi": 33107044
  },
  "schools": [
   {
@@ -1262,8 +1262,8 @@
   "thinCoords": [
    {
     "term": "八纲",
-    "units": 88,
-    "subjects": 48
+    "units": 84,
+    "subjects": 47
    }
   ],
   "note": "原文在库、但没切成 units.json 的，单元层为 0——它们不是「没内容」，而是没进统计口径；底本目录缺席的，才是真要补源。坐标系命中偏低处，须先看这两类缺口，再谈术语稀疏。"

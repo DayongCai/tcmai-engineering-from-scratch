@@ -53,6 +53,33 @@
    "pages": 2,
    "textChars": 5602,
    "textLayer": true
+  },
+  "WHO-DECADE-2019": {
+   "file": "WHO-Decade-of-Healthy-Ageing-update-2019.pdf",
+   "title": "Decade of Healthy Ageing 2020-2030: update March 2019",
+   "url": "https://www.who.int/docs/default-source/documents/decade-of-health-ageing/decade-healthy-ageing-update-march-2019.pdf",
+   "issuer": "World Health Organization · 2019 · 官方 PDF",
+   "note": "内在能力（intrinsic capacity）与功能发挥（functional ability）五域的作者定义；条号为本库按摘句顺序编的序号",
+   "exists": true,
+   "sha256": "b11dfacfc33edb9cb6b8daa552591ee21e76265fcf1d5d53d5b0f61ef1f9c73f",
+   "bytes": 642123,
+   "pages": 7,
+   "textChars": 29915,
+   "textLayer": true
+  },
+  "PM-IC-2022": {
+   "file": "Intrinsic-Capacity-Recent-Advances-PMC8947834.txt",
+   "title": "Intrinsic Capacity in Older Adults: Recent Advances",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8947834/",
+   "issuer": "PMC · 2022 · 开放获取全文（存为去标签文本快照）",
+   "note": "内在能力五因子（心理/感觉/认知/活力/运动）的实证结构；条号为本库序号",
+   "exists": true,
+   "sha256": "503a452896015aede24fd1557a4fd9f703fa673ea2a5494eda7acc5f7ba6b586",
+   "bytes": 35589,
+   "pages": null,
+   "textChars": 35190,
+   "textLayer": true,
+   "kind": "text-snapshot"
   }
  },
  "clauses": [
@@ -235,12 +262,82 @@
    "verified": true,
    "missing": [],
    "locator": "外源·Check for Safety: A Home Fall Prevention Checklist for Older Adults 第6条"
+  },
+  {
+   "id": "W01",
+   "source": "WHO-DECADE-2019",
+   "clause": "第1条",
+   "sourceTitle": "Decade of Healthy Ageing 2020-2030: update March 2019",
+   "url": "https://www.who.int/docs/default-source/documents/decade-of-health-ageing/decade-healthy-ageing-update-march-2019.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Decade of Healthy Ageing 2020-2030: update March 2019 第1条"
+  },
+  {
+   "id": "W02",
+   "source": "WHO-DECADE-2019",
+   "clause": "第2条",
+   "sourceTitle": "Decade of Healthy Ageing 2020-2030: update March 2019",
+   "url": "https://www.who.int/docs/default-source/documents/decade-of-health-ageing/decade-healthy-ageing-update-march-2019.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Decade of Healthy Ageing 2020-2030: update March 2019 第2条"
+  },
+  {
+   "id": "W03",
+   "source": "WHO-DECADE-2019",
+   "clause": "第3条",
+   "sourceTitle": "Decade of Healthy Ageing 2020-2030: update March 2019",
+   "url": "https://www.who.int/docs/default-source/documents/decade-of-health-ageing/decade-healthy-ageing-update-march-2019.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Decade of Healthy Ageing 2020-2030: update March 2019 第3条"
+  },
+  {
+   "id": "W04",
+   "source": "WHO-DECADE-2019",
+   "clause": "第4条",
+   "sourceTitle": "Decade of Healthy Ageing 2020-2030: update March 2019",
+   "url": "https://www.who.int/docs/default-source/documents/decade-of-health-ageing/decade-healthy-ageing-update-march-2019.pdf",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Decade of Healthy Ageing 2020-2030: update March 2019 第4条"
+  },
+  {
+   "id": "W05",
+   "source": "PM-IC-2022",
+   "clause": "第1条",
+   "sourceTitle": "Intrinsic Capacity in Older Adults: Recent Advances",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8947834/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Intrinsic Capacity in Older Adults: Recent Advances 第1条"
+  },
+  {
+   "id": "W06",
+   "source": "PM-IC-2022",
+   "clause": "第2条",
+   "sourceTitle": "Intrinsic Capacity in Older Adults: Recent Advances",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8947834/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Intrinsic Capacity in Older Adults: Recent Advances 第2条"
+  },
+  {
+   "id": "W07",
+   "source": "PM-IC-2022",
+   "clause": "第3条",
+   "sourceTitle": "Intrinsic Capacity in Older Adults: Recent Advances",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8947834/",
+   "verified": true,
+   "missing": [],
+   "locator": "外源·Intrinsic Capacity in Older Adults: Recent Advances 第3条"
   }
  ],
  "counts": {
-  "sources": 4,
-  "clauses": 18,
-  "verified": 18,
+  "sources": 6,
+  "clauses": 25,
+  "verified": 25,
   "unverified": 0
  }
 }

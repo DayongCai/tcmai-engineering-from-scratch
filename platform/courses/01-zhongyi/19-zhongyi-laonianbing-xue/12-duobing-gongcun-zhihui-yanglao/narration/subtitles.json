@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/19-zhongyi-laonianbing-xue/12-duobing-gongcun-zhihui-yanglao/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 66.84,
+  "estimatedCues": 0,
+  "videoSeconds": 66.864667,
+  "videoMinusNarrationSeconds": 0.025,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 6.53,
+      "seconds": 6.53,
+      "estimated": false,
+      "text": "第 12 章 · 多病共存与智慧养老：把「一人多病」变成可管理的结构",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 6.53,
+      "end": 15.15,
+      "seconds": 8.62,
+      "estimated": false,
+      "text": "「食饮有节，起居有常，不妄作劳」——教材·第12章·12.2.2（《素问·上古天真论》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 15.15,
+      "end": 31.21,
+      "seconds": 16.06,
+      "estimated": false,
+      "text": "老年病学的最后一章不是某个病，而是「一个人身上同时有五个病」。多病共存不是一个病名的叠加，而是主次矛盾的判断：哪个病在恶化、哪个药在添乱、哪项功能在丢失。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 31.21,
+      "end": 51.03,
+      "seconds": 19.82,
+      "estimated": false,
+      "text": "环境逼迫（多重用药与多重风险同时存在）+ 知识积累（本章 7 单元 16,043 汉字，三辨主病机 160（全书最低）；四位面主脾胃肝胆 173；引书 14 部 17 次；数值 3——本章讲架构与流程）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 51.03,
+      "end": 55.54,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 55.54,
+      "end": 66.84,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

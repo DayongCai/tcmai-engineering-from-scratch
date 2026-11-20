@@ -1,0 +1,37 @@
+{
+  "chapter": "11-chongzheng",
+  "slideCount": 6,
+  "segmentCount": 6,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 20
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 43
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 118
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 104
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 120
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 52
+    }
+  ]
+}

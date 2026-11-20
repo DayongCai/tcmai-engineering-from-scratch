@@ -1,0 +1,25 @@
+{
+ "$schema": "textbook-sources/v1",
+ "note": "units.json 自己没有 source 字段的单元层，在此逐条登记来源与理由。门禁 scripts/build_textbook_chain.py --check 会读本表：未登记且无 source 的单元层一律报「底本未登记」。",
+ "layers": {
+  "biye": {
+   "kind": "合成",
+   "from": [
+    "standards/biye/案例库.json",
+    "standards/biye/预算模型.json",
+    "standards/biye/市场层.json",
+    "standards/biye/合规口径.json"
+   ],
+   "reason": "中医毕业设计以实践台账为据，无章节式教材；28 个单元由案例库/预算模型/合规口径的锚点合成，单元正文不与任何父课相加。",
+   "registeredAt": "2026-11-17"
+  },
+  "14-zhongyi-zhenghou-xue": {
+   "kind": "手写",
+   "from": [
+    "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters"
+   ],
+   "reason": "中医证候学 12 章为手写正文（13,400 汉字），库内无对应教材底本，也无可切单元层；按手写课登记，不冒充教材课。",
+   "registeredAt": "2026-11-17"
+  }
+ }
+}

@@ -1,7 +1,7 @@
 {
  "courseTitle": "中医大数据分析",
  "deptPath": "departments/07-zhineng/09-zhongyi-dashuju-fenxi",
- "xlsx": "F:/textbooks/F:/textbooks/qhzy-卫生统计学.xlsx",
+ "xlsx": "F:/textbooks/qhzy-卫生统计学.xlsx",
  "chain": "描述与整理 → 分布与推断 → 关联与模型 → 设计与智能分析",
  "levelLabel": "章群结构",
  "objectPressure": "数据分析的判据是「变量—分布—检验—解释」四步，跳步就没有结论",

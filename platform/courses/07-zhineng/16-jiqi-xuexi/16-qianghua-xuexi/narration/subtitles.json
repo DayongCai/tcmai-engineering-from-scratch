@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/07-zhineng/16-jiqi-xuexi/16-qianghua-xuexi/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 55.34,
+  "estimatedCues": 0,
+  "videoSeconds": 55.378667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 2.76,
+      "seconds": 2.76,
+      "estimated": false,
+      "text": "第 16 章 · 强化学习",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 2.76,
+      "end": 14.98,
+      "seconds": 12.22,
+      "estimated": false,
+      "text": "「《机器学习·强化学习》」——教材第16章；章号一一对应。本章要回答的是：强化学习：这一章的判据是什么，什么算「会用」。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.98,
+      "end": 18.36,
+      "seconds": 3.38,
+      "estimated": false,
+      "text": "强化学习：序贯决策与回报。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 18.36,
+      "end": 44.04,
+      "seconds": 25.68,
+      "estimated": false,
+      "text": "环境逼迫（机器学习的判据是「假设—损失—泛化」三件套：假设空间多大、损失怎么定、泛化凭什么保证）+ 知识积累（本章 14 单元 11,869 汉字；三辨主 数据与特征 81；四位面（章群结构）主 应用与前沿 11869；引书 2 部 2 次；数值类命中 2）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 44.04,
+      "end": 55.34,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

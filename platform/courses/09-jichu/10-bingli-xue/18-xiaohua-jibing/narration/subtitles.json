@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/10-bingli-xue/18-xiaohua-jibing/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 92.18,
+  "estimatedCues": 0,
+  "videoSeconds": 92.202667,
+  "videoMinusNarrationSeconds": 0.023,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 6.17,
+      "seconds": 6.17,
+      "estimated": false,
+      "text": "第 18 章 · 消化系统疾病：黏膜层、胃壁全层、肝小叶",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 6.17,
+      "end": 17.5,
+      "seconds": 11.33,
+      "estimated": false,
+      "text": "「胃炎是胃黏膜以炎症性病变为主要表现的一类疾病」——教材·第18章·18.1.1（《病理学·第18章·18.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 17.5,
+      "end": 39.36,
+      "seconds": 21.86,
+      "estimated": false,
+      "text": "「浅表性胃炎、萎缩性胃炎、消化性溃疡」三个名字你能背，层次却常常说不清。老师问一句「这三个病变各到哪一层」，再问「哪一层被穿透之后愈合会留瘢痕」，两问答不出第二问——因为在你脑子里它们是三个病名，不是三层结构上的三种改变。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 39.36,
+      "end": 80.88,
+      "seconds": 41.52,
+      "estimated": false,
+      "text": "环境逼迫（带教把一张胃黏膜切片放到目镜里，问「腺体还在不在、黏膜肌层破没破」，学生只能用「有炎症」回答；再问「为什么糜烂不留瘢痕而溃疡留」，链条断在深度与修复方式之间）+ 知识积累（本章 12 个单元、19,909 字的词频结构显示：形态 689 次、器官 450 次，病因只有 62 次——教材把力气放在「这一层结构被改成了什么样」；三条形态序列各只有一个单元写全，说明教材是按层分工写的，读的时候必须自己把层与层接起来）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 80.88,
+      "end": 92.18,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

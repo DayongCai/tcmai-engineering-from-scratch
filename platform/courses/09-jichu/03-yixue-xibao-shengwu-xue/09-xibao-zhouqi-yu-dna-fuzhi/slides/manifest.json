@@ -1,0 +1,32 @@
+{
+  "chapter": "09-xibao-zhouqi-yu-dna-fuzhi",
+  "slideCount": 5,
+  "segmentCount": 5,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 14
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 68
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 28
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 130
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 52
+    }
+  ]
+}

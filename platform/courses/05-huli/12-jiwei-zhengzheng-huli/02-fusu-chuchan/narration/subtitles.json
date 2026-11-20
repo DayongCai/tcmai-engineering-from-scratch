@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/12-jiwei-zhengzheng-huli/02-fusu-chuchan/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 58.68,
+  "estimatedCues": 0,
+  "videoSeconds": 58.714667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.42,
+      "seconds": 4.42,
+      "estimated": false,
+      "text": "第 2 章 · 心搏骤停与心肺复苏、除颤",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.42,
+      "end": 20.24,
+      "seconds": 15.82,
+      "estimated": false,
+      "text": "「《急危重症护理学·第5章》」——派生课无本章原文篇名，引父课章目；非本章原文篇名。本章要回答的是：心搏骤停与心肺复苏、除颤这一章的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.24,
+      "end": 24.46,
+      "seconds": 4.22,
+      "estimated": false,
+      "text": "心肺复苏独立成章：唯一以「秒」计的抢救。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 24.46,
+      "end": 47.38,
+      "seconds": 22.92,
+      "estimated": false,
+      "text": "环境逼迫（急危重症护理的窗口按分钟计，同一处置早十分钟与晚十分钟结局不同）+ 知识积累（本章 1 单元 16,915 汉字；三辨主 转运与记录 340；四位面（重症监护落点）主 院前 25；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 47.38,
+      "end": 58.68,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/01-jingluo-xue/08-liuzhu-shijian/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 68.37,
+  "estimatedCues": 0,
+  "videoSeconds": 68.402667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.15,
+      "seconds": 4.15,
+      "estimated": false,
+      "text": "第 8 章 · 经脉流注次序与时间节律",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.15,
+      "end": 19.34,
+      "seconds": 15.19,
+      "estimated": false,
+      "text": "「《灵枢·逆顺肥瘦》」——教材·第1章·1.2.2。本章要回答的是：十二经流注的次序与时间节律（子午流注）之间，哪一部分是教材写的，哪一部分是推演。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 19.34,
+      "end": 35.18,
+      "seconds": 15.84,
+      "estimated": false,
+      "text": "教材写了流注次序，时间节律多在后世与临床用法里，两者不能混为一谈。分不清的具体后果不是考试扣分，而是动手时把不该扎的地方扎了、把该查的经脉漏了。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 35.18,
+      "end": 57.07,
+      "seconds": 21.89,
+      "estimated": false,
+      "text": "环境逼迫（针灸临床以经脉为坐标系，取穴、配穴、辨经都从这里出发，教材无从回避）+ 知识积累（本章 4 单元 5,340 汉字；三辨主 循行 164；四位面主 足三阳 56；引书 10 部 31 次；数值类命中 10）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 57.07,
+      "end": 68.37,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+# [tcmP] 课程编排 · 09-jichu/06-shengli-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/09-jichu/06-shengli-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 06-shengli-xue
+title: 生理学
+en: Physiology
+dept: 09-jichu
+dept_title: 基础医学院
+semester: 2
+stage: sheng
+hours: 72
+chapters_target: 11
+bridge: 稳态调节→反馈控制 / 生理信号→时间序列
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-xulun
+    title: 第1章 绪论：生理学研究的对象与三个水平
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.57
+    measured_minutes: 1.43
+  - slug: 02-xibao-jiben-gongneng
+    title: 第2章 细胞的基本功能：跨膜转运·信号转导·电活动·收缩
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.53
+    measured_minutes: 1.41
+  - slug: 03-xueye
+    title: 第3章 血液：组成·理化特性·血细胞与凝血
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.53
+    measured_minutes: 1.47
+  - slug: 04-xueye-xunhuan
+    title: 第4章 血液循环：泵血·血管·调节·器官循环
+    segments: 6
+    video: rendered
+    estimate_minutes: 2.22
+    measured_minutes: 2.2
+  - slug: 05-huxi
+    title: 第5章 呼吸：通气·换气·气体运输·呼吸调节
+    segments: 6
+    video: rendered
+    estimate_minutes: 2.28
+    measured_minutes: 2.19
+  - slug: 06-xiaohua-xishou
+    title: 第6章 消化和吸收：分泌·运动·吸收与调节
+    segments: 6
+    video: rendered
+    estimate_minutes: 2.38
+    measured_minutes: 2.28
+  - slug: 07-nengliang-tiwen
+    title: 第7章 能量代谢与体温：代谢率·产热散热·体温调节
+    segments: 6
+    video: rendered
+    estimate_minutes: 2.13
+    measured_minutes: 2.02
+  - slug: 08-shenzang-paixie
+    title: 第8章 肾脏的排泄功能：滤过·重吸收·分泌·调节
+    segments: 6
+    video: rendered
+    estimate_minutes: 2.22
+    measured_minutes: 2.07
+  - slug: 09-neifenmi
+    title: 第9章 内分泌：激素·轴系·各内分泌腺功能
+    segments: 6
+    video: rendered
+    estimate_minutes: 2.27
+    measured_minutes: 2.16
+  - slug: 10-shenjing-xitong
+    title: 第10章 神经系统：神经元·突触·感觉运动·高级功能
+    segments: 6
+    video: rendered
+    estimate_minutes: 2.67
+    measured_minutes: 2.61
+  - slug: 11-ganjue-qiguan
+    title: 第11章 感觉器官：感受器的一般特性与各感官功能
+    segments: 6
+    video: rendered
+    estimate_minutes: 2.48
+    measured_minutes: 2.42

@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/23-zhongcan-xilu-xuandu/01-quanshu-dufa/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 158.51,
+  "estimatedCues": 0,
+  "videoSeconds": 158.542667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.87,
+      "seconds": 4.87,
+      "estimated": false,
+      "text": "第 1 章 · 一部 1909 年的书为什么叫「衷中参西」",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.87,
+      "end": 19.39,
+      "seconds": 14.52,
+      "estimated": false,
+      "text": "「石膏之质原为硫养轻钙化合而成，其性凉而能散，有透表解肌之力，为清阳明胃腑实热之圣药，无论」——医学衷中参西录·二、药物·1．石膏解",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 19.39,
+      "end": 28.77,
+      "seconds": 9.38,
+      "estimated": false,
+      "text": "学生把「衷中参西」当成史料标签，说不出它具体落在哪些条目上；一旦要引原文，只能引一句口号。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 28.77,
+      "end": 48.88,
+      "seconds": 20.11,
+      "estimated": false,
+      "text": "环境逼迫（医学衷中参西录选读在本仓库没有教材底本，唯一可引的是外源文字化本；不复算就只剩口号） + 知识积累（本章取 3 单元 10,255 字；实测药物频次、剂量命中 65 处、参西 6 次、引书 8 部）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "concept",
+      "start": 48.88,
+      "end": 147.21,
+      "seconds": 98.33,
+      "estimated": false,
+      "text": "一、先看目录：五类不是文体分类，是五种知识形态 全书 5 大类：医方 176 条、药物 84 条、医论 90 条、医话 47 条、医案 0 条，合计 534 单元 10,255 字。这不是「按体裁分」，而是按知识的成熟度排：方与药是可直接执行的，论是把方药背后的道理摊开，话是未定稿的讨论，案是执行记录。读这本书的顺序，就是自己把一条经验从「能用」推到「知道为什么能用」的过程。 二、「六经总论」：他先做的不是参西，是把中医学的坐标系重新钉一遍 本章取三段原文对照：医论·六经总论、医话·驳方书贵阳抑阴论、药物·石膏解。第一段讲六经为何是六经（手足十二经而独取六者，因足经长、手经短），第二段直接反驳「贵阳抑阴」的流行说法，第三段开篇就写石膏的化学组成。三段的共同点：先定坐标，再谈药。 三、参西落在词上，不落在口号上 全书「参西」相关词命中 6 次，集中在 1 个单元；最密的五条是：石膏解（6）、六经总论（0）、驳方书贵阳抑阴论（0）。这说明「参西」不是全书均匀的立场，而是若干处的具体做法——用在解释药理（石膏的化合）、用在解释病位（脑充血）、用在纠错（驳贵阳抑阴）。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 147.21,
+      "end": 158.51,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

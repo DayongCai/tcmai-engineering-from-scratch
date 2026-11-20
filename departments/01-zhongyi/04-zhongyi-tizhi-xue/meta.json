@@ -22,9 +22,12 @@
  "textbook": {
   "id": "textbooks",
   "path": "textbooks/01-zhongyi/04-zhongyi-tizhi-xue",
-  "chaptersWritten": 0,
-  "words": 0,
-  "status": "planned"
+  "chaptersWritten": 8,
+  "words": 25293,
+  "status": "wip",
+  "layer": "derived",
+  "source": "standards/tizhi/units.json（派生底本：132 证候 → 9 体质倾向；参照 laonian 3.4.1 九质定义）",
+  "note": "派生底本·薄章：8 章 / 15,364 汉字（章均 1,920），低于学术型 6,000 字基准，已按薄章标注。"
  },
  "standards": {
   "path": "standards/tizhi",

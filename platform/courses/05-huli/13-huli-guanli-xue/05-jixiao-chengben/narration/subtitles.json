@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/13-huli-guanli-xue/05-jixiao-chengben/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 56.74,
+  "estimatedCues": 0,
+  "videoSeconds": 56.770667,
+  "videoMinusNarrationSeconds": 0.031,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.46,
+      "seconds": 3.46,
+      "estimated": false,
+      "text": "第 5 章 · 护理绩效与成本核算",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.46,
+      "end": 18.92,
+      "seconds": 15.46,
+      "estimated": false,
+      "text": "「《护理管理学·第12章》」——教材第 12 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：护理绩效与成本核算这一章的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 18.92,
+      "end": 23.22,
+      "seconds": 4.3,
+      "estimated": false,
+      "text": "绩效与经济管理合章：钱与人绑在一起。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 23.22,
+      "end": 45.44,
+      "seconds": 22.22,
+      "estimated": false,
+      "text": "环境逼迫（护理管理管的是「有限人力下的质量」，所有工具最后都要落回人与流程）+ 知识积累（本章 2 单元 37,566 汉字；三辨主 质量控制 611；四位面（管理职能）主 控制与质量 514；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 45.44,
+      "end": 56.74,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

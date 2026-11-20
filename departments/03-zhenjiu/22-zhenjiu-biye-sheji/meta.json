@@ -23,13 +23,13 @@
     "id": "textbooks",
     "path": "textbooks/03-zhenjiu/22-zhenjiu-biye-sheji",
     "chaptersWritten": 6,
-    "words": 3445,
+    "words": 8847,
     "status": "wip",
     "layer": "handbook",
     "contract": "handbook-v1",
     "origin": "handbook",
     "source": "scripts/build_handbook_textbooks.js ← data/handbook/",
-    "extractedAt": "2026-11-09"
+    "extractedAt": "2026-11-20"
   },
   "底本": {
     "kind": "派生",

@@ -1,0 +1,102 @@
+# [tcmP] 课程编排 · 03-zhenjiu/17-gejia-zhenjiu-xueshuo
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/03-zhenjiu/17-gejia-zhenjiu-xueshuo/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 17-gejia-zhenjiu-xueshuo
+title: 各家针灸学说
+en: Schools of Acupuncture
+dept: 03-zhenjiu
+dept_title: 针灸系
+semester: 6
+stage: zhang
+hours: 36
+chapters_target: 12
+bridge: 学派观点→文献聚类 / 手法差异→特征对比
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-gaishu-yanbian
+    title: 第1章 各家针灸学说概述
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.11
+  - slug: 02-liupai-xingcheng
+    title: 第2章 针灸学术流派的形成与分类
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.11
+  - slug: 03-neijing-sixiang
+    title: 第3章 《内经》针灸学术思想
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.15
+    measured_minutes: 1.12
+  - slug: 04-nanjing-shanghan
+    title: 第4章 《难经》与《伤寒杂病论》针灸学术思想
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.18
+    measured_minutes: 1.15
+  - slug: 05-jintang-yijia
+    title: 第5章 晋唐针灸医家学术思想
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.17
+    measured_minutes: 1.14
+  - slug: 06-songjinyuan-yijia
+    title: 第6章 宋金元针灸医家学术思想
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.17
+    measured_minutes: 1.17
+  - slug: 07-mingdai-yijia
+    title: 第7章 明代针灸医家学术思想
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.12
+    measured_minutes: 1.12
+  - slug: 08-qingdai-yijia
+    title: 第8章 清代针灸医家学术思想
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.3
+    measured_minutes: 1.29
+  - slug: 09-jindai-yijia
+    title: 第9章 近代针灸医家学术思想
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.15
+    measured_minutes: 1.13
+  - slug: 10-dangdai-liupai
+    title: 第10章 当代针灸学术流派
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.13
+    measured_minutes: 1.12
+  - slug: 11-linchuang-chuancheng
+    title: 第11章 针灸各家学说的临床应用与传承
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.13
+    measured_minutes: 1.13
+  - slug: 12-shuzihua-ai
+    title: 第12章 各家针灸学说与数字化AI时代
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.15
+    measured_minutes: 1.16

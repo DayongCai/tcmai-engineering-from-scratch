@@ -1,0 +1,52 @@
+{
+  "chapter": "07-yizhixing-pinggu",
+  "slideCount": 9,
+  "segmentCount": 9,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 30
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 31
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 67
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 59
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 143
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 438
+    },
+    {
+      "n": 7,
+      "segment": 7,
+      "chars": 351
+    },
+    {
+      "n": 8,
+      "segment": 8,
+      "chars": 150
+    },
+    {
+      "n": 9,
+      "segment": 9,
+      "chars": 52
+    }
+  ]
+}

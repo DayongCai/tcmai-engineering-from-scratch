@@ -1,0 +1,105 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/07-shanghanlun/08-jueyin-hanre/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 9,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 203.11,
+  "estimatedCues": 0,
+  "videoSeconds": 203.134667,
+  "videoMinusNarrationSeconds": 0.025,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.09,
+      "seconds": 5.09,
+      "estimated": false,
+      "text": "第 8 章 · 厥阴病：30 条，乌梅丸一次也没出现",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.09,
+      "end": 17.91,
+      "seconds": 12.82,
+      "estimated": false,
+      "text": "「厥阴之为病，消渴，气上撞心，心中疼热，饥而不欲食，食则吐蛔，下之利不止。」——《伤寒论·辨厥阴病脉证并治》（篇 24）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 17.91,
+      "end": 29.19,
+      "seconds": 11.28,
+      "estimated": false,
+      "text": "教材把乌梅丸当厥阴病的主方讲一整节。你在底本里检索「乌梅丸」——0 条。厥阴篇 30 条里没有它，全书也没有它。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 29.19,
+      "end": 37.61,
+      "seconds": 8.42,
+      "estimated": false,
+      "text": "环境逼迫(要讲厥阴主方) + 知识积累(篇内/篇外分开统计 = 知道哪些话能说「厥阴篇说」)",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 37.61,
+      "end": 64.35,
+      "seconds": 26.74,
+      "estimated": false,
+      "text": "逐字引出厥阴提纲，把六个症拆开，指出「下之利不止」是禁忌后果而非症状 用「篇内 / 篇外」两列统计区分：什么证据在厥阴篇里，什么只存在于全书别处 说清乌梅丸在底本中的状态（0 命中），以及这对讲义意味着什么 写一个分布探针：对每个关键词同时给「篇内条数」与「全库条数」",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "concept",
+      "start": 64.35,
+      "end": 173.02,
+      "seconds": 108.67,
+      "estimated": false,
+      "text": "提纲六症，其中一句是禁令 厥阴之为病，消渴，气上撞心，心中疼热，饥而不欲食，食则吐蛔，下之利不止。——（篇 24 第 1 条） 拆开看： 前五条是症，最后一条是「若下之则利不止」的告诫。顺带一个自己踩到的坑：底本把「心中疼热」写作「心中疼𤍠」，本章的解析器第一版没归一，只数出 4 症——同一个异体字在第 3、5、8 章各绊了一次。把它当成第六个症状，就会出现「厥阴病见下利不止」的错误读法——原文说的是下法造成的利不止。 篇内 30 条的构成 篇 24 从第 2 条起就出现「少阴病，饮食入口则吐……」，与第 6 章太阴篇的问题同源：底本的篇界在少阴/厥阴之间是错位的。 篇内 vs 篇外：一张必须分两列的表 读法：厥阴篇里能引的只有提纲与 3 条零散涉厥条文；「厥深者热亦深」这句名言在底本里只出现 1 次，且不在厥阴篇；乌梅丸、四逆散全库 0 命中。 这意味着讲义必须写成：「厥阴病的提纲是……；至于乌梅丸，底本未收此条，常见于后世刊本与其他版本，需另行补源。」——一句话就把「引文」和「转述」分开了。 为什么这章仍然值得写 厥阴是六经里条文最少、最破碎的一篇（30 条，占全书 1.7%）。它的教学价值不在「背乌梅丸」，而在学会承认证据边界：同一句话，写成「厥阴篇云」与写成「后世云」，可复核性完全不同。",
+      "audio": "006.mp3"
+    },
+    {
+      "n": 7,
+      "role": "build",
+      "start": 173.02,
+      "end": 177.53,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "007.mp3"
+    },
+    {
+      "n": 8,
+      "role": "verify",
+      "start": 177.53,
+      "end": 191.81,
+      "seconds": 14.28,
+      "estimated": false,
+      "text": "预期：probe('乌梅丸') ， {inPian: 0, all: 0}；probe('厥') ， {inPian: 4, all: 45}；parseOutline() 的 contra 字段包含「下之利不止」而非并入 symptoms。",
+      "audio": "008.mp3"
+    },
+    {
+      "n": 9,
+      "role": "disclaimer",
+      "start": 191.81,
+      "end": 203.11,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "009.mp3"
+    }
+  ]
+}

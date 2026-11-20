@@ -1,0 +1,186 @@
+{
+  "$generated": "手工维护：教材补章登记（无底本表的章，逐章登记依据）",
+  "subject": "02-zhongyao/18-yaoshi-guanli-xue",
+  "title": "药事管理学",
+  "teachingChapters": 28,
+  "textbookChaptersBefore": 20,
+  "textbookChaptersAfter": 20,
+  "why": "底本 qhzy-药事管理学.xlsx 为 20 章（学科体系式：绪论→组织→立法→监管→注册→生产→经营→机构→ADR→特殊药品→中药→信息→价格→知识产权→再评价→检验→药学服务→监管科学→信息化→国际化）。",
+  "chapters": [],
+  "noSupplement": {
+    "reason": "教学计划的 28 章是**法规操作层**（按《药品管理法》《注册管理办法》《GMP/GSP》的条文流程细分），教材的 20 章是**学科体系层**（一个学科章内容纳一类制度）。逐章比对：28 个教学章全部有教材章承接，无落点的为 0 —— 因此这里缺的不是内容，是**切分口径**。硬补 8 章会与既有第 5（注册）、6（生产）、7（经营）、9（药物警戒）四章逐句重复，正是「同一内容两个出处」的反模式；且底本逐章对应要求（`scripts/import_textbooks.js --check`：文件 ↔ 源表逐章）也不允许把 20 章拆成 28 章。",
+    "verdict": "不补章；改为登记 28 教学章 → 20 教材章的逐条映射（下表），并按 probe 关键词可复算。法规条文的操作层内容已另立《附录A-法规操作专题》（106 条外源条文逐字可查，13 处引用可核），不当教材章、不计章数。",
+    "mapping": [
+      {
+        "plan": 1,
+        "title": "药品注册的定义与分类管理",
+        "textbookChapter": 5,
+        "probe": "药品注册"
+      },
+      {
+        "plan": 2,
+        "title": "申请人资格与法律责任",
+        "textbookChapter": 5,
+        "probe": "申请人"
+      },
+      {
+        "plan": 3,
+        "title": "上市前研究：药学、药理毒理与临床",
+        "textbookChapter": 5,
+        "probe": "药理毒理"
+      },
+      {
+        "plan": 4,
+        "title": "药物临床试验：分期、伦理与备案",
+        "textbookChapter": 5,
+        "probe": "临床试验"
+      },
+      {
+        "plan": 5,
+        "title": "试验期间的安全报告与变更控制",
+        "textbookChapter": 5,
+        "probe": "安全性更新"
+      },
+      {
+        "plan": 6,
+        "title": "审评与审批：结论怎么形成",
+        "textbookChapter": 5,
+        "probe": "审评"
+      },
+      {
+        "plan": 7,
+        "title": "注册核查与注册检验",
+        "textbookChapter": 5,
+        "probe": "注册核查"
+      },
+      {
+        "plan": 8,
+        "title": "加快通道：突破性治疗、附条件批准、优先审评",
+        "textbookChapter": 5,
+        "probe": "附条件批准"
+      },
+      {
+        "plan": 9,
+        "title": "上市后变更与再注册",
+        "textbookChapter": 15,
+        "probe": "再注册"
+      },
+      {
+        "plan": 10,
+        "title": "中药注册的特殊性",
+        "textbookChapter": 11,
+        "probe": "经典名方"
+      },
+      {
+        "plan": 11,
+        "title": "药品的定义与适用范围",
+        "textbookChapter": 3,
+        "probe": "适用范围"
+      },
+      {
+        "plan": 12,
+        "title": "上市许可持有人制度",
+        "textbookChapter": 3,
+        "probe": "上市许可持有人"
+      },
+      {
+        "plan": 13,
+        "title": "药品追溯制度",
+        "textbookChapter": 12,
+        "probe": "药品追溯"
+      },
+      {
+        "plan": 14,
+        "title": "药品生产：许可与 GMP",
+        "textbookChapter": 6,
+        "probe": "GMP"
+      },
+      {
+        "plan": 15,
+        "title": "药品经营：许可与 GSP",
+        "textbookChapter": 7,
+        "probe": "GSP"
+      },
+      {
+        "plan": 16,
+        "title": "处方药分类、网络销售与广告管制",
+        "textbookChapter": 7,
+        "probe": "处方药"
+      },
+      {
+        "plan": 17,
+        "title": "医疗机构药事管理",
+        "textbookChapter": 8,
+        "probe": "医疗机构药事"
+      },
+      {
+        "plan": 18,
+        "title": "上市后管理与不良反应监测",
+        "textbookChapter": 9,
+        "probe": "不良反应"
+      },
+      {
+        "plan": 19,
+        "title": "假药与劣药的认定",
+        "textbookChapter": 3,
+        "probe": "假药"
+      },
+      {
+        "plan": 20,
+        "title": "法律责任与药品储备供应",
+        "textbookChapter": 3,
+        "probe": "法律责任"
+      },
+      {
+        "plan": 21,
+        "title": "假劣药的检验与豁免",
+        "textbookChapter": 16,
+        "probe": "假药"
+      },
+      {
+        "plan": 22,
+        "title": "实施条例的增量：委托、网络、免责与激励",
+        "textbookChapter": 3,
+        "probe": "实施条例"
+      },
+      {
+        "plan": 23,
+        "title": "药物警戒体系",
+        "textbookChapter": 9,
+        "probe": "药物警戒"
+      },
+      {
+        "plan": 24,
+        "title": "从个例报告到风险控制",
+        "textbookChapter": 9,
+        "probe": "个例报告"
+      },
+      {
+        "plan": 25,
+        "title": "GMP 的体系要求与关键人员",
+        "textbookChapter": 6,
+        "probe": "关键人员"
+      },
+      {
+        "plan": 26,
+        "title": "GMP 的四根支柱：验证、变更、偏差、回顾",
+        "textbookChapter": 6,
+        "probe": "偏差"
+      },
+      {
+        "plan": 27,
+        "title": "GSP 的组织条件：体系、人员与设施",
+        "textbookChapter": 7,
+        "probe": "质量管理体系"
+      },
+      {
+        "plan": 28,
+        "title": "GSP 的四个支点：验收、储存、记录、冷链",
+        "textbookChapter": 7,
+        "probe": "冷链"
+      }
+    ],
+    "verifiedBy": "probe 关键词必须能在所指教材章里 grep 到（`grep -c \"<probe>\" textbooks/02-zhongyao/18-yaoshi-guanli-xue/0<ch>-*.md`）",
+    "fulfilledBy": "textbooks/02-zhongyao/18-yaoshi-guanli-xue/附录A-法规操作专题.md + standards/yaoshi-guanli/补源登记.json"
+  }
+}

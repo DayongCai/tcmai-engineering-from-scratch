@@ -329,7 +329,7 @@ test('10. 本地媒体服务：200/206/CORS/MIME 都对', async () => {
 
 // ── 11. 发布脚本（--self-test）：仓库→README→Release→上传→回读，全流程不发请求 ──
 // 没有令牌时也能证明「发布链路」是通的；否则等真拿到令牌才发现字段拼错就太晚。
-test('11. GitHub 发布脚本：--self-test 全流程通过（13 个附件）', () => {
+test('11. GitHub 发布脚本：--self-test 全流程通过（附件数自洽）', () => {
   const rec = path.join(ROOT, 'platform', 'release-bundle.json');
   if (!fs.existsSync(rec)) return;
   const py = ['python', 'py', 'python3'].find((c) => {
@@ -343,9 +343,15 @@ test('11. GitHub 发布脚本：--self-test 全流程通过（13 个附件）', 
   assert.strictEqual(r.status, 0, `self-test 失败：${(r.stderr || '').slice(-400)}`);
   const out = r.stdout || '';
   assert.match(out, /发布完成/, '没有「发布完成」字样');
-  assert.match(out, /13 个附件/, `附件数不对：${(out.match(/发布完成[^\n]*/) || [''])[0]}`);
-  // 每个分卷都出现在结果里
+  // 附件数不写死：分卷会随教材章数增长，写死 13 就只能等着每天红一次
   const bundle = JSON.parse(read(rec));
+  const partsTotal = bundle.bundles.reduce((a, b) => a + b.parts.length, 0);
+  const done = Number((out.match(/发布完成[^\n]*?(\d+)\s*个附件/) || [])[1]);
+  const prep = Number((out.match(/准备发布：(\d+)\s*个附件/) || [])[1]);
+  assert.ok(Number.isFinite(done), `结果里没有附件数：${(out.match(/发布完成[^\n]*/) || [''])[0]}`);
+  assert.ok(done >= partsTotal, `附件 ${done} 少于分卷数 ${partsTotal}`);
+  if (Number.isFinite(prep)) assert.strictEqual(done, prep, `准备 ${prep} 个附件、发布报 ${done} 个，自相矛盾`);
+  // 每个分卷都出现在结果里
   for (const b of bundle.bundles) {
     for (const p of b.parts) assert.ok(out.includes(p.file), `结果里缺 ${p.file}`);
   }

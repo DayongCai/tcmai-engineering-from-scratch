@@ -83,17 +83,30 @@ for (const base of SAMPLE) {
 
 console.log('\n[3] 教材与账本对得上');
 const textbookEntries = reg.materials.filter((m) => m.status === 'textbook');
-test('每门 textbook 学科的章文件数 = 账本章数，且都有 00-前言.md', () => {
+// 补章（无底本表的撰写层章）不计入底本账：逐门读 standards/*/补章登记.json，
+// 把「底本章数 + 补章数」作为该学科的应有章数。没有登记就不许有额外章文件。
+const supplementBySubject = new Map();
+for (const dirName of fs.readdirSync(path.join(ROOT, 'standards'))) {
+  const p = path.join(ROOT, 'standards', dirName, '补章登记.json');
+  if (!fs.existsSync(p)) continue;
+  const j = JSON.parse(fs.readFileSync(p, 'utf8'));
+  if (j.subject) supplementBySubject.set(j.subject, (j.chapters || []).length);
+}
+test('每门 textbook 学科的章文件数 = 账本章数 + 补章数，且都有 00-前言.md', () => {
   for (const m of textbookEntries) {
     const dir = path.join(TB, m.subject);
     assert.ok(fs.existsSync(dir), `${m.subject} 目录不存在`);
-    const chapters = fs.readdirSync(dir).filter((f) => /^\d{2}-第\d+章-.*\.md$/.test(f));
+    const chapters = fs.readdirSync(dir).filter((f) => /^\d{2,}-第\d+章-.*\.md$/.test(f));
+    const supp = supplementBySubject.get(m.subject) || 0;
     // rewrite 层的章数不等于源章数（账本 reason 写明「源 12 章按手写体例扩展为 13 章」），
     // 所以这类只核「有章文件」，不拿源章数当判据——否则改写的教材每加一章都会假红。
     if (m.layer === 'rewrite') {
       assert.ok(chapters.length >= m.chapters, `${m.subject} 改写层章文件 ${chapters.length} 少于源章 ${m.chapters}`);
     } else {
-      assert.strictEqual(chapters.length, m.chapters, `${m.subject} 章文件 ${chapters.length} ≠ 账本 ${m.chapters}`);
+      assert.strictEqual(
+        chapters.length, m.chapters + supp,
+        `${m.subject} 章文件 ${chapters.length} ≠ 账本 ${m.chapters} + 补章 ${supp}（补章须登记在 standards/*/补章登记.json）`
+      );
     }
     assert.ok(fs.existsSync(path.join(dir, '00-前言.md')), `${m.subject} 缺 00-前言.md`);
   }
@@ -103,7 +116,12 @@ test('抽 6 章核对「源文 N 字」与实际复算字数一致', () => {
   for (const m of samples) {
     const p = parseWorkbook(`qhzy-${m.base}.xlsx`);
     const dir = path.join(TB, m.subject);
-    const files = fs.readdirSync(dir).filter((f) => /^\d{2}-第\d+章-.*\.md$/.test(f)).sort();
+    // 只取源正文层文件（带「源文 N 字」声明）：补章的撰写层文件排在末尾且无该声明，
+    // 混进来会让「末章 = 源表末章」的索引假设失效
+    const files = fs.readdirSync(dir)
+      .filter((f) => /^\d{2,}-第\d+章-.*\.md$/.test(f))
+      .filter((f) => /源文 [\d,]+ 字/.test(fs.readFileSync(path.join(dir, f), 'utf8')))
+      .sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
     const last = files[files.length - 1];
     const text = fs.readFileSync(path.join(dir, last), 'utf8');
     const claimed = Number((/表「[^」]+」 · 源文 ([\d,]+) 字/.exec(text) || [])[1]?.replace(/,/g, ''));

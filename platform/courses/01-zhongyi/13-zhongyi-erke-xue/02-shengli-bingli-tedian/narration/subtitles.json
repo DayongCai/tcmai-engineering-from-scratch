@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/13-zhongyi-erke-xue/02-shengli-bingli-tedian/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 83.83,
+  "estimatedCues": 0,
+  "videoSeconds": 83.864667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.28,
+      "seconds": 5.28,
+      "estimated": false,
+      "text": "第 2 章 · 小儿生理病理特点：四句话，一条传变链",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.28,
+      "end": 13.42,
+      "seconds": 8.14,
+      "estimated": false,
+      "text": "「小儿稚阳未充，稚阴未长者也」——教材·第2章·2.2.1（《温病条辨·解儿难》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 13.42,
+      "end": 45.32,
+      "seconds": 31.9,
+      "estimated": false,
+      "text": "教材把这一章的全部内容压成四句话：脏腑娇嫩，形气未充；生机蓬勃，发育迅速；发病容易，传变迅速；脏器清灵，易趋康复。学生能背，但用不出来——因为「娇嫩」「迅速」「清灵」都是形容词，落到床边形不成动作。真正的难点是：这些话各自管什么？哪一句解释「为什么小儿肺炎比成人重」？哪一句解释「为什么小儿退热比成人快」？",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 45.32,
+      "end": 68.02,
+      "seconds": 22.7,
+      "estimated": false,
+      "text": "环境逼迫（同一个孩子在半天内可以从「流涕」进展到「喘憋」——病程的时间尺度与成人不同）+ 知识积累（本章 8 单元、10,171 字，是总论里最长的一章；三辨重心在病机 93，四位面脾胃系 157——因为「三不足两有余」里有两条半落在脾胃）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 68.02,
+      "end": 72.53,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 72.53,
+      "end": 83.83,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

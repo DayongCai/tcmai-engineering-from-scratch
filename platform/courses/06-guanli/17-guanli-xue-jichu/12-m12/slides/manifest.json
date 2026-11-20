@@ -1,0 +1,32 @@
+{
+  "chapter": "12-m12",
+  "slideCount": 5,
+  "segmentCount": 5,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 7
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 41
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 10
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 110
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 52
+    }
+  ]
+}

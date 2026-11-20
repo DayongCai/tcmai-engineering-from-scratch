@@ -1,0 +1,114 @@
+# [tcmP] 课程编排 · 05-huli/19-huli-renwen-goutong
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/05-huli/19-huli-renwen-goutong/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 19-huli-renwen-goutong
+title: 护理人文修养与沟通
+en: Nursing Humanities & Communication
+dept: 05-huli
+dept_title: 护理系
+semester: 3
+stage: sheng
+hours: 36
+chapters_target: 14
+bridge: 沟通语料→对话分析 / 共情表达→文本分类
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-gaishu
+    title: 第1章 护理人文修养概述
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.92
+  - slug: 02-renwen-jingshen
+    title: 第2章 人文精神与职业价值观
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.96
+  - slug: 03-wenhua-chayi
+    title: 第3章 文化与文化差异
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.94
+  - slug: 04-goutong-yuanli
+    title: 第4章 沟通的基本原理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.95
+  - slug: 05-huhuan-goutong
+    title: 第5章 护患沟通的环节与要求
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.95
+  - slug: 06-teshu-qingjing
+    title: 第6章 特殊情境的沟通要求
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97
+  - slug: 07-tuandui-goutong
+    title: 第7章 团队沟通与协作
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.98
+  - slug: 08-liyi-xingxiang
+    title: 第8章 护理礼仪与职业形象
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.95
+  - slug: 09-tongli-zhichi
+    title: 第9章 同理心与情感支持
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.96
+  - slug: 10-renwen-shijian
+    title: 第10章 人文关怀的实践要求
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 11-lunli-juece
+    title: 第11章 伦理与法律的修养、道德困境
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.01
+  - slug: 12-jiaoyu-fansi
+    title: 第12章 人文素质教育与反思实践
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.98
+  - slug: 13-zhiye-fazhan
+    title: 第13章 人文修养与职业发展
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97
+  - slug: 14-zhiliang-pingtai
+    title: 第14章 人文修养与护理质量、平台
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.97

@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/10-bingli-xue/07-shui-dianjiezhi-wenluan/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 112.1,
+  "estimatedCues": 0,
+  "videoSeconds": 112.122667,
+  "videoMinusNarrationSeconds": 0.023,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 6.5,
+      "seconds": 6.5,
+      "estimated": false,
+      "text": "第 7 章 · 水、电解质代谢紊乱：把「容量与渗透压」当成两把尺",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 6.5,
+      "end": 20.23,
+      "seconds": 13.73,
+      "estimated": false,
+      "text": "「体液是构成内环境的主体，其组成与分布的类别是认识水与电解质代谢紊乱的起点」——教材·第7章·7.1.1（《病理学·第7章·7.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 20.23,
+      "end": 52.32,
+      "seconds": 32.09,
+      "estimated": false,
+      "text": "「脱水就是水少了」这句话能应付选择题。可换一个问法——一个人呕吐之后丢掉的是水还是盐水，两种情况下细胞是瘪下去还是胀起来——「水少了」一个字也答不上。这一章真正要交的工具只有两把尺：容量与渗透压。它们可以同时变，也可以各自变；抓住「谁在变、往哪边变、水往哪边走」，全章的分类就是这两把尺的组合，而不是一串要背的病名。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 52.32,
+      "end": 100.8,
+      "seconds": 48.48,
+      "estimated": false,
+      "text": "环境逼迫（带教老师问「这个人是高渗性脱水还是低渗性脱水，你凭什么这么说」，学生答「因为他口渴」；老师追问「低渗性脱水的人渴不渴」，学生卡住——因为「口渴」只对应渗透压升高这一条，答不出容量那一条；再问「补液该补什么」，就彻底越界了）+ 知识积累（本章 12 个单元、20,215 字的词频结构显示：机制 150 次、形态 130 次、病因 0 次；四层级里细胞层 104 次居首，组织层只有 16 次。教材把笔墨全押在「机制与类别」上，一次病因都没写——所以本章的骨架是两把尺的组合关系，不是病因学，也不是形态描述）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 100.8,
+      "end": 112.1,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

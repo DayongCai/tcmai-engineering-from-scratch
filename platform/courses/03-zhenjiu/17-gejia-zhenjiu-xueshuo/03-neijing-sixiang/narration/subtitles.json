@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/03-zhenjiu/17-gejia-zhenjiu-xueshuo/03-neijing-sixiang/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 67.43,
+  "estimatedCues": 0,
+  "videoSeconds": 67.462667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.26,
+      "seconds": 3.26,
+      "estimated": false,
+      "text": "第 3 章 · 《内经》针灸学术思想",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.26,
+      "end": 14.71,
+      "seconds": 11.45,
+      "estimated": false,
+      "text": "「《汉书·艺文志》」——教材·第3章·3.1.1。本章要回答的是：《内经》的针灸思想是成体系，还是散在条文里。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.71,
+      "end": 31.41,
+      "seconds": 16.7,
+      "estimated": false,
+      "text": "《灵枢》多言针、《素问》多言理，读成「一部书一个思想」就会漏掉两书分工。这不是记忆量的问题，是判据的问题：没有判据，任何一个医家都可以被讲成「他很重视针灸」，而这句话什么也没说。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 31.41,
+      "end": 56.13,
+      "seconds": 24.72,
+      "estimated": false,
+      "text": "环境逼迫（针灸的技术动作只在具体医家的手上被改动，脱离人物与年代，手法就成了没有来路的规矩）+ 知识积累（本章 6 单元 11,951 汉字；三辨主 文献依据 239；四位面（时代）主 先秦两汉 300；引书 107 部 358 次；数值类命中 2）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 56.13,
+      "end": 67.43,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

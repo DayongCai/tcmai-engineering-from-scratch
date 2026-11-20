@@ -1,7 +1,7 @@
 {
  "courseTitle": "智能毕业设计与知识移交",
  "deptPath": "departments/07-zhineng/19-zhineng-biye-sheji",
- "xlsx": "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx",
+ "xlsx": "F:/textbooks/qhzy-机器学习.xlsx",
  "chain": "选题 → 数据 → 实现 → 分析 → 答辩 → 移交",
  "levelLabel": "阶段结构",
  "objectPressure": "毕设的判据是「问题可复现—实验可对照—交付可接手」三条，缺一条不算毕业",

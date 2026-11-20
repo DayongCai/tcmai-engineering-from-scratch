@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/06-shengli-xue/07-nengliang-tiwen/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 121.2,
+  "estimatedCues": 0,
+  "videoSeconds": 121.224667,
+  "videoMinusNarrationSeconds": 0.025,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.7,
+      "seconds": 4.7,
+      "estimated": false,
+      "text": "第 7 章 · 能量代谢与体温：产与散的两本账",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.7,
+      "end": 14.88,
+      "seconds": 10.18,
+      "estimated": false,
+      "text": "「产热与散热在调节的作用下保持动态的平衡」——教材·第7章·7.2.2（《生理学·第7章·7.2》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.88,
+      "end": 40.75,
+      "seconds": 25.87,
+      "estimated": false,
+      "text": "问「体温多少算正常」，多数人能报出一个数；再问「寒冷时人为什么要先打寒战、再缩血管、最后才觉得冷」，答案就塌成一句「产热增加、散热减少」。可这八个字说不清三件事的先后，也说不清它们各自解决了哪一半问题。数字好记，关系难说——而这一章能给你的，恰恰只有关系。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 40.75,
+      "end": 65.93,
+      "seconds": 25.18,
+      "estimated": false,
+      "text": "环境逼迫（门诊与生活里所有人都在问「发烧没有」「代谢高不高」，追问一步就露底：说不清产热与散热各自由什么改变，就只剩一个数可以当答案）+ 知识积累（把「产热来源 / 散热方式 / 调节环节」三组类别搭成一张双向表，使每一次体温变动都能落到「哪一侧被改写」上，而不是落到一个读数上）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "objectives",
+      "start": 65.93,
+      "end": 109.9,
+      "seconds": 43.97,
+      "estimated": false,
+      "text": "能用「产热侧 / 散热侧 / 调节环节」三栏说清一次体温变动的来路，而不是只报一个读数 能列出产热的器官类别与形式类别（寒战 / 非寒战），并说明安静与活动时产热主力为何不同 能列出散热的四条途径，并说明主力随环境类别如何换位 能说明调定点是一个「参照水平」而不是一个固定数值，以及围绕它展开的效应方向 能解释本章后 6 个单元（观察要点、记录复核、表述用语、边界要求）为什么占了篇幅的一半 能说出本章代码里那个「推不出」的分支为什么必须存在",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 109.9,
+      "end": 121.2,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

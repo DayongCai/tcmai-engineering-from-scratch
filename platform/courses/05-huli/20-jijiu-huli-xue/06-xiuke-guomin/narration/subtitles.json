@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/20-jijiu-huli-xue/06-xiuke-guomin/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 61.9,
+  "estimatedCues": 0,
+  "videoSeconds": 61.934667,
+  "videoMinusNarrationSeconds": 0.035,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.32,
+      "seconds": 4.32,
+      "estimated": false,
+      "text": "第 6 章 · 休克与严重过敏反应的急救护理",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.32,
+      "end": 23.02,
+      "seconds": 18.7,
+      "estimated": false,
+      "text": "「《急救护理学·第6章 休克与严重过敏反应的急救护理》」——教材第 6 章章目级引文；教材无篇名级引文，非本章原文篇名。本章要回答的是：休克与严重过敏反应的急救护理这一章的核心判据是什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 23.02,
+      "end": 28.04,
+      "seconds": 5.02,
+      "estimated": false,
+      "text": "休克与过敏合章：共同点是循环崩溃的识别。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 28.04,
+      "end": 50.6,
+      "seconds": 22.56,
+      "estimated": false,
+      "text": "环境逼迫（急救的时间以分钟计，判断与处置几乎同时发生，记录必须在事后立刻补齐）+ 知识积累（本章 1 单元 17,617 汉字；三辨主 转运与记录 302；四位面（急症类别）主 院前 13；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 50.6,
+      "end": 61.9,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

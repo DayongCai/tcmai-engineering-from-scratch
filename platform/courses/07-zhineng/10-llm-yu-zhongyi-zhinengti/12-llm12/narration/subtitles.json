@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/07-zhineng/10-llm-yu-zhongyi-zhinengti/12-llm12/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 56.3,
+  "estimatedCues": 0,
+  "videoSeconds": 56.322667,
+  "videoMinusNarrationSeconds": 0.023,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.65,
+      "seconds": 3.65,
+      "estimated": false,
+      "text": "第 12 章 · 生成内容的责任与合规",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.65,
+      "end": 16.92,
+      "seconds": 13.27,
+      "estimated": false,
+      "text": "「《F:/textbooks/机器学习·生成内容的责任与合规》」——教材第12章。本章要回答的是：生成内容的责任与合规：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 16.92,
+      "end": 21.07,
+      "seconds": 4.15,
+      "estimated": false,
+      "text": "生成内容的责任与合规：本课第 12 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 21.07,
+      "end": 45,
+      "seconds": 23.93,
+      "estimated": false,
+      "text": "环境逼迫（大模型的判据是「说得出依据、测得出底线」：测不出幻觉率的模型不许进临床流程）+ 知识积累（本章 6 单元 8,948 汉字；三辨主 评估与治理 82；四位面（章群结构）主 工程与治理 8948；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 45,
+      "end": 56.3,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

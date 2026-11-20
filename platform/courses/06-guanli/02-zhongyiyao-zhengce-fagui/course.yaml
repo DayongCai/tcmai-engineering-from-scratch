@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 06-guanli/02-zhongyiyao-zhengce-fagui
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/06-guanli/02-zhongyiyao-zhengce-fagui/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 02-zhongyiyao-zhengce-fagui
+title: 中医药政策与法规
+en: TCM Policy & Regulation
+dept: 06-guanli
+dept_title: 管理系
+semester: 4
+stage: sheng
+hours: 54
+chapters_target: 8
+bridge: 法规条文→检索问答 / 合规判断→规则树
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-z21
+    title: 第1章 卫生法与中医药法的法理基础
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97
+  - slug: 02-z22
+    title: 第2章 立法、执法与行政责任
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.94
+  - slug: 03-z23
+    title: 第3章 机构与人员管理制度
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.91
+  - slug: 04-z24
+    title: 第4章 医疗行为与质量安全
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.92
+  - slug: 05-z25
+    title: 第5章 药品、器械与消毒产品监管
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.98
+  - slug: 06-z26
+    title: 第6章 公共卫生与健康促进法制
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.95
+  - slug: 07-z27
+    title: 第7章 中医药法律制度与政策工具
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.95
+  - slug: 08-z28
+    title: 第8章 新兴技术立法与权益救济
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.96

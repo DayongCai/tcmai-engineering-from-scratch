@@ -1,0 +1,78 @@
+{
+  "generatedBy": "platform/pipeline/extract_narration.js",
+  "source": "departments/01-zhongyi/11-zhongyi-waike-xue/chapters/02-mingming-bingyin-bingji/docs/zh.md",
+  "course": "11-zhongyi-waike-xue",
+  "dept": "01-zhongyi",
+  "chapter": "02-mingming-bingyin-bingji",
+  "title": "第 2 章 · 命名与病因病机：一个病名里藏着三层判据",
+  "segmentCount": 6,
+  "estimateTotalSeconds": 92,
+  "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
+  "textVsSpoken": "text 是文档原文（含代码/表格/Markdown）；spoken 是剥离后的可朗读文本，TTS 与人工配音都应使用 spoken",
+  "segments": [
+    {
+      "n": 1,
+      "role": "title",
+      "text": "第 2 章 · 命名与病因病机：一个病名里藏着三层判据",
+      "slide": "title",
+      "spoken": "第 2 章 · 命名与病因病机：一个病名里藏着三层判据",
+      "estimateSeconds": 5,
+      "audio": "001.mp3",
+      "audioSeconds": 5.64
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "text": "「疡，古义泛指一切外科疾病。《周礼·天官》设疡医之职，掌肿疡、溃疡、金疡、折疡之治」——教材·第2章·2.1.2（《中医外科学·第2章》）",
+      "slide": "title",
+      "spoken": "「疡，古义泛指一切外科疾病。《周礼·天官》设疡医之职，掌肿疡、溃疡、金疡、折疡之治」——教材·第2章·2.1.2（《中医外科学·第2章》）",
+      "estimateSeconds": 15,
+      "audio": "002.mp3",
+      "audioSeconds": 14.64
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "text": "学生能背「痈是急性化脓性疾病」，却答不出：为什么「疽」有头疽与无头疽之分？为什么同一个红肿的包，一叫疖就轻、一叫疔就重？病名到底是在描述形态，还是在提示病机与预后？答不出这一层，背下来的病名就只是标签。",
+      "slide": "problem",
+      "spoken": "学生能背「痈是急性化脓性疾病」，却答不出：为什么「疽」有头疽与无头疽之分？为什么同一个红肿的包，一叫疖就轻、一叫疔就重？病名到底是在描述形态，还是在提示病机与预后？答不出这一层，背下来的病名就只是标签。",
+      "estimateSeconds": 22,
+      "audio": "003.mp3",
+      "audioSeconds": 21.02
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "text": "环境逼迫（临床沟通出错的常见形态不是辨证错，而是**病名混用**——把「有头疽」写成「痈」，把「疔」写成「疖」，同事接手时的警惕级别就掉了一档）+ 知识积累（本章 7 个单元、9,185 字的三辨重心压在**病机**（179 次），局部表现与病因都远低于此；说明教材把「命名」与「病机」写成同一件事的两面——名字是按病机取的，不是按外观取的）",
+      "slide": "roots",
+      "spoken": "环境逼迫（临床沟通出错的常见形态不是辨证错，而是病名混用——把「有头疽」写成「痈」，把「疔」写成「疖」，同事接手时的警惕级别就掉了一档）+ 知识积累（本章 7 个单元、9,185 字的三辨重心压在病机（179 次），局部表现与病因都远低于此；说明教材把「命名」与「病机」写成同一件事的两面——名字是按病机取的，不是按外观取的）",
+      "estimateSeconds": 34,
+      "audio": "004.mp3",
+      "audioSeconds": 31.2
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "text": "```bash\ncd departments/01-zhongyi/11-zhongyi-waike-xue/chapters/02-mingming-bingyin-bingji\nnode code/main.js\nnode --test code/main.test.js\n```",
+      "slide": "verify",
+      "heading": "验证",
+      "spoken": "这一段以代码实现为主，请看画面上的代码块。",
+      "estimateSeconds": 5,
+      "audio": "005.mp3",
+      "audioSeconds": 4.51
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "slide": "disclaimer",
+      "spoken": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "estimateSeconds": 11,
+      "audio": "006.mp3",
+      "audioSeconds": 11.3
+    }
+  ],
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioMeasuredSeconds": 88.32,
+  "estimateVsActual": "estimateSeconds 为排期估算；audioSeconds 为合成实测，成片时长由后者决定"
+}

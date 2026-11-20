@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/21-zhongyi-linchuang-lunzhuan/05-naobing-lunzhuan/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 58.88,
+  "estimatedCues": 0,
+  "videoSeconds": 58.922667,
+  "videoMinusNarrationSeconds": 0.043,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.94,
+      "seconds": 4.94,
+      "estimated": false,
+      "text": "第 5 章 · 脑病科轮转：眩晕与中风的辨证接诊",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.94,
+      "end": 11.2,
+      "seconds": 6.26,
+      "estimated": false,
+      "text": "「头者精明之府」——教材·第5章·5.1（《素问·脉要精微论》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 11.2,
+      "end": 26.8,
+      "seconds": 15.6,
+      "estimated": false,
+      "text": "教材里没有「脑病科」这一章。中医内科按脏腑分章，脑病科按病种收人，两者对不齐——这是全部六章里唯一需要跨章取病的一科，也是最能说明「轮转不等于照章念」的一科。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 26.8,
+      "end": 43.07,
+      "seconds": 16.27,
+      "estimated": false,
+      "text": "环境逼迫（眩晕与中风是轮转必见的病，且中风有时间窗）+ 知识积累（本章 1 单元；跨肝系与心系取 6 病 24,964 汉字，辨证论治小节 5 个，代表方 23 首）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "verify",
+      "start": 43.07,
+      "end": 47.58,
+      "seconds": 4.51,
+      "estimated": false,
+      "text": "这一段以代码实现为主，请看画面上的代码块。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 47.58,
+      "end": 58.88,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

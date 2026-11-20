@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（口齿科的判据是「定位到牙、辨证到邪、外治有禁忌」）+ 知识积累（本章 2 单元 2,168 汉字；三辨主 **病性与证候 153**；四位面（章群结构）主 **后段 2168**；引书 **3 部 3 次**；数值类命中 0）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（10 内容章 / 20 单元 / 16,347 汉字）；单元层 `standards/zhongyi-kouqiang-kexue/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（10 内容章 / 20 单元 / 16,347 汉字）；单元层 `standards/zhongyi-kouqiang-kexue/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -92,7 +92,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py zhongyi-kouqiang-kexue "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py zhongyi-kouqiang-kexue "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py zhongyi-kouqiang-kexue                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

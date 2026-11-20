@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/09-jichu/15-liuxingbing-xue/06-shiyan-liuxingbingxue/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 61.32,
+  "estimatedCues": 0,
+  "videoSeconds": 61.348667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 2.93,
+      "seconds": 2.93,
+      "estimated": false,
+      "text": "第 6 章 · 实验流行病学",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 2.93,
+      "end": 15.87,
+      "seconds": 12.94,
+      "estimated": false,
+      "text": "「《流行病学·实验流行病学》」——教材第6章；章号一一对应。本章要回答的是：实验流行病学：这一章的判据是什么，什么算「看懂了」。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 15.87,
+      "end": 19.9,
+      "seconds": 4.03,
+      "estimated": false,
+      "text": "实验流行病学：这一章的判据与边界。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 19.9,
+      "end": 50.02,
+      "seconds": 30.12,
+      "estimated": false,
+      "text": "环境逼迫（流行病学的判据是「设计—测量—推断」三件套：说得清怎么选的样本、算的什么率、能不能下因果结论，才算会读一篇研究）+ 知识积累（本章 12 单元 16,648 汉字；三辨主 设计与方法 257；四位面（教材篇结构）主 中篇·观察与实验研究 16648；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 50.02,
+      "end": 61.32,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

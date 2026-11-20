@@ -1,0 +1,206 @@
+{
+  "$generated": "手工维护：教材开稿登记（无底本表，按外源条文撰写层逐章登记依据）",
+  "subject": "02-zhongyao/15-zhongyao-xinyao-yanfa",
+  "title": "中药新药研发",
+  "mode": "开稿",
+  "teachingChapters": 8,
+  "textbookChaptersBefore": 0,
+  "textbookChaptersAfter": 8,
+  "why": "本课无底本表，教材按 4 份 WHO 指南（GMP for herbal medicines 2007 / GACP for medicinal plants 2003 / Assessing quality of herbal medicines 2007 / Safety monitoring of herbal medicines 2004，17 条）撰写，注册与药物警戒条文跨库借用 standards/yaoshi-guanli（106 条）。章目与教学计划 8 章逐条对齐。",
+  "layerNote": "全部章节为「本库撰写层」——不是源正文层；英文外源条文保留英文原句作引文，不做「中译当引文」。",
+  "borrowNote": "跨库借用约定：本课只负责 WHO 四份指南；凡引《中药注册分类及申报资料要求》《药品注册管理办法》《药物警戒质量管理规范》的条，均来自 standards/yaoshi-guanli，由 tests/test_yaoshi_guanli_supplement.js 与本课 test_source_topics.js 双门校验。Z 类条文以〔文本锚点〕引用（该库按小标题切条，无「第N条」编号）。",
+  "chapters": [
+    {
+      "no": 1,
+      "file": "textbooks/02-zhongyao/15-zhongyao-xinyao-yanfa/01-第1章-研发路径与证据链.md",
+      "title": "研发路径与证据链",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2172,
+        "citations": 4,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-xinyao/外源条文.json",
+          "note": "17 条（4 份 WHO 指南：GMP / GACP / 质量与污染物 / 安全性监测），英文原文保留英文作引文"
+        },
+        {
+          "kind": "跨库借条",
+          "path": "standards/yaoshi-guanli/外源条文.json",
+          "note": "106 条（中药注册分类 Z01–Z14、注册办法 Y*、药物警戒 G01–G10），借用条文同样逐字可核"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字；build_zhongyao_xinyao_sources.py --check 17/17"
+    },
+    {
+      "no": 2,
+      "file": "textbooks/02-zhongyao/15-zhongyao-xinyao-yanfa/02-第2章-药材源头-GACP与可持续供应.md",
+      "title": "药材源头-GACP与可持续供应",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1896,
+        "citations": 5,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-xinyao/外源条文.json",
+          "note": "17 条（4 份 WHO 指南：GMP / GACP / 质量与污染物 / 安全性监测），英文原文保留英文作引文"
+        },
+        {
+          "kind": "跨库借条",
+          "path": "standards/yaoshi-guanli/外源条文.json",
+          "note": "106 条（中药注册分类 Z01–Z14、注册办法 Y*、药物警戒 G01–G10），借用条文同样逐字可核"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字；build_zhongyao_xinyao_sources.py --check 17/17"
+    },
+    {
+      "no": 3,
+      "file": "textbooks/02-zhongyao/15-zhongyao-xinyao-yanfa/03-第3章-生产-GMP与关键控制点.md",
+      "title": "生产-GMP与关键控制点",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1922,
+        "citations": 5,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-xinyao/外源条文.json",
+          "note": "17 条（4 份 WHO 指南：GMP / GACP / 质量与污染物 / 安全性监测），英文原文保留英文作引文"
+        },
+        {
+          "kind": "跨库借条",
+          "path": "standards/yaoshi-guanli/外源条文.json",
+          "note": "106 条（中药注册分类 Z01–Z14、注册办法 Y*、药物警戒 G01–G10），借用条文同样逐字可核"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字；build_zhongyao_xinyao_sources.py --check 17/17"
+    },
+    {
+      "no": 4,
+      "file": "textbooks/02-zhongyao/15-zhongyao-xinyao-yanfa/04-第4章-质量控制-标志物与指纹图谱.md",
+      "title": "质量控制-标志物与指纹图谱",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1873,
+        "citations": 3,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-xinyao/外源条文.json",
+          "note": "17 条（4 份 WHO 指南：GMP / GACP / 质量与污染物 / 安全性监测），英文原文保留英文作引文"
+        },
+        {
+          "kind": "跨库借条",
+          "path": "standards/yaoshi-guanli/外源条文.json",
+          "note": "106 条（中药注册分类 Z01–Z14、注册办法 Y*、药物警戒 G01–G10），借用条文同样逐字可核"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字；build_zhongyao_xinyao_sources.py --check 17/17"
+    },
+    {
+      "no": 5,
+      "file": "textbooks/02-zhongyao/15-zhongyao-xinyao-yanfa/05-第5章-污染物与残留.md",
+      "title": "污染物与残留",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1894,
+        "citations": 5,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-xinyao/外源条文.json",
+          "note": "17 条（4 份 WHO 指南：GMP / GACP / 质量与污染物 / 安全性监测），英文原文保留英文作引文"
+        },
+        {
+          "kind": "跨库借条",
+          "path": "standards/yaoshi-guanli/外源条文.json",
+          "note": "106 条（中药注册分类 Z01–Z14、注册办法 Y*、药物警戒 G01–G10），借用条文同样逐字可核"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字；build_zhongyao_xinyao_sources.py --check 17/17"
+    },
+    {
+      "no": 6,
+      "file": "textbooks/02-zhongyao/15-zhongyao-xinyao-yanfa/06-第6章-上市后安全性监测与药物警戒.md",
+      "title": "上市后安全性监测与药物警戒",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1917,
+        "citations": 10,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-xinyao/外源条文.json",
+          "note": "17 条（4 份 WHO 指南：GMP / GACP / 质量与污染物 / 安全性监测），英文原文保留英文作引文"
+        },
+        {
+          "kind": "跨库借条",
+          "path": "standards/yaoshi-guanli/外源条文.json",
+          "note": "106 条（中药注册分类 Z01–Z14、注册办法 Y*、药物警戒 G01–G10），借用条文同样逐字可核"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字；build_zhongyao_xinyao_sources.py --check 17/17"
+    },
+    {
+      "no": 7,
+      "file": "textbooks/02-zhongyao/15-zhongyao-xinyao-yanfa/07-第7章-注册资料.md",
+      "title": "注册资料",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 2047,
+        "citations": 5,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-xinyao/外源条文.json",
+          "note": "17 条（4 份 WHO 指南：GMP / GACP / 质量与污染物 / 安全性监测），英文原文保留英文作引文"
+        },
+        {
+          "kind": "跨库借条",
+          "path": "standards/yaoshi-guanli/外源条文.json",
+          "note": "106 条（中药注册分类 Z01–Z14、注册办法 Y*、药物警戒 G01–G10），借用条文同样逐字可核"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字；build_zhongyao_xinyao_sources.py --check 17/17"
+    },
+    {
+      "no": 8,
+      "file": "textbooks/02-zhongyao/15-zhongyao-xinyao-yanfa/08-第8章-产业化与知识移交.md",
+      "title": "产业化与知识移交",
+      "layer": "本库撰写层",
+      "stats": {
+        "hanzi": 1857,
+        "citations": 3,
+        "quotes": 1
+      },
+      "bases": [
+        {
+          "kind": "外源条文",
+          "path": "standards/zhongyao-xinyao/外源条文.json",
+          "note": "17 条（4 份 WHO 指南：GMP / GACP / 质量与污染物 / 安全性监测），英文原文保留英文作引文"
+        },
+        {
+          "kind": "跨库借条",
+          "path": "standards/yaoshi-guanli/外源条文.json",
+          "note": "106 条（中药注册分类 Z01–Z14、注册办法 Y*、药物警戒 G01–G10），借用条文同样逐字可核"
+        }
+      ],
+      "verified": "2026-11-16：tests/test_source_topics.js → 引用可核、摘句逐字；build_zhongyao_xinyao_sources.py --check 17/17"
+    }
+  ]
+}

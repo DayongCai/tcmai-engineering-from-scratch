@@ -1,0 +1,66 @@
+# [tcmP] 课程编排 · 06-guanli/05-zhongyi-wenhua-chuanbo
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/06-guanli/05-zhongyi-wenhua-chuanbo/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 05-zhongyi-wenhua-chuanbo
+title: 中医文化传播学
+en: TCM Cultural Communication
+dept: 06-guanli
+dept_title: 管理系
+semester: 5
+stage: zhang
+hours: 36
+chapters_target: 6
+bridge: 传播内容→主题建模 / 受众画像→用户分群
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-z51
+    title: 第1章 中医文化的源流：从先秦到汉唐
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.94
+  - slug: 02-z52
+    title: 第2章 典籍与医家：可传播的内容从哪来
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.97
+  - slug: 03-z53
+    title: 第3章 近现代转型与制度化
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.9
+  - slug: 04-z54
+    title: 第4章 信息组织与检索：把典籍变成可查资源
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.03
+  - slug: 05-z55
+    title: 第5章 传播内容的标准与证据
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.92
+  - slug: 06-z56
+    title: 第6章 当代传播与边界：不神化、不虚构
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.99

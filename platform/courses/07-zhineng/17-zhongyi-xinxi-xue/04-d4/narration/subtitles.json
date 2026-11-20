@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/07-zhineng/17-zhongyi-xinxi-xue/04-d4/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 66.63,
+  "estimatedCues": 0,
+  "videoSeconds": 66.672667,
+  "videoMinusNarrationSeconds": 0.043,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 8.66,
+      "seconds": 8.66,
+      "estimated": false,
+      "text": "第 4 章 · 检索与排序／关联规则挖掘／聚类与降维／知识发现与智能应用／研究方向与应用",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 8.66,
+      "end": 26.32,
+      "seconds": 17.66,
+      "estimated": false,
+      "text": "「《中医信息学·检索与排序／关联规则挖掘／聚类与》」——教材第4章。本章要回答的是：检索与排序／关联规则挖掘／聚类与降维／知识发现与智能应用／研究方向与应用：这一章要回答什么。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 26.32,
+      "end": 35.34,
+      "seconds": 9.02,
+      "estimated": false,
+      "text": "检索与排序／关联规则挖掘／聚类与降维／知识发现与智能应用／研究方向与应用：本课第 4 章。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 35.34,
+      "end": 55.33,
+      "seconds": 19.99,
+      "estimated": false,
+      "text": "环境逼迫（信息学的判据是「标准—表示—检索」三件套）+ 知识积累（本章 31 单元 1,714 汉字；三辨主 概念与结构 10；四位面（章群结构）主 位面2 1714；引书 1 部 2 次；数值类命中 8）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 55.33,
+      "end": 66.63,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

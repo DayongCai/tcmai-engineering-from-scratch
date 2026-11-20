@@ -1,0 +1,78 @@
+# [tcmP] 课程编排 · 02-zhongyao/04-zhongyao-ziyuan-xue
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/02-zhongyao/04-zhongyao-ziyuan-xue/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 04-zhongyao-ziyuan-xue
+title: 中药资源学
+en: TCM Resource Science
+dept: 02-zhongyao
+dept_title: 中药系
+semester: 3
+stage: sheng
+hours: 54
+chapters_target: 8
+bridge: 产区分布→空间聚类 / 资源评价→多指标模型
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-fenbu-quhua
+    title: 第1章 中药资源的分布与区划
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 02-daodi-xingcheng
+    title: 第2章 道地药材的形成与评价
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.08
+    measured_minutes: 1.1
+  - slug: 03-yewai-diaocha
+    title: 第3章 野生资源的调查与蕴藏量估算
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.01
+  - slug: 04-zaipei-gap
+    title: 第4章 栽培技术与规范化种植
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.1
+    measured_minutes: 1.1
+  - slug: 05-kaifa-liyong
+    title: 第5章 资源的开发利用与产业化
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.91
+  - slug: 06-binwei-baohu
+    title: 第6章 濒危物种保护与政策
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.04
+  - slug: 07-pucha-shujuku
+    title: 第7章 资源普查数据的建库与制图
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.95
+  - slug: 08-gongxu-moxing
+    title: 第8章 供需模型与价格波动的量化
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.06

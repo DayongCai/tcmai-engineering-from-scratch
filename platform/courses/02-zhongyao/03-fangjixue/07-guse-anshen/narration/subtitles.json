@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/02-zhongyao/03-fangjixue/07-guse-anshen/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 127.99,
+  "estimatedCues": 0,
+  "videoSeconds": 128.028667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.71,
+      "seconds": 5.71,
+      "estimated": false,
+      "text": "第 7 章 · 固涩剂与安神剂：收与镇，两道相反的闸门",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.71,
+      "end": 14.57,
+      "seconds": 8.86,
+      "estimated": false,
+      "text": "「敛阴止汗，益气固表」——教材·第13章·13.1.1（《方剂学·第13章·13.1》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 14.57,
+      "end": 62.81,
+      "seconds": 48.24,
+      "estimated": false,
+      "text": "打开教材第13、14章，第一眼看到的是 27,100 字、7 节、54 段、9 首方——平均每首方摊到 3,011 字，比第 8 章 16 首方分摊得还宽。可真要按「什么时候该收、什么时候该开」排一条学习线时，教材把它们写成了九份长度几乎一样的六段模板：固表止汗的牡蛎散与凉开急救的安宫牛黄丸，段落数、段长、行文顺序完全一致。模板的整齐掩盖了治法的相反：固涩是关门留人，开窍是开门放邪，两类方在性味、归经、毒性上几乎不共享一味药——九首方 75 个药位里，横跨两章的共用药只有 7 味。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 62.81,
+      "end": 116.69,
+      "seconds": 53.88,
+      "estimated": false,
+      "text": "环境逼迫（固涩与开窍在临床上都是「急」与「久」两端：一边是汗出不止、泻痢滑脱、遗精滑泄这种「关不住」的耗散，一边是神昏窍闭这种「打不开」的壅塞；教材把这两类排在相邻两章，正是要人在同一张桌上对比「收」与「开」的适应证，而考试与临床都要求当场分辨，不容许含糊）＋ 知识积累（两章都按「六段/方」写：方源与组成、用法用量、功用与主治、方解与配伍、运用与鉴别、现代研究提示，九首方无一例外；每段 448–521 字，每方 2,981–3,125 字。模板越整齐，越容易把「方」读成同一种东西，而真正区分它们的是组成药味、毒性警戒与开闭方向）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 116.69,
+      "end": 127.99,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

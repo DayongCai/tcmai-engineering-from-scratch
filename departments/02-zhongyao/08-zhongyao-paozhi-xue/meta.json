@@ -23,11 +23,12 @@
   "id": "textbooks",
   "path": "textbooks/02-zhongyao/08-zhongyao-paozhi-xue",
   "chaptersWritten": 12,
-  "words": 174240,
+  "words": 192488,
   "status": "wip",
-  "layer": "source-body",
+  "layer": "source+rewrite",
   "source": "standards/materials/textbooks-batch/registry.json#中药炮制学",
-  "extractedAt": "2026-10-21"
+  "extractedAt": "2026-10-21",
+  "note": "12 章 / 162,741 汉字。正文为源正文层，判断层见章末 REWRITE 块（N.1–N.5 + 免责 + 思考题）。"
  },
  "底本": {
   "kind": "教材",

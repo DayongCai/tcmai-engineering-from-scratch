@@ -2,7 +2,7 @@
 
 > 本章节由 `scripts/build_outputs_index.js` **生成**，请勿手改；重跑脚本同步。
 
-> **4308** 件产出物 · 覆盖 **2154** 个章节 · prompt 2154 · skill 2154
+> **4332** 件产出物 · 覆盖 **2166** 个章节 · prompt 2166 · skill 2166
 
 ## 这是什么
 
@@ -34,7 +34,7 @@
 | ☯️ 中医系 | 中医外科学 | 13 | 28 |
 | ☯️ 中医系 | 中医妇科学 | 13 | 58 |
 | ☯️ 中医系 | 中医儿科学 | 14 | 30 |
-| ☯️ 中医系 | 中医证候学 | 12 | 24 |
+| ☯️ 中医系 | 中医证候学 | 24 | 48 |
 | ☯️ 中医系 | 中医各家学说 | 8 | 16 |
 | ☯️ 中医系 | 中医哲学史 | 8 | 16 |
 | ☯️ 中医系 | 中医急诊学 | 12 | 64 |
@@ -1771,115 +1771,223 @@
 
 ### 中医证候学
 
-> Build · 第 7 学期 · 已产出 12 章
+> Build · 第 7 学期 · 已产出 24 章
 
-#### 第 1 章 · 风证门（M01）
+#### 第 1 章 · 病·证·候：三级诊断的含义与分界
 
-`14-zhongyi-zhenghou-xue/chapters/01-feng-men/`
-
-| 类型 | 标题 | 说明 | 字数 | 文件 |
-| --- | --- | --- | :-: | --- |
-| prompt | 风证门 · 提示词：把一章门变成一次可复述的判定 | — | 484 | [`prompt-feng-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-feng-men/outputs/prompt-feng-men.md) |
-| skill | feng-men | 用「门→类→证→候」四级编码解析 风门（M01）的证候条目，输出可复算的全码与态。 | 563 | [`skill-feng-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-feng-men/outputs/skill-feng-men.md) |
-
-#### 第 2 章 · 寒证门（M02）
-
-`14-zhongyi-zhenghou-xue/chapters/02-han-men/`
+`14-zhongyi-zhenghou-xue/chapters/01-s01-bing-zheng-hou/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 寒证门 · 提示词：把一章门变成一次可复述的判定 | — | 478 | [`prompt-han-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-han-men/outputs/prompt-han-men.md) |
-| skill | han-men | 用「门→类→证→候」四级编码解析 寒门（M02）的证候条目，输出可复算的全码与态。 | 557 | [`skill-han-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-han-men/outputs/skill-han-men.md) |
+| prompt | 课堂产出模板 · 第 1 章 病·证·候：三级诊断的含义与分界 | — | 660 | [`prompt-s01-bing-zheng-hou.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-s01-bing-zheng-hou/outputs/prompt-s01-bing-zheng-hou.md) |
+| skill | 技能卡 · 第 1 章 病·证·候：三级诊断的含义与分界 | 中医证候学第 1 章「病·证·候：三级诊断的含义与分界」的可复用技能卡：病、证、候三个词在日常中医里被当同义词用，写病案时混着写，读别人病案时也就读不出层级。 用概论给的判据逐条对，产出可复核的证名与候名。 | 540 | [`skill-s01-bing-zheng-hou.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-s01-bing-zheng-hou/outputs/skill-s01-bing-zheng-hou.md) |
 
-#### 第 3 章 · 暑证门（M03）
+#### 第 2 章 · 证的内容与结构：病因·病位·病机
 
-`14-zhongyi-zhenghou-xue/chapters/03-shu-men/`
-
-| 类型 | 标题 | 说明 | 字数 | 文件 |
-| --- | --- | --- | :-: | --- |
-| prompt | 暑证门 · 提示词：把一章门变成一次可复述的判定 | — | 476 | [`prompt-shu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-shu-men/outputs/prompt-shu-men.md) |
-| skill | shu-men | 用「门→类→证→候」四级编码解析 暑门（M03）的证候条目，输出可复算的全码与态。 | 557 | [`skill-shu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-shu-men/outputs/skill-shu-men.md) |
-
-#### 第 4 章 · 湿证门（M04）
-
-`14-zhongyi-zhenghou-xue/chapters/04-shi-men/`
+`14-zhongyi-zhenghou-xue/chapters/02-s02-zheng-de-neirong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 湿证门 · 提示词：把一章门变成一次可复述的判定 | — | 480 | [`prompt-shi-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-shi-men/outputs/prompt-shi-men.md) |
-| skill | shi-men | 用「门→类→证→候」四级编码解析 湿门（M04）的证候条目，输出可复算的全码与态。 | 559 | [`skill-shi-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-shi-men/outputs/skill-shi-men.md) |
+| prompt | 课堂产出模板 · 第 2 章 证的内容与结构：病因·病位·病机 | — | 660 | [`prompt-s02-zheng-de-neirong.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-s02-zheng-de-neirong/outputs/prompt-s02-zheng-de-neirong.md) |
+| skill | 技能卡 · 第 2 章 证的内容与结构：病因·病位·病机 | 中医证候学第 2 章「证的内容与结构：病因·病位·病机」的可复用技能卡：把证当「症状的集合」是最普遍的错法：症状越列越多，判断却越来越说不清。 用概论给的判据逐条对，产出可复核的证名与候名。 | 524 | [`skill-s02-zheng-de-neirong.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-s02-zheng-de-neirong/outputs/skill-s02-zheng-de-neirong.md) |
 
-#### 第 5 章 · 燥证门（M05）
+#### 第 3 章 · 证的命名与分类：十二门·四十五类·二十一病位
 
-`14-zhongyi-zhenghou-xue/chapters/05-zao-men/`
-
-| 类型 | 标题 | 说明 | 字数 | 文件 |
-| --- | --- | --- | :-: | --- |
-| prompt | 燥证门 · 提示词：把一章门变成一次可复述的判定 | — | 490 | [`prompt-zao-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-zao-men/outputs/prompt-zao-men.md) |
-| skill | zao-men | 用「门→类→证→候」四级编码解析 燥门（M05）的证候条目，输出可复算的全码与态。 | 565 | [`skill-zao-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-zao-men/outputs/skill-zao-men.md) |
-
-#### 第 6 章 · 火证门（M06）
-
-`14-zhongyi-zhenghou-xue/chapters/06-huo-men/`
+`14-zhongyi-zhenghou-xue/chapters/03-s03-mingming-yu-fenlei/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 火证门 · 提示词：把一章门变成一次可复述的判定 | — | 498 | [`prompt-huo-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-huo-men/outputs/prompt-huo-men.md) |
-| skill | huo-men | 用「门→类→证→候」四级编码解析 火门（M06）的证候条目，输出可复算的全码与态。 | 571 | [`skill-huo-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-huo-men/outputs/skill-huo-men.md) |
+| prompt | 课堂产出模板 · 第 3 章 证的命名与分类：十二门·四十五类·二十一病位 | — | 666 | [`prompt-s03-mingming-yu-fenlei.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-s03-mingming-yu-fenlei/outputs/prompt-s03-mingming-yu-fenlei.md) |
+| skill | 技能卡 · 第 3 章 证的命名与分类：十二门·四十五类·二十一病位 | 中医证候学第 3 章「证的命名与分类：十二门·四十五类·二十一病位」的可复用技能卡：证的命名历来有十五种以上的写法：六经名证、卫气营血名证、脏腑名证、病机名证、症状名证。 用概论给的判据逐条对，产出可复核的证名与候名。 | 555 | [`skill-s03-mingming-yu-fenlei.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/03-s03-mingming-yu-fenlei/outputs/skill-s03-mingming-yu-fenlei.md) |
 
-#### 第 7 章 · 气证门（M07）
+#### 第 4 章 · 证的内涵与外延：边界、兼夹与临界态
 
-`14-zhongyi-zhenghou-xue/chapters/07-qi-men/`
-
-| 类型 | 标题 | 说明 | 字数 | 文件 |
-| --- | --- | --- | :-: | --- |
-| prompt | 气证门 · 提示词：把一章门变成一次可复述的判定 | — | 487 | [`prompt-qi-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-qi-men/outputs/prompt-qi-men.md) |
-| skill | qi-men | 用「门→类→证→候」四级编码解析 气门（M07）的证候条目，输出可复算的全码与态。 | 562 | [`skill-qi-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-qi-men/outputs/skill-qi-men.md) |
-
-#### 第 8 章 · 瘀证门（M08）
-
-`14-zhongyi-zhenghou-xue/chapters/08-yu-men/`
+`14-zhongyi-zhenghou-xue/chapters/04-s04-neihan-waiyan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 瘀证门 · 提示词：把一章门变成一次可复述的判定 | — | 484 | [`prompt-yu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-yu-men/outputs/prompt-yu-men.md) |
-| skill | yu-men | 用「门→类→证→候」四级编码解析 瘀门（M08）的证候条目，输出可复算的全码与态。 | 561 | [`skill-yu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-yu-men/outputs/skill-yu-men.md) |
+| prompt | 课堂产出模板 · 第 4 章 证的内涵与外延：边界、兼夹与临界态 | — | 661 | [`prompt-s04-neihan-waiyan.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-s04-neihan-waiyan/outputs/prompt-s04-neihan-waiyan.md) |
+| skill | 技能卡 · 第 4 章 证的内涵与外延：边界、兼夹与临界态 | 中医证候学第 4 章「证的内涵与外延：边界、兼夹与临界态」的可复用技能卡：证的边界被当成无限可延伸：一个「肝郁」可以往里塞进任何症状，往外接到任何别的证。 用概论给的判据逐条对，产出可复核的证名与候名。 | 533 | [`skill-s04-neihan-waiyan.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/04-s04-neihan-waiyan/outputs/skill-s04-neihan-waiyan.md) |
 
-#### 第 9 章 · 痰证门（M09）
+#### 第 5 章 · 证的传变：病位·病因·邪正三条轴
 
-`14-zhongyi-zhenghou-xue/chapters/09-tan-men/`
-
-| 类型 | 标题 | 说明 | 字数 | 文件 |
-| --- | --- | --- | :-: | --- |
-| prompt | 痰证门 · 提示词：把一章门变成一次可复述的判定 | — | 493 | [`prompt-tan-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-tan-men/outputs/prompt-tan-men.md) |
-| skill | tan-men | 用「门→类→证→候」四级编码解析 痰门（M09）的证候条目，输出可复算的全码与态。 | 568 | [`skill-tan-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-tan-men/outputs/skill-tan-men.md) |
-
-#### 第 10 章 · 饮证门（M10）
-
-`14-zhongyi-zhenghou-xue/chapters/10-yin-men/`
+`14-zhongyi-zhenghou-xue/chapters/05-s05-chuanbian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 饮证门 · 提示词：把一章门变成一次可复述的判定 | — | 482 | [`prompt-yin-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-yin-men/outputs/prompt-yin-men.md) |
-| skill | yin-men | 用「门→类→证→候」四级编码解析 饮门（M10）的证候条目，输出可复算的全码与态。 | 561 | [`skill-yin-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-yin-men/outputs/skill-yin-men.md) |
+| prompt | 课堂产出模板 · 第 5 章 证的传变：病位·病因·邪正三条轴 | — | 660 | [`prompt-s05-chuanbian.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-s05-chuanbian/outputs/prompt-s05-chuanbian.md) |
+| skill | 技能卡 · 第 5 章 证的传变：病位·病因·邪正三条轴 | 中医证候学第 5 章「证的传变：病位·病因·邪正三条轴」的可复用技能卡：传变被讲成时间表：几天到哪一经、几日入哪一脏。 用概论给的判据逐条对，产出可复核的证名与候名。 | 494 | [`skill-s05-chuanbian.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/05-s05-chuanbian/outputs/skill-s05-chuanbian.md) |
 
-#### 第 11 章 · 食证门（M11）
+#### 第 6 章 · 辨证求因（上）：风·寒·热·暑·湿·燥的识别
 
-`14-zhongyi-zhenghou-xue/chapters/11-shiji-men/`
-
-| 类型 | 标题 | 说明 | 字数 | 文件 |
-| --- | --- | --- | :-: | --- |
-| prompt | 食证门 · 提示词：把一章门变成一次可复述的判定 | — | 481 | [`prompt-shiji-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-shiji-men/outputs/prompt-shiji-men.md) |
-| skill | shiji-men | 用「门→类→证→候」四级编码解析 食门（M11）的证候条目，输出可复算的全码与态。 | 564 | [`skill-shiji-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-shiji-men/outputs/skill-shiji-men.md) |
-
-#### 第 12 章 · 虚证门（M12）
-
-`14-zhongyi-zhenghou-xue/chapters/12-xu-men/`
+`14-zhongyi-zhenghou-xue/chapters/06-s06-qiuyin-shang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 虚证门 · 提示词：把一章门变成一次可复述的判定 | — | 486 | [`prompt-xu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-xu-men/outputs/prompt-xu-men.md) |
-| skill | xu-men | 用「门→类→证→候」四级编码解析 虚门（M12）的证候条目，输出可复算的全码与态。 | 561 | [`skill-xu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-xu-men/outputs/skill-xu-men.md) |
+| prompt | 课堂产出模板 · 第 6 章 辨证求因（上）：风·寒·热·暑·湿·燥的识别 | — | 666 | [`prompt-s06-qiuyin-shang.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-s06-qiuyin-shang/outputs/prompt-s06-qiuyin-shang.md) |
+| skill | 技能卡 · 第 6 章 辨证求因（上）：风·寒·热·暑·湿·燥的识别 | 中医证候学第 6 章「辨证求因（上）：风·寒·热·暑·湿·燥的识别」的可复用技能卡：「求因」被简化成「对症状」：见到恶寒就是寒、见到发热就是热。 用概论给的判据逐条对，产出可复核的证名与候名。 | 523 | [`skill-s06-qiuyin-shang.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/06-s06-qiuyin-shang/outputs/skill-s06-qiuyin-shang.md) |
+
+#### 第 7 章 · 辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别
+
+`14-zhongyi-zhenghou-xue/chapters/07-s07-qiuyin-xia/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 课堂产出模板 · 第 7 章 辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别 | — | 672 | [`prompt-s07-qiuyin-xia.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-s07-qiuyin-xia/outputs/prompt-s07-qiuyin-xia.md) |
+| skill | 技能卡 · 第 7 章 辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别 | 中医证候学第 7 章「辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别」的可复用技能卡：外因六淫有季节与天气可依，内生的气、瘀、痰、饮、水、食、虫与虚证没有季节标签，只能靠病机形态认。 用概论给的判据逐条对，产出可复核的证名与候名。 | 569 | [`skill-s07-qiuyin-xia.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/07-s07-qiuyin-xia/outputs/skill-s07-qiuyin-xia.md) |
+
+#### 第 8 章 · 审因定位：十二类病因的定位法与定位表
+
+`14-zhongyi-zhenghou-xue/chapters/08-s08-sheny-in-dingwei/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 课堂产出模板 · 第 8 章 审因定位：十二类病因的定位法与定位表 | — | 662 | [`prompt-s08-sheny-in-dingwei.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-s08-sheny-in-dingwei/outputs/prompt-s08-sheny-in-dingwei.md) |
+| skill | 技能卡 · 第 8 章 审因定位：十二类病因的定位法与定位表 | 中医证候学第 8 章「审因定位：十二类病因的定位法与定位表」的可复用技能卡：求因之后最常见的错误是「因位张冠李戴」：风寒一定写肺卫、湿一定写脾胃、火一定写心胃。 用概论给的判据逐条对，产出可复核的证名与候名。 | 543 | [`skill-s08-sheny-in-dingwei.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/08-s08-sheny-in-dingwei/outputs/skill-s08-sheny-in-dingwei.md) |
+
+#### 第 9 章 · 证的鉴别与取舍：真假、兼夹与两因两位规则
+
+`14-zhongyi-zhenghou-xue/chapters/09-s09-jianbie-quishe/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 课堂产出模板 · 第 9 章 证的鉴别与取舍：真假、兼夹与两因两位规则 | — | 664 | [`prompt-s09-jianbie-quishe.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-s09-jianbie-quishe/outputs/prompt-s09-jianbie-quishe.md) |
+| skill | 技能卡 · 第 9 章 证的鉴别与取舍：真假、兼夹与两因两位规则 | 中医证候学第 9 章「证的鉴别与取舍：真假、兼夹与两因两位规则」的可复用技能卡：鉴别被当成「找不同症状」，于是越鉴越细，最后每条都能自圆其说。 用概论给的判据逐条对，产出可复核的证名与候名。 | 523 | [`skill-s09-jianbie-quishe.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/09-s09-jianbie-quishe/outputs/skill-s09-jianbie-quishe.md) |
+
+#### 第 10 章 · 证的论治：从证名到治法与隐性病因病位
+
+`14-zhongyi-zhenghou-xue/chapters/10-s10-lunzhi/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 课堂产出模板 · 第 10 章 证的论治：从证名到治法与隐性病因病位 | — | 663 | [`prompt-s10-lunzhi.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-s10-lunzhi/outputs/prompt-s10-lunzhi.md) |
+| skill | 技能卡 · 第 10 章 证的论治：从证名到治法与隐性病因病位 | 中医证候学第 10 章「证的论治：从证名到治法与隐性病因病位」的可复用技能卡：把论治当成「对证型选方」：证名对上了，方子却常常不对——因为证名只标两个病因两个病位，实际存在的第三、第四个不写名字，却必须治。 用概论给的判据逐条对，产出可复核的证名与候名。 | 580 | [`skill-s10-lunzhi.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-s10-lunzhi/outputs/skill-s10-lunzhi.md) |
+
+#### 第 11 章 · 辞典操作：编码、检索与统计口径
+
+`14-zhongyi-zhenghou-xue/chapters/11-s11-cidian-caozuo/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 课堂产出模板 · 第 11 章 辞典操作：编码、检索与统计口径 | — | 660 | [`prompt-s11-cidian-caozuo.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-s11-cidian-caozuo/outputs/prompt-s11-cidian-caozuo.md) |
+| skill | 技能卡 · 第 11 章 辞典操作：编码、检索与统计口径 | 中医证候学第 11 章「辞典操作：编码、检索与统计口径」的可复用技能卡：1866 条候、291 个证、45 类、12 门，靠翻书能查，靠记忆不行，靠模糊搜索会串门。 用概论给的判据逐条对，产出可复核的证名与候名。 | 536 | [`skill-s11-cidian-caozuo.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/11-s11-cidian-caozuo/outputs/skill-s11-cidian-caozuo.md) |
+
+#### 第 12 章 · 综合实操：从主诉到证候单元的全流程
+
+`14-zhongyi-zhenghou-xue/chapters/12-s12-zonghe-shicao/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 课堂产出模板 · 第 12 章 综合实操：从主诉到证候单元的全流程 | — | 662 | [`prompt-s12-zonghe-shicao.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-s12-zonghe-shicao/outputs/prompt-s12-zonghe-shicao.md) |
+| skill | 技能卡 · 第 12 章 综合实操：从主诉到证候单元的全流程 | 中医证候学第 12 章「综合实操：从主诉到证候单元的全流程」的可复用技能卡：前面十一章各自成立，一到真实病例就散：求因与定位混着做，证名与治法对不上，写出来的病案别人复核不了。 用概论给的判据逐条对，产出可复核的证名与候名。 | 556 | [`skill-s12-zonghe-shicao.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-s12-zonghe-shicao/outputs/skill-s12-zonghe-shicao.md) |
+
+#### 第 13 章 · 风证门（M01）
+
+`14-zhongyi-zhenghou-xue/chapters/13-m01-feng-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 风证门 · 提示词：把一章门变成一次可复述的判定 | — | 484 | [`prompt-m01-feng-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/13-m01-feng-men/outputs/prompt-m01-feng-men.md) |
+| skill | feng-men | 用「门→类→证→候」四级编码解析 风门（M01）的证候条目，输出可复算的全码与态。 | 567 | [`skill-m01-feng-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/13-m01-feng-men/outputs/skill-m01-feng-men.md) |
+
+#### 第 14 章 · 寒证门（M02）
+
+`14-zhongyi-zhenghou-xue/chapters/14-m02-han-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 寒证门 · 提示词：把一章门变成一次可复述的判定 | — | 478 | [`prompt-m02-han-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/14-m02-han-men/outputs/prompt-m02-han-men.md) |
+| skill | han-men | 用「门→类→证→候」四级编码解析 寒门（M02）的证候条目，输出可复算的全码与态。 | 561 | [`skill-m02-han-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/14-m02-han-men/outputs/skill-m02-han-men.md) |
+
+#### 第 15 章 · 暑证门（M03）
+
+`14-zhongyi-zhenghou-xue/chapters/15-m03-shu-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 暑证门 · 提示词：把一章门变成一次可复述的判定 | — | 476 | [`prompt-m03-shu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/15-m03-shu-men/outputs/prompt-m03-shu-men.md) |
+| skill | shu-men | 用「门→类→证→候」四级编码解析 暑门（M03）的证候条目，输出可复算的全码与态。 | 561 | [`skill-m03-shu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/15-m03-shu-men/outputs/skill-m03-shu-men.md) |
+
+#### 第 16 章 · 湿证门（M04）
+
+`14-zhongyi-zhenghou-xue/chapters/16-m04-shi-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 湿证门 · 提示词：把一章门变成一次可复述的判定 | — | 480 | [`prompt-m04-shi-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/16-m04-shi-men/outputs/prompt-m04-shi-men.md) |
+| skill | shi-men | 用「门→类→证→候」四级编码解析 湿门（M04）的证候条目，输出可复算的全码与态。 | 563 | [`skill-m04-shi-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/16-m04-shi-men/outputs/skill-m04-shi-men.md) |
+
+#### 第 17 章 · 燥证门（M05）
+
+`14-zhongyi-zhenghou-xue/chapters/17-m05-zao-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 燥证门 · 提示词：把一章门变成一次可复述的判定 | — | 490 | [`prompt-m05-zao-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/17-m05-zao-men/outputs/prompt-m05-zao-men.md) |
+| skill | zao-men | 用「门→类→证→候」四级编码解析 燥门（M05）的证候条目，输出可复算的全码与态。 | 569 | [`skill-m05-zao-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/17-m05-zao-men/outputs/skill-m05-zao-men.md) |
+
+#### 第 18 章 · 火证门（M06）
+
+`14-zhongyi-zhenghou-xue/chapters/18-m06-huo-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 火证门 · 提示词：把一章门变成一次可复述的判定 | — | 498 | [`prompt-m06-huo-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/18-m06-huo-men/outputs/prompt-m06-huo-men.md) |
+| skill | huo-men | 用「门→类→证→候」四级编码解析 火门（M06）的证候条目，输出可复算的全码与态。 | 575 | [`skill-m06-huo-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/18-m06-huo-men/outputs/skill-m06-huo-men.md) |
+
+#### 第 19 章 · 气证门（M07）
+
+`14-zhongyi-zhenghou-xue/chapters/19-m07-qi-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 气证门 · 提示词：把一章门变成一次可复述的判定 | — | 487 | [`prompt-m07-qi-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/19-m07-qi-men/outputs/prompt-m07-qi-men.md) |
+| skill | qi-men | 用「门→类→证→候」四级编码解析 气门（M07）的证候条目，输出可复算的全码与态。 | 566 | [`skill-m07-qi-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/19-m07-qi-men/outputs/skill-m07-qi-men.md) |
+
+#### 第 20 章 · 瘀证门（M08）
+
+`14-zhongyi-zhenghou-xue/chapters/20-m08-yu-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 瘀证门 · 提示词：把一章门变成一次可复述的判定 | — | 484 | [`prompt-m08-yu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/20-m08-yu-men/outputs/prompt-m08-yu-men.md) |
+| skill | yu-men | 用「门→类→证→候」四级编码解析 瘀门（M08）的证候条目，输出可复算的全码与态。 | 565 | [`skill-m08-yu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/20-m08-yu-men/outputs/skill-m08-yu-men.md) |
+
+#### 第 21 章 · 痰证门（M09）
+
+`14-zhongyi-zhenghou-xue/chapters/21-m09-tan-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 痰证门 · 提示词：把一章门变成一次可复述的判定 | — | 493 | [`prompt-m09-tan-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/21-m09-tan-men/outputs/prompt-m09-tan-men.md) |
+| skill | tan-men | 用「门→类→证→候」四级编码解析 痰门（M09）的证候条目，输出可复算的全码与态。 | 572 | [`skill-m09-tan-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/21-m09-tan-men/outputs/skill-m09-tan-men.md) |
+
+#### 第 22 章 · 饮证门（M10）
+
+`14-zhongyi-zhenghou-xue/chapters/22-m10-yin-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 饮证门 · 提示词：把一章门变成一次可复述的判定 | — | 482 | [`prompt-m10-yin-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/22-m10-yin-men/outputs/prompt-m10-yin-men.md) |
+| skill | yin-men | 用「门→类→证→候」四级编码解析 饮门（M10）的证候条目，输出可复算的全码与态。 | 565 | [`skill-m10-yin-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/22-m10-yin-men/outputs/skill-m10-yin-men.md) |
+
+#### 第 23 章 · 食证门（M11）
+
+`14-zhongyi-zhenghou-xue/chapters/23-m11-shiji-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 食证门 · 提示词：把一章门变成一次可复述的判定 | — | 481 | [`prompt-m11-shiji-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/23-m11-shiji-men/outputs/prompt-m11-shiji-men.md) |
+| skill | shiji-men | 用「门→类→证→候」四级编码解析 食门（M11）的证候条目，输出可复算的全码与态。 | 568 | [`skill-m11-shiji-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/23-m11-shiji-men/outputs/skill-m11-shiji-men.md) |
+
+#### 第 24 章 · 虚证门（M12）
+
+`14-zhongyi-zhenghou-xue/chapters/24-m12-xu-men/`
+
+| 类型 | 标题 | 说明 | 字数 | 文件 |
+| --- | --- | --- | :-: | --- |
+| prompt | 虚证门 · 提示词：把一章门变成一次可复述的判定 | — | 486 | [`prompt-m12-xu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/24-m12-xu-men/outputs/prompt-m12-xu-men.md) |
+| skill | xu-men | 用「门→类→证→候」四级编码解析 虚门（M12）的证候条目，输出可复算的全码与态。 | 565 | [`skill-m12-xu-men.md`](../departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/24-m12-xu-men/outputs/skill-m12-xu-men.md) |
 
 ### 中医各家学说
 

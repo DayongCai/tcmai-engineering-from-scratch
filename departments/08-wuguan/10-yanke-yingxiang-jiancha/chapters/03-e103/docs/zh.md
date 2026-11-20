@@ -6,7 +6,7 @@
 >
 > **双根因定位:** 环境逼迫（影像的判据是「为什么做、看到什么、谁来复核」——答不上就不做）+ 知识积累（本章 3 单元 7,506 汉字；三辨主 **病位（胞睑·白睛·瞳神） 63**；四位面（章群结构）主 **病位各论 7506**；引书 **16 部 18 次**；数值类命中 0）
 
-**教材出处:** `F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 40 单元 / 109,198 汉字）；单元层 `standards/yanke-yingxiang-jiancha/units.json`；本章取数见 `chapter-map.json`。
+**教材出处:** `F:/textbooks/qhzy-机器学习.xlsx`（8 内容章 / 40 单元 / 109,198 汉字）；单元层 `standards/yanke-yingxiang-jiancha/units.json`；本章取数见 `chapter-map.json`。
 
 ## 课程信息
 
@@ -100,7 +100,7 @@ node code/main.js
 ## 七、复算入口
 
 ```bash
-python scripts/build_huli_course.py yanke-yingxiang-jiancha "F:/textbooks/F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
+python scripts/build_huli_course.py yanke-yingxiang-jiancha "F:/textbooks/qhzy-机器学习.xlsx"   # 工作簿 → 底本 + 单元层
 python scripts/build_huli_docs.py yanke-yingxiang-jiancha                             # 重写本课 18 章材料
 node scripts/audit_curriculum.js                                  # 契约与内容门
 ```

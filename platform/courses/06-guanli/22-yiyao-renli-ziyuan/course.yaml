@@ -1,0 +1,138 @@
+# [tcmP] 课程编排 · 06-guanli/22-yiyao-renli-ziyuan
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/06-guanli/22-yiyao-renli-ziyuan/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 22-yiyao-renli-ziyuan
+title: 医药人力资源管理
+en: HR Management in Healthcare
+dept: 06-guanli
+dept_title: 管理系
+semester: 7
+stage: zhuang
+hours: 36
+chapters_target: 18
+bridge: 岗位画像→能力模型 / 排班→运筹优化
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-r1
+    title: 第1章 医药人力资源管理导论
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.89
+  - slug: 02-r2
+    title: 第2章 医药行业人力资源规划
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.89
+  - slug: 03-r3
+    title: 第3章 医药岗位分析与职位设计
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.93
+  - slug: 04-r4
+    title: 第4章 医药人才招聘与优化配置
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.88
+    measured_minutes: 0.92
+  - slug: 05-r5
+    title: 第5章 医药人才培养与开发
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.85
+    measured_minutes: 0.88
+  - slug: 06-r6
+    title: 第6章 医药人才评价与胜任力管理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.94
+  - slug: 07-r7
+    title: 第7章 医药绩效管理与考核
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.89
+  - slug: 08-r8
+    title: 第8章 医药薪酬管理与激励
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.87
+    measured_minutes: 0.88
+  - slug: 09-r9
+    title: 第9章 医药职业发展与人才梯队建设
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.94
+  - slug: 10-r10
+    title: 第10章 医药劳动关系与用工合规
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.93
+  - slug: 11-r11
+    title: 第11章 医药人才流动与配置优化
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.92
+  - slug: 12-r12
+    title: 第12章 医药人力资源信息化与数据治理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 13-r13
+    title: 第13章 中医药人才传承与培养
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.94
+  - slug: 14-r14
+    title: 第14章 医药企业文化与职业道德
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.9
+    measured_minutes: 0.92
+  - slug: 15-r15
+    title: 第15章 医药行业人力资源合规与监管
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.96
+  - slug: 16-r16
+    title: 第16章 医院与医药企业人力资源管理实践
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.95
+    measured_minutes: 0.98
+  - slug: 17-r17
+    title: 第17章 医药人力资源管理国际比较与趋势
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.98
+  - slug: 18-r18
+    title: 第18章 医药人力资源管理与 tcmP 智能教学平台
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.03

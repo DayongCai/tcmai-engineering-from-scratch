@@ -1,0 +1,75 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/23-zhongcan-xilu-xuandu/06-yinxu-laore/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 6,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 131.32,
+  "estimatedCues": 0,
+  "videoSeconds": 131.358667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.74,
+      "seconds": 5.74,
+      "estimated": false,
+      "text": "第 6 章 · 阴虚劳热：资生汤与十全育真汤的方证结构",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.74,
+      "end": 17.57,
+      "seconds": 11.83,
+      "estimated": false,
+      "text": "「治劳瘵羸弱已甚，饮食减少，喘促咳嗽，身热脉虚数者」——医学衷中参西录·一、医方·（一）治阴虚劳热方·1．资生汤",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 17.57,
+      "end": 26.35,
+      "seconds": 8.78,
+      "estimated": false,
+      "text": "学生把「虚劳」当一个病，见虚就补，结果补出腹胀、纳差——因为没分清虚在脾胃还是在肝肾。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 26.35,
+      "end": 47.78,
+      "seconds": 21.43,
+      "estimated": false,
+      "text": "环境逼迫（医学衷中参西录选读在本仓库没有教材底本，唯一可引的是外源文字化本；不复算就只剩口号） + 知识积累（本章取 11 单元 14,647 字；实测药物频次、剂量命中 145 处、参西 19 次、引书 12 部）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "concept",
+      "start": 47.78,
+      "end": 120.02,
+      "seconds": 72.24,
+      "estimated": false,
+      "text": "一、治阴虚劳热方 12 首：一部小型的虚劳分类学 这一篇 11 单元 14,647 字，从资生汤到镇摄汤，12 首方按病机排开：脾虚，资生汤，气血两虚，十全育真汤，肺肾阴虚，醴泉饮，气脱，来复汤，冲气上逆，镇摄汤。 二、资生汤：先把「能吃」解决掉 资生汤以山药、于术、鸡内金为「不可挪移之品」，配玄参、牛蒡子。用意很直白：劳瘵之人先不能食，不能食则一切补药无着力处。所以他先健脾胃，再退虚热。 三、十全育真汤：从「能食」到「能藏」 十全育真汤多了三棱、莪术（消积）、龙骨、牡蛎（收敛），是给「虚而兼瘀、虚而气浮」的人。本章实测本组药物频次：生山药 7 次、玄参 3 次、牛蒡子 3 次、野台参 3 次、生杭芍 3 次、人参 2 次；剂量型命中 145 处——虚劳方的剂量普遍偏小，因为要久服。",
+      "audio": "005.mp3"
+    },
+    {
+      "n": 6,
+      "role": "disclaimer",
+      "start": 120.02,
+      "end": 131.32,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "006.mp3"
+    }
+  ]
+}

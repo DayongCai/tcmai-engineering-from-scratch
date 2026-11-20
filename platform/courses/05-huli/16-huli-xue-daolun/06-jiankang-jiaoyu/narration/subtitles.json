@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/16-huli-xue-daolun/06-jiankang-jiaoyu/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 59.27,
+  "estimatedCues": 0,
+  "videoSeconds": 59.312667,
+  "videoMinusNarrationSeconds": 0.043,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 2.52,
+      "seconds": 2.52,
+      "estimated": false,
+      "text": "第 6 章 · 健康教育",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 2.52,
+      "end": 18,
+      "seconds": 15.48,
+      "estimated": false,
+      "text": "「《护理学导论·第六章》」——本章讲健康教育，教材无篇名级引文；篇名按章节体例补足，非本章原文篇名。本章要回答的是：健康教育为什么经常「讲了但没变」。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 18,
+      "end": 27.43,
+      "seconds": 9.43,
+      "estimated": false,
+      "text": "因为讲的是知识，要改的是行为：行为改变需要动机、能力与提示三者同时具备，缺一条就回到原样。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 27.43,
+      "end": 47.97,
+      "seconds": 20.54,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 1 单元 17,292 汉字；三辨主 概念与理论 395；四位面（护理领域）主 个体 100；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 47.97,
+      "end": 59.27,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "chapter": "09-shenxi-jibing",
+  "slideCount": 6,
+  "segmentCount": 6,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 22
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 41
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 146
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 116
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 123
+    },
+    {
+      "n": 6,
+      "segment": 6,
+      "chars": 52
+    }
+  ]
+}

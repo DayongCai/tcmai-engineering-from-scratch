@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/05-huli/24-zhongyi-huli-xue/02-lilun-jichu/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 67.29,
+  "estimatedCues": 0,
+  "videoSeconds": 67.318667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 3.14,
+      "seconds": 3.14,
+      "estimated": false,
+      "text": "第 2 章 · 中医护理的理论基础",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 3.14,
+      "end": 24,
+      "seconds": 20.86,
+      "estimated": false,
+      "text": "「《黄帝内经·素问·阴阳应象大论》」——本章讲理论基础，教材无篇名级引文；阴阳五行与藏象的纲领性论述出于此篇，篇名按此补足，非本章原文篇名。本章要回答的是：阴阳五行、藏象、经络，护理要取哪几条。",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 24,
+      "end": 35.54,
+      "seconds": 11.54,
+      "estimated": false,
+      "text": "取能落到操作上的：寒热定灸或清、表里定汗或下、虚实定补或泻、脏腑定部位、经络定穴位——其余是解释，不是依据。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 35.54,
+      "end": 55.99,
+      "seconds": 20.45,
+      "estimated": false,
+      "text": "环境逼迫（中药是混合物，任何一个「成分」都要先分出来才能说清楚）+ 知识积累（本章 1 单元 17,193 汉字；三辨主 施护 216；四位面（技术类别）主 居家与养老 3；引书 0 部 0 次；数值类命中 0）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 55.99,
+      "end": 67.29,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

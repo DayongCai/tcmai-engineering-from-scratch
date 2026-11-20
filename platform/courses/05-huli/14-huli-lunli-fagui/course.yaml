@@ -1,0 +1,66 @@
+# [tcmP] 课程编排 · 05-huli/14-huli-lunli-fagui
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/05-huli/14-huli-lunli-fagui/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 14-huli-lunli-fagui
+title: 护理伦理与法规
+en: Nursing Ethics & Law
+dept: 05-huli
+dept_title: 护理系
+semester: 7
+stage: zhuang
+hours: 36
+chapters_target: 6
+bridge: 伦理困境→多准则决策 / 知情同意→合规校验
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-yuanze-kunjing
+    title: 第1章 护理伦理的原则、困境与决策
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.02
+  - slug: 02-zhiqing-tongyi
+    title: 第2章 知情同意与患者自主权
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.97
+  - slug: 03-yinsi-xinxi
+    title: 第3章 隐私保护与信息使用
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.98
+  - slug: 04-chacuo-faze
+    title: 第4章 护理差错与不良事件的法与责
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.01
+  - slug: 05-anning-shengming
+    title: 第5章 安宁疗护与生命伦理
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.97
+    measured_minutes: 0.96
+  - slug: 06-fagui-zhifan
+    title: 第6章 护理法规与执业规范
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.98
+    measured_minutes: 1

@@ -1,0 +1,90 @@
+# [tcmP] 课程编排 · 01-zhongyi/06-neijing-xuandu
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/01-zhongyi/06-neijing-xuandu/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 06-neijing-xuandu
+title: 内经选读
+en: Selected Readings from Huangdi Neijing
+dept: 01-zhongyi
+dept_title: 中医系
+semester: 3
+stage: sheng
+hours: 72
+chapters_target: 10
+bridge: 原文→语料库 / 条文检索→向量检索
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-suwen-chengshu
+    title: 第1章 《素问》成书与文本结构
+    segments: 9
+    video: rendered
+    estimate_minutes: 3.77
+    measured_minutes: 3.57
+  - slug: 02-yinyang-yingxiang
+    title: 第2章 阴阳应象大论：范畴与映射
+    segments: 9
+    video: rendered
+    estimate_minutes: 3.75
+    measured_minutes: 3.71
+  - slug: 03-zangxiang-xitong
+    title: 第3章 藏象与五脏的系统观
+    segments: 9
+    video: rendered
+    estimate_minutes: 4
+    measured_minutes: 3.68
+  - slug: 04-jingmai-bielun
+    title: 第4章 经脉别论与气血循环
+    segments: 9
+    video: rendered
+    estimate_minutes: 4.32
+    measured_minutes: 4.09
+  - slug: 05-bingji-shijiu
+    title: 第5章 病机十九条：症状到病机的映射
+    segments: 9
+    video: rendered
+    estimate_minutes: 4.02
+    measured_minutes: 3.96
+  - slug: 06-zhenfa-maiyao
+    title: 第6章 诊法与脉要精微论
+    segments: 9
+    video: rendered
+    estimate_minutes: 3.5
+    measured_minutes: 3.33
+  - slug: 07-zhize-biaoben
+    title: 第7章 治则与标本：决策顺序
+    segments: 9
+    video: rendered
+    estimate_minutes: 4.7
+    measured_minutes: 4.34
+  - slug: 08-lunqi-qipian
+    title: 第8章 运气七篇：周期与外部变量
+    segments: 9
+    video: rendered
+    estimate_minutes: 4.97
+    measured_minutes: 4.99
+  - slug: 09-lingshu-jiuzhen
+    title: 第9章 《灵枢》九针与刺法
+    segments: 9
+    video: rendered
+    estimate_minutes: 3.48
+    measured_minutes: 3.42
+  - slug: 10-neijing-lianghua
+    title: 第10章 内经的量化解读与其边界
+    segments: 9
+    video: rendered
+    estimate_minutes: 4.42
+    measured_minutes: 4.19

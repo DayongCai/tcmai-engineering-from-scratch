@@ -1,0 +1,102 @@
+# [tcmP] 课程编排 · 07-zhineng/10-llm-yu-zhongyi-zhinengti
+#
+# 由 node scripts/scaffold_course_yaml.js 生成（首版）。之后手工维护：
+# 单一事实来源是 departments/07-zhineng/10-llm-yu-zhongyi-zhinengti/chapters/<slug>/docs/zh.md；
+# 本文件只登记「讲什么、什么状态」，不重复正文。
+#
+# chapters[].slug 必须与 chapters/ 下的目录名完全一致，否则 extract_narration.js 报错退出。
+# `video: planned` = 可渲染（正文在），不是已渲染；
+# 状态词只有五档：planned / narration-ready / slides-ready / rendered / published，
+# 必须与磁盘实况一致（tests/test_platform_pipeline.js 逐章核）。
+
+id: 10-llm-yu-zhongyi-zhinengti
+title: 大语言模型与中医智能体
+en: LLMs & TCM Agents
+dept: 07-zhineng
+dept_title: 智能系
+semester: 7
+stage: zhuang
+hours: 90
+chapters_target: 12
+bridge: 注意力从零实现 / RAG / ReAct 智能体 / MCP
+
+platform:
+  host: 站点内嵌播放器（site/ 自动挂载）
+  resolution: 1920x1080
+  fps: 25
+  voice: zh-CN edge-tts（缺失时降级为静音轨 + 人工配音）
+  captions: 由 narration/lesson.json 的 segments 生成，时间码只取 TTS 返回或 ffprobe 实测
+
+chapters:
+  - slug: 01-llm1
+    title: 第1章 从统计学习到表示学习
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.95
+  - slug: 02-llm2
+    title: 第2章 神经网络：层、激活与反向传播
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.03
+  - slug: 03-llm3
+    title: 第3章 表征与嵌入：把词与证候放进同一空间
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.05
+    measured_minutes: 1.06
+  - slug: 04-llm4
+    title: 第4章 概率图与序列生成
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.92
+  - slug: 05-llm5
+    title: 第5章 半监督与自训练：标注不够时怎么办
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.02
+  - slug: 06-llm6
+    title: 第6章 泛化从哪来：计算学习理论的回答
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.02
+  - slug: 07-llm7
+    title: 第7章 知识增强：规则与图谱怎么进模型
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.03
+    measured_minutes: 1.06
+  - slug: 08-llm8
+    title: 第8章 强化学习与对齐
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.92
+    measured_minutes: 0.93
+  - slug: 09-llm9
+    title: 第9章 评估：基准分、幻觉与人工评
+    segments: 5
+    video: rendered
+    estimate_minutes: 1
+    measured_minutes: 1.02
+  - slug: 10-llm10
+    title: 第10章 智能体的工具与检索
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.91
+  - slug: 11-llm11
+    title: 第11章 部署与成本：算力、延迟与更新
+    segments: 5
+    video: rendered
+    estimate_minutes: 1.02
+    measured_minutes: 1.02
+  - slug: 12-llm12
+    title: 第12章 生成内容的责任与合规
+    segments: 5
+    video: rendered
+    estimate_minutes: 0.93
+    measured_minutes: 0.94
