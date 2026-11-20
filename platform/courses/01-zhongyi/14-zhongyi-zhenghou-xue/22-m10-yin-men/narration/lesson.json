@@ -1,10 +1,10 @@
 {
   "generatedBy": "platform/pipeline/extract_narration.js",
-  "source": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/10-yin-men/docs/zh.md",
+  "source": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/22-m10-yin-men/docs/zh.md",
   "course": "14-zhongyi-zhenghou-xue",
   "dept": "01-zhongyi",
-  "chapter": "10-yin-men",
-  "title": "第 10 章 · 饮证门（M10）",
+  "chapter": "22-m10-yin-men",
+  "title": "第 22 章 · 饮证门（M10）",
   "segmentCount": 5,
   "estimateTotalSeconds": 55,
   "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
@@ -13,9 +13,9 @@
     {
       "n": 1,
       "role": "title",
-      "text": "第 10 章 · 饮证门（M10）",
+      "text": "第 22 章 · 饮证门（M10）",
       "slide": "title",
-      "spoken": "第 10 章 · 饮证门（M10）",
+      "spoken": "第 22 章 · 饮证门（M10）",
       "estimateSeconds": 3,
       "audio": "001.mp3",
       "audioSeconds": 3

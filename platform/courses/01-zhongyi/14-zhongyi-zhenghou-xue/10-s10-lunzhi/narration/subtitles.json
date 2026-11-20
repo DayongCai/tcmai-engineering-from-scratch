@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/14-zhongyi-zhenghou-xue/10-s10-lunzhi/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 46.94,
+  "estimatedCues": 0,
+  "videoSeconds": 46.972667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.35,
+      "seconds": 5.35,
+      "estimated": false,
+      "text": "第 10 章 · 证的论治：从证名到治法与隐性病因病位",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.35,
+      "end": 8.83,
+      "seconds": 3.48,
+      "estimated": false,
+      "text": "伏其所主，而先其所因（《内经》）",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 8.83,
+      "end": 21.72,
+      "seconds": 12.89,
+      "estimated": false,
+      "text": "把论治当成「对证型选方」：证名对上了，方子却常常不对——因为证名只标两个病因两个病位，实际存在的第三、第四个不写名字，却必须治。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 21.72,
+      "end": 35.64,
+      "seconds": 13.92,
+      "estimated": false,
+      "text": "环境逼迫（证名被限定为两因两位，而治疗要覆盖全部在场的病因病位）＋知识积累（概论第十节把这条矛盾写成了「显性标帜 + 隐性兼顾」的规则）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 35.64,
+      "end": 46.94,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 # 院系内课程教学进度（[textbooks] 教材 × [curriculum] 排课）
 
 > 本文件由 `node scripts/build_textbook_board.js` 生成，**勿手改**。
-> 生成日期 2026-11-20 · 口径：18 教学周（16 讲授 + 1 复习 + 1 考核）· 周学时 = 学时 ÷ 18。
+> 生成日期 2026-11-21 · 口径：18 教学周（16 讲授 + 1 复习 + 1 考核）· 周学时 = 学时 ÷ 18。
 
 ## 排课规则（先立规则，再排表）
 
@@ -67,7 +67,7 @@
 | **小计** |  | **3 门** |  | **216** | **12** |  |  |  |  |  | 教材 3/3 |
 | 第 7 学期 | 15 | 中医各家学说 | 参考 | 54 | 3 | 1–18 | 2 | 3 | 0.5 | 14/8 | wip |
 | 第 7 学期 | 16 | 中医老年病学 【选修】 | 参考 | 36 | 2（或 1–9 周 × 4） | 1–18 | 1 | 4 | 0.8 | 12/12 | wip |
-| 第 7 学期 | 17 | 中医证候学 | 工程 | 72 | 4 | 1–18 | 3 | 5 | 1.5 | 12/24 | done |
+| 第 7 学期 | 17 | 中医证候学 | 工程 | 72 | 4 | 1–18 | 3 | 5 | 1.7 | 12/27 | done |
 | **小计** |  | **3 门** |  | **162** | **9** |  |  |  |  |  | 教材 3/3 |
 | 第 8 学期 | 18 | 中医骨病学 【选修】 | 参考 | 36 | 2（或 1–9 周 × 4） | 1–18 | 2 | 4 | 0.8 | 12/12 | wip |
 | 第 8 学期 | 19 | 中医精神病学 【选修】 | 参考 | 36 | 2（或 1–9 周 × 4） | 1–18 | 2 | 4 | 0.8 | 12/12 | wip |
@@ -509,7 +509,7 @@
 | 中医基础理论 `01-zhongyi/01-zhongyi-jichu-lilun` | `registry-disk-chapters`, `registry-meta-chars` | 源表 12 章 → 磁盘 13 章（+1）；源表 51,091 字 → meta 61,245 字（+10,154） |
 | 伤寒论 `01-zhongyi/07-shanghanlun` | `registry-disk-chapters`, `registry-meta-chars` | 源表 10 章 → 磁盘 12 章（+2）；源表 118,973 字 → meta 129,165 字（+10,192） |
 | 中医内科学 `01-zhongyi/10-zhongyi-neike-xue` | `registry-disk-chapters`, `registry-meta-chars` | 源表 12 章 → 磁盘 14 章（+2）；源表 405,580 字 → meta 421,791 字（+16,211） |
-| 中医证候学 `01-zhongyi/14-zhongyi-zhenghou-xue` | `chapters-short` | 教材 12 章 < 教学计划 24 章 |
+| 中医证候学 `01-zhongyi/14-zhongyi-zhenghou-xue` | `chapters-short` | 教材 12 章 < 教学计划 27 章 |
 | 方剂学 `02-zhongyao/03-fangjixue` | `registry-meta-chars` | 源表 435,341 字 → meta 474,732 字（+39,391） |
 | 中药鉴定学 `02-zhongyao/05-zhongyao-jianding-xue` | `registry-meta-chars` | 源表 186,359 字 → meta 203,942 字（+17,583） |
 | 中药化学 `02-zhongyao/06-zhongyao-huaxue` | `registry-meta-chars` | 源表 233,962 字 → meta 252,828 字（+18,866） |

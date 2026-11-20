@@ -2,11 +2,11 @@
   "$generated": "node scripts/build_outputs_index.js",
   "note": "可复用产出物的根级索引。契约见 CONTRIBUTING.md；每章的产物是生成物，索引是它们的生成物。",
   "counts": {
-    "items": 4332,
-    "chaptersWithOutputs": 2166,
+    "items": 4338,
+    "chaptersWithOutputs": 2169,
     "byKind": {
-      "prompt": 2166,
-      "skill": 2166
+      "prompt": 2169,
+      "skill": 2169
     },
     "gaps": 0
   },
@@ -4423,6 +4423,66 @@
                   "title": "xu-men",
                   "description": "用「门→类→证→候」四级编码解析 虚门（M12）的证候条目，输出可复算的全码与态。",
                   "chars": 565
+                }
+              ]
+            },
+            {
+              "chapter": "25-s13-zhengxiang-xue",
+              "title": "第 25 章 · 证象学：单位病机、合法格与可解释率",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/25-s13-zhengxiang-xue/outputs/prompt-s13-zhengxiang-xue.md",
+                  "title": "课堂产出模板 · 第 25 章 证象学：单位病机、合法格与可解释率",
+                  "description": null,
+                  "chars": 662
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/25-s13-zhengxiang-xue/outputs/skill-s13-zhengxiang-xue.md",
+                  "title": "技能卡 · 第 25 章 证象学：单位病机、合法格与可解释率",
+                  "description": "中医证候学第 25 章「证象学：单位病机、合法格与可解释率」的可复用技能卡：「证象」这个词在概论里只占三段，剩下的全靠读者自己想。 用概论给的判据逐条对，产出可复核的证名与候名。",
+                  "chars": 511
+                }
+              ]
+            },
+            {
+              "chapter": "26-s14-weihou-shunni",
+              "title": "第 26 章 · 危候与顺逆：词面判据能做与不能做的事",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/26-s14-weihou-shunni/outputs/prompt-s14-weihou-shunni.md",
+                  "title": "课堂产出模板 · 第 26 章 危候与顺逆：词面判据能做与不能做的事",
+                  "description": null,
+                  "chars": 663
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/26-s14-weihou-shunni/outputs/skill-s14-weihou-shunni.md",
+                  "title": "技能卡 · 第 26 章 危候与顺逆：词面判据能做与不能做的事",
+                  "description": "中医证候学第 26 章「危候与顺逆：词面判据能做与不能做的事」的可复用技能卡：「危候」在教材里往往只给一句「病情危重」，没有判据。 用概论给的判据逐条对，产出可复核的证名与候名。",
+                  "chars": 510
+                }
+              ]
+            },
+            {
+              "chapter": "27-s15-zheng-fa-fang",
+              "title": "第 27 章 · 证—法—方对接：从候到治则到方症的索引",
+              "outputs": [
+                {
+                  "kind": "prompt",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/27-s15-zheng-fa-fang/outputs/prompt-s15-zheng-fa-fang.md",
+                  "title": "课堂产出模板 · 第 27 章 证—法—方对接：从候到治则到方症的索引",
+                  "description": null,
+                  "chars": 664
+                },
+                {
+                  "kind": "skill",
+                  "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/27-s15-zheng-fa-fang/outputs/skill-s15-zheng-fa-fang.md",
+                  "title": "技能卡 · 第 27 章 证—法—方对接：从候到治则到方症的索引",
+                  "description": "中医证候学第 27 章「证—法—方对接：从候到治则到方症的索引」的可复用技能卡：第 10 章讲到「治法方向」就停了，后面没有路。 用概论给的判据逐条对，产出可复核的证名与候名。",
+                  "chars": 505
                 }
               ]
             }
@@ -60051,6 +60111,96 @@
       "description": "用「门→类→证→候」四级编码解析 虚门（M12）的证候条目，输出可复算的全码与态。",
       "version": "1.0.0",
       "chars": 565
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "25-s13-zhengxiang-xue",
+      "chapterTitle": "第 25 章 · 证象学：单位病机、合法格与可解释率",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/25-s13-zhengxiang-xue/outputs/prompt-s13-zhengxiang-xue.md",
+      "title": "课堂产出模板 · 第 25 章 证象学：单位病机、合法格与可解释率",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 662
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "25-s13-zhengxiang-xue",
+      "chapterTitle": "第 25 章 · 证象学：单位病机、合法格与可解释率",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/25-s13-zhengxiang-xue/outputs/skill-s13-zhengxiang-xue.md",
+      "title": "技能卡 · 第 25 章 证象学：单位病机、合法格与可解释率",
+      "name": "s13-zhengxiang-xue",
+      "description": "中医证候学第 25 章「证象学：单位病机、合法格与可解释率」的可复用技能卡：「证象」这个词在概论里只占三段，剩下的全靠读者自己想。 用概论给的判据逐条对，产出可复核的证名与候名。",
+      "version": "1.0.0",
+      "chars": 511
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "26-s14-weihou-shunni",
+      "chapterTitle": "第 26 章 · 危候与顺逆：词面判据能做与不能做的事",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/26-s14-weihou-shunni/outputs/prompt-s14-weihou-shunni.md",
+      "title": "课堂产出模板 · 第 26 章 危候与顺逆：词面判据能做与不能做的事",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 663
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "26-s14-weihou-shunni",
+      "chapterTitle": "第 26 章 · 危候与顺逆：词面判据能做与不能做的事",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/26-s14-weihou-shunni/outputs/skill-s14-weihou-shunni.md",
+      "title": "技能卡 · 第 26 章 危候与顺逆：词面判据能做与不能做的事",
+      "name": "s14-weihou-shunni",
+      "description": "中医证候学第 26 章「危候与顺逆：词面判据能做与不能做的事」的可复用技能卡：「危候」在教材里往往只给一句「病情危重」，没有判据。 用概论给的判据逐条对，产出可复核的证名与候名。",
+      "version": "1.0.0",
+      "chars": 510
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "27-s15-zheng-fa-fang",
+      "chapterTitle": "第 27 章 · 证—法—方对接：从候到治则到方症的索引",
+      "kind": "prompt",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/27-s15-zheng-fa-fang/outputs/prompt-s15-zheng-fa-fang.md",
+      "title": "课堂产出模板 · 第 27 章 证—法—方对接：从候到治则到方症的索引",
+      "name": null,
+      "description": null,
+      "version": null,
+      "chars": 664
+    },
+    {
+      "dept": "中医系",
+      "deptSlug": "01-zhongyi",
+      "subject": "中医证候学",
+      "subjectSlug": "14-zhongyi-zhenghou-xue",
+      "chapter": "27-s15-zheng-fa-fang",
+      "chapterTitle": "第 27 章 · 证—法—方对接：从候到治则到方症的索引",
+      "kind": "skill",
+      "file": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/27-s15-zheng-fa-fang/outputs/skill-s15-zheng-fa-fang.md",
+      "title": "技能卡 · 第 27 章 证—法—方对接：从候到治则到方症的索引",
+      "name": "s15-zheng-fa-fang",
+      "description": "中医证候学第 27 章「证—法—方对接：从候到治则到方症的索引」的可复用技能卡：第 10 章讲到「治法方向」就停了，后面没有路。 用概论给的判据逐条对，产出可复核的证名与候名。",
+      "version": "1.0.0",
+      "chars": 505
     },
     {
       "dept": "中医系",

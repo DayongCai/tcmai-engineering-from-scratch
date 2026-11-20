@@ -1,6 +1,6 @@
 {
  "$generated": "node scripts/build_content_board.js",
- "generatedAt": "2026-11-20",
+ "generatedAt": "2026-11-21",
  "rules": {
   "structure": "catalog.json（SSOT）",
   "chapters": "catalog.chaptersBuilt + 盘上 departments/*/*/chapters/* 目录核对",
@@ -311,11 +311,18 @@
   }
  ],
  "disk": {
-  "dirs": 2166,
-  "withDocs": 2166,
-  "withQuiz": 2166,
-  "withOutputs": 2166,
-  "mismatched": []
+  "dirs": 2169,
+  "withDocs": 2169,
+  "withQuiz": 2169,
+  "withOutputs": 2169,
+  "mismatched": [
+   {
+    "dept": "中医系",
+    "subject": "中医证候学",
+    "declared": 24,
+    "onDisk": 27
+   }
+  ]
  },
  "syndromeDetail": {
   "total": 104,

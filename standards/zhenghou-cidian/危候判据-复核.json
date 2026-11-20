@@ -1,0 +1,1697 @@
+{
+ "$about": "危候 80 条的原页复核：每条回印张页的 OCR 原文，查候名与治则用语是否真的在场。本表不改判定，只给「能不能引用」的证据。",
+ "口径": {
+  "匹配": "候名/治则词去空白与间隔号后做子串匹配",
+  "页窗": "印张页 ±2 页（一候正文常跨 2–3 页）",
+  "治则词": [
+   "救逆",
+   "固脱",
+   "回阳",
+   "开窍",
+   "醒神",
+   "急下",
+   "存阴",
+   "摄纳",
+   "镇摄",
+   "凉血",
+   "清营"
+  ]
+ },
+ "counts": {
+  "复核条数": 80,
+  "分档": {
+   "仅名（无治则线索）": 38,
+   "双证": 42
+  },
+  "按册": {
+   "上": 22,
+   "中": 24,
+   "下": 34
+  },
+  "目录页可校": 22,
+  "目录页对齐": 22,
+  "目录页偏差": 0,
+  "可引用（双证）": 42,
+  "需人工（仅名/仅治法/未命中）": 38
+ },
+ "条目": [
+  {
+   "code": "M01-L03-Z10-H166",
+   "name": "阳气厥逆候",
+   "tier": "厥脱",
+   "printed": 282,
+   "vol": "上",
+   "tocPage": "227",
+   "tocCheck": "对齐",
+   "why": "候名含「厥逆」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 282,
+    "vol": "shang",
+    "pdf": 227
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M01-L03-Z20-H166",
+   "name": "阳气厥逆候",
+   "tier": "厥脱",
+   "printed": 274,
+   "vol": "上",
+   "tocPage": "219",
+   "tocCheck": "对齐",
+   "why": "候名含「厥逆」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 274,
+    "vol": "shang",
+    "pdf": 219
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M01-L03-Z21-H166",
+   "name": "阳气厥逆候",
+   "tier": "厥脱",
+   "printed": 295,
+   "vol": "上",
+   "tocPage": "240",
+   "tocCheck": "对齐",
+   "why": "候名含「厥逆」；治则含「摄纳」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 295,
+    "vol": "shang",
+    "pdf": 240
+   },
+   "zlHit": {
+    "printed": 295,
+    "vol": "shang",
+    "pdf": 240,
+    "kw": [
+     "摄纳"
+    ]
+   }
+  },
+  {
+   "code": "M01-L04-Z19-H181",
+   "name": "阳气厥脱候",
+   "tier": "厥脱",
+   "printed": 327,
+   "vol": "上",
+   "tocPage": "272",
+   "tocCheck": "对齐",
+   "why": "候名含「厥脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 327,
+    "vol": "shang",
+    "pdf": 272
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M02-L05-Z18-H181",
+   "name": "阳气厥脱候",
+   "tier": "厥脱",
+   "printed": 368,
+   "vol": "上",
+   "tocPage": "313",
+   "tocCheck": "对齐",
+   "why": "候名含「厥脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 368,
+    "vol": "shang",
+    "pdf": 313
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M02-L05-Z19-H181",
+   "name": "阳气厥脱候",
+   "tier": "厥脱",
+   "printed": 353,
+   "vol": "上",
+   "tocPage": "298",
+   "tocCheck": "对齐",
+   "why": "候名含「厥脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 353,
+    "vol": "shang",
+    "pdf": 298
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M02-L07-Z19-H181",
+   "name": "阳气厥脱候",
+   "tier": "厥脱",
+   "printed": 439,
+   "vol": "上",
+   "tocPage": "384",
+   "tocCheck": "对齐",
+   "why": "候名含「厥脱」；治则含「回阳」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 439,
+    "vol": "shang",
+    "pdf": 384
+   },
+   "zlHit": {
+    "printed": 440,
+    "vol": "shang",
+    "pdf": 385,
+    "kw": [
+     "回阳"
+    ]
+   }
+  },
+  {
+   "code": "M02-L07-Z21-H181",
+   "name": "阳气厥脱候",
+   "tier": "厥脱",
+   "printed": 455,
+   "vol": "上",
+   "tocPage": "400",
+   "tocCheck": "对齐",
+   "why": "候名含「厥脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 455,
+    "vol": "shang",
+    "pdf": 400
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M06-L18-Z13-H051",
+   "name": "清气厥脱候",
+   "tier": "厥脱",
+   "printed": 901,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 901,
+    "vol": "zhong",
+    "pdf": 220
+   },
+   "zlHit": {
+    "printed": 901,
+    "vol": "zhong",
+    "pdf": 220,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M06-L21-Z11-H209",
+   "name": "阴液厥脱候",
+   "tier": "厥脱",
+   "printed": 1148,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1148,
+    "vol": "zhong",
+    "pdf": 467
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M06-L21-Z21-H209",
+   "name": "阴液厥脱候",
+   "tier": "厥脱",
+   "printed": 1181,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1181,
+    "vol": "zhong",
+    "pdf": 500
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M06-L23-Z04-H150",
+   "name": "气血厥脱候",
+   "tier": "厥脱",
+   "printed": 1257,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1257,
+    "vol": "zhong",
+    "pdf": 576
+   },
+   "zlHit": {
+    "printed": 1258,
+    "vol": "zhong",
+    "pdf": 577,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M06-L23-Z16-H150",
+   "name": "气血厥脱候",
+   "tier": "厥脱",
+   "printed": 1246,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1246,
+    "vol": "zhong",
+    "pdf": 565
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M08-L28-Z21-H181",
+   "name": "阳气厥脱候",
+   "tier": "厥脱",
+   "printed": 1395,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1395,
+    "vol": "zhong",
+    "pdf": 714
+   },
+   "zlHit": {
+    "printed": 1396,
+    "vol": "zhong",
+    "pdf": 715,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M08-L30-Z03-H181",
+   "name": "阳气厥脱候",
+   "tier": "厥脱",
+   "printed": 1497,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」；治则含「救逆」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1497,
+    "vol": "zhong",
+    "pdf": 816
+   },
+   "zlHit": {
+    "printed": 1498,
+    "vol": "zhong",
+    "pdf": 817,
+    "kw": [
+     "救逆"
+    ]
+   }
+  },
+  {
+   "code": "M09-L33-Z10-H166",
+   "name": "阳气厥逆候",
+   "tier": "厥脱",
+   "printed": 1677,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥逆」；治则含「醒神」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1677,
+    "vol": "xia",
+    "pdf": 143
+   },
+   "zlHit": {
+    "printed": 1677,
+    "vol": "xia",
+    "pdf": 143,
+    "kw": [
+     "醒神"
+    ]
+   }
+  },
+  {
+   "code": "M09-L34-Z02-H051",
+   "name": "清气厥脱候",
+   "tier": "厥脱",
+   "printed": 1690,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1690,
+    "vol": "xia",
+    "pdf": 156
+   },
+   "zlHit": {
+    "printed": 1690,
+    "vol": "xia",
+    "pdf": 156,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M09-L34-Z02-H181",
+   "name": "阳气厥脱候",
+   "tier": "厥脱",
+   "printed": 1688,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1688,
+    "vol": "xia",
+    "pdf": 154
+   },
+   "zlHit": {
+    "printed": 1688,
+    "vol": "xia",
+    "pdf": 154,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M09-L34-Z04-H051",
+   "name": "清气厥脱候",
+   "tier": "厥脱",
+   "printed": 1702,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1702,
+    "vol": "xia",
+    "pdf": 168
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M09-L34-Z10-H181",
+   "name": "阳气厥脱候",
+   "tier": "厥脱",
+   "printed": 1712,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」；治则含「救逆」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1712,
+    "vol": "xia",
+    "pdf": 178
+   },
+   "zlHit": {
+    "printed": 1712,
+    "vol": "xia",
+    "pdf": 178,
+    "kw": [
+     "救逆"
+    ]
+   }
+  },
+  {
+   "code": "M09-L35-Z02-H051",
+   "name": "清气厥脱候",
+   "tier": "厥脱",
+   "printed": 1716,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」；治则含「开窍」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1716,
+    "vol": "xia",
+    "pdf": 182
+   },
+   "zlHit": {
+    "printed": 1717,
+    "vol": "xia",
+    "pdf": 183,
+    "kw": [
+     "开窍"
+    ]
+   }
+  },
+  {
+   "code": "M09-L35-Z19-H181",
+   "name": "阳气厥脱候",
+   "tier": "厥脱",
+   "printed": 1722,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1722,
+    "vol": "xia",
+    "pdf": 188
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M12-L42-Z05-H150",
+   "name": "气血厥脱候",
+   "tier": "厥脱",
+   "printed": 1952,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1952,
+    "vol": "xia",
+    "pdf": 418
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M12-L42-Z18-H150",
+   "name": "气血厥脱候",
+   "tier": "厥脱",
+   "printed": 1989,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1989,
+    "vol": "xia",
+    "pdf": 455
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M12-L43-Z10-H150",
+   "name": "气血厥脱候",
+   "tier": "厥脱",
+   "printed": 2040,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 2040,
+    "vol": "xia",
+    "pdf": 506
+   },
+   "zlHit": {
+    "printed": 2040,
+    "vol": "xia",
+    "pdf": 506,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M12-L43-Z18-H150",
+   "name": "气血厥脱候",
+   "tier": "厥脱",
+   "printed": 2028,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「厥脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 2028,
+    "vol": "xia",
+    "pdf": 494
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M02-L05-Z13-H183",
+   "name": "阳气虚脱候",
+   "tier": "脱绝",
+   "printed": 338,
+   "vol": "上",
+   "tocPage": "283",
+   "tocCheck": "对齐",
+   "why": "候名含「虚脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 338,
+    "vol": "shang",
+    "pdf": 283
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M02-L05-Z19-H183",
+   "name": "阳气虚脱候",
+   "tier": "脱绝",
+   "printed": 356,
+   "vol": "上",
+   "tocPage": "301",
+   "tocCheck": "对齐",
+   "why": "候名含「虚脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 356,
+    "vol": "shang",
+    "pdf": 301
+   },
+   "zlHit": {
+    "printed": 356,
+    "vol": "shang",
+    "pdf": 301,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M02-L07-Z13-H183",
+   "name": "阳气虚脱候",
+   "tier": "脱绝",
+   "printed": 414,
+   "vol": "上",
+   "tocPage": "359",
+   "tocCheck": "对齐",
+   "why": "候名含「虚脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 414,
+    "vol": "shang",
+    "pdf": 359
+   },
+   "zlHit": {
+    "printed": 415,
+    "vol": "shang",
+    "pdf": 360,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M02-L07-Z18-H151",
+   "name": "气血脱绝候",
+   "tier": "脱绝",
+   "printed": 429,
+   "vol": "上",
+   "tocPage": "374",
+   "tocCheck": "对齐",
+   "why": "候名含「脱绝」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 429,
+    "vol": "shang",
+    "pdf": 374
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M02-L07-Z19-H183",
+   "name": "阳气虚脱候",
+   "tier": "脱绝",
+   "printed": 441,
+   "vol": "上",
+   "tocPage": "386",
+   "tocCheck": "对齐",
+   "why": "候名含「虚脱」；治则含「救逆」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 441,
+    "vol": "shang",
+    "pdf": 386
+   },
+   "zlHit": {
+    "printed": 442,
+    "vol": "shang",
+    "pdf": 387,
+    "kw": [
+     "救逆"
+    ]
+   }
+  },
+  {
+   "code": "M05-L15-Z12-H113",
+   "name": "气液脱绝候",
+   "tier": "脱绝",
+   "printed": 793,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「脱绝」；治则含「回阳」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 793,
+    "vol": "zhong",
+    "pdf": 112
+   },
+   "zlHit": {
+    "printed": 793,
+    "vol": "zhong",
+    "pdf": 112,
+    "kw": [
+     "回阳"
+    ]
+   }
+  },
+  {
+   "code": "M06-L20-Z13-H113",
+   "name": "气液脱绝候",
+   "tier": "脱绝",
+   "printed": 1023,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「脱绝」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1023,
+    "vol": "zhong",
+    "pdf": 342
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M06-L23-Z16-H151",
+   "name": "气血脱绝候",
+   "tier": "脱绝",
+   "printed": 1246,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「脱绝」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1246,
+    "vol": "zhong",
+    "pdf": 565
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M09-L32-Z12-H113",
+   "name": "气液脱绝候",
+   "tier": "脱绝",
+   "printed": 1590,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「脱绝」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1590,
+    "vol": "xia",
+    "pdf": 56
+   },
+   "zlHit": {
+    "printed": 1591,
+    "vol": "xia",
+    "pdf": 57,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M12-L42-Z18-H151",
+   "name": "气血脱绝候",
+   "tier": "脱绝",
+   "printed": 1989,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「脱绝」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1989,
+    "vol": "xia",
+    "pdf": 455
+   },
+   "zlHit": {
+    "printed": 1989,
+    "vol": "xia",
+    "pdf": 455,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M12-L43-Z18-H151",
+   "name": "气血脱绝候",
+   "tier": "脱绝",
+   "printed": 2029,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「脱绝」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 2029,
+    "vol": "xia",
+    "pdf": 495
+   },
+   "zlHit": {
+    "printed": 2029,
+    "vol": "xia",
+    "pdf": 495,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M12-L44-Z05-H151",
+   "name": "气血脱绝候",
+   "tier": "脱绝",
+   "printed": 2081,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「脱绝」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 2081,
+    "vol": "xia",
+    "pdf": 547
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M12-L45-Z05-H183",
+   "name": "阳气虚脱候",
+   "tier": "脱绝",
+   "printed": 2209,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「虚脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 2209,
+    "vol": "xia",
+    "pdf": 675
+   },
+   "zlHit": {
+    "printed": 2210,
+    "vol": "xia",
+    "pdf": 676,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M12-L45-Z08-H183",
+   "name": "阳气虚脱候",
+   "tier": "脱绝",
+   "printed": 2224,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「虚脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 2224,
+    "vol": "xia",
+    "pdf": 690
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M12-L45-Z11-H183",
+   "name": "阳气虚脱候",
+   "tier": "脱绝",
+   "printed": 2288,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「虚脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 2288,
+    "vol": "xia",
+    "pdf": 754
+   },
+   "zlHit": {
+    "printed": 2288,
+    "vol": "xia",
+    "pdf": 754,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M12-L45-Z13-H183",
+   "name": "阳气虚脱候",
+   "tier": "脱绝",
+   "printed": 2216,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「虚脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 2216,
+    "vol": "xia",
+    "pdf": 682
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M12-L45-Z19-H183",
+   "name": "阳气虚脱候",
+   "tier": "脱绝",
+   "printed": 2252,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「虚脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 2252,
+    "vol": "xia",
+    "pdf": 718
+   },
+   "zlHit": {
+    "printed": 2252,
+    "vol": "xia",
+    "pdf": 718,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M01-L04-Z19-H163",
+   "name": "气阴闭脱候",
+   "tier": "陷逆",
+   "printed": 326,
+   "vol": "上",
+   "tocPage": "271",
+   "tocCheck": "对齐",
+   "why": "候名含「闭脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 326,
+    "vol": "shang",
+    "pdf": 271
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M02-L05-Z13-H180",
+   "name": "阳气闭脱候",
+   "tier": "陷逆",
+   "printed": 336,
+   "vol": "上",
+   "tocPage": "281",
+   "tocCheck": "对齐",
+   "why": "候名含「闭脱」；治则含「回阳」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 336,
+    "vol": "shang",
+    "pdf": 281
+   },
+   "zlHit": {
+    "printed": 336,
+    "vol": "shang",
+    "pdf": 281,
+    "kw": [
+     "回阳"
+    ]
+   }
+  },
+  {
+   "code": "M02-L05-Z13b-H180",
+   "name": "阳气闭脱候",
+   "tier": "陷逆",
+   "printed": 343,
+   "vol": "上",
+   "tocPage": "288",
+   "tocCheck": "对齐",
+   "why": "候名含「闭脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 343,
+    "vol": "shang",
+    "pdf": 288
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M02-L05-Z18-H180",
+   "name": "阳气闭脱候",
+   "tier": "陷逆",
+   "printed": 367,
+   "vol": "上",
+   "tocPage": "312",
+   "tocCheck": "对齐",
+   "why": "候名含「闭脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 367,
+    "vol": "shang",
+    "pdf": 312
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M02-L05-Z19-H180",
+   "name": "阳气闭脱候",
+   "tier": "陷逆",
+   "printed": 350,
+   "vol": "上",
+   "tocPage": "295",
+   "tocCheck": "对齐",
+   "why": "候名含「闭脱」；治则含「回阳」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 350,
+    "vol": "shang",
+    "pdf": 295
+   },
+   "zlHit": {
+    "printed": 350,
+    "vol": "shang",
+    "pdf": 295,
+    "kw": [
+     "回阳"
+    ]
+   }
+  },
+  {
+   "code": "M02-L07-Z05-H180",
+   "name": "阳气闭脱候",
+   "tier": "陷逆",
+   "printed": 458,
+   "vol": "上",
+   "tocPage": "403",
+   "tocCheck": "对齐",
+   "why": "候名含「闭脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 458,
+    "vol": "shang",
+    "pdf": 403
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M03-L08-Z10-H163",
+   "name": "气阴闭脱候",
+   "tier": "陷逆",
+   "printed": 489,
+   "vol": "上",
+   "tocPage": "434",
+   "tocCheck": "对齐",
+   "why": "候名含「闭脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 489,
+    "vol": "shang",
+    "pdf": 434
+   },
+   "zlHit": {
+    "printed": 489,
+    "vol": "shang",
+    "pdf": 434,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M03-L09-Z12-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 497,
+   "vol": "上",
+   "tocPage": "442",
+   "tocCheck": "对齐",
+   "why": "候名含「蒙闭」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 497,
+    "vol": "shang",
+    "pdf": 442
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M04-L12-Z12-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 681,
+   "vol": "上",
+   "tocPage": "626",
+   "tocCheck": "对齐",
+   "why": "候名含「蒙闭」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 681,
+    "vol": "shang",
+    "pdf": 626
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M05-L15-Z06-H189",
+   "name": "血液闭脱候",
+   "tier": "陷逆",
+   "printed": 830,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「闭脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 830,
+    "vol": "zhong",
+    "pdf": 149
+   },
+   "zlHit": {
+    "printed": 831,
+    "vol": "zhong",
+    "pdf": 150,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M05-L15-Z12-H108",
+   "name": "津气闭脱候",
+   "tier": "陷逆",
+   "printed": 767,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「闭脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 767,
+    "vol": "zhong",
+    "pdf": 86
+   },
+   "zlHit": {
+    "printed": 768,
+    "vol": "zhong",
+    "pdf": 87,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M05-L15-Z12-H163",
+   "name": "气阴闭脱候",
+   "tier": "陷逆",
+   "printed": 801,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「闭脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 801,
+    "vol": "zhong",
+    "pdf": 120
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M06-L18-Z13-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 900,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「蒙闭」；治则含「醒神」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 900,
+    "vol": "zhong",
+    "pdf": 219
+   },
+   "zlHit": {
+    "printed": 900,
+    "vol": "zhong",
+    "pdf": 219,
+    "kw": [
+     "醒神"
+    ]
+   }
+  },
+  {
+   "code": "M06-L20-Z03-H141",
+   "name": "气血闭脱候",
+   "tier": "陷逆",
+   "printed": 990,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「闭脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 990,
+    "vol": "zhong",
+    "pdf": 309
+   },
+   "zlHit": {
+    "printed": 991,
+    "vol": "zhong",
+    "pdf": 310,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M06-L20-Z06-H141",
+   "name": "气血闭脱候",
+   "tier": "陷逆",
+   "printed": 1003,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「闭脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1003,
+    "vol": "zhong",
+    "pdf": 322
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M06-L20-Z13-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 1022,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「蒙闭」；治则含「开窍」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1022,
+    "vol": "zhong",
+    "pdf": 341
+   },
+   "zlHit": {
+    "printed": 1022,
+    "vol": "zhong",
+    "pdf": 341,
+    "kw": [
+     "开窍"
+    ]
+   }
+  },
+  {
+   "code": "M06-L20-Z14-H108",
+   "name": "津气闭脱候",
+   "tier": "陷逆",
+   "printed": 969,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「闭脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 969,
+    "vol": "zhong",
+    "pdf": 288
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M06-L21-Z10-H189",
+   "name": "血液闭脱候",
+   "tier": "陷逆",
+   "printed": 1133,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「闭脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1133,
+    "vol": "zhong",
+    "pdf": 452
+   },
+   "zlHit": {
+    "printed": 1133,
+    "vol": "zhong",
+    "pdf": 452,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M06-L21-Z11-H197",
+   "name": "阴血闭脱候",
+   "tier": "陷逆",
+   "printed": 1146,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「闭脱」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1146,
+    "vol": "zhong",
+    "pdf": 465
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M06-L21-Z12-H108",
+   "name": "津气闭脱候",
+   "tier": "陷逆",
+   "printed": 1067,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「闭脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1067,
+    "vol": "zhong",
+    "pdf": 386
+   },
+   "zlHit": {
+    "printed": 1067,
+    "vol": "zhong",
+    "pdf": 386,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M06-L21-Z13-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 1109,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「蒙闭」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1109,
+    "vol": "zhong",
+    "pdf": 428
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M06-L21-Z14-H108",
+   "name": "津气闭脱候",
+   "tier": "陷逆",
+   "printed": 1086,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「闭脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1086,
+    "vol": "zhong",
+    "pdf": 405
+   },
+   "zlHit": {
+    "printed": 1086,
+    "vol": "zhong",
+    "pdf": 405,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M08-L29-Z21-H141",
+   "name": "气血闭脱候",
+   "tier": "陷逆",
+   "printed": 1464,
+   "vol": "中",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「闭脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1464,
+    "vol": "zhong",
+    "pdf": 783
+   },
+   "zlHit": {
+    "printed": 1464,
+    "vol": "zhong",
+    "pdf": 783,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M09-L31-Z12-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 1555,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「蒙闭」；治则含「开窍」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1555,
+    "vol": "xia",
+    "pdf": 21
+   },
+   "zlHit": {
+    "printed": 1555,
+    "vol": "xia",
+    "pdf": 21,
+    "kw": [
+     "开窍"
+    ]
+   }
+  },
+  {
+   "code": "M09-L33-Z02-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 1655,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「蒙闭」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1655,
+    "vol": "xia",
+    "pdf": 121
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M09-L33-Z03-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 1641,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「蒙闭」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1641,
+    "vol": "xia",
+    "pdf": 107
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M09-L33-Z03-H163",
+   "name": "气阴闭脱候",
+   "tier": "陷逆",
+   "printed": 1647,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「闭脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1647,
+    "vol": "xia",
+    "pdf": 113
+   },
+   "zlHit": {
+    "printed": 1647,
+    "vol": "xia",
+    "pdf": 113,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M09-L33-Z07-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 1657,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「蒙闭」；治则含「开窍」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1657,
+    "vol": "xia",
+    "pdf": 123
+   },
+   "zlHit": {
+    "printed": 1656,
+    "vol": "xia",
+    "pdf": 122,
+    "kw": [
+     "开窍"
+    ]
+   }
+  },
+  {
+   "code": "M09-L33-Z10-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 1672,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「蒙闭」；治则含「开窍」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1672,
+    "vol": "xia",
+    "pdf": 138
+   },
+   "zlHit": {
+    "printed": 1672,
+    "vol": "xia",
+    "pdf": 138,
+    "kw": [
+     "开窍"
+    ]
+   }
+  },
+  {
+   "code": "M09-L33-Z10-H164",
+   "name": "气阴闭脱候",
+   "tier": "陷逆",
+   "printed": 1681,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「闭脱」；治则含「开窍」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1681,
+    "vol": "xia",
+    "pdf": 147
+   },
+   "zlHit": {
+    "printed": 1681,
+    "vol": "xia",
+    "pdf": 147,
+    "kw": [
+     "开窍"
+    ]
+   }
+  },
+  {
+   "code": "M09-L33-Z12-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 1623,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「蒙闭」；治则含「开窍」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1623,
+    "vol": "xia",
+    "pdf": 89
+   },
+   "zlHit": {
+    "printed": 1623,
+    "vol": "xia",
+    "pdf": 89,
+    "kw": [
+     "开窍"
+    ]
+   }
+  },
+  {
+   "code": "M09-L33-Z16-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 1636,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「蒙闭」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1636,
+    "vol": "xia",
+    "pdf": 102
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M09-L34-Z04-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 1701,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「蒙闭」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1701,
+    "vol": "xia",
+    "pdf": 167
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M09-L34-Z10-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 1709,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「蒙闭」；治则含「开窍」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1709,
+    "vol": "xia",
+    "pdf": 175
+   },
+   "zlHit": {
+    "printed": 1709,
+    "vol": "xia",
+    "pdf": 175,
+    "kw": [
+     "开窍"
+    ]
+   }
+  },
+  {
+   "code": "M10-L37-Z05-H180",
+   "name": "阳气闭脱候",
+   "tier": "陷逆",
+   "printed": 1826,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「闭脱」；治则含「固脱」",
+   "status": "双证",
+   "nameHit": {
+    "printed": 1826,
+    "vol": "xia",
+    "pdf": 292
+   },
+   "zlHit": {
+    "printed": 1826,
+    "vol": "xia",
+    "pdf": 292,
+    "kw": [
+     "固脱"
+    ]
+   }
+  },
+  {
+   "code": "M11-L40-Z13-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 1889,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「蒙闭」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1889,
+    "vol": "xia",
+    "pdf": 355
+   },
+   "zlHit": null
+  },
+  {
+   "code": "M11-L41-Z14-H071",
+   "name": "清阳蒙闭候",
+   "tier": "陷逆",
+   "printed": 1907,
+   "vol": "下",
+   "tocPage": "-1",
+   "tocCheck": "不可校（本册书签目标页失效，见 PDF登记.json）",
+   "why": "候名含「蒙闭」",
+   "status": "仅名（无治则线索）",
+   "nameHit": {
+    "printed": 1907,
+    "vol": "xia",
+    "pdf": 373
+   },
+   "zlHit": null
+  }
+ ],
+ "校勘": [
+  "OCR 会把形近字认错（如「怫郁→佛郁」「腠理→滕理」），本表按去空白后子串匹配，错字会造成「未命中」——这类要么回原页看图，要么按 校勘 表别名匹配，不许直接判为「书里没有」。",
+  "「仅名」不等于条目造假：一候正文可跨 3 页以上，治则用语可能在更后面；本表只声明「本页窗内未见」。"
+ ]
+}

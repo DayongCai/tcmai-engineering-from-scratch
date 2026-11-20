@@ -1,10 +1,10 @@
 {
   "generatedBy": "platform/pipeline/extract_narration.js",
-  "source": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/01-feng-men/docs/zh.md",
+  "source": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/13-m01-feng-men/docs/zh.md",
   "course": "14-zhongyi-zhenghou-xue",
   "dept": "01-zhongyi",
-  "chapter": "01-feng-men",
-  "title": "第 1 章 · 风证门（M01）",
+  "chapter": "13-m01-feng-men",
+  "title": "第 13 章 · 风证门（M01）",
   "segmentCount": 5,
   "estimateTotalSeconds": 54,
   "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
@@ -13,9 +13,9 @@
     {
       "n": 1,
       "role": "title",
-      "text": "第 1 章 · 风证门（M01）",
+      "text": "第 13 章 · 风证门（M01）",
       "slide": "title",
-      "spoken": "第 1 章 · 风证门（M01）",
+      "spoken": "第 13 章 · 风证门（M01）",
       "estimateSeconds": 3,
       "audio": "001.mp3",
       "audioSeconds": 3.05

@@ -1,6 +1,6 @@
 {
   "generatedBy": "platform/pipeline/build_subtitles.js",
-  "source": "platform/courses/01-zhongyi/14-zhongyi-zhenghou-xue/11-shiji-men/narration/lesson.json",
+  "source": "platform/courses/01-zhongyi/14-zhongyi-zhenghou-xue/23-m11-shiji-men/narration/lesson.json",
   "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
   "cueCount": 5,
   "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
@@ -18,7 +18,7 @@
       "end": 3.29,
       "seconds": 3.29,
       "estimated": false,
-      "text": "第 11 章 · 食证门（M11）",
+      "text": "第 23 章 · 食证门（M11）",
       "audio": "001.mp3"
     },
     {

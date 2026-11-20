@@ -127,14 +127,16 @@ test('B4 每个证名都能拆成「位 + 类性 + 证」，每个候名都能�
 
 // ── C 正文层 ──────────────────────────────────────────────
 
-test('C1 辞典 22 个文件齐备（凡例 + 12 章 + 9 附录）', () => {
+test('C1 辞典 25 个文件齐备（凡例 + 12 章 + 12 附录 A–L）', () => {
   const files = fs.readdirSync(TB).filter((f) => f.endsWith('.md'));
-  assert.strictEqual(files.length, 22, '实为 ' + files.length + '：' + files.join(', '));
+  assert.strictEqual(files.length, 25, '实为 ' + files.length + '：' + files.join(', '));
   assert.ok(files.some((f) => f.startsWith('00-')));
   for (let i = 1; i <= 12; i += 1) {
     assert.ok(files.some((f) => f.startsWith(String(i).padStart(2, '0') + '-第' + i + '章-')), '缺第 ' + i + ' 章');
   }
-  for (const a of ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']) assert.ok(files.some((f) => f.startsWith('附录' + a)), '缺附录' + a);
+  for (const a of ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']) {
+    assert.ok(files.some((f) => f.startsWith('附录' + a)), '缺附录' + a);
+  }
 });
 
 test('C1g 缺条核实与码归位：三条缺条都带原页依据、归位不留双份', () => {
@@ -366,9 +368,9 @@ test('C7 正文层可复现：OCR 管线脚本全部在仓库里（不在 scratc
   assert.deepStrictEqual(bad, [], '脚本仍在引用 scratch 下的旧代码路径');
 });
 
-test('C4 课程层 24 章目录与 chapters.json 一致（三基 12 + 各论 12）', () => {
+test('C4 课程层 27 章目录与 chapters.json 一致（三基 12 + 各论 12 + 补篇 3）', () => {
   const idx = read(path.join(DEPT, 'chapters.json'));
-  assert.strictEqual(idx.chapters.length, 24);
+  assert.strictEqual(idx.chapters.length, 27);
   const codes = new Set();
   for (const c of idx.chapters) {
     const dir = path.join(DEPT, 'chapters', c.slug);
@@ -380,19 +382,24 @@ test('C4 课程层 24 章目录与 chapters.json 一致（三基 12 + 各论 12�
       // 各论十二门：章码即辞典门码 M01…M12，另有门内判据
       assert.match(c.code, /^M\d{2}$/, '各论章码应为 M01…M12：' + c.slug);
       assert.deepStrictEqual(c.secs, [], '各论章不该映射概论节：' + c.slug);
+    } else if (c.part === '补篇') {
+      // 补篇三章：证象学 / 危候与顺逆 / 证—法—方，码 S13…S15，仍映射概论节
+      assert.match(c.code, /^S1[3-5]$/, '补篇章码应为 S13…S15：' + c.slug);
+      assert.ok(Array.isArray(c.secs) && c.secs.length >= 1, '补篇缺概论节映射：' + c.slug);
     } else {
       assert.ok(['基本理论', '基本方法', '基本技能'].includes(c.part), '缺三基归属：' + c.slug);
       assert.match(c.code, /^S\d{2}$/, '三基章码应为 S01…S12：' + c.slug + ' = ' + c.code);
       assert.ok(Array.isArray(c.secs) && c.secs.length >= 1, '缺概论节映射：' + c.slug);
     }
   }
-  // 顺序必须是 理论 4 → 方法 5 → 技能 3 → 各论 12
+  // 顺序必须是 理论 4 → 方法 5 → 技能 3 → 各论 12 → 补篇 3
   const parts = idx.chapters.map((c) => c.part);
   assert.deepStrictEqual(parts, [
     '基本理论', '基本理论', '基本理论', '基本理论',
     '基本方法', '基本方法', '基本方法', '基本方法', '基本方法',
     '基本技能', '基本技能', '基本技能',
     '各论', '各论', '各论', '各论', '各论', '各论', '各论', '各论', '各论', '各论', '各论', '各论',
+    '补篇', '补篇', '补篇',
   ]);
 });
 

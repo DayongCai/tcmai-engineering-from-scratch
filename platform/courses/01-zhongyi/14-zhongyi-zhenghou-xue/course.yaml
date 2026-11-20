@@ -4,76 +4,102 @@ chapters:
   - slug: 01-s01-bing-zheng-hou
     title: 第1章 病·证·候：三级诊断的含义与分界
     title: 第1章 病·证·候：三级诊断的含义与分界
+    title: 第1章 病·证·候：三级诊断的含义与分界
+    title: 第1章 病·证·候：三级诊断的含义与分界
     segments: 6
-    video: planned
-    estimate_minutes: 0
+    video: rendered
+    estimate_minutes: 0.88
   - slug: 02-s02-zheng-de-neirong
     title: 第2章 证的内容与结构：病因·病位·病机
     title: 第2章 证的内容与结构：病因·病位·病机
+    title: 第2章 证的内容与结构：病因·病位·病机
+    title: 第2章 证的内容与结构：病因·病位·病机
     segments: 6
-    video: planned
-    estimate_minutes: 0
+    video: rendered
+    estimate_minutes: 0.82
   - slug: 03-s03-mingming-yu-fenlei
     title: 第3章 证的命名与分类：十二门·四十五类·二十一病位
     title: 第3章 证的命名与分类：十二门·四十五类·二十一病位
+    title: 第3章 证的命名与分类：十二门·四十五类·二十一病位
+    title: 第3章 证的命名与分类：十二门·四十五类·二十一病位
     segments: 6
-    video: planned
-    estimate_minutes: 0
+    video: rendered
+    estimate_minutes: 0.85
   - slug: 04-s04-neihan-waiyan
     title: 第4章 证的内涵与外延：边界、兼夹与临界态
     title: 第4章 证的内涵与外延：边界、兼夹与临界态
+    title: 第4章 证的内涵与外延：边界、兼夹与临界态
+    title: 第4章 证的内涵与外延：边界、兼夹与临界态
     segments: 6
-    video: planned
-    estimate_minutes: 0
+    video: rendered
+    estimate_minutes: 0.83
   - slug: 05-s05-chuanbian
     title: 第5章 证的传变：病位·病因·邪正三条轴
     title: 第5章 证的传变：病位·病因·邪正三条轴
+    title: 第5章 证的传变：病位·病因·邪正三条轴
+    title: 第5章 证的传变：病位·病因·邪正三条轴
     segments: 6
-    video: planned
-    estimate_minutes: 0
+    video: rendered
+    estimate_minutes: 0.77
   - slug: 06-s06-qiuyin-shang
     title: 第6章 辨证求因（上）：风·寒·热·暑·湿·燥的识别
     title: 第6章 辨证求因（上）：风·寒·热·暑·湿·燥的识别
+    title: 第6章 辨证求因（上）：风·寒·热·暑·湿·燥的识别
+    title: 第6章 辨证求因（上）：风·寒·热·暑·湿·燥的识别
     segments: 6
-    video: planned
-    estimate_minutes: 0
+    video: rendered
+    estimate_minutes: 0.85
   - slug: 07-s07-qiuyin-xia
     title: 第7章 辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别
     title: 第7章 辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别
+    title: 第7章 辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别
+    title: 第7章 辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别
     segments: 6
-    video: planned
-    estimate_minutes: 0
+    video: rendered
+    estimate_minutes: 0.82
   - slug: 08-s08-sheny-in-dingwei
     title: 第8章 审因定位：十二类病因的定位法与定位表
     title: 第8章 审因定位：十二类病因的定位法与定位表
+    title: 第8章 审因定位：十二类病因的定位法与定位表
+    title: 第8章 审因定位：十二类病因的定位法与定位表
     segments: 6
-    video: planned
-    estimate_minutes: 0
+    video: rendered
+    estimate_minutes: 0.85
   - slug: 09-s09-jianbie-quishe
     title: 第9章 证的鉴别与取舍：真假、兼夹与两因两位规则
     title: 第9章 证的鉴别与取舍：真假、兼夹与两因两位规则
+    title: 第9章 证的鉴别与取舍：真假、兼夹与两因两位规则
+    title: 第9章 证的鉴别与取舍：真假、兼夹与两因两位规则
     segments: 6
-    video: planned
-    estimate_minutes: 0
+    video: rendered
+    estimate_minutes: 0.73
   - slug: 10-s10-lunzhi
     title: 第10章 证的论治：从证名到治法与隐性病因病位
     title: 第10章 证的论治：从证名到治法与隐性病因病位
+    title: 第10章 证的论治：从证名到治法与隐性病因病位
+    title: 第10章 证的论治：从证名到治法与隐性病因病位
     segments: 6
-    video: planned
-    estimate_minutes: 0
+    video: rendered
+    estimate_minutes: 0.78
   - slug: 11-s11-cidian-caozuo
     title: 第11章 辞典操作：编码、检索与统计口径
     title: 第11章 辞典操作：编码、检索与统计口径
+    title: 第11章 辞典操作：编码、检索与统计口径
+    title: 第11章 辞典操作：编码、检索与统计口径
     segments: 6
-    video: planned
-    estimate_minutes: 0
+    video: rendered
+    estimate_minutes: 0.83
   - slug: 12-s12-zonghe-shicao
     title: 第12章 综合实操：从主诉到证候单元的全流程
     title: 第12章 综合实操：从主诉到证候单元的全流程
+    title: 第12章 综合实操：从主诉到证候单元的全流程
+    title: 第12章 综合实操：从主诉到证候单元的全流程
     segments: 6
-    video: planned
-    estimate_minutes: 0
+    video: rendered
+    estimate_minutes: 0.77
   - slug: 13-m01-feng-men
+    title: 第13章 风门（各论·M01）
+    title: 第13章 风门（各论·M01）
     title: 第13章 风门（各论·M01）
     title: 第13章 风门（各论·M01）
     segments: 5
@@ -83,77 +109,117 @@ chapters:
   - slug: 14-m02-han-men
     title: 第14章 寒门（各论·M02）
     title: 第14章 寒门（各论·M02）
+    title: 第14章 寒门（各论·M02）
+    title: 第14章 寒门（各论·M02）
     segments: 5
     video: rendered
     estimate_minutes: 0.87
-    measured_minutes: 0.89
+    measured_minutes: 0.85
   - slug: 15-m03-shu-men
     title: 第15章 暑门（各论·M03）
     title: 第15章 暑门（各论·M03）
+    title: 第15章 暑门（各论·M03）
+    title: 第15章 暑门（各论·M03）
     segments: 5
     video: rendered
     estimate_minutes: 0.85
-    measured_minutes: 0.89
+    measured_minutes: 0.86
   - slug: 16-m04-shi-men
+    title: 第16章 湿门（各论·M04）
+    title: 第16章 湿门（各论·M04）
     title: 第16章 湿门（各论·M04）
     title: 第16章 湿门（各论·M04）
     segments: 5
     video: rendered
     estimate_minutes: 0.87
-    measured_minutes: 0.89
+    measured_minutes: 0.85
   - slug: 17-m05-zao-men
     title: 第17章 燥门（各论·M05）
     title: 第17章 燥门（各论·M05）
+    title: 第17章 燥门（各论·M05）
+    title: 第17章 燥门（各论·M05）
     segments: 5
     video: rendered
     estimate_minutes: 0.85
-    measured_minutes: 0.89
+    measured_minutes: 0.84
   - slug: 18-m06-huo-men
     title: 第18章 火门（各论·M06）
     title: 第18章 火门（各论·M06）
+    title: 第18章 火门（各论·M06）
+    title: 第18章 火门（各论·M06）
     segments: 5
     video: rendered
     estimate_minutes: 0.92
-    measured_minutes: 0.89
+    measured_minutes: 0.88
   - slug: 19-m07-qi-men
     title: 第19章 气门（各论·M07）
     title: 第19章 气门（各论·M07）
+    title: 第19章 气门（各论·M07）
+    title: 第19章 气门（各论·M07）
     segments: 5
     video: rendered
     estimate_minutes: 0.88
-    measured_minutes: 0.89
+    measured_minutes: 0.86
   - slug: 20-m08-yu-men
     title: 第20章 瘀门（各论·M08）
     title: 第20章 瘀门（各论·M08）
+    title: 第20章 瘀门（各论·M08）
+    title: 第20章 瘀门（各论·M08）
     segments: 5
     video: rendered
     estimate_minutes: 0.88
-    measured_minutes: 0.89
+    measured_minutes: 0.86
   - slug: 21-m09-tan-men
+    title: 第21章 痰门（各论·M09）
+    title: 第21章 痰门（各论·M09）
     title: 第21章 痰门（各论·M09）
     title: 第21章 痰门（各论·M09）
     segments: 5
     video: rendered
     estimate_minutes: 0.93
-    measured_minutes: 0.89
+    measured_minutes: 0.91
   - slug: 22-m10-yin-men
+    title: 第22章 饮门（各论·M10）
+    title: 第22章 饮门（各论·M10）
     title: 第22章 饮门（各论·M10）
     title: 第22章 饮门（各论·M10）
     segments: 5
     video: rendered
     estimate_minutes: 0.92
-    measured_minutes: 0.89
+    measured_minutes: 0.90
   - slug: 23-m11-shiji-men
+    title: 第23章 食门（各论·M11）
+    title: 第23章 食门（各论·M11）
     title: 第23章 食门（各论·M11）
     title: 第23章 食门（各论·M11）
     segments: 5
     video: rendered
     estimate_minutes: 0.85
-    measured_minutes: 0.89
+    measured_minutes: 0.85
   - slug: 24-m12-xu-men
+    title: 第24章 虚门（各论·M12）
+    title: 第24章 虚门（各论·M12）
     title: 第24章 虚门（各论·M12）
     title: 第24章 虚门（各论·M12）
     segments: 5
     video: rendered
     estimate_minutes: 0.93
-    measured_minutes: 0.89
+    measured_minutes: 0.91
+  - slug: 25-s13-zhengxiang-xue
+    title: 第25章 证象学：单位病机、合法格与可解释率
+    title: 第25章 证象学：单位病机、合法格与可解释率
+    segments: 6
+    video: rendered
+    estimate_minutes: 0.88
+  - slug: 26-s14-weihou-shunni
+    title: 第26章 危候与顺逆：词面判据能做与不能做的事
+    title: 第26章 危候与顺逆：词面判据能做与不能做的事
+    segments: 6
+    video: rendered
+    estimate_minutes: 0.87
+  - slug: 27-s15-zheng-fa-fang
+    title: 第27章 证—法—方对接：从候到治则到方症的索引
+    title: 第27章 证—法—方对接：从候到治则到方症的索引
+    segments: 6
+    video: rendered
+    estimate_minutes: 0.95

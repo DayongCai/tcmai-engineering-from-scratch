@@ -296,6 +296,48 @@
       "secs": [],
       "units": 0,
       "judge": "门内判据"
+    },
+    {
+      "n": 25,
+      "slug": "25-s13-zhengxiang-xue",
+      "title": "证象学：单位病机、合法格与可解释率",
+      "status": "✅",
+      "code": "S13",
+      "part": "补篇",
+      "secs": [
+        2,
+        4
+      ],
+      "units": 2,
+      "judge": "单位病机"
+    },
+    {
+      "n": 26,
+      "slug": "26-s14-weihou-shunni",
+      "title": "危候与顺逆：词面判据能做与不能做的事",
+      "status": "✅",
+      "code": "S14",
+      "part": "补篇",
+      "secs": [
+        8,
+        10
+      ],
+      "units": 5,
+      "judge": "厥脱闭绝"
+    },
+    {
+      "n": 27,
+      "slug": "27-s15-zheng-fa-fang",
+      "title": "证—法—方对接：从候到治则到方症的索引",
+      "status": "✅",
+      "code": "S15",
+      "part": "补篇",
+      "secs": [
+        10,
+        4
+      ],
+      "units": 2,
+      "judge": "证名为标帜"
     }
   ]
 }

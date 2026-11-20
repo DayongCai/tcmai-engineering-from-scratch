@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/14-zhongyi-zhenghou-xue/12-s12-zonghe-shicao/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 47.61,
+  "estimatedCues": 0,
+  "videoSeconds": 47.632667,
+  "videoMinusNarrationSeconds": 0.023,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.59,
+      "seconds": 5.59,
+      "estimated": false,
+      "text": "第 12 章 · 综合实操：从主诉到证候单元的全流程",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.59,
+      "end": 10.92,
+      "seconds": 5.33,
+      "estimated": false,
+      "text": "识证 ， 立法 ， 用方：三者之中，识证尤为要紧",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 10.92,
+      "end": 24.02,
+      "seconds": 13.1,
+      "estimated": false,
+      "text": "前面十一章各自成立，一到真实病例就散：求因与定位混着做，证名与治法对不上，写出来的病案别人复核不了。缺的是把动作串成流程。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 24.02,
+      "end": 36.31,
+      "seconds": 12.29,
+      "estimated": false,
+      "text": "环境逼迫（病案要能被别人复核、要被编码进入数据库）＋知识积累（前十一章给了判据、编码与规则，最后缺一条把它们连起来的工序）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 36.31,
+      "end": 47.61,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

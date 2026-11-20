@@ -25,9 +25,9 @@ platform/**/__pycache__/
 
 # 教材排版产物
 textbooks/build/
-textbooks/**/build/*.pdf
-textbooks/**/build/*.epub
-textbooks/**/build/*.tex
+# 单书构建目录（textbooks/<院系>/<学科>/build/）：聚合 md、PNG 图、EPUB/PDF 全是生成物，
+# 由 scripts/build_zhenghou_ebook.py + scripts/rasterize_figures.py 重出，不入库
+textbooks/**/build/
 
 # 参考仓库的浅克隆缓存（供 PORTING.md 新鲜度比对；是缓存不是内容）
 .refcache/

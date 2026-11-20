@@ -46,6 +46,8 @@ import json
 import os
 import re
 import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import zhenghou_appendix_jkl as jkl  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STD = os.path.join(ROOT, "standards", "zhenghou-cidian")
@@ -995,6 +997,25 @@ def render_vol0(struct, tensor, men):
       "而语素层与接口层随便改，只要 `--check` 还是绿的。")
     A("")
     A("---")
+    A("")
+    A("## 9 三块补篇层：附录 J / K / L")
+    A("")
+    A("辞典之外，本书另有三层是后来补的母本（课程第 25–27 章与之对应），都做成了附录：")
+    A("")
+    A("| 附录 | 层 | 一句话 | 关键数 |")
+    A("|---|---|---|---|")
+    A("| J | 证象学 | 证象＝单位病机；位×病机的 72 个合法格 + 108 个态 | 72 格（声明 75）· 可解释率 21.1% |")
+    A("| K | 危候判据 | 词面判据：候名态根 + 治则用语，三档（厥脱/脱绝/陷逆） | 80 条命中 · 42 双证 · 181 候选 |")
+    A("| L | 证—法—方 | 一候一条：治则首句 + 方症里的方名 | 1860 有方症 · 1563 取到方名 · 790 一候多方 |")
+    A("")
+    A("三层都不是从别的书里抄来的：母本就是本书的附录一、语素表与每候的【治则】【方症】字段。")
+    A("读完 K 再回头看附录 A 的门×族张量，就知道「脱绝列不为 0 → 必须带直通就医分支」那条不是修辞。")
+    A("")
+    A("```")
+    A("python scripts/build_zhenghou_sanji_supplement.py   # 生成三层 JSON")
+    A("python scripts/verify_weihou_pages.py               # 危候 80 条回印张页复核")
+    A("python scripts/build_zhenghou_cidian.py             # 重出本书（含附录 J/K/L）")
+    A("```")
     A("")
     A("**免责声明**：本辞典为教学与工程用途的证候结构重建，不构成医疗诊断或治疗建议。"
       "书中任何证候名的临床使用，均需由执业中医师结合四诊与患者具体情况判断。")
@@ -2443,6 +2464,10 @@ def main():
     out.append((os.path.join(TB, "附录G-证象总表.md"), render_appendix_g(struct)))
     out.append((os.path.join(TB, "附录H-病候总表.md"), render_appendix_h(struct)))
     out.append((os.path.join(TB, "附录I-参考书目.md"), render_appendix_i(struct)))
+    # 附录 J/K/L —— 三块补篇层（证象学 / 危候判据 / 证—法—方），渲染器在 scripts/zhenghou_appendix_jkl.py
+    out.append((os.path.join(TB, "附录J-证象学总表.md"), jkl.render_j()))
+    out.append((os.path.join(TB, "附录K-危候判据表.md"), jkl.render_k()))
+    out.append((os.path.join(TB, "附录L-证法方索引.md"), jkl.render_l()))
 
     # 课程层不在本脚本里出：2026-11-13 起课程正文按「基本理论—基本方法—基本技能」三基编排，
     # 由 scripts/build_zhenghou_sanji.py 生成（母本＝概论十节）。本脚本只负责辞典侧：

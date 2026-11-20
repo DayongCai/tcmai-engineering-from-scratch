@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/14-zhongyi-zhenghou-xue/04-s04-neihan-waiyan/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 49.56,
+  "estimatedCues": 0,
+  "videoSeconds": 49.598667,
+  "videoMinusNarrationSeconds": 0.039,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.26,
+      "seconds": 5.26,
+      "estimated": false,
+      "text": "第 4 章 · 证的内涵与外延：边界、兼夹与临界态",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.26,
+      "end": 10.78,
+      "seconds": 5.52,
+      "estimated": false,
+      "text": "外延性构成传变的基础，也可视为传变的前期过渡阶段",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 10.78,
+      "end": 23.26,
+      "seconds": 12.48,
+      "estimated": false,
+      "text": "证的边界被当成无限可延伸：一个「肝郁」可以往里塞进任何症状，往外接到任何别的证。边界一旦无限，诊断就退化成自由联想。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 23.26,
+      "end": 38.26,
+      "seconds": 15,
+      "estimated": false,
+      "text": "环境逼迫（同一患者在不同阶段被写成不同证，若不计外延就无法解释过渡态）＋知识积累（证与证之间的转化链必须有可描述的中间态，否则传变只能事后追认）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 38.26,
+      "end": 49.56,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

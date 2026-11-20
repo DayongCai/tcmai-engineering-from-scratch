@@ -1,0 +1,32 @@
+{
+  "chapter": "26-s14-weihou-shunni",
+  "slideCount": 5,
+  "segmentCount": 5,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 23
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 30
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 51
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 84
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 52
+    }
+  ]
+}

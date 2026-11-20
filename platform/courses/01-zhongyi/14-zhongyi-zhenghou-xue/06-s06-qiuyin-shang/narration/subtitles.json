@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/14-zhongyi-zhenghou-xue/06-s06-qiuyin-shang/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 50.66,
+  "estimatedCues": 0,
+  "videoSeconds": 50.692667,
+  "videoMinusNarrationSeconds": 0.033,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 5.45,
+      "seconds": 5.45,
+      "estimated": false,
+      "text": "第 6 章 · 辨证求因（上）：风·寒·热·暑·湿·燥的识别",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 5.45,
+      "end": 11.21,
+      "seconds": 5.76,
+      "estimated": false,
+      "text": "通过病因所具特性，认识临床证象所反映出来的特别象徵",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 11.21,
+      "end": 25.85,
+      "seconds": 14.64,
+      "estimated": false,
+      "text": "「求因」被简化成「对症状」：见到恶寒就是寒、见到发热就是热。可恶寒也能出现在真热假寒里，发热也能是阴虚。不按病因特性逐条对，求因就变成猜。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 25.85,
+      "end": 39.36,
+      "seconds": 13.51,
+      "estimated": false,
+      "text": "环境逼迫（同一病因在不同病位表现不同，必须靠病因自身的特性去追）＋知识积累（概论把 15 类病因的辨识要点逐条写定，可以直接做成判据表）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 39.36,
+      "end": 50.66,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

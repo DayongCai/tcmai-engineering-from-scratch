@@ -1,10 +1,10 @@
 {
   "generatedBy": "platform/pipeline/extract_narration.js",
-  "source": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/02-han-men/docs/zh.md",
+  "source": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/14-m02-han-men/docs/zh.md",
   "course": "14-zhongyi-zhenghou-xue",
   "dept": "01-zhongyi",
-  "chapter": "02-han-men",
-  "title": "第 2 章 · 寒证门（M02）",
+  "chapter": "14-m02-han-men",
+  "title": "第 14 章 · 寒证门（M02）",
   "segmentCount": 5,
   "estimateTotalSeconds": 52,
   "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
@@ -13,9 +13,9 @@
     {
       "n": 1,
       "role": "title",
-      "text": "第 2 章 · 寒证门（M02）",
+      "text": "第 14 章 · 寒证门（M02）",
       "slide": "title",
-      "spoken": "第 2 章 · 寒证门（M02）",
+      "spoken": "第 14 章 · 寒证门（M02）",
       "estimateSeconds": 3,
       "audio": "001.mp3",
       "audioSeconds": 2.95

@@ -45,6 +45,9 @@ function walk(dir, out = []) {
       // 注意：要比对「目录路径 + 分隔符」。只比 full 会漏掉顶层目录
       // （full 结尾没有分隔符，'templates' 就匹配不上 'templates/'）。
       if (SKIP_DIR_PARTS.some((p) => `${full}${path.sep}`.includes(p))) continue;
+      // 教材的**单书构建目录**（textbooks/<dept>/<subject>/build/）：聚合 md 与图都是生成物，
+      // 且 EPUB/PDF 成品已在 .gitignore；不纳入链接检查（否则每次都报「目标不存在」）。
+      if (e.name === 'build' && `${full}${path.sep}`.includes('textbooks' + path.sep)) continue;
       walk(full, out);
     } else if (e.isFile() && /\.md$/i.test(e.name)) {
       out.push(path.join(dir, e.name));

@@ -1,10 +1,10 @@
 {
   "generatedBy": "platform/pipeline/extract_narration.js",
-  "source": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/12-xu-men/docs/zh.md",
+  "source": "departments/01-zhongyi/14-zhongyi-zhenghou-xue/chapters/24-m12-xu-men/docs/zh.md",
   "course": "14-zhongyi-zhenghou-xue",
   "dept": "01-zhongyi",
-  "chapter": "12-xu-men",
-  "title": "第 12 章 · 虚证门（M12）",
+  "chapter": "24-m12-xu-men",
+  "title": "第 24 章 · 虚证门（M12）",
   "segmentCount": 5,
   "estimateTotalSeconds": 56,
   "estimateNote": "estimateSeconds 是按中文字数的排期估算，非实测时长；真实时长须来自 TTS 返回或 ffprobe",
@@ -13,9 +13,9 @@
     {
       "n": 1,
       "role": "title",
-      "text": "第 12 章 · 虚证门（M12）",
+      "text": "第 24 章 · 虚证门（M12）",
       "slide": "title",
-      "spoken": "第 12 章 · 虚证门（M12）",
+      "spoken": "第 24 章 · 虚证门（M12）",
       "estimateSeconds": 3,
       "audio": "001.mp3",
       "audioSeconds": 3.22

@@ -1,0 +1,32 @@
+{
+  "chapter": "08-s08-sheny-in-dingwei",
+  "slideCount": 5,
+  "segmentCount": 5,
+  "slides": [
+    {
+      "n": 1,
+      "segment": 1,
+      "chars": 22
+    },
+    {
+      "n": 2,
+      "segment": 2,
+      "chars": 28
+    },
+    {
+      "n": 3,
+      "segment": 3,
+      "chars": 64
+    },
+    {
+      "n": 4,
+      "segment": 4,
+      "chars": 71
+    },
+    {
+      "n": 5,
+      "segment": 5,
+      "chars": 52
+    }
+  ]
+}

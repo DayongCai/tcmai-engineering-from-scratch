@@ -1,6 +1,6 @@
 {
   "$generated": "node scripts/build_textbook_board.js",
-  "generatedAt": "2026-11-20",
+  "generatedAt": "2026-11-21",
   "rules": {
     "weeks": 18,
     "teachWeeks": 16,
@@ -25,7 +25,7 @@
     "mandatory": 171,
     "electives": 18,
     "hours": 11547,
-    "chaptersTarget": 2166,
+    "chaptersTarget": 2169,
     "textbookSubjects": 138,
     "baseSubjects": 113,
     "extSubjects": 7,
@@ -45,7 +45,7 @@
     "chapters": 2690,
     "hanzi": 30254731,
     "nonWs": 36587200,
-    "metaWords": 31690658,
+    "metaWords": 34015232,
     "registryChapters": 1621,
     "registryChars": 28596788,
     "registryFiles": 100,
@@ -832,7 +832,7 @@
           "semester": 7,
           "stageId": "zhuang",
           "hours": 72,
-          "chaptersTarget": 24,
+          "chaptersTarget": 27,
           "bridge": "证候→本体建模 / 证型标准化→嵌入聚类",
           "textbook": {
             "dir": "textbooks/01-zhongyi/14-zhongyi-zhenghou-xue",
@@ -841,7 +841,7 @@
             "hanzi": 2496507,
             "nonWs": 3723918,
             "metaChapters": 12,
-            "metaWords": 208605,
+            "metaWords": 2533179,
             "status": "done",
             "layer": null,
             "origin": "base",
@@ -852,7 +852,7 @@
             "weekly": 4,
             "weeks": "1–18",
             "teachWeeks": 16,
-            "chaptersPerWeek": 1.5,
+            "chaptersPerWeek": 1.7,
             "halfTerm": null,
             "prereq": [
               "01-zhongyi/05-zhongyi-zhen-duan-xue",
@@ -2129,7 +2129,7 @@
           "semester": 7,
           "stageId": "zhuang",
           "hours": 72,
-          "chaptersTarget": 24,
+          "chaptersTarget": 27,
           "bridge": "证候→本体建模 / 证型标准化→嵌入聚类",
           "textbook": {
             "dir": "textbooks/01-zhongyi/14-zhongyi-zhenghou-xue",
@@ -2138,7 +2138,7 @@
             "hanzi": 2496507,
             "nonWs": 3723918,
             "metaChapters": 12,
-            "metaWords": 208605,
+            "metaWords": 2533179,
             "status": "done",
             "layer": null,
             "origin": "base",
@@ -2149,7 +2149,7 @@
             "weekly": 4,
             "weeks": "1–18",
             "teachWeeks": 16,
-            "chaptersPerWeek": 1.5,
+            "chaptersPerWeek": 1.7,
             "halfTerm": null,
             "prereq": [
               "01-zhongyi/05-zhongyi-zhen-duan-xue",
@@ -2835,8 +2835,8 @@
               "hours": 72,
               "weekly": 4,
               "halfTerm": null,
-              "chaptersTarget": 24,
-              "chaptersPerWeek": 1.5,
+              "chaptersTarget": 27,
+              "chaptersPerWeek": 1.7,
               "chapters": 12,
               "status": "done",
               "origin": "base",
@@ -3001,7 +3001,7 @@
         "mandatory": 18,
         "electives": 5,
         "hours": 1458,
-        "chaptersTarget": 288,
+        "chaptersTarget": 291,
         "textbookSubjects": 22,
         "baseSubjects": 20,
         "extSubjects": 0,
@@ -23803,7 +23803,7 @@
       "flags": [
         "chapters-short"
       ],
-      "detail": "教材 12 章 < 教学计划 24 章"
+      "detail": "教材 12 章 < 教学计划 27 章"
     },
     {
       "slug": "02-zhongyao/03-fangjixue",

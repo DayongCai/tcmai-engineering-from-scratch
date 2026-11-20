@@ -1,0 +1,65 @@
+{
+  "generatedBy": "platform/pipeline/build_subtitles.js",
+  "source": "platform/courses/01-zhongyi/14-zhongyi-zhenghou-xue/02-s02-zheng-de-neirong/narration/lesson.json",
+  "rule": "语义群 = 段；字幕绝不在段内断开；切换点对齐配音实测时长，不做累计漂移",
+  "cueCount": 5,
+  "audioBackend": "edge-tts (C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\edge-tts.exe)",
+  "audioTotalSeconds": 48.96,
+  "estimatedCues": 0,
+  "videoSeconds": 48.988667,
+  "videoMinusNarrationSeconds": 0.029,
+  "textMatchesNarration": true,
+  "mismatches": [],
+  "cues": [
+    {
+      "n": 1,
+      "role": "title",
+      "start": 0,
+      "end": 4.8,
+      "seconds": 4.8,
+      "estimated": false,
+      "text": "第 2 章 · 证的内容与结构：病因·病位·病机",
+      "audio": "001.mp3"
+    },
+    {
+      "n": 2,
+      "role": "motto",
+      "start": 4.8,
+      "end": 9.46,
+      "seconds": 4.66,
+      "estimated": false,
+      "text": "病因＋病位＝证，病机＋病变层次＝候",
+      "audio": "002.mp3"
+    },
+    {
+      "n": 3,
+      "role": "problem",
+      "start": 9.46,
+      "end": 23.69,
+      "seconds": 14.23,
+      "estimated": false,
+      "text": "把证当「症状的集合」是最普遍的错法：症状越列越多，判断却越来越说不清。原因是缺一个能拆能合的中间单位——没有它，证只能被描述，不能被计算。",
+      "audio": "003.mp3"
+    },
+    {
+      "n": 4,
+      "role": "roots",
+      "start": 23.69,
+      "end": 37.66,
+      "seconds": 13.97,
+      "estimated": false,
+      "text": "环境逼迫（各家医案对同一证候的脉症描述差异极大，靠症状罗列无法互认）＋知识积累（13 类 76 个单位病机、322 候的体系需要可组合的原子）",
+      "audio": "004.mp3"
+    },
+    {
+      "n": 5,
+      "role": "disclaimer",
+      "start": 37.66,
+      "end": 48.96,
+      "seconds": 11.3,
+      "estimated": false,
+      "text": "本内容仅用于教育与科研，不构成临床诊疗建议。任何基于本内容的临床决策，必须由具备合法执业资格的医师复核。",
+      "audio": "005.mp3"
+    }
+  ]
+}

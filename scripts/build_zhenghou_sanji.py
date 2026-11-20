@@ -41,6 +41,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 from zhenghou_sanji_content import CHAPTERS  # noqa: E402
+from zhenghou_sanji_content_bu import CHAPTERS_BU  # noqa: E402
+CHAPTERS.update(CHAPTERS_BU)
 
 DEPT = os.path.join(ROOT, "departments", "01-zhongyi", "14-zhongyi-zhenghou-xue")
 GL = os.path.join(ROOT, "standards", "zhenghou-cidian", "正文-概论.json")
@@ -62,6 +64,9 @@ CLASSIC = {
     10: ("《素问·至真要大论》", "「谨守病机，各司其属」：论治以病机为据，不以证名为终点。"),
     11: ("《汉书·艺文志·方技略》", "最早把医籍按「医经、经方」分类的目录——分类与检索意识，从汉代就开始了。"),
     12: ("《史记·扁鹊仓公列传》", "仓公「诊籍」是现存最早的病案记录：证候要能被别人复核，这条要求两千年没变。"),
+    25: ("《素问·五运行大论》", "「天地阴阳者，不以数推，以象之谓也」——象是可阅的外部，数只是推演；证象学的合法性在这里。"),
+    26: ("《伤寒论·辨厥阴病脉证并治》", "「厥」为阴阳气不相顺接：危候看的是气血能否顺接，不是症状的轻重。"),
+    27: ("《素问·至真要大论》", "「气有多少，病有盛衰，治有缓急，方有大小」：法随病机而设，方随法之缓急而分。"),
 }
 CN = "一二三四五六七八九十"
 
@@ -150,7 +155,7 @@ def docs_md(spec, gl, st, un, units):
     A("| 项目 | 内容 |")
     A("|---|---|")
     A("| 学科 | 中医证候学（中医系第 14 门） |")
-    A("| 章序号 | %d / 12（%s篇） |" % (spec["n"], spec["part"]))
+    A("| 章序号 | %d / 27（%s） |" % (spec["n"], spec["part"]))
     A("| 三基定位 | %s |" % spec["part"])
     A("| 对应概论 | %s |" % names)
     A("| 本单元层 | %d 条（%s） |" % (len(units), "、".join(u["locator"] for u in units[:4]) + ("…" if len(units) > 4 else "")))
@@ -442,11 +447,13 @@ def build():
     for key in sorted(CHAPTERS):
         spec = CHAPTERS[key]
         # 章目录带码：01-s01-bing-zheng-hou（小写；仓库 L1 的 slug 规则禁大写）
-        slug = "%02d-s%02d-%s" % (spec["n"], spec["n"], key.split("-", 1)[1])
+        slug = "%02d-s%02d-%s" % (spec["n"],
+                                  spec["n"] if spec["n"] <= 12 else spec["n"] - 12,
+                                  key.split("-", 1)[1])
         units = pick_units(spec, un)
         idx["chapters"].append({
             "n": spec["n"], "slug": slug, "title": spec["title"], "status": "✅",
-            "code": "S%02d" % spec["n"], "part": spec["part"],
+            "code": "S%02d" % (spec["n"] if spec["n"] <= 12 else spec["n"] - 12), "part": spec["part"],
             "secs": spec["secs"], "units": len(units),
             "judge": spec["judge"],
         })
@@ -482,6 +489,7 @@ def build():
             "status": "✅", "code": men["code"], "part": "各论", "secs": [], "units": 0,
             "judge": "门内判据",
         })
+    idx["chapters"].sort(key=lambda c: c["n"])
     files[os.path.join(DEPT, "chapters.json")] = json.dumps(idx, ensure_ascii=False, indent=2) + "\n"
     return files
 
@@ -511,7 +519,9 @@ def main():
     print("✓ 三基 12 章：%d 文件 · 正文 %d 汉字（%d 章）" % (len(files), tot, len(CHAPTERS)))
     for key in sorted(CHAPTERS):
         spec = CHAPTERS[key]
-        slug = "%02d-s%02d-%s" % (spec["n"], spec["n"], key.split("-", 1)[1])
+        slug = "%02d-s%02d-%s" % (spec["n"],
+                                  spec["n"] if spec["n"] <= 12 else spec["n"] - 12,
+                                  key.split("-", 1)[1])
         md = files[os.path.join(DEPT, "chapters", slug, "docs", "zh.md")]
         print("   %2d %-26s %-6s %5d 字" % (spec["n"], spec["title"][:26], spec["part"][2:], len(HANZI.findall(md))))
     return 0

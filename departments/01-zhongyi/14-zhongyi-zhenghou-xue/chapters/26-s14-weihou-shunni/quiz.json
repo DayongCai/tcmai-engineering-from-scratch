@@ -1,0 +1,80 @@
+{
+  "lesson": "26-s14-weihou-shunni",
+  "title": "危候与顺逆：词面判据能做与不能做的事",
+  "subject": "14-zhongyi-zhenghou-xue",
+  "stage": "三基·补篇",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "三档危候的名称是？",
+      "options": [
+        "轻/中/重",
+        "厥脱 / 脱绝 / 陷逆",
+        "顺/逆/危",
+        "闭/脱/亡"
+      ],
+      "correct": 1,
+      "explanation": "档名取自 `口语别名.json` 的危象段。"
+    },
+    {
+      "stage": "check",
+      "question": "候名命中与「候选」的区别是？",
+      "options": [
+        "没有区别",
+        "候选只命中治则用语，不作为危候判定",
+        "候选更严重",
+        "候名命中是人工判的"
+      ],
+      "correct": 1,
+      "explanation": "只靠治法词会把普通候算成危候，所以停在候选。"
+    },
+    {
+      "stage": "check",
+      "question": "「阳病见阴，病必危殆」说的是？",
+      "options": [
+        "字面危象",
+        "证的走向（阴阳相传）",
+        "用药禁忌",
+        "脉象"
+      ],
+      "correct": 1,
+      "explanation": "顺逆看走向，与词面判据互补。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么「经脉闭塞」不宜直接算危候？",
+      "options": [
+        "因为不在附录",
+        "因为它是病机描述，缺危象语义",
+        "因为重复",
+        "因为字数少"
+      ],
+      "correct": 1,
+      "explanation": "字面命中不等于危候，需回原书复核。"
+    },
+    {
+      "stage": "post",
+      "question": "两路同时命中的条数说明什么？",
+      "options": [
+        "判据最可靠的一批",
+        "统计错误",
+        "重复计数",
+        "应删除"
+      ],
+      "correct": 0,
+      "explanation": "42 条两路都好，是精度最高的一批。"
+    },
+    {
+      "stage": "post",
+      "question": "本层能用于什么？",
+      "options": [
+        "临床生死判断",
+        "检索与教学复核",
+        "替代四诊",
+        "开急救医嘱"
+      ],
+      "correct": 1,
+      "explanation": "词面判据只做检索与教学，边界写在章内。"
+    }
+  ]
+}

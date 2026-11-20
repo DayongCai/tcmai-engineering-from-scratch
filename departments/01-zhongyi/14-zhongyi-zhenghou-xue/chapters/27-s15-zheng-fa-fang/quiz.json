@@ -1,0 +1,80 @@
+{
+  "lesson": "27-s15-zheng-fa-fang",
+  "title": "证—法—方对接：从候到治则到方症的索引",
+  "subject": "14-zhongyi-zhenghou-xue",
+  "stage": "三基·补篇",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "本层把「方」锚在哪两个位置？",
+      "options": [
+        "方剂学目录与主治",
+        "「X症：」与方剂后缀（汤散丸丹…）",
+        "药材名与剂型",
+        "门与类"
+      ],
+      "correct": 1,
+      "explanation": "两个锚点都在【方症】字段内部。"
+    },
+    {
+      "stage": "check",
+      "question": "含多首方的候占比约？",
+      "options": [
+        "不到 5%",
+        "约四成（42.5%）",
+        "几乎全部",
+        "为零"
+      ],
+      "correct": 1,
+      "explanation": "790 / 1860。"
+    },
+    {
+      "stage": "check",
+      "question": "取不到方名的 297 条怎么处理？",
+      "options": [
+        "编一个名字",
+        "记 null 并写明原因",
+        "整条删掉",
+        "用候名代替"
+      ],
+      "correct": 1,
+      "explanation": "不硬造名字。"
+    },
+    {
+      "stage": "check",
+      "question": "「证名为标帜」在本层的含义是？",
+      "options": [
+        "方名决定证名",
+        "证名提示治则方向，方是历史落点",
+        "方与证无关",
+        "证名可省略"
+      ],
+      "correct": 1,
+      "explanation": "第 10 章的规则在这一层的延伸。"
+    },
+    {
+      "stage": "post",
+      "question": "方名频次 Top 说明的是？",
+      "options": [
+        "哪些方最好",
+        "哪些方被反复当作某类候的落点",
+        "药材用量",
+        "方剂年代"
+      ],
+      "correct": 1,
+      "explanation": "频次是书上的落点统计，不是疗效排序。"
+    },
+    {
+      "stage": "post",
+      "question": "本层的边界是？",
+      "options": [
+        "可以据此开方",
+        "只做对接索引，不给剂量与处方",
+        "可替代方剂学",
+        "可判断疗效"
+      ],
+      "correct": 1,
+      "explanation": "处方属临床行为。"
+    }
+  ]
+}

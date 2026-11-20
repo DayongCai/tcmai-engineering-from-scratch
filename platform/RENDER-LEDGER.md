@@ -6,12 +6,12 @@
 | 指标 | 值 |
 |---|---|
 | 课程（有 course.yaml） | 189 |
-| 章 | 2166 |
-| 成片齐（rendered） | **2154** |
+| 章 | 2169 |
+| 成片齐（rendered） | **2169** |
 | 部分（partial） | 0 |
-| 无（missing） | 12 |
-| 实测时长合计 | 88:45（88.7 小时） |
-| 成片字节合计 | 7.29 GB |
+| 无（missing） | 0 |
+| 实测时长合计 | 88:57（89.0 小时） |
+| 成片字节合计 | 7.31 GB |
 
 ## 逐课
 
@@ -30,7 +30,7 @@
 | 中医外科学 `01-zhongyi/11-zhongyi-waike-xue` | 01-zhongyi | 6 | 13 | 13 | 0 | 0 | 0:19 | 23 MB |
 | 中医妇科学 `01-zhongyi/12-zhongyi-fuke-xue` | 01-zhongyi | 6 | 13 | 13 | 0 | 0 | 0:18 | 21 MB |
 | 中医儿科学 `01-zhongyi/13-zhongyi-erke-xue` | 01-zhongyi | 6 | 14 | 14 | 0 | 0 | 0:18 | 21 MB |
-| 14-zhongyi-zhenghou-xue `01-zhongyi/14-zhongyi-zhenghou-xue` | 01-zhongyi | — | 24 | 12 | 0 | 12 | 0:10 | 12 MB |
+| 14-zhongyi-zhenghou-xue `01-zhongyi/14-zhongyi-zhenghou-xue` | 01-zhongyi | — | 27 | 27 | 0 | 0 | 0:23 | 25 MB |
 | 中医各家学说 `01-zhongyi/15-zhongyi-gejia-xueshuo` | 01-zhongyi | 7 | 8 | 8 | 0 | 0 | 0:08 | 9 MB |
 | 中医哲学史 `01-zhongyi/16-zhongyi-zhexue-shi` | 01-zhongyi | 2 | 8 | 8 | 0 | 0 | 0:08 | 9 MB |
 | 中医急诊学 `01-zhongyi/17-zhongyi-jizhen-xue` | 01-zhongyi | 8 | 12 | 12 | 0 | 0 | 0:13 | 14 MB |
