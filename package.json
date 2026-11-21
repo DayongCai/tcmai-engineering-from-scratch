@@ -257,6 +257,7 @@
     "zhenghou:ocr:rootmap": "python scripts/zgh_ocr/build_root_map.py",
     "zhenghou:ocr:verify": "python scripts/zgh_ocr/verify_bodies.py && python scripts/zgh_ocr/report.py",
     "scan:open": "node scripts/scan_external_pending.js",
-    "books:data": "node scripts/build_books_data.js"
+    "books:data": "node scripts/build_books_data.js",
+    "textbooks:release:check": "node scripts/check_release_assets.js --check"
   }
 }

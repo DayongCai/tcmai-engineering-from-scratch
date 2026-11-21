@@ -1,5 +1,20 @@
 # 变更日志
 
+### 发布事实核验：「已发布」改成可核三件事（资产在 / sha256 对得上 / 拿得回来）
+
+并行会话在 `418b9cab` 记了一句「release 附件回读一致」。按本项目「只认证据」的口径，这句话要能当场复核，
+所以新增 `scripts/check_release_assets.js`（只读：GET + Range，不上传、不改远端）并实测：
+
+| 对象 | 结论 | 证据 |
+|---|---|---|
+| 《中医证候学》EPUB + PDF | **真发布** | Release `zhenghou-2026-11-21`（主仓）：2 资产 · `draft=false` · published 2026-11-21T01:39:50Z；`digest` 与本地 sha256 **逐字节一致**（epub `6b003b39…`、pdf `f3d2b58c…`）；Range 206 可取回，epub 首字节 `PK` |
+| 五卷 `books-v1` | **未发布** | 主仓 releases 列表只有 1 个；`DayongCai/tcm-course-books` 匿名 404（私有或未建） |
+
+- 判定口径写进 `textbooks/README.md`「发布状态」：资产非草稿 + sha256 与 `digest` 一致 + Range 可取回，三条同时成立才算发布；
+  `download_count` 或一句 CHANGELOG 都不算证据。
+- `npm run textbooks:release:check` 即该门；`--tag` / `--repo` / `--dir` 可指定，同名匹配不到时按「同扩展名 + 同体积」唯一匹配（中文名资产会被 GitHub 压成 default，故资产用 ASCII 名）。
+
+
 ### 构建收口：站点正文与元数据分家（9 个页面不再下载 134 MB），计数回到事实 2,169
 
 对着 `ai-engineering-from-scratch` 的构建模式逐项体检后，补三处**构建缺陷**（内容未改一字）：

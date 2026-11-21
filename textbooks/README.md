@@ -315,7 +315,19 @@ node textbooks/build_book.js --all --pdf           # 五卷 PDF（xelatex · CJK
 node textbooks/build_book.js --publish-check      # 出版件校核：zip 结构 / 目录 / 章数 / 封面
 python scripts/publish_books_github.py --dry-run  # 发布计划（Release 附件）
 npm run textbooks:publish                         # 真正发布：DayongCai/tcm-course-books · books-v1
+node scripts/check_release_assets.js --check      # 发布事实核验：附件 ↔ 本地产物（体积 / sha256 / 可取回）
 ```
+
+### 发布状态（2026-11-21 实测，不靠记忆）
+
+| 对象 | 状态 | 证据 |
+|---|---|---|
+| 《中医证候学》单书 EPUB + PDF | **已发布** | Release `zhenghou-2026-11-21`（主仓）：2 个资产、`draft=false`、published 2026-11-21T01:39:50Z；资产 `digest` 与本地 sha256 逐字节一致（epub `6b003b39…`、pdf `f3d2b58c…`），Range 请求 206 可取回 |
+| 五卷 `books-v1`（EPUB 5 + PDF 5 + 清单） | **未发布** | 主仓 `releases` 列表只有 1 个 release；`DayongCai/tcm-course-books` 匿名访问 404（私有或未建），需带 PAT 才能确认 |
+
+口径：**「已发布」= 三项同时成立**——资产在且非草稿、sha256 与 GitHub 记录的 `digest` 一致、能 Range 取回。
+只写一句「已发」或只看到 `download_count` 都不算；`scripts/check_release_assets.js --check` 就是干这个的（只读，不上传）。
+注意 GitHub 会把非 ASCII 资产名压成 `default`，所以资产用 ASCII 名，中文书名放在 release 标题与正文里。
 
 **缺工具时明确报错，不生成占位文件。** 2026-11-18 本机实测：pandoc 3.5（`%LOCALAPPDATA%\pandoc`）、
 xelatex MiKTeX 25.12（`%LOCALAPPDATA%\Programs\MiKTeX\miktex\bin\x64`），两者都由
