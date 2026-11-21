@@ -5,7 +5,7 @@ window.TCMAI_BOOKS = {
   "totals": {
     "volumes": 5,
     "chapters": 2588,
-    "words": 36627323,
+    "words": 36630623,
     "epub": 5,
     "epubOnDisk": 5,
     "pdfOnDisk": 5
@@ -28,7 +28,7 @@ window.TCMAI_BOOKS = {
       "words": 13370445,
       "epub": {
         "path": "textbooks/build/volume-1-sheng.epub",
-        "bytes": 15371137,
+        "bytes": 15371132,
         "ok": true
       },
       "pdf": {
@@ -73,10 +73,10 @@ window.TCMAI_BOOKS = {
       "audience": "已能读写基础代码的中医药学生",
       "focus": "伤寒金匮温病的状态建模、中药方剂的嵌入表示、专科辨证",
       "chapters": 785,
-      "words": 11705204,
+      "words": 11708504,
       "epub": {
         "path": "textbooks/build/volume-2-zhang.epub",
-        "bytes": 13175949,
+        "bytes": 13180340,
         "ok": true
       },
       "pdf": {
@@ -86,12 +86,12 @@ window.TCMAI_BOOKS = {
       },
       "html": {
         "path": "textbooks/build/volume-2-zhang.html",
-        "bytes": 35732382,
+        "bytes": 35743196,
         "ok": true
       },
       "md": {
         "path": "textbooks/build/volume-2-zhang.md",
-        "bytes": 34405217,
+        "bytes": 34414591,
         "ok": true
       },
       "release": [
@@ -124,7 +124,7 @@ window.TCMAI_BOOKS = {
       "words": 11315314,
       "epub": {
         "path": "textbooks/build/volume-3-zhuang.epub",
-        "bytes": 13127275,
+        "bytes": 13127273,
         "ok": true
       },
       "pdf": {
@@ -171,7 +171,7 @@ window.TCMAI_BOOKS = {
       "words": 101841,
       "epub": {
         "path": "textbooks/build/volume-4-lao.epub",
-        "bytes": 326942,
+        "bytes": 326945,
         "ok": true
       },
       "pdf": {
@@ -218,7 +218,7 @@ window.TCMAI_BOOKS = {
       "words": 134519,
       "epub": {
         "path": "textbooks/build/volume-5-yi.epub",
-        "bytes": 391409,
+        "bytes": 391411,
         "ok": true
       },
       "pdf": {
