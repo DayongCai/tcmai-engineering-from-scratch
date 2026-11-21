@@ -4,8 +4,8 @@ window.TCMAI_BOOKS = {
   "series": "中医药 · 从零工程",
   "totals": {
     "volumes": 5,
-    "chapters": 2588,
-    "words": 36630623,
+    "chapters": 2495,
+    "words": 36635423,
     "epub": 5,
     "epubOnDisk": 5,
     "pdfOnDisk": 5
@@ -28,12 +28,12 @@ window.TCMAI_BOOKS = {
       "words": 13370445,
       "epub": {
         "path": "textbooks/build/volume-1-sheng.epub",
-        "bytes": 15371132,
+        "bytes": 15371137,
         "ok": true
       },
       "pdf": {
         "path": "textbooks/build/volume-1-sheng.pdf",
-        "bytes": 32136151,
+        "bytes": 32136162,
         "ok": true
       },
       "html": {
@@ -50,13 +50,13 @@ window.TCMAI_BOOKS = {
         {
           "name": "volume-1-sheng.epub",
           "bytes": 15371137,
-          "sha256": "a359d63058edf7af06ebfe2636e68a09c58a5a90eed2dc4d9a3a1a6c55c7e1e4",
+          "sha256": "3c2dc7c500604d0d539b6f035b8511a73aa669d356161a2510e62937e076a34f",
           "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-1-sheng.epub"
         },
         {
           "name": "volume-1-sheng.pdf",
-          "bytes": 32136151,
-          "sha256": "1769de3e6fcdff766ccc6fc14a7cda4cee5244de93d4bf0e10bbce4b66cab255",
+          "bytes": 32136162,
+          "sha256": "271f7cbfafa2f8c470e07b520f3c803fbf9cda98642f99431171dd76750c880e",
           "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-1-sheng.pdf"
         }
       ]
@@ -76,12 +76,12 @@ window.TCMAI_BOOKS = {
       "words": 11708504,
       "epub": {
         "path": "textbooks/build/volume-2-zhang.epub",
-        "bytes": 13180340,
+        "bytes": 13180344,
         "ok": true
       },
       "pdf": {
         "path": "textbooks/build/volume-2-zhang.pdf",
-        "bytes": 28218456,
+        "bytes": 28226496,
         "ok": true
       },
       "html": {
@@ -97,14 +97,14 @@ window.TCMAI_BOOKS = {
       "release": [
         {
           "name": "volume-2-zhang.epub",
-          "bytes": 13175949,
-          "sha256": "50ac9a22c6255d49254effaf831ab27cf54e446b594fc68fd5176d3acbb71e8a",
+          "bytes": 13180344,
+          "sha256": "d47ddb55b9fd43d7a1348b95ff852ca44a6937921524711b4e5a55fcc8f63588",
           "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-2-zhang.epub"
         },
         {
           "name": "volume-2-zhang.pdf",
-          "bytes": 28218456,
-          "sha256": "ea783752014b303301042db8988e49f658bcc0fcaad3538b05824163d898bad4",
+          "bytes": 28226496,
+          "sha256": "e4302d0b2154cb42bce2e607054da91371361aa645916655d7fc26a5c16e59b2",
           "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-2-zhang.pdf"
         }
       ]
@@ -120,39 +120,39 @@ window.TCMAI_BOOKS = {
       ],
       "audience": "具备完整工程能力的四年级学生",
       "focus": "大模型与智能体、多模态融合、知识图谱、设备与机器人、治理与伦理",
-      "chapters": 875,
-      "words": 11315314,
+      "chapters": 782,
+      "words": 11320114,
       "epub": {
         "path": "textbooks/build/volume-3-zhuang.epub",
-        "bytes": 13127273,
+        "bytes": 13093094,
         "ok": true
       },
       "pdf": {
         "path": "textbooks/build/volume-3-zhuang.pdf",
-        "bytes": 27801729,
+        "bytes": 27920815,
         "ok": true
       },
       "html": {
         "path": "textbooks/build/volume-3-zhuang.html",
-        "bytes": 36485886,
+        "bytes": 36574620,
         "ok": true
       },
       "md": {
         "path": "textbooks/build/volume-3-zhuang.md",
-        "bytes": 32725021,
+        "bytes": 32821925,
         "ok": true
       },
       "release": [
         {
           "name": "volume-3-zhuang.epub",
-          "bytes": 13127275,
-          "sha256": "e0f9538cc2d58c7e36ee5126a8c3b24baab49804cdd87b6150f59397183c4ec8",
+          "bytes": 13093094,
+          "sha256": "8ad61ff6f5d10b4c6738c89b7d877ac70d669bbdd6549ccd4010c4b598da4021",
           "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-3-zhuang.epub"
         },
         {
           "name": "volume-3-zhuang.pdf",
-          "bytes": 27801729,
-          "sha256": "1c27a0f3cf2aa0cc2332b402d119ffd174ead01bfcba6fc7e1cb9dcf60278727",
+          "bytes": 27920815,
+          "sha256": "9daad9889368c3d098138b7d62f848af41ad30957dde9ee6c231f55258e9ffd0",
           "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-3-zhuang.pdf"
         }
       ]
@@ -171,12 +171,12 @@ window.TCMAI_BOOKS = {
       "words": 101841,
       "epub": {
         "path": "textbooks/build/volume-4-lao.epub",
-        "bytes": 326945,
+        "bytes": 326943,
         "ok": true
       },
       "pdf": {
         "path": "textbooks/build/volume-4-lao.pdf",
-        "bytes": 651753,
+        "bytes": 651747,
         "ok": true
       },
       "html": {
@@ -192,14 +192,14 @@ window.TCMAI_BOOKS = {
       "release": [
         {
           "name": "volume-4-lao.epub",
-          "bytes": 326942,
-          "sha256": "9b306a3c332d7749a17906b9544d8af0c9a15fd2b0da9a5b3b4c1760110bab01",
+          "bytes": 326943,
+          "sha256": "0eeb1aebcf67fb1c1eadf8e0649dc2d2052368ce1662c61bfc39f4fb0e2e79cf",
           "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-4-lao.epub"
         },
         {
           "name": "volume-4-lao.pdf",
-          "bytes": 651753,
-          "sha256": "2cbb1b744036329f99d4cb93f2cdc89588e7b68b4d9ad16f38a184dfe680848a",
+          "bytes": 651747,
+          "sha256": "ee1f3520855474d057d30b2db85b8e78d24d882da6346bb5c3de48912f3eb687",
           "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-4-lao.pdf"
         }
       ]
@@ -218,12 +218,12 @@ window.TCMAI_BOOKS = {
       "words": 134519,
       "epub": {
         "path": "textbooks/build/volume-5-yi.epub",
-        "bytes": 391411,
+        "bytes": 391412,
         "ok": true
       },
       "pdf": {
         "path": "textbooks/build/volume-5-yi.pdf",
-        "bytes": 712506,
+        "bytes": 712501,
         "ok": true
       },
       "html": {
@@ -239,14 +239,14 @@ window.TCMAI_BOOKS = {
       "release": [
         {
           "name": "volume-5-yi.epub",
-          "bytes": 391409,
-          "sha256": "6d1e5eb0a36265d2acc910ced403c02a33f83b9d77157afaa89ea6fc2392b553",
+          "bytes": 391412,
+          "sha256": "4a3ba175fd5b99a1ce4940aa0e701bb99969f1eff4b967eb9824fb91d13778ca",
           "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-5-yi.epub"
         },
         {
           "name": "volume-5-yi.pdf",
-          "bytes": 712506,
-          "sha256": "c773550c0cbd749ff5bd4767ae70ff8a36ced90a5d1df2be7a763dcb994d308d",
+          "bytes": 712501,
+          "sha256": "16aa970bd681f7b14d77ed13d95607e932ce2329e01587e6edc5bfa2b7549af7",
           "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-5-yi.pdf"
         }
       ]
@@ -260,70 +260,70 @@ window.TCMAI_BOOKS = {
       {
         "name": "volume-1-sheng.epub",
         "bytes": 15371137,
-        "sha256": "a359d63058edf7af06ebfe2636e68a09c58a5a90eed2dc4d9a3a1a6c55c7e1e4",
+        "sha256": "3c2dc7c500604d0d539b6f035b8511a73aa669d356161a2510e62937e076a34f",
         "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-1-sheng.epub"
       },
       {
         "name": "volume-1-sheng.pdf",
-        "bytes": 32136151,
-        "sha256": "1769de3e6fcdff766ccc6fc14a7cda4cee5244de93d4bf0e10bbce4b66cab255",
+        "bytes": 32136162,
+        "sha256": "271f7cbfafa2f8c470e07b520f3c803fbf9cda98642f99431171dd76750c880e",
         "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-1-sheng.pdf"
       },
       {
         "name": "volume-2-zhang.epub",
-        "bytes": 13175949,
-        "sha256": "50ac9a22c6255d49254effaf831ab27cf54e446b594fc68fd5176d3acbb71e8a",
+        "bytes": 13180344,
+        "sha256": "d47ddb55b9fd43d7a1348b95ff852ca44a6937921524711b4e5a55fcc8f63588",
         "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-2-zhang.epub"
       },
       {
         "name": "volume-2-zhang.pdf",
-        "bytes": 28218456,
-        "sha256": "ea783752014b303301042db8988e49f658bcc0fcaad3538b05824163d898bad4",
+        "bytes": 28226496,
+        "sha256": "e4302d0b2154cb42bce2e607054da91371361aa645916655d7fc26a5c16e59b2",
         "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-2-zhang.pdf"
       },
       {
         "name": "volume-3-zhuang.epub",
-        "bytes": 13127275,
-        "sha256": "e0f9538cc2d58c7e36ee5126a8c3b24baab49804cdd87b6150f59397183c4ec8",
+        "bytes": 13093094,
+        "sha256": "8ad61ff6f5d10b4c6738c89b7d877ac70d669bbdd6549ccd4010c4b598da4021",
         "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-3-zhuang.epub"
       },
       {
         "name": "volume-3-zhuang.pdf",
-        "bytes": 27801729,
-        "sha256": "1c27a0f3cf2aa0cc2332b402d119ffd174ead01bfcba6fc7e1cb9dcf60278727",
+        "bytes": 27920815,
+        "sha256": "9daad9889368c3d098138b7d62f848af41ad30957dde9ee6c231f55258e9ffd0",
         "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-3-zhuang.pdf"
       },
       {
         "name": "volume-4-lao.epub",
-        "bytes": 326942,
-        "sha256": "9b306a3c332d7749a17906b9544d8af0c9a15fd2b0da9a5b3b4c1760110bab01",
+        "bytes": 326943,
+        "sha256": "0eeb1aebcf67fb1c1eadf8e0649dc2d2052368ce1662c61bfc39f4fb0e2e79cf",
         "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-4-lao.epub"
       },
       {
         "name": "volume-4-lao.pdf",
-        "bytes": 651753,
-        "sha256": "2cbb1b744036329f99d4cb93f2cdc89588e7b68b4d9ad16f38a184dfe680848a",
+        "bytes": 651747,
+        "sha256": "ee1f3520855474d057d30b2db85b8e78d24d882da6346bb5c3de48912f3eb687",
         "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-4-lao.pdf"
       },
       {
         "name": "volume-5-yi.epub",
-        "bytes": 391409,
-        "sha256": "6d1e5eb0a36265d2acc910ced403c02a33f83b9d77157afaa89ea6fc2392b553",
+        "bytes": 391412,
+        "sha256": "4a3ba175fd5b99a1ce4940aa0e701bb99969f1eff4b967eb9824fb91d13778ca",
         "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-5-yi.epub"
       },
       {
         "name": "volume-5-yi.pdf",
-        "bytes": 712506,
-        "sha256": "c773550c0cbd749ff5bd4767ae70ff8a36ced90a5d1df2be7a763dcb994d308d",
+        "bytes": 712501,
+        "sha256": "16aa970bd681f7b14d77ed13d95607e932ce2329e01587e6edc5bfa2b7549af7",
         "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/volume-5-yi.pdf"
       },
       {
         "name": "books-series.json",
         "bytes": 2755,
-        "sha256": "3fe2f94be20f1818e0f429b5a217c83ca6048e3754d5cf8bdbd78ca52733cf25",
+        "sha256": "7ca20ca64709538f4561220357736a3e9b2fe0ecd859ed5c74e30957f19aa92b",
         "url": "https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/books-v1/download/books-series.json"
       }
     ],
-    "totalBytes": 131916062
+    "totalBytes": 132013406
   }
 };
