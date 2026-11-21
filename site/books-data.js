@@ -4,8 +4,8 @@ window.TCMAI_BOOKS = {
   "series": "中医药 · 从零工程",
   "totals": {
     "volumes": 5,
-    "chapters": 2690,
-    "words": 36585388,
+    "chapters": 2655,
+    "words": 36627396,
     "epub": 5,
     "epubOnDisk": 5,
     "pdfOnDisk": 5
@@ -28,7 +28,7 @@ window.TCMAI_BOOKS = {
       "words": 13370445,
       "epub": {
         "path": "textbooks/build/volume-1-sheng.epub",
-        "bytes": 15371136,
+        "bytes": 15371132,
         "ok": true
       },
       "pdf": {
@@ -72,11 +72,11 @@ window.TCMAI_BOOKS = {
       ],
       "audience": "已能读写基础代码的中医药学生",
       "focus": "伤寒金匮温病的状态建模、中药方剂的嵌入表示、专科辨证",
-      "chapters": 887,
-      "words": 11663269,
+      "chapters": 852,
+      "words": 11705277,
       "epub": {
         "path": "textbooks/build/volume-2-zhang.epub",
-        "bytes": 13148173,
+        "bytes": 13191306,
         "ok": true
       },
       "pdf": {
@@ -86,12 +86,12 @@ window.TCMAI_BOOKS = {
       },
       "html": {
         "path": "textbooks/build/volume-2-zhang.html",
-        "bytes": 35464159,
+        "bytes": 35621845,
         "ok": true
       },
       "md": {
         "path": "textbooks/build/volume-2-zhang.md",
-        "bytes": 34144646,
+        "bytes": 34294467,
         "ok": true
       },
       "release": [
@@ -124,7 +124,7 @@ window.TCMAI_BOOKS = {
       "words": 11315314,
       "epub": {
         "path": "textbooks/build/volume-3-zhuang.epub",
-        "bytes": 13115334,
+        "bytes": 13127268,
         "ok": true
       },
       "pdf": {
@@ -134,12 +134,12 @@ window.TCMAI_BOOKS = {
       },
       "html": {
         "path": "textbooks/build/volume-3-zhuang.html",
-        "bytes": 36448702,
+        "bytes": 36485886,
         "ok": true
       },
       "md": {
         "path": "textbooks/build/volume-3-zhuang.md",
-        "bytes": 32699886,
+        "bytes": 32725021,
         "ok": true
       },
       "release": [
@@ -171,7 +171,7 @@ window.TCMAI_BOOKS = {
       "words": 101841,
       "epub": {
         "path": "textbooks/build/volume-4-lao.epub",
-        "bytes": 326942,
+        "bytes": 326939,
         "ok": true
       },
       "pdf": {
@@ -218,7 +218,7 @@ window.TCMAI_BOOKS = {
       "words": 134519,
       "epub": {
         "path": "textbooks/build/volume-5-yi.epub",
-        "bytes": 391409,
+        "bytes": 391412,
         "ok": true
       },
       "pdf": {

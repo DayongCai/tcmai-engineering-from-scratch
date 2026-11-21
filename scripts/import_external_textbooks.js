@@ -224,7 +224,7 @@ if (MODE_CHECK) {
           continue;
         }
         const body = fs.readFileSync(app, 'utf8');
-        const fangs = (body.match(/^### 方 \d+ · /gm) || []).length;
+        const fangs = (body.match(/^#{2,3} (?:\d+|方 \d+) · /gm) || []).length;
         if (fangs !== plan.chapters.length) {
           console.error(`✗ ${sub.dept}/${sub.slug} 附录方数 ${fangs} ≠ 留档可切 ${plan.chapters.length}`);
           bad += 1;

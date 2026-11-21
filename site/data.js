@@ -115,7 +115,7 @@ window.TCMAI_DATA = {
     "subjectsWip": 0,
     "subjectsPlanned": 0,
     "videos": 2169,
-    "textbookChapters": 2657
+    "textbookChapters": 2590
   },
   "semesterPlan": [
     {
@@ -4720,14 +4720,15 @@ window.TCMAI_DATA = {
             "source": "departments/04-gushang/07-zhongyi-jinshang-xue/chapters/*/docs/zh.md（课程正文改写扩写）",
             "reference": "standards/gushang-jinshang/reference-modern.json#中医筋伤学（黄桂成主编，十三五规划教材，239 页）",
             "referenceUsage": "只对读章节结构与术语，不逐字搬运；引用标章·节，不标页码",
-            "appendix": "附录A-傷科大成方剂辑录.md（外源古籍 45 方，不计章数/字数）",
+            "appendix": "附录A-傷科大成方剂辑录.md",
             "external": {
               "id": "shangke-dacheng",
               "title": "傷科大成",
               "sha256": "45a132a17492ca5d6ffa747d9df3095ea65ff07a5ab3cc04b03a760aa645bbb0",
               "role": "appendix-only"
             },
-            "extractedAt": "2026-11-21"
+            "extractedAt": "2026-11-21",
+            "appendixNote": "外源古籍 45 方，不计章数/字数"
           }
         },
         {
@@ -4760,22 +4761,23 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/04-gushang/08-gushang-shoufa-zhiliao",
-            "chaptersWritten": 77,
-            "words": 36025,
+            "chaptersWritten": 10,
+            "words": 49390,
             "status": "wip",
-            "layer": "external-source",
-            "origin": "external",
-            "source": "standards/materials/textbooks-batch/external-registry.json#zhenggu-xinfa",
+            "layer": "rewrite",
+            "origin": "course-rewrite",
+            "source": "departments/04-gushang/08-gushang-shoufa-zhiliao/chapters/*/docs/zh.md（课程正文改写扩写）",
+            "reference": "standards/gushang-shoufa-zhiliao/reference-modern.json#中医骨伤科学（十四五规划教材，794 页）",
+            "referenceUsage": "只对读章节结构与术语，不逐字搬运；引用标章·节，不标页码",
+            "appendix": "附录A-正骨心法要旨辑录.md",
+            "appendixNote": "醫宗金鑑·正骨心法要旨 77 篇，不计章数/字数",
             "external": {
               "id": "zhenggu-xinfa",
               "title": "醫宗金鑑·正骨心法要旨",
-              "url": "https://jicheng.tw/tcm/book/%E9%86%AB%E5%AE%97%E9%87%91%E9%91%91/%E6%AD%A3%E9%AA%A8%E5%BF%83%E6%B3%95%E8%A6%81%E6%97%A8/index.html",
               "sha256": "24c62475ccfe8e36e88f2120cde98c778482675cfd215cec9768d9dd5e233fc4",
-              "baseText": "《御纂醫宗金鑑》，光緒十八年（1892）上海五彩書局石印本（香港中文大學圖書館掃描本），卷七十一至卷七十四；《欽定四庫全書·子部五·醫家類·御纂醫宗金鑑》卷八十七至卷九十（漢リポ掃描及文字化本）",
-              "fetchedAt": "2026-10-21",
-              "coverage": "古籍可对上的部分；现代内容未覆盖"
+              "role": "appendix-only"
             },
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-11-21"
           }
         },
         {
