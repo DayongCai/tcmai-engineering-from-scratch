@@ -30,7 +30,7 @@ const COURSES_DIR = path.join(ROOT, 'platform', 'courses');
 const { makeEnv, loadScript, boot } = require('../scripts/dom-shim');
 
 // 顺序必须与 site/*.html 里的 <script> 顺序一致
-const BUNDLE = ['data.js', 'content.js', 'progress.js', 'figures.js', 'app.js'];
+const BUNDLE = ['data.js', 'content-index.js', 'content.js', 'progress.js', 'figures.js', 'app.js'];
 
 /**
  * 渲染一页。

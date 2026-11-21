@@ -106,15 +106,15 @@ window.TCMAI_DATA = {
   "counts": {
     "departments": 9,
     "subjects": 189,
-    "chapters": 2166,
+    "chapters": 2169,
     "hours": 11547,
     "semesters": 10,
     "stages": 5,
-    "chaptersBuilt": 2166,
+    "chaptersBuilt": 2169,
     "subjectsDone": 189,
     "subjectsWip": 0,
     "subjectsPlanned": 0,
-    "videos": 2154,
+    "videos": 2169,
     "textbookChapters": 2692
   },
   "semesterPlan": [
@@ -1246,7 +1246,7 @@ window.TCMAI_DATA = {
       "stageTitle": "壮",
       "years": "大四",
       "hours": 1926,
-      "chapters": 399,
+      "chapters": 402,
       "subjects": [
         {
           "slug": "14-zhongyi-zhenghou-xue",
@@ -1930,7 +1930,7 @@ window.TCMAI_DATA = {
       "focus": "理法方药的内核：基础理论、经典、临床各科",
       "path": "departments/01-zhongyi",
       "hours": 1458,
-      "chapters": 288,
+      "chapters": 291,
       "subjects": [
         {
           "n": 1,
@@ -2446,8 +2446,8 @@ window.TCMAI_DATA = {
           "semester": 7,
           "stage": "zhuang",
           "hours": 72,
-          "chaptersTarget": 24,
-          "chaptersBuilt": 24,
+          "chaptersTarget": 27,
+          "chaptersBuilt": 27,
           "pct": 100,
           "status": "done",
           "glyph": "✅",
@@ -2468,8 +2468,8 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/14-zhongyi-zhenghou-xue",
             "chaptersWritten": 12,
-            "words": 208605,
-            "files": 18,
+            "words": 2533179,
+            "files": 25,
             "figures": 9,
             "status": "done",
             "appendices": [
@@ -10211,6 +10211,24 @@ window.TCMAI_DATA = {
         "n": 24,
         "slug": "24-m12-xu-men",
         "title": "虚门（各论·M12）",
+        "status": "✅"
+      },
+      {
+        "n": 25,
+        "slug": "25-s13-zhengxiang-xue",
+        "title": "证象学：单位病机、合法格与可解释率",
+        "status": "✅"
+      },
+      {
+        "n": 26,
+        "slug": "26-s14-weihou-shunni",
+        "title": "危候与顺逆：词面判据能做与不能做的事",
+        "status": "✅"
+      },
+      {
+        "n": 27,
+        "slug": "27-s15-zheng-fa-fang",
+        "title": "证—法—方对接：从候到治则到方症的索引",
         "status": "✅"
       }
     ],

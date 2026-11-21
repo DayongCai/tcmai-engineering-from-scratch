@@ -39,13 +39,22 @@ test('site/data.js 存在且可执行，挂载 TCMAI_DATA', () => {
   assert.strictEqual(w.TCMAI_DATA.semesterPlan.length, 10);
 });
 
-test('site/content.js 存在且挂载 CONTENT / PATHS / GLOSSARY 三份数据', () => {
+test('site/content.js 挂载正文，content-index.js 挂载 INDEX / PATHS / GLOSSARY', () => {
   assert.ok(fs.existsSync(path.join(SITE, 'content.js')), '缺 site/content.js');
-  const w = loadGenerated('content.js');
-  assert.ok(w.TCMAI_CONTENT, '缺 window.TCMAI_CONTENT');
+  assert.ok(fs.existsSync(path.join(SITE, 'content-index.js')), '缺 site/content-index.js');
+  const c = loadGenerated('content.js');
+  assert.ok(c.TCMAI_CONTENT, '缺 window.TCMAI_CONTENT');
+  const w = loadGenerated('content-index.js');
+  assert.ok(w.TCMAI_CONTENT_INDEX, '缺 window.TCMAI_CONTENT_INDEX');
   assert.ok(Array.isArray(w.TCMAI_PATHS), '缺 window.TCMAI_PATHS');
   assert.ok(w.TCMAI_GLOSSARY, '缺 window.TCMAI_GLOSSARY');
   assert.strictEqual(w.TCMAI_PATHS.length, 5, '学习路径应为 5 条');
+  // 元数据必须覆盖每一章正文：否则非章节页会少卡片
+  assert.strictEqual(
+    Object.keys(w.TCMAI_CONTENT_INDEX).length,
+    Object.keys(c.TCMAI_CONTENT).length,
+    'content-index 与 content 章数不一致',
+  );
   for (const k of ['tcm-terms', 'ai-terms', 'bridge-map']) {
     assert.ok(w.TCMAI_GLOSSARY[k] && w.TCMAI_GLOSSARY[k].length > 500, `术语文档 ${k} 未渲染或内容过短`);
   }

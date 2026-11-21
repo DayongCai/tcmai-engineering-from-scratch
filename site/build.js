@@ -193,14 +193,36 @@ for (const dept of catalog.departments) {
 const contentJs =
   '/* 生成物: site/build.js — 请勿手工编辑 */\n' +
   'window.TCMAI_CONTENT = ' +
-  JSON.stringify(content, null, 2) +
-  ';\n' +
-  'window.TCMAI_PATHS = ' +
-  JSON.stringify(learningPaths, null, 2) +
-  ';\n' +
-  'window.TCMAI_GLOSSARY = ' +
-  JSON.stringify(glossary, null, 2) +
+  JSON.stringify(content) +
   ';\n';
+
+// ── 4b. content-index.js：每章只留元数据（约 1 MB），给非章节页用 ──
+// 正文 137 MB 只应进章节页；把元数据与正文分开，是为了让「总览 / 课程目录 / 学科 / 术语表」
+// 这些页面不用为了显示一个章节标题去下载整库正文。
+const contentIndex = {};
+for (const [k, c] of Object.entries(content)) {
+  contentIndex[k] = {
+    key: c.key,
+    deptSlug: c.deptSlug,
+    deptTitle: c.deptTitle,
+    subjectSlug: c.subjectSlug,
+    subjectTitle: c.subjectTitle,
+    chapterSlug: c.chapterSlug,
+    n: c.n,
+    title: c.title,
+    motto: c.motto,
+    problem: c.problem,
+    codeCount: Object.keys(c.code || {}).length,
+    video: c.video,
+    videoPoster: c.videoPoster,
+  };
+}
+const indexJs =
+  '/* 生成物: site/build.js — 请勿手工编辑 */\n' +
+  `window.TCMAI_CONTENT_INDEX = ${JSON.stringify(contentIndex)};\n` +
+  `window.TCMAI_PATHS = ${JSON.stringify(learningPaths)};\n` +
+  `window.TCMAI_GLOSSARY = ${JSON.stringify(glossary)};\n`;
+fs.writeFileSync(path.join(SITE, 'content-index.js'), indexJs, 'utf8');
 
 const contentStr = contentJs;
 

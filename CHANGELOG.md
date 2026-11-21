@@ -1,5 +1,20 @@
 # 变更日志
 
+### 构建收口：站点正文与元数据分家（9 个页面不再下载 134 MB），计数回到事实 2,169
+
+对着 `ai-engineering-from-scratch` 的构建模式逐项体检后，补三处**构建缺陷**（内容未改一字）：
+
+- **站点分包**：`site/content.js` 134.6 MB 原先被 10 个页面全部引入——打开「术语表」也要先下整库正文。
+  现拆成 `content-index.js`（1.9 MB，每章元数据 + 学习路径 + 术语表）与 `content.js`（正文，**仅章节页**加载）。
+  `site/pages.js` 按页给脚本清单；`site/app.js` 的元数据读取改用 `TCMAI_CONTENT_INDEX`。
+- **计数回事实**：并行会话把证候学章目录加码后，`catalog.json` 还停在 2,166 章 / 2,154 视频。
+  重算后 **2,169 章节 · 2,169 成片（100%）· 11,547 学时**，`FORKING.md` scope 行同步 2169。
+- **测试跟上构建**：`test_site_artifacts` 改为分别校验两份产物并断言 `content-index` 覆盖面 = `content` 章数；
+  `test_site_render` 的 bundle 顺序补 `content-index.js`。
+
+门：`test_site_artifacts` 9/9 · `test_site_render` 31/31 · `npm run check` exit 0。
+
+
 ### 中医证候学统稿：教材补三附录（25 文件 / 253.3 万字）· 27 章成片 · EPUB 4.2 MB · PDF 单书
 
 **一、教材正文补齐**。教材原为「凡例 + 12 章辞典正文 + 附录 A–I」22 个文件；本轮把三块补篇层

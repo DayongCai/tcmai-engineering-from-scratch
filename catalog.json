@@ -107,15 +107,15 @@
   "counts": {
     "departments": 9,
     "subjects": 189,
-    "chapters": 2166,
+    "chapters": 2169,
     "hours": 11547,
     "semesters": 10,
     "stages": 5,
-    "chaptersBuilt": 2166,
+    "chaptersBuilt": 2169,
     "subjectsDone": 189,
     "subjectsWip": 0,
     "subjectsPlanned": 0,
-    "videos": 2154,
+    "videos": 2169,
     "textbookChapters": 2692
   },
   "semesterPlan": [
@@ -1247,7 +1247,7 @@
       "stageTitle": "壮",
       "years": "大四",
       "hours": 1926,
-      "chapters": 399,
+      "chapters": 402,
       "subjects": [
         {
           "slug": "14-zhongyi-zhenghou-xue",
@@ -7171,7 +7171,7 @@
       "focus": "理法方药的内核：基础理论、经典、临床各科",
       "path": "departments/01-zhongyi",
       "hours": 1458,
-      "chapters": 288,
+      "chapters": 291,
       "subjects": [
         {
           "n": 1,
@@ -7687,8 +7687,8 @@
           "semester": 7,
           "stage": "zhuang",
           "hours": 72,
-          "chaptersTarget": 24,
-          "chaptersBuilt": 24,
+          "chaptersTarget": 27,
+          "chaptersBuilt": 27,
           "pct": 100,
           "status": "done",
           "glyph": "✅",
@@ -7709,8 +7709,8 @@
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/14-zhongyi-zhenghou-xue",
             "chaptersWritten": 12,
-            "words": 208605,
-            "files": 18,
+            "words": 2533179,
+            "files": 25,
             "figures": 9,
             "status": "done",
             "appendices": [

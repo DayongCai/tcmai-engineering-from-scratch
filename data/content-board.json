@@ -12,8 +12,8 @@
   "departments": 9,
   "subjects": 189,
   "hours": 11547,
-  "chaptersTarget": 2166,
-  "chaptersBuilt": 2166,
+  "chaptersTarget": 2169,
+  "chaptersBuilt": 2169,
   "chaptersPct": 100,
   "textbookSubjects": 138,
   "textbookChapters": 2690,
@@ -136,7 +136,7 @@
    "kind": "章节未建",
    "n": 0,
    "detail": [
-    "189 学科目标 2166 章，已建 2166"
+    "189 学科目标 2169 章，已建 2169"
    ],
    "fix": "按学科整科推满（内经/伤寒已满科），而不是全库平均铺开"
   },
@@ -197,8 +197,8 @@
    "slug": "01-zhongyi",
    "title": "中医系",
    "subjects": 23,
-   "chaptersTarget": 288,
-   "chaptersBuilt": 288,
+   "chaptersTarget": 291,
+   "chaptersBuilt": 291,
    "textbookSubjects": 22,
    "hanzi": 5943345,
    "thin": 5,
@@ -315,14 +315,7 @@
   "withDocs": 2169,
   "withQuiz": 2169,
   "withOutputs": 2169,
-  "mismatched": [
-   {
-    "dept": "中医系",
-    "subject": "中医证候学",
-    "declared": 24,
-    "onDisk": 27
-   }
-  ]
+  "mismatched": []
  },
  "syndromeDetail": {
   "total": 104,

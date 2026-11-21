@@ -36,11 +36,15 @@ const PAGES = [
  *   semtensor.js 在求值时就读取 window.TCMAI_SEMTENSOR_SPEC，
  *   顺序反了会在加载期直接抛「缺少坐标与颜色常量」。
  *   sphere.js 又必须在 semtensor.js 之后（它 require 计算核心）。
+ *
+ * content.js 是**全量正文**（137 MB），只有章节页需要；其余页面用 content-index.js
+ * （每章几十字节的元数据，约 1 MB）。早先 10 个页面都挂 content.js，
+ * 等于打开「术语表」也要先下 137 MB —— 这是构建缺陷，不是内容问题。
  */
 const SCRIPTS = [
   'data.js',
   'semtensor-spec.js',
-  'content.js',
+  'content-index.js',
   'books-data.js',
   'progress.js',
   'semtensor.js',
@@ -48,6 +52,19 @@ const SCRIPTS = [
   'figures.js',
   'app.js',
 ];
+
+/** 只有这些页面需要全量正文：content.js 插在 content-index.js 之后、app.js 之前 */
+const FULL_CONTENT_PAGES = new Set(['chapter']);
+
+function scriptsFor(id) {
+  if (!FULL_CONTENT_PAGES.has(id)) return SCRIPTS;
+  const out = [];
+  for (const s of SCRIPTS) {
+    if (s === 'app.js') out.push('content.js');
+    out.push(s);
+  }
+  return out;
+}
 
 function page(id, label, desc) {
   return `<!DOCTYPE html>
@@ -71,7 +88,7 @@ function page(id, label, desc) {
     </div>
   </noscript>
 </div>
-${SCRIPTS.map((s) => `<script src="${s}"></script>`).join('\n')}
+${scriptsFor(id).map((s) => `<script src="${s}"></script>`).join('\n')}
 </body>
 </html>
 `;

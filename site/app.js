@@ -11,6 +11,8 @@
 
 const DATA = window.TCMAI_DATA;
 const CONTENT = window.TCMAI_CONTENT || {};
+// 元数据（无正文）：非章节页只加载这个，避免为了一个标题下载 137 MB 正文。
+const CONTENT_INDEX = window.TCMAI_CONTENT_INDEX || CONTENT;
 const PATHS = window.TCMAI_PATHS || [];
 const GLOSSARY = window.TCMAI_GLOSSARY || {};
 // 语义张量计算核心（site/semtensor.js）。它必须在 app.js 之前加载 ——
@@ -83,7 +85,7 @@ function countsBar() {
 // ── 页面：总览 ──
 function renderIndex() {
   const d = DATA.domain;
-  const built = Object.values(CONTENT);
+  const built = Object.values(CONTENT_INDEX);
   return shell('index.html', d.title, `
 <h1>${esc(d.title)} · 从零起步，生长壮老已，终成医圣</h1>
 <p class="lede">${esc(d.motto)} —— ${DATA.counts.departments} 院系 · ${DATA.counts.subjects} 学科 · ${DATA.counts.chapters} 章节 · ${DATA.counts.hours} 学时。每个章节都留下一件能塞进工作流的产出物。</p>
@@ -182,7 +184,7 @@ function chapterCard(c) {
     <div class="card-sub">${esc(c.deptTitle)} · ${esc(c.subjectTitle)}</div>
     ${c.motto ? `<div class="small muted" style="margin-top:8px">${esc(c.motto)}</div>` : ''}
     <div class="card-meta">
-      <span class="tag">${Object.keys(c.code).length} 个代码文件</span>
+      <span class="tag">${c.codeCount != null ? c.codeCount : Object.keys(c.code || {}).length} 个代码文件</span>
       <span class="tag">6 题小测</span>
       ${c.video ? '<span class="tag core">有视频</span>' : ''}
     </div>
@@ -246,7 +248,7 @@ function renderSubject() {
   if (!s) return shell('catalog.html', '未找到', `<h1>未找到学科</h1><p class="muted">路径 <code>${esc(key)}</code> 不在课程表中。<a href="catalog.html">返回课程目录</a></p>`);
 
   const stage = DATA.stages.find((x) => x.id === s.stage) || {};
-  const chapters = Object.values(CONTENT)
+  const chapters = Object.values(CONTENT_INDEX)
     .filter((c) => c.deptSlug === s.dept.slug && c.subjectSlug === s.slug)
     .sort((a, b) => (a.n || 0) - (b.n || 0));
 
@@ -323,7 +325,7 @@ ${rows.length === 0
         ${r.built.problem ? `<div class="small muted">${esc(r.built.problem)}</div>` : ''}`
           : `${esc(r.title)}<div class="small muted mono">${esc(r.slug)}</div>`}</span>
         ${r.built
-          ? `<span class="tag">${Object.keys(r.built.code).length} 代码</span>${r.built.video ? '<span class="tag core">视频</span>' : '<span class="tag">待录制</span>'}`
+          ? `<span class="tag">${r.built.codeCount != null ? r.built.codeCount : Object.keys(r.built.code || {}).length} 代码</span>${r.built.video ? '<span class="tag core">视频</span>' : '<span class="tag">待录制</span>'}`
           : '<span class="tag">待写</span>'}
       </li>`).join('')}</ul>
       ${nextUnbuilt
@@ -357,7 +359,7 @@ function renderChapter() {
   const c = CONTENT[key];
   if (!c) return shell('catalog.html', '未找到', `<h1>未找到章节</h1><p class="muted">路径 <code>${esc(key)}</code> 未构建。<a href="catalog.html">返回课程目录</a></p>`);
 
-  const siblings = Object.values(CONTENT)
+  const siblings = Object.values(CONTENT_INDEX)
     .filter((x) => x.subjectSlug === c.subjectSlug && x.deptSlug === c.deptSlug)
     .sort((a, b) => (a.n || 0) - (b.n || 0));
   const idx = siblings.findIndex((x) => x.key === c.key);
