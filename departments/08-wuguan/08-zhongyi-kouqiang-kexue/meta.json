@@ -22,21 +22,21 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/08-wuguan/08-zhongyi-kouqiang-kexue",
-    "chaptersWritten": 13,
-    "words": 13427,
+    "chaptersWritten": 10,
+    "words": 48854,
     "status": "wip",
-    "layer": "external-source",
-    "origin": "external",
+    "layer": "rewrite",
+    "origin": "course-rewrite",
     "source": "standards/materials/textbooks-batch/external-registry.json#kouchide-leiyao",
     "external": {
       "id": "kouchide-leiyao",
       "title": "口齒類要",
-      "url": "https://jicheng.tw/tcm/book/%E5%8F%A3%E9%BD%92%E9%A1%9E%E8%A6%81/index.html",
-      "sha256": "db74dbe8fdf885cc11a26a2addfa57a4c7561b885305cb4179044abe859e673d",
-      "baseText": "日本承應三年（1654年）刊本（國家圖書館掃描本）",
-      "fetchedAt": "2026-10-21",
-      "coverage": "古籍可对上的部分；现代内容未覆盖"
+      "sha256": "db74dbe8fdf885cc",
+      "role": "appendix-only"
     },
-    "extractedAt": "2026-10-21"
+    "extractedAt": "2026-10-21",
+    "appendixNote": "口齒類要（明·薛己）13 篇，不计章数",
+    "sourceNote": "课程正文为统计脚手架占位稿且章题错位；无参考教材电子件，按课程章题重写，不标页码",
+    "appendix": "附录A-口齒類要辑录.md"
   }
 }

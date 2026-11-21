@@ -22,8 +22,12 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/08-wuguan/09-kouqiang-neike-xue",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 10,
+    "words": 52658,
+    "status": "planned",
+    "layer": "rewrite",
+    "origin": "course-rewrite",
+    "createdAt": "2026-11-21",
+    "sourceNote": "本课此前无教材目录，按课程章题新建 10 章；课程正文为脚手架占位稿，无参考电子件"
   }
 }

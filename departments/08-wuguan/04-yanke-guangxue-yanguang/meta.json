@@ -22,8 +22,12 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/08-wuguan/04-yanke-guangxue-yanguang",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 8,
+    "words": 38695,
+    "status": "planned",
+    "layer": "rewrite",
+    "origin": "course-rewrite",
+    "createdAt": "2026-11-21",
+    "sourceNote": "本课此前无教材；课程正文为脚手架占位稿，无参考电子件，按课程章题重写，不标页码不给处方模板"
   }
 }

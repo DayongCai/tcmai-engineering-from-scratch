@@ -13,10 +13,10 @@
     "hanziCount": "上述文件 [\\u4e00-\\u9fa5] 字符数"
   },
   "gapBodyStats": {
-    "gapSubjects": 51,
-    "gapWithBody": 51,
-    "gapWithBodyChapters": 446,
-    "gapWithBodyChars": 4399049,
+    "gapSubjects": 49,
+    "gapWithBody": 49,
+    "gapWithBodyChapters": 428,
+    "gapWithBodyChars": 4321849,
     "gapNoBody": 0
   },
   "totals": {
@@ -26,32 +26,32 @@
     "electives": 18,
     "hours": 11547,
     "chaptersTarget": 2169,
-    "textbookSubjects": 138,
-    "baseSubjects": 116,
-    "extSubjects": 4,
+    "textbookSubjects": 140,
+    "baseSubjects": 120,
+    "extSubjects": 2,
     "hbSubjects": 18,
-    "baseHours": 6741,
-    "extHours": 216,
+    "baseHours": 6993,
+    "extHours": 90,
     "hbHours": 1620,
-    "baseChapters": 1833,
-    "extChapters": 532,
+    "baseChapters": 1869,
+    "extChapters": 138,
     "hbChapters": 130,
-    "baseNonWs": 35823055,
-    "extNonWs": 577820,
+    "baseNonWs": 36057352,
+    "extNonWs": 214152,
     "hbNonWs": 236360,
-    "coverageBaseHours": 58.4,
-    "coverageBaseSubjects": 61.4,
-    "textbookHours": 8577,
-    "chapters": 2495,
-    "hanzi": 30326436,
-    "nonWs": 36637235,
-    "metaWords": 34086937,
+    "coverageBaseHours": 60.6,
+    "coverageBaseSubjects": 63.5,
+    "textbookHours": 8703,
+    "chapters": 2137,
+    "hanzi": 30289649,
+    "nonWs": 36507864,
+    "metaWords": 34050150,
     "registryChapters": 1621,
     "registryChars": 28596788,
     "registryFiles": 100,
     "registrySubjects": 101,
-    "coverageSubjects": 73,
-    "coverageHours": 74.3,
+    "coverageSubjects": 74.1,
+    "coverageHours": 75.4,
     "semesters": 10
   },
   "prereqStats": {
@@ -114,7 +114,7 @@
       "subjects": 25,
       "hours": 1593,
       "weekly": 88.5,
-      "textbooks": 18,
+      "textbooks": 19,
       "depts": 9
     },
     {
@@ -124,7 +124,7 @@
       "subjects": 37,
       "hours": 2196,
       "weekly": 122,
-      "textbooks": 25,
+      "textbooks": 26,
       "depts": 8
     },
     {
@@ -19100,14 +19100,14 @@
           "bridge": "屈光计算→光学公式 / 验光数据→球柱换算",
           "textbook": {
             "dir": "textbooks/08-wuguan/04-yanke-guangxue-yanguang",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 38695,
+            "nonWs": 50891,
+            "metaChapters": 8,
+            "metaWords": 38695,
             "status": "planned",
-            "layer": null,
+            "layer": "rewrite",
             "origin": "base",
             "external": null,
             "registry": null
@@ -19125,9 +19125,7 @@
             "depth": 2,
             "order": 4
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -19303,22 +19301,21 @@
           "textbook": {
             "dir": "textbooks/08-wuguan/08-zhongyi-kouqiang-kexue",
             "exists": true,
-            "chapters": 13,
-            "hanzi": 13427,
-            "nonWs": 18959,
-            "metaChapters": 13,
-            "metaWords": 13427,
+            "chapters": 10,
+            "hanzi": 48854,
+            "nonWs": 63904,
+            "metaChapters": 10,
+            "metaWords": 48854,
             "status": "wip",
-            "layer": "external-source",
-            "origin": "external",
+            "layer": "rewrite",
+            "origin": "base",
             "external": {
               "id": "kouchide-leiyao",
               "title": "口齒類要",
-              "url": "https://jicheng.tw/tcm/book/%E5%8F%A3%E9%BD%92%E9%A1%9E%E8%A6%81/index.html",
-              "sha256": "db74dbe8fdf885cc11a26a2addfa57a4c7561b885305cb4179044abe859e673d",
-              "baseText": "日本承應三年（1654年）刊本（國家圖書館掃描本）",
-              "fetchedAt": "2026-10-21",
-              "coverage": "古籍可对上的部分；现代内容未覆盖"
+              "sha256": "db74dbe8fdf885cc",
+              "baseText": "",
+              "fetchedAt": "",
+              "coverage": ""
             },
             "registry": null
           },
@@ -19336,9 +19333,7 @@
             "depth": 2,
             "order": 7
           },
-          "flags": [
-            "external-source"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -19356,14 +19351,14 @@
           "bridge": "龋病分级→有序分类 / X 线影像→语义分割",
           "textbook": {
             "dir": "textbooks/08-wuguan/09-kouqiang-neike-xue",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
+            "exists": true,
+            "chapters": 10,
+            "hanzi": 52658,
+            "nonWs": 68672,
+            "metaChapters": 10,
+            "metaWords": 52658,
             "status": "planned",
-            "layer": null,
+            "layer": "rewrite",
             "origin": "base",
             "external": null,
             "registry": null
@@ -19381,9 +19376,7 @@
             "depth": 2,
             "order": 8
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -19630,22 +19623,21 @@
           "textbook": {
             "dir": "textbooks/08-wuguan/15-zhongyi-meirong-pifu",
             "exists": true,
-            "chapters": 381,
-            "hanzi": 202647,
-            "nonWs": 344709,
-            "metaChapters": 381,
-            "metaWords": 202647,
+            "chapters": 8,
+            "hanzi": 39080,
+            "nonWs": 50830,
+            "metaChapters": 8,
+            "metaWords": 39080,
             "status": "wip",
-            "layer": "external-source",
-            "origin": "external",
+            "layer": "rewrite",
+            "origin": "base",
             "external": {
               "id": "waike-xinfa",
               "title": "醫宗金鑑·外科心法要訣",
-              "url": "https://jicheng.tw/tcm/book/%E9%86%AB%E5%AE%97%E9%87%91%E9%91%91/%E5%A4%96%E7%A7%91%E5%BF%83%E6%B3%95%E8%A6%81%E8%A8%A3/index.html",
-              "sha256": "9989a4279eff2b9db6169cbb8b159e3ac5ead8eaf8b21550037c730a92111794",
-              "baseText": "《御纂醫宗金鑑》，光緒十八年（1892）上海五彩書局石印本（香港中文大學圖書館掃描本），外科卷一至卷十六；《欽定四庫全書·子部五·醫家類·御纂醫宗金鑑》卷六十一至卷七十六（漢リポ掃描及文字化本）",
-              "fetchedAt": "2026-10-21",
-              "coverage": "古籍可对上的部分；现代内容未覆盖"
+              "sha256": "9989a4279eff2b9d",
+              "baseText": "",
+              "fetchedAt": "",
+              "coverage": ""
             },
             "registry": null
           },
@@ -19663,9 +19655,7 @@
             "depth": 5,
             "order": 15
           },
-          "flags": [
-            "external-source"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -19918,14 +19908,14 @@
           "bridge": "屈光计算→光学公式 / 验光数据→球柱换算",
           "textbook": {
             "dir": "textbooks/08-wuguan/04-yanke-guangxue-yanguang",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 38695,
+            "nonWs": 50891,
+            "metaChapters": 8,
+            "metaWords": 38695,
             "status": "planned",
-            "layer": null,
+            "layer": "rewrite",
             "origin": "base",
             "external": null,
             "registry": null
@@ -19943,9 +19933,7 @@
             "depth": 2,
             "order": 4
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -20071,22 +20059,21 @@
           "textbook": {
             "dir": "textbooks/08-wuguan/08-zhongyi-kouqiang-kexue",
             "exists": true,
-            "chapters": 13,
-            "hanzi": 13427,
-            "nonWs": 18959,
-            "metaChapters": 13,
-            "metaWords": 13427,
+            "chapters": 10,
+            "hanzi": 48854,
+            "nonWs": 63904,
+            "metaChapters": 10,
+            "metaWords": 48854,
             "status": "wip",
-            "layer": "external-source",
-            "origin": "external",
+            "layer": "rewrite",
+            "origin": "base",
             "external": {
               "id": "kouchide-leiyao",
               "title": "口齒類要",
-              "url": "https://jicheng.tw/tcm/book/%E5%8F%A3%E9%BD%92%E9%A1%9E%E8%A6%81/index.html",
-              "sha256": "db74dbe8fdf885cc11a26a2addfa57a4c7561b885305cb4179044abe859e673d",
-              "baseText": "日本承應三年（1654年）刊本（國家圖書館掃描本）",
-              "fetchedAt": "2026-10-21",
-              "coverage": "古籍可对上的部分；现代内容未覆盖"
+              "sha256": "db74dbe8fdf885cc",
+              "baseText": "",
+              "fetchedAt": "",
+              "coverage": ""
             },
             "registry": null
           },
@@ -20104,9 +20091,7 @@
             "depth": 2,
             "order": 7
           },
-          "flags": [
-            "external-source"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -20124,14 +20109,14 @@
           "bridge": "龋病分级→有序分类 / X 线影像→语义分割",
           "textbook": {
             "dir": "textbooks/08-wuguan/09-kouqiang-neike-xue",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
+            "exists": true,
+            "chapters": 10,
+            "hanzi": 52658,
+            "nonWs": 68672,
+            "metaChapters": 10,
+            "metaWords": 52658,
             "status": "planned",
-            "layer": null,
+            "layer": "rewrite",
             "origin": "base",
             "external": null,
             "registry": null
@@ -20149,9 +20134,7 @@
             "depth": 2,
             "order": 8
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -20448,22 +20431,21 @@
           "textbook": {
             "dir": "textbooks/08-wuguan/15-zhongyi-meirong-pifu",
             "exists": true,
-            "chapters": 381,
-            "hanzi": 202647,
-            "nonWs": 344709,
-            "metaChapters": 381,
-            "metaWords": 202647,
+            "chapters": 8,
+            "hanzi": 39080,
+            "nonWs": 50830,
+            "metaChapters": 8,
+            "metaWords": 39080,
             "status": "wip",
-            "layer": "external-source",
-            "origin": "external",
+            "layer": "rewrite",
+            "origin": "base",
             "external": {
               "id": "waike-xinfa",
               "title": "醫宗金鑑·外科心法要訣",
-              "url": "https://jicheng.tw/tcm/book/%E9%86%AB%E5%AE%97%E9%87%91%E9%91%91/%E5%A4%96%E7%A7%91%E5%BF%83%E6%B3%95%E8%A6%81%E8%A8%A3/index.html",
-              "sha256": "9989a4279eff2b9db6169cbb8b159e3ac5ead8eaf8b21550037c730a92111794",
-              "baseText": "《御纂醫宗金鑑》，光緒十八年（1892）上海五彩書局石印本（香港中文大學圖書館掃描本），外科卷一至卷十六；《欽定四庫全書·子部五·醫家類·御纂醫宗金鑑》卷六十一至卷七十六（漢リポ掃描及文字化本）",
-              "fetchedAt": "2026-10-21",
-              "coverage": "古籍可对上的部分；现代内容未覆盖"
+              "sha256": "9989a4279eff2b9d",
+              "baseText": "",
+              "fetchedAt": "",
+              "coverage": ""
             },
             "registry": null
           },
@@ -20481,9 +20463,7 @@
             "depth": 5,
             "order": 15
           },
-          "flags": [
-            "external-source"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -20630,7 +20610,7 @@
           "count": 3,
           "hours": 144,
           "weekly": 8,
-          "textbooks": 2,
+          "textbooks": 3,
           "subjects": [
             {
               "order": 3,
@@ -20660,7 +20640,7 @@
               "halfTerm": null,
               "chaptersTarget": 8,
               "chaptersPerWeek": 0.5,
-              "chapters": 0,
+              "chapters": 8,
               "status": "planned",
               "origin": "base",
               "prereqCount": 1,
@@ -20696,7 +20676,7 @@
           "count": 5,
           "hours": 342,
           "weekly": 19,
-          "textbooks": 3,
+          "textbooks": 4,
           "subjects": [
             {
               "order": 6,
@@ -20726,9 +20706,9 @@
               "halfTerm": null,
               "chaptersTarget": 10,
               "chaptersPerWeek": 0.6,
-              "chapters": 13,
+              "chapters": 10,
               "status": "wip",
-              "origin": "external",
+              "origin": "base",
               "prereqCount": 2,
               "depth": 2
             },
@@ -20743,7 +20723,7 @@
               "halfTerm": null,
               "chaptersTarget": 10,
               "chaptersPerWeek": 0.6,
-              "chapters": 0,
+              "chapters": 10,
               "status": "planned",
               "origin": "base",
               "prereqCount": 1,
@@ -20886,9 +20866,9 @@
               "halfTerm": null,
               "chaptersTarget": 8,
               "chaptersPerWeek": 0.5,
-              "chapters": 381,
+              "chapters": 8,
               "status": "wip",
-              "origin": "external",
+              "origin": "base",
               "prereqCount": 2,
               "depth": 5
             }
@@ -20959,26 +20939,26 @@
         "electives": 0,
         "hours": 1098,
         "chaptersTarget": 144,
-        "textbookSubjects": 11,
-        "baseSubjects": 5,
-        "extSubjects": 4,
+        "textbookSubjects": 13,
+        "baseSubjects": 9,
+        "extSubjects": 2,
         "hbSubjects": 2,
-        "baseHours": 342,
-        "extHours": 216,
+        "baseHours": 594,
+        "extHours": 90,
         "hbHours": 180,
-        "baseChapters": 52,
-        "extChapters": 532,
+        "baseChapters": 88,
+        "extChapters": 138,
         "hbChapters": 12,
-        "baseNonWs": 530507,
-        "extNonWs": 577820,
+        "baseNonWs": 764804,
+        "extNonWs": 214152,
         "hbNonWs": 22578,
-        "coverageBaseHours": 31.1,
-        "textbookHours": 738,
-        "chapters": 596,
-        "hanzi": 809103,
-        "nonWs": 1130905,
-        "coverageSubjects": 64.7,
-        "coverageHours": 67.2,
+        "coverageBaseHours": 54.1,
+        "textbookHours": 864,
+        "chapters": 238,
+        "hanzi": 772316,
+        "nonWs": 1001534,
+        "coverageSubjects": 76.5,
+        "coverageHours": 78.7,
         "semesterSpan": "4–10",
         "peakWeekly": 19,
         "peakSemester": 6
@@ -23682,30 +23662,6 @@
           "note": "教学章已有正文（8 章 / 11.0 万字），未接教材出版线"
         },
         {
-          "slug": "04-yanke-guangxue-yanguang",
-          "title": "眼科光学与验光",
-          "type": "Build",
-          "semester": 5,
-          "hours": 54,
-          "body": {
-            "chapters": 8,
-            "chars": 42366
-          },
-          "note": "教学章已有正文（8 章 / 4.2 万字），未接教材出版线"
-        },
-        {
-          "slug": "09-kouqiang-neike-xue",
-          "title": "口腔内科学",
-          "type": "Clinic",
-          "semester": 6,
-          "hours": 72,
-          "body": {
-            "chapters": 10,
-            "chars": 34834
-          },
-          "note": "教学章已有正文（10 章 / 3.5 万字），未接教材出版线"
-        },
-        {
           "slug": "10-yanke-yingxiang-jiancha",
           "title": "眼科影像与检查技术",
           "type": "Build",
@@ -23921,10 +23877,10 @@
   "checks": {
     "curriculumSubjects": 189,
     "curriculumHours": 11547,
-    "diskChapters": 2495,
-    "diskHanzi": 30326436,
+    "diskChapters": 2137,
+    "diskHanzi": 30289649,
     "registryFiles": 100,
-    "subjectsWithoutTextbook": 51,
+    "subjectsWithoutTextbook": 49,
     "unmatchedRegistrySubjects": []
   }
 }
