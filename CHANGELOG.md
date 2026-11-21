@@ -36,6 +36,14 @@ course.yaml 27 章全部 `video: rendered`，实测时长由 ffprobe 回填；�
   PDF 源用 png 版、EPUB 仍用 svg。产物在 `build/`（`.gitignore` 已排除电子书成品）。
 - EPUB 结构自检：45 个文件、`mimetype` 正确、`nav.xhtml` + `ch001…` 齐全。
 
+**四、发布**。`git push origin main` 落地（远端 `bb14c158` 与本地同 sha，diff 为空，本次推 4 个提交）；
+两本电子书以 release 附件发布（不入库）：
+<https://github.com/DayongCai/tcmai-engineering-from-scratch/releases/tag/zhenghou-2026-11-21>
+`zhongyi-zhenghou-xue.epub`（4,239,540 B）· `zhongyi-zhenghou-xue.pdf`（14,028,114 B），
+两份都从 release 下载回来与本地逐字节比对，**sha256 一致**。
+GitHub 会把非 ASCII 资产名压成 `default`（上传时 `?name=中医证候学.epub` 也被压），故资产用 ASCII 名，
+中文书名落在 release 标题与正文里。
+
 
 ### 危候 80 条逐条回原页复核：候名 80/80 命中，双证 42，目录页 22/22 对齐
 
