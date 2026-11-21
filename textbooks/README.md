@@ -323,7 +323,10 @@ node scripts/check_release_assets.js --check      # 发布事实核验：附件 
 | 对象 | 状态 | 证据 |
 |---|---|---|
 | 《中医证候学》单书 EPUB + PDF | **已发布** | Release `zhenghou-2026-11-21`（主仓）：2 个资产、`draft=false`、published 2026-11-21T01:39:50Z；资产 `digest` 与本地 sha256 逐字节一致（epub `6b003b39…`、pdf `f3d2b58c…`），Range 请求 206 可取回 |
-| 五卷 `books-v1`（EPUB 5 + PDF 5 + 清单） | **未发布** | 主仓 `releases` 列表只有 1 个 release；`DayongCai/tcm-course-books` 匿名访问 404（私有或未建），需带 PAT 才能确认 |
+| 五卷 `books-v1`（EPUB 5 + PDF 5 + 清单） | **已发布**（2026-11-21） | Release `books-v1`（主仓）：11 个附件 / 125.5 MB / 2,690 章；11/11 资产 `digest` 与本地 sha256 一致、Range 206 可取回（`node scripts/check_release_assets.js --tag books-v1 --check` exit 0） |
+
+发布目标已从 `DayongCai/tcm-course-books`（匿名 404）改为**主仓**：附件匿名可下，省掉私有仓这道坎。
+令牌来源是 git credential helper（`git credential fill`，`gho_…`，scopes `repo`），**不落仓库、不落日志**。
 
 口径：**「已发布」= 三项同时成立**——资产在且非草稿、sha256 与 GitHub 记录的 `digest` 一致、能 Range 取回。
 只写一句「已发」或只看到 `download_count` 都不算；`scripts/check_release_assets.js --check` 就是干这个的（只读，不上传）。

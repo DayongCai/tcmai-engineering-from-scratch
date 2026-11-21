@@ -1,5 +1,13 @@
 # 变更日志
 
+### 五卷教材发布到主仓 `books-v1`：11 附件 / 125.5 MB，11/11 逐字节核验
+
+- `publish_books_github.py` 默认目标改为 **`DayongCai/tcmai-engineering-from-scratch`**（原 `tcm-course-books` 匿名 404）：附件匿名可下。
+- 发布：`books-v1` — volume-1..5 的 EPUB + PDF 共 10 件，加 `books-series.json` 清单，**125.5 MB / 2,690 章**。
+- 核验（不是记账）：`node scripts/check_release_assets.js --tag books-v1 --check` → **11/11** 体积一致、`digest` 与本地 sha256 一致、Range **206** 可取回，exit 0。
+- 令牌取自 git credential helper（`gho_…`，scopes `repo`），不写仓库、不写日志。
+
+
 ### 发布事实核验：「已发布」改成可核三件事（资产在 / sha256 对得上 / 拿得回来）
 
 并行会话在 `418b9cab` 记了一句「release 附件回读一致」。按本项目「只认证据」的口径，这句话要能当场复核，

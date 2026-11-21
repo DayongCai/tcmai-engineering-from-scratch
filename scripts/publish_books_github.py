@@ -3,7 +3,7 @@
 """publish_books_github.py —— 把五卷教材 EPUB 发到 GitHub Release（只走 API）
 
     export GITHUB_TOKEN=***                       # fine-grained: Contents 读写 + Releases
-    python scripts/publish_books_github.py --repo DayongCai/tcm-course-books --create-repo --tag books-v1
+    python scripts/publish_books_github.py --repo DayongCai/tcmai-engineering-from-scratch --tag books-v1
     python scripts/publish_books_github.py --dry-run     # 只打印计划，不发请求
     python scripts/publish_books_github.py --self-test    # 假响应跑通链路，一个字节都不外发
 
@@ -60,7 +60,7 @@ def _fake_req(method, url, token, data=None, extra_headers=None, raw_file=None, 
     if method == 'GET' and '/repos/' in url and url.count('/') == 5:
         return 404, {'error': 'Not Found'}
     if method == 'POST' and url.endswith('/user/repos'):
-        return 201, {'full_name': 'DayongCai/tcm-course-books'}
+        return 201, {'full_name': 'DayongCai/tcmai-engineering-from-scratch'}
     if method == 'POST' and '/releases' in url and 'assets' not in url:
         return 201, {'upload_url': UPLOAD_HOST + '/repos/x/y/releases/1/assets{?name,label}', 'assets': []}
     if method == 'POST' and '/assets' in url:
@@ -190,7 +190,7 @@ def release_body(series, assets):
 ```bash
 node textbooks/build_book.js --all --epub --pdf   # 需要 pandoc + xelatex
 node textbooks/build_book.js --publish-check      # zip 结构 / 目录 / 章数 / 封面 四项校核
-python scripts/publish_books_github.py --repo DayongCai/tcm-course-books --tag books-v1
+python scripts/publish_books_github.py --repo DayongCai/tcmai-engineering-from-scratch --tag books-v1
 ```
 
 > 本教材仅用于教育与科研，不构成临床诊疗建议。
@@ -199,7 +199,7 @@ python scripts/publish_books_github.py --repo DayongCai/tcm-course-books --tag b
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--repo', default='DayongCai/tcm-course-books', help='owner/repo')
+    ap.add_argument('--repo', default='DayongCai/tcmai-engineering-from-scratch', help='owner/repo（默认主仓：公开，附件匿名可下）')
     ap.add_argument('--tag', default='books-v1')
     ap.add_argument('--books-dir', default=os.path.join(ROOT, 'textbooks', 'build'))
     ap.add_argument('--create-repo', action='store_true', help='仓库不存在时创建（私有）')
