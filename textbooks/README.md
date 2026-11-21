@@ -323,7 +323,7 @@ node scripts/check_release_assets.js --check      # 发布事实核验：附件 
 | 对象 | 状态 | 证据 |
 |---|---|---|
 | 《中医证候学》单书 EPUB + PDF | **已发布** | Release `zhenghou-2026-11-21`（主仓）：2 个资产、`draft=false`、published 2026-11-21T01:39:50Z；资产 `digest` 与本地 sha256 逐字节一致（epub `6b003b39…`、pdf `f3d2b58c…`），Range 请求 206 可取回 |
-| 五卷 `books-v1`（EPUB 5 + PDF 5 + 清单） | **已发布**（2026-11-21） | Release `books-v1`（主仓）：11 个附件 / 125.5 MB / 2,690 章；11/11 资产 `digest` 与本地 sha256 一致、Range 206 可取回（`node scripts/check_release_assets.js --tag books-v1 --check` exit 0） |
+| 五卷 `books-v1`（EPUB 5 + PDF 5 + 清单） | **已发布**（2026-11-21，筋伤学/骨伤手法重写后重发） | Release `books-v1`（主仓）：11 个附件 / **125.8 MB** / **2,588 章** / PDF **19,294 页**；11/11 资产 `digest` 与本地 sha256 一致、Range 206 可取回（`node scripts/check_release_assets.js --tag books-v1 --check` exit 0） |
 
 发布目标已从 `DayongCai/tcm-course-books`（匿名 404）改为**主仓**：附件匿名可下，省掉私有仓这道坎。
 令牌来源是 git credential helper（`git credential fill`，`gho_…`，scopes `repo`），**不落仓库、不落日志**。
@@ -387,11 +387,11 @@ npm run site                       # 重建页面（已把上一步串进 build 
 | 卷 | 章 | 字 | Markdown | 单文件 HTML | EPUB | PDF | PDF 页数 |
 |---|--:|--:|--:|--:|--:|--:|--:|
 | 一 生 · 启蒙（1–4 学期） | 798 | 13,370,445 | 36.9 MB | 42.9 MB | 14.7 MB | 30.6 MB | 7,178 |
-| 二 长 · 积累（5–6） | 887 | 11,663,269 | 32.3 MB | 33.5 MB | 12.5 MB | 26.7 MB | 5,593 |
-| 三 壮 · 鼎盛（7–8） | 875 | 11,315,314 | 30.9 MB | 34.5 MB | 12.5 MB | 26.5 MB | 6,186 |
+| 二 长 · 积累（5–6） | 785 | 11,705,204 | 32.8 MB | 34.1 MB | 12.6 MB | 26.9 MB | 5,658 |
+| 三 壮 · 鼎盛（7–8） | 875 | 11,315,314 | 31.2 MB | 34.8 MB | 12.5 MB | 26.5 MB | 6,198 |
 | 四 老 · 固化（9） | 54 | 101,841 | 0.29 MB | 0.37 MB | 0.3 MB | 0.6 MB | 110 |
 | 五 已 · 转型（10） | 76 | 134,519 | 0.38 MB | 0.48 MB | 0.4 MB | 0.7 MB | 150 |
-| **合计** | **2,690** | **36,585,388** | | | **40.3 MB** | **85.1 MB** | **19,217** |
+| **合计** | **2,588** | **36,627,323** | | | **40.5 MB** | **85.3 MB** | **19,294** |
 
 产物落在 `textbooks/build/`，**不入库**（`.gitignore`）—— Markdown/HTML 一次 `--all` 约 10 秒；EPUB 约 2 分钟；**PDF 是小时级**
 （卷一单本 7,178 页，xelatex 排一版约 1 小时）——入库的应是源稿，成品走 Release 附件。

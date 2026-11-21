@@ -261,12 +261,15 @@ def main():
 
     for a in assets:
         have = existing.get(a['name'])
-        if have and have.get('size') == a['bytes']:
-            print(f'  ↷ {a["name"]} 已存在且大小一致，跳过')
+        # 体积相同 ≠ 内容相同：EPUB/PDF 每构建一次字节都会变（内嵌时间戳/字体子集），
+        # 只比体积会把旧附件当新的跳过。实测踩过：3 个附件体积一致、sha256 不同。
+        if have and have.get('size') == a['bytes'] and have.get('digest') == f'sha256:{a["sha256"]}':
+            print(f'  ↷ {a["name"]} 已存在且 sha256 一致，跳过')
             continue
         if have:
             req('DELETE', f'{API}/repos/{args.repo}/releases/assets/{have["id"]}', token)
-            print(f'  ✗ {a["name"]} 旧附件大小不符，已删除后重传')
+            why = '体积相同但内容不同' if have.get('size') == a['bytes'] else '大小不符'
+            print(f'  ✗ {a["name"]} 旧附件{why}，已删除后重传')
         code, payload = req('POST', f'{base}?name={a["name"]}', token, raw_file=a['path'],
                            extra_headers={'Content-Type': 'application/epub+zip'
                                           if a['name'].endswith('.epub') else 'application/json'})
@@ -278,10 +281,11 @@ def main():
     code, rel = req('GET', f'{API}/repos/{args.repo}/releases/tags/{args.tag}', token)
     if code != 200:
         die(1, f'回读 Release 失败 {code}')
-    got = {a['name']: a['size'] for a in rel.get('assets', [])}
-    missing = [a['name'] for a in assets if got.get(a['name']) != a['bytes']]
+    got = {a['name']: (a['size'], a.get('digest')) for a in rel.get('assets', [])}
+    missing = [a['name'] for a in assets
+               if got.get(a['name']) != (a['bytes'], f'sha256:{a["sha256"]}')]
     if missing:
-        die(1, f'回读缺附件或大小不符: {missing}')
+        die(1, f'回读缺附件或体积/指纹不符: {missing}')
     print(f'\n✅ 已发布 {args.repo} · {args.tag} · {len(assets)} 个附件 / {total / 1048576:.1f} MB')
     print(f'   {rel.get("html_url", "")}')
 
