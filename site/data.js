@@ -115,7 +115,7 @@ window.TCMAI_DATA = {
     "subjectsWip": 0,
     "subjectsPlanned": 0,
     "videos": 2169,
-    "textbookChapters": 2692
+    "textbookChapters": 2657
   },
   "semesterPlan": [
     {
@@ -4712,22 +4712,22 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/04-gushang/07-zhongyi-jinshang-xue",
-            "chaptersWritten": 45,
-            "words": 8400,
+            "chaptersWritten": 10,
+            "words": 47974,
             "status": "wip",
-            "layer": "external-source",
-            "origin": "external",
-            "source": "standards/materials/textbooks-batch/external-registry.json#shangke-dacheng",
+            "layer": "rewrite",
+            "origin": "course-rewrite",
+            "source": "departments/04-gushang/07-zhongyi-jinshang-xue/chapters/*/docs/zh.md（课程正文改写扩写）",
+            "reference": "standards/gushang-jinshang/reference-modern.json#中医筋伤学（黄桂成主编，十三五规划教材，239 页）",
+            "referenceUsage": "只对读章节结构与术语，不逐字搬运；引用标章·节，不标页码",
+            "appendix": "附录A-傷科大成方剂辑录.md（外源古籍 45 方，不计章数/字数）",
             "external": {
               "id": "shangke-dacheng",
               "title": "傷科大成",
-              "url": "https://jicheng.tw/tcm/book/%E5%82%B7%E7%A7%91%E5%A4%A7%E6%88%90/index.html",
               "sha256": "45a132a17492ca5d6ffa747d9df3095ea65ff07a5ab3cc04b03a760aa645bbb0",
-              "baseText": "",
-              "fetchedAt": "2026-10-21",
-              "coverage": "古籍可对上的部分；现代内容未覆盖"
+              "role": "appendix-only"
             },
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-11-21"
           }
         },
         {

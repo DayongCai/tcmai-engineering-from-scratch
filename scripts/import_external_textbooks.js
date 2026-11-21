@@ -211,6 +211,33 @@ if (MODE_CHECK) {
     }
     for (const sub of src.subjects) {
       const dir = path.join(TB, sub.dept, sub.slug);
+      // 已转撰写层/手册层的课，外源正文层不复存在（古籍降为附录），逐章对账没有对象：
+      // 此时要求附录在、方数够，比对着 45 个方名找 45 个文件更接近事实。
+      const metaP = path.join(ROOT, 'departments', sub.dept, sub.slug, 'meta.json');
+      const meta = fs.existsSync(metaP) ? JSON.parse(fs.readFileSync(metaP, 'utf8')) : {};
+      const tb = meta.textbook || {};
+      if (tb.layer && tb.layer !== 'external-source') {
+        const app = tb.appendix ? path.join(abs(dir), tb.appendix) : null;
+        if (!app || !fs.existsSync(app)) {
+          console.error(`✗ ${sub.dept}/${sub.slug} 已转 ${tb.layer} 层，但 meta.textbook.appendix 指向的文件不存在`);
+          bad += 1;
+          continue;
+        }
+        const body = fs.readFileSync(app, 'utf8');
+        const fangs = (body.match(/^### 方 \d+ · /gm) || []).length;
+        if (fangs !== plan.chapters.length) {
+          console.error(`✗ ${sub.dept}/${sub.slug} 附录方数 ${fangs} ≠ 留档可切 ${plan.chapters.length}`);
+          bad += 1;
+          continue;
+        }
+        if (!body.includes(plan.reg.sha256.slice(0, 16))) {
+          console.error(`✗ ${sub.dept}/${sub.slug} 附录缺 sha256 指纹`);
+          bad += 1;
+          continue;
+        }
+        console.log(`  ⤵ ${sub.dept}/${sub.slug} 已转 ${tb.layer} 层：外源降为附录（${fangs} 方，指纹在）`);
+        continue;
+      }
       const existing = fs.existsSync(abs(dir)) ? fs.readdirSync(abs(dir)).filter((f) => /^\d+-第\d+章.*\.md$/.test(f)) : [];
       if (existing.length !== plan.chapters.length) {
         console.error(`✗ ${sub.dept}/${sub.slug} 章文件 ${existing.length} ≠ 留档可切 ${plan.chapters.length}`);
