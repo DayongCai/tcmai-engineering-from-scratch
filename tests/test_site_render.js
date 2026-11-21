@@ -420,3 +420,16 @@ test('[subject] 跨院系前置有显式标记', () => {
     '眼科光学与验光的前置应指向生理学（链接被编码，需按 encodeURIComponent 比对）'
   );
 });
+
+test('[books] 教材页有 Release 次入口：本地链接之外还能免构建下载', () => {
+  const html = render('books').html();
+  assert.ok(/从 GitHub Release 下载/.test(html), '教材页缺「从 GitHub Release 下载」小节');
+  // 有发布记录时必须给出 release 页与逐件直链；没有记录时必须给出发布命令而不是空表
+  if (/releases\/tag\//.test(html)) {
+    assert.ok(/\/download\/volume-\d-[a-z]+\.(epub|pdf)/.test(html), '有发布记录但没渲染附件直链');
+    assert.ok(/sha256（前 12 位）/.test(html), '附件表缺 sha256 列，下载后无法核对');
+    assert.ok(/textbooks:release:check/.test(html), '没写核验命令');
+  } else {
+    assert.ok(/textbooks:publish/.test(html), '无发布记录时应提示发布命令');
+  }
+});

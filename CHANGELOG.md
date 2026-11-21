@@ -1,5 +1,18 @@
 # 变更日志
 
+### 站内「教材」页加 Release 次入口：11 附件直链 + sha256 前 12 位 + 核验命令
+
+- `scripts/build_books_data.js` 同时读 `books-release.json`（远端发布事实）与 `series.json`（本机产物），
+  两者**分开进数据**：本机能构建 ≠ 远端已发布，页面要能分别说明。
+- 每卷卡片加一行「或从 Release：EPUB · PDF」；页尾新增「从 GitHub Release 下载（免构建）」小节，
+  列出 `books-v1` 的 11 个附件（名称 / 体积 / sha256 前 12 / 直链）与 `npm run textbooks:release:check`。
+- 无发布记录时该节降级为发布命令提示，不渲染空表。
+- 新增渲染门：`test_site_render` 第 32 项——教材页必须同时具备 Release 小节与「sha256 列 / 直链 / 核验命令」，
+  缺发布记录时必须有 `textbooks:publish` 提示。
+
+门：`test_site_render` **32/32** · `test_site_artifacts` 9/9 · `check_links --strict` 无断链。
+
+
 ### 五卷教材发布到主仓 `books-v1`：11 附件 / 125.5 MB，11/11 逐字节核验
 
 - `publish_books_github.py` 默认目标改为 **`DayongCai/tcmai-engineering-from-scratch`**（原 `tcm-course-books` 匿名 404）：附件匿名可下。

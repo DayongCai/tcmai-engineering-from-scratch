@@ -350,6 +350,11 @@ PDF 有两个必踩的坑，已在脚本里固定：
 成品不只躺在 `textbooks/build/`：站点新增「教材」页（导航第 7 项），逐卷列出 EPUB / PDF / 单文件 HTML
 的**实测体积**与下载链接。
 
+页尾还有 **Release 次入口**（`从 GitHub Release 下载（免构建）`）：读 `textbooks/build/books-release.json`，
+逐件列出 `books-v1` 的附件、体积、sha256 前 12 位与直链，并给出核验命令——
+给「没跑过构建」的读者一条不需要 pandoc/xelatex 就能拿到书的路。
+没有发布记录时，这一节改为提示 `npm run textbooks:publish`，不会渲染空表。
+
 ```bash
 node scripts/build_books_data.js   # series.json + 逐个核盘上文件 → site/books-data.js
 npm run site                       # 重建页面（已把上一步串进 build / rebuild:all / site）

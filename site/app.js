@@ -687,6 +687,36 @@ function renderBooks() {
     ? `<a class="${cls}" href="../${a.path}" download>${label} · ${mb(a)}</a>`
     : `<span class="tag">${label} 未构建</span>`);
 
+  // Release 次入口：给「没跑过构建」的访问者一条能直接下书的路径。
+  // 与本地链接分开列，是因为两者是不同的事实：本地有产物 ≠ 远端已发布。
+  const REL = B.release || null;
+  const relByte = (b) => `${(b / 1048576).toFixed(1)} MB`;
+  const releaseBlock = REL
+    ? `
+<h2 id="release">从 GitHub Release 下载（免构建）</h2>
+<p class="small muted" style="margin-top:-.4rem">
+  <a href="${REL.url}" target="_blank" rel="noopener"><b>${esc(REL.tag)}</b></a>
+  · ${esc(REL.repo)} · ${REL.assets.length} 个附件 / ${relByte(REL.totalBytes)} ·
+  资产名用 ASCII（GitHub 会把中文名压成 <code>default</code>），中文书名在 Release 标题与正文里。
+</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>附件</th><th>体积</th><th>sha256（前 12 位）</th><th>下载</th></tr></thead>
+  <tbody>
+    ${REL.assets.map((a) => `<tr>
+      <td><code>${esc(a.name)}</code></td>
+      <td class="mono">${relByte(a.bytes)}</td>
+      <td class="mono small">${esc((a.sha256 || '').slice(0, 12))}…</td>
+      <td><a href="${a.url}">下载</a></td>
+    </tr>`).join('')}
+  </tbody>
+</table></div>
+<p class="small muted">核验口径：<code>npm run textbooks:release:check</code> —— 逐件比对体积、sha256（对 GitHub 记录的 <code>digest</code>）与 Range 可取回；
+下载后可用 <code>sha256sum</code> 对上表前 12 位。</p>`
+    : `
+<h2 id="release">从 GitHub Release 下载</h2>
+<p class="small muted">还没有发布记录（<code>textbooks/build/books-release.json</code> 不存在）。
+发布后此页会出现 <code>books-v1</code> 的 11 个附件直链：<code>npm run textbooks:publish</code>。</p>`;
+
   if (!B.available) {
     return shell('books.html', '教材', `
 <h1>教材 · 五卷本</h1>
@@ -696,7 +726,8 @@ function renderBooks() {
 npm run textbooks:pdf      # 五卷 PDF
 npm run textbooks:publish:check</code></pre>
 <p class="small muted">源稿在 <code>textbooks/</code>（随仓库分发），成品在 <code>textbooks/build/</code>（不入库）。
-章契约与四层口径见 <a href="../textbooks/README.md">textbooks/README.md</a>。</p>`);
+章契约与四层口径见 <a href="../textbooks/README.md">textbooks/README.md</a>。</p>
+${releaseBlock}`);
   }
 
   const cards = B.volumes.map((v) => `
@@ -711,6 +742,11 @@ npm run textbooks:publish:check</code></pre>
       ${link(v.pdf, 'PDF')}
       ${link(v.html, '单文件 HTML', 'btn ghost')}
     </div>
+    ${(v.release && v.release.length)
+      ? `<div class="small muted" style="margin-top:.4rem">或从 Release：${v.release
+          .map((a) => `<a href="${a.url}">${/\.pdf$/.test(a.name) ? 'PDF' : 'EPUB'}</a>`)
+          .join(' · ')}</div>`
+      : ''}
   </div>`).join('');
 
   return shell('books.html', '教材', `
@@ -738,6 +774,8 @@ npm run textbooks:publish:check</code></pre>
 
 <h2>逐卷下载</h2>
 <div class="grid cols-2">${cards}</div>
+
+${releaseBlock}
 
 <p class="small muted" style="margin-top:2rem">
 数据源：<code>scripts/build_books_data.js</code> 读 <code>textbooks/build/series.json</code> 并逐个核盘上文件；

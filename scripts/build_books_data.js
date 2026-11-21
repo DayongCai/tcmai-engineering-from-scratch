@@ -43,6 +43,35 @@ function stat(rel) {
 
 const defByN = new Map(volumesDef.volumes.map((v) => [v.n, v]));
 
+/**
+ * Release 次入口：读发布清单 books-release.json（由 publish_books_github.py 写）。
+ * 与 series.json 分开的理由：一个是「本机出了什么书」，一个是「远端真发了什么」——
+ * 两者都可能单独缺，页面要分别说清，不能用一个字段兼表两件事。
+ */
+function readRelease() {
+  const p = path.join(BUILD, 'books-release.json');
+  if (!fs.existsSync(p)) return null;
+  try {
+    const r = JSON.parse(fs.readFileSync(p, 'utf8'));
+    const assets = (r.assets || []).map((a) => ({
+      name: a.name,
+      bytes: a.bytes,
+      sha256: a.sha256,
+      url: `${r.url}/download/${a.name}`,
+    }));
+    return {
+      repo: r.repo,
+      tag: r.tag,
+      url: r.url,
+      assets,
+      totalBytes: assets.reduce((n, a) => n + a.bytes, 0),
+    };
+  } catch {
+    return null;
+  }
+}
+const release = readRelease();
+
 let payload;
 if (fs.existsSync(seriesPath)) {
   const series = JSON.parse(fs.readFileSync(seriesPath, 'utf8'));
@@ -62,6 +91,10 @@ if (fs.existsSync(seriesPath)) {
       pdf: stat(v.artifacts && v.artifacts.pdf),
       html: stat(v.artifacts && v.artifacts.html),
       md: stat(v.artifacts && v.artifacts.md),
+      // 该卷在 Release 上的附件（用于页面上的次入口；资产名是 ASCII 的 volume-N-*）
+      release: release
+        ? release.assets.filter((a) => a.name.startsWith(`volume-${v.n}-`))
+        : [],
     };
   });
   payload = {
@@ -76,6 +109,10 @@ if (fs.existsSync(seriesPath)) {
       pdf: volumes.filter((v) => v.pdf && v.pdf.ok).length,
     },
     volumes,
+    // 远端发布事实（可能与本机产物不同步：本机能构建 ≠ 远端已发）
+    release: release
+      ? { repo: release.repo, tag: release.tag, url: release.url, assets: release.assets, totalBytes: release.totalBytes }
+      : null,
   };
   // 清单说有几卷，盘上真有几卷 —— 对不上就在数据里写清楚，由页面显示，不在构建期假装正常
   payload.totals.epubOnDisk = volumes.filter((v) => v.epub && v.epub.ok).length;
@@ -88,6 +125,9 @@ if (fs.existsSync(seriesPath)) {
     reason: 'textbooks/build/series.json 不存在 —— 还没跑过教材构建',
     hint: 'node textbooks/build_book.js --all --epub --pdf',
     volumes: [],
+    release: release
+      ? { repo: release.repo, tag: release.tag, url: release.url, assets: release.assets, totalBytes: release.totalBytes }
+      : null,
     totals: { volumes: 0, chapters: 0, words: 0, epub: 0, pdf: 0 },
   };
 }
