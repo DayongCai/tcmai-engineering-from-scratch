@@ -115,7 +115,7 @@ window.TCMAI_DATA = {
     "subjectsWip": 0,
     "subjectsPlanned": 0,
     "videos": 2169,
-    "textbookChapters": 2590
+    "textbookChapters": 2497
   },
   "semesterPlan": [
     {
@@ -8289,22 +8289,23 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/14-zhongyi-sangyin-yixue",
-            "chaptersWritten": 101,
-            "words": 25940,
+            "chaptersWritten": 8,
+            "words": 41579,
             "status": "wip",
-            "layer": "external-source",
-            "origin": "external",
-            "source": "standards/materials/textbooks-batch/external-registry.json#chonglou-yuyao",
+            "layer": "rewrite",
+            "origin": "course-rewrite",
+            "source": "departments/08-wuguan/14-zhongyi-sangyin-yixue/chapters/*/docs/zh.md（课程正文改写扩写）",
+            "reference": "standards/zhongyi-sangyin-yixue/reference-modern.json#嗓音医学（第2版，韩德民/Sataloff/徐文，人卫2017，541页）",
+            "referenceUsage": "只对读解剖生理、评估方法与疾病分类；中医辨证与方药来自课程正文；引用标篇·章，不标页码",
+            "appendix": "附录A-重樓玉鑰辑录.md",
+            "appendixNote": "重樓玉鑰 101 篇，不计章数/字数",
             "external": {
               "id": "chonglou-yuyao",
               "title": "重樓玉鑰",
-              "url": "https://jicheng.tw/tcm/book/%E9%87%8D%E6%A8%93%E7%8E%89%E9%91%B0/index.html",
               "sha256": "6d565fbe372d0d29535340302a66926bf016a12f181b334815323ff339400c25",
-              "baseText": "北京大學圖書館掃描本",
-              "fetchedAt": "2026-10-21",
-              "coverage": "古籍可对上的部分；现代内容未覆盖"
+              "role": "appendix-only"
             },
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-11-21"
           }
         },
         {
