@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 2614687,
+    "gapWithBodyChars": 2548812,
     "gapNoBody": 0
   },
   "totals": {
@@ -23248,9 +23248,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 61090
+            "chars": 31847
           },
-          "note": "教学章已有正文（10 章 / 6.1 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.2 万字），未接教材出版线"
         },
         {
           "slug": "11-guanjie-bing-xue",
@@ -23260,9 +23260,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 74379
+            "chars": 37747
           },
-          "note": "教学章已有正文（10 章 / 7.4 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.8 万字），未接教材出版线"
         },
         {
           "slug": "12-guzhishusong-tuibian",
