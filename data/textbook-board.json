@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 3467445,
+    "gapWithBodyChars": 3069172,
     "gapNoBody": 0
   },
   "totals": {
@@ -23358,9 +23358,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 184852
+            "chars": 29806
           },
-          "note": "教学章已有正文（8 章 / 18.5 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.0 万字），未接教材出版线"
         },
         {
           "slug": "03-zhongyi-guanli-xue",
@@ -23406,9 +23406,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 269093
+            "chars": 25866
           },
-          "note": "教学章已有正文（8 章 / 26.9 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.6 万字），未接教材出版线"
         },
         {
           "slug": "11-yiyuan-xinxihua-bingan",
