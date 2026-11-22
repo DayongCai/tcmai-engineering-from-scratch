@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 2548812,
+    "gapWithBodyChars": 2474413,
     "gapNoBody": 0
   },
   "totals": {
@@ -23272,9 +23272,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 46264
+            "chars": 29322
           },
-          "note": "教学章已有正文（8 章 / 4.6 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
         },
         {
           "slug": "13-zhongyi-zhengji-xue",
@@ -23284,9 +23284,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 51943
+            "chars": 28373
           },
-          "note": "教学章已有正文（8 章 / 5.2 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.8 万字），未接教材出版线"
         },
         {
           "slug": "14-kangfu-gongcheng-zhiju",
@@ -23296,9 +23296,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 47395
+            "chars": 29421
           },
-          "note": "教学章已有正文（8 章 / 4.7 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
         },
         {
           "slug": "15-gushang-kangfu-pingding",
@@ -23308,9 +23308,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 41489
+            "chars": 25576
           },
-          "note": "教学章已有正文（8 章 / 4.1 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.6 万字），未接教材出版线"
         }
       ]
     },
