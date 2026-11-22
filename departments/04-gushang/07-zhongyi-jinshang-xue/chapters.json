@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-jinshang-zonglun",
-   "title": "筋伤总论",
+   "title": "筋伤不是「软组织损伤」的同义词",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-bingli-fenqi",
-   "title": "筋伤的病理与分期",
+   "title": "分期的尺子是肿、痛、活动度，不是日历",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-zhencha",
-   "title": "筋伤的诊查",
+   "title": "压痛点的位置，比疼了多久更有信息量",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-shoufa-guding",
-   "title": "理筋手法与固定",
+   "title": "手法的水平不在力度，在边界",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-jingbu",
-   "title": "颈部筋伤",
+   "title": "颈部的手法，先学会不做",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-jianbu",
-   "title": "肩部筋伤",
+   "title": "抬不起来的肩，先分关节囊还是肌腱",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-yaobei",
-   "title": "腰背部筋伤",
+   "title": "「捶着舒服」是一条诊断线索",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-xihuai",
-   "title": "膝、踝部筋伤",
+   "title": "崴脚要分级，不稳比痛更要紧",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -68,7 +68,7 @@
   {
    "n": 9,
    "slug": "09-qita",
-   "title": "其他部位筋伤",
+   "title": "小部位靠结构定位，不靠痛点定位",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -76,7 +76,7 @@
   {
    "n": 10,
    "slug": "10-kangfu",
-   "title": "筋伤的康复与预防",
+   "title": "康复是在正确的时间给正确的负荷",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

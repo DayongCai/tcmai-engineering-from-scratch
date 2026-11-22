@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-dh1",
-   "title": "数字人体的概念与来源",
+   "title": "人体先被写成可寻址的结构，才谈得上被计算",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-dh2",
-   "title": "数据从哪里来：体表、影像与传感",
+   "title": "数据不是「采得越细越好」，而是「这一层问题配这一层数据」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-dh3",
-   "title": "结构与层级：把人体写成知识组织",
+   "title": "人体不是一棵树，写成一棵树就得付代价",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-dh4",
-   "title": "建模：降维、嵌入与参数化",
+   "title": "建模是选择「忘掉什么」，不是追求「记住一切」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-dh5",
-   "title": "人群分型与聚类",
+   "title": "聚类总能给你几个簇，问题是你敢不敢把它们当分型",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-dh6",
-   "title": "仿真结果怎么验：评估与对照",
+   "title": "收敛只证明方程被解对了，不证明方程是对的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-dh7",
-   "title": "可视化与交互：系统怎么长",
+   "title": "可视化不是把模型画出来，而是把不确定度摆到台面上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-dh8",
-   "title": "隐私：人体数据是敏感信息",
+   "title": "去掉了姓名，人体数据仍然是一个人",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

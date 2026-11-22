@@ -5,61 +5,61 @@
     {
       "n": 1,
       "slug": "01-suwen-chengshu",
-      "title": "《素问》成书与文本结构",
+      "title": "162 篇不是一部书，是一部丛书的合订本",
       "status": "🚧"
     },
     {
       "n": 2,
       "slug": "02-yinyang-yingxiang",
-      "title": "阴阳应象大论：范畴与映射",
+      "title": "阴阳不是两个东西，是一张对照表的两个轴",
       "status": "🚧"
     },
     {
       "n": 3,
       "slug": "03-zangxiang-xitong",
-      "title": "藏象与五脏的系统观",
+      "title": "藏象是一张职能编制表，不是一张解剖图",
       "status": "🚧"
     },
     {
       "n": 4,
       "slug": "04-jingmai-bielun",
-      "title": "经脉别论与气血循环",
+      "title": "气血走的是环，不是河：一条被写死的路线",
       "status": "🚧"
     },
     {
       "n": 5,
       "slug": "05-bingji-shijiu",
-      "title": "病机十九条：症状到病机的映射",
+      "title": "十九条不是症状清单，是十九条带范围词的映射规则",
       "status": "🚧"
     },
     {
       "n": 6,
       "slug": "06-zhenfa-maiyao",
-      "title": "诊法与脉要精微论",
+      "title": "诊法是先定条件再读信号，不是「摸一下就知道」",
       "status": "🚧"
     },
     {
       "n": 7,
       "slug": "07-zhize-biaoben",
-      "title": "治则与标本：决策顺序",
+      "title": "治则是排序问题，不是选方问题",
       "status": "🚧"
     },
     {
       "n": 8,
       "slug": "08-lunqi-qipian",
-      "title": "运气七篇：周期与外部变量",
+      "title": "运气七篇给的不是预言，是一张外部变量的周期表",
       "status": "🚧"
     },
     {
       "n": 9,
       "slug": "09-lingshu-jiuzhen",
-      "title": "《灵枢》九针与刺法",
+      "title": "九针是一套器材规格表，玄的那一半它管不了",
       "status": "🚧"
     },
     {
       "n": 10,
       "slug": "10-neijing-lianghua",
-      "title": "内经的量化解读与其边界",
+      "title": "量化能测《内经》的什么，测不出什么",
       "status": "🚧"
     }
   ]

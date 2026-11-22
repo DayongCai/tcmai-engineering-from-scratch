@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-x1",
-   "title": "卫生信息系统概论",
+   "title": "架构不是一张图，是一条能被人接手的依赖方向",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-x2",
-   "title": "电子病历与临床信息系统",
+   "title": "接口不是函数签名，是一份能单独验收的文档",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-x3",
-   "title": "公共卫生信息系统",
+   "title": "模块按变化频率切，不按组织架构切",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-x4",
-   "title": "信息技术基础与新兴技术",
+   "title": "可扩展性不是预留接口，是把变化关进一个盒子",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-x5",
-   "title": "卫生信息资源的组织与检索",
+   "title": "数据模型的第一版定不了终身，改动方式才定终身",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-x6",
-   "title": "卫生信息项目管理",
+   "title": "没写下来的决策，等于没做过决策",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-x7",
-   "title": "卫生信息分析与决策支持",
+   "title": "指标算错不会报错，只会安静地错",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-x8",
-   "title": "卫生信息化规划与建设",
+   "title": "上线不是部署的终点，回滚能力才是",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -70,7 +70,7 @@
   {
    "n": 9,
    "slug": "09-x9",
-   "title": "中医药信息化",
+   "title": "证候不是一个标签，是一次可以拆开的判断",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -78,7 +78,7 @@
   {
    "n": 10,
    "slug": "10-x10",
-   "title": "智慧医疗与数字健康",
+   "title": "新能力不是替换旧系统，是先绕过它再说",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

@@ -5,73 +5,73 @@
     {
       "n": 1,
       "slug": "01-chengshu-banben",
-      "title": "伤寒论的成书、版本与条文结构",
+      "title": "《伤寒论》的成书、版本与条文结构：1760 条不是 398 条",
       "status": "🚧"
     },
     {
       "n": 2,
       "slug": "02-liujing-kuangjia",
-      "title": "六经辨证的框架：从太阳到厥阴",
+      "title": "六经辨证的框架：五条提纲，一条失踪",
       "status": "🚧"
     },
     {
       "n": 3,
       "slug": "03-taiyang-biao",
-      "title": "太阳病：表证的判定与麻黄汤类",
+      "title": "太阳病表证：有汗与无汗之外，还有 129 条「发热」被写成了异体字",
       "status": "🚧"
     },
     {
       "n": 4,
       "slug": "04-yangming-li",
-      "title": "阳明病：里热实证与承气汤类",
+      "title": "阳明病里实证：三承气不是三档火力，是三道门槛",
       "status": "🚧"
     },
     {
       "n": 5,
       "slug": "05-shaoyang-banbiao",
-      "title": "少阳病：半表半里与小柴胡汤",
+      "title": "少阳病半表半里：一条把「与」改成「或」的规则",
       "status": "🚧"
     },
     {
       "n": 6,
       "slug": "06-taiyin-xuhan",
-      "title": "太阴病：里虚寒与理中汤类",
+      "title": "太阴病：一条提纲撑起的一章，理中丸不在这一篇",
       "status": "🚧"
     },
     {
       "n": 7,
       "slug": "07-shaoyin-xuyang",
-      "title": "少阴病：心肾阳虚与四逆汤类",
+      "title": "少阴病：45 条里 13 条在讲预后，不是讲方",
       "status": "🚧"
     },
     {
       "n": 8,
       "slug": "08-jueyin-hanre",
-      "title": "厥阴病：寒热错杂与乌梅丸",
+      "title": "厥阴病：30 条，乌梅丸一次也没出现",
       "status": "🚧"
     },
     {
       "n": 9,
       "slug": "09-hebing-bingbing",
-      "title": "合病并病：多证并存的判定",
+      "title": "合病与并病：两经同时病，还是一个没走一个又来",
       "status": "🚧"
     },
     {
       "n": 10,
       "slug": "10-fangzheng-duiying",
-      "title": "方证对应：症状群 → 方剂的匹配",
+      "title": "方证对应：症状群 → 方剂，为什么前三版排序都是错的",
       "status": "🚧"
     },
     {
       "n": 11,
       "slug": "11-tiaowen-jiansuo",
-      "title": "伤寒条文的检索与 BM25 复现",
+      "title": "条文检索：MRR 满分，但「库里没有」它不会说",
       "status": "🚧"
     },
     {
       "n": 12,
       "slug": "12-jiliang-zhesuan",
-      "title": "经方剂量的度量衡与折算争议",
+      "title": "经方剂量：桂枝三两是 41 克、47 克，还是 9 克",
       "status": "🚧"
     }
   ]

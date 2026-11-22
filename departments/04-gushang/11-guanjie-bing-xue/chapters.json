@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-gailun-bingyin",
-   "title": "骨病概论与病因病机",
+   "title": "关节病的第一个动作不是开药，是把病人放进正确的类别里",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-linchuang-zhencha",
-   "title": "骨病的临床诊查",
+   "title": "关节病的体征长得很慢，判据必须写在流程里",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-zhiliao-fangfa",
-   "title": "骨病的治疗方法",
+   "title": "治疗不是选项的堆叠，是先分层、再分期、后选法",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-huamou-guanjieyan",
-   "title": "化脓性骨髓炎与化脓性关节炎",
+   "title": "化脓性关节病的时间里没有「观察一下」这个选项",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-gujiehe",
-   "title": "骨与关节结核",
+   "title": "骨结核最像的不是结核，是劳损",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-guzhongliu",
-   "title": "骨肿瘤：识别与转诊",
+   "title": "骨肿瘤的第一个动作是拍片，不是解释",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-gudaixie",
-   "title": "骨代谢性疾病",
+   "title": "骨量的流失是安静的，骨折是它第一次说话",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-guhuaisi",
-   "title": "骨缺血性坏死",
+   "title": "骨坏死的窗口期，落在 X 线还看不见的那段时间里",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -68,7 +68,7 @@
   {
    "n": 9,
    "slug": "09-tuixing-mianyi",
-   "title": "骨关节退行性与免疫性疾病",
+   "title": "骨关节炎与类风湿的治疗方向是相反的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -76,7 +76,7 @@
   {
    "n": 10,
    "slug": "10-jixing-kangfu",
-   "title": "骨畸形、骨软骨病与康复",
+   "title": "畸形不疼，所以它总在没人看着的时候长",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

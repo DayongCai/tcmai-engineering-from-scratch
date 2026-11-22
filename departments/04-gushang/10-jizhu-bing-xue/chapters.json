@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-jiepou-lixue",
-   "title": "脊柱解剖与生物力学",
+   "title": "脊柱不是一根柱子，而是一组会互相代偿的关节",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-yingxiang-zhenduan",
-   "title": "脊柱影像诊断",
+   "title": "片子回答「有没有」，不回答「痛不痛」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-jingzhuibing",
-   "title": "颈椎病",
+   "title": "颈痛九成不是颈椎病，颈椎病九成不必手术",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-jingzhu-sunshang",
-   "title": "颈椎损伤",
+   "title": "颈椎损伤的第一分钟，比后面的三十天更重要",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-yaojianpan",
-   "title": "腰椎间盘突出症",
+   "title": "椎间盘突出是影像诊断，腰痛是一个人的生活",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-yaozhuiguan-xiazhai",
-   "title": "腰椎管狭窄与滑脱",
+   "title": "走不远的人：狭窄与滑脱，先分清是管窄还是骨错位",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-cewan",
-   "title": "脊柱侧弯与畸形",
+   "title": "侧弯不是姿势问题：谁在长，谁在弯，谁在代偿",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-guzhishusong-guzhe",
-   "title": "骨质疏松性椎体骨折",
+   "title": "一次椎体压缩骨折，是下一次骨折的预告",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -68,7 +68,7 @@
   {
    "n": 9,
    "slug": "09-shoufa-shoushu",
-   "title": "手法与手术的边界",
+   "title": "手法与手术之间，隔着的不是勇气，是判据",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -76,7 +76,7 @@
   {
    "n": 10,
    "slug": "10-kangfu",
-   "title": "脊柱康复与长期管理",
+   "title": "把「治好」换成「能过」：脊柱的长期管理",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

@@ -5,127 +5,127 @@
   {
    "n": 1,
    "slug": "01-xulun",
-   "title": "绪论",
+   "title": "绪论：一门学科先要学会「怎么描述」",
    "status": "🚧"
   },
   {
    "n": 2,
    "slug": "02-jibing-gailun",
-   "title": "疾病概论",
+   "title": "疾病概论：把「病」写成一个过程，而不是一张标签",
    "status": "🚧"
   },
   {
    "n": 3,
    "slug": "03-shiying-sunshang-xiufu",
-   "title": "细胞和组织的适应、损伤与修复",
+   "title": "细胞和组织的适应、损伤与修复：一条线上的三段，还是三个话题",
    "status": "🚧"
   },
   {
    "n": 4,
    "slug": "04-jubu-xueye-xunhuan-zhangai",
-   "title": "局部血液循环障碍",
+   "title": "局部血液循环障碍：把「血怎么了」写成一条单向链",
    "status": "🚧"
   },
   {
    "n": 5,
    "slug": "05-yanzheng",
-   "title": "炎症",
+   "title": "炎症：把「防御性反应」拆成损伤与应答两笔账",
    "status": "🚧"
   },
   {
    "n": 6,
    "slug": "06-zhongliu",
-   "title": "肿瘤",
+   "title": "肿瘤：把「新生物」拆成克隆、异型与扩散三件事",
    "status": "🚧"
   },
   {
    "n": 7,
    "slug": "07-shui-dianjiezhi-wenluan",
-   "title": "水、电解质代谢紊乱",
+   "title": "水、电解质代谢紊乱：把「容量与渗透压」当成两把尺",
    "status": "🚧"
   },
   {
    "n": 8,
    "slug": "08-shuizhong",
-   "title": "水肿",
+   "title": "水肿：把「水多了」拆成两个平衡",
    "status": "🚧"
   },
   {
    "n": 9,
    "slug": "09-suanjian-pingheng-wenluan",
-   "title": "酸碱平衡紊乱",
+   "title": "酸碱平衡紊乱：把「偏酸偏碱」拆成方向与原发环节",
    "status": "🚧"
   },
   {
    "n": 10,
    "slug": "10-queyang",
-   "title": "缺氧",
+   "title": "缺氧：把「喘不上气」翻译成一条氧运输链",
    "status": "🚧"
   },
   {
    "n": 11,
    "slug": "11-fare",
-   "title": "发热",
+   "title": "发热：把一个「设定值」讲成三段因果",
    "status": "🚧"
   },
   {
    "n": 12,
    "slug": "12-yingji-jibing",
-   "title": "应激与疾病",
+   "title": "应激与疾病：把「压力大」写成一张资源调度表",
    "status": "🚧"
   },
   {
    "n": 13,
    "slug": "13-xiuke",
-   "title": "休克",
+   "title": "休克：把「灌注不足」写成一条会自己加速的链",
    "status": "🚧"
   },
   {
    "n": 14,
    "slug": "14-dic",
-   "title": "弥散性血管内凝血",
+   "title": "弥散性血管内凝血：凝血在前、纤溶在后",
    "status": "🚧"
   },
   {
    "n": 15,
    "slug": "15-queshangzaiguanzhu-sunshang",
-   "title": "缺血-再灌注损伤",
+   "title": "缺血-再灌注损伤：恢复血流为什么会加重损伤",
    "status": "🚧"
   },
   {
    "n": 16,
    "slug": "16-xinxueguan-jibing",
-   "title": "心血管系统疾病",
+   "title": "心血管系统疾病：把病名还原成「位置、形态与后果」",
    "status": "🚧"
   },
   {
    "n": 17,
    "slug": "17-huxi-jibing",
-   "title": "呼吸系统疾病",
+   "title": "呼吸系统疾病：从气道到肺泡，再由肺及心",
    "status": "🚧"
   },
   {
    "n": 18,
    "slug": "18-xiaohua-jibing",
-   "title": "消化系统疾病",
+   "title": "消化系统疾病：黏膜层、胃壁全层、肝小叶",
    "status": "🚧"
   },
   {
    "n": 19,
    "slug": "19-miniao-shengzhi-jibing",
-   "title": "泌尿及生殖系统疾病",
+   "title": "泌尿及生殖系统疾病：病变沿着哪条管道走",
    "status": "🚧"
   },
   {
    "n": 20,
    "slug": "20-shenjing-neifenmi-jibing",
-   "title": "常见神经及内分泌系统疾病",
+   "title": "常见神经及内分泌系统疾病：把「类别」当成一把尺子",
    "status": "🚧"
   },
   {
    "n": 21,
    "slug": "21-chuanranbing-jishengchong",
-   "title": "常见传染病及寄生虫病",
+   "title": "常见传染病及寄生虫病：九种病，一张对照表",
    "status": "🚧"
   }
  ]

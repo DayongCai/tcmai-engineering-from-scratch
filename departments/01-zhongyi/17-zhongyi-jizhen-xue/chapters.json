@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-xulun",
-   "title": "第1章 绪论",
+   "title": "绪论：急诊学研究的不是病，是「正在恶化的人」",
    "status": "🚧",
    "source": {
     "chapter": 1,
@@ -16,7 +16,7 @@
   {
    "n": 2,
    "slug": "02-lilun-jichu",
-   "title": "第2章 中医急诊学的理论基础",
+   "title": "理论基础：邪盛正衰与气机逆乱",
    "status": "🚧",
    "source": {
     "chapter": 2,
@@ -27,7 +27,7 @@
   {
    "n": 3,
    "slug": "03-zhengzhuang-jianbie",
-   "title": "第3章 急诊常见症状的鉴别",
+   "title": "急诊常见症状的鉴别：五个入口",
    "status": "🚧",
    "source": {
     "chapter": 3,
@@ -38,7 +38,7 @@
   {
    "n": 4,
    "slug": "04-jijiu-jishu-fangyao",
-   "title": "第4章 常用急救技术与方药",
+   "title": "常用急救技术与方药：先有形，再有名",
    "status": "🚧",
    "source": {
     "chapter": 4,
@@ -49,7 +49,7 @@
   {
    "n": 5,
    "slug": "05-waigan-rebing",
-   "title": "第5章 外感热病急症",
+   "title": "外感热病急症：从卫分到血分的四道门",
    "status": "🚧",
    "source": {
     "chapter": 5,
@@ -60,7 +60,7 @@
   {
    "n": 6,
    "slug": "06-xinnao-jizheng",
-   "title": "第6章 心脑急症",
+   "title": "心脑急症：时间窗比辨证更硬",
    "status": "🚧",
    "source": {
     "chapter": 6,
@@ -71,7 +71,7 @@
   {
    "n": 7,
    "slug": "07-feixi-jizheng",
-   "title": "第7章 肺系急症",
+   "title": "肺系急症：喘的三级与血的一口",
    "status": "🚧",
    "source": {
     "chapter": 7,
@@ -82,7 +82,7 @@
   {
    "n": 8,
    "slug": "08-piwei-gandan-jizheng",
-   "title": "第8章 脾胃肝胆急症",
+   "title": "脾胃肝胆急症：吐泻、急腹症、急黄",
    "status": "🚧",
    "source": {
     "chapter": 8,
@@ -93,7 +93,7 @@
   {
    "n": 9,
    "slug": "09-shenxi-zhongdu",
-   "title": "第9章 肾系与中毒急症",
+   "title": "肾系与中毒急症：闭与毒",
    "status": "🚧",
    "source": {
     "chapter": 9,
@@ -104,7 +104,7 @@
   {
    "n": 10,
    "slug": "10-xuezheng-chuangshang",
-   "title": "第10章 血证与创伤急症",
+   "title": "血证与创伤急症：血往哪里流",
    "status": "🚧",
    "source": {
     "chapter": 10,
@@ -115,7 +115,7 @@
   {
    "n": 11,
    "slug": "11-zhongzheng-jianhu",
-   "title": "第11章 急危重症与重症监护协同",
+   "title": "急危重症与重症监护协同：分清谁能做",
    "status": "🚧",
    "source": {
     "chapter": 11,
@@ -126,7 +126,7 @@
   {
    "n": 12,
    "slug": "12-shuzihua-yujing",
-   "title": "第12章 中医急诊数字化与智能预警",
+   "title": "中医急诊数字化与智能预警：早半小时",
    "status": "🚧",
    "source": {
     "chapter": 12,

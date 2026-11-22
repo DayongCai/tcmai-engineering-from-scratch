@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-img1",
-   "title": "中医图像从哪来：舌象、面象与图谱",
+   "title": "图像从哪来，决定了你能问什么问题",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-img2",
-   "title": "采集与质控：光照、色卡与重复性",
+   "title": "采集没定，模型只是在背光",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-img3",
-   "title": "图像特征与降维",
+   "title": "特征不是越多越好，是越稳越好",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-img4",
-   "title": "卷积与表征学习",
+   "title": "卷积不是魔法，是「局部」加「共享」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-img5",
-   "title": "分类任务的写法：样本、标签与代价",
+   "title": "把临床问题写成分类任务，一半的工作在写之前",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-img6",
-   "title": "类别不平衡与误判的代价",
+   "title": "不平衡不是数据问题，是决策问题",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-img7",
-   "title": "集成与稳健性",
+   "title": "集成降的是方差，不是无知",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-img8",
-   "title": "标注规范与判读一致性",
+   "title": "一致性不是算出来的，是谈出来的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -70,7 +70,7 @@
   {
    "n": 9,
    "slug": "09-img9",
-   "title": "可解释输出：图上看什么",
+   "title": "热力图讲的是模型在看哪，不是它为什么对",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -78,7 +78,7 @@
   {
    "n": 10,
    "slug": "10-img10",
-   "title": "边界：影像不外流、结果不下诊断",
+   "title": "影像不出院，结论不下诊断",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

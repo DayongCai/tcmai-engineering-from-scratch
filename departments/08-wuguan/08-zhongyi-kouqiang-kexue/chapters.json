@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-e81",
-   "title": "口腔的中医解剖与生理",
+   "title": "口腔不是一条通道，是六扇各有主人的门",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-e82",
-   "title": "口齿疾病的病因病机",
+   "title": "「火」是口齿科最省力的答案，也是最容易错的那一个",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-e83",
-   "title": "口齿疾病的辨证要点",
+   "title": "口镜看得见红肿，看不见该不该清",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-e84",
-   "title": "口齿疾病的治法与外治",
+   "title": "治法不是一张方剂清单，是五道闸门",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-e85",
-   "title": "牙痛与龋病",
+   "title": "痛可以用药压下去，洞不会自己长回来",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-e86",
-   "title": "牙周病与牙龈出血",
+   "title": "出血多不等于病重，不出血也不等于好了",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-e87",
-   "title": "口疮与口腔黏膜病",
+   "title": "口疮是自限的病，两周不愈就不再是口疮",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-e88",
-   "title": "口臭与口干",
+   "title": "口臭的第一嫌疑不在胃，口干的第一嫌疑不在阴虚",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -70,7 +70,7 @@
   {
    "n": 9,
    "slug": "09-e89",
-   "title": "口齿急症与外伤",
+   "title": "急症章的一半功夫，是教人少做五件事",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -78,7 +78,7 @@
   {
    "n": 10,
    "slug": "10-e810",
-   "title": "口齿调护与预防",
+   "title": "「好好刷牙」说了几十年，牙龈还在出血",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

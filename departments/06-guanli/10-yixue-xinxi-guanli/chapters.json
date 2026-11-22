@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-i1",
-   "title": "导论与数据资源",
+   "title": "导论与数据资源：数据不是资产，被追责的数据才是",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-i2",
-   "title": "标准编码与法规伦理",
+   "title": "标准编码与法规伦理：编码错一位，统计算的是另一个病人",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-i3",
-   "title": "系统与电子病历",
+   "title": "系统与电子病历：HIS、EMR、LIS 不是三套软件，是三条责任链",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-i4",
-   "title": "信息安全管理",
+   "title": "信息安全管理：权限不是一张表，是一条能被审计的证据链",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-i5",
-   "title": "技术与资源检索",
+   "title": "技术与资源检索：检索能力决定你能看见多少证据",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-i6",
-   "title": "统计分析与病案",
+   "title": "统计分析与病案：首页是一张会被结算和评审同时读的表",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-i7",
-   "title": "项目管理与决策支持",
+   "title": "项目管理与决策支持：CDS 接在哪一步，决定它是提醒还是噪音",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-i8",
-   "title": "规划·中医信息化·智慧医疗",
+   "title": "规划与智慧医疗：规划不是买系统，是决定五年后哪些数据还在",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-jijiu-gailun",
-   "title": "创伤急救总论与评估",
+   "title": "急救的第一分钟不救任何人，只做判断",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-xianchang-huli",
-   "title": "现场救护与搬运固定",
+   "title": "搬运不是把人抬走，是把断端抬走",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-chuxue-shuke",
-   "title": "出血与休克",
+   "title": "止住看得见的血，盯住看不见的血",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-lunao-jizhu",
-   "title": "颅脑与脊柱损伤",
+   "title": "颅脑伤救的是\"不再加重\"，脊柱伤救的是\"不再移动\"",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-xiongfu",
-   "title": "胸部与腹部创伤",
+   "title": "胸腹伤的死因，多半在体表看不见",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-sizhi-guzhe-tuowei",
-   "title": "四肢骨折与脱位的急救",
+   "title": "四肢急救的成败，落在\"末梢\"两个字上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-shaoshang-jishang",
-   "title": "烧伤、挤压伤与多发伤",
+   "title": "挤压伤的危险，在松开的瞬间",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-zainan-zhuanyun",
-   "title": "灾难救援与转运",
+   "title": "灾难现场最稀缺的不是技术，是\"谁先走\"的决定",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

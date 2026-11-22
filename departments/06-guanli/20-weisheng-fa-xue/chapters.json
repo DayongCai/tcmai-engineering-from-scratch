@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-f1",
-   "title": "卫生法学导论",
+   "title": "一次准入要问四遍：卫生法的渊源不是书目，是顺位",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-f2",
-   "title": "卫生法的基本原则与法律关系",
+   "title": "名不正则责不归：卫生法律关系的三要素与主体资格",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-f3",
-   "title": "卫生立法与卫生法治",
+   "title": "规则不是写出来的，是审出来的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-f4",
-   "title": "卫生行政与行政执法",
+   "title": "管得住权力的不是权限，是记录：卫生监督与行政处罚",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-f5",
-   "title": "医疗机构管理法律制度",
+   "title": "一张证照定三件事：医疗机构的准入、范围与责任",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-f6",
-   "title": "卫生技术人员管理法律制度",
+   "title": "有权才敢救：医师的执业权利是一组授权，义务是一组「亲自」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-f7",
-   "title": "医疗行为与医疗质量安全法律制度",
+   "title": "同意不是签字：告知的三个层次与同意的四种失效",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-f8",
-   "title": "医疗纠纷预防与处理法律制度",
+   "title": "谁主张谁举证，可病历在谁手里",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -70,7 +70,7 @@
   {
    "n": 9,
    "slug": "09-f9",
-   "title": "药品管理法律制度",
+   "title": "药有两副面孔：疗效与风险共用一条审批线",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -78,7 +78,7 @@
   {
    "n": 10,
    "slug": "10-f10",
-   "title": "医疗器械、化妆品与消毒产品管理法律制度",
+   "title": "器械不分贵贱，只分风险：一条分级线怎么管住三类产品",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -86,7 +86,7 @@
   {
    "n": 11,
    "slug": "11-f11",
-   "title": "公共卫生与疾病预防控制法律制度",
+   "title": "防疫是拿自由换时间：四种措施强度与一条比例线",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -94,7 +94,7 @@
   {
    "n": 12,
    "slug": "12-f12",
-   "title": "基本医疗卫生与健康促进法律制度",
+   "title": "「基本」是一个财政词：服务清单的边界怎么划",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -102,7 +102,7 @@
   {
    "n": 13,
    "slug": "13-f13",
-   "title": "医疗保障与医疗救助法律制度",
+   "title": "医保不是报销比例，是一套议价机制",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -110,7 +110,7 @@
   {
    "n": 14,
    "slug": "14-f14",
-   "title": "中医药法律制度",
+   "title": "中医的合法性不在疗效，在资格与方法说没说清",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -118,7 +118,7 @@
   {
    "n": 15,
    "slug": "15-f15",
-   "title": "食品安全与环境卫生法律制度",
+   "title": "安全的标准是「不得含有」，不是「检出即有害」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -126,7 +126,7 @@
   {
    "n": 16,
    "slug": "16-f16",
-   "title": "生命伦理与新兴技术法律问题",
+   "title": "身体能给出什么：三种不可买卖与一个同意例外",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -134,7 +134,7 @@
   {
    "n": 17,
    "slug": "17-f17",
-   "title": "卫生法律监督与权益救济",
+   "title": "救济不是纠正错误，是发一把能开门的钥匙",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -142,7 +142,7 @@
   {
    "n": 18,
    "slug": "18-f18",
-   "title": "卫生法学与 tcmP 智能教学平台",
+   "title": "判据能教，条文不能教：十八门知识怎么压成一张调用图",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

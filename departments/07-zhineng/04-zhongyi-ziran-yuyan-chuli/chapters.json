@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-nlp1",
-   "title": "中医文本从哪来：语料、文体与噪声",
+   "title": "中医语料不是一种文本，是四种文本挤在同一列",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-nlp2",
-   "title": "分词、术语与规范化",
+   "title": "分词切错的不是词，是概念边界",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-nlp3",
-   "title": "语言模型与概率推断",
+   "title": "n-gram 算得出下一个字，算不出这句话是谁写的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-nlp4",
-   "title": "文本分类：从词袋到判别",
+   "title": "词袋分得开科室，分不开证型",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-nlp5",
-   "title": "序列标注与标注成本",
+   "title": "标注不是把词圈出来，是把边界争议写下来",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-nlp6",
-   "title": "检索与排序",
+   "title": "检索的失败不在召回率，在找回来的那条没有出处",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-nlp7",
-   "title": "实体与关系抽取",
+   "title": "抽到「麻黄」，不等于抽到「麻黄汤去麻黄」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-nlp8",
-   "title": "规则与知识约束",
+   "title": "规则不是模型的补丁，是模型的天花板",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -70,7 +70,7 @@
   {
    "n": 9,
    "slug": "09-nlp9",
-   "title": "评测：精确率、召回率与人工一致性",
+   "title": "F1 高不等于抽得对，可能只是学会了标注员的习惯",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -78,7 +78,7 @@
   {
    "n": 10,
    "slug": "10-nlp10",
-   "title": "落地边界：能抽不能断",
+   "title": "抽得出「舌红苔黄」，断不出「此为热证」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

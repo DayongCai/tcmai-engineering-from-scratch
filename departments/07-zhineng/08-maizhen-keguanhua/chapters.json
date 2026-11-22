@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-m1",
-   "title": "脉象采集：物理基础、传感器与信号质控",
+   "title": "脉象采集：机器接得住波形，接不住「按到什么程度」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-m2",
-   "title": "朴素贝叶斯与概率判据",
+   "title": "朴素贝叶斯：先验选错了，后验算得再准也是错的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-m3",
-   "title": "特征选择与降维",
+   "title": "特征提取：可重复的不是特征，是提取它的那套流程",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-m4",
-   "title": "线性判别与基线模型",
+   "title": "浮沉迟数：把一个形容词切成两类，切点就是全部",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-m5",
-   "title": "决策树与可解释规则",
+   "title": "决策树：能背下来的规则，才是能进诊室的规则",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-m6",
-   "title": "神经网络与表征学习",
+   "title": "端到端学习：省掉特征工程，也省掉了「谁在负责」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-m7",
-   "title": "核方法与支持向量机",
+   "title": "支持向量机：边界由最难分的那几个人决定",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-m8",
-   "title": "集成学习与稳健性",
+   "title": "集成学习：平均能降方差，但降不掉「大家都错在同一处」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -70,7 +70,7 @@
   {
    "n": 9,
    "slug": "09-m9",
-   "title": "聚类与无监督分型",
+   "title": "聚类：算法一定会给你几个簇，问题是谁来认领它们",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -78,7 +78,7 @@
   {
    "n": 10,
    "slug": "10-m10",
-   "title": "模型评估与交叉验证",
+   "title": "评估：唯一能证伪前面九章的那一步，也是最容易被走过场的一步",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

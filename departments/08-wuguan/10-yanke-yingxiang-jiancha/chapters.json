@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-e101",
-   "title": "影像在眼科的位置：从四诊到仪器",
+   "title": "仪器不是四诊的升级版，它只补了人眼进不去的那一层",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-e102",
-   "title": "眼与脏腑：影像之外的参照系",
+   "title": "解剖基线不是一张数值表，是一组对应关系",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-e103",
-   "title": "外障的影像辅助：胞睑、两眦与白睛",
+   "title": "外障一望即知，影像在这里只做记录，不做诊断",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-e104",
-   "title": "内障与眼底影像",
+   "title": "浑浊时读断面，读到的不是「看不清」，是「看起来像缺了一层」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-e105",
-   "title": "青光眼与视神经的影像线索",
+   "title": "杯盘比可以记，不能单独承担判读",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-e106",
-   "title": "眼底出血与糖网的影像随访",
+   "title": "出血的层次携带病程信息，面积不携带",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-e107",
-   "title": "影像报告、复查与疗效评价",
+   "title": "报告的好坏不在信息多少，在三段的分工",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-e108",
-   "title": "影像数据的隐私与合规",
+   "title": "密码泄露了可以改，虹膜泄露了不能换",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

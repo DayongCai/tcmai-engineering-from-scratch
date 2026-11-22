@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-gailun-yuanliu",
-   "title": "中医运动学概论与源流",
+   "title": "导引能进医书，靠的不是古老，是能被开出方",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-lilun-jichu",
-   "title": "运动的中医理论基础",
+   "title": "运动调的不是肌肉，是气机的升降出入",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-gongneng-suzhi",
-   "title": "运动功能与体能要素",
+   "title": "体能不是六项指标的并列，是一条有先后的链",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-daoyin-chufang",
-   "title": "导引功法与运动处方",
+   "title": "处方的完整性不在功法选得对不对，在停的条件写没写",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-guanjie-jianrou",
-   "title": "关节活动与柔韧训练",
+   "title": "柔韧不是拉得越开越好，是关节在该动的地方动、该稳的地方稳",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-jili-naili",
-   "title": "肌力与耐力训练",
+   "title": "力量练的是能不能做，耐力练的是能做多久",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-pingheng-diedao",
-   "title": "平衡、协调与跌倒预防",
+   "title": "跌倒不是意外，是一次没通过的压力测试",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-shanghai-yufang",
-   "title": "运动损伤的预防与康复",
+   "title": "损伤处理的第一件事不是止痛，是判断这能不能由你处理",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

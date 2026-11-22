@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-e141",
-   "title": "咽喉的中医解剖与生理",
+   "title": "咽喉的中医解剖与生理：没有喉镜的人，把发声拆成了一条七环链",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-e142",
-   "title": "咽喉病的病因病机",
+   "title": "咽喉病的病因病机：火在末梢，水在源头",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-e143",
-   "title": "咽喉病的辨证",
+   "title": "咽喉病的辨证：一个「咽干」可以指三个脏",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-e144",
-   "title": "咽喉病的治法",
+   "title": "咽喉病的治法：「内治为主、外治为辅」在急症里会害人",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-e145",
-   "title": "喉痹与乳蛾",
+   "title": "喉痹与乳蛾：两个被互相替代得最随意的病名",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-e146",
-   "title": "喉喑与失音",
+   "title": "喉喑与失音：「开音」是结果，不是一组药",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-e147",
-   "title": "声带疾病与用嗓卫生",
+   "title": "声带疾病与用嗓卫生：那些「长出来的东西」是用嗓方式记的一本账",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-e148",
-   "title": "咽喉急症与调护",
+   "title": "咽喉急症与调护：先保气道，其余一切后推",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

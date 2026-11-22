@@ -187,9 +187,12 @@ def main():
         if old != txt:
             drift.append(name)
     extra = []
+    # 00-目录-四级编码.md 由 scripts/build_toc_4level.js 统一生成（全库每门教材一份），
+    # 不属于本生成器的产物，不能算「多余」，更不能在重建时被删掉。
+    KEEP_EXTRA = {'00-目录-四级编码.md'}
     if os.path.isdir(OUT):
         for f in os.listdir(OUT):
-            if f.endswith('.md') and f not in docs:
+            if f.endswith('.md') and f not in docs and f not in KEEP_EXTRA:
                 extra.append(f)
 
     if '--check' in sys.argv:

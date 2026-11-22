@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-e1",
-   "title": "导论：健康与经济",
+   "title": "健康是目的，费用是代价：把两者混成一个数，账就永远算不清",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-e2",
-   "title": "需求与供给",
+   "title": "医疗的需求是被供给方写出来的：「物多则贱」在这里失效",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-e3",
-   "title": "市场与政府作用",
+   "title": "市场能给服务定价，但不能替社会决定谁先得到",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-e4",
-   "title": "筹资与卫生总费用",
+   "title": "钱从哪里来，决定谁能用：筹资结构比筹资总量更能解释可及性",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-e5",
-   "title": "医疗保险的经济学分析",
+   "title": "保险卖的是确定性，赔的是激励：逆选择与道德风险是一枚硬币的两面",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-e6",
-   "title": "价格与成本核算",
+   "title": "价格不是标价，是行为指令：换个支付方式，同一台手术会有两种做法",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-e7",
-   "title": "经济学评价与药物经济学",
+   "title": "「值不值」是一个比值加一个预算：成本效果再好，也可能买不起",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-e8",
-   "title": "资源配置·政策·中医与智能",
+   "title": "控费的最后一步不是省钱，是把钱从低价值处搬到高价值处",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

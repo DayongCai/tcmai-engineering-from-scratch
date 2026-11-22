@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-shechuanchuang",
-   "title": "蛇串疮（带状疱疹）",
+   "title": "蛇串疮：皮疹是过程，疼痛才是结局",
    "status": "🚧",
    "docs": "chapters/01-shechuanchuang/docs/zh.md",
    "code": "chapters/01-shechuanchuang/code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-shichuang",
-   "title": "湿疮（湿疹）",
+   "title": "湿疮：辨证辨得再准，剂型用错也白搭",
    "status": "🚧",
    "docs": "chapters/02-shichuang/docs/zh.md",
    "code": "chapters/02-shichuang/code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-yinzhen",
-   "title": "瘾疹（荨麻疹）",
+   "title": "瘾疹：几小时就消失的皮疹，说明战场不在皮肤上",
    "status": "🚧",
    "docs": "chapters/03-yinzhen/docs/zh.md",
    "code": "chapters/03-yinzhen/code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-baipi",
-   "title": "白疕（银屑病）",
+   "title": "白疕：越用力去治的那块皮，长得越厚",
    "status": "🚧",
    "docs": "chapters/04-baipi/docs/zh.md",
    "code": "chapters/04-baipi/code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-youfeng",
-   "title": "油风（脱发）",
+   "title": "油风：先确认毛囊还在，再谈补肝肾",
    "status": "🚧",
    "docs": "chapters/05-youfeng/docs/zh.md",
    "code": "chapters/05-youfeng/code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-fenci",
-   "title": "粉刺（痤疮）",
+   "title": "粉刺：会不会留疤，多半取决于谁在挤它",
    "status": "🚧",
    "docs": "chapters/06-fenci/docs/zh.md",
    "code": "chapters/06-fenci/code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-jiuzhabi",
-   "title": "酒齄鼻（玫瑰痤疮）",
+   "title": "酒齄鼻：一张遇热就红的脸，先改环境，再改方子",
    "status": "🚧",
    "docs": "chapters/07-jiuzhabi/docs/zh.md",
    "code": "chapters/07-jiuzhabi/code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-yaodu-jiechuang",
-   "title": "药毒与疥疮：鉴别与边界",
+   "title": "药毒与疥疮：这两件事的第一步处置，都不是开方",
    "status": "🚧",
    "docs": "chapters/08-yaodu-jiechuang/docs/zh.md",
    "code": "chapters/08-yaodu-jiechuang/code/main.js"

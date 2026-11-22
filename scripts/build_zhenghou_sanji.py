@@ -86,6 +86,23 @@ def unit_lookup(un):
     return {u["locator"]: u for u in un["units"]}
 
 
+def doc_title(slug):
+    """各论章的章题以正文 H1 为真源（`# 第 N 章 · 痰证门（M09）` → `痰证门（M09）`）。"""
+    p = os.path.join(DEPT, "chapters", slug, "docs", "zh.md")
+    if not os.path.exists(p):
+        return None
+    head = ""
+    with io.open(p, encoding="utf-8") as f:
+        for ln in f:
+            if ln.startswith("# "):
+                head = ln.rstrip("\n")
+                break
+    m = re.match(r"^#\s*第\s*[0-9一二三四五六七八九十百]+\s*章\s*[·・:：\-—]?\s*(.+?)\s*$", head)
+    if m:
+        return m.group(1)
+    return head[2:].strip() or None
+
+
 def pick_units(spec, un):
     """按章 spec 取单元：secs 全节；items 形如 '一·（一）' 或 '9'（整节）。"""
     idx = unit_lookup(un)
@@ -485,7 +502,7 @@ def build():
         if not hit:
             continue
         idx["chapters"].append({
-            "n": n2, "slug": hit[0], "title": men["zh"] + "门（各论·" + men["code"] + "）",
+            "n": n2, "slug": hit[0], "title": doc_title(hit[0]) or (men["zh"] + "门（各论·" + men["code"] + "）"),
             "status": "✅", "code": men["code"], "part": "各论", "secs": [], "units": 0,
             "judge": "门内判据",
         })

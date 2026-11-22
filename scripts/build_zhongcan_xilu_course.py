@@ -33,6 +33,33 @@ BEN = json.load(io.open(os.path.join(UDIR, "底本.json"), encoding="utf-8"))
 BC = BEN["counts"]  # classes / pian / entries / paras / charsHant
 
 
+def _docs_authored() -> bool:
+    """本课正文是否已人工补实（登记在 data/course-docs-rewritten.json）。"""
+    reg = os.path.join(ROOT, "data", "course-docs-rewritten.json")
+    if not os.path.exists(reg):
+        return False
+    try:
+        data = json.load(io.open(reg, encoding="utf-8"))
+    except Exception:
+        return False
+    return any(r.get("subject") == SLUG for r in data.get("rewritten", []))
+
+
+DOCS_AUTHORED = _docs_authored()
+
+
+def doc_head(slug):
+    """正文已人工补实时，章题与汉字数以 docs/zh.md 为准（无文件时返回 (None, None)）。"""
+    p = os.path.join(SUBJ, "chapters", slug, "docs", "zh.md")
+    if not os.path.exists(p):
+        return None, None
+    text = io.open(p, encoding="utf-8").read()
+    hz = len(HANZI.findall(text))
+    head = next((ln for ln in text.splitlines() if ln.startswith("# ")), "")
+    m = re.match(r"^#\s*第\s*[0-9一二三四五六七八九十百]+\s*章\s*[·・:：\-—]?\s*(.+?)\s*$", head)
+    return (m.group(1) if m else head[2:].strip() or None), hz
+
+
 def pick(*needles):
     """按 locator 片段精确命中单元；命中数不符立即报错（防手滑选错章）。"""
     out = []
@@ -567,7 +594,11 @@ def build():
         xt = sorted(units, key=lambda u: -u["measure"]["views"]["参西"])[0]
         base = ch["slug"][3:]
         cdir = os.path.join(SUBJ, "chapters", ch["slug"])
-        files[os.path.join(cdir, "docs", "zh.md")] = build_doc(ch)
+        # 2026-11-22 起本课正文已人工补实（登记在 data/course-docs-rewritten.json）。
+        # 生成器只负责 chapters.json / code / quiz / outputs，不再覆盖 docs/zh.md，
+        # 也不再对其做 --check 比对——否则「真人写的正文」会被判成 DRIFT。
+        if not DOCS_AUTHORED:
+            files[os.path.join(cdir, "docs", "zh.md")] = build_doc(ch)
         files[os.path.join(cdir, "quiz.json")] = json.dumps(build_quiz(ch), ensure_ascii=False, indent=2) + "\n"
         files[os.path.join(cdir, "outputs", f"prompt-{base}.md")] = build_prompt(ch)
         files[os.path.join(cdir, "outputs", f"skill-{base}.md")] = build_skill(ch)
@@ -582,9 +613,14 @@ def build():
             xt_title=xt["title"], xt_n=xt["measure"]["views"]["参西"])
         own = [u for u in units if primary[u["locator"]] == ch["n"]]
         shared = [u for u in units if primary[u["locator"]] != ch["n"]]
+        ttl, hz_use = ch["title"], s["hanzi"]
+        if DOCS_AUTHORED:
+            t_doc, hz_doc = doc_head(ch["slug"])
+            ttl = t_doc or ttl
+            hz_use = hz_doc if hz_doc else hz_use
         chapters_json["chapters"].append({
-            "n": ch["n"], "slug": ch["slug"], "title": ch["title"],
-            "status": "🚧", "units": len(own), "shared": len(shared), "hanzi": s["hanzi"],
+            "n": ch["n"], "slug": ch["slug"], "title": ttl,
+            "status": "🚧", "units": len(own), "shared": len(shared), "hanzi": hz_use,
             "extends": len(ext[ch["n"]]), "extendHanzi": sum(u["hanzi"] for u in ext[ch["n"]]),
         })
     files[os.path.join(SUBJ, "chapters.json")] = json.dumps(chapters_json, ensure_ascii=False, indent=1) + "\n"

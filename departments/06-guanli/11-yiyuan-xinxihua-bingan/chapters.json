@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-z111",
-   "title": "医院信息系统的构成",
+   "title": "医院信息系统的构成：系统不是模块清单，是记录的分布图",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-z112",
-   "title": "标准、编码与互操作",
+   "title": "标准、编码与互操作：编码少一位，整组就匹配不上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-z113",
-   "title": "电子病历与临床信息系统",
+   "title": "电子病历与临床信息系统：写得快不等于写得对，签了名才算写完",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-z114",
-   "title": "病案管理与首页数据",
+   "title": "病案首页与主诊断：一个诊断选错，整组都错",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-z115",
-   "title": "数据质量与统计上报",
+   "title": "数据质量与统计上报：同一个数，三个分母",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-z116",
-   "title": "信息安全与权限",
+   "title": "信息安全与权限：能登录的人越多，签名越不值钱",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-z117",
-   "title": "项目实施与验收",
+   "title": "项目实施与验收：验收单上不能写「满足临床需要」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-z118",
-   "title": "智慧医院与规划",
+   "title": "智慧医院与规划：评级是体检报告，不是成绩单",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

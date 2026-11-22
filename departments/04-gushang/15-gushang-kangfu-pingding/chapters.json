@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-pingding-gailun",
-   "title": "康复评定概论",
+   "title": "评定不是给功能打分，是把「他现在不能做什么」换成「下一步做什么」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-guanjie-jili",
-   "title": "关节活动度与肌力评定",
+   "title": "角度量得出来，力量量得出来，「够不够用」量不出来",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-pingheng-butai",
-   "title": "平衡与步态评定",
+   "title": "平衡不好的人不是站不住，是他不知道自己正在站不住",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-adl-shenghuo",
-   "title": "日常生活活动与生活质量",
+   "title": "ADL 满分的人，可以完全回不到原来的生活",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-tengtong-xinli",
-   "title": "疼痛与心理评定",
+   "title": "疼痛评分是他给你的一个数，不是他承受的那个量",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-yingxiang-gongneng",
-   "title": "影像与功能的对应",
+   "title": "片子上的愈合有时间表，能不能负重没有",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-liangbiao",
-   "title": "评定量表的选择与信效度",
+   "title": "量表不是越全越好，是能测出变化才算有用",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-baogao-suifang",
-   "title": "评定报告与随访",
+   "title": "报告是写给三个月后的自己看的，不是写给今天签字的人看的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

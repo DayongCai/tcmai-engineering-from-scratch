@@ -1076,7 +1076,7 @@
       "items": [
         {
           "slug": "01-chengshu-zabing",
-          "title": "第1章 金匮的成书与杂病分类",
+          "title": "第1章 《金匮要略》不是「杂病方书」，是一部 402 条的筛选器",
           "claimed": "rendered",
           "claimedMinutes": 6.98,
           "segments": 10,
@@ -1090,7 +1090,7 @@
         },
         {
           "slug": "02-zangfu-chuanbian",
-          "title": "第2章 脏腑经络先后病：传变与预防",
+          "title": "第2章 十七句话，把「治病」改成「预判」",
           "claimed": "rendered",
           "claimedMinutes": 19.63,
           "segments": 11,
@@ -1104,7 +1104,7 @@
         },
         {
           "slug": "03-jing-shi-ye",
-          "title": "第3章 痉湿暍病：外感杂病的辨识",
+          "title": "第3章 痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单",
           "claimed": "rendered",
           "claimedMinutes": 20.78,
           "segments": 10,
@@ -1118,7 +1118,7 @@
         },
         {
           "slug": "04-baihe-huhuo",
-          "title": "第4章 百合狐惑阴阳毒：少见病的鉴别",
+          "title": "第4章 少见病不是罕见病，是必须先排除才敢下诊断的病",
           "claimed": "rendered",
           "claimedMinutes": 20.22,
           "segments": 14,
@@ -1132,7 +1132,7 @@
         },
         {
           "slug": "05-nueb-zhongfeng",
-          "title": "第5章 疟病与中风历节：节律与痹阻",
+          "title": "第5章 疟的节律与中风的痹阻：两篇「判据极短」的病",
           "claimed": "rendered",
           "claimedMinutes": 21.62,
           "segments": 10,
@@ -1146,7 +1146,7 @@
         },
         {
           "slug": "06-pibai-xulao",
-          "title": "第6章 血痹虚劳：虚损的分层",
+          "title": "第6章 血痹虚劳：虚损不是一种病，是五个深度",
           "claimed": "rendered",
           "claimedMinutes": 18.49,
           "segments": 10,
@@ -1174,7 +1174,7 @@
         },
         {
           "slug": "08-xiaoke-linbing",
-          "title": "第8章 消渴与淋病：津液与排泄",
+          "title": "第8章 消渴与淋病：把「喝进去的」与「排出来的」对上账",
           "claimed": "rendered",
           "claimedMinutes": 13.49,
           "segments": 10,
@@ -1188,7 +1188,7 @@
         },
         {
           "slug": "09-furen-sanpian",
-          "title": "第9章 妇人病三篇：经带胎产的辨证",
+          "title": "第9章 妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段",
           "claimed": "rendered",
           "claimedMinutes": 29.66,
           "segments": 10,
@@ -1202,7 +1202,7 @@
         },
         {
           "slug": "10-zabing-peiwu",
-          "title": "第10章 杂病方剂的配伍规律与统计",
+          "title": "第10章 174 个方里，只有 165 个能算配伍",
           "claimed": "rendered",
           "claimedMinutes": 20.07,
           "segments": 10,
@@ -1216,7 +1216,7 @@
         },
         {
           "slug": "11-pian7-feiwei-feiyong",
-          "title": "第11章 肺痿肺痈咳嗽上气",
+          "title": "第11章 篇目精读第七：肺痿肺痈咳嗽上气——一条一方，10 方之外还挂着 6 首附方",
           "claimed": "rendered",
           "claimedMinutes": 12.4,
           "segments": 10,
@@ -1230,7 +1230,7 @@
         },
         {
           "slug": "12-pian8-bentun",
-          "title": "第12章 奔豚气",
+          "title": "第12章 篇目精读第八：奔豚气——全书最短的一篇，却给了三个入口",
           "claimed": "rendered",
           "claimedMinutes": 6.34,
           "segments": 10,
@@ -1244,7 +1244,7 @@
         },
         {
           "slug": "13-pian9-xiongbi",
-          "title": "第13章 胸痹心痛短气",
+          "title": "第13章 篇目精读第九：胸痹心痛短气——一句话定病机，7 条各给一方",
           "claimed": "rendered",
           "claimedMinutes": 8.41,
           "segments": 10,
@@ -1258,7 +1258,7 @@
         },
         {
           "slug": "14-pian10-fuman-shanjia",
-          "title": "第14章 腹满寒疝宿食",
+          "title": "第14章 篇目精读第十：腹满寒疝宿食——26 条里前 7 条不出方，先把决策树长出来",
           "claimed": "rendered",
           "claimedMinutes": 12.81,
           "segments": 10,
@@ -1272,7 +1272,7 @@
         },
         {
           "slug": "15-pian11-zangfu-jiju",
-          "title": "第15章 五脏风寒积聚",
+          "title": "第15章 篇目精读第十一：五脏风寒积聚——20 条只 3 方，一篇被跳过的「定位表」",
           "claimed": "rendered",
           "claimedMinutes": 9.25,
           "segments": 10,
@@ -1286,7 +1286,7 @@
         },
         {
           "slug": "16-pian14-shuiqi",
-          "title": "第16章 水气",
+          "title": "第16章 篇目精读第十四：水气——2617 字的全书最长篇，用三套分类切同一批病",
           "claimed": "rendered",
           "claimedMinutes": 16.84,
           "segments": 10,
@@ -1300,7 +1300,7 @@
         },
         {
           "slug": "17-pian15-huangdan",
-          "title": "第17章 黄疸",
+          "title": "第17章 篇目精读第十五：黄疸——三因入口，六方各管一段",
           "claimed": "rendered",
           "claimedMinutes": 9.88,
           "segments": 10,
@@ -1314,7 +1314,7 @@
         },
         {
           "slug": "18-pian16-jingji-tunv",
-          "title": "第18章 惊悸吐衄下血胸满瘀血",
+          "title": "第18章 篇目精读第十六：惊悸吐衄下血胸满瘀血——17 条里 11 条在辨「是不是血的问题」",
           "claimed": "rendered",
           "claimedMinutes": 7.79,
           "segments": 10,
@@ -1328,7 +1328,7 @@
         },
         {
           "slug": "19-pian17-outu-yueli",
-          "title": "第19章 呕吐哕下利",
+          "title": "第19章 篇目精读第十七：呕吐哕下利——47 条，全书条数最多的一篇",
           "claimed": "rendered",
           "claimedMinutes": 15.55,
           "segments": 10,
@@ -1342,7 +1342,7 @@
         },
         {
           "slug": "20-pian18-chuangyong",
-          "title": "第20章 疮痈肠痈浸淫",
+          "title": "第20章 篇目精读第十八：疮痈肠痈浸淫——8 条 3 方，最短的杂病篇之一",
           "claimed": "rendered",
           "claimedMinutes": 7.05,
           "segments": 10,
@@ -1356,7 +1356,7 @@
         },
         {
           "slug": "21-pian19-fujue-shanchong",
-          "title": "第21章 趺蹶手指臂肿转筋阴狐疝蚘虫",
+          "title": "第21章 篇目精读第十九：趺蹶手指臂肿转筋阴狐疝蚘虫——八条小病串成的一篇",
           "claimed": "rendered",
           "claimedMinutes": 6.57,
           "segments": 10,
@@ -1370,7 +1370,7 @@
         },
         {
           "slug": "22-pian23-zaliaofang",
-          "title": "第22章 杂疗方",
+          "title": "第22章 篇目精读第二十三：杂疗方——底本 1 条，古诗文网本 46 段",
           "claimed": "rendered",
           "claimedMinutes": 11.52,
           "segments": 10,
@@ -1384,7 +1384,7 @@
         },
         {
           "slug": "23-pian24-qinshou-jinji",
-          "title": "第23章 禽兽鱼虫禁忌",
+          "title": "第23章 篇目精读第二十四：禽兽鱼虫禁忌——133 段禁忌清单，三栏对应才是它的结构",
           "claimed": "rendered",
           "claimedMinutes": 15.2,
           "segments": 10,
@@ -1398,7 +1398,7 @@
         },
         {
           "slug": "24-pian25-guoshi-jinji",
-          "title": "第24章 果实菜谷禁忌",
+          "title": "第24章 篇目精读第二十五：果实菜谷禁忌——与禽兽鱼虫禁忌合起来才是完整的食禁",
           "claimed": "rendered",
           "claimedMinutes": 11.94,
           "segments": 10,
@@ -1580,7 +1580,7 @@
       "items": [
         {
           "slug": "01-xulun",
-          "title": "第1章 绪论",
+          "title": "绪论：先把学科的地界、来路与读法交代清楚",
           "claimed": "rendered",
           "claimedMinutes": 19.84,
           "segments": 13,
@@ -1594,7 +1594,7 @@
         },
         {
           "slug": "02-bianzheng-silu",
-          "title": "第2章 中医内科疾病的辨证论治思路与方法",
+          "title": "辨证论治思路与方法：把「看病」拆成一条可复核的流水线",
           "claimed": "rendered",
           "claimedMinutes": 24.28,
           "segments": 14,
@@ -1608,7 +1608,7 @@
         },
         {
           "slug": "03-zangfu-bianzheng-gangyao",
-          "title": "第3章 脏腑辨证纲要与内科治则",
+          "title": "脏腑辨证纲要与内科治则：把「病位」拆成五套可复用的模板",
           "claimed": "rendered",
           "claimedMinutes": 16.68,
           "segments": 12,
@@ -1622,7 +1622,7 @@
         },
         {
           "slug": "04-feixi-bingzheng",
-          "title": "第4章 肺系病证",
+          "title": "肺系病证：八个病证，一套模板，一张鉴别网",
           "claimed": "rendered",
           "claimedMinutes": 17.49,
           "segments": 13,
@@ -1636,7 +1636,7 @@
         },
         {
           "slug": "05-xinxi-bingzheng",
-          "title": "第5章 心系病证",
+          "title": "心系病证：九病一条轴，从心神到心脉",
           "claimed": "rendered",
           "claimedMinutes": 15.96,
           "segments": 13,
@@ -1650,7 +1650,7 @@
         },
         {
           "slug": "06-piwei-bingzheng",
-          "title": "第6章 脾胃系病证",
+          "title": "脾胃系病证：一条通道上的九个卡点",
           "claimed": "rendered",
           "claimedMinutes": 17.04,
           "segments": 13,
@@ -1664,7 +1664,7 @@
         },
         {
           "slug": "07-ganxi-bingzheng",
-          "title": "第7章 肝系病证",
+          "title": "肝系病证：气血水风四层，与一个例外",
           "claimed": "rendered",
           "claimedMinutes": 19.68,
           "segments": 13,
@@ -1678,7 +1678,7 @@
         },
         {
           "slug": "08-shenxi-bingzheng",
-          "title": "第8章 肾系病证",
+          "title": "肾系病证：水、溺、精三条通道",
           "claimed": "rendered",
           "claimedMinutes": 18.26,
           "segments": 13,
@@ -1692,7 +1692,7 @@
         },
         {
           "slug": "09-qixue-jinye-bingzheng",
-          "title": "第9章 气血津液病证",
+          "title": "气血津液病证：55 个小节装不下 71 个证",
           "claimed": "rendered",
           "claimedMinutes": 17.19,
           "segments": 9,
@@ -1706,7 +1706,7 @@
         },
         {
           "slug": "10-zhiti-jingluo-bingzheng",
-          "title": "第10章 肢体经络病证",
+          "title": "肢体经络病证：五个病证，五格骨架，二十五条一对一的证—方",
           "claimed": "rendered",
           "claimedMinutes": 19.89,
           "segments": 10,
@@ -1720,7 +1720,7 @@
         },
         {
           "slug": "11-jizheng-chuanranbing",
-          "title": "第11章 常见急症与传染病",
+          "title": "常见急症与传染病：同一个槽位名，两种语义",
           "claimed": "rendered",
           "claimedMinutes": 19.03,
           "segments": 10,
@@ -1734,7 +1734,7 @@
         },
         {
           "slug": "12-shuzihua-ai",
-          "title": "第12章 中医内科学的数字化与AI时代",
+          "title": "数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去",
           "claimed": "rendered",
           "claimedMinutes": 22.87,
           "segments": 10,
@@ -1748,7 +1748,7 @@
         },
         {
           "slug": "13-zhengfang-liaoxiao",
-          "title": "第13章 证候—方剂—疗效的因果推断",
+          "title": "证候—方剂—疗效：一条链里哪一步能看见，哪一步只能相信",
           "claimed": "rendered",
           "claimedMinutes": 26.53,
           "segments": 16,
@@ -1762,7 +1762,7 @@
         },
         {
           "slug": "14-fenxing-icd11",
-          "title": "第14章 内科分型与 ICD-11 的映射",
+          "title": "内科分型与 ICD-11：能对上的三十二个，和不能对上的四类",
           "claimed": "rendered",
           "claimedMinutes": 23.36,
           "segments": 16,
@@ -30630,7 +30630,7 @@
       "items": [
         {
           "slug": "01-introduction-to-pathophysiology",
-          "title": "第 1 章 · 病理生理学导论",
+          "title": "第 1 章 · 病理生理学导论：四个问题与一套不判定的口径",
           "claimed": "rendered",
           "claimedMinutes": 29.02,
           "segments": 18,
@@ -30644,7 +30644,7 @@
         },
         {
           "slug": "02-homeostasis-allostasis-and-adaptive-responses-to-stressors",
-          "title": "第 2 章 · 稳态、异稳态与对应激源的适应性反应",
+          "title": "第 2 章 · 稳态、异稳态与对应激源的适应性反应：设定点是可以被移动的",
           "claimed": "rendered",
           "claimedMinutes": 26.79,
           "segments": 19,
@@ -30658,7 +30658,7 @@
         },
         {
           "slug": "03-cell-structure-and-function",
-          "title": "第 3 章 · 细胞结构与功能",
+          "title": "第 3 章 · 细胞结构与功能：结构是损伤的受力点清单",
           "claimed": "rendered",
           "claimedMinutes": 21.17,
           "segments": 15,
@@ -30672,7 +30672,7 @@
         },
         {
           "slug": "04-cell-injury-aging-and-death",
-          "title": "第 4 章 · 细胞损伤、衰老与死亡",
+          "title": "第 4 章 · 细胞损伤、衰老与死亡：一条线、两种死法、一个例外",
           "claimed": "rendered",
           "claimedMinutes": 23.6,
           "segments": 16,
@@ -30686,7 +30686,7 @@
         },
         {
           "slug": "05-genome-structure-regulation-and-tissue-differentiation",
-          "title": "第 5 章 · 基因组结构、调控与组织分化",
+          "title": "第 5 章 · 基因组结构、调控与组织分化：同一份底稿的十种读法",
           "claimed": "rendered",
           "claimedMinutes": 19.84,
           "segments": 15,
@@ -30700,7 +30700,7 @@
         },
         {
           "slug": "06-genetic-and-developmental-disorders",
-          "title": "第 6 章 · 遗传与发育性疾病",
+          "title": "第 6 章 · 遗传与发育性疾病：读的是传递的形状，不是概率表",
           "claimed": "rendered",
           "claimedMinutes": 24.6,
           "segments": 16,
@@ -30714,7 +30714,7 @@
         },
         {
           "slug": "07-neoplasia",
-          "title": "第 7 章 · 肿瘤",
+          "title": "第 7 章 · 肿瘤：一串约束被逐条突破的累积",
           "claimed": "rendered",
           "claimedMinutes": 22.63,
           "segments": 18,
@@ -30728,7 +30728,7 @@
         },
         {
           "slug": "08-infectious-processes",
-          "title": "第 8 章 · 感染过程",
+          "title": "第 8 章 · 感染过程：从定植到器官功能障碍的一条连续谱",
           "claimed": "rendered",
           "claimedMinutes": 23.61,
           "segments": 17,
@@ -30742,7 +30742,7 @@
         },
         {
           "slug": "09-inflammation-and-immunity",
-          "title": "第 9 章 · 炎症与免疫",
+          "title": "第 9 章 · 炎症与免疫：两套系统、三条判据与一个交汇点",
           "claimed": "rendered",
           "claimedMinutes": 24.78,
           "segments": 18,
@@ -30756,7 +30756,7 @@
         },
         {
           "slug": "10-alterations-in-immune-function",
-          "title": "第 10 章 · 免疫功能异常",
+          "title": "第 10 章 · 免疫功能异常：三条约束、四型判据与一个「谁在执行」",
           "claimed": "rendered",
           "claimedMinutes": 25.29,
           "segments": 18,
@@ -30770,7 +30770,7 @@
         },
         {
           "slug": "11-malignant-disorders-of-white-blood-cells",
-          "title": "第 11 章 · 白细胞恶性肿瘤",
+          "title": "第 11 章 · 白细胞恶性肿瘤：四条机制收十个节",
           "claimed": "rendered",
           "claimedMinutes": 23.59,
           "segments": 17,
@@ -30784,7 +30784,7 @@
         },
         {
           "slug": "12-hiv-disease-and-aids",
-          "title": "第 12 章 · HIV感染与艾滋病",
+          "title": "第 12 章 · HIV 感染与艾滋病：一个受体决定了整条病程",
           "claimed": "rendered",
           "claimedMinutes": 24.04,
           "segments": 17,
@@ -30798,7 +30798,7 @@
         },
         {
           "slug": "13-alterations-in-oxygen-transport",
-          "title": "第 13 章 · 氧运输异常",
+          "title": "第 13 章 · 氧运输异常：先定哪一段断，再谈缺氧",
           "claimed": "rendered",
           "claimedMinutes": 26.75,
           "segments": 19,
@@ -30812,7 +30812,7 @@
         },
         {
           "slug": "14-alterations-in-hemostasis-and-blood-coagulation",
-          "title": "第 14 章 · 止血与凝血异常",
+          "title": "第 14 章 · 止血与凝血异常：三条线，两种形态，一个终末通路",
           "claimed": "rendered",
           "claimedMinutes": 27.64,
           "segments": 18,
@@ -30826,7 +30826,7 @@
         },
         {
           "slug": "15-alterations-in-blood-flow",
-          "title": "第 15 章 · 血流异常",
+          "title": "第 15 章 · 血流异常：一个压差、两套阻力与一条时间窗",
           "claimed": "rendered",
           "claimedMinutes": 23.33,
           "segments": 17,
@@ -30840,7 +30840,7 @@
         },
         {
           "slug": "16-alterations-in-blood-pressure",
-          "title": "第 16 章 · 血压异常",
+          "title": "第 16 章 · 血压异常：一个讲数字的章节，为何一个数字都不给",
           "claimed": "rendered",
           "claimedMinutes": 22.92,
           "segments": 16,
@@ -30854,7 +30854,7 @@
         },
         {
           "slug": "17-cardiac-function",
-          "title": "第 17 章 · 心脏功能",
+          "title": "第 17 章 · 心脏功能：四个旋钮与一条钙的链条",
           "claimed": "rendered",
           "claimedMinutes": 26.44,
           "segments": 19,
@@ -30868,7 +30868,7 @@
         },
         {
           "slug": "18-alterations-in-cardiac-function",
-          "title": "第 18 章 · 心脏功能异常",
+          "title": "第 18 章 · 心脏功能异常：四类失衡与一张正反馈网络",
           "claimed": "rendered",
           "claimedMinutes": 23.52,
           "segments": 19,
@@ -30938,7 +30938,7 @@
         },
         {
           "slug": "23-restrictive-pulmonary-disorders",
-          "title": "第 23 章 · 限制性肺疾病",
+          "title": "第 23 章 · 限制性肺疾病：装不下的六个位置",
           "claimed": "rendered",
           "claimedMinutes": 24.84,
           "segments": 15,
@@ -30952,7 +30952,7 @@
         },
         {
           "slug": "24-fluid-and-electrolyte-homeostasis-and-imbalances",
-          "title": "第 24 章 · 水电解质稳态与失衡",
+          "title": "第 24 章 · 水电解质稳态与失衡：两个轴，一条出口",
           "claimed": "rendered",
           "claimedMinutes": 28.73,
           "segments": 18,
@@ -30966,7 +30966,7 @@
         },
         {
           "slug": "25-acid-base-homeostasis-and-imbalances",
-          "title": "第 25 章 · 酸碱平衡与失衡",
+          "title": "第 25 章 · 酸碱平衡与失衡：三道防线与一条方向判据",
           "claimed": "rendered",
           "claimedMinutes": 25.29,
           "segments": 16,
@@ -30980,7 +30980,7 @@
         },
         {
           "slug": "26-renal-function",
-          "title": "第 26 章 · 肾脏功能",
+          "title": "第 26 章 · 肾脏功能：一条四环节的链，三组功能",
           "claimed": "rendered",
           "claimedMinutes": 29.09,
           "segments": 18,
@@ -30994,7 +30994,7 @@
         },
         {
           "slug": "27-intrarenal-disorders",
-          "title": "第 27 章 · 肾内疾病",
+          "title": "第 27 章 · 肾内疾病：先定部位，再定性质",
           "claimed": "rendered",
           "claimedMinutes": 21.51,
           "segments": 17,
@@ -31008,7 +31008,7 @@
         },
         {
           "slug": "28-acute-kidney-injury-and-chronic-kidney-disease",
-          "title": "第 28 章 · 急性肾损伤与慢性肾脏病",
+          "title": "第 28 章 · 急性肾损伤与慢性肾脏病：一条主线，两条时间轴",
           "claimed": "rendered",
           "claimedMinutes": 22.81,
           "segments": 18,
@@ -31022,7 +31022,7 @@
         },
         {
           "slug": "29-disorders-of-the-lower-urinary-tract",
-          "title": "第 29 章 · 下尿路疾病",
+          "title": "第 29 章 · 下尿路疾病：一条分界线，三组症状",
           "claimed": "rendered",
           "claimedMinutes": 23.5,
           "segments": 18,
@@ -31036,7 +31036,7 @@
         },
         {
           "slug": "30-male-genital-and-reproductive-function",
-          "title": "第 30 章 · 男性生殖功能",
+          "title": "第 30 章 · 男性生殖功能：一套解剖，三层调控",
           "claimed": "rendered",
           "claimedMinutes": 24.93,
           "segments": 17,
@@ -31050,7 +31050,7 @@
         },
         {
           "slug": "31-alterations-in-male-genital-and-reproductive-function",
-          "title": "第 31 章 · 男性生殖功能异常",
+          "title": "第 31 章 · 男性生殖功能异常：先把表现放回六个类别",
           "claimed": "rendered",
           "claimedMinutes": 21.65,
           "segments": 17,
@@ -31064,7 +31064,7 @@
         },
         {
           "slug": "32-female-genital-and-reproductive-function",
-          "title": "第 32 章 · 女性生殖功能",
+          "title": "第 32 章 · 女性生殖功能：一条周期性轴与它的读出器",
           "claimed": "rendered",
           "claimedMinutes": 21.86,
           "segments": 18,
@@ -31078,7 +31078,7 @@
         },
         {
           "slug": "33-alterations-in-female-genital-and-reproductive-function",
-          "title": "第 33 章 · 女性生殖功能异常",
+          "title": "第 33 章 · 女性生殖功能异常：五层排查、三源激素与一条因果环",
           "claimed": "rendered",
           "claimedMinutes": 24.91,
           "segments": 18,
@@ -31092,7 +31092,7 @@
         },
         {
           "slug": "34-sexually-transmitted-infections",
-          "title": "第 34 章 · 性传播感染",
+          "title": "第 34 章 · 性传播感染：四层屏障、一条上行链与六类防控",
           "claimed": "rendered",
           "claimedMinutes": 22.85,
           "segments": 18,
@@ -31106,7 +31106,7 @@
         },
         {
           "slug": "35-gastrointestinal-function",
-          "title": "第 35 章 · 胃肠功能",
+          "title": "第 35 章 · 胃肠功能：四类功能、一条调控链与从症状反推环节",
           "claimed": "rendered",
           "claimedMinutes": 22,
           "segments": 16,
@@ -31120,7 +31120,7 @@
         },
         {
           "slug": "36-gastrointestinal-disorders",
-          "title": "第 36 章 · 胃肠疾病",
+          "title": "第 36 章 · 胃肠疾病：三类机制、一个深度对应与四种分型",
           "claimed": "rendered",
           "claimedMinutes": 26.03,
           "segments": 19,
@@ -31134,7 +31134,7 @@
         },
         {
           "slug": "37-alterations-in-function-of-the-gallbladder-and-exocrine-pancreas",
-          "title": "第 37 章 · 胆囊与外分泌胰腺功能异常",
+          "title": "第 37 章 · 胆囊与外分泌胰腺功能异常：一个三环节通则、三道保险与一处定位",
           "claimed": "rendered",
           "claimedMinutes": 21.15,
           "segments": 18,
@@ -31148,7 +31148,7 @@
         },
         {
           "slug": "38-liver-diseases",
-          "title": "第 38 章 · 肝脏疾病",
+          "title": "第 38 章 · 肝脏疾病：四条主线、两条后果线与一个可逆窗口",
           "claimed": "rendered",
           "claimedMinutes": 23.91,
           "segments": 19,
@@ -31162,7 +31162,7 @@
         },
         {
           "slug": "39-endocrine-physiology-and-mechanisms-of-hypothalamic-pituitary-regulation",
-          "title": "第 39 章 · 内分泌生理与下丘脑-垂体调控机制",
+          "title": "第 39 章 · 内分泌生理与下丘脑-垂体调控机制：两层整合、三级轴与五种读法",
           "claimed": "rendered",
           "claimedMinutes": 27.24,
           "segments": 20,
@@ -31176,7 +31176,7 @@
         },
         {
           "slug": "40-disorders-of-endocrine-function",
-          "title": "第 40 章 · 内分泌功能紊乱",
+          "title": "第 40 章 · 内分泌功能紊乱：四种型态、一张定位表与五种急症",
           "claimed": "rendered",
           "claimedMinutes": 26.12,
           "segments": 18,
@@ -31190,7 +31190,7 @@
         },
         {
           "slug": "41-diabetes-mellitus",
-          "title": "第 41 章 · 糖尿病",
+          "title": "第 41 章 · 糖尿病：一个不对称结构、三条环节与两类血管",
           "claimed": "rendered",
           "claimedMinutes": 28.99,
           "segments": 19,
@@ -31204,7 +31204,7 @@
         },
         {
           "slug": "42-alterations-in-metabolism-and-nutrition",
-          "title": "第 42 章 · 代谢与营养异常",
+          "title": "第 42 章 · 代谢与营养异常：一个调定点、两种代谢模式与一条再喂养链",
           "claimed": "rendered",
           "claimedMinutes": 28.36,
           "segments": 19,
@@ -31218,7 +31218,7 @@
         },
         {
           "slug": "43-structure-and-function-of-the-nervous-system",
-          "title": "第 43 章 · 神经系统结构与功能",
+          "title": "第 43 章 · 神经系统结构与功能：一张由缺损反推部位的定位图",
           "claimed": "rendered",
           "claimedMinutes": 23.17,
           "segments": 13,
@@ -31232,7 +31232,7 @@
         },
         {
           "slug": "44-acute-disorders-of-brain-function",
-          "title": "第 44 章 · 脑功能急性疾病",
+          "title": "第 44 章 · 脑功能急性疾病：一条链，四个干预点",
           "claimed": "rendered",
           "claimedMinutes": 24.84,
           "segments": 13,
@@ -31246,7 +31246,7 @@
         },
         {
           "slug": "45-chronic-disorders-of-neurologic-function",
-          "title": "第 45 章 · 慢性神经功能障碍",
+          "title": "第 45 章 · 慢性神经功能障碍：部位与储备，而不是时间与压力",
           "claimed": "rendered",
           "claimedMinutes": 24.53,
           "segments": 12,
@@ -31260,7 +31260,7 @@
         },
         {
           "slug": "46-alterations-in-special-sensory-function",
-          "title": "第 46 章 · 特殊感觉功能异常",
+          "title": "第 46 章 · 特殊感觉功能异常：缺损的形状就是定位器",
           "claimed": "rendered",
           "claimedMinutes": 24.22,
           "segments": 14,
@@ -31274,7 +31274,7 @@
         },
         {
           "slug": "47-pain",
-          "title": "第 47 章 · 疼痛",
+          "title": "第 47 章 · 疼痛：四环节、两级敏化与一条从症状到疾病的转弯",
           "claimed": "rendered",
           "claimedMinutes": 23.75,
           "segments": 18,
@@ -31288,7 +31288,7 @@
         },
         {
           "slug": "48-mental-health-disorders",
-          "title": "第 48 章 · 精神心理健康障碍",
+          "title": "第 48 章 · 精神心理健康障碍：三层整合、五个维度与一条去污名化的边界",
           "claimed": "rendered",
           "claimedMinutes": 37.65,
           "segments": 25,
@@ -31302,7 +31302,7 @@
         },
         {
           "slug": "49-structure-and-function-of-the-musculoskeletal-system",
-          "title": "第 49 章 · 骨骼肌肉系统结构与功能",
+          "title": "第 49 章 · 骨骼肌肉系统结构与功能：六项功能、一条耦联与三处结构弱点",
           "claimed": "rendered",
           "claimedMinutes": 29.39,
           "segments": 19,
@@ -31316,7 +31316,7 @@
         },
         {
           "slug": "50-alterations-in-musculoskeletal-function-trauma-infection-and-disease",
-          "title": "第 50 章 · 骨骼肌肉功能异常：创伤、感染与疾病",
+          "title": "第 50 章 · 骨骼肌肉功能异常：力学环境、两个恶性循环与一条废用链",
           "claimed": "rendered",
           "claimedMinutes": 32.62,
           "segments": 19,
@@ -31330,7 +31330,7 @@
         },
         {
           "slug": "51-alterations-in-musculoskeletal-function-rheumatic-disorders",
-          "title": "第 51 章 · 骨骼肌肉功能异常：风湿性疾病",
+          "title": "第 51 章 · 风湿性疾病：两种范式、一条损伤链与全身代价",
           "claimed": "rendered",
           "claimedMinutes": 30.51,
           "segments": 19,
@@ -31344,7 +31344,7 @@
         },
         {
           "slug": "52-alterations-in-the-integumentary-system",
-          "title": "第 52 章 · 皮肤系统异常",
+          "title": "第 52 章 · 皮肤系统异常：五件组件的屏障与四条后果",
           "claimed": "rendered",
           "claimedMinutes": 30.86,
           "segments": 21,
@@ -31358,7 +31358,7 @@
         },
         {
           "slug": "53-burn-injuries",
-          "title": "第 53 章 · 烧伤",
+          "title": "第 53 章 · 烧伤：局部三道带、四路全身反应与一条把两者接起来的链",
           "claimed": "rendered",
           "claimedMinutes": 30.79,
           "segments": 21,
@@ -31386,7 +31386,7 @@
       "items": [
         {
           "slug": "01-introduction",
-          "title": "第1章 绪论",
+          "title": "绪论：一门学科先给提问方式，再给药名",
           "claimed": "rendered",
           "claimedMinutes": 21.42,
           "segments": 14,
@@ -31400,7 +31400,7 @@
         },
         {
           "slug": "02-pharmacodynamics",
-          "title": "第2章 药物效应动力学——药效学",
+          "title": "药物效应动力学：作用、机制、受体与表述的四级台阶",
           "claimed": "rendered",
           "claimedMinutes": 29.82,
           "segments": 13,
@@ -31414,7 +31414,7 @@
         },
         {
           "slug": "03-pharmacokinetics",
-          "title": "第3章 药物代谢动力学——药动学",
+          "title": "药物代谢动力学：一条曲线、两类模型、三种消除",
           "claimed": "rendered",
           "claimedMinutes": 18.08,
           "segments": 14,
@@ -31428,7 +31428,7 @@
         },
         {
           "slug": "04-factors-affecting-drug-response",
-          "title": "第4章 影响药物效应的因素",
+          "title": "影响药物效应的因素：三组因素、两端框架、一条记录链",
           "claimed": "rendered",
           "claimedMinutes": 18.85,
           "segments": 12,
@@ -31442,7 +31442,7 @@
         },
         {
           "slug": "05-autonomic-nervous-system-overview",
-          "title": "第5章 传出神经系统药理概论",
+          "title": "传出神经系统药理概论：三层框架与六类主干",
           "claimed": "rendered",
           "claimedMinutes": 18.45,
           "segments": 12,
@@ -31456,7 +31456,7 @@
         },
         {
           "slug": "06-cholinergic-agonists",
-          "title": "第6章 拟胆碱药",
+          "title": "拟胆碱药：两条路通往同一个效应，判据在「依赖什么」",
           "claimed": "rendered",
           "claimedMinutes": 19.02,
           "segments": 13,
@@ -31470,7 +31470,7 @@
         },
         {
           "slug": "07-organophosphates-and-cholinesterase-reactivating-agents",
-          "title": "第7章 有机磷酸酯类及胆碱酯酶复活药",
+          "title": "有机磷酸酯类及胆碱酯酶复活药：一个共价键，与它被拆开的时间窗",
           "claimed": "rendered",
           "claimedMinutes": 20.75,
           "segments": 13,
@@ -31484,7 +31484,7 @@
         },
         {
           "slug": "08-cholinergic-antagonists",
-          "title": "第8章 抗胆碱药",
+          "title": "抗胆碱药：阻断之后看到的，是「张力对比」而不是药物本身",
           "claimed": "rendered",
           "claimedMinutes": 18.27,
           "segments": 14,
@@ -31498,7 +31498,7 @@
         },
         {
           "slug": "09-adrenergic-agonists",
-          "title": "第9章 拟肾上腺素药",
+          "title": "拟肾上腺素药：受体谱的宽窄，决定了一支药长什么样",
           "claimed": "rendered",
           "claimedMinutes": 18.74,
           "segments": 14,
@@ -31512,7 +31512,7 @@
         },
         {
           "slug": "10-adrenergic-antagonists",
-          "title": "第10章 抗肾上腺素药",
+          "title": "抗肾上腺素药：阻断不产生效应，它只取消一层驱动",
           "claimed": "rendered",
           "claimedMinutes": 19.4,
           "segments": 14,
@@ -31526,7 +31526,7 @@
         },
         {
           "slug": "11-local-anesthetics",
-          "title": "第11章 局部麻醉药",
+          "title": "局部麻醉药：一条「结构—代谢—时程—给药—观察」的链",
           "claimed": "rendered",
           "claimedMinutes": 23.31,
           "segments": 15,
@@ -31540,7 +31540,7 @@
         },
         {
           "slug": "12-general-anesthetics",
-          "title": "第12章 全身麻醉药",
+          "title": "全身麻醉药：进行性抑制、可分的成分、网络的机制",
           "claimed": "rendered",
           "claimedMinutes": 23.26,
           "segments": 15,
@@ -31554,7 +31554,7 @@
         },
         {
           "slug": "13-sedative-hypnotics",
-          "title": "第13章 镇静催眠药",
+          "title": "镇静催眠药：一个剂量谱、两类别位调节、四个靶点层面",
           "claimed": "rendered",
           "claimedMinutes": 22.93,
           "segments": 15,
@@ -31568,7 +31568,7 @@
         },
         {
           "slug": "14-antiepileptic-and-anticonvulsant-drugs",
-          "title": "第14章 抗癫痫药与抗惊厥药",
+          "title": "抗癫痫药与抗惊厥药：环节、目的与观察项目",
           "claimed": "rendered",
           "claimedMinutes": 24.88,
           "segments": 15,
@@ -31582,7 +31582,7 @@
         },
         {
           "slug": "15-antipsychotic-drugs",
-          "title": "第15章 抗精神失常药",
+          "title": "抗精神失常药：四条通路、三条靶点线、两张清单",
           "claimed": "rendered",
           "claimedMinutes": 20.59,
           "segments": 14,
@@ -31596,7 +31596,7 @@
         },
         {
           "slug": "16-drugs-for-neurodegenerative-diseases",
-          "title": "第16章 治疗中枢神经系统退行性疾病药",
+          "title": "治疗中枢神经系统退行性疾病药：两道门槛、三条路径、一张观察表",
           "claimed": "rendered",
           "claimedMinutes": 24.99,
           "segments": 14,
@@ -31610,7 +31610,7 @@
         },
         {
           "slug": "17-antipyretic-analgesic-and-anti-inflammatory-drugs",
-          "title": "第17章 解热镇痛抗炎药与抗痛风药",
+          "title": "解热镇痛抗炎药与抗痛风药：一条前列腺素线、一条尿酸线",
           "claimed": "rendered",
           "claimedMinutes": 25.5,
           "segments": 14,
@@ -31624,7 +31624,7 @@
         },
         {
           "slug": "18-opioid-analgesics",
-          "title": "第18章 镇痛药",
+          "title": "镇痛药：受体、效应、用途、观察的四段推演",
           "claimed": "rendered",
           "claimedMinutes": 23.01,
           "segments": 14,
@@ -31638,7 +31638,7 @@
         },
         {
           "slug": "19-central-nervous-system-stimulants",
-          "title": "第19章 中枢兴奋药",
+          "title": "中枢兴奋药：三级部位、两条路径、一条安全边界",
           "claimed": "rendered",
           "claimedMinutes": 22.18,
           "segments": 15,
@@ -31652,7 +31652,7 @@
         },
         {
           "slug": "20-histamine-and-antihistamines",
-          "title": "第20章 组胺及抗组胺药",
+          "title": "组胺及抗组胺药：一条「释放—亚型—占据—代际」的链",
           "claimed": "rendered",
           "claimedMinutes": 21.58,
           "segments": 15,
@@ -31666,7 +31666,7 @@
         },
         {
           "slug": "21-other-autacoid-drugs",
-          "title": "第21章 其他影响自体活性物质的药物",
+          "title": "其他影响自体活性物质的药物：一条「环节—靶点—组织」的定位法",
           "claimed": "rendered",
           "claimedMinutes": 21.15,
           "segments": 15,
@@ -31680,7 +31680,7 @@
         },
         {
           "slug": "22-drugs-acting-on-cardiovascular-ion-channels",
-          "title": "第22章 作用于心血管系统离子通道的药物",
+          "title": "作用于心血管系统离子通道的药物：一条「状态—选择性—方向」的判据链",
           "claimed": "rendered",
           "claimedMinutes": 20.97,
           "segments": 15,
@@ -31694,7 +31694,7 @@
         },
         {
           "slug": "23-drugs-for-chronic-heart-failure",
-          "title": "第23章 治疗慢性心功能不全的药物",
+          "title": "治疗慢性心功能不全的药物：一条「重构—环节—时间尺度」的链",
           "claimed": "rendered",
           "claimedMinutes": 25.01,
           "segments": 13,
@@ -31708,7 +31708,7 @@
         },
         {
           "slug": "24-antihypertensive-drugs",
-          "title": "第24章 抗高血压药",
+          "title": "抗高血压药：一条「三要素—五类药—平稳覆盖」的链",
           "claimed": "rendered",
           "claimedMinutes": 22.88,
           "segments": 13,
@@ -31722,7 +31722,7 @@
         },
         {
           "slug": "25-antianginal-drugs",
-          "title": "第25章 抗心绞痛药",
+          "title": "抗心绞痛药：一张耗氧表上的四个位置",
           "claimed": "rendered",
           "claimedMinutes": 24.63,
           "segments": 12,
@@ -31736,7 +31736,7 @@
         },
         {
           "slug": "26-antiarrhythmic-drugs",
-          "title": "第26章 抗心律失常药",
+          "title": "抗心律失常药：同源的治疗与致心律失常",
           "claimed": "rendered",
           "claimedMinutes": 26.45,
           "segments": 13,
@@ -31750,7 +31750,7 @@
         },
         {
           "slug": "27-antiatherosclerotic-drugs",
-          "title": "第27章 抗动脉粥样硬化药",
+          "title": "抗动脉粥样硬化药：四个侧面，一个位点问题",
           "claimed": "rendered",
           "claimedMinutes": 20.72,
           "segments": 14,
@@ -31764,7 +31764,7 @@
         },
         {
           "slug": "28-diuretics-and-dehydrating-agents",
-          "title": "第28章 利尿药与脱水药",
+          "title": "利尿药与脱水药：管腔侧的一个转运体，血管侧的一道渗透压",
           "claimed": "rendered",
           "claimedMinutes": 22.54,
           "segments": 14,
@@ -31778,7 +31778,7 @@
         },
         {
           "slug": "29-gastrointestinal-drugs",
-          "title": "第29章 消化系统药",
+          "title": "消化系统药：三条路径、两个方向、一处相互制约",
           "claimed": "rendered",
           "claimedMinutes": 17.88,
           "segments": 14,
@@ -31792,7 +31792,7 @@
         },
         {
           "slug": "30-respiratory-system-drugs",
-          "title": "第30章 呼吸系统药",
+          "title": "呼吸系统药：一条按时相排开的分工，与三个窄口",
           "claimed": "rendered",
           "claimedMinutes": 17.44,
           "segments": 13,
@@ -31806,7 +31806,7 @@
         },
         {
           "slug": "31-uterine-stimulants",
-          "title": "第31章 子宫兴奋药",
+          "title": "子宫兴奋药：一条选择性递减的谱系，与随之升高的观察密度",
           "claimed": "rendered",
           "claimedMinutes": 25.62,
           "segments": 14,
@@ -31820,7 +31820,7 @@
         },
         {
           "slug": "32-antianemic-drugs",
-          "title": "第32章 抗贫血药",
+          "title": "抗贫血药：三个层次，三处不同步",
           "claimed": "rendered",
           "claimedMinutes": 26.37,
           "segments": 14,
@@ -31834,7 +31834,7 @@
         },
         {
           "slug": "33-drugs-affecting-coagulation",
-          "title": "第33章 作用于凝血系统药物",
+          "title": "作用于凝血系统的药物：一条线上的四段，与三种「能不能被监测」",
           "claimed": "rendered",
           "claimedMinutes": 24.78,
           "segments": 14,
@@ -31848,7 +31848,7 @@
         },
         {
           "slug": "34-adrenocortical-hormones",
-          "title": "第34章 肾上腺皮质激素类药",
+          "title": "肾上腺皮质激素类药：三个方向，一条轴，一条同源律",
           "claimed": "rendered",
           "claimedMinutes": 27.48,
           "segments": 14,
@@ -31862,7 +31862,7 @@
         },
         {
           "slug": "35-thyroid-hormones-and-antithyroid-drugs",
-          "title": "第35章 甲状腺激素与抗甲状腺药",
+          "title": "甲状腺激素与抗甲状腺药：三个环节、一条时间轴",
           "claimed": "rendered",
           "claimedMinutes": 17.96,
           "segments": 13,
@@ -31876,7 +31876,7 @@
         },
         {
           "slug": "36-antihyperglycemic-drugs",
-          "title": "第36章 降血糖药",
+          "title": "降血糖药：五条环节，一条时间轴",
           "claimed": "rendered",
           "claimedMinutes": 16.26,
           "segments": 13,
@@ -31890,7 +31890,7 @@
         },
         {
           "slug": "37-sex-hormones-and-contraceptives",
-          "title": "第37章 性激素类药及避孕药",
+          "title": "性激素类药及避孕药：一条受体链，三种时间尺度",
           "claimed": "rendered",
           "claimedMinutes": 15.4,
           "segments": 13,
@@ -31904,7 +31904,7 @@
         },
         {
           "slug": "38-antimicrobial-drugs-overview",
-          "title": "第38章 抗病原微生物药物概论",
+          "title": "抗病原微生物药物概论：一把钥匙、两套机制、一条演化线",
           "claimed": "rendered",
           "claimedMinutes": 15.96,
           "segments": 13,
@@ -31918,7 +31918,7 @@
         },
         {
           "slug": "39-synthetic-antibacterial-drugs",
-          "title": "第39章 人工合成抗菌药",
+          "title": "人工合成抗菌药：共同的出身，四条不通用的靶点线",
           "claimed": "rendered",
           "claimedMinutes": 22.95,
           "segments": 14,
@@ -31932,7 +31932,7 @@
         },
         {
           "slug": "40-beta-lactam-antibiotics",
-          "title": "第40章 β-内酰胺类抗生素",
+          "title": "β-内酰胺类抗生素：一个环、一个靶点、三处差别",
           "claimed": "rendered",
           "claimedMinutes": 24.7,
           "segments": 14,
@@ -31946,7 +31946,7 @@
         },
         {
           "slug": "41-macrolides-lincosamides-and-polypeptide-antibiotics",
-          "title": "第41章 大环内酯类、林可霉素类及多肽类抗生素",
+          "title": "大环内酯类、林可霉素类及多肽类抗生素：靶点决定范围，位点决定配伍",
           "claimed": "rendered",
           "claimedMinutes": 23.3,
           "segments": 14,
@@ -31960,7 +31960,7 @@
         },
         {
           "slug": "42-aminoglycoside-antibiotics",
-          "title": "第42章 氨基糖苷类抗生素",
+          "title": "氨基糖苷类抗生素：结构与转运决定谱，蓄积部位决定毒性",
           "claimed": "rendered",
           "claimedMinutes": 24.95,
           "segments": 15,
@@ -31974,7 +31974,7 @@
         },
         {
           "slug": "43-tetracyclines-and-chloramphenicol",
-          "title": "第43章 四环素类与氯霉素类",
+          "title": "四环素类与氯霉素类：宽谱的同源，是风险的另一种说法",
           "claimed": "rendered",
           "claimedMinutes": 19.8,
           "segments": 13,
@@ -31988,7 +31988,7 @@
         },
         {
           "slug": "44-antifungal-and-antiviral-drugs",
-          "title": "第44章 抗真菌药与抗病毒药",
+          "title": "抗真菌药与抗病毒药：选择性只剩一步之差",
           "claimed": "rendered",
           "claimedMinutes": 17.37,
           "segments": 13,
@@ -32002,7 +32002,7 @@
         },
         {
           "slug": "45-antituberculosis-and-antileprosy-drugs",
-          "title": "第45章 抗结核病药及抗麻风病药",
+          "title": "抗结核病药及抗麻风病药：菌群不同步，方案就不能单打",
           "claimed": "rendered",
           "claimedMinutes": 17.55,
           "segments": 13,
@@ -32016,7 +32016,7 @@
         },
         {
           "slug": "46-antiparasitic-drugs",
-          "title": "第46章 抗寄生虫药",
+          "title": "抗寄生虫药：先认生活史，再认药",
           "claimed": "rendered",
           "claimedMinutes": 23,
           "segments": 13,
@@ -32030,7 +32030,7 @@
         },
         {
           "slug": "47-anticancer-drugs",
-          "title": "第47章 抗恶性肿瘤药",
+          "title": "抗恶性肿瘤药：选择性是相对的，边界是算出来的",
           "claimed": "rendered",
           "claimedMinutes": 24.09,
           "segments": 13,
@@ -32044,7 +32044,7 @@
         },
         {
           "slug": "48-immunosuppressants",
-          "title": "第48章 免疫抑制药",
+          "title": "免疫抑制药：作用在哪一环，就欠哪一方面的账",
           "claimed": "rendered",
           "claimedMinutes": 28.01,
           "segments": 14,
@@ -32058,7 +32058,7 @@
         },
         {
           "slug": "49-immunostimulants",
-          "title": "第49章 免疫增强药",
+          "title": "免疫增强药：方向相反，不等于道理相反",
           "claimed": "rendered",
           "claimedMinutes": 27.99,
           "segments": 14,

@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-xulun-lilun",
-   "title": "绪论与理论基础",
+   "title": "正骨是一门判断的学问，不是一套手法的目录",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-shoufa-gailun",
-   "title": "正骨手法概论",
+   "title": "手法的四个变量：体位、着力点、方向、幅度",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-zhenggu-bafa",
-   "title": "正骨八法与常用手法",
+   "title": "八法的次序比八法的名目重要",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-guzhe-zonglun",
-   "title": "骨折总论",
+   "title": "复位的成功标准写在功能里，不写在片子上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-shangzhi-guzhe",
-   "title": "上肢骨折",
+   "title": "上肢的目标函数是「手能到该到的地方」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-xiazhi-guzhe",
-   "title": "下肢骨折",
+   "title": "下肢的第一标准是能承重，第二才是对线",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-qugan-guzhe",
-   "title": "躯干与骨盆骨折",
+   "title": "躯干的正骨，底线是不制造第二个损伤",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-guanjie-tuowei",
-   "title": "关节脱位",
+   "title": "脱位复位成功的那一刻，评估才刚开始",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -68,7 +68,7 @@
   {
    "n": 9,
    "slug": "09-jinshang-zonglun",
-   "title": "筋伤总论",
+   "title": "筋伤不是「没有骨折」，是另一类损伤",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -76,7 +76,7 @@
   {
    "n": 10,
    "slug": "10-jingjian-yaotui",
-   "title": "颈肩腰腿筋伤",
+   "title": "颈肩腰腿：手法收益最大，风险也最集中",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -84,7 +84,7 @@
   {
    "n": 11,
    "slug": "11-sizhi-xiaoer",
-   "title": "四肢关节筋伤与小儿骨伤",
+   "title": "儿童不是小一号的成人，老人也不是老一号的成人",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -92,7 +92,7 @@
   {
    "n": 12,
    "slug": "12-gubing-kangfu",
-   "title": "骨病与康复",
+   "title": "康复从受伤那天开始，不是治疗结束之后",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

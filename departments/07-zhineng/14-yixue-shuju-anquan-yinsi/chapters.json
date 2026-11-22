@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-e1",
-   "title": "信息标准与编码基础",
+   "title": "安全的第一道闸门不在防火墙，在字段定义",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-e2",
-   "title": "标准落地的合规要求",
+   "title": "标准落地不是文件对照，是把要求变成字段",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-e3",
-   "title": "政策法规与伦理总则",
+   "title": "合规的底线是分级，不是覆盖率",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-e4",
-   "title": "伦理审查与知情同意",
+   "title": "同意不是一次签字，是一段可撤回的授权",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-e5",
-   "title": "信息安全体系与风险",
+   "title": "风险不是漏洞清单，是可能性乘影响",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-e6",
-   "title": "访问控制与加密备份",
+   "title": "权限不是发给岗位的，是发给任务的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-e7",
-   "title": "病案与医疗数据管理",
+   "title": "病案的每一次调阅都应当留下能追问的痕迹",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-e8",
-   "title": "数据治理与隐私保护",
+   "title": "去标识不是删掉姓名，是让组合失去分辨力",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

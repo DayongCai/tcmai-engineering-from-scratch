@@ -5,109 +5,109 @@
     {
       "n": 1,
       "slug": "01-introduction-to-pathophysiology",
-      "title": "病理生理学导论",
+      "title": "病理生理学导论：四个问题与一套不判定的口径",
       "status": "🚧"
     },
     {
       "n": 2,
       "slug": "02-homeostasis-allostasis-and-adaptive-responses-to-stressors",
-      "title": "稳态、异稳态与对应激源的适应性反应",
+      "title": "稳态、异稳态与对应激源的适应性反应：设定点是可以被移动的",
       "status": "🚧"
     },
     {
       "n": 3,
       "slug": "03-cell-structure-and-function",
-      "title": "细胞结构与功能",
+      "title": "细胞结构与功能：结构是损伤的受力点清单",
       "status": "🚧"
     },
     {
       "n": 4,
       "slug": "04-cell-injury-aging-and-death",
-      "title": "细胞损伤、衰老与死亡",
+      "title": "细胞损伤、衰老与死亡：一条线、两种死法、一个例外",
       "status": "🚧"
     },
     {
       "n": 5,
       "slug": "05-genome-structure-regulation-and-tissue-differentiation",
-      "title": "基因组结构、调控与组织分化",
+      "title": "基因组结构、调控与组织分化：同一份底稿的十种读法",
       "status": "🚧"
     },
     {
       "n": 6,
       "slug": "06-genetic-and-developmental-disorders",
-      "title": "遗传与发育性疾病",
+      "title": "遗传与发育性疾病：读的是传递的形状，不是概率表",
       "status": "🚧"
     },
     {
       "n": 7,
       "slug": "07-neoplasia",
-      "title": "肿瘤",
+      "title": "肿瘤：一串约束被逐条突破的累积",
       "status": "🚧"
     },
     {
       "n": 8,
       "slug": "08-infectious-processes",
-      "title": "感染过程",
+      "title": "感染过程：从定植到器官功能障碍的一条连续谱",
       "status": "🚧"
     },
     {
       "n": 9,
       "slug": "09-inflammation-and-immunity",
-      "title": "炎症与免疫",
+      "title": "炎症与免疫：两套系统、三条判据与一个交汇点",
       "status": "🚧"
     },
     {
       "n": 10,
       "slug": "10-alterations-in-immune-function",
-      "title": "免疫功能异常",
+      "title": "免疫功能异常：三条约束、四型判据与一个「谁在执行」",
       "status": "🚧"
     },
     {
       "n": 11,
       "slug": "11-malignant-disorders-of-white-blood-cells",
-      "title": "白细胞恶性肿瘤",
+      "title": "白细胞恶性肿瘤：四条机制收十个节",
       "status": "🚧"
     },
     {
       "n": 12,
       "slug": "12-hiv-disease-and-aids",
-      "title": "HIV感染与艾滋病",
+      "title": "HIV 感染与艾滋病：一个受体决定了整条病程",
       "status": "🚧"
     },
     {
       "n": 13,
       "slug": "13-alterations-in-oxygen-transport",
-      "title": "氧运输异常",
+      "title": "氧运输异常：先定哪一段断，再谈缺氧",
       "status": "🚧"
     },
     {
       "n": 14,
       "slug": "14-alterations-in-hemostasis-and-blood-coagulation",
-      "title": "止血与凝血异常",
+      "title": "止血与凝血异常：三条线，两种形态，一个终末通路",
       "status": "🚧"
     },
     {
       "n": 15,
       "slug": "15-alterations-in-blood-flow",
-      "title": "血流异常",
+      "title": "血流异常：一个压差、两套阻力与一条时间窗",
       "status": "🚧"
     },
     {
       "n": 16,
       "slug": "16-alterations-in-blood-pressure",
-      "title": "血压异常",
+      "title": "血压异常：一个讲数字的章节，为何一个数字都不给",
       "status": "🚧"
     },
     {
       "n": 17,
       "slug": "17-cardiac-function",
-      "title": "心脏功能",
+      "title": "心脏功能：四个旋钮与一条钙的链条",
       "status": "🚧"
     },
     {
       "n": 18,
       "slug": "18-alterations-in-cardiac-function",
-      "title": "心脏功能异常",
+      "title": "心脏功能异常：四类失衡与一张正反馈网络",
       "status": "🚧"
     },
     {
@@ -137,187 +137,187 @@
     {
       "n": 23,
       "slug": "23-restrictive-pulmonary-disorders",
-      "title": "限制性肺疾病",
+      "title": "限制性肺疾病：装不下的六个位置",
       "status": "🚧"
     },
     {
       "n": 24,
       "slug": "24-fluid-and-electrolyte-homeostasis-and-imbalances",
-      "title": "水电解质稳态与失衡",
+      "title": "水电解质稳态与失衡：两个轴，一条出口",
       "status": "🚧"
     },
     {
       "n": 25,
       "slug": "25-acid-base-homeostasis-and-imbalances",
-      "title": "酸碱平衡与失衡",
+      "title": "酸碱平衡与失衡：三道防线与一条方向判据",
       "status": "🚧"
     },
     {
       "n": 26,
       "slug": "26-renal-function",
-      "title": "肾脏功能",
+      "title": "肾脏功能：一条四环节的链，三组功能",
       "status": "🚧"
     },
     {
       "n": 27,
       "slug": "27-intrarenal-disorders",
-      "title": "肾内疾病",
+      "title": "肾内疾病：先定部位，再定性质",
       "status": "🚧"
     },
     {
       "n": 28,
       "slug": "28-acute-kidney-injury-and-chronic-kidney-disease",
-      "title": "急性肾损伤与慢性肾脏病",
+      "title": "急性肾损伤与慢性肾脏病：一条主线，两条时间轴",
       "status": "🚧"
     },
     {
       "n": 29,
       "slug": "29-disorders-of-the-lower-urinary-tract",
-      "title": "下尿路疾病",
+      "title": "下尿路疾病：一条分界线，三组症状",
       "status": "🚧"
     },
     {
       "n": 30,
       "slug": "30-male-genital-and-reproductive-function",
-      "title": "男性生殖功能",
+      "title": "男性生殖功能：一套解剖，三层调控",
       "status": "🚧"
     },
     {
       "n": 31,
       "slug": "31-alterations-in-male-genital-and-reproductive-function",
-      "title": "男性生殖功能异常",
+      "title": "男性生殖功能异常：先把表现放回六个类别",
       "status": "🚧"
     },
     {
       "n": 32,
       "slug": "32-female-genital-and-reproductive-function",
-      "title": "女性生殖功能",
+      "title": "女性生殖功能：一条周期性轴与它的读出器",
       "status": "🚧"
     },
     {
       "n": 33,
       "slug": "33-alterations-in-female-genital-and-reproductive-function",
-      "title": "女性生殖功能异常",
+      "title": "女性生殖功能异常：五层排查、三源激素与一条因果环",
       "status": "🚧"
     },
     {
       "n": 34,
       "slug": "34-sexually-transmitted-infections",
-      "title": "性传播感染",
+      "title": "性传播感染：四层屏障、一条上行链与六类防控",
       "status": "🚧"
     },
     {
       "n": 35,
       "slug": "35-gastrointestinal-function",
-      "title": "胃肠功能",
+      "title": "胃肠功能：四类功能、一条调控链与从症状反推环节",
       "status": "🚧"
     },
     {
       "n": 36,
       "slug": "36-gastrointestinal-disorders",
-      "title": "胃肠疾病",
+      "title": "胃肠疾病：三类机制、一个深度对应与四种分型",
       "status": "🚧"
     },
     {
       "n": 37,
       "slug": "37-alterations-in-function-of-the-gallbladder-and-exocrine-pancreas",
-      "title": "胆囊与外分泌胰腺功能异常",
+      "title": "胆囊与外分泌胰腺功能异常：一个三环节通则、三道保险与一处定位",
       "status": "🚧"
     },
     {
       "n": 38,
       "slug": "38-liver-diseases",
-      "title": "肝脏疾病",
+      "title": "肝脏疾病：四条主线、两条后果线与一个可逆窗口",
       "status": "🚧"
     },
     {
       "n": 39,
       "slug": "39-endocrine-physiology-and-mechanisms-of-hypothalamic-pituitary-regulation",
-      "title": "内分泌生理与下丘脑-垂体调控机制",
+      "title": "内分泌生理与下丘脑-垂体调控机制：两层整合、三级轴与五种读法",
       "status": "🚧"
     },
     {
       "n": 40,
       "slug": "40-disorders-of-endocrine-function",
-      "title": "内分泌功能紊乱",
+      "title": "内分泌功能紊乱：四种型态、一张定位表与五种急症",
       "status": "🚧"
     },
     {
       "n": 41,
       "slug": "41-diabetes-mellitus",
-      "title": "糖尿病",
+      "title": "糖尿病：一个不对称结构、三条环节与两类血管",
       "status": "🚧"
     },
     {
       "n": 42,
       "slug": "42-alterations-in-metabolism-and-nutrition",
-      "title": "代谢与营养异常",
+      "title": "代谢与营养异常：一个调定点、两种代谢模式与一条再喂养链",
       "status": "🚧"
     },
     {
       "n": 43,
       "slug": "43-structure-and-function-of-the-nervous-system",
-      "title": "神经系统结构与功能",
+      "title": "神经系统结构与功能：一张由缺损反推部位的定位图",
       "status": "🚧"
     },
     {
       "n": 44,
       "slug": "44-acute-disorders-of-brain-function",
-      "title": "脑功能急性疾病",
+      "title": "脑功能急性疾病：一条链，四个干预点",
       "status": "🚧"
     },
     {
       "n": 45,
       "slug": "45-chronic-disorders-of-neurologic-function",
-      "title": "慢性神经功能障碍",
+      "title": "慢性神经功能障碍：部位与储备，而不是时间与压力",
       "status": "🚧"
     },
     {
       "n": 46,
       "slug": "46-alterations-in-special-sensory-function",
-      "title": "特殊感觉功能异常",
+      "title": "特殊感觉功能异常：缺损的形状就是定位器",
       "status": "🚧"
     },
     {
       "n": 47,
       "slug": "47-pain",
-      "title": "疼痛",
+      "title": "疼痛：四环节、两级敏化与一条从症状到疾病的转弯",
       "status": "🚧"
     },
     {
       "n": 48,
       "slug": "48-mental-health-disorders",
-      "title": "精神心理健康障碍",
+      "title": "精神心理健康障碍：三层整合、五个维度与一条去污名化的边界",
       "status": "🚧"
     },
     {
       "n": 49,
       "slug": "49-structure-and-function-of-the-musculoskeletal-system",
-      "title": "骨骼肌肉系统结构与功能",
+      "title": "骨骼肌肉系统结构与功能：六项功能、一条耦联与三处结构弱点",
       "status": "🚧"
     },
     {
       "n": 50,
       "slug": "50-alterations-in-musculoskeletal-function-trauma-infection-and-disease",
-      "title": "骨骼肌肉功能异常：创伤、感染与疾病",
+      "title": "骨骼肌肉功能异常：力学环境、两个恶性循环与一条废用链",
       "status": "🚧"
     },
     {
       "n": 51,
       "slug": "51-alterations-in-musculoskeletal-function-rheumatic-disorders",
-      "title": "骨骼肌肉功能异常：风湿性疾病",
+      "title": "风湿性疾病：两种范式、一条损伤链与全身代价",
       "status": "🚧"
     },
     {
       "n": 52,
       "slug": "52-alterations-in-the-integumentary-system",
-      "title": "皮肤系统异常",
+      "title": "皮肤系统异常：五件组件的屏障与四条后果",
       "status": "🚧"
     },
     {
       "n": 53,
       "slug": "53-burn-injuries",
-      "title": "烧伤",
+      "title": "烧伤：局部三道带、四路全身反应与一条把两者接起来的链",
       "status": "🚧"
     }
   ],

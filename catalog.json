@@ -116,7 +116,7 @@
     "subjectsWip": 0,
     "subjectsPlanned": 0,
     "videos": 2169,
-    "textbookChapters": 2497
+    "textbookChapters": 2163
   },
   "semesterPlan": [
     {
@@ -7469,7 +7469,7 @@
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/08-jingui-yaolue",
             "chaptersWritten": 24,
-            "words": 703867,
+            "words": 704308,
             "status": "wip",
             "layer": "source-body+commentary",
             "source": "standards/jingui/底本.json（外源·笈成）+ standards/jingui/gushiwen/（外源·古诗文网，校勘）",
@@ -13036,9 +13036,16 @@
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/01-erbihou-jiepou-shengli",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 8,
+            "words": 45104,
+            "layer": "rewrite",
+            "origin": "course-rewrite",
+            "createdAt": "2026-11-22",
+            "toc": "00-目录-四级编码.md",
+            "tocScale": "8 章 / 22 节 / 48 单元",
+            "reference": "standards/erbihou-jiepou-shengli/reference-courseware.json#耳的解剖与生理（课件·仅元数据）",
+            "referenceUsage": "只核对主题范围与写法取向；正文未取得（封面页 OCR + 62 页/2.12 万字元数据），不引数值、不引图、不作引用来源",
+            "sourceNote": "主源为课程正文 147,846 字（8 章）；外源课件仅取到封面与元数据，逐章「参考状态」与附录B 已如实登记"
           }
         },
         {
@@ -13070,9 +13077,14 @@
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/02-kouqiang-jiepou-shengli",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 8,
+            "words": 43187,
+            "layer": "rewrite",
+            "origin": "course-rewrite",
+            "createdAt": "2026-11-22",
+            "toc": "00-目录-四级编码.md",
+            "tocScale": "8 章 / 21 节 / 41 单元",
+            "sourceNote": "主源为课程正文 88,312 字（8 章）；无外源教材（Firecrawl 403 / 维基与 NCBI 不可达），不引页码与外部数值"
           }
         },
         {
@@ -13152,9 +13164,13 @@
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/04-yanke-guangxue-yanguang",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 8,
+            "words": 38695,
+            "status": "planned",
+            "layer": "rewrite",
+            "origin": "course-rewrite",
+            "createdAt": "2026-11-21",
+            "sourceNote": "本课此前无教材；课程正文为脚手架占位稿，无参考电子件，按课程章题重写，不标页码不给处方模板"
           }
         },
         {
@@ -13311,22 +13327,22 @@
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/08-zhongyi-kouqiang-kexue",
-            "chaptersWritten": 13,
-            "words": 13427,
+            "chaptersWritten": 10,
+            "words": 48854,
             "status": "wip",
-            "layer": "external-source",
-            "origin": "external",
+            "layer": "rewrite",
+            "origin": "course-rewrite",
             "source": "standards/materials/textbooks-batch/external-registry.json#kouchide-leiyao",
             "external": {
               "id": "kouchide-leiyao",
               "title": "口齒類要",
-              "url": "https://jicheng.tw/tcm/book/%E5%8F%A3%E9%BD%92%E9%A1%9E%E8%A6%81/index.html",
-              "sha256": "db74dbe8fdf885cc11a26a2addfa57a4c7561b885305cb4179044abe859e673d",
-              "baseText": "日本承應三年（1654年）刊本（國家圖書館掃描本）",
-              "fetchedAt": "2026-10-21",
-              "coverage": "古籍可对上的部分；现代内容未覆盖"
+              "sha256": "db74dbe8fdf885cc",
+              "role": "appendix-only"
             },
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "appendixNote": "口齒類要（明·薛己）13 篇，不计章数",
+            "sourceNote": "课程正文为统计脚手架占位稿且章题错位；无参考教材电子件，按课程章题重写，不标页码",
+            "appendix": "附录A-口齒類要辑录.md"
           }
         },
         {
@@ -13358,9 +13374,13 @@
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/09-kouqiang-neike-xue",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 10,
+            "words": 52658,
+            "status": "planned",
+            "layer": "rewrite",
+            "origin": "course-rewrite",
+            "createdAt": "2026-11-21",
+            "sourceNote": "本课此前无教材目录，按课程章题新建 10 章；课程正文为脚手架占位稿，无参考电子件"
           }
         },
         {
@@ -13392,9 +13412,16 @@
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/10-yanke-yingxiang-jiancha",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 8,
+            "words": 50672,
+            "layer": "rewrite",
+            "origin": "course-rewrite",
+            "createdAt": "2026-11-22",
+            "toc": "00-目录-四级编码.md",
+            "tocScale": "8 章 / 22 节 / 48 单元",
+            "reference": "standards/yanke-yingxiang-jiancha/reference-consensus.json#眼科影像检查规范专家共识（2026版）",
+            "referenceUsage": "只取条目框架与判据要点、按「共识·第X节」引用；不搬原文、不存原件、不把共识当法规",
+            "sourceNote": "课程正文由《中医眼科学》（06）与《医学数据安全与隐私》（14）合成；外源教材检索失败（已登记），2026-11-22 补入共识并逐章加 N.6"
           }
         },
         {
@@ -13531,7 +13558,7 @@
             "id": "textbooks",
             "path": "textbooks/08-wuguan/14-zhongyi-sangyin-yixue",
             "chaptersWritten": 8,
-            "words": 41579,
+            "words": 42209,
             "status": "wip",
             "layer": "rewrite",
             "origin": "course-rewrite",
@@ -13546,7 +13573,8 @@
               "sha256": "6d565fbe372d0d29535340302a66926bf016a12f181b334815323ff339400c25",
               "role": "appendix-only"
             },
-            "extractedAt": "2026-11-21"
+            "extractedAt": "2026-11-21",
+            "sourceNote": "课程正文为统计脚手架占位稿（三辨/四位面统计+模板句，05–08 章主题与章名错位）；教材按课程主题+参考结构重写，待课程正文补实后回填"
           }
         },
         {
@@ -13579,22 +13607,22 @@
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/15-zhongyi-meirong-pifu",
-            "chaptersWritten": 381,
-            "words": 202647,
+            "chaptersWritten": 8,
+            "words": 39080,
             "status": "wip",
-            "layer": "external-source",
+            "layer": "rewrite",
             "origin": "external",
             "source": "standards/materials/textbooks-batch/external-registry.json#waike-xinfa",
             "external": {
               "id": "waike-xinfa",
               "title": "醫宗金鑑·外科心法要訣",
-              "url": "https://jicheng.tw/tcm/book/%E9%86%AB%E5%AE%97%E9%87%91%E9%91%91/%E5%A4%96%E7%A7%91%E5%BF%83%E6%B3%95%E8%A6%81%E8%A8%A3/index.html",
-              "sha256": "9989a4279eff2b9db6169cbb8b159e3ac5ead8eaf8b21550037c730a92111794",
-              "baseText": "《御纂醫宗金鑑》，光緒十八年（1892）上海五彩書局石印本（香港中文大學圖書館掃描本），外科卷一至卷十六；《欽定四庫全書·子部五·醫家類·御纂醫宗金鑑》卷六十一至卷七十六（漢リポ掃描及文字化本）",
-              "fetchedAt": "2026-10-21",
-              "coverage": "古籍可对上的部分；现代内容未覆盖"
+              "sha256": "9989a4279eff2b9d",
+              "role": "appendix-only"
             },
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "appendix": "附录A-外源古籍辑录.md",
+            "appendixNote": "醫宗金鑑·外科心法要訣 381 篇，不计章数",
+            "sourceNote": "课程正文为脚手架占位稿；无参考电子件，按课程章题重写，古籍入附录A"
           }
         },
         {

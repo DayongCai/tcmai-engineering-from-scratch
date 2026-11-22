@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-shoufa-jichu",
-   "title": "手法治疗的基础",
+   "title": "手法不是力气活：四个字约束的是一组物理量",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-zhenggu-bafa",
-   "title": "正骨八法与常用手法",
+   "title": "八法是六条，而且是一条链：断在「摸」上，后面全错",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-ruanzuzhi-shoufa",
-   "title": "软组织手法",
+   "title": "「松」与「伤」只差三个变量：力落在哪一层、停了多久、着力面多大",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-zhenggu-shoufa",
-   "title": "整复类手法",
+   "title": "复位不是「推回去」，是把四个方向的移位逐个消到容差以内",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-jingjian",
-   "title": "颈肩部手法",
+   "title": "颈肩的风险不在手上，在筛上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-yaotui",
-   "title": "腰腿部手法",
+   "title": "腰腿痛有一半时间在做鉴别，鉴别没做完就不动手",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-guanjie-songdong",
-   "title": "关节松动手法",
+   "title": "松动不改位置，只改活动度：这条界划错，处方就错",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-xiaoer-shoufa",
-   "title": "小儿骨伤手法",
+   "title": "小儿的手法清单短得多，因为最薄的一层是骺板",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -68,7 +68,7 @@
   {
    "n": 9,
    "slug": "09-fengxian-jinji",
-   "title": "风险、禁忌与意外处理",
+   "title": "手法是主动加荷：先排危险，再谈手法",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -76,7 +76,7 @@
   {
    "n": 10,
    "slug": "10-pingjia",
-   "title": "疗效评价与方案设计",
+   "title": "「好多了」不是结论：没有时点的疗效，等于没有疗效",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

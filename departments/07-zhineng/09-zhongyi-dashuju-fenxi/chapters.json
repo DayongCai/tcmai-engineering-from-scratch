@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-s1",
-   "title": "数据的搜集、整理与图表",
+   "title": "数据不是捡来的，是签过字的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-s2",
-   "title": "集中趋势、离散程度与正态分布",
+   "title": "平均数是一句没说完的话",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-s3",
-   "title": "抽样误差、参数估计与假设检验",
+   "title": "p 值不是有效性的判决书",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-s4",
-   "title": "t 检验、方差分析与卡方检验",
+   "title": "三个检验的名字，不如它们假设的四句话",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-s5",
-   "title": "非参数检验与直线相关回归",
+   "title": "换成秩，你换掉的是「差多少」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-s6",
-   "title": "多重回归与生存分析",
+   "title": "单因素显著、多因素消失，那不是数据变了",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-s7",
-   "title": "研究设计与诊断试验",
+   "title": "设计决定你能问什么问题",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-s8",
-   "title": "卫生统计、中医研究与智能分析",
+   "title": "聚类给出的是分组，不是证型",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

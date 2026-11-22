@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-g1",
-   "title": "什么是医学人工智能",
+   "title": "医学人工智能的边界，写在「谁签字」上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-g2",
-   "title": "中医信息化的来路",
+   "title": "中医信息化的来路：先有编目，才有编码，最后才有模型",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-g3",
-   "title": "从可穿戴到四诊仪",
+   "title": "从可穿戴到四诊仪：换的是传感器，不是理论",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-g4",
-   "title": "系统的形状：从 HIS 到智能体",
+   "title": "系统的形状由写权限决定，不由技术栈决定",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-g5",
-   "title": "知识怎么放进机器",
+   "title": "知识进机器有四条路，最像捷径的那条最贵",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-g6",
-   "title": "统计、数据与模型的边界",
+   "title": "敏感性是模型的属性，阳性预测值不是",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-g7",
-   "title": "伦理、隐私与责任",
+   "title": "伦理不进日志，就等于没进系统",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-g8",
-   "title": "学科地图与学习方法",
+   "title": "学科地图画的是能力坐标，不是知识目录",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

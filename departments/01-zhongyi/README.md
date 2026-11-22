@@ -6,8 +6,8 @@
 |------|------|
 | 学科数 | 23（必修 18 + 选修 5） |
 | 总学时 | 1458 |
-| 章节目标 | 288 |
-| 已建章节 | 288 |
+| 章节目标 | 291 |
+| 已建章节 | 291 |
 | 涉及学期 | 第1, 第2, 第3, 第4, 第5, 第6, 第7, 第8, 第9, 第10 |
 
 ## 学科清单
@@ -27,7 +27,7 @@
 | 11 | [中医外科学](11-zhongyi-waike-xue/) | TCM External Medicine | Clinic | 6 | 72 | 13/13 | 外科辨证→图像特征 / 疮疡分期→序列标注 | ✅ |
 | 12 | [中医妇科学](12-zhongyi-fuke-xue/) | TCM Gynecology | Clinic | 6 | 72 | 13/13 | 月经周期→周期序列模型 / 妇科辨证→智能体 | ✅ |
 | 13 | [中医儿科学](13-zhongyi-erke-xue/) | TCM Pediatrics | Clinic | 6 | 72 | 14/14 | 小儿剂量→规则引擎 / 儿科辨证→ReAct 智能体 | ✅ |
-| 14 | [中医证候学](14-zhongyi-zhenghou-xue/) | TCM Syndrome Theory | Build | 7 | 72 | 24/24 | 证候→本体建模 / 证型标准化→嵌入聚类 | ✅ |
+| 14 | [中医证候学](14-zhongyi-zhenghou-xue/) | TCM Syndrome Theory | Build | 7 | 72 | 27/27 | 证候→本体建模 / 证型标准化→嵌入聚类 | ✅ |
 | 15 | [中医各家学说](15-zhongyi-gejia-xueshuo/) | Schools of TCM Thought | Reference | 7 | 54 | 8/8 | 学派对比→文本相似度 / 学术谱系→图网络 | ✅ |
 | 16 | [中医哲学史](16-zhongyi-zhexue-shi/) | History of TCM Philosophy | Reference | 2 | 36 | 8/8 | 哲学范畴→本体论建模 / 学派演化→谱系聚类 | ✅ |
 | 17 | [中医急诊学](17-zhongyi-jizhen-xue/) | TCM Emergency Medicine | Reference（选修） | 8 | 36 | 12/12 | 急症辨治→决策树 / 时效指标→时序模型 | ✅ |

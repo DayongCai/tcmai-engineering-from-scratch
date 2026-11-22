@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-z31",
-   "title": "中医机构的管理原理",
+   "title": "中医机构的效率，不能按手术台的产出来算",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-z32",
-   "title": "中医机构的决策与计划",
+   "title": "规划一家中医机构，真正要决定的是关掉哪些科室",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-z33",
-   "title": "组织设计与人力资源",
+   "title": "名医工作室的成本，记在导师的号源上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-z34",
-   "title": "领导、激励与沟通",
+   "title": "科主任的两套权威，一套来自疗效，一套来自表格",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-z35",
-   "title": "质量控制与绩效评价",
+   "title": "中医治疗率 92%，没有一张方是对证的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-z36",
-   "title": "中医药机构的管理专题",
+   "title": "中药房是成本中心，也是唯一不能省的那道关",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-z37",
-   "title": "中医医院的运行管理",
+   "title": "门诊流程是按检查设计的，病人却是来复诊调方的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-z38",
-   "title": "中医政策与治理趋势",
+   "title": "医共体的牌子挂上了，中医馆里没有人会开方",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

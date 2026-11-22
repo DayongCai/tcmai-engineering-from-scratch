@@ -1,6 +1,6 @@
 {
  "$generated": "node scripts/build_content_board.js",
- "generatedAt": "2026-11-21",
+ "generatedAt": "2026-11-22",
  "rules": {
   "structure": "catalog.json（SSOT）",
   "chapters": "catalog.chaptersBuilt + 盘上 departments/*/*/chapters/* 目录核对",
@@ -15,10 +15,10 @@
   "chaptersTarget": 2169,
   "chaptersBuilt": 2169,
   "chaptersPct": 100,
-  "textbookSubjects": 138,
-  "textbookChapters": 2495,
-  "hanzi": 30325806,
-  "nonWs": 36636185,
+  "textbookSubjects": 143,
+  "textbookChapters": 2161,
+  "hanzi": 30311302,
+  "nonWs": 36556805,
   "syndromes": 97,
   "syndromeUnits": 104,
   "shanghanTiao": 398,
@@ -115,7 +115,7 @@
  "gaps": [
   {
    "kind": "教材缺稿",
-   "n": 51,
+   "n": 46,
    "detail": [
     "护理系/基础护理学(14章)",
     "智能系/大语言模型与中医智能体(12章)",
@@ -142,18 +142,18 @@
   },
   {
    "kind": "教材过薄",
-   "n": 29,
+   "n": 35,
    "detail": [
-    "中医美容与皮肤治疗学 532 字/章",
     "中医信息学 568 字/章",
     "中医知识树 636 字/章",
     "中医智能设备与可穿戴设备 645 字/章",
     "中医面部望诊学 749 字/章",
-    "中医口腔科学 1033 字/章",
     "管理实习与实践 1253 字/章",
     "科研实训与实验设计 1257 字/章",
     "工程实践与系统交付 1286 字/章",
     "中药专业实践 1392 字/章",
+    "中医诊断学 1604 字/章",
+    "健康评估 1860 字/章",
     "另有 14 个结课类学科（毕业设计/知识移交）单章 1002/1193/1266/1354/1357/1417/1454/1471/1475/1486/1493/1514/1556/1568 字，属体例例外"
    ],
    "fix": "正文类学科低于 8,000 字/章的优先补写（本科教材单章通常 1–1.5 万字）；结课类不计入"
@@ -200,7 +200,7 @@
    "chaptersTarget": 291,
    "chaptersBuilt": 291,
    "textbookSubjects": 22,
-   "hanzi": 5943345,
+   "hanzi": 5943670,
    "thin": 5,
    "noBook": 1,
    "videos": 24
@@ -265,7 +265,7 @@
    "chaptersTarget": 292,
    "chaptersBuilt": 292,
    "textbookSubjects": 17,
-   "hanzi": 4674310,
+   "hanzi": 4674556,
    "thin": 1,
    "noBook": 9,
    "videos": 0
@@ -290,10 +290,10 @@
    "subjects": 17,
    "chaptersTarget": 144,
    "chaptersBuilt": 144,
-   "textbookSubjects": 11,
-   "hanzi": 808473,
-   "thin": 7,
-   "noBook": 6,
+   "textbookSubjects": 16,
+   "hanzi": 910920,
+   "thin": 12,
+   "noBook": 1,
    "videos": 0
   },
   {
@@ -304,8 +304,8 @@
    "chaptersTarget": 315,
    "chaptersBuilt": 315,
    "textbookSubjects": 16,
-   "hanzi": 5421022,
-   "thin": 2,
+   "hanzi": 5303500,
+   "thin": 3,
    "noBook": 1,
    "videos": 0
   }

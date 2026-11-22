@@ -5,85 +5,85 @@
     {
       "n": 1,
       "slug": "01-fazhan-gaishu",
-      "title": "中医儿科学发展概要",
+      "title": "中医儿科学发展概要：一门「说不出话的病人」的学科",
       "status": "🚧"
     },
     {
       "n": 2,
       "slug": "02-shengli-bingli-tedian",
-      "title": "小儿生理病理特点",
+      "title": "小儿生理病理特点：四句话，一条传变链",
       "status": "🚧"
     },
     {
       "n": 3,
       "slug": "03-shengzhang-yangyu-baojian",
-      "title": "小儿生长发育与喂养保健",
+      "title": "生长发育与喂养保健：把「养得对不对」变成可量的事",
       "status": "🚧"
     },
     {
       "n": 4,
       "slug": "04-erke-sizhen",
-      "title": "儿科四诊概要",
+      "title": "儿科四诊概要：脉靠不住的时候，看什么",
       "status": "🚧"
     },
     {
       "n": 5,
       "slug": "05-bianzheng-zhifa",
-      "title": "儿科辨证与治法概要",
+      "title": "儿科辨证与治法概要：三套辨证怎么分工，一条用药律怎么守",
       "status": "🚧"
     },
     {
       "n": 6,
       "slug": "06-feixi-jibing",
-      "title": "肺系疾病",
+      "title": "肺系疾病：一条由表入里的纵线，五个停靠点",
       "status": "🚧"
     },
     {
       "n": 7,
       "slug": "07-pixi-jibing",
-      "title": "脾系疾病",
+      "title": "脾系疾病：九证沿一条管道排开",
       "status": "🚧"
     },
     {
       "n": 8,
       "slug": "08-xingan-jibing",
-      "title": "心肝系疾病",
+      "title": "心肝系疾病：一条「神—风」轴，两种时间尺度",
       "status": "🚧"
     },
     {
       "n": 9,
       "slug": "09-shenxi-jibing",
-      "title": "肾系疾病",
+      "title": "肾系疾病：一条水液通道，两个年龄界值",
       "status": "🚧"
     },
     {
       "n": 10,
       "slug": "10-chuanranbing",
-      "title": "传染病",
+      "title": "传染病：一张「发热—出疹」时间表",
       "status": "🚧"
     },
     {
       "n": 11,
       "slug": "11-chongzheng",
-      "title": "虫证",
+      "title": "虫证：看得见的虫，与看不见的堵",
       "status": "🚧"
     },
     {
       "n": 12,
       "slug": "12-xinshenger-jibing",
-      "title": "新生儿疾病",
+      "title": "新生儿疾病：出生头 28 天的三件事",
       "status": "🚧"
     },
     {
       "n": 13,
       "slug": "13-qita-bingzheng",
-      "title": "其他病证",
+      "title": "其他病证：三个「查不出器质病」的病",
       "status": "🚧"
     },
     {
       "n": 14,
       "slug": "14-jizhen-shuzihua",
-      "title": "儿科急症与数字化AI时代",
+      "title": "儿科急症与数字化 AI 时代：先救命，再谈可计算",
       "status": "🚧"
     }
   ]

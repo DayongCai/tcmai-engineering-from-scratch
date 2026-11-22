@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-xuan-ti",
-      "title": "选题：从复位方案到可量化命题",
+      "title": "选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-xuan-ti/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-yingxiang-shuju",
-      "title": "影像与生物力学数据准备",
+      "title": "影像不是插图，是把「看得见」变成「量得出、量得一样」的那一步",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-yingxiang-shuju/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-shoufa-zhiju",
-      "title": "手法与支具的系统实现",
+      "title": "把手法写成流程、把支具写成参数，才算做完；「手感」和「定制」都交不出去",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-shoufa-zhiju/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-liaoxiao-pingjia",
-      "title": "疗效与并发症评价",
+      "title": "疗效不是「好转了」，是先在纸上写死「什么叫没好转」",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-liaoxiao-pingjia/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-lunwen-dabian",
-      "title": "论文写作与答辩",
+      "title": "论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-lunwen-dabian/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-zhishi-yijiao",
-      "title": "知识移交：操作规范与交接",
+      "title": "移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-zhishi-yijiao/docs/zh.md",

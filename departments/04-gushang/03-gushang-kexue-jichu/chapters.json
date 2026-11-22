@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-jianshi-bingyin",
-   "title": "发展简史与病因病机",
+   "title": "正骨先有程序，才有流派",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-linchuang-zhencha",
-   "title": "骨伤病的临床诊查",
+   "title": "影像能看见骨折线，看不见病人是怎么伤的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-zhiliao-fangfa",
-   "title": "骨伤病的治疗方法",
+   "title": "治疗的次序比方法清单重要",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-chuangshang-jijiu",
-   "title": "创伤急救",
+   "title": "急救的第一个动作不是接骨",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-guzhe-yi",
-   "title": "骨折（一）：总论与上肢",
+   "title": "上肢骨折的难点不在接骨，在功能",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-guzhe-er",
-   "title": "骨折（二）：下肢与躯干",
+   "title": "下肢骨折先算血，再算骨",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-tuowei",
-   "title": "脱位",
+   "title": "脱位是关节的事，后果常在关节外",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-jinshang",
-   "title": "筋伤",
+   "title": "筋伤的病人大多不需要手术，但都需要诊断",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -68,7 +68,7 @@
   {
    "n": 9,
    "slug": "09-neishang-gubing",
-   "title": "内伤与骨病",
+   "title": "内伤看不见伤口，骨病不总是外伤",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -76,7 +76,7 @@
   {
    "n": 10,
    "slug": "10-kangfu-shuzihua",
-   "title": "骨伤康复与数字化",
+   "title": "康复不是治疗之后，是治疗的一部分",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

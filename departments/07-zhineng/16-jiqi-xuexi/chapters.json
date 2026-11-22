@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-xulun",
-   "title": "绪论",
+   "title": "泛化不是模型的属性，是数据与假设的私下约定",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-moxing-pinggu-yu-xuanze",
-   "title": "模型评估与选择",
+   "title": "你报的那个数字，可能只是抽样噪声的形状",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-xianxing-moxing",
-   "title": "线性模型",
+   "title": "一条直线的全部本事，在于你把什么变量交给它",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-juece-shu",
-   "title": "决策树",
+   "title": "树的好坏不在深度，在你切的那一刀问的是什么问题",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-shenjing-wangluo",
-   "title": "神经网络",
+   "title": "深度不是层数，是每层都在换一次坐标",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-zhichi-xiangliang-ji",
-   "title": "支持向量机",
+   "title": "间隔是几何，不是分数",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-beiyesi-fenleiqiu",
-   "title": "贝叶斯分类器",
+   "title": "先验不是偏见，是还没看到数据时你唯一能拿出的东西",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-jicheng-xuexi",
-   "title": "集成学习",
+   "title": "弱学习器不是凑数，是要它们错得不一样",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -70,7 +70,7 @@
   {
    "n": 9,
    "slug": "09-julei",
-   "title": "聚类",
+   "title": "没有标签的时候，「相似」是你唯一还能定义的东西",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -78,7 +78,7 @@
   {
    "n": 10,
    "slug": "10-jiangwei-yu-duliang",
-   "title": "降维与度量学习",
+   "title": "降维不是丢信息，是换一组能算距离的坐标",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -86,7 +86,7 @@
   {
    "n": 11,
    "slug": "11-tezheng-xuanze-yu-xishu",
-   "title": "特征选择与稀疏学习",
+   "title": "稀疏不是省参数，是把「不重要」变成可检验的零",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -94,7 +94,7 @@
   {
    "n": 12,
    "slug": "12-jisuan-xuexi-lilun",
-   "title": "计算学习理论",
+   "title": "泛化界不是承诺，是最坏情况下你还剩多少",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -102,7 +102,7 @@
   {
    "n": 13,
    "slug": "13-banyou-jian-xuexi",
-   "title": "半监督学习",
+   "title": "未标注数据不是免费的，它买的是「流形假设」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -110,7 +110,7 @@
   {
    "n": 14,
    "slug": "14-gailv-tu-moxing",
-   "title": "概率图模型",
+   "title": "图不是画给人看的，是用来读条件独立的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -118,7 +118,7 @@
   {
    "n": 15,
    "slug": "15-guize-xuexi",
-   "title": "规则学习",
+   "title": "规则的代价不是条数，是它覆盖了多少不该覆盖的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -126,7 +126,7 @@
   {
    "n": 16,
    "slug": "16-qianghua-xuexi",
-   "title": "强化学习",
+   "title": "回报不是奖励的累加，是折现后的和",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

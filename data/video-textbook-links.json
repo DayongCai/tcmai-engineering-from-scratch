@@ -56,7 +56,7 @@
      "source": "platform",
      "teaching": {
       "no": 2,
-      "title": "五行学说 → 多分类：从零实现 Softmax"
+      "title": "五行学说 → 多分类：从零实现 Softmax（并检验生克约束是否真的有用）"
      },
      "textbook": [
       {
@@ -98,7 +98,7 @@
      "source": "platform",
      "teaching": {
       "no": 4,
-      "title": "绪论：中医学的学科属性与工程化边界"
+      "title": "绪论：这门教材 86% 的段落里都跟着一句「平台怎么做」"
      },
      "textbook": [
       {
@@ -119,7 +119,7 @@
      "source": "platform",
      "teaching": {
       "no": 5,
-      "title": "气血津液 → 状态向量与守恒约束"
+      "title": "气血津液：方向全有，系数全无——教材在这里其实没写完"
      },
      "textbook": [
       {
@@ -140,7 +140,7 @@
      "source": "platform",
      "teaching": {
       "no": 6,
-      "title": "经络学说 → 图上的路径与可及性"
+      "title": "经络学说：一条 12 节点的环，直径 6——但教材只写全了 7 个经名"
      },
      "textbook": [
       {
@@ -161,7 +161,7 @@
      "source": "platform",
      "teaching": {
       "no": 7,
-      "title": "病因病机 → 因果图与失效模式"
+      "title": "病因病机：13 个病因节点，1 条真演化链，病机十九条只来了 2 条"
      },
      "textbook": [
       {
@@ -192,7 +192,7 @@
      "source": "platform",
      "teaching": {
       "no": 8,
-      "title": "防治原则 → 策略选择与代价函数"
+      "title": "防治原则：「八法」在教材里是八个字，只有两法有释义"
      },
      "textbook": [
       {
@@ -213,7 +213,7 @@
      "source": "platform",
      "teaching": {
       "no": 9,
-      "title": "体质与发病 → 先验分布与风险分层"
+      "title": "体质与发病：两套分类、10 条映射边，先验全靠自设"
      },
      "textbook": [
       {
@@ -239,7 +239,7 @@
      "source": "platform",
      "teaching": {
       "no": 10,
-      "title": "中医思维方法：形式化能做到与做不到的"
+      "title": "中医思维方法：图能画，表画不出"
      },
      "textbook": [
       {
@@ -4558,19 +4558,19 @@
    "rows": [
     {
      "lectureNo": 1,
-     "title": "第1章 金匮的成书与杂病分类",
+     "title": "第1章 《金匮要略》不是「杂病方书」，是一部 402 条的筛选器",
      "durationSec": 419,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 1,
-      "title": "金匮的成书与杂病分类"
+      "title": "《金匮要略》不是「杂病方书」，是一部 402 条的筛选器"
      },
      "textbook": [
       {
        "no": 1,
-       "title": "金匮的成书与杂病分类",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/01-第1章-金匮的成书与杂病分类.md"
+       "title": "《金匮要略》不是「杂病方书」，是一部 402 条的筛选器",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/01-第1章-《金匮要略》不是「杂病方书」，是一部 402 条的筛选器.md"
       }
      ],
      "linkedBy": "order",
@@ -4579,19 +4579,19 @@
     },
     {
      "lectureNo": 2,
-     "title": "第2章 脏腑经络先后病：传变与预防",
+     "title": "第2章 十七句话，把「治病」改成「预判」",
      "durationSec": 1178,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 2,
-      "title": "脏腑经络先后病：传变与预防"
+      "title": "十七句话，把「治病」改成「预判」"
      },
      "textbook": [
       {
        "no": 2,
-       "title": "脏腑经络先后病：传变与预防",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/02-第2章-脏腑经络先后病：传变与预防.md"
+       "title": "十七句话，把「治病」改成「预判」",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/02-第2章-十七句话，把「治病」改成「预判」.md"
       }
      ],
      "linkedBy": "order",
@@ -4600,19 +4600,19 @@
     },
     {
      "lectureNo": 3,
-     "title": "第3章 痉湿暍病：外感杂病的辨识",
+     "title": "第3章 痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单",
      "durationSec": 1247,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 3,
-      "title": "痉湿暍病：外感杂病的辨识"
+      "title": "痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单"
      },
      "textbook": [
       {
        "no": 3,
-       "title": "痉湿暍病：外感杂病的辨识",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/03-第3章-痉湿暍病：外感杂病的辨识.md"
+       "title": "痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/03-第3章-痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单.md"
       }
      ],
      "linkedBy": "order",
@@ -4621,19 +4621,19 @@
     },
     {
      "lectureNo": 4,
-     "title": "第4章 百合狐惑阴阳毒：少见病的鉴别",
+     "title": "第4章 少见病不是罕见病，是必须先排除才敢下诊断的病",
      "durationSec": 1213,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 4,
-      "title": "百合狐惑阴阳毒：少见病的鉴别"
+      "title": "少见病不是罕见病，是必须先排除才敢下诊断的病"
      },
      "textbook": [
       {
        "no": 4,
-       "title": "百合狐惑阴阳毒：少见病的鉴别",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/04-第4章-百合狐惑阴阳毒：少见病的鉴别.md"
+       "title": "少见病不是罕见病，是必须先排除才敢下诊断的病",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/04-第4章-少见病不是罕见病，是必须先排除才敢下诊断的病.md"
       }
      ],
      "linkedBy": "order",
@@ -4642,19 +4642,19 @@
     },
     {
      "lectureNo": 5,
-     "title": "第5章 疟病与中风历节：节律与痹阻",
+     "title": "第5章 疟的节律与中风的痹阻：两篇「判据极短」的病",
      "durationSec": 1297,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 5,
-      "title": "疟病与中风历节：节律与痹阻"
+      "title": "疟的节律与中风的痹阻：两篇「判据极短」的病"
      },
      "textbook": [
       {
        "no": 5,
-       "title": "疟病与中风历节：节律与痹阻",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/05-第5章-疟病与中风历节：节律与痹阻.md"
+       "title": "疟的节律与中风的痹阻：两篇「判据极短」的病",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/05-第5章-疟的节律与中风的痹阻：两篇「判据极短」的病.md"
       }
      ],
      "linkedBy": "order",
@@ -4663,19 +4663,19 @@
     },
     {
      "lectureNo": 6,
-     "title": "第6章 血痹虚劳：虚损的分层",
+     "title": "第6章 血痹虚劳：虚损不是一种病，是五个深度",
      "durationSec": 1109,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 6,
-      "title": "血痹虚劳：虚损的分层"
+      "title": "血痹虚劳：虚损不是一种病，是五个深度"
      },
      "textbook": [
       {
        "no": 6,
-       "title": "血痹虚劳：虚损的分层",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/06-第6章-血痹虚劳：虚损的分层.md"
+       "title": "血痹虚劳：虚损不是一种病，是五个深度",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/06-第6章-血痹虚劳：虚损不是一种病，是五个深度.md"
       }
      ],
      "linkedBy": "order",
@@ -4705,19 +4705,19 @@
     },
     {
      "lectureNo": 8,
-     "title": "第8章 消渴与淋病：津液与排泄",
+     "title": "第8章 消渴与淋病：把「喝进去的」与「排出来的」对上账",
      "durationSec": 809,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 8,
-      "title": "消渴与淋病：津液与排泄"
+      "title": "消渴与淋病：把「喝进去的」与「排出来的」对上账"
      },
      "textbook": [
       {
        "no": 8,
-       "title": "消渴与淋病：津液与排泄",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/08-第8章-消渴与淋病：津液与排泄.md"
+       "title": "消渴与淋病：把「喝进去的」与「排出来的」对上账",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/08-第8章-消渴与淋病：把「喝进去的」与「排出来的」对上账.md"
       }
      ],
      "linkedBy": "order",
@@ -4726,19 +4726,19 @@
     },
     {
      "lectureNo": 9,
-     "title": "第9章 妇人病三篇：经带胎产的辨证",
+     "title": "第9章 妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段",
      "durationSec": 1780,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 9,
-      "title": "妇人病三篇：经带胎产的辨证"
+      "title": "妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段"
      },
      "textbook": [
       {
        "no": 9,
-       "title": "妇人病三篇：经带胎产的辨证",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/09-第9章-妇人病三篇：经带胎产的辨证.md"
+       "title": "妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/09-第9章-妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段.md"
       }
      ],
      "linkedBy": "order",
@@ -4747,19 +4747,19 @@
     },
     {
      "lectureNo": 10,
-     "title": "第10章 杂病方剂的配伍规律与统计",
+     "title": "第10章 174 个方里，只有 165 个能算配伍",
      "durationSec": 1204,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 10,
-      "title": "杂病方剂的配伍规律与统计"
+      "title": "174 个方里，只有 165 个能算配伍"
      },
      "textbook": [
       {
        "no": 10,
-       "title": "杂病方剂的配伍规律与统计",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/10-第10章-杂病方剂的配伍规律与统计.md"
+       "title": "174 个方里，只有 165 个能算配伍",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/10-第10章-174 个方里，只有 165 个能算配伍.md"
       }
      ],
      "linkedBy": "order",
@@ -4768,19 +4768,19 @@
     },
     {
      "lectureNo": 11,
-     "title": "第11章 肺痿肺痈咳嗽上气",
+     "title": "第11章 篇目精读第七：肺痿肺痈咳嗽上气——一条一方，10 方之外还挂着 6 首附方",
      "durationSec": 744,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 11,
-      "title": "肺痿肺痈咳嗽上气"
+      "title": "篇目精读第七：肺痿肺痈咳嗽上气——一条一方，10 方之外还挂着 6 首附方"
      },
      "textbook": [
       {
        "no": 11,
-       "title": "肺痿肺痈咳嗽上气",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/11-第11章-肺痿肺痈咳嗽上气.md"
+       "title": "篇目精读第七：肺痿肺痈咳嗽上气——一条一方，10 方之外还挂着 6 首附方",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/11-第11章-篇目精读第七：肺痿肺痈咳嗽上气——一条一方，10 方之外还挂着 6 首附方.md"
       }
      ],
      "linkedBy": "order",
@@ -4789,19 +4789,19 @@
     },
     {
      "lectureNo": 12,
-     "title": "第12章 奔豚气",
+     "title": "第12章 篇目精读第八：奔豚气——全书最短的一篇，却给了三个入口",
      "durationSec": 380,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 12,
-      "title": "奔豚气"
+      "title": "篇目精读第八：奔豚气——全书最短的一篇，却给了三个入口"
      },
      "textbook": [
       {
        "no": 12,
-       "title": "奔豚气",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/12-第12章-奔豚气.md"
+       "title": "篇目精读第八：奔豚气——全书最短的一篇，却给了三个入口",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/12-第12章-篇目精读第八：奔豚气——全书最短的一篇，却给了三个入口.md"
       }
      ],
      "linkedBy": "order",
@@ -4810,19 +4810,19 @@
     },
     {
      "lectureNo": 13,
-     "title": "第13章 胸痹心痛短气",
+     "title": "第13章 篇目精读第九：胸痹心痛短气——一句话定病机，7 条各给一方",
      "durationSec": 505,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 13,
-      "title": "胸痹心痛短气"
+      "title": "篇目精读第九：胸痹心痛短气——一句话定病机，7 条各给一方"
      },
      "textbook": [
       {
        "no": 13,
-       "title": "胸痹心痛短气",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/13-第13章-胸痹心痛短气.md"
+       "title": "篇目精读第九：胸痹心痛短气——一句话定病机，7 条各给一方",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/13-第13章-篇目精读第九：胸痹心痛短气——一句话定病机，7 条各给一方.md"
       }
      ],
      "linkedBy": "order",
@@ -4831,19 +4831,19 @@
     },
     {
      "lectureNo": 14,
-     "title": "第14章 腹满寒疝宿食",
+     "title": "第14章 篇目精读第十：腹满寒疝宿食——26 条里前 7 条不出方，先把决策树长出来",
      "durationSec": 769,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 14,
-      "title": "腹满寒疝宿食"
+      "title": "篇目精读第十：腹满寒疝宿食——26 条里前 7 条不出方，先把决策树长出来"
      },
      "textbook": [
       {
        "no": 14,
-       "title": "腹满寒疝宿食",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/14-第14章-腹满寒疝宿食.md"
+       "title": "篇目精读第十：腹满寒疝宿食——26 条里前 7 条不出方，先把决策树长出来",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/14-第14章-篇目精读第十：腹满寒疝宿食——26 条里前 7 条不出方，先把决策树长出来.md"
       }
      ],
      "linkedBy": "order",
@@ -4852,19 +4852,19 @@
     },
     {
      "lectureNo": 15,
-     "title": "第15章 五脏风寒积聚",
+     "title": "第15章 篇目精读第十一：五脏风寒积聚——20 条只 3 方，一篇被跳过的「定位表」",
      "durationSec": 555,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 15,
-      "title": "五脏风寒积聚"
+      "title": "篇目精读第十一：五脏风寒积聚——20 条只 3 方，一篇被跳过的「定位表」"
      },
      "textbook": [
       {
        "no": 15,
-       "title": "五脏风寒积聚",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/15-第15章-五脏风寒积聚.md"
+       "title": "篇目精读第十一：五脏风寒积聚——20 条只 3 方，一篇被跳过的「定位表」",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/15-第15章-篇目精读第十一：五脏风寒积聚——20 条只 3 方，一篇被跳过的「定位表」.md"
       }
      ],
      "linkedBy": "order",
@@ -4873,19 +4873,19 @@
     },
     {
      "lectureNo": 16,
-     "title": "第16章 水气",
+     "title": "第16章 篇目精读第十四：水气——2617 字的全书最长篇，用三套分类切同一批病",
      "durationSec": 1010,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 16,
-      "title": "水气"
+      "title": "篇目精读第十四：水气——2617 字的全书最长篇，用三套分类切同一批病"
      },
      "textbook": [
       {
        "no": 16,
-       "title": "水气",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/16-第16章-水气.md"
+       "title": "篇目精读第十四：水气——2617 字的全书最长篇，用三套分类切同一批病",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/16-第16章-篇目精读第十四：水气——2617 字的全书最长篇，用三套分类切同一批病.md"
       }
      ],
      "linkedBy": "order",
@@ -4894,19 +4894,19 @@
     },
     {
      "lectureNo": 17,
-     "title": "第17章 黄疸",
+     "title": "第17章 篇目精读第十五：黄疸——三因入口，六方各管一段",
      "durationSec": 593,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 17,
-      "title": "黄疸"
+      "title": "篇目精读第十五：黄疸——三因入口，六方各管一段"
      },
      "textbook": [
       {
        "no": 17,
-       "title": "黄疸",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/17-第17章-黄疸.md"
+       "title": "篇目精读第十五：黄疸——三因入口，六方各管一段",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/17-第17章-篇目精读第十五：黄疸——三因入口，六方各管一段.md"
       }
      ],
      "linkedBy": "order",
@@ -4915,19 +4915,19 @@
     },
     {
      "lectureNo": 18,
-     "title": "第18章 惊悸吐衄下血胸满瘀血",
+     "title": "第18章 篇目精读第十六：惊悸吐衄下血胸满瘀血——17 条里 11 条在辨「是不是血的问题」",
      "durationSec": 467,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 18,
-      "title": "惊悸吐衄下血胸满瘀血"
+      "title": "篇目精读第十六：惊悸吐衄下血胸满瘀血——17 条里 11 条在辨「是不是血的问题」"
      },
      "textbook": [
       {
        "no": 18,
-       "title": "惊悸吐衄下血胸满瘀血",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/18-第18章-惊悸吐衄下血胸满瘀血.md"
+       "title": "篇目精读第十六：惊悸吐衄下血胸满瘀血——17 条里 11 条在辨「是不是血的问题」",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/18-第18章-篇目精读第十六：惊悸吐衄下血胸满瘀血——17 条里 11 条在辨「是不是血的问题」.md"
       }
      ],
      "linkedBy": "order",
@@ -4936,19 +4936,19 @@
     },
     {
      "lectureNo": 19,
-     "title": "第19章 呕吐哕下利",
+     "title": "第19章 篇目精读第十七：呕吐哕下利——47 条，全书条数最多的一篇",
      "durationSec": 933,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 19,
-      "title": "呕吐哕下利"
+      "title": "篇目精读第十七：呕吐哕下利——47 条，全书条数最多的一篇"
      },
      "textbook": [
       {
        "no": 19,
-       "title": "呕吐哕下利",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/19-第19章-呕吐哕下利.md"
+       "title": "篇目精读第十七：呕吐哕下利——47 条，全书条数最多的一篇",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/19-第19章-篇目精读第十七：呕吐哕下利——47 条，全书条数最多的一篇.md"
       }
      ],
      "linkedBy": "order",
@@ -4957,19 +4957,19 @@
     },
     {
      "lectureNo": 20,
-     "title": "第20章 疮痈肠痈浸淫",
+     "title": "第20章 篇目精读第十八：疮痈肠痈浸淫——8 条 3 方，最短的杂病篇之一",
      "durationSec": 423,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 20,
-      "title": "疮痈肠痈浸淫"
+      "title": "篇目精读第十八：疮痈肠痈浸淫——8 条 3 方，最短的杂病篇之一"
      },
      "textbook": [
       {
        "no": 20,
-       "title": "疮痈肠痈浸淫",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/20-第20章-疮痈肠痈浸淫.md"
+       "title": "篇目精读第十八：疮痈肠痈浸淫——8 条 3 方，最短的杂病篇之一",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/20-第20章-篇目精读第十八：疮痈肠痈浸淫——8 条 3 方，最短的杂病篇之一.md"
       }
      ],
      "linkedBy": "order",
@@ -4978,19 +4978,19 @@
     },
     {
      "lectureNo": 21,
-     "title": "第21章 趺蹶手指臂肿转筋阴狐疝蚘虫",
+     "title": "第21章 篇目精读第十九：趺蹶手指臂肿转筋阴狐疝蚘虫——八条小病串成的一篇",
      "durationSec": 394,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 21,
-      "title": "趺蹶手指臂肿转筋阴狐疝蚘虫"
+      "title": "篇目精读第十九：趺蹶手指臂肿转筋阴狐疝蚘虫——八条小病串成的一篇"
      },
      "textbook": [
       {
        "no": 21,
-       "title": "趺蹶手指臂肿转筋阴狐疝蚘虫",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/21-第21章-趺蹶手指臂肿转筋阴狐疝蚘虫.md"
+       "title": "篇目精读第十九：趺蹶手指臂肿转筋阴狐疝蚘虫——八条小病串成的一篇",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/21-第21章-篇目精读第十九：趺蹶手指臂肿转筋阴狐疝蚘虫——八条小病串成的一篇.md"
       }
      ],
      "linkedBy": "order",
@@ -4999,19 +4999,19 @@
     },
     {
      "lectureNo": 22,
-     "title": "第22章 杂疗方",
+     "title": "第22章 篇目精读第二十三：杂疗方——底本 1 条，古诗文网本 46 段",
      "durationSec": 691,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 22,
-      "title": "杂疗方"
+      "title": "篇目精读第二十三：杂疗方——底本 1 条，古诗文网本 46 段"
      },
      "textbook": [
       {
        "no": 22,
-       "title": "杂疗方",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/22-第22章-杂疗方.md"
+       "title": "篇目精读第二十三：杂疗方——底本 1 条，古诗文网本 46 段",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/22-第22章-篇目精读第二十三：杂疗方——底本 1 条，古诗文网本 46 段.md"
       }
      ],
      "linkedBy": "order",
@@ -5020,19 +5020,19 @@
     },
     {
      "lectureNo": 23,
-     "title": "第23章 禽兽鱼虫禁忌",
+     "title": "第23章 篇目精读第二十四：禽兽鱼虫禁忌——133 段禁忌清单，三栏对应才是它的结构",
      "durationSec": 912,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 23,
-      "title": "禽兽鱼虫禁忌"
+      "title": "篇目精读第二十四：禽兽鱼虫禁忌——133 段禁忌清单，三栏对应才是它的结构"
      },
      "textbook": [
       {
        "no": 23,
-       "title": "禽兽鱼虫禁忌",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/23-第23章-禽兽鱼虫禁忌.md"
+       "title": "篇目精读第二十四：禽兽鱼虫禁忌——133 段禁忌清单，三栏对应才是它的结构",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/23-第23章-篇目精读第二十四：禽兽鱼虫禁忌——133 段禁忌清单，三栏对应才是它的结构.md"
       }
      ],
      "linkedBy": "order",
@@ -5041,19 +5041,19 @@
     },
     {
      "lectureNo": 24,
-     "title": "第24章 果实菜谷禁忌",
+     "title": "第24章 篇目精读第二十五：果实菜谷禁忌——与禽兽鱼虫禁忌合起来才是完整的食禁",
      "durationSec": 716,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 24,
-      "title": "果实菜谷禁忌"
+      "title": "篇目精读第二十五：果实菜谷禁忌——与禽兽鱼虫禁忌合起来才是完整的食禁"
      },
      "textbook": [
       {
        "no": 24,
-       "title": "果实菜谷禁忌",
-       "file": "textbooks/01-zhongyi/08-jingui-yaolue/24-第24章-果实菜谷禁忌.md"
+       "title": "篇目精读第二十五：果实菜谷禁忌——与禽兽鱼虫禁忌合起来才是完整的食禁",
+       "file": "textbooks/01-zhongyi/08-jingui-yaolue/24-第24章-篇目精读第二十五：果实菜谷禁忌——与禽兽鱼虫禁忌合起来才是完整的食禁.md"
       }
      ],
      "linkedBy": "order",
@@ -5078,13 +5078,13 @@
    "rows": [
     {
      "lectureNo": 1,
-     "title": "第1章 绪论",
+     "title": "绪论：先把学科的地界、来路与读法交代清楚",
      "durationSec": 1190,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 1,
-      "title": "第1章 绪论"
+      "title": "绪论：先把学科的地界、来路与读法交代清楚"
      },
      "textbook": [
       {
@@ -5099,13 +5099,13 @@
     },
     {
      "lectureNo": 2,
-     "title": "第2章 中医内科疾病的辨证论治思路与方法",
+     "title": "辨证论治思路与方法：把「看病」拆成一条可复核的流水线",
      "durationSec": 1457,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 2,
-      "title": "第2章 中医内科疾病的辨证论治思路与方法"
+      "title": "辨证论治思路与方法：把「看病」拆成一条可复核的流水线"
      },
      "textbook": [
       {
@@ -5120,13 +5120,13 @@
     },
     {
      "lectureNo": 3,
-     "title": "第3章 脏腑辨证纲要与内科治则",
+     "title": "脏腑辨证纲要与内科治则：把「病位」拆成五套可复用的模板",
      "durationSec": 1001,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 3,
-      "title": "第3章 脏腑辨证纲要与内科治则"
+      "title": "脏腑辨证纲要与内科治则：把「病位」拆成五套可复用的模板"
      },
      "textbook": [
       {
@@ -5141,13 +5141,13 @@
     },
     {
      "lectureNo": 4,
-     "title": "第4章 肺系病证",
+     "title": "肺系病证：八个病证，一套模板，一张鉴别网",
      "durationSec": 1049,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 4,
-      "title": "第4章 肺系病证"
+      "title": "肺系病证：八个病证，一套模板，一张鉴别网"
      },
      "textbook": [
       {
@@ -5162,13 +5162,13 @@
     },
     {
      "lectureNo": 5,
-     "title": "第5章 心系病证",
+     "title": "心系病证：九病一条轴，从心神到心脉",
      "durationSec": 958,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 5,
-      "title": "第5章 心系病证"
+      "title": "心系病证：九病一条轴，从心神到心脉"
      },
      "textbook": [
       {
@@ -5183,13 +5183,13 @@
     },
     {
      "lectureNo": 6,
-     "title": "第6章 脾胃系病证",
+     "title": "脾胃系病证：一条通道上的九个卡点",
      "durationSec": 1022,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 6,
-      "title": "第6章 脾胃系病证"
+      "title": "脾胃系病证：一条通道上的九个卡点"
      },
      "textbook": [
       {
@@ -5204,13 +5204,13 @@
     },
     {
      "lectureNo": 7,
-     "title": "第7章 肝系病证",
+     "title": "肝系病证：气血水风四层，与一个例外",
      "durationSec": 1181,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 7,
-      "title": "第7章 肝系病证"
+      "title": "肝系病证：气血水风四层，与一个例外"
      },
      "textbook": [
       {
@@ -5225,13 +5225,13 @@
     },
     {
      "lectureNo": 8,
-     "title": "第8章 肾系病证",
+     "title": "肾系病证：水、溺、精三条通道",
      "durationSec": 1096,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 8,
-      "title": "第8章 肾系病证"
+      "title": "肾系病证：水、溺、精三条通道"
      },
      "textbook": [
       {
@@ -5246,13 +5246,13 @@
     },
     {
      "lectureNo": 9,
-     "title": "第9章 气血津液病证",
+     "title": "气血津液病证：55 个小节装不下 71 个证",
      "durationSec": 1031,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 9,
-      "title": "第9章 气血津液病证"
+      "title": "气血津液病证：55 个小节装不下 71 个证"
      },
      "textbook": [
       {
@@ -5267,13 +5267,13 @@
     },
     {
      "lectureNo": 10,
-     "title": "第10章 肢体经络病证",
+     "title": "肢体经络病证：五个病证，五格骨架，二十五条一对一的证—方",
      "durationSec": 1193,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 10,
-      "title": "第10章 肢体经络病证"
+      "title": "肢体经络病证：五个病证，五格骨架，二十五条一对一的证—方"
      },
      "textbook": [
       {
@@ -5288,13 +5288,13 @@
     },
     {
      "lectureNo": 11,
-     "title": "第11章 常见急症与传染病",
+     "title": "常见急症与传染病：同一个槽位名，两种语义",
      "durationSec": 1142,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 11,
-      "title": "第11章 常见急症与传染病"
+      "title": "常见急症与传染病：同一个槽位名，两种语义"
      },
      "textbook": [
       {
@@ -5309,13 +5309,13 @@
     },
     {
      "lectureNo": 12,
-     "title": "第12章 中医内科学的数字化与AI时代",
+     "title": "数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去",
      "durationSec": 1372,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 12,
-      "title": "第12章 中医内科学的数字化与AI时代"
+      "title": "数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去"
      },
      "textbook": [
       {
@@ -5330,13 +5330,13 @@
     },
     {
      "lectureNo": 13,
-     "title": "第13章 证候—方剂—疗效的因果推断",
+     "title": "证候—方剂—疗效：一条链里哪一步能看见，哪一步只能相信",
      "durationSec": 1592,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 13,
-      "title": "第13章 证候—方剂—疗效的因果推断"
+      "title": "证候—方剂—疗效：一条链里哪一步能看见，哪一步只能相信"
      },
      "textbook": [
       {
@@ -5351,13 +5351,13 @@
     },
     {
      "lectureNo": 14,
-     "title": "第14章 内科分型与 ICD-11 的映射",
+     "title": "内科分型与 ICD-11：能对上的三十二个，和不能对上的四类",
      "durationSec": 1402,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 14,
-      "title": "第14章 内科分型与 ICD-11 的映射"
+      "title": "内科分型与 ICD-11：能对上的三十二个，和不能对上的四类"
      },
      "textbook": [
       {
@@ -5788,13 +5788,13 @@
    "rows": [
     {
      "lectureNo": 1,
-     "title": "第 1 章 · 病理生理学导论",
+     "title": "第 1 章 · 病理生理学导论：四个问题与一套不判定的口径",
      "durationSec": 1741,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 1,
-      "title": "病理生理学导论"
+      "title": "病理生理学导论：四个问题与一套不判定的口径"
      },
      "textbook": [
       {
@@ -5809,13 +5809,13 @@
     },
     {
      "lectureNo": 2,
-     "title": "第 2 章 · 稳态、异稳态与对应激源的适应性反应",
+     "title": "第 2 章 · 稳态、异稳态与对应激源的适应性反应：设定点是可以被移动的",
      "durationSec": 1607,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 2,
-      "title": "稳态、异稳态与对应激源的适应性反应"
+      "title": "稳态、异稳态与对应激源的适应性反应：设定点是可以被移动的"
      },
      "textbook": [
       {
@@ -5830,13 +5830,13 @@
     },
     {
      "lectureNo": 3,
-     "title": "第 3 章 · 细胞结构与功能",
+     "title": "第 3 章 · 细胞结构与功能：结构是损伤的受力点清单",
      "durationSec": 1270,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 3,
-      "title": "细胞结构与功能"
+      "title": "细胞结构与功能：结构是损伤的受力点清单"
      },
      "textbook": [
       {
@@ -5851,13 +5851,13 @@
     },
     {
      "lectureNo": 4,
-     "title": "第 4 章 · 细胞损伤、衰老与死亡",
+     "title": "第 4 章 · 细胞损伤、衰老与死亡：一条线、两种死法、一个例外",
      "durationSec": 1416,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 4,
-      "title": "细胞损伤、衰老与死亡"
+      "title": "细胞损伤、衰老与死亡：一条线、两种死法、一个例外"
      },
      "textbook": [
       {
@@ -5872,13 +5872,13 @@
     },
     {
      "lectureNo": 5,
-     "title": "第 5 章 · 基因组结构、调控与组织分化",
+     "title": "第 5 章 · 基因组结构、调控与组织分化：同一份底稿的十种读法",
      "durationSec": 1190,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 5,
-      "title": "基因组结构、调控与组织分化"
+      "title": "基因组结构、调控与组织分化：同一份底稿的十种读法"
      },
      "textbook": [
       {
@@ -5893,13 +5893,13 @@
     },
     {
      "lectureNo": 6,
-     "title": "第 6 章 · 遗传与发育性疾病",
+     "title": "第 6 章 · 遗传与发育性疾病：读的是传递的形状，不是概率表",
      "durationSec": 1476,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 6,
-      "title": "遗传与发育性疾病"
+      "title": "遗传与发育性疾病：读的是传递的形状，不是概率表"
      },
      "textbook": [
       {
@@ -5914,13 +5914,13 @@
     },
     {
      "lectureNo": 7,
-     "title": "第 7 章 · 肿瘤",
+     "title": "第 7 章 · 肿瘤：一串约束被逐条突破的累积",
      "durationSec": 1358,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 7,
-      "title": "肿瘤"
+      "title": "肿瘤：一串约束被逐条突破的累积"
      },
      "textbook": [
       {
@@ -5935,13 +5935,13 @@
     },
     {
      "lectureNo": 8,
-     "title": "第 8 章 · 感染过程",
+     "title": "第 8 章 · 感染过程：从定植到器官功能障碍的一条连续谱",
      "durationSec": 1417,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 8,
-      "title": "感染过程"
+      "title": "感染过程：从定植到器官功能障碍的一条连续谱"
      },
      "textbook": [
       {
@@ -5956,13 +5956,13 @@
     },
     {
      "lectureNo": 9,
-     "title": "第 9 章 · 炎症与免疫",
+     "title": "第 9 章 · 炎症与免疫：两套系统、三条判据与一个交汇点",
      "durationSec": 1487,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 9,
-      "title": "炎症与免疫"
+      "title": "炎症与免疫：两套系统、三条判据与一个交汇点"
      },
      "textbook": [
       {
@@ -5977,13 +5977,13 @@
     },
     {
      "lectureNo": 10,
-     "title": "第 10 章 · 免疫功能异常",
+     "title": "第 10 章 · 免疫功能异常：三条约束、四型判据与一个「谁在执行」",
      "durationSec": 1517,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 10,
-      "title": "免疫功能异常"
+      "title": "免疫功能异常：三条约束、四型判据与一个「谁在执行」"
      },
      "textbook": [
       {
@@ -5998,13 +5998,13 @@
     },
     {
      "lectureNo": 11,
-     "title": "第 11 章 · 白细胞恶性肿瘤",
+     "title": "第 11 章 · 白细胞恶性肿瘤：四条机制收十个节",
      "durationSec": 1415,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 11,
-      "title": "白细胞恶性肿瘤"
+      "title": "白细胞恶性肿瘤：四条机制收十个节"
      },
      "textbook": [
       {
@@ -6019,13 +6019,13 @@
     },
     {
      "lectureNo": 12,
-     "title": "第 12 章 · HIV感染与艾滋病",
+     "title": "第 12 章 · HIV 感染与艾滋病：一个受体决定了整条病程",
      "durationSec": 1442,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 12,
-      "title": "HIV感染与艾滋病"
+      "title": "HIV 感染与艾滋病：一个受体决定了整条病程"
      },
      "textbook": [
       {
@@ -6040,13 +6040,13 @@
     },
     {
      "lectureNo": 13,
-     "title": "第 13 章 · 氧运输异常",
+     "title": "第 13 章 · 氧运输异常：先定哪一段断，再谈缺氧",
      "durationSec": 1605,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 13,
-      "title": "氧运输异常"
+      "title": "氧运输异常：先定哪一段断，再谈缺氧"
      },
      "textbook": [
       {
@@ -6061,13 +6061,13 @@
     },
     {
      "lectureNo": 14,
-     "title": "第 14 章 · 止血与凝血异常",
+     "title": "第 14 章 · 止血与凝血异常：三条线，两种形态，一个终末通路",
      "durationSec": 1658,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 14,
-      "title": "止血与凝血异常"
+      "title": "止血与凝血异常：三条线，两种形态，一个终末通路"
      },
      "textbook": [
       {
@@ -6082,13 +6082,13 @@
     },
     {
      "lectureNo": 15,
-     "title": "第 15 章 · 血流异常",
+     "title": "第 15 章 · 血流异常：一个压差、两套阻力与一条时间窗",
      "durationSec": 1400,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 15,
-      "title": "血流异常"
+      "title": "血流异常：一个压差、两套阻力与一条时间窗"
      },
      "textbook": [
       {
@@ -6103,13 +6103,13 @@
     },
     {
      "lectureNo": 16,
-     "title": "第 16 章 · 血压异常",
+     "title": "第 16 章 · 血压异常：一个讲数字的章节，为何一个数字都不给",
      "durationSec": 1375,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 16,
-      "title": "血压异常"
+      "title": "血压异常：一个讲数字的章节，为何一个数字都不给"
      },
      "textbook": [
       {
@@ -6124,13 +6124,13 @@
     },
     {
      "lectureNo": 17,
-     "title": "第 17 章 · 心脏功能",
+     "title": "第 17 章 · 心脏功能：四个旋钮与一条钙的链条",
      "durationSec": 1586,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 17,
-      "title": "心脏功能"
+      "title": "心脏功能：四个旋钮与一条钙的链条"
      },
      "textbook": [
       {
@@ -6145,13 +6145,13 @@
     },
     {
      "lectureNo": 18,
-     "title": "第 18 章 · 心脏功能异常",
+     "title": "第 18 章 · 心脏功能异常：四类失衡与一张正反馈网络",
      "durationSec": 1411,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 18,
-      "title": "心脏功能异常"
+      "title": "心脏功能异常：四类失衡与一张正反馈网络"
      },
      "textbook": [
       {
@@ -6250,13 +6250,13 @@
     },
     {
      "lectureNo": 23,
-     "title": "第 23 章 · 限制性肺疾病",
+     "title": "第 23 章 · 限制性肺疾病：装不下的六个位置",
      "durationSec": 1490,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 23,
-      "title": "限制性肺疾病"
+      "title": "限制性肺疾病：装不下的六个位置"
      },
      "textbook": [
       {
@@ -6271,13 +6271,13 @@
     },
     {
      "lectureNo": 24,
-     "title": "第 24 章 · 水电解质稳态与失衡",
+     "title": "第 24 章 · 水电解质稳态与失衡：两个轴，一条出口",
      "durationSec": 1724,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 24,
-      "title": "水电解质稳态与失衡"
+      "title": "水电解质稳态与失衡：两个轴，一条出口"
      },
      "textbook": [
       {
@@ -6292,13 +6292,13 @@
     },
     {
      "lectureNo": 25,
-     "title": "第 25 章 · 酸碱平衡与失衡",
+     "title": "第 25 章 · 酸碱平衡与失衡：三道防线与一条方向判据",
      "durationSec": 1517,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 25,
-      "title": "酸碱平衡与失衡"
+      "title": "酸碱平衡与失衡：三道防线与一条方向判据"
      },
      "textbook": [
       {
@@ -6313,13 +6313,13 @@
     },
     {
      "lectureNo": 26,
-     "title": "第 26 章 · 肾脏功能",
+     "title": "第 26 章 · 肾脏功能：一条四环节的链，三组功能",
      "durationSec": 1745,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 26,
-      "title": "肾脏功能"
+      "title": "肾脏功能：一条四环节的链，三组功能"
      },
      "textbook": [
       {
@@ -6334,13 +6334,13 @@
     },
     {
      "lectureNo": 27,
-     "title": "第 27 章 · 肾内疾病",
+     "title": "第 27 章 · 肾内疾病：先定部位，再定性质",
      "durationSec": 1291,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 27,
-      "title": "肾内疾病"
+      "title": "肾内疾病：先定部位，再定性质"
      },
      "textbook": [
       {
@@ -6355,13 +6355,13 @@
     },
     {
      "lectureNo": 28,
-     "title": "第 28 章 · 急性肾损伤与慢性肾脏病",
+     "title": "第 28 章 · 急性肾损伤与慢性肾脏病：一条主线，两条时间轴",
      "durationSec": 1369,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 28,
-      "title": "急性肾损伤与慢性肾脏病"
+      "title": "急性肾损伤与慢性肾脏病：一条主线，两条时间轴"
      },
      "textbook": [
       {
@@ -6376,13 +6376,13 @@
     },
     {
      "lectureNo": 29,
-     "title": "第 29 章 · 下尿路疾病",
+     "title": "第 29 章 · 下尿路疾病：一条分界线，三组症状",
      "durationSec": 1410,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 29,
-      "title": "下尿路疾病"
+      "title": "下尿路疾病：一条分界线，三组症状"
      },
      "textbook": [
       {
@@ -6397,13 +6397,13 @@
     },
     {
      "lectureNo": 30,
-     "title": "第 30 章 · 男性生殖功能",
+     "title": "第 30 章 · 男性生殖功能：一套解剖，三层调控",
      "durationSec": 1496,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 30,
-      "title": "男性生殖功能"
+      "title": "男性生殖功能：一套解剖，三层调控"
      },
      "textbook": [
       {
@@ -6418,13 +6418,13 @@
     },
     {
      "lectureNo": 31,
-     "title": "第 31 章 · 男性生殖功能异常",
+     "title": "第 31 章 · 男性生殖功能异常：先把表现放回六个类别",
      "durationSec": 1299,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 31,
-      "title": "男性生殖功能异常"
+      "title": "男性生殖功能异常：先把表现放回六个类别"
      },
      "textbook": [
       {
@@ -6439,13 +6439,13 @@
     },
     {
      "lectureNo": 32,
-     "title": "第 32 章 · 女性生殖功能",
+     "title": "第 32 章 · 女性生殖功能：一条周期性轴与它的读出器",
      "durationSec": 1312,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 32,
-      "title": "女性生殖功能"
+      "title": "女性生殖功能：一条周期性轴与它的读出器"
      },
      "textbook": [
       {
@@ -6460,13 +6460,13 @@
     },
     {
      "lectureNo": 33,
-     "title": "第 33 章 · 女性生殖功能异常",
+     "title": "第 33 章 · 女性生殖功能异常：五层排查、三源激素与一条因果环",
      "durationSec": 1495,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 33,
-      "title": "女性生殖功能异常"
+      "title": "女性生殖功能异常：五层排查、三源激素与一条因果环"
      },
      "textbook": [
       {
@@ -6481,13 +6481,13 @@
     },
     {
      "lectureNo": 34,
-     "title": "第 34 章 · 性传播感染",
+     "title": "第 34 章 · 性传播感染：四层屏障、一条上行链与六类防控",
      "durationSec": 1371,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 34,
-      "title": "性传播感染"
+      "title": "性传播感染：四层屏障、一条上行链与六类防控"
      },
      "textbook": [
       {
@@ -6502,13 +6502,13 @@
     },
     {
      "lectureNo": 35,
-     "title": "第 35 章 · 胃肠功能",
+     "title": "第 35 章 · 胃肠功能：四类功能、一条调控链与从症状反推环节",
      "durationSec": 1320,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 35,
-      "title": "胃肠功能"
+      "title": "胃肠功能：四类功能、一条调控链与从症状反推环节"
      },
      "textbook": [
       {
@@ -6523,13 +6523,13 @@
     },
     {
      "lectureNo": 36,
-     "title": "第 36 章 · 胃肠疾病",
+     "title": "第 36 章 · 胃肠疾病：三类机制、一个深度对应与四种分型",
      "durationSec": 1562,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 36,
-      "title": "胃肠疾病"
+      "title": "胃肠疾病：三类机制、一个深度对应与四种分型"
      },
      "textbook": [
       {
@@ -6544,13 +6544,13 @@
     },
     {
      "lectureNo": 37,
-     "title": "第 37 章 · 胆囊与外分泌胰腺功能异常",
+     "title": "第 37 章 · 胆囊与外分泌胰腺功能异常：一个三环节通则、三道保险与一处定位",
      "durationSec": 1269,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 37,
-      "title": "胆囊与外分泌胰腺功能异常"
+      "title": "胆囊与外分泌胰腺功能异常：一个三环节通则、三道保险与一处定位"
      },
      "textbook": [
       {
@@ -6565,13 +6565,13 @@
     },
     {
      "lectureNo": 38,
-     "title": "第 38 章 · 肝脏疾病",
+     "title": "第 38 章 · 肝脏疾病：四条主线、两条后果线与一个可逆窗口",
      "durationSec": 1435,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 38,
-      "title": "肝脏疾病"
+      "title": "肝脏疾病：四条主线、两条后果线与一个可逆窗口"
      },
      "textbook": [
       {
@@ -6586,13 +6586,13 @@
     },
     {
      "lectureNo": 39,
-     "title": "第 39 章 · 内分泌生理与下丘脑-垂体调控机制",
+     "title": "第 39 章 · 内分泌生理与下丘脑-垂体调控机制：两层整合、三级轴与五种读法",
      "durationSec": 1634,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 39,
-      "title": "内分泌生理与下丘脑-垂体调控机制"
+      "title": "内分泌生理与下丘脑-垂体调控机制：两层整合、三级轴与五种读法"
      },
      "textbook": [
       {
@@ -6607,13 +6607,13 @@
     },
     {
      "lectureNo": 40,
-     "title": "第 40 章 · 内分泌功能紊乱",
+     "title": "第 40 章 · 内分泌功能紊乱：四种型态、一张定位表与五种急症",
      "durationSec": 1567,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 40,
-      "title": "内分泌功能紊乱"
+      "title": "内分泌功能紊乱：四种型态、一张定位表与五种急症"
      },
      "textbook": [
       {
@@ -6628,13 +6628,13 @@
     },
     {
      "lectureNo": 41,
-     "title": "第 41 章 · 糖尿病",
+     "title": "第 41 章 · 糖尿病：一个不对称结构、三条环节与两类血管",
      "durationSec": 1739,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 41,
-      "title": "糖尿病"
+      "title": "糖尿病：一个不对称结构、三条环节与两类血管"
      },
      "textbook": [
       {
@@ -6649,13 +6649,13 @@
     },
     {
      "lectureNo": 42,
-     "title": "第 42 章 · 代谢与营养异常",
+     "title": "第 42 章 · 代谢与营养异常：一个调定点、两种代谢模式与一条再喂养链",
      "durationSec": 1702,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 42,
-      "title": "代谢与营养异常"
+      "title": "代谢与营养异常：一个调定点、两种代谢模式与一条再喂养链"
      },
      "textbook": [
       {
@@ -6670,13 +6670,13 @@
     },
     {
      "lectureNo": 43,
-     "title": "第 43 章 · 神经系统结构与功能",
+     "title": "第 43 章 · 神经系统结构与功能：一张由缺损反推部位的定位图",
      "durationSec": 1390,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 43,
-      "title": "神经系统结构与功能"
+      "title": "神经系统结构与功能：一张由缺损反推部位的定位图"
      },
      "textbook": [
       {
@@ -6691,13 +6691,13 @@
     },
     {
      "lectureNo": 44,
-     "title": "第 44 章 · 脑功能急性疾病",
+     "title": "第 44 章 · 脑功能急性疾病：一条链，四个干预点",
      "durationSec": 1490,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 44,
-      "title": "脑功能急性疾病"
+      "title": "脑功能急性疾病：一条链，四个干预点"
      },
      "textbook": [
       {
@@ -6712,13 +6712,13 @@
     },
     {
      "lectureNo": 45,
-     "title": "第 45 章 · 慢性神经功能障碍",
+     "title": "第 45 章 · 慢性神经功能障碍：部位与储备，而不是时间与压力",
      "durationSec": 1472,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 45,
-      "title": "慢性神经功能障碍"
+      "title": "慢性神经功能障碍：部位与储备，而不是时间与压力"
      },
      "textbook": [
       {
@@ -6733,13 +6733,13 @@
     },
     {
      "lectureNo": 46,
-     "title": "第 46 章 · 特殊感觉功能异常",
+     "title": "第 46 章 · 特殊感觉功能异常：缺损的形状就是定位器",
      "durationSec": 1453,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 46,
-      "title": "特殊感觉功能异常"
+      "title": "特殊感觉功能异常：缺损的形状就是定位器"
      },
      "textbook": [
       {
@@ -6754,13 +6754,13 @@
     },
     {
      "lectureNo": 47,
-     "title": "第 47 章 · 疼痛",
+     "title": "第 47 章 · 疼痛：四环节、两级敏化与一条从症状到疾病的转弯",
      "durationSec": 1425,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 47,
-      "title": "疼痛"
+      "title": "疼痛：四环节、两级敏化与一条从症状到疾病的转弯"
      },
      "textbook": [
       {
@@ -6775,13 +6775,13 @@
     },
     {
      "lectureNo": 48,
-     "title": "第 48 章 · 精神心理健康障碍",
+     "title": "第 48 章 · 精神心理健康障碍：三层整合、五个维度与一条去污名化的边界",
      "durationSec": 2259,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 48,
-      "title": "精神心理健康障碍"
+      "title": "精神心理健康障碍：三层整合、五个维度与一条去污名化的边界"
      },
      "textbook": [
       {
@@ -6796,13 +6796,13 @@
     },
     {
      "lectureNo": 49,
-     "title": "第 49 章 · 骨骼肌肉系统结构与功能",
+     "title": "第 49 章 · 骨骼肌肉系统结构与功能：六项功能、一条耦联与三处结构弱点",
      "durationSec": 1763,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 49,
-      "title": "骨骼肌肉系统结构与功能"
+      "title": "骨骼肌肉系统结构与功能：六项功能、一条耦联与三处结构弱点"
      },
      "textbook": [
       {
@@ -6817,13 +6817,13 @@
     },
     {
      "lectureNo": 50,
-     "title": "第 50 章 · 骨骼肌肉功能异常：创伤、感染与疾病",
+     "title": "第 50 章 · 骨骼肌肉功能异常：力学环境、两个恶性循环与一条废用链",
      "durationSec": 1957,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 50,
-      "title": "骨骼肌肉功能异常：创伤、感染与疾病"
+      "title": "骨骼肌肉功能异常：力学环境、两个恶性循环与一条废用链"
      },
      "textbook": [
       {
@@ -6838,13 +6838,13 @@
     },
     {
      "lectureNo": 51,
-     "title": "第 51 章 · 骨骼肌肉功能异常：风湿性疾病",
+     "title": "第 51 章 · 风湿性疾病：两种范式、一条损伤链与全身代价",
      "durationSec": 1831,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 51,
-      "title": "骨骼肌肉功能异常：风湿性疾病"
+      "title": "风湿性疾病：两种范式、一条损伤链与全身代价"
      },
      "textbook": [
       {
@@ -6859,13 +6859,13 @@
     },
     {
      "lectureNo": 52,
-     "title": "第 52 章 · 皮肤系统异常",
+     "title": "第 52 章 · 皮肤系统异常：五件组件的屏障与四条后果",
      "durationSec": 1852,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 52,
-      "title": "皮肤系统异常"
+      "title": "皮肤系统异常：五件组件的屏障与四条后果"
      },
      "textbook": [
       {
@@ -6880,13 +6880,13 @@
     },
     {
      "lectureNo": 53,
-     "title": "第 53 章 · 烧伤",
+     "title": "第 53 章 · 烧伤：局部三道带、四路全身反应与一条把两者接起来的链",
      "durationSec": 1847,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 53,
-      "title": "烧伤"
+      "title": "烧伤：局部三道带、四路全身反应与一条把两者接起来的链"
      },
      "textbook": [
       {
@@ -6917,13 +6917,13 @@
    "rows": [
     {
      "lectureNo": 1,
-     "title": "第1章 绪论",
+     "title": "绪论：一门学科先给提问方式，再给药名",
      "durationSec": 1285,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 1,
-      "title": "第1章 绪论"
+      "title": "绪论：一门学科先给提问方式，再给药名"
      },
      "textbook": [
       {
@@ -6938,13 +6938,13 @@
     },
     {
      "lectureNo": 2,
-     "title": "第2章 药物效应动力学——药效学",
+     "title": "药物效应动力学：作用、机制、受体与表述的四级台阶",
      "durationSec": 1789,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 2,
-      "title": "第2章 药物效应动力学——药效学"
+      "title": "药物效应动力学：作用、机制、受体与表述的四级台阶"
      },
      "textbook": [
       {
@@ -6959,13 +6959,13 @@
     },
     {
      "lectureNo": 3,
-     "title": "第3章 药物代谢动力学——药动学",
+     "title": "药物代谢动力学：一条曲线、两类模型、三种消除",
      "durationSec": 1085,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 3,
-      "title": "第3章 药物代谢动力学——药动学"
+      "title": "药物代谢动力学：一条曲线、两类模型、三种消除"
      },
      "textbook": [
       {
@@ -6980,13 +6980,13 @@
     },
     {
      "lectureNo": 4,
-     "title": "第4章 影响药物效应的因素",
+     "title": "影响药物效应的因素：三组因素、两端框架、一条记录链",
      "durationSec": 1131,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 4,
-      "title": "第4章 影响药物效应的因素"
+      "title": "影响药物效应的因素：三组因素、两端框架、一条记录链"
      },
      "textbook": [
       {
@@ -7001,13 +7001,13 @@
     },
     {
      "lectureNo": 5,
-     "title": "第5章 传出神经系统药理概论",
+     "title": "传出神经系统药理概论：三层框架与六类主干",
      "durationSec": 1107,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 5,
-      "title": "第5章 传出神经系统药理概论"
+      "title": "传出神经系统药理概论：三层框架与六类主干"
      },
      "textbook": [
       {
@@ -7022,13 +7022,13 @@
     },
     {
      "lectureNo": 6,
-     "title": "第6章 拟胆碱药",
+     "title": "拟胆碱药：两条路通往同一个效应，判据在「依赖什么」",
      "durationSec": 1141,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 6,
-      "title": "第6章 拟胆碱药"
+      "title": "拟胆碱药：两条路通往同一个效应，判据在「依赖什么」"
      },
      "textbook": [
       {
@@ -7043,13 +7043,13 @@
     },
     {
      "lectureNo": 7,
-     "title": "第7章 有机磷酸酯类及胆碱酯酶复活药",
+     "title": "有机磷酸酯类及胆碱酯酶复活药：一个共价键，与它被拆开的时间窗",
      "durationSec": 1245,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 7,
-      "title": "第7章 有机磷酸酯类及胆碱酯酶复活药"
+      "title": "有机磷酸酯类及胆碱酯酶复活药：一个共价键，与它被拆开的时间窗"
      },
      "textbook": [
       {
@@ -7064,13 +7064,13 @@
     },
     {
      "lectureNo": 8,
-     "title": "第8章 抗胆碱药",
+     "title": "抗胆碱药：阻断之后看到的，是「张力对比」而不是药物本身",
      "durationSec": 1096,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 8,
-      "title": "第8章 抗胆碱药"
+      "title": "抗胆碱药：阻断之后看到的，是「张力对比」而不是药物本身"
      },
      "textbook": [
       {
@@ -7085,13 +7085,13 @@
     },
     {
      "lectureNo": 9,
-     "title": "第9章 拟肾上腺素药",
+     "title": "拟肾上腺素药：受体谱的宽窄，决定了一支药长什么样",
      "durationSec": 1124,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 9,
-      "title": "第9章 拟肾上腺素药"
+      "title": "拟肾上腺素药：受体谱的宽窄，决定了一支药长什么样"
      },
      "textbook": [
       {
@@ -7106,13 +7106,13 @@
     },
     {
      "lectureNo": 10,
-     "title": "第10章 抗肾上腺素药",
+     "title": "抗肾上腺素药：阻断不产生效应，它只取消一层驱动",
      "durationSec": 1164,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 10,
-      "title": "第10章 抗肾上腺素药"
+      "title": "抗肾上腺素药：阻断不产生效应，它只取消一层驱动"
      },
      "textbook": [
       {
@@ -7127,13 +7127,13 @@
     },
     {
      "lectureNo": 11,
-     "title": "第11章 局部麻醉药",
+     "title": "局部麻醉药：一条「结构—代谢—时程—给药—观察」的链",
      "durationSec": 1399,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 11,
-      "title": "第11章 局部麻醉药"
+      "title": "局部麻醉药：一条「结构—代谢—时程—给药—观察」的链"
      },
      "textbook": [
       {
@@ -7148,13 +7148,13 @@
     },
     {
      "lectureNo": 12,
-     "title": "第12章 全身麻醉药",
+     "title": "全身麻醉药：进行性抑制、可分的成分、网络的机制",
      "durationSec": 1396,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 12,
-      "title": "第12章 全身麻醉药"
+      "title": "全身麻醉药：进行性抑制、可分的成分、网络的机制"
      },
      "textbook": [
       {
@@ -7169,13 +7169,13 @@
     },
     {
      "lectureNo": 13,
-     "title": "第13章 镇静催眠药",
+     "title": "镇静催眠药：一个剂量谱、两类别位调节、四个靶点层面",
      "durationSec": 1376,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 13,
-      "title": "第13章 镇静催眠药"
+      "title": "镇静催眠药：一个剂量谱、两类别位调节、四个靶点层面"
      },
      "textbook": [
       {
@@ -7190,13 +7190,13 @@
     },
     {
      "lectureNo": 14,
-     "title": "第14章 抗癫痫药与抗惊厥药",
+     "title": "抗癫痫药与抗惊厥药：环节、目的与观察项目",
      "durationSec": 1493,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 14,
-      "title": "第14章 抗癫痫药与抗惊厥药"
+      "title": "抗癫痫药与抗惊厥药：环节、目的与观察项目"
      },
      "textbook": [
       {
@@ -7211,13 +7211,13 @@
     },
     {
      "lectureNo": 15,
-     "title": "第15章 抗精神失常药",
+     "title": "抗精神失常药：四条通路、三条靶点线、两张清单",
      "durationSec": 1235,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 15,
-      "title": "第15章 抗精神失常药"
+      "title": "抗精神失常药：四条通路、三条靶点线、两张清单"
      },
      "textbook": [
       {
@@ -7232,13 +7232,13 @@
     },
     {
      "lectureNo": 16,
-     "title": "第16章 治疗中枢神经系统退行性疾病药",
+     "title": "治疗中枢神经系统退行性疾病药：两道门槛、三条路径、一张观察表",
      "durationSec": 1499,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 16,
-      "title": "第16章 治疗中枢神经系统退行性疾病药"
+      "title": "治疗中枢神经系统退行性疾病药：两道门槛、三条路径、一张观察表"
      },
      "textbook": [
       {
@@ -7253,13 +7253,13 @@
     },
     {
      "lectureNo": 17,
-     "title": "第17章 解热镇痛抗炎药与抗痛风药",
+     "title": "解热镇痛抗炎药与抗痛风药：一条前列腺素线、一条尿酸线",
      "durationSec": 1530,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 17,
-      "title": "第17章 解热镇痛抗炎药与抗痛风药"
+      "title": "解热镇痛抗炎药与抗痛风药：一条前列腺素线、一条尿酸线"
      },
      "textbook": [
       {
@@ -7274,13 +7274,13 @@
     },
     {
      "lectureNo": 18,
-     "title": "第18章 镇痛药",
+     "title": "镇痛药：受体、效应、用途、观察的四段推演",
      "durationSec": 1381,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 18,
-      "title": "第18章 镇痛药"
+      "title": "镇痛药：受体、效应、用途、观察的四段推演"
      },
      "textbook": [
       {
@@ -7295,13 +7295,13 @@
     },
     {
      "lectureNo": 19,
-     "title": "第19章 中枢兴奋药",
+     "title": "中枢兴奋药：三级部位、两条路径、一条安全边界",
      "durationSec": 1331,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 19,
-      "title": "第19章 中枢兴奋药"
+      "title": "中枢兴奋药：三级部位、两条路径、一条安全边界"
      },
      "textbook": [
       {
@@ -7316,13 +7316,13 @@
     },
     {
      "lectureNo": 20,
-     "title": "第20章 组胺及抗组胺药",
+     "title": "组胺及抗组胺药：一条「释放—亚型—占据—代际」的链",
      "durationSec": 1295,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 20,
-      "title": "第20章 组胺及抗组胺药"
+      "title": "组胺及抗组胺药：一条「释放—亚型—占据—代际」的链"
      },
      "textbook": [
       {
@@ -7337,13 +7337,13 @@
     },
     {
      "lectureNo": 21,
-     "title": "第21章 其他影响自体活性物质的药物",
+     "title": "其他影响自体活性物质的药物：一条「环节—靶点—组织」的定位法",
      "durationSec": 1269,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 21,
-      "title": "第21章 其他影响自体活性物质的药物"
+      "title": "其他影响自体活性物质的药物：一条「环节—靶点—组织」的定位法"
      },
      "textbook": [
       {
@@ -7358,13 +7358,13 @@
     },
     {
      "lectureNo": 22,
-     "title": "第22章 作用于心血管系统离子通道的药物",
+     "title": "作用于心血管系统离子通道的药物：一条「状态—选择性—方向」的判据链",
      "durationSec": 1258,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 22,
-      "title": "第22章 作用于心血管系统离子通道的药物"
+      "title": "作用于心血管系统离子通道的药物：一条「状态—选择性—方向」的判据链"
      },
      "textbook": [
       {
@@ -7379,13 +7379,13 @@
     },
     {
      "lectureNo": 23,
-     "title": "第23章 治疗慢性心功能不全的药物",
+     "title": "治疗慢性心功能不全的药物：一条「重构—环节—时间尺度」的链",
      "durationSec": 1501,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 23,
-      "title": "第23章 治疗慢性心功能不全的药物"
+      "title": "治疗慢性心功能不全的药物：一条「重构—环节—时间尺度」的链"
      },
      "textbook": [
       {
@@ -7400,13 +7400,13 @@
     },
     {
      "lectureNo": 24,
-     "title": "第24章 抗高血压药",
+     "title": "抗高血压药：一条「三要素—五类药—平稳覆盖」的链",
      "durationSec": 1373,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 24,
-      "title": "第24章 抗高血压药"
+      "title": "抗高血压药：一条「三要素—五类药—平稳覆盖」的链"
      },
      "textbook": [
       {
@@ -7421,13 +7421,13 @@
     },
     {
      "lectureNo": 25,
-     "title": "第25章 抗心绞痛药",
+     "title": "抗心绞痛药：一张耗氧表上的四个位置",
      "durationSec": 1478,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 25,
-      "title": "第25章 抗心绞痛药"
+      "title": "抗心绞痛药：一张耗氧表上的四个位置"
      },
      "textbook": [
       {
@@ -7442,13 +7442,13 @@
     },
     {
      "lectureNo": 26,
-     "title": "第26章 抗心律失常药",
+     "title": "抗心律失常药：同源的治疗与致心律失常",
      "durationSec": 1587,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 26,
-      "title": "第26章 抗心律失常药"
+      "title": "抗心律失常药：同源的治疗与致心律失常"
      },
      "textbook": [
       {
@@ -7463,13 +7463,13 @@
     },
     {
      "lectureNo": 27,
-     "title": "第27章 抗动脉粥样硬化药",
+     "title": "抗动脉粥样硬化药：四个侧面，一个位点问题",
      "durationSec": 1243,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 27,
-      "title": "第27章 抗动脉粥样硬化药"
+      "title": "抗动脉粥样硬化药：四个侧面，一个位点问题"
      },
      "textbook": [
       {
@@ -7484,13 +7484,13 @@
     },
     {
      "lectureNo": 28,
-     "title": "第28章 利尿药与脱水药",
+     "title": "利尿药与脱水药：管腔侧的一个转运体，血管侧的一道渗透压",
      "durationSec": 1352,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 28,
-      "title": "第28章 利尿药与脱水药"
+      "title": "利尿药与脱水药：管腔侧的一个转运体，血管侧的一道渗透压"
      },
      "textbook": [
       {
@@ -7505,13 +7505,13 @@
     },
     {
      "lectureNo": 29,
-     "title": "第29章 消化系统药",
+     "title": "消化系统药：三条路径、两个方向、一处相互制约",
      "durationSec": 1073,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 29,
-      "title": "第29章 消化系统药"
+      "title": "消化系统药：三条路径、两个方向、一处相互制约"
      },
      "textbook": [
       {
@@ -7526,13 +7526,13 @@
     },
     {
      "lectureNo": 30,
-     "title": "第30章 呼吸系统药",
+     "title": "呼吸系统药：一条按时相排开的分工，与三个窄口",
      "durationSec": 1046,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 30,
-      "title": "第30章 呼吸系统药"
+      "title": "呼吸系统药：一条按时相排开的分工，与三个窄口"
      },
      "textbook": [
       {
@@ -7547,13 +7547,13 @@
     },
     {
      "lectureNo": 31,
-     "title": "第31章 子宫兴奋药",
+     "title": "子宫兴奋药：一条选择性递减的谱系，与随之升高的观察密度",
      "durationSec": 1537,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 31,
-      "title": "第31章 子宫兴奋药"
+      "title": "子宫兴奋药：一条选择性递减的谱系，与随之升高的观察密度"
      },
      "textbook": [
       {
@@ -7568,13 +7568,13 @@
     },
     {
      "lectureNo": 32,
-     "title": "第32章 抗贫血药",
+     "title": "抗贫血药：三个层次，三处不同步",
      "durationSec": 1582,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 32,
-      "title": "第32章 抗贫血药"
+      "title": "抗贫血药：三个层次，三处不同步"
      },
      "textbook": [
       {
@@ -7589,13 +7589,13 @@
     },
     {
      "lectureNo": 33,
-     "title": "第33章 作用于凝血系统药物",
+     "title": "作用于凝血系统的药物：一条线上的四段，与三种「能不能被监测」",
      "durationSec": 1487,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 33,
-      "title": "第33章 作用于凝血系统药物"
+      "title": "作用于凝血系统的药物：一条线上的四段，与三种「能不能被监测」"
      },
      "textbook": [
       {
@@ -7610,13 +7610,13 @@
     },
     {
      "lectureNo": 34,
-     "title": "第34章 肾上腺皮质激素类药",
+     "title": "肾上腺皮质激素类药：三个方向，一条轴，一条同源律",
      "durationSec": 1649,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 34,
-      "title": "第34章 肾上腺皮质激素类药"
+      "title": "肾上腺皮质激素类药：三个方向，一条轴，一条同源律"
      },
      "textbook": [
       {
@@ -7631,13 +7631,13 @@
     },
     {
      "lectureNo": 35,
-     "title": "第35章 甲状腺激素与抗甲状腺药",
+     "title": "甲状腺激素与抗甲状腺药：三个环节、一条时间轴",
      "durationSec": 1078,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 35,
-      "title": "第35章 甲状腺激素与抗甲状腺药"
+      "title": "甲状腺激素与抗甲状腺药：三个环节、一条时间轴"
      },
      "textbook": [
       {
@@ -7652,13 +7652,13 @@
     },
     {
      "lectureNo": 36,
-     "title": "第36章 降血糖药",
+     "title": "降血糖药：五条环节，一条时间轴",
      "durationSec": 976,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 36,
-      "title": "第36章 降血糖药"
+      "title": "降血糖药：五条环节，一条时间轴"
      },
      "textbook": [
       {
@@ -7673,13 +7673,13 @@
     },
     {
      "lectureNo": 37,
-     "title": "第37章 性激素类药及避孕药",
+     "title": "性激素类药及避孕药：一条受体链，三种时间尺度",
      "durationSec": 924,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 37,
-      "title": "第37章 性激素类药及避孕药"
+      "title": "性激素类药及避孕药：一条受体链，三种时间尺度"
      },
      "textbook": [
       {
@@ -7694,13 +7694,13 @@
     },
     {
      "lectureNo": 38,
-     "title": "第38章 抗病原微生物药物概论",
+     "title": "抗病原微生物药物概论：一把钥匙、两套机制、一条演化线",
      "durationSec": 958,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 38,
-      "title": "第38章 抗病原微生物药物概论"
+      "title": "抗病原微生物药物概论：一把钥匙、两套机制、一条演化线"
      },
      "textbook": [
       {
@@ -7715,13 +7715,13 @@
     },
     {
      "lectureNo": 39,
-     "title": "第39章 人工合成抗菌药",
+     "title": "人工合成抗菌药：共同的出身，四条不通用的靶点线",
      "durationSec": 1377,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 39,
-      "title": "第39章 人工合成抗菌药"
+      "title": "人工合成抗菌药：共同的出身，四条不通用的靶点线"
      },
      "textbook": [
       {
@@ -7736,13 +7736,13 @@
     },
     {
      "lectureNo": 40,
-     "title": "第40章 β-内酰胺类抗生素",
+     "title": "β-内酰胺类抗生素：一个环、一个靶点、三处差别",
      "durationSec": 1482,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 40,
-      "title": "第40章 β-内酰胺类抗生素"
+      "title": "β-内酰胺类抗生素：一个环、一个靶点、三处差别"
      },
      "textbook": [
       {
@@ -7757,13 +7757,13 @@
     },
     {
      "lectureNo": 41,
-     "title": "第41章 大环内酯类、林可霉素类及多肽类抗生素",
+     "title": "大环内酯类、林可霉素类及多肽类抗生素：靶点决定范围，位点决定配伍",
      "durationSec": 1398,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 41,
-      "title": "第41章 大环内酯类、林可霉素类及多肽类抗生素"
+      "title": "大环内酯类、林可霉素类及多肽类抗生素：靶点决定范围，位点决定配伍"
      },
      "textbook": [
       {
@@ -7778,13 +7778,13 @@
     },
     {
      "lectureNo": 42,
-     "title": "第42章 氨基糖苷类抗生素",
+     "title": "氨基糖苷类抗生素：结构与转运决定谱，蓄积部位决定毒性",
      "durationSec": 1497,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 42,
-      "title": "第42章 氨基糖苷类抗生素"
+      "title": "氨基糖苷类抗生素：结构与转运决定谱，蓄积部位决定毒性"
      },
      "textbook": [
       {
@@ -7799,13 +7799,13 @@
     },
     {
      "lectureNo": 43,
-     "title": "第43章 四环素类与氯霉素类",
+     "title": "四环素类与氯霉素类：宽谱的同源，是风险的另一种说法",
      "durationSec": 1188,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 43,
-      "title": "第43章 四环素类与氯霉素类"
+      "title": "四环素类与氯霉素类：宽谱的同源，是风险的另一种说法"
      },
      "textbook": [
       {
@@ -7820,13 +7820,13 @@
     },
     {
      "lectureNo": 44,
-     "title": "第44章 抗真菌药与抗病毒药",
+     "title": "抗真菌药与抗病毒药：选择性只剩一步之差",
      "durationSec": 1042,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 44,
-      "title": "第44章 抗真菌药与抗病毒药"
+      "title": "抗真菌药与抗病毒药：选择性只剩一步之差"
      },
      "textbook": [
       {
@@ -7841,13 +7841,13 @@
     },
     {
      "lectureNo": 45,
-     "title": "第45章 抗结核病药及抗麻风病药",
+     "title": "抗结核病药及抗麻风病药：菌群不同步，方案就不能单打",
      "durationSec": 1053,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 45,
-      "title": "第45章 抗结核病药及抗麻风病药"
+      "title": "抗结核病药及抗麻风病药：菌群不同步，方案就不能单打"
      },
      "textbook": [
       {
@@ -7862,13 +7862,13 @@
     },
     {
      "lectureNo": 46,
-     "title": "第46章 抗寄生虫药",
+     "title": "抗寄生虫药：先认生活史，再认药",
      "durationSec": 1380,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 46,
-      "title": "第46章 抗寄生虫药"
+      "title": "抗寄生虫药：先认生活史，再认药"
      },
      "textbook": [
       {
@@ -7883,13 +7883,13 @@
     },
     {
      "lectureNo": 47,
-     "title": "第47章 抗恶性肿瘤药",
+     "title": "抗恶性肿瘤药：选择性是相对的，边界是算出来的",
      "durationSec": 1445,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 47,
-      "title": "第47章 抗恶性肿瘤药"
+      "title": "抗恶性肿瘤药：选择性是相对的，边界是算出来的"
      },
      "textbook": [
       {
@@ -7904,13 +7904,13 @@
     },
     {
      "lectureNo": 48,
-     "title": "第48章 免疫抑制药",
+     "title": "免疫抑制药：作用在哪一环，就欠哪一方面的账",
      "durationSec": 1681,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 48,
-      "title": "第48章 免疫抑制药"
+      "title": "免疫抑制药：作用在哪一环，就欠哪一方面的账"
      },
      "textbook": [
       {
@@ -7925,13 +7925,13 @@
     },
     {
      "lectureNo": 49,
-     "title": "第49章 免疫增强药",
+     "title": "免疫增强药：方向相反，不等于道理相反",
      "durationSec": 1679,
      "cues": 0,
      "source": "platform",
      "teaching": {
       "no": 49,
-      "title": "第49章 免疫增强药"
+      "title": "免疫增强药：方向相反，不等于道理相反"
      },
      "textbook": [
       {

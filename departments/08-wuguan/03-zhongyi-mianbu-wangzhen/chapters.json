@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-e31",
-   "title": "望诊的原理与部位",
+   "title": "明堂：望诊的第一件事不是看颜色，是立坐标",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-e32",
-   "title": "面部色泽与五色",
+   "title": "气与色：两个词，两条轴，不能合成一个数",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-e33",
-   "title": "眼部望诊",
+   "title": "目：古籍底本的作者，亲手否掉了五轮",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-e34",
-   "title": "鼻部望诊",
+   "title": "明堂之鼻：一张正面照，只拿得到四成的判据",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-e35",
-   "title": "口唇与齿龈",
+   "title": "唇：最饱和的那块颜色，恰恰不该拿来测",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-e36",
-   "title": "咽喉望诊",
+   "title": "咽喉：一百零一篇里，唯一没有专章的部位",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-e37",
-   "title": "舌与口腔黏膜",
+   "title": "舌：五法已经把特征分好了，烂的是数据",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-e38",
-   "title": "望诊记录与复核",
+   "title": "记录：把「看到」写成可以被别人核对的东西",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

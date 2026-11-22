@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-xuan-ti",
-      "title": "选题：从中医问题到可复现实验",
+      "title": "选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-xuan-ti/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-shujuji-biaozhu",
-      "title": "数据集与标注规范",
+      "title": "标注规范不是给数据打标签，是把「谁说了算」写进文件",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-shujuji-biaozhu/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-fangfa-xiaorong",
-      "title": "方法实现与消融实验",
+      "title": "消融不是删模块看掉多少分，是回答「哪一步在替我说话」",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-fangfa-xiaorong/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-wucha-fenxi",
-      "title": "误差分析与临床可解释性",
+      "title": "误差分析不是算准确率，是找出「它错在谁身上」",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-wucha-fenxi/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-lunwen-dabian",
-      "title": "论文写作与答辩",
+      "title": "论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-lunwen-dabian/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-zhishi-yijiao",
-      "title": "知识移交：模型卡与交接",
+      "title": "移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-zhishi-yijiao/docs/zh.md",

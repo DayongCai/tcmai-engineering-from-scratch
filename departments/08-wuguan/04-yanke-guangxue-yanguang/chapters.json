@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-e41",
-   "title": "眼的光学结构",
+   "title": "眼的光学结构：屈光力来自折射率的跃变，不来自透明",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-e42",
-   "title": "屈光不正的类型",
+   "title": "屈光不正的类型：先问「哪条路径」，再问「多少度」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-e43",
-   "title": "视力与对比敏感度",
+   "title": "视力与对比敏感度：1.0 测的是曲线的尾巴",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-e44",
-   "title": "验光原理",
+   "title": "验光原理：三个度数都是真的，只有一个是基准",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-e45",
-   "title": "镜片与矫正",
+   "title": "镜片与矫正：改的是入射光，不是眼",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-e46",
-   "title": "儿童屈光与弱视",
+   "title": "儿童屈光与弱视：同一个度数，在六岁与十二岁不是一件事",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-e47",
-   "title": "屈光手术与边界",
+   "title": "屈光手术与边界：这一章教的是什么时候不做",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-e48",
-   "title": "验光记录与安全",
+   "title": "验光记录与安全：记录不是数据，是判断链",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

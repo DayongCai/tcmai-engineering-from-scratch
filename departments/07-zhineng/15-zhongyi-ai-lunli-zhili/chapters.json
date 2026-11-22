@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-ai1",
-   "title": "为什么医疗 AI 需要专门治理",
+   "title": "人会犹豫，模型不会：医疗 AI 要治理的正是这份「不犹豫」",
    "status": "🚧",
    "docs": "chapters/01-ai1/docs/zh.md",
    "code": "chapters/01-ai1/code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-ai2",
-   "title": "法规与标准的地基",
+   "title": "先写预期用途，再写模型：合规的顺序不能倒",
    "status": "🚧",
    "docs": "chapters/02-ai2/docs/zh.md",
    "code": "chapters/02-ai2/code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-ai3",
-   "title": "知情同意与伦理审查",
+   "title": "患者同意的是「被记录」，不是「被训练」",
    "status": "🚧",
    "docs": "chapters/03-ai3/docs/zh.md",
    "code": "chapters/03-ai3/code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-ai4",
-   "title": "敏感个人信息与脱敏",
+   "title": "脱敏不是删名字：可识别性藏在方剂与病程里",
    "status": "🚧",
    "docs": "chapters/04-ai4/docs/zh.md",
    "code": "chapters/04-ai4/code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-ai5",
-   "title": "安全体系与风险分级",
+   "title": "风险分级不是贴标签：每一级都要配一个「谁能停它」的人",
    "status": "🚧",
    "docs": "chapters/05-ai5/docs/zh.md",
    "code": "chapters/05-ai5/code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-ai6",
-   "title": "访问控制、加密与备份",
+   "title": "权限的最小化不是少给，是到期就收回",
    "status": "🚧",
    "docs": "chapters/06-ai6/docs/zh.md",
    "code": "chapters/06-ai6/code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-ai7",
-   "title": "模型审计与可追溯",
+   "title": "可解释不是画热图：审计要的是「这一次依据了哪几条记录」",
    "status": "🚧",
    "docs": "chapters/07-ai7/docs/zh.md",
    "code": "chapters/07-ai7/code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-ai8",
-   "title": "出问题谁负责：责任链与复盘",
+   "title": "「系统提示」不是免责声明：责任链的每一环都要有人签字",
    "status": "🚧",
    "docs": "chapters/08-ai8/docs/zh.md",
    "code": "chapters/08-ai8/code/main.js"

@@ -6,79 +6,79 @@
     {
       "n": 1,
       "slug": "01-fazhan-gaishu",
-      "title": "中医外科学发展概要",
+      "title": "发展概要：这门专科先要说清「它管哪一块」",
       "status": "🚧"
     },
     {
       "n": 2,
       "slug": "02-mingming-bingyin-bingji",
-      "title": "中医外科疾病的命名与病因病机",
+      "title": "命名与病因病机：一个病名里藏着三层判据",
       "status": "🚧"
     },
     {
       "n": 3,
       "slug": "03-bianzheng",
-      "title": "中医外科疾病的辨证",
+      "title": "辨证：外科的判据长在「看得见的地方」",
       "status": "🚧"
     },
     {
       "n": 4,
       "slug": "04-zhifa",
-      "title": "中医外科疾病的治法",
+      "title": "治法：消、托、补不是三个选项，是一条时间轴",
       "status": "🚧"
     },
     {
       "n": 5,
       "slug": "05-chuangyang",
-      "title": "疮疡",
+      "title": "疮疡：十个病证，同一套五段模板",
       "status": "🚧"
     },
     {
       "n": 6,
       "slug": "06-rufang-jibing",
-      "title": "乳房疾病",
+      "title": "乳房疾病：同一个部位，四种性质",
       "status": "🚧"
     },
     {
       "n": 7,
       "slug": "07-ying-liu-yan",
-      "title": "瘿、瘤、岩",
+      "title": "瘿、瘤、岩：一条「质地轴」，八个病证",
       "status": "🚧"
     },
     {
       "n": 8,
       "slug": "08-pifu-jibing",
-      "title": "皮肤疾病",
+      "title": "皮肤疾病：九种皮损，一套「形态 → 分期 → 病因」的读法",
       "status": "🚧"
     },
     {
       "n": 9,
       "slug": "09-gangmen-zhichang",
-      "title": "肛门直肠疾病",
+      "title": "肛门直肠疾病：一条齿线分内外，一根手指定良恶",
       "status": "🚧"
     },
     {
       "n": 10,
       "slug": "10-miniao-nanxing",
-      "title": "泌尿男性疾病",
+      "title": "泌尿男性疾病：三个系统，三条不可错过的红线",
       "status": "🚧"
     },
     {
       "n": 11,
       "slug": "11-zhouwei-xueguan",
-      "title": "周围血管疾病",
+      "title": "周围血管疾病：先动脉、再静脉，别把两边混成一边",
       "status": "🚧"
     },
     {
       "n": 12,
       "slug": "12-qita-waike",
-      "title": "其他外科疾病",
+      "title": "其他外科疾病：六证，四类「先救命再治病」",
       "status": "🚧"
     },
     {
       "n": 13,
       "slug": "13-shuzihua-ai",
-      "title": "中医外科学数字化与 AI 时代",
+      "title": "数字化与 AI 时代：把「看得见的判据」变成可计算的字段",
       "status": "🚧"
     }
   ]

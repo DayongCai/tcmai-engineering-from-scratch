@@ -587,11 +587,25 @@ def build_all(check: bool = False) -> list:
     return changed
 
 
+def _doc_h1(slug: str) -> str | None:
+    """章题以正文 H1 为真源（与 scripts/sync_chapter_titles.js 同一口径）。"""
+    p = os.path.join(SUBJ, "chapters", slug, "docs", "zh.md")
+    if not os.path.exists(p):
+        return None
+    for ln in io.open(p, encoding="utf-8"):
+        if ln.startswith("# "):
+            m = re.match(r"^#\s*第\s*[0-9一二三四五六七八九十百]+\s*章\s*[·・:：\-—]?\s*(.+?)\s*$", ln.rstrip("\n"))
+            return m.group(1) if m else ln[2:].strip() or None
+    return None
+
+
 def update_chapters_json(check: bool) -> list:
     path = os.path.join(SUBJ, "chapters.json")
     data = json.load(io.open(path, encoding="utf-8"))
     keep = [c for c in data["chapters"] if c["n"] <= 10]
-    add = [{"n": b["n"], "slug": b["slug"], "title": b["title"].split("：", 1)[-1].split("——")[0], "status": "🚧"}
+    add = [{"n": b["n"], "slug": b["slug"],
+            "title": _doc_h1(b["slug"]) or b["title"].split("：", 1)[-1].split("——")[0],
+            "status": "🚧"}
            for b in CHAPTERS]
     new = {"slug": data["slug"], "title": data["title"], "chapters": keep + add}
     text = json.dumps(new, ensure_ascii=False, indent=1) + "\n"

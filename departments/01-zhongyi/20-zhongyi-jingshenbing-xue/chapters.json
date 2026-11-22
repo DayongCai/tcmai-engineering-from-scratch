@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-xulun",
-   "title": "第1章 绪论",
+   "title": "绪论：精神病学研究的是「神」，不是「脑」",
    "status": "🚧",
    "source": {
     "chapter": 1,
@@ -16,7 +16,7 @@
   {
    "n": 2,
    "slug": "02-lilun-jichu",
-   "title": "第2章 中医精神病学的理论基础",
+   "title": "理论基础：脑主神明与心主神明，谁说了算",
    "status": "🚧",
    "source": {
     "chapter": 2,
@@ -27,7 +27,7 @@
   {
    "n": 3,
    "slug": "03-bingyin-bingji",
-   "title": "第3章 精神疾病的病因病机",
+   "title": "病因病机：七情、痰火、瘀虚",
    "status": "🚧",
    "source": {
     "chapter": 3,
@@ -38,7 +38,7 @@
   {
    "n": 4,
    "slug": "04-zhenduan",
-   "title": "第4章 精神疾病的诊断",
+   "title": "诊断：精神检查是主证据，量表是辅证",
    "status": "🚧",
    "source": {
     "chapter": 4,
@@ -49,7 +49,7 @@
   {
    "n": 5,
    "slug": "05-zhiliao-yuanze",
-   "title": "第5章 治疗原则与常用治法",
+   "title": "治疗原则：调神、开窍，先安全后辨证",
    "status": "🚧",
    "source": {
     "chapter": 5,
@@ -60,7 +60,7 @@
   {
    "n": 6,
    "slug": "06-dianzheng-kuangzheng",
-   "title": "第6章 癫证与狂证",
+   "title": "癫证与狂证：一阴一阳，一静一躁",
    "status": "🚧",
    "source": {
     "chapter": 6,
@@ -71,7 +71,7 @@
   {
    "n": 7,
    "slug": "07-yubing",
-   "title": "第7章 郁病",
+   "title": "郁病：气郁为始，虚损为终",
    "status": "🚧",
    "source": {
     "chapter": 7,
@@ -82,7 +82,7 @@
   {
    "n": 8,
    "slug": "08-bumian-jiaolv",
-   "title": "第8章 不寐与焦虑障碍",
+   "title": "不寐与焦虑障碍：睡不好是「神不守舍」",
    "status": "🚧",
    "source": {
     "chapter": 8,
@@ -93,7 +93,7 @@
   {
    "n": 9,
    "slug": "09-xianzheng-fazuoxing",
-   "title": "第9章 痫证与其他发作性精神障碍",
+   "title": "痫证与发作性障碍：发作的那几分钟",
    "status": "🚧",
    "source": {
     "chapter": 9,
@@ -104,7 +104,7 @@
   {
    "n": 10,
    "slug": "10-chidai-zhanwang",
-   "title": "第10章 痴呆与谵妄",
+   "title": "痴呆与谵妄：慢的与急的两种「神乱」",
    "status": "🚧",
    "source": {
     "chapter": 10,
@@ -115,7 +115,7 @@
   {
    "n": 11,
    "slug": "11-qita-zhangai",
-   "title": "第11章 其他精神障碍",
+   "title": "其他精神障碍：酒、儿童、围产期",
    "status": "🚧",
    "source": {
     "chapter": 11,
@@ -126,7 +126,7 @@
   {
    "n": 12,
    "slug": "12-jiehe-kangfu-shuzihua",
-   "title": "第12章 中西医结合治疗、康复与数字化",
+   "title": "中西医结合、康复与数字化：边界写清楚才算合作",
    "status": "🚧",
    "source": {
     "chapter": 12,

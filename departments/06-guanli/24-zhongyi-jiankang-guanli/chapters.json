@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-j1",
-   "title": "中医健康管理导论",
+   "title": "健康管理卖的不是道理，是一个能被复评的闭环",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-j2",
-   "title": "中医健康管理的理论基础",
+   "title": "理论不能生成分层，就只是修辞",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-j3",
-   "title": "健康状态辨识与评估",
+   "title": "辨识能不能用，取决于两个人会不会得出同一个结论",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-j4",
-   "title": "健康档案与信息管理",
+   "title": "档案的价值不在记得多，在换个人也能接着用",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-j5",
-   "title": "中医健康干预原则与策略",
+   "title": "干预方案不是最优解，是这个人做得到的那一版",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-j6",
-   "title": "饮食与药膳食养管理",
+   "title": "食养不看你懂多少，看这套吃法能不能吃满一年",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-j7",
-   "title": "运动导引与经络调养",
+   "title": "运动调养的难点在量，风险在禁忌",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-j8",
-   "title": "情志调摄与睡眠管理",
+   "title": "这一个领域，红线要比方法先讲",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -70,7 +70,7 @@
   {
    "n": 9,
    "slug": "09-j9",
-   "title": "起居与四时养生管理",
+   "title": "起居是最便宜的干预，也是最难维持的干预",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -78,7 +78,7 @@
   {
    "n": 10,
    "slug": "10-j10",
-   "title": "常见健康问题的中医健康管理",
+   "title": "常见健康问题管理的难点不在病种多，在分段",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -86,7 +86,7 @@
   {
    "n": 11,
    "slug": "11-j11",
-   "title": "中医健康管理服务流程",
+   "title": "流程的价值不在每步留痕，在下一步不必重新问一遍",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -94,7 +94,7 @@
   {
    "n": 12,
    "slug": "12-j12",
-   "title": "健康教育与健康促进",
+   "title": "科普的完成，不是讲清楚了，是回去改了一处",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -102,7 +102,7 @@
   {
    "n": 13,
    "slug": "13-j13",
-   "title": "中医健康管理服务管理",
+   "title": "服务质量不是管出来的态度，是被制度固定的下限",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -110,7 +110,7 @@
   {
    "n": 14,
    "slug": "14-j14",
-   "title": "健康管理与多学科协作",
+   "title": "协作的难点不是请不到专家，是没人对整个的人负责",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -118,7 +118,7 @@
   {
    "n": 15,
    "slug": "15-j15",
-   "title": "健康管理与健康产业",
+   "title": "产业的问题不是需求不足，是没人愿为「没发生的事」付钱",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -126,7 +126,7 @@
   {
    "n": 16,
    "slug": "16-j16",
-   "title": "智慧健康管理与数字技术",
+   "title": "设备测的是信号，管理要的是判断，中间那一步没有自动化",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -134,7 +134,7 @@
   {
    "n": 17,
    "slug": "17-j17",
-   "title": "中医健康管理的研究与实践",
+   "title": "数据能告诉你发生了什么，不能告诉你是不是你干的",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -142,7 +142,7 @@
   {
    "n": 18,
    "slug": "18-j18",
-   "title": "中医健康管理与 tcmP 平台",
+   "title": "平台的价值不在功能多，在换个人接手时口径不变",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

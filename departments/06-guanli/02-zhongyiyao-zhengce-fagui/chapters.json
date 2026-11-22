@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-z21",
-   "title": "卫生法与中医药法的法理基础",
+   "title": "一条规矩四个层级：中医药法的效力从哪里来",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-z22",
-   "title": "立法、执法与行政责任",
+   "title": "罚则写在纸上，执法站在门外",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-z23",
-   "title": "机构与人员管理制度",
+   "title": "两条轨的准入：机构靠一张证，人员靠一条路",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-z24",
-   "title": "医疗行为与质量安全",
+   "title": "规范进不了诊室的那一步",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-z25",
-   "title": "药品、器械与消毒产品监管",
+   "title": "老祖宗的方子，要过现代的审",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-z26",
-   "title": "公共卫生与健康促进法制",
+   "title": "治未病的钱，付给了谁",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-z27",
-   "title": "中医药法律制度与政策工具",
+   "title": "并重写在文件里，差价写在账本上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-z28",
-   "title": "新兴技术立法与权益救济",
+   "title": "技术跑在规则前面，救济跟在后面",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

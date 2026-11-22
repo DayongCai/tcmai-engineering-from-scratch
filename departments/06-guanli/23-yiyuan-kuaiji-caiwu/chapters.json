@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-k1",
-   "title": "医院会计与财务管理概论",
+   "title": "医院没有利润，只有结余：把医院当企业算，第一页就错了",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-k2",
-   "title": "医院财务管理的制度环境",
+   "title": "一台设备要过三本账：制度环境决定了医院财务的算法",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-k3",
-   "title": "医院会计基础",
+   "title": "一笔业务两张凭证：平行记账不是繁琐，是把两种真相同时留住",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-k4",
-   "title": "医院财务报告与财务分析",
+   "title": "三张表要一起读：单看一张，结论必然被它骗",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-k5",
-   "title": "医院资产的核算与管理",
+   "title": "两笔最贵的资产都不显眼：库房里的周转与账上的年限",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-k6",
-   "title": "医院负债与净资产的核算与管理",
+   "title": "家底分两半：借来的与攒下的，混着看就会把负债能力当实力",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-k7",
-   "title": "医院收入、费用与结余的核算",
+   "title": "收入的确认与钱的到账，永远差一个结算周期",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-k8",
-   "title": "医院成本核算",
+   "title": "成本核算的本质是分摊：每一次分摊都是一次归因假设",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -70,7 +70,7 @@
   {
    "n": 9,
    "slug": "09-k9",
-   "title": "医院成本分析与成本管控",
+   "title": "多做不一定多赚：支付标准固定之后，成本—量—本全反过来了",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -78,7 +78,7 @@
   {
    "n": 10,
    "slug": "10-k10",
-   "title": "医院预算管理",
+   "title": "预算不是预测：一份签了字的承诺，和 4,420 万元的编制分歧",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -86,7 +86,7 @@
   {
    "n": 11,
    "slug": "11-k11",
-   "title": "医院资金管理与筹资投资",
+   "title": "账上有钱，账上没钱：结余是意见，现金流是事实",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -94,7 +94,7 @@
   {
    "n": 12,
    "slug": "12-k12",
-   "title": "医院内部控制与财务风险管理",
+   "title": "内控不是多一道签字：让不该由同一个人做的事，真的分开",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -102,7 +102,7 @@
   {
    "n": 13,
    "slug": "13-k13",
-   "title": "医院绩效管理与成本效益分析",
+   "title": "权重就是政策：排名翻转只需要改一个百分数",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -110,7 +110,7 @@
   {
    "n": 14,
    "slug": "14-k14",
-   "title": "医院财务监督与内部审计",
+   "title": "整改率 61.6%：审计报告不是终点，闭环才是",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -118,7 +118,7 @@
   {
    "n": 15,
    "slug": "15-k15",
-   "title": "医院财务信息化与智能财务",
+   "title": "六条提示里五条是白看的：智能财务的边界在原始凭据",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -126,7 +126,7 @@
   {
    "n": 16,
    "slug": "16-k16",
-   "title": "医院财务数据治理与决策支持",
+   "title": "一个数三个答案：床位使用率的 75.7%、71.9% 与 71.4%",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -134,7 +134,7 @@
   {
    "n": 17,
    "slug": "17-k17",
-   "title": "医院财务管理的改革与发展",
+   "title": "一笔 800 万元的设备：财务账上结余 720 万元，预算账上结余 0 元",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -142,7 +142,7 @@
   {
    "n": 18,
    "slug": "18-k18",
-   "title": "医院会计与财务管理与 tcmP 平台",
+   "title": "门禁查得出形式，查不出判断：课程与平台的接口是可复算",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

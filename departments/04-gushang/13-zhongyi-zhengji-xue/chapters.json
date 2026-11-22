@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-yuanliu-lilun",
-   "title": "整脊源流与理论",
+   "title": "整脊的第一道门槛不是手法，是「什么算有效」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-jiepou-lixue",
-   "title": "脊柱解剖与生物力学",
+   "title": "脊柱的稳定不是骨头撑住的，是三种组织在互相欠账",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-yingxiang-pinggu",
-   "title": "影像评估与适应证",
+   "title": "影像的用法是排除禁忌，不是找病因",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-shoufa-tixi",
-   "title": "整脊手法体系",
+   "title": "手法分三层，风险也分三层，两层必须一一对上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-jingzhui",
-   "title": "颈椎整脊",
+   "title": "颈椎不是一段，是两段，风险也在两段之间分",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-xiongyaozhui",
-   "title": "胸腰椎整脊",
+   "title": "胸腰段的手法失误，多半不是瘫，是折",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-gupen-xiayao",
-   "title": "骨盆与下肢力线",
+   "title": "骨盆是地基，但「地基歪了」是最容易被滥用的一句话",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-fengxian-liaoxiao",
-   "title": "风险、禁忌与疗效评价",
+   "title": "不良事件不是意外，是可以分类的事件",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

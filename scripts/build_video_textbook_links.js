@@ -272,12 +272,16 @@ for (const s of VIDEO.subjects) {
       }
     }
     // 兜底：按讲标题里的篇名/方名在教材章正文里找（可复核：命中的是章正文，不是猜的）
+    // 讲标题是**渲染时定稿**的（视频台账里存的是旧章名），正文补实后章名会变；
+    // 所以后半句再退一层：用当前教学章标题的关键词找，命中同样要落在章正文里。
     let viaKeyword = null;
     if (!books.length && tb.length) {
-      const kws = keywordsOf(r.title);
-      if (kws.length) {
+      for (const src of [r.title, t && t.title]) {
+        if (!src) continue;
+        const kws = keywordsOf(src);
+        if (!kws.length) continue;
         const hit = lookup(kws);
-        if (hit) { books = [hit]; viaKeyword = hit.kw; }
+        if (hit) { books = [hit]; viaKeyword = hit.kw; break; }
       }
     }
     return {

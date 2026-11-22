@@ -487,6 +487,18 @@ def main() -> int:
         print("✓ 教材 24 章与生成器一致（%d 字）" % total)
         return 0
 
+    # 改名后的残档：同章号的旧文件名必须删掉。
+    # 2026-11-22 章题从「描述式」改为「观点式」后，教材文件名跟着变；生成器只写新文件、
+    # 不删旧文件，于是同一章在盘上留两份（书目、关键词挂接都会撞到旧的）。
+    keep = set(files)
+    for name in os.listdir(OUT) if os.path.isdir(OUT) else []:
+        m = re.match(r"^(\d{2})-第(\d+)章-.*\.md$", name)
+        if not m or name in keep:
+            continue
+        if any(k.startswith("%s-第%s章-" % (m.group(1), m.group(2))) for k in keep):
+            os.remove(os.path.join(OUT, name))
+            print("  删除改名残档：%s" % name)
+
     # meta.json 的 textbook 块
     meta = json.load(io.open(META_PATH, encoding="utf-8"))
     meta["textbook"] = {

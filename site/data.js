@@ -115,7 +115,7 @@ window.TCMAI_DATA = {
     "subjectsWip": 0,
     "subjectsPlanned": 0,
     "videos": 2169,
-    "textbookChapters": 2497
+    "textbookChapters": 2163
   },
   "semesterPlan": [
     {
@@ -2228,7 +2228,7 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/08-jingui-yaolue",
             "chaptersWritten": 24,
-            "words": 703867,
+            "words": 704308,
             "status": "wip",
             "layer": "source-body+commentary",
             "source": "standards/jingui/底本.json（外源·笈成）+ standards/jingui/gushiwen/（外源·古诗文网，校勘）",
@@ -7795,9 +7795,16 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/01-erbihou-jiepou-shengli",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 8,
+            "words": 45104,
+            "layer": "rewrite",
+            "origin": "course-rewrite",
+            "createdAt": "2026-11-22",
+            "toc": "00-目录-四级编码.md",
+            "tocScale": "8 章 / 22 节 / 48 单元",
+            "reference": "standards/erbihou-jiepou-shengli/reference-courseware.json#耳的解剖与生理（课件·仅元数据）",
+            "referenceUsage": "只核对主题范围与写法取向；正文未取得（封面页 OCR + 62 页/2.12 万字元数据），不引数值、不引图、不作引用来源",
+            "sourceNote": "主源为课程正文 147,846 字（8 章）；外源课件仅取到封面与元数据，逐章「参考状态」与附录B 已如实登记"
           }
         },
         {
@@ -7829,9 +7836,14 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/02-kouqiang-jiepou-shengli",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 8,
+            "words": 43187,
+            "layer": "rewrite",
+            "origin": "course-rewrite",
+            "createdAt": "2026-11-22",
+            "toc": "00-目录-四级编码.md",
+            "tocScale": "8 章 / 21 节 / 41 单元",
+            "sourceNote": "主源为课程正文 88,312 字（8 章）；无外源教材（Firecrawl 403 / 维基与 NCBI 不可达），不引页码与外部数值"
           }
         },
         {
@@ -7911,9 +7923,13 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/04-yanke-guangxue-yanguang",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 8,
+            "words": 38695,
+            "status": "planned",
+            "layer": "rewrite",
+            "origin": "course-rewrite",
+            "createdAt": "2026-11-21",
+            "sourceNote": "本课此前无教材；课程正文为脚手架占位稿，无参考电子件，按课程章题重写，不标页码不给处方模板"
           }
         },
         {
@@ -8070,22 +8086,22 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/08-zhongyi-kouqiang-kexue",
-            "chaptersWritten": 13,
-            "words": 13427,
+            "chaptersWritten": 10,
+            "words": 48854,
             "status": "wip",
-            "layer": "external-source",
-            "origin": "external",
+            "layer": "rewrite",
+            "origin": "course-rewrite",
             "source": "standards/materials/textbooks-batch/external-registry.json#kouchide-leiyao",
             "external": {
               "id": "kouchide-leiyao",
               "title": "口齒類要",
-              "url": "https://jicheng.tw/tcm/book/%E5%8F%A3%E9%BD%92%E9%A1%9E%E8%A6%81/index.html",
-              "sha256": "db74dbe8fdf885cc11a26a2addfa57a4c7561b885305cb4179044abe859e673d",
-              "baseText": "日本承應三年（1654年）刊本（國家圖書館掃描本）",
-              "fetchedAt": "2026-10-21",
-              "coverage": "古籍可对上的部分；现代内容未覆盖"
+              "sha256": "db74dbe8fdf885cc",
+              "role": "appendix-only"
             },
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "appendixNote": "口齒類要（明·薛己）13 篇，不计章数",
+            "sourceNote": "课程正文为统计脚手架占位稿且章题错位；无参考教材电子件，按课程章题重写，不标页码",
+            "appendix": "附录A-口齒類要辑录.md"
           }
         },
         {
@@ -8117,9 +8133,13 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/09-kouqiang-neike-xue",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 10,
+            "words": 52658,
+            "status": "planned",
+            "layer": "rewrite",
+            "origin": "course-rewrite",
+            "createdAt": "2026-11-21",
+            "sourceNote": "本课此前无教材目录，按课程章题新建 10 章；课程正文为脚手架占位稿，无参考电子件"
           }
         },
         {
@@ -8151,9 +8171,16 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/10-yanke-yingxiang-jiancha",
-            "chaptersWritten": 0,
-            "words": 0,
-            "status": "planned"
+            "chaptersWritten": 8,
+            "words": 50672,
+            "layer": "rewrite",
+            "origin": "course-rewrite",
+            "createdAt": "2026-11-22",
+            "toc": "00-目录-四级编码.md",
+            "tocScale": "8 章 / 22 节 / 48 单元",
+            "reference": "standards/yanke-yingxiang-jiancha/reference-consensus.json#眼科影像检查规范专家共识（2026版）",
+            "referenceUsage": "只取条目框架与判据要点、按「共识·第X节」引用；不搬原文、不存原件、不把共识当法规",
+            "sourceNote": "课程正文由《中医眼科学》（06）与《医学数据安全与隐私》（14）合成；外源教材检索失败（已登记），2026-11-22 补入共识并逐章加 N.6"
           }
         },
         {
@@ -8290,7 +8317,7 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/14-zhongyi-sangyin-yixue",
             "chaptersWritten": 8,
-            "words": 41579,
+            "words": 42209,
             "status": "wip",
             "layer": "rewrite",
             "origin": "course-rewrite",
@@ -8305,7 +8332,8 @@ window.TCMAI_DATA = {
               "sha256": "6d565fbe372d0d29535340302a66926bf016a12f181b334815323ff339400c25",
               "role": "appendix-only"
             },
-            "extractedAt": "2026-11-21"
+            "extractedAt": "2026-11-21",
+            "sourceNote": "课程正文为统计脚手架占位稿（三辨/四位面统计+模板句，05–08 章主题与章名错位）；教材按课程主题+参考结构重写，待课程正文补实后回填"
           }
         },
         {
@@ -8338,22 +8366,22 @@ window.TCMAI_DATA = {
           "textbook": {
             "id": "textbooks",
             "path": "textbooks/08-wuguan/15-zhongyi-meirong-pifu",
-            "chaptersWritten": 381,
-            "words": 202647,
+            "chaptersWritten": 8,
+            "words": 39080,
             "status": "wip",
-            "layer": "external-source",
+            "layer": "rewrite",
             "origin": "external",
             "source": "standards/materials/textbooks-batch/external-registry.json#waike-xinfa",
             "external": {
               "id": "waike-xinfa",
               "title": "醫宗金鑑·外科心法要訣",
-              "url": "https://jicheng.tw/tcm/book/%E9%86%AB%E5%AE%97%E9%87%91%E9%91%91/%E5%A4%96%E7%A7%91%E5%BF%83%E6%B3%95%E8%A6%81%E8%A8%A3/index.html",
-              "sha256": "9989a4279eff2b9db6169cbb8b159e3ac5ead8eaf8b21550037c730a92111794",
-              "baseText": "《御纂醫宗金鑑》，光緒十八年（1892）上海五彩書局石印本（香港中文大學圖書館掃描本），外科卷一至卷十六；《欽定四庫全書·子部五·醫家類·御纂醫宗金鑑》卷六十一至卷七十六（漢リポ掃描及文字化本）",
-              "fetchedAt": "2026-10-21",
-              "coverage": "古籍可对上的部分；现代内容未覆盖"
+              "sha256": "9989a4279eff2b9d",
+              "role": "appendix-only"
             },
-            "extractedAt": "2026-10-21"
+            "extractedAt": "2026-10-21",
+            "appendix": "附录A-外源古籍辑录.md",
+            "appendixNote": "醫宗金鑑·外科心法要訣 381 篇，不计章数",
+            "sourceNote": "课程正文为脚手架占位稿；无参考电子件，按课程章题重写，古籍入附录A"
           }
         },
         {
@@ -9119,7 +9147,7 @@ window.TCMAI_DATA = {
       {
         "n": 2,
         "slug": "02-wu-xing-duo-fenlei",
-        "title": "五行学说 → 多分类：从零实现 Softmax",
+        "title": "五行学说 → 多分类：从零实现 Softmax（并检验生克约束是否真的有用）",
         "status": "🚧"
       },
       {
@@ -9131,43 +9159,43 @@ window.TCMAI_DATA = {
       {
         "n": 4,
         "slug": "04-xulun",
-        "title": "绪论：中医学的学科属性与工程化边界",
+        "title": "绪论：这门教材 86% 的段落里都跟着一句「平台怎么做」",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-qi-xue-jin-ye",
-        "title": "气血津液 → 状态向量与守恒约束",
+        "title": "气血津液：方向全有，系数全无——教材在这里其实没写完",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-jingluo-tuxing",
-        "title": "经络学说 → 图上的路径与可及性",
+        "title": "经络学说：一条 12 节点的环，直径 6——但教材只写全了 7 个经名",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-bingyin-bingji",
-        "title": "病因病机 → 因果图与失效模式",
+        "title": "病因病机：13 个病因节点，1 条真演化链，病机十九条只来了 2 条",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-fangzhi-yuanze",
-        "title": "防治原则 → 策略选择与代价函数",
+        "title": "防治原则：「八法」在教材里是八个字，只有两法有释义",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-tizhi-fabing",
-        "title": "体质与发病 → 先验分布与风险分层",
+        "title": "体质与发病：两套分类、10 条映射边，先验全靠自设",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-siwei-fangfa",
-        "title": "中医思维方法：形式化能做到与做不到的",
+        "title": "中医思维方法：图能画，表画不出",
         "status": "🚧"
       }
     ],
@@ -9275,49 +9303,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-tizhi-gainian",
-        "title": "体质的概念与九种体质类型",
+        "title": "体质的概念与九种体质类型：九分法落在 132 个证候上",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-tizhi-chengyin",
-        "title": "体质的形成：先天禀赋与后天因素",
+        "title": "体质的形成：底板与漂移",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-tizhi-liangbiao",
-        "title": "九种体质的判定与量表设计",
+        "title": "九种体质的判定与量表设计：四域各自计量",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-tizhi-zhenghou",
-        "title": "体质与证候：易感性与转化关系",
+        "title": "体质与证候：同证异质、同质异证",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-tizhi-tezheng",
-        "title": "体质辨识的数据化：问卷 → 特征向量",
+        "title": "问卷到特征向量：四域各自计量，不可混算",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-tizhi-liuxing",
-        "title": "体质与疾病易感性的流行病学",
+        "title": "体质与疾病易感性：横向数据只能看共现",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-tizhi-tiaoli",
-        "title": "体质调理与治未病的干预设计",
+        "title": "体质调理与治未病：以平为期",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-tizhi-wucha",
-        "title": "体质研究的可重复性与测量误差",
+        "title": "可重复性与测量误差：四域各自计量，再谈结论",
         "status": "🚧"
       }
     ],
@@ -9325,73 +9353,73 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-sizhen-zonglun",
-        "title": "四诊总论：信息采集的偏差与信度",
+        "title": "四诊总论：教材把「闻」写成最薄的一诊",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-wangzhen-shense",
-        "title": "望诊：神色形态 → 图像特征",
+        "title": "望诊：2,812 字里 1,249 字在舌上",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-shezhen-tese",
-        "title": "舌诊：舌质舌苔 → 颜色与纹理特征",
+        "title": "舌诊：27 个特征词，是望诊里唯一能拆成「离散取值」的部分",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-wenzhen-shengyin",
-        "title": "闻诊：声音与气味 → 声学与气味谱",
+        "title": "闻诊：一半内容（嗅）没有量表，所以它只有 855 字",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-wenzhen-wenjuan",
-        "title": "问诊：十问 → 结构化问卷设计",
+        "title": "问诊：标题写「十问歌」，实际只列了八节",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-qiezhen-maixiang",
-        "title": "切诊：脉象的物理基础与取脉",
+        "title": "切诊：给了「28 脉」的名号，标题只拼得出 27 个脉名",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-bagang-bianzheng",
-        "title": "八纲辨证 → 四维特征空间",
+        "title": "八纲辨证：四对轴 8 纲，16 格组合只点名 2 格",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-zangfu-bianzheng",
-        "title": "脏腑辨证 → 规则表与权重",
+        "title": "脏腑辨证 → 规则表与权重：把「肝气郁结」写成可复核的打分",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-qixue-bianzheng",
-        "title": "气血津液辨证 → 状态判定",
+        "title": "气血津液辨证：770 字的气血，和只有 175 字的七情",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-liujing-weifen",
-        "title": "六经与卫气营血 → 序列状态机",
+        "title": "六经与卫气营血：三套坐标，13 个节点，1,767 字",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-zhenghou-guifan",
-        "title": "证候规范化：ICD-11 与术语对齐",
+        "title": "证候规范化：38 条命名里，只有 18 条真挂上了 ICD-11",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-zhenduan-wucha",
-        "title": "诊断推理的误差来源与可解释性",
+        "title": "诊断推理的误差来源：教材给了四条来源，没给一个百分比",
         "status": "🚧"
       }
     ],
@@ -9399,61 +9427,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-suwen-chengshu",
-        "title": "《素问》成书与文本结构",
+        "title": "162 篇不是一部书，是一部丛书的合订本",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-yinyang-yingxiang",
-        "title": "阴阳应象大论：范畴与映射",
+        "title": "阴阳不是两个东西，是一张对照表的两个轴",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-zangxiang-xitong",
-        "title": "藏象与五脏的系统观",
+        "title": "藏象是一张职能编制表，不是一张解剖图",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-jingmai-bielun",
-        "title": "经脉别论与气血循环",
+        "title": "气血走的是环，不是河：一条被写死的路线",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-bingji-shijiu",
-        "title": "病机十九条：症状到病机的映射",
+        "title": "十九条不是症状清单，是十九条带范围词的映射规则",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-zhenfa-maiyao",
-        "title": "诊法与脉要精微论",
+        "title": "诊法是先定条件再读信号，不是「摸一下就知道」",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-zhize-biaoben",
-        "title": "治则与标本：决策顺序",
+        "title": "治则是排序问题，不是选方问题",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-lunqi-qipian",
-        "title": "运气七篇：周期与外部变量",
+        "title": "运气七篇给的不是预言，是一张外部变量的周期表",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-lingshu-jiuzhen",
-        "title": "《灵枢》九针与刺法",
+        "title": "九针是一套器材规格表，玄的那一半它管不了",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-neijing-lianghua",
-        "title": "内经的量化解读与其边界",
+        "title": "量化能测《内经》的什么，测不出什么",
         "status": "🚧"
       }
     ],
@@ -9461,73 +9489,73 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-chengshu-banben",
-        "title": "伤寒论的成书、版本与条文结构",
+        "title": "《伤寒论》的成书、版本与条文结构：1760 条不是 398 条",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-liujing-kuangjia",
-        "title": "六经辨证的框架：从太阳到厥阴",
+        "title": "六经辨证的框架：五条提纲，一条失踪",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-taiyang-biao",
-        "title": "太阳病：表证的判定与麻黄汤类",
+        "title": "太阳病表证：有汗与无汗之外，还有 129 条「发热」被写成了异体字",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-yangming-li",
-        "title": "阳明病：里热实证与承气汤类",
+        "title": "阳明病里实证：三承气不是三档火力，是三道门槛",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-shaoyang-banbiao",
-        "title": "少阳病：半表半里与小柴胡汤",
+        "title": "少阳病半表半里：一条把「与」改成「或」的规则",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-taiyin-xuhan",
-        "title": "太阴病：里虚寒与理中汤类",
+        "title": "太阴病：一条提纲撑起的一章，理中丸不在这一篇",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-shaoyin-xuyang",
-        "title": "少阴病：心肾阳虚与四逆汤类",
+        "title": "少阴病：45 条里 13 条在讲预后，不是讲方",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-jueyin-hanre",
-        "title": "厥阴病：寒热错杂与乌梅丸",
+        "title": "厥阴病：30 条，乌梅丸一次也没出现",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-hebing-bingbing",
-        "title": "合病并病：多证并存的判定",
+        "title": "合病与并病：两经同时病，还是一个没走一个又来",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-fangzheng-duiying",
-        "title": "方证对应：症状群 → 方剂的匹配",
+        "title": "方证对应：症状群 → 方剂，为什么前三版排序都是错的",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-tiaowen-jiansuo",
-        "title": "伤寒条文的检索与 BM25 复现",
+        "title": "条文检索：MRR 满分，但「库里没有」它不会说",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-jiliang-zhesuan",
-        "title": "经方剂量的度量衡与折算争议",
+        "title": "经方剂量：桂枝三两是 41 克、47 克，还是 9 克",
         "status": "🚧"
       }
     ],
@@ -9535,37 +9563,37 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-chengshu-zabing",
-        "title": "金匮的成书与杂病分类",
+        "title": "《金匮要略》不是「杂病方书」，是一部 402 条的筛选器",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-zangfu-chuanbian",
-        "title": "脏腑经络先后病：传变与预防",
+        "title": "十七句话，把「治病」改成「预判」",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-jing-shi-ye",
-        "title": "痉湿暍病：外感杂病的辨识",
+        "title": "痉湿暍：外邪入体后的三条错路，和一份 9 条的误治清单",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-baihe-huhuo",
-        "title": "百合狐惑阴阳毒：少见病的鉴别",
+        "title": "少见病不是罕见病，是必须先排除才敢下诊断的病",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-nueb-zhongfeng",
-        "title": "疟病与中风历节：节律与痹阻",
+        "title": "疟的节律与中风的痹阻：两篇「判据极短」的病",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-pibai-xulao",
-        "title": "血痹虚劳：虚损的分层",
+        "title": "血痹虚劳：虚损不是一种病，是五个深度",
         "status": "🚧"
       },
       {
@@ -9577,103 +9605,103 @@ window.TCMAI_DATA = {
       {
         "n": 8,
         "slug": "08-xiaoke-linbing",
-        "title": "消渴与淋病：津液与排泄",
+        "title": "消渴与淋病：把「喝进去的」与「排出来的」对上账",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-furen-sanpian",
-        "title": "妇人病三篇：经带胎产的辨证",
+        "title": "妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-zabing-peiwu",
-        "title": "杂病方剂的配伍规律与统计",
+        "title": "174 个方里，只有 165 个能算配伍",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-pian7-feiwei-feiyong",
-        "title": "肺痿肺痈咳嗽上气",
+        "title": "篇目精读第七：肺痿肺痈咳嗽上气——一条一方，10 方之外还挂着 6 首附方",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-pian8-bentun",
-        "title": "奔豚气",
+        "title": "篇目精读第八：奔豚气——全书最短的一篇，却给了三个入口",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-pian9-xiongbi",
-        "title": "胸痹心痛短气",
+        "title": "篇目精读第九：胸痹心痛短气——一句话定病机，7 条各给一方",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-pian10-fuman-shanjia",
-        "title": "腹满寒疝宿食",
+        "title": "篇目精读第十：腹满寒疝宿食——26 条里前 7 条不出方，先把决策树长出来",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-pian11-zangfu-jiju",
-        "title": "五脏风寒积聚",
+        "title": "篇目精读第十一：五脏风寒积聚——20 条只 3 方，一篇被跳过的「定位表」",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-pian14-shuiqi",
-        "title": "水气",
+        "title": "篇目精读第十四：水气——2617 字的全书最长篇，用三套分类切同一批病",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-pian15-huangdan",
-        "title": "黄疸",
+        "title": "篇目精读第十五：黄疸——三因入口，六方各管一段",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-pian16-jingji-tunv",
-        "title": "惊悸吐衄下血胸满瘀血",
+        "title": "篇目精读第十六：惊悸吐衄下血胸满瘀血——17 条里 11 条在辨「是不是血的问题」",
         "status": "🚧"
       },
       {
         "n": 19,
         "slug": "19-pian17-outu-yueli",
-        "title": "呕吐哕下利",
+        "title": "篇目精读第十七：呕吐哕下利——47 条，全书条数最多的一篇",
         "status": "🚧"
       },
       {
         "n": 20,
         "slug": "20-pian18-chuangyong",
-        "title": "疮痈肠痈浸淫",
+        "title": "篇目精读第十八：疮痈肠痈浸淫——8 条 3 方，最短的杂病篇之一",
         "status": "🚧"
       },
       {
         "n": 21,
         "slug": "21-pian19-fujue-shanchong",
-        "title": "趺蹶手指臂肿转筋阴狐疝蚘虫",
+        "title": "篇目精读第十九：趺蹶手指臂肿转筋阴狐疝蚘虫——八条小病串成的一篇",
         "status": "🚧"
       },
       {
         "n": 22,
         "slug": "22-pian23-zaliaofang",
-        "title": "杂疗方",
+        "title": "篇目精读第二十三：杂疗方——底本 1 条，古诗文网本 46 段",
         "status": "🚧"
       },
       {
         "n": 23,
         "slug": "23-pian24-qinshou-jinji",
-        "title": "禽兽鱼虫禁忌",
+        "title": "篇目精读第二十四：禽兽鱼虫禁忌——133 段禁忌清单，三栏对应才是它的结构",
         "status": "🚧"
       },
       {
         "n": 24,
         "slug": "24-pian25-guoshi-jinji",
-        "title": "果实菜谷禁忌",
+        "title": "篇目精读第二十五：果实菜谷禁忌——与禽兽鱼虫禁忌合起来才是完整的食禁",
         "status": "🚧"
       }
     ],
@@ -9681,61 +9709,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-wenbing-fanwei",
-        "title": "温病的范围与伤寒的边界",
+        "title": "温病不是「另一类伤寒」，是一套换了入口的病",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-weiqi-yingxue",
-        "title": "卫气营血辨证：四层状态机",
+        "title": "卫气营血不是四个格子，是一条四级的治法阶梯",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-sanjiao-bianzheng",
-        "title": "三焦辨证：病位的纵向坐标",
+        "title": "三焦不是「纵向的卫气营血」：6 组映射里只有 1 组严丝合缝",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-fengwen-chunwen",
-        "title": "风温与春温：新感与伏邪",
+        "title": "「新感」与「伏邪」不是吴鞠通贴的标签：93 条里只有 16 条有词证",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-shuwen-shiwen",
-        "title": "暑温与湿温：季节与湿热的耦合",
+        "title": "暑温与湿温：不是两种病，是「暑兼湿热」的两端",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-qiuzzao-fushu",
-        "title": "秋燥与伏暑：燥邪的辨证",
+        "title": "凉燥不在「秋燥篇」里：正文 5 条全是温燥，凉燥 6 条全在补论",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-wenbing-shezhen",
-        "title": "温病舌诊与斑疹的辨识",
+        "title": "温病最密的证据不是脉，是舌：83 条带舌象，斑疹判据只有 6 个维度",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-qingre-yangyin",
-        "title": "清热透邪与养阴的治法次序",
+        "title": "治法不是一条阶梯，是「按焦换味」：7 阶治法 / 27 处禁例",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-tiaobian-fangji",
-        "title": "温病条辨的方剂体系",
+        "title": "温病书里用得最多的不是清热药，是人参：34 方 / 19.1%",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-yibing-gongwei",
-        "title": "疫病与公共卫生：历史的建模",
+        "title": "《温疫论》没有病原体，却建成了一个「同一因子、不同传变」的模型",
         "status": "🚧"
       }
     ],
@@ -9743,85 +9771,85 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun",
-        "title": "第1章 绪论",
+        "title": "绪论：先把学科的地界、来路与读法交代清楚",
         "status": "✅"
       },
       {
         "n": 2,
         "slug": "02-bianzheng-silu",
-        "title": "第2章 中医内科疾病的辨证论治思路与方法",
+        "title": "辨证论治思路与方法：把「看病」拆成一条可复核的流水线",
         "status": "✅"
       },
       {
         "n": 3,
         "slug": "03-zangfu-bianzheng-gangyao",
-        "title": "第3章 脏腑辨证纲要与内科治则",
+        "title": "脏腑辨证纲要与内科治则：把「病位」拆成五套可复用的模板",
         "status": "✅"
       },
       {
         "n": 4,
         "slug": "04-feixi-bingzheng",
-        "title": "第4章 肺系病证",
+        "title": "肺系病证：八个病证，一套模板，一张鉴别网",
         "status": "✅"
       },
       {
         "n": 5,
         "slug": "05-xinxi-bingzheng",
-        "title": "第5章 心系病证",
+        "title": "心系病证：九病一条轴，从心神到心脉",
         "status": "✅"
       },
       {
         "n": 6,
         "slug": "06-piwei-bingzheng",
-        "title": "第6章 脾胃系病证",
+        "title": "脾胃系病证：一条通道上的九个卡点",
         "status": "✅"
       },
       {
         "n": 7,
         "slug": "07-ganxi-bingzheng",
-        "title": "第7章 肝系病证",
+        "title": "肝系病证：气血水风四层，与一个例外",
         "status": "✅"
       },
       {
         "n": 8,
         "slug": "08-shenxi-bingzheng",
-        "title": "第8章 肾系病证",
+        "title": "肾系病证：水、溺、精三条通道",
         "status": "✅"
       },
       {
         "n": 9,
         "slug": "09-qixue-jinye-bingzheng",
-        "title": "第9章 气血津液病证",
+        "title": "气血津液病证：55 个小节装不下 71 个证",
         "status": "✅"
       },
       {
         "n": 10,
         "slug": "10-zhiti-jingluo-bingzheng",
-        "title": "第10章 肢体经络病证",
+        "title": "肢体经络病证：五个病证，五格骨架，二十五条一对一的证—方",
         "status": "✅"
       },
       {
         "n": 11,
         "slug": "11-jizheng-chuanranbing",
-        "title": "第11章 常见急症与传染病",
+        "title": "常见急症与传染病：同一个槽位名，两种语义",
         "status": "✅"
       },
       {
         "n": 12,
         "slug": "12-shuzihua-ai",
-        "title": "第12章 中医内科学的数字化与AI时代",
+        "title": "数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去",
         "status": "✅"
       },
       {
         "n": 13,
         "slug": "13-zhengfang-liaoxiao",
-        "title": "第13章 证候—方剂—疗效的因果推断",
+        "title": "证候—方剂—疗效：一条链里哪一步能看见，哪一步只能相信",
         "status": "✅"
       },
       {
         "n": 14,
         "slug": "14-fenxing-icd11",
-        "title": "第14章 内科分型与 ICD-11 的映射",
+        "title": "内科分型与 ICD-11：能对上的三十二个，和不能对上的四类",
         "status": "✅"
       }
     ],
@@ -9829,79 +9857,79 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-fazhan-gaishu",
-        "title": "中医外科学发展概要",
+        "title": "发展概要：这门专科先要说清「它管哪一块」",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-mingming-bingyin-bingji",
-        "title": "中医外科疾病的命名与病因病机",
+        "title": "命名与病因病机：一个病名里藏着三层判据",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-bianzheng",
-        "title": "中医外科疾病的辨证",
+        "title": "辨证：外科的判据长在「看得见的地方」",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-zhifa",
-        "title": "中医外科疾病的治法",
+        "title": "治法：消、托、补不是三个选项，是一条时间轴",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-chuangyang",
-        "title": "疮疡",
+        "title": "疮疡：十个病证，同一套五段模板",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-rufang-jibing",
-        "title": "乳房疾病",
+        "title": "乳房疾病：同一个部位，四种性质",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-ying-liu-yan",
-        "title": "瘿、瘤、岩",
+        "title": "瘿、瘤、岩：一条「质地轴」，八个病证",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-pifu-jibing",
-        "title": "皮肤疾病",
+        "title": "皮肤疾病：九种皮损，一套「形态 → 分期 → 病因」的读法",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-gangmen-zhichang",
-        "title": "肛门直肠疾病",
+        "title": "肛门直肠疾病：一条齿线分内外，一根手指定良恶",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-miniao-nanxing",
-        "title": "泌尿男性疾病",
+        "title": "泌尿男性疾病：三个系统，三条不可错过的红线",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-zhouwei-xueguan",
-        "title": "周围血管疾病",
+        "title": "周围血管疾病：先动脉、再静脉，别把两边混成一边",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-qita-waike",
-        "title": "其他外科疾病",
+        "title": "其他外科疾病：六证，四类「先救命再治病」",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-shuzihua-ai",
-        "title": "中医外科学数字化与 AI 时代",
+        "title": "数字化与 AI 时代：把「看得见的判据」变成可计算的字段",
         "status": "🚧"
       }
     ],
@@ -9909,79 +9937,79 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun",
-        "title": "绪论",
+        "title": "绪论：把「经带胎产」写成四类可查的事",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-shengzhi-shengli",
-        "title": "女性生殖脏器解剖与生理",
+        "title": "生殖脏器与生理：一台四段的发动机",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-bingyin-bingji",
-        "title": "妇科疾病的病因病机",
+        "title": "病因病机：四个入口，三条通路",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-zhenduan-bianzheng",
-        "title": "妇科疾病的诊断与辨证",
+        "title": "诊断与辨证：把「期量色质」变成四栏",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-zhiliao",
-        "title": "妇科疾病的治疗",
+        "title": "治疗：六法一位，加一个「按周期换挡」",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-yufang-baojian",
-        "title": "妇科预防与保健",
+        "title": "预防与保健：五个阶段，一套「别做什么」",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-yuejing-qiliang-sezhi",
-        "title": "月经病·期量色质异常",
+        "title": "月经病（一）：期、量、时间的三种异常",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-bijing-benglou",
-        "title": "月经病·闭经崩漏与经行诸证",
+        "title": "月经病（二）：闭经、崩漏与十二个「经行」病",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-daixia-bing",
-        "title": "带下病",
+        "title": "带下病：多与少，两种方向",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-renshen-bing",
-        "title": "妊娠病",
+        "title": "妊娠病：一条「胎」的安全线，与一个必须破的例外",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-chanhou-bing",
-        "title": "产后病",
+        "title": "产后病：多虚多瘀，一条轴十个出口",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-fuke-zabing",
-        "title": "妇科杂病",
+        "title": "妇科杂病：六个「不属于经带胎产」的病",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-jizhen-shuzihua",
-        "title": "妇科急症与数字化AI时代",
+        "title": "妇科急症与数字化：四类急症，一条可算的链",
         "status": "🚧"
       }
     ],
@@ -9989,85 +10017,85 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-fazhan-gaishu",
-        "title": "中医儿科学发展概要",
+        "title": "中医儿科学发展概要：一门「说不出话的病人」的学科",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-shengli-bingli-tedian",
-        "title": "小儿生理病理特点",
+        "title": "小儿生理病理特点：四句话，一条传变链",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-shengzhang-yangyu-baojian",
-        "title": "小儿生长发育与喂养保健",
+        "title": "生长发育与喂养保健：把「养得对不对」变成可量的事",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-erke-sizhen",
-        "title": "儿科四诊概要",
+        "title": "儿科四诊概要：脉靠不住的时候，看什么",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-bianzheng-zhifa",
-        "title": "儿科辨证与治法概要",
+        "title": "儿科辨证与治法概要：三套辨证怎么分工，一条用药律怎么守",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-feixi-jibing",
-        "title": "肺系疾病",
+        "title": "肺系疾病：一条由表入里的纵线，五个停靠点",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-pixi-jibing",
-        "title": "脾系疾病",
+        "title": "脾系疾病：九证沿一条管道排开",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-xingan-jibing",
-        "title": "心肝系疾病",
+        "title": "心肝系疾病：一条「神—风」轴，两种时间尺度",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-shenxi-jibing",
-        "title": "肾系疾病",
+        "title": "肾系疾病：一条水液通道，两个年龄界值",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-chuanranbing",
-        "title": "传染病",
+        "title": "传染病：一张「发热—出疹」时间表",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-chongzheng",
-        "title": "虫证",
+        "title": "虫证：看得见的虫，与看不见的堵",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-xinshenger-jibing",
-        "title": "新生儿疾病",
+        "title": "新生儿疾病：出生头 28 天的三件事",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-qita-bingzheng",
-        "title": "其他病证",
+        "title": "其他病证：三个「查不出器质病」的病",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-jizhen-shuzihua",
-        "title": "儿科急症与数字化AI时代",
+        "title": "儿科急症与数字化 AI 时代：先救命，再谈可计算",
         "status": "🚧"
       }
     ],
@@ -10147,73 +10175,73 @@ window.TCMAI_DATA = {
       {
         "n": 13,
         "slug": "13-m01-feng-men",
-        "title": "风门（各论·M01）",
+        "title": "风证门（M01）",
         "status": "✅"
       },
       {
         "n": 14,
         "slug": "14-m02-han-men",
-        "title": "寒门（各论·M02）",
+        "title": "寒证门（M02）",
         "status": "✅"
       },
       {
         "n": 15,
         "slug": "15-m03-shu-men",
-        "title": "暑门（各论·M03）",
+        "title": "暑证门（M03）",
         "status": "✅"
       },
       {
         "n": 16,
         "slug": "16-m04-shi-men",
-        "title": "湿门（各论·M04）",
+        "title": "湿证门（M04）",
         "status": "✅"
       },
       {
         "n": 17,
         "slug": "17-m05-zao-men",
-        "title": "燥门（各论·M05）",
+        "title": "燥证门（M05）",
         "status": "✅"
       },
       {
         "n": 18,
         "slug": "18-m06-huo-men",
-        "title": "火门（各论·M06）",
+        "title": "火证门（M06）",
         "status": "✅"
       },
       {
         "n": 19,
         "slug": "19-m07-qi-men",
-        "title": "气门（各论·M07）",
+        "title": "气证门（M07）",
         "status": "✅"
       },
       {
         "n": 20,
         "slug": "20-m08-yu-men",
-        "title": "瘀门（各论·M08）",
+        "title": "瘀证门（M08）",
         "status": "✅"
       },
       {
         "n": 21,
         "slug": "21-m09-tan-men",
-        "title": "痰门（各论·M09）",
+        "title": "痰证门（M09）",
         "status": "✅"
       },
       {
         "n": 22,
         "slug": "22-m10-yin-men",
-        "title": "饮门（各论·M10）",
+        "title": "饮证门（M10）",
         "status": "✅"
       },
       {
         "n": 23,
         "slug": "23-m11-shiji-men",
-        "title": "食门（各论·M11）",
+        "title": "食证门（M11）",
         "status": "✅"
       },
       {
         "n": 24,
         "slug": "24-m12-xu-men",
-        "title": "虚门（各论·M12）",
+        "title": "虚证门（M12）",
         "status": "✅"
       },
       {
@@ -10245,43 +10273,43 @@ window.TCMAI_DATA = {
       {
         "n": 2,
         "slug": "02-liuwansu-huore",
-        "title": "刘完素与火热论",
+        "title": "刘完素与火热论：把「火」抬成终点",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-zhangcongzheng-gongxie",
-        "title": "张从正与攻邪论",
+        "title": "张从正与攻邪论：病由邪生",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-ligao-piwei",
-        "title": "李杲与脾胃论",
+        "title": "李杲与脾胃论：内伤也会发热",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-zhuzhenheng-ziyin",
-        "title": "朱震亨与滋阴论",
+        "title": "朱震亨与滋阴论：相火不是实火",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-zhangjingyue-wenbu",
-        "title": "张景岳与温补学派",
+        "title": "张景岳与温补学派：阳非有余",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-yetianshi-wenbing",
-        "title": "叶天士与温病学派",
+        "title": "叶天士与温病学派：四层不是四个证",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-duibi-jiegouhua",
-        "title": "学派观点的对照阅读与结构化",
+        "title": "对照阅读与结构化：一张表里放八派",
         "status": "🚧"
       }
     ],
@@ -10339,73 +10367,73 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun",
-        "title": "第1章 绪论",
+        "title": "绪论：急诊学研究的不是病，是「正在恶化的人」",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-lilun-jichu",
-        "title": "第2章 中医急诊学的理论基础",
+        "title": "理论基础：邪盛正衰与气机逆乱",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-zhengzhuang-jianbie",
-        "title": "第3章 急诊常见症状的鉴别",
+        "title": "急诊常见症状的鉴别：五个入口",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-jijiu-jishu-fangyao",
-        "title": "第4章 常用急救技术与方药",
+        "title": "常用急救技术与方药：先有形，再有名",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-waigan-rebing",
-        "title": "第5章 外感热病急症",
+        "title": "外感热病急症：从卫分到血分的四道门",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-xinnao-jizheng",
-        "title": "第6章 心脑急症",
+        "title": "心脑急症：时间窗比辨证更硬",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-feixi-jizheng",
-        "title": "第7章 肺系急症",
+        "title": "肺系急症：喘的三级与血的一口",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-piwei-gandan-jizheng",
-        "title": "第8章 脾胃肝胆急症",
+        "title": "脾胃肝胆急症：吐泻、急腹症、急黄",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-shenxi-zhongdu",
-        "title": "第9章 肾系与中毒急症",
+        "title": "肾系与中毒急症：闭与毒",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-xuezheng-chuangshang",
-        "title": "第10章 血证与创伤急症",
+        "title": "血证与创伤急症：血往哪里流",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-zhongzheng-jianhu",
-        "title": "第11章 急危重症与重症监护协同",
+        "title": "急危重症与重症监护协同：分清谁能做",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-shuzihua-yujing",
-        "title": "第12章 中医急诊数字化与智能预警",
+        "title": "中医急诊数字化与智能预警：早半小时",
         "status": "🚧"
       }
     ],
@@ -10413,73 +10441,73 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-gaishu-yuanliu",
-        "title": "第1章 中医骨病学概论与源流",
+        "title": "概论与源流：骨病学的边界先与骨折筋伤划清",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-fenlei-bingyin-bingji",
-        "title": "第2章 骨病的分类和病因病机",
+        "title": "分类与病因病机：肾主骨这句话怎么落到机制上",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-linchuang-zhencha",
-        "title": "第3章 骨病的临床诊查",
+        "title": "临床诊查：影像不是辅助，是判据",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-zhiliao-fangfa",
-        "title": "第4章 骨病的治疗方法",
+        "title": "治疗方法：五条路，先定边界再选路",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-huaxing-guisuiyan-guanjieyan",
-        "title": "第5章 化脓性骨髓炎与化脓性关节炎",
+        "title": "化脓性骨髓炎与化脓性关节炎：脓在哪一层",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-gu-guanjie-jiehe",
-        "title": "第6章 骨与关节结核",
+        "title": "骨与关节结核：冷脓肿与截瘫之间",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-gu-zhongliu",
-        "title": "第7章 骨肿瘤",
+        "title": "骨肿瘤：先分良恶，再谈阴阳",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-gu-daixie",
-        "title": "第8章 骨代谢性疾病",
+        "title": "骨代谢性疾病：骨量的账本",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-gu-quexue-xingsi",
-        "title": "第9章 骨缺血性坏死",
+        "title": "骨缺血性坏死：塌陷之前与之后",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-tuixing-mianyixing",
-        "title": "第10章 骨关节退行性与免疫性疾病",
+        "title": "退行性与免疫性疾病：痹的两种时间感",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-gu-jixing-ruangu",
-        "title": "第11章 骨畸形与骨软骨病",
+        "title": "骨畸形与骨软骨病：越早越好，且只有一次机会",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-kangfu-shuzihua",
-        "title": "第12章 骨病康复与数字化AI时代",
+        "title": "康复与数字化：把「动静结合」变成可执行的动作",
         "status": "🚧"
       }
     ],
@@ -10487,73 +10515,73 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun",
-        "title": "第1章 绪论",
+        "title": "绪论：老年病学研究的不是「病」，是「生了病的人」",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-fazhan-jianshi",
-        "title": "第2章 中医老年病学发展简史",
+        "title": "发展简史：从「养老」到「老年病学」",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-shengli-bingli-tedian",
-        "title": "第3章 老年生理病理特点",
+        "title": "生理病理特点：衰老是「虚」，也是「瘀与痰」",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-bingyin-bingji",
-        "title": "第4章 老年病病因病机",
+        "title": "病因病机：因虚致实，由实转虚",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-zhenfa-bianzheng",
-        "title": "第5章 老年病诊法与辨证特点",
+        "title": "诊法与辨证特点：脉象会骗人，功能不会",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-zhiliao-yuanze-tiaohu",
-        "title": "第6章 老年病治疗原则与调护",
+        "title": "治疗原则与调护：小剂量、顾脾胃、缓图",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-changjian-zhengzhuang",
-        "title": "第7章 老年常见症状辨治",
+        "title": "老年常见症状辨治：七个「说不清」的主诉",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-xinnao-xueguan",
-        "title": "第8章 老年心脑血管病证",
+        "title": "老年心脑血管病证：本虚标实的主战场",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-feixi-bingzheng",
-        "title": "第9章 老年肺系病证",
+        "title": "老年肺系病证：正虚受邪的五个出口",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-piwei-gandan",
-        "title": "第10章 老年脾胃肝胆病证",
+        "title": "老年脾胃肝胆病证：能吃，才谈得上治",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-shenxi-guguanjie",
-        "title": "第11章 老年肾系与骨关节病证",
+        "title": "老年肾系与骨关节病证：水、尿、骨、痹、腰",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-duobing-gongcun-zhihui-yanglao",
-        "title": "第12章 老年多病共存与智慧养老",
+        "title": "多病共存与智慧养老：把「一人多病」变成可管理的结构",
         "status": "🚧"
       }
     ],
@@ -10561,73 +10589,73 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun",
-        "title": "第1章 绪论",
+        "title": "绪论：精神病学研究的是「神」，不是「脑」",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-lilun-jichu",
-        "title": "第2章 中医精神病学的理论基础",
+        "title": "理论基础：脑主神明与心主神明，谁说了算",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-bingyin-bingji",
-        "title": "第3章 精神疾病的病因病机",
+        "title": "病因病机：七情、痰火、瘀虚",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-zhenduan",
-        "title": "第4章 精神疾病的诊断",
+        "title": "诊断：精神检查是主证据，量表是辅证",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-zhiliao-yuanze",
-        "title": "第5章 治疗原则与常用治法",
+        "title": "治疗原则：调神、开窍，先安全后辨证",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-dianzheng-kuangzheng",
-        "title": "第6章 癫证与狂证",
+        "title": "癫证与狂证：一阴一阳，一静一躁",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-yubing",
-        "title": "第7章 郁病",
+        "title": "郁病：气郁为始，虚损为终",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-bumian-jiaolv",
-        "title": "第8章 不寐与焦虑障碍",
+        "title": "不寐与焦虑障碍：睡不好是「神不守舍」",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-xianzheng-fazuoxing",
-        "title": "第9章 痫证与其他发作性精神障碍",
+        "title": "痫证与发作性障碍：发作的那几分钟",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-chidai-zhanwang",
-        "title": "第10章 痴呆与谵妄",
+        "title": "痴呆与谵妄：慢的与急的两种「神乱」",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-qita-zhangai",
-        "title": "第11章 其他精神障碍",
+        "title": "其他精神障碍：酒、儿童、围产期",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-jiehe-kangfu-shuzihua",
-        "title": "第12章 中西医结合治疗、康复与数字化",
+        "title": "中西医结合、康复与数字化：边界写清楚才算合作",
         "status": "🚧"
       }
     ],
@@ -10635,61 +10663,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-quanshu-dufa",
-        "title": "一部 1909 年的书为什么叫「衷中参西」",
+        "title": "书名不是纲领：「衷中参西」是一次排序，不是一次合并",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-daqi-xiaxian",
-        "title": "大气下陷：一个被重新提出的证",
+        "title": "大气下陷：先有临床，后有名字",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-shigao",
-        "title": "石膏：用量是这本书最容易被误读的地方",
+        "title": "石膏：被误读的不是剂量，是三个动作",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-zheshi",
-        "title": "赭石与重镇：降逆的力学",
+        "title": "赭石的六条特长里，只有一条是「重」",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-shanyao-shanyurou",
-        "title": "山药与山萸肉：平补与收敛的一对",
+        "title": "山药管「久」，山萸肉管「急」",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-yinxu-laore",
-        "title": "阴虚劳热：资生汤与十全育真汤的方证结构",
+        "title": "资生汤与十全育真汤：不是轻重两档，是「纳」与「瘀」两条路",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-tube-xuezheng",
-        "title": "吐衄血证：寒降、温降、清降是三条路，不是三张方",
+        "title": "吐衄不是三条路，是一个主轴加四个岔口",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-naochongxue",
-        "title": "脑充血与脑贫血：全书参西最深的一章",
+        "title": "脑充血与脑贫血：参西最深的一处，也是证名最先失效的一处",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-yian-dufa",
-        "title": "医案读法：病因—证候—诊断—处方—效果 五段式",
+        "title": "医案的五段式：一张能被反驳的表",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-canxi-bianjie",
-        "title": "参西坐标的边界：哪里能用，哪里不能用",
+        "title": "参西的边界：能借病名与验证，不能借解释与因果",
         "status": "🚧"
       }
     ],
@@ -10923,49 +10951,49 @@ window.TCMAI_DATA = {
       {
         "n": 4,
         "slug": "04-xiexia-qushi",
-        "title": "泻下药与祛湿药",
+        "title": "泻下药与祛湿药：湿邪的三条出口",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-wenli-liqi",
-        "title": "温里药与理气药",
+        "title": "温里药与理气药：寒与滞，两条互相垂直的轴",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-xiaoshi-zhixue",
-        "title": "消食药、驱虫药与止血药",
+        "title": "消食药、驱虫药与止血药：有形之积与离经之血",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-huoxue-huayu",
-        "title": "活血化瘀药：分类与配伍",
+        "title": "活血化瘀药：节分类、归经轴与禁忌的可计算化",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-huatan-kesou",
-        "title": "化痰止咳平喘药",
+        "title": "化痰止咳平喘药：两套分类轴与一个词表缺口",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-anshen-pinggan",
-        "title": "安神药、平肝息风药与开窍药",
+        "title": "安神、平肝息风与开窍：三个靶脏腑，一条断句",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-buxuyao-fenlei",
-        "title": "补虚药：补气、补血、补阴、补阳",
+        "title": "补虚药的分类：四节是功效轴，不是寒温轴",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-shouse-yongtu",
-        "title": "收涩药与涌吐药",
+        "title": "收涩药与涌吐药：一个闸门的两侧",
         "status": "🚧"
       },
       {
@@ -11065,49 +11093,49 @@ window.TCMAI_DATA = {
       {
         "n": 4,
         "slug": "04-xiexia-hejie",
-        "title": "泻下剂与和解剂",
+        "title": "泻下剂与和解剂：下与和，方向相反的两个「通」",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-qingre-qushu",
-        "title": "清热剂与祛暑剂",
+        "title": "清热剂与祛暑剂：热在哪一层",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-wenli-buyi",
-        "title": "温里剂与补益剂",
+        "title": "温里剂与补益剂：温与补，只差一味",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-guse-anshen",
-        "title": "固涩剂与安神剂",
+        "title": "固涩剂与安神剂：收与镇，两道相反的闸门",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-liqi-lixue",
-        "title": "理气剂与理血剂",
+        "title": "理气剂与理血剂：气为血帅，血为气母",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-zhifeng-zhizao",
-        "title": "治风剂与治燥剂",
+        "title": "治风剂与治燥剂：外邪与内伤的两条线",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-qushi-qutan",
-        "title": "祛湿剂与祛痰剂",
+        "title": "祛湿剂与祛痰剂：湿与痰是两条路，不是两级",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-xiaoshi-quchong",
-        "title": "消食剂、驱虫剂与涌吐剂",
+        "title": "消食、驱虫、涌吐：三种\"去邪\"的力度与风险",
         "status": "🚧"
       },
       {
@@ -12479,7 +12507,7 @@ window.TCMAI_DATA = {
       {
         "n": 11,
         "slug": "11-weixian-shendu",
-        "title": "危险穴位与针刺安全深度",
+        "title": "危险穴位与针刺安全深度：把「不可深刺」变成一道可算的闸门",
         "status": "🚧"
       },
       {
@@ -13769,49 +13797,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-gailun-yuanliu",
-        "title": "中医运动学概论与源流",
+        "title": "导引能进医书，靠的不是古老，是能被开出方",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-lilun-jichu",
-        "title": "运动的中医理论基础",
+        "title": "运动调的不是肌肉，是气机的升降出入",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-gongneng-suzhi",
-        "title": "运动功能与体能要素",
+        "title": "体能不是六项指标的并列，是一条有先后的链",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-daoyin-chufang",
-        "title": "导引功法与运动处方",
+        "title": "处方的完整性不在功法选得对不对，在停的条件写没写",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-guanjie-jianrou",
-        "title": "关节活动与柔韧训练",
+        "title": "柔韧不是拉得越开越好，是关节在该动的地方动、该稳的地方稳",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-jili-naili",
-        "title": "肌力与耐力训练",
+        "title": "力量练的是能不能做，耐力练的是能做多久",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-pingheng-diedao",
-        "title": "平衡、协调与跌倒预防",
+        "title": "跌倒不是意外，是一次没通过的压力测试",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-shanghai-yufang",
-        "title": "运动损伤的预防与康复",
+        "title": "损伤处理的第一件事不是止痛，是判断这能不能由你处理",
         "status": "🚧"
       }
     ],
@@ -13819,61 +13847,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-gu-jiegou",
-        "title": "骨的形态与构造",
+        "title": "骨不是一根柱子：它按受力方向长成",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-gu-fayu",
-        "title": "骨的发生、生长与骨化",
+        "title": "骺板是一条时间线，不是一道缝",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-guanjie",
-        "title": "关节结构与运动学",
+        "title": "关节的稳定不在骨头上，在骨头以外的四层",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-ji-jinmo",
-        "title": "肌、肌腱与筋膜",
+        "title": "肌不拉骨头，它拉的是自己的附着点",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-shenjing-xueguan",
-        "title": "神经与血管走行",
+        "title": "神经和血管走的是空隙，不是路线",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-jizhu-jiepou",
-        "title": "脊柱解剖",
+        "title": "脊柱的稳定是三根柱子的事，不是一块骨头的事",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-shangzhi",
-        "title": "上肢解剖",
+        "title": "上肢用稳定换灵活，代价写在同一副骨架上",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-xiazhi",
-        "title": "下肢解剖",
+        "title": "下肢的力线一偏，整副骨架都要还债",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-biaozhi",
-        "title": "体表标志与定位",
+        "title": "摸得到的解剖，才是能在病人身上用的解剖",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-yingxiang-jiepou",
-        "title": "影像解剖对照",
+        "title": "同一个结构，在三种影像上是三个样子",
         "status": "🚧"
       }
     ],
@@ -13881,61 +13909,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-jianshi-bingyin",
-        "title": "发展简史与病因病机",
+        "title": "正骨先有程序，才有流派",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-linchuang-zhencha",
-        "title": "骨伤病的临床诊查",
+        "title": "影像能看见骨折线，看不见病人是怎么伤的",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-zhiliao-fangfa",
-        "title": "骨伤病的治疗方法",
+        "title": "治疗的次序比方法清单重要",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-chuangshang-jijiu",
-        "title": "创伤急救",
+        "title": "急救的第一个动作不是接骨",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-guzhe-yi",
-        "title": "骨折（一）：总论与上肢",
+        "title": "上肢骨折的难点不在接骨，在功能",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-guzhe-er",
-        "title": "骨折（二）：下肢与躯干",
+        "title": "下肢骨折先算血，再算骨",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-tuowei",
-        "title": "脱位",
+        "title": "脱位是关节的事，后果常在关节外",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-jinshang",
-        "title": "筋伤",
+        "title": "筋伤的病人大多不需要手术，但都需要诊断",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-neishang-gubing",
-        "title": "内伤与骨病",
+        "title": "内伤看不见伤口，骨病不总是外伤",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-kangfu-shuzihua",
-        "title": "骨伤康复与数字化",
+        "title": "康复不是治疗之后，是治疗的一部分",
         "status": "🚧"
       }
     ],
@@ -13943,49 +13971,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-jijiu-gailun",
-        "title": "创伤急救总论与评估",
+        "title": "急救的第一分钟不救任何人，只做判断",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-xianchang-huli",
-        "title": "现场救护与搬运固定",
+        "title": "搬运不是把人抬走，是把断端抬走",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-chuxue-shuke",
-        "title": "出血与休克",
+        "title": "止住看得见的血，盯住看不见的血",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-lunao-jizhu",
-        "title": "颅脑与脊柱损伤",
+        "title": "颅脑伤救的是\"不再加重\"，脊柱伤救的是\"不再移动\"",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-xiongfu",
-        "title": "胸部与腹部创伤",
+        "title": "胸腹伤的死因，多半在体表看不见",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-sizhi-guzhe-tuowei",
-        "title": "四肢骨折与脱位的急救",
+        "title": "四肢急救的成败，落在\"末梢\"两个字上",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-shaoshang-jishang",
-        "title": "烧伤、挤压伤与多发伤",
+        "title": "挤压伤的危险，在松开的瞬间",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-zainan-zhuanyun",
-        "title": "灾难救援与转运",
+        "title": "灾难现场最稀缺的不是技术，是\"谁先走\"的决定",
         "status": "🚧"
       }
     ],
@@ -13993,49 +14021,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-gailun",
-        "title": "运动医学概论",
+        "title": "运动医学的终点不是不疼，是这个人还能不能做回原来那个动作",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-sunshang-jizhi",
-        "title": "运动损伤的机制与分类",
+        "title": "分类的价值不在名字起得准，在这一刀切下去处理方案会跟着变",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-pinggu-yingxiang",
-        "title": "损伤评估与影像",
+        "title": "影像回答哪里断了，查体回答他还能做什么，两者不能互相代替",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-jixing-chuli",
-        "title": "急性损伤处理与康复分期",
+        "title": "冰敷退场不是因为冷不好，是因为「先消炎」这个前提被换掉了",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-sizhi-sunshang",
-        "title": "上肢与下肢常见损伤",
+        "title": "踝与膝的伤多半不是那一次扭，是扭完之后没人管它该稳在哪",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-qugan-guoyong",
-        "title": "躯干损伤与过用性损伤",
+        "title": "过用性损伤不是用得太多，是修复追不上破坏",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-fanghu-xunlian",
-        "title": "运动防护与体能训练",
+        "title": "热身不是为了活动开，是为了在第一次发力之前把该查的都查一遍",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-chongfan-yundong",
-        "title": "重返运动与复发预防",
+        "title": "能上场不是判据，能在这个强度下反复出现而不出问题才是",
         "status": "🚧"
       }
     ],
@@ -14043,73 +14071,73 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun-lilun",
-        "title": "绪论与理论基础",
+        "title": "正骨是一门判断的学问，不是一套手法的目录",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-shoufa-gailun",
-        "title": "正骨手法概论",
+        "title": "手法的四个变量：体位、着力点、方向、幅度",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-zhenggu-bafa",
-        "title": "正骨八法与常用手法",
+        "title": "八法的次序比八法的名目重要",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-guzhe-zonglun",
-        "title": "骨折总论",
+        "title": "复位的成功标准写在功能里，不写在片子上",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-shangzhi-guzhe",
-        "title": "上肢骨折",
+        "title": "上肢的目标函数是「手能到该到的地方」",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-xiazhi-guzhe",
-        "title": "下肢骨折",
+        "title": "下肢的第一标准是能承重，第二才是对线",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-qugan-guzhe",
-        "title": "躯干与骨盆骨折",
+        "title": "躯干的正骨，底线是不制造第二个损伤",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-guanjie-tuowei",
-        "title": "关节脱位",
+        "title": "脱位复位成功的那一刻，评估才刚开始",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-jinshang-zonglun",
-        "title": "筋伤总论",
+        "title": "筋伤不是「没有骨折」，是另一类损伤",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-jingjian-yaotui",
-        "title": "颈肩腰腿筋伤",
+        "title": "颈肩腰腿：手法收益最大，风险也最集中",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-sizhi-xiaoer",
-        "title": "四肢关节筋伤与小儿骨伤",
+        "title": "儿童不是小一号的成人，老人也不是老一号的成人",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-gubing-kangfu",
-        "title": "骨病与康复",
+        "title": "康复从受伤那天开始，不是治疗结束之后",
         "status": "🚧"
       }
     ],
@@ -14117,61 +14145,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-jinshang-zonglun",
-        "title": "筋伤总论",
+        "title": "筋伤不是「软组织损伤」的同义词",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-bingli-fenqi",
-        "title": "筋伤的病理与分期",
+        "title": "分期的尺子是肿、痛、活动度，不是日历",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-zhencha",
-        "title": "筋伤的诊查",
+        "title": "压痛点的位置，比疼了多久更有信息量",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-shoufa-guding",
-        "title": "理筋手法与固定",
+        "title": "手法的水平不在力度，在边界",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-jingbu",
-        "title": "颈部筋伤",
+        "title": "颈部的手法，先学会不做",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-jianbu",
-        "title": "肩部筋伤",
+        "title": "抬不起来的肩，先分关节囊还是肌腱",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-yaobei",
-        "title": "腰背部筋伤",
+        "title": "「捶着舒服」是一条诊断线索",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-xihuai",
-        "title": "膝、踝部筋伤",
+        "title": "崴脚要分级，不稳比痛更要紧",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-qita",
-        "title": "其他部位筋伤",
+        "title": "小部位靠结构定位，不靠痛点定位",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-kangfu",
-        "title": "筋伤的康复与预防",
+        "title": "康复是在正确的时间给正确的负荷",
         "status": "🚧"
       }
     ],
@@ -14179,61 +14207,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-shoufa-jichu",
-        "title": "手法治疗的基础",
+        "title": "手法不是力气活：四个字约束的是一组物理量",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-zhenggu-bafa",
-        "title": "正骨八法与常用手法",
+        "title": "八法是六条，而且是一条链：断在「摸」上，后面全错",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-ruanzuzhi-shoufa",
-        "title": "软组织手法",
+        "title": "「松」与「伤」只差三个变量：力落在哪一层、停了多久、着力面多大",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-zhenggu-shoufa",
-        "title": "整复类手法",
+        "title": "复位不是「推回去」，是把四个方向的移位逐个消到容差以内",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-jingjian",
-        "title": "颈肩部手法",
+        "title": "颈肩的风险不在手上，在筛上",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-yaotui",
-        "title": "腰腿部手法",
+        "title": "腰腿痛有一半时间在做鉴别，鉴别没做完就不动手",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-guanjie-songdong",
-        "title": "关节松动手法",
+        "title": "松动不改位置，只改活动度：这条界划错，处方就错",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-xiaoer-shoufa",
-        "title": "小儿骨伤手法",
+        "title": "小儿的手法清单短得多，因为最薄的一层是骺板",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-fengxian-jinji",
-        "title": "风险、禁忌与意外处理",
+        "title": "手法是主动加荷：先排危险，再谈手法",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-pingjia",
-        "title": "疗效评价与方案设计",
+        "title": "「好多了」不是结论：没有时点的疗效，等于没有疗效",
         "status": "🚧"
       }
     ],
@@ -14241,61 +14269,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun-jishu",
-        "title": "绪论与影像技术选择",
+        "title": "先问要回答什么，再决定拍什么",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-zhengchang-jiepou",
-        "title": "骨与关节正常影像解剖",
+        "title": "正常不是\"没有异常\"，是知道什么算正常",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-jiben-bingbian",
-        "title": "基本病变的影像表现",
+        "title": "病变不是病名，是几种基本变化的组合",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-guzhe-tuowei",
-        "title": "骨折与脱位的影像诊断",
+        "title": "骨折的片子，先看片子，再看骨头",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-guanjie-chuangshang",
-        "title": "关节创伤与软骨损伤",
+        "title": "关节的伤，看不见的那一半才是麻烦",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-jizhu-sunshang",
-        "title": "脊柱与脊髓损伤",
+        "title": "脊柱的片子，最危险的不是那条骨折线",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-jizhu-tuibian",
-        "title": "脊柱退变与相关疾病",
+        "title": "退变是年龄写在片子上的字，痛是另一回事",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-ganran-yanxing",
-        "title": "感染与炎性疾病",
+        "title": "感染与肿瘤在早期长得像，时间是最好的鉴别",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-guhuaisi-daixie",
-        "title": "骨坏死与代谢性骨病",
+        "title": "骨坏死最早的那一步，只有 MRI 看得见",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-zhongliu-ertong-jieru",
-        "title": "肿瘤、儿童与介入",
+        "title": "儿童不是缩小的成人，肿瘤不是一诊断就手术",
         "status": "🚧"
       }
     ],
@@ -14303,61 +14331,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-jiepou-lixue",
-        "title": "脊柱解剖与生物力学",
+        "title": "脊柱不是一根柱子，而是一组会互相代偿的关节",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-yingxiang-zhenduan",
-        "title": "脊柱影像诊断",
+        "title": "片子回答「有没有」，不回答「痛不痛」",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-jingzhuibing",
-        "title": "颈椎病",
+        "title": "颈痛九成不是颈椎病，颈椎病九成不必手术",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-jingzhu-sunshang",
-        "title": "颈椎损伤",
+        "title": "颈椎损伤的第一分钟，比后面的三十天更重要",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-yaojianpan",
-        "title": "腰椎间盘突出症",
+        "title": "椎间盘突出是影像诊断，腰痛是一个人的生活",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-yaozhuiguan-xiazhai",
-        "title": "腰椎管狭窄与滑脱",
+        "title": "走不远的人：狭窄与滑脱，先分清是管窄还是骨错位",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-cewan",
-        "title": "脊柱侧弯与畸形",
+        "title": "侧弯不是姿势问题：谁在长，谁在弯，谁在代偿",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-guzhishusong-guzhe",
-        "title": "骨质疏松性椎体骨折",
+        "title": "一次椎体压缩骨折，是下一次骨折的预告",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-shoufa-shoushu",
-        "title": "手法与手术的边界",
+        "title": "手法与手术之间，隔着的不是勇气，是判据",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-kangfu",
-        "title": "脊柱康复与长期管理",
+        "title": "把「治好」换成「能过」：脊柱的长期管理",
         "status": "🚧"
       }
     ],
@@ -14365,61 +14393,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-gailun-bingyin",
-        "title": "骨病概论与病因病机",
+        "title": "关节病的第一个动作不是开药，是把病人放进正确的类别里",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-linchuang-zhencha",
-        "title": "骨病的临床诊查",
+        "title": "关节病的体征长得很慢，判据必须写在流程里",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-zhiliao-fangfa",
-        "title": "骨病的治疗方法",
+        "title": "治疗不是选项的堆叠，是先分层、再分期、后选法",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-huamou-guanjieyan",
-        "title": "化脓性骨髓炎与化脓性关节炎",
+        "title": "化脓性关节病的时间里没有「观察一下」这个选项",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-gujiehe",
-        "title": "骨与关节结核",
+        "title": "骨结核最像的不是结核，是劳损",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-guzhongliu",
-        "title": "骨肿瘤：识别与转诊",
+        "title": "骨肿瘤的第一个动作是拍片，不是解释",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-gudaixie",
-        "title": "骨代谢性疾病",
+        "title": "骨量的流失是安静的，骨折是它第一次说话",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-guhuaisi",
-        "title": "骨缺血性坏死",
+        "title": "骨坏死的窗口期，落在 X 线还看不见的那段时间里",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-tuixing-mianyi",
-        "title": "骨关节退行性与免疫性疾病",
+        "title": "骨关节炎与类风湿的治疗方向是相反的",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-jixing-kangfu",
-        "title": "骨畸形、骨软骨病与康复",
+        "title": "畸形不疼，所以它总在没人看着的时候长",
         "status": "🚧"
       }
     ],
@@ -14427,49 +14455,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-gudaixie-jichu",
-        "title": "骨代谢基础",
+        "title": "骨量的峰值，三十岁那年就已经写定",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-zhenduan-pinggu",
-        "title": "诊断与骨折风险评估",
+        "title": "一张 T 值报告，回答不了「他会不会骨折」",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-guzhishusong",
-        "title": "骨质疏松症",
+        "title": "「原发性」是排除出来的，不是默认的",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-guguanjieyan",
-        "title": "骨关节炎",
+        "title": "骨关节炎不是「磨没了」，是整个关节在改建",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-tuibian-yingxiang",
-        "title": "退行性变的影像评估",
+        "title": "报告上的「退变」，有一半是年龄",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-yaowu",
-        "title": "药物与非药物治疗",
+        "title": "抗骨质疏松药不改「骨头的年龄」，只改斜率",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-kangfu-diedao",
-        "title": "运动康复与跌倒预防",
+        "title": "跌倒不是意外，是一串可以被算出来的事件",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-changqi-guanli",
-        "title": "长期管理与随访",
+        "title": "骨质疏松的治疗，多半输在第二年",
         "status": "🚧"
       }
     ],
@@ -14477,49 +14505,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-yuanliu-lilun",
-        "title": "整脊源流与理论",
+        "title": "整脊的第一道门槛不是手法，是「什么算有效」",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-jiepou-lixue",
-        "title": "脊柱解剖与生物力学",
+        "title": "脊柱的稳定不是骨头撑住的，是三种组织在互相欠账",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-yingxiang-pinggu",
-        "title": "影像评估与适应证",
+        "title": "影像的用法是排除禁忌，不是找病因",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-shoufa-tixi",
-        "title": "整脊手法体系",
+        "title": "手法分三层，风险也分三层，两层必须一一对上",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-jingzhui",
-        "title": "颈椎整脊",
+        "title": "颈椎不是一段，是两段，风险也在两段之间分",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-xiongyaozhui",
-        "title": "胸腰椎整脊",
+        "title": "胸腰段的手法失误，多半不是瘫，是折",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-gupen-xiayao",
-        "title": "骨盆与下肢力线",
+        "title": "骨盆是地基，但「地基歪了」是最容易被滥用的一句话",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-fengxian-liaoxiao",
-        "title": "风险、禁忌与疗效评价",
+        "title": "不良事件不是意外，是可以分类的事件",
         "status": "🚧"
       }
     ],
@@ -14527,49 +14555,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-gailun",
-        "title": "康复工程概论",
+        "title": "支具不治病，它改变的是力的分配",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-fenlei-cailiao",
-        "title": "支具分类与材料",
+        "title": "分类看约束的方向，材料看它能撑多久",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-jizhu-zhiju",
-        "title": "脊柱支具",
+        "title": "脊柱支具靠三点力，不靠把躯干裹紧",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-shangzhi-zhiju",
-        "title": "上肢支具",
+        "title": "手部支具的目标是滑动，不是固定",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-xiazhi-zhiju",
-        "title": "下肢支具",
+        "title": "下肢支具先回答负重，再回答步态",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-zuxie-yali",
-        "title": "矫形鞋与压力治疗",
+        "title": "鞋垫改变力矩，压力衣改变梯度",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-zhuxing-fuzhu",
-        "title": "助行器、轮椅与转移辅具",
+        "title": "辅具的第一判据是使用者能不能自己用",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-pinggu-suifang",
-        "title": "适配评估与随访",
+        "title": "适配好不好，皮肤先说话",
         "status": "🚧"
       }
     ],
@@ -14577,49 +14605,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-pingding-gailun",
-        "title": "康复评定概论",
+        "title": "评定不是给功能打分，是把「他现在不能做什么」换成「下一步做什么」",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-guanjie-jili",
-        "title": "关节活动度与肌力评定",
+        "title": "角度量得出来，力量量得出来，「够不够用」量不出来",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-pingheng-butai",
-        "title": "平衡与步态评定",
+        "title": "平衡不好的人不是站不住，是他不知道自己正在站不住",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-adl-shenghuo",
-        "title": "日常生活活动与生活质量",
+        "title": "ADL 满分的人，可以完全回不到原来的生活",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-tengtong-xinli",
-        "title": "疼痛与心理评定",
+        "title": "疼痛评分是他给你的一个数，不是他承受的那个量",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-yingxiang-gongneng",
-        "title": "影像与功能的对应",
+        "title": "片子上的愈合有时间表，能不能负重没有",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-liangbiao",
-        "title": "评定量表的选择与信效度",
+        "title": "量表不是越全越好，是能测出变化才算有用",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-baogao-suifang",
-        "title": "评定报告与随访",
+        "title": "报告是写给三个月后的自己看的，不是写给今天签字的人看的",
         "status": "🚧"
       }
     ],
@@ -14627,37 +14655,37 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-zhenggu-lunzhuan",
-        "title": "正骨科轮转：骨折复位与固定",
+        "title": "正骨轮转：复位做得好不好，看的是你喊停的那一次",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-jinshang-lunzhuan",
-        "title": "筋伤科轮转：软组织损伤",
+        "title": "筋伤轮转：门槛不在手上，在禁忌筛查那三分钟",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-jizhu-lunzhuan",
-        "title": "脊柱科轮转",
+        "title": "脊柱轮转：最贵的错误，是把红旗征当成落枕",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-guanjie-lunzhuan",
-        "title": "关节科轮转",
+        "title": "关节轮转：先分清「能等」和「不能等」",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-jizhen-chuangshang",
-        "title": "急诊创伤与院前处置",
+        "title": "创伤轮转：第一课是分工，不是技术",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-chuke-kaohe",
-        "title": "出科考核与病例复盘",
+        "title": "出科考核：考的不是背，是你能不能把一次接诊从头讲到尾",
         "status": "🚧"
       }
     ],
@@ -14665,37 +14693,37 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xuan-ti",
-        "title": "选题：从复位方案到可量化命题",
+        "title": "选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-yingxiang-shuju",
-        "title": "影像与生物力学数据准备",
+        "title": "影像不是插图，是把「看得见」变成「量得出、量得一样」的那一步",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-shoufa-zhiju",
-        "title": "手法与支具的系统实现",
+        "title": "把手法写成流程、把支具写成参数，才算做完；「手感」和「定制」都交不出去",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-liaoxiao-pingjia",
-        "title": "疗效与并发症评价",
+        "title": "疗效不是「好转了」，是先在纸上写死「什么叫没好转」",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-lunwen-dabian",
-        "title": "论文写作与答辩",
+        "title": "论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-zhishi-yijiao",
-        "title": "知识移交：操作规范与交接",
+        "title": "移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法",
         "status": "🚧"
       }
     ],
@@ -16845,61 +16873,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-juese-shujuleixing",
-        "title": "统计学的角色与数据类型",
+        "title": "数据类型定错了，后面每个数字都跟着错",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-miaoshu-fenbu",
-        "title": "描述性统计与分布",
+        "title": "只报一个均数不叫描述，得报一对",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-gailv-chouyang",
-        "title": "概率与抽样分布",
+        "title": "样本的「率」是一团会呼吸的数",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-jiashe-pzhi",
-        "title": "假设检验与 p 值",
+        "title": "p 值量的是「差得够不够稳」，不是「差得够不够大」",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-t-fangcha",
-        "title": "t 检验与方差分析",
+        "title": "比较的不是两堆数，是差值除以它自己的抖动",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-kaifang-liebiao",
-        "title": "卡方检验与列联表",
+        "title": "率的分母，比率的分子更容易骗人",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-xiangguan-huigui",
-        "title": "相关与线性回归",
+        "title": "相关系数是斜率被两个标准差除过一遍",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-logistic-shengcun",
-        "title": "Logistic 回归与生存分析",
+        "title": "时间一进模型，删失就不能当成缺失",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-duochong-jiaoyan",
-        "title": "多重比较与假阳性控制",
+        "title": "做了 20 个指标，「总有一个显著」是算术，不是运气",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-baogao-kefuxian",
-        "title": "统计报告的规范与可复现",
+        "title": "报告的价值，在于别人能照着重算一遍",
         "status": "🚧"
       }
     ],
@@ -16907,49 +16935,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-z21",
-        "title": "卫生法与中医药法的法理基础",
+        "title": "一条规矩四个层级：中医药法的效力从哪里来",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-z22",
-        "title": "立法、执法与行政责任",
+        "title": "罚则写在纸上，执法站在门外",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-z23",
-        "title": "机构与人员管理制度",
+        "title": "两条轨的准入：机构靠一张证，人员靠一条路",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-z24",
-        "title": "医疗行为与质量安全",
+        "title": "规范进不了诊室的那一步",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-z25",
-        "title": "药品、器械与消毒产品监管",
+        "title": "老祖宗的方子，要过现代的审",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-z26",
-        "title": "公共卫生与健康促进法制",
+        "title": "治未病的钱，付给了谁",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-z27",
-        "title": "中医药法律制度与政策工具",
+        "title": "并重写在文件里，差价写在账本上",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-z28",
-        "title": "新兴技术立法与权益救济",
+        "title": "技术跑在规则前面，救济跟在后面",
         "status": "🚧"
       }
     ],
@@ -16957,49 +16985,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-z31",
-        "title": "中医机构的管理原理",
+        "title": "中医机构的效率，不能按手术台的产出来算",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-z32",
-        "title": "中医机构的决策与计划",
+        "title": "规划一家中医机构，真正要决定的是关掉哪些科室",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-z33",
-        "title": "组织设计与人力资源",
+        "title": "名医工作室的成本，记在导师的号源上",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-z34",
-        "title": "领导、激励与沟通",
+        "title": "科主任的两套权威，一套来自疗效，一套来自表格",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-z35",
-        "title": "质量控制与绩效评价",
+        "title": "中医治疗率 92%，没有一张方是对证的",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-z36",
-        "title": "中医药机构的管理专题",
+        "title": "中药房是成本中心，也是唯一不能省的那道关",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-z37",
-        "title": "中医医院的运行管理",
+        "title": "门诊流程是按检查设计的，病人却是来复诊调方的",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-z38",
-        "title": "中医政策与治理趋势",
+        "title": "医共体的牌子挂上了，中医馆里没有人会开方",
         "status": "🚧"
       }
     ],
@@ -17007,49 +17035,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-w1",
-        "title": "卫生管理体制与组织体系",
+        "title": "谁都能管，等于谁都不管：卫生管理体制的责任链",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-w2",
-        "title": "政策法规与资源配置",
+        "title": "规划不能只写在纸上：资源配置是按规则分，不是按需要给",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-w3",
-        "title": "服务体系与分级诊疗",
+        "title": "分级诊疗不是把病人往下推，是让下面接得住",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-w4",
-        "title": "基层卫生与公共卫生",
+        "title": "公共卫生买的是项目，健康要的是结果",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-w5",
-        "title": "医疗与人力资源管理",
+        "title": "卫生人力不是缺人，是缺在错的地方",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-w6",
-        "title": "财务·保障与药械",
+        "title": "支付方式是一根杠杆，撬动的是医生的手",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-w7",
-        "title": "信息·绩效与监督",
+        "title": "指标测的是能被记录的东西，不是要紧的东西",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-w8",
-        "title": "中医管理·国际比较",
+        "title": "并重写在方针里，落在编制与支付上",
         "status": "🚧"
       }
     ],
@@ -17057,37 +17085,37 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-z51",
-        "title": "中医文化的源流：从先秦到汉唐",
+        "title": "先秦到汉唐留下来的是三种说话方式，不是一条族谱",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-z52",
-        "title": "典籍与医家：可传播的内容从哪来",
+        "title": "能传走的是判据，不是神医",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-z53",
-        "title": "近现代转型与制度化",
+        "title": "制度化救下的是编制与课表，不是可传播性",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-z54",
-        "title": "信息组织与检索：把典籍变成可查资源",
+        "title": "典籍变不成资源，除非先被切成一格一格",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-z55",
-        "title": "传播内容的标准与证据",
+        "title": "传播的底线不是说得动人，是说得住回查",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-z56",
-        "title": "当代传播与边界：不神化、不虚构",
+        "title": "把中医讲成奇迹，是最快也最贵的一种传播",
         "status": "🚧"
       }
     ],
@@ -17095,61 +17123,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-y1",
-        "title": "绪论与基本原理",
+        "title": "医院管理的第一道分界，是住院能力而不是招牌",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-y2",
-        "title": "组织与人力资源",
+        "title": "组织图画的不是权力，是签字与担责的错位",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-y3",
-        "title": "医疗与护理管理",
+        "title": "门诊的瓶颈不在医生手速，在患者动线的乘法",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-y4",
-        "title": "药事·医技与感染",
+        "title": "药事管理管的是处方权的边界，不是药房的库存",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-y5",
-        "title": "质量与财务管理",
+        "title": "质量指标可以修饰，质量成本修饰不了",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-y6",
-        "title": "绩效与信息",
+        "title": "绩效方案按收入分配的那天，质量指标就成了成本",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-y7",
-        "title": "后勤设备与科教",
+        "title": "设备的账不在买贵了，在用坏了没人认",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-y8",
-        "title": "战略与风险",
+        "title": "风险管理的成败，在于第一个发现异常的人有没有权限喊停",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-y9",
-        "title": "文化与中医医院",
+        "title": "中医院的难题不是多挂一块牌子，是让两套疗效判据互相承认",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-y10",
-        "title": "社区服务与数字医院",
+        "title": "分级诊疗的堵点不在基层能力，在向上转诊的那张纸",
         "status": "🚧"
       }
     ],
@@ -17157,49 +17185,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-e71",
-        "title": "中医教育的对象与目标",
+        "title": "中医教育的对象不是「学生」，是五类先验不同的人",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-e72",
-        "title": "学科建设与人才培养",
+        "title": "学科强不等于学生会看病：这是两本账",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-e73",
-        "title": "课程与教学组织",
+        "title": "课程表是一份资源分配文件，不是一个知识清单",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-e74",
-        "title": "师资与培训体系",
+        "title": "会看病与会讲课是两种手艺，多数老师只被训练过其中一种",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-e75",
-        "title": "教学评价与质量保障",
+        "title": "考什么就学什么：选择题考不出会看病的人",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-e76",
-        "title": "临床教学与师承",
+        "title": "师承给的是手感，院校给的是边界，谁也替代不了谁",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-e77",
-        "title": "中医教育标准化与认证",
+        "title": "认证保证的是底线，不是水平",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-e78",
-        "title": "教育研究与改革趋势",
+        "title": "教育改革的证据链很短：多数「有效」只测了满意度",
         "status": "🚧"
       }
     ],
@@ -17207,49 +17235,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-z81",
-        "title": "健康服务的供给主体",
+        "title": "供给主体的分界，在能承担什么责任，不在挂了什么牌子",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-z82",
-        "title": "分级诊疗与服务体系",
+        "title": "分级不是排座次，是让每一段服务有人接得住",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-z83",
-        "title": "基层与社区健康服务",
+        "title": "基层的本事，是把一次就诊变成一段随访",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-z84",
-        "title": "公共卫生服务管理",
+        "title": "公共卫生的产出，是“没有发生的事”",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-z85",
-        "title": "服务质量与绩效评价",
+        "title": "质量的底线是可比，绩效的前提是可归因",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-z86",
-        "title": "支付方式与激励机制",
+        "title": "支付方式决定行为，比任何动员都硬",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-z87",
-        "title": "健康服务改革与政策",
+        "title": "改革的难点不在出政策，在最后一公里不改形",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-z88",
-        "title": "多部门协同与应急",
+        "title": "协同不是开会，是把责任写进同一张流程单",
         "status": "🚧"
       }
     ],
@@ -17257,49 +17285,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-e1",
-        "title": "导论：健康与经济",
+        "title": "健康是目的，费用是代价：把两者混成一个数，账就永远算不清",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-e2",
-        "title": "需求与供给",
+        "title": "医疗的需求是被供给方写出来的：「物多则贱」在这里失效",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-e3",
-        "title": "市场与政府作用",
+        "title": "市场能给服务定价，但不能替社会决定谁先得到",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-e4",
-        "title": "筹资与卫生总费用",
+        "title": "钱从哪里来，决定谁能用：筹资结构比筹资总量更能解释可及性",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-e5",
-        "title": "医疗保险的经济学分析",
+        "title": "保险卖的是确定性，赔的是激励：逆选择与道德风险是一枚硬币的两面",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-e6",
-        "title": "价格与成本核算",
+        "title": "价格不是标价，是行为指令：换个支付方式，同一台手术会有两种做法",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-e7",
-        "title": "经济学评价与药物经济学",
+        "title": "「值不值」是一个比值加一个预算：成本效果再好，也可能买不起",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-e8",
-        "title": "资源配置·政策·中医与智能",
+        "title": "控费的最后一步不是省钱，是把钱从低价值处搬到高价值处",
         "status": "🚧"
       }
     ],
@@ -17307,49 +17335,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-i1",
-        "title": "导论与数据资源",
+        "title": "导论与数据资源：数据不是资产，被追责的数据才是",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-i2",
-        "title": "标准编码与法规伦理",
+        "title": "标准编码与法规伦理：编码错一位，统计算的是另一个病人",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-i3",
-        "title": "系统与电子病历",
+        "title": "系统与电子病历：HIS、EMR、LIS 不是三套软件，是三条责任链",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-i4",
-        "title": "信息安全管理",
+        "title": "信息安全管理：权限不是一张表，是一条能被审计的证据链",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-i5",
-        "title": "技术与资源检索",
+        "title": "技术与资源检索：检索能力决定你能看见多少证据",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-i6",
-        "title": "统计分析与病案",
+        "title": "统计分析与病案：首页是一张会被结算和评审同时读的表",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-i7",
-        "title": "项目管理与决策支持",
+        "title": "项目管理与决策支持：CDS 接在哪一步，决定它是提醒还是噪音",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-i8",
-        "title": "规划·中医信息化·智慧医疗",
+        "title": "规划与智慧医疗：规划不是买系统，是决定五年后哪些数据还在",
         "status": "🚧"
       }
     ],
@@ -17357,49 +17385,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-z111",
-        "title": "医院信息系统的构成",
+        "title": "医院信息系统的构成：系统不是模块清单，是记录的分布图",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-z112",
-        "title": "标准、编码与互操作",
+        "title": "标准、编码与互操作：编码少一位，整组就匹配不上",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-z113",
-        "title": "电子病历与临床信息系统",
+        "title": "电子病历与临床信息系统：写得快不等于写得对，签了名才算写完",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-z114",
-        "title": "病案管理与首页数据",
+        "title": "病案首页与主诊断：一个诊断选错，整组都错",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-z115",
-        "title": "数据质量与统计上报",
+        "title": "数据质量与统计上报：同一个数，三个分母",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-z116",
-        "title": "信息安全与权限",
+        "title": "信息安全与权限：能登录的人越多，签名越不值钱",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-z117",
-        "title": "项目实施与验收",
+        "title": "项目实施与验收：验收单上不能写「满足临床需要」",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-z118",
-        "title": "智慧医院与规划",
+        "title": "智慧医院与规划：评级是体检报告，不是成绩单",
         "status": "🚧"
       }
     ],
@@ -17407,49 +17435,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-z121",
-        "title": "标准化的对象：从术语到数据元",
+        "title": "标准化的第一刀，切在名词上",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-z122",
-        "title": "标准体系与层级",
+        "title": "标准的分量，取决于它站在哪一层",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-z123",
-        "title": "编码与分类",
+        "title": "编码错一位，临床上就是另一味药",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-z124",
-        "title": "数据元与元数据",
+        "title": "标准能不能用，看它能否被一条检测记录复现",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-z125",
-        "title": "知识组织与本体",
+        "title": "一张古方的标准，卡在「一两」是多少克",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-z126",
-        "title": "映射与对齐",
+        "title": "走出国门的标准，先要学会翻译自己",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-z127",
-        "title": "标准落地：系统与流程",
+        "title": "操作规范写在纸上，扎针的手不会自己变标准",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-z128",
-        "title": "标准评价与合规",
+        "title": "标准发出去不算完，要能算出它有没有用",
         "status": "🚧"
       }
     ],
@@ -17457,49 +17485,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-z131",
-        "title": "从临床问题到可检验假设",
+        "title": "好问题不是「某方有效吗」，而是能说出什么结果会让你认输",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-z132",
-        "title": "研究设计与对照",
+        "title": "设计不是越严格越好，是能答你那个问题的那个",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-z133",
-        "title": "抽样、样本量与测量",
+        "title": "样本量不是越多越好，是够看清你要看的那点差",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-z134",
-        "title": "偏倚与质量控制",
+        "title": "偏倚不是做错了，是把每一步都做对也还在",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-z135",
-        "title": "统计检验的选择",
+        "title": "结局选错，检验再对也答错了题",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-z136",
-        "title": "关联与回归模型",
+        "title": "回归不是「控制变量」，是把混杂摊在桌面上",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-z137",
-        "title": "多重比较与可复现",
+        "title": "二十个指标里总有一个 p<0.05，这不是发现",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-z138",
-        "title": "数据管理与项目执行",
+        "title": "方案书写在收第一例之前，因为收完之后它什么都改不了",
         "status": "🚧"
       }
     ],
@@ -17507,37 +17535,37 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-ip1",
-        "title": "知识产权的对象：从技术方案到权利",
+        "title": "一张方子不是一件财产，它是一束可以分开主张的权利",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-ip2",
-        "title": "中医药领域的知识产权形态",
+        "title": "中药的知识产权不是一个筐，是五种互不替代的保护",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-ip3",
-        "title": "专利：从发明到授权",
+        "title": "专利审查不问方子灵不灵，只问它是不是新的、难想到的、做得出的",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-ip4",
-        "title": "成果转化：从实验室到产品",
+        "title": "转化不是把专利卖出去，是把一段不确定的未来切成可交付的几段",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-ip5",
-        "title": "新兴技术与伦理：知识产权的前沿争议",
+        "title": "新技术的麻烦不在能不能申请，在申请下来算谁的",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-ip6",
-        "title": "侵权、许可纠纷与救济",
+        "title": "侵权判定不比两个方子像不像，比权利要求覆盖不覆盖",
         "status": "🚧"
       }
     ],
@@ -17545,37 +17573,37 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-e151",
-        "title": "中医走出去的历史脉络",
+        "title": "中医走出去，走的不是文化，是接口",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-e152",
-        "title": "国际标准与术语对接",
+        "title": "名字定不下来，课就讲不下去",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-e153",
-        "title": "海外课程与教材",
+        "title": "课程被压缩时，先死的是临床",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-e154",
-        "title": "学历互认与执业准入",
+        "title": "学历认的是「学过」，执照认的是「能用」",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-e155",
-        "title": "国际合作办学与机构",
+        "title": "合作办学签的是协议，赌的是师资与病床",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-e156",
-        "title": "跨文化传播的边界",
+        "title": "学生记住的是比喻，用的是比喻",
         "status": "🚧"
       }
     ],
@@ -17583,109 +17611,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-g1",
-        "title": "公共管理学导论",
+        "title": "公共管理的第一问不是效率，是授权",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-g2",
-        "title": "公共管理的理论发展",
+        "title": "每一代理论都在修上一代的偏",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-g3",
-        "title": "公共组织",
+        "title": "组织图上是方块，运行中是接口",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-g4",
-        "title": "政府职能与政府治理",
+        "title": "政府的手伸到哪里，取决于失灵在哪里",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-g5",
-        "title": "公共政策分析",
+        "title": "政策分析不是写文件，是把取舍摆上桌",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-g6",
-        "title": "公共领导与公共决策",
+        "title": "决策的难处不是选对，是让人相信选得对",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-g7",
-        "title": "公共部门人力资源管理",
+        "title": "编制是硬的，激励是软的，人夹在中间",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-g8",
-        "title": "公共财政与预算管理",
+        "title": "预算是用数字写成的政策",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-g9",
-        "title": "公共服务供给与管理",
+        "title": "可及性不是距离，是最后一公里愿不愿意走",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-g10",
-        "title": "公共部门绩效管理",
+        "title": "能被考核的部分，总比重要的部分小",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-g11",
-        "title": "公共危机与应急管理",
+        "title": "应急能力不在响应速度，在平时攒下的余量",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-g12",
-        "title": "数字政府与电子政务",
+        "title": "数字化省下的是跑腿，不是判断",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-g13",
-        "title": "公共管理伦理与责任",
+        "title": "责任不是态度，是结构留给人的选择空间",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-g14",
-        "title": "卫生事业管理",
+        "title": "卫生系统的三个目标，落地时是三本具体的账",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-g15",
-        "title": "中医药治理与政策",
+        "title": "中医药治理难在标准与证据之间找位置",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-g16",
-        "title": "基层治理与社区健康服务",
+        "title": "基层的承载力，等于被交办的事项除以可用的人",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-g17",
-        "title": "公共管理的国际比较与改革趋势",
+        "title": "比较不是找最好的制度，是找条件的对应关系",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-g18",
-        "title": "公共管理中的智能技术应用与AI教学平台",
+        "title": "智能系统能替代判断的搬运，替代不了判断的承担",
         "status": "🚧"
       }
     ],
@@ -17693,109 +17721,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-m1",
-        "title": "管理与管理学",
+        "title": "管理不是把事做完，是让同样的力气换出不同的结果",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-m2",
-        "title": "管理理论的形成与发展",
+        "title": "每一种\"最优解\"都是它那个年代的应急方案",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-m3",
-        "title": "管理的基本原理与方法",
+        "title": "原理用来排除错误做法，方法才用来动手",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-m4",
-        "title": "决策",
+        "title": "决策不是选最好的，是在信息不够时选一个能交代的",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-m5",
-        "title": "计划",
+        "title": "计划不是把目标写下来，是把目标拆到有人签字",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-m6",
-        "title": "战略管理",
+        "title": "战略不是决定做什么，是决定不做什么",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-m7",
-        "title": "组织设计与组织结构",
+        "title": "组织图上的每一根线，都要有人能被叫来问",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-m8",
-        "title": "组织变革与组织文化",
+        "title": "变革死在半路，文化活在细节",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-m9",
-        "title": "人力资源管理",
+        "title": "人力不是成本项，是唯一会自己决定出多少力的资源",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-m10",
-        "title": "领导",
+        "title": "领导不是让人听话，是让人在没有你的时候也肯多走一步",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-m11",
-        "title": "激励",
+        "title": "钱买到的是不反对，不是多做一点",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-m12",
-        "title": "沟通",
+        "title": "说过了不等于传到了，传到了不等于懂了",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-m13",
-        "title": "控制",
+        "title": "控制不是抓住谁的错，是让偏差在还来得及的时候出现",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-m14",
-        "title": "管理创新与创业",
+        "title": "创新不是想出新点子，是让新点子活着走出实验室",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-m15",
-        "title": "管理伦理与社会责任",
+        "title": "伦理不是不做坏事，是在没人看见且有好处时还选择不做",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-m16",
-        "title": "管理信息系统与数字化管理",
+        "title": "信息化不是把纸搬到屏幕上，是让决策在数据到达的地方发生",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-m17",
-        "title": "中医药机构管理（中医专题）",
+        "title": "中医院的难题不是要不要特色，是特色怎么被计量和付钱",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-m18",
-        "title": "管理学基础与AI教学平台",
+        "title": "这门课真正的作业，是回去改一件你科室里的事",
         "status": "🚧"
       }
     ],
@@ -17803,109 +17831,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-p1",
-        "title": "管理心理学导论",
+        "title": "管理心理学测的不是人心，是判断的误差",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-p2",
-        "title": "管理心理学的理论源流",
+        "title": "霍桑实验真正证明的，是「被观察」本身会改变结果",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-p3",
-        "title": "人性假设与管理",
+        "title": "每一种人性假设，都是一份事先写好的免责声明",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-p4",
-        "title": "个体心理特征与差异",
+        "title": "选人不是挑最好的，是挑最不容易在这个岗位上失败的",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-p5",
-        "title": "知觉、归因与印象管理",
+        "title": "绩效评价评的从来不是绩效，是主管对绩效的记忆与解释",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-p6",
-        "title": "态度、价值观与工作满意度",
+        "title": "满意度问卷测的是填表那一刻的情绪，不是员工会不会走",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-p7",
-        "title": "情绪、情感与情绪劳动",
+        "title": "要求员工「态度好」，是把一项成本从患者转给了员工",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-p8",
-        "title": "需要、动机与激励",
+        "title": "激励失效，几乎总是三处之一断了：不信、不值、不公平",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-p9",
-        "title": "群体心理与群体行为",
+        "title": "团队不是人凑齐就有战斗力，群体先生产出来的是一套规范",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-p10",
-        "title": "团队建设与团队管理",
+        "title": "团队不是把能人凑齐，是把互依关系设计出来",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-p11",
-        "title": "沟通与人际关系",
+        "title": "话没有传丢，是一层层被筛掉了",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-p12",
-        "title": "冲突、谈判与组织政治",
+        "title": "冲突不需要消灭，需要定价",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-p13",
-        "title": "领导心理与领导力",
+        "title": "领导力不是一种人格，是一组被情境激活的关系",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-p14",
-        "title": "组织心理与组织文化",
+        "title": "文化不是墙上的标语，是没人监督时默认的那套做法",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-p15",
-        "title": "职业压力与员工心理健康",
+        "title": "压力不是活多，是要得多、能控的少",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-p16",
-        "title": "员工帮助计划与心理服务",
+        "title": "心理服务的瓶颈不在咨询室，在门口",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-p17",
-        "title": "工作设计、职业发展与变革心理",
+        "title": "人抗拒的不是变化，是变化里的损失",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-p18",
-        "title": "管理心理学与AI教学平台",
+        "title": "平台算得出相关，算不出该由谁负责",
         "status": "🚧"
       }
     ],
@@ -17913,109 +17941,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-z191",
-        "title": "社会医学的对象与方法",
+        "title": "医学看得见病，看不见人是怎么病的",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-z192",
-        "title": "健康的社会决定因素",
+        "title": "寿命的差距不在基因里，在地址里",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-z193",
-        "title": "社会分层与健康公平",
+        "title": "公平不是平均：可避免的差异才叫不公平",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-z194",
-        "title": "行为、生活方式与健康",
+        "title": "行为不是选择：为什么「管住嘴迈开腿」劝不动人",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-z195",
-        "title": "卫生服务体系与社会",
+        "title": "需要、需求与利用：三个词不是一回事",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-z196",
-        "title": "基层与社区卫生",
+        "title": "社区卫生不是小医院：把家庭当作服务单元",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-z197",
-        "title": "医疗保障与社会救助",
+        "title": "医保保的是钱，救助保的是人",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-z198",
-        "title": "卫生政策的社会过程",
+        "title": "政策不是文件：从议程到街头的一千次改写",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-z199",
-        "title": "卫生资源与公平配置",
+        "title": "资源不会自己走到需要的地方",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-z1910",
-        "title": "健康测量的指标体系",
+        "title": "尺子只量得出它打算量的那部分",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-z1911",
-        "title": "调查设计与抽样",
+        "title": "样本不是缩小版的人群",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-z1912",
-        "title": "生命统计与疾病统计",
+        "title": "统计口径是制度的产物，不是自然的分类",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-z1913",
-        "title": "评价方法与经济学视角",
+        "title": "评价不是打分，是排除别的解释",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-z1914",
-        "title": "健康促进与干预",
+        "title": "劝是最后手段，不是第一手段",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-z1915",
-        "title": "社区干预的组织",
+        "title": "社区不是一块地，是一组可以调用的关系",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-z1916",
-        "title": "弱势人群与健康照护",
+        "title": "弱势不是标签，是一组可以列举的缺口",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-z1917",
-        "title": "社会医学与中医",
+        "title": "中医的社会性不在文化里，在诊疗结构里",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-z1918",
-        "title": "治理与改革趋势",
+        "title": "改革的方向由约束决定，不由理念决定",
         "status": "🚧"
       }
     ],
@@ -18023,109 +18051,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-f1",
-        "title": "卫生法学导论",
+        "title": "一次准入要问四遍：卫生法的渊源不是书目，是顺位",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-f2",
-        "title": "卫生法的基本原则与法律关系",
+        "title": "名不正则责不归：卫生法律关系的三要素与主体资格",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-f3",
-        "title": "卫生立法与卫生法治",
+        "title": "规则不是写出来的，是审出来的",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-f4",
-        "title": "卫生行政与行政执法",
+        "title": "管得住权力的不是权限，是记录：卫生监督与行政处罚",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-f5",
-        "title": "医疗机构管理法律制度",
+        "title": "一张证照定三件事：医疗机构的准入、范围与责任",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-f6",
-        "title": "卫生技术人员管理法律制度",
+        "title": "有权才敢救：医师的执业权利是一组授权，义务是一组「亲自」",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-f7",
-        "title": "医疗行为与医疗质量安全法律制度",
+        "title": "同意不是签字：告知的三个层次与同意的四种失效",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-f8",
-        "title": "医疗纠纷预防与处理法律制度",
+        "title": "谁主张谁举证，可病历在谁手里",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-f9",
-        "title": "药品管理法律制度",
+        "title": "药有两副面孔：疗效与风险共用一条审批线",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-f10",
-        "title": "医疗器械、化妆品与消毒产品管理法律制度",
+        "title": "器械不分贵贱，只分风险：一条分级线怎么管住三类产品",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-f11",
-        "title": "公共卫生与疾病预防控制法律制度",
+        "title": "防疫是拿自由换时间：四种措施强度与一条比例线",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-f12",
-        "title": "基本医疗卫生与健康促进法律制度",
+        "title": "「基本」是一个财政词：服务清单的边界怎么划",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-f13",
-        "title": "医疗保障与医疗救助法律制度",
+        "title": "医保不是报销比例，是一套议价机制",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-f14",
-        "title": "中医药法律制度",
+        "title": "中医的合法性不在疗效，在资格与方法说没说清",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-f15",
-        "title": "食品安全与环境卫生法律制度",
+        "title": "安全的标准是「不得含有」，不是「检出即有害」",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-f16",
-        "title": "生命伦理与新兴技术法律问题",
+        "title": "身体能给出什么：三种不可买卖与一个同意例外",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-f17",
-        "title": "卫生法律监督与权益救济",
+        "title": "救济不是纠正错误，是发一把能开门的钥匙",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-f18",
-        "title": "卫生法学与 tcmP 智能教学平台",
+        "title": "判据能教，条文不能教：十八门知识怎么压成一张调用图",
         "status": "🚧"
       }
     ],
@@ -18133,109 +18161,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-z211",
-        "title": "伦理学的对象：从德性到规范",
+        "title": "从「这人靠得住」到「这事说得通」：伦理判断的两次转身",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-z212",
-        "title": "生命伦理四原则",
+        "title": "四条原则不是四把尺：冲突时谁让位，凭什么",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-z213",
-        "title": "知情同意与代理决定",
+        "title": "同意能力不是一张诊断书：谁有资格替谁决定",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-z214",
-        "title": "医患关系与告知义务",
+        "title": "信任不能立法：医患关系的四种模型与告知的边界",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-z215",
-        "title": "隐私与保密",
+        "title": "秘密是有重量的：保密义务的四种例外与「最小必要」",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-z216",
-        "title": "医疗差错与道歉",
+        "title": "道歉不是认输：差错的三层结构与披露的制度前提",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-z217",
-        "title": "资源分配与公平",
+        "title": "谁先上这台机器：分配正义的四把尺与器官的特殊性",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-z218",
-        "title": "研究伦理与伦理审查",
+        "title": "审查不是盖章：研究伦理的七项判据与四个失效点",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-z219",
-        "title": "受试者保护与风险最小化",
+        "title": "谁最容易被敲开房门：脆弱性的两种来源与风险最小化",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-z2110",
-        "title": "动物与替代方法",
+        "title": "一只兔子的两笔账：动物实验的伦理成本该记在谁头上",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-z2111",
-        "title": "利益冲突与科研诚信",
+        "title": "我的数据是真的：利益冲突为什么不是一句道德指控",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-z2112",
-        "title": "健康数据伦理",
+        "title": "删掉姓名之后：健康数据的三次用途漂移",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-z2113",
-        "title": "算法与 AI 伦理",
+        "title": "它没有出错：算法在临床的三处不可见",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-z2114",
-        "title": "中医伦理传统",
+        "title": "被挂在墙上的那一段：《大医精诚》里被漏掉的一半",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-z2115",
-        "title": "机构伦理委员会",
+        "title": "十一个人关起门来：伦理委员会凭什么替别人作决定",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-z2116",
-        "title": "伦理与法律的边界",
+        "title": "一切合规：两道栅栏之间的那条缝",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-z2117",
-        "title": "救济与责任",
+        "title": "赔了五万六：责任的四层与救济的四种形态",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-z2118",
-        "title": "伦理治理趋势",
+        "title": "流程没错，只是过期了：伦理治理正在换的那套工具",
         "status": "🚧"
       }
     ],
@@ -18243,109 +18271,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-r1",
-        "title": "医药人力资源管理导论",
+        "title": "医药人力管理的难点不在发钱，在三条执业轨道不能混着管",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-r2",
-        "title": "医药行业人力资源规划",
+        "title": "人力规划不是算总人数，是算最小安全班组的缺口",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-r3",
-        "title": "医药岗位分析与职位设计",
+        "title": "岗位说明书不是职责清单，是判断标准",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-r4",
-        "title": "医药人才招聘与优化配置",
+        "title": "医师、护士、药师不能用同一把尺子招",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-r5",
-        "title": "医药人才培养与开发",
+        "title": "培训的产出不是学时，是能独立做的那件事",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-r6",
-        "title": "医药人才评价与胜任力管理",
+        "title": "评价的信度不在表格精细，在评价人有没有见过他干活",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-r7",
-        "title": "医药绩效管理与考核",
+        "title": "绩效方案考的是可测量的部分，漏掉的会以别的方式回来",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-r8",
-        "title": "医药薪酬管理与激励",
+        "title": "夜班补贴的关键不是数额，是它承认了什么",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-r9",
-        "title": "医药职业发展与人才梯队建设",
+        "title": "留人不是加工资，是把\"看不到成长\"变成看得见的台阶",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-r10",
-        "title": "医药劳动关系与用工合规",
+        "title": "用工合规的成本不在赔钱，在「值班」这两个字没有定义",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-r11",
-        "title": "医药人才流动与配置优化",
+        "title": "人才流动的问题不是流失率高，是内部流动比外部流动还慢",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-r12",
-        "title": "医药人力资源信息化与数据治理",
+        "title": "人事系统的失败不在功能少，在三张表对不上",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-r13",
-        "title": "中医药人才传承与培养",
+        "title": "传承断的不是名师，是「跟师」没有写进任何一张考核表",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-r14",
-        "title": "医药企业文化与职业道德",
+        "title": "文化的载体不是标语，是遇到利益冲突时默认怎么做",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-r15",
-        "title": "医药行业人力资源合规与监管",
+        "title": "监管查的不是制度文本，是「人、证、岗、记录」能不能对上",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-r16",
-        "title": "医院与医药企业人力资源管理实践",
+        "title": "医院管编制与业务量，药企管管线与弹性，能互相借的只有三件事",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-r17",
-        "title": "医药人力资源管理国际比较与趋势",
+        "title": "国际比较的用处不是判断谁更好，是看清同一工具换个约束就失效",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-r18",
-        "title": "医药人力资源管理与 tcmP 智能教学平台",
+        "title": "平台能教会人怎么算，教不了人怎么在排班表前做决定",
         "status": "🚧"
       }
     ],
@@ -18353,109 +18381,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-k1",
-        "title": "医院会计与财务管理概论",
+        "title": "医院没有利润，只有结余：把医院当企业算，第一页就错了",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-k2",
-        "title": "医院财务管理的制度环境",
+        "title": "一台设备要过三本账：制度环境决定了医院财务的算法",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-k3",
-        "title": "医院会计基础",
+        "title": "一笔业务两张凭证：平行记账不是繁琐，是把两种真相同时留住",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-k4",
-        "title": "医院财务报告与财务分析",
+        "title": "三张表要一起读：单看一张，结论必然被它骗",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-k5",
-        "title": "医院资产的核算与管理",
+        "title": "两笔最贵的资产都不显眼：库房里的周转与账上的年限",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-k6",
-        "title": "医院负债与净资产的核算与管理",
+        "title": "家底分两半：借来的与攒下的，混着看就会把负债能力当实力",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-k7",
-        "title": "医院收入、费用与结余的核算",
+        "title": "收入的确认与钱的到账，永远差一个结算周期",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-k8",
-        "title": "医院成本核算",
+        "title": "成本核算的本质是分摊：每一次分摊都是一次归因假设",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-k9",
-        "title": "医院成本分析与成本管控",
+        "title": "多做不一定多赚：支付标准固定之后，成本—量—本全反过来了",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-k10",
-        "title": "医院预算管理",
+        "title": "预算不是预测：一份签了字的承诺，和 4,420 万元的编制分歧",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-k11",
-        "title": "医院资金管理与筹资投资",
+        "title": "账上有钱，账上没钱：结余是意见，现金流是事实",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-k12",
-        "title": "医院内部控制与财务风险管理",
+        "title": "内控不是多一道签字：让不该由同一个人做的事，真的分开",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-k13",
-        "title": "医院绩效管理与成本效益分析",
+        "title": "权重就是政策：排名翻转只需要改一个百分数",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-k14",
-        "title": "医院财务监督与内部审计",
+        "title": "整改率 61.6%：审计报告不是终点，闭环才是",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-k15",
-        "title": "医院财务信息化与智能财务",
+        "title": "六条提示里五条是白看的：智能财务的边界在原始凭据",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-k16",
-        "title": "医院财务数据治理与决策支持",
+        "title": "一个数三个答案：床位使用率的 75.7%、71.9% 与 71.4%",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-k17",
-        "title": "医院财务管理的改革与发展",
+        "title": "一笔 800 万元的设备：财务账上结余 720 万元，预算账上结余 0 元",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-k18",
-        "title": "医院会计与财务管理与 tcmP 平台",
+        "title": "门禁查得出形式，查不出判断：课程与平台的接口是可复算",
         "status": "🚧"
       }
     ],
@@ -18463,109 +18491,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-j1",
-        "title": "中医健康管理导论",
+        "title": "健康管理卖的不是道理，是一个能被复评的闭环",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-j2",
-        "title": "中医健康管理的理论基础",
+        "title": "理论不能生成分层，就只是修辞",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-j3",
-        "title": "健康状态辨识与评估",
+        "title": "辨识能不能用，取决于两个人会不会得出同一个结论",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-j4",
-        "title": "健康档案与信息管理",
+        "title": "档案的价值不在记得多，在换个人也能接着用",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-j5",
-        "title": "中医健康干预原则与策略",
+        "title": "干预方案不是最优解，是这个人做得到的那一版",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-j6",
-        "title": "饮食与药膳食养管理",
+        "title": "食养不看你懂多少，看这套吃法能不能吃满一年",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-j7",
-        "title": "运动导引与经络调养",
+        "title": "运动调养的难点在量，风险在禁忌",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-j8",
-        "title": "情志调摄与睡眠管理",
+        "title": "这一个领域，红线要比方法先讲",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-j9",
-        "title": "起居与四时养生管理",
+        "title": "起居是最便宜的干预，也是最难维持的干预",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-j10",
-        "title": "常见健康问题的中医健康管理",
+        "title": "常见健康问题管理的难点不在病种多，在分段",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-j11",
-        "title": "中医健康管理服务流程",
+        "title": "流程的价值不在每步留痕，在下一步不必重新问一遍",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-j12",
-        "title": "健康教育与健康促进",
+        "title": "科普的完成，不是讲清楚了，是回去改了一处",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-j13",
-        "title": "中医健康管理服务管理",
+        "title": "服务质量不是管出来的态度，是被制度固定的下限",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-j14",
-        "title": "健康管理与多学科协作",
+        "title": "协作的难点不是请不到专家，是没人对整个的人负责",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-j15",
-        "title": "健康管理与健康产业",
+        "title": "产业的问题不是需求不足，是没人愿为「没发生的事」付钱",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-j16",
-        "title": "智慧健康管理与数字技术",
+        "title": "设备测的是信号，管理要的是判断，中间那一步没有自动化",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-j17",
-        "title": "中医健康管理的研究与实践",
+        "title": "数据能告诉你发生了什么，不能告诉你是不是你干的",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-j18",
-        "title": "中医健康管理与 tcmP 平台",
+        "title": "平台的价值不在功能多，在换个人接手时口径不变",
         "status": "🚧"
       }
     ],
@@ -18649,49 +18677,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-g1",
-        "title": "什么是医学人工智能",
+        "title": "医学人工智能的边界，写在「谁签字」上",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-g2",
-        "title": "中医信息化的来路",
+        "title": "中医信息化的来路：先有编目，才有编码，最后才有模型",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-g3",
-        "title": "从可穿戴到四诊仪",
+        "title": "从可穿戴到四诊仪：换的是传感器，不是理论",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-g4",
-        "title": "系统的形状：从 HIS 到智能体",
+        "title": "系统的形状由写权限决定，不由技术栈决定",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-g5",
-        "title": "知识怎么放进机器",
+        "title": "知识进机器有四条路，最像捷径的那条最贵",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-g6",
-        "title": "统计、数据与模型的边界",
+        "title": "敏感性是模型的属性，阳性预测值不是",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-g7",
-        "title": "伦理、隐私与责任",
+        "title": "伦理不进日志，就等于没进系统",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-g8",
-        "title": "学科地图与学习方法",
+        "title": "学科地图画的是能力坐标，不是知识目录",
         "status": "🚧"
       }
     ],
@@ -18699,61 +18727,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-x1",
-        "title": "卫生信息系统概论",
+        "title": "架构不是一张图，是一条能被人接手的依赖方向",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-x2",
-        "title": "电子病历与临床信息系统",
+        "title": "接口不是函数签名，是一份能单独验收的文档",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-x3",
-        "title": "公共卫生信息系统",
+        "title": "模块按变化频率切，不按组织架构切",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-x4",
-        "title": "信息技术基础与新兴技术",
+        "title": "可扩展性不是预留接口，是把变化关进一个盒子",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-x5",
-        "title": "卫生信息资源的组织与检索",
+        "title": "数据模型的第一版定不了终身，改动方式才定终身",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-x6",
-        "title": "卫生信息项目管理",
+        "title": "没写下来的决策，等于没做过决策",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-x7",
-        "title": "卫生信息分析与决策支持",
+        "title": "指标算错不会报错，只会安静地错",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-x8",
-        "title": "卫生信息化规划与建设",
+        "title": "上线不是部署的终点，回滚能力才是",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-x9",
-        "title": "中医药信息化",
+        "title": "证候不是一个标签，是一次可以拆开的判断",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-x10",
-        "title": "智慧医疗与数字健康",
+        "title": "新能力不是替换旧系统，是先绕过它再说",
         "status": "🚧"
       }
     ],
@@ -18761,37 +18789,37 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-q1",
-        "title": "绪论——从器械到可穿戴：中医／学科定位与认知地图：120 ／可感测物理量四元：光子 · ／中医智能仪器的分类与可穿戴形",
+        "title": "「指下难明」不是修辞：仪器要解决的是留证，不是替代手指",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-q2",
-        "title": "生理信号通道／数据标准与互操作／信号质量与设备质控／Holter 心律检测与 H／脉象与舌象的客观化／多模态融合与四诊合参",
+        "title": "结论的上限由信号质量封顶：一次两百倍的压缩，误差不会自己报告",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-q3",
-        "title": "中医药通用六快：吃 _ 喝 ／健康自动评价：从可穿戴数据到／临床应用与可穿戴场景／智能中医学：概念与「象—素—",
+        "title": "十问筛成六快：一次由「可测性」主导的裁剪",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-q4",
-        "title": "智能四诊数据采集（与四元 _／智能中医诊疗标准化：数据 ·／典型应用：中医慢性疼痛智能诊／智慧中医学：内涵、任务与教材／智慧中医伦理要求与基本条件",
+        "title": "「诊法常以平旦」：条件不写进元数据，这次采集就等于没做",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-q5",
-        "title": "智能装备 · 扩展现实 · ／智慧中医综合实训：设备清单与／伦理、安全与展望（含实验）／光遗传学与神经调控（2026",
+        "title": "从样机到器械：四道门，以及一道不该打开的门",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-q6",
-        "title": "科技布局与未来（含实验）／发展前景与展望（含实验）／实验（扩展：四元捕获 · 六",
+        "title": "瓶颈不在传感器上：从「能测」到「能负责」",
         "status": "🚧"
       }
     ],
@@ -18799,61 +18827,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-nlp1",
-        "title": "中医文本从哪来：语料、文体与噪声",
+        "title": "中医语料不是一种文本，是四种文本挤在同一列",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-nlp2",
-        "title": "分词、术语与规范化",
+        "title": "分词切错的不是词，是概念边界",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-nlp3",
-        "title": "语言模型与概率推断",
+        "title": "n-gram 算得出下一个字，算不出这句话是谁写的",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-nlp4",
-        "title": "文本分类：从词袋到判别",
+        "title": "词袋分得开科室，分不开证型",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-nlp5",
-        "title": "序列标注与标注成本",
+        "title": "标注不是把词圈出来，是把边界争议写下来",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-nlp6",
-        "title": "检索与排序",
+        "title": "检索的失败不在召回率，在找回来的那条没有出处",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-nlp7",
-        "title": "实体与关系抽取",
+        "title": "抽到「麻黄」，不等于抽到「麻黄汤去麻黄」",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-nlp8",
-        "title": "规则与知识约束",
+        "title": "规则不是模型的补丁，是模型的天花板",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-nlp9",
-        "title": "评测：精确率、召回率与人工一致性",
+        "title": "F1 高不等于抽得对，可能只是学会了标注员的习惯",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-nlp10",
-        "title": "落地边界：能抽不能断",
+        "title": "抽得出「舌红苔黄」，断不出「此为热证」",
         "status": "🚧"
       }
     ],
@@ -18861,37 +18889,37 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-j1",
-        "title": "知识组织（第 1 段）",
+        "title": "三元组答得出「谁和谁有关」，答不出「先学谁」",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-j2",
-        "title": "知识组织（第 2 段）",
+        "title": "本体的最底层不该是「学科」，而该是「共祖」",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-j3",
-        "title": "知识组织（第 3 段）",
+        "title": "六类边撑起半张中医图，但两套坐标系不能合并",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-j4",
-        "title": "知识组织（第 4 段）",
+        "title": "一棵树值不值钱，取决于它能不能被重跑出来",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-j5",
-        "title": "知识组织（第 5 段）",
+        "title": "「消渴」「糖尿病」「E11」：三个名字都不算错，但系统只认一个",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-j6",
-        "title": "知识组织（第 6 段）",
+        "title": "「恶寒重、发热轻、无汗」有几种存法，只有一种能算",
         "status": "🚧"
       }
     ],
@@ -18899,61 +18927,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xingshihua-guize",
-        "title": "辨证的形式化：从规则到概率",
+        "title": "辨证算不出来，多半是「证」先没写清楚",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-caiji-xindu",
-        "title": "症状采集的界面与信度",
+        "title": "采集界面决定了证候能算到多细",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-guize-yinqing",
-        "title": "规则引擎与专家系统",
+        "title": "规则引擎的天花板，是它写不出的那条例外",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-beiyesi-tuili",
-        "title": "贝叶斯网络与概率推理",
+        "title": "贝叶斯的先验，就是医者没写出来的那部分经验",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-qianru-biaoshi",
-        "title": "症状—证候的嵌入表示",
+        "title": "向量能算出「像」，算不出「为什么是证」",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-duozheng-shuchu",
-        "title": "多证并存的输出设计",
+        "title": "证候不是一道单选题，但系统必须给出一个答案",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-yizhixing-pinggu",
-        "title": "与医生诊断的一致性评估",
+        "title": "kappa 高不代表系统对，只代表它像那位医生",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-anquan-daijia",
-        "title": "安全性：漏诊与误诊的代价",
+        "title": "漏诊与误诊的代价不对称，阈值就不该对称",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-jieshi-shuchu",
-        "title": "可解释输出的设计",
+        "title": "解释不是附赠的一段话，是可被反驳的证据链",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-shiyong-baogao",
-        "title": "临床试用的设计与报告",
+        "title": "试用不是演示，是事先写好的失败条件",
         "status": "🚧"
       }
     ],
@@ -18961,61 +18989,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-img1",
-        "title": "中医图像从哪来：舌象、面象与图谱",
+        "title": "图像从哪来，决定了你能问什么问题",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-img2",
-        "title": "采集与质控：光照、色卡与重复性",
+        "title": "采集没定，模型只是在背光",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-img3",
-        "title": "图像特征与降维",
+        "title": "特征不是越多越好，是越稳越好",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-img4",
-        "title": "卷积与表征学习",
+        "title": "卷积不是魔法，是「局部」加「共享」",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-img5",
-        "title": "分类任务的写法：样本、标签与代价",
+        "title": "把临床问题写成分类任务，一半的工作在写之前",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-img6",
-        "title": "类别不平衡与误判的代价",
+        "title": "不平衡不是数据问题，是决策问题",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-img7",
-        "title": "集成与稳健性",
+        "title": "集成降的是方差，不是无知",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-img8",
-        "title": "标注规范与判读一致性",
+        "title": "一致性不是算出来的，是谈出来的",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-img9",
-        "title": "可解释输出：图上看什么",
+        "title": "热力图讲的是模型在看哪，不是它为什么对",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-img10",
-        "title": "边界：影像不外流、结果不下诊断",
+        "title": "影像不出院，结论不下诊断",
         "status": "🚧"
       }
     ],
@@ -19023,61 +19051,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-m1",
-        "title": "脉象采集：物理基础、传感器与信号质控",
+        "title": "脉象采集：机器接得住波形，接不住「按到什么程度」",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-m2",
-        "title": "朴素贝叶斯与概率判据",
+        "title": "朴素贝叶斯：先验选错了，后验算得再准也是错的",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-m3",
-        "title": "特征选择与降维",
+        "title": "特征提取：可重复的不是特征，是提取它的那套流程",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-m4",
-        "title": "线性判别与基线模型",
+        "title": "浮沉迟数：把一个形容词切成两类，切点就是全部",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-m5",
-        "title": "决策树与可解释规则",
+        "title": "决策树：能背下来的规则，才是能进诊室的规则",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-m6",
-        "title": "神经网络与表征学习",
+        "title": "端到端学习：省掉特征工程，也省掉了「谁在负责」",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-m7",
-        "title": "核方法与支持向量机",
+        "title": "支持向量机：边界由最难分的那几个人决定",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-m8",
-        "title": "集成学习与稳健性",
+        "title": "集成学习：平均能降方差，但降不掉「大家都错在同一处」",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-m9",
-        "title": "聚类与无监督分型",
+        "title": "聚类：算法一定会给你几个簇，问题是谁来认领它们",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-m10",
-        "title": "模型评估与交叉验证",
+        "title": "评估：唯一能证伪前面九章的那一步，也是最容易被走过场的一步",
         "status": "🚧"
       }
     ],
@@ -19085,49 +19113,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-s1",
-        "title": "数据的搜集、整理与图表",
+        "title": "数据不是捡来的，是签过字的",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-s2",
-        "title": "集中趋势、离散程度与正态分布",
+        "title": "平均数是一句没说完的话",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-s3",
-        "title": "抽样误差、参数估计与假设检验",
+        "title": "p 值不是有效性的判决书",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-s4",
-        "title": "t 检验、方差分析与卡方检验",
+        "title": "三个检验的名字，不如它们假设的四句话",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-s5",
-        "title": "非参数检验与直线相关回归",
+        "title": "换成秩，你换掉的是「差多少」",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-s6",
-        "title": "多重回归与生存分析",
+        "title": "单因素显著、多因素消失，那不是数据变了",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-s7",
-        "title": "研究设计与诊断试验",
+        "title": "设计决定你能问什么问题",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-s8",
-        "title": "卫生统计、中医研究与智能分析",
+        "title": "聚类给出的是分组，不是证型",
         "status": "🚧"
       }
     ],
@@ -19135,73 +19163,73 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-llm1",
-        "title": "从统计学习到表示学习",
+        "title": "特征是人挑的，表示是数据自己长出来的",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-llm2",
-        "title": "神经网络：层、激活与反向传播",
+        "title": "深层网络不是更聪明，是把误差分配得更细",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-llm3",
-        "title": "表征与嵌入：把词与证候放进同一空间",
+        "title": "证候要能被检索，先得能被放进一个能算距离的空间",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-llm4",
-        "title": "概率图与序列生成",
+        "title": "模型说的每一句话，都是在一个概率分布上抽的一次签",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-llm5",
-        "title": "半监督与自训练：标注不够时怎么办",
+        "title": "标注不够时，最贵的不是算法，是判断哪些样本值得标",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-llm6",
-        "title": "泛化从哪来：计算学习理论的回答",
+        "title": "泛化不是模型的本事，是假设与问题凑巧对上了",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-llm7",
-        "title": "知识增强：规则与图谱怎么进模型",
+        "title": "知识不是喂给模型的背景，是它必须引用的证据",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-llm8",
-        "title": "强化学习与对齐",
+        "title": "对齐不是让模型更聪明，是让它在该停的地方停",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-llm9",
-        "title": "评估：基准分、幻觉与人工评",
+        "title": "测不出幻觉率的模型，不该进临床流程",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-llm10",
-        "title": "智能体的工具与检索",
+        "title": "智能体不是一个更会说话的模型，是一个会被工具纠正的循环",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-llm11",
-        "title": "部署与成本：算力、延迟与更新",
+        "title": "延迟与单价不是运维指标，是临床能不能用的门槛",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-llm12",
-        "title": "生成内容的责任与合规",
+        "title": "模型可以生成建议，但不能承担责任——所以它不能给建议",
         "status": "🚧"
       }
     ],
@@ -19209,49 +19237,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-rob1",
-        "title": "机器人是什么：从器械到执行体",
+        "title": "机器人不是更快的器械，是必须能停下来的执行体",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-rob2",
-        "title": "感知：传感器与信号",
+        "title": "感知的瓶颈不在传感器，在「信号到语义」的那一跳",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-rob3",
-        "title": "决策：强化学习与序贯选择",
+        "title": "决策的难点不是选最优，是错一步还能回头",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-rob4",
-        "title": "规划与规则约束",
+        "title": "接触式任务的规划，不能只算「怎么过去」，要算「怎么压下去」",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-rob5",
-        "title": "控制与反馈：线性模型的视角",
+        "title": "控制的好坏不看增益多高，看超调落在人体上是多少牛",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-rob6",
-        "title": "系统集成与接口",
+        "title": "集成不是把模块连起来，是把「同一个词的同一个意思」对齐",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-rob7",
-        "title": "安全与失效处理",
+        "title": "安全不是「不出故障」，是故障之后朝哪个方向倒",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-rob8",
-        "title": "中医场景：推拿、灸疗机器人的边界",
+        "title": "能交给机器的是「可参数化的部分」，不是「手法」",
         "status": "🚧"
       }
     ],
@@ -19259,49 +19287,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-dh1",
-        "title": "数字人体的概念与来源",
+        "title": "人体先被写成可寻址的结构，才谈得上被计算",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-dh2",
-        "title": "数据从哪里来：体表、影像与传感",
+        "title": "数据不是「采得越细越好」，而是「这一层问题配这一层数据」",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-dh3",
-        "title": "结构与层级：把人体写成知识组织",
+        "title": "人体不是一棵树，写成一棵树就得付代价",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-dh4",
-        "title": "建模：降维、嵌入与参数化",
+        "title": "建模是选择「忘掉什么」，不是追求「记住一切」",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-dh5",
-        "title": "人群分型与聚类",
+        "title": "聚类总能给你几个簇，问题是你敢不敢把它们当分型",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-dh6",
-        "title": "仿真结果怎么验：评估与对照",
+        "title": "收敛只证明方程被解对了，不证明方程是对的",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-dh7",
-        "title": "可视化与交互：系统怎么长",
+        "title": "可视化不是把模型画出来，而是把不确定度摆到台面上",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-dh8",
-        "title": "隐私：人体数据是敏感信息",
+        "title": "去掉了姓名，人体数据仍然是一个人",
         "status": "🚧"
       }
     ],
@@ -19309,61 +19337,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-u1",
-        "title": "多模态是什么：从四诊到设备",
+        "title": "四诊本来就是多模态，缺的不是传感器而是时钟",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-u2",
-        "title": "采集链路与质控",
+        "title": "采集链上掉一次时钟，融合就少一分可信",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-u3",
-        "title": "信号与图像的基本处理",
+        "title": "预处理不是洗干净，是翻译到同一把尺子上",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-u4",
-        "title": "特征、降维与表征",
+        "title": "特征是压缩，压缩必须留下判据",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-u5",
-        "title": "神经网络与表征学习",
+        "title": "学到的表征，未必是你想要的那个",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-u6",
-        "title": "融合策略与对齐",
+        "title": "融合的难点不在拼，而在对齐",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-u7",
-        "title": "无监督分型与聚类",
+        "title": "聚类出来的亚型，先问它稳不稳",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-u8",
-        "title": "结构化知识怎么接进来",
+        "title": "知识不是特征，是约束",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-u9",
-        "title": "评估：多模态是否真的更好",
+        "title": "说多模态更好之前，先让它可被反驳",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-u10",
-        "title": "隐私与合规（多源数据的红线）",
+        "title": "多源数据的红线，在合并之前就画好了",
         "status": "🚧"
       }
     ],
@@ -19371,49 +19399,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-e1",
-        "title": "信息标准与编码基础",
+        "title": "安全的第一道闸门不在防火墙，在字段定义",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-e2",
-        "title": "标准落地的合规要求",
+        "title": "标准落地不是文件对照，是把要求变成字段",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-e3",
-        "title": "政策法规与伦理总则",
+        "title": "合规的底线是分级，不是覆盖率",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-e4",
-        "title": "伦理审查与知情同意",
+        "title": "同意不是一次签字，是一段可撤回的授权",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-e5",
-        "title": "信息安全体系与风险",
+        "title": "风险不是漏洞清单，是可能性乘影响",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-e6",
-        "title": "访问控制与加密备份",
+        "title": "权限不是发给岗位的，是发给任务的",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-e7",
-        "title": "病案与医疗数据管理",
+        "title": "病案的每一次调阅都应当留下能追问的痕迹",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-e8",
-        "title": "数据治理与隐私保护",
+        "title": "去标识不是删掉姓名，是让组合失去分辨力",
         "status": "🚧"
       }
     ],
@@ -19421,49 +19449,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-ai1",
-        "title": "为什么医疗 AI 需要专门治理",
+        "title": "人会犹豫，模型不会：医疗 AI 要治理的正是这份「不犹豫」",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-ai2",
-        "title": "法规与标准的地基",
+        "title": "先写预期用途，再写模型：合规的顺序不能倒",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-ai3",
-        "title": "知情同意与伦理审查",
+        "title": "患者同意的是「被记录」，不是「被训练」",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-ai4",
-        "title": "敏感个人信息与脱敏",
+        "title": "脱敏不是删名字：可识别性藏在方剂与病程里",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-ai5",
-        "title": "安全体系与风险分级",
+        "title": "风险分级不是贴标签：每一级都要配一个「谁能停它」的人",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-ai6",
-        "title": "访问控制、加密与备份",
+        "title": "权限的最小化不是少给，是到期就收回",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-ai7",
-        "title": "模型审计与可追溯",
+        "title": "可解释不是画热图：审计要的是「这一次依据了哪几条记录」",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-ai8",
-        "title": "出问题谁负责：责任链与复盘",
+        "title": "「系统提示」不是免责声明：责任链的每一环都要有人签字",
         "status": "🚧"
       }
     ],
@@ -19471,97 +19499,97 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun",
-        "title": "绪论",
+        "title": "泛化不是模型的属性，是数据与假设的私下约定",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-moxing-pinggu-yu-xuanze",
-        "title": "模型评估与选择",
+        "title": "你报的那个数字，可能只是抽样噪声的形状",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-xianxing-moxing",
-        "title": "线性模型",
+        "title": "一条直线的全部本事，在于你把什么变量交给它",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-juece-shu",
-        "title": "决策树",
+        "title": "树的好坏不在深度，在你切的那一刀问的是什么问题",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-shenjing-wangluo",
-        "title": "神经网络",
+        "title": "深度不是层数，是每层都在换一次坐标",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-zhichi-xiangliang-ji",
-        "title": "支持向量机",
+        "title": "间隔是几何，不是分数",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-beiyesi-fenleiqiu",
-        "title": "贝叶斯分类器",
+        "title": "先验不是偏见，是还没看到数据时你唯一能拿出的东西",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-jicheng-xuexi",
-        "title": "集成学习",
+        "title": "弱学习器不是凑数，是要它们错得不一样",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-julei",
-        "title": "聚类",
+        "title": "没有标签的时候，「相似」是你唯一还能定义的东西",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-jiangwei-yu-duliang",
-        "title": "降维与度量学习",
+        "title": "降维不是丢信息，是换一组能算距离的坐标",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-tezheng-xuanze-yu-xishu",
-        "title": "特征选择与稀疏学习",
+        "title": "稀疏不是省参数，是把「不重要」变成可检验的零",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-jisuan-xuexi-lilun",
-        "title": "计算学习理论",
+        "title": "泛化界不是承诺，是最坏情况下你还剩多少",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-banyou-jian-xuexi",
-        "title": "半监督学习",
+        "title": "未标注数据不是免费的，它买的是「流形假设」",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-gailv-tu-moxing",
-        "title": "概率图模型",
+        "title": "图不是画给人看的，是用来读条件独立的",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-guize-xuexi",
-        "title": "规则学习",
+        "title": "规则的代价不是条数，是它覆盖了多少不该覆盖的",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-qianghua-xuexi",
-        "title": "强化学习",
+        "title": "回报不是奖励的累加，是折现后的和",
         "status": "🚧"
       }
     ],
@@ -19569,37 +19597,37 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-d1",
-        "title": "公理 0 · 三为枢纽：信息／公理 1 · 中边结构：完备／公理 2 · 去中降维：从证／公理 3 · 自乘升维：从症／公理 4 · 阴阳互含：显的／公理 5 · 尺度伸缩：编码／三维极坐标：坐标系与符号",
+        "title": "三元结构：中医信息学的第三根支柱是语义，不是算力",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-d2",
-        "title": "三轴语义编码（可计算）／颜色公理与三球镜像／8 域 × 120 学科的张／技能生态与学科枝绑定／绪论——从信息检索到信息挖掘／中医药信息学的学科发展历程／理论体系构建与信息特征框架",
+        "title": "学科定位：研究对象是信息的运动，不是计算机在中医里的用法",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-d3",
-        "title": "中医药信息标准化／中医药数据表示与数据元／中医药数据库技术／医院信息系统与中医临床信息化",
+        "title": "标准化：标准不是一份文档，是代码里的枚举与校验",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-d4",
-        "title": "检索与排序／关联规则挖掘／聚类与降维／知识发现与智能应用／研究方向与应用",
+        "title": "挖掘：lift = 103 的规则，多半是语料太小的幻觉",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-d5",
-        "title": "科研与学术成果／学科建设与人才培养／国际标准化建设／未来发展方向／中医临床信息学概述",
+        "title": "学科建设：先保资源、再做挖掘，这个顺序颠倒就全盘皆输",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-d6",
-        "title": "中医临床信息的采集／中医临床信息数据的存储与管理／中医临床信息数据的整合／中医临床信息的分析利用／中医临床信息学展望／实验",
+        "title": "临床信息：采集负担决定数据质量，其余都是补救",
         "status": "🚧"
       }
     ],
@@ -19607,37 +19635,37 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xuqiu-hegui",
-        "title": "需求与数据合规评估",
+        "title": "合规不是在合同上签字，是在第一行代码之前画好边界",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-jiagou-jiekou",
-        "title": "系统架构与接口实现",
+        "title": "接口定不下来，架构就只是画在纸上的分工",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-xunlian-pingce",
-        "title": "模型训练与评测流水线",
+        "title": "一次跑通不算流水线，能跑出同一个数才算",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-bushu-huidu",
-        "title": "临床部署与灰度验证",
+        "title": "上线不是发布，是把决策权交出去的那一刻",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-yunwei-fupan",
-        "title": "运维、监控与事故复盘",
+        "title": "复盘不是找责任人，是把下一次的失败提前写出来",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-yanshou-wendang",
-        "title": "交付验收与文档",
+        "title": "验收的标准不是文档齐了，是别人能接手",
         "status": "🚧"
       }
     ],
@@ -19645,37 +19673,37 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xuan-ti",
-        "title": "选题：从中医问题到可复现实验",
+        "title": "选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-shujuji-biaozhu",
-        "title": "数据集与标注规范",
+        "title": "标注规范不是给数据打标签，是把「谁说了算」写进文件",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-fangfa-xiaorong",
-        "title": "方法实现与消融实验",
+        "title": "消融不是删模块看掉多少分，是回答「哪一步在替我说话」",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-wucha-fenxi",
-        "title": "误差分析与临床可解释性",
+        "title": "误差分析不是算准确率，是找出「它错在谁身上」",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-lunwen-dabian",
-        "title": "论文写作与答辩",
+        "title": "论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-zhishi-yijiao",
-        "title": "知识移交：模型卡与交接",
+        "title": "移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数",
         "status": "🚧"
       }
     ],
@@ -19683,49 +19711,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-e11",
-        "title": "耳鼻咽喉的解剖概览",
+        "title": "四区不是四个器官，是四个入口：一本书凭什么装得下耳鼻咽喉口齿",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-e12",
-        "title": "耳的应用解剖",
+        "title": "耳：三段两层膜，看得见的边界在鼓膜就断了",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-e13",
-        "title": "鼻与鼻窦",
+        "title": "鼻与鼻窦：一条路、四间挂屋，滞留是链不是点",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-e14",
-        "title": "咽喉的解剖",
+        "title": "咽喉：一条共用的管子，四处分岔与一个不能迟半拍的关门动作",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-e15",
-        "title": "口腔与涎腺",
+        "title": "口腔与涎腺：三套坐标，记不住坐标就只剩「嘴里有个地方」",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-e16",
-        "title": "神经与血管支配",
+        "title": "神经与血管：给一句模糊的症状配一条可追的线",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-e17",
-        "title": "生理功能与免疫",
+        "title": "生理：功能拆得开，症状才反推得回去",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-e18",
-        "title": "检查法与正常所见",
+        "title": "检查法：每一个「未见异常」都得带一个范围",
         "status": "🚧"
       }
     ],
@@ -19733,49 +19761,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-e21",
-        "title": "口腔的境界与分区",
+        "title": "口腔不是一个腔，是两间房加一道门",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-e22",
-        "title": "牙与牙周组织",
+        "title": "牙不是长在骨头里的，是挂在骨头上的",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-e23",
-        "title": "颌骨与咀嚼肌",
+        "title": "上颌是一层薄壳，下颌是一条管子",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-e24",
-        "title": "颞下颌关节与咬合",
+        "title": "下颌不是挂在关节窝里，是挂在盘上",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-e25",
-        "title": "唾液腺与神经支配",
+        "title": "腮腺是面神经的床，不是它的邻居",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-e26",
-        "title": "咀嚼与吞咽",
+        "title": "咀嚼是同一套五相，吞咽是四道闸门",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-e27",
-        "title": "口腔感觉与味觉",
+        "title": "牙痛说不准位置，不是患者不会说",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-e28",
-        "title": "口腔检查与记录",
+        "title": "检查不是看一遍，是五个动作各答一问",
         "status": "🚧"
       }
     ],
@@ -19783,49 +19811,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-e31",
-        "title": "望诊的原理与部位",
+        "title": "明堂：望诊的第一件事不是看颜色，是立坐标",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-e32",
-        "title": "面部色泽与五色",
+        "title": "气与色：两个词，两条轴，不能合成一个数",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-e33",
-        "title": "眼部望诊",
+        "title": "目：古籍底本的作者，亲手否掉了五轮",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-e34",
-        "title": "鼻部望诊",
+        "title": "明堂之鼻：一张正面照，只拿得到四成的判据",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-e35",
-        "title": "口唇与齿龈",
+        "title": "唇：最饱和的那块颜色，恰恰不该拿来测",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-e36",
-        "title": "咽喉望诊",
+        "title": "咽喉：一百零一篇里，唯一没有专章的部位",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-e37",
-        "title": "舌与口腔黏膜",
+        "title": "舌：五法已经把特征分好了，烂的是数据",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-e38",
-        "title": "望诊记录与复核",
+        "title": "记录：把「看到」写成可以被别人核对的东西",
         "status": "🚧"
       }
     ],
@@ -19833,49 +19861,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-e41",
-        "title": "眼的光学结构",
+        "title": "眼的光学结构：屈光力来自折射率的跃变，不来自透明",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-e42",
-        "title": "屈光不正的类型",
+        "title": "屈光不正的类型：先问「哪条路径」，再问「多少度」",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-e43",
-        "title": "视力与对比敏感度",
+        "title": "视力与对比敏感度：1.0 测的是曲线的尾巴",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-e44",
-        "title": "验光原理",
+        "title": "验光原理：三个度数都是真的，只有一个是基准",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-e45",
-        "title": "镜片与矫正",
+        "title": "镜片与矫正：改的是入射光，不是眼",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-e46",
-        "title": "儿童屈光与弱视",
+        "title": "儿童屈光与弱视：同一个度数，在六岁与十二岁不是一件事",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-e47",
-        "title": "屈光手术与边界",
+        "title": "屈光手术与边界：这一章教的是什么时候不做",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-e48",
-        "title": "验光记录与安全",
+        "title": "验光记录与安全：记录不是数据，是判断链",
         "status": "🚧"
       }
     ],
@@ -19883,37 +19911,37 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-e51",
-        "title": "五官经典原文概览",
+        "title": "五官科的「经典」不是一个书架，而是五条各有源流的谱系",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-e52",
-        "title": "目与脏腑经络",
+        "title": "五轮回答的是「病在哪一轮」，不是「病因为何」",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-e53",
-        "title": "耳与肾",
+        "title": "「肾开窍于耳」是起点，不是答案",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-e54",
-        "title": "咽喉与肺胃",
+        "title": "咽与喉在经典里是两个东西，合成一个词之后辨证就变粗了",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-e55",
-        "title": "病名与证候的历史演变",
+        "title": "病名是「当时看得见的东西」的名字，改名时丢的是判据",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-e56",
-        "title": "经典与临床的对接",
+        "title": "对接不是「古方治今病」，是判据到判据的翻译",
         "status": "🚧"
       }
     ],
@@ -19921,61 +19949,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-wulun-bakuo",
-        "title": "五轮八廓学说与眼的脏腑配属",
+        "title": "五轮八廓：一张比想象中更窄的映射表",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-sizhen-shili",
-        "title": "眼科四诊与视力检查",
+        "title": "四诊：眼科最贵的那五分钟是问出来的",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-waizhang-yanbing",
-        "title": "外障眼病：胞睑、两眦、白睛",
+        "title": "外障：五个字定方向，虚实定用药",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-neizhang-yanbing",
-        "title": "内障眼病：瞳神与眼底",
+        "title": "内障：判据不在表面，所以必须往里找",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-jinshi-pilao",
-        "title": "近视与视疲劳的中医干预",
+        "title": "近视与视疲劳：能防的是进展，不是「治愈」",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-ganyan-jianbanxian",
-        "title": "干眼与睑板腺功能障碍",
+        "title": "干眼与睑板腺：三层泪膜里，坏的是哪一层",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-qingguangyan-shishenjing",
-        "title": "青光眼与视神经病变",
+        "title": "绿风内障与视神经：唯一不能「先辨证再看看」的病",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-dichuxue-tangwang",
-        "title": "眼底出血与糖网的中医治疗",
+        "title": "眼底出血与消渴目病：血还在不在流，决定先止血还是先化瘀",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-waizhi-yonganquan",
-        "title": "眼科外治法与用药安全",
+        "title": "外治与用药安全：眼科是给药窗口最窄的科室",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-liaoxiao-suifang",
-        "title": "眼科疗效评价与随访",
+        "title": "疗效评价与随访：先把「有效」写下来，再开始治",
         "status": "🚧"
       }
     ],
@@ -19983,61 +20011,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-zangfu-jingluo",
-        "title": "耳鼻喉的脏腑经络联系",
+        "title": "清窍不是四个洞：耳鼻咽喉的病位，先落在经络上",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-erbing-tiaoming",
-        "title": "耳病：耳鸣、耳聋与耳胀",
+        "title": "耳鸣不是耳朵在响：鸣为聋之渐，治的是通与养",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-bibing-biyuan",
-        "title": "鼻病：鼻塞、鼻渊与鼻鼽",
+        "title": "鼻塞三个月：一个症状，三条完全不同的路",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-yanhou-bing",
-        "title": "咽喉病：乳蛾、喉痹与梅核气",
+        "title": "咽痛分两种：一种是火，一种是堵住的那口气",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-sangyin-shengdai",
-        "title": "嗓音病与声带病变",
+        "title": "声音是气过两道门：嘶哑要先问「哪一段坏了」",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-bianyingxing-biyan",
-        "title": "变应性鼻炎的中医辨治",
+        "title": "鼻鼽不是「反复感冒」：本虚标实，战场在两次发作之间",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-zhongeryan-gumo",
-        "title": "分泌性中耳炎与鼓膜病变",
+        "title": "耳朵闷住的那口气：一条管子，一种鼓膜结局",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-waizhi-xuewei",
-        "title": "耳鼻喉外治与穴位治疗",
+        "title": "外治不是辅助：药到不了的地方，要靠路走进去",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-neijing-shuhou",
-        "title": "鼻内镜术后的中医康复",
+        "title": "手术做完了，病还没完：术腔里长回来的那层黏膜",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-liangbiao-pingjia",
-        "title": "耳鼻喉疗效的量表评价",
+        "title": "说不出「好了多少」，就等于没治：量表与疗效的刻度",
         "status": "🚧"
       }
     ],
@@ -20045,61 +20073,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-e81",
-        "title": "口腔的中医解剖与生理",
+        "title": "口腔不是一条通道，是六扇各有主人的门",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-e82",
-        "title": "口齿疾病的病因病机",
+        "title": "「火」是口齿科最省力的答案，也是最容易错的那一个",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-e83",
-        "title": "口齿疾病的辨证要点",
+        "title": "口镜看得见红肿，看不见该不该清",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-e84",
-        "title": "口齿疾病的治法与外治",
+        "title": "治法不是一张方剂清单，是五道闸门",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-e85",
-        "title": "牙痛与龋病",
+        "title": "痛可以用药压下去，洞不会自己长回来",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-e86",
-        "title": "牙周病与牙龈出血",
+        "title": "出血多不等于病重，不出血也不等于好了",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-e87",
-        "title": "口疮与口腔黏膜病",
+        "title": "口疮是自限的病，两周不愈就不再是口疮",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-e88",
-        "title": "口臭与口干",
+        "title": "口臭的第一嫌疑不在胃，口干的第一嫌疑不在阴虚",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-e89",
-        "title": "口齿急症与外伤",
+        "title": "急症章的一半功夫，是教人少做五件事",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-e810",
-        "title": "口齿调护与预防",
+        "title": "「好好刷牙」说了几十年，牙龈还在出血",
         "status": "🚧"
       }
     ],
@@ -20107,61 +20135,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-e91",
-        "title": "口腔内科的范围与检查方法",
+        "title": "口腔内科的边界不按器官划，按「能不能不动刀」划",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-e92",
-        "title": "口腔的中医解剖与生理",
+        "title": "齿属肾说的是来源，络属阳明说的是通路",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-e93",
-        "title": "病因病机：火、虚与齿龈",
+        "title": "「火」是一个字，装着三种治法相反的东西",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-e94",
-        "title": "辨证要点：从齿龈到脏腑",
+        "title": "证名是结论，不是起点",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-e95",
-        "title": "治法与外治的边界",
+        "title": "外治的边界，就是药液与器械能触到的边界",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-e96",
-        "title": "龋病与牙痛",
+        "title": "牙痛是一条按深度排列的阶梯上的某一点",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-e97",
-        "title": "牙周病与牙龈出血",
+        "title": "牙周病是无声的：四个读数决定谁先动手",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-e98",
-        "title": "口腔黏膜病：口疮与糜烂",
+        "title": "黏膜病先分三层，再谈病名",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-e99",
-        "title": "口臭与口干",
+        "title": "口气与口干都要先定位，再谈清热与滋阴",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-e910",
-        "title": "口腔卫生、调护与预防",
+        "title": "「认真刷牙」不是一个方案",
         "status": "🚧"
       }
     ],
@@ -20169,49 +20197,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-e101",
-        "title": "影像在眼科的位置：从四诊到仪器",
+        "title": "仪器不是四诊的升级版，它只补了人眼进不去的那一层",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-e102",
-        "title": "眼与脏腑：影像之外的参照系",
+        "title": "解剖基线不是一张数值表，是一组对应关系",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-e103",
-        "title": "外障的影像辅助：胞睑、两眦与白睛",
+        "title": "外障一望即知，影像在这里只做记录，不做诊断",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-e104",
-        "title": "内障与眼底影像",
+        "title": "浑浊时读断面，读到的不是「看不清」，是「看起来像缺了一层」",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-e105",
-        "title": "青光眼与视神经的影像线索",
+        "title": "杯盘比可以记，不能单独承担判读",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-e106",
-        "title": "眼底出血与糖网的影像随访",
+        "title": "出血的层次携带病程信息，面积不携带",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-e107",
-        "title": "影像报告、复查与疗效评价",
+        "title": "报告的好坏不在信息多少，在三段的分工",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-e108",
-        "title": "影像数据的隐私与合规",
+        "title": "密码泄露了可以改，虹膜泄露了不能换",
         "status": "🚧"
       }
     ],
@@ -20219,61 +20247,61 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-e111",
-        "title": "口腔颌面外科的范围与边界",
+        "title": "一个科的边界不在器官上，在「谁能承担后果」上",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-e112",
-        "title": "颌面部解剖：头颈部的层次与间隙",
+        "title": "层次是防线，间隙是走廊",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-e113",
-        "title": "颌面部感染的病因病机",
+        "title": "火毒是结论，不是原因",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-e114",
-        "title": "辨证：肿、痛、脓的判据",
+        "title": "肿、痛、脓：三个词，九种组合，只有一种可以「等」",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-e115",
-        "title": "治法与手术的边界",
+        "title": "消托补管时间，刀管空间：两套手段不能互相代付",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-e116",
-        "title": "疮疡与痈疽：从疖到走黄",
+        "title": "十个病名是一条深度轴：从疖到走黄，差的是「脓有没有出路」",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-e117",
-        "title": "颌面外伤与口齿急症",
+        "title": "急不是病重，是窗口短：八个病证，三种钟",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-e118",
-        "title": "术后调护与康复",
+        "title": "术后调护的第一顺位不是「补」，是三条通道",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-e119",
-        "title": "并发症识别与风险沟通",
+        "title": "识别并发症靠的不是经验，是术前就写好的那张「如果」清单",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-e1110",
-        "title": "病历、知情同意与转诊",
+        "title": "病历、同意书、转诊单，写的是同一件事：把判断搬出脑袋",
         "status": "🚧"
       }
     ],
@@ -20405,49 +20433,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-e141",
-        "title": "咽喉的中医解剖与生理",
+        "title": "咽喉的中医解剖与生理：没有喉镜的人，把发声拆成了一条七环链",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-e142",
-        "title": "咽喉病的病因病机",
+        "title": "咽喉病的病因病机：火在末梢，水在源头",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-e143",
-        "title": "咽喉病的辨证",
+        "title": "咽喉病的辨证：一个「咽干」可以指三个脏",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-e144",
-        "title": "咽喉病的治法",
+        "title": "咽喉病的治法：「内治为主、外治为辅」在急症里会害人",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-e145",
-        "title": "喉痹与乳蛾",
+        "title": "喉痹与乳蛾：两个被互相替代得最随意的病名",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-e146",
-        "title": "喉喑与失音",
+        "title": "喉喑与失音：「开音」是结果，不是一组药",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-e147",
-        "title": "声带疾病与用嗓卫生",
+        "title": "声带疾病与用嗓卫生：那些「长出来的东西」是用嗓方式记的一本账",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-e148",
-        "title": "咽喉急症与调护",
+        "title": "咽喉急症与调护：先保气道，其余一切后推",
         "status": "🚧"
       }
     ],
@@ -20455,49 +20483,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-shechuanchuang",
-        "title": "蛇串疮（带状疱疹）",
+        "title": "蛇串疮：皮疹是过程，疼痛才是结局",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-shichuang",
-        "title": "湿疮（湿疹）",
+        "title": "湿疮：辨证辨得再准，剂型用错也白搭",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-yinzhen",
-        "title": "瘾疹（荨麻疹）",
+        "title": "瘾疹：几小时就消失的皮疹，说明战场不在皮肤上",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-baipi",
-        "title": "白疕（银屑病）",
+        "title": "白疕：越用力去治的那块皮，长得越厚",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-youfeng",
-        "title": "油风（脱发）",
+        "title": "油风：先确认毛囊还在，再谈补肝肾",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-fenci",
-        "title": "粉刺（痤疮）",
+        "title": "粉刺：会不会留疤，多半取决于谁在挤它",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-jiuzhabi",
-        "title": "酒齄鼻（玫瑰痤疮）",
+        "title": "酒齄鼻：一张遇热就红的脸，先改环境，再改方子",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-yaodu-jiechuang",
-        "title": "药毒与疥疮：鉴别与边界",
+        "title": "药毒与疥疮：这两件事的第一步处置，都不是开方",
         "status": "🚧"
       }
     ],
@@ -20765,73 +20793,73 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xibao-shengwuxue-gailun",
-        "title": "细胞生物学概论",
+        "title": "细胞学说真正的断言不是「小」，是「一切账都记在膜内」",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-xibaomo-yu-kuamo-yunshu",
-        "title": "细胞膜与跨膜运输",
+        "title": "膜的本事不是「挡住」，是「让该过的过得快，让不该过的过得慢」",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-xibao-lianjie-yu-nianfu",
-        "title": "细胞连接与细胞黏附",
+        "title": "连接不是把细胞粘住，是把「这一层」变成一个可以调控的整体",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-xibao-waijizhi",
-        "title": "细胞外基质与细胞微环境",
+        "title": "基质不是填充物，是细胞每天在读的一份说明书",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-xibao-gujia-yu-yundong",
-        "title": "细胞骨架与细胞运动",
+        "title": "骨架不是骨头，是一套会自己拆了重装的轨道",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-shenjingyuan-xinxi-chuandi",
-        "title": "神经元与细胞间信息传递",
+        "title": "信号不是一路跑到底，是每一小段都重新发一次",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-xibaohe-yu-ransezhi",
-        "title": "细胞核与染色质",
+        "title": "染色质不是打包好的档案，是一份随时被翻开的活页",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-jiyin-biaoda-tiaokong",
-        "title": "基因表达调控",
+        "title": "调控的答案不在「开或关」，在「多少、何时、在哪」",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-xibao-zhouqi-yu-dna-fuzhi",
-        "title": "细胞周期与 DNA 复制",
+        "title": "细胞周期不是四个阶段，是三道闸门加一套计时器",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-danbaizhi-hecheng-yu-xibao-gongneng",
-        "title": "蛋白质合成与细胞功能",
+        "title": "蛋白不是「造出来」的，是「按图纸装配，再一路过安检」",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-xibao-fenhua-yu-qiguan-fasheng",
-        "title": "细胞分化与器官发生",
+        "title": "分化不是学会新本事，是把已有的本事关掉大部分",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-xibao-yu-fenzi-jishu",
-        "title": "细胞与分子常用技术",
+        "title": "方法的可信度不由仪器决定，由对照决定",
         "status": "🚧"
       }
     ],
@@ -20839,97 +20867,97 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun",
-        "title": "绪论",
+        "title": "这门课不是细胞学与遗传学的拼盘，是一条从结构追到变异的链",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-yixue-xibao-shengwuxue-gailun",
-        "title": "医学细胞生物学概论",
+        "title": "这门学科划的不是「细胞」这条线，是「可测的细胞状态」这条线",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-xibao-gaishu",
-        "title": "细胞概述",
+        "title": "细胞的大小不是自由选择，是表面积与体积算出来的一道硬账",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-xibaomo",
-        "title": "细胞膜",
+        "title": "膜的本事不是「挡住」，是「让不该过的过得慢，让该过的过得快」",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-xibao-zhi",
-        "title": "细胞质",
+        "title": "细胞质不是一锅汤，是一条有方向、有分区、要收费的流水线",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-xibao-he",
-        "title": "细胞核",
+        "title": "核的全部本事，是让两米长的信息住进一间六微米的屋子还找得到",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-zengzhi-fenhua-shuailao-siwang",
-        "title": "细胞增殖、分化、衰老和死亡",
+        "title": "增殖、分化、衰老、死亡不是四件事，是同一个开关的四个位置",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-ganxibao-yu-xibao-gongcheng",
-        "title": "干细胞和细胞工程",
+        "title": "干细胞的门槛不是「什么都能变」，是「变了还能变回来」",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-yixue-yichuanxue-gailun",
-        "title": "医学遗传学概述",
+        "title": "遗传学研究的不是「病」，是「差异怎么传下去」",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-jiyin-ji-jiyin-tubian",
-        "title": "基因及基因突变",
+        "title": "基因不是一段密码，是一段带标点、带批注、还会被剪接的文本",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-dan-jiyin-yichuan",
-        "title": "单基因遗传与单基因遗传病",
+        "title": "3∶1 不是疾病的规律，是配子随机结合的算术",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-duo-jiyin-yichuan",
-        "title": "多基因遗传与多基因遗传病",
+        "title": "多基因病的遗传不是「传下去」，是「分布的一端被推过了线」",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-renlei-ranse-ti-yu-ranse-ti-bing",
-        "title": "人类染色体与染色体病",
+        "title": "核型分析做的事，是把一条连续的信息流切成四十六段可数的实物",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-qunti-yichuan-xue",
-        "title": "群体遗传学",
+        "title": "群体遗传学算的不是「谁会病」，是「这个变异在这个人群里能待多久」",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-linchuang-yichuan-xue",
-        "title": "临床遗传学",
+        "title": "临床遗传学最难的环节不是测出变异，是把变异说成人话",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-zhongyi-yichuan-xue",
-        "title": "中医遗传学",
+        "title": "中医讲「禀赋」，讲的不是基因，是「一个人从父母那里带来的起点与限度」",
         "status": "🚧"
       }
     ],
@@ -21047,19 +21075,19 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun",
-        "title": "绪论：生理学研究的对象与三个水平",
+        "title": "绪论：把「稳态」写成一条可检查的回路",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-xibao-jiben-gongneng",
-        "title": "细胞的基本功能：跨膜转运·信号转导·电活动·收缩",
+        "title": "细胞的基本功能：一条从膜到肌丝的链",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-xueye",
-        "title": "血液：组成·理化特性·血细胞与凝血",
+        "title": "血液：用三张图替掉一张数字表",
         "status": "🚧"
       },
       {
@@ -21083,31 +21111,31 @@ window.TCMAI_DATA = {
       {
         "n": 7,
         "slug": "07-nengliang-tiwen",
-        "title": "能量代谢与体温：代谢率·产热散热·体温调节",
+        "title": "能量代谢与体温：产与散的两本账",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-shenzang-paixie",
-        "title": "肾脏的排泄功能：滤过·重吸收·分泌·调节",
+        "title": "肾脏的排泄功能：一条流水线，三个方向",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-neifenmi",
-        "title": "内分泌：激素·轴系·各内分泌腺功能",
+        "title": "内分泌：谁作用于谁，而不是多少",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-shenjing-xitong",
-        "title": "神经系统：神经元·突触·感觉运动·高级功能",
+        "title": "神经系统：全章最密的一节不是电，是抑制",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-ganjue-qiguan",
-        "title": "感觉器官：感受器的一般特性与各感官功能",
+        "title": "感觉器官：全书最容易被写成参数表的一章，给了最多的「不给值」",
         "status": "🚧"
       }
     ],
@@ -21299,73 +21327,73 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-yichuanxue-gailun",
-        "title": "医学遗传学概论",
+        "title": "遗传学的医学价值不在「找到那个基因」，在「把个体风险从人群平均里拆出来」",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-jiyin-de-jiegou-zuzhi",
-        "title": "基因的结构与组织",
+        "title": "基因不是「一段编码」，是一套带开关的坐标系",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-jiyin-tubian-yu-xiaoying",
-        "title": "基因突变与效应",
+        "title": "突变的后果不取决于它多大，取决于它落在哪一格、以及阅读框还在不在",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-xipu-yu-chuandi-fangshi",
-        "title": "系谱分析与传递方式",
+        "title": "系谱不是「看图猜病」，是一台把家族史折成概率的机器",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-dan-jiyin-yichuanbing",
-        "title": "单基因遗传病",
+        "title": "单基因病的「单」，说的是传递单位，不是病因的单一性",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-duo-jiyin-yuzhi-moxing",
-        "title": "多基因遗传与阈值模型",
+        "title": "多基因病不在某一条染色体上，在「易患性的分布」里",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-yiganxing-yu-zaifa-fengxian",
-        "title": "易感性与再发风险",
+        "title": "再发风险不是一个数字，是一个随每条新信息改动的后验",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-heti-yu-ranse-ti-jibian",
-        "title": "核型与染色体畸变",
+        "title": "核型是一条「分辨率就是判据」的技术",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-changjian-ranse-ti-bing",
-        "title": "常见染色体病",
+        "title": "染色体病的表型不是「某个基因坏了」，是「一整批基因的剂量偏了」",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-qunti-yichuan-xue",
-        "title": "群体遗传学",
+        "title": "遗传平衡不是自然界的常态，是一把用来量「什么力在起作用」的尺子",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-linchuang-yichuan-xue",
-        "title": "临床遗传学",
+        "title": "遗传咨询的产出不是「一个风险数字」，是一份能在几个选项里做决定的框架",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-zhongyi-yichuan-xue",
-        "title": "中医遗传学",
+        "title": "「禀赋」不是遗传学的同义词，它是一套描述系统，价值在提问而不在术语对接",
         "status": "🚧"
       }
     ],
@@ -21373,127 +21401,127 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun",
-        "title": "绪论",
+        "title": "绪论：一门学科先要学会「怎么描述」",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-jibing-gailun",
-        "title": "疾病概论",
+        "title": "疾病概论：把「病」写成一个过程，而不是一张标签",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-shiying-sunshang-xiufu",
-        "title": "细胞和组织的适应、损伤与修复",
+        "title": "细胞和组织的适应、损伤与修复：一条线上的三段，还是三个话题",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-jubu-xueye-xunhuan-zhangai",
-        "title": "局部血液循环障碍",
+        "title": "局部血液循环障碍：把「血怎么了」写成一条单向链",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-yanzheng",
-        "title": "炎症",
+        "title": "炎症：把「防御性反应」拆成损伤与应答两笔账",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-zhongliu",
-        "title": "肿瘤",
+        "title": "肿瘤：把「新生物」拆成克隆、异型与扩散三件事",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-shui-dianjiezhi-wenluan",
-        "title": "水、电解质代谢紊乱",
+        "title": "水、电解质代谢紊乱：把「容量与渗透压」当成两把尺",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-shuizhong",
-        "title": "水肿",
+        "title": "水肿：把「水多了」拆成两个平衡",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-suanjian-pingheng-wenluan",
-        "title": "酸碱平衡紊乱",
+        "title": "酸碱平衡紊乱：把「偏酸偏碱」拆成方向与原发环节",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-queyang",
-        "title": "缺氧",
+        "title": "缺氧：把「喘不上气」翻译成一条氧运输链",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-fare",
-        "title": "发热",
+        "title": "发热：把一个「设定值」讲成三段因果",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-yingji-jibing",
-        "title": "应激与疾病",
+        "title": "应激与疾病：把「压力大」写成一张资源调度表",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-xiuke",
-        "title": "休克",
+        "title": "休克：把「灌注不足」写成一条会自己加速的链",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-dic",
-        "title": "弥散性血管内凝血",
+        "title": "弥散性血管内凝血：凝血在前、纤溶在后",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-queshangzaiguanzhu-sunshang",
-        "title": "缺血-再灌注损伤",
+        "title": "缺血-再灌注损伤：恢复血流为什么会加重损伤",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-xinxueguan-jibing",
-        "title": "心血管系统疾病",
+        "title": "心血管系统疾病：把病名还原成「位置、形态与后果」",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-huxi-jibing",
-        "title": "呼吸系统疾病",
+        "title": "呼吸系统疾病：从气道到肺泡，再由肺及心",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-xiaohua-jibing",
-        "title": "消化系统疾病",
+        "title": "消化系统疾病：黏膜层、胃壁全层、肝小叶",
         "status": "🚧"
       },
       {
         "n": 19,
         "slug": "19-miniao-shengzhi-jibing",
-        "title": "泌尿及生殖系统疾病",
+        "title": "泌尿及生殖系统疾病：病变沿着哪条管道走",
         "status": "🚧"
       },
       {
         "n": 20,
         "slug": "20-shenjing-neifenmi-jibing",
-        "title": "常见神经及内分泌系统疾病",
+        "title": "常见神经及内分泌系统疾病：把「类别」当成一把尺子",
         "status": "🚧"
       },
       {
         "n": 21,
         "slug": "21-chuanranbing-jishengchong",
-        "title": "常见传染病及寄生虫病",
+        "title": "常见传染病及寄生虫病：九种病，一张对照表",
         "status": "🚧"
       }
     ],
@@ -21501,109 +21529,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-introduction-to-pathophysiology",
-        "title": "病理生理学导论",
+        "title": "病理生理学导论：四个问题与一套不判定的口径",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-homeostasis-allostasis-and-adaptive-responses-to-stressors",
-        "title": "稳态、异稳态与对应激源的适应性反应",
+        "title": "稳态、异稳态与对应激源的适应性反应：设定点是可以被移动的",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-cell-structure-and-function",
-        "title": "细胞结构与功能",
+        "title": "细胞结构与功能：结构是损伤的受力点清单",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-cell-injury-aging-and-death",
-        "title": "细胞损伤、衰老与死亡",
+        "title": "细胞损伤、衰老与死亡：一条线、两种死法、一个例外",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-genome-structure-regulation-and-tissue-differentiation",
-        "title": "基因组结构、调控与组织分化",
+        "title": "基因组结构、调控与组织分化：同一份底稿的十种读法",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-genetic-and-developmental-disorders",
-        "title": "遗传与发育性疾病",
+        "title": "遗传与发育性疾病：读的是传递的形状，不是概率表",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-neoplasia",
-        "title": "肿瘤",
+        "title": "肿瘤：一串约束被逐条突破的累积",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-infectious-processes",
-        "title": "感染过程",
+        "title": "感染过程：从定植到器官功能障碍的一条连续谱",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-inflammation-and-immunity",
-        "title": "炎症与免疫",
+        "title": "炎症与免疫：两套系统、三条判据与一个交汇点",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-alterations-in-immune-function",
-        "title": "免疫功能异常",
+        "title": "免疫功能异常：三条约束、四型判据与一个「谁在执行」",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-malignant-disorders-of-white-blood-cells",
-        "title": "白细胞恶性肿瘤",
+        "title": "白细胞恶性肿瘤：四条机制收十个节",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-hiv-disease-and-aids",
-        "title": "HIV感染与艾滋病",
+        "title": "HIV 感染与艾滋病：一个受体决定了整条病程",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-alterations-in-oxygen-transport",
-        "title": "氧运输异常",
+        "title": "氧运输异常：先定哪一段断，再谈缺氧",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-alterations-in-hemostasis-and-blood-coagulation",
-        "title": "止血与凝血异常",
+        "title": "止血与凝血异常：三条线，两种形态，一个终末通路",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-alterations-in-blood-flow",
-        "title": "血流异常",
+        "title": "血流异常：一个压差、两套阻力与一条时间窗",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-alterations-in-blood-pressure",
-        "title": "血压异常",
+        "title": "血压异常：一个讲数字的章节，为何一个数字都不给",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-cardiac-function",
-        "title": "心脏功能",
+        "title": "心脏功能：四个旋钮与一条钙的链条",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-alterations-in-cardiac-function",
-        "title": "心脏功能异常",
+        "title": "心脏功能异常：四类失衡与一张正反馈网络",
         "status": "🚧"
       },
       {
@@ -21633,187 +21661,187 @@ window.TCMAI_DATA = {
       {
         "n": 23,
         "slug": "23-restrictive-pulmonary-disorders",
-        "title": "限制性肺疾病",
+        "title": "限制性肺疾病：装不下的六个位置",
         "status": "🚧"
       },
       {
         "n": 24,
         "slug": "24-fluid-and-electrolyte-homeostasis-and-imbalances",
-        "title": "水电解质稳态与失衡",
+        "title": "水电解质稳态与失衡：两个轴，一条出口",
         "status": "🚧"
       },
       {
         "n": 25,
         "slug": "25-acid-base-homeostasis-and-imbalances",
-        "title": "酸碱平衡与失衡",
+        "title": "酸碱平衡与失衡：三道防线与一条方向判据",
         "status": "🚧"
       },
       {
         "n": 26,
         "slug": "26-renal-function",
-        "title": "肾脏功能",
+        "title": "肾脏功能：一条四环节的链，三组功能",
         "status": "🚧"
       },
       {
         "n": 27,
         "slug": "27-intrarenal-disorders",
-        "title": "肾内疾病",
+        "title": "肾内疾病：先定部位，再定性质",
         "status": "🚧"
       },
       {
         "n": 28,
         "slug": "28-acute-kidney-injury-and-chronic-kidney-disease",
-        "title": "急性肾损伤与慢性肾脏病",
+        "title": "急性肾损伤与慢性肾脏病：一条主线，两条时间轴",
         "status": "🚧"
       },
       {
         "n": 29,
         "slug": "29-disorders-of-the-lower-urinary-tract",
-        "title": "下尿路疾病",
+        "title": "下尿路疾病：一条分界线，三组症状",
         "status": "🚧"
       },
       {
         "n": 30,
         "slug": "30-male-genital-and-reproductive-function",
-        "title": "男性生殖功能",
+        "title": "男性生殖功能：一套解剖，三层调控",
         "status": "🚧"
       },
       {
         "n": 31,
         "slug": "31-alterations-in-male-genital-and-reproductive-function",
-        "title": "男性生殖功能异常",
+        "title": "男性生殖功能异常：先把表现放回六个类别",
         "status": "🚧"
       },
       {
         "n": 32,
         "slug": "32-female-genital-and-reproductive-function",
-        "title": "女性生殖功能",
+        "title": "女性生殖功能：一条周期性轴与它的读出器",
         "status": "🚧"
       },
       {
         "n": 33,
         "slug": "33-alterations-in-female-genital-and-reproductive-function",
-        "title": "女性生殖功能异常",
+        "title": "女性生殖功能异常：五层排查、三源激素与一条因果环",
         "status": "🚧"
       },
       {
         "n": 34,
         "slug": "34-sexually-transmitted-infections",
-        "title": "性传播感染",
+        "title": "性传播感染：四层屏障、一条上行链与六类防控",
         "status": "🚧"
       },
       {
         "n": 35,
         "slug": "35-gastrointestinal-function",
-        "title": "胃肠功能",
+        "title": "胃肠功能：四类功能、一条调控链与从症状反推环节",
         "status": "🚧"
       },
       {
         "n": 36,
         "slug": "36-gastrointestinal-disorders",
-        "title": "胃肠疾病",
+        "title": "胃肠疾病：三类机制、一个深度对应与四种分型",
         "status": "🚧"
       },
       {
         "n": 37,
         "slug": "37-alterations-in-function-of-the-gallbladder-and-exocrine-pancreas",
-        "title": "胆囊与外分泌胰腺功能异常",
+        "title": "胆囊与外分泌胰腺功能异常：一个三环节通则、三道保险与一处定位",
         "status": "🚧"
       },
       {
         "n": 38,
         "slug": "38-liver-diseases",
-        "title": "肝脏疾病",
+        "title": "肝脏疾病：四条主线、两条后果线与一个可逆窗口",
         "status": "🚧"
       },
       {
         "n": 39,
         "slug": "39-endocrine-physiology-and-mechanisms-of-hypothalamic-pituitary-regulation",
-        "title": "内分泌生理与下丘脑-垂体调控机制",
+        "title": "内分泌生理与下丘脑-垂体调控机制：两层整合、三级轴与五种读法",
         "status": "🚧"
       },
       {
         "n": 40,
         "slug": "40-disorders-of-endocrine-function",
-        "title": "内分泌功能紊乱",
+        "title": "内分泌功能紊乱：四种型态、一张定位表与五种急症",
         "status": "🚧"
       },
       {
         "n": 41,
         "slug": "41-diabetes-mellitus",
-        "title": "糖尿病",
+        "title": "糖尿病：一个不对称结构、三条环节与两类血管",
         "status": "🚧"
       },
       {
         "n": 42,
         "slug": "42-alterations-in-metabolism-and-nutrition",
-        "title": "代谢与营养异常",
+        "title": "代谢与营养异常：一个调定点、两种代谢模式与一条再喂养链",
         "status": "🚧"
       },
       {
         "n": 43,
         "slug": "43-structure-and-function-of-the-nervous-system",
-        "title": "神经系统结构与功能",
+        "title": "神经系统结构与功能：一张由缺损反推部位的定位图",
         "status": "🚧"
       },
       {
         "n": 44,
         "slug": "44-acute-disorders-of-brain-function",
-        "title": "脑功能急性疾病",
+        "title": "脑功能急性疾病：一条链，四个干预点",
         "status": "🚧"
       },
       {
         "n": 45,
         "slug": "45-chronic-disorders-of-neurologic-function",
-        "title": "慢性神经功能障碍",
+        "title": "慢性神经功能障碍：部位与储备，而不是时间与压力",
         "status": "🚧"
       },
       {
         "n": 46,
         "slug": "46-alterations-in-special-sensory-function",
-        "title": "特殊感觉功能异常",
+        "title": "特殊感觉功能异常：缺损的形状就是定位器",
         "status": "🚧"
       },
       {
         "n": 47,
         "slug": "47-pain",
-        "title": "疼痛",
+        "title": "疼痛：四环节、两级敏化与一条从症状到疾病的转弯",
         "status": "🚧"
       },
       {
         "n": 48,
         "slug": "48-mental-health-disorders",
-        "title": "精神心理健康障碍",
+        "title": "精神心理健康障碍：三层整合、五个维度与一条去污名化的边界",
         "status": "🚧"
       },
       {
         "n": 49,
         "slug": "49-structure-and-function-of-the-musculoskeletal-system",
-        "title": "骨骼肌肉系统结构与功能",
+        "title": "骨骼肌肉系统结构与功能：六项功能、一条耦联与三处结构弱点",
         "status": "🚧"
       },
       {
         "n": 50,
         "slug": "50-alterations-in-musculoskeletal-function-trauma-infection-and-disease",
-        "title": "骨骼肌肉功能异常：创伤、感染与疾病",
+        "title": "骨骼肌肉功能异常：力学环境、两个恶性循环与一条废用链",
         "status": "🚧"
       },
       {
         "n": 51,
         "slug": "51-alterations-in-musculoskeletal-function-rheumatic-disorders",
-        "title": "骨骼肌肉功能异常：风湿性疾病",
+        "title": "风湿性疾病：两种范式、一条损伤链与全身代价",
         "status": "🚧"
       },
       {
         "n": 52,
         "slug": "52-alterations-in-the-integumentary-system",
-        "title": "皮肤系统异常",
+        "title": "皮肤系统异常：五件组件的屏障与四条后果",
         "status": "🚧"
       },
       {
         "n": 53,
         "slug": "53-burn-injuries",
-        "title": "烧伤",
+        "title": "烧伤：局部三道带、四路全身反应与一条把两者接起来的链",
         "status": "🚧"
       }
     ],
@@ -21821,295 +21849,295 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-introduction",
-        "title": "第1章 绪论",
+        "title": "绪论：一门学科先给提问方式，再给药名",
         "status": "⏳"
       },
       {
         "n": 2,
         "slug": "02-pharmacodynamics",
-        "title": "第2章 药物效应动力学——药效学",
+        "title": "药物效应动力学：作用、机制、受体与表述的四级台阶",
         "status": "⏳"
       },
       {
         "n": 3,
         "slug": "03-pharmacokinetics",
-        "title": "第3章 药物代谢动力学——药动学",
+        "title": "药物代谢动力学：一条曲线、两类模型、三种消除",
         "status": "⏳"
       },
       {
         "n": 4,
         "slug": "04-factors-affecting-drug-response",
-        "title": "第4章 影响药物效应的因素",
+        "title": "影响药物效应的因素：三组因素、两端框架、一条记录链",
         "status": "⏳"
       },
       {
         "n": 5,
         "slug": "05-autonomic-nervous-system-overview",
-        "title": "第5章 传出神经系统药理概论",
+        "title": "传出神经系统药理概论：三层框架与六类主干",
         "status": "⏳"
       },
       {
         "n": 6,
         "slug": "06-cholinergic-agonists",
-        "title": "第6章 拟胆碱药",
+        "title": "拟胆碱药：两条路通往同一个效应，判据在「依赖什么」",
         "status": "⏳"
       },
       {
         "n": 7,
         "slug": "07-organophosphates-and-cholinesterase-reactivating-agents",
-        "title": "第7章 有机磷酸酯类及胆碱酯酶复活药",
+        "title": "有机磷酸酯类及胆碱酯酶复活药：一个共价键，与它被拆开的时间窗",
         "status": "⏳"
       },
       {
         "n": 8,
         "slug": "08-cholinergic-antagonists",
-        "title": "第8章 抗胆碱药",
+        "title": "抗胆碱药：阻断之后看到的，是「张力对比」而不是药物本身",
         "status": "⏳"
       },
       {
         "n": 9,
         "slug": "09-adrenergic-agonists",
-        "title": "第9章 拟肾上腺素药",
+        "title": "拟肾上腺素药：受体谱的宽窄，决定了一支药长什么样",
         "status": "⏳"
       },
       {
         "n": 10,
         "slug": "10-adrenergic-antagonists",
-        "title": "第10章 抗肾上腺素药",
+        "title": "抗肾上腺素药：阻断不产生效应，它只取消一层驱动",
         "status": "⏳"
       },
       {
         "n": 11,
         "slug": "11-local-anesthetics",
-        "title": "第11章 局部麻醉药",
+        "title": "局部麻醉药：一条「结构—代谢—时程—给药—观察」的链",
         "status": "⏳"
       },
       {
         "n": 12,
         "slug": "12-general-anesthetics",
-        "title": "第12章 全身麻醉药",
+        "title": "全身麻醉药：进行性抑制、可分的成分、网络的机制",
         "status": "⏳"
       },
       {
         "n": 13,
         "slug": "13-sedative-hypnotics",
-        "title": "第13章 镇静催眠药",
+        "title": "镇静催眠药：一个剂量谱、两类别位调节、四个靶点层面",
         "status": "⏳"
       },
       {
         "n": 14,
         "slug": "14-antiepileptic-and-anticonvulsant-drugs",
-        "title": "第14章 抗癫痫药与抗惊厥药",
+        "title": "抗癫痫药与抗惊厥药：环节、目的与观察项目",
         "status": "⏳"
       },
       {
         "n": 15,
         "slug": "15-antipsychotic-drugs",
-        "title": "第15章 抗精神失常药",
+        "title": "抗精神失常药：四条通路、三条靶点线、两张清单",
         "status": "⏳"
       },
       {
         "n": 16,
         "slug": "16-drugs-for-neurodegenerative-diseases",
-        "title": "第16章 治疗中枢神经系统退行性疾病药",
+        "title": "治疗中枢神经系统退行性疾病药：两道门槛、三条路径、一张观察表",
         "status": "⏳"
       },
       {
         "n": 17,
         "slug": "17-antipyretic-analgesic-and-anti-inflammatory-drugs",
-        "title": "第17章 解热镇痛抗炎药与抗痛风药",
+        "title": "解热镇痛抗炎药与抗痛风药：一条前列腺素线、一条尿酸线",
         "status": "⏳"
       },
       {
         "n": 18,
         "slug": "18-opioid-analgesics",
-        "title": "第18章 镇痛药",
+        "title": "镇痛药：受体、效应、用途、观察的四段推演",
         "status": "⏳"
       },
       {
         "n": 19,
         "slug": "19-central-nervous-system-stimulants",
-        "title": "第19章 中枢兴奋药",
+        "title": "中枢兴奋药：三级部位、两条路径、一条安全边界",
         "status": "⏳"
       },
       {
         "n": 20,
         "slug": "20-histamine-and-antihistamines",
-        "title": "第20章 组胺及抗组胺药",
+        "title": "组胺及抗组胺药：一条「释放—亚型—占据—代际」的链",
         "status": "⏳"
       },
       {
         "n": 21,
         "slug": "21-other-autacoid-drugs",
-        "title": "第21章 其他影响自体活性物质的药物",
+        "title": "其他影响自体活性物质的药物：一条「环节—靶点—组织」的定位法",
         "status": "⏳"
       },
       {
         "n": 22,
         "slug": "22-drugs-acting-on-cardiovascular-ion-channels",
-        "title": "第22章 作用于心血管系统离子通道的药物",
+        "title": "作用于心血管系统离子通道的药物：一条「状态—选择性—方向」的判据链",
         "status": "⏳"
       },
       {
         "n": 23,
         "slug": "23-drugs-for-chronic-heart-failure",
-        "title": "第23章 治疗慢性心功能不全的药物",
+        "title": "治疗慢性心功能不全的药物：一条「重构—环节—时间尺度」的链",
         "status": "⏳"
       },
       {
         "n": 24,
         "slug": "24-antihypertensive-drugs",
-        "title": "第24章 抗高血压药",
+        "title": "抗高血压药：一条「三要素—五类药—平稳覆盖」的链",
         "status": "⏳"
       },
       {
         "n": 25,
         "slug": "25-antianginal-drugs",
-        "title": "第25章 抗心绞痛药",
+        "title": "抗心绞痛药：一张耗氧表上的四个位置",
         "status": "⏳"
       },
       {
         "n": 26,
         "slug": "26-antiarrhythmic-drugs",
-        "title": "第26章 抗心律失常药",
+        "title": "抗心律失常药：同源的治疗与致心律失常",
         "status": "⏳"
       },
       {
         "n": 27,
         "slug": "27-antiatherosclerotic-drugs",
-        "title": "第27章 抗动脉粥样硬化药",
+        "title": "抗动脉粥样硬化药：四个侧面，一个位点问题",
         "status": "⏳"
       },
       {
         "n": 28,
         "slug": "28-diuretics-and-dehydrating-agents",
-        "title": "第28章 利尿药与脱水药",
+        "title": "利尿药与脱水药：管腔侧的一个转运体，血管侧的一道渗透压",
         "status": "⏳"
       },
       {
         "n": 29,
         "slug": "29-gastrointestinal-drugs",
-        "title": "第29章 消化系统药",
+        "title": "消化系统药：三条路径、两个方向、一处相互制约",
         "status": "⏳"
       },
       {
         "n": 30,
         "slug": "30-respiratory-system-drugs",
-        "title": "第30章 呼吸系统药",
+        "title": "呼吸系统药：一条按时相排开的分工，与三个窄口",
         "status": "⏳"
       },
       {
         "n": 31,
         "slug": "31-uterine-stimulants",
-        "title": "第31章 子宫兴奋药",
+        "title": "子宫兴奋药：一条选择性递减的谱系，与随之升高的观察密度",
         "status": "⏳"
       },
       {
         "n": 32,
         "slug": "32-antianemic-drugs",
-        "title": "第32章 抗贫血药",
+        "title": "抗贫血药：三个层次，三处不同步",
         "status": "⏳"
       },
       {
         "n": 33,
         "slug": "33-drugs-affecting-coagulation",
-        "title": "第33章 作用于凝血系统药物",
+        "title": "作用于凝血系统的药物：一条线上的四段，与三种「能不能被监测」",
         "status": "⏳"
       },
       {
         "n": 34,
         "slug": "34-adrenocortical-hormones",
-        "title": "第34章 肾上腺皮质激素类药",
+        "title": "肾上腺皮质激素类药：三个方向，一条轴，一条同源律",
         "status": "⏳"
       },
       {
         "n": 35,
         "slug": "35-thyroid-hormones-and-antithyroid-drugs",
-        "title": "第35章 甲状腺激素与抗甲状腺药",
+        "title": "甲状腺激素与抗甲状腺药：三个环节、一条时间轴",
         "status": "⏳"
       },
       {
         "n": 36,
         "slug": "36-antihyperglycemic-drugs",
-        "title": "第36章 降血糖药",
+        "title": "降血糖药：五条环节，一条时间轴",
         "status": "⏳"
       },
       {
         "n": 37,
         "slug": "37-sex-hormones-and-contraceptives",
-        "title": "第37章 性激素类药及避孕药",
+        "title": "性激素类药及避孕药：一条受体链，三种时间尺度",
         "status": "⏳"
       },
       {
         "n": 38,
         "slug": "38-antimicrobial-drugs-overview",
-        "title": "第38章 抗病原微生物药物概论",
+        "title": "抗病原微生物药物概论：一把钥匙、两套机制、一条演化线",
         "status": "⏳"
       },
       {
         "n": 39,
         "slug": "39-synthetic-antibacterial-drugs",
-        "title": "第39章 人工合成抗菌药",
+        "title": "人工合成抗菌药：共同的出身，四条不通用的靶点线",
         "status": "⏳"
       },
       {
         "n": 40,
         "slug": "40-beta-lactam-antibiotics",
-        "title": "第40章 β-内酰胺类抗生素",
+        "title": "β-内酰胺类抗生素：一个环、一个靶点、三处差别",
         "status": "⏳"
       },
       {
         "n": 41,
         "slug": "41-macrolides-lincosamides-and-polypeptide-antibiotics",
-        "title": "第41章 大环内酯类、林可霉素类及多肽类抗生素",
+        "title": "大环内酯类、林可霉素类及多肽类抗生素：靶点决定范围，位点决定配伍",
         "status": "⏳"
       },
       {
         "n": 42,
         "slug": "42-aminoglycoside-antibiotics",
-        "title": "第42章 氨基糖苷类抗生素",
+        "title": "氨基糖苷类抗生素：结构与转运决定谱，蓄积部位决定毒性",
         "status": "⏳"
       },
       {
         "n": 43,
         "slug": "43-tetracyclines-and-chloramphenicol",
-        "title": "第43章 四环素类与氯霉素类",
+        "title": "四环素类与氯霉素类：宽谱的同源，是风险的另一种说法",
         "status": "⏳"
       },
       {
         "n": 44,
         "slug": "44-antifungal-and-antiviral-drugs",
-        "title": "第44章 抗真菌药与抗病毒药",
+        "title": "抗真菌药与抗病毒药：选择性只剩一步之差",
         "status": "⏳"
       },
       {
         "n": 45,
         "slug": "45-antituberculosis-and-antileprosy-drugs",
-        "title": "第45章 抗结核病药及抗麻风病药",
+        "title": "抗结核病药及抗麻风病药：菌群不同步，方案就不能单打",
         "status": "⏳"
       },
       {
         "n": 46,
         "slug": "46-antiparasitic-drugs",
-        "title": "第46章 抗寄生虫药",
+        "title": "抗寄生虫药：先认生活史，再认药",
         "status": "⏳"
       },
       {
         "n": 47,
         "slug": "47-anticancer-drugs",
-        "title": "第47章 抗恶性肿瘤药",
+        "title": "抗恶性肿瘤药：选择性是相对的，边界是算出来的",
         "status": "⏳"
       },
       {
         "n": 48,
         "slug": "48-immunosuppressants",
-        "title": "第48章 免疫抑制药",
+        "title": "免疫抑制药：作用在哪一环，就欠哪一方面的账",
         "status": "⏳"
       },
       {
         "n": 49,
         "slug": "49-immunostimulants",
-        "title": "第49章 免疫增强药",
+        "title": "免疫增强药：方向相反，不等于道理相反",
         "status": "⏳"
       }
     ],

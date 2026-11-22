@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-e51",
-   "title": "五官经典原文概览",
+   "title": "五官科的「经典」不是一个书架，而是五条各有源流的谱系",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-e52",
-   "title": "目与脏腑经络",
+   "title": "五轮回答的是「病在哪一轮」，不是「病因为何」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-e53",
-   "title": "耳与肾",
+   "title": "「肾开窍于耳」是起点，不是答案",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-e54",
-   "title": "咽喉与肺胃",
+   "title": "咽与喉在经典里是两个东西，合成一个词之后辨证就变粗了",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-e55",
-   "title": "病名与证候的历史演变",
+   "title": "病名是「当时看得见的东西」的名字，改名时丢的是判据",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-e56",
-   "title": "经典与临床的对接",
+   "title": "对接不是「古方治今病」，是判据到判据的翻译",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

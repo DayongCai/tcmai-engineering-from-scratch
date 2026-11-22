@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-rob1",
-   "title": "机器人是什么：从器械到执行体",
+   "title": "机器人不是更快的器械，是必须能停下来的执行体",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-rob2",
-   "title": "感知：传感器与信号",
+   "title": "感知的瓶颈不在传感器，在「信号到语义」的那一跳",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-rob3",
-   "title": "决策：强化学习与序贯选择",
+   "title": "决策的难点不是选最优，是错一步还能回头",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-rob4",
-   "title": "规划与规则约束",
+   "title": "接触式任务的规划，不能只算「怎么过去」，要算「怎么压下去」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-rob5",
-   "title": "控制与反馈：线性模型的视角",
+   "title": "控制的好坏不看增益多高，看超调落在人体上是多少牛",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-rob6",
-   "title": "系统集成与接口",
+   "title": "集成不是把模块连起来，是把「同一个词的同一个意思」对齐",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-rob7",
-   "title": "安全与失效处理",
+   "title": "安全不是「不出故障」，是故障之后朝哪个方向倒",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-rob8",
-   "title": "中医场景：推拿、灸疗机器人的边界",
+   "title": "能交给机器的是「可参数化的部分」，不是「手法」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

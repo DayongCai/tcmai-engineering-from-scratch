@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-zhenggu-lunzhuan",
-      "title": "正骨科轮转：骨折复位与固定",
+      "title": "正骨轮转：复位做得好不好，看的是你喊停的那一次",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-zhenggu-lunzhuan/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-jinshang-lunzhuan",
-      "title": "筋伤科轮转：软组织损伤",
+      "title": "筋伤轮转：门槛不在手上，在禁忌筛查那三分钟",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-jinshang-lunzhuan/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-jizhu-lunzhuan",
-      "title": "脊柱科轮转",
+      "title": "脊柱轮转：最贵的错误，是把红旗征当成落枕",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-jizhu-lunzhuan/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-guanjie-lunzhuan",
-      "title": "关节科轮转",
+      "title": "关节轮转：先分清「能等」和「不能等」",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-guanjie-lunzhuan/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-jizhen-chuangshang",
-      "title": "急诊创伤与院前处置",
+      "title": "创伤轮转：第一课是分工，不是技术",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-jizhen-chuangshang/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-chuke-kaohe",
-      "title": "出科考核与病例复盘",
+      "title": "出科考核：考的不是背，是你能不能把一次接诊从头讲到尾",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-chuke-kaohe/docs/zh.md",

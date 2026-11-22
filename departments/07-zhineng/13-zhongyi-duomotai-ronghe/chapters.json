@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-u1",
-   "title": "多模态是什么：从四诊到设备",
+   "title": "四诊本来就是多模态，缺的不是传感器而是时钟",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-u2",
-   "title": "采集链路与质控",
+   "title": "采集链上掉一次时钟，融合就少一分可信",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-u3",
-   "title": "信号与图像的基本处理",
+   "title": "预处理不是洗干净，是翻译到同一把尺子上",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-u4",
-   "title": "特征、降维与表征",
+   "title": "特征是压缩，压缩必须留下判据",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-u5",
-   "title": "神经网络与表征学习",
+   "title": "学到的表征，未必是你想要的那个",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-u6",
-   "title": "融合策略与对齐",
+   "title": "融合的难点不在拼，而在对齐",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-u7",
-   "title": "无监督分型与聚类",
+   "title": "聚类出来的亚型，先问它稳不稳",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-u8",
-   "title": "结构化知识怎么接进来",
+   "title": "知识不是特征，是约束",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -70,7 +70,7 @@
   {
    "n": 9,
    "slug": "09-u9",
-   "title": "评估：多模态是否真的更好",
+   "title": "说多模态更好之前，先让它可被反驳",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -78,7 +78,7 @@
   {
    "n": 10,
    "slug": "10-u10",
-   "title": "隐私与合规（多源数据的红线）",
+   "title": "多源数据的红线，在合并之前就画好了",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

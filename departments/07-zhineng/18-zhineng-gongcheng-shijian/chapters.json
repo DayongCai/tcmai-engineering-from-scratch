@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-xuqiu-hegui",
-      "title": "需求与数据合规评估",
+      "title": "合规不是在合同上签字，是在第一行代码之前画好边界",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-xuqiu-hegui/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-jiagou-jiekou",
-      "title": "系统架构与接口实现",
+      "title": "接口定不下来，架构就只是画在纸上的分工",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-jiagou-jiekou/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-xunlian-pingce",
-      "title": "模型训练与评测流水线",
+      "title": "一次跑通不算流水线，能跑出同一个数才算",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-xunlian-pingce/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-bushu-huidu",
-      "title": "临床部署与灰度验证",
+      "title": "上线不是发布，是把决策权交出去的那一刻",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-bushu-huidu/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-yunwei-fupan",
-      "title": "运维、监控与事故复盘",
+      "title": "复盘不是找责任人，是把下一次的失败提前写出来",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-yunwei-fupan/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-yanshou-wendang",
-      "title": "交付验收与文档",
+      "title": "验收的标准不是文档齐了，是别人能接手",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-yanshou-wendang/docs/zh.md",

@@ -4,7 +4,7 @@
   {
    "n": 1,
    "slug": "01-gailun",
-   "title": "康复工程概论",
+   "title": "支具不治病，它改变的是力的分配",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -12,7 +12,7 @@
   {
    "n": 2,
    "slug": "02-fenlei-cailiao",
-   "title": "支具分类与材料",
+   "title": "分类看约束的方向，材料看它能撑多久",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -20,7 +20,7 @@
   {
    "n": 3,
    "slug": "03-jizhu-zhiju",
-   "title": "脊柱支具",
+   "title": "脊柱支具靠三点力，不靠把躯干裹紧",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -28,7 +28,7 @@
   {
    "n": 4,
    "slug": "04-shangzhi-zhiju",
-   "title": "上肢支具",
+   "title": "手部支具的目标是滑动，不是固定",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -36,7 +36,7 @@
   {
    "n": 5,
    "slug": "05-xiazhi-zhiju",
-   "title": "下肢支具",
+   "title": "下肢支具先回答负重，再回答步态",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -44,7 +44,7 @@
   {
    "n": 6,
    "slug": "06-zuxie-yali",
-   "title": "矫形鞋与压力治疗",
+   "title": "鞋垫改变力矩，压力衣改变梯度",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -52,7 +52,7 @@
   {
    "n": 7,
    "slug": "07-zhuxing-fuzhu",
-   "title": "助行器、轮椅与转移辅具",
+   "title": "辅具的第一判据是使用者能不能自己用",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -60,7 +60,7 @@
   {
    "n": 8,
    "slug": "08-pinggu-suifang",
-   "title": "适配评估与随访",
+   "title": "适配好不好，皮肤先说话",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

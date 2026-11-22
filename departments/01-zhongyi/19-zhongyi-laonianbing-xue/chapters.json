@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-xulun",
-   "title": "第1章 绪论",
+   "title": "绪论：老年病学研究的不是「病」，是「生了病的人」",
    "status": "🚧",
    "source": {
     "chapter": 1,
@@ -16,7 +16,7 @@
   {
    "n": 2,
    "slug": "02-fazhan-jianshi",
-   "title": "第2章 中医老年病学发展简史",
+   "title": "发展简史：从「养老」到「老年病学」",
    "status": "🚧",
    "source": {
     "chapter": 2,
@@ -27,7 +27,7 @@
   {
    "n": 3,
    "slug": "03-shengli-bingli-tedian",
-   "title": "第3章 老年生理病理特点",
+   "title": "生理病理特点：衰老是「虚」，也是「瘀与痰」",
    "status": "🚧",
    "source": {
     "chapter": 3,
@@ -38,7 +38,7 @@
   {
    "n": 4,
    "slug": "04-bingyin-bingji",
-   "title": "第4章 老年病病因病机",
+   "title": "病因病机：因虚致实，由实转虚",
    "status": "🚧",
    "source": {
     "chapter": 4,
@@ -49,7 +49,7 @@
   {
    "n": 5,
    "slug": "05-zhenfa-bianzheng",
-   "title": "第5章 老年病诊法与辨证特点",
+   "title": "诊法与辨证特点：脉象会骗人，功能不会",
    "status": "🚧",
    "source": {
     "chapter": 5,
@@ -60,7 +60,7 @@
   {
    "n": 6,
    "slug": "06-zhiliao-yuanze-tiaohu",
-   "title": "第6章 老年病治疗原则与调护",
+   "title": "治疗原则与调护：小剂量、顾脾胃、缓图",
    "status": "🚧",
    "source": {
     "chapter": 6,
@@ -71,7 +71,7 @@
   {
    "n": 7,
    "slug": "07-changjian-zhengzhuang",
-   "title": "第7章 老年常见症状辨治",
+   "title": "老年常见症状辨治：七个「说不清」的主诉",
    "status": "🚧",
    "source": {
     "chapter": 7,
@@ -82,7 +82,7 @@
   {
    "n": 8,
    "slug": "08-xinnao-xueguan",
-   "title": "第8章 老年心脑血管病证",
+   "title": "老年心脑血管病证：本虚标实的主战场",
    "status": "🚧",
    "source": {
     "chapter": 8,
@@ -93,7 +93,7 @@
   {
    "n": 9,
    "slug": "09-feixi-bingzheng",
-   "title": "第9章 老年肺系病证",
+   "title": "老年肺系病证：正虚受邪的五个出口",
    "status": "🚧",
    "source": {
     "chapter": 9,
@@ -104,7 +104,7 @@
   {
    "n": 10,
    "slug": "10-piwei-gandan",
-   "title": "第10章 老年脾胃肝胆病证",
+   "title": "老年脾胃肝胆病证：能吃，才谈得上治",
    "status": "🚧",
    "source": {
     "chapter": 10,
@@ -115,7 +115,7 @@
   {
    "n": 11,
    "slug": "11-shenxi-guguanjie",
-   "title": "第11章 老年肾系与骨关节病证",
+   "title": "老年肾系与骨关节病证：水、尿、骨、痹、腰",
    "status": "🚧",
    "source": {
     "chapter": 11,
@@ -126,7 +126,7 @@
   {
    "n": 12,
    "slug": "12-duobing-gongcun-zhihui-yanglao",
-   "title": "第12章 老年多病共存与智慧养老",
+   "title": "多病共存与智慧养老：把「一人多病」变成可管理的结构",
    "status": "🚧",
    "source": {
     "chapter": 12,

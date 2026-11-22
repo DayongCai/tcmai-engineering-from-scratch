@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-juese-shujuleixing",
-   "title": "统计学的角色与数据类型",
+   "title": "数据类型定错了，后面每个数字都跟着错",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-juese-shujuleixing/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-miaoshu-fenbu",
-   "title": "描述性统计与分布",
+   "title": "只报一个均数不叫描述，得报一对",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-miaoshu-fenbu/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-gailv-chouyang",
-   "title": "概率与抽样分布",
+   "title": "样本的「率」是一团会呼吸的数",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-gailv-chouyang/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-jiashe-pzhi",
-   "title": "假设检验与 p 值",
+   "title": "p 值量的是「差得够不够稳」，不是「差得够不够大」",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-jiashe-pzhi/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-t-fangcha",
-   "title": "t 检验与方差分析",
+   "title": "比较的不是两堆数，是差值除以它自己的抖动",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-t-fangcha/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-kaifang-liebiao",
-   "title": "卡方检验与列联表",
+   "title": "率的分母，比率的分子更容易骗人",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-kaifang-liebiao/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-xiangguan-huigui",
-   "title": "相关与线性回归",
+   "title": "相关系数是斜率被两个标准差除过一遍",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-xiangguan-huigui/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-logistic-shengcun",
-   "title": "Logistic 回归与生存分析",
+   "title": "时间一进模型，删失就不能当成缺失",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-logistic-shengcun/docs/zh.md",
@@ -77,7 +77,7 @@
   {
    "n": 9,
    "slug": "09-duochong-jiaoyan",
-   "title": "多重比较与假阳性控制",
+   "title": "做了 20 个指标，「总有一个显著」是算术，不是运气",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/09-duochong-jiaoyan/docs/zh.md",
@@ -86,7 +86,7 @@
   {
    "n": 10,
    "slug": "10-baogao-kefuxian",
-   "title": "统计报告的规范与可复现",
+   "title": "报告的价值，在于别人能照着重算一遍",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/10-baogao-kefuxian/docs/zh.md",

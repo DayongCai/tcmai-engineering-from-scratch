@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-e11",
-   "title": "耳鼻咽喉的解剖概览",
+   "title": "四区不是四个器官，是四个入口：一本书凭什么装得下耳鼻咽喉口齿",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-e12",
-   "title": "耳的应用解剖",
+   "title": "耳：三段两层膜，看得见的边界在鼓膜就断了",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-e13",
-   "title": "鼻与鼻窦",
+   "title": "鼻与鼻窦：一条路、四间挂屋，滞留是链不是点",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-e14",
-   "title": "咽喉的解剖",
+   "title": "咽喉：一条共用的管子，四处分岔与一个不能迟半拍的关门动作",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-e15",
-   "title": "口腔与涎腺",
+   "title": "口腔与涎腺：三套坐标，记不住坐标就只剩「嘴里有个地方」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-e16",
-   "title": "神经与血管支配",
+   "title": "神经与血管：给一句模糊的症状配一条可追的线",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-e17",
-   "title": "生理功能与免疫",
+   "title": "生理：功能拆得开，症状才反推得回去",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-e18",
-   "title": "检查法与正常所见",
+   "title": "检查法：每一个「未见异常」都得带一个范围",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

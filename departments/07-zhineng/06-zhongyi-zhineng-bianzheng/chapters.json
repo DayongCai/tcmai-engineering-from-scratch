@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-xingshihua-guize",
-   "title": "辨证的形式化：从规则到概率",
+   "title": "辨证算不出来，多半是「证」先没写清楚",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-xingshihua-guize/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-caiji-xindu",
-   "title": "症状采集的界面与信度",
+   "title": "采集界面决定了证候能算到多细",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-caiji-xindu/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-guize-yinqing",
-   "title": "规则引擎与专家系统",
+   "title": "规则引擎的天花板，是它写不出的那条例外",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-guize-yinqing/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-beiyesi-tuili",
-   "title": "贝叶斯网络与概率推理",
+   "title": "贝叶斯的先验，就是医者没写出来的那部分经验",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-beiyesi-tuili/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-qianru-biaoshi",
-   "title": "症状—证候的嵌入表示",
+   "title": "向量能算出「像」，算不出「为什么是证」",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-qianru-biaoshi/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-duozheng-shuchu",
-   "title": "多证并存的输出设计",
+   "title": "证候不是一道单选题，但系统必须给出一个答案",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-duozheng-shuchu/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-yizhixing-pinggu",
-   "title": "与医生诊断的一致性评估",
+   "title": "kappa 高不代表系统对，只代表它像那位医生",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-yizhixing-pinggu/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-anquan-daijia",
-   "title": "安全性：漏诊与误诊的代价",
+   "title": "漏诊与误诊的代价不对称，阈值就不该对称",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-anquan-daijia/docs/zh.md",
@@ -77,7 +77,7 @@
   {
    "n": 9,
    "slug": "09-jieshi-shuchu",
-   "title": "可解释输出的设计",
+   "title": "解释不是附赠的一段话，是可被反驳的证据链",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/09-jieshi-shuchu/docs/zh.md",
@@ -86,7 +86,7 @@
   {
    "n": 10,
    "slug": "10-shiyong-baogao",
-   "title": "临床试用的设计与报告",
+   "title": "试用不是演示，是事先写好的失败条件",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/10-shiyong-baogao/docs/zh.md",

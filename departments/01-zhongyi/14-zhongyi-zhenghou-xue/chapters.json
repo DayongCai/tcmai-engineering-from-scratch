@@ -168,7 +168,7 @@
     {
       "n": 13,
       "slug": "13-m01-feng-men",
-      "title": "风门（各论·M01）",
+      "title": "风证门（M01）",
       "status": "✅",
       "code": "M01",
       "part": "各论",
@@ -179,7 +179,7 @@
     {
       "n": 14,
       "slug": "14-m02-han-men",
-      "title": "寒门（各论·M02）",
+      "title": "寒证门（M02）",
       "status": "✅",
       "code": "M02",
       "part": "各论",
@@ -190,7 +190,7 @@
     {
       "n": 15,
       "slug": "15-m03-shu-men",
-      "title": "暑门（各论·M03）",
+      "title": "暑证门（M03）",
       "status": "✅",
       "code": "M03",
       "part": "各论",
@@ -201,7 +201,7 @@
     {
       "n": 16,
       "slug": "16-m04-shi-men",
-      "title": "湿门（各论·M04）",
+      "title": "湿证门（M04）",
       "status": "✅",
       "code": "M04",
       "part": "各论",
@@ -212,7 +212,7 @@
     {
       "n": 17,
       "slug": "17-m05-zao-men",
-      "title": "燥门（各论·M05）",
+      "title": "燥证门（M05）",
       "status": "✅",
       "code": "M05",
       "part": "各论",
@@ -223,7 +223,7 @@
     {
       "n": 18,
       "slug": "18-m06-huo-men",
-      "title": "火门（各论·M06）",
+      "title": "火证门（M06）",
       "status": "✅",
       "code": "M06",
       "part": "各论",
@@ -234,7 +234,7 @@
     {
       "n": 19,
       "slug": "19-m07-qi-men",
-      "title": "气门（各论·M07）",
+      "title": "气证门（M07）",
       "status": "✅",
       "code": "M07",
       "part": "各论",
@@ -245,7 +245,7 @@
     {
       "n": 20,
       "slug": "20-m08-yu-men",
-      "title": "瘀门（各论·M08）",
+      "title": "瘀证门（M08）",
       "status": "✅",
       "code": "M08",
       "part": "各论",
@@ -256,7 +256,7 @@
     {
       "n": 21,
       "slug": "21-m09-tan-men",
-      "title": "痰门（各论·M09）",
+      "title": "痰证门（M09）",
       "status": "✅",
       "code": "M09",
       "part": "各论",
@@ -267,7 +267,7 @@
     {
       "n": 22,
       "slug": "22-m10-yin-men",
-      "title": "饮门（各论·M10）",
+      "title": "饮证门（M10）",
       "status": "✅",
       "code": "M10",
       "part": "各论",
@@ -278,7 +278,7 @@
     {
       "n": 23,
       "slug": "23-m11-shiji-men",
-      "title": "食门（各论·M11）",
+      "title": "食证门（M11）",
       "status": "✅",
       "code": "M11",
       "part": "各论",
@@ -289,7 +289,7 @@
     {
       "n": 24,
       "slug": "24-m12-xu-men",
-      "title": "虚门（各论·M12）",
+      "title": "虚证门（M12）",
       "status": "✅",
       "code": "M12",
       "part": "各论",

@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-z81",
-   "title": "健康服务的供给主体",
+   "title": "供给主体的分界，在能承担什么责任，不在挂了什么牌子",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-z82",
-   "title": "分级诊疗与服务体系",
+   "title": "分级不是排座次，是让每一段服务有人接得住",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-z83",
-   "title": "基层与社区健康服务",
+   "title": "基层的本事，是把一次就诊变成一段随访",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-z84",
-   "title": "公共卫生服务管理",
+   "title": "公共卫生的产出，是“没有发生的事”",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-z85",
-   "title": "服务质量与绩效评价",
+   "title": "质量的底线是可比，绩效的前提是可归因",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-z86",
-   "title": "支付方式与激励机制",
+   "title": "支付方式决定行为，比任何动员都硬",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -54,7 +54,7 @@
   {
    "n": 7,
    "slug": "07-z87",
-   "title": "健康服务改革与政策",
+   "title": "改革的难点不在出政策，在最后一公里不改形",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -62,7 +62,7 @@
   {
    "n": 8,
    "slug": "08-z88",
-   "title": "多部门协同与应急",
+   "title": "协同不是开会，是把责任写进同一张流程单",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"

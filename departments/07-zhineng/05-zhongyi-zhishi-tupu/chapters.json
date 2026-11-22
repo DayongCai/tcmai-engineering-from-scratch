@@ -6,7 +6,7 @@
   {
    "n": 1,
    "slug": "01-j1",
-   "title": "知识组织（第 1 段）",
+   "title": "三元组答得出「谁和谁有关」，答不出「先学谁」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-j2",
-   "title": "知识组织（第 2 段）",
+   "title": "本体的最底层不该是「学科」，而该是「共祖」",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -22,7 +22,7 @@
   {
    "n": 3,
    "slug": "03-j3",
-   "title": "知识组织（第 3 段）",
+   "title": "六类边撑起半张中医图，但两套坐标系不能合并",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -30,7 +30,7 @@
   {
    "n": 4,
    "slug": "04-j4",
-   "title": "知识组织（第 4 段）",
+   "title": "一棵树值不值钱，取决于它能不能被重跑出来",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -38,7 +38,7 @@
   {
    "n": 5,
    "slug": "05-j5",
-   "title": "知识组织（第 5 段）",
+   "title": "「消渴」「糖尿病」「E11」：三个名字都不算错，但系统只认一个",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
@@ -46,7 +46,7 @@
   {
    "n": 6,
    "slug": "06-j6",
-   "title": "知识组织（第 6 段）",
+   "title": "「恶寒重、发热轻、无汗」有几种存法，只有一种能算",
    "status": "🚧",
    "docs": "docs/zh.md",
    "code": "code/main.js"
