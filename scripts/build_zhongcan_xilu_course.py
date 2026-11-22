@@ -611,8 +611,11 @@ def build():
                 xt_title=xt["title"], xt_n=xt["measure"]["views"]["参西"])
         # 习题与章节代码同样已人工重做（2026-11-23）：生成器不再覆盖，也不再比对，
         # 否则子代理按正文写的 quiz / main.js 会被判成 DRIFT 并被文件覆盖。
-        files[os.path.join(cdir, "outputs", f"prompt-{base}.md")] = build_prompt(ch)
-        files[os.path.join(cdir, "outputs", f"skill-{base}.md")] = build_skill(ch)
+        # outputs（prompt/skill）自 2026-11-23 起由 scripts/build_chapter_outputs.js 统一生成，
+        # 本生成器同样让路，避免两套口径互相覆盖。
+        if not DOCS_AUTHORED:
+            files[os.path.join(cdir, "outputs", f"prompt-{base}.md")] = build_prompt(ch)
+            files[os.path.join(cdir, "outputs", f"skill-{base}.md")] = build_skill(ch)
         own = [u for u in units if primary[u["locator"]] == ch["n"]]
         shared = [u for u in units if primary[u["locator"]] != ch["n"]]
         ttl, hz_use = ch["title"], s["hanzi"]

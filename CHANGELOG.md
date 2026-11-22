@@ -1,5 +1,29 @@
 # 变更日志
 
+### 章节 outputs 按正文重做：79 门 / 778 章 / 1,556 份（prompt + skill）
+
+**起点**：`chapters/*/outputs/` 里的 prompt 与 skill 是旧脚手架产物——**3,139 / 4,338 份**仍写着「跑 `main.js` 看三辨分布」「22 单元 / 32,790 汉字」「quiz 的 6 道题」，而补实后的正文与新代码里都没有这些东西。学生照着操作会当场对不上。
+
+**做法**（`scripts/build_chapter_outputs.js`）：对已登记科目逐章重建，内容全部从 `docs/zh.md` + `quiz.json` 现算现取，不写死任何数字——
+
+| 内容 | 来源 |
+|---|---|
+| 章题、链条 | 正文 H1；各 `##` 小节标题去编号后串联（排除「代价与边界/验证/思考题」等结构节） |
+| 节数、汉字数、习题道数 | 正文实测；`quiz.json` 实数 |
+| 判据 | 正文里的**加粗判断句原样引用**（prompt 与 skill 各列一遍） |
+| 边界 | `## 代价与边界` 下的条目原样引用 |
+| 免责 | 正文免责声明首句 |
+
+**新门**（`scripts/check_chapter_outputs.js`，`npm run check:outputs`，已入 `npm run check`）七条判据：文件齐且每章只有一份 skill；无脚手架指纹；必须指向 `node code/main.js`；声明的节数/汉字数与实测一致；习题道数与 `quiz.json` 一致；skill 的 `name` 等于章节 slug；skill 至少引用一条正文原句。
+
+结果：**79 门 / 778 章 · 1,556 份 · 全部通过**（起点 3,139 份残留 → 0）。
+
+**过程中的一次破坏与修回**：清理命名错误的临时文件时用了过宽的通配 `rm skill-[0-9][0-9]-*.md`，误删 **465 份已被 git 跟踪**的 skill（那些课历史上用 `skill-NN-slug.md` 命名）。逐份从 git 恢复，并让生成器**沿用目录里已有的文件名**；检查门加一条「不得出现两份 skill」。事后 `build_outputs_index --check` 缺口归零。
+
+**生成器让路**：`build_zhongcan_xilu_course.py` 原也生成 outputs，现已与 docs/quiz/code 一致——`DOCS_AUTHORED` 时一律不生成也不比对（该课 --check 只剩 3 个文件：chapters.json 与两处 meta）。
+
+**遗留**：未登记补实的 110 门课程（正文仍是脚手架体例）的 outputs 保持原样；`explain` / `explanation` 两套解释字段并存；正文 13 处数值错误待改。
+
 ### 习题与章节代码按正文重做：79 门 / 778 章 / 5,084 题 / 7,716 断言
 
 **起点**：课程正文补实后，`quiz.json` 与 `code/main.js` 仍是旧脚手架生成的——题目问「本章三辨」「四位面」，而正文里已经没有这套概念；`main.js` 还在读 `standards/*/units.json` 的旧单元层。实测：全库 2,169 章中 **1,750 个 quiz.json**、**1,873 个 main.js** 含脚手架指纹，其中 **745 / 778 章**属于 79 门已补实课程（其余课程的正文本身仍是脚手架体例，习题与正文反而是自洽的）。
