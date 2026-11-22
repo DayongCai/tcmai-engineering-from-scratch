@@ -32014,7 +32014,7 @@
                   "kind": "skill",
                   "file": "departments/06-guanli/02-zhongyiyao-zhengce-fagui/chapters/04-z24/outputs/skill-z24.md",
                   "title": "规范进不了诊室的那一步",
-                  "description": "规范进不了诊室的那一步——按「三层规范，效力递减而具体度递增 → 个体化与标准化：不是二选一 → 病历：唯一能自证的证据 → 知情同意：中医场景里的四个高风险点」走一遍本章判据",
+                  "description": "规范进不了诊室的那一步——按「三层规范，效力递减而具体度递增 → 个体化与标准化：不是二选一 → 病历：唯一能自证的证据 → 知情同意：中医场景里的五个高风险点」走一遍本章判据",
                   "chars": 820
                 }
               ]
@@ -33138,14 +33138,14 @@
                   "file": "departments/07-zhineng/14-yixue-shuju-anquan-yinsi/chapters/01-e1/outputs/prompt-01-e1.md",
                   "title": "安全的第一道闸门不在防火墙，在字段定义 · 提示词",
                   "description": null,
-                  "chars": 878
+                  "chars": 867
                 },
                 {
                   "kind": "skill",
                   "file": "departments/07-zhineng/14-yixue-shuju-anquan-yinsi/chapters/01-e1/outputs/skill-e1.md",
                   "title": "安全的第一道闸门不在防火墙，在字段定义",
                   "description": "安全的第一道闸门不在防火墙，在字段定义——按「标准体系分四类，安全却挂在最不基础的那一类上 → 分类与编码：粒度就是可识别性 → 术语与同义词：脱敏字典漏项的主要来源 → 映射与版本：语义漂移撕开的那条缝」走一遍本章判据",
-                  "chars": 758
+                  "chars": 747
                 }
               ]
             },
@@ -41325,14 +41325,14 @@
                   "file": "departments/07-zhineng/14-yixue-shuju-anquan-yinsi/chapters/01-e1/outputs/prompt-01-e1.md",
                   "title": "安全的第一道闸门不在防火墙，在字段定义 · 提示词",
                   "description": null,
-                  "chars": 878
+                  "chars": 867
                 },
                 {
                   "kind": "skill",
                   "file": "departments/07-zhineng/14-yixue-shuju-anquan-yinsi/chapters/01-e1/outputs/skill-e1.md",
                   "title": "安全的第一道闸门不在防火墙，在字段定义",
                   "description": "安全的第一道闸门不在防火墙，在字段定义——按「标准体系分四类，安全却挂在最不基础的那一类上 → 分类与编码：粒度就是可识别性 → 术语与同义词：脱敏字典漏项的主要来源 → 映射与版本：语义漂移撕开的那条缝」走一遍本章判据",
-                  "chars": 758
+                  "chars": 747
                 }
               ]
             },
@@ -43404,7 +43404,7 @@
                   "kind": "skill",
                   "file": "departments/08-wuguan/03-zhongyi-mianbu-wangzhen/chapters/05-e35/outputs/skill-e35.md",
                   "title": "唇：最饱和的那块颜色，恰恰不该拿来测",
-                  "description": "唇：最饱和的那块颜色，恰恰不该拿来测——按「唇有两块，古人分得很清楚 → 唇红：最强的特征，也是最假的特征 → 形：十二条变化，位置本身就是信息 → 齿：古籍判的是「忽」，现代研究几乎都在判「是」」走一遍本章判据",
+                  "description": "唇：最饱和的那块颜色，恰恰不该拿来测——按「唇有两块，古人分得很清楚 → 唇红：最强的特征，也是最假的特征 → 形：十三条变化，位置本身就是信息 → 齿：古籍判的是「忽」，现代研究几乎都在判「是」」走一遍本章判据",
                   "chars": 681
                 }
               ]
@@ -47755,14 +47755,14 @@
                   "file": "departments/09-jichu/04-yixue-shengwu-xue/chapters/04-xibaomo/outputs/prompt-04-xibaomo.md",
                   "title": "膜的本事不是「挡住」，是「让不该过的过得慢，让该过的过得快」 · 提示词",
                   "description": null,
-                  "chars": 853
+                  "chars": 865
                 },
                 {
                   "kind": "skill",
                   "file": "departments/09-jichu/04-yixue-shengwu-xue/chapters/04-xibaomo/outputs/skill-xibaomo.md",
                   "title": "膜的本事不是「挡住」，是「让不该过的过得慢，让该过的过得快」",
                   "description": "膜的本事不是「挡住」，是「让不该过的过得慢，让该过的过得快」——按「模型被改过三次，每次都是被证据逼的 → 脂质：三条硬约束，决定了膜的物理性格 → 蛋白：三种结合方式，决定它能不能动 → 通透性：三层筛子叠在一起」走一遍本章判据",
-                  "chars": 733
+                  "chars": 745
                 }
               ]
             },
@@ -92688,7 +92688,7 @@
       "file": "departments/06-guanli/02-zhongyiyao-zhengce-fagui/chapters/04-z24/outputs/skill-z24.md",
       "title": "规范进不了诊室的那一步",
       "name": "z24",
-      "description": "规范进不了诊室的那一步——按「三层规范，效力递减而具体度递增 → 个体化与标准化：不是二选一 → 病历：唯一能自证的证据 → 知情同意：中医场景里的四个高风险点」走一遍本章判据",
+      "description": "规范进不了诊室的那一步——按「三层规范，效力递减而具体度递增 → 个体化与标准化：不是二选一 → 病历：唯一能自证的证据 → 知情同意：中医场景里的五个高风险点」走一遍本章判据",
       "version": "2.0.0",
       "chars": 820
     },
@@ -104525,7 +104525,7 @@
       "name": null,
       "description": null,
       "version": null,
-      "chars": 878
+      "chars": 867
     },
     {
       "dept": "智能系",
@@ -104540,7 +104540,7 @@
       "name": "e1",
       "description": "安全的第一道闸门不在防火墙，在字段定义——按「标准体系分四类，安全却挂在最不基础的那一类上 → 分类与编码：粒度就是可识别性 → 术语与同义词：脱敏字典漏项的主要来源 → 映射与版本：语义漂移撕开的那条缝」走一遍本章判据",
       "version": "2.0.0",
-      "chars": 758
+      "chars": 747
     },
     {
       "dept": "智能系",
@@ -106638,7 +106638,7 @@
       "file": "departments/08-wuguan/03-zhongyi-mianbu-wangzhen/chapters/05-e35/outputs/skill-e35.md",
       "title": "唇：最饱和的那块颜色，恰恰不该拿来测",
       "name": "e35",
-      "description": "唇：最饱和的那块颜色，恰恰不该拿来测——按「唇有两块，古人分得很清楚 → 唇红：最强的特征，也是最假的特征 → 形：十二条变化，位置本身就是信息 → 齿：古籍判的是「忽」，现代研究几乎都在判「是」」走一遍本章判据",
+      "description": "唇：最饱和的那块颜色，恰恰不该拿来测——按「唇有两块，古人分得很清楚 → 唇红：最强的特征，也是最假的特征 → 形：十三条变化，位置本身就是信息 → 齿：古籍判的是「忽」，现代研究几乎都在判「是」」走一遍本章判据",
       "version": "2.0.0",
       "chars": 681
     },
@@ -111695,7 +111695,7 @@
       "name": null,
       "description": null,
       "version": null,
-      "chars": 853
+      "chars": 865
     },
     {
       "dept": "基础医学院",
@@ -111710,7 +111710,7 @@
       "name": "xibaomo",
       "description": "膜的本事不是「挡住」，是「让不该过的过得慢，让该过的过得快」——按「模型被改过三次，每次都是被证据逼的 → 脂质：三条硬约束，决定了膜的物理性格 → 蛋白：三种结合方式，决定它能不能动 → 通透性：三层筛子叠在一起」走一遍本章判据",
       "version": "2.0.0",
-      "chars": 733
+      "chars": 745
     },
     {
       "dept": "基础医学院",

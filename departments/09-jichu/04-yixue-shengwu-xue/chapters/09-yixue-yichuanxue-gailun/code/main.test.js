@@ -40,18 +40,18 @@ test('中文数量解析对本章用到的口径成立', () => {
   assert.strictEqual(cnToNumber('万'), 1e4);
 });
 
-test('编码区账：按 1.5% 现算 4.5e7；正文 4.8e7 落在所标的 1%–2% 区间内', () => {
+test('编码区账：按 1.5% 现算 4.5e7，与正文一致', () => {
   const b = codingBudget();
   assert.ok(b, '没读到基因组口径');
   assert.strictEqual(b.bases, 3e9);
   assert.strictEqual(b.lo, 0.01);
   assert.strictEqual(b.hi, 0.02);
   assert.strictEqual(b.share, 0.015);
-  assert.strictEqual(b.shown, 4.8e7);
+  assert.strictEqual(b.shown, 4.5e7);
   assert.strictEqual(b.computed, 4.5e7);
   assert.strictEqual(b.shownInBand, true, '正文数应落在 1%–2% 区间内');
-  assert.strictEqual(b.reproduce, false, '1.5% 不能直接复现 4.8e7，脚本应如实标出');
-  assert.ok(Math.abs(b.shownShare - 0.016) < 1e-9);
+  assert.strictEqual(b.reproduce, true, '1.5% 应精确复现 4.5e7');
+  assert.ok(Math.abs(b.shownShare - 0.015) < 1e-9);
 });
 
 test('咨询概率：两携带者 1/4，随机婚配 0.01² = 万分之一', () => {

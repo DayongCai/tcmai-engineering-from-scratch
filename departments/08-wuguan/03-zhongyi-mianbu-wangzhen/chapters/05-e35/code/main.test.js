@@ -57,7 +57,7 @@ test('两张表：唇红／唇四白对照（5 行）与 三轴表（3 行）', 
   assert.deepStrictEqual(b0.head.filter(Boolean), ['唇红', '唇四白']);
   for (const row of b0.rows) assert.strictEqual(row.length, 3);
   const b1 = blocks.find((b) => b.head[0] === '轴');
-  assert.deepStrictEqual(b1.head, ['轴', '十二条中的对应', '可测参数']);
+  assert.deepStrictEqual(b1.head, ['轴', '十三条中的对应', '可测参数']);
   for (const row of b1.rows) assert.strictEqual(row.length, 3);
 });
 
@@ -80,7 +80,7 @@ test('唇的两块：唇红无角质层、四白是口周皮肤', () => {
 test('形变逐项清点：三个轴共收 13 项，与正文列举一致', () => {
   const s = shapeAxes(readDoc());
   assert.strictEqual(s.listed.length, 13, s.listed.join('、'));
-  assert.strictEqual(s.claim, 12, '正文字面写的是「十二种形变」');
+  assert.strictEqual(s.claim, 13, '正文字面写的是「十三种形变」');
   assert.strictEqual(s.covered, 13);
   assert.deepStrictEqual(s.axes.map((a) => a.axis), ['体积', '连续性', '位置与张力']);
   assert.deepStrictEqual(s.axes.map((a) => a.count), [4, 6, 3]);

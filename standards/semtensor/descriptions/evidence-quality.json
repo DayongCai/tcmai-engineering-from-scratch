@@ -1302,8 +1302,8 @@
         "蛇串疮/缠腰火丹"
       ],
       "tier": "specific",
-      "sources": 5,
-      "labelHitSources": 0,
+      "sources": 6,
+      "labelHitSources": 1,
       "qualifierHitSources": 1,
       "qualifiersMissed": [],
       "viaAlias": [],

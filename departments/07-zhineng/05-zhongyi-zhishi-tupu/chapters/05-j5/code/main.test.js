@@ -48,12 +48,11 @@ test('四种「不同写法」各占一类，不得混成一类', () => {
   assert.deepStrictEqual(A.relations, ['synonym', 'composition', 'qualified', 'broader']);
 });
 
-test('文献核对：硬命中率由 75+1 除以 97 得到', () => {
+test('文献核对：硬命中率由 75 除以 97 得到（同义异名已含在 75 内）', () => {
   assert.strictEqual(A.checked, 97);
   assert.strictEqual(A.lit.specific, 75);
-  assert.strictEqual(A.lit.viaSynonymAlias, 1);
-  assert.strictEqual(A.hardHits, A.lit.specific + A.lit.viaSynonymAlias);
-  assert.strictEqual(Number((A.hardRate * 100).toFixed(1)), 78.4);
+  assert.strictEqual(A.hardHits, 75);
+  assert.strictEqual(Number((A.hardRate * 100).toFixed(1)), 77.3);
 });
 
 test('四条纪律都在正文里：近邻不适用、别名须字面出现、合称整条正名为空、离线标未能核实', () => {

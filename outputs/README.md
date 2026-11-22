@@ -12885,7 +12885,7 @@
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
 | prompt | 规范进不了诊室的那一步 · 提示词 | — | 928 | [`prompt-04-z24.md`](../departments/06-guanli/02-zhongyiyao-zhengce-fagui/chapters/04-z24/outputs/prompt-04-z24.md) |
-| skill | 规范进不了诊室的那一步 | 规范进不了诊室的那一步——按「三层规范，效力递减而具体度递增 → 个体化与标准化：不是二选一 → 病历：唯一能自证的证据 → 知情同意：中医场景里的四个高风险点」走一遍本章判据 | 820 | [`skill-z24.md`](../departments/06-guanli/02-zhongyiyao-zhengce-fagui/chapters/04-z24/outputs/skill-z24.md) |
+| skill | 规范进不了诊室的那一步 | 规范进不了诊室的那一步——按「三层规范，效力递减而具体度递增 → 个体化与标准化：不是二选一 → 病历：唯一能自证的证据 → 知情同意：中医场景里的五个高风险点」走一遍本章判据 | 820 | [`skill-z24.md`](../departments/06-guanli/02-zhongyiyao-zhengce-fagui/chapters/04-z24/outputs/skill-z24.md) |
 
 #### 第 5 章 · 老祖宗的方子，要过现代的审
 
@@ -13391,8 +13391,8 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 健康是目的，费用是代价：把两者混成一个数，账就永远算不清 · 提示词 | — | 918 | [`prompt-01-e1.md`](../departments/06-guanli/09-yiliao-baoxian-jingji/chapters/01-e1/outputs/prompt-01-e1.md) |
 | skill | 健康是目的，费用是代价：把两者混成一个数，账就永远算不清 | 健康是目的，费用是代价：把两者混成一个数，账就永远算不清——按「健康是资本，但它的收益常常归别人 → 把「翻倍」拆成四股力 → 成本、效果、比较：三个判据缺一不可 → 增长不全是浪费，浪费也不都在增长里」走一遍本章判据 | 791 | [`skill-e1.md`](../departments/06-guanli/09-yiliao-baoxian-jingji/chapters/01-e1/outputs/skill-e1.md) |
-| prompt | 安全的第一道闸门不在防火墙，在字段定义 · 提示词 | — | 878 | [`prompt-01-e1.md`](../departments/07-zhineng/14-yixue-shuju-anquan-yinsi/chapters/01-e1/outputs/prompt-01-e1.md) |
-| skill | 安全的第一道闸门不在防火墙，在字段定义 | 安全的第一道闸门不在防火墙，在字段定义——按「标准体系分四类，安全却挂在最不基础的那一类上 → 分类与编码：粒度就是可识别性 → 术语与同义词：脱敏字典漏项的主要来源 → 映射与版本：语义漂移撕开的那条缝」走一遍本章判据 | 758 | [`skill-e1.md`](../departments/07-zhineng/14-yixue-shuju-anquan-yinsi/chapters/01-e1/outputs/skill-e1.md) |
+| prompt | 安全的第一道闸门不在防火墙，在字段定义 · 提示词 | — | 867 | [`prompt-01-e1.md`](../departments/07-zhineng/14-yixue-shuju-anquan-yinsi/chapters/01-e1/outputs/prompt-01-e1.md) |
+| skill | 安全的第一道闸门不在防火墙，在字段定义 | 安全的第一道闸门不在防火墙，在字段定义——按「标准体系分四类，安全却挂在最不基础的那一类上 → 分类与编码：粒度就是可识别性 → 术语与同义词：脱敏字典漏项的主要来源 → 映射与版本：语义漂移撕开的那条缝」走一遍本章判据 | 747 | [`skill-e1.md`](../departments/07-zhineng/14-yixue-shuju-anquan-yinsi/chapters/01-e1/outputs/skill-e1.md) |
 
 #### 第 2 章 · 医疗的需求是被供给方写出来的：「物多则贱」在这里失效
 
@@ -16751,8 +16751,8 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 健康是目的，费用是代价：把两者混成一个数，账就永远算不清 · 提示词 | — | 918 | [`prompt-01-e1.md`](../departments/06-guanli/09-yiliao-baoxian-jingji/chapters/01-e1/outputs/prompt-01-e1.md) |
 | skill | 健康是目的，费用是代价：把两者混成一个数，账就永远算不清 | 健康是目的，费用是代价：把两者混成一个数，账就永远算不清——按「健康是资本，但它的收益常常归别人 → 把「翻倍」拆成四股力 → 成本、效果、比较：三个判据缺一不可 → 增长不全是浪费，浪费也不都在增长里」走一遍本章判据 | 791 | [`skill-e1.md`](../departments/06-guanli/09-yiliao-baoxian-jingji/chapters/01-e1/outputs/skill-e1.md) |
-| prompt | 安全的第一道闸门不在防火墙，在字段定义 · 提示词 | — | 878 | [`prompt-01-e1.md`](../departments/07-zhineng/14-yixue-shuju-anquan-yinsi/chapters/01-e1/outputs/prompt-01-e1.md) |
-| skill | 安全的第一道闸门不在防火墙，在字段定义 | 安全的第一道闸门不在防火墙，在字段定义——按「标准体系分四类，安全却挂在最不基础的那一类上 → 分类与编码：粒度就是可识别性 → 术语与同义词：脱敏字典漏项的主要来源 → 映射与版本：语义漂移撕开的那条缝」走一遍本章判据 | 758 | [`skill-e1.md`](../departments/07-zhineng/14-yixue-shuju-anquan-yinsi/chapters/01-e1/outputs/skill-e1.md) |
+| prompt | 安全的第一道闸门不在防火墙，在字段定义 · 提示词 | — | 867 | [`prompt-01-e1.md`](../departments/07-zhineng/14-yixue-shuju-anquan-yinsi/chapters/01-e1/outputs/prompt-01-e1.md) |
+| skill | 安全的第一道闸门不在防火墙，在字段定义 | 安全的第一道闸门不在防火墙，在字段定义——按「标准体系分四类，安全却挂在最不基础的那一类上 → 分类与编码：粒度就是可识别性 → 术语与同义词：脱敏字典漏项的主要来源 → 映射与版本：语义漂移撕开的那条缝」走一遍本章判据 | 747 | [`skill-e1.md`](../departments/07-zhineng/14-yixue-shuju-anquan-yinsi/chapters/01-e1/outputs/skill-e1.md) |
 
 #### 第 2 章 · 医疗的需求是被供给方写出来的：「物多则贱」在这里失效
 
@@ -17502,7 +17502,7 @@
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
 | prompt | 唇：最饱和的那块颜色，恰恰不该拿来测 · 提示词 | — | 795 | [`prompt-05-e35.md`](../departments/08-wuguan/03-zhongyi-mianbu-wangzhen/chapters/05-e35/outputs/prompt-05-e35.md) |
-| skill | 唇：最饱和的那块颜色，恰恰不该拿来测 | 唇：最饱和的那块颜色，恰恰不该拿来测——按「唇有两块，古人分得很清楚 → 唇红：最强的特征，也是最假的特征 → 形：十二条变化，位置本身就是信息 → 齿：古籍判的是「忽」，现代研究几乎都在判「是」」走一遍本章判据 | 681 | [`skill-e35.md`](../departments/08-wuguan/03-zhongyi-mianbu-wangzhen/chapters/05-e35/outputs/skill-e35.md) |
+| skill | 唇：最饱和的那块颜色，恰恰不该拿来测 | 唇：最饱和的那块颜色，恰恰不该拿来测——按「唇有两块，古人分得很清楚 → 唇红：最强的特征，也是最假的特征 → 形：十三条变化，位置本身就是信息 → 齿：古籍判的是「忽」，现代研究几乎都在判「是」」走一遍本章判据 | 681 | [`skill-e35.md`](../departments/08-wuguan/03-zhongyi-mianbu-wangzhen/chapters/05-e35/outputs/skill-e35.md) |
 
 #### 第 6 章 · 咽喉：一百零一篇里，唯一没有专章的部位
 
@@ -19214,8 +19214,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 膜的本事不是「挡住」，是「让不该过的过得慢，让该过的过得快」 · 提示词 | — | 853 | [`prompt-04-xibaomo.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/04-xibaomo/outputs/prompt-04-xibaomo.md) |
-| skill | 膜的本事不是「挡住」，是「让不该过的过得慢，让该过的过得快」 | 膜的本事不是「挡住」，是「让不该过的过得慢，让该过的过得快」——按「模型被改过三次，每次都是被证据逼的 → 脂质：三条硬约束，决定了膜的物理性格 → 蛋白：三种结合方式，决定它能不能动 → 通透性：三层筛子叠在一起」走一遍本章判据 | 733 | [`skill-xibaomo.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/04-xibaomo/outputs/skill-xibaomo.md) |
+| prompt | 膜的本事不是「挡住」，是「让不该过的过得慢，让该过的过得快」 · 提示词 | — | 865 | [`prompt-04-xibaomo.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/04-xibaomo/outputs/prompt-04-xibaomo.md) |
+| skill | 膜的本事不是「挡住」，是「让不该过的过得慢，让该过的过得快」 | 膜的本事不是「挡住」，是「让不该过的过得慢，让该过的过得快」——按「模型被改过三次，每次都是被证据逼的 → 脂质：三条硬约束，决定了膜的物理性格 → 蛋白：三种结合方式，决定它能不能动 → 通透性：三层筛子叠在一起」走一遍本章判据 | 745 | [`skill-xibaomo.md`](../departments/09-jichu/04-yixue-shengwu-xue/chapters/04-xibaomo/outputs/skill-xibaomo.md) |
 
 #### 第 5 章 · 细胞质不是一锅汤，是一条有方向、有分区、要收费的流水线
 

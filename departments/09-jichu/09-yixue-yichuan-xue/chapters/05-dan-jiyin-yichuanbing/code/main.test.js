@@ -21,7 +21,7 @@ test('正文就在本章目录下，章号与标题取自正文', () => {
 });
 
 test('结构量与正文快照一致', () => {
-  assert.strictEqual(A.hanzi, 2892);
+  assert.strictEqual(A.hanzi, 2899);
   assert.strictEqual(A.sections.length, 7);
   assert.strictEqual(A.tables, 3);
 });

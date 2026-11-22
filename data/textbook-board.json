@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 1688348,
+    "gapWithBodyChars": 1688468,
     "gapNoBody": 0
   },
   "totals": {
@@ -23521,7 +23521,7 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 42207
+            "chars": 42222
           },
           "note": "教学章已有正文（10 章 / 4.2 万字），未接教材出版线"
         },
@@ -23533,7 +23533,7 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 34510
+            "chars": 34550
           },
           "note": "教学章已有正文（8 章 / 3.5 万字），未接教材出版线"
         },
@@ -23557,7 +23557,7 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 30259
+            "chars": 30274
           },
           "note": "教学章已有正文（8 章 / 3.0 万字），未接教材出版线"
         },
@@ -23593,7 +23593,7 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 34159
+            "chars": 34198
           },
           "note": "教学章已有正文（8 章 / 3.4 万字），未接教材出版线"
         },
@@ -23643,7 +23643,7 @@
           "hours": 36,
           "body": {
             "chapters": 12,
-            "chars": 44063
+            "chars": 44074
           },
           "note": "教学章已有正文（12 章 / 4.4 万字），未接教材出版线"
         }

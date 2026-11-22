@@ -113,7 +113,8 @@ function analyze(text) {
   }
   const checkedHit = body.match(/对\s*(\d+)\s*条证名的文献核对/);
   const checked = checkedHit ? num(checkedHit[1]) : null;
-  const hardHits = (lit.specific || 0) + (lit.viaSynonymAlias || 0);
+  // specific 的 tier 计数已包含「靠同义异名命中」的那 1 条，不能再加一次
+  const hardHits = lit.specific || 0;
   const hardRate = checked ? hardHits / checked : null;
 
   return {

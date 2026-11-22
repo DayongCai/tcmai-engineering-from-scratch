@@ -124,10 +124,10 @@ function lipParts(text) {
   };
 }
 
-/** 十二条形变：正文点名的条目，以及三个轴各收了几条 */
+/** 十三条形变：正文点名的条目，以及三个轴各收了几条 */
 function shapeAxes(text) {
-  const line = String(text).split(/\r?\n/).find((l) => l.includes('列了十二种形变')) || '';
-  const listed = (/列了(?:十二|[\d]+)种形变：([^。]+)。/.exec(line) || [null, ''])[1].split('、').map((s) => s.trim()).filter(Boolean);
+  const line = String(text).split(String.fromCharCode(10)).find((l) => l.includes('种形变：')) || '';
+  const listed = (/(?:列了)(\d+|[一二三四五六七八九十]+)种形变：([^。]+)。/.exec(line) || [null, '', ''])[2].split('、').map((s) => s.trim()).filter(Boolean);
   const claim = cn2num((/列了(\d+|[一二三四五六七八九十]+)种形变/.exec(line) || [null, ''])[1]);
   const blocks = tableBlocks(text);
   const t = blocks.find((b) => b.head[0] === '轴') || { head: [], rows: [] };

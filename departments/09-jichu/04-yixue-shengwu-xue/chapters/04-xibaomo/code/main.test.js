@@ -42,11 +42,10 @@ test('厚度比按正文口径现算为 1/2000', () => {
   assert.strictEqual(g.thicknessRatio, 2000);
 });
 
-test('正文表面积数与直径口径不同源，脚本如实标出而不掩盖', () => {
+test('正文表面积与直径口径同源：r=5 μm 算得 314 μm²', () => {
   const g = geometry();
-  assert.strictEqual(g.shown, 1250);
-  assert.strictEqual(g.shownMatchesDiameter, false, 'r=5 μm 算不出 1250');
-  assert.strictEqual(g.shownMatchesRadius, true, 'r=10 μm 才对得上 1250');
+  assert.strictEqual(g.shown, 314);
+  assert.strictEqual(g.shownMatchesDiameter, true, 'r=5 μm 应算得 314');
   assert.ok(g.areaFromDiameter < g.areaFromRadius);
 });
 
