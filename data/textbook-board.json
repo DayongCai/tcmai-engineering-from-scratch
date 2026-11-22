@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 4030885,
+    "gapWithBodyChars": 3903967,
     "gapNoBody": 0
   },
   "totals": {
@@ -23485,9 +23485,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 87196
+            "chars": 37795
           },
-          "note": "教学章已有正文（10 章 / 8.7 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.8 万字），未接教材出版线"
         },
         {
           "slug": "06-zhongyi-zhineng-bianzheng",
@@ -23497,9 +23497,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 87365
+            "chars": 36850
           },
-          "note": "教学章已有正文（10 章 / 8.7 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.7 万字），未接教材出版线"
         },
         {
           "slug": "07-yixue-tuxiang-shezhen",
@@ -23605,9 +23605,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 53906
+            "chars": 26904
           },
-          "note": "教学章已有正文（8 章 / 5.4 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.7 万字），未接教材出版线"
         }
       ]
     },
