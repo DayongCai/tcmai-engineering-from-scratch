@@ -1,7 +1,7 @@
 'use strict';
 const assert = require('node:assert');
 const test = require('node:test');
-const { BOOK, SEGS, refOf, corpus, liqi, jiuChuan, membrane, dayuanYin, compare, JIU_CHUAN } = require('./main.js');
+const { BOOK, SEGS, refOf, corpus, liqi, jiuChuan, membrane, dayuanYin, compare, JIU_CHUAN, QUIZ, docAudit } = require('./main.js');
 
 /** 「外源·笈成·溫疫論 上卷·原病·第1段」→ SEGS 里的一段；解析不出来即引用格式错 */
 function resolve(ref) {
@@ -107,4 +107,41 @@ test('分工对比：條辨 290 条里「疫」只 5 条、膜原与戾 0 条 �
     if (r.basis === 'text') assert.strictEqual(typeof r.we, 'string', '定性行不得写成数字');
   }
   assert.strictEqual(rows.filter((r) => r.basis === 'count').length, 4);
+});
+
+/* ── 正文与 quiz 同源：节 / 段 / 气论 / 九传 / 膜原，全部现读现核 ── */
+
+test('正文 87 节 303 段、戾气四词、九传并项、膜原 24 段，逐格与底本现算一致', () => {
+  const a = docAudit();
+  assert.ok(a.facts.length >= 8);
+  for (const f of a.facts) assert.strictEqual(f.got, f.want, `${f.label}: 现算 ${f.got} ≠ 正文 ${f.want}`);
+});
+
+test('正文五条引文逐字落在底本段落里', () => {
+  assert.strictEqual(docAudit().quotes.length, 5);
+  for (const q of docAudit().quotes) {
+    assert.strictEqual(q.inDoc, true, `正文缺「${q.quote}」`);
+    assert.strictEqual(q.inSource, true, `底本缺「${q.quote}」`);
+  }
+});
+
+test('quiz 结构：题量、三段、四选项、解释长度、答案合法', () => {
+  const { quiz } = docAudit();
+  assert.ok(quiz.total >= 5);
+  for (const s of ['pre', 'check', 'post']) assert.ok(quiz.stage[s] >= 1, `缺 ${s} 段`);
+  assert.strictEqual(quiz.allFour, true);
+  assert.strictEqual(quiz.badCorrect, 0);
+  assert.ok(quiz.minExplain >= 30, `最短解释 ${quiz.minExplain} 汉字`);
+});
+
+test('quiz 接地与打散：≥2 道 check 题的正确选项能在正文找到原词', () => {
+  const { quiz } = docAudit();
+  assert.ok(quiz.groundedChecks >= 2, `只有 ${quiz.groundedChecks} 道接地`);
+  assert.ok(quiz.distinctAnswers >= 3, `答案只用了 ${quiz.distinctAnswers} 个位置`);
+});
+
+test('quiz 无脚手架残留，且不把引文写成「底本」或来源行', () => {
+  const raw = require('node:fs').readFileSync(QUIZ, 'utf8');
+  assert.strictEqual(docAudit().quiz.scaffold, false);
+  for (const bad of ['三辨', '四位面', '单元规模', '底本', '外源·笈成']) assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
 });

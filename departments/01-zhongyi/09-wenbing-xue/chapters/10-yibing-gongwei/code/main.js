@@ -26,6 +26,8 @@ const ROOT = path.resolve(__dirname, '../../../../../..');
 const BOOKS = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/wenbing/底本.json'), 'utf8'));
 const BOOK = BOOKS.books.find((b) => b.id === 'wenyilun');
 const TIAOBIAN = BOOKS.books.find((b) => b.id === 'tiaobian');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 /** 全部段 + 出处，段序即源页序 */
 const SEGS = BOOK.sections.flatMap((s) =>
@@ -292,9 +294,106 @@ function report() {
   console.log('  能：段—篇索引与词频（本文件全部输出）· 九传的类型枚举与并项规则 · 达原饮药味与加减规则');
   console.log('  不能：把「戾气」等同于细菌/病毒（原书无病原体概念、无分离培养）· 由九传给个体病程排序');
   console.log('        由「眾人均等」推出传染数 R0 · 据本章处方');
+
+  const a = docAudit();
+  console.log('\n  正文与 quiz 对账（读 docs/zh.md）');
+  for (const f of a.facts) console.log(`  ${f.got === f.want ? '✓' : '✗'} ${f.label} 现算 ${f.got} · 正文 ${f.want}`);
+  console.log(`  quiz ${a.quiz.total} 题（pre ${a.quiz.stage.pre} / check ${a.quiz.stage.check} / post ${a.quiz.stage.post}）· check 接地 ${a.quiz.groundedChecks} 道 · 答案 ${a.quiz.answers.join('/')}`);
   console.log('');
 }
 
 if (require.main === module) report();
 
-module.exports = { BOOK, TIAOBIAN, SEGS, refOf, corpus, liqi, jiuChuan, membrane, dayuanYin, compare, JIU_CHUAN, NORMALIZE };
+/* ── 正文与 quiz 的对账：节 / 段 / 气论 / 九传 / 膜原，逐格复算 ── */
+
+function hanzi(s) {
+  return (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+}
+
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizAudit(raw) {
+  const qs = JSON.parse(raw).questions || [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const rows = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    return { stage: q.stage, options: opts.length, correct: q.correct, explainHanzi: hanzi(q.explain), right: String(opts[q.correct] || '') };
+  });
+  return {
+    total: qs.length,
+    stage,
+    rows,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    allFour: rows.every((r) => r.options === 4),
+    badCorrect: rows.filter((r) => !(Number.isInteger(r.correct) && r.correct >= 0 && r.correct < 4)).length,
+    minExplain: Math.min(...rows.map((r) => r.explainHanzi)),
+    scaffold: new RegExp(['三' + '辨', '四位' + '面', '单元' + '规模', '本章' + '实测'].join('|')).test(raw),
+  };
+}
+
+function docAudit() {
+  const doc = fs.readFileSync(DOC, 'utf8').replace(/\*\*/g, '');
+  const qraw = fs.readFileSync(QUIZ, 'utf8');
+  const c = corpus();
+  const L = liqi();
+  const J = jiuChuan();
+  const M = membrane();
+  const D = dayuanYin();
+  const C = compare();
+  const grab = (re, label) => {
+    const m = re.exec(doc);
+    if (!m) throw new Error(`正文里定位不到「${label}」`);
+    return m.slice(1).map((v) => Number(String(v).replace(/,/g, '')));
+  };
+
+  const [docJie, docZi, docShang, docXia, docSegs, docHant] = grab(/(\d+) 节 = 自敘 (\d+) \+ 上卷 (\d+) 篇 \+ 下卷 (\d+) 篇；(\d+) 段；([\d,]+) 繁字/, '语料规模');
+  const [docLi, docLi2, docZa, docYi, docDedup, docPct] = grab(/「戾氣」(\d+) 段、「癘氣」(\d+) 段、「雜氣」(\d+) 段、「異氣」(\d+) 段，去重 (\d+) 段——占 303 段的 ([\d.]+)%/, '气论四词');
+  if (!/——9 项/.test(doc)) throw new Error('正文里定位不到「原病 9 项」');
+  const docYuanItems = 9;
+  const [docXiaItems] = grab(/却数出 (\d+) 项/, '下卷 10 项');
+  const [docMerged] = grab(/合并后恰好 (\d+) 类/, '并项后');
+  const [docMo, docMoPct, docMoPian, docMoTop] = grab(/「膜原」出现 (\d+) 段，占 ([\d.]+)%，跨 (\d+) 篇；其中〈統論疫有九傳治法〉一篇独占 (\d+) 段/, '膜原分布');
+  const [docDayuan, docPri, docAnc] = grab(/达原饮 (\d+) 味（拔邪 (\d+)＋调和 (\d+)）/, '达原饮');
+  const [docYi95, docYi5] = grab(/含「疫」字\s*\|\s*(\d+) 段（\d+%）\s*\|\s*(\d+) 条/, '疫字');
+  const [docMoWe, docMoTb] = grab(/含「膜原」\s*\|\s*(\d+) 段\s*\|\s*(\d+) 条/, '膜原两书');
+  const [docLiWe, docLiTb] = grab(/含「戾」\s*\|\s*(\d+) 段\s*\|\s*(\d+) 条/, '戾字两书');
+
+  const rows = C.filter((r) => r.basis === 'count');
+  const val = (dim) => rows.find((r) => r.dim === dim);
+  const facts = [
+    { label: '节 = 自敘 + 上卷 + 下卷', got: [c.sections, c.juan.自敘.pian, c.juan.上卷.pian, c.juan.下卷.pian].join('/'), want: [docJie, docZi, docShang, docXia].join('/') },
+    { label: '段 / 繁字', got: `${c.segs}/${c.charsHant}`, want: `${docSegs}/${docHant}` },
+    { label: '上卷/下卷 段数', got: `${c.juan.上卷.segs}/${c.juan.下卷.segs}`, want: '158/143' },
+    { label: '戾/癘/雜/異/去重', got: [L.byTerm.戾氣, L.byTerm.癘氣, L.byTerm.雜氣, L.byTerm.異氣, new Set(L.hits.map((h) => h.ref)).size].join('/'), want: [docLi, docLi2, docZa, docYi, docDedup].join('/') },
+    { label: '膜原 段/占比‰/篇/统论', got: `${M.total}/${(M.share * 100).toFixed(1)}/${M.byPian.length}/${M.byPian.find(([k]) => k === '統論疫有九傳治法')[1]}`, want: `${docMo}/${docMoPct}/${docMoPian}/${docMoTop}` },
+    { label: '九传 原病项/下卷项/并项后/差额', got: `${J.lists[0].items.length}/${J.lists[1].items.length}/${J.types.length}/${J.surplus}`, want: `${docYuanItems}/${docXiaItems}/${docMerged}/1` },
+    { label: '达原饮 味/拔邪/调和', got: `${D.herbs.length}/${D.primary.length}/${D.ancillary.length}`, want: `${docDayuan}/${docPri}/${docAnc}` },
+    { label: '与条辨 疫/膜原/戾', got: `${val('「疫」字所在段/条').we}/${val('「疫」字所在段/条').tb}/${val('「膜原」所在段/条').we}/${val('「膜原」所在段/条').tb}/${val('「戾」字所在段/条').we}/${val('「戾」字所在段/条').tb}`, want: `${docYi95}/${docYi5}/${docMoWe}/${docMoTb}/${docLiWe}/${docLiTb}` },
+  ];
+
+  const q = quizAudit(qraw);
+  const body = grams(doc);
+  const grounded = q.rows.filter((r) => r.stage === 'check' && [...grams(r.right)].some((v) => body.has(v))).length;
+  const allText = SEGS.map((s) => s.hans).join('\n');
+  return {
+    facts,
+    quiz: { ...q, groundedChecks: grounded },
+    quotes: [
+      ['病人各得其一', '病人各得其一'],
+      ['非謂一病而有九傳也', '非谓一病而有九传也'],
+      ['其傳有九', '夫疫之传有九'],
+      ['牛病而羊不病', '牛病而羊不病'],
+      ['邪自口鼻而入', '邪自口鼻而入'],
+    ].map(([a, b]) => ({ quote: a, inDoc: doc.includes(a), inSource: allText.includes(b) })),
+  };
+}
+
+module.exports = { BOOK, TIAOBIAN, SEGS, refOf, corpus, liqi, jiuChuan, membrane, dayuanYin, compare, JIU_CHUAN, NORMALIZE, DOC, QUIZ, hanzi, grams, quizAudit, docAudit };

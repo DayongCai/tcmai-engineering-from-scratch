@@ -1,7 +1,7 @@
 'use strict';
 const assert = require('node:assert');
 const test = require('node:test');
-const { totals, herbFrequency, herbPairs, sizeProfile, derivedFormulas, ladderAnchors, normalize, herbNames } = require('./main.js');
+const { totals, herbFrequency, herbPairs, sizeProfile, derivedFormulas, ladderAnchors, normalize, herbNames, QUIZ, docAudit } = require('./main.js');
 
 test('总体：243 方 = 178 有药味 + 65 无药味；1153 味次', () => {
   const t = totals();
@@ -90,4 +90,41 @@ test('herbNames 对无药味方返回空数组（65 个方不得混入统计）'
   const noHerb = FORMULAS.filter((f) => !(f.ingredients || []).length);
   assert.strictEqual(noHerb.length, 65);
   for (const f of WITH_HERBS) assert.ok(herbNames(f).length > 0);
+});
+
+/* ── 正文与 quiz 同源：药频 / 药对 / 味数 / 加减方，全部现读现核 ── */
+
+test('正文药频 Top12、味数规模、药对、加减方，逐格与底本现算一致', () => {
+  const a = docAudit();
+  assert.ok(a.facts.length >= 18);
+  for (const f of a.facts) assert.strictEqual(f.got, f.want, `${f.label}: 现算 ${f.got} ≠ 正文 ${f.want}`);
+});
+
+test('正文四条引文逐字落在底本条文里', () => {
+  assert.strictEqual(docAudit().quotes.length, 4);
+  for (const q of docAudit().quotes) {
+    assert.strictEqual(q.inDoc, true, `正文缺「${q.quote}」`);
+    assert.strictEqual(q.inSource, true, `底本缺「${q.quote}」`);
+  }
+});
+
+test('quiz 结构：题量、三段、四选项、解释长度、答案合法', () => {
+  const { quiz } = docAudit();
+  assert.ok(quiz.total >= 5);
+  for (const s of ['pre', 'check', 'post']) assert.ok(quiz.stage[s] >= 1, `缺 ${s} 段`);
+  assert.strictEqual(quiz.allFour, true);
+  assert.strictEqual(quiz.badCorrect, 0);
+  assert.ok(quiz.minExplain >= 30, `最短解释 ${quiz.minExplain} 汉字`);
+});
+
+test('quiz 接地与打散：≥2 道 check 题的正确选项能在正文找到原词', () => {
+  const { quiz } = docAudit();
+  assert.ok(quiz.groundedChecks >= 2, `只有 ${quiz.groundedChecks} 道接地`);
+  assert.ok(quiz.distinctAnswers >= 3, `答案只用了 ${quiz.distinctAnswers} 个位置`);
+});
+
+test('quiz 无脚手架残留，且不把引文写成「底本」或来源行', () => {
+  const raw = require('node:fs').readFileSync(QUIZ, 'utf8');
+  assert.strictEqual(docAudit().quiz.scaffold, false);
+  for (const bad of ['三辨', '四位面', '单元规模', '底本', '外源·笈成']) assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
 });

@@ -548,7 +548,7 @@ function quizAudit(raw) {
     allFour: rows.every((r) => r.options === 4),
     badCorrect: rows.filter((r) => !(Number.isInteger(r.correct) && r.correct >= 0 && r.correct < 4)).length,
     minExplain: Math.min(...rows.map((r) => r.explainHanzi)),
-    scaffold: /三辨|四位面|单元规模|本章实测/.test(raw),
+    scaffold: new RegExp(['三' + '辨', '四位' + '面', '单元' + '规模', '本章' + '实测'].join('|')).test(raw),
   };
 }
 
