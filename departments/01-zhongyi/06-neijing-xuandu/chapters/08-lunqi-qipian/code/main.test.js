@@ -1,79 +1,80 @@
 'use strict';
+/**
+ * 第 8 章的习题与正文对齐：篇章数字、引文、quiz 结构，全部从语料现算后断言。
+ * 底本换版、正文改数、引文改字、quiz 跑题，这里都会红。
+ */
 const assert = require('node:assert');
 const test = require('node:test');
-const { GAN, ZHI, YUN, SITIAN, ZAIQUAN, sixtyCycle, computeYear, yearToGanzhi, stats } = require('./main.js');
+const { analyze, hanzi, ratio, norm } = require('./main.js');
 
-test('六十甲子：60 个，阳干配阳支，无重名', () => {
-  const c = sixtyCycle();
-  assert.strictEqual(c.length, 60);
-  assert.strictEqual(new Set(c.map((x) => x.ganzhi)).size, 60);
-  const yang = new Set(['甲', '丙', '戊', '庚', '壬']);
-  const yangZhi = new Set(['子', '寅', '辰', '午', '申', '戌']);
-  for (const x of c) assert.strictEqual(yang.has(x.gan), yangZhi.has(x.zhi), x.ganzhi);
-});
+const r = analyze();
 
-test('十干配五运与十二支配司天：逐条符合原文', () => {
-  assert.deepStrictEqual(
-    ['甲', '己', '乙', '庚', '丙', '辛', '丁', '壬', '戊', '癸'].map((g) => YUN[g]),
-    ['土', '土', '金', '金', '水', '水', '木', '木', '火', '火'],
-  );
-  assert.strictEqual(SITIAN['子'], '少阴君火');
-  assert.strictEqual(SITIAN['午'], '少阴君火');
-  assert.strictEqual(SITIAN['丑'], '太阴湿土');
-  assert.strictEqual(SITIAN['寅'], '少阳相火');
-  assert.strictEqual(SITIAN['卯'], '阳明燥金');
-  assert.strictEqual(SITIAN['辰'], '太阳寒水');
-  assert.strictEqual(SITIAN['亥'], '厥阴风木');
-});
-
-test('在泉为司天对化，六气三对闭合', () => {
-  for (const [k, v] of Object.entries(ZAIQUAN)) {
-    assert.strictEqual(ZAIQUAN[v], k, `${k}↔${v} 应对称`);
+test('正文「底本对读」表的每一行都能由两份语料现算出来', () => {
+  assert.ok(r.rows.length > 0, '正文里没有篇目表');
+  for (const row of r.rows) {
+    assert.ok(row.computed, `${row.title}: ${row.why}`);
+    assert.strictEqual(row.computed.xuanduHanzi, row.xuanduHanzi, `${row.title} 教材本字数对不上`);
+    assert.strictEqual(row.computed.fullHanzi, row.fullHanzi, `${row.title} 全文字数对不上`);
+    assert.ok(Math.abs(row.computed.ratio - row.ratio) <= 0.001, `${row.title} 相似度 ${row.computed.ratio} ≠ 正文 ${row.ratio}`);
+    assert.strictEqual(row.computed.edition, row.edition, `${row.title} 全文/节选判定对不上`);
+    assert.strictEqual(row.locatorOk, true, `${row.title} 的定位写法与教材本不一致`);
   }
-  assert.strictEqual(ZAIQUAN['少阴君火'], '阳明燥金');
-  assert.strictEqual(ZAIQUAN['太阴湿土'], '太阳寒水');
-  assert.strictEqual(ZAIQUAN['少阳相火'], '厥阴风木');
 });
 
-test('分布均匀：五运各 12，太过/不及各 30', () => {
-  const s = stats();
-  assert.deepStrictEqual(s.yun, { 土: 12, 金: 12, 水: 12, 木: 12, 火: 12 });
-  assert.deepStrictEqual(s.taiGuo, { 太过: 30, 不及: 30 });
+test('合计行 = 各篇之和，覆盖率与节选篇数一致', () => {
+  const sumX = r.rows.reduce((a, x) => a + x.computed.xuanduHanzi, 0);
+  const sumF = r.rows.reduce((a, x) => a + x.computed.fullHanzi, 0);
+  assert.strictEqual(sumX, r.totals.xuanduHanzi, '教材本合计算不平');
+  assert.strictEqual(sumF, r.totals.fullHanzi, '全文合计算不平');
+  assert.strictEqual(r.totals.pians, r.rows.length, '篇数与表行数不一致');
+  assert.strictEqual(Number(((100 * sumX) / sumF).toFixed(1)), r.totals.coverage, '覆盖率对不上');
+  assert.strictEqual(r.rows.filter((x) => x.computed.edition === '节选').length, r.totals.excerpt, '节选篇数对不上');
 });
 
-test('天符 12 年，列表与规则推演一致（火运 4 个，其余各 2）', () => {
-  const s = stats();
-  assert.strictEqual(s.tianfu, 12);
-  assert.deepStrictEqual(
-    [...s.tianfuList].sort(),
-    ['丁亥', '丁巳', '丙戌', '丙辰', '乙酉', '乙卯', '己未', '己丑', '戊申', '戊寅', '戊午', '戊子'].sort(),
-  );
+test('正文每一条引文都逐字落在所标的那一篇里', () => {
+  assert.ok(r.quotes.length >= 1, '正文没有可核的引文');
+  for (const q of r.quotes) {
+    assert.ok(q.hit, `《${q.pian}》「${q.text.slice(0, 20)}…」未命中：${q.why}`);
+    assert.ok(q.hanzi >= 8, `《${q.pian}》的引文只有 ${q.hanzi} 字，太短不足以核`);
+  }
 });
 
-test('锚点：1984 = 甲子；2024 = 甲辰（太阳寒水司天）', () => {
-  assert.strictEqual(yearToGanzhi(1984).gan + yearToGanzhi(1984).zhi, '甲子');
-  const y24 = yearToGanzhi(2024);
-  const r24 = computeYear(y24.gan, y24.zhi);
-  assert.strictEqual(r24.ganzhi, '甲辰');
-  assert.strictEqual(r24.yun, '土');
-  assert.strictEqual(r24.taiGuo, '太过');
-  assert.strictEqual(r24.sitian, '太阳寒水');
-  assert.strictEqual(r24.zaiquan, '太阴湿土');
+test('正文写死的数字与语料现算一致', () => {
+  assert.strictEqual(r.facts.length >= 8, true);
+  for (const f of r.facts) assert.strictEqual(f.got, f.want, `${f.label}: 现算 ${f.got} ≠ 正文 ${f.want}`);
 });
 
-test('2026 丙午：水运太过，少阴君火司天，阳明燥金在泉', () => {
-  const r = computeYear('丙', '午');
-  assert.deepStrictEqual([r.yun, r.taiGuo, r.sitian, r.zaiquan], ['水', '太过', '少阴君火', '阳明燥金']);
+test('正文引到的关键词，在所称的那一篇里确有这么多处', () => {
+  for (const p of r.probes) assert.strictEqual(p.got, p.want, `《${p.scope}》「${p.term}」现算 ${p.got} ≠ 正文 ${p.want}`);
 });
 
-test('未知干支必须抛错，不许猜', () => {
-  assert.throws(() => computeYear('子', '子'), /未知天干/);
-  assert.throws(() => computeYear('甲', '甲'), /未知地支/);
+test('相似度实现与 difflib 同构：自己比自己为 1，改一个字会掉下来', () => {
+  const a = norm('阴阳者，天地之道也，万物之纲纪').join('');
+  assert.strictEqual(ratio(a, a), 1);
+  const b = norm('阴阳者，天地之道也，万物之纲目').join('');
+  assert.ok(ratio(a, b) < 1 && ratio(a, b) > 0.9);
 });
 
-test('配属表覆盖全部十干十二支（无遗漏）', () => {
-  assert.strictEqual(Object.keys(YUN).length, 10);
-  assert.strictEqual(Object.keys(SITIAN).length, 12);
-  assert.deepStrictEqual(Object.keys(YUN).sort(), [...GAN].sort());
-  assert.deepStrictEqual(Object.keys(SITIAN).sort(), [...ZHI].sort());
+test('quiz 结构：题量、三段、四选项、解释长度、答案合法', () => {
+  const q = r.quiz;
+  assert.ok(q.total >= 5, `只有 ${q.total} 题`);
+  for (const s of ['pre', 'check', 'post']) assert.ok(q.stage[s] >= 1, `缺 ${s} 段`);
+  assert.strictEqual(q.allFourOptions, true, '有题不是 4 个选项');
+  assert.strictEqual(q.badCorrect, 0, 'correct 下标非法');
+  assert.ok(q.minExplain >= 30, `最短的解释只有 ${q.minExplain} 汉字`);
+});
+
+test('quiz 接地：check 题的正确选项能在正文找到原词，且答案打散', () => {
+  assert.ok(r.quiz.checkGrounded >= 2, `只有 ${r.quiz.checkGrounded} 道 check 题接地`);
+  assert.ok(r.quiz.distinctAnswers >= 3, `正确答案只用到了 ${r.quiz.distinctAnswers} 个位置`);
+});
+
+test('quiz 不出现正文之外的脚手架名目', () => {
+  const raw = JSON.stringify(r.quiz) + require('node:fs').readFileSync(require('./main.js').QUIZ, 'utf8');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测']) assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
+});
+
+test('正文与 quiz 用同一套术语：篇名都在全书里查得到', () => {
+  for (const row of r.rows) assert.ok(r.corpus.byTitle.get(row.title) || r.corpus.byTitle.get(require('./main.js').ALIAS[row.title] || row.title), `${row.title} 不在全文语料里`);
+  assert.ok(hanzi(r.corpus.longest.text) === r.corpus.longest.hanzi);
 });

@@ -1,13 +1,9 @@
 #!/usr/bin/env node
 /**
- * 口腔颌面外科 · 第 3 章 颌面部感染的病因病机：本章统计口径
- * 课程: departments/08-wuguan/11-kouqiang-hemian-waike/chapters/03-e113/docs/zh.md
- * 数据: standards/kouqiang-hemian-waike/units.json（154 单元层，每单元带三辨与四位面词频）
- * 取数: standards/kouqiang-hemian-waike/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
- *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 口腔颌面外科 · 第 3 章：把「火毒」拆成入口、界面与宿主
+ * 正文: chapters/03-e113/docs/zh.md
+ * 做法: 从正文解析病名三层的命名、四个可观察的征、宿主核对表与三步判断。
+ * 依赖: 仅 Node.js 标准库。
  */
 
 'use strict';
@@ -15,87 +11,88 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'kouqiang-hemian-waike', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const TITLE = '火毒是结论，不是原因';
+
+function docText() {
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function sections(text) {
+  const marks = [...text.matchAll(/^## (.+)$/gm)];
+  return marks.map((m, i) => {
+    const start = m.index + m[0].length;
+    const end = i + 1 < marks.length ? marks[i + 1].index : text.length;
+    return { title: m[1].trim(), body: text.slice(start, end) };
+  });
+}
+
+function tables(text) {
+  const out = [];
+  let cur = null;
+  for (const raw of text.split('\n')) {
+    const line = raw.trim();
+    if (!line.startsWith('|')) { cur = null; continue; }
+    if (!cur) { cur = []; out.push(cur); }
+    const cells = line.replace(/^\|/, '').replace(/\|$/, '').split('|').map((s) => s.trim());
+    if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue;
+    cur.push(cells);
   }
-  throw new Error('没找到 standards/kouqiang-hemian-waike/units.json —— 章节目录是否已脱离仓库？');
+  return out.filter((t) => t.length > 1);
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'kouqiang-hemian-waike', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'kouqiang-hemian-waike', 'chapter-map.json');
-const CHAPTER = '3';
-const SLUG = '03-e113';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function bolds(text) {
+  return [...text.matchAll(/\*\*(.+?)\*\*/g)].map((m) => m[1].trim());
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function entriesOf(body) {
+  const out = [];
+  const m1 = body.match(/第一位入口是\*{0,2}([^*，。]+)\*{0,2}/);
+  const m2 = body.match(/第二位入口是\*{0,2}([^*，。]+)\*{0,2}/);
+  if (m1) out.push(m1[1]);
+  if (m2) out.push(m2[1]);
+  for (const m of body.matchAll(/\*\*(创口|血行)\*\*是第[三四]位/g)) {
+    if (!out.includes(m[1])) out.push(m[1]);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
 }
 
-function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`口腔颌面外科 · 第 ${CHAPTER} 章 ${cm.title}`);
-  console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
-  console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/kouqiang-hemian-waike/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+function analyze() {
+  const text = docText();
+  const secs = sections(text);
+  const naming = secs.find((s) => s.title.startsWith('一、')) || { body: '' };
+  const layers = bolds(naming.body).filter((b) => /^(病位深浅|形态|病性)$/.test(b));
+  const signsSec = secs.find((s) => s.title.includes('可观察')) || { body: '' };
+  const signs = bolds(signsSec.body).filter((b) => /^(肿|痛|热|功能障碍)$/.test(b));
+  const hostT = tables(text).find((t) => t[0][0] === '宿主因素');
+  const hosts = hostT ? hostT.slice(1).map((r) => r[0]) : [];
+  const steps = [...text.matchAll(/第[一二三]步，\*\*(.+?)\*\*/g)].map((m) => m[1]);
+  const entries = entriesOf(secs.find((s) => s.title.includes('两个入口')).body);
+  return {
+    title: TITLE,
+    sections: secs.map((s) => s.title),
+    layers,
+    signs,
+    hosts,
+    steps,
+    entries
+  };
 }
 
-if (require.main === module) main();
+function report(a) {
+  console.log(`口腔颌面外科 · 第 3 章 ${a.title}`);
+  console.log('');
+  console.log(`病名叠三层：${a.layers.join(' / ')}`);
+  console.log(`入口 ${a.entries.length} 条：${a.entries.join('；')}`);
+  console.log('');
+  console.log(`四个可观察的征（按可靠性）：${a.signs.join(' → ')}`);
+  console.log(`宿主核对 ${a.hosts.length} 行：${a.hosts.join('、')}`);
+  console.log('');
+  console.log(`处置三步：${a.steps.join(' → ')}`);
+  console.log('');
+  console.log('※ 以上由本章正文现算；不给药物、剂量与时机阈值，临床处置以现行规范为准。');
+}
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+if (require.main === module) report(analyze());
+
+module.exports = { DOC, TITLE, docText, sections, tables, bolds, analyze };

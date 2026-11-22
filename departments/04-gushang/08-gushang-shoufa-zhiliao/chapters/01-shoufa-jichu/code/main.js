@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
- * 骨伤科手法治疗学 · 第 1 章 手法治疗的基础：本章统计口径
+ * 骨伤科手法治疗学 · 第 1 章 · 手法不是力气活：四个字约束的是一组物理量
  * 课程: departments/04-gushang/08-gushang-shoufa-zhiliao/chapters/01-shoufa-jichu/docs/zh.md
- * 数据: standards/gushang-shoufa-zhiliao/units.json（42 单元层，每单元带三辨与四位面词频）
- * 取数: standards/gushang-shoufa-zhiliao/chapter-map.json（课程章 → 教材单元号）
+ * 依据: 《医宗金鉴·正骨心法要旨·手法总论》
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的数字与清单全部由本脚本从正文现算，不手打：
+ *   四条规范、它们各自约束的四个量、力学三要素、反应四档、适应证四类、
+ *   参数之外的六样东西，以及 quiz 的 check 题能在正文里对上几个四字原词。
+ * 正文一改，重跑即可看出哪里对不上；测试再把这几个结论固定下来。
  */
 
 'use strict';
@@ -15,87 +16,235 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gushang-shoufa-zhiliao', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/gushang-shoufa-zhiliao/units.json —— 章节目录是否已脱离仓库？');
-}
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gushang-shoufa-zhiliao', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'gushang-shoufa-zhiliao', 'chapter-map.json');
 const CHAPTER = '1';
 const SLUG = '01-shoufa-jichu';
+const TITLE = '手法不是力气活：四个字约束的是一组物理量';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+/** 四条规范，按正文表格的行序读出，这里只写期望值供测试对照 */
+const EXPECTED_NORMS = ['持久', '有力', '均匀', '柔和'];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+/** 力学三要素，正文括号里给出的三个词 */
+const EXPECTED_QUANTS = ['大小', '方向', '作用点'];
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+/** 每节一个探针词：第 i 个必须出现在第 i 节，用来确认小节顺序没被改动 */
+const SECTION_PROBES = [
+  '四条规范',
+  '第四格是时间',
+  '刺激量',
+  '得气',
+  '先排危险',
+  '参数之外',
+  '不给参数',
+];
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+const GRAM = 4;
+const LINES = /\r?\n/;
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+
+function h2Titles(text) {
+  const out = [];
+  for (const line of String(text).split(LINES)) {
+    const m = /^##\s+(.+)$/.exec(line.trim());
+    if (m) out.push(m[1].trim());
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+/** 按二级标题切段，返回 [{ title, body }] */
+function h2Sections(text) {
+  const out = [];
+  let cur = null;
+  for (const line of String(text).split(LINES)) {
+    const m = /^##\s+(.+)$/.exec(line.trim());
+    if (m) {
+      cur = { title: m[1].trim(), body: [line] };
+      out.push(cur);
+    } else if (cur) cur.body.push(line);
+  }
+  return out.map((s) => ({ title: s.title, body: s.body.join('\n') }));
+}
+
+const sectionAt = (text, i) => (h2Sections(text)[i] || { title: '', body: '' });
+
+/** 表格：连续以 | 开头的行成块 */
+function tableBlocks(text) {
+  const blocks = [];
+  let cur = null;
+  for (const line of String(text).split(LINES)) {
+    const s = line.trim();
+    if (s.startsWith('|')) {
+      if (!cur) {
+        cur = [];
+        blocks.push(cur);
+      }
+      cur.push(s);
+    } else cur = null;
+  }
+  return blocks.map((b) => {
+    const cells = b.map((r) => r.replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim()));
+    return { head: cells[0] || [], rows: cells.slice(2) };
+  });
+}
+
+const occurrences = (text, term) => String(text).split(term).length - 1;
+
+/** 正文里长度为 n 的连续汉字片段 */
+function grams(text, n = GRAM) {
+  const out = new Set();
+  for (const seg of String(text).replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+/** 以粗体开头的段落或列表项，如「反馈闭环」「功力」；行首的「- 」可有可无 */
+function boldItems(body) {
+  const out = [];
+  for (const line of String(body).split(LINES)) {
+    const m = /^(?:-\s+)?\*\*(.+?)。?\*\*/.exec(line.trim());
+    if (m) out.push(m[1].replace(/[。、，]$/, '').trim());
+  }
+  return out;
+}
+
+/** 四条规范：正文第一张表的数据行首列，顺序即表序 */
+function fourNorms() {
+  const t = tableBlocks(readDoc())[0];
+  return t ? t.rows.map((r) => r[0]) : [];
+}
+
+/** 四条规范各自约束的量：正文「四条规范落在四个量上：……」一句列出的四项 */
+function fourConstrained() {
+  const line = readDoc().split(LINES).find((l) => l.includes('四条规范落在四个量上')) || '';
+  const tail = (/四个量上[：:](.+?)。/.exec(line) || [null, ''])[1];
+  return tail.split(/、/).map((s) => s.trim()).filter(Boolean);
+}
+
+/** 力学三要素：正文「力学量是三个（大小、方向、作用点）」括号内的三项 */
+function threeQuants() {
+  const line = readDoc().split(LINES).find((l) => l.includes('力学量是三个')) || '';
+  const inner = (/力学量是三个[（(](.+?)[）)]/.exec(line) || [null, ''])[1];
+  return inner.split(/、/).map((s) => s.trim()).filter(Boolean);
+}
+
+/** 反应四档：正文第二张表的数据行首列（一、二、三、四） */
+function reactionTiers() {
+  const t = tableBlocks(readDoc())[1];
+  return t ? t.rows.map((r) => r[0]) : [];
+}
+
+/** 适应证四类：正文「手法的适用范围包括四类：……」一句列出的四项 */
+function fourScopes() {
+  const line = readDoc().split(LINES).find((l) => l.includes('手法的适用范围包括四类')) || '';
+  const tail = (/包括四类[：:](.+?)。/.exec(line) || [null, ''])[1];
+  return tail.split(/、/).map((s) => s.trim()).filter(Boolean);
+}
+
+/** 参数之外剩下的东西：正文第六节的粗体条目 */
+const beyondParams = () => boldItems(sectionAt(readDoc(), 5).body);
+
+/** quiz 结构与接地：check 题的正确选项能对上几个四字原词 */
+function quizSummary(quiz, text) {
+  const body = grams(text);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  for (const q of qs) if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+  const hits = qs.filter((q) => q.stage === 'check').map((q) => {
+    const right = String((q.options || [])[q.correct] || '');
+    return { question: q.question, grams: [...grams(right)].filter((g) => body.has(g)) };
+  });
+  return {
+    total: qs.length,
+    stage,
+    check: hits.length,
+    grounded: hits.filter((h) => h.grams.length).length,
+    hits,
+    spread: new Set(qs.map((q) => q.correct)).size,
+  };
+}
+
+function analyze() {
+  const text = readDoc();
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const sections = h2Sections(text).map((s) => s.title);
+  return {
+    hanzi: hanzi(text),
+    sections,
+    norms: fourNorms(),
+    constrained: fourConstrained(),
+    quants: threeQuants(),
+    tiers: reactionTiers(),
+    scopes: fourScopes(),
+    beyond: beyondParams(),
+    probes: SECTION_PROBES.map((p, i) => ({ probe: p, ok: sectionAt(text, i).body.includes(p) })),
+    terms: ['持久', '有力', '均匀', '柔和', '得气', '刺激量', '时间'].map((t) => ({ t, n: occurrences(text, t) })),
+    quiz: quizSummary(quiz, text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`骨伤科手法治疗学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = analyze();
+  console.log(`骨伤科手法治疗学 · 第 ${CHAPTER} 章 · ${TITLE}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文 ${r.hanzi.toLocaleString('en-US')} 汉字 · 小节 ${r.sections.length} 个`);
+  r.sections.forEach((s, i) => console.log(`  ${String(i + 1).padStart(2)}  ${s}`));
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`四条规范（正文表序，${r.norms.length} 条）：${r.norms.join(' / ')}`);
+  console.log(`各自约束的量（${r.constrained.length} 项）：${r.constrained.join(' / ')}`);
+  console.log(`力学三要素（${r.quants.length} 项）：${r.quants.join(' / ')}`);
+  console.log(`四对三：${r.quants.length} 个力学量装不下 ${r.norms.length} 条规范，正文把缺的那一维写作第四格「时间」。`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`患者反应分档（正文表序，${r.tiers.length} 档）：${r.tiers.join(' / ')}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`适应证（${r.scopes.length} 类）：`);
+  r.scopes.forEach((s, i) => console.log(`  ${i + 1}. ${s}`));
   console.log('');
-  console.log('※ 教学样例：数字由 standards/gushang-shoufa-zhiliao/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`参数之外还剩 ${r.beyond.length} 样（第六节粗体条目现算）：${r.beyond.join(' / ')}`);
+  console.log('');
+  console.log('关键判据（出现次数）：');
+  console.log('  ' + r.terms.map((x) => `${x.t} ${x.n}`).join(' · '));
+  console.log('');
+  console.log('小节探针（每节一个词，须落在本节）：');
+  console.log('  ' + r.probes.map((p) => `${p.ok ? '✓' : '✗'} ${p.probe}`).join(' · '));
+  console.log('');
+  console.log(
+    `quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· check 题接地 ${r.quiz.grounded} 道（门槛 ≥2）· 答案落在 ${r.quiz.spread} 个位置`
+  );
+  console.log('');
+  console.log('※ 以上数字与清单全部由本章正文现算，无手打常数；改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，不构成诊疗建议、诊断或治疗指导。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  analyze,
+  readDoc,
+  h2Titles,
+  h2Sections,
+  sectionAt,
+  tableBlocks,
+  occurrences,
+  grams,
+  boldItems,
+  fourNorms,
+  fourConstrained,
+  threeQuants,
+  reactionTiers,
+  fourScopes,
+  beyondParams,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+  EXPECTED_NORMS,
+  EXPECTED_QUANTS,
+  SECTION_PROBES,
+};

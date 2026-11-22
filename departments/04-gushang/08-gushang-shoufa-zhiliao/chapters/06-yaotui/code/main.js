@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 骨伤科手法治疗学 · 第 6 章 腰腿部手法：本章统计口径
+ * 骨伤科手法治疗学 · 第 6 章 · 腰腿痛有一半时间在做鉴别，鉴别没做完就不动手
  * 课程: departments/04-gushang/08-gushang-shoufa-zhiliao/chapters/06-yaotui/docs/zh.md
- * 数据: standards/gushang-shoufa-zhiliao/units.json（42 单元层，每单元带三辨与四位面词频）
- * 取数: standards/gushang-shoufa-zhiliao/chapter-map.json（课程章 → 教材单元号）
+ * 依据: 《素问·脉要精微论》
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的数字与清单全部由本脚本从正文现算，不手打：
+ *   六种常见腰痛、急性与慢性的五个对比项、腿痛的四种来源、四条红旗，
+ *   以及 quiz 的 check 题能在正文里对上几个四字原词。
  */
 
 'use strict';
@@ -15,87 +15,207 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gushang-shoufa-zhiliao', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/gushang-shoufa-zhiliao/units.json —— 章节目录是否已脱离仓库？');
-}
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gushang-shoufa-zhiliao', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'gushang-shoufa-zhiliao', 'chapter-map.json');
 const CHAPTER = '6';
 const SLUG = '06-yaotui';
+const TITLE = '腰腿痛有一半时间在做鉴别，鉴别没做完就不动手';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const EXPECTED_DISEASES = ['腰肌劳损', '小关节紊乱', '第三腰椎横突综合征', '急性腰扭伤', '腰椎间盘突出症', '腰椎管狭窄症'];
+const EXPECTED_RED_FLAGS = ['夜间静息痛、体重下降、肿瘤史', '发热、局部红肿热、脊柱叩击痛', '鞍区麻木、二便无力或失禁', '进行性下肢无力、足下垂'];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+const SECTION_PROBES = ['压痛弥散', '即刻', '只松不整', '同一个腰', '收功', '腰腿同源', '红旗', '不写手法参数'];
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+const GRAM = 4;
+const LINES = /\r?\n/;
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+
+function h2Titles(text) {
+  const out = [];
+  for (const line of String(text).split(LINES)) {
+    const m = /^##\s+(.+)$/.exec(line.trim());
+    if (m) out.push(m[1].trim());
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function h2Sections(text) {
+  const out = [];
+  let cur = null;
+  for (const line of String(text).split(LINES)) {
+    const m = /^##\s+(.+)$/.exec(line.trim());
+    if (m) {
+      cur = { title: m[1].trim(), body: [line] };
+      out.push(cur);
+    } else if (cur) cur.body.push(line);
+  }
+  return out.map((s) => ({ title: s.title, body: s.body.join('\n') }));
+}
+
+const sectionAt = (text, i) => (h2Sections(text)[i] || { title: '', body: '' });
+
+function tableBlocks(text) {
+  const blocks = [];
+  let cur = null;
+  for (const line of String(text).split(LINES)) {
+    const s = line.trim();
+    if (s.startsWith('|')) {
+      if (!cur) {
+        cur = [];
+        blocks.push(cur);
+      }
+      cur.push(s);
+    } else cur = null;
+  }
+  return blocks.map((b) => {
+    const cells = b.map((r) => r.replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim()));
+    return { head: cells[0] || [], rows: cells.slice(2) };
+  });
+}
+
+const occurrences = (text, term) => String(text).split(term).length - 1;
+
+function grams(text, n = GRAM) {
+  const out = new Set();
+  for (const seg of String(text).replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function boldItems(body) {
+  const out = [];
+  for (const line of String(body).split(LINES)) {
+    const m = /^(?:-\s+)?\*\*(.+?)。?\*\*/.exec(line.trim());
+    if (!m) continue;
+    const label = m[1].trim();
+    if (label.endsWith('：') || label.endsWith(':')) continue;
+    out.push(label.replace(/[。、，]$/, '').trim());
+  }
+  return out;
+}
+
+/** 六种常见腰痛：第一张表的数据行首列 */
+function sixDiseases() {
+  const t = tableBlocks(readDoc())[0];
+  return t ? t.rows.map((r) => ({ name: r[0], point: r[1], radiation: r[2], test: r[3], role: r[4] })) : [];
+}
+
+/** 急性腰扭伤与腰肌劳损的对比：第二张表的行首列，共五项 */
+function acuteVsChronic() {
+  const t = tableBlocks(readDoc())[1];
+  return t ? t.rows.map((r) => ({ item: r[0], acute: r[1], chronic: r[2] })) : [];
+}
+
+/** 四条红旗：第三张表的数据行 */
+function redFlags() {
+  const t = tableBlocks(readDoc())[2];
+  return t ? t.rows.map((r) => ({ flag: r[0], ask: r[1], points: r[2] })) : [];
+}
+
+/** 腿痛的四种来源：第六节的粗体条目 */
+const legSources = () => boldItems(sectionAt(readDoc(), 5).body);
+
+/** 收功的手法内容：第五节「轻揉、掌摩、抚法与擦法」 */
+function closingMethods() {
+  const line = readDoc().split(LINES).find((l) => l.includes('整理手法的内容是固定的几样')) || '';
+  const tail = (/几样[：:](.+?)[，,]/.exec(line) || [null, ''])[1];
+  return tail.split(/、/).map((s) => s.trim()).filter(Boolean);
+}
+
+function quizSummary(quiz, text) {
+  const body = grams(text);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  for (const q of qs) if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+  const hits = qs.filter((q) => q.stage === 'check').map((q) => {
+    const right = String((q.options || [])[q.correct] || '');
+    return { question: q.question, grams: [...grams(right)].filter((g) => body.has(g)) };
+  });
+  return {
+    total: qs.length,
+    stage,
+    check: hits.length,
+    grounded: hits.filter((h) => h.grams.length).length,
+    hits,
+    spread: new Set(qs.map((q) => q.correct)).size,
+  };
+}
+
+function analyze() {
+  const text = readDoc();
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    hanzi: hanzi(text),
+    sections: h2Titles(text),
+    diseases: sixDiseases(),
+    compare: acuteVsChronic(),
+    flags: redFlags(),
+    legs: legSources(),
+    closing: closingMethods(),
+    probes: SECTION_PROBES.map((p, i) => ({ probe: p, ok: sectionAt(text, i).body.includes(p) })),
+    terms: ['即刻缓解', '只松不整', '间歇性跛行', '直腿抬高', '收功'].map((t) => ({ t, n: occurrences(text, t) })),
+    quiz: quizSummary(quiz, text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`骨伤科手法治疗学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = analyze();
+  console.log(`骨伤科手法治疗学 · 第 ${CHAPTER} 章 · ${TITLE}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文 ${r.hanzi.toLocaleString('en-US')} 汉字 · 小节 ${r.sections.length} 个 · 表格 ${tableBlocks(readDoc()).length} 张`);
+  r.sections.forEach((s, i) => console.log(`  ${String(i + 1).padStart(2)}  ${s}`));
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`六种常见腰痛（${r.diseases.length} 种，正文表序现算）：`);
+  for (const d of r.diseases) console.log(`  ${d.name} · 压痛${d.point} · ${d.role}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`急性与慢性的对比（${r.compare.length} 项）：${r.compare.map((x) => x.item).join(' / ')}`);
+  console.log(`腿痛的来源（${r.legs.length} 种）：${r.legs.join(' / ')}`);
+  console.log(`收功的内容（${r.closing.length} 样）：${r.closing.join(' / ')}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`四条红旗（${r.flags.length} 条，含最快问出它的那句话）：`);
+  r.flags.forEach((f, i) => console.log(`  ${i + 1}. ${f.flag} —— ${f.ask}`));
   console.log('');
-  console.log('※ 教学样例：数字由 standards/gushang-shoufa-zhiliao/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('关键判据（出现次数）：' + r.terms.map((x) => `${x.t} ${x.n}`).join(' · '));
+  console.log('');
+  console.log('小节探针（每节一个词，须落在本节）：');
+  console.log('  ' + r.probes.map((p) => `${p.ok ? '✓' : '✗'} ${p.probe}`).join(' · '));
+  console.log('');
+  console.log(
+    `quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· check 题接地 ${r.quiz.grounded} 道（门槛 ≥2）· 答案落在 ${r.quiz.spread} 个位置`
+  );
+  console.log('');
+  console.log('※ 以上数字与清单全部由本章正文现算，无手打常数；改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，不构成诊疗建议、诊断或急救指导。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  analyze,
+  readDoc,
+  h2Titles,
+  h2Sections,
+  sectionAt,
+  tableBlocks,
+  occurrences,
+  grams,
+  boldItems,
+  sixDiseases,
+  acuteVsChronic,
+  redFlags,
+  legSources,
+  closingMethods,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+  EXPECTED_DISEASES,
+  EXPECTED_RED_FLAGS,
+  SECTION_PROBES,
+};

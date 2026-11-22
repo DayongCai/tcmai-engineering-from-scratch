@@ -1,56 +1,80 @@
 'use strict';
+/**
+ * 第 10 章的习题与正文对齐：篇章数字、引文、quiz 结构，全部从语料现算后断言。
+ * 底本换版、正文改数、引文改字、quiz 跑题，这里都会红。
+ */
 const assert = require('node:assert');
 const test = require('node:test');
-const { LEDGER, KIND_MAP, classify, auditChapters, verifyEvidence, coverage, CHAPTERS } = require('./main.js');
+const { analyze, hanzi, ratio, norm } = require('./main.js');
 
-test('登记表覆盖九章，章号 01–09 各一次', () => {
-  assert.strictEqual(LEDGER.length, 9);
-  assert.deepStrictEqual(LEDGER.map((r) => r.ch), ['01', '02', '03', '04', '05', '06', '07', '08', '09']);
-  assert.deepStrictEqual(LEDGER.map((r) => r.slug), CHAPTERS);
-});
+const r = analyze();
 
-test('每章都写了「能算 / 不能算 / 失效模式」，三条都不许空', () => {
-  const cov = coverage();
-  assert.strictEqual(cov.total, 9);
-  assert.deepStrictEqual(cov.bad, []);
-  for (const r of LEDGER) {
-    assert.ok(r.can.length >= 1, `${r.ch} 缺 能算`);
-    assert.ok(r.cannot.length >= 1, `${r.ch} 缺 不能算`);
-    assert.ok(r.failure.length > 5, `${r.ch} 失效模式太短`);
+test('正文「底本对读」表的每一行都能由两份语料现算出来', () => {
+  assert.ok(r.rows.length > 0, '正文里没有篇目表');
+  for (const row of r.rows) {
+    assert.ok(row.computed, `${row.title}: ${row.why}`);
+    assert.strictEqual(row.computed.xuanduHanzi, row.xuanduHanzi, `${row.title} 教材本字数对不上`);
+    assert.strictEqual(row.computed.fullHanzi, row.fullHanzi, `${row.title} 全文字数对不上`);
+    assert.ok(Math.abs(row.computed.ratio - row.ratio) <= 0.001, `${row.title} 相似度 ${row.computed.ratio} ≠ 正文 ${row.ratio}`);
+    assert.strictEqual(row.computed.edition, row.edition, `${row.title} 全文/节选判定对不上`);
+    assert.strictEqual(row.locatorOk, true, `${row.title} 的定位写法与教材本不一致`);
   }
 });
 
-test('磁盘核对：九章 docs/code/test/quiz 齐全', () => {
-  const rows = auditChapters();
-  assert.strictEqual(rows.length, 9);
-  assert.ok(rows.every((r) => r.ok), JSON.stringify(rows.filter((r) => !r.ok)));
+test('合计行 = 各篇之和，覆盖率与节选篇数一致', () => {
+  const sumX = r.rows.reduce((a, x) => a + x.computed.xuanduHanzi, 0);
+  const sumF = r.rows.reduce((a, x) => a + x.computed.fullHanzi, 0);
+  assert.strictEqual(sumX, r.totals.xuanduHanzi, '教材本合计算不平');
+  assert.strictEqual(sumF, r.totals.fullHanzi, '全文合计算不平');
+  assert.strictEqual(r.totals.pians, r.rows.length, '篇数与表行数不一致');
+  assert.strictEqual(Number(((100 * sumX) / sumF).toFixed(1)), r.totals.coverage, '覆盖率对不上');
+  assert.strictEqual(r.rows.filter((x) => x.computed.edition === '节选').length, r.totals.excerpt, '节选篇数对不上');
 });
 
-test('证据核对：登记的数字/关键词都能在该章 docs 里找到', () => {
-  const rows = verifyEvidence();
-  assert.ok(rows.every((r) => r.ok), JSON.stringify(rows.filter((r) => !r.ok)));
-  // 抽查两条硬数字
-  assert.ok(LEDGER[0].evidence.includes('561,111'));
-  assert.ok(LEDGER[8].evidence.includes('2.31'));
+test('正文每一条引文都逐字落在所标的那一篇里', () => {
+  assert.ok(r.quotes.length >= 1, '正文没有可核的引文');
+  for (const q of r.quotes) {
+    assert.ok(q.hit, `《${q.pian}》「${q.text.slice(0, 20)}…」未命中：${q.why}`);
+    assert.ok(q.hanzi >= 8, `《${q.pian}》的引文只有 ${q.hanzi} 字，太短不足以核`);
+  }
 });
 
-test('请求类型判定：结构类可算，效力类不可算', () => {
-  for (const k of ['计数', '顺序', '归属', '区间']) assert.strictEqual(classify(k).verdict, '可算', k);
-  for (const k of ['因果', '效力', '应验']) assert.strictEqual(classify(k).verdict, '不可算', k);
+test('正文写死的数字与语料现算一致', () => {
+  assert.strictEqual(r.facts.length >= 8, true);
+  for (const f of r.facts) assert.strictEqual(f.got, f.want, `${f.label}: 现算 ${f.got} ≠ 正文 ${f.want}`);
 });
 
-test('未知请求类型必须抛错（不许「大概能算」）', () => {
-  assert.throws(() => classify('疗效预测'), /未知请求类型/);
-  assert.throws(() => classify(''), /未知请求类型/);
+test('正文引到的关键词，在所称的那一篇里确有这么多处', () => {
+  for (const p of r.probes) assert.strictEqual(p.got, p.want, `《${p.scope}》「${p.term}」现算 ${p.got} ≠ 正文 ${p.want}`);
 });
 
-test('三律的载体在表里可查：null 归 0 属第 2 章，点值冒充精确属第 9 章', () => {
-  assert.match(LEDGER.find((r) => r.ch === '02').failure, /null.*0|0.*null/);
-  assert.match(LEDGER.find((r) => r.ch === '09').failure, /点值/);
-  assert.match(LEDGER.find((r) => r.ch === '07').failure, /归纳/);
+test('相似度实现与 difflib 同构：自己比自己为 1，改一个字会掉下来', () => {
+  const a = norm('阴阳者，天地之道也，万物之纲纪').join('');
+  assert.strictEqual(ratio(a, a), 1);
+  const b = norm('阴阳者，天地之道也，万物之纲目').join('');
+  assert.ok(ratio(a, b) < 1 && ratio(a, b) > 0.9);
 });
 
-test('KIND_MAP 恰有 7 类，判定只有两个字面值', () => {
-  assert.strictEqual(Object.keys(KIND_MAP).length, 7);
-  assert.deepStrictEqual([...new Set(Object.values(KIND_MAP).map((v) => v.verdict))].sort(), ['不可算', '可算']);
+test('quiz 结构：题量、三段、四选项、解释长度、答案合法', () => {
+  const q = r.quiz;
+  assert.ok(q.total >= 5, `只有 ${q.total} 题`);
+  for (const s of ['pre', 'check', 'post']) assert.ok(q.stage[s] >= 1, `缺 ${s} 段`);
+  assert.strictEqual(q.allFourOptions, true, '有题不是 4 个选项');
+  assert.strictEqual(q.badCorrect, 0, 'correct 下标非法');
+  assert.ok(q.minExplain >= 30, `最短的解释只有 ${q.minExplain} 汉字`);
+});
+
+test('quiz 接地：check 题的正确选项能在正文找到原词，且答案打散', () => {
+  assert.ok(r.quiz.checkGrounded >= 2, `只有 ${r.quiz.checkGrounded} 道 check 题接地`);
+  assert.ok(r.quiz.distinctAnswers >= 3, `正确答案只用到了 ${r.quiz.distinctAnswers} 个位置`);
+});
+
+test('quiz 不出现正文之外的脚手架名目', () => {
+  const raw = JSON.stringify(r.quiz) + require('node:fs').readFileSync(require('./main.js').QUIZ, 'utf8');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测']) assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
+});
+
+test('正文与 quiz 用同一套术语：篇名都在全书里查得到', () => {
+  for (const row of r.rows) assert.ok(r.corpus.byTitle.get(row.title) || r.corpus.byTitle.get(require('./main.js').ALIAS[row.title] || row.title), `${row.title} 不在全文语料里`);
+  assert.ok(hanzi(r.corpus.longest.text) === r.corpus.longest.hanzi);
 });

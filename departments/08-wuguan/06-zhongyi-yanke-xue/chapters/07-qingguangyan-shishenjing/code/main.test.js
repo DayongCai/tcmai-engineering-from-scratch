@@ -6,57 +6,128 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
+const {
+  analyze,
+  readDoc,
+  h2Titles,
+  tableBlocks,
+  occurrences,
+  sectionAt,
+  boldLeads,
+  threeSteps,
+  triggers,
+  attackSymptoms,
+  blindRoutes,
+  CHAPTER,
+  SLUG,
+  QUIZ,
+  TERMS,
+  SECTION_PROBES,
+  BLIND_ROUTES,
+} = require('./main.js');
+
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-yanke-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-yanke-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文在：规模够一章，且章节号与目录一致', () => {
+  const text = readDoc();
+  assert.ok(hanzi(text) > 2500, `正文过短：${hanzi(text)}`);
+  const dir = path.basename(path.dirname(__dirname));
+  assert.strictEqual(dir, SLUG);
+  assert.match(dir, new RegExp(`^${String(CHAPTER).padStart(2, '0')}`));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('小节结构：六个二级标题，一至六编号，末节为「代价与边界」', () => {
+  const titles = h2Titles(readDoc());
+  assert.strictEqual(titles.length, 6, `小节数 ${titles.length}`);
+  assert.ok(titles.every((t, i) => t.startsWith('一二三四五六'[i] + '、')), titles.join(' | '));
+  assert.ok(titles[5].includes('代价与边界'), titles[5]);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('每节的探针词都落在本节，顺序未被改动', () => {
+  const r = analyze();
+  for (const p of r.probes) assert.ok(p.ok, `探针「${p.probe}」不在对应小节`);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('发作期三步从正文现算：转诊、降压、辨证，次序不可换', () => {
+  const steps = threeSteps(readDoc());
+  assert.strictEqual(steps.length, 3, steps.join(' / '));
+  assert.deepStrictEqual(steps, ['第一动作：转诊', '第二动作：降压', '第三动作：辨证']);
+  assert.ok(steps[0].includes('转诊'), steps[0]);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('第一步的禁令写死在正文：不滴散瞳药、不按压眼球、不让病人观察', () => {
+  const seg = sectionAt(readDoc(), 2);
+  for (const ban of ['不滴散瞳药', '不按压眼球', '闭眼休息观察一下']) {
+    assert.ok(seg.includes(ban), `缺禁令「${ban}」`);
+  }
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('常见诱因现算为六条，且与正文一致', () => {
+  const t = triggers(readDoc());
+  assert.strictEqual(t.length, 6, t.join(' / '));
+  for (const k of ['暴怒', '过劳', '久处暗室', '一次性大量饮水', '衣领过紧', '长时间低头']) {
+    assert.ok(t.includes(k), `缺诱因「${k}」`);
+  }
+});
+
+test('典型发作的症状清单里，虹视、瞳神散大、目珠坚硬都在', () => {
+  const s = attackSymptoms(readDoc()).join(' ');
+  for (const k of ['虹视', '瞳神散大', '坚硬如石', '头痛如劈']) assert.ok(s.includes(k), `缺症状「${k}」`);
+});
+
+test('青盲辨证四路现算为四路，与正文一致', () => {
+  const r = blindRoutes(readDoc());
+  assert.strictEqual(r.length, 4, r.join(' / '));
+  assert.deepStrictEqual(r, BLIND_ROUTES);
+});
+
+test('目标的边界写在正文里：青盲是延缓与保残，不是复明', () => {
+  const seg = sectionAt(readDoc(), 4);
+  assert.ok(seg.includes('恢复极为有限'), '未写恢复有限');
+  assert.ok(seg.includes('先找原因'), '未写先找原因');
+  assert.ok(readDoc().includes('不是复明'), '未写目标边界');
+});
+
+test('关键判据词都在正文出现过（词频 > 0）', () => {
+  const text = readDoc();
+  for (const t of TERMS) assert.ok(occurrences(text, t) > 0, `正文没有「${t}」`);
+});
+
+test('quiz 结构：≥5 题、三段齐、4 选项、correct 合法、explain ≥30 汉字', () => {
+  const q = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const qs = q.questions;
+  assert.ok(qs.length >= 5, `只有 ${qs.length} 题`);
+  const stages = new Set(qs.map((x) => x.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), `缺 ${s} 段`);
+  for (const item of qs) {
+    assert.strictEqual(item.options.length, 4, `选项数不对：${item.question}`);
+    assert.ok(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < 4, 'correct 下标非法');
+    assert.ok(hanzi(item.explain) >= 30, `explain 过短：${item.question}`);
+  }
+});
+
+test('quiz 的 check 题至少两道能在正文中找到四字原词', () => {
+  const r = analyze();
+  assert.ok(r.quiz.grounded >= 2, `接地 ${r.quiz.grounded} 道`);
+  for (const h of r.quiz.hits) assert.ok(h.grams.length > 0, `未接地：${h.question}`);
+});
+
+test('正确选项不集中在同一个下标（答案已打散）', () => {
+  const q = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const idx = q.questions.map((x) => x.correct);
+  assert.ok(new Set(idx).size >= 3, `正确答案只落在 ${new Set(idx).size} 个位置`);
+});
+
+test('命令行可运行，并打印边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-yanke-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
+  assert.ok(out.includes(`第 ${CHAPTER} 章`), '输出未含章号');
+  assert.match(out, /不构成诊断、处方或手术建议/);
+  assert.match(out, /由本章正文现算/);
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/07-qingguangyan-shishenjing/docs/zh.md'), '头部注释未指向本章');
+test('本章无表格，正文以段落组织，断言与正文一致', () => {
+  assert.strictEqual(tableBlocks(readDoc()).length, 0);
 });

@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
- * 脊柱病学 · 第 2 章 脊柱影像诊断：本章统计口径
+ * 脊柱病学 · 第 2 章 · 片子回答「有没有」，不回答「痛不痛」
  * 课程: departments/04-gushang/10-jizhu-bing-xue/chapters/02-yingxiang-zhenduan/docs/zh.md
- * 数据: standards/gushang-jizhu-bing/units.json（45 单元层，每单元带三辨与四位面词频）
- * 取数: standards/gushang-jizhu-bing/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的数字全部由本脚本从正文现算，不手打：
+ *   汉字数、小节标题与顺序、每节探针词、关键判据词频，
+ *   四类检查、三个报告陷阱、读片四步、红旗征清单条数、
+ *   「影像与症状对不上」的四步，以及 quiz 的 check 题接地情况。
+ * 正文一改，重跑即可看出哪里对不上；main.test.js 再把这些数固定下来。
  */
 
 'use strict';
@@ -15,87 +16,248 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gushang-jizhu-bing', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/gushang-jizhu-bing/units.json —— 章节目录是否已脱离仓库？');
-}
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gushang-jizhu-bing', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'gushang-jizhu-bing', 'chapter-map.json');
 const CHAPTER = '2';
 const SLUG = '02-yingxiang-zhenduan';
+const TITLE = '片子回答「有没有」，不回答「痛不痛」';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+/** 关键判据词：本章反复使用的说法，是正文与习题同源的最小证据 */
+const TERMS = [
+  '红旗征',
+  '概率的上调',
+  '形态学词汇',
+  '偶发瘤',
+  '皮节',
+  '电生理',
+  '脂肪浸润',
+  '无既往影像对比',
+];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+/** 每节一个探针词：第 i 个必须落在第 i 节，用来确认小节顺序没被改动 */
+const SECTION_PROBES = [
+  '四种检查',
+  '先整体，后局部',
+  '陷阱一',
+  '两条独立的证据链',
+  '红旗征决定',
+  '影像的阴性不能排除病',
+];
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+const GRAM = 4;
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+
+function h2Titles(text) {
+  const out = [];
+  for (const line of String(text).split(/\r?\n/)) {
+    const m = /^##\s+(.+)$/.exec(line.trim());
+    if (m) out.push(m[1].trim());
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+/** 按二级标题切段，返回 [{ title, body }] */
+function h2Sections(text) {
+  const out = [];
+  let cur = null;
+  for (const line of String(text).split(/\r?\n/)) {
+    const m = /^##\s+(.+)$/.exec(line.trim());
+    if (m) {
+      cur = { title: m[1].trim(), body: [line] };
+      out.push(cur);
+    } else if (cur) cur.body.push(line);
+  }
+  return out.map((s) => ({ title: s.title, body: s.body.join('\n') }));
+}
+
+const sectionAt = (text, i) => (h2Sections(text)[i] || { title: '', body: '' }).body;
+
+const occurrences = (text, term) => String(text).split(term).length - 1;
+
+/** 正文里长度为 n 的连续汉字片段集合 */
+function grams(text, n = GRAM) {
+  const out = new Set();
+  for (const seg of String(text).replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function lineWith(text, needle) {
+  return String(text).split(/\r?\n/).find((l) => l.includes(needle)) || '';
+}
+
+/** 取「关键词：…… 。」之间的内容，按分隔符切成条目 */
+function listAfter(text, needle, sep) {
+  const line = lineWith(text, needle);
+  const at = line.indexOf(needle);
+  if (at < 0) return [];
+  let rest = line.slice(at + needle.length).replace(/^[：:，]/, '');
+  rest = rest.replace(/。.*$/, '');
+  return rest
+    .split(sep)
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
+
+/** 四类检查：正文第一节以加粗小标题列出 */
+function modalities(text) {
+  const names = ['X 线', 'CT', '磁共振', '核素显像与骨密度'];
+  const body = sectionAt(text, 0);
+  const found = [];
+  for (const m of body.matchAll(/\*\*([^*]+)\*\*/g)) {
+    const name = m[1].replace(/[。\s]+$/, '').trim();
+    if (names.includes(name)) found.push(name);
+  }
+  return found;
+}
+
+/** 三个报告陷阱：陷阱一／二／三 的标题 */
+function traps(text) {
+  const body = sectionAt(text, 2);
+  return [...body.matchAll(/\*\*陷阱([一二三])：([^*]+)\*\*/g)].map((m) => ({
+    n: m[1],
+    name: m[2].replace(/[。\s]+$/, '').trim(),
+  }));
+}
+
+/** 读片四步：正文第二节的「一是…四是…」 */
+function readOrder(text) {
+  return sectionAt(text, 1)
+    .split(/\r?\n/)
+    .filter((l) => /^[一二三四]是/.test(l.trim()))
+    .map((l) => l.trim());
+}
+
+/** 影像与症状对不上时的四步：正文第四节的「第一，…」 */
+function evidenceSteps(text) {
+  return sectionAt(text, 3)
+    .split(/\r?\n/)
+    .filter((l) => /^第[一二三四]，/.test(l.trim()))
+    .map((l) => l.trim());
+}
+
+/** 红旗征清单：正文第五节「需要立刻影像的情形包括：…」 */
+function redFlags(text) {
+  return listAfter(text, '需要立刻影像的情形包括：', '；');
+}
+
+/** 随访与报告的判据：正文末两段写明的两句 */
+function boundaries(text) {
+  return [
+    { key: '阴性', ok: text.includes('影像的阴性不能排除病') },
+    { key: '阳性', ok: text.includes('影像的阳性不能证明病') },
+    { key: '无旧片', ok: text.includes('无既往影像对比') },
+  ];
+}
+
+/** quiz 的结构与接地情况：check 题正确选项能对上几个四字原词 */
+function quizSummary(quiz, text) {
+  const body = grams(text);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  for (const q of qs) if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+  const hits = qs
+    .filter((q) => q.stage === 'check')
+    .map((q) => {
+      const right = String((q.options || [])[q.correct] || '');
+      return { question: q.question, grams: [...grams(right)].filter((g) => body.has(g)) };
+    });
+  return {
+    total: qs.length,
+    stage,
+    check: hits.length,
+    grounded: hits.filter((h) => h.grams.length).length,
+    hits,
+  };
+}
+
+function chapterFacts() {
+  const text = readDoc();
+  return {
+    modalities: modalities(text),
+    traps: traps(text),
+    readOrder: readOrder(text),
+    evidenceSteps: evidenceSteps(text),
+    redFlags: redFlags(text),
+    boundaries: boundaries(text),
+  };
+}
+
+function analyze() {
+  const text = readDoc();
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    hanzi: hanzi(text),
+    sections: h2Titles(text),
+    terms: TERMS.map((t) => ({ term: t, count: occurrences(text, t) })),
+    probes: SECTION_PROBES.map((p, i) => ({ probe: p, ok: sectionAt(text, i).includes(p) })),
+    quiz: quizSummary(quiz, text),
+    facts: chapterFacts(),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`脊柱病学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = analyze();
+  const f = r.facts;
+  console.log(`脊柱病学 · 第 ${CHAPTER} 章 · ${TITLE}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文 ${r.hanzi.toLocaleString('en-US')} 汉字 · 小节 ${r.sections.length} 个`);
+  r.sections.forEach((s, i) => console.log(`  ${String(i + 1).padStart(2)}  ${s}`));
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`检查 ${f.modalities.length} 类：${f.modalities.join(' · ')}`);
+  console.log(`报告陷阱 ${f.traps.length} 个：${f.traps.map((t) => `陷阱${t.n}·${t.name}`).join(' · ')}`);
+  console.log(`读片 ${f.readOrder.length} 步：${f.readOrder.map((s) => s.replace(/^[一二三四]是/, '').slice(0, 6)).join(' → ')}`);
+  console.log(`对不上时 ${f.evidenceSteps.length} 步（第几，…）：${f.evidenceSteps.length} 条`);
+  console.log(`红旗征 ${f.redFlags.length} 条：${f.redFlags.map((s) => s.replace(/^以及/, '')).join(' / ')}`);
+  console.log(
+    '边界三句：' + f.boundaries.map((b) => `${b.ok ? '✓' : '✗'}${b.key}`).join(' · ')
+  );
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('关键判据（出现次数）：');
+  console.log('  ' + r.terms.map((x) => `${x.term} ${x.count}`).join(' · '));
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('小节探针（每节一个词，须落在本节）：');
+  console.log('  ' + r.probes.map((p) => `${p.ok ? '✓' : '✗'} ${p.probe}`).join(' · '));
   console.log('');
-  console.log('※ 教学样例：数字由 standards/gushang-jizhu-bing/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(
+    `quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）` +
+      ` · check 题接地 ${r.quiz.grounded} 道（门槛 ≥2）`
+  );
+  console.log('');
+  console.log('※ 以上数字与清单全部由本章正文现算，无手打常数；改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，不构成诊疗建议、诊断或治疗指导。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  analyze,
+  readDoc,
+  h2Titles,
+  h2Sections,
+  sectionAt,
+  occurrences,
+  grams,
+  lineWith,
+  listAfter,
+  modalities,
+  traps,
+  readOrder,
+  evidenceSteps,
+  redFlags,
+  boundaries,
+  quizSummary,
+  chapterFacts,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+  TERMS,
+  SECTION_PROBES,
+};

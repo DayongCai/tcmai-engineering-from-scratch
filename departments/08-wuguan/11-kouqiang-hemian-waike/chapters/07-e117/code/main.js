@@ -1,13 +1,9 @@
 #!/usr/bin/env node
 /**
- * 口腔颌面外科 · 第 7 章 颌面外伤与口齿急症：本章统计口径
- * 课程: departments/08-wuguan/11-kouqiang-hemian-waike/chapters/07-e117/docs/zh.md
- * 数据: standards/kouqiang-hemian-waike/units.json（154 单元层，每单元带三辨与四位面词频）
- * 取数: standards/kouqiang-hemian-waike/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
- *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 口腔颌面外科 · 第 7 章：八个病证按窗口分三档，不按病重分
+ * 正文: chapters/07-e117/docs/zh.md
+ * 做法: 从正文解析窗口表，按窗口文字分档；再取单侧原则与外伤三行。
+ * 依赖: 仅 Node.js 标准库。
  */
 
 'use strict';
@@ -15,87 +11,71 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'kouqiang-hemian-waike', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const TITLE = '急不是病重，是窗口短：八个病证，三种钟';
+
+function docText() {
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function sections(text) {
+  const marks = [...text.matchAll(/^## (.+)$/gm)];
+  return marks.map((m, i) => {
+    const start = m.index + m[0].length;
+    const end = i + 1 < marks.length ? marks[i + 1].index : text.length;
+    return { title: m[1].trim(), body: text.slice(start, end) };
+  });
+}
+
+function tables(text) {
+  const out = [];
+  let cur = null;
+  for (const raw of text.split('\n')) {
+    const line = raw.trim();
+    if (!line.startsWith('|')) { cur = null; continue; }
+    if (!cur) { cur = []; out.push(cur); }
+    const cells = line.replace(/^\|/, '').replace(/\|$/, '').split('|').map((s) => s.trim());
+    if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue;
+    cur.push(cells);
   }
-  throw new Error('没找到 standards/kouqiang-hemian-waike/units.json —— 章节目录是否已脱离仓库？');
+  return out.filter((t) => t.length > 1);
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'kouqiang-hemian-waike', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'kouqiang-hemian-waike', 'chapter-map.json');
-const CHAPTER = '7';
-const SLUG = '07-e117';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 窗口 → 档：分钟 / 天 / 周月 */
+function bucketOf(window) {
+  if (/秒|分钟/.test(window)) return '分钟档';
+  if (/天/.test(window)) return '天档';
+  return '周月档';
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function analyze() {
+  const text = docText();
+  const secs = sections(text);
+  const wt = tables(text).find((t) => t[0][0] === '病证');
+  const rows = wt ? wt.slice(1).map((r) => ({ name: r[0], window: r[1], first: r[2] })) : [];
+  const groups = { '分钟档': [], '天档': [], '周月档': [] };
+  for (const r of rows) groups[bucketOf(r.window)].push(r.name);
+  const sideSec = secs.find((s) => s.title.includes('单侧')) || { body: '' };
+  const sideRules = sideSec.body.split('\n').filter((l) => /^- /.test(l.trim())).map((l) => l.replace(/^-\s*/, '').trim());
+  const traumaSec = secs.find((s) => s.title.includes('外伤')) || { body: '' };
+  const trauma = [...traumaSec.body.matchAll(/\*\*(.+?)\*\*/g)].map((m) => m[1]).filter((b) => /在前|在次|在第三/.test(b));
+  return { title: TITLE, sections: secs.map((s) => s.title), rows, groups, sideRules, trauma };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function report(a) {
+  console.log(`口腔颌面外科 · 第 7 章 ${a.title}`);
+  console.log('');
+  console.log(`病证 ${a.rows.length} 个，按窗口分三档：`);
+  for (const k of Object.keys(a.groups)) console.log(`  ${k}（${a.groups[k].length}）：${a.groups[k].join('、')}`);
+  console.log('');
+  console.log(`单侧原则 ${a.sideRules.length} 条：`);
+  for (const r of a.sideRules) console.log(`  · ${r.replace(/\*\*/g, '').slice(0, 26)}…`);
+  console.log('');
+  console.log(`外伤排序 ${a.trauma.length} 行：${a.trauma.join(' → ')}`);
+  console.log('');
+  console.log('※ 以上由本章正文现算；分档是教学用的排序，不是临床时限标准。');
 }
 
-function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+if (require.main === module) report(analyze());
 
-  console.log(`口腔颌面外科 · 第 ${CHAPTER} 章 ${cm.title}`);
-  console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
-  console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/kouqiang-hemian-waike/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
-}
-
-if (require.main === module) main();
-
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, TITLE, docText, sections, tables, bucketOf, analyze };

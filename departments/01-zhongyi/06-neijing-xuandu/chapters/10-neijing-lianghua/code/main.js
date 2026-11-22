@@ -1,180 +1,435 @@
 'use strict';
 /**
- * 内经九章的量化手法登记表 + 边界判定器
+ * 《内经选读》第 10 章 · 量化能测《内经》的什么，测不出什么
  *
  *   node code/main.js
  *
- * 本文件是「收尾章」的代码：它不产生新数据，而是把前九章真正用过的九种手法
- * 登记成可核对的结构，并提供三件事：
- *   1. auditChapters()  —— 磁盘核对：九章是否都还在（docs/code/test 三件套）
- *   2. verifyEvidence() —— 登记表里引用的每个数字/关键词，必须真的出现在对应章的 docs 里
- *   3. classify(kind)   —— 接到一个量化请求，判「能算/不能算」，判不了就抛错
+ * 正文：chapters/10-neijing-lianghua/docs/zh.md
+ * 语料：standards/materials/neijing-quanwen/content.json（全文 162 篇，只取「原文」块）
+ *       standards/neijing-xuandu/units.json（教材选读本 162 篇，只取原文主体）
  *
- * 口径：
- *   · 登记表是**作者归纳**，不是原文所有；每条都标了「失效模式」，即这一类手法最常见的误用。
- *   · classify 只认六种请求类型；未知类型一律抛错，避免用「大概能算」蒙过去。
- *   · 本表只覆盖本书九章；《伤寒论》章节的量化（频次、BM25、剂量折算）另有一套边界。
+ * 本章每个数字都从这两份语料现算，再和正文写下的数对读：
+ *   · 篇数、原文汉字、段数、篇长分布（中位数 / 最长 / 最短 / 倍差）
+ *   · 「底本对读」表：教材本字数、全文字数、相似度、全文还是节选
+ *   · 正文引文是否逐字落在所标的那一篇里（节引按「……」分段、按序找）
+ *   · 关键词在全书与指定篇里的出现次数
+ *   · quiz 的结构与接地
+ * 正文或底本一改，重跑就能看出是哪一行对不上。
+ *
+ * 口径：汉字按 Unicode 汉字块计（含扩展 B 区，与底本脚本同一口径）；
+ * 相似度是 difflib.SequenceMatcher.ratio() 的同构实现（含 autojunk 与两端延伸），
+ * 与 scripts/wire_neijing_chapters.py 写进正文的数逐位对齐。
  */
 
-const path = require('node:path');
 const fs = require('node:fs');
+const path = require('node:path');
 
-const HERE = __dirname;
-const SUBJECT_DIR = path.resolve(HERE, '../..');   // chapters/
-const CHAPTERS = [
-  '01-suwen-chengshu', '02-yinyang-yingxiang', '03-zangxiang-xitong', '04-jingmai-bielun',
-  '05-bingji-shijiu', '06-zhenfa-maiyao', '07-zhize-biaoben', '08-lunqi-qipian', '09-lingshu-jiuzhen',
-];
+const ROOT = path.resolve(__dirname, '../../../../../..');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const FULL = path.join(ROOT, 'standards/materials/neijing-quanwen/content.json');
+const XUANDU = path.join(ROOT, 'standards/neijing-xuandu/units.json');
 
-/** 九种手法：能算 / 不能算 / 失效模式 / 证据（必须出现在该章 docs 里） */
-const LEDGER = [
-  {
-    ch: '01', slug: '01-suwen-chengshu', method: '篇目体量统计',
-    can: ['篇数', '字数', '篇均与条均', '体裁差异（篇均字数比）'],
-    cannot: ['文本质量', '成书年代', '学派归属'],
-    failure: '把篇幅当重要性（篇均长 ≠ 价值高）',
-    evidence: ['561,111', '162 篇'],
-  },
-  {
-    ch: '02', slug: '02-yinyang-yingxiang', method: '四轴偏侧值',
-    can: ['有序轴上的方向与强度（−1…+1）', '参照点声明', '缺证记 null'],
-    cannot: ['跨轴加总', '换算成剂量或评分表', '无参照点的绝对判断'],
-    failure: '把 null 填成 0（「无证据」被读成「中性」）',
-    evidence: ['偏侧值', '参照点'],
-  },
-  {
-    ch: '03', slug: '03-zangxiang-xitong', method: '藏象五元组解析',
-    can: ['字段抽取（本/华/充/位/通于）', '不规则句式标注', '校勘夹注剥离'],
-    cannot: ['字段之间的因果', '「其华在面」推出诊断', '跨脏比较'],
-    failure: '把不规则句硬套模板（脾句是六者合称）',
-    evidence: ['五元组', '太素'],
-  },
-  {
-    ch: '04', slug: '04-jingmai-bielun', method: '路径图（拓扑）',
-    can: ['可达性', '汇点识别', '无环性检验'],
-    cannot: ['流量', '速率', '压力', '时间'],
-    failure: '把「肺朝百脉」读成闭环（原文是单向叙述）',
-    evidence: ['汇点', '拓扑'],
-  },
-  {
-    ch: '05', slug: '05-bingji-shijiu', method: '病机十九条反查',
-    can: ['症状 → 病机的多命中共现', '「不排除项」清单', '归类计数（脏 5/火 5/热 4…）'],
-    cannot: ['概率与敏感度', '证候优先级', '完备性'],
-    failure: '把十九条当完备清单（它只是举例十九类）',
-    evidence: ['十九条', '脏 5'],
-  },
-  {
-    ch: '06', slug: '06-zhenfa-maiyao', method: '诊法条件核对',
-    can: ['条件偏差清单', '两次采集的可比性判断'],
-    cannot: ['校正后的脉象值', '把下午换算成平旦', '脉象判读'],
-    failure: '换算「平旦等效值」（条件只能记录，不能消除）',
-    evidence: ['平旦', '条件'],
-  },
-  {
-    ch: '07', slug: '07-zhize-biaoben', method: '治序规则判定',
-    can: ['条件 → 先治标/先治本', '优先级冲突的胜出与压过'],
-    cannot: ['疗效', '疗程', '方药选择'],
-    failure: '把归纳的优先级（中满>二便>有余不足）说成原文明文',
-    evidence: ['中满', '先治'],
-  },
-  {
-    ch: '08', slug: '08-lunqi-qipian', method: '干支运气推演',
-    can: ['干支', '中运太过/不及', '司天', '在泉', '天符'],
-    cannot: ['气候', '病种流行', '宜忌'],
-    failure: '从「司天为何气」直接跳到「今年宜温宜清」',
-    evidence: ['天符', '60'],
-  },
-  {
-    ch: '09', slug: '09-lingshu-jiuzhen', method: '九针规格折算',
-    can: ['单位区间（1 寸 2.31–2.35 cm）', '形制—用途对应'],
-    cannot: ['单枚/单支的克数', '实际进针深度', '现代器械等效'],
-    failure: '给点值假装精确（1.6 寸 ≠ 3.70 cm 整）',
-    evidence: ['九针', '2.31'],
-  },
-];
+const CHAPTER = 10;
+const SLUG = '10-neijing-lianghua';
+const TITLE = '量化能测《内经》的什么，测不出什么';
 
-/** 请求类型 → 判定。只有结构类可算；效力类一律不可算；未知抛错 */
-const KIND_MAP = {
-  计数: { verdict: '可算', why: '可复算，结果可被第二人验证' },
-  顺序: { verdict: '可算', why: '条件与顺序确定时，结论唯一' },
-  归属: { verdict: '可算', why: '归属可标出处，争议留痕' },
-  区间: { verdict: '可算', why: '区间本身承认不确定度' },
-  因果: { verdict: '不可算', why: '本草与经文未给因果参数' },
-  效力: { verdict: '不可算', why: '疗效需临床证据，非文本统计' },
-  应验: { verdict: '不可算', why: '推演自洽 ≠ 预测应验' },
+/** 教材本篇名 → 全文篇名：今字/古字与「遗篇·」前缀的差异，逐条写死，不做模糊匹配 */
+const ALIAS = {
+  五脏生成: '五藏生成',
+  五脏别论: '五藏别论',
+  本脏: '本藏',
+  玉机真脏论: '玉机真藏论',
+  脏气法时论: '藏气法时论',
+  邪气脏腑病形: '邪气藏府病形',
+  忧恚无言: '忧患无言',
+  '遗篇·刺法论': '刺法论',
+  '遗篇·本病论': '本病论',
+  上膈: '上隔',
+  背腧: '背俞',
 };
 
-function classify(kind) {
-  const hit = KIND_MAP[kind];
-  if (!hit) throw new Error(`未知请求类型：${kind}（只认 ${Object.keys(KIND_MAP).join('/')}）`);
-  return { kind, ...hit };
+const HAN = /[\u3400-\u4dbf\u4e00-\u9fff]|[\u{20000}-\u{3ffff}]/u;
+const FOLD = { 遊: '游', 於: '于', 穀: '谷', 欬: '咳', 徧: '遍', 臟: '藏' };
+const chars = (s) => [...String(s || '')];
+const isHan = (ch) => HAN.test(ch);
+const hanzi = (s) => chars(s).filter(isHan).length;
+const norm = (s) => chars(s).filter(isHan).map((ch) => FOLD[ch] || ch);
+const count = (text, term) => String(text).split(term).length - 1;
+
+/* ── 语料 ────────────────────────────────────────────────────────── */
+
+/** 全文：162 篇，每篇只取「原文」块（译文与按语不入正文） */
+function loadCorpus(file = FULL) {
+  const doc = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const pians = doc.sections.map((s) => {
+    const blocks = s.blocks.filter((b) => b.type === '原文');
+    const text = blocks.map((b) => b.text).join('');
+    return {
+      title: s.title.split('·').pop(),
+      book: s.title.split('·')[0],
+      blocks: blocks.length,
+      hanzi: hanzi(text),
+      text,
+      flat: norm(text).join(''),
+    };
+  });
+  const byTitle = new Map(pians.map((p) => [p.title, p]));
+  const byBook = {};
+  for (const book of ['素问', '灵枢']) {
+    const xs = pians.filter((p) => p.book === book);
+    const h = xs.reduce((a, p) => a + p.hanzi, 0);
+    const b = xs.reduce((a, p) => a + p.blocks, 0);
+    byBook[book] = { pians: xs.length, hanzi: h, blocks: b, avgHanzi: h / xs.length, avgBlocks: b / xs.length };
+  }
+  const sorted = [...pians].sort((a, b) => a.hanzi - b.hanzi);
+  const half = sorted.length / 2;
+  const median = sorted.length % 2
+    ? sorted[(sorted.length - 1) / 2].hanzi
+    : (sorted[half - 1].hanzi + sorted[half].hanzi) / 2;
+  const total = {
+    pians: pians.length,
+    hanzi: pians.reduce((a, p) => a + p.hanzi, 0),
+    blocks: pians.reduce((a, p) => a + p.blocks, 0),
+  };
+  return {
+    pians,
+    byTitle,
+    byBook,
+    total,
+    median,
+    longest: sorted[sorted.length - 1],
+    shortest: sorted[0],
+    avgHanzi: total.hanzi / total.pians,
+    avgBlocks: total.blocks / total.pians,
+    charsPerBlock: total.hanzi / total.blocks,
+    /** 全书或指定篇里的次数；scope 用篇名 */
+    countTerm(term, scope) {
+      const text = scope ? byTitle.get(ALIAS[scope] || scope).text : pians.map((p) => p.text).join('');
+      return count(text, term);
+    },
+  };
 }
 
-/** 磁盘核对：九章是否都在，且各有 docs/code/test */
-function auditChapters() {
-  return CHAPTERS.map((slug) => {
-    const dir = path.join(SUBJECT_DIR, slug);
-    const need = ['docs/zh.md', 'code/main.js', 'code/main.test.js', 'quiz.json'];
-    const missing = need.filter((f) => !fs.existsSync(path.join(dir, f)));
-    return { slug, ok: missing.length === 0, missing };
+/** 教材选读本：一篇一单元，body 只含「原文」段 */
+function loadXuandu(file = XUANDU) {
+  const doc = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const byTitle = new Map(doc.units.map((u) => [u.title, u]));
+  return { units: doc.units, byTitle, counts: doc.counts };
+}
+
+/* ── 相似度：difflib.SequenceMatcher 的同构实现 ──────────────────── */
+
+function chainB(b) {
+  const m = new Map();
+  b.forEach((ch, i) => {
+    const list = m.get(ch);
+    if (list) list.push(i);
+    else m.set(ch, [i]);
+  });
+  // autojunk：b ≥ 200 字时，出现次数超过 1% + 1 的字不建索引（b[0] 除外）
+  if (b.length >= 200) {
+    const ntest = Math.floor(b.length / 100) + 1;
+    for (const [ch, list] of [...m]) if (list.length > ntest && ch !== b[0]) m.delete(ch);
+  }
+  return m;
+}
+
+function longestMatch(a, b, b2j, alo, ahi, blo, bhi) {
+  let besti = alo;
+  let bestj = blo;
+  let best = 0;
+  let j2len = new Map();
+  for (let i = alo; i < ahi; i += 1) {
+    const next = new Map();
+    const js = b2j.get(a[i]);
+    if (js) {
+      for (const j of js) {
+        if (j < blo) continue;
+        if (j >= bhi) break;
+        const k = (j2len.get(j - 1) || 0) + 1;
+        next.set(j, k);
+        if (k > best) {
+          besti = i - k + 1;
+          bestj = j - k + 1;
+          best = k;
+        }
+      }
+    }
+    j2len = next;
+  }
+  while (besti > alo && bestj > blo && b[bestj - 1] === a[besti - 1]) {
+    besti -= 1;
+    bestj -= 1;
+    best += 1;
+  }
+  while (besti + best < ahi && bestj + best < bhi && b[bestj + best] === a[besti + best]) best += 1;
+  return [besti, bestj, best];
+}
+
+function matchingBlocks(a, b) {
+  const b2j = chainB(b);
+  const queue = [[0, a.length, 0, b.length]];
+  const found = [];
+  while (queue.length) {
+    const [alo, ahi, blo, bhi] = queue.pop();
+    const [i, j, k] = longestMatch(a, b, b2j, alo, ahi, blo, bhi);
+    if (!k) continue;
+    found.push([i, j, k]);
+    if (alo < i && blo < j) queue.push([alo, i, blo, j]);
+    if (i + k < ahi && j + k < bhi) queue.push([i + k, ahi, j + k, bhi]);
+  }
+  found.sort((x, y) => x[0] - y[0] || x[1] - y[1]);
+  const out = [];
+  let [li, lj, lk] = [0, 0, 0];
+  for (const [i, j, k] of found) {
+    if (li + lk === i && lj + lk === j) lk += k;
+    else {
+      if (lk) out.push([li, lj, lk]);
+      [li, lj, lk] = [i, j, k];
+    }
+  }
+  if (lk) out.push([li, lj, lk]);
+  out.push([a.length, b.length, 0]);
+  return out;
+}
+
+function ratio(a, b) {
+  const A = typeof a === 'string' ? chars(a) : a;
+  const B = typeof b === 'string' ? chars(b) : b;
+  if (!A.length && !B.length) return 1;
+  const matched = matchingBlocks(A, B).reduce((acc, x) => acc + x[2], 0);
+  return (2 * matched) / (A.length + B.length);
+}
+
+const round3 = (x) => Math.round(x * 1000) / 1000;
+
+/* ── 正文：篇目表、合计行、引文 ──────────────────────────────────── */
+
+const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
+
+/** 「底本对读」表的行：篇名 | 版本 | 教材本字数 | 全文字数 | 相似度 | 定位 */
+function docRowTable(doc) {
+  const re = /^\|\s*([^|]+?)\s*\|\s*(全文|节选)\s*\|\s*([\d,]+)\s*\|\s*([\d,]+)\s*\|\s*([\d.]+)\s*\|\s*(.+?)\s*\|\s*$/gm;
+  return [...String(doc).matchAll(re)].map((m) => ({
+    title: m[1].trim(),
+    edition: m[2],
+    xuanduHanzi: Number(m[3].replace(/,/g, '')),
+    fullHanzi: Number(m[4].replace(/,/g, '')),
+    ratio: Number(m[5]),
+    locator: m[6].trim(),
+  }));
+}
+
+/** 表上方的三行合计：篇数、教材本/全文字数与覆盖率、节选篇数、引文条数与命中数 */
+function docTotals(doc) {
+  const t = String(doc);
+  const pian = /\|\s*本章篇目\s*\|\s*(\d+)\s*篇（教材本\s*([\d,]+)\s*字\s*\/\s*全文\s*([\d,]+)\s*字，覆盖\s*([\d.]+)%）/.exec(t);
+  const ex = /\|\s*节选篇\s*\|\s*(\d+)\s*篇/.exec(t);
+  const q = /\|\s*docs 引文\s*\|\s*(\d+)\s*条，\*\*全文篇内逐字命中\s*(\d+)\s*条\*\*/.exec(t);
+  if (!pian || !ex || !q) throw new Error('正文缺少「底本对读」块的合计行');
+  return {
+    pians: Number(pian[1]),
+    xuanduHanzi: Number(pian[2].replace(/,/g, '')),
+    fullHanzi: Number(pian[3].replace(/,/g, '')),
+    coverage: Number(pian[4]),
+    excerpt: Number(ex[1]),
+    quotes: Number(q[1]),
+    quoteHits: Number(q[2]),
+  };
+}
+
+/** 正文引文：行内「……」——《素问·篇名》，以及夹在括号里的「……」】（《素问·篇名》） */
+function docQuotes(doc) {
+  const t = String(doc);
+  const out = [];
+  for (const m of t.matchAll(/^>\s*(?:\*\*MOTTO:\*\*\s*)?(.+?)\s*——《(?:素问|灵枢)·([^》]+)》/gm)) {
+    out.push({ where: '引文行', pian: m[2].trim(), text: m[1].replace(/^「|」$/g, '').trim() });
+  }
+  for (const m of t.matchAll(/「([^」]{4,})」\s*（《(?:素问|灵枢)·([^》]+)》）/g)) {
+    out.push({ where: '行内引', pian: m[2].trim(), text: m[1].trim() });
+  }
+  return out.filter((q) => q.text);
+}
+
+/** 逐段核：节引用「……」断开，每一段都要在**所标那一篇**里按序出现（允许省略，不许改字） */
+function verifyQuotes(quotes, corpus) {
+  return quotes.map((q) => {
+    const name = ALIAS[q.pian] || q.pian;
+    const p = corpus.byTitle.get(name);
+    const segs = q.text.split(/…+/).map(norm).map((s) => s.join('')).filter((s) => s.length >= 4);
+    if (!p) return { ...q, segments: segs.length, hit: false, why: '全文里没有这一篇' };
+    let pos = 0;
+    for (const seg of segs) {
+      const i = p.flat.indexOf(seg, pos);
+      if (i < 0) return { ...q, segments: segs.length, hit: false, why: `篇内找不到「${seg.slice(0, 12)}…」` };
+      pos = i + seg.length;
+    }
+    return { ...q, segments: segs.length, hit: segs.length > 0, hanzi: segs.reduce((a, s) => a + s.length, 0) };
   });
 }
 
-/** 登记表里的证据必须真的出现在对应章的 docs 里 —— 防止收尾章凭记忆引用 */
-function verifyEvidence() {
-  return LEDGER.map((row) => {
-    const doc = path.join(SUBJECT_DIR, row.slug, 'docs/zh.md');
-    const text = fs.existsSync(doc) ? fs.readFileSync(doc, 'utf8') : '';
-    const missing = row.evidence.filter((e) => !text.includes(e));
-    return { ch: row.ch, slug: row.slug, ok: missing.length === 0, missing };
-  });
+/* ── quiz：结构 + 接地 ──────────────────────────────────────────── */
+
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
 }
 
-/** 每个章节是否都登记了「能算」与「不能算」 */
-function coverage() {
-  const bad = LEDGER.filter((r) => r.can.length < 1 || r.cannot.length < 1 || !r.failure);
-  return { total: LEDGER.length, bad: bad.map((r) => r.ch) };
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    return {
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(q.explain),
+      grounded: hit.length,
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: Math.min(...items.map((x) => x.explainHanzi)),
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+  };
+}
+
+/* ── 本章要点：正文里写死的数字，逐条对语料 ─────────────────────── */
+
+function chapterFacts(corpus) {
+  const p = (t) => corpus.byTitle.get(t);
+  return [
+    { label: '全书原文汉字', got: corpus.total.hanzi, want: 155206 },
+    { label: '全书原文段数', got: corpus.total.blocks, want: 3147 },
+    { label: '篇长中位数', got: corpus.median, want: 696.5 },
+    { label: '最长篇字数', got: corpus.longest.hanzi, want: 9314 },
+    { label: '最短篇字数', got: corpus.shortest.hanzi, want: 146 },
+    { label: '全书「气」次数', got: corpus.countTerm('气'), want: 3012 },
+    { label: '全书「五脏」次数', got: corpus.countTerm('五脏'), want: 253 },
+    { label: '全书「五藏」次数', got: corpus.countTerm('五藏'), want: 14 },
+    { label: '全书「治未病」次数', got: corpus.countTerm('治未病'), want: 3 },
+    { label: '全书「皆属于」次数', got: corpus.countTerm('皆属于'), want: 26 },
+  ];
+}
+
+/** 关键词在全书/指定篇里的次数：正文拿它们做论证，就核它们 */
+function chapterProbes(corpus) {
+  return [
+    { term: '气', want: 3012 },
+    { term: '五脏', want: 253 },
+    { term: '五藏', want: 14 },
+    { term: '治未病', want: 3 },
+  ];
+}
+
+/* ── 汇总 ──────────────────────────────────────────────────────── */
+
+function analyze() {
+  const corpus = loadCorpus();
+  const xuandu = loadXuandu();
+  const doc = readDoc();
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const rows = docRowTable(doc).map((r) => {
+    const u = xuandu.byTitle.get(r.title);
+    const full = corpus.byTitle.get(ALIAS[r.title] || r.title);
+    if (!u) return { ...r, computed: null, why: '教材本没有这一篇' };
+    if (!full) return { ...r, computed: null, why: '全文里没有对应的篇' };
+    const x = hanzi(u.body);
+    const f = hanzi(full.text);
+    const sim = round3(ratio(norm(u.body), norm(full.text)));
+    return {
+      ...r,
+      computed: { xuanduHanzi: x, fullHanzi: f, ratio: sim, edition: sim >= 0.9 ? '全文' : '节选' },
+      locatorOk: u.locator === r.locator,
+    };
+  });
+  const totals = docTotals(doc);
+  const quotes = verifyQuotes(docQuotes(doc), corpus);
+  return {
+    corpus,
+    xuandu,
+    rows,
+    totals,
+    quotes,
+    facts: chapterFacts(corpus),
+    probes: chapterProbes(corpus).map((p) => ({ ...p, got: corpus.countTerm(p.term, p.scope) })),
+    quiz: quizSummary(quiz, doc),
+    docHanzi: hanzi(doc),
+  };
 }
 
 function main() {
-  console.log('内经九章的量化手法登记表\n');
-  console.log('章  手法            能算（节选）                          不能算（节选）              失效模式');
-  for (const r of LEDGER) {
-    console.log(
-      `${r.ch}  ${r.method.padEnd(12, '　')} ${r.can[0].slice(0, 16).padEnd(18, '　')} ${r.cannot[0].slice(0, 14).padEnd(18, '　')} ${r.failure.slice(0, 20)}…`,
-    );
+  const r = analyze();
+  const c = r.corpus;
+  console.log(`《内经选读》第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · 本章篇目 ${r.rows.length} 篇`);
+  console.log('');
+  console.log(`全书：${c.total.pians} 篇 · ${c.total.hanzi.toLocaleString('en-US')} 汉字 · ${c.total.blocks.toLocaleString('en-US')} 段`);
+  console.log(`  素问 ${c.byBook.素问.pians} 篇 ${c.byBook.素问.hanzi.toLocaleString('en-US')} 字（篇均 ${Math.round(c.byBook.素问.avgHanzi)}）`);
+  console.log(`  灵枢 ${c.byBook.灵枢.pians} 篇 ${c.byBook.灵枢.hanzi.toLocaleString('en-US')} 字（篇均 ${Math.round(c.byBook.灵枢.avgHanzi)}）`);
+  console.log(`  中位数 ${c.median} · 最长 ${c.longest.title} ${c.longest.hanzi} 字 / ${c.longest.blocks} 段 · 最短 ${c.shortest.title} ${c.shortest.hanzi} 字 / ${c.shortest.blocks} 段`);
+  console.log('');
+  console.log('底本对读（正文写的 vs 语料现算）');
+  for (const row of r.rows) {
+    const k = row.computed;
+    console.log(`  ${row.edition}/${k ? k.edition : '—'} ${row.title} 教材 ${row.xuanduHanzi}→${k ? k.xuanduHanzi : '?'} · 全文 ${row.fullHanzi}→${k ? k.fullHanzi : '?'} · 相似度 ${row.ratio}→${k ? k.ratio : '?'}`);
   }
-
-  const cov = coverage();
-  console.log(`\n登记完整性：${cov.total}/9 章，缺项 ${cov.bad.length ? cov.bad.join(',') : '无'}`);
-
-  const disk = auditChapters();
-  const okDisk = disk.filter((d) => d.ok).length;
-  console.log(`磁盘核对：${okDisk}/9 章三件套齐全${okDisk < 9 ? `，缺：${disk.filter((d) => !d.ok).map((d) => d.slug).join(',')}` : ''}`);
-
-  const ev = verifyEvidence();
-  const okEv = ev.filter((e) => e.ok).length;
-  console.log(`证据核对：${okEv}/9 章引用的数字/关键词都能在该章 docs 里找到`);
-  for (const e of ev.filter((x) => !x.ok)) console.log(`  ✗ 第 ${e.ch} 章缺：${e.missing.join('、')}`);
-
-  console.log('\n请求类型判定：');
-  for (const k of Object.keys(KIND_MAP)) {
-    const r = classify(k);
-    console.log(`  ${k} → ${r.verdict}（${r.why}）`);
-  }
-  try {
-    classify('疗效预测');
-  } catch (err) {
-    console.log(`  疗效预测 → 抛错：${err.message}`);
-  }
-
-  console.log('\n三律：');
-  console.log('  律一 结构可算，效力不可算');
-  console.log('  律二 区间优于点值');
-  console.log('  律三 缺项留痕：null ≠ 0，未判定 ≠ 正常');
-  console.log('\n口径：登记表为作者归纳，仅覆盖本书九章；《伤寒论》章节的量化另有边界。');
-  console.log('本输出为方法边界说明，不构成诊疗依据。');
+  console.log(`  合计 教材 ${r.totals.xuanduHanzi.toLocaleString('en-US')} / 全文 ${r.totals.fullHanzi.toLocaleString('en-US')} · 覆盖 ${r.totals.coverage}% · 节选 ${r.totals.excerpt} 篇`);
+  console.log('');
+  console.log(`引文 ${r.quotes.length} 条 · 逐字命中 ${r.quotes.filter((q) => q.hit).length} 条`);
+  for (const q of r.quotes) console.log(`  ${q.hit ? '✓' : '✗'} 《${q.pian}》${q.segments} 段 · ${q.text.slice(0, 18)}…`);
+  console.log('');
+  console.log('正文写死的数（现算 → 正文值）：');
+  for (const f of r.facts) console.log(`  ${f.got === f.want ? '✓' : '✗'} ${f.label} ${f.got} → ${f.want}`);
+  console.log('关键词次数：');
+  for (const p of r.probes) console.log(`  ${p.got === p.want ? '✓' : '✗'} ${p.scope ? `《${p.scope}》` : '全书'}「${p.term}」${p.got} → ${p.want}`);
+  console.log('');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· check 题接地 ${r.quiz.checkGrounded} 道 · 答案 ${r.quiz.answers.join('/')}`);
+  console.log('※ 以上数字全部由正文与两份语料现算，改正文后重跑即可复核。');
+  console.log('※ 本章为文本结构的教学材料，不构成诊疗建议。');
 }
 
 if (require.main === module) main();
-module.exports = { LEDGER, KIND_MAP, classify, auditChapters, verifyEvidence, coverage, CHAPTERS };
+
+module.exports = {
+  analyze,
+  loadCorpus,
+  loadXuandu,
+  ratio,
+  matchingBlocks,
+  hanzi,
+  norm,
+  count,
+  grams,
+  readDoc,
+  docRowTable,
+  docTotals,
+  docQuotes,
+  verifyQuotes,
+  quizSummary,
+  chapterFacts,
+  chapterProbes,
+  ALIAS,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+  FULL,
+  XUANDU,
+};

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 关节病学 · 第 6 章 骨肿瘤：识别与转诊：本章统计口径
+ * 关节病学 · 第 6 章 · 骨肿瘤的第一个动作是拍片，不是解释
  * 课程: departments/04-gushang/11-guanjie-bing-xue/chapters/06-guzhongliu/docs/zh.md
- * 数据: standards/gushang-bing/units.json（60 单元层，每单元带三辨与四位面词频）
- * 取数: standards/gushang-bing/chapter-map.json（课程章 → 教材单元号）
+ * 数据: 本章正文 docs/zh.md + quiz.json —— 数字与清单全部由本脚本从正文现算，不手打
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 现算的内容：正文汉字数、二级标题与顺序、表格行数与列数、读片的五个固定步骤、
+ * 关键判据词频、quiz 的段位分布，以及 check 题的正确选项能在正文里对上几个原词。
+ * 正文改一个字，重跑就能看出哪一处对不上；测试再把这些数固定下来。
  */
 
 'use strict';
@@ -15,87 +15,205 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gushang-bing', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/gushang-bing/units.json —— 章节目录是否已脱离仓库？');
-}
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gushang-bing', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'gushang-bing', 'chapter-map.json');
 const CHAPTER = '6';
 const SLUG = '06-guzhongliu';
+const TITLE = '骨肿瘤的第一个动作是拍片，不是解释';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+/** 各表格的期望数据行数（不含表头与分隔行）；本章没有表格时为空数组 */
+const TABLE_ROWS = [];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+/** 关键判据词：本章反复使用的术语，是正文与习题同源的最小证据 */
+const TERMS = [
+  "生长痛",
+  "骨肉瘤",
+  "移行带",
+  "骨膜反应",
+  "病理",
+  "转诊",
+  "保肢",
+  "活检"
+];
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+/** 每节一个探针词：第 i 个必须出现在第 i 节，用来确认小节顺序没被改动 */
+const SECTION_PROBES = [
+  "排除性诊断",
+  "横轴是年龄",
+  "移行带是良恶性判断里最可靠的单一征象",
+  "不得在肿块局部做针灸",
+  "识别、告知、交接、随访"
+];
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+const GRAM = 4;
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+
+function h2Titles(text) {
+  const out = [];
+  for (const line of String(text).split(/\r?\n/)) {
+    const m = /^##\s+(.+)$/.exec(line.trim());
+    if (m) out.push(m[1].trim());
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+/** 按二级标题切段，返回 [{ title, body }]；body 含标题行本身 */
+function h2Sections(text) {
+  const out = [];
+  let cur = null;
+  for (const line of String(text).split(/\r?\n/)) {
+    const m = /^##\s+(.+)$/.exec(line.trim());
+    if (m) {
+      cur = { title: m[1].trim(), body: [line] };
+      out.push(cur);
+    } else if (cur) cur.body.push(line);
+  }
+  return out.map((s) => ({ title: s.title, body: s.body.join('\n') }));
+}
+
+const sectionAt = (text, i) => (h2Sections(text)[i] || { title: '', body: '' }).body;
+
+/** 表格：连续以 | 开头的行成块；首行为表头，第二行为分隔行，其余为数据行 */
+function tableBlocks(text) {
+  const blocks = [];
+  let cur = null;
+  for (const line of String(text).split(/\r?\n/)) {
+    const s = line.trim();
+    if (s.startsWith('|')) {
+      if (!cur) {
+        cur = [];
+        blocks.push(cur);
+      }
+      cur.push(s);
+    } else cur = null;
+  }
+  return blocks.map((b) => {
+    const cells = b.map((r) => r.replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim()));
+    return { head: cells[0] || [], rows: cells.slice(2) };
+  });
+}
+
+const occurrences = (text, term) => String(text).split(term).length - 1;
+
+/** 正文里长度为 n 的连续汉字片段集合 */
+function grams(text, n = GRAM) {
+  const out = new Set();
+  for (const seg of String(text).replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+const presentCount = (text, terms) => terms.filter((t) => occurrences(text, t) > 0).length;
+
+/** 某一节里以给定序号词起头的段落，按出现顺序返回 */
+function leadingLines(text, sectionIndex, re) {
+  return sectionAt(text, sectionIndex)
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter((l) => re.test(l));
+}
+
+/** 第三节读片的五个固定步骤：一看部位、二看边界…五看软组织 */
+function filmSteps(text) {
+  return leadingLines(text, 2, /^[一二三四五]看/).map((l) => l.split('：')[0].trim());
+}
+
+function extra(text) {
+  return { steps: filmSteps(text) };
+}
+
+/** quiz 的结构与接地情况：check 题的正确选项能对上几个四字原词 */
+function quizSummary(quiz, text) {
+  const body = grams(text);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  for (const q of qs) if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+  const hits = qs
+    .filter((q) => q.stage === 'check')
+    .map((q) => {
+      const right = String((q.options || [])[q.correct] || '');
+      return { question: q.question, grams: [...grams(right)].filter((g) => body.has(g)) };
+    });
+  return {
+    total: qs.length,
+    stage,
+    check: hits.length,
+    grounded: hits.filter((h) => h.grams.length).length,
+    rich: hits.filter((h) => new Set(h.grams).size >= 2).length,
+    hits,
+    spread: new Set(qs.map((q) => q.correct)).size,
+  };
+}
+
+function analyze() {
+  const text = readDoc();
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const blocks = tableBlocks(text);
+  return {
+    hanzi: hanzi(text),
+    sections: h2Titles(text),
+    tables: blocks.map((b) => ({ cols: b.head.length, rows: b.rows.length, first: b.head[0] || '' })),
+    terms: TERMS.map((t) => ({ term: t, count: occurrences(text, t) })),
+    probes: SECTION_PROBES.map((p, i) => ({ probe: p, ok: sectionAt(text, i).includes(p) })),
+    extra: extra(text),
+    quiz: quizSummary(quiz, text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`关节病学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = analyze();
+  console.log(`关节病学 · 第 ${CHAPTER} 章 · ${TITLE}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文 ${r.hanzi.toLocaleString('en-US')} 汉字 · 小节 ${r.sections.length} 个`);
+  r.sections.forEach((s, i) => console.log(`  ${String(i + 1).padStart(2)}  ${s}`));
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`表格 ${r.tables.length} 张${r.tables.length ? '：' : '（本章无表格）'}`);
+  r.tables.forEach((t, i) => console.log(`  #${i + 1}  ${t.rows} 行 × ${t.cols} 列  首列表头「${t.first}」`));
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`读片五步（${r.extra.steps.length} 步）：${r.extra.steps.join(' → ')}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('关键判据（出现次数）：');
+  console.log('  ' + r.terms.map((x) => `${x.term} ${x.count}`).join(' · '));
   console.log('');
-  console.log('※ 教学样例：数字由 standards/gushang-bing/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('小节探针（每节一个词，须落在本节）：');
+  console.log('  ' + r.probes.map((p) => `${p.ok ? '✓' : '✗'} ${p.probe}`).join(' · '));
+  console.log('');
+  console.log(
+    `quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· 正确项落在 ${r.quiz.spread} 个不同下标`,
+  );
+  console.log(`check 题接地 ${r.quiz.grounded} 道（门槛 ≥2），其中带两个以上原词 ${r.quiz.rich} 道`);
+  console.log('');
+  console.log('※ 以上数字与清单全部由本章正文现算，无手打常数；改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，不构成医学意见、诊断或处置指导。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  analyze,
+  readDoc,
+  h2Titles,
+  h2Sections,
+  sectionAt,
+  tableBlocks,
+  occurrences,
+  grams,
+  presentCount,
+  leadingLines,
+  filmSteps,
+
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+  TABLE_ROWS,
+  TERMS,
+  SECTION_PROBES,
+};

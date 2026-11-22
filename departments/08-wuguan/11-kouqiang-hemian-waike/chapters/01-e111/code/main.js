@@ -1,13 +1,9 @@
 #!/usr/bin/env node
 /**
- * 口腔颌面外科 · 第 1 章 口腔颌面外科的范围与边界：本章统计口径
- * 课程: departments/08-wuguan/11-kouqiang-hemian-waike/chapters/01-e111/docs/zh.md
- * 数据: standards/kouqiang-hemian-waike/units.json（154 单元层，每单元带三辨与四位面词频）
- * 取数: standards/kouqiang-hemian-waike/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
- *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 口腔颌面外科 · 第 1 章：边界由五件事与三问共同决定
+ * 正文: chapters/01-e111/docs/zh.md
+ * 做法: 从正文里解析能力包的表、三问的条目与关键词频次，现算后打印。
+ * 依赖: 仅 Node.js 标准库。数字不手打，正文改版后重跑即可复现。
  */
 
 'use strict';
@@ -15,87 +11,81 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'kouqiang-hemian-waike', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const TITLE = '一个科的边界不在器官上，在「谁能承担后果」上';
+
+function docText() {
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+/** 二级标题切段 */
+function sections(text) {
+  const marks = [...text.matchAll(/^## (.+)$/gm)];
+  return marks.map((m, i) => {
+    const start = m.index + m[0].length;
+    const end = i + 1 < marks.length ? marks[i + 1].index : text.length;
+    return { title: m[1].trim(), body: text.slice(start, end) };
+  });
+}
+
+/** 取所有 Markdown 表格，返回每张表的行（已去掉分隔行与表头） */
+function tables(text) {
+  const out = [];
+  let cur = null;
+  for (const raw of text.split('\n')) {
+    const line = raw.trim();
+    if (!line.startsWith('|')) { cur = null; continue; }
+    if (!cur) { cur = []; out.push(cur); }
+    const cells = line.replace(/^\|/, '').replace(/\|$/, '').split('|').map((s) => s.trim());
+    if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue;
+    cur.push(cells);
   }
-  throw new Error('没找到 standards/kouqiang-hemian-waike/units.json —— 章节目录是否已脱离仓库？');
+  return out.filter((t) => t.length > 0);
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'kouqiang-hemian-waike', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'kouqiang-hemian-waike', 'chapter-map.json');
-const CHAPTER = '1';
-const SLUG = '01-e111';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 形如 1. **……** 的编号条目 */
+function numberedStems(text) {
+  return [...text.matchAll(/^\s*(\d)\.\s+\*\*(.+?)\*\*/gm)].map((m) => ({ n: Number(m[1]), stem: m[2] }));
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function count(text, term) {
+  return text.split(term).length - 1;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function analyze() {
+  const text = docText();
+  const secs = sections(text);
+  const caps = tables(text).find((t) => t[0] && t[0][0] === '要素');
+  const items = caps ? caps.slice(1).map((r) => r[0]) : [];
+  const askSec = secs.find((s) => s.title.includes('可执行的判断'));
+  const asks = askSec ? numberedStems(askSec.body) : [];
+  const hanzi = (text.match(/[\u4e00-\u9fff]/g) || []).length;
+  return {
+    title: TITLE,
+    sections: secs.map((s) => s.title),
+    items,
+    asks,
+    hanzi,
+    airway: count(text, '气道'),
+    referral: count(text, '转诊'),
+    pathology: count(text, '病理')
+  };
 }
 
-function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`口腔颌面外科 · 第 ${CHAPTER} 章 ${cm.title}`);
+function report(a) {
+  console.log(`口腔颌面外科 · 第 1 章 ${a.title}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文 ${a.hanzi.toLocaleString('en-US')} 汉字，${a.sections.length} 节。`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`能力包（表中 ${a.items.length} 项）：${a.items.join('、')}`);
+  console.log(`三问（按序）：`);
+  for (const q of a.asks) console.log(`  ${q.n}. ${q.stem}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`关键词频次：气道 ${a.airway} · 病理 ${a.pathology} · 转诊 ${a.referral}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/kouqiang-hemian-waike/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 以上数字由本章正文现算；不构成医学意见，边界以所在机构制度为准。');
 }
 
-if (require.main === module) main();
+if (require.main === module) report(analyze());
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, TITLE, docText, sections, tables, numberedStems, count, analyze };

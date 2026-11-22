@@ -5,58 +5,84 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { docText, analyze } = require('./main.js');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'kouqiang-hemian-waike', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'kouqiang-hemian-waike', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const hanzi = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+function shingles(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text).replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+test('正文六节，命名与入口各占一节', () => {
+  const a = analyze();
+  assert.strictEqual(a.sections.length, 6, a.sections.join(' / '));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('病名叠三层，缺一层名字就说不全', () => {
+  const a = analyze();
+  assert.deepStrictEqual(a.layers, ['病位深浅', '形态', '病性']);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('入口被压到四条，不止牙源一条', () => {
+  const a = analyze();
+  assert.strictEqual(a.entries.length, 4);
+  assert.ok(a.entries.some((x) => x.includes('牙与牙周')));
+  assert.ok(a.entries.some((x) => x === '血行'));
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('四个征齐全，且按可靠性排序', () => {
+  const a = analyze();
+  assert.deepStrictEqual(a.signs, ['肿', '痛', '热', '功能障碍']);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('宿主是可分层的变量，六行核对项', () => {
+  const a = analyze();
+  assert.strictEqual(a.hosts.length, 6);
+  assert.ok(a.hosts.includes('血糖控制'));
+  assert.ok(a.hosts.includes('头颈部放疗史'));
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('三步判断的顺序固定：入口 → 界面 → 全身', () => {
+  const a = analyze();
+  assert.deepStrictEqual(a.steps, ['定入口', '定界面', '定全身']);
+});
+
+test('quiz 结构：段齐、四选项、答案下标合法、解释够长', () => {
+  const q = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  assert.ok(q.questions.length >= 5);
+  const stages = new Set(q.questions.map((x) => x.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), `缺 ${s}`);
+  for (const item of q.questions) {
+    assert.strictEqual(item.options.length, 4);
+    assert.ok(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < 4);
+    assert.ok(hanzi(item.explain) >= 30, `解释过短：${item.question}`);
+  }
+});
+
+test('quiz 的判断题能在正文里找到原词', () => {
+  const body = shingles(docText());
+  const q = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const checks = q.questions.filter((x) => x.stage === 'check');
+  assert.ok(checks.length >= 2);
+  for (const item of checks) {
+    const grams = [...shingles(item.options[item.correct])];
+    assert.ok(grams.some((g) => body.has(g)), `未接地：${item.options[item.correct]}`);
+  }
+});
+
+test('答案不挤在同一个下标', () => {
+  const q = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  assert.ok(new Set(q.questions.map((x) => x.correct)).size >= 3);
+});
+
+test('脚本输出含入口条数与三步', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/kouqiang-hemian-waike\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/03-e113/docs/zh.md'), '头部注释未指向本章');
+  assert.match(String(r.stdout), /入口 4 条/);
+  assert.match(String(r.stdout), /定入口 → 定界面 → 定全身/);
 });
