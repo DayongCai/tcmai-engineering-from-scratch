@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 医院管理学 · 第 3 章 医疗与护理管理：本章统计口径
+ * 医院管理学 · 第 3 章 门诊的瓶颈不在医生手速，在患者动线的乘法
  * 课程: departments/06-guanli/06-yiyuan-guanli-xue/chapters/03-y3/docs/zh.md
- * 数据: standards/06-yiyuan-guanli-xue/units.json（124 单元层，每单元带三辨与四位面词频）
- * 取数: standards/06-yiyuan-guanli-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数字全部从本章 docs/zh.md 现算：汉字、节、加粗判断、引文与问句。
+ * 并复算本章的流程账——门诊串联链几段、三种手法几项、住院日几个“等”字。
+ * 串联段数与“等”字数对不上，脚本报错，因为本章的结论是“瓶颈由串联最慢一段决定”。
  */
 
 'use strict';
@@ -15,87 +14,112 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '06-yiyuan-guanli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 3;
+const TITLE = '门诊的瓶颈不在医生手速，在患者动线的乘法';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function parseSections(body) {
+  const out = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) { cur = { title: h[1], lines: [] }; out.push(cur); continue; }
+    if (cur) cur.lines.push(line);
   }
-  throw new Error('没找到 standards/06-yiyuan-guanli-xue/units.json —— 章节目录是否已脱离仓库？');
+  return out.map((s) => ({
+    title: s.title,
+    text: s.lines.join('\n'),
+    hanzi: (s.lines.join('\n').match(HANZI) || []).length,
+  }));
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '06-yiyuan-guanli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '06-yiyuan-guanli-xue', 'chapter-map.json');
-const CHAPTER = '3';
-const SLUG = '03-y3';
+const boldTerms = (text) => [...String(text).matchAll(/\*\*([^*\n]+)\*\*/g)].map((m) => m[1]);
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const sections = parseSections(body);
+  return {
+    hanzi: (body.match(HANZI) || []).length,
+    sections,
+    claims: boldTerms(body).length,
+    quotes: [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]))],
+    questions: (body.match(/？/g) || []).length,
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+const sectionOf = (sections, kw) => {
+  const s = sections.find((x) => x.title.includes(kw));
+  if (!s) throw new Error('正文里没找到含「' + kw + '」的节');
+  return s;
+};
+
+/** 从「甲—乙—丙」这样的顿号链里数出环节。 */
+function dashChain(text, head) {
+  const m = String(text).match(new RegExp(head + '[^。\\n]*'));
+  if (!m) return [];
+  return m[0].split('—').map((s) => s.trim()).filter(Boolean);
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/**
+ * 复算门诊串联链、三种改进手法、住院日的五个“等”。
+ * 本章判断：串行决定总时长，所以手法必须组合而不是单点提速。
+ */
+function auditFlow(sections) {
+  const s1 = sectionOf(sections, '门诊：把动线');
+  const s3 = sectionOf(sections, '住院与手术');
+  const s4 = sectionOf(sections, '护理单元');
+
+  const chain = dashChain(s1.text, '挂号—');
+  const tactics = boldTerms(s1.text).filter((b) => ['削峰。', '并联。', '分流。'].includes(b));
+  const waits = boldTerms(s3.text).filter((b) => b.startsWith('等'));
+  const reversible = /平均住院日与床位使用率不是同向指标/.test(s3.text);
+  const indicatorRule = /结果指标用来发现科室，过程指标用来发现问题/.test(s4.text);
+
+  return { chain, tactics, waits, reversible, indicatorRule };
+}
+
+function verify(a) {
+  if (a.chain.length !== 7) throw new Error(`门诊串联链数到 ${a.chain.length} 段，与正文的七段不符`);
+  if (a.tactics.length !== 3) throw new Error(`改进手法数到 ${a.tactics.length} 种，须削峰／并联／分流三种`);
+  if (a.waits.length !== 5) throw new Error(`住院日“等”字只数到 ${a.waits.length} 个，须五个`);
+  if (!a.reversible) throw new Error('正文没有写明平均住院日与床位使用率不同向');
+  if (!a.indicatorRule) throw new Error('正文没有写明结果指标与过程指标的分工');
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const a = analyze(read());
+  const f = auditFlow(a.sections);
+  verify(f);
 
-  console.log(`医院管理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`医院管理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 加粗判断 ${a.claims} 处 · 引文 ${a.quotes.length} 条 · 问句 ${a.questions} 个`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`门诊串联链 ${f.chain.length} 段：${f.chain.join(' → ')}`);
+  console.log(`改进手法 ${f.tactics.length}/3：${f.tactics.map((x) => x.replace(/。$/, '')).join('／')}（须组合使用）`);
+  console.log(`住院日“等”字 ${f.waits.length}/5：${f.waits.join('／')}`);
+  console.log(`平均住院日与床位使用率不同向：${f.reversible ? '已写明' : '缺失'}`);
+  console.log(`指标分工：${f.indicatorRule ? '结果指标发现科室，过程指标发现问题' : '缺失'}`);
+  console.log('');
+  console.log('判断：吞吐量由串联最慢的一段决定，局部提速只把队列挪位；');
+  console.log('      要动总时长，只能削峰、并联、分流三法同时上。');
+  console.log('');
+  console.log('逐节字数：');
+  for (const s of a.sections) {
+    const share = a.hanzi ? ((s.hanzi / a.hanzi) * 100).toFixed(1) : '0.0';
+    console.log(`  ${s.title.padEnd(28, '　')} ${String(s.hanzi).padStart(5)} 字（${share}%）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/06-yiyuan-guanli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即随之变化；本输出仅用于教学演示，不构成诊疗意见或流程改造方案。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, parseSections, analyze, boldTerms, sectionOf, dashChain, auditFlow, verify };

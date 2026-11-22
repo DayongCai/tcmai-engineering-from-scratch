@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 中医文化传播 · 第 5 章 传播内容的标准与证据：本章统计口径
+ * 中医文化传播 · 第 5 章 传播的底线不是说得动人，是说得住回查
  * 课程: departments/06-guanli/05-zhongyi-wenhua-chuanbo/chapters/05-z55/docs/zh.md
- * 数据: standards/05-zhongyi-wenhua-chuanbo/units.json（107 单元层，每单元带三辨与四位面词频）
- * 取数: standards/05-zhongyi-wenhua-chuanbo/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 全部数字从本章 docs/zh.md 现算：汉字、节、表、引文，
+ * 加上两张表的复算——三类失真各配了检查问句与补救动作没有，四项指标是否齐全；
+ * 以及三级表述（述而不评／述而有限／述而主张）是否都在正文出现。
+ * 本章自述「不给任何实测数字」，脚本照此只复算结构与口径，不生成任何传播量数值。
  */
 
 'use strict';
@@ -15,87 +15,112 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '05-zhongyi-wenhua-chuanbo', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 5;
+const TITLE = '传播的底线不是说得动人，是说得住回查';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const GRADES = ['述而不评', '述而有限', '述而主张'];
+const METRICS = ['可核率', '复述准确率', '误读率', '行为指向'];
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+/** Markdown 表格切成 { header, rows }；分隔行不计。 */
+function parseTables(body) {
+  const out = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const m = line.match(/^\s*\|(.+)\|\s*$/);
+    if (!m) { cur = null; continue; }
+    const cells = m[1].split('|').map((c) => c.trim());
+    if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue;
+    if (!cur) { cur = { header: cells, rows: [] }; out.push(cur); } else { cur.rows.push(cells); }
   }
-  throw new Error('没找到 standards/05-zhongyi-wenhua-chuanbo/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '05-zhongyi-wenhua-chuanbo', 'units.json');
-const MAP = path.join(ROOT, 'standards', '05-zhongyi-wenhua-chuanbo', 'chapter-map.json');
-const CHAPTER = '5';
-const SLUG = '05-z55';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const hanzi = (body.match(HANZI) || []).length;
+  const sections = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) { cur = { title: h[1], hanzi: 0 }; sections.push(cur); continue; }
+    if (cur) cur.hanzi += (line.match(HANZI) || []).length;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  const tables = parseTables(body);
+  const cites = [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]))];
+  const claims = (body.match(/\*\*[^*\n]+\*\*/g) || []).length;
+  const grades = GRADES.filter((g) => body.includes(g));
+  const noNumbers = body.includes('不给任何实测数字');
+  return { hanzi, sections, tables, tableCount: tables.length, cites, claims, grades, noNumbers };
+}
+
+/** 复算三类失真表：类型、每行是否都配了检查问句与补救动作。 */
+function auditFailureTable(tables) {
+  const t = tables.find((x) => x.header.some((h) => h.includes('失真类型')));
+  if (!t) throw new Error('正文里没找到三类失真表');
+  const idxOf = (kw) => t.header.findIndex((h) => h.includes(kw));
+  const ti = idxOf('失真类型');
+  const qi = t.header.findIndex((h) => h.includes('检查问句'));
+  const ai = t.header.findIndex((h) => h.includes('补救'));
+  const rows = t.rows.filter((r) => r[0]);
+  return {
+    rows: rows.length,
+    columns: t.header.length,
+    types: rows.map((r) => r[ti]),
+    complete: rows.filter((r) => (r[qi] || '').trim() && (r[ai] || '').trim()).length,
+  };
+}
+
+/** 复算四项指标表：指标名与列数。 */
+function auditMetricTable(tables) {
+  const t = tables.find((x) => x.header.some((h) => h.includes('指标')) && x.header.some((h) => h.includes('怎么测')));
+  if (!t) throw new Error('正文里没找到四项指标表');
+  const ii = t.header.findIndex((h) => h.includes('指标'));
+  const rows = t.rows.filter((r) => r[0]);
+  return { rows: rows.length, columns: t.header.length, metrics: rows.map((r) => r[ii]) };
+}
+
+function verify(f, m, a) {
+  if (f.rows !== 3) throw new Error(`失真表应为 3 行，读到 ${f.rows}`);
+  if (f.complete !== f.rows) throw new Error(`有 ${f.rows - f.complete} 类失真没配齐检查问句或补救动作`);
+  if (m.rows !== 4) throw new Error(`指标表应为 4 行，读到 ${m.rows}`);
+  if (a.grades.length !== 3) throw new Error(`三级表述只找到 ${a.grades.length} 级`);
+  if (!a.noNumbers) throw new Error('正文缺「不给任何实测数字」的边界声明');
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const a = analyze(read());
+  const f = auditFailureTable(a.tables);
+  const m = auditMetricTable(a.tables);
+  verify(f, m, a);
 
-  console.log(`中医文化传播 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中医文化传播 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 表格 ${a.tableCount} 张 · 加粗判断 ${a.claims} 处 · 引文 ${a.cites.length} 条`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`三类失真表复算：${f.rows} 行 × ${f.columns} 列`);
+  console.log(`  失真类型：${f.types.join('、')}；每类都配齐检查问句与补救动作：${f.complete}/${f.rows}`);
+  console.log('');
+  console.log(`四项指标表复算：${m.rows} 行 × ${m.columns} 列`);
+  console.log(`  指标：${m.metrics.join('、')}`);
+  console.log(`三级表述：${a.grades.join('、')}（${a.grades.length}/3）`);
+  console.log(`  → 指标只测传播质量，不替代医学正确性；正文自述${a.noNumbers ? '不给任何实测数字。' : '（缺实测数字声明）。'}`);
+  console.log('');
+  console.log('逐节字数：');
+  for (const s of a.sections) {
+    const share = a.hanzi ? ((s.hanzi / a.hanzi) * 100).toFixed(1) : '0.0';
+    console.log(`  ${s.title.padEnd(26, '　')} ${String(s.hanzi).padStart(5)} 字（${share}%）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/05-zhongyi-wenhua-chuanbo/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即随之变化；本输出仅用于教学演示，不构成诊疗意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, GRADES, METRICS, read, analyze, parseTables, auditFailureTable, auditMetricTable, verify };

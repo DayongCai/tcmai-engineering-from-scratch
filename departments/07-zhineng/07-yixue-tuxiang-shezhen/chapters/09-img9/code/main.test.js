@@ -2,61 +2,98 @@
 
 const test = require('node:test');
 const assert = require('node:assert');
-const fs = require('node:fs');
-const path = require('node:path');
-const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yixue-tuxiang-shezhen', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yixue-tuxiang-shezhen', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const {
+  docText,
+  quizData,
+  hanzi,
+  grams,
+  occlusionGrid,
+  deletionCurve,
+  upsample,
+  quizAudit,
+} = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('遮挡网格从正文读出：8×8 共 64 块、每次 5 块、13 步', () => {
+  const g = occlusionGrid();
+  assert.strictEqual(g.w, 8);
+  assert.strictEqual(g.h, 8);
+  assert.strictEqual(g.cells, 64);
+  assert.strictEqual(g.perStep, 5);
+  assert.strictEqual(g.steps, 13);
+  assert.strictEqual(g.consistent, true);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('删除曲线三组：高显著 42%、随机 12%、最低 4%', () => {
+  const d = deletionCurve();
+  assert.strictEqual(d.high, 42);
+  assert.strictEqual(d.random, 12);
+  assert.strictEqual(d.low, 4);
+  assert.ok(docText().includes('42%') && docText().includes('12%') && docText().includes('4%'));
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('「解释有效」的判据：删高显著区掉得比随机快得多', () => {
+  const d = deletionCurve();
+  assert.strictEqual(d.ordered, true);
+  assert.strictEqual(d.ratio, 3.5);
+  assert.strictEqual(d.informative, true);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('反例：若高显著与随机持平，则热图没有信息量', () => {
+  const d = deletionCurve();
+  const flat = { high: 12, random: 12 };
+  assert.ok(!(flat.high >= 2 * flat.random), '持平不应被判为有信息量');
+  assert.ok(d.high > 3 * flat.high, '正文的算例应明显高于持平情形');
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('类激活图 7×7 上采样到 224×224：倍率 32，格子数放大 1024 倍', () => {
+  const u = upsample();
+  assert.strictEqual(u.src, 7);
+  assert.strictEqual(u.dst, 224);
+  assert.strictEqual(u.factor, 32);
+  assert.strictEqual(u.srcCells, 49);
+  assert.strictEqual(u.dstCells, 50176);
+  assert.strictEqual(u.dstCells / u.srcCells, 1024);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/yixue-tuxiang-shezhen\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
+test('习题结构：6 题、pre 1 / check 3 / post 2、每题 4 选项', () => {
+  const a = quizAudit();
+  assert.strictEqual(a.total, 6);
+  assert.deepStrictEqual(a.byStage, { pre: 1, check: 3, post: 2 });
+  assert.deepStrictEqual(a.problems, []);
+  for (const item of quizData().questions) {
+    assert.strictEqual(new Set(item.options).size, 4, `选项有重复：${item.question}`);
+  }
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
+test('三道 check 题全部接地：正确选项能在正文找到原词', () => {
+  const a = quizAudit();
+  assert.strictEqual(a.grounded, 3);
+  assert.ok(a.grounded >= 2);
 });
 
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/09-img9/docs/zh.md'), '头部注释未指向本章');
+test('解释都过 30 汉字，且不复述题干', () => {
+  for (const item of quizData().questions) {
+    assert.ok(hanzi(item.explain) >= 30, `解释过短：${item.question}`);
+    assert.ok(!item.explain.includes(item.question), '解释不应整句复述题干');
+  }
+});
+
+test('正确选项用词在正文里能逐字对上（不是自造术语）', () => {
+  const body = grams(docText());
+  for (const item of quizData().questions) {
+    const right = item.options[item.correct];
+    assert.ok([...grams(right)].some((g) => body.has(g)), `正确选项在正文找不到：${right}`);
+  }
+});
+
+test('免责一行在正文里明确写死：不存在这种用途', () => {
+  const t = docText();
+  assert.ok(t.includes('免责'));
+  assert.ok(t.includes('这种用途'), '正文应写明免责不是一种用途');
+});
+
+test('答案分散在四个位置，不是全押同一项', () => {
+  const idx = quizData().questions.map((q) => q.correct);
+  assert.strictEqual(new Set(idx).size, 4, `correct 分布：${idx.join(',')}`);
 });

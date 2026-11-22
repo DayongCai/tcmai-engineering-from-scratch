@@ -6,57 +6,64 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-zhineng-bianzheng', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-zhineng-bianzheng', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, STATES, loadDoc, sections, blocks, tenQuestions, audit } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文存在且已补实', () => {
+  assert.ok(fs.existsSync(DOC));
+  const md = loadDoc();
+  assert.ok((md.match(/[\u4e00-\u9fff]/g) || []).length > 2000);
+  assert.ok(!/TODO|待补|占位稿/.test(md));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('十问是十项，且写在同一个排查语境里', () => {
+  const ten = tenQuestions(loadDoc());
+  assert.strictEqual(ten.length, 10, `拆出 ${ten.length} 项`);
+  for (const must of ['寒热', '汗', '渴', '旧病', '病因']) assert.ok(ten.includes(must), `十问缺「${must}」`);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('采集契约可直接解析，且取值全部是四值之一', () => {
+  const a = audit();
+  assert.strictEqual(a.contractError, '');
+  assert.ok(a.items >= 3, `示例仅 ${a.items} 条`);
+  assert.deepStrictEqual(a.badState, []);
+  for (const s of STATES) assert.ok(a.stateCounts[s] >= 1, `四值缺 ${s}`);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('阴性、未问、不适用三者互不混淆', () => {
+  const a = audit();
+  assert.ok(a.stateCounts.absent >= 1, '示例没有「已问、无」');
+  assert.ok(a.stateCounts.not_asked >= 1, '示例没有「未问」');
+  assert.ok(a.stateCounts.not_applicable >= 1, '示例没有「不适用」');
+  assert.strictEqual(a.notAskedRate, a.stateCounts.not_asked / a.items, '未问率口径不对');
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('有/无条目必须带锚点与来源，避免「有」与「重」混成一个数', () => {
+  const md = loadDoc();
+  const a = audit(md);
+  assert.deepStrictEqual(a.missingAnchor, [], '有/无条目缺锚点：' + a.missingAnchor.join('/'));
+  const c = JSON.parse(blocks(md, 'json')[0]);
+  const first = c.items[0];
+  assert.notStrictEqual(first.state, first.grade, 'state 与 grade 应分成两个字段');
+  assert.ok(typeof first.asked_by === 'string' && first.asked_by.length > 0, '缺少提问者字段');
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('信度指标表覆盖重测、加权 kappa、ICC、内部一致', () => {
+  const a = audit();
+  assert.strictEqual(a.relRows, 4, '信度表应四行');
+  const md = loadDoc();
+  for (const k of ['重测', '加权 kappa', 'ICC', 'KR-20']) assert.ok(md.includes(k), `正文缺 ${k}`);
+});
+
+test('体检结论无缺口', () => {
+  assert.deepStrictEqual(audit().missing, []);
+});
+
+test('脚本可运行，输出给的是正文口径', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-zhineng-bianzheng\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/02-caiji-xindu/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /十问清单：10 项/);
+  assert.match(out, /四值覆盖：4\/4/);
+  assert.match(out, /缺口 0 处/);
+  assert.match(out, /不构成诊断或治疗建议/);
 });

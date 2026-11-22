@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 医院管理学 · 第 10 章 社区服务与数字医院：本章统计口径
+ * 医院管理学 · 第 10 章 分级诊疗的堵点不在基层能力，在向上转诊的那张纸
  * 课程: departments/06-guanli/06-yiyuan-guanli-xue/chapters/10-y10/docs/zh.md
- * 数据: standards/06-yiyuan-guanli-xue/units.json（124 单元层，每单元带三辨与四位面词频）
- * 取数: standards/06-yiyuan-guanli-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数字全部从本章 docs/zh.md 现算：汉字、节、加粗判断、引文与问句。
+ * 并复算本章的转诊账——六位一体六项、转诊三件事、紧密型三统一、数字化三层。
+ * 项数或层数对不上，脚本报错，因为本章的立论是“四句话都要落到标准、通道、支付上”。
  */
 
 'use strict';
@@ -15,87 +14,124 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '06-yiyuan-guanli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 10;
+const TITLE = '分级诊疗的堵点不在基层能力，在向上转诊的那张纸';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function parseSections(body) {
+  const out = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) { cur = { title: h[1], lines: [] }; out.push(cur); continue; }
+    if (cur) cur.lines.push(line);
   }
-  throw new Error('没找到 standards/06-yiyuan-guanli-xue/units.json —— 章节目录是否已脱离仓库？');
+  return out.map((s) => ({
+    title: s.title,
+    text: s.lines.join('\n'),
+    hanzi: (s.lines.join('\n').match(HANZI) || []).length,
+  }));
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '06-yiyuan-guanli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '06-yiyuan-guanli-xue', 'chapter-map.json');
-const CHAPTER = '10';
-const SLUG = '10-y10';
+const boldTerms = (text) => [...String(text).matchAll(/\*\*([^*\n]+)\*\*/g)].map((m) => m[1]);
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const sections = parseSections(body);
+  return {
+    hanzi: (body.match(HANZI) || []).length,
+    sections,
+    claims: boldTerms(body).length,
+    quotes: [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]))],
+    questions: (body.match(/？/g) || []).length,
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+const sectionOf = (sections, kw) => {
+  const s = sections.find((x) => x.title.includes(kw));
+  if (!s) throw new Error('正文里没找到含「' + kw + '」的节');
+  return s;
+};
+
+function commaList(text, head) {
+  const m = String(text).match(new RegExp(head + '[^。\\n]*'));
+  if (!m) return [];
+  return m[0].split('”')[0].split('、').map((s) => s.trim()).filter(Boolean);
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+const REFERRAL = ['标准。', '通道。', '激励。'];
+const UNIFIED = ['人统一。', '财统一。', '事统一。'];
+
+/**
+ * 复算六位一体、转诊三件事、紧密型三统一与数字化三层。
+ * 本章判断：协议签的是意愿，缺的是规则；规则落在标准、通道、支付三处。
+ */
+function auditReferral(sections) {
+  const s1 = sectionOf(sections, '社区卫生服务');
+  const s3 = sectionOf(sections, '转诊');
+  const s4 = sectionOf(sections, '医联体');
+  const s6 = sectionOf(sections, '数字');
+
+  const six = commaList(s1.text, '预防、');
+  const referral = REFERRAL.filter((x) => boldTerms(s3.text).some((b) => b === x));
+  const unified = UNIFIED.filter((x) => boldTerms(s4.text).some((b) => b === x));
+  const layers = boldTerms(s6.text).filter((b) => b.startsWith('第'));
+  const settlement = /医保结余归谁/.test(s4.text);
+  const samePrice = /同病同效同价/.test(s5text(sections));
+
+  return { six, referral, unified, layers, settlement, samePrice };
+}
+
+function s5text(sections) {
+  const s = sections.find((x) => x.title.includes('支付改革'));
+  if (!s) throw new Error('正文里没找到含「支付改革」的节');
+  return s.text;
+}
+
+function verify(a) {
+  if (a.six.length !== 6) throw new Error(`六位一体只数到 ${a.six.length} 项，须六项`);
+  if (a.referral.length !== 3) throw new Error(`转诊要件只数到 ${a.referral.length} 件，须三件`);
+  if (a.unified.length !== 3) throw new Error(`紧密型统一只数到 ${a.unified.length} 条，须三条`);
+  if (a.layers.length !== 3) throw new Error(`数字化只数到 ${a.layers.length} 层，须三层`);
+  if (!a.settlement) throw new Error('正文没有写“医保结余归谁”这一句判据');
+  if (!a.samePrice) throw new Error('正文没有写“同病同效同价”的支付路径');
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const a = analyze(read());
+  const r = auditReferral(a.sections);
+  verify(r);
 
-  console.log(`医院管理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`医院管理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 加粗判断 ${a.claims} 处 · 引文 ${a.quotes.length} 条 · 问句 ${a.questions} 个`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`六位一体 ${r.six.length}/6：${r.six.join('／')}`);
+  console.log(`转诊三件事 ${r.referral.length}/3：${r.referral.map((x) => x.replace(/。$/, '')).join('／')}`);
+  console.log(`紧密型三统一 ${r.unified.length}/3：${r.unified.map((x) => x.replace(/。$/, '')).join('／')}`);
+  console.log(`数字化三层 ${r.layers.length}/3：${r.layers.map((x) => x.replace(/。$/, '')).join(' → ')}`);
+  console.log(`真假紧密判据：${r.settlement ? '医保结余归谁' : '缺失'}`);
+  console.log(`中医支付路径：${r.samePrice ? '按疗效价值付费，同病同效同价' : '缺失'}`);
+  console.log('');
+  console.log('判断：协议签的是意愿，缺的是规则；');
+  console.log('      标准、通道、激励三件不齐，下转率不会因为发文件而动。');
+  console.log('');
+  console.log('逐节字数：');
+  for (const s of a.sections) {
+    const share = a.hanzi ? ((s.hanzi / a.hanzi) * 100).toFixed(1) : '0.0';
+    console.log(`  ${s.title.padEnd(28, '　')} ${String(s.hanzi).padStart(5)} 字（${share}%）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/06-yiyuan-guanli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即随之变化；本输出仅用于教学演示，不构成政策解读或支付方式建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, parseSections, analyze, boldTerms, sectionOf, commaList, auditReferral, verify, REFERRAL, UNIFIED };

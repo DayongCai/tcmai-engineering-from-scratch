@@ -1,101 +1,154 @@
 #!/usr/bin/env node
 /**
- * 医学图像识别 · 第 7 章 集成与稳健性：本章统计口径
- * 课程: departments/07-zhineng/07-yixue-tuxiang-shezhen/chapters/07-img7/docs/zh.md
- * 数据: standards/yixue-tuxiang-shezhen/units.json（155 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yixue-tuxiang-shezhen/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 医学图像识别 · 第 7 章 对账器：集成的方差与偏差
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数据源：
+ *   ../docs/zh.md   本章正文（方差分解、三种集成、三类域偏移、压力测试）
+ *   ../quiz.json    本章习题
+ *
+ * 现算的东西：
+ *   1. Var(ē)/σ² = ρ + (1−ρ)/M，逐格重算正文那张 3×3 表；
+ *   2. 演算设定（σ=0.10、ρ=0.6、M=5）的标准差与降幅；
+ *   3. ρ=0 与 ρ=1 两个极端：σ/√M 与「一分不降」；
+ *   4. 偏差项在期望误差里的位置（集成只能动方差那一项）；
+ *   5. 习题对账：结构、分段、解释字数、check 题接地。
+ *
+ * 依赖：仅 node:fs / node:path。
  */
-
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yixue-tuxiang-shezhen', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+
+const docText = () => fs.readFileSync(DOC, 'utf8');
+const quizData = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
+
+function grams(s, n = 4) {
+  const out = new Set();
+  for (const seg of String(s || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  throw new Error('没找到 standards/yixue-tuxiang-shezhen/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yixue-tuxiang-shezhen', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yixue-tuxiang-shezhen', 'chapter-map.json');
-const CHAPTER = '7';
-const SLUG = '07-img7';
+const pick = (text, re, what) => {
+  const m = text.match(re);
+  if (!m) throw new Error(`正文里找不到${what}`);
+  return m;
+};
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+/** 等权平均后的方差比：ρ + (1−ρ)/M */
+const varRatio = (rho, M) => rho + (1 - rho) / M;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 从正文那张表解析 ρ 行与 M 列，逐格与自报值比对 */
+function varianceTable(text = docText()) {
+  const head = text.indexOf('| $\\rho$ |');
+  if (head < 0) throw new Error('正文里找不到方差比表头');
+  const seg = text.slice(head, text.indexOf('（表中为', head));
+  const ms = [...seg.matchAll(/\$M=(\d+)\$/g)].map((m) => Number(m[1]));
+  const rows = [...seg.matchAll(/\|\s*([\d.]+)\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)\s*\|/g)]
+    .map((m) => ({ rho: Number(m[1]), claims: [Number(m[2]), Number(m[3]), Number(m[4])] }));
+  if (!ms.length || !rows.length) throw new Error('方差比表没解析出 ρ 或 M');
+  return {
+    ms,
+    rows: rows.map((r) => ({
+      ...r,
+      computed: ms.map((M) => varRatio(r.rho, M)),
+      ok: r.claims.every((c, i) => Math.abs(c - varRatio(r.rho, ms[i])) < 0.001),
+    })),
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 正文里的「五个」是汉字数词，转成数字再算 */
+const CN = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
+const toNum = (s) => (/^\d+$/.test(s) ? Number(s) : CN[s]);
+
+/** 演算设定：σ=0.10、ρ=0.6、M=5 */
+function fiveModelCase(text = docText()) {
+  const sigma = Number(pick(text, /单模型误差标准差\s*([\d.]+)、模型间误差相关系数\s*([\d.]+)/, '单模型标准差')[1]);
+  const rho = Number(text.match(/单模型误差标准差\s*[\d.]+、模型间误差相关系数\s*([\d.]+)/)[1]);
+  const M = toNum(pick(text, /集成([一二三四五六七八九十\d]+)个后方差只从/, '集成成员数')[1]);
+  if (!M) throw new Error('正文里的成员数无法解析');
+  const ratio = varRatio(rho, M);
+  const varBefore = sigma ** 2;
+  const varAfter = ratio * varBefore;
+  const sdAfter = Math.sqrt(varAfter);
+  return {
+    sigma, rho, M, ratio,
+    varBefore, varAfter, sdAfter,
+    shrink: 1 - sdAfter / sigma,
+    independentSd: sigma / Math.sqrt(M),
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 习题对账：结构 + 接地 */
+function quizAudit() {
+  const q = quizData();
+  const body = grams(docText());
+  const qs = Array.isArray(q.questions) ? q.questions : [];
+  const byStage = { pre: 0, check: 0, post: 0 };
+  const problems = [];
+  let grounded = 0;
+
+  qs.forEach((item, i) => {
+    const n = i + 1;
+    if (item.stage in byStage) byStage[item.stage] += 1;
+    else problems.push(`第 ${n} 题 stage 非法：${item.stage}`);
+    const opts = Array.isArray(item.options) ? item.options : [];
+    if (opts.length !== 4) problems.push(`第 ${n} 题有 ${opts.length} 个选项`);
+    if (!(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < opts.length)) {
+      problems.push(`第 ${n} 题 correct 下标非法`);
+    }
+    if (hanzi(item.explain) < 30) problems.push(`第 ${n} 题 explain 只有 ${hanzi(item.explain)} 汉字`);
+    if (item.stage === 'check') {
+      const right = String(opts[item.correct] || '');
+      if ([...grams(right)].some((g) => body.has(g))) grounded += 1;
+    }
+  });
+
+  return { total: qs.length, byStage, grounded, problems };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = docText();
+  const t = varianceTable(text);
+  const c = fiveModelCase(text);
+  const a = quizAudit();
 
-  console.log(`医学图像识别 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医学图像识别 · 第 7 章 对账');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`Var(ē)/σ² = ρ + (1−ρ)/M，M = ${t.ms.join(' / ')}：`);
+  for (const r of t.rows) {
+    console.log(`  ρ=${r.rho} 现算 ${r.computed.map((v) => v.toFixed(3)).join(' / ')} 表 ${r.claims.map((v) => v.toFixed(3)).join(' / ')} ${r.ok ? '✓' : '✗'}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`五个模型：σ=${c.sigma}、ρ=${c.rho}、M=${c.M}`);
+  console.log(`  方差 ${c.varBefore.toFixed(4)} → ${c.varAfter.toFixed(4)}；标准差 ${c.sigma.toFixed(3)} → ${c.sdAfter.toFixed(3)}`);
+  console.log(`  降幅 ${(c.shrink * 100).toFixed(0)}%（若错误独立，标准差应到 ${c.independentSd.toFixed(3)}）`);
+  console.log(`  偏差项不动：ρ→1 时方差比 ${varRatio(1, c.M)}，集成一分不降`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`习题 ${a.total} 题（pre ${a.byStage.pre} / check ${a.byStage.check} / post ${a.byStage.post}）`);
+  console.log(`check 题正确选项能在正文找到原词的：${a.grounded} 道`);
+  console.log(a.problems.length ? `✗ ${a.problems.length} 处：${a.problems.join('；')}` : '✓ 结构齐、解释够长、判据落在正文');
   console.log('');
-  console.log('※ 教学样例：数字由 standards/yixue-tuxiang-shezhen/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文与习题现算，不手打；正文改动后重跑即可复现。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC,
+  QUIZ,
+  docText,
+  quizData,
+  hanzi,
+  grams,
+  varRatio,
+  varianceTable,
+  fiveModelCase,
+  quizAudit,
+};

@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 医院管理学 · 第 1 章 绪论与基本原理：本章统计口径
+ * 医院管理学 · 第 1 章 医院管理的第一道分界，是住院能力而不是招牌
  * 课程: departments/06-guanli/06-yiyuan-guanli-xue/chapters/01-y1/docs/zh.md
- * 数据: standards/06-yiyuan-guanli-xue/units.json（124 单元层，每单元带三辨与四位面词频）
- * 取数: standards/06-yiyuan-guanli-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数字全部从本章 docs/zh.md 现算：汉字、节、加粗判断、引文与问句。
+ * 并复算本章三组判据——三条准入判据、四项公益性内涵、四个职能改写；
+ * 任何一组不齐，脚本直接报错，因为本章的结论正是“缺一条就不成其为医院”。
  */
 
 'use strict';
@@ -15,87 +14,108 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '06-yiyuan-guanli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 1;
+const TITLE = '医院管理的第一道分界，是住院能力而不是招牌';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+/** 按二级标题切节；标题下的正文一并带回，用于分组复算。 */
+function parseSections(body) {
+  const out = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) { cur = { title: h[1], lines: [] }; out.push(cur); continue; }
+    if (cur) cur.lines.push(line);
   }
-  throw new Error('没找到 standards/06-yiyuan-guanli-xue/units.json —— 章节目录是否已脱离仓库？');
+  return out.map((s) => ({
+    title: s.title,
+    text: s.lines.join('\n'),
+    hanzi: (s.lines.join('\n').match(HANZI) || []).length,
+  }));
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '06-yiyuan-guanli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '06-yiyuan-guanli-xue', 'chapter-map.json');
-const CHAPTER = '1';
-const SLUG = '01-y1';
+const boldTerms = (text) => [...String(text).matchAll(/\*\*([^*\n]+)\*\*/g)].map((m) => m[1]);
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const sections = parseSections(body);
+  return {
+    hanzi: (body.match(HANZI) || []).length,
+    sections,
+    claims: boldTerms(body).length,
+    quotes: [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]))],
+    questions: (body.match(/？/g) || []).length,
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+const sectionOf = (sections, kw) => {
+  const s = sections.find((x) => x.title.includes(kw));
+  if (!s) throw new Error('正文里没找到含「' + kw + '」的节');
+  return s;
+};
+
+const CRITERIA = ['有床，且床是可分配的责任单位', '有建制科室', '有连续的运行能力'];
+const PUBLIC = ['可及性', '公平性', '适宜性', '非营利性'];
+const DUTIES = ['计划', '组织', '领导', '控制'];
+
+/**
+ * 复算三条准入判据、四项公益内涵、四个职能改写。
+ * 这三组是本章全部判断的骨架：准入看三条，公益看四项，职能看四改。
+ */
+function auditJudgement(sections) {
+  const s1 = sectionOf(sections, '医院之所以是医院');
+  const s2 = sectionOf(sections, '公益性与经济性');
+  const s3 = sectionOf(sections, '四个职能');
+  const s4 = sectionOf(sections, '合成一个难看的医院');
+
+  const criteria = CRITERIA.filter((c) => s1.text.includes(c));
+  const publicWelfare = PUBLIC.filter((p) => boldTerms(s2.text).some((b) => b === p));
+  const duties = DUTIES.filter((d) => boldTerms(s3.text).some((b) => b === d + '。'));
+  const gaugeQuestions = (s4.text.match(/？/g) || []).length;
+
+  return { criteria, publicWelfare, duties, gaugeQuestions };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function verify(a) {
+  if (a.criteria.length !== 3) throw new Error(`准入判据只数到 ${a.criteria.length} 条，本章立论要求三条齐全`);
+  if (a.publicWelfare.length !== 4) throw new Error(`公益性内涵只数到 ${a.publicWelfare.length} 项，缺一项就落不了地`);
+  if (a.duties.length !== 4) throw new Error(`职能改写只数到 ${a.duties.length} 项，四项须逐一改写`);
+  if (a.gaugeQuestions !== 3) throw new Error(`口径三问数到 ${a.gaugeQuestions} 问，三问不齐则数字无法互校`);
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const a = analyze(read());
+  const j = auditJudgement(a.sections);
+  verify(j);
 
-  console.log(`医院管理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`医院管理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 加粗判断 ${a.claims} 处 · 引文 ${a.quotes.length} 条 · 问句 ${a.questions} 个`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`准入判据 ${j.criteria.length}/3：${j.criteria.join('／')}`);
+  console.log(`公益性内涵 ${j.publicWelfare.length}/4：${j.publicWelfare.join('／')}`);
+  console.log(`职能改写 ${j.duties.length}/4：${j.duties.join('／')}`);
+  console.log(`口径三问 ${j.gaugeQuestions}/3：分子分母、时间窗、责任人`);
+  console.log('');
+  console.log('判断：招牌与床位编制都不构成医院，能同时收住、复核、连续运行的才构成；');
+  console.log('      三张报表互相抵消时，先统一口径，再谈规模。');
+  console.log('');
+  console.log('逐节字数：');
+  for (const s of a.sections) {
+    const share = a.hanzi ? ((s.hanzi / a.hanzi) * 100).toFixed(1) : '0.0';
+    console.log(`  ${s.title.padEnd(28, '　')} ${String(s.hanzi).padStart(5)} 字（${share}%）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/06-yiyuan-guanli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即随之变化；本输出仅用于教学演示，不构成管理咨询或医疗意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, parseSections, analyze, boldTerms, sectionOf, auditJudgement, verify, CRITERIA, PUBLIC, DUTIES };

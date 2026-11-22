@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
- * 中医智能辨证系统 · 第 6 章 多证并存的输出设计：本章统计口径
- * 课程: departments/07-zhineng/06-zhongyi-zhineng-bianzheng/chapters/06-duozheng-shuchu/docs/zh.md
- * 数据: standards/zhongyi-zhineng-bianzheng/units.json（155 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-zhineng-bianzheng/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 第 6 章 · 输出结构体检：四种「多」能不能被字段表达，以及 softmax 到底封掉了多少组合
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ *   数据: chapters/06-duozheng-shuchu/docs/zh.md（本章正文，唯一数据源）
+ *   运行: node code/main.js
+ *
+ * 两处现算：
+ *   1) 输出组合数：k 个候选证型，独立 sigmoid 可表达 2^k 种并存组合，softmax 只能表达 k 种。
+ *   2) 正文示例输出：主证、兼证、备选三者的分数是否有序，支持项与反对项是否都在。
+ * 检查的都是字段够不够表达「主从 + 时序」，不评估任何模型的判别能力。
  */
 
 'use strict';
@@ -15,87 +16,118 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-zhineng-bianzheng', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const RELATIONS = ['合病', '并病', '兼夹', '转化'];
+const OUTPUT_BLOCKS = ['primary', 'secondary', 'conflicts', 'status', 'alt'];
+
+const loadDoc = () => fs.readFileSync(DOC, 'utf8');
+const hanzi = (s) => (String(s).match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+
+function sections(md) {
+  const out = [{ heading: '（章首）', body: [] }];
+  for (const line of md.split(/\r?\n/)) {
+    if (/^##\s+/.test(line)) out.push({ heading: line.replace(/^##\s+/, '').trim(), body: [] });
+    else out[out.length - 1].body.push(line);
   }
-  throw new Error('没找到 standards/zhongyi-zhineng-bianzheng/units.json —— 章节目录是否已脱离仓库？');
+  return out.map((s) => ({ heading: s.heading, body: s.body.join('\n') }));
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-zhineng-bianzheng', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-zhineng-bianzheng', 'chapter-map.json');
-const CHAPTER = '6';
-const SLUG = '06-duozheng-shuchu';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function tables(md) {
+  const out = [];
+  let cur = null;
+  for (const line of md.split(/\r?\n/)) {
+    if (!/^\s*\|.*\|\s*$/.test(line)) { cur = null; continue; }
+    if (/^[\s:|-]+$/.test(line.replace(/\|/g, ''))) continue;
+    const cells = line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+    if (!cur) { cur = { header: cells, rows: [] }; out.push(cur); continue; }
+    cur.rows.push(cells);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function blocks(md, lang) {
+  const re = new RegExp('```' + lang + '\\n([\\s\\S]*?)```', 'g');
+  return [...md.matchAll(re)].map((m) => m[1].trim());
+}
+
+/** 独立判定可表达的组合数；互斥输出只能表达单个标签 */
+const independentCombos = (k) => 2 ** k;
+const exclusiveOutputs = (k) => k;
+
+function audit(md = loadDoc()) {
+  const secs = sections(md);
+  const t = tables(md);
+  const rowOf = (pred) => { const x = t.find(pred); return x ? x.rows.length : 0; };
+
+  const relationRows = rowOf((x) => x.header.some((h) => /时间结构/.test(h)));
+  const constraintRows = rowOf((x) => x.header.some((h) => /强度/.test(h)));
+  const metricRows = rowOf((x) => x.header.some((h) => /惩罚什么/.test(h)));
+
+  const raw = blocks(md, 'json')[0];
+  let out = null;
+  let parseError = '';
+  try { out = JSON.parse(raw); } catch (e) { parseError = e.message; }
+  const keys = out ? Object.keys(out) : [];
+  const support = out && out.primary && Array.isArray(out.primary.support) ? out.primary.support.length : 0;
+  const against = out && out.primary && Array.isArray(out.primary.against) ? out.primary.against.length : 0;
+  const ordered = Boolean(out && out.primary && Array.isArray(out.secondary) && Array.isArray(out.alt)
+    && out.secondary.every((s) => s.score <= out.primary.score)
+    && out.alt.every((a) => a.score <= out.primary.score));
+  const altHasWhyNot = Boolean(out && Array.isArray(out.alt) && out.alt.length && out.alt.every((a) => a.why_not));
+
+  const k = 5;
+  const missing = [];
+  for (const key of OUTPUT_BLOCKS) if (!keys.includes(key)) missing.push(`输出缺 ${key} 字段`);
+  if (against === 0) missing.push('示例只列支持项，没有反对项');
+  if (!ordered) missing.push('主证与兼证/备选的分数关系不成立');
+  if (!altHasWhyNot) missing.push('备选没有 why_not');
+  if (relationRows !== 4) missing.push(`四种关系表 ${relationRows} 行（应 4）`);
+  if (constraintRows !== 5) missing.push(`约束表 ${constraintRows} 行（应 5）`);
+  if (metricRows !== 5) missing.push(`多标签指标表 ${metricRows} 行（应 5）`);
+  const relsMissing = RELATIONS.filter((r) => !md.includes(r));
+  if (relsMissing.length) missing.push(`关系缺：${relsMissing.join('/')}`);
+
+  return {
+    sections: secs.map((s) => s.heading),
+    hanzi: hanzi(md),
+    relationRows,
+    constraintRows,
+    metricRows,
+    keys,
+    support,
+    against,
+    ordered,
+    altHasWhyNot,
+    k,
+    independent: independentCombos(k),
+    exclusive: exclusiveOutputs(k),
+    relations: RELATIONS,
+    parseError,
+    missing,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医智能辨证系统 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const a = audit();
+  console.log(`本章正文 ${a.sections.length - 1} 节 · ${a.hanzi} 汉字`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`输出组合空间（${a.k} 个候选证型）：`);
+  console.log(`  独立判定（sigmoid）：${a.independent} 种并存组合`);
+  console.log(`  互斥输出（softmax）：${a.exclusive} 种（每例只给一个证）`);
+  console.log('  → 互斥输出封掉了合病、并病、兼夹三类关系的表达位');
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('四种「多」：' + a.relations.join(' / ') + `（表 ${a.relationRows} 行）`);
+  console.log(`约束强度表 ${a.constraintRows} 行 · 多标签指标表 ${a.metricRows} 行`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`示例输出字段：${a.keys.join(' / ') || '（无法解析）'}`);
+  console.log(`  主证支持项 ${a.support} 条 · 反对项 ${a.against} 条 · 分数有序：${a.ordered ? '是' : '否'} · 备选带 why_not：${a.altHasWhyNot ? '是' : '否'}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(a.missing.length ? `缺口 ${a.missing.length} 处：${a.missing.join('；')}` : '缺口 0 处：主从、时序、反对项与不确定都有位置。');
   console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-zhineng-bianzheng/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 组合数只是输出层可表达的空间大小，不代表任何模型的准确率。');
+  console.log('※ 本章讨论多证并存时的输出设计，不构成诊断或治疗建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, RELATIONS, OUTPUT_BLOCKS, loadDoc, sections, tables, blocks, independentCombos, exclusiveOutputs, audit };

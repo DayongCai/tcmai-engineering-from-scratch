@@ -6,57 +6,59 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-zhineng-bianzheng', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-zhineng-bianzheng', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, CORPORA, loadDoc, audit, judgeNeighbor, thresholdDiscriminates } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文存在且已补实', () => {
+  assert.ok(fs.existsSync(DOC));
+  const md = loadDoc();
+  assert.ok((md.match(/[\u4e00-\u9fff]/g) || []).length > 2000);
+  assert.ok(!/TODO|待补|占位稿/.test(md));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('跨语料判据按正文口径执行：≥2 种语料才算语义关系', () => {
+  assert.strictEqual(judgeNeighbor(['病历', '古籍']).verdict, '语义关系');
+  assert.strictEqual(judgeNeighbor(['教材']).verdict, '语料伪影');
+  assert.strictEqual(judgeNeighbor([]).verdict, '无依据');
+  assert.deepStrictEqual(judgeNeighbor(['教材']).support, ['教材']);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('阈值不鉴别：正文给的两个余弦值在 0.6 下都过阈', () => {
+  const a = audit();
+  assert.strictEqual(a.pairs.length, 2, '应能从正文取到两个余弦值');
+  assert.deepStrictEqual(a.pairs.map((p) => p.cosine), [0.6, 0.75]);
+  assert.strictEqual(a.disc.passed, 2);
+  assert.strictEqual(a.disc.discriminates, false, '两个候选都过阈，阈值没有区分作用');
+  const strict = thresholdDiscriminates(a.pairs, 0.7).discriminates;
+  assert.strictEqual(strict, true, '换到 0.7 才勉强分开，说明结论对阈值极敏感');
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('三类语料与三个失效在正文里逐条列出', () => {
+  const md = loadDoc();
+  for (const c of CORPORA) assert.ok(md.includes(c + '语料'), `缺 ${c}语料`);
+  for (const f of ['各向异性', '反义相邻', '长尾塌陷']) assert.ok(md.includes(f), `缺失效 ${f}`);
+  const a = audit();
+  assert.strictEqual(a.failRows, 3);
+  assert.strictEqual(a.corpusRows, 3);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('四种用途各带可用性与前提', () => {
+  const a = audit();
+  assert.strictEqual(a.useRows, 4);
+  const md = loadDoc();
+  for (const u of ['相似病例检索', '下游特征', '解释依据', '跨库对齐']) assert.ok(md.includes(u), `缺用途 ${u}`);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('体检结论无缺口', () => {
+  assert.deepStrictEqual(audit().missing, []);
+});
+
+test('脚本可运行，两个判据都写进输出', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-zhineng-bianzheng\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/05-qianru-biaoshi/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /语义关系/);
+  assert.match(out, /语料伪影/);
+  assert.match(out, /阈值不提供鉴别/);
+  assert.match(out, /不构成诊断或治疗建议/);
+  assert.doesNotMatch(out, /准确率|F1|AUC/, '不应出现模型跑分');
 });

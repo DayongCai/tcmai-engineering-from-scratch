@@ -1,101 +1,145 @@
 #!/usr/bin/env node
 /**
- * 医学图像识别 · 第 1 章 中医图像从哪来：舌象、面象与图谱：本章统计口径
- * 课程: departments/07-zhineng/07-yixue-tuxiang-shezhen/chapters/01-img1/docs/zh.md
- * 数据: standards/yixue-tuxiang-shezhen/units.json（155 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yixue-tuxiang-shezhen/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 医学图像识别 · 第 1 章 对账器：像素预算与标签占比
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数据源只有两个，都在本目录旁边：
+ *   ../docs/zh.md   本章正文（三类来源、三种标签形状、算例都写在这一份里）
+ *   ../quiz.json    本章习题
+ *
+ * 现算的东西：
+ *   1. 从正文读出边长与通道数，重算单图字节、1 万张总盘、训练张量、batch 内存；
+ *   2. 标签（5 类 one-hot 20 字节）相对训练张量的占比；
+ *   3. 三项任务标注成本里分割那一档的标签数（H×W）；
+ *   4. 习题对账：题量、分段、选项数、解释字数，以及 check 题正确选项能否在正文找到原词。
+ *
+ * 正文里写下的数（786,432 / 602,112 / 18.4 MiB / 0.003%）不是手抄进去的，
+ * 而是由本脚本从边长现算，再与正文逐项比对；改正文而不改算式，测试就会红。
+ *
+ * 依赖：仅 node:fs / node:path。
  */
-
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yixue-tuxiang-shezhen', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+
+const docText = () => fs.readFileSync(DOC, 'utf8');
+const quizData = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
+
+/** 连续汉字片段（n 字），用于判断「习题用词是不是正文里的词」 */
+function grams(s, n = 4) {
+  const out = new Set();
+  for (const seg of String(s || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  throw new Error('没找到 standards/yixue-tuxiang-shezhen/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yixue-tuxiang-shezhen', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yixue-tuxiang-shezhen', 'chapter-map.json');
-const CHAPTER = '1';
-const SLUG = '01-img1';
+/** 正文写的「786{,}432」这种带千位的写法，用来和现算数比对 */
+const group = (n) => Math.round(n).toLocaleString('en-US').replace(/,/g, '{,}');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 从正文读出原图边长：正文写作「单张 512×512×3、uint8」 */
+function sourceSide(text = docText()) {
+  const m = text.match(/(\d+)×(\d+)×3、uint8/);
+  if (!m) throw new Error('正文里找不到「N×N×3、uint8」的原图规格');
+  return { w: Number(m[1]), h: Number(m[2]) };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 从正文读出训练缓存边长：正文写作「缩到 224×224」 */
+function trainSide(text = docText()) {
+  const m = text.match(/缩到\s*(\d+)×(\d+)/);
+  if (!m) throw new Error('正文里找不到训练缓存的边长');
+  return { w: Number(m[1]), h: Number(m[2]) };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 像素预算：全部由边长与通道数现算，不手打 */
+function pixelBudget(text = docText()) {
+  const src = sourceSide(text);
+  const tr = trainSide(text);
+  const fullBytes = src.w * src.h * 3;                 // uint8 RGB
+  const trainBytes = tr.w * tr.h * 3 * 4;              // float32 RGB
+  return {
+    src,
+    train: tr,
+    fullBytes,
+    tenThousandGiB: (fullBytes * 10000) / 2 ** 30,
+    trainBytes,
+    batchMiB: (trainBytes * 32) / 2 ** 20,
+    labelSharePct: (20 / trainBytes) * 100,            // 5 类 one-hot 20 字节
+  };
+}
+
+/** 分割任务的标签数 = 原图 H×W（每像素一个类别），对比分类的 1 个 */
+function segLabels(text = docText()) {
+  const src = sourceSide(text);
+  return src.w * src.h;
+}
+
+/** 习题对账：结构 + 接地 */
+function quizAudit() {
+  const q = quizData();
+  const body = grams(docText());
+  const qs = Array.isArray(q.questions) ? q.questions : [];
+  const byStage = { pre: 0, check: 0, post: 0 };
+  const problems = [];
+  let grounded = 0;
+
+  qs.forEach((item, i) => {
+    const n = i + 1;
+    if (item.stage in byStage) byStage[item.stage] += 1;
+    else problems.push(`第 ${n} 题 stage 非法：${item.stage}`);
+    const opts = Array.isArray(item.options) ? item.options : [];
+    if (opts.length !== 4) problems.push(`第 ${n} 题有 ${opts.length} 个选项`);
+    if (!(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < opts.length)) {
+      problems.push(`第 ${n} 题 correct 下标非法`);
+    }
+    if (hanzi(item.explain) < 30) problems.push(`第 ${n} 题 explain 只有 ${hanzi(item.explain)} 汉字`);
+    if (item.stage === 'check') {
+      const right = String(opts[item.correct] || '');
+      if ([...grams(right)].some((g) => body.has(g))) grounded += 1;
+    }
+  });
+
+  return { total: qs.length, byStage, grounded, problems };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = docText();
+  const b = pixelBudget(text);
+  const a = quizAudit();
 
-  console.log(`医学图像识别 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医学图像识别 · 第 1 章 对账');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`原图 ${b.src.w}×${b.src.h}×3 uint8：${group(b.fullBytes)} 字节 ≈ ${(b.fullBytes / 2 ** 20).toFixed(2)} MiB`);
+  console.log(`1 万张原图：${b.tenThousandGiB.toFixed(1)} GiB`);
+  console.log(`训练张量 ${b.train.w}×${b.train.h} float32：${group(b.trainBytes)} 字节 ≈ ${(b.trainBytes / 2 ** 20).toFixed(2)} MiB`);
+  console.log(`batch 32：${b.batchMiB.toFixed(1)} MiB`);
+  console.log(`标签 20 字节 / 训练张量：${b.labelSharePct.toFixed(3)}%`);
+  console.log(`分割标签数（每像素一个）：${group(segLabels(text))}，是分类标签的 ${group(segLabels(text))} 倍`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`习题 ${a.total} 题（pre ${a.byStage.pre} / check ${a.byStage.check} / post ${a.byStage.post}）`);
+  console.log(`check 题正确选项能在正文找到原词的：${a.grounded} 道`);
+  console.log(a.problems.length ? `✗ ${a.problems.length} 处：${a.problems.join('；')}` : '✓ 结构齐、解释够长、判据落在正文');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/yixue-tuxiang-shezhen/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文与习题现算，不手打；正文改动后重跑即可复现。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC,
+  QUIZ,
+  docText,
+  quizData,
+  hanzi,
+  grams,
+  group,
+  sourceSide,
+  trainSide,
+  pixelBudget,
+  segLabels,
+  quizAudit,
+};

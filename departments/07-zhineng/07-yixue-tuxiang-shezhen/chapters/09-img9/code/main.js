@@ -1,101 +1,152 @@
 #!/usr/bin/env node
 /**
- * 医学图像识别 · 第 9 章 可解释输出：图上看什么：本章统计口径
- * 课程: departments/07-zhineng/07-yixue-tuxiang-shezhen/chapters/09-img9/docs/zh.md
- * 数据: standards/yixue-tuxiang-shezhen/units.json（155 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yixue-tuxiang-shezhen/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 医学图像识别 · 第 9 章 对账器：遮挡检验与热图的分辨率假象
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数据源：
+ *   ../docs/zh.md   本章正文（显著性定义、三种误读、三个检验、用途与免责）
+ *   ../quiz.json    本章习题
+ *
+ * 现算的东西：
+ *   1. 从正文读出 8×8 网格与每次遮挡的块数，算出遮挡步数；
+ *   2. 从遮挡表读出三组置信度下降（42/12/4），算高显著相对随机的倍数；
+ *   3. 「解释有效」的判据：删高显著区必须掉得比随机快；
+ *   4. 类激活图上采样的倍率（7×7 → 224×224），说明红块边缘是插值；
+ *   5. 习题对账：结构、分段、解释字数、check 题接地。
+ *
+ * 依赖：仅 node:fs / node:path。
  */
-
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yixue-tuxiang-shezhen', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+
+const docText = () => fs.readFileSync(DOC, 'utf8');
+const quizData = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
+
+function grams(s, n = 4) {
+  const out = new Set();
+  for (const seg of String(s || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  throw new Error('没找到 standards/yixue-tuxiang-shezhen/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yixue-tuxiang-shezhen', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yixue-tuxiang-shezhen', 'chapter-map.json');
-const CHAPTER = '9';
-const SLUG = '09-img9';
+const pick = (text, re, what) => {
+  const m = text.match(re);
+  if (!m) throw new Error(`正文里找不到${what}`);
+  return m;
+};
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 遮挡网格：8×8 共 64 块，每次遮 5 块 */
+function occlusionGrid(text = docText()) {
+  const m = pick(text, /(\d+)×(\d+) 网格（(\d+) 块），每次遮 (\d+) 块/, '遮挡网格');
+  const cells = Number(m[3]);
+  const perStep = Number(m[4]);
+  return {
+    w: Number(m[1]),
+    h: Number(m[2]),
+    cells,
+    perStep,
+    steps: Math.ceil(cells / perStep),
+    consistent: Number(m[1]) * Number(m[2]) === cells,
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 删除曲线的三组下降：高显著 / 随机 / 低显著 */
+function deletionCurve(text = docText()) {
+  const high = pick(text, /显著性最高的\s*(\d+)\s*块\s*\|\s*(\d+)%/, '高显著组的下降');
+  const rand = pick(text, /随机\s*(\d+)\s*块\s*\|\s*(\d+)%/, '随机组的下降');
+  const low = pick(text, /显著性最低的\s*(\d+)\s*块\s*\|\s*(\d+)%/, '低显著组的下降');
+  const g = {
+    blocks: Number(high[1]),
+    high: Number(high[2]),
+    random: Number(rand[2]),
+    low: Number(low[2]),
+  };
+  return {
+    ...g,
+    ratio: g.high / g.random,
+    ordered: g.high > g.random && g.random > g.low,
+    informative: g.high >= 2 * g.random,
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 类激活图上采样：7×7 → 224×224 只是插值 */
+function upsample(text = docText()) {
+  const m = pick(text, /分辨率等于最后特征图的尺寸（如\s*(\d+)×(\d+)），上采样到\s*(\d+)×(\d+)/, '类激活图与输入尺寸');
+  const src = Number(m[1]);
+  const dst = Number(m[3]);
+  if (Number(m[2]) !== src || Number(m[4]) !== dst) throw new Error('正文里的上采样尺寸不成正方形');
+  return { src, dst, factor: dst / src, srcCells: src * src, dstCells: dst * dst };
+}
+
+/** 习题对账：结构 + 接地 */
+function quizAudit() {
+  const q = quizData();
+  const body = grams(docText());
+  const qs = Array.isArray(q.questions) ? q.questions : [];
+  const byStage = { pre: 0, check: 0, post: 0 };
+  const problems = [];
+  let grounded = 0;
+
+  qs.forEach((item, i) => {
+    const n = i + 1;
+    if (item.stage in byStage) byStage[item.stage] += 1;
+    else problems.push(`第 ${n} 题 stage 非法：${item.stage}`);
+    const opts = Array.isArray(item.options) ? item.options : [];
+    if (opts.length !== 4) problems.push(`第 ${n} 题有 ${opts.length} 个选项`);
+    if (!(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < opts.length)) {
+      problems.push(`第 ${n} 题 correct 下标非法`);
+    }
+    if (hanzi(item.explain) < 30) problems.push(`第 ${n} 题 explain 只有 ${hanzi(item.explain)} 汉字`);
+    if (item.stage === 'check') {
+      const right = String(opts[item.correct] || '');
+      if ([...grams(right)].some((g) => body.has(g))) grounded += 1;
+    }
+  });
+
+  return { total: qs.length, byStage, grounded, problems };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = docText();
+  const g = occlusionGrid(text);
+  const d = deletionCurve(text);
+  const u = upsample(text);
+  const a = quizAudit();
 
-  console.log(`医学图像识别 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医学图像识别 · 第 9 章 对账');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`遮挡网格 ${g.w}×${g.h} = ${g.cells} 块（自洽 ${g.consistent}），每次 ${g.perStep} 块 → ${g.steps} 步`);
+  console.log(`删除曲线（每次遮 ${d.blocks} 块）：`);
+  console.log(`  显著性最高 ${d.high}% / 随机 ${d.random}% / 最低 ${d.low}%`);
+  console.log(`  高显著是随机的 ${d.ratio.toFixed(1)} 倍；单调 ${d.ordered}；有信息量 ${d.informative}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`类激活图 ${u.src}×${u.src}（${u.srcCells} 格）上采样到 ${u.dst}×${u.dst}（${u.dstCells} 格），倍率 ${u.factor}×`);
+  console.log(`  → 红块边缘精确到像素，是插值造出来的假象，不能当病灶边界`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`习题 ${a.total} 题（pre ${a.byStage.pre} / check ${a.byStage.check} / post ${a.byStage.post}）`);
+  console.log(`check 题正确选项能在正文找到原词的：${a.grounded} 道`);
+  console.log(a.problems.length ? `✗ ${a.problems.length} 处：${a.problems.join('；')}` : '✓ 结构齐、解释够长、判据落在正文');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/yixue-tuxiang-shezhen/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文与习题现算，不手打；正文改动后重跑即可复现。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC,
+  QUIZ,
+  docText,
+  quizData,
+  hanzi,
+  grams,
+  occlusionGrid,
+  deletionCurve,
+  upsample,
+  quizAudit,
+};

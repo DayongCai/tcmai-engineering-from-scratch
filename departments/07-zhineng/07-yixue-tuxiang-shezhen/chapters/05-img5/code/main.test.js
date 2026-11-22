@@ -2,61 +2,102 @@
 
 const test = require('node:test');
 const assert = require('node:assert');
-const fs = require('node:fs');
-const path = require('node:path');
-const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yixue-tuxiang-shezhen', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yixue-tuxiang-shezhen', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const {
+  docText,
+  quizData,
+  hanzi,
+  grams,
+  se,
+  ci,
+  ciFromDoc,
+  samplesForSe,
+  subjectLeak,
+  foldWidth,
+  quizAudit,
+} = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('二项近似的 SE 与区间：p=0.8、n=300', () => {
+  const c = ci(0.8, 300);
+  assert.strictEqual(c.se.toFixed(4), '0.0231');
+  assert.strictEqual(c.lo.toFixed(3), '0.755');
+  assert.strictEqual(c.hi.toFixed(3), '0.845');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('从正文读出 n=300 与 n=60 两组算例，区间与正文一致', () => {
+  const d = ciFromDoc();
+  assert.strictEqual(d.p, 0.8);
+  assert.strictEqual(d.n1, 300);
+  assert.strictEqual(d.n2, 60);
+  assert.strictEqual(d.first.se.toFixed(4), '0.0231');
+  assert.strictEqual(d.second.se.toFixed(4), '0.0516');
+  assert.strictEqual(d.second.lo.toFixed(3), '0.699');
+  assert.strictEqual(d.second.hi.toFixed(3), '0.901');
+  assert.ok(docText().includes('[0.755, 0.845]'));
+  assert.ok(docText().includes('[0.699, 0.901]'));
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('60 例的区间比 300 例宽一倍以上：小样本分辨不出 5 个百分点', () => {
+  const d = ciFromDoc();
+  assert.ok(d.second.half > 2 * d.first.half, `半宽 ${d.first.half} vs ${d.second.half}`);
+  assert.ok(d.second.hi - d.second.lo > 0.2, '60 例的区间应超过 20 个百分点宽');
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('要 SE ≤ 0.025 需要 256 例，正文写作 250 的量级', () => {
+  const n = samplesForSe(0.8);
+  assert.strictEqual(n, 256);
+  assert.ok(n >= 250 && n < 300, `实算 ${n}`);
+  assert.ok(docText().includes('250'));
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('按图划分：单受试跨侧概率 0.488，约 98 位受试泄漏', () => {
+  const l = subjectLeak();
+  assert.strictEqual(l.subjects, 200);
+  assert.strictEqual(l.perSubject, 3);
+  assert.strictEqual(l.p.toFixed(3), '0.488');
+  assert.strictEqual(l.leaked, 98);
+  assert.ok(docText().includes('98 位受试'));
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/yixue-tuxiang-shezhen\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
+test('每类 60 例 5 折：单折 12 例，区间宽度约 ±25 个百分点', () => {
+  const f = foldWidth();
+  assert.strictEqual(f.n, 12);
+  assert.strictEqual((f.half * 100).toFixed(0), '23');
+  assert.ok(f.widthPct > 40, '12 例的区间应很宽');
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
+test('习题结构：6 题、pre 1 / check 3 / post 2、每题 4 选项', () => {
+  const a = quizAudit();
+  assert.strictEqual(a.total, 6);
+  assert.deepStrictEqual(a.byStage, { pre: 1, check: 3, post: 2 });
+  assert.deepStrictEqual(a.problems, []);
+  for (const item of quizData().questions) {
+    assert.strictEqual(new Set(item.options).size, 4, `选项有重复：${item.question}`);
+  }
 });
 
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/05-img5/docs/zh.md'), '头部注释未指向本章');
+test('三道 check 题全部接地：正确选项能在正文找到原词', () => {
+  const a = quizAudit();
+  assert.strictEqual(a.grounded, 3);
+  assert.ok(a.grounded >= 2);
+});
+
+test('解释都过 30 汉字，且不复述题干', () => {
+  for (const item of quizData().questions) {
+    assert.ok(hanzi(item.explain) >= 30, `解释过短：${item.question}`);
+    assert.ok(!item.explain.includes(item.question), '解释不应整句复述题干');
+  }
+});
+
+test('正确选项用词在正文里能逐字对上（不是自造术语）', () => {
+  const body = grams(docText());
+  for (const item of quizData().questions) {
+    const right = item.options[item.correct];
+    assert.ok([...grams(right)].some((g) => body.has(g)), `正确选项在正文找不到：${right}`);
+  }
+});
+
+test('答案分散在四个位置，不是全押同一项', () => {
+  const idx = quizData().questions.map((q) => q.correct);
+  assert.strictEqual(new Set(idx).size, 4, `correct 分布：${idx.join(',')}`);
 });

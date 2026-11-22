@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 医院管理学 · 第 5 章 质量与财务管理：本章统计口径
+ * 医院管理学 · 第 5 章 质量指标可以修饰，质量成本修饰不了
  * 课程: departments/06-guanli/06-yiyuan-guanli-xue/chapters/05-y5/docs/zh.md
- * 数据: standards/06-yiyuan-guanli-xue/units.json（124 单元层，每单元带三辨与四位面词频）
- * 取数: standards/06-yiyuan-guanli-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数字全部从本章 docs/zh.md 现算：汉字、节、加粗判断、引文与问句。
+ * 并复算本章的指标结构——质量三层、核心制度四项、上报分级五档、变异三类、成本四级。
+ * 层级或档数对不上，脚本报错，因为本章的立论是“单层都能修饰，三层与成本不能”。
  */
 
 'use strict';
@@ -15,87 +14,112 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '06-yiyuan-guanli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 5;
+const TITLE = '质量指标可以修饰，质量成本修饰不了';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function parseSections(body) {
+  const out = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) { cur = { title: h[1], lines: [] }; out.push(cur); continue; }
+    if (cur) cur.lines.push(line);
   }
-  throw new Error('没找到 standards/06-yiyuan-guanli-xue/units.json —— 章节目录是否已脱离仓库？');
+  return out.map((s) => ({
+    title: s.title,
+    text: s.lines.join('\n'),
+    hanzi: (s.lines.join('\n').match(HANZI) || []).length,
+  }));
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '06-yiyuan-guanli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '06-yiyuan-guanli-xue', 'chapter-map.json');
-const CHAPTER = '5';
-const SLUG = '05-y5';
+const boldTerms = (text) => [...String(text).matchAll(/\*\*([^*\n]+)\*\*/g)].map((m) => m[1]);
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const sections = parseSections(body);
+  return {
+    hanzi: (body.match(HANZI) || []).length,
+    sections,
+    claims: boldTerms(body).length,
+    quotes: [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]))],
+    questions: (body.match(/？/g) || []).length,
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+const sectionOf = (sections, kw) => {
+  const s = sections.find((x) => x.title.includes(kw));
+  if (!s) throw new Error('正文里没找到含「' + kw + '」的节');
+  return s;
+};
+
+const LAYERS = ['结构', '过程', '结果'];
+const CORE_RULES = ['三级查房。', '会诊。', '危急值。', '死亡病例讨论。'];
+const REPORT_LEVELS = ['隐患事件', '未遂事件', '无伤害事件', '轻度伤害', '重度伤害'];
+const VARIANCES = ['患者因素', '医师因素', '系统因素'];
+
+/**
+ * 复算质量三层、四项核心制度、五档上报分级、三类变异与四级成本。
+ * 本章判断：结果好不等于质量好，聚合指标必须回到过程与成本去看。
+ */
+function auditQuality(sections) {
+  const s1 = sectionOf(sections, '三层结构');
+  const s2 = sectionOf(sections, '核心制度');
+  const s3 = sectionOf(sections, '上报率悖论');
+  const s4 = sectionOf(sections, '临床路径');
+  const s5 = sectionOf(sections, '财务');
+
+  const layers = LAYERS.filter((x) => boldTerms(s1.text).some((b) => b === x));
+  const coreRules = CORE_RULES.filter((x) => boldTerms(s2.text).some((b) => b === x));
+  const levels = REPORT_LEVELS.filter((x) => s3.text.includes(x));
+  const variances = VARIANCES.filter((x) => boldTerms(s4.text).some((b) => b === x));
+  const costLevels = /成本核算分四级/.test(s5.text) ? 4 : 0;
+
+  return { layers, coreRules, levels, variances, costLevels };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function verify(a) {
+  if (a.layers.length !== 3) throw new Error(`质量只数到 ${a.layers.length} 层，结构—过程—结果三层缺一不可`);
+  if (a.coreRules.length !== 4) throw new Error(`核心制度样例只数到 ${a.coreRules.length} 项，须四项`);
+  if (a.levels.length !== 5) throw new Error(`上报分级只数到 ${a.levels.length} 档，须五档`);
+  if (a.variances.length !== 3) throw new Error(`变异只数到 ${a.variances.length} 类，须三类`);
+  if (a.costLevels !== 4) throw new Error('正文没有写明成本核算分四级');
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const a = analyze(read());
+  const q = auditQuality(a.sections);
+  verify(q);
 
-  console.log(`医院管理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`医院管理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 加粗判断 ${a.claims} 处 · 引文 ${a.quotes.length} 条 · 问句 ${a.questions} 个`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`质量三层 ${q.layers.length}/3：${q.layers.join(' → ')}`);
+  console.log(`核心制度样例 ${q.coreRules.length}/4：${q.coreRules.map((x) => x.replace(/。$/, '')).join('／')}`);
+  console.log(`上报分级 ${q.levels.length}/5：${q.levels.join('／')}（前两档占比越高，报告文化越健康）`);
+  console.log(`变异分类 ${q.variances.length}/3：${q.variances.join('／')}`);
+  console.log(`成本核算 ${q.costLevels}/4 级：科室／项目／病种／病组`);
+  console.log('');
+  console.log('判断：结果好不等于质量好，聚合指标可以被修饰；');
+  console.log('      成本会以多住两天、多换一次药、多一次再入院的形式，把被压掉的损失推回来。');
+  console.log('');
+  console.log('逐节字数：');
+  for (const s of a.sections) {
+    const share = a.hanzi ? ((s.hanzi / a.hanzi) * 100).toFixed(1) : '0.0';
+    console.log(`  ${s.title.padEnd(28, '　')} ${String(s.hanzi).padStart(5)} 字（${share}%）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/06-yiyuan-guanli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即随之变化；本输出仅用于教学演示，不构成审计意见或质量认证结论。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, parseSections, analyze, boldTerms, sectionOf, auditQuality, verify, LAYERS, CORE_RULES, REPORT_LEVELS, VARIANCES };

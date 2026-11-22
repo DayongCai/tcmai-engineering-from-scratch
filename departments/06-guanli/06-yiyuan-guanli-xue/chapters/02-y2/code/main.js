@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 医院管理学 · 第 2 章 组织与人力资源：本章统计口径
+ * 医院管理学 · 第 2 章 组织图画的不是权力，是签字与担责的错位
  * 课程: departments/06-guanli/06-yiyuan-guanli-xue/chapters/02-y2/docs/zh.md
- * 数据: standards/06-yiyuan-guanli-xue/units.json（124 单元层，每单元带三辨与四位面词频）
- * 取数: standards/06-yiyuan-guanli-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数字全部从本章 docs/zh.md 现算：汉字、节、加粗判断、引文与问句。
+ * 并复算本章的组织结构账——四种结构、矩阵三件事、双头指挥四场景、人力三本账。
+ * 结构数对不上，脚本直接报错，因为本章的立论是“先选愿意长期承受的那种矛盾”。
  */
 
 'use strict';
@@ -15,87 +14,115 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '06-yiyuan-guanli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 2;
+const TITLE = '组织图画的不是权力，是签字与担责的错位';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function parseSections(body) {
+  const out = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) { cur = { title: h[1], lines: [] }; out.push(cur); continue; }
+    if (cur) cur.lines.push(line);
   }
-  throw new Error('没找到 standards/06-yiyuan-guanli-xue/units.json —— 章节目录是否已脱离仓库？');
+  return out.map((s) => ({
+    title: s.title,
+    text: s.lines.join('\n'),
+    hanzi: (s.lines.join('\n').match(HANZI) || []).length,
+  }));
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '06-yiyuan-guanli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '06-yiyuan-guanli-xue', 'chapter-map.json');
-const CHAPTER = '2';
-const SLUG = '02-y2';
+const boldTerms = (text) => [...String(text).matchAll(/\*\*([^*\n]+)\*\*/g)].map((m) => m[1]);
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const sections = parseSections(body);
+  return {
+    hanzi: (body.match(HANZI) || []).length,
+    sections,
+    claims: boldTerms(body).length,
+    quotes: [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]))],
+    questions: (body.match(/？/g) || []).length,
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+const sectionOf = (sections, kw) => {
+  const s = sections.find((x) => x.title.includes(kw));
+  if (!s) throw new Error('正文里没找到含「' + kw + '」的节');
+  return s;
+};
+
+const STRUCTURES = ['直线制', '职能制', '直线职能制', '矩阵制'];
+const SCENES = ['人力调配。', '考核打分。', '质量责任。', '中医护理技术的准入。'];
+const RIGHTS = ['调配权', '异议权', '事后核算权'];
+
+/** 从「三件事——……。」这样的破折号长句里数出并列项。 */
+function dashList(text, head) {
+  const m = String(text).match(new RegExp(head + '[^。]*'));
+  if (!m) return [];
+  return m[0].split('—').pop().replace(/。$/, '').split('、').map((s) => s.trim()).filter(Boolean);
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/**
+ * 复算四种结构、矩阵三件事、双头指挥四场景与人力三本账。
+ * 本章的判断是“结构选择即矛盾选择”，四项不齐就无法比较。
+ */
+function auditOrganisation(sections) {
+  const s1 = sectionOf(sections, '四种结构');
+  const s2 = sectionOf(sections, '双头指挥');
+  const s4 = sectionOf(sections, '三本账');
+
+  const structures = STRUCTURES.filter((x) => boldTerms(s1.text).some((b) => b === x));
+  const matrixItems = dashList(s1.text, '三件事——');
+  const scenes = SCENES.filter((x) => boldTerms(s2.text).some((b) => b === x));
+  const rights = RIGHTS.filter((r) => s2.text.includes(r));
+  const books = boldTerms(s4.text).filter((b) => b.startsWith('第'));
+
+  return { structures, matrixItems, scenes, rights, books };
+}
+
+function verify(a) {
+  if (a.structures.length !== 4) throw new Error(`结构只数到 ${a.structures.length} 种，四种并列才谈得上取舍`);
+  if (a.matrixItems.length !== 3) throw new Error(`矩阵前置条件数到 ${a.matrixItems.length} 项，须三项齐全`);
+  if (a.scenes.length !== 4) throw new Error(`双头指挥场景数到 ${a.scenes.length} 个，须四个`);
+  if (a.books.length !== 3) throw new Error(`人力账本数到 ${a.books.length} 本，须三本`);
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const a = analyze(read());
+  const o = auditOrganisation(a.sections);
+  verify(o);
 
-  console.log(`医院管理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`医院管理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 加粗判断 ${a.claims} 处 · 引文 ${a.quotes.length} 条 · 问句 ${a.questions} 个`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`组织结构 ${o.structures.length}/4：${o.structures.join('／')}`);
+  console.log(`矩阵前置条件 ${o.matrixItems.length}/3：${o.matrixItems.join('、')}`);
+  console.log(`双头指挥场景 ${o.scenes.length}/4：${o.scenes.map((x) => x.replace(/。$/, '')).join('／')}`);
+  if (o.rights.length !== 3) throw new Error('人力调配的三项权利不齐：调配权／异议权／事后核算权');
+  console.log(`人力调配三权 ${o.rights.length}/3：${o.rights.join('／')}`);
+  console.log('');
+  console.log('判断：结构没有最优解，只有“哪种矛盾你愿意长期承受”；');
+  console.log('      图上的线叫权力，线上的字叫责任，两者对不上时，摩擦成本就会固化。');
+  console.log('');
+  console.log('逐节字数：');
+  for (const s of a.sections) {
+    const share = a.hanzi ? ((s.hanzi / a.hanzi) * 100).toFixed(1) : '0.0';
+    console.log(`  ${s.title.padEnd(28, '　')} ${String(s.hanzi).padStart(5)} 字（${share}%）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/06-yiyuan-guanli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即随之变化；本输出仅用于教学演示，不构成管理咨询或人事处理依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, parseSections, analyze, boldTerms, sectionOf, dashList, auditOrganisation, verify, STRUCTURES, SCENES, RIGHTS };

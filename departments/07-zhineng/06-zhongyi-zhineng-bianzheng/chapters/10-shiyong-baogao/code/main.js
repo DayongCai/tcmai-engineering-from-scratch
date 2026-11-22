@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 /**
- * 中医智能辨证系统 · 第 10 章 临床试用的设计与报告：本章统计口径
- * 课程: departments/07-zhineng/06-zhongyi-zhineng-bianzheng/chapters/10-shiyong-baogao/docs/zh.md
- * 数据: standards/zhongyi-zhineng-bianzheng/units.json（155 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-zhineng-bianzheng/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 第 10 章 · 试用方案体检：终点三层能不能互相顶替、盲法最少要做到哪两层
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ *   数据: chapters/10-shiyong-baogao/docs/zh.md（本章正文，唯一数据源）
+ *   运行: node code/main.js
+ *
+ * 现算两件事：
+ *   1) 终点层级 —— 同层回答成立 3 种，跨层回答 6 种全部不成立（过程不能说准不准，
+ *      结果不能说病人受益）。越级即失真，这是「效率提升」撑不起「诊疗质量提高」的原因。
+ *   2) 盲法底线 —— 正文说至少做到判读者盲 + 分配隐藏，四条里占两条；缺一条结论只能算可行性数据。
+ * 不编造任何样本量、效应量或试验结果。
  */
 
 'use strict';
@@ -15,87 +17,101 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-zhineng-bianzheng', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const LAYERS = ['过程', '结果', '结局'];
+const BLIND_LAYERS = ['判读者盲', '患者盲', '统计者盲', '分配隐藏'];
+const BLIND_MINIMUM = ['判读者盲', '分配隐藏'];
+
+const loadDoc = () => fs.readFileSync(DOC, 'utf8');
+const hanzi = (s) => (String(s).match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+
+function sections(md) {
+  const out = [{ heading: '（章首）', body: [] }];
+  for (const line of md.split(/\r?\n/)) {
+    if (/^##\s+/.test(line)) out.push({ heading: line.replace(/^##\s+/, '').trim(), body: [] });
+    else out[out.length - 1].body.push(line);
   }
-  throw new Error('没找到 standards/zhongyi-zhineng-bianzheng/units.json —— 章节目录是否已脱离仓库？');
+  return out.map((s) => ({ heading: s.heading, body: s.body.join('\n') }));
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-zhineng-bianzheng', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-zhineng-bianzheng', 'chapter-map.json');
-const CHAPTER = '10';
-const SLUG = '10-shiyong-baogao';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function tables(md) {
+  const out = [];
+  let cur = null;
+  for (const line of md.split(/\r?\n/)) {
+    if (!/^\s*\|.*\|\s*$/.test(line)) { cur = null; continue; }
+    if (/^[\s:|-]+$/.test(line.replace(/\|/g, ''))) continue;
+    const cells = line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+    if (!cur) { cur = { header: cells, rows: [] }; out.push(cur); continue; }
+    cur.rows.push(cells);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+/** 同层回答成立，跨层回答不成立：返回可成立的层数与越级的对数 */
+function endpointPairs(layers) {
+  let same = 0;
+  let cross = 0;
+  for (const a of layers) for (const b of layers) (a === b ? (same += 1) : (cross += 1));
+  return { same, cross };
+}
+
+function audit(md = loadDoc()) {
+  const secs = sections(md);
+  const t = tables(md);
+  const rowOf = (pred) => { const x = t.find(pred); return x ? x.rows.length : 0; };
+
+  const endpointRows = rowOf((x) => x.header.some((h) => /能回答/.test(h)));
+  const designRows = rowOf((x) => x.header.some((h) => /偏倚/.test(h)));
+  const assumptionRows = rowOf((x) => x.header.some((h) => /需要事先写/.test(h)));
+  const reportRows = rowOf((x) => x.header.some((h) => /为什么必须有/.test(h)));
+
+  const pairs = endpointPairs(LAYERS);
+  const blindPresent = BLIND_LAYERS.filter((k) => md.includes(k));
+  const blindMinimumMet = BLIND_MINIMUM.every((k) => md.includes(k));
+  const reportItems = ['版本号', '纳排标准', '终点定义', '缺失处理', '方案偏离', '不良事件'].filter((k) => md.includes(k));
+
+  const missing = [];
+  if (endpointRows !== 3) missing.push(`终点三层表 ${endpointRows} 行（应 3）`);
+  if (designRows !== 4) missing.push(`对照设计表 ${designRows} 行（应 4）`);
+  if (assumptionRows !== 4) missing.push(`假设类型表 ${assumptionRows} 行（应 4）`);
+  if (reportRows !== 6) missing.push(`报告清单 ${reportRows} 项（应 6）`);
+  if (blindPresent.length !== 4) missing.push(`盲法层次缺：${BLIND_LAYERS.filter((k) => !blindPresent.includes(k)).join('/')}`);
+  if (!blindMinimumMet) missing.push('未写明盲法底线（判读者盲 + 分配隐藏）');
+  if (reportItems.length !== 6) missing.push(`报告条目缺：${['版本号', '纳排标准', '终点定义', '缺失处理', '方案偏离', '不良事件'].filter((k) => !reportItems.includes(k)).join('/')}`);
+
+  return {
+    sections: secs.map((s) => s.heading),
+    hanzi: hanzi(md),
+    endpointRows,
+    designRows,
+    assumptionRows,
+    reportRows,
+    pairs,
+    blindPresent,
+    blindMinimumMet,
+    reportItems,
+    missing,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医智能辨证系统 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const a = audit();
+  console.log(`本章正文 ${a.sections.length - 1} 节 · ${a.hanzi} 汉字`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`终点三层：${LAYERS.join(' → ')}（表 ${a.endpointRows} 行）`);
+  console.log(`  同层回答成立 ${a.pairs.same} 种；跨层回答 ${a.pairs.cross} 种全部不成立`);
+  console.log('  → 「效率提升」是过程指标，撑不起「诊疗质量提高」；越级即失真。');
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`对照设计 ${a.designRows} 种 · 假设类型 ${a.assumptionRows} 种 · 报告清单 ${a.reportRows} 项`);
+  console.log(`盲法层次：${a.blindPresent.join(' / ')}（${a.blindPresent.length}/4）`);
+  console.log(`  底线（判读者盲 + 分配隐藏）：${a.blindMinimumMet ? '已写明' : '未写明'}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(a.missing.length ? `缺口 ${a.missing.length} 处：${a.missing.join('；')}` : '缺口 0 处：终点分层、对照、盲法、报告四条都能落到清单上。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-zhineng-bianzheng/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 只核对本章正文给出的设计与报告要素，不含任何试验数据或效应量。');
+  console.log('※ 本章讨论临床试用的设计与报告方法，不构成诊疗建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, LAYERS, BLIND_LAYERS, BLIND_MINIMUM, loadDoc, sections, tables, endpointPairs, audit };

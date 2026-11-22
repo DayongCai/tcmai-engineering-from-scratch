@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 健康服务管理 · 第 1 章 健康服务的供给主体：本章统计口径
+ * 健康服务管理 · 第 1 章 供给主体的分界，在能承担什么责任，不在挂了什么牌子
  * 课程: departments/06-guanli/08-jiankang-fuwu-guanli/chapters/01-z81/docs/zh.md
- * 数据: standards/08-jiankang-fuwu-guanli/units.json（282 单元层，每单元带三辨与四位面词频）
- * 取数: standards/08-jiankang-fuwu-guanli/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 输出全部从本章正文现算：汉字、节、加粗判断、引文，以及正文里那几处「几个东西」的
+ * 清单——五类服务、四个硬指标、四样越界形态、三问。清单的条数由正文自己数出来，
+ * 再与句子里写的中文数字对账；正文改了条数而没改数字，脚本会报不一致。
  */
 
 'use strict';
@@ -15,87 +14,118 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '08-jiankang-fuwu-guanli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 1;
+const TITLE = '供给主体的分界，在能承担什么责任，不在挂了什么牌子';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const NUM = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function hanzi(text) {
+  return (String(text || '').match(HANZI) || []).length;
+}
+
+/** 一级节（## 开头）与其下的汉字数。 */
+function sections(body) {
+  const out = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) {
+      cur = { title: h[1], hanzi: 0 };
+      out.push(cur);
+      continue;
+    }
+    if (cur) cur.hanzi += hanzi(line);
   }
-  throw new Error('没找到 standards/08-jiankang-fuwu-guanli/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '08-jiankang-fuwu-guanli', 'units.json');
-const MAP = path.join(ROOT, 'standards', '08-jiankang-fuwu-guanli', 'chapter-map.json');
-const CHAPTER = '1';
-const SLUG = '01-z81';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 取「标签：……」这一段，到第一个句号为止。 */
+function clauseAfter(body, label) {
+  const i = body.indexOf(label + '：');
+  if (i < 0) throw new Error('正文里没找到「' + label + '：」');
+  const rest = body.slice(i + label.length + 1);
+  const j = rest.indexOf('。');
+  return (j < 0 ? rest : rest.slice(0, j)).trim();
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function splitList(str, re = /[、，]/) {
+  return String(str)
+    .replace(/以及/g, '、')
+    .split(re)
+    .map((s) => s.trim())
+    .filter(Boolean);
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function cn2num(w) {
+  if (w === '十二') return 12;
+  if (w.length === 2 && w[0] === '十') return 10 + NUM[w[1]];
+  const n = NUM[w];
+  return n === undefined ? NaN : n;
+}
+
+function audit(body) {
+  const services = splitList(clauseAfter(body, '它至少包含五类服务'));
+  const criteria = splitList(clauseAfter(body, '四个硬指标'));
+  const questions = clauseAfter(body, '最快的办法是问三个问题')
+    .split('？')
+    .filter(Boolean)
+    .slice(0, 3);
+  const overreach = splitList(clauseAfter(body, '越界的形态很固定'), /，/);
+
+  const counts = {
+    services: services.length,
+    criteria: criteria.length,
+    questions: questions.length,
+    overreach: overreach.length,
+  };
+
+  // 条数与句子里写的数字对账
+  const claims = [
+    { label: '五类服务', want: cn2num('五'), got: counts.services },
+    { label: '四个硬指标', want: cn2num('四'), got: counts.criteria },
+    { label: '三个问题', want: cn2num('三'), got: counts.questions },
+    { label: '四种越界形态', want: 4, got: counts.overreach },
+  ];
+  const mismatched = claims.filter((c) => c.want !== c.got).map((c) => c.label);
+
+  return { services, criteria, questions, overreach, counts, claims, mismatched };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const body = read();
+  const a = audit(body);
+  const secs = sections(body);
+  const cites = [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]))];
+  const claims = (body.match(/\*\*[^*\n]+\*\*/g) || []).length;
 
-  console.log(`健康服务管理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`健康服务管理 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${hanzi(body)} 字 · 节 ${secs.length} 节 · 加粗判断 ${claims} 处 · 引书 ${cites.length} 部`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('分界清单（条数由正文数出，与句中的中文数字对账）：');
+  console.log(`  五类服务 ${a.counts.services} 条：${a.services.join('／')}`);
+  console.log(`  四个硬指标 ${a.counts.criteria} 条：${a.criteria.join('；')}`);
+  console.log(`  四样越界形态 ${a.counts.overreach} 条：${a.overreach.join('；')}`);
+  console.log(`  三问 ${a.counts.questions} 条：${a.questions.join('？')}？`);
+  console.log(`  → 对账${a.mismatched.length ? '不一致，须改稿：' + a.mismatched.join('、') : '一致'}`);
+  console.log('');
+  console.log('逐节字数：');
+  for (const s of secs) {
+    const share = hanzi(body) ? ((s.hanzi / hanzi(body)) * 100).toFixed(1) : '0.0';
+    console.log(`  ${s.title.padEnd(24, '　')} ${String(s.hanzi).padStart(5)} 字（${share}%）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/08-jiankang-fuwu-guanli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('→ 判据：一个主体属于哪一类，决定它受哪部规章约束、能不能进医保、出事按什么责任赔。');
+  console.log('※ 数字均从本章 docs/zh.md 现算，正文一改即随之变化；本输出仅用于教学演示，不构成对具体业态的合法性判断，也不构成医疗、法律或投资意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, hanzi, sections, clauseAfter, splitList, cn2num, audit };

@@ -6,57 +6,61 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-zhineng-bianzheng', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-zhineng-bianzheng', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, loadDoc, sections, fullJointParams, linearParams, audit } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文存在且已补实', () => {
+  assert.ok(fs.existsSync(DOC));
+  const md = loadDoc();
+  assert.ok((md.match(/[\u4e00-\u9fff]/g) || []).length > 2000);
+  assert.ok(!/TODO|待补|占位稿/.test(md));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('参数量级是现算的，不是抄正文的数字', () => {
+  assert.strictEqual(fullJointParams(10), 1023);
+  assert.strictEqual(fullJointParams(30), 1073741823);
+  assert.ok(fullJointParams(30) > 1e9, '三十个二值变量的联合分布应超过十亿');
+  assert.strictEqual(linearParams(30), 61);
+  assert.ok(fullJointParams(30) / linearParams(30) > 1e6, '两种结构的量级应相差六个数量级以上');
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('正文的「超过十亿」这一句能被重算验证', () => {
+  const md = loadDoc();
+  assert.match(md, /三十个变量，这个数字就超过了十亿/);
+  assert.ok(fullJointParams(30) > 1e9);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('四张结构表的行数与正文主张对齐', () => {
+  const a = audit();
+  assert.strictEqual(a.structRows, 4, '结构对比应四行：全连接、朴素、树增强、分层');
+  assert.strictEqual(a.priorRows, 3, '先验应三来源');
+  assert.strictEqual(a.usageRows, 3, '推理应三用法');
+  assert.strictEqual(a.pitRows, 4, '结构学习应四坑');
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('三来源、三用法、四坑逐项在正文里出现', () => {
+  const a = audit();
+  assert.deepStrictEqual(a.priors, ['条文', '专家', '病历']);
+  assert.deepStrictEqual(a.usages, ['诊断推理', '预测推理', '解释推理']);
+  assert.deepStrictEqual(a.pitfalls, ['结构不稳', '隐藏混杂', '因果误读', '时齐']);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('独立性假设被写明，并被指出违反后的后果', () => {
+  const md = loadDoc();
+  assert.strictEqual(audit().independence, true);
+  assert.match(md, /重复计算同一份证据/);
+  assert.match(md, /相关证据被重复计权/);
+});
+
+test('体检结论无缺口', () => {
+  assert.deepStrictEqual(audit().missing, []);
+});
+
+test('脚本可运行，输出不作模型成绩', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-zhineng-bianzheng\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/04-beiyesi-tuili/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /2\^10 − 1 = 1023/);
+  assert.match(out, /超过十亿/);
+  assert.match(out, /不构成诊断或治疗建议/);
+  assert.doesNotMatch(out, /准确率|F1|AUC/, '不应出现任何模型跑分');
 });

@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中医文化传播 · 第 1 章 中医文化的源流：从先秦到汉唐：本章统计口径
+ * 中医文化传播 · 第 1 章 先秦到汉唐留下来的是三种说话方式，不是一条族谱
  * 课程: departments/06-guanli/05-zhongyi-wenhua-chuanbo/chapters/01-z51/docs/zh.md
- * 数据: standards/05-zhongyi-wenhua-chuanbo/units.json（107 单元层，每单元带三辨与四位面词频）
- * 取数: standards/05-zhongyi-wenhua-chuanbo/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 全部数字从本章 docs/zh.md 现算：汉字、节、表、加粗判断、引文，
+ * 以及正文那张五层文体表的复算——层数、文体是否互不相同、每层的「能证／不能证」两列是否都填满。
+ * 表一改，结论跟着变；若两层文体相同，脚本会报「它们本可互证」，那正是本章要否掉的读法。
  */
 
 'use strict';
@@ -15,87 +14,104 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '05-zhongyi-wenhua-chuanbo', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 1;
+const TITLE = '先秦到汉唐留下来的是三种说话方式，不是一条族谱';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+/** Markdown 表格切成 { header, rows }；分隔行不计。 */
+function parseTables(body) {
+  const out = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const m = line.match(/^\s*\|(.+)\|\s*$/);
+    if (!m) { cur = null; continue; }
+    const cells = m[1].split('|').map((c) => c.trim());
+    if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue;
+    if (!cur) { cur = { header: cells, rows: [] }; out.push(cur); } else { cur.rows.push(cells); }
   }
-  throw new Error('没找到 standards/05-zhongyi-wenhua-chuanbo/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '05-zhongyi-wenhua-chuanbo', 'units.json');
-const MAP = path.join(ROOT, 'standards', '05-zhongyi-wenhua-chuanbo', 'chapter-map.json');
-const CHAPTER = '1';
-const SLUG = '01-z51';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const hanzi = (body.match(HANZI) || []).length;
+  const sections = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) { cur = { title: h[1], hanzi: 0 }; sections.push(cur); continue; }
+    if (cur) cur.hanzi += (line.match(HANZI) || []).length;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  const tables = parseTables(body);
+  const cites = [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]))];
+  const claims = (body.match(/\*\*[^*\n]+\*\*/g) || []).length;
+  return { hanzi, sections, tables, tableCount: tables.length, cites, claims };
+}
+
+/**
+ * 复算五层文体表：层次数、文体是否两两不同、每层「能证」「不能证」是否都给了内容。
+ * 本章的论点正是这三件事必须同时成立——否则「不是一条族谱」就退化成一句口号。
+ */
+function auditGenreTable(tables) {
+  const t = tables.find((x) => x.header.some((h) => h.includes('文体')));
+  if (!t) throw new Error('正文里没找到文体对照表');
+  const idxOf = (kw) => t.header.findIndex((h) => h.includes(kw));
+  const li = idxOf('层次');
+  const ci = idxOf('文体');
+  const cannoti = t.header.findIndex((h) => h.includes('不能证'));
+  const cani = t.header.findIndex((h) => h.includes('能证') && h.indexOf('不能证') < 0);
+  const rows = t.rows.filter((r) => r[0]);
+  const levels = rows.map((r) => r[li]);
+  const genres = rows.map((r) => r[ci]);
+  const filled = rows.filter((r) => (r[cani] || '').trim() && (r[cannoti] || '').trim()).length;
+  return {
+    rows: rows.length,
+    columns: t.header.length,
+    levels,
+    genres,
+    distinctGenres: new Set(genres).size,
+    filled,
+  };
+}
+
+function verify(t) {
+  if (t.rows !== t.distinctGenres) {
+    throw new Error(`文体出现重复：${t.rows} 层只有 ${t.distinctGenres} 种文体——它们本可互证，本章论点不成立`);
+  }
+  if (t.filled !== t.rows) throw new Error(`有 ${t.rows - t.filled} 层没写清能证／不能证，引用硬度无从判断`);
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const a = analyze(read());
+  const g = auditGenreTable(a.tables);
+  verify(g);
 
-  console.log(`中医文化传播 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中医文化传播 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 表格 ${a.tableCount} 张 · 加粗判断 ${a.claims} 处 · 引文 ${a.cites.length} 条`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`五层文体表复算：${g.rows} 行 × ${g.columns} 列`);
+  console.log(`  层次：${g.levels.join('、')}`);
+  console.log(`  文体互不相同：${g.distinctGenres}/${g.rows} → 「不是一条族谱」成立`);
+  console.log(`  每层都写明能证与不能证：${g.filled}/${g.rows}`);
+  console.log('  同一句「古人有此说」出自不同层，硬度差得很远：寓言当证据是错位，药条当体系也是错位。');
+  console.log('');
+  console.log('逐节字数：');
+  for (const s of a.sections) {
+    const share = a.hanzi ? ((s.hanzi / a.hanzi) * 100).toFixed(1) : '0.0';
+    console.log(`  ${s.title.padEnd(24, '　')} ${String(s.hanzi).padStart(5)} 字（${share}%）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/05-zhongyi-wenhua-chuanbo/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即随之变化；本输出仅用于教学演示，不构成诊疗意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, analyze, parseTables, auditGenreTable, verify };

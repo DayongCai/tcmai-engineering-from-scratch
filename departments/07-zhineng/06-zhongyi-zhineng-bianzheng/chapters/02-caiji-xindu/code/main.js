@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中医智能辨证系统 · 第 2 章 症状采集的界面与信度：本章统计口径
- * 课程: departments/07-zhineng/06-zhongyi-zhineng-bianzheng/chapters/02-caiji-xindu/docs/zh.md
- * 数据: standards/zhongyi-zhineng-bianzheng/units.json（155 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-zhineng-bianzheng/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 第 2 章 · 采集契约体检：正文的十问清单、四值字段、示例采集记录，逐项在正文里核对
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ *   数据: chapters/02-caiji-xindu/docs/zh.md（本章正文，唯一数据源）
+ *   运行: node code/main.js
+ *
+ * 算的都是正文里写得出的东西：十问能拆出几项、示例记录里四值各出现几次、
+ * 未问率是多少、信度指标表列了几行。正文没有的项报「缺」，不补数。
  */
 
 'use strict';
@@ -15,87 +14,120 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-zhineng-bianzheng', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const STATES = ['present', 'absent', 'not_asked', 'not_applicable'];
+
+const loadDoc = () => fs.readFileSync(DOC, 'utf8');
+const hanzi = (s) => (String(s).match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+
+function sections(md) {
+  const out = [{ heading: '（章首）', body: [] }];
+  for (const line of md.split(/\r?\n/)) {
+    if (/^##\s+/.test(line)) out.push({ heading: line.replace(/^##\s+/, '').trim(), body: [] });
+    else out[out.length - 1].body.push(line);
   }
-  throw new Error('没找到 standards/zhongyi-zhineng-bianzheng/units.json —— 章节目录是否已脱离仓库？');
+  return out.map((s) => ({ heading: s.heading, body: s.body.join('\n') }));
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-zhineng-bianzheng', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-zhineng-bianzheng', 'chapter-map.json');
-const CHAPTER = '2';
-const SLUG = '02-caiji-xindu';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function tables(md) {
+  const out = [];
+  let cur = null;
+  for (const line of md.split(/\r?\n/)) {
+    if (!/^\s*\|.*\|\s*$/.test(line)) { cur = null; continue; }
+    if (/^[\s:|-]+$/.test(line.replace(/\|/g, ''))) continue;
+    const cells = line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+    if (!cur) { cur = { header: cells, rows: [] }; out.push(cur); continue; }
+    cur.rows.push(cells);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function blocks(md, lang) {
+  const re = new RegExp('```' + lang + '\\n([\\s\\S]*?)```', 'g');
+  return [...matchAll(md, re)].map((m) => m[1].trim());
+}
+function matchAll(text, re) { return [...String(text).matchAll(re)]; }
+
+/** 正文「十问」清单：从「寒热、…，逐项过一遍」那一句里拆 */
+function tenQuestions(md) {
+  const s = sections(md).find((x) => /问诊是排查/.test(x.heading));
+  const line = (s ? s.body : '').split('\n').find((l) => /寒热、/.test(l) && /逐项过一遍/.test(l));
+  if (!line) return [];
+  const m = line.match(/(寒热、[^，。]*?)，逐项过一遍/);
+  if (!m) return [];
+  return m[1].split('、').map((x) => x.trim()).filter(Boolean);
+}
+
+function audit(md = loadDoc()) {
+  const secs = sections(md);
+  const ten = tenQuestions(md);
+  const raw = blocks(md, 'json')[0];
+  let contract = null;
+  let contractError = '';
+  try { contract = JSON.parse(raw); } catch (e) { contractError = e.message; }
+
+  const items = (contract && Array.isArray(contract.items)) ? contract.items : [];
+  const stateCounts = Object.fromEntries(STATES.map((k) => [k, 0]));
+  const badState = [];
+  const missingAnchor = [];
+  for (const it of items) {
+    if (!it.code) missingAnchor.push('（无 code 的条目）');
+    if (!STATES.includes(it.state)) { badState.push(it.state); continue; }
+    stateCounts[it.state] += 1;
+    if ((it.state === 'present' || it.state === 'absent') && !it.anchor) missingAnchor.push(it.code);
+  }
+  const total = items.length;
+  const notAskedRate = total ? stateCounts.not_asked / total : null;
+  const missingStates = STATES.filter((s) => stateCounts[s] === 0);
+
+  const relTable = tables(md).find((t) => t.header.some((h) => /适用/.test(h)));
+  const anchorTable = tables(md).find((t) => t.header.some((h) => /锚点要求/.test(h)));
+
+  const missing = [];
+  if (ten.length !== 10) missing.push(`十问拆出 ${ten.length} 项`);
+  if (contractError) missing.push('采集契约无法解析');
+  if (!items.length) missing.push('采集契约里没有条目');
+  if (badState.length) missing.push(`非法取值：${badState.join('/')}`);
+  if (stateCounts.absent === 0) missing.push('示例里没有 absent，阴性无从记录');
+  if (stateCounts.not_asked === 0) missing.push('示例里没有 not_asked，未问与无无法区分');
+  if (missingAnchor.length) missing.push(`有/无条目不完整的：${missingAnchor.join('/')}`);
+  if (!relTable) missing.push('信度指标表缺失');
+
+  return {
+    sections: secs.map((s) => s.heading),
+    hanzi: hanzi(md),
+    ten,
+    items: total,
+    stateCounts,
+    notAskedRate,
+    missingStates,
+    badState,
+    missingAnchor,
+    relRows: relTable ? relTable.rows.length : 0,
+    anchorRows: anchorTable ? anchorTable.rows.length : 0,
+    contractError,
+    missing,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医智能辨证系统 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const a = audit();
+  console.log(`本章正文 ${a.sections.length - 1} 节 · ${a.hanzi} 汉字`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`十问清单：${a.ten.length} 项（${a.ten.join('、')}）`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`示例采集记录：${a.items} 条`);
+  for (const s of STATES) console.log(`  ${s}：${a.stateCounts[s]}`);
+  console.log(`  未问率：${a.notAskedRate === null ? '—' : (a.notAskedRate * 100).toFixed(1) + '%'}`);
+  console.log(`  四值覆盖：${STATES.length - a.missingStates.length}/${STATES.length}${a.missingStates.length ? '，缺 ' + a.missingStates.join('/') : ''}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`信度指标表 ${a.relRows} 行；变量锚点表 ${a.anchorRows} 行。`);
+  console.log(a.missing.length ? `缺口 ${a.missing.length} 处：${a.missing.join('；')}` : '缺口 0 处：四值、锚点、信度三条都在正文里立住了。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-zhineng-bianzheng/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 统计对象仅为本章正文与其中示例记录，不涉及真实病历或模型运行结果。');
+  console.log('※ 本章讨论症状采集与信度评估的方法，不构成诊断或治疗建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, STATES, loadDoc, sections, tables, blocks, tenQuestions, audit };

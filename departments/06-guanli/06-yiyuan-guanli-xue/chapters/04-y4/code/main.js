@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 医院管理学 · 第 4 章 药事·医技与感染：本章统计口径
+ * 医院管理学 · 第 4 章 药事管理管的是处方权的边界，不是药房的库存
  * 课程: departments/06-guanli/06-yiyuan-guanli-xue/chapters/04-y4/docs/zh.md
- * 数据: standards/06-yiyuan-guanli-xue/units.json（124 单元层，每单元带三辨与四位面词频）
- * 取数: standards/06-yiyuan-guanli-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数字全部从本章 docs/zh.md 现算：汉字、节、加粗判断、引文与问句。
+ * 并复算本章的三条链——委员会三项技术支撑、五专五项、中药四环节、质控双轨。
+ * 任何一条链数不齐，脚本报错，因为本章的立论是“用药决定这条链不能断”。
  */
 
 'use strict';
@@ -15,87 +14,118 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '06-yiyuan-guanli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 4;
+const TITLE = '药事管理管的是处方权的边界，不是药房的库存';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function parseSections(body) {
+  const out = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) { cur = { title: h[1], lines: [] }; out.push(cur); continue; }
+    if (cur) cur.lines.push(line);
   }
-  throw new Error('没找到 standards/06-yiyuan-guanli-xue/units.json —— 章节目录是否已脱离仓库？');
+  return out.map((s) => ({
+    title: s.title,
+    text: s.lines.join('\n'),
+    hanzi: (s.lines.join('\n').match(HANZI) || []).length,
+  }));
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '06-yiyuan-guanli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '06-yiyuan-guanli-xue', 'chapter-map.json');
-const CHAPTER = '4';
-const SLUG = '04-y4';
+const boldTerms = (text) => [...String(text).matchAll(/\*\*([^*\n]+)\*\*/g)].map((m) => m[1]);
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const sections = parseSections(body);
+  return {
+    hanzi: (body.match(HANZI) || []).length,
+    sections,
+    claims: boldTerms(body).length,
+    quotes: [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]))],
+    questions: (body.match(/？/g) || []).length,
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+const sectionOf = (sections, kw) => {
+  const s = sections.find((x) => x.title.includes(kw));
+  if (!s) throw new Error('正文里没找到含「' + kw + '」的节');
+  return s;
+};
+
+/** 从「甲、乙、丙」的顿号链里数出并列项。 */
+function commaList(text, head) {
+  const m = String(text).match(new RegExp(head + '[^。\\n]*'));
+  if (!m) return [];
+  return m[0].split('、').map((s) => s.trim()).filter(Boolean);
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 从「甲—乙—丙」的破折号链里数出环节。 */
+function dashChain(text, head) {
+  const m = String(text).match(new RegExp(head + '[^。\\n]*'));
+  if (!m) return [];
+  return m[0].split('”')[0].split('—').map((s) => s.trim()).filter(Boolean);
+}
+
+/**
+ * 复算用药决定链：委员会几项支撑、五专几专、中药几个环节、质控几轨。
+ * 本章判断：只查库存与金额，这条链断了也看不出来。
+ */
+function auditChain(sections) {
+  const s1 = sectionOf(sections, '药事管理与药物治疗学委员会');
+  const s2 = sectionOf(sections, '处方权');
+  const s3 = sectionOf(sections, '中药这条链');
+  const s4 = sectionOf(sections, '医技');
+
+  const supports = boldTerms(s1.text).filter((b) => b !== '否决权而不是同意权');
+  const fiveSpecial = commaList(s2.text, '专人负责、');
+  const herbal = dashChain(s3.text, '饮片质量—');
+  const dualTrack = ['室内质控', '室间质评'].filter((k) => s4.text.includes(k));
+
+  return { supports, fiveSpecial, herbal, dualTrack, grantByCategory: /按类别逐项授予/.test(s2.text) };
+}
+
+function verify(a) {
+  if (a.supports.length !== 3) throw new Error(`委员会技术支撑数到 ${a.supports.length} 项，须三项`);
+  if (a.fiveSpecial.length !== 5) throw new Error(`五专只数到 ${a.fiveSpecial.length} 专，须五专齐全`);
+  if (a.herbal.length !== 4) throw new Error(`中药风险环节数到 ${a.herbal.length} 个，须四个`);
+  if (a.dualTrack.length !== 2) throw new Error(`质控只数到 ${a.dualTrack.length} 轨，双轨缺一即半张网`);
+  if (!a.grantByCategory) throw new Error('正文没有写明处方权按类别逐项授予');
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const a = analyze(read());
+  const c = auditChain(a.sections);
+  verify(c);
 
-  console.log(`医院管理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`医院管理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 加粗判断 ${a.claims} 处 · 引文 ${a.quotes.length} 条 · 问句 ${a.questions} 个`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`委员会技术支撑 ${c.supports.length}/3：${c.supports.join('／')}`);
+  console.log(`五专 ${c.fiveSpecial.length}/5：${c.fiveSpecial.join('／')}`);
+  console.log(`中药风险环节 ${c.herbal.length}/4：${c.herbal.join(' → ')}`);
+  console.log(`医技质控双轨 ${c.dualTrack.length}/2：${c.dualTrack.join('／')}`);
+  console.log('');
+  console.log('判断：药事管理的对象不是药品本身，是“谁有权开、谁审、谁评、谁改”这条链；');
+  console.log('      指标全绿而个案失守，说明断的是链，不是库存。');
+  console.log('');
+  console.log('逐节字数：');
+  for (const s of a.sections) {
+    const share = a.hanzi ? ((s.hanzi / a.hanzi) * 100).toFixed(1) : '0.0';
+    console.log(`  ${s.title.padEnd(28, '　')} ${String(s.hanzi).padStart(5)} 字（${share}%）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/06-yiyuan-guanli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即随之变化；本输出仅用于教学演示，不构成用药、检验或感控指令。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, parseSections, analyze, boldTerms, sectionOf, commaList, dashChain, auditChain, verify };

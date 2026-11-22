@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 卫生经济学 · 第 2 章 需求与供给：本章统计口径
+ * 卫生经济学 · 第 2 章 医疗的需求是被供给方写出来的：「物多则贱」在这里失效
  * 课程: departments/06-guanli/09-yiliao-baoxian-jingji/chapters/02-e2/docs/zh.md
- * 数据: standards/09-yiliao-baoxian-jingji/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/09-yiliao-baoxian-jingji/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 两组数都从本章正文现读现算：
+ *   1) 目标收入模型——固定成本、目标净收入、单价、变动成本由正文给出，推出所需诊次与缺口；
+ *   2) 共付杠杆——自付比例表逐行复算两档弹性下的需求量变化。
+ * 表格一格改动，复算与正文若不一致就报错。
  */
 
 'use strict';
@@ -15,87 +15,134 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '09-yiliao-baoxian-jingji', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 2;
+const TITLE = '医疗的需求是被供给方写出来的：「物多则贱」在这里失效';
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function parseTables(body) {
+  const out = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const m = line.match(/^\s*\|(.+)\|\s*$/);
+    if (!m) { cur = null; continue; }
+    const cells = m[1].split('|').map((c) => c.trim());
+    if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue;
+    if (!cur) { cur = { header: cells, rows: [] }; out.push(cur); } else { cur.rows.push(cells); }
   }
-  throw new Error('没找到 standards/09-yiliao-baoxian-jingji/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '09-yiliao-baoxian-jingji', 'units.json');
-const MAP = path.join(ROOT, 'standards', '09-yiliao-baoxian-jingji', 'chapter-map.json');
-const CHAPTER = '2';
-const SLUG = '02-e2';
+const num = (s) => {
+  const m = String(s).replace(/,/g, '').match(/-?\d+(?:\.\d+)?/);
+  return m ? Number(m[0]) : NaN;
+};
+/** 正文用 U+2212（−）写负号，与 ASCII 减号必须一并识别。 */
+const signed = (s) => {
+  const t = String(s).replace(/,/g, '').replace(/\u2212/g, '-');
+  const m = t.match(/-?\d+(?:\.\d+)?/);
+  return m ? Number(m[0]) : NaN;
+};
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 从 PROBLEM 段读出目标收入模型的四个参数（单位：元）。 */
+function modelParams(body) {
+  const grab = (re, label) => {
+    const m = body.match(re);
+    if (!m) throw new Error('正文里读不到' + label);
+    return Number(m[1]);
+  };
+  return {
+    fixed: grab(/年固定成本\s*([\d,]+)\s*万元/, '固定成本') * 10000,
+    target: grab(/目标净收入\s*([\d,]+)\s*万元/, '目标净收入') * 10000,
+    price: grab(/每诊次收费\s*([\d,]+)\s*元/, '诊次收费'),
+    vc: grab(/变动成本\s*([\d,]+)\s*元/, '变动成本'),
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 需要侧诊次从「项／值」表读出，用来对照缺口。 */
+function needVisits(tables) {
+  const t = tables.find((x) => x.header[0] === '项' && x.rows.some((r) => /需要/.test(r[0])));
+  if (!t) throw new Error('正文里没找到诊次对照表');
+  const r = t.rows.find((x) => /需要的诊次/.test(x[0]));
+  return num(r[1]);
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** 共付表逐行复算：需求变化 = (患者面对价格/真实价格)^ε − 1。 */
+function elasticityRows(tables) {
+  const t = tables.find((x) => x.header.some((h) => h.includes('自付比例')));
+  if (!t) throw new Error('正文里没找到自付比例表');
+  const eps = t.header.filter((h) => h.includes('ε')).map((h) => signed(h));
+  return {
+    eps,
+    rows: t.rows.map((r) => ({
+      share: num(r[0]),
+      price: num(r[1]),
+      stated: [r[2], r[3]],
+    })),
+  };
+}
+
+function compute(p, need) {
+  const contribution = p.price - p.vc;
+  const needed = (p.fixed + p.target) / contribution;
+  const gap = needed - need;
+  return {
+    contribution,
+    needed,
+    gap,
+    gapPct: (gap / need) * 100,
+    extraRevenue: gap * contribution,
+  };
+}
+
+function verify(c, need, el, body) {
+  if (Math.abs(c.needed - 10000) > 1e-6) throw new Error('所需诊次与正文 10,000 不符: ' + c.needed);
+  if (Math.abs(c.gapPct - 25) > 1e-9) throw new Error('缺口比例应为 25%: ' + c.gapPct);
+  if (Math.abs(c.extraRevenue - 120000) > 1e-6) throw new Error('额外收入应为 12 万元: ' + c.extraRevenue);
+  if (!body.includes('10,000 诊次')) throw new Error('正文与复算不一致：所需诊次');
+  if (!body.includes('12 万元')) throw new Error('正文与复算不一致：缺口填平的额外收入');
+  for (const row of el.rows) {
+    for (let i = 0; i < el.eps.length; i += 1) {
+      const got = (Math.pow(row.price / 100, el.eps[i]) - 1) * 100;
+      const said = num(row.stated[i]);
+      if (Math.abs(got - said) > 0.15) {
+        throw new Error(`弹性表第 ${row.share}% 行与复算不符：正文 ${said}%，复算 ${got.toFixed(1)}%`);
+      }
+    }
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const body = read();
+  const tables = parseTables(body);
+  const p = modelParams(body);
+  const need = needVisits(tables);
+  const el = elasticityRows(tables);
+  const c = compute(p, need);
+  verify(c, need, el, body);
 
-  console.log(`卫生经济学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`卫生经济学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`目标收入模型：固定成本 ${(p.fixed / 10000).toLocaleString('en-US')} 万，目标净收入 ${(p.target / 10000).toLocaleString('en-US')} 万`);
+  console.log(`  每诊次边际贡献 ${p.price} − ${p.vc} = ${c.contribution} 元`);
+  console.log(`  覆盖成本与目标收入所需诊次 ${c.needed.toLocaleString('en-US')}；医学测算需要 ${need.toLocaleString('en-US')}`);
+  console.log(`  缺口 ${c.gap.toLocaleString('en-US')} 诊次（+${c.gapPct.toFixed(0)}%），按边际贡献折算恰好多出 ${(c.extraRevenue / 10000).toFixed(0)} 万元`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('共付杠杆逐行复算（患者面对价格 = 真实价格 × 自付比例）：');
+  for (const row of el.rows) {
+    const outs = el.eps.map((e) => `${((Math.pow(row.price / 100, e) - 1) * 100).toFixed(1)}%`);
+    console.log(`  自付 ${String(row.share).padStart(3)}% → 价格 ${String(row.price).padStart(3)} · 需求 ${outs.join(' / ')}（ε = ${el.eps.join(' / ')}）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/09-yiliao-baoxian-jingji/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 缺口不会写在账上叫「亏损」，它会以复诊次数、检查项目、适应证放宽的形式被填平。');
+  console.log('※ 本输出仅用于教学演示，不构成对任何机构或医务人员的行为评价。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, parseTables, modelParams, needVisits, elasticityRows, compute, verify, num };

@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 健康服务管理 · 第 6 章 支付方式与激励机制：本章统计口径
+ * 健康服务管理 · 第 6 章 支付方式决定行为，比任何动员都硬
  * 课程: departments/06-guanli/08-jiankang-fuwu-guanli/chapters/06-z86/docs/zh.md
- * 数据: standards/08-jiankang-fuwu-guanli/units.json（282 单元层，每单元带三辨与四位面词频）
- * 取数: standards/08-jiankang-fuwu-guanli/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 输出全部从本章正文现算：汉字、节、加粗判断、引文；五种付费单元由正文段落首词数出来，
+ * 按效果付费的三前提、健康管理的三个付费难题、三条路径分别计数并与中文数字对账；
+ * 卷首那组数字（次均费用、平均住院日、再入院率）读回正文并复算变化幅度。
  */
 
 'use strict';
@@ -15,87 +14,136 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '08-jiankang-fuwu-guanli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 6;
+const TITLE = '支付方式决定行为，比任何动员都硬';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+const hanzi = (t) => (String(t || '').match(HANZI) || []).length;
+
+function sections(body) {
+  const out = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) {
+      cur = { title: h[1], hanzi: 0 };
+      out.push(cur);
+      continue;
+    }
+    if (cur) cur.hanzi += hanzi(line);
   }
-  throw new Error('没找到 standards/08-jiankang-fuwu-guanli/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '08-jiankang-fuwu-guanli', 'units.json');
-const MAP = path.join(ROOT, 'standards', '08-jiankang-fuwu-guanli', 'chapter-map.json');
-const CHAPTER = '6';
-const SLUG = '06-z86';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function clauseAfter(body, label) {
+  const i = body.indexOf(label + '：');
+  if (i < 0) throw new Error('正文里没找到「' + label + '：」');
+  const rest = body.slice(i + label.length + 1);
+  const j = rest.indexOf('。');
+  return (j < 0 ? rest : rest.slice(0, j)).trim();
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+const splitList = (s, re = /[、，]/) =>
+  String(s).replace(/以及/g, '、').split(re).map((x) => x.trim()).filter(Boolean);
+
+function numbersBy(body, re) {
+  const m = body.match(re);
+  if (!m) throw new Error('正文里没找到：' + re);
+  return m.slice(1).map((x) => Number(String(x).replace(/,/g, '')));
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function audit(body) {
+  const unitsRaw = [...body.matchAll(/^按(项目|床日|病种|人头|效果)付费，/gm)].map((m) => '按' + m[1] + '付费');
+  const units = unitsRaw.filter((u) => u !== '按效果付费');
+  if (/^总额预付，/m.test(body)) units.push('总额预付');
+  const variants = /打包付费与按效果付费/.test(body) ? 2 : 0;
+
+  const effectPremises = splitList(clauseAfter(body, '它需要三个前提'));
+  const mgmtProblems = (body.match(/第[一二三]是/g) || []).length;
+  const paths = (body.match(/(?:^|[^第])[一二三]是/g) || []).length;
+
+  const counts = {
+    units: units.length,
+    variants,
+    effectPremises: effectPremises.length,
+    mgmtProblems,
+    paths,
+  };
+  const claims = [
+    { label: '五种付费单元', want: 5, got: counts.units },
+    { label: '两种变体', want: 2, got: counts.variants },
+    { label: '按效果付费三前提', want: 3, got: counts.effectPremises },
+    { label: '健康管理三个付费难题', want: 3, got: counts.mgmtProblems },
+    { label: '三条可能路径', want: 3, got: counts.paths },
+  ];
+  const mismatched = claims.filter((c) => c.want !== c.got).map((c) => c.label);
+
+  const [avgCost] = numbersBy(body, /次均费用\s*([\d.]+)\s*万元/);
+  const [costDrop] = numbersBy(body, /次均费用降了\s*(\d+)%/);
+  const [losBefore] = numbersBy(body, /平均住院日\s*([\d.]+)\s*天/);
+  const [losAfter] = numbersBy(body, /平均住院日降到\s*([\d.]+)\s*天/);
+  const [readmitBefore, readmitAfter] = numbersBy(body, /再入院率从\s*([\d.]+)%\s*升到\s*([\d.]+)%/);
+  const [outpatientUp] = numbersBy(body, /基层门诊量升了\s*(\d+)%/);
+  const [labUp] = numbersBy(body, /检查检验费用却同步升了\s*(\d+)%/);
+
+  const raw = {
+    avgCost, costDrop, losBefore, losAfter,
+    readmitBefore, readmitAfter, outpatientUp, labUp,
+  };
+  const derived = {
+    avgCostAfter: avgCost * (1 - costDrop / 100),
+    losDrop: losBefore - losAfter,
+    losDropPct: ((losBefore - losAfter) / losBefore) * 100,
+    readmitUp: readmitAfter - readmitBefore,
+    readmitRelPct: ((readmitAfter - readmitBefore) / readmitBefore) * 100,
+  };
+
+  return { units, variants, effectPremises, mgmtProblems, paths, counts, claims, mismatched, raw, derived };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const body = read();
+  const a = audit(body);
+  const secs = sections(body);
+  const cites = [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((x) => x[1]))];
 
-  console.log(`健康服务管理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`健康服务管理 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${hanzi(body)} 字 · 节 ${secs.length} 节 · 加粗判断 ${(body.match(/\*\*[^*\n]+\*\*/g) || []).length} 处 · 引书 ${cites.length} 部`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('结构清单（条数由正文数出，与句中的中文数字对账）：');
+  console.log(`  五种付费单元 ${a.counts.units} 种：${a.units.join('／')}`);
+  console.log(`  更精细的变体 ${a.counts.variants} 种：打包付费／按效果付费`);
+  console.log(`  按效果付费三前提 ${a.counts.effectPremises} 条：${a.effectPremises.join('／')}`);
+  console.log(`  健康管理三个付费难题 ${a.counts.mgmtProblems} 个（正文以「第一是…第三是」列出）`);
+  console.log(`  可能路径 ${a.counts.paths} 条（正文以「一是…三是」列出）`);
+  console.log(`  → 对账${a.mismatched.length ? '不一致，须改稿：' + a.mismatched.join('、') : '一致'}`);
+  console.log('');
+  console.log('卷首数字复算：');
+  const { raw, derived } = a;
+  console.log(`  次均费用 ${raw.avgCost} 万元 − ${raw.costDrop}% = ${derived.avgCostAfter.toFixed(3)} 万元`);
+  console.log(`  平均住院日 ${raw.losBefore} → ${raw.losAfter} 天，降 ${derived.losDrop.toFixed(1)} 天（${derived.losDropPct.toFixed(1)}%）`);
+  console.log(`  再入院率 ${raw.readmitBefore}% → ${raw.readmitAfter}%，升 ${derived.readmitUp.toFixed(1)} 个百分点（相对升幅 ${derived.readmitRelPct.toFixed(1)}%）`);
+  console.log(`  基层门诊量 +${raw.outpatientUp}% ，检查检验费用 +${raw.labUp}%`);
+  console.log('  → 控费做出来了，代价转到再入院与拆分：这就是「支付单元加质量补丁」要盯的地方。');
+  console.log('');
+  console.log('逐节字数：');
+  for (const s of secs) {
+    const share = hanzi(body) ? ((s.hanzi / hanzi(body)) * 100).toFixed(1) : '0.0';
+    console.log(`  ${s.title.padEnd(26, '　')} ${String(s.hanzi).padStart(5)} 字（${share}%）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/08-jiankang-fuwu-guanli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('→ 判据：任何控费都会在某些环节转化为服务不足或推诿，区别只在于是否被监测到；改革必须同时准备质量兜底与申诉通道。');
+  console.log('※ 数字均从本章 docs/zh.md 现算，正文一改即随之变化；本输出仅用于教学演示，不构成保险或政策意见，也不构成对具体支付方式的推荐。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, hanzi, sections, clauseAfter, splitList, audit };

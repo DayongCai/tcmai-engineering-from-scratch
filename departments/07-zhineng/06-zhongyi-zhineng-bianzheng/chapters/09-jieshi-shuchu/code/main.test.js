@@ -6,57 +6,65 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-zhineng-bianzheng', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-zhineng-bianzheng', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, FIELDS, loadDoc, blocks, missingFields, audit } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文存在且已补实', () => {
+  assert.ok(fs.existsSync(DOC));
+  const md = loadDoc();
+  assert.ok((md.match(/[\u4e00-\u9fff]/g) || []).length > 2000);
+  assert.ok(!/TODO|待补|占位稿/.test(md));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('示例证据逐条带齐字段：item 加值、来源、时间、可信度、关系', () => {
+  assert.deepStrictEqual(FIELDS, ['item', 'value', 'source', 'time', 'reliability', 'relation']);
+  const md = loadDoc();
+  const parsed = JSON.parse(blocks(md, 'json')[0]);
+  assert.ok(parsed.evidence.length >= 3);
+  for (const ev of parsed.evidence) {
+    assert.deepStrictEqual(missingFields(ev), [], `${ev.item} 缺字段`);
+    assert.ok(['support', 'against'].includes(ev.relation));
+    assert.ok(ev.time.length > 0 && ev.source.length > 0);
+  }
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('字段缺失会被算出来，而不是靠肉眼', () => {
+  const broken = { item: '纳差', value: '减半', source: 'patient' };
+  assert.deepStrictEqual(missingFields(broken), ['time', 'reliability', 'relation']);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('解释必须含反对项，否则只是单方面论证', () => {
+  const a = audit();
+  assert.strictEqual(a.completeness, 1);
+  assert.ok(a.support >= 3, '支持项过少');
+  assert.ok(a.against >= 1, '没有反对项');
+  assert.ok(a.sources.includes('patient') && a.sources.includes('physician'), '来源要区分自述与医生所见');
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('三种解释、四种归因失真、三种反事实、四个评估维度都在', () => {
+  const a = audit();
+  assert.deepStrictEqual(a.rows, { types: 3, fields: 4, attribution: 4, counterfactual: 3, evaluation: 4 });
+  const md = loadDoc();
+  for (const k of ['判据解释', '归因解释', '反事实解释']) assert.ok(md.includes(k), `缺 ${k}`);
+  for (const k of ['忠实度', '稳定性', '可读性', '一致性']) assert.ok(md.includes(k), `缺评估维度 ${k}`);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('反事实写进了示例，且说明「去掉会翻案」的用途', () => {
+  const a = audit();
+  assert.strictEqual(a.hasCounterfactual, true);
+  assert.match(loadDoc(), /若纳差为化疗所致而非脾失健运/);
+});
+
+test('体检结论无缺口', () => {
+  assert.deepStrictEqual(audit().missing, []);
+});
+
+test('脚本可运行，输出不给解释打分', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-zhineng-bianzheng\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/09-jieshi-shuchu/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /字段完整率 100%/);
+  assert.match(out, /反对项 1 条/);
+  assert.match(out, /可被反驳/);
+  assert.match(out, /不构成诊断或治疗建议/);
+  assert.doesNotMatch(out, /忠实度\s*[:：=]\s*0\.\d|准确率/, '不应给解释或模型打分');
 });

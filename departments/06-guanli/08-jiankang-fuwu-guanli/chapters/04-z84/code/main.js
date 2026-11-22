@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 健康服务管理 · 第 4 章 公共卫生服务管理：本章统计口径
+ * 健康服务管理 · 第 4 章 公共卫生的产出，是“没有发生的事”
  * 课程: departments/06-guanli/08-jiankang-fuwu-guanli/chapters/04-z84/docs/zh.md
- * 数据: standards/08-jiankang-fuwu-guanli/units.json（282 单元层，每单元带三辨与四位面词频）
- * 取数: standards/08-jiankang-fuwu-guanli/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 输出全部从本章正文现算：汉字、节、加粗判断、引文；十二项内容由正文自己数出来并与
+ * 「十二」对账；三种产出形态、三个条件、三种失真、分工四件事分别计数；卷首那组考核
+ * 分数与居民知晓率读回正文，算出「分数」与「感受」之间的差。
  */
 
 'use strict';
@@ -15,87 +14,147 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '08-jiankang-fuwu-guanli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 4;
+const TITLE = '公共卫生的产出，是“没有发生的事”';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+const hanzi = (t) => (String(t || '').match(HANZI) || []).length;
+
+function sections(body) {
+  const out = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) {
+      cur = { title: h[1], hanzi: 0 };
+      out.push(cur);
+      continue;
+    }
+    if (cur) cur.hanzi += hanzi(line);
   }
-  throw new Error('没找到 standards/08-jiankang-fuwu-guanli/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '08-jiankang-fuwu-guanli', 'units.json');
-const MAP = path.join(ROOT, 'standards', '08-jiankang-fuwu-guanli', 'chapter-map.json');
-const CHAPTER = '4';
-const SLUG = '04-z84';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function clauseAfter(body, label) {
+  const i = body.indexOf(label + '：');
+  if (i < 0) throw new Error('正文里没找到「' + label + '：」');
+  const rest = body.slice(i + label.length + 1);
+  const j = rest.indexOf('。');
+  return (j < 0 ? rest : rest.slice(0, j)).trim();
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+const splitList = (s, re = /[、，]/) =>
+  String(s).replace(/以及/g, '、').split(re).map((x) => x.trim()).filter(Boolean);
+
+function numberBy(body, re) {
+  const m = body.match(re);
+  if (!m) throw new Error('正文里没找到：' + re);
+  return Number(m[1].replace(/,/g, ''));
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 十二项基本公共卫生服务内容：正文用「从…，到…，再到…」列举。 */
+function services(body) {
+  const i = body.indexOf('列了十二项内容，');
+  if (i < 0) throw new Error('正文里没找到十二项内容的列举');
+  const seg = body.slice(i + '列了十二项内容，'.length, body.indexOf('。', i));
+  return seg
+    .replace(/^从/, '')
+    .replace(/，(到|再到)/g, '、')
+    .split('、')
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
+
+function audit(body) {
+  const items = services(body);
+  const forms = (body.match(/第[一二三]种是/g) || []).length;
+  const conditions = (body.match(/第[一二三]，/g) || []).length;
+  const distortions = (body.match(/第[一二三]种失真是/g) || []).length;
+  const division = splitList(clauseAfter(body, '真正的分工要落到四件事'));
+  const money = (body.match(/哪部分钱是/g) || []).length;
+
+  const counts = {
+    services: items.length,
+    forms,
+    conditions,
+    distortions,
+    division: division.length,
+    money,
+  };
+  const claims = [
+    { label: '十二项内容', want: 12, got: counts.services },
+    { label: '三种产出形态', want: 3, got: counts.forms },
+    { label: '经费闭环三个条件', want: 3, got: counts.conditions },
+    { label: '三种失真', want: 3, got: counts.distortions },
+    { label: '分工四件事', want: 4, got: counts.division },
+    { label: '三笔钱', want: 3, got: counts.money },
+  ];
+  const mismatched = claims.filter((c) => c.want !== c.got).map((c) => c.label);
+
+  const raw = {
+    score: numberBy(body, /考核得了\s*(\d+)\s*分/),
+    fileRate: numberBy(body, /建档率\s*([\d.]+)%/),
+    htnRate: numberBy(body, /高血压规范管理率\s*([\d.]+)%/),
+    elderRate: numberBy(body, /老年人健康管理率\s*([\d.]+)%/),
+    reportRate: numberBy(body, /传染病报告及时率\s*([\d.]+)%/),
+    awareness: numberBy(body, /知晓率只有\s*([\d.]+)%/),
+    control: numberBy(body, /血压控制率\s*([\d.]+)%/),
+    reportForms: numberBy(body, /填了\s*(\d+)\s*张报表/),
+    activeFind: numberBy(body, /只有\s*([\d.]+)%\s*是基层/),
+    systems: numberBy(body, /在\s*(\d+)\s*个系统里各录一遍/),
+  };
+  const derived = {
+    scoreGap: raw.score - raw.awareness,
+    passiveFind: 100 - raw.activeFind,
+    formsPerMonth: raw.reportForms / 12,
+  };
+
+  return { items, forms, conditions, distortions, division, money, counts, claims, mismatched, raw, derived };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const body = read();
+  const a = audit(body);
+  const secs = sections(body);
+  const cites = [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((x) => x[1]))];
 
-  console.log(`健康服务管理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`健康服务管理 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${hanzi(body)} 字 · 节 ${secs.length} 节 · 加粗判断 ${(body.match(/\*\*[^*\n]+\*\*/g) || []).length} 处 · 引书 ${cites.length} 部`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('结构清单（条数由正文数出，与句中的中文数字对账）：');
+  console.log(`  十二项内容 ${a.counts.services} 项：`);
+  a.items.forEach((s, i) => console.log(`    ${String(i + 1).padStart(2)}. ${s}`));
+  console.log(`  三种产出形态 ${a.counts.forms} 种 · 经费闭环三个条件 ${a.counts.conditions} 条 · 三种失真 ${a.counts.distortions} 种`);
+  console.log(`  三笔钱 ${a.counts.money} 笔 · 分工四件事 ${a.counts.division} 件：${a.division.join('／')}`);
+  console.log(`  → 对账${a.mismatched.length ? '不一致，须改稿：' + a.mismatched.join('、') : '一致'}`);
+  console.log('');
+  console.log('卷首数字复算：');
+  const { raw, derived } = a;
+  console.log(`  考核 ${raw.score} 分 ／ 居民知晓率 ${raw.awareness}% → 差 ${derived.scoreGap} 个百分点`);
+  console.log(`  建档 ${raw.fileRate}% · 高血压规范管理 ${raw.htnRate}% · 老年管理 ${raw.elderRate}% · 报告及时 ${raw.reportRate}%`);
+  console.log(`  在管高血压控制率 ${raw.control}% ，低于建档率 ${(raw.fileRate - raw.control).toFixed(0)} 个百分点`);
+  console.log(`  全年 ${raw.reportForms} 张报表 ≈ 每月 ${derived.formsPerMonth.toFixed(2)} 张；同一数据在 ${raw.systems} 个系统各录一遍`);
+  console.log(`  肺结核主动发现 ${raw.activeFind}% → 其余 ${derived.passiveFind}% 是病人自己因症状就诊`);
+  console.log('  → 分数买的是台账，不是「没有发生的事」。');
+  console.log('');
+  console.log('逐节字数：');
+  for (const s of secs) {
+    const share = hanzi(body) ? ((s.hanzi / hanzi(body)) * 100).toFixed(1) : '0.0';
+    console.log(`  ${s.title.padEnd(26, '　')} ${String(s.hanzi).padStart(5)} 字（${share}%）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/08-jiankang-fuwu-guanli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('→ 判据：项目化让经费与责任可核算，也会把不可计数的预防工作挤到边缘；保留一部分不挂项目的常规监测与应急准备经费，是必要的制度余量。');
+  console.log('※ 数字均从本章 docs/zh.md 现算，正文一改即随之变化；本输出仅用于教学演示，不构成政策解读意见，也不构成对具体机构的评价。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, hanzi, sections, clauseAfter, splitList, services, audit };
