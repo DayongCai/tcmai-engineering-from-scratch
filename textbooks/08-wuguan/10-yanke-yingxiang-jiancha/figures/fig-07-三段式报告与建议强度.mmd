@@ -1,0 +1,32 @@
+%% 内容依据：textbooks/08-wuguan/10-yanke-yingxiang-jiancha/07-第7章-影像报告、复查与疗效评价.md §N.1
+%% 图 7-1 三段式报告：所见—解释—建议，以及「建议」三档强度
+%%   原文「所见给「是什么样」，解释给「我判断是什么」，建议给「所以下一步做什么」」
+%%   所见四条纪律：可定位·可比较·可复核·不夹判断；解释三条纪律：排序·置信度·至多两鉴别
+%%   建议三档（§N.2）：观察·复查·转诊，分界线是「谁在什么时点必须做事」
+%%   转诊三要素：去哪·为什么·带什么
+%% 本图只画三段的分工与建议的分档，字段与判据见正文表格。
+graph LR
+    M["影像材料与临床所见"] --> S["所见<br/>是什么样"]
+    S --> E["解释<br/>我判断是什么"]
+    E --> R["建议<br/>下一步做什么"]
+
+    S -.-> S1["四条纪律：可定位<br/>可比较·可复核·不夹判断"]
+    E -.-> E1["三条纪律：排序<br/>置信度·至多两鉴别"]
+
+    R --> R1["观察"]
+    R --> R2["复查"]
+    R --> R3["转诊"]
+
+    R1 -.-> N1["必须给触发条件"]
+    R2 -.-> N2["必须给项目与时点依据"]
+    R3 -.-> N3["三要素：去哪·为什么·带什么"]
+
+    classDef mat fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.5px,color:#1f1b16
+    classDef hub fill:#eef2e8,stroke:#4a7c59,stroke-width:2.2px,color:#1f1b16
+    classDef item fill:#fbf8f2,stroke:#b9a992,stroke-width:1.1px,color:#1f1b16
+    classDef warn fill:#fdf1ef,stroke:#b5443a,stroke-width:1.2px,color:#6b6156
+    class M,S1,E1 mat
+    class S,E item
+    class R hub
+    class R1,R2,R3 item
+    class N1,N2,N3 warn

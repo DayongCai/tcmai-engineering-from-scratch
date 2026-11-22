@@ -1,0 +1,41 @@
+%% 内容依据：textbooks/08-wuguan/01-erbihou-jiepou-shengli/08-第8章-检查法与正常所见.md §N.1
+%% 图 8-1 四把镜子各能看到哪一层
+%% 横读是「器械—可及范围—止点」：每条线的终点即该检查的边界，终点之外只能写「未及」，不能写「正常」。
+%% §01.08.01.01 原文「耳镜的光路止于鼓膜……看不到中耳腔」
+%% §01.08.02.01 原文「前鼻镜……看不到中鼻道深部、嗅裂、后鼻孔，更看不到鼻咽」
+%% §01.08.02.02 原文「间接喉镜……不可及：声门下、喉室深部」
+graph LR
+    subgraph EAR["耳：止于鼓膜"]
+        E1["耳镜<br/>外耳道＋鼓膜全部<br/>（紧张部·松弛部）"]
+        E2["鼓气耳镜<br/>加一个变量：压力<br/>→ 活动自如／减弱／不活动"]
+        E1 --> E2
+    end
+
+    subgraph NOSE["鼻：从「门前一段」到「全腔加咽」"]
+        N1["前鼻镜<br/>鼻中隔前部·下鼻甲前端<br/>中鼻甲前端·总鼻道前段·鼻底"]
+        N2["鼻内镜（0°/30°/70°）<br/>中鼻道·窦口鼻道复合体·嗅裂<br/>后鼻孔·鼻咽"]
+        N1 -->|"换器械即换层次"| N2
+    end
+
+    subgraph THROAT["咽喉：声门下是分界"]
+        T1["间接喉镜<br/>会厌·杓会厌襞·室带·声带<br/>声门下未及"]
+        T2["电子喉镜（经鼻）<br/>喉全貌·声门下·部分下咽<br/>＋频闪看黏膜波"]
+        T1 -->|"换器械即换范围"| T2
+    end
+
+    subgraph LIMIT["器械到不了的地方：不是「正常」，是「未及」"]
+        L1["中耳腔内部<br/>→ 声导抗"]
+        L2["各窦腔内部<br/>→ 影像"]
+        L3["喉外与颈深部<br/>→ 影像"]
+    end
+
+    E1 -.-> L1
+    N2 -.-> L2
+    T2 -.-> L3
+
+    classDef near fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef deep fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.6px,color:#1f1b16
+    classDef lim fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class E1,N1,T1 near
+    class E2,N2,T2 deep
+    class L1,L2,L3 lim

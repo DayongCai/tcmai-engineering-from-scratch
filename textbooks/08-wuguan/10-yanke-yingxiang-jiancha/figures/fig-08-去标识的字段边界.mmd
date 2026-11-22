@@ -1,0 +1,22 @@
+%% 内容依据：textbooks/08-wuguan/10-yanke-yingxiang-jiancha/08-第8章-影像数据的隐私与合规.md §N.3
+%% 图 8-2 去标识的字段边界：三类处置 + 一张必须单独管理的关联表
+%%   原文「去标识不是「把名字涂掉」，而是把「能指认一个人」的所有路径逐条切断」
+%%   三类处置取自 §N.3「字段—处置—理由」表；关联表与残余风险见同节末两段。
+%%   竖排读：自上而下四步，每步只做一件事（原图三分支横排过宽，viewBox 1853 > 1100）
+graph TD
+    A["眼科影像的字段"] --> B["必须删除<br/>姓名·证件号·联系方式<br/>病历号·文件名<br/>面部可见区·私有标签"]
+    B --> C["必须泛化<br/>精确日期 → 相对时序<br/>出生日期 → 年龄段<br/>机构·设备序列号 → 删或泛化"]
+    C --> D["可以保留<br/>眼别·诊断大类·检查类型"]
+    D --> E["关联表：加密·单独授权<br/>访问留痕·不与本体同放"]
+    E --> F["残余风险<br/>准标识组合在样本小时<br/>仍可重新识别"]
+
+    classDef root fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.6px,color:#1f1b16
+    classDef del fill:#fdf1ef,stroke:#b5443a,stroke-width:1.4px,color:#1f1b16
+    classDef gen fill:#fbf8f2,stroke:#b9a992,stroke-width:1.1px,color:#1f1b16
+    classDef keep fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef note fill:#f7f3ea,stroke:#8a5a2b,stroke-width:1.1px,color:#6b6156
+    class A root
+    class B del
+    class C gen
+    class D keep
+    class E,F note

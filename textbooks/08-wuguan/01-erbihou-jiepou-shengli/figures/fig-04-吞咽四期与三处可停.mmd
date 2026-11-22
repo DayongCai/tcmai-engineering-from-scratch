@@ -1,0 +1,21 @@
+%% 内容依据：textbooks/08-wuguan/01-erbihou-jiepou-shengli/04-第4章-咽喉的解剖.md §N.5
+%% 图 4-2 吞咽四期：一个岔口，三处可停
+%% §01.04.03.02：四期为口腔准备期、口腔期、咽期、食管期；咽期的动作顺序是
+%%   软腭封闭鼻咽、咽缩肌收缩、喉上提与声带闭合，误吸只在这一期。
+%% 三处卡点取 §01.04.03.02「扁桃体窝、会厌谷、梨状窝」与 §01.04.02.02「声门为喉腔最狭窄处」。
+%% 本图只画次序与位置，不给各期时长（本章口径）。
+graph TD
+    P1["口腔准备期<br/>咀嚼成食团"] --> P2["口腔期<br/>舌推食团向后"]
+    P2 --> P3["咽期<br/>软腭上提喉前移"]
+    P3 --> P4["食管期<br/>入食管至胃"]
+    P3 --> X["岔口：喉口<br/>声门须闭合"]
+    X -.-> K1["会厌谷<br/>舌根与会厌之间"]
+    X -.-> K2["梨状窝<br/>盲袋，尖接食管"]
+    X -.-> K3["声门<br/>喉腔最窄处"]
+
+    classDef phase fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef fork fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    classDef spot fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    class P1,P2,P3,P4 phase
+    class X fork
+    class K1,K2,K3 spot

@@ -1,0 +1,45 @@
+%% 内容依据：textbooks/08-wuguan/01-erbihou-jiepou-shengli/06-第6章-神经与血管支配.md §N.1
+%% 图 6-2 一条主干两个汇：颈外动脉分支与静脉入颅通路
+%% 上半动脉（分支从哪里发出），中间三处危险吻合，下半静脉（血往哪里流）。
+%% §N.1 原文「血管一纵两汇：颈总分颈内、颈外，颈内入颅、颈外供面，静脉则有两个「汇」——面静脉与翼静脉丛，各自通海绵窦」
+%% §N.4 原文「颈内动脉在颈部不给任何分支」「咽升动脉的脑膜支经颈静脉孔、破裂孔、舌下神经管上行」「瓣膜缺如或不全，血流可双向」
+graph TB
+    subgraph AR["动脉：一条主干，两条去向"]
+        A0["颈总动脉"]
+        A1["颈内动脉<br/>颈部无分支 · 入颅"]
+        A2["颈外动脉<br/>前壁三支 · 后壁两支<br/>内侧咽升 · 终支颌内与颞浅"]
+        A0 --> A1
+        A0 --> A2
+    end
+
+    subgraph X["三处危险吻合（颈外 ↔ 颈内）"]
+        X1["颌内 ↔ 眼动脉<br/>鼻腔顶部与眶内"]
+        X2["咽升 ↔ 颈内脑膜支<br/>经颈静脉孔 · 破裂孔 · 舌下神经管"]
+        X3["腭升 ↔ 咽升、腭降<br/>扁桃体周围"]
+    end
+
+    A2 --> X1
+    A2 --> X2
+    A2 --> X3
+
+    subgraph VE["静脉：两条入颅通路"]
+        V1["面静脉<br/>瓣膜缺如，可双向"]
+        V2["眼上静脉"]
+        V3["翼静脉丛<br/>经颅底静脉丛"]
+        V5["海绵窦<br/>窦内过颈内动脉与展神经"]
+        V1 --> V2
+        V2 --> V5
+        V1 --> V3
+        V3 --> V5
+    end
+
+    X1 --> V5
+    X3 --> K["判据：危险三角看机制<br/>静脉无瓣 ＋ 两条通路都通海绵窦"]
+
+    classDef artery fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef risco fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    classDef vein fill:#eef0f4,stroke:#3f5c78,stroke-width:1.4px,color:#1f1b16
+    class A0,A1,A2 artery
+    class X1,X2,X3 risco
+    class V1,V2,V3,V5 vein
+    class K risco

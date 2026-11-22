@@ -1,0 +1,34 @@
+%% 内容依据：textbooks/08-wuguan/01-erbihou-jiepou-shengli/08-第8章-检查法与正常所见.md §01.08.03.02
+%% 图 8-2 内镜与影像的口径差异
+%% 左栏与右栏的「能看见」互不覆盖，「看不见」彼此重叠；中文的空白才是必须换手段的地方。
+%% §01.08.03.02 原文「同一个病灶，内镜与影像给出的两句话，往往既不能互证，也不能互替」
+%% 五个维度（介质与对比·范围·方位·时间·判据单位）取表内原文，不补器械与扫描参数。
+graph TB
+    subgraph ENDO["内镜：可见光，从腔内看表面"]
+        EN1["能看见<br/>黏膜颜色·光泽·血管纹理<br/>表面形态·分泌物·新生物<br/>实时动态：发声·吞咽·鼓气·收缩"]
+        EN2["看不见<br/>壁内与腔外<br/>窦腔内部<br/>骨质的破坏范围"]
+    end
+
+    subgraph IMG["影像：密度／信号，看壁内与腔外"]
+        IM1["能看见<br/>断面上的位置与范围<br/>密度或信号差异<br/>骨质·腔外侵犯"]
+        IM2["看不见<br/>黏膜的色泽与表面细节<br/>功能：发声·吞咽·嗅觉"]
+    end
+
+    subgraph BOTH["两者都不能答：必须换手段"]
+        B1["黏膜病变的性质<br/>→ 活检与病理"]
+        B2["功能状态<br/>→ 听力学·嗓音·吞咽评估"]
+        B3["「哪一组窦、范围多大」<br/>→ 影像；「窦内是什么」<br/>→ 内镜加病理"]
+    end
+
+    EN1 -.->|"缺口一"| IM2
+    IM1 -.->|"缺口二"| EN2
+    EN1 --> B3
+    IM2 --> B1
+    EN2 --> B2
+
+    classDef endo fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef img fill:#eae6f0,stroke:#6a5a8a,stroke-width:1.4px,color:#1f1b16
+    classDef both fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class EN1,EN2 endo
+    class IM1,IM2 img
+    class B1,B2,B3 both

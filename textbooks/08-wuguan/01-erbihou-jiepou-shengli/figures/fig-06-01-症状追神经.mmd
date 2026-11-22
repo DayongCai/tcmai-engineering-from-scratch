@@ -1,0 +1,25 @@
+%% 内容依据：textbooks/08-wuguan/01-erbihou-jiepou-shengli/06-第6章-神经与血管支配.md §N.1
+%% 图 6-1 一个症状追一条神经：四组颅神经的分区索引
+%% 先问感觉、运动还是咽与喉，再定左右，最后定平面；三层都定住，症状才落到一条神经上。
+%% §N.1 原文「感觉一条横线：三叉神经三支，把面部分成三层皮；运动一条横线：面神经五组分支」「咽与喉一条纵线」
+%% §N.2 原文「「额纹还在不在」是这两类的分水岭」「萎缩与束颤是核下损伤的标志」
+%% 三支各并成一格竖排（原三分支×三叶横排 viewBox 1922 > 1100）
+graph TB
+    Q["一个症状"] --> S{"先问：感觉、运动，还是咽与喉"}
+
+    S --> V["感觉 · 三叉神经<br/>额与上睑 → 眼支<br/>上唇·上牙·腭 → 上颌支<br/>下唇·颏·下牙·舌前 → 下颌支"]
+    S --> M["运动 · 面神经与舌下神经<br/>额纹消失+闭目不全 → 周围性<br/>仅口角垂·额纹在 → 中枢性<br/>伸舌偏斜+萎缩束颤 → 舌下"]
+    S --> P["咽与喉 · 舌咽与迷走<br/>咽感觉减·舌根味觉差 → 舌咽<br/>声嘶·饮水呛咳·声带麻痹 → 迷走"]
+
+    V --> R["判据：单条症状只作提示<br/>定位需三条同平面<br/>或有一个解剖关口"]
+    M --> R
+    P --> R
+
+    classDef ask fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.6px,color:#1f1b16
+    classDef sense fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef motor fill:#eef0f4,stroke:#3f5c78,stroke-width:1.4px,color:#1f1b16
+    classDef gate fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class Q,S ask
+    class V sense
+    class M,P motor
+    class R gate

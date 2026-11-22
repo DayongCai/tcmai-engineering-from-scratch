@@ -1,0 +1,38 @@
+%% 内容依据：textbooks/08-wuguan/10-yanke-yingxiang-jiancha/01-第1章-影像在眼科的位置（从四诊到仪器）.md §N.1
+%% 图 1-1 影像在眼科的位置：定位—取证—闸门—出口
+%% 三层自上而下，箭头单向：定位错了，取证在错的地方；闸门没过，结果不能进处置。
+%% §N.1 原文「七个概念排成一条链：定位用五轮、八廓、内外障（说「看哪儿」），
+%%   取证用四诊加影像窗口（说「看到什么」），闸门是检查前三件事（说「该不该做」），
+%%   出口是报告字段与签字责任（说「谁负责」）」
+%% 五个轮位（肉轮胞睑属脾／血轮两眦属心／气轮白睛属肺／风轮黑睛属肝／水轮瞳神属肾）
+%%   取 §N.1 表内「五轮」行原文。八廓只作提醒、不入编码与报告，取 §N.1 表内说明。
+graph TB
+    subgraph P1["一 · 定位（说「看哪儿」）"]
+        A["五轮<br/>胞睑肉轮·两眦血轮<br/>白睛气轮·黑睛风轮<br/>瞳神水轮"]
+        B["八廓<br/>眼周四隅分八方<br/>只作提醒，不入编码"]
+        C["内外障<br/>以瞳神为界<br/>外障在前·内障在后"]
+    end
+
+    subgraph P2["二 · 取证（说「看到什么」）"]
+        D["四诊<br/>望·闻·问·切"]
+        E["影像四窗口<br/>形态·断面<br/>灌注·功能"]
+    end
+
+    subgraph P3["三 · 闸门与出口"]
+        F["检查前三件事<br/>适应证·禁忌·知情"]
+        G["报告十项与签字<br/>谁读片·谁签字<br/>谁向患者解释"]
+    end
+
+    A --> D
+    B --> D
+    C --> E
+    D --> F
+    E --> F
+    F --> G
+
+    classDef loc fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef ev fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef gate fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class A,B,C loc
+    class D,E ev
+    class F,G gate

@@ -1,0 +1,43 @@
+%% 内容依据：textbooks/08-wuguan/01-erbihou-jiepou-shengli/05-第5章-口腔与涎腺.md §N.1
+%% 图 5-2 口腔四壁与三条导管开口
+%% 上排四壁，中排两部（经磨牙后区相通），下排三条管口——管口都落在黏膜面上，不在腺体上。
+%% §N.1 原文「一腔两部，是前庭与固有口腔，靠牙弓分、靠磨牙后区通」「三条管口，是腮腺管开口于颊黏膜、下颌下腺管开口于舌下阜、舌下腺的管开口于舌下阜与舌下襞」
+%% §N.4 原文「舌下阜是「合用口」，舌下襞是「独用口」」「查腮腺要翻颊，查下颌下腺要抬舌」
+graph TB
+    subgraph W["四壁"]
+        W1["前壁<br/>唇与颊"]
+        W2["上壁<br/>硬腭与软腭 · 腭垂"]
+        W3["下壁<br/>口底与舌"]
+        W4["后界<br/>咽峡：腭垂 · 腭舌弓 · 舌根"]
+    end
+
+    subgraph C["两部（以牙弓为界）"]
+        C1["口腔前庭<br/>牙弓与唇颊之间"]
+        C2["固有口腔<br/>牙弓内侧，舌与口底所在"]
+        C1 <-->|磨牙后区相通| C2
+    end
+
+    subgraph D["三条管口（均在黏膜面）"]
+        D1["腮腺管口<br/>颊黏膜，与上颌磨牙相对"]
+        D2["舌下阜<br/>下颌下腺管 ＋ 舌下腺大管"]
+        D3["舌下襞<br/>舌下腺小管"]
+    end
+
+    W1 --> C1
+    W2 --> C2
+    W3 --> C2
+    W4 --> C2
+    C1 --> D1
+    C2 --> D2
+    C2 --> D3
+
+    D1 --> K["检查：查腺先查口<br/>翻颊看腮腺乳头，抬舌看舌下阜与舌下襞"]
+    D2 --> K
+    D3 --> K
+
+    classDef wall fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef cavity fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef duct fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class W1,W2,W3,W4 wall
+    class C1,C2 cavity
+    class D1,D2,D3,K duct

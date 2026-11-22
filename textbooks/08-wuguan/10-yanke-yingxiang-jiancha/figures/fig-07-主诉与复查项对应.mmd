@@ -1,0 +1,28 @@
+%% 内容依据：textbooks/08-wuguan/10-yanke-yingxiang-jiancha/07-第7章-影像报告、复查与疗效评价.md §N.3
+%% 图 7-2 主诉与复查项：复查项由主诉加首诊所见共同决定，不由套餐决定
+%%   对应关系取自 §N.3 的「主诉—首诊必做—复查必看」表；间隔一栏只写「由谁定」，
+%%   不写天数（本课无可引用底本，教材不负责「隔多少天看」）
+%%   两处特别提示（§N.3）：视力对黄斑不敏感（须带结构）；黑影骤增伴闪光属周边视网膜，
+%%   首诊即定间隔，自然史以天计
+graph LR
+    S1["视力渐降，无痛"] --> R1["矫正视力<br/>加黄斑区结构"]
+    S2["视物变形<br/>看直线变弯"] --> R2["黄斑断面层间连续性<br/>加方格表范围"]
+    S3["黑影骤增<br/>伴闪光"] --> R3["散瞳后<br/>周边视网膜"]
+    S4["眼胀痛伴虹视"] --> R4["眼压时点分布<br/>加视野范围"]
+    S5["眼红痛畏光流泪"] --> R5["前节炎症体征<br/>加眼压"]
+    S6["外伤后"] --> R6["前节完整性<br/>加眼底周边"]
+
+    R1 -.-> C["两次之间须可比：<br/>同设备·同范围·同条件"]
+    R2 -.-> C
+    R3 -.-> D["间隔在首诊即定"]
+    R6 -.-> D
+    C -.-> T["间隔一律由主诊定<br/>教材不给天数"]
+
+    classDef sx fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.5px,color:#1f1b16
+    classDef chk fill:#eef2e8,stroke:#4a7c59,stroke-width:1.6px,color:#1f1b16
+    classDef rule fill:#fbf8f2,stroke:#b9a992,stroke-width:1.1px,color:#1f1b16
+    classDef warn fill:#fdf1ef,stroke:#b5443a,stroke-width:1.2px,color:#6b6156
+    class S1,S2,S3,S4,S5,S6 sx
+    class R1,R2,R3,R4,R5,R6 chk
+    class C rule
+    class D,T warn

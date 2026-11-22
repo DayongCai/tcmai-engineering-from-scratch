@@ -1,0 +1,28 @@
+%% 内容依据：textbooks/08-wuguan/01-erbihou-jiepou-shengli/02-第2章-耳的应用解剖.md §N.4
+%% 图 2-2 迷路双层：骨在外，膜在内，淋巴夹在其间
+%% 依据：§2.17「内耳位于颞骨岩部内，由骨迷路与膜迷路组成。骨迷路为骨性隧道，
+%%       膜迷路为位于骨迷路内的膜性管与囊，两者之间充满外淋巴，膜迷路内充满内淋巴」
+%%       「骨半规管为相互垂直的半环形骨管」「各骨半规管的一端膨大称骨壶腹」
+%%       「前庭……前部通耳蜗，后部通骨半规管」「耳蜗……由蜗螺旋管环绕蜗轴而成」
+%%       「基底膜上有螺旋器」「壶腹嵴位于膜壶腹内」「椭圆囊斑位于椭圆囊内，球囊斑位于球囊内」
+%% 两列是同一套结构的两层，不是两个器官。
+graph TD
+    R["内耳<br/>双层套叠"]
+
+    R --> A["骨迷路"]
+    R --> B["膜迷路"]
+
+    A --> A1["骨半规管<br/>三者相互垂直"]
+    A --> A2["前庭<br/>通耳蜗与半规管"]
+    A --> A3["耳蜗<br/>蜗螺旋管"]
+
+    B --> B1["膜半规管<br/>壶腹嵴"]
+    B --> B2["椭圆囊与球囊<br/>囊斑"]
+    B --> B3["蜗管<br/>基底膜与螺旋器"]
+
+    classDef root fill:#eef2e8,stroke:#4a7c59,stroke-width:2px,color:#1f1b16
+    classDef axis fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.6px,color:#1f1b16
+    classDef item fill:#fbf8f2,stroke:#8a5a2b,stroke-width:1.1px,color:#1f1b16
+    class R root
+    class A,B axis
+    class A1,A2,A3,B1,B2,B3 item

@@ -1,0 +1,21 @@
+%% 内容依据：textbooks/08-wuguan/01-erbihou-jiepou-shengli/03-第3章-鼻与鼻窦.md §N.3
+%% 图 3-2 滞留链：五个环节，一头一尾相接
+%% §01.03.02.01：四组窦中只有上颌窦的窦口在窦腔上份，额窦、筛窦、蝶窦的开口都在低位。
+%% §01.03.02.02 五环：入口窄、出口挤、黏膜一肿就闭、闭后负压与纤毛减弱、滞留；
+%%   末环「窦口更窄」回指首环，故成闭环。
+%% 本图不给窦口尺寸、窦腔容积与纤毛摆动频率（本章口径）。
+graph TD
+    S1["上颌窦口<br/>开在窦腔上份"] --> M["窦口鼻道复合体<br/>三窦共用一条道"]
+    S2["额窦与前筛<br/>同汇中鼻道"] --> M
+    S3["黏膜一肿<br/>缝隙先闭"] --> M
+    M --> N["窦内气体吸收<br/>负压形成"]
+    N --> O["纤毛摆动减弱<br/>分泌物滞留"]
+    O --> P["细菌繁殖<br/>黏膜增厚生息肉"]
+    P --> Q["窦口更窄<br/>回到第一环"]
+
+    classDef cause fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef hub fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    classDef loop fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    class S1,S2,S3 cause
+    class M hub
+    class N,O,P,Q loop

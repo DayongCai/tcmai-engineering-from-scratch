@@ -1,0 +1,25 @@
+%% 内容依据：textbooks/08-wuguan/10-yanke-yingxiang-jiancha/04-第4章-内障与眼底影像.md §N.1
+%% 图 4-1 浑浊度决定通路：先问窗玻璃通不通，再决定先做哪一项
+%%   分岔即 §N.1.1「浑不浑浊决定先做哪一项」；四样底线信息与「衰减信号不作判读依据」出自同节末段。
+%%   竖排两路（透明/浑浊）——原图三支横排 viewBox 1277 > 1100，改窄标签 + 单列下行
+graph TD
+    A["疑内障<br/>视力下降·变形"] --> B{"屈光间质浑浊？<br/>红光反射·可及度"}
+    B -->|透明| C["光学优先"]
+    C --> C1["断面：哪层·多厚·界面"]
+    C --> C2["眼底照相：形态·颜色·血管"]
+    C --> C3["造影按需：灌注·渗漏·屏障"]
+    B -->|浑浊| D["声学先立形态底线"]
+    D --> D1["四样底线<br/>眼形·玻璃体腔<br/>网膜在位·球壁球后"]
+    D --> D2["光学后补<br/>衰减信号不作判据"]
+    D2 --> E["报告写明<br/>光学断面仅作参考"]
+
+    classDef ask fill:#eef2e8,stroke:#4a7c59,stroke-width:2.2px,color:#1f1b16
+    classDef gate fill:#fdf6e8,stroke:#c9a227,stroke-width:1.6px,color:#1f1b16
+    classDef br fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.5px,color:#1f1b16
+    classDef leaf fill:#fbf8f2,stroke:#b9a992,stroke-width:1.1px,color:#3a332c
+    classDef warn fill:#f7ede6,stroke:#a4472f,stroke-width:1.5px,color:#1f1b16
+    class A ask
+    class B gate
+    class C,D br
+    class C1,C2,C3,D1 leaf
+    class D2,E warn

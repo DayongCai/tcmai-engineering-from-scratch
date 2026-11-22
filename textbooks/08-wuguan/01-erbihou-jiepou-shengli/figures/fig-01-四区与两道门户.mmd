@@ -1,0 +1,32 @@
+%% 内容依据：textbooks/08-wuguan/01-erbihou-jiepou-shengli/01-第1章-耳鼻咽喉的解剖概览.md §N.1
+%% 图 1-1 四区与两道门户：一口一鼻一耳，气与食在咽部分道
+%% 依据：§01.01.01.01 四区位置表（耳/鼻/咽喉/口齿的位置与门户性质）
+%%       §01.01.01.02「咽鼓管连接鼓室与鼻咽部」；§1.3「咽为呼吸道与消化道共同的通道」
+%%       鼻咽「位于软腭平面以上」；喉咽「会厌上缘至环状软骨下缘，两侧有梨状窝」
+%%       喉「两侧声带之间的裂隙为声门，是喉腔最狭窄处」
+%% 节点文字为正文关键词摘录，未增补四区之外的器官。
+graph TD
+    R["头颈四区<br/>一鼻一口一耳"]
+
+    R --> A["气道门户"]
+    R --> B["食道门户"]
+    R --> C["耳在旁路"]
+
+    A --> A1["鼻<br/>呼吸与嗅觉"]
+    A --> A2["鼻咽<br/>软腭以上"]
+    A --> A3["喉<br/>声门最窄"]
+
+    B --> B1["口齿<br/>消化起点"]
+    B --> B2["口咽<br/>扁桃体所在"]
+    B --> B3["喉咽<br/>梨状窝"]
+
+    C --> C1["咽鼓管<br/>通鼻咽"]
+    C --> C2["中耳<br/>含气腔"]
+    C --> C3["内耳<br/>颞骨岩部"]
+
+    classDef root fill:#eef2e8,stroke:#4a7c59,stroke-width:2px,color:#1f1b16
+    classDef axis fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.6px,color:#1f1b16
+    classDef item fill:#fbf8f2,stroke:#8a5a2b,stroke-width:1.1px,color:#1f1b16
+    class R root
+    class A,B,C axis
+    class A1,A2,A3,B1,B2,B3,C1,C2,C3 item

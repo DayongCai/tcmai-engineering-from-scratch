@@ -1,0 +1,44 @@
+%% 内容依据：textbooks/08-wuguan/01-erbihou-jiepou-shengli/07-第7章-生理功能与免疫.md §01.07.01.02
+%% 图 7-2 平衡三系统与三路传出
+%% 平衡是「比对」的结果：三路一致则稳，不一致则晕；恶心不是第四个输出，是比对失败的溢出。
+%% §01.07.01.02 原文「三路进前庭核，与小脑、网状结构比对，另有三路出去」
+%% §N.1 表「前庭三系统」一行取原义；不给任何时间常数与前庭检查量化界限。
+graph TB
+    subgraph IN["三路输入：各报一份「在怎样动」"]
+        V1["半规管（三个，近于垂直）<br/>角加速度：转得多快"]
+        V2["耳石器（椭圆囊·球囊）<br/>直线加速度与头相对重力：歪了多少"]
+        V3["视觉<br/>视野在怎样移动"]
+        V4["本体感觉（颈·躯干·下肢）<br/>身体相对支撑面"]
+    end
+
+    CMP["前庭核＋小脑＋网状结构<br/>比对三者是否一致"]
+
+    subgraph OUT["三路输出"]
+        O1["眼<br/>前庭眼反射·稳像→失常则眼震"]
+        O2["身<br/>前庭脊髓反射·维持姿势"]
+        O3["自觉<br/>眩晕感"]
+    end
+
+    subgraph AUTO["比对失败的溢出（非第四路输出）"]
+        N1["延髓呕吐中枢＋迷走神经背核"]
+        N2["恶心·呕吐·面色苍白<br/>出汗·流涎·心率血压变化"]
+        N1 --> N2
+    end
+
+    V1 --> CMP
+    V2 --> CMP
+    V3 --> CMP
+    V4 --> CMP
+    CMP --> O1
+    CMP --> O2
+    CMP --> O3
+    CMP -.->|"信号冲突（如晕车、旋转后）"| N1
+
+    classDef input fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef cmp fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.6px,color:#1f1b16
+    classDef out fill:#eae6f0,stroke:#6a5a8a,stroke-width:1.4px,color:#1f1b16
+    classDef auto fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class V1,V2,V3,V4 input
+    class CMP cmp
+    class O1,O2,O3 out
+    class N1,N2 auto

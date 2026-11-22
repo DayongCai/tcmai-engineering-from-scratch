@@ -1,0 +1,24 @@
+%% 内容依据：textbooks/08-wuguan/01-erbihou-jiepou-shengli/07-第7章-生理功能与免疫.md §N.1
+%% 图 7-1 声传导的两条路径与骨导的对照作用
+%% 气导以中耳为必经段，骨导绕开中耳；两者在耳蜗交汇，故差额只归「中耳」或「耳蜗及其后」。
+%% §01.07.01.01 原文「骨导成了一次把中耳这个变量移出去的对照实验，判据三句」
+%% §N.1 表「气导」「骨导」「声阻抗匹配」「耳蜗放大」四行取原义，不含任何数值。
+%% 原图 LR + 两个 subgraph 横排 viewBox 1791 > 1100，改为竖排单列（subgraph 内的 direction 会被外层覆盖）
+graph TB
+    S["声波"] --> A["气导：外耳→鼓膜→听骨链→卵圆窗<br/>中耳是必经段（阻抗匹配：面积比＋杠杆）<br/>圆窗让位，基底膜才弯"]
+    S --> B["骨导：颅骨振动→骨迷路<br/>中耳被绕开<br/>惯性·压缩·骨鼓三成分"]
+    A --> C["耳蜗：行波→频率译为位置"]
+    B --> C
+    C --> D["外毛细胞：耳蜗放大<br/>敏感·调谐·压缩"]
+    D --> E["内毛细胞：机械转电信号<br/>听神经→脑干，多次交叉"]
+    E --> J["三个落点<br/>气导降·骨导不变 → 传导段<br/>气导降·骨导也降 → 感音段<br/>都降且气更差 → 混合"]
+
+    classDef src fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef air fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef bone fill:#eae6f0,stroke:#6a5a8a,stroke-width:1.4px,color:#1f1b16
+    classDef coch fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class S src
+    class A air
+    class B bone
+    class C,D,E coch
+    class J bone

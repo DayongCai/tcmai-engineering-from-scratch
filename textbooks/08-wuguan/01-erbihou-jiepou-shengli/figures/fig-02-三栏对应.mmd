@@ -1,0 +1,21 @@
+%% 内容依据：textbooks/08-wuguan/01-erbihou-jiepou-shengli/01-第1章-耳鼻咽喉的解剖概览.md §N.1
+%% 图 1-2 三栏对应：形态立主语，功能给判据，检查出所见
+%% 依据：§01.01.03.01 三栏表（形态/功能/检查三栏的「回答什么、由谁提供、耳的例」）
+%%       「先有形态，功能才有主语」「先有功能，检查才有判据」
+%%       §N.1 引言「形态、功能、检查三栏并置的写法」，虚线一支本于 §01.01.03.01「接口契约」
+%% 仅表三栏的先后与归属，不表任何检查参数。
+graph TD
+    M["形态栏<br/>位置·组成·毗邻"]
+    F["功能栏<br/>作用·失效见症"]
+    E["检查栏<br/>所见·正常标准"]
+
+    M --> F
+    F --> E
+
+    Z["脏腑经络<br/>只挂解释层"]
+    Z -.-> F
+
+    classDef axis fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.6px,color:#1f1b16
+    classDef note fill:#fbf8f2,stroke:#4a7c59,stroke-width:1px,color:#1f1b16
+    class M,F,E axis
+    class Z note

@@ -1,0 +1,45 @@
+%% 内容依据：textbooks/08-wuguan/10-yanke-yingxiang-jiancha/02-第2章-眼与脏腑的参照系（解剖生理基线）.md §N.1
+%% 图 2-1 三层壁与屈光间质：影像能取到哪一层
+%% §N.1 表内「三层壁」行：由外向内为纤维膜（角膜与巩膜）、血管膜（虹膜、睫状体、脉络膜）、
+%%   视网膜（色素上皮与神经上皮）；「屈光间质与内容物」行：角膜、房水、晶状体、玻璃体，
+%%   透明度决定后面的结构能否被看到。
+%% 10.02.01.02 原文「先看介质，再选检查」；10.02.01.01 原文「先认层，再认界面，最后认毗邻」。
+%% 四类窗口（形态·断面·灌注·功能）取 §N.1「影像窗口」定义。
+%% 本图只画「谁能取到哪一层」，不给层名对照与厚度值（本章纪律）。
+graph LR
+    subgraph WALL["眼球壁三层"]
+        F["纤维膜<br/>角膜·巩膜"]
+        V["血管膜<br/>虹膜·睫状体·脉络膜"]
+        R["视网膜<br/>色素上皮·神经上皮"]
+    end
+
+    subgraph MED["屈光间质：四层门槛"]
+        M["角膜·房水<br/>晶状体·玻璃体"]
+    end
+
+    subgraph WIN["四类窗口"]
+        W1["形态<br/>表面与轮廓"]
+        W2["断面<br/>层次与界面"]
+        W3["灌注<br/>血供与屏障"]
+        W4["功能<br/>视路与视皮质"]
+    end
+
+    S["视神经—视路—视皮质"]
+
+    M --> W1
+    M --> W2
+    F --> W2
+    V --> W2
+    R --> W2
+    V --> W3
+    R --> W3
+    W4 --> S
+
+    classDef wall fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef med fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    classDef win fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef far fill:#fbf8f2,stroke:#b9a992,stroke-width:1.1px,color:#1f1b16
+    class F,V,R wall
+    class M med
+    class W1,W2,W3,W4 win
+    class S far

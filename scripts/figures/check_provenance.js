@@ -64,7 +64,7 @@ function longestHit(needle, hay) {
  *  依据小节，于是整章范围被缩成一小节，人工核对与机器校验会得出相反结论。 */
 function readSource(file) {
   const head = fs.readFileSync(file, 'utf8').split('\n').slice(0, 40).join('\n');
-  const m = head.match(/内容依据[:：][ \t]*(\S+\.md)(?:[ \t]*§[ \t]*([\d.]+))?/);
+  const m = head.match(/内容依据[:：][ \t]*(\S+\.md)(?:[ \t]*§[ \t]*([\w.]+))?/);
   if (!m) return null;
   return { md: m[1], section: m[2] || null };
 }
@@ -80,7 +80,13 @@ function resolveMd(figureFile, declared) {
   return prefixed.length === 1 ? path.join(dir, prefixed[0]) : null;
 }
 
-/** 取 §N.M 对应的小节正文；没有节号则取整章 */
+/** 取 §N.M 对应的小节正文；没有节号则取整章
+ *  支持两种编号：
+ *    1) 数字编号 `§3.1`      → 匹配 `## 3.1 …`
+ *    2) 契约编号 `§N.1`      → 匹配 `## N.1 …`（本项目大部分教材按 N.1–N.5 分节，
+ *       图源里写 §N.1 比写章内数字更稳：章号改名不影响出处行）
+ *  两者都匹配不到时返回 null，由调用方报失败——**不再静默退化为整章比对**。
+ */
 function sectionText(md, section) {
   const lines = md.split('\n');
   if (!section) return md;

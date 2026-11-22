@@ -1,6 +1,6 @@
 {
   "$generated": "node scripts/build_textbook_board.js",
-  "generatedAt": "2026-11-21",
+  "generatedAt": "2026-11-22",
   "rules": {
     "weeks": 18,
     "teachWeeks": 16,
@@ -13,10 +13,10 @@
     "hanziCount": "上述文件 [\\u4e00-\\u9fa5] 字符数"
   },
   "gapBodyStats": {
-    "gapSubjects": 49,
-    "gapWithBody": 49,
-    "gapWithBodyChapters": 428,
-    "gapWithBodyChars": 4321849,
+    "gapSubjects": 47,
+    "gapWithBody": 47,
+    "gapWithBodyChapters": 412,
+    "gapWithBodyChars": 4140845,
     "gapNoBody": 0
   },
   "totals": {
@@ -26,32 +26,32 @@
     "electives": 18,
     "hours": 11547,
     "chaptersTarget": 2169,
-    "textbookSubjects": 140,
-    "baseSubjects": 120,
+    "textbookSubjects": 142,
+    "baseSubjects": 122,
     "extSubjects": 2,
     "hbSubjects": 18,
-    "baseHours": 6993,
+    "baseHours": 7101,
     "extHours": 90,
     "hbHours": 1620,
-    "baseChapters": 1869,
+    "baseChapters": 1885,
     "extChapters": 138,
     "hbChapters": 130,
-    "baseNonWs": 36057352,
+    "baseNonWs": 36182948,
     "extNonWs": 214152,
     "hbNonWs": 236360,
-    "coverageBaseHours": 60.6,
-    "coverageBaseSubjects": 63.5,
-    "textbookHours": 8703,
-    "chapters": 2137,
-    "hanzi": 30289649,
-    "nonWs": 36507864,
-    "metaWords": 34050150,
+    "coverageBaseHours": 61.5,
+    "coverageBaseSubjects": 64.6,
+    "textbookHours": 8811,
+    "chapters": 2153,
+    "hanzi": 30385425,
+    "nonWs": 36633460,
+    "metaWords": 34145926,
     "registryChapters": 1621,
     "registryChars": 28596788,
     "registryFiles": 100,
     "registrySubjects": 101,
-    "coverageSubjects": 74.1,
-    "coverageHours": 75.4,
+    "coverageSubjects": 75.1,
+    "coverageHours": 76.3,
     "semesters": 10
   },
   "prereqStats": {
@@ -104,7 +104,7 @@
       "subjects": 23,
       "hours": 1458,
       "weekly": 81,
-      "textbooks": 17,
+      "textbooks": 18,
       "depts": 9
     },
     {
@@ -124,7 +124,7 @@
       "subjects": 37,
       "hours": 2196,
       "weekly": 122,
-      "textbooks": 26,
+      "textbooks": 27,
       "depts": 8
     },
     {
@@ -18956,14 +18956,13 @@
           "bridge": "腔道结构→三维建模 / 生理信号→声学分析",
           "textbook": {
             "dir": "textbooks/08-wuguan/01-erbihou-jiepou-shengli",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
-            "layer": null,
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 45104,
+            "nonWs": 59432,
+            "metaChapters": 8,
+            "metaWords": 45104,
+            "layer": "rewrite",
             "origin": "base",
             "external": null,
             "registry": null
@@ -18981,9 +18980,7 @@
             "depth": 1,
             "order": 1
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -19394,14 +19391,13 @@
           "bridge": "OCT/眼底→CNN / 视野检查→缺损图谱分析",
           "textbook": {
             "dir": "textbooks/08-wuguan/10-yanke-yingxiang-jiancha",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
-            "layer": null,
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 50672,
+            "nonWs": 66164,
+            "metaChapters": 8,
+            "metaWords": 50672,
+            "layer": "rewrite",
             "origin": "base",
             "external": null,
             "registry": null
@@ -19419,9 +19415,7 @@
             "depth": 3,
             "order": 9
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -19764,14 +19758,13 @@
           "bridge": "腔道结构→三维建模 / 生理信号→声学分析",
           "textbook": {
             "dir": "textbooks/08-wuguan/01-erbihou-jiepou-shengli",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
-            "layer": null,
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 45104,
+            "nonWs": 59432,
+            "metaChapters": 8,
+            "metaWords": 45104,
+            "layer": "rewrite",
             "origin": "base",
             "external": null,
             "registry": null
@@ -19789,9 +19782,7 @@
             "depth": 1,
             "order": 1
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -20152,14 +20143,13 @@
           "bridge": "OCT/眼底→CNN / 视野检查→缺损图谱分析",
           "textbook": {
             "dir": "textbooks/08-wuguan/10-yanke-yingxiang-jiancha",
-            "exists": false,
-            "chapters": 0,
-            "hanzi": 0,
-            "nonWs": 0,
-            "metaChapters": 0,
-            "metaWords": 0,
-            "status": "planned",
-            "layer": null,
+            "exists": true,
+            "chapters": 8,
+            "hanzi": 50672,
+            "nonWs": 66164,
+            "metaChapters": 8,
+            "metaWords": 50672,
+            "layer": "rewrite",
             "origin": "base",
             "external": null,
             "registry": null
@@ -20177,9 +20167,7 @@
             "depth": 3,
             "order": 9
           },
-          "flags": [
-            "no-textbook"
-          ]
+          "flags": []
         },
         {
           "dept": "08-wuguan",
@@ -20564,7 +20552,7 @@
           "count": 2,
           "hours": 108,
           "weekly": 6,
-          "textbooks": 0,
+          "textbooks": 1,
           "subjects": [
             {
               "order": 1,
@@ -20577,8 +20565,7 @@
               "halfTerm": null,
               "chaptersTarget": 8,
               "chaptersPerWeek": 0.5,
-              "chapters": 0,
-              "status": "planned",
+              "chapters": 8,
               "origin": "base",
               "prereqCount": 1,
               "depth": 1
@@ -20676,7 +20663,7 @@
           "count": 5,
           "hours": 342,
           "weekly": 19,
-          "textbooks": 4,
+          "textbooks": 5,
           "subjects": [
             {
               "order": 6,
@@ -20740,8 +20727,7 @@
               "halfTerm": null,
               "chaptersTarget": 8,
               "chaptersPerWeek": 0.5,
-              "chapters": 0,
-              "status": "planned",
+              "chapters": 8,
               "origin": "base",
               "prereqCount": 1,
               "depth": 3
@@ -20939,26 +20925,26 @@
         "electives": 0,
         "hours": 1098,
         "chaptersTarget": 144,
-        "textbookSubjects": 13,
-        "baseSubjects": 9,
+        "textbookSubjects": 15,
+        "baseSubjects": 11,
         "extSubjects": 2,
         "hbSubjects": 2,
-        "baseHours": 594,
+        "baseHours": 702,
         "extHours": 90,
         "hbHours": 180,
-        "baseChapters": 88,
+        "baseChapters": 104,
         "extChapters": 138,
         "hbChapters": 12,
-        "baseNonWs": 764804,
+        "baseNonWs": 890400,
         "extNonWs": 214152,
         "hbNonWs": 22578,
-        "coverageBaseHours": 54.1,
-        "textbookHours": 864,
-        "chapters": 238,
-        "hanzi": 772316,
-        "nonWs": 1001534,
-        "coverageSubjects": 76.5,
-        "coverageHours": 78.7,
+        "coverageBaseHours": 63.9,
+        "textbookHours": 972,
+        "chapters": 254,
+        "hanzi": 868092,
+        "nonWs": 1127130,
+        "coverageSubjects": 88.2,
+        "coverageHours": 88.5,
         "semesterSpan": "4–10",
         "peakWeekly": 19,
         "peakSemester": 6
@@ -23638,18 +23624,6 @@
       "icon": "👁️",
       "missing": [
         {
-          "slug": "01-erbihou-jiepou-shengli",
-          "title": "耳鼻喉解剖生理学",
-          "type": "Core",
-          "semester": 4,
-          "hours": 54,
-          "body": {
-            "chapters": 8,
-            "chars": 129550
-          },
-          "note": "教学章已有正文（8 章 / 13.0 万字），未接教材出版线"
-        },
-        {
           "slug": "02-kouqiang-jiepou-shengli",
           "title": "口腔解剖生理学",
           "type": "Core",
@@ -23660,18 +23634,6 @@
             "chars": 109960
           },
           "note": "教学章已有正文（8 章 / 11.0 万字），未接教材出版线"
-        },
-        {
-          "slug": "10-yanke-yingxiang-jiancha",
-          "title": "眼科影像与检查技术",
-          "type": "Build",
-          "semester": 6,
-          "hours": 54,
-          "body": {
-            "chapters": 8,
-            "chars": 51454
-          },
-          "note": "教学章已有正文（8 章 / 5.1 万字），未接教材出版线"
         },
         {
           "slug": "11-kouqiang-hemian-waike",
@@ -23877,10 +23839,10 @@
   "checks": {
     "curriculumSubjects": 189,
     "curriculumHours": 11547,
-    "diskChapters": 2137,
-    "diskHanzi": 30289649,
+    "diskChapters": 2153,
+    "diskHanzi": 30385425,
     "registryFiles": 100,
-    "subjectsWithoutTextbook": 49,
+    "subjectsWithoutTextbook": 47,
     "unmatchedRegistrySubjects": []
   }
 }

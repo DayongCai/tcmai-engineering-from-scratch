@@ -1,0 +1,24 @@
+%% 内容依据：textbooks/08-wuguan/01-erbihou-jiepou-shengli/03-第3章-鼻与鼻窦.md §N.1
+%% 图 3-1 从鼻前孔到后鼻孔：一段路、三处分叉
+%% §N.1：鼻是三腔串成的一条路，门户只有两个（鼻前孔、后鼻孔）。
+%% §01.03.01.02 三处开口：下鼻道前端鼻泪管、中鼻道为额窦与上颌窦及筛窦前中组、
+%%   上鼻道为筛窦后组，蝶窦开口于蝶筛隐窝。
+%% §01.03.01.03 嗅区在上鼻甲内侧面与对应鼻中隔上部；呼吸区占其余大部。
+%% 本图只画路与分叉，不给长度、面积与角度（本章口径：随个体差异，不给具体数）。
+graph TD
+    A["鼻前孔<br/>外鼻入口"] --> B["鼻前庭<br/>鼻毛滤尘"]
+    B --> C["鼻阈<br/>鼻内孔最窄"]
+    C --> D["固有鼻腔<br/>呼吸区为主"]
+    D --> E["后鼻孔<br/>通鼻咽"]
+    D --> F["嗅区<br/>上鼻甲与中隔上部"]
+    D --> G["三个鼻道<br/>各有开口"]
+    G --> H["下鼻道<br/>鼻泪管开口"]
+    G --> I["中鼻道<br/>额窦上颌前筛"]
+    G --> J["上鼻道<br/>后筛与蝶窦"]
+
+    classDef pass fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef zone fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef out fill:#fbf8f2,stroke:#b9a992,stroke-width:1.1px,color:#1f1b16
+    class A,B,C pass
+    class D,F,G zone
+    class E,H,I,J out

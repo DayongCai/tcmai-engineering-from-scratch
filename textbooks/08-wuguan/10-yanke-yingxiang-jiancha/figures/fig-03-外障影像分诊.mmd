@@ -1,0 +1,29 @@
+%% 内容依据：textbooks/08-wuguan/10-yanke-yingxiang-jiancha/03-第3章-外障的影像辅助.md §N.1
+%% 图 3-1 外障的影像分诊：先问四类信息够不够，再按五条情形分流
+%%   三层结构即正文 §N.1.1 与 §N.1.2：裂隙灯给四类信息（形态·层次·血管·染色）→ 够用则文字记录；
+%%   不够则按五条加分情形分流为三类项目（照相对应其一/其四/其五，特殊投照对应其二，断层对应其三）。
+%%   末层三项（所见五格·解释写活动期或静止期·建议写复查或转诊）取自 §N.4「报告与责任」。
+graph TD
+    A["主诉与体征<br/>目赤 · 生翳 · 碜涩流泪"] --> B["裂隙灯四类信息<br/>表面形态 · 层次深度 · 血管形态 · 染色分布"]
+    B --> C{"四类信息是否够用"}
+    C -->|够用| D["文字记录即可<br/>五格写全，本次不留影"]
+    C -->|不够| E["按五条加分情形分流"]
+    E --> F["其一 跨人跨时比对<br/>其四 趋势记不住<br/>其五 转诊 · 教学 · 质控"]
+    E --> G["其二 位置难以稳定观察<br/>极周边 · 上穹窿 · 眦角深处"]
+    E --> H["其三 深度影响处置<br/>溃疡底 · 后弹力层"]
+    F --> I["标准位照相<br/>同投照位 · 同光照 · 定间隔"]
+    G --> I
+    H --> J["前节断层<br/>厚度 · 层次 · 界面"]
+    I --> K["报告三段<br/>所见用五格 · 解释写活动期或静止期 · 建议写复查或转诊"]
+    J --> K
+
+    classDef ask fill:#eef2e8,stroke:#4a7c59,stroke-width:2.2px,color:#1f1b16
+    classDef gate fill:#fdf6e8,stroke:#c9a227,stroke-width:1.6px,color:#1f1b16
+    classDef item fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef act fill:#fbf8f2,stroke:#b9a992,stroke-width:1.1px,color:#3a332c
+    classDef endn fill:#f0ece2,stroke:#8a5a2b,stroke-width:1.6px,color:#1f1b16
+    class A ask
+    class C,E gate
+    class B,D item
+    class F,G,H act
+    class I,J,K endn

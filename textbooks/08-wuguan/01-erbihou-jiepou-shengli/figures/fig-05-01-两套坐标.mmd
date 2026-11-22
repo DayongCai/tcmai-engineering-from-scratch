@@ -1,0 +1,34 @@
+%% 内容依据：textbooks/08-wuguan/01-erbihou-jiepou-shengli/05-第5章-口腔与涎腺.md §N.1
+%% 图 5-1 口腔的两套坐标：牙的四区与舌的界沟
+%% 左栏牙位记录的三层（区—位—序列），右栏舌背以界沟分前后；两栏都落到同一条记录纪律上。
+%% §N.1 原文「两套坐标，是牙的四区与舌的界沟」「一腔两部、两套坐标、三条管口」
+%% §N.2 原文「这里的左右是患者的左右，不是观察者的左右」「一个完整的牙位由「区」与「位」两段构成」
+%% §N.3 原文「界沟呈 V 形，尖向后」「轮廓乳头沿界沟前方排成一列 V 形」「沟尖端后方的小凹是舌盲孔」
+graph TB
+    subgraph Q["牙：四区法（三层）"]
+        A["一层 · 分区<br/>右上 · 左上 · 左下 · 右下<br/>左右以患者为准"]
+        B["二层 · 排序<br/>区内自中线向后递增<br/>中切牙为区内第一位"]
+        C["三层 · 序列<br/>恒牙列：中切牙至第三磨牙<br/>乳牙列：乳中切牙至第二乳磨牙"]
+        A --> B
+        B --> C
+    end
+
+    subgraph T["舌：界沟分前后"]
+        D["界沟<br/>V 形，尖向后<br/>轮廓乳头沿其前方排列"]
+        E["舌体（前）<br/>一般感觉归下颌支<br/>味觉归面神经"]
+        F["舌根（后）<br/>一般感觉与味觉归舌咽"]
+        G["盲孔<br/>界沟尖端之后<br/>甲状舌管残余开口"]
+        D --> E
+        D --> F
+        D --> G
+    end
+
+    C --> R["记录：先定坐标，再写所见<br/>区 → 位 → 序列；舌体与舌根分开记"]
+    F --> R
+
+    classDef spec fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef tongue fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef rule fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class A,B,C spec
+    class D,E,F,G tongue
+    class R rule

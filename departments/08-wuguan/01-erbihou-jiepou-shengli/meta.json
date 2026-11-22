@@ -22,8 +22,15 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/08-wuguan/01-erbihou-jiepou-shengli",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 8,
+    "words": 45104,
+    "layer": "rewrite",
+    "origin": "course-rewrite",
+    "createdAt": "2026-11-22",
+    "toc": "00-目录-四级编码.md",
+    "tocScale": "8 章 / 22 节 / 48 单元",
+    "reference": "standards/erbihou-jiepou-shengli/reference-courseware.json#耳的解剖与生理（课件·仅元数据）",
+    "referenceUsage": "只核对主题范围与写法取向；正文未取得（封面页 OCR + 62 页/2.12 万字元数据），不引数值、不引图、不作引用来源",
+    "sourceNote": "主源为课程正文 147,846 字（8 章）；外源课件仅取到封面与元数据，逐章「参考状态」与附录B 已如实登记"
   }
 }

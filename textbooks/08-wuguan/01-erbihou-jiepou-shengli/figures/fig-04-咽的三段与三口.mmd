@@ -1,0 +1,22 @@
+%% 内容依据：textbooks/08-wuguan/01-erbihou-jiepou-shengli/04-第4章-咽喉的解剖.md §N.1
+%% 图 4-1 咽的三段与各自的关键结构
+%% §01.04.01.01：鼻咽在软腭平面以上，口咽在软腭与会厌上缘之间，
+%%   喉咽在会厌上缘至环状软骨下缘之间；鼻咽两侧壁有咽鼓管咽口与咽隐窝，
+%%   口咽侧壁为腭扁桃体，喉咽两侧为梨状窝（异物易嵌顿处），前通喉腔。
+%% 本图只画分段与开口，不给咽长、咽壁厚度（本章口径）。
+graph TD
+    R["咽：共用通道<br/>颅底至第六颈椎"] --> N1["鼻咽<br/>软腭平面以上"]
+    R --> N2["口咽<br/>软腭至会厌上缘"]
+    R --> N3["喉咽<br/>会厌上缘至环状软骨"]
+    N1 --> A1["咽鼓管咽口<br/>经此通鼓室"]
+    N1 --> A2["咽隐窝<br/>鼻咽癌好发"]
+    N2 --> B1["腭扁桃体<br/>淋巴环内环"]
+    N3 --> C1["梨状窝<br/>异物易嵌顿"]
+    N3 --> C2["喉口<br/>前通喉腔"]
+
+    classDef trunk fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef seg fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef leaf fill:#fbf8f2,stroke:#b9a992,stroke-width:1.1px,color:#1f1b16
+    class R trunk
+    class N1,N2,N3 seg
+    class A1,A2,B1,C1,C2 leaf

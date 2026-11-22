@@ -1,0 +1,39 @@
+{
+  "note": "参考登记：只登记元数据与使用边界。该文件为第三方课件（原创力文档），页面不含正文文本、需付费下载，本项目未取得正文，也未把其内容写入教材。",
+  "role": "reference-metadata-only",
+  "title": "耳的解剖与生理——耳鼻喉[精品]课件",
+  "kind": "课件（PDF，62 页，约 2.12 万字）",
+  "source": {
+    "url": "https://max.book118.com/html/2021/0611/8000070141003107.shtm",
+    "site": "原创力文档（max.book118.com）",
+    "publishedAt": "2021-06-13（重庆）",
+    "fetchedAt": "2026-11-22",
+    "fetchedSha256Prefix": null,
+    "extraction": {
+      "result": "cover-only",
+      "attempts": [
+        "curl 页面 HTML（54,383 B）：只有导航、标题与统计信息，无正文文本（`耳廓`/`鼓膜` 命中 0）",
+        "移动版 m.book118.com：同样无正文（`耳廓`/`鼓膜` 命中 0）",
+        "页面内 text API（index.php?g=Home&m=View&a=getPageText&aid=…）：404",
+        "分页变体 …_1.shtm / …_2.shtm 与 getDocPage API：全部 404",
+        "页面内唯一图片 URL（img.book118.com/sr1/M00/10/08/…png，800×600，87,752 B）：可下载，**经 OCR 确认是封面页**"
+      ],
+      "ocrOfCover": "「耳的解剖与生理」「anatomy and physiology of ear」（rapidocr，置信度 0.83 / 0.96）",
+      "reason": "62 页正文由前端按页加载且需 VIP 下载；未绕过付费墙。可公开取得的只有：标题页 1 张 + 元数据"
+    }
+  },
+  "usableFor": [
+    "确认本课第 1–2 章（耳部解剖与生理）在通行课件中的**主题范围**：耳廓与外耳道、鼓膜、中耳（鼓室/听骨链/咽鼓管/乳突）、内耳（骨迷路/膜迷路/位觉与听觉感受器）",
+    "确认「解剖 + 生理」并重的写法（不是纯形态学）"
+  ],
+  "notUsableFor": [
+    "任何具体数值（尺寸、频率、分贝、时长）——未取得正文，不得据标题推定",
+    "任何条文引用（课件无稳定可引条目）",
+    "图片：课件图片版权归上传者，本项目一律自绘"
+  ],
+  "courseSourcesUsedInstead": [
+    "departments/08-wuguan/01-erbihou-jiepou-shengli/chapters/*/docs/zh.md（8 章 / 147,846 汉字，本项目自撰课程正文）",
+    "《中医耳鼻喉科学》章目级框架（耳与脏腑、耳与经络、五轮之外的耳部归属）",
+    "通行人体解剖学骨架（外耳/中耳/内耳三段划分、鼻窦四组、咽分三部、喉软骨与喉腔分区）"
+  ]
+}

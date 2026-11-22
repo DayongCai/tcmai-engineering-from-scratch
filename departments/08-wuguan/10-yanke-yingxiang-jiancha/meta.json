@@ -22,8 +22,15 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/08-wuguan/10-yanke-yingxiang-jiancha",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 8,
+    "words": 50672,
+    "layer": "rewrite",
+    "origin": "course-rewrite",
+    "createdAt": "2026-11-22",
+    "toc": "00-目录-四级编码.md",
+    "tocScale": "8 章 / 22 节 / 48 单元",
+    "reference": "standards/yanke-yingxiang-jiancha/reference-consensus.json#眼科影像检查规范专家共识（2026版）",
+    "referenceUsage": "只取条目框架与判据要点、按「共识·第X节」引用；不搬原文、不存原件、不把共识当法规",
+    "sourceNote": "课程正文由《中医眼科学》（06）与《医学数据安全与隐私》（14）合成；外源教材检索失败（已登记），2026-11-22 补入共识并逐章加 N.6"
   }
 }

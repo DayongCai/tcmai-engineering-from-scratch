@@ -1,0 +1,28 @@
+%% 内容依据：textbooks/08-wuguan/10-yanke-yingxiang-jiancha/08-第8章-影像数据的隐私与合规.md §N.1
+%% 图 8-1 眼科影像为何属敏感个人信息：三条来路汇到一处，落到四类义务
+%%   原文「一般的医学影像之所以敏感，是因为它指向健康。眼科影像多一层：它还指向身份」
+%%   三条来路：可识别性（文件头·时间·机构·文件名·面部边缘）、生物特征（虹膜纹理·视网膜血管）、
+%%   健康信息（诊断指向）；后果不对称——生物特征不可重置
+%%   四类义务（依现行规定，只写类别，不引条款号）：目的限定·最小必要·单独同意·更严的访问与留痕
+graph TD
+    A1["可识别性<br/>文件头·时间·机构·文件名·面部边缘"] --> C["敏感个人信息"]
+    A2["生物特征<br/>虹膜纹理·视网膜血管走行"] --> C
+    A3["健康信息<br/>诊断指向与随访轨迹"] --> C
+
+    C --> O1["目的限定"]
+    C --> O2["最小必要"]
+    C --> O3["单独同意"]
+    C --> O4["更严的访问与留痕"]
+
+    A2 -.-> X["不可重置：<br/>泄露即永久"]
+    O2 -.-> Y["落点在采集端：<br/>只采所需·标识与内容分离·不落私设备"]
+    O4 -.-> Z["落点在字段：<br/>去标识须逐字段定边界"]
+
+    classDef src fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.5px,color:#1f1b16
+    classDef hub fill:#eef2e8,stroke:#4a7c59,stroke-width:2.2px,color:#1f1b16
+    classDef obj fill:#fbf8f2,stroke:#b9a992,stroke-width:1.1px,color:#1f1b16
+    classDef warn fill:#fdf1ef,stroke:#b5443a,stroke-width:1.2px,color:#6b6156
+    class A1,A2,A3 src
+    class C hub
+    class O1,O2,O3,O4 obj
+    class X,Y,Z warn
