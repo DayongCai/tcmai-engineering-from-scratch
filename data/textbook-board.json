@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 2285787,
+    "gapWithBodyChars": 2007142,
     "gapNoBody": 0
   },
   "totals": {
@@ -23521,9 +23521,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 71030
+            "chars": 42207
           },
-          "note": "教学章已有正文（10 章 / 7.1 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.2 万字），未接教材出版线"
         },
         {
           "slug": "09-zhongyi-dashuju-fenxi",
@@ -23533,9 +23533,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 192338
+            "chars": 34510
           },
-          "note": "教学章已有正文（8 章 / 19.2 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.5 万字），未接教材出版线"
         },
         {
           "slug": "10-llm-yu-zhongyi-zhinengti",
@@ -23545,9 +23545,9 @@
           "hours": 90,
           "body": {
             "chapters": 12,
-            "chars": 136649
+            "chars": 44655
           },
-          "note": "教学章已有正文（12 章 / 13.7 万字），未接教材出版线"
+          "note": "教学章已有正文（12 章 / 4.5 万字），未接教材出版线"
         },
         {
           "slug": "11-zhongyi-jiqiren-xue",
