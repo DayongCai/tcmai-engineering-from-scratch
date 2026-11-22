@@ -79,8 +79,8 @@
 <tr><td>有教材学科</td><td>`textbooks/&lt;dept&gt;/&lt;subject&gt;/` 下存在章文件；按 `meta.json` 的 `layer` 分底本 / 外源</td><td>文件系统 + `meta.json`</td><td class="num">143（底本 123 + 外源 2）</td></tr>
 <tr><td>外源补录</td><td>`external-registry.json` 中 `status=fetched` 的条数；sha256 = 原始页面字节</td><td>`standards/materials/textbooks-batch/external-registry.json`</td><td class="num">2 部 → 2 学科 / 214,152 字符</td></tr>
 <tr><td>教材章数</td><td>匹配 `^d+-第d+章.*.md` 的文件计数（不含 00-前言），底本 / 外源分列</td><td>`textbooks/**`</td><td class="num">2,161（底本 1,893 + 外源 138）</td></tr>
-<tr><td>正文汉字</td><td>上述文件 `[\u4e00-\u9fa5]` 字符数（纯汉字，不含标点）</td><td>`textbooks/**`（磁盘实算）</td><td class="num">30,428,374</td></tr>
-<tr><td>正文规模</td><td>上述文件去掉空白的字符数（与 `textbooks/README.md` 的「万字」同口径）</td><td>`textbooks/**`（磁盘实算）</td><td class="num">36,690,092</td></tr>
+<tr><td>正文汉字</td><td>上述文件 `[\u4e00-\u9fa5]` 字符数（纯汉字，不含标点）</td><td>`textbooks/**`（磁盘实算）</td><td class="num">30,428,215</td></tr>
+<tr><td>正文规模</td><td>上述文件去掉空白的字符数（与 `textbooks/README.md` 的「万字」同口径）</td><td>`textbooks/**`（磁盘实算）</td><td class="num">36,689,801</td></tr>
 <tr><td>源表字数</td><td>`registry.json` 每条的 `chars` 求和（解析源工作簿所得，含标点）</td><td>`standards/materials/textbooks-batch/registry.json`</td><td class="num">28,596,788</td></tr>
 <tr><td>meta.words</td><td>`departments/**/meta.json` 的 `textbook.words` 求和（导入时写死）</td><td>`meta.json`</td><td class="num">34,189,113</td></tr>
 <tr><td>源工作簿份数</td><td>`registry.json` 中 `file` 去重计数（经络腧穴学一份源件拆两门）</td><td>`registry.json` · `sourceDir`</td><td class="num">100</td></tr>
@@ -112,7 +112,7 @@
 <tr><td class="num">5</td><td>🩺 护理系<br><span class="meta">中医护理特色技术 + 现代护理全科能力</span></td><td class="num">27<br><span class="meta">27+0</span></td><td class="num">1,494</td><td class="num">25<br><span class="meta">底23+外0+手2</span></td><td class="num">78.3% → 90.4%<br><span class="bar"><span style="width:90.4%;background:var(--jade)"></span></span></td><td class="num">394</td><td class="num">780.1 万</td><td class="num">2–10</td><td class="num">15<br><span class="meta">第 5 学期</span></td></tr>
 <tr><td class="num">6</td><td>📊 管理系<br><span class="meta">中医药治理、政策、教育与卫生经济、卫生信息化</span></td><td class="num">26<br><span class="meta">17+9</span></td><td class="num">1,296</td><td class="num">17<br><span class="meta">底15+外0+手2</span></td><td class="num">52.8% → 66.7%<br><span class="bar"><span style="width:66.7%;background:var(--gold)"></span></span></td><td class="num">274</td><td class="num">549.8 万</td><td class="num">4–10</td><td class="num">20<br><span class="meta">第 7 学期</span></td></tr>
 <tr><td class="num">7</td><td>🤖 智能系<br><span class="meta">中医 x 人工智能：架构、数据、模型、设备与治理（本项目的工程引擎）</span></td><td class="num">19<br><span class="meta">18+1</span></td><td class="num">1,260</td><td class="num">7<br><span class="meta">底5+外0+手2</span></td><td class="num">22.9% → 37.1%<br><span class="bar"><span style="width:37.1%;background:var(--red)"></span></span></td><td class="num">106</td><td class="num">53.3 万</td><td class="num">3–10</td><td class="num">17<br><span class="meta">第 6 学期</span></td></tr>
-<tr><td class="num">8</td><td>👁️ 五官口腔系<br><span class="meta">眼、耳鼻喉、口腔三科的经典辨证与现代诊疗技术</span></td><td class="num">17<br><span class="meta">17+0</span></td><td class="num">1,098</td><td class="num">16<br><span class="meta">底12+外2+手2</span></td><td class="num">68.9% → 93.4%<br><span class="bar"><span style="width:93.4%;background:var(--jade)"></span></span></td><td class="num">262</td><td class="num">118.4 万</td><td class="num">4–10</td><td class="num">19<br><span class="meta">第 6 学期</span></td></tr>
+<tr><td class="num">8</td><td>👁️ 五官口腔系<br><span class="meta">眼、耳鼻喉、口腔三科的经典辨证与现代诊疗技术</span></td><td class="num">17<br><span class="meta">17+0</span></td><td class="num">1,098</td><td class="num">16<br><span class="meta">底12+外2+手2</span></td><td class="num">68.9% → 93.4%<br><span class="bar"><span style="width:93.4%;background:var(--jade)"></span></span></td><td class="num">262</td><td class="num">118.3 万</td><td class="num">4–10</td><td class="num">19<br><span class="meta">第 6 学期</span></td></tr>
 <tr><td class="num">9</td><td>🧬 基础医学院<br><span class="meta">形态 · 功能 · 病理 · 药理四条基线：中医概念落地前必须先有的正常与异常人体图景</span></td><td class="num">17<br><span class="meta">17+0</span></td><td class="num">1,035</td><td class="num">16<br><span class="meta">底14+外0+手2</span></td><td class="num">79.1% → 96.5%<br><span class="bar"><span style="width:96.5%;background:var(--jade)"></span></span></td><td class="num">303</td><td class="num">615 万</td><td class="num">1–10</td><td class="num">14<br><span class="meta">第 2 学期</span></td></tr>
 <tr><td></td><td><b>合计</b></td><td class="num">189</td><td class="num">11,547</td><td class="num">143<br><span class="meta">底123+外2+手18</span></td><td class="num">62% → 76.8%</td><td class="num">2,161</td><td class="num">3669 万</td><td class="num">—</td><td class="num">—</td></tr>
 </tbody></table>
@@ -259,7 +259,7 @@
 </div></div>
 <div class="card">
 <h4>👁️ 五官口腔系</h4>
-<div class="meta">17 门 · 1,098 学时 · 教材 16/17（底本 12 + 外源 2 + 手册 2 · 学时覆盖 底本 68.9% → 93.4%）· 章 262 · 正文 118.4 万</div>
+<div class="meta">17 门 · 1,098 学时 · 教材 16/17（底本 12 + 外源 2 + 手册 2 · 学时覆盖 底本 68.9% → 93.4%）· 章 262 · 正文 118.3 万</div>
 <div class="flow">
 <div class="sem"><span class="sn">第4学期</span><span class="c">耳鼻喉解剖生理学 <span class="cw">3×18</span><span class="cw">←1/d1</span> <br>口腔解剖生理学 <span class="cw">3×18</span><span class="cw">←1/d1</span> </span><span class="cw">2门 · 108h · 周6</span></div>
 <div class="sem"><span class="sn">第5学期</span><span class="c">中医面部望诊学 <span class="cw">3×18</span><span class="cw">←2/d2</span> <span class="pill s-wip">外源</span><br>眼科光学与验光 <span class="cw">3×18</span><span class="cw">←1/d2</span> <br>中医五官科经典选读 <span class="cw">2×18（或1–9周×4）</span><span class="cw">←2/d2</span> <span class="pill s-wip">外源</span></span><span class="cw">3门 · 144h · 周8</span></div>
@@ -353,7 +353,7 @@
 <li><b>先修图的两类弱点</b>：① 已把「空 prereq」的两种含义分开 —— 真根课须在 <code>data/prereq-roots.json</code> 登记理由（17 条），未登记的空 prereq 会被审计报成「漏声明」（现 0 门）；但「登记了理由」仍是作者判断，不是教务处文件。② 改边须同时改 <code>scripts/migrate_prereq.js</code> 的表并重跑（幂等），直接手改 <code>curriculum.json</code> 会在下一次迁移被覆盖。</li>
 <li><b>第 9/10 学期有课、无教材无视频</b>：18 门轮转/毕设课已进 <code>curriculum.json</code> 并落了目录与章节知识结构，但教材（0 章）与课程文档（0 章）都还没写，`textbooks/build_book.js --volume 4/5` 仍是空卷 —— 空的原因是没稿子，不是没课。</li>
 <li><b>源件不在仓库</b>：100 份 `qhzy-*.xlsx`（约 51 MB）留在桌面，入库的只有 `sha256` + 章表 + 字数；改源件后必须重跑 `node scripts/import_textbooks.js`。</li>
-<li><b>三种字数口径并存</b>：磁盘汉字 30,428,374 / 去空白字符 36,690,092（= README 的「万字」口径）/ 源表 chars 28,596,788。三者在同一仓库里不矛盾，但引用时须说明用的是哪一个。</li>
+<li><b>三种字数口径并存</b>：磁盘汉字 30,428,215 / 去空白字符 36,689,801（= README 的「万字」口径）/ 源表 chars 28,596,788。三者在同一仓库里不矛盾，但引用时须说明用的是哪一个。</li>
 </ul></div></div>
 <h2>对账例外（教材 ≠ 源表）</h2>
 <table><thead><tr><th>学科</th><th>标记</th><th>说明</th></tr></thead><tbody>

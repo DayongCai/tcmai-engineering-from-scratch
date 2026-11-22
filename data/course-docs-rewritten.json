@@ -33,6 +33,38 @@
       "words": 25099,
       "at": "2026-11-22",
       "note": "中医嗓音医学：按章题重写并纠正 05–08 主题错位；引《重樓玉鑰》原文（书名·篇名级）；无剂量、无分期阈值"
+    },
+    {
+      "dept": "08-wuguan",
+      "subject": "08-zhongyi-kouqiang-kexue",
+      "chapters": 10,
+      "words": 28934,
+      "at": "2026-11-22",
+      "note": "中医口腔科学：10 章重写；与教材 10 章章题逐章对齐；方名限公认成方"
+    },
+    {
+      "dept": "08-wuguan",
+      "subject": "09-kouqiang-neike-xue",
+      "chapters": 10,
+      "words": 33854,
+      "at": "2026-11-22",
+      "note": "口腔内科：10 章重写；阈值/分级/剂量留白，只给可执行观察项"
+    },
+    {
+      "dept": "08-wuguan",
+      "subject": "04-yanke-guangxue-yanguang",
+      "chapters": 8,
+      "words": 25476,
+      "at": "2026-11-22",
+      "note": "眼视光学：8 章重写；纠正两处教材算例（−15.00 D/0.3 D、2mm 轴长「抵掉大半」）"
+    },
+    {
+      "dept": "08-wuguan",
+      "subject": "06-zhongyi-yanke-xue",
+      "chapters": 10,
+      "words": 25784,
+      "at": "2026-11-22",
+      "note": "中医眼科学：10 章按章题重写，纠正 3/6/7/8/9/10 章内容错位；MOTTO 逐条对《审视瑶函》《银海精微》等"
     }
   ]
 }
