@@ -27,6 +27,8 @@ const TIAOBIAN = BOOK.books.find((b) => b.id === 'tiaobian');
 
 /** 三篇共用的篇名（原文作繁体，「風」不作「风」） */
 const PIAN_NAME = '風温、温熱、温疫、温毒、冬温';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 /** 卷 → 三焦名 */
 const STAGE_OF_JUAN = { '卷一': '上焦', '卷二': '中焦', '卷三': '下焦' };
@@ -247,6 +249,103 @@ if (require.main === module) {
   }
   console.log('\n  闸（原文明写的不可与）：');
   for (const g of p.gates) console.log(`  ${g.at} ${g.what}：「${g.quote}」`);
+
+  const a = docAudit();
+  console.log('\n  正文与 quiz 对账（读 docs/zh.md）');
+  for (const f of a.facts) console.log(`  ${f.got === f.want ? '✓' : '✗'} ${f.label} 现算 ${f.got} · 正文 ${f.want}`);
+  console.log(`  quiz ${a.quiz.total} 题（pre ${a.quiz.stage.pre} / check ${a.quiz.stage.check} / post ${a.quiz.stage.post}）· check 接地 ${a.quiz.groundedChecks} 道 · 答案 ${a.quiz.answers.join('/')}`);
 }
 
-module.exports = { BOOK, TIAOBIAN, PIAN_NAME, pians, fangByStage, xingan, progression, totals, formulaIndex, index, MARKS };
+/* ── 正文与 quiz 的对账：正文写死的数逐格回底本复算 ── */
+
+function hanzi(s) {
+  return (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+}
+
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizAudit(raw) {
+  const qs = JSON.parse(raw).questions || [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const rows = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    return { stage: q.stage, options: opts.length, correct: q.correct, explainHanzi: hanzi(q.explain), right: String(opts[q.correct] || '') };
+  });
+  return {
+    total: qs.length,
+    stage,
+    rows,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    allFour: rows.every((r) => r.options === 4),
+    badCorrect: rows.filter((r) => !(Number.isInteger(r.correct) && r.correct >= 0 && r.correct < 4)).length,
+    minExplain: Math.min(...rows.map((r) => r.explainHanzi)),
+    scaffold: /三辨|四位面|单元规模|本章实测/.test(raw),
+  };
+}
+
+function docAudit() {
+  const doc = fs.readFileSync(DOC, 'utf8');
+  const qraw = fs.readFileSync(QUIZ, 'utf8');
+  const t = totals();
+  const fbs = fangByStage();
+  const x = xingan();
+  const grab = (re, label) => {
+    const m = re.exec(doc);
+    if (!m) throw new Error(`正文里定位不到「${label}」`);
+    return m.slice(1).map((v) => Number(String(v).replace(/,/g, '')));
+  };
+
+  const [docPian, docTiao, docFang, docYou, docHu] = grab(/篇 (\d+) · 条 (\d+) · 方条 (\d+)（(\d+) \+ (\d+)）/, '三篇规模').map(Number);
+  const [docHerb, docDistinct] = grab(/出现 \*\*(\d+) 次\*\* · 不同药名 \*\*(\d+)\*\*/, '药味统计');
+  const stageRows = [...doc.matchAll(/^\| (上焦|中焦|下焦) \| (\d+) \| (\d+) \| (\d+) \| (\d+) \| ([\d.]+) \| (\d+) \| (\d+) \|$/gm)]
+    .map((m) => ({ stage: m[1], tiao: +m[2], fang: +m[3], youFang: +m[4], hujian: +m[5], per: +m[6], herbTokens: +m[7], distinctHerbs: +m[8] }));
+  if (stageRows.length !== 3) throw new Error('正文三篇分工表不是 3 行');
+  const xRows = [...doc.matchAll(/^\| (上焦|中焦|下焦) \| (\d+) \| (\d+) \| (\d+) \| (\d+) \| (\d+) \|$/gm)]
+    .map((m) => ({ stage: m[1], tiao: +m[2], xin: +m[3], fu: +m[4], cross: +m[5], untagged: +m[6] }));
+  if (xRows.length !== 3) throw new Error('正文「按焦分布」表不是 3 行');
+  const [docXin, docFu, docCross, docUntagged] = grab(/新感 (\d+) · 伏邪 (\d+) · 交叉 (\d+) · 未标 (\d+)/, '词证四类');
+  const [docMarkXin, docMarkQi, docMarkFu, docMarkChun] = grab(/「新感」(\d+) 次、「伏气」(\d+) 次、「伏邪」(\d+) 次、「春温」(\d+) 次/, '全书四词计数');
+
+  const allText = TIAOBIAN.sections.flatMap((s) => s.articles.map((a) => a.zhHans)).join('\n');
+  const count = (w) => (allText.match(new RegExp(w, 'g')) || []).length;
+
+  const facts = [
+    { label: '篇 / 条 / 方条', got: `${t.pians}/${t.tiao}/${t.fang}`, want: `${docPian}/${docTiao}/${docFang}` },
+    { label: '有方文 / 互见', got: `${t.youFang}/${t.hujian}`, want: `${docYou}/${docHu}` },
+    { label: '药味次 / 不同药', got: `${t.herbTokens}/${t.distinctHerbs}`, want: `${docHerb}/${docDistinct}` },
+    { label: '新感/伏邪/交叉/未标', got: [x.totals.新感, x.totals.伏邪, x.totals.交叉, x.totals.未标].join('/'), want: [docXin, docFu, docCross, docUntagged].join('/') },
+    { label: '全书 新感/伏气/伏邪/春温', got: [count('新感'), count('伏气'), count('伏邪'), count('春温')].join('/'), want: [docMarkXin, docMarkQi, docMarkFu, docMarkChun].join('/') },
+    { label: '证据面 16/93 ≈ 17%', got: `${x.totals.新感 + x.totals.伏邪 + x.totals.交叉}/${t.tiao}`, want: `16/${t.tiao}` },
+  ];
+  for (const r of stageRows) {
+    const g = fbs.find((v) => v.stage === r.stage);
+    facts.push({ label: `${r.stage} 条/方/有方文/互见/方条比/药味/药名`, got: g ? [g.tiao, g.fang, g.youFang, g.hujian, g.per, g.herbTokens, g.distinctHerbs].join('/') : '缺', want: [r.tiao, r.fang, r.youFang, r.hujian, r.per, r.herbTokens, r.distinctHerbs].join('/') });
+  }
+  for (const r of xRows) {
+    const g = x.rows.find((v) => v.stage === r.stage);
+    facts.push({ label: `${r.stage} 新感/伏邪/交叉/未标`, got: g ? [g.新感.length, g.伏邪.length, g.交叉.length, g.未标].join('/') : '缺', want: [r.xin, r.fu, r.cross, r.untagged].join('/') });
+  }
+
+  const q = quizAudit(qraw);
+  const body = grams(doc);
+  const grounded = q.rows.filter((r) => r.stage === 'check' && [...grams(r.right)].some((v) => body.has(v))).length;
+  return {
+    facts,
+    quiz: { ...q, groundedChecks: grounded },
+    quotes: ['冬伤于寒，春必病温', '邪在阳明久羁', '春温内陷下痢', '中虚伏邪'].map((w) => ({
+      quote: w,
+      inDoc: doc.includes(w),
+      inSource: allText.includes(w),
+    })),
+  };
+}
+
+module.exports = { BOOK, TIAOBIAN, PIAN_NAME, pians, fangByStage, xingan, progression, totals, formulaIndex, index, MARKS, DOC, QUIZ, hanzi, grams, quizAudit, docAudit };

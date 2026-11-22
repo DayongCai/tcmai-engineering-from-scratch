@@ -34,6 +34,8 @@ const BOOK = BOOKS.find((b) => b.id === 'wenrelun');
 if (!BOOK) throw new Error('底本.json 缺 books[id=wenrelun]（《溫熱論》）');
 
 const ARTICLES = BOOK.sections[0].articles;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const byNo = new Map(ARTICLES.map((a) => [a.no, a]));
 
 /** 取一条原文（简体）；条号不存在直接抛，不返回 undefined */
@@ -315,6 +317,98 @@ if (require.main === module) {
   console.log(`  零命中：${g.withoutSignal.join('、')}`);
   console.log(`  多桶（≥2 层词同时出现）：${g.multi.length} 条 → ${g.multi.join('、')}`);
   console.log('\n  注：归类是本章归纳，原文无「四层」标签；舌诊/斑疹/验齿/妇人归其他，留给第 7 章。');
+
+  const a = docAudit();
+  console.log('\n  ── 正文与 quiz 对账（读 docs/zh.md）──');
+  for (const f of a.facts) console.log(`  ${f.got === f.want ? '✓' : '✗'} ${f.label} 现算 ${f.got} · 正文 ${f.want}`);
+  console.log(`  quiz ${a.quiz.total} 题（pre ${a.quiz.stage.pre} / check ${a.quiz.stage.check} / post ${a.quiz.stage.post}）· check 接地 ${a.quiz.groundedChecks} 道 · 答案 ${a.quiz.answers.join('/')}`);
+}
+
+/* ── 正文与 quiz 的对账：本章的数从底本算，再回正文核一遍 ── */
+
+function hanzi(s) {
+  return (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+}
+
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizAudit(raw) {
+  const qs = JSON.parse(raw).questions || [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const rows = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    return {
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(q.explain),
+      right: String(opts[q.correct] || ''),
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    rows,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    allFour: rows.every((r) => r.options === 4),
+    badCorrect: rows.filter((r) => !(Number.isInteger(r.correct) && r.correct >= 0 && r.correct < 4)).length,
+    minExplain: Math.min(...rows.map((r) => r.explainHanzi)),
+    scaffold: /三辨|四位面|单元规模|本章实测/.test(raw),
+  };
+}
+
+/** 正文写死的数 vs 底本现算：任一格不等即抛，不静默通过 */
+function docAudit() {
+  const doc = fs.readFileSync(DOC, 'utf8');
+  const qraw = fs.readFileSync(QUIZ, 'utf8');
+  const t = totals();
+  const d = distribution();
+  const p = permeate();
+  const g = gap();
+  const grab = (re, label) => {
+    const m = re.exec(doc);
+    if (!m) throw new Error(`正文里定位不到「${label}」`);
+    return m.slice(1).map((x) => Number(String(x).replace(/,/g, '')));
+  };
+
+  const [docJuan, docTiao, docFang, docHant] = grab(/(\d+) 卷 · (\d+) 条 · (\d+) 方 · 繁字 ([\d,]+)/, '《溫熱論》规模');
+  const [docOther, docSum] = grab(/11 条层论 \+ 1 条纲 \+ (\d+) 条诊断面与专论 = (\d+)/, '层纲其他合计');
+  const [docTou, docTouHits] = grab(/含「透」的 \*\*(\d+) 条\*\*（第 2、4、6、8、13、14、19、26、29、32 条），共 \*\*(\d+) 处\*\*/, '透族条数与处数');
+  const [docLiteral] = grab(/全篇只出现 \*\*(\d+) 次\*\*/, '透热转气字面次数');
+  const [docRecallHit, docRecallAll] = grab(/召回 \*\*(\d+)\/(\d+)\*\*/, '词表召回');
+  const [docZero] = grab(/\*\*(\d+) 条\*\*零命中/, '零命中条数');
+  const [docMulti] = grab(/\*\*(\d+) 条\*\*同时命中两个以上层词/, '多桶条数');
+  const [docShe, docBan, docChi, docFu, docZa] = grab(/舌诊 (\d+) · 斑疹 (\d+) · 验齿 (\d+) · 妇人 (\d+) · 杂论 (\d+)/, '其他分项');
+
+  const layers = d.卫.length + d.气.length + d.营.length + d.血.length;
+  const facts = [
+    { label: '卷 / 条 / 方 / 繁字', got: [t.sections, t.articles, t.formulas, t.charsHant].join('/'), want: [docJuan, docTiao, docFang, docHant].join('/') },
+    { label: '层论 + 纲 + 其他', got: `${layers}/${d.纲.length}/${d.其他.length}`, want: `11/1/${docOther}` },
+    { label: '三类合计 = 条', got: layers + d.纲.length + d.其他.length, want: docSum },
+    { label: '其他分项合计 = 其他', got: Object.values(d.kinds).reduce((a, b) => a + b, 0), want: docOther },
+    { label: '其他分项 舌/斑疹/齿/妇人/杂', got: [d.kinds.舌诊, d.kinds.斑疹, d.kinds.验齿, d.kinds.妇人, d.kinds.杂论].join('/'), want: [docShe, docBan, docChi, docFu, docZa].join('/') },
+    { label: '透 条 / 处', got: `${p.articles}/${p.hits}`, want: `${docTou}/${docTouHits}` },
+    { label: '「透热转气」字面', got: p.literal, want: docLiteral },
+    { label: '词表 召回 / 零命中 / 多桶', got: `${g.withSignal.length}/${g.withoutSignal.length}/${g.multi.length}`, want: `${docRecallHit}/${docZero}/${docMulti}` },
+  ];
+
+  const q = quizAudit(qraw);
+  const body = grams(doc);
+  const grounded = q.rows.filter((r) => r.stage === 'check' && [...grams(r.right)].some((x) => body.has(x))).length;
+  return {
+    facts,
+    quiz: { ...q, groundedChecks: grounded },
+    quotes: ['在卫汗之可也', '到气才可清气', '入营犹可透热转气', '入血就恐耗血动血，直须凉血散血'].map((w) => ({ quote: w, inDoc: doc.includes(w), inSource: art(8).zhHans.includes(w) })),
+    layerRows: ['卫', '气', '营', '血', '纲'].map((k) => ({ layer: k, n: d[k].length, nos: d[k] })),
+  };
 }
 
 module.exports = {
@@ -331,4 +425,8 @@ module.exports = {
   permeate,
   gap,
   totals,
+  DOC,
+  QUIZ,
+  quizAudit,
+  docAudit,
 };

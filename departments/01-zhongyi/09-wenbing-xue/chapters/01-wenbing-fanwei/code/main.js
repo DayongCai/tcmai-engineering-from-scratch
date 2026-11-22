@@ -221,6 +221,109 @@ function totals() {
   };
 }
 
+/* ── 正文与 quiz 的对账：本章的数从底本算，再回正文核一遍 ── */
+
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const HAN = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const hanzi = (s) => (String(s || '').match(HAN) || []).length;
+
+/** 正文里的连续汉字片段，用来判断一道题的正确选项是否「接地」 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+/** quiz 的结构、解释长度、接地、答案分布、脚手架残留 */
+function quizAudit(raw) {
+  const quiz = JSON.parse(raw);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const rows = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    return {
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(q.explain),
+      right: String(opts[q.correct] || ''),
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    rows,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    allFour: rows.every((r) => r.options === 4),
+    badCorrect: rows.filter((r) => !(Number.isInteger(r.correct) && r.correct >= 0 && r.correct < 4)).length,
+    minExplain: Math.min(...rows.map((r) => r.explainHanzi)),
+    scaffold: /三辨|四位面|单元规模|本章实测/.test(raw),
+  };
+}
+
+/**
+ * 本章正文写死的数与函数现算值逐条对读。
+ * 任一格不等，说明正文与代码已经分家 —— 这是本章最该先炸的地方。
+ */
+function docAudit() {
+  const doc = fs.readFileSync(DOC, 'utf8');
+  const qraw = fs.readFileSync(QUIZ, 'utf8');
+  const t = totals();
+  const j = jiuZhong();
+  const s = sourceTrace();
+  const st = shouTiao();
+  const c = critics();
+  const head = shangjiaoProfile()[0];
+
+  const grab = (re, label) => {
+    const m = re.exec(doc);
+    if (!m) throw new Error(`正文里定位不到「${label}」`);
+    return m.slice(1).map(Number);
+  };
+
+  const [docBooks, docSections, docArticles, docFormulas] = grab(/(\d+) 书 · (\d+) 节 · (\d+) 条（段）· (\d+) 方/, '三书规模');
+  const [docExplicit, docCont, docDistinct] = grab(/19 条里 \*\*(\d+) 条明标篇名，(\d+) 条承上条而无篇名，共 (\d+) 个不同篇名/, '原病篇篇名统计');
+  const docYuan = 19;
+  const [docSjTiao, docSjFang] = grab(/上焦篇 (\d+) 条 (\d+) 方是实际展开/, '上焦篇规模');
+  const [docHeadTiao, docHeadFang] = grab(/共 (\d+) 条 (\d+) 方，占上焦篇/, '首节规模');
+  const [docHeadPctTiao, docHeadPctFang] = grab(/占上焦篇 80 条的 (\d+)%、65 方的 (\d+)%/, '首节占比');
+  if (!/首四条中仅第四条带方，恰两方/.test(doc)) throw new Error('正文里定位不到「首四条带方」');
+  const [docFourTiao, docFourFang] = [1, 2];
+  const [docShuhe, docYouke, docJiayan, docYushi, docJingyue] = grab(/叔和 (\d+) 次、又可 (\d+) 次、嘉言 (\d+) 次、喻氏 (\d+) 次、景岳 (\d+) 次/, '批评对象频次');
+
+  const facts = [
+    { label: '三书 / 节 / 条 / 方', got: [t.books, t.sections, t.articles, t.formulas].join('/'), want: [docBooks, docSections, docArticles, docFormulas].join('/') },
+    { label: '原病篇 条 / 明标 / 承上 / 篇名', got: [s.total, s.explicit, s.continuation, s.distinct].join('/'), want: [docYuan, docExplicit, docCont, docDistinct].join('/') },
+    { label: '上焦篇 条 / 方', got: `${t.shangjiaoTiao}/${t.shangjiaoFang}`, want: `${docSjTiao}/${docSjFang}` },
+    { label: '首节 条 / 方', got: `${head.articles}/${head.formulas}`, want: `${docHeadTiao}/${docHeadFang}` },
+    { label: '首节 条占比 / 方占比', got: `${Math.round((100 * head.articles) / t.shangjiaoTiao)}/${Math.round((100 * head.formulas) / t.shangjiaoFang)}`, want: `${docHeadPctTiao}/${docHeadPctFang}` },
+    { label: '九种名单', got: j.count, want: 9 },
+    { label: '名单外标题', got: j.extra.length, want: 3 },
+    { label: '首四条带方条数 / 方数', got: `${st.filter((x) => x.formulas.length).length}/${st[3].formulas.length}`, want: `${docFourTiao}/${docFourFang}` },
+    { label: '批评对象 叔和/又可/嘉言/喻氏/景岳', got: [c.叔和, c.又可, c.嘉言, c.喻氏, c.景岳].join('/'), want: [docShuhe, docYouke, docJiayan, docYushi, docJingyue].join('/') },
+  ];
+
+  const q = quizAudit(qraw);
+  const body = grams(doc);
+  const grounded = q.rows.filter((r) => r.stage === 'check' && [...grams(r.right)].some((g) => body.has(g))).length;
+
+  return {
+    facts,
+    quiz: { ...q, groundedChecks: grounded },
+    /** 正文引文（书名·篇名）是否逐字落在底本自注里 —— 引文不许改字 */
+    quotes: (() => {
+      const note = article(shangjiaoHead(), '二').notes.join('\n');
+      const want = ['伤寒由毛窍而入，自下而上。始足太阳。', '温病由口鼻而入，自上而下，鼻通于肺，始手太隂。'];
+      return want.map((w) => ({ quote: w, inDoc: doc.includes(w), inSource: note.includes(w) }));
+    })(),
+  };
+}
+
 if (require.main === module) {
   const t = totals();
   console.log('');
@@ -267,6 +370,12 @@ if (require.main === module) {
   for (const r of dup) console.log(`  ${r.juan}${r.pian ? '·' + r.pian : ''}：${r.n} 条只有 ${r.distinct} 个号码`);
   console.log('');
   console.log('  教学边界：本输出为《温病条辨》文本结构与条文归属统计，逐条可回查底本.json，不构成诊疗依据。');
+
+  const a = docAudit();
+  console.log('\n── 正文与 quiz 对账 ──');
+  for (const f of a.facts) console.log(`  ${f.got === f.want ? '✓' : '✗'} ${f.label} 现算 ${f.got} · 正文 ${f.want}`);
+  for (const q of a.quotes) console.log(`  ${q.inDoc && q.inSource ? '✓' : '✗'} 引文逐字在正文与自注里：「${q.quote.slice(0, 14)}…」`);
+  console.log(`  quiz ${a.quiz.total} 题（pre ${a.quiz.stage.pre} / check ${a.quiz.stage.check} / post ${a.quiz.stage.post}）· check 接地 ${a.quiz.groundedChecks} 道 · 答案 ${a.quiz.answers.join('/')}`);
 }
 
 module.exports = {
@@ -285,4 +394,10 @@ module.exports = {
   shangjiao,
   shangjiaoHead,
   article,
+  DOC,
+  QUIZ,
+  hanzi,
+  grams,
+  quizAudit,
+  docAudit,
 };

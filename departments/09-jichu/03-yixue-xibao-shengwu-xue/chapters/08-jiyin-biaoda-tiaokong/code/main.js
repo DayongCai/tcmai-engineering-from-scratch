@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 医学细胞生物学 · 第 8 章 基因表达调控：本章统计口径
- * 课程: departments/09-jichu/03-yixue-xibao-shengwu-xue/chapters/08-jiyin-biaoda-tiaokong/docs/zh.md
- * 数据: standards/yixue-xibao-shengwu-xue/units.json（144 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yixue-xibao-shengwu-xue/chapter-map.json（课程章 → 教材单元号）
+ * 医学细胞生物学 · 第 8 章 基因表达调控：答案在「多少、何时、在哪」
+ * 正文: departments/09-jichu/03-yixue-xibao-shengwu-xue/chapters/08-jiyin-biaoda-tiaokong/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 可调点表与修饰表都从正文现抓。核心动作是读「时间尺度」那一列：把每个环节的尺度归到
+ * 秒 / 分钟 / 小时 / 分裂四级，再回答「一个要在多少时间内起效的响应，能用哪几层」。
  */
 
 'use strict';
@@ -15,87 +13,137 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yixue-xibao-shengwu-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+function tableRows(doc, keys) {
+  const lines = doc.split(/\r?\n/);
+  const head = lines.findIndex((l) => l.trim().startsWith('|') && keys.every((k) => l.includes(k)));
+  if (head < 0) throw new Error('正文里找不到表头: ' + keys.join(' / '));
+  const rows = [];
+  for (let i = head + 2; i < lines.length; i += 1) {
+    const l = lines[i].trim();
+    if (!l.startsWith('|')) break;
+    rows.push(l.split('|').slice(1, -1).map((c) => c.trim()));
   }
-  throw new Error('没找到 standards/yixue-xibao-shengwu-xue/units.json —— 章节目录是否已脱离仓库？');
+  if (!rows.length) throw new Error('表头之后没有数据行');
+  return rows;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yixue-xibao-shengwu-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yixue-xibao-shengwu-xue', 'chapter-map.json');
-const CHAPTER = '8';
-const SLUG = '08-jiyin-biaoda-tiaokong';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 把「秒到小时」「分钟到小时」这类说法拆成两端：最快能到哪一档、最慢到哪一档 */
+function unitRange(scale) {
+  const s = String(scale);
+  const hits = [];
+  if (s.includes('秒')) hits.push(1);
+  if (s.includes('分钟')) hits.push(2);
+  if (s.includes('小时')) hits.push(3);
+  if (s.includes('分裂')) hits.push(4);
+  if (!hits.length) throw new Error('认不出这个时间尺度: ' + s);
+  return { fast: Math.min(...hits), slow: Math.max(...hits) };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 兼容旧用法：只取最快那一档 */
+function unitRank(scale) {
+  return unitRange(scale).fast;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+const RANK_NAME = { 1: '秒', 2: '分钟', 3: '小时', 4: '细胞分裂' };
+
+/** 流水线上的可调点：环节 / 可调之处 / 时间尺度 / 典型机制 */
+function adjustablePoints(doc) {
+  return tableRows(doc, ['环节', '可调之处', '时间尺度']).map((r) => {
+    const range = unitRange(r[2]);
+    return {
+      stage: r[0],
+      knob: r[1],
+      scale: r[2],
+      fastRank: range.fast,
+      slowRank: range.slow,
+      mechanism: r[3],
+    };
+  });
+}
+
+/** 想在某个时限内起效，能用的只有最快一侧不超过该刻度的层 */
+function usableWithin(limitRank, doc) {
+  if (!RANK_NAME[limitRank]) throw new Error('刻度取值 1–4: ' + limitRank);
+  return (doc ? adjustablePoints(doc) : adjustablePoints(readDoc()))
+    .filter((p) => p.fastRank <= limitRank)
+    .map((p) => p.stage);
+}
+
+/** 哪一层最快、哪一层最慢（按两端分别取） */
+function extremes(doc) {
+  const list = doc ? adjustablePoints(doc) : adjustablePoints(readDoc());
+  const fast = [...list].sort((a, b) => a.fastRank - b.fastRank)[0];
+  const slow = [...list].sort((a, b) => b.slowRank - a.slowRank)[0];
+  return { fastest: fast.stage, slowest: slow.stage };
+}
+
+/** 修饰表：修饰 / 一般效应 / 备注 */
+function modifications(doc) {
+  return tableRows(doc, ['修饰', '一般效应', '备注']).map((r) => ({ mark: r[0], effect: r[1], note: r[2] }));
+}
+
+/** 读—写—擦：修饰不是静态标签，是三个动作的循环 */
+function readWriteErase(doc) {
+  const d = String(doc);
+  const m = d.match(/修饰是「([^」]+)」的循环/);
+  if (!m) throw new Error('正文里没有读—写—擦');
+  return { cycle: m[1].split('—').map((s) => s.replace(/[「」]/g, '').trim()) };
+}
+
+/** 「某处理使某基因上调」要追的三层：哪一层变了、可逆吗、平均还是分布 */
+function threeQuestions(doc) {
+  const d = String(doc);
+  const a = d.indexOf('任何「某处理使某基因表达上调」');
+  const b = d.indexOf('三层问完');
+  if (a < 0 || b < 0) throw new Error('正文里没有三层追问');
+  const seg = d.slice(a, b);
+  const out = [];
+  for (const m of seg.matchAll(/\d\.\s*\*\*([^*]+)\*\*/g)) out.push(m[1].trim());
+  if (out.length !== 3) throw new Error('追问不是三条: ' + out.length);
+  return out;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const pts = adjustablePoints(doc);
+  const ex = extremes(doc);
+  const mods = modifications(doc);
 
-  console.log(`医学细胞生物学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医学细胞生物学 · 第 8 章 基因表达调控');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`正文里读到 ${pts.length} 个可调点：`);
+  for (const p of pts) {
+    const span = p.fastRank === p.slowRank ? RANK_NAME[p.fastRank] : `${RANK_NAME[p.fastRank]}–${RANK_NAME[p.slowRank]}`;
+    console.log(`  ${p.stage} ｜ ${span} ｜ ${p.mechanism}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
+  console.log(`最快的一层：${ex.fastest}；最慢的一层：${ex.slowest}。`);
+  for (const r of [1, 2, 3]) {
+    console.log(`  要在${RANK_NAME[r]}级内起效，能用的层：${usableWithin(r, doc).join('、')}`);
   }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`染色质修饰 ${mods.length} 种；读—写—擦的循环：${readWriteErase(doc).cycle.join(' → ')}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/yixue-xibao-shengwu-xue/units.json 现算，不手打；改教材后重跑即可复现。');
+  console.log('「上调」要追的三层：' + threeQuestions(doc).join(' / '));
+  console.log('');
+  console.log('※ 环节、尺度与修饰都从本章正文现抓；尺度归级只按「秒/分钟/小时/分裂」四档，不引入新数值。');
   console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  readDoc,
+  tableRows,
+  unitRange,
+  unitRank,
+  adjustablePoints,
+  usableWithin,
+  extremes,
+  modifications,
+  readWriteErase,
+  threeQuestions,
+};

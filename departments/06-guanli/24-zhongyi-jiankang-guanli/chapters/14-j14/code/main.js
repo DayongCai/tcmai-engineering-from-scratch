@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 中医健康管理 · 第 14 章 健康管理与多学科协作：本章统计口径
+ * 中医健康管理 · 第 14 章 协作的难点不是请不到专家，是没人对整个的人负责
  * 课程: departments/06-guanli/24-zhongyi-jiankang-guanli/chapters/14-j14/docs/zh.md
- * 数据: standards/24-zhongyi-jiankang-guanli/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/24-zhongyi-jiankang-guanli/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 主责三职责、转介三形态、四类接口、三种角色、三样最小配置、质量两件事，全部从正文读出；
+ * 开头的转介与回传数字现算：380 人次里回传 41 份、23 人回流，比例由脚本算，不手打。
  */
 
 'use strict';
@@ -15,87 +13,140 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '24-zhongyi-jiankang-guanli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 14;
+const TITLE = '协作的难点不是请不到专家，是没人对整个的人负责';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function hanzi(text) {
+  return (String(text || '').match(HANZI) || []).length;
+}
+
+function sections(body) {
+  const out = [];
+  let cur = { title: '', lines: [], hanzi: 0 };
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) {
+      cur = { title: h[1], lines: [], hanzi: 0 };
+      out.push(cur);
+      continue;
+    }
+    cur.lines.push(line);
+    cur.hanzi += hanzi(line);
   }
-  throw new Error('没找到 standards/24-zhongyi-jiankang-guanli/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '24-zhongyi-jiankang-guanli', 'units.json');
-const MAP = path.join(ROOT, 'standards', '24-zhongyi-jiankang-guanli', 'chapter-map.json');
-const CHAPTER = '14';
-const SLUG = '14-j14';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function sectionText(body, prefix) {
+  const s = sections(body).find((x) => x.title.startsWith(prefix));
+  if (!s) throw new Error('正文里没有以「' + prefix + '」开头的一节');
+  return s.lines.join('\n');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 第一节：主责的三条职责。 */
+function duties(body) {
+  const m = sectionText(body, '一、').match(/主责的职责有三条：([^。]+)。/);
+  if (!m) throw new Error('正文里没有「主责的职责有三条」这句');
+  return m[1].split('；').map((s) => s.trim()).filter(Boolean);
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 第二节：双向转介的三种失败形态。 */
+function failures(body) {
+  return [...sectionText(body, '二、').matchAll(/^\*\*(送出去不回来|回来了不接|转过去没人接)。\*\*/gm)].map((m) => m[1]);
+}
+
+/** 第三节：四类服务接口。 */
+function interfaces(body) {
+  return [...sectionText(body, '三、').matchAll(/^\*\*与([^*\n]+?)。\*\*/gm)].map((m) => m[1]);
+}
+
+/** 第四节：三种角色。 */
+function roles(body) {
+  return [...sectionText(body, '四、').matchAll(/^\*\*(主责|专业提供者|执行与接触者)。\*\*/gm)].map((m) => m[1]);
+}
+
+/** 第四节：协作机制的三样最小配置。 */
+function configs(body) {
+  return [...sectionText(body, '四、').matchAll(/^\*\*(一个共同目标|一份共享记录|一个固定节奏)。\*\*/gm)].map((m) => m[1]);
+}
+
+/** 第五节：协作质量的两件事。 */
+function quality(body) {
+  return [...sectionText(body, '五、').matchAll(/^\*\*(一致|不冲突)。\*\*/gm)].map((m) => m[1]);
+}
+
+/** 开头数字现算。 */
+function handoffMath(body) {
+  const referrals = Number((body.match(/一年转介\s*(\d+)\s*人次/) || [])[1]);
+  const back = Number((body.match(/回传给社区的有\s*(\d+)\s*份/) || [])[1]);
+  const returned = Number((body.match(/有\s*(\d+)\s*人在三个月内又回到社区/) || [])[1]);
+  if (!referrals || !back || !returned) throw new Error('正文里没有完整的转介数字');
+  return {
+    referrals, back, returned,
+    backPct: Number(((back / referrals) * 100).toFixed(1)),
+    returnPct: Number(((returned / referrals) * 100).toFixed(1)),
+  };
+}
+
+function audit(body) {
+  const duty = duties(body);
+  const fails = failures(body);
+  const ifs = interfaces(body);
+  const rl = roles(body);
+  const cfg = configs(body);
+  const q = quality(body);
+  const math = handoffMath(body);
+
+  const claims = [
+    { label: '主责三职责', want: 3, got: duty.length },
+    { label: '转介三形态', want: 3, got: fails.length },
+    { label: '四类接口', want: 4, got: ifs.length },
+    { label: '三种角色', want: 3, got: rl.length },
+    { label: '三样配置', want: 3, got: cfg.length },
+    { label: '质量两件事', want: 2, got: q.length },
+  ];
+  const mismatched = claims.filter((c) => c.want !== c.got).map((c) => c.label);
+  return { duty, fails, ifs, rl, cfg, q, math, claims, mismatched };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const body = read();
+  const a = audit(body);
+  const secs = sections(body).filter((s) => s.title);
+  const cites = [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]))];
 
-  console.log(`中医健康管理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中医健康管理 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下条数、比例与汉字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${hanzi(body)} 字 · 节 ${secs.length} 节 · 引书 ${cites.length} 部`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`主责三职责：${a.duty.join('；')}`);
+  console.log(`转介三形态：${a.fails.join('／')}（根源：把交接当成了告知）`);
+  console.log(`四类接口：${a.ifs.join('／')}`);
+  console.log(`三种角色：${a.rl.join('／')}（不是三种头衔）`);
+  console.log(`三样最小配置：${a.cfg.join('／')}`);
+  console.log(`质量两件事：${a.q.join('／')}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  const m = a.math;
+  console.log(`交接复算：转介 ${m.referrals} 人次，回传 ${m.back} 份（${m.backPct}%），` +
+    `${m.returned} 人三个月内回流（占转介 ${m.returnPct}%）。`);
+  console.log(`  回传率低的直接后果是：人回来了，记录没回来，社区只能从头问一遍。`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`条数对账：${a.mismatched.length ? '不一致，须改稿 —— ' + a.mismatched.join('、') : '一致'}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/24-zhongyi-jiankang-guanli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('→ 判据：协作的第一件事不是组队，是让一个人对整条路径签字。');
+  console.log('※ 条数、比例与汉字均从本章 docs/zh.md 现算，正文一改即随之变化；本输出仅用于教学演示，不构成诊疗意见或机构管理规范。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC, CHAPTER, TITLE, read, hanzi, sections, sectionText,
+  duties, failures, interfaces, roles, configs, quality, handoffMath, audit,
+};

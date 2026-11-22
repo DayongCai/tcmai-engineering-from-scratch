@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 医学细胞生物学 · 第 12 章 细胞与分子常用技术：本章统计口径
- * 课程: departments/09-jichu/03-yixue-xibao-shengwu-xue/chapters/12-xibao-yu-fenzi-jishu/docs/zh.md
- * 数据: standards/yixue-xibao-shengwu-xue/units.json（144 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yixue-xibao-shengwu-xue/chapter-map.json（课程章 → 教材单元号）
+ * 医学细胞生物学 · 第 12 章 细胞与分子技术：可信度由对照决定
+ * 正文: departments/09-jichu/03-yixue-xibao-shengwu-xue/chapters/12-xibao-yu-fenzi-jishu/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 成像表、分子三条线、模型表、陷阱表都从正文现抓。核心动作是一个定级函数：
+ * 方法数、有没有因果干预、对照缺不缺——三件事决定一条结论是「相关」「稳健」还是「因果」。
  */
 
 'use strict';
@@ -15,87 +13,136 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yixue-xibao-shengwu-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+function tableRows(doc, keys) {
+  const lines = doc.split(/\r?\n/);
+  const head = lines.findIndex((l) => l.trim().startsWith('|') && keys.every((k) => l.includes(k)));
+  if (head < 0) throw new Error('正文里找不到表头: ' + keys.join(' / '));
+  const rows = [];
+  for (let i = head + 2; i < lines.length; i += 1) {
+    const l = lines[i].trim();
+    if (!l.startsWith('|')) break;
+    rows.push(l.split('|').slice(1, -1).map((c) => c.trim()));
   }
-  throw new Error('没找到 standards/yixue-xibao-shengwu-xue/units.json —— 章节目录是否已脱离仓库？');
+  if (!rows.length) throw new Error('表头之后没有数据行');
+  return rows;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yixue-xibao-shengwu-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yixue-xibao-shengwu-xue', 'chapter-map.json');
-const CHAPTER = '12';
-const SLUG = '12-xibao-yu-fenzi-jishu';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 成像与分离：方式 / 分辨能力 / 能回答什么 / 主要假象 */
+function imaging(doc) {
+  return tableRows(doc, ['方式', '分辨能力', '能回答什么']).map((r) => ({
+    method: r[0],
+    resolution: r[1],
+    answers: r[2],
+    artifact: r[3],
+  }));
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 分子三条线：层面 / 常用方法 / 回答什么 / 关键对照 */
+function molecular(doc) {
+  return tableRows(doc, ['层面', '常用方法', '回答什么', '关键对照']).map((r) => ({
+    layer: r[0],
+    methods: r[1],
+    answers: r[2],
+    controls: r[3],
+  }));
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 模型系统：保留了什么 / 丢掉了什么 */
+function models(doc) {
+  return tableRows(doc, ['模型', '保留了什么', '丢掉了什么']).map((r) => ({ model: r[0], keeps: r[1], loses: r[2] }));
+}
+
+/** 陷阱表：现象 / 机制 / 识别办法 */
+function pitfalls(doc) {
+  return tableRows(doc, ['现象', '机制', '识别办法']).map((r) => ({ symptom: r[0], cause: r[1], check: r[2] }));
+}
+
+const CONTROL_KINDS = ['阴性', '阳性', '内参', '无关对照'];
+
+/** 定级：单一方法只能给相关，两种独立方法给稳健，再加因果干预才给因果；对照缺一类降一级 */
+function grade({ methods, causal = false, controls = [] }, doc) {
+  if (!(methods >= 1)) throw new Error('方法数至少为一');
+  const known = controls.filter((c) => CONTROL_KINDS.includes(c));
+  const missing = CONTROL_KINDS.length - known.length;
+  let level;
+  if (methods >= 2 && causal) level = '因果';
+  else if (methods >= 2) level = '稳健';
+  else level = '相关';
+  // 对照缺一类降一级，但不降到「相关」以下
+  const ladder = ['相关', '稳健', '因果'];
+  let i = ladder.indexOf(level);
+  if (missing > 0) i = Math.max(0, i - 1);
+  return { level: ladder[i], missingControls: missing, missingNames: CONTROL_KINDS.filter((c) => !known.includes(c)) };
+}
+
+/** 三问定级：用什么方法 / 在什么系统 / 对照齐不齐 */
+function threeQuestions(doc) {
+  const d = String(doc);
+  const a = d.indexOf('任何一条细胞生物学结论，都可以用三问定级');
+  const b = d.indexOf('三问答完');
+  if (a < 0 || b < 0) throw new Error('正文里没有三问定级那一段');
+  const out = [];
+  for (const m of d.slice(a, b).matchAll(/\d\.\s*\*\*([^*]+)\*\*/g)) out.push(m[1].trim());
+  if (out.length !== 3) throw new Error('定级不是三问: ' + out.length);
+  return out;
+}
+
+/** 抗体是最大的不确定源：最硬的验证在敲除样本里做一次 */
+function antibodyRule(doc) {
+  const d = String(doc);
+  return {
+    biggestUncertainty: d.includes('抗体是最大的不确定源'),
+    knockoutCheck: d.includes('在敲除该基因的样本里做一次'),
+    corollary: d.includes('免疫共沉淀证明的是「在一起」，不是「直接结合」'),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const im = imaging(doc);
+  const mol = molecular(doc);
+  const md = models(doc);
+  const pf = pitfalls(doc);
 
-  console.log(`医学细胞生物学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医学细胞生物学 · 第 12 章 细胞与分子技术');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文里读到 ${im.length} 种成像/分离方式、${mol.length} 条分子层面、${md.length} 类模型、${pf.length} 条陷阱。`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('结论定级的三个例子：');
+  const cases = [
+    { label: '一种方法、无因果干预、对照齐', probe: { methods: 1, causal: false, controls: CONTROL_KINDS } },
+    { label: '两种独立方法、无因果干预、对照齐', probe: { methods: 2, causal: false, controls: CONTROL_KINDS } },
+    { label: '两种独立方法 + 敲除与回补、对照齐', probe: { methods: 2, causal: true, controls: CONTROL_KINDS } },
+    { label: '两种独立方法 + 因果干预、但缺阴性对照', probe: { methods: 2, causal: true, controls: ['阳性', '内参', '无关对照'] } },
+  ];
+  for (const c of cases) {
+    const g = grade(c.probe, doc);
+    console.log(`  ${c.label} → ${g.level}${g.missingControls ? `（缺 ${g.missingNames.join('、')}）` : ''}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('三问定级：' + threeQuestions(doc).join(' / '));
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('抗体：最大不确定源 ' + antibodyRule(doc).biggestUncertainty + '；敲除样本验证 ' + antibodyRule(doc).knockoutCheck);
+  console.log('模型表用法：任何结论都要标注「在哪个模型上成立」。');
   console.log('');
-  console.log('※ 教学样例：数字由 standards/yixue-xibao-shengwu-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 表格与三问都从本章正文现抓；定级规则是正文判据的直译，不涉及任何具体仪器的参数。');
+  console.log('※ 本输出仅用于教学演示，不构成实验操作规范，也不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  readDoc,
+  tableRows,
+  imaging,
+  molecular,
+  models,
+  pitfalls,
+  grade,
+  threeQuestions,
+  antibodyRule,
+  CONTROL_KINDS,
+};

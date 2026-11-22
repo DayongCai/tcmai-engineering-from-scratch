@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 骨伤毕业设计与知识移交 · 第 2 章 影像与生物力学数据准备：本章统计口径
+ * 骨伤毕业设计与知识移交 · 第 2 章 · 影像与生物力学数据准备
  * 课程: departments/04-gushang/17-gushang-biye-sheji/chapters/02-yingxiang-shuju/docs/zh.md
- * 数据: standards/gushang-biye/units.json（21 单元层，每单元带三辨与四位面词频）
- * 取数: standards/gushang-biye/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的三类数据、测量协议五件、一致性四档、数据卡八字段、六种失败模式，
+ * 以及文中交代的取材规模，全部从正文表格与段落现算，不手打。
+ * 一致性档位与它的「该做什么」由同一张表成对读出，避免档位与动作脱钩。
  */
 
 'use strict';
@@ -15,87 +14,200 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gushang-biye', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/gushang-biye/units.json —— 章节目录是否已脱离仓库？');
-}
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gushang-biye', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'gushang-biye', 'chapter-map.json');
 const CHAPTER = '2';
-const SLUG = 'yingxiang-shuju';
+const SLUG = '02-yingxiang-shuju';
+const TITLE = '影像不是插图，是把「看得见」变成「量得出、量得一样」的那一步';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const GRAM = 4;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function h2Titles(text) {
+  const out = [];
+  for (const line of String(text).split(/\r?\n/)) {
+    const m = /^##\s+(.+)$/.exec(line.trim());
+    if (m) out.push(m[1].trim());
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function tableBlocks(text) {
+  const blocks = [];
+  let cur = null;
+  for (const line of String(text).split(/\r?\n/)) {
+    const s = line.trim();
+    if (s.startsWith('|')) {
+      if (!cur) {
+        cur = [];
+        blocks.push(cur);
+      }
+      cur.push(s);
+    } else cur = null;
+  }
+  return blocks.map((b) => {
+    const cells = b.map((r) =>
+      r
+        .replace(/^\|/, '')
+        .replace(/\|$/, '')
+        .split('|')
+        .map((c) => c.trim())
+    );
+    return { head: cells[0] || [], rows: cells.slice(2) };
+  });
+}
+
+const occurrences = (text, term) => String(text).split(term).length - 1;
+
+function grams(text, n = GRAM) {
+  const out = new Set();
+  for (const seg of String(text).replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function firstColumn(i) {
+  const b = tableBlocks(readDoc())[i];
+  return b ? b.rows.map((r) => r[0]) : [];
+}
+
+function column(i, j) {
+  const b = tableBlocks(readDoc())[i];
+  return b ? b.rows.map((r) => r[j] || '') : [];
+}
+
+/** 三类数据：影像、力学、量表 */
+const dataClasses = () => firstColumn(0);
+
+/** 测量协议五件 */
+const protocol = () => firstColumn(1);
+
+/** 一致性四档（由低到高，按表内顺序） */
+const agreementTiers = () => firstColumn(2);
+
+/** 每一档对应的「该做什么」，与档位同表成对读出 */
+function agreementActions() {
+  const tiers = column(2, 0);
+  const acts = column(2, 2);
+  return tiers.map((t, k) => ({ tier: t, action: acts[k] }));
+}
+
+/** 数据卡八字段 */
+const dataCard = () => firstColumn(3);
+
+/** 六种常见失败模式 */
+const failures = () => firstColumn(4);
+
+/** 正文口径：本章取材的影像单元数与其字数规模（万字） */
+function sourceScale() {
+  const text = readDoc();
+  const u = /(\d+)\s*个影像单元/.exec(text);
+  const w = /不到\s*([\d.]+)\s*万字/.exec(text);
+  return { units: u ? Number(u[1]) : null, wanzi: w ? Number(w[1]) : null };
+}
+
+/** 正文里的核心区分句：一致与准确不是一回事 */
+function accuracyVsAgreement() {
+  const text = readDoc();
+  const m = /准确指接近真值，一致指不同人、不同次之间彼此接近/.exec(text);
+  return m ? m[0] : null;
+}
+
+function quizSummary(quiz, text) {
+  const body = grams(text);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  for (const q of qs) if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+  const hits = qs
+    .filter((q) => q.stage === 'check')
+    .map((q) => {
+      const right = String((q.options || [])[q.correct] || '');
+      return { question: q.question, grams: [...grams(right)].filter((g) => body.has(g)) };
+    });
+  return {
+    total: qs.length,
+    stage,
+    check: hits.length,
+    grounded: hits.filter((h) => h.grams.length).length,
+    hits,
+    spread: new Set(qs.map((q) => q.correct)).size,
+  };
+}
+
+function analyze() {
+  const text = readDoc();
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    hanzi: hanzi(text),
+    sections: h2Titles(text),
+    tables: tableBlocks(text).length,
+    dataClasses: dataClasses(),
+    protocol: protocol(),
+    agreementTiers: agreementTiers(),
+    agreementActions: agreementActions(),
+    dataCard: dataCard(),
+    failures: failures(),
+    sourceScale: sourceScale(),
+    accuracyVsAgreement: accuracyVsAgreement(),
+    quiz: quizSummary(quiz, text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`骨伤毕业设计与知识移交 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = analyze();
+  console.log(`骨伤毕业设计与知识移交 · 第 ${CHAPTER} 章 · ${TITLE}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文 ${r.hanzi.toLocaleString('en-US')} 汉字 · 小节 ${r.sections.length} 个 · 表格 ${r.tables} 张`);
+  r.sections.forEach((s, i) => console.log(`  ${String(i + 1).padStart(2)}  ${s}`));
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`三类数据（${r.dataClasses.length} 类）：${r.dataClasses.join(' / ')}`);
+  console.log(`测量协议（${r.protocol.length} 件）：${r.protocol.join(' / ')}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('一致性与对应动作（同表成对读出）：');
+  for (const a of r.agreementActions) console.log(`  ${a.tier.padEnd(6)} → ${a.action}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`数据卡（${r.dataCard.length} 字段）：${r.dataCard.join(' / ')}`);
+  console.log(`六种失败模式：${r.failures.join(' / ')}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/gushang-biye/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  const s = r.sourceScale;
+  console.log(`取材规模：${s.units} 个影像单元 · 不到 ${s.wanzi} 万字`);
+  console.log(`核心区分句：${r.accuracyVsAgreement || '—'}`);
+  console.log('');
+  console.log(
+    `quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· check 题接地 ${r.quiz.grounded} 道（门槛 ≥2）· 答案落在 ${r.quiz.spread} 个位置`
+  );
+  console.log('');
+  console.log('※ 以上结构、档位与动作全部由本章正文现算，无手打常数；改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，不构成医学意见或诊断依据；真实影像与患者数据须依伦理批件办理。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  analyze,
+  readDoc,
+  h2Titles,
+  tableBlocks,
+  occurrences,
+  grams,
+  firstColumn,
+  column,
+  dataClasses,
+  protocol,
+  agreementTiers,
+  agreementActions,
+  dataCard,
+  failures,
+  sourceScale,
+  accuracyVsAgreement,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+};

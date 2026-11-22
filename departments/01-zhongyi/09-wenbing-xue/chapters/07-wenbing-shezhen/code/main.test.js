@@ -1,7 +1,7 @@
 'use strict';
 const assert = require('node:assert');
 const test = require('node:test');
-const { sourceSplit, tongueIndex, banZhen, prognosis } = require('./main.js');
+const { sourceSplit, tongueIndex, banZhen, prognosis, QUIZ, docAudit } = require('./main.js');
 
 test('入章 99 条：温热论 26/37 · 条辨 73/290', () => {
   const s = sourceSplit();
@@ -84,4 +84,44 @@ test('预后命中都带句内证据与体征（不许只给结论词）', () =>
     assert.match(h.cite, /^外源·笈成·/);
     assert.ok(Array.isArray(h.signs), `${h.word} 缺体征字段`);
   }
+});
+
+/* ── 正文与 quiz 同源：99 条 / 舌象 / 斑疹 / 预后，全部现读现核 ── */
+
+test('正文写的 99 条、舌象 27 词 137 处、斑疹 13 条、预后 20 处，逐格与底本现算一致', () => {
+  const a = docAudit();
+  assert.ok(a.facts.length >= 10);
+  for (const f of a.facts) assert.strictEqual(f.got, f.want, `${f.label}: 现算 ${f.got} ≠ 正文 ${f.want}`);
+});
+
+test('正文五条判据引文逐字落在两书条文里，判据表与词表自检为空', () => {
+  const a = docAudit();
+  assert.strictEqual(a.quotes.length, 5);
+  for (const q of a.quotes) {
+    assert.strictEqual(q.inDoc, true, `正文缺「${q.quote}」`);
+    assert.strictEqual(q.inSource, true, `底本缺「${q.quote}」`);
+  }
+  assert.strictEqual(a.badQuotes, 0, '判据表里的引文有对不上的');
+  assert.strictEqual(a.badVocab, 0, '词表 sample 有不在底本的');
+});
+
+test('quiz 结构：题量、三段、四选项、解释长度、答案合法', () => {
+  const { quiz } = docAudit();
+  assert.ok(quiz.total >= 5);
+  for (const s of ['pre', 'check', 'post']) assert.ok(quiz.stage[s] >= 1, `缺 ${s} 段`);
+  assert.strictEqual(quiz.allFour, true);
+  assert.strictEqual(quiz.badCorrect, 0);
+  assert.ok(quiz.minExplain >= 30, `最短解释 ${quiz.minExplain} 汉字`);
+});
+
+test('quiz 接地与打散：≥2 道 check 题的正确选项能在正文找到原词', () => {
+  const { quiz } = docAudit();
+  assert.ok(quiz.groundedChecks >= 2, `只有 ${quiz.groundedChecks} 道接地`);
+  assert.ok(quiz.distinctAnswers >= 3, `答案只用了 ${quiz.distinctAnswers} 个位置`);
+});
+
+test('quiz 无脚手架残留，且不把引文写成「底本」或来源行', () => {
+  const raw = require('node:fs').readFileSync(QUIZ, 'utf8');
+  assert.strictEqual(docAudit().quiz.scaffold, false);
+  for (const bad of ['三辨', '四位面', '单元规模', '底本', '外源·笈成']) assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
 });

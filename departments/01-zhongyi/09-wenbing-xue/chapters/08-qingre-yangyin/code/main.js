@@ -26,6 +26,8 @@ const ROOT = path.resolve(__dirname, '../../../../../..');
 const BOOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/wenbing/底本.json'), 'utf8'));
 
 const TITLE = { tiaobian: '溫病條辨', wenrelun: '溫熱論', wenyilun: '溫疫論' };
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 /** 病类全名太长（「風温、温熱、温疫、温毒、冬温」），引用时压成首病类；口径写在 docs */
 const PIAN_SHORT = {
@@ -508,6 +510,98 @@ if (require.main === module) {
   }
   console.log(`  Top3：${Y.top.join(' · ')}`);
   console.log(`  另计：${Y.side.map((r) => `${r.canon} ${r.n} 次`).join('、')}`);
+
+  const a = docAudit();
+  console.log('\n  正文与 quiz 对账（读 docs/zh.md）');
+  for (const f of a.facts) console.log(`  ${f.got === f.want ? '✓' : '✗'} ${f.label} 现算 ${f.got} · 正文 ${f.want}`);
+  console.log(`  quiz ${a.quiz.total} 题（pre ${a.quiz.stage.pre} / check ${a.quiz.stage.check} / post ${a.quiz.stage.post}）· check 接地 ${a.quiz.groundedChecks} 道 · 答案 ${a.quiz.answers.join('/')}`);
+}
+
+/* ── 正文与 quiz 的对账：七阶 / 禁例 / 养阴药，逐格回底本复算 ── */
+
+function hanzi(s) {
+  return (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+}
+
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizAudit(raw) {
+  const qs = JSON.parse(raw).questions || [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const rows = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    return { stage: q.stage, options: opts.length, correct: q.correct, explainHanzi: hanzi(q.explain), right: String(opts[q.correct] || '') };
+  });
+  return {
+    total: qs.length,
+    stage,
+    rows,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    allFour: rows.every((r) => r.options === 4),
+    badCorrect: rows.filter((r) => !(Number.isInteger(r.correct) && r.correct >= 0 && r.correct < 4)).length,
+    minExplain: Math.min(...rows.map((r) => r.explainHanzi)),
+    scaffold: /三辨|四位面|单元规模|本章实测/.test(raw),
+  };
+}
+
+function docAudit() {
+  const doc = fs.readFileSync(DOC, 'utf8').replace(/\*\*/g, '');
+  const qraw = fs.readFileSync(QUIZ, 'utf8');
+  const t = totals();
+  const L = treatmentLadder();
+  const F = forbid();
+  const Y = yinHerbs();
+  const MP = methodPhrases();
+  const grab = (re, label) => {
+    const m = re.exec(doc);
+    if (!m) throw new Error(`正文里定位不到「${label}」`);
+    return m.slice(1).map((v) => Number(String(v).replace(/,/g, '')));
+  };
+
+  const [docTiao, docTexts, docFang] = grab(/共 (\d+) 条 \/ (\d+) 文本块 \/ (\d+) 方/, '三书规模');
+  const [docForbid, docUnits] = grab(/合计 (\d+) 处、(\d+) 条/, '禁例合计');
+  const [docTb, docWrl, docWyl] = grab(/温病条辨 (\d+) · 温热论 (\d+) · 温疫论 (\d+)/, '禁例分布');
+  const [docTiao32] = grab(/「该用什么」的治法条只有 (\d+) 条/, '治法条数');
+  const [docYin50, docYin178, docYin100] = grab(/含养阴药的方 (\d+)\/(\d+)（\d+%）/, '含养阴药方').concat(grab(/12 味药共出现 (\d+) 次/, '养阴药次数'));
+  const [docYinCount] = grab(/养阴药 (\d+) 味、(\d+) 次/, '养阴药味数');
+  const herbRows = [...doc.matchAll(/^\| (麦冬|生地|元参|阿胶|龟板|鳖甲) \| [^|]+ \| (\d+) \| (\d+) \| (\d+) \| (\d+) \|$/gm)]
+    .map((m) => ({ herb: m[1], n: +m[2], shang: +m[3], zhong: +m[4], xia: +m[5] }));
+  if (herbRows.length !== 6) throw new Error(`正文养阴药表是 ${herbRows.length} 行，应为 6`);
+  const [docPhrase1, docPhrase2, docPhrase3] = grab(/透热转气 \| (\d+) \| 《温热论》第 8 条 \|/, '透热转气次数')
+    .concat(grab(/凉血散血 \| (\d+) \| 《温热论》第 8 条 \|/, '凉血散血次数'))
+    .concat(grab(/先安未受邪之地 \| (\d+) \| 《温热论》第 5 条 \|/, '先安次数'));
+
+  const canon = (n) => Y.rows.find((r) => r.canon === n);
+  const facts = [
+    { label: '三书 条/文本块/方', got: [t.articles, t.texts, t.formulas].join('/'), want: [docTiao, docTexts, docFang].join('/') },
+    { label: '治法阶 7 + 非治法 1 / 涉条 32', got: `${L.totals.methodSteps}+${L.totals.steps - L.totals.methodSteps}/${L.totals.distinctTiao}`, want: `7+1/${docTiao32}` },
+    { label: '禁例 处/条', got: `${F.byRuleSum}/${F.total}`, want: `${docForbid}/${docUnits}` },
+    { label: '禁例分布 条辨/温热论/温疫论', got: [F.byBook.溫病條辨, F.byBook.溫熱論, F.byBook.溫疫論].join('/'), want: [docTb, docWrl, docWyl].join('/') },
+    { label: '养阴药 方占比 / 味次 / 味数', got: `${Y.coverage.n}/${Y.coverage.of}/${Y.totalTokens}/${Y.rows.length}`, want: `${docYin50}/${docYin178}/${docYin100}/${docYinCount}` },
+    { label: '三句名语 各 1 次', got: MP.filter((p) => ['透熱轉氣', '涼血散血', '先安未受邪之地'].includes(p.phrase)).map((p) => p.nTok).join('/'), want: [docPhrase1, docPhrase2, docPhrase3].join('/') },
+  ];
+  for (const r of herbRows) {
+    const g = canon({ 麦冬: '麥冬', 生地: '生地', 元参: '元參', 阿胶: '阿膠', 龟板: '龜板', 鳖甲: '鱉甲' }[r.herb]);
+    facts.push({ label: `${r.herb} 次/上/中/下`, got: g ? [g.n, g.byJiao.上焦, g.byJiao.中焦, g.byJiao.下焦].join('/') : '缺', want: [r.n, r.shang, r.zhong, r.xia].join('/') });
+  }
+
+  const q = quizAudit(qraw);
+  const body = grams(doc);
+  const grounded = q.rows.filter((r) => r.stage === 'check' && [...grams(r.right)].some((v) => body.has(v))).length;
+  const allText = BOOK.books.flatMap((b) => b.sections.flatMap((s) => s.articles.map((a) => `${a.zhHans}\n${(a.notes || []).join('\n')}`))).join('\n');
+  return {
+    facts,
+    quiz: { ...q, groundedChecks: grounded },
+    quotes: ['先滋其干', '服之反燥甚', '救阴不在血，而在津汗', '苦先入心', '先安未受邪之地'].map((w) => ({ quote: w, inDoc: doc.includes(w), inSource: allText.includes(w) })),
+  };
 }
 
 module.exports = {
@@ -527,4 +621,10 @@ module.exports = {
   forbid,
   yinHerbs,
   totals,
+  DOC,
+  QUIZ,
+  hanzi,
+  grams,
+  quizAudit,
+  docAudit,
 };

@@ -13,6 +13,8 @@ const {
   permeate,
   gap,
   totals,
+  QUIZ,
+  docAudit,
 } = require('./main.js');
 
 test('底本规模：1 卷 · 37 条（1–37）· 0 方 · 繁字 4433', () => {
@@ -138,4 +140,43 @@ test('signals() 只作旁证：空文本返回空桶，不制造命中', () => {
   assert.deepStrictEqual(signals('舌绛而干'), {});
   assert.deepStrictEqual(signals('入营犹可透热转气'), { 营: ['入营', '营'] });
   assert.strictEqual(BOOK.author, '葉桂（天士）');
+});
+
+/* ── 正文与 quiz 同源：全部从 docs/zh.md 现读现核 ── */
+
+test('正文写死的数，逐格与《溫熱論》现算一致', () => {
+  const a = docAudit();
+  assert.ok(a.facts.length >= 6);
+  for (const f of a.facts) assert.strictEqual(f.got, f.want, `${f.label}: 现算 ${f.got} ≠ 正文 ${f.want}`);
+});
+
+test('第 8 条四级治法引文：正文与原文逐字一致', () => {
+  const a = docAudit();
+  assert.strictEqual(a.quotes.length, 4);
+  for (const q of a.quotes) {
+    assert.strictEqual(q.inDoc, true, `正文缺「${q.quote}」`);
+    assert.strictEqual(q.inSource, true, `第8条缺「${q.quote}」`);
+  }
+  assert.deepStrictEqual(a.layerRows.map((r) => [r.layer, r.n]), [['卫', 3], ['气', 5], ['营', 2], ['血', 1], ['纲', 1]]);
+});
+
+test('quiz 结构：题量、三段、四选项、解释长度、答案合法', () => {
+  const { quiz } = docAudit();
+  assert.ok(quiz.total >= 5, `只有 ${quiz.total} 题`);
+  for (const s of ['pre', 'check', 'post']) assert.ok(quiz.stage[s] >= 1, `缺 ${s} 段`);
+  assert.strictEqual(quiz.allFour, true, '有题不是 4 个选项');
+  assert.strictEqual(quiz.badCorrect, 0, 'correct 下标非法');
+  assert.ok(quiz.minExplain >= 30, `最短解释只有 ${quiz.minExplain} 汉字`);
+});
+
+test('quiz 接地与打散：≥2 道 check 题的正确选项能在正文找到原词', () => {
+  const { quiz } = docAudit();
+  assert.ok(quiz.groundedChecks >= 2, `只有 ${quiz.groundedChecks} 道 check 题接地`);
+  assert.ok(quiz.distinctAnswers >= 3, `正确答案只用了 ${quiz.distinctAnswers} 个位置`);
+});
+
+test('quiz 无脚手架残留，且不把引文写成「底本」或来源行', () => {
+  const raw = require('node:fs').readFileSync(QUIZ, 'utf8');
+  assert.strictEqual(docAudit().quiz.scaffold, false);
+  for (const bad of ['三辨', '四位面', '单元规模', '底本', '外源·笈成']) assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
 });

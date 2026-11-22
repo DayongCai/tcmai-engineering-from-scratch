@@ -3,60 +3,104 @@
 const test = require('node:test');
 const assert = require('node:assert');
 const fs = require('node:fs');
-const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-sangyin-yixue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-sangyin-yixue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const {
+  DOC,
+  CHAPTER,
+  SLUG,
+  readDoc,
+  diseaseNames,
+  nameBySite,
+  acuteBi,
+  chronicBi,
+  pusLocation,
+  discriminators,
+  redFlagText,
+} = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const doc = readDoc();
+
+test('正文可读且规模合理', () => {
+  assert.ok(fs.existsSync(DOC));
+  assert.ok(doc.length > 2000, '正文过短');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('四个病名齐读，各带病位、局部体征与现代对应', () => {
+  const n = diseaseNames(doc);
+  assert.strictEqual(n.length, 4);
+  assert.deepStrictEqual(n.map((x) => x.name), ['急喉痹', '慢喉痹', '急乳蛾', '慢乳蛾']);
+  for (const x of n) {
+    assert.ok(x.site.length >= 2, `${x.name} 缺病位`);
+    assert.ok(x.sign.length >= 4, `${x.name} 缺体征`);
+    assert.match(x.modern, /炎/, `${x.name} 的现代对应应写清`);
+  }
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('病位决定病名：咽黏膜归喉痹，喉核归乳蛾', () => {
+  assert.strictEqual(nameBySite('咽黏膜、咽壁'), '喉痹');
+  assert.strictEqual(nameBySite('喉核'), '乳蛾');
+  assert.strictEqual(nameBySite('喉核（腭扁桃体）'), '乳蛾');
+  assert.strictEqual(nameBySite('气管'), null);
+  for (const x of diseaseNames(doc)) {
+    const expected = x.name.includes('乳蛾') ? '乳蛾' : '喉痹';
+    const site = x.site.includes('同上') ? '咽壁' : x.site;
+    assert.strictEqual(nameBySite(site), expected, `${x.name} 的病位应归 ${expected}`);
+  }
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('急喉痹三型按红、痛、热的配比分开，各带治法与方', () => {
+  const a = acuteBi(doc);
+  assert.strictEqual(a.length, 3);
+  assert.deepStrictEqual(a.map((x) => x.type), ['风热外袭', '风寒外袭', '肺胃热盛']);
+  for (const x of a) {
+    assert.ok(x.therapy.length >= 6, `${x.type} 缺治法`);
+    assert.ok(x.formula.length >= 4, `${x.type} 缺代表方`);
+  }
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('慢喉痹三型按干、痰、虚的偏向分开', () => {
+  const c = chronicBi(doc);
+  assert.strictEqual(c.length, 3);
+  assert.deepStrictEqual(c.map((x) => x.type), ['阴虚肺燥', '痰凝血瘀', '脾胃虚弱']);
+  assert.match(c[2].therapy, /健脾/);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('脓在喉核内是乳蛾，在喉核外就越过本章上界', () => {
+  assert.strictEqual(pusLocation('脓在喉核内'), '乳蛾');
+  assert.match(pusLocation('脓在喉核外'), /喉关痈/);
+  assert.strictEqual(pusLocation('脓在颈部'), null);
+});
+
+test('四条鉴别线按重要性排，伪膜排第一', () => {
+  const d = discriminators(doc);
+  assert.strictEqual(d.lines.length, 4);
+  assert.strictEqual(d.lines[0], '伪膜');
+  assert.deepStrictEqual(d.lines, ['伪膜', '化脓', '发热', '病程']);
+});
+
+test('三条红旗恰好三条，且只终止处置、不改辨证', () => {
+  const d = discriminators(doc);
+  assert.strictEqual(d.flags.length, 3);
+  const f = redFlagText(doc);
+  assert.strictEqual(f.length, 3);
+  assert.match(f[0].title, /呼吸困难/);
+  assert.match(f[1].title, /单侧肿胀/);
+  assert.match(f[2].title, /张口困难/);
+  assert.match(f[0].sign, /吸气性喉鸣/);
+});
+
+test('正文明写忌强行刮剥脓点，并引「切勿误用刀」', () => {
+  assert.match(doc, /忌强行刮剥/);
+  assert.match(doc, /切勿误用刀/);
+});
+
+test('脚本可运行，输出含现算声明与临床边界', () => {
+  const r = spawnSync(process.execPath, [require.resolve('./main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-sangyin-yixue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/05-e145/docs/zh.md'), '头部注释未指向本章');
+  assert.ok(out.length > 200);
+  assert.match(out, /现算/);
+  assert.match(out, /不构成/);
+  assert.match(out, new RegExp(SLUG));
 });

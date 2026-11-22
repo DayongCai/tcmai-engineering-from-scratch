@@ -1,7 +1,7 @@
 'use strict';
 const assert = require('node:assert');
 const test = require('node:test');
-const { JIAO, juanStats, organMap, crossAxis } = require('./main.js');
+const { JIAO, juanStats, organMap, crossAxis, QUIZ, docAudit } = require('./main.js');
 
 test('三卷齐备：上焦 / 中焦 / 下焦', () => {
   assert.strictEqual(JIAO.length, 3);
@@ -78,4 +78,40 @@ test('气分横跨两焦（一对多），血分散在三焦（跨三段）', ()
   assert.strictEqual(qi.level, '一对多');
   assert.strictEqual(xue.level, '跨三段');
   for (const j of ['上焦', '中焦', '下焦']) assert.ok(xue.sanjiao.includes(j), `血分应在${j}有落点`);
+});
+
+/* ── 正文与 quiz 同源：读 docs/zh.md 现算后逐格断言 ── */
+
+test('正文三卷表与六病位表，逐格与底本现算一致', () => {
+  const a = docAudit();
+  assert.ok(a.facts.length >= 12);
+  for (const f of a.facts) assert.strictEqual(f.got, f.want, `${f.label}: 现算 ${f.got} ≠ 正文 ${f.want}`);
+});
+
+test('正文三条引文逐字落在底本条文里', () => {
+  for (const q of docAudit().quotes) {
+    assert.strictEqual(q.inDoc, true, `正文缺「${q.quote.slice(0, 12)}…」`);
+    assert.strictEqual(q.inSource, true, `底本缺「${q.quote.slice(0, 12)}…」`);
+  }
+});
+
+test('quiz 结构：题量、三段、四选项、解释长度、答案合法', () => {
+  const { quiz } = docAudit();
+  assert.ok(quiz.total >= 5);
+  for (const s of ['pre', 'check', 'post']) assert.ok(quiz.stage[s] >= 1, `缺 ${s} 段`);
+  assert.strictEqual(quiz.allFour, true);
+  assert.strictEqual(quiz.badCorrect, 0);
+  assert.ok(quiz.minExplain >= 30, `最短解释 ${quiz.minExplain} 汉字`);
+});
+
+test('quiz 接地与打散：≥2 道 check 题的正确选项能在正文找到原词', () => {
+  const { quiz } = docAudit();
+  assert.ok(quiz.groundedChecks >= 2, `只有 ${quiz.groundedChecks} 道接地`);
+  assert.ok(quiz.distinctAnswers >= 3, `答案只用了 ${quiz.distinctAnswers} 个位置`);
+});
+
+test('quiz 无脚手架残留，且不把引文写成「底本」或来源行', () => {
+  const raw = require('node:fs').readFileSync(QUIZ, 'utf8');
+  assert.strictEqual(docAudit().quiz.scaffold, false);
+  for (const bad of ['三辨', '四位面', '单元规模', '底本', '外源·笈成']) assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
 });

@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 医学细胞生物学 · 第 6 章 神经元与细胞间信息传递：本章统计口径
- * 课程: departments/09-jichu/03-yixue-xibao-shengwu-xue/chapters/06-shenjingyuan-xinxi-chuandi/docs/zh.md
- * 数据: standards/yixue-xibao-shengwu-xue/units.json（144 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yixue-xibao-shengwu-xue/chapter-map.json（课程章 → 教材单元号）
+ * 医学细胞生物学 · 第 6 章 神经元与信息传递：信号每小段都重发一次
+ * 正文: departments/09-jichu/03-yixue-xibao-shengwu-xue/chapters/06-shenjingyuan-xinxi-chuandi/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 静息电位的三条成因、突触的五个环节、三类受体，全从正文现抓。
+ * 再加一条纯算术：无髓鞘纤维的速度与直径的平方根成正比，所以想把速度提高一倍，直径要加粗到四倍——
+ * 这条换算解释了髓鞘为什么比加粗更划算。
  */
 
 'use strict';
@@ -15,87 +14,109 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yixue-xibao-shengwu-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+/** 取两个小节标题之间的正文 */
+function section(doc, from, to) {
+  const d = String(doc);
+  const a = d.indexOf(from);
+  const b = to ? d.indexOf(to, a + 1) : d.length;
+  if (a < 0) throw new Error('正文里没有这一节: ' + from);
+  if (b < 0) throw new Error('正文里没有这一节的结束标记: ' + to);
+  return d.slice(a, b);
+}
+
+function tableRows(doc, keys) {
+  const lines = doc.split(/\r?\n/);
+  const head = lines.findIndex((l) => l.trim().startsWith('|') && keys.every((k) => l.includes(k)));
+  if (head < 0) throw new Error('正文里找不到表头: ' + keys.join(' / '));
+  const rows = [];
+  for (let i = head + 2; i < lines.length; i += 1) {
+    const l = lines[i].trim();
+    if (!l.startsWith('|')) break;
+    rows.push(l.split('|').slice(1, -1).map((c) => c.trim()));
   }
-  throw new Error('没找到 standards/yixue-xibao-shengwu-xue/units.json —— 章节目录是否已脱离仓库？');
+  if (!rows.length) throw new Error('表头之后没有数据行');
+  return rows;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yixue-xibao-shengwu-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yixue-xibao-shengwu-xue', 'chapter-map.json');
-const CHAPTER = '6';
-const SLUG = '06-shenjingyuan-xinxi-chuandi';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 静息电位的三条成因：正文第二节的有序列表 */
+function restingReasons(doc) {
+  const seg = section(doc, '## 二、静息电位', '## 三、');
+  const out = [];
+  for (const m of seg.matchAll(/\d\.\s*\*\*([^*]+?)[。]?\*\*/g)) out.push(m[1].trim());
+  if (out.length !== 3) throw new Error('静息电位的成因不是三条: ' + out.length);
+  return out;
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 突触的五个环节：表内顺序即时间顺序 */
+function synapseSteps(doc) {
+  return tableRows(doc, ['环节', '事件', '被阻断时的后果']).map((r) => ({
+    step: r[0],
+    event: r[1],
+    blocked: r[2],
+  }));
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** 三类突触后受体：类型 / 时程 / 职责 */
+function receptors(doc) {
+  const seg = section(doc, '突触后受体分三类', '同一份递质可以作用于这三类受体');
+  const out = [];
+  for (const m of seg.matchAll(/- \*\*([^*]+)\*\*（[^）]*）：([^\n]+)/g)) {
+    out.push({ type: m[1].trim(), detail: m[2].trim() });
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  if (out.length !== 3) throw new Error('受体不是三类: ' + out.length);
+  return out;
+}
+
+/** 无髓鞘纤维：速度 ∝ √直径。速度要翻几倍，直径就要按平方加粗 */
+function diameterFor(speedFactor) {
+  if (!(speedFactor > 0)) throw new Error('倍数必须为正');
+  return Number((speedFactor ** 2).toFixed(4));
+}
+
+/** 反过来：直径加粗几倍，速度只提高到它的平方根 */
+function speedUp(diameterFactor) {
+  if (!(diameterFactor > 0)) throw new Error('倍数必须为正');
+  return Number(Math.sqrt(diameterFactor).toFixed(4));
+}
+
+/** 髓鞘的工程解：同样的绝缘，靠减少重建次数换速度 */
+function myelinLogic(doc) {
+  const d = String(doc);
+  return {
+    fewerRegenerations: d.includes('再生次数大大减少'),
+    noWiderAxon: d.includes('直径不必加粗'),
+    saltatory: d.includes('跳跃式传导') || d.includes('从一个结「跳」到下一个结'),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const reasons = restingReasons(doc);
+  const steps = synapseSteps(doc);
+  const rs = receptors(doc);
+  const m = myelinLogic(doc);
 
-  console.log(`医学细胞生物学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医学细胞生物学 · 第 6 章 神经元与信息传递');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log('静息电位的三条成因（正文第二节）：' + reasons.join(' / '));
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('突触的五个环节：');
+  for (const [i, s] of steps.entries()) console.log(`  ${i + 1}. ${s.step} ｜ ${s.event}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('三类受体的时程：');
+  for (const r of rs) console.log(`  ${r.type}：${r.detail}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`速度换算：速度想提高 2 倍，无髓鞘纤维的直径要加粗到 ${diameterFor(2)} 倍；`);
+  console.log(`反过来，直径加粗 4 倍，速度只提高 ${speedUp(4)} 倍——所以真正的加速方案是换绝缘。`);
+  console.log(`髓鞘：减少重建次数 ${m.fewerRegenerations}、直径不必加粗 ${m.noWiderAxon}、跳跃式传导 ${m.saltatory}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/yixue-xibao-shengwu-xue/units.json 现算，不手打；改教材后重跑即可复现。');
+  console.log('※ 成因、环节与受体都从本章正文现抓；倍数换算只用平方根关系，不含任何测得的速度值。');
   console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, section, tableRows, restingReasons, synapseSteps, receptors, diameterFor, speedUp, myelinLogic };

@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 医学细胞生物学 · 第 10 章 蛋白质合成与细胞功能：本章统计口径
- * 课程: departments/09-jichu/03-yixue-xibao-shengwu-xue/chapters/10-danbaizhi-hecheng-yu-xibao-gongneng/docs/zh.md
- * 数据: standards/yixue-xibao-shengwu-xue/units.json（144 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yixue-xibao-shengwu-xue/chapter-map.json（课程章 → 教材单元号）
+ * 医学细胞生物学 · 第 10 章 蛋白合成与细胞功能：按图纸装配，再一路过安检
+ * 正文: departments/09-jichu/03-yixue-xibao-shengwu-xue/chapters/10-danbaizhi-hecheng-yu-xibao-gongneng/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 密码的分配（64 = 61 + 3）与氨基酸种类从正文取出，再算冗余比——这个比值是「沉默突变」与
+ * 「密码子优化」之所以成立的算术基础。核糖体三部位表与分选表也从正文现抓。
  */
 
 'use strict';
@@ -15,87 +13,114 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yixue-xibao-shengwu-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+function tableRows(doc, keys) {
+  const lines = doc.split(/\r?\n/);
+  const head = lines.findIndex((l) => l.trim().startsWith('|') && keys.every((k) => l.includes(k)));
+  if (head < 0) throw new Error('正文里找不到表头: ' + keys.join(' / '));
+  const rows = [];
+  for (let i = head + 2; i < lines.length; i += 1) {
+    const l = lines[i].trim();
+    if (!l.startsWith('|')) break;
+    rows.push(l.split('|').slice(1, -1).map((c) => c.trim()));
   }
-  throw new Error('没找到 standards/yixue-xibao-shengwu-xue/units.json —— 章节目录是否已脱离仓库？');
+  if (!rows.length) throw new Error('表头之后没有数据行');
+  return rows;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yixue-xibao-shengwu-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yixue-xibao-shengwu-xue', 'chapter-map.json');
-const CHAPTER = '10';
-const SLUG = '10-danbaizhi-hecheng-yu-xibao-gongneng';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 密码的分配：64 个三联体 = 61 个编码 + 3 个终止；20 种氨基酸 */
+function geneticCode(doc) {
+  const d = String(doc);
+  const total = d.match(/共\s*(\d+)\s*个三联体/);
+  const sense = d.match(/(\d+)\s*个编码氨基酸/);
+  const stop = d.match(/(\d+)\s*个是终止信号/);
+  const aa = d.match(/(\d+)\s*种氨基酸/);
+  if (!total || !sense || !stop || !aa) throw new Error('正文里密码分配的数字不全');
+  const t = Number(total[1]);
+  const s = Number(sense[1]);
+  const st = Number(stop[1]);
+  const a = Number(aa[1]);
+  if (s + st !== t) throw new Error('编码与终止之和不等于总数');
+  return {
+    codons: t,
+    sense: s,
+    stop: st,
+    aminoAcids: a,
+    redundancy: Number((s / a).toFixed(2)),
+    stopShare: Number(((st / t) * 100).toFixed(2)),
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 核糖体的三个位点：A 位进、P 位成键、E 位出 */
+function ribosomeSites(doc) {
+  return tableRows(doc, ['位点', '结合对象', '事件']).map((r) => ({ site: r[0], binds: r[1], event: r[2] }));
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 分选表：目的地 / 地址信号 / 识别机器 / 结果 */
+function sorting(doc) {
+  return tableRows(doc, ['目的地', '地址信号', '识别机器']).map((r) => ({
+    destination: r[0],
+    signal: r[1],
+    machine: r[2],
+    result: r[3],
+  }));
+}
+
+/** 给目的地查地址信号 */
+function signalFor(destination, doc) {
+  const list = doc ? sorting(doc) : sorting(readDoc());
+  const hit = list.find((s) => s.destination.includes(destination));
+  if (!hit) throw new Error('分选表里没有这个目的地: ' + destination);
+  return hit;
+}
+
+/** 保真度的位置：在合成酶，不在配对规则 */
+function fidelity(doc) {
+  const d = String(doc);
+  return {
+    atSynthetase: d.includes('保真度主要靠酶，不靠配对规则'),
+    secondCode: d.includes('第二遗传密码'),
+    ribozyme: d.includes('肽键形成由 RNA 催化'),
+    signalPeptideCleaved: d.includes('信号肽在 N 端，进入 ER 后被切除'),
+  };
+}
+
+/** 两条降解路的尺度差：一个数量级，处理对象不同 */
+function degradation(doc) {
+  const d = String(doc);
+  return {
+    proteasome: d.includes('泛素—蛋白酶体'),
+    autophagy: d.includes('自噬—溶酶体'),
+    autophagyBasal: d.includes('不是「饿的时候才启动」'),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const gc = geneticCode(doc);
+  const sites = ribosomeSites(doc);
+  const table = sorting(doc);
 
-  console.log(`医学细胞生物学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医学细胞生物学 · 第 10 章 蛋白合成与细胞功能');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`密码：${gc.codons} 个三联体 = ${gc.sense} 个编码 + ${gc.stop} 个终止；${gc.aminoAcids} 种氨基酸。`);
+  console.log(`冗余比：${gc.sense} / ${gc.aminoAcids} = ${gc.redundancy} 倍，终止信号占 ${gc.stopShare}%。`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('核糖体三位点：');
+  for (const s of sites) console.log(`  ${s.site} ｜ ${s.binds} ｜ ${s.event}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('分选（地址写在序列里）：');
+  for (const s of table) console.log(`  → ${s.destination} ｜ ${s.signal} ｜ ${s.machine} ｜ ${s.result}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`保真度靠合成酶：${fidelity(doc).atSynthetase}；第二遗传密码：${fidelity(doc).secondCode}；肽键由 rRNA 催化：${fidelity(doc).ribozyme}`);
+  console.log(`降解两条路：蛋白酶体 ${degradation(doc).proteasome}、自噬 ${degradation(doc).autophagy}、自噬在基础状态也运行 ${degradation(doc).autophagyBasal}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/yixue-xibao-shengwu-xue/units.json 现算，不手打；改教材后重跑即可复现。');
+  console.log('※ 密码分配、位点与分选表都从本章正文现抓现算；冗余比只是除法，不含任何测得的速率。');
   console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, tableRows, geneticCode, ribosomeSites, sorting, signalFor, fidelity, degradation };

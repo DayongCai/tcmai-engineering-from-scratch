@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中医健康管理 · 第 2 章 中医健康管理的理论基础：本章统计口径
+ * 中医健康管理 · 第 2 章 理论不能生成分层，就只是修辞
  * 课程: departments/06-guanli/24-zhongyi-jiankang-guanli/chapters/02-j2/docs/zh.md
- * 数据: standards/24-zhongyi-jiankang-guanli/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/24-zhongyi-jiankang-guanli/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的四组清单——体质学说的三个工程条件、风险接口的三层、三种典型误用、
+ * 风险的乘数，以及「神」的五项观察——都从正文读出；条数再与句子里写的中文数字对账。
+ * 正文改了条数而没改数字，脚本会报不一致。
  */
 
 'use strict';
@@ -15,87 +14,126 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '24-zhongyi-jiankang-guanli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 2;
+const TITLE = '理论不能生成分层，就只是修辞';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function hanzi(text) {
+  return (String(text || '').match(HANZI) || []).length;
+}
+
+function sections(body) {
+  const out = [];
+  let cur = { title: '', lines: [], hanzi: 0 };
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) {
+      cur = { title: h[1], lines: [], hanzi: 0 };
+      out.push(cur);
+      continue;
+    }
+    cur.lines.push(line);
+    cur.hanzi += hanzi(line);
   }
-  throw new Error('没找到 standards/24-zhongyi-jiankang-guanli/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '24-zhongyi-jiankang-guanli', 'units.json');
-const MAP = path.join(ROOT, 'standards', '24-zhongyi-jiankang-guanli', 'chapter-map.json');
-const CHAPTER = '2';
-const SLUG = '02-j2';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function sectionText(body, prefix) {
+  const s = sections(body).find((x) => x.title.startsWith(prefix));
+  if (!s) throw new Error('正文里没有以「' + prefix + '」开头的一节');
+  return s.lines.join('\n');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 体质学说被采纳的三个工程条件：加粗的「可测。」「可分。」「可重复。」。 */
+function engineeringConditions(body) {
+  const t = sectionText(body, '三、');
+  return [...t.matchAll(/^\*\*(可[^*\n]{1,3})。\*\*/gm)].map((m) => m[1]);
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 风险接口三层：加粗的「第一层，状态用于分层。」。 */
+function riskLayers(body) {
+  const t = sectionText(body, '五、');
+  return [...t.matchAll(/^\*\*第([一二三])层，([^*\n]+?)。\*\*/gm)].map((m) => ({ n: m[1], action: m[2] }));
+}
+
+/** 三种典型误用：第三节的列表项。 */
+function misuses(body) {
+  const t = sectionText(body, '三、');
+  return [...t.matchAll(/^- \*\*([^*\n]+?)。\*\*/gm)].map((m) => m[1].trim());
+}
+
+/** 风险的两个乘数：「风险有两个乘数：**A** 与 **B**」。 */
+function riskMultipliers(body) {
+  const m = body.match(/风险有两个乘数：\*\*(.+?)\*\*\s*与\s*\*\*(.+?)\*\*/);
+  if (!m) throw new Error('正文里没有「风险有两个乘数：」这句');
+  return [m[1].trim(), m[2].trim()];
+}
+
+/** 「神」的可观察项：第四节的表格首列（去表头与分隔行）。 */
+function shenRows(body) {
+  const t = sectionText(body, '四、');
+  return t
+    .split('\n')
+    .filter((l) => /^\|\s*[^|]+\|/.test(l) && !/^\|\s*[-: ]+\|/.test(l))
+    .map((l) => l.split('|').map((c) => c.trim()).filter(Boolean)[0])
+    .filter((c) => c && c !== '神的表现');
+}
+
+function audit(body) {
+  const conds = engineeringConditions(body);
+  const layers = riskLayers(body);
+  const misuse = misuses(body);
+  const mult = riskMultipliers(body);
+  const shen = shenRows(body);
+
+  const claims = [
+    { label: '三个工程条件', want: 3, got: conds.length },
+    { label: '三层搭法', want: 3, got: layers.length },
+    { label: '三种典型误用', want: 3, got: misuse.length },
+    { label: '两个乘数', want: 2, got: mult.length },
+    { label: '五项可观察', want: 5, got: shen.length },
+  ];
+  const mismatched = claims.filter((c) => c.want !== c.got).map((c) => c.label);
+
+  return { conds, layers, misuse, mult, shen, claims, mismatched };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const body = read();
+  const a = audit(body);
+  const secs = sections(body).filter((s) => s.title);
+  const cites = [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]))];
 
-  console.log(`中医健康管理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中医健康管理 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下条数与汉字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${hanzi(body)} 字 · 节 ${secs.length} 节 · 引书 ${cites.length} 部`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`体质学说被采纳的 ${a.conds.length} 个工程条件：${a.conds.join('／')}`);
+  console.log('  → 三条同时成立，理论才能变成分层；缺一条就只能停在解释句里。');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('与风险管理接口的三层（顺序不能颠倒）：');
+  a.layers.forEach((l) => console.log(`  第${l.n}层：${l.action}`));
+  console.log(`风险的两个乘数：${a.mult.join(' × ')}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`三种典型误用：${a.misuse.join('；')}`);
+  console.log(`「神」的可观察项 ${a.shen.length} 项：${a.shen.join('／')}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/24-zhongyi-jiankang-guanli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`条数对账：${a.mismatched.length ? '不一致，须改稿 —— ' + a.mismatched.join('、') : '一致'}`);
+  console.log('');
+  console.log('→ 判据：一套理论能不能用，看它能不能生成区分；能解释一切，就等于不能区分任何。');
+  console.log('※ 条数与汉字均从本章 docs/zh.md 现算，正文一改即随之变化；本输出仅用于教学演示，不构成诊疗意见，也不构成任何体质判定或风险预测的依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC, CHAPTER, TITLE, read, hanzi, sections, sectionText,
+  engineeringConditions, riskLayers, misuses, riskMultipliers, shenRows, audit,
+};

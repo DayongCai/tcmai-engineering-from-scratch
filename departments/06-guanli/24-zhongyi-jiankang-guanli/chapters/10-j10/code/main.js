@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中医健康管理 · 第 10 章 常见健康问题的中医健康管理：本章统计口径
+ * 中医健康管理 · 第 10 章 常见健康问题管理的难点不在病种多，在分段
  * 课程: departments/06-guanli/24-zhongyi-jiankang-guanli/chapters/10-j10/docs/zh.md
- * 数据: standards/24-zhongyi-jiankang-guanli/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/24-zhongyi-jiankang-guanli/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 四个段落、三问、合并四规则、重点人群三条操作规则、三层服务，全部从正文读出；
+ * 开头那组人数与完成率现算：1600 人里的 62% 与 38% 是多少人，完成率掉了几点、
+ * 相对掉了多少，都由脚本算，不手打。
  */
 
 'use strict';
@@ -15,87 +14,169 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '24-zhongyi-jiankang-guanli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 10;
+const TITLE = '常见健康问题管理的难点不在病种多，在分段';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function hanzi(text) {
+  return (String(text || '').match(HANZI) || []).length;
+}
+
+function sections(body) {
+  const out = [];
+  let cur = { title: '', lines: [], hanzi: 0 };
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) {
+      cur = { title: h[1], lines: [], hanzi: 0 };
+      out.push(cur);
+      continue;
+    }
+    cur.lines.push(line);
+    cur.hanzi += hanzi(line);
   }
-  throw new Error('没找到 standards/24-zhongyi-jiankang-guanli/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '24-zhongyi-jiankang-guanli', 'units.json');
-const MAP = path.join(ROOT, 'standards', '24-zhongyi-jiankang-guanli', 'chapter-map.json');
-const CHAPTER = '10';
-const SLUG = '10-j10';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function sectionText(body, prefix) {
+  const s = sections(body).find((x) => x.title.startsWith(prefix));
+  if (!s) throw new Error('正文里没有以「' + prefix + '」开头的一节');
+  return s.lines.join('\n');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function cells(line) {
+  return line.split('|').map((c) => c.trim()).filter(Boolean);
+}
+const isSep = (line) => /^\|[\s|:-]+\|?$/.test(line.trim());
+
+/** 第一段：四个段落（条目式），以及段落表的两列。 */
+function stages(body) {
+  const bullets = sectionText(body, '一、')
+    .split('\n')
+    .filter((l) => /^-\s+/.test(l.trim()))
+    .map((l) => l.replace(/^-\s+/, '').replace(/\*\*/g, '').trim());
+  return bullets;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function stageTable(body) {
+  const lines = sectionText(body, '一、')
+    .split('\n')
+    .filter((l) => l.trim().startsWith('|') && !isSep(l));
+  return lines.slice(1).map((l) => {
+    const c = cells(l);
+    return { stage: c[0], canDo: c[1], stop: c[2] };
+  });
+}
+
+/** 第一节的三问。 */
+function threeQuestions(body) {
+  const m = body.match(/靠三个问题，不靠病名：\*\*([^*\n]+)\*\*/);
+  if (!m) throw new Error('正文里没有「靠三个问题，不靠病名」这句');
+  return m[1].split('？').map((s) => s.replace(/^\*\*|\*\*$/g, '').trim()).filter(Boolean).map((s) => s + '？');
+}
+
+/** 第二节：合并四规则（加粗小标题）。 */
+function mergeRules(body) {
+  return [...sectionText(body, '二、').matchAll(/^\*\*([^*\n]{2,8})。\*\*/gm)].map((m) => m[1].trim());
+}
+
+/** 第四节：重点人群共有的三条操作规则。 */
+function crowdRules(body) {
+  const m = sectionText(body, '四、').match(/三类人群共有的三条操作规则：([^。]+)。/);
+  if (!m) throw new Error('正文里没有「三类人群共有的三条操作规则」这句');
+  return m[1].split('；').map((s) => s.trim()).filter(Boolean);
+}
+
+/** 第五节：三层服务（层／谁／内容／频次／退出条件）。 */
+function layers(body) {
+  const lines = sectionText(body, '五、')
+    .split('\n')
+    .filter((l) => l.trim().startsWith('|') && !isSep(l));
+  return lines.slice(1).map((l) => {
+    const c = cells(l);
+    return { layer: c[0], who: c[1], content: c[2], freq: c[3], exit: c[4] };
+  });
+}
+
+/** 开头数字现算。 */
+function loadMath(body) {
+  const people = Number((body.match(/一年服务\s*([\d,]+)\s*人/) || [])[1].replace(/,/g, ''));
+  const two = Number((body.match(/(\d+)%\s*的人有两项以上健康问题/) || [])[1]);
+  const three = Number((body.match(/(\d+)%\s*有三项以上/) || [])[1]);
+  const rateA = Number((body.match(/随访完成率却从\s*(\d+)%/) || [])[1]);
+  const rateB = Number((body.match(/掉到\s*(\d+)%/) || [])[1]);
+  if (!people || !two || !three || !rateA || !rateB) throw new Error('正文里没有完整的人数与比例');
+  return {
+    people,
+    two: Math.round((people * two) / 100),
+    three: Math.round((people * three) / 100),
+    rateA,
+    rateB,
+    dropPoints: rateA - rateB,
+    dropPct: Number((((rateA - rateB) / rateA) * 100).toFixed(1)),
+  };
+}
+
+function audit(body) {
+  const st = stages(body);
+  const sTable = stageTable(body);
+  const qs = threeQuestions(body);
+  const merge = mergeRules(body);
+  const crowd = crowdRules(body);
+  const ls = layers(body);
+  const load = loadMath(body);
+
+  const claims = [
+    { label: '四个段落', want: 4, got: st.length },
+    { label: '段落表四行', want: 4, got: sTable.length },
+    { label: '三问', want: 3, got: qs.length },
+    { label: '合并四规则', want: 4, got: merge.length },
+    { label: '重点人群三规则', want: 3, got: crowd.length },
+    { label: '三层服务', want: 3, got: ls.length },
+  ];
+  const mismatched = claims.filter((c) => c.want !== c.got).map((c) => c.label);
+  return { st, sTable, qs, merge, crowd, ls, load, claims, mismatched };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const body = read();
+  const a = audit(body);
+  const secs = sections(body).filter((s) => s.title);
+  const cites = [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]))];
 
-  console.log(`中医健康管理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中医健康管理 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下条数、人数与汉字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${hanzi(body)} 字 · 节 ${secs.length} 节 · 引书 ${cites.length} 部`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`四个段落：${a.sTable.map((s) => s.stage).join('／')}`);
+  console.log(`  待查段能做的事：${a.sTable[3].canDo}`);
+  console.log(`  待查段必须停手：${a.sTable[3].stop}`);
+  console.log(`判断靠三问：${a.qs.join(' ')}`);
+  console.log(`共病合并 ${a.merge.length} 条规则：${a.merge.join('／')}`);
+  console.log(`重点人群 ${a.crowd.length} 条操作规则：${a.crowd.join('；')}`);
+  console.log(`服务三层：${a.ls.map((l) => `${l.layer}（${l.freq}）`).join(' → ')}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  const m = a.load;
+  console.log(`负荷复算：${m.people} 人中 ${m.two} 人两项以上、${m.three} 人三项以上；` +
+    `随访完成率 ${m.rateA}% → ${m.rateB}%，掉 ${m.dropPoints} 个百分点（相对 −${m.dropPct}%）。`);
+  console.log(`  三包同购不是卖得更多，是把同一段稀缺时间卖了三次。`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`条数对账：${a.mismatched.length ? '不一致，须改稿 —— ' + a.mismatched.join('、') : '一致'}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/24-zhongyi-jiankang-guanli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('→ 判据：管理的单位是人，不是病；先判段落，再合并冲突，最后才谈专业内容。');
+  console.log('※ 条数、人数与汉字均从本章 docs/zh.md 现算，正文一改即随之变化；本输出仅用于教学演示，不构成诊疗意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC, CHAPTER, TITLE, read, hanzi, sections, sectionText,
+  stages, stageTable, threeQuestions, mergeRules, crowdRules, layers, loadMath, audit,
+};

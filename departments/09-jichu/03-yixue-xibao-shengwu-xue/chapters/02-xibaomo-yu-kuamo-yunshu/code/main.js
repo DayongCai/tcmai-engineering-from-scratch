@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 医学细胞生物学 · 第 2 章 细胞膜与跨膜运输：本章统计口径
- * 课程: departments/09-jichu/03-yixue-xibao-shengwu-xue/chapters/02-xibaomo-yu-kuamo-yunshu/docs/zh.md
- * 数据: standards/yixue-xibao-shengwu-xue/units.json（144 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yixue-xibao-shengwu-xue/chapter-map.json（课程章 → 教材单元号）
+ * 医学细胞生物学 · 第 2 章 膜与跨膜运输：从正文表格重建判据与泵的账
+ * 正文: departments/09-jichu/03-yixue-xibao-shengwu-xue/chapters/02-xibaomo-yu-kuamo-yunshu/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 通透性排序表与三类转运蛋白表都从正文现抓；泵的化学计量也从正文那句「3 Na⁺ : 2 K⁺ : 1 ATP」里读出来。
+ * 判据函数不查常量表，而是拿两个问题（是否饱和、是否耗能）去表里比对——表改了，判据跟着改。
  */
 
 'use strict';
@@ -15,87 +13,122 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yixue-xibao-shengwu-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+function tableRows(doc, keys) {
+  const lines = doc.split(/\r?\n/);
+  const head = lines.findIndex((l) => l.trim().startsWith('|') && keys.every((k) => l.includes(k)));
+  if (head < 0) throw new Error('正文里找不到表头: ' + keys.join(' / '));
+  const rows = [];
+  for (let i = head + 2; i < lines.length; i += 1) {
+    const l = lines[i].trim();
+    if (!l.startsWith('|')) break;
+    rows.push(l.split('|').slice(1, -1).map((c) => c.trim()));
   }
-  throw new Error('没找到 standards/yixue-xibao-shengwu-xue/units.json —— 章节目录是否已脱离仓库？');
+  if (!rows.length) throw new Error('表头之后没有数据行');
+  return rows;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yixue-xibao-shengwu-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yixue-xibao-shengwu-xue', 'chapter-map.json');
-const CHAPTER = '2';
-const SLUG = '02-xibaomo-yu-kuamo-yunshu';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 通透性排序：表里的行序就是由快到慢 */
+function permeability(doc) {
+  return tableRows(doc, ['物质类别', '跨脂双层的方式', '通透性排序']).map((r) => ({
+    kind: r[0],
+    way: r[1],
+    rank: r[2],
+    direct: !r[1].includes('需'),
+  }));
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 三类转运蛋白 */
+function carriers(doc) {
+  return tableRows(doc, ['类型', '方向', '耗能', '饱和性']).map((r) => ({
+    type: r[0],
+    dir: r[1],
+    energy: r[2],
+    saturation: r[3],
+    rate: r[4],
+  }));
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 两个问题定一类：顺/逆梯度 + 要不要耗能 + 会不会饱和 */
+function identify(probe, doc) {
+  const list = carriers(doc || readDoc());
+  const wantDir = probe.dir === '逆' ? '逆梯度' : '顺梯度';
+  const wantEnergy = probe.consumesEnergy ? '耗' : '不耗';
+  // 「不明显（近似线性）」里也含「明显」，所以先排除「不明显」再判饱和
+  const wantSat = (cell) => (cell.includes('明显') && !cell.includes('不明显')) === Boolean(probe.saturating);
+  const hit = list.find((c) => c.dir.includes(wantDir) && c.energy.includes(wantEnergy) && wantSat(c.saturation));
+  if (!hit) throw new Error('这三个答案在表里凑不成一类：' + JSON.stringify(probe));
+  return hit;
+}
+
+/** 泵的化学计量：从「3 Na⁺ : 2 K⁺ : 1 ATP」读出，再算一次循环净移走几个正电荷 */
+function pumpStoichiometry(doc) {
+  const m = String(doc).match(/(\d+)\s*Na⁺\s*:\s*(\d+)\s*K⁺\s*:\s*(\d+)\s*ATP/);
+  if (!m) throw new Error('正文里没有泵的化学计量');
+  const na = Number(m[1]);
+  const k = Number(m[2]);
+  const atp = Number(m[3]);
+  return { na, k, atp, netCharge: na - k };
+}
+
+/** 要泵出 n 个 Na⁺，需要几轮、几个 ATP、顺带泵进几个 K⁺、净移走多少正电荷 */
+function pumpBudget(naOut, doc) {
+  const s = pumpStoichiometry(doc || readDoc());
+  const cycles = Math.ceil(naOut / s.na);
+  return {
+    ...s,
+    naOut,
+    cycles,
+    atpSpent: cycles * s.atp,
+    kIn: cycles * s.k,
+    charge: cycles * s.netCharge,
+  };
+}
+
+/** 上皮极性：葡萄糖从腔侧进来、从基底侧出去，方向由蛋白位置决定 */
+function epithelialRoute(doc) {
+  const d = String(doc);
+  const apical = d.includes('顶端膜') && d.includes('同向转运');
+  const basalPump = d.includes('基底侧') && d.includes('钠钾泵');
+  if (!apical || !basalPump) throw new Error('正文里的上皮极性描述不完整');
+  return { steps: ['顶端膜：Na⁺ 顺梯度把葡萄糖拖进来', '细胞内：葡萄糖浓度升高', '基底侧膜：葡萄糖顺浓度排出去'], pumpOnBasal: basalPump };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const perm = permeability(doc);
+  const cs = carriers(doc);
+  const s = pumpStoichiometry(doc);
+  const b = pumpBudget(1000, doc);
 
-  console.log(`医学细胞生物学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医学细胞生物学 · 第 2 章 膜与跨膜运输');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文里读到 ${perm.length} 级通透性排序、${cs.length} 类转运蛋白。`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('通透性排序（由快到慢，照正文表）：');
+  for (const p of perm) console.log(`  ${p.rank} ｜ ${p.kind} ｜ ${p.direct ? '可直接过' : '需蛋白'}`);
+  console.log('');
+  console.log('两个问题定一类：');
+  for (const probe of [
+    { dir: '顺', consumesEnergy: false, saturating: false, label: '顺梯度、不耗能、速率不饱和' },
+    { dir: '顺', consumesEnergy: false, saturating: true, label: '顺梯度、不耗能、会饱和' },
+    { dir: '逆', consumesEnergy: true, saturating: true, label: '逆梯度、耗能、会饱和' },
+  ]) {
+    const hit = identify(probe, doc);
+    console.log(`  ${probe.label} → ${hit.type}（${hit.rate}）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`泵：每轮 ${s.na} Na⁺ 出、${s.k} K⁺ 入、${s.atp} 个 ATP，净移走 ${s.netCharge} 个正电荷。`);
+  console.log(`要泵出 ${b.naOut} 个 Na⁺：${b.cycles} 轮、${b.atpSpent} 个 ATP、顺带泵进 ${b.kIn} 个 K⁺、净移走 ${b.charge} 个正电荷。`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('上皮极性：' + epithelialRoute(doc).steps.join(' → '));
   console.log('');
-  console.log('※ 教学样例：数字由 standards/yixue-xibao-shengwu-xue/units.json 现算，不手打；改教材后重跑即可复现。');
+  console.log('※ 排序、分类与化学计量都从本章正文现抓现算；换教材后重跑即可复现。');
   console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, tableRows, permeability, carriers, identify, pumpStoichiometry, pumpBudget, epithelialRoute };

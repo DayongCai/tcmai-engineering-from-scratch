@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 医学细胞生物学 · 第 5 章 细胞骨架与细胞运动：本章统计口径
- * 课程: departments/09-jichu/03-yixue-xibao-shengwu-xue/chapters/05-xibao-gujia-yu-yundong/docs/zh.md
- * 数据: standards/yixue-xibao-shengwu-xue/units.json（144 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yixue-xibao-shengwu-xue/chapter-map.json（课程章 → 教材单元号）
+ * 医学细胞生物学 · 第 5 章 细胞骨架与运动：三种纤维，三种经济
+ * 正文: departments/09-jichu/03-yixue-xibao-shengwu-xue/chapters/05-xibao-gujia-yu-yundong/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 纤维表与迁移四步表都从正文现抓。「能不能当轨道」这个判据不背答案，直接读表里的极性与马达两列：
+ * 有极性且有马达才当轨道，两端对称的只能当绳索。
  */
 
 'use strict';
@@ -15,87 +13,106 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yixue-xibao-shengwu-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+function tableRows(doc, keys) {
+  const lines = doc.split(/\r?\n/);
+  const head = lines.findIndex((l) => l.trim().startsWith('|') && keys.every((k) => l.includes(k)));
+  if (head < 0) throw new Error('正文里找不到表头: ' + keys.join(' / '));
+  const rows = [];
+  for (let i = head + 2; i < lines.length; i += 1) {
+    const l = lines[i].trim();
+    if (!l.startsWith('|')) break;
+    rows.push(l.split('|').slice(1, -1).map((c) => c.trim()));
   }
-  throw new Error('没找到 standards/yixue-xibao-shengwu-xue/units.json —— 章节目录是否已脱离仓库？');
+  if (!rows.length) throw new Error('表头之后没有数据行');
+  return rows;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yixue-xibao-shengwu-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yixue-xibao-shengwu-xue', 'chapter-map.json');
-const CHAPTER = '5';
-const SLUG = '05-xibao-gujia-yu-yundong';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 三种纤维：单体 / 直径 / 极性 / 核苷酸 / 马达 / 周转 / 主责 */
+function fibers(doc) {
+  return tableRows(doc, ['纤维', '单体', '极性']).map((r) => ({
+    name: r[0],
+    monomer: r[1],
+    diameter: r[2],
+    polarity: r[3],
+    nucleotide: r[4],
+    motor: r[5],
+    turnover: r[6],
+    duty: r[7],
+  }));
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 能不能当轨道：有极性（两端不一样）并且上面有马达 */
+function canBeTrack(name, doc) {
+  const f = (doc ? fibers(doc) : fibers(readDoc())).find((x) => x.name.includes(name));
+  if (!f) throw new Error('表里没有这种纤维: ' + name);
+  const hasPolarity = f.polarity.includes('有');
+  const hasMotor = f.motor.trim() !== '无';
+  return hasPolarity && hasMotor;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 从直径一列里取数（「约 7 nm」→ 7），只做数字抽取，不做推断 */
+function diameterOf(name, doc) {
+  const f = (doc ? fibers(doc) : fibers(readDoc())).find((x) => x.name.includes(name));
+  if (!f) throw new Error('表里没有这种纤维: ' + name);
+  const m = f.diameter.match(/(\d+(?:\.\d+)?)\s*nm/);
+  if (!m) throw new Error('直径一列里没有数: ' + f.diameter);
+  return Number(m[1]);
+}
+
+/** 粗细比：管子比绳子粗多少（正文只给量级，这里给出表内数字的比值） */
+function diameterRatio(doc) {
+  const tube = diameterOf('微管', doc);
+  const filament = diameterOf('微丝', doc);
+  return { tube, filament, ratio: Number((tube / filament).toFixed(2)) };
+}
+
+/** 迁移四步：表内顺序即时间顺序 */
+function migration(doc) {
+  return tableRows(doc, ['步骤', '骨架事件', '关键分子']).map((r) => ({
+    step: r[0],
+    event: r[1],
+    molecule: r[2],
+    blocked: r[3],
+  }));
+}
+
+/** 要变形就用快的、要抗拉就用慢的：按周转一列归组 */
+function byTurnover(doc) {
+  const list = doc ? fibers(doc) : fibers(readDoc());
+  return {
+    fast: list.filter((f) => f.turnover.includes('快')).map((f) => f.name),
+    slow: list.filter((f) => f.turnover.includes('慢')).map((f) => f.name),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const fsList = fibers(doc);
+  const r = diameterRatio(doc);
 
-  console.log(`医学细胞生物学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医学细胞生物学 · 第 5 章 细胞骨架与运动');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`正文里读到 ${fsList.length} 种纤维。`);
+  for (const f of fsList) {
+    console.log(`  ${f.name} ｜ ${f.diameter} ｜ 极性：${f.polarity} ｜ 马达：${f.motor} ｜ 主责：${f.duty}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('能不能当轨道（有极性 + 有马达）：');
+  for (const n of ['微丝', '微管', '中间丝']) console.log(`  ${n} → ${canBeTrack(n, doc)}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`粗细比：微管 ${r.tube} nm / 微丝 ${r.filament} nm = ${r.ratio}；最细的反而产生最大收缩力，因为它能成束。`);
+  console.log(`按周转分：快的 ${byTurnover(doc).fast.join('、')}；慢的 ${byTurnover(doc).slow.join('、')}。`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/yixue-xibao-shengwu-xue/units.json 现算，不手打；改教材后重跑即可复现。');
+  console.log('迁移四步：');
+  for (const [i, s] of migration(doc).entries()) console.log(`  ${i + 1}. ${s.step} ｜ ${s.event} ｜ ${s.molecule}`);
+  console.log('');
+  console.log('※ 分类、直径与步骤都从本章正文现抓现算；换教材后重跑即可复现。');
   console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, tableRows, fibers, canBeTrack, diameterOf, diameterRatio, migration, byTurnover };

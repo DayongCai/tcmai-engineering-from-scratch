@@ -19,6 +19,8 @@ const {
   yuanbing,
   shangjiaoHead,
   article,
+  QUIZ,
+  docAudit,
 } = require('./main.js');
 
 test('三书规模：3 书 · 108 节 · 630 条（段）· 243 方', () => {
@@ -147,5 +149,45 @@ test('原病篇每条都有繁/简两栏，简体非空', () => {
   for (const a of yuanbing().articles) {
     assert.ok(a.zhHant && a.zhHant.length > 0, `第${a.no}条缺繁文`);
     assert.ok(a.zhHans && a.zhHans.length > 0, `第${a.no}条缺简文`);
+  }
+});
+
+/* ── 正文与 quiz 必须同源：读 docs/zh.md 现算，不认「我记得」 ── */
+
+test('正文写死的数，逐格与底本现算一致', () => {
+  const a = docAudit();
+  assert.ok(a.facts.length >= 8);
+  for (const f of a.facts) assert.strictEqual(f.got, f.want, `${f.label}: 现算 ${f.got} ≠ 正文 ${f.want}`);
+});
+
+test('正文两条寒温引文逐字落在《上焦篇》第二条自注里', () => {
+  const a = docAudit();
+  assert.strictEqual(a.quotes.length, 2);
+  for (const q of a.quotes) {
+    assert.strictEqual(q.inDoc, true, `正文缺引文「${q.quote.slice(0, 12)}…」`);
+    assert.strictEqual(q.inSource, true, `自注里没有「${q.quote.slice(0, 12)}…」`);
+  }
+});
+
+test('quiz 结构：题量、三段、四选项、解释长度、答案合法', () => {
+  const { quiz } = docAudit();
+  assert.ok(quiz.total >= 5, `只有 ${quiz.total} 题`);
+  for (const s of ['pre', 'check', 'post']) assert.ok(quiz.stage[s] >= 1, `缺 ${s} 段`);
+  assert.strictEqual(quiz.allFour, true, '有题不是 4 个选项');
+  assert.strictEqual(quiz.badCorrect, 0, 'correct 下标非法');
+  assert.ok(quiz.minExplain >= 30, `最短解释只有 ${quiz.minExplain} 汉字`);
+});
+
+test('quiz 接地与打散：≥2 道 check 题的正确选项能在正文找到原词，答案不集中在一位', () => {
+  const { quiz } = docAudit();
+  assert.ok(quiz.groundedChecks >= 2, `只有 ${quiz.groundedChecks} 道 check 题接地`);
+  assert.ok(quiz.distinctAnswers >= 3, `正确答案只用了 ${quiz.distinctAnswers} 个位置`);
+});
+
+test('quiz 不出现脚手架名目，也不把引文写成「底本」或来源行', () => {
+  const raw = require('node:fs').readFileSync(QUIZ, 'utf8');
+  assert.strictEqual(docAudit().quiz.scaffold, false, 'quiz 仍含脚手架指纹');
+  for (const bad of ['三辨', '四位面', '单元规模', '底本', '外源·笈成']) {
+    assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
   }
 });

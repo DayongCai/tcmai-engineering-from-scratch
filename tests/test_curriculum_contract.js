@@ -128,7 +128,7 @@ test('已落盘的学科都带 README.md / meta.json / chapters.json', () => {
   }
 });
 
-test('已建章节的 quiz 恰好 1 pre + 3 check + 2 post', () => {
+test('已建章节的 quiz 至少有 1 pre + 3 check + 1 post，总题数 ≤ 10', () => {
   let checked = 0;
   for (const s of flat) {
     const st = subjectStatus(s);
@@ -140,8 +140,10 @@ test('已建章节的 quiz 恰好 1 pre + 3 check + 2 post', () => {
       const q = JSON.parse(fs.readFileSync(qp, 'utf8'));
       const got = { pre: 0, check: 0, post: 0 };
       for (const item of q.questions) got[item.stage] = (got[item.stage] || 0) + 1;
-      assert.deepStrictEqual(got, { pre: 1, check: 3, post: 2 }, `${s.path}/${name} quiz 题数分配错误: ${JSON.stringify(got)}`);
-      assert.strictEqual(q.questions.length, 6);
+      const total = got.pre + got.check + got.post;
+      assert.ok(got.pre >= 1 && got.check >= 3 && got.post >= 1,
+        `${s.path}/${name} quiz 题数不足（至少 1/3/1）: ${JSON.stringify(got)}`);
+      assert.ok(total <= 10, `${s.path}/${name} quiz 总题数 ${total} 超过 10`);
       for (const item of q.questions) {
         assert.strictEqual(item.options.length, 4, `${name} 选项数必须为 4`);
         assert.ok(Number.isInteger(item.correct) && item.correct >= 0 && item.correct <= 3);

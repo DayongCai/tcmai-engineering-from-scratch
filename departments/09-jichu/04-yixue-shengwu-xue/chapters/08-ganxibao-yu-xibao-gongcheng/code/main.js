@@ -1,101 +1,196 @@
 #!/usr/bin/env node
 /**
- * 医学生物学 · 第 8 章 干细胞和细胞工程：本章统计口径
+ * 医学生物学 · 第 8 章 干细胞与细胞工程：判据与工艺，从正文里算出来
  * 课程: departments/09-jichu/04-yixue-shengwu-xue/chapters/08-ganxibao-yu-xibao-gongcheng/docs/zh.md
- * 数据: standards/yixue-shengwu-xue/units.json（192 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yixue-shengwu-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数字全部现算：潜能三层的条数、工艺四关的条数、重编程三条路与微环境三样，
+ * 以及「十万亿细胞分到二百种类型」这笔账，都从本章正文读出后计算。
  */
-
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yixue-shengwu-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/yixue-shengwu-xue/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yixue-shengwu-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yixue-shengwu-xue', 'chapter-map.json');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const CHAPTER = '8';
 const SLUG = '08-ganxibao-yu-xibao-gongcheng';
+const TITLE = '干细胞的门槛不是「什么都能变」，是「变了还能变回来」';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+/** 本章论证链上的关键词：正文必须出现，否则说明正文与习题已经脱节 */
+const CONCEPTS = ['自我更新', '分化潜能', '干细胞龛', '重编程', '类器官', '过程控制', '畸胎瘤'];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function readDoc(file) {
+  return fs.readFileSync(file || DOC, 'utf8');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function lines(text) {
+  return text.split(/\r?\n/);
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function sections(text = readDoc()) {
+  return lines(text)
+    .filter((l) => /^##\s+/.test(l))
+    .map((l) => l.replace(/^##\s+/, '').trim());
+}
+
+function hanzi(text = readDoc()) {
+  return (text.match(/[\u4e00-\u9fff]/g) || []).length;
+}
+
+const DIGIT = { 一: 1, 二: 2, 两: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9 };
+
+/** 「十万亿」「二百」读成整数 */
+function cnToNumber(text) {
+  const s = String(text).trim();
+  if (/^\d+(\.\d+)?$/.test(s)) return Number(s);
+  let value = 0;
+  let num = 0;
+  for (const ch of s) {
+    if (DIGIT[ch] !== undefined) num = DIGIT[ch];
+    else if (ch === '十' || ch === '百') {
+      value += (num || 1) * (ch === '十' ? 10 : 100);
+      num = 0;
+    } else if (ch === '万' || ch === '亿') {
+      value = (value + num) * (ch === '万' ? 1e4 : 1e8);
+      num = 0;
+    }
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return value + num;
+}
+
+/** 潜能三层表：层级 / 能产生什么 / 典型来源 / 关键限制 */
+function potencyTable(text = readDoc()) {
+  const rows = [];
+  for (const line of lines(text)) {
+    if (!/^\|/.test(line) || /^\|[\s\-:|]+\|$/.test(line)) continue;
+    const cells = line.split('|').slice(1, -1).map((c) => c.trim());
+    if (cells.length !== 4) continue;
+    if (/^层级$/.test(cells[0])) continue;
+    rows.push({ level: cells[0], gives: cells[1], source: cells[2], limit: cells[3] });
+  }
+  return rows;
+}
+
+/** 「五、」节四条工艺线：「**第一关，扩增。**」 */
+function craftGates(text = readDoc()) {
+  return lines(text)
+    .filter((l) => /^\*\*第[一二三四]关，/.test(l))
+    .map((l) => {
+      const m = l.match(/\*\*第[一二三四]关，([^*。]+)。\*\*/);
+      return m ? m[1] : '';
+    })
+    .filter(Boolean);
+}
+
+/** 「四、」节三条重编程路径 */
+function reprogramPaths(text = readDoc()) {
+  const start = lines(text).findIndex((l) => /^##\s*四、重编程/.test(l));
+  if (start < 0) return [];
+  const ls = lines(text);
+  const out = [];
+  for (let i = start + 1; i < ls.length; i += 1) {
+    const line = ls[i].trim();
+    if (/^##\s/.test(line)) break;
+    if (/^\d+\.\s+\*\*/.test(line)) out.push((line.match(/\*\*([^*]+)\*\*/) || [, ''])[1]);
+  }
+  return out;
+}
+
+/** 「三、」节干细胞龛三样 */
+function nicheFactors(text = readDoc()) {
+  const start = lines(text).findIndex((l) => /^##\s*三、命运不全由细胞自己决定/.test(l));
+  if (start < 0) return [];
+  const ls = lines(text);
+  const out = [];
+  for (let i = start + 1; i < ls.length; i += 1) {
+    const line = ls[i].trim();
+    if (/^##\s/.test(line)) break;
+    if (/^-\s+\*\*/.test(line)) out.push((line.match(/\*\*([^*]+)\*\*/) || [, ''])[1]);
+  }
+  return out;
+}
+
+/** 正文口径：细胞总数（十万亿）与细胞类型（二百种上下） */
+function scaleClaims(text = readDoc()) {
+  const cells = text.match(/细胞数量长到([一二两三四五六七八九十百千万亿]+)量级/);
+  const types = text.match(/细胞类型分化出([一二两三四五六七八九十百]+)种/);
+  const total = cells ? cnToNumber(cells[1]) : null;
+  const kinds = types ? cnToNumber(types[1]) : null;
+  return { total, kinds, perType: total && kinds ? Math.round(total / kinds) : null };
+}
+
+function conceptHits(text = readDoc()) {
+  return CONCEPTS.map((term) => ({ term, hits: text.split(term).length - 1 }));
+}
+
+function missing(text = readDoc()) {
+  return conceptHits(text).filter((c) => c.hits === 0).map((c) => c.term);
+}
+
+function boundaries(text = readDoc()) {
+  const ls = lines(text);
+  const start = ls.findIndex((l) => /^##\s*代价与边界/.test(l));
+  if (start < 0) return [];
+  const out = [];
+  for (let i = start + 1; i < ls.length; i += 1) {
+    const line = ls[i].trim();
+    if (/^##\s/.test(line)) break;
+    if (/^-\s+/.test(line)) out.push(line.replace(/^-\s+/, ''));
+  }
+  return out;
+}
+
+function summarize(text = readDoc()) {
+  return {
+    hanzi: hanzi(text),
+    sections: sections(text),
+    potency: potencyTable(text),
+    gates: craftGates(text),
+    paths: reprogramPaths(text),
+    niche: nicheFactors(text),
+    scale: scaleClaims(text),
+    concepts: conceptHits(text),
+    boundaries: boundaries(text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`医学生物学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const s = summarize();
+  console.log('医学生物学 · 第 ' + CHAPTER + ' 章 ' + TITLE);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log('正文 ' + s.hanzi.toLocaleString('en-US') + ' 汉字 · ' + s.sections.length + ' 节 · 边界 '
+    + s.boundaries.length + ' 条');
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('潜能三层（正文表格现算 ' + s.potency.length + ' 层）：');
+  for (const p of s.potency) console.log('  ' + p.level + '：' + p.gives + '（限制：' + p.limit + '）');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  const k = s.scale;
+  console.log('规模口径（正文常引口径，读后现算）：细胞 ' + k.total.toExponential(0)
+    + ' 个 · 类型 ' + k.kinds + ' 种 → 平均每种类型摊到 '
+    + k.perType.toExponential(1) + ' 个细胞。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('重编程三条路（' + s.paths.length + ' 条）：' + s.paths.join('、'));
+  console.log('  共同机制：分化状态是被锁住的，而不是被删掉的。');
   console.log('');
-  console.log('※ 教学样例：数字由 standards/yixue-shengwu-xue/units.json 现算，不手打；改教材后重跑即可复现。');
+  console.log('干细胞龛三样（' + s.niche.length + ' 样）：' + s.niche.join('、'));
+  console.log('工艺四关（' + s.gates.length + ' 关）：' + s.gates.join(' → '));
+  console.log('  最易低估的是质量控制：不能终端灭菌、不能简单纯化，体系只能建在过程控制上。');
+  console.log('');
+  console.log('判据词命中（正文现算）：');
+  for (const x of s.concepts) console.log('  ' + (x.hits ? '✓' : '✗') + ' ' + x.term + '：' + x.hits);
+  console.log('');
+  console.log('边界（「代价与边界」一节，取前 3 条）：');
+  s.boundaries.slice(0, 3).forEach((b) => console.log('  - ' + b));
+  console.log('');
+  console.log('※ 现算自 ' + SLUG + '/docs/zh.md；正文改版后重跑即可复现。');
   console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC, CHAPTER, SLUG, TITLE, CONCEPTS,
+  readDoc, sections, hanzi, cnToNumber, potencyTable, craftGates, reprogramPaths,
+  nicheFactors, scaleClaims, conceptHits, missing, boundaries, summarize,
+};

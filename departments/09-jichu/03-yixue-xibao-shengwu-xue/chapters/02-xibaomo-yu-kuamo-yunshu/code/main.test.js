@@ -6,57 +6,87 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
+const {
+  readDoc,
+  permeability,
+  carriers,
+  identify,
+  pumpStoichiometry,
+  pumpBudget,
+  epithelialRoute,
+} = require('./main.js');
+
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yixue-xibao-shengwu-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yixue-xibao-shengwu-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文是本章那一份', () => {
+  const doc = readDoc();
+  assert.ok(doc.includes('脂双层') && doc.includes('钠钾泵'));
+  const hanzi = (doc.match(/[\u4e00-\u9fff]/g) || []).length;
+  assert.ok(hanzi > 2000, `汉字过少: ${hanzi}`);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('通透性排序解析出 4 级，最快的是小分子气体', () => {
+  const p = permeability(readDoc());
+  assert.strictEqual(p.length, 4);
+  assert.match(p[0].kind, /小分子气体/);
+  assert.match(p[p.length - 1].kind, /离子/);
+  assert.strictEqual(p[p.length - 1].direct, false, '离子不应被算作可直接过');
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('三类转运蛋白解析出 3 行，通道不饱和、载体饱和', () => {
+  const cs = carriers(readDoc());
+  assert.strictEqual(cs.length, 3);
+  const channel = cs.find((c) => c.type.startsWith('通道'));
+  const carrier = cs.find((c) => c.type.includes('载体'));
+  const pump = cs.find((c) => c.type.startsWith('泵'));
+  assert.match(channel.saturation, /不明显/);
+  assert.match(carrier.saturation, /明显/);
+  assert.match(pump.dir, /逆梯度/);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('两个问题定一类：三个探针各回本行', () => {
+  const doc = readDoc();
+  assert.strictEqual(identify({ dir: '顺', consumesEnergy: false, saturating: false }, doc).type, '通道');
+  assert.match(identify({ dir: '顺', consumesEnergy: false, saturating: true }, doc).type, /载体/);
+  assert.match(identify({ dir: '逆', consumesEnergy: true, saturating: true }, doc).type, /泵/);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('凑不成一类的探针直接报错', () => {
+  assert.throws(() => identify({ dir: '逆', consumesEnergy: false, saturating: false }, readDoc()));
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('化学计量从正文读出：3 出 2 入 1 个 ATP，净 +1', () => {
+  const s = pumpStoichiometry(readDoc());
+  assert.deepStrictEqual({ na: s.na, k: s.k, atp: s.atp, netCharge: s.netCharge }, { na: 3, k: 2, atp: 1, netCharge: 1 });
+});
+
+test('泵的账按轮数现算，余数进位', () => {
+  const b = pumpBudget(1000, readDoc());
+  assert.strictEqual(b.cycles, 334);
+  assert.strictEqual(b.atpSpent, 334);
+  assert.strictEqual(b.kIn, 668);
+  assert.strictEqual(b.charge, 334);
+  const exact = pumpBudget(9, readDoc());
+  assert.strictEqual(exact.cycles, 3);
+  assert.strictEqual(exact.atpSpent, 3);
+});
+
+test('上皮极性：泵必须在基底侧', () => {
+  const r = epithelialRoute(readDoc());
+  assert.strictEqual(r.pumpOnBasal, true);
+  assert.strictEqual(r.steps.length, 3);
+});
+
+test('脚本可跑，输出含示例与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/yixue-xibao-shengwu-xue\/units\.json 现算/);
+  assert.match(out, /净移走 1 个正电荷/);
+  assert.match(out, /现抓现算/);
   assert.match(out, /不构成临床判断依据/);
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
+test('代码头部指向本章正文', () => {
   const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/02-xibaomo-yu-kuamo-yunshu/docs/zh.md'), '头部注释未指向本章');
+  assert.ok(body.includes('/02-xibaomo-yu-kuamo-yunshu/docs/zh.md'));
 });

@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 医学遗传学 · 第 7 章 易感性与再发风险：本章统计口径
+ * 医学遗传学 · 第 7 章 再发风险不是一个数字，是一个随每条新信息改动的后验
  * 课程: departments/09-jichu/09-yixue-yichuan-xue/chapters/07-yiganxing-yu-zaifa-fengxian/docs/zh.md
- * 数据: standards/yixue-yichuan-xue/units.json（96 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yixue-yichuan-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章是一条四步的更新链：1/2 →（40 岁正常）→ 1/11 →（传给子代）→ 4.1% →（检测阴性）→ 1/1000 → 0.045%。
+ * 另附阳性预测值一例（1/1000 患病率、99%/99%）。每一步都由正文写下的输入现算，再与正文的结果对照。
  */
 
 'use strict';
@@ -15,87 +13,98 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yixue-yichuan-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 7;
+const TITLE = '再发风险不是一个数字，是一个随每条新信息改动的后验';
+
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const lines = body.split('\n');
+  const sections = [];
+  let cur = null;
+  for (const line of lines) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) { cur = { title: h[1], hanzi: 0 }; sections.push(cur); continue; }
+    if (cur) cur.hanzi += (line.match(HANZI) || []).length;
   }
-  throw new Error('没找到 standards/yixue-yichuan-xue/units.json —— 章节目录是否已脱离仓库？');
+  return {
+    hanzi: (body.match(HANZI) || []).length,
+    sections,
+    tables: (body.match(/^\s*\|[\s:|-]+\|\s*$/gm) || []).length,
+    claims: (body.match(/\*\*[^*\n]+\*\*/g) || []).length,
+  };
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yixue-yichuan-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yixue-yichuan-xue', 'chapter-map.json');
-const CHAPTER = '7';
-const SLUG = '07-yiganxing-yu-zaifa-fengxian';
+const PEN = 0.9;   // 正文：外显率 90%
+const SENS = 0.99; // 正文：预测性检测灵敏度 99%
+const SPEC = 0.99; // 正文：特异度 99%
+const PREV = 1 / 1000; // 正文：受检人群中占 1/1000
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 整条链：先验 → 年龄更新 → 子代风险 → 检测更新 → 再折算子代 */
+function chain() {
+  const prior = 0.5;
+  const postAge = (prior * (1 - PEN)) / (prior * (1 - PEN) + (1 - prior) * 1);
+  const child1 = postAge * 0.5 * PEN;
+  const postTest = (postAge * (1 - SENS)) / (postAge * (1 - SENS) + (1 - postAge) * SPEC);
+  const child2 = postTest * 0.5 * PEN;
+  return { prior, postAge, child1, postTest, child2 };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 阳性预测值：真阳性 ÷（真阳性 + 假阳性） */
+function ppv(prev, sens, spec) {
+  const tp = sens * prev;
+  const fp = (1 - spec) * (1 - prev);
+  return { tp, fp, value: tp / (tp + fp) };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function figures(text) {
+  const c = chain();
+  const p = ppv(PREV, SENS, SPEC);
+  return [
+    { name: '40 岁正常后的携带概率', got: c.postAge, stated: 1 / 11, token: '1/11' },
+    { name: '子代患病风险', got: c.child1 * 100, stated: 4.1, token: '4.1%' },
+    { name: '阴性后的携带概率', got: c.postTest, stated: 1 / 1000, token: '1/1000' },
+    { name: '阴性后的子代风险', got: c.child2 * 100, stated: 0.045, token: '0.045%' },
+    { name: '阳性预测值', got: p.value * 100, stated: 9, token: '≈ 9%' },
+  ].map((f) => ({ ...f, ok: Math.abs(f.got - f.stated) <= 0.03 * Math.abs(f.stated) }));
+}
+
+function fmt(x) {
+  if (x >= 1) return x.toFixed(2);
+  if (x >= 0.01) return x.toFixed(3);
+  return x.toPrecision(3);
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const a = analyze(text);
+  const rows = figures(text);
+  const p = ppv(PREV, SENS, SPEC);
 
-  console.log(`医学遗传学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`医学遗传学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算：正文写输入，这里逐步重算，再与正文的结果对照）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 表格 ${a.tables} 张 · 加粗判断 ${a.claims} 处`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  for (const r of rows) {
+    const mark = r.ok ? '✓' : '✗ 与正文不符';
+    console.log(`  ${r.name.padEnd(16, '　')} 算得 ${fmt(r.got).padStart(8)} · 正文 ${r.token}  ${mark}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/yixue-yichuan-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`阳性预测值的分子分母：真阳性 ${p.tp.toExponential(3)} · 假阳性 ${p.fp.toExponential(3)} —— 假阳性是真阳性的 ${(p.fp / p.tp).toFixed(1)} 倍。`);
+  console.log('读法：每新增一条信息，分母被剔除一类人；阳性预测值由患病率主导，不由准确率主导。');
+  console.log('※ 90%、99%、1/1000 及由此推出的 1/11、4.1%、0.045%、9% 均为教学设定与算例推导，不代表任何真实疾病或检测的性能。');
+  console.log('※ 本输出仅用于教学演示，不构成医学意见、风险预测或治疗建议。');
+  if (rows.some((r) => !r.ok)) process.exitCode = 1;
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, analyze, figures, chain, ppv };

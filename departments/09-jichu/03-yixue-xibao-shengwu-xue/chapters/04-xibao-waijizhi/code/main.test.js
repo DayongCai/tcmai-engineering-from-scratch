@@ -6,57 +6,74 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
+const { readDoc, molecules, pickFor, basementMembrane, mechanoSteps, mmpControl, dimensionality } = require('./main.js');
+
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yixue-xibao-shengwu-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yixue-xibao-shengwu-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文是本章那一份', () => {
+  const doc = readDoc();
+  assert.ok(doc.includes('细胞外基质') && doc.includes('基底膜'));
+  assert.ok((doc.match(/[\u4e00-\u9fff]/g) || []).length > 2000);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('四类大分子解析正确，力学一列各不相同', () => {
+  const ms = molecules(readDoc());
+  assert.strictEqual(ms.length, 4);
+  const kinds = ms.map((m) => m.kind).join(' ');
+  assert.match(kinds, /胶原/);
+  assert.match(kinds, /弹性纤维/);
+  assert.match(kinds, /蛋白聚糖/);
+  assert.match(kinds, /黏附糖蛋白/);
+  const mechanics = new Set(ms.map((m) => m.mechanics));
+  assert.strictEqual(mechanics.size, 4, '力学任务应互不重复');
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('按需求反查：拉不断找胶原、回弹找弹性纤维、抗压找蛋白聚糖', () => {
+  const doc = readDoc();
+  assert.match(pickFor('拉不断', doc).kind, /胶原/);
+  assert.match(pickFor('拉长后复位', doc).kind, /弹性纤维/);
+  assert.match(pickFor('撑住水', doc).kind, /蛋白聚糖/);
+  assert.match(pickFor('连接与定位', doc).kind, /黏附糖蛋白/);
+  assert.throws(() => pickFor('导电', doc));
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('基底膜四件套齐，各自分工非空', () => {
+  const bm = basementMembrane(readDoc());
+  assert.strictEqual(bm.length, 4);
+  for (const p of bm) assert.ok(p.role.length >= 4, `分工缺失: ${p.name}`);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('力学信号四步，末步是转录输出', () => {
+  const steps = mechanoSteps(readDoc());
+  assert.strictEqual(steps.length, 4);
+  assert.match(steps[0].title, /整合素聚集/);
+  assert.match(steps[1].title, /骨架承力/);
+  assert.match(steps[2].title, /信号转导入核/);
+  assert.match(steps[3].title, /转录输出/);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('降解三级控制且局部限时', () => {
+  const m = mmpControl(readDoc());
+  assert.deepStrictEqual(m.stages, ['前体', '激活', '抑制']);
+  assert.strictEqual(m.localized, true);
+});
+
+test('二维与三维的差别在正文里有断言', () => {
+  const d = dimensionality(readDoc());
+  assert.strictEqual(d.flat, true);
+  assert.strictEqual(d.threeD, true);
+  assert.strictEqual(d.drugMustRecheck, true);
+});
+
+test('脚本可跑，输出含反查结果与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/yixue-xibao-shengwu-xue\/units\.json 现算/);
+  assert.match(out, /拉长后复位 → 弹性纤维/);
+  assert.match(out, /现抓/);
   assert.match(out, /不构成临床判断依据/);
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/04-xibao-waijizhi/docs/zh.md'), '头部注释未指向本章');
+test('代码头部指向本章正文', () => {
+  assert.ok(fs.readFileSync(MAIN, 'utf8').includes('/04-xibao-waijizhi/docs/zh.md'));
 });

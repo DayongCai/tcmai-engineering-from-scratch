@@ -5,58 +5,69 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { DOC, CHAPTER, TITLE, read, analyze, figures, carryAfterSons } = require('./main.js');
 
+const TEXT = read();
+const A = analyze(TEXT);
+const FIG = figures(TEXT);
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yixue-yichuan-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yixue-yichuan-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文就在本章目录下，章号与标题取自正文', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '04-xipu-yu-chuandi-fangshi', 'docs', 'zh.md')), DOC);
+  assert.ok(fs.existsSync(DOC), '正文文件不存在');
+  assert.strictEqual(CHAPTER, 4);
+  assert.strictEqual(TITLE, '系谱不是「看图猜病」，是一台把家族史折成概率的机器');
+  assert.ok(TEXT.startsWith('# 第 4 章'), '正文首行不是本章章题');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('结构量与正文快照一致', () => {
+  assert.strictEqual(A.hanzi, 2571);
+  assert.strictEqual(A.sections.length, 6);
+  assert.strictEqual(A.tables, 1);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('每节都有字，逐节相加不超过全篇', () => {
+  for (const s of A.sections) assert.ok(s.hanzi > 0, s.title + ' 一节为空');
+  const sum = A.sections.reduce((n, s) => n + s.hanzi, 0);
+  assert.ok(sum > 0 && sum <= A.hanzi, `${sum} vs ${A.hanzi}`);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('每个算式的结果都能对上正文写下的同一个数', () => {
+  assert.ok(FIG.length >= 3, '算式太少：' + FIG.length);
+  for (const f of FIG) {
+    assert.ok(f.ok, `${f.name}：算得 ${f.got}，正文写 ${f.token}`);
+    assert.ok(TEXT.includes(f.token), `正文里找不到 ${f.token}（${f.name}）`);
+  }
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('健康儿子链单调下降且不归零，规律为 1/(2ⁿ+1)', () => {
+  let prev = 1;
+  for (let n = 1; n <= 6; n += 1) {
+    const p = carryAfterSons(n);
+    assert.ok(p < prev && p > 0, `n=${n} 时应下降且大于零，实得 ${p}`);
+    assert.ok(Math.abs(p - 1 / (Math.pow(2, n) + 1)) < 1e-12, `n=${n} 应为 1/(2ⁿ+1)`);
+    prev = p;
+  }
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('近亲部分按 q 缩小、随机部分按 q² 缩小，倍数是变数', () => {
+  const ratio = (qq, F) => (qq * qq * (1 - F) + qq * F) / (qq * qq);
+  assert.ok(ratio(0.001, 1 / 16) > ratio(0.01, 1 / 16), '病越罕见，相对放大越明显');
+  assert.ok(ratio(0.01, 1 / 16) > 5 && ratio(0.01, 1 / 16) < 9, '本例倍数应在七倍附近');
+});
+
+test('三条可排除的规则与两个措辞在正文里都有对应表述', () => {
+  for (const s of ['X 只传给女儿', '永远不归零', '没有反证', '风险年龄']) {
+    assert.ok(TEXT.includes(s), `正文里找不到「${s}」`);
+  }
+});
+
+
+test('脚本可运行，输出含现算口径与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/yixue-yichuan-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/04-xipu-yu-chuandi-fangshi/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /均从本章 docs\/zh\.md 现算/);
+  assert.match(out, /不构成医学意见/);
+  assert.ok(out.includes('汉字 ' + A.hanzi + ' 字'), '输出里的汉字数与快照不一致');
 });

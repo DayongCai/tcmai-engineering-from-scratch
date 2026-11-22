@@ -25,6 +25,8 @@ const path = require('node:path');
 const ROOT = path.resolve(__dirname, '../../../../../..');
 const BOOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/wenbing/底本.json'), 'utf8'));
 const TIAOBIAN = BOOK.books.find((b) => b.id === 'tiaobian');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 /** 九篇取样表：卷 / 篇名 / 焦 / 极 / 病类标签 */
 const SECTIONS = [
@@ -291,11 +293,105 @@ if (require.main === module) {
   const se = seasonality();
   console.log(`\n  ── 季节词（每百条出现率）· 暑 ${se.n.shu} 条 vs 湿 ${se.n.shi} 条 ──`);
   for (const r of se.rows) console.log(`  ${r.key} | 暑 ${r.shu}（${r.shuRate}%）| 湿 ${r.shi}（${r.shiRate}%）`);
+
+  const a = docAudit();
+  console.log('\n  正文与 quiz 对账（读 docs/zh.md）');
+  for (const f of a.facts) console.log(`  ${f.got === f.want ? '✓' : '✗'} ${f.label} 现算 ${f.got} · 正文 ${f.want}`);
+  console.log(`  quiz ${a.quiz.total} 题（pre ${a.quiz.stage.pre} / check ${a.quiz.stage.check} / post ${a.quiz.stage.post}）· check 接地 ${a.quiz.groundedChecks} 道 · 答案 ${a.quiz.answers.join('/')}`);
   console.log('');
+}
+
+/* ── 正文与 quiz 的对账：九篇表 / 症状词 / 三焦 / 季节，逐格复算 ── */
+
+function hanzi(s) {
+  return (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+}
+
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizAudit(raw) {
+  const qs = JSON.parse(raw).questions || [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const rows = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    return { stage: q.stage, options: opts.length, correct: q.correct, explainHanzi: hanzi(q.explain), right: String(opts[q.correct] || '') };
+  });
+  return {
+    total: qs.length,
+    stage,
+    rows,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    allFour: rows.every((r) => r.options === 4),
+    badCorrect: rows.filter((r) => !(Number.isInteger(r.correct) && r.correct >= 0 && r.correct < 4)).length,
+    minExplain: Math.min(...rows.map((r) => r.explainHanzi)),
+    scaffold: /三辨|四位面|单元规模|本章实测/.test(raw),
+  };
+}
+
+function docAudit() {
+  const doc = fs.readFileSync(DOC, 'utf8').replace(/\*\*/g, '');
+  const qraw = fs.readFileSync(QUIZ, 'utf8');
+  const t = totals();
+  const sv = shuVsShi();
+  const tj = triJiao();
+  const se = seasonality();
+  const grab = (re, label) => {
+    const m = re.exec(doc);
+    if (!m) throw new Error(`正文里定位不到「${label}」`);
+    return m.slice(1).map((v) => Number(String(v).replace(/,/g, '')));
+  };
+
+  const [docPian, docTiao, docFang, docWith, docRef, docChars] = grab(/篇 (\d+) · 条 (\d+)（暑 \d+ \/ 湿 \d+）· 方 (\d+)（有药味 (\d+) \+ 互见 (\d+)）· 原文 ([\d,]+) 字/, '九篇合计');
+  const bianRows = [...doc.matchAll(/^\| (上焦|中焦|下焦) \| ([^|]+?) \| (\d+) \| (\d+) \| (\d+) \| (\d+) \|$/gm)]
+    .map((m) => ({ jiao: m[1], pian: m[2].trim(), tiao: +m[3], fang: +m[4], refOnly: +m[5], herbs: +m[6] }));
+  if (bianRows.length !== 9) throw new Error(`正文九篇表是 ${bianRows.length} 行，应为 9`);
+  const triRows = [...doc.matchAll(/^\| (上焦|中焦|下焦) \| (\d+) \| (\d+) \/ (\d+) \| (\d+) \| (\d+)% \|$/gm)]
+    .map((m) => ({ jiao: m[1], tiao: +m[2], shi: +m[3], shu: +m[4], fang: +m[5], share: +m[6] }));
+  if (triRows.length !== 3) throw new Error('正文三焦表不是 3 行');
+  const [docKe, docShi] = grab(/口渴 \| 暑 \| ([\d.]+)% \| ([\d.]+)% \|/, '口渴率');
+  const [docLi, docShiLi] = grab(/便溏下利 \| 湿 \| ([\d.]+)% \| ([\d.]+)% \|/, '下利率');
+  const [docSide] = grab(/19 类词里 (\d+) 类落在预期的一侧/, '预期一侧词数');
+  const [docSeasonShu, docSeasonShi] = grab(/任一词 \| (\d+) 条（[\d.]+%）\s*\| (\d+) 条（[\d.]+%）/, '季节词条数');
+
+  const sideOk = sv.rows.filter((r) => (r.pole === '暑' ? r.delta > 0 : r.delta < 0)).length;
+  const facts = [
+    { label: '篇/条/方/有药味/互见/字', got: [t.pian, t.tiao, t.fang, t.withHerbs, t.refOnly, t.chars].join('/'), want: [docPian, docTiao, docFang, docWith, docRef, docChars].join('/') },
+    { label: '暑 32 / 湿 100', got: `${t.tiaoShu}/${t.tiaoShi}`, want: '32/100' },
+    { label: '口渴 暑/湿 率', got: `${sv.rows.find((r) => r.key === '口渴').shuRate}/${sv.rows.find((r) => r.key === '口渴').shiRate}`, want: `${docKe}/${docShi}` },
+    { label: '下利 暑/湿 率', got: `${sv.rows.find((r) => r.key === '便溏下利').shuRate}/${sv.rows.find((r) => r.key === '便溏下利').shiRate}`, want: `${docLi}/${docShiLi}` },
+    { label: '预期一侧 词数/总词数', got: `${sideOk}/${sv.rows.length}`, want: `${docSide}/${sv.rows.length}` },
+    { label: '季节词 暑/湿 条数（任一词）', got: `${new Set(se.rows.flatMap((r) => r.shuEg)).size}/${new Set(se.rows.flatMap((r) => r.shiEg)).size}`, want: `${docSeasonShu}/${docSeasonShi}` },
+  ];
+  for (const r of bianRows) {
+    const g = profile().find((p) => p.jiao === r.jiao && p.pian === r.pian);
+    facts.push({ label: `${r.jiao}·${r.pian} 条/方/互见/有药味`, got: g ? [g.tiao, g.fang, g.refOnly, g.herbs].join('/') : '缺', want: [r.tiao, r.fang, r.refOnly, r.herbs].join('/') });
+  }
+  for (const r of triRows) {
+    const g = tj[r.jiao];
+    facts.push({ label: `${r.jiao} 条/湿/暑/方/湿占比`, got: [g.tiao, g.shiTiao, g.shuTiao, g.fang, g.shiShare].join('/'), want: [r.tiao, r.shi, r.shu, r.fang, r.share].join('/') });
+  }
+
+  const q = quizAudit(qraw);
+  const body = grams(doc);
+  const grounded = q.rows.filter((r) => r.stage === 'check' && [...grams(r.right)].some((v) => body.has(v))).length;
+  const sourceText = ALL.map((s) => s.articles.map((a) => `${a.zhHans}\n${(a.notes || []).join('\n')}`).join('\n')).join('\n');
+  return {
+    facts,
+    quiz: { ...q, groundedChecks: grounded },
+    quotes: ['暑兼湿热', '润之则病深不解', '长夏深秋冬日同法', '湿之为物也', '伤脾胃之阳者十常八、九'].map((w) => ({ quote: w, inDoc: doc.includes(w), inSource: sourceText.includes(w) })),
+  };
 }
 
 module.exports = {
   BOOK, TIAOBIAN, SECTIONS, ALL, LEXICON, SEASONS, RULES,
   profile, totals, shuVsShi, triJiao, fangBySyndrome, classifyFormula, seasonality, cite,
-  articlesOf, formulasOf,
+  articlesOf, formulasOf, DOC, QUIZ, hanzi, grams, quizAudit, docAudit,
 };

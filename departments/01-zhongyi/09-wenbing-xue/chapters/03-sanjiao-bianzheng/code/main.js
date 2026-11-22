@@ -29,6 +29,8 @@ const TIAOBIAN = BOOK.books.find((b) => b.id === 'tiaobian');
 if (!TIAOBIAN) throw new Error('底本.json 缺 id=tiaobian（《温病条辨》）');
 
 const JIAO = ['卷一·上焦篇', '卷二·中焦篇', '卷三·下焦篇'];
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const SHORT = { '卷一·上焦篇': '上焦', '卷二·中焦篇': '中焦', '卷三·下焦篇': '下焦' };
 const OTHER = ['凡例', '原病篇', '卷五·解產難'];
 
@@ -264,9 +266,105 @@ if (require.main === module) {
   console.log('  两轴语汇在 290 条正文中的出现：衛 ' + c.tokens.wei + ' · 氣分 ' + c.tokens.qiFen + ' · 營 ' + c.tokens.ying + ' · 血分 ' + c.tokens.xueFen + ' · 三焦 ' + c.tokens.sanjiao);
   console.log('  卫气营血 × 三焦：对上 ' + c.aligned + ' 行 · 对不上 ' + c.gaps + ' 行');
   for (const r of c.rows) console.log(`  ${r.weiqi} → ${r.sanjiao} | ${r.level} | ${r.tiao}`);
+
+  const a = docAudit();
+  console.log('\n  正文与 quiz 对账（读 docs/zh.md）');
+  for (const f of a.facts) console.log(`  ${f.got === f.want ? '✓' : '✗'} ${f.label} 现算 ${f.got} · 正文 ${f.want}`);
+  console.log(`  quiz ${a.quiz.total} 题（pre ${a.quiz.stage.pre} / check ${a.quiz.stage.check} / post ${a.quiz.stage.post}）· check 接地 ${a.quiz.groundedChecks} 道 · 答案 ${a.quiz.answers.join('/')}`);
+}
+
+/* ── 正文与 quiz 的对账：读 docs/zh.md，逐格与底本现算对读 ── */
+
+function hanzi(s) {
+  return (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+}
+
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizAudit(raw) {
+  const qs = JSON.parse(raw).questions || [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const rows = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    return { stage: q.stage, options: opts.length, correct: q.correct, explainHanzi: hanzi(q.explain), right: String(opts[q.correct] || '') };
+  });
+  return {
+    total: qs.length,
+    stage,
+    rows,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    allFour: rows.every((r) => r.options === 4),
+    badCorrect: rows.filter((r) => !(Number.isInteger(r.correct) && r.correct >= 0 && r.correct < 4)).length,
+    minExplain: Math.min(...rows.map((r) => r.explainHanzi)),
+    scaffold: /三辨|四位面|单元规模|本章实测/.test(raw),
+  };
+}
+
+function docAudit() {
+  const doc = fs.readFileSync(DOC, 'utf8');
+  const qraw = fs.readFileSync(QUIZ, 'utf8');
+  const s = juanStats();
+  const o = organMap();
+  const c = crossAxis();
+  const grab = (re, label) => {
+    const m = re.exec(doc);
+    if (!m) throw new Error(`正文里定位不到「${label}」`);
+    return m.slice(1);
+  };
+
+  const juanRows = [...doc.matchAll(/^\| (上焦|中焦|下焦) \| (\d+) \| (\d+) \| (\d+) \| (\d+) \| (\d+) \| ([\d.]+) \|$/gm)].map((m) => ({
+    jiao: m[1], pian: Number(m[2]), tiao: Number(m[3]), fang: Number(m[4]), fangHerb: Number(m[5]), fangRef: Number(m[6]), perFang: Number(m[7]),
+  }));
+  if (juanRows.length !== 3) throw new Error('正文「三卷」表不是 3 行');
+
+  const organRows = [...doc.matchAll(/^\| (上焦|中焦|下焦) \| ([^|（]+)（[^|）]+） \| (\d+) \| (\d+) \|/gm)].map((m) => ({ jiao: m[1], zang: m[2].trim().replace(/肾/g, '腎'), tiao: Number(m[3]), fang: Number(m[4]) }));
+  if (organRows.length !== 6) throw new Error('正文「六病位」表不是 6 行');
+
+  const [docExtraTiao, docExtraFang] = grab(/合计 (\d+) 条、(\d+) 方/, '另计合计').map(Number);
+  const [docDup] = grab(/上焦条号重号 (\d+) 次/, '上焦重号次数').map(Number);
+  const [docWei, docQi, docYing, docXue, docSanjiao] = grab(/「卫」字出现 \*\*(\d+) 次\*\*，「气分」(\d+) 次、「营」(\d+) 次、「血分」(\d+) 次、「三焦」(\d+) 次/, '两轴词频').map(Number);
+
+  const facts = [];
+  for (const row of juanRows) {
+    const got = s.rows.find((r) => r.jiao === row.jiao);
+    facts.push({ label: `${row.jiao} 条/方/有药味/互见/方条比`, got: got ? [got.tiao, got.fang, got.fangHerb, got.fangRef, got.perFang].join('/') : '缺', want: [row.tiao, row.fang, row.fangHerb, row.fangRef, row.perFang].join('/') });
+  }
+  for (const row of organRows) {
+    const got = o.find((x) => x.jiao === row.jiao && x.zang === row.zang);
+    facts.push({ label: `${row.jiao}·${row.zang} 明写条/方`, got: got ? `${got.tiao}/${got.fang}` : '缺', want: `${row.tiao}/${row.fang}` });
+  }
+  facts.push({ label: '另计 条 / 方', got: `${s.extra.reduce((n, e) => n + e.tiao, 0)}/${s.extra.reduce((n, e) => n + e.fang, 0)}`, want: `${docExtraTiao}/${docExtraFang}` });
+  facts.push({ label: '上焦重号', got: s.rows.find((r) => r.jiao === '上焦').dupTiao, want: docDup });
+  facts.push({ label: '兩轴词频 卫/气分/营/血分/三焦', got: [c.tokens.wei, c.tokens.qiFen, c.tokens.ying, c.tokens.xueFen, c.tokens.sanjiao].join('/'), want: [docWei, docQi, docYing, docXue, docSanjiao].join('/') });
+  const [docAligned, docGaps] = grab(/6 组映射里只有 (\d+) 组真正对得上，另有 (\d+) 组在卫气营血里/, '映射组数').map(Number);
+  facts.push({ label: '映射 6 组：对上 / 对不上', got: `${c.rows.length}/${c.aligned}/${c.gaps}`, want: `6/${docAligned}/${docGaps}` });
+
+  const q = quizAudit(qraw);
+  const body = grams(doc);
+  const grounded = q.rows.filter((r) => r.stage === 'check' && [...grams(r.right)].some((x) => body.has(x))).length;
+  return {
+    facts,
+    quiz: { ...q, groundedChecks: grounded },
+    /** 正文引文是否逐字落在底本里 */
+    quotes: ['温病由口鼻而入，鼻气通于肺，口气通于胃', '温病最善伤精', '伤寒伤人身之阳，故喜辛温甘温苦热，以救其阳']
+      .map((w) => ({
+        quote: w,
+        inDoc: doc.includes(w),
+        inSource: TIAOBIAN.sections.some((sec) => sec.articles.some((a) => a.zhHans.includes(w) || (a.notes || []).some((n) => n.includes(w)))),
+      })),
+  };
 }
 
 module.exports = {
   BOOK, TIAOBIAN, JIAO, JIAO_SHORT: SHORT, ORGAN_ROWS, AXIS_ROWS,
   juanStats, organMap, crossAxis, axisTokens, sectionsOf, articlesOf, formulasOf, hasHerb,
+  DOC, QUIZ, hanzi, grams, quizAudit, docAudit,
 };

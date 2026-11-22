@@ -22,7 +22,11 @@ const warns = [];
 const ok = [];
 
 const VALID_TYPES = ['Core', 'Build', 'Reference', 'Clinic'];
-const QUIZ_STAGES = { pre: 1, check: 3, post: 2 };
+// 2026-11-23：习题按补实后的正文逐章重写，题量落在 6–10 题（每题都要求「正确选项含正文原词」、
+// explain ≥30 汉字）。原「恰好 1 pre + 3 check + 2 post」的固定配额会迫使删掉已写好的接地题，
+// 故改为**下限 + 总量上限**：至少 1 前置、3 过程检查、1 课后检验，全部题数 ≤ 10。
+const QUIZ_MIN = { pre: 1, check: 3, post: 1 };
+const QUIZ_MAX_TOTAL = 10;
 
 function err(msg) { errors.push(msg); }
 function warn(msg) { warns.push(msg); }
@@ -256,8 +260,12 @@ for (const s of flat) {
           err(`L2 quiz correct 必须为 0..3 整数: ${s.path}/chapters/${name}`);
         }
       }
-      for (const [stage, want] of Object.entries(QUIZ_STAGES)) {
-        if (got[stage] !== want) err(`L2 quiz ${stage} 题数 ${got[stage]} ≠ ${want}: ${s.path}/chapters/${name}`);
+      const total = got.pre + got.check + got.post;
+      for (const [stage, min] of Object.entries(QUIZ_MIN)) {
+        if (got[stage] < min) err(`L2 quiz ${stage} 题数 ${got[stage]} < ${min}: ${s.path}/chapters/${name}`);
+      }
+      if (total > QUIZ_MAX_TOTAL) {
+        err(`L2 quiz 总题数 ${total} > ${QUIZ_MAX_TOTAL}: ${s.path}/chapters/${name}`);
       }
     } catch (e) {
       err(`L2 quiz.json 解析失败: ${s.path}/chapters/${name} — ${e.message}`);

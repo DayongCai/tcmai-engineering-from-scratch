@@ -28,6 +28,8 @@ const ROOT = path.resolve(__dirname, '../../../../../..');
 const SRC = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/wenbing/底本.json'), 'utf8'));
 
 const BOOKS = Object.fromEntries(SRC.books.map((b) => [b.id, b]));
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 /**
  * 本章只用两本书。第三本《溫疫論》（303 条、47 条命中同一批体征字）**不取**：
@@ -481,7 +483,103 @@ if (require.main === module) {
   const badV = verifyVocab();
   console.log(`\n  引文自检：${badQ.length ? `✗ ${badQ.length} 处对不上` : '✓ 判据与规则表引文全部字面命中'}`);
   console.log(`  词表自检：${badV.length ? `✗ ${badV.join('；')}` : '✓ 全部 sample 在底本中出现'}`);
+
+  const a = docAudit();
+  console.log('\n  正文与 quiz 对账（读 docs/zh.md）');
+  for (const f of a.facts) console.log(`  ${f.got === f.want ? '✓' : '✗'} ${f.label} 现算 ${f.got} · 正文 ${f.want}`);
+  console.log(`  quiz ${a.quiz.total} 题（pre ${a.quiz.stage.pre} / check ${a.quiz.stage.check} / post ${a.quiz.stage.post}）· check 接地 ${a.quiz.groundedChecks} 道 · 答案 ${a.quiz.answers.join('/')}`);
   console.log('');
+}
+
+/* ── 正文与 quiz 的对账：99 条 / 舌象 / 斑疹 / 预后，逐格复算 ── */
+
+function hanzi(s) {
+  return (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+}
+
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizAudit(raw) {
+  const qs = JSON.parse(raw).questions || [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const rows = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    return { stage: q.stage, options: opts.length, correct: q.correct, explainHanzi: hanzi(q.explain), right: String(opts[q.correct] || '') };
+  });
+  return {
+    total: qs.length,
+    stage,
+    rows,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    allFour: rows.every((r) => r.options === 4),
+    badCorrect: rows.filter((r) => !(Number.isInteger(r.correct) && r.correct >= 0 && r.correct < 4)).length,
+    minExplain: Math.min(...rows.map((r) => r.explainHanzi)),
+    scaffold: /三辨|四位面|单元规模|本章实测/.test(raw),
+  };
+}
+
+function docAudit() {
+  const doc = fs.readFileSync(DOC, 'utf8').replace(/\r/g, '').replace(/\*\*/g, '');
+  const qraw = fs.readFileSync(QUIZ, 'utf8');
+  const sp = sourceSplit();
+  const ti = tongueIndex();
+  const bz = banZhen();
+  const pg = prognosis();
+  const grab = (re, label) => {
+    const m = re.exec(doc);
+    if (!m) throw new Error(`正文里定位不到「${label}」`);
+    return m.slice(1).map((v) => Number(String(v).replace(/,/g, '')));
+  };
+
+  const [docSum, docWenArt, docWenTot, docTbArt, docTbTot] = grab(/(\d+) 条：温热论 (\d+)\/(\d+)（[\d.]+%）· 条辨 (\d+)\/(\d+)（[\d.]+%）/, '入章 99 条');
+  const [docTongArticles, docVocab, docTongMentions] = grab(/(\d+) 条提到舌，(\d+) 个词共 (\d+) 处/, '舌象规模');
+  const classRows = [...doc.matchAll(/^\| (苔色|苔质|舌体) \| (\d+) \| (\d+) \|/gm)].map((m) => ({ cls: m[1], words: +m[2], n: +m[3] }));
+  if (classRows.length !== 3) throw new Error('正文舌象三类表不是 3 行');
+  const [docBz, docBan, docZhen, docBoth, docDims] = grab(/涉及斑疹的 (\d+) 条里，只提斑 (\d+) 条、只提疹 (\d+) 条、斑疹并提 (\d+) 条。判据按维度重排是 (\d+) 组/, '斑疹统计');
+  const [docShared] = grab(/6 维里 (\d+) 维对斑与疹同时成立/, '共同前提维数');
+  const [docPg, docNan, docSi, docXiong, docKe] = grab(/预后词共 (\d+) 处：难治 (\d+) · 死 (\d+) · 凶 (\d+) · 可治 (\d+)/, '预后词');
+
+  const term = (label) => ti.terms.find((t) => t.label === label).count;
+  const clsKey = { 苔色: '苔色', 苔质: '苔質', 舌体: '舌體' };
+  const facts = [
+    { label: '入章 总/温热论/条辨', got: `${sp.sum}/${sp.byBook.wenrelun.articles}/${sp.byBook.tiaobian.articles}`, want: `${docSum}/${docWenArt}/${docTbArt}` },
+    { label: '两书分母 温热论/条辨', got: `${sp.byBook.wenrelun.total}/${sp.byBook.tiaobian.total}`, want: `${docWenTot}/${docTbTot}` },
+    { label: '舌象 条 / 词 / 处', got: `${ti.articles}/${ti.vocabSize}/${ti.mentions}`, want: `${docTongArticles}/${docVocab}/${docTongMentions}` },
+    { label: '白苔/黄苔/绛', got: `${term('白苔')}/${term('黃苔')}/${term('絳（深紅）')}`, want: `25/8/18` },
+    { label: '斑疹 条/只斑/只疹/并提/维', got: `${bz.articles}/${bz.banOnly.length}/${bz.zhenOnly.length}/${bz.both.length}/${bz.criteria.length}`, want: `${docBz}/${docBan}/${docZhen}/${docBoth}/${docDims}` },
+    { label: '共同前提维数', got: bz.sharedDims.length, want: docShared },
+    { label: '预后 总/难治/死/凶/可治', got: `${pg.count}/${pg.byVerdict.難治}/${pg.byVerdict.死}/${pg.byVerdict.凶}/${pg.byVerdict.可治}`, want: `${docPg}/${docNan}/${docSi}/${docXiong}/${docKe}` },
+  ];
+  for (const r of classRows) {
+    facts.push({ label: `舌象 ${r.cls} 词数/处数`, got: [ti.classCount[clsKey[r.cls]], ti.byClass[clsKey[r.cls]]].join('/'), want: [r.words, r.n].join('/') });
+  }
+
+  const q = quizAudit(qraw);
+  const body = grams(doc);
+  const grounded = q.rows.filter((r) => r.stage === 'check' && [...grams(r.right)].some((v) => body.has(v))).length;
+  const sourceText = ART.map((a) => `${a.hant}\n${(a.notes || []).join('\n')}`).join('\n');
+  return {
+    facts,
+    quiz: { ...q, groundedChecks: grounded },
+    quotes: [
+      ['此非血分也', '此非血分也'],
+      ['斑属血者恒多', '斑屬血者恆多'],
+      ['琐碎小粒', '瑣碎小粒'],
+      ['齿为肾之余', '齒為腎之餘'],
+      ['必看外证所合', '必看外證所合'],
+    ].map(([s, t]) => ({ quote: s, inDoc: doc.includes(s), inSource: sourceText.includes(t) })),
+    /** 词表自检与引文自检必须为空 */
+    badQuotes: verifyQuotes().length,
+    badVocab: verifyVocab().length,
+  };
 }
 
 module.exports = {
@@ -506,4 +604,10 @@ module.exports = {
   sourceSplit,
   verifyQuotes,
   verifyVocab,
+  DOC,
+  QUIZ,
+  hanzi,
+  grams,
+  quizAudit,
+  docAudit,
 };

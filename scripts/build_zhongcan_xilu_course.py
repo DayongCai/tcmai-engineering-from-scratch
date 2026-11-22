@@ -599,18 +599,20 @@ def build():
         # 也不再对其做 --check 比对——否则「真人写的正文」会被判成 DRIFT。
         if not DOCS_AUTHORED:
             files[os.path.join(cdir, "docs", "zh.md")] = build_doc(ch)
-        files[os.path.join(cdir, "quiz.json")] = json.dumps(build_quiz(ch), ensure_ascii=False, indent=2) + "\n"
+            files[os.path.join(cdir, "quiz.json")] = json.dumps(build_quiz(ch), ensure_ascii=False, indent=2) + "\n"
+            files[os.path.join(cdir, "code", "main.js")] = fill(
+                JS, n=ch["n"], title=ch["title"],
+                picks=json.dumps([u["locator"] for u in units], ensure_ascii=False, indent=2),
+                picks_len=len(units))
+            files[os.path.join(cdir, "code", "main.test.js")] = fill(
+                JS_TEST, n=ch["n"], picks_len=len(units), n_units=s["units"], n_hanzi=s["hanzi"],
+                n_dose=s["dose"], n_xi=s["xi"], an_total=an_total,
+                top_herb=top[0][0] if top else "", top_count=top[0][1] if top else 0,
+                xt_title=xt["title"], xt_n=xt["measure"]["views"]["参西"])
+        # 习题与章节代码同样已人工重做（2026-11-23）：生成器不再覆盖，也不再比对，
+        # 否则子代理按正文写的 quiz / main.js 会被判成 DRIFT 并被文件覆盖。
         files[os.path.join(cdir, "outputs", f"prompt-{base}.md")] = build_prompt(ch)
         files[os.path.join(cdir, "outputs", f"skill-{base}.md")] = build_skill(ch)
-        files[os.path.join(cdir, "code", "main.js")] = fill(
-            JS, n=ch["n"], title=ch["title"],
-            picks=json.dumps([u["locator"] for u in units], ensure_ascii=False, indent=2),
-            picks_len=len(units))
-        files[os.path.join(cdir, "code", "main.test.js")] = fill(
-            JS_TEST, n=ch["n"], picks_len=len(units), n_units=s["units"], n_hanzi=s["hanzi"],
-            n_dose=s["dose"], n_xi=s["xi"], an_total=an_total,
-            top_herb=top[0][0] if top else "", top_count=top[0][1] if top else 0,
-            xt_title=xt["title"], xt_n=xt["measure"]["views"]["参西"])
         own = [u for u in units if primary[u["locator"]] == ch["n"]]
         shared = [u for u in units if primary[u["locator"]] != ch["n"]]
         ttl, hz_use = ch["title"], s["hanzi"]

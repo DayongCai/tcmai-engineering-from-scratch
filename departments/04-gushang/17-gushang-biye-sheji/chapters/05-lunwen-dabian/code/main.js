@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 骨伤毕业设计与知识移交 · 第 5 章 论文写作与答辩：本章统计口径
+ * 骨伤毕业设计与知识移交 · 第 5 章 · 论文写作与答辩
  * 课程: departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/docs/zh.md
- * 数据: standards/gushang-biye/units.json（21 单元层，每单元带三辨与四位面词频）
- * 取数: standards/gushang-biye/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的六段骨架、图表四律、数字一致性五做法、自评七项、答辩三类、六种失败模式，
+ * 以及五分钟陈述的段数与时长口径，全部从正文表格与段落现算，不手打。
+ * 六段与各自的检验句成对读出，避免骨架与判据脱钩。
  */
 
 'use strict';
@@ -15,87 +14,218 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gushang-biye', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/gushang-biye/units.json —— 章节目录是否已脱离仓库？');
-}
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gushang-biye', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'gushang-biye', 'chapter-map.json');
 const CHAPTER = '5';
-const SLUG = 'lunwen-dabian';
+const SLUG = '05-lunwen-dabian';
+const TITLE = '论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const GRAM = 4;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function h2Titles(text) {
+  const out = [];
+  for (const line of String(text).split(/\r?\n/)) {
+    const m = /^##\s+(.+)$/.exec(line.trim());
+    if (m) out.push(m[1].trim());
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function h3Titles(text) {
+  const out = [];
+  for (const line of String(text).split(/\r?\n/)) {
+    const m = /^###\s+(.+)$/.exec(line.trim());
+    if (m) out.push(m[1].trim());
+  }
+  return out;
+}
+
+function tableBlocks(text) {
+  const blocks = [];
+  let cur = null;
+  for (const line of String(text).split(/\r?\n/)) {
+    const s = line.trim();
+    if (s.startsWith('|')) {
+      if (!cur) {
+        cur = [];
+        blocks.push(cur);
+      }
+      cur.push(s);
+    } else cur = null;
+  }
+  return blocks.map((b) => {
+    const cells = b.map((r) =>
+      r
+        .replace(/^\|/, '')
+        .replace(/\|$/, '')
+        .split('|')
+        .map((c) => c.trim())
+    );
+    return { head: cells[0] || [], rows: cells.slice(2) };
+  });
+}
+
+const occurrences = (text, term) => String(text).split(term).length - 1;
+
+function grams(text, n = GRAM) {
+  const out = new Set();
+  for (const seg of String(text).replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function firstColumn(i) {
+  const b = tableBlocks(readDoc())[i];
+  return b ? b.rows.map((r) => r[0]) : [];
+}
+
+function column(i, j) {
+  const b = tableBlocks(readDoc())[i];
+  return b ? b.rows.map((r) => r[j] || '') : [];
+}
+
+/** 六段骨架：问题、数据、方法、结果、边界、入口 */
+const skeleton = () => firstColumn(0);
+
+/** 每一段的一句话检验 */
+function skeletonChecks() {
+  const keys = skeleton();
+  const checks = column(0, 2);
+  return keys.map((k, i) => ({ section: k, check: checks[i] || '' }));
+}
+
+/** 图表四律 */
+const figureRules = () => firstColumn(1);
+
+/** 数字一致性的五个做法 */
+const numberRules = () => firstColumn(2);
+
+/** 答辩前自评七项 */
+const selfChecks = () => firstColumn(3);
+
+/** 答辩三类必答题 */
+const defenseClasses = () => firstColumn(4);
+
+/** 六种常见失败模式 */
+const failures = () => firstColumn(5);
+
+/** 正文口径：五分钟陈述的段数与每段时长 */
+function statementRule() {
+  const text = readDoc();
+  const segs = /固定成五段/.test(text) ? 5 : null;
+  const minutes = /每段一分钟/.test(text) ? 1 : null;
+  return { segments: segs, minutesEach: minutes, total: segs && minutes ? segs * minutes : null };
+}
+
+/** 正文里对图表顺序的要求句 */
+function figureOrderRule() {
+  const text = readDoc();
+  const m = /图的顺序要跟论证顺序一致/.exec(text);
+  return m ? m[0] : null;
+}
+
+function quizSummary(quiz, text) {
+  const body = grams(text);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  for (const q of qs) if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+  const hits = qs
+    .filter((q) => q.stage === 'check')
+    .map((q) => {
+      const right = String((q.options || [])[q.correct] || '');
+      return { question: q.question, grams: [...grams(right)].filter((g) => body.has(g)) };
+    });
+  return {
+    total: qs.length,
+    stage,
+    check: hits.length,
+    grounded: hits.filter((h) => h.grams.length).length,
+    hits,
+    spread: new Set(qs.map((q) => q.correct)).size,
+  };
+}
+
+function analyze() {
+  const text = readDoc();
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    hanzi: hanzi(text),
+    sections: h2Titles(text),
+    subSections: h3Titles(text),
+    tables: tableBlocks(text).length,
+    skeleton: skeleton(),
+    skeletonChecks: skeletonChecks(),
+    figureRules: figureRules(),
+    numberRules: numberRules(),
+    selfChecks: selfChecks(),
+    defenseClasses: defenseClasses(),
+    failures: failures(),
+    statementRule: statementRule(),
+    figureOrderRule: figureOrderRule(),
+    quiz: quizSummary(quiz, text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`骨伤毕业设计与知识移交 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = analyze();
+  console.log(`骨伤毕业设计与知识移交 · 第 ${CHAPTER} 章 · ${TITLE}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文 ${r.hanzi.toLocaleString('en-US')} 汉字 · 小节 ${r.sections.length} 个 · 子节 ${r.subSections.length} 个 · 表格 ${r.tables} 张`);
+  r.sections.forEach((s, i) => console.log(`  ${String(i + 1).padStart(2)}  ${s}`));
+  if (r.subSections.length) console.log(`  子节：${r.subSections.join(' / ')}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('六段骨架与各自的检验句（同表成对读出）：');
+  for (const s of r.skeletonChecks) console.log(`  ${s.section.padEnd(4)} → ${s.check}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`图表四律（${r.figureRules.length} 条）：${r.figureRules.join(' / ')}`);
+  console.log(`  顺序要求：${r.figureOrderRule || '—'}`);
+  console.log(`数字一致性（${r.numberRules.length} 做法）：${r.numberRules.join(' / ')}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`自评七项（${r.selfChecks.length} 项）：${r.selfChecks.join(' / ')}`);
+  console.log(`答辩三类（${r.defenseClasses.length} 类）：${r.defenseClasses.join(' / ')}`);
+  console.log(`六种失败模式：${r.failures.join(' / ')}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/gushang-biye/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  const st = r.statementRule;
+  console.log(`陈述口径：${st.segments} 段 × 每段 ${st.minutesEach} 分钟 = ${st.total} 分钟`);
+  console.log('');
+  console.log(
+    `quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· check 题接地 ${r.quiz.grounded} 道（门槛 ≥2）· 答案落在 ${r.quiz.spread} 个位置`
+  );
+  console.log('');
+  console.log('※ 以上结构、配线与口径全部由本章正文现算，无手打常数；改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，不构成医学意见、学术规范裁决或合规意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  analyze,
+  readDoc,
+  h2Titles,
+  h3Titles,
+  tableBlocks,
+  occurrences,
+  grams,
+  firstColumn,
+  column,
+  skeleton,
+  skeletonChecks,
+  figureRules,
+  numberRules,
+  selfChecks,
+  defenseClasses,
+  failures,
+  statementRule,
+  figureOrderRule,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+};

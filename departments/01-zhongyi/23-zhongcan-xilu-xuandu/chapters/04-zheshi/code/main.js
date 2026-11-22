@@ -1,100 +1,185 @@
 'use strict';
 /**
- * 第 4 章 · 赭石与重镇：降逆的力学
+ * 第 4 章 · 赭石的六条特长里，只有一条是「重」
  *
  *   node code/main.js
  *
- * 数据：standards/zhongcan-xilu/units.json（外源·笈成文字化本，534 单元）
- * 本章取其中 10 个单元（PICKS 按 locator 精确命中），所有数字由本文件现算。
- * docs/zh.md 抄的就是这里的结果 —— 不同源就过不了 code/main.test.js。
+ * 读 docs/zh.md 与 standards/zhongcan-xilu/units.json，现算：
+ *   · 176 个医方条目中含生赭石者几条
+ *   · 《论胃气不降治法》里「一也……六也」是不是六条（数出来，不照抄正文）
+ *   · 生研、煅则失效、醋淬、妊娠边界、周姓妇案，各在原文哪一句
+ *   · 正文引文是否逐字落在所标单元；quiz 的结构与接地
+ *
+ * 边界：条目数是文本统计；剂量为清末衡制，本脚本不换算，也不给用药建议。
  */
+
 const fs = require('node:fs');
 const path = require('node:path');
 
 const ROOT = path.resolve(__dirname, '../../../../../..');
-const U = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/zhongcan-xilu/units.json'), 'utf8'));
-const BY_LOC = new Map(U.units.map((u) => [u.locator, u]));
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const UNITS = path.join(ROOT, 'standards/zhongcan-xilu/units.json');
 
-const PICKS = [
-  "医学衷中参西录·一、医方·（四）治喘息方·1．参赭镇气汤",
-  "医学衷中参西录·一、医方·（四）治喘息方·2．薯蓣纳气汤",
-  "医学衷中参西录·一、医方·（四）治喘息方·3．滋培汤",
-  "医学衷中参西录·一、医方·（五）治痰饮方·1．理饮汤",
-  "医学衷中参西录·一、医方·（五）治痰饮方·2．理痰汤",
-  "医学衷中参西录·一、医方·（五）治痰饮方·3．龙蚝理痰汤",
-  "医学衷中参西录·一、医方·（五）治痰饮方·4．健脾化痰丸",
-  "医学衷中参西录·一、医方·（五）治痰饮方·5．期颐饼",
-  "医学衷中参西录·一、医方·（五）治痰饮方·6．治痰点天突穴法",
-  "医学衷中参西录·二、药物·7．赭石解"
-];
+const CHAPTER = 4;
+const SLUG = '04-zheshi';
+const TITLE = '赭石的六条特长里，只有一条是「重」';
 
-const units = PICKS.map((loc) => {
-  const u = BY_LOC.get(loc);
-  if (!u) throw new Error('units.json 里没有 ' + loc);
-  return u;
-});
+const U = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
+const ALL = U.units;
+const BY_LOC = new Map(ALL.map((u) => [u.locator, u]));
+const DOC_TEXT = fs.readFileSync(DOC, 'utf8');
+const QUIZ_JSON = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
 
-/** 组成行：药名（剂量）连写 → 药名序列 */
-function herbs() {
+const hanzi = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
+const norm = (s) => String(s || '').replace(/[^\u4e00-\u9fff]/g, '');
+
+const CN = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
+
+function shingles(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]+/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+const DOC_GRAMS = shingles(DOC_TEXT);
+
+function quotes() {
+  const lines = DOC_TEXT.split(/\r?\n/);
   const out = [];
-  for (const u of units) {
-    for (const line of u.body.split('\n')) {
-      const found = [...line.matchAll(/([\u4e00-\u9fff]{1,4})（(?:[一二三四五六七八九十百半]+|\d+(?:\.\d+)?)[钱兩两分斤枚个片寸]/g)];
-      if (found.length >= 2) out.push(...found.map((m) => m[1]));
+  for (let i = 0; i < lines.length; i += 1) {
+    if (!/^>/.test(lines[i])) continue;
+    const buf = [];
+    while (i < lines.length && /^>/.test(lines[i])) {
+      buf.push(lines[i].replace(/^>\s?/, ''));
+      i += 1;
     }
+    i -= 1;
+    const m = buf.join('').match(/「(.+?)」\s*——《([^》]+)》/);
+    if (!m) continue;
+    const unit = BY_LOC.get(m[2]);
+    out.push({
+      text: m[1],
+      locator: m[2],
+      unit: unit ? unit.title : null,
+      hanzi: hanzi(m[1]),
+      hit: Boolean(unit) && norm(unit.body).includes(norm(m[1])),
+    });
   }
   return out;
 }
 
-const body = () => units.map((u) => u.body).join('');
+/* ── 本章的现算项 ───────────────────────────────────────────────── */
 
-function stats() {
-  const b = body();
+const MED = ALL.filter((u) => u.sec === '一、医方');
+const ZHESHI = ALL.find((u) => u.title === '7．赭石解');
+const LUN66 = ALL.find((u) => u.locator.includes('三、医论·66．论胃气不降治法'));
+
+function fact(label, re, got) {
+  const m = DOC_TEXT.match(re);
+  const want = m ? Number(m[1].replace(/,/g, '')) : null;
+  return { label, got, want, ok: want !== null && got === want };
+}
+
+function facts() {
+  return [
+    fact('医方条目数', /(\d+)\s*个医方条目中含生赭石/, MED.length),
+    fact('含生赭石的医方', /含生赭石者\s*(\d+)\s*条/, MED.filter((u) => u.body.includes('生赭石')).length),
+  ].map((f) => ({ ...f, ok: f.want !== null && f.got === f.want }));
+}
+
+/** 六条特长：数「一也」到「六也」，再与正文的「六」对上 */
+function sixPoints() {
+  const body = LUN66 ? LUN66.body : '';
+  const marks = ['一也', '二也', '三也', '四也', '五也', '六也'].filter((t) => body.includes(t));
+  const docSix = DOC_TEXT.match(/其特长有([一二三四五六七八九十]+)/);
   return {
-    units: units.length,
-    hanzi: units.reduce((n, u) => n + u.hanzi, 0),
-    dose: (b.match(/(?:[一二三四五六七八九十百半]+|\d+(?:\.\d+)?)\s*(?:两|兩|钱|錢|分|斤|枚|个|片|寸)/g) || []).length,
-    xi: units.reduce((n, u) => n + u.measure.views['参西'], 0),
-    cites: new Set((b.match(/《([^》]{2,20})》/g) || [])).size,
+    counted: marks.length,
+    marks,
+    want: docSix ? CN[docSix[1]] : null,
+    locus: LUN66 ? LUN66.title : '缺单元',
+    hanzi: LUN66 ? LUN66.hanzi : 0,
   };
 }
 
-function herbTop(n = 6) {
-  const c = new Map();
-  for (const h of herbs()) c.set(h, (c.get(h) || 0) + 1);
-  return [...c.entries()].sort((a, b) => b[1] - a[1]).slice(0, n);
+/** 每条读法都要在原文里落到字面 */
+function markers() {
+  const rows = [
+    { label: '龙牡欠下达之力', term: '欠下达之力', unit: ZHESHI },
+    { label: '生研服之不伤肠胃', term: '生研服之不伤肠胃', unit: ZHESHI },
+    { label: '层层如铁锈', term: '层层如铁锈', unit: ZHESHI },
+    { label: '醋淬即能伤肺', term: '即能伤肺', unit: ZHESHI },
+    { label: '妊娠：服之或有妨碍', term: '服之或有妨碍', unit: ZHESHI },
+    { label: '周姓妇案：药至结处不能下行', term: '药至结处不能下行', unit: ZHESHI },
+    { label: '方中少加柴胡', term: '少加柴胡', unit: LUN66 },
+  ];
+  return rows.map((r) => ({ ...r, hit: Boolean(r.unit) && r.unit.body.includes(r.term), where: r.unit ? r.unit.title : '缺单元' }));
 }
 
-/** 医案五段式覆盖率（只在含医案的章有意义，其余章 total 为 0） */
-function segments() {
-  const keys = ['病因', '证候', '诊断', '处方', '效果'];
-  const cases = units.filter((u) => u.sec === '五、医案');
-  const hit = Object.fromEntries(keys.map((k) => [k, cases.filter((u) => u.body.includes(k)).length]));
-  return { total: cases.length, hit };
+/* ── quiz ─────────────────────────────────────────────────────────── */
+
+function quizAudit() {
+  const qs = Array.isArray(QUIZ_JSON.questions) ? QUIZ_JSON.questions : [];
+  const items = qs.map((q, i) => {
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    return {
+      n: i + 1,
+      stage: q.stage,
+      options: opts.length,
+      correctOk: Number.isInteger(q.correct) && q.correct >= 0 && q.correct < opts.length,
+      explainHanzi: hanzi(q.explain),
+      grounded: [...shingles(right)].some((g) => DOC_GRAMS.has(g)),
+      right,
+    };
+  });
+  const stages = new Set(items.map((x) => x.stage));
+  return {
+    count: items.length,
+    items,
+    stages: [...stages].sort(),
+    stageOk: ['pre', 'check', 'post'].every((s) => stages.has(s)),
+    optionOk: items.every((x) => x.options === 4),
+    correctOk: items.every((x) => x.correctOk),
+    explainOk: items.every((x) => x.explainHanzi >= 30),
+    groundedCheck: items.filter((x) => x.stage === 'check' && x.grounded).length,
+    spread: new Set(items.map((x) => x.right)).size,
+  };
 }
 
-/** 参西最密的单元 */
-function xiTop(n = 5) {
-  return units.slice().sort((a, b) => b.measure.views['参西'] - a.measure.views['参西']).slice(0, n)
-    .map((u) => [u.title, u.measure.views['参西']]);
+function analyze() {
+  const q = quotes();
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title: TITLE,
+    total: ALL.length,
+    facts: facts(),
+    six: sixPoints(),
+    markers: markers(),
+    quotes: q,
+    quoteMiss: q.filter((x) => !x.hit),
+    quiz: quizAudit(),
+  };
 }
 
-module.exports = { U, PICKS, units, stats, herbs, herbTop, segments, xiTop, body };
+module.exports = { U, ALL, BY_LOC, CHAPTER, SLUG, TITLE, DOC_TEXT, QUIZ_JSON, hanzi, norm, shingles, quotes, facts, sixPoints, markers, quizAudit, analyze };
 
 if (require.main === module) {
-  const s = stats();
+  const r = analyze();
   console.log('');
-  console.log('═══ 第 4 章 · 赭石与重镇：降逆的力学 ═══');
-  console.log('  单元 ' + s.units + ' · 汉字 ' + s.hanzi.toLocaleString() + ' · 剂量命中 ' + s.dose + ' · 参西 ' + s.xi + ' · 引书 ' + s.cites + ' 部');
-  console.log('\n── 药物频次 top ──');
-  for (const [h, c] of herbTop()) console.log('  ' + h + '  ' + c + ' 次');
-  const seg = segments();
-  if (seg.total) {
-    console.log('\n── 医案五段式（' + seg.total + ' 案）──');
-    for (const [k, v] of Object.entries(seg.hit)) console.log('  ' + k + '  ' + v + '/' + seg.total);
-  }
-  console.log('\n── 参西最密 ──');
-  for (const [t, c] of xiTop()) console.log('  ' + t + '  ' + c);
+  console.log('═══ 第 4 章 · ' + TITLE + ' ═══');
+  console.log('\n── 正文的数与原文现算 ──');
+  for (const f of r.facts) console.log('  ' + (f.ok ? '✓' : '✗') + ' ' + f.label + '  现算 ' + f.got + ' · 正文 ' + f.want);
+  console.log('\n── 六条特长 ──');
+  console.log('  数出 ' + r.six.counted + ' 条（' + r.six.marks.join('、') + '）· 正文说 ' + r.six.want + ' 条');
+  console.log('\n── 读法的原话 ──');
+  for (const m of r.markers) console.log('  ' + (m.hit ? '✓' : '✗') + ' ' + m.label + '（' + m.where + '）');
+  console.log('\n── 引文回查 ──');
+  for (const q of r.quotes) console.log('  ' + (q.hit ? '✓' : '✗') + ' ' + q.text.slice(0, 22) + '…');
+  console.log('\n── 习题 ──');
+  console.log('  ' + r.quiz.count + ' 题 · 段 ' + r.quiz.stages.join('/') + ' · 接地 check ' + r.quiz.groundedCheck + ' 道 · 正确项 ' + r.quiz.spread + ' 种');
+  console.log('\n  边界：条目数为文本统计；剂量为清末衡制，不换算、不给用量建议。');
   console.log('');
-  console.log('  边界：本输出为文本结构与药物频次统计，逐条可回查 units.json，不构成诊疗依据。');
 }

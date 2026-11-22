@@ -2,7 +2,7 @@
 const assert = require('node:assert');
 const test = require('node:test');
 const {
-  BOOK, TIAOBIAN, PIAN_NAME, pians, fangByStage, xingan, progression, totals, formulaIndex,
+  BOOK, TIAOBIAN, PIAN_NAME, pians, fangByStage, xingan, progression, totals, formulaIndex, QUIZ, docAudit,
 } = require('./main.js');
 
 /** 「中焦篇·第一」→ 该条原文 */
@@ -180,4 +180,40 @@ test('数据源可复算：底本 tiaobian 的 sha256 与源页字节数已留�
   assert.strictEqual(TIAOBIAN.source.sha256.length, 64);
   assert.ok(TIAOBIAN.source.bytes > 0);
   assert.strictEqual(TIAOBIAN.source.provider, 'jicheng');
+});
+
+/* ── 正文与 quiz 同源：读 docs/zh.md 现算后逐格断言 ── */
+
+test('正文三篇分工表 / 按焦词证表，逐格与底本现算一致', () => {
+  const a = docAudit();
+  assert.ok(a.facts.length >= 12);
+  for (const f of a.facts) assert.strictEqual(f.got, f.want, `${f.label}: 现算 ${f.got} ≠ 正文 ${f.want}`);
+});
+
+test('正文四条引文逐字落在底本条文里（含原病篇与下痢两条）', () => {
+  for (const q of docAudit().quotes) {
+    assert.strictEqual(q.inDoc, true, `正文缺「${q.quote}」`);
+    assert.strictEqual(q.inSource, true, `底本缺「${q.quote}」`);
+  }
+});
+
+test('quiz 结构：题量、三段、四选项、解释长度、答案合法', () => {
+  const { quiz } = docAudit();
+  assert.ok(quiz.total >= 5);
+  for (const s of ['pre', 'check', 'post']) assert.ok(quiz.stage[s] >= 1, `缺 ${s} 段`);
+  assert.strictEqual(quiz.allFour, true);
+  assert.strictEqual(quiz.badCorrect, 0);
+  assert.ok(quiz.minExplain >= 30, `最短解释 ${quiz.minExplain} 汉字`);
+});
+
+test('quiz 接地与打散：≥2 道 check 题的正确选项能在正文找到原词', () => {
+  const { quiz } = docAudit();
+  assert.ok(quiz.groundedChecks >= 2, `只有 ${quiz.groundedChecks} 道接地`);
+  assert.ok(quiz.distinctAnswers >= 3, `答案只用了 ${quiz.distinctAnswers} 个位置`);
+});
+
+test('quiz 无脚手架残留，且不把引文写成「底本」或来源行', () => {
+  const raw = require('node:fs').readFileSync(QUIZ, 'utf8');
+  assert.strictEqual(docAudit().quiz.scaffold, false);
+  for (const bad of ['三辨', '四位面', '单元规模', '底本', '外源·笈成']) assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
 });

@@ -6,57 +6,68 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
+const { readDoc, restingReasons, synapseSteps, receptors, diameterFor, speedUp, myelinLogic } = require('./main.js');
+
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yixue-xibao-shengwu-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yixue-xibao-shengwu-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文是本章那一份', () => {
+  const doc = readDoc();
+  assert.ok(doc.includes('动作电位') && doc.includes('突触'));
+  assert.ok((doc.match(/[\u4e00-\u9fff]/g) || []).length > 2000);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('静息电位三条成因，主项是钾漏通道', () => {
+  const r = restingReasons(readDoc());
+  assert.strictEqual(r.length, 3);
+  assert.match(r[0], /钾漏通道/);
+  assert.match(r[1], /通透/);
+  assert.match(r[2], /泵/);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('突触五环节，第二环是钙内流', () => {
+  const s = synapseSteps(readDoc());
+  assert.strictEqual(s.length, 5);
+  assert.deepStrictEqual(s.map((x) => x.step), ['到达', '钙内流', '囊泡融合', '受体结合', '递质清除']);
+  assert.match(s[1].blocked, /无释放/);
+  assert.match(s[2].event, /SNARE/);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('三类受体，时程依次变长', () => {
+  const rs = receptors(readDoc());
+  assert.strictEqual(rs.length, 3);
+  assert.match(rs[0].type, /离子通道型/);
+  assert.match(rs[0].detail, /毫秒级/);
+  assert.match(rs[1].type, /G 蛋白偶联型/);
+  assert.match(rs[1].detail, /秒级到分钟级/);
+  assert.match(rs[2].type, /酶联型/);
+  assert.match(rs[2].detail, /分钟到小时/);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('平方根换算：速度翻倍要直径四倍，直径四倍只换来速度两倍', () => {
+  assert.strictEqual(diameterFor(2), 4);
+  assert.strictEqual(diameterFor(3), 9);
+  assert.strictEqual(speedUp(4), 2);
+  assert.strictEqual(speedUp(9), 3);
+  assert.throws(() => diameterFor(0));
+  assert.throws(() => speedUp(-1));
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('髓鞘的三条工程解在正文里成立', () => {
+  const m = myelinLogic(readDoc());
+  assert.strictEqual(m.fewerRegenerations, true);
+  assert.strictEqual(m.noWiderAxon, true);
+  assert.strictEqual(m.saltatory, true);
+});
+
+test('脚本可跑，输出含换算与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/yixue-xibao-shengwu-xue\/units\.json 现算/);
+  assert.match(out, /直径要加粗到 4 倍/);
+  assert.match(out, /不含任何测得的速度值/);
   assert.match(out, /不构成临床判断依据/);
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/06-shenjingyuan-xinxi-chuandi/docs/zh.md'), '头部注释未指向本章');
+test('代码头部指向本章正文', () => {
+  assert.ok(fs.readFileSync(MAIN, 'utf8').includes('/06-shenjingyuan-xinxi-chuandi/docs/zh.md'));
 });

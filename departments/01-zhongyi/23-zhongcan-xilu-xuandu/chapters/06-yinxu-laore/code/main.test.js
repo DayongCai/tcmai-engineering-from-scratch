@@ -1,43 +1,63 @@
 'use strict';
 /**
- * 第 6 章的每个数字都要能从 units.json 现算 —— 断言写死具体值，
- * 数据一改（重新抓取、重新切分）测试必须失败，迫使写的人回头改 docs。
+ * 第 6 章的断言：方剂首数、三方组成、入口差异的原话、引文、习题，全部现算。
  */
 const assert = require('node:assert');
 const test = require('node:test');
-const { stats, herbTop, segments, xiTop, units, PICKS } = require('./main.js');
+const fs = require('node:fs');
+const path = require('node:path');
 
-test('本章 11 个 unit 全部命中 units.json（无悬空 locator）', () => {
-  assert.strictEqual(units.length, 11);
-  assert.deepStrictEqual(PICKS.length, units.length);
+const { analyze, CHAPTER, SLUG, TITLE } = require('./main.js');
+
+const r = analyze();
+
+test('章号、slug、标题与 chapters.json 一致', () => {
+  const reg = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../chapters.json'), 'utf8'));
+  const ch = reg.chapters.find((c) => c.n === CHAPTER);
+  assert.ok(ch, 'chapters.json 里没有第 ' + CHAPTER + ' 章');
+  assert.strictEqual(ch.slug, SLUG);
+  assert.strictEqual(ch.title, TITLE);
 });
 
-test('规模：11 单元 · 14647 汉字', () => {
-  const s = stats();
-  assert.strictEqual(s.units, 11);
-  assert.strictEqual(s.hanzi, 14647);
+test('治阴虚劳热方十一首，三方药味数与正文逐个相等', () => {
+  assert.strictEqual(r.series, 11);
+  assert.strictEqual(r.facts.length, 4);
+  for (const f of r.facts) {
+    assert.notStrictEqual(f.want, null, f.label + '：正文里没找到这个数');
+    assert.strictEqual(f.got, f.want, f.label + '：现算 ' + f.got + ' ≠ 正文 ' + f.want);
+  }
 });
 
-test('剂量型命中 = 145', () => {
-  assert.strictEqual(stats().dose, 145);
+test('三方的关键药味确实在方下组成里', () => {
+  const [zisheng, shiquan, liquan] = r.compositions;
+  for (const h of ['于术', '生山药', '生鸡内金']) assert.ok(zisheng.herbs.includes(h), '资生汤缺 ' + h);
+  for (const h of ['三棱', '莪术', '丹参']) assert.ok(shiquan.herbs.includes(h), '十全育真汤缺 ' + h);
+  for (const h of ['生赭石', '人参']) assert.ok(liquan.herbs.includes(h), '醴泉饮缺 ' + h);
 });
 
-test('参西命中 = 19（本章口径）', () => {
-  assert.strictEqual(stats().xi, 19);
+test('三条入口与禁区都有原话可查', () => {
+  for (const m of r.markers) assert.ok(m.hit, m.label + '：在《' + m.where + '》里查不到「' + m.term + '」');
 });
 
-test('药物频次首位 = 生山药（7 次）', () => {
-  const top = herbTop(1)[0];
-  if (!top) return;
-  assert.deepStrictEqual(top, ['生山药', 7]);
+test('正文每一条带出处的引文都逐字落在所标单元里', () => {
+  assert.ok(r.quotes.length >= 5);
+  assert.deepStrictEqual(r.quoteMiss.map((q) => q.locator), [], '有引文查不到');
+  for (const q of r.quotes) assert.ok(q.hanzi >= 8, q.locator + ' 的引文太短');
 });
 
-test('五段式分母 = 0（本章含医案时为案数，否则 0）', () => {
-  assert.strictEqual(segments().total, 0);
+test('习题：≥5 题、三段齐、4 选项、解释≥30 汉字、接地 check ≥2', () => {
+  assert.ok(r.quiz.count >= 5);
+  assert.ok(r.quiz.stageOk, '缺 pre/check/post 任一段');
+  assert.ok(r.quiz.optionOk);
+  assert.ok(r.quiz.correctOk);
+  assert.ok(r.quiz.explainOk);
+  assert.ok(r.quiz.groundedCheck >= 2, '接地 check 题只有 ' + r.quiz.groundedCheck + ' 道');
+  assert.ok(r.quiz.spread >= 3);
 });
 
-test('参西最密单元 = 1．资生汤（8）', () => {
-  const top = xiTop(1)[0];
-  assert.strictEqual(top[0], '1．资生汤');
-  assert.strictEqual(top[1], 8);
+test('习题守住两条路：纳与瘀，不是轻重两档', () => {
+  const raw = fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8');
+  assert.match(raw, /吃了不长|饮食不壮筋力/);
+  assert.match(raw, /鸡内金|三味都在脾胃/);
+  assert.match(raw, /结核未排除前|在结核未被排除之前/);
 });

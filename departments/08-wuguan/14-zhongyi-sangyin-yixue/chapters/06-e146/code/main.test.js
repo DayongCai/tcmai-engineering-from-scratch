@@ -3,60 +3,101 @@
 const test = require('node:test');
 const assert = require('node:assert');
 const fs = require('node:fs');
-const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-sangyin-yixue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-sangyin-yixue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const {
+  DOC,
+  CHAPTER,
+  SLUG,
+  readDoc,
+  criteria,
+  layers,
+  layerOfComplaint,
+  jinShi,
+  jinPo,
+  redFlags,
+  suddenLossRoute,
+} = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const doc = readDoc();
+
+test('正文可读且规模合理', () => {
+  assert.ok(fs.existsSync(DOC));
+  assert.ok(doc.length > 2000, '正文过短');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('三组判据各答一个问题，分别定补泻、定散补、定查不查', () => {
+  const c = criteria(doc);
+  assert.strictEqual(c.length, 3);
+  assert.deepStrictEqual(c.map((x) => x.sign), ['暴喑／久喑', '金实／金破', '功能性／器质性']);
+  assert.match(c[0].decides, /祛邪还是扶正/);
+  assert.match(c[1].decides, /散还是补/);
+  assert.match(c[2].decides, /喉镜/);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('声音三层为动力、振动、形，缺一层就有一种哑法', () => {
+  const l = layers(doc);
+  assert.deepStrictEqual(l.map((x) => x.layer), ['动力', '振动', '形']);
+  assert.match(l[0].body, /肺气与呼吸/);
+  assert.match(l[1].body, /声带/);
+  assert.match(l[2].body, /构音/);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('三句主诉各落回自己那一层', () => {
+  assert.strictEqual(layerOfComplaint('说不了多久'), '动力');
+  assert.strictEqual(layerOfComplaint('发不出声'), '振动');
+  assert.strictEqual(layerOfComplaint('说话大舌头'), '形');
+  assert.strictEqual(layerOfComplaint('咽痛三天'), null);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('振動层的听感是音质改变，不是字说不清', () => {
+  const l = layers(doc).find((x) => x.layer === '振动');
+  assert.ok(/音质改变|气息声|断裂/.test(doc), '正文应写到振动层的听感');
+  assert.ok(l.body.length >= 6);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('金实三型按邪的性质分，各带治法与方', () => {
+  const js = jinShi(doc);
+  assert.strictEqual(js.length, 3);
+  assert.deepStrictEqual(js.map((x) => x.type), ['风寒袭肺', '风热犯肺', '痰热壅肺']);
+  for (const x of js) {
+    assert.ok(x.therapy.length >= 6, `${x.type} 缺治法`);
+    assert.match(x.therapy, /开音/, `${x.type} 的治法应落到开音`);
+  }
+});
+
+test('金破三型按损在阴、在气、在络分', () => {
+  const jp = jinPo(doc);
+  assert.strictEqual(jp.length, 3);
+  assert.deepStrictEqual(jp.map((x) => x.type), ['肺肾阴虚', '肺脾气虚', '气滞血瘀']);
+});
+
+test('六条红旗读到六条，末条是气道方向', () => {
+  const f = redFlags(doc);
+  assert.strictEqual(f.length, 6);
+  assert.match(f[5], /吸气性喉鸣/);
+  assert.match(f[1], /单侧/);
+});
+
+test('突然失音的两条路分得开：咳嗽有声指向功能性，单侧固定指向麻痹', () => {
+  assert.match(suddenLossRoute({ coughVoice: true, glottisClosed: true }), /功能性失音/);
+  assert.match(suddenLossRoute({ unilateralFix: true }), /声带麻痹/);
+  assert.strictEqual(suddenLossRoute({}), null);
+});
+
+test('正文明写时间是诊断线不是治疗线', () => {
+  assert.match(doc, /时间是诊断线，不是治疗线/);
+  assert.match(doc, /久喑有实/);
+  assert.match(doc, /暴喑有虚/);
+});
+
+test('脚本可运行，输出含现算声明与临床边界', () => {
+  const r = spawnSync(process.execPath, [require.resolve('./main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-sangyin-yixue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/06-e146/docs/zh.md'), '头部注释未指向本章');
+  assert.ok(out.length > 200);
+  assert.match(out, /现算|现读|读自/);
+  assert.match(out, /不构成/);
+  assert.match(out, new RegExp(SLUG));
+  assert.match(out, new RegExp(`第 ${CHAPTER} 章`));
 });

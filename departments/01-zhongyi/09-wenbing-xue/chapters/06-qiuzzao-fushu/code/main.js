@@ -26,6 +26,8 @@ const path = require('node:path');
 const ROOT = path.resolve(__dirname, '../../../../../..');
 const BOOKS = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/wenbing/底本.json'), 'utf8'));
 const BOOK = BOOKS.books.find((b) => b.id === 'tiaobian');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
 /** 本章 5 个篇。key 只用在本文件与测试里 */
 const SEC_DEFS = [
@@ -350,10 +352,94 @@ function report() {
   console.log('        補秋燥勝氣論把燥推到络病、症瘕、八脉空虚，二分在那里失效（未定 1 条即下焦七八）。');
   console.log('        伏暑的分层轴不是寒热，是「霜未降 / 霜既降 / 冬日」——时间在方上，不在证上。');
   console.log(`  ${BOUNDARY}`);
+
+  const a = docAudit();
+  console.log('\n  正文与 quiz 对账（读 docs/zh.md）');
+  for (const f of a.facts) console.log(`  ${f.got === f.want ? '✓' : '✗'} ${f.label} 现算 ${f.got} · 正文 ${f.want}`);
+  console.log(`  quiz ${a.quiz.total} 题（pre ${a.quiz.stage.pre} / check ${a.quiz.stage.check} / post ${a.quiz.stage.post}）· check 接地 ${a.quiz.groundedChecks} 道 · 答案 ${a.quiz.answers.join('/')}`);
   console.log('');
 }
 
 if (require.main === module) report();
+
+/* ── 正文与 quiz 的对账：段型 / 判型 / 字频，逐格回底本复算 ── */
+
+function hanzi(s) {
+  return (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+}
+
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizAudit(raw) {
+  const qs = JSON.parse(raw).questions || [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const rows = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    return { stage: q.stage, options: opts.length, correct: q.correct, explainHanzi: hanzi(q.explain), right: String(opts[q.correct] || '') };
+  });
+  return {
+    total: qs.length,
+    stage,
+    rows,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    allFour: rows.every((r) => r.options === 4),
+    badCorrect: rows.filter((r) => !(Number.isInteger(r.correct) && r.correct >= 0 && r.correct < 4)).length,
+    minExplain: Math.min(...rows.map((r) => r.explainHanzi)),
+    scaffold: /三辨|四位面|单元规模|本章实测/.test(raw),
+  };
+}
+
+function docAudit() {
+  const doc = fs.readFileSync(DOC, 'utf8').replace(/\*\*/g, '');
+  const qraw = fs.readFileSync(QUIZ, 'utf8');
+  const t = totals();
+  const pr = profile();
+  const zt = zaoType();
+  const gz = ganZao();
+  const grab = (re, label) => {
+    const m = re.exec(doc);
+    if (!m) throw new Error(`正文里定位不到「${label}」`);
+    return m.slice(1).map((v) => Number(String(v).replace(/,/g, '')));
+  };
+
+  const [docTiao, docDuanTotal, docFang, docWen, docRef, docChars] = grab(/(\d+) 条辨 · (\d+) 段 · (\d+) 方（(\d+) 有方文 \+ (\d+) 互见）· ([\d,]+) 字/, '五篇合计');
+  const [docZao, docLiang, docJian, docUndecided] = grab(/分布：温燥 (\d+) · 凉燥 (\d+) · 兼见 (\d+) · 未定 (\d+)/, '判型分布');
+  const [docNoFang, docNoWord] = grab(/无方证 (\d+) 条/, '无方证').concat(grab(/词证缺 (\d+) 条/, '词证缺'));
+  const [docKe, docSe, docGan, docLie] = grab(/咳 (\d+) · 涩 (\d+) · 干 (\d+) · 裂 (\d+)/, '四字频次');
+
+  const rows = [...doc.matchAll(/^\| (上焦|中焦|下焦)·([^|]+?) \| (\d+) \| (\d+) \| (\d+) \| (\d+) \| (\d+) \| (\d+) \| ([\d,]+) \|$/gm)]
+    .map((m) => ({ label: `${m[1]}·${m[2].trim()}`, duan: +m[3], tiao: +m[4], zhuZhi: +m[5], fang: +m[6], fangWen: +m[7], fangRef: +m[8], chars: +m[9].replace(/,/g, '') }));
+  if (rows.length !== 5) throw new Error(`正文五篇表是 ${rows.length} 行，应为 5`);
+
+  const facts = [
+    { label: '条辨/段/方/有方文/互见/字', got: [t.tiao, t.duan, t.fang, t.fangWen, t.fangRef, t.chars].join('/'), want: [docTiao, docDuanTotal, docFang, docWen, docRef, docChars].join('/') },
+    { label: '温燥/凉燥/兼见/未定', got: [zt.summary.温燥, zt.summary.凉燥, zt.summary.兼见, zt.summary.未定].join('/'), want: [docZao, docLiang, docJian, docUndecided].join('/') },
+    { label: '无方证 / 词证缺 / 一致', got: [zt.rows.filter((r) => r.agree === '无方证').length, zt.rows.filter((r) => r.agree === '词证缺').length, zt.rows.filter((r) => r.agree === '一致').length].join('/'), want: `${docNoFang}/${docNoWord}/0` },
+    { label: '咳/涩/干/裂', got: ['咳', '涩', '干', '裂'].map((c) => gz.rows.find((r) => r.char === c).count).join('/'), want: [docKe, docSe, docGan, docLie].join('/') },
+  ];
+  for (const r of rows) {
+    const g = pr.find((p) => p.label.replace(/補/g, '补').replace(/勝/g, '胜').replace(/論/g, '论').replace(/氣/g, '气') === r.label);
+    facts.push({ label: `${r.label} 段/条辨/主治段/方/有方文/互见/字`, got: g ? [g.duan, g.tiao, g.zhuZhi, g.fang, g.fangWen, g.fangRef, g.chars].join('/') : '缺', want: [r.duan, r.tiao, r.zhuZhi, r.fang, r.fangWen, r.fangRef, r.chars].join('/') });
+  }
+
+  const q = quizAudit(qraw);
+  const body = grams(doc);
+  const grounded = q.rows.filter((r) => r.stage === 'check' && [...grams(r.right)].some((v) => body.has(v))).length;
+  const sourceText = Object.values(SEC).map((d) => d.sec.articles.map((a) => `${a.zhHans}\n${(a.notes || []).join('\n')}`).join('\n')).join('\n');
+  return {
+    facts,
+    quiz: { ...q, groundedChecks: grounded },
+    quotes: ['头微痛，恶寒，咳嗽稀痰，鼻塞', '轻则为燥，重则为寒', '不与血搏', '长夏受暑，过夏而发者，名曰伏暑', '证本一源'].map((w) => ({ quote: w, inDoc: doc.includes(w), inSource: sourceText.includes(w) })),
+  };
+}
 
 module.exports = {
   BOOK,
@@ -371,4 +457,10 @@ module.exports = {
   refExists,
   COLD_WORDS,
   HOT_WORDS,
+  DOC,
+  QUIZ,
+  hanzi,
+  grams,
+  quizAudit,
+  docAudit,
 };
