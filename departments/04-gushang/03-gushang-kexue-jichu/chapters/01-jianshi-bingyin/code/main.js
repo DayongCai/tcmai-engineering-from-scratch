@@ -1,13 +1,19 @@
 #!/usr/bin/env node
 /**
- * 中医骨伤科学基础 · 第 1 章 发展简史与病因病机：本章统计口径
+ * 中医骨伤科学基础 · 第 1 章 正骨先有程序，才有流派
  * 课程: departments/04-gushang/03-gushang-kexue-jichu/chapters/01-jianshi-bingyin/docs/zh.md
- * 数据: standards/gushang-jichu/units.json（162 单元层，每单元带三辨与四位面词频）
- * 取数: standards/gushang-jichu/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章讲的是「程序先于流派」。脚本做的事只有一件：把正文里的程序链读出来，
+ * 检查它是不是真的按次序写着，而不是只在标题里宣称。
+ *
+ * 现算项：
+ *   规模      汉字数 / 节数 / 引书（《》）
+ *   蔺道人链  六步各自的首次出现位置，是否严格递增
+ *   八法      摸接端提按摩擦拿，前四法归骨、后四法归筋
+ *   病因      外因四类 / 内因五条 是否齐全
+ *   病机      气血线 / 筋骨线 / 脏腑线 / 经络线 四条
+ * 正文改一个字，这里的数字就跟着变；手打的总会在改稿后静默过期。
  */
 
 'use strict';
@@ -15,87 +21,95 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gushang-jichu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/gushang-jichu/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 1;
+const TITLE = '正骨先有程序，才有流派';
+
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+/** 蔺道人《仙授理伤续断秘方》里一次骨折处理的六件事 */
+const STEPS = ['相度损处', '拔伸', '捺正', '杉木皮夹板固定', '用药', '时时转动'];
+/** 《医宗金鉴·正骨心法要旨》八法，前四法归骨，后四法归筋 */
+const TECHNIQUES = ['摸', '接', '端', '提', '按', '摩', '推', '拿'];
+/** 外因四类 */
+const EXTERNAL = ['直接暴力', '间接暴力', '筋肉牵拉', '持续劳损'];
+/** 内因五条 */
+const INTERNAL = ['年龄', '体质与骨量', '解剖弱点', '病理因素', '姿势与职业'];
+/** 病机四条线 */
+const LINES = ['气血线', '筋骨线', '脏腑线', '经络线'];
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gushang-jichu', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'gushang-jichu', 'chapter-map.json');
-const CHAPTER = '1';
-const SLUG = '01-jianshi-bingyin';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 正文里某词第一次出现的位置（-1 表示没有） */
+function at(text, word) {
+  return text.indexOf(word);
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const hanzi = (body.match(HANZI) || []).length;
+  const sections = body.split('\n').filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+  const cites = [...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]);
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  const steps = STEPS.map((s) => ({ step: s, at: at(body, s) }));
+  const missing = steps.filter((s) => s.at < 0).map((s) => s.step);
+  const ordered = steps.every((s, i) => i === 0 || (steps[i - 1].at >= 0 && s.at > steps[i - 1].at));
+
+  // 八法在正文里是「摸、接、端、提、按、摩、推、拿」这样一口气列出的，
+  // 单字按 indexOf 找会被「按下去」「推拿科」之类的散见命中污染，所以按列举句解析。
+  const listing = body.match(/摸、接、端、提、按、摩、推、拿/);
+  const techniques = listing
+    ? listing[0].split('、').map((t) => ({ name: t, at: body.indexOf(listing[0]) }))
+    : [];
+  const techniqueListed = Boolean(listing) && techniques.map((t) => t.name).join('') === TECHNIQUES.join('');
+  const external = EXTERNAL.filter((w) => body.includes(w));
+  const internal = INTERNAL.filter((w) => body.includes(w));
+  const lines = LINES.filter((w) => body.includes(w));
+
+  return {
+    hanzi,
+    sections,
+    cites,
+    citeCount: cites.length,
+    steps,
+    missing,
+    ordered,
+    techniques,
+    techniqueListed,
+    external,
+    internal,
+    lines,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const a = analyze(read());
 
-  console.log(`中医骨伤科学基础 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中医骨伤科学基础 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 引书 ${a.citeCount} 处（去重 ${new Set(a.cites).size} 部）`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('蔺道人处理链（首次出现位置，须严格递增）：');
+  for (const s of a.steps) console.log(`  ${s.step.padEnd(8, '　')} 第 ${String(s.at + 1).padStart(5)} 字`);
+  console.log(`  → ${a.missing.length ? '缺项：' + a.missing.join('、') : '六步齐全'}；次序${a.ordered ? '成立' : '不成立（正文未按程序链排列）'}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  const bone = a.techniques.slice(0, 4).map((t) => t.name).join('');
+  const sinew = a.techniques.slice(4).map((t) => t.name).join('');
+  console.log(`八法：${a.techniques.map((t) => t.name).join('、')}`);
+  console.log(`  治骨四法 ${bone} · 治筋四法 ${sinew} · 列举${a.techniqueListed ? '与正文一致' : '与正文不一致'}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`外因 ${a.external.length}/4：${a.external.join('、') || '—'}`);
+  console.log(`内因 ${a.internal.length}/5：${a.internal.join('、') || '—'}`);
+  console.log(`病机 ${a.lines.length}/4 条线：${a.lines.join('、') || '—'}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/gushang-jichu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 判据是次序，不是名词数量：能背出六个词而说不出先后，等于没有程序。');
+  console.log('※ 本章讨论学科源流，不构成诊疗意见；具体处理以接诊机构规范与执业医师判断为准。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, STEPS, TECHNIQUES, EXTERNAL, INTERNAL, LINES, read, analyze };

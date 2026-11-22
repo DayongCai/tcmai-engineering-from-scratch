@@ -5,58 +5,57 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { DOC, CHAPTER, TITLE, STEPS, TECHNIQUES, read, analyze } = require('./main.js');
 
+const A = analyze(read());
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'gushang-jichu', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'gushang-jichu', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文就在本章目录下，章号与标题取自正文', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '01-jianshi-bingyin', 'docs', 'zh.md')), DOC);
+  assert.ok(fs.existsSync(DOC), '正文文件不存在');
+  assert.strictEqual(CHAPTER, 1);
+  assert.strictEqual(TITLE, '正骨先有程序，才有流派');
+  assert.ok(read().startsWith('# 第 ' + CHAPTER + ' 章'), '正文首行不是本章章题');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('规模与正文快照一致', () => {
+  assert.strictEqual(A.hanzi, 3180);
+  assert.strictEqual(A.sections.length, 6);
+  assert.strictEqual(A.citeCount, 20);
+  assert.strictEqual(new Set(A.cites).size, 15);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('蔺道人六步齐全，且在正文里严格按次序出现', () => {
+  assert.deepStrictEqual(A.missing, [], '缺项: ' + A.missing.join('、'));
+  assert.strictEqual(A.steps.length, STEPS.length);
+  assert.ok(A.ordered, '六步在正文里的首次出现位置没有严格递增：' + JSON.stringify(A.steps));
+  // 复位逻辑是前三步，固定与转动在后
+  assert.deepStrictEqual(A.steps.slice(0, 3).map((s) => s.step), ['相度损处', '拔伸', '捺正']);
+  assert.ok(A.steps[3].at > A.steps[2].at);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('八法按原句列举为八项，前四归骨、后四归筋', () => {
+  assert.ok(A.techniqueListed, '正文里没有「摸、接、端、提、按、摩、推、拿」的原句');
+  assert.strictEqual(A.techniques.length, 8);
+  const bone = A.techniques.slice(0, 4).map((t) => t.name).join('');
+  const sinew = A.techniques.slice(4).map((t) => t.name).join('');
+  assert.strictEqual(bone, '摸接端提');
+  assert.strictEqual(sinew, '按摩推拿');
+  assert.strictEqual(A.techniques.map((t) => t.name).join(''), TECHNIQUES.join(''));
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('病因与病机的分类在正文里都是齐的', () => {
+  assert.strictEqual(A.external.length, 4, A.external.join('、'));
+  assert.strictEqual(A.internal.length, 5, A.internal.join('、'));
+  assert.strictEqual(A.lines.length, 4, A.lines.join('、'));
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('脚本可运行，输出含现算口径与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/gushang-jichu\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/01-jianshi-bingyin/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /均从本章 docs\/zh\.md 现算/);
+  assert.match(out, /不构成诊疗意见/);
+  assert.ok(out.includes('汉字 3180 字'), '输出里的汉字数与快照不一致');
+  assert.ok(out.includes('次序成立'), '输出没有给出程序链次序结论');
 });

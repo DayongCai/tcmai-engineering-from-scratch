@@ -1,13 +1,18 @@
 #!/usr/bin/env node
 /**
- * 中医骨伤科学基础 · 第 2 章 骨伤病的临床诊查：本章统计口径
+ * 中医骨伤科学基础 · 第 2 章 影像能看见骨折线，看不见病人是怎么伤的
  * 课程: departments/04-gushang/03-gushang-kexue-jichu/chapters/02-linchuang-zhencha/docs/zh.md
- * 数据: standards/gushang-jichu/units.json（162 单元层，每单元带三辨与四位面词频）
- * 取数: standards/gushang-jichu/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的骨架是一张特殊检查表和三组「同」。脚本直接从正文里把表读成数组，
+ * 再去找量诊的三个同、神经血管的两次检查、影像的先后次序——全部现算，不手打。
+ *
+ * 现算项：
+ *   规模      汉字数 / 节数 / 引书
+ *   特殊检查  表格行数、每行四个字段、按部位归类
+ *   量诊      同一解剖标志 / 同一水平 / 同一体位
+ *   神经血管  复位前一次、复位后一次
+ *   影像次序  X 线 → CT → MRI → 超声 在正文里的排列
  */
 
 'use strict';
@@ -15,87 +20,86 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gushang-jichu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 2;
+const TITLE = '影像能看见骨折线，看不见病人是怎么伤的';
+
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const SAME_THREE = ['同一解剖标志', '同一水平', '同一体位'];
+const IMAGING = ['X 线', 'CT', 'MRI', '超声'];
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+/** 把「| 动作 | 部位 | 阳性提示 | 局限 |」这类表读成对象数组；分隔行与表头跳过 */
+function parseTable(body) {
+  const lines = body.split('\n').filter((l) => /^\s*\|/.test(l));
+  const rows = [];
+  for (const line of lines) {
+    const cells = line.split('|').slice(1, -1).map((c) => c.trim());
+    if (cells.length < 2) continue;
+    if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue; // 分隔行
+    if (cells[0] === '动作') continue; // 表头
+    rows.push({ test: cells[0], site: cells[1], positive: cells[2] || '', limit: cells[3] || '', cells: cells.length });
   }
-  throw new Error('没找到 standards/gushang-jichu/units.json —— 章节目录是否已脱离仓库？');
+  return rows;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gushang-jichu', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'gushang-jichu', 'chapter-map.json');
-const CHAPTER = '2';
-const SLUG = '02-linchuang-zhencha';
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const hanzi = (body.match(HANZI) || []).length;
+  const sections = body.split('\n').filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+  const cites = [...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]);
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+  const tests = parseTable(body);
+  const badRows = tests.filter((r) => r.cells !== 4).map((r) => r.test);
+  const siteCount = tests.reduce((m, r) => {
+    for (const s of r.site.split('、')) m[s] = (m[s] || 0) + 1;
+    return m;
+  }, {});
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+  // 影像次序：正文用「CT 排在…MRI 排在…超声排在…」逐一交代
+  const chain = [
+    { key: 'X 线', at: body.indexOf('X 线是底线') },
+    { key: 'CT', at: body.indexOf('CT 排在') },
+    { key: 'MRI', at: body.indexOf('MRI 排在') },
+    { key: '超声', at: body.indexOf('超声排在') },
+  ];
+  const chainOrdered = chain.every((c, i) => c.at >= 0 && (i === 0 || c.at > chain[i - 1].at));
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+  const sameThree = SAME_THREE.filter((w) => body.includes(w));
+  const twice = body.includes('复位前一次') && body.includes('复位后一次');
+  const falsPositive = body.includes('验前概率');
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return { hanzi, sections, cites, citeCount: cites.length, tests, badRows, siteCount, chain, chainOrdered, sameThree, twice, falsPositive };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医骨伤科学基础 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const a = analyze(read());
+  console.log(`中医骨伤科学基础 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 引书 ${a.citeCount} 处`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`特殊检查表：${a.tests.length} 项（每项四栏：动作 / 部位 / 阳性提示 / 局限）`);
+  for (const r of a.tests) console.log(`  ${r.test.padEnd(16, '　')} ${r.site}`);
+  console.log(`  → 字段不全的行：${a.badRows.length ? a.badRows.join('、') : '无'}`);
+  console.log(`  → 覆盖部位：${Object.keys(a.siteCount).join('、')}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`量诊三个「同」：${a.sameThree.join('、') || '—'}（${a.sameThree.length}/3）`);
+  console.log(`神经血管两次检查：${a.twice ? '复位前一次、复位后一次，均已写入正文' : '正文未写全两次'}`);
+  console.log(`特殊检查的定位：${a.falsPositive ? '阳性只提高验前概率，阴性不能排除诊断' : '正文未说明概率定位'}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('影像次序（出现先后）：');
+  for (const c of a.chain) console.log(`  ${c.key.padEnd(5, '　')} 第 ${String(c.at + 1).padStart(5)} 字`);
+  console.log(`  → ${a.chainOrdered ? '与正文叙述一致：X 线 → CT → MRI → 超声' : '与正文叙述不一致'}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/gushang-jichu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 检查是问题带出来的，不是设备清单带出来的。');
+  console.log('※ 本章讨论诊查思路，不构成诊疗意见；实际判读以影像科报告与接诊机构规范为准。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, SAME_THREE, IMAGING, read, parseTable, analyze };

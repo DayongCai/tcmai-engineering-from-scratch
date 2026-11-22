@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 中医口腔科学 · 第 5 章 牙痛与龋病：本章统计口径
+ * 中医口腔科学 · 第 5 章 痛可以用药压下去，洞不会自己长回来
  * 课程: departments/08-wuguan/08-zhongyi-kouqiang-kexue/chapters/05-e85/docs/zh.md
- * 数据: standards/zhongyi-kouqiang-kexue/units.json（20 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-kouqiang-kexue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章从正文现算：三套坐标、四种时间型、四步决策链的次序、
+ * 以及「五条硬指征」的实际条数——条数用编号数出来，不照抄一句话。
  */
 
 'use strict';
@@ -15,87 +13,89 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-kouqiang-kexue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/zhongyi-kouqiang-kexue/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-kouqiang-kexue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-kouqiang-kexue', 'chapter-map.json');
-const CHAPTER = '5';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 5;
 const SLUG = '05-e85';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const COORDS = ['分经', '时间型', '深浅'];
+const TIMES = ['一过性痛', '自发痛', '持续痛', '咬合痛'];
+const STEPS = ['定时间型', '定深浅', '定虚实寒热', '定界'];
+const DEPTH_Q = ['能否探到底', '是否酸痛', '食物嵌塞即痛', '冷水入洞痛'];
+const PROMISE = ['一律不用', '疼痛缓解、龈肿消退'];
+const RED_TITLES = ['龋深不可探', '去除后', '夜间自发痛', '咬合痛', '心源性'];
+const BOUNDARY = ['本章不给剂量', '不给疗程', '不构成医学意见'];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
+const present = (doc, term) => doc.includes(term);
+const sections = (doc) => [...doc.matchAll(/^##\s+(.+)$/gm)].map((m) => m[1].trim());
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function ordering(doc, terms) {
+  let last = -1;
+  for (const t of terms) {
+    const i = doc.indexOf(t);
+    if (i <= last) return false;
+    last = i;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return true;
+}
+
+function sliceSection(doc, from, to) {
+  const a = doc.indexOf(from);
+  const b = doc.indexOf(to, a + 1);
+  return a < 0 ? '' : doc.slice(a, b < 0 ? undefined : b);
+}
+
+/** 数「其一…其五」这类编号段落的条数 */
+function numberedCount(text) {
+  const numerals = ['一', '二', '三', '四', '五', '六', '七', '八'];
+  return numerals.filter((n) => text.includes(`**其${n}，`)).length;
+}
+
+function audit(doc = readDoc()) {
+  const stepsSec = sliceSection(doc, '## 五、次序为什么这样排', '## 六、');
+  const redSec = sliceSection(doc, '## 四、龋', '## 五、');
+  const title = (doc.split(String.fromCharCode(10))[0] || '')
+    .replace(/^#\s*第\s*\d+\s*章\s*·\s*/, '')
+    .trim();
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title,
+    sections: sections(doc),
+    coords: COORDS.filter((t) => present(doc, t)),
+    times: TIMES.filter((t) => present(doc, t)),
+    steps: STEPS.filter((t) => stepsSec.includes(t)),
+    stepsOrdered: ordering(stepsSec, STEPS),
+    depthQ: DEPTH_Q.filter((t) => present(doc, t)),
+    redCount: numberedCount(redSec),
+    redTitles: RED_TITLES.filter((t) => redSec.includes(t)),
+    promiseOk: PROMISE.every((t) => present(doc, t)),
+    boundaryOk: BOUNDARY.every((t) => present(doc, t)),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医口腔科学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const a = audit();
+  console.log(`中医口腔科学 · 第 ${a.chapter} 章 ${a.title}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`三套坐标：${a.coords.join('／')}`);
+  console.log(`四种时间型：${a.times.join('、')}（${a.times.length}／4）`);
+  console.log(`深浅四问：${a.depthQ.join('、')}（${a.depthQ.length}／4）`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`四步链（由正文读出）：${a.steps.join(' → ')}`);
+  console.log(`次序与正文一致：${a.stepsOrdered ? '是' : '否'}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`硬指征 ${a.redCount} 条（按编号数出）`);
+  console.log(`其中命中：${a.redTitles.join('、')}`);
+  console.log(`承诺边界（一律不用「治愈龋齿」，只写可观察者）：${a.promiseOk ? '在正文' : '缺'}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-kouqiang-kexue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 教学样例：坐标、时间型与条数均由 docs/zh.md 现算，不手打。');
+  console.log('※ 本输出仅用于教学演示，不构成医学意见；本章不给剂量、不给疗程。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC, CHAPTER, SLUG, COORDS, TIMES, STEPS, DEPTH_Q, PROMISE, RED_TITLES, BOUNDARY,
+  readDoc, sections, ordering, sliceSection, numberedCount, audit,
+};

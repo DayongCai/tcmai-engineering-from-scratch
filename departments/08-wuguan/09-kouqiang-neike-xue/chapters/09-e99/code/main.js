@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 口腔内科学 · 第 9 章 口臭与口干：本章统计口径
+ * 口腔内科学 · 第 9 章 口气与口干都要先定位，再谈清热与滋阴
  * 课程: departments/08-wuguan/09-kouqiang-neike-xue/chapters/09-e99/docs/zh.md
- * 数据: standards/kouqiang-neike-xue/units.json（20 单元层，每单元带三辨与四位面词频）
- * 取数: standards/kouqiang-neike-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的分层量全部从正文现算：口气四层、口干三路、诊室三个动作、四个自查、
+ * 下游链的环数与三条转诊触发。正文改一句，这里跟着变。
  */
 
 'use strict';
@@ -15,87 +13,94 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'kouqiang-neike-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/kouqiang-neike-xue/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'kouqiang-neike-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'kouqiang-neike-xue', 'chapter-map.json');
-const CHAPTER = '9';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 9;
 const SLUG = '09-e99';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const BREATH_LAYERS = ['口腔内', '口腔邻近', '呼吸道与消化道', '代谢与全身'];
+const DRY_PATHS = ['津亏', '燥', '药物与腺体'];
+const EXIT_TRIGGERS = ['单侧鼻塞', '单侧腮腺', '多饮多尿'];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
+const splitLines = (doc) => doc.split(/\r?\n/);
+const sections = (doc) => [...doc.matchAll(/^##\s+(.+)$/gm)].map((m) => m[1].trim());
+
+/** 取某一节正文（从匹配 marker 的 ## 标题到下一个 ## 标题） */
+function sectionBody(doc, marker) {
+  const re = new RegExp(`^##\\s+[^\\n]*${marker}[^\\n]*$`, 'm');
+  const m = doc.match(re);
+  if (!m) return '';
+  const start = m.index + m[0].length;
+  const rest = doc.slice(start);
+  const next = rest.search(/^##\s+/m);
+  return next < 0 ? rest : rest.slice(0, next);
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function tableRows(doc, anchor) {
+  const rows = splitLines(doc);
+  const start = rows.findIndex((l) => l.trim().startsWith('|') && l.includes(anchor));
+  if (start < 0) return [];
+  const out = [];
+  for (let i = start; i < rows.length; i += 1) {
+    const line = rows[i].trim();
+    if (!line.startsWith('|')) {
+      if (out.length) break;
+      continue;
+    }
+    if (/^\|[\s:|-]+\|$/.test(line)) continue;
+    if (i === start) continue;
+    out.push(line.split('|').slice(1, -1).map((s) => s.trim()));
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function numbered(body) {
+  return (body.match(/^\d+\.\s+\*\*/gm) || []).length;
+}
+
+function audit(doc = readDoc()) {
+  const breath = tableRows(doc, '| 层 |');
+  const dry = tableRows(doc, '| 路径 |');
+  const stepBody = sectionBody(doc, '二、时相');
+  const selfBody = sectionBody(doc, '四、四个自查');
+  const chainMatch = doc.match(/口干→[^\n]*/);
+  const title = (splitLines(doc)[0] || '').replace(/^#\s*第\s*\d+\s*章\s*·\s*/, '').trim();
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title,
+    sections: sections(doc),
+    breathRows: breath.length,
+    breathLayers: breath.map((r) => r[0].replace(/^[一二三四]、/, '')),
+    dryRows: dry.length,
+    dryPaths: dry.map((r) => r[0]),
+    roomSteps: numbered(stepBody),
+    selfChecks: numbered(selfBody),
+    exits: EXIT_TRIGGERS.filter((t) => doc.includes(t)),
+    medicineFirst: doc.includes('先数药，再辨证'),
+    pseudo: doc.includes('假性口臭'),
+    chain: chainMatch ? chainMatch[0].split('→').map((s) => s.trim()).filter(Boolean).length : 0,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`口腔内科学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const a = audit();
+  console.log(`口腔内科学 · 第 ${a.chapter} 章 ${a.title}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`小节 ${a.sections.length} 节`);
+  console.log(`口气 ${a.breathRows} 层：${a.breathLayers.join('、')}`);
+  console.log(`口干 ${a.dryRows} 路：${a.dryPaths.join('、')}`);
+  console.log(`诊室动作 ${a.roomSteps} 个；自查 ${a.selfChecks} 问`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`下游链环节：${a.chain} 段（原文照录，不手打）`);
+  console.log(`转诊触发命中：${a.exits.join('、')}（${a.exits.length}／3）`);
+  console.log(`先数药，再辨证：${a.medicineFirst ? '已写明' : '缺'}`);
+  console.log(`假性口臭单列：${a.pseudo ? '已写明' : '缺'}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/kouqiang-neike-xue/units.json 现算，不手打；改教材后重跑即可复现。');
+  console.log('※ 教学样例：分层与条目数均由 docs/zh.md 现算，不手打。');
   console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, SLUG, BREATH_LAYERS, DRY_PATHS, EXIT_TRIGGERS, readDoc, sections, sectionBody, tableRows, audit };

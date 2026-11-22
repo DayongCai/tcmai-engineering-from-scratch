@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 口腔内科学 · 第 3 章 病因病机：火、虚与齿龈：本章统计口径
+ * 口腔内科学 · 第 3 章 「火」是一个字，装着三种治法相反的东西
  * 课程: departments/08-wuguan/09-kouqiang-neike-xue/chapters/03-e93/docs/zh.md
- * 数据: standards/kouqiang-neike-xue/units.json（20 单元层，每单元带三辨与四位面词频）
- * 取数: standards/kouqiang-neike-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的结构量全部从正文现算：三种火、虚的四层、阴火的四证门槛、
+ * 齿与龈的分叉、三系共用的骨架，以及清热的三条约束。
  */
 
 'use strict';
@@ -15,87 +13,68 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'kouqiang-neike-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/kouqiang-neike-xue/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'kouqiang-neike-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'kouqiang-neike-xue', 'chapter-map.json');
-const CHAPTER = '3';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 3;
 const SLUG = '03-e93';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const FIRES = ['风热', '胃火', '虚火'];
+const DEFICIENCIES = ['气虚', '血虚', '阴虚', '阳虚'];
+const YINHUO_GATES = ['脉数无力', '倦怠', '不渴饮冷', '得温则舒'];
+const ORDER = ['起病急缓', '痛之性质', '局部色形'];
+const CONSTRAINTS = ['中病即止', '清热必佐护中', '先补后清'];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
+const splitLines = (doc) => doc.split(/\r?\n/);
+const sections = (doc) => [...doc.matchAll(/^##\s+(.+)$/gm)].map((m) => m[1].trim());
+const countOf = (doc, term) => (doc.split(term).length - 1);
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function ordering(doc, terms) {
+  let last = -1;
+  for (const t of terms) {
+    const i = doc.indexOf(t);
+    if (i <= last) return false;
+    last = i;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return true;
+}
+
+function audit(doc = readDoc()) {
+  const title = (splitLines(doc)[0] || '').replace(/^#\s*第\s*\d+\s*章\s*·\s*/, '').trim();
+  const gates = YINHUO_GATES.filter((t) => doc.includes(t));
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title,
+    sections: sections(doc),
+    fires: FIRES.map((t) => ({ name: t, n: countOf(doc, t) })),
+    deficiencies: DEFICIENCIES.filter((t) => doc.includes(t)),
+    gates,
+    gatesOk: gates.length >= 3,
+    orderOk: ordering(doc, ORDER),
+    toothVsGum: doc.includes('齿病在质') && doc.includes('龈病在肉'),
+    constraints: CONSTRAINTS.filter((t) => doc.includes(t)),
+    notSameAsAcute: doc.includes('虚实与急慢性不同构'),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`口腔内科学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const a = audit();
+  console.log(`口腔内科学 · 第 ${a.chapter} 章 ${a.title}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`小节 ${a.sections.length} 节`);
+  console.log(`三种火：${a.fires.map((f) => `${f.name}(${f.n})`).join('、')}`);
+  console.log(`虚的四层：${a.deficiencies.join('、')}`);
+  console.log(`阴火门槛命中：${a.gates.length}／${YINHUO_GATES.length}（${a.gates.join('、')}）`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`判据次序与正文一致（起病急缓→痛之性质→局部色形）：${a.orderOk ? '是' : '否'}`);
+  console.log(`齿在质、龈在肉的分叉：${a.toothVsGum ? '在' : '缺'}`);
+  console.log(`清热的约束：${a.constraints.join('、')}（${a.constraints.length}／${CONSTRAINTS.length}）`);
+  console.log(`虚实与急慢性不同构：${a.notSameAsAcute ? '已写明' : '缺'}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/kouqiang-neike-xue/units.json 现算，不手打；改教材后重跑即可复现。');
+  console.log('※ 教学样例：计数与次序均由 docs/zh.md 现算，不手打。');
   console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, SLUG, FIRES, DEFICIENCIES, YINHUO_GATES, ORDER, CONSTRAINTS, readDoc, sections, audit };

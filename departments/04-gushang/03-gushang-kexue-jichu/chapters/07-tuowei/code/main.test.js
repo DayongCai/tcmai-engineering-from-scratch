@@ -5,58 +5,54 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { DOC, CHAPTER, TITLE, KINDS, PATHOLOGY, RESET_STEPS, SUCCESS, read, analyze } = require('./main.js');
 
+const A = analyze(read());
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'gushang-jichu', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'gushang-jichu', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文就在本章目录下，章号与标题取自正文', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '07-tuowei', 'docs', 'zh.md')), DOC);
+  assert.ok(fs.existsSync(DOC), '正文文件不存在');
+  assert.strictEqual(CHAPTER, 7);
+  assert.strictEqual(TITLE, '脱位是关节的事，后果常在关节外');
+  assert.ok(read().startsWith('# 第 ' + CHAPTER + ' 章'), '正文首行不是本章章题');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('规模与正文快照一致', () => {
+  assert.strictEqual(A.hanzi, 2966);
+  assert.strictEqual(A.sections.length, 6);
+  assert.strictEqual(A.citeCount, 3);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('分类五维与病理四层齐全', () => {
+  assert.deepStrictEqual(A.kinds, KINDS);
+  assert.deepStrictEqual(A.pathology, PATHOLOGY);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('复位三步按松弛—牵引—顺路径排，次序递增', () => {
+  assert.deepStrictEqual(A.steps.map((s) => s.step), RESET_STEPS);
+  assert.ok(A.stepsOrdered, JSON.stringify(A.steps));
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('复位成功四条标准齐全，且纪律写着', () => {
+  assert.deepStrictEqual(A.success, SUCCESS);
+  assert.ok(A.twice, '缺「复位前后各查一次神经血管」');
+  assert.ok(A.reImage, '缺「复位后必须复查影像」');
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('三个高频部位都配上了该查的神经', () => {
+  assert.strictEqual(A.pairs.length, 3);
+  for (const p of A.pairs) assert.ok(p.ok, `${p.site} 与 ${p.nerve} 没有配对`);
+  // 膝关节脱位一节里必须同时出现腘动脉与腓总神经
+  assert.ok(A.pairs[2].nerveAt > 0);
+});
+
+test('脚本可运行，输出含现算口径与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/gushang-jichu\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/07-tuowei/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /均从本章 docs\/zh\.md 现算/);
+  assert.match(out, /以所在机构规范为准/);
+  assert.ok(out.includes('汉字 2966 字'));
+  assert.ok(out.includes('次序成立'));
 });

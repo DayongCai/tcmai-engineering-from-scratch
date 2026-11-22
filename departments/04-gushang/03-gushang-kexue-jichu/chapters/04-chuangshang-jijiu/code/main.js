@@ -1,13 +1,19 @@
 #!/usr/bin/env node
 /**
- * 中医骨伤科学基础 · 第 4 章 创伤急救：本章统计口径
+ * 中医骨伤科学基础 · 第 4 章 急救的第一个动作不是接骨
  * 课程: departments/04-gushang/03-gushang-kexue-jichu/chapters/04-chuangshang-jijiu/docs/zh.md
- * 数据: standards/gushang-jichu/units.json（162 单元层，每单元带三辨与四位面词频）
- * 取数: standards/gushang-jichu/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章讲的是次序。脚本不数名词，专门验证次序：ABCDE 是否按序、五个致命并发症是否齐全、
+ * 「先固定后搬运」与「先评估神经血管后固定」两句判据是否真的写在正文里。
+ *
+ * 现算项：
+ *   规模     汉字数 / 节数 / 引书
+ *   ABCDE    气道 → 呼吸 → 循环 → 意识 → 暴露 在正文里的先后
+ *   止血带   扎在伤口近端 / 记录时间 / 写在止血带上
+ *   开放伤   覆盖 / 固定 / 送，三个「不」
+ *   并发症   骨筋膜室 / 脂肪栓塞 / 挤压综合征 / 创伤性休克 / 感染
+ *   搬运     先固定后搬运、先评估后固定
  */
 
 'use strict';
@@ -15,87 +21,73 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gushang-jichu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/gushang-jichu/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 4;
+const TITLE = '急救的第一个动作不是接骨';
+
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const ABCDE = ['气道', '呼吸', '循环', '意识', '暴露与环境'];
+const COMPLICATIONS = ['骨筋膜室综合征', '脂肪栓塞', '挤压综合征', '创伤性休克', '感染与气性坏疽'];
+const TOURNIQUET = ['扎在伤口近端', '记录时间', '写在止血带上'];
+const OPEN = ['覆盖', '固定', '送'];
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gushang-jichu', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'gushang-jichu', 'chapter-map.json');
-const CHAPTER = '4';
-const SLUG = '04-chuangshang-jijiu';
+const count = (body, w) => body.split(w).length - 1;
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const hanzi = (body.match(HANZI) || []).length;
+  const sections = body.split('\n').filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+  const cites = [...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]);
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+  // ABCDE 在正文里是加粗的单项，按加粗标记定位，避免被摘要里的散见命中
+  const abcde = ABCDE.map((k) => ({ key: k, at: body.indexOf('**' + k + '**（') }));
+  const abcdeOrdered = abcde.every((c, i) => c.at >= 0 && (i === 0 || c.at > abcde[i - 1].at));
+  const abcdeMissing = abcde.filter((c) => c.at < 0).map((c) => c.key);
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+  const tourniquet = TOURNIQUET.filter((w) => body.includes(w));
+  const open = OPEN.filter((w) => body.includes(w));
+  const notProbe = body.includes('探查深度');
+  const notPushBack = body.includes('不要试图把外露的骨端按回去');
+  const notPull = body.includes('不要拔出刺入的异物');
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  const complications = COMPLICATIONS.filter((w) => body.includes(w));
+
+  const fixBeforeCarry = body.includes('先固定，后搬运');
+  const checkBeforeFix = body.includes('先评估神经血管，后固定');
+  const firstIsNotBone = body.includes('急救的第一步永远不是碰病人');
+
+  return { hanzi, sections, cites, citeCount: cites.length, abcde, abcdeOrdered, abcdeMissing, tourniquet, open, notProbe, notPushBack, notPull, complications, fixBeforeCarry, checkBeforeFix, firstIsNotBone };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医骨伤科学基础 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const a = analyze(read());
+  console.log(`中医骨伤科学基础 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 引书 ${a.citeCount} 处`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('现场评估次序（加粗项的位置）：');
+  for (const c of a.abcde) console.log(`  ${c.key.padEnd(4, '　')} 第 ${String(c.at + 1).padStart(5)} 字`);
+  console.log(`  → ${a.abcdeMissing.length ? '缺项：' + a.abcdeMissing.join('、') : '五项齐全'}；次序${a.abcdeOrdered ? '成立' : '不成立'}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`止血带三件事：${a.tourniquet.join('、') || '—'}（${a.tourniquet.length}/3）`);
+  console.log(`开放伤三件事：${a.open.join('、') || '—'}（${a.open.length}/3）`);
+  console.log(`三个「不」：探查深度${a.notProbe ? '✓' : '✗'} · 骨端按回${a.notPushBack ? '✓' : '✗'} · 拔异物${a.notPull ? '✓' : '✗'}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`五个致命并发症：${a.complications.join('、') || '—'}（${a.complications.length}/5）`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/gushang-jichu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`先固定后搬运：${a.fixBeforeCarry ? '写着' : '未写'} · 先评估后固定：${a.checkBeforeFix ? '写着' : '未写'}`);
+  console.log(`第一步不碰病人：${a.firstIsNotBone ? '写着' : '未写'}`);
+  console.log('');
+  console.log('※ 院前的目标是保命加不加重，不是治好；多做反而多错。');
+  console.log('※ 本章不写具体时限、液体量与药物剂量；实际急救按所在地院前急救规范执行。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, ABCDE, COMPLICATIONS, TOURNIQUET, read, analyze };

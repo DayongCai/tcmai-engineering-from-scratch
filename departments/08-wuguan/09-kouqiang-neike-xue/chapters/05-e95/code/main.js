@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 口腔内科学 · 第 5 章 治法与外治的边界：本章统计口径
+ * 口腔内科学 · 第 5 章 外治的边界，就是药液与器械能触到的边界
  * 课程: departments/08-wuguan/09-kouqiang-neike-xue/chapters/05-e95/docs/zh.md
- * 数据: standards/kouqiang-neike-xue/units.json（20 单元层，每单元带三辨与四位面词频）
- * 取数: standards/kouqiang-neike-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的表量全部从正文现算：内治三法、外治四类、闸门九条、复评五栏与三个阶段，
+ * 以及「含漱不能替代洁治」这一条边界。正文改一句，这里跟着变。
  */
 
 'use strict';
@@ -15,87 +13,77 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'kouqiang-neike-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/kouqiang-neike-xue/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'kouqiang-neike-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'kouqiang-neike-xue', 'chapter-map.json');
-const CHAPTER = '5';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 5;
 const SLUG = '05-e95';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const INNER_METHODS = ['清胃泻火', '滋阴降火', '补气摄血'];
+const OUTER_METHODS = ['含漱', '吹药／涂敷', '牙周冲洗', '洁治／刮治'];
+const REVIEW_COLUMNS = ['部位', '局部指标', '证候', '已施处置', '复诊间隔与判据'];
+const PHASES = ['急性期', '缓解期', '维持期'];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
+const splitLines = (doc) => doc.split(/\r?\n/);
+const sections = (doc) => [...doc.matchAll(/^##\s+(.+)$/gm)].map((m) => m[1].trim());
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function tableRows(doc, anchor) {
+  const rows = splitLines(doc);
+  const start = rows.findIndex((l) => l.trim().startsWith('|') && l.includes(anchor));
+  if (start < 0) return [];
+  const out = [];
+  for (let i = start; i < rows.length; i += 1) {
+    const line = rows[i].trim();
+    if (!line.startsWith('|')) {
+      if (out.length) break;
+      continue;
+    }
+    if (/^\|[\s:|-]+\|$/.test(line)) continue;
+    if (i === start) continue;
+    out.push(line.split('|').slice(1, -1).map((s) => s.trim()));
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function audit(doc = readDoc()) {
+  const outer = tableRows(doc, '| 方法 |');
+  const gates = tableRows(doc, '| 情形 |');
+  const title = (splitLines(doc)[0] || '').replace(/^#\s*第\s*\d+\s*章\s*·\s*/, '').trim();
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title,
+    sections: sections(doc),
+    innerMethods: INNER_METHODS.filter((t) => doc.includes(t)),
+    outerRows: outer.length,
+    outerMethods: outer.map((r) => r[0]),
+    gateRows: gates.length,
+    gateNames: gates.map((r) => r[0]),
+    reviewColumns: REVIEW_COLUMNS.filter((t) => doc.includes(`**${t}**`)),
+    phases: PHASES.filter((t) => doc.includes(`**${t}**`)),
+    rinseNotScaling: doc.includes('含漱不能替代洁治'),
+    localWins: doc.includes('两者不一致时以局部为准'),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`口腔内科学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const a = audit();
+  console.log(`口腔内科学 · 第 ${a.chapter} 章 ${a.title}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`小节 ${a.sections.length} 节`);
+  console.log(`内治三法：${a.innerMethods.join('、')}（${a.innerMethods.length}／3）`);
+  console.log(`外治 ${a.outerRows} 类：${a.outerMethods.join('、')}`);
+  console.log(`闸门 ${a.gateRows} 条：`);
+  for (const g of a.gateNames) console.log(`  ${g}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`复评五栏：${a.reviewColumns.join('、')}（${a.reviewColumns.length}／5）`);
+  console.log(`三个阶段：${a.phases.join(' → ')}`);
+  console.log(`含漱不能替代洁治：${a.rinseNotScaling ? '已写明' : '缺'}`);
+  console.log(`局部与全身不一致时以局部为准：${a.localWins ? '已写明' : '缺'}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/kouqiang-neike-xue/units.json 现算，不手打；改教材后重跑即可复现。');
+  console.log('※ 教学样例：表行数与名单均由 docs/zh.md 现算，不手打。');
   console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, SLUG, INNER_METHODS, OUTER_METHODS, REVIEW_COLUMNS, PHASES, readDoc, sections, tableRows, audit };

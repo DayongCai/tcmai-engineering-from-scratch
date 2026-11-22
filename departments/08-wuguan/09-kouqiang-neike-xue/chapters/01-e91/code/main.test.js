@@ -5,58 +5,46 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const m = require('./main.js');
 
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'kouqiang-neike-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'kouqiang-neike-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const CHAPTERS = path.join(__dirname, '..', '..', '..', 'chapters.json');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('章节号与课程清单一致', () => {
+  const list = JSON.parse(fs.readFileSync(CHAPTERS, 'utf8')).chapters;
+  const row = list.find((c) => c.slug === m.SLUG);
+  assert.ok(row, `chapters.json 里没有 ${m.SLUG}`);
+  assert.strictEqual(row.n, m.CHAPTER);
+  assert.strictEqual(m.audit().title, row.title);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('正文可读，小节都在', () => {
+  assert.ok(m.audit().sections.length >= 6, `小节过少：${m.audit().sections.length}`);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('六步次序与正文一致', () => {
+  const a = m.audit();
+  assert.deepStrictEqual(a.steps, m.STEPS);
+  assert.ok(a.stepsOk, '正文的六步次序与本章判据不符');
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('分诊表四行，且归口都在正文里', () => {
+  const a = m.audit();
+  assert.strictEqual(a.triageRows, 4);
+  assert.strictEqual(a.triageSurgical, 3);
+  for (const to of a.triageTo) assert.ok(/外科|修复科/.test(to), `陌生归口：${to}`);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('红旗清单与记录项都能在正文找到', () => {
+  const a = m.audit();
+  assert.deepStrictEqual(a.redFlags, m.RED_FLAGS);
+  assert.deepStrictEqual(a.positions, m.POSITIONS);
+  assert.deepStrictEqual(a.quantities, m.QUANTITIES);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('脚本可运行且带边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/kouqiang-neike-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/01-e91/docs/zh.md'), '头部注释未指向本章');
+  assert.match(r.stdout, /教学样例/);
+  assert.match(r.stdout, /不构成临床判断依据/);
 });

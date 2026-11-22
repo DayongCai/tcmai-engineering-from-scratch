@@ -1,13 +1,20 @@
 #!/usr/bin/env node
 /**
- * 中医骨伤科学基础 · 第 3 章 骨伤病的治疗方法：本章统计口径
+ * 中医骨伤科学基础 · 第 3 章 治疗的次序比方法清单重要
  * 课程: departments/04-gushang/03-gushang-kexue-jichu/chapters/03-zhiliao-fangfa/docs/zh.md
- * 数据: standards/gushang-jichu/units.json（162 单元层，每单元带三辨与四位面词频）
- * 取数: standards/gushang-jichu/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的核心不是「有几种方法」，而是「先做什么、什么时候换挡」。
+ * 脚本从正文里数三样东西：手法的成立条件、固定的五种工具、内治的三期方向，
+ * 再检查「固定的是骨折端，不是整条肢体」这句判据是否真的写着。
+ *
+ * 现算项：
+ *   规模      汉字数 / 节数 / 引书
+ *   手法      诊断明确 / 肌肉松弛 / 方向与力量可控（缺一不可）
+ *   复位      解剖复位 / 功能复位 / 反复复位的代价
+ *   固定      小夹板 / 石膏 / 牵引 / 外固定架 / 内固定 的出现次数
+ *   内治      初期 / 中期 / 后期 及各自的治法关键词
+ *   动静      「固定的是骨折端，不是整条肢体」
  */
 
 'use strict';
@@ -15,87 +22,80 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gushang-jichu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/gushang-jichu/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 3;
+const TITLE = '治疗的次序比方法清单重要';
+
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const CONDITIONS = ['诊断明确', '肌肉松弛', '方向与力量可控'];
+const TOOLS = ['小夹板', '石膏', '牵引', '外固定架', '内固定'];
+const PHASES = [
+  { phase: '初期', rule: '活血化瘀' },
+  { phase: '中期', rule: '和营生新' },
+  { phase: '后期', rule: '补益肝肾' },
+];
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gushang-jichu', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'gushang-jichu', 'chapter-map.json');
-const CHAPTER = '3';
-const SLUG = '03-zhiliao-fangfa';
+const count = (body, w) => body.split(w).length - 1;
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const hanzi = (body.match(HANZI) || []).length;
+  const sections = body.split('\n').filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+  const cites = [...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]);
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+  const conditions = CONDITIONS.map((c) => ({ name: c, at: body.indexOf(c), hits: count(body, c) }));
+  const missingConditions = conditions.filter((c) => c.at < 0).map((c) => c.name);
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+  const tools = TOOLS.map((t) => ({ name: t, hits: count(body, t) }));
+  const coldTools = tools.filter((t) => t.hits === 0).map((t) => t.name);
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  const phases = PHASES.map((p) => {
+    const phaseAt = body.indexOf(p.phase);
+    // 治法关键词要在该期之后找，否则会命中摘要里先出现的同名说法
+    return { ...p, phaseAt, ruleAt: phaseAt >= 0 ? body.indexOf(p.rule, phaseAt) : -1 };
+  });
+  const phaseOrdered = phases.every((p, i) => p.phaseAt >= 0 && p.ruleAt >= 0 && (i === 0 || p.phaseAt > phases[i - 1].phaseAt));
+
+  const reductions = ['解剖复位', '功能复位'].filter((w) => body.includes(w));
+  const redoCost = ['血运破坏', '软组织剥离', '骨不连'].filter((w) => body.includes(w));
+  const quiet = body.includes('固定的是骨折端，不是整条肢体');
+
+  return { hanzi, sections, cites, citeCount: cites.length, conditions, missingConditions, tools, coldTools, phases, phaseOrdered, reductions, redoCost, quiet };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医骨伤科学基础 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const a = analyze(read());
+  console.log(`中医骨伤科学基础 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 引书 ${a.citeCount} 处`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('手法成立的三条件（缺一不可）：');
+  for (const c of a.conditions) console.log(`  ${c.name.padEnd(8, '　')} 第 ${String(c.at + 1).padStart(5)} 字 · 出现 ${c.hits} 次`);
+  console.log(`  → ${a.missingConditions.length ? '缺：' + a.missingConditions.join('、') : '三条齐全'}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`复位层次：${a.reductions.join(' / ') || '—'}`);
+  console.log(`反复复位的代价：${a.redoCost.join('、') || '—'}（${a.redoCost.length}/3）`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('固定五工具（正文提及次数）：');
+  for (const t of a.tools) console.log(`  ${t.name.padEnd(6, '　')} ${t.hits} 次`);
+  console.log(`  → ${a.coldTools.length ? '正文未提：' + a.coldTools.join('、') : '五种齐全，且各自带代价'}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/gushang-jichu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('内治三期：');
+  for (const p of a.phases) console.log(`  ${p.phase}（第 ${p.phaseAt + 1} 字）→ ${p.rule}（第 ${p.ruleAt + 1} 字）`);
+  console.log(`  → 三期次序${a.phaseOrdered ? '与正文一致' : '与正文不一致'}`);
+  console.log('');
+  console.log(`动静结合判据：${a.quiet ? '固定的是骨折端，不是整条肢体' : '正文未写出这条判据'}`);
+  console.log('');
+  console.log('※ 方法是工具箱，不是流程单；同一个骨折在不同的人身上可以有不同的次序。');
+  console.log('※ 本章不列方名、不给剂量；具体方案以所在机构规范与执业医师判断为准。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, CONDITIONS, TOOLS, PHASES, read, analyze };

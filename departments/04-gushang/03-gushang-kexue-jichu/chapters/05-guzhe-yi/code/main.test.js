@@ -5,58 +5,58 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { DOC, CHAPTER, TITLE, DISPLACEMENT, HEALING, UNION, read, analyze } = require('./main.js');
 
+const A = analyze(read());
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'gushang-jichu', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'gushang-jichu', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文就在本章目录下，章号与标题取自正文', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '05-guzhe-yi', 'docs', 'zh.md')), DOC);
+  assert.ok(fs.existsSync(DOC), '正文文件不存在');
+  assert.strictEqual(CHAPTER, 5);
+  assert.strictEqual(TITLE, '上肢骨折的难点不在接骨，在功能');
+  assert.ok(read().startsWith('# 第 ' + CHAPTER + ' 章'), '正文首行不是本章章题');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('规模与正文快照一致', () => {
+  assert.strictEqual(A.hanzi, 2920);
+  assert.strictEqual(A.sections.length, 5);
+  assert.strictEqual(A.citeCount, 2);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('移位五项与临床愈合五条都齐全', () => {
+  assert.deepStrictEqual(A.displacement, DISPLACEMENT);
+  assert.deepStrictEqual(A.union, UNION);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('愈合三段按血肿—骨痂—塑形排，次序不反', () => {
+  assert.strictEqual(A.healing.length, HEALING.length);
+  assert.ok(A.healingOrdered, JSON.stringify(A.healing));
+  assert.deepStrictEqual(A.healing.map((h) => h.key), ['血肿炎症期', '原始骨痂形成期', '骨痂改造塑形期']);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('孟氏与盖氏两个组合都写到，且关键词与脱位部位对应', () => {
+  assert.strictEqual(A.combos.length, 2);
+  for (const c of A.combos) {
+    assert.ok(c.at > 0, c.name + ' 未在正文出现');
+    assert.ok(c.ok, c.name + ' 缺关键词 ' + c.keyword);
+  }
+  // 孟氏在盖氏之前
+  assert.ok(A.combos[0].at < A.combos[1].at);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('功能判据写着：复位成功不等于治疗成功，目标是手能到该到的地方', () => {
+  assert.ok(A.functionalGoal, '缺「复位成功了，治疗失败了」');
+  assert.ok(A.handReach, '缺「手能不能到该到的地方」');
+  assert.ok(A.rotationJoke, '缺旋转的床边判法（指甲是否共面）');
+});
+
+test('脚本可运行，输出含现算口径与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/gushang-jichu\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/05-guzhe-yi/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /均从本章 docs\/zh\.md 现算/);
+  assert.match(out, /以所在机构规范为准/);
+  assert.ok(out.includes('汉字 2920 字'));
+  assert.ok(out.includes('次序成立'));
 });

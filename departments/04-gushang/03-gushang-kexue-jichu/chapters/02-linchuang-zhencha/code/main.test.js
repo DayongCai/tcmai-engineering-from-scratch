@@ -5,58 +5,58 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { DOC, CHAPTER, TITLE, read, analyze } = require('./main.js');
 
+const A = analyze(read());
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'gushang-jichu', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'gushang-jichu', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文就在本章目录下，章号与标题取自正文', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '02-linchuang-zhencha', 'docs', 'zh.md')), DOC);
+  assert.ok(fs.existsSync(DOC), '正文文件不存在');
+  assert.strictEqual(CHAPTER, 2);
+  assert.strictEqual(TITLE, '影像能看见骨折线，看不见病人是怎么伤的');
+  assert.ok(read().startsWith('# 第 ' + CHAPTER + ' 章'), '正文首行不是本章章题');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('规模与正文快照一致', () => {
+  assert.strictEqual(A.hanzi, 2788);
+  assert.strictEqual(A.sections.length, 6);
+  assert.strictEqual(A.citeCount, 2);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('特殊检查表读得出来：十项、每项四栏', () => {
+  assert.strictEqual(A.tests.length, 10);
+  assert.deepStrictEqual(A.badRows, [], '有行不是四栏: ' + A.badRows.join('、'));
+  for (const r of A.tests) {
+    assert.ok(r.test.length > 0, '动作列为空');
+    assert.ok(r.positive.length > 0, r.test + ' 缺阳性提示');
+    assert.ok(r.limit.length > 0, r.test + ' 缺局限');
+  }
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('部位归类覆盖肩、膝、腕、髋四个高频部位', () => {
+  for (const s of ['肩', '膝', '腕', '髋']) assert.ok(A.siteCount[s] >= 1, '缺部位: ' + s);
+  assert.strictEqual(A.siteCount['膝'], 3);
+  assert.strictEqual(A.siteCount['腕'], 2);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('量诊三个同与神经血管两次检查都在正文里', () => {
+  assert.deepStrictEqual(A.sameThree, ['同一解剖标志', '同一水平', '同一体位']);
+  assert.ok(A.twice, '正文没有写「复位前一次、复位后一次」');
+  assert.ok(A.falsPositive, '正文没有给出「验前概率」的定位');
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('影像次序与正文叙述一致：X 线先于 CT 先于 MRI 先于超声', () => {
+  assert.ok(A.chainOrdered, JSON.stringify(A.chain));
+  assert.deepStrictEqual(A.chain.map((c) => c.key), ['X 线', 'CT', 'MRI', '超声']);
+});
+
+test('脚本可运行，输出含现算口径与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/gushang-jichu\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/02-linchuang-zhencha/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /均从本章 docs\/zh\.md 现算/);
+  assert.match(out, /不构成诊疗意见/);
+  assert.ok(out.includes('特殊检查表：10 项'));
+  assert.ok(out.includes('与正文叙述一致'));
 });

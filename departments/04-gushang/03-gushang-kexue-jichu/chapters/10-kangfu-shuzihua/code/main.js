@@ -1,13 +1,20 @@
 #!/usr/bin/env node
 /**
- * 中医骨伤科学基础 · 第 10 章 骨伤康复与数字化：本章统计口径
+ * 中医骨伤科学基础 · 第 10 章 康复不是治疗之后，是治疗的一部分
  * 课程: departments/04-gushang/03-gushang-kexue-jichu/chapters/10-kangfu-shuzihua/docs/zh.md
- * 数据: standards/gushang-jichu/units.json（162 单元层，每单元带三辨与四位面词频）
- * 取数: standards/gushang-jichu/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的判据是「有评定才有处方，有随访才算疗效」。脚本从正文里读出六个功能维度、
+ * 康复三期、五方角色、数字化的五个方向、评价的三层，以及一份可执行处方的五个要素。
+ *
+ * 现算项：
+ *   规模     汉字数 / 节数 / 引书
+ *   维度     关节活动度 / 肌力与耐力 / 本体感觉与平衡 / 步态与负重 / 日常生活 / 重返工作
+ *   分期     制动期 → 活动期 → 负重期（与愈合同步）
+ *   协作     骨科医师 / 康复治疗师 / 护理 / 中医师 / 家属与照护者
+ *   数字化   三维重建 / 导航与机器人 / 可穿戴 / 影像 AI / 结构化病历
+ *   评价     结构 / 过程 / 结果
+ *   处方     练哪个动作 / 一天几组 / 每组几次 / 疼到什么程度停 / 什么时候复评
  */
 
 'use strict';
@@ -15,87 +22,79 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gushang-jichu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/gushang-jichu/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 10;
+const TITLE = '康复不是治疗之后，是治疗的一部分';
+
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const DIMENSIONS = ['关节活动度', '肌力与耐力', '本体感觉与平衡', '步态与负重能力', '日常生活能力', '重返工作与运动'];
+const STAGES = ['制动期', '活动期', '负重期'];
+const ROLES = ['骨科医师', '康复治疗师', '护理', '中医师', '家属与照护者'];
+const DIGITAL = ['三维重建与 3D 打印', '手术导航与机器人', '可穿戴与远程康复', '影像人工智能', '结构化电子病历'];
+const LAYERS = [
+  { name: '结构', mark: '骨折对位' },
+  { name: '过程', mark: '是否按规范复查' },
+  { name: '结果', mark: '生活质量' },
+];
+const RX = ['练哪个动作', '一天几组', '每组几次', '疼到什么程度停', '什么时候复评'];
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gushang-jichu', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'gushang-jichu', 'chapter-map.json');
-const CHAPTER = '10';
-const SLUG = '10-kangfu-shuzihua';
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const hanzi = (body.match(HANZI) || []).length;
+  const sections = body.split('\n').filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+  const cites = [...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]);
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+  const dimensions = DIMENSIONS.filter((w) => body.includes(w));
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+  const stages = STAGES.map((k) => ({ key: k, at: body.indexOf('**' + k) }));
+  const stagesOrdered = stages.every((s, i) => s.at >= 0 && (i === 0 || s.at > stages[i - 1].at));
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+  const roles = ROLES.filter((w) => body.includes(w));
+  const digital = DIGITAL.filter((w) => body.includes(w));
+  const layers = LAYERS.map((l) => ({ ...l, ok: body.includes(l.mark) }));
+  const rx = RX.filter((w) => body.includes(w));
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  const syncHealing = body.includes('与愈合同步，而不是与日历同步');
+  const baseline = body.includes('没有基线，就没有「进步」这个词');
+  const followupBias = body.includes('失访是最大的偏倚来源');
+  const fixedNotLimb = body.includes('固定的是骨折端，不是整条肢体');
+
+  return { hanzi, sections, cites, citeCount: cites.length, dimensions, stages, stagesOrdered, roles, digital, layers, rx, syncHealing, baseline, followupBias, fixedNotLimb };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医骨伤科学基础 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const a = analyze(read());
+  console.log(`中医骨伤科学基础 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 引书 ${a.citeCount} 处`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`功能维度：${a.dimensions.join('、') || '—'}（${a.dimensions.length}/6）`);
+  console.log(`评定前提：${a.baseline ? '没有基线，就没有「进步」这个词' : '未写'}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('康复分期（按正文加粗项定位）：');
+  for (const s of a.stages) console.log(`  ${s.key.padEnd(4, '　')} 第 ${String(s.at + 1).padStart(5)} 字`);
+  console.log(`  → ${a.stagesOrdered ? '次序成立' : '次序不成立'}；${a.syncHealing ? '与愈合同步，而不是与日历同步' : '正文未写同步判据'}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`五方角色：${a.roles.join('、') || '—'}（${a.roles.length}/5）`);
+  console.log(`数字化五方向：${a.digital.join('、') || '—'}（${a.digital.length}/5）`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/gushang-jichu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('评价三层：');
+  for (const l of a.layers) console.log(`  ${l.name}（判据：${l.mark}）${l.ok ? '' : ' —— 正文缺该层'}`);
+  console.log(`处方五要素：${a.rx.join('、') || '—'}（${a.rx.length}/5）`);
+  console.log('');
+  console.log(`贯穿三期的原则：${a.fixedNotLimb ? '固定的是骨折端，不是整条肢体' : '未写'}`);
+  console.log(`随访的地位：${a.followupBias ? '失访是最大的偏倚来源，随访率要作为质量指标报告' : '未写'}`);
+  console.log('');
+  console.log('※ 数字化提高的是「看得见」的能力，不自动提高「治得好」的能力。');
+  console.log('※ 本章不含训练剂量、评定阈值与设备参数；具体方案以所在机构规范与治疗师评定为准。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, DIMENSIONS, STAGES, ROLES, DIGITAL, LAYERS, RX, read, analyze };

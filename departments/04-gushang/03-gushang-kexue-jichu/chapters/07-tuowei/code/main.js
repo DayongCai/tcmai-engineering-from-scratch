@@ -1,13 +1,20 @@
 #!/usr/bin/env node
 /**
- * 中医骨伤科学基础 · 第 7 章 脱位：本章统计口径
+ * 中医骨伤科学基础 · 第 7 章 脱位是关节的事，后果常在关节外
  * 课程: departments/04-gushang/03-gushang-kexue-jichu/chapters/07-tuowei/docs/zh.md
- * 数据: standards/gushang-jichu/units.json（162 单元层，每单元带三辨与四位面词频）
- * 取数: standards/gushang-jichu/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的判据是「复位成功不等于治疗结束」，而最容易漏的是关节外的那一层。
+ * 脚本从正文里读出：分类五维、病理四层、复位三步、复位成功的四条标准、各部位的神经血管搭档，
+ * 以及「复位前后各查一次」这句纪律是否真的写着。
+ *
+ * 现算项：
+ *   规模     汉字数 / 节数 / 引书
+ *   分类     新鲜与陈旧 / 闭合与开放 / 完全与不全 / 急性与习惯性 / 先天性
+ *   病理     关节囊 / 韧带 / 骨与软骨 / 关节内嵌顿物
+ *   复位     先松弛 → 再牵引 → 顺路径
+ *   标准     对合 / 被动活动无阻挡 / 稳定 / 神经血管完好
+ *   搭档     肩前-腋神经、髋后-坐骨神经、膝-腘动脉与腓总神经
  */
 
 'use strict';
@@ -15,87 +22,77 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gushang-jichu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/gushang-jichu/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 7;
+const TITLE = '脱位是关节的事，后果常在关节外';
+
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const KINDS = ['新鲜与陈旧', '闭合与开放', '完全与不全', '习惯性', '先天性'];
+const PATHOLOGY = ['关节囊撕裂', '韧带损伤', '骨与软骨', '关节内嵌顿物'];
+const RESET_STEPS = ['先松弛', '再牵引', '顺着脱出的路径返回'];
+const SUCCESS = ['对合关系恢复', '被动活动无阻挡', '复位后稳定', '神经血管完好'];
+const PAIRS = [
+  { site: '肩关节前脱位', nerve: '腋神经' },
+  { site: '髋关节后脱位', nerve: '坐骨神经' },
+  { site: '膝关节脱位', nerve: '腓总神经' },
+];
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gushang-jichu', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'gushang-jichu', 'chapter-map.json');
-const CHAPTER = '7';
-const SLUG = '07-tuowei';
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const hanzi = (body.match(HANZI) || []).length;
+  const sections = body.split('\n').filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+  const cites = [...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]);
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+  const kinds = KINDS.filter((w) => body.includes(w));
+  const pathology = PATHOLOGY.filter((w) => body.includes(w));
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+  const steps = RESET_STEPS.map((s) => ({ step: s, at: body.indexOf(s) }));
+  const stepsOrdered = steps.every((s, i) => s.at >= 0 && (i === 0 || s.at > steps[i - 1].at));
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+  const success = SUCCESS.filter((w) => body.includes(w));
+  const twice = body.includes('复位前后各查一次神经血管');
+  const reImage = body.includes('复位后必须复查影像');
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  const pairs = PAIRS.map((p) => ({
+    ...p,
+    siteAt: body.indexOf(p.site),
+    nerveAt: body.indexOf(p.nerve),
+    ok: body.includes(p.site) && body.includes(p.nerve),
+  }));
+
+  return { hanzi, sections, cites, citeCount: cites.length, kinds, pathology, steps, stepsOrdered, success, twice, reImage, pairs };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医骨伤科学基础 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const a = analyze(read());
+  console.log(`中医骨伤科学基础 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 引书 ${a.citeCount} 处`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`分类维度：${a.kinds.join('、')}（${a.kinds.length}/5）`);
+  console.log(`病理四层：${a.pathology.join('、')}（${a.pathology.length}/4）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('复位三步（正文先后）：');
+  for (const s of a.steps) console.log(`  ${s.step.padEnd(9, '　')} 第 ${String(s.at + 1).padStart(5)} 字`);
+  console.log(`  → ${a.stepsOrdered ? '次序成立' : '次序不成立'}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`复位成功的标准：${a.success.join('、') || '—'}（${a.success.length}/4）`);
+  console.log(`复位前后各查一次神经血管：${a.twice ? '写着' : '未写'}`);
+  console.log(`复位后必须复查影像：${a.reImage ? '写着' : '未写'}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/gushang-jichu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('关节外的那一层（部位 → 该查的神经）：');
+  for (const p of a.pairs) console.log(`  ${p.site.padEnd(8, '　')} → ${p.nerve}${p.ok ? '' : '（正文未配对）'}`);
+  console.log('');
+  console.log('※ 复位成功不等于治疗结束；固定体位、时长与康复起点决定最终功能。');
+  console.log('※ 本章不含麻醉、药物剂量与固定周数；实际处理以所在机构规范为准。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, KINDS, PATHOLOGY, RESET_STEPS, SUCCESS, PAIRS, read, analyze };

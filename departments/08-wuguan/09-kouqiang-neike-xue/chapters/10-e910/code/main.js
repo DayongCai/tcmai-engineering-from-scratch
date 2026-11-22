@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 口腔内科学 · 第 10 章 口腔卫生、调护与预防：本章统计口径
+ * 口腔内科学 · 第 10 章 「认真刷牙」不是一个方案
  * 课程: departments/08-wuguan/09-kouqiang-neike-xue/chapters/10-e910/docs/zh.md
- * 数据: standards/kouqiang-neike-xue/units.json（20 单元层，每单元带三辨与四位面词频）
- * 取数: standards/kouqiang-neike-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的方案量全部从正文现算：四个要素、方案四栏的行数、三个数字、
+ * 风险三层的间隔、八条自查，以及「过度」与「不足」两侧的边界。正文改一句，这里跟着变。
  */
 
 'use strict';
@@ -15,87 +13,97 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'kouqiang-neike-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/kouqiang-neike-xue/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'kouqiang-neike-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'kouqiang-neike-xue', 'chapter-map.json');
-const CHAPTER = '10';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 10;
 const SLUG = '10-e910';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const ELEMENTS = ['菌斑', '氟', '糖', '唾液'];
+const RISK_TIERS = ['低', '中', '高'];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
+const splitLines = (doc) => doc.split(/\r?\n/);
+const sections = (doc) => [...doc.matchAll(/^##\s+(.+)$/gm)].map((m) => m[1].trim());
+
+function sectionBody(doc, marker) {
+  const re = new RegExp(`^##\\s+[^\\n]*${marker}[^\\n]*$`, 'm');
+  const m = doc.match(re);
+  if (!m) return '';
+  const start = m.index + m[0].length;
+  const rest = doc.slice(start);
+  const next = rest.search(/^##\s+/m);
+  return next < 0 ? rest : rest.slice(0, next);
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function tableRows(doc, anchor) {
+  const rows = splitLines(doc);
+  const start = rows.findIndex((l) => l.trim().startsWith('|') && l.includes(anchor));
+  if (start < 0) return [];
+  const out = [];
+  for (let i = start; i < rows.length; i += 1) {
+    const line = rows[i].trim();
+    if (!line.startsWith('|')) {
+      if (out.length) break;
+      continue;
+    }
+    if (/^\|[\s:|-]+\|$/.test(line)) continue;
+    if (i === start) continue;
+    out.push(line.split('|').slice(1, -1).map((s) => s.trim()));
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function audit(doc = readDoc()) {
+  const elementRows = tableRows(doc, '| 要素 |');
+  const planRows = tableRows(doc, '| 项目 |');
+  const riskRows = tableRows(doc, '| 风险层 |');
+  const numbers = doc.match(/(\d+)\s*分钟、\s*(\d+)\s*次、\s*(\d+)\s*次甜食/);
+  const selfBody = sectionBody(doc, '五、风险分层');
+  const title = (splitLines(doc)[0] || '').replace(/^#\s*第\s*\d+\s*章\s*·\s*/, '').trim();
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title,
+    sections: sections(doc),
+    elements: elementRows.map((r) => r[0]),
+    elementRows: elementRows.length,
+    planRows: planRows.length,
+    planNames: planRows.map((r) => r[0]),
+    planColumns: (splitLines(doc).find((l) => l.includes('| 项目 |')) || '')
+      .split('|').slice(1, -1).map((s) => s.trim()),
+    numbers: numbers ? [Number(numbers[1]), Number(numbers[2]), Number(numbers[3])] : [],
+    riskRows: riskRows.length,
+    riskNames: riskRows.map((r) => r[0]),
+    riskIntervals: riskRows.map((r) => r[2] || ''),
+    selfChecks: (selfBody.match(/^\d+\.\s+\*\*/gm) || []).length,
+    fluorineStays: doc.includes('氟留在牙面才起效'),
+    frequencyOverTotal: doc.includes('酸的攻击次数'),
+    overuseHarmed: doc.includes('楔状缺损'),
+    notTherapy: doc.includes('口腔卫生是「日常」，不是「治疗」'),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`口腔内科学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const a = audit();
+  console.log(`口腔内科学 · 第 ${a.chapter} 章 ${a.title}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`小节 ${a.sections.length} 节`);
+  console.log(`四要素：${a.elements.join('、')}（${a.elementRows}／4）`);
+  console.log(`方案 ${a.planRows} 项：${a.planNames.join('、')}`);
+  console.log(`方案四栏：${a.planColumns.join('｜')}（${a.planColumns.length} 栏）`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`三个数字：${a.numbers.join(' / ')}`);
+  console.log(`风险 ${a.riskRows} 层：${a.riskNames.join('、')}`);
+  console.log(`分层间隔：${a.riskIntervals.join('；')}`);
+  console.log(`自查 ${a.selfChecks} 条`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`控糖看次数：${a.frequencyOverTotal ? '已写明' : '缺'}；氟留在牙面才起效：${a.fluorineStays ? '已写明' : '缺'}`);
+  console.log(`过度的害处（楔状缺损）：${a.overuseHarmed ? '已写明' : '缺'}`);
+  console.log(`口腔卫生是日常不是治疗：${a.notTherapy ? '已写明' : '缺'}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/kouqiang-neike-xue/units.json 现算，不手打；改教材后重跑即可复现。');
+  console.log('※ 教学样例：方案行数与分层间隔均由 docs/zh.md 现算，不手打。');
   console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, SLUG, ELEMENTS, RISK_TIERS, readDoc, sections, sectionBody, tableRows, audit };
