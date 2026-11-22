@@ -6,57 +6,56 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '03-zhongyi-guanli-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '03-zhongyi-guanli-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, CHAPTER, TITLE, read, facts, visibleDefects, ceilingRate, shrunkRate } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const TEXT = read();
+const F = facts(TEXT);
+
+test('正文就在本章目录下，章号与标题对得上', () => {
+  assert.ok(fs.existsSync(DOC));
+  assert.ok(DOC.endsWith(path.join('chapters', '05-z35', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 5);
+  assert.ok(TEXT.startsWith('# 第 5 章'));
+  assert.strictEqual(TITLE, '中医治疗率 92%，没有一张方是对证的');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('抽查数据全部取自正文', () => {
+  assert.strictEqual(F.reportedRate, 92);
+  assert.strictEqual(F.requiredRate, 85);
+  assert.strictEqual(F.sample, 100);
+  assert.strictEqual(F.onlyPatent, 23);
+  assert.strictEqual(F.mismatch, 7);
+  assert.strictEqual(F.copied, 5);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('三类缺陷互不包含，合计 35 份，上限 65%', () => {
+  const d = visibleDefects(F);
+  assert.strictEqual(d, 35);
+  assert.strictEqual(ceilingRate(100, d), 0.65);
+  assert.strictEqual(ceilingRate(100, 0), 1);
+  assert.throws(() => ceilingRate(100, 101), /缺陷数不能超过/);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('上限与报表差 27 个百分点', () => {
+  const gap = F.reportedRate / 100 - ceilingRate(F.sample, visibleDefects(F));
+  assert.ok(Math.abs(gap * 100 - 27) < 1e-9, String(gap));
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('改分母：减两成时比率越过 100%，说明这条路撞了天花板', () => {
+  const a = shrunkRate(92, 100, 0.1);
+  assert.strictEqual(a.denominator, 90);
+  assert.ok(a.rate > 1 && a.rate < 1.03, String(a.rate));
+  const b = shrunkRate(92, 100, 0.2);
+  assert.strictEqual(b.denominator, 80);
+  assert.strictEqual(b.overflow, true);
+  assert.strictEqual(b.rate, 1.15);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('脚本可运行，输出缺陷合计、上限与边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/03-zhongyi-guanli-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/05-z35/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /可见缺陷合计 35 份/);
+  assert.match(out, /对得上证的上限 65%/);
+  assert.match(out, /不构成医疗质量管理、绩效考核/);
 });

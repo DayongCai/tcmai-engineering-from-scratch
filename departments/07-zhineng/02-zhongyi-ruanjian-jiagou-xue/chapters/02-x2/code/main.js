@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 中医软件架构 · 第 2 章 电子病历与临床信息系统：本章统计口径
- * 课程: departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/02-x2/docs/zh.md
- * 数据: standards/zhongyi-ruanjian-jiagou/units.json（110 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-ruanjian-jiagou/chapter-map.json（课程章 → 教材单元号）
+ * 中医软件架构 · 第 2 章 · 接口不是函数签名，是一份能单独验收的文档
+ * 正文: departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/02-x2/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本脚本只读本章正文：节数、表格行数、汉字数与关键词命中全部现算。
+ * 正文改动后重跑即可复现，不把数字写成常数。
  */
 
 'use strict';
@@ -15,87 +13,118 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-ruanjian-jiagou', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 2;
+const THESIS = "对外以文档为准，对内以事件为流";
+const KEY_TERMS = [
+  "语义",
+  "所有权",
+  "幂等",
+  "契约测试",
+  "版本兼容"
+];
+
+function readDoc() {
+  return fs.readFileSync(DOC, 'utf8');
+}
+
+function hanzi(text) {
+  return (String(text).match(/[\u4e00-\u9fff]/g) || []).length;
+}
+
+function lines(text) {
+  return String(text).split(/\r?\n/);
+}
+
+function title(text) {
+  const line = lines(text).find((x) => /^#\s+/.test(x));
+  return line ? line.replace(/^#\s+/, '').trim() : '';
+}
+
+function sections(text) {
+  return lines(text)
+    .filter((x) => /^##\s+/.test(x))
+    .map((x) => x.replace(/^##\s+/, '').trim());
+}
+
+function tableLines(text) {
+  return lines(text).filter((x) => /^\|/.test(x) && !/^\|[\s:|-]+\|$/.test(x));
+}
+
+function countTerm(text, term) {
+  let n = 0;
+  let i = 0;
+  while ((i = text.indexOf(term, i)) !== -1) {
+    n += 1;
+    i += term.length;
   }
-  throw new Error('没找到 standards/zhongyi-ruanjian-jiagou/units.json —— 章节目录是否已脱离仓库？');
+  return n;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-ruanjian-jiagou', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-ruanjian-jiagou', 'chapter-map.json');
-const CHAPTER = '2';
-const SLUG = '02-x2';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function analyze(text) {
+  const secs = sections(text);
+  const terms = KEY_TERMS.map((t) => ({ term: t, count: countTerm(text, t) }))
+    .sort((a, b) => b.count - a.count || a.term.localeCompare(b.term, 'zh'));
+  return {
+    chapter: CHAPTER,
+    title: title(text),
+    sections: secs,
+    sectionCount: secs.length,
+    tableRows: tableLines(text).length,
+    hanzi: hanzi(text),
+    terms,
+    topTerm: terms[0],
+    thesis: THESIS,
+    thesisPresent: text.includes(THESIS),
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function assertShape(a) {
+  const bad = [];
+  if (!a.title.startsWith(`第 ${CHAPTER} 章`)) bad.push('标题章号不符');
+  if (a.sectionCount < 5) bad.push(`节数不足：${a.sectionCount}`);
+  if (a.tableRows < 4) bad.push(`表格行数不足：${a.tableRows}`);
+  if (a.hanzi < 2500) bad.push(`汉字数不足：${a.hanzi}`);
+  const missing = a.terms.filter((t) => t.count === 0).map((t) => t.term);
+  if (missing.length) bad.push(`关键词缺失：${missing.join('、')}`);
+  if (!a.thesisPresent) bad.push('主线句不在正文');
+  return bad;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = readDoc();
+  const a = analyze(text);
+  const bad = assertShape(a);
 
-  console.log(`中医软件架构 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中医软件架构 · ${a.title}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`${a.hanzi.toLocaleString('en-US')} 汉字 · ${a.sectionCount} 节 · 表格 ${a.tableRows} 行`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('关键词命中（正文现算）：');
+  for (const t of a.terms) console.log(`  ${t.term}：${t.count}`);
+  console.log(`  → 出现最多：${a.topTerm.term}（${a.topTerm.count}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`主线：${THESIS}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-ruanjian-jiagou/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(bad.length ? `✗ 结构自检未通过：${bad.join('；')}` : '✓ 结构自检通过（6 项）');
+  console.log('※ 数字全部由本章正文 docs/zh.md 现算，正文改动后重跑即可复现。');
+  console.log('※ 本章为教学讨论，不构成诊疗、用药或信息化决策建议。');
+  if (bad.length) process.exitCode = 1;
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC,
+  CHAPTER,
+  THESIS,
+  KEY_TERMS,
+  readDoc,
+  hanzi,
+  title,
+  sections,
+  tableLines,
+  countTerm,
+  analyze,
+  assertShape,
+};

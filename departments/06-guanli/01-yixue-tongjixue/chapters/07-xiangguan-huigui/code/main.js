@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 医学统计学 · 第 7 章 相关与线性回归：本章统计口径
- * 课程: departments/06-guanli/01-yixue-tongjixue/chapters/07-xiangguan-huigui/docs/zh.md
- * 数据: standards/01-yixue-tongjixue/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/01-yixue-tongjixue/chapter-map.json（课程章 → 教材单元号）
+ * 医学统计学 · 第 7 章 相关系数是斜率被两个标准差除过一遍
+ * 课程正文: departments/06-guanli/01-yixue-tongjixue/chapters/07-xiangguan-huigui/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 正文那张 18 对 (x, y) 的示意表被逐行读入，Pearson r、斜率、截距、r²、
+ * 残差标准差、斜率区间与 Spearman 相关全部现算。
+ * 再把第一个 y 改成 20 复算一次，验证「一个录入错误能毁掉 Pearson、毁不掉秩相关」。
  */
 
 'use strict';
@@ -15,87 +14,192 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '01-yixue-tongjixue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC_PATH = path.join(__dirname, '..', 'docs', 'zh.md');
+
+function readDoc() {
+  return fs.readFileSync(DOC_PATH, 'utf8');
+}
+
+/** 读取正文三列 (x,y) 的原始数据表 */
+function parsePairs(doc) {
+  const xs = [];
+  const ys = [];
+  const re = /^\|\s*([\d.]+)\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)\s*\|/gm;
+  let m;
+  while ((m = re.exec(doc)) !== null) {
+    xs.push(Number(m[1]), Number(m[3]), Number(m[5]));
+    ys.push(Number(m[2]), Number(m[4]), Number(m[6]));
   }
-  throw new Error('没找到 standards/01-yixue-tongjixue/units.json —— 章节目录是否已脱离仓库？');
+  if (xs.length < 6) throw new Error('正文里找不到 18 对原始数据');
+  return { xs, ys };
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '01-yixue-tongjixue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '01-yixue-tongjixue', 'chapter-map.json');
-const CHAPTER = '7';
-const SLUG = '07-xiangguan-huigui';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function mean(v) {
+  return v.reduce((a, b) => a + b, 0) / v.length;
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function pearson(x, y) {
+  const mx = mean(x);
+  const my = mean(y);
+  let sxy = 0;
+  let sxx = 0;
+  let syy = 0;
+  for (let i = 0; i < x.length; i += 1) {
+    sxy += (x[i] - mx) * (y[i] - my);
+    sxx += (x[i] - mx) ** 2;
+    syy += (y[i] - my) ** 2;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return { r: sxy / Math.sqrt(sxx * syy), mx, my, sxy, sxx, syy };
+}
+
+function ranks(v) {
+  const idx = v.map((x, i) => ({ x, i })).sort((a, b) => a.x - b.x);
+  const r = new Array(v.length);
+  let i = 0;
+  while (i < idx.length) {
+    let j = i;
+    while (j + 1 < idx.length && idx[j + 1].x === idx[i].x) j += 1;
+    const avg = (i + j + 2) / 2;
+    for (let k = i; k <= j; k += 1) r[idx[k].i] = avg;
+    i = j + 1;
+  }
+  return r;
+}
+
+function spearman(x, y) {
+  return pearson(ranks(x), ranks(y)).r;
+}
+
+function logGamma(x) {
+  const c = [76.18009172947146, -86.50532032941677, 24.01409824083091,
+    -1.231739572450155, 0.1208650973866179e-2, -0.5395239384953e-5];
+  let y = x;
+  let tmp = x + 5.5;
+  tmp -= (x + 0.5) * Math.log(tmp);
+  let ser = 1.000000000190015;
+  for (let j = 0; j < 6; j += 1) { y += 1; ser += c[j] / y; }
+  return -tmp + Math.log(2.5066282746310005 * ser / x);
+}
+
+function betacf(a, b, x) {
+  const MAXIT = 200;
+  const EPS = 3e-12;
+  const FPMIN = 1e-300;
+  const qab = a + b;
+  const qap = a + 1;
+  const qam = a - 1;
+  let c = 1;
+  let d = 1 - (qab * x) / qap;
+  if (Math.abs(d) < FPMIN) d = FPMIN;
+  d = 1 / d;
+  let h = d;
+  for (let m = 1; m <= MAXIT; m += 1) {
+    const m2 = 2 * m;
+    let aa = (m * (b - m) * x) / ((qam + m2) * (a + m2));
+    d = 1 + aa * d;
+    if (Math.abs(d) < FPMIN) d = FPMIN;
+    c = 1 + aa / c;
+    if (Math.abs(c) < FPMIN) c = FPMIN;
+    d = 1 / d;
+    h *= d * c;
+    aa = (-(a + m) * (qab + m) * x) / ((a + m2) * (qap + m2));
+    d = 1 + aa * d;
+    if (Math.abs(d) < FPMIN) d = FPMIN;
+    c = 1 + aa / c;
+    if (Math.abs(c) < FPMIN) c = FPMIN;
+    d = 1 / d;
+    const del = d * c;
+    h *= del;
+    if (Math.abs(del - 1) < EPS) break;
+  }
+  return h;
+}
+
+function ibeta(a, b, x) {
+  if (x <= 0) return 0;
+  if (x >= 1) return 1;
+  const bt = Math.exp(logGamma(a + b) - logGamma(a) - logGamma(b) + a * Math.log(x) + b * Math.log(1 - x));
+  if (x < (a + 1) / (a + b + 2)) return (bt * betacf(a, b, x)) / a;
+  return 1 - (bt * betacf(b, a, 1 - x)) / b;
+}
+
+function tCDF(t, df) {
+  const x = df / (df + t * t);
+  const p = 0.5 * ibeta(df / 2, 0.5, x);
+  return t > 0 ? 1 - p : p;
+}
+
+function tQuantile(p, df) {
+  let lo = -20;
+  let hi = 20;
+  for (let i = 0; i < 200; i += 1) {
+    const mid = (lo + hi) / 2;
+    if (tCDF(mid, df) < p) lo = mid; else hi = mid;
+  }
+  return (lo + hi) / 2;
+}
+
+function fit(x, y) {
+  const p = pearson(x, y);
+  const slope = p.sxy / p.sxx;
+  const intercept = p.my - slope * p.mx;
+  let sse = 0;
+  for (let i = 0; i < x.length; i += 1) sse += (y[i] - (intercept + slope * x[i])) ** 2;
+  const df = x.length - 2;
+  const residSD = Math.sqrt(sse / df);
+  const seSlope = residSD / Math.sqrt(p.sxx);
+  const crit = tQuantile(0.975, df);
+  return {
+    r: p.r, r2: p.r ** 2, slope, intercept, residSD,
+    sdY: Math.sqrt(p.syy / (y.length - 1)),
+    ci: [slope - crit * seSlope, slope + crit * seSlope],
+    spearman: spearman(x, y),
+  };
+}
+
+function compute(doc) {
+  const { xs, ys } = parsePairs(doc);
+  const ysErr = ys.slice();
+  ysErr[0] = 20;
+  return { n: xs.length, xs, ys, fit: fit(xs, ys), fitErr: fit(xs, ysErr) };
+}
+
+function assertDocNumbers(doc, r) {
+  const out = [];
+  const ok = (cond, label) => { if (!cond) throw new Error(`正文对账失败：${label}`); out.push(label); };
+  const f = r.fit;
+  ok(r.n === 18, '原始表共 18 对');
+  ok(Math.abs(f.r - 0.900) < 0.002 && doc.includes('r≈0.90'), `r=${f.r.toFixed(3)}`);
+  ok(Math.abs(f.slope - 0.632) < 0.002, `斜率 ${f.slope.toFixed(3)}`);
+  ok(Math.abs(f.intercept - 6.227) < 0.002, `截距 ${f.intercept.toFixed(3)}`);
+  ok(Math.abs(f.r2 - 0.81) < 0.005, `r²=${f.r2.toFixed(3)}`);
+  ok(Math.abs(f.residSD - 0.552) < 0.002, `残差标准差 ${f.residSD.toFixed(3)}`);
+  ok(Math.abs(f.sdY - 1.232) < 0.002, `结局标准差 ${f.sdY.toFixed(3)}`);
+  ok(Math.abs(f.ci[0] - 0.470) < 0.003 && Math.abs(f.ci[1] - 0.793) < 0.003, '斜率 95% CI 0.470～0.793');
+  ok(Math.abs(r.fitErr.r - 0.032) < 0.002, `改一个 y 后 Pearson r=${r.fitErr.r.toFixed(3)}`);
+  ok(Math.abs(r.fitErr.spearman - 0.608) < 0.003, `改一个 y 后 Spearman ρ=${r.fitErr.spearman.toFixed(3)}`);
+  return out;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`医学统计学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const doc = readDoc();
+  const r = compute(doc);
+  const f = r.fit;
+  console.log('医学统计学 · 第 7 章 相关系数是斜率被两个标准差除过一遍');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文原始表 ${r.n} 对 (x, y)，x 范围 ${Math.min(...r.xs)}–${Math.max(...r.xs)}`);
+  console.log(`Pearson r=${f.r.toFixed(3)}，r²=${f.r2.toFixed(3)}，Spearman ρ=${f.spearman.toFixed(3)}`);
+  console.log(`回归：截距 ${f.intercept.toFixed(3)}，斜率 ${f.slope.toFixed(3)}，95% CI ${f.ci[0].toFixed(3)}～${f.ci[1].toFixed(3)}`);
+  console.log(`残差标准差 ${f.residSD.toFixed(3)}，结局标准差 ${f.sdY.toFixed(3)}`);
+  console.log(`把一个 y 从 7.9 误录成 20：Pearson r=${r.fitErr.r.toFixed(3)}，Spearman ρ=${r.fitErr.spearman.toFixed(3)}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  for (const line of assertDocNumbers(doc, r)) console.log(`  ✓ ${line}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/01-yixue-tongjixue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('结论：r 不带单位、不带因果；r² 回答解释了多少，斜率回答每单位改变多少。');
+  console.log('※ 数字由本章正文原始表现算，正文改动后重跑即可发现对不上。');
+  console.log('※ 教学示意数据，不构成因果结论或临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, parsePairs, pearson, spearman, fit, compute, DOC_PATH };

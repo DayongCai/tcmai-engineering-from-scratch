@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 中医自然语言处理 · 第 5 章 序列标注与标注成本：本章统计口径
- * 课程: departments/07-zhineng/04-zhongyi-ziran-yuyan-chuli/chapters/05-nlp5/docs/zh.md
- * 数据: standards/zhongyi-ziran-yuyan-chuli/units.json（148 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-ziran-yuyan-chuli/chapter-map.json（课程章 → 教材单元号）
+ * 中医自然语言处理 · 第 5 章 标注不是把词圈出来，是把边界争议写下来
+ * 正文: departments/07-zhineng/04-zhongyi-ziran-yuyan-chuli/chapters/05-nlp5/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 口径：六类实体与颗粒度处理从正文表格读出；BIO 标注、Cohen's kappa、按字符的
+ * 标注成本都由正文的例句与参数现算。
  */
 
 'use strict';
@@ -15,87 +13,149 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-ziran-yuyan-chuli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/zhongyi-ziran-yuyan-chuli/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-ziran-yuyan-chuli', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-ziran-yuyan-chuli', 'chapter-map.json');
-const CHAPTER = '5';
+const CHAPTER = 5;
 const SLUG = '05-nlp5';
+const TITLE = '标注不是把词圈出来，是把边界争议写下来';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const hanzi = (s) => (String(s).match(HANZI) || []).length;
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function headings(text) {
+  return text
+    .split(/\r?\n/)
+    .filter((line) => /^##\s+/.test(line))
+    .map((line) => line.replace(/^##\s+/, '').trim());
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function splitRow(line) {
+  return line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function tableBlocks(text) {
+  const lines = text.split(/\r?\n/);
+  const out = [];
+  for (let i = 0; i < lines.length; i += 1) {
+    if (!/^\|[\s:|-]*---[\s:|-]*\|$/.test(lines[i].trim())) continue;
+    const header = i > 0 ? splitRow(lines[i - 1]) : [];
+    const rows = [];
+    let j = i + 1;
+    while (j < lines.length && /^\|/.test(lines[j].trim())) {
+      rows.push(splitRow(lines[j]));
+      j += 1;
+    }
+    out.push({ header, rows });
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function findTable(text, key) {
+  const tb = tableBlocks(text).find((t) => t.header.some((h) => h.includes(key)));
+  if (!tb) throw new Error(`正文里没有表头含「${key}」的表`);
+  return tb;
+}
+
+/** 六类实体：类、例、边界争议点、本章的处理 */
+function entityTypes(text) {
+  return findTable(text, '类').rows.map((r) => ({
+    type: r[0], example: r[1], dispute: r[2], handling: r[3],
+  }));
+}
+
+/** BIO 标注：spans 为 [{start,end,type}]，其余字符记 O */
+function bioTags(sentence, spans) {
+  const tags = new Array(sentence.length).fill('O');
+  for (const s of spans) {
+    for (let i = s.start; i < s.end; i += 1) tags[i] = `${i === s.start ? 'B' : 'I'}-${s.type}`;
+  }
+  return tags;
+}
+
+/** 正文里的 BIO 示例串（若正文改了示例，这里读到的也随之改变） */
+function docBioExample(text) {
+  const m = text.match(/`(B-[A-Z]+(?: [BIO](?:-[A-Z]+)?)+)`/);
+  return m ? m[1] : null;
+}
+
+/** Cohen's kappa：扣掉碰巧一致 */
+function kappa(a, b) {
+  if (!a.length || a.length !== b.length) return null;
+  const n = a.length;
+  const agree = a.filter((x, i) => x === b[i]).length / n;
+  const labels = new Set([...a, ...b]);
+  let pe = 0;
+  for (const l of labels) {
+    const ca = a.filter((x) => x === l).length / n;
+    const cb = b.filter((x) => x === l).length / n;
+    pe += ca * cb;
+  }
+  if (pe === 1) return 1;
+  return (agree - pe) / (1 - pe);
+}
+
+/** 按字符算的标注成本：决策次数 = 字数 × 条数 */
+function annotationCost({ chars = 300, records = 1000, dispute = 0.1 } = {}) {
+  const decisions = chars * records;
+  const double = decisions * 2;
+  const arbitration = Math.round(double * dispute);
+  return { decisions, double, arbitration };
+}
+
+function stats() {
+  const text = readDoc();
+  const types = entityTypes(text);
+  const sentence = '头项强痛而恶寒';
+  const spans = [{ start: 0, end: 4, type: 'SYM' }, { start: 5, end: 7, type: 'SYM' }];
+  const tags = bioTags(sentence, spans).join(' ');
+  // 90% 是 O 的典型序列：19 条一致、1 条边界分歧
+  const a = [...Array(18).fill('O'), 'B', 'I'];
+  const b = [...Array(18).fill('O'), 'B', 'O'];
+  const raw = a.filter((x, i) => x === b[i]).length / a.length;
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title: TITLE,
+    hanzi: hanzi(text),
+    sections: headings(text).length,
+    types,
+    bio: { sentence, tags, docExample: docBioExample(text) },
+    kappa: { raw, value: kappa(a, b) },
+    cost: annotationCost(),
+    disclaimer: /免责声明/.test(text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医自然语言处理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const s = stats();
+  console.log(`中医自然语言处理 · 第 ${s.chapter} 章 ${s.title}`);
+  console.log(`正文：chapters/${s.slug}/docs/zh.md（现算，不手打）`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`  汉字            ${s.hanzi.toLocaleString('en-US')}`);
+  console.log(`  实体类别        ${s.types.length}：${s.types.map((t) => t.type).join('／')}`);
+  for (const t of s.types) console.log(`    · ${t.type}：${t.handling}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`BIO 示例：${s.bio.sentence}`);
+  console.log(`  本脚本标注    ${s.bio.tags}`);
+  console.log(`  正文示例      ${s.bio.docExample || '（未找到）'}`);
+  console.log(`  两者一致      ${s.bio.tags === s.bio.docExample ? '是' : '否'}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`一致性（18 个 O + 1 处边界分歧，20 个位置）：`);
+  console.log(`  原始一致率    ${(s.kappa.raw * 100).toFixed(0)}%`);
+  console.log(`  Cohen's kappa ${s.kappa.value.toFixed(3)}——碰巧一致被扣掉`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`按字符算（300 字/条 × 1,000 条）：`);
+  console.log(`  边界决策      ${s.cost.decisions.toLocaleString('en-US')} 次`);
+  console.log(`  加双标        ${s.cost.double.toLocaleString('en-US')} 次`);
+  console.log(`  10% 争议仲裁  ${s.cost.arbitration.toLocaleString('en-US')} 次`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-ziran-yuyan-chuli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本目录 docs/zh.md 的表格、例句与演算参数现算；成本为演算设定，不是任何机构的实测。');
+  console.log('※ 本章只做标注工程的讨论，不构成诊断、辨证或治疗建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  CHAPTER, SLUG, TITLE, DOC, readDoc, headings, tableBlocks, splitRow, findTable,
+  entityTypes, bioTags, docBioExample, kappa, annotationCost, hanzi, stats, main,
+};

@@ -6,57 +6,55 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '03-zhongyi-guanli-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '03-zhongyi-guanli-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, CHAPTER, TITLE, read, facts, sumSegments, shares, roomCapacity } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const TEXT = read();
+const F = facts(TEXT);
+
+test('正文就在本章目录下，章号与标题对得上', () => {
+  assert.ok(fs.existsSync(DOC));
+  assert.ok(DOC.endsWith(path.join('chapters', '07-z37', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 7);
+  assert.ok(TEXT.startsWith('# 第 7 章'));
+  assert.strictEqual(TITLE, '门诊流程是按检查设计的，病人却是来复诊调方的');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('在院时长的四个分段全部取自正文，且相加等于 96 分钟', () => {
+  assert.strictEqual(F.visit, 9);
+  assert.strictEqual(F.waiting, 31);
+  assert.strictEqual(F.pharmacyWait, 34);
+  assert.strictEqual(F.admin, 22);
+  assert.strictEqual(F.totalBefore, 96);
+  assert.strictEqual(sumSegments(F), F.totalBefore);
+  assert.strictEqual(F.followUpShare, 62);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('候药是最大的一段，占三分之一以上', () => {
+  const ranked = shares(F);
+  assert.strictEqual(ranked[0].name, '候药');
+  assert.ok(ranked[0].share > 1 / 3, String(ranked[0].share));
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('候药压到 15 分钟省下 19 分钟，多于三年改造的 18 分钟', () => {
+  const saved = F.totalBefore - F.totalAfter;
+  assert.strictEqual(saved, 18);
+  assert.strictEqual(F.pharmacyWait - 15, 19);
+  assert.ok(F.pharmacyWait - 15 > saved);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('诊室产能：理论 24 人次，实际 18 至 20，折扣率 75% 至 83%', () => {
+  const low = roomCapacity(4, 10, 18);
+  const high = roomCapacity(4, 10, 20);
+  assert.strictEqual(low.theoretical, 24);
+  assert.ok(Math.abs(low.discount - 0.75) < 1e-9);
+  assert.ok(Math.abs(high.discount - 20 / 24) < 1e-9);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('脚本可运行，输出分段占比与瓶颈比较，并给出边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/03-zhongyi-guanli-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/07-z37/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /最大的一段是候药/);
+  assert.match(out, /三年流程改造/);
+  assert.match(out, /不构成医院运营、价格管理或医保结算意见/);
 });

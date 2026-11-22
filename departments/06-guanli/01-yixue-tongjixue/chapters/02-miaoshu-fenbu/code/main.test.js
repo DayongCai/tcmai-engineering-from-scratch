@@ -5,58 +5,58 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { readDoc, parseFrequencyTable, compute, DOC_PATH } = require('./main.js');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '01-yixue-tongjixue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '01-yixue-tongjixue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
-
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文可读，脚本头部指向本章正文', () => {
+  assert.ok(fs.existsSync(DOC_PATH));
+  const body = fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8');
+  assert.ok(body.includes('/chapters/02-miaoshu-fenbu/docs/zh.md'));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('频数表从正文解析出 10 个组段，合计 30 例', () => {
+  const rows = parseFrequencyTable(readDoc());
+  assert.strictEqual(rows.length, 10);
+  assert.strictEqual(rows.reduce((a, r) => a + r.freq, 0), 30);
+  assert.strictEqual(rows[9].high, 9.9);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('累积频数逐行自洽，末行等于总例数', () => {
+  const rows = parseFrequencyTable(readDoc());
+  let acc = 0;
+  for (const row of rows) { acc += row.freq; assert.strictEqual(row.cum, acc); }
+  assert.strictEqual(acc, 30);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('组中值加权均数与正文均数接近', () => {
+  const r = compute(readDoc());
+  assert.ok(Math.abs(r.groupedMean - r.mean) < 0.1, `分组均数 ${r.groupedMean}`);
+  assert.strictEqual(r.mean, 5.71);
+  assert.strictEqual(r.sd, 1.29);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('均数减标准差的下限为 4.42，且正文引用了这个数', () => {
+  const doc = readDoc();
+  const r = compute(doc);
+  assert.ok(Math.abs(r.lower - 4.42) < 1e-9);
+  assert.ok(doc.includes('5.71−1.29=4.42'));
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('标准误与标准差之比约为 0.18', () => {
+  const r = compute(readDoc());
+  assert.ok(Math.abs(r.seRatio - 0.18) < 0.005, `实际 ${r.seRatio}`);
+});
+
+test('均数大于中位数，形状判为右偏', () => {
+  const r = compute(readDoc());
+  assert.ok(r.skewSign > 0);
+  assert.strictEqual(r.median, 5.30);
+});
+
+test('脚本可运行，输出含对账与边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/01-yixue-tongjixue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/02-miaoshu-fenbu/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /样本 30 例，频数表 10 个组段/);
+  assert.match(out, /标准误 \/ 标准差 = 0\.183/);
+  assert.match(out, /不构成诊断标准/);
 });

@@ -6,57 +6,72 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '03-zhongyi-guanli-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '03-zhongyi-guanli-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, CHAPTER, TITLE, read, facts, perHalfDay, perStudentPerHalfDay, cumulative, slotCost } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const TEXT = read();
+const F = facts(TEXT);
+
+test('正文就在本章目录下，章号与标题对得上', () => {
+  assert.ok(fs.existsSync(DOC));
+  assert.ok(DOC.endsWith(path.join('chapters', '03-z33', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 3);
+  assert.ok(TEXT.startsWith('# 第 3 章'));
+  assert.strictEqual(TITLE, '名医工作室的成本，记在导师的号源上');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('产能设定全部取自正文', () => {
+  assert.strictEqual(F.halfDayHours, 4);
+  assert.strictEqual(F.minutesPerVisit, 12);
+  assert.strictEqual(F.students, 3);
+  assert.strictEqual(F.halfDaysPerWeek, 2);
+  assert.strictEqual(F.weeksPerYear, 44);
+  assert.strictEqual(F.years, 3);
+  assert.strictEqual(F.diseaseShare, 8);
+  assert.strictEqual(F.slotsPerWeek, 120);
+  assert.strictEqual(F.weekShareClaim, 3);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('半日 4 小时按 12 分钟计可看 20 人', () => {
+  assert.strictEqual(perHalfDay(4, 12), 20);
+  assert.strictEqual(perHalfDay(F.halfDayHours, F.minutesPerVisit), 20);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('三名学生同诊，每人每半日 6 至 7 人，落在正文给出的区间里', () => {
+  const per = perStudentPerHalfDay(20, 3);
+  assert.ok(per >= 6 && per <= 7, String(per));
+  assert.strictEqual(per.toFixed(2), '6.67');
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('三年累计主诊的上限高于正文所取的 1,150 人次，比例可复算', () => {
+  const per = perStudentPerHalfDay(20, 3);
+  const ceiling = cumulative(per, 2, 44, 3);
+  assert.strictEqual(ceiling.toFixed(0), '1760');
+  assert.ok(ceiling > F.cumulativeClaim, '上限应高于正文取数');
+  const share = F.cumulativeClaim / ceiling;
+  assert.ok(share > 0.6 && share < 0.7, String(share));
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('病种例数：1,150 的 8% 与正文「约 90 例」相符', () => {
+  const cases = F.cumulativeClaim * (F.diseaseShare / 100);
+  assert.strictEqual(cases, 92);
+  assert.ok(Math.abs(cases - F.casesClaim) <= 5, `${cases} vs ${F.casesClaim}`);
+  assert.ok(cases < 300, '不足以覆盖 300 例医案的规模');
+});
+
+test('号源成本：5,280 号／年，约为主治全年门诊量的三分之一', () => {
+  const attending = 120 * 44 * 3;
+  assert.strictEqual(attending, 15840);
+  const cost = slotCost(120, 44, attending);
+  assert.strictEqual(cost.yearly, 5280);
+  assert.ok(Math.abs(cost.share - 1 / 3) < 1e-9, String(cost.share));
+});
+
+test('脚本可运行，输出天花板与号源成本，并给出边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/03-zhongyi-guanli-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/03-z33/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /产能天花板/);
+  assert.match(out, /号源成本/);
+  assert.match(out, /挂出量是可行量的/);
+  assert.match(out, /不构成人事、劳动、职称评审/);
 });

@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 卫生管理学 · 第 8 章 中医管理·国际比较：本章统计口径
+ * 卫生事业管理 · 第 8 章 并重写在方针里，落在编制与支付上
  * 课程: departments/06-guanli/04-weisheng-shiye-guanli/chapters/08-w8/docs/zh.md
- * 数据: standards/04-weisheng-shiye-guanli/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/04-weisheng-shiye-guanli/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 输出从本章正文现算：汉字、节、表等文本量，以及几处结构性计数——
+ * 三道窄门、三种筹资模式、四个比较的坑、四道移植的坎，以及正文点名的短板。
+ * 这些是本章的骨架，数不出来说明正文只是把名目摆了一遍。
  */
 
 'use strict';
@@ -15,87 +14,128 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '04-weisheng-shiye-guanli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 8;
+const TITLE = '并重写在方针里，落在编制与支付上';
+
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function parseTables(body) {
+  const out = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const m = line.match(/^\s*\|(.+)\|\s*$/);
+    if (!m) {
+      cur = null;
+      continue;
+    }
+    const cells = m[1].split('|').map((c) => c.trim());
+    if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue;
+    if (!cur) {
+      cur = { header: cells, rows: [] };
+      out.push(cur);
+    } else {
+      cur.rows.push(cells);
+    }
   }
-  throw new Error('没找到 standards/04-weisheng-shiye-guanli/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '04-weisheng-shiye-guanli', 'units.json');
-const MAP = path.join(ROOT, 'standards', '04-weisheng-shiye-guanli', 'chapter-map.json');
-const CHAPTER = '8';
-const SLUG = '08-w8';
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const hanzi = (body.match(HANZI) || []).length;
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+  const sections = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) {
+      cur = { title: h[1], hanzi: 0 };
+      sections.push(cur);
+      continue;
+    }
+    if (cur) cur.hanzi += (line.match(HANZI) || []).length;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+
+  const tables = parseTables(body);
+  const cites = [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]))];
+  const claims = (body.match(/\*\*[^*\n]+\*\*/g) || []).length;
+
+  return { hanzi, sections, tables, tableCount: tables.length, cites, claims };
+}
+
+/** 三道窄门：正文 PROBLEM 里以「A、B、C」并列给出。 */
+function threeGates(body) {
+  const m = body.match(/三道窄门：([^。]+)/);
+  if (!m) throw new Error('正文里没找到三道窄门');
+  return m[1].split('、').map((s) => s.trim());
+}
+
+/** 三种筹资模式：表里逐行读出。 */
+function financingModes(tables) {
+  const t = tables.find((x) => x.header.some((h) => h.includes('主要资金来源')));
+  if (!t) throw new Error('正文里没找到筹资模式表');
+  return t.rows.filter((r) => r[0]).map((r) => r[0]);
+}
+
+/** 比较的四个坑：正文以「其一」「其二」标注。 */
+function comparisonPits(body) {
+  return [...body.matchAll(/其([一二三四])，([^。]+)。/g)].map((m) => ({ n: m[1], name: m[2] }));
+}
+
+/** 四道坎：正文用加粗词标出，并点名最易低估的一项。 */
+function transplantGates(body) {
+  const m = body.match(/移植不是不可能，但要过四道坎。([\s\S]*?)四道坎里/);
+  if (!m) throw new Error('正文里没找到四道坎的列举');
+  const gates = [...m[1].matchAll(/^\*\*([^*]+)。\*\*/gm)].map((x) => x[1]);
+  const weak = body.match(/四道坎里，([^，。]{1,8})最容易被低估/);
+  return { gates, weakest: weak ? weak[1] : null };
+}
+
+/** 比较用的四个指标。 */
+function indicators(tables) {
+  const t = tables.find((x) => x.header.some((h) => h.includes('反映什么')));
+  if (!t) throw new Error('正文里没找到比较指标表');
+  return t.rows.filter((r) => r[0]).map((r) => r[0]);
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const body = read();
+  const a = analyze(body);
+  const gates = threeGates(body);
+  const modes = financingModes(a.tables);
+  const pits = comparisonPits(body);
+  const tg = transplantGates(body);
+  const inds = indicators(a.tables);
 
-  console.log(`卫生管理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`卫生事业管理 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 表格 ${a.tableCount} 张 · 加粗判断 ${a.claims} 处 · 引文 ${a.cites.length} 条`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`并重落地要过 ${gates.length} 道窄门：${gates.join('、')}`);
+  console.log(`筹资模式 ${modes.length} 种：${modes.join('、')}；正文的结论是没有优劣，只有匹配。`);
+  console.log(`国际比较的坑 ${pits.length} 个：${pits.map((p) => p.name).join('、')}`);
+  console.log(`比较指标 ${inds.length} 个：${inds.join('、')}；四个一起看，结论才稳。`);
+  console.log(`制度移植 ${tg.gates.length} 道坎：${tg.gates.join('、')}；正文点名最易低估的是「${tg.weakest}」。`);
+  console.log('');
+  console.log('逐节字数：');
+  for (const s of a.sections) {
+    const share = a.hanzi ? ((s.hanzi / a.hanzi) * 100).toFixed(1) : '0.0';
+    console.log(`  ${s.title.padEnd(24, '　')} ${String(s.hanzi).padStart(5)} 字（${share}%）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/04-weisheng-shiye-guanli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即随之变化；本输出仅用于教学演示，不构成诊疗意见，也不构成对任何国家制度优劣的最终判断。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC, CHAPTER, TITLE, read, analyze, parseTables,
+  threeGates, financingModes, comparisonPits, transplantGates, indicators,
+};

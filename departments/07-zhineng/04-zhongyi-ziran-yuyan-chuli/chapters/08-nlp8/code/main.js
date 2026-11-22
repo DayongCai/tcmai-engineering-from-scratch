@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 中医自然语言处理 · 第 8 章 规则与知识约束：本章统计口径
- * 课程: departments/07-zhineng/04-zhongyi-ziran-yuyan-chuli/chapters/08-nlp8/docs/zh.md
- * 数据: standards/zhongyi-ziran-yuyan-chuli/units.json（148 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-ziran-yuyan-chuli/chapter-map.json（课程章 → 教材单元号）
+ * 中医自然语言处理 · 第 8 章 规则不是模型的补丁，是模型的天花板
+ * 正文: departments/07-zhineng/04-zhongyi-ziran-yuyan-chuli/chapters/08-nlp8/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 口径：条文规则块与四层仲裁顺序都从正文的代码块与编号列表解析出来；
+ * 仲裁函数按正文给的优先级工作，条件分级的判据也取自正文。
  */
 
 'use strict';
@@ -15,87 +13,120 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-ziran-yuyan-chuli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/zhongyi-ziran-yuyan-chuli/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-ziran-yuyan-chuli', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-ziran-yuyan-chuli', 'chapter-map.json');
-const CHAPTER = '8';
+const CHAPTER = 8;
 const SLUG = '08-nlp8';
+const TITLE = '规则不是模型的补丁，是模型的天花板';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const hanzi = (s) => (String(s).match(HANZI) || []).length;
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function headings(text) {
+  return text
+    .split(/\r?\n/)
+    .filter((line) => /^##\s+/.test(line))
+    .map((line) => line.replace(/^##\s+/, '').trim());
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function codeBlocks(text) {
+  return [...text.matchAll(/```[a-z]*\r?\n([\s\S]*?)```/g)].map((m) => m[1]);
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** 条文到规则：解析正文里 IF/AND/THEN/WITH 那块文本代码 */
+function parseRuleBlock(text) {
+  const block = codeBlocks(text).find((b) => /^\s*IF\b/m.test(b));
+  if (!block) throw new Error('正文里找不到以 IF 开头的规则块');
+  const rule = { conditions: [], then: null, modality: null, source: null };
+  for (const raw of block.split(/\r?\n/)) {
+    const line = raw.trim();
+    if (!line) continue;
+    let m;
+    if ((m = line.match(/^IF\s+(.+)$/))) rule.conditions.push(m[1].trim());
+    else if ((m = line.match(/^AND\s+source\s*=\s*(.+)$/i))) rule.source = m[1].trim();
+    else if ((m = line.match(/^AND\s+(.+)$/i))) rule.conditions.push(m[1].trim());
+    else if ((m = line.match(/^THEN\s+(.+)$/i))) rule.then = m[1].trim();
+    else if ((m = line.match(/^WITH\s+(.+)$/i))) rule.modality = m[1].trim();
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  if (!rule.then || !rule.modality || !rule.source) throw new Error('规则块缺 THEN/WITH/source');
+  return rule;
+}
+
+/** 四层仲裁：取「三、仲裁顺序」下的编号条目 */
+function arbitrationLayers(text) {
+  const sec = text.slice(text.indexOf('## 三、'), text.indexOf('## 四、'));
+  const out = [];
+  for (const m of sec.matchAll(/^\d+\.\s+\*\*(.+?)\*\*/gm)) out.push(m[1].replace(/[：:].*$/, '').trim());
+  if (out.length !== 4) throw new Error(`仲裁层应为 4 层，实读 ${out.length} 层`);
+  return out;
+}
+
+/**
+ * 按正文的四层顺序裁决：硬约束违反即拒绝；有条文即用条文；
+ * 否则退回模型候选（带「无条文支持」），再不行退回人。
+ */
+function arbitrate({ illegal = false, ruleHit = false, modelHit = false } = {}) {
+  if (illegal) return { layer: '值域与硬约束', output: null, label: '拒绝' };
+  if (ruleHit) return { layer: '条文规则', output: 'rule', label: '条文支持' };
+  if (modelHit) return { layer: '统计模型', output: 'model', label: '无条文支持' };
+  return { layer: '人', output: null, label: '退回人判' };
+}
+
+/** 条件分级：硬条件进前提，软条件进权重 */
+function conditionTiers(text) {
+  const hard = text.includes('硬条件');
+  const soft = text.includes('软条件');
+  if (!hard || !soft) throw new Error('正文缺硬／软条件的分级');
+  return { hard, soft };
+}
+
+function stats() {
+  const text = readDoc();
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title: TITLE,
+    hanzi: hanzi(text),
+    sections: headings(text).length,
+    codeBlocks: codeBlocks(text).length,
+    rule: parseRuleBlock(text),
+    layers: arbitrationLayers(text),
+    demo: arbitrate({ illegal: false, ruleHit: true, modelHit: true }),
+    modelOnly: arbitrate({ modelHit: true }),
+    fallback: arbitrate({}),
+    tiers: conditionTiers(text),
+    disclaimer: /免责声明/.test(text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医自然语言处理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const s = stats();
+  console.log(`中医自然语言处理 · 第 ${s.chapter} 章 ${s.title}`);
+  console.log(`正文：chapters/${s.slug}/docs/zh.md（现算，不手打）`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`  汉字            ${s.hanzi.toLocaleString('en-US')}`);
+  console.log(`  节 / 代码块     ${s.sections} / ${s.codeBlocks}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('条文规则（正文代码块解析）：');
+  for (const c of s.rule.conditions) console.log(`  条件  ${c}`);
+  console.log(`  结论  ${s.rule.then}`);
+  console.log(`  语气  ${s.rule.modality}`);
+  console.log(`  出处  ${s.rule.source}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`仲裁顺序（${s.layers.length} 层，从硬到软）：${s.layers.join(' → ')}`);
+  console.log(`  条文与模型同时命中 → ${s.demo.layer}（${s.demo.label}）`);
+  console.log(`  只有模型命中       → ${s.modelOnly.layer}（${s.modelOnly.label}）`);
+  console.log(`  都没有             → ${s.fallback.layer}（${s.fallback.label}）`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`条件分级：硬条件 ${s.tiers.hard ? '有' : '无'}／软条件 ${s.tiers.soft ? '有' : '无'}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-ziran-yuyan-chuli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 规则块与仲裁层由本目录 docs/zh.md 解析读出；本章不给任何具体方证结论。');
+  console.log('※ 本章只做规则工程的讨论，不构成诊断、辨证或治疗建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  CHAPTER, SLUG, TITLE, DOC, readDoc, headings, codeBlocks,
+  parseRuleBlock, arbitrationLayers, arbitrate, conditionTiers, hanzi, stats, main,
+};

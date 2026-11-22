@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 中医管理学 · 第 5 章 质量控制与绩效评价：本章统计口径
+ * 中医管理学 · 第 5 章 中医治疗率 92%，没有一张方是对证的
  * 课程: departments/06-guanli/03-zhongyi-guanli-xue/chapters/05-z35/docs/zh.md
- * 数据: standards/03-zhongyi-guanli-xue/units.json（226 单元层，每单元带三辨与四位面词频）
- * 取数: standards/03-zhongyi-guanli-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的账从正文取数后现算：
+ *   抽查 100 份的三类缺陷 → 可见缺陷数 → 方证相应对得上的上限 → 与报表的差距
+ *   分母剔除 10% 与 20% 后的比率（用来显示改分母会在比率高处撞上天花板）
+ * 比率与上限都由计数推出，不引用任何结论性形容词。
  */
 
 'use strict';
@@ -15,87 +15,93 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '03-zhongyi-guanli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/03-zhongyi-guanli-xue/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 5;
+const TITLE = '中医治疗率 92%，没有一张方是对证的';
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '03-zhongyi-guanli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '03-zhongyi-guanli-xue', 'chapter-map.json');
-const CHAPTER = '5';
-const SLUG = '05-z35';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function grab(text, re, label, conv) {
+  const m = text.match(re);
+  if (!m) throw new Error('正文里找不到「' + label + '」，章节是否已被改写？');
+  const raw = String(m[1]).replace(/,/g, '');
+  const n = conv === 'cn' ? cn(raw) : Number(raw);
+  if (!Number.isFinite(n)) throw new Error('「' + label + '」取到的不是数: ' + raw);
+  return n;
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 正文第 5、13 行的抽查数据与考核设定。 */
+function facts(text) {
+  return {
+    reportedRate: grab(text, /年底报表全院\s*(\d+)%/, '全院 92%'),
+    requiredRate: grab(text, /要求不低于\s*(\d+)%/, '不低于 85%'),
+    sample: grab(text, /抽查\s*(\d+)\s*份出院病历/, '抽查 100 份'),
+    onlyPatent: grab(text, /(\d+)\s*份的「中医治疗」只有一项中成药/, '23 份只有中成药'),
+    mismatch: grab(text, /(\d+)\s*份的辨证结论与处方不合/, '7 份辨证不合'),
+    copied: grab(text, /(\d+)\s*份的舌脉记录与首诊完全一致/, '5 份记录照抄'),
+    shrinkLow: grab(text, /可以把分母减掉([一二两三四五六七八九十]+)到两成/, '减掉一到两成', 'cn'),
+    shrinkHigh: grab(text, /减掉一到\s*([一二两三四五六七八九十]+)成/, '减掉一到两成', 'cn'),
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function cn(s) {
+  const d = { 一: 1, 二: 2, 两: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
+  if (!(s in d)) throw new Error('不认识的中文数字: ' + s);
+  return d[s];
+}
+
+/** 可见缺陷数：三类互不包含，直接相加。 */
+function visibleDefects(f) {
+  return f.onlyPatent + f.mismatch + f.copied;
+}
+
+/** 方证相应对得上的上限：剩余份数 ÷ 抽查总数。 */
+function ceilingRate(sample, defects) {
+  if (!(sample > 0)) throw new Error('抽查份数必须为正');
+  if (defects > sample) throw new Error('缺陷数不能超过抽查份数');
+  return (sample - defects) / sample;
+}
+
+/**
+ * 改分母后的比率：分子不变（被剔除的假定都是未治疗者），分母按比例缩小。
+ * 比率超过 1 就说明这条路已撞天花板，剩下的只能靠改记录补。
+ */
+function shrunkRate(numerator, denominator, shrinkShare) {
+  const d = denominator * (1 - shrinkShare);
+  return { denominator: d, rate: numerator / d, overflow: numerator / d > 1 };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const f = facts(text);
+  const defects = visibleDefects(f);
+  const ceiling = ceilingRate(f.sample, defects);
+  const gap = (f.reportedRate / 100 - ceiling) * 100;
 
-  console.log(`中医管理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中医管理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 取数后现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`一、抽查 ${f.sample} 份的三类缺陷`);
+  console.log(`  只有中成药、方剂栏空白：${f.onlyPatent} 份`);
+  console.log(`  辨证结论与处方不合：${f.mismatch} 份`);
+  console.log(`  舌脉记录与首诊逐字相同：${f.copied} 份`);
+  console.log(`  可见缺陷合计 ${defects} 份 → 对得上证的上限 ${(ceiling * 100).toFixed(0)}%`);
+  console.log(`  报表 ${f.reportedRate}%（考核要求不低于 ${f.requiredRate}%）→ 与上限相差 ${gap.toFixed(0)} 个百分点`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('二、改分母能抬多少（分子不变，剔除的都是未治疗者）');
+  for (const s of [f.shrinkLow / 10, f.shrinkHigh / 10]) {
+    const r = shrunkRate(f.reportedRate, 100, s);
+    console.log(`  分母减 ${(s * 100).toFixed(0)}% → ${f.reportedRate}/${r.denominator.toFixed(0)} = ${(r.rate * 100).toFixed(1)}%${r.overflow ? '（超过 100%，只能再叠改记录）' : ''}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('  → 比率越接近满值，分母可腾的空间越小；这正是改记录成为最省力路径的原因。');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/03-zhongyi-guanli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即报错或随之变化；比率与抽查例数均为演算设定。');
+  console.log('※ 本输出仅用于教学演示，不构成医疗质量管理、绩效考核或医保监管意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, facts, visibleDefects, ceilingRate, shrunkRate };

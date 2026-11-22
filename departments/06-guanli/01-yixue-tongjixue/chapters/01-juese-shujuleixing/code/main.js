@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 医学统计学 · 第 1 章 统计学的角色与数据类型：本章统计口径
- * 课程: departments/06-guanli/01-yixue-tongjixue/chapters/01-juese-shujuleixing/docs/zh.md
- * 数据: standards/01-yixue-tongjixue/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/01-yixue-tongjixue/chapter-map.json（课程章 → 教材单元号）
+ * 医学统计学 · 第 1 章 数据类型定错了，后面每个数字都跟着错
+ * 课程正文: departments/06-guanli/01-yixue-tongjixue/chapters/01-juese-shujuleixing/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的 20 例四级疗效与两套赋值都写在正文里。脚本从正文抓出频数与权重组，
+ * 现算加权和与均值，再与正文报告的数字对账 —— 正文改了而脚本没跟上，会直接抛错。
  */
 
 'use strict';
@@ -15,87 +13,97 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '01-yixue-tongjixue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/01-yixue-tongjixue/units.json —— 章节目录是否已脱离仓库？');
+const DOC_PATH = path.join(__dirname, '..', 'docs', 'zh.md');
+
+function readDoc() {
+  return fs.readFileSync(DOC_PATH, 'utf8');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '01-yixue-tongjixue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '01-yixue-tongjixue', 'chapter-map.json');
-const CHAPTER = '1';
-const SLUG = '01-juese-shujuleixing';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 从 PROBLEM 抓四级疗效频数 */
+function parseCounts(doc) {
+  const m = doc.match(/治愈\s*(\d+)\s*例、显效\s*(\d+)\s*例、有效\s*(\d+)\s*例、无效\s*(\d+)\s*例/);
+  if (!m) throw new Error('正文里找不到四级疗效频数');
+  return [Number(m[1]), Number(m[2]), Number(m[3]), Number(m[4])];
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/**
+ * 从正文抓两套赋值。
+ * 等距赋值 3/2/1/0 与频数同序；临床权重标签写的是 0/1/3/5（无效→治愈），
+ * 而括号里的算式是 4×5 + 6×3 + 7×1 + 3×0，即治愈→无效为 5/3/1/0。
+ * 这里以算式为准取权重，同时保留标签原文，避免把两种排列混为一谈。
+ */
+function parseWeights(doc) {
+  const grab = (re, label) => {
+    const m = doc.match(re);
+    if (!m) throw new Error(`正文里找不到${label}`);
+    const weights = [];
+    const term = /(\d+)×(\d+)/g;
+    let t;
+    while ((t = term.exec(m[1])) !== null) weights.push(Number(t[2]));
+    return weights;
+  };
+  const equal = grab(/等距赋值\s*[\d/]+：平均\s*=\s*\(([^)]+)\)/, '等距赋值算式');
+  const clinical = grab(/临床权重\s*[\d/]+：平均\s*=\s*\(([^)]+)\)/, '临床权重算式');
+  const label = doc.match(/临床权重\s*([\d/]+)：/);
+  return { equal, clinical, label: label ? label[1].split('/').map(Number) : [] };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function weightedSum(counts, weights) {
+  if (counts.length !== weights.length) throw new Error('频数与权重组长度不一致');
+  return counts.reduce((sum, c, i) => sum + c * weights[i], 0);
+}
+
+function weightedMean(counts, weights) {
+  return weightedSum(counts, weights) / counts.reduce((a, b) => a + b, 0);
+}
+
+/** 正文表格里的四种尺度行 */
+function scaleRows(doc) {
+  return (doc.match(/^\|\s*(定类|定序|定距|定比)\s*\|/gm) || []).map((s) => s.replace(/\|/g, '').trim());
+}
+
+function compute(doc) {
+  const statedN = Number((doc.match(/一批\s*(\d+)\s*例/) || [])[1]);
+  const counts = parseCounts(doc);
+  const weights = parseWeights(doc);
+  const n = counts.reduce((a, b) => a + b, 0);
+  if (n !== statedN) throw new Error(`频数合计 ${n} 与正文的 ${statedN} 例不一致`);
+  const equal = { sum: weightedSum(counts, weights.equal), mean: weightedMean(counts, weights.equal) };
+  const clinical = { sum: weightedSum(counts, weights.clinical), mean: weightedMean(counts, weights.clinical) };
+  const rise = ((clinical.mean - equal.mean) / equal.mean) * 100;
+  return { n, counts, weights, equal, clinical, rise, scales: scaleRows(doc) };
+}
+
+function assertDocNumbers(doc, r) {
+  const report = [];
+  const expect = (ok, label) => { if (!ok) throw new Error(`正文对账失败：${label}`); report.push(label); };
+  expect(doc.includes('31/20') && Math.abs(r.equal.mean - 1.55) < 1e-9, '等距赋值 31/20 = 1.55');
+  expect(doc.includes('45/20') && Math.abs(r.clinical.mean - 2.25) < 1e-9, '临床权重 45/20 = 2.25');
+  expect(Math.round(r.rise) === 45 && doc.includes('45%'), '均值上浮约 45%');
+  expect(r.scales.length === 4, '四种尺度各一行');
+  expect((doc.match(/^\*\*第[一二三四]问/gm) || []).length === 4, '变量清单四问');
+  expect(r.weights.label.join('/') === '0/1/3/5', '临床权重标签按无效→治愈排列');
+  return report;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`医学统计学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const doc = readDoc();
+  const r = compute(doc);
+  console.log('医学统计学 · 第 1 章 数据类型定错了，后面每个数字都跟着错');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文样本 ${r.n} 例，四级频数 ${r.counts.join(' / ')}，合计 ${r.counts.reduce((a, b) => a + b, 0)}`);
+  console.log(`等距赋值 ${r.weights.equal.join('/')}：加权和 ${r.equal.sum}，均值 ${r.equal.mean.toFixed(2)}`);
+  console.log(`临床权重（标签 ${r.weights.label.join('/')}，按治愈→无效取 ${r.weights.clinical.join('/')}）：加权和 ${r.clinical.sum}，均值 ${r.clinical.mean.toFixed(2)}`);
+  console.log(`同一批病人，均值上浮 ${r.rise.toFixed(1)}%（正文记 45%）`);
+  console.log(`尺度表可识别 ${r.scales.length} 行：${r.scales.join('、')}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  for (const line of assertDocNumbers(doc, r)) console.log(`  ✓ ${line}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/01-yixue-tongjixue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('结论：赋分改变了「距离」，只用次序的统计量不受影响；尺度判定先于统计量选择。');
+  console.log('※ 数字由本章正文现算，正文改动后重跑即可发现对不上。');
+  console.log('※ 教学示意，不构成研究方案或临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, parseCounts, parseWeights, weightedSum, weightedMean, scaleRows, compute, DOC_PATH };

@@ -5,58 +5,61 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { readDoc, anova, pairwise, compute, DOC_PATH } = require('./main.js');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '01-yixue-tongjixue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '01-yixue-tongjixue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
-
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文可读，脚本头部指向本章正文', () => {
+  assert.ok(fs.existsSync(DOC_PATH));
+  const body = fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8');
+  assert.ok(body.includes('/chapters/05-t-fangcha/docs/zh.md'));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('从正文抓出三组均值、标准差与每组 8 例', () => {
+  const r = compute(readDoc());
+  assert.deepStrictEqual(r.means, [8.28, 7.45, 6.88]);
+  assert.deepStrictEqual(r.sds, [0.79, 0.71, 0.69]);
+  assert.strictEqual(r.n, 8);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('方差分析由汇总统计量复算，SSB/SSW 与正文表接近', () => {
+  const r = compute(readDoc());
+  assert.ok(Math.abs(r.ssb - 7.92) < 0.02, `SSB=${r.ssb}`);
+  assert.ok(Math.abs(r.ssw - 11.19) < 0.05, `SSW=${r.ssw}`);
+  assert.strictEqual(r.sst, r.ssb + r.ssw);
+  assert.deepStrictEqual([r.dfb, r.dfw], [2, 21]);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('F 与 p 与正文 7.43 / 0.0036 一致', () => {
+  const r = anova([8.28, 7.45, 6.88], [0.79, 0.71, 0.69], 8);
+  assert.ok(Math.abs(r.F - 7.43) < 0.03, `F=${r.F}`);
+  assert.ok(Math.abs(r.p - 0.0036) < 0.0002, `p=${r.p}`);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('合并组内标准差 0.73 与三组标准差吻合', () => {
+  const r = compute(readDoc());
+  assert.ok(Math.abs(r.sp - 0.73) < 0.005, `sp=${r.sp}`);
+  for (const s of r.sds) assert.ok(Math.abs(s - r.sp) < 0.07);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('三次两两比较的族错误率为 14.3%', () => {
+  const r = compute(readDoc());
+  assert.strictEqual(r.pairs.length, 3);
+  assert.ok(Math.abs(r.familyError - 0.142625) < 1e-6);
+  assert.strictEqual((r.familyError * 100).toFixed(1), '14.3');
+});
+
+test('甲−丙的 p 小于乙−丙，排序与正文一致', () => {
+  const pairs = pairwise([8.28, 7.45, 6.88], [0.79, 0.71, 0.69], 8);
+  const p13 = pairs.find((x) => x.pair === '1-3');
+  const p23 = pairs.find((x) => x.pair === '2-3');
+  assert.ok(p13.p < p23.p);
+  assert.ok(p23.p > 0.1, `乙−丙 p=${p23.p}`);
+});
+
+test('脚本可运行，输出含 F、族错误率与边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/01-yixue-tongjixue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/05-t-fangcha/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /F\(2,21\)=7\.41，p=0\.0037/);
+  assert.match(out, /族错误率 1−0\.95³=14\.3%/);
+  assert.match(out, /不构成疗效结论/);
 });

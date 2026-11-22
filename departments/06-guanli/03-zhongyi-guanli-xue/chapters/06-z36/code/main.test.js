@@ -6,57 +6,58 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '03-zhongyi-guanli-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '03-zhongyi-guanli-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, CHAPTER, TITLE, read, facts, perPharmacist, inspectionLoad, rejectRate, share } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const TEXT = read();
+const F = facts(TEXT);
+
+test('正文就在本章目录下，章号与标题对得上', () => {
+  assert.ok(fs.existsSync(DOC));
+  assert.ok(DOC.endsWith(path.join('chapters', '06-z36', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 6);
+  assert.ok(TEXT.startsWith('# 第 6 章'));
+  assert.strictEqual(TITLE, '中药房是成本中心，也是唯一不能省的那道关');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('剂数、人数与验收参数全部取自正文', () => {
+  assert.strictEqual(F.dailyDoses, 600);
+  assert.strictEqual(F.staff, 5);
+  assert.strictEqual(F.establishment, 8);
+  assert.strictEqual(F.typesPerDay, 40);
+  assert.strictEqual(F.secondsPerType, 20);
+  assert.strictEqual(F.totalIncome, 780);
+  assert.strictEqual(F.coreIncome, 96);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('每人每日剂数：在岗 120 剂，按编制 75 剂，缺口 3 人', () => {
+  assert.strictEqual(perPharmacist(600, 5), 120);
+  assert.strictEqual(perPharmacist(600, 8), 75);
+  assert.strictEqual(F.establishment - F.staff, 3);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('验收负荷只占工作日的百分之三左右，「没时间」不成立', () => {
+  const load = inspectionLoad(40, 20, 8);
+  assert.strictEqual(load.seconds, 800);
+  assert.ok(Math.abs(load.minutes - 13.333) < 0.01, String(load.minutes));
+  assert.ok(load.share < 0.03 && load.share > 0.02, String(load.share));
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('抽检不合格率：40 个品种里 4 个，10%', () => {
+  assert.strictEqual(rejectRate(4, 40), 0.1);
+  assert.throws(() => rejectRate(1, 0), /抽检数必须为正/);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('治未病收入结构：评估与随访占 12% 左右', () => {
+  const s = share(96, 780);
+  assert.ok(Math.abs(s * 100 - 12.31) < 0.01, String(s));
+  assert.ok(s < 0.2, '核心服务占比不到两成');
+});
+
+test('脚本可运行，输出验收负荷与结构，并给出边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/03-zhongyi-guanli-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/06-z36/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /时间不是瓶颈，判据才是/);
+  assert.match(out, /评估与随访/);
+  assert.match(out, /不构成药事管理、药品质量检验或合同法律意见/);
 });

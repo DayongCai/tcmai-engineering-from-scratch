@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 中医管理学 · 第 2 章 中医机构的决策与计划：本章统计口径
+ * 中医管理学 · 第 2 章 规划一家中医机构，真正要决定的是关掉哪些科室
  * 课程: departments/06-guanli/03-zhongyi-guanli-xue/chapters/02-z32/docs/zh.md
- * 数据: standards/03-zhongyi-guanli-xue/units.json（226 单元层，每单元带三辨与四位面词频）
- * 取数: standards/03-zhongyi-guanli-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的两条链都从正文取数后现算：
+ *   门诊量 → 中药处方 → 剂数 → 调剂人力 → 代煎锅次 → 煎药机时
+ *   年固定成本 → 每诊次结余 → 保本诊次 → 每工作日人次
+ * 另算一项结构指标：头部五科与尾部十二科的单科门诊量差距。
  */
 
 'use strict';
@@ -15,87 +15,124 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '03-zhongyi-guanli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/03-zhongyi-guanli-xue/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 2;
+const TITLE = '规划一家中医机构，真正要决定的是关掉哪些科室';
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '03-zhongyi-guanli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '03-zhongyi-guanli-xue', 'chapter-map.json');
-const CHAPTER = '2';
-const SLUG = '02-z32';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 中文数字转阿拉伯数字，覆盖本章出现的一至十二。 */
+function cn(s) {
+  const d = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
+  if (s === '十二') return 12;
+  if (s.length === 2 && s[0] === '十') return 10 + d[s[1]];
+  if (!(s in d)) throw new Error('不认识的中文数字: ' + s);
+  return d[s];
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function grab(text, re, label, conv) {
+  const m = text.match(re);
+  if (!m) throw new Error('正文里找不到「' + label + '」，章节是否已被改写？');
+  const raw = String(m[1]).replace(/,/g, '');
+  const n = conv === 'cn' ? cn(raw) : Number(raw);
+  if (!Number.isFinite(n)) throw new Error('「' + label + '」取到的不是数: ' + raw);
+  return n;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 正文第 45、47、51 行的演算设定。 */
+function facts(text) {
+  return {
+    dailyVisits: grab(text, /日均门诊\s*([\d,]+)\s*人次/, '日均门诊 1,000 人次'),
+    rxShare: grab(text, /中药处方占比\s*(\d+)%/, '中药处方占比 55%'),
+    dosesPerRx: grab(text, /平均每方\s*(\d+)\s*剂/, '平均每方 14 剂'),
+    dosesPerHour: grab(text, /每小时约\s*(\d+)\s*剂/, '每小时约 40 剂'),
+    shiftHours: grab(text, /([一二三四五六七八九十]+)小时工作制/, '八小时工作制', 'cn'),
+    decoctShare: grab(text, /代煎比例按\s*(\d+)%/, '代煎比例 30%'),
+    dosesPerPot: grab(text, /每锅\s*(\d+)\s*剂/, '每锅 10 剂'),
+    minutesPerPot: grab(text, /每锅\s*(\d+)\s*分钟/, '每锅 40 分钟'),
+    fixedCost: grab(text, /年固定成本约\s*(\d+)\s*万元/, '年固定成本 90 万元') * 10000,
+    pricePerVisit: grab(text, /每诊次收费与饮片结余合计约\s*(\d+)\s*元/, '每诊次 60 元'),
+    variablePerVisit: grab(text, /变动成本约\s*(\d+)\s*元/, '变动成本 15 元'),
+    topShare: grab(text, /前五位占全院\s*(\d+)%/, '前五占 68%'),
+    tailShare: grab(text, /后十二位的科室合计不到\s*(\d+)%/, '后十二位不到 6%'),
+    workdays: 300,
+  };
+}
+
+/**
+ * 调剂与代煎的产能链。
+ * 返回每一环的中间量，便于逐段核对——链上任一环低估，断在患者等待的那一小时。
+ */
+function supplyChain({ dailyVisits, rxShare, dosesPerRx, dosesPerHour, shiftHours, decoctShare, dosesPerPot, minutesPerPot }) {
+  const rx = dailyVisits * (rxShare / 100);
+  const doses = rx * dosesPerRx;
+  const perDispenser = dosesPerHour * shiftHours;
+  const dispensers = Math.round(doses / perDispenser);
+  const decoctDoses = doses * (decoctShare / 100);
+  const pots = Math.ceil(decoctDoses / dosesPerPot);
+  const machineMinutes = pots * minutesPerPot;
+  return {
+    rx,
+    doses,
+    perDispenser,
+    dispensers,
+    decoctDoses,
+    pots,
+    machineMinutes,
+    machineHours: machineMinutes / 60,
+  };
+}
+
+/** 保本诊次：固定成本 ÷（每诊次收入 − 变动成本）。 */
+function breakeven(fixedCost, pricePerVisit, variablePerVisit, workdays = 300) {
+  const margin = pricePerVisit - variablePerVisit;
+  if (!(margin > 0)) throw new Error('每诊次结余不为正，保本诊次无解');
+  const visits = fixedCost / margin;
+  return { margin, visits, perWorkday: Math.floor(visits / workdays) };
+}
+
+/** 头部与尾部科室的单科平均门诊量差几倍。 */
+function concentration(topShare, topN, tailShare, tailN) {
+  const topAvg = topShare / topN;
+  const tailAvg = tailShare / tailN;
+  return { topAvg, tailAvg, ratio: topAvg / tailAvg };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const f = facts(text);
+  const chain = supplyChain(f);
+  const be = breakeven(f.fixedCost, f.pricePerVisit, f.variablePerVisit, f.workdays);
+  const c = concentration(f.topShare, 5, f.tailShare, 12);
 
-  console.log(`中医管理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中医管理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 取数后现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log('一、门诊量 → 调剂产能（一条必须算完的链）');
+  console.log(`  日均门诊 ${f.dailyVisits} 人次 × 中药处方 ${f.rxShare}% = ${chain.rx} 张方`);
+  console.log(`  × 每方 ${f.dosesPerRx} 剂 = ${chain.doses} 剂／日`);
+  console.log(`  ÷ 每人每日 ${chain.perDispenser} 剂 = ${chain.dispensers} 名调剂员（含复核）`);
+  console.log(`  代煎 ${f.decoctShare}% = ${chain.decoctDoses} 剂，每锅 ${f.dosesPerPot} 剂 → ${chain.pots} 锅`);
+  console.log(`  每锅 ${f.minutesPerPot} 分钟 → ${chain.machineMinutes} 机分钟 = ${chain.machineHours} 机时／日`);
+  console.log('  → 台数取决于每日可开机时数；机时不够，候药就长，第二年患者去了别处。');
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('二、一间内科诊室的保本门诊量');
+  console.log(`  固定成本 ${f.fixedCost.toLocaleString('en-US')} 元 ÷ 每诊次结余 ${be.margin} 元 = ${be.visits} 诊次／年`);
+  console.log(`  按每年 ${f.workdays} 个工作日折算：每工作日 ${be.perWorkday} 人次`);
+  console.log('  → 这个数字与「该不该设这个科室」是同一个问题的两种问法。');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('三、科室结构：头部与尾部的单科差距');
+  console.log(`  前五科合计 ${f.topShare}%，单科平均 ${c.topAvg.toFixed(1)}%`);
+  console.log(`  后十二科合计 ${f.tailShare}%，单科平均 ${c.tailAvg.toFixed(2)}%`);
+  console.log(`  → 单科门诊量相差约 ${c.ratio.toFixed(0)} 倍，但每科仍配主任、护士长、两间诊室与一套设备。`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/03-zhongyi-guanli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即报错或随之变化；换算系数为演算设定，不是定额标准。');
+  console.log('※ 本输出仅用于教学演示，不构成机构设置审批、医保定点或投资决策意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, facts, supplyChain, breakeven, concentration };

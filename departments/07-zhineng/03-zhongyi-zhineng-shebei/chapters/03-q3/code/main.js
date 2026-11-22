@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 中医智能设备 · 第 3 章 中医药通用六快：吃 _ 喝 ／健康自动评价：从可穿戴数据到／临床应用与可穿戴场景／智能中医学：概念与「象—素—：本章统计口径
+ * 中医智能设备 · 第 3 章 · 十问筛成六快：一次由「可测性」主导的裁剪
  * 课程: departments/07-zhineng/03-zhongyi-zhineng-shebei/chapters/03-q3/docs/zh.md
- * 数据: standards/zhongyi-zhineng-yiqi/units.json（107 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-zhineng-yiqi/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的对照关系全部由本脚本从正文现算，不手打：
+ *   十问十项（从题记原句读）、六快六项（从矩阵表读）、两者重叠几项、
+ *   真正不用人动手的有几项、象素候证四阶、评分三条规矩、三类终点、六步工作流。
+ * 正文一改，重跑即可看出哪一项对不上；测试把这些数固定下来。
  */
 
 'use strict';
@@ -15,87 +15,223 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-zhineng-yiqi', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/zhongyi-zhineng-yiqi/units.json —— 章节目录是否已脱离仓库？');
-}
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-zhineng-yiqi', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-zhineng-yiqi', 'chapter-map.json');
 const CHAPTER = '3';
 const SLUG = '03-q3';
+const TITLE = '十问筛成六快：一次由「可测性」主导的裁剪';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const GRAM = 4;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function h2Sections(text) {
+  const out = [];
+  let cur = null;
+  for (const line of String(text).split(/\r?\n/)) {
+    const m = /^##\s+(.+)$/.exec(line.trim());
+    if (m) {
+      cur = { title: m[1].trim(), body: [line] };
+      out.push(cur);
+    } else if (cur) cur.body.push(line);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out.map((s) => ({ title: s.title, body: s.body.join('\n') }));
+}
+
+const h2Titles = (text) => h2Sections(text).map((s) => s.title);
+const sectionAt = (text, i) => (h2Sections(text)[i] || { title: '', body: '' }).body;
+
+function tableBlocks(text) {
+  const blocks = [];
+  let cur = null;
+  for (const line of String(text).split(/\r?\n/)) {
+    const s = line.trim();
+    if (s.startsWith('|')) {
+      if (!cur) {
+        cur = [];
+        blocks.push(cur);
+      }
+      cur.push(s);
+    } else cur = null;
+  }
+  return blocks.map((b) => {
+    const cells = b.map((r) => r.replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim()));
+    return { head: cells[0] || [], rows: cells.slice(2) };
+  });
+}
+
+const occurrences = (text, term) => String(text).split(term).length - 1;
+
+function grams(text, n = GRAM) {
+  const out = new Set();
+  for (const seg of String(text).replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+/** 题记里的十问原文（引号内），用于核实十项都出自原句 */
+function motto(text) {
+  const line = String(text).split(/\r?\n/).find((l) => l.includes('MOTTO') && l.includes('「')) || '';
+  return (/「(.+?)」/.exec(line) || [null, ''])[1];
+}
+
+/** 十问十项：本章用来做对照的那十件，逐项在题记原句里验证存在 */
+const TEN = ['寒热', '汗', '头身', '便', '饮食', '胸', '聋', '渴', '脉色', '气味'];
+
+/** 十问的序号数（题记里的一到十），应与 TEN 项数一致 */
+function tenNumerals(text) {
+  return (motto(text).match(/[一二三四五六七八九十]/g) || []).length;
+}
+
+/** 六快：矩阵表首列 */
+function sixFasts(text) {
+  const b = tableBlocks(text)[0];
+  return b ? b.rows.map((r) => r[0]).filter(Boolean) : [];
+}
+
+/** 六快里真正不用人动手的：「只有吃（部分）、睡、警觉三项」一句现切 */
+function handsFree(text) {
+  const line = String(text).split(/\r?\n/).find((l) => l.includes('不需要人动手')) || '';
+  const tail = (/只有(.+?)三项/.exec(line) || [null, ''])[1];
+  return tail.split(/[、，,]/).map((s) => s.trim()).filter(Boolean);
+}
+
+/** 十问里被六快接住的项（饮食、二便），按本章的对应关系判定 */
+function tenCovered(text) {
+  const six = sixFasts(text).join('|');
+  return TEN.filter((t) => (t === '饮食' && six.includes('吃')) || (t === '便' && six.includes('拉')));
+}
+
+/** 四阶：象、素、候、证 */
+function fourStages(text) {
+  const tail = (/「(.+?)」四阶/.exec(text) || [null, ''])[1];
+  return tail ? tail.split(/[—\-–]/).map((s) => s.trim()).filter(Boolean) : [];
+}
+
+/** 评分三条规矩：加粗的「第 N 条，……」 */
+function scoringRules(text) {
+  const out = [];
+  for (const m of sectionAt(text, 2).matchAll(/\*\*(第[一二三四]条)[，,](.+?)。\*\*/g)) {
+    out.push({ n: m[1], rule: m[2].trim() });
+  }
+  return out;
+}
+
+/** 三类终点：正文「要报的终点有三类」之后的加粗小标题 */
+function endpoints(text) {
+  const sec = sectionAt(text, 5);
+  const at = sec.indexOf('要报的终点有三类');
+  const tail = at >= 0 ? sec.slice(at) : sec;
+  return [...tail.matchAll(/\*\*([^*]+)\*\*/g)].map((m) => m[1].trim()).filter(Boolean);
+}
+
+/** 六步工作流 */
+function workflow(text) {
+  const m = /采集\s*→\s*质控\s*→\s*特征\s*→\s*提示\s*→\s*医师复核\s*→\s*记录/.exec(text);
+  return m ? m[0].split(/\s*→\s*/).map((s) => s.trim()) : [];
+}
+
+function quizSummary(quiz, text) {
+  const body = grams(text);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  for (const q of qs) if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+  const hits = qs.filter((q) => q.stage === 'check').map((q) => {
+    const right = String((q.options || [])[q.correct] || '');
+    return { question: q.question, grams: [...grams(right)].filter((g) => body.has(g)) };
+  });
+  return {
+    total: qs.length,
+    stage,
+    check: hits.length,
+    grounded: hits.filter((h) => h.grams.length).length,
+    hits,
+    correctIndexes: qs.map((q) => q.correct),
+  };
+}
+
+function analyze() {
+  const text = readDoc();
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const ten = TEN.map((t) => ({ term: t, inMotto: motto(text).includes(t) }));
+  const covered = tenCovered(text);
+  return {
+    hanzi: hanzi(text),
+    sections: h2Titles(text),
+    tables: tableBlocks(text).map((b) => ({ cols: b.head.length, rows: b.rows.length })),
+    ten,
+    tenCount: TEN.length,
+    numerals: tenNumerals(text),
+    six: sixFasts(text),
+    covered,
+    coverage: Number(((covered.length / TEN.length) * 100).toFixed(0)),
+    free: handsFree(text),
+    stages: fourStages(text),
+    rules: scoringRules(text),
+    endpoints: endpoints(text),
+    workflow: workflow(text),
+    quiz: quizSummary(quiz, text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医智能设备 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = analyze();
+  console.log(`中医智能设备 · 第 ${CHAPTER} 章 · ${TITLE}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文 ${r.hanzi.toLocaleString('en-US')} 汉字 · 小节 ${r.sections.length} 个 · 表 ${r.tables.length} 张`);
+  r.sections.forEach((s, i) => console.log(`  ${String(i + 1).padStart(2)}  ${s}`));
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`十问 ${r.tenCount} 项（题记序号 ${r.numerals} 个）：${r.ten.map((t) => `${t.inMotto ? '' : '✗'}${t.term}`).join(' · ')}`);
+  console.log(`六快 ${r.six.length} 项：${r.six.join(' · ')}`);
+  console.log(
+    `重叠：${r.covered.join('、')} 共 ${r.covered.length} 项，占十问 ${r.coverage}%；` +
+      `新增需求 ${r.six.length - r.covered.length} 项`
+  );
+  console.log(`真正不用人动手（${r.free.length} 项）：${r.free.join(' · ')}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`四阶：${r.stages.join(' → ')}`);
+  console.log(`评分规矩（${r.rules.length} 条）：${r.rules.map((x) => x.rule).join(' / ')}`);
+  console.log(`三类终点（${r.endpoints.length} 类）：${r.endpoints.join(' / ')}`);
+  console.log(`工作流 ${r.workflow.length} 步：${r.workflow.join(' → ')}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(
+    `quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）` +
+      ` · check 题接地 ${r.quiz.grounded} 道（门槛 ≥2）· 正确项落点 ${[...new Set(r.quiz.correctIndexes)].join('/')}`
+  );
   console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-zhineng-yiqi/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 以上对照全部由本章正文现算，无手打常数；改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，不构成医学意见、诊断或治疗建议；体质辨识与辨证须由执业中医师作出。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  analyze,
+  readDoc,
+  h2Sections,
+  h2Titles,
+  sectionAt,
+  tableBlocks,
+  occurrences,
+  grams,
+  motto,
+  tenNumerals,
+  sixFasts,
+  handsFree,
+  tenCovered,
+  fourStages,
+  scoringRules,
+  endpoints,
+  workflow,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+  TEN,
+};

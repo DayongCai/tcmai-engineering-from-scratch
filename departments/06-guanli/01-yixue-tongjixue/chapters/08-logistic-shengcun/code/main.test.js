@@ -5,58 +5,62 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { readDoc, cohort, absoluteFromBase, parseKmRow, compute, DOC_PATH } = require('./main.js');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '01-yixue-tongjixue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '01-yixue-tongjixue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
-
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文可读，脚本头部指向本章正文', () => {
+  assert.ok(fs.existsSync(DOC_PATH));
+  const body = fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8');
+  assert.ok(body.includes('/chapters/08-logistic-shengcun/docs/zh.md'));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('从正文抓出 16/40 与 12/80', () => {
+  const r = compute(readDoc());
+  assert.deepStrictEqual([r.cohort.a, r.cohort.n1], [16, 40]);
+  assert.deepStrictEqual([r.cohort.c, r.cohort.n2], [12, 80]);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('OR 为 3.78、风险比为 2.67，二者不相等', () => {
+  const c = cohort(16, 40, 12, 80);
+  assert.ok(Math.abs(c.or - 3.777) < 0.002);
+  assert.ok(Math.abs(c.rr - 2.667) < 0.002);
+  assert.notStrictEqual(c.or.toFixed(1), c.rr.toFixed(1));
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('两组的 odds 与正文 0.667 / 0.176 对账', () => {
+  const c = cohort(16, 40, 12, 80);
+  assert.ok(Math.abs(c.odds1 - 0.667) < 0.002);
+  assert.ok(Math.abs(c.odds2 - 0.176) < 0.002);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('同一 OR 在 10% 与 20% 基线上的绝对风险与正文对账', () => {
+  const c = cohort(16, 40, 12, 80);
+  const b10 = absoluteFromBase(0.10, c.or);
+  const b20 = absoluteFromBase(0.20, c.or);
+  assert.ok(Math.abs(b10.p1 * 100 - 29.6) < 0.1);
+  assert.ok(Math.abs(b10.diffPp - 19.6) < 0.1);
+  assert.ok(Math.abs(b20.p1 * 100 - 48.6) < 0.1);
+  assert.ok(Math.abs(b20.diffPp - 28.6) < 0.1);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('KM 表计数自洽：事件数 + 删失数 = n', () => {
+  const doc = readDoc();
+  const a = parseKmRow(doc, '甲');
+  const b = parseKmRow(doc, '乙');
+  assert.deepStrictEqual(a, { n: 20, events: 12, censored: 8, km: 0.65 });
+  assert.deepStrictEqual(b, { n: 20, events: 16, censored: 4, km: 0.45 });
+  assert.strictEqual(a.events + a.censored, a.n);
+  assert.strictEqual(b.events + b.censored, b.n);
+});
+
+test('EPV≥10 时 20 个事件最多容纳 2 个自变量', () => {
+  assert.strictEqual(compute(readDoc()).epvMax, 2);
+});
+
+test('脚本可运行，输出含 OR、绝对风险与边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/01-yixue-tongjixue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/08-logistic-shengcun/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /OR=3\.78，风险比=2\.67/);
+  assert.match(out, /10% → 29\.6%（差 19\.6 个百分点）/);
+  assert.match(out, /不构成预后判断/);
 });

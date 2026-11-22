@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
- * 中医管理学 · 第 6 章 中医药机构的管理专题：本章统计口径
+ * 中医管理学 · 第 6 章 中药房是成本中心，也是唯一不能省的那道关
  * 课程: departments/06-guanli/03-zhongyi-guanli-xue/chapters/06-z36/docs/zh.md
- * 数据: standards/03-zhongyi-guanli-xue/units.json（226 单元层，每单元带三辨与四位面词频）
- * 取数: standards/03-zhongyi-guanli-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的三笔账都从正文取数后现算：
+ *   日均剂数 ÷ 在岗药师 → 每人每日剂数（在岗与编制两版并列）
+ *   验收品种 × 每品种秒数 → 占一个工作日的比例（用来否掉「没时间」这个解释）
+ *   抽检不合格数 ÷ 抽检数 → 不合格率
+ *   治未病收入中评估与随访的占比（用来说明结构）
  */
 
 'use strict';
@@ -15,87 +16,103 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '03-zhongyi-guanli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/03-zhongyi-guanli-xue/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 6;
+/** 一个工作日按 8 小时计——正文未给工时，这是算负荷的通用的分母，不取自正文。 */
+const WORKDAY_HOURS = 8;
+const TITLE = '中药房是成本中心，也是唯一不能省的那道关';
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '03-zhongyi-guanli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '03-zhongyi-guanli-xue', 'chapter-map.json');
-const CHAPTER = '6';
-const SLUG = '06-z36';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function cn(s) {
+  const d = { 一: 1, 二: 2, 两: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
+  if (!(s in d)) throw new Error('不认识的中文数字: ' + s);
+  return d[s];
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function grab(text, re, label, conv) {
+  const m = text.match(re);
+  if (!m) throw new Error('正文里找不到「' + label + '」，章节是否已被改写？');
+  const raw = String(m[1]).replace(/,/g, '');
+  const n = conv === 'cn' ? cn(raw) : Number(raw);
+  if (!Number.isFinite(n)) throw new Error('「' + label + '」取到的不是数: ' + raw);
+  return n;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 正文第 5、13、29、45 行的数据。 */
+function facts(text) {
+  return {
+    dailyDoses: grab(text, /日均调剂\s*(\d+)\s*剂/, '日均 600 剂'),
+    staff: grab(text, /药师\s*(\d+)\s*人/, '药师 5 人'),
+    establishment: grab(text, /编制\s*(\d+)\s*人/, '编制 8 人'),
+    typesPerDay: grab(text, /日均验收\s*(\d+)\s*个品种/, '日均验收 40 个品种'),
+    secondsPerType: grab(text, /每品种看性状约\s*(\d+)\s*秒/, '每品种 20 秒'),
+    badMoist: grab(text, /(\d+)\s*个品种水分超标/, '3 个品种水分超标'),
+    badForged: grab(text, /(\d+)\s*个品种掺伪/, '1 个品种掺伪'),
+    totalIncome: grab(text, /年收入\s*(\d+)\s*万元/, '年收入 780 万元'),
+    coreIncome: grab(text, /合计\s*(\d+)\s*万元/, '评估与随访 96 万元'),
+    coreShareClaim: grab(text, /占\s*(\d+)%/, '占 12%'),
+  };
+}
+
+/** 每人每日剂数：按在岗与按编制各算一版。 */
+function perPharmacist(dailyDoses, staff) {
+  return dailyDoses / staff;
+}
+
+/** 验收负荷：品种 × 秒数，折成分钟与占一个工作日的比例。 */
+function inspectionLoad(types, seconds, shiftHours) {
+  const sec = types * seconds;
+  const minutes = sec / 60;
+  const shiftMinutes = shiftHours * 60;
+  return { seconds: sec, minutes, share: minutes / shiftMinutes };
+}
+
+/** 不合格率：抽检不合格数 ÷ 抽检数。 */
+function rejectRate(bad, sampled) {
+  if (!(sampled > 0)) throw new Error('抽检数必须为正');
+  return bad / sampled;
+}
+
+/** 收入结构：某一块占多少。 */
+function share(part, total) {
+  return part / total;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const f = facts(text);
+  const badTotal = f.badMoist + f.badForged;
+  const load = inspectionLoad(f.typesPerDay, f.secondsPerType, WORKDAY_HOURS);
+  const core = share(f.coreIncome, f.totalIncome);
 
-  console.log(`中医管理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中医管理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 取数后现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log('一、调剂人力');
+  console.log(`  日均 ${f.dailyDoses} 剂 ÷ 在岗 ${f.staff} 人 = 每人每日 ${perPharmacist(f.dailyDoses, f.staff).toFixed(0)} 剂`);
+  console.log(`  若按编制 ${f.establishment} 人计 = 每人每日 ${perPharmacist(f.dailyDoses, f.establishment).toFixed(1)} 剂`);
+  console.log(`  → 缺编 ${f.establishment - f.staff} 人，缺口由加班与实习生填；表现出来的是候药时间，不是差错率。`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('二、验收负荷（用来检验「没时间」这个解释）');
+  console.log(`  ${f.typesPerDay} 个品种 × ${f.secondsPerType} 秒 = ${load.seconds} 秒 = ${load.minutes.toFixed(1)} 分钟`);
+  console.log(`  占一个 ${WORKDAY_HOURS} 小时工作日的 ${(load.share * 100).toFixed(1)}%`);
+  console.log('  → 时间不是瓶颈，判据才是：20 秒只够看性状外观，硫熏与掺伪看不出来。');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`三、抽检：${f.typesPerDay} 个品种里 ${badTotal} 个不合格 = ${(rejectRate(badTotal, f.typesPerDay) * 100).toFixed(0)}%`);
+  console.log('  → 这个比例落在「换供应商」与「改验收规程」之间，本章选后者。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('四、治未病的收入结构');
+  console.log(`  评估与随访 ${f.coreIncome} 万元 ÷ 全年 ${f.totalIncome} 万元 = ${(core * 100).toFixed(1)}%（正文：${f.coreShareClaim}%）`);
+  console.log(`  其余 ${(100 - core * 100).toFixed(1)}% 是推拿、艾灸、膏方与理疗——项目不是治未病，是它的邻居。`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/03-zhongyi-guanli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即报错或随之变化；剂数、人数与收入结构均为演算设定。');
+  console.log('※ 本输出仅用于教学演示，不构成药事管理、药品质量检验或合同法律意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, facts, perPharmacist, inspectionLoad, rejectRate, share };

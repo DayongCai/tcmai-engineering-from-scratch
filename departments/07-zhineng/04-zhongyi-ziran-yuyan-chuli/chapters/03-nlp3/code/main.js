@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 中医自然语言处理 · 第 3 章 语言模型与概率推断：本章统计口径
- * 课程: departments/07-zhineng/04-zhongyi-ziran-yuyan-chuli/chapters/03-nlp3/docs/zh.md
- * 数据: standards/zhongyi-ziran-yuyan-chuli/units.json（148 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-ziran-yuyan-chuli/chapter-map.json（课程章 → 教材单元号）
+ * 中医自然语言处理 · 第 3 章 n-gram 算得出下一个字，算不出这句话是谁写的
+ * 正文: departments/07-zhineng/04-zhongyi-ziran-yuyan-chuli/chapters/03-nlp3/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 口径：样本句取自正文引用的条文，bigram 计数、稀疏度、加一平滑的未登录质量
+ * 全部在本脚本里现算；不从任何外部语料取数，也不抄任何模型的跑分。
  */
 
 'use strict';
@@ -15,87 +13,127 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-ziran-yuyan-chuli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/zhongyi-ziran-yuyan-chuli/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-ziran-yuyan-chuli', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-ziran-yuyan-chuli', 'chapter-map.json');
-const CHAPTER = '3';
+const CHAPTER = 3;
 const SLUG = '03-nlp3';
+const TITLE = 'n-gram 算得出下一个字，算不出这句话是谁写的';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const hanzi = (s) => (String(s).match(HANZI) || []).length;
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function headings(text) {
+  return text
+    .split(/\r?\n/)
+    .filter((line) => /^##\s+/.test(line))
+    .map((line) => line.replace(/^##\s+/, '').trim());
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function codeBlocks(text) {
+  return [...text.matchAll(/```[a-z]*\r?\n([\s\S]*?)```/g)].map((m) => m[1]);
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** 正文里被引作例子的条文：取第一段含「太阳病」的「」引文 */
+function sampleSentence(text) {
+  for (const m of text.matchAll(/「([^」]{6,})」/g)) {
+    if (m[1].includes('太阳病')) return m[1];
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  throw new Error('正文里找不到含「太阳病」的引文');
+}
+
+/** 字符 bigram 计数；标点保留，因为正文要说明标点也会成为边界信号 */
+function bigrams(s) {
+  const out = new Map();
+  for (let i = 0; i + 1 < s.length; i += 1) {
+    const bg = s.slice(i, i + 2);
+    out.set(bg, (out.get(bg) || 0) + 1);
+  }
+  return out;
+}
+
+function topBigrams(map, n = 5) {
+  return [...map.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, n);
+}
+
+/**
+ * 加一平滑。V = 已见字符数 + 1（留一个「未见字符」槽），
+ * 这样已见质量 + 未登录质量恰为 1，未见组合的概率不再为零。
+ */
+function addOne(text, addOneAmount = 1) {
+  const chars = [...text];
+  const uni = new Map();
+  for (const ch of chars) uni.set(ch, (uni.get(ch) || 0) + 1);
+  const N = chars.length;
+  const V = uni.size + 1;
+  const total = N + addOneAmount * V;
+  const probs = new Map();
+  for (const [ch, c] of uni) probs.set(ch, (c + addOneAmount) / total);
+  const seenMass = [...probs.values()].reduce((a, b) => a + b, 0);
+  const unseenMass = (addOneAmount * (V - uni.size)) / total;
+  return { N, V, total, probs, seenMass, unseenMass, addOne: addOneAmount };
+}
+
+/** 正文的样本句统计：位置数、不同 bigram、最高频项、含标点的高频项 */
+function sampleStats(sentence) {
+  const map = bigrams(sentence);
+  const top = topBigrams(map, 5);
+  const positions = Math.max(0, sentence.length - 1);
+  return {
+    sentence,
+    chars: sentence.length,
+    hanzi: hanzi(sentence),
+    positions,
+    unique: map.size,
+    singletons: [...map.values()].filter((v) => v === 1).length,
+    top,
+    punctInTop: top.filter(([bg]) => /[，。；：、]/.test(bg)).length,
+  };
+}
+
+function stats() {
+  const text = readDoc();
+  const sentence = sampleSentence(text);
+  const sm = sampleStats(sentence);
+  const smooth = addOne(sentence);
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title: TITLE,
+    hanzi: hanzi(text),
+    sections: headings(text).length,
+    codeBlocks: codeBlocks(text).length,
+    sample: sm,
+    smooth,
+    disclaimer: /免责声明/.test(text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医自然语言处理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const s = stats();
+  console.log(`中医自然语言处理 · 第 ${s.chapter} 章 ${s.title}`);
+  console.log(`正文：chapters/${s.slug}/docs/zh.md（现算，不手打）`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`  汉字            ${s.hanzi.toLocaleString('en-US')}`);
+  console.log(`  节 / 代码块     ${s.sections} / ${s.codeBlocks}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`样本句（正文引文，${s.sample.chars} 字符）：${s.sample.sentence}`);
+  console.log(`  相邻位置        ${s.sample.positions}`);
+  console.log(`  不同 bigram     ${s.sample.unique}（只出现一次的 ${s.sample.singletons} 个）`);
+  console.log(`  最高频          ${s.sample.top.map(([bg, c]) => `${bg}×${c}`).join('  ')}`);
+  console.log(`  前五里含标点    ${s.sample.punctInTop} 个——标点是今人加的，却在统计上是强边界信号`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`加一平滑（V=${s.smooth.V}，N=${s.smooth.N}）：`);
+  console.log(`  已见字符质量    ${s.smooth.seenMass.toFixed(4)}`);
+  console.log(`  未登录字符质量  ${s.smooth.unseenMass.toFixed(4)}`);
+  console.log(`  合计            ${(s.smooth.seenMass + s.smooth.unseenMass).toFixed(4)}——未见组合不再为零`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-ziran-yuyan-chuli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本目录 docs/zh.md 的引文现算；本章不给任何模型的困惑度或跑分。');
+  console.log('※ 本章只做语言模型与概率推断的教学讨论，不构成诊断、辨证或治疗建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  CHAPTER, SLUG, TITLE, DOC, readDoc, headings, codeBlocks, sampleSentence,
+  bigrams, topBigrams, addOne, sampleStats, hanzi, stats, main,
+};

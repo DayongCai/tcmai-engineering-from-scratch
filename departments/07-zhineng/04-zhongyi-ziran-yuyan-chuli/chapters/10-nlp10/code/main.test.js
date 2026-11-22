@@ -1,62 +1,110 @@
 'use strict';
 
+/**
+ * 第 10 章 自检：三档来源、四类禁自动化动作、降级表从正文读出；抽取只返回可查 span。
+ * 运行：node --test departments/07-zhineng/04-zhongyi-ziran-yuyan-chuli/chapters/10-nlp10/code/main.test.js
+ */
+
 const test = require('node:test');
 const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-ziran-yuyan-chuli', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-ziran-yuyan-chuli', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const main = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const RAW = () => fs.readFileSync(DOC, 'utf8');
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+test('正文汉字数达到补实门槛', () => {
+  assert.ok(main.stats().hanzi >= 2500, `只有 ${main.stats().hanzi}`);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('三档来源齐备，且只有原文直述与规则推出可作结论/提示', () => {
+  const t = main.sourceTiers(RAW());
+  assert.deepStrictEqual(t.map((x) => x.tier), ['原文直述', '规则推出', '模型猜测']);
+  assert.ok(t[0].usable.includes('记录'));
+  assert.ok(t[1].usable.includes('提示'));
+  assert.ok(t[2].usable.includes('不可作为结论'));
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('四类不该自动化的动作与正文一致', () => {
+  assert.deepStrictEqual(main.forbiddenActions(RAW()), ['证型定论', '方药剂量', '配伍禁忌的放行', '预后判断']);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('禁自动化动作的输出形态固定：只给候选、不换算、只能拦、退回人判', () => {
+  assert.strictEqual(main.decide('证型定论'), '只给候选与依据');
+  assert.ok(main.decide('方药剂量').includes('不换算'));
+  assert.strictEqual(main.decide('配伍禁忌的放行'), '只能拦，不能放');
+  assert.ok(main.decide('预后判断').includes('退回人判'));
+  assert.ok(main.decide('自动开方').includes('拒绝'));
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('抽取只返回文本里逐字可查的 span，抽不到就返回空', () => {
+  const lex = ['舌红苔黄', '脉浮', '恶寒'];
+  const hits = main.extract('舌红苔黄，脉浮数。', lex);
+  assert.deepStrictEqual(hits.map((h) => h.term), ['舌红苔黄', '脉浮']);
+  for (const h of hits) {
+    assert.strictEqual('舌红苔黄，脉浮数。'.slice(h.start, h.end), h.term, 'span 必须能切回原词');
+  }
+  assert.deepStrictEqual(main.extract('患者自觉尚可。', lex), []);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('分档：无 span 无条文只能是模型猜测，不得升格为结论', () => {
+  assert.strictEqual(main.classify({ span: true }), '原文直述');
+  assert.strictEqual(main.classify({ rule: true }), '规则推出');
+  assert.strictEqual(main.classify({}), '模型猜测');
+  // 「此为热证」在文本里没有 span，不能升格
+  assert.strictEqual(main.classify({ span: false, rule: false }), '模型猜测');
+});
+
+test('失败降级表 5 行，含「拒答」与「不填默认值」', () => {
+  const f = main.failureTable(RAW());
+  assert.strictEqual(f.length, 5);
+  const all = f.map((x) => x.input + x.action + x.output).join('');
+  assert.ok(all.includes('拒答'), '缺拒答');
+  assert.ok(all.includes('不填默认值'), '缺不填默认值');
+});
+
+test('quiz：≥5 题，覆盖 pre／check／post，4 选项，explain ≥30 汉字', () => {
+  const qs = JSON.parse(fs.readFileSync(QUIZ, 'utf8')).questions;
+  assert.ok(qs.length >= 5);
+  const stages = new Set(qs.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), `缺 ${s} 段`);
+  for (const q of qs) {
+    assert.strictEqual(q.options.length, 4, `选项不是 4 个：${q.question}`);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, `correct 越界：${q.question}`);
+    assert.ok((String(q.explain).match(HANZI) || []).length >= 30, `explain 过短：${q.question}`);
+  }
+});
+
+test('quiz：check 题至少 2 道的正确选项含正文原词', () => {
+  const qs = JSON.parse(fs.readFileSync(QUIZ, 'utf8')).questions.filter((q) => q.stage === 'check');
+  const body = new Set();
+  for (const seg of RAW().replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + 4 <= seg.length; i += 1) body.add(seg.slice(i, i + 4));
+  }
+  let grounded = 0;
+  for (const q of qs) {
+    const hit = String(q.options[q.correct])
+      .replace(/[^\u4e00-\u9fff]/g, ' ')
+      .split(/\s+/)
+      .some((seg) => {
+        for (let i = 0; i + 4 <= seg.length; i += 1) if (body.has(seg.slice(i, i + 4))) return true;
+        return false;
+      });
+    if (hit) grounded += 1;
+  }
+  assert.ok(grounded >= 2, `只有 ${grounded} 道接地`);
+});
+
+test('脚本可运行，打印分档与降级表，不输出任何诊疗结论', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8' });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-ziran-yuyan-chuli\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/10-nlp10/docs/zh.md'), '头部注释未指向本章');
+  assert.ok(out.includes('原文直述／规则推出／模型猜测'));
+  assert.ok(out.includes('不填默认值'));
+  assert.match(out, /不构成诊断/);
 });

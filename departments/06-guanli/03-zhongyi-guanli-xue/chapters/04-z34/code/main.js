@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
- * 中医管理学 · 第 4 章 领导、激励与沟通：本章统计口径
+ * 中医管理学 · 第 4 章 科主任的两套权威，一套来自疗效，一套来自表格
  * 课程: departments/06-guanli/03-zhongyi-guanli-xue/chapters/04-z34/docs/zh.md
- * 数据: standards/03-zhongyi-guanli-xue/units.json（226 单元层，每单元带三辨与四位面词频）
- * 取数: standards/03-zhongyi-guanli-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的量都从正文取数后现算：
+ *   二次分配的三个权重 → 两类行为的边际得分（饮片零加成 vs 检查组）
+ *   8 分钟压到 5 分钟 → 人次放大倍数
+ *   饮片使用率 41 → 58 → 44 的回退幅度
+ * 结论由算式给出，不靠形容词：饮片在一个以收入为基数的方案里，边际得分恒为零。
  */
 
 'use strict';
@@ -15,87 +16,94 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '03-zhongyi-guanli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/03-zhongyi-guanli-xue/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 4;
+const TITLE = '科主任的两套权威，一套来自疗效，一套来自表格';
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '03-zhongyi-guanli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '03-zhongyi-guanli-xue', 'chapter-map.json');
-const CHAPTER = '4';
-const SLUG = '04-z34';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function grab(text, re, label) {
+  const m = text.match(re);
+  if (!m) throw new Error('正文里找不到「' + label + '」，章节是否已被改写？');
+  const n = Number(String(m[1]).replace(/,/g, ''));
+  if (!Number.isFinite(n)) throw new Error('「' + label + '」取到的不是数: ' + m[1]);
+  return n;
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 正文第 5、23 行给出的方案参数与行为数据。 */
+function facts(text) {
+  return {
+    staff: grab(text, /科室\s*(\d+)\s*人/, '科室 14 人'),
+    yearlyVisits: grab(text, /年门诊\s*(\d+)\s*万人次/, '年门诊 9 万人次') * 10000,
+    wIncome: grab(text, /业务收入占\s*(\d+)%/, '业务收入占 60%'),
+    wVisits: grab(text, /门诊人次占\s*(\d+)%/, '门诊人次占 25%'),
+    wResearch: grab(text, /科研教学占\s*(\d+)%/, '科研教学占 15%'),
+    rxYear1: grab(text, /饮片使用率从\s*(\d+)%/, '饮片率 41%'),
+    rxPeak: grab(text, /提到\s*(\d+)%/, '提到 58%'),
+    rxFall: grab(text, /第二年掉回\s*(\d+)%/, '掉回 44%'),
+    minutesBefore: grab(text, /四小时看\s*30\s*人是每人\s*(\d+)\s*分钟/, '8 分钟'),
+    minutesAfter: grab(text, /会向\s*(\d+)\s*分钟滑/, '5 分钟'),
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/**
+ * 二次分配的边际得分：把一项行为折算成三个权重上的增量。
+ * incomeVisits 是这项行为带来的账面收入，visitDelta 是门诊人次增量，researchDelta 是科研分增量。
+ * 三项都以「基准」归一到 1，便于比较两种行为的相对拉力。
+ */
+function marginalScore({ wIncome, wVisits, wResearch }, base, action) {
+  const income = (wIncome / 100) * (action.income / base.income);
+  const visits = (wVisits / 100) * ((action.visitDelta || 0) / base.visits);
+  const research = (wResearch / 100) * ((action.researchDelta || 0) / base.research);
+  return income + visits + research;
+}
+
+/** 饮片方的账面结余：零加成时恒为 0；按帖数给固定劳务补贴时为正。 */
+function rxMargin(dosesPerRx, subsidyPerDose) {
+  return dosesPerRx * subsidyPerDose;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const f = facts(text);
+  const base = {
+    income: f.yearlyVisits * 180 / 12,
+    visits: f.yearlyVisits / 12,
+    research: 100,
+  };
+  const rxZero = { income: 0, visitDelta: 0 };
+  const checkOrder = { income: 200, visitDelta: 0 };
+  const rxSubsidy = { income: rxMargin(14, 1.5), visitDelta: 0 };
 
-  console.log(`中医管理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const sRxZero = marginalScore(f, base, rxZero);
+  const sCheck = marginalScore(f, base, checkOrder);
+  const sRxSub = marginalScore(f, base, rxSubsidy);
+  const squeeze = f.minutesBefore / f.minutesAfter;
+
+  console.log(`中医管理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 取数后现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`一、二次分配：${f.wIncome}% 收入 / ${f.wVisits}% 人次 / ${f.wResearch}% 科研`);
+  console.log(`  基准：月门诊 ${base.visits.toFixed(0)} 人次、月业务收入 ${(base.income / 10000).toFixed(0)} 万元（按年 ${f.yearlyVisits / 10000} 万人次、次均 180 元折出）`);
+  console.log(`  饮片方（零加成，${14} 剂 × 1.5 元帖数补贴前）边际得分：${sRxZero.toFixed(6)}`);
+  console.log(`  检查组（200 元）边际得分：${sCheck.toFixed(6)}`);
+  console.log(`  → 只差一项收入权重，饮片得分恒为零；再努力也追不上检查组。`);
+  console.log(`  饮片方按 14 剂 × 1.5 元帖数补贴计，账面 ${rxSubsidy.income} 元，边际得分由零升到 ${sRxSub.toFixed(6)}。`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`二、饮片使用率的回退：${f.rxYear1}% → ${f.rxPeak}% → ${f.rxFall}%`);
+  console.log(`  第一年提升 ${f.rxPeak - f.rxYear1} 个百分点，第二年回退 ${f.rxPeak - f.rxFall} 个百分点，只留下 ${f.rxFall - f.rxYear1} 个。`);
+  console.log('  → 回退幅度接近提升幅度的八成：个人推动的方向，被方案的方向抵消。');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`三、失真二：${f.minutesBefore} 分钟压到 ${f.minutesAfter} 分钟，人次放大 ${squeeze.toFixed(1)} 倍`);
+  console.log('  → 四诊只剩问诊，方子开始重复；月度数据读作效率提升，年度数据读作复诊率下降。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/03-zhongyi-guanli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即报错或随之变化；本例为演算设定，不指向任何真实科室或个人。');
+  console.log('※ 本输出仅用于教学演示，不构成人事管理、绩效分配或劳动关系意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, facts, marginalScore, rxMargin };

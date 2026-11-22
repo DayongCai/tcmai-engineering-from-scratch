@@ -6,57 +6,51 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '03-zhongyi-guanli-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '03-zhongyi-guanli-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, CHAPTER, TITLE, read, facts, residentHomes, coverage, pooledDoses, priceGap } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const TEXT = read();
+const F = facts(TEXT);
+
+test('正文就在本章目录下，章号与标题对得上', () => {
+  assert.ok(fs.existsSync(DOC));
+  assert.ok(DOC.endsWith(path.join('chapters', '08-z38', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 8);
+  assert.ok(TEXT.startsWith('# 第 8 章'));
+  assert.strictEqual(TITLE, '医共体的牌子挂上了，中医馆里没有人会开方');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('家数、下派人数与剂数全部取自正文', () => {
+  assert.strictEqual(F.homes, 12);
+  assert.strictEqual(F.withDoctor, 9);
+  assert.strictEqual(F.dispatched, 6);
+  assert.strictEqual(F.shortageHomes, 3);
+  assert.strictEqual(F.shortagePct, 40);
+  assert.strictEqual(F.dosesPerHome, 30);
+  assert.strictEqual(F.priceGapLow, 1);
+  assert.strictEqual(F.priceGapHigh, 2);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('常驻能独立开方 3 家，能力覆盖率 25%，与建成率 100% 并列', () => {
+  assert.strictEqual(residentHomes(9, 6), 3);
+  assert.strictEqual(coverage(3, 12), 0.25);
+  assert.strictEqual(coverage(12, 12), 1);
+  assert.ok(Math.abs(coverage(12, 12) - coverage(3, 12) - 0.75) < 1e-9);
+  assert.throws(() => residentHomes(3, 6), /不能多于/);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('集中采购日剂数 360 剂，价差区间为一至两成', () => {
+  const pooled = pooledDoses(12, 30);
+  assert.strictEqual(pooled, 360);
+  const gap = priceGap(pooled, 1, 2);
+  assert.strictEqual(gap.low, 396);
+  assert.strictEqual(gap.high, 432);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
-});
-
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('脚本可运行，输出两个覆盖率与边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/03-zhongyi-guanli-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/08-z38/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /建成中医馆：12 家 → 100%/);
+  assert.match(out, /常驻能独立开方：3 家 → 25%/);
+  assert.match(out, /不构成政策解读、合规或投资意见/);
 });

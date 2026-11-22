@@ -6,57 +6,66 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '03-zhongyi-guanli-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '03-zhongyi-guanli-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, CHAPTER, TITLE, read, facts, marginalScore, rxMargin } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const TEXT = read();
+const F = facts(TEXT);
+
+test('正文就在本章目录下，章号与标题对得上', () => {
+  assert.ok(fs.existsSync(DOC));
+  assert.ok(DOC.endsWith(path.join('chapters', '04-z34', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 4);
+  assert.ok(TEXT.startsWith('# 第 4 章'));
+  assert.strictEqual(TITLE, '科主任的两套权威，一套来自疗效，一套来自表格');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('方案权重与行为数据全部取自正文', () => {
+  assert.strictEqual(F.wIncome, 60);
+  assert.strictEqual(F.wVisits, 25);
+  assert.strictEqual(F.wResearch, 15);
+  assert.strictEqual(F.wIncome + F.wVisits + F.wResearch, 100);
+  assert.strictEqual(F.rxYear1, 41);
+  assert.strictEqual(F.rxPeak, 58);
+  assert.strictEqual(F.rxFall, 44);
+  assert.strictEqual(F.minutesBefore, 8);
+  assert.strictEqual(F.minutesAfter, 5);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('零加成下饮片的边际得分为零，检查组为正——方案自己选出了行为', () => {
+  const base = { income: 675000, visits: 7500, research: 100 };
+  const sRx = marginalScore(F, base, { income: 0, visitDelta: 0 });
+  const sCheck = marginalScore(F, base, { income: 200, visitDelta: 0 });
+  assert.strictEqual(sRx, 0);
+  assert.ok(sCheck > 0, String(sCheck));
+  assert.ok(sCheck > sRx * 1 + 1e-12);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('饮片按帖数给固定劳务补贴后，边际得分由零转正', () => {
+  assert.strictEqual(rxMargin(14, 1.5), 21);
+  const base = { income: 675000, visits: 7500, research: 100 };
+  const sRx = marginalScore(F, base, { income: 21, visitDelta: 0 });
+  assert.ok(sRx > 0, String(sRx));
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('饮片使用率回退幅度接近提升幅度的八成', () => {
+  const gain = F.rxPeak - F.rxYear1;
+  const fall = F.rxPeak - F.rxFall;
+  assert.strictEqual(gain, 17);
+  assert.strictEqual(fall, 14);
+  assert.ok(fall / gain > 0.8 && fall / gain < 0.85, String(fall / gain));
+  assert.strictEqual(F.rxFall - F.rxYear1, 3);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('8 分钟压到 5 分钟，人次放大 1.6 倍', () => {
+  assert.strictEqual(F.minutesBefore / F.minutesAfter, 1.6);
+});
+
+test('脚本可运行，输出权重、边际得分与边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/03-zhongyi-guanli-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/04-z34/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /边际得分/);
+  assert.match(out, /饮片使用率的回退/);
+  assert.match(out, /现算/);
+  assert.match(out, /不构成人事管理、绩效分配/);
 });

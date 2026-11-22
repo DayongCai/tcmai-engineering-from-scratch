@@ -5,58 +5,63 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { DOC, CHAPTER, TITLE, read, analyze } = require('./main.js');
 
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-zhishishu', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-zhishishu', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const A = analyze(read());
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文就在本章目录下，章号与标题与正文首行一致', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '03-j3', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 3);
+  assert.ok(read().startsWith('# 第 ' + CHAPTER + ' 章 · ' + TITLE), '正文首行与章题不一致');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('五行：五节点、生五对、克五对，合计十条边', () => {
+  assert.strictEqual(A.sheng.length, 5);
+  assert.strictEqual(A.ke.length, 5);
+  assert.strictEqual(A.wuxingEdges, 10);
+  assert.ok(A.sheng.includes('木生火') && A.ke.includes('木克土'), '生克对读错了');
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('乘侮若各建一类边，边数按有序对与两式算出，恰好是正文所说的数十条', () => {
+  assert.strictEqual(A.chengwuIfSeparate, 5 * 4 * 2);
+  assert.strictEqual(A.chengwuIfSeparate, 40);
+  assert.ok(A.chengwuIfSeparate > A.wuxingEdges, '乘侮边数应远多于生克边数');
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('十二经流注链十二个节点且闭环，表里对数正好是一半', () => {
+  assert.strictEqual(A.chain.length, 12);
+  assert.strictEqual(A.chain[0], '手太阴肺经');
+  assert.strictEqual(A.chain[11], '足厥阴肝经');
+  assert.strictEqual(A.chainClosed, true);
+  const liuzhu = A.meridianTypes.find((x) => x.type === 'meridian_liuzhu');
+  const biaoli = A.meridianTypes.find((x) => x.type === 'meridian_biaoli');
+  assert.strictEqual(liuzhu.count, A.chain.length);
+  assert.strictEqual(biaoli.count, liuzhu.count / 2);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('六经六值、证据等级六级，等级决定用途写在正文里', () => {
+  assert.strictEqual(A.sixMeridians.length, 6);
+  assert.deepStrictEqual(A.evidence, ['A', 'B', 'C', 'D', 'E', 'F']);
+  assert.strictEqual(A.evidenceDecidesUse, true);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('病证单元四个侧面齐全，两套资料重叠 13/104', () => {
+  assert.deepStrictEqual(A.sides, ['病侧', '证侧', '中缝', '树位']);
+  assert.strictEqual(A.overlapHit.same, 13);
+  assert.strictEqual(A.overlapHit.total, 104);
+  assert.ok(A.overlapHit.same < A.overlapHit.total, '重叠数应小于总数');
+});
+
+test('编码不可猜：正文写明离线时标「未能核实」', () => {
+  assert.strictEqual(A.noCodeGuess, true);
+});
+
+test('脚本可运行，输出带现算口径与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-zhishishu\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/03-j3/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /均从本章 docs\/zh\.md 现算/);
+  assert.match(out, /不构成诊断或用药建议/);
+  assert.ok(out.includes('生 ' + A.sheng.length + ' 对'), '输出里的生克对数与现算不一致');
 });

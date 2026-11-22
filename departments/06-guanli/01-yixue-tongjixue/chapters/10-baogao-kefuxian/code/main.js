@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 医学统计学 · 第 10 章 统计报告的规范与可复现：本章统计口径
- * 课程: departments/06-guanli/01-yixue-tongjixue/chapters/10-baogao-kefuxian/docs/zh.md
- * 数据: standards/01-yixue-tongjixue/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/01-yixue-tongjixue/chapter-map.json（课程章 → 教材单元号）
+ * 医学统计学 · 第 10 章 报告的价值，在于别人能照着重算一遍
+ * 课程正文: departments/06-guanli/01-yixue-tongjixue/chapters/10-baogao-kefuxian/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 从正文抓出标准化差值 0.6、α=0.05、把握度 0.8 与失访 20%，现算每组样本量，
+ * 并把正文里的 43.6、44、55 逐项对账；再复算百分比反算例数（65.0% × 60）与
+ * 摘要里的 40/60、25/60 两个率。
  */
 
 'use strict';
@@ -15,87 +14,79 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '01-yixue-tongjixue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/01-yixue-tongjixue/units.json —— 章节目录是否已脱离仓库？');
+const DOC_PATH = path.join(__dirname, '..', 'docs', 'zh.md');
+
+function readDoc() {
+  return fs.readFileSync(DOC_PATH, 'utf8');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '01-yixue-tongjixue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '01-yixue-tongjixue', 'chapter-map.json');
-const CHAPTER = '10';
-const SLUG = '10-baogao-kefuxian';
+const Z_ALPHA_TWO_SIDED = 1.959963984540054;
+const Z_POWER_80 = 0.8416212335729143;
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 两组均数比较：n/组 = 2(z_{1−α/2}+z_{1−β})² / d² */
+function sampleSizePerGroup(d, alpha = 0.05, power = 0.8) {
+  const zA = alpha === 0.05 ? Z_ALPHA_TWO_SIDED : null;
+  const zB = power === 0.8 ? Z_POWER_80 : null;
+  if (zA === null || zB === null) throw new Error('本脚本只实现 α=0.05、把握度 0.8 的情形');
+  return (2 * (zA + zB) ** 2) / (d * d);
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function inflateForDropout(n, dropout) {
+  return n / (1 - dropout);
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function compute(doc) {
+  const d = Number((doc.match(/检出\s*([\d.]+)\s*个标准差的组间差异/) || [])[1]);
+  const dropout = Number((doc.match(/预计失访\s*(\d+)%/) || [])[1]) / 100;
+  const alpha = Number((doc.match(/双侧 α=([\d.]+)/) || [])[1] || 0.05);
+  const raw = sampleSizePerGroup(d, alpha, 0.8);
+  const rounded = Math.ceil(raw);
+  const inflated = inflateForDropout(rounded, dropout);
+  const pctExample = {
+    rate: Number((doc.match(/报告\s*(\d+\.\d+)%\s*且\s*n=(\d+)/) || [])[1] || 65.0) / 100,
+    n: Number((doc.match(/报告\s*\d+\.\d+%\s*且\s*n=(\d+)/) || [])[1] || 60),
+  };
+  const crossMatch = doc.match(/(\d+)\/60\s*与\s*(\d+)\/60/);
+  const cross = [
+    { label: '试验组', a: crossMatch ? Number(crossMatch[1]) : 40, n: 60 },
+    { label: '对照组', a: crossMatch ? Number(crossMatch[2]) : 25, n: 60 },
+  ];
+  return { d, dropout, alpha, raw, rounded, inflated, pctExample, cross,
+    expectedCount: pctExample.rate * pctExample.n };
+}
+
+function assertDocNumbers(doc, r) {
+  const out = [];
+  const ok = (cond, label) => { if (!cond) throw new Error(`正文对账失败：${label}`); out.push(label); };
+  ok(Math.abs(r.d - 0.6) < 1e-9, '标准化差值 d=0.6');
+  ok(Math.abs(r.raw - 43.6) < 0.05 && doc.includes('43.6'), `每组 ${r.raw.toFixed(1)} 例`);
+  ok(r.rounded === 44 && doc.includes('44 例/组'), '向上取整 44 例/组');
+  ok(Math.abs(r.inflated - 55) < 1e-9 && doc.includes('44/0.8=55'), '含 20% 失访后 55 例/组');
+  ok(Math.abs(r.expectedCount - 39) < 1e-9 && doc.includes('反算应得 39 例'), '65.0% × 60 反算 39 例');
+  ok(Math.abs(r.cross[0].a / r.cross[0].n - 40 / 60) < 1e-12 && doc.includes('40/60'), '摘要 66.7% 对应 40/60');
+  ok(Math.abs(r.cross[1].a / r.cross[1].n - 25 / 60) < 1e-12 && doc.includes('25/60'), '对照组 41.7% 对应 25/60');
+  ok(Math.abs(1 / Math.sqrt(20) - 0.2236) < 0.0001 && doc.includes('0.22 倍'), 'n=20 时标准误是标准差的 0.22 倍');
+  return out;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`医学统计学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const doc = readDoc();
+  const r = compute(doc);
+  console.log('医学统计学 · 第 10 章 报告的价值，在于别人能照着重算一遍');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`输入：d=${r.d}，α=${r.alpha}（双侧），把握度 0.8，预计失访 ${(r.dropout * 100).toFixed(0)}%`);
+  console.log(`每组原始例数 ${r.raw.toFixed(1)} → 取整 ${r.rounded} → 含失访 ${r.inflated.toFixed(0)} 例/组`);
+  console.log(`百分比反算：${(r.pctExample.rate * 100).toFixed(1)}% × n=${r.pctExample.n} → ${r.expectedCount.toFixed(0)} 例`);
+  console.log(`摘要跨处一致：40/60=${((40 / 60) * 100).toFixed(1)}%，25/60=${((25 / 60) * 100).toFixed(1)}%`);
+  console.log(`n=20 时标准误/标准差 = ${(1 / Math.sqrt(20)).toFixed(3)}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  for (const line of assertDocNumbers(doc, r)) console.log(`  ✓ ${line}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/01-yixue-tongjixue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('结论：样本量四个输入缺一不可；表内加减、百分比反算、跨处一致是交稿前最便宜的自查。');
+  console.log('※ 数字由本章正文参数现算，正文改动后重跑即可发现对不上。');
+  console.log('※ 教学示意数据，不构成研究结论或临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, sampleSizePerGroup, inflateForDropout, compute, DOC_PATH };
