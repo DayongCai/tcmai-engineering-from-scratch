@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 3903967,
+    "gapWithBodyChars": 3658790,
     "gapNoBody": 0
   },
   "totals": {
@@ -23382,9 +23382,9 @@
           "hours": 36,
           "body": {
             "chapters": 6,
-            "chars": 108622
+            "chars": 20797
           },
-          "note": "教学章已有正文（6 章 / 10.9 万字），未接教材出版线"
+          "note": "教学章已有正文（6 章 / 2.1 万字），未接教材出版线"
         },
         {
           "slug": "07-zhongyi-jiaoyu-xue",
@@ -23394,9 +23394,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 111012
+            "chars": 28443
           },
-          "note": "教学章已有正文（8 章 / 11.1 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.8 万字），未接教材出版线"
         },
         {
           "slug": "08-jiankang-fuwu-guanli",
@@ -23442,9 +23442,9 @@
           "hours": 36,
           "body": {
             "chapters": 6,
-            "chars": 50316
+            "chars": 22973
           },
-          "note": "教学章已有正文（6 章 / 5.0 万字），未接教材出版线"
+          "note": "教学章已有正文（6 章 / 2.3 万字），未接教材出版线"
         },
         {
           "slug": "15-zhongyi-guojijiaoyu",
@@ -23454,9 +23454,9 @@
           "hours": 36,
           "body": {
             "chapters": 6,
-            "chars": 69426
+            "chars": 21986
           },
-          "note": "教学章已有正文（6 章 / 6.9 万字），未接教材出版线"
+          "note": "教学章已有正文（6 章 / 2.2 万字），未接教材出版线"
         }
       ]
     },
