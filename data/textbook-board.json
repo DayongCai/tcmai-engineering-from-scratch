@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 1762833,
+    "gapWithBodyChars": 1686528,
     "gapNoBody": 0
   },
   "totals": {
@@ -23624,9 +23624,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 119435
+            "chars": 43130
           },
-          "note": "教学章已有正文（10 章 / 11.9 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.3 万字），未接教材出版线"
         }
       ]
     },
