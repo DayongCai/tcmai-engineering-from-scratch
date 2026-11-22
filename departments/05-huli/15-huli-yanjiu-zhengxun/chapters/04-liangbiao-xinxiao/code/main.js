@@ -1,13 +1,9 @@
 #!/usr/bin/env node
 /**
- * 护理研究与循证护理 · 第 4 章 量表的选择与信效度：本章统计口径
- * 课程: departments/05-huli/15-huli-yanjiu-zhengxun/chapters/04-liangbiao-xinxiao/docs/zh.md
- * 数据: standards/huli-yanjiu-zhengxun/units.json（8 单元层，每单元带三辨与四位面词频）
- * 取数: standards/huli-yanjiu-zhengxun/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
- *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 护理研究与循证护理 · 第 4 章 量表的选择与信效度
+ * 正文: chapters/04-liangbiao-xinxiao/docs/zh.md
+ * 做法: 从正文解析节、表、信度三种与效度五种，并复算题面里的换算与信度变化。数字不手打。
+ * 依赖: 仅 Node.js 标准库。
  */
 
 'use strict';
@@ -15,87 +11,128 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'huli-yanjiu-zhengxun', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const TITLE = '量表的选择与信效度';
+
+function docText() {
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function sections(text) {
+  const marks = [...text.matchAll(/^## (.+)$/gm)];
+  return marks.map((m, i) => {
+    const start = m.index + m[0].length;
+    const end = i + 1 < marks.length ? marks[i + 1].index : text.length;
+    return { title: m[1].trim(), body: text.slice(start, end) };
+  });
+}
+
+function tables(text) {
+  const out = [];
+  let cur = null;
+  for (const raw of text.split('\n')) {
+    const line = raw.trim();
+    if (!line.startsWith('|')) { cur = null; continue; }
+    if (!cur) { cur = []; out.push(cur); }
+    const cells = line.replace(/^\|/, '').replace(/\|$/, '').split('|').map((s) => s.trim());
+    if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue;
+    cur.push(cells);
   }
-  throw new Error('没找到 standards/huli-yanjiu-zhengxun/units.json —— 章节目录是否已脱离仓库？');
+  return out.filter((t) => t.length > 0);
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'huli-yanjiu-zhengxun', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'huli-yanjiu-zhengxun', 'chapter-map.json');
-const CHAPTER = '4';
-const SLUG = '04-liangbiao-xinxiao';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function leads(body) {
+  return [...body.matchAll(/^\*\*([^*]+)\*\*/gm)]
+    .map((m) => m[1].replace(/^[一二三四五六七八九十]+是[，、]?\s*/, '').replace(/[。：:]\s*$/, '').trim())
+    .filter(Boolean);
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function count(text, term) {
+  return text.split(term).length - 1;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/**
+ * 题面算术：两表刻度不同，相差「乙表十分之一的刻度跨度」到底是多少分；
+ * 一致人数 = 总人数 − 给出不同结论的人数；反向条目占全部条目的比例。
+ * 任何一项对不上，说明正文被改过而这里没跟上。
+ */
+function problemArithmetic(text) {
+  const m = /\*\*PROBLEM:\*\*([\s\S]*?)\n\n/.exec(text);
+  const block = m ? m[1] : '';
+  const num = (re) => {
+    const hit = re.exec(block);
+    return hit ? Number(hit[1]) : null;
+  };
+  const people = num(/同一批\s*(\d+)\s*人/);
+  const aMax = num(/甲表总分\s*0\s*至\s*(\d+)/);
+  const bMax = num(/乙表总分\s*0\s*至\s*(\d+)/);
+  const disagreed = num(/有\s*(\d+)\s*人两表相差/);
+  const gap = num(/相差\s*(\d+)\s*分及以上/);
+  const maxGap = num(/最大差\s*(\d+)\s*分/);
+  const items = num(/(\d+)\s*个条目里有\s*\d+\s*条是反向计分/);
+  const reverse = num(/\d+\s*个条目里有\s*(\d+)\s*条是反向计分/);
+  const alphaBefore = num(/内部一致性系数从不足\s*([\d.]+)/);
+  const alphaAfter = num(/升到\s*([\d.]+)\s*以上/);
+  return {
+    people,
+    scale: { aMax, bMax, factor: aMax !== null && bMax !== null ? aMax / bMax : null },
+    disagreed,
+    maxGap,
+    agreed: people === null || disagreed === null ? null : people - disagreed,
+    gapThreshold: bMax === null ? null : bMax / 10,
+    gapIsTenth: gap !== null && bMax !== null && gap === bMax / 10,
+    items,
+    reverse,
+    reverseShare: items === null || reverse === null ? null : reverse / items,
+    alphaBefore,
+    alphaAfter,
+    alphaDelta: alphaBefore === null || alphaAfter === null ? null : alphaAfter - alphaBefore,
+  };
 }
 
-function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`护理研究与循证护理 · 第 ${CHAPTER} 章 ${cm.title}`);
-  console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
-  console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/huli-yanjiu-zhengxun/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+function analyze() {
+  const text = docText();
+  const secs = sections(text);
+  const tbs = tables(text);
+  const reliabilityTable = tbs.find((t) => t[0] && t[0][0] === '类型' && t[0].includes('常用指标'));
+  const validityTable = tbs.find((t) => t[0] && t[0][0] === '类型' && t[0].includes('怎么取证'));
+  const failSec = secs.find((s) => s.title.includes('失效模式'));
+  const citations = [...new Set([...text.matchAll(/《([^》]+)》/g)].map((x) => x[1]))];
+  return {
+    title: TITLE,
+    hanzi: (text.match(/[\u4e00-\u9fff]/g) || []).length,
+    sections: secs.map((s) => s.title),
+    tables: tbs.length,
+    reliability: reliabilityTable ? reliabilityTable.slice(1).map((r) => r[0]) : [],
+    validity: validityTable ? validityTable.slice(1).map((r) => r[0]) : [],
+    failModes: failSec ? leads(failSec.body) : [],
+    citations,
+    problem: problemArithmetic(text),
+    thresholds: { 群体: count(text, '0.70'), 条目: count(text, '0.78'), 量表: count(text, '0.90') },
+  };
 }
 
-if (require.main === module) main();
+function report(a) {
+  const p = a.problem;
+  console.log(`护理研究与循证护理 · 第 4 章 ${a.title}`);
+  console.log('');
+  console.log(`正文 ${a.hanzi.toLocaleString('en-US')} 汉字，${a.sections.length} 节，${a.tables} 张表。`);
+  console.log(`节序：${a.sections.join(' → ')}`);
+  console.log('');
+  console.log(`题面算术：同一批 ${p.people} 人，${p.disagreed} 人两表相差 ${p.gapThreshold} 分及以上（乙表 ${p.scale.bMax} 分刻度的十分之一，${p.gapIsTenth ? '对得上' : '对不上'}）`);
+  console.log(`  一致人数 = ${p.people} − ${p.disagreed} = ${p.agreed}；最大差 ${p.maxGap} 分`);
+  console.log(`  甲表 ${p.scale.aMax} 分对齐乙表 ${p.scale.bMax} 分，折算系数 = ${p.scale.factor}`);
+  console.log(`  反向计分 ${p.reverse}/${p.items} 条，占 ${(p.reverseShare * 100).toFixed(1)}%`);
+  console.log(`  修正反向计分后，内部一致性从 ${p.alphaBefore} 以下升到 ${p.alphaAfter} 以上，增幅 ${p.alphaDelta.toFixed(2)}`);
+  console.log('');
+  console.log(`信度 ${a.reliability.length} 种：${a.reliability.join(' / ')}`);
+  console.log(`效度 ${a.validity.length} 种（按证据强度递增）：${a.validity.join(' → ')}`);
+  console.log(`失效模式 ${a.failModes.length} 条：${a.failModes.join('、')}`);
+  console.log(`引书 ${a.citations.length} 部：${a.citations.map((c) => `《${c}》`).join('')}`);
+  console.log('');
+  console.log('※ 以上结构由本章正文现算；阈值以工具原版手册与目标期刊要求为准，不构成医学意见。');
+}
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+if (require.main === module) report(analyze());
+
+module.exports = { DOC, TITLE, docText, sections, tables, leads, count, problemArithmetic, analyze };

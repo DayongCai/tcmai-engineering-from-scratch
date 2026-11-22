@@ -1,101 +1,141 @@
 #!/usr/bin/env node
 /**
- * 中医临床护理学 · 第 17 章 延续护理与社区康复护理：本章统计口径
- * 课程: departments/05-huli/25-zhongyi-linchuang-huli/chapters/17-yanxu-shequ/docs/zh.md
- * 数据: standards/zhongyi-linchuang/units.json（18 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-linchuang/chapter-map.json（课程章 → 教材单元号）
+ * 中医临床护理学 · 第 17 章 延续护理与社区康复护理：正文自查
+ * 正文: departments/05-huli/25-zhongyi-linchuang-huli/chapters/17-yanxu-shequ/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 只读正文现算：汉字数、分节、表格行数、关键术语出现次数；再把正文自称的
+ * 结构数字（几项、几类、几列）与对应表格或清单的实测条数对账。手法同本章：
+ * 先看数与表是否对得上，再谈结论。正文一改，数字随之改变，不手打。
  */
-
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-linchuang', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/zhongyi-linchuang/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-linchuang', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-linchuang', 'chapter-map.json');
-const CHAPTER = '17';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 17;
 const SLUG = '17-yanxu-shequ';
+const TITLE = '延续护理与社区康复护理';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function readDoc() {
+  return fs.readFileSync(DOC, 'utf8');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function cells(line) {
+  return line.trim().replace(/^\|/, '').replace(/\|\s*$/, '').split('|').map((s) => s.trim());
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function parseTables(doc) {
+  const lines = doc.split(/\r?\n/);
+  const out = [];
+  for (let i = 0; i < lines.length; i += 1) {
+    if (!/^\s*\|/.test(lines[i])) continue;
+    if (!/^\s*\|[\s:|-]+\|\s*$/.test(lines[i + 1] || '')) continue;
+    const header = cells(lines[i]);
+    const rows = [];
+    let j = i + 2;
+    while (j < lines.length && /^\s*\|/.test(lines[j])) { rows.push(cells(lines[j])); j += 1; }
+    out.push({ header, rows, text: header.join(' ') + ' ' + rows.map((r) => r.join(' ')).join(' ') });
+    i = j - 1;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function sections(doc) {
+  return doc.split(/\r?\n/).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+}
+
+function listCount(doc, headingRe) {
+  let inside = false;
+  let n = 0;
+  for (const line of doc.split(/\r?\n/)) {
+    if (/^##\s+/.test(line)) { inside = headingRe.test(line); continue; }
+    if (inside && /^\d+\.\s+/.test(line)) n += 1;
+  }
+  return n;
+}
+
+/** 探针：claim 是从正文 PROBLEM 段里读出的自称数字，measured 是表格/清单实测条数 */
+const PROBES = [
+  { id: 'discharge-six', label: '六项出院评估', kind: 'table', find: /照护者/, claim: /(\d+) 项出院评估/ },
+  { id: 'home-four', label: '四类家庭调护', kind: 'table', find: /导引与康复/, claim: /(\d+) 类家庭调护/ },
+  { id: 'follow-three', label: '三个随访节点', kind: 'table', find: /时间口径/, claim: /(\d+) 个随访节点/ },
+  { id: 'handover-pack', label: '交接包六项', kind: 'list', find: /交接包/, claim: /最小信息集，(.)项/, cn: true },
+  { id: 'failures', label: '四种失效', kind: 'table', find: /宣教单替代教会/ }
+];
+
+/** 关键术语：只在正文里数出现次数，不预设应有多少 */
+const TERMS = ['演示', '触发点', '交接包', '照护者', '上门'];
+
+const CN = { '一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6, '七': 7, '八': 8, '九': 9, '十': 10 };
+
+function cnNum(s) {
+  if (Object.prototype.hasOwnProperty.call(CN, s)) return CN[s];
+  if (s.length === 2 && s[0] === '十') return 10 + CN[s[1]];
+  if (s.length === 2 && s[1] === '十') return CN[s[0]] * 10;
+  return NaN;
+}
+
+function probeValue(doc, p) {
+  if (p.kind === 'list') return listCount(doc, p.find);
+  const t = parseTables(doc).find((tb) => p.find.test(tb.text));
+  return t ? t.rows.length : 0;
+}
+
+function measure(doc) {
+  const tables = parseTables(doc);
+  const terms = {};
+  for (const t of TERMS) terms[t] = doc.split(t).length - 1;
+  const probes = PROBES.map((p) => {
+    const measured = probeValue(doc, p);
+    let declared = null;
+    if (p.claim) {
+      const m = doc.match(p.claim);
+      if (m) declared = p.cn ? cnNum(m[1]) : Number(m[1]);
+    }
+    return { id: p.id, label: p.label, measured, declared, agree: declared === null ? null : declared === measured };
+  });
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title: TITLE,
+    hanzi: (doc.match(/[\u4e00-\u9fff]/g) || []).length,
+    sections: sections(doc),
+    tables: tables.length,
+    tableRows: tables.reduce((a, b) => a + b.rows.length, 0),
+    terms,
+    probes,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医临床护理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const doc = readDoc();
+  const m = measure(doc);
+  console.log(`中医临床护理学 · 第 ${m.chapter} 章 ${m.title}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文 ${m.hanzi.toLocaleString('en-US')} 汉字 · ${m.sections.length} 节 · ${m.tables} 张表（${m.tableRows} 行）`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  for (const s of m.sections) console.log(`  · ${s}`);
+  console.log('');
+  console.log('结构对账（正文自称 vs 表格/清单实测）：');
+  for (const p of m.probes) {
+    const head = p.declared === null
+      ? `  ${p.label}：实测 ${p.measured} 条`
+      : `  ${p.label}：正文称 ${p.declared}，实测 ${p.measured} ${p.agree ? '一致' : '不一致'}`;
+    console.log(head);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  const checked = m.probes.filter((p) => p.declared !== null);
+  const bad = checked.filter((p) => !p.agree);
+  console.log(`  → ${checked.length} 项自称结构数字，${checked.length - bad.length} 项与实测一致`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('术语出现次数（正文原词计数）：');
+  for (const [k, v] of Object.entries(m.terms)) console.log(`  ${k}：${v}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-linchuang/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字全部来自本章正文；改正文后重跑即可复现，不手打。');
+  console.log('※ 本输出为教学自查，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { measure, readDoc, parseTables, sections, listCount, CHAPTER, SLUG, TITLE, PROBES, TERMS };

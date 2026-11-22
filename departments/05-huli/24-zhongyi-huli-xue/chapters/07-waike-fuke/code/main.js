@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中药化学 · 第 7 章 外科与妇科病证的辨证施护：本章统计口径
- * 课程: departments/05-huli/24-zhongyi-huli-xue/chapters/07-waike-fuke/docs/zh.md
- * 数据: standards/zhongyi-huli/units.json（55 单元层，每单元带三辨=结构特征/理化性质/提分与检识 与 四位面=生源途径 词频）
- * 取数: standards/zhongyi-huli/chapter-map.json（课程章 → 教材单元号）
+ * 中医护理学 · 第 7 章 外科与妇科病证的辨证施护 —— 正文口径自测
+ * 正文: chapters/07-waike-fuke/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 只读本课正文：汉字、节、表、段落、词频全部现算，不读教材单元层，也不手打数字。
+ * 正文里引用的教材原文计数由 scripts/huli_chapter_stats.py 从 standards 复算，
+ * 口径与本脚本不同（这里数的是本课正文），两者不互相替代。
  */
 
 'use strict';
@@ -15,107 +14,78 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-huli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/zhongyi-huli/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const TITLE = '第 7 章 外科与妇科病证的辨证施护';
+const KEYWORDS = ["皮肤","体位","禁忌","隐私","观察","坐浴"];
+
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+/** 去掉引用块（MOTTO/PROBLEM 段）后的正文行，用于数骨架 */
+const bodyLines = (text) => text.split(/\r?\n/).filter((line) => !/^\s*>/.test(line));
+
+const hanzi = (text) => (text.match(HANZI) || []).length;
+
+const hits = (text, word) => String(text).split(word).length - 1;
+
+/** 节（## 标题）、表（分隔行）、段落（既非标题也非表格的正文行） */
+function outline(text) {
+  const lines = bodyLines(text);
+  const sections = lines.filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+  const tables = lines.filter((l) => /^\|[\s:|-]+\|\s*$/.test(l)).length;
+  const paragraphs = lines.filter(
+    (l) => l.trim() && !/^#/.test(l) && !/^\|/.test(l) && !/^\s*[-*]\s/.test(l)
+  ).length;
+  return { sections, tables, paragraphs };
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-huli', 'units.json');
-const CHAPTER = '7';
-const KEYS = ['7.1.2'];
-
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-
-function chapterUnits(units) {
-  return units.units
-    .filter((u) => KEYS.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 词频：按 KEYWORDS 逐词计出，降序；同数按字面序稳定 */
+function freq(text = readDoc(), words = KEYWORDS) {
+  return words
+    .map((word) => [word, hits(text, word)])
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-Hans-CN'));
 }
 
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) {
-    const src = (u.measure && u.measure[field]) || {};
-    for (const [k, v] of Object.entries(src)) out[k] = (out[k] || 0) + v;
-  }
-  return out;
-}
-
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
-
-function byBookSection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = `教材第${u.chapter}章`;
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
-
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
-
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
+function stats() {
+  const text = readDoc();
+  const o = outline(text);
+  const f = freq(text);
+  const total = hanzi(text);
+  const cjkOnly = text.replace(/\s/g, '').length;
   return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
+    title: TITLE,
+    hanzi: total,
+    sections: o.sections,
+    tables: o.tables,
+    paragraphs: o.paragraphs,
+    perSection: o.sections.length ? Math.round(total / o.sections.length) : 0,
+    freq: f,
+    top: f[0],
+    bottom: f[f.length - 1],
+    cjkShare: cjkOnly ? total / cjkOnly : 0,
   };
 }
 
-/** 取穴与刺灸的操作词：本章正文里出现多少处「定位／分寸／直刺／灸」类的可执行指令 */
-function hands(list) {
-  const WORDS = ['定位', '骨度', '分寸', '同身寸', '直刺', '斜刺', '平刺', '艾灸', '温针灸', '留针', '禁针', '禁灸'];
-  const pairs = WORDS.map((w) => [w, list.reduce((a, u) => a + u.prose.split(w).length - 1, 0)]);
-  return Object.fromEntries(pairs).constructor === Object
-    ? pairs.filter(([, c]) => c).sort((a, b) => b[1] - a[1])
-    : pairs;
+function report() {
+  const s = stats();
+  console.log('═══ ' + s.title + ' ═══');
+  console.log(`正文 ${s.hanzi} 汉字 · ${s.sections.length} 节 · ${s.tables} 张表 · ${s.paragraphs} 段 · 平均 ${s.perSection} 字/节`);
+  console.log('汉字占非空白字符 ' + (s.cjkShare * 100).toFixed(1) + '%');
+  console.log('');
+  console.log('节标题：');
+  for (const sec of s.sections) console.log('  - ' + sec);
+  console.log('');
+  console.log('词频（正文出现次数）：');
+  for (const [word, n] of s.freq) console.log(`  ${word}：${n}`);
+  console.log('');
+  console.log(`最重的一词：${s.top[0]}（${s.top[1]} 次）；最轻的一词：${s.bottom[0]}（${s.bottom[1]} 次）`);
+  console.log('※ 教学统计口径：数字由本课正文 docs/zh.md 现算，改稿后重跑即可复现，不构成诊疗建议。');
 }
 
-module.exports = { CHAPTER, KEYS, load, chapterUnits, merge, rank, byBookSection, citations, shape, hands, sum };
+module.exports = { DOC, TITLE, KEYWORDS, readDoc, bodyLines, hanzi, hits, outline, freq, stats };
 
 if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  console.log('═══ 中药化学 · 第 7 章 外科与妇科病证的辨证施护 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按教材章：');
-  for (const sec of byBookSection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of rank(merge(list, 'views'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of rank(merge(list, 'levels'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  const c = citations(list);
-  console.log(`\n引书 ${c.books} 部 · 引用 ${c.total} 次 · 前三：${c.top.map(([n, k]) => `${n}(${k})`).join('、')}`);
-  console.log('\n操作词命中：' + hands(list).map(([w, k]) => `${w}×${k}`).join('  '));
-  for (const u of list) console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字`);
-  console.log('※ 教学样例：数字由 standards/zhongyi-huli/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
+  if (process.argv.includes('--json')) console.log(JSON.stringify(stats()));
+  else report();
 }

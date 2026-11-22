@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-gaishu",
-   "title": "中医临床护理学概述",
+   "title": "中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-gaishu/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-pinggu-chengxu",
-   "title": "临床护理评估与护理程序",
+   "title": "护理评估的价值在于把「说不清」变成可复核的记录",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-pinggu-chengxu/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-jishu-anquan",
-   "title": "临床护理常用技术应用与安全",
+   "title": "中医护理技术的安全线画在施术前，不在出事之后",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-jishu-anquan/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-zhongxiyi-jiehe",
-   "title": "中西医结合护理的思路与方法",
+   "title": "中西医结合护理的难点，是两套语言在同一张记录上对账",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-zhongxiyi-jiehe/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-feixi",
-   "title": "肺系病证临床护理",
+   "title": "肺系护理的第一件事不是止咳，是分清痰在哪一头、气还剩多少",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-feixi/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-xinxi",
-   "title": "心系病证临床护理",
+   "title": "心系护理的分界，在「悸」有没有伴随失代偿的信号",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-xinxi/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-piwei-gandan",
-   "title": "脾胃与肝胆病证临床护理",
+   "title": "脾胃肝胆的护理窗口在二便与腹痛，不在胃口好坏",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-piwei-gandan/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-shenxi-qixue",
-   "title": "肾系与气血津液病证临床护理",
+   "title": "水肿与血证的护理，量的是出量，不是感觉",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-shenxi-qixue/docs/zh.md",
@@ -77,7 +77,7 @@
   {
    "n": 9,
    "slug": "09-naoxi-shenzhi",
-   "title": "脑系与神志病证临床护理",
+   "title": "脑系护理的每次交接，都要能回答「比上一班好还是坏」",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/09-naoxi-shenzhi/docs/zh.md",
@@ -86,7 +86,7 @@
   {
    "n": 10,
    "slug": "10-waike",
-   "title": "外科病证临床护理",
+   "title": "外科护理的分寸，在画出红肿的边界、看清脓的性状",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/10-waike/docs/zh.md",
@@ -95,7 +95,7 @@
   {
    "n": 11,
    "slug": "11-gushang",
-   "title": "骨伤科病证临床护理",
+   "title": "骨伤护理的报警器长在末梢，不在疼痛上",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/11-gushang/docs/zh.md",
@@ -104,7 +104,7 @@
   {
    "n": 12,
    "slug": "12-fuchanke",
-   "title": "妇产科病证临床护理",
+   "title": "妇产护理要先分清「该来多少」与「来得太快」",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/12-fuchanke/docs/zh.md",
@@ -113,7 +113,7 @@
   {
    "n": 13,
    "slug": "13-erke",
-   "title": "儿科病证临床护理",
+   "title": "儿科护理靠看「变没变」，不靠听「说不说」",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/13-erke/docs/zh.md",
@@ -122,7 +122,7 @@
   {
    "n": 14,
    "slug": "14-wuguan-jizhong",
-   "title": "五官科与急危重症临床护理",
+   "title": "急危重症的护理价值，全在最初的几个动作里",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/14-wuguan-jizhong/docs/zh.md",
@@ -131,7 +131,7 @@
   {
    "n": 15,
    "slug": "15-wenshu-xinxi",
-   "title": "临床护理文书与信息管理",
+   "title": "护理文书的效力，取决于它写的是事实还是结论",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/15-wenshu-xinxi/docs/zh.md",
@@ -140,7 +140,7 @@
   {
    "n": 16,
    "slug": "16-anquan-lunli",
-   "title": "临床护理安全、伦理与质量管理",
+   "title": "护理安全的成本，永远低于一次补救",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/16-anquan-lunli/docs/zh.md",
@@ -149,7 +149,7 @@
   {
    "n": 17,
    "slug": "17-yanxu-shequ",
-   "title": "延续护理与社区康复护理",
+   "title": "出院宣教不落地，等于把护理做完又退回原处",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/17-yanxu-shequ/docs/zh.md",
@@ -158,7 +158,7 @@
   {
    "n": 18,
    "slug": "18-pingtai",
-   "title": "中医临床护理学与教学平台",
+   "title": "中医临床护理的教学，考动作不如考判据",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/18-pingtai/docs/zh.md",

@@ -1,13 +1,10 @@
 #!/usr/bin/env node
 /**
- * 康复护理学 · 第 2 章 康复护理的理论基础：本章统计口径
+ * 康复护理学 · 第 2 章 可塑性有前提，不是一句安慰话：本章正文的自身统计
  * 课程: departments/05-huli/22-kangfu-huli-xue/chapters/02-lilun/docs/zh.md
- * 数据: standards/kangfu-huli/units.json（18 单元层，每单元带三辨与四位面词频）
- * 取数: standards/kangfu-huli/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 只读本章 docs/zh.md：汉字、小节、表格、分期数与四个阶段产出，全部现算。
  */
 
 'use strict';
@@ -15,87 +12,88 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'kangfu-huli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/kangfu-huli/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'kangfu-huli', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'kangfu-huli', 'chapter-map.json');
-const CHAPTER = '2';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 2;
 const SLUG = '02-lilun';
+const TITLE = '可塑性有前提，不是一句安慰话';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const ROMAN = ['Ⅰ', 'Ⅱ', 'Ⅲ', 'Ⅳ', 'Ⅴ', 'Ⅵ'];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function readDoc(file = DOC) {
+  return fs.readFileSync(file, 'utf8');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function countHanzi(text) {
+  return (text.match(HANZI) || []).length;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function sections(text) {
+  return text
+    .split(/\r?\n/)
+    .filter((line) => /^##\s+/.test(line))
+    .map((line) => line.replace(/^##\s+/, '').trim());
+}
+
+function tables(text) {
+  let blocks = 0;
+  let rows = 0;
+  for (const raw of text.split(/\r?\n/)) {
+    const line = raw.trim();
+    if (!line.startsWith('|')) continue;
+    rows += 1;
+    if (/^\|[\s:|-]+\|$/.test(line)) blocks += 1;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return { blocks, rows };
+}
+
+/** 分期数：正文列出的罗马数字期别（Ⅰ–Ⅵ） */
+function stageCount(text) {
+  return ROMAN.filter((r) => text.includes(r)).length;
+}
+
+/** 四个阶段产出：软瘫期「不恶化」、痉挛期「不固化」、恢复期「能用上」、后遗症期「不失能」 */
+function stageOutputs(text) {
+  const out = [];
+  for (const m of text.matchAll(/([\u4e00-\u9fff]{1,4})期护理的产出是「([\u4e00-\u9fff]{2,4})」/g)) {
+    out.push({ stage: `${m[1]}期`, output: m[2] });
+  }
+  return out;
+}
+
+function summarize(text = readDoc()) {
+  const secs = sections(text);
+  const tb = tables(text);
+  const stages = stageCount(text);
+  const outputs = stageOutputs(text);
+  return {
+    hanzi: countHanzi(text),
+    sections: secs,
+    tables: tb,
+    stages,
+    perStagePoints: 3,
+    cells: stages * 3,
+    outputs,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`康复护理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const s = summarize();
+  console.log(`康复护理学 · 第 ${CHAPTER} 章 ${TITLE}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文汉字 ${s.hanzi} 个 · 小节 ${s.sections.length} 节 · 表格 ${s.tables.blocks} 张 / ${s.tables.rows} 行`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('小节：');
+  s.sections.forEach((t, i) => console.log(`  ${i + 1}. ${t}`));
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`分期 ${s.stages} 期 × 每期 3 条要点（表现／护理重点／不能做）= ${s.cells} 格`);
+  console.log('各期产出：');
+  for (const o of s.outputs) console.log(`  ${o.stage} → ${o.output}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/kangfu-huli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 教学样例：数字由 docs/zh.md 现算，不手打；改正文后重跑即可复现。');
+  console.log('※ 本输出仅用于说明护理重点，不构成评定或训练依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, SLUG, TITLE, readDoc, countHanzi, sections, tables, stageCount, stageOutputs, summarize };

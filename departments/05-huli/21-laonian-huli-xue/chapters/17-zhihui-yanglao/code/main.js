@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 老年护理学 · 第 17 章 智慧养老与老年护理信息化：本章统计口径
+ * 老年护理学 · 第 17 章 智慧养老与老年护理信息化：正文自检脚本
  * 课程: departments/05-huli/21-laonian-huli-xue/chapters/17-zhihui-yanglao/docs/zh.md
- * 数据: standards/laonian-huli/units.json（18 单元层，每单元带三辨与四位面词频）
- * 取数: standards/laonian-huli/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 不引用任何外部数据表：节数、汉字数、表格行数、关键概念的出现次数与首见节，
+ * 全部由本章 docs/zh.md 现算。正文改动后重跑即得新数；手打的数字会随改稿静默过期。
  */
 
 'use strict';
@@ -15,87 +13,120 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'laonian-huli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/laonian-huli/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'laonian-huli', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'laonian-huli', 'chapter-map.json');
 const CHAPTER = '17';
 const SLUG = '17-zhihui-yanglao';
+const TITLE = '智慧养老与老年护理信息化';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+/** 本章要求学生能指着正文说清楚的判据（必须真出现在正文里，测试会核对） */
+const TERMS = [
+  { term: '报警疲劳', note: '误报多→响应慢→关掉→漏→追责' },
+  { term: '误报', note: '成本不是设备价格，是人力与信任' },
+  { term: '升级', note: '超时未响应自动升级，最能救命' },
+  { term: '最小字段集', note: '字段越多，填得越假' },
+  { term: '录入时点', note: '什么时候录比录什么更重要' },
+  { term: '留痕', note: '改记录要留原文、人、时间、理由' },
+  { term: '闭环', note: '分级、时限、升级、复盘' },
+  { term: '去标识化', note: '带教与对外交流的底线' }
+];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+const loadDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+const hanziOf = (s) => (String(s).match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function sections(doc) {
+  const out = [];
+  let cur = { title: '（题记与问题）', body: [] };
+  for (const line of doc.split('\n')) {
+    const m = /^##\s+(.+)$/.exec(line);
+    if (m) {
+      out.push({ title: cur.title, body: cur.body.join('\n') });
+      cur = { title: m[1].trim(), body: [] };
+    } else {
+      cur.body.push(line);
+    }
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  out.push({ title: cur.title, body: cur.body.join('\n') });
+  return out.map((s) => ({ ...s, hanzi: hanziOf(s.body) }));
+}
+
+function stats(doc) {
+  const lines = doc.split('\n');
+  return {
+    hanzi: hanziOf(doc),
+    sections: lines.filter((l) => /^##\s/.test(l)).length,
+    paras: doc.split(/\n{2,}/).filter((p) => p.trim() && !/^\|/.test(p.trim())).length,
+    tableRows: lines.filter((l) => /^\|/.test(l) && !/^\|[\s|:-]+\|?$/.test(l)).length
+  };
+}
+
+function termHits(doc, terms = TERMS) {
+  const secs = sections(doc);
+  return terms.map((t) => {
+    const count = doc.split(t.term).length - 1;
+    const seen = secs.find((s) => s.body.includes(t.term));
+    return { ...t, count, firstSection: seen ? seen.title : null };
+  });
+}
+
+/** 正文表格的数据行（去掉表头与分隔行），按出现顺序返回 */
+function actionRows(doc) {
+  const rows = [];
+  let header = null;
+  for (const line of doc.split('\n')) {
+    if (!/^\|/.test(line)) { header = null; continue; }
+    if (/^\|[\s|:-]+\|?$/.test(line)) continue;
+    if (!header) { header = line; continue; }
+    rows.push({ header, row: line });
+  }
+  return rows;
+}
+
+function run() {
+  const doc = loadDoc();
+  const s = stats(doc);
+  const hits = termHits(doc);
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title: TITLE,
+    stats: s,
+    sectionList: sections(doc).slice(1).map((x, i) => ({ no: i + 1, title: x.title, hanzi: x.hanzi })),
+    hits,
+    covered: hits.filter((h) => h.count > 0).length,
+    total: hits.length,
+    rows: actionRows(doc).length
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`老年护理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = run();
+  console.log(`老年护理学 · 第 ${r.chapter} 章 ${r.title}`);
+  console.log(`正文：chapters/${r.slug}/docs/zh.md`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`本章 ${r.stats.sections} 节 · ${r.stats.hanzi.toLocaleString('en-US')} 汉字 · ${r.stats.paras} 段 · 表格 ${r.stats.tableRows} 行`);
+  for (const s of r.sectionList) {
+    console.log(`  §${s.no} ${s.title}（${s.hanzi} 字）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
+  console.log(`判据落点（概念 → 出现次数 → 首见节）：${r.covered}/${r.total}`);
+  for (const h of r.hits) {
+    const flag = h.count > 0 ? '✓' : '✗';
+    console.log(`  ${flag} ${h.term} · ${h.count} 次 · ${h.firstSection || '正文未出现'} —— ${h.note}`);
   }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  const miss = r.hits.filter((h) => h.count === 0).map((h) => h.term);
+  if (miss.length) console.log(`  ! 正文缺少：${miss.join('、')} —— 先改正文，不要改这条清单`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  if (r.rows > 0) {
+    console.log(`表格动作行 ${r.rows} 行：逐行对照，缺列即为缺项。`);
+  } else {
+    console.log('本章无表格：判据分散在各节段，按「判据落点」逐条回正文核对。');
+  }
   console.log('');
-  console.log('※ 教学样例：数字由 standards/laonian-huli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章 docs/zh.md 现算，不手打；改稿后重跑即可复现。');
+  console.log('※ 本输出仅用于教学演示，不构成临床判断或分级护理依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { CHAPTER, SLUG, TITLE, DOC, TERMS, loadDoc, sections, stats, termHits, actionRows, run };

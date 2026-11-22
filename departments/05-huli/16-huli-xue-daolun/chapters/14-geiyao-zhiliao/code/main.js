@@ -1,121 +1,212 @@
-#!/usr/bin/env node
-/**
- * 中药化学 · 第 14 章 给药与治疗的护理：本章统计口径
- * 课程: departments/05-huli/16-huli-xue-daolun/chapters/14-geiyao-zhiliao/docs/zh.md
- * 数据: standards/huli-daolun/units.json（55 单元层，每单元带三辨=结构特征/理化性质/提分与检识 与 四位面=生源途径 词频）
- * 取数: standards/huli-daolun/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
- *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
- */
-
 'use strict';
+/**
+ * 护理学导论 · 第 14 章 给药与治疗的护理
+ *
+ *   node code/main.js
+ *
+ * 正文：departments/05-huli/16-huli-xue-daolun/chapters/14-geiyao-zhiliao/docs/zh.md
+ * 习题：chapters/14-geiyao-zhiliao/quiz.json
+ *
+ * 只读这两份文件，不引任何外部数据层。本章的小节数、六个格子的标目、
+ * 表格行数、关键词次数、习题的三段与接地，全部由正文现算；
+ * 正文改一个字，重跑就能看出是哪一项对不上。
+ */
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'huli-daolun', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const CHAPTER = 14;
+const SLUG = '14-geiyao-zhiliao';
+const TITLE = "给药与治疗的护理";
+
+/** 本章自己反复使用的词：次数由正文现算，不手填 */
+const TERMS = ["核对", "中断", "观察", "报告", "输血"];
+
+const HAN = /[\u3400-\u4dbf\u4e00-\u9fff]/;
+const chars = (s) => [...String(s || '')];
+const isHan = (ch) => HAN.test(ch);
+const hanzi = (s) => chars(s).filter(isHan).length;
+const count = (text, term) => (term ? String(text).split(term).length - 1 : 0);
+
+const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
+
+/** 正文头：标题、题记、问题、双根因 */
+function parseHead(text) {
+  const t = String(text);
+  const pick = (re) => ((t.match(re) || [, ''])[1] || '').trim();
+  const rootsRaw = pick(/^> \*\*双根因定位:\*\* (.+)$/m);
+  return {
+    title: pick(/^# (.+)$/m),
+    motto: pick(/^> \*\*MOTTO:\*\* (.+)$/m),
+    problem: pick(/^> \*\*PROBLEM:\*\* (.+)$/m),
+    rootsRaw,
+    roots: rootsRaw ? rootsRaw.split('+').map((s) => s.trim()).filter(Boolean) : [],
+  };
+}
+
+/** 小节：`## ` 到下一个 `## ` 之前，连同正文里加粗的标目 */
+function parseSections(text) {
+  const out = [];
+  let cur = null;
+  for (const line of String(text).split(/\r?\n/)) {
+    const h = /^## (.+)$/.exec(line);
+    if (h) {
+      cur = { heading: h[1].trim(), lines: [] };
+      out.push(cur);
+      continue;
+    }
+    if (cur) cur.lines.push(line);
   }
-  throw new Error('没找到 standards/huli-daolun/units.json —— 章节目录是否已脱离仓库？');
+  return out.map((s) => {
+    const body = s.lines.join('\n');
+    return {
+      heading: s.heading,
+      body,
+      hanzi: hanzi(body),
+      leads: [...body.matchAll(/^\*\*([^*\n]{2,40}?)。?\*\*/gm)].map((m) => m[1].trim()),
+    };
+  });
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'huli-daolun', 'units.json');
-const CHAPTER = '14';
-const KEYS = ['14.1.2'];
-
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-
-function chapterUnits(units) {
-  return units.units
-    .filter((u) => KEYS.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 表格：| 表头 | 分隔行 | 数据行… */
+function parseTables(text) {
+  const lines = String(text).split(/\r?\n/);
+  const tables = [];
+  for (let i = 0; i < lines.length; i += 1) {
+    if (!/^\|/.test(lines[i])) continue;
+    if (!/^\|[\s:|-]+\|$/.test(lines[i + 1] || '')) continue;
+    const header = lines[i].split('|').slice(1, -1).map((s) => s.trim());
+    const rows = [];
+    let j = i + 2;
+    while (j < lines.length && /^\|/.test(lines[j])) {
+      rows.push(lines[j].split('|').slice(1, -1).map((s) => s.trim()));
+      j += 1;
+    }
+    tables.push({ header, rows });
+    i = j - 1;
+  }
+  return tables;
 }
 
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
+/** 六格：**① 操作化定义。** 这一组标目是概念落成动作的骨架 */
+function parseCells(text) {
+  return [...String(text).matchAll(/\*\*([①②③④⑤⑥]) ([^*\n]{2,30}?)。\*\*/g)]
+    .map((m) => ({ mark: m[1], label: m[2].trim() }));
+}
 
-function merge(list, field) {
-  const out = {};
-  for (const u of list) {
-    const src = (u.measure && u.measure[field]) || {};
-    for (const [k, v] of Object.entries(src)) out[k] = (out[k] || 0) + v;
+/** 正文里的「……」：术语与判据都以这种形式出现，可逐条核对 */
+function quotedTerms(text) {
+  const seen = new Map();
+  for (const m of String(text).matchAll(/「([^」]{2,40})」/g)) seen.set(m[1], (seen.get(m[1]) || 0) + 1);
+  return [...seen.entries()].map(([text, n]) => ({ text, n }));
+}
+
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
   return out;
 }
 
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
-
-function byBookSection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = `教材第${u.chapter}章`;
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
-
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
-
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
+/** quiz：三段齐、四选项、解释够长、答案打散、check 题能在正文找到原词 */
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const options = Array.isArray(q.options) ? q.options : [];
+    const right = String(options[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    return {
+      stage: q.stage,
+      options: options.length,
+      correct: q.correct,
+      explainHanzi: hanzi(q.explain),
+      grounded: hit.length,
+      sample: hit.slice(0, 2),
+    };
+  });
   return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
   };
 }
 
-/** 取穴与刺灸的操作词：本章正文里出现多少处「定位／分寸／直刺／灸」类的可执行指令 */
-function hands(list) {
-  const WORDS = ['定位', '骨度', '分寸', '同身寸', '直刺', '斜刺', '平刺', '艾灸', '温针灸', '留针', '禁针', '禁灸'];
-  const pairs = WORDS.map((w) => [w, list.reduce((a, u) => a + u.prose.split(w).length - 1, 0)]);
-  return Object.fromEntries(pairs).constructor === Object
-    ? pairs.filter(([, c]) => c).sort((a, b) => b[1] - a[1])
-    : pairs;
+function analyze() {
+  const doc = readDoc();
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const sections = parseSections(doc);
+  const tables = parseTables(doc);
+  const cells = parseCells(doc);
+  return {
+    doc,
+    head: parseHead(doc),
+    sections,
+    tables,
+    cells,
+    docHanzi: hanzi(doc),
+    sectionHanzi: sections.map((s) => s.hanzi),
+    leads: sections.reduce((a, s) => a + s.leads.length, 0),
+    rows: tables.reduce((a, t) => a + t.rows.length, 0),
+    quoted: quotedTerms(doc),
+    terms: TERMS.map((term) => ({ term, n: count(doc, term) })),
+    quiz: quizSummary(quiz, doc),
+  };
 }
 
-module.exports = { CHAPTER, KEYS, load, chapterUnits, merge, rank, byBookSection, citations, shape, hands, sum };
-
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  console.log('═══ 中药化学 · 第 14 章 给药与治疗的护理 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按教材章：');
-  for (const sec of byBookSection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of rank(merge(list, 'views'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of rank(merge(list, 'levels'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  const c = citations(list);
-  console.log(`\n引书 ${c.books} 部 · 引用 ${c.total} 次 · 前三：${c.top.map(([n, k]) => `${n}(${k})`).join('、')}`);
-  console.log('\n操作词命中：' + hands(list).map(([w, k]) => `${w}×${k}`).join('  '));
-  for (const u of list) console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字`);
-  console.log('※ 教学样例：数字由 standards/huli-daolun/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
+function main() {
+  const r = analyze();
+  const q = r.quiz;
+  console.log(`护理学导论 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · 小节 ${r.sections.length} 个 · 加粗标目 ${r.leads} 条 · 表格 ${r.tables.length} 张（${r.rows} 行）`);
+  console.log('');
+  console.log('小节分布（汉字）：');
+  r.sections.forEach((s, i) => console.log(`  ${i + 1}. ${s.heading} — ${s.hanzi} 字 · 标目 ${s.leads.length} 条`));
+  if (r.cells.length) {
+    console.log('');
+    console.log(`概念落成动作的六个格子（${r.cells.length} 个）：`);
+    console.log('  ' + r.cells.map((c) => `${c.mark} ${c.label}`).join(' / '));
+  }
+  console.log('');
+  console.log('关键词次数（正文现算）：');
+  console.log('  ' + r.terms.map((t) => `${t.term} ${t.n}`).join(' · '));
+  console.log('');
+  console.log(`quiz ${q.total} 题（pre ${q.stage.pre} / check ${q.stage.check} / post ${q.stage.post}）· check 接地 ${q.checkGrounded} 道 · 答案 ${q.answers.join('/')}（${q.distinctAnswers} 个位置）`);
+  console.log('  ' + q.items.map((x, i) => `${i + 1}.${x.stage}→${x.correct}，解释 ${x.explainHanzi} 字，接地 ${x.grounded}`).join(' | '));
+  console.log('');
+  console.log('教学样例：以上数字全部由 docs/zh.md 与 quiz.json 现算，不引外部数据层。');
+  console.log('※ 本章为教学材料，不构成医学意见、护理操作指引或管理建议。');
 }
+
+if (require.main === module) main();
+
+module.exports = {
+  analyze,
+  readDoc,
+  parseHead,
+  parseSections,
+  parseTables,
+  parseCells,
+  quotedTerms,
+  quizSummary,
+  grams,
+  hanzi,
+  count,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  TERMS,
+  DOC,
+  QUIZ,
+};

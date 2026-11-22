@@ -1,13 +1,10 @@
 #!/usr/bin/env node
 /**
- * 康复护理学 · 第 14 章 心肺与代谢疾病康复护理：本章统计口径
+ * 康复护理学 · 第 14 章 心肺康复的门槛不在能不能动，在动到什么程度该停：本章正文的自身统计
  * 课程: departments/05-huli/22-kangfu-huli-xue/chapters/14-xinfei-daixie/docs/zh.md
- * 数据: standards/kangfu-huli/units.json（18 单元层，每单元带三辨与四位面词频）
- * 取数: standards/kangfu-huli/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 只读本章 docs/zh.md：汉字、小节、表格、停止信号四条与自觉疲劳的目标区间，全部现算。
  */
 
 'use strict';
@@ -15,87 +12,102 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'kangfu-huli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/kangfu-huli/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'kangfu-huli', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'kangfu-huli', 'chapter-map.json');
-const CHAPTER = '14';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 14;
 const SLUG = '14-xinfei-daixie';
+const TITLE = '心肺康复的门槛不在能不能动，在动到什么程度该停';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function readDoc(file = DOC) {
+  return fs.readFileSync(file, 'utf8');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function countHanzi(text) {
+  return (text.match(HANZI) || []).length;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function sections(text) {
+  return text
+    .split(/\r?\n/)
+    .filter((line) => /^##\s+/.test(line))
+    .map((line) => line.replace(/^##\s+/, '').trim());
+}
+
+function tables(text) {
+  let blocks = 0;
+  let rows = 0;
+  for (const raw of text.split(/\r?\n/)) {
+    const line = raw.trim();
+    if (!line.startsWith('|')) continue;
+    rows += 1;
+    if (/^\|[\s:|-]+\|$/.test(line)) blocks += 1;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return { blocks, rows };
+}
+
+function tableRows(text, header) {
+  const lines = text.split(/\r?\n/).map((l) => l.trim());
+  const start = lines.findIndex((l) => l.startsWith(header));
+  if (start < 0) throw new Error(`正文里找不到表格：${header}`);
+  const rows = [];
+  for (let i = start + 1; i < lines.length; i += 1) {
+    if (!lines[i].startsWith('|')) break;
+    if (/^\|[\s:|-]+\|$/.test(lines[i])) continue;
+    rows.push(lines[i].split('|').map((c) => c.trim()).filter(Boolean));
+  }
+  return rows;
+}
+
+/** 自觉疲劳：Borg 6–20，训练常用目标区间 11 至 14 分 */
+function borg(text) {
+  const all = text.match(/Borg\s*(\d+)[–-](\d+)\s*分/);
+  const target = text.match(/目标区间是\s*(\d+)\s*至\s*(\d+)\s*分/);
+  if (!all || !target) throw new Error('正文里的 Borg 区间已改写');
+  const lo = Number(target[1]);
+  const hi = Number(target[2]);
+  return { min: Number(all[1]), max: Number(all[2]), targetLo: lo, targetHi: hi, width: hi - lo + 1 };
+}
+
+/** 现场处置三原则：先停后查、不离开、写清时间（按正文加粗的三条计） */
+function siteRules(text) {
+  const m = text.match(/现场处置有三条原则：([\s\S]*?)。/);
+  if (!m) throw new Error('正文里找不到现场处置三原则');
+  return (m[1].match(/\*\*[^*]+\*\*/g) || []).length;
+}
+
+function summarize(text = readDoc()) {
+  const stops = tableRows(text, '| 信号 |');
+  return {
+    hanzi: countHanzi(text),
+    sections: sections(text),
+    tables: tables(text),
+    stops: stops.length,
+    diseases: tableRows(text, '| 病种 |').length,
+    glucoseChecks: tableRows(text, '| 时点 |').length,
+    borg: borg(text),
+    rules: siteRules(text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`康复护理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const s = summarize();
+  console.log(`康复护理学 · 第 ${CHAPTER} 章 ${TITLE}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文汉字 ${s.hanzi} 个 · 小节 ${s.sections.length} 节 · 表格 ${s.tables.blocks} 张 / ${s.tables.rows} 行`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('小节：');
+  s.sections.forEach((t, i) => console.log(`  ${i + 1}. ${t}`));
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`停止信号 ${s.stops} 条，现场处置 ${s.rules} 条原则；病种 ${s.diseases} 类，糖尿病监测时点 ${s.glucoseChecks} 个`);
+  console.log(
+    `自觉疲劳 ${s.borg.min}–${s.borg.max} 分，目标区间 ${s.borg.targetLo} 至 ${s.borg.targetHi} 分（跨 ${s.borg.width} 档刻度）`
+  );
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/kangfu-huli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 教学样例：数字由 docs/zh.md 现算，不手打；改正文后重跑即可复现。');
+  console.log('※ 本输出仅用于说明现场判断口径，不构成运动处方。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, SLUG, TITLE, readDoc, countHanzi, sections, tables, tableRows, borg, siteRules, summarize };

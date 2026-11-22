@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 妇产科护理学 · 第 15 章 妇女保健与社区护理：本章统计口径
- * 课程: departments/05-huli/09-fuchanke-huli-xue/chapters/15-funv-baojian/docs/zh.md
- * 数据: standards/fuchanke-huli/units.json（18 单元层，每单元带三辨与四位面词频）
- * 取数: standards/fuchanke-huli/chapter-map.json（课程章 → 教材单元号）
+ * 妇产科护理学 · 第 15 章 妇女保健 —— 正文口径自测
+ * 正文: chapters/15-funv-baojian/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 只读本章正文：汉字、节、表、段落、词频全部现算；不读教材单元层，也不手打统计数字。
+ * 统计对象是这本讲义自己的 docs/zh.md，与临床任何机构的服务量无关。
  */
 
 'use strict';
@@ -15,87 +13,78 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'fuchanke-huli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/fuchanke-huli/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const TITLE = '第 15 章 妇女保健';
+const KEYWORDS = ["筛查","失访","转介","宣教","回述","通知","异常"];
+
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+/** 去掉引用块（MOTTO / PROBLEM 段）后的正文行，用于数骨架 */
+const bodyLines = (text) => text.split(/\r?\n/).filter((line) => !/^\s*>/.test(line));
+
+const hanzi = (text) => (text.match(HANZI) || []).length;
+
+const hits = (text, word) => String(text).split(word).length - 1;
+
+/** 节（## 标题）、表（分隔行）、段落（既非标题也非表格也非列表的正文行） */
+function outline(text) {
+  const lines = bodyLines(text);
+  const sections = lines.filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+  const tables = lines.filter((l) => /^\|[\s:|-]+\|\s*$/.test(l)).length;
+  const paragraphs = lines.filter(
+    (l) => l.trim() && !/^#/.test(l) && !/^\|/.test(l) && !/^\s*[-*]\s/.test(l)
+  ).length;
+  return { sections, tables, paragraphs };
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'fuchanke-huli', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'fuchanke-huli', 'chapter-map.json');
-const CHAPTER = '15';
-const SLUG = '15-funv-baojian';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 词频：按 KEYWORDS 逐词计出，降序；同数按字面序稳定 */
+function freq(text = readDoc(), words = KEYWORDS) {
+  return words
+    .map((word) => [word, hits(text, word)])
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-Hans-CN'));
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function stats() {
+  const text = readDoc();
+  const o = outline(text);
+  const f = freq(text);
+  const total = hanzi(text);
+  const cjkOnly = text.replace(/\s/g, '').length;
+  return {
+    title: TITLE,
+    hanzi: total,
+    sections: o.sections,
+    tables: o.tables,
+    paragraphs: o.paragraphs,
+    perSection: o.sections.length ? Math.round(total / o.sections.length) : 0,
+    freq: f,
+    top: f[0],
+    bottom: f[f.length - 1],
+    cjkShare: cjkOnly ? total / cjkOnly : 0,
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function report() {
+  const s = stats();
+  console.log('═══ ' + s.title + ' ═══');
+  console.log(`正文 ${s.hanzi} 汉字 · ${s.sections.length} 节 · ${s.tables} 张表 · ${s.paragraphs} 段 · 平均 ${s.perSection} 字/节`);
+  console.log('汉字占非空白字符 ' + (s.cjkShare * 100).toFixed(1) + '%');
+  console.log('');
+  console.log('节标题：');
+  for (const sec of s.sections) console.log('  - ' + sec);
+  console.log('');
+  console.log('词频（正文出现次数）：');
+  for (const [word, n] of s.freq) console.log(`  ${word}：${n}`);
+  console.log('');
+  console.log(`最重的一词：${s.top[0]}（${s.top[1]} 次）；最轻的一词：${s.bottom[0]}（${s.bottom[1]} 次）`);
+  console.log('※ 统计口径：数字由本章 docs/zh.md 现算，改稿后重跑即可复现，不构成诊疗建议。');
 }
 
-function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+module.exports = { DOC, TITLE, KEYWORDS, readDoc, bodyLines, hanzi, hits, outline, freq, stats };
 
-  console.log(`妇产科护理学 · 第 ${CHAPTER} 章 ${cm.title}`);
-  console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
-  console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/fuchanke-huli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+if (require.main === module) {
+  if (process.argv.includes('--json')) console.log(JSON.stringify(stats()));
+  else report();
 }
-
-if (require.main === module) main();
-
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };

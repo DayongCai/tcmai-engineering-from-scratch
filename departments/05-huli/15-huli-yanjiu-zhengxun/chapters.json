@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-xuanti-wentihua",
-   "title": "护理研究的选题与问题化",
+   "title": "好选题不是灵感，是把一句抱怨压成一个能算的缺口",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-xuanti-wentihua/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-liangxing-sheji",
-   "title": "量性研究与设计类型",
+   "title": "设计类型不是等级表，是你要替哪种错误付账",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-liangxing-sheji/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-zhixing-fangtan",
-   "title": "质性研究与访谈分析",
+   "title": "质性研究不是聊天，是把重复说的话听成结构",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-zhixing-fangtan/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-liangbiao-xinxiao",
-   "title": "量表的选择与信效度",
+   "title": "量表不是尺子，是一份带刻度的说法",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-liangbiao-xinxiao/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-xunzheng-fenji",
-   "title": "循证护理的证据分级",
+   "title": "证据等级回答的是有多可信，不是该不该做",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-xunzheng-fenji/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-jiansuo-xitong",
-   "title": "文献检索与系统评价",
+   "title": "检索式写不出来的那一块，就是你没想清的那一块",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-jiansuo-xitong/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-zhuanhua-shijian",
-   "title": "证据到实践的转化",
+   "title": "证据不会自己走进病房，它要先被改写成一句能执行的指令",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-zhuanhua-shijian/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-lunli-shencha",
-   "title": "护理研究中的伦理审查",
+   "title": "伦理审查不是盖章，是替不能到场的人提问",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-lunli-shencha/docs/zh.md",

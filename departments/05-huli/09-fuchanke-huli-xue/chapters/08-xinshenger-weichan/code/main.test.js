@@ -1,62 +1,108 @@
+#!/usr/bin/env node
+/**
+ * 第 8 章 新生儿护理 —— 正文口径与习题结构（确定性测试）
+ * 运行: node --test code/main.test.js
+ */
+
 'use strict';
 
-const test = require('node:test');
 const assert = require('node:assert');
+const test = require('node:test');
 const fs = require('node:fs');
 const path = require('node:path');
-const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'fuchanke-huli', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'fuchanke-huli', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { TITLE, KEYWORDS, readDoc, bodyLines, hanzi, hits, outline, freq, stats } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const countHanzi = (text) => (String(text || '').match(HANZI) || []).length;
+
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+
+test('正文存在且标题指向本章', () => {
+  const text = readDoc();
+  assert.ok(text.length > 3000, '正文过短：' + text.length);
+  assert.ok(text.includes('第 8 章'), '正文标题缺章号');
+  assert.strictEqual(TITLE, '第 8 章 新生儿护理');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('规模：2916 汉字 / 6 节 / 平均 486 字每节', () => {
+  const s = stats();
+  assert.strictEqual(s.hanzi, 2916);
+  assert.strictEqual(s.sections.length, 6);
+  assert.strictEqual(s.perSection, 486);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('骨架：5 张表、23 段，且节标题可读', () => {
+  const o = outline(readDoc());
+  assert.strictEqual(o.tables, 5);
+  assert.strictEqual(o.paragraphs, 23);
+  assert.strictEqual(o.sections[0], "一、四套切换：失败先于病名");
+  assert.strictEqual(o.sections[o.sections.length - 1], "六、代价与边界");
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('词频与正文一致，且最重的是「喂养」（26 次）', () => {
+  const text = readDoc();
+  for (const [word, n] of freq(text)) assert.strictEqual(n, hits(text, word), word + ' 计数不一致');
+  const top = freq(text)[0];
+  assert.strictEqual(top[0], '喂养');
+  assert.strictEqual(top[1], 26);
+  const table = Object.fromEntries(freq(text));
+  assert.strictEqual(table["核对"], 14);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('词表每个词都在表内，不留悬空词', () => {
+  const table = Object.fromEntries(freq(readDoc()));
+  for (const word of KEYWORDS) assert.ok(word in table, word);
+  assert.strictEqual(Object.keys(table).length, KEYWORDS.length);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/fuchanke-huli\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
+test('汉字口径只数 CJK，不把标点与数字算进去', () => {
+  const text = readDoc();
+  assert.ok(hanzi(text) < text.length);
+  assert.ok(hanzi(text) > text.length * 0.5, '汉字占比异常：' + hanzi(text) / text.length);
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
+test('习题：≥5 题，pre/check/post 齐全，check ≥2', () => {
+  const qs = quiz.questions || [];
+  assert.ok(qs.length >= 5, '只有 ' + qs.length + ' 题');
+  for (const stage of ['pre', 'check', 'post']) {
+    assert.ok(qs.some((q) => q.stage === stage), '缺 ' + stage + ' 段');
+  }
+  assert.ok(qs.filter((q) => q.stage === 'check').length >= 2, 'check 题不足 2 道');
 });
 
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/08-xinshenger-weichan/docs/zh.md'), '头部注释未指向本章');
+test('习题：每题 4 选项、correct 合法、explain ≥30 汉字', () => {
+  for (const [i, q] of (quiz.questions || []).entries()) {
+    assert.strictEqual(q.options.length, 4, '第 ' + (i + 1) + ' 题选项数不对');
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, '第 ' + (i + 1) + ' 题 correct 非法');
+    assert.ok(countHanzi(q.explain) >= 30, '第 ' + (i + 1) + ' 题 explain 只有 ' + countHanzi(q.explain) + ' 汉字');
+    assert.ok(q.question && q.question.length >= 6, '第 ' + (i + 1) + ' 题题干过短');
+  }
+});
+
+test('习题：答案打散，不集中在同一个位置', () => {
+  const idx = (quiz.questions || []).map((q) => q.correct);
+  assert.ok(new Set(idx).size >= 3, '正确项只落在 ' + new Set(idx).size + ' 个位置');
+  assert.ok(Math.max(...idx.map((v) => idx.filter((x) => x === v).length)) <= Math.ceil(idx.length / 2), '某一位占用过半');
+});
+
+test('习题：不含旧脚手架字样', () => {
+  const raw = JSON.stringify(quiz);
+  const banned = ['三辨', '四位面', '单元规模', '本章实测', '本课第'];
+  for (const word of banned) assert.ok(!raw.includes(word), '习题仍含旧写法：' + word);
+});
+
+test('习题：至少两道 check 正确项能在正文找到原词', () => {
+  const body = readDoc();
+  let grounded = 0;
+  for (const q of quiz.questions || []) {
+    if (q.stage !== 'check') continue;
+    const right = String(q.options[q.correct]);
+    const grams = [];
+    for (const seg of right.replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+      for (let i = 0; i + 4 <= seg.length; i += 1) grams.push(seg.slice(i, i + 4));
+    }
+    if (grams.some((g) => body.includes(g))) grounded += 1;
+  }
+  assert.ok(grounded >= 2, '只有 ' + grounded + ' 道 check 正确项接地');
 });

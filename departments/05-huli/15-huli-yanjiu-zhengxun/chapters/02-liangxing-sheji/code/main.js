@@ -1,13 +1,9 @@
 #!/usr/bin/env node
 /**
- * 护理研究与循证护理 · 第 2 章 量性研究与设计类型：本章统计口径
- * 课程: departments/05-huli/15-huli-yanjiu-zhengxun/chapters/02-liangxing-sheji/docs/zh.md
- * 数据: standards/huli-yanjiu-zhengxun/units.json（8 单元层，每单元带三辨与四位面词频）
- * 取数: standards/huli-yanjiu-zhengxun/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
- *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 护理研究与循证护理 · 第 2 章 量性研究与设计类型
+ * 正文: chapters/02-liangxing-sheji/docs/zh.md
+ * 做法: 从正文解析节、表、四类设计、四档口径与题面里的算术，现算后打印。数字不手打。
+ * 依赖: 仅 Node.js 标准库。
  */
 
 'use strict';
@@ -15,87 +11,119 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'huli-yanjiu-zhengxun', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const TITLE = '量性研究与设计类型';
+
+function docText() {
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function sections(text) {
+  const marks = [...text.matchAll(/^## (.+)$/gm)];
+  return marks.map((m, i) => {
+    const start = m.index + m[0].length;
+    const end = i + 1 < marks.length ? marks[i + 1].index : text.length;
+    return { title: m[1].trim(), body: text.slice(start, end) };
+  });
+}
+
+function tables(text) {
+  const out = [];
+  let cur = null;
+  for (const raw of text.split('\n')) {
+    const line = raw.trim();
+    if (!line.startsWith('|')) { cur = null; continue; }
+    if (!cur) { cur = []; out.push(cur); }
+    const cells = line.replace(/^\|/, '').replace(/\|$/, '').split('|').map((s) => s.trim());
+    if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue;
+    cur.push(cells);
   }
-  throw new Error('没找到 standards/huli-yanjiu-zhengxun/units.json —— 章节目录是否已脱离仓库？');
+  return out.filter((t) => t.length > 0);
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'huli-yanjiu-zhengxun', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'huli-yanjiu-zhengxun', 'chapter-map.json');
-const CHAPTER = '2';
-const SLUG = '02-liangxing-sheji';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function leads(body) {
+  return [...body.matchAll(/^\*\*([^*]+)\*\*/gm)]
+    .map((m) => m[1].replace(/^[一二三四五六七八九十]+是[，、]?\s*/, '').replace(/[。：:]\s*$/, '').trim())
+    .filter(Boolean);
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function count(text, term) {
+  return text.split(term).length - 1;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/**
+ * 题面的算术：7 项 = 单组前后测 + 同期对照；时间跨度 = 最长 − 最短。
+ * 相加不等于总数，就说明正文被改过而这里没跟上。
+ */
+function problemArithmetic(text) {
+  const m = /\*\*PROBLEM:\*\*([\s\S]*?)\n\n/.exec(text);
+  const block = m ? m[1] : '';
+  const num = (re) => {
+    const hit = re.exec(block);
+    return hit ? Number(hit[1]) : null;
+  };
+  const total = num(/(\d+)\s*项已结题研究/);
+  const single = num(/单组前后测\s*(\d+)\s*项/);
+  const controlled = num(/同期对照\s*(\d+)\s*项/);
+  const saidEffective = num(/有\s*(\d+)\s*项在结论段用了/);
+  const longest = num(/最长\s*(\d+)\s*周/);
+  const shortest = num(/最短\s*(\d+)\s*周/);
+  return {
+    total,
+    single,
+    controlled,
+    saidEffective,
+    longest,
+    shortest,
+    sumOk: total !== null && total === single + controlled,
+    spanWeeks: longest === null || shortest === null ? null : longest - shortest,
+    singleWithoutCaveat: single === null || saidEffective === null ? null : single - saidEffective,
+  };
 }
 
-function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`护理研究与循证护理 · 第 ${CHAPTER} 章 ${cm.title}`);
-  console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
-  console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/huli-yanjiu-zhengxun/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+function analyze() {
+  const text = docText();
+  const secs = sections(text);
+  const tbs = tables(text);
+  const designTable = tbs.find((t) => t[0] && t[0][0] === '设计');
+  const gradeTable = tbs.find((t) => t[0] && t[0][0] === '档');
+  const failSec = secs.find((s) => s.title.includes('失效模式'));
+  const citations = [...new Set([...text.matchAll(/《([^》]+)》/g)].map((x) => x[1]))];
+  const biasTypes = ['选择偏倚', '实施偏倚', '测量偏倚', '失访偏倚'];
+  return {
+    title: TITLE,
+    hanzi: (text.match(/[\u4e00-\u9fff]/g) || []).length,
+    sections: secs.map((s) => s.title),
+    tables: tbs.length,
+    designs: designTable ? designTable.slice(1).map((r) => r[0]) : [],
+    grades: gradeTable ? gradeTable.slice(1).map((r) => r[0]) : [],
+    bias: biasTypes.map((b) => ({ name: b, hits: count(text, b) })),
+    failModes: failSec ? leads(failSec.body) : [],
+    citations,
+    problem: problemArithmetic(text),
+  };
 }
 
-if (require.main === module) main();
+function report(a) {
+  console.log(`护理研究与循证护理 · 第 2 章 ${a.title}`);
+  console.log('');
+  console.log(`正文 ${a.hanzi.toLocaleString('en-US')} 汉字，${a.sections.length} 节，${a.tables} 张表。`);
+  console.log(`节序：${a.sections.join(' → ')}`);
+  console.log('');
+  const p = a.problem;
+  console.log(`题面算术：${p.total} 项已结题研究 = 单组前后测 ${p.single} + 同期对照 ${p.controlled} → ${p.sumOk ? '对得上' : '对不上'}`);
+  console.log(`  单组前后测里没写「有效」的 = ${p.single} − ${p.saidEffective} = ${p.singleWithoutCaveat} 项`);
+  console.log(`  时间跨度 = 最长 ${p.longest} 周 − 最短 ${p.shortest} 周 = ${p.spanWeeks} 周`);
+  console.log('');
+  console.log(`可选的四种设计（${a.designs.length} 类）：${a.designs.join(' / ')}`);
+  console.log(`结论口径四档（${a.grades.length} 档）：${a.grades.join(' / ')}`);
+  console.log(`四类偏倚在正文出现次数：${a.bias.map((b) => `${b.name} ${b.hits}`).join(' · ')}`);
+  console.log(`失效模式 ${a.failModes.length} 条：${a.failModes.join('、')}`);
+  console.log(`引书 ${a.citations.length} 部：${a.citations.map((c) => `《${c}》`).join('')}`);
+  console.log('');
+  console.log('※ 以上结构由本章正文现算；不构成医学意见，设计与审查以现行规范与所在机构要求为准。');
+}
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+if (require.main === module) report(analyze());
+
+module.exports = { DOC, TITLE, docText, sections, tables, leads, count, problemArithmetic, analyze };

@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-gaishu",
-   "title": "老年护理学概述",
+   "title": "老年护理的边界由功能决定，不由年龄决定",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-gaishu/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-shengli-xinli",
-   "title": "老年人的生理与心理社会特点",
+   "title": "老化不是一条下坡路，而是几条坡度不同的坡",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-shengli-xinli/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-lunli-goutong",
-   "title": "老年护理伦理与沟通",
+   "title": "知情同意不是签字，是把选择权交回本人",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-lunli-goutong/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-zonghe-pinggu",
-   "title": "老年综合评估基础",
+   "title": "评估不是把项目做全，是把可干预的挑出来",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-zonghe-pinggu/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-jiankang-cujin",
-   "title": "老年人健康促进与疾病预防",
+   "title": "老年期的预防不是做加法，是保住已有的余量",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-jiankang-cujin/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-manbing-huli",
-   "title": "老年常见慢性病的护理基础",
+   "title": "慢病护理的目标不是把指标压到正常，是让功能不掉",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-manbing-huli/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-laonian-zonghezheng",
-   "title": "老年综合征护理",
+   "title": "老年综合征不是一串小毛病，是同一个底子上的连锁反应",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-laonian-zonghezheng/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-renzhi-zhangai",
-   "title": "认知障碍与失智症照护",
+   "title": "失智照护的第一原则，是承认他现在的世界是真的",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-renzhi-zhangai/docs/zh.md",
@@ -77,7 +77,7 @@
   {
    "n": 9,
    "slug": "09-jizheng-guancha",
-   "title": "老年常见急症与病情观察",
+   "title": "老年急症的第一信号常常不是主诉，是功能突然掉下来",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/09-jizheng-guancha/docs/zh.md",
@@ -86,7 +86,7 @@
   {
    "n": 10,
    "slug": "10-kangfu-huli",
-   "title": "老年康复护理",
+   "title": "康复不是把力气练回来，是把剩下的能力用到极限",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/10-kangfu-huli/docs/zh.md",
@@ -95,7 +95,7 @@
   {
    "n": 11,
    "slug": "11-yingyang-huli",
-   "title": "老年营养与饮食护理",
+   "title": "老年营养的入口不在食谱，在牙齿和吞咽",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/11-yingyang-huli/docs/zh.md",
@@ -104,7 +104,7 @@
   {
    "n": 12,
    "slug": "12-xinli-qingzhi",
-   "title": "老年心理与情志护理",
+   "title": "老年人的情绪问题常以身体不适出场",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/12-xinli-qingzhi/docs/zh.md",
@@ -113,7 +113,7 @@
   {
    "n": 13,
    "slug": "13-changqi-zhaohu",
-   "title": "老年长期照护与居家照护",
+   "title": "长期照护的关键不是照护强度，是照护能持续多久",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/13-changqi-zhaohu/docs/zh.md",
@@ -122,7 +122,7 @@
   {
    "n": 14,
    "slug": "14-anquan-fengxian",
-   "title": "老年安全与风险管理",
+   "title": "安全管理的水平，看的是上报之后发生了什么",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/14-anquan-fengxian/docs/zh.md",
@@ -131,7 +131,7 @@
   {
    "n": 15,
    "slug": "15-anning-liaohu",
-   "title": "安宁疗护与临终关怀基础",
+   "title": "临终照护的目标不是延长时间，是不让这段时间难熬",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/15-anning-liaohu/docs/zh.md",
@@ -140,7 +140,7 @@
   {
    "n": 16,
    "slug": "16-zhiliang-tuandui",
-   "title": "老年护理质量管理与团队协作",
+   "title": "质量不是查出来的，是流程里长出来的",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/16-zhiliang-tuandui/docs/zh.md",
@@ -149,7 +149,7 @@
   {
    "n": 17,
    "slug": "17-zhihui-yanglao",
-   "title": "智慧养老与老年护理信息化",
+   "title": "设备的价值不在报警那一刻，在报警之后谁去",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/17-zhihui-yanglao/docs/zh.md",
@@ -158,7 +158,7 @@
   {
    "n": 18,
    "slug": "18-pingtai",
-   "title": "老年护理学与教学平台",
+   "title": "学老年护理，学的不是知识清单，是在信息不全时作判断",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/18-pingtai/docs/zh.md",

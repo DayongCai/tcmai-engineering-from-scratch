@@ -1,13 +1,10 @@
 #!/usr/bin/env node
 /**
- * 康复护理学 · 第 17 章 康复护理质量与风险管理：本章统计口径
+ * 康复护理学 · 第 17 章 质量不是不出事，是把出事的方式提前写下来：本章正文的自身统计
  * 课程: departments/05-huli/22-kangfu-huli-xue/chapters/17-zhiliang-fengxian/docs/zh.md
- * 数据: standards/kangfu-huli/units.json（18 单元层，每单元带三辨与四位面词频）
- * 取数: standards/kangfu-huli/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 只读本章 docs/zh.md：汉字、小节、表格、指标四要素、高危环节与五类归纳，全部现算。
  */
 
 'use strict';
@@ -15,87 +12,100 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'kangfu-huli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/kangfu-huli/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'kangfu-huli', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'kangfu-huli', 'chapter-map.json');
-const CHAPTER = '17';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 17;
 const SLUG = '17-zhiliang-fengxian';
+const TITLE = '质量不是不出事，是把出事的方式提前写下来';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function readDoc(file = DOC) {
+  return fs.readFileSync(file, 'utf8');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function countHanzi(text) {
+  return (text.match(HANZI) || []).length;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function sections(text) {
+  return text
+    .split(/\r?\n/)
+    .filter((line) => /^##\s+/.test(line))
+    .map((line) => line.replace(/^##\s+/, '').trim());
+}
+
+function tables(text) {
+  let blocks = 0;
+  let rows = 0;
+  for (const raw of text.split(/\r?\n/)) {
+    const line = raw.trim();
+    if (!line.startsWith('|')) continue;
+    rows += 1;
+    if (/^\|[\s:|-]+\|$/.test(line)) blocks += 1;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return { blocks, rows };
+}
+
+function tableShape(text, header) {
+  const lines = text.split(/\r?\n/).map((l) => l.trim());
+  const start = lines.findIndex((l) => l.startsWith(header));
+  if (start < 0) throw new Error(`正文里找不到表格：${header}`);
+  const cols = lines[start].split('|').map((c) => c.trim()).filter(Boolean).length;
+  let rows = 0;
+  for (let i = start + 1; i < lines.length; i += 1) {
+    if (!lines[i].startsWith('|')) break;
+    if (/^\|[\s:|-]+\|$/.test(lines[i])) continue;
+    rows += 1;
+  }
+  return { rows, cols };
+}
+
+/** 指标四要素：定义、分子、分母、来源 */
+function indicatorParts(text) {
+  const parts = ['定义', '分子', '分母', '来源'];
+  const hit = parts.filter((p) => text.includes(`**${p}**`) || text.includes(`${p}（`));
+  return { listed: parts.length, hit: hit.length };
+}
+
+/** 原因归纳五类：人、机、料、法、环 */
+function fiveCategories(text) {
+  const items = ['人（培训与配置）', '机（器具与设备）', '料（耗材与辅具）', '法（流程与制度）', '环（环境与照明）'];
+  return items.filter((i) => text.includes(i)).length;
+}
+
+function summarize(text = readDoc()) {
+  const indicators = tableShape(text, '| 指标 |');
+  const hotspots = tableShape(text, '| 高危环节 |');
+  const reports = tableShape(text, '| 上报内容 |');
+  return {
+    hanzi: countHanzi(text),
+    sections: sections(text),
+    tables: tables(text),
+    indicators,
+    hotspots,
+    reports,
+    indicatorCells: indicators.rows * (indicators.cols - 1),
+    parts: indicatorParts(text),
+    categories: fiveCategories(text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`康复护理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const s = summarize();
+  console.log(`康复护理学 · 第 ${CHAPTER} 章 ${TITLE}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文汉字 ${s.hanzi} 个 · 小节 ${s.sections.length} 节 · 表格 ${s.tables.blocks} 张 / ${s.tables.rows} 行`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('小节：');
+  s.sections.forEach((t, i) => console.log(`  ${i + 1}. ${t}`));
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`指标 ${s.indicators.rows} 个 × 四要素（定义／分子／分母／来源）= ${s.indicatorCells} 格；四要素命中 ${s.parts.hit}/${s.parts.listed}`);
+  console.log(`高危环节 ${s.hotspots.rows} 处，上报字段示例 ${s.reports.rows} 项；原因归纳 ${s.categories} 类`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/kangfu-huli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 教学样例：数字由 docs/zh.md 现算，不手打；改正文后重跑即可复现。');
+  console.log('※ 本输出仅用于说明指标口径，不构成管理规范。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, SLUG, TITLE, readDoc, countHanzi, sections, tables, tableShape, indicatorParts, fiveCategories, summarize };

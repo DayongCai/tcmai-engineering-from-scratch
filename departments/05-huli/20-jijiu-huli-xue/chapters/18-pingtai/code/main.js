@@ -1,13 +1,19 @@
 #!/usr/bin/env node
 /**
- * 急救护理学 · 第 18 章 急救护理学与教学平台：本章统计口径
- * 课程: departments/05-huli/20-jijiu-huli-xue/chapters/18-pingtai/docs/zh.md
- * 数据: standards/jijiu-huli/units.json（18 单元层，每单元带三辨与四位面词频）
- * 取数: standards/jijiu-huli/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 急救护理学 · 第 18 章 急救护理学与教学平台
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ *   node code/main.js
+ *
+ * 正文：chapters/18-pingtai/docs/zh.md
+ * 习题：chapters/18-pingtai/quiz.json
+ * 依赖：仅 Node.js 标准库
+ *
+ * 这一章只做一件事：把正文当数据读一遍，数字全部现算。
+ *   · 规模：段落数、汉字数、平均每段汉字（段＝直接陈述的散文行，不含标题、表格、清单、引文）
+ *   · 结构：节的标题、表格张数与每张表的列数／行数
+ *   · 判据词频：本章反复用到的判据词各出现多少次
+ *   · quiz：题量、三段分布、选项数、解释长度、答案位置是否打散、check 题能否在正文找到原词
+ * 正文一改，重跑就能看出是哪一行对不上。
  */
 
 'use strict';
@@ -15,87 +21,166 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'jijiu-huli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/jijiu-huli/units.json —— 章节目录是否已脱离仓库？');
-}
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'jijiu-huli', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'jijiu-huli', 'chapter-map.json');
-const CHAPTER = '18';
+const CHAPTER = 18;
 const SLUG = '18-pingtai';
+const TITLE = '急救护理学与教学平台';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+/** 本章反复用来判读的词：正文靠它们做论证，就核它们 */
+const KEY_TERMS = ['版本', '留空', '去标识化', '人工确认', '教学设定'];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/* ── 文本口径 ────────────────────────────────────────────────────── */
+
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const count = (text, term) => String(text).split(term).length - 1;
+const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
+const docLines = (doc) => String(doc).split(/\r?\n/);
+
+/** 节标题：`## 一、…` */
+function sections(doc) {
+  return docLines(doc)
+    .filter((l) => /^##\s+/.test(l))
+    .map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 段：非空、不以 # > | - * 起始、不以「1.」「1、」编号、且不是表格行的行 */
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|*\-]/.test(l) && !/^\d+[.、]/.test(l) && !l.includes('|'));
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** markdown 表格：表头 + 去分隔行的数据行 */
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+  const out = [];
+  let i = 0;
+  while (i < ls.length) {
+    if (/^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) {
+        block.push(ls[i]);
+        i += 1;
+      }
+      const header = cells(block[0]);
+      const rows = block
+        .slice(1)
+        .filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l))
+        .map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else {
+      i += 1;
+    }
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+/* ── quiz：结构 + 接地 ──────────────────────────────────────────── */
+
+/** 正文里 4 字以上的连续汉字片段 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q, i) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    return {
+      n: i + 1,
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(q.explain),
+      grounded: hit.length,
+      sample: hit.slice(0, 3),
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+  };
+}
+
+/* ── 汇总 ──────────────────────────────────────────────────────── */
+
+function analyze() {
+  const doc = readDoc();
+  const paras = paragraphs(doc);
+  const docHanzi = hanzi(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi,
+    paras: paras.length,
+    avgPara: paras.length ? Math.round(docHanzi / paras.length) : 0,
+    paraHanzi: paras.map(hanzi),
+    sections: sections(doc),
+    tables: tables(doc),
+    terms: KEY_TERMS.map((t) => ({ term: t, n: count(doc, t) })),
+    quiz: quizSummary(quiz, doc),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`急救护理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = analyze();
+  console.log(`急救护理学 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · ${r.paras} 段 · 平均每段 ${r.avgPara} 汉字`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`节 ${r.sections.length} 个：${r.sections.join('｜')}`);
+  console.log(`表 ${r.tables.length} 张：`);
+  r.tables.forEach((t, i) => {
+    console.log(`  [${i + 1}] ${t.header.join(' / ')} —— ${t.cols} 列 × ${t.rows.length} 行`);
+  });
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('判据词频：');
+  for (const t of r.terms) console.log(`  ${t.term}：${t.n}`);
+  console.log('');
+  const q = r.quiz;
+  console.log(`quiz ${q.total} 题（pre ${q.stage.pre} / check ${q.stage.check} / post ${q.stage.post}）· 答案 ${q.answers.join('/')}`);
+  for (const it of q.items) {
+    console.log(`  ${it.n}. ${it.stage} · ${it.options} 选项 · 解释 ${it.explainHanzi} 字 · 接地 ${it.grounded} 词${it.sample.length ? `（${it.sample.join('、')}）` : ''}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/jijiu-huli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`check 题接地 ${q.checkGrounded} 道 · 答案落在 ${q.distinctAnswers} 个位置 · 最短解释 ${q.minExplain} 汉字`);
+  console.log('※ 以上数字全部由本章正文与 quiz 现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，分钟档与分级档位均为课堂演练口径，不构成诊疗或处置依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  analyze,
+  readDoc,
+  sections,
+  paragraphs,
+  tables,
+  grams,
+  hanzi,
+  count,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+  KEY_TERMS,
+};

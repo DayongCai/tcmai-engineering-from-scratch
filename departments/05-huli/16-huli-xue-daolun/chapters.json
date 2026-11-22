@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-fazhan-daolun",
-   "title": "护理学的发展与护理学导论",
+   "title": "护理之所以成为专业，是因为它的做法能被不在场的人复核",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-fazhan-daolun/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-linian-jiazhiguan",
-   "title": "护理理念与护理专业价值观",
+   "title": "理念不是墙上的标语，而是两种做法都合规时你选哪一个",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-linian-jiazhiguan/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-jiben-gainian",
-   "title": "护理学的基本概念与理论",
+   "title": "四个基本概念不是四个词，是一条断哪一节都塌的链",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-jiben-gainian/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-huanhuan-goutong",
-   "title": "护患关系与沟通",
+   "title": "护患关系的第一项技术，是把「帮忙」限制在照护目标里",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-huanhuan-goutong/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-huli-chengxu",
-   "title": "护理程序",
+   "title": "护理程序不是五步流水线，而是一个能被评价打回的循环",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-huli-chengxu/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-jiankang-jiaoyu",
-   "title": "健康教育",
+   "title": "健康教育的效果，不在讲了几条，在他回家做对了几件",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-jiankang-jiaoyu/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-lunli-falv",
-   "title": "护理伦理与法律",
+   "title": "伦理原则打架的那一刻，才是伦理真正开始的地方",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-lunli-falv/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-zhuanye-tuandui",
-   "title": "护理专业与团队协作",
+   "title": "团队协作的瓶颈不在人数，在有没有人敢说不",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-zhuanye-tuandui/docs/zh.md",
@@ -77,7 +77,7 @@
   {
    "n": 9,
    "slug": "09-zhiye-suyang",
-   "title": "护理职业素养与人文关怀",
+   "title": "人文关怀不是态度好，是看见了这个人的处境并因此改了做法",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/09-zhiye-suyang/docs/zh.md",
@@ -86,7 +86,7 @@
   {
    "n": 10,
    "slug": "10-shengming-tizheng",
-   "title": "生命体征观察与基础护理技术概论",
+   "title": "生命体征的价值不在那四个数，在谁去看第二遍",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/10-shengming-tizheng/docs/zh.md",
@@ -95,7 +95,7 @@
   {
    "n": 11,
    "slug": "11-huanzhe-anquan",
-   "title": "患者安全与护理质量",
+   "title": "安全不是不出事，是出事之前有人敢喊停",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/11-huanzhe-anquan/docs/zh.md",
@@ -104,7 +104,7 @@
   {
    "n": 12,
    "slug": "12-shushi-xiuxi",
-   "title": "舒适、休息与活动",
+   "title": "舒适是他说了算的指标，护士能改的是条件",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/12-shushi-xiuxi/docs/zh.md",
@@ -113,7 +113,7 @@
   {
    "n": 13,
    "slug": "13-yingyang-paixie",
-   "title": "营养与排泄的护理",
+   "title": "营养护理的功夫，在「吃进去」之前和「排出来」之后",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/13-yingyang-paixie/docs/zh.md",
@@ -122,7 +122,7 @@
   {
    "n": 14,
    "slug": "14-geiyao-zhiliao",
-   "title": "给药与治疗的护理",
+   "title": "给药的差错几乎都不是「不知道」，是没在被打断之前核完",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/14-geiyao-zhiliao/docs/zh.md",
@@ -131,7 +131,7 @@
   {
    "n": 15,
    "slug": "15-zhongyi-huli-jichu",
-   "title": "中医护理基础与应用",
+   "title": "辨证施护的「辨」，是把同一个症状分到不同的人身上",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/15-zhongyi-huli-jichu/docs/zh.md",
@@ -140,7 +140,7 @@
   {
    "n": 16,
    "slug": "16-teshu-renqun",
-   "title": "特殊人群的护理",
+   "title": "特殊人群的「特殊」，不在标签，在同一个动作对他们的风险不同",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/16-teshu-renqun/docs/zh.md",
@@ -149,7 +149,7 @@
   {
    "n": 17,
    "slug": "17-shequ-jiankang",
-   "title": "社区护理与健康管理",
+   "title": "社区护理的产出不在一张床，而在一群人三年后的状态",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/17-shequ-jiankang/docs/zh.md",
@@ -158,7 +158,7 @@
   {
    "n": 18,
    "slug": "18-pingtai-duijie",
-   "title": "护理学导论与 tcmP 平台",
+   "title": "能被机器读懂，是正文被复核的最低条件",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/18-pingtai-duijie/docs/zh.md",

@@ -15293,97 +15293,97 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-gaishu-moshi",
-        "title": "妇产科护理概述与工作模式",
+        "title": "妇产科护理的分界不在病种，而在一次照护里有两个人",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-pinggu-zhidao",
-        "title": "妇产科护理评估与健康指导",
+        "title": "评估的价值不在问了多少项，而在同一件事问第二遍还一致",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-renshen-qi",
-        "title": "妊娠期护理",
+        "title": "孕期随访筛的不是\"有没有病\"，而是\"谁在什么时候必须被叫回来\"",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-fenmian-qi",
-        "title": "分娩期护理",
+        "title": "产房里最贵的东西不是设备，是\"有人在看着\"的那几分钟",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-chanru-qi",
-        "title": "产褥期护理",
+        "title": "产后的\"正常\"是一条趋势，不是一句写在出院小结上的话",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-gaowei-renshen",
-        "title": "高危妊娠与妊娠并发症护理",
+        "title": "高危妊娠管的不是\"高危\"这个标签，是标签背后的随访密度",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-fenmian-bingfazheng",
-        "title": "分娩并发症护理",
+        "title": "产后出血不是\"看出血\"，是\"算出变化\"",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-xinshenger-weichan",
-        "title": "新生儿与围产期护理",
+        "title": "新生儿的危险不按病名出现，按\"过渡失败\"出现",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-chanke-shoushu",
-        "title": "产科手术与麻醉的护理配合",
+        "title": "产科手术的核对不是走流程，是把\"两个人\"同时对上台",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-fuke-jibing",
-        "title": "女性生殖系统疾病护理",
+        "title": "妇科护理最难的一步，是把\"说不出口\"问成一句可用的话",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-fuke-zhongliu",
-        "title": "妇科肿瘤护理",
+        "title": "肿瘤护理的目标不是\"治愈\"，是把治疗变成一段能过下去的日子",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-fuke-shoushu",
-        "title": "妇科手术护理",
+        "title": "妇科手术的成败有一半不在台上，而在术后第一次下床之前",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-shengzhi-neifenmi",
-        "title": "生殖内分泌与不孕症护理",
+        "title": "内分泌护理的第一课是\"周期会说话\"，第二课是\"别替她定时间\"",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-jihua-shengzhi",
-        "title": "计划生育与生殖健康护理",
+        "title": "计划生育护理的立场只有一条：决定权在当事人手里",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-funv-baojian",
-        "title": "妇女保健与社区护理",
+        "title": "保健的效果不看到课人数，看出问题的人有没有被接住",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-zhiliang-pingtai",
-        "title": "妇产科护理质量风险与平台",
+        "title": "指标能证明流程跑过，证明不了病人有没有被接住",
         "status": "🚧"
       }
     ],
@@ -15671,49 +15671,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xuanti-wentihua",
-        "title": "护理研究的选题与问题化",
+        "title": "好选题不是灵感，是把一句抱怨压成一个能算的缺口",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-liangxing-sheji",
-        "title": "量性研究与设计类型",
+        "title": "设计类型不是等级表，是你要替哪种错误付账",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-zhixing-fangtan",
-        "title": "质性研究与访谈分析",
+        "title": "质性研究不是聊天，是把重复说的话听成结构",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-liangbiao-xinxiao",
-        "title": "量表的选择与信效度",
+        "title": "量表不是尺子，是一份带刻度的说法",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-xunzheng-fenji",
-        "title": "循证护理的证据分级",
+        "title": "证据等级回答的是有多可信，不是该不该做",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-jiansuo-xitong",
-        "title": "文献检索与系统评价",
+        "title": "检索式写不出来的那一块，就是你没想清的那一块",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-zhuanhua-shijian",
-        "title": "证据到实践的转化",
+        "title": "证据不会自己走进病房，它要先被改写成一句能执行的指令",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-lunli-shencha",
-        "title": "护理研究中的伦理审查",
+        "title": "伦理审查不是盖章，是替不能到场的人提问",
         "status": "🚧"
       }
     ],
@@ -15721,109 +15721,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-fazhan-daolun",
-        "title": "护理学的发展与护理学导论",
+        "title": "护理之所以成为专业，是因为它的做法能被不在场的人复核",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-linian-jiazhiguan",
-        "title": "护理理念与护理专业价值观",
+        "title": "理念不是墙上的标语，而是两种做法都合规时你选哪一个",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-jiben-gainian",
-        "title": "护理学的基本概念与理论",
+        "title": "四个基本概念不是四个词，是一条断哪一节都塌的链",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-huanhuan-goutong",
-        "title": "护患关系与沟通",
+        "title": "护患关系的第一项技术，是把「帮忙」限制在照护目标里",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-huli-chengxu",
-        "title": "护理程序",
+        "title": "护理程序不是五步流水线，而是一个能被评价打回的循环",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-jiankang-jiaoyu",
-        "title": "健康教育",
+        "title": "健康教育的效果，不在讲了几条，在他回家做对了几件",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-lunli-falv",
-        "title": "护理伦理与法律",
+        "title": "伦理原则打架的那一刻，才是伦理真正开始的地方",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-zhuanye-tuandui",
-        "title": "护理专业与团队协作",
+        "title": "团队协作的瓶颈不在人数，在有没有人敢说不",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-zhiye-suyang",
-        "title": "护理职业素养与人文关怀",
+        "title": "人文关怀不是态度好，是看见了这个人的处境并因此改了做法",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-shengming-tizheng",
-        "title": "生命体征观察与基础护理技术概论",
+        "title": "生命体征的价值不在那四个数，在谁去看第二遍",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-huanzhe-anquan",
-        "title": "患者安全与护理质量",
+        "title": "安全不是不出事，是出事之前有人敢喊停",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-shushi-xiuxi",
-        "title": "舒适、休息与活动",
+        "title": "舒适是他说了算的指标，护士能改的是条件",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-yingyang-paixie",
-        "title": "营养与排泄的护理",
+        "title": "营养护理的功夫，在「吃进去」之前和「排出来」之后",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-geiyao-zhiliao",
-        "title": "给药与治疗的护理",
+        "title": "给药的差错几乎都不是「不知道」，是没在被打断之前核完",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-zhongyi-huli-jichu",
-        "title": "中医护理基础与应用",
+        "title": "辨证施护的「辨」，是把同一个症状分到不同的人身上",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-teshu-renqun",
-        "title": "特殊人群的护理",
+        "title": "特殊人群的「特殊」，不在标签，在同一个动作对他们的风险不同",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-shequ-jiankang",
-        "title": "社区护理与健康管理",
+        "title": "社区护理的产出不在一张床，而在一群人三年后的状态",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-pingtai-duijie",
-        "title": "护理学导论与 tcmP 平台",
+        "title": "能被机器读懂，是正文被复核的最低条件",
         "status": "🚧"
       }
     ],
@@ -16137,109 +16137,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-gaishu",
-        "title": "急救护理学概述",
+        "title": "急救护理学的起点是把不可逆点往前推",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-moshi-tuandui",
-        "title": "急救护理的工作模式与团队协作",
+        "title": "分工是提前写好的，现场只做确认",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-pinggu-fenzhen",
-        "title": "急救评估与预检分诊",
+        "title": "分诊的准确率不是算出来的，是复检出来的",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-jishu-peihe",
-        "title": "急救常用技术与配合",
+        "title": "配合的本事在递对东西，不在做得更多",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-xinbo-junting",
-        "title": "心搏骤停与心肺复苏的护理配合",
+        "title": "复苏的胜负在按压中断的秒数里",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-xiuke-guomin",
-        "title": "休克与严重过敏反应的急救护理",
+        "title": "休克最早露出的是灌注，不是血压",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-huxi-jizheng",
-        "title": "呼吸急症的急救护理",
+        "title": "呼吸急症的判断全在「说不出整句话」上",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-xiongton-futong",
-        "title": "胸痛与急性腹痛的急救护理",
+        "title": "胸腹痛的分水岭是时间轴，不是疼痛程度",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-yishi-chouchu",
-        "title": "意识障碍与抽搐的急救护理",
+        "title": "抽搐的护理全在「不做什么」上",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-zhongdu-yiwai",
-        "title": "急性中毒与意外伤害的急救护理",
+        "title": "中毒现场的第一件事是别让自己成为第二个患者",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-chuangshang",
-        "title": "创伤急救护理",
+        "title": "创伤的次序比手法重要：先止住能止住的",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-huanjing-liliao",
-        "title": "环境与理化因素所致急症的急救护理",
+        "title": "环境急症的第一处置是改变环境，不是改变人",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-fuchanke",
-        "title": "妇产科急症的急救护理",
+        "title": "产科急救的计时单位是两条命，不是一个人",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-erke",
-        "title": "儿科急症的急救护理",
+        "title": "儿科急救的判据要换算，不能照搬成人",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-laonian-teshu",
-        "title": "老年与特殊人群急症的急救护理",
+        "title": "老年急症的危险在于「看起来不重」",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-zainan-qunti",
-        "title": "灾难与群体伤害的急救护理",
+        "title": "群体伤害的分诊不是选重的，是选能救的",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-zhiliang-fengxian",
-        "title": "急救护理质量与风险管理",
+        "title": "质量指标的价值在口径，不在排名",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-pingtai",
-        "title": "急救护理学与教学平台",
+        "title": "平台的价值是让判断可复核，不是替人判断",
         "status": "🚧"
       }
     ],
@@ -16247,109 +16247,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-gaishu",
-        "title": "老年护理学概述",
+        "title": "老年护理的边界由功能决定，不由年龄决定",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-shengli-xinli",
-        "title": "老年人的生理与心理社会特点",
+        "title": "老化不是一条下坡路，而是几条坡度不同的坡",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-lunli-goutong",
-        "title": "老年护理伦理与沟通",
+        "title": "知情同意不是签字，是把选择权交回本人",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-zonghe-pinggu",
-        "title": "老年综合评估基础",
+        "title": "评估不是把项目做全，是把可干预的挑出来",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-jiankang-cujin",
-        "title": "老年人健康促进与疾病预防",
+        "title": "老年期的预防不是做加法，是保住已有的余量",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-manbing-huli",
-        "title": "老年常见慢性病的护理基础",
+        "title": "慢病护理的目标不是把指标压到正常，是让功能不掉",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-laonian-zonghezheng",
-        "title": "老年综合征护理",
+        "title": "老年综合征不是一串小毛病，是同一个底子上的连锁反应",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-renzhi-zhangai",
-        "title": "认知障碍与失智症照护",
+        "title": "失智照护的第一原则，是承认他现在的世界是真的",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-jizheng-guancha",
-        "title": "老年常见急症与病情观察",
+        "title": "老年急症的第一信号常常不是主诉，是功能突然掉下来",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-kangfu-huli",
-        "title": "老年康复护理",
+        "title": "康复不是把力气练回来，是把剩下的能力用到极限",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-yingyang-huli",
-        "title": "老年营养与饮食护理",
+        "title": "老年营养的入口不在食谱，在牙齿和吞咽",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-xinli-qingzhi",
-        "title": "老年心理与情志护理",
+        "title": "老年人的情绪问题常以身体不适出场",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-changqi-zhaohu",
-        "title": "老年长期照护与居家照护",
+        "title": "长期照护的关键不是照护强度，是照护能持续多久",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-anquan-fengxian",
-        "title": "老年安全与风险管理",
+        "title": "安全管理的水平，看的是上报之后发生了什么",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-anning-liaohu",
-        "title": "安宁疗护与临终关怀基础",
+        "title": "临终照护的目标不是延长时间，是不让这段时间难熬",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-zhiliang-tuandui",
-        "title": "老年护理质量管理与团队协作",
+        "title": "质量不是查出来的，是流程里长出来的",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-zhihui-yanglao",
-        "title": "智慧养老与老年护理信息化",
+        "title": "设备的价值不在报警那一刻，在报警之后谁去",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-pingtai",
-        "title": "老年护理学与教学平台",
+        "title": "学老年护理，学的不是知识清单，是在信息不全时作判断",
         "status": "🚧"
       }
     ],
@@ -16357,109 +16357,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-gaishu",
-        "title": "康复护理学概述",
+        "title": "康复护理管的是功能，不是病",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-lilun",
-        "title": "康复护理的理论基础",
+        "title": "可塑性有前提，不是一句安慰话",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-tuandui-moshi",
-        "title": "康复护理团队与工作模式",
+        "title": "康复的效果写在交接里，不在某个人手上",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-pinggu-jichu",
-        "title": "康复护理评估基础",
+        "title": "评估的用处是把「他说不行」换成「卡在哪一步」",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-lunli-goutong",
-        "title": "康复护理伦理与沟通",
+        "title": "同意不是签个字，是让他知道可以说不",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-jishu-anquan",
-        "title": "康复护理基本技术与安全",
+        "title": "体位是处方，不是把被子掖好",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-yundong-gongneng",
-        "title": "运动功能康复护理",
+        "title": "训练的成败取决于护理怎么排那二十三个小时",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-adl",
-        "title": "日常生活活动能力康复护理",
+        "title": "让他自己做，比替他做慢得多也难得多",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-yanyu-yantun-renzhi",
-        "title": "言语、吞咽与认知康复护理",
+        "title": "误吸的风险不在餐盘里，在喂饭的人手上",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-zhongyi-kangfu",
-        "title": "中医康复护理技术",
+        "title": "中医技术的边界，比它的手法更需要交代",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-bingfazheng-yufang",
-        "title": "康复护理中的并发症预防",
+        "title": "并发症不是意外，是没被记录下来的趋势",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-shenjing-xitong",
-        "title": "神经系统疾病康复护理",
+        "title": "神经康复的难处，是从「没变化」里看出变化",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-gu-guanjie",
-        "title": "骨与关节疾病康复护理",
+        "title": "骨科康复先问骨头稳不稳，再问能不能动",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-xinfei-daixie",
-        "title": "心肺与代谢疾病康复护理",
+        "title": "心肺康复的门槛不在能不能动，在动到什么程度该停",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-teshu-renqun",
-        "title": "特殊人群康复护理",
+        "title": "特殊人群的护理，先去掉标签再谈方案",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-shequ-jujia",
-        "title": "社区与居家康复护理",
+        "title": "出院不是终点，是把病房里的假设全部推翻",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-zhiliang-fengxian",
-        "title": "康复护理质量与风险管理",
+        "title": "质量不是不出事，是把出事的方式提前写下来",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-pingtai",
-        "title": "康复护理学与教学平台",
+        "title": "教学平台给的是可复算的地基，不是标准答案",
         "status": "🚧"
       }
     ],
@@ -16577,109 +16577,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-gaishu",
-        "title": "中医护理学概述",
+        "title": "中医护理的第一步不是操作，是把证说清楚",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-lilun-jichu",
-        "title": "中医护理的理论基础",
+        "title": "阴阳五行不是哲学装饰，是护理观察里最省事的两把尺",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-pinggu-fangfa",
-        "title": "中医护理的评估方法",
+        "title": "四诊的价值不在全，在于每一诊都能落成一个能被复核的字段",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-tizhi-shihu",
-        "title": "辨体质与施护",
+        "title": "体质不是标签，是给同一条医嘱加减的系数",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-zhenghou-shihu",
-        "title": "常见证候的辨证施护",
+        "title": "证候是施护的开关，而开关只能靠观察守住",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-neike-shihu",
-        "title": "内科常见病证的辨证施护",
+        "title": "内科护理的分水岭不在病名，在同一个病名下的三个证",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-waike-fuke",
-        "title": "外科与妇科病证的辨证施护",
+        "title": "外科看皮肤，妇科看隐私，两条线都不能靠「忍一忍」过去",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-erke-laonian",
-        "title": "儿科与老年病证的辨证施护",
+        "title": "儿科与老年科是同一件事的两端：都不会准确说出自己哪里不舒服",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-jishu-zonglun",
-        "title": "中医护理技术总论",
+        "title": "技术总论只回答三个问题：谁不能做、做的过程看什么、做完记什么",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-jiu-baguan",
-        "title": "灸法与拔罐技术",
+        "title": "灸与罐的第一道关不是手法，是这个人此刻能不能做",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-guasha-tuina",
-        "title": "刮痧、推拿与穴位技术",
+        "title": "刮痧出痧不是疗效指标，是皮肤反应的读数",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-waizhi-xunxi",
-        "title": "中药外治与熏洗技术",
+        "title": "外治的边界在皮肤：药力越强，越要先问皮能不能受",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-yinshi-qingzhi",
-        "title": "饮食与情志护理",
+        "title": "忌口不是一张清单，是按证加减的一句判断",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-wenshu-jilu",
-        "title": "中医护理文书与记录",
+        "title": "护理文书不是事后补记，是当时就能被复核的判断",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-anquan-zhiliang",
-        "title": "中医护理安全与质量",
+        "title": "安全事件的根因多半在交接，不在操作",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-shequ-jujia",
-        "title": "社区与居家中医护理",
+        "title": "居家护理把观察权交给了不会写记录的家属",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-pingtai-duijie",
-        "title": "中医护理学与 tcmP 平台",
+        "title": "平台能替你检索与归纳，不能替你签字",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-shixun-kaohe",
-        "title": "中医护理技术实训与考核导引",
+        "title": "考核考的不是做对一次，是知道什么时候不该做",
         "status": "🚧"
       }
     ],
@@ -16687,109 +16687,109 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-gaishu",
-        "title": "中医临床护理学概述",
+        "title": "中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-pinggu-chengxu",
-        "title": "临床护理评估与护理程序",
+        "title": "护理评估的价值在于把「说不清」变成可复核的记录",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-jishu-anquan",
-        "title": "临床护理常用技术应用与安全",
+        "title": "中医护理技术的安全线画在施术前，不在出事之后",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-zhongxiyi-jiehe",
-        "title": "中西医结合护理的思路与方法",
+        "title": "中西医结合护理的难点，是两套语言在同一张记录上对账",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-feixi",
-        "title": "肺系病证临床护理",
+        "title": "肺系护理的第一件事不是止咳，是分清痰在哪一头、气还剩多少",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-xinxi",
-        "title": "心系病证临床护理",
+        "title": "心系护理的分界，在「悸」有没有伴随失代偿的信号",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-piwei-gandan",
-        "title": "脾胃与肝胆病证临床护理",
+        "title": "脾胃肝胆的护理窗口在二便与腹痛，不在胃口好坏",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-shenxi-qixue",
-        "title": "肾系与气血津液病证临床护理",
+        "title": "水肿与血证的护理，量的是出量，不是感觉",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-naoxi-shenzhi",
-        "title": "脑系与神志病证临床护理",
+        "title": "脑系护理的每次交接，都要能回答「比上一班好还是坏」",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-waike",
-        "title": "外科病证临床护理",
+        "title": "外科护理的分寸，在画出红肿的边界、看清脓的性状",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-gushang",
-        "title": "骨伤科病证临床护理",
+        "title": "骨伤护理的报警器长在末梢，不在疼痛上",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-fuchanke",
-        "title": "妇产科病证临床护理",
+        "title": "妇产护理要先分清「该来多少」与「来得太快」",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-erke",
-        "title": "儿科病证临床护理",
+        "title": "儿科护理靠看「变没变」，不靠听「说不说」",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-wuguan-jizhong",
-        "title": "五官科与急危重症临床护理",
+        "title": "急危重症的护理价值，全在最初的几个动作里",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-wenshu-xinxi",
-        "title": "临床护理文书与信息管理",
+        "title": "护理文书的效力，取决于它写的是事实还是结论",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-anquan-lunli",
-        "title": "临床护理安全、伦理与质量管理",
+        "title": "护理安全的成本，永远低于一次补救",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-yanxu-shequ",
-        "title": "延续护理与社区康复护理",
+        "title": "出院宣教不落地，等于把护理做完又退回原处",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-pingtai",
-        "title": "中医临床护理学与教学平台",
+        "title": "中医临床护理的教学，考动作不如考判据",
         "status": "🚧"
       }
     ],
