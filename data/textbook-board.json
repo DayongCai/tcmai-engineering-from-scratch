@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 1843249,
+    "gapWithBodyChars": 1762833,
     "gapNoBody": 0
   },
   "totals": {
@@ -36,15 +36,15 @@
     "baseChapters": 1893,
     "extChapters": 138,
     "hbChapters": 130,
-    "baseNonWs": 36239289,
+    "baseNonWs": 36239371,
     "extNonWs": 214152,
     "hbNonWs": 236360,
     "coverageBaseHours": 62,
     "coverageBaseSubjects": 65.1,
     "textbookHours": 8865,
     "chapters": 2161,
-    "hanzi": 30428215,
-    "nonWs": 36689801,
+    "hanzi": 30428253,
+    "nonWs": 36689883,
     "metaWords": 34189113,
     "registryChapters": 1621,
     "registryChars": 28596788,
@@ -19390,8 +19390,8 @@
             "dir": "textbooks/08-wuguan/10-yanke-yingxiang-jiancha",
             "exists": true,
             "chapters": 8,
-            "hanzi": 50672,
-            "nonWs": 66164,
+            "hanzi": 50710,
+            "nonWs": 66246,
             "metaChapters": 8,
             "metaWords": 50672,
             "layer": "rewrite",
@@ -20139,8 +20139,8 @@
             "dir": "textbooks/08-wuguan/10-yanke-yingxiang-jiancha",
             "exists": true,
             "chapters": 8,
-            "hanzi": 50672,
-            "nonWs": 66164,
+            "hanzi": 50710,
+            "nonWs": 66246,
             "metaChapters": 8,
             "metaWords": 50672,
             "layer": "rewrite",
@@ -20928,14 +20928,14 @@
         "baseChapters": 112,
         "extChapters": 138,
         "hbChapters": 12,
-        "baseNonWs": 946741,
+        "baseNonWs": 946823,
         "extNonWs": 214152,
         "hbNonWs": 22578,
         "coverageBaseHours": 68.9,
         "textbookHours": 1026,
         "chapters": 262,
-        "hanzi": 910882,
-        "nonWs": 1183471,
+        "hanzi": 910920,
+        "nonWs": 1183553,
         "coverageSubjects": 94.1,
         "coverageHours": 93.4,
         "semesterSpan": "4–10",
@@ -23047,9 +23047,9 @@
           "hours": 36,
           "body": {
             "chapters": 10,
-            "chars": 18477
+            "chars": 43400
           },
-          "note": "教学章已有正文（10 章 / 1.8 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 4.3 万字），未接教材出版线"
         }
       ]
     },
@@ -23624,9 +23624,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 143134
+            "chars": 119435
           },
-          "note": "教学章已有正文（10 章 / 14.3 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 11.9 万字），未接教材出版线"
         }
       ]
     },
@@ -23643,9 +23643,9 @@
           "hours": 36,
           "body": {
             "chapters": 12,
-            "chars": 125703
+            "chars": 44063
           },
-          "note": "教学章已有正文（12 章 / 12.6 万字），未接教材出版线"
+          "note": "教学章已有正文（12 章 / 4.4 万字），未接教材出版线"
         }
       ]
     }
@@ -23821,7 +23821,7 @@
     "curriculumSubjects": 189,
     "curriculumHours": 11547,
     "diskChapters": 2161,
-    "diskHanzi": 30428215,
+    "diskHanzi": 30428253,
     "registryFiles": 100,
     "subjectsWithoutTextbook": 46,
     "unmatchedRegistrySubjects": []
