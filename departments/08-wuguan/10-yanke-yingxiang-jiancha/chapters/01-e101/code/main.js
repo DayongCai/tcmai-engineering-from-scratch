@@ -1,101 +1,140 @@
 #!/usr/bin/env node
 /**
- * 眼科影像检查 · 第 1 章 影像在眼科的位置：从四诊到仪器：本章统计口径
- * 课程: departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/01-e101/docs/zh.md
- * 数据: standards/yanke-yingxiang-jiancha/units.json（40 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yanke-yingxiang-jiancha/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 眼科影像检查 · 第 1 章对账器
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数据源只有两个，都在本目录旁边：
+ *   ../docs/zh.md   本章正文（四区、五轮配属、两类信息、闸门四问都写在这一份里）
+ *   ../quiz.json    本章习题
+ *
+ * 现算的东西：
+ *   1. 四区在正文里的首见顺序；
+ *   2. 五轮配属（部位—轮—脏）从正文的括注里解析出来，不手打；
+ *   3. 「推不出」句数（正文把不可互换写成方向句）；
+ *   4. 闸门三件的出现位置；
+ *   5. 正文引到的共识节号；
+ *   6. 习题对账：题量、分段、选项数、解释字数，以及 check 题正确选项能否在正文里找到原词。
+ *
+ * 依赖：仅 node:fs / node:path。
  */
-
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yanke-yingxiang-jiancha', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const ZONES = ['胞睑', '白睛', '黑睛', '瞳神'];
+
+const docText = () => fs.readFileSync(DOC, 'utf8');
+const quizData = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
+
+/** 连续汉字片段（n 字），用于判断「习题用词是不是正文里的词」 */
+function grams(s, n = 4) {
+  const out = new Set();
+  for (const seg of String(s || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  throw new Error('没找到 standards/yanke-yingxiang-jiancha/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yanke-yingxiang-jiancha', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yanke-yingxiang-jiancha', 'chapter-map.json');
-const CHAPTER = '1';
-const SLUG = '01-e101';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 四区在正文里的首见顺序；indexOf 为 -1（正文没提到）的一律排到末尾 */
+function zoneOrder(text = docText()) {
+  return ZONES
+    .map((z) => ({ zone: z, at: text.indexOf(z) }))
+    .sort((a, b) => (a.at < 0 ? Infinity : a.at) - (b.at < 0 ? Infinity : b.at))
+    .map((x) => x.zone);
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 五轮配属：正文写作「**胞睑（肉轮，属脾）**」这类括注，逐条解析 */
+function wulunPairs(text = docText()) {
+  const re = /\*\*(胞睑|白睛|黑睛|瞳神)（(.)轮，属(.)）\*\*/g;
+  return [...text.matchAll(re)].map((m) => ({ zone: m[1], wheel: `${m[2]}轮`, organ: m[3] }));
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** 正文用「推不出」立了几个不可互换的方向 */
+function twoInfoDirections(text = docText()) {
+  return (text.match(/推不出/g) || []).length;
+}
+
+/** 闸门三件（适应证、禁忌、知情）各自在正文里的位置，按出现先后排 */
+function gates(text = docText()) {
+  return ['适应证', '禁忌', '知情']
+    .map((k) => ({ key: k, at: text.indexOf(k) }))
+    .filter((x) => x.at >= 0)
+    .sort((a, b) => a.at - b.at);
+}
+
+/** 正文引到的共识节号（共识·第X节），去重后按首次出现顺序返回 */
+function consensusSections(text = docText()) {
+  const seen = [];
+  for (const m of text.matchAll(/共识·第([一二三四五六七八九十]+)节/g)) {
+    if (!seen.includes(m[1])) seen.push(m[1]);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return seen;
+}
+
+/** 习题对账：结构 + 接地 */
+function quizAudit() {
+  const q = quizData();
+  const body = grams(docText());
+  const qs = Array.isArray(q.questions) ? q.questions : [];
+  const byStage = { pre: 0, check: 0, post: 0 };
+  const problems = [];
+  let grounded = 0;
+
+  qs.forEach((item, i) => {
+    const n = i + 1;
+    if (item.stage in byStage) byStage[item.stage] += 1;
+    else problems.push(`第 ${n} 题 stage 非法：${item.stage}`);
+    const opts = Array.isArray(item.options) ? item.options : [];
+    if (opts.length !== 4) problems.push(`第 ${n} 题有 ${opts.length} 个选项`);
+    if (!(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < opts.length)) {
+      problems.push(`第 ${n} 题 correct 下标非法`);
+    }
+    if (hanzi(item.explain) < 30) problems.push(`第 ${n} 题 explain 只有 ${hanzi(item.explain)} 汉字`);
+    if (item.stage === 'check') {
+      const right = String(opts[item.correct] || '');
+      if ([...grams(right)].some((g) => body.has(g))) grounded += 1;
+    }
+  });
+
+  return { total: qs.length, byStage, grounded, problems };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = docText();
+  const order = zoneOrder(text);
+  const pairs = wulunPairs(text);
+  const a = quizAudit();
 
-  console.log(`眼科影像检查 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('眼科影像检查 · 第 1 章 对账');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`四区首见顺序：${order.join(' → ')}`);
+  console.log(`五轮配属：${pairs.map((p) => `${p.zone}·${p.wheel}·${p.organ}`).join('；')}`);
+  console.log(`两类信息的方向句（「推不出」）：${twoInfoDirections(text)} 处`);
+  console.log(`闸门三件：${gates(text).map((g) => g.key).join(' → ')}`);
+  console.log(`正文引到的共识节：${consensusSections(text).map((s) => `第${s}节`).join('、') || '（无）'}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`习题 ${a.total} 题（pre ${a.byStage.pre} / check ${a.byStage.check} / post ${a.byStage.post}）`);
+  console.log(`check 题正确选项能在正文找到原词的：${a.grounded} 道`);
+  console.log(a.problems.length ? `✗ ${a.problems.length} 处：${a.problems.join('；')}` : '✓ 结构齐、解释够长、判据落在正文');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/yanke-yingxiang-jiancha/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文与习题现算，不手打；正文改动后重跑即可复现。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  ZONES,
+  docText,
+  quizData,
+  hanzi,
+  grams,
+  zoneOrder,
+  wulunPairs,
+  twoInfoDirections,
+  gates,
+  consensusSections,
+  quizAudit,
+};

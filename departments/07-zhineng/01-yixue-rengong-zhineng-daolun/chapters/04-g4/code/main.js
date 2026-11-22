@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 医学人工智能导论 · 第 4 章 系统的形状：从 HIS 到智能体：本章统计口径
- * 课程: departments/07-zhineng/01-yixue-rengong-zhineng-daolun/chapters/04-g4/docs/zh.md
- * 数据: standards/yixue-rengong-zhineng-daolun/units.json（212 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yixue-rengong-zhineng-daolun/chapter-map.json（课程章 → 教材单元号）
+ * 医学人工智能导论 · 第 4 章 系统的形状由写权限决定，不由技术栈决定
+ * 正文: departments/07-zhineng/01-yixue-rengong-zhineng-daolun/chapters/04-g4/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 口径：本脚本只读本目录的 docs/zh.md，汉字数、节数、表数、引文条数全部从正文现算。
+ * 正文一改，数字就跟着变；把数字手打进代码，下一次补实就会静默过期。
  */
 
 'use strict';
@@ -15,87 +13,90 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yixue-rengong-zhineng-daolun', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/yixue-rengong-zhineng-daolun/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yixue-rengong-zhineng-daolun', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yixue-rengong-zhineng-daolun', 'chapter-map.json');
-const CHAPTER = '4';
+const CHAPTER = 4;
 const SLUG = '04-g4';
+const TITLE = '系统的形状由写权限决定，不由技术栈决定';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const hanzi = (s) => (String(s).match(HANZI) || []).length;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function readDoc() {
+  return fs.readFileSync(DOC, 'utf8');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 所有二级标题（含末节「代价与边界」） */
+function headings(text) {
+  return text
+    .split(/\r?\n/)
+    .filter((line) => /^##\s+/.test(line))
+    .map((line) => line.replace(/^##\s+/, '').trim());
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 编号节：一、二、……；末节「代价与边界」不计入 */
+function numbered(heads) {
+  return heads.filter((h) => /^[一二三四五六七八九十]+、/.test(h));
+}
+
+/** markdown 表：定界行 |---| 出现一次即一张表 */
+function tables(text) {
+  return text
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => /^\|[\s:|-]*---[\s:|-]*\|$/.test(line)).length;
+}
+
+/** 引文：《书名》或《书名·篇名》 */
+function citations(text) {
+  const all = [...text.matchAll(/《([^》]+)》/g)].map((m) => m[1]);
+  return { total: all.length, books: [...new Set(all)].sort() };
+}
+
+function stats() {
+  const text = readDoc();
+  const heads = headings(text);
+  const c = citations(text);
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title: TITLE,
+    hanzi: hanzi(text),
+    sections: heads.length,
+    numbered: numbered(heads).length,
+    tables: tables(text),
+    cites: c.total,
+    books: c.books,
+    drills: (text.match(/演算设定/g) || []).length,
+    disclaimer: /免责声明/.test(text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const s = stats();
+  const heads = headings(readDoc());
+  const fmt = (n) => n.toLocaleString('en-US');
 
-  console.log(`医学人工智能导论 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`医学人工智能导论 · 第 ${s.chapter} 章 ${s.title}`);
+  console.log(`正文：chapters/${s.slug}/docs/zh.md（现算，不手打）`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`  汉字        ${fmt(s.hanzi)}`);
+  console.log(`  节          ${s.sections}（编号节 ${s.numbered} + 代价与边界）`);
+  console.log(`  表          ${s.tables}`);
+  console.log(`  引文        ${s.cites} 处 / ${s.books.length} 部`);
+  console.log(`  演算设定    ${s.drills} 处`);
+  console.log(`  免责声明    ${s.disclaimer ? '有' : '缺'}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('节标题：');
+  for (const h of heads) console.log(`  · ${h}`);
+  if (s.books.length) {
+    console.log('');
+    console.log(`引书：${s.books.map((b) => `《${b}》`).join('')}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/yixue-rengong-zhineng-daolun/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本目录 docs/zh.md 现算：正文字数、节、表、引文任一变动，重跑本脚本即可看到新值。');
+  console.log('※ 文中成本、时延、区间均为各节的演算设定，用于演示关系，不是任何机构的采集结果。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { CHAPTER, SLUG, TITLE, DOC, readDoc, headings, numbered, tables, citations, hanzi, stats, main };

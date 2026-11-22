@@ -2,61 +2,98 @@
 
 const test = require('node:test');
 const assert = require('node:assert');
-const fs = require('node:fs');
-const path = require('node:path');
-const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yanke-yingxiang-jiancha', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yanke-yingxiang-jiancha', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const {
+  docText,
+  quizData,
+  grams,
+  reachStages,
+  modalities,
+  sectionChecks,
+  changeKinds,
+  angioAnswers,
+  alignRules,
+  phaseWindows,
+  phaseAt,
+  signalFloor,
+  scanFrames,
+  quizAudit,
+} = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('可及性三段：通路 → 断面 → 灌注（顺序不能倒）', () => {
+  assert.deepStrictEqual(reachStages(), ['通路', '断面', '灌注']);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('四类手段各归各位，不互相替代', () => {
+  assert.deepStrictEqual(modalities(), ['声学', '光学断面', '眼底照相', '造影']);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('断面四层判断：连续 → 厚度 → 反射 → 界面', () => {
+  assert.deepStrictEqual(sectionChecks(), ['连续', '厚度', '反射', '界面']);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('七类常见改变、造影三答、复查对齐四条', () => {
+  assert.strictEqual(changeKinds(), 7);
+  assert.deepStrictEqual(angioAnswers(), ['灌注', '渗漏', '屏障']);
+  assert.strictEqual(alignRules().length, 4);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('时相窗口从正文解析：0–10s / 10–20s / 5–15min', () => {
+  const w = phaseWindows();
+  assert.deepStrictEqual(w.map((x) => [x.name, x.lo, x.hi]), [
+    ['动脉期', 0, 10],
+    ['静脉期', 10, 20],
+    ['晚期', 300, 900],
+  ]);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/yanke-yingxiang-jiancha\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
+test('按时相窗口定名：边界归前一段，空档单列', () => {
+  assert.strictEqual(phaseAt(0), '动脉期');
+  assert.strictEqual(phaseAt(10), '动脉期');
+  assert.strictEqual(phaseAt(10.5), '静脉期');
+  assert.strictEqual(phaseAt(20), '静脉期');
+  assert.strictEqual(phaseAt(21), '未入时相窗口');
+  assert.strictEqual(phaseAt(300), '晚期');
+  assert.strictEqual(phaseAt(900), '晚期');
+  assert.strictEqual(phaseAt(901), '未入时相窗口');
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
+test('计时起点错开会让动脉期冒充静脉期 —— 时序错位可复算', () => {
+  assert.strictEqual(phaseAt(5), '动脉期');
+  assert.strictEqual(phaseAt(5, 6), '静脉期');
+  assert.throws(() => phaseAt(-1), RangeError);
 });
 
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/04-e104/docs/zh.md'), '头部注释未指向本章');
+test('可判读下限与扫描范围取自正文', () => {
+  assert.strictEqual(signalFloor(), 40);
+  assert.deepStrictEqual(scanFrames(), ['6mm×6mm', '3mm×3mm']);
+});
+
+test('习题结构：6 题、pre 1 / check 3 / post 2、每题 4 选项', () => {
+  const a = quizAudit();
+  assert.strictEqual(a.total, 6);
+  assert.deepStrictEqual(a.byStage, { pre: 1, check: 3, post: 2 });
+  assert.deepStrictEqual(a.problems, []);
+  for (const item of quizData().questions) {
+    assert.strictEqual(new Set(item.options).size, 4, `选项有重复：${item.question}`);
+  }
+});
+
+test('三道 check 题的正确选项都能在本章正文找到原词', () => {
+  const a = quizAudit();
+  assert.strictEqual(a.grounded, a.byStage.check);
+  assert.ok(a.grounded >= 2);
+});
+
+test('每题正确选项的用词都能在正文里逐字对上', () => {
+  const body = grams(docText());
+  for (const item of quizData().questions) {
+    const right = item.options[item.correct];
+    assert.ok([...grams(right)].some((g) => body.has(g)), `正文里找不到：${right}`);
+  }
+});
+
+test('写法纪律留在正文：不写好转、写差异', () => {
+  const text = docText();
+  assert.ok(text.includes('不写「好转」「加重」，写差异'));
 });

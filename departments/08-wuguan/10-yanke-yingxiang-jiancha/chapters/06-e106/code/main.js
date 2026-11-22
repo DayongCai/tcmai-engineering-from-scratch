@@ -1,101 +1,167 @@
 #!/usr/bin/env node
 /**
- * 眼科影像检查 · 第 6 章 眼底出血与糖网的影像随访：本章统计口径
- * 课程: departments/08-wuguan/10-yanke-yingxiang-jiancha/chapters/06-e106/docs/zh.md
- * 数据: standards/yanke-yingxiang-jiancha/units.json（40 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yanke-yingxiang-jiancha/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
+ * 眼科影像检查 · 第 6 章对账器
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数据源：../docs/zh.md（本章正文）、../quiz.json（本章习题）
+ *
+ * 现算的东西：
+ *   1. 出血分层的表（层次 → 形态词），从正文表里解析，不手打；
+ *   2. 按形态反查层次 —— 正文的判据是形态决定层次；
+ *   3. 三层最小集、三个相对标尺、三条时程线索、复查间隔四件事、疗效三层；
+ *   4. 转诊判据的条数；
+ *   5. 正文有没有编造灵敏度／特异度（应当没有）；
+ *   6. 习题对账。
+ *
+ * 依赖：仅 node:fs / node:path。
  */
-
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yanke-yingxiang-jiancha', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+
+const docText = () => fs.readFileSync(DOC, 'utf8');
+const quizData = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
+
+function grams(s, n = 4) {
+  const out = new Set();
+  for (const seg of String(s || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  throw new Error('没找到 standards/yanke-yingxiang-jiancha/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yanke-yingxiang-jiancha', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yanke-yingxiang-jiancha', 'chapter-map.json');
-const CHAPTER = '6';
-const SLUG = '06-e106';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/**
+ * 分层表：正文写成「**视网膜内**：火焰状、线状，沿神经纤维走行铺开」。
+ * 返回 [{layer, words:[…]}]，层次与该行描述词的对应关系全部来自正文。
+ */
+function layerTable(text = docText()) {
+  const out = [];
+  const re = /\*\*(视网膜内|视网膜下|视网膜前／玻璃体下|玻璃体|脉络膜)\*\*：([^。]*)/g;
+  for (const m of text.matchAll(re)) {
+    const words = m[2].split('，')[0].split('、').map((s) => s.trim()).filter(Boolean);
+    out.push({ layer: m[1], words });
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+/** 按形态反查层次；正文没有的形态一律返回 null，不猜 */
+function layerFor(shape, text = docText()) {
+  const hit = layerTable(text).find((row) => row.words.includes(shape));
+  return hit ? hit.layer : null;
+}
+
+/** 三层最小集：视网膜内、视网膜下、玻璃体与视网膜前 */
+function minimalLayers(text = docText()) {
+  return [...text.matchAll(/\*\*(视网膜内出血|视网膜下出血|玻璃体与视网膜前出血)\*\*/g)].map((m) => m[1]);
+}
+
+/** 三个相对标尺 */
+function rulers(text = docText()) {
+  return [...text.matchAll(/\*\*(?:一是|二是|三是)以([^*]+?)为标尺\*\*/g)].map((m) => m[1]);
+}
+
+/** 三条时程线索：颜色、边界、液平面 */
+function timeClues(text = docText()) {
+  const seg = text.split('时程有三条线索：')[1];
+  if (!seg) return [];
+  return [...seg.split('。')[0].matchAll(/\*\*([^*]+)\*\*/g)].map((m) => m[1]);
+}
+
+/** 复查间隔的四件事 */
+function intervalFactors(text = docText()) {
+  const seg = text.split('间隔应当由四件事决定。')[1];
+  if (!seg) return [];
+  return [...seg.matchAll(/\*\*([^*]+)\*\*：/g)].map((m) => m[1]);
+}
+
+/** 转诊判据的条数（每条以「——」引出处置方向） */
+function referralRules(text = docText()) {
+  const seg = text.split('以下情形不属于「下次再说」：')[1];
+  if (!seg) return [];
+  return [...seg.split('。')[0].matchAll(/\*\*[^*]+\*\*——/g)].length;
+}
+
+/** 疗效评价的三层 */
+function effectTiers(text = docText()) {
+  return [...text.matchAll(/\*\*(结构|功能|全身)\*\*（/g)].map((m) => m[1]);
+}
+
+/** 正文有没有编造灵敏度／特异度 */
+function inventedAccuracy(text = docText()) {
+  return (text.match(/灵敏度|特异度|准确率/g) || []).length;
+}
+
+function quizAudit() {
+  const q = quizData();
+  const body = grams(docText());
+  const qs = Array.isArray(q.questions) ? q.questions : [];
+  const byStage = { pre: 0, check: 0, post: 0 };
+  const problems = [];
+  let grounded = 0;
+
+  qs.forEach((item, i) => {
+    const n = i + 1;
+    if (item.stage in byStage) byStage[item.stage] += 1;
+    else problems.push(`第 ${n} 题 stage 非法：${item.stage}`);
+    const opts = Array.isArray(item.options) ? item.options : [];
+    if (opts.length !== 4) problems.push(`第 ${n} 题有 ${opts.length} 个选项`);
+    if (!(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < opts.length)) {
+      problems.push(`第 ${n} 题 correct 下标非法`);
+    }
+    if (hanzi(item.explain) < 30) problems.push(`第 ${n} 题 explain 只有 ${hanzi(item.explain)} 汉字`);
+    if (item.stage === 'check') {
+      const right = String(opts[item.correct] || '');
+      if ([...grams(right)].some((g) => body.has(g))) grounded += 1;
+    }
+  });
+
+  return { total: qs.length, byStage, grounded, problems };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = docText();
+  const a = quizAudit();
+  const table = layerTable(text);
 
-  console.log(`眼科影像检查 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('眼科影像检查 · 第 6 章 对账');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log('分层表（层次 ← 描述词）：');
+  for (const row of table) console.log(`  ${row.layer}：${row.words.join('、')}`);
+  console.log(`  火焰状 → ${layerFor('火焰状')}；舟状 → ${layerFor('舟状')}；絮状 → ${layerFor('絮状')}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`三层最小集：${minimalLayers(text).join('、')}`);
+  console.log(`三个相对标尺：${rulers(text).join('、')}`);
+  console.log(`时程三线索：${timeClues(text).join('、')}`);
+  console.log(`间隔四件事：${intervalFactors(text).join('、')}`);
+  console.log(`转诊判据：${referralRules(text)} 条；疗效三层：${effectTiers(text).join('、')}`);
+  console.log(`灵敏度／特异度类断言：${inventedAccuracy(text)} 处（应为 0）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`习题 ${a.total} 题（pre ${a.byStage.pre} / check ${a.byStage.check} / post ${a.byStage.post}）`);
+  console.log(`check 题正确选项能在正文找到原词的：${a.grounded} 道`);
+  console.log(a.problems.length ? `✗ ${a.problems.length} 处：${a.problems.join('；')}` : '✓ 结构齐、解释够长、判据落在正文');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/yanke-yingxiang-jiancha/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，不手打；正文改动后重跑即可复现。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  docText,
+  quizData,
+  hanzi,
+  grams,
+  layerTable,
+  layerFor,
+  minimalLayers,
+  rulers,
+  timeClues,
+  intervalFactors,
+  referralRules,
+  effectTiers,
+  inventedAccuracy,
+  quizAudit,
+};

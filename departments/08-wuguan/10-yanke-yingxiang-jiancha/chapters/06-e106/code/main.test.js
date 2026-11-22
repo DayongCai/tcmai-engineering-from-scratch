@@ -2,61 +2,80 @@
 
 const test = require('node:test');
 const assert = require('node:assert');
-const fs = require('node:fs');
-const path = require('node:path');
-const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yanke-yingxiang-jiancha', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yanke-yingxiang-jiancha', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const {
+  docText,
+  quizData,
+  grams,
+  layerTable,
+  layerFor,
+  minimalLayers,
+  rulers,
+  timeClues,
+  intervalFactors,
+  referralRules,
+  effectTiers,
+  inventedAccuracy,
+  quizAudit,
+} = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('分层表解析出五个层次，顺序与正文一致', () => {
+  assert.deepStrictEqual(
+    layerTable().map((r) => r.layer),
+    ['视网膜内', '视网膜下', '视网膜前／玻璃体下', '玻璃体', '脉络膜'],
+  );
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('形态决定层次：火焰状在视网膜内、舟状在视网膜前、絮状在玻璃体', () => {
+  assert.strictEqual(layerFor('火焰状'), '视网膜内');
+  assert.strictEqual(layerFor('线状'), '视网膜内');
+  assert.strictEqual(layerFor('舟状'), '视网膜前／玻璃体下');
+  assert.strictEqual(layerFor('絮状'), '玻璃体');
+  assert.strictEqual(layerFor('弥漫'), '玻璃体');
+  assert.strictEqual(layerFor('星芒状'), null, '正文没有的形态不许猜');
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('三层最小集、三个相对标尺、三条时程线索', () => {
+  assert.deepStrictEqual(minimalLayers(), ['视网膜内出血', '视网膜下出血', '玻璃体与视网膜前出血']);
+  assert.deepStrictEqual(rulers(), ['视盘直径', '遮蔽程度', '分区计数']);
+  assert.deepStrictEqual(timeClues(), ['颜色', '边界', '液平面']);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('复查间隔四件事、转诊判据六条、疗效三层', () => {
+  assert.deepStrictEqual(intervalFactors(), ['层次与位置', '活动性', '全身状态', '可及性与责任']);
+  assert.strictEqual(referralRules(), 6);
+  assert.deepStrictEqual(effectTiers(), ['结构', '功能', '全身']);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('不编造灵敏度／特异度这类数字', () => {
+  assert.strictEqual(inventedAccuracy(), 0);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/yanke-yingxiang-jiancha\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
+test('正文把面积能否随访讲清楚：没有绝对单位', () => {
+  const text = docText();
+  assert.ok(text.includes('面积在眼底出血里没有绝对单位'));
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
+test('习题结构：6 题、pre 1 / check 3 / post 2、每题 4 选项', () => {
+  const a = quizAudit();
+  assert.strictEqual(a.total, 6);
+  assert.deepStrictEqual(a.byStage, { pre: 1, check: 3, post: 2 });
+  assert.deepStrictEqual(a.problems, []);
+  for (const item of quizData().questions) {
+    assert.strictEqual(new Set(item.options).size, 4, `选项有重复：${item.question}`);
+  }
 });
 
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/06-e106/docs/zh.md'), '头部注释未指向本章');
+test('三道 check 题的正确选项都能在本章正文找到原词', () => {
+  const a = quizAudit();
+  assert.strictEqual(a.grounded, a.byStage.check);
+  assert.ok(a.grounded >= 2);
+});
+
+test('每题正确选项的用词都能在正文里逐字对上', () => {
+  const body = grams(docText());
+  for (const item of quizData().questions) {
+    const right = item.options[item.correct];
+    assert.ok([...grams(right)].some((g) => body.has(g)), `正文里找不到：${right}`);
+  }
 });

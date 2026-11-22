@@ -2,61 +2,95 @@
 
 const test = require('node:test');
 const assert = require('node:assert');
-const fs = require('node:fs');
-const path = require('node:path');
-const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yanke-yingxiang-jiancha', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yanke-yingxiang-jiancha', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const {
+  docText,
+  quizData,
+  grams,
+  DROP,
+  KEEP,
+  fieldClasses,
+  collectionRules,
+  useCases,
+  redLines,
+  patientRights,
+  deleteClause,
+  deidentify,
+  assertSeparable,
+  quizAudit,
+} = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('四类字段齐：直接标识、准标识、生物特征、推断性标识', () => {
+  const got = fieldClasses();
+  assert.strictEqual(got.length, 4);
+  assert.deepStrictEqual([...got].sort(), ['推断性标识', '直接标识', '生物特征', '准标识'].sort());
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('采集三规则、借阅三情形、三条红线、五项权利', () => {
+  assert.strictEqual(collectionRules().length, 3);
+  assert.deepStrictEqual(useCases(), ['临床借阅', '对外借阅', '二次使用']);
+  assert.deepStrictEqual(redLines(), ['数据不出境', '不上境外云', '不以免费筛查换数据']);
+  assert.strictEqual(patientRights().length, 5);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('代码里的必删清单逐项都能在正文「必删字段」段找到 —— 正文改了这里就会红', () => {
+  const clause = deleteClause();
+  assert.ok(clause.length > 0, '正文缺「必删字段」段');
+  for (const f of DROP) assert.ok(clause.includes(f), `必删清单里的 ${f} 在正文中找不到`);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('可留字段与正文一致：眼别、年龄段、诊断大类、相对时序都在', () => {
+  const text = docText();
+  for (const f of KEEP) assert.ok(text.includes(f), `正文缺可留字段：${f}`);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('去标识：删身份痕迹，留可比对字段，精确日期折成相对时序', () => {
+  const r = deidentify({ 姓名: '示例', 病历号: 'A1', 眼别: '右', 精确日期: '2026-11-22', 诊断大类: 'DR' });
+  assert.ok(!('姓名' in r.kept));
+  assert.ok(!('病历号' in r.kept));
+  assert.ok(!('精确日期' in r.kept));
+  assert.strictEqual(r.kept['眼别'], '右');
+  assert.strictEqual(r.kept['诊断大类'], 'DR');
+  assert.strictEqual(r.kept['相对时序'], 'T0');
+  assert.deepStrictEqual(r.dropped.sort(), ['姓名', '精确日期', '病历号'].sort());
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/yanke-yingxiang-jiancha\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
+test('相对时序可以按参照点给，不必回填日期', () => {
+  const r = deidentify({ 精确日期: '2026-11-22', 眼别: '左' }, { relativeTo: '首诊+30d' });
+  assert.strictEqual(r.kept['相对时序'], '首诊+30d');
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
+test('关联表与数据放在一起就抛错：去标识等于没做', () => {
+  assert.strictEqual(assertSeparable({ 关联表: { A1: '示例' } }), true, '关联表单独存放是允许的');
+  assert.throws(() => assertSeparable({ 关联表: { A1: '示例' }, 眼别: '右' }), /去标识等于没做/);
 });
 
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/08-e108/docs/zh.md'), '头部注释未指向本章');
+test('正文保留「默认可识别」的立场与三条来路', () => {
+  const text = docText();
+  assert.ok(text.includes('默认「可识别」'));
+  assert.ok(text.includes('不可重置'));
+});
+
+test('习题结构：6 题、pre 1 / check 3 / post 2、每题 4 选项', () => {
+  const a = quizAudit();
+  assert.strictEqual(a.total, 6);
+  assert.deepStrictEqual(a.byStage, { pre: 1, check: 3, post: 2 });
+  assert.deepStrictEqual(a.problems, []);
+  for (const item of quizData().questions) {
+    assert.strictEqual(new Set(item.options).size, 4, `选项有重复：${item.question}`);
+  }
+});
+
+test('三道 check 题的正确选项都能在本章正文找到原词', () => {
+  const a = quizAudit();
+  assert.strictEqual(a.grounded, a.byStage.check);
+  assert.ok(a.grounded >= 2);
+});
+
+test('每题正确选项的用词都能在正文里逐字对上', () => {
+  const body = grams(docText());
+  for (const item of quizData().questions) {
+    const right = item.options[item.correct];
+    assert.ok([...grams(right)].some((g) => body.has(g)), `正文里找不到：${right}`);
+  }
 });

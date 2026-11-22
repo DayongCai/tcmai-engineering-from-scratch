@@ -2,61 +2,91 @@
 
 const test = require('node:test');
 const assert = require('node:assert');
-const fs = require('node:fs');
-const path = require('node:path');
-const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yanke-yingxiang-jiancha', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yanke-yingxiang-jiancha', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const {
+  docText,
+  quizData,
+  grams,
+  cupDiscRatio,
+  interpret,
+  rimQuadrants,
+  fieldDefectWords,
+  trendPillars,
+  mismatchReasons,
+  cdrThresholdClaims,
+  consensusNoThreshold,
+  quizAudit,
+} = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('杯盘比就是两个直径的商，保留两位', () => {
+  assert.strictEqual(cupDiscRatio(0.6, 1.0), 0.6);
+  assert.strictEqual(cupDiscRatio(1, 3), 0.33);
+  assert.strictEqual(cupDiscRatio(0, 1), 0);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('非法输入要拒绝：盘为 0、杯为负、杯大于盘', () => {
+  assert.throws(() => cupDiscRatio(0.3, 0), RangeError);
+  assert.throws(() => cupDiscRatio(-0.1, 1), RangeError);
+  assert.throws(() => cupDiscRatio(1.2, 1), RangeError);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('只给比值不产出结论：杯盘比可以记，不能单独承担判读', () => {
+  const r = interpret({ cupMm: 0.8, discMm: 1.0 });
+  assert.strictEqual(r.ratio, 0.8);
+  assert.deepStrictEqual(r.basis, []);
+  assert.strictEqual(r.conclusion, '仅供记录，不作判读');
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('补上盘沿依据后比值才进入判读，比值不单独成结论', () => {
+  const r = interpret({ cupMm: 0.8, discMm: 1.0, rimNotch: '下方局限性缺口' });
+  assert.strictEqual(r.basis.length, 1);
+  assert.ok(r.conclusion.startsWith('可进入判读'));
+  assert.ok(r.conclusion.includes('比值须与上列依据并读'));
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('盘沿按上、下、鼻、颞四个象限记；视野缺损形态五个词', () => {
+  assert.deepStrictEqual(rimQuadrants(), ['上', '下', '鼻', '颞']);
+  assert.strictEqual(fieldDefectWords().length, 5);
+  assert.ok(fieldDefectWords().includes('弓形暗点'));
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/yanke-yingxiang-jiancha\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
+test('随访三根柱子与不一致的四种解释都在正文里', () => {
+  assert.deepStrictEqual(trendPillars(), ['基线', '间隔', '可重复性']);
+  assert.deepStrictEqual(mismatchReasons(), ['病程错位', '测量误差', '解剖变异', '读片差异']);
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
+test('正文不下杯盘比阈值，并写明按所在机构规范', () => {
+  assert.deepStrictEqual(cdrThresholdClaims(), [], '不该出现「杯盘比 ≥ 某值」这类断言');
+  assert.strictEqual(consensusNoThreshold(), true);
 });
 
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/05-e105/docs/zh.md'), '头部注释未指向本章');
+test('习题结构：6 题、pre 1 / check 3 / post 2、每题 4 选项', () => {
+  const a = quizAudit();
+  assert.strictEqual(a.total, 6);
+  assert.deepStrictEqual(a.byStage, { pre: 1, check: 3, post: 2 });
+  assert.deepStrictEqual(a.problems, []);
+  for (const item of quizData().questions) {
+    assert.strictEqual(new Set(item.options).size, 4, `选项有重复：${item.question}`);
+  }
+});
+
+test('三道 check 题的正确选项都能在本章正文找到原词', () => {
+  const a = quizAudit();
+  assert.strictEqual(a.grounded, a.byStage.check);
+  assert.ok(a.grounded >= 2);
+});
+
+test('每题正确选项的用词都能在正文里逐字对上', () => {
+  const body = grams(docText());
+  for (const item of quizData().questions) {
+    const right = item.options[item.correct];
+    assert.ok([...grams(right)].some((g) => body.has(g)), `正文里找不到：${right}`);
+  }
+});
+
+test('习题的正确答案不重复，干扰项彼此不同', () => {
+  for (const item of quizData().questions) {
+    const rights = new Set(item.options);
+    assert.strictEqual(rights.size, item.options.length);
+  }
 });
