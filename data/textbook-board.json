@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 3658790,
+    "gapWithBodyChars": 3467445,
     "gapNoBody": 0
   },
   "totals": {
@@ -23370,9 +23370,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 216956
+            "chars": 25611
           },
-          "note": "教学章已有正文（8 章 / 21.7 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.6 万字），未接教材出版线"
         },
         {
           "slug": "05-zhongyi-wenhua-chuanbo",
