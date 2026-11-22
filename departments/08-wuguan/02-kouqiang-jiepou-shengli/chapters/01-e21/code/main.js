@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 口腔解剖生理 · 第 1 章 口腔的境界与分区：本章统计口径
+ * 口腔解剖生理 · 第 1 章 口腔不是一个腔，是两间房加一道门
  * 课程: departments/08-wuguan/02-kouqiang-jiepou-shengli/chapters/01-e21/docs/zh.md
- * 数据: standards/kouqiang-jiepou-shengli/units.json（105 单元层，每单元带三辨与四位面词频）
- * 取数: standards/kouqiang-jiepou-shengli/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的结构量全部从正文现算：四壁、两间房、两道门与检查次序，
+ * 先在正文里找到原词，再计数、再比次序；正文改一句，这里跟着变。
  */
 
 'use strict';
@@ -15,87 +13,68 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'kouqiang-jiepou-shengli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/kouqiang-jiepou-shengli/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'kouqiang-jiepou-shengli', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'kouqiang-jiepou-shengli', 'chapter-map.json');
-const CHAPTER = '1';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 1;
 const SLUG = '01-e21';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const WALLS = ['唇', '颊', '腭', '口底'];
+const ROOMS = ['口腔前庭', '固有口腔'];
+const DOORS = ['磨牙后区', '咽峡'];
+const ORDER = ['先外后内', '先前庭后固有', '最后到磨牙后区'];
+const CLAIMS = ['分两部的是牙弓', '四面壁加一道门', '骨膜是这条链的关节'];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
+const present = (doc, term) => doc.includes(term);
+const sections = (doc) => [...doc.matchAll(/^##\s+(.+)$/gm)].map((m) => m[1].trim());
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function ordering(doc, terms) {
+  let last = -1;
+  for (const t of terms) {
+    const i = doc.indexOf(t);
+    if (i <= last) return false;
+    last = i;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return true;
+}
+
+function audit(doc = readDoc()) {
+  const walls = WALLS.filter((t) => present(doc, t));
+  const rooms = ROOMS.filter((t) => present(doc, t));
+  const doors = DOORS.filter((t) => present(doc, t));
+  const claims = CLAIMS.filter((t) => present(doc, t));
+  const missing = [...WALLS, ...ROOMS, ...DOORS, ...CLAIMS].filter((t) => !present(doc, t));
+  const title = (doc.split(/\r?\n/)[0] || '').replace(/^#\s*第\s*\d+\s*章\s*·\s*/, '').trim();
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title,
+    sections: sections(doc),
+    walls,
+    rooms,
+    doors,
+    claims,
+    missing,
+    orderOk: ordering(doc, ORDER),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`口腔解剖生理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const a = audit();
+  console.log(`口腔解剖生理 · 第 ${a.chapter} 章 ${a.title}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`四壁：${a.walls.join('、')}`);
+  console.log(`两间房：${a.rooms.join('／')}（分界线是牙弓）`);
+  console.log(`两道门：${a.doors.join('／')}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`检查次序（由正文读出）：${ORDER.join(' → ')}`);
+  console.log(`次序与正文一致：${a.orderOk ? '是' : '否'}`);
+  console.log(`关键判断在正文中的原句：${a.claims.length}／${CLAIMS.length}`);
+  if (a.missing.length) console.log(`缺词：${a.missing.join('、')}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/kouqiang-jiepou-shengli/units.json 现算，不手打；改教材后重跑即可复现。');
+  console.log('※ 教学样例：结构名与次序均由 docs/zh.md 现算，不手打。');
   console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, SLUG, WALLS, ROOMS, DOORS, ORDER, CLAIMS, readDoc, sections, audit };

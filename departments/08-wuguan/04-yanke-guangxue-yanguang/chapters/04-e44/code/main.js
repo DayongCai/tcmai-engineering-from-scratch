@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
- * 眼科光学验光 · 第 4 章 验光原理：本章统计口径
- * 课程: departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/04-e44/docs/zh.md
- * 数据: standards/yanke-guangxue-yanguang/units.json（31 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yanke-guangxue-yanguang/chapter-map.json（课程章 → 教材单元号）
+ * 眼科光学验光 · 第 4 章 验光原理：三个度数都是真的，只有一个是基准
+ * 正文: departments/08-wuguan/04-yanke-guangxue-yanguang/chapters/04-e44/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 做法：把两个「看不见的误差源」算出来——
+ *   1) 检影的工作距离：1/d 就是给被检眼加上的人工屈光度；
+ *   2) 镜眼距：F₂ = F₁/(1 − d·F₁)，同一片镜片换个距离，有效度数就不同。
+ * 输入数（距离、度数）从正文读出，结论数（0.3 D、2.00 D、1.50 D）与正文对照。
+ * 再算一个正文只用文字说的判据：度数到多少，2 毫米的距离差才够一格试片。
  */
 
 'use strict';
@@ -15,87 +16,133 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yanke-guangxue-yanguang', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 4;
+const TITLE = '验光原理：三个度数都是真的，只有一个是基准';
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function grab(text, re, label) {
+  const m = String(text).match(re);
+  if (!m) throw new Error(`正文里找不到${label}：${re}`);
+  return Number(String(m[1]).replace(/[−–—]/g, '-').replace(/[^\d.\-]/g, ''));
+}
+
+/* ---------- 顶点距离与工作距离：只留公式 ---------- */
+
+/** 顶点距离换算：F₂ = F₁/(1 − d·F₁)，d 用毫米。 */
+function effectivePower(F1, dMm) {
+  const d = dMm / 1000;
+  const denom = 1 - d * F1;
+  if (Math.abs(denom) < 1e-9) throw new Error('顶点距离落在 F₁ 的极点上');
+  return F1 / denom;
+}
+
+/** 同一片镜片在两个顶点距离上的有效度数差（取绝对值，单位 D）。 */
+function powerShift(F1, d1Mm, d2Mm) {
+  return Math.abs(effectivePower(F1, d1Mm) - effectivePower(F1, d2Mm));
+}
+
+/** 检影工作距离对应的人工屈光度：1/d（d 用米）。 */
+function workingDistancePower(dMeters) {
+  if (!(dMeters > 0)) throw new Error('工作距离必须为正');
+  return 1 / dMeters;
+}
+
+/**
+ * 度数多大时，从基准顶点距离挪动才够一格试片（默认 0.25 D）。
+ * 用二分搜索求最小位移；返回毫米。这就是「低度数可以忽略、高度数必须换算」的量化版。
+ */
+function shiftForStep(F1, step = 0.25, baseMm = 12, limitMm = 40) {
+  const target = Math.abs(effectivePower(F1, baseMm)) - step;
+  let lo = baseMm;
+  let hi = limitMm;
+  if (Math.abs(effectivePower(F1, hi)) > target) return hi; // 到上限也不够一格
+  for (let i = 0; i < 60; i += 1) {
+    const mid = (lo + hi) / 2;
+    if (Math.abs(effectivePower(F1, mid)) > target) lo = mid;
+    else hi = mid;
   }
-  throw new Error('没找到 standards/yanke-guangxue-yanguang/units.json —— 章节目录是否已脱离仓库？');
+  return (lo + hi) / 2 - baseMm;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yanke-guangxue-yanguang', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yanke-guangxue-yanguang', 'chapter-map.json');
-const CHAPTER = '4';
-const SLUG = '04-e44';
+function compute(text) {
+  const refDist = grab(text, /(\d+)\s*厘米工作距离检影/, '检影工作距离（厘米）');
+  const refPowerDoc = grab(text, /50 厘米相当于给被检眼加了 \+([\d.]+)\s*D/, '50 厘米的人工屈光度');
+  const refDist2 = grab(text, /(\d+)\s*厘米扣\s*[\d.]+\s*D/, '第二个检影工作距离');
+  const refPower2Doc = grab(text, /67 厘米扣\s*([\d.]+)\s*D/, '67 厘米应扣的度数');
+  const highPower = grab(text, /一副\s*[−-]([\d.]+)\s*D 的镜片/, '例子里的高度近视度数');
+  const dFrom = grab(text, /顶点距离从\s*(\d+)\s*毫米变到\s*\d+\s*毫米/, '原顶点距离');
+  const dTo = grab(text, /顶点距离从\s*\d+\s*毫米变到\s*(\d+)\s*毫米/, '新顶点距离');
+  const shiftDoc = grab(text, /有效度数差约\s*([\d.]+)\s*D/, '顶点距离造成的有效度数差');
+  const convFrom = grab(text, /屈光度超过约\s*±([\d.]+)\s*D 时换算成为必要/, '换算成为必要的度数');
+  const mainErr = grab(text, /超过\s*±([\d.]+)\s*D 时，顶点距离的误差/, '顶点距离成为主要误差源的度数');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+  const F1 = -highPower;
+  const wd1 = workingDistancePower(refDist / 100);
+  const wd2 = workingDistancePower(refDist2 / 100);
+  const shift = powerShift(F1, dFrom, dTo);
+  const shiftAt = (p) => powerShift(-p, dFrom, dTo);
+  const steps = { at4: shiftForStep(-convFrom), at10: shiftForStep(-mainErr), at15: shiftForStep(F1) };
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+  return {
+    refDist, wd1, refPowerDoc, refDist2, wd2, refPower2Doc,
+    highPower, F1, dFrom, dTo, shiftDoc, shift, convFrom, mainErr, steps, shiftAt
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function verify(r, tol = { wd: 0.02, shift: 0.03 }) {
+  const bad = [];
+  const near = (a, b, t, label) => {
+    if (!(Math.abs(a - b) <= t)) bad.push(`${label}：现算 ${a.toFixed(3)}，正文 ${b}`);
+  };
+  near(r.wd1, r.refPowerDoc, tol.wd, '50 厘米工作距离屈光度');
+  near(r.wd2, r.refPower2Doc, tol.wd, '67 厘米工作距离屈光度');
+  near(r.shift, r.shiftDoc, tol.shift, '顶点距离造成的有效度数差');
+  if (!(Math.abs(r.shiftAt(r.convFrom)) < 0.05)) {
+    bad.push(`±${r.convFrom} D 时 2 毫米距离差应为 ${r.shiftAt(r.convFrom).toFixed(3)} D，正文说此时换算「成为必要」`);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  if (!(r.steps.at15 < r.steps.at10 && r.steps.at10 < r.steps.at4)) {
+    bad.push('度数越高，够一格的位移应越短');
+  }
+  if (!(r.steps.at4 > 10)) bad.push(`±${r.convFrom} D 挪 2 毫米远不够一格，现算需 ${r.steps.at4.toFixed(1)} 毫米`);
+  if (bad.length) throw new Error('正文与计算不自洽：\n  - ' + bad.join('\n  - '));
+  return true;
+}
+
+function fmtF(x) {
+  return (x < 0 ? '−' : '') + Math.abs(x).toFixed(2);
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`眼科光学验光 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = compute(read());
+  verify(r);
+  console.log(`眼科光学验光 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（左为现算，右为正文所写；输入数从正文读出）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`检影工作距离  ${r.refDist} cm → 1/0.${r.refDist} = +${r.wd1.toFixed(2)} D   正文 +${r.refPowerDoc} D（忘扣则结果偏负）`);
+  console.log(`              ${r.refDist2} cm → 1/${(r.refDist2 / 100).toFixed(2)} = +${r.wd2.toFixed(2)} D   正文 ${r.refPower2Doc} D`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`顶点距离      F₂ = F₁/(1 − d·F₁)：${fmtF(r.F1)} D 在 ${r.dFrom} mm 处为 ${fmtF(effectivePower(r.F1, r.dFrom))} D，`);
+  console.log(`              在 ${r.dTo} mm 处为 ${fmtF(effectivePower(r.F1, r.dTo))} D，差 ${r.shift.toFixed(2)} D   正文约 ${r.shiftDoc} D`);
+  console.log(`              近视镜片离眼越远，有效度数越低；远视镜片相反`);
+  console.log('');
+  console.log('挪多远才够一格试片（0.25 D，从 12 毫米起算）：');
+  for (const [k, label] of [['at4', `±${r.convFrom}.00 D`], ['at10', `±${r.mainErr}.00 D`], ['at15', `${fmtF(r.F1)} D`]]) {
+    console.log(`  ${label.padEnd(9)} 需挪 ${r.steps[k].toFixed(1)} mm → 2 毫米的距离差在该度数上${r.steps[k] > 5 ? '仍可忽略' : '已能差出半格'}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/yanke-guangxue-yanguang/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('三个度数：小瞳＝此刻的调节，散瞳＝静息态结构，主觉＝愿意接受多少；换算与优先级写在正文，不在这里给处方。');
+  console.log('※ 输入与结论数均取自本章 docs/zh.md；本章不给剂量与处方模板，屈光度须由执业人员依现行规范决定。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC, CHAPTER, TITLE,
+  read, grab, effectivePower, powerShift, workingDistancePower, shiftForStep,
+  compute, verify
+};

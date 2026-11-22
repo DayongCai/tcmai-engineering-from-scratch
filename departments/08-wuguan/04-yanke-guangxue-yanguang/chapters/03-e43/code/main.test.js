@@ -5,58 +5,73 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const {
+  DOC, CHAPTER, read, grab, arcminToMm, visionFromMAR, logMAR, fiveScale,
+  cyclesPerDegree, accommodationDemand, nodalGapFraction, compute, verify
+} = require('./main.js');
 
+const TEXT = read();
+const R = compute(TEXT);
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yanke-guangxue-yanguang', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yanke-guangxue-yanguang', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文在本章目录下，章号与首行一致', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '03-e43', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 3);
+  assert.ok(TEXT.startsWith('# 第 3 章'));
+  assert.ok(fs.existsSync(DOC));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('1 分视角在 5 米处约 1.45 毫米，且随距离线性放大', () => {
+  assert.ok(Math.abs(arcminToMm(5, 1) - 1.4544) < 1e-3);
+  assert.ok(Math.abs(R.oneLineAt5m - R.lineMmDoc) < 0.01);
+  assert.ok(Math.abs(arcminToMm(2.5, 1) * 2 - arcminToMm(5, 1)) < 1e-6);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('视力与 MAR 互为倒数：MAR 10 分给 0.1，0.5 分给 2.0', () => {
+  assert.strictEqual(visionFromMAR(1), 1);
+  assert.strictEqual(visionFromMAR(10), 0.1);
+  assert.strictEqual(visionFromMAR(0.5), 2);
+  assert.ok(Math.abs(R.marFor10 - 10) < 1e-9);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('1.0 对应 30 cpd：两点成周期占 2 分', () => {
+  assert.strictEqual(cyclesPerDegree(2), 30);
+  assert.strictEqual(R.oneLineCpd, R.cpdDoc);
+  assert.ok(R.peakLow >= 3 && R.peakHigh <= 6);
+  assert.ok(R.cutLow >= 30 && R.cutHigh <= 60);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('四条换算式：logMAR 与五分记录', () => {
+  assert.ok(Math.abs(logMAR(0.2) - 0.69897) < 1e-4);
+  assert.ok(Math.abs(fiveScale(0.1) - 4.0) < 1e-9);
+  assert.ok(Math.abs(fiveScale(1.0) - 5.0) < 1e-9);
+  assert.ok(Math.abs(fiveScale(0.05) - 3.699) < 1e-3);
+  // 小数的算术平均与 logMAR 的算术平均不是一件事
+  assert.ok(Math.abs(R.meanLog - 0.8239) < 1e-3);
+  assert.ok(Math.abs((logMAR(0.1) + logMAR(0.2)) / 2 - 0.8495) < 1e-3);
+  assert.ok(Math.abs((logMAR(0.1) + logMAR(0.2)) / 2 - R.meanLog) > 0.02);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('5 米调节需求 0.2 D；结点差在近距才成为误差', () => {
+  assert.ok(Math.abs(accommodationDemand(5) - 0.2) < 1e-9);
+  assert.strictEqual(R.demand5m, R.demandDoc);
+  assert.ok(Math.abs(nodalGapFraction(250) - 0.028) < 1e-9);
+  assert.ok(nodalGapFraction(5000) < 0.002);
+});
+
+test('verify 通过；把峰值与截止写反即被拦下', () => {
+  assert.strictEqual(verify(R), true);
+  const forged = Object.assign({}, R, { cutLow: 2 });
+  assert.throws(() => verify(forged), /不自洽/);
+});
+
+test('脚本可运行，输出含换算表与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/yanke-guangxue-yanguang\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/03-e43/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /左为现算/);
+  assert.match(out, /均取自本章 docs\/zh\.md/);
+  assert.match(out, /照度合格≠对比度合格/);
+  assert.ok(out.includes('1.454'), '输出里没有 1 分视角线宽');
+  assert.ok(out.includes('30.0 cpd'), '输出里没有 1.0 对应的频率');
 });

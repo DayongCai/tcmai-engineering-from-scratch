@@ -5,58 +5,72 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { DOC, CHAPTER, read, grab, splitList, decide, compute, verify } = require('./main.js');
 
+const TEXT = read();
+const R = compute(TEXT);
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yanke-guangxue-yanguang', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yanke-guangxue-yanguang', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const GOOD = { stable: true, bcvaGood: true, needClear: true };
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文在本章目录下，章号与首行一致', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '07-e47', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 7);
+  assert.ok(TEXT.startsWith('# 第 7 章'));
+  assert.ok(fs.existsSync(DOC));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('绝对禁忌七条、可等五项、转诊五个方向，都从正文解析', () => {
+  assert.strictEqual(R.absolute.length, 7);
+  assert.ok(R.absolute.includes('未成年'), R.absolute.join('、'));
+  assert.ok(R.absolute.some((x) => x.includes('地形图')), R.absolute.join('、'));
+  assert.strictEqual(R.waiting.length, 5);
+  assert.ok(R.waiting.some((x) => x.includes('干眼')), R.waiting.join('、'));
+  assert.strictEqual(R.transfers.length, 5);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('三条腿、三类风险、四句话的条数一致', () => {
+  assert.strictEqual(R.legs, 3);
+  assert.strictEqual(R.riskClasses, 3);
+  assert.strictEqual(R.sentences, 4);
+  assert.deepStrictEqual(splitList('甲、乙、丙。'), ['甲', '乙', '丙']);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('时间账：二十几岁做，二十年后四十几岁', () => {
+  assert.strictEqual(R.surgeryAge, 20);
+  assert.strictEqual(R.decadesAfter, 20);
+  assert.ok(R.surgeryAge + R.decadesAfter >= 40 && R.surgeryAge + R.decadesAfter < 50);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('判定顺序：绝对禁忌压过可等条件，可等压过三条腿', () => {
+  assert.strictEqual(decide({ age: 28, legs: GOOD }).verdict, '做');
+  assert.strictEqual(decide({ age: 28, wait: ['干眼未控制'], legs: GOOD }).verdict, '等');
+  assert.strictEqual(decide({ age: 28, wait: ['干眼未控制'], abs: ['角膜地形图异常'], legs: GOOD }).verdict, '不做');
+  assert.strictEqual(decide({ age: 17, legs: GOOD }).verdict, '不做');
+  assert.strictEqual(decide({ age: 28, legs: { stable: false, bcvaGood: true, needClear: true } }).verdict, '不做');
+  // 三条腿全缺，也不能变成「等」
+  assert.strictEqual(decide({ age: 28, legs: { stable: false, bcvaGood: false, needClear: false } }).verdict, '不做');
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('「不做」的理由写清是哪一条', () => {
+  const r = decide({ age: 28, abs: ['自身免疫病'], legs: GOOD });
+  assert.match(r.why, /自身免疫病/);
+  assert.match(decide({ age: 28, wait: ['接触镜停戴不足'], legs: GOOD }).why, /接触镜停戴不足/);
+  assert.match(decide({ age: 28, legs: { stable: true, bcvaGood: false, needClear: true } }).why, /bcvaGood/);
+});
+
+test('verify 通过；把绝对禁忌改成六条即被拦下', () => {
+  assert.strictEqual(verify(R), true);
+  const forged = Object.assign({}, R, { absolute: R.absolute.slice(0, 6) });
+  assert.throws(() => verify(forged), /不自洽/);
+});
+
+test('脚本可运行，输出含判定器与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/yanke-guangxue-yanguang\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/07-e47/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /判定顺序即本章的判据顺序/);
+  assert.match(out, /均取自本章 docs\/zh\.md/);
+  assert.match(out, /不给手术参数、角膜厚度阈值与停药时长/);
+  assert.ok(out.includes('判定器跑五个合成个例'), '输出里没有判定器');
+  assert.ok(out.includes('未成年'), '输出里没有未成年这一条');
 });

@@ -5,58 +5,72 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const {
+  DOC, CHAPTER, read, grab, axisToDiopter, netMismatch, aniseikoniaPercent, fusionLimitRange,
+  compute, verify
+} = require('./main.js');
 
+const TEXT = read();
+const R = compute(TEXT);
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yanke-guangxue-yanguang', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'yanke-guangxue-yanguang', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文在本章目录下，章号与首行一致', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '02-e42', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 2);
+  assert.ok(TEXT.startsWith('# 第 2 章'), '正文首行不是本章章题');
+  assert.ok(fs.existsSync(DOC));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('两组参数从正文读出：25.6/42 与 23.6/45，第二组 25.5/23.7', () => {
+  assert.deepStrictEqual([R.axisA, R.axisB, R.corneaA, R.corneaB], [25.6, 23.6, 42, 45]);
+  assert.deepStrictEqual([R.pair2.axisA, R.pair2.axisB], [25.5, 23.7]);
+  assert.strictEqual(R.highAxis, 26.5);
+  assert.throws(() => grab(TEXT, /正文没有这句([\d.]+)/, '故意缺失'), /故意缺失/);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('轴长差折度数：两毫米约 4.6 D，与正文一致', () => {
+  assert.ok(Math.abs(axisToDiopter(1) - 2.315) < 1e-3);
+  assert.ok(Math.abs(R.pairAxisD - R.pairDiffDoc) < 0.1);
+  assert.ok(Math.abs(R.pairAxisD - 4.63) < 0.05);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('角膜差把轴性差抵掉大半：净值远小于分项', () => {
+  assert.strictEqual(R.first.corneaPart, -3);
+  assert.ok(Math.abs(R.first.net) < Math.abs(R.first.axisPart), '抵偿后净值必须小于轴性分项');
+  assert.ok(Math.abs(R.first.net) < 2, `净值 ${R.first.net}`);
+  // 第二组：1.8 毫米轴差被 5 D 角膜差抵掉，落在同一档
+  assert.ok(Math.abs(R.second.net) < 1, `第二组净值 ${R.second.net}`);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('不等像：每 D 1.5%–2%，撞 5% 上限需 2.5–3.3 D 参差', () => {
+  assert.deepStrictEqual([R.anisoLow, R.anisoHigh, R.fusionLimit], [1.5, 2, 5]);
+  assert.ok(Math.abs(aniseikoniaPercent(2, 1.5) - 3) < 1e-9);
+  const [lo, hi] = R.limit;
+  assert.ok(lo > 2.4 && lo < 2.6, `下限 ${lo}`);
+  assert.ok(hi > 3.2 && hi < 3.4, `上限 ${hi}`);
+  assert.deepStrictEqual(fusionLimitRange(5, [2, 1.5]), [2.5, 5 / 1.5]);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('netMismatch 的方向：轴长增偏近视，角膜变陡也偏近视', () => {
+  const longer = netMismatch({ axisA: 25, axisB: 24, corneaA: 43, corneaB: 43 }, 2.32);
+  const steeper = netMismatch({ axisA: 24, axisB: 24, corneaA: 45, corneaB: 43 }, 2.32);
+  assert.ok(longer.net > 0 && steeper.net > 0);
+  assert.ok(Math.abs(longer.net - 2.32) < 1e-9);
+  assert.ok(Math.abs(steeper.net - 2) < 1e-9);
+});
+
+test('verify 通过；篡改轴差即被拦下', () => {
+  assert.strictEqual(verify(R), true);
+  const forged = Object.assign({}, R, { pairAxisD: 9 });
+  assert.throws(() => verify(forged), /不自洽/);
+});
+
+test('脚本可运行，输出含现算口径与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/yanke-guangxue-yanguang\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/02-e42/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /左为现算/);
+  assert.match(out, /均取自本章 docs\/zh\.md/);
+  assert.match(out, /不构成对任何个体的诊断标准/);
+  assert.ok(out.includes('4.63'), '输出里没有两毫米轴差折合度数');
 });

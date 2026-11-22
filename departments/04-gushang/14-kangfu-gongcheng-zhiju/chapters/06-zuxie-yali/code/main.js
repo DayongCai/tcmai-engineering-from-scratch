@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 康复工程与支具学 · 第 6 章 矫形鞋与压力治疗：本章统计口径
- * 课程: departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/06-zuxie-yali/docs/zh.md
- * 数据: standards/gushang-kangfu-gongcheng/units.json（33 单元层，每单元带三辨与四位面词频）
- * 取数: standards/gushang-kangfu-gongcheng/chapter-map.json（课程章 → 教材单元号）
+ * 康复工程与支具学 · 第 6 章 鞋垫改变力矩，压力衣改变梯度
+ * 正文: departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/06-zuxie-yali/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 口径：只读本目录 docs/zh.md。足部支点数、鞋垫机制、鞋的变量、压力治疗变量、
+ * 禁忌条目全部现算；正文改一处，输出跟着改。
  */
 
 'use strict';
@@ -15,87 +13,127 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gushang-kangfu-gongcheng', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/gushang-kangfu-gongcheng/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gushang-kangfu-gongcheng', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'gushang-kangfu-gongcheng', 'chapter-map.json');
-const CHAPTER = '6';
+const CHAPTER = 6;
 const SLUG = '06-zuxie-yali';
+const TITLE = '鞋垫改变力矩，压力衣改变梯度';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const hanzi = (s) => (String(s).match(HANZI) || []).length;
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function headings(text) {
+  return text
+    .split(/\r?\n/)
+    .filter((line) => /^##\s+/.test(line))
+    .map((line) => line.replace(/^##\s+/, '').trim());
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+const numbered = (heads) =>
+  heads.filter((h) => /^[一二三四五六七八九十]+、/.test(h) && !h.includes('代价与边界'));
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function tables(text) {
+  const lines = text.split(/\r?\n/).map((l) => l.trim());
+  const out = [];
+  for (let i = 1; i < lines.length - 1; i += 1) {
+    if (!/^\|[\s:|-]*-{3}[\s:|-]*\|$/.test(lines[i])) continue;
+    const head = lines[i - 1].split('|').slice(1, -1).map((c) => c.trim());
+    let rows = 0;
+    let j = i + 1;
+    while (j < lines.length && /^\|.*\|$/.test(lines[j]) && !/^\|[\s:|-]*-{3}/.test(lines[j])) {
+      rows += 1;
+      j += 1;
+    }
+    out.push({ head, rows });
+    i = j - 1;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function section(text, keyword) {
+  const blocks = text.split(/^##\s+/m).slice(1);
+  return blocks.find((b) => b.split(/\r?\n/)[0].includes(keyword)) || '';
+}
+
+const bullets = (block) => block.split(/\r?\n/).filter((l) => /^-\s+\S/.test(l.trim())).length;
+const items = (block) => block.split(/\r?\n/).filter((l) => /^\d+\.\s+\S/.test(l.trim())).length;
+
+function citations(text) {
+  const all = [...text.matchAll(/《([^》]+)》/g)].map((m) => m[1]);
+  return { total: all.length, books: [...new Set(all)].sort() };
+}
+
+const bold = (text, term) => (text.match(new RegExp(`\\*\\*${term}`, 'g')) || []).length;
+/** 编号立目：形如 **第一条：分散峰值压力。** */
+const ordinal = (text, term) =>
+  (text.match(new RegExp(`\\*\\*第[一二三四五六七八九十]+条：${term}`, 'g')) || []).length;
+
+/** 足的三支点、鞋垫三机制、鞋的三变量 */
+const FOOT_POINTS = ['跟骨', '第一跖骨头', '第五跖骨头'];
+const INSOLE_MODES = ['分散峰值压力', '改变力的方向', '提供本体感觉'];
+const SHOE_VARS = ['鞋楦', '鞋跟高度与前后落差', '鞋底的硬度与滚动性'];
+
+function chapterFacts(text) {
+  const ts = tables(text);
+  const insole = ts.find((t) => t.head.join('').includes('手段'));
+  const insoleBlock = section(text, '鞋垫：改变的是力矩');
+  const shoeBlock = section(text, '鞋：三个比鞋垫更重要的变量');
+  const pressureBlock = section(text, '压力治疗');
+  return {
+    footPoints: FOOT_POINTS.filter((p) => text.includes(p)),
+    insoleModes: INSOLE_MODES.filter((m) => ordinal(insoleBlock, m) >= 1),
+    insoleRows: insole ? insole.rows : 0,
+    shoeVars: SHOE_VARS.filter((v) => bold(shoeBlock, v) >= 1),
+    pressureVars: items(pressureBlock),
+    redLine: /动脉供血不足的肢体不能用高压/.test(text),
+    boundaries: bullets(section(text, '代价与边界')),
+  };
+}
+
+function stats() {
+  const text = readDoc();
+  const heads = headings(text);
+  const c = citations(text);
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title: TITLE,
+    hanzi: hanzi(text),
+    sections: heads.length,
+    numbered: numbered(heads).length,
+    tables: tables(text).length,
+    cites: c.total,
+    books: c.books,
+    ...chapterFacts(text),
+    disclaimer: /免责声明/.test(text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`康复工程与支具学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const s = stats();
+  const fmt = (n) => n.toLocaleString('en-US');
+  console.log(`康复工程与支具学 · 第 ${s.chapter} 章 ${s.title}`);
+  console.log(`正文：chapters/${s.slug}/docs/zh.md（现算，不手打）`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`  汉字        ${fmt(s.hanzi)}`);
+  console.log(`  节          ${s.sections}（编号节 ${s.numbered} + 代价与边界）`);
+  console.log(`  表          ${s.tables} 张（鞋垫对照表 ${s.insoleRows} 行）`);
+  console.log(`  引文        ${s.cites} 处 / ${s.books.length} 部`);
+  console.log(`  足部支点    ${s.footPoints.length} 个（${s.footPoints.join('、')}）`);
+  console.log(`  鞋垫机制    ${s.insoleModes.length} 条（${s.insoleModes.join('／')}）`);
+  console.log(`  鞋的变量    ${s.shoeVars.length} 个`);
+  console.log(`  压力变量    ${s.pressureVars} 项`);
+  console.log(`  绝对禁忌    ${s.redLine ? '在正文标出' : '缺'}`);
+  console.log(`  代价条目    ${s.boundaries} 条`);
+  console.log(`  免责声明    ${s.disclaimer ? '有' : '缺'}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
-  console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/gushang-kangfu-gongcheng/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本目录 docs/zh.md 现算：支点、机制、变量、条目任一变动，重跑即见新值。');
+  console.log('※ 文中不写压力数值、鞋跟高度、鞋垫厚度与佩戴时间：须由医师、治疗师与矫形师按机构规范确定。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  CHAPTER, SLUG, TITLE, DOC, FOOT_POINTS, INSOLE_MODES, SHOE_VARS,
+  readDoc, headings, numbered, tables, section, bullets, items, citations, bold, chapterFacts, hanzi, stats, main,
+};

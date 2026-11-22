@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中医面部望诊 · 第 5 章 口唇与齿龈：本章统计口径
+ * 中医面部望诊 · 第 5 章 · 唇：最饱和的那块颜色，恰恰不该拿来测
  * 课程: departments/08-wuguan/03-zhongyi-mianbu-wangzhen/chapters/05-e35/docs/zh.md
- * 数据: standards/zhongyi-mianbu-wangzhen/units.json（113 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-mianbu-wangzhen/chapter-map.json（课程章 → 教材单元号）
+ * 底本: 《望诊遵经·诊唇望法提纲》《诊唇气色条目》《四白望法提纲》《牙齿望法提纲》
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的数字全部从正文现算：两张表的行列、形变条目逐个点数、
+ * 三个可测轴各收了几条、口红与三档的 a* 量级、quiz 接地情况。
  */
 
 'use strict';
@@ -15,87 +14,256 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-mianbu-wangzhen', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/zhongyi-mianbu-wangzhen/units.json —— 章节目录是否已脱离仓库？');
-}
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-mianbu-wangzhen', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-mianbu-wangzhen', 'chapter-map.json');
-const CHAPTER = '5';
+const CHAPTER = 5;
 const SLUG = '05-e35';
+const TITLE = '唇：最饱和的那块颜色，恰恰不该拿来测';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+/** 各表格的数据行数（不含表头与分隔行），按出现顺序 */
+const TABLE_ROWS = [5, 3];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 关键判据词 */
+const TERMS = ['唇四白', '唇红', '口红', '深赤', '齿忽黄', '方位', '皲裂', '唇炎'];
+
+/** 每节一个探针词：第 i 个必须出现在第 i 节 */
+const SECTION_PROBES = [
+  '其华在唇四白',
+  '足以把判断推过三档',
+  '左病者应在左',
+  '齿忽黄',
+  '张嘴',
+  '三个轴彼此正交',
+  '照录不作校勘',
+];
+
+const GRAM = 4;
+
+/** 正文里的数目多用汉字写（二十、八到十、十二），先归一成数字再比 */
+const CN = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
+function cn2num(s) {
+  const t = String(s || '').trim();
+  if (/^\d+$/.test(t)) return Number(t);
+  if (t === '十') return 10;
+  const m = /^([一二三四五六七八九])?十([一二三四五六七八九])?$/.exec(t);
+  if (m) return (m[1] ? CN[m[1]] : 1) * 10 + (m[2] ? CN[m[2]] : 0);
+  return CN[t] || 0;
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+
+function h2Titles(text) {
+  const out = [];
+  for (const line of String(text).split(/\r?\n/)) {
+    const m = /^##\s+(.+)$/.exec(line.trim());
+    if (m) out.push(m[1].trim());
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function h2Sections(text) {
+  const out = [];
+  let cur = null;
+  for (const line of String(text).split(/\r?\n/)) {
+    const m = /^##\s+(.+)$/.exec(line.trim());
+    if (m) {
+      cur = { title: m[1].trim(), body: [line] };
+      out.push(cur);
+    } else if (cur) cur.body.push(line);
+  }
+  return out.map((s) => ({ title: s.title, body: s.body.join('\n') }));
+}
+
+const sectionAt = (text, i) => (h2Sections(text)[i] || { title: '', body: '' }).body;
+
+function tableBlocks(text) {
+  const blocks = [];
+  let cur = null;
+  for (const line of String(text).split(/\r?\n/)) {
+    const s = line.trim();
+    if (s.startsWith('|')) {
+      if (!cur) {
+        cur = [];
+        blocks.push(cur);
+      }
+      cur.push(s);
+    } else cur = null;
+  }
+  return blocks.map((b) => {
+    const cells = b.map((r) => r.replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim()));
+    return { head: cells[0] || [], rows: cells.slice(2) };
+  });
+}
+
+const occurrences = (text, term) => String(text).split(term).length - 1;
+
+function grams(text, n = GRAM) {
+  const out = new Set();
+  for (const seg of String(text).replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+/** 唇的两块：从「唇红 / 唇四白」那张表读，逐项比对 */
+function lipParts(text) {
+  const blocks = tableBlocks(text);
+  const t = blocks.find((b) => b.head.includes('唇红') && b.head.includes('唇四白')) || { head: [], rows: [] };
+  const rows = t.rows.map((r) => ({ item: r[0], hong: r[1] || '', sibai: r[2] || '' }));
+  const pick = (name) => (rows.find((r) => r.item === name) || { hong: '', sibai: '' });
+  return {
+    head: t.head.filter(Boolean),
+    rows,
+    cell: (name) => rows.find((r) => r.item === name) || { hong: '', sibai: '' },
+    thickness: pick('厚度'),
+    saturation: pick('色饱和度'),
+    interference: pick('主要干扰'),
+  };
+}
+
+/** 十二条形变：正文点名的条目，以及三个轴各收了几条 */
+function shapeAxes(text) {
+  const line = String(text).split(/\r?\n/).find((l) => l.includes('列了十二种形变')) || '';
+  const listed = (/列了(?:十二|[\d]+)种形变：([^。]+)。/.exec(line) || [null, ''])[1].split('、').map((s) => s.trim()).filter(Boolean);
+  const claim = cn2num((/列了(\d+|[一二三四五六七八九十]+)种形变/.exec(line) || [null, ''])[1]);
+  const blocks = tableBlocks(text);
+  const t = blocks.find((b) => b.head[0] === '轴') || { head: [], rows: [] };
+  const axes = t.rows.map((r) => {
+    const items = String(r[1] || '').split('、').map((s) => s.replace(/（[^）]*）/g, '').trim()).filter(Boolean);
+    return { axis: r[0], items, count: items.length, metric: r[2] || '' };
+  });
+  return { listed, claim, axes, covered: axes.reduce((a, b) => a + b.count, 0) };
+}
+
+/** 口红与三档的量级 */
+function lipFigures(text) {
+  const t = String(text);
+  const num = '([一二三四五六七八九十]+|\d+)';
+  const rouge = new RegExp('可以差' + num + '个单位以上').exec(t);
+  const span = new RegExp('跨度大约' + num + '到' + num + '个单位').exec(t);
+  const pose = /面积可以差(三成|[\d]+%)以上/.exec(t);
+  return {
+    rougeDelta: rouge ? cn2num(rouge[1]) : 0,
+    span: span ? [cn2num(span[1]), cn2num(span[2])] : [],
+    poseLoss: pose ? pose[1] : '',
+  };
+}
+
+/** 齿：判「忽」不判「是」 */
+function toothRule(text) {
+  const t = String(text);
+  return {
+    normal: /齿色黄者长也，色白者幼也/.test(t),
+    sudden: /齿忽黄，为肾虚/.test(t),
+    caution: /判据是「忽然变黄」，不是「黄」/.test(t),
+  };
+}
+
+const presentCount = (text, terms) => terms.filter((t) => occurrences(text, t) > 0).length;
+
+function quizSummary(quiz, text) {
+  const body = grams(text);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  for (const q of qs) if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+  const hits = qs.filter((q) => q.stage === 'check').map((q) => {
+    const right = String((q.options || [])[q.correct] || '');
+    const hit = [...new Set([...grams(right)].filter((g) => body.has(g)))];
+    return { question: q.question, grams: hit, correct: q.correct };
+  });
+  return {
+    total: qs.length,
+    stage,
+    check: hits.length,
+    grounded: hits.filter((h) => h.grams.length >= 2).length,
+    hits,
+    answers: qs.map((q) => q.correct),
+  };
+}
+
+function analyze() {
+  const text = readDoc();
+  const blocks = tableBlocks(text);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    hanzi: hanzi(text),
+    sections: h2Titles(text),
+    tables: blocks.map((b) => ({ cols: b.head.length, rows: b.rows.length, first: b.head[0] || '' })),
+    terms: TERMS.map((t) => ({ term: t, count: occurrences(text, t) })),
+    probes: SECTION_PROBES.map((p, i) => ({ probe: p, ok: sectionAt(text, i).includes(p) })),
+    lip: lipParts(text),
+    shapes: shapeAxes(text),
+    figures: lipFigures(text),
+    tooth: toothRule(text),
+    quiz: quizSummary(quiz, text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医面部望诊 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = analyze();
+  const s = r.shapes;
+  console.log(`中医面部望诊 · 第 ${CHAPTER} 章 · ${TITLE}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文 ${r.hanzi.toLocaleString('en-US')} 汉字 · 小节 ${r.sections.length} 个`);
+  r.sections.forEach((x, i) => console.log(`  ${String(i + 1).padStart(2)}  ${x}`));
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`表格 ${r.tables.length} 张：`);
+  r.tables.forEach((t, i) => console.log(`  #${i + 1}  ${t.rows} 行 × ${t.cols} 列  首列表头「${t.first}」`));
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('关键判据（出现次数）：');
+  console.log('  ' + r.terms.map((x) => `${x.term} ${x.count}`).join(' · '));
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('小节探针：');
+  console.log('  ' + r.probes.map((p) => `${p.ok ? '✓' : '✗'} ${p.probe}`).join(' · '));
   console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-mianbu-wangzhen/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`唇的两块：${r.lip.head.join(' / ')}；厚度——唇红「${r.lip.thickness.hong}」、四白「${r.lip.thickness.sibai}」`);
+  console.log(
+    `形变清点：正文列举 ${s.listed.length} 项（原文称 ${s.claim} 种，差额来自「疮」与「内生疮」并列照录）；三个轴共收 ${s.covered} 项 → ` +
+      s.axes.map((a) => `${a.axis} ${a.count}`).join(' · ')
+  );
+  console.log(
+    `口红量级：a* 差 ${r.figures.rougeDelta} 个单位以上，而三档跨度 ${r.figures.span.join('–')} 个单位 → 一次未记录的口红可推过三档`
+  );
+  console.log(`姿态：闭口／微张／大张，唇红面积差 ${r.figures.poseLoss}以上`);
+  console.log(
+    `齿色：常态「齿色黄者长也」${r.tooth.normal ? '✓' : '✗'} · 病变「齿忽黄」${r.tooth.sudden ? '✓' : '✗'} · 判忽不判是 ${r.tooth.caution ? '✓' : '✗'}`
+  );
+  console.log('');
+  console.log(
+    `quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· check 题接地 ${r.quiz.grounded} 道（门槛 ≥2）`
+  );
+  console.log(`答案位置：${r.quiz.answers.join(' / ')}`);
+  console.log('');
+  console.log('※ 以上数字全部由本章正文现算，改正文后重跑即可复核。');
+  console.log('※ 本章为口唇与齿龈望诊的教学材料，不构成诊疗建议、诊断或治疗指导。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  analyze,
+  readDoc,
+  h2Titles,
+  h2Sections,
+  sectionAt,
+  tableBlocks,
+  occurrences,
+  grams,
+  lipParts,
+  shapeAxes,
+  lipFigures,
+  toothRule,
+  presentCount,
+  quizSummary,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+  TABLE_ROWS,
+  TERMS,
+  SECTION_PROBES,
+};
