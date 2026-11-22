@@ -13,7 +13,7 @@ description: 手法与支具的系统实现——按「选题：从复位方案�
 ## 怎么用
 
 1. 先读 `docs/zh.md` 的「一、这一章的问题」，确认要回答的是什么；
-2. 跑 `node code/main.js`，看本章的规模、三辨与章群结构分布（数字由 `standards/gushang-biye/units.json` 现算）；
+2. 跑 `node code/main.js`，看本章正文的规模、结构与判据词频（数字从本章 `docs/zh.md` 现算）；
 3. 按「三、逐单元读」的单元顺序，逐个说出判据类别；
 4. 用 `quiz.json` 的 6 道题自检，答不上就回到对应单元。
 

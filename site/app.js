@@ -479,7 +479,7 @@ function renderQuiz(quiz, key) {
       <div class="stage">${q.stage === 'pre' ? '前置自测' : q.stage === 'check' ? '过程检查' : '课后检验'}</div>
       <div class="q-head">${qi + 1}. ${esc(q.question)}</div>
       ${q.options.map((o, oi) => `<span class="opt" data-q="${qi}" data-o="${oi}" data-correct="${oi === q.correct ? 1 : 0}">${esc(o)}</span>`).join('')}
-      <div class="expl">${esc(q.explanation || '')}</div>
+      <div class="expl">${esc(q.explanation || q.explain || '')}</div>
     </div>`).join('')}
   <div class="small muted" id="quiz-score"></div>
 </div>`;

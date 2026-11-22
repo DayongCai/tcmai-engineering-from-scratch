@@ -12429,7 +12429,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md",
                   "title": "选题：从复位方案到可量化命题",
                   "description": "选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 423
+                  "chars": 402
                 },
                 {
                   "kind": "prompt",
@@ -12607,7 +12607,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md",
                   "title": "论文写作与答辩",
                   "description": "论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 415
+                  "chars": 394
                 },
                 {
                   "kind": "prompt",
@@ -12725,7 +12725,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md",
                   "title": "知识移交：操作规范与交接",
                   "description": "知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 425
+                  "chars": 404
                 },
                 {
                   "kind": "prompt",
@@ -18206,7 +18206,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md",
                   "title": "选题：从复位方案到可量化命题",
                   "description": "选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 423
+                  "chars": 402
                 },
                 {
                   "kind": "prompt",
@@ -18364,7 +18364,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md",
                   "title": "疗效与并发症评价",
                   "description": "疗效与并发症评价——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 420
+                  "chars": 399
                 }
               ]
             },
@@ -18412,7 +18412,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md",
                   "title": "论文写作与答辩",
                   "description": "论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 415
+                  "chars": 394
                 },
                 {
                   "kind": "prompt",
@@ -18530,7 +18530,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md",
                   "title": "知识移交：操作规范与交接",
                   "description": "知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 425
+                  "chars": 404
                 },
                 {
                   "kind": "prompt",
@@ -19490,16 +19490,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/01-gailun/outputs/prompt-01-gailun.md",
-                  "title": "康复工程概论 · 提示词",
+                  "title": "支具不治病，它改变的是力的分配 · 提示词",
                   "description": null,
-                  "chars": 486
+                  "chars": 549
                 },
                 {
                   "kind": "skill",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/01-gailun/outputs/skill-gailun.md",
-                  "title": "康复工程概论",
-                  "description": "康复工程概论——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-                  "chars": 408
+                  "title": "支具不治病，它改变的是力的分配",
+                  "description": "支具不治病，它改变的是力的分配——按本章的三个判断、可数对象与边界走一遍，不写参数",
+                  "chars": 500
                 }
               ]
             },
@@ -21380,16 +21380,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/01-gailun/outputs/prompt-01-gailun.md",
-                  "title": "康复工程概论 · 提示词",
+                  "title": "支具不治病，它改变的是力的分配 · 提示词",
                   "description": null,
-                  "chars": 486
+                  "chars": 549
                 },
                 {
                   "kind": "skill",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/01-gailun/outputs/skill-gailun.md",
-                  "title": "康复工程概论",
-                  "description": "康复工程概论——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-                  "chars": 408
+                  "title": "支具不治病，它改变的是力的分配",
+                  "description": "支具不治病，它改变的是力的分配——按本章的三个判断、可数对象与边界走一遍，不写参数",
+                  "chars": 500
                 }
               ]
             },
@@ -21400,16 +21400,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/02-fenlei-cailiao/outputs/prompt-02-fenlei-cailiao.md",
-                  "title": "支具分类与材料 · 提示词",
+                  "title": "分类看约束的方向，材料看它能撑多久 · 提示词",
                   "description": null,
-                  "chars": 489
+                  "chars": 533
                 },
                 {
                   "kind": "skill",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/02-fenlei-cailiao/outputs/skill-fenlei-cailiao.md",
-                  "title": "支具分类与材料",
-                  "description": "支具分类与材料——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-                  "chars": 418
+                  "title": "分类看约束的方向，材料看它能撑多久",
+                  "description": "分类看约束的方向，材料看它能撑多久——按本章的三个判断、可数对象与边界走一遍，不写参数",
+                  "chars": 490
                 }
               ]
             },
@@ -21420,16 +21420,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/03-jizhu-zhiju/outputs/prompt-03-jizhu-zhiju.md",
-                  "title": "脊柱支具 · 提示词",
+                  "title": "脊柱支具靠三点力，不靠把躯干裹紧 · 提示词",
                   "description": null,
-                  "chars": 480
+                  "chars": 524
                 },
                 {
                   "kind": "skill",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/03-jizhu-zhiju/outputs/skill-jizhu-zhiju.md",
-                  "title": "脊柱支具",
-                  "description": "脊柱支具——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-                  "chars": 409
+                  "title": "脊柱支具靠三点力，不靠把躯干裹紧",
+                  "description": "脊柱支具靠三点力，不靠把躯干裹紧——按本章的三个判断、可数对象与边界走一遍，不写参数",
+                  "chars": 479
                 }
               ]
             },
@@ -21440,16 +21440,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/04-shangzhi-zhiju/outputs/prompt-04-shangzhi-zhiju.md",
-                  "title": "上肢支具 · 提示词",
+                  "title": "手部支具的目标是滑动，不是固定 · 提示词",
                   "description": null,
-                  "chars": 480
+                  "chars": 536
                 },
                 {
                   "kind": "skill",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/04-shangzhi-zhiju/outputs/skill-shangzhi-zhiju.md",
-                  "title": "上肢支具",
-                  "description": "上肢支具——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-                  "chars": 412
+                  "title": "手部支具的目标是滑动，不是固定",
+                  "description": "手部支具的目标是滑动，不是固定——按本章的三个判断、可数对象与边界走一遍，不写参数",
+                  "chars": 495
                 }
               ]
             },
@@ -21460,16 +21460,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/05-xiazhi-zhiju/outputs/prompt-05-xiazhi-zhiju.md",
-                  "title": "下肢支具 · 提示词",
+                  "title": "下肢支具先回答负重，再回答步态 · 提示词",
                   "description": null,
-                  "chars": 480
+                  "chars": 540
                 },
                 {
                   "kind": "skill",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/05-xiazhi-zhiju/outputs/skill-xiazhi-zhiju.md",
-                  "title": "下肢支具",
-                  "description": "下肢支具——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-                  "chars": 410
+                  "title": "下肢支具先回答负重，再回答步态",
+                  "description": "下肢支具先回答负重，再回答步态——按本章的三个判断、可数对象与边界走一遍，不写参数",
+                  "chars": 497
                 }
               ]
             },
@@ -21480,16 +21480,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/06-zuxie-yali/outputs/prompt-06-zuxie-yali.md",
-                  "title": "矫形鞋与压力治疗 · 提示词",
+                  "title": "鞋垫改变力矩，压力衣改变梯度 · 提示词",
                   "description": null,
-                  "chars": 492
+                  "chars": 510
                 },
                 {
                   "kind": "skill",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/06-zuxie-yali/outputs/skill-zuxie-yali.md",
-                  "title": "矫形鞋与压力治疗",
-                  "description": "矫形鞋与压力治疗——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-                  "chars": 416
+                  "title": "鞋垫改变力矩，压力衣改变梯度",
+                  "description": "鞋垫改变力矩，压力衣改变梯度——按本章的三个判断、可数对象与边界走一遍，不写参数",
+                  "chars": 466
                 }
               ]
             },
@@ -21500,16 +21500,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/07-zhuxing-fuzhu/outputs/prompt-07-zhuxing-fuzhu.md",
-                  "title": "助行器、轮椅与转移辅具 · 提示词",
+                  "title": "辅具的第一判据是使用者能不能自己用 · 提示词",
                   "description": null,
-                  "chars": 501
+                  "chars": 521
                 },
                 {
                   "kind": "skill",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/07-zhuxing-fuzhu/outputs/skill-zhuxing-fuzhu.md",
-                  "title": "助行器、轮椅与转移辅具",
-                  "description": "助行器、轮椅与转移辅具——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-                  "chars": 425
+                  "title": "辅具的第一判据是使用者能不能自己用",
+                  "description": "辅具的第一判据是使用者能不能自己用——按本章的三个判断、可数对象与边界走一遍，不写参数",
+                  "chars": 477
                 }
               ]
             },
@@ -21520,16 +21520,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/08-pinggu-suifang/outputs/prompt-08-pinggu-suifang.md",
-                  "title": "适配评估与随访 · 提示词",
+                  "title": "适配好不好，皮肤先说话 · 提示词",
                   "description": null,
-                  "chars": 489
+                  "chars": 512
                 },
                 {
                   "kind": "skill",
                   "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/08-pinggu-suifang/outputs/skill-pinggu-suifang.md",
-                  "title": "适配评估与随访",
-                  "description": "适配评估与随访——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-                  "chars": 418
+                  "title": "适配好不好，皮肤先说话",
+                  "description": "适配好不好，皮肤先说话——按本章的三个判断、可数对象与边界走一遍，不写参数",
+                  "chars": 475
                 }
               ]
             }
@@ -21937,7 +21937,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md",
                   "title": "选题：从复位方案到可量化命题",
                   "description": "选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 423
+                  "chars": 402
                 },
                 {
                   "kind": "prompt",
@@ -22027,7 +22027,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/02-yingxiang-shuju/outputs/skill-yingxiang-shuju.md",
                   "title": "影像与生物力学数据准备",
                   "description": "影像与生物力学数据准备——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 425
+                  "chars": 404
                 }
               ]
             },
@@ -22047,7 +22047,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/03-shoufa-zhiju/outputs/skill-shoufa-zhiju.md",
                   "title": "手法与支具的系统实现",
                   "description": "手法与支具的系统实现——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 420
+                  "chars": 399
                 }
               ]
             },
@@ -22081,7 +22081,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md",
                   "title": "疗效与并发症评价",
                   "description": "疗效与并发症评价——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 420
+                  "chars": 399
                 }
               ]
             },
@@ -22129,7 +22129,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md",
                   "title": "论文写作与答辩",
                   "description": "论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 415
+                  "chars": 394
                 },
                 {
                   "kind": "prompt",
@@ -22247,7 +22247,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md",
                   "title": "知识移交：操作规范与交接",
                   "description": "知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 425
+                  "chars": 404
                 },
                 {
                   "kind": "prompt",
@@ -31346,7 +31346,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md",
                   "title": "选题：从复位方案到可量化命题",
                   "description": "选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 423
+                  "chars": 402
                 },
                 {
                   "kind": "prompt",
@@ -31524,7 +31524,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md",
                   "title": "论文写作与答辩",
                   "description": "论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 415
+                  "chars": 394
                 },
                 {
                   "kind": "prompt",
@@ -31642,7 +31642,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md",
                   "title": "知识移交：操作规范与交接",
                   "description": "知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 425
+                  "chars": 404
                 },
                 {
                   "kind": "prompt",
@@ -33572,14 +33572,14 @@
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/01-z111/outputs/prompt-01-z111.md",
                   "title": "医院信息系统的构成 · 提示词",
                   "description": null,
-                  "chars": 446
+                  "chars": 463
                 },
                 {
                   "kind": "skill",
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/01-z111/outputs/skill-z111.md",
                   "title": "医院信息系统的构成",
                   "description": "医院信息系统的构成——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
-                  "chars": 366
+                  "chars": 334
                 }
               ]
             },
@@ -33592,14 +33592,14 @@
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/02-z112/outputs/prompt-02-z112.md",
                   "title": "标准、编码与互操作 · 提示词",
                   "description": null,
-                  "chars": 446
+                  "chars": 463
                 },
                 {
                   "kind": "skill",
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/02-z112/outputs/skill-z112.md",
                   "title": "标准、编码与互操作",
                   "description": "标准、编码与互操作——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
-                  "chars": 366
+                  "chars": 334
                 }
               ]
             },
@@ -33612,14 +33612,14 @@
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/03-z113/outputs/prompt-03-z113.md",
                   "title": "电子病历与临床信息系统 · 提示词",
                   "description": null,
-                  "chars": 452
+                  "chars": 469
                 },
                 {
                   "kind": "skill",
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/03-z113/outputs/skill-z113.md",
                   "title": "电子病历与临床信息系统",
                   "description": "电子病历与临床信息系统——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
-                  "chars": 370
+                  "chars": 338
                 }
               ]
             },
@@ -33632,14 +33632,14 @@
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/04-z114/outputs/prompt-04-z114.md",
                   "title": "病案管理与首页数据 · 提示词",
                   "description": null,
-                  "chars": 446
+                  "chars": 463
                 },
                 {
                   "kind": "skill",
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/04-z114/outputs/skill-z114.md",
                   "title": "病案管理与首页数据",
                   "description": "病案管理与首页数据——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
-                  "chars": 366
+                  "chars": 334
                 }
               ]
             },
@@ -33652,14 +33652,14 @@
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/05-z115/outputs/prompt-05-z115.md",
                   "title": "数据质量与统计上报 · 提示词",
                   "description": null,
-                  "chars": 446
+                  "chars": 463
                 },
                 {
                   "kind": "skill",
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/05-z115/outputs/skill-z115.md",
                   "title": "数据质量与统计上报",
                   "description": "数据质量与统计上报——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
-                  "chars": 366
+                  "chars": 334
                 }
               ]
             },
@@ -33672,14 +33672,14 @@
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/06-z116/outputs/prompt-06-z116.md",
                   "title": "信息安全与权限 · 提示词",
                   "description": null,
-                  "chars": 440
+                  "chars": 457
                 },
                 {
                   "kind": "skill",
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/06-z116/outputs/skill-z116.md",
                   "title": "信息安全与权限",
                   "description": "信息安全与权限——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
-                  "chars": 362
+                  "chars": 330
                 }
               ]
             },
@@ -33692,14 +33692,14 @@
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/07-z117/outputs/prompt-07-z117.md",
                   "title": "项目实施与验收 · 提示词",
                   "description": null,
-                  "chars": 440
+                  "chars": 457
                 },
                 {
                   "kind": "skill",
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/07-z117/outputs/skill-z117.md",
                   "title": "项目实施与验收",
                   "description": "项目实施与验收——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
-                  "chars": 362
+                  "chars": 330
                 }
               ]
             },
@@ -33712,14 +33712,14 @@
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/08-z118/outputs/prompt-08-z118.md",
                   "title": "智慧医院与规划 · 提示词",
                   "description": null,
-                  "chars": 440
+                  "chars": 457
                 },
                 {
                   "kind": "skill",
                   "file": "departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/08-z118/outputs/skill-z118.md",
                   "title": "智慧医院与规划",
                   "description": "智慧医院与规划——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
-                  "chars": 362
+                  "chars": 330
                 }
               ]
             }
@@ -38157,7 +38157,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md",
                   "title": "选题：从复位方案到可量化命题",
                   "description": "选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 423
+                  "chars": 402
                 },
                 {
                   "kind": "prompt",
@@ -38335,7 +38335,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md",
                   "title": "论文写作与答辩",
                   "description": "论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 415
+                  "chars": 394
                 },
                 {
                   "kind": "prompt",
@@ -38453,7 +38453,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md",
                   "title": "知识移交：操作规范与交接",
                   "description": "知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 425
+                  "chars": 404
                 },
                 {
                   "kind": "prompt",
@@ -38829,16 +38829,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/01-x1/outputs/prompt-01-x1.md",
-                  "title": "卫生信息系统概论 · 提示词",
+                  "title": "架构不是一张图，是一条能被人接手的依赖方向 · 提示词",
                   "description": null,
-                  "chars": 450
+                  "chars": 406
                 },
                 {
                   "kind": "skill",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/01-x1/outputs/skill-x1.md",
-                  "title": "卫生信息系统概论",
-                  "description": "卫生信息系统概论——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-                  "chars": 369
+                  "title": "架构不是一张图，是一条能被人接手的依赖方向",
+                  "description": "架构不是一张图，是一条能被人接手的依赖方向——按正文各节的判据与代价走一遍",
+                  "chars": 330
                 }
               ]
             },
@@ -38849,16 +38849,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/02-x2/outputs/prompt-02-x2.md",
-                  "title": "电子病历与临床信息系统 · 提示词",
+                  "title": "接口不是函数签名，是一份能单独验收的文档 · 提示词",
                   "description": null,
-                  "chars": 459
+                  "chars": 403
                 },
                 {
                   "kind": "skill",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/02-x2/outputs/skill-x2.md",
-                  "title": "电子病历与临床信息系统",
-                  "description": "电子病历与临床信息系统——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-                  "chars": 375
+                  "title": "接口不是函数签名，是一份能单独验收的文档",
+                  "description": "接口不是函数签名，是一份能单独验收的文档——按正文各节的判据与代价走一遍",
+                  "chars": 328
                 }
               ]
             },
@@ -38869,16 +38869,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/03-x3/outputs/prompt-03-x3.md",
-                  "title": "公共卫生信息系统 · 提示词",
+                  "title": "模块按变化频率切，不按组织架构切 · 提示词",
                   "description": null,
-                  "chars": 450
+                  "chars": 391
                 },
                 {
                   "kind": "skill",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/03-x3/outputs/skill-x3.md",
-                  "title": "公共卫生信息系统",
-                  "description": "公共卫生信息系统——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-                  "chars": 369
+                  "title": "模块按变化频率切，不按组织架构切",
+                  "description": "模块按变化频率切，不按组织架构切——按正文各节的判据与代价走一遍",
+                  "chars": 320
                 }
               ]
             },
@@ -38889,16 +38889,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/04-x4/outputs/prompt-04-x4.md",
-                  "title": "信息技术基础与新兴技术 · 提示词",
+                  "title": "可扩展性不是预留接口，是把变化关进一个盒子 · 提示词",
                   "description": null,
-                  "chars": 459
+                  "chars": 406
                 },
                 {
                   "kind": "skill",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/04-x4/outputs/skill-x4.md",
-                  "title": "信息技术基础与新兴技术",
-                  "description": "信息技术基础与新兴技术——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-                  "chars": 375
+                  "title": "可扩展性不是预留接口，是把变化关进一个盒子",
+                  "description": "可扩展性不是预留接口，是把变化关进一个盒子——按正文各节的判据与代价走一遍",
+                  "chars": 330
                 }
               ]
             },
@@ -38909,16 +38909,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/05-x5/outputs/prompt-05-x5.md",
-                  "title": "卫生信息资源的组织与检索 · 提示词",
+                  "title": "数据模型的第一版定不了终身，改动方式才定终身 · 提示词",
                   "description": null,
-                  "chars": 462
+                  "chars": 409
                 },
                 {
                   "kind": "skill",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/05-x5/outputs/skill-x5.md",
-                  "title": "卫生信息资源的组织与检索",
-                  "description": "卫生信息资源的组织与检索——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-                  "chars": 377
+                  "title": "数据模型的第一版定不了终身，改动方式才定终身",
+                  "description": "数据模型的第一版定不了终身，改动方式才定终身——按正文各节的判据与代价走一遍",
+                  "chars": 332
                 }
               ]
             },
@@ -38929,16 +38929,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/06-x6/outputs/prompt-06-x6.md",
-                  "title": "卫生信息项目管理 · 提示词",
+                  "title": "没写下来的决策，等于没做过决策 · 提示词",
                   "description": null,
-                  "chars": 450
+                  "chars": 388
                 },
                 {
                   "kind": "skill",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/06-x6/outputs/skill-x6.md",
-                  "title": "卫生信息项目管理",
-                  "description": "卫生信息项目管理——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-                  "chars": 369
+                  "title": "没写下来的决策，等于没做过决策",
+                  "description": "没写下来的决策，等于没做过决策——按正文各节的判据与代价走一遍",
+                  "chars": 318
                 }
               ]
             },
@@ -38949,16 +38949,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/07-x7/outputs/prompt-07-x7.md",
-                  "title": "卫生信息分析与决策支持 · 提示词",
+                  "title": "指标算错不会报错，只会安静地错 · 提示词",
                   "description": null,
-                  "chars": 459
+                  "chars": 388
                 },
                 {
                   "kind": "skill",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/07-x7/outputs/skill-x7.md",
-                  "title": "卫生信息分析与决策支持",
-                  "description": "卫生信息分析与决策支持——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-                  "chars": 375
+                  "title": "指标算错不会报错，只会安静地错",
+                  "description": "指标算错不会报错，只会安静地错——按正文各节的判据与代价走一遍",
+                  "chars": 318
                 }
               ]
             },
@@ -38969,16 +38969,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/08-x8/outputs/prompt-08-x8.md",
-                  "title": "卫生信息化规划与建设 · 提示词",
+                  "title": "上线不是部署的终点，回滚能力才是 · 提示词",
                   "description": null,
-                  "chars": 456
+                  "chars": 391
                 },
                 {
                   "kind": "skill",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/08-x8/outputs/skill-x8.md",
-                  "title": "卫生信息化规划与建设",
-                  "description": "卫生信息化规划与建设——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-                  "chars": 373
+                  "title": "上线不是部署的终点，回滚能力才是",
+                  "description": "上线不是部署的终点，回滚能力才是——按正文各节的判据与代价走一遍",
+                  "chars": 320
                 }
               ]
             },
@@ -38989,16 +38989,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/09-x9/outputs/prompt-09-x9.md",
-                  "title": "中医药信息化 · 提示词",
+                  "title": "证候不是一个标签，是一次可以拆开的判断 · 提示词",
                   "description": null,
-                  "chars": 444
+                  "chars": 400
                 },
                 {
                   "kind": "skill",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/09-x9/outputs/skill-x9.md",
-                  "title": "中医药信息化",
-                  "description": "中医药信息化——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-                  "chars": 365
+                  "title": "证候不是一个标签，是一次可以拆开的判断",
+                  "description": "证候不是一个标签，是一次可以拆开的判断——按正文各节的判据与代价走一遍",
+                  "chars": 326
                 }
               ]
             },
@@ -39009,16 +39009,16 @@
                 {
                   "kind": "prompt",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/10-x10/outputs/prompt-10-x10.md",
-                  "title": "智慧医疗与数字健康 · 提示词",
+                  "title": "新能力不是替换旧系统，是先绕过它再说 · 提示词",
                   "description": null,
-                  "chars": 455
+                  "chars": 398
                 },
                 {
                   "kind": "skill",
                   "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/10-x10/outputs/skill-x10.md",
-                  "title": "智慧医疗与数字健康",
-                  "description": "智慧医疗与数字健康——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-                  "chars": 372
+                  "title": "新能力不是替换旧系统，是先绕过它再说",
+                  "description": "新能力不是替换旧系统，是先绕过它再说——按正文各节的判据与代价走一遍",
+                  "chars": 325
                 }
               ]
             }
@@ -42588,7 +42588,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md",
                   "title": "选题：从复位方案到可量化命题",
                   "description": "选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 423
+                  "chars": 402
                 },
                 {
                   "kind": "prompt",
@@ -42766,7 +42766,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md",
                   "title": "论文写作与答辩",
                   "description": "论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 415
+                  "chars": 394
                 },
                 {
                   "kind": "prompt",
@@ -42884,7 +42884,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md",
                   "title": "知识移交：操作规范与交接",
                   "description": "知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 425
+                  "chars": 404
                 },
                 {
                   "kind": "prompt",
@@ -45961,7 +45961,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md",
                   "title": "选题：从复位方案到可量化命题",
                   "description": "选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 423
+                  "chars": 402
                 },
                 {
                   "kind": "prompt",
@@ -46153,7 +46153,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md",
                   "title": "论文写作与答辩",
                   "description": "论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 415
+                  "chars": 394
                 },
                 {
                   "kind": "prompt",
@@ -46271,7 +46271,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md",
                   "title": "知识移交：操作规范与交接",
                   "description": "知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 425
+                  "chars": 404
                 },
                 {
                   "kind": "prompt",
@@ -54336,7 +54336,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md",
                   "title": "选题：从复位方案到可量化命题",
                   "description": "选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 423
+                  "chars": 402
                 },
                 {
                   "kind": "prompt",
@@ -54514,7 +54514,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md",
                   "title": "论文写作与答辩",
                   "description": "论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 415
+                  "chars": 394
                 },
                 {
                   "kind": "prompt",
@@ -54632,7 +54632,7 @@
                   "file": "departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md",
                   "title": "知识移交：操作规范与交接",
                   "description": "知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
-                  "chars": 425
+                  "chars": 404
                 },
                 {
                   "kind": "prompt",
@@ -81001,11 +81001,11 @@
       "chapterTitle": "第 1 章 · 支具不治病，它改变的是力的分配",
       "kind": "prompt",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/01-gailun/outputs/prompt-01-gailun.md",
-      "title": "康复工程概论 · 提示词",
+      "title": "支具不治病，它改变的是力的分配 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 486
+      "chars": 549
     },
     {
       "dept": "骨伤系",
@@ -81016,11 +81016,11 @@
       "chapterTitle": "第 1 章 · 支具不治病，它改变的是力的分配",
       "kind": "skill",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/01-gailun/outputs/skill-gailun.md",
-      "title": "康复工程概论",
-      "name": null,
-      "description": "康复工程概论——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-      "version": null,
-      "chars": 408
+      "title": "支具不治病，它改变的是力的分配",
+      "name": "gailun",
+      "description": "支具不治病，它改变的是力的分配——按本章的三个判断、可数对象与边界走一遍，不写参数",
+      "version": "1.0.0",
+      "chars": 500
     },
     {
       "dept": "骨伤系",
@@ -81031,11 +81031,11 @@
       "chapterTitle": "第 2 章 · 分类看约束的方向，材料看它能撑多久",
       "kind": "prompt",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/02-fenlei-cailiao/outputs/prompt-02-fenlei-cailiao.md",
-      "title": "支具分类与材料 · 提示词",
+      "title": "分类看约束的方向，材料看它能撑多久 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 489
+      "chars": 533
     },
     {
       "dept": "骨伤系",
@@ -81046,11 +81046,11 @@
       "chapterTitle": "第 2 章 · 分类看约束的方向，材料看它能撑多久",
       "kind": "skill",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/02-fenlei-cailiao/outputs/skill-fenlei-cailiao.md",
-      "title": "支具分类与材料",
-      "name": null,
-      "description": "支具分类与材料——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-      "version": null,
-      "chars": 418
+      "title": "分类看约束的方向，材料看它能撑多久",
+      "name": "fenlei-cailiao",
+      "description": "分类看约束的方向，材料看它能撑多久——按本章的三个判断、可数对象与边界走一遍，不写参数",
+      "version": "1.0.0",
+      "chars": 490
     },
     {
       "dept": "骨伤系",
@@ -81061,11 +81061,11 @@
       "chapterTitle": "第 3 章 · 脊柱支具靠三点力，不靠把躯干裹紧",
       "kind": "prompt",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/03-jizhu-zhiju/outputs/prompt-03-jizhu-zhiju.md",
-      "title": "脊柱支具 · 提示词",
+      "title": "脊柱支具靠三点力，不靠把躯干裹紧 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 480
+      "chars": 524
     },
     {
       "dept": "骨伤系",
@@ -81076,11 +81076,11 @@
       "chapterTitle": "第 3 章 · 脊柱支具靠三点力，不靠把躯干裹紧",
       "kind": "skill",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/03-jizhu-zhiju/outputs/skill-jizhu-zhiju.md",
-      "title": "脊柱支具",
-      "name": null,
-      "description": "脊柱支具——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-      "version": null,
-      "chars": 409
+      "title": "脊柱支具靠三点力，不靠把躯干裹紧",
+      "name": "jizhu-zhiju",
+      "description": "脊柱支具靠三点力，不靠把躯干裹紧——按本章的三个判断、可数对象与边界走一遍，不写参数",
+      "version": "1.0.0",
+      "chars": 479
     },
     {
       "dept": "骨伤系",
@@ -81091,11 +81091,11 @@
       "chapterTitle": "第 4 章 · 手部支具的目标是滑动，不是固定",
       "kind": "prompt",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/04-shangzhi-zhiju/outputs/prompt-04-shangzhi-zhiju.md",
-      "title": "上肢支具 · 提示词",
+      "title": "手部支具的目标是滑动，不是固定 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 480
+      "chars": 536
     },
     {
       "dept": "骨伤系",
@@ -81106,11 +81106,11 @@
       "chapterTitle": "第 4 章 · 手部支具的目标是滑动，不是固定",
       "kind": "skill",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/04-shangzhi-zhiju/outputs/skill-shangzhi-zhiju.md",
-      "title": "上肢支具",
-      "name": null,
-      "description": "上肢支具——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-      "version": null,
-      "chars": 412
+      "title": "手部支具的目标是滑动，不是固定",
+      "name": "shangzhi-zhiju",
+      "description": "手部支具的目标是滑动，不是固定——按本章的三个判断、可数对象与边界走一遍，不写参数",
+      "version": "1.0.0",
+      "chars": 495
     },
     {
       "dept": "骨伤系",
@@ -81121,11 +81121,11 @@
       "chapterTitle": "第 5 章 · 下肢支具先回答负重，再回答步态",
       "kind": "prompt",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/05-xiazhi-zhiju/outputs/prompt-05-xiazhi-zhiju.md",
-      "title": "下肢支具 · 提示词",
+      "title": "下肢支具先回答负重，再回答步态 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 480
+      "chars": 540
     },
     {
       "dept": "骨伤系",
@@ -81136,11 +81136,11 @@
       "chapterTitle": "第 5 章 · 下肢支具先回答负重，再回答步态",
       "kind": "skill",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/05-xiazhi-zhiju/outputs/skill-xiazhi-zhiju.md",
-      "title": "下肢支具",
-      "name": null,
-      "description": "下肢支具——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-      "version": null,
-      "chars": 410
+      "title": "下肢支具先回答负重，再回答步态",
+      "name": "xiazhi-zhiju",
+      "description": "下肢支具先回答负重，再回答步态——按本章的三个判断、可数对象与边界走一遍，不写参数",
+      "version": "1.0.0",
+      "chars": 497
     },
     {
       "dept": "骨伤系",
@@ -81151,11 +81151,11 @@
       "chapterTitle": "第 6 章 · 鞋垫改变力矩，压力衣改变梯度",
       "kind": "prompt",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/06-zuxie-yali/outputs/prompt-06-zuxie-yali.md",
-      "title": "矫形鞋与压力治疗 · 提示词",
+      "title": "鞋垫改变力矩，压力衣改变梯度 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 492
+      "chars": 510
     },
     {
       "dept": "骨伤系",
@@ -81166,11 +81166,11 @@
       "chapterTitle": "第 6 章 · 鞋垫改变力矩，压力衣改变梯度",
       "kind": "skill",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/06-zuxie-yali/outputs/skill-zuxie-yali.md",
-      "title": "矫形鞋与压力治疗",
-      "name": null,
-      "description": "矫形鞋与压力治疗——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-      "version": null,
-      "chars": 416
+      "title": "鞋垫改变力矩，压力衣改变梯度",
+      "name": "zuxie-yali",
+      "description": "鞋垫改变力矩，压力衣改变梯度——按本章的三个判断、可数对象与边界走一遍，不写参数",
+      "version": "1.0.0",
+      "chars": 466
     },
     {
       "dept": "骨伤系",
@@ -81181,11 +81181,11 @@
       "chapterTitle": "第 7 章 · 辅具的第一判据是使用者能不能自己用",
       "kind": "prompt",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/07-zhuxing-fuzhu/outputs/prompt-07-zhuxing-fuzhu.md",
-      "title": "助行器、轮椅与转移辅具 · 提示词",
+      "title": "辅具的第一判据是使用者能不能自己用 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 501
+      "chars": 521
     },
     {
       "dept": "骨伤系",
@@ -81196,11 +81196,11 @@
       "chapterTitle": "第 7 章 · 辅具的第一判据是使用者能不能自己用",
       "kind": "skill",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/07-zhuxing-fuzhu/outputs/skill-zhuxing-fuzhu.md",
-      "title": "助行器、轮椅与转移辅具",
-      "name": null,
-      "description": "助行器、轮椅与转移辅具——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-      "version": null,
-      "chars": 425
+      "title": "辅具的第一判据是使用者能不能自己用",
+      "name": "zhuxing-fuzhu",
+      "description": "辅具的第一判据是使用者能不能自己用——按本章的三个判断、可数对象与边界走一遍，不写参数",
+      "version": "1.0.0",
+      "chars": 477
     },
     {
       "dept": "骨伤系",
@@ -81211,11 +81211,11 @@
       "chapterTitle": "第 8 章 · 适配好不好，皮肤先说话",
       "kind": "prompt",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/08-pinggu-suifang/outputs/prompt-08-pinggu-suifang.md",
-      "title": "适配评估与随访 · 提示词",
+      "title": "适配好不好，皮肤先说话 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 489
+      "chars": 512
     },
     {
       "dept": "骨伤系",
@@ -81226,11 +81226,11 @@
       "chapterTitle": "第 8 章 · 适配好不好，皮肤先说话",
       "kind": "skill",
       "file": "departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/08-pinggu-suifang/outputs/skill-pinggu-suifang.md",
-      "title": "适配评估与随访",
-      "name": null,
-      "description": "适配评估与随访——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据",
-      "version": null,
-      "chars": 418
+      "title": "适配好不好，皮肤先说话",
+      "name": "pinggu-suifang",
+      "description": "适配好不好，皮肤先说话——按本章的三个判断、可数对象与边界走一遍，不写参数",
+      "version": "1.0.0",
+      "chars": 475
     },
     {
       "dept": "骨伤系",
@@ -81680,7 +81680,7 @@
       "name": null,
       "description": "选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
       "version": null,
-      "chars": 423
+      "chars": 402
     },
     {
       "dept": "骨伤系",
@@ -81710,7 +81710,7 @@
       "name": null,
       "description": "影像与生物力学数据准备——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
       "version": null,
-      "chars": 425
+      "chars": 404
     },
     {
       "dept": "骨伤系",
@@ -81740,7 +81740,7 @@
       "name": null,
       "description": "手法与支具的系统实现——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
       "version": null,
-      "chars": 420
+      "chars": 399
     },
     {
       "dept": "骨伤系",
@@ -81770,7 +81770,7 @@
       "name": null,
       "description": "疗效与并发症评价——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
       "version": null,
-      "chars": 420
+      "chars": 399
     },
     {
       "dept": "骨伤系",
@@ -81800,7 +81800,7 @@
       "name": null,
       "description": "论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
       "version": null,
-      "chars": 415
+      "chars": 394
     },
     {
       "dept": "骨伤系",
@@ -81830,7 +81830,7 @@
       "name": null,
       "description": "知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据",
       "version": null,
-      "chars": 425
+      "chars": 404
     },
     {
       "dept": "护理系",
@@ -94745,7 +94745,7 @@
       "name": null,
       "description": null,
       "version": null,
-      "chars": 446
+      "chars": 463
     },
     {
       "dept": "管理系",
@@ -94760,7 +94760,7 @@
       "name": null,
       "description": "医院信息系统的构成——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
       "version": null,
-      "chars": 366
+      "chars": 334
     },
     {
       "dept": "管理系",
@@ -94775,7 +94775,7 @@
       "name": null,
       "description": null,
       "version": null,
-      "chars": 446
+      "chars": 463
     },
     {
       "dept": "管理系",
@@ -94790,7 +94790,7 @@
       "name": null,
       "description": "标准、编码与互操作——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
       "version": null,
-      "chars": 366
+      "chars": 334
     },
     {
       "dept": "管理系",
@@ -94805,7 +94805,7 @@
       "name": null,
       "description": null,
       "version": null,
-      "chars": 452
+      "chars": 469
     },
     {
       "dept": "管理系",
@@ -94820,7 +94820,7 @@
       "name": null,
       "description": "电子病历与临床信息系统——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
       "version": null,
-      "chars": 370
+      "chars": 338
     },
     {
       "dept": "管理系",
@@ -94835,7 +94835,7 @@
       "name": null,
       "description": null,
       "version": null,
-      "chars": 446
+      "chars": 463
     },
     {
       "dept": "管理系",
@@ -94850,7 +94850,7 @@
       "name": null,
       "description": "病案管理与首页数据——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
       "version": null,
-      "chars": 366
+      "chars": 334
     },
     {
       "dept": "管理系",
@@ -94865,7 +94865,7 @@
       "name": null,
       "description": null,
       "version": null,
-      "chars": 446
+      "chars": 463
     },
     {
       "dept": "管理系",
@@ -94880,7 +94880,7 @@
       "name": null,
       "description": "数据质量与统计上报——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
       "version": null,
-      "chars": 366
+      "chars": 334
     },
     {
       "dept": "管理系",
@@ -94895,7 +94895,7 @@
       "name": null,
       "description": null,
       "version": null,
-      "chars": 440
+      "chars": 457
     },
     {
       "dept": "管理系",
@@ -94910,7 +94910,7 @@
       "name": null,
       "description": "信息安全与权限——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
       "version": null,
-      "chars": 362
+      "chars": 330
     },
     {
       "dept": "管理系",
@@ -94925,7 +94925,7 @@
       "name": null,
       "description": null,
       "version": null,
-      "chars": 440
+      "chars": 457
     },
     {
       "dept": "管理系",
@@ -94940,7 +94940,7 @@
       "name": null,
       "description": "项目实施与验收——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
       "version": null,
-      "chars": 362
+      "chars": 330
     },
     {
       "dept": "管理系",
@@ -94955,7 +94955,7 @@
       "name": null,
       "description": null,
       "version": null,
-      "chars": 440
+      "chars": 457
     },
     {
       "dept": "管理系",
@@ -94970,7 +94970,7 @@
       "name": null,
       "description": "智慧医院与规划——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据",
       "version": null,
-      "chars": 362
+      "chars": 330
     },
     {
       "dept": "管理系",
@@ -101281,11 +101281,11 @@
       "chapterTitle": "第 1 章 · 架构不是一张图，是一条能被人接手的依赖方向",
       "kind": "prompt",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/01-x1/outputs/prompt-01-x1.md",
-      "title": "卫生信息系统概论 · 提示词",
+      "title": "架构不是一张图，是一条能被人接手的依赖方向 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 450
+      "chars": 406
     },
     {
       "dept": "智能系",
@@ -101296,11 +101296,11 @@
       "chapterTitle": "第 1 章 · 架构不是一张图，是一条能被人接手的依赖方向",
       "kind": "skill",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/01-x1/outputs/skill-x1.md",
-      "title": "卫生信息系统概论",
-      "name": null,
-      "description": "卫生信息系统概论——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-      "version": null,
-      "chars": 369
+      "title": "架构不是一张图，是一条能被人接手的依赖方向",
+      "name": "x1",
+      "description": "架构不是一张图，是一条能被人接手的依赖方向——按正文各节的判据与代价走一遍",
+      "version": "2.0.0",
+      "chars": 330
     },
     {
       "dept": "智能系",
@@ -101311,11 +101311,11 @@
       "chapterTitle": "第 2 章 · 接口不是函数签名，是一份能单独验收的文档",
       "kind": "prompt",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/02-x2/outputs/prompt-02-x2.md",
-      "title": "电子病历与临床信息系统 · 提示词",
+      "title": "接口不是函数签名，是一份能单独验收的文档 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 459
+      "chars": 403
     },
     {
       "dept": "智能系",
@@ -101326,11 +101326,11 @@
       "chapterTitle": "第 2 章 · 接口不是函数签名，是一份能单独验收的文档",
       "kind": "skill",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/02-x2/outputs/skill-x2.md",
-      "title": "电子病历与临床信息系统",
-      "name": null,
-      "description": "电子病历与临床信息系统——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-      "version": null,
-      "chars": 375
+      "title": "接口不是函数签名，是一份能单独验收的文档",
+      "name": "x2",
+      "description": "接口不是函数签名，是一份能单独验收的文档——按正文各节的判据与代价走一遍",
+      "version": "2.0.0",
+      "chars": 328
     },
     {
       "dept": "智能系",
@@ -101341,11 +101341,11 @@
       "chapterTitle": "第 3 章 · 模块按变化频率切，不按组织架构切",
       "kind": "prompt",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/03-x3/outputs/prompt-03-x3.md",
-      "title": "公共卫生信息系统 · 提示词",
+      "title": "模块按变化频率切，不按组织架构切 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 450
+      "chars": 391
     },
     {
       "dept": "智能系",
@@ -101356,11 +101356,11 @@
       "chapterTitle": "第 3 章 · 模块按变化频率切，不按组织架构切",
       "kind": "skill",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/03-x3/outputs/skill-x3.md",
-      "title": "公共卫生信息系统",
-      "name": null,
-      "description": "公共卫生信息系统——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-      "version": null,
-      "chars": 369
+      "title": "模块按变化频率切，不按组织架构切",
+      "name": "x3",
+      "description": "模块按变化频率切，不按组织架构切——按正文各节的判据与代价走一遍",
+      "version": "2.0.0",
+      "chars": 320
     },
     {
       "dept": "智能系",
@@ -101371,11 +101371,11 @@
       "chapterTitle": "第 4 章 · 可扩展性不是预留接口，是把变化关进一个盒子",
       "kind": "prompt",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/04-x4/outputs/prompt-04-x4.md",
-      "title": "信息技术基础与新兴技术 · 提示词",
+      "title": "可扩展性不是预留接口，是把变化关进一个盒子 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 459
+      "chars": 406
     },
     {
       "dept": "智能系",
@@ -101386,11 +101386,11 @@
       "chapterTitle": "第 4 章 · 可扩展性不是预留接口，是把变化关进一个盒子",
       "kind": "skill",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/04-x4/outputs/skill-x4.md",
-      "title": "信息技术基础与新兴技术",
-      "name": null,
-      "description": "信息技术基础与新兴技术——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-      "version": null,
-      "chars": 375
+      "title": "可扩展性不是预留接口，是把变化关进一个盒子",
+      "name": "x4",
+      "description": "可扩展性不是预留接口，是把变化关进一个盒子——按正文各节的判据与代价走一遍",
+      "version": "2.0.0",
+      "chars": 330
     },
     {
       "dept": "智能系",
@@ -101401,11 +101401,11 @@
       "chapterTitle": "第 5 章 · 数据模型的第一版定不了终身，改动方式才定终身",
       "kind": "prompt",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/05-x5/outputs/prompt-05-x5.md",
-      "title": "卫生信息资源的组织与检索 · 提示词",
+      "title": "数据模型的第一版定不了终身，改动方式才定终身 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 462
+      "chars": 409
     },
     {
       "dept": "智能系",
@@ -101416,11 +101416,11 @@
       "chapterTitle": "第 5 章 · 数据模型的第一版定不了终身，改动方式才定终身",
       "kind": "skill",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/05-x5/outputs/skill-x5.md",
-      "title": "卫生信息资源的组织与检索",
-      "name": null,
-      "description": "卫生信息资源的组织与检索——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-      "version": null,
-      "chars": 377
+      "title": "数据模型的第一版定不了终身，改动方式才定终身",
+      "name": "x5",
+      "description": "数据模型的第一版定不了终身，改动方式才定终身——按正文各节的判据与代价走一遍",
+      "version": "2.0.0",
+      "chars": 332
     },
     {
       "dept": "智能系",
@@ -101431,11 +101431,11 @@
       "chapterTitle": "第 6 章 · 没写下来的决策，等于没做过决策",
       "kind": "prompt",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/06-x6/outputs/prompt-06-x6.md",
-      "title": "卫生信息项目管理 · 提示词",
+      "title": "没写下来的决策，等于没做过决策 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 450
+      "chars": 388
     },
     {
       "dept": "智能系",
@@ -101446,11 +101446,11 @@
       "chapterTitle": "第 6 章 · 没写下来的决策，等于没做过决策",
       "kind": "skill",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/06-x6/outputs/skill-x6.md",
-      "title": "卫生信息项目管理",
-      "name": null,
-      "description": "卫生信息项目管理——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-      "version": null,
-      "chars": 369
+      "title": "没写下来的决策，等于没做过决策",
+      "name": "x6",
+      "description": "没写下来的决策，等于没做过决策——按正文各节的判据与代价走一遍",
+      "version": "2.0.0",
+      "chars": 318
     },
     {
       "dept": "智能系",
@@ -101461,11 +101461,11 @@
       "chapterTitle": "第 7 章 · 指标算错不会报错，只会安静地错",
       "kind": "prompt",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/07-x7/outputs/prompt-07-x7.md",
-      "title": "卫生信息分析与决策支持 · 提示词",
+      "title": "指标算错不会报错，只会安静地错 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 459
+      "chars": 388
     },
     {
       "dept": "智能系",
@@ -101476,11 +101476,11 @@
       "chapterTitle": "第 7 章 · 指标算错不会报错，只会安静地错",
       "kind": "skill",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/07-x7/outputs/skill-x7.md",
-      "title": "卫生信息分析与决策支持",
-      "name": null,
-      "description": "卫生信息分析与决策支持——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-      "version": null,
-      "chars": 375
+      "title": "指标算错不会报错，只会安静地错",
+      "name": "x7",
+      "description": "指标算错不会报错，只会安静地错——按正文各节的判据与代价走一遍",
+      "version": "2.0.0",
+      "chars": 318
     },
     {
       "dept": "智能系",
@@ -101491,11 +101491,11 @@
       "chapterTitle": "第 8 章 · 上线不是部署的终点，回滚能力才是",
       "kind": "prompt",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/08-x8/outputs/prompt-08-x8.md",
-      "title": "卫生信息化规划与建设 · 提示词",
+      "title": "上线不是部署的终点，回滚能力才是 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 456
+      "chars": 391
     },
     {
       "dept": "智能系",
@@ -101506,11 +101506,11 @@
       "chapterTitle": "第 8 章 · 上线不是部署的终点，回滚能力才是",
       "kind": "skill",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/08-x8/outputs/skill-x8.md",
-      "title": "卫生信息化规划与建设",
-      "name": null,
-      "description": "卫生信息化规划与建设——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-      "version": null,
-      "chars": 373
+      "title": "上线不是部署的终点，回滚能力才是",
+      "name": "x8",
+      "description": "上线不是部署的终点，回滚能力才是——按正文各节的判据与代价走一遍",
+      "version": "2.0.0",
+      "chars": 320
     },
     {
       "dept": "智能系",
@@ -101521,11 +101521,11 @@
       "chapterTitle": "第 9 章 · 证候不是一个标签，是一次可以拆开的判断",
       "kind": "prompt",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/09-x9/outputs/prompt-09-x9.md",
-      "title": "中医药信息化 · 提示词",
+      "title": "证候不是一个标签，是一次可以拆开的判断 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 444
+      "chars": 400
     },
     {
       "dept": "智能系",
@@ -101536,11 +101536,11 @@
       "chapterTitle": "第 9 章 · 证候不是一个标签，是一次可以拆开的判断",
       "kind": "skill",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/09-x9/outputs/skill-x9.md",
-      "title": "中医药信息化",
-      "name": null,
-      "description": "中医药信息化——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-      "version": null,
-      "chars": 365
+      "title": "证候不是一个标签，是一次可以拆开的判断",
+      "name": "x9",
+      "description": "证候不是一个标签，是一次可以拆开的判断——按正文各节的判据与代价走一遍",
+      "version": "2.0.0",
+      "chars": 326
     },
     {
       "dept": "智能系",
@@ -101551,11 +101551,11 @@
       "chapterTitle": "第 10 章 · 新能力不是替换旧系统，是先绕过它再说",
       "kind": "prompt",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/10-x10/outputs/prompt-10-x10.md",
-      "title": "智慧医疗与数字健康 · 提示词",
+      "title": "新能力不是替换旧系统，是先绕过它再说 · 提示词",
       "name": null,
       "description": null,
       "version": null,
-      "chars": 455
+      "chars": 398
     },
     {
       "dept": "智能系",
@@ -101566,11 +101566,11 @@
       "chapterTitle": "第 10 章 · 新能力不是替换旧系统，是先绕过它再说",
       "kind": "skill",
       "file": "departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/10-x10/outputs/skill-x10.md",
-      "title": "智慧医疗与数字健康",
-      "name": null,
-      "description": "智慧医疗与数字健康——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据",
-      "version": null,
-      "chars": 372
+      "title": "新能力不是替换旧系统，是先绕过它再说",
+      "name": "x10",
+      "description": "新能力不是替换旧系统，是先绕过它再说——按正文各节的判据与代价走一遍",
+      "version": "2.0.0",
+      "chars": 325
     },
     {
       "dept": "智能系",

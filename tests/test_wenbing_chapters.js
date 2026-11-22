@@ -119,15 +119,19 @@ test('跨文件数字不得停留在草稿值（docs/quiz/prompt/skill 同查）
   assert.deepStrictEqual(hits, [], hits.slice(0, 6).join('; '));
 });
 
-test('quiz 恰好 6 题（pre/check×3/post×2），correct 在 0–3', () => {
+test('quiz 5–10 题，首 pre 末 post，check ≥3，correct 在 0–3', () => {
   for (const c of chapters) {
     const q = JSON.parse(read(c.slug, 'quiz.json'));
-    assert.strictEqual(q.questions.length, 6, `${c.slug} 题数 ${q.questions.length}`);
-    assert.deepStrictEqual(q.questions.map((x) => x.stage), ['pre', 'check', 'check', 'check', 'post', 'post'], `${c.slug} stage 顺序`);
+    // 2026-11-23 起与全库契约一致：5–10 题、首题 pre 末题 post、check ≥3（不再要求恰好 6 题）
+    assert.ok(q.questions.length >= 5 && q.questions.length <= 10, `${c.slug} 题数 ${q.questions.length}`);
+    assert.strictEqual(q.questions[0].stage, 'pre', `${c.slug} 首题不是 pre`);
+    assert.strictEqual(q.questions[q.questions.length - 1].stage, 'post', `${c.slug} 末题不是 post`);
+    assert.ok(q.questions.filter((x) => x.stage === 'check').length >= 3, `${c.slug} check 题不足 3`);
     for (const x of q.questions) {
       assert.strictEqual(x.options.length, 4, `${c.slug} 选项数`);
       assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct <= 3, `${c.slug} correct 越界`);
-      assert.ok(x.explanation && x.explanation.length > 8, `${c.slug} 缺解释`);
+      const why = x.explain || x.explanation || '';
+      assert.ok(why.length > 8, `${c.slug} 缺解释`);
     }
   }
 });

@@ -5248,7 +5248,7 @@
 | prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从复位方案到可量化命题 · 提示词 | — | 523 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 423 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 402 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -5298,7 +5298,7 @@
 | prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 502 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 415 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 394 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -5321,7 +5321,7 @@
 | prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：操作规范与交接 · 提示词 | — | 517 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 425 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 404 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -7602,7 +7602,7 @@
 | prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从复位方案到可量化命题 · 提示词 | — | 523 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 423 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 402 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -7643,7 +7643,7 @@
 | prompt | 疗效评价与盲法设计 · 提示词 | — | 477 | [`prompt-04-liaoxiao-pingjia.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/prompt-04-liaoxiao-pingjia.md) |
 | skill | 疗效评价与盲法设计 | 疗效评价与盲法设计——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-liaoxiao-pingjia.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md) |
 | prompt | 疗效与并发症评价 · 提示词 | — | 505 | [`prompt-liaoxiao-pingjia.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/prompt-liaoxiao-pingjia.md) |
-| skill | 疗效与并发症评价 | 疗效与并发症评价——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 420 | [`skill-liaoxiao-pingjia.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md) |
+| skill | 疗效与并发症评价 | 疗效与并发症评价——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 399 | [`skill-liaoxiao-pingjia.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md) |
 
 #### 第 5 章 · 论文写作与答辩
 
@@ -7656,7 +7656,7 @@
 | prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 502 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 415 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 394 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -7679,7 +7679,7 @@
 | prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：操作规范与交接 · 提示词 | — | 517 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 425 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 404 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -8059,8 +8059,8 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 运动医学概论 · 提示词 | — | 509 | [`prompt-01-gailun.md`](../departments/04-gushang/05-yundong-yixue/chapters/01-gailun/outputs/prompt-01-gailun.md) |
 | skill | 运动医学概论 | 运动医学概论——按「运动医学概论 → 运动损伤的机制与分类 → 损伤评估与影像 → 急性损伤处理与康复分期 → 上肢与下肢常见损伤 → 躯干损伤与过用性损伤 → 运动防护与体能训练 → 重返运动与复发预防」走一遍本章判据 | 428 | [`skill-gailun.md`](../departments/04-gushang/05-yundong-yixue/chapters/01-gailun/outputs/skill-gailun.md) |
-| prompt | 康复工程概论 · 提示词 | — | 486 | [`prompt-01-gailun.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/01-gailun/outputs/prompt-01-gailun.md) |
-| skill | 康复工程概论 | 康复工程概论——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据 | 408 | [`skill-gailun.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/01-gailun/outputs/skill-gailun.md) |
+| prompt | 支具不治病，它改变的是力的分配 · 提示词 | — | 549 | [`prompt-01-gailun.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/01-gailun/outputs/prompt-01-gailun.md) |
+| skill | 支具不治病，它改变的是力的分配 | 支具不治病，它改变的是力的分配——按本章的三个判断、可数对象与边界走一遍，不写参数 | 500 | [`skill-gailun.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/01-gailun/outputs/skill-gailun.md) |
 
 #### 第 2 章 · 分类的价值不在名字起得准，在这一刀切下去处理方案会跟着变
 
@@ -8883,8 +8883,8 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 运动医学概论 · 提示词 | — | 509 | [`prompt-01-gailun.md`](../departments/04-gushang/05-yundong-yixue/chapters/01-gailun/outputs/prompt-01-gailun.md) |
 | skill | 运动医学概论 | 运动医学概论——按「运动医学概论 → 运动损伤的机制与分类 → 损伤评估与影像 → 急性损伤处理与康复分期 → 上肢与下肢常见损伤 → 躯干损伤与过用性损伤 → 运动防护与体能训练 → 重返运动与复发预防」走一遍本章判据 | 428 | [`skill-gailun.md`](../departments/04-gushang/05-yundong-yixue/chapters/01-gailun/outputs/skill-gailun.md) |
-| prompt | 康复工程概论 · 提示词 | — | 486 | [`prompt-01-gailun.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/01-gailun/outputs/prompt-01-gailun.md) |
-| skill | 康复工程概论 | 康复工程概论——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据 | 408 | [`skill-gailun.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/01-gailun/outputs/skill-gailun.md) |
+| prompt | 支具不治病，它改变的是力的分配 · 提示词 | — | 549 | [`prompt-01-gailun.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/01-gailun/outputs/prompt-01-gailun.md) |
+| skill | 支具不治病，它改变的是力的分配 | 支具不治病，它改变的是力的分配——按本章的三个判断、可数对象与边界走一遍，不写参数 | 500 | [`skill-gailun.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/01-gailun/outputs/skill-gailun.md) |
 
 #### 第 2 章 · 分类看约束的方向，材料看它能撑多久
 
@@ -8892,8 +8892,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 支具分类与材料 · 提示词 | — | 489 | [`prompt-02-fenlei-cailiao.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/02-fenlei-cailiao/outputs/prompt-02-fenlei-cailiao.md) |
-| skill | 支具分类与材料 | 支具分类与材料——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据 | 418 | [`skill-fenlei-cailiao.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/02-fenlei-cailiao/outputs/skill-fenlei-cailiao.md) |
+| prompt | 分类看约束的方向，材料看它能撑多久 · 提示词 | — | 533 | [`prompt-02-fenlei-cailiao.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/02-fenlei-cailiao/outputs/prompt-02-fenlei-cailiao.md) |
+| skill | 分类看约束的方向，材料看它能撑多久 | 分类看约束的方向，材料看它能撑多久——按本章的三个判断、可数对象与边界走一遍，不写参数 | 490 | [`skill-fenlei-cailiao.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/02-fenlei-cailiao/outputs/skill-fenlei-cailiao.md) |
 
 #### 第 3 章 · 脊柱支具靠三点力，不靠把躯干裹紧
 
@@ -8901,8 +8901,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 脊柱支具 · 提示词 | — | 480 | [`prompt-03-jizhu-zhiju.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/03-jizhu-zhiju/outputs/prompt-03-jizhu-zhiju.md) |
-| skill | 脊柱支具 | 脊柱支具——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据 | 409 | [`skill-jizhu-zhiju.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/03-jizhu-zhiju/outputs/skill-jizhu-zhiju.md) |
+| prompt | 脊柱支具靠三点力，不靠把躯干裹紧 · 提示词 | — | 524 | [`prompt-03-jizhu-zhiju.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/03-jizhu-zhiju/outputs/prompt-03-jizhu-zhiju.md) |
+| skill | 脊柱支具靠三点力，不靠把躯干裹紧 | 脊柱支具靠三点力，不靠把躯干裹紧——按本章的三个判断、可数对象与边界走一遍，不写参数 | 479 | [`skill-jizhu-zhiju.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/03-jizhu-zhiju/outputs/skill-jizhu-zhiju.md) |
 
 #### 第 4 章 · 手部支具的目标是滑动，不是固定
 
@@ -8910,8 +8910,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 上肢支具 · 提示词 | — | 480 | [`prompt-04-shangzhi-zhiju.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/04-shangzhi-zhiju/outputs/prompt-04-shangzhi-zhiju.md) |
-| skill | 上肢支具 | 上肢支具——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据 | 412 | [`skill-shangzhi-zhiju.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/04-shangzhi-zhiju/outputs/skill-shangzhi-zhiju.md) |
+| prompt | 手部支具的目标是滑动，不是固定 · 提示词 | — | 536 | [`prompt-04-shangzhi-zhiju.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/04-shangzhi-zhiju/outputs/prompt-04-shangzhi-zhiju.md) |
+| skill | 手部支具的目标是滑动，不是固定 | 手部支具的目标是滑动，不是固定——按本章的三个判断、可数对象与边界走一遍，不写参数 | 495 | [`skill-shangzhi-zhiju.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/04-shangzhi-zhiju/outputs/skill-shangzhi-zhiju.md) |
 
 #### 第 5 章 · 下肢支具先回答负重，再回答步态
 
@@ -8919,8 +8919,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 下肢支具 · 提示词 | — | 480 | [`prompt-05-xiazhi-zhiju.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/05-xiazhi-zhiju/outputs/prompt-05-xiazhi-zhiju.md) |
-| skill | 下肢支具 | 下肢支具——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据 | 410 | [`skill-xiazhi-zhiju.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/05-xiazhi-zhiju/outputs/skill-xiazhi-zhiju.md) |
+| prompt | 下肢支具先回答负重，再回答步态 · 提示词 | — | 540 | [`prompt-05-xiazhi-zhiju.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/05-xiazhi-zhiju/outputs/prompt-05-xiazhi-zhiju.md) |
+| skill | 下肢支具先回答负重，再回答步态 | 下肢支具先回答负重，再回答步态——按本章的三个判断、可数对象与边界走一遍，不写参数 | 497 | [`skill-xiazhi-zhiju.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/05-xiazhi-zhiju/outputs/skill-xiazhi-zhiju.md) |
 
 #### 第 6 章 · 鞋垫改变力矩，压力衣改变梯度
 
@@ -8928,8 +8928,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 矫形鞋与压力治疗 · 提示词 | — | 492 | [`prompt-06-zuxie-yali.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/06-zuxie-yali/outputs/prompt-06-zuxie-yali.md) |
-| skill | 矫形鞋与压力治疗 | 矫形鞋与压力治疗——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据 | 416 | [`skill-zuxie-yali.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/06-zuxie-yali/outputs/skill-zuxie-yali.md) |
+| prompt | 鞋垫改变力矩，压力衣改变梯度 · 提示词 | — | 510 | [`prompt-06-zuxie-yali.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/06-zuxie-yali/outputs/prompt-06-zuxie-yali.md) |
+| skill | 鞋垫改变力矩，压力衣改变梯度 | 鞋垫改变力矩，压力衣改变梯度——按本章的三个判断、可数对象与边界走一遍，不写参数 | 466 | [`skill-zuxie-yali.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/06-zuxie-yali/outputs/skill-zuxie-yali.md) |
 
 #### 第 7 章 · 辅具的第一判据是使用者能不能自己用
 
@@ -8937,8 +8937,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 助行器、轮椅与转移辅具 · 提示词 | — | 501 | [`prompt-07-zhuxing-fuzhu.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/07-zhuxing-fuzhu/outputs/prompt-07-zhuxing-fuzhu.md) |
-| skill | 助行器、轮椅与转移辅具 | 助行器、轮椅与转移辅具——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据 | 425 | [`skill-zhuxing-fuzhu.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/07-zhuxing-fuzhu/outputs/skill-zhuxing-fuzhu.md) |
+| prompt | 辅具的第一判据是使用者能不能自己用 · 提示词 | — | 521 | [`prompt-07-zhuxing-fuzhu.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/07-zhuxing-fuzhu/outputs/prompt-07-zhuxing-fuzhu.md) |
+| skill | 辅具的第一判据是使用者能不能自己用 | 辅具的第一判据是使用者能不能自己用——按本章的三个判断、可数对象与边界走一遍，不写参数 | 477 | [`skill-zhuxing-fuzhu.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/07-zhuxing-fuzhu/outputs/skill-zhuxing-fuzhu.md) |
 
 #### 第 8 章 · 适配好不好，皮肤先说话
 
@@ -8946,8 +8946,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 适配评估与随访 · 提示词 | — | 489 | [`prompt-08-pinggu-suifang.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/08-pinggu-suifang/outputs/prompt-08-pinggu-suifang.md) |
-| skill | 适配评估与随访 | 适配评估与随访——按「康复工程概论 → 支具分类与材料 → 脊柱支具 → 上肢支具 → 下肢支具 → 矫形鞋与压力治疗 → 助行器、轮椅与转移辅具 → 适配评估与随访」走一遍本章判据 | 418 | [`skill-pinggu-suifang.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/08-pinggu-suifang/outputs/skill-pinggu-suifang.md) |
+| prompt | 适配好不好，皮肤先说话 · 提示词 | — | 512 | [`prompt-08-pinggu-suifang.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/08-pinggu-suifang/outputs/prompt-08-pinggu-suifang.md) |
+| skill | 适配好不好，皮肤先说话 | 适配好不好，皮肤先说话——按本章的三个判断、可数对象与边界走一遍，不写参数 | 475 | [`skill-pinggu-suifang.md`](../departments/04-gushang/14-kangfu-gongcheng-zhiju/chapters/08-pinggu-suifang/outputs/skill-pinggu-suifang.md) |
 
 ### 骨伤康复评定
 
@@ -9106,7 +9106,7 @@
 | prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从复位方案到可量化命题 · 提示词 | — | 523 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 423 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 402 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -9125,7 +9125,7 @@
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
 | prompt | 影像与生物力学数据准备 · 提示词 | — | 514 | [`prompt-yingxiang-shuju.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/02-yingxiang-shuju/outputs/prompt-yingxiang-shuju.md) |
-| skill | 影像与生物力学数据准备 | 影像与生物力学数据准备——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 425 | [`skill-yingxiang-shuju.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/02-yingxiang-shuju/outputs/skill-yingxiang-shuju.md) |
+| skill | 影像与生物力学数据准备 | 影像与生物力学数据准备——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 404 | [`skill-yingxiang-shuju.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/02-yingxiang-shuju/outputs/skill-yingxiang-shuju.md) |
 
 #### 第 3 章 · 把手法写成流程、把支具写成参数，才算做完；「手感」和「定制」都交不出去
 
@@ -9134,7 +9134,7 @@
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
 | prompt | 手法与支具的系统实现 · 提示词 | — | 511 | [`prompt-shoufa-zhiju.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/03-shoufa-zhiju/outputs/prompt-shoufa-zhiju.md) |
-| skill | 手法与支具的系统实现 | 手法与支具的系统实现——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 420 | [`skill-shoufa-zhiju.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/03-shoufa-zhiju/outputs/skill-shoufa-zhiju.md) |
+| skill | 手法与支具的系统实现 | 手法与支具的系统实现——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 399 | [`skill-shoufa-zhiju.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/03-shoufa-zhiju/outputs/skill-shoufa-zhiju.md) |
 
 #### 第 4 章 · 疗效评价与盲法设计
 
@@ -9145,7 +9145,7 @@
 | prompt | 疗效评价与盲法设计 · 提示词 | — | 477 | [`prompt-04-liaoxiao-pingjia.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/prompt-04-liaoxiao-pingjia.md) |
 | skill | 疗效评价与盲法设计 | 疗效评价与盲法设计——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-liaoxiao-pingjia.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md) |
 | prompt | 疗效与并发症评价 · 提示词 | — | 505 | [`prompt-liaoxiao-pingjia.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/prompt-liaoxiao-pingjia.md) |
-| skill | 疗效与并发症评价 | 疗效与并发症评价——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 420 | [`skill-liaoxiao-pingjia.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md) |
+| skill | 疗效与并发症评价 | 疗效与并发症评价——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 399 | [`skill-liaoxiao-pingjia.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/04-liaoxiao-pingjia/outputs/skill-liaoxiao-pingjia.md) |
 
 #### 第 5 章 · 论文写作与答辩
 
@@ -9158,7 +9158,7 @@
 | prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 502 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 415 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 394 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -9181,7 +9181,7 @@
 | prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：操作规范与交接 · 提示词 | — | 517 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 425 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 404 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -12666,7 +12666,7 @@
 | prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从复位方案到可量化命题 · 提示词 | — | 523 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 423 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 402 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -12716,7 +12716,7 @@
 | prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 502 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 415 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 394 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -12739,7 +12739,7 @@
 | prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：操作规范与交接 · 提示词 | — | 517 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 425 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 404 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -13557,8 +13557,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 医院信息系统的构成 · 提示词 | — | 446 | [`prompt-01-z111.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/01-z111/outputs/prompt-01-z111.md) |
-| skill | 医院信息系统的构成 | 医院信息系统的构成——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 366 | [`skill-z111.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/01-z111/outputs/skill-z111.md) |
+| prompt | 医院信息系统的构成 · 提示词 | — | 463 | [`prompt-01-z111.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/01-z111/outputs/prompt-01-z111.md) |
+| skill | 医院信息系统的构成 | 医院信息系统的构成——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 334 | [`skill-z111.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/01-z111/outputs/skill-z111.md) |
 
 #### 第 2 章 · 标准、编码与互操作：编码少一位，整组就匹配不上
 
@@ -13566,8 +13566,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 标准、编码与互操作 · 提示词 | — | 446 | [`prompt-02-z112.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/02-z112/outputs/prompt-02-z112.md) |
-| skill | 标准、编码与互操作 | 标准、编码与互操作——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 366 | [`skill-z112.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/02-z112/outputs/skill-z112.md) |
+| prompt | 标准、编码与互操作 · 提示词 | — | 463 | [`prompt-02-z112.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/02-z112/outputs/prompt-02-z112.md) |
+| skill | 标准、编码与互操作 | 标准、编码与互操作——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 334 | [`skill-z112.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/02-z112/outputs/skill-z112.md) |
 
 #### 第 3 章 · 电子病历与临床信息系统：写得快不等于写得对，签了名才算写完
 
@@ -13575,8 +13575,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 电子病历与临床信息系统 · 提示词 | — | 452 | [`prompt-03-z113.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/03-z113/outputs/prompt-03-z113.md) |
-| skill | 电子病历与临床信息系统 | 电子病历与临床信息系统——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 370 | [`skill-z113.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/03-z113/outputs/skill-z113.md) |
+| prompt | 电子病历与临床信息系统 · 提示词 | — | 469 | [`prompt-03-z113.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/03-z113/outputs/prompt-03-z113.md) |
+| skill | 电子病历与临床信息系统 | 电子病历与临床信息系统——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 338 | [`skill-z113.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/03-z113/outputs/skill-z113.md) |
 
 #### 第 4 章 · 病案首页与主诊断：一个诊断选错，整组都错
 
@@ -13584,8 +13584,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 病案管理与首页数据 · 提示词 | — | 446 | [`prompt-04-z114.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/04-z114/outputs/prompt-04-z114.md) |
-| skill | 病案管理与首页数据 | 病案管理与首页数据——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 366 | [`skill-z114.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/04-z114/outputs/skill-z114.md) |
+| prompt | 病案管理与首页数据 · 提示词 | — | 463 | [`prompt-04-z114.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/04-z114/outputs/prompt-04-z114.md) |
+| skill | 病案管理与首页数据 | 病案管理与首页数据——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 334 | [`skill-z114.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/04-z114/outputs/skill-z114.md) |
 
 #### 第 5 章 · 数据质量与统计上报：同一个数，三个分母
 
@@ -13593,8 +13593,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 数据质量与统计上报 · 提示词 | — | 446 | [`prompt-05-z115.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/05-z115/outputs/prompt-05-z115.md) |
-| skill | 数据质量与统计上报 | 数据质量与统计上报——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 366 | [`skill-z115.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/05-z115/outputs/skill-z115.md) |
+| prompt | 数据质量与统计上报 · 提示词 | — | 463 | [`prompt-05-z115.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/05-z115/outputs/prompt-05-z115.md) |
+| skill | 数据质量与统计上报 | 数据质量与统计上报——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 334 | [`skill-z115.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/05-z115/outputs/skill-z115.md) |
 
 #### 第 6 章 · 信息安全与权限：能登录的人越多，签名越不值钱
 
@@ -13602,8 +13602,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 信息安全与权限 · 提示词 | — | 440 | [`prompt-06-z116.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/06-z116/outputs/prompt-06-z116.md) |
-| skill | 信息安全与权限 | 信息安全与权限——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 362 | [`skill-z116.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/06-z116/outputs/skill-z116.md) |
+| prompt | 信息安全与权限 · 提示词 | — | 457 | [`prompt-06-z116.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/06-z116/outputs/prompt-06-z116.md) |
+| skill | 信息安全与权限 | 信息安全与权限——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 330 | [`skill-z116.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/06-z116/outputs/skill-z116.md) |
 
 #### 第 7 章 · 项目实施与验收：验收单上不能写「满足临床需要」
 
@@ -13611,8 +13611,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 项目实施与验收 · 提示词 | — | 440 | [`prompt-07-z117.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/07-z117/outputs/prompt-07-z117.md) |
-| skill | 项目实施与验收 | 项目实施与验收——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 362 | [`skill-z117.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/07-z117/outputs/skill-z117.md) |
+| prompt | 项目实施与验收 · 提示词 | — | 457 | [`prompt-07-z117.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/07-z117/outputs/prompt-07-z117.md) |
+| skill | 项目实施与验收 | 项目实施与验收——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 330 | [`skill-z117.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/07-z117/outputs/skill-z117.md) |
 
 #### 第 8 章 · 智慧医院与规划：评级是体检报告，不是成绩单
 
@@ -13620,8 +13620,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 智慧医院与规划 · 提示词 | — | 440 | [`prompt-08-z118.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/08-z118/outputs/prompt-08-z118.md) |
-| skill | 智慧医院与规划 | 智慧医院与规划——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 362 | [`skill-z118.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/08-z118/outputs/skill-z118.md) |
+| prompt | 智慧医院与规划 · 提示词 | — | 457 | [`prompt-08-z118.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/08-z118/outputs/prompt-08-z118.md) |
+| skill | 智慧医院与规划 | 智慧医院与规划——按「系统 → 标准 → 病历 → 病案 → 质量」走一遍本章判据 | 330 | [`skill-z118.md`](../departments/06-guanli/11-yiyuan-xinxihua-bingan/chapters/08-z118/outputs/skill-z118.md) |
 
 ### 中医药标准化
 
@@ -15508,7 +15508,7 @@
 | prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从复位方案到可量化命题 · 提示词 | — | 523 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 423 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 402 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -15558,7 +15558,7 @@
 | prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 502 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 415 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 394 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -15581,7 +15581,7 @@
 | prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：操作规范与交接 · 提示词 | — | 517 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 425 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 404 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -15697,8 +15697,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 卫生信息系统概论 · 提示词 | — | 450 | [`prompt-01-x1.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/01-x1/outputs/prompt-01-x1.md) |
-| skill | 卫生信息系统概论 | 卫生信息系统概论——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据 | 369 | [`skill-x1.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/01-x1/outputs/skill-x1.md) |
+| prompt | 架构不是一张图，是一条能被人接手的依赖方向 · 提示词 | — | 406 | [`prompt-01-x1.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/01-x1/outputs/prompt-01-x1.md) |
+| skill | 架构不是一张图，是一条能被人接手的依赖方向 | 架构不是一张图，是一条能被人接手的依赖方向——按正文各节的判据与代价走一遍 | 330 | [`skill-x1.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/01-x1/outputs/skill-x1.md) |
 
 #### 第 2 章 · 接口不是函数签名，是一份能单独验收的文档
 
@@ -15706,8 +15706,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 电子病历与临床信息系统 · 提示词 | — | 459 | [`prompt-02-x2.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/02-x2/outputs/prompt-02-x2.md) |
-| skill | 电子病历与临床信息系统 | 电子病历与临床信息系统——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据 | 375 | [`skill-x2.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/02-x2/outputs/skill-x2.md) |
+| prompt | 接口不是函数签名，是一份能单独验收的文档 · 提示词 | — | 403 | [`prompt-02-x2.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/02-x2/outputs/prompt-02-x2.md) |
+| skill | 接口不是函数签名，是一份能单独验收的文档 | 接口不是函数签名，是一份能单独验收的文档——按正文各节的判据与代价走一遍 | 328 | [`skill-x2.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/02-x2/outputs/skill-x2.md) |
 
 #### 第 3 章 · 模块按变化频率切，不按组织架构切
 
@@ -15715,8 +15715,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 公共卫生信息系统 · 提示词 | — | 450 | [`prompt-03-x3.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/03-x3/outputs/prompt-03-x3.md) |
-| skill | 公共卫生信息系统 | 公共卫生信息系统——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据 | 369 | [`skill-x3.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/03-x3/outputs/skill-x3.md) |
+| prompt | 模块按变化频率切，不按组织架构切 · 提示词 | — | 391 | [`prompt-03-x3.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/03-x3/outputs/prompt-03-x3.md) |
+| skill | 模块按变化频率切，不按组织架构切 | 模块按变化频率切，不按组织架构切——按正文各节的判据与代价走一遍 | 320 | [`skill-x3.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/03-x3/outputs/skill-x3.md) |
 
 #### 第 4 章 · 可扩展性不是预留接口，是把变化关进一个盒子
 
@@ -15724,8 +15724,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 信息技术基础与新兴技术 · 提示词 | — | 459 | [`prompt-04-x4.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/04-x4/outputs/prompt-04-x4.md) |
-| skill | 信息技术基础与新兴技术 | 信息技术基础与新兴技术——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据 | 375 | [`skill-x4.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/04-x4/outputs/skill-x4.md) |
+| prompt | 可扩展性不是预留接口，是把变化关进一个盒子 · 提示词 | — | 406 | [`prompt-04-x4.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/04-x4/outputs/prompt-04-x4.md) |
+| skill | 可扩展性不是预留接口，是把变化关进一个盒子 | 可扩展性不是预留接口，是把变化关进一个盒子——按正文各节的判据与代价走一遍 | 330 | [`skill-x4.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/04-x4/outputs/skill-x4.md) |
 
 #### 第 5 章 · 数据模型的第一版定不了终身，改动方式才定终身
 
@@ -15733,8 +15733,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 卫生信息资源的组织与检索 · 提示词 | — | 462 | [`prompt-05-x5.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/05-x5/outputs/prompt-05-x5.md) |
-| skill | 卫生信息资源的组织与检索 | 卫生信息资源的组织与检索——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据 | 377 | [`skill-x5.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/05-x5/outputs/skill-x5.md) |
+| prompt | 数据模型的第一版定不了终身，改动方式才定终身 · 提示词 | — | 409 | [`prompt-05-x5.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/05-x5/outputs/prompt-05-x5.md) |
+| skill | 数据模型的第一版定不了终身，改动方式才定终身 | 数据模型的第一版定不了终身，改动方式才定终身——按正文各节的判据与代价走一遍 | 332 | [`skill-x5.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/05-x5/outputs/skill-x5.md) |
 
 #### 第 6 章 · 没写下来的决策，等于没做过决策
 
@@ -15742,8 +15742,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 卫生信息项目管理 · 提示词 | — | 450 | [`prompt-06-x6.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/06-x6/outputs/prompt-06-x6.md) |
-| skill | 卫生信息项目管理 | 卫生信息项目管理——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据 | 369 | [`skill-x6.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/06-x6/outputs/skill-x6.md) |
+| prompt | 没写下来的决策，等于没做过决策 · 提示词 | — | 388 | [`prompt-06-x6.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/06-x6/outputs/prompt-06-x6.md) |
+| skill | 没写下来的决策，等于没做过决策 | 没写下来的决策，等于没做过决策——按正文各节的判据与代价走一遍 | 318 | [`skill-x6.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/06-x6/outputs/skill-x6.md) |
 
 #### 第 7 章 · 指标算错不会报错，只会安静地错
 
@@ -15751,8 +15751,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 卫生信息分析与决策支持 · 提示词 | — | 459 | [`prompt-07-x7.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/07-x7/outputs/prompt-07-x7.md) |
-| skill | 卫生信息分析与决策支持 | 卫生信息分析与决策支持——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据 | 375 | [`skill-x7.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/07-x7/outputs/skill-x7.md) |
+| prompt | 指标算错不会报错，只会安静地错 · 提示词 | — | 388 | [`prompt-07-x7.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/07-x7/outputs/prompt-07-x7.md) |
+| skill | 指标算错不会报错，只会安静地错 | 指标算错不会报错，只会安静地错——按正文各节的判据与代价走一遍 | 318 | [`skill-x7.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/07-x7/outputs/skill-x7.md) |
 
 #### 第 8 章 · 上线不是部署的终点，回滚能力才是
 
@@ -15760,8 +15760,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 卫生信息化规划与建设 · 提示词 | — | 456 | [`prompt-08-x8.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/08-x8/outputs/prompt-08-x8.md) |
-| skill | 卫生信息化规划与建设 | 卫生信息化规划与建设——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据 | 373 | [`skill-x8.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/08-x8/outputs/skill-x8.md) |
+| prompt | 上线不是部署的终点，回滚能力才是 · 提示词 | — | 391 | [`prompt-08-x8.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/08-x8/outputs/prompt-08-x8.md) |
+| skill | 上线不是部署的终点，回滚能力才是 | 上线不是部署的终点，回滚能力才是——按正文各节的判据与代价走一遍 | 320 | [`skill-x8.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/08-x8/outputs/skill-x8.md) |
 
 #### 第 9 章 · 证候不是一个标签，是一次可以拆开的判断
 
@@ -15769,8 +15769,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医药信息化 · 提示词 | — | 444 | [`prompt-09-x9.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/09-x9/outputs/prompt-09-x9.md) |
-| skill | 中医药信息化 | 中医药信息化——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据 | 365 | [`skill-x9.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/09-x9/outputs/skill-x9.md) |
+| prompt | 证候不是一个标签，是一次可以拆开的判断 · 提示词 | — | 400 | [`prompt-09-x9.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/09-x9/outputs/prompt-09-x9.md) |
+| skill | 证候不是一个标签，是一次可以拆开的判断 | 证候不是一个标签，是一次可以拆开的判断——按正文各节的判据与代价走一遍 | 326 | [`skill-x9.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/09-x9/outputs/skill-x9.md) |
 
 #### 第 10 章 · 新能力不是替换旧系统，是先绕过它再说
 
@@ -15778,8 +15778,8 @@
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 智慧医疗与数字健康 · 提示词 | — | 455 | [`prompt-10-x10.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/10-x10/outputs/prompt-10-x10.md) |
-| skill | 智慧医疗与数字健康 | 智慧医疗与数字健康——按「系统与功能 → 技术与数据 → 工程与规划 → 中医与智慧」走一遍本章判据 | 372 | [`skill-x10.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/10-x10/outputs/skill-x10.md) |
+| prompt | 新能力不是替换旧系统，是先绕过它再说 · 提示词 | — | 398 | [`prompt-10-x10.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/10-x10/outputs/prompt-10-x10.md) |
+| skill | 新能力不是替换旧系统，是先绕过它再说 | 新能力不是替换旧系统，是先绕过它再说——按正文各节的判据与代价走一遍 | 325 | [`skill-x10.md`](../departments/07-zhineng/02-zhongyi-ruanjian-jiagou-xue/chapters/10-x10/outputs/skill-x10.md) |
 
 ### 中医智能设备与可穿戴设备
 
@@ -17216,7 +17216,7 @@
 | prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从复位方案到可量化命题 · 提示词 | — | 523 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 423 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 402 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -17266,7 +17266,7 @@
 | prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 502 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 415 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 394 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -17289,7 +17289,7 @@
 | prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：操作规范与交接 · 提示词 | — | 517 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 425 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 404 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -18632,7 +18632,7 @@
 | prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从复位方案到可量化命题 · 提示词 | — | 523 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 423 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 402 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -18684,7 +18684,7 @@
 | prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 502 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 415 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 394 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -18707,7 +18707,7 @@
 | prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：操作规范与交接 · 提示词 | — | 517 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 425 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 404 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -21813,7 +21813,7 @@
 | prompt | 选题：从配穴方案到可检验命题 · 提示词 | — | 481 | [`prompt-01-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从复位方案到可量化命题 · 提示词 | — | 523 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
-| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 423 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| skill | 选题：从复位方案到可量化命题 | 选题：从复位方案到可量化命题——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 402 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -21863,7 +21863,7 @@
 | prompt | 论文写作与答辩 · 提示词 | — | 459 | [`prompt-05-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 502 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 415 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| skill | 论文写作与答辩 | 论文写作与答辩——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 394 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -21886,7 +21886,7 @@
 | prompt | 知识移交：方案手册与交接 · 提示词 | — | 473 | [`prompt-06-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：操作规范与交接 · 提示词 | — | 517 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
-| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 425 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| skill | 知识移交：操作规范与交接 | 知识移交：操作规范与交接——按「选题：从复位方案到可量化命题 → 影像与生物力学数据准备 → 手法与支具的系统实现 → 疗效与并发症评价 → 论文写作与答辩 → 知识移交：操作规范与交接」走一遍本章判据 | 404 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |

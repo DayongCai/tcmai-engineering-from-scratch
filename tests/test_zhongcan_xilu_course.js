@@ -99,19 +99,20 @@ test('「参西」必须与辨证分开陈述（不得写成病理学结论）',
   }
 });
 
-test('quiz 契约：每章 6 题，pre/check/post 三段齐，答案下标合法', () => {
+test('quiz 契约：每章 5–10 题，pre/check/post 三段齐，答案下标合法', () => {
   for (const c of chapters) {
     const quiz = JSON.parse(read(c.slug, 'quiz.json'));
     const qs = quiz.questions;
-    assert.strictEqual(qs.length, 6, `${c.slug} 题数 ${qs.length}`);
+    // 2026-11-23 起与全库契约一致：下限 1 pre + 3 check + 1 post，总数 ≤10（不再要求恰好 6 题）
+    assert.ok(qs.length >= 5 && qs.length <= 10, `${c.slug} 题数 ${qs.length} 不在 5–10`);
     const stages = qs.map((q) => q.stage);
     assert.strictEqual(stages[0], 'pre', `${c.slug} 首题不是 pre`);
-    assert.strictEqual(stages[5], 'post', `${c.slug} 末题不是 post`);
+    assert.strictEqual(stages[stages.length - 1], 'post', `${c.slug} 末题不是 post`);
     assert.ok(stages.filter((s) => s === 'check').length >= 3, `${c.slug} check 题不足 3`);
     for (const q of qs) {
       assert.strictEqual(q.options.length, 4, `${c.slug} 选项数 ${q.options.length}`);
       assert.ok(q.correct >= 0 && q.correct <= 3, `${c.slug} correct 越界`);
-      assert.ok(q.explanation, `${c.slug} 缺解释`);
+      assert.ok(q.explain || q.explanation, `${c.slug} 缺解释`);
     }
   }
 });
