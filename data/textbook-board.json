@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 2657138,
+    "gapWithBodyChars": 2614687,
     "gapNoBody": 0
   },
   "totals": {
@@ -23224,9 +23224,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 50580
+            "chars": 29039
           },
-          "note": "教学章已有正文（8 章 / 5.1 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.9 万字），未接教材出版线"
         },
         {
           "slug": "05-yundong-yixue",
@@ -23236,9 +23236,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 47163
+            "chars": 26253
           },
-          "note": "教学章已有正文（8 章 / 4.7 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.6 万字），未接教材出版线"
         },
         {
           "slug": "10-jizhu-bing-xue",
