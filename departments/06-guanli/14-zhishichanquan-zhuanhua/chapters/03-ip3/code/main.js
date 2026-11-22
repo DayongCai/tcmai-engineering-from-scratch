@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 知识产权转化 · 第 3 章 专利：从发明到授权：本章统计口径
+ * 知识产权转化 · 第 3 章 专利审查只问新的、难想到的、做得出的
  * 课程: departments/06-guanli/14-zhishichanquan-zhuanhua/chapters/03-ip3/docs/zh.md
- * 数据: standards/zhishichanquan-zhuanhua/units.json（44 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhishichanquan-zhuanhua/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 正文第二节列了三类典型缺陷（公开不充分 / 得不到支持 / 缺效果证据），
+ * 第三节列了权利要求的三个层次，第一节讲了新颖性宽限期的有限性。
+ * 这里把三块都做成可执行的判据：给一份申请的自查结果，返回它会踩中哪几类缺陷。
+ *
+ * 依赖: 仅 Node.js 标准库
  */
 
 'use strict';
@@ -15,87 +15,78 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhishichanquan-zhuanhua', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const DEFECT_NAMES = ['公开不充分', '得不到支持', '缺效果证据'];
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+function cells(line) {
+  return line.split('|').slice(1, -1).map((s) => s.trim());
+}
+
+/** 读出三类典型缺陷表 */
+function parseDefectTable(text) {
+  const rows = [];
+  for (const line of text.split(/\r?\n/)) {
+    if (!line.trim().startsWith('|')) continue;
+    const c = cells(line);
+    if (c.length < 3) continue;
+    if (!DEFECT_NAMES.includes(c[0])) continue;
+    rows.push({ defect: c[0], symptom: c[1], cause: c[2] });
   }
-  throw new Error('没找到 standards/zhishichanquan-zhuanhua/units.json —— 章节目录是否已脱离仓库？');
+  return rows;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhishichanquan-zhuanhua', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhishichanquan-zhuanhua', 'chapter-map.json');
-const CHAPTER = '3';
-const SLUG = '03-ip3';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/**
+ * 按正文判据筛查一份申请，返回命中的缺陷。
+ * 三项都来自「说明书要写到什么程度」那一节：工艺参数、范围与实施例的匹配、对照与统计。
+ */
+function screen(application) {
+  const hits = [];
+  if (!application.hasProcessParams) hits.push('公开不充分');
+  if (application.claimRangeWiderThanExamples) hits.push('得不到支持');
+  if (!application.hasControlledData) hits.push('缺效果证据');
+  return hits;
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 新颖性：申请日前的公开是否被宽限期兜住（宽限期短且仅限特定情形） */
+function noveltyLost({ monthsBeforeFiling, coveredByGrace }) {
+  return monthsBeforeFiling > 0 && !coveredByGrace;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 权利要求三层是否齐备 */
+function claimLayers(text) {
+  const layers = [];
+  if (text.includes('独立权利要求')) layers.push('独立');
+  if (text.includes('从属权利要求')) layers.push('从属');
+  if (text.includes('方法权利要求')) layers.push('方法');
+  if (text.includes('用途权利要求')) layers.push('用途');
+  return layers;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = readDoc();
+  const rows = parseDefectTable(text);
+  if (rows.length !== DEFECT_NAMES.length) {
+    throw new Error('缺陷表读出 ' + rows.length + ' 行，与预期不符');
+  }
 
-  console.log(`知识产权转化 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('第 3 章 · 申请自查：三类典型缺陷');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  for (const r of rows) console.log('  ' + r.defect + '：' + r.cause);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  const caseA = { hasProcessParams: false, claimRangeWiderThanExamples: true, hasControlledData: false };
+  console.log('示例（无工艺参数、范围大于实施例、无对照数据）命中：' + screen(caseA).join('、'));
+  const caseB = { hasProcessParams: true, claimRangeWiderThanExamples: false, hasControlledData: true };
+  console.log('示例（三问都答上）命中：' + (screen(caseB).length ? screen(caseB).join('、') : '无'));
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('权利要求层次：' + claimLayers(text).join(' / '));
+  console.log('申请日前已公开 1 个月、不在宽限情形内 → 新颖性' + (noveltyLost({ monthsBeforeFiling: 1, coveredByGrace: false }) ? '已丧失' : '尚存'));
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhishichanquan-zhuanhua/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 判据取自本章正文，未引入正文之外的审查尺度。');
+  console.log('※ 本章不给撰写模板，具体案件以现行规范与个案通知为准。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { parseDefectTable, screen, noveltyLost, claimLayers, DEFECT_NAMES, DOC };

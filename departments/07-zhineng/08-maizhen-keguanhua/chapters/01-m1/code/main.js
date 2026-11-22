@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 脉诊客观化 · 第 1 章 脉象采集：物理基础、传感器与信号质控：本章统计口径
+ * 脉诊客观化 · 第 1 章 脉象采集：机器接得住波形，接不住「按到什么程度」
  * 课程: departments/07-zhineng/08-maizhen-keguanhua/chapters/01-m1/docs/zh.md
- * 数据: standards/maizhen-keguanhua/units.json（136 单元层，每单元带三辨与四位面词频）
- * 取数: standards/maizhen-keguanhua/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 输出全部从本章正文现算：汉字数、节数、表格张数与行数、采集网格的维数乘积、
+ * 单侧位点数、质控判据条数、协议字段类别数、采样率与主能量频带的倍数关系。
+ * 正文一改，这里跟着变；手打的数字会在改稿后静默过期。
  */
 
 'use strict';
@@ -15,87 +14,141 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'maizhen-keguanhua', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 1;
+const TITLE = '脉象采集：机器接得住波形，接不住「按到什么程度」';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+/** 二级标题分节：[{title, body, hanzi}] */
+function sections(text) {
+  const out = [];
+  let cur = { title: '（题解）', lines: [] };
+  for (const line of String(text).split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) {
+      out.push(cur);
+      cur = { title: h[1], lines: [] };
+      continue;
+    }
+    cur.lines.push(line);
   }
-  throw new Error('没找到 standards/maizhen-keguanhua/units.json —— 章节目录是否已脱离仓库？');
+  out.push(cur);
+  return out.map((s) => {
+    const body = s.lines.join('\n');
+    return { title: s.title, body, hanzi: (body.match(HANZI) || []).length };
+  });
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'maizhen-keguanhua', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'maizhen-keguanhua', 'chapter-map.json');
-const CHAPTER = '1';
-const SLUG = '01-m1';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** 解析 Markdown 表格：[{header:[], rows:[[]]}]，按出现顺序 */
+function tables(text) {
+  const lines = String(text).split('\n');
+  const out = [];
+  let i = 0;
+  while (i < lines.length) {
+    if (!/^\s*\|/.test(lines[i])) { i += 1; continue; }
+    const block = [];
+    while (i < lines.length && /^\s*\|/.test(lines[i])) { block.push(lines[i]); i += 1; }
+    if (block.length < 3) continue;
+    const cells = (l) => l.trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
+    if (!/^\s*\|[\s:|-]+\|\s*$/.test(block[1])) continue;
+    out.push({ header: cells(block[0]), rows: block.slice(2).map(cells) });
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+const num = (s) => {
+  const m = String(s).replace(/,/g, '').match(/-?\d+(?:\.\d+)?/);
+  return m ? Number(m[0]) : NaN;
+};
+
+/**
+ * 从正文取数：
+ *   grid      采集网格 —— 维度表里每一维的取值个数相乘（手 2 × 部 3 × 候 3 × 手法 2）
+ *   perSide   单侧位点数 —— 部数 × 候数（手只取一侧）
+ *   channels  通道表行数
+ *   devices   装置表行数
+ *   qc        四、节里编号列的条数
+ *   fields    五、节协议表的字段类别数
+ *   rate      采样率的上下限（从「100 至 250 Hz」读）
+ *   band      主能量频带上限（从「10 Hz 以内」读）
+ */
+function analyze(text) {
+  const body = String(text).replace(/\r\n/g, '\n');
+  const tbl = tables(body);
+  const hanzi = (body.match(HANZI) || []).length;
+  const secs = sections(body);
+
+  const dimT = tbl.find((t) => t.header.join('').includes('取值'));
+  const dims = dimT ? dimT.rows.map((r) => num(r[2])).filter(Number.isFinite) : [];
+  const grid = dims.reduce((a, b) => a * b, 1);
+  const perSide = (dims[1] || NaN) * (dims[2] || NaN);
+
+  const chT = tbl.find((t) => t.header.join('').includes('物理量'));
+  const devT = tbl.find((t) => t.header.join('').includes('做法'));
+
+  const qcSec = secs.find((s) => /信号质控/.test(s.title));
+  const qc = qcSec ? (qcSec.body.match(/^\s*\d+\.\s+/gm) || []).length : 0;
+
+  const protoSec = secs.find((s) => /采集协议/.test(s.title));
+  const protoT = tables(protoSec ? protoSec.body : '').find((t) => t.header.includes('字段'));
+  const fields = protoT ? protoT.rows.length : 0;
+
+  const rateM = body.match(/(\d+)\s*至\s*(\d+)\s*Hz/);
+  const bandM = body.match(/(\d+)\s*Hz\s*以内/);
+
+  return {
+    hanzi,
+    sections: secs.filter((s) => s.title !== '（题解）'),
+    tables: tbl.length,
+    dims,
+    grid,
+    perSide,
+    channels: chT ? chT.rows : [],
+    devices: devT ? devT.rows.length : 0,
+    qc,
+    fields,
+    rate: rateM ? { min: Number(rateM[1]), max: Number(rateM[2]) } : null,
+    band: bandM ? Number(bandM[1]) : null,
+  };
+}
+
+/** 采样率相对主能量频带的余量倍数：最保守取上限频带 */
+function rateMargin(rate, band) {
+  if (!rate || !band) return null;
+  return { low: rate.min / band, high: rate.max / band };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const a = analyze(text);
+  const m = rateMargin(a.rate, a.band);
+  const fattest = a.sections.reduce((x, y) => (y.hanzi > x.hanzi ? y : x), a.sections[0]);
 
-  console.log(`脉诊客观化 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`脉诊客观化 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 表格 ${a.tables} 张`);
+  console.log(`最长一节：${fattest.title}（${fattest.hanzi} 字）`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`采集网格：${a.dims.join(' × ')} ＝ ${a.grid} 个格`);
+  console.log(`单侧位点数：部 × 候 ＝ ${a.perSide} 个（本章按左侧计，右侧同数）`);
+  console.log('');
+  console.log(`通道 ${a.channels.length} 路 · 装置 ${a.devices} 类 · 质控判据 ${a.qc} 条 · 协议字段 ${a.fields} 类`);
+  console.log('');
+  if (m) {
+    console.log(`采样率 ${a.rate.min} 至 ${a.rate.max} Hz，主能量在 ${a.band} Hz 以内`);
+    console.log(`  → 上限约为主能量上限的 ${m.low} 至 ${m.high} 倍（工程余量，不是标准）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/maizhen-keguanhua/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 网格、位点数、表格行数都由本章正文的表格现算，正文改一个字这里就变。');
+  console.log('※ 本章不给设备推荐，也不引用任何实测灵敏度；采集参数以设备说明书与机构作业规范为准。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, analyze, sections, tables, rateMargin };

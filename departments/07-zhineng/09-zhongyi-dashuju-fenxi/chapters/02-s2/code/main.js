@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 中医大数据分析 · 第 2 章 集中趋势、离散程度与正态分布：本章统计口径
- * 课程: departments/07-zhineng/09-zhongyi-dashuju-fenxi/chapters/02-s2/docs/zh.md
- * 数据: standards/zhongyi-dashuju-fenxi/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-dashuju-fenxi/chapter-map.json（课程章 → 教材单元号）
+ * 中医大数据分析 · 第 2 章 平均数是一句没说完的话
+ * 正文: departments/07-zhineng/09-zhongyi-dashuju-fenxi/chapters/02-s2/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 口径：变异系数、加权均数、合计率、正态法参考区间、几何均数，全部由正文给出的原始数现算；
+ * 每个结果都要能在正文里找到同一个数，找不到就抛错。
  */
 
 'use strict';
@@ -15,87 +13,178 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-dashuju-fenxi', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/zhongyi-dashuju-fenxi/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-dashuju-fenxi', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-dashuju-fenxi', 'chapter-map.json');
-const CHAPTER = '2';
+const CHAPTER = 2;
 const SLUG = '02-s2';
+const TITLE = '平均数是一句没说完的话';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const hanzi = (s) => (String(s || '').match(HANZI) || []).length;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+function headings(text) {
+  return text
+    .split(/\r?\n/)
+    .filter((line) => /^##\s+/.test(line))
+    .map((line) => line.replace(/^##\s+/, '').trim());
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function tables(text) {
+  return text
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter((l) => /^\|[\s:|-]*---[\s:|-]*\|$/.test(l)).length;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+const citations = (text) => [...text.matchAll(/《([^》]+)》/g)].map((m) => m[1]);
+
+/** 味数：均值与标准差 */
+function herbSpread(text) {
+  const m = text.match(/平均\s*([\d.]+)\s*味药，标准差\s*([\d.]+)/);
+  if (!m) throw new Error('正文缺处方味数的均数与标准差');
+  return { mean: Number(m[1]), sd: Number(m[2]) };
+}
+
+function medianLine(text) {
+  const m = text.match(/中位数\s*(\d+)，四分位距\s*(\d+)[–-](\d+)/);
+  if (!m) throw new Error('正文缺中位数与四分位距');
+  return { median: Number(m[1]), q1: Number(m[2]), q3: Number(m[3]), iqr: Number(m[3]) - Number(m[2]) };
+}
+
+/** 三家医院的病程与病例数 */
+function pooledCourse(text) {
+  const m = text.match(/([\d.]+)、([\d.]+)、([\d.]+)\s*年，病例数\s*(\d+)、(\d+)、(\d+)/);
+  if (!m) throw new Error('正文缺三家医院病程的汇总算例');
+  const rates = [Number(m[1]), Number(m[2]), Number(m[3])];
+  const ns = [Number(m[4]), Number(m[5]), Number(m[6])];
+  const total = ns.reduce((a, b) => a + b, 0);
+  return {
+    rates,
+    ns,
+    simple: rates.reduce((a, b) => a + b, 0) / rates.length,
+    weighted: rates.reduce((a, r, i) => a + r * ns[i], 0) / total,
+  };
+}
+
+/** 两个月各 200/40 例的有效率与合计率 */
+function twoMonths(text) {
+  const m = text.match(/1 月\s*(\d+)\s*例、有效\s*(\d+)\s*例（(\d+)%），2 月\s*(\d+)\s*例、有效\s*(\d+)\s*例（(\d+)%）/);
+  if (!m) throw new Error('正文缺两个月有效率的算例');
+  const n1 = Number(m[1]);
+  const e1 = Number(m[2]);
+  const n2 = Number(m[4]);
+  const e2 = Number(m[5]);
+  return {
+    n1,
+    e1,
+    n2,
+    e2,
+    r1: e1 / n1,
+    r2: e2 / n2,
+    meanOfRates: (e1 / n1 + e2 / n2) / 2,
+    pooled: (e1 + e2) / (n1 + n2),
+  };
+}
+
+/** 就诊次数的正态法参考区间 */
+function visitInterval(text) {
+  const m = text.match(/均值\s*([\d.]+)\s*次、标准差\s*([\d.]+)\s*次/);
+  if (!m) throw new Error('正文缺就诊次数的均值与标准差');
+  const mean = Number(m[1]);
+  const sd = Number(m[2]);
+  return { mean, sd, lo: mean - 1.96 * sd, hi: mean + 1.96 * sd };
+}
+
+/** 对数变换后的均值 → 几何均数 */
+function geometric(text) {
+  const m = text.match(/bar y=([\d.]+)/);
+  if (!m) throw new Error('正文缺对数变换后的均值');
+  return { meanLog: Number(m[1]), geo: Math.exp(Number(m[1])) };
+}
+
+function compute(text) {
+  const hs = herbSpread(text);
+  const ml = medianLine(text);
+  return {
+    spread: hs,
+    cv: hs.sd / hs.mean,
+    median: ml,
+    skewQ: hs.mean - ml.median,
+    course: pooledCourse(text),
+    months: twoMonths(text),
+    visits: visitInterval(text),
+    geo: geometric(text),
+  };
+}
+
+function verify(text) {
+  const c = compute(text);
+  const need = (cond, msg) => {
+    if (!cond) throw new Error(msg);
+  };
+  need(Math.round(c.cv * 100) === 38 && text.includes('CV=5.8/15.2'), '变异系数应为 38%');
+  need(text.includes(c.course.weighted.toFixed(2)), `加权病程重算为 ${c.course.weighted.toFixed(2)}，正文找不到`);
+  need(text.includes(c.course.simple.toFixed(2)), `直接平均重算为 ${c.course.simple.toFixed(2)}，正文找不到`);
+  need(text.includes((c.months.pooled * 100).toFixed(1)), `合计率重算为 ${(c.months.pooled * 100).toFixed(1)}%，正文找不到`);
+  need(text.includes(c.visits.lo.toFixed(1)), `正态法下界重算为 ${c.visits.lo.toFixed(1)}，正文找不到`);
+  need(text.includes(c.visits.hi.toFixed(1)), `正态法上界重算为 ${c.visits.hi.toFixed(1)}，正文找不到`);
+  need(Math.abs(c.geo.geo - 14.1) < 0.06 && text.includes('14.1'), `几何均数重算为 ${c.geo.geo.toFixed(2)}，与正文 14.1 不符`);
+  need(c.skewQ > 0, '均数应高于中位数（右偏）');
+  return c;
+}
+
+function stats(text) {
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title: TITLE,
+    hanzi: hanzi(text),
+    sections: headings(text).length,
+    tables: tables(text),
+    cites: citations(text).length,
+    drills: (text.match(/演算设定/g) || []).length,
+    disclaimer: /免责声明/.test(text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = readDoc();
+  const s = stats(text);
+  const c = verify(text);
+  const pct = (x) => `${(x * 100).toFixed(1)}%`;
 
-  console.log(`中医大数据分析 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中医大数据分析 · 第 ${s.chapter} 章 ${s.title}`);
+  console.log(`正文：chapters/${s.slug}/docs/zh.md（现算，不手打）`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`  汉字 ${s.hanzi.toLocaleString('en-US')} · 节 ${s.sections} · 表 ${s.tables} · 引文 ${s.cites} 处 · 演算设定 ${s.drills} 处`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`味数：均值 ${c.spread.mean}、标准差 ${c.spread.sd}、CV ${pct(c.cv)}；中位数 ${c.median.median}、IQR ${c.median.q1}–${c.median.q3}（${c.median.iqr} 味）。`);
+  console.log(`均值减中位数 = ${c.skewQ.toFixed(1)} 味 > 0，右偏证据。`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`跨院病程：直接平均 ${c.course.simple.toFixed(2)} 年，按病例数加权 ${c.course.weighted.toFixed(2)} 年。`);
+  console.log(`两个月有效率：${pct(c.months.r1)} 与 ${pct(c.months.r2)}，逐月平均 ${pct(c.months.meanOfRates)}，合计 ${pct(c.months.pooled)}。`);
+  console.log(`就诊次数 95% 参考区间（正态法）：[${c.visits.lo.toFixed(1)}, ${c.visits.hi.toFixed(1)}]，下界为负。`);
+  console.log(`对数变换均值 ${c.geo.meanLog} → 几何均数 ${c.geo.geo.toFixed(2)}，接近中位数 ${c.median.median}。`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-dashuju-fenxi/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本目录 docs/zh.md 现算：正文一改，CV、加权均数、合计率与区间跟着变。');
+  console.log('※ 本章数值为演算设定，用于演示描述统计量之间的关系，不对应任何真实处方集。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  readDoc,
+  headings,
+  tables,
+  citations,
+  hanzi,
+  compute,
+  verify,
+  stats,
+  main,
+};

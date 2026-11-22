@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
- * 知识产权转化 · 第 1 章 知识产权的对象：从技术方案到权利：本章统计口径
+ * 知识产权转化 · 第 1 章 一张方子是一束可以分开主张的权利
  * 课程: departments/06-guanli/14-zhishichanquan-zhuanhua/chapters/01-ip1/docs/zh.md
- * 数据: standards/zhishichanquan-zhuanhua/units.json（44 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhishichanquan-zhuanhua/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的可算部分有两块：
+ *   一、正文第三节的六层切分表 —— 逐行读出公开状态与可用权利，据此判断哪几层能独立交易；
+ *   二、同一层上专利与商业秘密的取舍 —— 判据是反向工程能否还原。
+ * 两层都从正文现读，不在这里另抄一份结论；正文改了，运行结果随之改变。
+ *
+ * 依赖: 仅 Node.js 标准库
  */
 
 'use strict';
@@ -15,87 +16,74 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhishichanquan-zhuanhua', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+
+/** 六层表的第一列，按正文字面固定，用来在表格里认出这六行 */
+const LAYER_NAMES = ['组成', '配比与剂量', '制备工艺', '用途与适应症', '临床与实验数据', '名称与标识'];
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+function cells(line) {
+  return line.split('|').slice(1, -1).map((s) => s.trim());
+}
+
+/** 从正文表格里读出六层：层 / 内容 / 典型公开状态 / 可用的权利 */
+function parseLayerTable(text) {
+  const rows = [];
+  for (const line of text.split(/\r?\n/)) {
+    if (!line.trim().startsWith('|')) continue;
+    const c = cells(line);
+    if (c.length < 4) continue;
+    if (!LAYER_NAMES.includes(c[0])) continue;
+    rows.push({ layer: c[0], content: c[1], disclosure: c[2], rights: c[3] });
   }
-  throw new Error('没找到 standards/zhishichanquan-zhuanhua/units.json —— 章节目录是否已脱离仓库？');
+  return rows;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhishichanquan-zhuanhua', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhishichanquan-zhuanhua', 'chapter-map.json');
-const CHAPTER = '1';
-const SLUG = '01-ip1';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 能直接变成可独立交易资产的层：可用权利一栏含「专利」的那几层 */
+function tradableLayers(rows) {
+  return rows.filter((r) => r.rights.includes('专利')).map((r) => r.layer);
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 同一层上专利与商业秘密的二选一：反向工程能还原就申请专利，还原不了就保密 */
+function chooseProtection(reverseEngineerable) {
+  return reverseEngineerable ? '专利' : '商业秘密';
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 该层是否已经被公开到拿不回来（「不公开」「部分披露」都不算已公开） */
+function isPublicLayer(row) {
+  return row.disclosure.includes('公开') && !row.disclosure.includes('不公开');
+}
+
+function hanzi(s) {
+  return (String(s).match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = readDoc();
+  const rows = parseLayerTable(text);
+  if (rows.length !== LAYER_NAMES.length) {
+    throw new Error('正文六层表读出 ' + rows.length + ' 行，与预期层数不符');
+  }
 
-  console.log(`知识产权转化 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('第 1 章 · 一张方子的可主张层次');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('正文 ' + hanzi(text).toLocaleString('en-US') + ' 汉字；六层切分表读出 ' + rows.length + ' 行：');
+  for (const r of rows) {
+    const open = isPublicLayer(r) ? '已公开' : '未公开';
+    console.log('  ' + r.layer.padEnd(8, '　') + ' ' + open + ' · ' + r.rights);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('可独立交易的层：' + tradableLayers(rows).join('、'));
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('同一层上的取舍判据（反向工程）：');
+  console.log('  成分与配比可测 → ' + chooseProtection(true));
+  console.log('  工艺参数与火候难测 → ' + chooseProtection(false));
   console.log('');
-  console.log('※ 教学样例：数字由 standards/zhishichanquan-zhuanhua/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 表格与判据均由本章正文现读，未在代码里另存一份结论。');
+  console.log('※ 本章讨论对象与类型划分，不构成法律意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { parseLayerTable, tradableLayers, chooseProtection, isPublicLayer, LAYER_NAMES, DOC };

@@ -5,58 +5,63 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { DOC, CHAPTER, TITLE, read, analyze, burden, budget } = require('./main.js');
 
+const TEXT = read();
+const A = analyze(TEXT);
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'maizhen-keguanhua', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'maizhen-keguanhua', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文在本章目录下，章号与标题一致', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '03-m3', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 3);
+  assert.ok(TEXT.startsWith('# 第 ' + CHAPTER + ' 章'));
+  assert.ok(TEXT.includes(TITLE));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('样本数与特征数从正文读出：120 例、480 个特征', () => {
+  assert.strictEqual(A.n, 120);
+  assert.strictEqual(A.features, 480);
+  assert.match(TEXT, /480\s*个/);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('特征 ∶ 样本 ＝ 4∶1，与正文的写法一致', () => {
+  assert.strictEqual(A.burden.ratio, 4);
+  assert.strictEqual(A.burden.ratio.toFixed(0), '4');
+  assert.ok(TEXT.includes('4∶1'), '正文应写明 4∶1');
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('按每特征十个样本，120 例只支持 12 个特征', () => {
+  assert.strictEqual(budget(120, 10), 12);
+  assert.strictEqual(budget(120, 1), 120);
+  assert.throws(() => budget(0, 10));
+  assert.throws(() => burden(480, 0));
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('四个特征域、三层重测信度、五步流程纪律，都从正文数出来', () => {
+  assert.strictEqual(A.domains, 4);
+  assert.strictEqual(A.reliabilityLayers, 3);
+  assert.strictEqual(A.steps, 5);
+  assert.strictEqual(A.contexts, 3);
+  assert.strictEqual(A.sections.length, 6);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('正文把「重复采人」与「重复算数」明确分开', () => {
+  assert.match(TEXT, /重复采人，而不是重复算数/);
+  assert.match(TEXT, /恒等于 1/);
+});
+
+test('正文不给阈值与信度系数，只给边界', () => {
+  assert.ok(!/ICC\s*[=＝]\s*0?\.\d+/.test(TEXT), '正文不应给 ICC 数值');
+  assert.match(TEXT, /不给出任何特征的具体阈值或信度数值/);
+  assert.match(TEXT, /工程经验上的量级建议/);
+});
+
+test('脚本可运行，输出含现算口径与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/maizhen-keguanhua\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/03-m3/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /均从本章 docs\/zh\.md 现算/);
+  assert.match(out, /量级建议，不是标准/);
+  assert.ok(out.includes('480 ∶ 120 ＝ 4∶1'), '输出里的比例与正文的 4∶1 不一致');
+  assert.ok(out.includes('支持 12 个特征'), '输出里的特征预算与正文口径不一致');
 });

@@ -7,56 +7,57 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhishichanquan-zhuanhua', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhishichanquan-zhuanhua', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { parsePathTable, retainsOwnership, isVerifiableMilestone, diligenceQuestions, contractPoints, PATHS, DOC } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const DOC_TEXT = fs.readFileSync(DOC, 'utf8');
+const ROWS = parsePathTable(DOC_TEXT);
+
+test('四条路径从正文读出，顺序不变', () => {
+  assert.deepStrictEqual(ROWS.map((r) => r.path), PATHS);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('每条路径的五栏都有内容', () => {
+  for (const r of ROWS) {
+    for (const k of ['object', 'payment', 'control', 'exit']) {
+      assert.ok(r[k] && r[k].length >= 2, r.path + ' 的 ' + k + ' 栏过短');
+    }
+  }
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('许可与自行实施保留权利，转让已交出', () => {
+  const by = Object.fromEntries(ROWS.map((r) => [r.path, r]));
+  assert.ok(retainsOwnership(by['许可']));
+  assert.ok(retainsOwnership(by['自行实施']));
+  assert.ok(retainsOwnership(by['作价入股']));
+  assert.strictEqual(retainsOwnership(by['转让']), false);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('里程碑只认可验证事件', () => {
+  assert.strictEqual(isVerifiableMilestone('取得批件后支付'), true);
+  assert.strictEqual(isVerifiableMilestone('达到约定销量后支付'), true);
+  assert.strictEqual(isVerifiableMilestone('项目进展顺利时支付'), false);
+  assert.strictEqual(isVerifiableMilestone('双方按计划推进即可'), false);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('尽调六问恰好六项，括号内的顿号没有被切开', () => {
+  const qs = diligenceQuestions(DOC_TEXT);
+  assert.strictEqual(qs.length, 6);
+  assert.ok(qs[0].startsWith('权利是否有效（年费、期限）'), '第一问被切断：' + qs[0]);
+  assert.ok(qs[5].includes('历史纠纷'));
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('合同七问从正文编号读出', () => {
+  const ps = contractPoints(DOC_TEXT);
+  assert.deepStrictEqual(ps.map((p) => p.n), [1, 2, 3, 4, 5, 6, 7]);
+  assert.ok(ps.some((p) => p.title.includes('改进成果归属')));
+  assert.ok(ps.some((p) => p.title.includes('付款结构')));
+});
+
+test('脚本可运行并打印路径与判据', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhishichanquan-zhuanhua\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/04-ip4/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /尽调六问（6 项）/);
+  assert.match(out, /合同七问（7 项）/);
+  assert.match(out, /进展顺利时支付」→ 不可执行/);
 });

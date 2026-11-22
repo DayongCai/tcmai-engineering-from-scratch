@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 临床科研方法 · 第 2 章 研究设计与对照：本章统计口径
+ * 临床科研方法 · 第 2 章 设计不是越严格越好，是能答你那个问题的那个
  * 课程: departments/06-guanli/13-linchuang-keyan-fangfa/chapters/02-z132/docs/zh.md
- * 数据: standards/13-linchuang-keyan-fangfa/units.json（231 单元层，每单元带三辨与四位面词频）
- * 取数: standards/13-linchuang-keyan-fangfa/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数字全部从本章 docs/zh.md 现算：汉字、节、加粗判断、问句；
+ * 并复算两处关键算术——历史对照那 8 个百分点的时间漂移，
+ * 以及 12 例单病例交叉的 384 患者周。
+ * 结构上复算三组清单：三种设计、四种对照、随机的三个环节、六个决定设计的问题。
  */
 
 'use strict';
@@ -15,87 +15,149 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '13-linchuang-keyan-fangfa', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 2;
+const TITLE = '设计不是越严格越好，是能答你那个问题的那个';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+/** 本章算术设定：教学合成数字，正文第六节已声明。 */
+const HIST_OLD = 32;
+const HIST_NOW = 24;
+const NEW_RATE = 45;
+const N1_PATIENTS = 12;
+const N1_ROUNDS = 2;
+const N1_PERIODS = 4;
+const N1_WEEKS = 4;
+
+const DESIGNS = [
+  ['随机对照试验', '平均效力'],
+  ['真实世界研究', '实际效果'],
+  ['单病例随机交叉', '个体反应'],
+];
+const CONTROL_FORMS = ['空白对照', '安慰剂或假操作对照', '阳性对照', '历史对照'];
+const RANDOM_STEPS = ['序列生成', '分配隐藏', '分层与区组'];
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function parseSections(body) {
+  const out = [];
+  let cur = null;
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) { cur = { title: h[1], lines: [] }; out.push(cur); continue; }
+    if (cur) cur.lines.push(line);
   }
-  throw new Error('没找到 standards/13-linchuang-keyan-fangfa/units.json —— 章节目录是否已脱离仓库？');
+  return out.map((s) => ({
+    title: s.title,
+    text: s.lines.join('\n'),
+    hanzi: (s.lines.join('\n').match(HANZI) || []).length,
+  }));
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '13-linchuang-keyan-fangfa', 'units.json');
-const MAP = path.join(ROOT, 'standards', '13-linchuang-keyan-fangfa', 'chapter-map.json');
-const CHAPTER = '2';
-const SLUG = '02-z132';
+const boldTerms = (text) => [...String(text).matchAll(/\*\*([^*\n]+)\*\*/g)].map((m) => m[1]);
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const sections = parseSections(body);
+  return {
+    hanzi: (body.match(HANZI) || []).length,
+    sections,
+    claims: boldTerms(body).length,
+    quotes: [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]))],
+    questions: (body.match(/？/g) || []).length,
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+const sectionOf = (sections, kw) => {
+  const s = sections.find((x) => x.title.includes(kw));
+  if (!s) throw new Error('正文里没找到含「' + kw + '」的节');
+  return s;
+};
+
+/**
+ * 历史对照的 8 个百分点：与历史对照比差 13 个百分点，与同期对照比差 21 个百分点，
+ * 两者的差全部来自时间漂移。
+ */
+function driftArithmetic() {
+  const vsHistory = NEW_RATE - HIST_OLD;
+  const vsConcurrent = NEW_RATE - HIST_NOW;
+  return { vsHistory, vsConcurrent, drift: vsConcurrent - vsHistory, driftInHistory: HIST_OLD - HIST_NOW };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 12 例 × 2 轮 × 4 期 × 4 周 = 384 患者周；折每人治疗周 32。 */
+function singleCaseScale() {
+  const patientWeeks = N1_PATIENTS * N1_ROUNDS * N1_PERIODS * N1_WEEKS;
+  const weeksPerPatient = N1_ROUNDS * N1_PERIODS * N1_WEEKS;
+  return { patientWeeks, weeksPerPatient, patients: N1_PATIENTS };
+}
+
+/** 三种设计、四种对照、随机三环节、六问——缺一组，第二节到第五节的论证就断。 */
+function auditStructure(sections) {
+  const s1 = sectionOf(sections, '三种设计');
+  const s2 = sectionOf(sections, '对照的四种形态');
+  const s3 = sectionOf(sections, '随机化怎么做');
+  const s5 = sectionOf(sections, '六个问题');
+
+  const designs = DESIGNS.filter(([name, answers]) => s1.text.includes(name) && s1.text.includes(answers));
+  const forms = CONTROL_FORMS.filter((f) => s2.text.includes('**' + f + '**'));
+  const steps = RANDOM_STEPS.filter((k) => boldTerms(s3.text).some((b) => b.endsWith(k + '。')));
+  const designQuestions = (s5.text.match(/^\s*\d+\.\s+\*\*/gm) || []).length;
+
+  return { designs, forms, steps, designQuestions };
+}
+
+function verify(j, drift, n1) {
+  if (j.designs.length !== 3) throw new Error(`三种设计只对上 ${j.designs.length} 种`);
+  if (j.forms.length !== 4) throw new Error(`四种对照只对上 ${j.forms.length} 种`);
+  if (j.steps.length !== 3) throw new Error(`随机三环节只对上 ${j.steps.length} 个`);
+  if (j.designQuestions !== 6) throw new Error(`决定设计的问题数到 ${j.designQuestions} 个，正文列了六个`);
+  if (drift.vsHistory !== 13 || drift.vsConcurrent !== 21) throw new Error(`历史对照算术与正文不符：${drift.vsHistory}/${drift.vsConcurrent}`);
+  if (drift.drift !== 8) throw new Error(`时间漂移算出 ${drift.drift} 个百分点，正文记 8`);
+  if (n1.patientWeeks !== 384) throw new Error(`单病例规模算出 ${n1.patientWeeks} 患者周，正文记 384`);
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const body = read();
+  const a = analyze(body);
+  const j = auditStructure(a.sections);
+  const drift = driftArithmetic();
+  const n1 = singleCaseScale();
+  verify(j, drift, n1);
 
-  console.log(`临床科研方法 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`临床科研方法 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 加粗判断 ${a.claims} 处 · 引文 ${a.quotes.length} 条 · 问句 ${a.questions} 个`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('三种设计各自答什么：');
+  for (const [name, answers] of j.designs) console.log(`  ${name.padEnd(10, '　')} → ${answers}`);
+  console.log('');
+  console.log(`四种对照 ${j.forms.length}/4：${j.forms.join('／')}`);
+  console.log(`随机三环节 ${j.steps.length}/3：${j.steps.join('／')}（缺一项随机即失效）`);
+  console.log(`决定设计的问题 ${j.designQuestions}/6`);
+  console.log('');
+  console.log(`历史对照算术：新法 ${NEW_RATE}% · 历史对照 ${HIST_OLD}% → 差 ${drift.vsHistory} 个百分点；同期对照 ${HIST_NOW}% → 差 ${drift.vsConcurrent} 个百分点。`);
+  console.log(`  → 与疗法无关的时间漂移 ${drift.drift} 个百分点（支持治疗本身在改善，${HIST_OLD}% 降到 ${HIST_NOW}%）。`);
+  console.log(`单病例规模：${n1.patients} 例 × ${N1_ROUNDS} 轮 × ${N1_PERIODS} 期 × ${N1_WEEKS} 周 = ${n1.patientWeeks} 患者周（每人 ${n1.weeksPerPatient} 治疗周，另加洗脱期）。`);
+  console.log('');
+  console.log('判断：没有「最好的设计」，只有「与问题匹配的设计」；');
+  console.log('      你要的是平均效应、实际效果，还是这个人的反应。');
+  console.log('');
+  console.log('逐节字数：');
+  for (const s of a.sections) {
+    const share = a.hanzi ? ((s.hanzi / a.hanzi) * 100).toFixed(1) : '0.0';
+    console.log(`  ${s.title.padEnd(28, '　')} ${String(s.hanzi).padStart(5)} 字（${share}%）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/13-linchuang-keyan-fangfa/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即随之变化；本输出仅用于教学演示，不构成研究结论或临床建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC, CHAPTER, TITLE, HIST_OLD, HIST_NOW, NEW_RATE, DESIGNS, CONTROL_FORMS, RANDOM_STEPS,
+  read, parseSections, analyze, boldTerms, sectionOf, driftArithmetic, singleCaseScale, auditStructure, verify,
+};

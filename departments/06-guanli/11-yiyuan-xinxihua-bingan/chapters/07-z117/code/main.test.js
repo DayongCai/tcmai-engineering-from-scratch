@@ -5,58 +5,79 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { DOC, CHAPTER, TITLE, read, parseTables, params, structure, compute, verify } = require('./main.js');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '11-yiyuan-xinxihua-bingan', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '11-yiyuan-xinxihua-bingan', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const BODY = read();
+const P = params(BODY);
+const S = structure(BODY, parseTables(BODY));
+const C = compute(P, S);
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+function shingles(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^一-鿿]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+test('正文就在本章目录下，标题与章号一致', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '07-z117', 'docs', 'zh.md')), DOC);
+  assert.ok(fs.existsSync(DOC));
+  assert.strictEqual(CHAPTER, 7);
+  assert.strictEqual(BODY.split('\n')[0], '# 第 7 章 · ' + TITLE);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('合同与可测条款参数读自正文', () => {
+  assert.strictEqual(P.contract, 1200);
+  assert.strictEqual(P.maintenance, 210);
+  assert.strictEqual(P.concurrency, 300);
+  assert.strictEqual(P.respPct, 90);
+  assert.strictEqual(P.respSeconds, 2);
+  assert.strictEqual(P.batchHours, 4);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('运维费占建设费 17.5%，超出 10%–15% 的经验区间', () => {
+  assert.strictEqual(C.maintPctFixed, '17.5');
+  assert.strictEqual(C.inTypicalRange, false);
+  assert.ok(C.maintPct > 15);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('验收抽样表四项、合计 430 份', () => {
+  assert.strictEqual(S.sampleRows, 4);
+  assert.strictEqual(C.sampleTotal, 430);
+  assert.deepStrictEqual(S.sampleNames, ['患者主索引', '住院关键字段', '费用总额', '历史病历可读性']);
+  assert.strictEqual(P.sampleRate, 99);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('功能清单五字段、上线三方式、迁移四环节，清点与正文一致', () => {
+  assert.strictEqual(S.fields, 5);
+  assert.strictEqual(S.rollout, 3);
+  assert.strictEqual(S.migration, 4);
+  assert.strictEqual(P.parallelWeeksLow, 2);
+  assert.strictEqual(P.parallelWeeksHigh, 4);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('正文与复算对得上（verify 不抛错）', () => {
+  assert.doesNotThrow(() => verify(C, S, P, BODY));
+});
+
+test('quiz 的 check 题正确选项落在本章正文里（≥2 道）', () => {
+  const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+  const body = shingles(BODY);
+  const checks = quiz.questions.filter((q) => q.stage === 'check');
+  const grounded = checks.filter((q) => {
+    const right = String(q.options[q.correct] || '');
+    return [...shingles(right)].some((g) => body.has(g));
+  });
+  assert.ok(checks.length >= 2);
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道接地`);
+});
+
+test('脚本可运行，输出含运维占比判定与边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/11-yiyuan-xinxihua-bingan\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/07-z117/docs/zh.md'), '头部注释未指向本章');
+  assert.match(r.stdout, /均从本章 docs\/zh\.md 现算/);
+  assert.match(r.stdout, /占建设费 17\.5%/);
+  assert.match(r.stdout, /已超出，属于要单独论证的长期账/);
+  assert.match(r.stdout, /不构成招标文件、合同条款或验收标准意见/);
 });

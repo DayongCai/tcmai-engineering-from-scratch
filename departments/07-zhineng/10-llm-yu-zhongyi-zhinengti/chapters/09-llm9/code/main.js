@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 /**
- * 大模型与中医智能体 · 第 9 章 评估：基准分、幻觉与人工评：本章统计口径
+ * 大模型与中医智能体 · 第 9 章 测不出幻觉率的模型，不该进临床流程
  * 课程: departments/07-zhineng/10-llm-yu-zhongyi-zhinengti/chapters/09-llm9/docs/zh.md
- * 数据: standards/llm-yu-zhongyi-zhinengti/units.json（167 单元层，每单元带三辨与四位面词频）
- * 取数: standards/llm-yu-zhongyi-zhinengti/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 从正文现读并复算三件事：
+ *   ① Cohen's kappa：观察一致率、期望一致率、扣除机会后的一致率；
+ *      并演示同一观察一致率在不同边缘分布下可以给出完全不同的结论；
+ *   ② 题量与分辨率：总体与分层的区间半宽、想分辨 5 个点所需题量；
+ *   ③ 答案分级表：五级的计分与越权单独统计。
+ * 不引用任何实测评分结果。
  */
 
 'use strict';
@@ -15,87 +17,117 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'llm-yu-zhongyi-zhinengti', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+/** 「观察一致率 $p_o=0.80$；甲 0.50／0.30／0.20，乙 0.55／0.28／0.17」 */
+function parseKappaCase(text) {
+  const po = text.match(/观察一致率\s*\$p_o=([\d.]+)\$/);
+  const mg = text.match(/评分者甲的分布为\s*([\d.]+)／([\d.]+)／([\d.]+)，乙为\s*([\d.]+)／([\d.]+)／([\d.]+)/);
+  const kq = text.match(/\\approx(0\.\d+)\$\$/);
+  if (!po || !mg || !kq) throw new Error('正文里没找到 kappa 算例的三组数');
+  return {
+    po: Number(po[1]),
+    raterA: [Number(mg[1]), Number(mg[2]), Number(mg[3])],
+    raterB: [Number(mg[4]), Number(mg[5]), Number(mg[6])],
+    quotedKappa: Number(kq[1]),
+  };
+}
+
+/** 「按二项比例的标准误…演算设定 $p=0.85$」「总量 300 题」「分层后每类 75 题」 */
+function parseResolutionCase(text) {
+  const p = text.match(/演算设定\s*\$p=([\d.]+)\$/);
+  const n = text.match(/总量\s*(\d+)\s*题/);
+  const per = text.match(/分层后每类\s*(\d+)\s*题/);
+  const d = text.match(/想分辨\s*\$d=([\d.]+)\$/);
+  const need = text.match(/即\s*\$n\\approx p\(1-p\)\/([\d.]+)\^2\\approx(\d+)\$/);
+  const total = text.match(/总量就要\s*(\d+)\s*题以上/);
+  if (!p || !n || !per || !d || !need || !total) throw new Error('正文里没找到题量与分辨率的算例');
+  return {
+    p: Number(p[1]),
+    n: Number(n[1]),
+    perClass: Number(per[1]),
+    delta: Number(d[1]),
+    seTarget: Number(need[1]),
+    neededPerClass: Number(need[2]),
+    totalNeeded: Number(total[1]),
+  };
+}
+
+/** 答案分级表：等级 / 定义 / 计分 */
+function parseGradeTable(text) {
+  const lines = text.split(/\r?\n/);
+  const start = lines.findIndex((l) => l.startsWith('|') && l.includes('等级'));
+  if (start < 0) throw new Error('正文里没找到答案分级表');
+  const rows = [];
+  for (let i = start + 1; i < lines.length; i += 1) {
+    if (!lines[i].startsWith('|')) break;
+    const cells = lines[i].split('|').map((c) => c.trim());
+    cells.shift();
+    cells.pop();
+    if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue;
+    if (cells.length >= 3) rows.push({ grade: cells[0], definition: cells[1], score: cells[2] });
   }
-  throw new Error('没找到 standards/llm-yu-zhongyi-zhinengti/units.json —— 章节目录是否已脱离仓库？');
+  return rows;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'llm-yu-zhongyi-zhinengti', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'llm-yu-zhongyi-zhinengti', 'chapter-map.json');
-const CHAPTER = '9';
-const SLUG = '09-llm9';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
-}
+const seBinom = (p, n) => Math.sqrt((p * (1 - p)) / n);
+const peOf = (a, b) => a.reduce((s, x, i) => s + x * b[i], 0);
+const kappaOf = (po, pe) => (po - pe) / (1 - pe);
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const k = parseKappaCase(doc);
+  const res = parseResolutionCase(doc);
+  const grades = parseGradeTable(doc);
 
-  console.log(`大模型与中医智能体 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const pe = peOf(k.raterA, k.raterB);
+  const kappa = kappaOf(k.po, pe);
+
+  console.log('═══ 测不出幻觉率的模型，不该进临床流程 ═══');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log('一、观察一致率不等于一致性');
+  console.log(`  观察一致率 p_o = ${k.po}`);
+  console.log(`  期望一致率 p_e = Σ 甲_i × 乙_i = ${k.raterA.map((x, i) => `${x}×${k.raterB[i]}`).join(' + ')} = ${pe.toFixed(3)}`);
+  console.log(`  kappa = (${k.po} − ${pe.toFixed(3)}) / (1 − ${pe.toFixed(3)}) = ${kappa.toFixed(3)}（正文 ${k.quotedKappa}）`);
+  console.log(`  0.61–0.80 属「较好」：足以支持排序，不足以支持「差 3 个点即更优」。`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('  同一个 p_o 在不同边缘分布下的结论（对照分布为教学构造）：');
+  const extremes = [[0.9, 0.05, 0.05], [0.9, 0.05, 0.05]];
+  const peEx = peOf(extremes[0], extremes[1]);
+  console.log(`    甲/乙均为 0.90／0.05／0.05 ⇒ p_e = ${peEx.toFixed(3)}，kappa = ${kappaOf(k.po, peEx).toFixed(3)}`);
+  console.log(`    也就是说：评分高度集中于同一类时，0.80 的观察一致率可能比碰巧一致还差。`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+
+  console.log('二、三百题能回答多细（p = ' + res.p + '）');
+  const seAll = seBinom(res.p, res.n);
+  const sePer = seBinom(res.p, res.perClass);
+  console.log(`  总量 ${res.n} 题：SE ${seAll.toFixed(3)}，95% 半宽 ±${(1.96 * seAll).toFixed(3)}`);
+  console.log(`  每类 ${res.perClass} 题：SE ${sePer.toFixed(3)}，95% 半宽 ±${(1.96 * sePer).toFixed(3)}`);
+  console.log(`  可答：总体在 ${(res.p - 1.96 * seAll).toFixed(2)}–${(res.p + 1.96 * seAll).toFixed(2)}；不可答：这一类比那一类好 ${(res.delta * 100).toFixed(0)} 个点。`);
+  const nNeed = (res.p * (1 - res.p)) / res.seTarget ** 2;
+  console.log(`  想分辨 ${(res.delta * 100).toFixed(0)} 个点：SE 需 ≈${res.seTarget} ⇒ 每类 n ≈ ${Math.round(nNeed)}（正文 ${res.neededPerClass}）`);
+  console.log(`  四类分开报数 ⇒ 总量 ${Math.ceil(nNeed) * 4} 题（正文「${res.totalNeeded} 题以上」）`);
+  console.log(`  中间没有第三条路：要么接受只能报总体，要么把题量做够。`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+
+  console.log(`三、答案分级（${grades.length} 级，正文表原样读出）`);
+  for (const g of grades) console.log(`  ${g.grade}：${g.definition} → ${g.score}`);
+  console.log('  D 与 E 必须分开：越权若算作「错」，就与答错一个知识点同权，而后者是教学损失、前者是合规事故。');
   console.log('');
-  console.log('※ 教学样例：数字由 standards/llm-yu-zhongyi-zhinengti/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 本章数字均从 docs/zh.md 现读现算；对照分布为教学构造；输出仅用于教学演示，不构成诊疗或产品准入建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC,
+  readDoc,
+  parseKappaCase,
+  parseResolutionCase,
+  parseGradeTable,
+  seBinom,
+  peOf,
+  kappaOf,
+  main,
+};

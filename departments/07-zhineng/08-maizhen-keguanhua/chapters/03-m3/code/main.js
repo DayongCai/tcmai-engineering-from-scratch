@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 脉诊客观化 · 第 3 章 特征选择与降维：本章统计口径
+ * 脉诊客观化 · 第 3 章 特征提取：可重复的不是特征，是提取它的那套流程
  * 课程: departments/07-zhineng/08-maizhen-keguanhua/chapters/03-m3/docs/zh.md
- * 数据: standards/maizhen-keguanhua/units.json（136 单元层，每单元带三辨与四位面词频）
- * 取数: standards/maizhen-keguanhua/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 从正文取样本数与特征数，现算两者之比；再把「每特征十个样本」这条经验换算成
+ * 这批样本量能支持的特征数。域、信度层次、流程步数、情境表行数都从正文数出来。
  */
 
 'use strict';
@@ -15,87 +13,109 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'maizhen-keguanhua', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 3;
+const TITLE = '特征提取：可重复的不是特征，是提取它的那套流程';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function sections(text) {
+  const out = [];
+  let cur = { title: '（题解）', lines: [] };
+  for (const line of String(text).split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) { out.push(cur); cur = { title: h[1], lines: [] }; continue; }
+    cur.lines.push(line);
   }
-  throw new Error('没找到 standards/maizhen-keguanhua/units.json —— 章节目录是否已脱离仓库？');
+  out.push(cur);
+  return out.map((s) => ({
+    title: s.title,
+    body: s.lines.join('\n'),
+    hanzi: (s.lines.join('\n').match(HANZI) || []).length,
+  })).filter((s) => s.title !== '（题解）');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'maizhen-keguanhua', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'maizhen-keguanhua', 'chapter-map.json');
-const CHAPTER = '3';
-const SLUG = '03-m3';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function tables(text) {
+  const lines = String(text).split('\n');
+  const out = [];
+  let i = 0;
+  while (i < lines.length) {
+    if (!/^\s*\|/.test(lines[i])) { i += 1; continue; }
+    const block = [];
+    while (i < lines.length && /^\s*\|/.test(lines[i])) { block.push(lines[i]); i += 1; }
+    if (block.length < 3 || !/^\s*\|[\s:|-]+\|\s*$/.test(block[1])) continue;
+    const cells = (l) => l.trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
+    out.push({ header: cells(block[0]), rows: block.slice(2).map(cells) });
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+/** 特征数与样本数之比，返回 {features, n, ratio, perSample} */
+function burden(features, n) {
+  if (!(features > 0 && n > 0)) throw new Error('特征数与样本数必须为正');
+  return { features, n, ratio: features / n, perSample: features / n };
+}
+
+/** 按「每个特征至少 k 个样本」的经验，这批样本量能支持的特征数 */
+function budget(n, k) {
+  if (!(n > 0 && k > 0)) throw new Error('参数必须为正');
+  return Math.floor(n / k);
+}
+
+function analyze(text) {
+  const body = String(text).replace(/\r\n/g, '\n');
+  const fM = body.match(/(\d+)\s*个\s*特征/) || body.match(/特征\s*有\s*(\d+)\s*个/);
+  const nM = body.match(/(\d+)\s*例/);
+  const features = fM ? Number(fM[1]) : NaN;
+  const n = nM ? Number(nM[1]) : NaN;
+  const secs = sections(body);
+  const tbl = tables(body);
+  const domainT = tbl.find((t) => t.header.includes('主要反映'));
+  const relSec = secs.find((s) => /重测/.test(s.title));
+  const stepSec = secs.find((s) => /顺序纪律/.test(s.title));
+  const ctxT = tbl.find((t) => t.header.includes('情境'));
+
+  return {
+    hanzi: (body.match(HANZI) || []).length,
+    sections: secs,
+    tables: tbl.length,
+    features,
+    n,
+    burden: burden(features, n),
+    domains: domainT ? domainT.rows.length : 0,
+    reliabilityLayers: relSec ? (relSec.body.match(/^\s*\d+\.\s+/gm) || []).length : 0,
+    steps: stepSec ? (stepSec.body.match(/^\s*\d+\.\s+/gm) || []).length : 0,
+    contexts: ctxT ? ctxT.rows.length : 0,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const a = analyze(text);
+  const b = a.burden;
+  const tens = budget(a.n, 10);
+  const doable = budget(a.n, 10);
 
-  console.log(`脉诊客观化 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`脉诊客观化 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 表格 ${a.tables} 张`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`正文的情境：${a.n} 例 · ${a.features} 个特征`);
+  console.log(`  特征 ∶ 样本 ＝ ${b.features} ∶ ${b.n} ＝ ${b.ratio.toFixed(0)}∶1（每个样本摊到 ${b.perSample.toFixed(1)} 个特征）`);
+  console.log(`  按「每个特征至少十个样本」，这 ${a.n} 例最多支持 ${doable} 个特征；`);
+  console.log(`  若入模取 ${tens + 2} 个，比例是 ${(a.n / (tens + 2)).toFixed(1)}∶1，已经低于十比一。`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`特征分域 ${a.domains} 类 · 重测信度 ${a.reliabilityLayers} 层 · 流程纪律 ${a.steps} 步 · 情境对照 ${a.contexts} 行`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/maizhen-keguanhua/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 特征域、信度层次、流程步数都由正文章节结构与表格现算。');
+  console.log('※ 本章不给任何阈值与信度系数；「十来个」是量级建议，不是标准。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, analyze, sections, tables, burden, budget };

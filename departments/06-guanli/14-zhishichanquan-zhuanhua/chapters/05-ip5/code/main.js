@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 知识产权转化 · 第 5 章 新兴技术与伦理：知识产权的前沿争议：本章统计口径
+ * 知识产权转化 · 第 5 章 新技术申请下来算谁的
  * 课程: departments/06-guanli/14-zhishichanquan-zhuanhua/chapters/05-ip5/docs/zh.md
- * 数据: standards/zhishichanquan-zhuanhua/units.json（44 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhishichanquan-zhuanhua/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 正文把三件容易被混为一谈的事拆开了：可专利的客体、发明人资格、数据合法性。
+ * 这里各做一个判据：给一个方案或一个人，返回它落在哪一侧；数据则返回三关里断了哪几关。
+ * 不可专利的客体清单直接从正文第五节表格读出，避免代码与正文各说一套。
+ *
+ * 依赖: 仅 Node.js 标准库
  */
 
 'use strict';
@@ -15,87 +15,87 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhishichanquan-zhuanhua', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const TECHNICAL = ['系统', '装置', '数据处理方法', '制药用途', '模型结构'];
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+function cells(line) {
+  return line.split('|').slice(1, -1).map((s) => s.trim());
+}
+
+/** 第五节「不可专利的那一侧」表格：对象 / 理由 / 可行的替代路径 */
+function parseNonPatentable(text) {
+  const sec = text.split('## 五、')[1] || '';
+  const body = sec.split('## 六、')[0];
+  const rows = [];
+  for (const line of body.split(/\r?\n/)) {
+    if (!line.trim().startsWith('|')) continue;
+    const c = cells(line);
+    if (c.length < 3) continue;
+    if (c[0] === '不可专利的对象') continue;
+    if (!c[1] || c[1].includes('---')) continue;
+    rows.push({ object: c[0], reason: c[1], alternative: c[2] });
   }
-  throw new Error('没找到 standards/zhishichanquan-zhuanhua/units.json —— 章节目录是否已脱离仓库？');
+  return rows;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhishichanquan-zhuanhua', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhishichanquan-zhuanhua', 'chapter-map.json');
-const CHAPTER = '5';
-const SLUG = '05-ip5';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 这类客体能不能进专利；能进的话，落在哪一种技术写法上 */
+function subjectRoute(kind) {
+  if (kind === '算法' || kind === '数学方法') return '不可专利：属智力活动的规则与方法';
+  if (kind === '诊疗方法') return '不可专利：直接作用于具体病患';
+  if (kind === '人体商业利用' || kind === '生殖系基因编辑') return '不可专利：公序良俗';
+  if (TECHNICAL.includes(kind)) return '可专利：以技术方案主张';
+  return '待判断：需结合具体写法与检索结果';
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 该角色是否应列入发明人：看是否对实质性特点作出创造性贡献 */
+function inventorIncluded(role) {
+  const table = {
+    老中医_经验构成关键特征: true,
+    老中医_仅提供数据: false,
+    工程师_设计模型结构: true,
+    工程师_按既定方案实现: false,
+    研究生_完成标注: false,
+    研究生_设计评价方法: true,
+  };
+  if (!(role in table)) throw new Error('未知角色: ' + role);
+  return table[role];
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 数据三关：来源 / 处理 / 流转。返回断掉的关 */
+function dataLegality({ consentCoversTraining, deidentified, transferApproved }) {
+  const broken = [];
+  if (!consentCoversTraining) broken.push('来源合法');
+  if (!deidentified) broken.push('处理合法');
+  if (!transferApproved) broken.push('流转合法');
+  return broken;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = readDoc();
+  const rows = parseNonPatentable(text);
+  if (rows.length !== 3) throw new Error('不可专利表读出 ' + rows.length + ' 行，与预期不符');
 
-  console.log(`知识产权转化 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('第 5 章 · 客体、发明人与数据三关');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log('不可专利的客体（' + rows.length + ' 类）：');
+  for (const r of rows) console.log('  ' + r.object + ' → ' + r.alternative);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('写法判断：');
+  console.log('  「AI 辨证—开方」写成诊疗方法 → ' + subjectRoute('诊疗方法'));
+  console.log('  「AI 辨证—开方」写成系统 → ' + subjectRoute('系统'));
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('发明人：老中医经验构成关键特征 → ' + (inventorIncluded('老中医_经验构成关键特征') ? '列入' : '不列入'));
+  console.log('发明人：研究生完成标注 → ' + (inventorIncluded('研究生_完成标注') ? '列入' : '不列入'));
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  const broken = dataLegality({ consentCoversTraining: true, deidentified: false, transferApproved: true });
+  console.log('数据自查：同意覆盖训练、未完成去标识、出境已批 → 断在 ' + broken.join('、'));
   console.log('');
-  console.log('※ 教学样例：数字由 standards/zhishichanquan-zhuanhua/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 客体清单与角色判据取自本章正文；合规以现行规范为准且会变。');
+  console.log('※ 本章不构成法律意见或伦理审查结论。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { parseNonPatentable, subjectRoute, inventorIncluded, dataLegality, TECHNICAL, DOC };

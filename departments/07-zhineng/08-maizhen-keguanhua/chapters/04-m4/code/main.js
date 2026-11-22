@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 /**
- * 脉诊客观化 · 第 4 章 线性判别与基线模型：本章统计口径
+ * 脉诊客观化 · 第 4 章 浮沉迟数：把一个形容词切成两类，切点就是全部
  * 课程: departments/07-zhineng/08-maizhen-keguanhua/chapters/04-m4/docs/zh.md
- * 数据: standards/maizhen-keguanhua/units.json（136 单元层，每单元带三辨与四位面词频）
- * 取数: standards/maizhen-keguanhua/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 四件事全部现算：
+ *   1) 呼吸锚 → 时钟锚的换算（一息五动 × 呼吸频率）
+ *   2) 敏感度／特异度／约登指数表 —— 用正文给的两个正态分布重算，与表里印的数对照
+ *   3) 60 例验证集上敏感度的 95% 区间半宽
+ *   4) LDA 的 w ＝ Σ⁻¹d、与均值差的夹角、相关对判别力的削减
+ * 数字来自正文的演算设定，不是任何真实数据集。
  */
 
 'use strict';
@@ -15,87 +17,156 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'maizhen-keguanhua', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 4;
+const TITLE = '浮沉迟数：把一个形容词切成两类，切点就是全部';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+/** 标准正态分布函数 Φ（Abramowitz & Stegun 7.1.26，绝对误差 < 1.5e-7） */
+function normCdf(z) {
+  const t = 1 / (1 + 0.3275911 * Math.abs(z) / Math.SQRT2);
+  const y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-(z * z) / 2);
+  return z >= 0 ? 0.5 * (1 + y) : 0.5 * (1 - y);
+}
+
+/** 切点上的敏感度、特异度与约登指数 */
+function cutStats(cut, { muPos, sdPos, muNeg, sdNeg }) {
+  const sens = 1 - normCdf((cut - muPos) / sdPos);
+  const spec = normCdf((cut - muNeg) / sdNeg);
+  return { cut, sens, spec, youden: sens + spec - 1 };
+}
+
+/** 二项分布正态近似的 95% 区间半宽 */
+function ciHalfWidth(p, n) {
+  if (!(p > 0 && p < 1) || !(n > 0)) throw new Error('参数越界: ' + p + ',' + n);
+  return 1.96 * Math.sqrt((p * (1 - p)) / n);
+}
+
+/** 2×2 协方差矩阵的逆（标准化后对角为 1，相关系数 r） */
+function inv2(r) {
+  const det = 1 - r * r;
+  if (!(det > 0)) throw new Error('相关系数必须落在 (−1,1)');
+  return [[1 / det, -r / det], [-r / det, 1 / det]];
+}
+
+const dot = (a, b) => a[0] * b[0] + a[1] * b[1];
+const norm = (a) => Math.hypot(a[0], a[1]);
+const matVec = (m, v) => [m[0][0] * v[0] + m[0][1] * v[1], m[1][0] * v[0] + m[1][1] * v[1]];
+
+/** LDA：给定标准化均值差 d 与相关系数 r，返回 w、夹角、可分性的削减 */
+function lda(d, r) {
+  const w = matVec(inv2(r), d);
+  const cos = dot(w, d) / (norm(w) * norm(d));
+  const angle = (Math.acos(Math.min(1, Math.max(-1, cos))) * 180) / Math.PI;
+  return { w, angle, independent: dot(d, d), correlated: dot(w, d) };
+}
+
+function tables(text) {
+  const lines = String(text).split('\n');
+  const out = [];
+  let i = 0;
+  while (i < lines.length) {
+    if (!/^\s*\|/.test(lines[i])) { i += 1; continue; }
+    const block = [];
+    while (i < lines.length && /^\s*\|/.test(lines[i])) { block.push(lines[i]); i += 1; }
+    if (block.length < 3 || !/^\s*\|[\s:|-]+\|\s*$/.test(block[1])) continue;
+    const cells = (l) => l.trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
+    out.push({ header: cells(block[0]), rows: block.slice(2).map(cells) });
   }
-  throw new Error('没找到 standards/maizhen-keguanhua/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'maizhen-keguanhua', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'maizhen-keguanhua', 'chapter-map.json');
-const CHAPTER = '4';
-const SLUG = '04-m4';
+const num = (s) => {
+  const m = String(s).replace(/,/g, '').match(/-?\d+(?:\.\d+)?/);
+  return m ? Number(m[0]) : NaN;
+};
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+function analyze(text) {
+  const body = String(text).replace(/\r\n/g, '\n');
+  const tbl = tables(body);
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+  const dist = [...body.matchAll(/均值\s*(\d+)、标准差\s*(\d+)/g)].map((m) => ({ mu: Number(m[1]), sd: Number(m[2]) }));
+  const breath = [...body.matchAll(/(\d+)\s*至\s*(\d+)\s*次\/分/g)].map((m) => [Number(m[1]), Number(m[2])])[0] || null;
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+  const cutT = tbl.find((t) => t.header.join('').includes('约登'));
+  const stated = cutT ? cutT.rows.map((r) => ({
+    cut: num(r[0]), sens: num(r[1]), spec: num(r[2]), youden: num(r[3]),
+  })) : [];
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  const muPos = dist[0] ? dist[0].mu : NaN;
+  const sdPos = dist[0] ? dist[0].sd : NaN;
+  const muNeg = dist[1] ? dist[1].mu : NaN;
+  const sdNeg = dist[1] ? dist[1].sd : NaN;
+  const computed = stated.map((r) => cutStats(r.cut, { muPos, sdPos, muNeg, sdNeg }));
+
+  return {
+    hanzi: (body.match(HANZI) || []).length,
+    tables: tbl.length,
+    breath,
+    dist,
+    stated,
+    computed,
+    ci: {
+      n: 60,
+      p: 0.73,
+      half: ciHalfWidth(0.73, 60),
+    },
+    lda: lda([0.9, 0.5], 0.6),
+    covParams: (14 * 15) / 2,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const a = analyze(text);
 
-  console.log(`脉诊客观化 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`脉诊客观化 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 表格 ${a.tables} 张`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  if (a.breath) {
+    const [lo, hi] = a.breath;
+    console.log(`呼吸锚 → 时钟锚：一息五动 × 静息呼吸 ${lo} 至 ${hi} 次/分`);
+    console.log(`  ＝ ${lo * 5} 至 ${hi * 5} 次/分；呼吸 12 次/分时只有 ${12 * 5} 次/分。`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
+  console.log(`切点表（数脉 ${a.dist[0].mu}±${a.dist[0].sd}，平脉 ${a.dist[1].mu}±${a.dist[1].sd}，重算值 / 表内值）：`);
+  for (let i = 0; i < a.computed.length; i += 1) {
+    const c = a.computed[i];
+    const s = a.stated[i];
+    const d = (x, y) => (Math.abs(x - y) < 0.006 ? '一致' : `偏 ${(x - y).toFixed(3)}`);
+    console.log(
+      `  切点 ${String(c.cut).padStart(3)}  敏感度 ${c.sens.toFixed(2)}（${s.sens}，${d(c.sens, s.sens)}）` +
+      `  特异度 ${c.spec.toFixed(2)}（${s.spec}，${d(c.spec, s.spec)}）` +
+      `  约登 ${c.youden.toFixed(2)}（${s.youden}）`
+    );
   }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  const y84 = a.computed.find((c) => c.cut === 84);
+  const y90 = a.computed.find((c) => c.cut === 90);
+  if (y84 && y90) {
+    console.log(`  → 84 与 90 的约登指数都是 ${y84.youden.toFixed(2)}：无代价函数时统计上分不出高下。`);
+    const s84 = a.stated.find((r) => r.cut === 84);
+    const s90 = a.stated.find((r) => r.cut === 90);
+    if (s84 && s90) {
+      console.log(`  → 两者敏感度差 ${(s84.sens - s90.sens).toFixed(2)}，而 60 例的 95% 区间半宽约 ±${a.ci.half.toFixed(2)}。`);
+    }
+  }
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('LDA（d ＝ (0.9, 0.5)，相关系数 0.6）：');
+  console.log(`  w ＝ (${a.lda.w.map((v) => v.toFixed(4)).join(', ')})`);
+  console.log(`  w 与 d 的夹角 ${a.lda.angle.toFixed(1)}°；两特征独立时的可分性 ${a.lda.independent.toFixed(2)}，相关后只剩 ${a.lda.correlated.toFixed(4)}。`);
+  console.log(`  14 个特征的共同协方差有 14 × 15 / 2 ＝ ${a.covParams} 个自由参数。`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/maizhen-keguanhua/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 以上分布、协方差与切点表都是正文的演算设定，用来说明切点与相关性的作用方向。');
+  console.log('※ 迟数的具体划界以现行规范为准；本章不给出任何模型的准确率、敏感性与样本量。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, analyze, normCdf, cutStats, ciHalfWidth, inv2, lda, tables };

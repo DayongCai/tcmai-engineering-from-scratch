@@ -6,57 +6,122 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
+const {
+  analyze,
+  readDoc,
+  hanzi,
+  occurrences,
+  cn2num,
+  h2Titles,
+  modes,
+  reviewLoad,
+  CHAPTER,
+  SLUG,
+  QUIZ,
+  MODES,
+  DIFFICULTIES,
+  CRITERIA,
+  TECH_ITEMS,
+  PRECONDITIONS,
+  DEFINITION_RULES,
+  SECTION_PROBES,
+} = require('./main.js');
+
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '12-zhongyiyao-biaozhunhua', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '12-zhongyiyao-biaozhunhua', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文在：规模够一章，且目录名与常量一致', () => {
+  const text = readDoc();
+  assert.ok(hanzi(text) > 2000, `正文过短：${hanzi(text)}`);
+  assert.strictEqual(path.basename(path.dirname(__dirname)), SLUG);
+  assert.ok(SLUG.startsWith(String(CHAPTER).padStart(2, '0')), SLUG);
+  assert.strictEqual(cn2num('二百二十五'), 225);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('小节结构：八节，末节为「代价与边界」', () => {
+  const titles = h2Titles(readDoc());
+  assert.strictEqual(titles.length, 8, `小节数 ${titles.length}`);
+  assert.ok(titles[7].includes('代价与边界'), titles[7]);
+  assert.ok(titles.slice(0, 7).every((t) => /^[一二三四五六七]、/.test(t)), '前七节未按一至七编号');
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('每节的探针词都落在本节，顺序未被改动', () => {
+  for (const p of analyze().probes) assert.ok(p.ok, `探针「${p.probe}」不在对应小节`);
+  assert.strictEqual(SECTION_PROBES.length, h2Titles(readDoc()).length);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('三种对接模式按正文段落顺序出现，义务各不同', () => {
+  const m = modes(readDoc());
+  assert.deepStrictEqual(m.map((x) => x.m), MODES);
+  for (const x of m) assert.ok(x.ok, `缺模式：${x.m}`);
+  assert.ok(m[0].at < m[1].at, '采纳与修改采纳的段落顺序反了');
+  const text = readDoc();
+  assert.ok(text.includes('原样采用国际文件'), '缺采纳的定义');
+  assert.ok(text.includes('逐条说明调整理由与技术依据'), '缺修改采纳的要求');
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('四类难点、三条判据、四件技术对接、三个前提都在正文', () => {
+  const text = readDoc();
+  for (const t of DIFFICULTIES) assert.ok(occurrences(text, t) >= 1, `缺难点：${t}`);
+  for (const t of CRITERIA) assert.ok(occurrences(text, t) >= 1, `缺判据：${t}`);
+  for (const t of TECH_ITEMS) assert.ok(occurrences(text, t) >= 1, `缺技术项：${t}`);
+  for (const t of PRECONDITIONS) assert.ok(occurrences(text, t) >= 1, `缺前提：${t}`);
+  assert.ok(text.includes('只有方法比对没有室间比对'), '缺等效性双证的判据');
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('定义句三条纪律都写进了第四节', () => {
+  const text = readDoc();
+  for (const r of DEFINITION_RULES) assert.ok(text.includes(r), `缺纪律：${r}`);
+  assert.ok(text.includes('君臣佐使'), '缺「不引用典故」的反例');
+});
+
+test('演算：9000 人次、225 个工作日、2700 条进第二轮', () => {
+  const l = reviewLoad(readDoc());
+  assert.strictEqual(l.terms, 3000);
+  assert.strictEqual(l.experts, 3);
+  assert.strictEqual(l.perDay, 40);
+  assert.strictEqual(l.reviews, 9000);
+  assert.strictEqual(l.days, 225);
+  assert.strictEqual(l.stated, 225, '正文自述的工作日数与现算不符');
+  assert.strictEqual(l.share, 0.3);
+  assert.strictEqual(l.disputed, 2700);
+  assert.strictEqual(l.statedDisputed, 2700, '正文自述的分歧条数与现算不符');
+});
+
+test('quiz 结构：6 题、三段齐、4 选项、correct 合法、explain ≥30 汉字', () => {
+  const q = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const qs = q.questions;
+  assert.ok(qs.length >= 5, `只有 ${qs.length} 题`);
+  const stages = new Set(qs.map((x) => x.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), `缺 ${s} 段`);
+  for (const item of qs) {
+    assert.strictEqual(item.options.length, 4, `选项数不对：${item.question}`);
+    assert.ok(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < 4, 'correct 下标非法');
+    assert.ok(hanzi(item.explain) >= 30, `explain 过短：${item.question}`);
+  }
+});
+
+test('quiz 的 check 题至少两道能在正文找到四字原词', () => {
+  const r = analyze();
+  assert.ok(r.quiz.check >= 3, `check 题只有 ${r.quiz.check} 道`);
+  assert.ok(r.quiz.grounded >= 2, `接地 ${r.quiz.grounded} 道`);
+});
+
+test('答案打散在多个下标，且不含脚手架概念', () => {
+  const raw = fs.readFileSync(QUIZ, 'utf8');
+  const q = JSON.parse(raw);
+  assert.ok(new Set(q.questions.map((x) => x.correct)).size >= 3, '答案只落在少数位置');
+  for (const re of [/三辨/, /四位面/, /单元规模/, /本章实测/, /见\s*code\/main\.js\s*输出/]) {
+    assert.ok(!re.test(raw), `残留：${re}`);
+    assert.ok(!re.test(fs.readFileSync(MAIN, 'utf8')), `代码残留：${re}`);
+  }
+});
+
+test('命令行可运行，并打印现算声明与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/12-zhongyiyao-biaozhunhua\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/06-z126/docs/zh.md'), '头部注释未指向本章');
+  assert.ok(out.includes(`第 ${CHAPTER} 章`), '输出未含章号');
+  assert.match(out, /由本章正文现算/);
+  assert.match(out, /不构成注册申报/);
+  assert.ok(out.includes('9,000 人次评审'), '输出未给出评审人次');
 });

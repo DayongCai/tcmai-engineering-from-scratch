@@ -1,3 +1,9 @@
+#!/usr/bin/env node
+/**
+ * 第 10 章 智能体不是一个更会说话的模型，是一个会被工具纠正的循环 —— 确定性测试
+ * 运行: node --test（在本章目录下）
+ */
+
 'use strict';
 
 const test = require('node:test');
@@ -6,57 +12,88 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
+const {
+  readDoc,
+  parseChainCase,
+  parseTokenBudget,
+  readTable,
+  chain,
+  maxSteps,
+  requiredStep,
+} = require('./main.js');
+
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'llm-yu-zhongyi-zhinengti', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'llm-yu-zhongyi-zhinengti', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const doc = readDoc();
+const near = (a, b, tol, msg) => assert.ok(Math.abs(a - b) <= tol, `${msg}: ${a} vs ${b}`);
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文是补实稿，四拍循环与七种失败模式都在', () => {
+  const hanzi = (doc.match(/[\u4e00-\u9fff]/g) || []).length;
+  assert.ok(hanzi > 2500, `正文汉字过少：${hanzi}`);
+  for (const k of ['校验', '静默降级', '状态外置', '代价与边界']) assert.ok(doc.includes(k), `缺「${k}」`);
+  assert.ok(!/TODO|待补|占位稿/.test(doc));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('八步连乘复算：0.95^8≈0.66、0.98^8≈0.85', () => {
+  const c = parseChainCase(doc);
+  assert.strictEqual(c.p, 0.95);
+  assert.strictEqual(c.pBetter, 0.98);
+  assert.strictEqual(c.steps, 8);
+  near(chain(c.p, c.steps), c.quoted, 5e-3, '0.95 的八步');
+  near(chain(c.pBetter, c.steps), c.quotedBetter, 5e-3, '0.98 的八步');
+  assert.ok(chain(c.p, c.steps) < 0.7 && chain(c.p, c.steps) > 0.6);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('连乘随步数单调下降，且每加一步的损失递减', () => {
+  const seq = [2, 4, 6, 8, 10].map((n) => chain(0.95, n));
+  for (let i = 1; i < seq.length; i += 1) assert.ok(seq[i] < seq[i - 1]);
+  const drop1 = seq[0] - seq[1];
+  const drop2 = seq[1] - seq[2];
+  assert.ok(drop1 > drop2, '边际损失应递减（指数衰减）');
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('整体目标 0.9 下：0.95 撑两步、0.98 撑五步', () => {
+  assert.strictEqual(maxSteps(0.9, 0.95), 2);
+  assert.strictEqual(maxSteps(0.9, 0.98), 5);
+  assert.ok(maxSteps(0.9, 0.98) <= 2 * maxSteps(0.9, 0.95) + 1, '容纳步数并未随单步提升而翻倍');
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('八步保住 0.9 需单步 0.9869；砍到四步只需 0.95', () => {
+  near(requiredStep(0.9, 8), 0.9869, 5e-4, '八步所需单步');
+  assert.ok(chain(0.95, 4) > 0.8, '四步时 0.95 已足够');
+  assert.ok(requiredStep(0.9, 8) > 0.98, '八步所需单步高于正文的第二档');
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('上下文预算：150–250 token × 10 轮 = 1500–2500', () => {
+  const b = parseTokenBudget(doc);
+  assert.deepStrictEqual(b.perRound, [150, 250]);
+  assert.strictEqual(b.rounds, 10);
+  assert.deepStrictEqual(b.window, [4, 6]);
+  assert.strictEqual(b.perRound[0] * b.rounds, 1500);
+  assert.strictEqual(b.perRound[1] * b.rounds, 2500);
+});
+
+test('校验清单五项与失败模式七种都读得出', () => {
+  const checks = readTable(doc, '检查项');
+  const fails = readTable(doc, '失败模式');
+  assert.strictEqual(checks.length, 5);
+  assert.strictEqual(fails.length, 7);
+  assert.deepStrictEqual(checks.map((r) => r[0]), ['返回非空', '格式合法', '关键字段在', '与已知矛盾', '引用可核']);
+  assert.deepStrictEqual(fails.map((r) => r[0]), ['步数耗尽', '工具误用', '目标漂移', '循环依赖', '过早收敛', '依据虚置', '静默降级']);
+  for (const r of fails) assert.strictEqual(r.length, 4, `${r[0]} 应有四列`);
+});
+
+test('脚本可运行，输出含连乘、反解与七种模式', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/llm-yu-zhongyi-zhinengti\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
+  assert.match(out, /0\.95\^8 = 0\.663（正文 0\.66）/);
+  assert.match(out, /单步 0\.98：最多撑到 5 步/);
+  assert.match(out, /表内有 7 种/);
+  assert.match(out, /不构成诊疗或系统实施建议/);
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/10-llm10/docs/zh.md'), '头部注释未指向本章');
+test('脚本不写死连乘结果', () => {
+  const src = fs.readFileSync(MAIN, 'utf8');
+  assert.ok(!/0\.663/.test(src), '源码写死了 0.95^8');
+  assert.ok(!/0\.851/.test(src), '源码写死了 0.98^8');
 });

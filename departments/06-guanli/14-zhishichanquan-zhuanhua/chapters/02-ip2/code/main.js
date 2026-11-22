@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 知识产权转化 · 第 2 章 中医药领域的知识产权形态：本章统计口径
+ * 知识产权转化 · 第 2 章 五种互不替代的保护形态
  * 课程: departments/06-guanli/14-zhishichanquan-zhuanhua/chapters/02-ip2/docs/zh.md
- * 数据: standards/zhishichanquan-zhuanhua/units.json（44 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhishichanquan-zhuanhua/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 正文第一节给了一张五形态对照表（分形 / 保护对象 / 取得方式 / 期限 / 排他强度 / 主要代价）。
+ * 本章的可算部分是：把表读出来，按「必须公开」「可以无限期」「主体是集体」这些性质
+ * 给每种形态打上属性，再验证这些属性确实来自正文而不是代码里的偏好。
+ *
+ * 依赖: 仅 Node.js 标准库
  */
 
 'use strict';
@@ -15,87 +15,84 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhishichanquan-zhuanhua', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const FORMS = ['专利', '商业秘密', '著作权', '商标', '地理标志'];
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+function cells(line) {
+  return line.split('|').slice(1, -1).map((s) => s.trim());
+}
+
+/** 读出五形态对照表 */
+function parseFormTable(text) {
+  const rows = [];
+  for (const line of text.split(/\r?\n/)) {
+    if (!line.trim().startsWith('|')) continue;
+    const c = cells(line);
+    if (c.length < 6) continue;
+    if (!FORMS.includes(c[0])) continue;
+    rows.push({
+      form: c[0],
+      object: c[1],
+      acquire: c[2],
+      term: c[3],
+      strength: c[4],
+      cost: c[5],
+    });
   }
-  throw new Error('没找到 standards/zhishichanquan-zhuanhua/units.json —— 章节目录是否已脱离仓库？');
+  return rows;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhishichanquan-zhuanhua', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhishichanquan-zhuanhua', 'chapter-map.json');
-const CHAPTER = '2';
-const SLUG = '02-ip2';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 取得该形态是否必须以公开技术内容为代价 */
+function mustDisclose(form) {
+  return form === '专利';
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 该形态在正文里被描述为没有期限（公开即灭） */
+function isIndefinite(row) {
+  return row.term.includes('无期限');
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 该形态的排他强度是否限于某一类别或范围 */
+function isScoped(row) {
+  return /限于|只禁|只对/.test(row.strength);
+}
+
+/**
+ * 选型的第一问：这一层的信息已经公开到什么程度。
+ * 已进入公有领域的，专利与商业秘密都无从谈起，只能靠表达、标识或来源类权利。
+ */
+function candidateForms({ publiclyKnown }) {
+  if (publiclyKnown) return ['著作权', '商标', '地理标志'];
+  return FORMS.slice();
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = readDoc();
+  const rows = parseFormTable(text);
+  if (rows.length !== FORMS.length) {
+    throw new Error('五形态对照表读出 ' + rows.length + ' 行，与预期不符');
+  }
 
-  console.log(`知识产权转化 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('第 2 章 · 五种保护形态的性质对照');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  for (const r of rows) {
+    const flags = [
+      mustDisclose(r.form) ? '须公开' : '无须公开',
+      isIndefinite(r) ? '无期限' : '有期限',
+      isScoped(r) ? '范围受限' : '范围较宽',
+    ];
+    console.log('  ' + r.form.padEnd(6, '　') + ' ' + flags.join(' · ') + ' —— ' + r.term);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('已进入公有领域的信息，可选形态：' + candidateForms({ publiclyKnown: true }).join('、'));
+  console.log('尚未公开的信息，可选形态：' + candidateForms({ publiclyKnown: false }).join('、'));
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhishichanquan-zhuanhua/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 属性判据（须公开／无期限／范围受限）直接从表格栏目文字推出。');
+  console.log('※ 本章讨论形态取舍，不构成法律意见或商业建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { parseFormTable, mustDisclose, isIndefinite, isScoped, candidateForms, FORMS, DOC };

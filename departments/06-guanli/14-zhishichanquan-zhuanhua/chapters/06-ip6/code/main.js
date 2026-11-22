@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 知识产权转化 · 第 6 章 侵权、许可纠纷与救济：本章统计口径
+ * 知识产权转化 · 第 6 章 侵权判定比权利要求覆盖不覆盖
  * 课程: departments/06-guanli/14-zhishichanquan-zhuanhua/chapters/06-ip6/docs/zh.md
- * 数据: standards/zhishichanquan-zhuanhua/units.json（44 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhishichanquan-zhuanhua/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 正文第一节给了两步判定：先字面全面覆盖，再等同；等同受三条限制。
+ * 第三节给了被控方的六类抗辩，其门槛在表格里。
+ * 这里把两步判定写成可运行函数，把抗辩清单从正文表格读出，避免两处结论打架。
+ *
+ * 依赖: 仅 Node.js 标准库
  */
 
 'use strict';
@@ -15,87 +15,89 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhishichanquan-zhuanhua', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const DEFENSES = ['不落入', '现有技术抗辩', '权利用尽', '先用权', '科研实验例外', '无效宣告'];
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+function cells(line) {
+  return line.split('|').slice(1, -1).map((s) => s.trim());
+}
+
+/** 第三节的抗辩表：抗辩 / 核心主张 / 门槛与要点 */
+function parseDefenseTable(text) {
+  const sec = text.split('## 三、')[1] || '';
+  const body = sec.split('## 四、')[0];
+  const rows = [];
+  for (const line of body.split(/\r?\n/)) {
+    if (!line.trim().startsWith('|')) continue;
+    const c = cells(line);
+    if (c.length < 3) continue;
+    if (!DEFENSES.includes(c[0])) continue;
+    rows.push({ defense: c[0], claim: c[1], threshold: c[2] });
   }
-  throw new Error('没找到 standards/zhishichanquan-zhuanhua/units.json —— 章节目录是否已脱离仓库？');
+  return rows;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhishichanquan-zhuanhua', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhishichanquan-zhuanhua', 'chapter-map.json');
-const CHAPTER = '6';
-const SLUG = '06-ip6';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 第一步：全面覆盖。权利要求记载的全部特征都在被控方案里，才落入 */
+function literalInfringes(claimFeatures, productFeatures) {
+  const have = new Set(productFeatures);
+  return claimFeatures.every((f) => have.has(f));
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 第二步：等同。字面不落入时才有这一步，且受三条限制。
+ *  任一条被触发，等同主张即不成立。
+ */
+function equivalentAvailable({ estoppel, dedicatedToPublic, readsOnPriorArt }) {
+  if (estoppel) return { ok: false, reason: '禁止反悔' };
+  if (dedicatedToPublic) return { ok: false, reason: '捐献规则' };
+  if (readsOnPriorArt) return { ok: false, reason: '现有技术抗辩的挤压' };
+  return { ok: true, reason: '手段、功能、效果实质相同且无需创造性劳动' };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/**
+ * 两步判定合并。
+ * 等同只针对「被替换的特征」；某个特征在被控方案里根本没有对应物，那是缺必要技术特征，
+ * 直接不落入，轮不到等同。
+ * opts.equivalents：权利要求特征 → 被控方案中与之等同的那一项。
+ */
+function assess(claim, product, options = {}) {
+  if (literalInfringes(claim, product)) return { infringes: true, basis: '字面全面覆盖' };
+  const missing = claim.filter((f) => !product.includes(f));
+  const eq = options.equivalents || {};
+  if (!missing.length || !missing.every((f) => eq[f] && product.includes(eq[f]))) {
+    return { infringes: false, basis: '不落入（缺少必要技术特征）' };
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  const verdict = equivalentAvailable(options);
+  return verdict.ok
+    ? { infringes: true, basis: '等同：' + verdict.reason }
+    : { infringes: false, basis: '不落入（' + verdict.reason + '）' };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = readDoc();
+  const rows = parseDefenseTable(text);
+  if (rows.length !== DEFENSES.length) throw new Error('抗辩表读出 ' + rows.length + ' 行，与预期不符');
 
-  console.log(`知识产权转化 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('第 6 章 · 两步判定与被控方的六张牌');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  const claim = ['A', 'B', 'C'];
+  const same = assess(claim, ['A', 'B', 'C', 'D']);
+  const substituted = { equivalents: { C: 'D' } };
+  const swapped = assess(claim, ['A', 'B', 'D'], substituted);
+  const missing = assess(claim, ['A', 'B'], {});
+  console.log('  特征全在（多一项无妨）→ ' + (same.infringes ? '落入' : '不落入') + ' · ' + same.basis);
+  console.log('  C 换 D、无限制 → ' + (swapped.infringes ? '落入' : '不落入') + ' · ' + swapped.basis);
+  console.log('  少 C 且无对应物 → ' + (missing.infringes ? '落入' : '不落入') + ' · ' + missing.basis);
+  console.log('  C 换 D、审查中已放弃 → ' + assess(claim, ['A', 'B', 'D'], { equivalents: { C: 'D' }, estoppel: true }).basis);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('抗辩清单（' + rows.length + ' 类）：');
+  for (const r of rows) console.log('  ' + r.defense + ' —— ' + r.threshold);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhishichanquan-zhuanhua/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 判定函数只看特征与三条限制，不评价任何具体案件。');
+  console.log('※ 本章不构成诉讼或谈判建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { parseDefenseTable, literalInfringes, equivalentAvailable, assess, DEFENSES, DOC };

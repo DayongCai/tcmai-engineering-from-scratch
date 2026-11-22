@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
- * 大模型与中医智能体 · 第 7 章 知识增强：规则与图谱怎么进模型：本章统计口径
+ * 大模型与中医智能体 · 第 7 章 知识不是喂给模型的背景，是它必须引用的证据
  * 课程: departments/07-zhineng/10-llm-yu-zhongyi-zhinengti/chapters/07-llm7/docs/zh.md
- * 数据: standards/llm-yu-zhongyi-zhinengti/units.json（167 单元层，每单元带三辨与四位面词频）
- * 取数: standards/llm-yu-zhongyi-zhinengti/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 从正文现读并复算三件事：
+ *   ① 预算算术：全库 token、引用 token、占比、全库塞入的成本倍数；
+ *   ② 倒数排序融合：按正文描述的命中与重合关系算出头部；
+ *   ③ 引用契约的机器校验：编号是否存在、所引原文是否真是资料里的子串。
+ * 校验器的正反例都是教学构造，不是任何系统的输出。
  */
 
 'use strict';
@@ -15,87 +16,139 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'llm-yu-zhongyi-zhinengti', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const toInt = (s) => Number(String(s).replace(/,/g, ''));
+
+/** 「知识库 3,000 条，平均每条 100 字，合 30 万字，约 31 万 token」 */
+function parseKb(text) {
+  const m = text.match(/知识库\s*([\d,]+)\s*条，平均每条\s*(\d+)\s*字，合\s*([\d.]+)\s*万字，约\s*([\d.]+)\s*万 token/);
+  if (!m) throw new Error('正文里没找到「条数 / 字数 / token」这一句');
+  return { entries: toInt(m[1]), charsEach: Number(m[2]), totalCharsWan: Number(m[3]), totalTokensWan: Number(m[4]) };
+}
+
+/** 引用预算：引用条数、引用 token、占全库比例、全库塞入的成本倍数 */
+function parseBudget(text) {
+  const m = text.match(/引用\s*(\d+)\s*条，约\s*([\d,]+)\s*token——是全库的\s*([\d.]+)%/);
+  const x = text.match(/单次成本涨\s*(\d+)\s*倍/);
+  if (!m || !x) throw new Error('正文里没找到引用预算与成本倍数');
+  return { refs: Number(m[1]), refTokens: toInt(m[2]), sharePct: Number(m[3]) / 100, costFactor: Number(x[1]) };
+}
+
+/** 「倒数排序…k 常取 60」 */
+function parseRrfK(text) {
+  const m = text.match(/常取\}[^0-9]{0,12}?(\d+)/) || text.match(/常取\s*(\d+)/);
+  if (!m) throw new Error('正文里没找到倒数排序的 k');
+  return Number(m[1]);
+}
+
+/** 「字面路给出 5 条（其中 3 条含「不寐」），语义路给出 5 条（其中 2 条与字面路重合），融合后取前 5 条」 */
+function parseFusionStory(text) {
+  const m = text.match(/字面路给出\s*(\d+)\s*条（其中\s*(\d+)\s*条含[\s\S]{0,12}?），语义路给出\s*(\d+)\s*条（其中\s*(\d+)\s*条与字面路重合），融合后取前\s*(\d+)\s*条/);
+  if (!m) throw new Error('正文里没找到融合算例');
+  return {
+    literalK: Number(m[1]),
+    literalHit: Number(m[2]),
+    semanticK: Number(m[3]),
+    overlap: Number(m[4]),
+    takeTop: Number(m[5]),
+  };
+}
+
+/** 倒数排序融合：RRF(d) = Σ 1/(k + rank)，rank 从 1 起 */
+function rrf(lists, k) {
+  const score = new Map();
+  for (const list of lists) {
+    list.forEach((id, i) => {
+      score.set(id, (score.get(id) || 0) + 1 / (k + i + 1));
+    });
   }
-  throw new Error('没找到 standards/llm-yu-zhongyi-zhinengti/units.json —— 章节目录是否已脱离仓库？');
+  return [...score.entries()]
+    .map(([id, s]) => ({ id, score: s }))
+    .sort((a, b) => b.score - a.score || (a.id < b.id ? -1 : 1));
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'llm-yu-zhongyi-zhinengti', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'llm-yu-zhongyi-zhinengti', 'chapter-map.json');
-const CHAPTER = '7';
-const SLUG = '07-llm7';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 引用契约的机器校验：编号必须在清单内；「」里的原文必须是资料里的子串 */
+function validateCitations(answer, sources) {
+  const refs = [...answer.matchAll(/\[(\d+)\]/g)].map((m) => Number(m[1]));
+  const uniq = [...new Set(refs)];
+  const missingRefs = uniq.filter((n) => !sources[n]);
+  const quotes = [...answer.matchAll(/[「“]([^」”]+)[」”]/g)].map((m) => m[1]);
+  const pool = uniq.length ? uniq.filter((n) => sources[n]).map((n) => sources[n]) : Object.values(sources);
+  const unverifiedQuotes = quotes.filter((q) => !pool.some((s) => s.includes(q)));
+  return {
+    refs: uniq,
+    missingRefs,
+    unverifiedQuotes,
+    noRefs: uniq.length === 0,
+    ok: uniq.length > 0 && missingRefs.length === 0 && unverifiedQuotes.length === 0,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const kb = parseKb(doc);
+  const bud = parseBudget(doc);
+  const k = parseRrfK(doc);
+  const fus = parseFusionStory(doc);
 
-  console.log(`大模型与中医智能体 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const totalChars = kb.entries * kb.charsEach;
+  const totalTokens = kb.totalTokensWan * 1e4;
+  const share = bud.refTokens / totalTokens;
+  const factor = totalTokens / bud.refTokens;
+
+  console.log('═══ 知识不是喂给模型的背景，是它必须引用的证据 ═══');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log('一、预算算术（正文口径现算）');
+  console.log(`  ${kb.entries.toLocaleString('en-US')} 条 × ${kb.charsEach} 字 = ${totalChars.toLocaleString('en-US')} 字（正文 ${kb.totalCharsWan} 万字）`);
+  console.log(`  全库约 ${(totalTokens / 1e4).toFixed(0)} 万 token；一次引用 ${bud.refs} 条约 ${bud.refTokens.toLocaleString('en-US')} token`);
+  console.log(`  占比 ${(share * 100).toFixed(2)}%（正文 ${(bud.sharePct * 100).toFixed(2)}%）⇒ 全库塞入上下文成本约 ${factor.toFixed(0)} 倍（正文 ${bud.costFactor} 倍）`);
+  console.log(`  问题不是「怎么喂进去」，是「怎么在 ${(share * 100).toFixed(1)}% 的预算里取出恰好那 ${bud.refs} 条」。`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+
+  console.log(`二、融合用倒数排序（k=${k}，只看名次，不看分数）`);
+  console.log(`  正文算例：字面路 ${fus.literalK} 条、语义路 ${fus.semanticK} 条、重合 ${fus.overlap} 条，融合取前 ${fus.takeTop} 条`);
+  const literal = ['a1-不寐', 'a2', 'a3-不寐', 'a4', 'a5-不寐'].slice(0, fus.literalK);
+  const semantic = ['a1-不寐', 'a3-不寐', 'b1', 'b2', 'b3'].slice(0, fus.semanticK);
+  const fused = rrf([literal, semantic], k);
+  fused.slice(0, fus.takeTop).forEach((x, i) => {
+    const tag = literal.includes(x.id) && semantic.includes(x.id) ? '两路都命中' : '单路';
+    console.log(`  ${i + 1}. ${x.id}  ${x.score.toFixed(5)}  ${tag}`);
+  });
+  const topIds = fused.slice(0, fus.overlap).map((x) => x.id).sort().join(',');
+  console.log(`  重合的 ${fus.overlap} 条是否占据最前 ${fus.overlap} 位：${topIds === [...new Set(['a1-不寐', 'a3-不寐'])].sort().join(',') ? '是' : '否'}`);
+  console.log('  融合的价值在头部：两路都认可的条目被顶上来，单路的偶发命中被压下去。');
+  console.log('');
+
+  const sources = {
+    1: '《伤寒论·辨太阳病脉证并治上》第 12 条：太阳中风，阳浮而阴弱。',
+    2: '证候条目「太阳中风」：主症 恶风、汗出；舌脉 脉浮缓；鉴别 与太阳伤寒之别在有无汗出。',
+  };
+  const good = '本条属太阳中风，原文「太阳中风，阳浮而阴弱」[1]，舌脉与鉴别见证候条目 [2]。';
+  const badRef = '本条出自《温病条辨》[3]，可与太阳中风互参 [1]。';
+  const badQuote = '原文「太阳病，脉浮紧」[1]，属表实证。';
+
+  console.log('三、强制引用契约的机器校验（教学构造，不是任何系统的输出）');
+  for (const [name, ans] of [['合规例', good], ['编号不在清单', badRef], ['原文对不上资料', badQuote]]) {
+    const v = validateCitations(ans, sources);
+    const why = v.noRefs ? '无任何引用编号' : v.missingRefs.length ? `编号不存在：${v.missingRefs.join(',')}` : v.unverifiedQuotes.length ? `原文不匹配：${v.unverifiedQuotes.join('／')}` : '通过';
+    console.log(`  ${v.ok ? '✓' : '✗'} ${name}：${why}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('  校验不过就退回重生成，或直接降级为「资料不足」——这是把「看起来有依据」变成「确实有依据」的唯一一步。');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/llm-yu-zhongyi-zhinengti/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 本章数字均从 docs/zh.md 现读现算；正反例为教学构造；输出仅用于教学演示，不构成诊疗、用药或处方建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC,
+  readDoc,
+  parseKb,
+  parseBudget,
+  parseRrfK,
+  parseFusionStory,
+  rrf,
+  validateCitations,
+  main,
+};

@@ -7,56 +7,65 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhishichanquan-zhuanhua', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhishichanquan-zhuanhua', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { parseDefenseTable, literalInfringes, equivalentAvailable, assess, DEFENSES, DOC } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const DOC_TEXT = fs.readFileSync(DOC, 'utf8');
+const ROWS = parseDefenseTable(DOC_TEXT);
+const CLAIM = ['A', 'B', 'C'];
+
+test('抗辩表读出六类，顺序与正文一致', () => {
+  assert.deepStrictEqual(ROWS.map((r) => r.defense), DEFENSES);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('每类抗辩都有核心主张与门槛', () => {
+  for (const r of ROWS) {
+    assert.ok(r.claim.length >= 4, r.defense + ' 缺核心主张');
+    assert.ok(r.threshold.length >= 4, r.defense + ' 缺门槛');
+  }
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('全面覆盖：特征齐全即落入，多出的特征不影响', () => {
+  assert.strictEqual(literalInfringes(CLAIM, ['A', 'B', 'C']), true);
+  assert.strictEqual(literalInfringes(CLAIM, ['A', 'B', 'C', 'D']), true);
+  assert.strictEqual(literalInfringes(CLAIM, ['A', 'B']), false);
+  assert.strictEqual(literalInfringes(CLAIM, ['A', 'C', 'D']), false);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('等同受三条限制，任一触发即不成立', () => {
+  assert.deepStrictEqual(equivalentAvailable({}), { ok: true, reason: '手段、功能、效果实质相同且无需创造性劳动' });
+  assert.deepStrictEqual(equivalentAvailable({ estoppel: true }), { ok: false, reason: '禁止反悔' });
+  assert.deepStrictEqual(equivalentAvailable({ dedicatedToPublic: true }), { ok: false, reason: '捐献规则' });
+  assert.deepStrictEqual(equivalentAvailable({ readsOnPriorArt: true }), { ok: false, reason: '现有技术抗辩的挤压' });
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('两步判定：字面优先，替换特征时才看等同', () => {
+  assert.deepStrictEqual(assess(CLAIM, ['A', 'B', 'C']), { infringes: true, basis: '字面全面覆盖' });
+  const eq = assess(CLAIM, ['A', 'B', 'D'], { equivalents: { C: 'D' } });
+  assert.strictEqual(eq.infringes, true);
+  assert.match(eq.basis, /^等同：/);
+  const est = assess(CLAIM, ['A', 'B', 'D'], { equivalents: { C: 'D' }, estoppel: true });
+  assert.strictEqual(est.infringes, false);
+  assert.match(est.basis, /禁止反悔/);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('缺必要技术特征直接不落入，轮不到等同', () => {
+  const r = assess(CLAIM, ['A', 'B'], {});
+  assert.deepStrictEqual(r, { infringes: false, basis: '不落入（缺少必要技术特征）' });
+  const r2 = assess(CLAIM, ['A', 'B'], { estoppel: false, dedicatedToPublic: false, readsOnPriorArt: false });
+  assert.strictEqual(r2.infringes, false);
+  assert.match(r2.basis, /缺少必要技术特征/);
+});
+
+test('正文保留全面覆盖与三条限制的说法', () => {
+  assert.ok(DOC_TEXT.includes('必须包含权利要求中记载的'));
+  assert.ok(DOC_TEXT.includes('捐献规则'));
+  assert.ok(DOC_TEXT.includes('不能仲裁'));
+});
+
+test('脚本可运行并打印判定与抗辩清单', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhishichanquan-zhuanhua\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/06-ip6/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /抗辩清单（6 类）/);
+  assert.match(out, /审查中已放弃 → 不落入（禁止反悔）/);
 });

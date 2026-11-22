@@ -5,58 +5,93 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { DOC, CHAPTER, TITLE, read, parseCase, solveQ, analyze } = require('./main.js');
 
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-jiqiren-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-jiqiren-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const BODY = read();
+const X = analyze(BODY);
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文就在本章目录下，首行章题与章节元数据一致', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '03-rob3', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 3);
+  assert.ok(BODY.startsWith('# 第 3 章 · ' + TITLE), '正文首行与章题不一致');
+  assert.strictEqual(X.hasTitle, true);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('算例的四条转移从正文读出：S1 两条、S2/S3 各一条', () => {
+  assert.strictEqual(X.edges.length, 4);
+  assert.deepStrictEqual(
+    X.edges.map((e) => `${e.from}-${e.action}->${e.to}:${e.reward}`),
+    ['S1-A->S2:1', 'S1-B->S3:-1', 'S2-A->终止:3', 'S3-A->终止:0'],
+  );
+  assert.deepStrictEqual(parseCase(BODY), X.edges);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('动作空间 3^5 = 243 与正文一致', () => {
+  assert.strictEqual(X.steps, 5);
+  assert.strictEqual(X.branches, 3);
+  assert.strictEqual(X.paths, 243);
+  assert.strictEqual(X.statedPaths, 243);
+  assert.strictEqual(X.paths, X.statedPaths);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('折扣累积：Q(S1,A) = 3.7，Q(S1,B) = −1，与正文两个数字都对上', () => {
+  assert.strictEqual(X.gamma, 0.9);
+  assert.strictEqual(X.alpha, 1);
+  assert.ok(Math.abs(X.q['S1|A'] - 3.7) < 1e-9, `Q(S1,A)=${X.q['S1|A']}`);
+  assert.ok(Math.abs(X.q['S1|B'] + 1) < 1e-9);
+  assert.ok(Math.abs(X.q['S2|A'] - 3) < 1e-9);
+  assert.ok(Math.abs(X.q['S3|A']) < 1e-9);
+  assert.ok(BODY.includes('3.7'), '正文应给出 3.7');
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('自举的含义：Q(S1,A) 大于任何单步奖励', () => {
+  const single = Math.max(...X.edges.map((e) => e.reward));
+  assert.ok(X.q['S1|A'] > single, 'Q 值必须体现后续收益，而不是单步奖励');
+  assert.ok(Math.abs(X.q['S1|A'] - (1 + 0.9 * X.q['S2|A'])) < 1e-9);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('γ 改成 0.1 后差距从 4.7 缩到 2.3', () => {
+  assert.strictEqual(X.gammaAlt, 0.1);
+  assert.ok(Math.abs(X.altQ['S1|A'] - 1.3) < 1e-9, `Q=${X.altQ['S1|A']}`);
+  assert.ok(Math.abs(X.altQ['S1|B'] + 1) < 1e-9);
+  const gap = X.q['S1|A'] - X.q['S1|B'];
+  const gapAlt = X.altQ['S1|A'] - X.altQ['S1|B'];
+  assert.ok(Math.abs(gap - 4.7) < 1e-9);
+  assert.ok(Math.abs(gapAlt - 2.3) < 1e-9);
+  assert.ok(gapAlt < gap, '折现率降低后远期优势必须被压缩');
+});
+
+test('5 步后 +3 的折现：γ=0.9 得 1.77，γ=0.5 得 0.09，结论相反', () => {
+  assert.strictEqual(X.lateSteps, 5);
+  assert.strictEqual(X.late, 3);
+  assert.ok(Math.abs(X.disc09 - 1.77) < 0.01, `disc=${X.disc09}`);
+  assert.ok(Math.abs(X.disc05 - 0.09) < 0.01);
+  assert.ok(X.disc09 > 1, 'γ=0.9 时远期应胜出');
+  assert.ok(X.disc05 < 1, 'γ=0.5 时即时应胜出');
+  assert.ok(Math.abs(0.1 ** 8 - 1e-8) < 1e-12);
+});
+
+test('五元组表 5 行，奖励三类错误与临床三件事都在正文里', () => {
+  assert.strictEqual(X.tuple.length, 5);
+  assert.ok(X.tuple.map((t) => t.math).join('').length > 0);
+  assert.strictEqual(X.rewardErrors, 3);
+  assert.strictEqual(X.clinicalRules, 3);
+});
+
+test('求解器可复用于别的 γ：单调性成立', () => {
+  const low = solveQ(X.edges, 0.1).q['S1|A'];
+  const high = solveQ(X.edges, 0.99).q['S1|A'];
+  assert.ok(high > low, 'γ 越大，远期收益权重越高，Q(S1,A) 应更大');
+  assert.ok(Math.abs(solveQ(X.edges, 0).q['S1|A'] - 1) < 1e-9, 'γ=0 时只剩即时奖励');
+});
+
+test('脚本可运行，输出带现算口径与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-jiqiren-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/03-rob3/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /均从本章 docs\/zh\.md 现算/);
+  assert.match(out, /不构成诊疗方案或处方建议/);
+  assert.ok(out.includes('Q(S1,A) = 3.70'));
+  assert.ok(out.includes('243'));
 });

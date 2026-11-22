@@ -5,58 +5,75 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { DOC, CHAPTER, TITLE, read, cutoff, analyze } = require('./main.js');
 
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-jiqiren-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-jiqiren-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const BODY = read();
+const X = analyze(BODY);
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文就在本章目录下，首行章题与章节元数据一致', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '07-rob7', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 7);
+  assert.ok(BODY.startsWith('# 第 7 章 · ' + TITLE), '正文首行与章题不一致');
+  assert.strictEqual(X.hasTitle, true);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('延迟预算逐行读出：五项不含抱闸共 65 ms，加抱闸 35 ms 到 100 ms', () => {
+  assert.strictEqual(X.budget.length, 6);
+  assert.deepStrictEqual(
+    X.budget.filter((b) => !b.isBrake).map((b) => b.ms),
+    [20, 4, 1, 15, 25],
+  );
+  assert.strictEqual(X.totalWithoutBrake, 65);
+  assert.strictEqual(X.brakeMs, 35);
+  assert.strictEqual(X.totalWithBrake, 100);
+  assert.ok(X.budget[0].stage.includes('滤波窗'));
+  assert.ok(X.budget[X.budget.length - 1].isBrake);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('滤波窗 20 ms 对应约 25 Hz 截止，减半到 10 ms 得 50 Hz', () => {
+  assert.strictEqual(X.winMs, 20);
+  assert.strictEqual(X.winCutDoc, 25);
+  assert.ok(Math.abs(X.winCutModel - 25) < 1e-9, `f_c=${X.winCutModel}`);
+  assert.strictEqual(X.halfMs, 10);
+  assert.ok(Math.abs(X.halfCut - 50) < 1e-9);
+  assert.strictEqual(cutoff(20), 25);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('FMEA 八条，报 0 与通信中断都在清单里', () => {
+  assert.strictEqual(X.fmea.length, 8);
+  assert.ok(X.fmea.some((e) => e.mode.includes('恒为 0')));
+  assert.ok(X.fmea.some((e) => e.mode.includes('通信中断')));
+  const zero = X.fmea.find((e) => e.mode.includes('恒为 0'));
+  assert.match(zero.response, /退让并停机/);
+  assert.match(zero.wrong, /持续下压/);
+  // 第三列与第四列都在：检测到 ≠ 处理对
+  assert.ok(X.fmea.every((e) => e.detect && e.response && e.wrong));
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('停止类别三类，只有 1 类是最常用的受控退让', () => {
+  assert.strictEqual(X.stops.length, 3);
+  assert.deepStrictEqual(X.stops.map((s) => s.cls), ['0 类', '1 类', '2 类']);
+  assert.match(X.stops[0].consequence, /重力下落/);
+  assert.match(X.stops[1].consequence, /平稳退让/);
+  assert.match(X.stops[2].consequence, /压着不动/);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('冗余判据与三句不该出现的表述都在正文里', () => {
+  assert.strictEqual(X.redundancyRule, true);
+  assert.ok(BODY.includes('共因失效'));
+  assert.ok(BODY.includes('测试脉冲'));
+  assert.strictEqual(X.badPhrases.length, 3);
+  assert.ok(X.badPhrases.some((p) => p.includes('确保安全')));
+  assert.ok(X.badPhrases.some((p) => p.includes('无副作用')));
+});
+
+test('脚本可运行，输出带现算口径与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-jiqiren-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/07-rob7/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /均从本章 docs\/zh\.md 现算/);
+  assert.match(out, /不构成安全标准或合规意见/);
+  assert.ok(out.includes('= 65 ms'));
+  assert.ok(out.includes('= 100 ms'));
 });

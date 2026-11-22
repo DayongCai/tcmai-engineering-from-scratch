@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 脉诊客观化 · 第 5 章 决策树与可解释规则：本章统计口径
+ * 脉诊客观化 · 第 5 章 决策树：能背下来的规则，才是能进诊室的规则
  * 课程: departments/07-zhineng/08-maizhen-keguanhua/chapters/05-m5/docs/zh.md
- * 数据: standards/maizhen-keguanhua/units.json（136 单元层，每单元带三辨与四位面词频）
- * 取数: standards/maizhen-keguanhua/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 从正文现算：三套脉名体系的脉数、树的叶子数上限（2^d）、
+ * 一片叶子上「多数」的比例区间（标准误与 95% 半宽）、要素维度数与可读性档位。
  */
 
 'use strict';
@@ -15,87 +13,104 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'maizhen-keguanhua', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 5;
+const TITLE = '决策树：能背下来的规则，才是能进诊室的规则';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function tables(text) {
+  const lines = String(text).split('\n');
+  const out = [];
+  let i = 0;
+  while (i < lines.length) {
+    if (!/^\s*\|/.test(lines[i])) { i += 1; continue; }
+    const block = [];
+    while (i < lines.length && /^\s*\|/.test(lines[i])) { block.push(lines[i]); i += 1; }
+    if (block.length < 3 || !/^\s*\|[\s:|-]+\|\s*$/.test(block[1])) continue;
+    const cells = (l) => l.trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
+    out.push({ header: cells(block[0]), rows: block.slice(2).map(cells) });
   }
-  throw new Error('没找到 standards/maizhen-keguanhua/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'maizhen-keguanhua', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'maizhen-keguanhua', 'chapter-map.json');
-const CHAPTER = '5';
-const SLUG = '05-m5';
+const num = (s) => {
+  const m = String(s).replace(/,/g, '').match(/-?\d+(?:\.\d+)?/);
+  return m ? Number(m[0]) : NaN;
+};
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+/** 深度 d 的二叉树叶子数上限 */
+const leafCap = (d) => 2 ** d;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 一片叶子上「多数」的比例及其 95% 区间（二项正态近似） */
+function leafInterval(k, n) {
+  if (!Number.isInteger(k) || !Number.isInteger(n) || n <= 0 || k < 0 || k > n) throw new Error('计数越界: ' + k + '/' + n);
+  const p = k / n;
+  const se = Math.sqrt((p * (1 - p)) / n);
+  return { k, n, p, se, half: 1.96 * se };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+function analyze(text) {
+  const body = String(text).replace(/\r\n/g, '\n');
+  const tbl = tables(body);
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  const sysT = tbl.find((t) => t.header.includes('脉数'));
+  const systems = sysT ? sysT.rows.map((r) => ({ name: r[0].replace(/《|》/g, ''), count: num(r[1]) })) : [];
+
+  const depthT = tbl.find((t) => t.header.join('').includes('叶子数'));
+  const depths = depthT ? depthT.rows.map((r) => ({ d: num(r[0]), cap: num(r[1]) })) : [];
+
+  const elemT = tbl.find((t) => t.header.includes('要素'));
+  const leafM = body.match(/(\d+)\s*例是 A、(\d+)\s*例是 B/);
+  const nPerLeaf = body.match(/平均每片\s*(\d+)\s*例/);
+  const k = leafM ? Number(leafM[1]) : NaN;
+  const other = leafM ? Number(leafM[2]) : NaN;
+  const n = nPerLeaf ? Number(nPerLeaf[1]) : k + other;
+
+  return {
+    hanzi: (body.match(HANZI) || []).length,
+    tables: tbl.length,
+    systems,
+    depths,
+    elements: elemT ? elemT.rows.length : 0,
+    leaf: leafInterval(k, n),
+    readLevels: depths.length,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const a = analyze(text);
 
-  console.log(`脉诊客观化 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`脉诊客观化 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 表格 ${a.tables} 张 · 要素 ${a.elements} 维`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('三套体系的脉数（正文表格现读）：');
+  for (const s of a.systems) console.log(`  ${s.name}：${s.count} 脉`);
+  console.log('  → 名称在增，类别集合没有闭合；跨研究的混淆矩阵因此无法对齐。');
+  console.log('');
+  console.log('深度 → 叶子数上限（2^d）与可读性：');
+  for (const row of a.depths) {
+    const calc = leafCap(row.d);
+    const flag = calc === row.cap ? '一致' : `表内 ${row.cap}`;
+    console.log(`  深度 ${String(row.d).padStart(2)}  叶子 ≤ ${String(calc).padStart(3)}（${flag}）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  const L = a.leaf;
+  console.log(`叶子上的「多数」：${L.k}/${L.n} → ${(L.p * 100).toFixed(0)}%`);
+  console.log(`  标准误 ${L.se.toFixed(3)}，乘 1.96 得 ±${L.half.toFixed(2)}（即 ±${(L.half * 100).toFixed(0)} 个百分点）`);
+  console.log('  → 一层叶子上的「多数」只撑得起「值得再看一次」，撑不起「这一条是规律」。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/maizhen-keguanhua/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 叶子区间是正文的演算设定（120 例、八片叶），不是任何真实研究的分布。');
+  console.log('※ 本章的规则示例是结构示意，不含真实病例，不得作为诊断依据直接使用。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, analyze, tables, leafCap, leafInterval };

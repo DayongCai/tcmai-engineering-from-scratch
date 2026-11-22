@@ -1,62 +1,134 @@
 'use strict';
 
+/**
+ * 第 1 章 代码自检：正文现算的每个数都要独立复算一遍，quiz 必须与正文同源。
+ * 运行：node --test chapters/01-s1/code/main.test.js
+ */
+
 const test = require('node:test');
 const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-dashuju-fenxi', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-dashuju-fenxi', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const main = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const RAW = () => fs.readFileSync(DOC, 'utf8');
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+test('正文存在，汉字数达到补实门槛（≥2,500）', () => {
+  assert.ok(main.stats(RAW()).hanzi >= 2500, `本章汉字只有 ${main.stats(RAW()).hanzi}`);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('汉字数与独立重算一致', () => {
+  assert.strictEqual(main.stats(RAW()).hanzi, (RAW().match(HANZI) || []).length);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('节数与表数可独立复算，且结构齐备', () => {
+  const text = RAW();
+  const s = main.stats(text);
+  const heads = text.split(/\r?\n/).filter((l) => /^##\s+/.test(l));
+  assert.strictEqual(s.sections, heads.length);
+  assert.ok(heads.length >= 5, `只有 ${heads.length} 节`);
+  assert.ok(heads.some((h) => h.includes('代价与边界')), '缺「代价与边界」节');
+  const tbl = text.split(/\r?\n/).map((l) => l.trim()).filter((l) => /^\|[\s:|-]*---[\s:|-]*\|$/.test(l));
+  assert.strictEqual(s.tables, tbl.length);
+  assert.ok(s.tables >= 2, `只有 ${s.tables} 张表`);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('F1 由正文的 P／R 独立复算，且与正文写法一致', () => {
+  const text = RAW();
+  const pr = [...text.matchAll(/精确率\s*([\d.]+)、召回\s*([\d.]+)/g)].map((m) => [Number(m[1]), Number(m[2])]);
+  assert.strictEqual(pr.length, 3, '正文应给出三层 P／R');
+  const c = main.compute(text);
+  pr.forEach(([p, r], i) => {
+    const independent = (2 * p * r) / (p + r);
+    assert.ok(Math.abs(c.layers[i].f1 - independent) < 1e-12, `第 ${i + 1} 层 F1 复算不一致`);
+  });
+  assert.ok(Math.abs(c.layers[1].f1 - 0.905) < 2e-3, '药名层 F1 应约为 0.905');
+  assert.ok(Math.abs(c.layers[2].f1 - 0.795) < 2e-3, '证候层 F1 应约为 0.795');
+  assert.ok(text.includes('0.905') && text.includes('0.795'), '正文未写出两层 F1');
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('剂量换算与偏差由正文常数独立复算', () => {
+  const text = RAW();
+  const unit = Number(text.match(/1 钱 ≈ ([\d.]+) g/)[1]);
+  assert.ok(Math.abs(unit - 3.73) < 1e-9, '正文换算常数应为 3.73');
+  const grams = 3 * unit;
+  assert.strictEqual(grams.toFixed(1), '11.2');
+  assert.ok(Math.abs((grams - 9) / 9 * 100 - 24.3) < 0.5, '偏差应约 24%');
+  assert.ok(text.includes('单味偏差 24%'), '正文未写偏差 24%');
+  assert.doesNotThrow(() => main.verify(text));
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('截断纵轴的柱高比由正文两率与起点独立复算', () => {
+  const text = RAW();
+  const m = text.match(/治愈率从\s*(\d+)%\s*升到\s*(\d+)%，若 y 轴从\s*(\d+)\s*起/);
+  assert.ok(m, '正文缺截断算例');
+  const ratio = (Number(m[2]) - Number(m[3])) / (Number(m[1]) - Number(m[3]));
+  assert.strictEqual(ratio, 2);
+  assert.ok(text.includes('2:1'));
+});
+
+test('正文边界声明齐备：演算设定与免责声明', () => {
+  const s = main.stats(RAW());
+  assert.ok(s.drills >= 1, '正文没有「演算设定」标注');
+  assert.ok(s.disclaimer, '正文缺免责声明');
+});
+
+test('quiz：≥5 题，覆盖 pre／check／post，4 选项，explain ≥30 汉字', () => {
+  const qs = JSON.parse(fs.readFileSync(QUIZ, 'utf8')).questions;
+  assert.ok(qs.length >= 5, `只有 ${qs.length} 题`);
+  const stages = new Set(qs.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), `缺 ${s} 段`);
+  for (const q of qs) {
+    assert.strictEqual(q.options.length, 4, `选项不是 4 个：${q.question}`);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, `correct 非法：${q.question}`);
+    assert.ok((String(q.explain).match(HANZI) || []).length >= 30, `explain 过短：${q.question}`);
+  }
+});
+
+test('quiz：答案打散，正确选项不集中在同一位置', () => {
+  const qs = JSON.parse(fs.readFileSync(QUIZ, 'utf8')).questions;
+  const used = new Set(qs.map((q) => q.correct));
+  assert.ok(used.size >= 3, `正确项只落在 ${used.size} 个位置`);
+  assert.ok(!qs.every((q, i) => i === 0 || q.correct !== qs[i - 1].correct), '相邻两题答案不应完全相同');
+});
+
+test('quiz：至少 2 道 check 题的正确选项含正文原词（≥4 汉字）', () => {
+  const qs = JSON.parse(fs.readFileSync(QUIZ, 'utf8')).questions;
+  const body = new Set();
+  for (const seg of RAW().replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + 4 <= seg.length; i += 1) body.add(seg.slice(i, i + 4));
+  }
+  const hit = (s) =>
+    String(s)
+      .replace(/[^\u4e00-\u9fff]/g, ' ')
+      .split(/\s+/)
+      .some((seg) => {
+        for (let i = 0; i + 4 <= seg.length; i += 1) if (body.has(seg.slice(i, i + 4))) return true;
+        return false;
+      });
+  const grounded = qs.filter((q) => q.stage === 'check' && hit(q.options[q.correct])).length;
+  assert.ok(grounded >= 2, `只有 ${grounded} 道 check 题接地`);
+});
+
+test('quiz 与 code 都不含脚手架指纹', () => {
+  const bad = [/三辨/, /四位面/, /单元规模/, /本章实测/, /本课第\s*\d+\s*章/, /见\s*code\/main\.js\s*输出/];
+  for (const p of bad) {
+    assert.ok(!p.test(fs.readFileSync(QUIZ, 'utf8')), `quiz 含脚手架指纹 ${p}`);
+    assert.ok(!p.test(fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8')), `code 含脚手架指纹 ${p}`);
+  }
+});
+
+test('脚本可运行，输出含现算数字与边界声明', () => {
+  const c = main.verify(RAW());
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8' });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-dashuju-fenxi\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/01-s1/docs/zh.md'), '头部注释未指向本章');
+  assert.ok(out.includes(c.layers[1].f1.toFixed(3)), '输出未打印药名层 F1');
+  assert.ok(out.includes('现算'), '输出未声明数字来源');
+  assert.ok(out.includes('演算设定'), '输出未提示数值为演算设定');
 });

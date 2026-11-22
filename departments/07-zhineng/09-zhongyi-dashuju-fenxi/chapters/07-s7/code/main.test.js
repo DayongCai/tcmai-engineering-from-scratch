@@ -1,62 +1,137 @@
 'use strict';
 
+/**
+ * 第 7 章 代码自检：似然比、验后概率、诊断样本量与净收益都要从正文原始数独立复算，quiz 与正文同源。
+ * 运行：node --test chapters/07-s7/code/main.test.js
+ */
+
 const test = require('node:test');
 const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-dashuju-fenxi', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-dashuju-fenxi', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const main = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const RAW = () => fs.readFileSync(DOC, 'utf8');
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+test('正文存在，汉字数达到补实门槛（≥2,500）', () => {
+  const s = main.stats(RAW());
+  assert.ok(s.hanzi >= 2500, `本章汉字只有 ${s.hanzi}`);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('汉字数、节数、表数独立复算一致', () => {
+  const text = RAW();
+  const s = main.stats(text);
+  assert.strictEqual(s.hanzi, (text.match(HANZI) || []).length);
+  const heads = text.split(/\r?\n/).filter((l) => /^##\s+/.test(l));
+  assert.strictEqual(s.sections, heads.length);
+  assert.ok(heads.some((h) => h.includes('代价与边界')), '缺「代价与边界」节');
+  const tbl = text.split(/\r?\n/).map((l) => l.trim()).filter((l) => /^\|[\s:|-]*---[\s:|-]*\|$/.test(l));
+  assert.strictEqual(s.tables, tbl.length);
+  assert.ok(s.tables >= 2);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('似然比由 Sens／Spec 独立复算', () => {
+  const c = main.compute(RAW());
+  assert.ok(Math.abs(c.lr.lrPos - 0.85 / 0.1) < 1e-12);
+  assert.ok(Math.abs(c.lr.lrNeg - 0.15 / 0.9) < 1e-12);
+  assert.strictEqual(c.lr.lrPos.toFixed(1), '8.5');
+  assert.strictEqual(c.lr.lrNeg.toFixed(3), '0.167');
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('三档验前概率的验后概率独立复算，与表内一致', () => {
+  const text = RAW();
+  const c = main.compute(text);
+  assert.strictEqual(c.table.length, 3);
+  for (const r of c.table) {
+    const odds = r.prior / (1 - r.prior);
+    const post = (odds * 8.5) / (1 + odds * 8.5);
+    assert.ok(Math.abs(r.postProb - post) < 1e-12);
+    assert.ok(Math.abs(r.postProb * 100 - r.statedPost) < 0.15, `验前 ${r.prior * 100}% 不一致`);
+    assert.ok(text.includes(r.statedPost.toFixed(1) + '%'));
+  }
+  assert.strictEqual((c.table[0].postProb * 100).toFixed(1), '30.9');
+  assert.strictEqual((c.table[2].postProb * 100).toFixed(1), '92.7');
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('诊断样本量按精度公式独立复算', () => {
+  const c = main.compute(RAW());
+  const n = (1.96 / 0.05) ** 2 * 0.85 * 0.15;
+  assert.ok(Math.abs(c.sample.n - n) < 1e-12);
+  assert.strictEqual(n.toFixed(1), '195.9');
+  assert.strictEqual(c.sample.stated, 196);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('决策曲线的净收益与全治净收益独立复算', () => {
+  const c = main.compute(RAW());
+  assert.strictEqual(c.dca.total, 1000);
+  assert.ok(Math.abs(c.dca.model - (88 / 1000 - (90 / 1000) * 0.25)) < 1e-12);
+  assert.strictEqual(c.dca.model.toFixed(4), '0.0655');
+  assert.strictEqual(c.dca.treatAll.toFixed(3), '-0.125');
+  assert.ok(c.dca.gain > 0.18, '模型应比全治多出约 0.19 净收益');
+  assert.doesNotThrow(() => main.verify(RAW()));
+});
+
+test('正文边界声明齐备：演算设定与免责声明', () => {
+  const s = main.stats(RAW());
+  assert.ok(s.drills >= 1);
+  assert.ok(s.disclaimer);
+});
+
+test('quiz：≥5 题，覆盖 pre／check／post，4 选项，explain ≥30 汉字', () => {
+  const qs = JSON.parse(fs.readFileSync(QUIZ, 'utf8')).questions;
+  assert.ok(qs.length >= 5, `只有 ${qs.length} 题`);
+  const stages = new Set(qs.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), `缺 ${s} 段`);
+  for (const q of qs) {
+    assert.strictEqual(q.options.length, 4, `选项不是 4 个：${q.question}`);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, `correct 非法：${q.question}`);
+    assert.ok((String(q.explain).match(HANZI) || []).length >= 30, `explain 过短：${q.question}`);
+  }
+});
+
+test('quiz：答案打散，正确选项不集中在一处', () => {
+  const qs = JSON.parse(fs.readFileSync(QUIZ, 'utf8')).questions;
+  assert.ok(new Set(qs.map((q) => q.correct)).size >= 3, '正确项位置过于集中');
+});
+
+test('quiz：至少 2 道 check 题的正确选项含正文原词（≥4 汉字）', () => {
+  const qs = JSON.parse(fs.readFileSync(QUIZ, 'utf8')).questions;
+  const body = new Set();
+  for (const seg of RAW().replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + 4 <= seg.length; i += 1) body.add(seg.slice(i, i + 4));
+  }
+  const hit = (s) =>
+    String(s)
+      .replace(/[^\u4e00-\u9fff]/g, ' ')
+      .split(/\s+/)
+      .some((seg) => {
+        for (let i = 0; i + 4 <= seg.length; i += 1) if (body.has(seg.slice(i, i + 4))) return true;
+        return false;
+      });
+  const grounded = qs.filter((q) => q.stage === 'check' && hit(q.options[q.correct])).length;
+  assert.ok(grounded >= 2, `只有 ${grounded} 道 check 题接地`);
+});
+
+test('quiz 与 code 都不含脚手架指纹', () => {
+  const bad = [/三辨/, /四位面/, /单元规模/, /本章实测/, /本课第\s*\d+\s*章/, /见\s*code\/main\.js\s*输出/];
+  for (const p of bad) {
+    assert.ok(!p.test(fs.readFileSync(QUIZ, 'utf8')), `quiz 含 ${p}`);
+    assert.ok(!p.test(fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8')), `code 含 ${p}`);
+  }
+});
+
+test('脚本可运行，输出含似然比与边界声明', () => {
+  const c = main.verify(RAW());
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8' });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-dashuju-fenxi\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/07-s7/docs/zh.md'), '头部注释未指向本章');
+  assert.ok(out.includes(c.lr.lrPos.toFixed(1)), '输出未打印阳性似然比');
+  assert.ok(out.includes(c.dca.model.toFixed(4)), '输出未打印模型净收益');
+  assert.ok(out.includes('现算'), '输出未声明数字来源');
+  assert.ok(out.includes('演算设定'), '输出未提示数值为演算设定');
 });

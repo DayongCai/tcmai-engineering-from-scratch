@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 知识产权转化 · 第 4 章 成果转化：从实验室到产品：本章统计口径
+ * 知识产权转化 · 第 4 章 把不确定的未来切成可交付的几段
  * 课程: departments/06-guanli/14-zhishichanquan-zhuanhua/chapters/04-ip4/docs/zh.md
- * 数据: standards/zhishichanquan-zhuanhua/units.json（44 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhishichanquan-zhuanhua/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 正文第一节是四条路径的对照表（转让什么 / 对价形式 / 剩余控制 / 退出难度），
+ * 第四节给了七个合同问题，第二节给了尽调六问，第三节给了三种定价方法。
+ * 这里把三张清单都从正文读出来，并把「里程碑能不能执行」做成判据。
+ *
+ * 依赖: 仅 Node.js 标准库
  */
 
 'use strict';
@@ -15,87 +15,93 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhishichanquan-zhuanhua', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const PATHS = ['自行实施', '许可', '转让', '作价入股'];
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+function cells(line) {
+  return line.split('|').slice(1, -1).map((s) => s.trim());
+}
+
+/** 读出四条转化路径 */
+function parsePathTable(text) {
+  const rows = [];
+  for (const line of text.split(/\r?\n/)) {
+    if (!line.trim().startsWith('|')) continue;
+    const c = cells(line);
+    if (c.length < 5) continue;
+    if (!PATHS.includes(c[0])) continue;
+    rows.push({ path: c[0], object: c[1], payment: c[2], control: c[3], exit: c[4] });
   }
-  throw new Error('没找到 standards/zhishichanquan-zhuanhua/units.json —— 章节目录是否已脱离仓库？');
+  return rows;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhishichanquan-zhuanhua', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhishichanquan-zhuanhua', 'chapter-map.json');
-const CHAPTER = '4';
-const SLUG = '04-ip4';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 该路径是否仍保留权利本身（看剩余控制一栏的措辞） */
+function retainsOwnership(row) {
+  return /保留所有权|完全|间接控制/.test(row.control);
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 里程碑是否可以执行：必须绑定可验证事件，不接受「顺利」「进展」这类描述 */
+function isVerifiableMilestone(text) {
+  if (/顺利|进展良好|按计划推进/.test(text)) return false;
+  return /提交注册申请|取得批件|销量|上市|验收/.test(text);
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** 第二节的尽调六问（按括号深度切分，括号内的顿号不算分隔） */
+function diligenceQuestions(text) {
+  const m = text.match(/尽调清单可以压缩成六问：([^。]+)。/);
+  if (!m) return [];
+  const out = [];
+  let buf = '';
+  let depth = 0;
+  for (const ch of m[1]) {
+    if (ch === '（') depth += 1;
+    if (ch === '）') depth = Math.max(0, depth - 1);
+    if (ch === '、' && depth === 0) {
+      out.push(buf.trim());
+      buf = '';
+    } else {
+      buf += ch;
+    }
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  if (buf.trim()) out.push(buf.trim());
+  return out.filter(Boolean);
+}
+
+/** 第四节列出的七个合同问题（编号 1–7） */
+function contractPoints(text) {
+  const sec = text.split('## 四、合同要点')[1] || '';
+  const body = sec.split('## 五、')[0];
+  return body
+    .split(/\r?\n/)
+    .map((l) => l.match(/^(\d)\.\s*\*\*([^*]+)\*\*/))
+    .filter(Boolean)
+    .map((m) => ({ n: Number(m[1]), title: m[2] }));
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = readDoc();
+  const rows = parsePathTable(text);
+  if (rows.length !== PATHS.length) throw new Error('路径表读出 ' + rows.length + ' 行，与预期不符');
 
-  console.log(`知识产权转化 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('第 4 章 · 四条路径与合同结构');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  for (const r of rows) {
+    console.log('  ' + r.path.padEnd(4, '　') + ' ' + (retainsOwnership(r) ? '仍保留权利' : '权利已交出') + ' · ' + r.payment);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('尽调六问（' + diligenceQuestions(text).length + ' 项）：' + diligenceQuestions(text).join(' / '));
+  console.log('合同七问（' + contractPoints(text).length + ' 项）：' + contractPoints(text).map((p) => p.title).join(' / '));
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('里程碑判据：');
+  console.log('  「取得批件后支付」→ ' + (isVerifiableMilestone('取得批件后支付') ? '可执行' : '不可执行'));
+  console.log('  「项目进展顺利时支付」→ ' + (isVerifiableMilestone('项目进展顺利时支付') ? '可执行' : '不可执行'));
   console.log('');
-  console.log('※ 教学样例：数字由 standards/zhishichanquan-zhuanhua/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 三张清单均从本章正文读出；不给价格、比例与分成区间。');
+  console.log('※ 本章不构成投资建议或资产评估意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { parsePathTable, retainsOwnership, isVerifiableMilestone, diligenceQuestions, contractPoints, PATHS, DOC };
