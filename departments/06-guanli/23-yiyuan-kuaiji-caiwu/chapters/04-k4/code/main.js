@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 医院会计与财务管理 · 第 4 章 医院财务报告与财务分析：本章统计口径
- * 课程: departments/06-guanli/23-yiyuan-kuaiji-caiwu/chapters/04-k4/docs/zh.md
- * 数据: standards/23-yiyuan-kuaiji-caiwu/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/23-yiyuan-kuaiji-caiwu/chapter-map.json（课程章 → 教材单元号）
+ * 医院会计与财务管理 · 第 4 章 三张表要一起读
+ * 课程正文: departments/06-guanli/23-yiyuan-kuaiji-caiwu/chapters/04-k4/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 正文的四组结构比率、三层结余、间接法现金流调节表都写在文里。
+ * 脚本从正文抓出各项金额，逐项现算，再与正文印出的比率和结果对账。
  */
 
 'use strict';
@@ -15,87 +13,119 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/23-yiyuan-kuaiji-caiwu/units.json —— 章节目录是否已脱离仓库？');
+const DOC_PATH = path.join(__dirname, '..', 'docs', 'zh.md');
+
+function readDoc() {
+  return fs.readFileSync(DOC_PATH, 'utf8');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json');
-const MAP = path.join(ROOT, 'standards', '23-yiyuan-kuaiji-caiwu', 'chapter-map.json');
-const CHAPTER = '4';
-const SLUG = '04-k4';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function parseParams(doc) {
+  const num = (re, label) => {
+    const m = doc.match(re);
+    if (!m) throw new Error(`正文里找不到${label}`);
+    return Number(m[1].replace(/,/g, ''));
+  };
+  const pair = (re, label) => {
+    const m = doc.match(re);
+    if (!m) throw new Error(`正文里找不到${label}`);
+    return [Number(m[1].replace(/,/g, '')), Number(m[2].replace(/,/g, ''))];
+  };
+  const head = doc.match(/资产\s*([\d,]+)\s*万元、负债\s*([\d,]+)\s*万元、净资产\s*([\d,]+)\s*万元/);
+  if (!head) throw new Error('正文里找不到资产／负债／净资产三项');
+  const [curAssets, curLiab] = pair(/流动比率\s*\|\s*([\d,]+)\s*÷\s*([\d,]+)/, '流动比率');
+  const quick = doc.match(/速动比率\s*\|\s*\(([\d,]+)\s*−\s*([\d,]+)\)\s*÷\s*([\d,]+)/);
+  if (!quick) throw new Error('正文里找不到速动比率');
+  const [nonCurAsset, totalAsset] = pair(/非流动资产占比\s*\|\s*([\d,]+)\s*÷\s*([\d,]+)/, '非流动资产占比');
+  return {
+    assets: Number(head[1].replace(/,/g, '')),
+    liab: Number(head[2].replace(/,/g, '')),
+    netAssets: Number(head[3].replace(/,/g, '')),
+    curAssets,
+    curLiab,
+    stock: Number(quick[2].replace(/,/g, '')),
+    nonCurAsset,
+    totalAsset,
+    medRevenue: num(/医疗收入\s*([\d,]+)\s*−\s*医疗业务成本/, '医疗收入'),
+    medCost: num(/−\s*医疗业务成本\s*([\d,]+)/, '医疗业务成本'),
+    fiscalSubsidy: num(/\+ ([\d,]+) − 单位管理费用/, '财政基本补助'),
+    adminCost: num(/− 单位管理费用\s*([\d,]+)/, '单位管理费用'),
+    otherCost: num(/1,900 − 其他费用\s*([\d,]+)/, '其他费用'),
+    surplus: num(/本期盈余\s*\|\s*([\d,]+)/, '本期盈余'),
+    depreciation: num(/固定资产折旧\s*\|\s*([\d,]+)/, '折旧'),
+    arIncrease: num(/应收医疗款增加\s*\|\s*([\d,]+)/, '应收增加'),
+    apIncrease: num(/应付账款增加\s*\|\s*([\d,]+)/, '应付增加'),
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function compute(p) {
+  const gross = p.medRevenue - p.medCost;
+  const afterSubsidy = gross + p.fiscalSubsidy - p.adminCost;
+  const final = afterSubsidy - p.otherCost;
+  const opCash = p.surplus + p.depreciation - p.arIncrease + p.apIncrease;
+  return {
+    debtRatio: (p.liab / p.assets) * 100,
+    currentRatio: p.curAssets / p.curLiab,
+    quickRatio: (p.curAssets - p.stock) / p.curLiab,
+    fixedShare: (p.nonCurAsset / p.totalAsset) * 100,
+    gross,
+    grossMargin: (gross / p.medRevenue) * 100,
+    afterSubsidy,
+    final,
+    opCash,
+    shortGap: p.curLiab - p.curAssets,
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+const wan = (n) => n.toLocaleString('en-US');
+const pct = (x) => `${x.toFixed(1)}%`;
+
+function assertDocNumbers(doc, p, r) {
+  const report = [];
+  const expect = (ok, label) => {
+    if (!ok) throw new Error(`正文对账失败：${label}`);
+    report.push(label);
+  };
+  expect(p.assets === p.liab + p.netAssets, '资产 120,000 = 负债 45,600 + 净资产 74,400');
+  expect(Math.abs(r.debtRatio - 38.0) < 0.05 && doc.includes('38.0%'), '资产负债率 38.0%');
+  expect(Math.abs(r.currentRatio - 0.9) < 0.005 && doc.includes('0.90'), '流动比率 0.90');
+  expect(Math.abs(r.quickRatio - 0.7) < 0.005 && doc.includes('0.70'), '速动比率 0.70');
+  expect(Math.abs(r.fixedShare - 70.0) < 0.05 && doc.includes('70.0%'), '非流动资产占比 70.0%');
+  expect(r.shortGap === 4000 && doc.includes('多 4,000 万元'), '短债比短资产多 4,000 万元');
+  expect(r.gross === 3600 && r.afterSubsidy === 1900 && r.final === 1800, '三层结余 3,600 → 1,900 → 1,800');
+  expect(Math.abs(r.grossMargin - 4.3) < 0.05 && doc.includes('毛利 4.3%'), '医疗服务毛利率 4.3%');
+  expect(r.opCash === 4900 && doc.includes('1,800 + 6,100 − 3,200 + 200 = 4,900'), '经营现金 4,900');
+  expect(r.final === p.surplus, '第三层结余等于本期盈余 1,800');
+  return report;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const p = parseParams(doc);
+  const r = compute(p);
 
-  console.log(`医院会计与财务管理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医院会计与财务管理 · 第 4 章 三张表要一起读');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log('结构比率：');
+  console.log(`  资产负债率　${wan(p.liab)} ÷ ${wan(p.assets)} = ${pct(r.debtRatio)}`);
+  console.log(`  流动比率　　${wan(p.curAssets)} ÷ ${wan(p.curLiab)} = ${r.currentRatio.toFixed(2)}（短债多出 ${wan(r.shortGap)} 万元）`);
+  console.log(`  速动比率　　(${wan(p.curAssets)} − ${wan(p.stock)}) ÷ ${wan(p.curLiab)} = ${r.quickRatio.toFixed(2)}`);
+  console.log(`  非流动占比　${wan(p.nonCurAsset)} ÷ ${wan(p.totalAsset)} = ${pct(r.fixedShare)}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('结余三层（万元）：');
+  console.log(`  医疗服务毛结余　${wan(p.medRevenue)} − ${wan(p.medCost)} = ${wan(r.gross)}（毛利率 ${pct(r.grossMargin)}）`);
+  console.log(`  加财政基本补助　${wan(r.gross)} + ${wan(p.fiscalSubsidy)} − ${wan(p.adminCost)} = ${wan(r.afterSubsidy)}`);
+  console.log(`  加减其他项　　　${wan(r.afterSubsidy)} − ${wan(p.otherCost)} = ${wan(r.final)}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('间接法现金流（万元）：');
+  console.log(`  ${wan(p.surplus)} + ${wan(p.depreciation)} − ${wan(p.arIncrease)} + ${wan(p.apIncrease)} = ${wan(r.opCash)}`);
+  console.log('结论：单看一张表，结论必然被它骗 —— 负债率健康的外观下藏着期限错配。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  for (const line of assertDocNumbers(doc, p, r)) console.log(`  ✓ ${line}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/23-yiyuan-kuaiji-caiwu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 比率由本章正文现算，正文改数后会直接抛错。');
+  console.log('※ 教学示意，不构成投资建议或信用评价。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, parseParams, compute, assertDocNumbers, DOC_PATH };

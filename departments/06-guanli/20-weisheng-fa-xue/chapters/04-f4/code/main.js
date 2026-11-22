@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 卫生法学 · 第 4 章 卫生行政与行政执法：本章统计口径
+ * 卫生法学 · 第 4 章 管得住权力的不是权限，是记录：卫生监督与行政处罚
  * 课程: departments/06-guanli/20-weisheng-fa-xue/chapters/04-f4/docs/zh.md
- * 数据: standards/20-weisheng-fa-xue/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/20-weisheng-fa-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 全部数字从本章正文现算：汉字数、节数与逐节字数、表格数、书名引文、加粗判断，
+ * 本章五个判据词的出现次数，以及「义务句 / 宣示句 / 软责任句」三类句式计数。
+ * 正文改一个字，这里就跟着变；手打的数字会在改稿后静默过期。
  */
 
 'use strict';
@@ -15,87 +14,113 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '20-weisheng-fa-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 4;
+const TITLE = '管得住权力的不是权限，是记录：卫生监督与行政处罚';
+
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+/** 本章五个判据词 */
+const TERMS = ['证据', '程序', '裁量', '告知', '管辖'];
+
+/** 三类句式：义务句、宣示句、软责任句 */
+const MODALS = {
+  义务句: ['应当', '不得', '须经'],
+  宣示句: ['鼓励', '支持', '推动', '探索'],
+  软责任句: ['依法处理'],
+};
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+const count = (text, needle) => {
+  let n = 0;
+  let i = text.indexOf(needle);
+  while (i !== -1) {
+    n += 1;
+    i = text.indexOf(needle, i + needle.length);
   }
-  throw new Error('没找到 standards/20-weisheng-fa-xue/units.json —— 章节目录是否已脱离仓库？');
-}
+  return n;
+};
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '20-weisheng-fa-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '20-weisheng-fa-xue', 'chapter-map.json');
-const CHAPTER = '4';
-const SLUG = '04-f4';
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const hanzi = (body.match(HANZI) || []).length;
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+  const sections = [];
+  const lines = body.split('\n');
+  let cur = null;
+  for (const line of lines) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) {
+      cur = { title: h[1], hanzi: 0 };
+      sections.push(cur);
+      continue;
+    }
+    if (cur) cur.hanzi += (line.match(HANZI) || []).length;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+
+  const tables = (body.match(/^\s*\|[\s:|-]+\|\s*$/gm) || []).length;
+  const cites = [...new Set([...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]))];
+  const claims = (body.match(/\*\*[^*\n]+\*\*/g) || []).length;
+
+  const terms = {};
+  for (const t of TERMS) terms[t] = count(body, t);
+
+  const modals = {};
+  for (const [k, arr] of Object.entries(MODALS)) {
+    modals[k] = arr.reduce((s, w) => s + count(body, w), 0);
+  }
+
+  return { hanzi, sections, tables, cites, claims, terms, modals };
+}
+
+/** 判据自检：五词里最高频的那一个，以及它占全篇的密度 */
+function keyTerm(a) {
+  const sorted = Object.entries(a.terms).sort((x, y) => y[1] - x[1]);
+  const [term, times] = sorted[0] || ['—', 0];
+  const total = Object.values(a.terms).reduce((s, v) => s + v, 0);
+  return { term, times, total, sorted };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const a = analyze(read());
+  const k = keyTerm(a);
+  const per = a.hanzi ? (n) => ((n / a.hanzi) * 1000).toFixed(2) : () => '0.00';
+  const first = a.sections[0] || { title: '—', hanzi: 0 };
+  const fattest = a.sections.reduce((m, s) => (s.hanzi > m.hanzi ? s : m), first);
+  const thinnest = a.sections.reduce((m, s) => (s.hanzi < m.hanzi ? s : m), first);
 
-  console.log(`卫生法学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`卫生法学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 表格 ${a.tables} 张 · 书名引文 ${a.cites.length} 条 · 加粗判断 ${a.claims} 处`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('逐节字数：');
+  for (const s of a.sections) {
+    console.log(`  ${s.title.padEnd(22, '　')} ${String(s.hanzi).padStart(5)} 字（${((s.hanzi / a.hanzi) * 100).toFixed(1)}%）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`  最长一节：${fattest.title}（${fattest.hanzi} 字）；最短一节：${thinnest.title}（${thinnest.hanzi} 字）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
+  console.log('本章判据词频（每千汉字）：');
+  for (const [t, v] of k.sorted) {
+    console.log(`  ${t.padEnd(6, '　')} ${String(v).padStart(3)} 次 · ${per(v)}‰`);
   }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`  → 最高频：${k.term}（${k.times} 次，五词合计 ${k.total} 次）`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('句式分布：');
+  console.log(`  义务句（应当/不得/须经）      ${a.modals.义务句} 处`);
+  console.log(`  宣示句（鼓励/支持/推动/探索）${a.modals.宣示句} 处`);
+  console.log(`  软责任句（依法处理）          ${a.modals.软责任句} 处`);
+  console.log('  义务句多于宣示句 = 这一章在讲约束；反之在讲方向。');
   console.log('');
-  console.log('※ 教学样例：数字由 standards/20-weisheng-fa-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`引文清单：${a.cites.length ? a.cites.map((x) => `《${x}》`).join('、') : '（本章未引书名）'}`);
+  console.log('');
+  console.log('※ 数字由本章正文现算，正文一改即随之变化；本章讲分析框架，不构成法律意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, TERMS, MODALS, read, analyze, keyTerm };

@@ -5,58 +5,62 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const {
+  readDoc, loadUnits, summarize, docClaims, reconcile, DOC_PATH, UNITS_PATH,
+} = require('./main.js');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '23-yiyuan-kuaiji-caiwu', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
-
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文与单元层数据源都可读', () => {
+  assert.ok(fs.existsSync(DOC_PATH));
+  assert.ok(fs.existsSync(UNITS_PATH));
+  const body = fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8');
+  assert.ok(body.includes('/chapters/18-k18/docs/zh.md'));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('单元层现算：18 章、198 单元、每章 11 单元', () => {
+  const s = summarize(loadUnits().units);
+  assert.strictEqual(s.chapters, 18);
+  assert.strictEqual(s.units, 198);
+  assert.strictEqual(s.unitsPerChapter, 11);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('汉字总数与每单元平均字', () => {
+  const s = summarize(loadUnits().units);
+  assert.strictEqual(s.hanzi, 300568);
+  assert.ok(Math.abs(s.perUnit - 1518.02) < 0.01);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('章汉字区间与极差可复算', () => {
+  const s = summarize(loadUnits().units);
+  assert.strictEqual(s.minChapter, 15422);
+  assert.strictEqual(s.maxChapter, 17712);
+  assert.strictEqual(s.spread, 2290);
+  assert.ok(Math.abs(s.spreadRate - 14.85) < 0.05);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('正文所写的章数与单元数与数据源一致', () => {
+  const doc = readDoc();
+  const c = docClaims(doc);
+  assert.strictEqual(c.chapters, 18);
+  assert.strictEqual(c.units, 198);
+  assert.strictEqual(c.hanzi, 300568);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('正文与真源逐项对得上（无可复算缺口）', () => {
+  const doc = readDoc();
+  const s = summarize(loadUnits().units);
+  const r = reconcile(doc, s);
+  assert.deepStrictEqual(r.mismatches, []);
+  assert.strictEqual(r.claims.perUnit, 1518);
+  assert.strictEqual(r.claims.rangeLow, 15422);
+  assert.strictEqual(r.claims.rangeHigh, 17712);
+  assert.strictEqual(r.claims.spread, 2290);
+});
+
+test('脚本可运行，输出含现算结果与比对结论', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/23-yiyuan-kuaiji-caiwu\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/18-k18/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /现算：18 章、198 单元、300,568 汉字/);
+  assert.match(out, /章汉字区间 15,422 — 17,712/);
+  assert.match(out, /不是演算设定/);
 });

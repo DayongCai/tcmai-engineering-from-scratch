@@ -6,57 +6,82 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '17-guanli-xue-jichu', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '17-guanli-xue-jichu', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const {
+  DOC,
+  CHAPTER,
+  TITLE,
+  read,
+  facts,
+  liftPct,
+  effectLift,
+  waitLift,
+  waitOverOutput,
+  annualAddedWaitHours,
+  serviceDelta,
+} = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const TEXT = read();
+const F = facts(TEXT);
+
+test('正文就在本章目录下，章号与标题对得上', () => {
+  assert.ok(fs.existsSync(DOC), DOC);
+  assert.ok(DOC.endsWith(path.join('chapters', '01-m1', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 1);
+  assert.strictEqual(TITLE, '管理不是把事做完，是让同样的力气换出不同的结果');
+  assert.match(TEXT, /^# 第 1 章/);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('五个数都真的取自正文，不是写在代码里', () => {
+  assert.strictEqual(F.visitsWan, 48.6);
+  assert.strictEqual(F.visitGrowthPct, 31);
+  assert.strictEqual(F.perDayLow, 52);
+  assert.strictEqual(F.perDayHigh, 68);
+  assert.strictEqual(F.waitLow, 28);
+  assert.strictEqual(F.waitHigh, 46);
+  assert.strictEqual(F.satHigh, 91.2);
+  assert.strictEqual(F.satLow, 86.4);
+  assert.strictEqual(F.complaintGrowthPct, 42);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('效果侧与效率侧由同一组数算出，方向相反', () => {
+  assert.ok(Math.abs(effectLift(F) - 30.769) < 0.01, String(effectLift(F)));
+  assert.ok(Math.abs(waitLift(F) - 64.286) < 0.01, String(waitLift(F)));
+  assert.ok(effectLift(F) > 0, '单位产出应为正增长');
+  assert.ok(waitLift(F) > 0, '等待成本应为正增长');
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('等待增速快于产出增速，比值可复算', () => {
+  const ratio = waitOverOutput(F);
+  assert.ok(ratio > 2 && ratio < 2.1, String(ratio));
+  assert.strictEqual(waitOverOutput(F), waitLift(F) / effectLift(F));
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('单次候诊增量摊到全年门诊量即全年新增等待人时', () => {
+  const hours = annualAddedWaitHours(F);
+  assert.strictEqual(hours, (F.visitsWan * 10000 * (F.waitHigh - F.waitLow)) / 60);
+  assert.ok(Math.abs(hours - 145800) < 1, String(hours));
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('满意度与投诉是两条反向曲线', () => {
+  const d = serviceDelta(F);
+  assert.ok(Math.abs(d.satDelta + 4.8) < 1e-9, String(d.satDelta));
+  assert.ok(d.satDelta < 0);
+  assert.strictEqual(d.complaintLiftPct, 42);
+});
+
+test('liftPct 对零或负基期报错，不返回 Infinity', () => {
+  assert.throws(() => liftPct(0, 10), /基期必须为正/);
+  assert.throws(() => liftPct(-1, 10), /基期必须为正/);
+  assert.strictEqual(liftPct(50, 100), 100);
+});
+
+test('脚本可运行，输出三本账与边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/17-guanli-xue-jichu\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/01-m1/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /效果账/);
+  assert.match(out, /效率账/);
+  assert.match(out, /三本账/);
+  assert.match(out, /现算/);
+  assert.match(out, /不构成管理咨询意见或绩效分配依据/);
 });

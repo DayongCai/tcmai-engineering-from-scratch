@@ -1,19 +1,20 @@
 #!/usr/bin/env node
 /**
- * 医院会计与财务管理 · 第 18 章 医院会计与财务管理与 tcmP 平台：本章统计口径
- * 课程: departments/06-guanli/23-yiyuan-kuaiji-caiwu/chapters/18-k18/docs/zh.md
- * 数据: standards/23-yiyuan-kuaiji-caiwu/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/23-yiyuan-kuaiji-caiwu/chapter-map.json（课程章 → 教材单元号）
+ * 医院会计与财务管理 · 第 18 章 门禁查得出形式，查不出判断
+ * 课程正文: departments/06-guanli/23-yiyuan-kuaiji-caiwu/chapters/18-k18/docs/zh.md
+ * 数据: standards/23-yiyuan-kuaiji-caiwu/units.json（198 单元，每单元带章号与汉字数）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的数字不是演算设定，而是仓内真源。脚本从 units.json 现算章数、单元数、
+ * 汉字总数与章分布，再与正文所写的数逐项比对：对不上的地方打印出来，不静默放过。
  */
 
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
+
+const DOC_PATH = path.join(__dirname, '..', 'docs', 'zh.md');
 
 function findRoot(start) {
   let dir = start;
@@ -26,76 +27,101 @@ function findRoot(start) {
   throw new Error('没找到 standards/23-yiyuan-kuaiji-caiwu/units.json —— 章节目录是否已脱离仓库？');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json');
-const MAP = path.join(ROOT, 'standards', '23-yiyuan-kuaiji-caiwu', 'chapter-map.json');
-const CHAPTER = '18';
-const SLUG = '18-k18';
+const UNITS_PATH = path.join(findRoot(__dirname), 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function readDoc() {
+  return fs.readFileSync(DOC_PATH, 'utf8');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function loadUnits() {
+  return JSON.parse(fs.readFileSync(UNITS_PATH, 'utf8'));
 }
 
+/** 从单元层现算：章数、单元数、汉字总数、每章分布 */
 function summarize(units) {
-  const views = {};
-  const levels = {};
+  const per = {};
   let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
   for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+    per[u.chapter] = (per[u.chapter] || 0) + (u.hanzi || 0);
+    hanzi += u.hanzi || 0;
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  const chapters = Object.keys(per).length;
+  const counts = {};
+  for (const u of units) counts[u.chapter] = (counts[u.chapter] || 0) + 1;
+  const values = Object.values(per);
+  return {
+    chapters,
+    units: units.length,
+    hanzi,
+    perUnit: hanzi / units.length,
+    minChapter: Math.min(...values),
+    maxChapter: Math.max(...values),
+    spread: Math.max(...values) - Math.min(...values),
+    spreadRate: ((Math.max(...values) - Math.min(...values)) / Math.min(...values)) * 100,
+    unitsPerChapter: new Set(Object.values(counts)).size === 1 ? Object.values(counts)[0] : null,
+    perChapter: per,
+  };
+}
+
+/** 正文所写的数（用于比对）；取不到就记一条缺口 */
+function docClaims(doc) {
+  const grab = (re) => {
+    const m = doc.match(re);
+    return m ? m[1] : null;
+  };
+  return {
+    chapters: Number(grab(/(\d+)\s*章、\s*\d+\s*个单元/)),
+    units: Number(grab(/\d+\s*章、\s*(\d+)\s*个单元/)),
+    hanzi: Number((grab(/([\d,]+)\s*汉字/) || '').replace(/,/g, '')),
+    perUnit: Number((grab(/平均每个单元\s*([\d,]+)\s*字/) || '').replace(/,/g, '')),
+    rangeLow: Number((grab(/每章汉字数在\s*([\d,]+)\s*到/) || '').replace(/,/g, '')),
+    rangeHigh: Number((grab(/每章汉字数在\s*[\d,]+\s*到\s*([\d,]+)\s*之间/) || '').replace(/,/g, '')),
+    spread: Number((grab(/极差\s*([\d,]+)\s*字/) || '').replace(/,/g, '')),
+  };
+}
+
+/** 真源 vs 正文：返回不一致项（不抛错，逐条打印，供作者回改） */
+function reconcile(doc, s) {
+  const c = docClaims(doc);
+  const out = [];
+  const cmp = (label, stated, actual, tol = 0) => {
+    if (stated === null || Number.isNaN(stated)) { out.push(`${label}：正文未写明，无法比对`); return; }
+    if (Math.abs(stated - actual) > tol) {
+      out.push(`${label}：正文记 ${stated.toLocaleString('en-US')}，现算 ${actual.toLocaleString('en-US', { maximumFractionDigits: 1 })}`);
+    }
+  };
+  cmp('章数', c.chapters, s.chapters);
+  cmp('单元数', c.units, s.units);
+  cmp('汉字总数', c.hanzi, s.hanzi);
+  cmp('每单元平均字', c.perUnit, Math.round(s.perUnit));
+  cmp('章汉字下限', c.rangeLow, s.minChapter);
+  cmp('章汉字上限', c.rangeHigh, s.maxChapter);
+  cmp('章间极差', c.spread, s.spread);
+  return { claims: c, mismatches: out };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const all = loadUnits();
+  const s = summarize(all.units);
+  const r = reconcile(doc, s);
 
-  console.log(`医院会计与财务管理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医院会计与财务管理 · 第 18 章 门禁查得出形式，查不出判断');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`数据源：standards/23-yiyuan-kuaiji-caiwu/units.json`);
+  console.log(`现算：${s.chapters} 章、${s.units} 单元、${s.hanzi.toLocaleString('en-US')} 汉字`);
+  console.log(`  每单元平均 ${s.perUnit.toFixed(1)} 字；每章单元数 ${s.unitsPerChapter === null ? '不齐' : s.unitsPerChapter}`);
+  console.log(`  章汉字区间 ${s.minChapter.toLocaleString('en-US')} — ${s.maxChapter.toLocaleString('en-US')}，极差 ${s.spread.toLocaleString('en-US')} 字（${s.spreadRate.toFixed(1)}%）`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('与正文比对：');
+  if (!r.mismatches.length) console.log('   ✓ 正文所列各数与数据源一致');
+  for (const line of r.mismatches) console.log(`   ! ${line}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/23-yiyuan-kuaiji-caiwu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('结论：能自动查的是结构，不能自动查的是判断；数字对不上时，先改数，再谈结论。');
+  console.log('※ 本章数字来自仓内真源（units.json），不是演算设定。');
+  console.log('※ 教学示意，不构成技术方案或数据合规结论。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, loadUnits, summarize, docClaims, reconcile, DOC_PATH, UNITS_PATH };

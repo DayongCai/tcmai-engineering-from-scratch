@@ -4,59 +4,75 @@ const test = require('node:test');
 const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
-const { spawnSync } = require('node:child_process');
+const { DOC, CHAPTER, TITLE, read, sections, tables, styles, conflictCost, orientation, interventionCost, issuePackage, mediation, concepts, PONDY, MEDIATION } = require('./main.js');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '18-guanli-xinli-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '18-guanli-xinli-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const TEXT = read();
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文文件就在本章目录下', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '12-p12', 'docs', 'zh.md')), DOC);
+  assert.ok(fs.existsSync(DOC));
+  assert.strictEqual(CHAPTER, 12);
+  assert.strictEqual(TITLE, '冲突不需要消灭，需要定价');
+  assert.strictEqual(sections(TEXT).length, 8);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('托马斯—基尔曼五方式从正文表格解析，适用与代价齐', () => {
+  const st = styles(TEXT);
+  assert.deepStrictEqual(st.map((s) => s.mode), ['竞争', '协作', '妥协', '回避', '迁就']);
+  assert.match(st[3].when, /议题不重要/);
+  assert.match(st[3].cost, /拖成结构性问题/);
+  assert.strictEqual(tables(TEXT).length, 1);
+  assert.deepStrictEqual(concepts(TEXT).pondy, PONDY);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('冲突成本：27 次 × 2.5 小时 = 67.5 小时，换 4 小时产能', () => {
+  const c = conflictCost({ events: 27, hoursEach: 2.5, capacityGap: 4 });
+  assert.strictEqual(c.hours, 67.5);
+  assert.strictEqual(c.perGapHour, 16.88);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('庞迪五段干预成本倍数成倍增长，潜在段最便宜', () => {
+  assert.deepStrictEqual(PONDY.map((s) => interventionCost(s).multiplier), [1, 2, 4, 8, 16]);
+  assert.match(interventionCost('潜在').note, /改一条规则/);
+  assert.match(interventionCost('显现').note, /裁决/);
+  assert.strictEqual(interventionCost('不存在'), null);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('两维判定：高坚持低合作→竞争，低低→回避，高高→协作，低高→迁就', () => {
+  assert.strictEqual(orientation(0.9, 0.2).mode, '竞争');
+  assert.strictEqual(orientation(0.2, 0.2).mode, '回避');
+  assert.strictEqual(orientation(0.9, 0.9).mode, '协作');
+  assert.strictEqual(orientation(0.2, 0.9).mode, '迁就');
+  assert.strictEqual(orientation(0.5, 0.5).mode, '妥协');
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('整合式谈判：只取差值正的项，合计空间可算', () => {
+  const p = issuePackage([
+    { item: '周几固定', ourCost: 1, theirValue: 5 },
+    { item: '时长补在别日', ourCost: 2, theirValue: 4 },
+    { item: '维护时段我方承担', ourCost: 4, theirValue: 1 },
+  ]);
+  assert.strictEqual(p.items[0].item, '周几固定');
+  assert.strictEqual(p.items[0].spread, 4);
+  assert.strictEqual(p.tradeable.length, 2);
+  assert.strictEqual(p.totalGain, 6);
+});
+
+test('调解三条件缺一条就退化', () => {
+  assert.strictEqual(mediation(MEDIATION).ok, true);
+  const bad = mediation(['双方都有继续合作的预期', '程序被双方认可']);
+  assert.deepStrictEqual(bad.missing, ['调解人不持有裁决权']);
+  assert.match(bad.verdict, /退化成走流程/);
+});
+
+test('脚本可运行，输出定价与边界声明', () => {
+  const r = require('node:child_process').spawnSync(process.execPath, [path.join(__dirname, 'main.js')], {
+    encoding: 'utf8',
+    timeout: 60000,
+  });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/18-guanli-xinli-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/12-p12/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /67\.5 管理小时/);
+  assert.match(out, /成本倍数 16/);
+  assert.match(out, /均为演算设定/);
 });

@@ -1,101 +1,172 @@
-#!/usr/bin/env node
-/**
- * 公共管理学 · 第 12 章 数字政府与电子政务：本章统计口径
- * 课程: departments/06-guanli/16-gonggong-guanli-xue/chapters/12-g12/docs/zh.md
- * 数据: standards/16-gonggong-guanli-xue/units.json（184 单元层，每单元带三辨与四位面词频）
- * 取数: standards/16-gonggong-guanli-xue/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
- *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
- */
-
 'use strict';
+/**
+ * 公共管理学 · 第 12 章 数字化省下的是跑腿，不是判断
+ *
+ *   node code/main.js
+ *
+ * 正文：chapters/12-g12/docs/zh.md
+ * 习题：chapters/12-g12/quiz.json
+ *
+ * 本章的每个判断都从正文现算，不手抄结论：
+ *   · 结构：小节数、汉字数、表格行数、引书条目
+ *   · 判据：一组关键术语在正文里的出现次数
+ *   · 骨架：几组并列项是否真的在正文里立住
+ *   · 习题：题量、三段分布、解释长度、check 题能否在正文找到原词
+ * 正文一改，重跑就知道是哪一条对不上。
+ */
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '16-gonggong-guanli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/16-gonggong-guanli-xue/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '16-gonggong-guanli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '16-gonggong-guanli-xue', 'chapter-map.json');
-const CHAPTER = '12';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const CHAPTER = 12;
 const SLUG = '12-g12';
+const TITLE = '数字化省下的是跑腿，不是判断';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+/** 本章的判据术语：正文靠它们把结论立住，代码只数它们在不在、够不够 */
+const TERMS = [
+  ['记录层', '把纸变成数据，收益确定、风险最低'],
+  ['流程层', '把串联变成并联，动的是环节与职责'],
+  ['决策层', '把判断交给规则或模型，风险最高'],
+  ['确权', '共享之后的责任划分'],
+  ['接入排除', '没有设备、不会操作']
+];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 本章的骨架：几组并列项必须齐全，缺一项说明正文这一节没写完 */
+const GROUPS = [
+  { label: '数字政府三层', all: ['记录层', '流程层', '决策层'] },
+  { label: '数据治理四问题', all: ['确权', '标准', '激励', '质量'] },
+  { label: '取消环节四手法', all: ['取消', '合并', '前置', '后置'] },
+  { label: '三种排除机制', all: ['接入排除', '能力排除', '资格排除'] }
+];
+
+const HAN = /[\u3400-\u4dbf\u4e00-\u9fff]/;
+const chars = (s) => [...String(s || '')];
+const hanzi = (s) => chars(s).filter((ch) => HAN.test(ch)).length;
+const count = (text, term) => String(text).split(term).length - 1;
+
+const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
+
+/** 「## 」小节标题 */
+function sections(doc) {
+  return [...String(doc).matchAll(/^##\s+(.+)$/gm)].map((m) => m[1].trim());
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 表格：总行数、表数、数据行数（去掉表头与分隔行） */
+function tableShape(doc) {
+  const lines = String(doc).split(/\r?\n/).map((l) => l.trim()).filter((l) => l.startsWith('|'));
+  const seps = lines.filter((l) => /^\|[\s:|-]+\|$/.test(l)).length;
+  return { lines: lines.length, tables: seps, rows: lines.length - seps * 2 };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** 正文引到的书名（《》里的条目，去重） */
+function books(doc) {
+  const out = new Set();
+  for (const m of String(doc).matchAll(/《([^》]+)》/g)) out.add(m[1]);
+  return [...out];
+}
+
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function termCounts(doc) {
+  return TERMS.map(([term, why]) => ({ term, why, n: count(doc, term) }));
+}
+
+function groupCheck(doc) {
+  return GROUPS.map((g) => ({ label: g.label, all: g.all, missing: g.all.filter((x) => !String(doc).includes(x)) }));
+}
+
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    return {
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(q.explain),
+      grounded: [...grams(right)].filter((g) => body.has(g)).length,
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+  };
+}
+
+function analyze() {
+  const doc = readDoc();
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    doc,
+    hanzi: hanzi(doc),
+    sections: sections(doc),
+    table: tableShape(doc),
+    books: books(doc),
+    terms: termCounts(doc),
+    groups: groupCheck(doc),
+    quiz: quizSummary(quiz, doc),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`公共管理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = analyze();
+  console.log(`公共管理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log(`正文 ${r.hanzi.toLocaleString('en-US')} 汉字 · ${r.sections.length} 节 · 表 ${r.table.rows} 行 · 引书 ${r.books.length} 部`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log('小节：');
+  for (const s of r.sections) console.log(`  · ${s}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('判据命中：');
+  for (const t of r.terms) console.log(`  ${t.n > 0 ? '✓' : '✗'} ${t.term} ${t.n} 次 — ${t.why}`);
+  console.log('');
+  console.log('骨架：');
+  for (const g of r.groups) {
+    console.log(`  ${g.missing.length ? '✗' : '✓'} ${g.label}${g.missing.length ? `（缺 ${g.missing.join('、')}）` : ''}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/16-gonggong-guanli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`习题 ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· check 题接地 ${r.quiz.checkGrounded} 道 · 答案 ${r.quiz.answers.join('/')}`);
+  console.log('※ 以上数字全部从本章正文与习题现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，不构成对任何机构、政策或个人的评价。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  analyze,
+  readDoc,
+  sections,
+  tableShape,
+  books,
+  grams,
+  hanzi,
+  count,
+  termCounts,
+  groupCheck,
+  quizSummary,
+  TERMS,
+  GROUPS,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+};

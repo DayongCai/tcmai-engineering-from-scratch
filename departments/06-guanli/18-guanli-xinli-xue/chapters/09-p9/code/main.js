@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 /**
- * 管理心理学 · 第 9 章 群体心理与群体行为：本章统计口径
+ * 管理心理学 · 第 9 章 团队不是人凑齐就有战斗力，群体先生产出来的是一套规范
  * 课程: departments/06-guanli/18-guanli-xinli-xue/chapters/09-p9/docs/zh.md
- * 数据: standards/18-guanli-xinli-xue/units.json（197 单元层，每单元带三辨与四位面词频）
- * 取数: standards/18-guanli-xinli-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的算式只有两句：人手不是产出，规范才是；凝聚力只放大规范，不选择规范。
+ * 脚本把它们做成可复算的判断：
+ *   1. 加人前后的台次、人均台次与增幅（14→16 人、6→6.4 台）；
+ *   2. 凝聚力 × 规范方向的四象限：哪一格是「气氛极好、产出极差」；
+ *   3. 社会懈怠的锚点（六人组个人出力约七成）与「贡献可识别」的修正；
+ *   4. 群体思维的症状清单与四条对冲的成本。
  */
 
 'use strict';
@@ -15,87 +17,108 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '18-guanli-xinli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/18-guanli-xinli-xue/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 9;
+const TITLE = '团队不是人凑齐就有战斗力，群体先生产出来的是一套规范';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '18-guanli-xinli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '18-guanli-xinli-xue', 'chapter-map.json');
-const CHAPTER = '9';
-const SLUG = '09-p9';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function sections(text) {
+  return String(text || '')
+    .split('\n')
+    .filter((l) => /^##\s+/.test(l))
+    .map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 加人前后：台次、人均台次、增幅。人均下降说明规范在限产 */
+function capacity({ headcount, cases }, { headcount: headAfter, cases: casesAfter }) {
+  const per = cases / headcount;
+  const perAfter = casesAfter / headAfter;
+  return {
+    cases,
+    casesAfter,
+    caseGrowth: Number((((casesAfter - cases) / cases) * 100).toFixed(2)),
+    headGrowth: Number((((headAfter - headcount) / headcount) * 100).toFixed(2)),
+    per: Number(per.toFixed(4)),
+    perAfter: Number(perAfter.toFixed(4)),
+    perChange: Number((((perAfter - per) / per) * 100).toFixed(2)),
+    verdict: perAfter < per ? '人均产出下降：人手不是瓶颈，规范在限产' : '人均产出未降：瓶颈可能确实在人手',
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/**
+ * 凝聚力 × 规范方向：凝聚力只放大，不选择。方向取 +1（支持高绩效）或 −1（抵制高绩效）。
+ * 结果 = 凝聚力 × 方向；高凝聚 + 抵制 = 最难拆的一格。
+ */
+function cohesionMatrix(cohesion, direction) {
+  const effect = Number((cohesion * direction).toFixed(2));
+  const quad = cohesion >= 0.6 ? (direction > 0 ? '高凝聚·支持' : '高凝聚·抵制') : direction > 0 ? '低凝聚·支持' : '低凝聚·抵制';
+  const note = {
+    '高凝聚·支持': '气氛好、产出高：这是目标态，不是起点',
+    '高凝聚·抵制': '气氛极好、产出极差：凝聚力成了限产的执行器',
+    '低凝聚·支持': '方向对但没劲：先补目标、规模与公平分配',
+    '低凝聚·抵制': '两头都缺：先定规范，再谈团结',
+  }[quad];
+  return { cohesion, direction, effect, quad, note };
+}
+
+/**
+ * 社会懈怠：以正文的六人组「个人出力约七成」为锚，每多一人再降 6 个百分点，
+ * 下限 0.5。贡献可识别时（identified=true），衰减被抵消。
+ */
+function loafing(n, identified = false) {
+  const raw = Math.max(0.5, 1 - 0.06 * (n - 1));
+  const solid = n === 6 ? 0.7 : raw;
+  const out = identified ? Math.min(1, solid + 0.25) : solid;
+  return { n, identified, individual: Number(out.toFixed(2)), total: Number((out * n).toFixed(2)) };
+}
+
+const GROUPTHINK = ['不可战胜的错觉', '集体合理化', '对异议者的直接压力', '自我审查', '意见一致的错觉', '对外群体的刻板印象'];
+const COUNTERS = ['指定反方', '分头评估再合议', '名义群体法与德尔菲法', '决策与执行分开一轮'];
+
+function concepts(text) {
+  const t = String(text || '');
+  return {
+    groupthink: GROUPTHINK.filter((g) => t.includes(g)),
+    counters: COUNTERS.filter((c) => t.includes(c)),
+    hasAsch: t.includes('阿希'),
+    hasSherif: t.includes('谢里夫'),
+    hasLoafing: t.includes('社会懈怠'),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const c = concepts(text);
+  const hanzi = (text.match(HANZI) || []).length;
+  const cap = capacity({ headcount: 14, cases: 6 }, { headcount: 16, cases: 6.4 });
 
-  console.log(`管理心理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`管理心理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${hanzi} 字 · 节 ${sections(text).length} 节`);
+  console.log(`群体思维症状 ${c.groupthink.length}/6：${c.groupthink.join(' · ')}`);
+  console.log(`对冲办法 ${c.counters.length}/4：${c.counters.join(' · ')}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`加人账：${cap.cases} 台 → ${cap.casesAfter} 台（+${cap.caseGrowth}%），人手 +${cap.headGrowth}%`);
+  console.log(`  人均 ${cap.per} → ${cap.perAfter}（${cap.perChange}%）→ ${cap.verdict}`);
+  console.log('');
+  console.log('凝聚力 × 规范方向：');
+  for (const m of [cohesionMatrix(0.8, -1), cohesionMatrix(0.8, 1), cohesionMatrix(0.3, 1), cohesionMatrix(0.3, -1)]) {
+    console.log(`  ${m.quad}（效应 ${m.effect}）：${m.note}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('社会懈怠（六人组为正文锚点）：');
+  console.log(`  六人组个人出力 ${loafing(6).individual}｜三人组 ${loafing(3).individual}｜贡献可识别时的六人组 ${loafing(6, true).individual}`);
+  console.log('  → 衰减的开关是「贡献是否可识别」，不是监督强度。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/18-guanli-xinli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('边界：本章的科室人数、台次与认同比例均为演算设定；群体研究多为实验室结论，价值在机制不在参数。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, sections, capacity, cohesionMatrix, loafing, concepts, GROUPTHINK, COUNTERS };

@@ -4,59 +4,76 @@ const test = require('node:test');
 const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
-const { spawnSync } = require('node:child_process');
+const { DOC, CHAPTER, TITLE, read, sections, tables, roles, lines, scaleCurve, landing, boundaryCheck, interpretReports, concepts, BOUNDARIES, EMPOWER_STEPS } = require('./main.js');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '18-guanli-xinli-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '18-guanli-xinli-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const TEXT = read();
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文文件就在本章目录下', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '10-p10', 'docs', 'zh.md')), DOC);
+  assert.ok(fs.existsSync(DOC));
+  assert.strictEqual(CHAPTER, 10);
+  assert.strictEqual(TITLE, '团队不是把能人凑齐，是把互依关系设计出来');
+  assert.strictEqual(sections(TEXT).length, 7);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('贝尔宾九角色从正文表格解析，三类各三人', () => {
+  const r = roles(TEXT);
+  assert.strictEqual(r.list.length, 9);
+  assert.deepStrictEqual(r.byOrientation, { 行动: 3, 人际: 3, 思维: 3 });
+  assert.deepStrictEqual(r.list.map((x) => x.role), ['塑造者', '执行者', '完美主义者', '协调者', '团队工作者', '资源调查者', '智多星', '监控评估者', '专业师']);
+  assert.match(r.list[0].gap, /没人推进度/);
+  assert.strictEqual(tables(TEXT).length, 1);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('沟通线公式：5/10/20 人 = 10/45/190 条', () => {
+  assert.strictEqual(lines(5), 10);
+  assert.strictEqual(lines(10), 45);
+  assert.strictEqual(lines(20), 190);
+  assert.strictEqual(lines(9), 36);
+  const c = scaleCurve(20);
+  assert.strictEqual(c.length, 19);
+  assert.strictEqual(c.find((x) => x.n === 10).added, 9);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('会诊落地率 11/47 = 23.4%，判为停在纸面', () => {
+  const l = landing(47, 11);
+  assert.strictEqual(l.rate, 23.4);
+  assert.match(l.verdict, /停在纸面/);
+  assert.match(landing(47, 20).verdict, /落地率尚可/);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('授权三条边界缺一条就报缺口', () => {
+  const ok = boundaryCheck(BOUNDARIES);
+  assert.strictEqual(ok.ok, true);
+  const bad = boundaryCheck(['目标与绩效边界', '权限与资源边界']);
+  assert.deepStrictEqual(bad.missing, ['伦理与合规边界']);
+  assert.match(bad.verdict, /退化成/);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('上报量读法：安全提升／流程效应／真问题三种', () => {
+  assert.strictEqual(interpretReports({ reportedUp: true, actualDown: true, formSimplified: false }).read, '心理安全提升');
+  assert.strictEqual(interpretReports({ reportedUp: true, actualDown: false, formSimplified: true }).read, '流程效应');
+  assert.strictEqual(interpretReports({ reportedUp: true, actualDown: false, formSimplified: false }).read, '真问题暴露');
+  assert.strictEqual(interpretReports({ reportedUp: false, actualDown: false, formSimplified: false }).read, '可能被压制');
+});
+
+test('五条件与授权四步顺序在正文里', () => {
+  const c = concepts(TEXT);
+  assert.strictEqual(c.conditions.length, 5);
+  assert.deepStrictEqual(EMPOWER_STEPS, ['信息与资源', '方法与决策空间', '责任与后果', '辅导与反馈']);
+  for (const k of ['互依性', '心理安全', '快速信任', '在线时长不得替代绩效评价']) {
+    assert.ok(TEXT.includes(k), k);
+  }
+});
+
+test('脚本可运行，输出沟通线与边界声明', () => {
+  const r = require('node:child_process').spawnSync(process.execPath, [path.join(__dirname, 'main.js')], {
+    encoding: 'utf8',
+    timeout: 60000,
+  });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/18-guanli-xinli-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/10-p10/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /20 人 → 190 条/);
+  assert.match(out, /11\/47 = 23\.4%/);
+  assert.match(out, /管条件，不是管人/);
 });

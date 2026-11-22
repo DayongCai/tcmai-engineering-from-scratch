@@ -5,58 +5,57 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { DOC, CHAPTER, TITLE, SLUG, read, num, cn, cnIn, section, rowsIn, analyze, checks } = require('./main.js');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '22-yiyao-renli-ziyuan', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '22-yiyao-renli-ziyuan', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const A = analyze(read());
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文就在本章目录下，且是第 10 章', () => {
+  assert.ok(DOC.endsWith(path.join('chapters', '10-r10', 'docs', 'zh.md')), DOC);
+  assert.ok(fs.existsSync(DOC), '正文文件不存在');
+  assert.strictEqual(CHAPTER, 10);
+  assert.strictEqual(SLUG, path.basename(path.join(__dirname, '..')));
+  assert.ok(read().startsWith('# 第 10 章 · ' + TITLE), '正文标题与章号/标题不符: ' + read().slice(0, 40));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('结构快照与正文一致（汉字、节、表格、加粗判断、引书）', () => {
+  assert.strictEqual(A.hanzi, 2906);
+  assert.strictEqual(A.sections.length, 6);
+  assert.strictEqual(A.tables, 3);
+  assert.strictEqual(A.claims, 31);
+  assert.strictEqual(A.cites.length, 1);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('逐节字数相加不超过全篇（标题行不计入小节）', () => {
+  const sum = A.sections.reduce((s, x) => s + x.hanzi, 0);
+  assert.ok(sum > 0 && sum <= A.hanzi, sum + ' vs ' + A.hanzi);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('每项换算都与正文写下的数对得上', () => {
+  const cs = checks(read());
+  assert.ok(cs.length >= 2, '换算项过少');
+  for (const c of cs) {
+    assert.ok(c.name && c.unit, '换算项缺名称或单位');
+    const ok = c.cmp === 'lte' ? c.computed <= c.stated : Math.abs(c.computed - c.stated) <= c.tol;
+    assert.ok(ok, c.name + '：算得 ' + c.computed + '，正文写 ' + c.stated);
+  }
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('取数与切片函数取不到就报错，不静默兜底', () => {
+  assert.throws(() => num('这段文本里没有那个关键词', '某医药集团'), /找不到关键词/);
+  assert.throws(() => num('某医药集团 后面没有数字', '某医药集团'), /没有数字/);
+  assert.throws(() => cnIn('没有数词的短语'), /没有中文数词/);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('正文可切片、可数表行', () => {
+  assert.ok(section(read(), '代价与边界').length > 100, '代价与边界一节切不出来');
+  assert.strictEqual(rowsIn(read(), '代价与边界'), 0);
+});
+
+test('脚本可运行，输出含现算口径与边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/22-yiyao-renli-ziyuan\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/10-r10/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /均从本章 docs\/zh\.md 现算/);
+  assert.match(out, /不构成/);
+  assert.ok(!/✗/.test(out), '脚本输出里出现了对不上的换算');
 });

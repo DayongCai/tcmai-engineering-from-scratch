@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 医院会计与财务管理 · 第 3 章 医院会计基础：本章统计口径
- * 课程: departments/06-guanli/23-yiyuan-kuaiji-caiwu/chapters/03-k3/docs/zh.md
- * 数据: standards/23-yiyuan-kuaiji-caiwu/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/23-yiyuan-kuaiji-caiwu/chapter-map.json（课程章 → 教材单元号）
+ * 医院会计与财务管理 · 第 3 章 一笔业务两张凭证
+ * 课程正文: departments/06-guanli/23-yiyuan-kuaiji-caiwu/chapters/03-k3/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 正文给了本月一笔收入的完整走账与一张勾稽表。脚本从正文抓出七个金额，
+ * 现算两个体系的差额与三类差异合计，验证「差异 = 应收净增」这条恒等式，
+ * 以及「采购 − 存货净增 = 当期消耗」这条复算链条。
  */
 
 'use strict';
@@ -15,87 +14,85 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/23-yiyuan-kuaiji-caiwu/units.json —— 章节目录是否已脱离仓库？');
+const DOC_PATH = path.join(__dirname, '..', 'docs', 'zh.md');
+
+function readDoc() {
+  return fs.readFileSync(DOC_PATH, 'utf8');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json');
-const MAP = path.join(ROOT, 'standards', '23-yiyuan-kuaiji-caiwu', 'chapter-map.json');
-const CHAPTER = '3';
-const SLUG = '03-k3';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function parseParams(doc) {
+  const num = (re, label) => {
+    const m = doc.match(re);
+    if (!m) throw new Error(`正文里找不到${label}`);
+    return Number(m[1].replace(/,/g, ''));
+  };
+  return {
+    revenue: num(/确认医疗收入\s*([\d,]+)\s*万元/, '确认医疗收入'),
+    cash: num(/实际收到现金\s*([\d,]+)\s*万元/, '实收现金'),
+    arBegin: num(/应收医疗款从月初\s*([\d,]+)\s*万元/, '月初应收'),
+    arEnd: num(/涨到月末\s*([\d,]+)\s*万元/, '月末应收'),
+    depreciation: num(/计提折旧\s*([\d,]+)\s*万元/, '计提折旧'),
+    consumed: num(/消耗\s*([\d,]+)\s*\|/, '存货消耗'),
+    purchased: num(/采购\s*([\d,]+)\s*\|/, '存货采购'),
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function compute(p) {
+  const arNet = p.arEnd - p.arBegin;
+  const revenueGap = p.revenue - p.cash;
+  const stockNet = p.purchased - p.consumed;
+  const totalGap = revenueGap + p.depreciation + stockNet;
+  return {
+    arNet,
+    revenueGap,
+    stockNet,
+    totalGap,
+    arEndFromFlow: p.arBegin + p.revenue - p.cash,
+    balanced: revenueGap === arNet,
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+const wan = (n) => n.toLocaleString('en-US');
+
+function assertDocNumbers(doc, p, r) {
+  const report = [];
+  const expect = (ok, label) => {
+    if (!ok) throw new Error(`正文对账失败：${label}`);
+    report.push(label);
+  };
+  expect(r.arEndFromFlow === p.arEnd, '月初 1,100 + 收入 7,200 − 收现 6,400 = 月末 1,900');
+  expect(r.balanced && r.arNet === 800, '收入差 800 等于应收净增 800');
+  expect(doc.includes('1,100 + 7,200 − 6,400 = 1,900'), '正文印有同一条流水式');
+  expect(r.stockNet === 180 && doc.includes('2,280 − 180 = 2,100'), '采购 2,280 − 库存净增 180 = 消耗 2,100');
+  expect(r.totalGap === 1500 && doc.includes('800 + 520 + 180'), '三类差异合计 1,500');
+  return report;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const p = parseParams(doc);
+  const r = compute(p);
 
-  console.log(`医院会计与财务管理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医院会计与财务管理 · 第 3 章 一笔业务两张凭证');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`本月收入流水（万元）：月初应收 ${wan(p.arBegin)} + 确认收入 ${wan(p.revenue)} − 收现 ${wan(p.cash)} = 月末应收 ${wan(r.arEndFromFlow)}`);
+  console.log(`两个体系收入差：${wan(p.revenue)} − ${wan(p.cash)} = ${wan(r.revenueGap)}；应收净增 ${wan(r.arNet)}　→ ${r.balanced ? '恒等式成立' : '对不上'}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('勾稽表三类差异（万元）：');
+  console.log(`  医疗收入差　${wan(r.revenueGap)}　← 应收医疗款净增`);
+  console.log(`  折旧费用　　${wan(p.depreciation)}　← 非现金费用，预算会计无对应`);
+  console.log(`  存货　　　　${wan(r.stockNet)}　← 采购 ${wan(p.purchased)} − 消耗 ${wan(p.consumed)}`);
+  console.log(`  合计差异　　${wan(r.totalGap)}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`存货复算：${wan(p.purchased)} − ${wan(r.stockNet)} = ${wan(p.consumed)}，差额是还躺在库里的钱。`);
+  console.log('结论：两套账对得上，说明没有漏记；对不上，才说明有一笔只记了一边。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  for (const line of assertDocNumbers(doc, p, r)) console.log(`  ✓ ${line}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/23-yiyuan-kuaiji-caiwu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 金额由本章正文现算，正文改数后会直接抛错。');
+  console.log('※ 教学示意，不构成账务处理指令或审计意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, parseParams, compute, assertDocNumbers, DOC_PATH };

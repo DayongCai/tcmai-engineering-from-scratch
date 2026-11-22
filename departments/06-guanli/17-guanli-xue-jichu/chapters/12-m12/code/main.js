@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 管理学基础 · 第 12 章 沟通：本章统计口径
+ * 管理学基础 · 第 12 章 说过了不等于传到了，传到了不等于懂了
  * 课程: departments/06-guanli/17-guanli-xue-jichu/chapters/12-m12/docs/zh.md
- * 数据: standards/17-guanli-xue-jichu/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/17-guanli-xue-jichu/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 从正文取「收到」与「说得出」两个比例、交接缺失的例数与总数，现算：
+ *   一、从收到到说得出，损耗了多少；
+ *   二、交接信息缺失在不良事件里占多大份额；
+ *   三、两份比例与根因份额的关系——四道关里丢在哪一道。
  */
 
 'use strict';
@@ -15,87 +15,89 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '17-guanli-xue-jichu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 12;
+const TITLE = '说过了不等于传到了，传到了不等于懂了';
+
+const D = { 零: 0, 一: 1, 二: 2, 两: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9 };
+const U = { 十: 10, 百: 100, 千: 1000, 万: 10000 };
+
+function cnInt(s) {
+  if (!/^[零一二两三四五六七八九十百千万]+$/.test(s)) throw new Error('认不出的中文数字: ' + s);
+  let total = 0;
+  let section = 0;
+  let num = 0;
+  for (const ch of s) {
+    if (ch in D) { num = D[ch]; continue; }
+    const unit = U[ch];
+    if (unit === 10000) { section = (section + num) * unit; total += section; section = 0; num = 0; }
+    else { if (num === 0) num = 1; section += num * unit; num = 0; }
   }
-  throw new Error('没找到 standards/17-guanli-xue-jichu/units.json —— 章节目录是否已脱离仓库？');
+  return total + section + num;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '17-guanli-xue-jichu', 'units.json');
-const MAP = path.join(ROOT, 'standards', '17-guanli-xue-jichu', 'chapter-map.json');
-const CHAPTER = '12';
-const SLUG = '12-m12';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function grab(text, re, label, conv) {
+  const m = text.match(re);
+  if (!m) throw new Error('正文里找不到「' + label + '」，章节是否已被改写？');
+  const n = conv === 'cn' ? cnInt(m[1]) : Number(m[1]);
+  if (!Number.isFinite(n)) throw new Error('「' + label + '」取到的不是数: ' + m[1]);
+  return n;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 正文第 5 行的那组抽查。 */
+function facts(text) {
+  return {
+    policies: grab(text, /下发([零一二两三四五六七八九十百千万]+)份制度/, '四十二份', 'cn'),
+    nurses: grab(text, /抽查([零一二两三四五六七八九十百千万]+)名护士/, '一百二十名', 'cn'),
+    receivedPct: grab(text, /收到过文件[^的]{0,4}的占\s*(\d+)%/, '81%'),
+    recallPct: grab(text, /三条以上要求的占\s*(\d+)%/, '37%'),
+    events: grab(text, /不良事件([零一二两三四五六七八九十百千万]+)起/, '七十八起', 'cn'),
+    handoverEvents: grab(text, /交接信息缺失[^的]{0,4}的([零一二两三四五六七八九十百千万]+)起/, '三十一起', 'cn'),
+    handoverSharePct: grab(text, /起，占\s*([\d.]+)%/, '39.7%'),
+  };
+}
+
+/** 到达率：说得出的人数 ÷ 说收到的人数。 */
+function arrivalRate(receivedPct, recallPct) {
+  if (!(receivedPct > 0)) throw new Error('收到比例必须为正');
+  if (recallPct > receivedPct) throw new Error('说得出的人数不应多于收到的人数');
+  return (recallPct / receivedPct) * 100;
+}
+
+/** 根因份额。 */
+function rootShare(events, affected) {
+  if (!(events > 0)) throw new Error('事件总数必须为正');
+  return (affected / events) * 100;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const f = facts(text);
+  const arrival = arrivalRate(f.receivedPct, f.recallPct);
+  const share = rootShare(f.events, f.handoverEvents);
 
-  console.log(`管理学基础 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`管理学基础 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 取数后现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`一、${f.policies} 份制度、${f.nurses} 名护士抽得：收到 ${f.receivedPct}%、说得出三条 ${f.recallPct}%`);
+  console.log(`  从收到到说得出，只剩 ${arrival.toFixed(1)}%（丢 ${(100 - arrival).toFixed(1)}%）`);
+  console.log('  → 丢的不是文件，是理解；四道关里只查了第一道。');
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`二、不良事件 ${f.events} 起，根因指向交接信息缺失 ${f.handoverEvents} 起，占 ${share.toFixed(1)}%（正文：${f.handoverSharePct}%）`);
+  console.log('  → 一次交接丢掉的信息，几小时后由另一个人承担后果；这是结构损耗，不是口才问题。');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('三、四道断点：编码（没想清）· 通道（选错媒介）· 解码（语义不同）· 反馈（没有回读）');
+  console.log('  → 修法各不相同：编码靠先定判断，通道靠丰富度规则，解码靠回读，反馈靠提问权入流程。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/17-guanli-xue-jichu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即报错或随之变化；42 份、120 名、37% 与 81% 为合成示例。');
+  console.log('※ 本输出仅用于教学演示，不构成医患沟通规范、法律意见或管理咨询意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, cnInt, facts, arrivalRate, rootShare };

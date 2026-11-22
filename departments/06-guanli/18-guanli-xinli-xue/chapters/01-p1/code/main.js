@@ -1,13 +1,16 @@
 #!/usr/bin/env node
 /**
- * 管理心理学 · 第 1 章 管理心理学导论：本章统计口径
+ * 管理心理学 · 第 1 章 管理心理学测的不是人心，是判断的误差
  * 课程: departments/06-guanli/18-guanli-xinli-xue/chapters/01-p1/docs/zh.md
- * 数据: standards/18-guanli-xinli-xue/units.json（197 单元层，每单元带三辨与四位面词频）
- * 取数: standards/18-guanli-xinli-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章要立的是三条界线：研究对象分三层（个体／群体／组织）、方法有四条底线
+ * （相关不等于因果、信度是效度的必要条件、数据合规）、制度问题不能被心理化。
+ * 本脚本把这些界线变成可复算的量：
+ *   1. 五环表从正文表格解析，不手打；
+ *   2. 三组评价（4.6／3.9／3.1）的均值与极差现算，并指出极差来自哪两组；
+ *   3. 「你准备改什么」→层的映射按判据表执行；
+ *   4. 三个反问作为「可证伪性」检查器，对给定说法逐条判定。
  */
 
 'use strict';
@@ -15,87 +18,149 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '18-guanli-xinli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 1;
+const TITLE = '管理心理学测的不是人心，是判断的误差';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+/** 二级标题：（正文的「节」） */
+function sections(text) {
+  return String(text || '')
+    .split('\n')
+    .filter((l) => /^##\s+/.test(l))
+    .map((l) => l.replace(/^##\s+/, '').trim());
+}
+
+/** Markdown 表格 → [{header, rows}]，以 |---| 分隔行识别表头 */
+function tables(text) {
+  const lines = String(text || '').split('\n');
+  const out = [];
+  for (let i = 0; i < lines.length; i += 1) {
+    if (!/^\s*\|/.test(lines[i]) || !/^\s*\|[\s:|-]+\|\s*$/.test(lines[i + 1] || '')) continue;
+    const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((s) => s.trim());
+    const header = cells(lines[i]);
+    const rows = [];
+    let j = i + 2;
+    while (j < lines.length && /^\s*\|/.test(lines[j])) {
+      rows.push(cells(lines[j]));
+      j += 1;
+    }
+    out.push({ header, rows });
+    i = j - 1;
   }
-  throw new Error('没找到 standards/18-guanli-xinli-xue/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '18-guanli-xinli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '18-guanli-xinli-xue', 'chapter-map.json');
-const CHAPTER = '1';
-const SLUG = '01-p1';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 五环：人性假设 → 个体 → 群体 → 领导 → 健康 */
+function fiveRings(text) {
+  const t = tables(text).find((x) => x.header[0] === '环节') || { rows: [] };
+  return t.rows.map((r) => ({ ring: r[0], question: r[1], cost: r[2] }));
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 三层：个体层管…、群体层管…、组织层管… */
+function layers(text) {
+  const m = String(text || '').match(/研究对象分三层。([^。]+。)/);
+  const src = m ? m[1] : '';
+  return ['个体层', '群体层', '组织层'].map((name) => {
+    const at = src.indexOf(name + '管');
+    const rest = at >= 0 ? src.slice(at + name.length + 1) : '';
+    return { name, scope: rest.split('；')[0].replace(/。$/, '') };
+  }).filter((x) => x.scope);
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/**
+ * 「你准备改变的东西」→ 三层。判据取自正文：「人的认知／人与人之间的规则／规则背后的计量方式」。
+ * 输入是一个具体动作，输出它实际落在哪一层——改错层就是「给漏水的管子刷漆」。
+ */
+const FIX_LAYER = [
+  { layer: '个体层', keys: ['培训', '认知', '心态', '技能', '沟通技巧', '说服'] },
+  { layer: '群体层', keys: ['规范', '排班默契', '协作', '团队', '冲突', '交接'] },
+  { layer: '组织层', keys: ['计量', '绩效口径', '岗位设计', '流程', '编制', '考核指标'] },
+];
+
+function classifyFix(action) {
+  const text = String(action || '');
+  const hit = FIX_LAYER.find((x) => x.keys.some((k) => text.includes(k)));
+  return hit ? hit.layer : '无法定位：先问「换一批人结果会不会一样」';
+}
+
+/** 三组评价的均值、极差，以及极差落在哪两组 */
+function ratingProfile(groups) {
+  const pts = Object.values(groups);
+  const mean = pts.reduce((a, b) => a + b, 0) / pts.length;
+  const values = Object.keys(groups).map((k) => ({ key: k, v: groups[k] }));
+  const hi = values.reduce((m, x) => (x.v > m.v ? x : m), values[0]);
+  const lo = values.reduce((m, x) => (x.v < m.v ? x : m), values[0]);
+  const spread = Number((hi.v - lo.v).toFixed(4));
+  return {
+    mean: Number(mean.toFixed(4)),
+    spread,
+    spreadRatio: Number((spread / mean).toFixed(4)),
+    hi: hi.key,
+    lo: lo.key,
+    // 三份评价同源（同一人）却差出这个宽度，先怀疑视角，再怀疑能力
+    verdict: spread >= 0.5 ? '视角差异大于误差：先定位评价者的位置' : '三组判断接近，可直接用于分档',
+  };
+}
+
+/**
+ * 三个反问：换一批人是否一样／有无对应物质条件／能否被证伪。
+ * 全部通过才算一条可用的判断；对任何反例都能自圆其说的说法不是知识，是态度。
+ */
+function guard(saying) {
+  const t = String(saying || '');
+  const selfSealing = /心里还是|嘴上同意|本质上|骨子里|态度不端正/.test(t);
+  return {
+    saying: t,
+    replaceable: /换一批|换个|调岗|轮岗|换三批/.test(t),
+    hasMaterial: /权限|排班|窗口|设备|时间|流程|编制/.test(t),
+    falsifiable: !selfSealing,
+    // 自圆其说的句子对任何反例都能解释，因此不可证伪；不可证伪的说法只能算态度
+    verdict: selfSealing ? '不是知识，是态度' : '可以拿证据检验',
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const secs = sections(text);
+  const rings = fiveRings(text);
+  const ls = layers(text);
+  const hanzi = (text.match(HANZI) || []).length;
 
-  console.log(`管理心理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`管理心理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${hanzi} 字 · 节 ${secs.length} 节 · 表格 ${tables(text).length} 张`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('五环（解析正文表格，不是手打）：');
+  for (const r of rings) console.log(`  ${r.ring}｜${r.question}｜答不上来：${r.cost}`);
+  console.log('');
+  console.log(`研究对象 ${ls.length} 层：`);
+  for (const l of ls) console.log(`  ${l.name}管 ${l.scope}`);
+  console.log('');
+  const prof = ratingProfile({ 科主任: 4.6, 同事均值: 3.9, 实习生: 3.1 });
+  console.log('同一位医师的三份评价：');
+  console.log(`  均值 ${prof.mean}｜极差 ${prof.spread}（占均值 ${(prof.spreadRatio * 100).toFixed(1)}%）`);
+  console.log(`  最高 ${prof.hi}、最低 ${prof.lo} → ${prof.verdict}`);
+  console.log('');
+  console.log('同一个数字换一种问法，动作就换一层：');
+  for (const a of ['给全科做沟通培训', '重写排班默契与交接规范', '把台次从绩效口径里拆出来']) {
+    console.log(`  ${a} → ${classifyFix(a)}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  const g = guard('他嘴上同意，心里还是抵触');
+  console.log(`三个反问逐条过：「${g.saying}」`);
+  console.log(`  换一批人是否一样：${g.replaceable ? '问过' : '没问'}；有无物质条件：${g.hasMaterial ? '查过' : '没查'}；能否被证伪：${g.falsifiable ? '能' : '不能'}`);
+  console.log(`  → ${g.verdict}：三条缺一条，这句话就不是知识，而是态度。`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/18-guanli-xinli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('边界：本章结论多为群体层面的概率陈述，不能用于对具体个人下判决；不构成心理诊断或人事处理意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, sections, tables, fiveRings, layers, classifyFix, ratingProfile, guard, FIX_LAYER };

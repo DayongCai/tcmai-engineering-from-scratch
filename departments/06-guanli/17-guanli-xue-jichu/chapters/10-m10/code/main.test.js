@@ -6,57 +6,55 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '17-guanli-xue-jichu', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '17-guanli-xue-jichu', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, CHAPTER, TITLE, read, cnInt, facts, gap, hoursPerHead } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const TEXT = read();
+const F = facts(TEXT);
+
+test('正文就在本章目录下，章号与标题对得上', () => {
+  assert.ok(fs.existsSync(DOC), DOC);
+  assert.ok(DOC.endsWith(path.join('chapters', '10-m10', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 10);
+  assert.strictEqual(TITLE, '领导不是让人听话，是让人在没有你的时候也肯多走一步');
+  assert.match(TEXT, /^# 第 10 章/);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('汉字整数换算：三十一、九十六', () => {
+  assert.strictEqual(cnInt('三十一'), 31);
+  assert.strictEqual(cnInt('九十六'), 96);
+  assert.strictEqual(cnInt('九'), 9);
+  assert.strictEqual(cnInt('十二'), 12);
+  assert.throws(() => cnInt('31'), /认不出的中文数字/);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('两次测评的四个分数与学时都取自正文', () => {
+  assert.strictEqual(F.directors, 31);
+  assert.strictEqual(F.abilityScore, 4.6);
+  assert.strictEqual(F.stayScore, 3.1);
+  assert.strictEqual(F.trainingHours, 96);
+  assert.strictEqual(F.afterAbility, 4.7);
+  assert.strictEqual(F.afterStay, 3.2);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('培训前后的落差都是 1.5，结构没有改变', () => {
+  assert.ok(Math.abs(gap(F.abilityScore, F.stayScore) - 1.5) < 1e-9);
+  assert.ok(Math.abs(gap(F.afterAbility, F.afterStay) - 1.5) < 1e-9);
+  assert.strictEqual(gap(F.abilityScore, F.stayScore), gap(F.afterAbility, F.afterStay));
+  assert.ok(F.afterStay > F.stayScore && F.afterAbility > F.abilityScore, '两项应同时略升');
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('人均学时约 3.1，工时投入可复算', () => {
+  assert.ok(Math.abs(hoursPerHead(F.trainingHours, F.directors) - 3.1) < 0.05, String(hoursPerHead(96, 31)));
+  assert.strictEqual(hoursPerHead(96, 31) * 31, 96);
+  assert.throws(() => hoursPerHead(96, 0), /人数必须为正/);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('脚本可运行，输出两次评分与人均学时', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/17-guanli-xue-jichu\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/10-m10/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /两次评分/);
+  assert.match(out, /人均/);
+  assert.match(out, /现算/);
+  assert.match(out, /不构成人事评价意见、干部任免建议或管理咨询意见/);
 });

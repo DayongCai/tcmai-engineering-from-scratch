@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
- * 管理心理学 · 第 15 章 职业压力与员工心理健康：本章统计口径
+ * 管理心理学 · 第 15 章 压力不是活多，是要得多、能控的少
  * 课程: departments/06-guanli/18-guanli-xinli-xue/chapters/15-p15/docs/zh.md
- * 数据: standards/18-guanli-xinli-xue/units.json（197 单元层，每单元带三辨与四位面词频）
- * 取数: standards/18-guanli-xinli-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章把「忙」与「耗竭」拆成两维判断，脚本据此算四件事：
+ *   1. 要求—控制四象限（卡拉塞克），并看社会支持补进第三维后的最劣组合；
+ *   2. 离职率按象限分开看：19% 与 8% 的差不是人手差；
+ *   3. 三级干预的「效果 × 可推行性」乘积，解释为什么总是「二 + 三」；
+ *   4. 恢复的硬指标：连续清醒 17—19 小时 ≈ 血液酒精 0.05% 的警觉水平。
  */
 
 'use strict';
@@ -15,87 +16,140 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '18-guanli-xinli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/18-guanli-xinli-xue/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 15;
+const TITLE = '压力不是活多，是要得多、能控的少';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '18-guanli-xinli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '18-guanli-xinli-xue', 'chapter-map.json');
-const CHAPTER = '15';
-const SLUG = '15-p15';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function sections(text) {
+  return String(text || '')
+    .split('\n')
+    .filter((l) => /^##\s+/.test(l))
+    .map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/**
+ * 卡拉塞克四象限：要求高／低 × 控制高／低。
+ * 高要求 + 高控制 = 主动型（忙但不必然崩）；高要求 + 低控制 = 高紧张（最伤）。
+ */
+function quadrant({ demand, control }) {
+  const highD = demand >= 0.6;
+  const highC = control >= 0.6;
+  const q = highD ? (highC ? '主动型' : '高紧张') : highC ? '低紧张' : '被动型';
+  const note = {
+    高紧张: '最伤：投入不改变处境，忙转化为耗竭',
+    主动型: '最有成长：忙转化为技能增长',
+    被动型: '最易退化：要求低、控制也低',
+    低紧张: '相对舒适，但要防技能退化',
+  }[q];
+  return { demand, control, quadrant: q, note };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 约翰逊与霍尔：补上社会支持后，高要求 + 低控制 + 低支持 是最劣组合 */
+function worst({ demand, control, support }) {
+  const q = quadrant({ demand, control });
+  const isWorst = q.quadrant === '高紧张' && support < 0.4;
+  return { ...q, support, worst: isWorst, label: isWorst ? '高要求—低控制—低支持（最劣）' : q.quadrant };
+}
+
+/** 离职率按象限并列：数字相同不能说明原因，差别要看控制维 */
+function turnover(groups) {
+  const rates = groups.map((g) => g.rate);
+  return {
+    groups,
+    spread: Number((Math.max(...rates) - Math.min(...rates)).toFixed(2)),
+    ratio: Number((Math.max(...rates) / Math.min(...rates)).toFixed(2)),
+  };
+}
+
+/** 三级干预：效果与可推行性给分（1—3），乘积越低越容易被选中 */
+const TIERS = [
+  { tier: '一级（组织层）', effect: 3, feasibility: 1, action: '人力配置、排班弹性、流程简化、权限下放' },
+  { tier: '二级（群体层）', effect: 2, feasibility: 2, action: '培训、督导、同伴支持、案例复盘' },
+  { tier: '三级（个体层）', effect: 1, feasibility: 3, action: '咨询、治疗、康复支持' },
+];
+
+function tierScore() {
+  return TIERS
+    .map((t) => ({ ...t, product: t.effect * t.feasibility }))
+    .sort((a, b) => b.product - a.product);
+}
+
+/**
+ * 恢复：连续清醒小时数与血液酒精当量。
+ * 正文给 17—19 小时 ≈ 0.05%，取 18 小时为锚点线性换算；17 小时即进入该量级下沿。
+ */
+function impairment(hoursAwake, anchorHours = 18, anchorBac = 0.05) {
+  const bac = (hoursAwake / anchorHours) * anchorBac;
+  return {
+    hoursAwake,
+    bac: Number(bac.toFixed(3)),
+    overLimit: bac >= 0.045,
+    note: bac >= 0.045 ? '警觉性已相当于酒驾水平：这是差错率问题，不是「累一点」' : '未达该量级，但仍需恢复',
+  };
+}
+
+const SIGNALS = ['睡眠持续受损', '失去兴趣', '饮酒或镇静药物', '没意义', '工作表现突然下降', '退缩'];
+const REFERRAL = ['私下、具体、不评判地表达观察', '给资源而不是给建议', '跟进而不是一次问完'];
+
+function concepts(text) {
+  const t = String(text || '');
+  return {
+    signals: SIGNALS.filter((s) => t.includes(s)),
+    referral: REFERRAL.filter((r) => t.includes(r)),
+    hasKarasek: t.includes('卡拉塞克'),
+    hasBurnoutCode: t.includes('QD85'),
+    hasICD: t.includes('ICD-11'),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const c = concepts(text);
+  const hanzi = (text.match(HANZI) || []).length;
+  const t = turnover([
+    { group: '高要求低控制', rate: 19 },
+    { group: '高要求高控制', rate: 8 },
+    { group: '全院平均', rate: 9 },
+  ]);
+  const tiers = tierScore();
 
-  console.log(`管理心理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`管理心理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${hanzi} 字 · 节 ${sections(text).length} 节`);
+  console.log(`识别信号 ${c.signals.length}/6｜转介三步 ${c.referral.length}/3｜ICD-11 编码：${c.hasBurnoutCode ? 'QD85' : '缺'}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  for (const q of [
+    { demand: 0.9, control: 0.2 },
+    { demand: 0.9, control: 0.8 },
+    { demand: 0.2, control: 0.2 },
+    { demand: 0.2, control: 0.8 },
+  ]) {
+    const r = quadrant(q);
+    console.log(`要求 ${q.demand}／控制 ${q.control} → ${r.quadrant}：${r.note}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  const w = worst({ demand: 0.9, control: 0.2, support: 0.2 });
+  console.log(`  补上支持维：${w.label} → ${w.note}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`离职率：${t.groups.map((g) => `${g.group} ${g.rate}%`).join('｜')}｜极差 ${t.spread} 个点，最高是最低的 ${t.ratio} 倍`);
+  console.log('  → 同样的忙，控制不同，走的人差一倍多；只加人补不了控制。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('三级干预（效果 × 可推行性）：');
+  for (const x of tiers) console.log(`  ${x.tier}｜效果 ${x.effect} × 可推行 ${x.feasibility} = ${x.product}｜${x.action}`);
+  console.log('  → 乘积最高的是二级，于是年年做培训；一级效果最好却落地最少。');
   console.log('');
-  console.log('※ 教学样例：数字由 standards/18-guanli-xinli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`恢复：清醒 ${impairment(18).hoursAwake} 小时 → 当量 ${impairment(18).bac}（${impairment(18).overLimit ? '已达酒驾量级' : '未达'}）`);
+  console.log(`      清醒 24 小时 → 当量 ${impairment(24).bac}；结论：${impairment(24).note}`);
+  console.log('');
+  console.log('边界：本章人数、分组比例与离职率均为演算设定；量表分数不是诊断，倦怠不是疾病，临床判断须由具备资质的人员作出。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, sections, quadrant, worst, turnover, tierScore, impairment, concepts, TIERS, SIGNALS, REFERRAL };

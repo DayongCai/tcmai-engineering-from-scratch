@@ -6,57 +6,65 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '17-guanli-xue-jichu', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '17-guanli-xue-jichu', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, CHAPTER, TITLE, read, cnInt, facts, approvalRate, conversionRate } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const TEXT = read();
+const F = facts(TEXT);
+
+test('正文就在本章目录下，章号与标题对得上', () => {
+  assert.ok(fs.existsSync(DOC), DOC);
+  assert.ok(DOC.endsWith(path.join('chapters', '14-m14', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 14);
+  assert.strictEqual(TITLE, '创新不是想出新点子，是让新点子活着走出实验室');
+  assert.match(TEXT, /^# 第 14 章/);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('汉字整数换算：八十七、六十一、四十三', () => {
+  assert.strictEqual(cnInt('八十七'), 87);
+  assert.strictEqual(cnInt('六十一'), 61);
+  assert.strictEqual(cnInt('四十三'), 43);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('申报、立项、留存、论文数都取自正文', () => {
+  assert.strictEqual(F.applied, 87);
+  assert.strictEqual(F.approved, 61);
+  assert.strictEqual(F.routine, 9);
+  assert.strictEqual(F.papers, 43);
+  assert.strictEqual(F.approvedPct, 70);
+  assert.ok(Math.abs(F.routinePct - 10.3) < 1e-9);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('立项率七成，与正文一致', () => {
+  const rate = approvalRate(F.approved, F.applied);
+  assert.ok(Math.abs(rate - F.approvedPct) < 0.2, String(rate));
+  assert.ok(rate > 69 && rate < 71, String(rate));
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('留存率约一成，与正文的 10.3% 对得上', () => {
+  const rate = approvalRate(F.routine, F.applied);
+  assert.ok(Math.abs(rate - F.routinePct) < 0.1, String(rate));
+  assert.ok(rate < 11);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('从批文到常规的转化率约 14.8%，立项不等于落地', () => {
+  const conv = conversionRate(F.routine, F.approved);
+  assert.ok(Math.abs(conv - 14.75) < 0.1, String(conv));
+  assert.ok(conv < 15, '转化率应低于一成五');
+  assert.ok(F.routine < F.approved / 5, '进入常规的不足立项数的五分之一');
+});
+
+test('非法参数报错，不返回负值', () => {
+  assert.throws(() => approvalRate(61, 0), /申报数必须为正/);
+  assert.throws(() => approvalRate(88, 87), /不能多于/);
+  assert.throws(() => conversionRate(9, 0), /立项数必须为正/);
+});
+
+test('脚本可运行，输出两个率与五道关', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/17-guanli-xue-jichu\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/14-m14/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /立项率/);
+  assert.match(out, /五道关/);
+  assert.match(out, /现算/);
+  assert.match(out, /不构成技术评估意见、项目审批依据或管理咨询意见/);
 });

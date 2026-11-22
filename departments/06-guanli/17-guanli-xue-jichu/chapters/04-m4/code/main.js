@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
- * 管理学基础 · 第 4 章 决策：本章统计口径
+ * 管理学基础 · 第 4 章 决策不是选最好的，是在信息不够时选一个能交代的
  * 课程: departments/06-guanli/17-guanli-xue-jichu/chapters/04-m4/docs/zh.md
- * 数据: standards/17-guanli-xue-jichu/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/17-guanli-xue-jichu/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 三个工具全部从正文取数后现算，并与正文自己写的数对账：
+ *   一、盈亏平衡：保本量 =（年折旧 + 年运营成本）÷ 单次收费，再折成日均；
+ *   二、实际与论证的落差：按两个日均量各算一次收入与盈亏；
+ *   三、期望值与敏感度：概率加权，以及收费下调后保本量的移动。
+ * 对不上账就报错——正文一改，脚本先叫，不静默沿用旧数。
  */
 
 'use strict';
@@ -15,87 +16,118 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '17-guanli-xue-jichu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/17-guanli-xue-jichu/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 4;
+const TITLE = '决策不是选最好的，是在信息不够时选一个能交代的';
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '17-guanli-xue-jichu', 'units.json');
-const MAP = path.join(ROOT, 'standards', '17-guanli-xue-jichu', 'chapter-map.json');
-const CHAPTER = '4';
-const SLUG = '04-m4';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function grab(text, re, label) {
+  const m = text.match(re);
+  if (!m) throw new Error('正文里找不到「' + label + '」，章节是否已被改写？');
+  const n = Number(String(m[1]).replace(/,/g, ''));
+  if (!Number.isFinite(n)) throw new Error('「' + label + '」取到的不是数: ' + m[1]);
+  return n;
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 正文第 5 行与第 47–53 行的全部设定。 */
+function facts(text) {
+  return {
+    investWan: grab(text, /购置一台\s*([\d,]+)\s*万元的影像设备/, '设备 1,200 万元'),
+    arguedDaily: grab(text, /测算日均检查\s*(\d+)\s*人次/, '论证 22 人次'),
+    actualDaily: grab(text, /实际日均\s*([\d.]+)\s*人次/, '实际 9.4 人次'),
+    depreciateYears: grab(text, /按\s*(\d+)\s*年折旧/, '8 年折旧'),
+    opexWan: grab(text, /年运营成本（[^）]*）\s*(\d+)\s*万元/, '运营成本 60 万元'),
+    price: grab(text, /单次检查收费\s*(\d+)\s*元/, '收费 500 元'),
+    workdays: grab(text, /按每年\s*(\d+)\s*个工作日计/, '256 个工作日'),
+    lowPrice: grab(text, /若收费从\s*\d+\s*元降到\s*(\d+)\s*元/, '收费降到 400 元'),
+    pOptimistic: grab(text, /乐观（概率\s*([\d.]+)，年收益\s*\d+\s*万）/, '乐观概率 0.3'),
+    pNeutral: grab(text, /中性（([\d.]+)，\d+\s*万）/, '中性概率 0.5'),
+    pPessimistic: grab(text, /悲观（([\d.]+)，−\d+\s*万）/, '悲观概率 0.2'),
+    gainOptimistic: grab(text, /乐观（概率\s*[\d.]+，年收益\s*(\d+)\s*万）/, '乐观 300 万'),
+    gainNeutral: grab(text, /中性（[\d.]+，(\d+)\s*万）/, '中性 80 万'),
+    lossPessimistic: grab(text, /悲观（[\d.]+，−(\d+)\s*万）/, '悲观 −120 万'),
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 年固定成本：折旧 + 运营，单位万元。 */
+function annualFixedWan(f) {
+  return f.investWan / f.depreciateYears + f.opexWan;
+}
+
+/** 保本检查量（人次/年）= 年固定成本 ÷ 单次收费。 */
+function breakEvenVolume(fixedWan, price) {
+  if (!(price > 0)) throw new Error('收费必须为正');
+  return (fixedWan * 10000) / price;
+}
+
+/** 日均保本量 = 年保本量 ÷ 工作日。 */
+function dailyVolume(annual, workdays) {
+  if (!(workdays > 0)) throw new Error('工作日必须为正');
+  return annual / workdays;
+}
+
+/** 按某个日均量算年收入与盈余（万元）。 */
+function yearly(f, daily, price) {
+  const visits = daily * f.workdays;
+  const revenueWan = (visits * price) / 10000;
+  return { visits, revenueWan, profitWan: revenueWan - annualFixedWan(f) };
+}
+
+/** 期望值（万元）：概率加权。 */
+function expectedWan(f) {
+  const sum = f.pOptimistic + f.pNeutral + f.pPessimistic;
+  if (Math.abs(sum - 1) > 1e-9) throw new Error('概率之和应为 1，实得 ' + sum);
+  return f.pOptimistic * f.gainOptimistic + f.pNeutral * f.gainNeutral - f.pPessimistic * f.lossPessimistic;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const f = facts(text);
+  const fixed = annualFixedWan(f);
+  const be = breakEvenVolume(fixed, f.price);
+  const beDaily = dailyVolume(be, f.workdays);
+  const argued = yearly(f, f.arguedDaily, f.price);
+  const actual = yearly(f, f.actualDaily, f.price);
+  const ev = expectedWan(f);
+  const lowBe = breakEvenVolume(fixed, f.lowPrice);
+  const lowDaily = dailyVolume(lowBe, f.workdays);
 
-  console.log(`管理学基础 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`管理学基础 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 取数后现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`一、盈亏平衡：投资 ${f.investWan} 万元 / ${f.depreciateYears} 年 + 运营 ${f.opexWan} 万元 = 年固定 ${fixed.toFixed(0)} 万元`);
+  console.log(`  保本量 ${be.toFixed(0)} 人次/年 ÷ ${f.workdays} 个工作日 = 日均 ${beDaily.toFixed(1)} 人次`);
+  console.log('  → 这个数在决策当时就能算出来，不需要任何预测能力，只需要把折旧算进去。');
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`二、论证与实际：同样的固定成本，两个日均量`);
+  console.log(`  论证 ${f.arguedDaily} 人次/日 → ${argued.visits.toFixed(0)} 人次/年、收入 ${argued.revenueWan.toFixed(1)} 万元、盈余 ${argued.profitWan.toFixed(1)} 万元`);
+  console.log(`  实际 ${f.actualDaily} 人次/日 → ${Math.round(actual.visits)} 人次/年、收入 ${actual.revenueWan.toFixed(1)} 万元、盈余 ${actual.profitWan.toFixed(1)} 万元`);
+  console.log(`  → 保本点 ${beDaily.toFixed(1)} 与实测 ${f.actualDaily} 之间的落差，就是决策失误的全部金额。`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`三、期望值：${f.pOptimistic}×${f.gainOptimistic} + ${f.pNeutral}×${f.gainNeutral} − ${f.pPessimistic}×${f.lossPessimistic} = ${ev.toFixed(0)} 万元`);
+  console.log(`  → 期望值为正不等于该做：悲观情形一次亏 ${f.lossPessimistic} 万元，若超出可承受范围，平均值再高也扛不住。`);
+  console.log(`四、敏感度：收费 ${f.price} → ${f.lowPrice} 元，保本量升到 ${lowBe.toFixed(0)} 人次/年、日均 ${lowDaily.toFixed(1)} 人次`);
+  console.log(`  → 与论证值 ${f.arguedDaily} 的余量立刻消失，这类决策要在实施中设更密的复查点。`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/17-guanli-xue-jichu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即报错或随之变化；金额与概率均为演算设定，不对应真实设备或价格。');
+  console.log('※ 本输出仅用于教学演示，不构成投资建议、采购建议或管理咨询意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC,
+  CHAPTER,
+  TITLE,
+  read,
+  facts,
+  annualFixedWan,
+  breakEvenVolume,
+  dailyVolume,
+  yearly,
+  expectedWan,
+};

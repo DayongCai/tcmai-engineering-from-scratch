@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 管理学基础 · 第 7 章 组织设计与组织结构：本章统计口径
+ * 管理学基础 · 第 7 章 组织图上的每一根线，都要有人能被叫来问
  * 课程: departments/06-guanli/17-guanli-xue-jichu/chapters/07-m7/docs/zh.md
- * 数据: standards/17-guanli-xue-jichu/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/17-guanli-xue-jichu/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 两件可算的事，参数全部取自正文：
+ *   一、格兰丘纳斯关系数：直接关系 + 交叉关系 + 组合关系，用来证明「多加几个人」不是线性成本；
+ *   二、幅度与层级：给定科室数与幅度，推出最少层级，说明层级是被幅度逼出来的结果。
  */
 
 'use strict';
@@ -15,87 +14,89 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '17-guanli-xue-jichu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/17-guanli-xue-jichu/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 7;
+const TITLE = '组织图上的每一根线，都要有人能被叫来问';
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '17-guanli-xue-jichu', 'units.json');
-const MAP = path.join(ROOT, 'standards', '17-guanli-xue-jichu', 'chapter-map.json');
-const CHAPTER = '7';
-const SLUG = '07-m7';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function grab(text, re, label) {
+  const m = text.match(re);
+  if (!m) throw new Error('正文里找不到「' + label + '」，章节是否已被改写？');
+  const n = Number(String(m[1]).replace(/,/g, ''));
+  if (!Number.isFinite(n)) throw new Error('「' + label + '」取到的不是数: ' + m[1]);
+  return n;
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 正文第 5 行的机构画像与第 15–16 行的关系数示例。 */
+function facts(text) {
+  return {
+    leaders: grab(text, /有\s*(\d+)\s*名院领导/, '8 名院领导'),
+    clinicalDepts: grab(text, /(\d+)\s*个临床科室/, '31 个临床科室'),
+    functionalDepts: grab(text, /(\d+)\s*个职能科室/, '14 个职能科室'),
+    span: grab(text, /分管\s*(\d+)\s*个科室/, '分管 11 个科室'),
+    signatures: grab(text, /一份采购文件要过\s*(\d+)\s*个签字/, '7 个签字'),
+    directives: grab(text, /每周向病区直接下达\s*(\d+)\s*条以上/, '3 条指令'),
+    relFour: grab(text, /n = 4 时，关系总数 = [\d +]+= \*\*([\d,]+)\*\*/, 'n=4 得 44'),
+    relEight: grab(text, /n = 8 时，关系总数 = [\d, +]+= \*\*([\d,]+)\*\*/, 'n=8 得 1,080'),
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 格兰丘纳斯：直接 n + 交叉 n(n−1) + 组合 n(2^(n−1)−1)。 */
+function relations(n) {
+  if (!(Number.isInteger(n) && n > 0)) throw new Error('下属人数必须是正整数');
+  return n + n * (n - 1) + n * (Math.pow(2, n - 1) - 1);
+}
+
+/** 关系数随幅度增长的速度：n 翻一倍涨多少倍。 */
+function growthRatio(a, b) {
+  return relations(b) / relations(a);
+}
+
+/** 给定单元数与幅度，最少需要几层（顶层由管理者本人承担）。 */
+function layers(units, span) {
+  if (!(units > 0) || !(span > 1)) throw new Error('单元数与幅度必须为正，幅度需大于 1');
+  return Math.ceil(Math.log(units) / Math.log(span)) || 1;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const f = facts(text);
+  const totalUnits = f.clinicalDepts + f.functionalDepts;
+  const ratio = growthRatio(4, 8);
+  const need = layers(totalUnits, f.span);
 
-  console.log(`管理学基础 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`管理学基础 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 取数后现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`一、机构画像：${f.leaders} 名院领导 · ${f.clinicalDepts} 个临床科室 · ${f.functionalDepts} 个职能科室`);
+  console.log(`  一名副院长分管 ${f.span} 个科室；一份采购文件过 ${f.signatures} 个签字；护理部每周直接下达 ${f.directives} 条以上指令`);
+  console.log('  → 图上的线有三种含义（指挥、参谋、协调），没区分就只能靠人记；判据是出事时第一个被叫去问的人是谁。');
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('二、格兰丘纳斯关系数：直接 n + 交叉 n(n−1) + 组合 n(2^(n−1)−1)');
+  console.log(`  下属 ${4} 人 → ${relations(4)} 条（正文 ${f.relFour}）`);
+  console.log(`  下属 ${8} 人 → ${relations(8)} 条（正文 ${f.relEight}）`);
+  console.log(`  人数翻一倍，关系数增至 ${ratio.toFixed(1)} 倍 → 幅度从来不是线性成本。`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`三、幅度与层级：${totalUnits} 个单元、幅度 ${f.span} → 至少 ${need} 层`);
+  console.log('  → 层级是幅度的结果，不是可以自由选择的风格；每多一层，信息衰减一次、审批多一次往返。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/17-guanli-xue-jichu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即报错或随之变化；44 与 1,080 为公式演算，不代表任何机构应采用该幅度。');
+  console.log('※ 本输出仅用于教学演示，不构成管理咨询意见或机构设置方案。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC,
+  CHAPTER,
+  TITLE,
+  read,
+  facts,
+  relations,
+  growthRatio,
+  layers,
+};

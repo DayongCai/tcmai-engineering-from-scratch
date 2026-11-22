@@ -6,57 +6,69 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '17-guanli-xue-jichu', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '17-guanli-xue-jichu', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const {
+  DOC,
+  CHAPTER,
+  TITLE,
+  read,
+  facts,
+  casesAvoided,
+  minutesSaved,
+  shiftsSaved,
+} = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const TEXT = read();
+const F = facts(TEXT);
+
+test('正文就在本章目录下，章号与标题对得上', () => {
+  assert.ok(fs.existsSync(DOC), DOC);
+  assert.ok(DOC.endsWith(path.join('chapters', '03-m3', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 3);
+  assert.strictEqual(TITLE, '原理用来排除错误做法，方法才用来动手');
+  assert.match(TEXT, /^# 第 3 章/);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('机构画像与改进参数都取自正文', () => {
+  assert.strictEqual(F.policies, 68);
+  assert.strictEqual(F.flows, 214);
+  assert.strictEqual(F.committees, 9);
+  assert.strictEqual(F.monthlyDischarges, 260);
+  assert.strictEqual(F.recheckBeforePct, 12);
+  assert.strictEqual(F.recheckAfterPct, 4);
+  assert.strictEqual(F.nurseMinutes, 18);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('每月减少重采例数算得 20.8，与正文一致', () => {
+  const cases = casesAvoided(F.monthlyDischarges, F.recheckBeforePct, F.recheckAfterPct);
+  assert.ok(Math.abs(cases - 20.8) < 1e-9, String(cases));
+  assert.strictEqual(cases, 260 * 0.08);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('节约工时 374.4 分钟，折合 6.24 小时', () => {
+  const minutes = minutesSaved(20.8, F.nurseMinutes);
+  assert.ok(Math.abs(minutes - 374.4) < 1e-9, String(minutes));
+  assert.ok(Math.abs(minutes / 60 - 6.24) < 1e-9, String(minutes / 60));
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('折合护士工作日与正文的 0.78 / 9.4 对得上账', () => {
+  const shifts = shiftsSaved(374.4);
+  assert.ok(Math.abs(shifts - F.shiftsPerMonth) < 0.01, `${shifts} vs ${F.shiftsPerMonth}`);
+  assert.ok(Math.abs(shifts * 12 - F.shiftsPerYear) < 0.1, `${shifts * 12} vs ${F.shiftsPerYear}`);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('非法输入报错，不返回负值或 NaN', () => {
+  assert.throws(() => casesAvoided(0, 12, 4), /出院例数必须为正/);
+  assert.throws(() => casesAvoided(260, 4, 12), /重采率不合法/);
+  assert.throws(() => casesAvoided(260, 12, -1), /重采率不合法/);
+});
+
+test('脚本可运行，输出改进口径与三个问题', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/17-guanli-xue-jichu\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/03-m3/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /可复算的改进/);
+  assert.match(out, /护士工作日/);
+  assert.match(out, /成本落在谁身上/);
+  assert.match(out, /现算/);
+  assert.match(out, /不构成管理咨询意见、质量控制方案或绩效设计依据/);
 });

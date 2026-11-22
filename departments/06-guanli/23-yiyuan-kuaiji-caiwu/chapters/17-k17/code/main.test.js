@@ -5,58 +5,59 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const {
+  readDoc, parseParams, compute, assertDocNumbers, DOC_PATH,
+} = require('./main.js');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '23-yiyuan-kuaiji-caiwu', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
-
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文可读，且脚本头部指向本章正文', () => {
+  assert.ok(fs.existsSync(DOC_PATH));
+  const body = fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8');
+  assert.ok(body.includes('/chapters/17-k17/docs/zh.md'));
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('拨款、折旧年限与病区参数从正文抓取', () => {
+  const p = parseParams(readDoc());
+  assert.strictEqual(p.grant, 800);
+  assert.strictEqual(p.life, 10);
+  assert.strictEqual(p.cases, 1200);
+  assert.strictEqual(p.weight, 1050);
+  assert.strictEqual(p.rate, 9800);
+  assert.strictEqual(p.feeForService, 1186);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('两套结余与差额', () => {
+  const r = compute(parseParams(readDoc()));
+  assert.strictEqual(r.dep, 80);
+  assert.strictEqual(r.finSurplus, 720);
+  assert.strictEqual(r.budgetSurplus, 0);
+  assert.strictEqual(r.netAsset, 720);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('DRG 支付与平均每例', () => {
+  const p = parseParams(readDoc());
+  const r = compute(p);
+  assert.strictEqual(r.drg, 1029);
+  assert.strictEqual(r.perCase, 8575);
+  assert.ok(Math.abs(p.weight / p.cases - p.perCase) < 1e-9);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('DRG 与项目收费的差额与降幅', () => {
+  const r = compute(parseParams(readDoc()));
+  assert.strictEqual(r.diff, -157);
+  assert.ok(Math.abs(r.diffRate + 13.237) < 0.01);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('正文报告的结果都能在正文里找到', () => {
+  const doc = readDoc();
+  const p = parseParams(doc);
+  assert.ok(assertDocNumbers(doc, p, compute(p)).length >= 10);
+});
+
+test('脚本可运行，输出含两套结余与差额', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/23-yiyuan-kuaiji-caiwu\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/17-k17/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /本期盈余 720 万元/);
+  assert.match(out, /差额 -157 万元（-13\.2%）/);
+  assert.match(out, /不构成会计处理意见/);
 });

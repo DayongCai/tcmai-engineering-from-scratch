@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 医院会计与财务管理 · 第 6 章 医院负债与净资产的核算与管理：本章统计口径
- * 课程: departments/06-guanli/23-yiyuan-kuaiji-caiwu/chapters/06-k6/docs/zh.md
- * 数据: standards/23-yiyuan-kuaiji-caiwu/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/23-yiyuan-kuaiji-caiwu/chapter-map.json（课程章 → 教材单元号）
+ * 医院会计与财务管理 · 第 6 章 家底分两半
+ * 课程正文: departments/06-guanli/23-yiyuan-kuaiji-caiwu/chapters/06-k6/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 正文的资金配对（84,000 对 80,000）、三条债务线、两项基金提取都可复算。
+ * 脚本从正文抓数，算出两个 4,000 万元的缺口，再与正文印出的比率对账。
  */
 
 'use strict';
@@ -15,87 +13,103 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/23-yiyuan-kuaiji-caiwu/units.json —— 章节目录是否已脱离仓库？');
+const DOC_PATH = path.join(__dirname, '..', 'docs', 'zh.md');
+
+function readDoc() {
+  return fs.readFileSync(DOC_PATH, 'utf8');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json');
-const MAP = path.join(ROOT, 'standards', '23-yiyuan-kuaiji-caiwu', 'chapter-map.json');
-const CHAPTER = '6';
-const SLUG = '06-k6';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function parseParams(doc) {
+  const num = (re, label) => {
+    const m = doc.match(re);
+    if (!m) throw new Error(`正文里找不到${label}`);
+    return Number(m[1].replace(/,/g, ''));
+  };
+  const pair = (re, label) => {
+    const m = doc.match(re);
+    if (!m) throw new Error(`正文里找不到${label}`);
+    return [Number(m[1].replace(/,/g, '')), Number(m[2].replace(/,/g, ''))];
+  };
+  const [nonCurAsset, nonCurLiab] = pair(/非流动资产\s*([\d,]+)\s*万元减去非流动负债\s*([\d,]+)\s*万元/, '非流动资产与非流动负债');
+  const [debtLiab, debtAssets] = pair(/资产负债率\s*\|\s*([\d,]+)\s*÷\s*([\d,]+)/, '资产负债率');
+  const cover = doc.match(/偿债备付率\s*\|\s*\(盈余\s*([\d,]+)\s*\+\s*折旧\s*([\d,]+)\)\s*÷\s*年还本付息\s*([\d,]+)/);
+  if (!cover) throw new Error('正文里找不到偿债备付率');
+  return {
+    netAssets: num(/某院净资产\s*([\d,]+)\s*万元/, '净资产'),
+    nonCurAsset,
+    nonCurLiab,
+    assets: debtAssets,
+    liab: debtLiab,
+    interestDebt: num(/带息负债设为\s*([\d,]+)\s*万元/, '带息负债'),
+    curAssets: num(/其中：流动资产\s*\|\s*([\d,]+)/, '流动资产'),
+    curLiab: num(/其中：流动负债\s*\|\s*([\d,]+)/, '流动负债'),
+    surplus: Number(cover[1].replace(/,/g, '')),
+    depreciation: Number(cover[2].replace(/,/g, '')),
+    debtService: Number(cover[3].replace(/,/g, '')),
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function compute(p) {
+  const longFund = p.nonCurLiab + p.netAssets;
+  return {
+    longFund,
+    longGap: p.nonCurAsset - longFund,
+    shortGap: p.curLiab - p.curAssets,
+    debtRatio: (p.liab / p.assets) * 100,
+    interestRatio: (p.interestDebt / p.assets) * 100,
+    coverRatio: (p.surplus + p.depreciation) / p.debtService,
+    welfareFund: p.surplus * 0.4,
+    riskFund: 83000 * 0.002,
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+const wan = (n) => n.toLocaleString('en-US');
+const pct = (x) => `${x.toFixed(1)}%`;
+
+function assertDocNumbers(doc, p, r) {
+  const report = [];
+  const expect = (ok, label) => {
+    if (!ok) throw new Error(`正文对账失败：${label}`);
+    report.push(label);
+  };
+  expect(p.assets === p.liab + p.netAssets, '资产 120,000 = 负债 45,600 + 净资产 74,400');
+  expect(p.curLiab + p.nonCurLiab === p.liab, '流动 40,000 + 非流动 5,600 = 负债 45,600');
+  expect(r.longFund === 80000 && doc.includes('5,600 + 74,400 = 80,000'), '长期资金 80,000 万元');
+  expect(r.longGap === 4000 && doc.includes('比 84,000 万元少 4,000 万元'), '长期缺口 4,000 万元');
+  expect(r.shortGap === 4000 && doc.includes('缺口同样是 4,000 万元'), '流动缺口 4,000 万元，与长期缺口相等');
+  expect(Math.abs(r.debtRatio - 38.0) < 0.05 && doc.includes('38.0%'), '资产负债率 38.0%');
+  expect(Math.abs(r.interestRatio - 10.0) < 0.05 && doc.includes('10.0%'), '带息负债率 10.0%');
+  expect(Math.abs(r.coverRatio - 2.47) < 0.005 && doc.includes('2.47'), '偿债备付率 2.47');
+  expect(Math.abs(r.welfareFund - 720) < 1e-9 && doc.includes('即 720 万元'), '职工福利基金 1,800 × 40% = 720');
+  expect(Math.abs(r.riskFund - 166) < 1e-9 && doc.includes('即 166 万元'), '医疗风险基金 83,000 × 2‰ = 166');
+  return report;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const p = parseParams(doc);
+  const r = compute(p);
 
-  console.log(`医院会计与财务管理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医院会计与财务管理 · 第 6 章 家底分两半');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`资金配对（万元）：长期资金 = 非流动负债 ${wan(p.nonCurLiab)} + 净资产 ${wan(p.netAssets)} = ${wan(r.longFund)}`);
+  console.log(`  非流动资产 ${wan(p.nonCurAsset)} − 长期资金 ${wan(r.longFund)} = ${wan(r.longGap)}（短期资金被长期占用）`);
+  console.log(`  流动资产 ${wan(p.curAssets)} − 流动负债 ${wan(p.curLiab)} = ${wan(-r.shortGap)}（同一个缺口的另一说法）`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('三条债务线：');
+  console.log(`  资产负债率　${wan(p.liab)} ÷ ${wan(p.assets)} = ${pct(r.debtRatio)}`);
+  console.log(`  带息负债率　${wan(p.interestDebt)} ÷ ${wan(p.assets)} = ${pct(r.interestRatio)}`);
+  console.log(`  偿债备付率　(${wan(p.surplus)} + ${wan(p.depreciation)}) ÷ ${wan(p.debtService)} = ${r.coverRatio.toFixed(2)}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`两项提取：职工福利基金 ${wan(r.welfareFund)}（1,800 × 40%）、医疗风险基金 ${wan(r.riskFund)}（83,000 × 2‰）。`);
+  console.log('结论：净资产增加不等于可动用资金增加；负债能力不等于实力。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  for (const line of assertDocNumbers(doc, p, r)) console.log(`  ✓ ${line}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/23-yiyuan-kuaiji-caiwu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 缺口与比率由本章正文现算，正文改数后会直接抛错。');
+  console.log('※ 教学示意，不构成融资建议或信用评价。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, parseParams, compute, assertDocNumbers, DOC_PATH };

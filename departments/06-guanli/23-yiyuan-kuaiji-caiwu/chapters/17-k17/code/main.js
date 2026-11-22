@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 医院会计与财务管理 · 第 17 章 医院财务管理的改革与发展：本章统计口径
- * 课程: departments/06-guanli/23-yiyuan-kuaiji-caiwu/chapters/17-k17/docs/zh.md
- * 数据: standards/23-yiyuan-kuaiji-caiwu/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/23-yiyuan-kuaiji-caiwu/chapter-map.json（课程章 → 教材单元号）
+ * 医院会计与财务管理 · 第 17 章 一笔 800 万元的设备
+ * 课程正文: departments/06-guanli/23-yiyuan-kuaiji-caiwu/chapters/17-k17/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 正文同一笔拨款走了两套账，另有一个 DRG 与项目收费的对照。
+ * 脚本从正文抓参数，重算两套结余、差额与 DRG 支付，再逐项对账。
  */
 
 'use strict';
@@ -15,87 +13,102 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/23-yiyuan-kuaiji-caiwu/units.json —— 章节目录是否已脱离仓库？');
+const DOC_PATH = path.join(__dirname, '..', 'docs', 'zh.md');
+
+function readDoc() {
+  return fs.readFileSync(DOC_PATH, 'utf8');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json');
-const MAP = path.join(ROOT, 'standards', '23-yiyuan-kuaiji-caiwu', 'chapter-map.json');
-const CHAPTER = '17';
-const SLUG = '17-k17';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function parseParams(doc) {
+  const num = (re, label) => {
+    const m = doc.match(re);
+    if (!m) throw new Error(`正文里找不到${label}`);
+    return Number(m[1].replace(/,/g, ''));
+  };
+  const grant = doc.match(/收到财政项目拨款\s*([\d,]+)\s*万元，当年全额买了设备，设备按\s*(\d+)\s*年折旧/);
+  if (!grant) throw new Error('正文里找不到拨款与折旧年限');
+  const ward = doc.match(/某病区一年\s*([\d,]+)\s*例，总权重\s*([\d,]+)（平均每例\s*([\d.]+)），费率\s*([\d,]+)\s*元\/权重/);
+  if (!ward) throw new Error('正文里找不到病区例数与费率');
+  const drg = doc.match(/DRG 支付 = ([\d,]+) × ([\d,]+) = ([\d,]+)\s*万元\*{0,2}（平均每例\s*([\d,]+)\s*元）/);
+  if (!drg) throw new Error('正文里找不到 DRG 支付算式');
+  return {
+    grant: Number(grant[1].replace(/,/g, '')),
+    life: Number(grant[2]),
+    cases: Number(ward[1].replace(/,/g, '')),
+    weight: Number(ward[2].replace(/,/g, '')),
+    perCase: Number(ward[3]),
+    rate: Number(ward[4].replace(/,/g, '')),
+    drgPaid: Number(drg[3].replace(/,/g, '')),
+    drgPerCase: Number(drg[4].replace(/,/g, '')),
+    feeForService: num(/同批病例若按项目收费，为\s*([\d,]+)\s*万元/, '项目收费'),
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function compute(p) {
+  const dep = p.grant / p.life;
+  const finSurplus = p.grant - dep;
+  const budgetSurplus = p.grant - p.grant;
+  const drg = (p.weight * p.rate) / 10000;
+  const diff = drg - p.feeForService;
+  return {
+    dep,
+    finSurplus,
+    budgetSurplus,
+    netAsset: p.grant - dep,
+    drg,
+    perCase: (drg * 10000) / p.cases,
+    diff,
+    diffRate: (diff / p.feeForService) * 100,
+    execRate: (p.grant / p.grant) * 100,
+    surplusRate: (finSurplus / p.grant) * 100,
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+const wan = (n) => Math.round(n).toLocaleString('en-US');
+
+function assertDocNumbers(doc, p, r) {
+  const report = [];
+  const expect = (ok, label) => {
+    if (!ok) throw new Error(`正文对账失败：${label}`);
+    report.push(label);
+  };
+  expect(r.dep === 80 && doc.includes('800 ÷ 10 = 80'), '年折旧 800 ÷ 10 = 80 万元');
+  expect(r.finSurplus === 720 && doc.includes('**本期盈余 720 万元**'), '财务本期盈余 720 万元');
+  expect(r.budgetSurplus === 0, '预算结余 0 元');
+  expect(r.netAsset === 720 && doc.includes('差额 720 万元 = 固定资产净值'), '差额 720 万元 = 固定资产净值');
+  expect(r.execRate === 100 && doc.includes('预算执行率 100%'), '预算执行率 100%');
+  expect(Math.abs(r.drg - p.drgPaid) < 1e-9 && p.drgPaid === 1029, 'DRG 支付 1,050 × 9,800 = 1,029 万元');
+  expect(Math.abs(r.perCase - p.drgPerCase) < 1 && p.drgPerCase === 8575, '平均每例 8,575 元');
+  expect(Math.abs(r.diff - -157) < 1e-9 && doc.includes('−157 万元'), '差额 −157 万元');
+  expect(Math.abs(r.diffRate - -13.2) < 0.06 && doc.includes('13.2%'), '降幅 13.2%');
+  expect(Math.abs(p.weight / p.cases - p.perCase) < 1e-9, '平均每例权重 1,050 ÷ 1,200 = 0.875');
+  return report;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const p = parseParams(doc);
+  const r = compute(p);
 
-  console.log(`医院会计与财务管理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医院会计与财务管理 · 第 17 章 一笔 800 万元的设备');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`财政项目拨款 ${wan(p.grant)} 万元，设备按 ${p.life} 年折旧：年折旧 ${wan(r.dep)} 万元`);
+  console.log(`  财务会计：收入 ${wan(p.grant)} − 费用 ${wan(r.dep)} = 本期盈余 ${wan(r.finSurplus)} 万元`);
+  console.log(`  预算会计：预算收入 ${wan(p.grant)} − 预算支出 ${wan(p.grant)} = 预算结余 ${r.budgetSurplus} 元`);
+  console.log(`  差额 ${wan(r.finSurplus)} 万元 = 固定资产净值 ${wan(r.netAsset)} 万元`);
+  console.log(`  执行率 ${r.execRate.toFixed(0)}%，会计结余率 ${r.surplusRate.toFixed(0)}% —— 两个信号各自都对`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`DRG：${wan(p.cases)} 例、总权重 ${wan(p.weight)}（每例 ${p.perCase}）、费率 ${wan(p.rate)} 元/权重`);
+  console.log(`  支付 = ${wan(p.weight)} × ${wan(p.rate)} = ${wan(r.drg)} 万元（每例 ${wan(r.perCase)} 元）`);
+  console.log(`  按项目收费 ${wan(p.feeForService)} 万元，差额 ${wan(r.diff)} 万元（${r.diffRate.toFixed(1)}%）`);
+  console.log('结论：两套结余不是两种说法，是两个问题；差额必须解释，不能合并。');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  for (const line of assertDocNumbers(doc, p, r)) console.log(`  ✓ ${line}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/23-yiyuan-kuaiji-caiwu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 两套结余与 DRG 支付由本章正文现算，正文改数后会直接抛错。');
+  console.log('※ 教学示意，不构成会计处理意见或医保结算结论。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, parseParams, compute, assertDocNumbers, DOC_PATH };

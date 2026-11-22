@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 管理学基础 · 第 6 章 战略管理：本章统计口径
+ * 管理学基础 · 第 6 章 战略不是决定做什么，是决定不做什么
  * 课程: departments/06-guanli/17-guanli-xue-jichu/chapters/06-m6/docs/zh.md
- * 数据: standards/17-guanli-xue-jichu/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/17-guanli-xue-jichu/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 从正文取出学科建设经费、专科数、进入第一梯队的最小投入，现算两件事：
+ *   一、平均分配时每个方向拿多少、有几家能跨过门槛；
+ *   二、同样的钱集中投放时能跨过门槛几家，以及平均分配每家的缺口。
+ * 结论由算术给出，不由态度给出：门槛存在时，摊薄在数上等价于全部不达标。
  */
 
 'use strict';
@@ -15,87 +15,104 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '17-guanli-xue-jichu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/17-guanli-xue-jichu/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 6;
+const TITLE = '战略不是决定做什么，是决定不做什么';
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '17-guanli-xue-jichu', 'units.json');
-const MAP = path.join(ROOT, 'standards', '17-guanli-xue-jichu', 'chapter-map.json');
-const CHAPTER = '6';
-const SLUG = '06-m6';
+const CN = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 正文写的是「八个」「三个」，这里只认一到十，认不出就报错。 */
+function cnNum(s, label) {
+  if (!(s in CN)) throw new Error('认不出的中文数字：' + label + ' = ' + s);
+  return CN[s];
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function grab(text, re, label) {
+  const m = text.match(re);
+  if (!m) throw new Error('正文里找不到「' + label + '」，章节是否已被改写？');
+  const n = Number(String(m[1]).replace(/,/g, ''));
+  if (!Number.isFinite(n)) throw new Error('「' + label + '」取到的不是数: ' + m[1]);
+  return n;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 取原文片段（中文数字用），不走 Number。 */
+function grabRaw(text, re, label) {
+  const m = text.match(re);
+  if (!m) throw new Error('正文里找不到「' + label + '」，章节是否已被改写？');
+  return m[1];
+}
+
+/** 正文第 5 行与第 71 行的全部设定。 */
+function facts(text) {
+  return {
+    totalWan: grab(text, /五年学科建设经费\s*([\d,]+)\s*万元/, '经费 6,000 万元'),
+    units: cnNum(grabRaw(text, /规划写了([一二三四五六七八九十]+)个重点建设专科/, '八个专科'), '八个专科'),
+    equalShareWan: grab(text, /每个约\s*([\d,]+)\s*万元/, '每个 750 万元'),
+    equalQualified: grab(text, /八个专科各\s*[\d,]+\s*万元，\*\*达标数为\s*(\d+)\*\*/, '达标数为 0'),
+    minScaleWan: grab(text, /单个投入普遍在\s*([\d,]+)\s*万元以上/, '门槛 1,800 万元'),
+    focusedUnits: cnNum(grabRaw(text, /；([一二三四五六七八九十]+)个专科各\s*[\d,]+\s*万元，\*\*达标数为/, '三个专科'), '三个专科'),
+    focusedShareWan: grab(text, /；[一二三四五六七八九十]+个专科各\s*([\d,]+)\s*万元/, '每个 2,000 万元'),
+    focusedQualified: grab(text, /；[一二三四五六七八九十]+个专科各\s*[\d,]+\s*万元，\*\*达标数为\s*(\d+)\*\*/, '达标数为 3'),
+  };
+}
+
+/** 平均分配：每个方向拿多少。 */
+function equalShare(totalWan, units) {
+  if (!(units > 0)) throw new Error('方向数必须为正');
+  return totalWan / units;
+}
+
+/** 同样的钱能同时满足几个方向的最低有效规模。 */
+function qualifyingUnits(totalWan, minScaleWan) {
+  if (!(minScaleWan > 0)) throw new Error('门槛必须为正');
+  return Math.floor(totalWan / minScaleWan);
+}
+
+/** 平均分配下每个方向离门槛还差多少。 */
+function shortfallWan(shareWan, minScaleWan) {
+  return Math.max(0, minScaleWan - shareWan);
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const f = facts(text);
+  const share = equalShare(f.totalWan, f.units);
+  const maxUnits = qualifyingUnits(f.totalWan, f.minScaleWan);
+  const gap = shortfallWan(share, f.minScaleWan);
 
-  console.log(`管理学基础 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`管理学基础 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 取数后现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`一、摊薄：${f.totalWan} 万元 ÷ ${f.units} 个方向 = 每个 ${share.toFixed(0)} 万元`);
+  console.log(`  进入第一梯队的门槛 ${f.minScaleWan} 万元，每个方向还差 ${gap.toFixed(0)} 万元`);
+  console.log(`  平均分配下达标数 ${f.equalQualified}（与算术一致：${f.totalWan} ÷ ${f.minScaleWan} 向下取整 = ${maxUnits}）`);
+  console.log('  → 钱花得一分不差，没有一个方向跨过门槛；摊薄在数上等价于全部不达标。');
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`二、集中：同样的钱做 ${f.focusedUnits} 个方向 = 每个 ${f.focusedShareWan} 万元`);
+  console.log(`  门槛 ${f.minScaleWan} 万元，达标数 ${f.focusedQualified}`);
+  console.log(`  → 不是「集中一定更好」的教条：门槛存在时它才成立，所以第一步是先问清门槛在哪。`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('三、两问与三层：在哪里竞争、凭什么赢；总体—业务—职能三层是换算关系');
+  console.log('  → 职能战略才是真战略，因为它决定钱和人往哪走；资源表上没有的方向，不在战略里。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/17-guanli-xue-jichu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即报错或随之变化；6,000 万、750 万、1,800 万为演算设定，不对应真实评审标准。');
+  console.log('※ 本输出仅用于教学演示，不构成管理咨询意见、区域卫生规划建议或投资建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC,
+  CHAPTER,
+  TITLE,
+  read,
+  facts,
+  equalShare,
+  qualifyingUnits,
+  shortfallWan,
+};

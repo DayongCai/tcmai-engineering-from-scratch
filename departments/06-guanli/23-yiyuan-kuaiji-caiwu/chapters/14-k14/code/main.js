@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 医院会计与财务管理 · 第 14 章 医院财务监督与内部审计：本章统计口径
- * 课程: departments/06-guanli/23-yiyuan-kuaiji-caiwu/chapters/14-k14/docs/zh.md
- * 数据: standards/23-yiyuan-kuaiji-caiwu/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/23-yiyuan-kuaiji-caiwu/chapter-map.json（课程章 → 教材单元号）
+ * 医院会计与财务管理 · 第 14 章 整改率 61.6%
+ * 课程正文: departments/06-guanli/23-yiyuan-kuaiji-caiwu/chapters/14-k14/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 正文的整改率、重复率与抽样区间都可复算：53/86、780/1,240、35/86，
+ * 9/120 的差错率与 95% 置信区间（二项分布正态近似）。脚本重算并逐项对账。
  */
 
 'use strict';
@@ -15,87 +13,122 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/23-yiyuan-kuaiji-caiwu/units.json —— 章节目录是否已脱离仓库？');
+const DOC_PATH = path.join(__dirname, '..', 'docs', 'zh.md');
+
+function readDoc() {
+  return fs.readFileSync(DOC_PATH, 'utf8');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json');
-const MAP = path.join(ROOT, 'standards', '23-yiyuan-kuaiji-caiwu', 'chapter-map.json');
-const CHAPTER = '14';
-const SLUG = '14-k14';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function parseParams(doc) {
+  const num = (re, label) => {
+    const m = doc.match(re);
+    if (!m) throw new Error(`正文里找不到${label}`);
+    return Number(m[1].replace(/,/g, ''));
+  };
+  const found = doc.match(/查出问题\s*(\d+)\s*项、涉及金额\s*([\d,]+)\s*万元/);
+  if (!found) throw new Error('正文里找不到查出问题');
+  const fixed = doc.match(/完成整改\s*(\d+)\s*项、金额\s*([\d,]+)\s*万元，\*\*按项\s*([\d.]+)%、按金额\s*([\d.]+)%\*\*/);
+  if (!fixed) throw new Error('正文里找不到整改结果');
+  const repeat = doc.match(/(\d+)\s*项里有\s*(\d+)\s*项是上年度已经提过的同类问题，\*\*重复率\s*([\d.]+)%\*\*/);
+  if (!repeat) throw new Error('正文里找不到重复问题');
+  const sample = doc.match(/年付款\s*([\d,]+)\s*笔、金额\s*([\d,]+)\s*万元，抽\s*(\d+)\s*笔核对，发现差错\s*(\d+)\s*笔，差错率\s*([\d.]+)%/);
+  if (!sample) throw new Error('正文里找不到抽样');
+  const ci = doc.match(/标准误 = √\(([\d.]+) × ([\d.]+) ÷ (\d+)\) = ([\d.]+)，95% 置信区间为\s*([\d.]+)% ± ([\d.]+) 个百分点，即\s*\*\*([\d.]+)% 到 ([\d.]+)%\*\*。折算成金额是\s*\*\*([\d,]+)\s*万元到 ([\d,]+)\s*万元\*\*/);
+  if (!ci) throw new Error('正文里找不到抽样区间');
+  return {
+    auditors: num(/内部审计\s*(\d+)\s*人/, '审计人数'),
+    projects: num(/一年做\s*(\d+)\s*个项目/, '项目数'),
+    issues: Number(found[1]),
+    issueAmount: Number(found[2].replace(/,/g, '')),
+    fixed: Number(fixed[1]),
+    fixedAmount: Number(fixed[2].replace(/,/g, '')),
+    fixedRate: Number(fixed[3]),
+    fixedAmountRate: Number(fixed[4]),
+    repeatBase: Number(repeat[1]),
+    repeatCount: Number(repeat[2]),
+    repeatRate: Number(repeat[3]),
+    payments: Number(sample[1].replace(/,/g, '')),
+    payAmount: Number(sample[2].replace(/,/g, '')),
+    sampleSize: Number(sample[3]),
+    errors: Number(sample[4]),
+    errorRate: Number(sample[5]),
+    seStated: Number(ci[4]),
+    ciPoints: Number(ci[6]),
+    lowPct: Number(ci[7]),
+    highPct: Number(ci[8]),
+    lowAmount: Number(ci[9].replace(/,/g, '')),
+    highAmount: Number(ci[10].replace(/,/g, '')),
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function compute(p) {
+  const rate = (p.errors / p.sampleSize) * 100;
+  const se = Math.sqrt((p.errors / p.sampleSize) * (1 - p.errors / p.sampleSize) / p.sampleSize);
+  const half = 1.96 * se * 100;
+  const lowPct = Math.round((rate - half) * 10) / 10;
+  const highPct = Math.round((rate + half) * 10) / 10;
+  const point = (p.payAmount * rate) / 100;
+  return {
+    fixedRate: (p.fixed / p.issues) * 100,
+    fixedAmountRate: (p.fixedAmount / p.issueAmount) * 100,
+    repeatRate: (p.repeatCount / p.repeatBase) * 100,
+    rate,
+    se,
+    half,
+    lowPct,
+    highPct,
+    point,
+    lowAmount: (p.payAmount * lowPct) / 100,
+    highAmount: (p.payAmount * highPct) / 100,
+    widthRatio: ((p.payAmount * highPct) / 100 - (p.payAmount * lowPct) / 100) / point,
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+const wan = (n) => Math.round(n).toLocaleString('en-US');
+
+function assertDocNumbers(doc, p, r) {
+  const report = [];
+  const expect = (ok, label) => {
+    if (!ok) throw new Error(`正文对账失败：${label}`);
+    report.push(label);
+  };
+  expect(Math.abs(r.fixedRate - p.fixedRate) < 0.06 && p.fixedRate === 61.6, '按项整改率 53 ÷ 86 = 61.6%');
+  expect(Math.abs(r.fixedAmountRate - p.fixedAmountRate) < 0.06 && p.fixedAmountRate === 62.9, '按金额整改率 780 ÷ 1,240 = 62.9%');
+  expect(Math.abs(r.repeatRate - p.repeatRate) < 0.06 && p.repeatRate === 40.7, '重复率 35 ÷ 86 = 40.7%');
+  expect(Math.abs(r.rate - p.errorRate) < 1e-9 && p.errorRate === 7.5, '抽样差错率 9 ÷ 120 = 7.5%');
+  expect(Math.round(r.point) === 1395 && doc.includes('**1,395 万元**'), '点估计 18,600 × 7.5% = 1,395 万元');
+  expect(Math.abs(r.se - p.seStated) < 0.001 && p.seStated === 0.024, '标准误 0.024');
+  expect(Math.abs(r.half - p.ciPoints) < 0.1 && p.ciPoints === 4.7, '95% 区间 ±4.7 个百分点');
+  expect(Math.abs(r.lowPct - p.lowPct) < 0.11 && Math.abs(r.highPct - p.highPct) < 0.11, '区间 2.8% 到 12.2%');
+  expect(Math.abs(r.lowAmount - p.lowAmount) < 1.5 && Math.abs(r.highAmount - p.highAmount) < 1.5, '金额区间 521 到 2,269 万元');
+  expect(Math.abs(r.widthRatio - 1.25) < 0.01 && doc.includes('1.25 倍'), '区间宽度约为点估计的 1.25 倍');
+  return report;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const p = parseParams(doc);
+  const r = compute(p);
 
-  console.log(`医院会计与财务管理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医院会计与财务管理 · 第 14 章 整改率 61.6%');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`审计 ${p.auditors} 人、${p.projects} 个项目：查出 ${p.issues} 项、${wan(p.issueAmount)} 万元`);
+  console.log(`整改 ${p.fixed} 项、${wan(p.fixedAmount)} 万元 → 按项 ${r.fixedRate.toFixed(1)}%，按金额 ${r.fixedAmountRate.toFixed(1)}%`);
+  console.log(`重复问题 ${p.repeatCount} ÷ ${p.repeatBase} = ${r.repeatRate.toFixed(1)}%`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`抽样：${wan(p.payments)} 笔 / ${wan(p.payAmount)} 万元，抽 ${p.sampleSize} 笔、差错 ${p.errors} 笔 → ${r.rate.toFixed(1)}%`);
+  console.log(`  点估计 ${wan(p.payAmount)} × ${r.rate.toFixed(1)}% = ${wan(r.point)} 万元`);
+  console.log(`  标准误 √(${(r.rate / 100).toFixed(3)} × ${(1 - r.rate / 100).toFixed(3)} ÷ ${p.sampleSize}) = ${r.se.toFixed(3)}`);
+  console.log(`  95% 区间 ${r.lowPct}% — ${r.highPct}%，折合 ${wan(r.lowAmount)} — ${wan(r.highAmount)} 万元`);
+  console.log(`  区间宽度是点估计的 ${r.widthRatio.toFixed(2)} 倍`);
+  console.log('结论：整改率必须与重复率一起看；抽样结论不能被当作精确金额。');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  for (const line of assertDocNumbers(doc, p, r)) console.log(`  ✓ ${line}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/23-yiyuan-kuaiji-caiwu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 整改率与抽样区间由本章正文现算，正文改数后会直接抛错。');
+  console.log('※ 教学示意，不构成审计结论或责任认定。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, parseParams, compute, assertDocNumbers, DOC_PATH };

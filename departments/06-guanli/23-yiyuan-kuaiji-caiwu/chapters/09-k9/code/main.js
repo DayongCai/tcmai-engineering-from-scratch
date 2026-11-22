@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 医院会计与财务管理 · 第 9 章 医院成本分析与成本管控：本章统计口径
- * 课程: departments/06-guanli/23-yiyuan-kuaiji-caiwu/chapters/09-k9/docs/zh.md
- * 数据: standards/23-yiyuan-kuaiji-caiwu/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/23-yiyuan-kuaiji-caiwu/chapter-map.json（课程章 → 教材单元号）
+ * 医院会计与财务管理 · 第 9 章 多做不一定多赚
+ * 课程正文: departments/06-guanli/23-yiyuan-kuaiji-caiwu/chapters/09-k9/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 正文的量本利算例互相闭合：边际贡献 4,200、保本量 3,500、3,200 例时 −126 万元；
+ * 降耗材 600 元后保本量 3,063、结余 +66 万元；杠杆 23.3 倍。
+ * 脚本从正文抓参数重算这些数，再与正文印出的结果对账。
  */
 
 'use strict';
@@ -15,87 +14,110 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/23-yiyuan-kuaiji-caiwu/units.json —— 章节目录是否已脱离仓库？');
+const DOC_PATH = path.join(__dirname, '..', 'docs', 'zh.md');
+
+function readDoc() {
+  return fs.readFileSync(DOC_PATH, 'utf8');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '23-yiyuan-kuaiji-caiwu', 'units.json');
-const MAP = path.join(ROOT, 'standards', '23-yiyuan-kuaiji-caiwu', 'chapter-map.json');
-const CHAPTER = '9';
-const SLUG = '09-k9';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function parseParams(doc) {
+  const num = (re, label) => {
+    const m = doc.match(re);
+    if (!m) throw new Error(`正文里找不到${label}`);
+    return Number(m[1].replace(/,/g, ''));
+  };
+  const pair = (re, label) => {
+    const m = doc.match(re);
+    if (!m) throw new Error(`正文里找不到${label}`);
+    return [Number(m[1].replace(/,/g, '')), Number(m[2].replace(/,/g, ''))];
+  };
+  const [pay, variable] = pair(/DRG 支付标准\s*([\d,]+)\s*元，变动成本\s*([\d,]+)\s*元/, '支付标准与变动成本');
+  const [cases, loss] = pair(/做满\s*([\d,]+)\s*例时亏\s*([\d,]+)\s*万元/, '例数与亏损');
+  const [matCost, medRevenue] = pair(/百元医疗收入消耗卫生材料\s*\|\s*([\d,]+)\s*÷\s*([\d,]+)/, '百元耗材');
+  const costRatio = doc.match(/成本收入比\s*\|[^|]*\|\s*([\d.]+)（([\d,]+) ÷ ([\d,]+)）/);
+  if (!costRatio) throw new Error('正文里找不到成本收入比');
+  return {
+    pay,
+    variable,
+    fixedPerCase: num(/分摊固定成本\s*([\d,]+)\s*元/, '分摊固定成本'),
+    fixedTotal: num(/科室固定成本\s*([\d,]+)\s*万元/, '科室固定成本'),
+    cases,
+    loss,
+    variableLow: num(/把变动成本从\s*[\d,]+\s*降到\s*([\d,]+)/, '降耗材后的变动成本'),
+    material: matCost,
+    medRevenue,
+    costRatio: Number(costRatio[1]),
+    costRatioCost: Number(costRatio[2].replace(/,/g, '')),
+    costRatioRev: Number(costRatio[3].replace(/,/g, '')),
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function compute(p) {
+  const cm = p.pay - p.variable;
+  const cmLow = p.pay - p.variableLow;
+  const fixed = p.fixedTotal * 10000;
+  const bep = fixed / cm;
+  const bepLow = fixed / cmLow;
+  const atCases = p.cases * cm - fixed;
+  const atCasesLow = p.cases * cmLow - fixed;
+  return {
+    cm,
+    cmLow,
+    bep,
+    bepCeil: Math.ceil(bepLow),
+    atCases: atCases / 10000,
+    atCasesLow: atCasesLow / 10000,
+    leverage: (p.cases * cmLow) / atCasesLow,
+    materialRate: (p.material / p.medRevenue) * 100,
+    costRatio: p.costRatioCost / p.costRatioRev,
+    cmRate: (cm / p.pay) * 100,
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+const wan = (n) => n.toLocaleString('en-US', { maximumFractionDigits: 0 });
+
+function assertDocNumbers(doc, p, r) {
+  const report = [];
+  const expect = (ok, label) => {
+    if (!ok) throw new Error(`正文对账失败：${label}`);
+    report.push(label);
+  };
+  expect(r.cm === 4200 && doc.includes('12,800 − 8,600 = 4,200'), '边际贡献 4,200 元');
+  expect(r.bep === 3500 && doc.includes('14,700,000 ÷ 4,200 = 3,500'), '保本量 3,500 例');
+  expect(Math.round(r.atCases) === -p.loss && doc.includes('−126'), '3,200 例时亏 126 万元');
+  expect(r.cmLow === 4800 && doc.includes('3,200 × 4,800 = 1,536'), '降耗材后边际贡献 4,800 元');
+  expect(r.bepCeil === 3063 && doc.includes('3,063'), '新保本量 3,063 例（3,062.5 进位）');
+  expect(Math.round(r.atCasesLow) === 66 && doc.includes('+66 万元'), '3,200 例时盈余 66 万元');
+  expect(Math.abs(r.leverage - 23.3) < 0.05 && doc.includes('23.3 倍'), '经营杠杆 23.3 倍');
+  expect(Math.abs(r.materialRate - 26.5) < 0.05 && doc.includes('26.5 元'), '百元收入耗材 26.5 元');
+  expect(Math.abs(r.costRatio - 0.96) < 0.005 && doc.includes('0.96'), '成本收入比 0.96');
+  expect(Math.abs(r.cmRate - 32.8) < 0.05 && doc.includes('32.8%'), '边际贡献率 32.8%');
+  return report;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const p = parseParams(doc);
+  const r = compute(p);
 
-  console.log(`医院会计与财务管理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('医院会计与财务管理 · 第 9 章 多做不一定多赚');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`单例（元）：支付 ${wan(p.pay)} − 变动 ${wan(p.variable)} = 边际贡献 ${wan(r.cm)}；全成本 ${wan(p.variable + p.fixedPerCase)}，每例结余 ${wan(p.pay - (p.variable + p.fixedPerCase))}`);
+  console.log(`保本量：${wan(p.fixedTotal)} 万 ÷ ${wan(r.cm)} = ${wan(r.bep)} 例；${wan(p.cases)} 例时结余 ${wan(r.atCases)} 万元`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('降耗材 600 元后：');
+  console.log(`  边际贡献 ${wan(r.cmLow)} 元，保本量 ${(p.fixedTotal * 10000 / r.cmLow).toFixed(1)} → 进位 ${wan(r.bepCeil)} 例`);
+  console.log(`  ${wan(p.cases)} 例时结余 ${wan(r.atCasesLow)} 万元；经营杠杆 ${r.leverage.toFixed(1)} 倍`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`三个指标：百元收入耗材 ${r.materialRate.toFixed(1)} 元、成本收入比 ${r.costRatio.toFixed(2)}、边际贡献率 ${r.cmRate.toFixed(1)}%`);
+  console.log('结论：增收要看别人给不给病人，降本只看自己做不做。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  for (const line of assertDocNumbers(doc, p, r)) console.log(`  ✓ ${line}`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/23-yiyuan-kuaiji-caiwu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 保本量与杠杆由本章正文现算，正文改数后会直接抛错。');
+  console.log('※ 教学示意，不构成价格谈判依据或绩效方案。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, parseParams, compute, assertDocNumbers, DOC_PATH };

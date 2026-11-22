@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 管理学基础 · 第 13 章 控制：本章统计口径
+ * 管理学基础 · 第 13 章 控制不是抓住谁的错，是让偏差在还来得及的时候出现
  * 课程: departments/06-guanli/17-guanli-xue-jichu/chapters/13-m13/docs/zh.md
- * 数据: standards/17-guanli-xue-jichu/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/17-guanli-xue-jichu/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 从正文取终末质控甲级率、抽查份数与不合格份数，现算：
+ *   一、两个口径的差：甲级率与运行病历问题率相差多少个百分点；
+ *   二、严重不良事件在上报总量里的份额；
+ *   三、结论落到「查的与被查的是不是同一个东西」。
  */
 
 'use strict';
@@ -15,87 +15,88 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '17-guanli-xue-jichu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 13;
+const TITLE = '控制不是抓住谁的错，是让偏差在还来得及的时候出现';
+
+const D = { 零: 0, 一: 1, 二: 2, 两: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9 };
+const U = { 十: 10, 百: 100, 千: 1000, 万: 10000 };
+
+function cnInt(s) {
+  if (!/^[零一二两三四五六七八九十百千万]+$/.test(s)) throw new Error('认不出的中文数字: ' + s);
+  let total = 0;
+  let section = 0;
+  let num = 0;
+  for (const ch of s) {
+    if (ch in D) { num = D[ch]; continue; }
+    const unit = U[ch];
+    if (unit === 10000) { section = (section + num) * unit; total += section; section = 0; num = 0; }
+    else { if (num === 0) num = 1; section += num * unit; num = 0; }
   }
-  throw new Error('没找到 standards/17-guanli-xue-jichu/units.json —— 章节目录是否已脱离仓库？');
+  return total + section + num;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '17-guanli-xue-jichu', 'units.json');
-const MAP = path.join(ROOT, 'standards', '17-guanli-xue-jichu', 'chapter-map.json');
-const CHAPTER = '13';
-const SLUG = '13-m13';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function grab(text, re, label, conv) {
+  const m = text.match(re);
+  if (!m) throw new Error('正文里找不到「' + label + '」，章节是否已被改写？');
+  const n = conv === 'cn' ? cnInt(m[1]) : Number(m[1]);
+  if (!Number.isFinite(n)) throw new Error('「' + label + '」取到的不是数: ' + m[1]);
+  return n;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/** 正文第 5 行的质控对照。 */
+function facts(text) {
+  return {
+    reports: grab(text, /上报不良事件([零一二两三四五六七八九十百千万]+)起/, '四百一十二起', 'cn'),
+    severe: grab(text, /级及以上([零一二两三四五六七八九十百千万]+)起/, '三十七起', 'cn'),
+    gradeAPct: grab(text, /甲级率\s*([\d.]+)%/, '96.8%'),
+    sampled: grab(text, /抽查([零一二两三四五六七八九十百千万]+)份/, '两百份', 'cn'),
+    defective: grab(text, /([零一二两三四五六七八九十百千万]+)份存在/, '六十一份', 'cn'),
+    defectivePct: grab(text, /，占\s*([\d.]+)%/, '30.5%'),
+  };
+}
+
+/** 问题率 = 不合格份数 ÷ 抽查份数。 */
+function defectRate(defective, sampled) {
+  if (!(sampled > 0)) throw new Error('抽查份数必须为正');
+  if (defective > sampled) throw new Error('不合格份数不能多于抽查份数');
+  return (defective / sampled) * 100;
+}
+
+/** 两个口径相差多少个百分点。 */
+function caliberGap(gradeAPct, defectPctv) {
+  return gradeAPct - (100 - defectPctv);
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const f = facts(text);
+  const rate = defectRate(f.defective, f.sampled);
+  const gap = caliberGap(f.gradeAPct, rate);
+  const severeShare = (f.severe / f.reports) * 100;
 
-  console.log(`管理学基础 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`管理学基础 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 取数后现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`一、两个口径：终末质控甲级率 ${f.gradeAPct}%；运行中病历抽查 ${f.sampled} 份、问题 ${f.defective} 份 = ${rate.toFixed(1)}%`);
+  console.log(`  两个口径相差 ${gap.toFixed(1)} 个百分点`);
+  console.log('  → 甲级率查的是「有没有签」，问题率看的是「对不对得上」；指标漂亮与实质问题并存。');
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`二、上报 ${f.reports} 起，Ⅲ级及以上 ${f.severe} 起，占 ${severeShare.toFixed(1)}%`);
+  console.log('  → 上报量本身不说明质量；把上报多当管理差，得到的一定是瞒报。');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('三、三段的成本：前馈（准入与验收）→ 同期（查对与审核）→ 反馈（分析与复盘）');
+  console.log('  → 控制点前移一格，代价降一个数量级；只严在反馈段，是用最贵的方式学习。');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/17-guanli-xue-jichu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即报错或随之变化；412 起、96.8%、30.5%、200 份为合成示例。');
+  console.log('※ 本输出仅用于教学演示，不构成质量管理评价、责任认定意见或管理咨询意见。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, cnInt, facts, defectRate, caliberGap };

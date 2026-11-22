@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 管理学基础 · 第 2 章 管理理论的形成与发展：本章统计口径
+ * 管理学基础 · 第 2 章 每一种"最优解"都是它那个年代的应急方案
  * 课程: departments/06-guanli/17-guanli-xue-jichu/chapters/02-m2/docs/zh.md
- * 数据: standards/17-guanli-xue-jichu/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/17-guanli-xue-jichu/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 两个数从正文取数后现算：
+ *   一、三次转向的年份间距（用正文的纪年，不手写年份）；
+ *   二、按人次计酬后「人次增长」与「总诊疗时间」的差额——量涨了多少，时间少给了多少。
  */
 
 'use strict';
@@ -15,87 +14,100 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '17-guanli-xue-jichu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/17-guanli-xue-jichu/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 2;
+const TITLE = '每一种"最优解"都是它那个年代的应急方案';
+
+const DIGIT = { 〇: 0, 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9 };
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '17-guanli-xue-jichu', 'units.json');
-const MAP = path.join(ROOT, 'standards', '17-guanli-xue-jichu', 'chapter-map.json');
-const CHAPTER = '2';
-const SLUG = '02-m2';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 正文用汉字纪年（一九一一年），这里转成数字，四位以内。 */
+function cnYear(s) {
+  if (!/^[〇一二三四五六七八九]{4}$/.test(s)) throw new Error('认不出的汉字纪年: ' + s);
+  return [...s].reduce((n, ch) => n * 10 + DIGIT[ch], 0);
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function grabYear(text, re, label) {
+  const m = text.match(re);
+  if (!m) throw new Error('正文里找不到「' + label + '」，章节是否已被改写？');
+  return cnYear(m[1]);
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function grab(text, re, label) {
+  const m = text.match(re);
+  if (!m) throw new Error('正文里找不到「' + label + '」，章节是否已被改写？');
+  const n = Number(m[1]);
+  if (!Number.isFinite(n)) throw new Error('「' + label + '」取到的不是数: ' + m[1]);
+  return n;
+}
+
+/** 三次转向与权变转向的纪年，全部取自正文。 */
+function facts(text) {
+  return {
+    taylor: grabYear(text, /泰勒在([〇一二三四五六七八九]{4})年出版/, '泰勒一九一一年'),
+    fayol: grabYear(text, /法约尔在([〇一二三四五六七八九]{4})年出版/, '法约尔一九一六年'),
+    mayoFrom: grabYear(text, /梅奥等人在([〇一二三四五六七八九]{4})年至/, '霍桑一九二四年'),
+    mayoTo: grabYear(text, /梅奥等人在[〇一二三四五六七八九]{4}年至([〇一二三四五六七八九]{4})年/, '霍桑一九三二年'),
+    contingency: grabYear(text, /伯恩斯与斯托克在([〇一二三四五六七八九]{4})年比较/, '权变一九六一年'),
+    visitGrowthPct: grab(text, /门诊量上升\s*(\d+)%/, '门诊量上升 18%'),
+    minutesBefore: grab(text, /从\s*(\d+)\s*分钟降到\s*7\s*分钟/, '单次 11 分钟'),
+    minutesAfter: grab(text, /从\s*\d+\s*分钟降到\s*(\d+)\s*分钟/, '单次 7 分钟'),
+  };
+}
+
+/** 一次转向的间隔。 */
+const gap = (a, b) => b - a;
+
+/** 单位时间人次上升后，总诊疗时间的变化：量 × 单次时长。 */
+function totalVisitMinutes(visits, pct, minutes) {
+  return visits * (1 + pct / 100) * minutes;
+}
+
+function totalMinutesChangePct(before, after, pct) {
+  return (totalVisitMinutes(before, pct, after) / totalVisitMinutes(before, 0, before) - 1) * 100;
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const f = facts(text);
+  const change = totalMinutesChangePct(f.minutesBefore, f.minutesAfter, f.visitGrowthPct);
+  const perVisit = (f.minutesAfter / f.minutesBefore - 1) * 100;
 
-  console.log(`管理学基础 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`管理学基础 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 取数后现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log('一、三次转向的纪年与间隔');
+  console.log(`  效率（泰勒 ${f.taylor}）：把动作拆开、计时、固化标准`);
+  console.log(`  秩序（法约尔 ${f.fayol}）：层级、分工、规则、书面档案、非人格化职权`);
+  console.log(`  人（霍桑 ${f.mayoFrom}–${f.mayoTo}，跨 ${gap(f.mayoFrom, f.mayoTo)} 年）：社会心理需要与团队规范`);
+  console.log(`  效率 → 秩序间隔 ${gap(f.taylor, f.fayol)} 年；秩序 → 霍桑起点间隔 ${gap(f.fayol, f.mayoFrom)} 年`);
+  console.log(`  到权变转向（${f.contingency}）共 ${gap(f.taylor, f.contingency)} 年，第三次转向尚未收束`);
+  console.log('  → 三次转向不是替代关系，是叠加：每套解法都带着它要反驳的那个对象。');
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('二、按人次计酬的算术：量涨了，时间少给了');
+  console.log(`  门诊量 ${f.visitGrowthPct}%，单次诊疗 ${f.minutesBefore} → ${f.minutesAfter} 分钟（${perVisit.toFixed(1)}%）`);
+  console.log(`  总诊疗时间 = 人次 × 单次时长，变化 ${change.toFixed(1)}%`);
+  console.log('  → 人次上去了，总服务时间反而减少；省掉的正是「问」与「切」所占的那几分钟。');
+  console.log('    没有任何一条规定被违反——这是对激励的合理反应，不是职业道德问题。');
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/17-guanli-xue-jichu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本章正文现算，正文一改即报错或随之变化；案例数字为演示激励机制的构造，不对应真实机构。');
+  console.log('※ 本输出仅用于教学演示，不构成管理咨询意见或制度设计依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  DOC,
+  CHAPTER,
+  TITLE,
+  read,
+  cnYear,
+  facts,
+  gap,
+  totalVisitMinutes,
+  totalMinutesChangePct,
+};

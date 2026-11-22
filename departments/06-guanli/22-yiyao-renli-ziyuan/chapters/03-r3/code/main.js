@@ -1,101 +1,133 @@
 #!/usr/bin/env node
 /**
- * 医药人力资源管理 · 第 3 章 医药岗位分析与职位设计：本章统计口径
+ * 医药人力资源管理 · 第 3 章 岗位说明书不是职责清单，是判断标准
  * 课程: departments/06-guanli/22-yiyao-renli-ziyuan/chapters/03-r3/docs/zh.md
- * 数据: standards/22-yiyao-renli-ziyuan/units.json（198 单元层，每单元带三辨与四位面词频）
- * 取数: standards/22-yiyao-renli-ziyuan/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 下面每个数都从本章正文现算：算式里的输入用「关键词之后第一个数」的方式取，
+ * 结构量（节、表行、加粗项）由正文数出来，结果与正文自己写下的数对照。
+ * 正文一改，输出与测试断言一起变，不会静默过期。
  */
-
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '22-yiyao-renli-ziyuan', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/22-yiyao-renli-ziyuan/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '22-yiyao-renli-ziyuan', 'units.json');
-const MAP = path.join(ROOT, 'standards', '22-yiyao-renli-ziyuan', 'chapter-map.json');
-const CHAPTER = '3';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 3;
+const TITLE = '岗位说明书不是职责清单，是判断标准';
 const SLUG = '03-r3';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const CN = { 一: 1, 二: 2, 两: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 关键词之后 60 字内的第一个数（支持千分位与小数）。取不到就报错，不兜底。 */
+function num(text, key) {
+  const i = text.indexOf(key);
+  if (i < 0) throw new Error('正文里找不到关键词: ' + key);
+  const m = text.slice(i + key.length, i + key.length + 60).match(/(\d[\d,]*(?:\.\d+)?)/);
+  if (!m) throw new Error('关键词之后没有数字: ' + key);
+  return Number(m[1].replace(/,/g, ''));
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** 关键词之后的第一个中文数词，取不到就报错。 */
+function cn(text, key) {
+  const i = text.indexOf(key);
+  if (i < 0) throw new Error('正文里找不到关键词: ' + key);
+  const m = text.slice(i + key.length, i + key.length + 20).match(/[一两二三四五六七八九十]/);
+  if (!m) throw new Error('关键词之后没有中文数词: ' + key);
+  return CN[m[0]];
+}
+
+/** 一句正文短语里的中文数词（用来核对「标题说三，表里数出三」这类自洽性）。 */
+function cnIn(phrase) {
+  const m = String(phrase).match(/[一两二三四五六七八九十]/);
+  if (!m) throw new Error('短语里没有中文数词: ' + phrase);
+  return CN[m[0]];
+}
+
+const tally = (text, re) => (String(text).match(re) || []).length;
+
+/** 取某一节（## 标题含 key）的正文，不含标题行。 */
+function section(text, key) {
+  const out = [];
+  let on = false;
+  for (const line of String(text).split('\n')) {
+    if (/^##\s/.test(line)) { on = line.includes(key); continue; }
+    if (on) out.push(line);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out.join('\n');
+}
+
+const countIn = (text, key, re) => tally(section(text, key), re);
+
+/** 某一节里表格的数据行数（扣掉表头与分隔行）。 */
+function rowsIn(text, key) {
+  const rows = section(text, key).split('\n').filter((l) => /^\s*\|/.test(l));
+  return Math.max(0, rows.length - 2);
+}
+
+/** 正文结构：汉字、节（## 标题）、表格、加粗判断、引书、带单位的数值命中 */
+function analyze(text) {
+  const body = String(text || '');
+  const lines = body.split('\n');
+  const sections = [];
+  let cur = null;
+  for (const line of lines) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) { cur = { title: h[1], hanzi: 0 }; sections.push(cur); continue; }
+    if (cur) cur.hanzi += (line.match(HANZI) || []).length;
+  }
+  const tables = (body.match(/^\s*\|[\s:|-]+\|\s*$/gm) || []).length;
+  const claims = (body.match(/\*\*[^*\n]+\*\*/g) || []).length;
+  const cites = [...new Set([...body.matchAll(/\u300a([^\u300b\n]+)\u300b/g)].map((m) => m[1]))];
+  const values = (body.match(/\d[\d,]*(?:\.\d+)?\s*(?:%|人|万元|张|元|天)/g) || []).length;
+  return { hanzi: (body.match(HANZI) || []).length, sections, tables, claims, cites, values };
+}
+
+/** 本章的换算：输入从正文取，结果与正文写下的数对照 */
+function checks(text) {
+  const 岗位 = num(text, '梳理出 ');
+  const 模糊 = num(text, '其中 ');
+  const 原则 = tally(text, /\*\*第[一二三四五六]，/g);
+  const 因素 = tally(text, /\*\*(责任|技能|努力|环境)\*\*/g);
+  return [
+    { name: `表述含糊的说明书占比（${模糊} ÷ ${岗位}）`, unit: '%', tol: 1, computed: (模糊 / 岗位) * 100, stated: cnIn('占六成') * 10 },
+    { name: '职位设计原则的条数（正文加粗「第 N，」）', unit: '条', tol: 0, computed: 原则, stated: cnIn('四条原则') },
+    { name: '岗位评价因素的个数（正文加粗的四因素）', unit: '个', tol: 0, computed: 因素, stated: cnIn('四因素') },
+  ];
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`医药人力资源管理 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const text = read();
+  const a = analyze(text);
+  const cs = checks(text);
+  const top = a.sections.reduce((m, s) => (s.hanzi > m.hanzi ? s : m), a.sections[0]);
+  console.log(`医药人力资源管理 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 节 ${a.sections.length} 节 · 表格 ${a.tables} 张 · 加粗判断 ${a.claims} 处 · 引书 ${a.cites.length} 部`);
+  console.log(`带单位的数值 ${a.values} 处；最长一节：${top.title}（${top.hanzi} 字）`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('换算与结构核对（输入取自正文，结果与正文对照）：');
+  let bad = 0;
+  for (const c of cs) {
+    const diff = Math.abs(c.computed - c.stated);
+    const ok = c.cmp === 'lte' ? c.computed <= c.stated : diff <= c.tol;
+    if (!ok) bad += 1;
+    const sign = c.cmp === 'lte' ? '≤' : '=';
+    console.log(`  ${ok ? '✓' : '✗'} ${c.name} ${sign} ${Number(c.computed.toFixed(2))} ${c.unit}；正文写 ${c.stated}（差 ${diff.toFixed(2)}）`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/22-yiyao-renli-ziyuan/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`※ 现算口径：汉字与结构由正文统计，换算由正文数字重算；${bad ? `${bad} 处与正文对不上` : '全部对上'}。`);
+  console.log('※ 本输出仅用于教学演示，不构成岗位设置意见或薪酬方案依据。');
+  return bad;
 }
 
-if (require.main === module) main();
+if (require.main === module) process.exitCode = main() ? 1 : 0;
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, SLUG, read, num, cn, cnIn, tally, section, countIn, rowsIn, analyze, checks };

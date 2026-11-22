@@ -6,57 +6,63 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '17-guanli-xue-jichu', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', '17-guanli-xue-jichu', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, CHAPTER, TITLE, read, cnInt, facts, share, peerAverage } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const TEXT = read();
+const F = facts(TEXT);
+
+test('正文就在本章目录下，章号与标题对得上', () => {
+  assert.ok(fs.existsSync(DOC), DOC);
+  assert.ok(DOC.endsWith(path.join('chapters', '15-m15', 'docs', 'zh.md')), DOC);
+  assert.strictEqual(CHAPTER, 15);
+  assert.strictEqual(TITLE, '伦理不是不做坏事，是在没人看见且有好处时还选择不做');
+  assert.match(TEXT, /^# 第 15 章/);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('汉字整数换算：二百一十四、四十七', () => {
+  assert.strictEqual(cnInt('二百一十四'), 214);
+  assert.strictEqual(cnInt('四十七'), 47);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('投诉结构与收入结构都取自正文', () => {
+  assert.strictEqual(F.complaints, 214);
+  assert.strictEqual(F.overService, 47);
+  assert.strictEqual(F.overSharePct, 22);
+  assert.strictEqual(F.examRevenuePct, 31.8);
+  assert.strictEqual(F.gapPoints, 6.4);
+  assert.strictEqual(F.pressurePct, 78);
+  assert.strictEqual(F.selfCleanPct, 91);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('过度检查类投诉占 22%，与正文一致', () => {
+  const rate = share(F.overService, F.complaints);
+  assert.ok(Math.abs(rate - F.overSharePct) < 0.05, String(rate));
+  assert.strictEqual(rate.toFixed(0), '22');
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('同级均值由占比与差值反推为 25.4%', () => {
+  const peer = peerAverage(F.examRevenuePct, F.gapPoints);
+  assert.ok(Math.abs(peer - 25.4) < 1e-9, String(peer));
+  assert.ok(Math.abs(peer + F.gapPoints - F.examRevenuePct) < 1e-9);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('两个认知比例同时成立，差 13 个百分点', () => {
+  assert.ok(F.selfCleanPct > F.pressurePct);
+  assert.strictEqual(F.selfCleanPct - F.pressurePct, 13);
+  assert.ok(F.selfCleanPct > 90 && F.pressurePct > 75);
+});
+
+test('非法参数报错，不返回负值', () => {
+  assert.throws(() => share(47, 0), /总量必须为正/);
+  assert.throws(() => share(215, 214), /分子不能大于总量/);
+});
+
+test('脚本可运行，输出份额与三问连用', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/17-guanli-xue-jichu\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/15-m15/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /过度检查/);
+  assert.match(out, /三问连用/);
+  assert.match(out, /现算/);
+  assert.match(out, /不构成法律意见、合规审查结论或对任何机构与个人的评价/);
 });

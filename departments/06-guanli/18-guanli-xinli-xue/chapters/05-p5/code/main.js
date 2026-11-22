@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 /**
- * 管理心理学 · 第 5 章 知觉、归因与印象管理：本章统计口径
+ * 管理心理学 · 第 5 章 绩效评价评的从来不是绩效，是主管对绩效的记忆与解释
  * 课程: departments/06-guanli/18-guanli-xinli-xue/chapters/05-p5/docs/zh.md
- * 数据: standards/18-guanli-xinli-xue/units.json（197 单元层，每单元带三辨与四位面词频）
- * 取数: standards/18-guanli-xinli-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章把「评价不准」拆成三层可算的东西：
+ *   1. 知觉偏差清单（首因／近因／晕轮／刻板／对比），从正文加粗句逐条核对；
+ *   2. 归因：凯利三信息 → 内／外；韦纳三维 → 情绪与动作。正文那张归因表被解析出来，
+ *      并算出「最常被忽略的一格」占比；
+ *   3. 压缩损失：一年按 250 个工作日算，压进 5 维 × 5 档 = 25 格，每格代表 10 天工作。
+ * 偏差不能消除，只能约束——四条对冲机制各有成本，这在本脚本里也是明写的。
  */
 
 'use strict';
@@ -15,87 +17,144 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', '18-guanli-xinli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 5;
+const TITLE = '绩效评价评的从来不是绩效，是主管对绩效的记忆与解释';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+function sections(text) {
+  return String(text || '')
+    .split('\n')
+    .filter((l) => /^##\s+/.test(l))
+    .map((l) => l.replace(/^##\s+/, '').trim());
+}
+
+function tables(text) {
+  const lines = String(text || '').split('\n');
+  const out = [];
+  for (let i = 0; i < lines.length; i += 1) {
+    if (!/^\s*\|/.test(lines[i]) || !/^\s*\|[\s:|-]+\|\s*$/.test(lines[i + 1] || '')) continue;
+    const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((s) => s.trim());
+    const header = cells(lines[i]);
+    const rows = [];
+    let j = i + 2;
+    while (j < lines.length && /^\s*\|/.test(lines[j])) {
+      rows.push(cells(lines[j]));
+      j += 1;
+    }
+    out.push({ header, rows });
+    i = j - 1;
   }
-  throw new Error('没找到 standards/18-guanli-xinli-xue/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', '18-guanli-xinli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', '18-guanli-xinli-xue', 'chapter-map.json');
-const CHAPTER = '5';
-const SLUG = '05-p5';
+const BIASES = ['首因效应', '近因效应', '晕轮效应', '刻板印象', '对比效应'];
+const COUNTERS = ['结构化', '多源', '盲评与去身份化', '问责与留痕'];
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function concepts(text) {
+  const t = String(text || '');
+  return {
+    biases: BIASES.filter((b) => t.includes(b)),
+    counters: COUNTERS.filter((c) => t.includes(c)),
+    hasHalo: t.includes('晕轮效应'),
+    hasSelfServing: t.includes('自利偏差'),
+    hasFairness: t.includes('基本归因错误'),
+  };
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 正文那张归因表：管理者归因 → 典型动作 → 后果 */
+function attributionTable(text) {
+  const t = tables(text).find((x) => x.header[0] === '管理者的归因') || { rows: [] };
+  return t.rows.map((r) => ({ cause: r[0], action: r[1], consequence: r[2] }));
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+/**
+ * 凯利协变，按正文的三个信息取名：
+ *   一致性 othersSame —— 别人在同样情境下是否也这样；
+ *   区别性 elsewhereSame —— 此人在其他情境下是否也这样；
+ *   共同性 onlyHere —— 是否只在此时此地这样。
+ * 只有「仅他如此、在别处也如此、不是只在此时此地」三条同时成立，才轮到内部归因。
+ */
+function kelly({ othersSame, elsewhereSame, onlyHere }) {
+  const internal = !othersSame && elsewhereSame && !onlyHere;
+  return {
+    othersSame,
+    elsewhereSame,
+    onlyHere,
+    locus: internal ? '内部归因' : '外部归因',
+    // 三者中只要有一项指向情境，就不该直接落到人身上
+    hesitancy: internal ? '可以直接谈人' : '先查情境，再谈人',
+  };
+}
+
+/** 韦纳三维：内外／稳定／可控 → 情绪与动作 */
+function weiner({ internal, stable, controllable }) {
+  if (internal && !stable && controllable) return { kind: '不努力', emotion: '愤怒', action: '批评、加压、扣绩效' };
+  if (internal && stable && !controllable) return { kind: '能力不足', emotion: '同情', action: '培训、调岗' };
+  if (!internal && !controllable) return { kind: '条件不备', emotion: '谅解', action: '减责、补资源' };
+  return { kind: '未定', emotion: '—', action: '先补信息再归因' };
+}
+
+/** 压缩损失：一年 250 个工作日，压进 dims × levels 个格子 */
+function compression(dims = 5, levels = 5, workdays = 250) {
+  const cells = dims * levels;
+  return {
+    dims,
+    levels,
+    cells,
+    workdays,
+    daysPerCell: Number((workdays / cells).toFixed(2)),
+    share: Number(((1 / cells) * 100).toFixed(2)),
+  };
+}
+
+/** 纠偏问句：换一个人来，结果会不会一样 */
+function replaceTest(sameResult) {
+  return {
+    sameResult,
+    locus: sameResult ? '情境' : '人',
+    next: sameResult ? '改岗位设计、流程或计量方式' : '再谈能力、意愿与支持',
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = read();
+  const c = concepts(text);
+  const tbl = attributionTable(text);
+  const hanzi = (text.match(HANZI) || []).length;
 
-  console.log(`管理心理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`管理心理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${hanzi} 字 · 节 ${sections(text).length} 节 · 表格 ${tables(text).length} 张`);
+  console.log(`知觉偏差 ${c.biases.length}/5：${c.biases.join(' · ')}`);
+  console.log(`对冲机制 ${c.counters.length}/4：${c.counters.join(' · ')}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('归因表（解析正文）：');
+  for (const r of tbl) console.log(`  ${r.cause} → ${r.action} → ${r.consequence}`);
+  const external = tbl.filter((r) => r.cause.includes('外部')).length;
+  console.log(`  → ${tbl.length} 行里只有 ${external} 行指向情境；这一行最常被跳过，因为承认它等于承认管理有责任。`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  const k = kelly({ othersSame: false, elsewhereSame: true, onlyHere: false });
+  console.log(`凯利三信息（别人不这样／他在别处也这样／不是只在此时此地）→ ${k.locus}；${k.hesitancy}`);
+  const w = weiner({ internal: true, stable: true, controllable: false });
+  console.log(`韦纳三维（内部／稳定／不可控）→ ${w.kind}：${w.emotion} → ${w.action}`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  const z = compression();
+  console.log(`压缩损失：${z.workdays} 个工作日 → ${z.dims} 维 × ${z.levels} 档 = ${z.cells} 格，每格代表 ${z.daysPerCell} 天、占全年 ${z.share}%。`);
+  console.log('  → 格子越细，越是在评填表能力，不是在评工作。');
   console.log('');
-  console.log('※ 教学样例：数字由 standards/18-guanli-xinli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  const t = replaceTest(true);
+  console.log(`纠偏问句（换一个人结果一样）→ 原因在${t.locus}：${t.next}`);
+  console.log('');
+  console.log('边界：本章不提供考核方案；偏差只能被约束，不能被消除，声称「一套量表就客观」只是把偏差转移给了量表设计者。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, sections, tables, concepts, attributionTable, kelly, weiner, compression, replaceTest, BIASES, COUNTERS };
