@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 2703673,
+    "gapWithBodyChars": 2657138,
     "gapNoBody": 0
   },
   "totals": {
@@ -23200,9 +23200,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 49684
+            "chars": 28220
           },
-          "note": "教学章已有正文（8 章 / 5.0 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.8 万字），未接教材出版线"
         },
         {
           "slug": "02-yao-shang-jiepou",
@@ -23212,9 +23212,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 62906
+            "chars": 37835
           },
-          "note": "教学章已有正文（10 章 / 6.3 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.8 万字），未接教材出版线"
         },
         {
           "slug": "04-chuangshang-jijiu-xue",
