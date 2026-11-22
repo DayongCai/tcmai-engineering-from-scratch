@@ -1,5 +1,38 @@
 {
   "note": "已补实课程正文的登记表。规则：登记前必须把该科目 chapters/*/docs/zh.md 的模板残留清零，且每章 ≥2,500 汉字；登记后 check_course_docs_quality.js --check 会断言这一点。未登记科目只警告不判失败（存量在补）。",
   "minHzPerChapter": 2500,
-  "rewritten": []
+  "rewritten": [
+    {
+      "dept": "07-zhineng",
+      "subject": "05-zhongyi-zhishi-tupu",
+      "chapters": 6,
+      "words": 16476,
+      "at": "2026-11-22",
+      "note": "中医知识图谱：三元组/本体/六类边/术语归一（117 类 251 成员）/FTS5 双虚表；数字回 standards/knowledge-tree 与 semtensor 实算"
+    },
+    {
+      "dept": "07-zhineng",
+      "subject": "03-zhongyi-zhineng-shebei",
+      "chapters": 6,
+      "words": 18097,
+      "at": "2026-11-22",
+      "note": "中医智能设备：四诊采集原理/信号质量与伪差/体质量表/器械注册四道门；删除不可核的「2026 Nobel 光遗传学」框定"
+    },
+    {
+      "dept": "07-zhineng",
+      "subject": "17-zhongyi-xinxi-xue",
+      "chapters": 6,
+      "words": 17296,
+      "at": "2026-11-22",
+      "note": "中医信息学：受控词表四件套/六层编码体系/数据元六属性/挖掘四级判据/临床信息三层分置；单元数字回 units.json 实算"
+    },
+    {
+      "dept": "08-wuguan",
+      "subject": "14-zhongyi-sangyin-yixue",
+      "chapters": 8,
+      "words": 25099,
+      "at": "2026-11-22",
+      "note": "中医嗓音医学：按章题重写并纠正 05–08 主题错位；引《重樓玉鑰》原文（书名·篇名级）；无剂量、无分期阈值"
+    }
+  ]
 }

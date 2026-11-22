@@ -64,7 +64,7 @@
 <div class="kpi"><div class="k">有教材学科</div><div class="v">143</div><div class="n">底本 123 + 外源 2 + 手册 18</div></div>
 <div class="kpi"><div class="k">学时覆盖</div><div class="v">76.8%</div><div class="n">底本 62% · 8,865/11,547 学时</div></div>
 <div class="kpi"><div class="k">教材章数</div><div class="v">2,161</div><div class="n">底本 1,893 + 外源 138</div></div>
-<div class="kpi"><div class="k">正文规模</div><div class="v">3669 万</div><div class="n">非空白字符 · 汉字 3042.9 万</div></div>
+<div class="kpi"><div class="k">正文规模</div><div class="v">3669 万</div><div class="n">非空白字符 · 汉字 3042.8 万</div></div>
 <div class="kpi"><div class="k">源工作簿</div><div class="v">100 份</div><div class="n">101 条学科映射 · sha256 已登记</div></div>
 <div class="kpi"><div class="k">学期 / 卷</div><div class="v">10 / 5</div><div class="n">18 教学周制</div></div>
 <div class="kpi"><div class="k">排课峰值</div><div class="v">20 周学时</div><div class="n">管理系 · 第 7 学期</div></div>
@@ -79,8 +79,8 @@
 <tr><td>有教材学科</td><td>`textbooks/&lt;dept&gt;/&lt;subject&gt;/` 下存在章文件；按 `meta.json` 的 `layer` 分底本 / 外源</td><td>文件系统 + `meta.json`</td><td class="num">143（底本 123 + 外源 2）</td></tr>
 <tr><td>外源补录</td><td>`external-registry.json` 中 `status=fetched` 的条数；sha256 = 原始页面字节</td><td>`standards/materials/textbooks-batch/external-registry.json`</td><td class="num">2 部 → 2 学科 / 214,152 字符</td></tr>
 <tr><td>教材章数</td><td>匹配 `^d+-第d+章.*.md` 的文件计数（不含 00-前言），底本 / 外源分列</td><td>`textbooks/**`</td><td class="num">2,161（底本 1,893 + 外源 138）</td></tr>
-<tr><td>正文汉字</td><td>上述文件 `[\u4e00-\u9fa5]` 字符数（纯汉字，不含标点）</td><td>`textbooks/**`（磁盘实算）</td><td class="num">30,428,612</td></tr>
-<tr><td>正文规模</td><td>上述文件去掉空白的字符数（与 `textbooks/README.md` 的「万字」同口径）</td><td>`textbooks/**`（磁盘实算）</td><td class="num">36,690,310</td></tr>
+<tr><td>正文汉字</td><td>上述文件 `[\u4e00-\u9fa5]` 字符数（纯汉字，不含标点）</td><td>`textbooks/**`（磁盘实算）</td><td class="num">30,428,374</td></tr>
+<tr><td>正文规模</td><td>上述文件去掉空白的字符数（与 `textbooks/README.md` 的「万字」同口径）</td><td>`textbooks/**`（磁盘实算）</td><td class="num">36,690,092</td></tr>
 <tr><td>源表字数</td><td>`registry.json` 每条的 `chars` 求和（解析源工作簿所得，含标点）</td><td>`standards/materials/textbooks-batch/registry.json`</td><td class="num">28,596,788</td></tr>
 <tr><td>meta.words</td><td>`departments/**/meta.json` 的 `textbook.words` 求和（导入时写死）</td><td>`meta.json`</td><td class="num">34,189,113</td></tr>
 <tr><td>源工作簿份数</td><td>`registry.json` 中 `file` 去重计数（经络腧穴学一份源件拆两门）</td><td>`registry.json` · `sourceDir`</td><td class="num">100</td></tr>
@@ -353,7 +353,7 @@
 <li><b>先修图的两类弱点</b>：① 已把「空 prereq」的两种含义分开 —— 真根课须在 <code>data/prereq-roots.json</code> 登记理由（17 条），未登记的空 prereq 会被审计报成「漏声明」（现 0 门）；但「登记了理由」仍是作者判断，不是教务处文件。② 改边须同时改 <code>scripts/migrate_prereq.js</code> 的表并重跑（幂等），直接手改 <code>curriculum.json</code> 会在下一次迁移被覆盖。</li>
 <li><b>第 9/10 学期有课、无教材无视频</b>：18 门轮转/毕设课已进 <code>curriculum.json</code> 并落了目录与章节知识结构，但教材（0 章）与课程文档（0 章）都还没写，`textbooks/build_book.js --volume 4/5` 仍是空卷 —— 空的原因是没稿子，不是没课。</li>
 <li><b>源件不在仓库</b>：100 份 `qhzy-*.xlsx`（约 51 MB）留在桌面，入库的只有 `sha256` + 章表 + 字数；改源件后必须重跑 `node scripts/import_textbooks.js`。</li>
-<li><b>三种字数口径并存</b>：磁盘汉字 30,428,612 / 去空白字符 36,690,310（= README 的「万字」口径）/ 源表 chars 28,596,788。三者在同一仓库里不矛盾，但引用时须说明用的是哪一个。</li>
+<li><b>三种字数口径并存</b>：磁盘汉字 30,428,374 / 去空白字符 36,690,092（= README 的「万字」口径）/ 源表 chars 28,596,788。三者在同一仓库里不矛盾，但引用时须说明用的是哪一个。</li>
 </ul></div></div>
 <h2>对账例外（教材 ≠ 源表）</h2>
 <table><thead><tr><th>学科</th><th>标记</th><th>说明</th></tr></thead><tbody>
