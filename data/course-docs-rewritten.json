@@ -65,6 +65,38 @@
       "words": 25784,
       "at": "2026-11-22",
       "note": "中医眼科学：10 章按章题重写，纠正 3/6/7/8/9/10 章内容错位；MOTTO 逐条对《审视瑶函》《银海精微》等"
+    },
+    {
+      "dept": "07-zhineng",
+      "subject": "06-zhongyi-zhineng-bianzheng",
+      "chapters": 10,
+      "words": 27433,
+      "at": "2026-11-22",
+      "note": "中医智能辨证：10 章；证素分解/规则顺序依赖/先验零计数/合病并病/kappa 噪底/代价矩阵"
+    },
+    {
+      "dept": "07-zhineng",
+      "subject": "04-zhongyi-ziran-yuyan-chuli",
+      "chapters": 10,
+      "words": 28021,
+      "at": "2026-11-22",
+      "note": "中医 NLP：10 章；古汉语分词/异体通假/语体分层/标注一致性/评测；数字回 units.json 与本机实跑"
+    },
+    {
+      "dept": "07-zhineng",
+      "subject": "15-zhongyi-ai-lunli-zhili",
+      "chapters": 8,
+      "words": 22459,
+      "at": "2026-11-22",
+      "note": "中医 AI 伦理与治理：8 章；预期用途先行/同意与训练分离/风险分级与停机责任人/审计追溯"
+    },
+    {
+      "dept": "08-wuguan",
+      "subject": "05-zhongyi-wuguan-jingdian",
+      "chapters": 6,
+      "words": 16772,
+      "at": "2026-11-22",
+      "note": "中医五官经典：6 章；五条谱系/五轮定位边界/咽喉分工/病名判据转移；引 審視瑤函·重樓玉鑰·口齒類要 原文"
     }
   ]
 }
