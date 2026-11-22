@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 3069172,
+    "gapWithBodyChars": 2703673,
     "gapNoBody": 0
   },
   "totals": {
@@ -23418,9 +23418,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 215350
+            "chars": 28409
           },
-          "note": "教学章已有正文（8 章 / 21.5 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.8 万字），未接教材出版线"
         },
         {
           "slug": "12-zhongyiyao-biaozhunhua",
@@ -23430,9 +23430,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 205116
+            "chars": 26558
           },
-          "note": "教学章已有正文（8 章 / 20.5 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 2.7 万字），未接教材出版线"
         },
         {
           "slug": "14-zhishichanquan-zhuanhua",
