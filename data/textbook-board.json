@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 2007142,
+    "gapWithBodyChars": 1843249,
     "gapNoBody": 0
   },
   "totals": {
@@ -23557,9 +23557,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 74274
+            "chars": 30259
           },
-          "note": "教学章已有正文（8 章 / 7.4 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.0 万字），未接教材出版线"
         },
         {
           "slug": "12-shuzi-renti-xuni-fangzhen",
@@ -23569,9 +23569,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 73260
+            "chars": 30511
           },
-          "note": "教学章已有正文（8 章 / 7.3 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.1 万字），未接教材出版线"
         },
         {
           "slug": "13-zhongyi-duomotai-ronghe",
@@ -23581,9 +23581,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 94227
+            "chars": 37505
           },
-          "note": "教学章已有正文（10 章 / 9.4 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.8 万字），未接教材出版线"
         },
         {
           "slug": "14-yixue-shuju-anquan-yinsi",
@@ -23593,9 +23593,9 @@
           "hours": 54,
           "body": {
             "chapters": 8,
-            "chars": 54566
+            "chars": 34159
           },
-          "note": "教学章已有正文（8 章 / 5.5 万字），未接教材出版线"
+          "note": "教学章已有正文（8 章 / 3.4 万字），未接教材出版线"
         },
         {
           "slug": "15-zhongyi-ai-lunli-zhili",
