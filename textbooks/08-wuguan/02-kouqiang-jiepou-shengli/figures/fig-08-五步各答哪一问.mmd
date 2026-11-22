@@ -1,0 +1,26 @@
+%% 内容依据：textbooks/08-wuguan/02-kouqiang-jiepou-shengli/08-第8章-口腔检查与记录.md §N.1
+%% 图 8-1 五步各答哪一问，各有哪些答不了
+%% 五步按力学接口分三组：看表面（视）、觉深部（触·叩·探）、看整体（动度）；每组下方一句写它答不了什么。
+%% §02.08.01.01 原文「没有任何一步能单独回答这颗牙还能不能留」「视诊的盲区很硬：邻面、龈下」。
+%% 分支 ≤3、每行 ≤10 汉字、节点 10 个；graph TB 三列两排，viewBox 宽压在 1100 以内。
+graph TB
+    S["五步检查"] --> A["看表面：视<br/>颜色形态边缘"]
+    S --> B["觉深部：触叩探<br/>压力与冲击"]
+    S --> C["看整体：动度<br/>位移与方向"]
+    A --> A1["答不了：邻面<br/>龈下与咽旁"]
+    B --> B1["答不了：骨吸收<br/>形态与骨内"]
+    C --> C1["答不了：炎症<br/>是否活动"]
+    A1 --> Z["五步合看<br/>才谈去留"]
+    B1 --> Z
+    C1 --> Z
+
+    classDef src fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef see fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef feel fill:#eae6f0,stroke:#6a5a8a,stroke-width:1.4px,color:#1f1b16
+    classDef whole fill:#f5efe4,stroke:#a08a5a,stroke-width:1.4px,color:#1f1b16
+    classDef key fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class S src
+    class A,A1 see
+    class B,B1 feel
+    class C,C1 whole
+    class Z key

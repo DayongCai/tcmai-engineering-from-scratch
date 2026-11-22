@@ -1,0 +1,22 @@
+%% 内容依据：textbooks/08-wuguan/02-kouqiang-jiepou-shengli/06-第6章-咀嚼与吞咽.md §N.1
+%% 图 6-2 四道门：一次只开一道，过了声门就只剩咳嗽
+%% §N.5 原文「四道保护守到喉前庭为止，过了声门就没有结构保护了，只剩咳嗽」
+%% §N.5 原文「误吸不是「吞错了」，是「有一道门在错误的时间开着」」
+%% §N.5 原文「老人：肌量、唾液、感觉与咳嗽反射」「中风：舌与颊失控、触发延迟」
+%% 本图只画次序与失守后果，不给各期时长与误吸发生率。
+graph TD
+    S["口腔期<br/>舌送到咽峡"] --> G1["第一道 唇与颊<br/>闭合防前溢"]
+    G1 --> G2["第二道 舌<br/>后送与后缩封闭"]
+    G2 --> G3["第三道 软腭<br/>上提封鼻咽"]
+    G3 --> G4["第四道 喉前庭<br/>喉上提·声门闭"]
+    G4 --> R["咽期<br/>食团入食管"]
+    G4 -.-> F["失守<br/>渗透转为误吸"]
+    G2 --> A["中风<br/>舌颊失控"]
+    G4 --> B["老人<br/>感觉与咳嗽弱"]
+
+    classDef gate fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef pass fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef fail fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class S,R pass
+    class G1,G2,G3,G4 gate
+    class F,A,B fail

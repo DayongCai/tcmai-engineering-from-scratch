@@ -1,0 +1,24 @@
+%% 内容依据：textbooks/08-wuguan/02-kouqiang-jiepou-shengli/07-第7章-口腔感觉与味觉.md §N.1
+%% 图 7-1 口腔感觉的两条链与一处换乘
+%% 一般感觉与味觉各成一条链：末梢→感受野→汇聚→核；两条链都止于脑干，故定位精度由链上最粗的一环决定。
+%% §N.1 表六行取原义（感受器·感受野·汇聚·牵涉痛·味蕾·孤束核）；§02.07.01.02「定位靠感受野的精细度，与中枢对哪一根纤维的标注」。
+%% 分支 ≤3、每行 ≤10 汉字、节点 9 个；graph TB 竖排，把 viewBox 宽压在 1100 以内。
+graph TB
+    T["口腔里的刺激"] --> S["一般感觉<br/>走三叉神经"]
+    T --> G["味觉<br/>走三脑神经"]
+    S --> S1["四类末梢<br/>痛温触压"]
+    S1 --> S2["汇聚于脊束核<br/>定位变粗"]
+    G --> G1["味蕾在上皮内<br/>味细胞非神经元"]
+    G1 --> G2["汇于孤束核吻侧<br/>再上岛叶"]
+    S2 --> R["两链都有一处<br/>换乘"]
+    G2 --> R
+    R --> R1["定得准靠野小<br/>定不准靠汇聚"]
+
+    classDef src fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef sec fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef gust fill:#eae6f0,stroke:#6a5a8a,stroke-width:1.4px,color:#1f1b16
+    classDef key fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class T src
+    class S,S1,S2 sec
+    class G,G1,G2 gust
+    class R,R1 key

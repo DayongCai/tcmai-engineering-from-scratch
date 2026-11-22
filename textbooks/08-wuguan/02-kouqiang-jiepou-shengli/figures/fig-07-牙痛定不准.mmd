@@ -1,0 +1,22 @@
+%% 内容依据：textbooks/08-wuguan/02-kouqiang-jiepou-shengli/07-第7章-口腔感觉与味觉.md §N.1
+%% 图 7-2 牙痛定不准的三条岔路与一条判据
+%% 上路：牙髓只有痛觉纤维、无本体感受器，故指不出一颗牙；中路：沿三叉分支放散，易误判为窦炎、关节或神经痛；
+%% 下路：能咬合定位即已到牙周膜；末一路是反方向牵涉——下颌牙痛而牙无病须想到心脏。
+%% §02.07.01.02 原文「牙髓能报强度与性质，不能报位置」「下颌牙痛而口腔检查全无阳性所见时，必须想到心源性」。
+%% 分支 ≤3、每行 ≤10 汉字、节点 6 个；graph TB 单列，viewBox 宽远小于 1100。
+graph TB
+    P["牙髓炎<br/>只有痛觉纤维"] --> A["指不出一颗牙<br/>只指一片"]
+    A --> B["沿分支放散<br/>耳颞或下颌角"]
+    A --> C["误判为窦炎<br/>关节或神经痛"]
+    B --> D["判据：能咬合定位<br/>说明已到牙周膜"]
+    C --> D
+    D --> E["下颌牙痛而牙无病<br/>须想到心脏"]
+
+    classDef root fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    classDef wrong fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef right fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef warn fill:#eae6f0,stroke:#6a5a8a,stroke-width:1.4px,color:#1f1b16
+    class P root
+    class A,B,C wrong
+    class D right
+    class E warn

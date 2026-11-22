@@ -1,0 +1,21 @@
+%% 内容依据：textbooks/08-wuguan/02-kouqiang-jiepou-shengli/06-第6章-咀嚼与吞咽.md §N.1
+%% 图 6-1 咀嚼周期五相：一个环，两相做事
+%% §N.2 原文「五相不是五个动作，是一个环上的五个相；开口与闭口是运动相，接触与研磨是功能相，复位是复位相」
+%% §N.2 原文「真正做事的是第三、第四相，其余三相都在为它们服务」
+%% §N.3 原文「力是上限，效率是产出」——本图只画相位次序与功能分工，不给周期时长与次数。
+graph TD
+    P0["起点<br/>牙尖交错位"] --> P1["开口期<br/>翼外肌启动"]
+    P1 --> P2["闭口期<br/>升颌肌收缩"]
+    P2 --> P3["接触期<br/>牙尖嵌入食物"]
+    P3 --> P4["研磨期<br/>工作侧侧方滑动"]
+    P4 --> P5["复位期<br/>舌颊聚拢食团"]
+    P5 -.-> P0
+    P4 --> W["功能相<br/>接触与研磨两相"]
+    P5 --> X["复位相<br/>为下一环备料"]
+
+    classDef move fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef work fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef note fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class P0,P1,P2 move
+    class P3,P4 work
+    class P5,W,X note

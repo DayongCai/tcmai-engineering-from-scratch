@@ -22,8 +22,13 @@
   "textbook": {
     "id": "textbooks",
     "path": "textbooks/08-wuguan/02-kouqiang-jiepou-shengli",
-    "chaptersWritten": 0,
-    "words": 0,
-    "status": "planned"
+    "chaptersWritten": 8,
+    "words": 43187,
+    "layer": "rewrite",
+    "origin": "course-rewrite",
+    "createdAt": "2026-11-22",
+    "toc": "00-目录-四级编码.md",
+    "tocScale": "8 章 / 21 节 / 41 单元",
+    "sourceNote": "主源为课程正文 88,312 字（8 章）；无外源教材（Firecrawl 403 / 维基与 NCBI 不可达），不引页码与外部数值"
   }
 }

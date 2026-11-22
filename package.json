@@ -258,6 +258,8 @@
     "zhenghou:ocr:verify": "python scripts/zgh_ocr/verify_bodies.py && python scripts/zgh_ocr/report.py",
     "scan:open": "node scripts/scan_external_pending.js",
     "books:data": "node scripts/build_books_data.js",
-    "textbooks:release:check": "node scripts/check_release_assets.js --check"
+    "textbooks:release:check": "node scripts/check_release_assets.js --check",
+    "check:docs": "node scripts/check_course_docs_quality.js --check",
+    "report:docs": "node scripts/check_course_docs_quality.js --report"
   }
 }

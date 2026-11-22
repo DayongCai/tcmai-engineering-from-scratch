@@ -1,0 +1,23 @@
+%% 内容依据：textbooks/08-wuguan/02-kouqiang-jiepou-shengli/05-第5章-唾液腺与神经支配.md §N.1
+%% 图 5-2 三叉三支的口内边界：三条线把口内分格
+%% §N.5 原文「眼神经在口内是零分布」「口内没有任何一块黏膜归眼神经」
+%% §N.5 原文「牙位代号的前一段直接决定神经归属」「位置还能反推神经」
+%% §N.5 原文「舌前三分之二「触痛温归三叉、味归面神经」，舌后三分之一「两样都归舌咽」」
+%% 本图只画口内落点与边界，不给分支径值与麻醉参数。
+graph TD
+    R["三叉神经节<br/>第一级神经元"] --> V1["眼神经<br/>眶上裂"]
+    R --> V2["上颌神经<br/>圆孔"]
+    R --> V3["下颌神经<br/>卵圆孔"]
+    V1 --> V1A["口内零分布<br/>只管额鼻眼"]
+    V2 --> V2A["上牙与牙周<br/>上颌窦黏膜"]
+    V2 --> V2B["腭黏膜<br/>鼻腭·腭大"]
+    V3 --> V3A["下牙与牙周<br/>下唇与颏部"]
+    V3 --> V3B["舌前三分之二<br/>口底·舌侧龈"]
+    V3B --> V3C["味觉归面神经<br/>鼓索搭车"]
+
+    classDef root fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef branch fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef land fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class R root
+    class V1,V2,V3 branch
+    class V1A,V2A,V2B,V3A,V3B,V3C land

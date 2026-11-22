@@ -1,0 +1,21 @@
+%% 内容依据：textbooks/08-wuguan/02-kouqiang-jiepou-shengli/04-第4章-颞下颌关节与咬合.md §N.1
+%% 图 4-1 颞下颌关节四件套：骨、盘、囊、韧带
+%% §02.04.01.01：髁突前斜面为功能面，关节结节后斜面为滑行轨道；盘分四带，
+%%   中间带最薄且无血管无神经，是承力区，闭口时夹在髁突与结节之间。
+%% §02.04.01.02：囊被盘分为上下两腔，上腔管滑动、下腔管转动；韧带只在极限位限位。
+%% 本图不给盘各带的厚度、腔的容积与结节角度（本章口径）。
+graph TD
+    J["颞下颌关节"] --> B["骨：髁突与结节<br/>前斜面承力"]
+    J --> P["盘：四带<br/>中间带最薄"]
+    J --> E["囊与韧带<br/>盘分上下两腔"]
+    E --> E1["上腔：滑动"]
+    E --> E2["下腔：转动"]
+    E --> E3["韧带只限极限"]
+    P --> P1["盘-髁对位<br/>中间带在承力区"]
+
+    classDef joint fill:#eef2e8,stroke:#4a7c59,stroke-width:1.8px,color:#1f1b16
+    classDef part fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef core fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class J joint
+    class B,P,E part
+    class E1,E2,E3,P1 core

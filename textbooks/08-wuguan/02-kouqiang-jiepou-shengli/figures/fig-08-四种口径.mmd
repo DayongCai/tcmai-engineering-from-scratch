@@ -1,0 +1,26 @@
+%% 内容依据：textbooks/08-wuguan/02-kouqiang-jiepou-shengli/08-第8章-口腔检查与记录.md §N.1
+%% 图 8-2 四种口径各答一问，互不替代
+%% 同一病灶写成三支：文字（牙位加面）、照片（颜色表面）、影像（密度轮廓）；每支一句能、一句不能。
+%% 末行按「要回答的问题」配口径：颜色表面→照片与视诊；范围与骨→影像；附着与炎症→探诊。
+%% §02.08.02.02 原文「冲突时按要回答的问题定优先级，不按哪个更清楚」「每一个未见异常都必须带范围」。
+%% 分支 ≤3、每行 ≤10 汉字、节点 8 个；graph TB 三列，viewBox 宽压在 1100 以内。
+graph TB
+    L["同一个病灶"] --> W["文字：牙位加面<br/>可复核不可见"]
+    L --> P["照片：颜色表面<br/>不见骨与根"]
+    L --> X["影像：密度轮廓<br/>不见颜色出血"]
+    W --> N["四种口径<br/>各答一问"]
+    P --> N
+    X --> N
+    N --> Q1["问颜色与表面<br/>用照片与视诊"]
+    N --> Q2["问范围与骨<br/>用影像"]
+    N --> Q3["问附着与炎症<br/>用探诊"]
+
+    classDef src fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef word fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef photo fill:#eae6f0,stroke:#6a5a8a,stroke-width:1.4px,color:#1f1b16
+    classDef image fill:#f5efe4,stroke:#a08a5a,stroke-width:1.4px,color:#1f1b16
+    class L src
+    class W word
+    class P photo
+    class X,N image
+    class Q1,Q2,Q3 word

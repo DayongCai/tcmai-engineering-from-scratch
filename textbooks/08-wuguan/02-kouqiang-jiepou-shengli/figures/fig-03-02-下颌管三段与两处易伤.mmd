@@ -1,0 +1,23 @@
+%% 内容依据：textbooks/08-wuguan/02-kouqiang-jiepou-shengli/03-第3章-颌骨与咀嚼肌.md §N.2
+%% 图 3-2 下颌管三段与两处易伤
+%% §02.03.02.01：管起于下颌孔，行于升支骨松质内，到体部转向前，开口于颏孔；
+%%   颏孔之后仍有延续（颏管与切牙支）。管内为下牙槽神经与同名血管。
+%% 两处易伤：磨牙区管顶骨最薄（第三磨牙根尖贴管）、下颌角骨折线经管。
+%% 本图不给管的骨厚、根尖距离与颏孔位置数值（本章口径）。
+graph TD
+    M["下颌孔"] --> R["升支段<br/>偏后偏内"]
+    R --> G["磨牙区<br/>管顶骨最薄"]
+    G --> F["颏孔<br/>改称颏神经"]
+    F --> L["下唇与颏部<br/>同一片感觉"]
+    R --> X1["下颌角骨折<br/>骨折线经管"]
+    G --> X2["第三磨牙拔除<br/>根尖贴管"]
+    X1 --> S["同侧下唇麻木"]
+    X2 --> S
+
+    classDef bone fill:#eef2e8,stroke:#4a7c59,stroke-width:1.6px,color:#1f1b16
+    classDef canal fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef risk fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class M,F bone
+    class R,G canal
+    class X1,X2,S risk
+    class L bone

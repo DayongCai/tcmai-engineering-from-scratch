@@ -1,0 +1,21 @@
+%% 内容依据：textbooks/08-wuguan/02-kouqiang-jiepou-shengli/03-第3章-颌骨与咀嚼肌.md §N.1
+%% 图 3-1 上颌窦底与上颌后牙根：一条薄壁，三种结局
+%% §02.03.01.01：窦底压在牙槽突上方；上颌后牙根尖与窦底之间只隔一层薄骨，
+%%   有的根尖几乎贴着窦黏膜，越靠后的牙关系越密。
+%% 三条路：炎症上行成牙源性窦炎；拔牙撕破成口腔上颌窦瘘；影像重叠不可判穿通。
+%% 本图不给窦底骨厚、根尖距离与牙位编号（本章口径）。
+graph TD
+    D["上颌窦腔"] --> W["窦底薄壁<br/>上颌后牙根尖"]
+    W --> A["根尖周炎上行"]
+    W --> B["拔牙撕破窦底"]
+    W --> C["影像重叠非穿通"]
+    A --> A1["单侧臭脓涕<br/>查同侧病灶牙"]
+    B --> B1["喝水出鼻孔<br/>鼓气自牙槽冒"]
+    C --> C1["看骨白线<br/>看局限黏膜增厚"]
+
+    classDef organ fill:#eef2e8,stroke:#4a7c59,stroke-width:1.6px,color:#1f1b16
+    classDef wall fill:#fdf1ef,stroke:#b5443a,stroke-width:1.8px,color:#1f1b16
+    classDef road fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.2px,color:#1f1b16
+    class D organ
+    class W wall
+    class A,B,C,A1,B1,C1 road

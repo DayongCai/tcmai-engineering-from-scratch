@@ -1,0 +1,23 @@
+%% 内容依据：textbooks/08-wuguan/02-kouqiang-jiepou-shengli/05-第5章-唾液腺与神经支配.md §N.1
+%% 图 5-1 腮腺与面神经：一个腺、五个出口、一张危险面
+%% §N.2 原文「腮腺没有真正的峡，浅部与深部的分界是人为划的，参照物就是面神经」
+%% §N.2 原文「腺是「包着神经的腺」，不是「挨着神经的腺」」
+%% §N.5 原文「神经在腺内走行的平面就是浅、深两部的界面」「没有一层能凭手感分辨的鞘」
+%% 本图只画层次与归属，不给腺体尺寸、神经径值与分支长度。
+graph TD
+    R["腮腺<br/>腺体与腺鞘"] --> N["面神经干<br/>自后内侧入腺"]
+    N --> S["上干<br/>颞面干"]
+    N --> I["下干<br/>颈面干"]
+    S --> T["颞支<br/>越颧弓"]
+    S --> Z["颧支<br/>越颧骨"]
+    S --> B["颊支<br/>沿腮腺管"]
+    I --> M["下颌缘支<br/>贴下颌下缘"]
+    I --> C["颈支<br/>颈阔肌深面"]
+    N --> D["危险区<br/>不是点，是一张面<br/>面即神经平面"]
+
+    classDef gland fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef nerve fill:#eef2e8,stroke:#4a7c59,stroke-width:1.4px,color:#1f1b16
+    classDef risk fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class R gland
+    class N,S,I,T,Z,B,M,C nerve
+    class D risk

@@ -1,0 +1,21 @@
+%% 内容依据：textbooks/08-wuguan/02-kouqiang-jiepou-shengli/04-第4章-颞下颌关节与咬合.md §N.4
+%% 图 4-2 盘与髁的三种关系：可复位、不可复位、绞锁
+%% §02.04.03.02：正常时中间带夹在髁突前斜面与结节后斜面之间，全程有垫；
+%%   盘前移后中间带离开承力区，开口时髁突越过盘后带即「复位」，故响两声。
+%%   不可复位者盘回不去，弹响消失而开口受限；绞锁是盘挡住髁突的某一段路。
+%% 本图不给开口度阈值、移位分度与治疗（本章口径）。
+graph TD
+    N["正常：中间带在位"] --> O["开口：盘随髁前移"]
+    O --> A["可复位<br/>开口一声"]
+    O --> B["不可复位<br/>弹响消失"]
+    O --> C["绞锁<br/>开到一半卡住"]
+    A --> A1["闭口再一声"]
+    B --> B1["开口受限偏斜"]
+    C --> C1["张不开口<br/>与脱位相反"]
+
+    classDef good fill:#eef2e8,stroke:#4a7c59,stroke-width:1.6px,color:#1f1b16
+    classDef mid fill:#f3ede2,stroke:#8a5a2b,stroke-width:1.4px,color:#1f1b16
+    classDef bad fill:#fdf1ef,stroke:#b5443a,stroke-width:1.6px,color:#1f1b16
+    class N,O good
+    class A,A1 mid
+    class B,B1,C,C1 bad

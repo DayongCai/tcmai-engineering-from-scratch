@@ -1,0 +1,5 @@
+{
+  "note": "已补实课程正文的登记表。规则：登记前必须把该科目 chapters/*/docs/zh.md 的模板残留清零，且每章 ≥2,500 汉字；登记后 check_course_docs_quality.js --check 会断言这一点。未登记科目只警告不判失败（存量在补）。",
+  "minHzPerChapter": 2500,
+  "rewritten": []
+}
