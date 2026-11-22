@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中医多模态融合 · 第 9 章 评估：多模态是否真的更好：本章统计口径
- * 课程: departments/07-zhineng/13-zhongyi-duomotai-ronghe/chapters/09-u9/docs/zh.md
- * 数据: standards/zhongyi-duomotai-ronghe/units.json（145 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-duomotai-ronghe/chapter-map.json（课程章 → 教材单元号）
+ * 中医多模态融合 · 第 9 章：说多模态更好之前，先让它可被反驳
+ * 正文: departments/07-zhineng/13-zhongyi-duomotai-ronghe/chapters/09-u9/docs/zh.md
+ * 取数: 解析正文开篇的 AUROC 与置信区间、性能—缺失率曲线、效能表
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 现算：增益是否跨过零、缺失曲线的交叉点、检出各差值所需的样本与现有样本的 power。
+ * 「不显著」这个判断由区间端点比较得出，不是写死的字符串。
  */
 
 'use strict';
@@ -15,87 +14,98 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-duomotai-ronghe', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+
+function parseDoc(text) {
+  const lines = String(text).split(/\r?\n/);
+  const titleLine = lines.find((l) => /^#\s+/.test(l)) || '';
+  const heading = titleLine.replace(/^#\s+/, '').trim();
+  const chapterNo = Number((heading.match(/第\s*(\d+)\s*章/) || [])[1]) || null;
+  const title = heading.replace(/^第\s*\d+\s*章\s*·?\s*/, '');
+  const problem = (text.match(/\*\*PROBLEM:\*\*\s*([\s\S]*?)\r?\n\r?\n/) || [])[1] || '';
+  const sections = lines.filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+  const tables = [];
+  let cur = null;
+  for (const line of lines) {
+    const t = line.trim();
+    if (!t.startsWith('|')) { cur = null; continue; }
+    const cells = t.replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+    if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue;
+    if (!cur) { cur = []; tables.push(cur); }
+    cur.push(cells);
   }
-  throw new Error('没找到 standards/zhongyi-duomotai-ronghe/units.json —— 章节目录是否已脱离仓库？');
+  const hanzi = (text.match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+  return { text, title, chapterNo, problem, sections, tables, hanzi };
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-duomotai-ronghe', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-duomotai-ronghe', 'chapter-map.json');
-const CHAPTER = '9';
-const SLUG = '09-u9';
+const nums = (s) => (String(s).replace(/,/g, '').match(/-?\d+(?:\.\d+)?/g) || []).map(Number);
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function missingCurve(doc) {
+  const t = doc.tables.find((x) => x[0] && x[0].some((c) => c.includes('缺失率')));
+  if (!t) return [];
+  return t.slice(1).map((r) => {
+    const n = nums(r[0]);
+    const f = nums(r[1]);
+    const l = nums(r[2]);
+    const g = nums(r[3]);
+    return { rate: n[0], fusion: f[0], late: l[0], tongue: g[0] };
+  });
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function powerTable(doc) {
+  const t = doc.tables.find((x) => x[0] && x[0].some((c) => c.includes('power')));
+  if (!t) return [];
+  return t.slice(1).map((r) => {
+    const d = nums(r[0]);
+    const n = nums(r[1]);
+    const p = nums(r[2]);
+    return { delta: d[0], need: n[0], power: p[0] };
+  });
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function analyze(doc) {
+  const full = Number((doc.problem.match(/全模态 AUROC\s*([\d.]+)/) || [])[1]);
+  const single = Number((doc.problem.match(/最好的单模态\s*([\d.]+)/) || [])[1]);
+  const ciM = doc.problem.match(/置信区间是\s*[\[［]\s*([−-]?[\d.]+)\s*,\s*([\d.]+)\s*[\]］]/);
+  const ci = ciM ? [Number(ciM[1].replace('−', '-')), Number(ciM[2])] : [];
+  const n = Number((doc.problem.match(/n\s*=\s*(\d+)/) || [])[1]);
+  const curve = missingCurve(doc);
+  const cross = curve.find((r) => r.tongue > r.fusion);
+  const powers = powerTable(doc);
+  const at300 = powers.find((p) => p.delta === 0.02);
+  return {
+    full, single, delta: full - single, ci,
+    spansZero: ci.length === 2 && ci[0] < 0 && ci[1] > 0,
+    n, curve,
+    crossover: cross ? cross.rate : NaN,
+    powers, at300,
+    underpowered: at300 ? at300.power < 0.8 && at300.need > n : false,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = parseDoc(fs.readFileSync(DOC, 'utf8'));
+  const a = analyze(doc);
 
-  console.log(`中医多模态融合 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中医多模态融合 · 第 ${doc.chapterNo} 章 ${doc.title}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文 ${doc.hanzi.toLocaleString('en-US')} 汉字 · ${doc.sections.length} 节 · ${doc.tables.length} 张表`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`全模态 ${a.full} vs 最佳单模态 ${a.single} → 增益 ${a.delta.toFixed(2)}。`);
+  console.log(`  95% CI [${a.ci[0]}, ${a.ci[1]}]，n = ${a.n} → 跨过零：${a.spansZero ? '是（与无差别不可区分）' : '否'}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('性能—缺失率曲线（融合 / 晚期 / 退化到舌象）：');
+  for (const r of a.curve) console.log(`  ${r.rate}%：${r.fusion} / ${r.late} / ${r.tongue}`);
+  console.log(`  → 退化到舌象首次反超全模态融合的缺失率：${a.crossover}%`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('效能（300 例时）：');
+  for (const p of a.powers) console.log(`  ΔAUROC ${p.delta}：需 ${p.need} 例，实际 power ${p.power}`);
+  console.log(`  → 检出 ${a.at300.delta} 的差异${a.underpowered ? '属于样本量不足，而不是没有差异' : '尚可'}。`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-duomotai-ronghe/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 教学样例：数字由本章正文现算，不手打；改正文后重跑即可复现。');
+  console.log('※ 本输出不构成临床效能结论或产品性能评价。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, parseDoc, analyze, missingCurve, powerTable };

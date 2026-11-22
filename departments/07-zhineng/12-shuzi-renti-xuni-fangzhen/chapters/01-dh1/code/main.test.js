@@ -7,56 +7,56 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'shuzi-renti-xuni-fangzhen', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'shuzi-renti-xuni-fangzhen', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { readDoc, settings, layers, compute, checks, CHAPTER } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('正文存在，且读得出矩阵与体素字节数', () => {
+  const text = readDoc();
+  assert.ok(text.length > 2500, '正文过短，是否指错了文件');
+  const s = settings(text);
+  assert.deepStrictEqual([s.cols, s.rows, s.slices], [512, 512, 500]);
+  assert.strictEqual(s.bytesPerVoxel, 2);
+  assert.strictEqual(s.inplaneMm, 0.5);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('体素数与存贮量按矩阵现算，不写死', () => {
+  const c = compute(readDoc());
+  assert.strictEqual(c.voxels, 512 * 512 * 500);
+  assert.strictEqual(c.bytes, c.voxels * 2);
+  assert.ok(Math.abs(c.mib - 250) < 1, `MiB 口径应约 250，实得 ${c.mib}`);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('重采样倍数等于层厚与层内像素之比的立方', () => {
+  const c = compute(readDoc());
+  assert.strictEqual(c.factor, 8);
+  assert.strictEqual(c.bytesFine, c.bytes * 8);
+  assert.ok(c.bytesFine / 1e9 > 1.8 && c.bytesFine / 1e9 < 2.4, '加密后应在 2 GB 量级');
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('分层交付表能逐行读出，且尺度单调收紧', () => {
+  const L = layers(readDoc());
+  assert.strictEqual(L.length, 3);
+  assert.strictEqual(L[0].name, '全身');
+  assert.ok(L[0].maxMm > L[1].maxMm, '全身尺度应大于器官');
+  assert.ok(L[2].minMm <= 0.1, '局部层应到 0.1 mm 及以下');
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('五条对照全部通过', () => {
+  const bad = checks(readDoc()).filter((k) => !k.ok);
+  assert.deepStrictEqual(bad.map((k) => k.name), [], '有对照未通过：' + bad.map((k) => k.note).join('；'));
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('脚本可运行，输出含复算与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/shuzi-renti-xuni-fangzhen\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
+  assert.ok(out.length > 300, '输出过短');
+  assert.match(out, /体素数\s+131,072,000/);
+  assert.match(out, /教学样例：数字按正文给出的矩阵与层厚现算/);
+  assert.match(out, /不构成医学意见或诊断依据/);
+  assert.doesNotMatch(out, /三辨|四位面|单元规模|本课第/);
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/01-dh1/docs/zh.md'), '头部注释未指向本章');
+test('章号与正文标题里的章号一致', () => {
+  const first = readDoc().split('\n')[0];
+  assert.ok(first.startsWith(`# 第 ${CHAPTER} 章`), '标题章号对不上：' + first);
 });

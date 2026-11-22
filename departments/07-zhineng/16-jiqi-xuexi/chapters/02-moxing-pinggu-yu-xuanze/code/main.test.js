@@ -6,57 +6,81 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
+const { readDoc, parseSetup, parseCandidatesTable, stderr, optimismPoints, mcnemarChi2, reconcile } = require('./main.js');
+
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'jiqi-xuexi', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'jiqi-xuexi', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('标准误按 √(p(1-p)/n) 现算', () => {
+  assert.ok(Math.abs(stderr(0.86, 1000) - 0.010972) < 1e-6);
+  assert.ok(Math.abs(stderr(0.86, 200) - 0.02454) < 1e-4);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('28 例的零假设检验统计量按四格表算', () => {
+  assert.ok(Math.abs(mcnemarChi2(45, 28) - 3.5068) < 1e-3);
+  assert.strictEqual(mcnemarChi2(10, 10), 1 / 20);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('两个不一致格差得越多，统计量越大', () => {
+  assert.ok(mcnemarChi2(60, 20) > mcnemarChi2(45, 28));
+  assert.ok(mcnemarChi2(45, 28) > mcnemarChi2(40, 35));
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('演算设定从正文读出', () => {
+  const s = parseSetup(readDoc());
+  assert.strictEqual(s.n, 1000);
+  assert.strictEqual(s.acc, 0.86);
+  assert.strictEqual(s.sigma, 0.011);
+  assert.strictEqual(s.sigma200, 0.025);
+  assert.strictEqual(s.candidates, 40);
+  assert.strictEqual(s.optimistic, 0.882);
+  assert.strictEqual(s.zQuoted, 2.0);
+  assert.strictEqual(s.n10, 45);
+  assert.strictEqual(s.n01, 28);
+  assert.strictEqual(s.chi2, 3.51);
+  assert.strictEqual(s.threshold, 3.84);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('候选表四行都能解析，且候选数递增', () => {
+  const rows = parseCandidatesTable(readDoc());
+  assert.deepStrictEqual(rows.map((r) => r.k), [1, 10, 40, 200]);
+  assert.deepStrictEqual(rows.map((r) => r.z), [0, 1.54, 2.01, 2.75]);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('候选表的乐观量与它自己的最大值期望自洽', () => {
+  const r = reconcile(readDoc());
+  assert.ok(r.rows.every((x) => x.ok), r.rows.filter((x) => !x.ok).map((x) => x.label).join(','));
+});
+
+test('验证集越大，同一候选数的乐观量越小', () => {
+  const a = optimismPoints(2.01, 0.86, 1000);
+  const b = optimismPoints(2.01, 0.86, 200);
+  assert.ok(b > 2 * a, `200 例 ${b} 应远大于 1,000 例 ${a}`);
+});
+
+test('1.7 个标准误的差距未过显著性门', () => {
+  const s = parseSetup(readDoc());
+  const gap = 0.871 - 0.852;
+  const z = gap / stderr(s.acc, s.n);
+  assert.ok(z > 1.5 && z < 2.0, `z=${z}`);
+  assert.ok(mcnemarChi2(s.n10, s.n01) < s.threshold);
+});
+
+test('正文设定缺失时抛错', () => {
+  assert.throws(() => parseSetup('空文档'), /没找到/);
+  assert.throws(() => parseCandidatesTable('| 1 | 0 |'), /少于/);
+});
+
+test('脚本可运行且输出对账结果', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/jiqi-xuexi\/units\.json 现算/);
+  assert.match(out, /与正文对账 12\/12 格通过/);
+  assert.match(out, /未达显著/);
   assert.match(out, /不构成临床判断依据/);
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
+test('代码与习题都不含脚手架名目', () => {
+  const body = fs.readFileSync(MAIN, 'utf8') + fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测']) assert.ok(!body.includes(bad), `残留 ${bad}`);
   assert.ok(body.includes('/chapters/02-moxing-pinggu-yu-xuanze/docs/zh.md'), '头部注释未指向本章');
 });

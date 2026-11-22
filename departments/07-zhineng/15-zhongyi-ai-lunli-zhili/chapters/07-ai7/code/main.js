@@ -1,101 +1,187 @@
-#!/usr/bin/env node
-/**
- * 中医 · 第 7 章 模型审计与可追溯：本章统计口径
- * 课程: departments/07-zhineng/15-zhongyi-ai-lunli-zhili/chapters/07-ai7/docs/zh.md
- * 数据: standards/zhongyi-ai-lunli-zhili/units.json（44 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-ai-lunli-zhili/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
- *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
- */
-
 'use strict';
+/**
+ * 中医 · 第 7 章 可解释不是画热图：审计要的是「这一次依据了哪几条记录」
+ *
+ *   node code/main.js
+ *
+ * 正文：chapters/07-ai7/docs/zh.md
+ * 习题：chapters/07-ai7/quiz.json
+ *
+ * 本章没有外部语料，所有数字都从正文本身现算：
+ *   · 分节数、各节汉字数、全章汉字数
+ *   · 本章判据在正文里的出现次数（缺一条即报错）
+ *   · quiz 的结构（题数 / 段位 / 选项 / 解释字数 / 答案分布）
+ *   · quiz 的 check 题正确选项是否真的能在正文里找到原词
+ * 正文或题目一改，重跑就能看出是哪一条对不上。
+ *
+ * 依赖：仅 Node.js 标准库。
+ */
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-ai-lunli-zhili', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/zhongyi-ai-lunli-zhili/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-ai-lunli-zhili', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-ai-lunli-zhili', 'chapter-map.json');
-const CHAPTER = '7';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const CHAPTER = 7;
 const SLUG = '07-ai7';
+const TITLE = '可解释不是画热图：审计要的是「这一次依据了哪几条记录」';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const hanzi = (s) => (String(s || '').match(HANZI) || []).length;
+const count = (text, term) => String(text).split(term).length - 1;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** 4 字连续汉字片段：判断一道题的正确选项是否真的落在正文里 */
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
 }
+
+/* ── 正文 ────────────────────────────────────────────────────────── */
+
+function parseDoc(doc = fs.readFileSync(DOC, 'utf8')) {
+  const lines = String(doc).split(/\r?\n/);
+  const title = (lines[0] || '').replace(/^#\s*/, '').trim();
+  const motto = /^>\s*\*\*MOTTO:\*\*\s*「([^」]+)」——《([^》]+)》/m.exec(doc);
+  const sections = [];
+  let cur = null;
+  for (const line of lines) {
+    const h = /^##\s+(.+?)\s*$/.exec(line);
+    if (h) {
+      cur = { heading: h[1], lines: [] };
+      sections.push(cur);
+      continue;
+    }
+    if (cur) cur.lines.push(line);
+  }
+  return {
+    title,
+    motto: { text: motto ? motto[1] : '', source: motto ? motto[2] : '' },
+    hanzi: hanzi(doc),
+    sections: sections.map((s) => ({
+      heading: s.heading,
+      body: s.lines.join('\n'),
+      hanzi: hanzi(s.lines.join('\n')),
+    })),
+  };
+}
+
+/**
+ * 本章判据清单。每条都要在正文里找到原话；找不到说明正文没讲，
+ * 或者代码记的是旧版说法 —— 两种情况都必须报错。
+ */
+const CLAIMS = [
+  { id: 'three-traces', label: '三种追溯', terms: ['数据追溯', '模型追溯', '决策追溯'] },
+  { id: 'change-four', label: '变更记录四项', terms: ['改了什么', '为什么改', '谁批准', '预期影响'] },
+  { id: 'source-change', label: '数据源变更也要纳入变更管理', terms: ['数据源的变更'] },
+  { id: 'explain-four', label: '解释的四个层次', terms: ['全局解释', '局部解释', '事后解释', '内生可解释'] },
+  { id: 'audit-sample', label: '抽样要含正确但依据薄弱的案例', terms: ['正确但依据薄弱'] },
+  { id: 'four-kinds', label: '发现分四类定性', terms: ['数据问题', '模型问题', '流程问题', '人的问题'] },
+  { id: 'model-card', label: '模型卡六问，失败模式三条', terms: ['至少写出三条具体的失败模式', '什么时候该被重新评估'] },
+];
+
+/* ── quiz ────────────────────────────────────────────────────────── */
+
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    return {
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(q.explain),
+      grounded: hit.length,
+      right,
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+  };
+}
+
+/* ── 断言 ────────────────────────────────────────────────────────── */
+
+function analyze() {
+  const raw = fs.readFileSync(DOC, 'utf8');
+  const doc = parseDoc(raw);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const body = doc.sections.map((s) => s.body).join('\n');
+  const claims = CLAIMS.map((c) => {
+    const hits = c.terms.map((t) => ({ term: t, n: count(body, t) }));
+    return { ...c, hits, ok: hits.every((h) => h.n > 0) };
+  });
+  return { doc, claims, quiz: quizSummary(quiz, raw) };
+}
+
+/** 任何一条不成立就抛错：习题与正文同源的门，靠这个函数而不是靠人眼 */
+function assertChapter() {
+  const r = analyze();
+  const bad = [];
+  for (const c of r.claims) if (!c.ok) bad.push(`正文缺判据 ${c.id}：${c.hits.filter((h) => !h.n).map((h) => h.term).join('、')}`);
+  if (r.doc.sections.length < 4) bad.push(`分节过少：${r.doc.sections.length}`);
+  if (r.doc.hanzi < 2500) bad.push(`正文过短：${r.doc.hanzi} 汉字`);
+  const q = r.quiz;
+  if (q.total < 5) bad.push(`题数不足：${q.total}`);
+  for (const s of ['pre', 'check', 'post']) if (!q.stage[s]) bad.push(`缺 ${s} 段`);
+  if (!q.allFourOptions) bad.push('有题不是 4 选项');
+  if (q.badCorrect) bad.push('correct 下标非法');
+  if (q.minExplain < 30) bad.push(`有题解释过短：${q.minExplain} 汉字`);
+  if (q.checkGrounded < 2) bad.push(`check 题接地不足：${q.checkGrounded}`);
+  if (q.distinctAnswers < 3) bad.push(`答案分布过窄：${q.answers.join('/')}`);
+  if (bad.length) throw new Error('第 7 章不通过：\n  - ' + bad.join('\n  - '));
+  return r;
+}
+
+/* ── 输出 ────────────────────────────────────────────────────────── */
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = assertChapter();
+  console.log(`中医 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log(`正文 ${r.doc.hanzi.toLocaleString('en-US')} 汉字 · 分节 ${r.doc.sections.length} · 题 ${r.quiz.total}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log('分节：');
+  for (const s of r.doc.sections) console.log(`  ${s.heading}（${s.hanzi} 字）`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('判据在正文里的出现次数：');
+  for (const c of r.claims) {
+    console.log(`  ${c.ok ? '✓' : '✗'} ${c.label}：${c.hits.map((h) => `${h.term}×${h.n}`).join('、')}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-ai-lunli-zhili/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`quiz：pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post} · 答案 ${r.quiz.answers.join('/')} · check 接地 ${r.quiz.checkGrounded} 道`);
+  console.log('※ 数字由正文与 quiz 现算；正文改一句，重跑即可看出哪条判据失配。');
+  console.log('※ 本章为教学材料，不构成合规意见、医学意见或技术评估结论。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  analyze,
+  assertChapter,
+  parseDoc,
+  quizSummary,
+  grams,
+  hanzi,
+  count,
+  CLAIMS,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+};

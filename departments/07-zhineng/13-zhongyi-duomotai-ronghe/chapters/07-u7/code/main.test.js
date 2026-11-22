@@ -6,57 +6,60 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-duomotai-ronghe', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-duomotai-ronghe', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, parseDoc, analyze, methodRows } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const text = () => fs.readFileSync(DOC, 'utf8');
+const doc = () => parseDoc(text());
+
+test('正文可解析：章号、标题、结构齐', () => {
+  const d = doc();
+  assert.strictEqual(d.chapterNo, 7);
+  assert.match(d.title, /聚类出来的亚型/);
+  assert.ok(d.sections.length >= 5);
+  assert.ok(d.hanzi > 2000);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('四种方法的 ARI 与 κ 都从表格读出', () => {
+  const rows = methodRows(doc());
+  assert.strictEqual(rows.length, 4);
+  assert.deepStrictEqual(rows.map((r) => r.ari), [0.28, 0.35, 0.47, 0.52]);
+  assert.deepStrictEqual(rows.map((r) => r.kappa), [0.21, 0.29, 0.38, 0.44]);
+  assert.ok(rows.every((r) => r.sizes.length === 3));
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('类别规模极差由三次运行的规模现算', () => {
+  const rows = methodRows(doc());
+  assert.ok(Math.abs(rows[0].spread - 62 / 31) < 1e-9);
+  assert.ok(Math.abs(rows[3].spread - 61 / 59) < 1e-9);
+  assert.ok(rows[0].spread > rows[3].spread, '加约束后规模应更均衡');
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('稳定阈值取自正文，通过数由阈值判定', () => {
+  const a = analyze(doc());
+  assert.strictEqual(a.unstable, 0.5);
+  assert.strictEqual(a.unusable, 0.3);
+  assert.strictEqual(a.pass, 1);
+  assert.strictEqual(a.fail, 1, '0.28 落在不可用区');
+  assert.ok(Math.abs(a.lift - 0.24) < 1e-9);
+  assert.match(a.bestMethod, /理论轴投影/);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('改正文的稳定阈值，通过数随之变化（证明确实现算）', () => {
+  const mutated = text().replace('ARI 中位数 < 0.5 视为不稳定', 'ARI 中位数 < 0.3 视为不稳定');
+  assert.notStrictEqual(mutated, text(), '替换未命中，正文表述可能已改');
+  const a = analyze(parseDoc(mutated));
+  assert.strictEqual(a.unstable, 0.3);
+  assert.strictEqual(a.pass, 3);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('脚本可运行且输出含边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], {
+    encoding: 'utf8',
+    timeout: 60000,
+  });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-duomotai-ronghe\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/07-u7/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /方法对比/);
+  assert.match(out, /最优方法/);
+  assert.match(out, /不构成证候分类标准/);
 });

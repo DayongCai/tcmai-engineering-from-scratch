@@ -2,61 +2,89 @@
 
 const test = require('node:test');
 const assert = require('node:assert');
-const fs = require('node:fs');
-const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const path = require('node:path');
 
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhineng-gongcheng-shijian', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhineng-gongcheng-shijian', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const {
+  readDoc,
+  tableRows,
+  numberedList,
+  parseProblem,
+  parseProtocol,
+  parseGates,
+  analyze,
+} = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const doc = readDoc();
+
+test('立项问题段：12,000 例、0.91 与 0.86、噪声 0.03、看 17 次', () => {
+  const p = parseProblem(doc);
+  assert.strictEqual(p.cases, 12000);
+  assert.strictEqual(p.aucA, 0.91);
+  assert.strictEqual(p.aucB, 0.86);
+  assert.strictEqual(p.seedNoise, 0.03);
+  assert.strictEqual(p.peeks, 17);
+  assert.strictEqual(p.trainHours, 6);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('两个 AUC 的差与噪声倍数现算', () => {
+  const a = analyze(doc);
+  assert.strictEqual(a.gap, 0.05);
+  assert.ok(Math.abs(a.gapInSigma - 0.05 / 0.03) < 1e-9);
+  assert.ok(a.gapInSigma > 1.6 && a.gapInSigma < 1.7);
+  assert.strictEqual(a.ciCoversGap, true, '0.05 应落在 0.04–0.06 的区间宽度内');
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('区间宽度符合 1/√n', () => {
+  const proto = parseProtocol(doc);
+  assert.strictEqual(proto.largeN, 1200);
+  assert.strictEqual(proto.smallN, 300);
+  assert.strictEqual(proto.smallWidth, 0.12);
+  assert.strictEqual(proto.bootstrap, 1000);
+  assert.strictEqual(proto.subgroupMin, 50);
+  const a = analyze(doc);
+  assert.strictEqual(a.sampleRatio, 4);
+  assert.strictEqual(a.rootSampleRatio, 2);
+  assert.ok(Math.abs(a.widthRatio - 2) < 1e-9, `宽度比 ${a.widthRatio}`);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('17 次比较的假阳性累积概率现算', () => {
+  const a = analyze(doc);
+  assert.ok(Math.abs(a.familywise - (1 - 0.95 ** 17)) < 1e-12);
+  assert.ok(a.familywise > 0.58 && a.familywise < 0.59, `累积概率 ${a.familywise}`);
+  assert.strictEqual(a.peekComputeHours, 102);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('流水线五段、四把锁、清单与登记表行数', () => {
+  const a = analyze(doc);
+  assert.strictEqual(a.stages.length, 5);
+  assert.strictEqual(a.locks.length, 4);
+  assert.strictEqual(a.manifest.length, 9);
+  assert.strictEqual(a.registry.length, 8);
+  assert.strictEqual(a.leaks.length, 8);
+  assert.strictEqual(a.promote.length, 5);
+  assert.ok(a.leaks[0].includes('患者级分组'));
+  assert.strictEqual(tableRows(doc, '锁').length, 4);
+  assert.strictEqual(numberedList(doc, '下面八条做成清单', '第 4 条最容易被放过').length, 8);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('回滚判据三个数取自正文', () => {
+  const g = parseGates(doc);
+  assert.strictEqual(g.rollbackHours, 72);
+  assert.strictEqual(g.subgroupDrop, 5);
+  assert.strictEqual(g.emptyRate, 1);
+  assert.strictEqual(g.overrideRate, 40);
+  assert.strictEqual(g.tolerance, 0.01);
+});
+
+test('脚本可运行，输出含现算结论与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhineng-gongcheng-shijian\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/03-xunlian-pingce/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /差值 0\.05/);
+  assert.match(out, /1 − 0\.95\^17/);
+  assert.match(out, /宽度比 2\.00/);
+  assert.match(out, /回滚 72 小时/);
+  assert.match(out, /不对应任何实测模型或数据集/);
 });

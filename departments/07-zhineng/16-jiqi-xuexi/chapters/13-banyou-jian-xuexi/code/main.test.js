@@ -6,57 +6,70 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
+const { readDoc, parseSetup, propagate, purity, reconcile } = require('./main.js');
+
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'jiqi-xuexi', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'jiqi-xuexi', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('标签传播在四点上收敛到 0.6 与 0.2', () => {
+  const f = propagate([0, 1, 2, 3], [[0, 1, 1], [0, 2, 1], [1, 2, 1], [2, 3, 1]], { 0: 1, 3: -1 });
+  assert.ok(Math.abs(f[1] - 0.6) < 1e-6);
+  assert.ok(Math.abs(f[2] - 0.2) < 1e-6);
+  assert.strictEqual(f[0], 1);
+  assert.strictEqual(f[3], -1);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('标注点的值不被更新', () => {
+  const f = propagate([0, 1], [[0, 1, 1]], { 0: 1 });
+  assert.strictEqual(f[0], 1);
+  assert.ok(Math.abs(f[1] - 1) < 1e-9);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('两个标注点等权时中点取均值', () => {
+  const f = propagate([0, 1, 2], [[0, 1, 1], [1, 2, 1]], { 0: 1, 2: -1 });
+  assert.ok(Math.abs(f[1]) < 1e-9);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('纯度计算忽略未标注样本', () => {
+  const clusterOf = { 0: 'a', 1: 'a', 2: 'b' };
+  assert.strictEqual(purity(clusterOf, { 0: 1, 1: 1 }), 1);
+  assert.strictEqual(purity(clusterOf, { 0: 1, 1: 0 }), 0.5);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('演算设定从正文读出', () => {
+  const s = parseSetup(readDoc());
+  assert.strictEqual(s.labeled, 100);
+  assert.strictEqual(s.unlabeled, 9900);
+  assert.strictEqual(s.accBase, 0.62);
+  assert.strictEqual(s.accSelf, 0.79);
+  assert.strictEqual(s.accShift, 0.48);
+  assert.strictEqual(s.f2, 0.6);
+  assert.strictEqual(s.f3, 0.2);
+  assert.strictEqual(s.threshold, 0.9);
+  assert.strictEqual(s.selected, 30);
+  assert.strictEqual(s.purityDeclared, 0.58);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('正文全部数字与现算对账通过', () => {
+  const r = reconcile(readDoc());
+  assert.ok(r.rows.every((x) => x.ok), r.rows.filter((x) => !x.ok).map((x) => x.label).join(','));
+  assert.strictEqual(r.rows.length, 5);
+  assert.ok(Math.abs(r.mislabelShare - 0.03) < 1e-9);
+});
+
+test('正文缺失时抛错', () => {
+  assert.throws(() => parseSetup('空文档'), /没找到/);
+});
+
+test('脚本可运行且声明边界', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/jiqi-xuexi\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
+  assert.match(out, /与正文对账 5\/5 项通过/);
+  assert.match(out, /独立标注集验证/);
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
+test('代码与习题都不含脚手架名目', () => {
+  const body = fs.readFileSync(MAIN, 'utf8') + fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测']) assert.ok(!body.includes(bad), `残留 ${bad}`);
   assert.ok(body.includes('/chapters/13-banyou-jian-xuexi/docs/zh.md'), '头部注释未指向本章');
 });

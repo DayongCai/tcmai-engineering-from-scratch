@@ -6,57 +6,78 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
+const { readDoc, parseSetup, jointSpace, nbParams, posterior, smoothed, reweightPosterior, gauss, responsibility, reconcile } = require('./main.js');
+
 const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'jiqi-xuexi', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'jiqi-xuexi', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('联合空间是指数级，一维计数是线性级', () => {
+  assert.strictEqual(jointSpace(14, 3), 4782969);
+  assert.strictEqual(nbParams(2, 14, 3), 84);
+  assert.ok(jointSpace(14, 3) / nbParams(2, 14, 3) > 50000);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('后验按先验×似然归一', () => {
+  const p = posterior(0.5, 0.8 * 0.9 * 0.9, 0.5, 0.2 * 0.1 * 0.1);
+  assert.ok(Math.abs(p - 0.99692) < 1e-4);
+  assert.strictEqual(posterior(0.5, 1, 0.5, 0), 1);
+  assert.strictEqual(posterior(0.5, 1, 0.5, 1), 0.5);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('平滑把零概率抬到非零', () => {
+  assert.strictEqual(smoothed(0, 10, 2, 1), 1 / 12);
+  assert.ok(smoothed(0, 10, 2, 1) > 0 && smoothed(0, 10, 2, 1) < 0.1);
+  assert.ok(smoothed(0, 10000, 2, 1) < 0.001, '样本大时平滑的影响应当可忽略');
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('跨场景先验换算：同一份证据，结论随先验改变', () => {
+  const p = reweightPosterior(0.9, 0.3, 0.02);
+  assert.ok(Math.abs(p - 0.30) < 0.005);
+  assert.ok(p < 0.9);
+  // 换回原先验应当回到原后验
+  assert.ok(Math.abs(reweightPosterior(p, 0.02, 0.3) - 0.9) < 1e-9);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('高斯密度与责任度', () => {
+  assert.ok(Math.abs(gauss(2, 0, 1) - 0.05399) < 1e-4);
+  const r = responsibility(2, [{ prior: 0.5, mu: 0, sigma: 1 }, { prior: 0.5, mu: 4, sigma: 1 }]);
+  assert.strictEqual(r[0], 0.5);
+  assert.ok(Math.abs(r[0] + r[1] - 1) < 1e-12);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('演算设定从正文读出', () => {
+  const s = parseSetup(readDoc());
+  assert.strictEqual(s.dims, 14);
+  assert.strictEqual(s.values, 3);
+  assert.strictEqual(s.classes, 2);
+  assert.strictEqual(s.declaredJointWan, 478);
+  assert.strictEqual(s.declaredParams, 84);
+  assert.strictEqual(s.post, 0.997);
+  assert.strictEqual(s.smoothedDeclared, 0.083);
+  assert.strictEqual(s.piOld, 0.3);
+  assert.strictEqual(s.piNew, 0.02);
+  assert.strictEqual(s.postNew, 0.3);
+});
+
+test('正文全部数字与现算对账通过', () => {
+  const r = reconcile(readDoc());
+  assert.ok(r.rows.every((x) => x.ok), r.rows.filter((x) => !x.ok).map((x) => x.label).join(','));
+  assert.strictEqual(r.rows.length, 11);
+});
+
+test('正文缺失时抛错', () => {
+  assert.throws(() => parseSetup('空文档'), /没找到/);
+});
+
+test('脚本可运行且声明边界', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/jiqi-xuexi\/units\.json 现算/);
+  assert.match(out, /与正文对账 11\/11 项通过/);
   assert.match(out, /不构成临床判断依据/);
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
+test('代码与习题都不含脚手架名目', () => {
+  const body = fs.readFileSync(MAIN, 'utf8') + fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测']) assert.ok(!body.includes(bad), `残留 ${bad}`);
   assert.ok(body.includes('/chapters/07-beiyesi-fenleiqiu/docs/zh.md'), '头部注释未指向本章');
 });

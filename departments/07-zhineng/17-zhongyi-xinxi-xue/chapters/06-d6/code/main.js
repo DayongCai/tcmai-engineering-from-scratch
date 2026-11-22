@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 /**
- * 中医信息学 · 第 6 章 中医临床信息的采集／中医临床信息数据的存储与管理／中医临床信息数据的整合／中医临床信息的分析利用／中医临床信息学展望／实验：本章统计口径
+ * 中医信息学 · 第 6 章 临床信息：采集负担决定数据质量
  * 课程: departments/07-zhineng/17-zhongyi-xinxi-xue/chapters/06-d6/docs/zh.md
- * 数据: standards/zhongyi-xinxi-xue/units.json（170 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-xinxi-xue/chapter-map.json（课程章 → 教材单元号）
+ * 数据: standards/zhongyi-xinxi-xue/units.json + chapter-map.json（用于核验正文引用的单元数量）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的每个数都从正文与单元层现算：
+ *   · 正文汉字、小节数、表格行数、引号术语数
+ *   · 正文自称的「25 个单元 1,410 汉字」→ 回单元层复算
+ *   · 核心概念（结构化、患者主索引、同源分置、数据质量、k-匿名）在正文的出现次数
+ *   · quiz 的题量、分段、选项数、解释长度、check 题接地与答案分散
  */
 
 'use strict';
@@ -27,75 +29,141 @@ function findRoot(start) {
 }
 
 const ROOT = findRoot(__dirname);
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 const UNITS = path.join(ROOT, 'standards', 'zhongyi-xinxi-xue', 'units.json');
 const MAP = path.join(ROOT, 'standards', 'zhongyi-xinxi-xue', 'chapter-map.json');
-const CHAPTER = '6';
+
+const CHAPTER = 6;
 const SLUG = '06-d6';
+const TITLE = '临床信息：采集负担决定数据质量，其余都是补救';
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+/** 正文拿它们做论证的核心术语：代码只核「在不在、出现几次」，不替正文改词 */
+const TERMS = ['结构化', '半结构化', '非结构化', '患者主索引', '同源分置', '数据质量', 'k-匿名', '去标识', '临床库', '科研库'];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
+const isHan = (ch) => /[\u3400-\u4dbf\u4e00-\u9fff]/.test(ch);
+const hanzi = (s) => [...String(s || '')].filter(isHan).length;
+const countTerm = (text, term) => String(text).split(term).length - 1;
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** 正文里 4 字以上的连续汉字片段：判断 quiz 正确选项是否真的落在正文里 */
+function shingles(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function sectionHeadings(doc) {
+  return [...String(doc).matchAll(/^##\s+(.+)$/gm)].map((m) => m[1].trim());
+}
+
+function tableRows(doc) {
+  const rows = String(doc).split(/\r?\n/).filter((l) => /^\|.*\|\s*$/.test(l));
+  return rows.filter((l) => !/^\|[\s:|-]+\|\s*$/.test(l));
+}
+
+const quoteTerms = (doc) => [...String(doc).matchAll(/「([^」]{1,24})」/g)].map((m) => m[1]);
+
+/** 正文自称的单元数量 */
+function docClaim(doc) {
+  const m = /(\d+)\s*个单元(?:共)?\s*([\d,]+)\s*汉字/.exec(String(doc));
+  if (!m) throw new Error('正文里没找到单元数量的声明');
+  return { units: Number(m[1]), hanzi: Number(m[2].replace(/,/g, '')) };
+}
+
+/** 从单元层复算本章规模 */
+function unitFacts() {
+  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
+  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters[SLUG];
+  if (!cm) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
+  const us = all.units.filter((u) => cm.units.includes(u.sub));
+  const h = us.reduce((a, u) => a + u.hanzi, 0);
+  return { units: us.length, hanzi: h, avg: Math.round((h / us.length) * 10) / 10 };
+}
+
+function quizSummary(quiz, doc) {
+  const body = shingles(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const grounded = [...shingles(right)].some((g) => body.has(g));
+    return {
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(q.explain),
+      grounded,
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+  };
+}
+
+function analyze() {
+  const doc = fs.readFileSync(DOC, 'utf8');
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const terms = TERMS.map((t) => ({ term: t, count: countTerm(doc, t) }));
+  return {
+    docHanzi: hanzi(doc),
+    headings: sectionHeadings(doc),
+    tableRows: tableRows(doc).length,
+    quotes: quoteTerms(doc),
+    claim: docClaim(doc),
+    facts: unitFacts(),
+    terms,
+    quiz: quizSummary(quiz, doc),
+    CHAPTER,
+    SLUG,
+    TITLE,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医信息学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = analyze();
+  console.log(`中医信息学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log(`正文 ${r.docHanzi.toLocaleString('en-US')} 汉字 · ${r.headings.length} 节 · 表格 ${r.tableRows} 行 · 引号术语 ${r.quotes.length} 处`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`本章规模：正文称 ${r.claim.units} 个单元 ${r.claim.hanzi.toLocaleString('en-US')} 汉字 → 单元层复算 ${r.facts.units} 个单元 ${r.facts.hanzi.toLocaleString('en-US')} 汉字（单元均 ${r.facts.avg}）`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('核心术语在正文的出现次数：');
+  for (const t of r.terms) console.log(`  ${t.count > 0 ? '✓' : '✗'} ${t.term}：${t.count}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-xinxi-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· check 题接地 ${r.quiz.checkGrounded} 道 · 答案位置 ${r.quiz.answers.join('/')}`);
+  console.log('※ 以上数字由正文与单元层现算，改正文后重跑即可复核。');
+  console.log('※ 本章为临床信息管理的教学材料，不构成诊疗或合规建议。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  analyze,
+  sectionHeadings,
+  tableRows,
+  quoteTerms,
+  docClaim,
+  unitFacts,
+  quizSummary,
+  shingles,
+  hanzi,
+  countTerm,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+  UNITS,
+  MAP,
+};

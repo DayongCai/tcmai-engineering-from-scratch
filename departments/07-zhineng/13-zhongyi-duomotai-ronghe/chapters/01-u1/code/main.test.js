@@ -6,57 +6,67 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-duomotai-ronghe', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-duomotai-ronghe', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, parseDoc, analyze, aucRows, rateHz } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const text = () => fs.readFileSync(DOC, 'utf8');
+const doc = () => parseDoc(text());
+
+test('正文可解析：章号、标题、结构齐', () => {
+  const d = doc();
+  assert.strictEqual(d.chapterNo, 1);
+  assert.match(d.title, /四诊本来就是多模态/);
+  assert.ok(d.sections.length >= 4, `节数过少：${d.sections.length}`);
+  assert.ok(d.tables.length >= 3, `表过少：${d.tables.length}`);
+  assert.ok(d.hanzi > 2000, `汉字过少：${d.hanzi}`);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('采样率跨度由量纲表现算，不写死', () => {
+  const a = analyze(doc());
+  assert.ok(a.rates['闻'] && a.rates['问']);
+  assert.strictEqual(a.rates['闻'].hz, 16000);
+  assert.strictEqual(a.rates['问'].hz, 0.01);
+  assert.ok(Math.abs(a.span - 16 * 1000 / 0.01) < 1);
+  assert.ok(a.span >= 1e6, `跨度不足：${a.span}`);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('区间取下限：200–500 Hz 读成 200', () => {
+  assert.strictEqual(rateHz('200–500 Hz'), 200);
+  assert.strictEqual(rateHz('16 kHz 起'), 16000);
+  assert.strictEqual(rateHz('离散事件（0.01–0.1 Hz）'), 0.01);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('增益列可由单模态与融合列复算', () => {
+  const rows = aucRows(doc());
+  assert.ok(rows.length >= 3, `增益表行数过少：${rows.length}`);
+  for (const r of rows) {
+    const independent = r.fusion - Math.max(...r.singles);
+    assert.ok(Math.abs(independent - r.stated) < 0.0015, `${r.plan} 的增益对不上`);
+    assert.ok(Math.abs(r.derived - independent) < 1e-12);
+  }
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('边际收益递减：第二路大于第三路', () => {
+  const a = analyze(doc());
+  assert.strictEqual(a.marginal.length, 2);
+  assert.ok(a.marginal[0] > a.marginal[1], `未递减：${a.marginal}`);
+  assert.ok(a.gains[1] > a.gains[0], '互补应高于冗余');
+});
+
+test('改正文的采样率，跨度随之变化（证明确实现算）', () => {
+  const mutated = text().replace('16 kHz 起', '8 kHz 起');
+  assert.notStrictEqual(mutated, text(), '替换未命中，正文表述可能已改');
+  const a = analyze(parseDoc(mutated));
+  assert.ok(Math.abs(a.span - 8 * 1000 / 0.01) < 1);
 });
 
 test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], {
+    encoding: 'utf8',
+    timeout: 60000,
+  });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-duomotai-ronghe\/units\.json 现算/);
+  assert.match(out, /跨度（闻 ÷ 问）/);
+  assert.match(out, /边际收益/);
   assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/01-u1/docs/zh.md'), '头部注释未指向本章');
 });

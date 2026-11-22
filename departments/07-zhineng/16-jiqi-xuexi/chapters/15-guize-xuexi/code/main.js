@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 机器学习 · 第 15 章 规则学习：本章统计口径
+ * 机器学习 · 第 15 章 规则的代价不是条数，是它覆盖了多少不该覆盖的
  * 课程: departments/07-zhineng/16-jiqi-xuexi/chapters/15-guize-xuexi/docs/zh.md
- * 数据: standards/jiqi-xuexi/units.json（219 单元层，每单元带三辨与四位面词频）
- * 取数: standards/jiqi-xuexi/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本脚本从正文读出 1,000 条样本与 400 条阳性、两条规则的覆盖与判对数、信息增益算例，
+ * 重算精度、覆盖率、召回、FOIL 增益与 RIPPER 指标，再与正文逐项对账。
  */
 
 'use strict';
@@ -15,87 +13,124 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'jiqi-xuexi', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/jiqi-xuexi/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+
+function readDoc(file = DOC) {
+  if (!fs.existsSync(file)) throw new Error('找不到正文: ' + file);
+  return fs.readFileSync(file, 'utf8');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'jiqi-xuexi', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'jiqi-xuexi', 'chapter-map.json');
-const CHAPTER = '15';
-const SLUG = '15-guize-xuexi';
+function need(text, re, label, group = 1) {
+  const m = text.match(re);
+  if (!m) throw new Error('正文里没找到' + label + '的设定');
+  return m[group];
+}
+const needNum = (t, re, l, g) => Number(need(t, re, l, g));
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const precisionOf = (hit, n) => hit / n;
+const coverageOf = (n, m) => n / m;
+const recallOf = (hit, pos) => hit / pos;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** FOIL 信息增益：n·(log2(正/覆盖) − log2(基准率)) */
+function foilGain(nr, nrPos, nPos, m) {
+  return nr * (Math.log2(nrPos / nr) - Math.log2(nPos / m));
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** RIPPER 的剪枝指标：(p − n)/(p + n) */
+const ripper = (p, n) => (p - n) / (p + n);
+
+const f1 = (prec, rec) => (2 * prec * rec) / (prec + rec);
+
+function parseSetup(doc) {
+  const head = doc.match(/演算设定\s*([\d,]+)\s*条样本、阳性\s*(\d+)\s*条/);
+  if (!head) throw new Error('正文里没找到样本与阳性数');
+  const a = doc.match(/规则甲「[^」]+」覆盖\s*(\d+)\s*条，其中\s*(\d+)\s*条确实是风寒——精度\s*([\d.]+)，覆盖率\s*([\d.]+)/);
+  const b = doc.match(/规则乙「[^」]+」覆盖\s*(\d+)\s*条，其中\s*(\d+)\s*条对——精度\s*([\d.]+)，覆盖率\s*([\d.]+)/);
+  if (!a || !b) throw new Error('正文里没找到两条规则的覆盖设定');
+
+  return {
+    m: Number(head[1].replace(/,/g, '')),
+    pos: Number(head[2]),
+    aN: Number(a[1]),
+    aHit: Number(a[2]),
+    aAcc: Number(a[3]),
+    aCov: Number(a[4]),
+    bN: Number(b[1]),
+    bHit: Number(b[2]),
+    bAcc: Number(b[3]),
+    bCov: Number(b[4]),
+    recallA: needNum(doc, /\| 召回 \|[\s\S]{0,40}?\|\s*([\d.]+)\s*\|/, '甲的召回'),
+    recallB: needNum(doc, /\| 召回 \|[\s\S]{0,60}?\|\s*[\d.]+\s*\|\s*([\d.]+)\s*\|/, '乙的召回'),
+    gainA: needNum(doc, /80\\times0\.585=([\d.]+)/, 'A 的增益'),
+    gainB: needNum(doc, /150\\times0\.552=([\d.]+)/, 'B 的增益'),
+    gainAN: needNum(doc, /加条件 A 后覆盖\s*(\d+)\s*条、(\d+)\s*条正/, 'A 的覆盖'),
+    gainAPos: needNum(doc, /加条件 A 后覆盖\s*\d+\s*条、(\d+)\s*条正/, 'A 的正例数'),
+    gainBN: needNum(doc, /加条件 B 后覆盖\s*(\d+)\s*条、(\d+)\s*条正/, 'B 的覆盖'),
+    gainBPos: needNum(doc, /加条件 B 后覆盖\s*\d+\s*条、(\d+)\s*条正/, 'B 的正例数'),
+    baseN: needNum(doc, /当前规则覆盖\s*(\d+)\s*条、其中\s*(\d+)\s*条正/, '当前规则的覆盖'),
+    basePos: needNum(doc, /当前规则覆盖\s*\d+\s*条、其中\s*(\d+)\s*条正/, '当前规则的正例'),
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function reconcile(doc) {
+  const s = parseSetup(doc);
+  const gainA = foilGain(s.gainAN, s.gainAPos, s.basePos, s.baseN);
+  const gainB = foilGain(s.gainBN, s.gainBPos, s.basePos, s.baseN);
+
+  const rows = [];
+  const check = (label, computed, declared, tol) => {
+    const ok = Math.abs(computed - declared) <= tol;
+    rows.push({ label, computed: Number(computed.toPrecision(6)), declared, ok });
+    if (!ok) throw new Error(`${label} 对不上：现算 ${computed}，正文写 ${declared}`);
+  };
+
+  check('甲的精度', precisionOf(s.aHit, s.aN), s.aAcc, 0.005);
+  check('甲的覆盖率', coverageOf(s.aN, s.m), s.aCov, 0.005);
+  check('甲的召回（2 位小数）', Number(recallOf(s.aHit, s.pos).toFixed(2)), s.recallA, 0.005);
+  check('乙的精度', precisionOf(s.bHit, s.bN), s.bAcc, 0.005);
+  check('乙的覆盖率', coverageOf(s.bN, s.m), s.bCov, 0.005);
+  check('乙的召回（2 位小数）', Number(recallOf(s.bHit, s.pos).toFixed(2)), s.recallB, 0.005);
+  check('条件 A 的信息增益（1 位小数）', Number(gainA.toFixed(1)), s.gainA, 0.15);
+  check('条件 B 的信息增益（1 位小数）', Number(gainB.toFixed(1)), s.gainB, 0.15);
+  check('RIPPER 指标（10 正 0 反）', ripper(10, 0), 1, 1e-12);
+  check('RIPPER 指标（10 正 5 反）', Number(ripper(10, 5).toFixed(2)), 0.33, 0.005);
+  check('RIPPER 指标（0 正 5 反）', ripper(0, 5), -1, 1e-12);
+
+  // 权衡：甲精度更高、乙覆盖与召回更高，增益选乙
+  if (!(s.aAcc > s.bAcc)) throw new Error('甲的精度应高于乙');
+  if (!(s.bN > s.aN && gainB > gainA)) throw new Error('乙的覆盖与增益应更高');
+
+  return { setup: s, gainA, gainB, rows, f1A: f1(s.aAcc, recallOf(s.aHit, s.pos)), f1B: f1(s.bAcc, recallOf(s.bHit, s.pos)) };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const r = reconcile(doc);
+  const s = r.setup;
 
-  console.log(`机器学习 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('机器学习 · 第 15 章 规则的代价不是条数，是它覆盖了多少不该覆盖的');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`${s.m} 条样本、阳性 ${s.pos} 条：`);
+  for (const [tag, n, hit, acc, cov, rec] of [
+    ['甲', s.aN, s.aHit, s.aAcc, s.aCov, r.setup.recallA],
+    ['乙', s.bN, s.bHit, s.bAcc, s.bCov, r.setup.recallB],
+  ]) {
+    console.log(`  规则${tag}：覆盖 ${n} 条、判对 ${hit} 条 → 精度 ${precisionOf(hit, n).toFixed(2)}，覆盖率 ${coverageOf(n, s.m).toFixed(2)}，召回 ${recallOf(hit, s.pos).toFixed(2)}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`  甲更精确但只覆盖一成，乙覆盖三成却要错 ${s.bN - s.bHit} 条：没有单一指标能裁决`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('信息增益算例（当前覆盖 200 条、100 条正，基准率 0.5）：');
+  console.log(`  加 A：覆盖 ${s.gainAN} 条、${s.gainAPos} 条正 → 增益 ${r.gainA.toFixed(1)}`);
+  console.log(`  加 B：覆盖 ${s.gainBN} 条、${s.gainBPos} 条正 → 增益 ${r.gainB.toFixed(1)}，选中 B`);
+  console.log(`  精度只看纯度，增益兼顾规模`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`RIPPER 剪枝指标 (p−n)/(p+n)：(10,0)=${ripper(10, 0)}，(10,5)=${ripper(10, 5).toFixed(2)}，(0,5)=${ripper(0, 5)}`);
+  console.log(`与正文对账 ${r.rows.filter((x) => x.ok).length}/${r.rows.length} 项通过。`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/jiqi-xuexi/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数值由正文演算设定现算，不手打；正文改版后重跑即可发现不一致。');
+  console.log('※ 本输出仅用于教学演示，学出的规则不得直接作为辨证依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, parseSetup, precisionOf, coverageOf, recallOf, foilGain, ripper, f1, reconcile, DOC };

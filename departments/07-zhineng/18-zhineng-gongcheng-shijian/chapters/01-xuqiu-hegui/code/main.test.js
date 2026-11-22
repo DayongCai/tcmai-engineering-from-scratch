@@ -2,61 +2,85 @@
 
 const test = require('node:test');
 const assert = require('node:assert');
-const fs = require('node:fs');
-const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhineng-gongcheng-shijian', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhineng-gongcheng-shijian', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const MAIN = require('node:path').join(__dirname, 'main.js');
+const {
+  readDoc,
+  tableRows,
+  parseProblem,
+  parseSla,
+  parseExitConditions,
+  analyze,
+} = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const doc = readDoc();
+
+test('立项问题段：四个数都能从正文读出', () => {
+  const p = parseProblem(doc);
+  assert.strictEqual(p.reqTotal, 47);
+  assert.strictEqual(p.sensitiveReqs, 12);
+  assert.strictEqual(p.approvalDays, 11);
+  assert.strictEqual(p.fieldsGranted, 3);
+  assert.strictEqual(p.weekBefore, 14);
+  assert.strictEqual(p.weekAfter, 26);
+  assert.strictEqual(p.reworkPct, 40);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('返工周数是两个周次之差，不是手打', () => {
+  const a = analyze(doc);
+  assert.strictEqual(a.slipWeeks, a.weekAfter - a.weekBefore);
+  assert.strictEqual(a.slipWeeks, 12);
+  assert.ok(Math.abs(a.slipShare - 12 / 14) < 1e-9);
+  assert.ok(a.reworkMultiple > 5 && a.reworkMultiple < 6, `返工倍率异常：${a.reworkMultiple}`);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('敏感需求占比由 12/47 现算', () => {
+  const a = analyze(doc);
+  assert.ok(Math.abs(a.sensitiveShare - 12 / 47) < 1e-9);
+  assert.ok(a.sensitiveShare > 0.25 && a.sensitiveShare < 0.26);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('时限表六个环节，伦理审查两档', () => {
+  const sla = parseSla(doc);
+  assert.strictEqual(sla.length, 6);
+  const ethics = sla.find((s) => s.stage.includes('伦理'));
+  assert.deepStrictEqual(ethics.days, [20, 10]);
+  const a = analyze(doc);
+  assert.strictEqual(a.noEthics, a.sla.filter((s) => !s.stage.includes('伦理')).reduce((x, s) => x + s.days[0], 0));
+  assert.strictEqual(a.noEthics + a.ethicsMeeting, a.withEthics);
+  assert.strictEqual(a.withEthics, 32);
+  assert.ok(Math.abs(a.withEthicsWeeks - 6.4) < 1e-9);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('表行数由表格现数：分级四类、申请表十四项、需求七字段', () => {
+  const a = analyze(doc);
+  assert.strictEqual(a.gradingRows, 4);
+  assert.strictEqual(a.formRows, 14);
+  assert.strictEqual(a.fieldCount, 7);
+  assert.strictEqual(tableRows(doc, '字段').length, 7);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
+test('出口条件六条且每条非空', () => {
+  const exits = parseExitConditions(doc);
+  assert.strictEqual(exits.length, 6);
+  for (const e of exits) assert.ok(e.length > 4, `出口条件过短：${e}`);
+});
+
+test('优先级四档与评审时长取自正文', () => {
+  const a = analyze(doc);
+  assert.deepStrictEqual(a.priority, [6, 3, 1]);
+  assert.strictEqual(a.reviewMinutes, 90);
+  assert.strictEqual(a.useMonths, 12);
+});
+
+test('脚本可运行，输出含现算数字与边界声明', () => {
   const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhineng-gongcheng-shijian\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/01-xuqiu-hegui/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /需求 47 条/);
+  assert.match(out, /推迟 12 周/);
+  assert.match(out, /不含伦理：12 个工作日/);
+  assert.match(out, /含伦理会议审查：32 个工作日/);
+  assert.match(out, /不构成法律意见或合规结论/);
 });

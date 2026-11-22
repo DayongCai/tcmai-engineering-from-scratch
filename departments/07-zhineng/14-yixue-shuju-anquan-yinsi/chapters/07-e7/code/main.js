@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 医学数据安全与隐私 · 第 7 章 病案与医疗数据管理：本章统计口径
- * 课程: departments/07-zhineng/14-yixue-shuju-anquan-yinsi/chapters/07-e7/docs/zh.md
- * 数据: standards/yixue-shuju-anquan-yinsi/units.json（44 单元层，每单元带三辨与四位面词频）
- * 取数: standards/yixue-shuju-anquan-yinsi/chapter-map.json（课程章 → 教材单元号）
+ * 医学数据安全与隐私 · 第 7 章 病案的每一次调阅都应当留下能追问的痕迹
+ * 正文: departments/07-zhineng/14-yixue-shuju-anquan-yinsi/chapters/07-e7/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 口径：出院人次、调阅次数、无代码比例、抽查缺陷率、置信区间与主索引碰撞对数，全部由 docs/zh.md 现算。
+ * 抽查的精度不由人力决定：先定区间，再定样本量，这一步必须能算。
  */
 
 'use strict';
@@ -15,87 +13,154 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'yixue-shuju-anquan-yinsi', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/yixue-shuju-anquan-yinsi/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'yixue-shuju-anquan-yinsi', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'yixue-shuju-anquan-yinsi', 'chapter-map.json');
-const CHAPTER = '7';
+const CHAPTER = 7;
 const SLUG = '07-e7';
+const TITLE = '病案的每一次调阅都应当留下能追问的痕迹';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const hanzi = (s) => (String(s).match(HANZI) || []).length;
+const num = (s) => Number(String(s).replace(/[,{}\s≈]/g, ''));
+const fmt = (n) => Number(n).toLocaleString('en-US');
+const Z95 = 1.96;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function readDoc() {
+  return fs.readFileSync(DOC, 'utf8');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function headings(text) {
+  return text
+    .split(/\r?\n/)
+    .filter((line) => /^##\s+/.test(line))
+    .map((line) => line.replace(/^##\s+/, '').trim());
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function parseCells(text) {
+  const out = [];
+  let cur = null;
+  for (const line of text.split(/\r?\n/)) {
+    const t = line.trim();
+    if (!/^\|/.test(t)) { cur = null; continue; }
+    if (!cur) { cur = { rows: [] }; out.push(cur); }
+    if (/^\|[\s:|-]*---[\s:|-]*\|$/.test(t)) continue;
+    cur.rows.push(t.replace(/^\||\|$/g, '').split('|').map((c) => c.trim()));
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function params(text) {
+  const t = String(text);
+  const disch = t.match(/年出院\s*([\d.]+)\s*万人次/);
+  const reqs = t.match(/一年病案调阅请求约\s*([\d.]+)\s*万次/);
+  const noCode = t.match(/约\s*([\d.]+)%\s*没有可核的事由代码/);
+  const noCodeStated = t.match(/推算约\s*([\d,]+)\s*次调阅/);
+  const sample = t.match(/抽\s*(\d+)\s*份病案/);
+  const defects = t.match(/不一致的有\s*(\d+)\s*份/);
+  const point = t.match(/占\s*([\d.]+)%/);
+  const ci = t.match(/95% 置信区间是\s*([\d.]+)%[–-]([\d.]+)%/);
+  const annual = t.match(/全年就是\s*([\d,]+)\s*到\s*([\d,]+)\s*份/);
+  if (!disch || !reqs || !noCode || !sample || !defects) throw new Error('正文的抽检参数不全，无法现算');
+  return {
+    discharges: Math.round(Number(disch[1]) * 10000),
+    requests: Math.round(Number(reqs[1]) * 10000),
+    noCodePct: Number(noCode[1]),
+    noCodeStated: noCodeStated ? num(noCodeStated[1]) : null,
+    sample: num(sample[1]),
+    defects: num(defects[1]),
+    pointStated: point ? Number(point[1]) : null,
+    ciStated: ci ? [Number(ci[1]), Number(ci[2])] : null,
+    annualStated: annual ? [num(annual[1]), num(annual[2])] : null,
+  };
+}
+
+/** 患者主索引的匹配键空间与两两组合 */
+function empi(text) {
+  const t = String(text);
+  const n = t.match(/设定\s*([\d.]+)\s*万条待归并记录/);
+  const names = t.match(/姓名取值约\s*([\d,]+)\s*个/);
+  const years = t.match(/出生年取\s*(\d+)\s*个取值/);
+  const sex = t.match(/性别\s*(\d+)\s*个/);
+  const pairs = t.match(/约\s*([\d,]+)\s*对/);
+  if (!n || !names || !years || !sex) throw new Error('正文缺少主索引的匹配键设定，无法现算');
+  return {
+    n: Math.round(Number(n[1]) * 10000),
+    keys: [num(names[1]), num(years[1]), num(sex[1])],
+    statedPairs: pairs ? num(pairs[1]) : null,
+  };
+}
+
+function model(text) {
+  const p = params(text);
+  const point = p.defects / p.sample;
+  const se = Math.sqrt((point * (1 - point)) / p.sample);
+  const lo = point - Z95 * se;
+  const hi = point + Z95 * se;
+  const e = empi(text);
+  const keySpace = e.keys.reduce((a, b) => a * b, 1);
+  const combos = (e.n * (e.n - 1)) / 2;
+  return {
+    ...p,
+    point,
+    pointPct: point * 100,
+    se,
+    ci: [lo * 100, hi * 100],
+    annual: [(p.discharges * lo), (p.discharges * hi)],
+    noCode: Math.round((p.requests * p.noCodePct) / 100),
+    empi: { ...e, keySpace, combos, perCell: combos / keySpace },
+    pointMatches: p.pointStated === null ? null : Math.abs(point * 100 - p.pointStated) < 0.05,
+  };
+}
+
+function stats(text) {
+  const t = String(text);
+  const heads = headings(t);
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title: TITLE,
+    hanzi: hanzi(t),
+    sections: heads.length,
+    numbered: heads.filter((h) => /^[一二三四五六七八九十]+、/.test(h)).length,
+    tables: parseCells(t).length,
+    drills: (t.match(/演算设定/g) || []).length,
+    disclaimer: /免责声明/.test(t),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const text = readDoc();
+  const s = stats(text);
+  const m = model(text);
 
-  console.log(`医学数据安全与隐私 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`医学数据安全与隐私 · 第 ${s.chapter} 章 ${s.title}`);
+  console.log(`正文：chapters/${s.slug}/docs/zh.md（现算，不手打）`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`  汉字        ${fmt(s.hanzi)}`);
+  console.log(`  节          ${s.sections}（编号节 ${s.numbered} + 代价与边界）`);
+  console.log(`  表          ${s.tables}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('调阅的缺口：');
+  console.log(`  年出院 ${fmt(m.discharges)} 人次，调阅请求 ${fmt(m.requests)} 次`);
+  console.log(`  无代码比例 ${m.noCodePct}% → ${fmt(m.noCode)} 次只剩「某人某时看了某份病案」`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('抽查精度：');
+  console.log(`  ${m.sample} 份中 ${m.defects} 份缺陷 → 点估计 ${m.pointPct.toFixed(2)}%`);
+  console.log(`  标准差 ${m.se.toFixed(5)}，95% 区间 ${m.ci[0].toFixed(2)}%–${m.ci[1].toFixed(2)}%`);
+  if (m.ciStated) console.log(`  正文写法 ${m.ciStated[0]}%–${m.ciStated[1]}%（${Math.abs(m.ci[0] - m.ciStated[0]) < 0.06 && Math.abs(m.ci[1] - m.ciStated[1]) < 0.06 ? '与复算一致' : '与复算不一致'}）`);
+  console.log(`  折算全年 ${fmt(Math.round(m.annual[0]))} 到 ${fmt(Math.round(m.annual[1]))} 份`);
+  if (m.annualStated) console.log(`  正文写法 ${fmt(m.annualStated[0])} 到 ${fmt(m.annualStated[1])} 份`);
+  console.log(`  区间收窄一半需约四倍样本：${m.sample * 4} 份`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log('主索引碰撞：');
+  console.log(`  待归并 ${fmt(m.empi.n)} 条，键空间 ${m.empi.keys.join('×')} = ${fmt(m.empi.keySpace)}`);
+  console.log(`  两两组合 ${fmt(Math.round(m.empi.combos))} 对 ÷ ${fmt(m.empi.keySpace)} ≈ 每格 ${m.empi.perCell.toFixed(0)} 对`);
+  if (m.empi.statedPairs !== null) console.log(`  正文写法约 ${fmt(m.empi.statedPairs)} 对疑似同人（${Math.abs(m.empi.perCell - m.empi.statedPairs) < 2 ? '与复算一致' : '与复算不一致'}）`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/yixue-shuju-anquan-yinsi/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字由本目录 docs/zh.md 现算：出院人次、调阅次数、抽查份数与缺陷份数任一变动，重跑本脚本即可看到新值。');
+  console.log('※ 本章数值为演算设定，用于演示抽样精度与匹配碰撞的量级，不对应任何机构的实测统计。');
+  console.log('※ 二项区间假设样本独立随机，分层抽查应按分层方法重算；本章不构成质量管理结论。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { CHAPTER, SLUG, TITLE, DOC, readDoc, headings, parseCells, params, empi, model, stats, main };

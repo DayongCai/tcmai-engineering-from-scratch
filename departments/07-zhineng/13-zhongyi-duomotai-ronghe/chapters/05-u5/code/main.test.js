@@ -6,57 +6,58 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-duomotai-ronghe', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-duomotai-ronghe', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { DOC, parseDoc, analyze, encoderBudget } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const text = () => fs.readFileSync(DOC, 'utf8');
+const doc = () => parseDoc(text());
+
+test('正文可解析：章号、标题、结构齐', () => {
+  const d = doc();
+  assert.strictEqual(d.chapterNo, 5);
+  assert.match(d.title, /学到的表征/);
+  assert.ok(d.sections.length >= 5);
+  assert.ok(d.hanzi > 2000);
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('参数分项齐全且合计可复算', () => {
+  const b = encoderBudget(doc());
+  assert.strictEqual(b.parts.length, 5);
+  assert.ok(Math.abs(b.totalM - 2.4) < 1e-9, `合计异常：${b.totalM}`);
+  const manual = b.parts.reduce((a, p) => a + p.m, 0);
+  assert.ok(Math.abs(b.totalM - manual) < 1e-12);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('参数与样本比约 8,000 : 1', () => {
+  const a = analyze(doc());
+  assert.strictEqual(a.samples, 300);
+  assert.ok(Math.abs(a.ratio - 8000) < 1, `比值异常：${a.ratio}`);
+  assert.ok(a.ratio > 1000, '应远大于常规监督学习比例');
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('训练与留出、记录切分与患者切分的落差都可复算', () => {
+  const a = analyze(doc());
+  assert.ok(Math.abs(a.overfitGap - 0.25) < 1e-9);
+  assert.ok(Math.abs(a.splitGap - 0.13) < 1e-9);
+  assert.ok(a.recordSplit > a.patientSplit);
+  assert.ok(a.trainAuroc > a.holdoutAuroc);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('改正文的参数量，比例随之变化（证明确实现算）', () => {
+  const mutated = text().replace('图像编码器 1.2 M', '图像编码器 6.2 M');
+  assert.notStrictEqual(mutated, text(), '替换未命中，正文表述可能已改');
+  const a = analyze(parseDoc(mutated));
+  assert.ok(Math.abs(a.budget.totalM - 7.4) < 1e-9);
+  assert.ok(Math.abs(a.ratio - 24666.666666) < 1);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
+test('脚本可运行且输出含边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], {
+    encoding: 'utf8',
+    timeout: 60000,
+  });
   assert.strictEqual(r.status, 0, r.stderr);
   const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-duomotai-ronghe\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
-});
-
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
-});
-
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/05-u5/docs/zh.md'), '头部注释未指向本章');
+  assert.match(out, /参数与样本比/);
+  assert.match(out, /全部来自记住了人/);
+  assert.match(out, /不构成诊断模型的设计规范或性能承诺/);
 });

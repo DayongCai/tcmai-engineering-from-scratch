@@ -1,62 +1,69 @@
 'use strict';
-
-const test = require('node:test');
+/**
+ * 本章的习题与正文对齐：正文规模、术语、单元层复算、quiz 结构，全部现算后断言。
+ * 正文改数、quiz 跑题、答案全挤在同一位置，这里都会红。
+ */
 const assert = require('node:assert');
+const test = require('node:test');
 const fs = require('node:fs');
-const path = require('node:path');
-const { spawnSync } = require('node:child_process');
+const main = require('./main.js');
+const { analyze, docClaim, shingles, hanzi } = main;
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-xinxi-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'zhongyi-xinxi-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const r = analyze();
+const quiz = JSON.parse(fs.readFileSync(main.QUIZ, 'utf8'));
+const doc = fs.readFileSync(main.DOC, 'utf8');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+test('章节身份与 quiz、章映射一致', () => {
+  assert.strictEqual(r.CHAPTER, quiz.chapter);
+  assert.strictEqual(r.SLUG, quiz.slug);
+  assert.ok(r.headings.length >= 5, `小节太少：${r.headings.length}`);
+  assert.ok(r.docHanzi > 2000, `正文汉字过少：${r.docHanzi}`);
+  assert.ok(r.tableRows > 0, '正文没有任何表格行');
+  assert.ok(r.quotes.length > 0, '正文没有引号术语');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('正文自称的单元规模与单元层一致', () => {
+  assert.deepStrictEqual(docClaim(doc), r.claim);
+  assert.strictEqual(r.claim.units, r.facts.units, `单元数 ${r.claim.units} ≠ 复算 ${r.facts.units}`);
+  assert.strictEqual(r.claim.hanzi, r.facts.hanzi, `单元汉字 ${r.claim.hanzi} ≠ 复算 ${r.facts.hanzi}`);
+  assert.ok(r.facts.avg > 0 && r.facts.avg < 500, `单元均字数异常：${r.facts.avg}`);
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('本章核心术语都在正文里出现', () => {
+  for (const t of r.terms) assert.ok(t.count > 0, `正文没有讲到「${t.term}」`);
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('quiz 结构：题量、三段、四选项、解释长度、答案合法', () => {
+  const q = r.quiz;
+  assert.ok(q.total >= 5, `只有 ${q.total} 题`);
+  for (const s of ['pre', 'check', 'post']) assert.ok(q.stage[s] >= 1, `缺 ${s} 段`);
+  assert.strictEqual(q.allFourOptions, true, '有题不是 4 个选项');
+  assert.strictEqual(q.badCorrect, 0, 'correct 下标非法');
+  assert.ok(q.minExplain >= 30, `最短的解释只有 ${q.minExplain} 汉字`);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('quiz 接地：check 题正确选项能在正文找到原词，且答案打散', () => {
+  assert.ok(r.quiz.checkGrounded >= 2, `只有 ${r.quiz.checkGrounded} 道 check 题接地`);
+  assert.ok(r.quiz.distinctAnswers >= 3, `正确答案只用到 ${r.quiz.distinctAnswers} 个位置`);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/zhongyi-xinxi-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
+test('quiz 不出现正文之外的脚手架名目', () => {
+  const raw = fs.readFileSync(main.QUIZ, 'utf8');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出']) {
+    assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
+  }
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
+test('chapter-map 的单元清单与本章一致', () => {
+  const cm = JSON.parse(fs.readFileSync(main.MAP, 'utf8')).chapters[r.SLUG];
+  assert.ok(Array.isArray(cm.units) && cm.units.length === r.facts.units, '章映射的单元数对不上');
+  assert.strictEqual(String(cm.n), String(r.CHAPTER));
 });
 
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/04-d4/docs/zh.md'), '头部注释未指向本章');
+test('接地判据本身可复现：正文的四字片段能被 shingles 找到', () => {
+  const body = shingles(doc);
+  const sample = r.terms.filter((t) => /^[\u4e00-\u9fff]{4}$/.test(t.term) && t.count > 0)[0];
+  assert.ok(sample, '本章没有可用于复现的四字术语');
+  assert.ok(body.has(sample.term), `正文片段「${sample.term}」没有被 shingles 收进`);
+  assert.ok(hanzi('语义') === 2);
 });

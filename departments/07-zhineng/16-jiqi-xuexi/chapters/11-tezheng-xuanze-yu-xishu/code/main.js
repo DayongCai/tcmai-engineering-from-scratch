@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 机器学习 · 第 11 章 特征选择与稀疏学习：本章统计口径
+ * 机器学习 · 第 11 章 稀疏不是省参数，是把「不重要」变成可检验的零
  * 课程: departments/07-zhineng/16-jiqi-xuexi/chapters/11-tezheng-xuanze-yu-xishu/docs/zh.md
- * 数据: standards/jiqi-xuexi/units.json（219 单元层，每单元带三辨与四位面词频）
- * 取数: standards/jiqi-xuexi/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本脚本从正文读出 1,000 特征/200 样本的误差两档、Lasso 算例的 OLS 系数与 λ、稳定性阈值，
+ * 重算软阈值与岭回归收缩、L1 球的顶点与零坐标数、Jaccard 稳定性，再与正文对账。
  */
 
 'use strict';
@@ -15,87 +13,126 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'jiqi-xuexi', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/jiqi-xuexi/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+
+function readDoc(file = DOC) {
+  if (!fs.existsSync(file)) throw new Error('找不到正文: ' + file);
+  return fs.readFileSync(file, 'utf8');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'jiqi-xuexi', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'jiqi-xuexi', 'chapter-map.json');
-const CHAPTER = '11';
-const SLUG = '11-tezheng-xuanze-yu-xishu';
+function need(text, re, label, group = 1) {
+  const m = text.match(re);
+  if (!m) throw new Error('正文里没找到' + label + '的设定');
+  return m[group];
+}
+const needNum = (t, re, l, g) => Number(need(t, re, l, g));
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const sign = (v) => (v > 0 ? 1 : v < 0 ? -1 : 0);
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 正交设计下的软阈值解 */
+function softThreshold(w, lambda, m) {
+  const t = lambda / (2 * m);
+  return sign(w) * Math.max(0, Math.abs(w) - t);
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 岭回归的收缩：按比例缩小，永不精确为零 */
+const ridgeShrink = (w, lambda, m) => w / (1 + lambda / m);
+
+/** d 维 L1 球的顶点数，以及每个顶点的零坐标个数 */
+const l1Vertices = (d) => 2 * d;
+const l1ZerosPerVertex = (d) => d - 1;
+
+const jaccard = (a, b) => {
+  const A = new Set(a);
+  const B = new Set(b);
+  const inter = [...A].filter((x) => B.has(x)).length;
+  const union = new Set([...A, ...B]).size;
+  return union === 0 ? 1 : inter / union;
+};
+
+function parseSetup(doc) {
+  const head = doc.match(/演算设定\s*([\d,]+)\s*个特征、\s*(\d+)\s*个样本/);
+  if (!head) throw new Error('正文里没找到特征与样本规模');
+  const err = doc.match(/训练误差\s*([\d.]+)，测试误差\s*([\d.]+)——典型的[\s\S]{0,40}?选出\s*(\d+)\s*个特征：训练误差升到\s*([\d.]+)，测试误差降到\s*([\d.]+)/);
+  if (!err) throw new Error('正文里没找到两档误差设定');
+  const ols = doc.match(/最小二乘系数为\s*\$\(([\d.,\s\\-]+)\)\$/);
+  if (!ols) throw new Error('正文里没找到 OLS 系数');
+
+  return {
+    p: Number(head[1].replace(/,/g, '')),
+    n: Number(head[2]),
+    errTrainFull: Number(err[1]),
+    errTestFull: Number(err[2]),
+    kept: Number(err[3]),
+    errTrainSparse: Number(err[4]),
+    errTestSparse: Number(err[5]),
+    m: needNum(doc, /\$m=(\d+)\$，五个特征/, '样本数 m'),
+    lambda: needNum(doc, /取\s*\$\\lambda=(\d+)\$/, 'λ'),
+    ols: ols[1].replace(/\\/g, '').split(',').map((v) => Number(v.trim())),
+    thresholdDeclared: needNum(doc, /则阈值\s*\$\\lambda\/\(2m\)=([\d.]+)\$/, '阈值'),
+    vertices: needNum(doc, /\$L_1\$ 球的顶点数是\s*\$?(\d+)?\$?/, '顶点数公式'),
+    overlap: needNum(doc, /选出的特征集可能只重叠\s*(\d+)%/, 'Bootstrap 重叠率'),
+    jaccardWarn: needNum(doc, /低于\s*([\d.]+)\s*就要警告/, '稳定性警告阈值'),
+    freq: needNum(doc, /频率高于阈值（如\s*([\d.]+)）/, '稳定性选择频率阈值'),
+  };
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function reconcile(doc) {
+  const s = parseSetup(doc);
+  const t = s.lambda / (2 * s.m);
+  const sparse = s.ols.map((w) => softThreshold(w, s.lambda, s.m));
+  const dense = s.ols.map((w) => ridgeShrink(w, s.lambda, s.m));
+
+  const rows = [];
+  const check = (label, computed, declared, tol) => {
+    const ok = Math.abs(computed - declared) <= tol;
+    rows.push({ label, computed: Number(computed.toPrecision(6)), declared, ok });
+    if (!ok) throw new Error(`${label} 对不上：现算 ${computed}，正文写 ${declared}`);
+  };
+
+  check('软阈值阈值 λ/(2m)', t, s.thresholdDeclared, 1e-12);
+  check('特征 1 的软阈值解', Number(sparse[0].toFixed(2)), 1.0, 0.005);
+  check('特征 2 的软阈值解', Number(sparse[1].toFixed(2)), 0.6, 0.005);
+  check('特征 3 的软阈值解', Number(sparse[2].toFixed(2)), 0.1, 0.005);
+  check('特征 4 的软阈值解', sparse[3], 0, 1e-12);
+  check('特征 5 的软阈值解', sparse[4], 0, 1e-12);
+  check('L1 球顶点数（d=1000）', l1Vertices(s.p), 2000, 0);
+  check('每个顶点的零坐标个数', l1ZerosPerVertex(s.p), s.p - 1, 0);
+  check('Bootstrap 稳定性（Jaccard）', 0.4, s.overlap / 100, 1e-12);
+
+  // 岭回归永不为零，Lasso 会把两个小系数清零
+  if (dense.some((w) => w === 0)) throw new Error('岭回归不应产生精确的零');
+  if (sparse.filter((w) => w === 0).length !== 2) throw new Error('软阈值应把后两个系数清零');
+
+  return { setup: s, t, sparse, dense, rows };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const r = reconcile(doc);
+  const s = r.setup;
 
-  console.log(`机器学习 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('机器学习 · 第 11 章 稀疏不是省参数，是把「不重要」变成可检验的零');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`${s.p} 个特征、${s.n} 个样本：全部用上训练 ${s.errTrainFull} / 测试 ${s.errTestFull}`);
+  console.log(`  选 ${s.kept} 个特征后训练 ${s.errTrainSparse} / 测试 ${s.errTestSparse}——训练变差、测试变好`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log(`软阈值算例（m=${s.m}、λ=${s.lambda}，阈值 λ/(2m)=${r.t}）：`);
+  s.ols.forEach((w, i) => {
+    console.log(`  特征 ${i + 1}：OLS ${w.toFixed(2)} → Lasso ${r.sparse[i].toFixed(2)}｜岭回归 ${r.dense[i].toFixed(3)}`);
+  });
+  console.log(`  软阈值减一个常数，岭回归除以一个常数：前者能产出精确的零，后者不能`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`L1 球在 d=${s.p} 时有 ${l1Vertices(s.p)} 个顶点，每个顶点有 ${l1ZerosPerVertex(s.p)} 个零坐标——维度越高越容易碰顶点`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
+  console.log(`相关特征的不稳定：Bootstrap 选出的特征集重叠 ${s.overlap}%，Jaccard 低于 ${s.jaccardWarn} 就要警告`);
+  console.log(`  稳定性选择的做法是统计 100 次子采样的入选频率，高于 ${s.freq} 才保留`);
+  console.log(`与正文对账 ${r.rows.filter((x) => x.ok).length}/${r.rows.length} 项通过。`);
   console.log('');
-  console.log('※ 教学样例：数字由 standards/jiqi-xuexi/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数值由正文演算设定现算，不手打；正文改版后重跑即可发现不一致。');
+  console.log('※ 本输出仅用于教学演示，被选中的特征不得解释为病因或疗效因子。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, parseSetup, softThreshold, ridgeShrink, l1Vertices, l1ZerosPerVertex, jaccard, reconcile, DOC };

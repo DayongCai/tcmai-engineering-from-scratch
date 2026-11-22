@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中医多模态融合 · 第 4 章 特征、降维与表征：本章统计口径
- * 课程: departments/07-zhineng/13-zhongyi-duomotai-ronghe/chapters/04-u4/docs/zh.md
- * 数据: standards/zhongyi-duomotai-ronghe/units.json（145 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-duomotai-ronghe/chapter-map.json（课程章 → 教材单元号）
+ * 中医多模态融合 · 第 4 章：特征是压缩，压缩必须留下判据
+ * 正文: departments/07-zhineng/13-zhongyi-duomotai-ronghe/chapters/04-u4/docs/zh.md
+ * 取数: 解析正文开篇的三路压缩比与样本量经验规则
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 现算：每路的压缩比、按 n ≥ 10p 能给出的维数上限、拼接后超出的倍数。
+ * 像素数与维数都从正文读，改一个数，压缩比随之变。
  */
 
 'use strict';
@@ -15,87 +14,86 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-duomotai-ronghe', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+
+function parseDoc(text) {
+  const lines = String(text).split(/\r?\n/);
+  const titleLine = lines.find((l) => /^#\s+/.test(l)) || '';
+  const heading = titleLine.replace(/^#\s+/, '').trim();
+  const chapterNo = Number((heading.match(/第\s*(\d+)\s*章/) || [])[1]) || null;
+  const title = heading.replace(/^第\s*\d+\s*章\s*·?\s*/, '');
+  const problem = (text.match(/\*\*PROBLEM:\*\*\s*([\s\S]*?)\r?\n\r?\n/) || [])[1] || '';
+  const sections = lines.filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+  const tables = [];
+  let cur = null;
+  for (const line of lines) {
+    const t = line.trim();
+    if (!t.startsWith('|')) { cur = null; continue; }
+    const cells = t.replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+    if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue;
+    if (!cur) { cur = []; tables.push(cur); }
+    cur.push(cells);
   }
-  throw new Error('没找到 standards/zhongyi-duomotai-ronghe/units.json —— 章节目录是否已脱离仓库？');
+  const hanzi = (text.match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+  return { text, title, chapterNo, problem, sections, tables, hanzi };
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-duomotai-ronghe', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-duomotai-ronghe', 'chapter-map.json');
-const CHAPTER = '4';
-const SLUG = '04-u4';
+const n = (s) => Number(String(s).replace(/,/g, ''));
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function compression(problem) {
+  const tongue = problem.match(/舌象\s*([\d,]+)\s*万像素压成\s*(\d+)\s*维/);
+  const pulse = problem.match(/脉图\s*([\d,]+)\s*点压成\s*(\d+)\s*维/);
+  const voice = problem.match(/语音\s*([\d,.]+)\s*(万)?采样点压成\s*(\d+)\s*维/);
+  const rows = [];
+  if (tongue) rows.push({ name: '舌象', raw: n(tongue[1]) * 10000, dims: Number(tongue[2]), unit: '像素' });
+  if (pulse) rows.push({ name: '脉图', raw: n(pulse[1]), dims: Number(pulse[2]), unit: '点' });
+  if (voice) rows.push({ name: '语音', raw: n(voice[1]) * (voice[2] ? 10000 : 1), dims: Number(voice[3]), unit: '采样点' });
+  return rows.map((r) => ({ ...r, ratio: r.raw / r.dims }));
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
-  }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+function analyze(doc) {
+  const rows = compression(doc.problem);
+  const perFeature = Number((doc.text.match(/每个特征至少对应\s*(\d+)\s*个样本/) || [])[1]);
+  const rule = doc.text.match(/演算设定\s*(\d+)\s*例，则特征上限约\s*(\d+)\s*维/);
+  const samples = rule ? Number(rule[1]) : NaN;
+  const limitStated = rule ? Number(rule[2]) : NaN;
+  const limit = perFeature ? samples / perFeature : NaN;
+  const assembled = doc.text.match(/四路各\s*(\d+)\s*维拼起来是\s*(\d+)\s*维/);
+  const each = assembled ? Number(assembled[1]) : NaN;
+  const total = assembled ? Number(assembled[2]) : NaN;
+  return {
+    rows,
+    perFeature,
+    samples,
+    limitStated,
+    limit,
+    each,
+    total,
+    overFactor: total / limit,
+    neededSamples: total * perFeature,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = parseDoc(fs.readFileSync(DOC, 'utf8'));
+  const a = analyze(doc);
 
-  console.log(`中医多模态融合 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log(`中医多模态融合 · 第 ${doc.chapterNo} 章 ${doc.title}`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`正文 ${doc.hanzi.toLocaleString('en-US')} 汉字 · ${doc.sections.length} 节 · ${doc.tables.length} 张表`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('压缩比（原始规模 ÷ 特征维数，现算）：');
+  for (const r of a.rows) {
+    console.log(`  ${r.name}：${r.raw.toLocaleString('en-US')} ${r.unit} ÷ ${r.dims} 维 = ${Math.round(r.ratio).toLocaleString('en-US')} 倍`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`样本量规则 n ≥ ${a.perFeature}p：${a.samples} 例给出 ${a.limit} 维（正文写 ${a.limitStated} 维）。`);
+  console.log(`  四路各 ${a.each} 维拼成 ${a.total} 维 → 超上限 ${a.overFactor.toFixed(2)} 倍，需 ${a.neededSamples} 例才撑得住。`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-duomotai-ronghe/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 教学样例：数字由本章正文现算，不手打；改正文后重跑即可复现。');
+  console.log('※ 特征选择须在留出集上验证，本输出不构成诊断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, parseDoc, analyze, compression };

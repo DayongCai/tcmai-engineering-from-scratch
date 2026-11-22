@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 机器学习 · 第 2 章 模型评估与选择：本章统计口径
+ * 机器学习 · 第 2 章 你报的那个数字，可能只是抽样噪声的形状
  * 课程: departments/07-zhineng/16-jiqi-xuexi/chapters/02-moxing-pinggu-yu-xuanze/docs/zh.md
- * 数据: standards/jiqi-xuexi/units.json（219 单元层，每单元带三辨与四位面词频）
- * 取数: standards/jiqi-xuexi/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本脚本从正文读出评估设定（1,000 例、准确率 0.86、40 组候选、n10/n01），
+ * 重算标准误、选择偏差的乐观量、候选表的算术与配对检验统计量，再与正文逐格对账。
+ * 对不上就抛错：手打数字会在正文改版后静默过期。
  */
 
 'use strict';
@@ -15,87 +14,97 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'jiqi-xuexi', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+
+function readDoc(file = DOC) {
+  if (!fs.existsSync(file)) throw new Error('找不到正文: ' + file);
+  return fs.readFileSync(file, 'utf8');
+}
+
+function need(text, re, label, group = 1) {
+  const m = text.match(re);
+  if (!m) throw new Error('正文里没找到' + label + '的设定');
+  return m[group];
+}
+const needNum = (t, re, l, g) => Number(need(t, re, l, g));
+
+function parseSetup(doc) {
+  const n = Number(need(doc, /演算设定\s*([\d,]+)\s*例的测试集/, '测试集规模').replace(/,/g, ''));
+  const acc = needNum(doc, /准确率\s*(0\.\d+)/, '准确率');
+  const sigma = needNum(doc, /标准误约为[^$]*\$\\sqrt\{[\s\S]{0,60}?\\approx\s*([\d.]+)/, '标准误');
+  const sigma200 = needNum(doc, /200 例时\s*\$\\sigma=\\sqrt\{[\s\S]{0,40}?\\approx\s*([\d.]+)/, '200 例时的标准误');
+  const candidates = needNum(doc, /扫了\s*(\d+)\s*组超参/, '候选超参组数');
+  const optimistic = needNum(doc, /\$0\.86\+[\d.]+\\times[\d.]+\s*\\approx\s*([\d.]+)/, '调参后的期望');
+  const zQuoted = needNum(doc, /\+\s*([\d.]+)\s*\\times\s*0\.011/, '引用的最大值期望');
+  const n10 = needNum(doc, /\$n_\{10\}\s*=\s*(\d+)/, 'n10');
+  const n01 = needNum(doc, /\$n_\{01\}\s*=\s*(\d+)/, 'n01');
+  const chi2 = needNum(doc, /\\chi\^2=\((\d+)-1\)\^2\/\d+\\approx([\d.]+)/, '配对检验统计量', 2);
+  const threshold = needNum(doc, /超过\s*([\d.]+)\s*（\$\\alpha=0\.05\$）/, '显著性阈值');
+  return { n, acc, sigma, sigma200, candidates, optimistic, zQuoted, n10, n01, chi2, threshold };
+}
+
+const stderr = (p, n) => Math.sqrt((p * (1 - p)) / n);
+/** 取 k 个候选里的最大值，期望相对均值的上漂量（以百分点计） */
+const optimismPoints = (zmax, p, n) => zmax * stderr(p, n) * 100;
+const mcnemarChi2 = (n10, n01) => Math.pow(Math.abs(n10 - n01) - 1, 2) / (n10 + n01);
+
+/** 正文表格四列：候选组数 / 最大值期望 / 1,000 例乐观量 / 200 例乐观量 */
+function parseCandidatesTable(doc) {
+  const rows = [];
+  for (const line of doc.split(/\r?\n/)) {
+    const m = line.match(/^\|\s*(\d+)\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)\s*点?\s*\|\s*([\d.]+)\s*点?\s*\|/);
+    if (m) rows.push({ k: Number(m[1]), z: Number(m[2]), op1000: Number(m[3]), op200: Number(m[4]) });
   }
-  throw new Error('没找到 standards/jiqi-xuexi/units.json —— 章节目录是否已脱离仓库？');
+  if (rows.length < 4) throw new Error('正文候选表少于 4 行，格式可能已变');
+  return rows;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'jiqi-xuexi', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'jiqi-xuexi', 'chapter-map.json');
-const CHAPTER = '2';
-const SLUG = '02-moxing-pinggu-yu-xuanze';
+function reconcile(doc) {
+  const s = parseSetup(doc);
+  const rows = [];
+  const check = (label, computed, declared, tol) => {
+    const ok = Math.abs(computed - declared) <= tol;
+    rows.push({ label, computed: Number(computed.toFixed(4)), declared, ok });
+    if (!ok) throw new Error(`${label} 对不上：现算 ${computed}，正文写 ${declared}`);
+  };
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+  check('标准误（1,000 例）', Number(stderr(s.acc, s.n).toFixed(3)), s.sigma, 0.0005);
+  check('标准误（200 例）', Number(stderr(s.acc, 200).toFixed(3)), s.sigma200, 0.0005);
+  check('调参后的期望准确率', Number((s.acc + s.zQuoted * s.sigma).toFixed(3)), s.optimistic, 0.0005);
+  check('配对检验统计量', Number(mcnemarChi2(s.n10, s.n01).toFixed(2)), s.chi2, 0.005);
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+  const table = parseCandidatesTable(doc);
+  for (const row of table) {
+    check(`候选 ${row.k} 组 · 1,000 例乐观量`, Number(optimismPoints(row.z, s.acc, 1000).toFixed(1)), row.op1000, 0.1);
+    check(`候选 ${row.k} 组 · 200 例乐观量`, Number(optimismPoints(row.z, s.acc, 200).toFixed(1)), row.op200, 0.1);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+
+  return { setup: s, rows, table, sigma: stderr(s.acc, s.n), chi2: mcnemarChi2(s.n10, s.n01) };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
+  const doc = readDoc();
+  const r = reconcile(doc);
 
-  console.log(`机器学习 · 第 ${CHAPTER} 章 ${cm.title}`);
+  console.log('机器学习 · 第 2 章 你报的那个数字，可能只是抽样噪声的形状');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`演算设定：测试集 ${r.setup.n} 例 · 准确率 ${r.setup.acc} · 候选 ${r.setup.candidates} 组超参`);
+  console.log(`标准误 = √(p(1-p)/n) = ${r.sigma.toFixed(4)}（正文写 ${r.setup.sigma}）`);
+  console.log(`200 例时 = ${stderr(r.setup.acc, 200).toFixed(4)}（正文写 ${r.setup.sigma200}）`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('选择偏差：候选越多、验证集越小，最大值越乐观');
+  console.log('  候选   最大值期望   1,000 例乐观量   200 例乐观量');
+  for (const row of r.table) {
+    console.log(`  ${String(row.k).padStart(4)}   ${row.z.toFixed(2).padStart(8)}   ${optimismPoints(row.z, r.setup.acc, 1000).toFixed(1).padStart(10)} 点   ${optimismPoints(row.z, r.setup.acc, 200).toFixed(1).padStart(8)} 点`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log(`配对检验：n10=${r.setup.n10}、n01=${r.setup.n01}，χ² = ${r.chi2.toFixed(2)}，阈值 ${r.setup.threshold} → ${r.chi2 > r.setup.threshold ? '显著' : '未达显著'}`);
+  console.log(`与正文对账 ${r.rows.filter((x) => x.ok).length}/${r.rows.length} 格通过。`);
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/jiqi-xuexi/units.json 现算，不手打；改教材后重跑即可复现。');
+  console.log('※ 数值由正文演算设定现算，不手打；表格乐观量用表格自己的最大值期望复算，保证内部算术自洽。');
   console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, parseSetup, parseCandidatesTable, stderr, optimismPoints, mcnemarChi2, reconcile, DOC };
