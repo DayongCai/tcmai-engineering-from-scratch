@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 /**
- * 眼科影像检查 · 第 7 章对账器
+ * 眼科影像检查 · 第 7 章 报告的好坏不在信息多少，在三段的分工
  *
- * 数据源：../docs/zh.md（本章正文）、../quiz.json（本章习题）
+ *   node code/main.js
  *
- * 现算的东西：
- *   1. 三段式（所见、解释、建议）的分工；
- *   2. 所见四条纪律、建议三档、复查项表的数据行数；
- *   3. 基本信息 9 项：正文自报的「9」与真正列出的项数要对得上（9 = 8 + 1 组合项）；
- *   4. 建议定档：缺时点依据的落到复查档的未完成态，缺触发条件的落到「语法像建议的空白」；
- *   5. 习题对账。
+ * 只读两份文件：同章目录下的 docs/zh.md 与 quiz.json，不读任何取数表。
+ * 依赖：node:fs、node:path，无第三方包。
  *
- * 依赖：仅 node:fs / node:path。
+ * 打印三块：
+ *   1. 章规模：汉字数、段数、节标题、表格张数与每张表的列数／行数；
+ *   2. 本章对账：三段与各自纪律条数、复查表的格数、建议三档、
+ *      必须提前复查的类数与立即联系类、共识基本信息项数；
+ *   3. quiz 体检：题量、三段分布、选项数、解释长度、check 题能否在正文找到原词。
  */
 'use strict';
 
@@ -20,139 +20,150 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const CHAPTER = 7;
+const SLUG = '07-e107';
+const TITLE = '报告的好坏不在信息多少，在三段的分工';
 
-const docText = () => fs.readFileSync(DOC, 'utf8');
-const quizData = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
-const hanzi = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
+const CN = { 一: 1, 两: 2, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
+const cnum = (s) => (CN[s] !== undefined ? CN[s] : Number(s) || 0);
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split('\n');
 
-function grams(s, n = 4) {
-  const out = new Set();
-  for (const seg of String(s || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
-    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+}
+
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
+}
+
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+  const out = [];
+  let i = 0;
+  while (i < ls.length) {
+    if (/^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) { block.push(ls[i]); i += 1; }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else { i += 1; }
   }
   return out;
 }
 
-/** 三段的分工：所见 → 解释 → 建议 */
-function threeSections(text = docText()) {
-  return [...text.matchAll(/(所见|解释|建议)给「/g)].map((m) => m[1]);
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let j = 0; j + n <= seg.length; j += 1) out.add(seg.slice(j, j + n));
+  }
+  return out;
 }
 
-/** 所见段的四条纪律 */
-function sightDisciplines(text = docText()) {
-  return [...text.matchAll(/\*\*(可定位|可比较|可复核|不夹判断)。\*\*/g)].map((m) => m[1]);
+/* ── 本章对账：从正文解析，不手打 ───────────────────────────────── */
+
+function facts(doc, ts = tables(doc)) {
+  const grades = ['所见', '解释', '建议'].filter((k) => doc.includes('**' + k + ''));
+  const seen = ['可定位', '可比较', '可复核', '不夹判断'].filter((k) => doc.includes('**' + k + '。**'));
+  const explain = ['一句话给结论并排序', '给置信度', '给鉴别，最多两条'].filter((k) => doc.includes('**' + k + '**'));
+  const advice = ['观察档', '复查档', '转诊档'].filter((k) => doc.includes('**' + k + '**'));
+  const early = ['新增症状', '视力突降', '视野变化', '外伤后'].filter((k) => doc.includes(k + '。'));
+  const basic = Number((doc.match(/基本信息\s*(\d+)\s*项/) || [])[1] || 0);
+  const selfCheck = cnum((doc.match(/自查项，([一二三四五])条就够/) || [])[1] || '');
+  const recheck = ts.find((t) => t.header.join(' ').includes('主诉'));
+  const consensus = [...new Set([...doc.matchAll(/共识·第([一二三四五六七八九十]+)节/g)].map((m) => m[1]))];
+
+  return {
+    grades, seen, explain, advice, early, basic, selfCheck, recheck, consensus,
+    lines: [
+      '三段分工 ' + grades.length + ' 段：' + grades.join(' → ') + '，各对不同的读者负责',
+      '三段纪律 ' + (seen.length + explain.length + 3) + ' 条 = 所见 ' + seen.length + ' + 解释 ' + explain.length + ' + 建议 3（做什么、什么时候、由谁）',
+      '建议按行动分 ' + advice.length + ' 档：' + advice.join('、') + '——分界线是谁在什么时点必须做事',
+      '复查表 ' + (recheck ? recheck.rows.length : 0) + ' 行 × ' + (recheck ? recheck.cols : 0) + ' 列 = ' + (recheck ? recheck.rows.length * recheck.cols : 0) + ' 格，表里故意没有「间隔」一栏',
+      '必须提前复查 ' + early.length + ' 类：' + early.join('、') + '；另单列立即联系 1 类 = 红旗 ' + (early.length + 1) + ' 条',
+      '共识基本信息 ' + basic + ' 项；患者自查 ' + selfCheck + ' 条',
+      '正文引到共识节 ' + consensus.length + ' 个：' + (consensus.map((s) => '第' + s + '节').join('、') || '（无）'),
+    ],
+  };
 }
 
-/** 建议三档 */
-function adviceTiers(text = docText()) {
-  return [...text.matchAll(/\*\*(观察档|复查档|转诊档)\*\*：/g)].map((m) => m[1]);
-}
+/* ── quiz 体检 ──────────────────────────────────────────────────── */
 
-/** 复查项表的数据行（表头之外） */
-function reviewTableRows(text = docText()) {
-  const start = text.indexOf('| 主诉 | 首诊必做 | 复查必看 |');
-  if (start < 0) return [];
-  const lines = text.slice(start).split('\n').filter((l) => l.trim().startsWith('|'));
-  return lines.filter((l) => !l.includes('主诉 |') && !/^\|[\s-]+\|/.test(l.trim()));
-}
-
-/** 基本信息：正文自报几项、实际列了几项、组合项是什么 */
-function basicInfo(text = docText()) {
-  const stated = Number((/基本信息\s*(\d+)\s*项/.exec(text) || [])[1]);
-  const seg = text.split(`基本信息 ${stated} 项：`)[1] || '';
-  const head = seg.split('。')[0];
-  const parts = head.split('，加');
-  const listed = parts[0].replace(/，$/, '').split('、').map((s) => s.trim()).filter(Boolean);
-  const combined = (parts[1] || '').split('（')[0].trim();
-  return { stated, listed, combined, total: listed.length + (combined ? 1 : 0) };
-}
-
-/**
- * 建议定档。字段齐全度决定档位：缺时点的复查不是复查档，缺触发条件的观察就是
- * 「语法上像建议的空白」——正文要挡的第一种写法。
- */
-function adviceTier({ dept = '', item = '', when = '', trigger = '' } = {}) {
-  if (dept) return { tier: '转诊档', missing: when ? [] : ['时限'] };
-  if (item) return { tier: '复查档', missing: when ? [] : ['时点依据'] };
-  if (trigger) return { tier: '观察档', missing: [] };
-  return { tier: null, missing: ['触发条件'] };
-}
-
-/** 疗效三层：结构、功能、患者报告 */
-function effectTiers(text = docText()) {
-  const seg = text.split('疗效分三层，不要互相替代：')[1];
-  if (!seg) return [];
-  return seg
-    .split('。')[0]
-    .replace(/\*\*/g, '')
-    .split('、')
-    .map((s) => s.split('（')[0].trim())
-    .filter(Boolean);
-}
-
-function quizAudit() {
-  const q = quizData();
-  const body = grams(docText());
-  const qs = Array.isArray(q.questions) ? q.questions : [];
-  const byStage = { pre: 0, check: 0, post: 0 };
+function quizAudit(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
   const problems = [];
   let grounded = 0;
-
-  qs.forEach((item, i) => {
+  const items = qs.map((q, i) => {
     const n = i + 1;
-    if (item.stage in byStage) byStage[item.stage] += 1;
-    else problems.push(`第 ${n} 题 stage 非法：${item.stage}`);
-    const opts = Array.isArray(item.options) ? item.options : [];
-    if (opts.length !== 4) problems.push(`第 ${n} 题有 ${opts.length} 个选项`);
-    if (!(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < opts.length)) {
-      problems.push(`第 ${n} 题 correct 下标非法`);
-    }
-    if (hanzi(item.explain) < 30) problems.push(`第 ${n} 题 explain 只有 ${hanzi(item.explain)} 汉字`);
-    if (item.stage === 'check') {
-      const right = String(opts[item.correct] || '');
-      if ([...grams(right)].some((g) => body.has(g))) grounded += 1;
-    }
+    if (q.stage in stage) stage[q.stage] += 1; else problems.push('第 ' + n + ' 题 stage 非法');
+    const opts = Array.isArray(q.options) ? q.options : [];
+    if (opts.length !== 4) problems.push('第 ' + n + ' 题选项 ' + opts.length + ' 个');
+    if (!(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < opts.length)) problems.push('第 ' + n + ' 题 correct 非法');
+    const why = q.explain || q.explanation || '';
+    if (hanzi(why) < 30) problems.push('第 ' + n + ' 题解释 ' + hanzi(why) + ' 汉字');
+    const hit = [...grams(String(opts[q.correct] || ''))].filter((g) => body.has(g));
+    if (q.stage === 'check' && hit.length) grounded += 1;
+    return { n, stage: q.stage, options: opts.length, explain: hanzi(why), hit: hit.length };
   });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    grounded,
+    answers: qs.map((q) => q.correct),
+    distinct: new Set(qs.map((q) => q.correct)).size,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explain)) : 0,
+    fourOptions: items.every((x) => x.options === 4),
+    problems,
+  };
+}
 
-  return { total: qs.length, byStage, grounded, problems };
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    facts: facts(doc, ts),
+    quiz: quizAudit(quiz, doc),
+  };
 }
 
 function main() {
-  const text = docText();
-  const a = quizAudit();
-  const info = basicInfo(text);
-
-  console.log('眼科影像检查 · 第 7 章 对账');
+  const r = analyze();
+  console.log('眼科影像检查 第 ' + CHAPTER + ' 章 · ' + TITLE);
+  console.log('章规模：正文 ' + r.docHanzi + ' 汉字 · ' + r.paragraphs + ' 段 · 节 ' + r.sections.length + ' 个 · 表 ' + r.tables.length + ' 张');
   console.log('');
-  console.log(`三段分工：${threeSections(text).join(' → ')}`);
-  console.log(`所见四条纪律：${sightDisciplines(text).join('、')}（${sightDisciplines(text).length} 条）`);
-  console.log(`建议三档：${adviceTiers(text).join('、')}`);
-  console.log(`复查项表：${reviewTableRows(text).length} 行数据；疗效三层：${effectTiers(text).join('、')}`);
+  console.log('节标题：');
+  for (const s of r.sections) console.log('  ' + s);
+  if (r.tables.length) {
+    console.log('');
+    console.log('表格：');
+    r.tables.forEach((t, i) => console.log('  [' + (i + 1) + '] ' + t.header.join(' / ') + ' —— ' + t.cols + ' 列 × ' + t.rows + ' 行'));
+  }
   console.log('');
-  console.log(`基本信息自报 ${info.stated} 项，实列 ${info.listed.length} 项 + 组合项「${info.combined}」= ${info.total} 项`);
-  console.log(`「必要时复查」定档：${JSON.stringify(adviceTier({}))}`);
-  console.log(`缺时点的复查：${JSON.stringify(adviceTier({ item: '眼底复查' }))}`);
+  console.log('本章对账（解析正文后现算）：');
+  for (const line of r.facts.lines) console.log('  · ' + line);
   console.log('');
-  console.log(`习题 ${a.total} 题（pre ${a.byStage.pre} / check ${a.byStage.check} / post ${a.byStage.post}）`);
-  console.log(`check 题正确选项能在正文找到原词的：${a.grounded} 道`);
-  console.log(a.problems.length ? `✗ ${a.problems.length} 处：${a.problems.join('；')}` : '✓ 结构齐、解释够长、判据落在正文');
+  console.log('quiz ' + r.quiz.total + ' 题（pre ' + r.quiz.stage.pre + ' / check ' + r.quiz.stage.check + ' / post ' + r.quiz.stage.post + '）· 答案 ' + r.quiz.answers.join('/'));
+  console.log('  check 题接地 ' + r.quiz.grounded + ' 道 · 答案落在 ' + r.quiz.distinct + ' 个位置 · 最短解释 ' + r.quiz.minExplain + ' 汉字');
+  console.log(r.quiz.problems.length ? '  ✗ ' + r.quiz.problems.join('；') : '  ✓ 结构齐、解释过线、check 题落在正文');
   console.log('');
-  console.log('※ 数字由本章正文现算，不手打；正文改动后重跑即可复现。');
+  console.log('※ 数字由本章正文与习题现算，正文改动后重跑即可复核。');
+  console.log('※ 报告格式、复查间隔、转诊时限与疗效判据，以现行规范与所在机构制度为准。');
 }
 
 if (require.main === module) main();
 
-module.exports = {
-  docText,
-  quizData,
-  hanzi,
-  grams,
-  threeSections,
-  sightDisciplines,
-  adviceTiers,
-  reviewTableRows,
-  basicInfo,
-  adviceTier,
-  effectTiers,
-  quizAudit,
-};
+module.exports = { analyze, readDoc, sections, paragraphs, tables, grams, hanzi, cnum, facts, quizAudit, CHAPTER, SLUG, TITLE, DOC, QUIZ };

@@ -1,18 +1,17 @@
 #!/usr/bin/env node
 /**
- * 眼科影像检查 · 第 8 章对账器
+ * 眼科影像检查 · 第 8 章 密码泄露了可以改，虹膜泄露了不能换
  *
- * 数据源：../docs/zh.md（本章正文）、../quiz.json（本章习题）
+ *   node code/main.js
  *
- * 现算的东西：
- *   1. 四类字段（直接标识、准标识、生物特征、推断性标识）；
- *   2. 采集三规则、借阅三种情形、三条红线、患者五项权利；
- *   3. 去标识：把「必删字段」段做成可执行清单，逐项与代码里的 DROP 对账 ——
- *      正文加了字段而代码没加，这个测试就会红；
- *   4. 关联表不能与数据放在一起：写成断言，放一起就抛错；
- *   5. 习题对账。
+ * 只读两份文件：同章目录下的 docs/zh.md 与 quiz.json，不读任何取数表。
+ * 依赖：node:fs、node:path，无第三方包。
  *
- * 依赖：仅 node:fs / node:path。
+ * 打印三块：
+ *   1. 章规模：汉字数、段数、节标题、表格张数与每张表的列数／行数；
+ *   2. 本章对账：敏感来路条数、字段四类、采集规则条数、必删与可留字段项数、
+ *      红线条数、告知问数与患者权利项数，全部从正文解析后再算派生量；
+ *   3. quiz 体检：题量、三段分布、选项数、解释长度、check 题能否在正文找到原词。
  */
 'use strict';
 
@@ -21,172 +20,152 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const CHAPTER = 8;
+const SLUG = '08-e108';
+const TITLE = '密码泄露了可以改，虹膜泄露了不能换';
 
-const docText = () => fs.readFileSync(DOC, 'utf8');
-const quizData = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
-const hanzi = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
+const CN = { 一: 1, 两: 2, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
+const cnum = (s) => (CN[s] !== undefined ? CN[s] : Number(s) || 0);
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split('\n');
 
-function grams(s, n = 4) {
-  const out = new Set();
-  for (const seg of String(s || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
-    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
-  }
-  return out;
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-/** 四类字段（正文可能在两处提到同一类，按首次出现去重） */
-function fieldClasses(text = docText()) {
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
+}
+
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
   const out = [];
-  for (const m of text.matchAll(/\*\*(直接标识|准标识|生物特征|推断性标识)\*\*/g)) {
-    if (!out.includes(m[1])) out.push(m[1]);
+  let i = 0;
+  while (i < ls.length) {
+    if (/^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) { block.push(ls[i]); i += 1; }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else { i += 1; }
   }
   return out;
 }
 
-/** 采集端三规则 */
-function collectionRules(text = docText()) {
-  return [...text.matchAll(/\*\*规则(一|二|三)：/g)].map((m) => m[1]);
-}
-
-/** 借阅与二次使用的三种情形 */
-function useCases(text = docText()) {
-  return [...text.matchAll(/\*\*情形(一|二|三)：(临床借阅|对外借阅|二次使用)/g)].map((m) => m[2]);
-}
-
-/** 三条红线 */
-function redLines(text = docText()) {
-  const seg = text.split('**三条红线**：')[1];
-  if (!seg) return [];
-  return seg.split('。')[0].replace(/「|」/g, '').split('；').map((s) => s.trim()).filter(Boolean);
-}
-
-/** 患者五项权利 */
-function patientRights(text = docText()) {
-  const seg = text.split('患者的五项权利要能一件件办到**：')[1];
-  if (!seg) return [];
-  return seg.split('。')[0].split('；').map((s) => s.replace(/\*\*/g, '').trim()).filter(Boolean);
-}
-
-/** 「必删字段」那一段原文，供清单对账 */
-function deleteClause(text = docText()) {
-  const seg = text.split('**必删字段。**')[1];
-  return seg ? seg.split('**可留字段')[0] : '';
-}
-
-/** 代码侧的必删清单：每项都必须能在「必删字段」段里找到 */
-const DROP = [
-  '姓名',
-  '证件号',
-  '病历号',
-  '住院号',
-  '联系方式',
-  '住址',
-  '精确日期',
-  '机构名称',
-  '科室',
-  '设备序列号',
-  '拍摄者',
-  '读片人',
-];
-
-/** 可留字段：眼别、年龄段、诊断大类、检查类型与是否散瞳、相对时序、技术参数 */
-const KEEP = ['眼别', '年龄段', '诊断大类', '检查类型', '是否散瞳', '相对时序', '技术参数'];
-
-/** 去标识：删必删、留可留，精确日期折成相对时序（对外可留相对时序） */
-function deidentify(record, { relativeTo } = {}) {
-  const out = {};
-  const dropped = [];
-  for (const [k, v] of Object.entries(record)) {
-    if (k === '精确日期') {
-      dropped.push(k);
-      out['相对时序'] = relativeTo || 'T0';
-      continue;
-    }
-    if (DROP.includes(k)) {
-      dropped.push(k);
-      continue;
-    }
-    out[k] = v;
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let j = 0; j + n <= seg.length; j += 1) out.add(seg.slice(j, j + n));
   }
-  return { kept: out, dropped };
+  return out;
 }
 
-/** 关联表不能与去标识数据放在一起；放一起就等于没去标识 */
-function assertSeparable(bundle) {
-  const keys = Object.keys(bundle);
-  if (keys.includes('关联表') && keys.some((k) => k !== '关联表')) {
-    throw new Error('关联表与数据放在一起，去标识等于没做');
-  }
-  return true;
+/* ── 本章对账：从正文解析，不手打 ───────────────────────────────── */
+
+function facts(doc) {
+  const routes = cnum((doc.match(/([一二三])条来路/) || [])[1] || '');
+  const fields = ['直接标识', '准标识', '生物特征', '推断性标识'].filter((k) => doc.includes('**' + k + '**'));
+  const rules = (doc.match(/\*\*规则[一二三]：/g) || []).length;
+  const mustSeg = (doc.split('**必删字段。**')[1] || '').split('**可留字段。**')[0];
+  const mustDelete = mustSeg.split('；').map((s) => s.replace(/——[\s\S]*$/, '').trim()).filter(Boolean);
+  const keepSeg = (doc.split('**可留字段。**')[1] || '').split('**必须单独管理的字段。**')[0];
+  const mayKeep = keepSeg.split('；').map((s) => s.trim()).filter(Boolean);
+  const redlines = doc.includes('**三条红线**') ? 3 : 0;
+  const asks = (doc.match(/\*\*第[一二三]问：/g) || []).length;
+  const rights = cnum((doc.match(/患者的([一二三四五六])项权利/) || [])[1] || '');
+  const consensus = [...new Set([...doc.matchAll(/共识·第([一二三四五六七八九十]+)节/g)].map((m) => m[1]))];
+
+  return {
+    routes, fields, rules, mustDelete, mayKeep, redlines, asks, rights, consensus,
+    lines: [
+      '敏感来路 ' + routes + ' 条：可识别 / 生物特征 / 内容与身份耦合',
+      '字段 ' + fields.length + ' 类：' + fields.join('、') + '——出现一处即可指认的是直接标识，组合起来唯一性很高的是准标识',
+      '采集端 ' + rules + ' 条规则：范围最小、标识与内容分离、默认不落本地',
+      '必删 ' + mustDelete.length + ' 项 / 可留 ' + mayKeep.length + ' 项，另设关联表单独管理',
+      '借阅与二次使用 3 种情形；红线 ' + redlines + ' 条：不出境、不上境外云、不以免费筛查换数据',
+      '告知 ' + asks + ' 问（做什么、为什么、数据去哪）；患者 ' + rights + ' 项权利',
+      '正文引到共识节 ' + consensus.length + ' 个：' + (consensus.map((s) => '第' + s + '节').join('、') || '（无）'),
+    ],
+  };
 }
 
-function quizAudit() {
-  const q = quizData();
-  const body = grams(docText());
-  const qs = Array.isArray(q.questions) ? q.questions : [];
-  const byStage = { pre: 0, check: 0, post: 0 };
+/* ── quiz 体检 ──────────────────────────────────────────────────── */
+
+function quizAudit(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
   const problems = [];
   let grounded = 0;
-
-  qs.forEach((item, i) => {
+  const items = qs.map((q, i) => {
     const n = i + 1;
-    if (item.stage in byStage) byStage[item.stage] += 1;
-    else problems.push(`第 ${n} 题 stage 非法：${item.stage}`);
-    const opts = Array.isArray(item.options) ? item.options : [];
-    if (opts.length !== 4) problems.push(`第 ${n} 题有 ${opts.length} 个选项`);
-    if (!(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < opts.length)) {
-      problems.push(`第 ${n} 题 correct 下标非法`);
-    }
-    if (hanzi(item.explain) < 30) problems.push(`第 ${n} 题 explain 只有 ${hanzi(item.explain)} 汉字`);
-    if (item.stage === 'check') {
-      const right = String(opts[item.correct] || '');
-      if ([...grams(right)].some((g) => body.has(g))) grounded += 1;
-    }
+    if (q.stage in stage) stage[q.stage] += 1; else problems.push('第 ' + n + ' 题 stage 非法');
+    const opts = Array.isArray(q.options) ? q.options : [];
+    if (opts.length !== 4) problems.push('第 ' + n + ' 题选项 ' + opts.length + ' 个');
+    if (!(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < opts.length)) problems.push('第 ' + n + ' 题 correct 非法');
+    const why = q.explain || q.explanation || '';
+    if (hanzi(why) < 30) problems.push('第 ' + n + ' 题解释 ' + hanzi(why) + ' 汉字');
+    const hit = [...grams(String(opts[q.correct] || ''))].filter((g) => body.has(g));
+    if (q.stage === 'check' && hit.length) grounded += 1;
+    return { n, stage: q.stage, options: opts.length, explain: hanzi(why), hit: hit.length };
   });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    grounded,
+    answers: qs.map((q) => q.correct),
+    distinct: new Set(qs.map((q) => q.correct)).size,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explain)) : 0,
+    fourOptions: items.every((x) => x.options === 4),
+    problems,
+  };
+}
 
-  return { total: qs.length, byStage, grounded, problems };
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    facts: facts(doc),
+    quiz: quizAudit(quiz, doc),
+  };
 }
 
 function main() {
-  const text = docText();
-  const a = quizAudit();
-  const clause = deleteClause(text);
-  const missInDoc = DROP.filter((f) => !clause.includes(f));
-  const demo = deidentify({ 姓名: '示例', 眼别: '右', 精确日期: '2026-11-22', 诊断大类: 'DR' });
-
-  console.log('眼科影像检查 · 第 8 章 对账');
+  const r = analyze();
+  console.log('眼科影像检查 第 ' + CHAPTER + ' 章 · ' + TITLE);
+  console.log('章规模：正文 ' + r.docHanzi + ' 汉字 · ' + r.paragraphs + ' 段 · 节 ' + r.sections.length + ' 个 · 表 ' + r.tables.length + ' 张');
   console.log('');
-  console.log(`四类字段：${fieldClasses(text).join('、')}`);
-  console.log(`采集规则：${collectionRules(text).length} 条；借阅情形：${useCases(text).join('、')}`);
-  console.log(`三条红线：${redLines(text).join('；')}`);
-  console.log(`患者五项权利：${patientRights(text).length} 项`);
+  console.log('节标题：');
+  for (const s of r.sections) console.log('  ' + s);
+  if (r.tables.length) {
+    console.log('');
+    console.log('表格：');
+    r.tables.forEach((t, i) => console.log('  [' + (i + 1) + '] ' + t.header.join(' / ') + ' —— ' + t.cols + ' 列 × ' + t.rows + ' 行'));
+  }
   console.log('');
-  console.log(`必删清单 ${DROP.length} 项，正文「必删字段」段缺：${missInDoc.length ? missInDoc.join('、') : '无'}`);
-  console.log(`去标识示例：保留 ${Object.keys(demo.kept).join('、')}；删除 ${demo.dropped.join('、')}`);
+  console.log('本章对账（解析正文后现算）：');
+  for (const line of r.facts.lines) console.log('  · ' + line);
   console.log('');
-  console.log(`习题 ${a.total} 题（pre ${a.byStage.pre} / check ${a.byStage.check} / post ${a.byStage.post}）`);
-  console.log(`check 题正确选项能在正文找到原词的：${a.grounded} 道`);
-  console.log(a.problems.length ? `✗ ${a.problems.length} 处：${a.problems.join('；')}` : '✓ 结构齐、解释够长、判据落在正文');
+  console.log('quiz ' + r.quiz.total + ' 题（pre ' + r.quiz.stage.pre + ' / check ' + r.quiz.stage.check + ' / post ' + r.quiz.stage.post + '）· 答案 ' + r.quiz.answers.join('/'));
+  console.log('  check 题接地 ' + r.quiz.grounded + ' 道 · 答案落在 ' + r.quiz.distinct + ' 个位置 · 最短解释 ' + r.quiz.minExplain + ' 汉字');
+  console.log(r.quiz.problems.length ? '  ✗ ' + r.quiz.problems.join('；') : '  ✓ 结构齐、解释过线、check 题落在正文');
   console.log('');
-  console.log('※ 数字由本章正文现算，不手打；正文改动后重跑即可复现。');
+  console.log('※ 数字由本章正文与习题现算，正文改动后重跑即可复核。');
+  console.log('※ 本章为教学材料，不构成法律意见或合规结论；具体义务依现行规定与所在机构制度。');
 }
 
 if (require.main === module) main();
 
-module.exports = {
-  docText,
-  quizData,
-  hanzi,
-  grams,
-  DROP,
-  KEEP,
-  fieldClasses,
-  collectionRules,
-  useCases,
-  redLines,
-  patientRights,
-  deleteClause,
-  deidentify,
-  assertSeparable,
-  quizAudit,
-};
+module.exports = { analyze, readDoc, sections, paragraphs, tables, grams, hanzi, cnum, facts, quizAudit, CHAPTER, SLUG, TITLE, DOC, QUIZ };

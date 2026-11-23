@@ -1,20 +1,17 @@
 #!/usr/bin/env node
 /**
- * 眼科影像检查 · 第 3 章对账器
+ * 眼科影像检查 · 第 3 章 外障一望即知，影像在这里只做记录，不做诊断
  *
- * 数据源：../docs/zh.md（本章正文）、../quiz.json（本章习题）
+ *   node code/main.js
  *
- * 现算的东西：
- *   1. 三层观察的标签（从「外障的观察分三层：…」里解析）；
- *   2. 形态记录最小集的五格（从「五格：…」里解析）；
- *   3. 三项哨兵（正文的加粗小标题）；
- *   4. 五条加分情形的条数（「其一…其五」）；
- *   5. 照相的三个用途；
- *   6. 质控五项；
- *   7. 共识值（45°、35°、3mm、4–6 小时）与所在节号；
- *   8. 习题对账。
+ * 只读两份文件：同章目录下的 docs/zh.md 与 quiz.json，不读任何取数表。
+ * 依赖：node:fs、node:path，无第三方包。
  *
- * 依赖：仅 node:fs / node:path。
+ * 打印三块：
+ *   1. 章规模：汉字数、段数、节标题、表格张数与每张表的列数／行数；
+ *   2. 本章对账：裂隙灯四类信息、五条加分与三种不加分、形态记录五格、
+ *      三项哨兵、质控五项，全部从正文解析后再算派生量；
+ *   3. quiz 体检：题量、三段分布、选项数、解释长度、check 题能否在正文找到原词。
  */
 'use strict';
 
@@ -23,137 +20,149 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const CHAPTER = 3;
+const SLUG = '03-e103';
+const TITLE = '外障一望即知，影像在这里只做记录，不做诊断';
 
-const docText = () => fs.readFileSync(DOC, 'utf8');
-const quizData = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
-const hanzi = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
-const stripStars = (s) => String(s || '').replace(/\*\*/g, '').trim();
+const CN = { 一: 1, 两: 2, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
+const cnum = (s) => (CN[s] !== undefined ? CN[s] : Number(s) || 0);
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split('\n');
 
-function grams(s, n = 4) {
-  const out = new Set();
-  for (const seg of String(s || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
-    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+}
+
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
+}
+
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+  const out = [];
+  let i = 0;
+  while (i < ls.length) {
+    if (/^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) { block.push(ls[i]); i += 1; }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else { i += 1; }
   }
   return out;
 }
 
-/** 三层观察：有没有、什么样、变了没有 */
-function observationLayers(text = docText()) {
-  const tail = text.split('外障的观察分三层：')[1];
-  if (!tail) return [];
-  return tail
-    .split('。')[0]
-    .split('；')
-    .map((s) => s.split('（')[0].trim())
-    .filter(Boolean);
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let j = 0; j + n <= seg.length; j += 1) out.add(seg.slice(j, j + n));
+  }
+  return out;
 }
 
-/** 形态记录的最小集五格 */
-function minGrid(text = docText()) {
-  const tail = text.split('五格：')[1];
-  if (!tail) return [];
-  return stripStars(tail.split('。')[0]).split('、').map((s) => s.trim()).filter(Boolean);
+/* ── 本章对账：从正文解析，不手打 ───────────────────────────────── */
+
+function facts(doc) {
+  const secPlus = (doc.split('## 二、')[1] || '').split('## 三、')[0];
+  const slit = ['放大的表面形态', '层次与深度', '血管的形态', '荧光素染色的分布'].filter((k) => doc.includes('**' + k + '**'));
+  const plus = (secPlus.match(/\*\*其[一二三四五]，/g) || []).length;
+  const minus = cnum((secPlus.match(/([一二三四五])种\*\*不加分\*\*/) || [])[1] || '');
+  const five = ((doc.match(/五格：\*\*(.+?)\*\*/) || [])[1] || '').split('、').filter(Boolean);
+  const sentinels = ['充血类型', '前房反应', '瞳神大小与形态'].filter((k) => doc.includes('**' + k + '**'));
+  const qc = ((doc.match(/质控五项\*\*：(.+?)（共识/) || [])[1] || '').split('、').filter(Boolean);
+  const consensus = [...new Set([...doc.matchAll(/共识·第([一二三四五六七八九十]+)节/g)].map((m) => m[1]))];
+
+  return {
+    slit, plus, minus, five, sentinels, qc, consensus,
+    lines: [
+      '裂隙灯四类信息 ' + slit.length + ' 类：' + (slit.join('、') || '（未解析到）') + '；另有「即时的可干预性」一样',
+      '加分 ' + plus + ' 条 / 不加分 ' + minus + ' 种：判据是待回答的问题，不是设备能力',
+      '形态记录最小集 ' + five.length + ' 格：' + (five.join('、') || '（未解析到）'),
+      '另附哨兵 ' + sentinels.length + ' 项：' + sentinels.join('、') + '——查的是「有没有内传」',
+      '必写格合计 ' + (five.length + sentinels.length) + ' 格 = 五格 + 三哨兵',
+      '影像质控 ' + qc.length + ' 项：' + (qc.join('、') || '（未解析到）'),
+      '正文引到共识节 ' + consensus.length + ' 个：' + (consensus.map((s) => '第' + s + '节').join('、') || '（无）'),
+    ],
+  };
 }
 
-/** 三项哨兵：外障可内传的那三样 */
-function sentinels(text = docText()) {
-  return [...text.matchAll(/\*\*(充血类型|前房反应|瞳神大小与形态)\*\*/g)].map((m) => m[1]);
-}
+/* ── quiz 体检 ──────────────────────────────────────────────────── */
 
-/** 五条加分的条数：按「其X，」数出来，不写死 5 */
-function plusPoints(text = docText()) {
-  const start = text.indexOf('## 二、');
-  const end = text.indexOf('## 三、');
-  const body = start >= 0 && end > start ? text.slice(start, end) : text;
-  return [...body.matchAll(/\*\*其[一二三四五六七八九十]，/g)].length;
-}
-
-/** 照相的三个用途 */
-function photoUses(text = docText()) {
-  return [...text.matchAll(/\*\*(基线|交班|争议)\*\*：/g)].map((m) => m[1]);
-}
-
-/** 质控五项 */
-function qcItems(text = docText()) {
-  const tail = text.split('质控五项**：')[1];
-  if (!tail) return [];
-  return tail.split('。')[0].split('、').map((s) => s.split('（')[0].trim()).filter(Boolean);
-}
-
-/** 共识值：45°、35°、3mm、4–6 小时 是否都出现在标了节号的句子里 */
-const CONSENSUS_VALUES = ['45°', '35°', '3mm', '4–6 小时'];
-
-function consensusHits(text = docText()) {
-  return CONSENSUS_VALUES.map((v) => {
-    const flat = text.replace(/\s+/g, ' ');
-    return { value: v, found: flat.includes(v) };
-  });
-}
-
-function quizAudit() {
-  const q = quizData();
-  const body = grams(docText());
-  const qs = Array.isArray(q.questions) ? q.questions : [];
-  const byStage = { pre: 0, check: 0, post: 0 };
+function quizAudit(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
   const problems = [];
   let grounded = 0;
-
-  qs.forEach((item, i) => {
+  const items = qs.map((q, i) => {
     const n = i + 1;
-    if (item.stage in byStage) byStage[item.stage] += 1;
-    else problems.push(`第 ${n} 题 stage 非法：${item.stage}`);
-    const opts = Array.isArray(item.options) ? item.options : [];
-    if (opts.length !== 4) problems.push(`第 ${n} 题有 ${opts.length} 个选项`);
-    if (!(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < opts.length)) {
-      problems.push(`第 ${n} 题 correct 下标非法`);
-    }
-    if (hanzi(item.explain) < 30) problems.push(`第 ${n} 题 explain 只有 ${hanzi(item.explain)} 汉字`);
-    if (item.stage === 'check') {
-      const right = String(opts[item.correct] || '');
-      if ([...grams(right)].some((g) => body.has(g))) grounded += 1;
-    }
+    if (q.stage in stage) stage[q.stage] += 1; else problems.push('第 ' + n + ' 题 stage 非法');
+    const opts = Array.isArray(q.options) ? q.options : [];
+    if (opts.length !== 4) problems.push('第 ' + n + ' 题选项 ' + opts.length + ' 个');
+    if (!(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < opts.length)) problems.push('第 ' + n + ' 题 correct 非法');
+    const why = q.explain || q.explanation || '';
+    if (hanzi(why) < 30) problems.push('第 ' + n + ' 题解释 ' + hanzi(why) + ' 汉字');
+    const hit = [...grams(String(opts[q.correct] || ''))].filter((g) => body.has(g));
+    if (q.stage === 'check' && hit.length) grounded += 1;
+    return { n, stage: q.stage, options: opts.length, explain: hanzi(why), hit: hit.length };
   });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    grounded,
+    answers: qs.map((q) => q.correct),
+    distinct: new Set(qs.map((q) => q.correct)).size,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explain)) : 0,
+    fourOptions: items.every((x) => x.options === 4),
+    problems,
+  };
+}
 
-  return { total: qs.length, byStage, grounded, problems };
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    facts: facts(doc),
+    quiz: quizAudit(quiz, doc),
+  };
 }
 
 function main() {
-  const text = docText();
-  const a = quizAudit();
-
-  console.log('眼科影像检查 · 第 3 章 对账');
+  const r = analyze();
+  console.log('眼科影像检查 第 ' + CHAPTER + ' 章 · ' + TITLE);
+  console.log('章规模：正文 ' + r.docHanzi + ' 汉字 · ' + r.paragraphs + ' 段 · 节 ' + r.sections.length + ' 个 · 表 ' + r.tables.length + ' 张');
   console.log('');
-  console.log(`三层观察：${observationLayers(text).join(' → ')}`);
-  console.log(`形态记录五格：${minGrid(text).join('、')}（${minGrid(text).length} 格）`);
-  console.log(`三项哨兵：${sentinels(text).join('、')}（${sentinels(text).length} 项）`);
-  console.log(`加分情形：${plusPoints(text)} 条；照相用途：${photoUses(text).join('、')}`);
-  console.log(`质控五项：${qcItems(text).join('、')}`);
+  console.log('节标题：');
+  for (const s of r.sections) console.log('  ' + s);
+  if (r.tables.length) {
+    console.log('');
+    console.log('表格：');
+    r.tables.forEach((t, i) => console.log('  [' + (i + 1) + '] ' + t.header.join(' / ') + ' —— ' + t.cols + ' 列 × ' + t.rows + ' 行'));
+  }
   console.log('');
-  console.log('共识值：');
-  for (const h of consensusHits(text)) console.log(`  ${h.found ? '✓' : '✗'} ${h.value}`);
+  console.log('本章对账（解析正文后现算）：');
+  for (const line of r.facts.lines) console.log('  · ' + line);
   console.log('');
-  console.log(`习题 ${a.total} 题（pre ${a.byStage.pre} / check ${a.byStage.check} / post ${a.byStage.post}）`);
-  console.log(`check 题正确选项能在正文找到原词的：${a.grounded} 道`);
-  console.log(a.problems.length ? `✗ ${a.problems.length} 处：${a.problems.join('；')}` : '✓ 结构齐、解释够长、判据落在正文');
+  console.log('quiz ' + r.quiz.total + ' 题（pre ' + r.quiz.stage.pre + ' / check ' + r.quiz.stage.check + ' / post ' + r.quiz.stage.post + '）· 答案 ' + r.quiz.answers.join('/'));
+  console.log('  check 题接地 ' + r.quiz.grounded + ' 道 · 答案落在 ' + r.quiz.distinct + ' 个位置 · 最短解释 ' + r.quiz.minExplain + ' 汉字');
+  console.log(r.quiz.problems.length ? '  ✗ ' + r.quiz.problems.join('；') : '  ✓ 结构齐、解释过线、check 题落在正文');
   console.log('');
-  console.log('※ 数字由本章正文现算，不手打；正文改动后重跑即可复现。');
+  console.log('※ 数字由本章正文与习题现算，正文改动后重跑即可复核。');
+  console.log('※ 本章为教学材料，不构成诊断建议；处置与随访间隔以所在机构制度与设备说明书为准。');
 }
 
 if (require.main === module) main();
 
-module.exports = {
-  docText,
-  quizData,
-  hanzi,
-  grams,
-  stripStars,
-  CONSENSUS_VALUES,
-  observationLayers,
-  minGrid,
-  sentinels,
-  plusPoints,
-  photoUses,
-  qcItems,
-  consensusHits,
-  quizAudit,
-};
+module.exports = { analyze, readDoc, sections, paragraphs, tables, grams, hanzi, cnum, facts, quizAudit, CHAPTER, SLUG, TITLE, DOC, QUIZ };

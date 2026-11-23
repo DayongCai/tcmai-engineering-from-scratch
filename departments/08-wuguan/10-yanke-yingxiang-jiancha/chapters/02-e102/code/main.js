@@ -1,20 +1,17 @@
 #!/usr/bin/env node
 /**
- * 眼科影像检查 · 第 2 章对账器
+ * 眼科影像检查 · 第 2 章 解剖基线不是一张数值表，是一组对应关系
  *
- * 数据源：
- *   ../docs/zh.md   本章正文（三层壁、四个屈光间质、两套血管、共识参数）
- *   ../quiz.json    本章习题
+ *   node code/main.js
  *
- * 现算的东西：
- *   1. 四层屈光间质的次序（从「四个屈光间质——…」这一句里解析）；
- *   2. 三层壁的次序（从加粗小标题解析）；
- *   3. 正文里带单位的数值，以及它们各自落在哪个共识节号句里 —— 「共识值要标节」做成可执行判据；
- *   4. 设备参数（MHz / dB）是否都在标了节号的句子里；
- *   5. 中心凹是否落在扫描框内（几何判据，正文说框没框住中心凹，范围栏就是假的）；
- *   6. 习题对账。
+ * 只读两份文件：同章目录下的 docs/zh.md 与 quiz.json，不读任何取数表。
+ * 依赖：node:fs、node:path，无第三方包。
  *
- * 依赖：仅 node:fs / node:path。
+ * 打印三块：
+ *   1. 章规模：汉字数、段数、节标题、表格张数与每张表的列数／行数；
+ *   2. 本章对账：三层壁与五轮配属、角膜分层、屈光间质、象限、两套血管、
+ *      视交叉规则，全部从正文解析后再算派生量；
+ *   3. quiz 体检：题量、三段分布、选项数、解释长度、check 题能否在正文找到原词。
  */
 'use strict';
 
@@ -23,120 +20,152 @@ const path = require('node:path');
 
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const CHAPTER = 2;
+const SLUG = '02-e102';
+const TITLE = '解剖基线不是一张数值表，是一组对应关系';
 
-const docText = () => fs.readFileSync(DOC, 'utf8');
-const quizData = () => JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
-const hanzi = (s) => (String(s || '').match(/[\u4e00-\u9fff]/g) || []).length;
+const CN = { 一: 1, 两: 2, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
+const cnum = (s) => (CN[s] !== undefined ? CN[s] : Number(s) || 0);
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const docLines = (doc) => String(doc).split('\n');
 
-function grams(s, n = 4) {
-  const out = new Set();
-  for (const seg of String(s || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
-    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
-  }
-  return out;
+function sections(doc) {
+  return docLines(doc).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-/** 「四个屈光间质——角膜、房水、晶状体、玻璃体——」里那一串 */
-function mediaOrder(text = docText()) {
-  const tail = text.split('四个屈光间质——')[1];
-  if (!tail) return [];
-  return tail.split('——')[0].split('、').map((s) => s.trim()).filter(Boolean);
+function paragraphs(doc) {
+  return docLines(doc)
+    .map((l) => l.trim())
+    .filter((l) => l && !/^[#>|]/.test(l) && !/^[-*+]\s/.test(l) && !/^\d+[.、]/.test(l))
+    .filter((l) => !l.includes('|'));
 }
 
-/** 三层壁：正文用 **纤维膜。** 这种加粗小标题 */
-function wallLayers(text = docText()) {
-  return [...text.matchAll(/\*\*(纤维膜|血管膜|视网膜)。\*\*/g)].map((m) => m[1]);
-}
-
-/** 带单位的数值（含区间），保留原始写法 */
-const VALUE_RE = /\d+(?:\.\d+)?(?:–\d+(?:\.\d+)?)?\s*(?:mm×\d+(?:\.\d+)?mm|MHz|dB|ml|°|mm|秒|小时|min|s)/g;
-
-/** 把正文按句切开，取每一句里带的共识节号与该句数值 */
-function taggedValues(text = docText()) {
+function tables(doc) {
+  const ls = docLines(doc);
+  const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
   const out = [];
-  for (const seg of text.split(/[。；\n]/)) {
-    const tag = /共识·第([一二三四五六七八九十]+)节/.exec(seg);
-    const vals = [...seg.matchAll(VALUE_RE)].map((m) => m[0].replace(/\s+/g, ''));
-    if (!tag || vals.length === 0) continue;
-    out.push({ section: tag[1], values: [...new Set(vals)], sentence: seg.trim() });
+  let i = 0;
+  while (i < ls.length) {
+    if (/^\s*\|/.test(ls[i])) {
+      const block = [];
+      while (i < ls.length && /^\s*\|/.test(ls[i])) { block.push(ls[i]); i += 1; }
+      const header = cells(block[0]);
+      const rows = block.slice(1).filter((l) => !/^\s*\|[\s:|-]+\|\s*$/.test(l)).map(cells);
+      out.push({ header, cols: header.length, rows });
+    } else { i += 1; }
   }
   return out;
 }
 
-/** 全部设备频率/信号类数值（MHz、dB），用来查它们有没有标节 */
-function deviceParams(text = docText()) {
-  return [...text.matchAll(VALUE_RE)]
-    .map((m) => m[0].replace(/\s+/g, ''))
-    .filter((v) => /MHz|dB$/.test(v));
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let j = 0; j + n <= seg.length; j += 1) out.add(seg.slice(j, j + n));
+  }
+  return out;
 }
 
-/** 中心凹是否落在扫描框内：offsetMm 为中心凹偏离框心的距离，halfMm 为框的半边长 */
-function foveaInFrame(offsetMm, halfMm) {
-  if (!(halfMm > 0)) throw new RangeError('框的半边长必须为正');
-  if (!(offsetMm >= 0)) throw new RangeError('偏移量用绝对值，不接受负数');
-  return offsetMm <= halfMm;
+/* ── 本章对账：从正文解析，不手打 ───────────────────────────────── */
+
+function facts(doc) {
+  const walls = ['纤维膜', '血管膜', '视网膜'].filter((k) => doc.includes('**' + k + '。**'));
+  const cornea = cnum((doc.match(/自外向内分([一二三四五六七八九十])层/) || [])[1] || '');
+  const media = ['角膜', '房水', '晶状体', '玻璃体'].filter((k) => doc.includes('**' + k + '**：'));
+  const quadList = (doc.match(/分为([一二三四])个象限（([^）]+)）/) || []);
+  const quads = quadList[2] ? quadList[2].split('、') : [];
+  const quadN = cnum(quadList[1] || '') || quads.length;
+  const vessels = ['视网膜中央血管系统', '睫状血管系统'].filter((k) => doc.includes(k));
+  const wheelN = cnum((doc.match(/前([一二三四五])轮可对应/) || [])[1] || '');
+  const chiasm = /鼻侧纤维交叉、颞侧纤维不交叉/.test(doc) ? 2 : 0;
+  const consensus = [...new Set([...doc.matchAll(/共识·第([一二三四五六七八九十]+)节/g)].map((m) => m[1]))];
+
+  return {
+    walls, cornea, media, quads, quadN, vessels, wheelN, chiasm, consensus,
+    lines: [
+      '三层壁 ' + walls.length + ' 层：' + (walls.join(' / ') || '（未解析到）'),
+      '角膜自外向内 ' + cornea + ' 层：上皮损伤可再生，基质损伤以瘢痕修复',
+      '屈光间质 ' + media.length + ' 个：' + media.join('、') + '——先看介质，再选检查',
+      '视网膜血管分 ' + quadN + ' 象限：' + quads.join('、') + '；记录写象限 + 时钟位 + 与标志结构的关系',
+      '两套血管 ' + vessels.length + ' 套：' + vessels.join(' / ') + '，在视网膜外层交界处分水岭',
+      '五轮中可对应 ' + wheelN + ' 轮，水轮只作「眼内」这一层级用',
+      '视交叉交叉的纤维 ' + chiasm + ' 侧：鼻侧交叉、颞侧不交叉——形状即定位',
+      '正文引到共识节 ' + consensus.length + ' 个：' + (consensus.map((s) => '第' + s + '节').join('、') || '（无）'),
+    ],
+  };
 }
 
-function quizAudit() {
-  const q = quizData();
-  const body = grams(docText());
-  const qs = Array.isArray(q.questions) ? q.questions : [];
-  const byStage = { pre: 0, check: 0, post: 0 };
+/* ── quiz 体检 ──────────────────────────────────────────────────── */
+
+function quizAudit(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
   const problems = [];
   let grounded = 0;
-
-  qs.forEach((item, i) => {
+  const items = qs.map((q, i) => {
     const n = i + 1;
-    if (item.stage in byStage) byStage[item.stage] += 1;
-    else problems.push(`第 ${n} 题 stage 非法：${item.stage}`);
-    const opts = Array.isArray(item.options) ? item.options : [];
-    if (opts.length !== 4) problems.push(`第 ${n} 题有 ${opts.length} 个选项`);
-    if (!(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < opts.length)) {
-      problems.push(`第 ${n} 题 correct 下标非法`);
-    }
-    if (hanzi(item.explain) < 30) problems.push(`第 ${n} 题 explain 只有 ${hanzi(item.explain)} 汉字`);
-    if (item.stage === 'check') {
-      const right = String(opts[item.correct] || '');
-      if ([...grams(right)].some((g) => body.has(g))) grounded += 1;
-    }
+    if (q.stage in stage) stage[q.stage] += 1; else problems.push('第 ' + n + ' 题 stage 非法');
+    const opts = Array.isArray(q.options) ? q.options : [];
+    if (opts.length !== 4) problems.push('第 ' + n + ' 题选项 ' + opts.length + ' 个');
+    if (!(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < opts.length)) problems.push('第 ' + n + ' 题 correct 非法');
+    const why = q.explain || q.explanation || '';
+    if (hanzi(why) < 30) problems.push('第 ' + n + ' 题解释 ' + hanzi(why) + ' 汉字');
+    const hit = [...grams(String(opts[q.correct] || ''))].filter((g) => body.has(g));
+    if (q.stage === 'check' && hit.length) grounded += 1;
+    return { n, stage: q.stage, options: opts.length, explain: hanzi(why), hit: hit.length };
   });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    grounded,
+    answers: qs.map((q) => q.correct),
+    distinct: new Set(qs.map((q) => q.correct)).size,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explain)) : 0,
+    fourOptions: items.every((x) => x.options === 4),
+    problems,
+  };
+}
 
-  return { total: qs.length, byStage, grounded, problems };
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    docHanzi: hanzi(doc),
+    paragraphs: paragraphs(doc).length,
+    sections: sections(doc),
+    tables: ts.map((t) => ({ header: t.header, cols: t.cols, rows: t.rows.length })),
+    facts: facts(doc),
+    quiz: quizAudit(quiz, doc),
+  };
 }
 
 function main() {
-  const text = docText();
-  const tagged = taggedValues(text);
-  const a = quizAudit();
-
-  console.log('眼科影像检查 · 第 2 章 对账');
+  const r = analyze();
+  console.log('眼科影像检查 第 ' + CHAPTER + ' 章 · ' + TITLE);
+  console.log('章规模：正文 ' + r.docHanzi + ' 汉字 · ' + r.paragraphs + ' 段 · 节 ' + r.sections.length + ' 个 · 表 ' + r.tables.length + ' 张');
   console.log('');
-  console.log(`四层屈光间质：${mediaOrder(text).join(' → ')}`);
-  console.log(`三层壁：${wallLayers(text).join(' → ')}`);
+  console.log('节标题：');
+  for (const s of r.sections) console.log('  ' + s);
+  if (r.tables.length) {
+    console.log('');
+    console.log('表格：');
+    r.tables.forEach((t, i) => console.log('  [' + (i + 1) + '] ' + t.header.join(' / ') + ' —— ' + t.cols + ' 列 × ' + t.rows + ' 行'));
+  }
   console.log('');
-  console.log('带节号的共识值：');
-  for (const t of tagged) console.log(`  第${t.section}节：${t.values.join('、')}`);
-  console.log(`设备参数（MHz/dB）：${deviceParams(text).join('、')}`);
-  console.log(`水轮是否被判为不可对应：${text.includes('水轮不对应') ? '是' : '否'}`);
+  console.log('本章对账（解析正文后现算）：');
+  for (const line of r.facts.lines) console.log('  · ' + line);
   console.log('');
-  console.log(`习题 ${a.total} 题（pre ${a.byStage.pre} / check ${a.byStage.check} / post ${a.byStage.post}）`);
-  console.log(`check 题正确选项能在正文找到原词的：${a.grounded} 道`);
-  console.log(a.problems.length ? `✗ ${a.problems.length} 处：${a.problems.join('；')}` : '✓ 结构齐、解释够长、判据落在正文');
+  console.log('quiz ' + r.quiz.total + ' 题（pre ' + r.quiz.stage.pre + ' / check ' + r.quiz.stage.check + ' / post ' + r.quiz.stage.post + '）· 答案 ' + r.quiz.answers.join('/'));
+  console.log('  check 题接地 ' + r.quiz.grounded + ' 道 · 答案落在 ' + r.quiz.distinct + ' 个位置 · 最短解释 ' + r.quiz.minExplain + ' 汉字');
+  console.log(r.quiz.problems.length ? '  ✗ ' + r.quiz.problems.join('；') : '  ✓ 结构齐、解释过线、check 题落在正文');
   console.log('');
-  console.log('※ 数字由本章正文现算，不手打；正文改动后重跑即可复现。');
+  console.log('※ 数字由本章正文与习题现算，正文改动后重跑即可复核。');
+  console.log('※ 本章不给正常厚度、正常眼轴与正常视野角度；数值以所在机构规范与设备说明书为准。');
 }
 
 if (require.main === module) main();
 
-module.exports = {
-  docText,
-  quizData,
-  hanzi,
-  grams,
-  mediaOrder,
-  wallLayers,
-  taggedValues,
-  deviceParams,
-  foveaInFrame,
-  quizAudit,
-};
+module.exports = { analyze, readDoc, sections, paragraphs, tables, grams, hanzi, cnum, facts, quizAudit, CHAPTER, SLUG, TITLE, DOC, QUIZ };

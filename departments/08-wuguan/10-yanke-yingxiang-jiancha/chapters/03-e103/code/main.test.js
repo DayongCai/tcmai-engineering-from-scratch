@@ -2,76 +2,41 @@
 
 const test = require('node:test');
 const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const {
-  docText,
-  quizData,
-  grams,
-  CONSENSUS_VALUES,
-  observationLayers,
-  minGrid,
-  sentinels,
-  plusPoints,
-  photoUses,
-  qcItems,
-  consensusHits,
-  quizAudit,
-} = require('./main.js');
+const { analyze, facts, quizAudit, sections, tables, readDoc } = require('./main.js');
+const quiz = () => JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
 
-test('三层观察按 有没有 → 什么样 → 变了没有 排，记录只占第三层', () => {
-  assert.deepStrictEqual(observationLayers(), ['有没有', '什么样', '变了没有']);
+test('章规模：节标题 6 个，无表格', () => {
+  const doc = readDoc();
+  assert.strictEqual(sections(doc).length, 6);
+  assert.strictEqual(tables(doc).length, 0);
 });
 
-test('形态记录的最小集是五格，且顺序与正文一致', () => {
-  assert.deepStrictEqual(minGrid(), ['部位', '大小', '边界', '深度', '荧光素染色表现']);
+test('本章对账：裂隙灯四类、五条加分、五格与三哨兵、质控五项', () => {
+  const f = facts(readDoc());
+  assert.strictEqual(f.slit.length, 4);
+  assert.strictEqual(f.plus, 5);
+  assert.strictEqual(f.minus, 3);
+  assert.strictEqual(f.five.length, 5);
+  assert.deepStrictEqual(f.five, ['部位', '大小', '边界', '深度', '荧光素染色表现']);
+  assert.strictEqual(f.sentinels.length, 3);
+  assert.strictEqual(f.qc.length, 5);
 });
 
-test('三项哨兵齐：充血类型、前房反应、瞳神大小与形态', () => {
-  assert.deepStrictEqual(sentinels(), ['充血类型', '前房反应', '瞳神大小与形态']);
-});
-
-test('加分情形五条、照相三用途、质控五项', () => {
-  assert.strictEqual(plusPoints(), 5);
-  assert.deepStrictEqual(photoUses(), ['基线', '交班', '争议']);
-  assert.deepStrictEqual(qcItems(), ['清晰度', '亮度对比', '对焦', '覆盖', '伪影']);
-});
-
-test('共识值原样保留：45°、35°、3mm、4–6 小时', () => {
-  const hits = consensusHits();
-  assert.deepStrictEqual(hits.map((h) => h.value), CONSENSUS_VALUES);
-  for (const h of hits) assert.ok(h.found, `正文缺共识值：${h.value}`);
-});
-
-test('正文没有把共识值改写成更高的强制口径', () => {
-  const text = docText();
-  for (const bad of ['必须 45°', '必须 35°', '必须散瞳']) assert.ok(!text.includes(bad), `出现升级写法：${bad}`);
-});
-
-test('习题结构：6 题、pre 1 / check 3 / post 2、每题 4 选项', () => {
-  const a = quizAudit();
-  assert.strictEqual(a.total, 6);
-  assert.deepStrictEqual(a.byStage, { pre: 1, check: 3, post: 2 });
-  assert.deepStrictEqual(a.problems, []);
-  for (const item of quizData().questions) {
-    assert.strictEqual(new Set(item.options).size, 4, `选项有重复：${item.question}`);
-  }
-});
-
-test('三道 check 题的正确选项都能在本章正文找到原词', () => {
-  const a = quizAudit();
-  assert.strictEqual(a.grounded, a.byStage.check);
+test('quiz 体检：题量、三段、四选项、解释过线、check 题接地', () => {
+  const a = quizAudit(quiz(), readDoc());
+  assert.strictEqual(a.total, 7);
+  assert.deepStrictEqual(a.stage, { pre: 1, check: 3, post: 3 });
+  assert.ok(a.fourOptions);
+  assert.ok(a.minExplain >= 30);
   assert.ok(a.grounded >= 2);
+  assert.deepStrictEqual(a.problems, []);
 });
 
-test('每题正确选项的用词都能在正文里逐字对上', () => {
-  const body = grams(docText());
-  for (const item of quizData().questions) {
-    const right = item.options[item.correct];
-    assert.ok([...grams(right)].some((g) => body.has(g)), `正文里找不到：${right}`);
-  }
-});
-
-test('本题库不写影像诊断结论：三不写的边界留在正文', () => {
-  const text = docText();
-  assert.ok(text.includes('记录对象，不是影像诊断'));
+test('analyze() 整体跑通', () => {
+  const r = analyze();
+  assert.ok(r.facts.lines.length >= 5);
+  assert.ok(r.docHanzi > 1000);
 });

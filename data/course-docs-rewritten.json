@@ -1,1054 +1,1075 @@
 {
-  "note": "已补实课程正文的登记表。规则：登记前必须把该科目 chapters/*/docs/zh.md 的模板残留清零，且每章 ≥2,500 汉字；登记后 check_course_docs_quality.js --check 会断言这一点。未登记科目只警告不判失败（存量在补）。",
-  "minHzPerChapter": 2500,
-  "rewritten": [
-    {
-      "dept": "07-zhineng",
-      "subject": "05-zhongyi-zhishi-tupu",
-      "chapters": 6,
-      "words": 16476,
-      "at": "2026-11-22",
-      "note": "中医知识图谱：三元组/本体/六类边/术语归一（117 类 251 成员）/FTS5 双虚表；数字回 standards/knowledge-tree 与 semtensor 实算"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "03-zhongyi-zhineng-shebei",
-      "chapters": 6,
-      "words": 18097,
-      "at": "2026-11-22",
-      "note": "中医智能设备：四诊采集原理/信号质量与伪差/体质量表/器械注册四道门；删除不可核的「2026 Nobel 光遗传学」框定"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "17-zhongyi-xinxi-xue",
-      "chapters": 6,
-      "words": 17296,
-      "at": "2026-11-22",
-      "note": "中医信息学：受控词表四件套/六层编码体系/数据元六属性/挖掘四级判据/临床信息三层分置；单元数字回 units.json 实算"
-    },
-    {
-      "dept": "08-wuguan",
-      "subject": "14-zhongyi-sangyin-yixue",
-      "chapters": 8,
-      "words": 25099,
-      "at": "2026-11-22",
-      "note": "中医嗓音医学：按章题重写并纠正 05–08 主题错位；引《重樓玉鑰》原文（书名·篇名级）；无剂量、无分期阈值"
-    },
-    {
-      "dept": "08-wuguan",
-      "subject": "08-zhongyi-kouqiang-kexue",
-      "chapters": 10,
-      "words": 28934,
-      "at": "2026-11-22",
-      "note": "中医口腔科学：10 章重写；与教材 10 章章题逐章对齐；方名限公认成方"
-    },
-    {
-      "dept": "08-wuguan",
-      "subject": "09-kouqiang-neike-xue",
-      "chapters": 10,
-      "words": 33854,
-      "at": "2026-11-22",
-      "note": "口腔内科：10 章重写；阈值/分级/剂量留白，只给可执行观察项"
-    },
-    {
-      "dept": "08-wuguan",
-      "subject": "04-yanke-guangxue-yanguang",
-      "chapters": 8,
-      "words": 25476,
-      "at": "2026-11-22",
-      "note": "眼视光学：8 章重写；纠正两处教材算例（−15.00 D/0.3 D、2mm 轴长「抵掉大半」）"
-    },
-    {
-      "dept": "08-wuguan",
-      "subject": "06-zhongyi-yanke-xue",
-      "chapters": 10,
-      "words": 25784,
-      "at": "2026-11-22",
-      "note": "中医眼科学：10 章按章题重写，纠正 3/6/7/8/9/10 章内容错位；MOTTO 逐条对《审视瑶函》《银海精微》等"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "06-zhongyi-zhineng-bianzheng",
-      "chapters": 10,
-      "words": 27433,
-      "at": "2026-11-22",
-      "note": "中医智能辨证：10 章；证素分解/规则顺序依赖/先验零计数/合病并病/kappa 噪底/代价矩阵"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "04-zhongyi-ziran-yuyan-chuli",
-      "chapters": 10,
-      "words": 28021,
-      "at": "2026-11-22",
-      "note": "中医 NLP：10 章；古汉语分词/异体通假/语体分层/标注一致性/评测；数字回 units.json 与本机实跑"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "15-zhongyi-ai-lunli-zhili",
-      "chapters": 8,
-      "words": 22459,
-      "at": "2026-11-22",
-      "note": "中医 AI 伦理与治理：8 章；预期用途先行/同意与训练分离/风险分级与停机责任人/审计追溯"
-    },
-    {
-      "dept": "08-wuguan",
-      "subject": "05-zhongyi-wuguan-jingdian",
-      "chapters": 6,
-      "words": 16772,
-      "at": "2026-11-22",
-      "note": "中医五官经典：6 章；五条谱系/五轮定位边界/咽喉分工/病名判据转移；引 審視瑤函·重樓玉鑰·口齒類要 原文"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "14-zhishichanquan-zhuanhua",
-      "chapters": 6,
-      "words": 19041,
-      "at": "2026-11-22",
-      "note": "知识产权转化：6 章；排他权≠自用权/五种保护对照/三性在中药的难点/四种转让/算法可专利三步/全面覆盖与等同"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "15-zhongyi-guojijiaoyu",
-      "chapters": 6,
-      "words": 18288,
-      "at": "2026-11-22",
-      "note": "中医药国际教育：6 章；接口而非文化/术语三层标准与三种失配/学时压缩先死临床/互认与准入两轨/合作办学四形态"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "05-zhongyi-wenhua-chuanbo",
-      "chapters": 6,
-      "words": 16775,
-      "at": "2026-11-22",
-      "note": "中医药文化传播：6 章；三种说话方式/可译性三硬点/奇观叙事三件套/四类跨文化误读/四项可测指标（不填实测值）"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "07-zhongyi-jiaoyu-xue",
-      "chapters": 8,
-      "words": 23440,
-      "at": "2026-11-22",
-      "note": "中医教育学：8 章；五类对象/两本账/课程表是资源分配/师承与院校互补/考什么学什么/认证保底线"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "01-yixue-tongjixue",
-      "chapters": 10,
-      "words": 26495,
-      "at": "2026-11-22",
-      "note": "医学统计学：10 章；数据类型/描述一对/p 值含义/多重比较/生存分析/可复现报告；每章一个 scipy 现算主例并标演算"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "06-yiyuan-guanli-xue",
-      "chapters": 10,
-      "words": 28294,
-      "at": "2026-11-22",
-      "note": "医院管理学：10 章；住院能力分界/签字与担责错位/门诊动线乘法/处方权边界/质量成本/风险喊停权限/两套疗效判据"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "03-zhongyi-guanli-xue",
-      "chapters": 8,
-      "words": 21290,
-      "at": "2026-11-22",
-      "note": "中医管理学：8 章；产出单位错位/规划要决定关哪些科室/名医工作室成本记在号源/中医治疗率的对证问题"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "04-weisheng-shiye-guanli",
-      "chapters": 8,
-      "words": 23486,
-      "at": "2026-11-22",
-      "note": "卫生事业管理：8 章；责任链/资源配置按规则分/分级诊疗要接得住/支付方式是杠杆/指标只测可记录的"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "02-zhongyiyao-zhengce-fagui",
-      "chapters": 8,
-      "words": 24422,
-      "at": "2026-11-22",
-      "note": "中医药政策法规：8 章；四级效力与三条冲突规则/执法四道门/准入两轨四路径/注册三通道与经典名方四条限制/并重三落点"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "08-jiankang-fuwu-guanli",
-      "chapters": 8,
-      "words": 22053,
-      "at": "2026-11-22",
-      "note": "健康服务管理：8 章；供给分界在责任/分级是分段承接/基层把就诊变随访/公共卫生产出是没发生的事/质量底线是可比重"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "09-yiliao-baoxian-jingji",
-      "chapters": 8,
-      "words": 21885,
-      "at": "2026-11-22",
-      "note": "医保经济学：8 章；风险池与逆选择螺旋/四类支付激励对照/辨证论治与打包支付冲突（三证型 120-160-210）/基金滚动缺口"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "10-yixue-xinxi-guanli",
-      "chapters": 8,
-      "words": 22079,
-      "at": "2026-11-22",
-      "note": "医学信息管理：8 章；数据被追责才是资产/编码错一位即另一病人/HIS-EMR-LIS 三条责任链/权限是证据链/首页同时被结算与评审读"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "11-yiyuan-xinxihua-bingan",
-      "chapters": 8,
-      "words": 23011,
-      "at": "2026-11-22",
-      "note": "医院信息化与病案：8 章；系统是记录的分布图/编码少一位整组匹配不上/签了名才算写完/主诊断选错整组错/同一数三个分母/贴图签名失效"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "12-zhongyiyao-biaozhunhua",
-      "chapters": 8,
-      "words": 21845,
-      "at": "2026-11-22",
-      "note": "中医药标准化：8 章；术语第一刀/五层体系/编码错一位即另一味药/标准能否被检测记录复现/「一两」是多少克/国际互认三前提"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "13-linchuang-keyan-fangfa",
-      "chapters": 8,
-      "words": 21545,
-      "at": "2026-11-22",
-      "note": "临床科研方法：8 章；好问题要能说出什么结果会让你认输/设计够用即可/偏倚是把每步做对也仍在/结局选错答错题/方案书写在收第一例之前"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "19-shehui-yixue",
-      "chapters": 18,
-      "words": 51199,
-      "at": "2026-11-22",
-      "note": "社会医学：18 章 / 51199 字；三次卫生革命/彩虹模型/健康公平（可避免差异）/Bradshaw 四种需要/Andersen 模型/政策三源流/基尼-泰尔分解；数值均标演算"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "17-guanli-xue-jichu",
-      "chapters": 18,
-      "words": 53380,
-      "at": "2026-11-22",
-      "note": "管理学基础：18 章；管理是让同样力气换不同结果·战略是决定不做什么·领导权力五源与权变·激励内容型与过程型完整谱系"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "18-guanli-xinli-xue",
-      "chapters": 18,
-      "words": 52264,
-      "at": "2026-11-22",
-      "note": "管理心理学：18 章；测的是判断的误差·霍桑证明被观察会改变结果·人性假设是免责声明·团队先生产规范·冲突与谈判·EAP"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "20-weisheng-fa-xue",
-      "chapters": 18,
-      "words": 60574,
-      "at": "2026-11-22",
-      "note": "卫生法学：18 章；渊源是顺位·名不正则责不归·同意不是签字·器械分风险·防疫拿自由换时间·救济是发一把能开门的钥匙"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "21-yixue-lunli-xue",
-      "chapters": 18,
-      "words": 56904,
-      "at": "2026-11-22",
-      "note": "医学伦理学：18 章；伦理判断两次转身·四原则冲突谁让位·同意能力不是诊断书·保密四例外·道歉不是认输·谁先上这台机器·动物 3R·算法三处不可见·大医精诚"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "22-yiyao-renli-ziyuan",
-      "chapters": 18,
-      "words": 50627,
-      "at": "2026-11-22",
-      "note": "医药人力资源：18 章；三条执业轨道·最小安全班组·岗位说明书是判断标准·夜班补贴承认了什么·跟师没写进考核表·人证岗记录能不能对上"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "23-yiyuan-kuaiji-caiwu",
-      "chapters": 18,
-      "words": 52672,
-      "at": "2026-11-22",
-      "note": "医院会计财务：18 章；预算是一份签了字的承诺·结余是意见现金流是事实·权重就是政策·整改率不是终点·门禁查得出形式查不出判断"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "24-zhongyi-jiankang-guanli",
-      "chapters": 18,
-      "words": 51893,
-      "at": "2026-11-22",
-      "note": "中医健康管理：18 章；卖的是能复评的闭环·理论不能分层就只是修辞·辨识看两个人会不会得同一结论·食养看能不能吃满一年；不写剂量疗程"
-    },
-    {
-      "dept": "06-guanli",
-      "subject": "16-gonggong-guanli-xue",
-      "chapters": 18,
-      "words": 49269,
-      "at": "2026-11-22",
-      "note": "公共管理学：18 章；第一问是授权·能被考核的部分总比重要的部分小·应急能力在平时攒下的余量·基层承载力=被交办事项÷可用的人"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "01-zhongyi-yundong-xue",
-      "chapters": 8,
-      "words": 22722,
-      "at": "2026-11-22",
-      "note": "中医运动学：8 章；导引能进医书靠能被开出方·运动调的是气机升降出入·体能是一条有先后的链·处方完整性看停的条件写没写；不写剂量"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "02-yao-shang-jiepou",
-      "chapters": 10,
-      "words": 31190,
-      "at": "2026-11-22",
-      "note": "骨伤解剖学（目录名 yao-shang 与内容不符，课名为骨伤解剖）：10 章；骨按受力方向长成·骺板是时间线·关节稳定在骨外四层·神经血管走空隙·下肢力线一偏整副骨架还债"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "03-gushang-kexue-jichu",
-      "chapters": 10,
-      "words": 29154,
-      "at": "2026-11-22",
-      "note": "骨伤科学基础：10 章；正骨先有程序才有流派·影像看得见骨折线看不见怎么伤的·急救第一个动作不是接骨·下肢先算血再算骨·康复是治疗的一部分"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "04-chuangshang-jijiu-xue",
-      "chapters": 8,
-      "words": 23355,
-      "at": "2026-11-22",
-      "note": "创伤急救学：8 章；第一分钟不救任何人只做判断·搬运是把断端抬走·止住看得见的血盯住看不见的血·挤压伤的危险在松开的瞬间"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "05-yundong-yixue",
-      "chapters": 8,
-      "words": 21548,
-      "at": "2026-11-22",
-      "note": "运动医学：8 章；终点是还能不能做回原来那个动作·冰敷退场不是冷不好·过用伤是修复追不上破坏·能上场不是判据"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "06-zhongyi-zhenggu-xue",
-      "chapters": 12,
-      "words": 33158,
-      "at": "2026-11-22",
-      "note": "中医正骨学：12 章；正骨是判断的学问不是手法目录·八法次序比名目重要·复位标准写在功能里·脱位复位成功那一刻评估才刚开始"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "07-zhongyi-jinshang-xue",
-      "chapters": 10,
-      "words": 32579,
-      "at": "2026-11-22",
-      "note": "中医筋伤学：10 章；筋伤不是软组织损伤的同义词·分期的尺子是肿痛活动度不是日历·手法的水平在边界·颈部手法先学会不做；引用只到章·节"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "08-gushang-shoufa-zhiliao",
-      "chapters": 10,
-      "words": 30390,
-      "at": "2026-11-22",
-      "note": "骨伤手法治疗：10 章；手法四字约束一组物理量·八法是六目一条链断在摸上·松与伤差三个变量·颈肩风险不在手上在筛上·没有时点的疗效等于没有疗效"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "09-guke-yingxiang-zhenduan",
-      "chapters": 10,
-      "words": 26817,
-      "at": "2026-11-22",
-      "note": "骨科影像诊断：10 章；退变是年龄写在片子上的字痛是另一回事·骨坏死最早那步只有 MRI 看得见·片子回答有没有不回答痛不痛"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "10-jizhu-bing-xue",
-      "chapters": 10,
-      "words": 26623,
-      "at": "2026-11-22",
-      "note": "脊柱病学：10 章；脊柱是一组会互相代偿的关节·颈痛九成不是颈椎病颈椎病九成不必手术·突出是影像诊断腰痛是一个人的生活·手法与手术之间隔着判据"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "11-guanjie-bing-xue",
-      "chapters": 10,
-      "words": 31602,
-      "at": "2026-11-22",
-      "note": "骨病学（课名为骨病，含结核/肿瘤/代谢/坏死）：10 章；退变是修复失败而非磨损·影像分期≠症状·OA 与 RA 治疗方向相反·一次椎体压缩骨折是下一次的预告"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "12-guzhishusong-tuibian",
-      "chapters": 8,
-      "words": 24320,
-      "at": "2026-11-22",
-      "note": "骨质疏松与退行性疾病：8 章；骨量峰值三十岁就已写定·一张 T 值报告回答不了他会不会骨折·原发性是排除出来的·骨折疏松多半输在第二年"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "13-zhongyi-zhengji-xue",
-      "chapters": 8,
-      "words": 23228,
-      "at": "2026-11-22",
-      "note": "中医整脊学：8 章；第一道门槛是什么算有效·脊柱稳定是三种组织在互相欠账·影像的用法是排除禁忌·骨盆地基歪了最容易被滥用·不良事件可分类"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "14-kangfu-gongcheng-zhiju",
-      "chapters": 8,
-      "words": 23985,
-      "at": "2026-11-22",
-      "note": "康复工程与支具：8 章；支具不治病只改变力的分配·脊柱支具靠三点力不靠裹紧·辅具第一判据是能不能自己用·适配好不好皮肤先说话"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "15-gushang-kangfu-pingding",
-      "chapters": 8,
-      "words": 20773,
-      "at": "2026-11-22",
-      "note": "骨伤康复评定：8 章；评定是把不能做什么换成下一步做什么·够不够用量不出来·ADL 满分可以回不到原来生活·报告写给三个月后的自己"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "02-zhongyi-ruanjian-jiagou-xue",
-      "chapters": 10,
-      "words": 28886,
-      "at": "2026-11-22",
-      "note": "中医软件架构学：10 章；架构是一条能被人接手的依赖方向·接口是一份能单独验收的文档·模块按变化频率切·没写下来的决策等于没做过决策·指标算错只会安静地错·回滚能力才是终点"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "07-yixue-tuxiang-shezhen",
-      "chapters": 10,
-      "words": 27004,
-      "at": "2026-11-22",
-      "note": "医学图像识别：10 章；图像从哪来决定你能问什么·颜色是相对量·卷积三假设·PPV 随基础率漂移（0.794→0.155）·显著性=敏感度非因果·热图不能免责"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "01-yixue-rengong-zhineng-daolun",
-      "chapters": 8,
-      "words": 23029,
-      "at": "2026-11-22",
-      "note": "医学人工智能导论：8 章；边界写在谁签字上·先有编目才有编码最后才有模型·敏感性是模型的属性 PV 不是·伦理不进日志就等于没进系统·学科地图画的是能力坐标"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "08-maizhen-keguanhua",
-      "chapters": 10,
-      "words": 30999,
-      "at": "2026-11-22",
-      "note": "脉诊客观化：10 章；机器接得住波形接不住按到什么程度·先验选错后验再准也是错的·切点就是全部·决策树是能背下来的规则·边界由最难分的那几个人决定·聚类总会给你几个簇"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "09-zhongyi-dashuju-fenxi",
-      "chapters": 8,
-      "words": 20564,
-      "at": "2026-11-22",
-      "note": "中医大数据分析：8 章；四源治理与三层抽取·辛普森悖论与 MH 手算·关联规则 sup/conf/lift 与频次比·倾向评分与 E-value·t-SNE 不可作证据"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "10-llm-yu-zhongyi-zhinengti",
-      "chapters": 12,
-      "words": 32012,
-      "at": "2026-11-22",
-      "note": "LLM 与中医智能体：12 章；三种近要分开·温度=一致性≠正确性·强制引用契约·成功率连乘 0.95^8≈0.66·三不做硬规则与输出四必备件"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "11-zhongyi-jiqiren-xue",
-      "chapters": 8,
-      "words": 21259,
-      "at": "2026-11-22",
-      "note": "中医机器人学：8 章；机器人是必须能停下来的执行体（停止距离 v(t_r+t_b)+v²/2a→8.1–137.5mm）·瓶颈在信号到语义那一跳·超调落在人体上是多少牛·能自动化的是可参数化部分（扳法禁自动化）"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "12-shuzi-renti-xuni-fangzhen",
-      "chapters": 8,
-      "words": 23172,
-      "at": "2026-11-22",
-      "note": "数字人体与虚拟仿真：8 章；形具而神生·四诊数据无共坐标系·穴位经络三层标注与证据等级·材料参数不可知与均匀化·k 非发现·验证/解验证/确认三段论"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "13-zhongyi-duomotai-ronghe",
-      "chapters": 10,
-      "words": 26455,
-      "at": "2026-11-22",
-      "note": "中医多模态融合：10 章；四诊本来就是多模态缺的是时钟·掉一次时钟融合少一分可信·特征是压缩须留下判据·对齐比拼更难·亚型先问稳不稳·知识是约束不是特征"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "14-yixue-shuju-anquan-yinsi",
-      "chapters": 8,
-      "words": 26529,
-      "at": "2026-11-22",
-      "note": "医学数据安全与隐私：8 章；第一道闸门在字段定义·合规底线是分级不是覆盖率·同意是可撤回的授权·权限发给任务不是岗位·去标识是让组合失去分辨力（87% 唯一需粗化）"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "16-jiqi-xuexi",
-      "chapters": 16,
-      "words": 43140,
-      "at": "2026-11-22",
-      "note": "机器学习：16 章；泛化是数据与假设的私下约定·你报的数字可能只是抽样噪声的形状·间隔是几何不是分数·弱学习器要错得不一样·泛化界是最坏情况还剩多少"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "18-zhineng-gongcheng-shijian",
-      "chapters": 6,
-      "words": 17795,
-      "at": "2026-11-22",
-      "note": "智能工程实践（操作型）：6 章；合规是画边界不是签字·接口定不下来架构只是纸上的分工·能跑出同一个数才算流水线·上线是把决策权交出去·把下一次失败提前写出来"
-    },
-    {
-      "dept": "07-zhineng",
-      "subject": "19-zhineng-biye-sheji",
-      "chapters": 6,
-      "words": 16677,
-      "at": "2026-11-22",
-      "note": "智能毕设（操作型）：6 章；先把问题压成别人能重跑的实验·把谁说了算写进文件·哪一步在替我说话·它错在谁身上·凭什么信你按顺序摆出·没有你时跑出同一个数"
-    },
-    {
-      "dept": "08-wuguan",
-      "subject": "03-zhongyi-mianbu-wangzhen",
-      "chapters": 8,
-      "words": 22440,
-      "at": "2026-11-22",
-      "note": "中医面部望诊：8 章；清单可背坐标不能背（24 部位 0 条边界）·气与色两条轴不能合成一个数·22 条判据只有 9 条能从静态照拿到·五法把特征分好了烂的是切分"
-    },
-    {
-      "dept": "08-wuguan",
-      "subject": "01-erbihou-jiepou-shengli",
-      "chapters": 8,
-      "words": 31974,
-      "at": "2026-11-22",
-      "note": "耳鼻喉解剖生理：8 章；四区不是四个器官是四个入口·耳看得见的边界在鼓膜就断了·滞留是链不是点·每一个未见异常都得带一个范围"
-    },
-    {
-      "dept": "08-wuguan",
-      "subject": "02-kouqiang-jiepou-shengli",
-      "chapters": 8,
-      "words": 27445,
-      "at": "2026-11-22",
-      "note": "口腔解剖生理：8 章；口腔是两间房加一道门·牙是挂在骨头上的·上颌一层薄壳下颌一条管子·腮腺是面神经的床-咀嚼五相吞咽四道闸门-牙痛说不准位置是解剖问题"
-    },
-    {
-      "dept": "08-wuguan",
-      "subject": "07-zhongyi-erbihou-xue",
-      "chapters": 10,
-      "words": 27337,
-      "at": "2026-11-22",
-      "note": "中医耳鼻喉科学：10 章；脏腑经络为纲·耳鸣耳聋耳胀·鼻塞鼻渊鼻鼽·乳蛾喉痹梅核气·嗓音·变应性鼻炎·鼓膜与分泌性中耳炎·外治与穴位·鼻内镜术后·量表评价；不写剂量疗程"
-    },
-    {
-      "dept": "08-wuguan",
-      "subject": "10-yanke-yingxiang-jiancha",
-      "chapters": 8,
-      "words": 31254,
-      "at": "2026-11-22",
-      "note": "眼科影像检查：8 章；共识值逐条标节（45/35°、OCT ≥40dB、FFA 0–10/10–20/5–15min、B 超 7.5–10MHz、UBM 35–50MHz、9 项基本信息）；杯盘比可记不可单独承担判读"
-    },
-    {
-      "dept": "08-wuguan",
-      "subject": "15-zhongyi-meirong-pifu",
-      "chapters": 8,
-      "words": 27368,
-      "at": "2026-11-22",
-      "note": "中医美容皮肤：8 章；皮疹是过程疼痛才是结局·辨证辨得再准剂型用错也白搭·越用力去治的那块皮长得越厚·会不会留疤取决于谁在挤它；不写剂量不承诺疗效"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "06-neijing-xuandu",
-      "chapters": 10,
-      "words": 28820,
-      "at": "2026-11-22",
-      "note": "内经选读：10 章；162 篇是丛书合订本·阴阳是一张对照表的两个轴·藏象是职能编制表不是解剖图·十九条是带范围词的映射规则；引文逐字对 standards/materials/neijing-quanwen"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "09-wenbing-xue",
-      "chapters": 10,
-      "words": 35035,
-      "at": "2026-11-22",
-      "note": "温病学：10 章；卫分=上焦在原文无字面依据（全书卫字 0 次）·透热转气/凉血散血/先安未受邪各只出现 1 次·附子 20 方全在湿温寒湿补秋燥、风温三篇 0 方"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "23-zhongcan-xilu-xuandu",
-      "chapters": 10,
-      "words": 34230,
-      "at": "2026-11-22",
-      "note": "医学衷中参西录选读：10 章；衷中参西是排序不是合并·大气下陷是一组判据·石膏误读在生用煅用与顿服分服·参西五层名与验证可借解释与因果不可借；引文逐字核 534 单元"
-    },
-    {
-      "dept": "09-jichu",
-      "subject": "03-yixue-xibao-shengwu-xue",
-      "chapters": 12,
-      "words": 34184,
-      "at": "2026-11-22",
-      "note": "医学细胞生物学：12 章；四隔间链·通透性排序·三种纤维经济·五可调点与组合码·三道闸门·分选地址与两条降解路·潜能层级与三判据；数值只留结构常量"
-    },
-    {
-      "dept": "09-jichu",
-      "subject": "04-yixue-shengwu-xue",
-      "chapters": 16,
-      "words": 43070,
-      "at": "2026-11-22",
-      "note": "医学生物学（章题为细胞生物学 1-8 + 医学遗传学 9-16，非生化）：16 章；球体 V/S 与尺度·端粒与海弗利克界限·q²→2pq·阈值模型 √p；数值标常引口径或演算"
-    },
-    {
-      "dept": "09-jichu",
-      "subject": "09-yixue-yichuan-xue",
-      "chapters": 12,
-      "words": 33889,
-      "at": "2026-11-22",
-      "note": "医学遗传学：12 章；筛查后残余风险 1/490·贝叶斯链 1/2→1/11→4.1%·表亲婚配 F=1/16 风险七倍·核型分辨率 5.8Mb·嵌合漏检 0.95²⁰≈36%"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "16-gushang-linchuang-lunzhuan",
-      "chapters": 6,
-      "words": 15863,
-      "at": "2026-11-22",
-      "note": "骨伤临床轮转（操作型）：6 章；复位看的是你喊停的那一次·门槛在禁忌筛查那三分钟·最贵的错误是把红旗征当落枕·先分清能等与不能等·急诊第一课是分工"
-    },
-    {
-      "dept": "04-gushang",
-      "subject": "17-gushang-biye-sheji",
-      "chapters": 6,
-      "words": 19848,
-      "at": "2026-11-22",
-      "note": "骨伤毕设（操作型）：6 章；选题三判据与 M1–M4·影像测量协议五件套与数据卡·手法五要素与三条量化线·零事件 3/n 上限·交接四件与退役条件"
-    },
-    {
-      "dept": "08-wuguan",
-      "subject": "11-kouqiang-hemian-waike",
-      "chapters": 10,
-      "words": 34683,
-      "at": "2026-11-22",
-      "note": "口腔颌面外科：10 章；科的边界在谁能承担后果·层次是防线间隙是走廊·火毒是结论不是原因·十个病名是一条深度轴（疖到走黄差在脓有没有出路）·急不是病重是窗口短；零剂量零手术参数"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "15-huli-yanjiu-zhengxun",
-      "chapters": 8,
-      "words": 25713,
-      "at": "2026-11-23",
-      "note": "护理研究与循证护理：检索式、证据分级与转化（无足本参考件）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "22-kangfu-huli-xue",
-      "chapters": 18,
-      "words": 51746,
-      "at": "2026-11-23",
-      "note": "康复护理学：功能评估、转移体位与失效模式（教材单元层对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "25-zhongyi-linchuang-huli",
-      "chapters": 18,
-      "words": 52797,
-      "at": "2026-11-23",
-      "note": "中医临床护理学：辨证要点、护理判据与必转红线（无参考电子件）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "16-huli-xue-daolun",
-      "chapters": 18,
-      "words": 53648,
-      "at": "2026-11-23",
-      "note": "护理学导论：四大概念落成动作（教材单元层对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "24-zhongyi-huli-xue",
-      "chapters": 18,
-      "words": 53115,
-      "at": "2026-11-23",
-      "note": "中医护理学：四诊采集、辨证施护与记录字段（教材单元层对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "21-laonian-huli-xue",
-      "chapters": 18,
-      "words": 51706,
-      "at": "2026-11-23",
-      "note": "老年护理学：综合评估、三档动作与多重用药（教材单元层对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "20-jijiu-huli-xue",
-      "chapters": 18,
-      "words": 54277,
-      "at": "2026-11-23",
-      "note": "急救护理学：分诊判据、站位分工与时间轴（教材单元层对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "09-fuchanke-huli-xue",
-      "chapters": 16,
-      "words": 47112,
-      "at": "2026-11-23",
-      "note": "妇产科护理学：分期评估、危险信号与宣教回述（教材单元层对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "23-jingshenke-huli-xue",
-      "chapters": 18,
-      "words": 52843,
-      "at": "2026-11-23",
-      "note": "精神科护理学：观察分档、升级时限与漏防自杀（无参考电子件）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "10-erke-huli-xue",
-      "chapters": 15,
-      "words": 47020,
-      "at": "2026-11-23",
-      "note": "儿科护理学：分层评估、矫正月龄与家属回述（units 对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "07-neike-huli-xue",
-      "chapters": 14,
-      "words": 42813,
-      "at": "2026-11-23",
-      "note": "内科护理学：趋势判读、复评与失效拦截（units 对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "17-huli-xinli-xue",
-      "chapters": 18,
-      "words": 53111,
-      "at": "2026-11-23",
-      "note": "护理心理学：危机询问、沟通动作与记录六列（units 为填充句，按无电子件写）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "18-huli-zonghe-jineng",
-      "chapters": 18,
-      "words": 58704,
-      "at": "2026-11-23",
-      "note": "护理综合技能：核对项、扣分维度与考站评分表（units 对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "08-waike-huli-xue",
-      "chapters": 13,
-      "words": 38931,
-      "at": "2026-11-23",
-      "note": "外科护理学：围手术期危险信号与脱管六步（units 对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "02-jichu-huli-xue",
-      "chapters": 14,
-      "words": 40932,
-      "at": "2026-11-23",
-      "note": "基础护理学：评估核对、步骤判据与院感失效（units 对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "01-zhongyi-huli-jichu",
-      "chapters": 12,
-      "words": 36031,
-      "at": "2026-11-23",
-      "note": "中医护理学基础：四诊采集、成组判据与禁忌优先（units 对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "04-zhongyi-huli-jishu",
-      "chapters": 14,
-      "words": 40951,
-      "at": "2026-11-23",
-      "note": "中医护理技术：灸罐/刮熨/贴敷/熏洗的禁忌优先、反应分档与中止判据（units 对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "19-huli-renwen-goutong",
-      "chapters": 14,
-      "words": 39838,
-      "at": "2026-11-23",
-      "note": "护理人文修养与沟通：交接三句话、话术与失效模式（units 对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "12-jiwei-zhengzheng-huli",
-      "chapters": 10,
-      "words": 30507,
-      "at": "2026-11-23",
-      "note": "急危重症护理学：分层评估、升级路径与转运中断（无参考电子件）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "03-jiankang-pinggu",
-      "chapters": 8,
-      "words": 23052,
-      "at": "2026-11-23",
-      "note": "健康评估：四域采集、判据分档与记录字段（units 对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "11-shequ-huli-xue",
-      "chapters": 8,
-      "words": 22759,
-      "at": "2026-11-23",
-      "note": "社区护理学：人群分层、家访时限与转介条件（units 对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "26-huli-linchuang-lunzhuan",
-      "chapters": 6,
-      "words": 18208,
-      "at": "2026-11-23",
-      "note": "护理临床轮转：入科三问、交接四段与出科考核（无参考电子件）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "27-huli-biye-sheji",
-      "chapters": 6,
-      "words": 17077,
-      "at": "2026-11-23",
-      "note": "护理毕业设计：选题四判据、检索漏斗与答辩分配（无参考电子件）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "13-huli-guanli-xue",
-      "chapters": 6,
-      "words": 19389,
-      "at": "2026-11-23",
-      "note": "护理管理学：指标四要素、排班公平与根因分析（units 对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "14-huli-lunli-fagui",
-      "chapters": 6,
-      "words": 18796,
-      "at": "2026-11-23",
-      "note": "护理伦理与法规：同意五要件、隐私按用途划界（units 对读）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "06-zhongyi-xinli-xue",
-      "chapters": 8,
-      "words": 23434,
-      "at": "2026-11-23",
-      "note": "中医心理学：情志观察、成组判据与转诊界线（旧稿逐单元读倾倒，已重写）"
-    },
-    {
-      "dept": "05-huli",
-      "subject": "05-zhongyi-yangsheng-xue",
-      "chapters": 8,
-      "words": 22816,
-      "at": "2026-11-23",
-      "note": "中医养生学：四季起居饮食判断与停止规则（旧稿 27,738 字倾倒，已重写）"
-    },
-    {
-      "dept": "09-jichu",
-      "subject": "10-bingli-xue",
-      "chapters": 21,
-      "words": 214128,
-      "at": "2026-11-23",
-      "note": "病理学：底本成稿转观点式，补习题与产出"
-    },
-    {
-      "dept": "09-jichu",
-      "subject": "06-shengli-xue",
-      "chapters": 11,
-      "words": 112123,
-      "at": "2026-11-23",
-      "note": "生理学：底本成稿转观点式，补习题与产出"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "21-zhongyi-linchuang-lunzhuan",
-      "chapters": 6,
-      "words": 17274,
-      "at": "2026-11-23",
-      "note": "中医临床轮转：入科三问、交接四段与出科考核（无参考电子件）"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "04-zhongyi-tizhi-xue",
-      "chapters": 8,
-      "words": 24136,
-      "at": "2026-11-23",
-      "note": "中医体质学：九质为尺、成组判定与调体目标（units 超薄仅取术语）"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "20-zhongyi-jingshenbing-xue",
-      "chapters": 12,
-      "words": 37513,
-      "at": "2026-11-23",
-      "note": "中医神志病学：观察项、成组判据与转介红线（units 对读）"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "15-zhongyi-gejia-xueshuo",
-      "chapters": 8,
-      "words": 26230,
-      "at": "2026-11-23",
-      "note": "中医各家学说：学派=不同提问，判据可检（转述层）"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "18-zhongyi-gubing-xue",
-      "chapters": 12,
-      "words": 34465,
-      "at": "2026-11-23",
-      "note": "中医骨病学：影像为分型判据、转手术红线（units 对读）"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "19-zhongyi-laonianbing-xue",
-      "chapters": 12,
-      "words": 34600,
-      "at": "2026-11-23",
-      "note": "中医老年病学：五维评估与转诊（units 对读）"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "16-zhongyi-zhexue-shi",
-      "chapters": 8,
-      "words": 22770,
-      "at": "2026-11-23",
-      "note": "中医哲学史：观念落成临床动作与界限"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "17-zhongyi-jizhen-xue",
-      "chapters": 12,
-      "words": 34460,
-      "at": "2026-11-23",
-      "note": "中医急诊学：分诊分层、危候识别与升级路径（units 对读）"
-    },
-    {
-      "dept": "09-jichu",
-      "subject": "12-yaoli-xue",
-      "chapters": 49,
-      "words": 459868,
-      "at": "2026-11-23",
-      "note": "药理学：52 节收口为 6–8 节、MOTTO 换经典出处；quiz/code 全重做"
-    },
-    {
-      "dept": "09-jichu",
-      "subject": "11-bingli-shengli-xue",
-      "chapters": 53,
-      "words": 373141,
-      "at": "2026-11-23",
-      "note": "病理生理学：节结构归并、MOTTO 回底本经典；quiz/code 全重做"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "10-zhongyi-neike-xue",
-      "chapters": 14,
-      "words": 114996,
-      "at": "2026-11-23",
-      "note": "中医内科学：结构收口 + 14 章 quiz/code"
-    },
-    {
-      "dept": "02-zhongyao",
-      "subject": "03-fangjixue",
-      "chapters": 15,
-      "words": 63846,
-      "at": "2026-11-23",
-      "note": "方剂学：MOTTO 篇名级、免责归位、节数收口 + 15 章 quiz/code"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "14-zhongyi-zhenghou-xue",
-      "chapters": 27,
-      "words": 76847,
-      "at": "2026-11-23",
-      "note": "中医证候学：底本稿重写 27 章（六项密度 + 可复算数）"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "08-jingui-yaolue",
-      "chapters": 24,
-      "words": 87888,
-      "at": "2026-11-23",
-      "note": "金匮要略：23 章重写/结构收口（原文全录由生成器托管）"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "07-shanghanlun",
-      "chapters": 12,
-      "words": 34226,
-      "at": "2026-11-23",
-      "note": "伤寒论：条文/版本/据条立据的读法正文，六项密度 + 12 章 quiz/code"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "01-zhongyi-jichu-lilun",
-      "chapters": 10,
-      "words": 29022,
-      "at": "2026-11-23",
-      "note": "中医基础理论：阴阳五行的偏向轴与约束网，落到临床判断"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "02-yi-gu-wen",
-      "chapters": 8,
-      "words": 24471,
-      "at": "2026-11-23",
-      "note": "医古文：训释判据、版本异文核对与读法动作"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "03-zhongguo-yixue-shi",
-      "chapters": 8,
-      "words": 24031,
-      "at": "2026-11-23",
-      "note": "中国医学史：分期判据与史料四级（一手/出土/转述/传说）"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "05-zhongyi-zhen-duan-xue",
-      "chapters": 12,
-      "words": 37448,
-      "at": "2026-11-23",
-      "note": "中医诊断学：四诊采集项、成组判据与记录字段"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "11-zhongyi-waike-xue",
-      "chapters": 13,
-      "words": 39103,
-      "at": "2026-11-23",
-      "note": "中医外科学：局部四诊、转手术红线与外治停手条件"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "12-zhongyi-fuke-xue",
-      "chapters": 13,
-      "words": 42261,
-      "at": "2026-11-23",
-      "note": "中医妇科学：周期分期、成组判据与必转红线"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "13-zhongyi-erke-xue",
-      "chapters": 14,
-      "words": 41976,
-      "at": "2026-11-23",
-      "note": "中医儿科学：分龄观察、必转红线与家长回述"
-    },
-    {
-      "dept": "01-zhongyi",
-      "subject": "22-zhongyi-biye-sheji",
-      "chapters": 28,
-      "words": 80972,
-      "at": "2026-11-23",
-      "note": "中医毕设：四节点交付、评分维度与失效拦截"
-    }
-  ]
+ "note": "已补实课程正文的登记表。规则：登记前必须把该科目 chapters/*/docs/zh.md 的模板残留清零，且每章 ≥2,500 汉字；登记后 check_course_docs_quality.js --check 会断言这一点。未登记科目只警告不判失败（存量在补）。",
+ "minHzPerChapter": 2500,
+ "rewritten": [
+  {
+   "dept": "01-zhongyi",
+   "subject": "01-zhongyi-jichu-lilun",
+   "chapters": 10,
+   "words": 29022,
+   "at": "2026-11-23",
+   "note": "中医基础理论：阴阳五行的偏向轴与约束网，落到临床判断"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "02-yi-gu-wen",
+   "chapters": 8,
+   "words": 24471,
+   "at": "2026-11-23",
+   "note": "医古文：训释判据、版本异文核对与读法动作"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "03-zhongguo-yixue-shi",
+   "chapters": 8,
+   "words": 24031,
+   "at": "2026-11-23",
+   "note": "中国医学史：分期判据与史料四级（一手/出土/转述/传说）"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "04-zhongyi-tizhi-xue",
+   "chapters": 8,
+   "words": 24136,
+   "at": "2026-11-23",
+   "note": "中医体质学：九质为尺、成组判定与调体目标（units 超薄仅取术语）"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "05-zhongyi-zhen-duan-xue",
+   "chapters": 12,
+   "words": 37448,
+   "at": "2026-11-23",
+   "note": "中医诊断学：四诊采集项、成组判据与记录字段"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "06-neijing-xuandu",
+   "chapters": 10,
+   "words": 28820,
+   "at": "2026-11-22",
+   "note": "内经选读：10 章；162 篇是丛书合订本·阴阳是一张对照表的两个轴·藏象是职能编制表不是解剖图·十九条是带范围词的映射规则；引文逐字对 standards/materials/neijing-quanwen"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "07-shanghanlun",
+   "chapters": 12,
+   "words": 34226,
+   "at": "2026-11-23",
+   "note": "伤寒论：条文/版本/据条立据的读法正文，六项密度 + 12 章 quiz/code"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "08-jingui-yaolue",
+   "chapters": 24,
+   "words": 87888,
+   "at": "2026-11-23",
+   "note": "金匮要略：23 章重写/结构收口（原文全录由生成器托管）"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "09-wenbing-xue",
+   "chapters": 10,
+   "words": 35035,
+   "at": "2026-11-22",
+   "note": "温病学：10 章；卫分=上焦在原文无字面依据（全书卫字 0 次）·透热转气/凉血散血/先安未受邪各只出现 1 次·附子 20 方全在湿温寒湿补秋燥、风温三篇 0 方"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "10-zhongyi-neike-xue",
+   "chapters": 14,
+   "words": 114996,
+   "at": "2026-11-23",
+   "note": "中医内科学：结构收口 + 14 章 quiz/code"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "11-zhongyi-waike-xue",
+   "chapters": 13,
+   "words": 39103,
+   "at": "2026-11-23",
+   "note": "中医外科学：局部四诊、转手术红线与外治停手条件"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "12-zhongyi-fuke-xue",
+   "chapters": 13,
+   "words": 42261,
+   "at": "2026-11-23",
+   "note": "中医妇科学：周期分期、成组判据与必转红线"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "13-zhongyi-erke-xue",
+   "chapters": 14,
+   "words": 41976,
+   "at": "2026-11-23",
+   "note": "中医儿科学：分龄观察、必转红线与家长回述"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "14-zhongyi-zhenghou-xue",
+   "chapters": 27,
+   "words": 76847,
+   "at": "2026-11-23",
+   "note": "中医证候学：底本稿重写 27 章（六项密度 + 可复算数）"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "15-zhongyi-gejia-xueshuo",
+   "chapters": 8,
+   "words": 26230,
+   "at": "2026-11-23",
+   "note": "中医各家学说：学派=不同提问，判据可检（转述层）"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "16-zhongyi-zhexue-shi",
+   "chapters": 8,
+   "words": 22770,
+   "at": "2026-11-23",
+   "note": "中医哲学史：观念落成临床动作与界限"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "17-zhongyi-jizhen-xue",
+   "chapters": 12,
+   "words": 34460,
+   "at": "2026-11-23",
+   "note": "中医急诊学：分诊分层、危候识别与升级路径（units 对读）"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "18-zhongyi-gubing-xue",
+   "chapters": 12,
+   "words": 34465,
+   "at": "2026-11-23",
+   "note": "中医骨病学：影像为分型判据、转手术红线（units 对读）"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "19-zhongyi-laonianbing-xue",
+   "chapters": 12,
+   "words": 34600,
+   "at": "2026-11-23",
+   "note": "中医老年病学：五维评估与转诊（units 对读）"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "20-zhongyi-jingshenbing-xue",
+   "chapters": 12,
+   "words": 37513,
+   "at": "2026-11-23",
+   "note": "中医神志病学：观察项、成组判据与转介红线（units 对读）"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "21-zhongyi-linchuang-lunzhuan",
+   "chapters": 6,
+   "words": 17274,
+   "at": "2026-11-23",
+   "note": "中医临床轮转：入科三问、交接四段与出科考核（无参考电子件）"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "22-zhongyi-biye-sheji",
+   "chapters": 28,
+   "words": 80972,
+   "at": "2026-11-23",
+   "note": "中医毕设：四节点交付、评分维度与失效拦截"
+  },
+  {
+   "dept": "01-zhongyi",
+   "subject": "23-zhongcan-xilu-xuandu",
+   "chapters": 10,
+   "words": 34230,
+   "at": "2026-11-22",
+   "note": "医学衷中参西录选读：10 章；衷中参西是排序不是合并·大气下陷是一组判据·石膏误读在生用煅用与顿服分服·参西五层名与验证可借解释与因果不可借；引文逐字核 534 单元"
+  },
+  {
+   "dept": "02-zhongyao",
+   "subject": "03-fangjixue",
+   "chapters": 15,
+   "words": 63846,
+   "at": "2026-11-23",
+   "note": "方剂学：MOTTO 篇名级、免责归位、节数收口 + 15 章 quiz/code"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "01-zhongyi-yundong-xue",
+   "chapters": 8,
+   "words": 22722,
+   "at": "2026-11-22",
+   "note": "中医运动学：8 章；导引能进医书靠能被开出方·运动调的是气机升降出入·体能是一条有先后的链·处方完整性看停的条件写没写；不写剂量"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "02-yao-shang-jiepou",
+   "chapters": 10,
+   "words": 31190,
+   "at": "2026-11-22",
+   "note": "骨伤解剖学（目录名 yao-shang 与内容不符，课名为骨伤解剖）：10 章；骨按受力方向长成·骺板是时间线·关节稳定在骨外四层·神经血管走空隙·下肢力线一偏整副骨架还债"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "03-gushang-kexue-jichu",
+   "chapters": 10,
+   "words": 29154,
+   "at": "2026-11-22",
+   "note": "骨伤科学基础：10 章；正骨先有程序才有流派·影像看得见骨折线看不见怎么伤的·急救第一个动作不是接骨·下肢先算血再算骨·康复是治疗的一部分"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "04-chuangshang-jijiu-xue",
+   "chapters": 8,
+   "words": 23355,
+   "at": "2026-11-22",
+   "note": "创伤急救学：8 章；第一分钟不救任何人只做判断·搬运是把断端抬走·止住看得见的血盯住看不见的血·挤压伤的危险在松开的瞬间"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "05-yundong-yixue",
+   "chapters": 8,
+   "words": 21548,
+   "at": "2026-11-22",
+   "note": "运动医学：8 章；终点是还能不能做回原来那个动作·冰敷退场不是冷不好·过用伤是修复追不上破坏·能上场不是判据"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "06-zhongyi-zhenggu-xue",
+   "chapters": 12,
+   "words": 33158,
+   "at": "2026-11-22",
+   "note": "中医正骨学：12 章；正骨是判断的学问不是手法目录·八法次序比名目重要·复位标准写在功能里·脱位复位成功那一刻评估才刚开始"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "07-zhongyi-jinshang-xue",
+   "chapters": 10,
+   "words": 32579,
+   "at": "2026-11-22",
+   "note": "中医筋伤学：10 章；筋伤不是软组织损伤的同义词·分期的尺子是肿痛活动度不是日历·手法的水平在边界·颈部手法先学会不做；引用只到章·节"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "08-gushang-shoufa-zhiliao",
+   "chapters": 10,
+   "words": 30390,
+   "at": "2026-11-22",
+   "note": "骨伤手法治疗：10 章；手法四字约束一组物理量·八法是六目一条链断在摸上·松与伤差三个变量·颈肩风险不在手上在筛上·没有时点的疗效等于没有疗效"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "09-guke-yingxiang-zhenduan",
+   "chapters": 10,
+   "words": 26817,
+   "at": "2026-11-22",
+   "note": "骨科影像诊断：10 章；退变是年龄写在片子上的字痛是另一回事·骨坏死最早那步只有 MRI 看得见·片子回答有没有不回答痛不痛"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "10-jizhu-bing-xue",
+   "chapters": 10,
+   "words": 26623,
+   "at": "2026-11-22",
+   "note": "脊柱病学：10 章；脊柱是一组会互相代偿的关节·颈痛九成不是颈椎病颈椎病九成不必手术·突出是影像诊断腰痛是一个人的生活·手法与手术之间隔着判据"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "11-guanjie-bing-xue",
+   "chapters": 10,
+   "words": 31602,
+   "at": "2026-11-22",
+   "note": "骨病学（课名为骨病，含结核/肿瘤/代谢/坏死）：10 章；退变是修复失败而非磨损·影像分期≠症状·OA 与 RA 治疗方向相反·一次椎体压缩骨折是下一次的预告"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "12-guzhishusong-tuibian",
+   "chapters": 8,
+   "words": 24320,
+   "at": "2026-11-22",
+   "note": "骨质疏松与退行性疾病：8 章；骨量峰值三十岁就已写定·一张 T 值报告回答不了他会不会骨折·原发性是排除出来的·骨折疏松多半输在第二年"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "13-zhongyi-zhengji-xue",
+   "chapters": 8,
+   "words": 23228,
+   "at": "2026-11-22",
+   "note": "中医整脊学：8 章；第一道门槛是什么算有效·脊柱稳定是三种组织在互相欠账·影像的用法是排除禁忌·骨盆地基歪了最容易被滥用·不良事件可分类"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "14-kangfu-gongcheng-zhiju",
+   "chapters": 8,
+   "words": 23985,
+   "at": "2026-11-22",
+   "note": "康复工程与支具：8 章；支具不治病只改变力的分配·脊柱支具靠三点力不靠裹紧·辅具第一判据是能不能自己用·适配好不好皮肤先说话"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "15-gushang-kangfu-pingding",
+   "chapters": 8,
+   "words": 20773,
+   "at": "2026-11-22",
+   "note": "骨伤康复评定：8 章；评定是把不能做什么换成下一步做什么·够不够用量不出来·ADL 满分可以回不到原来生活·报告写给三个月后的自己"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "16-gushang-linchuang-lunzhuan",
+   "chapters": 6,
+   "words": 15863,
+   "at": "2026-11-22",
+   "note": "骨伤临床轮转（操作型）：6 章；复位看的是你喊停的那一次·门槛在禁忌筛查那三分钟·最贵的错误是把红旗征当落枕·先分清能等与不能等·急诊第一课是分工"
+  },
+  {
+   "dept": "04-gushang",
+   "subject": "17-gushang-biye-sheji",
+   "chapters": 6,
+   "words": 19848,
+   "at": "2026-11-22",
+   "note": "骨伤毕设（操作型）：6 章；选题三判据与 M1–M4·影像测量协议五件套与数据卡·手法五要素与三条量化线·零事件 3/n 上限·交接四件与退役条件"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "01-zhongyi-huli-jichu",
+   "chapters": 12,
+   "words": 36031,
+   "at": "2026-11-23",
+   "note": "中医护理学基础：四诊采集、成组判据与禁忌优先（units 对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "02-jichu-huli-xue",
+   "chapters": 14,
+   "words": 40932,
+   "at": "2026-11-23",
+   "note": "基础护理学：评估核对、步骤判据与院感失效（units 对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "03-jiankang-pinggu",
+   "chapters": 8,
+   "words": 23052,
+   "at": "2026-11-23",
+   "note": "健康评估：四域采集、判据分档与记录字段（units 对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "04-zhongyi-huli-jishu",
+   "chapters": 14,
+   "words": 40951,
+   "at": "2026-11-23",
+   "note": "中医护理技术：灸罐/刮熨/贴敷/熏洗的禁忌优先、反应分档与中止判据（units 对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "05-zhongyi-yangsheng-xue",
+   "chapters": 8,
+   "words": 22816,
+   "at": "2026-11-23",
+   "note": "中医养生学：四季起居饮食判断与停止规则（旧稿 27,738 字倾倒，已重写）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "06-zhongyi-xinli-xue",
+   "chapters": 8,
+   "words": 23434,
+   "at": "2026-11-23",
+   "note": "中医心理学：情志观察、成组判据与转诊界线（旧稿逐单元读倾倒，已重写）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "07-neike-huli-xue",
+   "chapters": 14,
+   "words": 42813,
+   "at": "2026-11-23",
+   "note": "内科护理学：趋势判读、复评与失效拦截（units 对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "08-waike-huli-xue",
+   "chapters": 13,
+   "words": 38931,
+   "at": "2026-11-23",
+   "note": "外科护理学：围手术期危险信号与脱管六步（units 对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "09-fuchanke-huli-xue",
+   "chapters": 16,
+   "words": 47112,
+   "at": "2026-11-23",
+   "note": "妇产科护理学：分期评估、危险信号与宣教回述（教材单元层对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "10-erke-huli-xue",
+   "chapters": 15,
+   "words": 47020,
+   "at": "2026-11-23",
+   "note": "儿科护理学：分层评估、矫正月龄与家属回述（units 对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "11-shequ-huli-xue",
+   "chapters": 8,
+   "words": 22759,
+   "at": "2026-11-23",
+   "note": "社区护理学：人群分层、家访时限与转介条件（units 对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "12-jiwei-zhengzheng-huli",
+   "chapters": 10,
+   "words": 30507,
+   "at": "2026-11-23",
+   "note": "急危重症护理学：分层评估、升级路径与转运中断（无参考电子件）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "13-huli-guanli-xue",
+   "chapters": 6,
+   "words": 19389,
+   "at": "2026-11-23",
+   "note": "护理管理学：指标四要素、排班公平与根因分析（units 对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "14-huli-lunli-fagui",
+   "chapters": 6,
+   "words": 18796,
+   "at": "2026-11-23",
+   "note": "护理伦理与法规：同意五要件、隐私按用途划界（units 对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "15-huli-yanjiu-zhengxun",
+   "chapters": 8,
+   "words": 25713,
+   "at": "2026-11-23",
+   "note": "护理研究与循证护理：检索式、证据分级与转化（无足本参考件）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "16-huli-xue-daolun",
+   "chapters": 18,
+   "words": 53648,
+   "at": "2026-11-23",
+   "note": "护理学导论：四大概念落成动作（教材单元层对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "17-huli-xinli-xue",
+   "chapters": 18,
+   "words": 53111,
+   "at": "2026-11-23",
+   "note": "护理心理学：危机询问、沟通动作与记录六列（units 为填充句，按无电子件写）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "18-huli-zonghe-jineng",
+   "chapters": 18,
+   "words": 58704,
+   "at": "2026-11-23",
+   "note": "护理综合技能：核对项、扣分维度与考站评分表（units 对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "19-huli-renwen-goutong",
+   "chapters": 14,
+   "words": 39838,
+   "at": "2026-11-23",
+   "note": "护理人文修养与沟通：交接三句话、话术与失效模式（units 对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "20-jijiu-huli-xue",
+   "chapters": 18,
+   "words": 54277,
+   "at": "2026-11-23",
+   "note": "急救护理学：分诊判据、站位分工与时间轴（教材单元层对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "21-laonian-huli-xue",
+   "chapters": 18,
+   "words": 51706,
+   "at": "2026-11-23",
+   "note": "老年护理学：综合评估、三档动作与多重用药（教材单元层对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "22-kangfu-huli-xue",
+   "chapters": 18,
+   "words": 51746,
+   "at": "2026-11-23",
+   "note": "康复护理学：功能评估、转移体位与失效模式（教材单元层对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "23-jingshenke-huli-xue",
+   "chapters": 18,
+   "words": 52843,
+   "at": "2026-11-23",
+   "note": "精神科护理学：观察分档、升级时限与漏防自杀（无参考电子件）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "24-zhongyi-huli-xue",
+   "chapters": 18,
+   "words": 53115,
+   "at": "2026-11-23",
+   "note": "中医护理学：四诊采集、辨证施护与记录字段（教材单元层对读）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "25-zhongyi-linchuang-huli",
+   "chapters": 18,
+   "words": 52797,
+   "at": "2026-11-23",
+   "note": "中医临床护理学：辨证要点、护理判据与必转红线（无参考电子件）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "26-huli-linchuang-lunzhuan",
+   "chapters": 6,
+   "words": 18208,
+   "at": "2026-11-23",
+   "note": "护理临床轮转：入科三问、交接四段与出科考核（无参考电子件）"
+  },
+  {
+   "dept": "05-huli",
+   "subject": "27-huli-biye-sheji",
+   "chapters": 6,
+   "words": 17077,
+   "at": "2026-11-23",
+   "note": "护理毕业设计：选题四判据、检索漏斗与答辩分配（无参考电子件）"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "01-yixue-tongjixue",
+   "chapters": 10,
+   "words": 26495,
+   "at": "2026-11-22",
+   "note": "医学统计学：10 章；数据类型/描述一对/p 值含义/多重比较/生存分析/可复现报告；每章一个 scipy 现算主例并标演算"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "02-zhongyiyao-zhengce-fagui",
+   "chapters": 8,
+   "words": 24422,
+   "at": "2026-11-22",
+   "note": "中医药政策法规：8 章；四级效力与三条冲突规则/执法四道门/准入两轨四路径/注册三通道与经典名方四条限制/并重三落点"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "03-zhongyi-guanli-xue",
+   "chapters": 8,
+   "words": 21290,
+   "at": "2026-11-22",
+   "note": "中医管理学：8 章；产出单位错位/规划要决定关哪些科室/名医工作室成本记在号源/中医治疗率的对证问题"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "04-weisheng-shiye-guanli",
+   "chapters": 8,
+   "words": 23486,
+   "at": "2026-11-22",
+   "note": "卫生事业管理：8 章；责任链/资源配置按规则分/分级诊疗要接得住/支付方式是杠杆/指标只测可记录的"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "05-zhongyi-wenhua-chuanbo",
+   "chapters": 6,
+   "words": 16775,
+   "at": "2026-11-22",
+   "note": "中医药文化传播：6 章；三种说话方式/可译性三硬点/奇观叙事三件套/四类跨文化误读/四项可测指标（不填实测值）"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "06-yiyuan-guanli-xue",
+   "chapters": 10,
+   "words": 28294,
+   "at": "2026-11-22",
+   "note": "医院管理学：10 章；住院能力分界/签字与担责错位/门诊动线乘法/处方权边界/质量成本/风险喊停权限/两套疗效判据"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "07-zhongyi-jiaoyu-xue",
+   "chapters": 8,
+   "words": 23440,
+   "at": "2026-11-22",
+   "note": "中医教育学：8 章；五类对象/两本账/课程表是资源分配/师承与院校互补/考什么学什么/认证保底线"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "08-jiankang-fuwu-guanli",
+   "chapters": 8,
+   "words": 22053,
+   "at": "2026-11-22",
+   "note": "健康服务管理：8 章；供给分界在责任/分级是分段承接/基层把就诊变随访/公共卫生产出是没发生的事/质量底线是可比重"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "09-yiliao-baoxian-jingji",
+   "chapters": 8,
+   "words": 21885,
+   "at": "2026-11-22",
+   "note": "医保经济学：8 章；风险池与逆选择螺旋/四类支付激励对照/辨证论治与打包支付冲突（三证型 120-160-210）/基金滚动缺口"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "10-yixue-xinxi-guanli",
+   "chapters": 8,
+   "words": 22079,
+   "at": "2026-11-22",
+   "note": "医学信息管理：8 章；数据被追责才是资产/编码错一位即另一病人/HIS-EMR-LIS 三条责任链/权限是证据链/首页同时被结算与评审读"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "11-yiyuan-xinxihua-bingan",
+   "chapters": 8,
+   "words": 23011,
+   "at": "2026-11-22",
+   "note": "医院信息化与病案：8 章；系统是记录的分布图/编码少一位整组匹配不上/签了名才算写完/主诊断选错整组错/同一数三个分母/贴图签名失效"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "12-zhongyiyao-biaozhunhua",
+   "chapters": 8,
+   "words": 21845,
+   "at": "2026-11-22",
+   "note": "中医药标准化：8 章；术语第一刀/五层体系/编码错一位即另一味药/标准能否被检测记录复现/「一两」是多少克/国际互认三前提"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "13-linchuang-keyan-fangfa",
+   "chapters": 8,
+   "words": 21545,
+   "at": "2026-11-22",
+   "note": "临床科研方法：8 章；好问题要能说出什么结果会让你认输/设计够用即可/偏倚是把每步做对也仍在/结局选错答错题/方案书写在收第一例之前"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "14-zhishichanquan-zhuanhua",
+   "chapters": 6,
+   "words": 19041,
+   "at": "2026-11-22",
+   "note": "知识产权转化：6 章；排他权≠自用权/五种保护对照/三性在中药的难点/四种转让/算法可专利三步/全面覆盖与等同"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "15-zhongyi-guojijiaoyu",
+   "chapters": 6,
+   "words": 18288,
+   "at": "2026-11-22",
+   "note": "中医药国际教育：6 章；接口而非文化/术语三层标准与三种失配/学时压缩先死临床/互认与准入两轨/合作办学四形态"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "16-gonggong-guanli-xue",
+   "chapters": 18,
+   "words": 49269,
+   "at": "2026-11-22",
+   "note": "公共管理学：18 章；第一问是授权·能被考核的部分总比重要的部分小·应急能力在平时攒下的余量·基层承载力=被交办事项÷可用的人"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "17-guanli-xue-jichu",
+   "chapters": 18,
+   "words": 53380,
+   "at": "2026-11-22",
+   "note": "管理学基础：18 章；管理是让同样力气换不同结果·战略是决定不做什么·领导权力五源与权变·激励内容型与过程型完整谱系"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "18-guanli-xinli-xue",
+   "chapters": 18,
+   "words": 52264,
+   "at": "2026-11-22",
+   "note": "管理心理学：18 章；测的是判断的误差·霍桑证明被观察会改变结果·人性假设是免责声明·团队先生产规范·冲突与谈判·EAP"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "19-shehui-yixue",
+   "chapters": 18,
+   "words": 51199,
+   "at": "2026-11-22",
+   "note": "社会医学：18 章 / 51199 字；三次卫生革命/彩虹模型/健康公平（可避免差异）/Bradshaw 四种需要/Andersen 模型/政策三源流/基尼-泰尔分解；数值均标演算"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "20-weisheng-fa-xue",
+   "chapters": 18,
+   "words": 60574,
+   "at": "2026-11-22",
+   "note": "卫生法学：18 章；渊源是顺位·名不正则责不归·同意不是签字·器械分风险·防疫拿自由换时间·救济是发一把能开门的钥匙"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "21-yixue-lunli-xue",
+   "chapters": 18,
+   "words": 56904,
+   "at": "2026-11-22",
+   "note": "医学伦理学：18 章；伦理判断两次转身·四原则冲突谁让位·同意能力不是诊断书·保密四例外·道歉不是认输·谁先上这台机器·动物 3R·算法三处不可见·大医精诚"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "22-yiyao-renli-ziyuan",
+   "chapters": 18,
+   "words": 50627,
+   "at": "2026-11-22",
+   "note": "医药人力资源：18 章；三条执业轨道·最小安全班组·岗位说明书是判断标准·夜班补贴承认了什么·跟师没写进考核表·人证岗记录能不能对上"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "23-yiyuan-kuaiji-caiwu",
+   "chapters": 18,
+   "words": 52672,
+   "at": "2026-11-22",
+   "note": "医院会计财务：18 章；预算是一份签了字的承诺·结余是意见现金流是事实·权重就是政策·整改率不是终点·门禁查得出形式查不出判断"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "24-zhongyi-jiankang-guanli",
+   "chapters": 18,
+   "words": 51893,
+   "at": "2026-11-22",
+   "note": "中医健康管理：18 章；卖的是能复评的闭环·理论不能分层就只是修辞·辨识看两个人会不会得同一结论·食养看能不能吃满一年；不写剂量疗程"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "25-guanli-shixi-shijian",
+   "chapters": 6,
+   "words": 18344,
+   "at": "2026-11-23"
+  },
+  {
+   "dept": "06-guanli",
+   "subject": "26-guanli-biye-sheji",
+   "chapters": 6,
+   "words": 17794,
+   "at": "2026-11-23"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "01-yixue-rengong-zhineng-daolun",
+   "chapters": 8,
+   "words": 23029,
+   "at": "2026-11-22",
+   "note": "医学人工智能导论：8 章；边界写在谁签字上·先有编目才有编码最后才有模型·敏感性是模型的属性 PV 不是·伦理不进日志就等于没进系统·学科地图画的是能力坐标"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "02-zhongyi-ruanjian-jiagou-xue",
+   "chapters": 10,
+   "words": 28886,
+   "at": "2026-11-22",
+   "note": "中医软件架构学：10 章；架构是一条能被人接手的依赖方向·接口是一份能单独验收的文档·模块按变化频率切·没写下来的决策等于没做过决策·指标算错只会安静地错·回滚能力才是终点"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "03-zhongyi-zhineng-shebei",
+   "chapters": 6,
+   "words": 18097,
+   "at": "2026-11-22",
+   "note": "中医智能设备：四诊采集原理/信号质量与伪差/体质量表/器械注册四道门；删除不可核的「2026 Nobel 光遗传学」框定"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "04-zhongyi-ziran-yuyan-chuli",
+   "chapters": 10,
+   "words": 28021,
+   "at": "2026-11-22",
+   "note": "中医 NLP：10 章；古汉语分词/异体通假/语体分层/标注一致性/评测；数字回 units.json 与本机实跑"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "05-zhongyi-zhishi-tupu",
+   "chapters": 6,
+   "words": 16476,
+   "at": "2026-11-22",
+   "note": "中医知识图谱：三元组/本体/六类边/术语归一（117 类 251 成员）/FTS5 双虚表；数字回 standards/knowledge-tree 与 semtensor 实算"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "06-zhongyi-zhineng-bianzheng",
+   "chapters": 10,
+   "words": 27433,
+   "at": "2026-11-22",
+   "note": "中医智能辨证：10 章；证素分解/规则顺序依赖/先验零计数/合病并病/kappa 噪底/代价矩阵"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "07-yixue-tuxiang-shezhen",
+   "chapters": 10,
+   "words": 27004,
+   "at": "2026-11-22",
+   "note": "医学图像识别：10 章；图像从哪来决定你能问什么·颜色是相对量·卷积三假设·PPV 随基础率漂移（0.794→0.155）·显著性=敏感度非因果·热图不能免责"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "08-maizhen-keguanhua",
+   "chapters": 10,
+   "words": 30999,
+   "at": "2026-11-22",
+   "note": "脉诊客观化：10 章；机器接得住波形接不住按到什么程度·先验选错后验再准也是错的·切点就是全部·决策树是能背下来的规则·边界由最难分的那几个人决定·聚类总会给你几个簇"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "09-zhongyi-dashuju-fenxi",
+   "chapters": 8,
+   "words": 20564,
+   "at": "2026-11-22",
+   "note": "中医大数据分析：8 章；四源治理与三层抽取·辛普森悖论与 MH 手算·关联规则 sup/conf/lift 与频次比·倾向评分与 E-value·t-SNE 不可作证据"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "10-llm-yu-zhongyi-zhinengti",
+   "chapters": 12,
+   "words": 32012,
+   "at": "2026-11-22",
+   "note": "LLM 与中医智能体：12 章；三种近要分开·温度=一致性≠正确性·强制引用契约·成功率连乘 0.95^8≈0.66·三不做硬规则与输出四必备件"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "11-zhongyi-jiqiren-xue",
+   "chapters": 8,
+   "words": 21259,
+   "at": "2026-11-22",
+   "note": "中医机器人学：8 章；机器人是必须能停下来的执行体（停止距离 v(t_r+t_b)+v²/2a→8.1–137.5mm）·瓶颈在信号到语义那一跳·超调落在人体上是多少牛·能自动化的是可参数化部分（扳法禁自动化）"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "12-shuzi-renti-xuni-fangzhen",
+   "chapters": 8,
+   "words": 23172,
+   "at": "2026-11-22",
+   "note": "数字人体与虚拟仿真：8 章；形具而神生·四诊数据无共坐标系·穴位经络三层标注与证据等级·材料参数不可知与均匀化·k 非发现·验证/解验证/确认三段论"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "13-zhongyi-duomotai-ronghe",
+   "chapters": 10,
+   "words": 26455,
+   "at": "2026-11-22",
+   "note": "中医多模态融合：10 章；四诊本来就是多模态缺的是时钟·掉一次时钟融合少一分可信·特征是压缩须留下判据·对齐比拼更难·亚型先问稳不稳·知识是约束不是特征"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "14-yixue-shuju-anquan-yinsi",
+   "chapters": 8,
+   "words": 26529,
+   "at": "2026-11-22",
+   "note": "医学数据安全与隐私：8 章；第一道闸门在字段定义·合规底线是分级不是覆盖率·同意是可撤回的授权·权限发给任务不是岗位·去标识是让组合失去分辨力（87% 唯一需粗化）"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "15-zhongyi-ai-lunli-zhili",
+   "chapters": 8,
+   "words": 22459,
+   "at": "2026-11-22",
+   "note": "中医 AI 伦理与治理：8 章；预期用途先行/同意与训练分离/风险分级与停机责任人/审计追溯"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "16-jiqi-xuexi",
+   "chapters": 16,
+   "words": 43140,
+   "at": "2026-11-22",
+   "note": "机器学习：16 章；泛化是数据与假设的私下约定·你报的数字可能只是抽样噪声的形状·间隔是几何不是分数·弱学习器要错得不一样·泛化界是最坏情况还剩多少"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "17-zhongyi-xinxi-xue",
+   "chapters": 6,
+   "words": 17296,
+   "at": "2026-11-22",
+   "note": "中医信息学：受控词表四件套/六层编码体系/数据元六属性/挖掘四级判据/临床信息三层分置；单元数字回 units.json 实算"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "18-zhineng-gongcheng-shijian",
+   "chapters": 6,
+   "words": 17795,
+   "at": "2026-11-22",
+   "note": "智能工程实践（操作型）：6 章；合规是画边界不是签字·接口定不下来架构只是纸上的分工·能跑出同一个数才算流水线·上线是把决策权交出去·把下一次失败提前写出来"
+  },
+  {
+   "dept": "07-zhineng",
+   "subject": "19-zhineng-biye-sheji",
+   "chapters": 6,
+   "words": 16677,
+   "at": "2026-11-22",
+   "note": "智能毕设（操作型）：6 章；先把问题压成别人能重跑的实验·把谁说了算写进文件·哪一步在替我说话·它错在谁身上·凭什么信你按顺序摆出·没有你时跑出同一个数"
+  },
+  {
+   "dept": "08-wuguan",
+   "subject": "01-erbihou-jiepou-shengli",
+   "chapters": 8,
+   "words": 31974,
+   "at": "2026-11-22",
+   "note": "耳鼻喉解剖生理：8 章；四区不是四个器官是四个入口·耳看得见的边界在鼓膜就断了·滞留是链不是点·每一个未见异常都得带一个范围"
+  },
+  {
+   "dept": "08-wuguan",
+   "subject": "02-kouqiang-jiepou-shengli",
+   "chapters": 8,
+   "words": 27445,
+   "at": "2026-11-22",
+   "note": "口腔解剖生理：8 章；口腔是两间房加一道门·牙是挂在骨头上的·上颌一层薄壳下颌一条管子·腮腺是面神经的床-咀嚼五相吞咽四道闸门-牙痛说不准位置是解剖问题"
+  },
+  {
+   "dept": "08-wuguan",
+   "subject": "03-zhongyi-mianbu-wangzhen",
+   "chapters": 8,
+   "words": 22440,
+   "at": "2026-11-22",
+   "note": "中医面部望诊：8 章；清单可背坐标不能背（24 部位 0 条边界）·气与色两条轴不能合成一个数·22 条判据只有 9 条能从静态照拿到·五法把特征分好了烂的是切分"
+  },
+  {
+   "dept": "08-wuguan",
+   "subject": "04-yanke-guangxue-yanguang",
+   "chapters": 8,
+   "words": 25476,
+   "at": "2026-11-22",
+   "note": "眼视光学：8 章重写；纠正两处教材算例（−15.00 D/0.3 D、2mm 轴长「抵掉大半」）"
+  },
+  {
+   "dept": "08-wuguan",
+   "subject": "05-zhongyi-wuguan-jingdian",
+   "chapters": 6,
+   "words": 16772,
+   "at": "2026-11-22",
+   "note": "中医五官经典：6 章；五条谱系/五轮定位边界/咽喉分工/病名判据转移；引 審視瑤函·重樓玉鑰·口齒類要 原文"
+  },
+  {
+   "dept": "08-wuguan",
+   "subject": "06-zhongyi-yanke-xue",
+   "chapters": 10,
+   "words": 25784,
+   "at": "2026-11-22",
+   "note": "中医眼科学：10 章按章题重写，纠正 3/6/7/8/9/10 章内容错位；MOTTO 逐条对《审视瑶函》《银海精微》等"
+  },
+  {
+   "dept": "08-wuguan",
+   "subject": "07-zhongyi-erbihou-xue",
+   "chapters": 10,
+   "words": 27337,
+   "at": "2026-11-22",
+   "note": "中医耳鼻喉科学：10 章；脏腑经络为纲·耳鸣耳聋耳胀·鼻塞鼻渊鼻鼽·乳蛾喉痹梅核气·嗓音·变应性鼻炎·鼓膜与分泌性中耳炎·外治与穴位·鼻内镜术后·量表评价；不写剂量疗程"
+  },
+  {
+   "dept": "08-wuguan",
+   "subject": "08-zhongyi-kouqiang-kexue",
+   "chapters": 10,
+   "words": 28934,
+   "at": "2026-11-22",
+   "note": "中医口腔科学：10 章重写；与教材 10 章章题逐章对齐；方名限公认成方"
+  },
+  {
+   "dept": "08-wuguan",
+   "subject": "09-kouqiang-neike-xue",
+   "chapters": 10,
+   "words": 33854,
+   "at": "2026-11-22",
+   "note": "口腔内科：10 章重写；阈值/分级/剂量留白，只给可执行观察项"
+  },
+  {
+   "dept": "08-wuguan",
+   "subject": "10-yanke-yingxiang-jiancha",
+   "chapters": 8,
+   "words": 31237,
+   "at": "2026-11-23",
+   "note": "眼科影像检查：8 章；共识值逐条标节（45/35°、OCT ≥40dB、FFA 0–10/10–20/5–15min、B 超 7.5–10MHz、UBM 35–50MHz、9 项基本信息）；杯盘比可记不可单独承担判读"
+  },
+  {
+   "dept": "08-wuguan",
+   "subject": "11-kouqiang-hemian-waike",
+   "chapters": 10,
+   "words": 34683,
+   "at": "2026-11-22",
+   "note": "口腔颌面外科：10 章；科的边界在谁能承担后果·层次是防线间隙是走廊·火毒是结论不是原因·十个病名是一条深度轴（疖到走黄差在脓有没有出路）·急不是病重是窗口短；零剂量零手术参数"
+  },
+  {
+   "dept": "08-wuguan",
+   "subject": "12-kouqiang-xiufu-xue",
+   "chapters": 10,
+   "words": 28960,
+   "at": "2026-11-23"
+  },
+  {
+   "dept": "08-wuguan",
+   "subject": "14-zhongyi-sangyin-yixue",
+   "chapters": 8,
+   "words": 25099,
+   "at": "2026-11-22",
+   "note": "中医嗓音医学：按章题重写并纠正 05–08 主题错位；引《重樓玉鑰》原文（书名·篇名级）；无剂量、无分期阈值"
+  },
+  {
+   "dept": "08-wuguan",
+   "subject": "15-zhongyi-meirong-pifu",
+   "chapters": 8,
+   "words": 27368,
+   "at": "2026-11-22",
+   "note": "中医美容皮肤：8 章；皮疹是过程疼痛才是结局·辨证辨得再准剂型用错也白搭·越用力去治的那块皮长得越厚·会不会留疤取决于谁在挤它；不写剂量不承诺疗效"
+  },
+  {
+   "dept": "09-jichu",
+   "subject": "03-yixue-xibao-shengwu-xue",
+   "chapters": 12,
+   "words": 34184,
+   "at": "2026-11-22",
+   "note": "医学细胞生物学：12 章；四隔间链·通透性排序·三种纤维经济·五可调点与组合码·三道闸门·分选地址与两条降解路·潜能层级与三判据；数值只留结构常量"
+  },
+  {
+   "dept": "09-jichu",
+   "subject": "04-yixue-shengwu-xue",
+   "chapters": 16,
+   "words": 43070,
+   "at": "2026-11-22",
+   "note": "医学生物学（章题为细胞生物学 1-8 + 医学遗传学 9-16，非生化）：16 章；球体 V/S 与尺度·端粒与海弗利克界限·q²→2pq·阈值模型 √p；数值标常引口径或演算"
+  },
+  {
+   "dept": "09-jichu",
+   "subject": "06-shengli-xue",
+   "chapters": 11,
+   "words": 112123,
+   "at": "2026-11-23",
+   "note": "生理学：底本成稿转观点式，补习题与产出"
+  },
+  {
+   "dept": "09-jichu",
+   "subject": "09-yixue-yichuan-xue",
+   "chapters": 12,
+   "words": 33889,
+   "at": "2026-11-22",
+   "note": "医学遗传学：12 章；筛查后残余风险 1/490·贝叶斯链 1/2→1/11→4.1%·表亲婚配 F=1/16 风险七倍·核型分辨率 5.8Mb·嵌合漏检 0.95²⁰≈36%"
+  },
+  {
+   "dept": "09-jichu",
+   "subject": "10-bingli-xue",
+   "chapters": 21,
+   "words": 214128,
+   "at": "2026-11-23",
+   "note": "病理学：底本成稿转观点式，补习题与产出"
+  },
+  {
+   "dept": "09-jichu",
+   "subject": "11-bingli-shengli-xue",
+   "chapters": 53,
+   "words": 373141,
+   "at": "2026-11-23",
+   "note": "病理生理学：节结构归并、MOTTO 回底本经典；quiz/code 全重做"
+  },
+  {
+   "dept": "09-jichu",
+   "subject": "12-yaoli-xue",
+   "chapters": 49,
+   "words": 459868,
+   "at": "2026-11-23",
+   "note": "药理学：52 节收口为 6–8 节、MOTTO 换经典出处；quiz/code 全重做"
+  }
+ ]
 }
