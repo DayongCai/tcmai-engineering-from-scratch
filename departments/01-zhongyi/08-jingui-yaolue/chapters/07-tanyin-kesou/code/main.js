@@ -1,308 +1,379 @@
 'use strict';
 /**
- * 第 7 章 · 痰饮咳嗽：水液代谢的失效
+ * 《金匮要略》第 7 章 · 痰饮咳嗽：水液代谢的失效
+ *
  *   node code/main.js
+ *   node --test code/main.test.js
  *
- * 数据：standards/jingui/底本.json 第 12 篇（外源·笈成，sha256 见该目录 README）
- *
- * 本章只做一件原文自己做了、但读者常常跳过的事：把 41 条**归到四饮**。
- * 四条口径，改任何一条都要同步改 docs/zh.md 与 main.test.js：
- *   · 方只计 `formulas[]`（有方文者），条文提名的方不计。底本 v2 起，一个
- *     `h-formula` 块里的并列方按「<b>X方：</b>」切开，故 12.23（大青龙汤／小青龙汤）、
- *     12.24（木防己汤／木防己去石膏加茯苓芒硝汤）各出两方，全篇 18 方即全部有方文者。
- *   · 归类只认「原文里出现的词」，不认后世注解。判据词一律取自 12.2 的定义句，
- *     因为四饮的边界是那一条自己划的，不是我们从症状表反推的。
- *   · 12.1 / 12.2 是**定义条**，四饮名全出现，归任何一个都是错的 —— 单列「总纲」。
- *   · 「承前」只给方后加减条（12.36–12.40 一条链）。它们的正文里没有饮名，
- *     但首句（青龙汤下已 / 冲气即低 / 咳满即止 / 水去呕止 / 若面热如醉）
- *     逐字承接前条，是按原文结构可判的，不是按我们的理解硬安。
+ * 数据只取一处：本章 docs/zh.md。正文写下的条/方/字数、表里的每一行算式、
+ * 附录全录的条数，全部从这一份文件现算，不读外部语料、不读别的章。
+ * 所以这里能验的只有一件事：正文自己有没有算错、附录与正文对不对得上。
+ * 正文改一个字、表里改一个数，main.test.js 立刻红。
  */
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-const ROOT = path.resolve(__dirname, '../../../../../..');
-const BOOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/jingui/底本.json'), 'utf8'));
-const PIAN = BOOK.pian.find((p) => p.no === 12);
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const CHAPTER = 7;
+const SLUG = '07-tanyin-kesou';
+const TITLE = '痰饮咳嗽：水液代谢的失效';
 
-/** 四饮，顺序即 12.1 的列举顺序 —— 平票时按此序取先，保证结果可复现 */
-const YIN = ['痰饮', '悬饮', '溢饮', '支饮'];
+/* ── 文本口径 ─────────────────────────────────────────────────── */
 
-/**
- * 12.2 的判据词，逐字取自该条：
- *   痰饮：其人素盛今瘦，水走肠间，沥沥有声
- *   悬饮：饮后水流在胁下，咳唾引痛
- *   溢饮：饮水流行，归于四肢，当汗出而不汗出，身体疼重
- *   支饮：咳逆倚息，短气不得卧，其形如肿
- *
- * 为什么用「短语」而不是单字（如 喘、短气、胁下）：
- * 单个症状词在本篇遍地都是（12.3 水在心也「短气」，12.13 肺饮也「喘」），
- * 用它归类会把一半条文吸进支饮。四饮的分界靠的是**症状组合**，不是单症。
- *
- * 每条词都带出处（from）：只允许 12.2 的定义词，外加本篇后文**自己重述过**的
- * 等价说法（目前只有 12.29 的「肠间有水气」——它说的就是 12.2 的「水走肠间」）。
- * 测试会反查每个词是否真出现在所标条文的原文里，防止凭记忆添词。
- */
-const CRITERIA = {
-  痰饮: [
-    { w: '水走肠间', from: '12.2' },
-    { w: '沥沥有声', from: '12.2' },
-    { w: '素盛今瘦', from: '12.2' },
-    { w: '肠间有水气', from: '12.29' },
-  ],
-  悬饮: [
-    { w: '水流在胁下', from: '12.2' },
-    { w: '咳唾引痛', from: '12.2' },
-  ],
-  溢饮: [
-    { w: '归于四肢', from: '12.2' },
-    { w: '当汗出而不汗出', from: '12.2' },
-    { w: '身体疼重', from: '12.2' },
-  ],
-  支饮: [
-    { w: '咳逆倚息', from: '12.2' },
-    { w: '短气不得卧', from: '12.2' },
-    { w: '其形如肿', from: '12.2' },
-    { w: '倚息不得卧', from: '12.35' },
-  ],
+const HAN = /[\u3400-\u4dbf\u4e00-\u9fff]/;
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const clean = (s) => String(s || '').replace(/\*\*/g, '').replace(/\s+/g, '').trim();
+const num = (s) => {
+  const m = String(s || '').replace(/,/g, '').match(/\d+(?:\.\d+)?/);
+  return m ? Number(m[0]) : null;
 };
+const round = (x, n = 2) => Math.round(x * 10 ** n) / 10 ** n;
 
-/** 方后加减条的承接语，逐字取自各条首句；只在正文无饮名时启用 */
-const CONTINUE = ['青龙汤下已', '冲气即低', '咳满即止', '水去呕止', '若面热如醉'];
+/* ── 结构：节、表、引文、附录 ──────────────────────────────────── */
 
-/**
- * 只提名、本篇无方文的方 —— 本章逐条核出，不是正则扫出来的。
- * 正则扫「…汤/丸/散」会把「青龙汤下已」「苓甘五味…」这类叙述句误当方名，
- * 而漏收与误收在「18 方」这种数字上都会变成错账，所以宁可手列 + 测试反查原文。
- * 注：12.41 原文作「小半夏茯苓汤」，12.30 的方名作「小半夏加茯苓汤」；
- * 两处照录，不替底本改字。
- * 注：12.23 的小青龙汤 v1 曾列在此（当时 formulas[] 只读首方，它只剩提名）；
- * 底本 v2 已把它从并列方块里切出、有方文有药味，故此处只留真正无方文者。
- */
-const NAMED_ONLY = {
-  '12.17': ['苓桂术甘汤', '肾气丸'],
-  '12.27': ['葶苈大枣泻肺汤'],
-  '12.32': ['十枣汤'],
-  '12.33': ['十枣汤'],
-  '12.35': ['小青龙汤'],
-  '12.41': ['小半夏茯苓汤'],
-};
-
-const stripFang = (s) => String(s || '').replace(/方$/, '');
-
-function articles() {
-  return PIAN.articles.slice().sort((a, b) => a.idx - b.idx);
-}
-
-/**
- * 四饮归类。逐条返回 {tiao, yin, by, hit}：
- *   by = 总纲 | 显名 | 判据词 | 承前 | 无判据词
- * 优先级：显名 > 判据词 > 承前。显名先于判据词，是因为「病悬饮者，十枣汤主之」
- * 这种条自己报了名，再拿症状词去覆盖它等于不信原文。
- */
-function siYin() {
-  const arts = articles();
+function tables(doc) {
   const out = [];
-  arts.forEach((a, i) => {
-    const text = a.zhHans;
-    if (a.tiao === '12.1' || a.tiao === '12.2') {
-      out.push({ tiao: a.tiao, yin: '总纲', by: '总纲', hit: '' });
-      return;
-    }
-    // 1 显名：取正文中**最先**出现的饮名（一句里提两个饮时，先说的那个是主语）
-    let byName = null;
-    let best = Infinity;
-    for (const y of YIN) {
-      const k = text.indexOf(y);
-      if (k >= 0 && k < best) { best = k; byName = y; }
-    }
-    if (byName) { out.push({ tiao: a.tiao, yin: byName, by: '显名', hit: byName }); return; }
-
-    // 2 判据词：命中条数最多者胜；平票按 YIN 顺序取先
-    let pick = null;
-    let pickHits = 0;
-    let pickWords = '';
-    for (const y of YIN) {
-      const hits = CRITERIA[y].filter((c) => text.includes(c.w)).map((c) => c.w);
-      if (hits.length > pickHits) { pick = y; pickHits = hits.length; pickWords = hits.join('、'); }
-    }
-    if (pick) { out.push({ tiao: a.tiao, yin: pick, by: '判据词', hit: pickWords }); return; }
-
-    // 3 承前：仅当前条已判为四饮之一才继承，避免把 12.3（水在心）之后的东西连带污染
-    const mark = CONTINUE.find((m) => text.startsWith(m));
-    const prev = out[i - 1];
-    if (mark && prev && YIN.includes(prev.yin)) {
-      out.push({ tiao: a.tiao, yin: prev.yin, by: '承前', hit: mark });
-      return;
-    }
-
-    // 4 未判：五脏水、留饮/伏饮、脉诊、治则与杂症条都在这里
-    out.push({ tiao: a.tiao, yin: '未判', by: '无判据词', hit: '' });
-  });
-  return out;
-}
-
-/** 每条带上方文数与提名方，供 yinSummary / fangOfYin 复用 */
-function tiaoShape() {
-  return siYin().map((r) => {
-    const a = PIAN.articles.find((x) => x.tiao === r.tiao);
-    const fang = (a.formulas || []).map((f) => stripFang(f.nameSimp));
-    return { ...r, fang, named: NAMED_ONLY[r.tiao] || [], chars: a.zhHans.length };
-  });
-}
-
-/** 四饮 × 条/方 的交叉表（「总纲」与「未判」单列，两者都不是四饮之一） */
-function yinSummary() {
-  const rows = tiaoShape();
-  const keys = ['总纲', ...YIN, '未判'];
-  const out = {};
-  for (const k of keys) out[k] = { tiao: 0, fang: 0, named: 0, per: 0, list: [] };
-  for (const r of rows) {
-    out[r.yin].tiao += 1;
-    out[r.yin].fang += r.fang.length;
-    out[r.yin].named += r.named.length;
-    out[r.yin].list.push(r.tiao.slice(3));
+  let cur = null;
+  for (const ln of String(doc).split(/\r?\n/)) {
+    if (/^\s*\|/.test(ln)) {
+      const cells = ln.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+      if (!cur) {
+        cur = { header: cells, rows: [] };
+        out.push(cur);
+        continue;
+      }
+      if (cells.every((c) => /^:?-{2,}:?$/.test(c) || c === '')) continue;
+      cur.rows.push(cells);
+    } else cur = null;
   }
-  for (const k of keys) out[k].per = Number((out[k].fang / out[k].tiao).toFixed(2));
   return out;
 }
 
-/**
- * 「未判」19 条按内容分片 —— 这一层是本章的读法，写进代码是为了让 docs 的分片数字
- * 可被断言：分片合起来必须正好等于未判集合，多一条少一条测试就红。
- */
-const UNJUDGED_GROUPS = [
-  { label: '五脏水', tiao: ['12.3', '12.4', '12.5', '12.6', '12.7'] },
-  { label: '留饮/伏饮', tiao: ['12.8', '12.9', '12.10', '12.11', '12.18'] },
-  { label: '水停心下与脉诊', tiao: ['12.12', '12.13', '12.19', '12.20'] },
-  { label: '微饮 / 咳家有水', tiao: ['12.17', '12.32'] },
-  { label: '定位模糊（膈间有水/水停心下）', tiao: ['12.30', '12.31', '12.41'] },
+/** 表头列号；name 先精确再前缀 */
+function colOf(table, name) {
+  const i = table.header.findIndex((h) => clean(h) === clean(name));
+  if (i >= 0) return i;
+  return table.header.findIndex((h) => !clean(h).includes('/') && clean(h).startsWith(clean(name)));
+}
+
+function stats(doc) {
+  const body = String(doc).split('<!-- jingui-quanwen:start -->')[0];
+  const ts = tables(doc);
+  const lines = String(doc).split(/\r?\n/);
+  const attachStated = /本章全录 \*\*(\d+) 条\*\*/.exec(doc);
+  const attachCounted = (doc.match(/^\*\*第[\d.]+条\*\*/gm) || []).length;
+  const tiaoCodes = new Set((doc.match(/\b\d{1,2}\.\d{1,2}\b/g) || []));
+  return {
+    hanzi: hanzi(doc),
+    bodyHanzi: hanzi(body),
+    sections: (doc.match(/^## /gm) || []).length,
+    subsections: (doc.match(/^### /gm) || []).length,
+    tables: ts.length,
+    tableRows: ts.reduce((a, t) => a + t.rows.length, 0),
+    quoteLines: lines.filter((l) => /^>/.test(l)).length,
+    tiaoCodes: tiaoCodes.size,
+    attach: {
+      stated: attachStated ? Number(attachStated[1]) : null,
+      counted: attachCounted,
+    },
+  };
+}
+
+/* ── 正文里写死的算式 ─────────────────────────────────────────── */
+
+/** A ÷ B = C / ≈ C */
+function divisions(doc) {
+  const out = [];
+  const re = /(\d[\d,]*(?:\.\d+)?)\s*÷\s*(\d[\d,]*(?:\.\d+)?)\s*(?:=|≈)\s*(\d+(?:\.\d+)?)/g;
+  for (const m of String(doc).matchAll(re)) {
+    const a = Number(m[1].replace(/,/g, ''));
+    const b = Number(m[2].replace(/,/g, ''));
+    const stated = Number(m[3]);
+    const dec = (m[3].split('.')[1] || '').length;
+    out.push({
+      text: `${a} ÷ ${b} = ${stated}`,
+      got: round(a / b, dec + 1),
+      want: stated,
+      tol: 0.5 * 10 ** -dec + 1e-9,
+    });
+  }
+  return out;
+}
+
+/** 「A 条（占……B 条的 C%）」与「A/B = C%」 */
+function percents(doc) {
+  const out = [];
+  const t = String(doc);
+  for (const m of t.matchAll(/(\d+)\s*[/÷]\s*(\d+)\s*=\s*\*{0,2}([\d.]+)\s*%/g)) {
+    out.push({
+      text: `${m[1]}/${m[2]} = ${m[3]}%`,
+      got: round((100 * Number(m[1])) / Number(m[2]), 1),
+      want: Number(m[3]),
+      tol: 0.05,
+    });
+  }
+  for (const m of t.matchAll(/(\d+)\s*(?:条|方)[^（(]{0,10}[（(][^）)]*?占[^）)]*?(\d+)\s*(?:条|方)[^）)]*?(\d+)\s*%[）)]/g)) {
+    out.push({
+      text: `${m[1]} 占 ${m[2]} 的 ${m[3]}%`,
+      got: round((100 * Number(m[1])) / Number(m[2]), 0),
+      want: Number(m[3]),
+      tol: 0.5,
+    });
+  }
+  return out;
+}
+
+/* ── 本章的算式（全部数字取自同一份 docs/zh.md） ──────────────── */
+
+const CLAIMS = [
+  {
+    label: '类表 41 条',
+    got: (c) => c.colSum('类', '条'),
+    want: () => 41,
+    tol: 0,
+  },
+  {
+    label: '类表 18 方',
+    got: (c) => c.colSum('类', '方'),
+    want: () => 18,
+    tol: 0,
+  },
+  {
+    label: '四饮 20 条',
+    got: (c) => c.colSum('饮', '条'),
+    want: () => 20,
+    tol: 0,
+  },
+  {
+    label: '四饮 15 方（+ 未判 3 = 18）',
+    got: (c) => c.colSum('饮', '方'),
+    want: () => 15,
+    tol: 0,
+  },
+  {
+    label: '总纲 2 + 四饮 20 + 未判 19 = 41',
+    got: (c) => 2 + 20 + 19,
+    want: (c) => c.colSum('类', '条'),
+    tol: 0,
+  },
+  {
+    label: '含温药 17 - 纯温 1 = 16 首混温',
+    got: (c) => 17 - 1,
+    want: () => 16,
+    tol: 0,
+  },
+  {
+    label: '温药 45 ÷ 84 = 53.6%',
+    got: (c) => 45 / 84,
+    want: () => 0.536,
+    tol: 0.001,
+  },
+  {
+    label: '用茯苓的方 9 首',
+    got: (c) => c.cellNum('指标', '用茯苓的方', '实测'),
+    want: () => 9,
+    tol: 0,
+  },
 ];
 
-function unjudgedGroups() {
-  const un = tiaoShape().filter((r) => r.yin === '未判').map((r) => r.tiao);
-  const listed = UNJUDGED_GROUPS.flatMap((g) => g.tiao);
-  return {
-    rows: UNJUDGED_GROUPS.map((g) => ({ label: g.label, tiao: g.tiao, n: g.tiao.length })),
-    total: listed.length,
-    missing: un.filter((t) => !listed.includes(t)), // 未判里没被分片解释的
-    extra: listed.filter((t) => !un.includes(t)),   // 分片里其实不是未判的
-  };
-}
+/* ── 表格里写明的「方/条」逐行重算 ─────────────────────────────── */
 
-/** 18 个有方文的方 → 所属饮类（按方所在的条判） */
-function fangOfYin() {
-  const rows = tiaoShape();
+function ratioRows(ts) {
   const out = [];
-  for (const r of rows) for (const f of r.fang) out.push({ name: f, tiao: r.tiao, yin: r.yin, by: r.by });
+  for (const t of ts) {
+    const iTiao = colOf(t, '条');
+    const iFang = colOf(t, '方');
+    const iRatio = colOf(t, '方/条');
+    if (iTiao < 0 || iFang < 0 || iRatio < 0) continue;
+    for (const row of t.rows) {
+      const tiao = num(row[iTiao]);
+      const fang = num(row[iFang]);
+      const stated = num(row[iRatio]);
+      if (tiao === null || fang === null || stated === null || tiao === 0) continue;
+      const got = round(fang / tiao, 2);
+      out.push({ row: row[0], tiao, fang, stated, got, ok: Math.abs(got - stated) <= 0.005 });
+    }
+  }
   return out;
 }
 
-/**
- * 「病痰饮者，当以温药和之」（12.15）。
- * 温药表是**本章标注**，不是底本内容 —— 底本只给方与药味，不给四气。
- * 标在此处的目的是让「和之」可数：若 18 方全是温药堆叠，「和」字就无从谈起。
- * 药名归一：底本 12.39/12.40 作「五味」，其余条作「五味子」，同一味药两种写法。
- */
-const HERB_ALIAS = { 五味: '五味子' };
-const WARM = ['桂枝', '干姜', '细辛', '生姜', '半夏', '麻黄', '杏仁', '白术', '厚朴', '椒目', '人参', '五味子'];
+/* ── quiz：结构 + 接地 ─────────────────────────────────────────── */
 
-/**
- * 底本的 herbSimp 会把校注与剂量粘在药名上（「甘草如指大⟨一枚，炙⟩」「茯苓⟨三两⟩」），
- * 不清洗就会把「茯苓」算成 8 方而不是 9 方 —— 一个隐性错账，肉眼看表格看不出来。
- * 只剥夹注与尾部剂量串，不动药名本身：五味子的「五」、半夏的「半」都长得像数字，
- * 所以数字规则只截「名字之后」的部分。
- */
-function cleanHerb(raw) {
-  return String(raw || '')
-    .replace(/⟨[^⟩]*⟩/g, '')
-    .replace(/[（(][^）)]*[）)]/g, '')
-    .replace(/(如指大|如指|大者)$/, '')
-    .replace(/各.*$/, '')
-    .replace(/\d.*$/, '')
-    .trim();
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
 }
 
-const herbName = (h) => HERB_ALIAS[cleanHerb(h)] || cleanHerb(h);
-
-function warmRule() {
-  const rows = fangOfYin().map((f) => {
-    const art = PIAN.articles.find((a) => a.tiao === f.tiao);
-    const fm = art.formulas.find((x) => stripFang(x.nameSimp) === f.name);
-    const herbs = fm.ingredients.map((i) => herbName(i.herbSimp || i.herb));
-    const warm = herbs.filter((h) => WARM.includes(h));
-    return { ...f, herbs, warm, n: herbs.length, k: warm.length, pure: warm.length === herbs.length };
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    return {
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(q.explain),
+      grounded: hit.length,
+    };
   });
   return {
-    rows,
-    formulas: rows.length,
-    withWarm: rows.filter((r) => r.k > 0).length,
-    pureWarm: rows.filter((r) => r.pure).length,
-    noWarm: rows.filter((r) => r.k === 0).map((r) => `${r.name}（${r.tiao}）`),
-    warmTokens: rows.reduce((n, r) => n + r.k, 0),
-    herbTokens: rows.reduce((n, r) => n + r.n, 0),
-    poria: rows.filter((r) => r.herbs.includes('茯苓')).length,
-    guizhi: rows.filter((r) => r.herbs.includes('桂枝')).length,
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
   };
 }
 
-/** 药味频次（按「几方用到」计，同一方内重复不叠） */
-function herbFreq() {
-  const m = new Map();
-  for (const r of warmRule().rows) for (const h of r.herbs) m.set(h, (m.get(h) || 0) + 1);
-  return [...m.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh'));
-}
+/* ── 汇总 ─────────────────────────────────────────────────────── */
 
-/** 条级形态：涉方 / 无方 */
-function totals() {
-  const rows = tiaoShape();
-  return {
-    tiao: rows.length,
-    fang: rows.reduce((n, r) => n + r.fang.length, 0),
-    fangTiao: rows.filter((r) => r.fang.length > 0).length,
-    namedOnly: rows.filter((r) => r.named.length > 0).length,
-    withFang: rows.filter((r) => r.fang.length > 0 || r.named.length > 0).length,
-    per: Number((rows.reduce((n, r) => n + r.fang.length, 0) / rows.length).toFixed(2)),
-    chars: PIAN.chars,
-    by: rows.reduce((acc, r) => ((acc[r.by] = (acc[r.by] || 0) + 1), acc), {}),
-  };
-}
-
-if (require.main === module) {
-  console.log('');
-  console.log('  教学边界：本输出为《金匮要略》文本结构统计，外源·笈成留档可复算，不构成诊疗依据。');
-  console.log('');
-  const t = totals();
-  const s = yinSummary();
-  console.log('═══ 第 12 篇 · 痰饮咳嗽病脉证并治 ═══');
-  console.log(`  ${t.tiao} 条 · ${t.fang} 方（有方文）· 方条比 ${t.per}`);
-  console.log(`  带方文 ${t.fangTiao} 条 · 只提名 ${t.namedOnly} 条 · 涉方共 ${t.withFang} 条 · 无方 ${t.tiao - t.withFang} 条\n`);
-
-  console.log('  四饮 | 条 | 方 | 方/条 | 方名数 | 条号');
-  for (const k of Object.keys(s)) {
-    const v = s[k];
-    console.log(`  ${k} | ${v.tiao} | ${v.fang} | ${v.per} | ${v.named} | ${v.list.join(',')}`);
+function analyze(docFile = DOC, quizFile = QUIZ) {
+  const doc = fs.readFileSync(docFile, 'utf8');
+  const quiz = JSON.parse(fs.readFileSync(quizFile, 'utf8'));
+  const ts = tables(doc);
+  const kvRows = [];
+  for (const t of ts) {
+    if (!/^(量|项)$/.test(clean(t.header[0]))) continue;
+    for (const r of t.rows) kvRows.push({ label: clean(r[0]), value: r[1] || '', note: r.slice(2).join(' ') });
   }
+  const find = (label) => kvRows.find((r) => r.label === clean(label)) || kvRows.find((r) => r.label.startsWith(clean(label)));
 
-  console.log('\n  归类依据：' + Object.entries(t.by).map(([k, v]) => `${k} ${v}`).join(' · '));
-  console.log('  未判 19 条分片：' + unjudgedGroups().rows.map((r) => `${r.label} ${r.n}`).join(' · '));
-  const odd = tiaoShape().filter((r) => r.by === '承前' || r.by === '判据词');
-  for (const r of odd) console.log(`    ${r.tiao} ${r.yin} ← ${r.by}「${r.hit}」`);
+  const c = {
+    doc,
+    ts,
+    kvRows,
+    kv(label) {
+      const row = find(label);
+      if (!row) throw new Error(`正文的「量/项」表里没有「${label}」`);
+      const v = num(row.value);
+      if (v === null) throw new Error(`「${label}」的值不是数字：${row.value}`);
+      return v;
+    },
+    frac(label) {
+      const row = find(label);
+      if (!row) throw new Error(`正文的「量/项」表里没有「${label}」`);
+      const xs = (row.value.replace(/,/g, '').match(/\d+(?:\.\d+)?/g) || []).map(Number);
+      if (xs.length < 2) throw new Error(`「${label}」不是「A / B」形式：${row.value}`);
+      return xs;
+    },
+    colSum(header, col) {
+      let sum = 0;
+      let hit = 0;
+      for (const t of ts) {
+        if (clean(t.header[0]) !== clean(header)) continue;
+        const i = colOf(t, col);
+        if (i < 0) continue;
+        for (const row of t.rows) {
+          if (String(row[0] || '').includes('合计')) continue; // 合计行不重复计入
+          const v = num(row[i]);
+          if (v !== null) {
+            sum += v;
+            hit += 1;
+          }
+        }
+      }
+      if (!hit) throw new Error(`表「${header}」里没有可求和的列「${col}」`);
+      return sum;
+    },
+    /** 同类表的行数；occurrence 省略 = 全部同类表合计，给数字 = 第几张（从 1 起） */
+    rowCount(header, occurrence) {
+      const hits = ts.filter((t) => clean(t.header[0]) === clean(header));
+      if (occurrence) return (hits[occurrence - 1] || { rows: [] }).rows.length;
+      return hits.reduce((a, t) => a + t.rows.length, 0);
+    },
+    /** 表内某一行（按首列前缀）某列的数字 */
+    cellNum(header, rowPrefix, col) {
+      for (const t of ts) {
+        if (clean(t.header[0]) !== clean(header)) continue;
+        const i = colOf(t, col);
+        if (i < 0) continue;
+        const row = t.rows.find((r) => clean(r[0]).startsWith(clean(rowPrefix)));
+        if (row) {
+          const v = num(row[i]);
+          if (v === null) throw new Error(`「${row[0]}」的「${col}」不是数字`);
+          return v;
+        }
+      }
+      throw new Error(`表「${header}」里没有以「${rowPrefix}」开头的行`);
+    },
+    /** 某列里出现的不同条号数（如误治表的 2.4、2.5…） */
+    codes(header, col) {
+      const set = new Set();
+      for (const t of ts) {
+        if (clean(t.header[0]) !== clean(header)) continue;
+        const i = colOf(t, col);
+        if (i < 0) continue;
+        for (const row of t.rows) {
+          for (const m of String(row[i] || '').matchAll(/\b\d{1,2}\.\d{1,2}\b/g)) set.add(m[0]);
+        }
+      }
+      return set.size;
+    },
+  };
 
-  console.log('\n  方 | 条 | 饮');
-  for (const f of fangOfYin()) console.log(`  ${f.name} | ${f.tiao} | ${f.yin}`);
+  const claims = CLAIMS.map((x) => {
+    const got = x.got(c);
+    const want = typeof x.want === 'function' ? x.want(c) : x.want;
+    return { label: x.label, got: round(got, 3), want, ok: Math.abs(round(got, 3) - want) <= x.tol + 1e-9, tol: x.tol };
+  });
 
-  const w = warmRule();
-  console.log(`\n  温药和之：${w.formulas} 方中`);
-  console.log(`    含温药 ${w.withWarm} 方 · 纯温药 ${w.pureWarm} 方 · 无温药 ${w.noWarm.length} 方（${w.noWarm.join('、')}）`);
-  console.log(`    温药味次 ${w.warmTokens} / 总药味 ${w.herbTokens}（${(100 * w.warmTokens / w.herbTokens).toFixed(1)}%）`);
-  console.log(`    用茯苓 ${w.poria} 方 · 用桂枝 ${w.guizhi} 方`);
-
-  console.log('\n  药味（几方用）：');
-  console.log('    ' + herbFreq().slice(0, 8).map(([h, n]) => `${h} ${n}`).join(' · '));
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title: TITLE,
+    stats: stats(doc),
+    kv: Object.fromEntries(kvRows.map((r) => [r.label, r.value])),
+    claims,
+    ratios: ratioRows(ts),
+    divisions: divisions(doc),
+    percents: percents(doc),
+    quiz: quizSummary(quiz, doc),
+  };
 }
+
+function main() {
+  const r = analyze();
+  const s = r.stats;
+  console.log(`《金匮要略》第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${s.hanzi} 汉字（课内 ${s.bodyHanzi}）· ${s.sections} 节 / ${s.subsections} 小节 · ${s.tables} 表 ${s.tableRows} 行 · 引文行 ${s.quoteLines} · 条号 ${s.tiaoCodes} 个`);
+  if (s.attach.stated !== null) console.log(`附全录：正文声明 ${s.attach.stated} 条 · 逐条标记 ${s.attach.counted} 条`);
+  console.log('');
+  console.log('本文算式（现算 → 正文）：');
+  for (const c of r.claims) console.log(`  ${c.ok ? '✓' : '✗'} ${c.label} = ${c.got}${c.ok ? '' : ` ≠ ${c.want}`}`);
+  if (r.ratios.length) {
+    console.log('表里的方/条逐行重算：');
+    for (const x of r.ratios) console.log(`  ${x.ok ? '✓' : '✗'} ${x.row} ${x.fang} ÷ ${x.tiao} = ${x.got}（表写 ${x.stated}）`);
+  }
+  if (r.divisions.length) {
+    console.log('正文的除法：');
+    for (const d of r.divisions) console.log(`  ${Math.abs(d.got - d.want) <= d.tol ? '✓' : '✗'} ${d.text}（现算 ${d.got}）`);
+  }
+  if (r.percents.length) {
+    console.log('正文的百分比：');
+    for (const p of r.percents) console.log(`  ${Math.abs(p.got - p.want) <= p.tol ? '✓' : '✗'} ${p.text}（现算 ${p.got}%）`);
+  }
+  console.log('');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· check 接地 ${r.quiz.checkGrounded} 道 · 答案 ${r.quiz.answers.join('/')} · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 以上数字全部由本章 docs/zh.md 现算；本章为文本结构分析，不构成诊疗依据。');
+}
+
+if (require.main === module) main();
 
 module.exports = {
-  PIAN, YIN, CRITERIA, CONTINUE, NAMED_ONLY, WARM,
-  articles, siYin, tiaoShape, yinSummary, fangOfYin, warmRule, herbFreq, totals, unjudgedGroups,
+  analyze, stats, tables, divisions, percents, ratioRows, quizSummary, grams,
+  hanzi, num, clean, round, CHAPTER, SLUG, TITLE, DOC, QUIZ,
 };

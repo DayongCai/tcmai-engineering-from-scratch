@@ -1,7 +1,7 @@
 'use strict';
 const assert = require('node:assert');
 const test = require('node:test');
-const { buildMatrix, match, matchLift, matchHybrid, evidence, FORMULAS } = require('./main.js');
+const { buildMatrix, match, matchLift, matchHybrid, evidence, supportBreakdown, FORMULAS } = require('./main.js');
 
 test('方-症矩阵：支持数与篇数可复现', () => {
   const m = buildMatrix();
@@ -52,3 +52,25 @@ test('方名表覆盖本章用到的 12 方，且不含前缀污染词', () => {
   assert.strictEqual(FORMULAS.length, 12);
   assert.ok(FORMULAS.every((f) => !/^(宜|属|与|服)/.test(f)));
 });
+
+test('支持度成色：大承气 79 条里证治条 16、方后注 63', () => {
+  const b = supportBreakdown('大承气汤');
+  assert.strictEqual(b.total, 79);
+  assert.strictEqual(b.zhengzhi, 16);
+  assert.strictEqual(b.noteLike, 63);
+  assert.strictEqual(b.title, 0);
+});
+
+test('支持度成色：桂枝汤 134 = 证治 51 + 方后注 82 + 方名行 1', () => {
+  const b = supportBreakdown('桂枝汤');
+  assert.deepStrictEqual([b.total, b.zhengzhi, b.noteLike, b.title], [134, 51, 82, 1]);
+  assert.strictEqual(b.zhengzhi + b.noteLike + b.title, b.total);
+});
+
+test('支持度成色：不在方名表里的方必须抛错', () => {
+  assert.throws(() => supportBreakdown('乌梅丸'), /方名表/);
+});
+
+// ── quiz 结构契约（与 scripts/check_chapter_exercises.js 同源）──
+const { quizContract } = require('../../_quiz-contract.js');
+quizContract(__dirname);

@@ -99,98 +99,98 @@ chapters:
     estimate_minutes: 20.53
     measured_minutes: 20.07
   - slug: 11-pian7-feiwei-feiyong
-    title: 第11章 篇目精读第七：肺痿肺痈咳嗽上气——一条一方，10 方之外还挂着 6 首附方
+    title: 第11章 肺痿与肺痈的分界不在症状堆叠，而在脉的一虚一实
     unit: 篇目精读（按篇通读）
     video: rendered
     segments: 10
     estimate_minutes: 11.67
     measured_minutes: 12.40
   - slug: 12-pian8-bentun
-    title: 第12章 篇目精读第八：奔豚气——全书最短的一篇，却给了三个入口
+    title: 第12章 同一个「气从少腹上冲」，三首方靠来路分开而不是靠冲劲分开
     unit: 篇目精读（按篇通读）
     video: rendered
     segments: 10
     estimate_minutes: 6.23
     measured_minutes: 6.34
   - slug: 13-pian9-xiongbi
-    title: 第13章 篇目精读第九：胸痹心痛短气——一句话定病机，7 条各给一方
+    title: 第13章 胸痹的方条比是 1.00，但这个 1 是两个口径相互抵消出来的
     unit: 篇目精读（按篇通读）
     video: rendered
     segments: 10
     estimate_minutes: 7.88
     measured_minutes: 8.41
   - slug: 14-pian10-fuman-shanjia
-    title: 第14章 篇目精读第十：腹满寒疝宿食——26 条里前 7 条不出方，先把决策树长出来
+    title: 第14章 腹满篇前八条不出方，先用八条判据把「温、下、吐」三条路分开
     unit: 篇目精读（按篇通读）
     video: rendered
     segments: 10
     estimate_minutes: 12.00
     measured_minutes: 12.81
   - slug: 15-pian11-zangfu-jiju
-    title: 第15章 篇目精读第十一：五脏风寒积聚——20 条只 3 方，一篇被跳过的「定位表」
+    title: 第15章 二十条只出三方，这一篇交付的是五脏定位表而不是方剂
     unit: 篇目精读（按篇通读）
     video: rendered
     segments: 10
     estimate_minutes: 8.98
     measured_minutes: 9.25
   - slug: 16-pian14-shuiqi
-    title: 第16章 篇目精读第十四：水气——2617 字的全书最长篇，用三套分类切同一批病
+    title: 第16章 全书最长的一篇水气，用四套分类切同一批病而不互相替代
     unit: 篇目精读（按篇通读）
     video: rendered
     segments: 10
     estimate_minutes: 15.67
     measured_minutes: 16.84
   - slug: 17-pian15-huangdan
-    title: 第17章 篇目精读第十五：黄疸——三因入口，六方各管一段
+    title: 第17章 黄疸先分三个入口，再谈利小便——入口错了，利小便就是空话
     unit: 篇目精读（按篇通读）
     video: rendered
     segments: 10
     estimate_minutes: 9.33
     measured_minutes: 9.88
   - slug: 18-pian16-jingji-tunv
-    title: 第18章 篇目精读第十六：惊悸吐衄下血胸满瘀血——17 条里 11 条在辨「是不是血的问题」
+    title: 第18章 十七条里十条在辨「这是不是血的问题」，方只留给后六条
     unit: 篇目精读（按篇通读）
     video: rendered
     segments: 10
     estimate_minutes: 7.38
     measured_minutes: 7.79
   - slug: 19-pian17-outu-yueli
-    title: 第19章 篇目精读第十七：呕吐哕下利——47 条，全书条数最多的一篇
+    title: 第19章 四十七条切成呕哕与下利两半，两半的节奏完全不同
     unit: 篇目精读（按篇通读）
     video: rendered
     segments: 10
     estimate_minutes: 14.05
     measured_minutes: 15.55
   - slug: 20-pian18-chuangyong
-    title: 第20章 篇目精读第十八：疮痈肠痈浸淫——8 条 3 方，最短的杂病篇之一
+    title: 第20章 八条里出现六个方名，而「方数」只算三个——三层差在哪里
     unit: 篇目精读（按篇通读）
     video: rendered
     segments: 10
     estimate_minutes: 6.70
     measured_minutes: 7.05
   - slug: 21-pian19-fujue-shanchong
-    title: 第21章 篇目精读第十九：趺蹶手指臂肿转筋阴狐疝蚘虫——八条小病串成的一篇
+    title: 第21章 八个互不相关的小病串成一篇，每个病自带一条治法
     unit: 篇目精读（按篇通读）
     video: rendered
     segments: 10
     estimate_minutes: 6.33
     measured_minutes: 6.57
   - slug: 22-pian23-zaliaofang
-    title: 第22章 篇目精读第二十三：杂疗方——底本 1 条，古诗文网本 46 段
+    title: 第22章 底本只给一条，四十六段里藏着十七首方——附篇的单位是方不是条
     unit: 篇目精读（按篇通读）
     video: rendered
     segments: 10
     estimate_minutes: 11.03
     measured_minutes: 11.52
   - slug: 23-pian24-qinshou-jinji
-    title: 第23章 篇目精读第二十四：禽兽鱼虫禁忌——133 段禁忌清单，三栏对应才是它的结构
+    title: 第23章 一百三十三段禁忌不是清单，是一张「禁什么—中了什么症—用什么解」的三栏表
     unit: 篇目精读（按篇通读）
     video: rendered
     segments: 10
     estimate_minutes: 14.07
     measured_minutes: 15.20
   - slug: 24-pian25-guoshi-jinji
-    title: 第24章 篇目精读第二十五：果实菜谷禁忌——与禽兽鱼虫禁忌合起来才是完整的食禁
+    title: 第24章 本篇没有总论，总论在上一篇开头；它的框由别人给的两端撑着
     unit: 篇目精读（按篇通读）
     video: rendered
     segments: 10

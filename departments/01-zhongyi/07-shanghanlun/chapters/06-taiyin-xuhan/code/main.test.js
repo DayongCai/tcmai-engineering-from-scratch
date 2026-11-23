@@ -45,3 +45,7 @@ test('腹满鉴别：太阴（吐/自利）与阳明（潮热/大便硬）都有
   assert.ok(d.taiyin >= 3, `太阴侧 ${d.taiyin}`);
   assert.ok(d.yangming >= 3, `阳明侧 ${d.yangming}`);
 });
+
+// ── quiz 结构契约（与 scripts/check_chapter_exercises.js 同源）──
+const { quizContract } = require('../../_quiz-contract.js');
+quizContract(__dirname);

@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中医各家学说 · 第 7 章 叶天士与温病学派：本章统计口径
+ * 中医各家学说 · 第 7 章 温病不是一派：三套坐标互不翻译，硬译必错
  * 课程: departments/01-zhongyi/15-zhongyi-gejia-xueshuo/chapters/07-yetianshi-wenbing/docs/zh.md
- * 数据: standards/gejia/units.json（10 单元层，每单元带三辨 / 四位面词频与数值计数）
+ * 数据: standards/wenbing/底本.json
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 只读：三本书各自的条数、坐标词的逐书分布、舌象密度，
+ * 全部当次现算，再与正文坐标表逐格核对；对不上就抛错。
  */
 
 'use strict';
@@ -14,114 +14,123 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 7;
+const TITLE = '温病不是一派：三套坐标互不翻译，硬译必错';
+
 function findRoot(start) {
   let dir = start;
   for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gejia', 'units.json'))) return dir;
+    if (fs.existsSync(path.join(dir, 'standards', 'wenbing', '底本.json'))) return dir;
     const up = path.dirname(dir);
     if (up === dir) break;
     dir = up;
   }
-  throw new Error('没找到 standards/gejia/units.json —— 章节目录是否已脱离仓库？');
+  throw new Error('没找到 standards/wenbing/底本.json —— 章节目录是否已脱离仓库？');
 }
 
 const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gejia', 'units.json');
-const CHAPTER = '7';
+const readJSON = (rel) => JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 三本书各是一组「条」 */
+function books() {
+  const wb = readJSON('standards/wenbing/底本.json');
+  return wb.books.map((b) => ({
+    title: b.titleSimp,
+    articles: b.sections.flatMap((s) => s.articles.map((a) => ({
+      book: b.titleSimp, pian: s.pian || s.juan || '', no: a.no, text: a.zhHans,
+    }))),
+  }));
 }
+const hits = (list, word) => list.reduce((n, t) => n + (t.text.includes(word) ? 1 : 0), 0);
 
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) for (const [k, v] of Object.entries(u.measure[field])) out[k] = (out[k] || 0) + v;
+function tables(md) {
+  const lines = md.split('\n');
+  const out = [];
+  for (let i = 0; i < lines.length; i += 1) {
+    if (!/^\s*\|/.test(lines[i])) continue;
+    if (!/^\s*\|[\s:|-]+\|\s*$/.test(lines[i + 1] || '')) continue;
+    const cells = (l) => l.trim().replace(/^\||\|$/g, '').split('|').map((s) => s.trim());
+    const rows = [];
+    let j = i + 2;
+    while (j < lines.length && /^\s*\|/.test(lines[j])) { rows.push(cells(lines[j])); j += 1; }
+    out.push({ header: cells(lines[i]), rows });
+    i = j - 1;
+  }
   return out;
 }
+const num = (s) => {
+  const m = String(s == null ? '' : s).replace(/[,\s]/g, '').match(/-?\d+(?:\.\d+)?/);
+  return m ? Number(m[0]) : null;
+};
 
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
+const WORDS = ['膜原', '三焦', '卫', '营', '血', '逆传', '舌'];
+const ORDER = ['温疫论', '温病条辨', '温热论'];
 
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = u.sec || '（未标节）';
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
+function analyze() {
+  const md = readDoc();
+  const bs = books();
+  const byTitle = new Map(bs.map((b) => [b.title, b]));
+  const all = bs.flatMap((b) => b.articles);
+  const counts = ORDER.map((t) => ({ book: t, n: byTitle.get(t).articles.length }));
+  const matrix = WORDS.map((w) => ({
+    word: w,
+    per: ORDER.map((t) => hits(byTitle.get(t).articles, w)),
+    total: hits(all, w),
+  }));
+  const tongue = matrix.find((m) => m.word === '舌');
 
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) {
-      counter.set(m[1], (counter.get(m[1]) || 0) + 1);
+  const docTables = tables(md);
+  const table = docTables.find((t) => t.header.join('|').includes('温疫论') && t.header.join('|').includes('温热论'));
+  if (!table) throw new Error('正文里找不到三书坐标词表');
+
+  const mismatches = [];
+  for (const row of matrix) {
+    const line = table.rows.find((x) => x[0] === row.word);
+    if (!line) { mismatches.push(`坐标表缺「${row.word}」一行`); continue; }
+    for (let i = 0; i < ORDER.length; i += 1) {
+      if (num(line[i + 1]) !== row.per[i]) mismatches.push(`「${row.word}」在《${ORDER[i]}》：正文 ${num(line[i + 1])}，现算 ${row.per[i]}`);
     }
   }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
 
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
   return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
+    md, bs, all, counts, matrix, tongue,
+    total: all.length,
+    tongueShare: tongue.total / all.length,
+    tongueByBook: ORDER.map((t) => ({ book: t, share: hits(byTitle.get(t).articles, '舌') / byTitle.get(t).articles.length })),
+    mismatches, docTables: docTables.length,
   };
 }
 
-/** 方与法：单元层没有独立方剂字段，改从正文里认「治法动词」记号（儿科以疏风宣肺、消食健脾、平肝息风为主） */
-function methods(list) {
-  const VERBS = ['疏肝', '补肾', '健脾', '养血', '活血', '化瘀', '调经', '固冲', '止带', '安胎', '清热', '利湿'];
-  const out = {};
-  for (const v of VERBS) out[v] = list.reduce((a, u) => a + u.prose.split(v).length - 1, 0);
-  return Object.entries(out).filter(([, c]) => c).sort((a, b) => b[1] - a[1]);
-}
+function main() {
+  const a = analyze();
+  const pct = (x) => (x * 100).toFixed(1) + '%';
+  const w = (s) => [...String(s)].reduce((n, ch) => n + (/[\u4e00-\u9fff]/.test(ch) ? 2 : 1), 0);
+  const pad = (s, n) => String(s) + ' '.repeat(Math.max(1, n - w(s)));
 
-module.exports = { CHAPTER, load, chapterUnits, merge, rank, bySection, citations, shape, methods, sum };
-
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  const views = rank(merge(list, 'views'));
-  const levels = rank(merge(list, 'levels'));
-  const books = citations(list);
-
-  console.log('═══ 中医各家学说 · 第 7 章 叶天士与温病学派 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按节：');
-  for (const sec of bySection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of views) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of levels) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log(`\n引书 ${books.books} 部 · 引用 ${books.total} 次 · 前三：${books.top.map(([n, c]) => `${n}(${c})`).join('、')}`);
-  console.log('\n治法动词命中：' + methods(list).map(([v, c]) => `${v}×${c}`).join('  '));
-  console.log('\n单元清单：');
-  for (const u of list) {
-    console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字\t${u.tri.view.primary || '—'}/${u.tri.level.primary || '—'}`);
+  console.log(`中医各家学说 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字当次现算：温病三书 630 条，逐书统计坐标词）');
+  console.log('');
+  console.log(a.counts.map((c) => `${c.book} ${c.n} 条`).join(' · ') + ` = ${a.total} 条`);
+  console.log('');
+  console.log(`${pad('词', 5)}${a.counts.map((c) => pad(c.book, 12)).join('')}全库`);
+  for (const row of a.matrix) {
+    console.log(`${pad(row.word, 5)}${row.per.map((v) => pad(v, 12)).join('')}${row.total}`);
   }
+  console.log('');
+  console.log(`舌：全库 ${a.tongue.total} 条（${pct(a.tongueShare)}）`);
+  for (const t of a.tongueByBook) console.log(`  《${t.book}》${pct(t.share)}`);
+  console.log('  坐标词是骨架，舌象是干活的地方 —— 三书的重心都在观察，不在定位');
+  console.log('');
+  console.log(`正文对照：${a.docTables} 张表逐格复算，不符 ${a.mismatches.length} 处`);
+  for (const m of a.mismatches) console.log('  - ' + m);
+  console.log('');
+  console.log('※ 教学样例：数字由本库语料现算，不构成诊疗建议，不能替代医师面诊。');
+
+  if (a.mismatches.length) throw new Error(`正文与复算不一致 ${a.mismatches.length} 处：\n${a.mismatches.join('\n')}`);
 }
 
-// 教学样例声明：契约要求每章输出含临床边界声明（tests/test_chapter_code.js）
-if (require.main === module) {
-  console.log('※ 教学样例：数字由 standards/gejia/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
-}
+if (require.main === module) main();
+
+module.exports = { DOC, CHAPTER, TITLE, ROOT, readJSON, readDoc, books, hits, tables, num, WORDS, ORDER, analyze };

@@ -1,57 +1,103 @@
 #!/usr/bin/env node
 /**
- * 第 8 章 老年心脑血管病证 —— 确定性单元测试
+ * 第 8 章 老年心脑血管病证：本虚标实的主战场 —— 确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言只落在可对账的结构上：单元数与小节号、规模、三辨与四位面重心、引书数、数值计数。
- * 数字由 standards/laonian/units.json 现算后写死在此，教材改版时测试会先响。
+ * 断言钉住从 docs/zh.md 与 quiz.json 现算出来的实测值：节数、汉字、表格行数、
+ * 结构表条目、分档、记录字段、失效模式、考核项，以及自测题的三段结构、选项数与接地数。
+ * 正文或题库一改，测试先响。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const { CHAPTER, load, chapterUnits, merge, rank, shape, citations, bySection } = require('./main.js');
+const { SLUG, DOC, QUIZ, parse, metrics, quizAudit, shingles } = require('./main.js');
 
-const data = load();
-const list = chapterUnits(data);
+const text = fs.readFileSync(DOC, 'utf8');
+const parsed = parse(text);
+const m = metrics(parsed);
+const a = quizAudit(m.quiz, text);
+const mainSrc = fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8');
+const quizRaw = fs.readFileSync(QUIZ, 'utf8');
 
-test('本章单元数与小节号与教材一致', () => {
-  assert.strictEqual(list.length, 7);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['8.1.1', '8.2.1', '8.3.1', '8.4.1', '8.5.1', '8.6.1', '8.7.1']);
+test('章号与标题取自正文，slug 与目录一致', () => {
+  assert.strictEqual(m.chapter, 8);
+  assert.ok(m.title.includes("老年心脑血管病证：本虚标实的主战场"), m.title);
+  assert.strictEqual(SLUG, "08-xinnao-xueguan");
 });
 
-test('规模：28428 字 · 平均 4061 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 28428);
-  assert.strictEqual(s.mean, 4061);
+test('正文规模：2112 汉字 · 6 节', () => {
+  assert.strictEqual(m.hanzi, 2112);
+  assert.strictEqual(m.sections.length, 6);
 });
 
-test('三辨重心是「病机」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '病机');
-  assert.strictEqual(views[0].count, 630);
+test('小节标题与正文一致', () => {
+  assert.deepStrictEqual(m.sections, ["一、七个病证，七种配比","二、四个不典型出口","三、判据与分档【教学设定】","四、动作、时限与记录字段","五、失效模式与考核项","代价与边界"]);
 });
 
-test('四位面重心是「心脑」，且四层都有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['心脑'], 707);
-  const touched = Object.values(levels).filter((n) => n > 0).length;
-  assert.ok(touched >= 3, `仅 ${touched} 层有落点`);
+test('表格 4 张 / 19 行', () => {
+  assert.strictEqual(m.tables, 4);
+  assert.strictEqual(m.tableRows, 19);
 });
 
-test('引书成规模：≥25 部、≥31 次引用', () => {
-  const c = citations(list);
-  assert.ok(c.books >= 25, `引书 ${c.books}`);
-  assert.ok(c.total >= 31, `引用 ${c.total}`);
+test('结构表 7 条，取自「一、七个病证，七种配比」', () => {
+  assert.strictEqual(m.structure.count, 7);
+  assert.strictEqual(m.structure.section, "一、七个病证，七种配比");
+  assert.deepStrictEqual(m.structure.dims, ["胸痹心痛","心悸","眩晕（高血压）","中风","痴呆","颤证","郁证"]);
 });
 
-test('数值计数与单元层一致（本章 0 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 0);
+test('分档判据 3 档：当日转诊 / 限期辨治 / 长期调治', () => {
+  assert.deepStrictEqual(m.tiers.names, ["当日转诊","限期辨治","长期调治"]);
 });
 
-test('每节都有单元，且每单元都带 locator', () => {
-  for (const s of bySection(list)) assert.ok(s.units > 0, s.sec);
-  for (const u of list) assert.ok(u.locator.startsWith(`教材·第${CHAPTER}章·`), u.locator);
+test('记录字段 5 条', () => {
+  assert.deepStrictEqual(m.records.names, ["起病","局灶体征","血压记录","活动耐量","复评项"]);
+});
+
+test('失效模式 5 条', () => {
+  assert.deepStrictEqual(m.failures, ["把「本虚标实」当公式","把急症当慢病","中药替代规范治疗","约束滥用","宣教未回述"]);
+});
+
+test('考核项 6 条', () => {
+  assert.strictEqual(m.checkItems.length, 6);
+});
+
+test('自测题 7 道，三段齐（pre 1 / check 5 / post 1）', () => {
+  assert.strictEqual(a.total, 7);
+  assert.deepStrictEqual(a.stages, {"pre":1,"check":5,"post":1});
+});
+
+test('每题 4 选项、correct 下标合法，explain 均 ≥30 汉字（最短 66）', () => {
+  assert.strictEqual(a.optionsOk, true);
+  assert.strictEqual(a.indexOk, true);
+  assert.ok(a.minExplain >= 30, '最短解释 ' + a.minExplain + ' 汉字');
+  assert.strictEqual(a.minExplain, 66);
+});
+
+test('check 题正确选项可在正文找到 ≥4 字原词：5/5', () => {
+  assert.strictEqual(a.groundedCount, 5);
+  assert.ok(a.groundedCount >= 2, '接地 ' + a.groundedCount);
+  for (const g of a.grounded) assert.ok(g.hit, g.q);
+});
+
+test('正确项打散，不扎堆在同一位置', () => {
+  assert.deepStrictEqual(a.spread, [2,2,1,2]);
+  assert.ok(Math.max(...a.spread) <= 3, '最大聚集 ' + Math.max(...a.spread));
+});
+
+test('quiz 与 main.js 均无旧脚手架概念残留', () => {
+  // 用转义构造，避免本文件自身被这些词命中
+  const fp = new RegExp('\\u4e09\\u8fa8|\\u56db\\u4f4d\\u9762|\\u5355\\u5143\\u89c4\\u6a21|\\u672c\\u7ae0\\u5b9e\\u6d4b');
+  assert.ok(!fp.test(quizRaw), 'quiz 残留指纹');
+  assert.ok(!fp.test(mainSrc), 'main.js 残留指纹');
+});
+
+test('main.js 只读正文与题库，不引用旧单元层', () => {
+  const legacy = new RegExp('units' + '\\.json|chapterUnits|standards');
+  assert.ok(!legacy.test(mainSrc));
+  assert.ok(mainSrc.includes('docs') && mainSrc.includes('quiz.json'));
 });

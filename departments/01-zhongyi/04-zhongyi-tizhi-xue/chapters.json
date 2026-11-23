@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-tizhi-gainian",
-   "title": "体质的概念与九种体质类型：九分法落在 132 个证候上",
+   "title": "九种体质是九把尺子，量的是倾向不是病名",
    "status": "🚧",
    "source": {
     "derived": true,
@@ -16,7 +16,7 @@
   {
    "n": 2,
    "slug": "02-tizhi-chengyin",
-   "title": "体质的形成：底板与漂移",
+   "title": "底板改不了，漂移的方向可以选",
    "status": "🚧",
    "source": {
     "derived": true,
@@ -27,7 +27,7 @@
   {
    "n": 3,
    "slug": "03-tizhi-liangbiao",
-   "title": "九种体质的判定与量表设计：四域各自计量",
+   "title": "判定要靠两条同向证据，不能靠一条扎眼的特征",
    "status": "🚧",
    "source": {
     "derived": true,
@@ -38,7 +38,7 @@
   {
    "n": 4,
    "slug": "04-tizhi-zhenghou",
-   "title": "体质与证候：同证异质、同质异证",
+   "title": "同一个证可以长在不同底子上，处理要分两步走",
    "status": "🚧",
    "source": {
     "derived": true,
@@ -49,7 +49,7 @@
   {
    "n": 5,
    "slug": "05-tizhi-tezheng",
-   "title": "问卷到特征向量：四域各自计量，不可混算",
+   "title": "量表算出来的不是一分数，是四组分数",
    "status": "🚧",
    "source": {
     "derived": true,
@@ -60,7 +60,7 @@
   {
    "n": 6,
    "slug": "06-tizhi-liuxing",
-   "title": "体质与疾病易感性：横向数据只能看共现",
+   "title": "证候表能算出共现，算不出谁会得病",
    "status": "🚧",
    "source": {
     "derived": true,
@@ -71,7 +71,7 @@
   {
    "n": 7,
    "slug": "07-tizhi-tiaoli",
-   "title": "体质调理与治未病：以平为期",
+   "title": "调体质的目标是把偏拉回来，不是把人调成标准件",
    "status": "🚧",
    "source": {
     "derived": true,
@@ -82,7 +82,7 @@
   {
    "n": 8,
    "slug": "08-tizhi-wucha",
-   "title": "可重复性与测量误差：四域各自计量，再谈结论",
+   "title": "同一个人测出两个体质，先查尺子再查人",
    "status": "🚧",
    "source": {
     "derived": true,

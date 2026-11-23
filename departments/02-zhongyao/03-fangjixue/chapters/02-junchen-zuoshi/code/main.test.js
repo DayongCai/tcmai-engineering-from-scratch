@@ -1,99 +1,149 @@
 #!/usr/bin/env node
 /**
- * 第 2 章 君臣佐使 —— 确定性单元测试
+ * 第 2 章 君臣佐使：组方的角色结构 —— 正文统计与习题契约的确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言分两类：
- *   1) 结构类：角色覆盖、齐备度、留空规则——这些必须稳定，变了就是数据层变了
- *   2) 欠账类：抽取边界（并列君药被截断）——断言它存在，防止有人「顺手修好」
- *      而丢掉了「抽不到就留空、不猜」的口径
+ * 断言只落在可对账的结构上：本章正文的汉字数、二/三级节数、每张表的行列与数字列合计、
+ * 引文条数与教材定位，以及 quiz 的题量、三段、四选项、解释长度、答案分布与正文接地。
+ * 期望值是 docs/zh.md 的实测读数（main.js 现算，测试钉住）；正文一改，这里立刻报警。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-const {
-  ROLES,
-  load,
-  chapterHanzi,
-  roleCoverage,
-  rolesPerFormula,
-  atLeast3,
-  allFour,
-  withoutJun,
-  multiRole,
-  truncatedJun,
-  compareRoles,
-} = require('./main');
+const { CHAPTER, TITLE, DOC, analyze, selfCheck } = require('./main.js');
 
-const fj = load();
+const A = analyze();
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const BODY = fs.readFileSync(DOC, 'utf8');
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
 
-test('角色覆盖：君 105 / 臣 79 / 佐 96 / 使 40，分母恒为 114', () => {
-  assert.strictEqual(fj.formulas.length, 114);
-  assert.strictEqual(roleCoverage(fj, '君').n, 105);
-  assert.strictEqual(roleCoverage(fj, '臣').n, 79);
-  assert.strictEqual(roleCoverage(fj, '佐').n, 96);
-  assert.strictEqual(roleCoverage(fj, '使').n, 40);
-  for (const r of ROLES) {
-    assert.ok(roleCoverage(fj, r.key).n <= 114, `${r.label} 的覆盖数超过方数`);
+/** 正文里 4 字以上的连续汉字片段，用来判「选项是否接地」 */
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  return out;
+}
+const bodyGrams = shingles(BODY);
+
+const EXPECT = {
+  "hanzi": 3841,
+  "paragraphs": 34,
+  "h2": 5,
+  "h3": 8,
+  "tables": [
+    [
+      2,
+      7
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      3,
+      5
+    ]
+  ],
+  "sums": [],
+  "quotes": 60,
+  "anchored": 11,
+  "chapters": [
+    3,
+    5
+  ],
+  "books": [
+    "素问·至真要大论"
+  ]
+};
+
+test('规模：正文汉字、正文段、二三级节（实测值）', () => {
+  assert.strictEqual(CHAPTER, 2);
+  assert.match(A.h1, new RegExp(`^第 ${2} 章 · `));
+  assert.strictEqual(A.hanzi, EXPECT.hanzi);
+  assert.strictEqual(A.paragraphs, EXPECT.paragraphs);
+  assert.strictEqual(A.h2.length, EXPECT.h2);
+  assert.strictEqual(A.h3.length, EXPECT.h3);
+  assert.ok(A.h2.length >= 4 && A.h2.length <= 8, `二级节 ${A.h2.length} 不在 4–8`);
+  assert.ok(A.h2.some((t) => /代价与边界/.test(t)), '缺「代价与边界」');
+});
+
+test('表格尺寸（列 × 行）与实测值一致', () => {
+  assert.deepStrictEqual(A.tables.map((t) => [t.cols, t.rows]), EXPECT.tables);
+});
+
+test('计数列合计与正文表内数字一致（实测值）', () => {
+  const sums = [];
+  for (const t of A.tables) for (const c of t.numeric) sums.push([t.idx, c.name, c.sum]);
+  assert.deepStrictEqual(sums, EXPECT.sums);
+  for (const t of A.tables) for (const c of t.numeric) {
+    if (c.ok === false) assert.fail(`表 ${t.idx}「${c.name}」数据行合计 ${c.sum} ≠ 合计行 ${c.declared}`);
   }
 });
 
-test('齐备度：三角色以上 80、四角色齐 18，且 18 ≤ 80 ≤ 105', () => {
-  const k3 = atLeast3(fj);
-  const k4 = allFour(fj);
-  assert.strictEqual(k3, 80);
-  assert.strictEqual(k4, 18);
-  assert.ok(k4 <= k3 && k3 <= roleCoverage(fj, '君').n);
-  // 齐备度数的是「有几种角色」，任何一方都不会超过 4
-  assert.ok(rolesPerFormula(fj).every((x) => x.k >= 0 && x.k <= 4));
+test('引文与教材定位（实测值）', () => {
+  assert.strictEqual(A.quotes, EXPECT.quotes);
+  assert.strictEqual(A.anchored, EXPECT.anchored);
+  assert.deepStrictEqual(A.chapters, EXPECT.chapters);
+  assert.deepStrictEqual(A.books, EXPECT.books);
+  assert.ok(A.anchored >= 2, `挂教材出处的引文只有 ${A.anchored} 条`);
 });
 
-test('抽不到君药的 9 首：留空，不代填', () => {
-  const noJun = withoutJun(fj);
-  assert.strictEqual(noJun.length, 9);
-  assert.strictEqual(noJun.length + roleCoverage(fj, '君').n, 114);
-  assert.ok(noJun.includes('十枣汤'), '十枣汤是教材未标君药的典型');
-  for (const name of noJun) {
-    const f = fj.formulas.find((x) => x.name === name);
-    assert.deepStrictEqual(f.roles['君'], [], `${name} 的君药被填上了——留空规则被破坏`);
+test('正文自检通过，MOTTO 是《书名·篇名》', () => {
+  assert.strictEqual(selfCheck(A), true);
+  assert.ok(A.books.length === 1 && /·/.test(A.books[0]), `MOTTO 书证不是《书名·篇名》：${A.books.join('/')}`);
+});
+
+test('quiz 结构：6 题、三段齐、4 选项、explain ≥30 汉字、答案打散', () => {
+  const qs = QUIZ.questions;
+  assert.ok(qs.length >= 5, `只有 ${qs.length} 题`);
+  const stages = new Set(qs.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s);
+  for (const q of qs) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    assert.ok((String(q.explain).match(HANZI) || []).length >= 30, q.question);
+    assert.ok((String(q.explanation).match(HANZI) || []).length >= 30, q.question);
+    assert.strictEqual(new Set(q.options).size, 4, q.question);
   }
+  assert.ok(new Set(qs.map((q) => q.correct)).size >= 3, '答案过于集中');
+  assert.deepStrictEqual(qs.map((q) => q.stage), ['pre', 'check', 'check', 'check', 'post', 'post']);
 });
 
-test('一药兼数职 7 方：桂枝汤的芍药同时居臣与佐', () => {
-  const multi = multiRole(fj);
-  assert.strictEqual(multi.length, 7);
-  const guizhi = multi.find((m) => m.name === '桂枝汤');
-  assert.ok(guizhi, '桂枝汤应在一药兼数职之列');
-  const herb = guizhi.herbs.find(([h]) => h === '芍药');
-  assert.ok(herb, '芍药应被记为一药兼数职');
-  assert.ok(/臣/.test(herb[1]) && /佐/.test(herb[1]), `芍药的角色串异常: ${herb[1]}`);
-  // 生脉散的三味组成已由上游抽取器补齐，人参同时落在君位与臣位
-  const shengmai = multi.find((m) => m.name === '生脉散');
-  assert.ok(shengmai, '生脉散应在一药兼数职之列');
-  assert.deepStrictEqual(shengmai.herbs.find(([h]) => h === '人参'), ['人参', '君/臣']);
+test('quiz 接地：≥2 道 check 题的正确选项能在正文找到 4 字原词', () => {
+  const grounded = QUIZ.questions.filter((q) => {
+    if (q.stage !== 'check') return false;
+    const grams = shingles(String(q.options[q.correct]));
+    return [...grams].some((g) => bodyGrams.has(g));
+  });
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道接地`);
 });
 
-test('抽取边界可数：23 首方的方解写了并列君药，roles.君 却只留 1 味', () => {
-  const trunc = truncatedJun(fj);
-  assert.strictEqual(trunc.length, 23);
-  const xiao = trunc.find((t) => t.name === '小青龙汤');
-  assert.ok(xiao, '小青龙汤方解作「麻黄、桂枝并为君药」，应被计为截断例');
-  assert.strictEqual(xiao.kept, '麻黄');
+test('quiz 与代码都不含旧脚手架指纹', () => {
+  const bad = /三辨|四位面|单元规模|本章实测|本课第\s*\d+\s*章[（(]|见\s*code\/main\.js\s*输出/;
+  assert.ok(!bad.test(JSON.stringify(QUIZ)));
+  assert.ok(!bad.test(fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8')));
 });
 
-test('同法两方逐角色对照：麻黄的层次在麻黄汤为君、在桂枝汤为臣', () => {
-  const cmp = compareRoles(fj, '麻黄汤', '桂枝汤');
-  const byRole = Object.fromEntries(cmp.map((r) => [r.role, r]));
-  assert.strictEqual(byRole['君药'].a, '麻黄');
-  assert.strictEqual(byRole['君药'].b, '桂枝');
-  assert.strictEqual(byRole['臣药'].a, '桂枝');
-  // 桂枝汤的使药抽不到，必须显示为空而不是补一个甘草
-  assert.strictEqual(byRole['使药'].b, '（空）');
-});
-
-test('本章教材字数与底本一致：第3章 13122 字', () => {
-  assert.strictEqual(chapterHanzi(3), 13122);
+test('脚本可运行，退出码 0，最后一行是教学边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, r.stderr);
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
+  const last = out.trim().split('\n').filter(Boolean).pop();
+  assert.ok(/教学边界/.test(last) && /不构成/.test(last), `最后一行不是教学边界：${last}`);
 });

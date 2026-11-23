@@ -41,3 +41,7 @@ test('频次只报数：桂枝汤 134 条、麻黄汤 44 条（不可当权重�
   assert.strictEqual(search('桂枝汤').raw, 134);
   assert.strictEqual(search('麻黄汤').raw, 44);
 });
+
+// ── quiz 结构契约（与 scripts/check_chapter_exercises.js 同源）──
+const { quizContract } = require('../../_quiz-contract.js');
+quizContract(__dirname);

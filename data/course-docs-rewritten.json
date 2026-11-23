@@ -849,6 +849,142 @@
       "words": 22816,
       "at": "2026-11-23",
       "note": "中医养生学：四季起居饮食判断与停止规则（旧稿 27,738 字倾倒，已重写）"
+    },
+    {
+      "dept": "09-jichu",
+      "subject": "10-bingli-xue",
+      "chapters": 21,
+      "words": 214128,
+      "at": "2026-11-23",
+      "note": "病理学：底本成稿转观点式，补习题与产出"
+    },
+    {
+      "dept": "09-jichu",
+      "subject": "06-shengli-xue",
+      "chapters": 11,
+      "words": 112123,
+      "at": "2026-11-23",
+      "note": "生理学：底本成稿转观点式，补习题与产出"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "21-zhongyi-linchuang-lunzhuan",
+      "chapters": 6,
+      "words": 17274,
+      "at": "2026-11-23",
+      "note": "中医临床轮转：入科三问、交接四段与出科考核（无参考电子件）"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "04-zhongyi-tizhi-xue",
+      "chapters": 8,
+      "words": 24136,
+      "at": "2026-11-23",
+      "note": "中医体质学：九质为尺、成组判定与调体目标（units 超薄仅取术语）"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "20-zhongyi-jingshenbing-xue",
+      "chapters": 12,
+      "words": 37513,
+      "at": "2026-11-23",
+      "note": "中医神志病学：观察项、成组判据与转介红线（units 对读）"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "15-zhongyi-gejia-xueshuo",
+      "chapters": 8,
+      "words": 26230,
+      "at": "2026-11-23",
+      "note": "中医各家学说：学派=不同提问，判据可检（转述层）"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "18-zhongyi-gubing-xue",
+      "chapters": 12,
+      "words": 34465,
+      "at": "2026-11-23",
+      "note": "中医骨病学：影像为分型判据、转手术红线（units 对读）"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "19-zhongyi-laonianbing-xue",
+      "chapters": 12,
+      "words": 34600,
+      "at": "2026-11-23",
+      "note": "中医老年病学：五维评估与转诊（units 对读）"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "16-zhongyi-zhexue-shi",
+      "chapters": 8,
+      "words": 22770,
+      "at": "2026-11-23",
+      "note": "中医哲学史：观念落成临床动作与界限"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "17-zhongyi-jizhen-xue",
+      "chapters": 12,
+      "words": 34460,
+      "at": "2026-11-23",
+      "note": "中医急诊学：分诊分层、危候识别与升级路径（units 对读）"
+    },
+    {
+      "dept": "09-jichu",
+      "subject": "12-yaoli-xue",
+      "chapters": 49,
+      "words": 459868,
+      "at": "2026-11-23",
+      "note": "药理学：52 节收口为 6–8 节、MOTTO 换经典出处；quiz/code 全重做"
+    },
+    {
+      "dept": "09-jichu",
+      "subject": "11-bingli-shengli-xue",
+      "chapters": 53,
+      "words": 373141,
+      "at": "2026-11-23",
+      "note": "病理生理学：节结构归并、MOTTO 回底本经典；quiz/code 全重做"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "10-zhongyi-neike-xue",
+      "chapters": 14,
+      "words": 114996,
+      "at": "2026-11-23",
+      "note": "中医内科学：结构收口 + 14 章 quiz/code"
+    },
+    {
+      "dept": "02-zhongyao",
+      "subject": "03-fangjixue",
+      "chapters": 15,
+      "words": 63846,
+      "at": "2026-11-23",
+      "note": "方剂学：MOTTO 篇名级、免责归位、节数收口 + 15 章 quiz/code"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "14-zhongyi-zhenghou-xue",
+      "chapters": 27,
+      "words": 76847,
+      "at": "2026-11-23",
+      "note": "中医证候学：底本稿重写 27 章（六项密度 + 可复算数）"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "08-jingui-yaolue",
+      "chapters": 24,
+      "words": 87888,
+      "at": "2026-11-23",
+      "note": "金匮要略：23 章重写/结构收口（原文全录由生成器托管）"
+    },
+    {
+      "dept": "01-zhongyi",
+      "subject": "07-shanghanlun",
+      "chapters": 12,
+      "words": 34226,
+      "at": "2026-11-23",
+      "note": "伤寒论：条文/版本/据条立据的读法正文，六项密度 + 12 章 quiz/code"
     }
   ]
 }

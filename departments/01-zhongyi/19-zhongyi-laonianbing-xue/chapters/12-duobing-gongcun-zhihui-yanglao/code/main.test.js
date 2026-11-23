@@ -1,57 +1,103 @@
 #!/usr/bin/env node
 /**
- * 第 12 章 老年多病共存与智慧养老 —— 确定性单元测试
+ * 第 12 章 多病共存与智慧养老：把「一人多病」变成可管理的结构 —— 确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言只落在可对账的结构上：单元数与小节号、规模、三辨与四位面重心、引书数、数值计数。
- * 数字由 standards/laonian/units.json 现算后写死在此，教材改版时测试会先响。
+ * 断言钉住从 docs/zh.md 与 quiz.json 现算出来的实测值：节数、汉字、表格行数、
+ * 结构表条目、分档、记录字段、失效模式、考核项，以及自测题的三段结构、选项数与接地数。
+ * 正文或题库一改，测试先响。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const { CHAPTER, load, chapterUnits, merge, rank, shape, citations, bySection } = require('./main.js');
+const { SLUG, DOC, QUIZ, parse, metrics, quizAudit, shingles } = require('./main.js');
 
-const data = load();
-const list = chapterUnits(data);
+const text = fs.readFileSync(DOC, 'utf8');
+const parsed = parse(text);
+const m = metrics(parsed);
+const a = quizAudit(m.quiz, text);
+const mainSrc = fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8');
+const quizRaw = fs.readFileSync(QUIZ, 'utf8');
 
-test('本章单元数与小节号与教材一致', () => {
-  assert.strictEqual(list.length, 7);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['12.1.1', '12.1.2', '12.2.1', '12.2.2', '12.3.1', '12.3.2', '12.4.1']);
+test('章号与标题取自正文，slug 与目录一致', () => {
+  assert.strictEqual(m.chapter, 12);
+  assert.ok(m.title.includes("多病共存与智慧养老：把「一人多病」变成可管理的结构"), m.title);
+  assert.strictEqual(SLUG, "12-duobing-gongcun-zhihui-yanglao");
 });
 
-test('规模：16043 字 · 平均 2292 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 16043);
-  assert.strictEqual(s.mean, 2292);
+test('正文规模：2292 汉字 · 6 节', () => {
+  assert.strictEqual(m.hanzi, 2292);
+  assert.strictEqual(m.sections.length, 6);
 });
 
-test('三辨重心是「病机」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '病机');
-  assert.strictEqual(views[0].count, 160);
+test('小节标题与正文一致', () => {
+  assert.deepStrictEqual(m.sections, ["一、四张清单：把「一人多病」写成结构","二、四件必须同时管的事","三、判据与分档【教学设定】","四、动作、时限与记录字段","五、失效模式与考核项","代价与边界"]);
 });
 
-test('四位面重心是「脾胃肝胆」，且四层都有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['脾胃肝胆'], 173);
-  const touched = Object.values(levels).filter((n) => n > 0).length;
-  assert.ok(touched >= 3, `仅 ${touched} 层有落点`);
+test('表格 3 张 / 12 行', () => {
+  assert.strictEqual(m.tables, 3);
+  assert.strictEqual(m.tableRows, 12);
 });
 
-test('引书成规模：≥12 部、≥15 次引用', () => {
-  const c = citations(list);
-  assert.ok(c.books >= 12, `引书 ${c.books}`);
-  assert.ok(c.total >= 15, `引用 ${c.total}`);
+test('结构表 4 条，取自「一、四张清单：把「一人多病」写成结构」', () => {
+  assert.strictEqual(m.structure.count, 4);
+  assert.strictEqual(m.structure.section, "一、四张清单：把「一人多病」写成结构");
+  assert.deepStrictEqual(m.structure.dims, ["问题","用药","功能","目标"]);
 });
 
-test('数值计数与单元层一致（本章 3 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 3);
+test('分档判据 3 档：可社区管理 / 需团队管理 / 需多学科', () => {
+  assert.deepStrictEqual(m.tiers.names, ["可社区管理","需团队管理","需多学科"]);
 });
 
-test('每节都有单元，且每单元都带 locator', () => {
-  for (const s of bySection(list)) assert.ok(s.units > 0, s.sec);
-  for (const u of list) assert.ok(u.locator.startsWith(`教材·第${CHAPTER}章·`), u.locator);
+test('记录字段 5 条', () => {
+  assert.deepStrictEqual(m.records.names, ["主症","用药指征","功能基线","目标","交接包"]);
+});
+
+test('失效模式 6 条', () => {
+  assert.deepStrictEqual(m.failures, ["把工具当判断","把衰老当病，或把病当衰老","多重用药交互","约束滥用","宣教未回述，交接断点","延误转诊"]);
+});
+
+test('考核项 5 条', () => {
+  assert.strictEqual(m.checkItems.length, 5);
+});
+
+test('自测题 6 道，三段齐（pre 1 / check 4 / post 1）', () => {
+  assert.strictEqual(a.total, 6);
+  assert.deepStrictEqual(a.stages, {"pre":1,"check":4,"post":1});
+});
+
+test('每题 4 选项、correct 下标合法，explain 均 ≥30 汉字（最短 72）', () => {
+  assert.strictEqual(a.optionsOk, true);
+  assert.strictEqual(a.indexOk, true);
+  assert.ok(a.minExplain >= 30, '最短解释 ' + a.minExplain + ' 汉字');
+  assert.strictEqual(a.minExplain, 72);
+});
+
+test('check 题正确选项可在正文找到 ≥4 字原词：4/4', () => {
+  assert.strictEqual(a.groundedCount, 4);
+  assert.ok(a.groundedCount >= 2, '接地 ' + a.groundedCount);
+  for (const g of a.grounded) assert.ok(g.hit, g.q);
+});
+
+test('正确项打散，不扎堆在同一位置', () => {
+  assert.deepStrictEqual(a.spread, [2,2,1,1]);
+  assert.ok(Math.max(...a.spread) <= 3, '最大聚集 ' + Math.max(...a.spread));
+});
+
+test('quiz 与 main.js 均无旧脚手架概念残留', () => {
+  // 用转义构造，避免本文件自身被这些词命中
+  const fp = new RegExp('\\u4e09\\u8fa8|\\u56db\\u4f4d\\u9762|\\u5355\\u5143\\u89c4\\u6a21|\\u672c\\u7ae0\\u5b9e\\u6d4b');
+  assert.ok(!fp.test(quizRaw), 'quiz 残留指纹');
+  assert.ok(!fp.test(mainSrc), 'main.js 残留指纹');
+});
+
+test('main.js 只读正文与题库，不引用旧单元层', () => {
+  const legacy = new RegExp('units' + '\\.json|chapterUnits|standards');
+  assert.ok(!legacy.test(mainSrc));
+  assert.ok(mainSrc.includes('docs') && mainSrc.includes('quiz.json'));
 });

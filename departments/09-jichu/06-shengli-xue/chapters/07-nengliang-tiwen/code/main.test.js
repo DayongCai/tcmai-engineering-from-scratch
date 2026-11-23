@@ -3,92 +3,136 @@
  * 第 7 章 能量代谢与体温 —— 确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言只落在「可对账的结构」上：单元数与节数、字数、数值核验合计、视角/层级合计、类别推理的边界。
- * 不锁死正文措辞，以免教材改写时测试变成噪声。
+ * 断言落在正文实测值与三处关系判别上：散热主力的换位、基础状态的可比条件、
+ * 以及「由方向推不出状态」。最后一条是本章写进程序的那个「推不出」。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const {
-  load, chapterUnits, chapterMeta, sectionsOf, aggregate,
-  dominantView, dominantLevel, netHeatDirection,
-  lossModesByEnv, heatSourceByState, unitKind, VIEWS, LEVELS,
+  KEYWORDS,
+  HEAT_PRODUCTION,
+  HEAT_LOSS_WAYS,
+  read,
+  hanzi,
+  shape,
+  citations,
+  judgments,
+  keywords,
+  boundaryHits,
+  heatLossRoute,
+  basalComparable,
+  inferTemperature,
+  main,
 } = require('./main');
 
-const db = load();
-const units = chapterUnits(db);
-const meta = chapterMeta(db);
+const md = read();
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
 
-test('本章 12 个知识单元落在 4 个节里，章号与章名对得上', () => {
-  assert.strictEqual(units.length, 12);
-  assert.strictEqual(sectionsOf(units).length, 4);
-  assert.strictEqual(meta.no, '7');
-  assert.match(meta.title, /能量代谢与体温/);
+test('正文规模：9776 汉字 / 8 个二级 / 10 个三级 / 12 个四级 / 47 行表格 / 54 段', () => {
+  const s = shape(md);
+  assert.strictEqual(s.hanzi, 9776);
+  assert.strictEqual(s.h1, 1);
+  assert.strictEqual(s.h2, 8);
+  assert.strictEqual(s.h3, 10);
+  assert.strictEqual(s.h4, 12);
+  assert.strictEqual(s.tables, 47);
+  assert.strictEqual(s.paras, 54);
 });
 
-test('本章教材字数 = 20292，且与逐单元 hanzi 之和一致', () => {
-  assert.strictEqual(meta.hanzi, 20292);
-  const sum = units.reduce((n, u) => n + u.hanzi, 0);
-  assert.strictEqual(sum, 20292);
+test('引文 1 条（篇名级）、加粗判断句 20 条', () => {
+  const c = citations(md);
+  assert.strictEqual(c.length, 1);
+  assert.strictEqual(c[0].book, '生理学');
+  assert.match(c[0].part, /^第7章·7\.2/);
+  assert.strictEqual(judgments(md).length, 20);
 });
 
-test('数值零容忍：12 个单元 measure.valueLike 合计为 0', () => {
-  for (const u of units) {
-    assert.strictEqual(u.measure.valueLike, 0, `${u.sub} 出现数值型表述`);
+test('关键词命中：产热 43 / 散热 41 / 基础代谢 9 / 蒸发 8 / 调定点 4', () => {
+  assert.deepStrictEqual(keywords(md), {
+    产热: 43,
+    散热: 41,
+    基础代谢: 9,
+    蒸发: 8,
+    调定点: 4,
+  });
+  assert.deepStrictEqual(KEYWORDS, ['产热', '散热', '调定点', '基础代谢', '蒸发']);
+});
+
+test('产热器官随状态换位：安静看内脏，活动看骨骼肌', () => {
+  assert.match(HEAT_PRODUCTION.安静时, /内脏/);
+  assert.match(HEAT_PRODUCTION.活动时, /骨骼肌/);
+  assert.deepStrictEqual(HEAT_LOSS_WAYS, ['辐射', '传导', '对流', '蒸发']);
+});
+
+test('散热主力随环境换位：温差在则辐射对流，温差消失只剩蒸发', () => {
+  assert.strictEqual(heatLossRoute('低于皮肤温度').main, '辐射与传导对流');
+  assert.strictEqual(heatLossRoute('接近或高于皮肤温度').main, '蒸发');
+  assert.match(heatLossRoute('接近或高于皮肤温度').why, /温差/);
+  assert.throws(() => heatLossRoute('未知'), /未知环境条件/);
+});
+
+test('基础状态四个条件不一致就不可比', () => {
+  assert.deepStrictEqual(basalComparable({ awake: true, fasting: true, thermoneutral: true, relaxed: true }), {
+    comparable: true, problems: [],
+  });
+  const bad = basalComparable({ awake: true, fasting: false, thermoneutral: true, relaxed: false });
+  assert.strictEqual(bad.comparable, false);
+  assert.deepStrictEqual(bad.problems, ['非空腹', '精神未放松']);
+});
+
+test('由产热与散热的方向推不出体温状态（写进程序的「推不出」）', () => {
+  const r = inferTemperature({ shivering: true, vasoconstriction: true });
+  assert.deepStrictEqual(r.dirs, ['产热增加', '散热减少']);
+  assert.match(r.conclusion, /推不出体温状态/);
+  assert.throws(() => inferTemperature({}), /没有可用的观察项/);
+});
+
+test('边界句与结构小节齐备', () => {
+  assert.ok(boundaryHits(md) >= 1);
+  assert.match(md, /免责声明/);
+  assert.match(md, /^## 代价与边界/m);
+});
+
+test('quiz 契约：6 题、pre/check×3/post×2、4 选项、下标跨 3 种、解释 ≥30 汉字', () => {
+  const qs = quiz.questions;
+  assert.strictEqual(qs.length, 6);
+  assert.deepStrictEqual(qs.map((q) => q.stage), ['pre', 'check', 'check', 'check', 'post', 'post']);
+  assert.ok(new Set(qs.map((q) => q.correct)).size >= 3);
+  for (const [i, q] of qs.entries()) {
+    assert.strictEqual(q.options.length, 4);
+    assert.deepStrictEqual(new Set(q.options).size, 4, `第 ${i + 1} 题选项重复`);
+    assert.ok(q.correct >= 0 && q.correct <= 3);
+    assert.ok(hanzi(q.explain) >= 30, `第 ${i + 1} 题 explain 只有 ${hanzi(q.explain)} 汉字`);
+    assert.ok(String(q.explanation || '').length >= 10);
   }
-  assert.strictEqual(aggregate(units).valueLike, 0);
 });
 
-test('三视角合计 = 214/127/6，四层级合计 = 4/10/24/53（全部由 measure 现算）', () => {
-  const agg = aggregate(units);
-  assert.deepStrictEqual(agg.views, { 代谢: 214, 机能: 127, 形态: 6 });
-  assert.deepStrictEqual(agg.levels, { 细胞: 4, 组织: 10, 器官: 24, 系统: 53 });
-  // 合计必须等于逐单元相加，防止区间求和写错
-  for (const k of VIEWS) {
-    assert.strictEqual(agg.views[k], units.reduce((n, u) => n + u.measure.views[k], 0));
+test('quiz 接地：check 题正确项与正文共享 4 字词组（≥2 道）', () => {
+  const clean = md.replace(/[^\u4e00-\u9fff]/g, ' ');
+  const grams = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + 4 <= seg.length; i += 1) grams.add(seg.slice(i, i + 4));
   }
-  for (const k of LEVELS) {
-    assert.strictEqual(agg.levels[k], units.reduce((n, u) => n + u.measure.levels[k], 0));
+  let grounded = 0;
+  for (const q of quiz.questions) {
+    if (q.stage !== 'check') continue;
+    const right = q.options[q.correct].replace(/[^\u4e00-\u9fff]/g, ' ');
+    if (right.split(/\s+/).some((seg) => {
+      for (let i = 0; i + 4 <= seg.length; i += 1) if (grams.has(seg.slice(i, i + 4))) return true;
+      return false;
+    })) grounded += 1;
   }
+  assert.ok(grounded >= 2, `只有 ${grounded} 道 check 题接地`);
 });
 
-test('本章是全书写代谢最重的一章：代谢视角高于机能视角', () => {
-  const agg = aggregate(units);
-  assert.ok(agg.views['代谢'] > agg.views['机能'], '本章代谢应高于机能');
-  // 全书口径下机能远高于代谢，本章反着来，这正是差异点
-  assert.ok(db.views['机能'] > db.views['代谢']);
-});
-
-test('主视角判定：7.1.2 测定属代谢，7.2.3 体温调节属机能；层级不猜', () => {
-  const u12 = units.find((u) => u.sub === '7.1.2');
-  const u23 = units.find((u) => u.sub === '7.2.3');
-  assert.strictEqual(dominantView(u12), '代谢');
-  assert.strictEqual(dominantView(u23), '机能');
-  assert.strictEqual(dominantLevel(u23), '系统');
-  assert.throws(() => chapterUnits(db, '99'), /没有第99章/);
-});
-
-test('类别推理的边界：产与散同向升时净方向推不出，不同向才给方向', () => {
-  assert.strictEqual(netHeatDirection('平', '平'), '净持平');
-  assert.match(netHeatDirection('升', '降'), /净增/);
-  assert.match(netHeatDirection('降', '升'), /净减/);
-  assert.match(netHeatDirection('升', '升'), /推不出/);
-  assert.throws(() => netHeatDirection('大涨', '降'), /方向只取/);
-});
-
-test('散热方式的侧重随环境类别改变，产热主力随状态类别改变', () => {
-  assert.match(lossModesByEnv('冷')[0], /辐射/);
-  assert.match(lossModesByEnv('热')[0], /蒸发/);
-  assert.match(heatSourceByState('寒冷').主, /骨骼肌/);
-  assert.match(heatSourceByState('安静').主, /内脏/);
-  assert.throws(() => lossModesByEnv('温'), /环境类别/);
-});
-
-test('机制 6 个单元 / 口径 6 个单元：观察与表述口径占了本章一半', () => {
-  const kinds = units.filter((u) => unitKind(u) === '口径');
-  assert.strictEqual(kinds.length, 6);
-  assert.ok(kinds.every((u) => /^7\.[34]\./.test(u.sub)));
+test('main() 返回的规模与实测一致', () => {
+  const r = main();
+  assert.strictEqual(r.shape.hanzi, 9776);
+  assert.strictEqual(r.ways, 4);
 });

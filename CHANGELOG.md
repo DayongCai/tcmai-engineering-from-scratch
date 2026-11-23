@@ -1,5 +1,32 @@
 # 变更日志
 
+### 底本课与 09-基础主干补实：194 章转合格（伤寒 / 金匮 / 证候 / 药理学 / 病理生理 / 中医内科 / 方剂）
+
+| 课 | 章 | 汉字 | 原不合格 |
+|---|--:|--:|--:|
+| 01-伤寒论 | 12 | 34,226 | 0 → 0（4 章收尾 + 全章 quiz/code 重做） |
+| 01-金匮要略 | 24 | 87,888 | 15 → 0 |
+| 01-中医证候学 | 27 | 76,847 | 24 → 0 |
+| 09-药理学 | 49 | 459,868 | 49 → 0 |
+| 09-病理生理学 | 53 | 373,141 | 53 → 0 |
+| 01-中医内科学 | 14 | 114,996 | 10 → 0 |
+| 02-方剂学 | 15 | 63,846 | 13 → 0 |
+
+**结构改造的三类**（子代理实测后如实上报，不是「全绿了事」）：
+- 药理学：二级节 11–14 → 6–8；MOTTO 从「——教材·药理学·第 N 章…」换成 33 部经典篇名级引文；4 章 `## 免责` 并入正文。
+- 病理生理学：10–23 节 → 4–7 节，原讲义引文降为「讲义原文」行，MOTTO 改引仓内经典底本并逐字比对。
+- 中医内科 / 方剂学：节数收口 + MOTTO 篇名级 + `**免责声明：**` 归位；方剂学另修正 3 处药位/平均/引文错误（第 5、6、10 章）。
+
+**三处门类修复（都是「门错」不是「内容错」）**
+1. `check_chapter_exercises`：`explain` 改为 `explain || explanation` 双读——站点早已双读，只有门没跟，导致 318 处假违规。
+2. `audit_course_docs`：跳过 `chapters/` 下非目录项（`_corpus.js` 被当成一章）。
+3. `test_fangji_chapters` / `test_shengli_chapters` / `test_bingli_chapters`：spawn 子进程前剔除 `NODE_TEST_CONTEXT`——继承后子进程 `node --test` 直接跳过，断言从未真正执行（收紧，不是放宽）。
+
+**一次事故与修法（重要）**
+`rebuild:all` 里的 `build_zhenghou_sanji.py` 与 `build_jingui_pian_chapters.py` 会写 `docs/zh.md`，把刚写完、未提交的手稿覆盖回母本版本（26 章一度丢失）。修法：两者都加「已补实科目让路」——证候学只维护 `chapters.json`，金匮 `build_all` 直接返回。验证方式：用**写入模式**跑生成器后 `audit` 仍 0 不合格。
+
+**另修**：证候学 15 章补入 `概论原文`（locator 可回查）；第一版按关键词自动匹配引错了 6 章（如第 1 章引「病因之间的转变」），改为显式「章 → 概论第几节」映射后重写。
+
 ### 护理学院收官：27 门 / 348 章（第二轮全库补实的第一个完整院系）
 
 承前批 8 门 / 132 章，本轮再补 19 门 / 216 章，护理学院 **27 / 27 门、348 / 348 章**正文全部写成：
@@ -5116,6 +5143,43 @@ locator 一律 `派生·第N章·N.M`，每单元另存 `srcSub`（源教材单�
 
 **套件 73 → 75**（新增底本层与章级门），`FORKING.md`、看板同步。
 
+### 交付层（六）：不依赖令牌的「本地 release」发布（已就位）
+
+用户要求「不依赖令牌、按 release 方式发布」。定义先摆正：**发布 ≠ 传到 GitHub**——
+版本化目录 + 清单 + 校验和 + 下载页四样齐了，就是一份可分发的 release；换地址不改产物。
+
+新增 `platform/pipeline/stage_release.js`（`npm run media:stage`）：
+
+```
+D:/tcm-release/media-v1/            7.4 GB
+├── index.html                      下载页：15 个附件 + 大小 + 章数 + sha256
+├── RELEASE-NOTES.md                发了什么 / 怎么验 / 怎么解压 / 播放要求
+├── SHA256SUMS                      17 行（8 分卷 + 7 清单 + 说明 + 下载页）
+├── index.json  bundle-index.json   APP 读的清单
+├── <course>-publish.json × 5
+└── *.tar × 8                       按章切分，单卷 ≤1.6 GB
+```
+
+实测：
+
+```
+sha256sum -c SHA256SUMS          → 17 行全部 OK
+GET /                            → 200 text/html（预览面板里已打开）
+GET /SHA256SUMS                  → 200
+Range: bytes=0-1023 于 1.6 GB 分卷 → 206（可断点续传）
+```
+
+三条去向都不需要令牌：**校内 nginx**（`platform/deploy/`）、**U 盘/网盘**（整目录 + `sha256sum -c`）、
+**GitHub 网页**（人工把 8 个 tar 拖进 release 附件区，正文粘 `RELEASE-NOTES.md`）。
+有令牌时 `npm run media:publish` 上传的是**同一批文件**，不必重新打包。
+
+顺带修了 `serve_media.js` 两个设计问题：
+① 被 `require` 时会**顺带起一个服务器**（`node -e "require(...)"` 直接把终端挂住 5 分钟）→ 加 `require.main === module` 保护；
+② 缺 `.html/.md/.txt` 的 MIME，根路径只会给 `index.json` → 现在根路径优先 `index.html`，release 目录能直接当下载站。
+
+门扩到 12 项：新增「本地 release 自洽」——5 个必备文件在、`SHA256SUMS` 行数 = 目录文件数、
+每条校验和指向真实存在的文件、下载页把每个 `.tar` 都列出来。
+
 ### 交付层（五）：校内/局域网 nginx 部署三件套（已实测可播）
 
 用户选择「校内/局域网 nginx」。交付 `platform/deploy/` 三个文件，
@@ -5166,11 +5230,11 @@ locator 一律 `派生·第N章·N.M`，每单元另存 `srcSub`（源教材单�
 
 1. 仓库存在性检查，缺失时 `--create-repo` 建**私有**仓（媒体不进 git，只放清单与 README）；
 2. 空仓时用 Contents API 写 README（说明「这里没有代码，视频在 Release 附件里」）；
-3. 建/复用 tag 对应 Release；上传 **13 个附件 / 6.56 GB**（7 个分卷 + `bundle-index.json`
-   + 全局 `index.json` + 4 门课 `publish.json`）；
+3. 建/复用 tag 对应 Release；上传 **15 个附件 / 7.30 GB**（8 个分卷 + `bundle-index.json`
+   + 全局 `index.json` + 5 门课 `publish.json`）；
 4. **幂等**：同名且大小一致就跳过，可断点重跑；上传后**回读 Release 核对附件**，缺件即报错。
 
-`--dry-run` 可只看计划不发请求（已验证：13 个附件、6.56 GB、单个最大 1618.7 MB < 2 GB 上限）。
+`--dry-run` 可只看计划不发请求（已验证：15 个附件、7.30 GB、单个最大 1618.7 MB < 2 GB 上限）。
 
 **当前状态**：脚本已就绪、dry-run 与 `--self-test` 都通过，但**尚未发布**——本机没有可用凭据
 （`gh` 未登录、无 `GITHUB_TOKEN`、`git credential fill` 里也没有 github.com 的账号、
@@ -5223,7 +5287,8 @@ HLS 是「在线播放」，学员还要「离线看」。GitHub Release 单 ass
 
 | 课程 | 卷 | 每卷章数 | 体积 |
 |---|--:|---|--:|
-| 01-zhongyi-jichu-lilun | 1 | 3 | 0.03 GB |
+| 01-zhongyi-jichu-lilun | 1 | 10 | 0.09 GB |
+| 08-jingui-yaolue | 1 | 24 | 0.73 GB |
 | 10-zhongyi-neike-xue | 1 | 14 | 0.66 GB |
 | 11-bingli-shengli-xue | 3 | 26 + 25 + 2 | 3.27 GB |
 | 12-yaoli-xue | 2 | 30 + 19 | 2.61 GB |

@@ -38,15 +38,27 @@ test('子串 AND 对无答案查询返回 0 条（精确但不会模糊）', () 
   assert.strictEqual(substringAnd('少阴之为病 但欲寐').length, 0);
 });
 
-test('阈值两侧：无答案最高 27.05 < 有答案最低 30.85（余量 3.80）', () => {
-  const noAns = Math.max(bm25('乌梅丸 吐蛔')[0].score, bm25('少阴之为病 但欲寐')[0].score);
-  const hasAns = Math.min(bm25('下利 厥 恶寒 四逆汤')[0].score, bm25('胃家实')[0].score);
-  assert.ok(noAns < hasAns, `${noAns} < ${hasAns}`);
-  assert.ok(Math.abs(noAns - 27.051) < 0.01, `noAns=${noAns}`);
-  assert.ok(Math.abs(hasAns - 30.852) < 0.01, `hasAns=${hasAns}`);
+test('阈值两侧：真·无答案最高 27.051，有答案最低 31.43（余量 4.38）', () => {
+  const noAnsTrue = Math.max(bm25('乌梅丸 吐蛔')[0].score, bm25('少阴之为病 但欲寐')[0].score);
+  const hasAns = Math.min(bm25('胃家实')[0].score, bm25('但见一证 不必悉具')[0].score);
+  assert.ok(Math.abs(noAnsTrue - 27.051) < 0.01, `noAnsTrue=${noAnsTrue}`);
+  assert.ok(Math.abs(hasAns - 31.43) < 0.01, `hasAns=${hasAns}`);
+  assert.ok(Math.abs(hasAns - noAnsTrue - 4.379) < 0.02, '真·余量应为 4.38');
+});
+
+test('「下利 厥 恶寒 四逆汤」不是负样本：它是四逆汤证条，会把无答案侧抬到 30.852', () => {
+  const t = bm25('下利 厥 恶寒 四逆汤')[0];
+  assert.strictEqual(t.id, '19:121');
+  assert.match(t.text, /四逆汤/);
+  assert.ok(Math.abs(t.score - 30.852) < 0.01, `score=${t.score}`);
+  assert.ok(Math.abs(31.43 - t.score - 0.578) < 0.02, '含错标负样本时余量应为 0.578');
 });
 
 test('通假：底本 0 条「默默」、3 条「嘿嘿」', () => {
   assert.strictEqual(DOCS.filter((d) => d.text.includes('默默')).length, 0);
   assert.strictEqual(DOCS.filter((d) => d.text.includes('嘿嘿')).length, 3);
 });
+
+// ── quiz 结构契约（与 scripts/check_chapter_exercises.js 同源）──
+const { quizContract } = require('../../_quiz-contract.js');
+quizContract(__dirname);

@@ -1,100 +1,100 @@
-'use strict';
+#!/usr/bin/env node
 /**
- * 第 12 章的单测：八小节两两成对、零证—方对（正确结果）、证候要素 24、编码 4 种、三元组 6 个。
- * 这一章最容易出错的地方是把「没有辨证论治」当成抽取失败 —— 测试专门锁住这一点。
+ * 第 12 章 数字化与 AI 时代：要素可枚举，编码可对齐，裁量不可交出去 —— 确定性单元测试
+ * 运行: node --test code/main.test.js
+ *
+ * 断言只落两处可对账的东西：
+ *   1) code/main.js 从本章 docs/zh.md 现算出的结构指标（写死在此，正文改版测试先响）；
+ *   2) quiz.json 与正文同源（≥5 题、三段齐、4 选项、explain ≥30 汉字、≥2 道 check 题接地、答案打散）。
  */
+
+'use strict';
+
 const assert = require('node:assert');
 const test = require('node:test');
-const {
-  chap, subs, shape, pairing, hasSyndromeSection, elements, codes,
-  standards, triples, layers, boundaryWords, spread, totals,
-} = require('./main.js');
+const fs = require('node:fs');
+const path = require('node:path');
 
-test('章的规模：4 节 · 8 小节 · 11503 汉字 · 量值 5', () => {
-  const t = totals();
-  assert.strictEqual(t.secs, 4);
-  assert.strictEqual(t.subs, 8);
-  assert.strictEqual(t.hanzi, 11503);
-  assert.strictEqual(t.valueLike, 5);
-});
+const { measure, TERMS, CHAPTER } = require('./main.js');
 
-test('八小节两两成对：每节恰好 2 个小节', () => {
-  const p = pairing();
-  assert.strictEqual(p.length, 4);
-  for (const s of p) {
-    assert.strictEqual(s.n, 2);
-    assert.strictEqual(s.pair, true);
+const M = measure();
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const questions = Array.isArray(QUIZ.questions) ? QUIZ.questions : [];
+const DOC = fs.readFileSync(path.join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
+const HAN = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  assert.deepStrictEqual(p.map((s) => s.no), ['12.1', '12.2', '12.3', '12.4']);
+  return out;
+}
+
+const PINNED = {
+  "hanzi": 5958,
+  "h2": 6,
+  "h3": 4,
+  "h4": 10,
+  "tables": 5,
+  "tableRows": 26,
+  "quotes": 36,
+  "locators": 13,
+  "subNos": 8,
+  "terms": {
+    "要素": 30,
+    "编码": 25,
+    "知识图谱": 6,
+    "三元组": 16,
+    "裁量": 9,
+    "可溯源": 5
+  }
+};
+
+test('正文现算指标与实测一致', () => {
+  assert.strictEqual(CHAPTER, 12);
+  assert.strictEqual(TERMS.length, 6);
+  assert.deepStrictEqual(M, PINNED);
 });
 
-test('本章没有辨证论治／证治，证—方对为 0 —— 这是正确结果', () => {
-  assert.strictEqual(hasSyndromeSection(), false);
-  assert.strictEqual(totals().pairs, 0);
-  const titles = subs().map((u) => u.title).join('|');
-  assert.ok(!/辨证论治|证治|代表方/.test(titles));
+test('二级小节收口在 4–8 个，正文汉字不低于 2,500，三级出处不少于 10 条', () => {
+  assert.ok(M.h2 >= 4 && M.h2 <= 8, `二级小节 ${M.h2} 个`);
+  assert.ok(M.hanzi >= 2500, `汉字 ${M.hanzi}`);
+  assert.ok(M.locators >= 10, `三级出处 ${M.locators} 条`);
 });
 
-test('证候要素 24 个：病位 8 · 病性 16', () => {
-  const e = elements();
-  assert.deepStrictEqual(e.position, ['心', '肝', '脾', '肺', '肾', '胃', '肠', '胆']);
-  assert.strictEqual(e.positionCount, 8);
-  assert.strictEqual(e.natureCount, 16);
-  assert.deepStrictEqual(e.nature, ['风', '寒', '暑', '湿', '燥', '火', '气滞', '血瘀', '痰', '饮', '水停', '气虚', '血虚', '阴虚', '阳虚', '精亏']);
-  assert.strictEqual(totals().elements, 24);
+test('术语表六个词都真的在正文里出现', () => {
+  for (const [k, n] of Object.entries(M.terms)) assert.ok(n > 0, `${k} 出现 0 次`);
 });
 
-test('ICD-11 形态编码：出现 7 次，去重 4 种（8B20 / 7A00 / SA00 / SE10）', () => {
-  const c = codes();
-  assert.strictEqual(c.n, 7);
-  assert.strictEqual(c.distinctN, 4);
-  assert.deepStrictEqual(c.distinct.sort(), ['7A00', '8B20', 'SA00', 'SE10']);
+test('quiz 结构：≥5 题，pre/check/post 三段齐，4 选项、correct 合法、explain ≥30 汉字', () => {
+  assert.ok(questions.length >= 5, `只有 ${questions.length} 题`);
+  const stages = new Set(questions.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), `缺 ${s} 段`);
+  for (const q of questions) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    assert.ok(HAN(q.explain) >= 30, `${q.question} explain 只有 ${HAN(q.explain)} 汉字`);
+  }
 });
 
-test('标准与工具名的出现次数：ICD-11 6 · GB/T 16751.2 5 · Neo4j 3 · RAG 3', () => {
-  const m = Object.fromEntries(standards().map((x) => [x.w, x.n]));
-  assert.strictEqual(m['ICD-11'], 6);
-  assert.strictEqual(m['GB/T 16751.2'], 5);
-  assert.strictEqual(m['Neo4j'], 3);
-  assert.strictEqual(m['RAG'], 3);
-  assert.strictEqual(m['TM1'], 1);
+test('quiz 接地：≥2 道 check 题正确项含正文 4 字词组，答案打散', () => {
+  const body = shingles(DOC);
+  const grounded = questions.filter(
+    (q) => q.stage === 'check' && [...shingles(q.options[q.correct])].some((g) => body.has(g)),
+  ).length;
+  assert.ok(grounded >= 2, `只有 ${grounded} 道 check 题接地`);
+  const used = new Set(questions.map((q) => q.correct));
+  assert.ok(used.size >= 3, `correct 只用到 ${used.size} 个位置`);
 });
 
-test('三元组样板 6 个，谓词为辨证为 / 治以 / 主方 / 含', () => {
-  const t = triples();
-  assert.strictEqual(t.n, 6);
-  const p = Object.fromEntries(t.predicates.map((x) => [x.p, x.n]));
-  assert.deepStrictEqual(p, { 辨证为: 1, 治以: 2, 主方: 1, 含: 2 });
-  assert.ok(t.samples[0].includes('胸痹，辨证为，心血瘀阻证'));
-});
-
-test('平台四层齐备：基础设施层 / 数据层 / 服务层 / 应用层', () => {
-  const l = layers();
-  assert.strictEqual(l.length, 4);
-  for (const x of l) assert.strictEqual(x.hit, true, `${x.n} 未出现`);
-});
-
-test('边界词：溯源 21 · 必须 13 · 以医者为准 7 · 可辅助参考 5 · 不得 5 · 不能 5', () => {
-  const m = Object.fromEntries(boundaryWords().map((x) => [x.w, x.n]));
-  assert.strictEqual(m['溯源'], 21);
-  assert.strictEqual(m['必须'], 13);
-  assert.strictEqual(m['以医者为准'], 7);
-  assert.strictEqual(m['可辅助参考'], 5);
-  assert.strictEqual(m['不得'], 5);
-  assert.strictEqual(m['不能'], 5);
-});
-
-test('八小节字数：合计 13243，最长 12.1.1（1729），最短 12.3.1（1605）', () => {
-  const s = spread();
-  assert.strictEqual(s.total, 13243);
-  assert.deepStrictEqual([s.max.no, s.max.chars], ['12.1.1', 1729]);
-  assert.deepStrictEqual([s.min.no, s.min.chars], ['12.3.1', 1605]);
-  assert.strictEqual(s.rows.length, 8);
-});
-
-test('每个小节 1 个条目，正文都长于 1500 字', () => {
-  for (const u of subs()) {
-    assert.strictEqual(u.items.length, 1, `${u.no} 条目数异常`);
-    assert.ok(u.items[0].body.length > 1500, `${u.no} 正文过短`);
+test('quiz 无脚手架指纹与禁用口径', () => {
+  const raw = JSON.stringify(QUIZ);
+  for (const re of [/三辨/, /四位面/, /单元规模/, /本章实测/, /本课第\s*\d+\s*章/, /见\s*code\/main\.js\s*输出/]) {
+    assert.ok(!re.test(raw), `残留指纹 ${re}`);
+  }
+  for (const re of [/页码/, /疗程/, /发生率/, /显效率/, /每日\s*\d+\s*(?:次|服)/]) {
+    assert.ok(!re.test(raw), `禁用口径 ${re}`);
   }
 });

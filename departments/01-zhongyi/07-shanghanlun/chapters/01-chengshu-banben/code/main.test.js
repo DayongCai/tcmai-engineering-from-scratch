@@ -38,3 +38,7 @@ test('不给条号 / 条号越界 / 篇名不唯一，都必须抛错（引用�
   assert.throws(() => tiao('辨太阳病脉证并治中', 99999), /没有第/);
   assert.throws(() => tiao('辨太阳病脉证并治', 1), /篇名不唯一/);
 });
+
+// ── quiz 结构契约（与 scripts/check_chapter_exercises.js 同源）──
+const { quizContract } = require('../../_quiz-contract.js');
+quizContract(__dirname);

@@ -148,7 +148,7 @@ chapters:
     estimate_minutes: 26.18
     measured_minutes: 25.38
   - slug: 20-shock
-    title: 第 20 章 · 休克
+    title: 第 20 章 · 休克是灌注问题，血压还撑得住并不等于组织没有缺血
     unit: U05
     video: rendered
     estimate_minutes: 24.63
@@ -160,7 +160,7 @@ chapters:
     estimate_minutes: 29.63
     measured_minutes: 28.86
   - slug: 22-obstructive-pulmonary-disorders
-    title: 第 22 章 · 阻塞性肺疾病
+    title: 第 22 章 · 阻塞性肺疾病：气流受限总在呼气相暴露，喘鸣消失不是好转
     unit: U06
     video: rendered
     estimate_minutes: 29.25

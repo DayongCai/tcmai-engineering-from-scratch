@@ -3,106 +3,134 @@
  * 第 5 章 呼吸 —— 确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言只落在「可对账的结构」与「方向判别」上：单元数与字数、三视角与四层级的加总、
- * 五个方向题各自的判别结果与非法输入的拒绝、教材零数值声明。
- * 不锁死单元正文文字，以免教材微调时测试变成噪声。
+ * 断言落在正文实测值与三处方向判别上：比值失调的两种效应、呼吸肌的主被动、
+ * 扩散的动力来源。本章最贵的是方向题，所以判别函数是测试重点。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const {
-  load,
-  chapterUnits,
-  profile,
-  levelHotspot,
-  deadSpaceTrend,
-  vqClass,
-  curveShift,
-  chemoreceptor,
-  fluxDirection,
-  valueLikeZero,
+  KEYWORDS,
+  CHAIN,
+  read,
+  hanzi,
+  shape,
+  citations,
+  judgments,
+  keywords,
+  boundaryHits,
+  vaqMismatch,
+  breathWork,
+  diffusionBasis,
+  main,
 } = require('./main');
 
-const data = load();
-const units = chapterUnits(data);
-const p = profile(units);
+const md = read();
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
 
-test('本章恰有十二个知识单元，教材正文合计 20789 字', () => {
-  assert.strictEqual(p.n, 12);
-  assert.strictEqual(p.hanzi, 20789);
-  assert.deepStrictEqual(p.locators, [
-    '教材·第5章·5.1.1', '教材·第5章·5.1.2', '教材·第5章·5.1.3',
-    '教材·第5章·5.2.1', '教材·第5章·5.2.2', '教材·第5章·5.2.3',
-    '教材·第5章·5.3.1', '教材·第5章·5.3.2', '教材·第5章·5.3.3',
-    '教材·第5章·5.4.1', '教材·第5章·5.4.2', '教材·第5章·5.4.3',
-  ]);
+test('正文规模：11484 汉字 / 8 个二级 / 9 个三级 / 12 个四级 / 42 行表格 / 61 段', () => {
+  const s = shape(md);
+  assert.strictEqual(s.hanzi, 11484);
+  assert.strictEqual(s.h1, 1);
+  assert.strictEqual(s.h2, 8);
+  assert.strictEqual(s.h3, 9);
+  assert.strictEqual(s.h4, 12);
+  assert.strictEqual(s.tables, 42);
+  assert.strictEqual(s.paras, 61);
 });
 
-test('三视角：机能 177 · 代谢 72 · 形态 71，代谢的相对比重明显高于循环章', () => {
-  assert.deepStrictEqual(p.views, { 代谢: 72, 机能: 177, 形态: 71 });
-  assert.strictEqual(p.viewTotal, 320);
-  assert.ok(p.views.代谢 / p.views.机能 > 0.4, '代谢/机能的比值应过四成，这是呼吸章的特点');
+test('引文 11 条、加粗判断句 52 条，引文到篇名级', () => {
+  const c = citations(md);
+  assert.strictEqual(c.length, 11);
+  for (const x of c) {
+    assert.strictEqual(x.book, '生理学');
+    assert.match(x.part, /^第5章·5\.[1-4]/);
+  }
+  assert.strictEqual(judgments(md).length, 52);
 });
 
-test('四层级：器官 227 · 组织 97 · 细胞 70 · 系统 43，组织层占比过两成', () => {
-  assert.deepStrictEqual(p.levels, { 细胞: 70, 组织: 97, 器官: 227, 系统: 43 });
-  assert.strictEqual(p.levelTotal, 437);
-  assert.ok(p.levels.组织 / p.levelTotal > 0.2, '组织层应占到两成以上');
-  assert.ok(p.levels.器官 > p.levels.组织 && p.levels.组织 > p.levels.细胞, '排序应为器官 > 组织 > 细胞');
+test('关键词命中：通气 61 / 肺泡 41 / 分压差 21 / 无效腔 20 / 换气 14', () => {
+  assert.deepStrictEqual(keywords(md), {
+    通气: 61,
+    肺泡: 41,
+    分压差: 21,
+    无效腔: 20,
+    换气: 14,
+  });
+  assert.deepStrictEqual(KEYWORDS, ['分压差', '通气', '换气', '无效腔', '肺泡']);
 });
 
-test('组织层落点集中在组织气体交换一节：5.2.3 独占 42 处，其余十一节 55 处', () => {
-  const hs = levelHotspot(units, '组织');
-  assert.strictEqual(hs.locator, '教材·第5章·5.2.3');
-  assert.strictEqual(hs.n, 42);
-  assert.strictEqual(hs.rest, 55);
-  assert.strictEqual(hs.n + hs.rest, p.levels.组织);
+test('四个环节一条链，次序固定', () => {
+  assert.deepStrictEqual(CHAIN, ['肺通气', '肺换气', '气体在血液中的运输', '组织换气']);
 });
 
-test('无效腔：同样每分通气量下，浅快压低肺泡通气量，深慢抬高', () => {
-  assert.strictEqual(deadSpaceTrend({ freq: 'up', depth: 'down' }).alveolar, 'down');
-  assert.strictEqual(deadSpaceTrend({ freq: 'down', depth: 'up' }).alveolar, 'up');
-  assert.strictEqual(deadSpaceTrend({ freq: 'flat', depth: 'flat' }).alveolar, 'flat');
-  assert.strictEqual(deadSpaceTrend({ freq: 'up', depth: 'down' }).form, '浅快呼吸');
-  assert.throws(() => deadSpaceTrend({ freq: 'up', depth: 'flat' }), /无法判定/);
+test('比值失调的两种方向：气多血少＝无效腔样，气少血多＝分流样', () => {
+  assert.strictEqual(vaqMismatch({ ventilation: '过剩', perfusion: '不足' }).effect, '无效腔样效应');
+  assert.strictEqual(vaqMismatch({ ventilation: '不足', perfusion: '过剩' }).effect, '分流样效应');
+  assert.match(vaqMismatch({ ventilation: '过剩', perfusion: '过剩' }).effect, /匹配/);
+  assert.throws(() => vaqMismatch({ ventilation: '多', perfusion: '少' }), /未知组合/);
 });
 
-test('通气血流比值：增大为无效腔样，减小为分流样，没有「越大越好」', () => {
-  assert.strictEqual(vqClass('up').label, '无效腔样');
-  assert.strictEqual(vqClass('down').label, '分流样');
-  assert.strictEqual(vqClass('flat').label, '匹配');
-  assert.throws(() => vqClass('higher'), /只能是 up/);
+test('呼吸肌：平静吸气主动、平静呼气被动、用力呼气转为主动', () => {
+  assert.strictEqual(breathWork('平静吸气').active, true);
+  assert.strictEqual(breathWork('平静呼气').active, false);
+  assert.strictEqual(breathWork('用力呼气').active, true);
+  assert.match(breathWork('平静呼气').who, /弹性回缩/);
+  assert.throws(() => breathWork('屏气'), /未知呼吸状态/);
 });
 
-test('氧解离曲线：酸碱下降＋二氧化碳升高＋温度升高，三个因素同向右移', () => {
-  const s = curveShift(['酸碱程度下降', '二氧化碳升高', '温度升高']);
-  assert.strictEqual(s.shift, '右移');
-  assert.match(s.meaning, /亲和力下降/);
-  assert.strictEqual(s.applied.length, 3);
-  assert.throws(() => curveShift(['氧分压升高']), /不是本章列出的影响因素/);
-  assert.throws(() => curveShift([]), /没有给出任何影响因素/);
+test('扩散方向由分压差定，二氧化碳靠溶解度补上分压差的不足', () => {
+  assert.match(diffusionBasis('氧').driven, /肺泡侧向血液侧/);
+  assert.match(diffusionBasis('二氧化碳').driven, /血液侧向肺泡侧/);
+  assert.match(diffusionBasis('二氧化碳').factor, /溶解度/);
+  assert.throws(() => diffusionBasis('氮'), /未知气体/);
 });
 
-test('化学感受器分工：二氧化碳以中枢为主，低氧以外周为主，氢离子两处皆可', () => {
-  assert.match(chemoreceptor('二氧化碳升高').site, /中枢/);
-  assert.match(chemoreceptor('氧下降').site, /外周/);
-  assert.match(chemoreceptor('氢离子升高').site, /中枢与外周/);
-  assert.throws(() => chemoreceptor('温度升高'), /只讨论三种化学刺激/);
+test('边界句与结构小节齐备', () => {
+  assert.ok(boundaryHits(md) >= 1);
+  assert.match(md, /免责声明/);
+  assert.match(md, /^## 代价与边界/m);
 });
 
-test('扩散方向只由两侧相对水平决定，两侧相等即为动态平衡', () => {
-  assert.strictEqual(fluxDirection('氧', '较高', '较低').dir, '左→右');
-  assert.strictEqual(fluxDirection('二氧化碳', '较低', '较高').dir, '右→左');
-  assert.match(fluxDirection('氧', '较高', '较高').dir, /动态平衡/);
-  assert.throws(() => fluxDirection('氧', '高', '低'), /只接受/);
+test('quiz 契约：6 题、pre/check×3/post×2、4 选项、下标跨 3 种、解释 ≥30 汉字', () => {
+  const qs = quiz.questions;
+  assert.strictEqual(qs.length, 6);
+  assert.deepStrictEqual(qs.map((q) => q.stage), ['pre', 'check', 'check', 'check', 'post', 'post']);
+  assert.ok(new Set(qs.map((q) => q.correct)).size >= 3);
+  for (const [i, q] of qs.entries()) {
+    assert.strictEqual(q.options.length, 4);
+    assert.deepStrictEqual(new Set(q.options).size, 4, `第 ${i + 1} 题选项重复`);
+    assert.ok(q.correct >= 0 && q.correct <= 3);
+    assert.ok(hanzi(q.explain) >= 30, `第 ${i + 1} 题 explain 只有 ${hanzi(q.explain)} 汉字`);
+    assert.ok(String(q.explanation || '').length >= 10);
+  }
 });
 
-test('教材「不写数值」的声明逐单元成立：十二个单元的 valueLike 全为零', () => {
-  const z = valueLikeZero(units);
-  assert.strictEqual(z.checked, 12);
-  assert.deepStrictEqual(z.bad, []);
-  for (const u of units) assert.strictEqual(u.measure.valueLike, 0, `${u.locator} 出现数值`);
+test('quiz 接地：check 题正确项与正文共享 4 字词组（≥2 道）', () => {
+  const clean = md.replace(/[^\u4e00-\u9fff]/g, ' ');
+  const grams = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + 4 <= seg.length; i += 1) grams.add(seg.slice(i, i + 4));
+  }
+  let grounded = 0;
+  for (const q of quiz.questions) {
+    if (q.stage !== 'check') continue;
+    const right = q.options[q.correct].replace(/[^\u4e00-\u9fff]/g, ' ');
+    if (right.split(/\s+/).some((seg) => {
+      for (let i = 0; i + 4 <= seg.length; i += 1) if (grams.has(seg.slice(i, i + 4))) return true;
+      return false;
+    })) grounded += 1;
+  }
+  assert.ok(grounded >= 2, `只有 ${grounded} 道 check 题接地`);
+});
+
+test('main() 返回的规模与实测一致', () => {
+  const r = main();
+  assert.strictEqual(r.shape.hanzi, 11484);
+  assert.strictEqual(r.chain, 4);
 });

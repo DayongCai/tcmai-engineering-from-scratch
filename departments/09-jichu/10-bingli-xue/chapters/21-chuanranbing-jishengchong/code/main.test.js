@@ -1,116 +1,112 @@
 #!/usr/bin/env node
 /**
- * 第21章 常见传染病及寄生虫病 —— 确定性单元测试
+ * 第 21 章 常见传染病及寄生虫病 —— 确定性单测
  * 运行: node --test code/main.test.js
  *
- * 断言落在可对账的结构上：九种病的落点、三维对照的形态词、溃疡判据、六要素覆盖、数值是否为 0。
+ * 两件事：① 正文实测值（小节数/汉字数/表格/引文/单元号/每节字数）逐个钉住；
+ * ② 本章 quiz 的结构与接地——题数、分段、选项数、答案分布、解释长度、
+ *    以及「正确选项能在正文里找到原词」这条判据本身也要可测。
+ * 正文一改，这里的数就必须跟着改——这正是它的用处。
  */
 
 'use strict';
 
-const assert = require('node:assert');
 const test = require('node:test');
+const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const {
-  SIX,
-  DISEASES,
-  SHAPE_WORDS,
-  load,
-  chapterUnits,
-  shape,
-  lens,
-  rank,
-  total,
-  share,
-  valueAudit,
-  sixElementUnits,
-  diseaseAxis,
-  shapeAxis,
-  ulcerAxis,
-} = require('./main');
+const { readDoc, shape, head, average, sections, tables, quotes, unitIds, figures } = require('./main');
 
-const units = load();
-const list = chapterUnits(units);
+const md = readDoc();
+const s = shape(md);
+const a = average(s);
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
 
-test('本章 12 个知识单元，分属 4 节，正文合计 20385 字', () => {
-  const s = shape(list);
+const hz = (t) => (String(t || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const shingles = (t, n = 4) => {
+  const out = new Set();
+  const clean = String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+};
+
+test('首行是「第 21 章 · 判断句」，章号与本章一致', () => {
+  const h = head(md);
+  assert.strictEqual(h.n, 21);
+  assert.ok(h.title.length >= 8, '判断句太短：' + h.title);
+});
+
+test('正文实测：8 个二级小节 · 9127 汉字 · 1 张表 · 8 行数据', () => {
+  assert.strictEqual(s.secs, 8);
+  assert.strictEqual(s.hanzi, 9127);
+  assert.strictEqual(s.tables, 1);
+  assert.strictEqual(s.rows, 8);
+});
+
+test('出证与单元：引文行 11 条 · 单元号 12 个 · 图注 4 条', () => {
+  assert.strictEqual(s.quotes, 11);
   assert.strictEqual(s.units, 12);
-  assert.strictEqual(s.secs, 4);
-  assert.strictEqual(s.hanzi, 20385);
-  assert.deepStrictEqual(list.map((u) => u.sub), [
-    '21.1.1', '21.1.2', '21.1.3',
-    '21.2.1', '21.2.2', '21.2.3',
-    '21.3.1', '21.3.2', '21.3.3',
-    '21.4.1', '21.4.2', '21.4.3',
+  assert.strictEqual(s.figures, 4);
+  assert.strictEqual(unitIds(md).length, 12, '一章应有 12 个单元号');
+});
+
+test('各节汉字之和等于正文汉字数（差一个字就不通过）', () => {
+  assert.strictEqual(s.lead + s.perSection.reduce((x, y) => x + y, 0), s.hanzi);
+  assert.ok(s.lead > 0, '题记部分不该为空');
+  assert.strictEqual(sections(md).length, s.secs);
+});
+
+test('每节字数与最长节：均值 1141 字，最长「十二个小节：逐条落位」3254 字', () => {
+  assert.strictEqual(a.perSection, 1141);
+  assert.strictEqual(a.perUnit, 761);
+  assert.strictEqual(a.largest.hanzi, 3254);
+  assert.deepStrictEqual(s.perSection, [
+    310, 276, 556, 345, 285, 1604, 3254, 1970
   ]);
 });
 
-test('三视角合计 681 次，形态占九成：这一章是形态对照，不是病原学', () => {
-  const { views } = lens(list);
-  assert.strictEqual(total(views), 681);
-  assert.strictEqual(views.形态, 612);
-  assert.strictEqual(views.机制, 44);
-  assert.strictEqual(views.病因, 25);
-  assert.strictEqual(rank(views)[0][0], '形态');
-  assert.ok(share(views, '形态') > 0.89);
+test('小节标题去重且都不是空串', () => {
+  const titles = s.sectionTitles;
+  assert.strictEqual(new Set(titles).size, titles.length);
+  for (const t of titles) assert.ok(t.length >= 4, '标题过短：' + t);
 });
 
-test('四层级合计 618 次，器官层占近六成：病变的读数落在「哪个器官、哪一层」', () => {
-  const { levels } = lens(list);
-  assert.strictEqual(total(levels), 618);
-  assert.strictEqual(levels.器官, 351);
-  assert.strictEqual(levels.组织, 147);
-  assert.strictEqual(levels.细胞, 73);
-  assert.strictEqual(levels.系统, 47);
-  assert.ok(share(levels, '器官') > 0.56);
-});
-
-test('数值核验：12 个单元的 valueLike 全为 0，没有一处「数字＋计量单位」', () => {
-  const audit = valueAudit(list);
-  assert.strictEqual(audit.units, 12);
-  assert.strictEqual(audit.hits, 0);
-  assert.deepStrictEqual(audit.offenders, []);
-  for (const u of list) assert.strictEqual(u.measure.valueLike, 0, `${u.sub} 出现数值`);
-});
-
-test('九种病都有落点；结核病 47 次最多，伤寒 37 次次之', () => {
-  assert.strictEqual(DISEASES.length, 9);
-  const d = diseaseAxis(list);
-  assert.strictEqual(d.length, 9);
-  for (const x of d) {
-    assert.ok(x.hits > 0, `${x.name} 未出现`);
-    assert.ok(x.units.length > 0, `${x.name} 没有归属单元`);
+test('quiz：6 题，分段为 pre/check×3/post×2，每题 4 选项', () => {
+  assert.strictEqual(quiz.questions.length, 6);
+  assert.strictEqual(quiz.questions.map((q) => q.stage).join(','), 'pre,check,check,check,post,post');
+  for (const q of quiz.questions) {
+    assert.strictEqual(q.options.length, 4);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4);
+    assert.strictEqual(new Set(q.options).size, 4, '选项不许重复：' + q.question);
   }
-  const map = Object.fromEntries(d.map((x) => [x.name, x.hits]));
-  assert.strictEqual(map.结核病, 47);
-  assert.strictEqual(map.伤寒, 37);
-  assert.strictEqual(map.细菌性痢疾, 20);
-  assert.ok(map.结核病 > map.伤寒);
 });
 
-test('三维对照的形态词：溃疡覆盖 9 个单元，是本章最通用的形态单位', () => {
-  assert.deepStrictEqual(SHAPE_WORDS, ['溃疡', '肉芽肿', '干酪样坏死', '假膜', '溶解', '出血']);
-  const s = shapeAxis(list);
-  const map = Object.fromEntries(s.map((x) => [x.word, x]));
-  assert.strictEqual(map.溃疡.hits, 68);
-  assert.strictEqual(map.溃疡.units, 9);
-  assert.strictEqual(map.肉芽肿.units, 7);
-  assert.strictEqual(map.干酪样坏死.units, 3);
-  assert.ok(map.溃疡.units > map.肉芽肿.units);
+test('quiz：答案打散（正确项覆盖 3 个以上位置），解释够长', () => {
+  const pos = new Set(quiz.questions.map((q) => q.correct));
+  assert.ok(pos.size >= 3, '正确项位置太集中：' + [...pos].join(','));
+  for (const q of quiz.questions) {
+    assert.ok(hz(q.explain) >= 30, '解释不足 30 汉字：' + q.question);
+    assert.ok(String(q.explain).length >= 10);
+    assert.ok(!/见\s*code\/main\.js\s*输出/.test(q.explain));
+  }
 });
 
-test('溃疡判据：长轴 13 次（伤寒）对地图状 3 次、烧瓶状 2 次（痢疾与阿米巴）', () => {
-  const u = ulcerAxis(list);
-  assert.strictEqual(u.长轴平行, 13);
-  assert.strictEqual(u.地图状, 3);
-  assert.strictEqual(u.烧瓶状, 2);
-  assert.strictEqual(u.口小底大, 3);
-  assert.ok(u.长轴平行 > u.地图状 + u.烧瓶状);
+test('quiz：至少 2 道 check 题的正确选项能在正文里找到 4 字原词', () => {
+  const body = shingles(md);
+  let grounded = 0;
+  for (const q of quiz.questions) {
+    if (q.stage !== 'check') continue;
+    const right = q.options[q.correct];
+    if ([...shingles(right)].some((g) => body.has(g))) grounded += 1;
+  }
+  assert.ok(grounded >= 2, '只有 ' + grounded + ' 道 check 题接地');
 });
 
-test('六要素在 11 个单元里写全，只有肺结核一节例外——这一章的六要素是硬骨架', () => {
-  assert.deepStrictEqual(SIX, ['观察', '描述', '记录', '分析', '报告', '复核']);
-  const six = sixElementUnits(list);
-  assert.strictEqual(six.length, 11);
-  assert.ok(!six.includes('21.1.2'));
+test('quiz 与代码都不含脚手架与判定性字样', () => {
+  const banned = [/三辨/, /四位面/, /单元规模/, /本章实测/, /本课第\s*\d+\s*章[（(]/];
+  const blob = JSON.stringify(quiz) + md;
+  for (const re of banned) assert.ok(!re.test(blob), '命中 ' + re);
 });

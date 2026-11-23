@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中医各家学说 · 第 6 章 张景岳与温补学派：本章统计口径
+ * 中医各家学说 · 第 6 章 七个词换三十四证：0.25% 的文本命中如何占住四分之一的证候
  * 课程: departments/01-zhongyi/15-zhongyi-gejia-xueshuo/chapters/06-zhangjingyue-wenbu/docs/zh.md
- * 数据: standards/gejia/units.json（10 单元层，每单元带三辨 / 四位面词频与数值计数）
+ * 数据: standards/{shanghan,jingui,wenbing}/底本.json · standards/gejia/学派库.json · standards/zhenghou/证候库.json
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 只读：张景岳词表逐词与分语料命中、证候族覆盖、方源占位，
+ * 全部当次现算，再与正文末表逐格核对；对不上就抛错。
  */
 
 'use strict';
@@ -14,114 +14,132 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 6;
+const TITLE = '七个词换三十四证：0.25% 的文本命中如何占住四分之一的证候';
+
 function findRoot(start) {
   let dir = start;
   for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gejia', 'units.json'))) return dir;
+    if (fs.existsSync(path.join(dir, 'standards', 'gejia', '学派库.json'))) return dir;
     const up = path.dirname(dir);
     if (up === dir) break;
     dir = up;
   }
-  throw new Error('没找到 standards/gejia/units.json —— 章节目录是否已脱离仓库？');
+  throw new Error('没找到 standards/gejia/学派库.json —— 章节目录是否已脱离仓库？');
 }
 
 const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gejia', 'units.json');
-const CHAPTER = '6';
+const readJSON = (rel) => JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function corpus() {
+  const sh = readJSON('standards/shanghan/底本.json');
+  const jg = readJSON('standards/jingui/底本.json');
+  const wb = readJSON('standards/wenbing/底本.json');
+  const shanghan = sh.pian.flatMap((p) => p.items.map((it) => ({ text: it.text })));
+  const jingui = jg.pian.flatMap((p) => p.articles.map((a) => ({ text: a.zhHans })));
+  const wenbing = wb.books.flatMap((b) => b.sections.flatMap((s) => s.articles.map((a) => ({ text: a.zhHans }))));
+  return { shanghan, jingui, wenbing, all: [...shanghan, ...jingui, ...wenbing] };
 }
+const hits = (list, word) => list.reduce((n, t) => n + (t.text.includes(word) ? 1 : 0), 0);
+const hitUnion = (list, terms) => list.reduce((n, t) => n + (terms.some((w) => t.text.includes(w)) ? 1 : 0), 0);
 
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) for (const [k, v] of Object.entries(u.measure[field])) out[k] = (out[k] || 0) + v;
+function tables(md) {
+  const lines = md.split('\n');
+  const out = [];
+  for (let i = 0; i < lines.length; i += 1) {
+    if (!/^\s*\|/.test(lines[i])) continue;
+    if (!/^\s*\|[\s:|-]+\|\s*$/.test(lines[i + 1] || '')) continue;
+    const cells = (l) => l.trim().replace(/^\||\|$/g, '').split('|').map((s) => s.trim());
+    const rows = [];
+    let j = i + 2;
+    while (j < lines.length && /^\s*\|/.test(lines[j])) { rows.push(cells(lines[j])); j += 1; }
+    out.push({ header: cells(lines[i]), rows });
+    i = j - 1;
+  }
   return out;
 }
+const num = (s) => {
+  const m = String(s == null ? '' : s).replace(/[,\s]/g, '').match(/-?\d+(?:\.\d+)?/);
+  return m ? Number(m[0]) : null;
+};
 
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
+function analyze() {
+  const md = readDoc();
+  const c = corpus();
+  const school = readJSON('standards/gejia/学派库.json').schools.find((s) => s.key === 'zhang-jingyue');
+  if (!school) throw new Error('学派库里找不到 zhang-jingyue');
+  const zheng = readJSON('standards/zhenghou/证候库.json');
+  const family = new Map(zheng.families.map((f) => [f.family, f.all]));
 
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = u.sec || '（未标节）';
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
+  const perWord = new Map(school.terms.map((w) => [w, hits(c.all, w)]));
+  const byCorpus = {
+    shanghan: hitUnion(c.shanghan, school.terms),
+    jingui: hitUnion(c.jingui, school.terms),
+    wenbing: hitUnion(c.wenbing, school.terms),
+  };
+  const total = byCorpus.shanghan + byCorpus.jingui + byCorpus.wenbing;
+  const zhengN = school.families.reduce((n, f) => n + (family.get(f) || 0), 0);
+  const fangEntries = zheng.zheng.flatMap((z) => z.fang || []);
+  const fangTotal = fangEntries.length;
+  const fangWithSrc = fangEntries.filter((f) => /《[^》]+》/.test(f)).length;
+  /** 主方源 = 条目里第一个书名号；《医宗金鉴》合《景岳全书》这类不算景岳之方 */
+  const primary = (f) => { const m = String(f).match(/《([^》]+)》/); return m ? m[1] : ''; };
+  const jingyueFang = fangEntries.filter((f) => primary(f) === '景岳全书').length;
+
+  const docTables = tables(md);
+  const sumTable = docTables.find((t) => t.header.includes('量') && t.header.join('|').includes('张景岳'));
+  if (!sumTable) throw new Error('正文里找不到方法论总表');
+
+  const mismatches = [];
+  const expect = [
+    ['词表命中', total], ['证候覆盖', zhengN], ['方源占位', jingyueFang],
+  ];
+  for (const [label, value] of expect) {
+    const line = sumTable.rows.find((x) => x[0].includes(label));
+    if (!line) { mismatches.push(`总表缺「${label}」一行`); continue; }
+    if (num(line[1]) !== value) mismatches.push(`${label}：正文 ${num(line[1])}，现算 ${value}`);
   }
-  return [...out.values()];
-}
 
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) {
-      counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-    }
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
-
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
   return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
+    md, perWord, byCorpus, total, corpusSize: c.all.length, zhengN,
+    zhengShare: zhengN / zheng.counts.zheng, textShare: total / c.all.length,
+    fangTotal, fangWithSrc, jingyueFang, fangShare: jingyueFang / fangTotal,
+    families: school.families, familySize: new Map(school.families.map((f) => [f, family.get(f) || 0])),
+    mismatches, docTables: docTables.length,
   };
 }
 
-/** 方与法：单元层没有独立方剂字段，改从正文里认「治法动词」记号（儿科以疏风宣肺、消食健脾、平肝息风为主） */
-function methods(list) {
-  const VERBS = ['疏肝', '补肾', '健脾', '养血', '活血', '化瘀', '调经', '固冲', '止带', '安胎', '清热', '利湿'];
-  const out = {};
-  for (const v of VERBS) out[v] = list.reduce((a, u) => a + u.prose.split(v).length - 1, 0);
-  return Object.entries(out).filter(([, c]) => c).sort((a, b) => b[1] - a[1]);
+function main() {
+  const a = analyze();
+  const pct = (x) => (x * 100).toFixed(1) + '%';
+  const pct2 = (x) => (x * 100).toFixed(2) + '%';
+  const w = (s) => [...String(s)].reduce((n, ch) => n + (/[\u4e00-\u9fff]/.test(ch) ? 2 : 1), 0);
+  const pad = (s, n) => String(s) + ' '.repeat(Math.max(1, n - w(s)));
+
+  console.log(`中医各家学说 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字当次现算：三部底本 2,792 条 + 学派库词表 + 证候库族规模与方源）');
+  console.log('');
+  console.log('逐词命中：' + [...a.perWord].map(([k, v]) => `${k} ${v}`).join(' · '));
+  console.log(`词表合计 ${a.total} 条，占 ${a.corpusSize} 条的 ${pct2(a.textShare)}`);
+  console.log(`分语料：伤寒 ${a.byCorpus.shanghan} · 金匮 ${a.byCorpus.jingui} · 温病 ${a.byCorpus.wenbing}`);
+  console.log('');
+  console.log(`证候挂接 ${a.families.join(' + ')} = ${a.zhengN} 证，占 132 的 ${pct(a.zhengShare)}`);
+  for (const f of a.families) console.log(`  ${pad(f, 6)}${a.familySize.get(f)} 证`);
+  console.log('');
+  console.log(`方源：《景岳全书》${a.jingyueFang} 方 / ${a.fangTotal} 条方条 = ${pct(a.fangShare)}（带出处 ${a.fangWithSrc} 条）`);
+  console.log('');
+  console.log(`一句话：${a.total} 条文本命中（${pct2(a.textShare)}）撑起 ${a.zhengN} 证（${pct(a.zhengShare)}）与 ${a.jingyueFang} 方（${pct(a.fangShare)}）`);
+  console.log('');
+  console.log(`正文对照：${a.docTables} 张表逐格复算，不符 ${a.mismatches.length} 处`);
+  for (const m of a.mismatches) console.log('  - ' + m);
+  console.log('');
+  console.log('※ 教学样例：数字由本库语料现算，不构成诊疗建议，不能替代医师面诊。');
+
+  if (a.mismatches.length) throw new Error(`正文与复算不一致 ${a.mismatches.length} 处：\n${a.mismatches.join('\n')}`);
 }
 
-module.exports = { CHAPTER, load, chapterUnits, merge, rank, bySection, citations, shape, methods, sum };
+if (require.main === module) main();
 
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  const views = rank(merge(list, 'views'));
-  const levels = rank(merge(list, 'levels'));
-  const books = citations(list);
-
-  console.log('═══ 中医各家学说 · 第 6 章 张景岳与温补学派 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按节：');
-  for (const sec of bySection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of views) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of levels) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log(`\n引书 ${books.books} 部 · 引用 ${books.total} 次 · 前三：${books.top.map(([n, c]) => `${n}(${c})`).join('、')}`);
-  console.log('\n治法动词命中：' + methods(list).map(([v, c]) => `${v}×${c}`).join('  '));
-  console.log('\n单元清单：');
-  for (const u of list) {
-    console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字\t${u.tri.view.primary || '—'}/${u.tri.level.primary || '—'}`);
-  }
-}
-
-// 教学样例声明：契约要求每章输出含临床边界声明（tests/test_chapter_code.js）
-if (require.main === module) {
-  console.log('※ 教学样例：数字由 standards/gejia/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
-}
+module.exports = { DOC, CHAPTER, TITLE, ROOT, readJSON, readDoc, corpus, hits, hitUnion, tables, num, analyze };

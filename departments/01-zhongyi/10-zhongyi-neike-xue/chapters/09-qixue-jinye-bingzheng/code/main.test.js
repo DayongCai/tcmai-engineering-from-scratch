@@ -1,124 +1,100 @@
-'use strict';
+#!/usr/bin/env node
 /**
- * 第 9 章的单测 = 「docs 里的数与代码里的数同源」这条契约的执行器。
- * 断言写死具体值是有意的：底本一改（重新抽取、重新分节），测试必须失败，
- * 逼写的人回头改 docs，而不是让文档悄悄过期。
+ * 第 9 章 气血津液病证：55 个小节装不下 71 个证 —— 确定性单元测试
+ * 运行: node --test code/main.test.js
+ *
+ * 断言只落两处可对账的东西：
+ *   1) code/main.js 从本章 docs/zh.md 现算出的结构指标（写死在此，正文改版测试先响）；
+ *   2) quiz.json 与正文同源（≥5 题、三段齐、4 选项、explain ≥30 汉字、≥2 道 check 题接地、答案打散）。
  */
+
+'use strict';
+
 const assert = require('node:assert');
 const test = require('node:test');
-const {
-  chap,
-  subs,
-  shape,
-  slots,
-  vocabulary,
-  pairs,
-  zhengPerDisease,
-  formulaSpread,
-  singleUse,
-  syndromeClash,
-  valueSpots,
-  cautions,
-  totals,
-} = require('./main.js');
+const fs = require('node:fs');
+const path = require('node:path');
 
-test('章的规模：9 节 · 55 小节 · 41421 汉字 · 量值 4', () => {
-  const t = totals();
-  assert.strictEqual(t.secs, 9);
-  assert.strictEqual(t.subs, 55);
-  assert.strictEqual(t.hanzi, 41421);
-  assert.strictEqual(t.valueLike, 4);
+const { measure, TERMS, CHAPTER } = require('./main.js');
+
+const M = measure();
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const questions = Array.isArray(QUIZ.questions) ? QUIZ.questions : [];
+const DOC = fs.readFileSync(path.join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
+const HAN = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+const PINNED = {
+  "hanzi": 5569,
+  "h2": 6,
+  "h3": 3,
+  "h4": 7,
+  "tables": 6,
+  "tableRows": 90,
+  "quotes": 28,
+  "locators": 13,
+  "subNos": 55,
+  "terms": {
+    "血证": 22,
+    "虚劳": 14,
+    "郁证": 8,
+    "消渴": 9,
+    "汗证": 4,
+    "证": 197
+  }
+};
+
+test('正文现算指标与实测一致', () => {
+  assert.strictEqual(CHAPTER, 9);
+  assert.strictEqual(TERMS.length, 6);
+  assert.deepStrictEqual(M, PINNED);
 });
 
-test('量值复算与底本口径一致：VALUE 匹配数 = counts.valueLike', () => {
-  const hit = subs().reduce((n, u) => n + (u.items[0].body.match(/\d+(?:\.\d+)?\s*(?:mg|μg|g|kg|ml|mL|L|克|钱|两|枚|片|粒|丸|剂|次|日|天|周|个月|年|小时|分钟)/g) || []).length, 0);
-  assert.strictEqual(hit, 4);
-  assert.strictEqual(hit, chap().counts.valueLike);
-  assert.deepStrictEqual(valueSpots().map((v) => v.sub), ['9.3.4', '9.5.4']);
+test('二级小节收口在 4–8 个，正文汉字不低于 2,500，三级出处不少于 10 条', () => {
+  assert.ok(M.h2 >= 4 && M.h2 <= 8, `二级小节 ${M.h2} 个`);
+  assert.ok(M.hanzi >= 2500, `汉字 ${M.hanzi}`);
+  assert.ok(M.locators >= 10, `三级出处 ${M.locators} 条`);
 });
 
-test('节—小节骨架：血证 11、虚劳 9，其余七病证各 5', () => {
-  const s = shape();
-  assert.deepStrictEqual(
-    s.secTable.map((x) => x.subs),
-    [5, 11, 5, 5, 5, 5, 9, 5, 5]
-  );
-  assert.strictEqual(s.secTable.reduce((n, x) => n + x.subs, 0), 55);
+test('术语表六个词都真的在正文里出现', () => {
+  for (const [k, n] of Object.entries(M.terms)) assert.ok(n > 0, `${k} 出现 0 次`);
 });
 
-test('槽位词表：证治 10 · 概述 9 · 病因病机 9 · 预防调护 9 · 按语 9 · 辨证论治 7 · 辨证要点 2', () => {
-  assert.deepStrictEqual(vocabulary(), [
-    { kind: '证治', n: 10 },
-    { kind: '概述', n: 9 },
-    { kind: '病因病机', n: 9 },
-    { kind: '预防调护', n: 9 },
-    { kind: '按语', n: 9 },
-    { kind: '辨证论治', n: 7 },
-    { kind: '辨证要点', n: 2 },
-  ]);
-  // 只有血证与虚劳长出了「证治」这一层
-  const withZhengzhi = slots().filter((x) => x.zhengzhi).map((x) => x.no);
-  assert.deepStrictEqual(withZhengzhi, ['9.2', '9.7']);
-});
-
-test('证—方对 71 个；血证 18 证 / 虚劳 14 证；证数 ≠ 小节数', () => {
-  const p = pairs();
-  assert.strictEqual(p.length, 71);
-  assert.strictEqual(totals().distinctZheng, 69);
-  const bySec = Object.fromEntries(zhengPerDisease().map((r) => [r.no, r.zheng]));
-  assert.deepStrictEqual(bySec, {
-    '9.1': 6, '9.2': 18, '9.3': 6, '9.4': 5, '9.5': 4, '9.6': 7, '9.7': 14, '9.8': 5, '9.9': 6,
-  });
-  assert.strictEqual(Object.values(bySec).reduce((a, b) => a + b, 0), 71);
-  // 证治容器 10 个，平铺辨证论治 7 个
-  assert.strictEqual(totals().zhengzhiSubs, 10);
-  assert.strictEqual(totals().plainSubs, 7);
-});
-
-test('每条证—方对都取到证名与方名，且方名带「加减」', () => {
-  for (const p of pairs()) {
-    assert.ok(p.zheng.endsWith('证'), `${p.sub} 证名异常：${p.zheng}`);
-    assert.ok(!p.zheng.includes('病证'), `${p.sub} 取到的是病名不是证名：${p.zheng}`);
-    assert.ok(p.fang.length >= 3, `${p.sub} 方名过短：${p.fang}`);
-    assert.ok(/加减$/.test(p.fang), `${p.sub} 方名未带加减：${p.fang}`);
+test('quiz 结构：≥5 题，pre/check/post 三段齐，4 选项、correct 合法、explain ≥30 汉字', () => {
+  assert.ok(questions.length >= 5, `只有 ${questions.length} 题`);
+  const stages = new Set(questions.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), `缺 ${s} 段`);
+  for (const q of questions) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    assert.ok(HAN(q.explain) >= 30, `${q.question} explain 只有 ${HAN(q.explain)} 汉字`);
   }
 });
 
-test('方的跨病复用：归脾汤 7 处 / 4 病；去重 59（跨病 6 · 单病 53）', () => {
-  const sp = formulaSpread();
-  const guipi = sp.find((x) => x.fang === '归脾汤');
-  assert.deepStrictEqual([guipi.n, guipi.diseaseCount], [7, 4]);
-  assert.deepStrictEqual(guipi.diseases, ['郁证', '血证', '自汗盗汗', '内伤发热']);
-  assert.deepStrictEqual(
-    sp.filter((x) => x.diseaseCount > 1).map((x) => x.fang),
-    ['归脾汤', '龙胆泻肝汤', '丹栀逍遥散', '玉女煎', '金匮肾气丸', '血府逐瘀汤']
-  );
-  const su = singleUse();
-  assert.deepStrictEqual([su.distinct, su.multi, su.single], [59, 6, 53]);
+test('quiz 接地：≥2 道 check 题正确项含正文 4 字词组，答案打散', () => {
+  const body = shingles(DOC);
+  const grounded = questions.filter(
+    (q) => q.stage === 'check' && [...shingles(q.options[q.correct])].some((g) => body.has(g)),
+  ).length;
+  assert.ok(grounded >= 2, `只有 ${grounded} 道 check 题接地`);
+  const used = new Set(questions.map((q) => q.correct));
+  assert.ok(used.size >= 3, `correct 只用到 ${used.size} 个位置`);
 });
 
-test('证名不是主键：胃热炽盛证跨病同方，阴虚火旺证跨病异方', () => {
-  const clash = syndromeClash();
-  assert.strictEqual(clash.length, 2);
-  const wei = clash.find((c) => c.zheng === '胃热炽盛证');
-  assert.deepStrictEqual(wei.where, ['9.2.4血证', '9.4.3消渴']);
-  assert.strictEqual(wei.sameFang, true);
-  assert.deepStrictEqual(wei.fangs, ['玉女煎加减']);
-  const yin = clash.find((c) => c.zheng === '阴虚火旺证');
-  assert.deepStrictEqual(yin.where, ['9.2.5血证', '9.5.3自汗盗汗']);
-  assert.strictEqual(yin.sameFang, false);
-  assert.deepStrictEqual(yin.fangs, ['六味地黄丸合茜根散加减', '当归六黄汤加减']);
-});
-
-test('按语里的代价句：中病即止 5 · 顾护胃气 6', () => {
-  const c = Object.fromEntries(cautions().map((x) => [x.w, x.n]));
-  assert.strictEqual(c['中病即止'], 5);
-  assert.strictEqual(c['顾护胃气'], 6);
-});
-
-test('底本正文非空，且每个小节恰好 1 个条目', () => {
-  for (const u of subs()) {
-    assert.ok(u.items.length === 1, `${u.no} 条目数异常`);
-    assert.ok(u.items[0].body.length > 200, `${u.no} 正文过短`);
+test('quiz 无脚手架指纹与禁用口径', () => {
+  const raw = JSON.stringify(QUIZ);
+  for (const re of [/三辨/, /四位面/, /单元规模/, /本章实测/, /本课第\s*\d+\s*章/, /见\s*code\/main\.js\s*输出/]) {
+    assert.ok(!re.test(raw), `残留指纹 ${re}`);
+  }
+  for (const re of [/页码/, /疗程/, /发生率/, /显效率/, /每日\s*\d+\s*(?:次|服)/]) {
+    assert.ok(!re.test(raw), `禁用口径 ${re}`);
   }
 });

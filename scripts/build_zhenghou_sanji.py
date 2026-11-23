@@ -469,7 +469,7 @@ def build():
                                   key.split("-", 1)[1])
         units = pick_units(spec, un)
         idx["chapters"].append({
-            "n": spec["n"], "slug": slug, "title": spec["title"], "status": "✅",
+            "n": spec["n"], "slug": slug, "title": doc_title(slug) or spec["title"], "status": "✅",
             "code": "S%02d" % (spec["n"] if spec["n"] <= 12 else spec["n"] - 12), "part": spec["part"],
             "secs": spec["secs"], "units": len(units),
             "judge": spec["judge"],
@@ -516,6 +516,19 @@ def main():
     ap.add_argument("--check", action="store_true")
     a = ap.parse_args()
     files = build()
+    # 已补实（登记在 data/course-docs-rewritten.json）的科目：产出层由
+    # scripts/build_chapter_outputs.js 拥有，本生成器不再写、也不再比对 outputs/*.md，
+    # 否则 rebuild:all 会把手写正文派生出的卡片判成「与母本不一致」。
+    reg = os.path.join(ROOT, "data", "course-docs-rewritten.json")
+    if os.path.exists(reg):
+        try:
+            done = {"%s/%s" % (r["dept"], r["subject"]) for r in json.load(io.open(reg, encoding="utf-8"))["rewritten"]}
+        except Exception:
+            done = set()
+        if "01-zhongyi/14-zhongyi-zhenghou-xue" in done:
+            # 已补实：docs / quiz / code / outputs 全部归人工稿与 build_chapter_outputs.js 所有，
+            # 本生成器只维护 chapters.json（否则 rebuild:all 会把手写内容覆盖回母本版本）。
+            files = {p: t for p, t in files.items() if p.replace("\\", "/").endswith("chapters.json")}
     drift = []
     for p, txt in files.items():
         old = io.open(p, encoding="utf-8").read() if os.path.exists(p) else None
@@ -532,15 +545,20 @@ def main():
         return 0
     for p, txt in files.items():
         write(p, txt)
-    tot = sum(len(HANZI.findall(t)) for p, t in files.items() if p.replace("\\", "/").endswith("docs/zh.md"))
+    # 正文已让路给人工稿，字数从磁盘现读（不再从 files 取）
+    def _disk_hz(slug):
+        fp = os.path.join(DEPT, "chapters", slug, "docs", "zh.md")
+        return len(HANZI.findall(io.open(fp, encoding="utf-8").read())) if os.path.exists(fp) else 0
+    tot = sum(_disk_hz("%02d-s%02d-%s" % (CHAPTERS[k]["n"],
+                                          CHAPTERS[k]["n"] if CHAPTERS[k]["n"] <= 12 else CHAPTERS[k]["n"] - 12,
+                                          k.split("-", 1)[1])) for k in CHAPTERS)
     print("✓ 三基 12 章：%d 文件 · 正文 %d 汉字（%d 章）" % (len(files), tot, len(CHAPTERS)))
     for key in sorted(CHAPTERS):
         spec = CHAPTERS[key]
         slug = "%02d-s%02d-%s" % (spec["n"],
                                   spec["n"] if spec["n"] <= 12 else spec["n"] - 12,
                                   key.split("-", 1)[1])
-        md = files[os.path.join(DEPT, "chapters", slug, "docs", "zh.md")]
-        print("   %2d %-26s %-6s %5d 字" % (spec["n"], spec["title"][:26], spec["part"][2:], len(HANZI.findall(md))))
+        print("   %2d %-26s %-6s %5d 字" % (spec["n"], spec["title"][:26], spec["part"][2:], _disk_hz(slug)))
     return 0
 
 

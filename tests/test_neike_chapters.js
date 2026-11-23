@@ -154,8 +154,8 @@ test('6. quiz 契约（6 题 · 题干键 question · 每题带引证）', () =>
       assert.ok(x.question && String(x.question).length >= 6, `${c.slug} quiz#${i + 1} 缺 question`);
       assert.strictEqual((x.options || []).length, 4, `${c.slug} quiz#${i + 1} 选项数`);
       assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct <= 3, `${c.slug} quiz#${i + 1} correct`);
-      assert.ok((x.explanation || '').length >= 10, `${c.slug} quiz#${i + 1} explanation`);
-      assert.ok(/教材·中医内科学·第\d+章/.test(x.cite || x.explanation || ''), `${c.slug} quiz#${i + 1} 缺引证`);
+      assert.ok(((x.explain || x.explanation) || '').length >= 10, `${c.slug} quiz#${i + 1} explain`);
+      assert.ok(/教材·中医内科学·第\d+章/.test(x.cite || x.explain || x.explanation || ''), `${c.slug} quiz#${i + 1} 缺引证`);
     }
   }
 });

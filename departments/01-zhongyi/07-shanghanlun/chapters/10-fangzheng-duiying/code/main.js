@@ -146,6 +146,31 @@ function evidence(formula, syms) {
     .map((it) => ({ pian: it.pian, no: it.no, text: it.text.slice(0, 60) }));
 }
 
+/**
+ * 支持条数的成色拆分：把「含该方名的条」分成
+ *   证治条  = 条文主体讲证讲治（本章打分真正想要的）
+ *   方名行  = 整条只有「某汤方」三个字
+ *   方后注  = 组成/煎服法/异文互见（右N味、本云、一云、用前、用后、煮取、温服…）
+ * 为什么要拆：按方名子串计数，煎服法条文也会被算进支持度，支持数因此系统性虚高。
+ * @param {string} f 方名
+ */
+const NOTE_LIKE = /(右.{1,3}味|本云|一云|用前|用后|煮取|温服|去滓|㕮咀|上.{1,3}味)/;
+
+function supportBreakdown(f) {
+  if (!FORMULAS.includes(f)) throw new Error(`不在本章方名表内：${f}`);
+  const hits = ITEMS.filter((it) => it.norm.includes(f));
+  const title = hits.filter((it) => it.text.trim() === f || it.text.trim() === `${f}方`);
+  const rest = hits.filter((it) => !title.includes(it));
+  const note = rest.filter((it) => NOTE_LIKE.test(it.text) && !it.text.includes(`${f}主之`));
+  return {
+    formula: f,
+    total: hits.length,
+    title: title.length,
+    noteLike: note.length,
+    zhengzhi: hits.length - title.length - note.length,
+  };
+}
+
 function main() {
   const matrix = buildMatrix();
   console.log('方-症矩阵（支持数 = 含该方的条文数）\n');
@@ -185,4 +210,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { buildMatrix, match, matchLift, matchHybrid, evidence, SYMPTOMS, FORMULAS, ITEMS, PREFIX };
+module.exports = { buildMatrix, match, matchLift, matchHybrid, evidence, supportBreakdown, SYMPTOMS, FORMULAS, ITEMS, PREFIX };

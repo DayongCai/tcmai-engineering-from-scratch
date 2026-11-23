@@ -38,3 +38,7 @@ test('篇 24 共 30 条，且混入少阴病 1 条、阳明病 4 条（篇界错
   assert.strictEqual(m['少阴病'], 1);
   assert.strictEqual(m['阳明病'], 4);
 });
+
+// ── quiz 结构契约（与 scripts/check_chapter_exercises.js 同源）──
+const { quizContract } = require('../../_quiz-contract.js');
+quizContract(__dirname);

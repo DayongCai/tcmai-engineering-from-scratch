@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中医体质学 · 第 5 章 体质辨识的数据化：问卷 → 特征向量：本章统计口径
+ * 中医体质学 · 第 5 章 问卷到特征向量：四域各自计量，不可混算
  * 课程: departments/01-zhongyi/04-zhongyi-tizhi-xue/chapters/05-tizhi-tezheng/docs/zh.md
- * 数据: standards/tizhi/units.json（13 单元层，每单元带三辨 / 四位面词频与数值计数）
+ * 数据: chapters/_corpus.js 读 standards/ 下的证候库、体质库与映射表
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章用一组示意分数演示两种算法的分歧：四域均分把信息压成一个数，最高域则直接改变结论。
+ * 示意分数与演示支持线只用于课堂演算，不是量表标准；九质 × 四域的格子数由体质库现算。
  */
 
 'use strict';
@@ -14,114 +14,43 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'tizhi', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/tizhi/units.json —— 章节目录是否已脱离仓库？');
+const { ROOT, analyze: corpusAnalyze } = require(path.join(__dirname, '..', '..', '_corpus.js'));
+
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const TITLE = '量表算出来的不是一分数，是四组分数';
+const DOMAINS = ['形态', '功能', '心理', '易感'];
+const DEMO = { 形态: 2, 功能: 4, 心理: 2, 易感: 3 };
+/** 正文算例只按三质走关键域；易感 3 分在本例中是佐证，不作特禀质的关键域判定 */
+const KEY = { 痰湿质: '形态', 气虚质: '功能', 气郁质: '心理' };
+const DEMO_SUPPORT = 3;
+
+function analyze() {
+  const base = corpusAnalyze();
+  const scores = DOMAINS.map((d) => DEMO[d]);
+  const mean = scores.reduce((a, b) => a + b, 0) / scores.length;
+  const max = Math.max(...scores);
+  // 体质库里「未归类」是失配桶，不是九质之一，不计入九质 × 四域
+  const nine = base.corpus.types.filter((t) => t.type !== '未归类');
+  const grid = nine.length * DOMAINS.length;
+  const verdicts = Object.entries(KEY).map(([type, domain]) => ({
+    type,
+    domain,
+    score: DEMO[domain],
+    pass: DEMO[domain] >= DEMO_SUPPORT,
+  }));
+  return { ...base, types: nine, scores, mean, max, grid, verdicts, passed: verdicts.filter((v) => v.pass).map((v) => v.type) };
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'tizhi', 'units.json');
-const CHAPTER = '5';
-
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) for (const [k, v] of Object.entries(u.measure[field])) out[k] = (out[k] || 0) + v;
-  return out;
-}
-
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
-
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = u.sec || '（未标节）';
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
-
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) {
-      counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-    }
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
-
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
-  return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
-  };
-}
-
-/** 方与法：单元层没有独立方剂字段，改从正文里认「治法动词」记号（儿科以疏风宣肺、消食健脾、平肝息风为主） */
-function methods(list) {
-  const VERBS = ['疏肝', '补肾', '健脾', '养血', '活血', '化瘀', '调经', '固冲', '止带', '安胎', '清热', '利湿'];
-  const out = {};
-  for (const v of VERBS) out[v] = list.reduce((a, u) => a + u.prose.split(v).length - 1, 0);
-  return Object.entries(out).filter(([, c]) => c).sort((a, b) => b[1] - a[1]);
-}
-
-module.exports = { CHAPTER, load, chapterUnits, merge, rank, bySection, citations, shape, methods, sum };
+module.exports = { DOC, TITLE, ROOT, DOMAINS, DEMO, KEY, DEMO_SUPPORT, analyze };
 
 if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  const views = rank(merge(list, 'views'));
-  const levels = rank(merge(list, 'levels'));
-  const books = citations(list);
-
-  console.log('═══ 中医体质学 · 第 5 章 体质辨识的数据化：问卷 → 特征向量 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按节：');
-  for (const sec of bySection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of views) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of levels) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log(`\n引书 ${books.books} 部 · 引用 ${books.total} 次 · 前三：${books.top.map(([n, c]) => `${n}(${c})`).join('、')}`);
-  console.log('\n治法动词命中：' + methods(list).map(([v, c]) => `${v}×${c}`).join('  '));
-  console.log('\n单元清单：');
-  for (const u of list) {
-    console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字\t${u.tri.view.primary || '—'}/${u.tri.level.primary || '—'}`);
-  }
-}
-
-// 教学样例声明：契约要求每章输出含临床边界声明（tests/test_chapter_code.js）
-if (require.main === module) {
-  console.log('※ 教学样例：数字由 standards/tizhi/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  const a = analyze();
+  console.log('═══ 中医体质学 · 第 5 章 ' + TITLE + ' ═══');
+  console.log(`九质 × 四域 = ${a.grid} 个域内格子；示意分数 ${DOMAINS.map((d) => d + a.scores[DOMAINS.indexOf(d)]).join(' / ')}`);
+  console.log(`四域均分 ${a.mean.toFixed(2)}；最高域 ${a.max}。同一份答卷，两种算法给出相反答案。`);
+  console.log('\n按关键域优先逐质看（演示支持线 ' + DEMO_SUPPORT + '，非量表标准）：');
+  for (const v of a.verdicts) console.log(`  ${v.type}\t关键域 ${v.domain}\t${v.score} 分\t${v.pass ? '支持' : '未达支持线'}`);
+  console.log(`结论：主质 ${a.passed.join('、') || '无'}；其余按未达支持线记录。`);
+  console.log('※ 教学样例：示例分数与演示支持线均非量表标准，不构成诊疗建议，不能替代医师面诊。');
 }

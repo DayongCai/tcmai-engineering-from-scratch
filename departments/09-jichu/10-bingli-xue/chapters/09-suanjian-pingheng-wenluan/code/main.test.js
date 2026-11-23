@@ -1,129 +1,112 @@
 #!/usr/bin/env node
 /**
- * 第 9 章 酸碱平衡紊乱 —— 确定性单元测试
+ * 第 9 章 酸碱平衡紊乱 —— 确定性单测
  * 运行: node --test code/main.test.js
  *
- * 断言只落在可对账的结构上：规模、词频重心、三个调节环节是否都在、
- * 六个指标的覆盖、四型是否各有着落、代偿出现在几个单元、数值是否为 0。
- * 不锁死正文措辞，教材改写段落时测试不会变成噪声。
+ * 两件事：① 正文实测值（小节数/汉字数/表格/引文/单元号/每节字数）逐个钉住；
+ * ② 本章 quiz 的结构与接地——题数、分段、选项数、答案分布、解释长度、
+ *    以及「正确选项能在正文里找到原词」这条判据本身也要可测。
+ * 正文一改，这里的数就必须跟着改——这正是它的用处。
  */
 
 'use strict';
 
-const assert = require('node:assert');
 const test = require('node:test');
+const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const {
-  SIX,
-  THREE,
-  INDICATORS,
-  FOUR,
-  load,
-  chapterUnits,
-  shape,
-  lens,
-  rank,
-  total,
-  share,
-  valueAudit,
-  sixElementUnits,
-  bySection,
-  threeRegulators,
-  indicatorCoverage,
-  fourTypes,
-  compensationUnits,
-} = require('./main');
+const { readDoc, shape, head, average, sections, tables, quotes, unitIds, figures } = require('./main');
 
-const units = load();
-const list = chapterUnits(units);
+const md = readDoc();
+const s = shape(md);
+const a = average(s);
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
 
-test('本章 12 个知识单元，分属 4 节，正文合计 20430 字', () => {
-  const s = shape(list);
+const hz = (t) => (String(t || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const shingles = (t, n = 4) => {
+  const out = new Set();
+  const clean = String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+};
+
+test('首行是「第 9 章 · 判断句」，章号与本章一致', () => {
+  const h = head(md);
+  assert.strictEqual(h.n, 9);
+  assert.ok(h.title.length >= 8, '判断句太短：' + h.title);
+});
+
+test('正文实测：8 个二级小节 · 10275 汉字 · 3 张表 · 17 行数据', () => {
+  assert.strictEqual(s.secs, 8);
+  assert.strictEqual(s.hanzi, 10275);
+  assert.strictEqual(s.tables, 3);
+  assert.strictEqual(s.rows, 17);
+});
+
+test('出证与单元：引文行 11 条 · 单元号 12 个 · 图注 4 条', () => {
+  assert.strictEqual(s.quotes, 11);
   assert.strictEqual(s.units, 12);
-  assert.strictEqual(s.secs, 4);
-  assert.strictEqual(s.hanzi, 20430);
-  assert.deepStrictEqual(list.map((u) => u.sub), [
-    '9.1.1', '9.1.2', '9.1.3',
-    '9.2.1', '9.2.2', '9.2.3',
-    '9.3.1', '9.3.2', '9.3.3',
-    '9.4.1', '9.4.2', '9.4.3',
+  assert.strictEqual(s.figures, 4);
+  assert.strictEqual(unitIds(md).length, 12, '一章应有 12 个单元号');
+});
+
+test('各节汉字之和等于正文汉字数（差一个字就不通过）', () => {
+  assert.strictEqual(s.lead + s.perSection.reduce((x, y) => x + y, 0), s.hanzi);
+  assert.ok(s.lead > 0, '题记部分不该为空');
+  assert.strictEqual(sections(md).length, s.secs);
+});
+
+test('每节字数与最长节：均值 1284 字，最长「十二个小节：逐条落位」3470 字', () => {
+  assert.strictEqual(a.perSection, 1284);
+  assert.strictEqual(a.perUnit, 856);
+  assert.strictEqual(a.largest.hanzi, 3470);
+  assert.deepStrictEqual(s.perSection, [
+    284, 681, 576, 394, 806, 1432, 3470, 2112
   ]);
 });
 
-test('三视角合计 199 次，形态与机制几乎持平（本章没有肉眼病灶）', () => {
-  const { views } = lens(list);
-  assert.strictEqual(total(views), 199);
-  assert.strictEqual(views.形态, 101);
-  assert.strictEqual(views.机制, 98);
-  assert.strictEqual(views.病因, 0);
-  // 两者相差不到一成：这是全书少有的「形态与机制同重」的章
-  assert.ok(Math.abs(views.形态 - views.机制) / total(views) < 0.1);
+test('小节标题去重且都不是空串', () => {
+  const titles = s.sectionTitles;
+  assert.strictEqual(new Set(titles).size, titles.length);
+  for (const t of titles) assert.ok(t.length >= 4, '标题过短：' + t);
 });
 
-test('四层级合计 193 次，落在细胞层（缓冲对与离子交换都在细胞这一层）', () => {
-  const { levels } = lens(list);
-  assert.strictEqual(total(levels), 193);
-  assert.strictEqual(levels.细胞, 86);
-  assert.strictEqual(levels.器官, 63);
-  assert.strictEqual(levels.系统, 32);
-  assert.strictEqual(levels.组织, 12);
-  assert.strictEqual(rank(levels)[0][0], '细胞');
-  assert.ok(share(levels, '细胞') > 0.4);
-});
-
-test('数值核验：12 个单元的 valueLike 全为 0', () => {
-  const audit = valueAudit(list);
-  assert.strictEqual(audit.units, 12);
-  assert.strictEqual(audit.hits, 0);
-  assert.deepStrictEqual(audit.offenders, []);
-  for (const u of list) assert.strictEqual(u.measure.valueLike, 0, `${u.sub} 出现数值`);
-});
-
-test('三个调节环节各占一个单元：缓冲 9.1.1、肺 9.1.2、肾 9.1.3，按起效快慢排', () => {
-  assert.deepStrictEqual(THREE.map((t) => t.sub), ['9.1.1', '9.1.2', '9.1.3']);
-  assert.deepStrictEqual(THREE.map((t) => t.pace), ['即时', '较快', '较慢而持久']);
-  const three = threeRegulators(list);
-  for (const t of three) assert.strictEqual(t.found, true, `${t.sub} 未写 ${t.key}`);
-});
-
-test('六个指标覆盖单元数为 11 / 9 / 11 / 5 / 5 / 5，酸碱度与碳酸氢盐最广', () => {
-  assert.deepStrictEqual(INDICATORS, ['酸碱度', '二氧化碳分压', '碳酸氢盐', '缓冲碱', '碱剩余', '阴离子间隙']);
-  const cov = indicatorCoverage(list);
-  assert.deepStrictEqual(cov.map((c) => c.key), INDICATORS);
-  assert.deepStrictEqual(cov.map((c) => c.units.length), [11, 9, 11, 5, 5, 5]);
-  const m = Object.fromEntries(cov.map((c) => [c.key, c.units.length]));
-  assert.strictEqual(rank(m)[0][1], 11);
-});
-
-test('四型单纯型紊乱各有着落：9.3.1 两种酸中毒、9.3.2 两种碱中毒', () => {
-  assert.deepStrictEqual(FOUR.map((f) => f.key), ['代谢性酸中毒', '呼吸性酸中毒', '代谢性碱中毒', '呼吸性碱中毒']);
-  assert.deepStrictEqual(FOUR.map((f) => f.sub), ['9.3.1', '9.3.1', '9.3.2', '9.3.2']);
-  assert.deepStrictEqual(FOUR.map((f) => f.origin), ['碳酸氢盐', '碳酸', '碳酸氢盐', '碳酸']);
-  for (const f of fourTypes(list)) assert.strictEqual(f.found, true, `${f.key} 未命中`);
-});
-
-test('「代偿」出现在 7 个单元，从 9.1.2 一直贯到 9.4.3（第二条线索）', () => {
-  const comp = compensationUnits(list);
-  assert.strictEqual(comp.length, 7);
-  assert.deepStrictEqual(comp, ['9.1.2', '9.3.1', '9.3.2', '9.3.3', '9.4.1', '9.4.2', '9.4.3']);
-});
-
-test('观察与描述六要素写全的单元只有 9.4.2 与 9.4.3（表述要求两节）', () => {
-  assert.deepStrictEqual(SIX, ['观察', '描述', '记录', '分析', '报告', '复核']);
-  assert.deepStrictEqual(sixElementUnits(list), ['9.4.2', '9.4.3']);
-});
-
-test('四节各 3 个单元，每节汉字数在 5000 以上', () => {
-  const secs = bySection(list);
-  assert.strictEqual(secs.size, 4);
-  for (const [sec, g] of secs) {
-    assert.strictEqual(g.units, 3, `${sec} 单元数`);
-    assert.ok(g.hanzi > 5000, `${sec} 只有 ${g.hanzi} 字`);
+test('quiz：6 题，分段为 pre/check×3/post×2，每题 4 选项', () => {
+  assert.strictEqual(quiz.questions.length, 6);
+  assert.strictEqual(quiz.questions.map((q) => q.stage).join(','), 'pre,check,check,check,post,post');
+  for (const q of quiz.questions) {
+    assert.strictEqual(q.options.length, 4);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4);
+    assert.strictEqual(new Set(q.options).size, 4, '选项不许重复：' + q.question);
   }
 });
 
-test('学习目标 7 条只落在 9.1.1（章级目标）', () => {
-  const withGoals = list.filter((u) => (u.goals || []).length > 0);
-  assert.deepStrictEqual(withGoals.map((u) => u.sub), ['9.1.1']);
-  assert.strictEqual(withGoals[0].goals.length, 7);
+test('quiz：答案打散（正确项覆盖 3 个以上位置），解释够长', () => {
+  const pos = new Set(quiz.questions.map((q) => q.correct));
+  assert.ok(pos.size >= 3, '正确项位置太集中：' + [...pos].join(','));
+  for (const q of quiz.questions) {
+    assert.ok(hz(q.explain) >= 30, '解释不足 30 汉字：' + q.question);
+    assert.ok(String(q.explain).length >= 10);
+    assert.ok(!/见\s*code\/main\.js\s*输出/.test(q.explain));
+  }
+});
+
+test('quiz：至少 2 道 check 题的正确选项能在正文里找到 4 字原词', () => {
+  const body = shingles(md);
+  let grounded = 0;
+  for (const q of quiz.questions) {
+    if (q.stage !== 'check') continue;
+    const right = q.options[q.correct];
+    if ([...shingles(right)].some((g) => body.has(g))) grounded += 1;
+  }
+  assert.ok(grounded >= 2, '只有 ' + grounded + ' 道 check 题接地');
+});
+
+test('quiz 与代码都不含脚手架与判定性字样', () => {
+  const banned = [/三辨/, /四位面/, /单元规模/, /本章实测/, /本课第\s*\d+\s*章[（(]/];
+  const blob = JSON.stringify(quiz) + md;
+  for (const re of banned) assert.ok(!re.test(blob), '命中 ' + re);
 });

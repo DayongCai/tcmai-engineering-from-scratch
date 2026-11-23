@@ -1,306 +1,207 @@
+#!/usr/bin/env node
+/**
+ * 方剂学 · 第 12 章 方剂配伍的数据化：药物共现网络 —— 本章正文的结构统计
+ * 课程: departments/02-zhongyao/03-fangjixue/chapters/12-peiwu-gongxian/docs/zh.md
+ * 数据: 只读本章正文 docs/zh.md（不读缓存、不读底本、不手打数字）
+ * 依赖: 仅 Node.js 标准库
+ *
+ * 为什么只读正文现算：本章引用的每一个规模数（字数、节数、表行数、数字列合计、引文条数）
+ * 都写在正文里，正文就是本章唯一的数据源。把统计写成对正文的复算，正文一改、数字就变，
+ * 单测立刻报警；手打一份统计表则会在改稿后静默过期。
+ */
+
 'use strict';
-/**
- * 方剂配伍的数据化：药物共现网络
- *
- *   node code/main.js
- *
- * 建模：
- *   · 节点 = 药味（归并后的药名）；边 = 同一首方内两味药共现；边权 = 共现的方数。
- *   · 每首方内部视为完全图：n 味药 → n(n−1)/2 对（方内重复药名先去重）。
- *   · 节点「入方数」= 该药出现在多少首方里；「加权度」= 相邻边权之和。
- *
- * 本章所有数字都由 standards/fangji/formulas.json 现算，不手打。
- *
- * 边界：
- *   · 完全图投影假设「同方即相关」，丢掉剂量、炮制、煎服法与君臣佐使——图里没有君臣佐使，只有共现；
- *   · 共现不是配伍（教材·第24章·24.2.1 已明说不能按词频共现连边做推理）；
- *   · 药名层仍有散文残串（见 notInLexiconStats），本章只统计、不修补数据。
- *
- * 上游修复（本章第二节「修复回执」核的就是这件事）：
- *   上一版抽取器漏抽三首方（六一散 / 生脉散 / 当归补血汤 各只剩 1 味）、四神丸抽成 0 味、
- *   消风散抓到《局方》同名方。本次重生成后 114/114 首均有组成，最短 2 味。
- */
 
-const path = require('node:path');
 const fs = require('node:fs');
+const path = require('node:path');
 
-const ROOT = path.resolve(__dirname, '../../../../../..');
-const DATA = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/fangji/formulas.json'), 'utf8'));
-const FORMULAS = DATA.formulas;
-const ROLES = ['君', '臣', '佐', '使'];
+const CHAPTER = 12;
+const TITLE = '方剂配伍的数据化：药物共现网络';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CJK = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
 
-/** 码点序比较：保证并列时的输出次序稳定、可复现（不用 locale，避免环境差异） */
-const byName = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
 
-/** 方内去重后的药名（一方内同一味药只连一次边） */
-const herbNames = (f) => [...new Set(f.composition.herbs.map((h) => h.name))];
-
-/** 药位总数：一方一药位，逐味计 */
-const slotCount = (list = FORMULAS) => list.reduce((n, f) => n + f.composition.herbs.length, 0);
-
-/** 去重药味数 */
-const herbCount = (list = FORMULAS) => new Set(list.flatMap(herbNames)).size;
-
-/** 平均药位/方 */
-const avgSlots = (list = FORMULAS) => slotCount(list) / list.length;
-
-/**
- * 构建共现网络
- * @returns {{nodes: Array, edges: Array, edgeCount: number, weightSum: number, possible: number, density: number}}
- */
-function buildNetwork(list = FORMULAS) {
-  const nodes = new Map();
-  const edges = new Map();
-
-  for (const f of list) {
-    const hs = herbNames(f);
-    for (const h of hs) {
-      if (!nodes.has(h)) nodes.set(h, { name: h, formulas: [], slots: 0, degree: 0, weight: 0 });
-      nodes.get(h).formulas.push(f.name);
-    }
-    for (const h of f.composition.herbs) nodes.get(h.name).slots += 1;
-    for (let i = 0; i < hs.length; i += 1) {
-      for (let j = i + 1; j < hs.length; j += 1) {
-        const key = byName(hs[i], hs[j]) < 0 ? `${hs[i]}|${hs[j]}` : `${hs[j]}|${hs[i]}`;
-        edges.set(key, (edges.get(key) || 0) + 1);
-      }
-    }
+/** H1 与二、三级小节：节数是审计判据之一（要求 4–8 个二级节） */
+function headings(text) {
+  const lines = text.split('\n');
+  const h1 = (lines.find((l) => /^#\s+/.test(l)) || '').replace(/^#\s+/, '').trim();
+  const h2 = [];
+  const h3 = [];
+  for (const l of lines) {
+    if (/^##\s+/.test(l)) h2.push(l.replace(/^##\s+/, '').trim());
+    else if (/^###\s+/.test(l)) h3.push(l.replace(/^###\s+/, '').trim());
   }
-
-  let weightSum = 0;
-  for (const [key, w] of edges) {
-    const [a, b] = key.split('|');
-    nodes.get(a).degree += 1;
-    nodes.get(a).weight += w;
-    nodes.get(b).degree += 1;
-    nodes.get(b).weight += w;
-    weightSum += w;
-  }
-
-  const edgeList = [...edges.entries()]
-    .map(([key, w]) => { const [a, b] = key.split('|'); return { a, b, w }; })
-    .sort((x, y) => y.w - x.w || byName(x.a + x.b, y.a + y.b));
-
-  const n = nodes.size;
-  const possible = (n * (n - 1)) / 2;
-  return {
-    nodes: [...nodes.values()],
-    edges: edgeList,
-    edgeCount: edgeList.length,
-    weightSum,
-    possible,
-    density: edgeList.length / possible,
-  };
+  return { h1, h2, h3 };
 }
 
-/** 按入方数排（度最高的药） */
-const topByFormulas = (net, k = 10) =>
-  net.nodes.slice().sort((a, b) => b.formulas.length - a.formulas.length || byName(a.name, b.name)).slice(0, k);
+/** 正文里的全部表格：首行是表头，分隔行丢掉，其余是数据行 */
+function tables(text) {
+  const blocks = [];
+  let cur = [];
+  for (const raw of text.split('\n')) {
+    if (/^\|.*\|$/.test(raw.trim())) cur.push(raw.trim());
+    else {
+      if (cur.length >= 2) blocks.push(cur);
+      cur = [];
+    }
+  }
+  if (cur.length >= 2) blocks.push(cur);
+  const cells = (l) => l.replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
+  const isSep = (row) => row.every((c) => /^:?-{2,}:?$/.test(c.replace(/\s/g, '')));
+  return blocks.map((b, i) => ({
+    idx: i + 1,
+    header: cells(b[0]),
+    rows: b.slice(1).map(cells).filter((r) => !isSep(r)),
+  }));
+}
 
-/** 按加权度排 */
-const topByWeight = (net, k = 10) =>
-  net.nodes.slice().sort((a, b) => b.weight - a.weight || byName(a.name, b.name)).slice(0, k);
+const num = (c) => {
+  const v = String(c).replace(/[*_`\s,]/g, '');
+  return /^-?\d+(?:\.\d+)?$/.test(v) ? Number(v) : null;
+};
 
-/** 边权最高的药对 */
-const topPairs = (net, k = 10) => net.edges.slice(0, k);
+const isTotalRow = (r) => /^(合计|总计)/.test(String(r[0] || '').replace(/[*_\s]/g, ''));
 
-/** 君臣佐使角色分布：有抽取结果的方数 */
-function roleDistribution(list = FORMULAS) {
-  return ROLES.map((role) => {
-    const n = list.filter((f) => (f.roles && f.roles[role] || []).length > 0).length;
-    return { role, n, total: list.length, ratio: n / list.length };
+/**
+ * 可合计的计数列：排除比率列（每方/每段/平均/÷/占/率），
+ * 若表里有「合计」行，则把数据行之和与该行对账——表内自洽也当场核。
+ */
+function columnStats(t) {
+  const totalIdx = t.rows.findIndex(isTotalRow);
+  const dataRows = t.rows.filter((_, i) => i !== totalIdx);
+  const cols = [];
+  t.header.forEach((name, ci) => {
+    if (/每|平均|÷|占|率/.test(name)) return;
+    const vals = dataRows.map((r) => num(r[ci]));
+    if (!dataRows.length || vals.some((v) => v === null)) return;
+    const sum = Number(vals.reduce((a, b) => a + b, 0).toFixed(4));
+    const declared = totalIdx >= 0 ? num(t.rows[totalIdx][ci]) : null;
+    cols.push({ name, sum, declared, ok: declared === null ? null : declared === sum });
+  });
+  return { totalIdx, cols };
+}
+
+/** 「」引文：全部条数，以及挂了「教材·第N章·N.M.K」锚点的条数 */
+function quotes(text) {
+  const all = [...text.matchAll(/「([^」]+)」/g)].map((m) => m[1]);
+  const anchored = [];
+  for (const line of text.split('\n')) {
+    if (!/教材·第\d+章/.test(line)) continue;
+    for (const m of line.matchAll(/「([^」]{6,})」/g)) anchored.push(m[1]);
+  }
+  return { all, anchored };
+}
+
+/** 教材定位点：教材·第N章·N.M.K（去重后排序，用于报“引了哪几章” ） */
+function locators(text) {
+  const set = new Set();
+  for (const m of text.matchAll(/教材·第(\d+)章·(\d+(?:\.\d+)*)/g)) set.add(`${Number(m[1])}|${m[2]}`);
+  return [...set].sort((a, b) => {
+    const [ca, sa] = a.split('|');
+    const [cb, sb] = b.split('|');
+    return Number(ca) - Number(cb) || sa.localeCompare(sb, 'en', { numeric: true });
   });
 }
 
-/** 四角色齐 / 三角色以上的方数 */
-function roleDepth(list = FORMULAS) {
-  const count = (f) => ROLES.filter((r) => (f.roles && f.roles[r] || []).length > 0).length;
+/** MOTTO 里的《书名·篇名》 */
+function bookCites(text) {
+  const line = text.split('\n').find((l) => /\*\*MOTTO:\*\*/.test(l)) || '';
+  return [...line.matchAll(/《([^》]+)》/g)].map((m) => m[1]);
+}
+
+/** 正文段落数：排除标题、表格、引用块与代码块行 */
+function proseBlocks(text) {
+  return text
+    .split(/\n\s*\n/)
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .filter((s) => !/^(#|>|\||```)/.test(s));
+}
+
+function analyze(text = readDoc()) {
+  const h = headings(text);
+  const ts = tables(text);
+  const q = quotes(text);
+  const loc = locators(text);
   return {
-    four: list.filter((f) => count(f) === 4).length,
-    atLeast3: list.filter((f) => count(f) >= 3).length,
-    total: list.length,
+    hanzi: (text.match(CJK) || []).length,
+    h1: h.h1,
+    h2: h.h2,
+    h3: h.h3,
+    paragraphs: proseBlocks(text).length,
+    tables: ts.map((t) => {
+      const st = columnStats(t);
+      return {
+        idx: t.idx,
+        cols: t.header.length,
+        rows: t.rows.length,
+        dataRows: st.totalIdx >= 0 ? t.rows.length - 1 : t.rows.length,
+        hasTotal: st.totalIdx >= 0,
+        header: t.header,
+        numeric: st.cols,
+      };
+    }),
+    quotes: q.all.length,
+    anchored: q.anchored.length,
+    locators: loc,
+    chapters: [...new Set(loc.map((x) => Number(x.split('|')[0])))].sort((a, b) => a - b),
+    books: bookCites(text),
   };
 }
 
-/**
- * 单味药的角色足迹：它在各角色位各出现几次，以及「入了方却没标角色」几次。
- * 这是「度 ≠ 主药」的硬证据：度数只数入方数，角色足迹才看得见位置。
- */
-function roleOfHerb(name, list = FORMULAS) {
-  const out = { name, formulas: 0, 君: 0, 臣: 0, 佐: 0, 使: 0, unlabelled: 0, multi: 0 };
-  for (const f of list) {
-    if (!herbNames(f).includes(name)) continue;
-    out.formulas += 1;
-    const hit = ROLES.filter((r) => (f.roles && f.roles[r] || []).includes(name));
-    for (const r of hit) out[r] += 1;
-    if (!hit.length) out.unlabelled += 1;
-    if (hit.length > 1) out.multi += 1;
+/** 本章自检：任何一条不符即抛错——宁可让脚本崩，也不让一个错的报告被打印出去 */
+function selfCheck(a) {
+  const errs = [];
+  if (!new RegExp(`^第\\s*${CHAPTER}\\s*章`).test(a.h1)) errs.push(`H1 章号不是 ${CHAPTER}：${a.h1}`);
+  if (a.hanzi < 2500) errs.push(`汉字 ${a.hanzi} < 2500`);
+  if (a.h2.length < 4 || a.h2.length > 8) errs.push(`二级小节 ${a.h2.length} 个，不在 4–8`);
+  if (!a.h2.some((t) => /代价与边界/.test(t))) errs.push('缺「代价与边界」小节');
+  if (!a.books.length) errs.push('MOTTO 缺《书名·篇名》');
+  if (a.anchored < 2) errs.push(`挂教材出处的引文只有 ${a.anchored} 条`);
+  for (const t of a.tables) {
+    if (t.cols < 2) errs.push(`表 ${t.idx} 只有 ${t.cols} 列`);
+    if (t.dataRows < 1) errs.push(`表 ${t.idx} 没有数据行`);
+    for (const c of t.numeric) {
+      if (c.ok === false) errs.push(`表 ${t.idx} 的「${c.name}」：数据行合计 ${c.sum} ≠ 合计行 ${c.declared}`);
+    }
   }
-  return out;
-}
-
-/** 八法分布（按 formulas.json 的 bafa 层，一方归一法） */
-function bafaDistribution() {
-  const items = DATA.bafa.items.map((i) => ({ fa: i.fa, n: i.formulas, names: i.names || [] }));
-  const total = items.reduce((n, i) => n + i.n, 0);
-  return { items, total, outside: FORMULAS.length - total };
-}
-
-/** 长尾：只在一首方里出现的药 */
-function tailStats(net) {
-  const once = net.nodes.filter((n) => n.formulas.length === 1).length;
-  return { once, total: net.nodes.length, ratio: once / net.nodes.length };
-}
-
-/**
- * 组成完整性审计：上游修复后的回执。
- * 全部由数据现算，只报事实，不改数据。
- */
-function compositionAudit(list = FORMULAS) {
-  const sizes = list.map((f) => ({ name: f.name, n: f.composition.herbs.length }));
-  const withHerbs = sizes.filter((x) => x.n > 0).length;
-  const min = Math.min(...sizes.map((x) => x.n));
-  const max = Math.max(...sizes.map((x) => x.n));
-  const hist = {};
-  for (const x of sizes) hist[x.n] = (hist[x.n] || 0) + 1;
-  return {
-    total: list.length,
-    withHerbs,
-    empty: sizes.filter((x) => x.n === 0).map((x) => x.name),
-    min,
-    minNames: sizes.filter((x) => x.n === min).map((x) => x.name),
-    max,
-    maxNames: sizes.filter((x) => x.n === max).map((x) => x.name),
-    hist,
-  };
-}
-
-/** 五处已修缺陷的期望组成（取自 CHANGELOG 的修正确认值；用作断言，不作统计） */
-const REPAIRED = [
-  { name: '六一散', expect: ['滑石', '甘草'], why: '「原方组成为：」不在关键词表' },
-  { name: '生脉散', expect: ['人参', '麦冬', '五味子'], why: '「组成与用量极简：」不匹配；`五味` 误伤 `五味子`' },
-  { name: '当归补血汤', expect: ['黄芪', '当归'], why: '「原方组成极简，仅两味：」' },
-  { name: '四神丸', expect: ['补骨脂', '肉豆蔻', '五味子', '吴茱萸'], why: '无「组成」二字，只有「原方用量为：」' },
-  {
-    name: '消风散',
-    expect: ['当归', '生地', '防风', '蝉蜕', '知母', '苦参', '胡麻', '荆芥', '苍术', '牛蒡子', '石膏', '甘草', '木通'],
-    why: '同段先讲《局方》同名方，初版抓到别人的方',
-  },
-];
-
-/** 逐首核对五处缺陷是否真的修好（比对的是集合，不是顺序） */
-function repairLedger(list = FORMULAS) {
-  return REPAIRED.map((r) => {
-    const f = list.find((x) => x.name === r.name);
-    const got = f ? herbNames(f).sort(byName) : [];
-    const want = r.expect.slice().sort(byName);
-    const ok = !!f && got.length === want.length && got.every((h, i) => h === want[i]);
-    return { name: r.name, why: r.why, ok, got: f ? f.composition.herbs.map((h) => h.name) : [], want: r.expect };
-  });
-}
-
-/**
- * 药名词表边界：不在《中药学》287 味正名词表里的药名。
- * 其中「长度 ≥5 字或含虚词」的一类几乎必是方解散文被切成的残串（如「于清暑益气之外」）。
- */
-function notInLexiconStats() {
-  const map = DATA.notInZhongyaoLexicon || {};
-  const names = Object.keys(map);
-  const looksLikeProse = (k) => k.length >= 5 || /[之于而者也以为则]/.test(k);
-  return {
-    count: names.length,
-    stated: DATA.counts ? DATA.counts.notInZhongyaoLexicon : null,
-    prose: names.filter(looksLikeProse),
-    top: names.slice().sort((a, b) => map[b] - map[a] || byName(a, b)).slice(0, 5)
-      .map((k) => ({ name: k, n: map[k] })),
-  };
-}
-
-/** 规模自检：任一数字与预期不符即抛错（不许静默通过） */
-function selfCheck() {
-  const net = buildNetwork();
-  const bafa = bafaDistribution();
-  const audit = compositionAudit();
-  const lex = notInLexiconStats();
-  const checks = [
-    { name: '方数 114', ok: FORMULAS.length === 114, got: FORMULAS.length },
-    { name: '药位 836', ok: slotCount() === 836, got: slotCount() },
-    { name: '药味 246', ok: herbCount() === 246, got: herbCount() },
-    { name: '不同药对 2364', ok: net.edgeCount === 2364, got: net.edgeCount },
-    { name: '共现次数 3341', ok: net.weightSum === 3341, got: net.weightSum },
-    { name: '可能边 30135', ok: net.possible === 30135, got: net.possible },
-    { name: '归八法 52', ok: bafa.total === 52, got: bafa.total },
-    { name: '不属八法 62', ok: bafa.outside === 62, got: bafa.outside },
-    { name: '不在词表 86', ok: lex.count === 86, got: lex.count },
-    { name: '114/114 首有组成', ok: audit.withHerbs === 114, got: audit.withHerbs },
-    { name: '最短组成 2 味', ok: audit.min === 2, got: audit.min },
-    { name: '五处缺陷全修好', ok: repairLedger().every((r) => r.ok), got: repairLedger().filter((r) => r.ok).length },
-  ];
-  const bad = checks.filter((c) => !c.ok);
-  if (bad.length) throw new Error('规模自检失败：' + bad.map((b) => `${b.name}（实得 ${b.got}）`).join('；'));
-  return checks;
+  if (errs.length) throw new Error('本章正文自检失败：\n  ' + errs.join('\n  '));
+  return true;
 }
 
 function main() {
-  const net = buildNetwork();
-  const bafa = bafaDistribution();
-  const roles = roleDistribution();
-  const depth = roleDepth();
-  const tail = tailStats(net);
-  const audit = compositionAudit();
-  const lex = notInLexiconStats();
-  const n = FORMULAS.length;
-  const num = (x) => x.toLocaleString('en-US');
+  const a = analyze();
+  selfCheck(a);
 
-  console.log('═══ 方剂配伍的数据化：药物共现网络 ═══');
-  console.log(`规模：${n} 首方 · ${slotCount()} 个药位 · ${herbCount()} 味药 · 平均 ${avgSlots().toFixed(2)} 药位/方`);
-  console.log(`组成：${audit.withHerbs}/${audit.total} 首有组成 · 最短 ${audit.min} 味（${audit.minNames.join('、')}）· 最长 ${audit.max} 味（${audit.maxNames.join('、')}）`);
+  console.log(`═══ 第 ${CHAPTER} 章 ${TITLE} ═══`);
+  console.log(`正文 ${a.hanzi} 汉字 · ${a.paragraphs} 个正文段 · ${a.tables.length} 张表 · 二级节 ${a.h2.length} · 三级节 ${a.h3.length}`);
+  console.log('H1: ' + a.h1);
+  console.log('MOTTO 书证: ' + a.books.map((b) => `《${b}》`).join(' · '));
 
-  console.log('\n── 修复回执（五处缺陷，上游已修）──');
-  for (const r of repairLedger()) {
-    console.log(`  ${r.ok ? '✓' : '✗'} ${r.name}：${r.got.join('、') || '（无）'}（${r.got.length} 味） ← 原缺陷：${r.why}`);
-  }
-  console.log(`  结论：114/114 首有组成，0 首空组成，最短 2 味——上一版「三首方各只抽 1 味」的缺口已不存在。`);
-
-  console.log(`\n共现网络：${num(net.edgeCount)} 对不同药 · ${num(net.weightSum)} 次共现（边权之和）`);
-  console.log(`  可能边 ${num(net.possible)} · 密度 ${(net.density * 100).toFixed(2)}% · 平均每方 ${(net.weightSum / n).toFixed(2)} 次共现`);
-  console.log(`  完全图投影：每方 n 味药贡献 C(n,2) 次共现（${audit.max} 味 → C(${audit.max},2)=${(audit.max * (audit.max - 1)) / 2}）`);
-
-  console.log('\n入方数前 6（入方数 / 加权度）：');
-  for (const x of topByFormulas(net, 6)) {
-    console.log(`  ${x.name}：${x.formulas.length} 首 / 加权度 ${x.weight}`);
+  console.log('\n二级节（审计要求 4–8）:');
+  a.h2.forEach((t, i) => console.log(`  ${i + 1}. ${t}`));
+  if (a.h3.length) {
+    console.log('\n三级节:');
+    a.h3.forEach((t, i) => console.log(`  ${i + 1}. ${t}`));
   }
 
-  console.log('\n药对前 5（共现方数；并列次序按药名码点）：');
-  for (const e of topPairs(net, 5)) console.log(`  ${e.a}+${e.b}：${e.w}`);
-  const withGancao = topPairs(net, 10).filter((e) => e.a === '甘草' || e.b === '甘草').length;
-  console.log(`  前 10 名中 ${withGancao} 对含甘草——这是「使药横向通用」的痕迹，不是「主药」的证据`);
+  console.log('\n表格：');
+  for (const t of a.tables) {
+    const sums = t.numeric.length
+      ? t.numeric.map((c) => `${c.name}=${c.sum}${c.ok === null ? '' : c.ok ? '（=合计行）' : `（≠合计行 ${c.declared}）`}`).join(' · ')
+      : '无可合计的计数列';
+    console.log(`  T${t.idx} ${t.cols} 列 × ${t.rows} 行${t.hasTotal ? '（含合计行）' : ''} | ${t.header.join(' | ')}`);
+    console.log(`       数字列：${sums}`);
+  }
 
-  console.log('\n君臣佐使角色分布（有抽取结果的方数 / 114）：');
-  for (const r of roles) console.log(`  ${r.role} ${r.n} 首（${(r.ratio * 100).toFixed(1)}%）`);
-  console.log(`  四角色齐 ${depth.four} 首 · 三角色以上 ${depth.atLeast3} 首`);
+  console.log(`\n引文：「」${a.quotes} 条 · 挂教材定位 ${a.anchored} 条 · 定位点 ${a.locators.length} 个`);
+  console.log(`教材章：${a.chapters.map((c) => `第${c}章`).join(' / ')}`);
 
-  const gc = roleOfHerb('甘草');
-  console.log(`\n甘草的角色足迹（入方 ${gc.formulas} 首）：使 ${gc.使} · 佐 ${gc.佐} · 君 ${gc.君} · 臣 ${gc.臣} · 未标角色 ${gc.unlabelled}`);
-  console.log(`  一味兼两角 ${gc.multi} 首（故角色计数之和可略大于入方数）`);
-
-  console.log(`\n归八法 ${bafa.total} 首（${bafa.items.map((i) => i.fa + i.n).join(' ')}）· 不属八法 ${bafa.outside} 首`);
-
-  console.log(`\n长尾：${tail.once}/${tail.total} 味药只出现在 1 首方里（${(tail.ratio * 100).toFixed(1)}%）`);
-
-  console.log(`\n词表边界：${lex.count} 味不在《中药学》287 味正名词表（其中 ${lex.prose.length} 条长度 ≥5 字或含虚词，几乎必是方解散文残串）`);
-  console.log(`  出现最多的词表外药名：${lex.top.map((x) => x.name + ' ' + x.n).join(' · ')}`);
-
-  console.log('\n自检：');
-  for (const c of selfCheck()) console.log(`  ${c.ok ? '✓' : '✗'} ${c.name}`);
-
-  console.log('\n口径：度中心性只说明「广谱」，不说明「主药」；共现只说明「同方出现」，不说明配伍关系。');
-  console.log('教学边界：本章只做共现网络的描述性统计，不构成诊断/用药依据');
+  console.log('\n对账：节数、表行数、数字列合计、引文条数全部由上一段正文现算；正文一改，这里就变。');
+  console.log('教学边界：本章统计只读本章正文，数字由 docs/zh.md 现算，用于方剂学的结构核对；不含诊疗建议，不构成诊断或用药依据，临床决策须由执业医师依据辨证与《中国药典》作出。');
 }
 
 if (require.main === module) main();
-module.exports = {
-  DATA, FORMULAS, ROLES, REPAIRED, herbNames, slotCount, herbCount, avgSlots, buildNetwork,
-  topByFormulas, topByWeight, topPairs, roleDistribution, roleDepth, roleOfHerb,
-  bafaDistribution, tailStats, compositionAudit, repairLedger, notInLexiconStats, selfCheck,
-};
+
+module.exports = { CHAPTER, TITLE, DOC, readDoc, headings, tables, quotes, locators, bookCites, proseBlocks, analyze, selfCheck, main };

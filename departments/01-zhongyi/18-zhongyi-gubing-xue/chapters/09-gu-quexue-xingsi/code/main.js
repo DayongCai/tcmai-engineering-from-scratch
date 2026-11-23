@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中医骨病学 · 第 9 章 骨缺血性坏死：本章统计口径
+ * 中医骨病学 · 第 9 章 塌陷是一条单行道，围塌陷期是唯一的岔口
  * 课程: departments/01-zhongyi/18-zhongyi-gubing-xue/chapters/09-gu-quexue-xingsi/docs/zh.md
- * 数据: standards/gubing/units.json（60 单元层，每单元带三辨 / 四位面词频与数值计数）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 输出全部从本章 docs/zh.md 现算：汉字数、节数与逐节字数、表格数、《》引文、
+ * 加粗判断条数、引言行、代价与边界条数，以及本章判据词的出现次数。
+ * 正文改一个字这里就跟着变；手打的数字会在改稿后静默过期。
  */
 
 'use strict';
@@ -14,114 +14,111 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'gubing', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/gubing/units.json —— 章节目录是否已脱离仓库？');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 9;
+const TITLE = '塌陷是一条单行道，围塌陷期是唯一的岔口';
+/** 本章的判据词：塌陷不可逆，窗口只在围塌陷期，磁共振决定后面全部选项 */
+const KEYWORDS = ["围塌陷期","磁共振","新月征","双线征","免负重"];
+
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+/** 读正文。文件不在就报错，不静默兜底。 */
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'gubing', 'units.json');
-const CHAPTER = '9';
+/**
+ * 从正文里数：
+ *   hanzi     汉字总数（不含标点、数字、拉丁字母）
+ *   sections  二级标题（## 开头）及其汉字量、bullet 条数
+ *   tables    Markdown 表格（分隔行 |---| 计一张）
+ *   cites     《》引文出现的次数与去重清单
+ *   claims    **加粗** 的判断句
+ *   quote     以 > 开头的引言行
+ *   bounds    「代价与边界」一节的条目数
+ */
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const lines = body.split('\n');
+  const hanzi = (body.match(HANZI) || []).length;
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) for (const [k, v] of Object.entries(u.measure[field])) out[k] = (out[k] || 0) + v;
-  return out;
-}
-
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
-
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = u.sec || '（未标节）';
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
-
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) {
-      counter.set(m[1], (counter.get(m[1]) || 0) + 1);
+  const sections = [];
+  let cur = null;
+  for (const line of lines) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) {
+      cur = { title: h[1], hanzi: 0, bullets: 0 };
+      sections.push(cur);
+      continue;
+    }
+    if (cur) {
+      cur.hanzi += (line.match(HANZI) || []).length;
+      // 条目既可能是「- 」也可能是「1. 」，两种都要数，否则边界条数会静默变成 0
+      if (/^(?:[-*]\s+\S|\d+\.\s+\S)/.test(line.trim())) cur.bullets += 1;
     }
   }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
+
+  const tables = (body.match(/^\s*\|[\s:|-]+\|\s*$/gm) || []).length;
+  const citeHits = [...body.matchAll(/《([^》\n]+)》/g)].map((m) => m[1]);
+  const cites = [...new Set(citeHits)];
+  const claims = (body.match(/\*\*[^*\n]+\*\*/g) || []).length;
+  const quote = lines.filter((l) => /^>\s*\S/.test(l)).length;
+  const bounds = sections
+    .filter((s) => s.title === '代价与边界')
+    .reduce((n, s) => n + s.bullets, 0);
+
+  const keywords = KEYWORDS.map((k) => ({ word: k, hits: body.split(k).length - 1 }));
+
+  return { hanzi, sections, tables, cites, citeCount: citeHits.length, claims, quote, bounds, keywords };
 }
 
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
-  return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
-  };
+/** 标题可能很长，打印时截到固定宽度，免得逐节表错位。 */
+function brief(t, w) {
+  const width = w || 20;
+  return t.length > width ? t.slice(0, width - 1) + '…' : t;
 }
 
-/** 方与法：单元层没有独立方剂字段，改从正文里认「治法动词」记号（儿科以疏风宣肺、消食健脾、平肝息风为主） */
-function methods(list) {
-  const VERBS = ['疏肝', '补肾', '健脾', '养血', '活血', '化瘀', '调经', '固冲', '止带', '安胎', '清热', '利湿'];
-  const out = {};
-  for (const v of VERBS) out[v] = list.reduce((a, u) => a + u.prose.split(v).length - 1, 0);
-  return Object.entries(out).filter(([, c]) => c).sort((a, b) => b[1] - a[1]);
+/** 汉字按两格宽算，逐节表才对得齐。 */
+function dw(s) {
+  return [...String(s)].reduce((n, c) => n + (c.charCodeAt(0) > 0x2e7f ? 2 : 1), 0);
 }
 
-module.exports = { CHAPTER, load, chapterUnits, merge, rank, bySection, citations, shape, methods, sum };
+function main() {
+  const a = analyze(read());
+  const pick = (fn) =>
+    a.sections.reduce((m, s) => (fn(s, m) ? s : m), a.sections[0] || { title: '—', hanzi: 0 });
+  const fattest = pick((s, m) => s.hanzi > m.hanzi);
+  const thinnest = pick((s, m) => s.hanzi < m.hanzi);
+  const kwTop = a.keywords.slice().sort((x, y) => y.hits - x.hits)[0] || { word: '—', hits: 0 };
 
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  const views = rank(merge(list, 'views'));
-  const levels = rank(merge(list, 'levels'));
-  const books = citations(list);
-
-  console.log('═══ 中医骨病学 · 第 9 章 骨缺血性坏死 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按节：');
-  for (const sec of bySection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of views) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of levels) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log(`\n引书 ${books.books} 部 · 引用 ${books.total} 次 · 前三：${books.top.map(([n, c]) => `${n}(${c})`).join('、')}`);
-  console.log('\n治法动词命中：' + methods(list).map(([v, c]) => `${v}×${c}`).join('  '));
-  console.log('\n单元清单：');
-  for (const u of list) {
-    console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字\t${u.tri.view.primary || '—'}/${u.tri.level.primary || '—'}`);
+  console.log('中医骨病学 · 第 ' + CHAPTER + ' 章 ' + TITLE);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
+  console.log('');
+  console.log('汉字 ' + a.hanzi + ' 字 · 节 ' + a.sections.length + ' 节 · 表格 ' + a.tables +
+    ' 张 · 引文 ' + a.citeCount + ' 条（去重 ' + a.cites.length + ' 部）');
+  console.log('');
+  console.log('逐节字数：');
+  for (const s of a.sections) {
+    const share = a.hanzi ? ((s.hanzi / a.hanzi) * 100).toFixed(1) : '0.0';
+    const pad = brief(s.title);
+    console.log('  ' + pad + ' '.repeat(Math.max(2, 38 - dw(pad))) + String(s.hanzi).padStart(5) + ' 字（' + share + '%）');
   }
+  console.log('');
+  console.log('最长一节：' + fattest.title + '（' + fattest.hanzi + ' 字）；最短一节：' +
+    thinnest.title + '（' + thinnest.hanzi + ' 字）');
+  console.log('');
+  console.log('判据词出现次数（判据：平片阴性不能排除，症状之初就排磁共振）：');
+  for (const k of a.keywords) console.log('  ' + k.word + '：' + k.hits);
+  console.log('  → 命中最多的词：' + kwTop.word + '（' + kwTop.hits + ' 次）');
+  console.log('');
+  console.log('加粗判断 ' + a.claims + ' 处 · 引言行 ' + a.quote + ' 行 · 代价与边界 ' + a.bounds + ' 条');
+  if (a.cites.length) console.log('引文清单：' + a.cites.map((c) => '《' + c + '》').join('、'));
+  else console.log('引文清单：（本章正文未引书名）');
+  console.log('');
+  console.log('※ 数字由本章正文现算，正文一改即随之变化；本章讲分期与边界，不构成诊疗建议。');
 }
 
-// 教学样例声明：契约要求每章输出含临床边界声明（tests/test_chapter_code.js）
-if (require.main === module) {
-  console.log('※ 教学样例：数字由 standards/gubing/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
-}
+if (require.main === module) main();
+
+module.exports = { DOC, CHAPTER, TITLE, KEYWORDS, read, analyze };

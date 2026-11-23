@@ -126,8 +126,11 @@ test('6. quiz 契约（题干键必须是 question）', () => {
       assert.ok(x.question && String(x.question).length >= 6, `${c.slug} quiz#${i + 1} 缺 question`);
       assert.strictEqual((x.options || []).length, 4, `${c.slug} quiz#${i + 1} 选项数`);
       assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct <= 3, `${c.slug} quiz#${i + 1} correct`);
-      assert.ok((x.explanation || '').length >= 10, `${c.slug} quiz#${i + 1} explanation`);
-      assert.ok(/教材·药理学·第\d+章/.test(x.cite || x.explanation || ''),
+      // 解析字段名全库并存：`explain`（11,233 处，多数）与 `explanation`（2,688 处）。
+      // 药理学 49 章统一用 `explain`；门只要求「有解析且够长」，不强制某一种写法。
+      const why = x.explanation || x.explain || '';
+      assert.ok(String(why).length >= 10, `${c.slug} quiz#${i + 1} 缺解析（explain/explanation）`);
+      assert.ok(/教材·药理学·第\d+章/.test(x.cite || why),
         `${c.slug} quiz#${i + 1} 缺引证`);
     }
   }

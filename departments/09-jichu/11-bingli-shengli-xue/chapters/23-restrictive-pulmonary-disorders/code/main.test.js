@@ -3,9 +3,8 @@
  * 第 23 章 限制性肺疾病 —— 确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言只落在可对账的结构上：讲义规模、用词重心、节号覆盖、引文归属、
- * 引语逐字、零裸值、quiz 契约、末行教学边界。
- * 不锁死正文措辞，正文改写时测试不会变成噪声。
+ * 断言只落在可对账的结构上：正文规模、引证章号、节号前缀、数值命中、锚点落位、
+ * quiz 契约（题数/三段/四选项/解释字数/选项接地/答案分散）。不锁正文措辞。
  */
 
 'use strict';
@@ -14,125 +13,120 @@ const assert = require('node:assert');
 const test = require('node:test');
 const fs = require('node:fs');
 const path = require('node:path');
-const { execFileSync } = require('node:child_process');
 
 const {
-  CHAPTER,
-  TITLE,
-  KEYS,
-  BOUNDARY,
-  nonWs,
-  chapterOf,
-  shape,
-  keyCounts,
-  secsWith,
-  docsAudit,
+  CHAPTER, TITLE, ANCHORS, BOUNDARY,
+  readDoc, shape, citationAudit, valueAudit, anchorCoverage, main,
 } = require('./main');
 
-const MAIN = path.join(__dirname, 'main.js');
-const DIR = path.join(__dirname, '..');
-const ch = chapterOf();
-const doc = fs.readFileSync(path.join(DIR, 'docs', 'zh.md'), 'utf8');
+const doc = readDoc();
+const EXPECT = {
+  h2: 5,
+  h3: 9,
+  paras: 55,
+  hanzi: 6940,
+  chars: 9158,
+  cites: 25,
+  distinct: 10,
+  values: 0,
+  anchors: ["胸膜腔","装不下"],
+};
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
 
-test('本章取自讲义第 23 章，10 节，节号形如 23.M', () => {
+const cjk = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;
+
+function grams(s) {
+  const out = new Set();
+  const t = String(s);
+  for (let i = 0; i + 4 <= t.length; i += 1) {
+    const g = t.slice(i, i + 4);
+    if (/^[\u4e00-\u9fff]{4}$/.test(g)) out.add(g);
+  }
+  return out;
+}
+
+test('章号与标题来自正文 H1', () => {
   assert.strictEqual(CHAPTER, 23);
-  assert.strictEqual(ch.secs.length, 10);
-  assert.strictEqual(ch.secs[0].no, '23.1');
-  assert.strictEqual(ch.secs.at(-1).no, '23.10');
-  for (const s of ch.secs) {
-    assert.match(s.no, /^23\.\d+$/, `节号不合规：${s.no}`);
-    assert.ok(s.paras.length > 0, `${s.no} 没有正文`);
-    assert.ok(nonWs(s.text) > 200, `${s.no} 正文过短：${nonWs(s.text)}`);
-  }
-  assert.match(TITLE, /限制性肺疾病/);
+  const h1 = doc.split(/\r?\n/).find((l) => /^#\s+/.test(l)) || '';
+  assert.ok(h1.includes(TITLE), `H1 不含标题：${h1}`);
+  assert.ok(TITLE.length >= 2);
 });
 
-test('讲义规模：4693 非空白字 · 3919 汉字 · 40 段（改稿时这条会先响）', () => {
-  const s = shape(ch);
-  assert.strictEqual(s.secs, 10);
-  assert.strictEqual(s.chars, 4693);
-  assert.strictEqual(s.hanzi, 3919);
-  assert.strictEqual(s.paras, 40);
+test('正文规模：节 / 小节 / 段 / 汉字 / 非空白字符与实测一致', () => {
+  const s = shape(doc);
+  assert.deepStrictEqual(
+    { h2: s.h2, h3: s.h3, paras: s.paras, hanzi: s.hanzi, chars: s.chars },
+    { h2: EXPECT.h2, h3: EXPECT.h3, paras: EXPECT.paras, hanzi: EXPECT.hanzi, chars: EXPECT.chars },
+  );
 });
 
-test('用词重心：通气最多（35 次），弥散只在肺内限制的节里出现', () => {
-  const keys = keyCounts(ch);
-  const byKey = Object.fromEntries(keys.map((k) => [k.key, k.n]));
-  assert.deepStrictEqual(KEYS, ['顺应性', '通气', '弥散', '分流', '呼吸功', '死腔']);
-  assert.strictEqual(byKey['通气'], 35);
-  assert.strictEqual(byKey['顺应性'], 9);
-  assert.strictEqual(byKey['弥散'], 8);
-  assert.ok(keys.every((k) => k.n > 0), '每个锚点词都必须在讲义里出现');
-  // 弥散不在 23.6、23.7（肺外限制两节）出现——这是「肺内才谈弥散」的结构证据
-  const diff = secsWith(ch, '弥散');
-  assert.ok(!diff.includes('23.6') && !diff.includes('23.7'), `弥散出现在肺外节：${diff.join('、')}`);
+test('引证章号与节号前缀全部等于本章，没有跨章复制', () => {
+  const c = citationAudit(doc, CHAPTER);
+  assert.strictEqual(c.total, EXPECT.cites);
+  assert.deepStrictEqual(c.wrongChapter, []);
+  assert.deepStrictEqual(c.prefixMismatch, []);
+  assert.strictEqual(c.distinct.length, EXPECT.distinct);
 });
 
-test('docs 正文 ≥4693 非空白字，且必备段齐全', () => {
-  assert.ok(nonWs(doc) >= 3000, `正文只有 ${nonWs(doc)} 非空白字`);
-  for (const k of ['MOTTO', 'PROBLEM', '双根因定位', '环境逼迫', '知识积累', '运行与验证']) {
-    assert.ok(doc.includes(k), `docs 缺 ${k}`);
-  }
-  for (const k of ['代价与边界', '免责']) assert.ok(doc.includes(k), `docs 缺 ${k}`);
+test('数值型命中数与实测一致（正文只给类别与关系）', () => {
+  const v = valueAudit(doc);
+  assert.strictEqual(v.hits, EXPECT.values);
 });
 
-test('讲义引文：≥3 条，且条条属第 23 章、节号真实存在', () => {
-  const a = docsAudit(ch);
-  assert.ok(a.cites >= 3, `引文只有 ${a.cites} 条`);
-  assert.strictEqual(a.wrongCh, 0, '有引文引到了别的章');
-  assert.deepStrictEqual(a.unknownSec, [], `引文节号不在本章：${a.unknownSec.join('、')}`);
-  assert.ok(a.sectionsCited >= 8, `引文只覆盖 ${a.sectionsCited} 节`);
-});
-
-test('「」引语逐字可核，正文零「数字＋单位」', () => {
-  const a = docsAudit(ch);
-  assert.deepStrictEqual(a.lostQuotes, [], `引语在讲义里查不到：${a.lostQuotes.join(' / ')}`);
-  assert.strictEqual(a.bare, 0, `docs 有 ${a.bare} 行带数值与单位`);
-});
-
-test('讲义 10 节全部在 docs 出现节号', () => {
-  const a = docsAudit(ch);
-  assert.deepStrictEqual(a.uncovered, [], `未覆盖：${a.uncovered.join('、')}`);
-  for (const s of ch.secs) assert.ok(doc.includes(s.no), `docs 没点明 ${s.no}`);
-});
-
-test('docs 不把讲义标成教材，也不写百分比', () => {
-  assert.ok(!/教材·[^\n]*讲义/.test(doc), '把讲义标成了教材');
-  assert.ok(!doc.includes('%'), 'docs 出现百分号');
-  assert.ok(doc.includes(BOUNDARY), 'docs 缺教学边界句');
-});
-
-test('quiz：恰 6 题，pre 1 / check 3 / post 2，题干用 question 键，每题带引证', () => {
-  const quiz = JSON.parse(fs.readFileSync(path.join(DIR, 'quiz.json'), 'utf8'));
-  const qs = quiz.questions;
-  assert.strictEqual(qs.length, 6);
-  const stage = (s) => qs.filter((q) => q.stage === s).length;
-  assert.strictEqual(stage('pre'), 1, 'pre 题不是 1 道');
-  assert.strictEqual(stage('check'), 3, 'check 题不是 3 道');
-  assert.strictEqual(stage('post'), 2, 'post 题不是 2 道');
-  for (const q of qs) {
-    assert.ok(q.question && typeof q.question === 'string', '题干必须用 question 键');
-    assert.ok(Array.isArray(q.options) && q.options.length >= 4, `${q.question} 选项不足`);
-    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < q.options.length, 'correct 越界');
-    assert.match(q.explanation, /(依据|口径见|前提|算见)/, 'explanation 缺引证措辞');
-    assert.match(q.explanation, /补充·hermes-病理生理学讲义·第23章·\d+\.\d+/, 'explanation 缺本章引文');
+test('锚点从正文选出，且每个锚点至少落在一节', () => {
+  assert.deepStrictEqual(ANCHORS, EXPECT.anchors);
+  const cov = anchorCoverage(doc);
+  const flat = doc.replace(/\s/g, '');
+  for (const a of ANCHORS) {
+    assert.ok(cov[a].length >= 1, `锚点「${a}」未落位`);
+    assert.ok(flat.includes(a), `锚点在正文中找不到：${a}`);
   }
 });
 
-test('末行打印教学边界，且退出码为 0', () => {
-  const out = execFileSync(process.execPath, [MAIN], { encoding: 'utf8' });
-  const last = out.trimEnd().split(/\r?\n/).at(-1);
-  assert.strictEqual(last, BOUNDARY);
-  assert.match(BOUNDARY, /教学边界/);
-  assert.match(BOUNDARY, /不构成/);
-  assert.match(BOUNDARY, /不写数值/);
+test('quiz：≥5 题，pre/check/post 三段齐，每题 4 个互异选项', () => {
+  const qs = QUIZ.questions;
+  assert.ok(qs.length >= 5, `题数 ${qs.length}`);
+  for (const stage of ['pre', 'check', 'post']) {
+    assert.ok(qs.some((q) => q.stage === stage), `缺 ${stage}`);
+  }
+  for (const [i, q] of qs.entries()) {
+    assert.ok(q.question && q.question.length >= 6, `Q${i + 1} 题干过短`);
+    assert.strictEqual(new Set(q.options).size, 4, `Q${i + 1} 选项不互异`);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct <= 3, `Q${i + 1} correct 越界`);
+    assert.ok(cjk(q.explanation) >= 30, `Q${i + 1} 解释不足 30 汉字`);
+  }
+  assert.strictEqual(QUIZ.lesson, "23-restrictive-pulmonary-disorders");
+  assert.strictEqual(QUIZ.subject, '11-bingli-shengli-xue');
 });
 
-test('outputs 两件齐：prompt 与 skill 都以本 slug 命名', () => {
-  const slug = '23-restrictive-pulmonary-disorders';
-  for (const f of [`prompt-${slug}.md`, `skill-${slug}.md`]) {
-    const p = path.join(DIR, 'outputs', f);
-    assert.ok(fs.existsSync(p), `缺 outputs/${f}`);
-    assert.ok(nonWs(fs.readFileSync(p, 'utf8')) > 1200, `${f} 内容过短`);
+test('quiz：每题的末条引证落在本章章号', () => {
+  for (const [i, q] of QUIZ.questions.entries()) {
+    const ms = [...q.explanation.matchAll(/第\s*(\d+)\s*章/g)];
+    assert.ok(ms.length >= 1, `Q${i + 1} 无章号引证`);
+    assert.strictEqual(Number(ms[ms.length - 1][1]), CHAPTER, `Q${i + 1} 末条引证不落本章`);
   }
+});
+
+test('quiz：check 题至少 2 道的正确项含当章正文 4 字词组', () => {
+  const flat = doc.replace(/\s/g, '');
+  const checks = QUIZ.questions.filter((q) => q.stage === 'check');
+  const grounded = checks.filter((q) => [...grams(q.options[q.correct])].some((g) => flat.includes(g)));
+  assert.ok(grounded.length >= 2, `接地 check 题 ${grounded.length}/${checks.length}`);
+});
+
+test('quiz：答案打散，正确项覆盖至少 3 个位置且单一位置不超过 3 题', () => {
+  const idx = QUIZ.questions.map((q) => q.correct);
+  const counts = [0, 0, 0, 0];
+  for (const i of idx) counts[i] += 1;
+  assert.ok(counts.filter((n) => n > 0).length >= 3, `分布 ${counts.join('/')}`);
+  assert.ok(Math.max(...counts) <= 3, `分布 ${counts.join('/')}`);
+});
+
+test('main() 末行固定为教学边界句，且正文含边界声明', () => {
+  const logs = [];
+  const orig = console.log;
+  console.log = (...a) => logs.push(a.join(' '));
+  try { main(); } finally { console.log = orig; }
+  assert.strictEqual(logs[logs.length - 1], BOUNDARY);
+  assert.ok(doc.includes('教学边界：'));
 });

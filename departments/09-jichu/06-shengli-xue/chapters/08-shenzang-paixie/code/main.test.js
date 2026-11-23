@@ -3,106 +3,141 @@
  * 第 8 章 肾脏的排泄功能 —— 确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言落在可对账的结构上：单元与节数、字数、数值核验合计、视角层级合计、
- * 三环节的转运方向、滤过动力两侧的变动方向、浓缩的两个条件、清除率的三种读法。
+ * 断言落在正文实测值与三处方向判别上：有效滤过压的净值合成（含「推不出」）、
+ * 重吸收的两个特点、清除率的三种读法。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const {
-  load, chapterUnits, chapterMeta, sectionsOf, aggregate,
-  transportDirection, filtrationForces, filtrationShift,
-  urineConcentration, clearanceMeaning, dominantView, dominantLevel,
-  VIEWS, LEVELS,
+  KEYWORDS,
+  EXCRETION,
+  CONCENTRATION_CONDITIONS,
+  LOOP_ROLE,
+  read,
+  hanzi,
+  shape,
+  citations,
+  judgments,
+  keywords,
+  boundaryHits,
+  effectiveFiltration,
+  reabsorptionTrait,
+  clearanceMeaning,
+  main,
 } = require('./main');
 
-const db = load();
-const units = chapterUnits(db);
-const meta = chapterMeta(db);
+const md = read();
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
 
-test('本章 12 个知识单元落在 4 个节里，章名与章号对得上', () => {
-  assert.strictEqual(units.length, 12);
-  assert.strictEqual(sectionsOf(units).length, 4);
-  assert.strictEqual(meta.no, '8');
-  assert.match(meta.title, /肾脏的排泄功能/);
+test('正文规模：9792 汉字 / 8 个二级 / 10 个三级 / 12 个四级 / 59 行表格 / 51 段', () => {
+  const s = shape(md);
+  assert.strictEqual(s.hanzi, 9792);
+  assert.strictEqual(s.h1, 1);
+  assert.strictEqual(s.h2, 8);
+  assert.strictEqual(s.h3, 10);
+  assert.strictEqual(s.h4, 12);
+  assert.strictEqual(s.tables, 59);
+  assert.strictEqual(s.paras, 51);
 });
 
-test('本章教材字数 = 20888，与逐单元 hanzi 之和一致', () => {
-  assert.strictEqual(meta.hanzi, 20888);
-  assert.strictEqual(units.reduce((n, u) => n + u.hanzi, 0), 20888);
+test('引文 1 条（篇名级）、加粗判断句 34 条', () => {
+  const c = citations(md);
+  assert.strictEqual(c.length, 1);
+  assert.strictEqual(c[0].book, '生理学');
+  assert.match(c[0].part, /^第8章·8\.2/);
+  assert.strictEqual(judgments(md).length, 34);
 });
 
-test('数值零容忍：12 个单元 valueLike 合计为 0', () => {
-  for (const u of units) assert.strictEqual(u.measure.valueLike, 0, `${u.sub} 出现数值型表述`);
-  assert.strictEqual(aggregate(units).valueLike, 0);
+test('关键词命中：滤过 91 / 重吸收 69 / 分泌 36 / 清除率 18 / 渗透梯度 5', () => {
+  assert.deepStrictEqual(keywords(md), {
+    滤过: 91,
+    重吸收: 69,
+    分泌: 36,
+    清除率: 18,
+    渗透梯度: 5,
+  });
+  assert.deepStrictEqual(KEYWORDS, ['滤过', '重吸收', '分泌', '渗透梯度', '清除率']);
 });
 
-test('三视角合计 = 28/306/129，四层级合计 = 63/30/151/56', () => {
-  const agg = aggregate(units);
-  assert.deepStrictEqual(agg.views, { 代谢: 28, 机能: 306, 形态: 129 });
-  assert.deepStrictEqual(agg.levels, { 细胞: 63, 组织: 30, 器官: 151, 系统: 56 });
-  for (const k of VIEWS) assert.strictEqual(agg.views[k], units.reduce((n, u) => n + u.measure.views[k], 0));
-  for (const k of LEVELS) assert.strictEqual(agg.levels[k], units.reduce((n, u) => n + u.measure.levels[k], 0));
+test('排泄＝滤过＋分泌，不含重吸收', () => {
+  assert.deepStrictEqual(EXCRETION.计入, ['滤过', '分泌']);
+  assert.deepStrictEqual(EXCRETION.不计入, ['重吸收']);
 });
 
-test('本章的重心在器官层：器官高于其它三层，且形态高于代谢', () => {
-  const agg = aggregate(units);
-  assert.ok(agg.levels['器官'] > agg.levels['细胞']);
-  assert.ok(agg.levels['器官'] > agg.levels['系统']);
-  assert.ok(agg.views['形态'] > agg.views['代谢']);
+test('有效滤过压是净值；两侧同向变动时返回「推不出」', () => {
+  assert.strictEqual(effectiveFiltration({ push: '升', colloid: '不变', capsule: '不变' }).verdict, '增强');
+  assert.strictEqual(effectiveFiltration({ push: '不变', colloid: '升', capsule: '不变' }).verdict, '减弱');
+  assert.strictEqual(effectiveFiltration({ push: '不变', colloid: '不变', capsule: '升' }).verdict, '减弱');
+  assert.strictEqual(effectiveFiltration({ push: '升', colloid: '升', capsule: '不变' }).verdict, '推不出');
+  assert.throws(() => effectiveFiltration({ push: '大', colloid: '不变', capsule: '不变' }), /未知变化/);
 });
 
-test('三环节的转运方向相反，且排泄不计重吸收', () => {
-  assert.match(transportDirection('滤过'), /血液 → 肾小囊/);
-  assert.match(transportDirection('重吸收'), /小管液 → 血液/);
-  assert.match(transportDirection('分泌'), /→ 小管液/);
-  assert.match(transportDirection('排泄'), /滤过 \+ 分泌/);
-  assert.throws(() => transportDirection('转运'), /环节只取/);
+test('重吸收的两个特点：选择性看转运体种类，有限性看饱和', () => {
+  assert.match(reabsorptionTrait('选择性').basis, /转运体/);
+  assert.match(reabsorptionTrait('有限性').basis, /饱和/);
+  assert.match(reabsorptionTrait('有限性').example, /肾糖阈/);
+  assert.throws(() => reabsorptionTrait('等渗性'), /未知特点/);
 });
 
-test('滤过动力两侧：推动一项、对抗两项，漏一项就错', () => {
-  const f = filtrationForces();
-  assert.strictEqual(f.推动.length, 1);
-  assert.strictEqual(f.对抗.length, 2);
-  assert.ok(f.对抗.includes('血浆胶体渗透压'));
-  assert.ok(f.对抗.includes('肾小囊内压'));
-  assert.match(f.合成, /有效滤过压/);
+test('髓袢分工「降支出水、升支出盐」，浓缩两个条件缺一不可', () => {
+  assert.match(LOOP_ROLE.降支细段, /水出/);
+  assert.match(LOOP_ROLE.升支细段, /盐出/);
+  assert.deepStrictEqual(CONCENTRATION_CONDITIONS, ['髓质渗透梯度是否建立', '集合管对水是否通透']);
 });
 
-test('滤过变动只能给方向：单侧变动可定，两侧同向变动推不出', () => {
-  assert.match(filtrationShift('降', '平'), /降低/);
-  assert.match(filtrationShift('平', '降'), /升高/); // 对抗力下降 = 有效滤过压升高
-  assert.match(filtrationShift('平', '升'), /降低/); // 对抗力升高 = 有效滤过压降低
-  assert.match(filtrationShift('升', '降'), /升高/);
-  assert.match(filtrationShift('降', '升'), /降低/);
-  assert.strictEqual(filtrationShift('平', '平'), '有效滤过压不变');
-  assert.match(filtrationShift('降', '降'), /推不出/);
-  assert.throws(() => filtrationShift('涨', '平'), /方向只取/);
+test('清除率三种读法：只反映肾机能的某一个侧面', () => {
+  assert.match(clearanceMeaning('只滤过').meaning, /滤过/);
+  assert.match(clearanceMeaning('滤过并大量分泌').meaning, /肾血浆流量/);
+  assert.match(clearanceMeaning('滤过并被大量重吸收').meaning, /重吸收/);
+  assert.throws(() => clearanceMeaning('只分泌'), /未知转运方式/);
 });
 
-test('浓缩与稀释：梯度与激素两个条件缺一不可', () => {
-  assert.match(urineConcentration('有', '有'), /^浓缩/);
-  assert.match(urineConcentration('有', '无'), /^稀释/);
-  assert.match(urineConcentration('无', '有'), /不成立/);
-  assert.match(urineConcentration('无', '无'), /^稀释/);
-  assert.throws(() => urineConcentration('有', '少'), /只取/);
+test('边界句与结构小节齐备', () => {
+  assert.ok(boundaryHits(md) >= 1);
+  assert.match(md, /免责声明/);
+  assert.match(md, /^## 代价与边界/m);
 });
 
-test('清除率是三种读法，不是三个公式', () => {
-  assert.match(clearanceMeaning('只滤过'), /滤过过程/);
-  assert.match(clearanceMeaning('滤过并分泌'), /肾血浆流量/);
-  assert.match(clearanceMeaning('滤过并重吸收'), /重吸收程度/);
-  assert.throws(() => clearanceMeaning('只分泌'), /物质类别/);
+test('quiz 契约：6 题、pre/check×3/post×2、4 选项、下标跨 3 种、解释 ≥30 汉字', () => {
+  const qs = quiz.questions;
+  assert.strictEqual(qs.length, 6);
+  assert.deepStrictEqual(qs.map((q) => q.stage), ['pre', 'check', 'check', 'check', 'post', 'post']);
+  assert.ok(new Set(qs.map((q) => q.correct)).size >= 3);
+  for (const [i, q] of qs.entries()) {
+    assert.strictEqual(q.options.length, 4);
+    assert.deepStrictEqual(new Set(q.options).size, 4, `第 ${i + 1} 题选项重复`);
+    assert.ok(q.correct >= 0 && q.correct <= 3);
+    assert.ok(hanzi(q.explain) >= 30, `第 ${i + 1} 题 explain 只有 ${hanzi(q.explain)} 汉字`);
+    assert.ok(String(q.explanation || '').length >= 10);
+  }
 });
 
-test('主视角/主层级判定：8.2.2 滤过膜属形态与细胞，8.4.2 尿生成调节属机能', () => {
-  const a = units.find((u) => u.sub === '8.2.2');
-  const b = units.find((u) => u.sub === '8.4.2');
-  assert.strictEqual(dominantView(a), '形态');
-  assert.strictEqual(dominantLevel(a), '细胞');
-  assert.strictEqual(dominantView(b), '机能');
-  assert.throws(() => chapterUnits(db, '99'), /没有第99章/);
+test('quiz 接地：check 题正确项与正文共享 4 字词组（≥2 道）', () => {
+  const clean = md.replace(/[^\u4e00-\u9fff]/g, ' ');
+  const grams = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + 4 <= seg.length; i += 1) grams.add(seg.slice(i, i + 4));
+  }
+  let grounded = 0;
+  for (const q of quiz.questions) {
+    if (q.stage !== 'check') continue;
+    const right = q.options[q.correct].replace(/[^\u4e00-\u9fff]/g, ' ');
+    if (right.split(/\s+/).some((seg) => {
+      for (let i = 0; i + 4 <= seg.length; i += 1) if (grams.has(seg.slice(i, i + 4))) return true;
+      return false;
+    })) grounded += 1;
+  }
+  assert.ok(grounded >= 2, `只有 ${grounded} 道 check 题接地`);
+});
+
+test('main() 返回的规模与实测一致', () => {
+  const r = main();
+  assert.strictEqual(r.shape.hanzi, 9792);
+  assert.strictEqual(r.conditions, 2);
 });

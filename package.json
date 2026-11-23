@@ -264,6 +264,8 @@
     "toc": "node scripts/build_toc_4level.js",
     "toc:check": "node scripts/build_toc_4level.js --check",
     "check:exercises": "node scripts/check_chapter_exercises.js",
-    "check:outputs": "node scripts/check_chapter_outputs.js"
+    "check:outputs": "node scripts/check_chapter_outputs.js",
+    "media:stage": "node platform/pipeline/stage_release.js",
+    "media:release:serve": "node platform/serve_media.js --root D:/tcm-release/media-v1 --port 7792"
   }
 }

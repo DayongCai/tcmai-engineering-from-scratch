@@ -1,15 +1,13 @@
 #!/usr/bin/env node
 /**
- * 方剂学 · 第 3 章 解表剂：辛温与辛凉的分野
+ * 方剂学 · 第 3 章 解表剂：辛温与辛凉的分野 —— 本章正文的结构统计
  * 课程: departments/02-zhongyao/03-fangjixue/chapters/03-jiebiaoji/docs/zh.md
- * 出处: 教材·第5章（5.1 辛温解表剂、5.2 辛凉解表剂、5.3 扶正解表剂）
- * 数据: standards/fangji/formulas.json（第5章 8 首方，含组成、功用、主治、君臣佐使）
+ * 数据: 只读本章正文 docs/zh.md（不读缓存、不读底本、不手打数字）
  * 依赖: 仅 Node.js 标准库
  *
- * 为什么这一章要用药味共现来判「分野」：辛温与辛凉的分野如果只看节的标题，
- * 就是背目录；把 8 首方的药味铺开、看哪些药跨节出现，分野才变成可以检验的
- * 命题——麻黄同时出现在辛温的麻黄汤、小青龙汤与辛凉的麻杏石甘汤里，说明
- * 寒温不由单味药决定。这正是第 2 章「配伍环境」在解表剂里的落地。
+ * 为什么只读正文现算：本章引用的每一个规模数（字数、节数、表行数、数字列合计、引文条数）
+ * 都写在正文里，正文就是本章唯一的数据源。把统计写成对正文的复算，正文一改、数字就变，
+ * 单测立刻报警；手打一份统计表则会在改稿后静默过期。
  */
 
 'use strict';
@@ -17,143 +15,193 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-// __dirname = .../departments/02-zhongyao/03-fangjixue/chapters/<slug>/code
-// 不硬数 ../ 的层数（数错一次就 ENOENT），改为向上找到带 standards/fangji 的那一级
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 10; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'fangji', 'formulas.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const CHAPTER = 3;
+const TITLE = '解表剂：辛温与辛凉的分野';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CJK = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
+/** H1 与二、三级小节：节数是审计判据之一（要求 4–8 个二级节） */
+function headings(text) {
+  const lines = text.split('\n');
+  const h1 = (lines.find((l) => /^#\s+/.test(l)) || '').replace(/^#\s+/, '').trim();
+  const h2 = [];
+  const h3 = [];
+  for (const l of lines) {
+    if (/^##\s+/.test(l)) h2.push(l.replace(/^##\s+/, '').trim());
+    else if (/^###\s+/.test(l)) h3.push(l.replace(/^###\s+/, '').trim());
   }
-  throw new Error('没找到 standards/fangji/formulas.json —— 章节目录是否已脱离仓库？');
-}
-const ROOT = findRoot(__dirname);
-const FANGJI = path.join(ROOT, 'standards', 'fangji');
-
-const readJSON = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
-const load = () => readJSON(path.join(FANGJI, 'formulas.json'));
-
-/** 本章的 8 首方：按教材章号取，不手写方名清单 */
-function jiebiao(fj) {
-  return fj.formulas
-    .filter((f) => f.chapter === '5')
-    .sort((a, b) => a.sub.localeCompare(b.sub));
+  return { h1, h2, h3 };
 }
 
-function chapterHanzi(no) {
-  const base = readJSON(path.join(FANGJI, '底本.json'));
-  const c = base.chapters.find((x) => x.no === String(no));
-  if (!c) throw new Error(`底本里没有第 ${no} 章`);
-  return c.counts.hanzi;
-}
-
-/** 按节分组，保持教材节序（5.1 → 5.3） */
-function bySection(list) {
-  const g = new Map();
-  for (const f of list) {
-    if (!g.has(f.sec)) g.set(f.sec, []);
-    g.get(f.sec).push(f);
-  }
-  return g;
-}
-
-/** 药名 → 出现过的节号集合（只看节号前三位，避免节名措辞变化影响判定） */
-function herbSections(list) {
-  const m = new Map();
-  for (const f of list) {
-    const sec = f.sec.slice(0, 3);
-    for (const h of f.composition.herbs || []) {
-      if (!m.has(h.name)) m.set(h.name, new Set());
-      m.get(h.name).add(sec);
+/** 正文里的全部表格：首行是表头，分隔行丢掉，其余是数据行 */
+function tables(text) {
+  const blocks = [];
+  let cur = [];
+  for (const raw of text.split('\n')) {
+    if (/^\|.*\|$/.test(raw.trim())) cur.push(raw.trim());
+    else {
+      if (cur.length >= 2) blocks.push(cur);
+      cur = [];
     }
   }
-  return m;
+  if (cur.length >= 2) blocks.push(cur);
+  const cells = (l) => l.replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
+  const isSep = (row) => row.every((c) => /^:?-{2,}:?$/.test(c.replace(/\s/g, '')));
+  return blocks.map((b, i) => ({
+    idx: i + 1,
+    header: cells(b[0]),
+    rows: b.slice(1).map(cells).filter((r) => !isSep(r)),
+  }));
 }
 
-/** 跨节药：出现在两个以上节里的药。它们不能用来判寒温 */
-function crossSectionHerbs(list) {
-  const m = herbSections(list);
-  return [...m.entries()]
-    .filter(([, secs]) => secs.size > 1)
-    .map(([herb, secs]) => ({ herb, secs: [...secs].sort() }));
+const num = (c) => {
+  const v = String(c).replace(/[*_`\s,]/g, '');
+  return /^-?\d+(?:\.\d+)?$/.test(v) ? Number(v) : null;
+};
+
+const isTotalRow = (r) => /^(合计|总计)/.test(String(r[0] || '').replace(/[*_\s]/g, ''));
+
+/**
+ * 可合计的计数列：排除比率列（每方/每段/平均/÷/占/率），
+ * 若表里有「合计」行，则把数据行之和与该行对账——表内自洽也当场核。
+ */
+function columnStats(t) {
+  const totalIdx = t.rows.findIndex(isTotalRow);
+  const dataRows = t.rows.filter((_, i) => i !== totalIdx);
+  const cols = [];
+  t.header.forEach((name, ci) => {
+    if (/每|平均|÷|占|率/.test(name)) return;
+    const vals = dataRows.map((r) => num(r[ci]));
+    if (!dataRows.length || vals.some((v) => v === null)) return;
+    const sum = Number(vals.reduce((a, b) => a + b, 0).toFixed(4));
+    const declared = totalIdx >= 0 ? num(t.rows[totalIdx][ci]) : null;
+    cols.push({ name, sum, declared, ok: declared === null ? null : declared === sum });
+  });
+  return { totalIdx, cols };
 }
 
-/** 全方共有的药：出现在每一首方里的药，是解表剂的常数，不是分野 */
-function universalHerbs(list) {
-  const names = new Set();
-  for (const f of list) for (const h of f.composition.herbs || []) names.add(h.name);
-  return [...names]
-    .filter((herb) => list.every((f) => (f.composition.herbs || []).some((h) => h.name === herb)))
-    .sort();
+/** 「」引文：全部条数，以及挂了「教材·第N章·N.M.K」锚点的条数 */
+function quotes(text) {
+  const all = [...text.matchAll(/「([^」]+)」/g)].map((m) => m[1]);
+  const anchored = [];
+  for (const line of text.split('\n')) {
+    if (!/教材·第\d+章/.test(line)) continue;
+    for (const m of line.matchAll(/「([^」]{6,})」/g)) anchored.push(m[1]);
+  }
+  return { all, anchored };
 }
 
-/** 药位与药名数：药位是「方 × 药」的出现次数，药名数是去重结果 */
-function herbStats(list) {
-  const slots = list.reduce((n, f) => n + (f.composition.herbs || []).length, 0);
-  const names = new Set();
-  for (const f of list) for (const h of f.composition.herbs || []) names.add(h.name);
-  return { slots, names: names.size };
+/** 教材定位点：教材·第N章·N.M.K（去重后排序，用于报“引了哪几章” ） */
+function locators(text) {
+  const set = new Set();
+  for (const m of text.matchAll(/教材·第(\d+)章·(\d+(?:\.\d+)*)/g)) set.add(`${Number(m[1])}|${m[2]}`);
+  return [...set].sort((a, b) => {
+    const [ca, sa] = a.split('|');
+    const [cb, sb] = b.split('|');
+    return Number(ca) - Number(cb) || sa.localeCompare(sb, 'en', { numeric: true });
+  });
+}
+
+/** MOTTO 里的《书名·篇名》 */
+function bookCites(text) {
+  const line = text.split('\n').find((l) => /\*\*MOTTO:\*\*/.test(l)) || '';
+  return [...line.matchAll(/《([^》]+)》/g)].map((m) => m[1]);
+}
+
+/** 正文段落数：排除标题、表格、引用块与代码块行 */
+function proseBlocks(text) {
+  return text
+    .split(/\n\s*\n/)
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .filter((s) => !/^(#|>|\||```)/.test(s));
+}
+
+function analyze(text = readDoc()) {
+  const h = headings(text);
+  const ts = tables(text);
+  const q = quotes(text);
+  const loc = locators(text);
+  return {
+    hanzi: (text.match(CJK) || []).length,
+    h1: h.h1,
+    h2: h.h2,
+    h3: h.h3,
+    paragraphs: proseBlocks(text).length,
+    tables: ts.map((t) => {
+      const st = columnStats(t);
+      return {
+        idx: t.idx,
+        cols: t.header.length,
+        rows: t.rows.length,
+        dataRows: st.totalIdx >= 0 ? t.rows.length - 1 : t.rows.length,
+        hasTotal: st.totalIdx >= 0,
+        header: t.header,
+        numeric: st.cols,
+      };
+    }),
+    quotes: q.all.length,
+    anchored: q.anchored.length,
+    locators: loc,
+    chapters: [...new Set(loc.map((x) => Number(x.split('|')[0])))].sort((a, b) => a - b),
+    books: bookCites(text),
+  };
+}
+
+/** 本章自检：任何一条不符即抛错——宁可让脚本崩，也不让一个错的报告被打印出去 */
+function selfCheck(a) {
+  const errs = [];
+  if (!new RegExp(`^第\\s*${CHAPTER}\\s*章`).test(a.h1)) errs.push(`H1 章号不是 ${CHAPTER}：${a.h1}`);
+  if (a.hanzi < 2500) errs.push(`汉字 ${a.hanzi} < 2500`);
+  if (a.h2.length < 4 || a.h2.length > 8) errs.push(`二级小节 ${a.h2.length} 个，不在 4–8`);
+  if (!a.h2.some((t) => /代价与边界/.test(t))) errs.push('缺「代价与边界」小节');
+  if (!a.books.length) errs.push('MOTTO 缺《书名·篇名》');
+  if (a.anchored < 2) errs.push(`挂教材出处的引文只有 ${a.anchored} 条`);
+  for (const t of a.tables) {
+    if (t.cols < 2) errs.push(`表 ${t.idx} 只有 ${t.cols} 列`);
+    if (t.dataRows < 1) errs.push(`表 ${t.idx} 没有数据行`);
+    for (const c of t.numeric) {
+      if (c.ok === false) errs.push(`表 ${t.idx} 的「${c.name}」：数据行合计 ${c.sum} ≠ 合计行 ${c.declared}`);
+    }
+  }
+  if (errs.length) throw new Error('本章正文自检失败：\n  ' + errs.join('\n  '));
+  return true;
 }
 
 function main() {
-  const fj = load();
-  const list = jiebiao(fj);
-  const secs = bySection(list);
-  const { slots, names } = herbStats(list);
+  const a = analyze();
+  selfCheck(a);
 
-  console.log('═══ 解表剂：辛温与辛凉的分野 (方剂学 第3章) ═══');
-  console.log(`教材规模: 第5章 ${chapterHanzi(5)} 字 | 本章方剂 ${list.length} 首 | 药位 ${slots} 个 | 药名 ${names} 个`);
+  console.log(`═══ 第 ${CHAPTER} 章 ${TITLE} ═══`);
+  console.log(`正文 ${a.hanzi} 汉字 · ${a.paragraphs} 个正文段 · ${a.tables.length} 张表 · 二级节 ${a.h2.length} · 三级节 ${a.h3.length}`);
+  console.log('H1: ' + a.h1);
+  console.log('MOTTO 书证: ' + a.books.map((b) => `《${b}》`).join(' · '));
 
-  console.log('\n八首方 —— 节 / 药味 / 君药 / 功用');
-  for (const f of list) {
-    console.log(`  ${f.sub} ${f.name.padEnd(5, '　')} ${String(f.composition.herbs.length).padStart(2)} 味 · 君:${(f.roles['君'] || []).join('、') || '（空）'} · ${f.gongyong.replace(/。$/, '')}`);
+  console.log('\n二级节（审计要求 4–8）:');
+  a.h2.forEach((t, i) => console.log(`  ${i + 1}. ${t}`));
+  if (a.h3.length) {
+    console.log('\n三级节:');
+    a.h3.forEach((t, i) => console.log(`  ${i + 1}. ${t}`));
   }
 
-  console.log('\n三节的分野（同一「汗」法之下的三层）');
-  for (const [sec, arr] of secs) {
-    const avg = (arr.reduce((n, f) => n + f.composition.herbs.length, 0) / arr.length).toFixed(1);
-    console.log(`  ${sec} · ${arr.length} 首 · 平均 ${avg} 味 · ${arr.map((f) => f.name).join('、')}`);
+  console.log('\n表格：');
+  for (const t of a.tables) {
+    const sums = t.numeric.length
+      ? t.numeric.map((c) => `${c.name}=${c.sum}${c.ok === null ? '' : c.ok ? '（=合计行）' : `（≠合计行 ${c.declared}）`}`).join(' · ')
+      : '无可合计的计数列';
+    console.log(`  T${t.idx} ${t.cols} 列 × ${t.rows} 行${t.hasTotal ? '（含合计行）' : ''} | ${t.header.join(' | ')}`);
+    console.log(`       数字列：${sums}`);
   }
 
-  console.log('\n跨节药 —— 这些药不能用来判寒温');
-  for (const { herb, secs: s } of crossSectionHerbs(list)) {
-    const where = list.filter((f) => (f.composition.herbs || []).some((h) => h.name === herb));
-    console.log(`  ${herb.padEnd(3, '　')} 出现于 ${s.join(' / ')} · ${where.map((f) => `${f.name}`).join('、')}`);
-  }
+  console.log(`\n引文：「」${a.quotes} 条 · 挂教材定位 ${a.anchored} 条 · 定位点 ${a.locators.length} 个`);
+  console.log(`教材章：${a.chapters.map((c) => `第${c}章`).join(' / ')}`);
 
-  const uni = universalHerbs(list);
-  console.log(`\n全方共有: ${uni.join('、') || '（无）'} —— 出现在 ${list.length}/${list.length} 首里，是解表剂的常数而非分野`);
-
-  console.log('\n判据检验: 单味药能否定寒温？');
-  const ma = list.filter((f) => (f.composition.herbs || []).some((h) => h.name === '麻黄'));
-  console.log(`  含麻黄 ${ma.length} 首: ${ma.map((f) => `${f.name}(${f.sub})`).join('、')}`);
-  console.log('  → 同一味麻黄同时支撑辛温与辛凉两节，故寒温由配伍环境决定，不由单味药性决定');
-
-  console.log('\n分类看节、不看措辞:');
-  const xinliangWord = secs.get('5.2 辛凉解表剂').filter((f) => /辛凉/.test(f.gongyong));
-  console.log(`  5.2 三首中，功用措辞含「辛凉」的只有 ${xinliangWord.length} 首: ${xinliangWord.map((f) => f.name).join('、')}`);
-  console.log('  → 桑菊饮功用作「疏风清热，宣肺止咳」，仍归辛凉节：节是分类，措辞是表述');
-
-  console.log('\n教学边界：本章数字由 standards/fangji 现算，方名与功用取自教材第5章；选方须辨证，不构成诊断/用药依据');
-
-  return { list, secs, slots, names, cross: crossSectionHerbs(list), uni };
+  console.log('\n对账：节数、表行数、数字列合计、引文条数全部由上一段正文现算；正文一改，这里就变。');
+  console.log('教学边界：本章统计只读本章正文，数字由 docs/zh.md 现算，用于方剂学的结构核对；不含诊疗建议，不构成诊断或用药依据，临床决策须由执业医师依据辨证与《中国药典》作出。');
 }
 
-if (require.main === module) {
-  main();
-}
+if (require.main === module) main();
 
-module.exports = {
-  findRoot,
-  load,
-  jiebiao,
-  chapterHanzi,
-  bySection,
-  herbSections,
-  crossSectionHerbs,
-  universalHerbs,
-  herbStats,
-  main,
-};
+module.exports = { CHAPTER, TITLE, DOC, readDoc, headings, tables, quotes, locators, bookCites, proseBlocks, analyze, selfCheck, main };

@@ -356,3 +356,28 @@ test('11. GitHub 发布脚本：--self-test 全流程通过（附件数自洽）
     for (const p of b.parts) assert.ok(out.includes(p.file), `结果里缺 ${p.file}`);
   }
 });
+
+// ── 12. 本地 release 目录（不依赖令牌的发布物）：页面/说明/校验和齐 ──
+// 「发布」不等于「传到 GitHub」：版本化目录 + 清单 + 校验和 + 下载页四样齐了就是可分发的 release。
+// 这条只核**存在性与自洽**，不重算 7.3 GB 的 sha256（那是 stage_release.js 干活时做的）。
+test('12. 本地 release 目录：index.html / RELEASE-NOTES / SHA256SUMS 自洽', () => {
+  const REL = path.join(process.env.RELEASE_ROOT || 'D:/tcm-release', 'media-v1');
+  if (!fs.existsSync(REL)) { console.log('[跳过] 未 stage（npm run media:stage）'); return; }
+  const errs = [];
+  for (const f of ['index.html', 'RELEASE-NOTES.md', 'SHA256SUMS', 'index.json', 'bundle-index.json']) {
+    if (!fs.existsSync(path.join(REL, f))) errs.push(`缺 ${f}`);
+  }
+  const sums = read(path.join(REL, 'SHA256SUMS')).trim().split('\n');
+  if (!sums.length) errs.push('SHA256SUMS 为空');
+  const onDisk = fs.readdirSync(REL).filter((f) => f !== 'SHA256SUMS');
+  for (const line of sums) {
+    const m = /^([0-9a-f]{64})\s+(.+)$/.exec(line.trim());
+    if (!m) { errs.push(`SHA256SUMS 行格式不对：${line.slice(0, 40)}`); continue; }
+    if (!fs.existsSync(path.join(REL, m[2]))) errs.push(`校验和里的文件不存在：${m[2]}`);
+  }
+  if (sums.length !== onDisk.length) errs.push(`SHA256SUMS ${sums.length} 行 ≠ 目录里 ${onDisk.length} 个文件`);
+  const html = read(path.join(REL, 'index.html'));
+  const tars = onDisk.filter((f) => f.endsWith('.tar'));
+  for (const t of tars) if (!html.includes(t)) errs.push(`下载页没列 ${t}`);
+  summarize('12. 本地 release', errs);
+});

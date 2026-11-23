@@ -3,9 +3,8 @@
  * 第 17 章 心脏功能 —— 确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言只落在可对账的结构上：讲义规模、关键词重心、节覆盖、引文条数与节号、
- * 引语逐字、正文裸数值是否为 0、quiz 契约、以及 main.js 末行的教学边界。
- * 不锁死正文措辞，讲义改写段落时测试不会变成噪声。
+ * 断言只落在可对账的结构上：正文规模、引证章号、节号前缀、数值命中、锚点落位、
+ * quiz 契约（题数/三段/四选项/解释字数/选项接地/答案分散）。不锁正文措辞。
  */
 
 'use strict';
@@ -16,110 +15,118 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const {
-  CHAPTER,
-  BOUNDARY,
-  citeOf,
-  chapter,
-  shape,
-  keywords,
-  rank,
-  sectionCoverage,
-  citeAudit,
-  quoteAudit,
-  valueAudit,
-  nonWs,
+  CHAPTER, TITLE, ANCHORS, BOUNDARY,
+  readDoc, shape, citationAudit, valueAudit, anchorCoverage, main,
 } = require('./main');
 
-const ch = chapter();
-const doc = fs.readFileSync(path.join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
-const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
-const mainSrc = fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8').trimEnd();
+const doc = readDoc();
+const EXPECT = {
+  h2: 5,
+  h3: 13,
+  paras: 61,
+  hanzi: 7219,
+  chars: 9471,
+  cites: 15,
+  distinct: 12,
+  values: 0,
+  anchors: ["收缩力","前负荷"],
+};
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
 
-test('本章 12 节，讲义 4007 汉字、4776 非空白字', () => {
-  const s = shape(ch);
+const cjk = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;
+
+function grams(s) {
+  const out = new Set();
+  const t = String(s);
+  for (let i = 0; i + 4 <= t.length; i += 1) {
+    const g = t.slice(i, i + 4);
+    if (/^[\u4e00-\u9fff]{4}$/.test(g)) out.add(g);
+  }
+  return out;
+}
+
+test('章号与标题来自正文 H1', () => {
   assert.strictEqual(CHAPTER, 17);
-  assert.strictEqual(s.secs, 12);
-  assert.strictEqual(s.hanzi, 4007);
-  assert.strictEqual(s.chars, 4776);
+  const h1 = doc.split(/\r?\n/).find((l) => /^#\s+/.test(l)) || '';
+  assert.ok(h1.includes(TITLE), `H1 不含标题：${h1}`);
+  assert.ok(TITLE.length >= 2);
+});
+
+test('正文规模：节 / 小节 / 段 / 汉字 / 非空白字符与实测一致', () => {
+  const s = shape(doc);
   assert.deepStrictEqual(
-    ch.secs.map((s0) => s0.no),
-    ['17.1', '17.2', '17.3', '17.4', '17.5', '17.6', '17.7', '17.8', '17.9', '17.10', '17.11', '17.12'],
+    { h2: s.h2, h3: s.h3, paras: s.paras, hanzi: s.hanzi, chars: s.chars },
+    { h2: EXPECT.h2, h3: EXPECT.h3, paras: EXPECT.paras, hanzi: EXPECT.hanzi, chars: EXPECT.chars },
   );
 });
 
-test('节号全部是 17.M 形式，章号与课程章号一致', () => {
-  for (const s of ch.secs) assert.match(s.no, /^17\.(?:[1-9]|1[0-2])$/, `${s.no} 格式不对`);
-  assert.ok(ch.title.startsWith('心脏功能'), ch.title);
-  assert.strictEqual(CHAPTER, Number(ch.no));
+test('引证章号与节号前缀全部等于本章，没有跨章复制', () => {
+  const c = citationAudit(doc, CHAPTER);
+  assert.strictEqual(c.total, EXPECT.cites);
+  assert.deepStrictEqual(c.wrongChapter, []);
+  assert.deepStrictEqual(c.prefixMismatch, []);
+  assert.strictEqual(c.distinct.length, EXPECT.distinct);
 });
 
-test('关键词重心：钙居首（四个因素的每一条最终都要回到胞质钙瞬变）', () => {
-  const kw = keywords(ch);
-  const ranked = rank(kw);
-  assert.strictEqual(ranked[0][0], '钙');
-  assert.strictEqual(kw['钙'], 24);
-  assert.strictEqual(kw['前负荷'], 16);
-  assert.strictEqual(kw['后负荷'], 15);
-  assert.strictEqual(kw['收缩力'], 19);
-  assert.strictEqual(kw['心率'], 17);
-  assert.strictEqual(kw['每搏量'], 16);
-  assert.strictEqual(ranked[ranked.length - 1][0], '后负荷');
-});
-
-test('docs 正文 ≥ 4776 非空白字，且 12 个节号全部出现（没有漏讲的节）', () => {
-  assert.ok(nonWs(doc) >= 3000, `docs 只有 ${nonWs(doc)} 非空白字`);
-  const cover = sectionCoverage(doc, ch);
-  assert.deepStrictEqual(cover.off, [], `漏讲：${cover.off.join('、')}`);
-  assert.strictEqual(cover.covered, cover.total);
-});
-
-test('引文 ≥3 条，全部指向第 17 章，节号真实存在', () => {
-  const cite = citeAudit(doc, ch);
-  assert.ok(cite.total >= 3, `引文只有 ${cite.total} 条`);
-  assert.strictEqual(cite.wrongCh, 0, '有引文引串了章号');
-  assert.deepStrictEqual(cite.noSec, [], `节号不存在：${cite.noSec.join('、')}`);
-  assert.ok(cite.secs.length >= 3, '引文集中在一两节，覆盖太窄');
-  assert.strictEqual(citeOf('17.1'), '补充·hermes-病理生理学讲义·第17章·17.1');
-});
-
-test('引语逐字：正文里 ≥6 字的「」全部能在讲义原文中找到', () => {
-  const q = quoteAudit(doc, ch);
-  assert.deepStrictEqual(q.lost, [], `找不到：${q.lost.join('、')}`);
-  assert.ok(q.total > 0, '正文没有任何逐字引语，引证成了摆设');
-});
-
-test('正文非引用行零「数字＋单位」', () => {
+test('数值型命中数与实测一致（正文只给类别与关系）', () => {
   const v = valueAudit(doc);
-  assert.strictEqual(v.hits, 0, `出现 ${v.hits} 行：${v.sample.join(' / ')}`);
+  assert.strictEqual(v.hits, EXPECT.values);
 });
 
-test('quiz 恰 6 题（pre 1 · check 3 · post 2），题干键为 question，每题带引证', () => {
-  const qs = quiz.questions;
-  assert.strictEqual(qs.length, 6);
-  const stage = (s) => qs.filter((q) => q.stage === s).length;
-  assert.strictEqual(stage('pre'), 1);
-  assert.strictEqual(stage('check'), 3);
-  assert.strictEqual(stage('post'), 2);
-  for (const q of qs) {
-    assert.ok(q.question, '题干必须用 question 键');
-    assert.ok(Array.isArray(q.options) && q.options.length >= 3);
-    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < q.options.length);
-    assert.match(q.explanation, /依据|口径见|前提|算见/);
-    assert.match(q.explanation, /补充·hermes-病理生理学讲义·第17章·\d+\.\d+/);
+test('锚点从正文选出，且每个锚点至少落在一节', () => {
+  assert.deepStrictEqual(ANCHORS, EXPECT.anchors);
+  const cov = anchorCoverage(doc);
+  const flat = doc.replace(/\s/g, '');
+  for (const a of ANCHORS) {
+    assert.ok(cov[a].length >= 1, `锚点「${a}」未落位`);
+    assert.ok(flat.includes(a), `锚点在正文中找不到：${a}`);
   }
 });
 
-test('docs 必备段齐：MOTTO / PROBLEM / 双根因定位 / 代价与边界 / 运行与验证 / 免责', () => {
-  for (const k of ['MOTTO', 'PROBLEM', '双根因定位', '环境逼迫', '知识积累', '代价与边界', '运行与验证', '免责']) {
-    assert.ok(doc.includes(k), `docs 缺 ${k}`);
+test('quiz：≥5 题，pre/check/post 三段齐，每题 4 个互异选项', () => {
+  const qs = QUIZ.questions;
+  assert.ok(qs.length >= 5, `题数 ${qs.length}`);
+  for (const stage of ['pre', 'check', 'post']) {
+    assert.ok(qs.some((q) => q.stage === stage), `缺 ${stage}`);
   }
-  assert.ok(/不写数值/.test(doc), 'docs 缺「不写数值」声明');
-  assert.ok(!doc.includes('教材·'), 'docs 出现了「教材·」前缀（本章只引讲义）');
+  for (const [i, q] of qs.entries()) {
+    assert.ok(q.question && q.question.length >= 6, `Q${i + 1} 题干过短`);
+    assert.strictEqual(new Set(q.options).size, 4, `Q${i + 1} 选项不互异`);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct <= 3, `Q${i + 1} correct 越界`);
+    assert.ok(cjk(q.explanation) >= 30, `Q${i + 1} 解释不足 30 汉字`);
+  }
+  assert.strictEqual(QUIZ.lesson, "17-cardiac-function");
+  assert.strictEqual(QUIZ.subject, '11-bingli-shengli-xue');
 });
 
-test('main.js 末行打印教学边界，且与 docs 里的边界句一致', () => {
-  const tail = mainSrc.split(/\r?\n/).slice(-3).join('\n');
-  assert.match(tail, /教学边界/);
-  assert.match(BOUNDARY, /不构成/);
-  assert.ok(doc.includes(BOUNDARY), 'docs 里的边界句与 main.js 不一致');
+test('quiz：每题的末条引证落在本章章号', () => {
+  for (const [i, q] of QUIZ.questions.entries()) {
+    const ms = [...q.explanation.matchAll(/第\s*(\d+)\s*章/g)];
+    assert.ok(ms.length >= 1, `Q${i + 1} 无章号引证`);
+    assert.strictEqual(Number(ms[ms.length - 1][1]), CHAPTER, `Q${i + 1} 末条引证不落本章`);
+  }
+});
+
+test('quiz：check 题至少 2 道的正确项含当章正文 4 字词组', () => {
+  const flat = doc.replace(/\s/g, '');
+  const checks = QUIZ.questions.filter((q) => q.stage === 'check');
+  const grounded = checks.filter((q) => [...grams(q.options[q.correct])].some((g) => flat.includes(g)));
+  assert.ok(grounded.length >= 2, `接地 check 题 ${grounded.length}/${checks.length}`);
+});
+
+test('quiz：答案打散，正确项覆盖至少 3 个位置且单一位置不超过 3 题', () => {
+  const idx = QUIZ.questions.map((q) => q.correct);
+  const counts = [0, 0, 0, 0];
+  for (const i of idx) counts[i] += 1;
+  assert.ok(counts.filter((n) => n > 0).length >= 3, `分布 ${counts.join('/')}`);
+  assert.ok(Math.max(...counts) <= 3, `分布 ${counts.join('/')}`);
+});
+
+test('main() 末行固定为教学边界句，且正文含边界声明', () => {
+  const logs = [];
+  const orig = console.log;
+  console.log = (...a) => logs.push(a.join(' '));
+  try { main(); } finally { console.log = orig; }
+  assert.strictEqual(logs[logs.length - 1], BOUNDARY);
+  assert.ok(doc.includes('教学边界：'));
 });

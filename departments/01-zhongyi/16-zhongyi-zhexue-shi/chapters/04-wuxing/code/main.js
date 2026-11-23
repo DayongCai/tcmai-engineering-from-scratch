@@ -1,127 +1,186 @@
-#!/usr/bin/env node
-/**
- * 中医哲学史 · 第 4 章 五行：分类还是生成：本章统计口径
- * 课程: departments/01-zhongyi/16-zhongyi-zhexue-shi/chapters/04-wuxing/docs/zh.md
- * 数据: standards/zhexue/units.json（10 单元层，每单元带三辨 / 四位面词频与数值计数）
- * 依赖: 仅 Node.js 标准库
- *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
- */
-
 'use strict';
+/**
+ * 中医哲学史 · 第 4 章 五行在临床上用的是生克传变，不是万物归类
+ *
+ *   node code/main.js
+ *
+ * 课程：departments/01-zhongyi/16-zhongyi-zhexue-shi/chapters/04-wuxing/docs/zh.md
+ * 习题：chapters/04-wuxing/quiz.json
+ *
+ * 本章的每个数字都从正文与习题现算，不手抄结论：
+ *   · 结构：小节数、汉字数、表格行数、引书条目
+ *   · 判据：一组关键术语在正文里的出现次数
+ *   · 骨架：几组并列项是否真的在正文里立住
+ *   · 习题：题量、三段分布、解释长度、check 题能否在正文找到原词
+ * 正文一改，重跑就知道是哪一条对不上。
+ */
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhexue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const CHAPTER = 4;
+const SLUG = "04-wuxing";
+const TITLE = "五行：分类还是生成";
+
+/** 本章的判据术语：正文靠它们把结论立住，代码只数它们在不在、够不够 */
+const TERMS = [
+  ["归类", "某物属哪一行：能命名，不能预判"],
+  ["生成", "这一行如何生、如何克：能预判传变"],
+  ["相生", "木生火到水生木的正向链条"],
+  ["相克", "木克土到金克木的制约链条"],
+  ["相乘", "克得太过，沿相克方向压过去"],
+  ["相侮", "反克，被克的一方反过来欺负克它的一方"],
+  ["先安未受邪之地", "在传变路径的下游提前布防"],
+  ["虚实", "给传变提供力度，不只提供方向"],
+];
+
+/** 本章的骨架：几组并列项必须齐全，缺一项说明正文这一节没写完 */
+const GROUPS = [
+  { label: "相生五步", all: ["木生火", "火生土", "土生金", "金生水", "水生木"] },
+  { label: "相克五步", all: ["木克土", "土克水", "水克火", "火克金", "金克木"] },
+  { label: "传变判断三前提", all: ["当前病在哪一行", "会往哪一行传", "下游那一行现在是否还撑得住"] },
+  { label: "五行五定义", all: ["敷和", "升明", "备化", "审平", "静顺"] },
+];
+
+const HAN = /[\u3400-\u4dbf\u4e00-\u9fff]/;
+const chars = (s) => [...String(s || '')];
+const hanzi = (s) => chars(s).filter((ch) => HAN.test(ch)).length;
+const count = (text, term) => String(text).split(term).length - 1;
+
+const readDoc = (file = DOC) => fs.readFileSync(file, 'utf8');
+
+/** 「## 」小节标题 */
+function sections(doc) {
+  return [...String(doc).matchAll(/^##\s+(.+)$/gm)].map((m) => m[1].trim());
+}
+
+/** 表格：总行数、表数、数据行数（去掉表头与分隔行） */
+function tableShape(doc) {
+  const lines = String(doc).split(/\r?\n/).map((l) => l.trim()).filter((l) => l.startsWith('|'));
+  const seps = lines.filter((l) => /^\|[\s:|-]+\|$/.test(l)).length;
+  return { lines: lines.length, tables: seps, rows: lines.length - seps * 2 };
+}
+
+/** 正文引到的书名（《》里的条目，去重） */
+function books(doc) {
+  const out = new Set();
+  for (const m of String(doc).matchAll(/《([^》]+)》/g)) out.add(m[1]);
+  return [...out];
+}
+
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  throw new Error('没找到 standards/zhexue/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhexue', 'units.json');
-const CHAPTER = '4';
-
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) for (const [k, v] of Object.entries(u.measure[field])) out[k] = (out[k] || 0) + v;
   return out;
 }
 
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
+function termCounts(doc) {
+  return TERMS.map(([term, why]) => ({ term, why, n: count(doc, term) }));
 }
 
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = u.sec || '（未标节）';
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
+function groupCheck(doc) {
+  return GROUPS.map((g) => ({
+    label: g.label,
+    all: g.all,
+    missing: g.all.filter((x) => !String(doc).includes(x)),
+  }));
 }
 
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) {
-      counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-    }
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
-
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    return {
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(q.explain),
+      grounded: [...grams(right)].filter((g) => body.has(g)).length,
+    };
+  });
   return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4))
+      .length,
   };
 }
 
-/** 方与法：单元层没有独立方剂字段，改从正文里认「治法动词」记号（儿科以疏风宣肺、消食健脾、平肝息风为主） */
-function methods(list) {
-  const VERBS = ['疏肝', '补肾', '健脾', '养血', '活血', '化瘀', '调经', '固冲', '止带', '安胎', '清热', '利湿'];
-  const out = {};
-  for (const v of VERBS) out[v] = list.reduce((a, u) => a + u.prose.split(v).length - 1, 0);
-  return Object.entries(out).filter(([, c]) => c).sort((a, b) => b[1] - a[1]);
+function analyze() {
+  const doc = readDoc();
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  return {
+    doc,
+    hanzi: hanzi(doc),
+    sections: sections(doc),
+    table: tableShape(doc),
+    books: books(doc),
+    terms: termCounts(doc),
+    groups: groupCheck(doc),
+    quiz: quizSummary(quiz, doc),
+  };
 }
 
-module.exports = { CHAPTER, load, chapterUnits, merge, rank, bySection, citations, shape, methods, sum };
-
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  const views = rank(merge(list, 'views'));
-  const levels = rank(merge(list, 'levels'));
-  const books = citations(list);
-
-  console.log('═══ 中医哲学史 · 第 4 章 五行：分类还是生成 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按节：');
-  for (const sec of bySection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of views) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of levels) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log(`\n引书 ${books.books} 部 · 引用 ${books.total} 次 · 前三：${books.top.map(([n, c]) => `${n}(${c})`).join('、')}`);
-  console.log('\n治法动词命中：' + methods(list).map(([v, c]) => `${v}×${c}`).join('  '));
-  console.log('\n单元清单：');
-  for (const u of list) {
-    console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字\t${u.tri.view.primary || '—'}/${u.tri.level.primary || '—'}`);
+function main() {
+  const r = analyze();
+  console.log(`中医哲学史 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log(
+    `正文 ${r.hanzi.toLocaleString('en-US')} 汉字 · ${r.sections.length} 节 · 表 ${r.table.rows} 行 · 引书 ${r.books.length} 部`
+  );
+  console.log('');
+  console.log('小节：');
+  for (const s of r.sections) console.log(`  · ${s}`);
+  console.log('');
+  console.log('判据命中：');
+  for (const t of r.terms) console.log(`  ${t.n > 0 ? '✓' : '✗'} ${t.term} ${t.n} 次 — ${t.why}`);
+  console.log('');
+  console.log('骨架：');
+  for (const g of r.groups) {
+    console.log(
+      `  ${g.missing.length ? '✗' : '✓'} ${g.label}${g.missing.length ? `（缺 ${g.missing.join('、')}）` : ''}`
+    );
   }
+  console.log('');
+  console.log(
+    `习题 ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· check 题接地 ${r.quiz.checkGrounded} 道 · 答案 ${r.quiz.answers.join('/')}`
+  );
+  console.log('※ 以上数字全部从本章正文与习题现算，改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，不构成诊疗建议，也不能替代医师面诊。');
 }
 
-// 教学样例声明：契约要求每章输出含临床边界声明（tests/test_chapter_code.js）
-if (require.main === module) {
-  console.log('※ 教学样例：数字由 standards/zhexue/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
-}
+if (require.main === module) main();
+
+module.exports = {
+  analyze,
+  readDoc,
+  sections,
+  tableShape,
+  books,
+  grams,
+  hanzi,
+  count,
+  termCounts,
+  groupCheck,
+  quizSummary,
+  TERMS,
+  GROUPS,
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+};

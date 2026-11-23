@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-gaishu-yuanliu",
-   "title": "概论与源流：骨病学的边界先与骨折筋伤划清",
+   "title": "骨病学的门槛不在辨证，而在先把「病」从「伤」里择出来",
    "status": "🚧",
    "source": {
     "chapter": 1,
@@ -16,7 +16,7 @@
   {
    "n": 2,
    "slug": "02-fenlei-bingyin-bingji",
-   "title": "分类与病因病机：肾主骨这句话怎么落到机制上",
+   "title": "「肾主骨」要落到三条可测的轴上，否则它只是一个结论",
    "status": "🚧",
    "source": {
     "chapter": 2,
@@ -27,7 +27,7 @@
   {
    "n": 3,
    "slug": "03-linchuang-zhencha",
-   "title": "临床诊查：影像不是辅助，是判据",
+   "title": "影像不是辅助检查，它是分型与边界的判据",
    "status": "🚧",
    "source": {
     "chapter": 3,
@@ -38,7 +38,7 @@
   {
    "n": 4,
    "slug": "04-zhiliao-fangfa",
-   "title": "治疗方法：五条路，先定边界再选路",
+   "title": "五条路各有各的禁区，选路之前先算边界",
    "status": "🚧",
    "source": {
     "chapter": 4,
@@ -49,7 +49,7 @@
   {
    "n": 5,
    "slug": "05-huaxing-guisuiyan-guanjieyan",
-   "title": "化脓性骨髓炎与化脓性关节炎：脓在哪一层",
+   "title": "化脓的病，要先问脓积在哪一层",
    "status": "🚧",
    "source": {
     "chapter": 5,
@@ -60,7 +60,7 @@
   {
    "n": 6,
    "slug": "06-gu-guanjie-jiehe",
-   "title": "骨与关节结核：冷脓肿与截瘫之间",
+   "title": "冷脓肿不热，截瘫不可逆，中间那段就是诊断的窗口",
    "status": "🚧",
    "source": {
     "chapter": 6,
@@ -71,7 +71,7 @@
   {
    "n": 7,
    "slug": "07-gu-zhongliu",
-   "title": "骨肿瘤：先分良恶，再谈阴阳",
+   "title": "良恶之分看边界与生长方式，不看肿块大小",
    "status": "🚧",
    "source": {
     "chapter": 7,
@@ -82,7 +82,7 @@
   {
    "n": 8,
    "slug": "08-gu-daixie",
-   "title": "骨代谢性疾病：骨量的账本",
+   "title": "骨量是一本账，看余额也要看已经发生的支出",
    "status": "🚧",
    "source": {
     "chapter": 8,
@@ -93,7 +93,7 @@
   {
    "n": 9,
    "slug": "09-gu-quexue-xingsi",
-   "title": "骨缺血性坏死：塌陷之前与之后",
+   "title": "塌陷是一条单行道，围塌陷期是唯一的岔口",
    "status": "🚧",
    "source": {
     "chapter": 9,
@@ -104,7 +104,7 @@
   {
    "n": 10,
    "slug": "10-tuixing-mianyixing",
-   "title": "退行性与免疫性疾病：痹的两种时间感",
+   "title": "痹的时间感不止一种：越动越痛，越歇越僵",
    "status": "🚧",
    "source": {
     "chapter": 10,
@@ -115,7 +115,7 @@
   {
    "n": 11,
    "slug": "11-gu-jixing-ruangu",
-   "title": "骨畸形与骨软骨病：越早越好，且只有一次机会",
+   "title": "畸形的窗口只开一次：骨在长，机会不等人",
    "status": "🚧",
    "source": {
     "chapter": 11,
@@ -126,7 +126,7 @@
   {
    "n": 12,
    "slug": "12-kangfu-shuzihua",
-   "title": "康复与数字化：把「动静结合」变成可执行的动作",
+   "title": "「动静结合」要拆成负荷、时相、监测三个可执行变量",
    "status": "🚧",
    "source": {
     "chapter": 12,

@@ -138,11 +138,15 @@ test('6. outputs 与 skill frontmatter', () => {
 });
 
 test('7. 章内单测可跑并打印教学边界', () => {
+  // Node 22 的 test runner 会把 NODE_TEST_CONTEXT 传给子进程；子进程若继承该变量，
+  // `node --test` 会以「run() 被递归调用」为由直接跳过，stdout 为空——
+  // 那样这条断言就成了空转。显式去掉该变量，子进程才会真的把章内单测跑一遍。
+  const env = Object.fromEntries(Object.entries(process.env).filter(([k]) => k !== 'NODE_TEST_CONTEXT'));
   for (const c of chaptersJson().chapters) {
     const dir = path.join(DIR, c.slug);
-    const out = execFileSync('node', ['--test', 'code/main.test.js'], { cwd: dir, encoding: 'utf8' });
+    const out = execFileSync('node', ['--test', 'code/main.test.js'], { cwd: dir, encoding: 'utf8', env });
     assert.ok(/# fail 0/.test(out), `${c.slug} 单测有失败`);
-    const run = execFileSync('node', ['code/main.js'], { cwd: dir, encoding: 'utf8' });
+    const run = execFileSync('node', ['code/main.js'], { cwd: dir, encoding: 'utf8', env });
     const last = run.trim().split('\n').filter(Boolean).pop();
     assert.ok(/教学边界/.test(last) && /不构成/.test(last), `${c.slug} 最后一行不是教学边界声明：${last}`);
   }

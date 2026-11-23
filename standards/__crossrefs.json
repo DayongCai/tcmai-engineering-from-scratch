@@ -5,6 +5,9 @@
   "icd11": "第 14 章「分型与 ICD-11 映射」要读 ICD-11 传统医学章节镜像（D:\\ICD11-source 落库后的 standards/icd11）",
   "semtensor": "证候描述的术语对齐与相似度计算依赖全库语义张量（standards/semtensor），内科是它的下游使用者之一"
  },
+ "01-zhongyi/15-zhongyi-gejia-xueshuo": {
+  "neijing-xuandu": "第 2 章「病机十九条」逐条归类直接读 standards/neijing-xuandu/底本.json（本章唯一的数字来源）；第 5、6 章的条文命中数与方源统计也按同一底本复算"
+ },
  "01-zhongyi/22-zhongyi-biye-sheji": {
   "icd11": "毕设选题须落到 ICD-11 传统医学章节编码上，28 章里多章引用",
   "zhenghou": "证候派生案按《中医证候学》单元库立项",

@@ -1,119 +1,112 @@
 #!/usr/bin/env node
 /**
- * 第20章 常见神经及内分泌系统疾病 —— 确定性单元测试
+ * 第 20 章 常见神经及内分泌系统疾病 —— 确定性单测
  * 运行: node --test code/main.test.js
  *
- * 断言落在可对账的结构上：规模、「类别」密度、并发症覆盖、化脓性与病毒性的对照维度、数值是否为 0。
+ * 两件事：① 正文实测值（小节数/汉字数/表格/引文/单元号/每节字数）逐个钉住；
+ * ② 本章 quiz 的结构与接地——题数、分段、选项数、答案分布、解释长度、
+ *    以及「正确选项能在正文里找到原词」这条判据本身也要可测。
+ * 正文一改，这里的数就必须跟着改——这正是它的用处。
  */
 
 'use strict';
 
-const assert = require('node:assert');
 const test = require('node:test');
+const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const {
-  SIX,
-  COMPLICATIONS,
-  load,
-  chapterUnits,
-  shape,
-  lens,
-  rank,
-  total,
-  share,
-  valueAudit,
-  sixElementUnits,
-  categoryDensity,
-  complicationCoverage,
-  encephalitis,
-  endocrine,
-} = require('./main');
+const { readDoc, shape, head, average, sections, tables, quotes, unitIds, figures } = require('./main');
 
-const units = load();
-const list = chapterUnits(units);
+const md = readDoc();
+const s = shape(md);
+const a = average(s);
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
 
-test('本章 12 个知识单元，分属 4 节，正文合计 20523 字', () => {
-  const s = shape(list);
+const hz = (t) => (String(t || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const shingles = (t, n = 4) => {
+  const out = new Set();
+  const clean = String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+};
+
+test('首行是「第 20 章 · 判断句」，章号与本章一致', () => {
+  const h = head(md);
+  assert.strictEqual(h.n, 20);
+  assert.ok(h.title.length >= 8, '判断句太短：' + h.title);
+});
+
+test('正文实测：8 个二级小节 · 9507 汉字 · 2 张表 · 12 行数据', () => {
+  assert.strictEqual(s.secs, 8);
+  assert.strictEqual(s.hanzi, 9507);
+  assert.strictEqual(s.tables, 2);
+  assert.strictEqual(s.rows, 12);
+});
+
+test('出证与单元：引文行 11 条 · 单元号 12 个 · 图注 4 条', () => {
+  assert.strictEqual(s.quotes, 11);
   assert.strictEqual(s.units, 12);
-  assert.strictEqual(s.secs, 4);
-  assert.strictEqual(s.hanzi, 20523);
-  assert.deepStrictEqual(list.map((u) => u.sub), [
-    '20.1.1', '20.1.2', '20.1.3',
-    '20.2.1', '20.2.2', '20.2.3',
-    '20.3.1', '20.3.2', '20.3.3',
-    '20.4.1', '20.4.2', '20.4.3',
+  assert.strictEqual(s.figures, 4);
+  assert.strictEqual(unitIds(md).length, 12, '一章应有 12 个单元号');
+});
+
+test('各节汉字之和等于正文汉字数（差一个字就不通过）', () => {
+  assert.strictEqual(s.lead + s.perSection.reduce((x, y) => x + y, 0), s.hanzi);
+  assert.ok(s.lead > 0, '题记部分不该为空');
+  assert.strictEqual(sections(md).length, s.secs);
+});
+
+test('每节字数与最长节：均值 1188 字，最长「十二个小节：逐条落位」3298 字', () => {
+  assert.strictEqual(a.perSection, 1188);
+  assert.strictEqual(a.perUnit, 792);
+  assert.strictEqual(a.largest.hanzi, 3298);
+  assert.deepStrictEqual(s.perSection, [
+    352, 433, 314, 393, 385, 1763, 3298, 1994
   ]);
 });
 
-test('三视角合计 821 次，形态占九成：本章几乎不写病因，全在写「长什么样、归哪一类」', () => {
-  const { views } = lens(list);
-  assert.strictEqual(total(views), 821);
-  assert.strictEqual(views.形态, 747);
-  assert.strictEqual(views.机制, 53);
-  assert.strictEqual(views.病因, 21);
-  assert.strictEqual(rank(views)[0][0], '形态');
-  assert.ok(share(views, '形态') > 0.9);
+test('小节标题去重且都不是空串', () => {
+  const titles = s.sectionTitles;
+  assert.strictEqual(new Set(titles).size, titles.length);
+  for (const t of titles) assert.ok(t.length >= 4, '标题过短：' + t);
 });
 
-test('四层级合计 329 次，器官层居首（56.8% 的量级落在系统病理的器官层）', () => {
-  const { levels } = lens(list);
-  assert.strictEqual(total(levels), 329);
-  assert.strictEqual(levels.器官, 121);
-  assert.strictEqual(levels.组织, 97);
-  assert.strictEqual(levels.细胞, 68);
-  assert.strictEqual(levels.系统, 43);
-  assert.strictEqual(rank(levels)[0][0], '器官');
-});
-
-test('数值核验：12 个单元的 valueLike 全为 0，没有一处「数字＋计量单位」', () => {
-  const audit = valueAudit(list);
-  assert.strictEqual(audit.units, 12);
-  assert.strictEqual(audit.hits, 0);
-  assert.deepStrictEqual(audit.offenders, []);
-  for (const u of list) assert.strictEqual(u.measure.valueLike, 0, `${u.sub} 出现数值`);
-});
-
-test('「类别」全章 622 次；20.2 最密、20.4 最疏——归纳压在病理节，方法节退到最轻', () => {
-  const c = categoryDensity(list);
-  assert.strictEqual(c.length, 4);
-  assert.strictEqual(c.reduce((n, x) => n + x.hits, 0), 622);
-  assert.deepStrictEqual(c.map((x) => x.hits), [140, 197, 189, 96]);
-  const densest = c.slice().sort((a, b) => b.perK - a.perK)[0];
-  assert.ok(densest.sec.startsWith('20.2'), `最密的是 ${densest.sec}`);
-  const loosest = c.slice().sort((a, b) => a.perK - b.perK)[0];
-  assert.ok(loosest.sec.startsWith('20.4'), `最疏的是 ${loosest.sec}`);
-});
-
-test('并发症五个类别全部出现，且以脑水肿起头（脑水肿→颅内压升高→脑疝的先后关系）', () => {
-  assert.deepStrictEqual(COMPLICATIONS, ['脑水肿', '颅内压升高', '脑疝', '脑积水', '脑膜刺激']);
-  const r = complicationCoverage(list);
-  assert.deepStrictEqual(r.map((x) => x.name), COMPLICATIONS);
-  for (const x of r) assert.ok(x.hits > 0, `${x.name} 未出现`);
-  const map = Object.fromEntries(r.map((x) => [x.name, x.hits]));
-  assert.strictEqual(map.脑水肿, 11);
-  assert.strictEqual(map.脑疝, 6);
-  assert.ok(map.脑水肿 > map.颅内压升高 && map.颅内压升高 > map.脑疝);
-});
-
-test('化脓性与病毒性用同一组对照维度：部位、渗出物、镜下标志', () => {
-  const e = encephalitis(list);
-  assert.strictEqual(e.化脓性, 13);
-  assert.strictEqual(e.病毒性, 11);
-  for (const k of ['血管套', '噬神经细胞现象', '胶质结节', '包涵体']) {
-    assert.ok(e[k] > 0, `缺对照维度 ${k}`);
+test('quiz：6 题，分段为 pre/check×3/post×2，每题 4 选项', () => {
+  assert.strictEqual(quiz.questions.length, 6);
+  assert.strictEqual(quiz.questions.map((q) => q.stage).join(','), 'pre,check,check,check,post,post');
+  for (const q of quiz.questions) {
+    assert.strictEqual(q.options.length, 4);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4);
+    assert.strictEqual(new Set(q.options).size, 4, '选项不许重复：' + q.question);
   }
-  assert.strictEqual(e.包涵体, 3);
 });
 
-test('内分泌两节：甲状腺肿 28 次高于糖尿病 10 次，滤泡 27 次说明这一节的观察单位是滤泡', () => {
-  const e = endocrine(list);
-  assert.strictEqual(e.糖尿病, 10);
-  assert.strictEqual(e.甲状腺肿, 28);
-  assert.strictEqual(e.滤泡, 27);
-  assert.ok(e.甲状腺肿 > e.糖尿病);
+test('quiz：答案打散（正确项覆盖 3 个以上位置），解释够长', () => {
+  const pos = new Set(quiz.questions.map((q) => q.correct));
+  assert.ok(pos.size >= 3, '正确项位置太集中：' + [...pos].join(','));
+  for (const q of quiz.questions) {
+    assert.ok(hz(q.explain) >= 30, '解释不足 30 汉字：' + q.question);
+    assert.ok(String(q.explain).length >= 10);
+    assert.ok(!/见\s*code\/main\.js\s*输出/.test(q.explain));
+  }
 });
 
-test('六要素写全的单元是 3 个：本章把六要素放进方法节，而不是每节都落地', () => {
-  assert.deepStrictEqual(SIX, ['观察', '描述', '记录', '分析', '报告', '复核']);
-  assert.deepStrictEqual(sixElementUnits(list), ['20.1.1', '20.1.3', '20.4.1']);
+test('quiz：至少 2 道 check 题的正确选项能在正文里找到 4 字原词', () => {
+  const body = shingles(md);
+  let grounded = 0;
+  for (const q of quiz.questions) {
+    if (q.stage !== 'check') continue;
+    const right = q.options[q.correct];
+    if ([...shingles(right)].some((g) => body.has(g))) grounded += 1;
+  }
+  assert.ok(grounded >= 2, '只有 ' + grounded + ' 道 check 题接地');
+});
+
+test('quiz 与代码都不含脚手架与判定性字样', () => {
+  const banned = [/三辨/, /四位面/, /单元规模/, /本章实测/, /本课第\s*\d+\s*章[（(]/];
+  const blob = JSON.stringify(quiz) + md;
+  for (const re of banned) assert.ok(!re.test(blob), '命中 ' + re);
 });

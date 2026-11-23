@@ -1,65 +1,147 @@
+#!/usr/bin/env node
+/**
+ * 第 10 章 祛湿剂与祛痰剂：湿与痰是两条路，不是两级 —— 正文统计与习题契约的确定性单元测试
+ * 运行: node --test code/main.test.js
+ *
+ * 断言只落在可对账的结构上：本章正文的汉字数、二/三级节数、每张表的行列与数字列合计、
+ * 引文条数与教材定位，以及 quiz 的题量、三段、四选项、解释长度、答案分布与正文接地。
+ * 期望值是 docs/zh.md 的实测读数（main.js 现算，测试钉住）；正文一改，这里立刻报警。
+ */
+
 'use strict';
+
 const assert = require('node:assert');
 const test = require('node:test');
-const {
-  SHI, TAN, byChapter, sections, slots, distinctHerbs, herbFreq,
-  sharedHerbs, textbookChars, roleCoverage, sectionTable, selfCheck,
-} = require('./main.js');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-test('方数：祛湿 9 首、祛痰 7 首，合计 16 首', () => {
-  assert.strictEqual(byChapter(SHI).length, 9);
-  assert.strictEqual(byChapter(TAN).length, 7);
-  assert.strictEqual(byChapter(SHI).length + byChapter(TAN).length, 16);
+const { CHAPTER, TITLE, DOC, analyze, selfCheck } = require('./main.js');
+
+const A = analyze();
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const BODY = fs.readFileSync(DOC, 'utf8');
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+/** 正文里 4 字以上的连续汉字片段，用来判「选项是否接地」 */
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  return out;
+}
+const bodyGrams = shingles(BODY);
+
+const EXPECT = {
+  "hanzi": 3438,
+  "paragraphs": 32,
+  "h2": 7,
+  "h3": 6,
+  "tables": [
+    [
+      2,
+      7
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      5,
+      4
+    ]
+  ],
+  "sums": [
+    [
+      2,
+      "方数",
+      16
+    ]
+  ],
+  "quotes": 22,
+  "anchored": 18,
+  "chapters": [
+    19,
+    20
+  ],
+  "books": [
+    "素问·至真要大论"
+  ]
+};
+
+test('规模：正文汉字、正文段、二三级节（实测值）', () => {
+  assert.strictEqual(CHAPTER, 10);
+  assert.match(A.h1, new RegExp(`^第 ${10} 章 · `));
+  assert.strictEqual(A.hanzi, EXPECT.hanzi);
+  assert.strictEqual(A.paragraphs, EXPECT.paragraphs);
+  assert.strictEqual(A.h2.length, EXPECT.h2);
+  assert.strictEqual(A.h3.length, EXPECT.h3);
+  assert.ok(A.h2.length >= 4 && A.h2.length <= 8, `二级节 ${A.h2.length} 不在 4–8`);
+  assert.ok(A.h2.some((t) => /代价与边界/.test(t)), '缺「代价与边界」');
 });
 
-test('节：祛湿 5 节（燥湿和胃起头）、祛痰 4 节（燥湿化痰起头），合计 9 节', () => {
-  const shi = sections(byChapter(SHI));
-  const tan = sections(byChapter(TAN));
-  assert.strictEqual(shi.length, 5);
-  assert.strictEqual(tan.length, 4);
-  assert.strictEqual(shi[0], '19.1 燥湿和胃剂');
-  assert.deepStrictEqual(tan, ['20.1 燥湿化痰剂', '20.2 清热化痰剂', '20.3 润燥化痰剂', '20.4 治风化痰剂']);
+test('表格尺寸（列 × 行）与实测值一致', () => {
+  assert.deepStrictEqual(A.tables.map((t) => [t.cols, t.rows]), EXPECT.tables);
 });
 
-test('药位：祛湿 65 + 祛痰 42 = 107，去重 44 + 23', () => {
-  assert.strictEqual(slots(byChapter(SHI)), 65);
-  assert.strictEqual(slots(byChapter(TAN)), 42);
-  assert.strictEqual(slots(byChapter(SHI)) + slots(byChapter(TAN)), 107);
-  assert.strictEqual(distinctHerbs(byChapter(SHI)), 44);
-  assert.strictEqual(distinctHerbs(byChapter(TAN)), 23);
+test('计数列合计与正文表内数字一致（实测值）', () => {
+  const sums = [];
+  for (const t of A.tables) for (const c of t.numeric) sums.push([t.idx, c.name, c.sum]);
+  assert.deepStrictEqual(sums, EXPECT.sums);
+  for (const t of A.tables) for (const c of t.numeric) {
+    if (c.ok === false) assert.fail(`表 ${t.idx}「${c.name}」数据行合计 ${c.sum} ≠ 合计行 ${c.declared}`);
+  }
 });
 
-test('共享药味 8 味：陈皮、甘草、茯苓、半夏、白术、桔梗、生姜、杏仁', () => {
-  const shared = sharedHerbs(byChapter(SHI), byChapter(TAN));
-  assert.deepStrictEqual(shared, ['半夏', '陈皮', '桔梗', '生姜', '茯苓', '杏仁', '白术', '甘草'].sort());
-  assert.ok(shared.includes('茯苓'), '茯苓应跨两类');
+test('引文与教材定位（实测值）', () => {
+  assert.strictEqual(A.quotes, EXPECT.quotes);
+  assert.strictEqual(A.anchored, EXPECT.anchored);
+  assert.deepStrictEqual(A.chapters, EXPECT.chapters);
+  assert.deepStrictEqual(A.books, EXPECT.books);
+  assert.ok(A.anchored >= 2, `挂教材出处的引文只有 ${A.anchored} 条`);
 });
 
-test('茯苓在两类各出现 5 次：湿与痰的交集在健脾利水', () => {
-  assert.strictEqual(herbFreq(byChapter(SHI)).find((x) => x.herb === '茯苓').n, 5);
-  assert.strictEqual(herbFreq(byChapter(TAN)).find((x) => x.herb === '茯苓').n, 5);
-  assert.strictEqual(herbFreq(byChapter(TAN))[0].herb, '半夏', '祛痰方首位应为半夏');
+test('正文自检通过，MOTTO 是《书名·篇名》', () => {
+  assert.strictEqual(selfCheck(A), true);
+  assert.ok(A.books.length === 1 && /·/.test(A.books[0]), `MOTTO 书证不是《书名·篇名》：${A.books.join('/')}`);
 });
 
-test('君臣佐使覆盖：君 9/9 与 7/7，使只有 4/9 与 5/7（抽取留白）', () => {
-  const shi = Object.fromEntries(roleCoverage(byChapter(SHI)).map((r) => [r.role, r.n]));
-  const tan = Object.fromEntries(roleCoverage(byChapter(TAN)).map((r) => [r.role, r.n]));
-  assert.strictEqual(shi['君'], 9);
-  assert.strictEqual(tan['君'], 7);
-  assert.strictEqual(shi['使'], 4);
-  assert.strictEqual(tan['使'], 5);
-  assert.ok(shi['使'] < shi['君'], '使的覆盖应低于君');
+test('quiz 结构：6 题、三段齐、4 选项、explain ≥30 汉字、答案打散', () => {
+  const qs = QUIZ.questions;
+  assert.ok(qs.length >= 5, `只有 ${qs.length} 题`);
+  const stages = new Set(qs.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s);
+  for (const q of qs) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    assert.ok((String(q.explain).match(HANZI) || []).length >= 30, q.question);
+    assert.ok((String(q.explanation).match(HANZI) || []).length >= 30, q.question);
+    assert.strictEqual(new Set(q.options).size, 4, q.question);
+  }
+  assert.ok(new Set(qs.map((q) => q.correct)).size >= 3, '答案过于集中');
+  assert.deepStrictEqual(qs.map((q) => q.stage), ['pre', 'check', 'check', 'check', 'post', 'post']);
 });
 
-test('教材字数 21,612 + 14,605 = 36,217（从底本复算）', () => {
-  assert.strictEqual(textbookChars([SHI]), 21612);
-  assert.strictEqual(textbookChars([TAN]), 14605);
-  assert.strictEqual(textbookChars([SHI, TAN]), 36217);
+test('quiz 接地：≥2 道 check 题的正确选项能在正文找到 4 字原词', () => {
+  const grounded = QUIZ.questions.filter((q) => {
+    if (q.stage !== 'check') return false;
+    const grams = shingles(String(q.options[q.correct]));
+    return [...grams].some((g) => bodyGrams.has(g));
+  });
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道接地`);
 });
 
-test('每节都有方，方名可回指节归属；自检七项全过', () => {
-  const rows = sectionTable([...byChapter(SHI), ...byChapter(TAN)]);
-  assert.strictEqual(rows.length, 9);
-  assert.ok(rows.every((r) => r.n > 0 && r.names.length === r.n));
-  assert.ok(selfCheck().every((c) => c.ok));
+test('quiz 与代码都不含旧脚手架指纹', () => {
+  const bad = /三辨|四位面|单元规模|本章实测|本课第\s*\d+\s*章[（(]|见\s*code\/main\.js\s*输出/;
+  assert.ok(!bad.test(JSON.stringify(QUIZ)));
+  assert.ok(!bad.test(fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8')));
+});
+
+test('脚本可运行，退出码 0，最后一行是教学边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, r.stderr);
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
+  const last = out.trim().split('\n').filter(Boolean).pop();
+  assert.ok(/教学边界/.test(last) && /不构成/.test(last), `最后一行不是教学边界：${last}`);
 });

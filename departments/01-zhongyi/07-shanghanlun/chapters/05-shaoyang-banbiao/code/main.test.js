@@ -41,3 +41,7 @@ test('三禁提示只在已施时出现，且「已下」保留原文许复与�
   assert.strictEqual(c.length, 1);
   assert.match(c[0], /复与柴胡汤/);
 });
+
+// ── quiz 结构契约（与 scripts/check_chapter_exercises.js 同源）──
+const { quizContract } = require('../../_quiz-contract.js');
+quizContract(__dirname);

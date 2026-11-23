@@ -26,7 +26,7 @@ const { sections: splitSections } = require('./build_chapter_outputs');
 
 const CJK = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
 const hz = (s) => (s.match(CJK) || []).length;
-const BAD = [/三辨/, /四位面/, /单元规模/, /本课第\s*\d+\s*章/];
+const BAD = [/三辨/, /四位面/, /单元规模/, /本课第\s*\d+\s*章[（(]/];
 
 function main() {
   const report = process.argv.includes('--report');

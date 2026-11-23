@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-fanchou-lun",
-   "title": "哲学史研究什么：范畴，不是年表",
+   "title": "范畴史研究的是词在文本中的用法，不是人物年表",
    "status": "🚧",
    "source": {
     "derived": true,
@@ -16,7 +16,7 @@
   {
    "n": 2,
    "slug": "02-qi-dao",
-   "title": "气与道：本体论的两个词",
+   "title": "气是内容，道是形式，两个本体词不能互换",
    "status": "🚧",
    "source": {
     "derived": true,
@@ -27,7 +27,7 @@
   {
    "n": 3,
    "slug": "03-yinyang",
-   "title": "阴阳：从现象到范畴",
+   "title": "阴阳是一组关系，不是一个可以计数的实体",
    "status": "🚧",
    "source": {
     "derived": true,
@@ -38,7 +38,7 @@
   {
    "n": 4,
    "slug": "04-wuxing",
-   "title": "五行：分类还是生成",
+   "title": "五行在临床上用的是生克传变，不是万物归类",
    "status": "🚧",
    "source": {
     "derived": true,
@@ -49,7 +49,7 @@
   {
    "n": 5,
    "slug": "05-tianren",
-   "title": "天人相应：人与环境的关系模型",
+   "title": "天人相应是以天地为参数的关系模型，不是养生口号",
    "status": "🚧",
    "source": {
     "derived": true,
@@ -60,7 +60,7 @@
   {
    "n": 6,
    "slug": "06-xingshen",
-   "title": "形神与心身：医学里的心身问题",
+   "title": "神既依赖形又能病形，所以治形与治神都是正治",
    "status": "🚧",
    "source": {
     "derived": true,
@@ -71,7 +71,7 @@
   {
    "n": 7,
    "slug": "07-changbian-quanheng",
-   "title": "常变与权衡：辨证思维的三条规则",
+   "title": "辨证的难点是排序：先常变，再顺逆，后标本",
    "status": "🚧",
    "source": {
     "derived": true,
@@ -82,7 +82,7 @@
   {
    "n": 8,
    "slug": "08-jiegouhua",
-   "title": "范畴的结构化与四个层面",
+   "title": "范畴结构化的价值在可检索与可对照，不在判定高下",
    "status": "🚧",
    "source": {
     "derived": true,

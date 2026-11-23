@@ -27,7 +27,9 @@ const OUT_JSON = path.join(STD, "fangzu.json");
 const OUT_MD = path.join(STD, "fangzu.md");
 const OUT_SVG = path.join(STD, "fangzu.svg");
 
-const ch10 = require(CH10);
+// 方表取自底本库脚本，不再依赖第 10 章正文脚本（第 10 章已改为只读 docs/zh.md 现算，
+// 不再导出 formulas()；下游脚本依赖底本层才不会因正文改写断链）。
+const { formulas } = require("./lib_jingui_diben.js");
 const map = JSON.parse(fs.readFileSync(path.join(STD, "fangzu-map.json"), "utf8"));
 const leifangPath = path.join(STD, "leifang-map.json");
 const LEIFANG = new Map();
@@ -36,7 +38,7 @@ if (fs.existsSync(leifangPath)) {
 }
 
 // 药味：只用 kind === "ok" 的（校勘残行/错位不计，与第 10 章同口径）
-const forms = ch10.formulas().filter((f) => !f.refOnly);
+const forms = formulas().filter((f) => !f.refOnly);
 const doseOf = new Map(); // 方名 → Map(药 → 剂量)
 for (const f of forms) {
   if (!doseOf.has(f.name)) doseOf.set(f.name, new Map());

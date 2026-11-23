@@ -34,49 +34,49 @@ platform:
 
 chapters:
   - slug: 01-xulun
-    title: 绪论：先把学科的地界、来路与读法交代清楚
+    title: 绪论：三节是三层递进的地界，不是三份并列的名单
     unit: 总论
     video: rendered
     estimate_minutes: 20.45
     measured_minutes: 19.84
   - slug: 02-bianzheng-silu
-    title: 辨证论治思路与方法：把「看病」拆成一条可复核的流水线
+    title: 辨证论治思路与方法：辨证论治是一条有顺序的流水线，跳过任何一环后面的判断都会悬空
     unit: 总论
     video: rendered
     estimate_minutes: 24.72
     measured_minutes: 24.28
   - slug: 03-zangfu-bianzheng-gangyao
-    title: 脏腑辨证纲要与内科治则：把「病位」拆成五套可复用的模板
+    title: 脏腑辨证纲要与内科治则：二十五个小节只是六份同构模板的重复加两个补丁
     unit: 总论
     video: rendered
     estimate_minutes: 17.00
     measured_minutes: 16.68
   - slug: 04-feixi-bingzheng
-    title: 肺系病证：八个病证，一套模板，一张鉴别网
+    title: 肺系病证：八个病证共用一个模板，彼此的界线只能靠三组眼目分开
     unit: 病证各论
     video: rendered
     estimate_minutes: 18.00
     measured_minutes: 17.49
   - slug: 05-xinxi-bingzheng
-    title: 心系病证：九病一条轴，从心神到心脉
+    title: 心系病证：九个病是同一条病机轴上的刻度，不是九张并列的证型表
     unit: 病证各论
     video: rendered
     estimate_minutes: 16.40
     measured_minutes: 15.96
   - slug: 06-piwei-bingzheng
-    title: 脾胃系病证：一条通道上的九个卡点
+    title: 脾胃系病证：九病是一条通道上的九个卡点，换的是病名不是病因
     unit: 病证各论
     video: rendered
     estimate_minutes: 17.55
     measured_minutes: 17.04
   - slug: 07-ganxi-bingzheng
-    title: 肝系病证：气血水风四层，与一个例外
+    title: 肝系病证：九病按气、血、水、风四层归位，疟疾是那条轴之外的例外
     unit: 病证各论
     video: rendered
     estimate_minutes: 20.23
     measured_minutes: 19.68
   - slug: 08-shenxi-bingzheng
-    title: 肾系病证：水、溺、精三条通道
+    title: 肾系病证：六病落在水、溺、精三条通道上，溺道三病是一条进展线而非三个并列病
     unit: 病证各论
     video: rendered
     estimate_minutes: 18.58
@@ -106,13 +106,13 @@ chapters:
     estimate_minutes: 23.67
     measured_minutes: 22.87
   - slug: 13-zhengfang-liaoxiao
-    title: 证候—方剂—疗效：一条链里哪一步能看见，哪一步只能相信
+    title: 证候—方剂—疗效：链条前三段可回查，第四段在教材里根本没有字段
     unit: 综合
     video: rendered
     estimate_minutes: 27.77
     measured_minutes: 26.53
   - slug: 14-fenxing-icd11
-    title: 内科分型与 ICD-11：能对上的三十二个，和不能对上的四类
+    title: 内科分型与 ICD-11：对不上的三十一个不是还没做，是结构上做不了
     unit: 综合
     video: rendered
     estimate_minutes: 24.62

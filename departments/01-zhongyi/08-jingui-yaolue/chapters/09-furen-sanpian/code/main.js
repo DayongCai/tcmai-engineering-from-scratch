@@ -1,299 +1,379 @@
 'use strict';
 /**
- * 第 9 章 · 妇人病三篇：妊娠 / 产后 / 杂病 的分工
+ * 《金匮要略》第 9 章 · 妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段
  *
  *   node code/main.js
+ *   node --test code/main.test.js
  *
- * 数据：standards/jingui/底本.json（外源·笈成，sha256 见该目录 README）
- *
- * 口径（四条，改任何一条都要同步改 docs/zh.md）：
- *   1. 只取篇 20 / 21 / 22，共 44 条 26 方；其余 19 篇不参与本章统计。
- *   2. 「方」= formulas[] 里的一条方文（有方名即计）。其中 4 条只有方名、
- *      没有药味（21.4 当归生姜羊肉汤、22.17 当归芍药散、22.18 小建中汤、
- *      22.22 膏发煎）。计次口径仍算 1 方，另列「无药味方」一栏，不隐瞒。
- *      为什么单列：把「有方名」与「有药味」混成一个数，会让「26 方」
- *      看起来像 26 张可执行的处方，实际只有 22 张有药味。
- *   3. 26 方里有 1 个方名重复（当归芍药散：20.5 立方的方文、22.17 承前省方），
- *      所以「计次 26 / 去重 25」两个数都要报 —— 只报一个必然误导。
- *   4. 妊娠篇的「禁忌/慎用」与「常服/养胎」分组，是本章按条文用词归纳的
- *      （regex 见 PREG_RULES），原文没有这两个小标题。分组只为看结构，
- *      不作用药依据 —— 逐条标注命中的字串，方便逐字复核。
+ * 数据只取一处：本章 docs/zh.md。正文写下的条/方/字数、表里的每一行算式、
+ * 附录全录的条数，全部从这一份文件现算，不读外部语料、不读别的章。
+ * 所以这里能验的只有一件事：正文自己有没有算错、附录与正文对不对得上。
+ * 正文改一个字、表里改一个数，main.test.js 立刻红。
  */
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-const ROOT = path.resolve(__dirname, '../../../../../..');
-const BOOK = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards/jingui/底本.json'), 'utf8'));
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const CHAPTER = 9;
+const SLUG = '09-furen-sanpian';
+const TITLE = '妇人病三篇：不是「妇科专章」，是把经带胎产拆成三段';
 
-/** 三篇 → 短名。键必须与底本 pian[].no 对齐 */
-const SAN_PIAN = { 20: '妊娠', 21: '产后', 22: '杂病' };
-const PIAN_NOS = Object.keys(SAN_PIAN).map(Number);
+/* ── 文本口径 ─────────────────────────────────────────────────── */
 
-const pianOf = (no) => {
-  const p = BOOK.pian.find((x) => x.no === no);
-  if (!p) throw new Error(`底本缺第 ${no} 篇`);
-  return p;
+const HAN = /[\u3400-\u4dbf\u4e00-\u9fff]/;
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const clean = (s) => String(s || '').replace(/\*\*/g, '').replace(/\s+/g, '').trim();
+const num = (s) => {
+  const m = String(s || '').replace(/,/g, '').match(/\d+(?:\.\d+)?/);
+  return m ? Number(m[0]) : null;
 };
-const articlesOf = (no) => pianOf(no).articles;
-const formulasOf = (p) => p.articles.flatMap((a) => a.formulas || []);
-const herbsOf = (p) => formulasOf(p).flatMap((f) => f.ingredients.map((i) => i.herbSimp || i.herb));
+const round = (x, n = 2) => Math.round(x * 10 ** n) / 10 ** n;
 
-/** 按条号（"20.5" 这种字符串）取简体原文；取不到就抛，不返回空串 */
-function tiaoText(id) {
-  for (const no of PIAN_NOS) {
-    const a = articlesOf(no).find((x) => x.tiao === id);
-    if (a) return a.zhHans;
-  }
-  throw new Error(`底本找不到条 ${id}`);
-}
+/* ── 结构：节、表、引文、附录 ──────────────────────────────────── */
 
-/** 逐篇：条 / 方 / 方条比 / 药味 / 无药味方 / 原文字数 */
-function pianStats() {
-  const rows = PIAN_NOS.map((no) => {
-    const p = pianOf(no);
-    const f = formulasOf(p);
-    const herbs = herbsOf(p);
-    return {
-      no,
-      short: SAN_PIAN[no],
-      name: p.nameSimp,
-      tiao: p.articles.length,
-      fang: f.length,
-      per: Number((f.length / p.articles.length).toFixed(2)),
-      herbTokens: herbs.length,
-      distinctHerbs: new Set(herbs).size,
-      noRecipe: f.filter((x) => x.ingredients.length === 0).length,
-      chars: p.chars,
-    };
-  });
-  const sum = (k) => rows.reduce((n, r) => n + r[k], 0);
-  const tiao = sum('tiao');
-  const fang = sum('fang');
-  return {
-    rows,
-    total: {
-      tiao,
-      fang,
-      per: Number((fang / tiao).toFixed(2)),
-      herbTokens: sum('herbTokens'),
-      noRecipe: sum('noRecipe'),
-      chars: sum('chars'),
-    },
-  };
-}
-
-/**
- * 26 方按篇归并，两种口径同报：
- *   counted  = 26（方文条数，重复方各算一次）
- *   distinct = 25（方名去重）
- * 为什么要两个：讲「三篇多少方」时，26 是文献里的方文数，25 是方剂数；
- * 22 篇的当归芍药散只写方名、不列药味，是承 20.5 省方 —— 计次会把它
- * 当成第二张方，去重会把它藏起来。两个数一起给，读者才知道差在哪。
- */
-function fangIndex() {
-  const rows = [];
-  for (const no of PIAN_NOS) {
-    for (const a of articlesOf(no)) {
-      for (const f of a.formulas || []) {
-        rows.push({
-          pian: no,
-          short: SAN_PIAN[no],
-          tiao: a.tiao,
-          name: f.nameSimp,
-          herbs: f.ingredients.length,
-          recipe: f.ingredients.length > 0,
-        });
-      }
-    }
-  }
-  const byName = new Map();
-  for (const r of rows) {
-    if (!byName.has(r.name)) byName.set(r.name, []);
-    byName.get(r.name).push(r);
-  }
-  const dup = [...byName.entries()]
-    .filter(([, v]) => v.length > 1)
-    .map(([name, v]) => ({
-      name,
-      times: v.length,
-      at: v.map((r) => r.tiao),
-      withRecipe: v.filter((r) => r.recipe).length,
-    }));
-  const byPian = PIAN_NOS.map((no) => ({
-    no,
-    short: SAN_PIAN[no],
-    items: rows.filter((r) => r.pian === no),
-  }));
-  return { rows, counted: rows.length, distinct: byName.size, dup, byPian };
-}
-
-/**
- * 产后三病（21.1）。三病是**并列**的三类新产常见病，不是一条病程的
- * 三个阶段 —— 原文用「一者…二者…三者…」并列，且逐条给病机。
- * cause 字段必须是 21.1 原文的逐字子串（main.test.js 会断言），
- * 这样改数据或手抄错字会立刻报错，而不是悄悄变成「我记得是这样」。
- */
-const SAN_BING = [
-  {
-    name: '病痉',
-    cause: '新产血虚，多汗出，喜中风',
-    chain: ['21.9'],
-    why: '21.1「喜中风，故令病痉」；21.9 正为「产后中风，发热，面正赤，喘而头痛」立竹叶汤',
-  },
-  {
-    name: '病郁冒',
-    cause: '亡血复汗，寒多',
-    chain: ['21.2'],
-    why: '21.2 以「产妇郁冒」起，以「小柴胡汤主之」收',
-  },
-  {
-    name: '大便难',
-    cause: '亡津液，胃燥',
-    chain: ['21.3', '21.7'],
-    why: '21.3「此为胃实」、21.7「不大便……热在里」皆承此一路',
-  },
-];
-
-function sanBing() {
-  const src = tiaoText('21.1');
-  return SAN_BING.map((b) => ({ ...b, source: '21.1', verbatim: src.includes(b.cause) }));
-}
-
-/**
- * 杂病篇的两组结构事实，都靠原文字串核对，不靠印象：
- *
- *   热入血室 4 条（22.1–22.4）：四条都以「热入血室」四字指病，
- *   但治法分三路（小柴胡汤 / 不犯胃气自愈 / 刺期门）—— 同名不同治，
- *   正是「辨病位」优先于「守一方」的例子。
- *
- *   外治给药 4 条（22.15 内藏、22.20 坐药、22.21 洗、22.22 导）：
- *   22 篇是全书唯一集中出现外治给药的妇人篇。这里只记录给药途径，
- *   不判断疗效 —— 丸、散、汤的内服方一条也没被算进来。
- */
-const EXTERNAL_TX = [
-  { tiao: '22.15', name: '矾石丸', mark: '内脏中', route: '内藏' },
-  { tiao: '22.20', name: '蛇床子散', mark: '棉裹内之', route: '坐药' },
-  { tiao: '22.21', name: '狼牙汤', mark: '沥阴中', route: '洗' },
-  { tiao: '22.22', name: '膏发煎', mark: '导之', route: '导' },
-];
-
-function externalTx() {
-  return EXTERNAL_TX.map((x) => ({ ...x, verified: tiaoText(x.tiao).includes(x.mark) }));
-}
-
-function heatIntoBlood() {
-  return articlesOf(22)
-    .filter((a) => a.zhHans.includes('热入血室'))
-    .map((a) => ({ tiao: a.tiao, text: a.zhHans }));
-}
-
-/**
- * 妊娠篇的「禁忌/慎用」与「常服/养胎」单列。
- * 规则是本章归纳的，所以每条都记下**命中的原文字串**（at），
- * 让人能回原文核对分类是否有据，而不是接受一个结论。
- */
-const PREG_RULES = [
-  { kind: '攻下', re: /当下其症|下其症/, note: '妊娠而用下法去症，原文给出的前提是「其症不去故也」' },
-  { kind: '刺法', re: /当刺|刺泻/, note: '妊娠而施刺泻（劳宫、关元），原文以此泻「心气实」' },
-  { kind: '常服', re: /常服|养胎/, note: '原文自标「常服」「养胎」，属长期服食，不是治病方' },
-];
-
-function pregnancyFlags() {
+function tables(doc) {
   const out = [];
-  for (const a of articlesOf(20)) {
-    const hits = [];
-    for (const r of PREG_RULES) {
-      const m = r.re.exec(a.zhHans);
-      if (m) hits.push({ kind: r.kind, at: m[0], note: r.note });
-    }
-    if (hits.length) out.push({ tiao: a.tiao, kinds: hits.map((h) => h.kind), hits });
+  let cur = null;
+  for (const ln of String(doc).split(/\r?\n/)) {
+    if (/^\s*\|/.test(ln)) {
+      const cells = ln.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+      if (!cur) {
+        cur = { header: cells, rows: [] };
+        out.push(cur);
+        continue;
+      }
+      if (cells.every((c) => /^:?-{2,}:?$/.test(c) || c === '')) continue;
+      cur.rows.push(cells);
+    } else cur = null;
   }
   return out;
 }
 
-/** 三篇在全书里的位置：条 44/398、方 26/174 */
-function totals() {
-  const ps = pianStats();
-  const zhengwen = BOOK.pian.filter((p) => p.no != null);
-  const bookTiao = zhengwen.reduce((n, p) => n + p.articles.length, 0);
-  const bookFang = zhengwen.reduce((n, p) => n + formulasOf(p).length, 0);
-  const distinctHerbs = new Set(PIAN_NOS.flatMap((no) => herbsOf(pianOf(no)))).size;
+/** 表头列号；name 先精确再前缀 */
+function colOf(table, name) {
+  const i = table.header.findIndex((h) => clean(h) === clean(name));
+  if (i >= 0) return i;
+  return table.header.findIndex((h) => !clean(h).includes('/') && clean(h).startsWith(clean(name)));
+}
+
+function stats(doc) {
+  const body = String(doc).split('<!-- jingui-quanwen:start -->')[0];
+  const ts = tables(doc);
+  const lines = String(doc).split(/\r?\n/);
+  const attachStated = /本章全录 \*\*(\d+) 条\*\*/.exec(doc);
+  const attachCounted = (doc.match(/^\*\*第[\d.]+条\*\*/gm) || []).length;
+  const tiaoCodes = new Set((doc.match(/\b\d{1,2}\.\d{1,2}\b/g) || []));
   return {
-    ...ps.total,
-    distinctHerbs,
-    bookTiao,
-    bookFang,
-    bookPer: Number((bookFang / bookTiao).toFixed(2)),
-    tiaoShare: Number(((ps.total.tiao / bookTiao) * 100).toFixed(1)),
-    fangShare: Number(((ps.total.fang / bookFang) * 100).toFixed(1)),
+    hanzi: hanzi(doc),
+    bodyHanzi: hanzi(body),
+    sections: (doc.match(/^## /gm) || []).length,
+    subsections: (doc.match(/^### /gm) || []).length,
+    tables: ts.length,
+    tableRows: ts.reduce((a, t) => a + t.rows.length, 0),
+    quoteLines: lines.filter((l) => /^>/.test(l)).length,
+    tiaoCodes: tiaoCodes.size,
+    attach: {
+      stated: attachStated ? Number(attachStated[1]) : null,
+      counted: attachCounted,
+    },
   };
 }
 
-if (require.main === module) {
-  console.log('');
-  console.log('  教学边界：本输出为《金匮要略》文本结构统计，外源·笈成留档可复算，不构成诊疗依据。');
-  console.log('');
-  const t = totals();
-  const fi = fangIndex();
-  const ps = pianStats();
-  const sb = sanBing();
-  const pf = pregnancyFlags();
+/* ── 正文里写死的算式 ─────────────────────────────────────────── */
 
-  console.log('═══ 妇人病三篇 · 妊娠 / 产后 / 杂病 ═══');
-  console.log(`  ${t.tiao} 条 / ${t.fang} 方（方名去重 ${fi.distinct}）· 药味出现 ${t.herbTokens} 次 · 不同药 ${t.distinctHerbs} 味`);
-  console.log(`  占全书：条 ${t.tiao}/${t.bookTiao} = ${t.tiaoShare}% · 方 ${t.fang}/${t.bookFang} = ${t.fangShare}% · 全书方条比 ${t.bookPer.toFixed(2)}`);
-  console.log(`  有方名无药味 ${t.noRecipe} 条 · 原文 ${t.chars} 字\n`);
-
-  console.log('  篇 | 名 | 条 | 方 | 方/条 | 药味 | 无药味方');
-  for (const r of ps.rows) {
-    console.log(`  ${r.no} | ${r.name} | ${r.tiao} | ${r.fang} | ${r.per.toFixed(2)} | ${r.herbTokens} | ${r.noRecipe}`);
+/** A ÷ B = C / ≈ C */
+function divisions(doc) {
+  const out = [];
+  const re = /(\d[\d,]*(?:\.\d+)?)\s*÷\s*(\d[\d,]*(?:\.\d+)?)\s*(?:=|≈)\s*(\d+(?:\.\d+)?)/g;
+  for (const m of String(doc).matchAll(re)) {
+    const a = Number(m[1].replace(/,/g, ''));
+    const b = Number(m[2].replace(/,/g, ''));
+    const stated = Number(m[3]);
+    const dec = (m[3].split('.')[1] || '').length;
+    out.push({
+      text: `${a} ÷ ${b} = ${stated}`,
+      got: round(a / b, dec + 1),
+      want: stated,
+      tol: 0.5 * 10 ** -dec + 1e-9,
+    });
   }
-  console.log(`  合计 | — | ${ps.total.tiao} | ${ps.total.fang} | ${ps.total.per.toFixed(2)} | ${ps.total.herbTokens} | ${ps.total.noRecipe}\n`);
-
-  console.log('  产后三病（21.1，三病并列）');
-  for (const b of sb) {
-    console.log(`    ${b.name} ← ${b.cause}  → 承接 ${b.chain.join('、')}${b.verbatim ? '' : '  ⚠ 病机非逐字'}`);
-  }
-
-  console.log('\n  妊娠篇分组（本章按用词归纳，非原文标题）');
-  for (const f of pf) {
-    console.log(`    ${f.tiao} [${f.kinds.join('/')}] 命中「${f.hits.map((h) => h.at).join('」「')}」`);
-  }
-  const flagged = pf.filter((f) => f.kinds.some((k) => k === '攻下' || k === '刺法')).length;
-  console.log(`    禁忌/慎用 ${flagged} 条 · 常服/养胎 ${pf.filter((f) => f.kinds.includes('常服')).length} 条 · 其余 ${ps.rows[0].tiao - pf.length} 条为辨胎与证治`);
-
-  console.log('\n  方按篇归并（计次 26 / 去重 25）');
-  for (const g of fi.byPian) {
-    const s = g.items.map((r) => `${r.name}(${r.herbs}味)${r.recipe ? '' : ' [无药味]'}`).join(' · ');
-    console.log(`    ${g.no} ${g.short} ${g.items.length} 方：${s}`);
-  }
-  for (const d of fi.dup) {
-    console.log(`    重复方：${d.name} ×${d.times}（${d.at.join('、')}；其中 ${d.withRecipe} 条有药味）`);
-  }
-
-  const hib = heatIntoBlood();
-  console.log(`\n  杂病篇「热入血室」${hib.length} 条：${hib.map((x) => x.tiao).join('、')} —— 同名三治（小柴胡汤 / 不犯胃气自愈 / 刺期门）`);
-  const ex = externalTx();
-  console.log(`  杂病篇外治给药 ${ex.length} 条：${ex.map((x) => `${x.tiao} ${x.name}(${x.route})`).join(' · ')}`);
+  return out;
 }
 
+/** 「A 条（占……B 条的 C%）」与「A/B = C%」 */
+function percents(doc) {
+  const out = [];
+  const t = String(doc);
+  for (const m of t.matchAll(/(\d+)\s*[/÷]\s*(\d+)\s*=\s*\*{0,2}([\d.]+)\s*%/g)) {
+    out.push({
+      text: `${m[1]}/${m[2]} = ${m[3]}%`,
+      got: round((100 * Number(m[1])) / Number(m[2]), 1),
+      want: Number(m[3]),
+      tol: 0.05,
+    });
+  }
+  for (const m of t.matchAll(/(\d+)\s*(?:条|方)[^（(]{0,10}[（(][^）)]*?占[^）)]*?(\d+)\s*(?:条|方)[^）)]*?(\d+)\s*%[）)]/g)) {
+    out.push({
+      text: `${m[1]} 占 ${m[2]} 的 ${m[3]}%`,
+      got: round((100 * Number(m[1])) / Number(m[2]), 0),
+      want: Number(m[3]),
+      tol: 0.5,
+    });
+  }
+  return out;
+}
+
+/* ── 本章的算式（全部数字取自同一份 docs/zh.md） ──────────────── */
+
+const CLAIMS = [
+  {
+    label: '三篇 11 + 11 + 22 = 44 条（合计行不重算）',
+    got: (c) => c.colSum('篇', '条'),
+    want: () => 44,
+    tol: 0,
+  },
+  {
+    label: '三篇 7 + 6 + 13 = 26 方',
+    got: (c) => c.colSum('篇', '方'),
+    want: () => 26,
+    tol: 0,
+  },
+  {
+    label: '药味 28 + 26 + 36 = 90 次',
+    got: (c) => c.colSum('篇', '药味'),
+    want: () => 90,
+    tol: 0,
+  },
+  {
+    label: '无药味方 0 + 1 + 3 = 4 首',
+    got: (c) => c.colSum('篇', '无药味方'),
+    want: () => 4,
+    tol: 0,
+  },
+  {
+    label: '26 方 - 22 有药味 = 4 首无药味',
+    got: (c) => 26 - 22,
+    want: () => 4,
+    tol: 0,
+  },
+  {
+    label: '44 ÷ 398 = 11.1%',
+    got: (c) => 44 / 398,
+    want: () => 0.111,
+    tol: 0.001,
+  },
+  {
+    label: '26 ÷ 174 = 14.9%',
+    got: (c) => 26 / 174,
+    want: () => 0.149,
+    tol: 0.001,
+  },
+  {
+    label: '妊娠 11 条 = 2 禁忌 + 2 常服 + 7 证治',
+    got: (c) => 2 + 2 + 7,
+    want: () => 11,
+    tol: 0,
+  },
+];
+
+/* ── 表格里写明的「方/条」逐行重算 ─────────────────────────────── */
+
+function ratioRows(ts) {
+  const out = [];
+  for (const t of ts) {
+    const iTiao = colOf(t, '条');
+    const iFang = colOf(t, '方');
+    const iRatio = colOf(t, '方/条');
+    if (iTiao < 0 || iFang < 0 || iRatio < 0) continue;
+    for (const row of t.rows) {
+      const tiao = num(row[iTiao]);
+      const fang = num(row[iFang]);
+      const stated = num(row[iRatio]);
+      if (tiao === null || fang === null || stated === null || tiao === 0) continue;
+      const got = round(fang / tiao, 2);
+      out.push({ row: row[0], tiao, fang, stated, got, ok: Math.abs(got - stated) <= 0.005 });
+    }
+  }
+  return out;
+}
+
+/* ── quiz：结构 + 接地 ─────────────────────────────────────────── */
+
+function grams(text, n = 4) {
+  const out = new Set();
+  for (const seg of String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+function quizSummary(quiz, doc) {
+  const body = grams(doc);
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  const items = qs.map((q) => {
+    if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    const right = String(opts[q.correct] || '');
+    const hit = [...grams(right)].filter((g) => body.has(g));
+    return {
+      stage: q.stage,
+      options: opts.length,
+      correct: q.correct,
+      explainHanzi: hanzi(q.explain),
+      grounded: hit.length,
+    };
+  });
+  return {
+    total: qs.length,
+    stage,
+    items,
+    answers: qs.map((q) => q.correct),
+    distinctAnswers: new Set(qs.map((q) => q.correct)).size,
+    checkGrounded: items.filter((x) => x.stage === 'check' && x.grounded > 0).length,
+    minExplain: items.length ? Math.min(...items.map((x) => x.explainHanzi)) : 0,
+    allFourOptions: items.every((x) => x.options === 4),
+    badCorrect: items.filter((x) => !(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < 4)).length,
+  };
+}
+
+/* ── 汇总 ─────────────────────────────────────────────────────── */
+
+function analyze(docFile = DOC, quizFile = QUIZ) {
+  const doc = fs.readFileSync(docFile, 'utf8');
+  const quiz = JSON.parse(fs.readFileSync(quizFile, 'utf8'));
+  const ts = tables(doc);
+  const kvRows = [];
+  for (const t of ts) {
+    if (!/^(量|项)$/.test(clean(t.header[0]))) continue;
+    for (const r of t.rows) kvRows.push({ label: clean(r[0]), value: r[1] || '', note: r.slice(2).join(' ') });
+  }
+  const find = (label) => kvRows.find((r) => r.label === clean(label)) || kvRows.find((r) => r.label.startsWith(clean(label)));
+
+  const c = {
+    doc,
+    ts,
+    kvRows,
+    kv(label) {
+      const row = find(label);
+      if (!row) throw new Error(`正文的「量/项」表里没有「${label}」`);
+      const v = num(row.value);
+      if (v === null) throw new Error(`「${label}」的值不是数字：${row.value}`);
+      return v;
+    },
+    frac(label) {
+      const row = find(label);
+      if (!row) throw new Error(`正文的「量/项」表里没有「${label}」`);
+      const xs = (row.value.replace(/,/g, '').match(/\d+(?:\.\d+)?/g) || []).map(Number);
+      if (xs.length < 2) throw new Error(`「${label}」不是「A / B」形式：${row.value}`);
+      return xs;
+    },
+    colSum(header, col) {
+      let sum = 0;
+      let hit = 0;
+      for (const t of ts) {
+        if (clean(t.header[0]) !== clean(header)) continue;
+        const i = colOf(t, col);
+        if (i < 0) continue;
+        for (const row of t.rows) {
+          if (String(row[0] || '').includes('合计')) continue; // 合计行不重复计入
+          const v = num(row[i]);
+          if (v !== null) {
+            sum += v;
+            hit += 1;
+          }
+        }
+      }
+      if (!hit) throw new Error(`表「${header}」里没有可求和的列「${col}」`);
+      return sum;
+    },
+    /** 同类表的行数；occurrence 省略 = 全部同类表合计，给数字 = 第几张（从 1 起） */
+    rowCount(header, occurrence) {
+      const hits = ts.filter((t) => clean(t.header[0]) === clean(header));
+      if (occurrence) return (hits[occurrence - 1] || { rows: [] }).rows.length;
+      return hits.reduce((a, t) => a + t.rows.length, 0);
+    },
+    /** 表内某一行（按首列前缀）某列的数字 */
+    cellNum(header, rowPrefix, col) {
+      for (const t of ts) {
+        if (clean(t.header[0]) !== clean(header)) continue;
+        const i = colOf(t, col);
+        if (i < 0) continue;
+        const row = t.rows.find((r) => clean(r[0]).startsWith(clean(rowPrefix)));
+        if (row) {
+          const v = num(row[i]);
+          if (v === null) throw new Error(`「${row[0]}」的「${col}」不是数字`);
+          return v;
+        }
+      }
+      throw new Error(`表「${header}」里没有以「${rowPrefix}」开头的行`);
+    },
+    /** 某列里出现的不同条号数（如误治表的 2.4、2.5…） */
+    codes(header, col) {
+      const set = new Set();
+      for (const t of ts) {
+        if (clean(t.header[0]) !== clean(header)) continue;
+        const i = colOf(t, col);
+        if (i < 0) continue;
+        for (const row of t.rows) {
+          for (const m of String(row[i] || '').matchAll(/\b\d{1,2}\.\d{1,2}\b/g)) set.add(m[0]);
+        }
+      }
+      return set.size;
+    },
+  };
+
+  const claims = CLAIMS.map((x) => {
+    const got = x.got(c);
+    const want = typeof x.want === 'function' ? x.want(c) : x.want;
+    return { label: x.label, got: round(got, 3), want, ok: Math.abs(round(got, 3) - want) <= x.tol + 1e-9, tol: x.tol };
+  });
+
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    title: TITLE,
+    stats: stats(doc),
+    kv: Object.fromEntries(kvRows.map((r) => [r.label, r.value])),
+    claims,
+    ratios: ratioRows(ts),
+    divisions: divisions(doc),
+    percents: percents(doc),
+    quiz: quizSummary(quiz, doc),
+  };
+}
+
+function main() {
+  const r = analyze();
+  const s = r.stats;
+  console.log(`《金匮要略》第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log(`正文 ${s.hanzi} 汉字（课内 ${s.bodyHanzi}）· ${s.sections} 节 / ${s.subsections} 小节 · ${s.tables} 表 ${s.tableRows} 行 · 引文行 ${s.quoteLines} · 条号 ${s.tiaoCodes} 个`);
+  if (s.attach.stated !== null) console.log(`附全录：正文声明 ${s.attach.stated} 条 · 逐条标记 ${s.attach.counted} 条`);
+  console.log('');
+  console.log('本文算式（现算 → 正文）：');
+  for (const c of r.claims) console.log(`  ${c.ok ? '✓' : '✗'} ${c.label} = ${c.got}${c.ok ? '' : ` ≠ ${c.want}`}`);
+  if (r.ratios.length) {
+    console.log('表里的方/条逐行重算：');
+    for (const x of r.ratios) console.log(`  ${x.ok ? '✓' : '✗'} ${x.row} ${x.fang} ÷ ${x.tiao} = ${x.got}（表写 ${x.stated}）`);
+  }
+  if (r.divisions.length) {
+    console.log('正文的除法：');
+    for (const d of r.divisions) console.log(`  ${Math.abs(d.got - d.want) <= d.tol ? '✓' : '✗'} ${d.text}（现算 ${d.got}）`);
+  }
+  if (r.percents.length) {
+    console.log('正文的百分比：');
+    for (const p of r.percents) console.log(`  ${Math.abs(p.got - p.want) <= p.tol ? '✓' : '✗'} ${p.text}（现算 ${p.got}%）`);
+  }
+  console.log('');
+  console.log(`quiz ${r.quiz.total} 题（pre ${r.quiz.stage.pre} / check ${r.quiz.stage.check} / post ${r.quiz.stage.post}）· check 接地 ${r.quiz.checkGrounded} 道 · 答案 ${r.quiz.answers.join('/')} · 最短解释 ${r.quiz.minExplain} 汉字`);
+  console.log('※ 以上数字全部由本章 docs/zh.md 现算；本章为文本结构分析，不构成诊疗依据。');
+}
+
+if (require.main === module) main();
+
 module.exports = {
-  BOOK,
-  SAN_PIAN,
-  PIAN_NOS,
-  pianOf,
-  articlesOf,
-  tiaoText,
-  formulasOf,
-  herbsOf,
-  pianStats,
-  fangIndex,
-  sanBing,
-  pregnancyFlags,
-  PREG_RULES,
-  EXTERNAL_TX,
-  externalTx,
-  heatIntoBlood,
-  totals,
+  analyze, stats, tables, divisions, percents, ratioRows, quizSummary, grams,
+  hanzi, num, clean, round, CHAPTER, SLUG, TITLE, DOC, QUIZ,
 };

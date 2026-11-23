@@ -104,7 +104,7 @@ for (const slug of slugs) {
   qs.forEach((x, i) => {
     if (!x.question) problems.push(`quiz#${i + 1} 缺 question`);
     if ((x.options || []).length !== 4) problems.push(`quiz#${i + 1} 选项非 4`);
-    if (!/教材·中医内科学/.test(x.cite || x.explanation || '')) problems.push(`quiz#${i + 1} 缺引证`);
+    if (!/教材·中医内科学/.test(x.cite || x.explain || x.explanation || '')) problems.push(`quiz#${i + 1} 缺引证`);
   });
 
   try {

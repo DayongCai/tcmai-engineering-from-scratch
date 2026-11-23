@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-xinbing-lunzhuan",
-      "title": "心病科轮转：胸痹与心悸的辨证接诊",
+      "title": "心病科的第一道分水岭是「胸痹」还是「心悸」",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-xinbing-lunzhuan/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-feibing-lunzhuan",
-      "title": "肺病科轮转：咳嗽与喘证的辨证接诊",
+      "title": "咳与喘在书上分两节，在病人身上常是一件事的两头",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-feibing-lunzhuan/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-piwei-lunzhuan",
-      "title": "脾胃病科轮转：胃痞与泄泻的辨证接诊",
+      "title": "胃痞与泄泻同属脾胃，升降反作时只能先救一头",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-piwei-lunzhuan/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-shenbing-lunzhuan",
-      "title": "肾病科轮转：水肿与淋证的辨证接诊",
+      "title": "水肿与淋证都关于水，虚实一分治法就分道",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-shenbing-lunzhuan/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-naobing-lunzhuan",
-      "title": "脑病科轮转：眩晕与中风的辨证接诊",
+      "title": "眩晕与中风共用一套风证坐标，差在一个时间窗",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-naobing-lunzhuan/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-chuke-kaohe",
-      "title": "出科考核与病例复盘（含结构化病历）",
+      "title": "出科考核考的不是记得多少，是判断留没留下痕迹",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-chuke-kaohe/docs/zh.md",

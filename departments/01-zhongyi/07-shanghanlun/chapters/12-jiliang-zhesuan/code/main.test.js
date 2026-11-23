@@ -70,3 +70,7 @@ test('底本内宋人校语存在（林亿等按桂枝汤方），且甘草两�
   assert.ok(frag.text.includes('甘草三两'), '4:28 作甘草三两');
   assert.ok(jiaoyu.some((x) => x.text.includes('甘草二两')), '校语作甘草二两');
 });
+
+// ── quiz 结构契约（与 scripts/check_chapter_exercises.js 同源）──
+const { quizContract } = require('../../_quiz-contract.js');
+quizContract(__dirname);

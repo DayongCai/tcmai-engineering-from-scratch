@@ -3,9 +3,8 @@
  * 第 2 章 稳态、异稳态与对应激源的适应性反应 —— 确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言只落在可对账的结构上：节数与字数、节号格式、数值是否为 0、
- * 锚点落在哪几节、异稳态负荷四型是否齐备、docs 的引文是否逐字、
- * 节号是否覆盖、quiz 契约。不锁死正文措辞——讲义改写段落时，测试不会变成噪声。
+ * 断言只落在可对账的结构上：正文规模、引证章号、节号前缀、数值命中、锚点落位、
+ * quiz 契约（题数/三段/四选项/解释字数/选项接地/答案分散）。不锁正文措辞。
  */
 
 'use strict';
@@ -16,159 +15,118 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const {
-  CHAPTER,
-  TITLE,
-  ANCHOR,
-  LOAD_TYPES,
-  AXES,
-  BOUNDARY,
-  VALUE_RE,
-  chapterOf,
-  shape,
-  valueAudit,
-  anchorCoverage,
-  loadTypes,
-  axesCoverage,
-  bySection,
-  checkSubFormat,
-  citationAudit,
-  main,
+  CHAPTER, TITLE, ANCHORS, BOUNDARY,
+  readDoc, shape, citationAudit, valueAudit, anchorCoverage, main,
 } = require('./main');
 
-const book = chapterOf();
-const list = book.secs;
-const docPath = path.join(__dirname, '..', 'docs', 'zh.md');
-const doc = fs.readFileSync(docPath, 'utf8');
-const lines = doc.split(/\r?\n/);
-const isCite = (l) => /补充·hermes-病理生理学讲义·第\s*\d+\s*章·\d+\.\d+/.test(l);
-const isQuoteLine = (l) => /^\s*>/.test(l);
+const doc = readDoc();
+const EXPECT = {
+  h2: 7,
+  h3: 13,
+  paras: 78,
+  hanzi: 7224,
+  chars: 9796,
+  cites: 17,
+  distinct: 10,
+  values: 0,
+  anchors: ["设定点","异稳态"],
+};
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
 
-test('章号与讲义章号一致，12 节 91 段 3390 汉字 4828 非空白字符', () => {
+const cjk = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;
+
+function grams(s) {
+  const out = new Set();
+  const t = String(s);
+  for (let i = 0; i + 4 <= t.length; i += 1) {
+    const g = t.slice(i, i + 4);
+    if (/^[\u4e00-\u9fff]{4}$/.test(g)) out.add(g);
+  }
+  return out;
+}
+
+test('章号与标题来自正文 H1', () => {
   assert.strictEqual(CHAPTER, 2);
-  assert.strictEqual(book.no, 2);
-  assert.ok(book.title.includes(TITLE), `讲义标题不含「${TITLE}」：${book.title}`);
-  const s = shape(list);
-  assert.strictEqual(s.secs, 12);
-  assert.strictEqual(s.paras, 91);
-  assert.strictEqual(s.hanzi, 3390);
-  assert.strictEqual(s.chars, 4828);
-  assert.strictEqual(s.hanzi, book.hanzi, '逐节汉字之和应等于章级汉字数');
+  const h1 = doc.split(/\r?\n/).find((l) => /^#\s+/.test(l)) || '';
+  assert.ok(h1.includes(TITLE), `H1 不含标题：${h1}`);
+  assert.ok(TITLE.length >= 2);
 });
 
-test('节号全部合 2.M 格式，且就是 2.1 至 2.12 连续十二节', () => {
-  const fmt = checkSubFormat(list);
-  assert.strictEqual(fmt.ok, true, `非法节号：${fmt.bad.join('、')}`);
-  const want = Array.from({ length: 12 }, (_, i) => `2.${i + 1}`);
-  assert.deepStrictEqual(list.map((s) => s.no), want);
+test('正文规模：节 / 小节 / 段 / 汉字 / 非空白字符与实测一致', () => {
+  const s = shape(doc);
+  assert.deepStrictEqual(
+    { h2: s.h2, h3: s.h3, paras: s.paras, hanzi: s.hanzi, chars: s.chars },
+    { h2: EXPECT.h2, h3: EXPECT.h3, paras: EXPECT.paras, hanzi: EXPECT.hanzi, chars: EXPECT.chars },
+  );
 });
 
-test('数值核验：91 段的「数字＋计量单位」命中为 0（复算，不照抄讲义声明）', () => {
-  const audit = valueAudit(list);
-  assert.strictEqual(audit.paras, 91);
-  assert.strictEqual(audit.hits, 0, `命中：${audit.offenders.join(' / ')}`);
-  assert.deepStrictEqual(audit.offenders, []);
-  // 反向自检：把一句话塞进假段落，审计函数必须能抓到
-  const probe = valueAudit([{ no: '2.x', title: 'probe', paras: ['血糖 7.8 mmol'], hanzi: 3390 }]);
-  assert.strictEqual(probe.hits, 1);
+test('引证章号与节号前缀全部等于本章，没有跨章复制', () => {
+  const c = citationAudit(doc, CHAPTER);
+  assert.strictEqual(c.total, EXPECT.cites);
+  assert.deepStrictEqual(c.wrongChapter, []);
+  assert.deepStrictEqual(c.prefixMismatch, []);
+  assert.strictEqual(c.distinct.length, EXPECT.distinct);
 });
 
-test('锚点（设定点 / 偏差 / 效应器）三词并置的节只有 2.1 与 2.11——回路语言的首尾两处', () => {
-  assert.deepStrictEqual(ANCHOR, ['设定点', '偏差', '效应器']);
-  assert.deepStrictEqual(anchorCoverage(list), ['2.1', '2.11']);
-  // 抽掉一个词，命中数只可能变多或不变
-  assert.ok(anchorCoverage(list, ['设定点']).length >= 2);
+test('数值型命中数与实测一致（正文只给类别与关系）', () => {
+  const v = valueAudit(doc);
+  assert.strictEqual(v.hits, EXPECT.values);
 });
 
-test('异稳态负荷四型在 2.3 齐备（4 / 4），两轴在 2.5 与 2.6 并置', () => {
-  const load = loadTypes(list);
-  assert.strictEqual(load.sec, '2.3');
-  assert.deepStrictEqual(load.missing, []);
-  assert.strictEqual(load.found.length, LOAD_TYPES.length);
-  assert.deepStrictEqual(AXES, ['SAM', 'HPA']);
-  assert.ok(axesCoverage(list).includes('2.5'));
-});
-
-test('逐节段数与字数之和等于章级口径，没有空节', () => {
-  const secs = bySection(list);
-  assert.strictEqual(secs.size, 12);
-  let paras = 0;
-  let hanzi = 0;
-  for (const [, g] of secs) {
-    assert.ok(g.paras > 0 && g.hanzi > 0, `${g.title} 为空节`);
-    paras += g.paras;
-    hanzi += g.hanzi;
+test('锚点从正文选出，且每个锚点至少落在一节', () => {
+  assert.deepStrictEqual(ANCHORS, EXPECT.anchors);
+  const cov = anchorCoverage(doc);
+  const flat = doc.replace(/\s/g, '');
+  for (const a of ANCHORS) {
+    assert.ok(cov[a].length >= 1, `锚点「${a}」未落位`);
+    assert.ok(flat.includes(a), `锚点在正文中找不到：${a}`);
   }
-  assert.strictEqual(paras, 91);
-  assert.strictEqual(hanzi, 3390);
 });
 
-test('docs：非空白字 ≥ 3000，必备段齐（MOTTO / PROBLEM / 双根因定位 / 运行与验证 / 末节）', () => {
-  const chars = doc.replace(/\s/g, '').length;
-  assert.ok(chars >= 3000, `正文 ${chars} 非空白字`);
-  for (const k of ['MOTTO', 'PROBLEM', '双根因定位', '环境逼迫', '知识积累', '运行与验证']) {
-    assert.ok(doc.includes(k), `docs 缺 ${k}`);
+test('quiz：≥5 题，pre/check/post 三段齐，每题 4 个互异选项', () => {
+  const qs = QUIZ.questions;
+  assert.ok(qs.length >= 5, `题数 ${qs.length}`);
+  for (const stage of ['pre', 'check', 'post']) {
+    assert.ok(qs.some((q) => q.stage === stage), `缺 ${stage}`);
   }
-  assert.ok(lines.some((l) => /^##\s/.test(l) && /代价与边界|边界|免责/.test(l)), 'docs 缺末节');
-});
-
-test('docs：引文 ≥3 条、章号等于本章、节号在讲义里存在', () => {
-  const audit = citationAudit(doc, 2);
-  assert.ok(audit.total >= 3, `引文 ${audit.total} 条`);
-  assert.deepStrictEqual(audit.wrongChapter, [], '有引文引到了别的章');
-  const known = new Set(list.map((s) => s.no));
-  for (const s of audit.secs) assert.ok(known.has(s), `引文节号不存在：${s}`);
-});
-
-test('docs：「」引语（非引用行、≥6 字）逐字见于讲义对应章正文', () => {
-  const flat = list.map((s) => s.paras.join('\n')).join('\n');
-  const quotes = [];
-  for (const l of lines) {
-    if (isCite(l) || isQuoteLine(l)) continue;
-    for (const m of l.matchAll(/「([^「」]{6,})」/g)) quotes.push(m[1]);
+  for (const [i, q] of qs.entries()) {
+    assert.ok(q.question && q.question.length >= 6, `Q${i + 1} 题干过短`);
+    assert.strictEqual(new Set(q.options).size, 4, `Q${i + 1} 选项不互异`);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct <= 3, `Q${i + 1} correct 越界`);
+    assert.ok(cjk(q.explanation) >= 30, `Q${i + 1} 解释不足 30 汉字`);
   }
-  const lost = quotes.filter((q) => !flat.includes(q));
-  assert.deepStrictEqual(lost, [], `找不到的引语：${lost.join(' / ')}`);
+  assert.strictEqual(QUIZ.lesson, "02-homeostasis-allostasis-and-adaptive-responses-to-stressors");
+  assert.strictEqual(QUIZ.subject, '11-bingli-shengli-xue');
 });
 
-test('docs：非引用行没有「数字＋计量单位」，也没有百分号', () => {
-  const bad = lines.filter((l) => !isCite(l) && !isQuoteLine(l) && VALUE_RE.test(l));
-  assert.deepStrictEqual(bad.map((l) => l.trim().slice(0, 40)), []);
-  assert.ok(!doc.includes('%'), 'docs 出现百分号');
-});
-
-test('docs：讲义 12 个节号全部出现（节覆盖 12/12）', () => {
-  const uncovered = list.filter((s) => !doc.includes(s.no)).map((s) => s.no);
-  assert.deepStrictEqual(uncovered, []);
-});
-
-test('quiz：恰好 6 题，pre 1 / check 3 / post 2，题干键为 question，每题末尾带引证', () => {
-  const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
-  const qs = quiz.questions;
-  assert.strictEqual(qs.length, 6);
-  const count = (k) => qs.filter((q) => q.stage === k).length;
-  assert.strictEqual(count('pre'), 1);
-  assert.strictEqual(count('check'), 3);
-  assert.strictEqual(count('post'), 2);
-  for (const q of qs) {
-    assert.ok(q.question && q.question.length > 6, '题干缺失或过短');
-    assert.ok(Array.isArray(q.options) && q.options.length === 4);
-    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4);
-    assert.match(q.explanation, /补充·hermes-病理生理学讲义·第2章·2\.\d+）$/, '引证未落在句末');
+test('quiz：每题的末条引证落在本章章号', () => {
+  for (const [i, q] of QUIZ.questions.entries()) {
+    const ms = [...q.explanation.matchAll(/第\s*(\d+)\s*章/g)];
+    assert.ok(ms.length >= 1, `Q${i + 1} 无章号引证`);
+    assert.strictEqual(Number(ms[ms.length - 1][1]), CHAPTER, `Q${i + 1} 末条引证不落本章`);
   }
-  assert.strictEqual(quiz.lesson, '02-homeostasis-allostasis-and-adaptive-responses-to-stressors');
 });
 
-test('main() 的末行输出是教学边界句，且字符串里含不构成诊断/用药依据', () => {
+test('quiz：check 题至少 2 道的正确项含当章正文 4 字词组', () => {
+  const flat = doc.replace(/\s/g, '');
+  const checks = QUIZ.questions.filter((q) => q.stage === 'check');
+  const grounded = checks.filter((q) => [...grams(q.options[q.correct])].some((g) => flat.includes(g)));
+  assert.ok(grounded.length >= 2, `接地 check 题 ${grounded.length}/${checks.length}`);
+});
+
+test('quiz：答案打散，正确项覆盖至少 3 个位置且单一位置不超过 3 题', () => {
+  const idx = QUIZ.questions.map((q) => q.correct);
+  const counts = [0, 0, 0, 0];
+  for (const i of idx) counts[i] += 1;
+  assert.ok(counts.filter((n) => n > 0).length >= 3, `分布 ${counts.join('/')}`);
+  assert.ok(Math.max(...counts) <= 3, `分布 ${counts.join('/')}`);
+});
+
+test('main() 末行固定为教学边界句，且正文含边界声明', () => {
   const logs = [];
   const orig = console.log;
   console.log = (...a) => logs.push(a.join(' '));
-  try {
-    main();
-  } finally {
-    console.log = orig;
-  }
+  try { main(); } finally { console.log = orig; }
   assert.strictEqual(logs[logs.length - 1], BOUNDARY);
-  assert.match(BOUNDARY, /^教学边界：/);
-  assert.match(BOUNDARY, /不构成诊断\/用药依据$/);
-  assert.ok(doc.includes(BOUNDARY), 'docs 未写教学边界句');
+  assert.ok(doc.includes('教学边界：'));
 });

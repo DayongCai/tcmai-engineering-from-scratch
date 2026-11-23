@@ -69,7 +69,7 @@ ABR 会变成"往下切反而更卡"；720p@90k 文字糊得不比 540p@100k 好
 | 项 | 值 |
 |---|---|
 | 存储 | 阿里云 OSS / 腾讯云 COS / Cloudflare R2（R2 出网免费） |
-| 体积 | **实测 6.50 GB**（4 门课 119 章，均 55 MB/章） |
+| 体积 | **实测 7.30 GB**（5 门课 150 章，均 49 MB/章） |
 | 月费（粗估） | 存储 0.12 元/GB ≈ **0.75 元/月**；CDN 流量 0.2 元/GB |
 | 单章观看成本 | 45 分钟 @182 kbps ≈ **62 MB ≈ 0.012 元**（1000 次观看 ≈ 12 元） |
 | 必备配置 | CORS（`Access-Control-Allow-Origin`）、Range、`Cache-Control: public, max-age=31536000`（分片不可变） |
@@ -92,11 +92,12 @@ ossutil64 sync D:/tcm-media oss://tcm-media/v1/ --update
 
 | 课程 | 卷 | 每卷章数 | 体积 |
 |---|--:|---|--:|
-| 01-zhongyi-jichu-lilun | 1 | 3 | 0.03 GB |
-| 10-zhongyi-neike-xue | 1 | 14 | 0.66 GB |
-| 11-bingli-shengli-xue | 3 | 26 + 25 + 2 | 3.27 GB |
-| 12-yaoli-xue | 2 | 30 + 19 | 2.61 GB |
-| 合计 | **7 卷** | 119 | **6.56 GB** |
+| 01-zhongyi-jichu-lilun | 1 | 10 | 0.09 GB |
+| 08-jingui-yaolue | 1 | 24 | 0.73 GB |
+| 10-zhongyi-neike-xue | 1 | 14 | 0.65 GB |
+| 11-bingli-shengli-xue | 3 | 26 + 25 + 2 | 3.24 GB |
+| 12-yaoli-xue | 2 | 30 + 19 | 2.59 GB |
+| 合计 | **8 卷** | 150 | **7.30 GB** |
 
 - **按章切卷，不拆章**：拆了章就不是「完整一集」；每卷 ≤1.6 GB，留出余量给 GitHub 的 2 GB 上限。
 - **不压缩**：HLS 分片本身已是 h264/aac 码流，gzip 只省 1–2% 却慢一倍；
@@ -177,6 +178,42 @@ python scripts/publish_release_github.py --repo DayongCai/tcm-course-media --dry
 2. 清单关 Range（`max_ranges 0;`）—— 带 `Range` 取清单会收到 206，被当成「分片」。
 3. 每个 `location` 重写 CORS —— nginx 的 `add_header` 在子块是**覆盖**不是追加；
    而且 `add_header` 不能放在 `if` 里（报 `directive is not allowed here`）。
+
+### D. 不依赖任何令牌的发布：本地 release 目录（推荐先做这一步）
+
+发布 ≠ 传到 GitHub。**版本化目录 + 清单 + 校验和 + 下载页**四样齐了，就是一个可分发的 release；
+传到哪儿只是换个地址。所以先在本机装好这一份，之后有令牌（或拷到网盘/U 盘/校内服务器）都直接复用。
+
+```bash
+npm run media:stage            # → D:/tcm-release/media-v1/
+npm run media:release:serve    # → http://127.0.0.1:7792/（下载页）
+```
+
+产物（`D:/tcm-release/media-v1/`，7.4 GB）：
+
+| 文件 | 作用 |
+|---|---|
+| `index.html` | 下载页：15 个附件的名称/大小/章数/sha256，点即下 |
+| `RELEASE-NOTES.md` | 这一版发了什么、怎么校验、怎么解压、播放要求 |
+| `SHA256SUMS` | 17 行逐文件校验（8 分卷 + 7 清单 + 说明 + 下载页） |
+| `index.json` / `*-publish.json` / `bundle-index.json` | APP 读的清单 |
+| `*.tar` × 8 | 按章切分的离线包 |
+
+实测：
+
+```bash
+cd D:/tcm-release/media-v1 && sha256sum -c SHA256SUMS   # 17 行全部 OK
+curl -o /dev/null -w '%{http_code}' -H 'Range: bytes=0-1023'   http://127.0.0.1:7792/12-yaoli-xue-v1-part-01.tar      # 206（大文件可断点续传）
+```
+
+三条去向，都不需要令牌：
+
+1. **校内 nginx**：把 `media-v1/` 拷到服务器，见 §3.C（`platform/deploy/`）。
+2. **U 盘 / 网盘 / 微信群**：整目录拷走，收件人 `sha256sum -c` 自检后解压。
+3. **GitHub Release（有人工浏览器时）**：在网页上把 8 个 `.tar` 拖进 release 的附件区即可，
+   正文直接粘 `RELEASE-NOTES.md`。这一步走的是浏览器会话，不需要 API 令牌。
+
+有令牌时 `npm run media:publish` 上传的就是**同一批文件**，不必重新打包。
 
 ## 四、版本与不可变
 

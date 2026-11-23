@@ -1,19 +1,12 @@
 #!/usr/bin/env node
 /**
  * 生理学 · 第 4 章 血液循环：泵血·血管·调节·器官循环
- * 课程: departments/09-jichu/06-shengli-xue/chapters/04-xueye-xunhuan/docs/zh.md
- * 出处: 教材·第4章（4.1 心脏的泵血功能 / 4.2 心肌细胞的生物电现象与生理特性 /
- *       4.3 血管生理与心音心电图 / 4.4 心血管活动的调节与器官循环），十二个知识单元
- * 数据: standards/shengli/units.json（逐单元带 views / levels 词频与 hanzi）
+ * 课程正文: departments/09-jichu/06-shengli-xue/chapters/04-xueye-xunhuan/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 为什么全部现算而不手打：
- *   ① 「四个时相由两个瓣膜的状态唯一决定」是一个可判真伪的命题。只要把
- *      「房室瓣 / 动脉瓣 / 收缩期或舒张期」三个量连同容积方向写成判别函数，
- *      任何不相容的组合都会抛错；手打一张表则永远对，也永远不能证伪。
- *   ② 「本章以机能为轴」这句话必须有可复算的词频支撑，否则只是一句读后感。
- *   ③ 教材自己声明 valueLike = 0（一个数值都不写），本章把这个声明当成
- *      可核验的断言来检查——每单元的 valueLike 必须为 0，否则报错。
+ * 本章的主线只有一句：泵造压差，管把压差耗成流量。
+ * 程序只读本章正文，现算规模与关键词，并把三处方向题写成判别：
+ * 瓣膜状态定时相、口径与阻力的关系、同一因素在两个器官里方向相反的机制。
  */
 
 'use strict';
@@ -21,243 +14,157 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-// __dirname = .../departments/09-jichu/06-shengli-xue/chapters/<slug>/code
-// 不硬数 ../ 的层数（数错一次就 ENOENT），改为向上找到带 standards/shengli 的那一级
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'shengli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/shengli/units.json —— 章节目录是否已脱离仓库？');
-}
-const ROOT = findRoot(__dirname);
-const UNITS_PATH = path.join(ROOT, 'standards', 'shengli', 'units.json');
-const CHAPTER = '4';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CJK = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
 
-const load = () => JSON.parse(fs.readFileSync(UNITS_PATH, 'utf8'));
+const read = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const hanzi = (s) => (String(s || '').match(CJK) || []).length;
 
-/** 本章的十二个知识单元，按 locator 原序返回（不排序，教材顺序即教学顺序） */
-function chapterUnits(data, ch) {
-  const no = ch || CHAPTER;
-  return data.units.filter((u) => u.chapter === no);
-}
-
-/** 视角与层级剖面：三视角 × 四层级，全部从每单元的 measure 里加总，不估读 */
-function profile(units) {
-  const views = { 代谢: 0, 机能: 0, 形态: 0 };
-  const levels = { 细胞: 0, 组织: 0, 器官: 0, 系统: 0 };
-  for (const u of units) {
-    for (const k of Object.keys(views)) views[k] += u.measure.views[k] || 0;
-    for (const k of Object.keys(levels)) levels[k] += u.measure.levels[k] || 0;
-  }
-  const sum = (o) => Object.values(o).reduce((a, b) => a + b, 0);
+function shape(md) {
+  const body = md.replace(/```[\s\S]*?```/g, '');
+  const lines = body.split('\n');
+  const count = (re) => lines.filter((l) => re.test(l)).length;
   return {
-    n: units.length,
-    hanzi: units.reduce((a, u) => a + u.hanzi, 0),
-    views,
-    levels,
-    viewTotal: sum(views),
-    levelTotal: sum(levels),
-    locators: units.map((u) => u.locator),
+    hanzi: hanzi(body),
+    h1: count(/^# /),
+    h2: count(/^## /),
+    h3: count(/^### /),
+    h4: count(/^#### /),
+    tables: count(/^\|/),
+    paras: body.split(/\n{2,}/).filter((p) => hanzi(p) >= 40).length,
   };
 }
 
-/** 单条：占全章的比例，返回 0–1，只在程序里用，文档不写百分比 */
-function share(part, whole) {
-  if (!whole) throw new Error('分母为零：剖面为空');
-  return part / whole;
+function citations(md) {
+  const prose = md.replace(/```[\s\S]*?```/g, '');
+  const out = [];
+  for (const m of prose.matchAll(/《([^》·]{2,12})·([^》]{2,20})》/g)) out.push({ book: m[1], part: m[2] });
+  return out;
 }
 
-// ── 模型一：心动周期判别 ──────────────────────────────────────────────
-// 教材 4.1.2 的判据只有两个量：两个瓣膜的启闭，加上「此刻处于收缩期还是舒张期」。
-// 容积方向不是独立输入，它是前两个量的推论——写进表里是为了当校验用。
-const PHASE_TABLE = {
-  'closed|closed|systole': { phase: '等容收缩期', volume: 'flat' },
-  'closed|open|systole': { phase: '射血期', volume: 'down' },
-  'closed|closed|diastole': { phase: '等容舒张期', volume: 'flat' },
-  'open|closed|diastole': { phase: '充盈期', volume: 'up' },
-};
-
-/**
- * phaseOf({ av, sl, stage, volume? }) → { phase, volume }
- * av / sl: 'open' | 'closed'；stage: 'systole' | 'diastole'
- * volume: 'up' | 'down' | 'flat'，给了就校验，与瓣膜状态矛盾即抛错。
- */
-function phaseOf({ av, sl, stage, volume }) {
-  const key = `${av}|${sl}|${stage}`;
-  const hit = PHASE_TABLE[key];
-  if (!hit) {
-    throw new Error(
-      `瓣膜状态与时相不相容：房室瓣 ${av} · 动脉瓣 ${sl} · ${stage}`,
-    );
-  }
-  if (volume && volume !== hit.volume) {
-    throw new Error(
-      `${hit.phase}的容积方向应为 ${hit.volume}，给的是 ${volume} —— 容积方向是瓣膜状态的推论，不是独立输入`,
-    );
-  }
-  return { phase: hit.phase, volume: hit.volume };
-}
-
-/** 按教材顺序走一遍完整周期，返回时相序列 */
-function cycle(stages) {
-  const seq = stages || [
-    { av: 'closed', sl: 'closed', stage: 'systole' },
-    { av: 'closed', sl: 'open', stage: 'systole' },
-    { av: 'closed', sl: 'closed', stage: 'diastole' },
-    { av: 'open', sl: 'closed', stage: 'diastole' },
-  ];
-  return seq.map((s) => phaseOf(s));
-}
-
-// ── 模型二：血管区段 → 功能类别 ────────────────────────────────────
-const VESSELS = [
-  { key: '大动脉', role: '弹性贮器血管', why: '弹性成分比例大，缓冲心室射血的压力波动，使舒张期血流不断' },
-  { key: '小动脉', role: '阻力血管', why: '管壁以平滑肌为主，口径变化对血流阻力影响最明显' },
-  { key: '微动脉', role: '阻力血管', why: '口径最小，是局部血流分配与总外周阻力的着力点' },
-  { key: '毛细血管', role: '交换血管', why: '单层内皮、总横截面积大、流速慢，物质交换的主要场所' },
-  { key: '静脉', role: '容量血管', why: '管壁薄、口径大，贮存血液并保证回流' },
-];
-
-function vesselRole(name) {
-  const hit = VESSELS.find((v) => v.key === name);
-  if (!hit) throw new Error(`没有这个血管区段：${name}（只收大动脉/小动脉/微动脉/毛细血管/静脉）`);
-  return { role: hit.role, why: hit.why };
-}
-
-// ── 模型三：动脉血压的四条形成条件，逐条回教材正文核对 ──────────────
-// 条件不是凭印象列的：每条都要求能在 4.3.2 的正文里逐字找到，找不到就报错。
-const BP_CONDITIONS = [
-  { name: '血液充盈', quote: '血管系统内必须有足够的血液充盈' },
-  { name: '心脏射血', quote: '心脏的射血是动脉血压形成的动力来源' },
-  { name: '外周阻力', quote: '外周阻力是动脉血压得以维持的重要因素' },
-  { name: '大动脉弹性', quote: '大动脉的弹性贮器作用使心室舒张期的动脉血压仍能保持在一定的水平' },
-];
-
-function conditionsInText(units) {
-  const u = units.find((x) => x.locator === '教材·第4章·4.3.2');
-  if (!u) throw new Error('units.json 里没有 4.3.2，无法核对形成条件');
-  return BP_CONDITIONS.map((c) => ({ name: c.name, found: u.body.includes(c.quote) }));
-}
-
-// ── 模型四：器官循环的三种调节侧重 ──────────────────────────────────
-const ORGAN_CIRCULATION = [
-  { organ: '冠脉循环', timing: '供血主要在心室舒张期', driver: '心肌代谢产物为主，神经调节次要', note: '侧支不发达，对通路依赖高' },
-  { organ: '肺循环', timing: '阻力小、压力低、容量大', driver: '局部因素与体液因素为主', note: '低氧使肺血管收缩，利于通气与血流匹配' },
-  { organ: '脑循环', timing: '一定血压范围内流量相对稳定', driver: '自身调节与化学调节为主', note: '同一因素的方向与肺循环相反' },
-];
-
-function organRow(name) {
-  const hit = ORGAN_CIRCULATION.find((o) => o.organ === name);
-  if (!hit) throw new Error(`没有这个器官循环：${name}`);
-  return hit;
-}
-
-// ── 模型五：教材「零数值」声明，逐单元核验 ──────────────────────────
-function valueLikeZero(units) {
-  const bad = units.filter((u) => u.measure.valueLike !== 0);
-  return { checked: units.length, bad: bad.map((u) => u.locator) };
-}
-
-/** 四层级里最薄的一层落在哪一节：把「组织最弱」从印象变成可指认的位置 */
-function levelHotspot(units, level) {
-  const key = level || '组织';
-  const ranked = units
-    .map((u) => ({ locator: u.locator, title: u.title, n: u.measure.levels[key] || 0 }))
-    .sort((a, b) => b.n - a.n);
-  const top = ranked[0];
-  const rest = ranked.slice(1).reduce((a, r) => a + r.n, 0);
-  return { level: key, locator: top.locator, title: top.title, n: top.n, rest };
-}
-
-function main() {
-  const data = load();
-  const units = chapterUnits(data);
-  const p = profile(units);
-
-  console.log('═══ 血液循环：泵血·血管·调节·器官循环 (生理学 第4章) ═══');
-  console.log(`教材规模: 第4章 ${p.hanzi} 字 · 知识单元 ${p.n} 个（4.1–4.4，每节三个）`);
-
-  console.log('\n三视角剖面（词频，逐单元加总）');
-  for (const [k, v] of Object.entries(p.views)) {
-    console.log(`  ${k} ${String(v).padStart(4)} · ${(share(v, p.viewTotal) * 100).toFixed(1)}%`);
-  }
-  console.log(`  合计 ${p.viewTotal} · 机能是代谢的 ${(p.views.机能 / p.views.代谢).toFixed(1)} 倍`);
-
-  console.log('\n四层级剖面');
-  for (const [k, v] of Object.entries(p.levels)) {
-    console.log(`  ${k} ${String(v).padStart(4)} · ${(share(v, p.levelTotal) * 100).toFixed(1)}%`);
-  }
-  console.log(`  合计 ${p.levelTotal} · 细胞与器官合计 ${(((p.levels.细胞 + p.levels.器官) / p.levelTotal) * 100).toFixed(1)}%，组织最低`);
-
-  const hs = levelHotspot(units, '组织');
-  console.log(`  组织层落点: ${hs.locator}（${hs.title}）${hs.n} 处 · 其余十一节合计 ${hs.rest} 处`);
-
-  console.log('\n心动周期：两个瓣膜的状态唯一决定四个时相');
-  for (const s of cycle()) {
-    console.log(`  ${s.phase} · 容积 ${s.volume}`);
-  }
-  const bad = [
-    { av: 'open', sl: 'open', stage: 'systole', why: '两个瓣膜不可能同时开放' },
-    { av: 'open', sl: 'closed', stage: 'systole', why: '心室收缩期房室瓣必须关闭，否则血液倒流入心房' },
-  ];
-  for (const b of bad) {
-    try {
-      phaseOf(b);
-      console.log(`  ✗ ${b.why} 竟然通过了判别`);
-    } catch (e) {
-      console.log(`  ✓ 不相容组合被拒：${b.why}`);
+function judgments(md) {
+  const prose = md.replace(/```[\s\S]*?```/g, '');
+  const seen = new Set();
+  for (const line of prose.split('\n')) {
+    if (/^\s*[|#>]/.test(line)) continue;
+    for (const m of line.matchAll(/\*\*([^*]{4,40})\*\*/g)) {
+      const s = m[1].trim().replace(/[：:，,。；;]$/, '');
+      if (hanzi(s) < 4) continue;
+      if (/^(MOTTO|PROBLEM|双根因定位|免责声明|边界声明|教材出处)$/.test(s)) continue;
+      seen.add(s);
     }
   }
-
-  console.log('\n血管区段 → 功能类别（结构决定功能）');
-  for (const v of VESSELS) {
-    console.log(`  ${v.key} · ${v.role} · ${v.why}`);
-  }
-
-  console.log('\n动脉血压的四条形成条件 —— 逐条回教材 4.3.2 正文核对');
-  for (const c of conditionsInText(units)) {
-    console.log(`  ${c.found ? '✓' : '✗'} ${c.name}`);
-  }
-
-  console.log('\n器官循环：同一个调节因素，方向可以相反');
-  for (const o of ORGAN_CIRCULATION) {
-    console.log(`  ${o.organ} · ${o.timing} · ${o.driver} · ${o.note}`);
-  }
-
-  const z = valueLikeZero(units);
-  console.log(`\n教材「零数值」核验: ${z.checked} 个单元 · valueLike 非零 ${z.bad.length} 个`);
-
-  console.log('\n教学边界：本章数字由 standards/shengli/units.json 现算，只用于说明教材的机制类别与关系；本书不给值，不写数值与单位与正常值，不构成诊断、治疗或用药依据');
-
-  return { p, conditions: conditionsInText(units), zero: z };
+  return [...seen];
 }
 
-if (require.main === module) {
-  main();
+/** 关键词命中：本章以机能为轴，压差与阻力是两根柱子 */
+const KEYWORDS = ['压差', '阻力', '瓣膜', '不应期', '调节'];
+function keywords(md) {
+  const prose = md.replace(/```[\s\S]*?```/g, '');
+  const out = {};
+  for (const k of KEYWORDS) out[k] = prose.split(k).length - 1;
+  return out;
 }
+
+function boundaryHits(md) {
+  return (md.match(/本书不给值|不写数值|不给正常值|不给单位|不提供数值/g) || []).length;
+}
+
+/**
+ * 判别一：四个时相由两个瓣膜的状态唯一决定。
+ * 两个都关＝等容段（容积不变而压力剧变，这正是判断时相的依据）。
+ * @param {{av:'开'|'关', sl:'开'|'关'}} p
+ */
+function cardiacPhase(p) {
+  const k = `${p.av}${p.sl}`;
+  const T = {
+    关关: { phase: '等容期', note: '两瓣皆关，容积基本不变而室内压剧变；处于收缩还是舒张，看压力方向' },
+    关开: { phase: '射血期', note: '室内压超过动脉压，动脉瓣开放，血液由心室射入动脉' },
+    开关: { phase: '充盈期', note: '室内压低于房压，房室瓣开放，血液由心房流入心室' },
+    开开: { phase: '不可能', note: '两个瓣膜同时开放会让血同时进出，与结构不符' },
+  };
+  if (!T[k]) throw new Error('未知瓣膜状态：' + k);
+  return { ...T[k], k };
+}
+
+/**
+ * 判别二：阻力由口径主导，且与半径的高次幂反变。
+ * 所以血压调节的主要把手是小动脉口径，而不是长度或黏滞度。
+ * @param {'减小'|'增大'} caliber
+ */
+function resistanceBy(caliber) {
+  if (caliber === '减小') return { change: '阻力增大', why: '阻力与半径的高次幂反变，口径是最显著的把手' };
+  if (caliber === '增大') return { change: '阻力减小', why: '同样的高次幂关系反向成立' };
+  throw new Error('未知口径变化：' + caliber);
+}
+
+/**
+ * 判别三：同一个调节因素在不同器官里方向可以相反。
+ * 缺氧使体循环血管舒张、肺血管收缩——因为两个器官要解决的问题不是同一个。
+ * @param {'体循环'|'肺循环'} bed
+ */
+function hypoxiaEffect(bed) {
+  if (bed === '肺循环') return { dir: '收缩', why: '通气不足的区域减少灌注，使血流转向通气较好的区域' };
+  if (bed === '体循环') return { dir: '舒张', why: '代谢产物的局部作用使供血增加' };
+  throw new Error('未知循环：' + bed);
+}
+
+/** 三条调节的时间尺度（只写类别，不写数值） */
+const REGULATION_SCALES = {
+  神经调节: '起效快、作用部位局限，适合及时应答',
+  体液调节: '起效慢、影响持久而广泛，适合长期调整',
+  自身调节: '局部即时，在整体调节作出反应之前先提供一层缓冲',
+};
+
+function main() {
+  const md = read();
+  const s = shape(md);
+  const cites = citations(md);
+  const judges = judgments(md);
+  const kw = keywords(md);
+  const ranked = Object.entries(kw).sort((a, b) => b[1] - a[1]);
+
+  console.log('═══ 血液循环：泵血·血管·调节·器官循环（生理学 第 4 章）═══');
+  console.log(`正文（不含代码块）：${s.hanzi} 汉字 · ${s.h2} 个二级小节 · ${s.h3} 个三级 · ${s.h4} 个四级 · ${s.tables} 行表格 · ${s.paras} 个成段段落`);
+  console.log(`引文：《书名·篇名》级 ${cites.length} 条 · 加粗判断句 ${judges.length} 条`);
+  console.log('');
+  console.log('关键词命中：');
+  for (const [k, v] of ranked) console.log(`  ${k.padEnd(3)} ${String(v).padStart(3)} 次`);
+  console.log('');
+  console.log('时相判别（两瓣状态唯一决定四个时相）：');
+  for (const p of [
+    { av: '关', sl: '关' }, { av: '关', sl: '开' }, { av: '开', sl: '关' }, { av: '开', sl: '开' },
+  ]) {
+    const r = cardiacPhase(p);
+    console.log(`  房室瓣${p.av} / 动脉瓣${p.sl} → ${r.phase}`);
+  }
+  console.log('');
+  console.log(`口径${resistanceBy('减小').change}：${resistanceBy('减小').why}`);
+  console.log(`缺氧对肺循环 → ${hypoxiaEffect('肺循环').dir}（${hypoxiaEffect('肺循环').why}）`);
+  console.log(`缺氧对体循环 → ${hypoxiaEffect('体循环').dir}`);
+  console.log('');
+  for (const [k, v] of Object.entries(REGULATION_SCALES)) console.log(`  ${k}：${v}`);
+  console.log(`「不给值」类边界句 ${boundaryHits(md)} 处。`);
+  console.log('教学边界：本章只说明循环的类别、关系与机制，不写数值与单位，不构成诊断或治疗依据。');
+
+  return { shape: s, cites, judges, kw, phases: 4, boundary: boundaryHits(md) };
+}
+
+if (require.main === module) main();
 
 module.exports = {
-  ROOT,
-  CHAPTER,
-  UNITS_PATH,
-  load,
-  chapterUnits,
-  profile,
-  share,
-  phaseOf,
-  cycle,
-  PHASE_TABLE,
-  vesselRole,
-  VESSELS,
-  BP_CONDITIONS,
-  conditionsInText,
-  organRow,
-  ORGAN_CIRCULATION,
-  valueLikeZero,
-  levelHotspot,
+  DOC,
+  KEYWORDS,
+  REGULATION_SCALES,
+  read,
+  hanzi,
+  shape,
+  citations,
+  judgments,
+  keywords,
+  boundaryHits,
+  cardiacPhase,
+  resistanceBy,
+  hypoxiaEffect,
   main,
 };

@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 /**
- * 方剂学 · 第 4 章 泻下剂与和解剂 —— 类方鉴别的集合解法
+ * 方剂学 · 第 4 章 泻下剂与和解剂：下与和，方向相反的两个「通」 —— 本章正文的结构统计
  * 课程: departments/02-zhongyao/03-fangjixue/chapters/04-xiexia-hejie/docs/zh.md
- * 数据: standards/fangji/formulas.json（教材第 6 章泻下剂 6 方 + 第 7 章和解剂 5 方）
+ * 数据: 只读本章正文 docs/zh.md（不读缓存、不读底本、不手打数字）
  * 依赖: 仅 Node.js 标准库
  *
- * 做法: 把每首方读成一味药的集合，用 Jaccard 相似度找「最近邻」，用子集关系找「合方」。
- *       所有数字现算，不手打；输出只描述教材里的方剂结构，不构成任何用药建议。
+ * 为什么只读正文现算：本章引用的每一个规模数（字数、节数、表行数、数字列合计、引文条数）
+ * 都写在正文里，正文就是本章唯一的数据源。把统计写成对正文的复算，正文一改、数字就变，
+ * 单测立刻报警；手打一份统计表则会在改稿后静默过期。
  */
 
 'use strict';
@@ -14,209 +15,193 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const CHAPTERS = ['6', '7'];
-const RELS = [
-  '../../../../../standards/fangji/formulas.json', // chapters/<slug>/code → 仓库根 5 级
-  '../../../../standards/fangji/formulas.json',   // 契约写法（4 级）
-];
+const CHAPTER = 4;
+const TITLE = '泻下剂与和解剂：下与和，方向相反的两个「通」';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CJK = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
 
-/** 先按相对路径试；都对不上再逐级上溯找 standards/fangji/formulas.json */
-function findDataFile() {
-  for (const rel of RELS) {
-    const direct = path.join(__dirname, rel);
-    if (fs.existsSync(direct)) return direct;
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
+/** H1 与二、三级小节：节数是审计判据之一（要求 4–8 个二级节） */
+function headings(text) {
+  const lines = text.split('\n');
+  const h1 = (lines.find((l) => /^#\s+/.test(l)) || '').replace(/^#\s+/, '').trim();
+  const h2 = [];
+  const h3 = [];
+  for (const l of lines) {
+    if (/^##\s+/.test(l)) h2.push(l.replace(/^##\s+/, '').trim());
+    else if (/^###\s+/.test(l)) h3.push(l.replace(/^###\s+/, '').trim());
   }
-  let dir = __dirname;
-  for (let i = 0; i < 8; i += 1) {
-    const p = path.join(dir, 'standards', 'fangji', 'formulas.json');
-    if (fs.existsSync(p)) return p;
-    dir = path.dirname(dir);
-  }
-  throw new Error('找不到 standards/fangji/formulas.json');
+  return { h1, h2, h3 };
 }
 
-const loadFormulas = () => JSON.parse(fs.readFileSync(findDataFile(), 'utf8')).formulas;
+/** 正文里的全部表格：首行是表头，分隔行丢掉，其余是数据行 */
+function tables(text) {
+  const blocks = [];
+  let cur = [];
+  for (const raw of text.split('\n')) {
+    if (/^\|.*\|$/.test(raw.trim())) cur.push(raw.trim());
+    else {
+      if (cur.length >= 2) blocks.push(cur);
+      cur = [];
+    }
+  }
+  if (cur.length >= 2) blocks.push(cur);
+  const cells = (l) => l.replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
+  const isSep = (row) => row.every((c) => /^:?-{2,}:?$/.test(c.replace(/\s/g, '')));
+  return blocks.map((b, i) => ({
+    idx: i + 1,
+    header: cells(b[0]),
+    rows: b.slice(1).map(cells).filter((r) => !isSep(r)),
+  }));
+}
+
+const num = (c) => {
+  const v = String(c).replace(/[*_`\s,]/g, '');
+  return /^-?\d+(?:\.\d+)?$/.test(v) ? Number(v) : null;
+};
+
+const isTotalRow = (r) => /^(合计|总计)/.test(String(r[0] || '').replace(/[*_\s]/g, ''));
 
 /**
- * 组成抽取的噪声判据：药名为 2–4 字，且不含虚词。
- * 「同书卷十五另载」「无当归」「而配伍之要尤在」这类是抽取切分留下的残句，不是药。
- * 判据写在代码里而不是临时手删，才能被单测复现。
+ * 可合计的计数列：排除比率列（每方/每段/平均/÷/占/率），
+ * 若表里有「合计」行，则把数据行之和与该行对账——表内自洽也当场核。
  */
-const isNoise = (name) => name.length < 2 || name.length > 4 || /[为故而无另自三味于]/.test(name);
+function columnStats(t) {
+  const totalIdx = t.rows.findIndex(isTotalRow);
+  const dataRows = t.rows.filter((_, i) => i !== totalIdx);
+  const cols = [];
+  t.header.forEach((name, ci) => {
+    if (/每|平均|÷|占|率/.test(name)) return;
+    const vals = dataRows.map((r) => num(r[ci]));
+    if (!dataRows.length || vals.some((v) => v === null)) return;
+    const sum = Number(vals.reduce((a, b) => a + b, 0).toFixed(4));
+    const declared = totalIdx >= 0 ? num(t.rows[totalIdx][ci]) : null;
+    cols.push({ name, sum, declared, ok: declared === null ? null : declared === sum });
+  });
+  return { totalIdx, cols };
+}
 
-const herbsRaw = (f) => f.composition.herbs.map((h) => h.name);
-const herbsOf = (f) => herbsRaw(f).filter((n) => !isNoise(n));
-const noiseOf = (f) => herbsRaw(f).filter(isNoise);
-
-function stats(list) {
-  let rawSlots = 0;
-  let noise = 0;
-  const uniq = new Set();
-  for (const f of list) {
-    rawSlots += herbsRaw(f).length;
-    noise += noiseOf(f).length;
-    for (const h of herbsOf(f)) uniq.add(h);
+/** 「」引文：全部条数，以及挂了「教材·第N章·N.M.K」锚点的条数 */
+function quotes(text) {
+  const all = [...text.matchAll(/「([^」]+)」/g)].map((m) => m[1]);
+  const anchored = [];
+  for (const line of text.split('\n')) {
+    if (!/教材·第\d+章/.test(line)) continue;
+    for (const m of line.matchAll(/「([^」]{6,})」/g)) anchored.push(m[1]);
   }
-  const cleanSlots = rawSlots - noise;
+  return { all, anchored };
+}
+
+/** 教材定位点：教材·第N章·N.M.K（去重后排序，用于报“引了哪几章” ） */
+function locators(text) {
+  const set = new Set();
+  for (const m of text.matchAll(/教材·第(\d+)章·(\d+(?:\.\d+)*)/g)) set.add(`${Number(m[1])}|${m[2]}`);
+  return [...set].sort((a, b) => {
+    const [ca, sa] = a.split('|');
+    const [cb, sb] = b.split('|');
+    return Number(ca) - Number(cb) || sa.localeCompare(sb, 'en', { numeric: true });
+  });
+}
+
+/** MOTTO 里的《书名·篇名》 */
+function bookCites(text) {
+  const line = text.split('\n').find((l) => /\*\*MOTTO:\*\*/.test(l)) || '';
+  return [...line.matchAll(/《([^》]+)》/g)].map((m) => m[1]);
+}
+
+/** 正文段落数：排除标题、表格、引用块与代码块行 */
+function proseBlocks(text) {
+  return text
+    .split(/\n\s*\n/)
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .filter((s) => !/^(#|>|\||```)/.test(s));
+}
+
+function analyze(text = readDoc()) {
+  const h = headings(text);
+  const ts = tables(text);
+  const q = quotes(text);
+  const loc = locators(text);
   return {
-    formulas: list.length,
-    rawSlots,
-    noise,
-    slots: cleanSlots,
-    unique: uniq.size,
-    avgHerbs: cleanSlots / list.length,
+    hanzi: (text.match(CJK) || []).length,
+    h1: h.h1,
+    h2: h.h2,
+    h3: h.h3,
+    paragraphs: proseBlocks(text).length,
+    tables: ts.map((t) => {
+      const st = columnStats(t);
+      return {
+        idx: t.idx,
+        cols: t.header.length,
+        rows: t.rows.length,
+        dataRows: st.totalIdx >= 0 ? t.rows.length - 1 : t.rows.length,
+        hasTotal: st.totalIdx >= 0,
+        header: t.header,
+        numeric: st.cols,
+      };
+    }),
+    quotes: q.all.length,
+    anchored: q.anchored.length,
+    locators: loc,
+    chapters: [...new Set(loc.map((x) => Number(x.split('|')[0])))].sort((a, b) => a - b),
+    books: bookCites(text),
   };
 }
 
-/** 频次 ≥ min 的药，按频次降序；同频按药名排序，保证输出稳定 */
-function coreHerbs(list, min = 3) {
-  const cnt = new Map();
-  for (const f of list) for (const h of new Set(herbsOf(f))) cnt.set(h, (cnt.get(h) || 0) + 1);
-  return [...cnt]
-    .filter(([, v]) => v >= min)
-    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh'))
-    .map(([name, n]) => ({ name, n, where: list.filter((f) => herbsOf(f).includes(name)).map((f) => f.name) }));
-}
-
-const set = (f) => new Set(herbsOf(f));
-const inter = (A, B) => [...A].filter((x) => B.has(x));
-const union = (A, B) => new Set([...A, ...B]);
-
-function jaccard(a, b) {
-  const A = set(a);
-  const B = set(b);
-  const i = inter(A, B).length;
-  return i / union(A, B).size;
-}
-
-/** 同一治法内按 Jaccard 排序的最近邻对（类方鉴别的机器版） */
-function nearestPairs(list, k = 5) {
-  const out = [];
-  for (let i = 0; i < list.length; i += 1) {
-    for (let j = i + 1; j < list.length; j += 1) {
-      const A = set(list[i]);
-      const B = set(list[j]);
-      const shared = inter(A, B);
-      out.push({
-        a: list[i].name,
-        b: list[j].name,
-        j: Number(jaccard(list[i], list[j]).toFixed(2)),
-        shared: shared.length,
-        union: union(A, B).size,
-        subset: shared.length === Math.min(A.size, B.size),
-      });
+/** 本章自检：任何一条不符即抛错——宁可让脚本崩，也不让一个错的报告被打印出去 */
+function selfCheck(a) {
+  const errs = [];
+  if (!new RegExp(`^第\\s*${CHAPTER}\\s*章`).test(a.h1)) errs.push(`H1 章号不是 ${CHAPTER}：${a.h1}`);
+  if (a.hanzi < 2500) errs.push(`汉字 ${a.hanzi} < 2500`);
+  if (a.h2.length < 4 || a.h2.length > 8) errs.push(`二级小节 ${a.h2.length} 个，不在 4–8`);
+  if (!a.h2.some((t) => /代价与边界/.test(t))) errs.push('缺「代价与边界」小节');
+  if (!a.books.length) errs.push('MOTTO 缺《书名·篇名》');
+  if (a.anchored < 2) errs.push(`挂教材出处的引文只有 ${a.anchored} 条`);
+  for (const t of a.tables) {
+    if (t.cols < 2) errs.push(`表 ${t.idx} 只有 ${t.cols} 列`);
+    if (t.dataRows < 1) errs.push(`表 ${t.idx} 没有数据行`);
+    for (const c of t.numeric) {
+      if (c.ok === false) errs.push(`表 ${t.idx} 的「${c.name}」：数据行合计 ${c.sum} ≠ 合计行 ${c.declared}`);
     }
   }
-  return out.sort((x, y) => y.j - x.j || x.a.localeCompare(y.a, 'zh')).slice(0, k);
-}
-
-/** 真子集对：一方全部药味出现在另一方里 —— 这就是教材说的「合方」「相合而成」 */
-function subsetPairs(list) {
-  const out = [];
-  for (let i = 0; i < list.length; i += 1) {
-    for (let j = 0; j < list.length; j += 1) {
-      if (i === j) continue;
-      const A = set(list[i]);
-      const B = set(list[j]);
-      if (A.size >= 3 && A.size < B.size && inter(A, B).length === A.size) {
-        out.push({ small: list[i].name, big: list[j].name, size: A.size, bigSize: B.size });
-      }
-    }
-  }
-  return out.sort((x, y) => x.small.localeCompare(y.small, 'zh') || x.big.localeCompare(y.big, 'zh'));
-}
-
-function roleCoverage(list) {
-  const cov = { 君: 0, 臣: 0, 佐: 0, 使: 0 };
-  for (const f of list) for (const r of Object.keys(cov)) if ((f.roles[r] || []).length) cov[r] += 1;
-  const full4 = list.filter((f) => ['君', '臣', '佐', '使'].every((r) => (f.roles[r] || []).length));
-  const none = list.filter((f) => ['君', '臣', '佐', '使'].every((r) => !(f.roles[r] || []).length));
-  return { cov, full4, none };
-}
-
-function bySection(list) {
-  const m = new Map();
-  for (const f of list) {
-    const s = m.get(f.sec) || { sec: f.sec, n: 0, slots: 0, names: [] };
-    s.n += 1;
-    s.slots += herbsOf(f).length;
-    s.names.push(f.name);
-    m.set(f.sec, s);
-  }
-  return [...m.values()].map((s) => ({ ...s, avg: s.slots / s.n }));
+  if (errs.length) throw new Error('本章正文自检失败：\n  ' + errs.join('\n  '));
+  return true;
 }
 
 function main() {
-  const all = loadFormulas();
-  const list = all.filter((f) => CHAPTERS.includes(f.chapter));
-  const s = stats(list);
-  const cov = roleCoverage(list);
-  const fa = new Map();
-  for (const f of list) {
-    const k = f.fa || '（未归法）';
-    const v = fa.get(k) || { fa: k, n: 0, slots: 0, names: [] };
-    v.n += 1;
-    v.slots += herbsOf(f).length;
-    v.names.push(f.name);
-    fa.set(k, v);
+  const a = analyze();
+  selfCheck(a);
+
+  console.log(`═══ 第 ${CHAPTER} 章 ${TITLE} ═══`);
+  console.log(`正文 ${a.hanzi} 汉字 · ${a.paragraphs} 个正文段 · ${a.tables.length} 张表 · 二级节 ${a.h2.length} · 三级节 ${a.h3.length}`);
+  console.log('H1: ' + a.h1);
+  console.log('MOTTO 书证: ' + a.books.map((b) => `《${b}》`).join(' · '));
+
+  console.log('\n二级节（审计要求 4–8）:');
+  a.h2.forEach((t, i) => console.log(`  ${i + 1}. ${t}`));
+  if (a.h3.length) {
+    console.log('\n三级节:');
+    a.h3.forEach((t, i) => console.log(`  ${i + 1}. ${t}`));
   }
 
-  console.log('═══ 泻下剂与和解剂：类方鉴别的集合解法（方剂学 第4章）═══');
-  console.log(`数据: ${path.basename(findDataFile())} · 全库 ${all.length} 方 · 本章取教材第 ${CHAPTERS.join('、')} 章`);
-  console.log(`规模: ${s.formulas} 方 / ${s.slots} 药位 / 去重 ${s.unique} 味 / 每方平均 ${s.avgHerbs.toFixed(1)} 味`);
-  console.log(`抽取残句: ${s.noise} 条已剔出（原始药位 ${s.rawSlots}）`);
-
-  console.log('— 按八法分组 —');
-  for (const v of [...fa.values()].sort((a, b) => b.n - a.n)) {
-    console.log(`  ${v.fa}: ${v.n} 方 / ${v.slots} 药位 / 平均 ${(v.slots / v.n).toFixed(1)} 味 → ${v.names.join('、')}`);
+  console.log('\n表格：');
+  for (const t of a.tables) {
+    const sums = t.numeric.length
+      ? t.numeric.map((c) => `${c.name}=${c.sum}${c.ok === null ? '' : c.ok ? '（=合计行）' : `（≠合计行 ${c.declared}）`}`).join(' · ')
+      : '无可合计的计数列';
+    console.log(`  T${t.idx} ${t.cols} 列 × ${t.rows} 行${t.hasTotal ? '（含合计行）' : ''} | ${t.header.join(' | ')}`);
+    console.log(`       数字列：${sums}`);
   }
 
-  console.log('— 核心药（频次 ≥ 3）—');
-  for (const h of coreHerbs(list, 3)) console.log(`  ${h.name} ${h.n} 方: ${h.where.join('、')}`);
+  console.log(`\n引文：「」${a.quotes} 条 · 挂教材定位 ${a.anchored} 条 · 定位点 ${a.locators.length} 个`);
+  console.log(`教材章：${a.chapters.map((c) => `第${c}章`).join(' / ')}`);
 
-  console.log('— Jaccard 最近邻前 5 对 —');
-  for (const p of nearestPairs(list, 5)) {
-    console.log(`  ${p.a} ~ ${p.b}: ${p.j.toFixed(2)}（共 ${p.shared} / 并 ${p.union}）${p.subset ? ' ← 子集' : ''}`);
-  }
-
-  console.log('— 真子集对（合方/相合而成）—');
-  for (const p of subsetPairs(list)) {
-    console.log(`  ${p.small}（${p.size} 味）⊂ ${p.big}（${p.bigSize} 味）`);
-  }
-
-  console.log('— 君臣佐使抽取覆盖 —');
-  console.log(`  君 ${cov.cov['君']} / 臣 ${cov.cov['臣']} / 佐 ${cov.cov['佐']} / 使 ${cov.cov['使']} · 四角色齐 ${cov.full4.length} 方 · 全空 ${cov.none.length} 方（${cov.none.map((f) => f.name).join('、') || '无'}）`);
-
-  console.log('— 逐节药位 —');
-  for (const sec of bySection(list)) {
-    console.log(`  ${sec.sec}: ${sec.n} 方 / ${sec.slots} 药位 / 平均 ${sec.avg.toFixed(1)} 味 → ${sec.names.join('、')}`);
-  }
-
-  console.log('— 两个反例 —');
-  const dcq = list.find((f) => f.name === '大承气汤');
-  const hl = list.find((f) => f.name === '黄龙汤');
-  console.log(`  1) 药味数不度量峻猛：大承气汤 ${herbsOf(dcq).length} 味主峻下，黄龙汤 ${herbsOf(hl).length} 味主攻补兼施。`);
-  const maxPair = nearestPairs(list, 1)[0];
-  console.log(`  2) 最高相似对是 ${maxPair.a} ~ ${maxPair.b}（${maxPair.j.toFixed(2)}），二者分属${maxPair.a === '小柴胡汤' ? '少阳与肠胃两个和解层次' : '两节'}——相似度高不等于可互换。`);
-
-  console.log('教学边界：本章只做教材方剂的结构统计与相似度对照，用于教学演示；不构成诊断/用药依据。');
+  console.log('\n对账：节数、表行数、数字列合计、引文条数全部由上一段正文现算；正文一改，这里就变。');
+  console.log('教学边界：本章统计只读本章正文，数字由 docs/zh.md 现算，用于方剂学的结构核对；不含诊疗建议，不构成诊断或用药依据，临床决策须由执业医师依据辨证与《中国药典》作出。');
 }
 
 if (require.main === module) main();
 
-module.exports = {
-  CHAPTERS,
-  findDataFile,
-  loadFormulas,
-  isNoise,
-  herbsOf,
-  noiseOf,
-  stats,
-  coreHerbs,
-  jaccard,
-  nearestPairs,
-  subsetPairs,
-  roleCoverage,
-  bySection,
-  main,
-};
+module.exports = { CHAPTER, TITLE, DOC, readDoc, headings, tables, quotes, locators, bookCites, proseBlocks, analyze, selfCheck, main };

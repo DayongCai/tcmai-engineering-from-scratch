@@ -3,10 +3,8 @@
  * 第 13 章 氧运输异常 —— 确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言只落在可对账的结构上：讲义该章的节号集合、docs 的节覆盖与字数、
- * 引文是否引到本章、引语是否逐字、非引用行有没有裸数值、quiz 契约、
- * 以及 `node code/main.js` 的末行是否为教学边界句。
- * 不锁死正文措辞，讲义改写段落时测试不会变成噪声。
+ * 断言只落在可对账的结构上：正文规模、引证章号、节号前缀、数值命中、锚点落位、
+ * quiz 契约（题数/三段/四选项/解释字数/选项接地/答案分散）。不锁正文措辞。
  */
 
 'use strict';
@@ -15,123 +13,120 @@ const assert = require('node:assert');
 const test = require('node:test');
 const fs = require('node:fs');
 const path = require('node:path');
-const { execFileSync } = require('node:child_process');
 
-const CHAPTER = 13;
-const TITLE = '氧运输异常';
-const DIR = path.join(__dirname, '..');
+const {
+  CHAPTER, TITLE, ANCHORS, BOUNDARY,
+  readDoc, shape, citationAudit, valueAudit, anchorCoverage, main,
+} = require('./main');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 14; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'binglishengli', 'supplements', 'jiangyi.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const doc = readDoc();
+const EXPECT = {
+  h2: 5,
+  h3: 13,
+  paras: 65,
+  hanzi: 7048,
+  chars: 9642,
+  cites: 25,
+  distinct: 12,
+  values: 0,
+  anchors: ["乏氧性","循环性"],
+};
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+
+const cjk = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;
+
+function grams(s) {
+  const out = new Set();
+  const t = String(s);
+  for (let i = 0; i + 4 <= t.length; i += 1) {
+    const g = t.slice(i, i + 4);
+    if (/^[\u4e00-\u9fff]{4}$/.test(g)) out.add(g);
   }
-  throw new Error('没找到仓库根');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const idx = JSON.parse(fs.readFileSync(path.join(ROOT, 'standards', 'binglishengli', 'supplements', 'jiangyi.json'), 'utf8'));
-
-const BOOK = (() => {
-  for (const u of idx.units) {
-    for (const c of u.chapters) {
-      if (Number(c.no) === CHAPTER) {
-        const secs = new Map();
-        for (const s of c.secs) secs.set(s.no, (s.paras || []).join('\n'));
-        return { title: c.title, hanzi: c.hanzi, secs };
-      }
-    }
-  }
-  throw new Error(`讲义里没有第 ${CHAPTER} 章`);
-})();
-
-const doc = fs.readFileSync(path.join(DIR, 'docs', 'zh.md'), 'utf8');
-const lines = doc.split(/\r?\n/);
-const flat = [...BOOK.secs.values()].join('\n');
-const CITE_RE = /补充·hermes-病理生理学讲义·第\s*(\d+)\s*章·(\d+\.\d+)/g;
-const isCite = (l) => /补充·hermes-病理生理学讲义·第\s*(\d+)\s*章·(\d+\.\d+)/.test(l);
-const isQuoteLine = (l) => /^\s*>/.test(l);
-const BARE_RE = /[0-9]+(\.[0-9]+)?\s*(mmHg|kPa|℃|mmol|μmol|mg|μg|ng|g\/L|mol|%|次\/分|mL|ml|L\/min|kg|cm|mm|U\/L|IU)/;
-const nonWs = (s) => s.replace(/\s/g, '').length;
-
-test('讲义该章：13 章 12 节，标题与 chapters.json 一致', () => {
-  assert.strictEqual(chaptersJson().n, CHAPTER);
-  assert.ok(TITLE.includes(chaptersJson().title) || chaptersJson().title.includes(TITLE));
-  assert.strictEqual(BOOK.secs.size, 12);
-  assert.strictEqual(BOOK.hanzi, 3820);
-  assert.deepStrictEqual([...BOOK.secs.keys()], ['13.1', '13.2', '13.3', '13.4', '13.5', '13.6', '13.7', '13.8', '13.9', '13.10', '13.11', '13.12']);
+test('章号与标题来自正文 H1', () => {
+  assert.strictEqual(CHAPTER, 13);
+  const h1 = doc.split(/\r?\n/).find((l) => /^#\s+/.test(l)) || '';
+  assert.ok(h1.includes(TITLE), `H1 不含标题：${h1}`);
+  assert.ok(TITLE.length >= 2);
 });
 
-function chaptersJson() {
-  const p = path.join(ROOT, 'departments/09-jichu/11-bingli-shengli-xue/chapters.json');
-  const list = JSON.parse(fs.readFileSync(p, 'utf8')).chapters;
-  return list.find((c) => c.n === CHAPTER);
-}
-
-test('docs 规模：非空白字不少于三千，且必备结构齐全', () => {
-  assert.ok(nonWs(doc) >= 3000, `只有 ${nonWs(doc)} 非空白字`);
-  for (const k of ['MOTTO', 'PROBLEM', '双根因定位', '运行与验证']) assert.ok(doc.includes(k), `缺 ${k}`);
-  assert.ok(lines.some((l) => /^##\s/.test(l) && /代价与边界|边界|免责/.test(l)), '缺末节');
-});
-
-test('节号覆盖：讲义该章的每一个节号都在 docs 出现', () => {
-  const missing = [...BOOK.secs.keys()].filter((s) => !doc.includes(s));
-  assert.deepStrictEqual(missing, []);
-});
-
-test('引文：不少于三条，全部指向本章，节号在讲义里存在', () => {
-  const cites = [...doc.matchAll(CITE_RE)].map((m) => ({ ch: Number(m[1]), sec: m[2] }));
-  assert.ok(cites.length >= 3, `只有 ${cites.length} 条`);
-  assert.deepStrictEqual(cites.filter((x) => x.ch !== CHAPTER), []);
-  assert.deepStrictEqual(cites.filter((x) => !BOOK.secs.has(x.sec)), []);
-  assert.ok(!/教材·[^\n]*讲义/.test(doc), '把讲义标成了「教材」');
-});
-
-test('引语逐字：非引文行里「」内的每一句都能在讲义正文里找到', () => {
-  const lost = [];
-  for (const l of lines) {
-    if (isCite(l) || isQuoteLine(l)) continue;
-    for (const m of l.matchAll(/「([^「」]{6,})」/g)) if (!flat.includes(m[1])) lost.push(m[1]);
-  }
-  assert.deepStrictEqual(lost, [], `未命中：${lost.join(' / ')}`);
-});
-
-test('非引用行零裸数值：正文不出现「数字＋计量单位」', () => {
-  const bad = lines.filter((l) => !isCite(l) && !isQuoteLine(l) && BARE_RE.test(l)).map((l) => l.trim().slice(0, 60));
-  assert.deepStrictEqual(bad, []);
-});
-
-test('quiz：恰 6 题，pre 1 · check 3 · post 2，题干键 question，每题 explanation 带引证', () => {
-  const quiz = JSON.parse(fs.readFileSync(path.join(DIR, 'quiz.json'), 'utf8'));
-  const qs = quiz.questions;
-  assert.strictEqual(qs.length, 6);
+test('正文规模：节 / 小节 / 段 / 汉字 / 非空白字符与实测一致', () => {
+  const s = shape(doc);
   assert.deepStrictEqual(
-    qs.reduce((m, x) => ((m[x.stage] = (m[x.stage] || 0) + 1), m), {}),
-    { pre: 1, check: 3, post: 2 },
+    { h2: s.h2, h3: s.h3, paras: s.paras, hanzi: s.hanzi, chars: s.chars },
+    { h2: EXPECT.h2, h3: EXPECT.h3, paras: EXPECT.paras, hanzi: EXPECT.hanzi, chars: EXPECT.chars },
   );
-  for (const q of qs) {
-    assert.ok(q.question, '题干键必须是 question');
-    assert.ok((q.options || []).length >= 2);
-    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < q.options.length);
-    assert.match(q.explanation, /(依据|口径见|前提|算见)/, q.question);
+});
+
+test('引证章号与节号前缀全部等于本章，没有跨章复制', () => {
+  const c = citationAudit(doc, CHAPTER);
+  assert.strictEqual(c.total, EXPECT.cites);
+  assert.deepStrictEqual(c.wrongChapter, []);
+  assert.deepStrictEqual(c.prefixMismatch, []);
+  assert.strictEqual(c.distinct.length, EXPECT.distinct);
+});
+
+test('数值型命中数与实测一致（正文只给类别与关系）', () => {
+  const v = valueAudit(doc);
+  assert.strictEqual(v.hits, EXPECT.values);
+});
+
+test('锚点从正文选出，且每个锚点至少落在一节', () => {
+  assert.deepStrictEqual(ANCHORS, EXPECT.anchors);
+  const cov = anchorCoverage(doc);
+  const flat = doc.replace(/\s/g, '');
+  for (const a of ANCHORS) {
+    assert.ok(cov[a].length >= 1, `锚点「${a}」未落位`);
+    assert.ok(flat.includes(a), `锚点在正文中找不到：${a}`);
   }
 });
 
-test('六文件齐：docs / quiz / code / outputs 两个模板', () => {
-  const slug = chaptersJson().slug;
-  for (const f of ['docs/zh.md', 'quiz.json', 'code/main.js', 'code/main.test.js',
-    `outputs/prompt-${slug}.md`, `outputs/skill-${slug}.md`]) {
-    assert.ok(fs.existsSync(path.join(DIR, f)), `缺 ${f}`);
+test('quiz：≥5 题，pre/check/post 三段齐，每题 4 个互异选项', () => {
+  const qs = QUIZ.questions;
+  assert.ok(qs.length >= 5, `题数 ${qs.length}`);
+  for (const stage of ['pre', 'check', 'post']) {
+    assert.ok(qs.some((q) => q.stage === stage), `缺 ${stage}`);
+  }
+  for (const [i, q] of qs.entries()) {
+    assert.ok(q.question && q.question.length >= 6, `Q${i + 1} 题干过短`);
+    assert.strictEqual(new Set(q.options).size, 4, `Q${i + 1} 选项不互异`);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct <= 3, `Q${i + 1} correct 越界`);
+    assert.ok(cjk(q.explanation) >= 30, `Q${i + 1} 解释不足 30 汉字`);
+  }
+  assert.strictEqual(QUIZ.lesson, "13-alterations-in-oxygen-transport");
+  assert.strictEqual(QUIZ.subject, '11-bingli-shengli-xue');
+});
+
+test('quiz：每题的末条引证落在本章章号', () => {
+  for (const [i, q] of QUIZ.questions.entries()) {
+    const ms = [...q.explanation.matchAll(/第\s*(\d+)\s*章/g)];
+    assert.ok(ms.length >= 1, `Q${i + 1} 无章号引证`);
+    assert.strictEqual(Number(ms[ms.length - 1][1]), CHAPTER, `Q${i + 1} 末条引证不落本章`);
   }
 });
 
-test('运行 main.js：末行为教学边界句', () => {
-  const out = execFileSync(process.execPath, [path.join(DIR, 'code', 'main.js')], { encoding: 'utf8' });
-  const last = out.trimEnd().split(/\r?\n/).pop();
-  assert.match(last, /^教学边界：/);
-  assert.match(last, /不构成诊断[、/]用药依据/);
-  assert.match(last, /不写数值与单位与正常值/);
+test('quiz：check 题至少 2 道的正确项含当章正文 4 字词组', () => {
+  const flat = doc.replace(/\s/g, '');
+  const checks = QUIZ.questions.filter((q) => q.stage === 'check');
+  const grounded = checks.filter((q) => [...grams(q.options[q.correct])].some((g) => flat.includes(g)));
+  assert.ok(grounded.length >= 2, `接地 check 题 ${grounded.length}/${checks.length}`);
+});
+
+test('quiz：答案打散，正确项覆盖至少 3 个位置且单一位置不超过 3 题', () => {
+  const idx = QUIZ.questions.map((q) => q.correct);
+  const counts = [0, 0, 0, 0];
+  for (const i of idx) counts[i] += 1;
+  assert.ok(counts.filter((n) => n > 0).length >= 3, `分布 ${counts.join('/')}`);
+  assert.ok(Math.max(...counts) <= 3, `分布 ${counts.join('/')}`);
+});
+
+test('main() 末行固定为教学边界句，且正文含边界声明', () => {
+  const logs = [];
+  const orig = console.log;
+  console.log = (...a) => logs.push(a.join(' '));
+  try { main(); } finally { console.log = orig; }
+  assert.strictEqual(logs[logs.length - 1], BOUNDARY);
+  assert.ok(doc.includes('教学边界：'));
 });

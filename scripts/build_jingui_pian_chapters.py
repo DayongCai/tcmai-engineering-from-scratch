@@ -564,7 +564,21 @@ def write(path: str, text: str) -> None:
         f.write(text)
 
 
+def _authored(dept: str, subject: str) -> bool:
+    """科目已登记为「正文已补实」时，本生成器让路：docs/code/quiz/outputs 均由人工稿与
+    build_chapter_outputs.js 拥有，不再生成也不再比对（否则 rebuild:all 会覆盖手写正文）。"""
+    p = os.path.join(ROOT, "data", "course-docs-rewritten.json")
+    if not os.path.exists(p):
+        return False
+    try:
+        data = json.load(io.open(p, encoding="utf-8"))
+        return any(r.get("dept") == dept and r.get("subject") == subject for r in data.get("rewritten", []))
+    except Exception:
+        return False
+
 def build_all(check: bool = False) -> list:
+    if _authored("01-zhongyi", "08-jingui-yaolue"):
+        return []
     changed = []
     for b in CHAPTERS:
         st = stats(b["pian"])

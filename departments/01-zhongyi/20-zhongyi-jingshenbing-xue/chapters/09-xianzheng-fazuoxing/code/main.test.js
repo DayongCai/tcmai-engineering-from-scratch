@@ -1,57 +1,85 @@
-#!/usr/bin/env node
-/**
- * 第 9 章 痫证与其他发作性精神障碍 —— 确定性单元测试
- * 运行: node --test code/main.test.js
- *
- * 断言只落在可对账的结构上：单元数与小节号、规模、三辨与四位面重心、引书数、数值计数。
- * 数字由 standards/jingshen/units.json 现算后写死在此，教材改版时测试会先响。
- */
-
 'use strict';
-
+/**
+ * 第 9 章 痫证与发作性障碍 —— 本章现算值与 quiz 结构的确定性断言。
+ * 数字由 docs/zh.md 现算后钉在这里：正文一改，测试先响，迫使写的人回头同步。
+ */
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
 
-const { CHAPTER, load, chapterUnits, merge, rank, shape, citations, bySection } = require('./main.js');
+const { stats, quizAudit, countCells, hanzi, DOC, QUIZ, CHAPTER, SLUG } = require('./main.js');
 
-const data = load();
-const list = chapterUnits(data);
+const s = stats();
+const q = quizAudit();
 
-test('本章单元数与小节号与教材一致', () => {
-  assert.strictEqual(list.length, 4);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['9.1.1', '9.1.2', '9.2.1', '9.2.2']);
+test('章节号与目录一致', () => {
+  assert.strictEqual(CHAPTER, 9);
+  assert.strictEqual(SLUG, '09-xianzheng-fazuoxing');
+  assert.ok(fs.existsSync(DOC), '正文文件不存在');
 });
 
-test('规模：10752 字 · 平均 2688 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 10752);
-  assert.strictEqual(s.mean, 2688);
+test('正文规模：汉字 / 节 / 段', () => {
+  assert.strictEqual(s.hanzi, 3052);
+  assert.strictEqual(s.sectionCount, 6);
+  assert.strictEqual(s.paragraphCount, 24);
+  assert.ok(s.hanzi >= 2500, '正文只有 ' + s.hanzi + ' 汉字');
 });
 
-test('三辨重心是「病因」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '病因');
-  assert.strictEqual(views[0].count, 320);
+test('表格与表行', () => {
+  assert.strictEqual(s.tableCount, 3);
+  assert.strictEqual(s.tableRows, 18);
+  for (const t of s.tables) assert.ok(t.cols >= 2, t.firstCell + ' 列数不足');
 });
 
-test('四位面重心是「神志意识」，且四层都有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['神志意识'], 44);
-  const touched = Object.values(levels).filter((n) => n > 0).length;
-  assert.ok(touched >= 3, `仅 ${touched} 层有落点`);
+test('鉴别表 5 行，发作记录 8 项，与正文「八项」一致', () => {
+  assert.strictEqual(s.tables[0].rows, 5);
+  assert.strictEqual(s.tables[0].cols, 2);
+  assert.strictEqual(countCells(s.tables[0].cells, 0, /^癔症性抽搐$/), 1);
+  const record = s.tables[1];
+  assert.strictEqual(record.rows, 8);
+  assert.strictEqual(record.cols, 3);
+  assert.strictEqual(countCells(record.cells, 1, /^起止时刻$/), 1);
+  assert.strictEqual(countCells(record.cells, 1, /^舌咬与二便$/), 1);
 });
 
-test('引书成规模：≥9 部、≥17 次引用', () => {
-  const c = citations(list);
-  assert.ok(c.books >= 9, `引书 ${c.books}`);
-  assert.ok(c.total >= 17, `引用 ${c.total}`);
+test('五证表 5 行，按「期」拆分：发作 3、休止 2', () => {
+  const zheng = s.tables[2];
+  assert.strictEqual(zheng.rows, 5);
+  assert.strictEqual(zheng.cols, 6);
+  const attack = countCells(zheng.cells, 0, /^发作$/);
+  const rest = countCells(zheng.cells, 0, /^休止$/);
+  assert.strictEqual(attack, 3);
+  assert.strictEqual(rest, 2);
+  assert.strictEqual(attack + rest, zheng.rows);
 });
 
-test('数值计数与单元层一致（本章 7 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 7);
+test('各节都非空，节标题不重复', () => {
+  assert.strictEqual(new Set(s.sections.map((x) => x.title)).size, s.sectionCount);
+  for (const sec of s.sections) assert.ok(sec.hanzi > 0, sec.title);
 });
 
-test('每节都有单元，且每单元都带 locator', () => {
-  for (const s of bySection(list)) assert.ok(s.units > 0, s.sec);
-  for (const u of list) assert.ok(u.locator.startsWith(`教材·第${CHAPTER}章·`), u.locator);
+test('汉字统计口径：章首 + 逐节 = 全文', () => {
+  assert.strictEqual(s.sections.reduce((a, x) => a + x.hanzi, 0) + s.preamble.hanzi, s.hanzi);
+  assert.strictEqual(hanzi(fs.readFileSync(DOC, 'utf8')), s.hanzi);
+});
+
+test('quiz 结构：三段齐、四选项、解释够长、答案合法', () => {
+  assert.ok(q.total >= 5, '只有 ' + q.total + ' 题');
+  for (const st of ['pre', 'check', 'post']) assert.ok(q.stage[st] >= 1, '缺 ' + st + ' 段');
+  assert.strictEqual(q.allFourOptions, true, '有题不是 4 个选项');
+  assert.strictEqual(q.badCorrect, 0, 'correct 下标非法');
+  assert.ok(q.minExplain >= 60, '最短解释只有 ' + q.minExplain + ' 汉字');
+});
+
+test('quiz 接地与打散：≥2 道 check 题的正确选项落在正文，答案 ≥3 个位置', () => {
+  assert.ok(q.checkGrounded >= 2, '只有 ' + q.checkGrounded + ' 道 check 题接地');
+  assert.ok(q.distinctAnswers >= 3, '答案只用了 ' + q.distinctAnswers + ' 个位置');
+});
+
+test('quiz 不含脚手架名目与禁用参数', () => {
+  const raw = fs.readFileSync(QUIZ, 'utf8');
+  assert.strictEqual(q.scaffold, false, 'quiz 仍含脚手架指纹');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '剂量', '疗程', '发生率', '页码']) {
+    assert.ok(!raw.includes(bad), 'quiz 仍含「' + bad + '」');
+  }
 });

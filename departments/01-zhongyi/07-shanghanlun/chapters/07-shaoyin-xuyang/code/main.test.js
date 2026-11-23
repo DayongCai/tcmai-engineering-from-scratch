@@ -70,3 +70,7 @@ test('急下三承气落在少阴篇：条 40–42', () => {
   const ids = SY.tiao.filter((t) => /急下之，宜大承气汤/.test(t.text)).map((t) => t.no);
   assert.deepStrictEqual(ids, [40, 41, 42]);
 });
+
+// ── quiz 结构契约（与 scripts/check_chapter_exercises.js 同源）──
+const { quizContract } = require('../../_quiz-contract.js');
+quizContract(__dirname);

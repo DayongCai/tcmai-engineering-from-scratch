@@ -1,134 +1,112 @@
 #!/usr/bin/env node
 /**
- * 第 11 章 发热 —— 确定性单元测试
+ * 第 11 章 发热 —— 确定性单测
  * 运行: node --test code/main.test.js
  *
- * 断言只落在可对账的结构上：规模、节分布、机制链四段、三个时相、三个类别、数值是否为 0。
- * 不锁死正文措辞，教材改写段落时测试不会变成噪声。
+ * 两件事：① 正文实测值（小节数/汉字数/表格/引文/单元号/每节字数）逐个钉住；
+ * ② 本章 quiz 的结构与接地——题数、分段、选项数、答案分布、解释长度、
+ *    以及「正确选项能在正文里找到原词」这条判据本身也要可测。
+ * 正文一改，这里的数就必须跟着改——这正是它的用处。
  */
 
 'use strict';
 
-const assert = require('node:assert');
 const test = require('node:test');
+const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const {
-  CHAIN,
-  PHASES,
-  CATEGORIES,
-  SIX,
-  load,
-  chapterUnits,
-  shape,
-  lens,
-  rank,
-  total,
-  share,
-  valueAudit,
-  chainCoverage,
-  phaseCoverage,
-  categoryCoverage,
-  sixElements,
-  bySection,
-} = require('./main');
+const { readDoc, shape, head, average, sections, tables, quotes, unitIds, figures } = require('./main');
 
-const units = load();
-const list = chapterUnits(units);
+const md = readDoc();
+const s = shape(md);
+const a = average(s);
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
 
-test('本章 12 个知识单元，分属 4 节，正文合计 20436 字', () => {
-  const s = shape(list);
+const hz = (t) => (String(t || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const shingles = (t, n = 4) => {
+  const out = new Set();
+  const clean = String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+};
+
+test('首行是「第 11 章 · 判断句」，章号与本章一致', () => {
+  const h = head(md);
+  assert.strictEqual(h.n, 11);
+  assert.ok(h.title.length >= 8, '判断句太短：' + h.title);
+});
+
+test('正文实测：8 个二级小节 · 11168 汉字 · 5 张表 · 24 行数据', () => {
+  assert.strictEqual(s.secs, 8);
+  assert.strictEqual(s.hanzi, 11168);
+  assert.strictEqual(s.tables, 5);
+  assert.strictEqual(s.rows, 24);
+});
+
+test('出证与单元：引文行 22 条 · 单元号 12 个 · 图注 4 条', () => {
+  assert.strictEqual(s.quotes, 22);
   assert.strictEqual(s.units, 12);
-  assert.strictEqual(s.secs, 4);
-  assert.strictEqual(s.hanzi, 20436);
-  assert.deepStrictEqual(list.map((u) => u.sub), [
-    '11.1.1', '11.1.2', '11.1.3',
-    '11.2.1', '11.2.2', '11.2.3',
-    '11.3.1', '11.3.2', '11.3.3',
-    '11.4.1', '11.4.2', '11.4.3',
+  assert.strictEqual(s.figures, 4);
+  assert.strictEqual(unitIds(md).length, 12, '一章应有 12 个单元号');
+});
+
+test('各节汉字之和等于正文汉字数（差一个字就不通过）', () => {
+  assert.strictEqual(s.lead + s.perSection.reduce((x, y) => x + y, 0), s.hanzi);
+  assert.ok(s.lead > 0, '题记部分不该为空');
+  assert.strictEqual(sections(md).length, s.secs);
+});
+
+test('每节字数与最长节：均值 1396 字，最长「十二个小节：逐条落位」3447 字', () => {
+  assert.strictEqual(a.perSection, 1396);
+  assert.strictEqual(a.perUnit, 931);
+  assert.strictEqual(a.largest.hanzi, 3447);
+  assert.deepStrictEqual(s.perSection, [
+    1122, 646, 875, 408, 213, 1938, 3447, 1970
   ]);
 });
 
-test('三视角以机制为主轴（七成半），形态次之，病因近于零', () => {
-  const { views } = lens(list);
-  assert.strictEqual(total(views), 348);
-  assert.strictEqual(views.机制, 263);
-  assert.strictEqual(views.形态, 80);
-  assert.strictEqual(views.病因, 5);
-  assert.strictEqual(rank(views)[0][0], '机制');
-  assert.ok(share(views, '机制') > 0.75);
+test('小节标题去重且都不是空串', () => {
+  const titles = s.sectionTitles;
+  assert.strictEqual(new Set(titles).size, titles.length);
+  for (const t of titles) assert.ok(t.length >= 4, '标题过短：' + t);
 });
 
-test('四层级落在系统层，组织层最低（发热不在组织学层面展开）', () => {
-  const { levels } = lens(list);
-  assert.strictEqual(total(levels), 177);
-  assert.strictEqual(levels.系统, 104);
-  assert.strictEqual(levels.细胞, 36);
-  assert.strictEqual(levels.器官, 29);
-  assert.strictEqual(levels.组织, 8);
-  assert.strictEqual(rank(levels)[0][0], '系统');
-  assert.strictEqual(rank(levels)[3][0], '组织');
-  assert.ok(share(levels, '系统') > 0.55);
-});
-
-test('数值核验：12 个单元的 valueLike 全为 0，没有一处「数字＋计量单位」', () => {
-  const audit = valueAudit(list);
-  assert.strictEqual(audit.units, 12);
-  assert.strictEqual(audit.hits, 0);
-  assert.deepStrictEqual(audit.offenders, []);
-  for (const u of list) assert.strictEqual(u.measure.valueLike, 0, `${u.sub} 出现数值`);
-});
-
-test('机制链四段齐全：激活物 → 内生致热原 → 中枢介质 → 调定点，一段都不能跳', () => {
-  assert.deepStrictEqual(CHAIN.map((c) => c.key), ['发热激活物', '内生致热原', '中枢介质', '调定点']);
-  const cov = chainCoverage(list);
-  assert.strictEqual(cov.length, 4);
-  for (const c of cov) assert.ok(c.units.length > 0, `${c.key} 在正文里没有落点`);
-  // 效应段（调定点）应比启动段覆盖更广：它是全章的枢纽
-  const byKey = Object.fromEntries(cov.map((c) => [c.key, c.units.length]));
-  assert.strictEqual(byKey.调定点, 9);
-  assert.ok(byKey.调定点 > byKey.发热激活物);
-});
-
-test('三个时相的方向互补：差为正 / 差近零 / 差为负，且三段方向互不相同', () => {
-  assert.deepStrictEqual(PHASES.map((p) => p.name), ['体温上升期', '高温持续期', '体温下降期']);
-  const cov = phaseCoverage(list);
-  assert.strictEqual(cov.length, 3);
-  for (const p of cov) assert.ok(p.units.length > 0, `${p.name} 在正文里没有落点`);
-  assert.strictEqual(new Set(PHASES.map((p) => p.gap)).size, 3);
-  assert.strictEqual(new Set(PHASES.map((p) => p.flux)).size, 3);
-  // 上升期与下降期的方向相反：一个产热占优，一个散热占优
-  assert.match(PHASES[0].flux, /产热相对增加/);
-  assert.match(PHASES[2].flux, /散热相对增加/);
-});
-
-test('三个「体温高」的类别都在正文出现，判据是调定点有没有上移', () => {
-  assert.deepStrictEqual(CATEGORIES.map((c) => c.name), ['发热', '过热', '生理性体温升高']);
-  const cov = categoryCoverage(list);
-  for (const c of cov) assert.ok(c.units.length > 0, `${c.name} 在正文里没有落点`);
-  assert.strictEqual(new Set(CATEGORIES.map((c) => c.setpoint)).size, 3);
-});
-
-test('六要素写进正文的单元只有四处，且集中在 11.1.2 与 11.4', () => {
-  assert.deepStrictEqual(SIX, ['观察', '描述', '记录', '分析', '报告', '复核']);
-  assert.deepStrictEqual(sixElements(list), ['11.1.2', '11.4.1', '11.4.2', '11.4.3']);
-});
-
-test('四节各 3 个单元，每节汉字数都在 5000 以上（教材按节均分，没有薄节）', () => {
-  const secs = bySection(list);
-  assert.strictEqual(secs.size, 4);
-  for (const [sec, g] of secs) {
-    assert.strictEqual(g.units, 3, `${sec} 单元数`);
-    assert.ok(g.hanzi > 5000, `${sec} 只有 ${g.hanzi} 字`);
+test('quiz：6 题，分段为 pre/check×3/post×2，每题 4 选项', () => {
+  assert.strictEqual(quiz.questions.length, 6);
+  assert.strictEqual(quiz.questions.map((q) => q.stage).join(','), 'pre,check,check,check,post,post');
+  for (const q of quiz.questions) {
+    assert.strictEqual(q.options.length, 4);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4);
+    assert.strictEqual(new Set(q.options).size, 4, '选项不许重复：' + q.question);
   }
 });
 
-test('每单元 brief 都带「不写数值与单位与参考值」的口径句', () => {
-  for (const u of list) assert.match(u.brief, /不写数值与单位与参考值/, `${u.sub} brief 缺口径`);
+test('quiz：答案打散（正确项覆盖 3 个以上位置），解释够长', () => {
+  const pos = new Set(quiz.questions.map((q) => q.correct));
+  assert.ok(pos.size >= 3, '正确项位置太集中：' + [...pos].join(','));
+  for (const q of quiz.questions) {
+    assert.ok(hz(q.explain) >= 30, '解释不足 30 汉字：' + q.question);
+    assert.ok(String(q.explain).length >= 10);
+    assert.ok(!/见\s*code\/main\.js\s*输出/.test(q.explain));
+  }
 });
 
-test('学习目标是章级的：只落在 11.1.1，共 7 条，其余 11 个单元没有 goals', () => {
-  const withGoals = list.filter((u) => u.goals.length > 0);
-  assert.deepStrictEqual(withGoals.map((u) => u.sub), ['11.1.1']);
-  assert.strictEqual(withGoals[0].goals.length, 7);
-  assert.strictEqual(list.reduce((n, u) => n + u.goals.length, 0), 7);
+test('quiz：至少 2 道 check 题的正确选项能在正文里找到 4 字原词', () => {
+  const body = shingles(md);
+  let grounded = 0;
+  for (const q of quiz.questions) {
+    if (q.stage !== 'check') continue;
+    const right = q.options[q.correct];
+    if ([...shingles(right)].some((g) => body.has(g))) grounded += 1;
+  }
+  assert.ok(grounded >= 2, '只有 ' + grounded + ' 道 check 题接地');
+});
+
+test('quiz 与代码都不含脚手架与判定性字样', () => {
+  const banned = [/三辨/, /四位面/, /单元规模/, /本章实测/, /本课第\s*\d+\s*章[（(]/];
+  const blob = JSON.stringify(quiz) + md;
+  for (const re of banned) assert.ok(!re.test(blob), '命中 ' + re);
 });

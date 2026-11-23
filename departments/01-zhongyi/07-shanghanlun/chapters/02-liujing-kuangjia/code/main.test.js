@@ -42,3 +42,7 @@ test('少阴在库里连「篇名」都只以目录行出现（篇 12）', () =>
   assert.ok(p12.includes('辨少阴病脉证并治'), '目录行应含少阴篇名');
   assert.strictEqual(ITEMS.filter((i) => i.pian === 12 && i.text.includes('少阴之为病')).length, 0);
 });
+
+// ── quiz 结构契约（与 scripts/check_chapter_exercises.js 同源）──
+const { quizContract } = require('../../_quiz-contract.js');
+quizContract(__dirname);

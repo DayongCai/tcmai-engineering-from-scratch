@@ -1,162 +1,195 @@
-'use strict';
+#!/usr/bin/env node
 /**
- * 第 8 章 单测（教材·第15章 理气剂 + 教材·第16章 理血剂）
- * 期望值钉死在断言里；main.js 里的统计全部现算。
+ * 第 8 章 理气剂与理血剂：气为血帅，血为气母 —— 正文统计与习题契约的确定性单元测试
+ * 运行: node --test code/main.test.js
+ *
+ * 断言只落在可对账的结构上：本章正文的汉字数、二/三级节数、每张表的行列与数字列合计、
+ * 引文条数与教材定位，以及 quiz 的题量、三段、四选项、解释长度、答案分布与正文接地。
+ * 期望值是 docs/zh.md 的实测读数（main.js 现算，测试钉住）；正文一改，这里立刻报警。
  */
+
+'use strict';
+
 const assert = require('node:assert');
 const test = require('node:test');
 const fs = require('node:fs');
 const path = require('node:path');
-const { execFileSync } = require('node:child_process');
+const { spawnSync } = require('node:child_process');
 
-const {
-  base, CHS, han, fold, nodeOf, chapterOf, parasOf,
-  roster, scale, structure, herbs, tracing, roles, roleAudit, cite, anchor, verify,
-} = require('./main.js');
+const { CHAPTER, TITLE, DOC, analyze, selfCheck } = require('./main.js');
 
-const DOCS = path.join(__dirname, '..', 'docs', 'zh.md');
-const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const A = analyze();
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const BODY = fs.readFileSync(DOC, 'utf8');
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
 
-test('规模：两章 34,084 字 = 14,870 + 19,214，占全书 9.50%', () => {
-  const s = scale();
-  assert.deepStrictEqual(CHS, ['15', '16']);
-  assert.strictEqual(chapterOf('15').counts.hanzi, 14870);
-  assert.strictEqual(chapterOf('16').counts.hanzi, 19214);
-  assert.strictEqual(s.hanzi, 34084);
-  assert.ok(Math.abs(s.share - 34084 / 358800) < 1e-12);
-  assert.ok(s.share > 0.094 && s.share < 0.096);
-  assert.strictEqual(s.secs, 4);
-  assert.strictEqual(s.subs, 16);
-  assert.strictEqual(s.paras, 96);
-  assert.strictEqual(s.formulas, 16);
-  assert.strictEqual(s.perFormula, 2130);
-  assert.strictEqual(s.gap, 4344);
+/** 正文里 4 字以上的连续汉字片段，用来判「选项是否接地」 */
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  return out;
+}
+const bodyGrams = shingles(BODY);
+
+const EXPECT = {
+  "hanzi": 3102,
+  "paragraphs": 23,
+  "h2": 6,
+  "h3": 4,
+  "tables": [
+    [
+      7,
+      3
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      3,
+      10
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      2,
+      7
+    ]
+  ],
+  "sums": [
+    [
+      1,
+      "节",
+      4
+    ],
+    [
+      1,
+      "小节",
+      16
+    ],
+    [
+      1,
+      "段",
+      96
+    ],
+    [
+      1,
+      "字",
+      34084
+    ],
+    [
+      1,
+      "方",
+      16
+    ],
+    [
+      2,
+      "方",
+      16
+    ],
+    [
+      2,
+      "段",
+      96
+    ],
+    [
+      2,
+      "字",
+      34084
+    ],
+    [
+      3,
+      "次数",
+      47
+    ]
+  ],
+  "quotes": 55,
+  "anchored": 7,
+  "chapters": [
+    15,
+    16
+  ],
+  "books": [
+    "素问·至真要大论"
+  ]
+};
+
+test('规模：正文汉字、正文段、二三级节（实测值）', () => {
+  assert.strictEqual(CHAPTER, 8);
+  assert.match(A.h1, new RegExp(`^第 ${8} 章 · `));
+  assert.strictEqual(A.hanzi, EXPECT.hanzi);
+  assert.strictEqual(A.paragraphs, EXPECT.paragraphs);
+  assert.strictEqual(A.h2.length, EXPECT.h2);
+  assert.strictEqual(A.h3.length, EXPECT.h3);
+  assert.ok(A.h2.length >= 4 && A.h2.length <= 8, `二级节 ${A.h2.length} 不在 4–8`);
+  assert.ok(A.h2.some((t) => /代价与边界/.test(t)), '缺「代价与边界」');
 });
 
-test('结构：四节字数 8,513/6,357/12,483/6,731，十六方全六段', () => {
-  const st = structure();
-  assert.strictEqual(st.rows.length, 4);
-  assert.strictEqual(st.sixParts, true);
-  assert.deepStrictEqual(st.partsPerFormula, Array(16).fill(6));
-  assert.deepStrictEqual(st.rows.map((r) => r.chars), [8513, 6357, 12483, 6731]);
-  assert.deepStrictEqual(st.rows.map((r) => r.paras), [24, 18, 36, 18]);
-  assert.deepStrictEqual(st.rows.map((r) => r.formulas), [4, 3, 6, 3]);
-  assert.strictEqual(st.rows.reduce((n, r) => n + r.chars, 0), 34084);
-  for (const r of st.rows) assert.strictEqual(r.paras, r.formulas * 6);
+test('表格尺寸（列 × 行）与实测值一致', () => {
+  assert.deepStrictEqual(A.tables.map((t) => [t.cols, t.rows]), EXPECT.tables);
 });
 
-test('十六首方：理气 7 + 理血 9，locator 落到 N.M.K', () => {
-  const rs = roster();
-  assert.strictEqual(rs.length, 16);
-  assert.deepStrictEqual(rs.map((r) => r.name).slice(0, 3), ['越鞠丸', '半夏厚朴汤', '枳实薤白桂枝汤']);
-  assert.ok(rs.map((r) => r.name).includes('血府逐瘀汤'));
-  assert.ok(rs.map((r) => r.name).includes('黄土汤'));
-  assert.strictEqual(rs.filter((r) => r.chapter === '15').length, 7);
-  assert.strictEqual(rs.filter((r) => r.chapter === '16').length, 9);
-  for (const r of rs) {
-    assert.strictEqual(r.locator, cite(r.sub));
-    assert.ok(/^教材·第1[56]章·1[56]\.\d\.\d$/.test(r.locator), r.locator);
-    assert.ok(nodeOf(r.sub), `${r.name} 的 ${r.sub} 在教材里找不到`);
+test('计数列合计与正文表内数字一致（实测值）', () => {
+  const sums = [];
+  for (const t of A.tables) for (const c of t.numeric) sums.push([t.idx, c.name, c.sum]);
+  assert.deepStrictEqual(sums, EXPECT.sums);
+  for (const t of A.tables) for (const c of t.numeric) {
+    if (c.ok === false) assert.fail(`表 ${t.idx}「${c.name}」数据行合计 ${c.sum} ≠ 合计行 ${c.declared}`);
   }
 });
 
-test('药：122 药位 / 72 味 / 方均 7.6，甘草 9 方居首', () => {
-  const h = herbs();
-  assert.strictEqual(h.slots, 122);
-  assert.strictEqual(h.unique, 72);
-  assert.strictEqual(h.avg, 7.6);
-  assert.deepStrictEqual(h.top.slice(0, 3), [['甘草', 9], ['当归', 6], ['半夏', 5]]);
-  assert.strictEqual(h.staples.length, 10);
-  assert.strictEqual(h.cross.length, 10);
-  assert.ok(h.cross.includes('川芎') && h.cross.includes('当归') && h.cross.includes('甘草'));
-  assert.deepStrictEqual(h.perChapter, [{ no: '15', slots: 50 }, { no: '16', slots: 72 }]);
+test('引文与教材定位（实测值）', () => {
+  assert.strictEqual(A.quotes, EXPECT.quotes);
+  assert.strictEqual(A.anchored, EXPECT.anchored);
+  assert.deepStrictEqual(A.chapters, EXPECT.chapters);
+  assert.deepStrictEqual(A.books, EXPECT.books);
+  assert.ok(A.anchored >= 2, `挂教材出处的引文只有 ${A.anchored} 条`);
 });
 
-test('抽取：118/122 可逐字回查（96.7%），四处失配', () => {
-  const t = tracing();
-  assert.strictEqual(t.slots, 122);
-  assert.strictEqual(t.traced, 118);
-  assert.ok(Math.abs(t.rate - 118 / 122) < 1e-12);
-  assert.deepStrictEqual(t.stray.map((x) => x.name), ['越鞠丸', '天台乌药散', '十灰散', '黄土汤']);
-  const by = Object.fromEntries(t.stray.map((x) => [x.name, x.items]));
-  assert.deepStrictEqual(by['越鞠丸'], ['即现行教材所载']);
-  assert.deepStrictEqual(by['天台乌药散'], ['巴豆七十粒']);
-  assert.deepStrictEqual(by['十灰散'], ['茜根']);
-  assert.deepStrictEqual(by['黄土汤'], ['生地黄']);
+test('正文自检通过，MOTTO 是《书名·篇名》', () => {
+  assert.strictEqual(selfCheck(A), true);
+  assert.ok(A.books.length === 1 && /·/.test(A.books[0]), `MOTTO 书证不是《书名·篇名》：${A.books.join('/')}`);
 });
 
-test('君臣佐使：有君 16/16、四角色齐仅温经汤、无重复判定', () => {
-  const r = roles();
-  assert.strictEqual(r.total, 16);
-  assert.strictEqual(r.withJun, 16);
-  assert.strictEqual(r.full, 1);
-  assert.deepStrictEqual(r.fullNames, ['温经汤']);
-  assert.strictEqual(r.three, 9);
-  assert.deepStrictEqual(r.missingJun, []);
-  assert.deepStrictEqual(roleAudit().dup, []);
-});
-
-test('七条引文逐字落在所标小节，错标即失败', () => {
-  const Q = [
-    ['15.1.1', '气、血、湿、火、食、痰六者可单独为病'],
-    ['15.1.2', '咽中如有炙脔'],
-    ['15.2.3', '心下痞硬，噫气不除者，旋覆代赭汤主之'],
-    ['16.1.2', '治胸中血瘀之代表方'],
-    ['16.1.3', '中风之气虚血瘀证'],
-    ['16.2.3', '脾阳不足、脾不统血证'],
-    ['16.2.3', '大便下血，先便后血'],
-  ];
-  for (const [no, q] of Q) {
-    assert.strictEqual(verify(q, no), true, `${no} 找不到「${q}」`);
+test('quiz 结构：6 题、三段齐、4 选项、explain ≥30 汉字、答案打散', () => {
+  const qs = QUIZ.questions;
+  assert.ok(qs.length >= 5, `只有 ${qs.length} 题`);
+  const stages = new Set(qs.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s);
+  for (const q of qs) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    assert.ok((String(q.explain).match(HANZI) || []).length >= 30, q.question);
+    assert.ok((String(q.explanation).match(HANZI) || []).length >= 30, q.question);
+    assert.strictEqual(new Set(q.options).size, 4, q.question);
   }
-  assert.strictEqual(verify('中风之气虚血瘀证', '16.2.3'), false);
-  assert.strictEqual(verify('咽中如有炙脔', '15.2.3'), false);
-  assert.ok(anchor('16.2.3', '先便后血').sentence.includes('先便后血'));
-  assert.ok(fold(anchor('15.2.3', '旋覆代赭汤主之').sentence).includes(fold('心下痞硬，噫气不除者，旋覆代赭汤主之')));
+  assert.ok(new Set(qs.map((q) => q.correct)).size >= 3, '答案过于集中');
+  assert.deepStrictEqual(qs.map((q) => q.stage), ['pre', 'check', 'check', 'check', 'post', 'post']);
 });
 
-test('docs：七段俱全、出现 34,084、引文可回查', () => {
-  const doc = fs.readFileSync(DOCS, 'utf8');
-  for (const head of ['MOTTO', 'PROBLEM', '双根因定位', '代价与边界', '运行与验证', '免责']) {
-    assert.ok(doc.includes(head), `docs 缺 ${head}`);
-  }
-  assert.ok(doc.replace(/,/g, '').includes('34084'));
-  assert.ok(!doc.includes('底本'));
-  assert.ok(!doc.includes('原文'));
-  assert.ok(han(doc) >= 2500, `docs 汉字 ${han(doc)} < 2500`);
-
-  let checked = 0;
-  for (const line of doc.split('\n')) {
-    if (!/教材·第\d+章/.test(line)) continue;
-    for (const m of line.matchAll(/「([^」]{6,})」/g)) {
-      checked += 1;
-      const node = (line.match(/教材·第\d+章·([\d.]+)/) || [])[1];
-      assert.ok(node, `引文「${m[1]}」所在行没有小节号`);
-      assert.strictEqual(verify(m[1], node), true, `「${m[1]}」在 ${node} 找不到`);
-    }
-  }
-  assert.ok(checked >= 2, `标了出处的引文只有 ${checked} 条`);
+test('quiz 接地：≥2 道 check 题的正确选项能在正文找到 4 字原词', () => {
+  const grounded = QUIZ.questions.filter((q) => {
+    if (q.stage !== 'check') return false;
+    const grams = shingles(String(q.options[q.correct]));
+    return [...grams].some((g) => bodyGrams.has(g));
+  });
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道接地`);
 });
 
-test('quiz 契约：6 题 pre/check×3/post×2，选项 4 个、correct 0–3', () => {
-  const qs = JSON.parse(fs.readFileSync(QUIZ, 'utf8')).questions;
-  assert.strictEqual(qs.length, 6);
-  assert.deepStrictEqual(qs.map((x) => x.stage), ['pre', 'check', 'check', 'check', 'post', 'post']);
-  for (const x of qs) {
-    assert.strictEqual(x.options.length, 4);
-    assert.strictEqual(new Set(x.options).size, 4);
-    assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct <= 3);
-    assert.ok((x.explanation || '').length >= 10);
-  }
-  assert.ok(new Set(qs.map((x) => x.correct)).size >= 3);
+test('quiz 与代码都不含旧脚手架指纹', () => {
+  const bad = /三辨|四位面|单元规模|本章实测|本课第\s*\d+\s*章[（(]|见\s*code\/main\.js\s*输出/;
+  assert.ok(!bad.test(JSON.stringify(QUIZ)));
+  assert.ok(!bad.test(fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8')));
 });
 
-test('运行时最后一行是教学边界声明', () => {
-  const out = execFileSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8' });
-  const last = out.trim().split(/\r?\n/).filter(Boolean).pop();
-  assert.ok(last.startsWith('教学边界：'), last);
-  assert.ok(last.endsWith('不构成诊断/用药依据'), last);
-  assert.ok(/教材·第15章/.test(out) && /教材·第16章/.test(out));
-  assert.strictEqual(parasOf(chapterOf('16').secs[0]).length, 36);
-  assert.strictEqual(base.counts.chapters, 24);
+test('脚本可运行，退出码 0，最后一行是教学边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, r.stderr);
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
+  const last = out.trim().split('\n').filter(Boolean).pop();
+  assert.ok(/教学边界/.test(last) && /不构成/.test(last), `最后一行不是教学边界：${last}`);
 });

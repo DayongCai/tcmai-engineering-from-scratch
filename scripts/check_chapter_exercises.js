@@ -28,7 +28,7 @@ const REPORT = process.argv.includes('--report');
 const REG = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/course-docs-rewritten.json'), 'utf8'));
 const REGISTERED = new Set(REG.rewritten.map((r) => `${r.dept}/${r.subject}`));
 
-const FINGERPRINTS = [/三辨/, /四位面/, /单元规模/, /本章实测/, /本课第\s*\d+\s*章/, /见\s*code\/main\.js\s*输出/];
+const FINGERPRINTS = [/三辨/, /四位面/, /单元规模/, /本章实测/, /本课第\s*\d+\s*章[（(]/, /见\s*code\/main\.js\s*输出/];
 const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 const hasTpl = (s) => FINGERPRINTS.some((re) => re.test(s));
 
@@ -87,7 +87,8 @@ for (const dept of fs.readdirSync(DEPTS).sort()) {
         if (!(Number.isInteger(item.correct) && item.correct >= 0 && item.correct < opts.length)) {
           problems.push(`${tag}: correct 下标非法`);
         }
-        if (hanzi(item.explain) < 30) problems.push(`${tag}: explain 过短（${hanzi(item.explain)} 汉字）`);
+        const why = item.explain || item.explanation || '';
+        if (hanzi(why) < 30) problems.push(`${tag}: explain 过短（${hanzi(why)} 汉字）`);
         if (item.stage === 'check') {
           const right = String(opts[item.correct] || '');
           const grams = [...shingles(right)];

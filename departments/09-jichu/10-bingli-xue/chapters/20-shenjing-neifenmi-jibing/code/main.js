@@ -1,14 +1,12 @@
 #!/usr/bin/env node
 /**
- * 病理学 · 第20章 常见神经及内分泌系统疾病：从病变部位到类别归属
- * 课程: departments/09-jichu/10-bingli-xue/chapters/20-shenjing-neifenmi-jibing/docs/zh.md
- * 出处: 教材·第20章（20.1–20.4，12 个知识单元）
- * 数据: standards/bingli/units.json（252 单元的机器可读层）
+ * 病理学 —— 把本章正文当数据读
+ * 正文: docs/zh.md（唯一数据源）
  * 依赖: 仅 Node.js 标准库
  *
- * 为什么全部现算：本章的写法特征是一个词——「类别」。它出现的密度决定了这一章
- * 到底是「按部位讲病变」还是「按类别做归纳」。这个判断不能靠读感，得数出来；
- * 而且教材改版后要能立刻发现密度变了。
+ * 形态学这一课的可核对之处，都在正文自己身上：几节、几张表、几行引文、
+ * 十二个单元的编号是否写齐、每节摊到多少字。这些数一旦手打就会过期，
+ * 所以这里一处常量都不写——正文改一个字，输出就跟着改。
  */
 
 'use strict';
@@ -16,201 +14,128 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'bingli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CJK = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const H2 = /^##\s+(.+?)\s*$/;
+const TABLE_SEP = /^\|\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)*\|?\s*$/;
+const LOCATOR = /教材·第\s*\d+\s*章·\d+\.\d+\.\d+/;
+const UNIT = /\b\d{1,2}\.\d\.\d\b/g;
+
+function readDoc() {
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+/** CJK 汉字数：不含标点、数字与拉丁字母 */
+function hanzi(text) {
+  return (String(text).match(CJK) || []).length;
+}
+
+/** 首行 H1：第 N 章 · 判断句 */
+function head(md) {
+  const h1 = (md.match(/^#\s+(.+)$/m) || [, ''])[1].trim();
+  const m = h1.match(/^第\s*(\d+)\s*章\s*[·・:：]\s*(.+)$/);
+  return m ? { n: Number(m[1]), title: m[2].trim() } : { n: null, title: h1 };
+}
+
+/** 首个二级节之前的部分（题记与问题）：与各节汉字数分开算 */
+function lead(md) {
+  const at = md.search(/^## /m);
+  return hanzi(at < 0 ? md : md.slice(0, at));
+}
+
+/** 二级小节：标题 + 各节汉字数（lead 加各节之和 = 全文汉字数） */
+function sections(md) {
+  const lines = md.split('\n');
+  const out = [];
+  let cur = null;
+  for (const line of lines) {
+    const m = line.match(H2);
+    if (m) {
+      if (cur) out.push(cur);
+      cur = { title: m[1].trim(), hanzi: hanzi(m[1]) };
+      continue;
+    }
+    if (cur) cur.hanzi += hanzi(line);
   }
-  throw new Error('没找到 standards/bingli/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'bingli', 'units.json');
-const CHAPTER = '20';
-
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en'));
-}
-
-function shape(list) {
-  const secs = [...new Set(list.map((u) => u.sec))];
-  return {
-    secs: secs.length,
-    units: list.length,
-    hanzi: list.reduce((n, u) => n + u.hanzi, 0),
-  };
-}
-
-function lens(list) {
-  const views = { 病因: 0, 机制: 0, 形态: 0 };
-  const levels = { 细胞: 0, 组织: 0, 器官: 0, 系统: 0 };
-  for (const u of list) {
-    for (const k of Object.keys(views)) views[k] += u.measure.views[k] || 0;
-    for (const k of Object.keys(levels)) levels[k] += u.measure.levels[k] || 0;
-  }
-  return { views, levels };
-}
-
-const rank = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]);
-const total = (o) => Object.values(o).reduce((a, b) => a + b, 0);
-const share = (o, k) => (total(o) ? o[k] / total(o) : 0);
-
-function valueAudit(list) {
-  const hits = list.reduce((n, u) => n + (u.measure.valueLike || 0), 0);
-  return {
-    units: list.length,
-    hits,
-    offenders: list.filter((u) => (u.measure.valueLike || 0) > 0).map((u) => u.sub),
-  };
-}
-
-const SIX = ['观察', '描述', '记录', '分析', '报告', '复核'];
-
-function sixElementUnits(list) {
-  return list.filter((u) => SIX.every((k) => (u.body || '').includes(k))).map((u) => u.sub);
-}
-
-const countWord = (text, w) => (text.match(new RegExp(w, 'g')) || []).length;
-
-/** 「类别」密度：本章的写法指纹。按节统计，看教材把归纳放在哪一节 */
-function categoryDensity(list) {
-  return [...new Set(list.map((u) => u.sec))].sort().map((sec) => {
-    const us = list.filter((u) => u.sec === sec);
-    const text = us.map((u) => u.body || '').join('');
-    const hanzi = us.reduce((n, u) => n + u.hanzi, 0);
-    const hits = countWord(text, '类别');
-    return { sec, units: us.length, hanzi, hits, perK: hanzi ? (hits / hanzi) * 1000 : 0 };
-  });
-}
-
-/** 常见并发症的五个类别，在本章正文里各被写到几次 */
-const COMPLICATIONS = ['脑水肿', '颅内压升高', '脑疝', '脑积水', '脑膜刺激'];
-
-function complicationCoverage(list) {
-  const text = list.map((u) => u.body || '').join('');
-  return COMPLICATIONS.map((k) => ({ name: k, hits: countWord(text, k) }));
-}
-
-/** 化脓性与病毒性：教材用同一组维度（部位/渗出物/镜下）对照，而不是两种病各讲一遍 */
-function encephalitis(list) {
-  const text = list.map((u) => u.body || '').join('');
-  return {
-    化脓性: countWord(text, '化脓性'),
-    病毒性: countWord(text, '病毒性'),
-    血管套: countWord(text, '血管套'),
-    噬神经细胞现象: countWord(text, '噬神经细胞现象'),
-    胶质结节: countWord(text, '胶质结节'),
-    包涵体: countWord(text, '包涵体'),
-  };
-}
-
-/** 内分泌两节的关键词：糖尿病与甲状腺肿各自被摊成几个单元 */
-function endocrine(list) {
-  const text = list.map((u) => u.body || '').join('');
-  return {
-    糖尿病: countWord(text, '糖尿病'),
-    甲状腺肿: countWord(text, '甲状腺肿'),
-    滤泡: countWord(text, '滤泡'),
-    胰岛: countWord(text, '胰岛'),
-    代谢: countWord(text, '代谢'),
-  };
-}
-
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    if (!out.has(u.sec)) out.set(u.sec, { units: 0, hanzi: 0, subs: [] });
-    const g = out.get(u.sec);
-    g.units += 1;
-    g.hanzi += u.hanzi;
-    g.subs.push(u.sub);
-  }
+  if (cur) out.push(cur);
   return out;
 }
 
+/** 表格：分隔行前面是表头，分隔行之后是数据行 */
+function tables(md) {
+  const lines = md.split('\n');
+  let count = 0;
+  let rows = 0;
+  for (let i = 0; i < lines.length - 1; i += 1) {
+    if (!/^\|/.test(lines[i].trim()) || !TABLE_SEP.test(lines[i + 1].trim())) continue;
+    count += 1;
+    for (let k = i + 2; k < lines.length; k += 1) {
+      const l = lines[k].trim();
+      if (!l.startsWith('|')) break;
+      if (l.replace(/[|\-\s:]/g, '').length) rows += 1;
+    }
+  }
+  return { tables: count, rows };
+}
+
+/** 引文行：带「教材·第N章·N.M.K」出处的行数 */
+function quotes(md) {
+  return md.split('\n').filter((l) => LOCATOR.test(l)).length;
+}
+
+/** 单元编号：正文里出现的 N.M.K 去重后排序 */
+function unitIds(md) {
+  return [...new Set(String(md).match(UNIT) || [])].sort();
+}
+
+/** 图注条目 */
+function figures(md) {
+  return (md.match(/^\*\*图\s*\d+-\d+/gm) || []).length;
+}
+
+function shape(md) {
+  const secs = sections(md);
+  const t = tables(md);
+  return {
+    hanzi: hanzi(md),
+    lead: lead(md),
+    secs: secs.length,
+    perSection: secs.map((s) => s.hanzi),
+    sectionTitles: secs.map((s) => s.title),
+    tables: t.tables,
+    rows: t.rows,
+    quotes: quotes(md),
+    units: unitIds(md).length,
+    figures: figures(md),
+  };
+}
+
+/** 本章算术：每节均值、每单元均值、最长的一节 */
+function average(shapeValue, unitCount = 12) {
+  const s = shapeValue;
+  const perSection = Math.round(s.hanzi / s.secs);
+  const perUnit = Math.round(s.hanzi / unitCount);
+  let largest = { title: '', hanzi: -1 };
+  s.sectionTitles.forEach((title, i) => {
+    if (s.perSection[i] > largest.hanzi) largest = { title, hanzi: s.perSection[i] };
+  });
+  return { perSection, perUnit, largest };
+}
+
 function main() {
-  const units = load();
-  const list = chapterUnits(units);
-  const s = shape(list);
-  const { views, levels } = lens(list);
-  const audit = valueAudit(list);
-  const six = sixElementUnits(list);
-  const cats = categoryDensity(list);
-  const comp = complicationCoverage(list);
-  const enc = encephalitis(list);
-  const endo = endocrine(list);
-  const secs = bySection(list);
-  const categoryTotal = cats.reduce((n, c) => n + c.hits, 0);
-
-  console.log('═══ 常见神经及内分泌系统疾病：从病变部位到类别归属（病理学 第20章）═══');
-  console.log(`教材规模: 第${CHAPTER}章 ${s.hanzi} 字 · ${s.secs} 节 · ${s.units} 单元 · 平均每单元 ${Math.round(s.hanzi / s.units)} 字`);
-  console.log(`口径核验: 本章 ${audit.units} 单元的数值型命中 ${audit.hits} 处（底本 valueLike = 0，这里复算而不是照抄声明）`);
-  console.log('');
-
-  console.log('三视角（病因 / 机制 / 形态）本章词频：');
-  for (const [k, v] of rank(views)) {
-    console.log(`  ${k} ${String(v).padStart(4)} 次 · 占三视角的 ${(share(views, k) * 100).toFixed(1)}%`);
-  }
-  console.log('四层级（细胞 / 组织 / 器官 / 系统）本章词频：');
-  for (const [k, v] of rank(levels)) {
-    console.log(`  ${k} ${String(v).padStart(4)} 次 · 占四层级的 ${(share(levels, k) * 100).toFixed(1)}%`);
-  }
-  console.log('');
-
-  console.log(`「类别」二字全章 ${categoryTotal} 次 · 按节的密度：`);
-  for (const c of cats) {
-    console.log(`  ${c.sec} · ${c.units} 单元 · ${c.hanzi} 字 · 类别 ${c.hits} 次 · 每千字 ${c.perK.toFixed(1)} 次`);
-  }
-  console.log('');
-
-  console.log('常见并发症五个类别在本章的出现次数：');
-  for (const c of comp) console.log(`  ${c.name} ${c.hits} 次`);
-  console.log('');
-  console.log('化脓性与病毒性脑炎的对照维度出现次数：');
-  console.log(`  化脓性 ${enc.化脓性} · 病毒性 ${enc.病毒性} · 血管套 ${enc.血管套} · 噬神经细胞现象 ${enc.噬神经细胞现象} · 胶质结节 ${enc.胶质结节} · 包涵体 ${enc.包涵体}`);
-  console.log('');
-  console.log('内分泌两节的关键词：');
-  console.log(`  糖尿病 ${endo.糖尿病} · 甲状腺肿 ${endo.甲状腺肿} · 滤泡 ${endo.滤泡} · 胰岛 ${endo.胰岛} · 代谢 ${endo.代谢}`);
-  console.log('');
-  console.log(`六要素（观察/描述/记录/分析/报告/复核）写全的单元：${six.length} / ${s.units} → ${six.join(' ') || '（无）'}`);
-  console.log('');
-
-  console.log('教学边界：本章只说明教材的病变类别与部位关系的类别，不写数值与单位与参考值，不构成诊断、治疗或用药依据');
-
-  return { list, shape: s, views, levels, audit, six, cats, comp, enc, endo, secs };
+  const md = readDoc();
+  const h = head(md);
+  const s = shape(md);
+  const a = average(s);
+  console.log('第 ' + h.n + ' 章 · ' + h.title);
+  console.log('规模: 正文 ' + s.hanzi + ' 汉字 · ' + s.secs + ' 个二级小节 · ' + s.tables + ' 张表 · ' + s.rows + ' 行表数据');
+  console.log('出证: 带出处的引文行 ' + s.quotes + ' 条 · 单元编号 ' + s.units + ' 个 · 图注 ' + s.figures + ' 条');
+  console.log('算术: 平均每节 ' + a.perSection + ' 字 · 平均每单元 ' + a.perUnit + ' 字 · 最长一节「' + a.largest.title + '」' + a.largest.hanzi + ' 字');
+  const sum = s.lead + s.perSection.reduce((x, y) => x + y, 0);
+  console.log('核对: 题记 ' + s.lead + ' + 各节 ' + s.perSection.reduce((x, y) => x + y, 0) + ' = ' + sum + ' vs 正文 ' + s.hanzi + (sum === s.hanzi ? ' ✓' : ' ✗'));
+  console.log('教学边界：本章只说明形态与类别与关系，不写数值与单位与参考值，不构成诊断/治疗/用药依据。');
 }
 
-if (require.main === module) {
-  main();
-}
+module.exports = { readDoc, hanzi, head, lead, sections, tables, quotes, unitIds, figures, shape, average };
 
-module.exports = {
-  ROOT,
-  UNITS,
-  CHAPTER,
-  SIX,
-  COMPLICATIONS,
-  load,
-  chapterUnits,
-  shape,
-  lens,
-  rank,
-  total,
-  share,
-  valueAudit,
-  sixElementUnits,
-  countWord,
-  categoryDensity,
-  complicationCoverage,
-  encephalitis,
-  endocrine,
-  bySection,
-  main,
-};
+if (require.main === module) main();

@@ -1,16 +1,13 @@
 #!/usr/bin/env node
 /**
- * 方剂学 · 第 1 章 方剂与治法：方从法出
+ * 方剂学 · 第 1 章 方剂与治法：方从法出 —— 本章正文的结构统计
  * 课程: departments/02-zhongyao/03-fangjixue/chapters/01-fangfa-ducong/docs/zh.md
- * 出处: 教材·第2章·2.1（方从法出、法随证立）与 2.2（医门八法）；第1章绪论
- * 数据: standards/fangji/formulas.json（114 首方，每方带八法归属）
- *       standards/fangji/底本.json（逐章汉字数）
+ * 数据: 只读本章正文 docs/zh.md（不读缓存、不读底本、不手打数字）
  * 依赖: 仅 Node.js 标准库
  *
- * 为什么全部现算而不手打：本章要讲的命题是「以法统方」，即每一首方都应能
- * 追溯到一个治法。这个命题的真假取决于「按法分组之后每一组是否真的非空、
- * 合计是否真的等于 114」。手打的数字只要教材改版就静默过期，而且没人会
- * 发现；现算的数字一旦对不上，程序自己会报错。教学里最贵的东西是「能对账」。
+ * 为什么只读正文现算：本章引用的每一个规模数（字数、节数、表行数、数字列合计、引文条数）
+ * 都写在正文里，正文就是本章唯一的数据源。把统计写成对正文的复算，正文一改、数字就变，
+ * 单测立刻报警；手打一份统计表则会在改稿后静默过期。
  */
 
 'use strict';
@@ -18,135 +15,193 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-// __dirname = .../departments/02-zhongyao/03-fangjixue/chapters/<slug>/code
-// 不硬数 ../ 的层数（数错一次就 ENOENT），改为向上找到带 standards/fangji 的那一级
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 10; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'fangji', 'formulas.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const CHAPTER = 1;
+const TITLE = '方剂与治法：方从法出';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CJK = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
+/** H1 与二、三级小节：节数是审计判据之一（要求 4–8 个二级节） */
+function headings(text) {
+  const lines = text.split('\n');
+  const h1 = (lines.find((l) => /^#\s+/.test(l)) || '').replace(/^#\s+/, '').trim();
+  const h2 = [];
+  const h3 = [];
+  for (const l of lines) {
+    if (/^##\s+/.test(l)) h2.push(l.replace(/^##\s+/, '').trim());
+    else if (/^###\s+/.test(l)) h3.push(l.replace(/^###\s+/, '').trim());
   }
-  throw new Error('没找到 standards/fangji/formulas.json —— 章节目录是否已脱离仓库？');
-}
-const ROOT = findRoot(__dirname);
-const FANGJI = path.join(ROOT, 'standards', 'fangji');
-
-const readJSON = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
-
-function load() {
-  return {
-    formulas: readJSON(path.join(FANGJI, 'formulas.json')),
-    base: readJSON(path.join(FANGJI, '底本.json')),
-  };
+  return { h1, h2, h3 };
 }
 
-/** 八法一栏：法 → 教材章 → 方数 → 代表方。数据取自 formulas.json 的 bafa.items */
-function bafaTable(fj) {
-  return fj.bafa.items.map((it) => ({
-    fa: it.fa,
-    chapters: it.chapters.slice(),
-    n: it.formulas,
-    names: it.names.slice(),
+/** 正文里的全部表格：首行是表头，分隔行丢掉，其余是数据行 */
+function tables(text) {
+  const blocks = [];
+  let cur = [];
+  for (const raw of text.split('\n')) {
+    if (/^\|.*\|$/.test(raw.trim())) cur.push(raw.trim());
+    else {
+      if (cur.length >= 2) blocks.push(cur);
+      cur = [];
+    }
+  }
+  if (cur.length >= 2) blocks.push(cur);
+  const cells = (l) => l.replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
+  const isSep = (row) => row.every((c) => /^:?-{2,}:?$/.test(c.replace(/\s/g, '')));
+  return blocks.map((b, i) => ({
+    idx: i + 1,
+    header: cells(b[0]),
+    rows: b.slice(1).map(cells).filter((r) => !isSep(r)),
   }));
 }
 
-/** 不属八法的方，按教材章归堆：一章一法判不出归属，就单独成组 */
-function outsideByChapter(fj) {
-  const out = new Map();
-  for (const f of fj.formulas) {
-    if (f.fa) continue;
-    const k = f.chapter;
-    if (!out.has(k)) out.set(k, []);
-    out.get(k).push(f.name);
+const num = (c) => {
+  const v = String(c).replace(/[*_`\s,]/g, '');
+  return /^-?\d+(?:\.\d+)?$/.test(v) ? Number(v) : null;
+};
+
+const isTotalRow = (r) => /^(合计|总计)/.test(String(r[0] || '').replace(/[*_\s]/g, ''));
+
+/**
+ * 可合计的计数列：排除比率列（每方/每段/平均/÷/占/率），
+ * 若表里有「合计」行，则把数据行之和与该行对账——表内自洽也当场核。
+ */
+function columnStats(t) {
+  const totalIdx = t.rows.findIndex(isTotalRow);
+  const dataRows = t.rows.filter((_, i) => i !== totalIdx);
+  const cols = [];
+  t.header.forEach((name, ci) => {
+    if (/每|平均|÷|占|率/.test(name)) return;
+    const vals = dataRows.map((r) => num(r[ci]));
+    if (!dataRows.length || vals.some((v) => v === null)) return;
+    const sum = Number(vals.reduce((a, b) => a + b, 0).toFixed(4));
+    const declared = totalIdx >= 0 ? num(t.rows[totalIdx][ci]) : null;
+    cols.push({ name, sum, declared, ok: declared === null ? null : declared === sum });
+  });
+  return { totalIdx, cols };
+}
+
+/** 「」引文：全部条数，以及挂了「教材·第N章·N.M.K」锚点的条数 */
+function quotes(text) {
+  const all = [...text.matchAll(/「([^」]+)」/g)].map((m) => m[1]);
+  const anchored = [];
+  for (const line of text.split('\n')) {
+    if (!/教材·第\d+章/.test(line)) continue;
+    for (const m of line.matchAll(/「([^」]{6,})」/g)) anchored.push(m[1]);
   }
-  return out;
+  return { all, anchored };
 }
 
-/** 一法之内的层次：同一章按「节」再分。辛温/辛凉/扶正的分野就在这里显形 */
-function groupBySection(fj, chapterNo) {
-  const groups = new Map();
-  for (const f of fj.formulas) {
-    if (f.chapter !== String(chapterNo)) continue;
-    const sec = f.sec;
-    if (!groups.has(sec)) groups.set(sec, []);
-    groups.get(sec).push(f.name);
+/** 教材定位点：教材·第N章·N.M.K（去重后排序，用于报“引了哪几章” ） */
+function locators(text) {
+  const set = new Set();
+  for (const m of text.matchAll(/教材·第(\d+)章·(\d+(?:\.\d+)*)/g)) set.add(`${Number(m[1])}|${m[2]}`);
+  return [...set].sort((a, b) => {
+    const [ca, sa] = a.split('|');
+    const [cb, sb] = b.split('|');
+    return Number(ca) - Number(cb) || sa.localeCompare(sb, 'en', { numeric: true });
+  });
+}
+
+/** MOTTO 里的《书名·篇名》 */
+function bookCites(text) {
+  const line = text.split('\n').find((l) => /\*\*MOTTO:\*\*/.test(l)) || '';
+  return [...line.matchAll(/《([^》]+)》/g)].map((m) => m[1]);
+}
+
+/** 正文段落数：排除标题、表格、引用块与代码块行 */
+function proseBlocks(text) {
+  return text
+    .split(/\n\s*\n/)
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .filter((s) => !/^(#|>|\||```)/.test(s));
+}
+
+function analyze(text = readDoc()) {
+  const h = headings(text);
+  const ts = tables(text);
+  const q = quotes(text);
+  const loc = locators(text);
+  return {
+    hanzi: (text.match(CJK) || []).length,
+    h1: h.h1,
+    h2: h.h2,
+    h3: h.h3,
+    paragraphs: proseBlocks(text).length,
+    tables: ts.map((t) => {
+      const st = columnStats(t);
+      return {
+        idx: t.idx,
+        cols: t.header.length,
+        rows: t.rows.length,
+        dataRows: st.totalIdx >= 0 ? t.rows.length - 1 : t.rows.length,
+        hasTotal: st.totalIdx >= 0,
+        header: t.header,
+        numeric: st.cols,
+      };
+    }),
+    quotes: q.all.length,
+    anchored: q.anchored.length,
+    locators: loc,
+    chapters: [...new Set(loc.map((x) => Number(x.split('|')[0])))].sort((a, b) => a - b),
+    books: bookCites(text),
+  };
+}
+
+/** 本章自检：任何一条不符即抛错——宁可让脚本崩，也不让一个错的报告被打印出去 */
+function selfCheck(a) {
+  const errs = [];
+  if (!new RegExp(`^第\\s*${CHAPTER}\\s*章`).test(a.h1)) errs.push(`H1 章号不是 ${CHAPTER}：${a.h1}`);
+  if (a.hanzi < 2500) errs.push(`汉字 ${a.hanzi} < 2500`);
+  if (a.h2.length < 4 || a.h2.length > 8) errs.push(`二级小节 ${a.h2.length} 个，不在 4–8`);
+  if (!a.h2.some((t) => /代价与边界/.test(t))) errs.push('缺「代价与边界」小节');
+  if (!a.books.length) errs.push('MOTTO 缺《书名·篇名》');
+  if (a.anchored < 2) errs.push(`挂教材出处的引文只有 ${a.anchored} 条`);
+  for (const t of a.tables) {
+    if (t.cols < 2) errs.push(`表 ${t.idx} 只有 ${t.cols} 列`);
+    if (t.dataRows < 1) errs.push(`表 ${t.idx} 没有数据行`);
+    for (const c of t.numeric) {
+      if (c.ok === false) errs.push(`表 ${t.idx} 的「${c.name}」：数据行合计 ${c.sum} ≠ 合计行 ${c.declared}`);
+    }
   }
-  return groups;
-}
-
-/** 教材章汉字数，直接读底本 counts，不做估算 */
-function chapterHanzi(base, nos) {
-  const byNo = new Map(base.chapters.map((c) => [c.no, c]));
-  return nos.reduce((n, no) => n + byNo.get(no).counts.hanzi, 0);
-}
-
-/** 一首方属于哪一法：八法之内取 fa，之外返回 null（不猜、不就近归并） */
-function faOf(fj, name) {
-  const f = fj.formulas.find((x) => x.name === name);
-  if (!f) throw new Error(`formulas.json 里没有 ${name}`);
-  return f.fa || null;
+  if (errs.length) throw new Error('本章正文自检失败：\n  ' + errs.join('\n  '));
+  return true;
 }
 
 function main() {
-  const { formulas: fj, base } = load();
+  const a = analyze();
+  selfCheck(a);
 
-  const total = fj.formulas.length;
-  const inBafa = fj.formulas.filter((f) => f.fa).length;
-  const table = bafaTable(fj);
-  const sumBafa = table.reduce((n, r) => n + r.n, 0);
-  const outside = outsideByChapter(fj);
-  const outCount = [...outside.values()].reduce((n, a) => n + a.length, 0);
+  console.log(`═══ 第 ${CHAPTER} 章 ${TITLE} ═══`);
+  console.log(`正文 ${a.hanzi} 汉字 · ${a.paragraphs} 个正文段 · ${a.tables.length} 张表 · 二级节 ${a.h2.length} · 三级节 ${a.h3.length}`);
+  console.log('H1: ' + a.h1);
+  console.log('MOTTO 书证: ' + a.books.map((b) => `《${b}》`).join(' · '));
 
-  const hanzi = chapterHanzi(base, ['2', '1']); // 第2章 + 第1章
-
-  console.log('═══ 方剂与治法：方从法出 (方剂学 第1章) ═══');
-  console.log(`教材规模: 第2章 ${chapterHanzi(base, ['2'])} 字 + 第1章 ${chapterHanzi(base, ['1'])} 字 = ${hanzi} 字`);
-  console.log(`方剂层: 共 ${total} 首 | 属八法 ${inBafa} 首 (${((inBafa / total) * 100).toFixed(1)}%) | 不属八法 ${outCount} 首 (${((outCount / total) * 100).toFixed(1)}%)`);
-  console.log(`对账: 八法各栏合计 ${sumBafa} + 法外 ${outCount} = ${sumBafa + outCount} ${sumBafa + outCount === total ? '✅' : '❌'}`);
-
-  console.log('\n八法 —— 法 / 教材章 / 方数 / 代表方');
-  for (const r of table) {
-    const rep = r.names.slice(0, 3).join('、');
-    console.log(`  ${r.fa} · 第${r.chapters.join('/')}章 · ${String(r.n).padStart(2)} 首 · ${rep}${r.n > 3 ? '…' : ''}`);
+  console.log('\n二级节（审计要求 4–8）:');
+  a.h2.forEach((t, i) => console.log(`  ${i + 1}. ${t}`));
+  if (a.h3.length) {
+    console.log('\n三级节:');
+    a.h3.forEach((t, i) => console.log(`  ${i + 1}. ${t}`));
   }
 
-  console.log('\n法外 62 首按章分布（不是「无法」，是本章按章判法的边界）');
-  for (const [no, names] of [...outside.entries()].sort((a, b) => Number(a[0]) - Number(b[0]))) {
-    const title = (base.chapters.find((c) => c.no === no) || {}).title || `第${no}章`;
-    console.log(`  第${String(no).padStart(2)}章 ${String(names.length).padStart(2)} 首 · ${title.replace(/^第\d+章\s*/, '')}`);
+  console.log('\n表格：');
+  for (const t of a.tables) {
+    const sums = t.numeric.length
+      ? t.numeric.map((c) => `${c.name}=${c.sum}${c.ok === null ? '' : c.ok ? '（=合计行）' : `（≠合计行 ${c.declared}）`}`).join(' · ')
+      : '无可合计的计数列';
+    console.log(`  T${t.idx} ${t.cols} 列 × ${t.rows} 行${t.hasTotal ? '（含合计行）' : ''} | ${t.header.join(' | ')}`);
+    console.log(`       数字列：${sums}`);
   }
 
-  console.log('\n一法多方：汗法 8 首的内部结构（同一法，寒温异路）');
-  const han = groupBySection(fj, 5);
-  for (const [sec, names] of han) {
-    console.log(`  ${sec} · ${names.length} 首 · ${names.join('、')}`);
-  }
+  console.log(`\n引文：「」${a.quotes} 条 · 挂教材定位 ${a.anchored} 条 · 定位点 ${a.locators.length} 个`);
+  console.log(`教材章：${a.chapters.map((c) => `第${c}章`).join(' / ')}`);
 
-  console.log('\n法随证立的最小检验：给一首方，能不能说出它属于哪一法');
-  for (const name of ['麻黄汤', '银翘散', '大承气汤', '六味地黄丸', '香薷散']) {
-    const fa = faOf(fj, name);
-    console.log(`  ${name} → ${fa ? `${fa}法` : '八法之外（不就近归并）'}`);
-  }
-
-  console.log('\n教学边界：本章数字由 standards/fangji 现算，只用于说明教材的分类逻辑；方剂的选用与剂量须经医师辨证，不构成诊断/用药依据');
-
-  return { total, inBafa, outCount, table, outside, hanzi, han };
+  console.log('\n对账：节数、表行数、数字列合计、引文条数全部由上一段正文现算；正文一改，这里就变。');
+  console.log('教学边界：本章统计只读本章正文，数字由 docs/zh.md 现算，用于方剂学的结构核对；不含诊疗建议，不构成诊断或用药依据，临床决策须由执业医师依据辨证与《中国药典》作出。');
 }
 
-if (require.main === module) {
-  main();
-}
+if (require.main === module) main();
 
-module.exports = {
-  ROOT,
-  FANGJI,
-  load,
-  bafaTable,
-  outsideByChapter,
-  groupBySection,
-  chapterHanzi,
-  faOf,
-  main,
-};
+module.exports = { CHAPTER, TITLE, DOC, readDoc, headings, tables, quotes, locators, bookCites, proseBlocks, analyze, selfCheck, main };

@@ -126,11 +126,15 @@ test('6. outputs 与 skill frontmatter', () => {
 });
 
 test('7. 章内单测与教学边界', () => {
+  // Node 22 在测试进程里再起 `node --test` 会继承 NODE_TEST_CONTEXT 并跳过被调文件，
+  // 输出里没有「# fail 0」。子进程里去掉这个变量，才真的跑的是章内单测。
+  const childEnv = { ...process.env };
+  delete childEnv.NODE_TEST_CONTEXT;
   for (const c of list()) {
     const dir = path.join(DIR, c.slug);
-    const out = execFileSync('node', ['--test', 'code/main.test.js'], { cwd: dir, encoding: 'utf8' });
+    const out = execFileSync('node', ['--test', 'code/main.test.js'], { cwd: dir, encoding: 'utf8', env: childEnv });
     assert.ok(/# fail 0/.test(out), `${c.slug} 单测有失败`);
-    const run = execFileSync('node', ['code/main.js'], { cwd: dir, encoding: 'utf8' });
+    const run = execFileSync('node', ['code/main.js'], { cwd: dir, encoding: 'utf8', env: childEnv });
     const last = run.trim().split('\n').filter(Boolean).pop() || '';
     assert.ok(/教学边界/.test(last) && /不构成/.test(last), `${c.slug} 末行不是教学边界声明：${last}`);
   }

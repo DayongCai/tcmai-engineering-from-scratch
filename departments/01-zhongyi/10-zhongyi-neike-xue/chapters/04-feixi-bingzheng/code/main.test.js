@@ -1,136 +1,100 @@
 #!/usr/bin/env node
 /**
- * 第 4 章 肺系病证 —— 确定性单元测试
+ * 第 4 章 肺系病证：八个病证共用一个模板，彼此的界线只能靠三组眼目分开 —— 确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言只落在可对账的结构上：规模、逐节字数、五小节模板、辨证论治最厚、
- * 证名抽取结果（肺痈为 0 是结论不是缺陷）、病名互引、病机因素词频、量值。
- * 不锁正文措辞，底本改写段落时测试不会变成噪声。
+ * 断言只落两处可对账的东西：
+ *   1) code/main.js 从本章 docs/zh.md 现算出的结构指标（写死在此，正文改版测试先响）；
+ *   2) quiz.json 与正文同源（≥5 题、三段齐、4 选项、explain ≥30 汉字、≥2 道 check 题接地、答案打散）。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const {
-  KINDS,
-  DISEASES,
-  FACTORS,
-  load,
-  chapter,
-  bodyOf,
-  subsOf,
-  hanzi,
-  shape,
-  sectionStats,
-  keywordHits,
-  kindOf,
-  templateAudit,
-  syndromeAudit,
-  crossRef,
-  factorCounts,
-  thickestPerSection,
-  valueAudit,
-  extremes,
-} = require('./main');
+const { measure, TERMS, CHAPTER } = require('./main.js');
 
-const base = load();
-const chap = chapter(base);
-const subs = subsOf(chap);
+const M = measure();
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const questions = Array.isArray(QUIZ.questions) ? QUIZ.questions : [];
+const DOC = fs.readFileSync(path.join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
+const HAN = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 
-test('本章 8 节 40 小节，正文合计 38900 汉字', () => {
-  const s = shape(chap);
-  assert.strictEqual(s.secs, 8);
-  assert.strictEqual(s.subs, 40);
-  assert.strictEqual(s.hanzi, 38900);
-  assert.strictEqual(subs.length, 40);
-  assert.deepStrictEqual(subs[0].no, '4.1.1');
-  assert.deepStrictEqual(subs[39].no, '4.8.5');
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+const PINNED = {
+  "hanzi": 8583,
+  "h2": 6,
+  "h3": 47,
+  "h4": 0,
+  "tables": 2,
+  "tableRows": 16,
+  "quotes": 49,
+  "locators": 12,
+  "subNos": 40,
+  "terms": {
+    "感冒": 35,
+    "咳嗽": 34,
+    "哮病": 28,
+    "喘证": 27,
+    "肺胀": 19,
+    "鉴别": 15
+  }
+};
+
+test('正文现算指标与实测一致', () => {
+  assert.strictEqual(CHAPTER, 4);
+  assert.strictEqual(TERMS.length, 6);
+  assert.deepStrictEqual(M, PINNED);
 });
 
-test('八个病证按节排列：感冒 咳嗽 哮病 喘证 肺痈 肺痨 肺胀 肺痿', () => {
-  assert.deepStrictEqual(DISEASES, ['感冒', '咳嗽', '哮病', '喘证', '肺痈', '肺痨', '肺胀', '肺痿']);
-  assert.deepStrictEqual(chap.secs.map((s) => s.title.replace(/^\d+\.\d+\s*/, '')), DISEASES);
+test('二级小节收口在 4–8 个，正文汉字不低于 2,500，三级出处不少于 10 条', () => {
+  assert.ok(M.h2 >= 4 && M.h2 <= 8, `二级小节 ${M.h2} 个`);
+  assert.ok(M.hanzi >= 2500, `汉字 ${M.hanzi}`);
+  assert.ok(M.locators >= 10, `三级出处 ${M.locators} 条`);
 });
 
-test('逐节字数 5274 / 5571 / 5351 / 5210 / 4387 / 4290 / 4955 / 3862', () => {
-  const secs = sectionStats(chap);
-  assert.deepStrictEqual(secs.map((x) => x.no), ['4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8']);
-  assert.deepStrictEqual(secs.map((x) => x.subs), [5, 5, 5, 5, 5, 5, 5, 5]);
-  assert.deepStrictEqual(secs.map((x) => x.hanzi), [5274, 5571, 5351, 5210, 4387, 4290, 4955, 3862]);
+test('术语表六个词都真的在正文里出现', () => {
+  for (const [k, n] of Object.entries(M.terms)) assert.ok(n > 0, `${k} 出现 0 次`);
 });
 
-test('五小节模板：8 节全部是 概述 / 病因病机 / 辨证论治 / 预防调护 / 按语，5 × 8 = 40', () => {
-  const t = templateAudit(chap);
-  assert.deepStrictEqual(KINDS, ['概述', '病因病机', '辨证论治', '预防调护', '按语']);
-  assert.strictEqual(t.length, 8);
-  assert.strictEqual(t.filter((x) => x.ok).length, 8);
-  for (const x of t) assert.deepStrictEqual(x.kinds, KINDS, x.no);
-  assert.strictEqual(KINDS.length * t.length, 40);
-});
-
-test('每节最厚的一格都是「辨证论治」（8 / 8）', () => {
-  const th = thickestPerSection(chap);
-  assert.strictEqual(th.filter((x) => x.top.kind === '辨证论治').length, 8);
-  assert.deepStrictEqual(th.map((x) => x.top.sub),
-    ['4.1.3', '4.2.3', '4.3.3', '4.4.3', '4.5.3', '4.6.3', '4.7.3', '4.8.3']);
-  assert.deepStrictEqual(th.map((x) => x.top.hanzi), [2306, 2907, 2768, 2702, 1859, 1838, 2503, 1283]);
-});
-
-test('证名抽取：3 / 7 / 7 / 7 / 0 / 4 / 6 / 2，合计 36；肺痈按四期分故为 0', () => {
-  const syn = syndromeAudit(chap);
-  assert.deepStrictEqual(syn.map((x) => x.count), [3, 7, 7, 7, 0, 4, 6, 2]);
-  assert.strictEqual(syn.reduce((n, x) => n + x.count, 0), 36);
-  assert.deepStrictEqual(syn[0].names, ['风寒束表证', '风热犯表证', '暑湿伤表证']);
-  assert.deepStrictEqual(syn[2].names,
-    ['冷哮证', '热哮证', '寒包热哮证', '风痰哮证', '虚哮证', '肺脾气虚证', '肺肾两虚证']);
-  // 肺痈的 0 是结论：它以期分型
-  assert.deepStrictEqual(syn[4].names, []);
-  assert.deepStrictEqual(syn[4].stages, ['初期', '成痈期', '溃脓期', '恢复期']);
-});
-
-test('病名互引：咳嗽在别节被提最多（它同时是症状名）', () => {
-  const c = crossRef(chap);
-  assert.deepStrictEqual(c.map((x) => x.disease), DISEASES);
-  assert.deepStrictEqual(c.map((x) => x.ownHits), [87, 110, 36, 38, 44, 31, 39, 55]);
-  assert.deepStrictEqual(c.map((x) => x.otherHits), [19, 54, 7, 10, 15, 9, 7, 9]);
-  const top = [...c].sort((a, b) => b.otherHits - a.otherHits)[0];
-  assert.strictEqual(top.disease, '咳嗽');
-  // 每个病名都至少在本节出现，说明节标题与正文对得上
-  for (const x of c) assert.ok(x.ownHits > 0, `${x.disease} 在本节未出现`);
-});
-
-test('病机因素词频：痰 523 · 虚 434 · 热 405 · 风 169 · 饮 124 · 火 64 · 瘀 60', () => {
-  const f = factorCounts(chap);
-  assert.deepStrictEqual(FACTORS, ['痰', '虚', '热', '瘀', '饮', '风', '火']);
-  assert.deepStrictEqual(f.map((x) => x.key), ['痰', '虚', '热', '风', '饮', '火', '瘀']);
-  assert.deepStrictEqual(f.map((x) => x.total), [523, 434, 405, 169, 124, 64, 60]);
-  assert.strictEqual(f[0].key, '痰', '本章的第一病理因素是痰');
-});
-
-test('小节字数逐条可对账；最薄 4.7.1，最厚 4.2.3', () => {
-  assert.deepStrictEqual(extremes(chap), {
-    thinnest: { sub: '4.7.1', hanzi: 588 },
-    thickest: { sub: '4.2.3', hanzi: 2907 },
-  });
-  const total = subs.reduce((n, u) => n + hanzi(bodyOf(u)), 0);
-  assert.strictEqual(total, 38900);
-});
-
-test('量值核验：正文 5 处数字＋单位，全部落在 4.2.5 与 4.7.5 的「现代认识」段', () => {
-  const v = valueAudit(chap);
-  assert.strictEqual(v.subs, 40);
-  assert.strictEqual(v.hits, 5);
-  assert.deepStrictEqual(v.offenders.map((x) => x.sub), ['4.2.5', '4.7.5']);
-  // 每一处都在「现代认识」段之后——不是中医的剂量，但仍然按量值处理
-  for (const o of v.offenders) {
-    const b = bodyOf(subs.find((u) => u.no === o.sub));
-    assert.ok(b.indexOf('现代认识') < b.search(/\d/), `${o.sub} 的量值不在现代认识段`);
+test('quiz 结构：≥5 题，pre/check/post 三段齐，4 选项、correct 合法、explain ≥30 汉字', () => {
+  assert.ok(questions.length >= 5, `只有 ${questions.length} 题`);
+  const stages = new Set(questions.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), `缺 ${s} 段`);
+  for (const q of questions) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    assert.ok(HAN(q.explain) >= 30, `${q.question} explain 只有 ${HAN(q.explain)} 汉字`);
   }
 });
 
-test('分类函数：五小节标题各自归到唯一的格，没有「?」', () => {
-  for (const u of subs) assert.notStrictEqual(kindOf(u), '?', `${u.no} 归不进任何一格`);
-  assert.strictEqual(keywordHits(chap, '鉴别').total > 0, true);
+test('quiz 接地：≥2 道 check 题正确项含正文 4 字词组，答案打散', () => {
+  const body = shingles(DOC);
+  const grounded = questions.filter(
+    (q) => q.stage === 'check' && [...shingles(q.options[q.correct])].some((g) => body.has(g)),
+  ).length;
+  assert.ok(grounded >= 2, `只有 ${grounded} 道 check 题接地`);
+  const used = new Set(questions.map((q) => q.correct));
+  assert.ok(used.size >= 3, `correct 只用到 ${used.size} 个位置`);
+});
+
+test('quiz 无脚手架指纹与禁用口径', () => {
+  const raw = JSON.stringify(QUIZ);
+  for (const re of [/三辨/, /四位面/, /单元规模/, /本章实测/, /本课第\s*\d+\s*章/, /见\s*code\/main\.js\s*输出/]) {
+    assert.ok(!re.test(raw), `残留指纹 ${re}`);
+  }
+  for (const re of [/页码/, /疗程/, /发生率/, /显效率/, /每日\s*\d+\s*(?:次|服)/]) {
+    assert.ok(!re.test(raw), `禁用口径 ${re}`);
+  }
 });

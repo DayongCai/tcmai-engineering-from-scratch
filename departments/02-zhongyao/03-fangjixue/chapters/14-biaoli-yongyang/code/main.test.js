@@ -1,155 +1,172 @@
+#!/usr/bin/env node
+/**
+ * 第 14 章 表里双解与治痈疡：六首方的两个方向 —— 正文统计与习题契约的确定性单元测试
+ * 运行: node --test code/main.test.js
+ *
+ * 断言只落在可对账的结构上：本章正文的汉字数、二/三级节数、每张表的行列与数字列合计、
+ * 引文条数与教材定位，以及 quiz 的题量、三段、四选项、解释长度、答案分布与正文接地。
+ * 期望值是 docs/zh.md 的实测读数（main.js 现算，测试钉住）；正文一改，这里立刻报警。
+ */
+
 'use strict';
+
 const assert = require('node:assert');
 const test = require('node:test');
-const { execFileSync } = require('node:child_process');
-const {
-  NAMES, CHAPTERS, ROLES, FORMULAS, FA_DIRS, BAFA, GROUP_SIGNAL,
-  herbNames, slotCount, herbSet, avgSlots, chapterStats, hanziTotal, faDirs,
-  directionProfile, bafaChapters, outsideBafa, bafaScale, axisByChapter,
-  sharedHerbs, groupedRoles, roleDepth, compositionTable, selfCheck,
-} = require('./main.js');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-const byName = (n) => FORMULAS.find((f) => f.name === n);
+const { CHAPTER, TITLE, DOC, analyze, selfCheck } = require('./main.js');
 
-test('六方齐：方名与章位来自 formulas.json，两章 2＋4 方', () => {
-  assert.deepStrictEqual(FORMULAS.map((f) => f.name), NAMES);
-  assert.strictEqual(FORMULAS.length, 6);
-  const ax = axisByChapter();
-  assert.deepStrictEqual(ax.map((a) => a.no), ['11', '23']);
-  assert.deepStrictEqual(ax[0].formulas, ['大柴胡汤', '防风通圣散']);
-  assert.deepStrictEqual(ax[1].formulas, ['仙方活命饮', '五味消毒饮', '透脓散', '阳和汤']);
-  assert.strictEqual(byName('防风通圣散').sub, '11.1.2');
-  assert.strictEqual(byName('阳和汤').sub, '23.2.2');
+const A = analyze();
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const BODY = fs.readFileSync(DOC, 'utf8');
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+/** 正文里 4 字以上的连续汉字片段，用来判「选项是否接地」 */
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  return out;
+}
+const bodyGrams = shingles(BODY);
+
+const EXPECT = {
+  "hanzi": 6170,
+  "paragraphs": 39,
+  "h2": 7,
+  "h3": 5,
+  "tables": [
+    [
+      2,
+      9
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      5,
+      4
+    ]
+  ],
+  "sums": [
+    [
+      2,
+      "节",
+      3
+    ],
+    [
+      2,
+      "小节",
+      6
+    ],
+    [
+      2,
+      "段",
+      36
+    ],
+    [
+      2,
+      "字数",
+      15030
+    ],
+    [
+      2,
+      "方数",
+      6
+    ],
+    [
+      3,
+      "药味",
+      30
+    ]
+  ],
+  "quotes": 119,
+  "anchored": 21,
+  "chapters": [
+    11,
+    23
+  ],
+  "books": [
+    "素问·生气通天论"
+  ]
+};
+
+test('规模：正文汉字、正文段、二三级节（实测值）', () => {
+  assert.strictEqual(CHAPTER, 14);
+  assert.match(A.h1, new RegExp(`^第 ${14} 章 · `));
+  assert.strictEqual(A.hanzi, EXPECT.hanzi);
+  assert.strictEqual(A.paragraphs, EXPECT.paragraphs);
+  assert.strictEqual(A.h2.length, EXPECT.h2);
+  assert.strictEqual(A.h3.length, EXPECT.h3);
+  assert.ok(A.h2.length >= 4 && A.h2.length <= 8, `二级节 ${A.h2.length} 不在 4–8`);
+  assert.ok(A.h2.some((t) => /代价与边界/.test(t)), '缺「代价与边界」');
 });
 
-test('组成钉死：8 / 17 / 13 / 5 / 5 / 7 味，合计 55 药位、去重 42 味、平均 9.17', () => {
-  assert.deepStrictEqual(FORMULAS.map((f) => f.composition.herbs.length), [8, 17, 13, 5, 5, 7]);
-  assert.strictEqual(slotCount(), 55);
-  assert.strictEqual(herbSet().size, 42);
-  assert.strictEqual(Number(avgSlots().toFixed(2)), 9.17);
-  const ct = compositionTable();
-  assert.strictEqual(ct.min, 5);
-  assert.strictEqual(ct.max, 17);
-  // 大方与最小方各是哪两首
-  assert.deepStrictEqual(ct.rows.filter((r) => r.n === 17).map((r) => r.name), ['防风通圣散']);
-  assert.deepStrictEqual(ct.rows.filter((r) => r.n === 5).map((r) => r.name), ['五味消毒饮', '透脓散']);
+test('表格尺寸（列 × 行）与实测值一致', () => {
+  assert.deepStrictEqual(A.tables.map((t) => [t.cols, t.rows]), EXPECT.tables);
 });
 
-test('逐味核对四首方：药名是归并后的正名（野菊花→菊花、生黄芪→黄芪、炮姜炭→干姜）', () => {
-  assert.deepStrictEqual(byName('大柴胡汤').composition.herbs.map((h) => h.name),
-    ['柴胡', '黄芩', '芍药', '半夏', '生姜', '枳实', '大枣', '大黄']);
-  assert.deepStrictEqual(byName('五味消毒饮').composition.herbs.map((h) => h.name),
-    ['金银花', '菊花', '蒲公英', '紫花地丁', '紫背天葵子']);
-  assert.deepStrictEqual(byName('透脓散').composition.herbs.map((h) => h.name),
-    ['黄芪', '川芎', '当归', '皂角刺', '穿山甲']);
-  assert.deepStrictEqual(byName('阳和汤').composition.herbs.map((h) => h.name),
-    ['熟地黄', '鹿角胶', '白芥子', '肉桂', '甘草', '干姜', '麻黄']);
-  // 防风通圣散 17 味，含汗下清利四路药，但功用只写两法
-  const fts = herbNames(byName('防风通圣散'));
-  assert.strictEqual(fts.length, 17);
-  assert.ok(fts.includes('麻黄') && fts.includes('大黄') && fts.includes('滑石') && fts.includes('石膏'));
+test('计数列合计与正文表内数字一致（实测值）', () => {
+  const sums = [];
+  for (const t of A.tables) for (const c of t.numeric) sums.push([t.idx, c.name, c.sum]);
+  assert.deepStrictEqual(sums, EXPECT.sums);
+  for (const t of A.tables) for (const c of t.numeric) {
+    if (c.ok === false) assert.fail(`表 ${t.idx}「${c.name}」数据行合计 ${c.sum} ≠ 合计行 ${c.declared}`);
+  }
 });
 
-test('教材字数：第11章 5,504 + 第23章 9,526 = 15,030（由 底本.json 的 counts.hanzi 现算）', () => {
-  const st = chapterStats();
-  assert.deepStrictEqual(st.map((c) => c.no), ['11', '23']);
-  assert.deepStrictEqual(st.map((c) => c.hanzi), [5504, 9526]);
-  assert.deepStrictEqual(st.map((c) => c.secs), [1, 2]);
-  assert.deepStrictEqual(st.map((c) => c.subs), [2, 4]);
-  assert.deepStrictEqual(st.map((c) => c.paras), [12, 24]);
-  assert.strictEqual(hanziTotal(), 15030);
-  assert.strictEqual(st[0].hanzi + st[1].hanzi, 15030);
+test('引文与教材定位（实测值）', () => {
+  assert.strictEqual(A.quotes, EXPECT.quotes);
+  assert.strictEqual(A.anchored, EXPECT.anchored);
+  assert.deepStrictEqual(A.chapters, EXPECT.chapters);
+  assert.deepStrictEqual(A.books, EXPECT.books);
+  assert.ok(A.anchored >= 2, `挂教材出处的引文只有 ${A.anchored} 条`);
 });
 
-test('方向档案：六方各 2 个法向，共 12 个，其中「托」不在八法之内', () => {
-  const prof = directionProfile();
-  assert.deepStrictEqual(prof.map((p) => p.dirs), [
-    ['下', '和'], ['汗', '下'], ['清', '消'], ['清', '消'], ['补', '托'], ['温', '补'],
-  ]);
-  assert.ok(prof.every((p) => p.n === 2));
-  assert.strictEqual(prof.reduce((n, p) => n + p.n, 0), 12);
-  assert.deepStrictEqual(prof.flatMap((p) => p.outside), ['托']);
-  assert.deepStrictEqual(BAFA, ['汗', '吐', '下', '和', '温', '清', '消', '补']);
-  // 判定只看功用文本：同一段功用里不会因为药味多而多出法向
-  assert.deepStrictEqual(faDirs('和解少阳，内泻热结。'), ['下', '和']);
-  assert.deepStrictEqual(faDirs('疏风解表，泻热通便。'), ['汗', '下']);
-  assert.deepStrictEqual(faDirs('温阳补血，散寒通滞。'), ['温', '补']);
-  assert.strictEqual(FA_DIRS.length, 8);
+test('正文自检通过，MOTTO 是《书名·篇名》', () => {
+  assert.strictEqual(selfCheck(A), true);
+  assert.ok(A.books.length === 1 && /·/.test(A.books[0]), `MOTTO 书证不是《书名·篇名》：${A.books.join('/')}`);
 });
 
-test('不进八法的构造证据：6/6 首 fa 为空，且两章不在八法章集合内', () => {
-  const ob = outsideBafa();
-  assert.strictEqual(ob.length, 6);
-  assert.deepStrictEqual(ob.map((x) => x.fa), ['', '', '', '', '', '']);
-  assert.ok(ob.every((x) => x.labelled === false));
-  assert.ok(ob.every((x) => x.inBafaChapter === false));
-  const chs = bafaChapters();
-  assert.strictEqual(chs.size, 8, '八法公式出现在 8 个章里');
-  assert.ok(!chs.has('11') && !chs.has('23'));
-  assert.deepStrictEqual([...chs].sort(), ['10', '12', '21', '22', '5', '6', '7', '8'].sort());
-  const b = bafaScale();
-  assert.strictEqual(b.total, 52);
-  assert.strictEqual(b.outside, 62);
-  assert.strictEqual(b.outside + b.total, b.totalFormulas);
-  assert.strictEqual(b.totalFormulas, 114);
-  // 六方都落在「不属八法」的 62 首里
-  assert.ok(6 <= b.outside);
+test('quiz 结构：6 题、三段齐、4 选项、explain ≥30 汉字、答案打散', () => {
+  const qs = QUIZ.questions;
+  assert.ok(qs.length >= 5, `只有 ${qs.length} 题`);
+  const stages = new Set(qs.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s);
+  for (const q of qs) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    assert.ok((String(q.explain).match(HANZI) || []).length >= 30, q.question);
+    assert.ok((String(q.explanation).match(HANZI) || []).length >= 30, q.question);
+    assert.strictEqual(new Set(q.options).size, 4, q.question);
+  }
+  assert.ok(new Set(qs.map((q) => q.correct)).size >= 3, '答案过于集中');
+  assert.deepStrictEqual(qs.map((q) => q.stage), ['pre', 'check', 'check', 'check', 'post', 'post']);
 });
 
-test('两章两轴：第11章 2 方并集 {汗,下,和}，第23章 4 方并集 {清,消,补,温,托}', () => {
-  const ax = axisByChapter();
-  assert.deepStrictEqual(ax[0].union, ['下', '和', '汗'].sort());
-  assert.deepStrictEqual(ax[1].union, ['托', '消', '补', '温', '清'].sort());
-  assert.strictEqual(ax[0].multi, 2);
-  assert.strictEqual(ax[1].multi, 4);
-  // 第11章两方共有「下」，即汗/和与下并存；第23章既有清也有温，即同一病名两个相反方向
-  assert.ok(ax[0].perFormula.every((p) => p.dirs.includes('下')));
-  assert.ok(ax[1].union.includes('清') && ax[1].union.includes('温'));
-  assert.ok(ax[1].union.includes('托'), '托法只在第23章出现');
+test('quiz 接地：≥2 道 check 题的正确选项能在正文找到 4 字原词', () => {
+  const grounded = QUIZ.questions.filter((q) => {
+    if (q.stage !== 'check') return false;
+    const grams = shingles(String(q.options[q.correct]));
+    return [...grams].some((g) => bodyGrams.has(g));
+  });
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道接地`);
 });
 
-test('本章内部共享药 11 味、只出现 1 次的 31 味（节点 42）', () => {
-  const sh = sharedHerbs();
-  assert.strictEqual(sh.nodes, 42);
-  assert.strictEqual(sh.shared.length, 11);
-  assert.strictEqual(sh.once, 31);
-  assert.strictEqual(sh.shared[0].n, 3);
-  assert.deepStrictEqual(sh.shared.filter((x) => x.n === 3).map((x) => x.name), ['当归', '甘草']);
-  // 穿山甲出现在 2 首方里，两首都在第23章——教材明令禁用
-  assert.deepStrictEqual(FORMULAS.filter((f) => herbNames(f).includes('穿山甲')).map((f) => f.name),
-    ['仙方活命饮', '透脓散']);
+test('quiz 与代码都不含旧脚手架指纹', () => {
+  const bad = /三辨|四位面|单元规模|本章实测|本课第\s*\d+\s*章[（(]|见\s*code\/main\.js\s*输出/;
+  assert.ok(!bad.test(JSON.stringify(QUIZ)));
+  assert.ok(!bad.test(fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8')));
 });
 
-test('君臣佐使是抽取：11 处教材成组标注，数据层每角色只留 1 味', () => {
-  const g = groupedRoles();
-  assert.strictEqual(g.positions, 11);
-  assert.strictEqual(g.rows.filter((r) => r.roles.length).length, 6);
-  assert.deepStrictEqual(g.rows.find((r) => r.name === '防风通圣散').roles, ['君', '臣', '佐']);
-  assert.deepStrictEqual(g.rows.find((r) => r.name === '阳和汤').roles, ['君', '使']);
-  assert.ok(GROUP_SIGNAL.test('二药合用，温阳补血，共为君药'));
-  // 阳和汤教材是熟地黄＋鹿角胶「二药合用…共为君药」，数据层君位只剩鹿角胶
-  assert.deepStrictEqual(byName('阳和汤').roles.君, ['鹿角胶']);
-  assert.ok(byName('阳和汤').roleEvidence.some((e) => e.role === '君' && /共为君药/.test(e.quote)));
-  // 防风通圣散教材是四味「共为君药」，数据层君位只剩薄荷
-  assert.deepStrictEqual(byName('防风通圣散').roles.君, ['薄荷']);
-  const d = roleDepth();
-  assert.deepStrictEqual(d.four, ['仙方活命饮'], '六方里唯一四角色齐的');
-  assert.strictEqual(d.min, 2);
-  assert.deepStrictEqual(d.minNames, ['透脓散']);
-  assert.deepStrictEqual(d.rows.map((r) => r.depth), [3, 3, 4, 3, 2, 3]);
-  assert.deepStrictEqual(ROLES, ['君', '臣', '佐', '使']);
-});
-
-test('规模自检十六项全过', () => {
-  const c = selfCheck();
-  assert.strictEqual(c.length, 16);
-  assert.ok(c.every((x) => x.ok), JSON.stringify(c.filter((x) => !x.ok)));
-});
-
-test('运行时最后一行是教学边界声明', () => {
-  const out = execFileSync('node', ['code/main.js'], { cwd: __dirname + '/..', encoding: 'utf8' });
+test('脚本可运行，退出码 0，最后一行是教学边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, r.stderr);
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
   const last = out.trim().split('\n').filter(Boolean).pop();
-  assert.match(last, /教学边界/);
-  assert.match(last, /不构成/);
-  assert.match(out, /15030/);
+  assert.ok(/教学边界/.test(last) && /不构成/.test(last), `最后一行不是教学边界：${last}`);
 });

@@ -1,57 +1,104 @@
-#!/usr/bin/env node
-/**
- * 第 1 章 哲学史研究什么：范畴，不是年表 —— 确定性单元测试
- * 运行: node --test code/main.test.js
- *
- * 断言只落在可对账的结构上：单元数与小节号、规模、三辨与四位面重心、引书数、数值计数。
- * 数字由 standards/zhexue/units.json 现算后写死在此，教材改版时测试会先响。
- */
-
 'use strict';
+/**
+ * 第 1 章 哲学史研究什么：范畴，不是年表 —— 正文与习题的对齐断言
+ * 运行：node --test code/main.test.js
+ *
+ * 断言只落在可对账的结构上：小节号、表格行、判据词命中、并列骨架、quiz 结构与答案分布。
+ * 实测值由 analyze() 现算后写死在此；正文一改，这里会先响。
+ */
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const { CHAPTER, load, chapterUnits, merge, rank, shape, citations, bySection } = require('./main.js');
+const m = require('./main.js');
 
-const data = load();
-const list = chapterUnits(data);
+const r = m.analyze();
+const rawQuiz = fs.readFileSync(m.QUIZ, 'utf8');
+const quiz = JSON.parse(rawQuiz);
 
-test('本章单元数与小节号与教材一致', () => {
-  assert.strictEqual(list.length, 2);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['1.1', '1.2']);
+test('正文规模与结构：汉字、小节、表格、引书', () => {
+  assert.strictEqual(r.hanzi, 3005);
+  assert.strictEqual(r.sections.length, 6);
+  assert.deepStrictEqual(r.sections, [
+    "一、两种写法的材料门槛不同",
+    "二、给「范畴」一个能操作的定义",
+    "三、范畴在临床上落成一个动作",
+    "四、被误用时的表现与可判断的标志",
+    "五、八个问题，一条线索",
+    "代价与边界",
+  ]);
+  assert.strictEqual(r.table.tables, 1);
+  assert.strictEqual(r.table.rows, 4);
+  assert.strictEqual(r.books.length, 3);
 });
 
-test('规模：218 字 · 平均 109 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 218);
-  assert.strictEqual(s.mean, 109);
+test('判据词逐个落在正文，命中数与实测一致', () => {
+  assert.deepStrictEqual(
+    r.terms.map((t) => [t.term, t.n]),
+    [
+      ["范畴", 22],
+      ["可检索", 7],
+      ["动作", 7],
+      ["词频当地位", 2],
+      ["篇名", 1],
+      ["二手概论", 2],
+    ]
+  );
 });
 
-test('三辨重心是「文本依据」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '文本依据');
-  assert.strictEqual(views[0].count, 13);
+test('并列骨架齐全：缺一项就是正文这一节没写完', () => {
+  for (const g of r.groups) {
+    assert.deepStrictEqual(g.missing, [], `${g.label} 缺：${g.missing.join('、')}`);
+  }
+  assert.strictEqual(r.groups.length, 4);
 });
 
-test('四位面重心是「本体」，且四层都有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['本体'], 5);
-  const touched = Object.values(levels).filter((n) => n > 0).length;
-  assert.ok(touched >= 3, `仅 ${touched} 层有落点`);
+test('quiz 结构：题量、三段、四选项、解释长度、答案下标', () => {
+  const q = r.quiz;
+  assert.strictEqual(q.total, 6);
+  assert.deepStrictEqual(q.stage, {"pre":1,"check":4,"post":1});
+  assert.strictEqual(q.allFourOptions, true, '有题不是 4 个选项');
+  assert.strictEqual(q.badCorrect, 0, 'correct 下标非法');
+  assert.strictEqual(q.minExplain, 87);
+  assert.ok(q.minExplain >= 30, `最短解释只有 ${q.minExplain} 汉字`);
+  for (const item of quiz.questions) {
+    assert.ok(item.question && item.question.length > 6, '存在空题干');
+    assert.strictEqual(new Set(item.options).size, 4, `选项有重复：${item.question}`);
+  }
 });
 
-test('引书成规模：≥1 部、≥3 次引用', () => {
-  const c = citations(list);
-  assert.ok(c.books >= 1, `引书 ${c.books}`);
-  assert.ok(c.total >= 3, `引用 ${c.total}`);
+test('quiz 答案打散，且与实测一致', () => {
+  assert.deepStrictEqual(r.quiz.answers, [1,0,3,1,2,0]);
+  assert.ok(r.quiz.distinctAnswers >= 3, `正确答案只用到 ${r.quiz.distinctAnswers} 个位置`);
+  assert.strictEqual(r.quiz.distinctAnswers, 4);
+  const seen = new Set();
+  for (const q of quiz.questions) {
+    assert.ok(!seen.has(q.question), `重复设问：${q.question}`);
+    seen.add(q.question);
+  }
 });
 
-test('数值计数与单元层一致（本章 4 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 4);
+test('quiz 接地：至少两道 check 题的正确选项能回到正文原词', () => {
+  assert.ok(r.quiz.checkGrounded >= 2, `只有 ${r.quiz.checkGrounded} 道 check 题接地`);
+  assert.strictEqual(r.quiz.checkGrounded, 4);
 });
 
-test('每节都有单元，且每单元都带 locator', () => {
-  for (const s of bySection(list)) assert.ok(s.units > 0, s.sec);
-  for (const u of list) assert.ok(u.locator.startsWith(`派生·第${CHAPTER}章·`), u.locator);
+test('quiz 不出现正文之外的名目', () => {
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '本课第', '见 code/main.js 输出']) {
+    assert.ok(!rawQuiz.includes(bad), `quiz 仍含「${bad}」`);
+  }
+});
+
+test('quiz 的章题与 chapters.json 一致', () => {
+  const book = JSON.parse(
+    fs.readFileSync(path.resolve(__dirname, '..', '..', '..', 'chapters.json'), 'utf8')
+  );
+  const ch = book.chapters.find((x) => x.n === m.CHAPTER);
+  assert.ok(ch, `chapters.json 里没有第 ${m.CHAPTER} 章`);
+  assert.strictEqual(quiz.title, ch.title, 'quiz 标题与章节目录不一致');
+  assert.strictEqual(quiz.chapter, m.CHAPTER);
+  assert.strictEqual(quiz.slug, m.SLUG);
+  assert.strictEqual(quiz.source, `chapters/${m.SLUG}/docs/zh.md`);
 });

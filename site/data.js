@@ -2228,7 +2228,7 @@ window.TCMAI_DATA = {
             "id": "textbooks",
             "path": "textbooks/01-zhongyi/08-jingui-yaolue",
             "chaptersWritten": 24,
-            "words": 704308,
+            "words": 704250,
             "status": "wip",
             "layer": "source-body+commentary",
             "source": "standards/jingui/底本.json（外源·笈成）+ standards/jingui/gushiwen/（外源·古诗文网，校勘）",
@@ -9303,49 +9303,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-tizhi-gainian",
-        "title": "体质的概念与九种体质类型：九分法落在 132 个证候上",
+        "title": "九种体质是九把尺子，量的是倾向不是病名",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-tizhi-chengyin",
-        "title": "体质的形成：底板与漂移",
+        "title": "底板改不了，漂移的方向可以选",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-tizhi-liangbiao",
-        "title": "九种体质的判定与量表设计：四域各自计量",
+        "title": "判定要靠两条同向证据，不能靠一条扎眼的特征",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-tizhi-zhenghou",
-        "title": "体质与证候：同证异质、同质异证",
+        "title": "同一个证可以长在不同底子上，处理要分两步走",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-tizhi-tezheng",
-        "title": "问卷到特征向量：四域各自计量，不可混算",
+        "title": "量表算出来的不是一分数，是四组分数",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-tizhi-liuxing",
-        "title": "体质与疾病易感性：横向数据只能看共现",
+        "title": "证候表能算出共现，算不出谁会得病",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-tizhi-tiaoli",
-        "title": "体质调理与治未病：以平为期",
+        "title": "调体质的目标是把偏拉回来，不是把人调成标准件",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-tizhi-wucha",
-        "title": "可重复性与测量误差：四域各自计量，再谈结论",
+        "title": "同一个人测出两个体质，先查尺子再查人",
         "status": "🚧"
       }
     ],
@@ -9549,7 +9549,7 @@ window.TCMAI_DATA = {
       {
         "n": 11,
         "slug": "11-tiaowen-jiansuo",
-        "title": "条文检索：MRR 满分，但「库里没有」它不会说",
+        "title": "条文检索：MRR 满分不算过关，说不清「库里没有」才是问题",
         "status": "🚧"
       },
       {
@@ -9623,85 +9623,85 @@ window.TCMAI_DATA = {
       {
         "n": 11,
         "slug": "11-pian7-feiwei-feiyong",
-        "title": "篇目精读第七：肺痿肺痈咳嗽上气——一条一方，10 方之外还挂着 6 首附方",
+        "title": "肺痿与肺痈的分界不在症状堆叠，而在脉的一虚一实",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-pian8-bentun",
-        "title": "篇目精读第八：奔豚气——全书最短的一篇，却给了三个入口",
+        "title": "同一个「气从少腹上冲」，三首方靠来路分开而不是靠冲劲分开",
         "status": "🚧"
       },
       {
         "n": 13,
         "slug": "13-pian9-xiongbi",
-        "title": "篇目精读第九：胸痹心痛短气——一句话定病机，7 条各给一方",
+        "title": "胸痹的方条比是 1.00，但这个 1 是两个口径相互抵消出来的",
         "status": "🚧"
       },
       {
         "n": 14,
         "slug": "14-pian10-fuman-shanjia",
-        "title": "篇目精读第十：腹满寒疝宿食——26 条里前 7 条不出方，先把决策树长出来",
+        "title": "腹满篇前八条不出方，先用八条判据把「温、下、吐」三条路分开",
         "status": "🚧"
       },
       {
         "n": 15,
         "slug": "15-pian11-zangfu-jiju",
-        "title": "篇目精读第十一：五脏风寒积聚——20 条只 3 方，一篇被跳过的「定位表」",
+        "title": "二十条只出三方，这一篇交付的是五脏定位表而不是方剂",
         "status": "🚧"
       },
       {
         "n": 16,
         "slug": "16-pian14-shuiqi",
-        "title": "篇目精读第十四：水气——2617 字的全书最长篇，用三套分类切同一批病",
+        "title": "全书最长的一篇水气，用四套分类切同一批病而不互相替代",
         "status": "🚧"
       },
       {
         "n": 17,
         "slug": "17-pian15-huangdan",
-        "title": "篇目精读第十五：黄疸——三因入口，六方各管一段",
+        "title": "黄疸先分三个入口，再谈利小便——入口错了，利小便就是空话",
         "status": "🚧"
       },
       {
         "n": 18,
         "slug": "18-pian16-jingji-tunv",
-        "title": "篇目精读第十六：惊悸吐衄下血胸满瘀血——17 条里 11 条在辨「是不是血的问题」",
+        "title": "十七条里十条在辨「这是不是血的问题」，方只留给后六条",
         "status": "🚧"
       },
       {
         "n": 19,
         "slug": "19-pian17-outu-yueli",
-        "title": "篇目精读第十七：呕吐哕下利——47 条，全书条数最多的一篇",
+        "title": "四十七条切成呕哕与下利两半，两半的节奏完全不同",
         "status": "🚧"
       },
       {
         "n": 20,
         "slug": "20-pian18-chuangyong",
-        "title": "篇目精读第十八：疮痈肠痈浸淫——8 条 3 方，最短的杂病篇之一",
+        "title": "八条里出现六个方名，而「方数」只算三个——三层差在哪里",
         "status": "🚧"
       },
       {
         "n": 21,
         "slug": "21-pian19-fujue-shanchong",
-        "title": "篇目精读第十九：趺蹶手指臂肿转筋阴狐疝蚘虫——八条小病串成的一篇",
+        "title": "八个互不相关的小病串成一篇，每个病自带一条治法",
         "status": "🚧"
       },
       {
         "n": 22,
         "slug": "22-pian23-zaliaofang",
-        "title": "篇目精读第二十三：杂疗方——底本 1 条，古诗文网本 46 段",
+        "title": "底本只给一条，四十六段里藏着十七首方——附篇的单位是方不是条",
         "status": "🚧"
       },
       {
         "n": 23,
         "slug": "23-pian24-qinshou-jinji",
-        "title": "篇目精读第二十四：禽兽鱼虫禁忌——133 段禁忌清单，三栏对应才是它的结构",
+        "title": "一百三十三段禁忌不是清单，是一张「禁什么—中了什么症—用什么解」的三栏表",
         "status": "🚧"
       },
       {
         "n": 24,
         "slug": "24-pian25-guoshi-jinji",
-        "title": "篇目精读第二十五：果实菜谷禁忌——与禽兽鱼虫禁忌合起来才是完整的食禁",
+        "title": "本篇没有总论，总论在上一篇开头；它的框由别人给的两端撑着",
         "status": "🚧"
       }
     ],
@@ -9771,49 +9771,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun",
-        "title": "绪论：先把学科的地界、来路与读法交代清楚",
+        "title": "绪论：三节是三层递进的地界，不是三份并列的名单",
         "status": "✅"
       },
       {
         "n": 2,
         "slug": "02-bianzheng-silu",
-        "title": "辨证论治思路与方法：把「看病」拆成一条可复核的流水线",
+        "title": "辨证论治思路与方法：辨证论治是一条有顺序的流水线，跳过任何一环后面的判断都会悬空",
         "status": "✅"
       },
       {
         "n": 3,
         "slug": "03-zangfu-bianzheng-gangyao",
-        "title": "脏腑辨证纲要与内科治则：把「病位」拆成五套可复用的模板",
+        "title": "脏腑辨证纲要与内科治则：二十五个小节只是六份同构模板的重复加两个补丁",
         "status": "✅"
       },
       {
         "n": 4,
         "slug": "04-feixi-bingzheng",
-        "title": "肺系病证：八个病证，一套模板，一张鉴别网",
+        "title": "肺系病证：八个病证共用一个模板，彼此的界线只能靠三组眼目分开",
         "status": "✅"
       },
       {
         "n": 5,
         "slug": "05-xinxi-bingzheng",
-        "title": "心系病证：九病一条轴，从心神到心脉",
+        "title": "心系病证：九个病是同一条病机轴上的刻度，不是九张并列的证型表",
         "status": "✅"
       },
       {
         "n": 6,
         "slug": "06-piwei-bingzheng",
-        "title": "脾胃系病证：一条通道上的九个卡点",
+        "title": "脾胃系病证：九病是一条通道上的九个卡点，换的是病名不是病因",
         "status": "✅"
       },
       {
         "n": 7,
         "slug": "07-ganxi-bingzheng",
-        "title": "肝系病证：气血水风四层，与一个例外",
+        "title": "肝系病证：九病按气、血、水、风四层归位，疟疾是那条轴之外的例外",
         "status": "✅"
       },
       {
         "n": 8,
         "slug": "08-shenxi-bingzheng",
-        "title": "肾系病证：水、溺、精三条通道",
+        "title": "肾系病证：六病落在水、溺、精三条通道上，溺道三病是一条进展线而非三个并列病",
         "status": "✅"
       },
       {
@@ -9843,13 +9843,13 @@ window.TCMAI_DATA = {
       {
         "n": 13,
         "slug": "13-zhengfang-liaoxiao",
-        "title": "证候—方剂—疗效：一条链里哪一步能看见，哪一步只能相信",
+        "title": "证候—方剂—疗效：链条前三段可回查，第四段在教材里根本没有字段",
         "status": "✅"
       },
       {
         "n": 14,
         "slug": "14-fenxing-icd11",
-        "title": "内科分型与 ICD-11：能对上的三十二个，和不能对上的四类",
+        "title": "内科分型与 ICD-11：对不上的三十一个不是还没做，是结构上做不了",
         "status": "✅"
       }
     ],
@@ -10103,145 +10103,145 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-s01-bing-zheng-hou",
-        "title": "病·证·候：三级诊断的含义与分界",
+        "title": "病是全程、证是阶段、候是当下的一步，三级混称一次就丢一层",
         "status": "✅"
       },
       {
         "n": 2,
         "slug": "02-s02-zheng-de-neirong",
-        "title": "证的内容与结构：病因·病位·病机",
+        "title": "证是「因×位」，候是「层×态」，四者缺一就只剩描述",
         "status": "✅"
       },
       {
         "n": 3,
         "slug": "03-s03-mingming-yu-fenlei",
-        "title": "证的命名与分类：十二门·四十五类·二十一病位",
+        "title": "命名只容一因一位，四十五类里却有三十八个名字本身就是兼夹",
         "status": "✅"
       },
       {
         "n": 4,
         "slug": "04-s04-neihan-waiyan",
-        "title": "证的内涵与外延：边界、兼夹与临界态",
+        "title": "外延不是无限的，它是传变的临界态，不是自由联想",
         "status": "✅"
       },
       {
         "n": 5,
         "slug": "05-s05-chuanbian",
-        "title": "证的传变：病位·病因·邪正三条轴",
+        "title": "传变有方向而无日程，三条轴能算的是路径不是天数",
         "status": "✅"
       },
       {
         "n": 6,
         "slug": "06-s06-qiuyin-shang",
-        "title": "辨证求因（上）：风·寒·热·暑·湿·燥的识别",
+        "title": "求因是对病因的特性逐条比对，不是见寒写寒、见热写热",
         "status": "✅"
       },
       {
         "n": 7,
         "slug": "07-s07-qiuyin-xia",
-        "title": "辨证求因（下）：火·气·瘀·痰·饮·水·食·虫·虚的识别",
+        "title": "内生九因没有季节可依，只能靠病机形态认",
         "status": "✅"
       },
       {
         "n": 8,
         "slug": "08-s08-sheny-in-dingwei",
-        "title": "审因定位：十二类病因的定位法与定位表",
+        "title": "定位是把病因放回它真能作用的位，不是把因名换成脏名",
         "status": "✅"
       },
       {
         "n": 9,
         "slug": "09-s09-jianbie-quishe",
-        "title": "证的鉴别与取舍：真假、兼夹与两因两位规则",
+        "title": "鉴别不是找不同症状，是判哪一条证据当下主导",
         "status": "✅"
       },
       {
         "n": 10,
         "slug": "10-s10-lunzhi",
-        "title": "证的论治：从证名到治法与隐性病因病位",
+        "title": "证名只是标帜，治法定的是隐性的那一半",
         "status": "✅"
       },
       {
         "n": 11,
         "slug": "11-s11-cidian-caozuo",
-        "title": "辞典操作：编码、检索与统计口径",
+        "title": "编码不是给书加编号，是给每一条候装一个唯一把手",
         "status": "✅"
       },
       {
         "n": 12,
         "slug": "12-s12-zonghe-shicao",
-        "title": "综合实操：从主诉到证候单元的全流程",
+        "title": "一条病案走完六步，才算把辞典用了一次",
         "status": "✅"
       },
       {
         "n": 13,
         "slug": "13-m01-feng-men",
-        "title": "风证门（M01）",
+        "title": "风证门：判据词是「动」，定处之痛不算风",
         "status": "✅"
       },
       {
         "n": 14,
         "slug": "14-m02-han-men",
-        "title": "寒证门（M02）",
+        "title": "寒证门：判据是收引与澄彻，厥得越深越要查真假",
         "status": "✅"
       },
       {
         "n": 15,
         "slug": "15-m03-shu-men",
-        "title": "暑证门（M03）",
+        "title": "暑证门：门最小，季节性最强，湿与热的分量最难分",
         "status": "✅"
       },
       {
         "n": 16,
         "slug": "16-m04-shi-men",
-        "title": "湿证门（M04）",
+        "title": "湿证门：判据是重着与腻，湿热一类占门内六成",
         "status": "✅"
       },
       {
         "n": 17,
         "slug": "17-m05-zao-men",
-        "title": "燥证门（M05）",
+        "title": "燥证门：判据是干涩，苔干与脉涩比口干可靠",
         "status": "✅"
       },
       {
         "n": 18,
         "slug": "18-m06-huo-men",
-        "title": "火证门（M06）",
+        "title": "火证门：门最大，判据是急迫，不是热",
         "status": "✅"
       },
       {
         "n": 19,
         "slug": "19-m07-qi-men",
-        "title": "气证门（M07）",
+        "title": "气证门：判据是走窜与得泄则松，胀而拒按不属气",
         "status": "✅"
       },
       {
         "n": 20,
         "slug": "20-m08-yu-men",
-        "title": "瘀证门（M08）",
+        "title": "瘀证门：判据是定处、色紫、脉涩，三者缺一即疑",
         "status": "✅"
       },
       {
         "n": 21,
         "slug": "21-m09-tan-men",
-        "title": "痰证门（M09）",
+        "title": "痰证门：判据是有形可征，怪病多痰不等于一切怪病都是痰",
         "status": "✅"
       },
       {
         "n": 22,
         "slug": "22-m10-yin-men",
-        "title": "饮证门（M10）",
+        "title": "饮证门：判据是清稀与振水声，水饮一家而聚散不同",
         "status": "✅"
       },
       {
         "n": 23,
         "slug": "23-m11-shiji-men",
-        "title": "食证门（M11）",
+        "title": "食证门：证最少的一门，判据是恶食与酸腐",
         "status": "✅"
       },
       {
         "n": 24,
         "slug": "24-m12-xu-men",
-        "title": "虚证门（M12）",
+        "title": "虚证门：证最多的一门，虚必兼滞或兼脱",
         "status": "✅"
       },
       {
@@ -10267,49 +10267,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xuepai-xingcheng",
-        "title": "学派的形成：地域、师承与文本",
+        "title": "学派不是标签，是同一个病人身上的四种不同提问",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-liuwansu-huore",
-        "title": "刘完素与火热论：把「火」抬成终点",
+        "title": "把「火」抬成终点，等于用一个高频字换掉一整套低频解释",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-zhangcongzheng-gongxie",
-        "title": "张从正与攻邪论：病由邪生",
+        "title": "「三法该尽治病」的可检版本：出口 120 条，禁令 80 条",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-ligao-piwei",
-        "title": "李杲与脾胃论：内伤也会发热",
+        "title": "内伤发热：给一个已有 60 条记载的老问题造一套 0 命中的新词",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-zhuzhenheng-ziyin",
-        "title": "朱震亨与滋阴论：相火不是实火",
+        "title": "相火论把「火」从病邪改写成身体的常驻设施",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-zhangjingyue-wenbu",
-        "title": "张景岳与温补学派：阳非有余",
+        "title": "七个词换三十四证：0.25% 的文本命中如何占住四分之一的证候",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-yetianshi-wenbing",
-        "title": "叶天士与温病学派：四层不是四个证",
+        "title": "温病不是一派：三套坐标互不翻译，硬译必错",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-duibi-jiegouhua",
-        "title": "对照阅读与结构化：一张表里放八派",
+        "title": "三个排序三个答案：一张表能算出三件事，算不出两件事",
         "status": "🚧"
       }
     ],
@@ -10317,49 +10317,49 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-fanchou-lun",
-        "title": "哲学史研究什么：范畴，不是年表",
+        "title": "范畴史研究的是词在文本中的用法，不是人物年表",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-qi-dao",
-        "title": "气与道：本体论的两个词",
+        "title": "气是内容，道是形式，两个本体词不能互换",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-yinyang",
-        "title": "阴阳：从现象到范畴",
+        "title": "阴阳是一组关系，不是一个可以计数的实体",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-wuxing",
-        "title": "五行：分类还是生成",
+        "title": "五行在临床上用的是生克传变，不是万物归类",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-tianren",
-        "title": "天人相应：人与环境的关系模型",
+        "title": "天人相应是以天地为参数的关系模型，不是养生口号",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-xingshen",
-        "title": "形神与心身：医学里的心身问题",
+        "title": "神既依赖形又能病形，所以治形与治神都是正治",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-changbian-quanheng",
-        "title": "常变与权衡：辨证思维的三条规则",
+        "title": "辨证的难点是排序：先常变，再顺逆，后标本",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-jiegouhua",
-        "title": "范畴的结构化与四个层面",
+        "title": "范畴结构化的价值在可检索与可对照，不在判定高下",
         "status": "🚧"
       }
     ],
@@ -10367,73 +10367,73 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun",
-        "title": "绪论：急诊学研究的不是病，是「正在恶化的人」",
+        "title": "急诊学的对象不是病，是那条还在下坠的曲线",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-lilun-jichu",
-        "title": "理论基础：邪盛正衰与气机逆乱",
+        "title": "邪盛正衰不是一句断言，是一条能读出方向的轴",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-zhengzhuang-jianbie",
-        "title": "急诊常见症状的鉴别：五个入口",
+        "title": "鉴别的功夫不在排病名，在给每个入口配一条出口",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-jijiu-jishu-fangyao",
-        "title": "常用急救技术与方药：先有形，再有名",
+        "title": "急救先有形，后有名：手上没有动作，辨证只是评语",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-waigan-rebing",
-        "title": "外感热病急症：从卫分到血分的四道门",
+        "title": "热不是敌人，热伤到的那个器官才是",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-xinnao-jizheng",
-        "title": "心脑急症：时间窗比辨证更硬",
+        "title": "心脑急症里，时间窗比证型更硬",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-feixi-jizheng",
-        "title": "肺系急症：喘的三级与血的一口",
+        "title": "喘要分三级，咯血要数口数——肺急症的判断都落在「量」上",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-piwei-gandan-jizheng",
-        "title": "脾胃肝胆急症：吐泻、急腹症、急黄",
+        "title": "吐泻看脱水，腹痛看能不能开刀，急黄看神志",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-shenxi-zhongdu",
-        "title": "肾系与中毒急症：闭与毒",
+        "title": "闭与毒：一个算尿量，一个算时间",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-xuezheng-chuangshang",
-        "title": "血证与创伤急症：血往哪里流",
+        "title": "血往哪里流：看得见的血好算，看不见的血难算",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-zhongzheng-jianhu",
-        "title": "急危重症与重症监护协同：分清谁能做",
+        "title": "分清谁能做：重症协同不是把中医搬进监护室，是把判断做在床旁",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-shuzihua-yujing",
-        "title": "中医急诊数字化与智能预警：早半小时",
+        "title": "预警的价值不在早报，在少报错——早半小时要用误报率换",
         "status": "🚧"
       }
     ],
@@ -10441,73 +10441,73 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-gaishu-yuanliu",
-        "title": "概论与源流：骨病学的边界先与骨折筋伤划清",
+        "title": "骨病学的门槛不在辨证，而在先把「病」从「伤」里择出来",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-fenlei-bingyin-bingji",
-        "title": "分类与病因病机：肾主骨这句话怎么落到机制上",
+        "title": "「肾主骨」要落到三条可测的轴上，否则它只是一个结论",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-linchuang-zhencha",
-        "title": "临床诊查：影像不是辅助，是判据",
+        "title": "影像不是辅助检查，它是分型与边界的判据",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-zhiliao-fangfa",
-        "title": "治疗方法：五条路，先定边界再选路",
+        "title": "五条路各有各的禁区，选路之前先算边界",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-huaxing-guisuiyan-guanjieyan",
-        "title": "化脓性骨髓炎与化脓性关节炎：脓在哪一层",
+        "title": "化脓的病，要先问脓积在哪一层",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-gu-guanjie-jiehe",
-        "title": "骨与关节结核：冷脓肿与截瘫之间",
+        "title": "冷脓肿不热，截瘫不可逆，中间那段就是诊断的窗口",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-gu-zhongliu",
-        "title": "骨肿瘤：先分良恶，再谈阴阳",
+        "title": "良恶之分看边界与生长方式，不看肿块大小",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-gu-daixie",
-        "title": "骨代谢性疾病：骨量的账本",
+        "title": "骨量是一本账，看余额也要看已经发生的支出",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-gu-quexue-xingsi",
-        "title": "骨缺血性坏死：塌陷之前与之后",
+        "title": "塌陷是一条单行道，围塌陷期是唯一的岔口",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-tuixing-mianyixing",
-        "title": "退行性与免疫性疾病：痹的两种时间感",
+        "title": "痹的时间感不止一种：越动越痛，越歇越僵",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-gu-jixing-ruangu",
-        "title": "骨畸形与骨软骨病：越早越好，且只有一次机会",
+        "title": "畸形的窗口只开一次：骨在长，机会不等人",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-kangfu-shuzihua",
-        "title": "康复与数字化：把「动静结合」变成可执行的动作",
+        "title": "「动静结合」要拆成负荷、时相、监测三个可执行变量",
         "status": "🚧"
       }
     ],
@@ -10589,73 +10589,73 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xulun",
-        "title": "绪论：精神病学研究的是「神」，不是「脑」",
+        "title": "神志病没有化验单，判据只能从「看和问」里长出来",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-lilun-jichu",
-        "title": "理论基础：脑主神明与心主神明，谁说了算",
+        "title": "心与脑争了两千年，争的其实是「谁主事」与「谁供血」",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-bingyin-bingji",
-        "title": "病因病机：七情、痰火、瘀虚",
+        "title": "七情不是「想不开」，是气机停在了某个方向",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-zhenduan",
-        "title": "诊断：精神检查是主证据，量表是辅证",
+        "title": "精神检查是主证，量表只是刻度，不是尺子本身",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-zhiliao-yuanze",
-        "title": "治疗原则：调神、开窍，先安全后辨证",
+        "title": "治神志病的第一味药不是方子，是「先安全，后辨证」",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-dianzheng-kuangzheng",
-        "title": "癫证与狂证：一阴一阳，一静一躁",
+        "title": "癫与狂不是两种病，是同一个「痰」的两种温度",
         "status": "🚧"
       },
       {
         "n": 7,
         "slug": "07-yubing",
-        "title": "郁病：气郁为始，虚损为终",
+        "title": "郁病的终点不在肝，在肾——疏肝只解开头一段",
         "status": "🚧"
       },
       {
         "n": 8,
         "slug": "08-bumian-jiaolv",
-        "title": "不寐与焦虑障碍：睡不好是「神不守舍」",
+        "title": "睡不好先看早醒，早醒先看情绪底色",
         "status": "🚧"
       },
       {
         "n": 9,
         "slug": "09-xianzheng-fazuoxing",
-        "title": "痫证与发作性障碍：发作的那几分钟",
+        "title": "发作的那几分钟，决定后面所有的用药纪律",
         "status": "🚧"
       },
       {
         "n": 10,
         "slug": "10-chidai-zhanwang",
-        "title": "痴呆与谵妄：慢的与急的两种「神乱」",
+        "title": "一个慢一个急：痴呆要缓图，谵妄要先查因",
         "status": "🚧"
       },
       {
         "n": 11,
         "slug": "11-qita-zhangai",
-        "title": "其他精神障碍：酒、儿童、围产期",
+        "title": "酒、儿童、产妇：三类人各有不能照搬的方",
         "status": "🚧"
       },
       {
         "n": 12,
         "slug": "12-jiehe-kangfu-shuzihua",
-        "title": "中西医结合、康复与数字化：边界写清楚才算合作",
+        "title": "合作的边界写在纸面上，才算合作",
         "status": "🚧"
       }
     ],
@@ -10725,37 +10725,37 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-xinbing-lunzhuan",
-        "title": "心病科轮转：胸痹与心悸的辨证接诊",
+        "title": "心病科的第一道分水岭是「胸痹」还是「心悸」",
         "status": "🚧"
       },
       {
         "n": 2,
         "slug": "02-feibing-lunzhuan",
-        "title": "肺病科轮转：咳嗽与喘证的辨证接诊",
+        "title": "咳与喘在书上分两节，在病人身上常是一件事的两头",
         "status": "🚧"
       },
       {
         "n": 3,
         "slug": "03-piwei-lunzhuan",
-        "title": "脾胃病科轮转：胃痞与泄泻的辨证接诊",
+        "title": "胃痞与泄泻同属脾胃，升降反作时只能先救一头",
         "status": "🚧"
       },
       {
         "n": 4,
         "slug": "04-shenbing-lunzhuan",
-        "title": "肾病科轮转：水肿与淋证的辨证接诊",
+        "title": "水肿与淋证都关于水，虚实一分治法就分道",
         "status": "🚧"
       },
       {
         "n": 5,
         "slug": "05-naobing-lunzhuan",
-        "title": "脑病科轮转：眩晕与中风的辨证接诊",
+        "title": "眩晕与中风共用一套风证坐标，差在一个时间窗",
         "status": "🚧"
       },
       {
         "n": 6,
         "slug": "06-chuke-kaohe",
-        "title": "出科考核与病例复盘（含结构化病历）",
+        "title": "出科考核考的不是记得多少，是判断留没留下痕迹",
         "status": "🚧"
       }
     ],
@@ -21643,7 +21643,7 @@ window.TCMAI_DATA = {
       {
         "n": 20,
         "slug": "20-shock",
-        "title": "休克",
+        "title": "休克是灌注问题，血压还撑得住并不等于组织没有缺血",
         "status": "🚧"
       },
       {
@@ -21655,7 +21655,7 @@ window.TCMAI_DATA = {
       {
         "n": 22,
         "slug": "22-obstructive-pulmonary-disorders",
-        "title": "阻塞性肺疾病",
+        "title": "阻塞性肺疾病：气流受限总在呼气相暴露，喘鸣消失不是好转",
         "status": "🚧"
       },
       {
@@ -21849,295 +21849,295 @@ window.TCMAI_DATA = {
       {
         "n": 1,
         "slug": "01-introduction",
-        "title": "绪论：一门学科先给提问方式，再给药名",
+        "title": "药理学先立的是提问方式，药物改机体与机体处置药物的两个方向决定全书分工",
         "status": "⏳"
       },
       {
         "n": 2,
         "slug": "02-pharmacodynamics",
-        "title": "药物效应动力学：作用、机制、受体与表述的四级台阶",
+        "title": "药物作用与药理效应分属分子事件与整体表现，两套语言混用就说不清机制",
         "status": "⏳"
       },
       {
         "n": 3,
         "slug": "03-pharmacokinetics",
-        "title": "药物代谢动力学：一条曲线、两类模型、三种消除",
+        "title": "房室模型只是拟合曲线的工具，拟合得上不等于机制成立",
         "status": "⏳"
       },
       {
         "n": 4,
         "slug": "04-factors-affecting-drug-response",
-        "title": "影响药物效应的因素：三组因素、两端框架、一条记录链",
+        "title": "效应差异先问落在过程端还是反应性端，答不出就等于还没有分析",
         "status": "⏳"
       },
       {
         "n": 5,
         "slug": "05-autonomic-nervous-system-overview",
-        "title": "传出神经系统药理概论：三层框架与六类主干",
+        "title": "以受体为主纲不是编排习惯，而是解剖、递质与临床应用共同给出的答案",
         "status": "⏳"
       },
       {
         "n": 6,
         "slug": "06-cholinergic-agonists",
-        "title": "拟胆碱药：两条路通往同一个效应，判据在「依赖什么」",
+        "title": "抗胆碱酯酶药不碰受体，它的效应完全依赖已被释放的乙酰胆碱",
         "status": "⏳"
       },
       {
         "n": 7,
         "slug": "07-organophosphates-and-cholinesterase-reactivating-agents",
-        "title": "有机磷酸酯类及胆碱酯酶复活药：一个共价键，与它被拆开的时间窗",
+        "title": "磷酰化写定了中毒的时间表，老化一旦发生，复活药就失去作用位点",
         "status": "⏳"
       },
       {
         "n": 8,
         "slug": "08-cholinergic-antagonists",
-        "title": "抗胆碱药：阻断之后看到的，是「张力对比」而不是药物本身",
+        "title": "抗胆碱药本身不产生效应，它显示的只是原有张力的对比",
         "status": "⏳"
       },
       {
         "n": 9,
         "slug": "09-adrenergic-agonists",
-        "title": "拟肾上腺素药：受体谱的宽窄，决定了一支药长什么样",
+        "title": "拟肾上腺素药的作用来自受体在组织中的分布，而不是药物自身的独特性质",
         "status": "⏳"
       },
       {
         "n": 10,
         "slug": "10-adrenergic-antagonists",
-        "title": "抗肾上腺素药：阻断不产生效应，它只取消一层驱动",
+        "title": "阻断药只取消一层驱动，α1 与 α2 的效应方向相反不是强弱之分",
         "status": "⏳"
       },
       {
         "n": 11,
         "slug": "11-local-anesthetics",
-        "title": "局部麻醉药：一条「结构—代谢—时程—给药—观察」的链",
+        "title": "碱基型负责穿膜、阳离子型负责结合，感觉先于运动的顺序决定了观察表分栏",
         "status": "⏳"
       },
       {
         "n": 12,
         "slug": "12-general-anesthetics",
-        "title": "全身麻醉药：进行性抑制、可分的成分、网络的机制",
+        "title": "全身麻醉药的分类只给坐标不给名次，机制是网络而不是一把锁",
         "status": "⏳"
       },
       {
         "n": 13,
         "slug": "13-sedative-hypnotics",
-        "title": "镇静催眠药：一个剂量谱、两类别位调节、四个靶点层面",
+        "title": "镇静与催眠是同一机制上的剂量档位，不是一个管入睡、一个管维持",
         "status": "⏳"
       },
       {
         "n": 14,
         "slug": "14-antiepileptic-and-anticonvulsant-drugs",
-        "title": "抗癫痫药与抗惊厥药：环节、目的与观察项目",
+        "title": "抗癫痫药的全部难点在选择性：压低异常放电，又不许压掉正常神经功能",
         "status": "⏳"
       },
       {
         "n": 15,
         "slug": "15-antipsychotic-drugs",
-        "title": "抗精神失常药：四条通路、三条靶点线、两张清单",
+        "title": "抗精神病药的治疗作用与不良反应出自同一条受体通路，分开讲就讲不通",
         "status": "⏳"
       },
       {
         "n": 16,
         "slug": "16-drugs-for-neurodegenerative-diseases",
-        "title": "治疗中枢神经系统退行性疾病药：两道门槛、三条路径、一张观察表",
+        "title": "现有药物只补偿递质、不阻止神经元丢失，效应的上限由残存神经元决定",
         "status": "⏳"
       },
       {
         "n": 17,
         "slug": "17-antipyretic-analgesic-and-anti-inflammatory-drugs",
-        "title": "解热镇痛抗炎药与抗痛风药：一条前列腺素线、一条尿酸线",
+        "title": "解热、镇痛、抗炎不是三套机制，而是同一条前列腺素线在三处的分配",
         "status": "⏳"
       },
       {
         "n": 18,
         "slug": "18-opioid-analgesics",
-        "title": "镇痛药：受体、效应、用途、观察的四段推演",
+        "title": "镇痛药的选择性在于保住意识，它与解热镇痛药、局麻药分处三个环节",
         "status": "⏳"
       },
       {
         "n": 19,
         "slug": "19-central-nervous-system-stimulants",
-        "title": "中枢兴奋药：三级部位、两条路径、一条安全边界",
+        "title": "中枢兴奋药的危险不在兴奋不足，而在脊髓层被削弱的抑制",
         "status": "⏳"
       },
       {
         "n": 20,
         "slug": "20-histamine-and-antihistamines",
-        "title": "组胺及抗组胺药：一条「释放—亚型—占据—代际」的链",
+        "title": "两代 H1 抗组胺药的分野不在强弱，而在能不能进入中枢",
         "status": "⏳"
       },
       {
         "n": 21,
         "slug": "21-other-autacoid-drugs",
-        "title": "其他影响自体活性物质的药物：一条「环节—靶点—组织」的定位法",
+        "title": "同一自体活性物质能给出相反效应，差别在受体亚型分布而不在物质本身",
         "status": "⏳"
       },
       {
         "n": 22,
         "slug": "22-drugs-acting-on-cardiovascular-ion-channels",
-        "title": "作用于心血管系统离子通道的药物：一条「状态—选择性—方向」的判据链",
+        "title": "离子通道药的效应取决于通道处于什么状态，而不只取决于阻滞哪种离子",
         "status": "⏳"
       },
       {
         "n": 23,
         "slug": "23-drugs-for-chronic-heart-failure",
-        "title": "治疗慢性心功能不全的药物：一条「重构—环节—时间尺度」的链",
+        "title": "慢性心衰的中心环节是重构与神经内分泌激活，不是「泵弱了」这一个直觉",
         "status": "⏳"
       },
       {
         "n": 24,
         "slug": "24-antihypertensive-drugs",
-        "title": "抗高血压药：一条「三要素—五类药—平稳覆盖」的链",
+        "title": "降压的终点不是把数字降下来，而是让覆盖撑过整个给药间隔",
         "status": "⏳"
       },
       {
         "n": 25,
         "slug": "25-antianginal-drugs",
-        "title": "抗心绞痛药：一张耗氧表上的四个位置",
+        "title": "抗心绞痛药争的是耗氧与灌注的平衡，β 阻断药不扩血管也算一种解法",
         "status": "⏳"
       },
       {
         "n": 26,
         "slug": "26-antiarrhythmic-drugs",
-        "title": "抗心律失常药：同源的治疗与致心律失常",
+        "title": "抗心律失常药既能治心律失常也能致心律失常，因为动的是同一台电生理机器",
         "status": "⏳"
       },
       {
         "n": 27,
         "slug": "27-antiatherosclerotic-drugs",
-        "title": "抗动脉粥样硬化药：四个侧面，一个位点问题",
+        "title": "抗动脉粥样硬化药分四类靠的是卡在事件链的哪一步，不是药效强弱",
         "status": "⏳"
       },
       {
         "n": 28,
         "slug": "28-diuretics-and-dehydrating-agents",
-        "title": "利尿药与脱水药：管腔侧的一个转运体，血管侧的一道渗透压",
+        "title": "利尿药动的是管腔侧转运体，脱水药靠的是血管侧渗透压，两者不在同一侧发力",
         "status": "⏳"
       },
       {
         "n": 29,
         "slug": "29-gastrointestinal-drugs",
-        "title": "消化系统药：三条路径、两个方向、一处相互制约",
+        "title": "抗溃疡药的三条路径互相制约，所以分类不能按化学结构切",
         "status": "⏳"
       },
       {
         "n": 30,
         "slug": "30-respiratory-system-drugs",
-        "title": "呼吸系统药：一条按时相排开的分工，与三个窄口",
+        "title": "呼吸系统药的分节依据是症状出现的时相，不是化学结构或作用强弱",
         "status": "⏳"
       },
       {
         "n": 31,
         "slug": "31-uterine-stimulants",
-        "title": "子宫兴奋药：一条选择性递减的谱系，与随之升高的观察密度",
+        "title": "子宫兴奋药的选择性越低，需要跟上的观察密度就越高",
         "status": "⏳"
       },
       {
         "n": 32,
         "slug": "32-antianemic-drugs",
-        "title": "抗贫血药：三个层次，三处不同步",
+        "title": "抗贫血药补的是三个不同层次，血象恢复的先后次序本身就是观察项目",
         "status": "⏳"
       },
       {
         "n": 33,
         "slug": "33-drugs-affecting-coagulation",
-        "title": "作用于凝血系统的药物：一条线上的四段，与三种「能不能被监测」",
+        "title": "抗凝与溶栓不是强弱两档，而是一个管「不再长」、一个管「已经长的」",
         "status": "⏳"
       },
       {
         "n": 34,
         "slug": "34-adrenocortical-hormones",
-        "title": "肾上腺皮质激素类药：三个方向，一条轴，一条同源律",
+        "title": "糖皮质激素的一个受体给出两套效应，剂量与疗程因此是分类的一列而非附注",
         "status": "⏳"
       },
       {
         "n": 35,
         "slug": "35-thyroid-hormones-and-antithyroid-drugs",
-        "title": "甲状腺激素与抗甲状腺药：三个环节、一条时间轴",
+        "title": "T3 与 T4 的差别是一个碘原子，含量多少不等于活性强弱",
         "status": "⏳"
       },
       {
         "n": 36,
         "slug": "36-antihyperglycemic-drugs",
-        "title": "降血糖药：五条环节，一条时间轴",
+        "title": "降血糖药先按途径分两支、再按环节分组，化学结构排不进第一层",
         "status": "⏳"
       },
       {
         "n": 37,
         "slug": "37-sex-hormones-and-contraceptives",
-        "title": "性激素类药及避孕药：一条受体链，三种时间尺度",
+        "title": "性激素类药的结构先决定它能不能口服，首过效应比活性强弱更早一步筛药",
         "status": "⏳"
       },
       {
         "n": 38,
         "slug": "38-antimicrobial-drugs-overview",
-        "title": "抗病原微生物药物概论：一把钥匙、两套机制、一条演化线",
+        "title": "抗微生物治疗的地基是选择性毒性，离开「只伤病原体」这一步就没有化疗",
         "status": "⏳"
       },
       {
         "n": 39,
         "slug": "39-synthetic-antibacterial-drugs",
-        "title": "人工合成抗菌药：共同的出身，四条不通用的靶点线",
+        "title": "人工合成抗菌药的共同点只在出身，四条靶点线彼此并不通用",
         "status": "⏳"
       },
       {
         "n": 40,
         "slug": "40-beta-lactam-antibiotics",
-        "title": "β-内酰胺类抗生素：一个环、一个靶点、三处差别",
+        "title": "β-内酰胺类的共同点只是那个四元环，环在不在决定药还有没有效",
         "status": "⏳"
       },
       {
         "n": 41,
         "slug": "41-macrolides-lincosamides-and-polypeptide-antibiotics",
-        "title": "大环内酯类、林可霉素类及多肽类抗生素：靶点决定范围，位点决定配伍",
+        "title": "同一个五十S 靶点上的药未必能合用，位点重叠反而会互相抢位",
         "status": "⏳"
       },
       {
         "n": 42,
         "slug": "42-aminoglycoside-antibiotics",
-        "title": "氨基糖苷类抗生素：结构与转运决定谱，蓄积部位决定毒性",
+        "title": "氨基糖苷类的抗菌谱由转运决定，毒性则由药物蓄积在哪一处决定",
         "status": "⏳"
       },
       {
         "n": 43,
         "slug": "43-tetracyclines-and-chloramphenicol",
-        "title": "四环素类与氯霉素类：宽谱的同源，是风险的另一种说法",
+        "title": "四环素类与氯霉素类编在一章不是因为同构，而是同一种「宽谱的代价」",
         "status": "⏳"
       },
       {
         "n": 44,
         "slug": "44-antifungal-and-antiviral-drugs",
-        "title": "抗真菌药与抗病毒药：选择性只剩一步之差",
+        "title": "抗真菌药的选择性只剩一步之差，靶点长在「真菌有、人没有」处才成立",
         "status": "⏳"
       },
       {
         "n": 45,
         "slug": "45-antituberculosis-and-antileprosy-drugs",
-        "title": "抗结核病药及抗麻风病药：菌群不同步，方案就不能单打",
+        "title": "结核菌群不同步，一种药治到底在机制上就不可能覆盖全部菌群",
         "status": "⏳"
       },
       {
         "n": 46,
         "slug": "46-antiparasitic-drugs",
-        "title": "抗寄生虫药：先认生活史，再认药",
+        "title": "抗寄生虫药的共同点不是「杀虫」，而是在生活史的某一阶段找到宿主与虫体的差别",
         "status": "⏳"
       },
       {
         "n": 47,
         "slug": "47-anticancer-drugs",
-        "title": "抗恶性肿瘤药：选择性是相对的，边界是算出来的",
+        "title": "抗肿瘤药的选择性只能是相对的，给药间隔要靠动力学算而不是靠经验",
         "status": "⏳"
       },
       {
         "n": 48,
         "slug": "48-immunosuppressants",
-        "title": "免疫抑制药：作用在哪一环，就欠哪一方面的账",
+        "title": "免疫抑制药作用在哪一环，就欠哪一方面的防御，抑制越广欠账越多",
         "status": "⏳"
       },
       {
         "n": 49,
         "slug": "49-immunostimulants",
-        "title": "免疫增强药：方向相反，不等于道理相反",
+        "title": "免疫增强药与抑制药方向相反但道理相同，佐剂离开抗原就只剩局部炎症",
         "status": "⏳"
       }
     ],

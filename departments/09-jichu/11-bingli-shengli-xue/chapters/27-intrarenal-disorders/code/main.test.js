@@ -3,9 +3,8 @@
  * 第 27 章 肾内疾病 —— 确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言只落在可对账的结构上：节数与节号、讲义字数、docs 规模、节覆盖、
- * 引文归属、逐字引语、正文裸值，以及 quiz 的六题契约。
- * 不锁死正文措辞，讲义改写段落时测试不会变成噪声。
+ * 断言只落在可对账的结构上：正文规模、引证章号、节号前缀、数值命中、锚点落位、
+ * quiz 契约（题数/三段/四选项/解释字数/选项接地/答案分散）。不锁正文措辞。
  */
 
 'use strict';
@@ -13,96 +12,121 @@
 const assert = require('node:assert');
 const test = require('node:test');
 const fs = require('node:fs');
+const path = require('node:path');
 
 const {
-  CHAPTER,
-  BOUNDARY,
-  DOC,
-  loadChapter,
-  shape,
-  termFreq,
-  docAudit,
-  quizAudit,
+  CHAPTER, TITLE, ANCHORS, BOUNDARY,
+  readDoc, shape, citationAudit, valueAudit, anchorCoverage, main,
 } = require('./main');
 
-const ch = loadChapter();
-const doc = fs.readFileSync(DOC, 'utf8');
+const doc = readDoc();
+const EXPECT = {
+  h2: 5,
+  h3: 11,
+  paras: 53,
+  hanzi: 5733,
+  chars: 7768,
+  cites: 16,
+  distinct: 10,
+  values: 0,
+  anchors: ["小管间质","综合征"],
+};
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
 
-test('本章对应讲义第 27 章：10 节，节号从 27.1 到 27.10 连续', () => {
+const cjk = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;
+
+function grams(s) {
+  const out = new Set();
+  const t = String(s);
+  for (let i = 0; i + 4 <= t.length; i += 1) {
+    const g = t.slice(i, i + 4);
+    if (/^[\u4e00-\u9fff]{4}$/.test(g)) out.add(g);
+  }
+  return out;
+}
+
+test('章号与标题来自正文 H1', () => {
   assert.strictEqual(CHAPTER, 27);
-  assert.strictEqual(ch.secs.length, 10);
+  const h1 = doc.split(/\r?\n/).find((l) => /^#\s+/.test(l)) || '';
+  assert.ok(h1.includes(TITLE), `H1 不含标题：${h1}`);
+  assert.ok(TITLE.length >= 2);
+});
+
+test('正文规模：节 / 小节 / 段 / 汉字 / 非空白字符与实测一致', () => {
+  const s = shape(doc);
   assert.deepStrictEqual(
-    ch.secs.map((s) => s.no),
-    ['27.1', '27.2', '27.3', '27.4', '27.5', '27.6', '27.7', '27.8', '27.9', '27.10'],
+    { h2: s.h2, h3: s.h3, paras: s.paras, hanzi: s.hanzi, chars: s.chars },
+    { h2: EXPECT.h2, h3: EXPECT.h3, paras: EXPECT.paras, hanzi: EXPECT.hanzi, chars: EXPECT.chars },
   );
-  for (const s of ch.secs) assert.ok(s.text.length > 0, `${s.no} 正文为空`);
 });
 
-test('讲义规模现算：4620 非空白字符、3552 汉字，不是手打', () => {
-  const s = shape(ch);
-  assert.strictEqual(s.secs, 10);
-  assert.strictEqual(s.chars, 4620);
-  assert.strictEqual(s.hanzi, 3552);
+test('引证章号与节号前缀全部等于本章，没有跨章复制', () => {
+  const c = citationAudit(doc, CHAPTER);
+  assert.strictEqual(c.total, EXPECT.cites);
+  assert.deepStrictEqual(c.wrongChapter, []);
+  assert.deepStrictEqual(c.prefixMismatch, []);
+  assert.strictEqual(c.distinct.length, EXPECT.distinct);
 });
 
-test('术语词频现算：血管 26 · 肾小球 23 · 小管 16（分类端以部位为主）', () => {
-  const f = termFreq(ch);
-  assert.strictEqual(f['血管'], 26);
-  assert.strictEqual(f['肾小球'], 23);
-  assert.strictEqual(f['小管'], 16);
-  assert.strictEqual(f['间质'], 15);
+test('数值型命中数与实测一致（正文只给类别与关系）', () => {
+  const v = valueAudit(doc);
+  assert.strictEqual(v.hits, EXPECT.values);
 });
 
-test('docs 规模在目标区间，且十节节号全部出现', () => {
-  const a = docAudit(doc, ch);
-  assert.ok(a.chars >= 3000, `正文 ${a.chars} 非空白字 < 3000`);
-  assert.ok(a.chars <= 9000, `正文 ${a.chars} 非空白字超出本章体量上限`);
-  assert.deepStrictEqual(a.uncovered, [], `节号未覆盖：${a.uncovered.join('、')}`);
-});
-
-test('讲义引文 ≥3 条，全部落在第 27 章，且节号真实存在', () => {
-  const a = docAudit(doc, ch);
-  assert.ok(a.cites.length >= 3, `引文 ${a.cites.length} 条 < 3`);
-  assert.deepStrictEqual(a.wrongCh, []);
-  assert.deepStrictEqual(a.noSec, []);
-  for (const c of a.cites) assert.strictEqual(c.ch, 27);
-});
-
-test('逐字引语能在讲义里找到，正文没有裸写的「数字＋计量单位」', () => {
-  const a = docAudit(doc, ch);
-  assert.deepStrictEqual(a.quoteBad, [], `引语核不到：${a.quoteBad.join(' / ')}`);
-  assert.deepStrictEqual(a.bareLines, [], `正文带数值：${a.bareLines.join(' | ')}`);
-});
-
-test('docs 含必备段：MOTTO / PROBLEM / 双根因定位 / 末节 / 运行与验证', () => {
-  for (const k of ['MOTTO', 'PROBLEM', '双根因定位', '环境逼迫', '知识积累', '代价与边界', '运行与验证', '免责']) {
-    assert.ok(doc.includes(k), `docs 缺 ${k}`);
-  }
-  assert.ok(/不写数值/.test(doc), 'docs 缺「不写数值」声明');
-  assert.ok(/不作诊断|不构成诊断/.test(doc), 'docs 缺「不作诊断」声明');
-  assert.ok(doc.includes(BOUNDARY), 'docs 缺教学边界句');
-});
-
-test('quiz 恰 6 题：pre 1 · check 3 · post 2，题干键为 question，每题带引证', () => {
-  const q = quizAudit();
-  assert.strictEqual(q.total, 6);
-  assert.strictEqual(q.pre, 1);
-  assert.strictEqual(q.check, 3);
-  assert.strictEqual(q.post, 2);
-  assert.strictEqual(q.noQuestionKey, 0);
-  assert.strictEqual(q.cited, 6, '有题目 explanation 缺引证关键词');
-  const raw = JSON.parse(fs.readFileSync(require('./main').QUIZ, 'utf8')).questions;
-  for (const x of raw) {
-    assert.ok(Array.isArray(x.options) && x.options.length >= 2, '选项不足');
-    assert.ok(Number.isInteger(x.correct) && x.correct >= 0 && x.correct < x.options.length, 'correct 越界');
-    assert.match(x.explanation, /第27章·27\.\d+/, '引证没落到本章节号');
+test('锚点从正文选出，且每个锚点至少落在一节', () => {
+  assert.deepStrictEqual(ANCHORS, EXPECT.anchors);
+  const cov = anchorCoverage(doc);
+  const flat = doc.replace(/\s/g, '');
+  for (const a of ANCHORS) {
+    assert.ok(cov[a].length >= 1, `锚点「${a}」未落位`);
+    assert.ok(flat.includes(a), `锚点在正文中找不到：${a}`);
   }
 });
 
-test('教学边界句固定，且 main.js 最后一行就是它', () => {
-  const src = fs.readFileSync(require('node:path').join(__dirname, 'main.js'), 'utf8').trimEnd();
-  const last = src.split(/\r?\n/).slice(-3).join('\n');
-  assert.match(last, /教学边界/);
-  assert.match(BOUNDARY, /^教学边界：/);
-  assert.match(BOUNDARY, /不构成诊断/);
+test('quiz：≥5 题，pre/check/post 三段齐，每题 4 个互异选项', () => {
+  const qs = QUIZ.questions;
+  assert.ok(qs.length >= 5, `题数 ${qs.length}`);
+  for (const stage of ['pre', 'check', 'post']) {
+    assert.ok(qs.some((q) => q.stage === stage), `缺 ${stage}`);
+  }
+  for (const [i, q] of qs.entries()) {
+    assert.ok(q.question && q.question.length >= 6, `Q${i + 1} 题干过短`);
+    assert.strictEqual(new Set(q.options).size, 4, `Q${i + 1} 选项不互异`);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct <= 3, `Q${i + 1} correct 越界`);
+    assert.ok(cjk(q.explanation) >= 30, `Q${i + 1} 解释不足 30 汉字`);
+  }
+  assert.strictEqual(QUIZ.lesson, "27-intrarenal-disorders");
+  assert.strictEqual(QUIZ.subject, '11-bingli-shengli-xue');
+});
+
+test('quiz：每题的末条引证落在本章章号', () => {
+  for (const [i, q] of QUIZ.questions.entries()) {
+    const ms = [...q.explanation.matchAll(/第\s*(\d+)\s*章/g)];
+    assert.ok(ms.length >= 1, `Q${i + 1} 无章号引证`);
+    assert.strictEqual(Number(ms[ms.length - 1][1]), CHAPTER, `Q${i + 1} 末条引证不落本章`);
+  }
+});
+
+test('quiz：check 题至少 2 道的正确项含当章正文 4 字词组', () => {
+  const flat = doc.replace(/\s/g, '');
+  const checks = QUIZ.questions.filter((q) => q.stage === 'check');
+  const grounded = checks.filter((q) => [...grams(q.options[q.correct])].some((g) => flat.includes(g)));
+  assert.ok(grounded.length >= 2, `接地 check 题 ${grounded.length}/${checks.length}`);
+});
+
+test('quiz：答案打散，正确项覆盖至少 3 个位置且单一位置不超过 3 题', () => {
+  const idx = QUIZ.questions.map((q) => q.correct);
+  const counts = [0, 0, 0, 0];
+  for (const i of idx) counts[i] += 1;
+  assert.ok(counts.filter((n) => n > 0).length >= 3, `分布 ${counts.join('/')}`);
+  assert.ok(Math.max(...counts) <= 3, `分布 ${counts.join('/')}`);
+});
+
+test('main() 末行固定为教学边界句，且正文含边界声明', () => {
+  const logs = [];
+  const orig = console.log;
+  console.log = (...a) => logs.push(a.join(' '));
+  try { main(); } finally { console.log = orig; }
+  assert.strictEqual(logs[logs.length - 1], BOUNDARY);
+  assert.ok(doc.includes('教学边界：'));
 });

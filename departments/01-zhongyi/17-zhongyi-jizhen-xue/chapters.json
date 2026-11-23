@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-xulun",
-   "title": "绪论：急诊学研究的不是病，是「正在恶化的人」",
+   "title": "急诊学的对象不是病，是那条还在下坠的曲线",
    "status": "🚧",
    "source": {
     "chapter": 1,
@@ -16,7 +16,7 @@
   {
    "n": 2,
    "slug": "02-lilun-jichu",
-   "title": "理论基础：邪盛正衰与气机逆乱",
+   "title": "邪盛正衰不是一句断言，是一条能读出方向的轴",
    "status": "🚧",
    "source": {
     "chapter": 2,
@@ -27,7 +27,7 @@
   {
    "n": 3,
    "slug": "03-zhengzhuang-jianbie",
-   "title": "急诊常见症状的鉴别：五个入口",
+   "title": "鉴别的功夫不在排病名，在给每个入口配一条出口",
    "status": "🚧",
    "source": {
     "chapter": 3,
@@ -38,7 +38,7 @@
   {
    "n": 4,
    "slug": "04-jijiu-jishu-fangyao",
-   "title": "常用急救技术与方药：先有形，再有名",
+   "title": "急救先有形，后有名：手上没有动作，辨证只是评语",
    "status": "🚧",
    "source": {
     "chapter": 4,
@@ -49,7 +49,7 @@
   {
    "n": 5,
    "slug": "05-waigan-rebing",
-   "title": "外感热病急症：从卫分到血分的四道门",
+   "title": "热不是敌人，热伤到的那个器官才是",
    "status": "🚧",
    "source": {
     "chapter": 5,
@@ -60,7 +60,7 @@
   {
    "n": 6,
    "slug": "06-xinnao-jizheng",
-   "title": "心脑急症：时间窗比辨证更硬",
+   "title": "心脑急症里，时间窗比证型更硬",
    "status": "🚧",
    "source": {
     "chapter": 6,
@@ -71,7 +71,7 @@
   {
    "n": 7,
    "slug": "07-feixi-jizheng",
-   "title": "肺系急症：喘的三级与血的一口",
+   "title": "喘要分三级，咯血要数口数——肺急症的判断都落在「量」上",
    "status": "🚧",
    "source": {
     "chapter": 7,
@@ -82,7 +82,7 @@
   {
    "n": 8,
    "slug": "08-piwei-gandan-jizheng",
-   "title": "脾胃肝胆急症：吐泻、急腹症、急黄",
+   "title": "吐泻看脱水，腹痛看能不能开刀，急黄看神志",
    "status": "🚧",
    "source": {
     "chapter": 8,
@@ -93,7 +93,7 @@
   {
    "n": 9,
    "slug": "09-shenxi-zhongdu",
-   "title": "肾系与中毒急症：闭与毒",
+   "title": "闭与毒：一个算尿量，一个算时间",
    "status": "🚧",
    "source": {
     "chapter": 9,
@@ -104,7 +104,7 @@
   {
    "n": 10,
    "slug": "10-xuezheng-chuangshang",
-   "title": "血证与创伤急症：血往哪里流",
+   "title": "血往哪里流：看得见的血好算，看不见的血难算",
    "status": "🚧",
    "source": {
     "chapter": 10,
@@ -115,7 +115,7 @@
   {
    "n": 11,
    "slug": "11-zhongzheng-jianhu",
-   "title": "急危重症与重症监护协同：分清谁能做",
+   "title": "分清谁能做：重症协同不是把中医搬进监护室，是把判断做在床旁",
    "status": "🚧",
    "source": {
     "chapter": 11,
@@ -126,7 +126,7 @@
   {
    "n": 12,
    "slug": "12-shuzihua-yujing",
-   "title": "中医急诊数字化与智能预警：早半小时",
+   "title": "预警的价值不在早报，在少报错——早半小时要用误报率换",
    "status": "🚧",
    "source": {
     "chapter": 12,

@@ -1,57 +1,89 @@
 #!/usr/bin/env node
 /**
- * 第 1 章 心病科轮转：胸痹与心悸的辨证接诊 —— 确定性单元测试
- * 运行: node --test code/main.test.js
+ * 中医临床轮转 · 第 1 章 —— 确定性单元测试
+ * 运行: node --test chapters/01-xinbing-lunzhuan/code/main.test.js
  *
- * 断言只落在可对账的结构上：单元数与小节号、规模、三辨与四位面重心、引书数、数值计数。
- * 数字由 standards/lunzhuan/units.json 现算后写死在此，教材改版时测试会先响。
+ * 两组断言：
+ *   1) 代码只读本章 docs/zh.md，现算出的规模、表行、词频与本次实测值一致；
+ *   2) quiz.json 结构齐、答案下标合法且分散、解释够长、check 题的正确项能在正文找到原词。
+ * 正文或题目一改，这里先响。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const { CHAPTER, load, chapterUnits, merge, rank, shape, citations, bySection } = require('./main.js');
+const { DOC, TITLE, summary, criteriaTable } = require('./main.js');
 
-const data = load();
-const list = chapterUnits(data);
+const text = fs.readFileSync(DOC, 'utf8');
+const s = summary(text);
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
 
-test('本章单元数与小节号与教材一致', () => {
-  assert.strictEqual(list.length, 1);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['01.1']);
+const hanzi = (v) => (String(v || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+function shingles(str, n = 4) {
+  const clean = String(str || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  return out;
+}
+
+test('本章正文规模与结构（只读本章 docs/zh.md 现算）', () => {
+  assert.strictEqual(s.hanzi, 3063);
+  assert.strictEqual(s.sections.length, 6);
+  assert.strictEqual(s.tables, 6);
+  assert.strictEqual(s.rows, 43);
+  assert.strictEqual(TITLE.length > 0, true);
 });
 
-test('规模：35350 字 · 平均 35350 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 35350);
-  assert.strictEqual(s.mean, 35350);
+test('判据表行数与表头列数', () => {
+  const ct = criteriaTable(text);
+  assert.ok(ct.title.includes('判据'), `未找到判据一节：${ct.title}`);
+  assert.strictEqual(ct.table.rows.length, 13);
+  assert.strictEqual(ct.table.header.length, 4);
 });
 
-test('三辨重心是「考核证据」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '考核证据');
-  assert.strictEqual(views[0].count, 50);
+test('抓手词频与排序', () => {
+  const counts = Object.fromEntries(s.terms.map((x) => [x.term, x.count]));
+  assert.strictEqual(counts["证型"], 23, '证型');
+  assert.strictEqual(counts["心悸"], 17, '心悸');
+  assert.strictEqual(counts["胸痹"], 17, '胸痹');
+  assert.strictEqual(counts["主症"], 11, '主症');
+  assert.strictEqual(counts["治法"], 9, '治法');
+  assert.strictEqual(counts["交接"], 5, '交接');
+  assert.strictEqual(counts["脉象"], 4, '脉象');
+  assert.strictEqual(counts["九字段"], 2, '九字段');
+  assert.strictEqual(s.terms[0].term, "证型");
+  assert.strictEqual(s.terms[0].count, 23);
 });
 
-test('四位面重心是「必须做操作」，且四层都有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['必须做操作'], 45);
-  const touched = Object.values(levels).filter((n) => n > 0).length;
-  assert.ok(touched >= 3, `仅 ${touched} 层有落点`);
+test('最长一节', () => {
+  const d = s.sections.slice().sort((a, b) => b.hanzi - a.hanzi)[0];
+  assert.strictEqual(d.hanzi, 785);
+  assert.ok(d.title.startsWith("二、判据"), d.title);
 });
 
-test('本章教材不引古籍（引书 0 部）：属现代急诊／重症内容', () => {
-  const c = citations(list);
-  assert.strictEqual(c.books, 0);
-  assert.strictEqual(c.total, 0);
+test('quiz 结构：题量、阶段、四选项、下标合法、解释够长、下标分散', () => {
+  const qs = quiz.questions;
+  assert.ok(qs.length >= 5, `仅 ${qs.length} 题`);
+  const stages = new Set(qs.map((q) => q.stage));
+  for (const st of ['pre', 'check', 'post']) assert.ok(stages.has(st), `缺 ${st} 段`);
+  const idx = new Set();
+  for (const q of qs) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    idx.add(q.correct);
+    assert.ok(hanzi(q.explain) >= 30, `解释过短：${q.question}`);
+  }
+  assert.ok(idx.size >= 3, `答案下标只有 ${idx.size} 种`);
 });
 
-test('数值计数与单元层一致（本章 2 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 2);
-});
-
-test('每节都有单元，且每单元都带 locator', () => {
-  for (const s of bySection(list)) assert.ok(s.units > 0, s.sec);
-  for (const u of list) assert.ok(u.locator.startsWith(`派生·第${CHAPTER}章·`), u.locator);
+test('quiz 接地：至少 2 道 check 题的正确项含正文原词', () => {
+  const body = shingles(text);
+  const hits = quiz.questions
+    .filter((q) => q.stage === 'check')
+    .filter((q) => [...shingles(q.options[q.correct])].some((g) => body.has(g)));
+  assert.ok(hits.length >= 2, `接地 check 题仅 ${hits.length} 道`);
 });

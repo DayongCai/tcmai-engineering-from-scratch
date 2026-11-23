@@ -280,7 +280,7 @@
 | 05 | [中医诊断学](departments/01-zhongyi/05-zhongyi-zhen-duan-xue/) | 3 | Core | 90 | 12/12 | 0 | 27465 字 | ✅ |
 | 06 | [内经选读](departments/01-zhongyi/06-neijing-xuandu/) | 3 | Core | 72 | 10/10 | 0 | 214136 字 | ✅ |
 | 07 | [伤寒论](departments/01-zhongyi/07-shanghanlun/) | 4 | Core | 90 | 12/12 | 0 | 129165 字 | ✅ |
-| 08 | [金匮要略](departments/01-zhongyi/08-jingui-yaolue/) | 5 | Core | 72 | 24/24 | 24 | 704308 字 | ✅ |
+| 08 | [金匮要略](departments/01-zhongyi/08-jingui-yaolue/) | 5 | Core | 72 | 24/24 | 24 | 704250 字 | ✅ |
 | 09 | [温病学](departments/01-zhongyi/09-wenbing-xue/) | 5 | Core | 72 | 10/10 | 0 | 231982 字 | ✅ |
 | 10 | [中医内科学](departments/01-zhongyi/10-zhongyi-neike-xue/) | 5 | Clinic | 108 | 14/14 | 0 | 421791 字 | ✅ |
 | 11 | [中医外科学](departments/01-zhongyi/11-zhongyi-waike-xue/) | 6 | Clinic | 72 | 13/13 | 0 | 298235 字 | ✅ |

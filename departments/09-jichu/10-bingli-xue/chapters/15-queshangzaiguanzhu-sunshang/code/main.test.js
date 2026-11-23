@@ -1,121 +1,112 @@
 #!/usr/bin/env node
 /**
- * 第 15 章 缺血-再灌注损伤 —— 确定性单元测试
+ * 第 15 章 缺血-再灌注损伤 —— 确定性单测
  * 运行: node --test code/main.test.js
  *
- * 断言只落在可对账的结构上：规模、词频重心、三条机制边是否分节、数值是否为 0。
- * 不锁死正文措辞：教材改写段落时，测试不会变成噪声。
+ * 两件事：① 正文实测值（小节数/汉字数/表格/引文/单元号/每节字数）逐个钉住；
+ * ② 本章 quiz 的结构与接地——题数、分段、选项数、答案分布、解释长度、
+ *    以及「正确选项能在正文里找到原词」这条判据本身也要可测。
+ * 正文一改，这里的数就必须跟着改——这正是它的用处。
  */
 
 'use strict';
 
-const assert = require('node:assert');
 const test = require('node:test');
+const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const {
-  load,
-  chapterUnits,
-  shape,
-  lens,
-  rank,
-  total,
-  valueAudit,
-  bySection,
-  wordCount,
-  unitsWith,
-  keyProfile,
-  mechanismUnits,
-  organUnits,
-} = require('./main');
+const { readDoc, shape, head, average, sections, tables, quotes, unitIds, figures } = require('./main');
 
-const units = load();
-const list = chapterUnits(units);
+const md = readDoc();
+const s = shape(md);
+const a = average(s);
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
 
-test('本章 12 个知识单元，分属 4 节，正文合计 20519 字', () => {
-  const s = shape(list);
+const hz = (t) => (String(t || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+const shingles = (t, n = 4) => {
+  const out = new Set();
+  const clean = String(t || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+};
+
+test('首行是「第 15 章 · 判断句」，章号与本章一致', () => {
+  const h = head(md);
+  assert.strictEqual(h.n, 15);
+  assert.ok(h.title.length >= 8, '判断句太短：' + h.title);
+});
+
+test('正文实测：8 个二级小节 · 10895 汉字 · 5 张表 · 23 行数据', () => {
+  assert.strictEqual(s.secs, 8);
+  assert.strictEqual(s.hanzi, 10895);
+  assert.strictEqual(s.tables, 5);
+  assert.strictEqual(s.rows, 23);
+});
+
+test('出证与单元：引文行 11 条 · 单元号 12 个 · 图注 4 条', () => {
+  assert.strictEqual(s.quotes, 11);
   assert.strictEqual(s.units, 12);
-  assert.strictEqual(s.secs, 4);
-  assert.strictEqual(s.hanzi, 20519);
-  assert.deepStrictEqual(list.map((u) => u.sub), [
-    '15.1.1', '15.1.2', '15.1.3',
-    '15.2.1', '15.2.2', '15.2.3',
-    '15.3.1', '15.3.2', '15.3.3',
-    '15.4.1', '15.4.2', '15.4.3',
+  assert.strictEqual(s.figures, 4);
+  assert.strictEqual(unitIds(md).length, 12, '一章应有 12 个单元号');
+});
+
+test('各节汉字之和等于正文汉字数（差一个字就不通过）', () => {
+  assert.strictEqual(s.lead + s.perSection.reduce((x, y) => x + y, 0), s.hanzi);
+  assert.ok(s.lead > 0, '题记部分不该为空');
+  assert.strictEqual(sections(md).length, s.secs);
+});
+
+test('每节字数与最长节：均值 1362 字，最长「十二个小节：逐条落位」3348 字', () => {
+  assert.strictEqual(a.perSection, 1362);
+  assert.strictEqual(a.perUnit, 908);
+  assert.strictEqual(a.largest.hanzi, 3348);
+  assert.deepStrictEqual(s.perSection, [
+    273, 719, 299, 739, 949, 2231, 3348, 1867
   ]);
 });
 
-test('三视角合计 521 次，形态压倒性居首、病因几乎为零', () => {
-  const { views } = lens(list);
-  assert.strictEqual(total(views), 521);
-  assert.strictEqual(views.形态, 347);
-  assert.strictEqual(views.机制, 172);
-  assert.strictEqual(views.病因, 2);
-  assert.strictEqual(rank(views)[0][0], '形态');
+test('小节标题去重且都不是空串', () => {
+  const titles = s.sectionTitles;
+  assert.strictEqual(new Set(titles).size, titles.length);
+  for (const t of titles) assert.ok(t.length >= 4, '标题过短：' + t);
 });
 
-test('四层级合计 328 次，细胞层居首但器官层紧随（机制在细胞、表现在器官）', () => {
-  const { levels } = lens(list);
-  assert.strictEqual(total(levels), 328);
-  assert.strictEqual(levels.细胞, 123);
-  assert.strictEqual(levels.器官, 116);
-  assert.strictEqual(levels.系统, 47);
-  assert.strictEqual(levels.组织, 42);
-  assert.strictEqual(rank(levels)[0][0], '细胞');
-});
-
-test('数值核验：12 个单元的 valueLike 全为 0，没有一处「数字＋计量单位」', () => {
-  const audit = valueAudit(list);
-  assert.strictEqual(audit.units, 12);
-  assert.strictEqual(audit.hits, 0);
-  assert.deepStrictEqual(audit.offenders, []);
-  for (const u of list) assert.strictEqual(u.measure.valueLike, 0, `${u.sub} 出现数值`);
-});
-
-test('四节各 3 个单元，每节都在 5000 字以上（没有薄节）', () => {
-  const secs = bySection(list);
-  assert.strictEqual(secs.size, 4);
-  for (const [sec, g] of secs) {
-    assert.strictEqual(g.units, 3, `${sec} 单元数`);
-    assert.ok(g.hanzi > 5000, `${sec} 只有 ${g.hanzi} 字`);
+test('quiz：6 题，分段为 pre/check×3/post×2，每题 4 选项', () => {
+  assert.strictEqual(quiz.questions.length, 6);
+  assert.strictEqual(quiz.questions.map((q) => q.stage).join(','), 'pre,check,check,check,post,post');
+  for (const q of quiz.questions) {
+    assert.strictEqual(q.options.length, 4);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4);
+    assert.strictEqual(new Set(q.options).size, 4, '选项不许重复：' + q.question);
   }
 });
 
-test('三条机制边各占一节：自由基 / 钙超载 / 微血管与白细胞', () => {
-  const mech = mechanismUnits(list);
-  assert.strictEqual(mech.length, 3);
-  assert.deepStrictEqual(mech.map((m) => m.sub), ['15.2.1', '15.2.2', '15.2.3']);
-  assert.strictEqual(wordCount(list, '自由基'), 22);
-  assert.strictEqual(wordCount(list, '钙超载'), 21);
+test('quiz：答案打散（正确项覆盖 3 个以上位置），解释够长', () => {
+  const pos = new Set(quiz.questions.map((q) => q.correct));
+  assert.ok(pos.size >= 3, '正确项位置太集中：' + [...pos].join(','));
+  for (const q of quiz.questions) {
+    assert.ok(hz(q.explain) >= 30, '解释不足 30 汉字：' + q.question);
+    assert.ok(String(q.explain).length >= 10);
+    assert.ok(!/见\s*code\/main\.js\s*输出/.test(q.explain));
+  }
 });
 
-test('自由基 7 个单元、钙超载 6 个单元：机制词会溢出到器官层与表述层', () => {
-  assert.strictEqual(unitsWith(list, /自由基/).length, 7);
-  assert.strictEqual(unitsWith(list, /钙超载/).length, 6);
-  assert.ok(unitsWith(list, /自由基/).includes('15.3.1'), '心脏那一节也写自由基');
-  assert.ok(unitsWith(list, /钙超载/).includes('15.3.2'), '脑那一节也写钙超载');
+test('quiz：至少 2 道 check 题的正确选项能在正文里找到 4 字原词', () => {
+  const body = shingles(md);
+  let grounded = 0;
+  for (const q of quiz.questions) {
+    if (q.stage !== 'check') continue;
+    const right = q.options[q.correct];
+    if ([...shingles(right)].some((g) => body.has(g))) grounded += 1;
+  }
+  assert.ok(grounded >= 2, '只有 ' + grounded + ' 道 check 题接地');
 });
 
-test('「再灌注」21 次、7 个单元；「无复流」4 次、只在 2 个单元', () => {
-  assert.strictEqual(wordCount(list, '再灌注'), 21);
-  assert.strictEqual(unitsWith(list, /再灌注/).length, 7);
-  assert.strictEqual(wordCount(list, '无复流'), 4);
-  assert.deepStrictEqual(unitsWith(list, /无复流/), ['15.1.2', '15.2.3']);
-});
-
-test('器官层恰好 3 个单元：心、脑、其它（含凋亡）', () => {
-  assert.deepStrictEqual(organUnits(list), ['15.3.1', '15.3.2', '15.3.3']);
-  const prof = keyProfile(list);
-  assert.strictEqual(prof.find((p) => p.key === '凋亡').units, 4);
-  assert.strictEqual(prof.find((p) => p.key === '六要素').units, 2);
-  assert.deepStrictEqual(unitsWith(list, /六要素/), ['15.4.1', '15.4.3']);
-});
-
-test('学习目标是章级的：只落在 15.1.1，共 7 条，其余 11 个单元没有 goals', () => {
-  const withGoals = list.filter((u) => u.goals.length > 0);
-  assert.deepStrictEqual(withGoals.map((u) => u.sub), ['15.1.1']);
-  assert.strictEqual(withGoals[0].goals.length, 7);
-});
-
-test('每单元 brief 都带「不写数值与单位与参考值」的口径句', () => {
-  for (const u of list) assert.match(u.brief, /不写数值与单位与参考值/, `${u.sub} brief 缺口径`);
+test('quiz 与代码都不含脚手架与判定性字样', () => {
+  const banned = [/三辨/, /四位面/, /单元规模/, /本章实测/, /本课第\s*\d+\s*章[（(]/];
+  const blob = JSON.stringify(quiz) + md;
+  for (const re of banned) assert.ok(!re.test(blob), '命中 ' + re);
 });

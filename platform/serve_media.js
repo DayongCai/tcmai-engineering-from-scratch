@@ -41,6 +41,9 @@ const MIME = {
   '.ts': 'video/mp2t',
   '.vtt': 'text/vtt; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.html': 'text/html; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8',
+  '.md': 'text/markdown; charset=utf-8',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
   '.png': 'image/png',
@@ -80,7 +83,12 @@ const server = http.createServer((req, res) => {
   try { u = new URL(req.url, `http://${req.headers.host || 'localhost'}`); }
   catch { return send(res, 400, 'bad url'); }
 
-  let file = resolveSafe(u.pathname === '/' ? '/index.json' : u.pathname);
+  // 根路径：优先 index.html（release 目录的下载页），其次 index.json（媒体根的总清单）
+  let rootName = '/index.json';
+  if (u.pathname === '/') {
+    rootName = fs.existsSync(path.join(ROOT, 'index.html')) ? '/index.html' : '/index.json';
+  }
+  let file = resolveSafe(u.pathname === '/' ? rootName : u.pathname);
   if (!file) return send(res, 403, 'forbidden');
 
   // 目录 → 尝试 index.json（方便 /09-jichu/12-yaoli-xue/ 直接看清单）
@@ -138,7 +146,8 @@ if (!fs.existsSync(ROOT)) {
   console.error(`媒体目录不存在：${ROOT}（先跑 npm run media:hls）`);
   process.exit(2);
 }
-server.listen(PORT, HOST, () => {
+// 只有直接运行才 listen：被 require 时（测试、脚本）不能顺带起一个服务器
+if (require.main === module) server.listen(PORT, HOST, () => {
   console.log(`媒体服务器：http://${HOST}:${PORT}/  → ${ROOT.replace(/\\/g, '/')}`);
   console.log(`  课程总清单：http://${HOST}:${PORT}/index.json`);
   console.log(`  单章入口  ：http://${HOST}:${PORT}/09-jichu/12-yaoli-xue/01-introduction/master.m3u8`);

@@ -1,76 +1,155 @@
 #!/usr/bin/env node
 /**
- * 第 1 章 方剂与治法 —— 确定性单元测试
+ * 第 1 章 方剂与治法：方从法出 —— 正文统计与习题契约的确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言只落在「可对账的结构」上：合计、分组、边界。
- * 不锁死具体方名排序，以免教材增删附方时测试变成噪声。
+ * 断言只落在可对账的结构上：本章正文的汉字数、二/三级节数、每张表的行列与数字列合计、
+ * 引文条数与教材定位，以及 quiz 的题量、三段、四选项、解释长度、答案分布与正文接地。
+ * 期望值是 docs/zh.md 的实测读数（main.js 现算，测试钉住）；正文一改，这里立刻报警。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-const {
-  load,
-  bafaTable,
-  outsideByChapter,
-  groupBySection,
-  chapterHanzi,
-  faOf,
-} = require('./main');
+const { CHAPTER, TITLE, DOC, analyze, selfCheck } = require('./main.js');
 
-const { formulas: fj, base } = load();
+const A = analyze();
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const BODY = fs.readFileSync(DOC, 'utf8');
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
 
-test('八法各栏方数之和等于 52，且每栏 n 与其方名清单长度一致', () => {
-  const table = bafaTable(fj);
-  assert.strictEqual(table.length, 8, '八法应为八条');
-  for (const r of table) {
-    assert.strictEqual(r.n, r.names.length, `${r.fa}法：n=${r.n} 与方名数 ${r.names.length} 不符`);
+/** 正文里 4 字以上的连续汉字片段，用来判「选项是否接地」 */
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  return out;
+}
+const bodyGrams = shingles(BODY);
+
+const EXPECT = {
+  "hanzi": 3161,
+  "paragraphs": 29,
+  "h2": 5,
+  "h3": 6,
+  "tables": [
+    [
+      2,
+      6
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      3,
+      3
+    ]
+  ],
+  "sums": [
+    [
+      3,
+      "方数",
+      52
+    ],
+    [
+      4,
+      "方数",
+      8
+    ]
+  ],
+  "quotes": 50,
+  "anchored": 7,
+  "chapters": [
+    2
+  ],
+  "books": [
+    "医学心悟·医门八法"
+  ]
+};
+
+test('规模：正文汉字、正文段、二三级节（实测值）', () => {
+  assert.strictEqual(CHAPTER, 1);
+  assert.match(A.h1, new RegExp(`^第 ${1} 章 · `));
+  assert.strictEqual(A.hanzi, EXPECT.hanzi);
+  assert.strictEqual(A.paragraphs, EXPECT.paragraphs);
+  assert.strictEqual(A.h2.length, EXPECT.h2);
+  assert.strictEqual(A.h3.length, EXPECT.h3);
+  assert.ok(A.h2.length >= 4 && A.h2.length <= 8, `二级节 ${A.h2.length} 不在 4–8`);
+  assert.ok(A.h2.some((t) => /代价与边界/.test(t)), '缺「代价与边界」');
+});
+
+test('表格尺寸（列 × 行）与实测值一致', () => {
+  assert.deepStrictEqual(A.tables.map((t) => [t.cols, t.rows]), EXPECT.tables);
+});
+
+test('计数列合计与正文表内数字一致（实测值）', () => {
+  const sums = [];
+  for (const t of A.tables) for (const c of t.numeric) sums.push([t.idx, c.name, c.sum]);
+  assert.deepStrictEqual(sums, EXPECT.sums);
+  for (const t of A.tables) for (const c of t.numeric) {
+    if (c.ok === false) assert.fail(`表 ${t.idx}「${c.name}」数据行合计 ${c.sum} ≠ 合计行 ${c.declared}`);
   }
-  assert.strictEqual(table.reduce((n, r) => n + r.n, 0), 52);
 });
 
-test('52 属八法 + 62 不属八法 = 114，没有第三类', () => {
-  const inBafa = fj.formulas.filter((f) => f.fa).length;
-  const out = [...outsideByChapter(fj).values()].reduce((n, a) => n + a.length, 0);
-  assert.strictEqual(inBafa, 52);
-  assert.strictEqual(out, 62);
-  assert.strictEqual(inBafa + out, fj.formulas.length);
-  assert.strictEqual(fj.formulas.length, 114);
+test('引文与教材定位（实测值）', () => {
+  assert.strictEqual(A.quotes, EXPECT.quotes);
+  assert.strictEqual(A.anchored, EXPECT.anchored);
+  assert.deepStrictEqual(A.chapters, EXPECT.chapters);
+  assert.deepStrictEqual(A.books, EXPECT.books);
+  assert.ok(A.anchored >= 2, `挂教材出处的引文只有 ${A.anchored} 条`);
 });
 
-test('汗法 8 首即教材第5章全部方剂，不多不少', () => {
-  const han = bafaTable(fj).find((r) => r.fa === '汗');
-  const ch5 = fj.formulas.filter((f) => f.chapter === '5').map((f) => f.name).sort();
-  assert.deepStrictEqual(han.names.slice().sort(), ch5);
-  assert.strictEqual(ch5.length, 8);
+test('正文自检通过，MOTTO 是《书名·篇名》', () => {
+  assert.strictEqual(selfCheck(A), true);
+  assert.ok(A.books.length === 1 && /·/.test(A.books[0]), `MOTTO 书证不是《书名·篇名》：${A.books.join('/')}`);
 });
 
-test('本章教材字数 = 第2章 14569 + 第1章 8759 = 23328', () => {
-  assert.strictEqual(chapterHanzi(base, ['2']), 14569);
-  assert.strictEqual(chapterHanzi(base, ['1']), 8759);
-  assert.strictEqual(chapterHanzi(base, ['2', '1']), 23328);
+test('quiz 结构：6 题、三段齐、4 选项、explain ≥30 汉字、答案打散', () => {
+  const qs = QUIZ.questions;
+  assert.ok(qs.length >= 5, `只有 ${qs.length} 题`);
+  const stages = new Set(qs.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s);
+  for (const q of qs) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    assert.ok((String(q.explain).match(HANZI) || []).length >= 30, q.question);
+    assert.ok((String(q.explanation).match(HANZI) || []).length >= 30, q.question);
+    assert.strictEqual(new Set(q.options).size, 4, q.question);
+  }
+  assert.ok(new Set(qs.map((q) => q.correct)).size >= 3, '答案过于集中');
+  assert.deepStrictEqual(qs.map((q) => q.stage), ['pre', 'check', 'check', 'check', 'post', 'post']);
 });
 
-test('法外 62 首散在第 9–23 章的 12 个章里，一章两法只出现在第22章', () => {
-  const outside = outsideByChapter(fj);
-  assert.strictEqual(outside.size, 12);
-  // 第22章 22.1 驱虫（法外）与 22.2 涌吐（吐法）同章异法
-  assert.strictEqual(outside.get('22').length, 1);
-  assert.strictEqual(fj.formulas.filter((f) => f.chapter === '22' && f.fa === '吐').length, 1);
+test('quiz 接地：≥2 道 check 题的正确选项能在正文找到 4 字原词', () => {
+  const grounded = QUIZ.questions.filter((q) => {
+    if (q.stage !== 'check') return false;
+    const grams = shingles(String(q.options[q.correct]));
+    return [...grams].some((g) => bodyGrams.has(g));
+  });
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道接地`);
 });
 
-test('一法多方：汗法 8 首按节分成 4 / 3 / 1', () => {
-  const g = groupBySection(fj, 5);
-  assert.deepStrictEqual([...g.keys()], ['5.1 辛温解表剂', '5.2 辛凉解表剂', '5.3 扶正解表剂']);
-  assert.deepStrictEqual([...g.values()].map((a) => a.length), [4, 3, 1]);
+test('quiz 与代码都不含旧脚手架指纹', () => {
+  const bad = /三辨|四位面|单元规模|本章实测|本课第\s*\d+\s*章[（(]|见\s*code\/main\.js\s*输出/;
+  assert.ok(!bad.test(JSON.stringify(QUIZ)));
+  assert.ok(!bad.test(fs.readFileSync(path.join(__dirname, 'main.js'), 'utf8')));
 });
 
-test('法外之方不就近归并：香薷散属于八法之外，而非「清」法', () => {
-  assert.strictEqual(faOf(fj, '香薷散'), null);
-  assert.strictEqual(faOf(fj, '麻黄汤'), '汗');
-  assert.strictEqual(faOf(fj, '六味地黄丸'), '补');
-  assert.throws(() => faOf(fj, '不存在的方'), /没有/);
+test('脚本可运行，退出码 0，最后一行是教学边界声明', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, r.stderr);
+  const out = String(r.stdout || '');
+  assert.ok(out.length > 200, '输出过短');
+  const last = out.trim().split('\n').filter(Boolean).pop();
+  assert.ok(/教学边界/.test(last) && /不构成/.test(last), `最后一行不是教学边界：${last}`);
 });

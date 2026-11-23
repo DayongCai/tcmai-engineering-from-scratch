@@ -1,57 +1,88 @@
 #!/usr/bin/env node
 /**
- * 第 4 章 体质与证候：易感性与转化关系 —— 确定性单元测试
- * 运行: node --test code/main.test.js
- *
- * 断言只落在可对账的结构上：单元数与小节号、规模、三辨与四位面重心、引书数、数值计数。
- * 数字由 standards/tizhi/units.json 现算后写死在此，教材改版时测试会先响。
+ * 第 4 章 体质与证候 —— 确定性单元测试
+ * 运行: node --test chapters/04-tizhi-zhenghou/code/main.test.js
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-const { CHAPTER, load, chapterUnits, merge, rank, shape, citations, bySection } = require('./main.js');
+const { DOC, analyze } = require('./main.js');
 
-const data = load();
-const list = chapterUnits(data);
+const A = analyze();
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const BODY = fs.readFileSync(DOC, 'utf8');
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
 
-test('本章单元数与小节号与教材一致', () => {
-  assert.strictEqual(list.length, 1);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['4.9']);
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+const bodyGrams = shingles(BODY);
+
+test('跨两科证候 10 个，占 132 证的 7.6%', () => {
+  assert.strictEqual(A.cross.length, 10);
+  assert.strictEqual(A.total, 132);
+  assert.strictEqual(A.crossShare, 7.6);
+  assert.strictEqual(A.oneInEvery, 13.2);
 });
 
-test('规模：101 字 · 平均 101 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 101);
-  assert.strictEqual(s.mean, 101);
+test('跨科清单与证候库一致，且每个都带两个科', () => {
+  assert.deepStrictEqual(A.cross.map((x) => x.name).sort(), [
+    '寒凝血瘀证', '寒湿凝滞证', '湿热下注证', '湿热瘀结证', '热毒蕴结证',
+    '气滞血瘀证', '肝经郁热证', '血虚风燥证', '阴虚火旺证', '阴虚津亏证',
+  ].sort());
+  for (const x of A.cross) assert.deepStrictEqual(x.courses, ['fuke', 'waike']);
 });
 
-test('三辨重心是「证候倾向」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '证候倾向');
-  assert.strictEqual(views[0].count, 4);
+test('九质计数仍与总账一致', () => {
+  assert.strictEqual(A.pairs, 208);
+  assert.strictEqual(A.diseases, 82);
+  assert.strictEqual(A.rows.reduce((s, r) => s + r.zhengCount, 0), 132);
 });
 
-test('四位面重心是「易感」，且四层都有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['易感'], 1);
-  const touched = Object.values(levels).filter((n) => n > 0).length;
-  assert.ok(touched >= 1, `仅 ${touched} 层有落点`);
+test('quiz 结构：≥5 题、三段齐、四选项、解释 ≥30 汉字', () => {
+  const qs = QUIZ.questions;
+  assert.ok(qs.length >= 5, `只有 ${qs.length} 题`);
+  const stages = new Set(qs.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s);
+  for (const q of qs) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    assert.ok((q.explain.match(HANZI) || []).length >= 30, q.question);
+  }
+  assert.ok(new Set(qs.map((q) => q.correct)).size >= 3, '答案过于集中');
 });
 
-test('本章教材不引古籍（引书 0 部）：属现代急诊／重症内容', () => {
-  const c = citations(list);
-  assert.strictEqual(c.books, 0);
-  assert.strictEqual(c.total, 0);
+test('quiz 接地：至少 2 道 check 题的正确选项能在正文找到 4 字原词', () => {
+  const grounded = QUIZ.questions.filter((q) => {
+    if (q.stage !== 'check') return false;
+    const grams = [...shingles(String(q.options[q.correct]))];
+    return grams.some((g) => bodyGrams.has(g));
+  });
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道接地`);
 });
 
-test('数值计数与单元层一致（本章 0 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 0);
+test('quiz 与代码都不含旧脚手架指纹', () => {
+  const bad = /三辨|四位面|单元规模|本章实测|本课第\s*\d+\s*章/;
+  assert.ok(!bad.test(JSON.stringify(QUIZ)));
+  assert.ok(!bad.test(fs.readFileSync(__filename.replace(/\.test\.js$/, '.js'), 'utf8')));
 });
 
-test('每节都有单元，且每单元都带 locator', () => {
-  for (const s of bySection(list)) assert.ok(s.units > 0, s.sec);
-  for (const u of list) assert.ok(u.locator.startsWith(`派生·第${CHAPTER}章·`), u.locator);
+test('脚本可运行并输出跨科清单', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, r.stderr);
+  assert.match(r.stdout, /跨两科证候 10/);
+  assert.match(r.stdout, /气滞血瘀证/);
+  assert.match(r.stdout, /不构成诊疗建议/);
 });

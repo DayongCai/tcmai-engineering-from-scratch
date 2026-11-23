@@ -1,240 +1,185 @@
 #!/usr/bin/env node
 /**
- * 药理学 · 第 40 章 β-内酰胺类抗生素：一个环，五种母核
+ * 药理学 · 第 40 章 β-内酰胺类抗生素：四元环与侧链
  * 课程: departments/09-jichu/12-yaoli-xue/chapters/40-beta-lactam-antibiotics/docs/zh.md
- * 出处: 教材·药理学·第40章（40.1–40.4，共 4 节 12 小节）
- * 数据: standards/yaoli/底本.json（chapters[n=40]）
  * 依赖: 仅 Node.js 标准库
  *
- * 为什么全部现算：本章的命题是「β-内酰胺环是共同的活性必需结构，
- * 差别全部来自并合环与侧链」。这条命题要能落地，就得看到教材把笔墨
- * 摊在哪些词上、四节是否各自成段、以及「稳定」与「有效」有没有被混写。
+ * 数字全部现算：正文汉字、分节与小节的分布、表格行数、各节占比与最厚最薄的落差，
+ * 都从本章 docs/zh.md 读出后计算。正文改版后重跑即可复现；手打的数字会静默过期。
+ * 只读本章正文，不读任何标准件与底本。
  */
-
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-const DIBEN = path.join('standards', 'yaoli', '底本.json');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = '40';
+const SLUG = '40-beta-lactam-antibiotics';
+const TITLE = 'β-内酰胺类抗生素：四元环与侧链';
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, DIBEN))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+/** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
+function docTitle(file) {
+  const raw = fs.readFileSync(file || DOC, 'utf8');
+  const h1 = raw.split(String.fromCharCode(10)).find((l) => l.slice(0, 2) === '# ');
+  if (!h1) return TITLE;
+  const t = h1.slice(2).trim();
+  const i = t.indexOf('章');
+  return (i >= 0 ? t.slice(i + 1) : t).replace('·', '').trim();
+}
+
+/** 本章论证链上的关键词：正文必须出现，否则说明正文与习题已经脱节 */
+const CONCEPTS = ['四元环', '侧链', '青霉素结合蛋白', 'β-内酰胺酶', '外膜', '头孢菌素', '耐药', '酶抑制药'];
+
+/** 读正文：去掉围栏代码块与首行章题；章题改写不应改变统计口径 */
+function readDoc(file) {
+  const raw = fs.readFileSync(file || DOC, 'utf8');
+  return raw.replace(/```[\s\S]*?```/g, '').replace(/^#\s.*$/m, '');
+}
+
+const hanzi = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;
+
+/** 「## 」二级标题，按出现顺序 */
+function sections(text) {
+  const t = text === undefined ? readDoc() : text;
+  return t.split(/\r?\n/).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+}
+
+/** 「#### 」三级标题（逐条落位）；部分章不设这一层，返回空数组 */
+function subsections(text) {
+  const t = text === undefined ? readDoc() : text;
+  return t.split(/\r?\n/).filter((l) => /^####\s+/.test(l)).map((l) => l.replace(/^####\s+/, '').trim());
+}
+
+/** 表格：块数与数据行数（去掉表头分隔行） */
+function tables(text) {
+  const t = text === undefined ? readDoc() : text;
+  const lines = t.split(/\r?\n/);
+  const blocks = [];
+  let cur = null;
+  for (const l of lines) {
+    if (/^\|/.test(l)) {
+      if (!cur) { cur = []; blocks.push(cur); }
+      if (!/^\|[\s\-:|]+\|$/.test(l)) cur.push(l);
+    } else cur = null;
   }
-  throw new Error('没找到 standards/yaoli/底本.json —— 章节目录是否已脱离仓库？');
+  return blocks.map((b) => ({ rows: Math.max(0, b.length - 1) }));
 }
 
-const ROOT = findRoot(__dirname);
-const FILE = path.join(ROOT, DIBEN);
-const CHAPTER = 40;
-
-const load = () => JSON.parse(fs.readFileSync(FILE, 'utf8'));
-
-function chapter(base, no = CHAPTER) {
-  const c = base.chapters.find((x) => x.no === no);
-  if (!c) throw new Error(`底本里没有第 ${no} 章`);
-  return c;
+/** 逐节汉字与占比 */
+function sectionStats(text) {
+  const t = text === undefined ? readDoc() : text;
+  const lines = t.split(/\r?\n/);
+  const out = [];
+  let cur = null;
+  for (const l of lines) {
+    if (/^##\s+/.test(l)) {
+      cur = { title: l.replace(/^##\s+/, '').trim(), hanzi: 0 };
+      out.push(cur);
+    } else if (cur) cur.hanzi += hanzi(l);
+  }
+  const total = out.reduce((n, s) => n + s.hanzi, 0) || 1;
+  return out.map((s) => ({ ...s, share: Math.round((s.hanzi / total) * 1000) / 10 }));
 }
 
-function subsOf(chap) {
-  return chap.secs.flatMap((s) => s.subs).sort((a, b) => a.no.localeCompare(b.no, 'en'));
-}
-
-const hanzi = (s) => (s.match(/[\u4e00-\u9fff]/g) || []).length;
-
-function shape(chap) {
-  const subs = subsOf(chap);
-  return {
-    secs: chap.secs.length,
-    subs: subs.length,
-    hanzi: subs.reduce((n, u) => n + hanzi(u.body), 0),
-  };
-}
-
-function sectionStats(chap) {
-  return chap.secs.map((s) => {
-    const h = s.subs.reduce((n, u) => n + hanzi(u.body), 0);
-    return {
-      no: s.no,
-      title: s.title.replace(/^\d+\.\d+\s*/, ''),
-      subs: s.subs.length,
-      hanzi: h,
-      avg: Math.round(h / s.subs.length),
-    };
+/** 关键词命中：全章次数 + 出现在哪几节 */
+function conceptHits() {
+  const t = readDoc();
+  const lines = t.split(/\r?\n/);
+  return CONCEPTS.map((term) => {
+    const total = t.split(term).length - 1;
+    let cur = null;
+    const where = new Set();
+    for (const l of lines) {
+      if (/^##\s+/.test(l)) cur = l.replace(/^##\s+/, '').trim();
+      else if (cur && l.includes(term)) where.add(cur);
+    }
+    return { term, total, sections: where.size };
   });
 }
 
-function keywordHits(chap, word) {
-  const per = [];
-  let total = 0;
-  for (const u of subsOf(chap)) {
-    const n = (u.body.match(new RegExp(word, 'g')) || []).length;
-    if (n) per.push({ sub: u.no, hits: n });
-    total += n;
+/** 边界条目：「代价与边界」一节的列表项 */
+function boundaries(text) {
+  const t = text === undefined ? readDoc() : text;
+  const lines = t.split(/\r?\n/);
+  const i = lines.findIndex((l) => /^##\s*代价与边界/.test(l));
+  if (i < 0) return [];
+  const out = [];
+  for (let k = i + 1; k < lines.length; k += 1) {
+    if (/^##\s/.test(lines[k])) break;
+    if (/^-\s+/.test(lines[k].trim())) out.push(lines[k].trim().replace(/^-\s+/, ''));
   }
-  return { word, total, per };
+  return out;
 }
 
-/**
- * 词表分两组。
- * 「母核组」是本章的解释框架：同一个环 + 不同的并合环与侧链。
- * 「机制组」是两条贯穿全章的线：靶点（青霉素结合蛋白）与失效（耐药）。
- */
-const PARAMS = [
-  { key: '青霉素', group: '母核组' },
-  { key: '头孢菌素', group: '母核组' },
-  { key: 'β-内酰胺酶', group: '机制组' },
-  { key: '青霉素结合蛋白', group: '机制组' },
-  { key: '耐药', group: '机制组' },
-  { key: '厌氧菌', group: '谱边界组' },
-];
-
-function paramCounts(chap) {
-  return PARAMS.map((p) => ({ ...p, ...keywordHits(chap, p.key) }))
-    .map((p) => ({ key: p.key, group: p.group, total: p.total, per: p.per }))
-    .sort((a, b) => b.total - a.total);
-}
-
-const HANDOFF = '具备资质的人员';
-
-function handoffAudit(chap) {
-  const subs = subsOf(chap);
+/** 本章算术：节均字、最厚最薄比、关键词密度（次/千字） */
+function arithmetic(text) {
+  const t = text === undefined ? readDoc() : text;
+  const body = hanzi(t);
+  const secs = sectionStats(t);
+  const content = secs.filter((s) => !/课程信息|运行与验证|免责/.test(s.title));
+  const avg = content.length ? Math.round(content.reduce((n, s) => n + s.hanzi, 0) / content.length) : 0;
+  const sorted = [...content].sort((a, b) => a.hanzi - b.hanzi);
+  const thin = sorted[0] || { title: '', hanzi: 0 };
+  const thick = sorted[sorted.length - 1] || { title: '', hanzi: 0 };
+  const ratio = thin.hanzi ? Math.round((thick.hanzi / thin.hanzi) * 100) / 100 : 0;
+  const hits = conceptHits().reduce((n, c) => n + c.total, 0);
   return {
-    subs: subs.filter((u) => u.body.includes(HANDOFF)).map((u) => u.no),
-    count: subs.reduce((n, u) => n + (u.body.match(new RegExp(HANDOFF, 'g')) || []).length, 0),
-    missing: subs.filter((u) => !u.body.includes(HANDOFF)).map((u) => u.no),
-    of: subs.length,
+    body, avg, ratio,
+    thin: { title: thin.title, hanzi: thin.hanzi },
+    thick: { title: thick.title, hanzi: thick.hanzi },
+    hits,
+    density: body ? Math.round((hits / body) * 10000) / 10 : 0,
+    sections: content.length,
   };
 }
 
-const VALUE_RE = /\d+(?:\.\d+)?\s*(?:mmHg|kPa|℃|°C|‰|%|mmol|mOsm|mol|mV|Hz|次\/分|个\/L|g\/L|mg\/ml|mg|ml|mL|kg|cm|mm|μm|um|ms|min|小时|秒钟|升|毫升|倍|周|天|年)/g;
-
-function valueAudit(chap) {
-  const subs = subsOf(chap);
-  const offenders = [];
-  let hits = 0;
-  for (const u of subs) {
-    const m = u.body.match(VALUE_RE) || [];
-    if (m.length) offenders.push({ sub: u.no, hits: m.join(',') });
-    hits += m.length;
-  }
-  return { subs: subs.length, hits, offenders };
-}
-
-function briefAudit(chap) {
-  const need = ['剂量与用法照底本', '本书不构成用药建议'];
-  return subsOf(chap).map((u) => ({
-    sub: u.no,
-    ok: need.every((k) => u.brief.includes(k)),
-    missing: need.filter((k) => !u.brief.includes(k)),
-  }));
-}
-
-function extremes(chap) {
-  const rows = subsOf(chap).map((u) => ({ sub: u.no, hanzi: hanzi(u.body) }));
-  const sorted = [...rows].sort((a, b) => a.hanzi - b.hanzi);
-  return { thinnest: sorted[0], thickest: sorted[sorted.length - 1] };
-}
-
-/** 四节的功能分工：总论一节 + 三个类别一节 */
-const CLASSES = [
-  { name: '机制、耐药与分类', prefix: '40.1' },
-  { name: '青霉素类', prefix: '40.2' },
-  { name: '头孢菌素类', prefix: '40.3' },
-  { name: '其他 β-内酰胺类与酶抑制药', prefix: '40.4' },
-];
-
-function classShape(subs) {
-  return CLASSES.map((c) => ({
-    name: c.name,
-    subs: subs.filter((u) => u.no.startsWith(`${c.prefix}.`)).length,
-  }));
-}
-
-const fold = (s) => s.replace(/\s/g, '').replace(/[，,。．；;：:、（）()「」『』""'']/g, '');
-
-function quoteAudit(doc, chap) {
-  const pool = subsOf(chap).map((u) => fold(`${u.brief}\n${u.body}`));
-  const quotes = [];
-  const unresolved = [];
-  for (const line of doc.split('\n')) {
-    if (!/教材·药理学·第\d+章/.test(line)) continue;
-    for (const m of line.matchAll(/「([^」]{6,})」/g)) {
-      quotes.push(m[1]);
-      if (!pool.some((p) => p.includes(fold(m[1])))) unresolved.push(m[1]);
-    }
-  }
-  return { count: quotes.length, unresolved };
+function summarize() {
+  const t = readDoc();
+  return {
+    chapter: CHAPTER, slug: SLUG, title: docTitle(), hint: TITLE,
+    hanzi: hanzi(t),
+    sections: sections(t),
+    subsections: subsections(t),
+    tables: tables(t),
+    sectionStats: sectionStats(t),
+    concepts: conceptHits(),
+    boundaries: boundaries(t),
+    arithmetic: arithmetic(t),
+  };
 }
 
 function main() {
-  const base = load();
-  const chap = chapter(base);
-  const subs = subsOf(chap);
-  const s = shape(chap);
-  const secs = sectionStats(chap);
-  const params = paramCounts(chap);
-  const handoff = handoffAudit(chap);
-  const values = valueAudit(chap);
-  const briefs = briefAudit(chap);
-  const ext = extremes(chap);
-  const classes = classShape(subs);
-
-  console.log('═══ β-内酰胺类抗生素：一个环，五种母核（药理学 第40章）═══');
-  console.log(`教材规模: 第40章 ${s.hanzi} 字 · ${s.secs} 节 · ${s.subs} 小节 · 平均每小节 ${Math.round(s.hanzi / s.subs)} 字`);
-  console.log(`量值核验: ${values.subs} 小节正文的数字＋单位命中 ${values.hits} 处（底本带剂量，故本章走 B 支）`);
-  console.log(`按节分布: ${secs.map((x) => `${x.no} ${x.hanzi} 字`).join(' · ')}`);
+  const s = summarize();
+  const a = s.arithmetic;
+  console.log('药理学 · 第 ' + CHAPTER + ' 章 ' + docTitle());
   console.log('');
-  console.log(`四节的功能分工: ${classes.map((c) => `${c.name} ${c.subs}`).join(' · ')}`);
-  console.log('  → 总论一节交代共同机制，三个类别节各管一段谱：这是「一个环」的写法。');
+  console.log('正文 ' + s.hanzi.toLocaleString('en-US') + ' 汉字 · 二级节 ' + s.sections.length
+    + ' 个' + (s.subsections.length ? ' · 三级小节 ' + s.subsections.length + ' 个' : '')
+    + ' · 表格 ' + s.tables.length + ' 张（数据行 ' + s.tables.reduce((n, x) => n + x.rows, 0) + ' 行）');
   console.log('');
-  console.log(`12 个小节与正文汉字（最薄 ${ext.thinnest.sub} · ${ext.thinnest.hanzi} 字；最厚 ${ext.thickest.sub} · ${ext.thickest.hanzi} 字）：`);
-  for (const u of subs) console.log(`  ${u.no} ${u.title.replace(/^\d+\.\d+\.\d+\s*/, '')} · ${hanzi(u.body)} 字`);
+  console.log('逐节汉字与占比（含表头节，故占比合计不足一百）：');
+  for (const x of s.sectionStats) console.log('  ' + x.title + ' · ' + x.hanzi + ' 字 · ' + x.share + '%');
   console.log('');
-  console.log(`词频: ${params.map((p) => `${p.key} ${p.total}`).join(' · ')}`);
-  console.log('  → 母核组两词（青霉素 / 头孢菌素）承担分类，机制组三词（酶 / 靶点 / 耐药）承担解释。');
-  console.log(`  分布最广的词: ${params[0].key}，覆盖 ${params[0].per.length} 个小节`);
+  console.log('本章算术：论证节 ' + a.sections + ' 个，节均 ' + a.avg + ' 字；最厚「' + a.thick.title
+    + '」' + a.thick.hanzi + ' 字，最薄「' + a.thin.title + '」' + a.thin.hanzi + ' 字，倍差 ' + a.ratio + ' 倍');
+  console.log('关键词密度：' + a.hits + ' 次 / ' + a.body + ' 字 = ' + a.density + ' 次每千字');
   console.log('');
-  console.log(`判断去向: 「${HANDOFF}」${handoff.count} 次，分布在 ${handoff.subs.length} 个小节`);
-  console.log(`  没有交接句: ${handoff.missing.join(' ') || '无'}`);
+  console.log('关键词落位（正文现算）：');
+  for (const c of s.concepts) {
+    console.log('  ' + (c.total ? '✓' : '✗') + ' ' + c.term + '：' + c.total + ' 次，分布于 ' + c.sections + ' 节');
+  }
   console.log('');
-  console.log(`口径句核验: ${briefs.filter((b) => b.ok).length} / ${briefs.length} 小节的 brief 同时带「剂量与用法照底本」与「本书不构成用药建议」`);
+  console.log('边界条目 ' + s.boundaries.length + ' 条；首条：' + (s.boundaries[0] || '无').slice(0, 80));
   console.log('');
-  console.log('教学边界：本章只说明 β-内酰胺类的结构/机制/耐药与不良反应类别，不写剂量与浓度与用法量值（剂量与用法照底本），不作适应证判定与疗效断言，不构成用药建议');
-
-  return { chap, subs, shape: s, secs, params, handoff, values, briefs, extremes: ext, classes };
+  console.log('※ 现算自 ' + SLUG + '/docs/zh.md；正文改版后重跑即可复现。');
+  console.log('教学边界：本章只解释分类、机制、体内过程与观察口径，不写剂量与用法量值，不作适应证判定，不构成用药建议。');
 }
 
-if (require.main === module) {
-  main();
-}
+if (require.main === module) main();
 
 module.exports = {
-  ROOT,
-  FILE,
-  CHAPTER,
-  PARAMS,
-  CLASSES,
-  HANDOFF,
-  VALUE_RE,
-  load,
-  chapter,
-  subsOf,
-  hanzi,
-  shape,
-  sectionStats,
-  keywordHits,
-  paramCounts,
-  handoffAudit,
-  valueAudit,
-  briefAudit,
-  extremes,
-  classShape,
-  quoteAudit,
-  main,
+  DOC, CHAPTER, SLUG, TITLE, docTitle, CONCEPTS,
+  readDoc, hanzi, sections, subsections, tables, sectionStats,
+  conceptHits, boundaries, arithmetic, summarize,
 };

@@ -1,235 +1,185 @@
 #!/usr/bin/env node
 /**
- * 药理学 · 第 32 章 抗贫血药：三个作用层次、两条吸收路径与一次陷阱
+ * 药理学 · 第 32 章 抗贫血药：补的是三个层次
  * 课程: departments/09-jichu/12-yaoli-xue/chapters/32-antianemic-drugs/docs/zh.md
- * 出处: 教材·药理学·第32章（32.1–32.4，共 4 节 12 小节）
- * 数据: standards/yaoli/底本.json（chapters[n=32]，secs[].subs[] 带 brief 口径句与 body 正文）
  * 依赖: 仅 Node.js 标准库
  *
- * 为什么全部现算：本章要讲的命题是「抗贫血药不是三类并列，而是三层叠加」。
- * 这个命题能落在哪几个数上——原料层与辅酶层与调节层各占多少笔墨、
- * 吸收链的四个环节（吸收／胃酸／转铁蛋白／内因子）落在哪些小节、
- * 叶酸陷阱被点了几次——都能在底本正文里数出来。
- * 手打会在教材改版后静默过期；现算的数字一旦对不上，测试自己会红。
+ * 数字全部现算：正文汉字、分节与小节的分布、表格行数、各节占比与最厚最薄的落差，
+ * 都从本章 docs/zh.md 读出后计算。正文改版后重跑即可复现；手打的数字会静默过期。
+ * 只读本章正文，不读任何标准件与底本。
  */
-
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-const DIBEN = path.join('standards', 'yaoli', '底本.json');
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = '32';
+const SLUG = '32-antianemic-drugs';
+const TITLE = '抗贫血药：补的是三个层次';
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, DIBEN))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+/** 章题从正文 H1 现读：H1 改写后输出不会与正文脱节 */
+function docTitle(file) {
+  const raw = fs.readFileSync(file || DOC, 'utf8');
+  const h1 = raw.split(String.fromCharCode(10)).find((l) => l.slice(0, 2) === '# ');
+  if (!h1) return TITLE;
+  const t = h1.slice(2).trim();
+  const i = t.indexOf('章');
+  return (i >= 0 ? t.slice(i + 1) : t).replace('·', '').trim();
+}
+
+/** 本章论证链上的关键词：正文必须出现，否则说明正文与习题已经脱节 */
+const CONCEPTS = ['铁', '叶酸', '维生素', '生长因子', '血红蛋白', '辅酶', '贫血', '一碳单位'];
+
+/** 读正文：去掉围栏代码块与首行章题；章题改写不应改变统计口径 */
+function readDoc(file) {
+  const raw = fs.readFileSync(file || DOC, 'utf8');
+  return raw.replace(/```[\s\S]*?```/g, '').replace(/^#\s.*$/m, '');
+}
+
+const hanzi = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;
+
+/** 「## 」二级标题，按出现顺序 */
+function sections(text) {
+  const t = text === undefined ? readDoc() : text;
+  return t.split(/\r?\n/).filter((l) => /^##\s+/.test(l)).map((l) => l.replace(/^##\s+/, '').trim());
+}
+
+/** 「#### 」三级标题（逐条落位）；部分章不设这一层，返回空数组 */
+function subsections(text) {
+  const t = text === undefined ? readDoc() : text;
+  return t.split(/\r?\n/).filter((l) => /^####\s+/.test(l)).map((l) => l.replace(/^####\s+/, '').trim());
+}
+
+/** 表格：块数与数据行数（去掉表头分隔行） */
+function tables(text) {
+  const t = text === undefined ? readDoc() : text;
+  const lines = t.split(/\r?\n/);
+  const blocks = [];
+  let cur = null;
+  for (const l of lines) {
+    if (/^\|/.test(l)) {
+      if (!cur) { cur = []; blocks.push(cur); }
+      if (!/^\|[\s\-:|]+\|$/.test(l)) cur.push(l);
+    } else cur = null;
   }
-  throw new Error('没找到 standards/yaoli/底本.json —— 章节目录是否已脱离仓库？');
+  return blocks.map((b) => ({ rows: Math.max(0, b.length - 1) }));
 }
 
-const ROOT = findRoot(__dirname);
-const FILE = path.join(ROOT, DIBEN);
-const CHAPTER = 32;
-
-const load = () => JSON.parse(fs.readFileSync(FILE, 'utf8'));
-
-function chapter(base, no = CHAPTER) {
-  const c = base.chapters.find((x) => x.no === no);
-  if (!c) throw new Error(`底本里没有第 ${no} 章`);
-  return c;
+/** 逐节汉字与占比 */
+function sectionStats(text) {
+  const t = text === undefined ? readDoc() : text;
+  const lines = t.split(/\r?\n/);
+  const out = [];
+  let cur = null;
+  for (const l of lines) {
+    if (/^##\s+/.test(l)) {
+      cur = { title: l.replace(/^##\s+/, '').trim(), hanzi: 0 };
+      out.push(cur);
+    } else if (cur) cur.hanzi += hanzi(l);
+  }
+  const total = out.reduce((n, s) => n + s.hanzi, 0) || 1;
+  return out.map((s) => ({ ...s, share: Math.round((s.hanzi / total) * 1000) / 10 }));
 }
 
-function subsOf(chap) {
-  return chap.secs.flatMap((s) => s.subs).sort((a, b) => a.no.localeCompare(b.no, 'en'));
+/** 关键词命中：全章次数 + 出现在哪几节 */
+function conceptHits() {
+  const t = readDoc();
+  const lines = t.split(/\r?\n/);
+  return CONCEPTS.map((term) => {
+    const total = t.split(term).length - 1;
+    let cur = null;
+    const where = new Set();
+    for (const l of lines) {
+      if (/^##\s+/.test(l)) cur = l.replace(/^##\s+/, '').trim();
+      else if (cur && l.includes(term)) where.add(cur);
+    }
+    return { term, total, sections: where.size };
+  });
 }
 
-const hanzi = (s) => (s.match(/[\u4e00-\u9fff]/g) || []).length;
+/** 边界条目：「代价与边界」一节的列表项 */
+function boundaries(text) {
+  const t = text === undefined ? readDoc() : text;
+  const lines = t.split(/\r?\n/);
+  const i = lines.findIndex((l) => /^##\s*代价与边界/.test(l));
+  if (i < 0) return [];
+  const out = [];
+  for (let k = i + 1; k < lines.length; k += 1) {
+    if (/^##\s/.test(lines[k])) break;
+    if (/^-\s+/.test(lines[k].trim())) out.push(lines[k].trim().replace(/^-\s+/, ''));
+  }
+  return out;
+}
 
-function shape(chap) {
-  const subs = subsOf(chap);
+/** 本章算术：节均字、最厚最薄比、关键词密度（次/千字） */
+function arithmetic(text) {
+  const t = text === undefined ? readDoc() : text;
+  const body = hanzi(t);
+  const secs = sectionStats(t);
+  const content = secs.filter((s) => !/课程信息|运行与验证|免责/.test(s.title));
+  const avg = content.length ? Math.round(content.reduce((n, s) => n + s.hanzi, 0) / content.length) : 0;
+  const sorted = [...content].sort((a, b) => a.hanzi - b.hanzi);
+  const thin = sorted[0] || { title: '', hanzi: 0 };
+  const thick = sorted[sorted.length - 1] || { title: '', hanzi: 0 };
+  const ratio = thin.hanzi ? Math.round((thick.hanzi / thin.hanzi) * 100) / 100 : 0;
+  const hits = conceptHits().reduce((n, c) => n + c.total, 0);
   return {
-    secs: chap.secs.length,
-    subs: subs.length,
-    hanzi: subs.reduce((n, u) => n + hanzi(u.body), 0),
+    body, avg, ratio,
+    thin: { title: thin.title, hanzi: thin.hanzi },
+    thick: { title: thick.title, hanzi: thick.hanzi },
+    hits,
+    density: body ? Math.round((hits / body) * 10000) / 10 : 0,
+    sections: content.length,
   };
 }
 
-function sectionStats(chap) {
-  return chap.secs.map((s) => {
-    const h = s.subs.reduce((n, u) => n + hanzi(u.body), 0);
-    return {
-      no: s.no,
-      title: s.title.replace(/^\d+\.\d+\s*/, ''),
-      subs: s.subs.length,
-      hanzi: h,
-      avg: Math.round(h / s.subs.length),
-    };
-  });
-}
-
-function keywordHits(chap, word) {
-  const per = [];
-  let total = 0;
-  for (const u of subsOf(chap)) {
-    const n = (u.body.match(new RegExp(word, 'g')) || []).length;
-    if (n) per.push({ sub: u.no, hits: n });
-    total += n;
-  }
-  return { word, total, per };
-}
-
-/**
- * 三层作用：原料（铁）／辅酶（叶酸、维生素B12）／调节（促红细胞生成素）。
- * 三层的区别在于「补什么」：补物质、补反应条件、补信号。词频只说明笔墨分配。
- */
-const LAYERS = [
-  { key: '铁', label: '原料层' },
-  { key: '叶酸', label: '辅酶层' },
-  { key: '维生素B12', label: '辅酶层' },
-  { key: '促红细胞生成素', label: '调节层' },
-];
-
-function layerDensity(chap) {
-  return LAYERS.map((l) => {
-    const h = keywordHits(chap, l.key);
-    const top = [...h.per].sort((a, b) => b.hits - a.hits)[0] || { sub: '', hits: 0 };
-    return { ...l, total: h.total, top: top.sub, topHits: top.hits, subs: h.per.length };
-  });
-}
-
-/**
- * 吸收链四环节：吸收部位／胃内酸度／转运蛋白／内因子。
- * 四者把「同一个药为什么在不同人身上表现不同」落到可指认的位置上。
- */
-const ABSORB = ['吸收', '胃酸', '转铁蛋白', '内因子'];
-
-function absorbAudit(chap) {
-  return ABSORB.map((w) => {
-    const h = keywordHits(chap, w);
-    return { step: w, total: h.total, subs: h.per.length, at: h.per.map((p) => p.sub) };
-  });
-}
-
-/**
- * 叶酸陷阱：本章唯一一处「两类药互相掩盖」的机制节点。
- * 它出现几次、落在哪一节，决定了这一章的机制叙事是否真的收在一个点上。
- */
-function trapAudit(chap) {
-  const t = keywordHits(chap, '叶酸陷阱');
-  const mask = keywordHits(chap, '掩盖');
-  return { trap: t, mask };
-}
-
-/** 观察三元组与它的两个变体（时相／分设） */
-const LOOP = ['观察', '记录', '复核', '留痕'];
-
-function loopAudit(chap) {
-  return LOOP.map((w) => {
-    const h = keywordHits(chap, w);
-    return { word: w, total: h.total, subs: h.per.length, at: h.per.map((p) => p.sub) };
-  });
-}
-
-/** 量值核验：词表与 scripts/lib_value_caliber.js 同一套单位 */
-const VALUE_RE = /\d+(?:\.\d+)?\s*(?:mmHg|kPa|℃|°C|‰|%|mmol|mOsm|mol|mV|Hz|次\/分|个\/L|g\/L|mg\/ml|mg|ml|mL|kg|cm|mm|μm|um|ms|min|小时|秒钟|升|毫升|倍|周|天|年)/g;
-
-function valueAudit(chap) {
-  const subs = subsOf(chap);
-  const offenders = [];
-  let hits = 0;
-  for (const u of subs) {
-    const m = u.body.match(VALUE_RE) || [];
-    if (m.length) offenders.push({ sub: u.no, hits: m.join(',') });
-    hits += m.length;
-  }
-  return { subs: subs.length, hits, offenders };
-}
-
-function briefAudit(chap) {
-  const need = ['剂量与用法照底本', '本书不构成用药建议'];
-  return subsOf(chap).map((u) => ({
-    sub: u.no,
-    ok: need.every((k) => u.brief.includes(k)),
-    missing: need.filter((k) => !u.brief.includes(k)),
-  }));
-}
-
-function extremes(chap) {
-  const rows = subsOf(chap).map((u) => ({ sub: u.no, hanzi: hanzi(u.body) }));
-  const sorted = [...rows].sort((a, b) => a.hanzi - b.hanzi);
-  return { thinnest: sorted[0], thickest: sorted[sorted.length - 1] };
+function summarize() {
+  const t = readDoc();
+  return {
+    chapter: CHAPTER, slug: SLUG, title: docTitle(), hint: TITLE,
+    hanzi: hanzi(t),
+    sections: sections(t),
+    subsections: subsections(t),
+    tables: tables(t),
+    sectionStats: sectionStats(t),
+    concepts: conceptHits(),
+    boundaries: boundaries(t),
+    arithmetic: arithmetic(t),
+  };
 }
 
 function main() {
-  const base = load();
-  const chap = chapter(base);
-  const subs = subsOf(chap);
-  const s = shape(chap);
-  const secs = sectionStats(chap);
-  const layers = layerDensity(chap);
-  const absorb = absorbAudit(chap);
-  const trap = trapAudit(chap);
-  const loop = loopAudit(chap);
-  const values = valueAudit(chap);
-  const briefs = briefAudit(chap);
-  const ext = extremes(chap);
-
-  console.log('═══ 抗贫血药：三个作用层次、两条吸收路径与一次陷阱（药理学 第32章）═══');
-  console.log(`教材规模: 第32章 ${s.hanzi} 字 · ${s.secs} 节 · ${s.subs} 小节 · 平均每小节 ${Math.round(s.hanzi / s.subs)} 字`);
-  console.log(`量值核验: ${values.subs} 小节正文的「数字＋单位」命中 ${values.hits} 处（均在剂量引用句，正文口径另判）`);
-  console.log(`按节分布: ${secs.map((x) => `${x.no} ${x.hanzi} 字`).join(' · ')}`);
+  const s = summarize();
+  const a = s.arithmetic;
+  console.log('药理学 · 第 ' + CHAPTER + ' 章 ' + docTitle());
   console.log('');
-  console.log(`12 个小节与正文汉字（最薄 ${ext.thinnest.sub} · ${ext.thinnest.hanzi} 字；最厚 ${ext.thickest.sub} · ${ext.thickest.hanzi} 字）：`);
-  for (const u of subs) console.log(`  ${u.no} ${u.title.replace(/^\d+\.\d+\.\d+\s*/, '')} · ${hanzi(u.body)} 字`);
+  console.log('正文 ' + s.hanzi.toLocaleString('en-US') + ' 汉字 · 二级节 ' + s.sections.length
+    + ' 个' + (s.subsections.length ? ' · 三级小节 ' + s.subsections.length + ' 个' : '')
+    + ' · 表格 ' + s.tables.length + ' 张（数据行 ' + s.tables.reduce((n, x) => n + x.rows, 0) + ' 行）');
   console.log('');
-  console.log(`三层作用词频: ${layers.map((l) => `${l.label}·${l.key} ${l.total}`).join(' · ')}`);
-  console.log(`  最密集的小节: ${layers.map((l) => `${l.key}→${l.top}(${l.topHits})`).join(' ')}`);
-  console.log('  → 三层不是并列的药名表：原料补物质，辅酶补反应条件，调节补信号；缺任一层，另两层都打折扣。');
+  console.log('逐节汉字与占比（含表头节，故占比合计不足一百）：');
+  for (const x of s.sectionStats) console.log('  ' + x.title + ' · ' + x.hanzi + ' 字 · ' + x.share + '%');
   console.log('');
-  console.log(`吸收链四环节: ${absorb.map((a) => `${a.step} ${a.total}`).join(' · ')}`);
-  console.log(`  落点: ${absorb.map((a) => `${a.step}@${a.at.join(',')}`).join(' | ')}`);
+  console.log('本章算术：论证节 ' + a.sections + ' 个，节均 ' + a.avg + ' 字；最厚「' + a.thick.title
+    + '」' + a.thick.hanzi + ' 字，最薄「' + a.thin.title + '」' + a.thin.hanzi + ' 字，倍差 ' + a.ratio + ' 倍');
+  console.log('关键词密度：' + a.hits + ' 次 / ' + a.body + ' 字 = ' + a.density + ' 次每千字');
   console.log('');
-  console.log(`叶酸陷阱: ${trap.trap.total} 次（${trap.trap.per.map((p) => p.sub).join(' ')}） · 掩盖 ${trap.mask.total} 次（${trap.mask.per.map((p) => p.sub).join(' ')}）`);
+  console.log('关键词落位（正文现算）：');
+  for (const c of s.concepts) {
+    console.log('  ' + (c.total ? '✓' : '✗') + ' ' + c.term + '：' + c.total + ' 次，分布于 ' + c.sections + ' 节');
+  }
   console.log('');
-  console.log('观察三元组的落点（全章次数 / 覆盖小节数）：');
-  for (const x of loop) console.log(`  ${x.word} ${x.total} 次 · ${x.subs} 个小节 · ${x.at.join(' ')}`);
+  console.log('边界条目 ' + s.boundaries.length + ' 条；首条：' + (s.boundaries[0] || '无').slice(0, 80));
   console.log('');
-  console.log(`口径句核验: ${briefs.filter((b) => b.ok).length} / ${briefs.length} 小节的 brief 同时带「剂量与用法照底本」与「本书不构成用药建议」`);
-  console.log('');
-  console.log('教学边界：本章只说明抗贫血药的原料/辅酶/调节三层作用与吸收环节与观察要求，不写剂量与浓度与检验数值（剂量与用法照底本），不作诊断与疗效断言，不构成用药建议');
-
-  return { chap, subs, shape: s, secs, layers, absorb, trap, loop, values, briefs, extremes: ext };
+  console.log('※ 现算自 ' + SLUG + '/docs/zh.md；正文改版后重跑即可复现。');
+  console.log('教学边界：本章只解释分类、机制、体内过程与观察口径，不写剂量与用法量值，不作适应证判定，不构成用药建议。');
 }
 
-if (require.main === module) {
-  main();
-}
+if (require.main === module) main();
 
 module.exports = {
-  ROOT,
-  FILE,
-  CHAPTER,
-  LAYERS,
-  ABSORB,
-  LOOP,
-  VALUE_RE,
-  load,
-  chapter,
-  subsOf,
-  hanzi,
-  shape,
-  sectionStats,
-  keywordHits,
-  layerDensity,
-  absorbAudit,
-  trapAudit,
-  loopAudit,
-  valueAudit,
-  briefAudit,
-  extremes,
-  main,
+  DOC, CHAPTER, SLUG, TITLE, docTitle, CONCEPTS,
+  readDoc, hanzi, sections, subsections, tables, sectionStats,
+  conceptHits, boundaries, arithmetic, summarize,
 };

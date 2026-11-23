@@ -1,57 +1,87 @@
 #!/usr/bin/env node
 /**
- * 第 5 章 体质辨识的数据化：问卷 → 特征向量 —— 确定性单元测试
- * 运行: node --test code/main.test.js
- *
- * 断言只落在可对账的结构上：单元数与小节号、规模、三辨与四位面重心、引书数、数值计数。
- * 数字由 standards/tizhi/units.json 现算后写死在此，教材改版时测试会先响。
+ * 第 5 章 问卷到特征向量 —— 确定性单元测试
+ * 运行: node --test chapters/05-tizhi-tezheng/code/main.test.js
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
-const { CHAPTER, load, chapterUnits, merge, rank, shape, citations, bySection } = require('./main.js');
+const { DOC, analyze, DOMAINS } = require('./main.js');
 
-const data = load();
-const list = chapterUnits(data);
+const A = analyze();
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const BODY = fs.readFileSync(DOC, 'utf8');
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
 
-test('本章单元数与小节号与教材一致', () => {
-  assert.strictEqual(list.length, 1);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['5.10']);
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
+
+const bodyGrams = shingles(BODY);
+
+test('示意向量为 2/4/2/3，四域均分 2.75、最高域 4', () => {
+  assert.deepStrictEqual(A.scores, [2, 4, 2, 3]);
+  assert.strictEqual(A.mean, 2.75);
+  assert.strictEqual(A.max, 4);
+  assert.strictEqual(DOMAINS.length, 4);
 });
 
-test('规模：127 字 · 平均 127 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 127);
-  assert.strictEqual(s.mean, 127);
+test('九质 × 四域 = 36 个域内格子', () => {
+  assert.strictEqual(A.types.length, 9);
+  assert.strictEqual(A.grid, 36);
 });
 
-test('三辨重心是「形神特征」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '形神特征');
-  assert.strictEqual(views[0].count, 6);
+test('按关键域优先，只有气虚质在演示中成立', () => {
+  assert.deepStrictEqual(A.passed, ['气虚质']);
+  const by = Object.fromEntries(A.verdicts.map((v) => [v.type, v.pass]));
+  assert.strictEqual(by['痰湿质'], false);
+  assert.strictEqual(by['气郁质'], false);
+  assert.strictEqual(by['气虚质'], true);
 });
 
-test('四位面重心是「功能」，且四层都有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['功能'], 5);
-  const touched = Object.values(levels).filter((n) => n > 0).length;
-  assert.ok(touched >= 3, `仅 ${touched} 层有落点`);
+test('quiz 结构：≥5 题、三段齐、四选项、解释 ≥30 汉字', () => {
+  const qs = QUIZ.questions;
+  assert.ok(qs.length >= 5, `只有 ${qs.length} 题`);
+  const stages = new Set(qs.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), '缺 ' + s);
+  for (const q of qs) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    assert.ok((q.explain.match(HANZI) || []).length >= 30, q.question);
+  }
+  assert.ok(new Set(qs.map((q) => q.correct)).size >= 3, '答案过于集中');
 });
 
-test('本章教材不引古籍（引书 0 部）：属现代急诊／重症内容', () => {
-  const c = citations(list);
-  assert.strictEqual(c.books, 0);
-  assert.strictEqual(c.total, 0);
+test('quiz 接地：至少 2 道 check 题的正确选项能在正文找到 4 字原词', () => {
+  const grounded = QUIZ.questions.filter((q) => {
+    if (q.stage !== 'check') return false;
+    const grams = [...shingles(String(q.options[q.correct]))];
+    return grams.some((g) => bodyGrams.has(g));
+  });
+  assert.ok(grounded.length >= 2, `只有 ${grounded.length} 道接地`);
 });
 
-test('数值计数与单元层一致（本章 1 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 1);
+test('quiz 与代码都不含旧脚手架指纹', () => {
+  const bad = /三辨|四位面|单元规模|本章实测|本课第\s*\d+\s*章/;
+  assert.ok(!bad.test(JSON.stringify(QUIZ)));
+  assert.ok(!bad.test(fs.readFileSync(__filename.replace(/\.test\.js$/, '.js'), 'utf8')));
 });
 
-test('每节都有单元，且每单元都带 locator', () => {
-  for (const s of bySection(list)) assert.ok(s.units > 0, s.sec);
-  for (const u of list) assert.ok(u.locator.startsWith(`派生·第${CHAPTER}章·`), u.locator);
+test('脚本可运行并声明示例值非标准', () => {
+  const r = spawnSync(process.execPath, [path.join(__dirname, 'main.js')], { encoding: 'utf8', timeout: 60000 });
+  assert.strictEqual(r.status, 0, r.stderr);
+  assert.match(r.stdout, /2\.75/);
+  assert.match(r.stdout, /非量表标准/);
+  assert.match(r.stdout, /不构成诊疗建议/);
 });

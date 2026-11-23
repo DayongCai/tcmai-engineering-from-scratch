@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中医体质学 · 第 2 章 体质的形成：先天禀赋与后天因素：本章统计口径
+ * 中医体质学 · 第 2 章 体质的形成：底板与漂移
  * 课程: departments/01-zhongyi/04-zhongyi-tizhi-xue/chapters/02-tizhi-chengyin/docs/zh.md
- * 数据: standards/tizhi/units.json（13 单元层，每单元带三辨 / 四位面词频与数值计数）
+ * 数据: chapters/_corpus.js 读 standards/ 下的证候库、体质库与映射表
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章只做两件可复算的事：老年常见五质的证候合计与占比，以及各质「覆盖病名 ÷ 证候数」
+ * 的扩散度。前者说明分母是证候不是人，后者只作排查兼夹的提示，不读成发病率。
  */
 
 'use strict';
@@ -14,114 +14,39 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'tizhi', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/tizhi/units.json —— 章节目录是否已脱离仓库？');
+const { ROOT, analyze: corpusAnalyze } = require(path.join(__dirname, '..', '..', '_corpus.js'));
+
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const TITLE = '底板改不了，漂移的方向可以选';
+const FIVE = ['气虚质', '阳虚质', '阴虚质', '痰湿质', '血瘀质'];
+const round1 = (x) => Math.round(x * 10) / 10;
+
+function analyze() {
+  const base = corpusAnalyze();
+  const rows = base.rows;
+  const pick = (type) => rows.find((r) => r.type === type);
+  const five = FIVE.map((type) => {
+    const r = pick(type);
+    return { type, zhengCount: r.zhengCount, diseaseCount: r.diseaseCount, diffusion: round1(r.diseaseCount / r.zhengCount) };
+  });
+  const fiveSum = five.reduce((a, r) => a + r.zhengCount, 0);
+  const sharePct = Math.round((fiveSum / base.total) * 100);
+  const diffusion = {};
+  for (const r of rows) if (r.zhengCount > 0) diffusion[r.type] = round1(r.diseaseCount / r.zhengCount);
+  return { ...base, five, fiveSum, sharePct, diffusion };
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'tizhi', 'units.json');
-const CHAPTER = '2';
-
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) for (const [k, v] of Object.entries(u.measure[field])) out[k] = (out[k] || 0) + v;
-  return out;
-}
-
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
-
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = u.sec || '（未标节）';
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
-
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) {
-      counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-    }
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
-
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
-  return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
-  };
-}
-
-/** 方与法：单元层没有独立方剂字段，改从正文里认「治法动词」记号（儿科以疏风宣肺、消食健脾、平肝息风为主） */
-function methods(list) {
-  const VERBS = ['疏肝', '补肾', '健脾', '养血', '活血', '化瘀', '调经', '固冲', '止带', '安胎', '清热', '利湿'];
-  const out = {};
-  for (const v of VERBS) out[v] = list.reduce((a, u) => a + u.prose.split(v).length - 1, 0);
-  return Object.entries(out).filter(([, c]) => c).sort((a, b) => b[1] - a[1]);
-}
-
-module.exports = { CHAPTER, load, chapterUnits, merge, rank, bySection, citations, shape, methods, sum };
+module.exports = { DOC, TITLE, ROOT, FIVE, analyze };
 
 if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  const views = rank(merge(list, 'views'));
-  const levels = rank(merge(list, 'levels'));
-  const books = citations(list);
-
-  console.log('═══ 中医体质学 · 第 2 章 体质的形成：先天禀赋与后天因素 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按节：');
-  for (const sec of bySection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of views) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of levels) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log(`\n引书 ${books.books} 部 · 引用 ${books.total} 次 · 前三：${books.top.map(([n, c]) => `${n}(${c})`).join('、')}`);
-  console.log('\n治法动词命中：' + methods(list).map(([v, c]) => `${v}×${c}`).join('  '));
-  console.log('\n单元清单：');
-  for (const u of list) {
-    console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字\t${u.tri.view.primary || '—'}/${u.tri.level.primary || '—'}`);
-  }
-}
-
-// 教学样例声明：契约要求每章输出含临床边界声明（tests/test_chapter_code.js）
-if (require.main === module) {
-  console.log('※ 教学样例：数字由 standards/tizhi/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  const a = analyze();
+  console.log('═══ 中医体质学 · 第 2 章 ' + TITLE + ' ═══');
+  console.log(`证候总数 ${a.total}；老年常见五质合计 ${a.fiveSum} 证，占 ${a.sharePct}%。`);
+  console.log('\n五质分项：');
+  for (const r of a.five) console.log(`  ${r.type}\t${r.zhengCount} 证\t${r.diseaseCount} 病名\t扩散度 ${r.diffusion.toFixed(1)}`);
+  console.log('\n扩散度（覆盖病名 ÷ 证候数，只作兼夹排查提示）：');
+  for (const [type, v] of Object.entries(a.diffusion).sort((x, y) => y[1] - x[1])) console.log(`  ${type}\t${v.toFixed(1)}`);
+  console.log(`\n分母提醒：${a.sharePct}% 的分母是 ${a.total} 个证候，不是人数；本库不带年龄字段，不能据此推断老年人中的比例。`);
+  console.log('※ 教学样例：数字由 standards/zhenghou/证候库.json 现算，不构成诊疗建议，不能替代医师面诊。');
 }

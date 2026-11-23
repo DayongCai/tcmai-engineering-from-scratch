@@ -31,7 +31,7 @@
     "id": "textbooks",
     "path": "textbooks/01-zhongyi/08-jingui-yaolue",
     "chaptersWritten": 24,
-    "words": 704308,
+    "words": 704250,
     "status": "wip",
     "layer": "source-body+commentary",
     "source": "standards/jingui/底本.json（外源·笈成）+ standards/jingui/gushiwen/（外源·古诗文网，校勘）",

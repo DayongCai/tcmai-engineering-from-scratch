@@ -73,6 +73,23 @@ def _fake_req(method, url, token, data=None, extra_headers=None, raw_file=None, 
     return 200, {}
 
 
+def req_retry(*args, tries=3, **kw):
+    """包一层重试：本机到 api.github.com 会间歇性超时（实测约 1/3 概率），
+    不带重试就会在 6.56 GB 传到一半时整体失败。"""
+    last = None
+    for i in range(tries):
+        try:
+            return req(*args, **kw)
+        except (urllib.error.URLError, TimeoutError, OSError) as e:
+            last = e
+            if i == tries - 1:
+                break
+            wait = 2 ** i
+            print(f'    （网络错误 {type(e).__name__}，{wait}s 后重试 {i + 2}/{tries}）')
+            time.sleep(wait)
+    raise last
+
+
 def req(method, url, token, data=None, extra_headers=None, raw_file=None, timeout=120):
     if _FAKE['on']:
         return _fake_req(method, url, token, data, extra_headers, raw_file, timeout)
@@ -229,12 +246,12 @@ def main():
         die(3, '需要 --repo owner/repo')
 
     # 1) 仓库是否存在
-    status, info = req('GET', f'{API}/repos/{args.repo}', token)
+    status, info = req_retry('GET', f'{API}/repos/{args.repo}', token)
     if status == 404:
         if not args.create_repo:
             die(3, f'仓库 {args.repo} 不存在；加 --create-repo 自动建私有仓，或先手工建')
         name = args.repo.split('/')[1]
-        status, info = req('POST', f'{API}/user/repos', token,
+        status, info = req_retry('POST', f'{API}/user/repos', token,
                            {'name': name, 'private': True,
                             'description': '课程视频交付仓（媒体走 Release 附件，仓库只放清单）'})
         if status >= 300:
@@ -244,11 +261,11 @@ def main():
         die(3, f'读仓库失败（{status}）：{info}')
 
     # 1.5) 仓库不要是空的：放一份 README（Contents API，同样不需要 github.com）
-    status, rd = req('GET', f'{API}/repos/{args.repo}/contents/README.md', token)
+    status, rd = req_retry('GET', f'{API}/repos/{args.repo}/contents/README.md', token)
     if status == 404:
         readme = build_readme(bundle, args.tag)
         import base64
-        status, res = req('PUT', f'{API}/repos/{args.repo}/contents/README.md', token, {
+        status, res = req_retry('PUT', f'{API}/repos/{args.repo}/contents/README.md', token, {
             'message': 'docs: 媒体交付说明',
             'content': base64.b64encode(readme.encode('utf-8')).decode('ascii'),
         })
@@ -258,9 +275,9 @@ def main():
             print('✅ 已写入 README.md')
 
     # 2) Release：有就复用
-    status, rel = req('GET', f'{API}/repos/{args.repo}/releases/tags/{args.tag}', token)
+    status, rel = req_retry('GET', f'{API}/repos/{args.repo}/releases/tags/{args.tag}', token)
     if status == 404:
-        status, rel = req('POST', f'{API}/repos/{args.repo}/releases', token, {
+        status, rel = req_retry('POST', f'{API}/repos/{args.repo}/releases', token, {
             'tag_name': args.tag,
             'name': f'课程视频 {args.tag}',
             'body': (f"{bundle['totalChapters']} 章 · "
@@ -289,11 +306,11 @@ def main():
             print(f'  · {a["name"]} 已在（{a["bytes"] / 1048576:.1f} MB），跳过')
             continue
         if have:
-            req('DELETE', f'{API}/repos/{args.repo}/releases/assets/{have["id"]}', token)
+            req_retry('DELETE', f'{API}/repos/{args.repo}/releases/assets/{have["id"]}', token)
             print(f'  · {a["name"]} 旧附件大小不符，已删除重传')
         t0 = time.time()
-        status, res = req('POST', f'{upload_base}?name={urllib.request.quote(a["name"])}',
-                          token, raw_file=a['path'], timeout=3600)
+        status, res = req_retry('POST', f'{upload_base}?name={urllib.request.quote(a["name"])}',
+                                token, raw_file=a['path'], timeout=3600)
         if status >= 300:
             die(8, f'上传 {a["name"]} 失败（{status}）：{res}')
         dt = time.time() - t0
@@ -301,7 +318,7 @@ def main():
         print(f'  ✅ {a["name"]} {a["bytes"] / 1048576:.1f} MB · {dt:.0f}s · {rate:.1f} MB/s')
 
     # 4) 回读确认（发布成功必须能看到附件，而不是"请求返回 200"）
-    status, rel2 = req('GET', f'{API}/repos/{args.repo}/releases/tags/{args.tag}', token)
+    status, rel2 = req_retry('GET', f'{API}/repos/{args.repo}/releases/tags/{args.tag}', token)
     got = {x['name']: x for x in rel2.get('assets', [])}
     missing = [a['name'] for a in assets if a['name'] not in got]
     if missing:

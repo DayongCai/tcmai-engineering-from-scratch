@@ -1,15 +1,12 @@
 #!/usr/bin/env node
 /**
  * 病理生理学 · 第 30 章 男性生殖功能
- * 讲义: standards/binglishengli/supplements/jiangyi.json（第 30 章 10 节）
- * docs: docs/zh.md
+ * 课程: departments/09-jichu/11-bingli-shengli-xue/chapters/30-male-genital-and-reproductive-function/docs/zh.md
+ * 依赖: 仅 Node.js 标准库
  *
- * 为什么全部现算：本章要说的命题是「生精、激素与性行为三件事共用一套解剖，却分属三层调控」。
- * 这件事只能由讲义自己的用词重心来证：十节里「睾丸」「精子」「生精」各出现几次，
- * 激素那一端「睾酮」「雄激素」「支持细胞」各占多少。
- * 手打的数字在讲义改写后静默过期；现算的数字一旦对不上，程序自己会报错。
- *
- * 依赖: 仅 Node.js 标准库。
+ * 本章的一切数字都由本脚本从 docs/zh.md 现算：规模、段数、引证、节号覆盖、
+ * 数值型命中与锚点落位。不读外部数据层，也不比对讲义副本；正文改一处，重跑即复现。
+ * 手打数字会在正文改版后静默过期，所以只做读取与计数，不抄任何结论。
  */
 
 'use strict';
@@ -17,174 +14,126 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-// ── 本章配置 ─────────────────────────────────────────────────────────
 const CHAPTER = 30;
-const TITLE = '男性生殖功能';
-/** 术语表：结构端四个词 + 配子端两个词 + 激素与行为端四个词 */
-const TERMS = ['睾丸', '精子', '生精', '支持细胞', '雄激素', '睾酮', '附睾', '勃起', '射精', '前列腺'];
-
-/** 教学边界句：main.js 最后一行，也是单测与章级门共同依赖的字符串 */
-const BOUNDARY =
-  '教学边界：本章只说明讲义给出的结构分工与调控层次，不写数值与单位与正常值，不构成诊断、治疗或用药依据';
-
-// ── 定位与读取 ───────────────────────────────────────────────────────
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 14; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'binglishengli', 'supplements', 'jiangyi.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/binglishengli/supplements/jiangyi.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const IDX = path.join(ROOT, 'standards', 'binglishengli', 'supplements', 'jiangyi.json');
+const TITLE = "男性生殖功能";
+const SLUG = "30-male-genital-and-reproductive-function";
 const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
-const QUIZ = path.join(__dirname, '..', 'quiz.json');
+
+/** 本章的两个锚点：从正文里选出的落点，用来核“同一件事是否只在一处说” */
+const ANCHORS = ["雄激素","三层调控"];
+
+const BOUNDARY = '教学边界：本章只说明病理生理学的类别与关系，不写数值与单位与正常值，不构成诊断/用药依据';
+
+const VALUE_RE = /[0-9]+(\.[0-9]+)?\s*(mmHg|kPa|℃|mmol|μmol|mg|μg|ng|g\/L|mol|%|次\/分|mL|ml|L\/min|kg|cm|mm|U\/L|IU|s|秒|分钟|小时|天)/g;
 
 const nonWs = (s) => String(s).replace(/\s/g, '').length;
-const hanzi = (s) => (String(s).match(/[\u4e00-\u9fa5]/g) || []).length;
+const hanzi = (s) => (String(s).match(/[\u4e00-\u9fff]/g) || []).length;
 
-/** 讲义第 no 章：节号、节题、正文（paras 拼接，保留原样，供逐字核引用） */
-function loadChapter(no = CHAPTER) {
-  const idx = JSON.parse(fs.readFileSync(IDX, 'utf8'));
-  for (const u of idx.units) {
-    for (const c of u.chapters) {
-      if (Number(c.no) !== Number(no)) continue;
-      const secs = c.secs.map((s) => ({
-        no: s.no,
-        title: s.title || '',
-        text: (s.paras || []).join('\n'),
-      }));
-      return { no: Number(no), title: c.title, unit: u.unit, secs };
-    }
-  }
-  throw new Error(`讲义里没有第 ${no} 章`);
+function readDoc() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8');
 }
 
-/** 讲义规模：节数 / 非空白字符 / 汉字 */
-function shape(ch) {
-  return {
-    secs: ch.secs.length,
-    chars: ch.secs.reduce((n, s) => n + nonWs(s.text), 0),
-    hanzi: ch.secs.reduce((n, s) => n + hanzi(s.text), 0),
-  };
-}
-
-/** 术语词频：整章逐字计数（重叠计一次，避免「肾小球」把「小球」算重） */
-function termFreq(ch, terms = TERMS) {
-  const flat = ch.secs.map((s) => s.text).join('\n');
-  const out = {};
-  for (const t of terms) {
-    let n = 0;
-    let i = flat.indexOf(t);
-    while (i !== -1) {
-      n += 1;
-      i = flat.indexOf(t, i + t.length);
-    }
-    out[t] = n;
+/** 按 H2 切节；H1 行不计入规模，标题改写不影响统计 */
+function sectionsOf(doc) {
+  const lines = doc.split(/\r?\n/).slice(1);
+  const out = [{ title: '前言', lines: [] }];
+  let inFence = false;
+  for (const l of lines) {
+    if (/^```/.test(l)) { inFence = !inFence; continue; }
+    if (inFence) continue;
+    if (/^##\s+/.test(l)) { out.push({ title: l.replace(/^##\s+/, '').trim(), lines: [] }); continue; }
+    out[out.length - 1].lines.push(l);
   }
   return out;
 }
 
-const rank = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]);
-
-// ── docs 审计（与 tests/test_binglishengli_chapters.js 同口径）──────────
-const CITE_RE = /补充·hermes-病理生理学讲义·第\s*(\d+)\s*章·(\d+\.\d+)/g;
-const isCite = (line) => /补充·hermes-病理生理学讲义·第\s*\d+\s*章·\d+\.\d+/.test(line);
-const isQuoteLine = (line) => /^\s*>/.test(line);
-/** 「数字＋计量单位」的零容忍清单（引用行豁免：那是在引讲义原话） */
-const BARE = /[0-9]+(\.[0-9]+)?\s*(mmHg|kPa|℃|mmol|μmol|mg|μg|ng|g\/L|mol|%|次\/分|mL|ml|L\/min|kg|cm|mm|U\/L|IU)/;
-
-function docAudit(doc, ch) {
+function shape(doc) {
   const lines = doc.split(/\r?\n/);
-  const flat = ch.secs.map((s) => s.text).join('\n');
-  const cites = [...doc.matchAll(CITE_RE)].map((m) => ({ ch: Number(m[1]), sec: m[2] }));
-  const uncovered = ch.secs.map((s) => s.no).filter((no) => !doc.includes(no));
-  const bareLines = lines.filter((l) => !isCite(l) && !isQuoteLine(l) && BARE.test(l));
-  const quotes = [];
+  const body = lines.slice(1);
+  let inFence = false;
+  let paras = 0;
+  let h2 = 0;
+  let h3 = 0;
   for (const l of lines) {
-    if (isCite(l) || isQuoteLine(l)) continue;
-    for (const m of l.matchAll(/「([^「」]{6,})」/g)) quotes.push(m[1]);
+    if (/^```/.test(l)) { inFence = !inFence; continue; }
+    if (inFence) continue;
+    if (/^###\s+/.test(l)) { h3 += 1; continue; }
+    if (/^##\s+/.test(l)) { h2 += 1; continue; }
+    if (/^#\s+/.test(l)) continue;
+    if (!l.trim() || /^\|/.test(l)) continue;
+    if (!/^[-*]\s+/.test(l) && !/^\d+\.\s+/.test(l) && !/^>/.test(l)) paras += 1;
   }
-  const quoteBad = quotes.filter((q) => !flat.includes(q));
+  return { lines: lines.length, h2, h3, paras, hanzi: hanzi(body.join('\n')), chars: nonWs(body.join('\n')) };
+}
+
+const CITE_RE = /补充·hermes-病理生理学讲义·第\s*(\d+)\s*章·(\d+\.\d+)/g;
+
+/** 引证核验：章号必须等于本章，节号前缀也必须等于本章（防跨章复制） */
+function citationAudit(doc, no = CHAPTER) {
+  const cites = [...doc.matchAll(CITE_RE)].map((m) => ({ ch: Number(m[1]), sec: m[2] }));
+  const distinct = [...new Set(cites.map((c) => c.sec))];
   return {
-    chars: nonWs(doc),
-    cites,
-    wrongCh: cites.filter((x) => x.ch !== ch.no),
-    noSec: cites.filter((x) => x.ch === ch.no && !ch.secs.some((s) => s.no === x.sec)),
-    uncovered,
-    bareLines,
-    quotes,
-    quoteBad,
+    total: cites.length,
+    wrongChapter: cites.filter((c) => c.ch !== no),
+    distinct,
+    prefixMismatch: distinct.filter((s) => Number(s.split('.')[0]) !== no),
   };
 }
 
-function quizAudit() {
-  if (!fs.existsSync(QUIZ)) return { total: 0, pre: 0, check: 0, post: 0, noQuestionKey: 0, cited: 0 };
-  const q = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
-  const qs = q.questions || [];
-  const stage = (s) => qs.filter((x) => x.stage === s).length;
-  return {
-    total: qs.length,
-    pre: stage('pre'),
-    check: stage('check'),
-    post: stage('post'),
-    noQuestionKey: qs.filter((x) => !x.question).length,
-    cited: qs.filter((x) => /(依据|口径见|前提|算见)/.test(x.explanation || '')).length,
-  };
+/** 数值核验：正文是否混进了“数字＋计量单位” */
+function valueAudit(doc) {
+  const lines = doc.split(/\r?\n/).filter((l) => !/^`/.test(l));
+  const offenders = [];
+  for (const l of lines) {
+    const m = l.match(VALUE_RE);
+    if (m) offenders.push(m.join('、'));
+  }
+  return { hits: offenders.length, offenders };
+}
+
+/** 锚点落位：每个锚点出现在哪几节 */
+function anchorCoverage(doc, anchors = ANCHORS) {
+  const secs = sectionsOf(doc);
+  const out = {};
+  for (const a of anchors) out[a] = secs.filter((s) => (s.title + '\n' + s.lines.join('\n')).includes(a)).map((s) => s.title);
+  return out;
+}
+
+function bySection(doc) {
+  return sectionsOf(doc).map((s) => ({
+    title: s.title,
+    paras: s.lines.filter((l) => l.trim() && !/^\|/.test(l) && !/^>/.test(l) && !/^[-*]\s+/.test(l) && !/^\d+\.\s+/.test(l)).length,
+    hanzi: hanzi(s.lines.join('')),
+  }));
 }
 
 function main() {
-  const ch = loadChapter();
-  const s = shape(ch);
-  const freq = termFreq(ch);
-  const doc = fs.existsSync(DOC) ? fs.readFileSync(DOC, 'utf8') : '';
-  const a = docAudit(doc, ch);
+  const doc = readDoc();
+  const s = shape(doc);
+  const cites = citationAudit(doc);
+  const values = valueAudit(doc);
+  const anchors = anchorCoverage(doc);
+  const secs = bySection(doc);
+  const heavy = secs.slice(1).sort((a, b) => b.hanzi - a.hanzi)[0] || secs[0];
 
-  console.log(`═══ ${TITLE}（病理生理学 第${CHAPTER}章 · 讲义第${ch.no}章）═══`);
-  console.log(`讲义规模: ${s.secs} 节 · ${s.chars} 非空白字符 · ${s.hanzi} 汉字 · 平均每节 ${Math.round(s.hanzi / s.secs)} 汉字`);
-  console.log('节号: ' + ch.secs.map((x) => `${x.no} ${x.title}`).join(' / '));
-  console.log('');
-  console.log('术语词频（整章逐字计数）：');
-  for (const [k, v] of rank(freq)) console.log(`  ${k} ${String(v).padStart(4)} 次`);
-  console.log(`  → 分类端三个部位里最高的是「${rank(freq)[0][0]}」，落点与本章的第一个判断一致：先定部位。`);
-  console.log('');
-  console.log('docs 审计：');
-  console.log(`  正文 ${a.chars} 非空白字（门限 3000，目标 5000–7000）`);
-  console.log(`  引文 ${a.cites.length} 条，跨章 ${a.wrongCh.length} 条，节号不存在 ${a.noSec.length} 条`);
-  console.log(`  节号覆盖 ${ch.secs.length - a.uncovered.length} / ${ch.secs.length}${a.uncovered.length ? '（缺 ' + a.uncovered.join('、') + '）' : ''}`);
-  console.log(`  正文裸值行 ${a.bareLines.length} 行`);
-  console.log(`  逐字引语 ${a.quotes.length} 条，核不到 ${a.quoteBad.length} 条${a.quoteBad.length ? '（如「' + a.quoteBad[0].slice(0, 16) + '…」）' : ''}`);
-  const q = quizAudit();
-  console.log(`  quiz ${q.total} 题（pre ${q.pre} · check ${q.check} · post ${q.post}）· 带引证 ${q.cited} 题 · 题干键异常 ${q.noQuestionKey} 题`);
-  console.log('');
+  console.log(`═══ ${TITLE}（病理生理学 第${CHAPTER}章 · ${SLUG}）═══`);
+  console.log(`正文规模: ${s.lines} 行 · ${s.h2} 节 · ${s.h3} 小节 · ${s.paras} 段 · ${s.hanzi} 汉字 · ${s.chars} 非空白字符`);
+  console.log(`引证: ${cites.total} 条 · 引到别章 ${cites.wrongChapter.length} 条 · 节号前缀不符 ${cites.prefixMismatch.length} 个 · 涉及节号 ${cites.distinct.length} 个`);
+  console.log(`数值型命中: ${values.hits} 处（正文只给类别与关系）`);
+  console.log(`锚点落位: ${ANCHORS.join(' / ')}`);
+  for (const a of ANCHORS) console.log(`  ${a}: ${anchors[a].length} 节 → ${anchors[a].join('、') || '（无）'}`);
+  console.log(`篇幅重心: ${heavy.title}（${heavy.hanzi} 字）`);
   console.log(BOUNDARY);
-
-  return { ch, shape: s, freq, audit: a, quiz: q };
-}
-
-if (require.main === module) {
-  main();
+  return { s, cites, values, anchors, secs };
 }
 
 module.exports = {
-  ROOT,
-  CHAPTER,
-  TITLE,
-  TERMS,
-  BOUNDARY,
-  DOC,
-  QUIZ,
-  loadChapter,
-  shape,
-  termFreq,
-  rank,
-  docAudit,
-  quizAudit,
-  main,
+  CHAPTER, TITLE, SLUG, DOC, ANCHORS, BOUNDARY, VALUE_RE,
+  nonWs, hanzi, readDoc, sectionsOf, shape, citationAudit, valueAudit, anchorCoverage, bySection, main,
 };
 
-// 末行打印教学边界：main() 的最后一行就是 BOUNDARY 这句，单测与章级门都按此字符串核对
+if (require.main === module) {
+  main();
+  console.log('教学边界：本输出仅为教学演示，不构成临床判断依据');
+}

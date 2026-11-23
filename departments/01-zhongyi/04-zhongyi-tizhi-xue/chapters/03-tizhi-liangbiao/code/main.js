@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中医体质学 · 第 3 章 九种体质的判定与量表设计：本章统计口径
+ * 中医体质学 · 第 3 章 九种体质的判定与量表设计：四域各自计量
  * 课程: departments/01-zhongyi/04-zhongyi-tizhi-xue/chapters/03-tizhi-liangbiao/docs/zh.md
- * 数据: standards/tizhi/units.json（13 单元层，每单元带三辨 / 四位面词频与数值计数）
+ * 数据: chapters/_corpus.js 读 standards/ 下的证候库、体质库与映射表
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本章的算术只用于说明量表设计的压力：两质合计占多少、两小质合计占多少，
+ * 以及大小质之间差多少证。数值全部由证候库现算，不给条目、不给阈值。
  */
 
 'use strict';
@@ -14,114 +14,43 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'tizhi', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/tizhi/units.json —— 章节目录是否已脱离仓库？');
-}
+const { ROOT, analyze: corpusAnalyze } = require(path.join(__dirname, '..', '..', '_corpus.js'));
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'tizhi', 'units.json');
-const CHAPTER = '3';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const TITLE = '判定要靠两条同向证据，不能靠一条扎眼的特征';
+const BIG = ['湿热质', '阴虚质'];
+const SMALL = ['痰湿质', '阳虚质'];
+const round1 = (x) => Math.round(x * 10) / 10;
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
-
-function merge(list, field) {
-  const out = {};
-  for (const u of list) for (const [k, v] of Object.entries(u.measure[field])) out[k] = (out[k] || 0) + v;
-  return out;
-}
-
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
-}
-
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = u.sec || '（未标节）';
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
-  }
-  return [...out.values()];
-}
-
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) {
-      counter.set(m[1], (counter.get(m[1]) || 0) + 1);
-    }
-  }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
-}
-
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
+function analyze() {
+  const base = corpusAnalyze();
+  const pick = (type) => base.rows.find((r) => r.type === type);
+  const big = BIG.map(pick).map((r) => ({ type: r.type, zhengCount: r.zhengCount }));
+  const small = SMALL.map(pick).map((r) => ({ type: r.type, zhengCount: r.zhengCount }));
+  const bigSum = big.reduce((a, r) => a + r.zhengCount, 0);
+  const smallSum = small.reduce((a, r) => a + r.zhengCount, 0);
   return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
+    ...base,
+    big,
+    small,
+    bigSum,
+    smallSum,
+    bigShare: round1((bigSum / base.total) * 100),
+    smallShare: round1((smallSum / base.total) * 100),
+    gap: bigSum - smallSum,
   };
 }
 
-/** 方与法：单元层没有独立方剂字段，改从正文里认「治法动词」记号（儿科以疏风宣肺、消食健脾、平肝息风为主） */
-function methods(list) {
-  const VERBS = ['疏肝', '补肾', '健脾', '养血', '活血', '化瘀', '调经', '固冲', '止带', '安胎', '清热', '利湿'];
-  const out = {};
-  for (const v of VERBS) out[v] = list.reduce((a, u) => a + u.prose.split(v).length - 1, 0);
-  return Object.entries(out).filter(([, c]) => c).sort((a, b) => b[1] - a[1]);
-}
-
-module.exports = { CHAPTER, load, chapterUnits, merge, rank, bySection, citations, shape, methods, sum };
+module.exports = { DOC, TITLE, ROOT, BIG, SMALL, analyze };
 
 if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  const views = rank(merge(list, 'views'));
-  const levels = rank(merge(list, 'levels'));
-  const books = citations(list);
-
-  console.log('═══ 中医体质学 · 第 3 章 九种体质的判定与量表设计 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按节：');
-  for (const sec of bySection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of views) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of levels) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log(`\n引书 ${books.books} 部 · 引用 ${books.total} 次 · 前三：${books.top.map(([n, c]) => `${n}(${c})`).join('、')}`);
-  console.log('\n治法动词命中：' + methods(list).map(([v, c]) => `${v}×${c}`).join('  '));
-  console.log('\n单元清单：');
-  for (const u of list) {
-    console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字\t${u.tri.view.primary || '—'}/${u.tri.level.primary || '—'}`);
-  }
-}
-
-// 教学样例声明：契约要求每章输出含临床边界声明（tests/test_chapter_code.js）
-if (require.main === module) {
-  console.log('※ 教学样例：数字由 standards/tizhi/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  const a = analyze();
+  console.log('═══ 中医体质学 · 第 3 章 ' + TITLE + ' ═══');
+  console.log(`两质合计 ${a.bigSum} 证（${a.big.map((r) => r.type + r.zhengCount).join('、')}），占 ${a.total} 证的 ${a.bigShare}%。`);
+  console.log(`两小质合计 ${a.smallSum} 证（${a.small.map((r) => r.type + r.zhengCount).join('、')}），占 ${a.smallShare}%。`);
+  console.log(`大小质相差 ${a.gap} 证：条目若一质一题，大质会吸收相关回答，小质几乎没有机会被看见。`);
+  console.log('\n九质分项：');
+  for (const r of a.rows) console.log(`  ${r.type}\t${r.zhengCount} 证\t${r.diseaseCount} 病名`);
+  console.log('※ 教学样例：条目、分档与临界规则均为教学设定；数字由 standards/zhenghou/证候库.json 现算，不构成诊疗建议。');
 }

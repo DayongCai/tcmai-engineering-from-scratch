@@ -1,145 +1,100 @@
 #!/usr/bin/env node
 /**
- * 第 8 章 肾系病证 —— 确定性单元测试
+ * 第 8 章 肾系病证：六病落在水、溺、精三条通道上，溺道三病是一条进展线而非三个并列病 —— 确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言只落在可对账的结构上：规模、逐病证字数、证型清点、方剂复用、病机与病位词频、
- * 调护与按语占比、量值是否为 3（且只落在三个调护节）。不锁正文措辞。
+ * 断言只落两处可对账的东西：
+ *   1) code/main.js 从本章 docs/zh.md 现算出的结构指标（写死在此，正文改版测试先响）；
+ *   2) quiz.json 与正文同源（≥5 题、三段齐、4 选项、explain ≥30 汉字、≥2 道 check 题接地、答案打散）。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const {
-  KEYWORDS,
-  ORGANS,
-  load,
-  chapter,
-  subsOf,
-  hanzi,
-  bodyOf,
-  shape,
-  sectionStats,
-  syndromeAudit,
-  formulaAudit,
-  keywordHits,
-  keywordCounts,
-  organCounts,
-  tailShare,
-  valueAudit,
-  extremes,
-} = require('./main');
+const { measure, TERMS, CHAPTER } = require('./main.js');
 
-const base = load();
-const chap = chapter(base);
-const subs = subsOf(chap);
+const M = measure();
+const QUIZ = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
+const questions = Array.isArray(QUIZ.questions) ? QUIZ.questions : [];
+const DOC = fs.readFileSync(path.join(__dirname, '..', 'docs', 'zh.md'), 'utf8');
+const HAN = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 
-const SUBS = [
-  '8.1.1', '8.1.2', '8.1.3', '8.1.4', '8.1.5',
-  '8.2.1', '8.2.2', '8.2.3', '8.2.4', '8.2.5',
-  '8.3.1', '8.3.2', '8.3.3', '8.3.4', '8.3.5',
-  '8.4.1', '8.4.2', '8.4.3', '8.4.4', '8.4.5',
-  '8.5.1', '8.5.2', '8.5.3', '8.5.4', '8.5.5',
-  '8.6.1', '8.6.2', '8.6.3', '8.6.4', '8.6.5',
-];
+function shingles(text, n = 4) {
+  const clean = String(text || '').replace(/[^\u4e00-\u9fff]/g, ' ');
+  const out = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
+  }
+  return out;
+}
 
-test('本章 6 节 30 小节，正文合计 26217 汉字', () => {
-  const s = shape(chap);
-  assert.strictEqual(s.secs, 6);
-  assert.strictEqual(s.subs, 30);
-  assert.strictEqual(s.hanzi, 26217);
-  assert.deepStrictEqual(subs.map((u) => u.no), SUBS);
-  assert.strictEqual(new Set(SUBS).size, 30);
+const PINNED = {
+  "hanzi": 9152,
+  "h2": 6,
+  "h3": 37,
+  "h4": 0,
+  "tables": 4,
+  "tableRows": 24,
+  "quotes": 44,
+  "locators": 13,
+  "subNos": 30,
+  "terms": {
+    "水肿": 42,
+    "淋证": 35,
+    "癃闭": 35,
+    "阳痿": 14,
+    "水": 153,
+    "精": 60
+  }
+};
+
+test('正文现算指标与实测一致', () => {
+  assert.strictEqual(CHAPTER, 8);
+  assert.strictEqual(TERMS.length, 6);
+  assert.deepStrictEqual(M, PINNED);
 });
 
-test('六病各 5 小节，五段模板一篇不缺', () => {
-  for (const s of chap.secs) {
-    assert.deepStrictEqual(s.subs.map((u) => u.title),
-      ['概述', '病因病机', '辨证论治', '预防调护', '按语'], `${s.no} ${s.title} 的小节次序`);
+test('二级小节收口在 4–8 个，正文汉字不低于 2,500，三级出处不少于 10 条', () => {
+  assert.ok(M.h2 >= 4 && M.h2 <= 8, `二级小节 ${M.h2} 个`);
+  assert.ok(M.hanzi >= 2500, `汉字 ${M.hanzi}`);
+  assert.ok(M.locators >= 10, `三级出处 ${M.locators} 条`);
+});
+
+test('术语表六个词都真的在正文里出现', () => {
+  for (const [k, n] of Object.entries(M.terms)) assert.ok(n > 0, `${k} 出现 0 次`);
+});
+
+test('quiz 结构：≥5 题，pre/check/post 三段齐，4 选项、correct 合法、explain ≥30 汉字', () => {
+  assert.ok(questions.length >= 5, `只有 ${questions.length} 题`);
+  const stages = new Set(questions.map((q) => q.stage));
+  for (const s of ['pre', 'check', 'post']) assert.ok(stages.has(s), `缺 ${s} 段`);
+  for (const q of questions) {
+    assert.strictEqual(q.options.length, 4, q.question);
+    assert.ok(Number.isInteger(q.correct) && q.correct >= 0 && q.correct < 4, q.question);
+    assert.ok(HAN(q.explain) >= 30, `${q.question} explain 只有 ${HAN(q.explain)} 汉字`);
   }
 });
 
-test('逐病证字数：水肿 5048 最厚，关格 3921 最薄；平均每小节 874 字为四章最高', () => {
-  const secs = sectionStats(chap);
-  assert.deepStrictEqual(secs.map((x) => x.no), ['8.1', '8.2', '8.3', '8.4', '8.5', '8.6']);
-  assert.deepStrictEqual(secs.map((x) => x.hanzi), [5048, 4724, 4515, 3921, 4041, 3968]);
-  assert.deepStrictEqual(secs.map((x) => x.title), ['水肿', '淋证', '癃闭', '关格', '阳痿', '遗精']);
-  assert.strictEqual(Math.round(26217 / 30), 874);
+test('quiz 接地：≥2 道 check 题正确项含正文 4 字词组，答案打散', () => {
+  const body = shingles(DOC);
+  const grounded = questions.filter(
+    (q) => q.stage === 'check' && [...shingles(q.options[q.correct])].some((g) => body.has(g)),
+  ).length;
+  assert.ok(grounded >= 2, `只有 ${grounded} 道 check 题接地`);
+  const used = new Set(questions.map((q) => q.correct));
+  assert.ok(used.size >= 3, `correct 只用到 ${used.size} 个位置`);
 });
 
-test('证治占比：前三篇（水溺三病）各达五成，关格 1431 字最少', () => {
-  const secs = sectionStats(chap);
-  assert.deepStrictEqual(secs.map((x) => x.cheng), [5, 5, 5, 4, 4, 4]);
-  assert.deepStrictEqual(secs.map((x) => x.bianzheng), [2358, 2232, 2035, 1431, 1593, 1573]);
-  assert.strictEqual(Math.min(...secs.map((x) => x.bianzheng)), 1431);
-});
-
-test('证型清点：30 个证型，水肿 7 证最多，关格 3 证最少（危候不铺证型）', () => {
-  const syn = syndromeAudit(chap);
-  assert.deepStrictEqual(syn.map((x) => x.count), [7, 6, 6, 3, 4, 4]);
-  assert.strictEqual(syn.reduce((n, x) => n + x.count, 0), 30);
-  assert.deepStrictEqual(syn.find((x) => x.sec === '8.2').names,
-    ['热淋', '石淋', '血淋', '气淋', '膏淋', '劳淋']);
-  assert.deepStrictEqual(syn.find((x) => x.sec === '8.4').names,
-    ['脾肾阳虚，湿浊内蕴证', '肝肾阴虚，肝风内动证', '肾气衰微，邪陷心包证']);
-});
-
-test('代表方：30 次、27 首，3 首复用且全落在溺道与精道之间', () => {
-  const fx = formulaAudit(chap);
-  assert.strictEqual(fx.total, 30);
-  assert.strictEqual(fx.distinct, 27);
-  assert.strictEqual(fx.reused.length, 3);
-  assert.deepStrictEqual(fx.reused.map((r) => r.name).sort(),
-    ['八正散', '沉香散', '程氏萆薢分清饮'].sort());
-  // 三首复用方无一跨到水道（8.1）：水道自成一套方
-  for (const r of fx.reused) assert.ok(!r.secs.includes('8.1'), `${r.name} 不应出现在水肿篇`);
-  assert.strictEqual(fx.total, syndromeAudit(chap).reduce((n, x) => n + x.count, 0));
-});
-
-test('病机词频：水 298 居首，虚 204，热 193 多于湿 149，瘀 45 最少', () => {
-  const w = keywordCounts(chap);
-  assert.deepStrictEqual(KEYWORDS.map((k) => k.key), ['水', '精', '虚', '湿', '热', '瘀', '浊']);
-  assert.deepStrictEqual(w.map((x) => x.key), ['水', '虚', '热', '精', '湿', '浊', '瘀']);
-  assert.deepStrictEqual(w.map((x) => x.total), [298, 204, 193, 169, 149, 64, 45]);
-  assert.strictEqual(w[0].key, '水', '肾主水，水应是本章第一主语');
-});
-
-test('病位词频：肾 324 为轴，脾 184 次之，心 167 超过肝 93；肺 60 皆为水之上源', () => {
-  const o = organCounts(chap);
-  assert.deepStrictEqual(ORGANS, ['心', '肝', '脾', '肺', '肾']);
-  assert.deepStrictEqual(o.map((x) => x.total), [167, 93, 184, 60, 324]);
-  assert.strictEqual(o[4].organ, '肾');
-  assert.ok(o[0].total > o[1].total, '肾系一章里心应多于肝（心肾相交主精病）');
-  assert.strictEqual(keywordHits(chap, '肾').per.length, 29);
-  // 唯一不提肾的小节是阳痿调护：那一段讲的是情志、起居、饮食与房事
-  assert.deepStrictEqual(subs.filter((u) => !bodyOf(u).includes('肾')).map((u) => u.no), ['8.5.4']);
-});
-
-test('调护与按语：3529 + 3933 字，每篇均 588 与 656，为四章最高', () => {
-  const t = tailShare(chap);
-  assert.strictEqual(t.care, 3529);
-  assert.strictEqual(t.anYu, 3933);
-  assert.strictEqual(t.cheng, 2.8);
-  assert.strictEqual(t.careAvg, 588);
-  assert.strictEqual(t.anYuAvg, 656);
-});
-
-test('量值核验：30 小节正文命中 3 处，全落在三个调护节', () => {
-  const v = valueAudit(chap);
-  assert.strictEqual(v.subs, 30);
-  assert.strictEqual(v.hits, 3);
-  assert.deepStrictEqual(v.offenders.map((o) => o.sub), ['8.1.4', '8.2.4', '8.4.4']);
-  for (const o of v.offenders) {
-    assert.strictEqual(subs.find((u) => u.no === o.sub).title, '预防调护', `${o.sub} 应是调护节`);
+test('quiz 无脚手架指纹与禁用口径', () => {
+  const raw = JSON.stringify(QUIZ);
+  for (const re of [/三辨/, /四位面/, /单元规模/, /本章实测/, /本课第\s*\d+\s*章/, /见\s*code\/main\.js\s*输出/]) {
+    assert.ok(!re.test(raw), `残留指纹 ${re}`);
   }
-});
-
-test('小节两端：最薄 8.3.4（527 字），最厚 8.1.3（2358 字）', () => {
-  assert.deepStrictEqual(extremes(chap), {
-    thinnest: { sub: '8.3.4', hanzi: 527 },
-    thickest: { sub: '8.1.3', hanzi: 2358 },
-  });
-  assert.strictEqual(hanzi(bodyOf(subs.find((u) => u.no === '8.6.1'))), 620);
+  for (const re of [/页码/, /疗程/, /发生率/, /显效率/, /每日\s*\d+\s*(?:次|服)/]) {
+    assert.ok(!re.test(raw), `禁用口径 ${re}`);
+  }
 });

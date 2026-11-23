@@ -45,3 +45,24 @@ test('经名只认六经，不把「二阳」猜成太阳+阳明', () => {
   const wu = scan().filter((r) => r.pair === '合病:未标经');
   assert.ok(wu.every((r) => r.named.length === 0));
 });
+
+test('太阳+阳明合病 14 处里含 1 条篇题残句，证治条文只有 13 条', () => {
+  const hb = find('合病:太阳+阳明');
+  assert.strictEqual(hb.length, 14);
+  const titles = hb.filter((r) => r.text.trim() === '太阳阳明合病法');
+  assert.strictEqual(titles.length, 1, '篇 5 第 2 条是篇题残句');
+  assert.strictEqual(titles[0].no, 2);
+  assert.strictEqual(hb.length - titles.length, 13);
+});
+
+test('篇次分布：篇 5 七处、篇 18 六处、篇 22 一处', () => {
+  const hb = find('合病:太阳+阳明');
+  const byPian = hb.reduce((a, r) => { a[r.pian] = (a[r.pian] || 0) + 1; return a; }, {});
+  assert.strictEqual(byPian['辨太阳病脉证并治中'], 7);
+  assert.strictEqual(byPian['辨可发汗病脉证并治'], 6);
+  assert.strictEqual(Object.values(byPian).reduce((a, b) => a + b, 0), 14);
+});
+
+// ── quiz 结构契约（与 scripts/check_chapter_exercises.js 同源）──
+const { quizContract } = require('../../_quiz-contract.js');
+quizContract(__dirname);

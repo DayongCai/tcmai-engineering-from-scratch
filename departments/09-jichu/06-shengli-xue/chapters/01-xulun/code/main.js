@@ -1,14 +1,13 @@
 #!/usr/bin/env node
 /**
- * 生理学 · 第 1 章 绪论：研究对象、三个水平与调节框架
- * 课程: departments/09-jichu/06-shengli-xue/chapters/01-xulun/docs/zh.md
- * 出处: 教材·第1章（1.1–1.4，12 个知识单元）
- * 数据: standards/shengli/units.json（132 单元层，每单元带 goals / body / 三视角 / 四层级词频 / 数值核验）
+ * 生理学 · 第 1 章 绪论：把「稳态」写成一条可检查的回路
+ * 课程正文: departments/09-jichu/06-shengli-xue/chapters/01-xulun/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 为什么全部现算：本章要讲的命题是「稳态与调节是可以写成回路的」，
- * 而回路是否成立，取决于教材自己有没有把环节写全、有没有偷偷给数值。
- * 手打的数字会在教材改版后静默过期；现算的数字一旦对不上，程序自己会报错。
+ * 本程序只读本章正文，所有计数与判别都由正文现算：
+ *   规模（汉字 / 各级小节 / 表格 / 引文 / 加粗判断句）、关键词命中，
+ *   以及本章的两条机制判别——反馈方向、调节方式的时间尺度分工。
+ * 不读缓存、不读标准库 JSON：正文改了，程序与单测会同时报警。
  */
 
 'use strict';
@@ -16,165 +15,156 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-// __dirname = .../departments/09-jichu/06-shengli-xue/chapters/01-xulun/code
-// 不硬数 ../ 的层数（数错一次就 ENOENT），向上找带 standards/shengli 的那一级
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'shengli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/shengli/units.json —— 章节目录是否已脱离仓库？');
-}
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CJK = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'shengli', 'units.json');
-const CHAPTER = '1';
+const read = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const hanzi = (s) => (String(s || '').match(CJK) || []).length;
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-
-/** 本章的 12 个知识单元，按 sub 号排 */
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en'));
-}
-
-/** 规模：节数 / 单元数 / 汉字数。hanzi 是底本给出的正文汉字数，不估算 */
-function shape(list) {
-  const secs = [...new Set(list.map((u) => u.sec))];
+/** 规模：正文的骨架有多厚（标题与表格只在围栏代码块之外计数） */
+function shape(md) {
+  const body = md.replace(/```[\s\S]*?```/g, '');
+  const lines = body.split('\n');
+  const count = (re) => lines.filter((l) => re.test(l)).length;
   return {
-    secs: secs.length,
-    units: list.length,
-    hanzi: list.reduce((n, u) => n + u.hanzi, 0),
+    hanzi: hanzi(body),
+    h1: count(/^# /),
+    h2: count(/^## /),
+    h3: count(/^### /),
+    h4: count(/^#### /),
+    tables: count(/^\|/),
+    paras: body.split(/\n{2,}/).filter((p) => hanzi(p) >= 40).length,
   };
 }
 
-/** 三视角与四层级：单元层的词频直接相加，得到本章的观察重心 */
-function lens(list) {
-  const views = { 代谢: 0, 机能: 0, 形态: 0 };
-  const levels = { 细胞: 0, 组织: 0, 器官: 0, 系统: 0 };
-  for (const u of list) {
-    for (const k of Object.keys(views)) views[k] += u.measure.views[k] || 0;
-    for (const k of Object.keys(levels)) levels[k] += u.measure.levels[k] || 0;
-  }
-  return { views, levels };
-}
-
-const rank = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]);
-const total = (o) => Object.values(o).reduce((a, b) => a + b, 0);
-const share = (o, k) => (total(o) ? o[k] / total(o) : 0);
-
-/**
- * 数值核验：底本自己声明「不写数值与单位与正常值」。
- * 本函数把这个声明当成可核验的断言来复算——不是相信它，是检查它。
- */
-function valueAudit(list) {
-  const hits = list.reduce((n, u) => n + (u.measure.valueLike || 0), 0);
-  return {
-    units: list.length,
-    hits,
-    offenders: list.filter((u) => (u.measure.valueLike || 0) > 0).map((u) => u.sub),
-  };
-}
-
-/** 反射弧的五个环节：教材把它们写成一条链，链上任一环节变了，表现就变 */
-const ARC = ['感受器', '传入神经', '神经中枢', '传出神经', '效应器'];
-
-/** 在本章正文里把五环节写全的单元。这是「回路」能不能落地的最小证据 */
-function reflexArc(list) {
-  return list
-    .filter((u) => ARC.every((k) => (u.body || '').includes(k)))
-    .map((u) => u.sub);
-}
-
-/** 标题落在「调节 / 反馈 / 前馈」上的单元：本章的调节框架占了几个单元 */
-const CONTROL_RE = /调节|反馈|前馈/;
-function controlUnits(list) {
-  return list.filter((u) => CONTROL_RE.test(u.title)).map((u) => ({ sub: u.sub, title: u.title }));
-}
-
-/** 四节的知识分布：每节几个单元、多少字。绪论的四节就是四个话题 */
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    if (!out.has(u.sec)) out.set(u.sec, { units: 0, hanzi: 0, subs: [] });
-    const g = out.get(u.sec);
-    g.units += 1;
-    g.hanzi += u.hanzi;
-    g.subs.push(u.sub);
-  }
+/** 引文：《书名·篇名》级，本章要求每一条都带篇名 */
+function citations(md) {
+  const prose = md.replace(/```[\s\S]*?```/g, '');
+  const out = [];
+  for (const m of prose.matchAll(/《([^》·]{2,12})·([^》]{2,20})》/g)) out.push({ book: m[1], part: m[2] });
   return out;
 }
 
+/** 加粗判断句：本章把「可拿去用的判断」写成加粗句，句数本身就是论点密度 */
+function judgments(md) {
+  const prose = md.replace(/```[\s\S]*?```/g, '');
+  const seen = new Set();
+  for (const line of prose.split('\n')) {
+    if (/^\s*[|#>]/.test(line)) continue;
+    for (const m of line.matchAll(/\*\*([^*]{4,40})\*\*/g)) {
+      const s = m[1].trim().replace(/[：:，,。；;]$/, '');
+      if (hanzi(s) < 4) continue;
+      if (/^(MOTTO|PROBLEM|双根因定位|免责声明|边界声明|教材出处)$/.test(s)) continue;
+      seen.add(s);
+    }
+  }
+  return [...seen];
+}
+
+/** 关键词命中：本章的笔墨落在哪几个概念上 */
+const KEYWORDS = ['稳态', '调节', '反馈', '前馈', '回路'];
+function keywords(md) {
+  const prose = md.replace(/```[\s\S]*?```/g, '');
+  const out = {};
+  for (const k of KEYWORDS) out[k] = prose.split(k).length - 1;
+  return out;
+}
+
+/** 「不给值」类边界句的条数：本章反复声明的取舍，可数 */
+function boundaryHits(md) {
+  return (md.match(/本书不给值|不写数值|不给正常值|不给单位|不提供数值/g) || []).length;
+}
+
+/**
+ * 判别一：反馈方向。
+ * 本章给的判据不是背定义，而是「看结果把原来的改变往哪边推」。
+ * @param {'减小'|'加强'} effect
+ */
+function feedbackDirection(effect) {
+  if (effect === '减小') return { type: '负反馈', why: '偏差被改小，条件回到适宜一侧' };
+  if (effect === '加强') return { type: '正反馈', why: '沿原方向加强，把过程推向完成，不自行终止' };
+  throw new Error('未知方向：' + effect);
+}
+
+/**
+ * 判别二：反馈与前馈的差别只在时点。
+ * @param {'已发生'|'将发生'} basis
+ */
+function controlTiming(basis) {
+  if (basis === '已发生') return '反馈：依据已经发生的改变来纠正';
+  if (basis === '将发生') return '前馈：依据对即将发生情况的判断提前安排';
+  throw new Error('未知依据：' + basis);
+}
+
+/**
+ * 判别三：三种调节按时间与范围分工，问「归谁管」不成立，
+ * 该问「此刻哪一层在起主要作用」。
+ * @param {'神经'|'体液'|'自身'} kind
+ */
+function regulationProfile(kind) {
+  const T = {
+    神经: { speed: '快', reach: '局限', basis: '反射弧五段' },
+    体液: { speed: '慢', reach: '广而久', basis: '载体 + 靶细胞' },
+    自身: { speed: '局部即时', reach: '最小', basis: '局部条件变化' },
+  };
+  if (!T[kind]) throw new Error('未知调节方式：' + kind);
+  return { kind, ...T[kind] };
+}
+
+/** 反射弧五环节：本章唯一被写成完整回路的调节方式靠它落地 */
+const ARC = ['感受器', '传入神经', '神经中枢', '传出神经', '效应器'];
+function arcComplete(md) {
+  return ARC.every((k) => md.includes(k));
+}
+
 function main() {
-  const units = load();
-  const list = chapterUnits(units);
-  const s = shape(list);
-  const { views, levels } = lens(list);
-  const audit = valueAudit(list);
-  const arc = reflexArc(list);
-  const control = controlUnits(list);
-  const secs = bySection(list);
+  const md = read();
+  const s = shape(md);
+  const cites = citations(md);
+  const judges = judgments(md);
+  const kw = keywords(md);
+  const ranked = Object.entries(kw).sort((a, b) => b[1] - a[1]);
 
-  console.log('═══ 绪论：研究对象、三个水平与调节框架（生理学 第1章）═══');
-  console.log(`教材规模: 第1章 ${s.hanzi} 字 · ${s.secs} 节 · ${s.units} 单元 · 平均每单元 ${Math.round(s.hanzi / s.units)} 字`);
-  console.log(`口径核验: 本章 ${audit.units} 单元的数值型命中 ${audit.hits} 处（底本 valueLike = 0，这里复算而不是照抄声明）`);
+  console.log('═══ 绪论：把「稳态」写成一条可检查的回路（生理学 第 1 章）═══');
+  console.log(`正文（不含代码块）：${s.hanzi} 汉字 · ${s.h2} 个二级小节 · ${s.h3} 个三级 · ${s.h4} 个四级 · ${s.tables} 行表格 · ${s.paras} 个成段段落`);
+  console.log(`引文：《书名·篇名》级 ${cites.length} 条 → ${[...new Set(cites.map((c) => `《${c.book}·${c.part}》`))].join(' ')}`);
+  console.log(`加粗判断句 ${judges.length} 条（句数即论点密度，不按字数估）`);
   console.log('');
-
-  console.log('三视角（代谢 / 机能 / 形态）本章词频：');
-  for (const [k, v] of rank(views)) {
-    console.log(`  ${k} ${String(v).padStart(4)} 次 · 占三视角的 ${(share(views, k) * 100).toFixed(1)}%`);
+  console.log('关键词命中：');
+  for (const [k, v] of ranked) console.log(`  ${k.padEnd(3)} ${String(v).padStart(3)} 次`);
+  console.log(`  → 笔墨最重的是「${ranked[0][0]}」：本章要它从口号变成回路，而不是再背一遍定义。`);
+  console.log('');
+  console.log('两条判别（本章的判断都是方向题，不是数值题）：');
+  for (const e of ['减小', '加强']) {
+    const r = feedbackDirection(e);
+    console.log(`  结果使原改变${e} → ${r.type}（${r.why}）`);
   }
-  console.log('四层级（细胞 / 组织 / 器官 / 系统）本章词频：');
-  for (const [k, v] of rank(levels)) {
-    console.log(`  ${k} ${String(v).padStart(4)} 次 · 占四层级的 ${(share(levels, k) * 100).toFixed(1)}%`);
-  }
+  console.log(`  依据${'已发生'}的改变 → ${controlTiming('已发生')}`);
+  console.log(`  依据${'将发生'}的情况 → ${controlTiming('将发生')}`);
   console.log('');
-  console.log(`  → 本章以「${rank(views)[0][0]}」为主轴、落在「${rank(levels)[0][0]}」层：`);
-  console.log('     绪论讲的是「系统之间怎么配合」，不是「细胞里发生什么」。');
-  console.log('');
+  console.log(`反射弧五环节在正文里${arcComplete(md) ? '写全' : '未写全'}：${ARC.join('—')}`);
+  console.log(`「不给值」类边界句 ${boundaryHits(md)} 处——不给值是取舍，不是遗漏。`);
+  console.log('教学边界：本章只说明类别、关系与调节框架，不写数值与单位与正常值，不构成诊断或用药依据。');
 
-  console.log('四节的知识分布（节名 / 单元 / 汉字）：');
-  for (const [sec, g] of [...secs.entries()].sort((a, b) => a[0].localeCompare(b[0], 'en'))) {
-    console.log(`  ${sec} · ${g.units} 单元 · ${g.hanzi} 字 · ${g.subs.join(' ')}`);
-  }
-  console.log('');
-
-  console.log(`调节框架占的单元：${control.length} / ${s.units}`);
-  for (const c of control) console.log(`  ${c.sub} ${c.title}`);
-  console.log('');
-  console.log(`反射弧五环节写全的单元：${arc.length} / ${s.units} → ${arc.join('、') || '（无）'}`);
-  console.log('  → 五环节齐备只有一处：神经调节是本章唯一被写成「完整回路」的调节方式，');
-  console.log('     体液调节与自身调节在教材里只写到「载体 + 靶 + 结果」，没有再画回路。');
-  console.log('');
-
-  console.log('教学边界：本章只说明教材的类别与关系与调节框架，不写数值与单位与正常值，不构成诊断/用药依据');
-
-  return { list, shape: s, views, levels, audit, arc, control, secs };
+  return { shape: s, cites, judges, kw, arc: arcComplete(md), boundary: boundaryHits(md) };
 }
 
-if (require.main === module) {
-  main();
-}
+if (require.main === module) main();
 
 module.exports = {
-  ROOT,
-  UNITS,
-  CHAPTER,
+  DOC,
   ARC,
-  load,
-  chapterUnits,
+  KEYWORDS,
+  read,
+  hanzi,
   shape,
-  lens,
-  rank,
-  total,
-  share,
-  valueAudit,
-  reflexArc,
-  controlUnits,
-  bySection,
+  citations,
+  judgments,
+  keywords,
+  boundaryHits,
+  feedbackDirection,
+  controlTiming,
+  regulationProfile,
+  arcComplete,
   main,
 };

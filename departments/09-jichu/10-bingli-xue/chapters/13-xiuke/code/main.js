@@ -1,14 +1,12 @@
 #!/usr/bin/env node
 /**
- * 病理学 · 第 13 章 休克：病因、分期、细胞与器官、表述边界
- * 课程: departments/09-jichu/10-bingli-xue/chapters/13-xiuke/docs/zh.md
- * 出处: 教材·第13章（13.1–13.4，12 个知识单元）
- * 数据: standards/bingli/units.json（252 单元层，每单元带 body / 三视角 / 四层级 / 数值核验）
+ * 病理学 —— 把本章正文当数据读
+ * 正文: docs/zh.md（唯一数据源）
  * 依赖: 仅 Node.js 标准库
  *
- * 为什么全部现算：本章的命题是「休克是一条会自己加速的链」。
- * 链是否成立，取决于教材自己在哪些单元写了微循环、在哪一期写了「恶性循环」，
- * 以及它有没有偷偷给数值。手打的数字会随教材改版静默过期；现算的对不上就报错。
+ * 形态学这一课的可核对之处，都在正文自己身上：几节、几张表、几行引文、
+ * 十二个单元的编号是否写齐、每节摊到多少字。这些数一旦手打就会过期，
+ * 所以这里一处常量都不写——正文改一个字，输出就跟着改。
  */
 
 'use strict';
@@ -16,187 +14,128 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-// __dirname = .../chapters/13-xiuke/code —— 不硬数 ../ 的层数，向上找带 standards/bingli 的那一级
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'bingli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CJK = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const H2 = /^##\s+(.+?)\s*$/;
+const TABLE_SEP = /^\|\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)*\|?\s*$/;
+const LOCATOR = /教材·第\s*\d+\s*章·\d+\.\d+\.\d+/;
+const UNIT = /\b\d{1,2}\.\d\.\d\b/g;
+
+function readDoc() {
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+/** CJK 汉字数：不含标点、数字与拉丁字母 */
+function hanzi(text) {
+  return (String(text).match(CJK) || []).length;
+}
+
+/** 首行 H1：第 N 章 · 判断句 */
+function head(md) {
+  const h1 = (md.match(/^#\s+(.+)$/m) || [, ''])[1].trim();
+  const m = h1.match(/^第\s*(\d+)\s*章\s*[·・:：]\s*(.+)$/);
+  return m ? { n: Number(m[1]), title: m[2].trim() } : { n: null, title: h1 };
+}
+
+/** 首个二级节之前的部分（题记与问题）：与各节汉字数分开算 */
+function lead(md) {
+  const at = md.search(/^## /m);
+  return hanzi(at < 0 ? md : md.slice(0, at));
+}
+
+/** 二级小节：标题 + 各节汉字数（lead 加各节之和 = 全文汉字数） */
+function sections(md) {
+  const lines = md.split('\n');
+  const out = [];
+  let cur = null;
+  for (const line of lines) {
+    const m = line.match(H2);
+    if (m) {
+      if (cur) out.push(cur);
+      cur = { title: m[1].trim(), hanzi: hanzi(m[1]) };
+      continue;
+    }
+    if (cur) cur.hanzi += hanzi(line);
   }
-  throw new Error('没找到 standards/bingli/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'bingli', 'units.json');
-const CHAPTER = '13';
-
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-
-/** 本章 12 个知识单元，按 sub 号排 */
-function chapterUnits(units, no = CHAPTER) {
-  return units.units
-    .filter((u) => u.chapter === no)
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en'));
-}
-
-/** 规模：节数 / 单元数 / 汉字数。hanzi 由底本给出，不估算 */
-function shape(list) {
-  return {
-    secs: new Set(list.map((u) => u.sec)).size,
-    units: list.length,
-    hanzi: list.reduce((n, u) => n + u.hanzi, 0),
-  };
-}
-
-/** 三视角（病因 / 机制 / 形态）× 四层级（细胞 / 组织 / 器官 / 系统） */
-function lens(list) {
-  const views = { 病因: 0, 机制: 0, 形态: 0 };
-  const levels = { 细胞: 0, 组织: 0, 器官: 0, 系统: 0 };
-  for (const u of list) {
-    for (const k of Object.keys(views)) views[k] += u.measure.views[k] || 0;
-    for (const k of Object.keys(levels)) levels[k] += u.measure.levels[k] || 0;
-  }
-  return { views, levels };
-}
-
-const rank = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]);
-const total = (o) => Object.values(o).reduce((a, b) => a + b, 0);
-const share = (o, k) => (total(o) ? o[k] / total(o) : 0);
-
-/** 数值核验：底本声明「不写数值与单位」，这里把它当断言复算，不是照抄声明 */
-function valueAudit(list) {
-  return {
-    units: list.length,
-    hits: list.reduce((n, u) => n + (u.measure.valueLike || 0), 0),
-    offenders: list.filter((u) => (u.measure.valueLike || 0) > 0).map((u) => u.sub),
-  };
-}
-
-/** 四节的知识分布 */
-function bySection(list) {
-  const out = new Map();
-  for (const u of list) {
-    if (!out.has(u.sec)) out.set(u.sec, { units: 0, hanzi: 0, subs: [] });
-    const g = out.get(u.sec);
-    g.units += 1;
-    g.hanzi += u.hanzi;
-    g.subs.push(u.sub);
-  }
+  if (cur) out.push(cur);
   return out;
 }
 
-/** 一个词在本章正文里出现多少次（正文字数口径的朴素计数，不做分词） */
-function wordCount(list, w) {
-  let n = 0;
-  for (const u of list) {
-    const s = u.body || '';
-    let i = s.indexOf(w);
-    while (i !== -1) {
-      n += 1;
-      i = s.indexOf(w, i + w.length);
+/** 表格：分隔行前面是表头，分隔行之后是数据行 */
+function tables(md) {
+  const lines = md.split('\n');
+  let count = 0;
+  let rows = 0;
+  for (let i = 0; i < lines.length - 1; i += 1) {
+    if (!/^\|/.test(lines[i].trim()) || !TABLE_SEP.test(lines[i + 1].trim())) continue;
+    count += 1;
+    for (let k = i + 2; k < lines.length; k += 1) {
+      const l = lines[k].trim();
+      if (!l.startsWith('|')) break;
+      if (l.replace(/[|\-\s:]/g, '').length) rows += 1;
     }
   }
-  return n;
+  return { tables: count, rows };
 }
 
-/** 含某词/某模式的单元清单 —— 用来定位「这一层写在哪几个单元」 */
-function unitsWith(list, re) {
-  return list.filter((u) => re.test(u.body || '')).map((u) => u.sub);
+/** 引文行：带「教材·第N章·N.M.K」出处的行数 */
+function quotes(md) {
+  return md.split('\n').filter((l) => LOCATOR.test(l)).length;
 }
 
-/**
- * 休克的三期链：教材把「缺血性缺氧 → 淤血性缺氧 → 难治」写成连续过渡，
- * 而不给时限。这里数的是词频，不是时刻表 —— 词频能说明叙事的重心在哪一期。
- */
-const STAGES = [
-  { key: '缺血性缺氧', pat: '缺血性缺氧' },
-  { key: '淤血性缺氧', pat: '淤血性缺氧' },
-  { key: '难治', pat: '难治' },
-  { key: '微循环', pat: '微循环' },
-  { key: '类别', pat: '类别' },
-  { key: '六要素', pat: '六要素' },
-];
+/** 单元编号：正文里出现的 N.M.K 去重后排序 */
+function unitIds(md) {
+  return [...new Set(String(md).match(UNIT) || [])].sort();
+}
 
-function stageProfile(list) {
-  return STAGES.map(({ key, pat }) => {
-    let n = 0;
-    for (const u of list) n += (u.body || '').split(pat).length - 1;
-    return { key, hits: n, units: unitsWith(list, new RegExp(pat)).length };
+/** 图注条目 */
+function figures(md) {
+  return (md.match(/^\*\*图\s*\d+-\d+/gm) || []).length;
+}
+
+function shape(md) {
+  const secs = sections(md);
+  const t = tables(md);
+  return {
+    hanzi: hanzi(md),
+    lead: lead(md),
+    secs: secs.length,
+    perSection: secs.map((s) => s.hanzi),
+    sectionTitles: secs.map((s) => s.title),
+    tables: t.tables,
+    rows: t.rows,
+    quotes: quotes(md),
+    units: unitIds(md).length,
+    figures: figures(md),
+  };
+}
+
+/** 本章算术：每节均值、每单元均值、最长的一节 */
+function average(shapeValue, unitCount = 12) {
+  const s = shapeValue;
+  const perSection = Math.round(s.hanzi / s.secs);
+  const perUnit = Math.round(s.hanzi / unitCount);
+  let largest = { title: '', hanzi: -1 };
+  s.sectionTitles.forEach((title, i) => {
+    if (s.perSection[i] > largest.hanzi) largest = { title, hanzi: s.perSection[i] };
   });
+  return { perSection, perUnit, largest };
 }
 
 function main() {
-  const units = load();
-  const list = chapterUnits(units);
-  const s = shape(list);
-  const { views, levels } = lens(list);
-  const audit = valueAudit(list);
-  const secs = bySection(list);
-  const prof = stageProfile(list);
-
-  console.log('═══ 休克：从灌注不足到多器官功能障碍（病理学 第13章）═══');
-  console.log(`教材规模: 第13章 ${s.hanzi} 字 · ${s.secs} 节 · ${s.units} 单元 · 平均每单元 ${Math.round(s.hanzi / s.units)} 字`);
-  console.log(`口径核验: 本章 ${audit.units} 单元的数值型命中 ${audit.hits} 处（底本 valueLike = 0，这里复算而不是照抄声明）`);
-  console.log('');
-
-  console.log('三视角（病因 / 机制 / 形态）本章词频：');
-  for (const [k, v] of rank(views)) {
-    console.log(`  ${k} ${String(v).padStart(4)} 次 · 占三视角的 ${(share(views, k) * 100).toFixed(1)}%`);
-  }
-  console.log('四层级（细胞 / 组织 / 器官 / 系统）本章词频：');
-  for (const [k, v] of rank(levels)) {
-    console.log(`  ${k} ${String(v).padStart(4)} 次 · 占四层级的 ${(share(levels, k) * 100).toFixed(1)}%`);
-  }
-  console.log('');
-
-  console.log('四节的知识分布（节名 / 单元 / 汉字）：');
-  for (const [sec, g] of [...secs.entries()].sort((a, b) => a[0].localeCompare(b[0], 'en'))) {
-    console.log(`  ${sec} · ${g.units} 单元 · ${g.hanzi} 字 · ${g.subs.join(' ')}`);
-  }
-  console.log('');
-
-  console.log('分期叙事的分量（词频 / 命中单元数）：');
-  for (const p of prof) {
-    console.log(`  ${p.key.padEnd(6, '　')} ${String(p.hits).padStart(4)} 次 · 分布在 ${p.units} 个单元`);
-  }
-  console.log('');
-  console.log(`微循环写在哪几个单元：${unitsWith(list, /微循环/).join('、')}`);
-  console.log(`「难治」写在哪几个单元：${unitsWith(list, /难治/).join('、')}`);
-  console.log('  → 三期的差别被写在微循环的「前阻力 / 后阻力」上，而不是写在时限上；');
-  console.log('     这是本章唯一的可检查结构：抽掉「后阻力」这一半，三期的差别就只剩形容词。');
-  console.log('');
-
-  console.log(`表述类单元（含「六要素」）：${unitsWith(list, /六要素/).join('、') || '（无）'}`);
-  console.log(`含「不作疾病诊断」的单元：${unitsWith(list, /不作疾病诊断/).length} / ${s.units} —— 边界声明写在每个单元，不是写在章末。`);
-  console.log('');
-
-  console.log('教学边界：本章只说明休克的功能与代谢变化的类别与关系，不写数值与单位与正常值，不构成诊断/用药依据');
-
-  return { list, shape: s, views, levels, audit, secs, prof };
+  const md = readDoc();
+  const h = head(md);
+  const s = shape(md);
+  const a = average(s);
+  console.log('第 ' + h.n + ' 章 · ' + h.title);
+  console.log('规模: 正文 ' + s.hanzi + ' 汉字 · ' + s.secs + ' 个二级小节 · ' + s.tables + ' 张表 · ' + s.rows + ' 行表数据');
+  console.log('出证: 带出处的引文行 ' + s.quotes + ' 条 · 单元编号 ' + s.units + ' 个 · 图注 ' + s.figures + ' 条');
+  console.log('算术: 平均每节 ' + a.perSection + ' 字 · 平均每单元 ' + a.perUnit + ' 字 · 最长一节「' + a.largest.title + '」' + a.largest.hanzi + ' 字');
+  const sum = s.lead + s.perSection.reduce((x, y) => x + y, 0);
+  console.log('核对: 题记 ' + s.lead + ' + 各节 ' + s.perSection.reduce((x, y) => x + y, 0) + ' = ' + sum + ' vs 正文 ' + s.hanzi + (sum === s.hanzi ? ' ✓' : ' ✗'));
+  console.log('教学边界：本章只说明形态与类别与关系，不写数值与单位与参考值，不构成诊断/治疗/用药依据。');
 }
 
-if (require.main === module) {
-  main();
-}
+module.exports = { readDoc, hanzi, head, lead, sections, tables, quotes, unitIds, figures, shape, average };
 
-module.exports = {
-  ROOT,
-  UNITS,
-  CHAPTER,
-  STAGES,
-  load,
-  chapterUnits,
-  shape,
-  lens,
-  rank,
-  total,
-  share,
-  valueAudit,
-  bySection,
-  wordCount,
-  unitsWith,
-  stageProfile,
-  main,
-};
+if (require.main === module) main();

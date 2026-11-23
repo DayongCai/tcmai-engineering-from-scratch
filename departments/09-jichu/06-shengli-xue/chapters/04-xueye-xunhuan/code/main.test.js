@@ -3,109 +3,135 @@
  * 第 4 章 血液循环 —— 确定性单元测试
  * 运行: node --test code/main.test.js
  *
- * 断言只落在「可对账的结构」上：单元数与字数、三视角与四层级的加总、
- * 判别函数在每个合法组合上给唯一答案并在每个非法组合上抛错、
- * 四条形成条件能在教材正文里逐字找到、教材的零数值声明逐单元成立。
- * 不锁死具体单元的文字，以免教材微调时测试变成噪声。
+ * 断言落在正文实测值与三处方向判别上：瓣膜状态定时相、口径与阻力、
+ * 缺氧在两个循环里的相反方向。这些判断不需要数值也能判。
  */
 
 'use strict';
 
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const {
-  load,
-  chapterUnits,
-  profile,
-  phaseOf,
-  cycle,
-  vesselRole,
-  BP_CONDITIONS,
-  conditionsInText,
-  organRow,
-  valueLikeZero,
-  levelHotspot,
+  KEYWORDS,
+  REGULATION_SCALES,
+  read,
+  hanzi,
+  shape,
+  citations,
+  judgments,
+  keywords,
+  boundaryHits,
+  cardiacPhase,
+  resistanceBy,
+  hypoxiaEffect,
+  main,
 } = require('./main');
 
-const data = load();
-const units = chapterUnits(data);
-const p = profile(units);
+const md = read();
+const quiz = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'quiz.json'), 'utf8'));
 
-test('本章恰有十二个知识单元，教材正文合计 21230 字', () => {
-  assert.strictEqual(p.n, 12);
-  assert.strictEqual(p.hanzi, 21230);
-  assert.deepStrictEqual(p.locators, [
-    '教材·第4章·4.1.1', '教材·第4章·4.1.2', '教材·第4章·4.1.3',
-    '教材·第4章·4.2.1', '教材·第4章·4.2.2', '教材·第4章·4.2.3',
-    '教材·第4章·4.3.1', '教材·第4章·4.3.2', '教材·第4章·4.3.3',
-    '教材·第4章·4.4.1', '教材·第4章·4.4.2', '教材·第4章·4.4.3',
-  ]);
+test('正文规模：11573 汉字 / 8 个二级 / 9 个三级 / 12 个四级 / 53 行表格 / 59 段', () => {
+  const s = shape(md);
+  assert.strictEqual(s.hanzi, 11573);
+  assert.strictEqual(s.h1, 1);
+  assert.strictEqual(s.h2, 8);
+  assert.strictEqual(s.h3, 9);
+  assert.strictEqual(s.h4, 12);
+  assert.strictEqual(s.tables, 53);
+  assert.strictEqual(s.paras, 59);
 });
 
-test('三视角：机能 556 · 代谢 57 · 形态 118，机能超过七成', () => {
-  assert.deepStrictEqual(p.views, { 代谢: 57, 机能: 556, 形态: 118 });
-  assert.strictEqual(p.viewTotal, 731);
-  assert.ok(p.views.机能 / p.viewTotal > 0.7, '机能应占全章七成以上');
-  assert.ok(p.views.机能 > p.views.形态 && p.views.形态 > p.views.代谢, '排序应为机能 > 形态 > 代谢');
+test('引文 8 条、加粗判断句 48 条，引文到篇名级', () => {
+  const c = citations(md);
+  assert.strictEqual(c.length, 8);
+  for (const x of c) {
+    assert.strictEqual(x.book, '生理学');
+    assert.match(x.part, /^第4章·4\.[1-4]/);
+  }
+  assert.strictEqual(judgments(md).length, 48);
 });
 
-test('四层级：细胞 171 · 组织 48 · 器官 327 · 系统 207，组织是最薄的一层', () => {
-  assert.deepStrictEqual(p.levels, { 细胞: 171, 组织: 48, 器官: 327, 系统: 207 });
-  assert.strictEqual(p.levelTotal, 753);
-  assert.strictEqual(Math.min(...Object.values(p.levels)), p.levels.组织);
-  assert.ok(p.levels.细胞 + p.levels.器官 > p.levelTotal * 0.6, '细胞与器官应合计过六成');
+test('关键词命中：调节 79 / 阻力 27 / 压差 14 / 不应期 12 / 瓣膜 11', () => {
+  assert.deepStrictEqual(keywords(md), {
+    调节: 79,
+    阻力: 27,
+    压差: 14,
+    不应期: 12,
+    瓣膜: 11,
+  });
+  assert.deepStrictEqual(KEYWORDS, ['压差', '阻力', '瓣膜', '不应期', '调节']);
 });
 
-test('心动周期：四个合法组合各给唯一时相，且容积方向是推论不是输入', () => {
-  assert.deepStrictEqual(cycle().map((x) => x.phase), ['等容收缩期', '射血期', '等容舒张期', '充盈期']);
-  assert.strictEqual(phaseOf({ av: 'closed', sl: 'open', stage: 'systole' }).volume, 'down');
-  assert.strictEqual(phaseOf({ av: 'open', sl: 'closed', stage: 'diastole' }).volume, 'up');
-  assert.strictEqual(phaseOf({ av: 'closed', sl: 'closed', stage: 'systole', volume: 'flat' }).phase, '等容收缩期');
+test('时相由两个瓣膜的状态唯一决定，两瓣同开不成立', () => {
+  assert.strictEqual(cardiacPhase({ av: '关', sl: '开' }).phase, '射血期');
+  assert.strictEqual(cardiacPhase({ av: '开', sl: '关' }).phase, '充盈期');
+  assert.strictEqual(cardiacPhase({ av: '关', sl: '关' }).phase, '等容期');
+  assert.strictEqual(cardiacPhase({ av: '开', sl: '开' }).phase, '不可能');
+  assert.throws(() => cardiacPhase({ av: '半开', sl: '关' }), /未知瓣膜状态/);
 });
 
-test('不相容的瓣膜组合必须抛错，不许给出一个看似合理的时相名', () => {
-  assert.throws(() => phaseOf({ av: 'open', sl: 'open', stage: 'systole' }), /不相容/);
-  assert.throws(() => phaseOf({ av: 'open', sl: 'closed', stage: 'systole' }), /不相容/);
-  assert.throws(
-    () => phaseOf({ av: 'closed', sl: 'open', stage: 'systole', volume: 'up' }),
-    /容积方向/,
-  );
+test('口径与阻力：减小则阻力增大，且与半径的高次幂反变', () => {
+  assert.strictEqual(resistanceBy('减小').change, '阻力增大');
+  assert.strictEqual(resistanceBy('增大').change, '阻力减小');
+  assert.match(resistanceBy('减小').why, /高次幂/);
+  assert.throws(() => resistanceBy('不变'), /未知口径变化/);
 });
 
-test('血管按结构分工：四类血管区段各有唯一功能类别，杂血管名一律拒绝', () => {
-  assert.strictEqual(vesselRole('大动脉').role, '弹性贮器血管');
-  assert.strictEqual(vesselRole('小动脉').role, '阻力血管');
-  assert.strictEqual(vesselRole('毛细血管').role, '交换血管');
-  assert.strictEqual(vesselRole('静脉').role, '容量血管');
-  assert.throws(() => vesselRole('动脉'), /没有这个血管区段/);
+test('缺氧在肺循环收缩、在体循环舒张：同一因素两个方向', () => {
+  assert.strictEqual(hypoxiaEffect('肺循环').dir, '收缩');
+  assert.strictEqual(hypoxiaEffect('体循环').dir, '舒张');
+  assert.match(hypoxiaEffect('肺循环').why, /通气/);
+  assert.throws(() => hypoxiaEffect('冠脉'), /未知循环/);
 });
 
-test('动脉血压的四条形成条件，每一条都能在教材 4.3.2 正文里逐字找到', () => {
-  const got = conditionsInText(units);
-  assert.strictEqual(got.length, BP_CONDITIONS.length);
-  for (const c of got) assert.ok(c.found, `${c.name} 在 4.3.2 正文里找不到`);
-  assert.deepStrictEqual(got.map((c) => c.name), ['血液充盈', '心脏射血', '外周阻力', '大动脉弹性']);
+test('三条调节的时间尺度只写类别，不含任何数值', () => {
+  assert.deepStrictEqual(Object.keys(REGULATION_SCALES), ['神经调节', '体液调节', '自身调节']);
+  for (const v of Object.values(REGULATION_SCALES)) assert.ok(hanzi(v) > 8);
 });
 
-test('器官循环三例各有不同的调节侧重，未知器官抛错', () => {
-  assert.match(organRow('冠脉循环').timing, /舒张期/);
-  assert.match(organRow('肺循环').driver, /低氧|局部/);
-  assert.match(organRow('脑循环').driver, /自身调节/);
-  assert.throws(() => organRow('肝循环'), /没有这个器官循环/);
+test('边界句与结构小节齐备', () => {
+  assert.ok(boundaryHits(md) >= 1);
+  assert.match(md, /免责声明/);
+  assert.match(md, /^## 代价与边界/m);
 });
 
-test('组织层不是平均分布的：4.3.3 一节独占 22 处，其余十一节合计 26 处', () => {
-  const hs = levelHotspot(units, '组织');
-  assert.strictEqual(hs.locator, '教材·第4章·4.3.3');
-  assert.strictEqual(hs.n, 22);
-  assert.strictEqual(hs.rest, 26);
-  assert.strictEqual(hs.n + hs.rest, p.levels.组织);
+test('quiz 契约：6 题、pre/check×3/post×2、4 选项、下标跨 3 种、解释 ≥30 汉字', () => {
+  const qs = quiz.questions;
+  assert.strictEqual(qs.length, 6);
+  assert.deepStrictEqual(qs.map((q) => q.stage), ['pre', 'check', 'check', 'check', 'post', 'post']);
+  assert.ok(new Set(qs.map((q) => q.correct)).size >= 3);
+  for (const [i, q] of qs.entries()) {
+    assert.strictEqual(q.options.length, 4);
+    assert.deepStrictEqual(new Set(q.options).size, 4, `第 ${i + 1} 题选项重复`);
+    assert.ok(q.correct >= 0 && q.correct <= 3);
+    assert.ok(hanzi(q.explain) >= 30, `第 ${i + 1} 题 explain 只有 ${hanzi(q.explain)} 汉字`);
+    assert.ok(String(q.explanation || '').length >= 10);
+  }
 });
 
-test('教材「不写数值」的声明逐单元成立：十二个单元的 valueLike 全为零', () => {
-  const z = valueLikeZero(units);
-  assert.strictEqual(z.checked, 12);
-  assert.deepStrictEqual(z.bad, []);
-  for (const u of units) assert.strictEqual(u.measure.valueLike, 0, `${u.locator} 出现数值`);
+test('quiz 接地：check 题正确项与正文共享 4 字词组（≥2 道）', () => {
+  const clean = md.replace(/[^\u4e00-\u9fff]/g, ' ');
+  const grams = new Set();
+  for (const seg of clean.split(/\s+/)) {
+    for (let i = 0; i + 4 <= seg.length; i += 1) grams.add(seg.slice(i, i + 4));
+  }
+  let grounded = 0;
+  for (const q of quiz.questions) {
+    if (q.stage !== 'check') continue;
+    const right = q.options[q.correct].replace(/[^\u4e00-\u9fff]/g, ' ');
+    if (right.split(/\s+/).some((seg) => {
+      for (let i = 0; i + 4 <= seg.length; i += 1) if (grams.has(seg.slice(i, i + 4))) return true;
+      return false;
+    })) grounded += 1;
+  }
+  assert.ok(grounded >= 2, `只有 ${grounded} 道 check 题接地`);
+});
+
+test('main() 返回的规模与实测一致', () => {
+  const r = main();
+  assert.strictEqual(r.shape.hanzi, 11573);
+  assert.strictEqual(r.phases, 4);
 });

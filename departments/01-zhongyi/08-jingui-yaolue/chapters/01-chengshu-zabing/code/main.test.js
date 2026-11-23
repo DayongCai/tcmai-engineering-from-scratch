@@ -1,77 +1,62 @@
 'use strict';
+/**
+ * 第 1 章的习题与正文对齐：正文规模、本文算式、表里的方/条、quiz 结构与接地，
+ * 全部从本章 docs/zh.md 现算后断言。正文改一个字、表里改一个数、quiz 跑题，这里都会红。
+ */
 const assert = require('node:assert');
 const test = require('node:test');
-const { profile, classify, densityRank, totals, BOOK } = require('./main.js');
+const fs = require('node:fs');
+const { analyze, QUIZ } = require('./main.js');
 
-test('底本规模：26 项（22 正文 + 序 + 3 附）· 402 条 · 174 方（165 有方文 + 9 互见）', () => {
-  const t = totals();
-  assert.strictEqual(t.pianTotal, 26);
-  assert.strictEqual(t.pianZhengwen, 22);
-  assert.strictEqual(t.pianFu, 4);
-  assert.strictEqual(t.tiao, 402);
-  assert.strictEqual(t.tiaoZhengwen, 398, '22 篇正文合计 398 条');
-  assert.strictEqual(t.fang, 174);
-  assert.strictEqual(t.fangRefOnly, 9, '9 条互见（refOnly）只有方名与出处注');
-  assert.strictEqual(t.fang - t.fangRefOnly, 165);
+const r = analyze();
+
+test('正文规模钉死：汉字 / 节 / 表 / 行 / 引文', () => {
+  assert.strictEqual(r.stats.hanzi, 2800);
+  assert.strictEqual(r.stats.bodyHanzi, 2334);
+  assert.strictEqual(r.stats.sections, 6);
+  assert.strictEqual(r.stats.subsections, 9);
+  assert.strictEqual(r.stats.tables, 6);
+  assert.strictEqual(r.stats.tableRows, 29);
+  assert.strictEqual(r.stats.quoteLines, 8);
 });
 
-test('药：出现频次 728 · 不同药 165 味（同一药只计一次）', () => {
-  const t = totals();
-  assert.strictEqual(t.herbTokens, 728);
-  assert.strictEqual(t.distinctHerbs, 165);
+test('正文写下的每条算式都成立（共 9 条）', () => {
+  assert.strictEqual(r.claims.length, 9);
+  for (const c of r.claims) assert.ok(c.ok, `${c.label}: 现算 ${c.got} ≠ 正文 ${c.want}`);
 });
 
-test('四类汇总加总 = 全书（附单列，不并入）', () => {
-  const c = classify();
-  const t = totals();
-  assert.strictEqual(Object.values(c).reduce((n, v) => n + v.tiao, 0), t.tiao);
-  assert.strictEqual(Object.values(c).reduce((n, v) => n + v.fang, 0), t.fang);
-  assert.strictEqual(c['附'].tiao, 4);
-  assert.strictEqual(c['附'].fang, 0, '附篇（杂疗方/食禁）没有方文，不应计方');
+test('正文的除法与百分比自洽', () => {
+  for (const d of r.divisions) assert.ok(Math.abs(d.got - d.want) <= d.tol, `${d.text} 现算 ${d.got}`);
+  for (const p of r.percents) assert.ok(Math.abs(p.got - p.want) <= p.tol, `${p.text} 现算 ${p.got}%`);
 });
 
-test('内伤杂病：260 条 / 117 方（章内数字必须与代码一致）', () => {
-  const c = classify();
-  assert.strictEqual(c['内伤'].tiao, 260);
-  assert.strictEqual(c['内伤'].fang, 117);
-  assert.strictEqual(c['内伤'].pian, 13);
+test('表里写明的方/条逐行重算（6 行）', () => {
+  assert.strictEqual(r.ratios.length, 6);
+  for (const x of r.ratios) assert.ok(x.ok, `${x.row}: ${x.fang} ÷ ${x.tiao} = ${x.got}，表写 ${x.stated}`);
 });
 
-test('第 1 篇 17 条 0 方 —— 「论多治少」的唯一一篇', () => {
-  const p1 = profile().find((r) => r.no === 1);
-  assert.strictEqual(p1.tiao, 17);
-  assert.strictEqual(p1.fang, 0);
-  const d = densityRank();
-  assert.deepStrictEqual(d.sparsest.length, 1);
-  assert.ok(d.sparsest[0].includes('第1篇'));
+test('quiz 结构：题量、三段、四选项、解释长度、答案下标', () => {
+  const q = r.quiz;
+  assert.ok(q.total >= 5, `只有 ${q.total} 题`);
+  for (const st of ['pre', 'check', 'post']) assert.ok(q.stage[st] >= 1, `缺 ${st} 段`);
+  assert.strictEqual(q.allFourOptions, true, '有题不是 4 个选项');
+  assert.strictEqual(q.badCorrect, 0, 'correct 下标非法（须为 0–3）');
+  assert.ok(q.minExplain >= 30, `最短的解释只有 ${q.minExplain} 汉字`);
+  assert.ok(q.distinctAnswers >= 3, `答案只用到 ${q.distinctAnswers} 个位置`);
 });
 
-test('方条比最高的是篇 9 胸痹（1.00），篇 3 退居第二（0.80），篇 17 仅 0.49', () => {
-  const d = densityRank();
-  assert.ok(d.densest[0].includes('第9篇'), `实测首位：${d.densest[0]}`);
-  assert.ok(d.densest[1].includes('第3篇'), `实测次位：${d.densest[1]}`);
-  const p9 = profile().find((r) => r.no === 9);
-  assert.strictEqual(p9.tiao, 9);
-  assert.strictEqual(p9.fang, 9);
-  assert.strictEqual(p9.per, 1);
-  const p3 = profile().find((r) => r.no === 3);
-  assert.strictEqual(p3.fang, 12);
-  assert.strictEqual(p3.per, 0.8);
-  const p17 = profile().find((r) => r.no === 17);
-  assert.strictEqual(p17.per, 0.49);
+test('quiz 接地：check 题的正确选项能在本章正文找到 4 字原词', () => {
+  assert.ok(r.quiz.checkGrounded >= 2, `只有 ${r.quiz.checkGrounded} 道 check 题接地`);
 });
 
-test('序与附篇无条号（tiao: null），不得混进正文统计', () => {
-  const fu = BOOK.pian.filter((p) => p.no == null);
-  assert.strictEqual(fu.length, 4);
-  for (const p of fu) for (const a of p.articles) assert.strictEqual(a.tiao, null);
-});
-
-test('每条都有繁/简两栏，且简体非空', () => {
-  for (const p of BOOK.pian) {
-    for (const a of p.articles) {
-      assert.ok(a.zhHant && a.zhHant.length > 0, `${p.nameSimp} 缺繁文`);
-      assert.ok(a.zhHans && a.zhHans.length > 0, `${p.nameSimp} 缺简文`);
-    }
+test('quiz 干净：无脚手架字样、无剂量/疗程/发生率/页码', () => {
+  const raw = fs.readFileSync(QUIZ, 'utf8');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '见 code/main.js 输出', '剂量', '疗程', '发生率', '页码']) {
+    assert.ok(!raw.includes(bad), `quiz 仍含「${bad}」`);
+  }
+  assert.ok(!/本课第\s*\d+\s*章[（(]/.test(raw), 'quiz 仍含「本课第 N 章（」');
+  for (const q of JSON.parse(raw).questions) {
+    assert.ok(q.question && q.question.length >= 8, '题干过短');
+    assert.strictEqual(q.options.length, 4);
   }
 });

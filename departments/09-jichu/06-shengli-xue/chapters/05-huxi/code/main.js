@@ -1,20 +1,12 @@
 #!/usr/bin/env node
 /**
  * 生理学 · 第 5 章 呼吸：通气·换气·气体运输·呼吸调节
- * 课程: departments/09-jichu/06-shengli-xue/chapters/05-huxi/docs/zh.md
- * 出处: 教材·第5章（5.1 肺通气 / 5.2 呼吸气体的交换 / 5.3 气体在血液中的运输 /
- *       5.4 呼吸运动的调节），十二个知识单元
- * 数据: standards/shengli/units.json（逐单元带 views / levels 词频与 hanzi）
+ * 课程正文: departments/09-jichu/06-shengli-xue/chapters/05-huxi/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 为什么全部现算而不手打：
- *   ① 本章有五个「方向题」，方向答错的代价比记不住更大：平静呼气是被动还是主动、
- *      浅快呼吸的效率是高还是低、通气血流比值是越大越好还是两个方向都错、
- *      曲线右移是亲和力升还是降、低氧主要经中枢还是外周。把它们写成判别函数，
- *      每个输入都必须给出方向；给不出来就抛错，而不是含糊过去。
- *   ② 「本章的组织层最厚」这句话必须有可复算的词频支撑——呼吸有两端，
- *      一端在肺泡（器官层），一端在组织（组织层），这是本章与循环章最大的结构差别。
- *   ③ 教材声明 valueLike = 0，本章逐单元核验这个声明，非零即报错。
+ * 本章的方向题特别多，方向答错比记不住更贵。程序只读本章正文，现算规模与关键词，
+ * 并把三处最容易答反的地方写成判别：通气血流比值失调的两种效应、
+ * 呼吸肌在三种状态下的主被动、气体交换的唯一动力来源。
  */
 
 'use strict';
@@ -22,237 +14,156 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'shengli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/shengli/units.json —— 章节目录是否已脱离仓库？');
-}
-const ROOT = findRoot(__dirname);
-const UNITS_PATH = path.join(ROOT, 'standards', 'shengli', 'units.json');
-const CHAPTER = '5';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CJK = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
 
-const load = () => JSON.parse(fs.readFileSync(UNITS_PATH, 'utf8'));
+const read = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+const hanzi = (s) => (String(s || '').match(CJK) || []).length;
 
-function chapterUnits(data, ch) {
-  return data.units.filter((u) => u.chapter === (ch || CHAPTER));
-}
-
-function profile(units) {
-  const views = { 代谢: 0, 机能: 0, 形态: 0 };
-  const levels = { 细胞: 0, 组织: 0, 器官: 0, 系统: 0 };
-  for (const u of units) {
-    for (const k of Object.keys(views)) views[k] += u.measure.views[k] || 0;
-    for (const k of Object.keys(levels)) levels[k] += u.measure.levels[k] || 0;
-  }
-  const sum = (o) => Object.values(o).reduce((a, b) => a + b, 0);
+function shape(md) {
+  const body = md.replace(/```[\s\S]*?```/g, '');
+  const lines = body.split('\n');
+  const count = (re) => lines.filter((l) => re.test(l)).length;
   return {
-    n: units.length,
-    hanzi: units.reduce((a, u) => a + u.hanzi, 0),
-    views,
-    levels,
-    viewTotal: sum(views),
-    levelTotal: sum(levels),
-    locators: units.map((u) => u.locator),
+    hanzi: hanzi(body),
+    h1: count(/^# /),
+    h2: count(/^## /),
+    h3: count(/^### /),
+    h4: count(/^#### /),
+    tables: count(/^\|/),
+    paras: body.split(/\n{2,}/).filter((p) => hanzi(p) >= 40).length,
   };
 }
 
-function share(part, whole) {
-  if (!whole) throw new Error('分母为零：剖面为空');
-  return part / whole;
+function citations(md) {
+  const prose = md.replace(/```[\s\S]*?```/g, '');
+  const out = [];
+  for (const m of prose.matchAll(/《([^》·]{2,12})·([^》]{2,20})》/g)) out.push({ book: m[1], part: m[2] });
+  return out;
 }
 
-/** 四层级里某一层的落点集中在哪里：把「哪一节在讲这一层」从印象变成可指认的位置 */
-function levelHotspot(units, level) {
-  const key = level || '组织';
-  const ranked = units
-    .map((u) => ({ locator: u.locator, title: u.title, n: u.measure.levels[key] || 0 }))
-    .sort((a, b) => b.n - a.n);
-  const top = ranked[0];
-  const rest = ranked.slice(1).reduce((a, r) => a + r.n, 0);
-  return { level: key, locator: top.locator, title: top.title, n: top.n, rest };
+function judgments(md) {
+  const prose = md.replace(/```[\s\S]*?```/g, '');
+  const seen = new Set();
+  for (const line of prose.split('\n')) {
+    if (/^\s*[|#>]/.test(line)) continue;
+    for (const m of line.matchAll(/\*\*([^*]{4,40})\*\*/g)) {
+      const s = m[1].trim().replace(/[：:，,。；;]$/, '');
+      if (hanzi(s) < 4) continue;
+      if (/^(MOTTO|PROBLEM|双根因定位|免责声明|边界声明|教材出处)$/.test(s)) continue;
+      seen.add(s);
+    }
+  }
+  return [...seen];
 }
 
-// ── 模型一：无效腔 —— 浅快呼吸为什么效率低 ──────────────────────────
-// 关系式：每分通气量 = 潮气量 × 频率；肺泡通气量 = (潮气量 − 无效腔) × 频率。
-// 两条式相减即得：无效腔通气量 = 无效腔 × 频率。所以「频率升高」本身就在
-// 增加无效腔通气——前提是每分通气量不变，此时深度必然下降。
-// 本章不给任何容积数值，只判方向。
-function deadSpaceTrend({ freq, depth }) {
-  const k = `${freq}|${depth}`;
-  const TABLE = {
-    'up|down': { form: '浅快呼吸', alveolar: 'down', why: '每分通气量不变时深度下降，而频率上升使无效腔通气增加，两者同向压低肺泡通气量' },
-    'down|up': { form: '深慢呼吸', alveolar: 'up', why: '每分通气量不变时深度上升，频率下降使无效腔通气减少，肺泡通气量相对增加' },
-    'flat|flat': { form: '平静呼吸', alveolar: 'flat', why: '形式未变，肺泡通气量随每分通气量同向变化' },
-    'up|up': { form: '深快呼吸', alveolar: 'up', why: '深度与频率同时上升，肺泡通气量增加（每分通气量也在增加，不是等量比较）' },
+/** 关键词命中：本章三个环节加一个分母 */
+const KEYWORDS = ['分压差', '通气', '换气', '无效腔', '肺泡'];
+function keywords(md) {
+  const prose = md.replace(/```[\s\S]*?```/g, '');
+  const out = {};
+  for (const k of KEYWORDS) out[k] = prose.split(k).length - 1;
+  return out;
+}
+
+function boundaryHits(md) {
+  return (md.match(/本书不给值|不写数值|不给正常值|不给单位|不提供数值/g) || []).length;
+}
+
+/**
+ * 判别一：通气与血流不匹配的两种方向。
+ * 比值增大＝通气相对过剩、血流相对不足 → 无效腔样效应；
+ * 比值减小＝血流相对过剩、通气相对不足 → 分流样效应。
+ * @param {{ventilation:'过剩'|'不足', perfusion:'过剩'|'不足'}} p
+ */
+function vaqMismatch(p) {
+  const { ventilation, perfusion } = p;
+  if (ventilation === '过剩' && perfusion === '不足') return { effect: '无效腔样效应', why: '部分通气未参与交换，等于把气吸进了不换气的地方' };
+  if (ventilation === '不足' && perfusion === '过剩') return { effect: '分流样效应', why: '部分血流未充分氧合，等于血从旁边流过去了' };
+  if (ventilation === '过剩' && perfusion === '过剩') return { effect: '匹配（同时增大）', why: '比值不变，交换效率不因此改变' };
+  if (ventilation === '不足' && perfusion === '不足') return { effect: '匹配（同时减少）', why: '比值不变，总量同时下降' };
+  throw new Error('未知组合：' + JSON.stringify(p));
+}
+
+/**
+ * 判别二：呼吸肌的主被动。
+ * 平静吸气靠膈肌与肋间外肌收缩，平静呼气靠弹性回缩，用力呼气才转为主动。
+ * @param {'平静吸气'|'平静呼气'|'用力呼气'} phase
+ */
+function breathWork(phase) {
+  const T = {
+    平静吸气: { active: true, who: '膈肌与肋间外肌收缩，胸廓增大、肺内压下降' },
+    平静呼气: { active: false, who: '呼吸肌舒张，胸廓与肺依自身弹性回缩' },
+    用力呼气: { active: true, who: '腹壁肌与肋间内肌参与，呼气转为主动' },
   };
-  const hit = TABLE[k];
-  if (!hit) {
-    throw new Error(
-      `无法判定肺泡通气量的方向：频率 ${freq} · 深度 ${depth} —— 这类组合缺少「每分通气量是否不变」的前提`,
-    );
-  }
-  return { ...hit, freq, depth };
+  if (!T[phase]) throw new Error('未知呼吸状态：' + phase);
+  return { phase, ...T[phase] };
 }
 
-// ── 模型二：通气血流比值的两个方向都错 ──────────────────────────────
-// 教材 5.2.2：比值增大 → 通气相对过剩（无效腔样）；比值减小 → 血流相对过剩（分流样）。
-// 所以没有「越大越好」，只有一个匹配点。
-function vqClass(trend) {
-  const TABLE = {
-    up: { label: '无效腔样', why: '通气相对过剩而血流相对不足，部分通气未参与交换' },
-    down: { label: '分流样', why: '血流相对过剩而通气相对不足，部分血流未充分氧合' },
-    flat: { label: '匹配', why: '通气与血流相适应，交换效率的条件最好' },
-  };
-  const hit = TABLE[trend];
-  if (!hit) throw new Error(`比值的变化方向只能是 up / down / flat，给的是 ${trend}`);
-  return { trend, ...hit };
+/**
+ * 判别三：交换只由分压差驱动，重要性不参与运算。
+ * 二氧化碳的分压差较小却能顺利扩散，靠的是溶解度，而不是「它更重要」。
+ * @param {'氧'|'二氧化碳'} gas
+ */
+function diffusionBasis(gas) {
+  if (gas === '氧') return { driven: '肺泡侧向血液侧', factor: '分压差 + 溶解度 + 面积与厚度' };
+  if (gas === '二氧化碳') return { driven: '血液侧向肺泡侧', factor: '分压差较小，但溶解度高，所以扩散仍顺利' };
+  throw new Error('未知气体：' + gas);
 }
 
-// ── 模型三：氧解离曲线的移动方向 ────────────────────────────────────
-// 四个因素同向：酸碱程度下降、二氧化碳升高、温度升高、红细胞内含磷化合物增多，
-// 都使血红蛋白对氧的亲和力下降，曲线右移（同水平下释放更多氧）。
-const SHIFT_FACTORS = [
-  { key: '酸碱程度下降', dir: 'right' },
-  { key: '二氧化碳升高', dir: 'right' },
-  { key: '温度升高', dir: 'right' },
-  { key: '含磷化合物增多', dir: 'right' },
-];
-
-function curveShift(factors) {
-  const known = new Map(SHIFT_FACTORS.map((f) => [f.key, f.dir]));
-  let right = 0;
-  let left = 0;
-  const applied = [];
-  for (const f of factors) {
-    const d = known.get(f);
-    if (!d) throw new Error(`不是本章列出的影响因素：${f}（只收酸碱程度下降/二氧化碳升高/温度升高/含磷化合物增多）`);
-    applied.push(f);
-    if (d === 'right') right += 1;
-    else left += 1;
-  }
-  if (!applied.length) throw new Error('没有给出任何影响因素，无法判定移动方向');
-  if (left === 0 && right > 0) return { shift: '右移', meaning: '亲和力下降，组织侧释放更多氧', applied };
-  if (right === 0 && left > 0) return { shift: '左移', meaning: '亲和力上升，结合更牢', applied };
-  return { shift: '合力为零', meaning: '两方向并存，须给出各因素的相对强度才能判定', applied };
-}
-
-// ── 模型四：化学感受器的分工 ────────────────────────────────────────
-// 最容易背反的一条：二氧化碳主要经中枢，低氧主要经外周。
-const CHEMO = {
-  二氧化碳升高: { site: '中枢化学感受器为主', why: '二氧化碳通过影响氢离子的相对水平间接起作用，外周也参与且方向一致' },
-  氧下降: { site: '外周化学感受器为主', why: '中枢化学感受器对低氧不敏感，低氧的刺激作用主要经颈动脉体与主动脉体' },
-  氢离子升高: { site: '中枢与外周均可', why: '脑脊液与血液中的氢离子可分别作用于中枢与外周化学感受器' },
-};
-
-function chemoreceptor(stimulus) {
-  const hit = CHEMO[stimulus];
-  if (!hit) throw new Error(`本章只讨论三种化学刺激，收到的是：${stimulus}`);
-  return { stimulus, ...hit };
-}
-
-// ── 模型五：扩散方向 ────────────────────────────────────────────────
-// 扩散的唯一判据是两侧的相对水平，不是「哪个是废物」。约定：left 与 right
-// 分别是所比较两侧的相对水平类别，返回的是「由哪一侧流向哪一侧」。
-function fluxDirection(gas, left, right) {
-  const ok = ['较高', '较低'];
-  if (!ok.includes(left) || !ok.includes(right)) {
-    throw new Error('两侧相对水平只接受「较高」与「较低」两个取值');
-  }
-  if (left === right) return { gas, dir: '净移动为零（动态平衡）' };
-  return { gas, dir: left === '较高' ? '左→右' : '右→左' };
-}
-
-// ── 模型六：教材零数值声明，逐单元核验 ──────────────────────────────
-function valueLikeZero(units) {
-  const bad = units.filter((u) => u.measure.valueLike !== 0);
-  return { checked: units.length, bad: bad.map((u) => u.locator) };
-}
+/** 三个环节：外呼吸（通气 + 换气）→ 运输 → 内呼吸 */
+const CHAIN = ['肺通气', '肺换气', '气体在血液中的运输', '组织换气'];
 
 function main() {
-  const data = load();
-  const units = chapterUnits(data);
-  const p = profile(units);
+  const md = read();
+  const s = shape(md);
+  const cites = citations(md);
+  const judges = judgments(md);
+  const kw = keywords(md);
+  const ranked = Object.entries(kw).sort((a, b) => b[1] - a[1]);
 
-  console.log('═══ 呼吸：通气·换气·气体运输·呼吸调节 (生理学 第5章) ═══');
-  console.log(`教材规模: 第5章 ${p.hanzi} 字 · 知识单元 ${p.n} 个（5.1–5.4，每节三个）`);
-
-  console.log('\n三视角剖面（词频，逐单元加总）');
-  for (const [k, v] of Object.entries(p.views)) {
-    console.log(`  ${k} ${String(v).padStart(4)} · ${(share(v, p.viewTotal) * 100).toFixed(1)}%`);
+  console.log('═══ 呼吸：通气·换气·气体运输·调节（生理学 第 5 章）═══');
+  console.log(`正文（不含代码块）：${s.hanzi} 汉字 · ${s.h2} 个二级小节 · ${s.h3} 个三级 · ${s.h4} 个四级 · ${s.tables} 行表格 · ${s.paras} 个成段段落`);
+  console.log(`引文：《书名·篇名》级 ${cites.length} 条 · 加粗判断句 ${judges.length} 条`);
+  console.log('');
+  console.log('关键词命中：');
+  for (const [k, v] of ranked) console.log(`  ${k.padEnd(4)} ${String(v).padStart(3)} 次`);
+  console.log('');
+  console.log(`四个环节一条链：${CHAIN.join(' → ')}`);
+  console.log('');
+  console.log('比值失调的两种方向（这是本章最容易答反的一处）：');
+  for (const p of [{ ventilation: '过剩', perfusion: '不足' }, { ventilation: '不足', perfusion: '过剩' }]) {
+    const r = vaqMismatch(p);
+    console.log(`  通气${p.ventilation} / 血流${p.perfusion} → ${r.effect}`);
   }
-  console.log(`  合计 ${p.viewTotal} · 代谢占比是循环章的数倍（呼吸讲的是物质怎么进出）`);
-
-  console.log('\n四层级剖面');
-  for (const [k, v] of Object.entries(p.levels)) {
-    console.log(`  ${k} ${String(v).padStart(4)} · ${(share(v, p.levelTotal) * 100).toFixed(1)}%`);
+  for (const ph of ['平静吸气', '平静呼气', '用力呼气']) {
+    const r = breathWork(ph);
+    console.log(`  ${ph}：${r.active ? '主动' : '被动'}——${r.who}`);
   }
-  const hs = levelHotspot(units, '组织');
-  console.log(`  组织层落点: ${hs.locator}（${hs.title}）${hs.n} 处 · 其余十一节合计 ${hs.rest} 处`);
+  console.log('');
+  console.log(`氧：由${diffusionBasis('氧').driven}扩散`);
+  console.log(`二氧化碳：由${diffusionBasis('二氧化碳').driven}扩散，${diffusionBasis('二氧化碳').factor}`);
+  console.log(`「不给值」类边界句 ${boundaryHits(md)} 处。`);
+  console.log('教学边界：本章只说明呼吸的类别、关系与机制，不写数值与单位，不构成诊断或治疗依据。');
 
-  console.log('\n无效腔：同样每分通气量下，浅快与深慢的效率不同');
-  for (const f of [
-    { freq: 'up', depth: 'down' },
-    { freq: 'down', depth: 'up' },
-    { freq: 'flat', depth: 'flat' },
-  ]) {
-    const r = deadSpaceTrend(f);
-    console.log(`  ${r.form} · 肺泡通气量 ${r.alveolar} · ${r.why}`);
-  }
-
-  console.log('\n通气血流比值：两个方向都不好');
-  for (const t of ['up', 'down', 'flat']) {
-    const r = vqClass(t);
-    console.log(`  比值${t} → ${r.label} · ${r.why}`);
-  }
-
-  console.log('\n氧解离曲线：四个因素同向移动');
-  const s = curveShift(['酸碱程度下降', '二氧化碳升高', '温度升高']);
-  console.log(`  ${s.applied.join(' + ')} → ${s.shift} · ${s.meaning}`);
-
-  console.log('\n化学感受器分工（最容易背反的一条）');
-  for (const k of Object.keys(CHEMO)) {
-    const r = chemoreceptor(k);
-    console.log(`  ${r.stimulus} → ${r.site} · ${r.why}`);
-  }
-
-  console.log('\n扩散方向只看两侧相对水平（左=肺泡侧或血液侧，右=另一侧）');
-  console.log(`  肺侧氧：${fluxDirection('氧', '较高', '较低').dir}（肺泡气 → 血液）`);
-  console.log(`  肺侧二氧化碳：${fluxDirection('二氧化碳', '较低', '较高').dir}（血液 → 肺泡气）`);
-  console.log('  组织侧两处方向恰好相反：同一机制，方向相反');
-
-  const z = valueLikeZero(units);
-  console.log(`\n教材「零数值」核验: ${z.checked} 个单元 · valueLike 非零 ${z.bad.length} 个`);
-
-  console.log('\n教学边界：本章数字由 standards/shengli/units.json 现算，只用于说明教材的机制类别与关系；本书不给值，不写数值与单位与正常值，不构成诊断、治疗或用药依据');
-
-  return { p, hotspot: hs, zero: z };
+  return { shape: s, cites, judges, kw, chain: CHAIN.length, boundary: boundaryHits(md) };
 }
 
-if (require.main === module) {
-  main();
-}
+if (require.main === module) main();
 
 module.exports = {
-  ROOT,
-  CHAPTER,
-  UNITS_PATH,
-  load,
-  chapterUnits,
-  profile,
-  share,
-  levelHotspot,
-  deadSpaceTrend,
-  vqClass,
-  curveShift,
-  SHIFT_FACTORS,
-  chemoreceptor,
-  CHEMO,
-  fluxDirection,
-  valueLikeZero,
+  DOC,
+  KEYWORDS,
+  CHAIN,
+  read,
+  hanzi,
+  shape,
+  citations,
+  judgments,
+  keywords,
+  boundaryHits,
+  vaqMismatch,
+  breathWork,
+  diffusionBasis,
   main,
 };

@@ -60,13 +60,13 @@
   <div class="kpis">
     <div class="kpi"><div class="k">领域 / 院系</div><div class="v">1 / 9</div></div>
     <div class="kpi"><div class="k">学科</div><div class="v">189</div></div>
-    <div class="kpi"><div class="k">章节（目标）</div><div class="v">2166</div></div>
-    <div class="kpi"><div class="k">已建章节</div><div class="v">2169<small>100.14%</small></div></div>
-    <div class="kpi"><div class="k">书稿文件</div><div class="v">1805<small>md · 外源 755 · 手册 130</small></div></div>
+    <div class="kpi"><div class="k">章节（目标）</div><div class="v">2169</div></div>
+    <div class="kpi"><div class="k">已建章节</div><div class="v">2169<small>100.00%</small></div></div>
+    <div class="kpi"><div class="k">书稿文件</div><div class="v">1893<small>md · 外源 138 · 手册 130</small></div></div>
     <div class="kpi"><div class="k">视频成片</div><div class="v">2169</div></div>
     <div class="kpi"><div class="k">产出物</div><div class="v">4338<small>undefined 章</small></div></div>
     <div class="kpi"><div class="k">测试套件</div><div class="v">105</div></div>
-    <div class="kpi"><div class="k">扫描 md</div><div class="v">12065<small>0 断链</small></div></div>
+    <div class="kpi"><div class="k">扫描 md</div><div class="v">11689<small>0 断链</small></div></div>
     <div class="kpi"><div class="k">版本</div><div class="v">1.44.0</div></div>
   </div>
 
@@ -74,7 +74,7 @@
   <div class="flow">
     <div class="step"><div class="n">桌面源资料</div><div class="d">108 项 · 45 xlsx / 16 docx / 4 旧 .xls</div><div class="r">解析入库，绝不手抄</div></div>
     <div class="step"><div class="n">standards/</div><div class="d">204 个域 · 带 sources/ 原件 + sha256</div><div class="r">派生物（content.json）不入库</div></div>
-    <div class="step"><div class="n">curriculum.json</div><div class="d">单一事实来源</div><div class="r">1 领域 / 9 院系 / 189 学科 / 2166 章节</div></div>
+    <div class="step"><div class="n">curriculum.json</div><div class="d">单一事实来源</div><div class="r">1 领域 / 9 院系 / 189 学科 / 2169 章节</div></div>
     <div class="step"><div class="n">departments/</div><div class="d">课程骨架（章节契约：docs + code + quiz + outputs）</div><div class="r">已建 2169 章</div></div>
     <div class="step"><div class="n">[tcmP] + [textbooks]</div><div class="d">两条交付物线</div><div class="r">站点/视频 · 教材/书</div></div>
     <div class="step"><div class="n">质量门</div><div class="d">L0–L3 审计 · 链接 · 计数 · 产出物索引</div><div class="r">105 套件</div></div>
@@ -89,9 +89,9 @@
     <tr><td>[tcmP] 平台 · 视频流水线</td><td><span class="pill s-done">已完成</span></td>
         <td>2169 成片 · 12587 配音 · 14159 帧 · 4338 幻灯片/讲稿件<div class="why">TTS 降级链 edge-tts → Windows SAPI → 人工；时长用实测配音时长；字幕对视音差逐章实测（毫秒级）</div></td></tr>
     <tr><td>[textbooks] 教材 · 内容</td><td><span class="pill s-active">进行中</span></td>
-        <td>5 卷 · 已写 1805 章（底本）+ 755 章（外源）+ 130 章（手册）· 构建产物 43 件<div class="why">教材正文 = 章节 docx 的 docs/zh.md 汇总；同时出单文件书 HTML（不需要 pandoc）</div></td></tr>
+        <td>5 卷 · 已写 1893 章（底本）+ 138 章（外源）+ 130 章（手册）· 构建产物 43 件<div class="why">教材正文 = 章节 docx 的 docs/zh.md 汇总；同时出单文件书 HTML（不需要 pandoc）</div></td></tr>
     <tr><td>课程骨架 · 学科/章节</td><td><span class="pill s-active">进行中</span></td>
-        <td>189 学科已建目录 · 已建章节 2169/2166（100.14%）<div class="why">curriculum.json 为单一事实来源；审计对 120 个空学科全绿是第一个里程碑</div></td></tr>
+        <td>189 学科已建目录 · 已建章节 2169/2169（100.00%）<div class="why">curriculum.json 为单一事实来源；审计对 120 个空学科全绿是第一个里程碑</div></td></tr>
     <tr><td>源资料入库</td><td><span class="pill s-done">已完成</span></td>
         <td>standards/ 204 个域：01-yixue-tongjixue · 01-zhongyi-jichu-lilun · 02-yi-gu-wen · 02-zhongyiyao-zhengce-fagui · 03-zhongguo-yixue-shi · 03-zhongyi-guanli-xue · 04-weisheng-shiye-guanli · 05-zhongyi-wenhua-chuanbo · 06-yiyuan-guanli-xue · 07-zhongyi-jiaoyu-xue · 08-jiankang-fuwu-guanli · 09-yiliao-baoxian-jingji · 10-yixue-xinxi-guanli · 11-yiyuan-xinxihua-bingan · 12-zhongyiyao-biaozhunhua · 13-linchuang-keyan-fangfa · 15-zhongyi-guojijiaoyu · 16-gonggong-guanli-xue · 17-guanli-xue-jichu · 18-guanli-xinli-xue · 19-shehui-yixue · 20-weisheng-fa-xue · 21-yixue-lunli-xue · 22-yiyao-renli-ziyuan · 23-yiyuan-kuaiji-caiwu · 24-zhongyi-jiankang-guanli · 25-guanli-shixi-shijian · 26-guanli-biye-sheji · bingli · binglishengli · biye · cifa-jiufa · daodi-yaocai · endpoints · erbihou-jiepou-shengli · erke · erke-huli · erxue-zhenduan-xue · fangji · fuchanke-huli · fuke · gejia · gongfa · guanli-xue-jichu · gubing · gushang-bing · gushang-biye · gushang-chuangshang-jijiu · gushang-guzhishusong · gushang-jichu · gushang-jiepou · gushang-jinshang · gushang-jizhu-bing · gushang-kangfu-gongcheng · gushang-kangfu-pingding · gushang-lunzhuan · gushang-shoufa-zhiliao · gushang-yingxiang · gushang-yundong-yixue · gushang-zhengji · huli-biye · huli-daolun · huli-guanli-xue · huli-lunli-fagui · huli-lunzhuan · huli-renwen-goutong · huli-xinli-xue · huli-yanjiu-zhengxun · huli-zonghe-jineng · icd11 · jiankang-pinggu · jibing-xue-jichu · jichu · jichu-biye-sheji · jichu-huli · jichu-keyan-shixun · jijiu-huli · jingluo · jingshen · jingshenke-huli-xue · jingui · jiqi-xuexi · jiwei-huli · jizhen · jubu-jiepou-xue · kangfu-huli · kangfu-yixue-jichu · knowledge-structure · knowledge-tree · kouqiang-hemian-waike · kouqiang-jiepou-shengli · kouqiang-neike-xue · kouqiang-xiufu · kouqiang-zhengji · laonian · laonian-huli · leijing-tuyi · linchuang-zhongyao · liuxingbing-xue · llm-yu-zhongyi-zhinengti · lunzhuan · maizhen-keguanhua · materials · mianyi-bingyuan-shengwu · neijing-xuandu · neike · neike-huli · peiwu-yu-jinji · qigong · renti-jiepou-xue · semtensor · shanghan · shenghua-xue · shengli · shequ-huli-xue · shiyan-zhenjiu · shoufa · shuxue · shuzi-renti-xuni-fangzhen · tizhi · tuina · waike · waike-huli · wenbing · wuguan-biye-sheji · wuguan-linchuang-lunzhuan · wuli-zhiliao · xiaoer-tuina · yanke-guangxue-yanguang · yanke-yingxiang-jiancha · yaoli · yaoshi-guanli · yaoyong-zhiwu-xue · yiguwen · yixue-rengong-zhineng-daolun · yixue-shengwu-xue · yixue-shuju-anquan-yinsi · yixue-tuxiang-shezhen · yixue-xibao-shengwu-xue · yixue-yichuan-xue · zhendao-yixue · zhenduan · zhengchang-renti-xue · zhenggu · zhenghou · zhenghou-cidian · zhenjiu-biye · zhenjiu-gejia · zhenjiu-lunzhuan2 · zhenjiu-xue · zhenjiu-yiji · zhenjiu-zhentong-mazui · zhenjiu-zhiliao · zhexue · zhiliao · zhineng-biye-sheji · zhineng-gongcheng-shijian · zhishichanquan-zhuanhua · zhongcan-xilu · zhongchengyao-linchuang · zhongguo-yixue-shi · zhongyao · zhongyao-biye · zhongyao-du-li · zhongyao-fenxi · zhongyao-huaxue · zhongyao-jianding · zhongyao-paozhi · zhongyao-shangpin · zhongyao-shijian · zhongyao-xinyao · zhongyao-xue · zhongyao-yaodai-donglixue · zhongyao-yaoji · zhongyao-yaoli · zhongyao-ziyuan · zhongyi-ai-lunli-zhili · zhongyi-dashuju-fenxi · zhongyi-duomotai-ronghe · zhongyi-erbihou-xue · zhongyi-huli · zhongyi-huli-jichu · zhongyi-huli-jishu · zhongyi-jiqiren-xue · zhongyi-kangfu-xue · zhongyi-kouqiang-kexue · zhongyi-linchuang · zhongyi-meirong-pifu · zhongyi-mianbu-wangzhen · zhongyi-ruanjian-jiagou · zhongyi-sangyin-yixue · zhongyi-wuguan-jingdian · zhongyi-xinli-xue · zhongyi-xinxi-xue · zhongyi-yangsheng-xue · zhongyi-yanke-xue · zhongyi-yundong · zhongyi-zhineng-bianzheng · zhongyi-zhineng-yiqi · zhongyi-zhishishu · zhongyi-ziran-yuyan-chuli · zuzhi-peitai-xue · _probe_eh · _probe_yk<div class="why">解析入库、绝不手抄；各带 sources/ 原件 + sha256 溯源；派生 content.json 不入库</div></td></tr>
     <tr><td>嵌入层（embedding-code 规格）</td><td><span class="pill s-block">受阻</span></td>
@@ -99,7 +99,7 @@
     <tr><td>ICD-11 客户端（规格 ⑦）</td><td><span class="pill s-active">进行中</span></td>
         <td>本地库 13960 实体（MMS 2025-01）· 仓库 7 个编码 7/7 解析<div class="why">WHO API 通道需凭据（无凭据一律 401，本机未配置）；中文标题通道**未验证**</div></td></tr>
     <tr><td>质量门 · 审计与测试</td><td><span class="pill s-done">已完成</span></td>
-        <td>审计 L0–L3 · 105 个测试套件（112 个测试文件）· 链接扫描 12065 个 md（0 断链） · npm run check 四道门<div class="why">L3 内容层实测抓到 2 处契约违约；文档事实核对测试已 4 次抓到过期数字</div></td></tr>
+        <td>审计 L0–L3 · 105 个测试套件（112 个测试文件）· 链接扫描 11689 个 md（0 断链） · npm run check 四道门<div class="why">L3 内容层实测抓到 2 处契约违约；文档事实核对测试已 4 次抓到过期数字</div></td></tr>
     </tbody>
   </table>
 
@@ -141,18 +141,18 @@
 
   <h2>最近提交</h2>
   <div class="card git">
-    <div>61cd3698 <b>chore(release): 收口 counters / 看板 / CHANGELOG —— 课程章目录加码至 2,166 章节 + 五卷教材补写与成片产物入账</b></div>
-    <div>01351456 <b>feat(handbook): 第5卷 9 门毕设手册补写，77,093→134,519 字（1,014→1,770 字/章）</b></div>
-    <div>66ba6e8d <b>feat(handbook): 第4卷 9 门轮转/实践手册重写，50,835→101,841 字（941→1,886 字/章）</b></div>
-    <div>7f2cc335 <b>feat(zhenghou): 去重改「按码+证段」→ 1864/1866（99.89%），痰门/寒门重码清零</b></div>
-    <div>e3db571f <b>chore(zgh_ocr): 补「改正文层后必须连带重跑哪三件」—— check11 就是这么红的</b></div>
-    <div>f632a24a <b>fix(zhenghou): 三条缺条与《吴方医案》回原页核实 —— 两条正文其实在，已按原页标题归位</b></div>
-    <div>e6b7fa9b <b>feat(zhenghou): 待核 8 根按「位×根」拆完 → 可解释率 69.2%；两个「表外」暴露原书矩阵边界</b></div>
-    <div>3e40d8d1 <b>feat(zhenghou): 态根↔病机对照表（56 根逐个判定，不接进计分）+ 更正「7/7」的错误承诺</b></div>
-    <div>ceed658e <b>chore(zhenghou): 证象组合 × 附录一 质检 —— 结论是「两套词比不了」，挡住一次 70% 假不合格</b></div>
-    <div>7d2eebe7 <b>feat(zhenghou): 口语别名 90 → 138 条（头痛/二便/睡眠/情绪四域），清掉 11 条空转</b></div>
-    <div>baf259fd <b>feat(zhenghou): 附录一 72 格证象接进编码器 —— validateName() 判「部位×病机」合法性</b></div>
-    <div>bb6f3d8f <b>feat(zhenghou): 新增附录 I · 参考书目（144 条，逐条带印张）</b></div>
+    <div>3104f9ef <b> feat(content): 护理学院收官 27 门/348 章（正文 103.7 万字 + 习题三层 + 两门假长课重写）</b></div>
+    <div>1af1774a <b> feat(content): 护理学院首批 8 门/132 章补实（正文 39.0 万字 + 习题 1,384 断言 + 产出 264 份）</b></div>
+    <div>cb0788ba <b> fix(content): 12 处正文数值错误（每处回溯数据源后改，非只看句子自洽）</b></div>
+    <div>409dce5a <b> feat(outputs): 79 门 778 章 prompt/skill 按正文重做（1,556 份）+ 新门入链</b></div>
+    <div>f745a597 <b> fix(quiz/site): 解释字段双兼容 + 三处「恰好 6 题」硬编码改契约 + CHANGELOG</b></div>
+    <div>12784e66 <b> feat(exercises): 第十批 11 门 108 章习题与代码重做 — 79/79 门全部完成</b></div>
+    <div>c8c2fc59 <b> fix(quiz): 习题契约由「恰好 1/3/2」改为「下限 1/3/1 + 总题数 ≤10」</b></div>
+    <div>b2fe0fdb <b> feat(exercises): 第九批 8 门 68 章习题与代码重做（累计 68 门 670 章）</b></div>
+    <div>9dff06a9 <b> feat(exercises): 第八批 8 门 128 章习题与代码重做（累计 60 门 602 章）</b></div>
+    <div>240d9e92 <b> feat(exercises): 第七批 8 门 74 章习题与代码重做（累计 52 门 474 章）</b></div>
+    <div>d7f12582 <b> feat(exercises): 第六批 8 门 72 章习题与代码重做（累计 44 门 400 章）</b></div>
+    <div>dad8e7a1 <b> feat(exercises): 第五批 8 门 68 章习题与代码重做（累计 36 门 328 章）</b></div>
   </div>
 
   <footer>

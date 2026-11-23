@@ -22,7 +22,7 @@ const fs = require('fs');
 const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const CJK = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
-const TEMPLATE = [/三辨/, /四位面/, /单元规模/, /本章实测/, /这一章要回答什么/, /本课第\s*\d+\s*章/, /见\s*code\/main\.js\s*输出/, /F:\/textbooks/];
+const TEMPLATE = [/三辨/, /四位面/, /单元规模/, /本章实测/, /这一章要回答什么/, /本课第\s*\d+\s*章[（(]/, /见\s*code\/main\.js\s*输出/, /F:\/textbooks/];
 const MIN_HZ = 2500;
 
 const arg = (k, d) => (process.argv.find((a) => a.startsWith(`--${k}=`)) || `--${k}=${d}`).split('=')[1];
@@ -64,6 +64,8 @@ function auditSubject(dept, subject, quiet) {
   if (!fs.existsSync(chaptersDir)) return { dept, subject, missing: true, rows: [] };
   const rows = [];
   for (const c of fs.readdirSync(chaptersDir).sort()) {
+    // 只把目录当章：chapters/ 下的共享模块（如 _corpus.js）不是章
+    if (!fs.statSync(path.join(chaptersDir, c)).isDirectory()) continue;
     const f = path.join(chaptersDir, c, 'docs', 'zh.md');
     if (!fs.existsSync(f)) { rows.push({ c, issues: ['缺 docs/zh.md'], hz: 0 }); continue; }
     rows.push({ c, ...auditChapter(f) });

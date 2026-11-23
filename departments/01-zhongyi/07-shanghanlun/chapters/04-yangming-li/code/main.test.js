@@ -47,3 +47,7 @@ test('异文标注可取出，且不覆盖主文（只记录）', () => {
   assert.ok(v.some((x) => x.note.includes('玉函')));
   assert.ok(v.every((x) => typeof x.text === 'string' && x.note.length >= 2));
 });
+
+// ── quiz 结构契约（与 scripts/check_chapter_exercises.js 同源）──
+const { quizContract } = require('../../_quiz-contract.js');
+quizContract(__dirname);

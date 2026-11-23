@@ -123,11 +123,14 @@ test('6. outputs 与 skill frontmatter（含 version）', () => {
 });
 
 test('7. 章内单测与教学边界', () => {
+  // 本套件自身可能跑在 node --test 之下，子进程会继承 NODE_TEST_CONTEXT 而拒绝再跑测试文件
+  const env = { ...process.env };
+  delete env.NODE_TEST_CONTEXT;
   for (const c of chaptersJson().chapters) {
     const dir = path.join(DIR, c.slug);
-    const out = execFileSync('node', ['--test', 'code/main.test.js'], { cwd: dir, encoding: 'utf8' });
+    const out = execFileSync('node', ['--test', 'code/main.test.js'], { cwd: dir, encoding: 'utf8', env });
     assert.ok(/# fail 0/.test(out), `${c.slug} 单测有失败`);
-    const run = execFileSync('node', ['code/main.js'], { cwd: dir, encoding: 'utf8' });
+    const run = execFileSync('node', ['code/main.js'], { cwd: dir, encoding: 'utf8', env });
     const last = run.trim().split('\n').filter(Boolean).pop();
     assert.ok(/教学边界/.test(last) && /不构成/.test(last), `${c.slug} 最后一行不是教学边界声明：${last}`);
   }

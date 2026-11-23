@@ -1,57 +1,77 @@
-#!/usr/bin/env node
-/**
- * 第 12 章 中西医结合治疗、康复与数字化 —— 确定性单元测试
- * 运行: node --test code/main.test.js
- *
- * 断言只落在可对账的结构上：单元数与小节号、规模、三辨与四位面重心、引书数、数值计数。
- * 数字由 standards/jingshen/units.json 现算后写死在此，教材改版时测试会先响。
- */
-
 'use strict';
-
+/**
+ * 第 12 章 中西医结合、康复与数字化 —— 本章现算值与 quiz 结构的确定性断言。
+ * 数字由 docs/zh.md 现算后钉在这里：正文一改，测试先响，迫使写的人回头同步。
+ */
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
 
-const { CHAPTER, load, chapterUnits, merge, rank, shape, citations, bySection } = require('./main.js');
+const { stats, quizAudit, countCells, hanzi, DOC, QUIZ, CHAPTER, SLUG } = require('./main.js');
 
-const data = load();
-const list = chapterUnits(data);
+const s = stats();
+const q = quizAudit();
 
-test('本章单元数与小节号与教材一致', () => {
-  assert.strictEqual(list.length, 4);
-  assert.deepStrictEqual(list.map((u) => u.sub), ['12.1.1', '12.1.2', '12.2.1', '12.2.2']);
+test('章节号与目录一致', () => {
+  assert.strictEqual(CHAPTER, 12);
+  assert.strictEqual(SLUG, '12-jiehe-kangfu-shuzihua');
+  assert.ok(fs.existsSync(DOC), '正文文件不存在');
 });
 
-test('规模：17231 字 · 平均 4308 字/单元', () => {
-  const s = shape(list);
-  assert.strictEqual(s.hanzi, 17231);
-  assert.strictEqual(s.mean, 4308);
+test('正文规模：汉字 / 节 / 段', () => {
+  assert.strictEqual(s.hanzi, 3498);
+  assert.strictEqual(s.sectionCount, 6);
+  assert.strictEqual(s.paragraphCount, 30);
+  assert.ok(s.hanzi >= 2500, '正文只有 ' + s.hanzi + ' 汉字');
 });
 
-test('三辨重心是「病因」', () => {
-  const views = rank(merge(list, 'views'));
-  assert.strictEqual(views[0].key, '病因');
-  assert.strictEqual(views[0].count, 366);
+test('表格与表行', () => {
+  assert.strictEqual(s.tableCount, 2);
+  assert.strictEqual(s.tableRows, 10);
+  for (const t of s.tables) assert.ok(t.cols >= 2, t.firstCell + ' 列数不足');
 });
 
-test('四位面重心是「情感情绪」，且四层都有落点', () => {
-  const levels = Object.fromEntries(rank(merge(list, 'levels')).map((v) => [v.key, v.count]));
-  assert.strictEqual(levels['情感情绪'], 76);
-  const touched = Object.values(levels).filter((n) => n > 0).length;
-  assert.ok(touched >= 3, `仅 ${touched} 层有落点`);
+test('三块边界表 3 行；用药清单 7 栏，第 4 栏确为保健品', () => {
+  const blocks = s.tables[0];
+  assert.strictEqual(blocks.rows, 3);
+  assert.strictEqual(blocks.cols, 4);
+  assert.strictEqual(countCells(blocks.cells, 0, /^联合治疗$/), 1);
+  assert.strictEqual(countCells(blocks.cells, 0, /^康复$/), 1);
+  assert.strictEqual(countCells(blocks.cells, 0, /^数字化$/), 1);
+  const list = s.tables[1];
+  assert.strictEqual(list.rows, 7);
+  assert.strictEqual(list.cols, 2);
+  assert.strictEqual(list.cells[3][0], '4');
+  assert.ok(list.cells[3][1].includes('保健品'), '第 4 栏不是保健品');
 });
 
-test('引书成规模：≥0 部、≥8 次引用', () => {
-  const c = citations(list);
-  assert.ok(c.books >= 0, `引书 ${c.books}`);
-  assert.ok(c.total >= 8, `引用 ${c.total}`);
+test('各节都非空，节标题不重复', () => {
+  assert.strictEqual(new Set(s.sections.map((x) => x.title)).size, s.sectionCount);
+  for (const sec of s.sections) assert.ok(sec.hanzi > 0, sec.title);
 });
 
-test('数值计数与单元层一致（本章 1 处数值类命中）', () => {
-  assert.strictEqual(shape(list).valueLike, 1);
+test('汉字统计口径：章首 + 逐节 = 全文', () => {
+  assert.strictEqual(s.sections.reduce((a, x) => a + x.hanzi, 0) + s.preamble.hanzi, s.hanzi);
+  assert.strictEqual(hanzi(fs.readFileSync(DOC, 'utf8')), s.hanzi);
 });
 
-test('每节都有单元，且每单元都带 locator', () => {
-  for (const s of bySection(list)) assert.ok(s.units > 0, s.sec);
-  for (const u of list) assert.ok(u.locator.startsWith(`教材·第${CHAPTER}章·`), u.locator);
+test('quiz 结构：三段齐、四选项、解释够长、答案合法', () => {
+  assert.ok(q.total >= 5, '只有 ' + q.total + ' 题');
+  for (const st of ['pre', 'check', 'post']) assert.ok(q.stage[st] >= 1, '缺 ' + st + ' 段');
+  assert.strictEqual(q.allFourOptions, true, '有题不是 4 个选项');
+  assert.strictEqual(q.badCorrect, 0, 'correct 下标非法');
+  assert.ok(q.minExplain >= 60, '最短解释只有 ' + q.minExplain + ' 汉字');
+});
+
+test('quiz 接地与打散：≥2 道 check 题的正确选项落在正文，答案 ≥3 个位置', () => {
+  assert.ok(q.checkGrounded >= 2, '只有 ' + q.checkGrounded + ' 道 check 题接地');
+  assert.ok(q.distinctAnswers >= 3, '答案只用了 ' + q.distinctAnswers + ' 个位置');
+});
+
+test('quiz 不含脚手架名目与禁用参数', () => {
+  const raw = fs.readFileSync(QUIZ, 'utf8');
+  assert.strictEqual(q.scaffold, false, 'quiz 仍含脚手架指纹');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '剂量', '疗程', '发生率', '页码']) {
+    assert.ok(!raw.includes(bad), 'quiz 仍含「' + bad + '」');
+  }
 });

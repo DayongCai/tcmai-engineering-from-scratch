@@ -1,18 +1,13 @@
 #!/usr/bin/env node
 /**
- * 方剂学 · 第 2 章 君臣佐使：组方的角色结构
+ * 方剂学 · 第 2 章 君臣佐使：组方的角色结构 —— 本章正文的结构统计
  * 课程: departments/02-zhongyao/03-fangjixue/chapters/02-junchen-zuoshi/docs/zh.md
- * 出处: 教材·第3章·3.1（组方原则）与 3.2（组成变化）
- * 数据: standards/fangji/formulas.json（每方 roles + roleEvidence + 六段全文）
+ * 数据: 只读本章正文 docs/zh.md（不读缓存、不读底本、不手打数字）
  * 依赖: 仅 Node.js 标准库
  *
- * 为什么这一章的数字必须现算：君臣佐使不是教材的统一标注，而是从三种写法
- * （「君药：熟地黄…」／「故为君药」／「臣以桂枝」）里抽出来的。抽取有边界，
- * 边界必须能被看见——所以程序既打印「有君药的方有多少」，也打印「教材明明
- * 写了『并为君药』、数据层却只剩一味」的方有多少。后者是这套数据真正欠的账。
- *
- * 抽不到的一律留空，不按「用量最大者」「排在第一位者」代填。代填出来的
- * 君药会让下游所有统计看起来更整齐，也更假。
+ * 为什么只读正文现算：本章引用的每一个规模数（字数、节数、表行数、数字列合计、引文条数）
+ * 都写在正文里，正文就是本章唯一的数据源。把统计写成对正文的复算，正文一改、数字就变，
+ * 单测立刻报警；手打一份统计表则会在改稿后静默过期。
  */
 
 'use strict';
@@ -20,163 +15,193 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-// __dirname = .../departments/02-zhongyao/03-fangjixue/chapters/<slug>/code
-// 不硬数 ../ 的层数（数错一次就 ENOENT），改为向上找到带 standards/fangji 的那一级
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 10; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'fangji', 'formulas.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const CHAPTER = 2;
+const TITLE = '君臣佐使：组方的角色结构';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CJK = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+const readDoc = () => fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
+/** H1 与二、三级小节：节数是审计判据之一（要求 4–8 个二级节） */
+function headings(text) {
+  const lines = text.split('\n');
+  const h1 = (lines.find((l) => /^#\s+/.test(l)) || '').replace(/^#\s+/, '').trim();
+  const h2 = [];
+  const h3 = [];
+  for (const l of lines) {
+    if (/^##\s+/.test(l)) h2.push(l.replace(/^##\s+/, '').trim());
+    else if (/^###\s+/.test(l)) h3.push(l.replace(/^###\s+/, '').trim());
   }
-  throw new Error('没找到 standards/fangji/formulas.json —— 章节目录是否已脱离仓库？');
-}
-const ROOT = findRoot(__dirname);
-const FANGJI = path.join(ROOT, 'standards', 'fangji');
-
-const ROLES = [
-  { key: '君', label: '君药', duty: '针对主病主证起主要治疗作用，定全方方向' },
-  { key: '臣', label: '臣药', duty: '助君加强主病主证，或主重要兼证' },
-  { key: '佐', label: '佐药', duty: '佐助、佐制、反佐' },
-  { key: '使', label: '使药', duty: '引经报使、调和诸药' },
-];
-
-const load = () => JSON.parse(fs.readFileSync(path.join(FANGJI, 'formulas.json'), 'utf8'));
-const loadBase = () => JSON.parse(fs.readFileSync(path.join(FANGJI, '底本.json'), 'utf8'));
-
-/** 教材章汉字数：读底本 counts，不估读、不写死 */
-function chapterHanzi(no) {
-  const base = loadBase();
-  const c = base.chapters.find((x) => x.no === String(no));
-  if (!c) throw new Error(`底本里没有第 ${no} 章`);
-  return c.counts.hanzi;
+  return { h1, h2, h3 };
 }
 
-/** 某角色被抽到的方数（数组为空即视为「抽不到」，不计入） */
-function roleCoverage(fj, key) {
-  const hits = fj.formulas.filter((f) => (f.roles[key] || []).length > 0);
-  return { n: hits.length, pct: hits.length / fj.formulas.length, names: hits.map((f) => f.name) };
-}
-
-/** 角色齐备度：数的是「有几种角色」，不是「有几味药」 */
-function rolesPerFormula(fj) {
-  return fj.formulas.map((f) => ({
-    name: f.name,
-    k: ROLES.filter((r) => (f.roles[r.key] || []).length > 0).length,
+/** 正文里的全部表格：首行是表头，分隔行丢掉，其余是数据行 */
+function tables(text) {
+  const blocks = [];
+  let cur = [];
+  for (const raw of text.split('\n')) {
+    if (/^\|.*\|$/.test(raw.trim())) cur.push(raw.trim());
+    else {
+      if (cur.length >= 2) blocks.push(cur);
+      cur = [];
+    }
+  }
+  if (cur.length >= 2) blocks.push(cur);
+  const cells = (l) => l.replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
+  const isSep = (row) => row.every((c) => /^:?-{2,}:?$/.test(c.replace(/\s/g, '')));
+  return blocks.map((b, i) => ({
+    idx: i + 1,
+    header: cells(b[0]),
+    rows: b.slice(1).map(cells).filter((r) => !isSep(r)),
   }));
 }
 
-const atLeast3 = (fj) => rolesPerFormula(fj).filter((x) => x.k >= 3).length;
-const allFour = (fj) => rolesPerFormula(fj).filter((x) => x.k === 4).length;
+const num = (c) => {
+  const v = String(c).replace(/[*_`\s,]/g, '');
+  return /^-?\d+(?:\.\d+)?$/.test(v) ? Number(v) : null;
+};
 
-/** 抽不到君药的方：留空，不猜。返回方名清单（不是替代药名） */
-function withoutJun(fj) {
-  return fj.formulas.filter((f) => (f.roles['君'] || []).length === 0).map((f) => f.name);
-}
-
-/** 一药兼数职：同一味药在同一方里被抽到两个以上角色 */
-function multiRole(fj) {
-  const out = [];
-  for (const f of fj.formulas) {
-    const seen = new Map();
-    for (const r of ROLES) {
-      for (const h of f.roles[r.key] || []) {
-        if (seen.has(h)) seen.set(h, `${seen.get(h)}/${r.key}`);
-        else seen.set(h, r.key);
-      }
-    }
-    const dup = [...seen.entries()].filter(([, v]) => v.includes('/'));
-    if (dup.length) out.push({ name: f.name, herbs: dup });
-  }
-  return out;
-}
+const isTotalRow = (r) => /^(合计|总计)/.test(String(r[0] || '').replace(/[*_\s]/g, ''));
 
 /**
- * 抽取边界：教材写「麻黄、桂枝并为君药」的方，数据层只留下第一味。
- * 判据用方解原文里的「并为君药／共为君药」这类并列说法，再看 roles.君 的长度。
- * 这不是 bug 清单，是引用时必须声明的口径。
+ * 可合计的计数列：排除比率列（每方/每段/平均/÷/占/率），
+ * 若表里有「合计」行，则把数据行之和与该行对账——表内自洽也当场核。
  */
-function truncatedJun(fj) {
-  const re = /并为君药|共为君药|俱为君药|二药.{0,6}为君/;
-  return fj.formulas
-    .filter((f) => re.test(f.parts['方解与配伍'] || '') && (f.roles['君'] || []).length === 1)
-    .map((f) => ({ name: f.name, kept: f.roles['君'][0] }));
+function columnStats(t) {
+  const totalIdx = t.rows.findIndex(isTotalRow);
+  const dataRows = t.rows.filter((_, i) => i !== totalIdx);
+  const cols = [];
+  t.header.forEach((name, ci) => {
+    if (/每|平均|÷|占|率/.test(name)) return;
+    const vals = dataRows.map((r) => num(r[ci]));
+    if (!dataRows.length || vals.some((v) => v === null)) return;
+    const sum = Number(vals.reduce((a, b) => a + b, 0).toFixed(4));
+    const declared = totalIdx >= 0 ? num(t.rows[totalIdx][ci]) : null;
+    cols.push({ name, sum, declared, ok: declared === null ? null : declared === sum });
+  });
+  return { totalIdx, cols };
 }
 
-/** 两方逐角色对照：同一味药在不同层次，方的作用方向随之改变 */
-function compareRoles(fj, a, b) {
-  const get = (n) => fj.formulas.find((f) => f.name === n);
-  const fa = get(a);
-  const fb = get(b);
-  return ROLES.map((r) => ({
-    role: r.label,
-    a: (fa.roles[r.key] || []).join('、') || '（空）',
-    b: (fb.roles[r.key] || []).join('、') || '（空）',
-  }));
+/** 「」引文：全部条数，以及挂了「教材·第N章·N.M.K」锚点的条数 */
+function quotes(text) {
+  const all = [...text.matchAll(/「([^」]+)」/g)].map((m) => m[1]);
+  const anchored = [];
+  for (const line of text.split('\n')) {
+    if (!/教材·第\d+章/.test(line)) continue;
+    for (const m of line.matchAll(/「([^」]{6,})」/g)) anchored.push(m[1]);
+  }
+  return { all, anchored };
+}
+
+/** 教材定位点：教材·第N章·N.M.K（去重后排序，用于报“引了哪几章” ） */
+function locators(text) {
+  const set = new Set();
+  for (const m of text.matchAll(/教材·第(\d+)章·(\d+(?:\.\d+)*)/g)) set.add(`${Number(m[1])}|${m[2]}`);
+  return [...set].sort((a, b) => {
+    const [ca, sa] = a.split('|');
+    const [cb, sb] = b.split('|');
+    return Number(ca) - Number(cb) || sa.localeCompare(sb, 'en', { numeric: true });
+  });
+}
+
+/** MOTTO 里的《书名·篇名》 */
+function bookCites(text) {
+  const line = text.split('\n').find((l) => /\*\*MOTTO:\*\*/.test(l)) || '';
+  return [...line.matchAll(/《([^》]+)》/g)].map((m) => m[1]);
+}
+
+/** 正文段落数：排除标题、表格、引用块与代码块行 */
+function proseBlocks(text) {
+  return text
+    .split(/\n\s*\n/)
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .filter((s) => !/^(#|>|\||```)/.test(s));
+}
+
+function analyze(text = readDoc()) {
+  const h = headings(text);
+  const ts = tables(text);
+  const q = quotes(text);
+  const loc = locators(text);
+  return {
+    hanzi: (text.match(CJK) || []).length,
+    h1: h.h1,
+    h2: h.h2,
+    h3: h.h3,
+    paragraphs: proseBlocks(text).length,
+    tables: ts.map((t) => {
+      const st = columnStats(t);
+      return {
+        idx: t.idx,
+        cols: t.header.length,
+        rows: t.rows.length,
+        dataRows: st.totalIdx >= 0 ? t.rows.length - 1 : t.rows.length,
+        hasTotal: st.totalIdx >= 0,
+        header: t.header,
+        numeric: st.cols,
+      };
+    }),
+    quotes: q.all.length,
+    anchored: q.anchored.length,
+    locators: loc,
+    chapters: [...new Set(loc.map((x) => Number(x.split('|')[0])))].sort((a, b) => a - b),
+    books: bookCites(text),
+  };
+}
+
+/** 本章自检：任何一条不符即抛错——宁可让脚本崩，也不让一个错的报告被打印出去 */
+function selfCheck(a) {
+  const errs = [];
+  if (!new RegExp(`^第\\s*${CHAPTER}\\s*章`).test(a.h1)) errs.push(`H1 章号不是 ${CHAPTER}：${a.h1}`);
+  if (a.hanzi < 2500) errs.push(`汉字 ${a.hanzi} < 2500`);
+  if (a.h2.length < 4 || a.h2.length > 8) errs.push(`二级小节 ${a.h2.length} 个，不在 4–8`);
+  if (!a.h2.some((t) => /代价与边界/.test(t))) errs.push('缺「代价与边界」小节');
+  if (!a.books.length) errs.push('MOTTO 缺《书名·篇名》');
+  if (a.anchored < 2) errs.push(`挂教材出处的引文只有 ${a.anchored} 条`);
+  for (const t of a.tables) {
+    if (t.cols < 2) errs.push(`表 ${t.idx} 只有 ${t.cols} 列`);
+    if (t.dataRows < 1) errs.push(`表 ${t.idx} 没有数据行`);
+    for (const c of t.numeric) {
+      if (c.ok === false) errs.push(`表 ${t.idx} 的「${c.name}」：数据行合计 ${c.sum} ≠ 合计行 ${c.declared}`);
+    }
+  }
+  if (errs.length) throw new Error('本章正文自检失败：\n  ' + errs.join('\n  '));
+  return true;
 }
 
 function main() {
-  const fj = load();
-  const total = fj.formulas.length;
-  const slots = fj.formulas.reduce((n, f) => n + (f.composition.herbs || []).length, 0);
+  const a = analyze();
+  selfCheck(a);
 
-  console.log('═══ 君臣佐使：组方的角色结构 (方剂学 第2章) ═══');
-  console.log(`教材规模: 第3章 ${chapterHanzi(3)} 字 | 方剂层: ${total} 首 | 药位 ${slots} 个 | 平均每方 ${(slots / total).toFixed(2)} 味`);
+  console.log(`═══ 第 ${CHAPTER} 章 ${TITLE} ═══`);
+  console.log(`正文 ${a.hanzi} 汉字 · ${a.paragraphs} 个正文段 · ${a.tables.length} 张表 · 二级节 ${a.h2.length} · 三级节 ${a.h3.length}`);
+  console.log('H1: ' + a.h1);
+  console.log('MOTTO 书证: ' + a.books.map((b) => `《${b}》`).join(' · '));
 
-  console.log('\n角色覆盖（分母恒为 114，抽不到的方留在分母里）');
-  for (const r of ROLES) {
-    const c = roleCoverage(fj, r.key);
-    console.log(`  ${r.label} ${String(c.n).padStart(3)}/${total} (${((c.n / total) * 100).toFixed(1)}%) · ${r.duty}`);
+  console.log('\n二级节（审计要求 4–8）:');
+  a.h2.forEach((t, i) => console.log(`  ${i + 1}. ${t}`));
+  if (a.h3.length) {
+    console.log('\n三级节:');
+    a.h3.forEach((t, i) => console.log(`  ${i + 1}. ${t}`));
   }
 
-  const k3 = atLeast3(fj);
-  const k4 = allFour(fj);
-  const avgK = (rolesPerFormula(fj).reduce((n, x) => n + x.k, 0) / total).toFixed(2);
-  console.log(`\n齐备度: 三角色以上 ${k3}/${total} | 四角色齐 ${k4}/${total} | 平均 ${avgK} 种角色/方`);
-
-  const noJun = withoutJun(fj);
-  console.log(`\n抽不到君药: ${noJun.length} 首 → 留空（不按用量最大者代填）`);
-  console.log(`  ${noJun.join('、')}`);
-
-  const multi = multiRole(fj);
-  console.log(`\n一药兼数职: ${multi.length} 方（教材「一药可兼数职」在数据里是可数的）`);
-  for (const m of multi) {
-    console.log(`  ${m.name}: ${m.herbs.map(([h, v]) => `${h}(${v})`).join('、')}`);
+  console.log('\n表格：');
+  for (const t of a.tables) {
+    const sums = t.numeric.length
+      ? t.numeric.map((c) => `${c.name}=${c.sum}${c.ok === null ? '' : c.ok ? '（=合计行）' : `（≠合计行 ${c.declared}）`}`).join(' · ')
+      : '无可合计的计数列';
+    console.log(`  T${t.idx} ${t.cols} 列 × ${t.rows} 行${t.hasTotal ? '（含合计行）' : ''} | ${t.header.join(' | ')}`);
+    console.log(`       数字列：${sums}`);
   }
 
-  const trunc = truncatedJun(fj);
-  console.log(`\n抽取边界: ${trunc.length} 首方的方解写了并列君药，数据层只保留第一味`);
-  for (const t of trunc.slice(0, 6)) console.log(`  ${t.name} → 君: ${t.kept}`);
-  console.log('  （其余同例；引用君药时须注明「抽取首条」，不得当作教材的唯一君药）');
+  console.log(`\n引文：「」${a.quotes} 条 · 挂教材定位 ${a.anchored} 条 · 定位点 ${a.locators.length} 个`);
+  console.log(`教材章：${a.chapters.map((c) => `第${c}章`).join(' / ')}`);
 
-  console.log('\n同法两方的角色对照: 麻黄汤 vs 桂枝汤（教材·第3章·3.1.2）');
-  const cmp = compareRoles(fj, '麻黄汤', '桂枝汤');
-  console.log('  角色   麻黄汤        桂枝汤');
-  for (const row of cmp) console.log(`  ${row.role}   ${row.a.padEnd(12)}  ${row.b}`);
-
-  console.log('\n教学边界：本章角色均由教材方解抽取，抽不到即留空；角色结构用于析方与教学，不构成诊断/用药依据');
-
-  return { total, slots, k3, k4, noJun, multi, trunc, cmp };
+  console.log('\n对账：节数、表行数、数字列合计、引文条数全部由上一段正文现算；正文一改，这里就变。');
+  console.log('教学边界：本章统计只读本章正文，数字由 docs/zh.md 现算，用于方剂学的结构核对；不含诊疗建议，不构成诊断或用药依据，临床决策须由执业医师依据辨证与《中国药典》作出。');
 }
 
-if (require.main === module) {
-  main();
-}
+if (require.main === module) main();
 
-module.exports = {
-  ROLES,
-  findRoot,
-  load,
-  loadBase,
-  chapterHanzi,
-  roleCoverage,
-  rolesPerFormula,
-  atLeast3,
-  allFour,
-  withoutJun,
-  multiRole,
-  truncatedJun,
-  compareRoles,
-  main,
-};
+module.exports = { CHAPTER, TITLE, DOC, readDoc, headings, tables, quotes, locators, bookCites, proseBlocks, analyze, selfCheck, main };
