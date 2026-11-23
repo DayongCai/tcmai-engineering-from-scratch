@@ -1,6 +1,6 @@
 {
   "schema": "tcm-media-index/1",
-  "generatedAt": "2026-11-11T20:45:18.830Z",
+  "generatedAt": "2026-11-23T06:43:33.431Z",
   "note": "APP 只读这一份：每门课、每章的 HLS 地址 / 时长 / 封面 / 字幕。播放用 HLS，支持 EXT-X-MEDIA 字幕组。",
   "segmentSeconds": 6,
   "ladder": [
@@ -15,8 +15,8 @@
       "height": 540
     }
   ],
-  "totalDurationSec": 186144.482,
-  "totalBytes": 7839784927,
+  "totalDurationSec": 186548.184,
+  "totalBytes": 7853226051,
   "courses": [
     {
       "id": "01-zhongyi/01-zhongyi-jichu-lilun",
@@ -43,6 +43,14 @@
       "publishJson": "01-zhongyi/10-zhongyi-neike-xue/publish.json"
     },
     {
+      "id": "04-gushang/17-gushang-biye-sheji",
+      "title": "骨伤毕业设计与知识移交",
+      "chapterCount": 6,
+      "totalDurationSec": 403.702,
+      "totalBytes": 13441124,
+      "publishJson": "04-gushang/17-gushang-biye-sheji/publish.json"
+    },
+    {
       "id": "09-jichu/11-bingli-shengli-xue",
       "title": "病理生理学",
       "chapterCount": 53,
@@ -62,8 +70,8 @@
   "repoRecord": "platform/media-release.json",
   "regenerate": "npm run media:hls:index",
   "previous": {
-    "generatedAt": "2026-11-11T20:45:18.683Z",
-    "totalBytes": 7839784927,
-    "courses": 5
+    "generatedAt": "2026-11-23T06:40:38.626Z",
+    "totalBytes": 7842928902,
+    "courses": 6
   }
 }

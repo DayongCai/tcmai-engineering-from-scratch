@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
-<title>第 3 章 · 手法与支具的系统实现 · 幻灯片</title>
+<title>第 3 章 · 把手法写成流程、把支具写成参数，才算做完；「手感」和「定制」都交不出去 · 幻灯片</title>
 <style>
 
 :root{--ink:#1b1a17;--paper:#faf8f3;--paper-2:#f2efe6;--line:#ddd7c8;--muted:#6f6a5e;
@@ -59,19 +59,19 @@ p.lead{font-size:clamp(18px,2.1vw,28px);line-height:1.7;margin:0;font-family:var
 <body>
 <div id="deck">
 <section class="slide" data-i="0">
-  <div class="slide-inner"><h1 class="big">第 3 章 · 手法与支具的系统实现</h1></div>
+  <div class="slide-inner"><h1 class="big">第 3 章 · 把手法写成流程、把支具写成参数，才算做完；「手感」和「定制」都交不出去</h1></div>
   <div class="slide-foot"><span>1 / 5</span><span>title</span></div>
 </section>
 <section class="slide" data-i="1">
-  <div class="slide-inner"><blockquote class="motto">「《骨伤毕业设计与知识移交·手法与支具的系统实现》」——派生课：篇名为本课程章名，出处见 units.json 的 source 字段。本章要回答的是：手法与支具的系统实现这一段，能不能独立完成并讲清依据。</blockquote></div>
+  <div class="slide-inner"><blockquote class="motto">「一旦临证，机触于外，巧生于内，手随心转，法从手出。」——《医宗金鉴·正骨心法要旨·手法总论》</blockquote></div>
   <div class="slide-foot"><span>2 / 5</span><span>motto</span></div>
 </section>
 <section class="slide" data-i="2">
-  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">实现部分要写清「怎么做、谁做、做多久」。</p></div>
+  <div class="slide-inner"><div class="kicker">PROBLEM</div><p class="lead">本章对应父课 4 个手法与量化单元，合计 1.15 万字。这些单元解决的是「怎么做得对」——手法的分类、发力的要领、量化的可能。毕设要解决的是另一件事：<strong>怎么让另一个人照着同一份东西做出可比的第二次</strong>。这一件事不解决，前面选好的题、采好的数据都没有出口：你的结果只能被相信，不能被检验。手法尤其如此，它是全身性介入，力度、接触点、节律、受试者体位任何一项变了，测出来的东西就换了对象。</p></div>
   <div class="slide-foot"><span>3 / 5</span><span>problem</span></div>
 </section>
 <section class="slide" data-i="3">
-  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（骨伤临床判据始终是「先排危险，再谈手法」；轮转与毕设都要能复述这句话的证据）+ 知识积累（本章 4 单元 11,504 汉字；三辨主 <strong>实现与评价 245</strong>；四位面（章群结构）主 <strong>实现与评价 11504</strong>；引书 <strong>4 部 11 次</strong>；数值类命中 0）</p></div>
+  <div class="slide-inner"><div class="kicker">双根因定位</div><p class="lead">环境逼迫（交付要给科室一份能照做的规范，答辩要能回答「换个人做会怎样」，分包要有一件能被第三方照着执行的东西）+ 知识积累（父课讲手法讲的是要领与师承，落到纸面时用的是「持久、有力、均匀、柔和」这类描述；这类描述对学习者有效，对复现者不足——它描述的是结果状态，不是可执行的步骤）</p></div>
   <div class="slide-foot"><span>4 / 5</span><span>roots</span></div>
 </section>
 <section class="slide" data-i="4">
