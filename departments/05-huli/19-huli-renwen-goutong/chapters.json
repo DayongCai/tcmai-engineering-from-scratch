@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-gaishu",
-   "title": "护理人文修养概述",
+   "title": "人文修养的底子是「把人当人」的可核对动作",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-gaishu/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-renwen-jingshen",
-   "title": "人文精神与职业价值观",
+   "title": "价值观不挂在墙上，挂在你如何处理一个难缠的人",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-renwen-jingshen/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-wenhua-chayi",
-   "title": "文化与文化差异",
+   "title": "文化差异不在风俗清单，在谁有资格先开口",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-wenhua-chayi/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-goutong-yuanli",
-   "title": "沟通的基本原理",
+   "title": "沟通的原理是控制信息的落差，不是把话说漂亮",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-goutong-yuanli/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-huhuan-goutong",
-   "title": "护患沟通的环节与要求",
+   "title": "护患沟通的成败，一半在入院那十分钟就定了",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-huhuan-goutong/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-teshu-qingjing",
-   "title": "特殊情境的沟通要求",
+   "title": "坏消息先说人话，冲突先降级再说理",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-teshu-qingjing/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-tuandui-goutong",
-   "title": "团队沟通与协作",
+   "title": "团队沟通的成本不在开会，在交接的那三句话",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-tuandui-goutong/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-liyi-xingxiang",
-   "title": "护理礼仪与职业形象",
+   "title": "礼仪不是微笑，是让对方不用猜你的下一步",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-liyi-xingxiang/docs/zh.md",
@@ -77,7 +77,7 @@
   {
    "n": 9,
    "slug": "09-tongli-zhichi",
-   "title": "同理心与情感支持",
+   "title": "同理心不是替人难过，是准确说出他难在哪里",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/09-tongli-zhichi/docs/zh.md",
@@ -86,7 +86,7 @@
   {
    "n": 10,
    "slug": "10-renwen-shijian",
-   "title": "人文关怀的实践要求",
+   "title": "关怀要落到能被看见、能被记录的动作上",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/10-renwen-shijian/docs/zh.md",
@@ -95,7 +95,7 @@
   {
    "n": 11,
    "slug": "11-lunli-juece",
-   "title": "伦理与法律的修养、道德困境",
+   "title": "伦理困境不靠高尚解决，靠把选项摆全再排序",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/11-lunli-juece/docs/zh.md",
@@ -104,7 +104,7 @@
   {
    "n": 12,
    "slug": "12-jiaoyu-fansi",
-   "title": "人文素质教育与反思实践",
+   "title": "反思不是写感想，是把一次失误拆成可改的动作",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/12-jiaoyu-fansi/docs/zh.md",
@@ -113,7 +113,7 @@
   {
    "n": 13,
    "slug": "13-zhiye-fazhan",
-   "title": "人文修养与职业发展",
+   "title": "人文修养是长期竞争力，因为它最难被替代",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/13-zhiye-fazhan/docs/zh.md",
@@ -122,7 +122,7 @@
   {
    "n": 14,
    "slug": "14-zhiliang-pingtai",
-   "title": "人文修养与护理质量、平台",
+   "title": "人文要被评价，先得变成可统计的记录字段",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/14-zhiliang-pingtai/docs/zh.md",

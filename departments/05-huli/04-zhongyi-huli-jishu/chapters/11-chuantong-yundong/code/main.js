@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 中医护理技术 · 第 11 章 传统运动与导引类护理：本章统计口径
+ * 中医护理技术 · 第 11 章 导引的风险靶点从皮肤换成了心肺和关节
  * 课程: departments/05-huli/04-zhongyi-huli-jishu/chapters/11-chuantong-yundong/docs/zh.md
- * 数据: standards/zhongyi-huli-jishu/units.json（18 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-huli-jishu/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 从正文现算：三处风险靶点、术前六方面、三档强度、四条停止线，
+ * 以及「强度三档由轻到重」「不屏气先于不追幅度」两条判据。
+ * 正文不给强度、时长、频次与幅度数值，本脚本也不推导。
  */
 
 'use strict';
@@ -15,87 +14,111 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-huli-jishu', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 11;
+const TITLE = '导引的风险靶点从皮肤换成了心肺和关节';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+const count = (t, w) => (w ? t.split(w).length - 1 : 0);
+const squash = (t) => t.replace(/\s+/g, '');
+
+const LEDGER = [
+  { label: '三处风险靶点', items: ['心肺', '关节与肌肉', '平衡与跌倒'] },
+  { label: '术前六方面', items: ['心肺状态', '骨关节与肌肉', '平衡与跌倒史', '感觉与认知', '用药与时机', '意愿与环境'] },
+  { label: '强度三档', items: ['呼吸略快', '说话断续', '说不出话'] },
+  { label: '四条停止线', items: ['说不出完整的话', '胸闷', '关节出现锐痛', '面色苍白'] },
+];
+
+const SEQUENCES = [
+  { label: '强度三档由轻到重', in: /动作与呼吸/, words: ['一档：适宜', '二档：偏强', '三档：过强'] },
+];
+
+const ORDERS = [
+  { label: '两条纪律：不屏气先于不追幅度', before: '不屏气', after: '不追幅度' },
+];
+
+function sectionsOf(body) {
+  const out = [];
+  let cur = { title: '（题头）', text: '' };
+  for (const line of body.split('\n')) {
+    const h = line.match(/^##\s+(.+?)\s*$/);
+    if (h) {
+      cur = { title: h[1], text: '' };
+      out.push(cur);
+      continue;
+    }
+    cur.text += line + '\n';
   }
-  throw new Error('没找到 standards/zhongyi-huli-jishu/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-huli-jishu', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-huli-jishu', 'chapter-map.json');
-const CHAPTER = '11';
-const SLUG = '11-chuantong-yundong';
-
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
-}
-
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+  for (const s of out) {
+    s.hanzi = (s.text.match(HANZI) || []).length;
+    s.flat = squash(s.text);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out;
+}
+
+function analyze(text) {
+  const body = String(text || '').replace(/\r\n/g, '\n');
+  const flat = squash(body);
+  const sections = sectionsOf(body);
+  const scoped = (re) => {
+    if (!re) return flat;
+    const s = sections.find((x) => re.test(x.title));
+    return s ? s.flat : '';
+  };
+  return {
+    hanzi: (body.match(HANZI) || []).length,
+    sections,
+    tables: (body.match(/^\s*\|[\s:|-]+\|\s*$/gm) || []).length,
+    ledger: LEDGER.map((g) => ({
+      label: g.label,
+      items: g.items.map((w) => ({ w, n: count(flat, squash(w)) })),
+    })),
+    sequences: SEQUENCES.map((s) => {
+      const scope = scoped(s.in);
+      const at = s.words.map((w) => scope.indexOf(squash(w)));
+      return {
+        label: s.label,
+        words: s.words,
+        at,
+        ok: at.every((p, i) => p >= 0 && (i === 0 || p > at[i - 1])),
+      };
+    }),
+    orders: ORDERS.map((o) => {
+      const a = flat.indexOf(squash(o.before));
+      const b = flat.indexOf(squash(o.after));
+      return { label: o.label, a, b, ok: a >= 0 && b >= 0 && a < b };
+    }),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医护理技术 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const a = analyze(read());
+  console.log(`中医护理技术 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下结果均从本章 docs/zh.md 现算，不手打）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`汉字 ${a.hanzi} 字 · 二级标题 ${a.sections.length} 节 · 表格 ${a.tables} 张`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  for (const g of a.ledger) {
+    const hit = g.items.filter((i) => i.n > 0);
+    console.log(`${g.label}：${hit.length}/${g.items.length} 项在正文落地`);
+    if (hit.length) console.log('  ' + hit.map((i) => `${i.w}（${i.n}）`).join(' · '));
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
+  for (const s of a.sequences) {
+    console.log(`${s.label}：${s.ok ? '顺序与正文一致' : '正文顺序与此不符'}`);
   }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  for (const o of a.orders) {
+    console.log(`${o.label}：${o.ok ? '正文如此排列' : '正文未按此排列'}`);
+  }
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-huli-jishu/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 教学演示用，不构成操作指导，也不构成运动处方；功法与强度以评估及专业人员意见为准。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { DOC, CHAPTER, TITLE, read, analyze, LEDGER, SEQUENCES, ORDERS };

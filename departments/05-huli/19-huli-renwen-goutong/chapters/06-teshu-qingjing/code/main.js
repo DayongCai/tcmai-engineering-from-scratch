@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 护理人文修养与沟通 · 第 6 章 特殊情境的沟通要求：本章统计口径
+ * 护理人文修养与沟通 · 第 6 章：正文自测口径
  * 课程: departments/05-huli/19-huli-renwen-goutong/chapters/06-teshu-qingjing/docs/zh.md
- * 数据: standards/huli-renwen-goutong/units.json（18 单元层，每单元带三辨与四位面词频）
- * 取数: standards/huli-renwen-goutong/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数据只有一份：本章 docs/zh.md。汉字、节、表、段、以及正文里出现的算术，
+ * 全部由本脚本现读现算，不手打、不引外部数据源。
+ * 正文改一个字，这里的数就跟着变；main.test.js 会因此失败，而不是继续输出旧值。
  */
 
 'use strict';
@@ -15,87 +14,151 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'huli-renwen-goutong', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/huli-renwen-goutong/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'huli-renwen-goutong', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'huli-renwen-goutong', 'chapter-map.json');
 const CHAPTER = '6';
 const SLUG = '06-teshu-qingjing';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const DOC_LABEL = `chapters/${SLUG}/docs/zh.md`;
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+const SUP = { '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9' };
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+const countHanzi = (s) => (String(s || '').match(HANZI) || []).length;
+const toLines = (s) => String(s).replace(/\r\n/g, '\n').split('\n');
+
+function readDoc() {
+  if (!fs.existsSync(DOC)) throw new Error(`本章正文缺失：${DOC}`);
+  return fs.readFileSync(DOC, 'utf8');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+/** 标题：文件里唯一的一级标题 */
+function titleOf(text) {
+  const hit = toLines(text).find((x) => /^#\s+/.test(x));
+  return hit ? hit.replace(/^#\s+/, '').trim() : '';
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** 节：`## ` 二级标题，返回标题数组 */
+function sectionTitles(text) {
+  return toLines(text)
+    .filter((x) => /^##\s+/.test(x))
+    .map((x) => x.replace(/^##\s+/, '').trim());
+}
+
+/** 表：连续的 `|` 行算一块；数据行 = 行数 − 表头 − 分隔行 */
+function tables(text) {
+  const blocks = [];
+  let cur = [];
+  for (const line of toLines(text)) {
+    if (/^\s*\|/.test(line)) cur.push(line);
+    else if (cur.length) { blocks.push(cur); cur = []; }
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  if (cur.length) blocks.push(cur);
+  const real = blocks.filter((b) => b.length >= 2 && /^\s*\|[-: |]+\|\s*$/.test(b[1]));
+  return { blocks: real.length, rows: real.reduce((n, b) => n + Math.max(0, b.length - 2), 0) };
+}
+
+/** 段：空行分隔的块，去掉标题、表格、引用块与过短的残片 */
+function paragraphs(text) {
+  return String(text)
+    .replace(/\r\n/g, '\n')
+    .split(/\n\s*\n/)
+    .map((b) => b.trim())
+    .filter((b) => b && !/^#{1,6}\s/.test(b) && !/^\|/.test(b) && !/^>/.test(b) && countHanzi(b) >= 10);
+}
+
+const fmt = (v) => {
+  const n = Number(v);
+  if (!Number.isFinite(n)) return String(v);
+  return String(Math.round(n * 10000) / 10000);
+};
+
+/**
+ * 正文算术：乘、除、幂、分数四类写法，按出现顺序去重。
+ * 只认正文里写出来的式子，不替正文补算式 —— 正文没写的东西不该出现在这里。
+ */
+function arithmetic(text) {
+  const body = toLines(text).map((l) => l.replace(/^\s*>\s?/, '')).join('\n');
+  const out = [];
+  const seen = new Set();
+  const push = (expr, value, kind) => {
+    const key = `${expr}=${fmt(value)}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+    out.push({ expr, value, kind });
+  };
+
+  // 数字与运算符之间允许夹一个量词单位（「600 秒 ÷ 18 项」这类写法）
+  const NUM = '((\\d+(?:\\.\\d+)?)\\s*(秒|分钟|小时|天|条|项|个|次|人|位|张|床|级|格|篇|句|名|层)?)';
+  const mul = new RegExp(`${NUM}\\s*×\\s*${NUM}`, 'g');
+  const div = new RegExp(`${NUM}\\s*÷\\s*${NUM}`, 'g');
+
+  const label = (n, u) => (u ? `${n} ${u}` : `${n}`);
+
+  for (const m of body.matchAll(mul)) {
+    push(`${label(m[2], m[3])} × ${label(m[5], m[6])}`, Number(m[2]) * Number(m[5]), 'mul');
+  }
+  for (const m of body.matchAll(div)) {
+    push(`${label(m[2], m[3])} ÷ ${label(m[5], m[6])}`, Number(m[2]) / Number(m[5]), 'div');
+  }
+  for (const m of body.matchAll(/(\d+(?:\.\d+)?)([⁰¹²³⁴⁵⁶⁷⁸⁹]+)/g)) {
+    const exp = Number([...m[2]].map((c) => SUP[c]).join(''));
+    push(`${m[1]}^${exp}`, Math.pow(Number(m[1]), exp), 'pow');
+  }
+  for (const m of body.matchAll(/(^|[^\d.\/])(\d+)\s*\/\s*(\d+)(?![\d.\/])/g)) {
+    push(`${m[2]} / ${m[3]}`, Number(m[2]) / Number(m[3]), 'frac');
+  }
+  return out;
+}
+
+function measure() {
+  const text = readDoc();
+  const tb = tables(text);
+  const secs = sectionTitles(text);
+  return {
+    chapter: CHAPTER,
+    slug: SLUG,
+    doc: DOC_LABEL,
+    title: titleOf(text),
+    hanzi: countHanzi(text),
+    sections: secs.length,
+    sectionTitles: secs,
+    tables: tb.blocks,
+    tableRows: tb.rows,
+    paragraphs: paragraphs(text).length,
+    arithmetic: arithmetic(text),
+  };
+}
+
+function report(m) {
+  const out = [];
+  out.push(`护理人文修养与沟通 · 第 ${m.chapter} 章 ${m.title.replace(/^第\s*\d+\s*章\s*·\s*/, '')}`);
+  out.push(`正文: ${m.doc}（唯一数据源，只读这一份）`);
+  out.push('');
+  out.push(`汉字 ${m.hanzi} · 节 ${m.sections} · 表 ${m.tables} 块（数据行 ${m.tableRows}）· 段 ${m.paragraphs}`);
+  out.push('');
+  if (m.arithmetic.length) {
+    out.push('正文算术（逐条现算，不照抄结论）：');
+    for (const a of m.arithmetic) {
+      const pct = (a.kind === 'div' || a.kind === 'frac') && a.value < 1
+        ? `（≈ ${(a.value * 100).toFixed(1)}%）`
+        : '';
+      out.push(`  ${a.expr} = ${fmt(a.value)}${pct}`);
+    }
+  } else {
+    out.push('正文算术：本章正文没有写算式，可核对的量只有上行的规模数（节、表、段）。');
+  }
+  out.push('');
+  out.push('口径说明：以上数字全部由本章正文现算，正文一改即变，测试会随之失败。');
+  return out.join('\n');
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`护理人文修养与沟通 · 第 ${CHAPTER} 章 ${cm.title}`);
-  console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  if (process.argv.includes('--json')) {
+    process.stdout.write(JSON.stringify(measure(), null, 2) + '\n');
+    return;
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
-  console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/huli-renwen-goutong/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(report(measure()));
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { CHAPTER, SLUG, DOC, DOC_LABEL, countHanzi, titleOf, sectionTitles, tables, paragraphs, arithmetic, measure, report, main };

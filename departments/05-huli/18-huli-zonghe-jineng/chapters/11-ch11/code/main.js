@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * 护理综合技能 · 第 11 章 中医护理技能：本章统计口径
+ * 护理综合技能 · 第 11 章 中医护理技能的边界，比它的手法更需要被写清楚
  * 课程: departments/05-huli/18-huli-zonghe-jineng/chapters/11-ch11/docs/zh.md
- * 数据: standards/huli-zonghe-jineng/units.json（18 单元层，每单元带三辨与四位面词频）
- * 取数: standards/huli-zonghe-jineng/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 不诊断、不立法、不替代；感受是参数，不是配合度。
+ * 本章的数字全部从 docs/zh.md 现算：汉字、节、表、扣分档条数，
+ * 以及本章各结构项（核对项、步骤段、观察维、记录列等）的实际条数。
+ * 手打的数字会在正文改版后静默过期，所以一行都不手打。
  */
 
 'use strict';
@@ -15,87 +15,166 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'huli-zonghe-jineng', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const CHAPTER = 11;
+const TITLE = '中医护理技能的边界，比它的手法更需要被写清楚';
+const HANZI = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
+
+function read() {
+  if (!fs.existsSync(DOC)) throw new Error('找不到本章正文: ' + DOC);
+  return fs.readFileSync(DOC, 'utf8').replace(/\r\n/g, '\n');
+}
+
+/** 二级标题（## ）——本章的「节」 */
+function sections(text) {
+  return String(text || '')
+    .split('\n')
+    .filter((l) => /^##\s+/.test(l))
+    .map((l) => l.replace(/^##\s+/, '').trim());
+}
+
+/** 把所有连续的表格行切成一张张表（含表头与分隔行） */
+function tables(text) {
+  const out = [];
+  let cur = null;
+  for (const line of String(text || '').split('\n')) {
+    if (/^\s*\|/.test(line)) {
+      if (!cur) { cur = []; out.push(cur); }
+      cur.push(line);
+    } else {
+      cur = null;
+    }
   }
-  throw new Error('没找到 standards/huli-zonghe-jineng/units.json —— 章节目录是否已脱离仓库？');
+  return out;
 }
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'huli-zonghe-jineng', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'huli-zonghe-jineng', 'chapter-map.json');
-const CHAPTER = '11';
-const SLUG = '11-ch11';
+const isSep = (line) => /^\s*\|[\s:|-]+\|\s*$/.test(line);
+const cells = (line) => line.replace(/^\s*\|/, '').replace(/\|\s*$/, '').split('|').map((s) => s.trim());
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
-
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+/** 表体行数：去掉表头与分隔行 */
+function bodyRows(t) {
+  return t.slice(1).filter((l) => !isSep(l)).length;
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+/** 表头含关键词的第一张表的表体行数 */
+function rowsIn(text, kw) {
+  for (const t of tables(text)) {
+    if (cells(t[0]).some((h) => h.includes(kw))) return bodyRows(t);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return 0;
+}
+
+/** 扣分档条数：表头含「扣分」的表，其数据行之和 */
+function scoreRows(text) {
+  const rows = [];
+  for (const t of tables(text)) {
+    if (!cells(t[0]).some((h) => h.includes('扣分'))) continue;
+    for (const line of t.slice(1)) {
+      if (!isSep(line)) rows.push(cells(line));
+    }
+  }
+  return rows;
+}
+
+/** 某个二级标题下的正文行 */
+function sectionLines(text, kw) {
+  const out = [];
+  let on = false;
+  for (const line of String(text || '').split('\n')) {
+    const m = /^##\s+(.*)$/.exec(line);
+    if (m) { on = m[1].includes(kw); continue; }
+    if (on) out.push(line);
+  }
+  return out;
+}
+
+/** 某节里编号列表的条目数 */
+function numberedIn(text, kw) {
+  return sectionLines(text, kw).filter((l) => /^\s*\d+\.\s+/.test(l)).length;
+}
+
+/** 某节里「- **小标题**」形式的条目数 */
+function bulletsIn(text, kw) {
+  return sectionLines(text, kw).filter((l) => /^-\s+\*\*/.test(l.trim())).length;
+}
+
+const CONCEPTS = [
+  [
+    "三个不",
+    "number",
+    "三个「不」"
+  ],
+  [
+    "评估四项",
+    "rows",
+    "不通过的处置"
+  ],
+  [
+    "骨架四段",
+    "rows",
+    "时限"
+  ],
+  [
+    "观察五维",
+    "number",
+    "皮肤与不适"
+  ],
+  [
+    "评分七维",
+    "score",
+    null
+  ],
+  [
+    "失效四类",
+    "present",
+    [
+      "边界用语失控",
+      "手感替代依据",
+      "耐受误读",
+      "观察单维"
+    ]
+  ]
+];
+
+function conceptStats(text) {
+  const out = {};
+  for (const [label, kind, arg] of CONCEPTS) {
+    if (kind === 'rows') out[label] = rowsIn(text, arg);
+    else if (kind === 'score') out[label] = scoreRows(text).length;
+    else if (kind === 'number') out[label] = numberedIn(text, arg);
+    else if (kind === 'bullets') out[label] = bulletsIn(text, arg);
+    else out[label] = arg.filter((x) => text.includes(x)).length;
+  }
+  return out;
+}
+
+function stats(text) {
+  return {
+    chapter: CHAPTER,
+    hanzi: (String(text).match(HANZI) || []).length,
+    sections: sections(text).length,
+    tables: tables(text).length,
+    scoreRows: scoreRows(text).length,
+    concepts: conceptStats(text),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`护理综合技能 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const text = read();
+  const s = stats(text);
+  console.log(`护理综合技能 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('（以下数字均从本章 docs/zh.md 现算）');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  const scoreNote = s.scoreRows ? '' : '（本章正文未设扣分档表）';
+  console.log(`汉字 ${s.hanzi} 字 · 节 ${s.sections} 节 · 表 ${s.tables} 张 · 扣分档 ${s.scoreRows} 条${scoreNote}`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  for (const [label, value] of Object.entries(s.concepts)) {
+    console.log(`  ${label}：${value}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/huli-zonghe-jineng/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 教学样例：数字由本章正文现算；本章不写参数取值与判定阈值，实施以现行规范与所在机构制度为准，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { CHAPTER, TITLE, DOC, read, sections, tables, rowsIn, scoreRows, numberedIn, bulletsIn, stats, CONCEPTS };

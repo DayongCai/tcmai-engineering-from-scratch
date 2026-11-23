@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-gaishu",
-   "title": "精神科护理学概述",
+   "title": "精神科护理的第一产品是安全，第二产品才是症状缓解",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-gaishu/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-bingyin-zhengzhuang",
-   "title": "精神障碍的病因与症状学基础",
+   "title": "症状学的全部工作，是把一句主诉拆成别人也能看见的行为",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-bingyin-zhengzhuang/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-jiben-jineng",
-   "title": "基本技能与治疗配合",
+   "title": "治疗配合的核心不是把药送进嘴，是让病人知道自己在吃什么",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-jiben-jineng/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-jixing-weiji",
-   "title": "急性期与危机状态的护理",
+   "title": "危机处置的第一分钟，用的不是技术而是距离",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-jixing-weiji/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-jingshen-fenlie",
-   "title": "精神分裂症及相关障碍的护理",
+   "title": "和幻觉争辩一次，等于替那个声音做了一次免费宣传",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-jingshen-fenlie/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-yiyu-shuangxiang",
-   "title": "抑郁与双相障碍的护理",
+   "title": "抑郁最危险的时刻，常常是\"看起来好起来\"的那几天",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-yiyu-shuangxiang/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-jiaolv-yingji",
-   "title": "焦虑与应激相关障碍的护理",
+   "title": "焦虑病人的\"我没事\"，多数时候是\"我说不出来\"而不是\"真的没事\"",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-jiaolv-yingji/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-qiangpo-tixing",
-   "title": "强迫与躯体形式相关障碍的护理",
+   "title": "不要替病人完成仪式，也不要在他做仪式时打断",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-qiangpo-tixing/docs/zh.md",
@@ -77,7 +77,7 @@
   {
    "n": 9,
    "slug": "09-qizhi-laonian",
-   "title": "器质性与老年精神障碍的护理",
+   "title": "老年精神症状的第一鉴别永远是谵妄，而不是抑郁",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/09-qizhi-laonian/docs/zh.md",
@@ -86,7 +86,7 @@
   {
    "n": 10,
    "slug": "10-wuzhi-yila",
-   "title": "精神活性物质相关障碍的护理",
+   "title": "戒断期最该被测量的是身体，不是意志",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/10-wuzhi-yila/docs/zh.md",
@@ -95,7 +95,7 @@
   {
    "n": 11,
    "slug": "11-erke-qingshaonian",
-   "title": "儿童与青少年精神障碍的护理",
+   "title": "孩子的症状常常写在大人身上，也常常被大人写坏",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/11-erke-qingshaonian/docs/zh.md",
@@ -104,7 +104,7 @@
   {
    "n": 12,
    "slug": "12-jinshi-shuimian",
-   "title": "进食与睡眠障碍的护理",
+   "title": "体重不是一个数字，是一条需要被共同盯住的趋势",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/12-jinshi-shuimian/docs/zh.md",
@@ -113,7 +113,7 @@
   {
    "n": 13,
    "slug": "13-kangfu-huli",
-   "title": "精神障碍病人的康复护理",
+   "title": "康复的指标不是症状消失，是这个人重新有了日程",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/13-kangfu-huli/docs/zh.md",
@@ -122,7 +122,7 @@
   {
    "n": 14,
    "slug": "14-anquan-fengxian",
-   "title": "精神科护理安全与风险管理",
+   "title": "风险管理的成品不是一张清单，是一条能被追溯的时间线",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/14-anquan-fengxian/docs/zh.md",
@@ -131,7 +131,7 @@
   {
    "n": 15,
    "slug": "15-renji-goutong",
-   "title": "精神科的人际关系与沟通",
+   "title": "在精神科，少说一句比多说一句更难，也更有用",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/15-renji-goutong/docs/zh.md",
@@ -140,7 +140,7 @@
   {
    "n": 16,
    "slug": "16-falv-lunli",
-   "title": "精神科护理的法律与伦理实践",
+   "title": "知情同意不是一张签过字的纸，是一条随时可以撤回的路",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/16-falv-lunli/docs/zh.md",
@@ -149,7 +149,7 @@
   {
    "n": 17,
    "slug": "17-shequ-jingshen",
-   "title": "精神卫生服务与社区精神科护理",
+   "title": "社区精神科护理的成败，常常取决于病人失约之后你打了几个电话",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/17-shequ-jingshen/docs/zh.md",
@@ -158,7 +158,7 @@
   {
    "n": 18,
    "slug": "18-pingtai",
-   "title": "精神科护理学与教学平台",
+   "title": "把临床判断写成可复算的条目，才配得上叫教学材料",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/18-pingtai/docs/zh.md",

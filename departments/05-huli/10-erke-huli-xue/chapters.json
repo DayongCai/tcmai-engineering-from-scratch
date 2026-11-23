@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-gaishu-moshi",
-   "title": "儿科护理概述与工作模式",
+   "title": "儿童不替自己说话，每条观察都要能被第二个人复核",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-gaishu-moshi/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-pinggu-jiankang",
-   "title": "儿科护理评估与健康指导",
+   "title": "评估难在分清「看到了什么」和「这是什么病」",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-pinggu-jiankang/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-baojian-shengzhang",
-   "title": "儿童保健与生长发育的护理",
+   "title": "生长曲线不是及格线，是看这个孩子自己往哪走",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-baojian-shengzhang/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-xinshenger",
-   "title": "新生儿与早产儿的护理",
+   "title": "新生儿的「不对劲」只差半度，靠的是他自己那条基线",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-xinshenger/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-yingyang",
-   "title": "营养障碍性疾病的护理",
+   "title": "喂养够不够，写在孩子身上，不写在奶瓶刻度上",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-yingyang/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-huxi",
-   "title": "呼吸系统疾病的护理",
+   "title": "呼吸变快是孩子最先付的代价，也最晚被看见",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-huxi/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-xiaohua",
-   "title": "消化系统疾病的护理",
+   "title": "脱水不看哭不哭，要把五项体征放在一起称一次",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-xiaohua/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-xunhuan-xueye",
-   "title": "循环与血液系统疾病的护理",
+   "title": "贫血的脸不会说话，会说话的是活动耐量和生长速度",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-xunhuan-xueye/docs/zh.md",
@@ -77,7 +77,7 @@
   {
    "n": 9,
    "slug": "09-miniao-shenjing",
-   "title": "泌尿与神经系统疾病的护理",
+   "title": "神经观察先问「和昨天比变了没有」，再问「现在几分」",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/09-miniao-shenjing/docs/zh.md",
@@ -86,7 +86,7 @@
   {
    "n": 10,
    "slug": "10-chuanran",
-   "title": "儿童传染性疾病与感染防控的护理",
+   "title": "隔离的第一道屏障不是口罩，是问诊时多问的那一句",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/10-chuanran/docs/zh.md",
@@ -95,7 +95,7 @@
   {
    "n": 11,
    "slug": "11-jizheng",
-   "title": "儿童急症与意外伤害的护理",
+   "title": "抢救的顺序不按重要性排，按「几分钟内会死」排",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/11-jizheng/docs/zh.md",
@@ -104,7 +104,7 @@
   {
    "n": 12,
    "slug": "12-waike",
-   "title": "儿童外科疾病的护理",
+   "title": "术前要谈的不是「别怕」，是「你会经历什么」",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/12-waike/docs/zh.md",
@@ -113,7 +113,7 @@
   {
    "n": 13,
    "slug": "13-zhengzhuang-tengtong",
-   "title": "儿童常见症状与疼痛的护理",
+   "title": "疼痛要问孩子，不能只问那个替他回答的人",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/13-zhengzhuang-tengtong/docs/zh.md",
@@ -122,7 +122,7 @@
   {
    "n": 14,
    "slug": "14-teshu-manbing",
-   "title": "特殊儿童与慢病儿童的护理",
+   "title": "慢病照护的目标不是治好，是让日常过得下去",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/14-teshu-manbing/docs/zh.md",
@@ -131,7 +131,7 @@
   {
    "n": 15,
    "slug": "15-baohu-zhiliang",
-   "title": "儿童保护、质量风险与平台",
+   "title": "报告可疑伤害不是越权，是制度交给护理的第一个动作",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/15-baohu-zhiliang/docs/zh.md",

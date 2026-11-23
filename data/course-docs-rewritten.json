@@ -697,6 +697,158 @@
       "words": 47112,
       "at": "2026-11-23",
       "note": "妇产科护理学：分期评估、危险信号与宣教回述（教材单元层对读）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "23-jingshenke-huli-xue",
+      "chapters": 18,
+      "words": 52843,
+      "at": "2026-11-23",
+      "note": "精神科护理学：观察分档、升级时限与漏防自杀（无参考电子件）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "10-erke-huli-xue",
+      "chapters": 15,
+      "words": 47020,
+      "at": "2026-11-23",
+      "note": "儿科护理学：分层评估、矫正月龄与家属回述（units 对读）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "07-neike-huli-xue",
+      "chapters": 14,
+      "words": 42813,
+      "at": "2026-11-23",
+      "note": "内科护理学：趋势判读、复评与失效拦截（units 对读）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "17-huli-xinli-xue",
+      "chapters": 18,
+      "words": 53111,
+      "at": "2026-11-23",
+      "note": "护理心理学：危机询问、沟通动作与记录六列（units 为填充句，按无电子件写）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "18-huli-zonghe-jineng",
+      "chapters": 18,
+      "words": 58704,
+      "at": "2026-11-23",
+      "note": "护理综合技能：核对项、扣分维度与考站评分表（units 对读）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "08-waike-huli-xue",
+      "chapters": 13,
+      "words": 38931,
+      "at": "2026-11-23",
+      "note": "外科护理学：围手术期危险信号与脱管六步（units 对读）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "02-jichu-huli-xue",
+      "chapters": 14,
+      "words": 40932,
+      "at": "2026-11-23",
+      "note": "基础护理学：评估核对、步骤判据与院感失效（units 对读）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "01-zhongyi-huli-jichu",
+      "chapters": 12,
+      "words": 36031,
+      "at": "2026-11-23",
+      "note": "中医护理学基础：四诊采集、成组判据与禁忌优先（units 对读）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "04-zhongyi-huli-jishu",
+      "chapters": 14,
+      "words": 40951,
+      "at": "2026-11-23",
+      "note": "中医护理技术：灸罐/刮熨/贴敷/熏洗的禁忌优先、反应分档与中止判据（units 对读）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "19-huli-renwen-goutong",
+      "chapters": 14,
+      "words": 39838,
+      "at": "2026-11-23",
+      "note": "护理人文修养与沟通：交接三句话、话术与失效模式（units 对读）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "12-jiwei-zhengzheng-huli",
+      "chapters": 10,
+      "words": 30507,
+      "at": "2026-11-23",
+      "note": "急危重症护理学：分层评估、升级路径与转运中断（无参考电子件）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "03-jiankang-pinggu",
+      "chapters": 8,
+      "words": 23052,
+      "at": "2026-11-23",
+      "note": "健康评估：四域采集、判据分档与记录字段（units 对读）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "11-shequ-huli-xue",
+      "chapters": 8,
+      "words": 22759,
+      "at": "2026-11-23",
+      "note": "社区护理学：人群分层、家访时限与转介条件（units 对读）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "26-huli-linchuang-lunzhuan",
+      "chapters": 6,
+      "words": 18208,
+      "at": "2026-11-23",
+      "note": "护理临床轮转：入科三问、交接四段与出科考核（无参考电子件）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "27-huli-biye-sheji",
+      "chapters": 6,
+      "words": 17077,
+      "at": "2026-11-23",
+      "note": "护理毕业设计：选题四判据、检索漏斗与答辩分配（无参考电子件）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "13-huli-guanli-xue",
+      "chapters": 6,
+      "words": 19389,
+      "at": "2026-11-23",
+      "note": "护理管理学：指标四要素、排班公平与根因分析（units 对读）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "14-huli-lunli-fagui",
+      "chapters": 6,
+      "words": 18796,
+      "at": "2026-11-23",
+      "note": "护理伦理与法规：同意五要件、隐私按用途划界（units 对读）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "06-zhongyi-xinli-xue",
+      "chapters": 8,
+      "words": 23434,
+      "at": "2026-11-23",
+      "note": "中医心理学：情志观察、成组判据与转诊界线（旧稿逐单元读倾倒，已重写）"
+    },
+    {
+      "dept": "05-huli",
+      "subject": "05-zhongyi-yangsheng-xue",
+      "chapters": 8,
+      "words": 22816,
+      "at": "2026-11-23",
+      "note": "中医养生学：四季起居饮食判断与停止规则（旧稿 27,738 字倾倒，已重写）"
     }
   ]
 }

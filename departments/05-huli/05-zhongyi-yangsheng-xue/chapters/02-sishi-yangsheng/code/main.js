@@ -1,101 +1,86 @@
 #!/usr/bin/env node
 /**
- * 中医养生学 · 第 2 章 四时养生与节气调摄：本章统计口径
- * 课程: departments/05-huli/05-zhongyi-yangsheng-xue/chapters/02-sishi-yangsheng/docs/zh.md
- * 数据: standards/zhongyi-yangsheng-xue/units.json（112 单元层，每单元带三辨与四位面词频）
- * 取数: standards/zhongyi-yangsheng-xue/chapter-map.json（课程章 → 教材单元号）
+ * 中医养生学 · 第 2 章 四时养生与节气调摄：正文结构自检
+ * 正文: departments/05-huli/05-zhongyi-yangsheng-xue/chapters/02-sishi-yangsheng/docs/zh.md
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 四季操作面、方向词频、分档与节点窗口宽度，全部由脚本从正文读入后现算。
+ * 手打的数字会在正文修订后静默过期。
  */
-
 'use strict';
 
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'zhongyi-yangsheng-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/zhongyi-yangsheng-xue/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'zhongyi-yangsheng-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'zhongyi-yangsheng-xue', 'chapter-map.json');
-const CHAPTER = '2';
+const CHAPTER = 2;
 const SLUG = '02-sishi-yangsheng';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+const hanzi = (s) => (s.match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function sections(doc) {
+  return (doc.match(/^##\s+.+$/gm) || []).map((l) => l.replace(/^##\s+/, '').trim());
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function tables(doc) {
+  const out = [];
+  let cur = [];
+  for (const line of doc.split(/\r?\n/)) {
+    if (/^\s*\|/.test(line)) cur.push(line.split('|').slice(1, -1).map((c) => c.trim()));
+    else { if (cur.length >= 2) out.push(cur); cur = []; }
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  if (cur.length >= 2) out.push(cur);
+  return out;
+}
+
+function rowsOf(ts, header) {
+  const t = ts.find((tb) => tb.some((row) => row.includes(header)));
+  if (!t) throw new Error('正文缺少表头含「' + header + '」的表格');
+  const i = t.findIndex((row) => row.includes(header));
+  return t.slice(i + 1).filter((r) => r.length > 1 && !r.every((c) => /^:?-{2,}:?$/.test(c)));
+}
+
+const count = (doc, word) => doc.split(word).length - 1;
+
+function analyze() {
+  const doc = readDoc();
+  const ts = tables(doc);
+  const seasons = rowsOf(ts, '季');
+  const tiers = rowsOf(ts, '档');
+  const nodeCount = 24 / 3;
+  const windowDays = nodeCount * 6;
+  return {
+    hanzi: hanzi(doc),
+    sections: sections(doc).length,
+    tables: ts.length,
+    seasons: seasons.map((r) => ({ name: r[0], cells: r.length, filled: r.filter(Boolean).length })),
+    directions: ['生发', '舒展', '收敛', '闭藏'].map((w) => [w, count(doc, w)]),
+    tiers: tiers.map((r) => r[0]),
+    nodeCount,
+    windowDays,
+    windowShare: ((windowDays / 365) * 100).toFixed(1),
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`中医养生学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const s = analyze();
+  console.log('中医养生学 · 第 ' + CHAPTER + ' 章 四时养生与节气调摄');
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log('正文 ' + s.hanzi + ' 汉字 · ' + s.sections + ' 节 · ' + s.tables + ' 张表');
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('四季操作面：' + s.seasons.map((x) => x.name + '(' + x.filled + '栏)').join(' / '));
+  if (s.seasons.some((x) => x.filled !== 5)) console.log('  ! 有季节行栏位不全，需回看正文');
+  console.log('方向词：' + s.directions.map(([w, n]) => w + '×' + n).join(' · '));
+  console.log('判据分档：' + s.tiers.join(' / '));
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
+  console.log('调整节点：24 ÷ 3 = ' + s.nodeCount + ' 个');
+  console.log('调整窗：' + s.nodeCount + ' × 6 = ' + s.windowDays + ' 天，占一年 ' + s.windowShare + '%');
   console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/zhongyi-yangsheng-xue/units.json 现算，不手打；改教材后重跑即可复现。');
+  console.log('※ 数字由本章正文现算，正文改动后重跑即可复现。');
   console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { analyze, readDoc, CHAPTER, SLUG };

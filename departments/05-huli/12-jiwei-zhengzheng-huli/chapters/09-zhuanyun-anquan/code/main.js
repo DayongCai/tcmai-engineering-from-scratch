@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 急危重症护理学 · 第 9 章 特殊人群急症与转运安全：本章统计口径
+ * 急危重症护理学 · 第 9 章 转运是一次可控的病情恶化，不是一段路程：正文判断卡
  * 课程: departments/05-huli/12-jiwei-zhengzheng-huli/chapters/09-zhuanyun-anquan/docs/zh.md
- * 数据: standards/jiwei-huli/units.json（18 单元层，每单元带三辨与四位面词频）
- * 取数: standards/jiwei-huli/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数字全部现算：汉字数、节与小节、表格与数据行、易损段、分级、特殊人群与失效模式，
+ * 都从本章正文读出；三次交接的信息保真按连乘逐次算。
  */
 
 'use strict';
@@ -15,87 +13,148 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'jiwei-huli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/jiwei-huli/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'jiwei-huli', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'jiwei-huli', 'chapter-map.json');
 const CHAPTER = '9';
 const SLUG = '09-zhuanyun-anquan';
+const TITLE = '转运是一次可控的病情恶化，不是一段路程';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const EOL = /\r?\n/;
+const KEEP_PER_HANDOFF = 0.8;
+const HANDOFFS = 3;
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const SAMPLES = [
+  { text: '氧量预计可用四十分钟，行程预计十五分钟', note: '写可用时长' },
+  { text: '氧气充足，路上尚平稳', note: '结论代替时刻' },
+  { text: '途中血氧降至八十八，加大氧流量后回升至九十四，用时两分钟', note: '事件加处理' },
+  { text: '气管刚建立，分泌物多，随时可能堵；接下来两小时盯血氧与吸引', note: '四句交接含风险' },
+  { text: '已交接，接收方清楚', note: '无复诵与签字' },
+];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+const OK_OXY = /(预计可用|可用[^，。；]{0,6}(分钟|小时)|够用[^，。；]{0,6}(分钟|小时))/;
+const CONCLUSION = /(充足|尚平稳|已交接|清楚|病情稳定|一切正常)/;
+const EVENT = /(降至|降至|回升|处理|加大氧流量|停靠)/;
+
+function readDoc() { return fs.readFileSync(DOC, 'utf8'); }
+function hanzi(text) { return (text.match(/[\u4e00-\u9fff]/g) || []).length; }
+
+function countHeadings(text, prefix) {
+  return text.split(EOL).filter((line) => line.startsWith(prefix) && !line.startsWith(prefix + '#')).length;
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function tableBlocks(lines) {
+  const blocks = [];
+  let cur = null;
+  for (const line of lines) {
+    const t = line.trim();
+    if (t.startsWith('|')) {
+      if (!cur) { cur = []; blocks.push(cur); }
+      cur.push(t);
+    } else { cur = null; }
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return blocks;
+}
+
+function dataRows(block) {
+  return block.filter((l) => !/^\|[\s:\-|]+\|$/.test(l)).slice(1);
+}
+
+function sectionText(text, key) {
+  const out = [];
+  let on = false;
+  for (const line of text.split(EOL)) {
+    const m = /^##\s+(.*)$/.exec(line);
+    if (m) { on = m[1].includes(key); continue; }
+    if (on) out.push(line);
+  }
+  return out.join('\n');
+}
+
+function blockOf(text, key) {
+  return text.split(/\n(?=## )/).find((c) => c.includes(key)) || '';
+}
+
+/** 三个易损段：正文加粗的移动、途中、交接 */
+function vulnerableSegments(text) {
+  return ['**第一段是移动', '**第二段是途中', '**第三段是交接', '**第四段是']
+    .filter((k) => text.includes(k)).length;
+}
+
+/** 四类特殊人群：正文加粗的老年、孕产、儿童、精神与认知障碍 */
+function specialGroups(text) {
+  return ['**老年', '**孕产', '**儿童', '**精神与认知障碍'].filter((k) => text.includes(k));
+}
+
+/** 分级表：表头含「随行」的那张 */
+function gradeRows(lines) {
+  let n = 0;
+  for (const b of tableBlocks(lines)) {
+    if (b[0].includes('随行')) n += dataRows(b).length;
+  }
+  return n;
+}
+
+/** 若干次交接后仍保住信息的比例 */
+function retention(perHandoff, times) {
+  return Math.pow(perHandoff, times);
+}
+
+function classify(text) {
+  if (OK_OXY.test(text) || (EVENT.test(text) && /(分钟|时)/.test(text))) return '可判断';
+  if (CONCLUSION.test(text)) return '结论式';
+  return '缺项';
+}
+
+function report() {
+  const text = readDoc();
+  const lines = text.split(EOL);
+  const blocks = tableBlocks(lines);
+  const rows = blocks.reduce((n, b) => n + dataRows(b).length, 0);
+
+  const size = {
+    hanzi: hanzi(text),
+    sections: countHeadings(text, '## '),
+    subsections: countHeadings(text, '### '),
+    tables: blocks.length,
+    rows,
+  };
+
+  const modes = (sectionText(text, '失效模式').match(/失效模式[一二三四五六七八九]/g) || []).length;
+  const samples = SAMPLES.map((s) => ({ ...s, kind: classify(s.text) }));
+
+  return {
+    chapter: CHAPTER,
+    title: TITLE,
+    size,
+    modes,
+    segments: vulnerableSegments(text),
+    grades: gradeRows(lines),
+    groups: specialGroups(text),
+    keep: retention(KEEP_PER_HANDOFF, HANDOFFS),
+    samples,
+    ok: samples.filter((s) => s.kind === '可判断').length,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`急危重症护理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = report();
+  console.log(`急危重症护理学 · 第 ${r.chapter} 章 ${r.title}`);
+  console.log(`正文: chapters/${SLUG}/docs/zh.md`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`规模: 汉字 ${r.size.hanzi.toLocaleString('en-US')} · 节 ${r.size.sections} · 小节 ${r.size.subsections} · 表格 ${r.size.tables} 张（数据行 ${r.size.rows}）`);
+  console.log(`易损段 ${r.segments} 段；分级 ${r.grades} 级；特殊人群 ${r.groups.length} 类 → ${r.groups.map((g) => g.replace(/\*/g, '')).join('、')}；失效模式 ${r.modes} 条`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`演算: 每次交接保住 ${(KEEP_PER_HANDOFF * 100).toFixed(0)}%，三次连乘 ${KEEP_PER_HANDOFF}³ ＝ ${r.keep.toFixed(3)}，约 ${(r.keep * 100).toFixed(0)}%。`);
+  console.log('  → 一半的信息在二十分钟里蒸发；漏掉的那一半，往往正是接手方最需要的「为什么」。');
+  console.log('');
+  console.log('样例交接（规则逐条判定）:');
+  for (const s of r.samples) {
+    const mark = s.kind === '可判断' ? '✅' : '❌';
+    console.log(`  ${mark} ${s.kind.padEnd(4)} ← ${s.text}　〔${s.note}〕`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/jiwei-huli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`结论: ${r.samples.length} 条例句里 ${r.ok} 条能直接判断；只写「氧气充足」「路上尚平稳」的交接，接手方只能照做，不能判断。`);
+  console.log('边界声明: 本输出为教学样例，数字由本章正文现算，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, hanzi, countHeadings, tableBlocks, dataRows, sectionText, blockOf, vulnerableSegments, specialGroups, gradeRows, retention, classify, report, SAMPLES, KEEP_PER_HANDOFF, HANDOFFS, CHAPTER, SLUG, TITLE };

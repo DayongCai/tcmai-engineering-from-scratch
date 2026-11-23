@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-gaishu",
-   "title": "中医护理适宜技术概述与特点",
+   "title": "「适宜」指的是资源可及，不是风险低",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-gaishu/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-qiandu-pinggu",
-   "title": "实施前准备与评估要求",
+   "title": "准备阶段真正要产出的是一个「可以做」的结论",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-qiandu-pinggu/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-shuxue-jingluo",
-   "title": "腧穴与经络基础",
+   "title": "取穴的误差多半不在手上，在体位和侧别上",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-shuxue-jingluo/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-anmo-tiefu",
-   "title": "腧穴按压与穴位贴敷",
+   "title": "轻手法不是低风险，是低信号",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-anmo-tiefu/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-aijiu-baguan",
-   "title": "艾灸与拔罐",
+   "title": "灸与罐真正要控的是两个不可逆的量",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-aijiu-baguan/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-guasha-reyun",
-   "title": "刮痧与热熨",
+   "title": "刮痧与热熨的观察对象是「一片」，不是一个点",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-guasha-reyun/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-erxue-ciji",
-   "title": "耳穴与穴位刺激类技术",
+   "title": "耳穴的风险不在贴上的那一刻，在留着的那些天",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-erxue-ciji/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-xunxi-waifu",
-   "title": "中药熏洗与外敷",
+   "title": "熏洗与外敷是两条通道同时开着",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-xunxi-waifu/docs/zh.md",
@@ -77,7 +77,7 @@
   {
    "n": 9,
    "slug": "09-yaoshan-yinshi",
-   "title": "药膳与饮食调护",
+   "title": "药膳这一章最讲禁忌，却一次都不说「中止」",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/09-yaoshan-yinshi/docs/zh.md",
@@ -86,7 +86,7 @@
   {
    "n": 10,
    "slug": "10-qingzhi-yangsheng",
-   "title": "情志护理与养生",
+   "title": "这一章不动手，所以更没有「做到位」这回事",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/10-qingzhi-yangsheng/docs/zh.md",
@@ -95,7 +95,7 @@
   {
    "n": 11,
    "slug": "11-chuantong-yundong",
-   "title": "传统运动与导引类护理",
+   "title": "导引的风险靶点从皮肤换成了心肺和关节",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/11-chuantong-yundong/docs/zh.md",
@@ -104,7 +104,7 @@
   {
    "n": 12,
    "slug": "12-zhengzhuang-yingyong",
-   "title": "常见症状的适宜技术应用",
+   "title": "症状应用章的动作是「选」，不是「做」",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/12-zhengzhuang-yingyong/docs/zh.md",
@@ -113,7 +113,7 @@
   {
    "n": 13,
    "slug": "13-guancha-anquan",
-   "title": "观察记录、安全与效果评价",
+   "title": "观察、记录、评价是同一条链上的三次落笔",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/13-guancha-anquan/docs/zh.md",
@@ -122,7 +122,7 @@
   {
    "n": 14,
    "slug": "14-tuiguang-pingtai",
-   "title": "技术推广、质量管理与平台",
+   "title": "能复制出去的是过程，不是手感",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/14-tuiguang-pingtai/docs/zh.md",

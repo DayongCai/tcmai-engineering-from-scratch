@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
- * 中药化学 · 第 2 章 技能操作中的患者安全与权益保护：本章统计口径
+ * 基础护理学 · 第 2 章 · 核对不是问一句，是给患者一次纠正你的资格
  * 课程: departments/05-huli/02-jichu-huli-xue/chapters/02-anquan-quanyi/docs/zh.md
- * 数据: standards/jichu-huli/units.json（55 单元层，每单元带三辨=结构特征/理化性质/提分与检识 与 四位面=生源途径 词频）
- * 取数: standards/jichu-huli/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：正文引用的每个规模、重心、引书数，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 统计只读 docs/zh.md 现算，不碰 units.json 一类的数据层（quiz.json 只用来核题目结构）：
+ *   规模（汉字、实质段）、关键词命中与占比、表格结构、失效模式清单、
+ *   quiz 的题目结构与接地情况，全部从正文本身数出来。
+ * 计数口径照正文自己写的那一条：实质段＝以换行分隔、≥35 汉字者；
+ * 占比＝命中段汉字／实质段汉字合计（分子是汉字，不是段数）。
  */
 
 'use strict';
@@ -15,107 +16,248 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'jichu-huli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/jichu-huli/units.json —— 章节目录是否已脱离仓库？');
-}
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
 
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'jichu-huli', 'units.json');
 const CHAPTER = '2';
-const KEYS = ['3.1.2'];
+const SLUG = '02-anquan-quanyi';
+const TITLE = '核对不是问一句，是给患者一次纠正你的资格';
 
-const load = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
+/** 正文自定的口径：一段至少 35 个汉字才算实质段 */
+const MIN_SEG = 35;
+/** 判「接地」用的连续汉字长度 */
+const GRAM = 4;
 
-function chapterUnits(units) {
-  return units.units
-    .filter((u) => KEYS.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+const KEYWORDS = ['告知', '同意', '拒绝'];
 
-const sum = (d) => Object.values(d).reduce((a, b) => a + b, 0);
+/** 本章模型表（第 1 张）：识别的四种方式 */
+const MODEL = { index: 0, col: 1, name: '识别的四种方式' };
+const PREP = { index: 1, col: 0, name: '再核对的四个时点' };
+const STEPS = { index: 2, col: 0, name: '告知四要素' };
+const LIMITS = null;
+const LOG = null;
 
-function merge(list, field) {
-  const out = {};
-  for (const u of list) {
-    const src = (u.measure && u.measure[field]) || {};
-    for (const [k, v] of Object.entries(src)) out[k] = (out[k] || 0) + v;
+const readDoc = () => fs.readFileSync(DOC, 'utf8');
+
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
+
+/** 正文的段落层：以换行分隔，去掉标题、表格行、引用块与分隔线 */
+function paragraphs(text) {
+  const out = [];
+  for (const raw of String(text).replace(/\r\n/g, '\n').split('\n')) {
+    const s = raw.trim();
+    if (!s) continue;
+    if (/^#{1,6}\s/.test(s)) continue;
+    if (s.startsWith('|')) continue;
+    if (s.startsWith('>')) continue;
+    if (/^([-*]|\d+\.)\s+/.test(s)) {
+      out.push(s.replace(/^([-*]|\d+\.)\s+/, ''));
+      continue;
+    }
+    out.push(s);
   }
   return out;
 }
 
-function rank(dict) {
-  const tot = sum(dict);
-  return Object.entries(dict)
-    .map(([key, count]) => ({ key, count, share: tot ? count / tot : 0 }))
-    .sort((a, b) => b.count - a.count);
+/** 实质段：以换行分隔、≥35 汉字者 */
+function substantive(text) {
+  return paragraphs(text).filter((p) => hanzi(p) >= MIN_SEG);
 }
 
-function byBookSection(list) {
-  const out = new Map();
-  for (const u of list) {
-    const key = `教材第${u.chapter}章`;
-    const it = out.get(key) || { sec: key, units: 0, hanzi: 0 };
-    it.units += 1;
-    it.hanzi += u.hanzi;
-    out.set(key, it);
+/** 关键词命中：段数、命中段汉字、占实质段汉字的比例 */
+function keywordHits(words, segs) {
+  const list = segs || substantive(readDoc());
+  const total = list.reduce((a, p) => a + hanzi(p), 0);
+  return words.map((word) => {
+    const hit = list.filter((p) => p.includes(word));
+    const hitHanzi = hit.reduce((a, p) => a + hanzi(p), 0);
+    return {
+      word,
+      segs: hit.length,
+      segHanzi: hitHanzi,
+      share: total ? (hitHanzi / total) * 100 : 0,
+    };
+  });
+}
+
+/** 连续以 | 开头的行成一张表；rows 去掉表头与分隔行 */
+function tableBlocks(text) {
+  const blocks = [];
+  let cur = null;
+  for (const line of String(text).replace(/\r\n/g, '\n').split('\n')) {
+    const s = line.trim();
+    if (s.startsWith('|')) {
+      if (!cur) {
+        cur = [];
+        blocks.push(cur);
+      }
+      cur.push(s);
+    } else cur = null;
   }
-  return [...out.values()];
+  return blocks.map((b) => {
+    const cells = b.map((r) =>
+      r
+        .replace(/^\|/, '')
+        .replace(/\|$/, '')
+        .split('|')
+        .map((c) => c.trim())
+    );
+    return { head: cells[0] || [], rows: cells.slice(2) };
+  });
 }
 
-function citations(list) {
-  const counter = new Map();
-  for (const u of list) {
-    for (const m of u.prose.matchAll(/《([^》]+)》/g)) counter.set(m[1], (counter.get(m[1]) || 0) + 1);
+/** 第 i 张表的第 j 列（不含表头） */
+function column(i, j = 0, text) {
+  const b = tableBlocks(text || readDoc())[i];
+  return b ? b.rows.map((r) => r[j]) : [];
+}
+
+/** 某个二级节（按「## 一、」这类标题切）的正文 */
+function section(text, re) {
+  const lines = String(text).replace(/\r\n/g, '\n').split('\n');
+  const start = lines.findIndex((l) => /^##\s+/.test(l) && re.test(l));
+  if (start < 0) return '';
+  const rest = lines.slice(start + 1);
+  const end = rest.findIndex((l) => /^##\s+/.test(l));
+  return (end < 0 ? rest : rest.slice(0, end)).join('\n');
+}
+
+/** 失效模式：第五节里以加粗词开头的条目 */
+function failures() {
+  const body = section(readDoc(), /五、失效模式/);
+  return [...body.matchAll(/^-\s+\*\*(.+?)\*\*/gm)].map((m) => m[1].trim());
+}
+
+const occurrences = (text, term) => String(text).split(term).length - 1;
+
+/** 正文里长度为 n 的连续汉字片段集合 */
+function grams(text, n = GRAM) {
+  const out = new Set();
+  for (const seg of String(text).replace(/[^\u4e00-\u9fff]/g, ' ').split(/\s+/)) {
+    for (let i = 0; i + n <= seg.length; i += 1) out.add(seg.slice(i, i + n));
   }
-  const ranked = [...counter.entries()].sort((a, b) => b[1] - a[1]);
-  return { books: counter.size, total: sum(Object.fromEntries(counter)), top: ranked.slice(0, 3) };
+  return out;
 }
 
-function shape(list) {
-  const hanzi = list.reduce((a, u) => a + u.hanzi, 0);
+function model() {
+  return column(MODEL.index, MODEL.col || 0);
+}
+
+/** 再核对的四个时点 */
+function prep() {
+  return column(PREP.index, PREP.col || 0);
+}
+
+/** 告知四要素 */
+function steps() {
+  return column(STEPS.index, STEPS.col || 0);
+}
+
+/** 本章自己的叫法：identWays、recheckPoints、consentElements */
+const identWays = () => model();
+const recheckPoints = () => prep();
+const consentElements = () => steps();
+
+/** quiz 的结构与接地：check 题正确选项能对上几个四字原词 */
+function quizSummary(quiz, text) {
+  const body = grams(text || readDoc());
+  const qs = Array.isArray(quiz.questions) ? quiz.questions : [];
+  const stage = { pre: 0, check: 0, post: 0 };
+  for (const q of qs) if (stage[q.stage] !== undefined) stage[q.stage] += 1;
+  const hits = qs
+    .filter((q) => q.stage === 'check')
+    .map((q) => {
+      const right = String((q.options || [])[q.correct] || '');
+      return { question: q.question, grams: [...grams(right)].filter((g) => body.has(g)) };
+    });
   return {
-    units: list.length,
-    hanzi,
-    mean: list.length ? Math.round(hanzi / list.length) : 0,
-    valueLike: list.reduce((a, u) => a + u.measure.valueLike, 0),
-    digits: list.reduce((a, u) => a + u.measure.digits, 0),
+    total: qs.length,
+    stage,
+    check: hits.length,
+    grounded: hits.filter((h) => h.grams.length).length,
+    rich: hits.filter((h) => new Set(h.grams).size >= 2).length,
+    hits,
+    spread: new Set(qs.map((q) => q.correct)).size,
   };
 }
 
-/** 取穴与刺灸的操作词：本章正文里出现多少处「定位／分寸／直刺／灸」类的可执行指令 */
-function hands(list) {
-  const WORDS = ['定位', '骨度', '分寸', '同身寸', '直刺', '斜刺', '平刺', '艾灸', '温针灸', '留针', '禁针', '禁灸'];
-  const pairs = WORDS.map((w) => [w, list.reduce((a, u) => a + u.prose.split(w).length - 1, 0)]);
-  return Object.fromEntries(pairs).constructor === Object
-    ? pairs.filter(([, c]) => c).sort((a, b) => b[1] - a[1])
-    : pairs;
+function analyze() {
+  const text = readDoc();
+  const quiz = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const segs = substantive(text);
+  return {
+    hanzi: hanzi(text),
+    paragraphs: paragraphs(text).length,
+    segs: segs.length,
+    segHanzi: segs.reduce((a, p) => a + hanzi(p), 0),
+    keywords: keywordHits(KEYWORDS, segs),
+    tables: tableBlocks(text),
+    model: model(),
+    failures: failures(),
+    quiz: quizSummary(quiz, text),
+  };
 }
 
-module.exports = { CHAPTER, KEYS, load, chapterUnits, merge, rank, byBookSection, citations, shape, hands, sum };
+function main() {
+  const r = analyze();
+  console.log(`基础护理学 · 第 ${CHAPTER} 章 · ${TITLE}`);
+  console.log('');
+  console.log(`正文 ${r.hanzi.toLocaleString('en-US')} 汉字 · 段落 ${r.paragraphs} 个 · 实质段 ${r.segs} 段（≥${MIN_SEG} 汉字／${r.segHanzi.toLocaleString('en-US')} 字）`);
+  console.log('');
+  console.log('关键词命中（占比＝命中段汉字／实质段汉字合计）：');
+  for (const k of r.keywords) {
+    console.log(`  ${k.word}\t${k.segs} 段\t${k.share.toFixed(1)}%`);
+  }
+  console.log('');
+  console.log(`表格 ${r.tables.length} 张：${r.tables.map((t) => `${t.rows.length} 行`).join(' · ')}`);
+  console.log(`${MODEL.name}（${r.model.length} 项）：${r.model.join(' / ')}`);
+  console.log(`${PREP.name}（${prep().length} 项）：${prep().join(' / ')}`);
+  console.log(`${STEPS.name}（${steps().length} 项）：${steps().join(' → ')}`);
 
-if (require.main === module) {
-  const data = load();
-  const list = chapterUnits(data);
-  const s = shape(list);
-  console.log('═══ 中药化学 · 第 2 章 技能操作中的患者安全与权益保护 ═══');
-  console.log(`单元 ${s.units} · 汉字 ${s.hanzi} · 平均 ${s.mean} 字/单元`);
-  console.log(`数值类命中 ${s.valueLike} · 数字字符 ${s.digits}`);
-  console.log('\n按教材章：');
-  for (const sec of byBookSection(list)) console.log(`  ${sec.sec}  ${sec.units} 单元 · ${sec.hanzi} 字`);
-  console.log('\n三辨重心：');
-  for (const v of rank(merge(list, 'views'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  console.log('\n四位面覆盖：');
-  for (const v of rank(merge(list, 'levels'))) console.log(`  ${v.key}\t${v.count}\t${(v.share * 100).toFixed(1)}%`);
-  const c = citations(list);
-  console.log(`\n引书 ${c.books} 部 · 引用 ${c.total} 次 · 前三：${c.top.map(([n, k]) => `${n}(${k})`).join('、')}`);
-  console.log('\n操作词命中：' + hands(list).map(([w, k]) => `${w}×${k}`).join('  '));
-  for (const u of list) console.log(`  ${u.sub}\t${u.title}\t${u.hanzi}字`);
-  console.log('※ 教学样例：数字由 standards/jichu-huli/units.json 现算，不构成诊疗建议，不能替代医师面诊。');
+  console.log('');
+  console.log(`失效模式（${r.failures.length} 条）：${r.failures.join(' / ')}`);
+  console.log('');
+  const q = r.quiz;
+  console.log(
+    `quiz ${q.total} 题（pre ${q.stage.pre} / check ${q.stage.check} / post ${q.stage.post}）· check 题接地 ${q.grounded} 道（带两个以上原文词组的 ${q.rich} 道）· 答案落在 ${q.spread} 个位置`
+  );
+  console.log('');
+  console.log('※ 以上规模、命中、结构与接地情况全部由本章正文现算，无手打常数；改正文后重跑即可复核。');
+  console.log('※ 本章为教学材料，不构成医学意见、诊断或护理指导；操作与判定要求以现行规范与所在机构制度为准。');
 }
+
+if (require.main === module) main();
+
+module.exports = {
+  CHAPTER,
+  SLUG,
+  TITLE,
+  DOC,
+  QUIZ,
+  MIN_SEG,
+  KEYWORDS,
+  readDoc,
+  hanzi,
+  paragraphs,
+  substantive,
+  keywordHits,
+  tableBlocks,
+  column,
+  section,
+  failures,
+  occurrences,
+  grams,
+  MODEL,
+  PREP,
+  STEPS,
+  LIMITS,
+  LOG,
+  model,
+  quizSummary,
+  analyze,
+  prep,
+  steps,
+  identWays,
+  recheckPoints,
+  consentElements,
+};

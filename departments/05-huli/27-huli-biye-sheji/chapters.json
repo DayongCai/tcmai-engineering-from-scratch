@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-xuan-ti",
-      "title": "选题：从护理问题到可评价方案",
+      "title": "选题在开题前就定了成败：缺口必须算得出来",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-xuan-ti/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-zhengju-chaxun",
-      "title": "证据检索与循证方案设计",
+      "title": "证据检索的目的不是找到支持，是找到边界",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-zhengju-chaxun/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-ganyu-shixian",
-      "title": "干预实现与伦理审查",
+      "title": "伦理审查不是盖章，是把受试者的代价提前算清",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-ganyu-shixian/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-jieju-pingjia",
-      "title": "指标与结局评价",
+      "title": "指标选错，做得再规范也回答不了问题",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-jieju-pingjia/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-lunwen-dabian",
-      "title": "论文写作与答辩",
+      "title": "答辩评的是判断链，不是字数与图表的数量",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-lunwen-dabian/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-zhishi-yijiao",
-      "title": "知识移交：护理方案与交接",
+      "title": "毕设的最后一关，是别人能不能接着用",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-zhishi-yijiao/docs/zh.md",

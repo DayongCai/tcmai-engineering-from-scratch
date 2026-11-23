@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 护理心理学 · 第 11 章 老年与临终患者的心理护理：本章统计口径
+ * 护理心理学 · 第 11 章 老年与临终患者的心理护理
  * 课程: departments/05-huli/17-huli-xinli-xue/chapters/11-ch11/docs/zh.md
- * 数据: standards/huli-xinli-xue/units.json（18 单元层，每单元带三辨与四位面词频）
- * 取数: standards/huli-xinli-xue/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 本脚本只读本章正文与本章 quiz 现算：节数、节标题、汉字数、表格数据行、
+ * 引语条数、核心词出现次数、quiz 结构，全部当场读出，不引用 standards/，
+ * 也不手打任何数字——手打的数会在正文改版后静默过期，现算的数对不上就报错。
  */
 
 'use strict';
@@ -15,87 +14,131 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'huli-xinli-xue', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/huli-xinli-xue/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'huli-xinli-xue', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'huli-xinli-xue', 'chapter-map.json');
-const CHAPTER = '11';
+const CHAPTER = 11;
 const SLUG = '11-ch11';
+const TITLE = '老年与临终患者的心理护理';
+const TERMS = ['基线', '孤独', '意愿', '临终'];
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const QUIZ = path.join(__dirname, '..', 'quiz.json');
+const STAGES = ['pre', 'check', 'post'];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+const hanzi = (s) => (s.match(/[\u4e00-\u9fff]/g) || []).length;
+const nonWs = (s) => s.replace(/\s/g, '').length;
+
+function readDoc() {
+  if (!fs.existsSync(DOC)) throw new Error('缺正文：' + DOC);
+  return fs.readFileSync(DOC, 'utf8');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function parseDoc(md) {
+  const lines = md.split(/\r?\n/);
+  const title = ((lines.find((l) => /^#\s+/.test(l)) || '').replace(/^#\s+/, '')).trim();
+  const sections = [];
+  const tables = [];
+  let quotes = 0;
+  let cur = null;
+  let table = null;
+  for (const line of lines) {
+    if (/^##\s+/.test(line)) {
+      cur = { title: line.replace(/^##\s+/, '').trim(), hanzi: 0, tables: 0 };
+      sections.push(cur);
+      table = null;
+      continue;
+    }
+    if (/^\|/.test(line)) {
+      if (!table) {
+        table = { rows: 0 };
+        tables.push(table);
+        if (cur) cur.tables += 1;
+      }
+      if (!/^\|[\s:|\-]+\|?\s*$/.test(line)) table.rows += 1;
+      continue;
+    }
+    table = null;
+    if (/^\s*>/.test(line)) quotes += 1;
+    if (cur) cur.hanzi += hanzi(line);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  const body = lines.filter((l) => !/^#/.test(l)).join('\n');
+  const counts = {};
+  for (const t of TERMS) counts[t] = (body.match(new RegExp(t, 'g')) || []).length;
+  return {
+    title,
+    lines: lines.length,
+    hanzi: hanzi(md),
+    chars: nonWs(md),
+    sections,
+    tables: tables.length,
+    tableRows: tables.reduce((a, t) => a + t.rows, 0),
+    quotes,
+    counts,
+    hasMotto: md.includes('MOTTO'),
+    hasProblem: md.includes('PROBLEM'),
+    hasRoots: md.includes('环境逼迫') && md.includes('知识积累'),
+    hasBoundary: lines.some((l) => /^##\s/.test(l) && /代价与边界/.test(l)),
+    hasDisclaimer: md.includes('免责声明'),
+  };
 }
 
-function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`护理心理学 · 第 ${CHAPTER} 章 ${cm.title}`);
-  console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
-  console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+function auditQuiz() {
+  const q = JSON.parse(fs.readFileSync(QUIZ, 'utf8'));
+  const qs = q.questions || [];
+  const byStage = { pre: 0, check: 0, post: 0 };
+  const issues = [];
+  const slots = new Set();
+  let minExplain = Infinity;
+  for (const [i, item] of qs.entries()) {
+    const at = `第 ${i + 1} 题`;
+    if (!STAGES.includes(item.stage)) issues.push(`${at} stage 非法：${item.stage}`);
+    else byStage[item.stage] += 1;
+    if (!item.question) issues.push(`${at} 缺题干`);
+    if (!Array.isArray(item.options) || item.options.length !== 4) issues.push(`${at} 选项不是 4 个`);
+    if (!Number.isInteger(item.correct) || item.correct < 0 || item.correct > 3) {
+      issues.push(`${at} correct 不是 0..3 整数`);
+    } else {
+      slots.add(item.correct);
+    }
+    const n = hanzi(item.explain || '');
+    if (n < 30) issues.push(`${at} explain 只有 ${n} 汉字（<30）`);
+    if (n < minExplain) minExplain = n;
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
-  console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/huli-xinli-xue/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  for (const s of STAGES) if (byStage[s] < 1) issues.push(`缺 ${s} 段题目`);
+  if (qs.length < 5) issues.push(`总题数 ${qs.length} < 5`);
+  if (slots.size < 3) issues.push(`答案位只落在 ${slots.size} 个位置上，未打散`);
+  const grounded = qs.filter(
+    (x) => x.stage === 'check' && TERMS.some((t) => (x.question || '').includes(t)),
+  );
+  if (grounded.length < 2) issues.push(`接地 check 题只有 ${grounded.length} 道（<2）`);
+  return { n: qs.length, byStage, slots: [...slots].sort(), minExplain, grounded: grounded.length, issues };
 }
 
-if (require.main === module) main();
+function report() {
+  const s = parseDoc(readDoc());
+  const q = auditQuiz();
+  console.log(`护理心理学 · 第 ${CHAPTER} 章 ${TITLE}`);
+  console.log('');
+  console.log(`正文：${s.lines} 行 · ${s.sections.length} 节 · ${s.hanzi} 汉字 · ${s.chars} 非空白字符`);
+  console.log(`表格：${s.tables} 张 · ${s.tableRows} 行（含表头）· 引语 ${s.quotes} 条`);
+  console.log('结构：' + ['MOTTO', 'PROBLEM', '双根因', '代价与边界', '免责声明']
+    .map((k, i) => `${k} ${[s.hasMotto, s.hasProblem, s.hasRoots, s.hasBoundary, s.hasDisclaimer][i] ? '✓' : '✗'}`)
+    .join(' · '));
+  console.log('');
+  console.log('节与篇幅：');
+  for (const x of s.sections) console.log(`  ${x.title} — ${x.hanzi} 汉字`);
+  console.log('');
+  console.log('核心词出现次数（正文全文现数）：');
+  for (const t of TERMS) console.log(`  ${t}：${s.counts[t]}`);
+  console.log('');
+  console.log(
+    `quiz：${q.n} 题（pre ${q.byStage.pre} · check ${q.byStage.check} · post ${q.byStage.post}）` +
+      `· 答案位 ${q.slots.join('/')} · explain 最短 ${q.minExplain} 汉字 · 接地 check ${q.grounded} 道`,
+  );
+  console.log(`自检：${q.issues.length === 0 ? '结构 0 处不合规' : q.issues.join('；')}`);
+  console.log('');
+  console.log(`判读：临终期「能恢复的事」在减少，唯一不减少的是「还能决定的事」——把决定权一次次交回他手上。`);
+  console.log('教学边界：本章为教学材料，只训练识别、支持与交接，不写量表切点、剂量与疗程，不构成诊断或治疗依据。');
+}
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+if (require.main === module) report();
+
+module.exports = { CHAPTER, SLUG, TITLE, TERMS, readDoc, parseDoc, auditQuiz, report };

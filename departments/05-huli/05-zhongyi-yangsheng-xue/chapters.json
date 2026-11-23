@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-jiben-yuanze",
-   "title": "养生的基本原则：天人相应",
+   "title": "养生的第一判断不是做什么，而是此刻该顺着什么",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-jiben-yuanze/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-sishi-yangsheng",
-   "title": "四时养生与节气调摄",
+   "title": "节气不是日历装饰，它决定这一周该加还是该减",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-sishi-yangsheng/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-yinshi-tizhi",
-   "title": "饮食养生与体质配膳",
+   "title": "吃什么由体质和当下状态定，不由食物排行榜定",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-yinshi-tizhi/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-qingzhi-yangsheng",
-   "title": "情志养生与疏泄",
+   "title": "情绪不是要消灭的敌人，是要按时疏通的管道",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-qingzhi-yangsheng/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-yundong-gongfa",
-   "title": "运动养生与传统功法",
+   "title": "功法的效果不在动作多难，在能不能天天做到不受伤",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-yundong-gongfa/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-qiju-shuimian",
-   "title": "起居作息与睡眠",
+   "title": "作息是最便宜的养生手段，也是最难坚持的那一个",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-qiju-shuimian/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-zhiweibing-jiankang",
-   "title": "治未病与健康管理",
+   "title": "治未病不是多查几项，而是把风险变成可跟踪的条目",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-zhiweibing-jiankang/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-xiaoguo-celiang",
-   "title": "养生干预的效果测量",
+   "title": "养生有没有效，要看同一把尺子量了两次",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-xiaoguo-celiang/docs/zh.md",

@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-gaishu-lilun",
-   "title": "内科护理概述与理论基础",
+   "title": "不诊断不等于不判断：内科护理的分寸全在观察的颗粒度上",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-gaishu-lilun/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-pinggu-guancha",
-   "title": "内科护理评估与病情观察",
+   "title": "评估的价值不在第一次问全，而在第二次问得比第一次少",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-pinggu-guancha/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-jishu-anquan",
-   "title": "内科常用护理技术与安全",
+   "title": "技术安全的关口不在禁忌表上，在开做前那三个必须核对的动作里",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-jishu-anquan/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-zhengzhuang-huli",
-   "title": "内科常见症状的护理",
+   "title": "症状是同一个词，背后却是五条互不通用的观察线",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-zhengzhuang-huli/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-yaowu-jingmai",
-   "title": "药物治疗与静脉治疗的护理安全",
+   "title": "给药的错很少错在没对上，多错在对上之后再没有人看那一眼",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-yaowu-jingmai/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-yingyang-huli",
-   "title": "内科营养支持与饮食护理",
+   "title": "「吃不下」不是一句主诉，而是一笔当场就能算出来的缺口",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-yingyang-huli/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-huxi-huli",
-   "title": "呼吸系统疾病护理",
+   "title": "呼吸的恶化很少是突然的，多半是「再观察一下」攒出来的",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-huxi-huli/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-xunhuan-huli",
-   "title": "循环系统疾病护理",
+   "title": "循环的账要按天算：体重与出入量比一次听诊更早开口",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-xunhuan-huli/docs/zh.md",
@@ -77,7 +77,7 @@
   {
    "n": 9,
    "slug": "09-xiaohua-huli",
-   "title": "消化系统疾病护理",
+   "title": "消化道先看进出对不对得上，再看疼在哪里",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/09-xiaohua-huli/docs/zh.md",
@@ -86,7 +86,7 @@
   {
    "n": 10,
    "slug": "10-miniao-huli",
-   "title": "泌尿系统疾病护理",
+   "title": "尿量是内科最诚实的一项指标，前提是有人按同一个口径记",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/10-miniao-huli/docs/zh.md",
@@ -95,7 +95,7 @@
   {
    "n": 11,
    "slug": "11-xueye-huli",
-   "title": "血液系统疾病护理",
+   "title": "血液科的危险不在出血本身，在「看起来还好」的那几个小时",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/11-xueye-huli/docs/zh.md",
@@ -104,7 +104,7 @@
   {
    "n": 12,
    "slug": "12-neifenmi-huli",
-   "title": "内分泌与代谢性疾病护理",
+   "title": "内分泌的观察要跨过「今天」：一次测量说明不了一件事",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/12-neifenmi-huli/docs/zh.md",
@@ -113,7 +113,7 @@
   {
    "n": 13,
    "slug": "13-fengshi-shenjing",
-   "title": "风湿免疫与神经系统疾病护理",
+   "title": "风湿与神经合成一章，因为两者的失能都比疼痛更早发生",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/13-fengshi-shenjing/docs/zh.md",
@@ -122,7 +122,7 @@
   {
    "n": 14,
    "slug": "14-chuanran-zhiliang",
-   "title": "传染病护理、质量风险与平台",
+   "title": "传染、质量、平台三件事，共用一条「先防住、再留痕」的次序",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/14-chuanran-zhiliang/docs/zh.md",

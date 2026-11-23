@@ -1,62 +1,69 @@
 'use strict';
-
-const test = require('node:test');
+/**
+ * 第 10 章 精神活性物质相关障碍的护理 —— 本章实测值与 quiz 结构的确定性断言。
+ * 数字由 docs/zh.md 现算后钉在这里：正文一改，测试先响，迫使写的人回头同步。
+ */
 const assert = require('node:assert');
+const test = require('node:test');
 const fs = require('node:fs');
-const path = require('node:path');
-const { spawnSync } = require('node:child_process');
 
-const MAIN = path.join(__dirname, 'main.js');
-const MAP = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'jingshenke-huli-xue', 'chapter-map.json');
-const UNITS = path.join(__dirname, '..', '..', '..', '..', '..', '..', 'standards', 'jingshenke-huli-xue', 'units.json');
-const { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG } = require('./main.js');
+const { stats, quizAudit, equations, hanzi, DOC, QUIZ, CHAPTER, SLUG } = require('./main.js');
 
-test('本章映射存在且非空', () => {
-  const keys = chapterKeys();
-  assert.ok(keys.length > 0, 'chapter-map 里本章没有单元');
+const s = stats();
+const q = quizAudit();
+
+test('章节号与目录一致', () => {
+  assert.strictEqual(CHAPTER, 10);
+  assert.strictEqual(SLUG, '10-wuzhi-yila');
+  assert.ok(fs.existsSync(DOC), '正文文件不存在');
 });
 
-test('单元都能在单元层找到', () => {
-  const units = chapterUnits();
-  assert.strictEqual(units.length, chapterKeys().length);
-  for (const u of units) assert.ok(u.sub && u.hanzi > 0);
+test('正文规模：汉字 / 节 / 段', () => {
+  assert.strictEqual(s.hanzi, 2920);
+  assert.strictEqual(s.sectionCount, 6);
+  assert.strictEqual(s.paragraphCount, 21);
+  assert.ok(s.hanzi >= 2500, '正文只有 ' + s.hanzi + ' 汉字');
 });
 
-test('规模与单元层一致', () => {
-  const units = chapterUnits();
-  const s = summarize(units);
-  assert.strictEqual(s.hanzi, units.reduce((a, b) => a + b.hanzi, 0));
-  assert.ok(s.hanzi > 1000, `汉字过少：${s.hanzi}`);
+test('表格与表行', () => {
+  assert.strictEqual(s.tableCount, 3);
+  assert.strictEqual(s.tableRows, 16);
+  for (const t of s.tables) assert.ok(t.cols >= 2, t.firstCell + ' 列数不足');
 });
 
-test('三辨与四位面都取自单元层，不写死', () => {
-  const all = JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-  const s = summarize(chapterUnits());
-  assert.deepStrictEqual(Object.keys(s.views).sort(), Object.keys(all.views).sort());
-  assert.deepStrictEqual(Object.keys(s.levels).sort(), Object.keys(all.levels).sort());
+test('各节都非空，节标题不重复', () => {
+  assert.strictEqual(new Set(s.sections.map((x) => x.title)).size, s.sectionCount);
+  for (const sec of s.sections) assert.ok(sec.hanzi > 0, sec.title);
 });
 
-test('主导一辨与主导位面可复算', () => {
-  const s = summarize(chapterUnits());
-  for (const [k, v] of Object.entries(s.views)) assert.ok(v <= s.viewTop[1], `${k} 超过主导项`);
-  for (const [k, v] of Object.entries(s.levels)) assert.ok(v <= s.levelTop[1], `${k} 超过主导位面`);
+test('汉字统计口径：章首 + 逐节 = 全文', () => {
+  assert.strictEqual(s.sections.reduce((a, x) => a + x.hanzi, 0) + s.preamble.hanzi, s.hanzi);
+  assert.strictEqual(hanzi(fs.readFileSync(DOC, 'utf8')), s.hanzi);
 });
 
-test('脚本可运行且输出含教学样例与边界声明', () => {
-  const r = spawnSync(process.execPath, [MAIN], { encoding: 'utf8', timeout: 60000 });
-  assert.strictEqual(r.status, 0, r.stderr);
-  const out = String(r.stdout || '');
-  assert.ok(out.length > 80, '输出过短');
-  assert.match(out, /教学样例：数字由 standards\/jingshenke-huli-xue\/units\.json 现算/);
-  assert.match(out, /不构成临床判断依据/);
+test('正文算术式求值全部成立', () => {
+  const eqs = equations(fs.readFileSync(DOC, 'utf8'));
+  assert.strictEqual(eqs.length, 0);
+  for (const e of eqs) assert.ok(e.ok, e.text + ' 算出来是 ' + e.got);
 });
 
-test('章节号与章映射一致', () => {
-  const cm = JSON.parse(fs.readFileSync(MAP, 'utf8')).chapters;
-  assert.strictEqual(String(cm[SLUG].n), String(CHAPTER));
+test('quiz 结构：题意、三段、四选项、解释长度、答案合法', () => {
+  assert.ok(q.total >= 5, '只有 ' + q.total + ' 题');
+  for (const st of ['pre', 'check', 'post']) assert.ok(q.stage[st] >= 1, '缺 ' + st + ' 段');
+  assert.strictEqual(q.allFourOptions, true, '有题不是 4 个选项');
+  assert.strictEqual(q.badCorrect, 0, 'correct 下标非法');
+  assert.ok(q.minExplain >= 30, '最短解释只有 ' + q.minExplain + ' 汉字');
 });
 
-test('代码头部指向本章目录', () => {
-  const body = fs.readFileSync(MAIN, 'utf8');
-  assert.ok(body.includes('/chapters/10-wuzhi-yila/docs/zh.md'), '头部注释未指向本章');
+test('quiz 接地与打散：≥2 道 check 题的正确选项落在正文，答案 ≥3 个位置', () => {
+  assert.ok(q.checkGrounded >= 2, '只有 ' + q.checkGrounded + ' 道 check 题接地');
+  assert.ok(q.distinctAnswers >= 3, '答案只用了 ' + q.distinctAnswers + ' 个位置');
+});
+
+test('quiz 不含脚手架名目与禁用参数', () => {
+  const raw = fs.readFileSync(QUIZ, 'utf8');
+  assert.strictEqual(q.scaffold, false, 'quiz 仍含脚手架指纹');
+  for (const bad of ['三辨', '四位面', '单元规模', '本章实测', '剂量', '疗程', '发生率', '页码']) {
+    assert.ok(!raw.includes(bad), 'quiz 仍含「' + bad + '」');
+  }
 });

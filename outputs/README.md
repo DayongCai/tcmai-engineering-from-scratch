@@ -2887,8 +2887,8 @@
 | skill | 出科考核与病例复盘 | 出科考核与病例复盘——按「门诊接诊 → 病种轮转 → 灸罐处置 → 推拿科 → 出科考核」走一遍本章判据 | 368 | [`skill-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 · 提示词 | — | 701 | [`prompt-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-chuke-kaohe.md) |
 | skill | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾——按「考核的五项结构 → 病例汇报的四问 → 病历与知情同意：自查六个字段 → 不良事件复盘：问五句，不追一个人」走一遍本章判据 | 588 | [`skill-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
-| prompt | 出科考核与护理个案复盘 · 提示词 | — | 474 | [`prompt-06-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
-| skill | 出科考核与护理个案复盘 | 出科考核与护理个案复盘——按「入科准备 → 专科执行 → 观察记录 → 出科考核与复盘」走一遍本章判据 | 367 | [`skill-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
+| prompt | 出科考的是一例能不能讲透，不是做过多少项 · 提示词 | — | 629 | [`prompt-06-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
+| skill | 出科考的是一例能不能讲透，不是做过多少项 | 出科考的是一例能不能讲透，不是做过多少项——按「出科考的三层：会做、会看、会讲 → 个案复盘：六栏格式 → 评价维度与不合格的判据 → 六站之间：迁移比积累更重要」走一遍本章判据 | 531 | [`skill-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考核与病例复盘 · 提示词 | — | 441 | [`prompt-06-chuke-kaohe.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
 | skill | 出科考核与病例复盘 | 出科考核与病例复盘——按「门诊 → 检查 → 治疗 → 考核」走一遍本章判据 | 371 | [`skill-chuke-kaohe.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 
@@ -5249,8 +5249,8 @@
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
 | skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -5299,8 +5299,8 @@
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
 | skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -5322,8 +5322,8 @@
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
 | skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -7582,8 +7582,8 @@
 | skill | 出科考核与病例复盘 | 出科考核与病例复盘——按「门诊接诊 → 病种轮转 → 灸罐处置 → 推拿科 → 出科考核」走一遍本章判据 | 368 | [`skill-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 · 提示词 | — | 701 | [`prompt-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-chuke-kaohe.md) |
 | skill | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾——按「考核的五项结构 → 病例汇报的四问 → 病历与知情同意：自查六个字段 → 不良事件复盘：问五句，不追一个人」走一遍本章判据 | 588 | [`skill-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
-| prompt | 出科考核与护理个案复盘 · 提示词 | — | 474 | [`prompt-06-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
-| skill | 出科考核与护理个案复盘 | 出科考核与护理个案复盘——按「入科准备 → 专科执行 → 观察记录 → 出科考核与复盘」走一遍本章判据 | 367 | [`skill-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
+| prompt | 出科考的是一例能不能讲透，不是做过多少项 · 提示词 | — | 629 | [`prompt-06-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
+| skill | 出科考的是一例能不能讲透，不是做过多少项 | 出科考的是一例能不能讲透，不是做过多少项——按「出科考的三层：会做、会看、会讲 → 个案复盘：六栏格式 → 评价维度与不合格的判据 → 六站之间：迁移比积累更重要」走一遍本章判据 | 531 | [`skill-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考核与病例复盘 · 提示词 | — | 441 | [`prompt-06-chuke-kaohe.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
 | skill | 出科考核与病例复盘 | 出科考核与病例复盘——按「门诊 → 检查 → 治疗 → 考核」走一遍本章判据 | 371 | [`skill-chuke-kaohe.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 
@@ -7603,8 +7603,8 @@
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
 | skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -7657,8 +7657,8 @@
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
 | skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -7680,8 +7680,8 @@
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
 | skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -9086,8 +9086,8 @@
 | skill | 出科考核与病例复盘 | 出科考核与病例复盘——按「门诊接诊 → 病种轮转 → 灸罐处置 → 推拿科 → 出科考核」走一遍本章判据 | 368 | [`skill-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 · 提示词 | — | 701 | [`prompt-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-chuke-kaohe.md) |
 | skill | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾——按「考核的五项结构 → 病例汇报的四问 → 病历与知情同意：自查六个字段 → 不良事件复盘：问五句，不追一个人」走一遍本章判据 | 588 | [`skill-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
-| prompt | 出科考核与护理个案复盘 · 提示词 | — | 474 | [`prompt-06-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
-| skill | 出科考核与护理个案复盘 | 出科考核与护理个案复盘——按「入科准备 → 专科执行 → 观察记录 → 出科考核与复盘」走一遍本章判据 | 367 | [`skill-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
+| prompt | 出科考的是一例能不能讲透，不是做过多少项 · 提示词 | — | 629 | [`prompt-06-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
+| skill | 出科考的是一例能不能讲透，不是做过多少项 | 出科考的是一例能不能讲透，不是做过多少项——按「出科考的三层：会做、会看、会讲 → 个案复盘：六栏格式 → 评价维度与不合格的判据 → 六站之间：迁移比积累更重要」走一遍本章判据 | 531 | [`skill-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考核与病例复盘 · 提示词 | — | 441 | [`prompt-06-chuke-kaohe.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
 | skill | 出科考核与病例复盘 | 出科考核与病例复盘——按「门诊 → 检查 → 治疗 → 考核」走一遍本章判据 | 371 | [`skill-chuke-kaohe.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 
@@ -9107,8 +9107,8 @@
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
 | skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -9159,8 +9159,8 @@
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
 | skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -9182,8 +9182,8 @@
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
 | skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -9199,889 +9199,889 @@
 
 > Core · 第 2 学期 · 已产出 12 章
 
-#### 第 1 章 · 中医护理的源流与整体护理观
+#### 第 1 章 · 中医护理的起点是「先看人、再动手」的顺序
 
 `01-zhongyi-huli-jichu/chapters/01-yuanliu-zhengti/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医护理的源流与整体护理观 · 提示词 | — | 457 | [`prompt-01-yuanliu-zhengti.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/01-yuanliu-zhengti/outputs/prompt-01-yuanliu-zhengti.md) |
-| skill | 中医护理的源流与整体护理观 | 中医护理的源流与整体护理观——按「立整体观 → 辨证 → 技术 → 饮食起居情志 → 程序与观察 → 文书伦理」走一遍本章判据 | 384 | [`skill-yuanliu-zhengti.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/01-yuanliu-zhengti/outputs/skill-yuanliu-zhengti.md) |
+| prompt | 中医护理的起点是「先看人、再动手」的顺序 · 提示词 | — | 628 | [`prompt-01-yuanliu-zhengti.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/01-yuanliu-zhengti/outputs/prompt-01-yuanliu-zhengti.md) |
+| skill | 中医护理的起点是「先看人、再动手」的顺序 | 中医护理的起点是「先看人、再动手」的顺序——按「顺序是一条规范，不是一句口号 → 采集项：把「整体」拆成能填的格子 → 成组判据：三到四项同现才算一组 → 动作与边界：什么时候动手，什么时候停」走一遍本章判据 | 533 | [`skill-yuanliu-zhengti.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/01-yuanliu-zhengti/outputs/skill-yuanliu-zhengti.md) |
 
-#### 第 2 章 · 中医基础理论在护理中的应用
+#### 第 2 章 · 基础理论给的不是证名，是「哪一头偏了」的方向
 
 `01-zhongyi-huli-jichu/chapters/02-lilun-yingyong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医基础理论在护理中的应用 · 提示词 | — | 455 | [`prompt-02-lilun-yingyong.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/02-lilun-yingyong/outputs/prompt-02-lilun-yingyong.md) |
-| skill | 中医基础理论在护理中的应用 | 中医基础理论在护理中的应用——按「立整体观 → 辨证 → 技术 → 饮食起居情志 → 程序与观察 → 文书伦理」走一遍本章判据 | 383 | [`skill-lilun-yingyong.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/02-lilun-yingyong/outputs/skill-lilun-yingyong.md) |
+| prompt | 基础理论给的不是证名，是「哪一头偏了」的方向 · 提示词 | — | 654 | [`prompt-02-lilun-yingyong.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/02-lilun-yingyong/outputs/prompt-02-lilun-yingyong.md) |
+| skill | 基础理论给的不是证名，是「哪一头偏了」的方向 | 基础理论给的不是证名，是「哪一头偏了」的方向——按「理论进护理，解决的是「同症不同人」 → 采集项：四个系统各自问什么 → 成组判据：两轴四组，缺项即停 → 动作与边界：扶正祛邪落到具体安排」走一遍本章判据 | 556 | [`skill-lilun-yingyong.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/02-lilun-yingyong/outputs/skill-lilun-yingyong.md) |
 
-#### 第 3 章 · 四诊与辨证方法基础
+#### 第 3 章 · 四诊的分量在互相对得上，不在看得多
 
 `01-zhongyi-huli-jichu/chapters/03-sizhen-bianzheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 四诊与辨证方法基础 · 提示词 | — | 445 | [`prompt-03-sizhen-bianzheng.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/03-sizhen-bianzheng/outputs/prompt-03-sizhen-bianzheng.md) |
-| skill | 四诊与辨证方法基础 | 四诊与辨证方法基础——按「立整体观 → 辨证 → 技术 → 饮食起居情志 → 程序与观察 → 文书伦理」走一遍本章判据 | 377 | [`skill-sizhen-bianzheng.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/03-sizhen-bianzheng/outputs/skill-sizhen-bianzheng.md) |
+| prompt | 四诊的分量在互相对得上，不在看得多 · 提示词 | — | 634 | [`prompt-03-sizhen-bianzheng.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/03-sizhen-bianzheng/outputs/prompt-03-sizhen-bianzheng.md) |
+| skill | 四诊的分量在互相对得上，不在看得多 | 四诊的分量在互相对得上，不在看得多——按「四诊是一条链，不是四项检查 → 采集项与记录写法 → 成组判据：四轴互参，两轴同向才算一组 → 从判断到护理问题：表述、边界与交接」走一遍本章判据 | 543 | [`skill-sizhen-bianzheng.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/03-sizhen-bianzheng/outputs/skill-sizhen-bianzheng.md) |
 
-#### 第 4 章 · 中医护理技术总论与常用技术（一）
+#### 第 4 章 · 技术的第一道关是禁忌，不是手法
 
 `01-zhongyi-huli-jichu/chapters/04-jishu-zonglun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医护理技术总论与常用技术（一） · 提示词 | — | 466 | [`prompt-04-jishu-zonglun.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/04-jishu-zonglun/outputs/prompt-04-jishu-zonglun.md) |
-| skill | 中医护理技术总论与常用技术（一） | 中医护理技术总论与常用技术（一）——按「立整体观 → 辨证 → 技术 → 饮食起居情志 → 程序与观察 → 文书伦理」走一遍本章判据 | 388 | [`skill-jishu-zonglun.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/04-jishu-zonglun/outputs/skill-jishu-zonglun.md) |
+| prompt | 技术的第一道关是禁忌，不是手法 · 提示词 | — | 589 | [`prompt-04-jishu-zonglun.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/04-jishu-zonglun/outputs/prompt-04-jishu-zonglun.md) |
+| skill | 技术的第一道关是禁忌，不是手法 | 技术的第一道关是禁忌，不是手法——按「六要素闭环：技术不是一次动作 → 实施前评估：五个必查项 → 成组判据：能做的条件也是成组的 → 四类技术的动作与边界」走一遍本章判据 | 497 | [`skill-jishu-zonglun.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/04-jishu-zonglun/outputs/skill-jishu-zonglun.md) |
 
-#### 第 5 章 · 常用中医护理技术（二）
+#### 第 5 章 · 外治的效力与风险同源，差的只是边界清不清
 
 `01-zhongyi-huli-jichu/chapters/05-jishu-er/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 常用中医护理技术（二） · 提示词 | — | 449 | [`prompt-05-jishu-er.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/05-jishu-er/outputs/prompt-05-jishu-er.md) |
-| skill | 常用中医护理技术（二） | 常用中医护理技术（二）——按「立整体观 → 辨证 → 技术 → 饮食起居情志 → 程序与观察 → 文书伦理」走一遍本章判据 | 373 | [`skill-jishu-er.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/05-jishu-er/outputs/skill-jishu-er.md) |
+| prompt | 外治的效力与风险同源，差的只是边界清不清 · 提示词 | — | 606 | [`prompt-05-jishu-er.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/05-jishu-er/outputs/prompt-05-jishu-er.md) |
+| skill | 外治的效力与风险同源，差的只是边界清不清 | 外治的效力与风险同源，差的只是边界清不清——按「外治的四条通路与两个变量 → 实施前评估：外治特有的五项 → 成组判据：适应证与禁忌都是成组的 → 五类技术的动作与边界」走一遍本章判据 | 504 | [`skill-jishu-er.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/05-jishu-er/outputs/skill-jishu-er.md) |
 
-#### 第 6 章 · 饮食起居与情志护理
+#### 第 6 章 · 日常调护的量在节律，不在「吃点好的」
 
 `01-zhongyi-huli-jichu/chapters/06-yinshi-qingzhi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 饮食起居与情志护理 · 提示词 | — | 443 | [`prompt-06-yinshi-qingzhi.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/06-yinshi-qingzhi/outputs/prompt-06-yinshi-qingzhi.md) |
-| skill | 饮食起居与情志护理 | 饮食起居与情志护理——按「立整体观 → 辨证 → 技术 → 饮食起居情志 → 程序与观察 → 文书伦理」走一遍本章判据 | 375 | [`skill-yinshi-qingzhi.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/06-yinshi-qingzhi/outputs/skill-yinshi-qingzhi.md) |
+| prompt | 日常调护的量在节律，不在「吃点好的」 · 提示词 | — | 602 | [`prompt-06-yinshi-qingzhi.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/06-yinshi-qingzhi/outputs/prompt-06-yinshi-qingzhi.md) |
+| skill | 日常调护的量在节律，不在「吃点好的」 | 日常调护的量在节律，不在「吃点好的」——按「日常调护的对象是「一天」 → 采集项与记录写法 → 成组判据：四联同看，才谈「状态好坏」 → 动作与边界」走一遍本章判据 | 508 | [`skill-yinshi-qingzhi.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/06-yinshi-qingzhi/outputs/skill-yinshi-qingzhi.md) |
 
-#### 第 7 章 · 护理程序与中医护理
+#### 第 7 章 · 护理程序把「我看出来了」变成「别人能接上」
 
 `01-zhongyi-huli-jichu/chapters/07-chengxu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理程序与中医护理 · 提示词 | — | 444 | [`prompt-07-chengxu.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/07-chengxu/outputs/prompt-07-chengxu.md) |
-| skill | 护理程序与中医护理 | 护理程序与中医护理——按「立整体观 → 辨证 → 技术 → 饮食起居情志 → 程序与观察 → 文书伦理」走一遍本章判据 | 368 | [`skill-chengxu.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/07-chengxu/outputs/skill-chengxu.md) |
+| prompt | 护理程序把「我看出来了」变成「别人能接上」 · 提示词 | — | 637 | [`prompt-07-chengxu.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/07-chengxu/outputs/prompt-07-chengxu.md) |
+| skill | 护理程序把「我看出来了」变成「别人能接上」 | 护理程序把「我看出来了」变成「别人能接上」——按「程序的作用是让判断留下痕迹 → 评估：来源、核实与记录写法 → 归纳与优先级：护理问题要成组写 → 计划与评价：目标要能被第三个人判定」走一遍本章判据 | 533 | [`skill-chengxu.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/07-chengxu/outputs/skill-chengxu.md) |
 
-#### 第 8 章 · 病情观察与安全防护
+#### 第 8 章 · 观察的产出是一条可交接的变化，不是「看了一眼」
 
 `01-zhongyi-huli-jichu/chapters/08-guancha-anquan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 病情观察与安全防护 · 提示词 | — | 444 | [`prompt-08-guancha-anquan.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/08-guancha-anquan/outputs/prompt-08-guancha-anquan.md) |
-| skill | 病情观察与安全防护 | 病情观察与安全防护——按「立整体观 → 辨证 → 技术 → 饮食起居情志 → 程序与观察 → 文书伦理」走一遍本章判据 | 375 | [`skill-guancha-anquan.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/08-guancha-anquan/outputs/skill-guancha-anquan.md) |
+| prompt | 观察的产出是一条可交接的变化，不是「看了一眼」 · 提示词 | — | 632 | [`prompt-08-guancha-anquan.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/08-guancha-anquan/outputs/prompt-08-guancha-anquan.md) |
+| skill | 观察的产出是一条可交接的变化，不是「看了一眼」 | 观察的产出是一条可交接的变化，不是「看了一眼」——按「观察的单位是「变化」 → 采集项与记录写法 → 成组判据：风险靠组合识别 → 动作与边界：报告与转介的分界」走一遍本章判据 | 533 | [`skill-guancha-anquan.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/08-guancha-anquan/outputs/skill-guancha-anquan.md) |
 
-#### 第 9 章 · 常见症状的中医护理
+#### 第 9 章 · 症状护理的第一步是把症状问成可比较的量
 
 `01-zhongyi-huli-jichu/chapters/09-zhengzhuang-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 常见症状的中医护理 · 提示词 | — | 444 | [`prompt-09-zhengzhuang-huli.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/09-zhengzhuang-huli/outputs/prompt-09-zhengzhuang-huli.md) |
-| skill | 常见症状的中医护理 | 常见症状的中医护理——按「立整体观 → 辨证 → 技术 → 饮食起居情志 → 程序与观察 → 文书伦理」走一遍本章判据 | 377 | [`skill-zhengzhuang-huli.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/09-zhengzhuang-huli/outputs/skill-zhengzhuang-huli.md) |
+| prompt | 症状护理的第一步是把症状问成可比较的量 · 提示词 | — | 639 | [`prompt-09-zhengzhuang-huli.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/09-zhengzhuang-huli/outputs/prompt-09-zhengzhuang-huli.md) |
+| skill | 症状护理的第一步是把症状问成可比较的量 | 症状护理的第一步是把症状问成可比较的量——按「不可比较的描述不可照护 → 采集项与记录写法 → 成组判据：症状群比单症状有用 → 动作与边界」走一遍本章判据 | 546 | [`skill-zhengzhuang-huli.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/09-zhengzhuang-huli/outputs/skill-zhengzhuang-huli.md) |
 
-#### 第 10 章 · 老年、小儿与孕产妇护理基础
+#### 第 10 章 · 特殊人群的差别在「同一动作要改哪几处」
 
 `01-zhongyi-huli-jichu/chapters/10-teshu-renqun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 老年、小儿与孕产妇护理基础 · 提示词 | — | 457 | [`prompt-10-teshu-renqun.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/10-teshu-renqun/outputs/prompt-10-teshu-renqun.md) |
-| skill | 老年、小儿与孕产妇护理基础 | 老年、小儿与孕产妇护理基础——按「立整体观 → 辨证 → 技术 → 饮食起居情志 → 程序与观察 → 文书伦理」走一遍本章判据 | 381 | [`skill-teshu-renqun.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/10-teshu-renqun/outputs/skill-teshu-renqun.md) |
+| prompt | 特殊人群的差别在「同一动作要改哪几处」 · 提示词 | — | 654 | [`prompt-10-teshu-renqun.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/10-teshu-renqun/outputs/prompt-10-teshu-renqun.md) |
+| skill | 特殊人群的差别在「同一动作要改哪几处」 | 特殊人群的差别在「同一动作要改哪几处」——按「三类人的「改哪几处」 → 采集项与记录写法 → 成组判据：储备不足与代偿失衡的识别 → 动作与边界」走一遍本章判据 | 556 | [`skill-teshu-renqun.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/10-teshu-renqun/outputs/skill-teshu-renqun.md) |
 
-#### 第 11 章 · 护理文书、伦理与依法执业
+#### 第 11 章 · 记录既是照护的痕迹，也是执业的证据
 
 `01-zhongyi-huli-jichu/chapters/11-wenshu-lunli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理文书、伦理与依法执业 · 提示词 | — | 457 | [`prompt-11-wenshu-lunli.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/11-wenshu-lunli/outputs/prompt-11-wenshu-lunli.md) |
-| skill | 护理文书、伦理与依法执业 | 护理文书、伦理与依法执业——按「立整体观 → 辨证 → 技术 → 饮食起居情志 → 程序与观察 → 文书伦理」走一遍本章判据 | 379 | [`skill-wenshu-lunli.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/11-wenshu-lunli/outputs/skill-wenshu-lunli.md) |
+| prompt | 记录既是照护的痕迹，也是执业的证据 · 提示词 | — | 607 | [`prompt-11-wenshu-lunli.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/11-wenshu-lunli/outputs/prompt-11-wenshu-lunli.md) |
+| skill | 记录既是照护的痕迹，也是执业的证据 | 记录既是照护的痕迹，也是执业的证据——按「记录的读者不是你 → 采集项与记录写法 → 成组判据：一份合格记录的六项同现 → 动作与边界：知情同意、拒绝与执业范围」走一遍本章判据 | 511 | [`skill-wenshu-lunli.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/11-wenshu-lunli/outputs/skill-wenshu-lunli.md) |
 
-#### 第 12 章 · 健康教育、康复与质量管理
+#### 第 12 章 · 健康教育的成果是患者做对，不是我们讲过
 
 `01-zhongyi-huli-jichu/chapters/12-jiankang-jiaoyu-zhiliang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 健康教育、康复与质量管理 · 提示词 | — | 460 | [`prompt-12-jiankang-jiaoyu-zhiliang.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/12-jiankang-jiaoyu-zhiliang/outputs/prompt-12-jiankang-jiaoyu-zhiliang.md) |
-| skill | 健康教育、康复与质量管理 | 健康教育、康复与质量管理——按「立整体观 → 辨证 → 技术 → 饮食起居情志 → 程序与观察 → 文书伦理」走一遍本章判据 | 391 | [`skill-jiankang-jiaoyu-zhiliang.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/12-jiankang-jiaoyu-zhiliang/outputs/skill-jiankang-jiaoyu-zhiliang.md) |
+| prompt | 健康教育的成果是患者做对，不是我们讲过 · 提示词 | — | 632 | [`prompt-12-jiankang-jiaoyu-zhiliang.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/12-jiankang-jiaoyu-zhiliang/outputs/prompt-12-jiankang-jiaoyu-zhiliang.md) |
+| skill | 健康教育的成果是患者做对，不是我们讲过 | 健康教育的成果是患者做对，不是我们讲过——按「教育的证据是「做对一次」 → 采集项与记录写法 → 成组判据：三件事各有各的组合 → 动作与边界」走一遍本章判据 | 546 | [`skill-jiankang-jiaoyu-zhiliang.md`](../departments/05-huli/01-zhongyi-huli-jichu/chapters/12-jiankang-jiaoyu-zhiliang/outputs/skill-jiankang-jiaoyu-zhiliang.md) |
 
 ### 基础护理学
 
 > Core · 第 2 学期 · 已产出 14 章
 
-#### 第 1 章 · 护理综合技能概述与训练要求
+#### 第 1 章 · 技能练到能被打断再接着做完，才算练成
 
 `02-jichu-huli-xue/chapters/01-gaishu-gufan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：护理综合技能概述与训练要求 | — | 417 | [`prompt-01-gaishu-gufan.md`](../departments/05-huli/02-jichu-huli-xue/chapters/01-gaishu-gufan/outputs/prompt-01-gaishu-gufan.md) |
-| skill | 护理综合技能概述与训练要求 | 用《基础护理学》第 1 章「护理综合技能概述与训练要求」的单元层做可核对的教学材料。 | 519 | [`skill-01-gaishu-gufan.md`](../departments/05-huli/02-jichu-huli-xue/chapters/01-gaishu-gufan/outputs/skill-01-gaishu-gufan.md) |
+| prompt | 技能练到能被打断再接着做完，才算练成 · 提示词 | — | 581 | [`prompt-01-gaishu-gufan.md`](../departments/05-huli/02-jichu-huli-xue/chapters/01-gaishu-gufan/outputs/prompt-01-gaishu-gufan.md) |
+| skill | 技能练到能被打断再接着做完，才算练成 | 技能练到能被打断再接着做完，才算练成——按「训练练的其实是三件可观察的事 → 操作前的评估与核对：四个问题定去留 → 一次标准训练的步骤与判据 → 时限、责任人与记录字段」走一遍本章判据 | 487 | [`skill-01-gaishu-gufan.md`](../departments/05-huli/02-jichu-huli-xue/chapters/01-gaishu-gufan/outputs/skill-01-gaishu-gufan.md) |
 
-#### 第 2 章 · 技能操作中的患者安全与权益保护
+#### 第 2 章 · 核对不是问一句，是给患者一次纠正你的资格
 
 `02-jichu-huli-xue/chapters/02-anquan-quanyi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：技能操作中的患者安全与权益保护 | — | 419 | [`prompt-02-anquan-quanyi.md`](../departments/05-huli/02-jichu-huli-xue/chapters/02-anquan-quanyi/outputs/prompt-02-anquan-quanyi.md) |
-| skill | 技能操作中的患者安全与权益保护 | 用《基础护理学》第 2 章「技能操作中的患者安全与权益保护」的单元层做可核对的教学材料。 | 525 | [`skill-02-anquan-quanyi.md`](../departments/05-huli/02-jichu-huli-xue/chapters/02-anquan-quanyi/outputs/skill-02-anquan-quanyi.md) |
+| prompt | 核对不是问一句，是给患者一次纠正你的资格 · 提示词 | — | 592 | [`prompt-02-anquan-quanyi.md`](../departments/05-huli/02-jichu-huli-xue/chapters/02-anquan-quanyi/outputs/prompt-02-anquan-quanyi.md) |
+| skill | 核对不是问一句，是给患者一次纠正你的资格 | 核对不是问一句，是给患者一次纠正你的资格——按「识别的四种方式与其选用次序 → 关键环节的再核对：四个时点 → 告知同意：四要素与留痕 → 拒绝、中止与尊严保护」走一遍本章判据 | 497 | [`skill-02-anquan-quanyi.md`](../departments/05-huli/02-jichu-huli-xue/chapters/02-anquan-quanyi/outputs/skill-02-anquan-quanyi.md) |
 
-#### 第 3 章 · 生命体征与一般状况观察技能
+#### 第 3 章 · 一个测量值的意义，取决于你同时记下的条件
 
 `02-jichu-huli-xue/chapters/03-shengming-tizheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：生命体征与一般状况观察技能 | — | 417 | [`prompt-03-shengming-tizheng.md`](../departments/05-huli/02-jichu-huli-xue/chapters/03-shengming-tizheng/outputs/prompt-03-shengming-tizheng.md) |
-| skill | 生命体征与一般状况观察技能 | 用《基础护理学》第 3 章「生命体征与一般状况观察技能」的单元层做可核对的教学材料。 | 529 | [`skill-03-shengming-tizheng.md`](../departments/05-huli/02-jichu-huli-xue/chapters/03-shengming-tizheng/outputs/skill-03-shengming-tizheng.md) |
+| prompt | 一个测量值的意义，取决于你同时记下的条件 · 提示词 | — | 576 | [`prompt-03-shengming-tizheng.md`](../departments/05-huli/02-jichu-huli-xue/chapters/03-shengming-tizheng/outputs/prompt-03-shengming-tizheng.md) |
+| skill | 一个测量值的意义，取决于你同时记下的条件 | 一个测量值的意义，取决于你同时记下的条件——按「四个数值，其实是四条基线 → 测量前的评估与核对 → 步骤与判据 → 异常发现的报告链与记录字段」走一遍本章判据 | 485 | [`skill-03-shengming-tizheng.md`](../departments/05-huli/02-jichu-huli-xue/chapters/03-shengming-tizheng/outputs/skill-03-shengming-tizheng.md) |
 
-#### 第 4 章 · 给药相关护理技能
+#### 第 4 章 · 核对能防给错人，防不了不该给
 
 `02-jichu-huli-xue/chapters/04-geiyao-jineng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：给药相关护理技能 | — | 412 | [`prompt-04-geiyao-jineng.md`](../departments/05-huli/02-jichu-huli-xue/chapters/04-geiyao-jineng/outputs/prompt-04-geiyao-jineng.md) |
-| skill | 给药相关护理技能 | 用《基础护理学》第 4 章「给药相关护理技能」的单元层做可核对的教学材料。 | 511 | [`skill-04-geiyao-jineng.md`](../departments/05-huli/02-jichu-huli-xue/chapters/04-geiyao-jineng/outputs/skill-04-geiyao-jineng.md) |
+| prompt | 核对能防给错人，防不了不该给 · 提示词 | — | 565 | [`prompt-04-geiyao-jineng.md`](../departments/05-huli/02-jichu-huli-xue/chapters/04-geiyao-jineng/outputs/prompt-04-geiyao-jineng.md) |
+| skill | 核对能防给错人，防不了不该给 | 核对能防给错人，防不了不该给——按「核对的三个时点 → 给药前的评估：五个问题 → 三类配合的步骤与判据 → 时限、责任人与记录字段」走一遍本章判据 | 476 | [`skill-04-geiyao-jineng.md`](../departments/05-huli/02-jichu-huli-xue/chapters/04-geiyao-jineng/outputs/skill-04-geiyao-jineng.md) |
 
-#### 第 5 章 · 无菌技术与伤口护理技能
+#### 第 5 章 · 无菌技术的难点不是不碰，是承认自己已经碰了
 
 `02-jichu-huli-xue/chapters/05-wujun-shangkou/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：无菌技术与伤口护理技能 | — | 415 | [`prompt-05-wujun-shangkou.md`](../departments/05-huli/02-jichu-huli-xue/chapters/05-wujun-shangkou/outputs/prompt-05-wujun-shangkou.md) |
-| skill | 无菌技术与伤口护理技能 | 用《基础护理学》第 5 章「无菌技术与伤口护理技能」的单元层做可核对的教学材料。 | 519 | [`skill-05-wujun-shangkou.md`](../departments/05-huli/02-jichu-huli-xue/chapters/05-wujun-shangkou/outputs/skill-05-wujun-shangkou.md) |
+| prompt | 无菌技术的难点不是不碰，是承认自己已经碰了 · 提示词 | — | 579 | [`prompt-05-wujun-shangkou.md`](../departments/05-huli/02-jichu-huli-xue/chapters/05-wujun-shangkou/outputs/prompt-05-wujun-shangkou.md) |
+| skill | 无菌技术的难点不是不碰，是承认自己已经碰了 | 无菌技术的难点不是不碰，是承认自己已经碰了——按「无菌区是一个可以说出位置的空间 → 操作前的评估与核对 → 步骤与判据 → 时限、责任人与记录字段」走一遍本章判据 | 484 | [`skill-05-wujun-shangkou.md`](../departments/05-huli/02-jichu-huli-xue/chapters/05-wujun-shangkou/outputs/skill-05-wujun-shangkou.md) |
 
-#### 第 6 章 · 氧疗与气道护理技能
+#### 第 6 章 · 给氧是最容易被「顺手打开」的一项技术
 
 `02-jichu-huli-xue/chapters/06-yangliao-qidao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：氧疗与气道护理技能 | — | 413 | [`prompt-06-yangliao-qidao.md`](../departments/05-huli/02-jichu-huli-xue/chapters/06-yangliao-qidao/outputs/prompt-06-yangliao-qidao.md) |
-| skill | 氧疗与气道护理技能 | 用《基础护理学》第 6 章「氧疗与气道护理技能」的单元层做可核对的教学材料。 | 515 | [`skill-06-yangliao-qidao.md`](../departments/05-huli/02-jichu-huli-xue/chapters/06-yangliao-qidao/outputs/skill-06-yangliao-qidao.md) |
+| prompt | 给氧是最容易被「顺手打开」的一项技术 · 提示词 | — | 567 | [`prompt-06-yangliao-qidao.md`](../departments/05-huli/02-jichu-huli-xue/chapters/06-yangliao-qidao/outputs/prompt-06-yangliao-qidao.md) |
+| skill | 给氧是最容易被「顺手打开」的一项技术 | 给氧是最容易被「顺手打开」的一项技术——按「判断在动手之前：三件事不属于护理决定 → 操作前的评估与核对 → 步骤与判据 → 时限、责任人与记录字段」走一遍本章判据 | 475 | [`skill-06-yangliao-qidao.md`](../departments/05-huli/02-jichu-huli-xue/chapters/06-yangliao-qidao/outputs/skill-06-yangliao-qidao.md) |
 
-#### 第 7 章 · 排泄与导尿护理技能
+#### 第 7 章 · 排泄观察的价值在记录，不在处置
 
 `02-jichu-huli-xue/chapters/07-paixie-daoniao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：排泄与导尿护理技能 | — | 413 | [`prompt-07-paixie-daoniao.md`](../departments/05-huli/02-jichu-huli-xue/chapters/07-paixie-daoniao/outputs/prompt-07-paixie-daoniao.md) |
-| skill | 排泄与导尿护理技能 | 用《基础护理学》第 7 章「排泄与导尿护理技能」的单元层做可核对的教学材料。 | 515 | [`skill-07-paixie-daoniao.md`](../departments/05-huli/02-jichu-huli-xue/chapters/07-paixie-daoniao/outputs/skill-07-paixie-daoniao.md) |
+| prompt | 排泄观察的价值在记录，不在处置 · 提示词 | — | 552 | [`prompt-07-paixie-daoniao.md`](../departments/05-huli/02-jichu-huli-xue/chapters/07-paixie-daoniao/outputs/prompt-07-paixie-daoniao.md) |
+| skill | 排泄观察的价值在记录，不在处置 | 排泄观察的价值在记录，不在处置——按「六个维度：观察先于处置 → 操作前的评估与核对 → 协助与导尿配合的步骤与判据 → 时限、责任人与记录字段」走一遍本章判据 | 463 | [`skill-07-paixie-daoniao.md`](../departments/05-huli/02-jichu-huli-xue/chapters/07-paixie-daoniao/outputs/skill-07-paixie-daoniao.md) |
 
-#### 第 8 章 · 体位、活动与转运技能
+#### 第 8 章 · 翻身的意义不在翻，在翻完之后看了什么
 
 `02-jichu-huli-xue/chapters/08-tiwei-zhuanyun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：体位、活动与转运技能 | — | 414 | [`prompt-08-tiwei-zhuanyun.md`](../departments/05-huli/02-jichu-huli-xue/chapters/08-tiwei-zhuanyun/outputs/prompt-08-tiwei-zhuanyun.md) |
-| skill | 体位、活动与转运技能 | 用《基础护理学》第 8 章「体位、活动与转运技能」的单元层做可核对的教学材料。 | 517 | [`skill-08-tiwei-zhuanyun.md`](../departments/05-huli/02-jichu-huli-xue/chapters/08-tiwei-zhuanyun/outputs/skill-08-tiwei-zhuanyun.md) |
+| prompt | 翻身的意义不在翻，在翻完之后看了什么 · 提示词 | — | 550 | [`prompt-08-tiwei-zhuanyun.md`](../departments/05-huli/02-jichu-huli-xue/chapters/08-tiwei-zhuanyun/outputs/prompt-08-tiwei-zhuanyun.md) |
+| skill | 翻身的意义不在翻，在翻完之后看了什么 | 翻身的意义不在翻，在翻完之后看了什么——按「四要素：压力、剪切、潮湿、时间 → 操作前的评估与核对 → 步骤与判据 → 时限、责任人与记录字段」走一遍本章判据 | 458 | [`skill-08-tiwei-zhuanyun.md`](../departments/05-huli/02-jichu-huli-xue/chapters/08-tiwei-zhuanyun/outputs/skill-08-tiwei-zhuanyun.md) |
 
-#### 第 9 章 · 急救与复苏配合技能
+#### 第 9 章 · 复苏配合的关键是知道自己的位置，不是抢着做
 
 `02-jichu-huli-xue/chapters/09-jijiu-fuhui/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：急救与复苏配合技能 | — | 413 | [`prompt-09-jijiu-fuhui.md`](../departments/05-huli/02-jichu-huli-xue/chapters/09-jijiu-fuhui/outputs/prompt-09-jijiu-fuhui.md) |
-| skill | 急救与复苏配合技能 | 用《基础护理学》第 9 章「急救与复苏配合技能」的单元层做可核对的教学材料。 | 509 | [`skill-09-jijiu-fuhui.md`](../departments/05-huli/02-jichu-huli-xue/chapters/09-jijiu-fuhui/outputs/skill-09-jijiu-fuhui.md) |
+| prompt | 复苏配合的关键是知道自己的位置，不是抢着做 · 提示词 | — | 552 | [`prompt-09-jijiu-fuhui.md`](../departments/05-huli/02-jichu-huli-xue/chapters/09-jijiu-fuhui/outputs/prompt-09-jijiu-fuhui.md) |
+| skill | 复苏配合的关键是知道自己的位置，不是抢着做 | 复苏配合的关键是知道自己的位置，不是抢着做——按「现场三件事的先后：安全、呼救、评估 → 操作前的准备与核对 → 分工与站位 → 时限、责任人与记录字段」走一遍本章判据 | 454 | [`skill-09-jijiu-fuhui.md`](../departments/05-huli/02-jichu-huli-xue/chapters/09-jijiu-fuhui/outputs/skill-09-jijiu-fuhui.md) |
 
-#### 第 10 章 · 中医护理技能
+#### 第 10 章 · 中医护理技术的门槛不在手法，在什么情况下不做
 
 `02-jichu-huli-xue/chapters/10-zhongyi-jineng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：中医护理技能 | — | 411 | [`prompt-10-zhongyi-jineng.md`](../departments/05-huli/02-jichu-huli-xue/chapters/10-zhongyi-jineng/outputs/prompt-10-zhongyi-jineng.md) |
-| skill | 中医护理技能 | 用《基础护理学》第 10 章「中医护理技能」的单元层做可核对的教学材料。 | 510 | [`skill-10-zhongyi-jineng.md`](../departments/05-huli/02-jichu-huli-xue/chapters/10-zhongyi-jineng/outputs/skill-10-zhongyi-jineng.md) |
+| prompt | 中医护理技术的门槛不在手法，在什么情况下不做 · 提示词 | — | 562 | [`prompt-10-zhongyi-jineng.md`](../departments/05-huli/02-jichu-huli-xue/chapters/10-zhongyi-jineng/outputs/prompt-10-zhongyi-jineng.md) |
+| skill | 中医护理技术的门槛不在手法，在什么情况下不做 | 中医护理技术的门槛不在手法，在什么情况下不做——按「适用范围：五类技术，一套判据 → 操作前的评估与告知 → 步骤与判据 → 时限、责任人与记录字段」走一遍本章判据 | 465 | [`skill-10-zhongyi-jineng.md`](../departments/05-huli/02-jichu-huli-xue/chapters/10-zhongyi-jineng/outputs/skill-10-zhongyi-jineng.md) |
 
-#### 第 11 章 · 围手术期与专科协作技能
+#### 第 11 章 · 术前准备的每一件事，都是为术后那一次观察留基线
 
 `02-jichu-huli-xue/chapters/11-weishoushu-xiezuo/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：围手术期与专科协作技能 | — | 416 | [`prompt-11-weishoushu-xiezuo.md`](../departments/05-huli/02-jichu-huli-xue/chapters/11-weishoushu-xiezuo/outputs/prompt-11-weishoushu-xiezuo.md) |
-| skill | 围手术期与专科协作技能 | 用《基础护理学》第 11 章「围手术期与专科协作技能」的单元层做可核对的教学材料。 | 526 | [`skill-11-weishoushu-xiezuo.md`](../departments/05-huli/02-jichu-huli-xue/chapters/11-weishoushu-xiezuo/outputs/skill-11-weishoushu-xiezuo.md) |
+| prompt | 术前准备的每一件事，都是为术后那一次观察留基线 · 提示词 | — | 574 | [`prompt-11-weishoushu-xiezuo.md`](../departments/05-huli/02-jichu-huli-xue/chapters/11-weishoushu-xiezuo/outputs/prompt-11-weishoushu-xiezuo.md) |
+| skill | 术前准备的每一件事，都是为术后那一次观察留基线 | 术前准备的每一件事，都是为术后那一次观察留基线——按「术前的产出不是「做完了」，是「记下来了」 → 操作前的评估与核对 → 术后观察与配合的步骤 → 时限、责任人与记录字段」走一遍本章判据 | 479 | [`skill-11-weishoushu-xiezuo.md`](../departments/05-huli/02-jichu-huli-xue/chapters/11-weishoushu-xiezuo/outputs/skill-11-weishoushu-xiezuo.md) |
 
-#### 第 12 章 · 综合模拟训练与情景演练
+#### 第 12 章 · 演练的价值不在演得像，在复盘时敢说哪一步没做
 
 `02-jichu-huli-xue/chapters/12-monixing-xunlian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：综合模拟训练与情景演练 | — | 416 | [`prompt-12-monixing-xunlian.md`](../departments/05-huli/02-jichu-huli-xue/chapters/12-monixing-xunlian/outputs/prompt-12-monixing-xunlian.md) |
-| skill | 综合模拟训练与情景演练 | 用《基础护理学》第 12 章「综合模拟训练与情景演练」的单元层做可核对的教学材料。 | 524 | [`skill-12-monixing-xunlian.md`](../departments/05-huli/02-jichu-huli-xue/chapters/12-monixing-xunlian/outputs/skill-12-monixing-xunlian.md) |
+| prompt | 演练的价值不在演得像，在复盘时敢说哪一步没做 · 提示词 | — | 565 | [`prompt-12-monixing-xunlian.md`](../departments/05-huli/02-jichu-huli-xue/chapters/12-monixing-xunlian/outputs/prompt-12-monixing-xunlian.md) |
+| skill | 演练的价值不在演得像，在复盘时敢说哪一步没做 | 演练的价值不在演得像，在复盘时敢说哪一步没做——按「情境设计的四个要素 → 演练前的准备与核对 → 实施步骤与引导判据 → 记录、责任人与复盘产物」走一遍本章判据 | 470 | [`skill-12-monixing-xunlian.md`](../departments/05-huli/02-jichu-huli-xue/chapters/12-monixing-xunlian/outputs/skill-12-monixing-xunlian.md) |
 
-#### 第 13 章 · 技能考核与教学团队协作
+#### 第 13 章 · 考核的成品是一份改进项，不是一个分数
 
 `02-jichu-huli-xue/chapters/13-kaohe-pingjia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：技能考核与教学团队协作 | — | 416 | [`prompt-13-kaohe-pingjia.md`](../departments/05-huli/02-jichu-huli-xue/chapters/13-kaohe-pingjia/outputs/prompt-13-kaohe-pingjia.md) |
-| skill | 技能考核与教学团队协作 | 用《基础护理学》第 13 章「技能考核与教学团队协作」的单元层做可核对的教学材料。 | 518 | [`skill-13-kaohe-pingjia.md`](../departments/05-huli/02-jichu-huli-xue/chapters/13-kaohe-pingjia/outputs/skill-13-kaohe-pingjia.md) |
+| prompt | 考核的成品是一份改进项，不是一个分数 · 提示词 | — | 549 | [`prompt-13-kaohe-pingjia.md`](../departments/05-huli/02-jichu-huli-xue/chapters/13-kaohe-pingjia/outputs/prompt-13-kaohe-pingjia.md) |
+| skill | 考核的成品是一份改进项，不是一个分数 | 考核的成品是一份改进项，不是一个分数——按「考核内容的三层结构与一条底线 → 考核前的准备与核对 → 实施与判据 → 记录、反馈与复评」走一遍本章判据 | 455 | [`skill-13-kaohe-pingjia.md`](../departments/05-huli/02-jichu-huli-xue/chapters/13-kaohe-pingjia/outputs/skill-13-kaohe-pingjia.md) |
 
-#### 第 14 章 · 技能风险、质量管理与社区居家
+#### 第 14 章 · 质量管理的证据在复核，不在报告数量
 
 `02-jichu-huli-xue/chapters/14-zhiliang-shequ/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：技能风险、质量管理与社区居家 | — | 419 | [`prompt-14-zhiliang-shequ.md`](../departments/05-huli/02-jichu-huli-xue/chapters/14-zhiliang-shequ/outputs/prompt-14-zhiliang-shequ.md) |
-| skill | 技能风险、质量管理与社区居家 | 用《基础护理学》第 14 章「技能风险、质量管理与社区居家」的单元层做可核对的教学材料。 | 526 | [`skill-14-zhiliang-shequ.md`](../departments/05-huli/02-jichu-huli-xue/chapters/14-zhiliang-shequ/outputs/skill-14-zhiliang-shequ.md) |
+| prompt | 质量管理的证据在复核，不在报告数量 · 提示词 | — | 601 | [`prompt-14-zhiliang-shequ.md`](../departments/05-huli/02-jichu-huli-xue/chapters/14-zhiliang-shequ/outputs/prompt-14-zhiliang-shequ.md) |
+| skill | 质量管理的证据在复核，不在报告数量 | 质量管理的证据在复核，不在报告数量——按「风险来源三类，防范落在三个位置 → 社区与居家场景的评估与核对 → 监测与复核的步骤与判据 → 责任分工与记录字段」走一遍本章判据 | 509 | [`skill-14-zhiliang-shequ.md`](../departments/05-huli/02-jichu-huli-xue/chapters/14-zhiliang-shequ/outputs/skill-14-zhiliang-shequ.md) |
 
 ### 健康评估
 
 > Core · 第 3 学期 · 已产出 8 章
 
-#### 第 1 章 · 四域适应框架与「从容长寿」基线
+#### 第 1 章 · 健康不是「有没有病」，而是四域是否同时留在各自的合适区间
 
 `03-jiankang-pinggu/chapters/01-sishiying-kuangjia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 四域适应框架与「从容长寿」基线 · 提示词 | — | 483 | [`prompt-01-sishiying-kuangjia.md`](../departments/05-huli/03-jiankang-pinggu/chapters/01-sishiying-kuangjia/outputs/prompt-01-sishiying-kuangjia.md) |
-| skill | 四域适应框架与「从容长寿」基线 | 四域适应框架与「从容长寿」基线——按「立四域框架 → 生理域 → 心理域 → 社会域 → 环境生态域 → 整合判断 → 记录 → 控偏差」走一遍本章判据 | 397 | [`skill-sishiying-kuangjia.md`](../departments/05-huli/03-jiankang-pinggu/chapters/01-sishiying-kuangjia/outputs/skill-sishiying-kuangjia.md) |
+| prompt | 健康不是「有没有病」，而是四域是否同时留在各自的合适区间 · 提示词 | — | 657 | [`prompt-01-sishiying-kuangjia.md`](../departments/05-huli/03-jiankang-pinggu/chapters/01-sishiying-kuangjia/outputs/prompt-01-sishiying-kuangjia.md) |
+| skill | 健康不是「有没有病」，而是四域是否同时留在各自的合适区间 | 健康不是「有没有病」，而是四域是否同时留在各自的合适区间——按「从「有没有病」到「四域是否在合适区间」 → 采集项与判据：先把基线立住 → 记录字段：一份能被接手的基线 → 三种失效」走一遍本章判据 | 560 | [`skill-sishiying-kuangjia.md`](../departments/05-huli/03-jiankang-pinggu/chapters/01-sishiying-kuangjia/outputs/skill-sishiying-kuangjia.md) |
 
-#### 第 2 章 · 生理适应能力：生命体征与一般状态的判读
+#### 第 2 章 · 生命体征的价值不在读数，而在它与本人基线之间的那段距离
 
 `03-jiankang-pinggu/chapters/02-shengli-shiying/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 生理适应能力：生命体征与一般状态的判读 · 提示词 | — | 495 | [`prompt-02-shengli-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/02-shengli-shiying/outputs/prompt-02-shengli-shiying.md) |
-| skill | 生理适应能力：生命体征与一般状态的判读 | 生理适应能力：生命体征与一般状态的判读——按「立四域框架 → 生理域 → 心理域 → 社会域 → 环境生态域 → 整合判断 → 记录 → 控偏差」走一遍本章判据 | 402 | [`skill-shengli-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/02-shengli-shiying/outputs/skill-shengli-shiying.md) |
+| prompt | 生命体征的价值不在读数，而在它与本人基线之间的那段距离 · 提示词 | — | 718 | [`prompt-02-shengli-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/02-shengli-shiying/outputs/prompt-02-shengli-shiying.md) |
+| skill | 生命体征的价值不在读数，而在它与本人基线之间的那段距离 | 生命体征的价值不在读数，而在它与本人基线之间的那段距离——按「「平人」是分布，不是标准 → 测量前准备与核对：五件事决定读数可不可用 → 读数之外的「一般状态」：能写成动作的才叫所见 → 三种失效」走一遍本章判据 | 619 | [`skill-shengli-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/02-shengli-shiying/outputs/skill-shengli-shiying.md) |
 
-#### 第 3 章 · 心理适应能力：尊严、自主与情绪的判读
+#### 第 3 章 · 情绪可以问出来，尊严和自主只能被让出来
 
 `03-jiankang-pinggu/chapters/03-xinli-shiying/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 心理适应能力：尊严、自主与情绪的判读 · 提示词 | — | 492 | [`prompt-03-xinli-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/03-xinli-shiying/outputs/prompt-03-xinli-shiying.md) |
-| skill | 心理适应能力：尊严、自主与情绪的判读 | 心理适应能力：尊严、自主与情绪的判读——按「立四域框架 → 生理域 → 心理域 → 社会域 → 环境生态域 → 整合判断 → 记录 → 控偏差」走一遍本章判据 | 398 | [`skill-xinli-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/03-xinli-shiying/outputs/skill-xinli-shiying.md) |
+| prompt | 情绪可以问出来，尊严和自主只能被让出来 · 提示词 | — | 610 | [`prompt-03-xinli-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/03-xinli-shiying/outputs/prompt-03-xinli-shiying.md) |
+| skill | 情绪可以问出来，尊严和自主只能被让出来 | 情绪可以问出来，尊严和自主只能被让出来——按「三条线：情绪、认知、意愿 → 采集项与判据 → 记录字段：原话、来源、条件 → 三种失效」走一遍本章判据 | 517 | [`skill-xinli-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/03-xinli-shiying/outputs/skill-xinli-shiying.md) |
 
-#### 第 4 章 · 社会适应能力：角色、家庭与支持的判读
+#### 第 4 章 · 支持不是「有人陪」，是「出事时谁能在今晚到场」
 
 `03-jiankang-pinggu/chapters/04-shehui-shiying/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 社会适应能力：角色、家庭与支持的判读 · 提示词 | — | 494 | [`prompt-04-shehui-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/04-shehui-shiying/outputs/prompt-04-shehui-shiying.md) |
-| skill | 社会适应能力：角色、家庭与支持的判读 | 社会适应能力：角色、家庭与支持的判读——按「立四域框架 → 生理域 → 心理域 → 社会域 → 环境生态域 → 整合判断 → 记录 → 控偏差」走一遍本章判据 | 399 | [`skill-shehui-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/04-shehui-shiying/outputs/skill-shehui-shiying.md) |
+| prompt | 支持不是「有人陪」，是「出事时谁能在今晚到场」 · 提示词 | — | 580 | [`prompt-04-shehui-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/04-shehui-shiying/outputs/prompt-04-shehui-shiying.md) |
+| skill | 支持不是「有人陪」，是「出事时谁能在今晚到场」 | 支持不是「有人陪」，是「出事时谁能在今晚到场」——按「角色：先知道他原来是干什么的 → 采集项与判据 → 记录字段：一张图加三个数 → 三种失效」走一遍本章判据 | 484 | [`skill-shehui-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/04-shehui-shiying/outputs/skill-shehui-shiying.md) |
 
-#### 第 5 章 · 环境生态适应能力：场所、季节与可达性的判读
+#### 第 5 章 · 环境不是背景，它决定了一件小事要做几步
 
 `03-jiankang-pinggu/chapters/05-huanjing-shiying/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 环境生态适应能力：场所、季节与可达性的判读 · 提示词 | — | 501 | [`prompt-05-huanjing-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/05-huanjing-shiying/outputs/prompt-05-huanjing-shiying.md) |
-| skill | 环境生态适应能力：场所、季节与可达性的判读 | 环境生态适应能力：场所、季节与可达性的判读——按「立四域框架 → 生理域 → 心理域 → 社会域 → 环境生态域 → 整合判断 → 记录 → 控偏差」走一遍本章判据 | 407 | [`skill-huanjing-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/05-huanjing-shiying/outputs/skill-huanjing-shiying.md) |
+| prompt | 环境不是背景，它决定了一件小事要做几步 · 提示词 | — | 610 | [`prompt-05-huanjing-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/05-huanjing-shiying/outputs/prompt-05-huanjing-shiying.md) |
+| skill | 环境不是背景，它决定了一件小事要做几步 | 环境不是背景，它决定了一件小事要做几步——按「三条线：场所、季节、可达性 → 采集项与判据 → 入户的动作：走一遍、看一遍、问一遍 → 记录字段：路径、清单、三个量」走一遍本章判据 | 520 | [`skill-huanjing-shiying.md`](../departments/05-huli/03-jiankang-pinggu/chapters/05-huanjing-shiying/outputs/skill-huanjing-shiying.md) |
 
-#### 第 6 章 · 四域整合判断与量表的使用
+#### 第 6 章 · 四域不能相加，只能排序：先定急缓，再定主次
 
 `03-jiankang-pinggu/chapters/06-zonghe-panduan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 四域整合判断与量表的使用 · 提示词 | — | 475 | [`prompt-06-zonghe-panduan.md`](../departments/05-huli/03-jiankang-pinggu/chapters/06-zonghe-panduan/outputs/prompt-06-zonghe-panduan.md) |
-| skill | 四域整合判断与量表的使用 | 四域整合判断与量表的使用——按「立四域框架 → 生理域 → 心理域 → 社会域 → 环境生态域 → 整合判断 → 记录 → 控偏差」走一遍本章判据 | 387 | [`skill-zonghe-panduan.md`](../departments/05-huli/03-jiankang-pinggu/chapters/06-zonghe-panduan/outputs/skill-zonghe-panduan.md) |
+| prompt | 四域不能相加，只能排序：先定急缓，再定主次 · 提示词 | — | 584 | [`prompt-06-zonghe-panduan.md`](../departments/05-huli/03-jiankang-pinggu/chapters/06-zonghe-panduan/outputs/prompt-06-zonghe-panduan.md) |
+| skill | 四域不能相加，只能排序：先定急缓，再定主次 | 四域不能相加，只能排序：先定急缓，再定主次——按「三条整合规则 → 量表：什么时候用，怎么用 → 整合与量表的记录字段 → 三种失效」走一遍本章判据 | 490 | [`skill-zonghe-panduan.md`](../departments/05-huli/03-jiankang-pinggu/chapters/06-zonghe-panduan/outputs/skill-zonghe-panduan.md) |
 
-#### 第 7 章 · 评估结果的记录与沟通
+#### 第 7 章 · 记录是写给下一个人的，沟通是留给这个人的
 
 `03-jiankang-pinggu/chapters/07-jilu-goutong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 评估结果的记录与沟通 · 提示词 | — | 468 | [`prompt-07-jilu-goutong.md`](../departments/05-huli/03-jiankang-pinggu/chapters/07-jilu-goutong/outputs/prompt-07-jilu-goutong.md) |
-| skill | 评估结果的记录与沟通 | 评估结果的记录与沟通——按「立四域框架 → 生理域 → 心理域 → 社会域 → 环境生态域 → 整合判断 → 记录 → 控偏差」走一遍本章判据 | 381 | [`skill-jilu-goutong.md`](../departments/05-huli/03-jiankang-pinggu/chapters/07-jilu-goutong/outputs/skill-jilu-goutong.md) |
+| prompt | 记录是写给下一个人的，沟通是留给这个人的 · 提示词 | — | 550 | [`prompt-07-jilu-goutong.md`](../departments/05-huli/03-jiankang-pinggu/chapters/07-jilu-goutong/outputs/prompt-07-jilu-goutong.md) |
+| skill | 记录是写给下一个人的，沟通是留给这个人的 | 记录是写给下一个人的，沟通是留给这个人的——按「记录的三条硬要求 → 沟通：对谁说，说多少 → 把沟通写进记录 → 三种失效」走一遍本章判据 | 455 | [`skill-jilu-goutong.md`](../departments/05-huli/03-jiankang-pinggu/chapters/07-jilu-goutong/outputs/skill-jilu-goutong.md) |
 
-#### 第 8 章 · 评估偏差、过度检查与质量治理
+#### 第 8 章 · 偏差不在仪器上，在「这次只看这一次」的习惯里
 
 `03-jiankang-pinggu/chapters/08-piancha-zhili/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 评估偏差、过度检查与质量治理 · 提示词 | — | 481 | [`prompt-08-piancha-zhili.md`](../departments/05-huli/03-jiankang-pinggu/chapters/08-piancha-zhili/outputs/prompt-08-piancha-zhili.md) |
-| skill | 评估偏差、过度检查与质量治理 | 评估偏差、过度检查与质量治理——按「立四域框架 → 生理域 → 心理域 → 社会域 → 环境生态域 → 整合判断 → 记录 → 控偏差」走一遍本章判据 | 390 | [`skill-piancha-zhili.md`](../departments/05-huli/03-jiankang-pinggu/chapters/08-piancha-zhili/outputs/skill-piancha-zhili.md) |
+| prompt | 偏差不在仪器上，在「这次只看这一次」的习惯里 · 提示词 | — | 599 | [`prompt-08-piancha-zhili.md`](../departments/05-huli/03-jiankang-pinggu/chapters/08-piancha-zhili/outputs/prompt-08-piancha-zhili.md) |
+| skill | 偏差不在仪器上，在「这次只看这一次」的习惯里 | 偏差不在仪器上，在「这次只看这一次」的习惯里——按「六类偏差，各有各的识别法（分类为【教学设定】的归纳，不是分类学） → 过度检查：三种动机，三种对策 → 质量治理：指标、报告、改进 → 三种失效」走一遍本章判据 | 503 | [`skill-piancha-zhili.md`](../departments/05-huli/03-jiankang-pinggu/chapters/08-piancha-zhili/outputs/skill-piancha-zhili.md) |
 
 ### 中医护理技术
 
 > Build · 第 3 学期 · 已产出 14 章
 
-#### 第 1 章 · 中医护理适宜技术概述与特点
+#### 第 1 章 · 「适宜」指的是资源可及，不是风险低
 
 `04-zhongyi-huli-jishu/chapters/01-gaishu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医护理适宜技术概述与特点 · 提示词 | — | 455 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 中医护理适宜技术概述与特点 | 中医护理适宜技术概述与特点——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 368 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 护理人文修养概述 · 提示词 | — | 441 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 护理人文修养概述 | 护理人文修养概述——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 361 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 「适宜」指的是资源可及，不是风险低 · 提示词 | — | 656 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 「适宜」指的是资源可及，不是风险低 | 「适宜」指的是资源可及，不是风险低——按「先把「适宜」两个字拆开 → 术前核对：禁忌排在适应证前面 → 四类技术的作用路径不同，观察的落点也不同 → 记录字段与三种失效模式」走一遍本章判据 | 556 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 人文修养的底子是「把人当人」的可核对动作 · 提示词 | — | 616 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 人文修养的底子是「把人当人」的可核对动作 | 人文修养的底子是「把人当人」的可核对动作——按「人文的三个层次，只有最外层能被看见 → 开口之前：三样东西必须先知道 → 判据分档：什么时候可以继续，什么时候必须停 → 六个动作与各自的时限」走一遍本章判据 | 510 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 急救护理学的起点是把不可逆点往前推 · 提示词 | — | 568 | [`prompt-01-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 精神科护理学概述 · 提示词 | — | 437 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 精神科护理学概述 | 精神科护理学概述——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 359 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 中医护理的第一步不是操作，是把证说清楚 | 中医护理的第一步不是操作，是把证说清楚——按「同一条医嘱，落在两个证上是两套做法 → 四诊采集：护士要采的不是「症状」，是能进记录的字段 → 辨证判据：八纲是四个二选一，不是八个标签 → 施护的四条边界：饮食、情志、起居、外治」走一遍本章判据 | 656 | [`skill-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/skill-01-gaishu.md) |
 | prompt | 中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练 · 提示词 | — | 901 | [`prompt-01-gaishu.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练 | 中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练——按「分水岭：先辨，再护，最后才是手法 → 辨证要点：床边先看四样，先问四句 → 护理判据：三线，各有各的允许动作 → 动作与时限：从发现到交班的一条链」走一遍本章判据 | 782 | [`skill-gaishu.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/01-gaishu/outputs/skill-gaishu.md) |
 
-#### 第 2 章 · 实施前准备与评估要求
+#### 第 2 章 · 准备阶段真正要产出的是一个「可以做」的结论
 
 `04-zhongyi-huli-jishu/chapters/02-qiandu-pinggu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 实施前准备与评估要求 · 提示词 | — | 444 | [`prompt-02-qiandu-pinggu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/02-qiandu-pinggu/outputs/prompt-02-qiandu-pinggu.md) |
-| skill | 实施前准备与评估要求 | 实施前准备与评估要求——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 369 | [`skill-qiandu-pinggu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/02-qiandu-pinggu/outputs/skill-qiandu-pinggu.md) |
+| prompt | 准备阶段真正要产出的是一个「可以做」的结论 · 提示词 | — | 712 | [`prompt-02-qiandu-pinggu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/02-qiandu-pinggu/outputs/prompt-02-qiandu-pinggu.md) |
+| skill | 准备阶段真正要产出的是一个「可以做」的结论 | 准备阶段真正要产出的是一个「可以做」的结论——按「准备不是「把东西摆好」，是得出一个结论 → 四个评估域：一个查人，一个查感受，一个查皮，一个只记录不判定 → 告知与同意：同意是过程，签字只是痕迹 → 环境、物品与清洁：三条容易松的扣」走一遍本章判据 | 615 | [`skill-qiandu-pinggu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/02-qiandu-pinggu/outputs/skill-qiandu-pinggu.md) |
 
-#### 第 3 章 · 腧穴与经络基础
+#### 第 3 章 · 取穴的误差多半不在手上，在体位和侧别上
 
 `04-zhongyi-huli-jishu/chapters/03-shuxue-jingluo/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 腧穴与经络基础 · 提示词 | — | 435 | [`prompt-03-shuxue-jingluo.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/03-shuxue-jingluo/outputs/prompt-03-shuxue-jingluo.md) |
-| skill | 腧穴与经络基础 | 腧穴与经络基础——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 364 | [`skill-shuxue-jingluo.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/03-shuxue-jingluo/outputs/skill-shuxue-jingluo.md) |
+| prompt | 取穴的误差多半不在手上，在体位和侧别上 · 提示词 | — | 711 | [`prompt-03-shuxue-jingluo.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/03-shuxue-jingluo/outputs/prompt-03-shuxue-jingluo.md) |
+| skill | 取穴的误差多半不在手上，在体位和侧别上 | 取穴的误差多半不在手上，在体位和侧别上——按「经络在本课里只干一件事：把位置说清楚 → 四种定位法，各有各的失效条件 → 术前核对的三项与三档 → 观察与记录：得气样的感觉不是疗效证据」走一遍本章判据 | 617 | [`skill-shuxue-jingluo.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/03-shuxue-jingluo/outputs/skill-shuxue-jingluo.md) |
 
-#### 第 4 章 · 腧穴按压与穴位贴敷
+#### 第 4 章 · 轻手法不是低风险，是低信号
 
 `04-zhongyi-huli-jishu/chapters/04-anmo-tiefu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 腧穴按压与穴位贴敷 · 提示词 | — | 441 | [`prompt-04-anmo-tiefu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/04-anmo-tiefu/outputs/prompt-04-anmo-tiefu.md) |
-| skill | 腧穴按压与穴位贴敷 | 腧穴按压与穴位贴敷——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 364 | [`skill-anmo-tiefu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/04-anmo-tiefu/outputs/skill-anmo-tiefu.md) |
+| prompt | 轻手法不是低风险，是低信号 · 提示词 | — | 649 | [`prompt-04-anmo-tiefu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/04-anmo-tiefu/outputs/prompt-04-anmo-tiefu.md) |
+| skill | 轻手法不是低风险，是低信号 | 轻手法不是低风险，是低信号——按「合章的理由，与不该合的地方 → 按压：三个变量与四类不适用 → 贴敷：贴什么、贴多大、留多久 → 两套记录字段」走一遍本章判据 | 557 | [`skill-anmo-tiefu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/04-anmo-tiefu/outputs/skill-anmo-tiefu.md) |
 
-#### 第 5 章 · 艾灸与拔罐
+#### 第 5 章 · 灸与罐真正要控的是两个不可逆的量
 
 `04-zhongyi-huli-jishu/chapters/05-aijiu-baguan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 艾灸与拔罐 · 提示词 | — | 429 | [`prompt-05-aijiu-baguan.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/05-aijiu-baguan/outputs/prompt-05-aijiu-baguan.md) |
-| skill | 艾灸与拔罐 | 艾灸与拔罐——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 358 | [`skill-aijiu-baguan.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/05-aijiu-baguan/outputs/skill-aijiu-baguan.md) |
+| prompt | 灸与罐真正要控的是两个不可逆的量 · 提示词 | — | 676 | [`prompt-05-aijiu-baguan.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/05-aijiu-baguan/outputs/prompt-05-aijiu-baguan.md) |
+| skill | 灸与罐真正要控的是两个不可逆的量 | 灸与罐真正要控的是两个不可逆的量——按「两个变量，一个共同点 → 术前核对：三类不适用，按「人」排 → 术中观察：四个时点，四条停止线 → 晕灸与晕罐：顺序错了就是二次伤害」走一遍本章判据 | 583 | [`skill-aijiu-baguan.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/05-aijiu-baguan/outputs/skill-aijiu-baguan.md) |
 
-#### 第 6 章 · 刮痧与热熨
+#### 第 6 章 · 刮痧与热熨的观察对象是「一片」，不是一个点
 
 `04-zhongyi-huli-jishu/chapters/06-guasha-reyun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 刮痧与热熨 · 提示词 | — | 429 | [`prompt-06-guasha-reyun.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/06-guasha-reyun/outputs/prompt-06-guasha-reyun.md) |
-| skill | 刮痧与热熨 | 刮痧与热熨——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 358 | [`skill-guasha-reyun.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/06-guasha-reyun/outputs/skill-guasha-reyun.md) |
+| prompt | 刮痧与热熨的观察对象是「一片」，不是一个点 · 提示词 | — | 665 | [`prompt-06-guasha-reyun.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/06-guasha-reyun/outputs/prompt-06-guasha-reyun.md) |
+| skill | 刮痧与热熨的观察对象是「一片」，不是一个点 | 刮痧与热熨的观察对象是「一片」，不是一个点——按「一个在表面，一个在温度 → 术前核对：五件事，一件都不能省 → 出痧与温度：两套判读，各自有边界 → 观察时点与四条停止线」走一遍本章判据 | 567 | [`skill-guasha-reyun.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/06-guasha-reyun/outputs/skill-guasha-reyun.md) |
 
-#### 第 7 章 · 耳穴与穴位刺激类技术
+#### 第 7 章 · 耳穴的风险不在贴上的那一刻，在留着的那些天
 
 `04-zhongyi-huli-jishu/chapters/07-erxue-ciji/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 耳穴与穴位刺激类技术 · 提示词 | — | 444 | [`prompt-07-erxue-ciji.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/07-erxue-ciji/outputs/prompt-07-erxue-ciji.md) |
-| skill | 耳穴与穴位刺激类技术 | 耳穴与穴位刺激类技术——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 366 | [`skill-erxue-ciji.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/07-erxue-ciji/outputs/skill-erxue-ciji.md) |
+| prompt | 耳穴的风险不在贴上的那一刻，在留着的那些天 · 提示词 | — | 669 | [`prompt-07-erxue-ciji.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/07-erxue-ciji/outputs/prompt-07-erxue-ciji.md) |
+| skill | 耳穴的风险不在贴上的那一刻，在留着的那些天 | 耳穴的风险不在贴上的那一刻，在留着的那些天——按「耳穴与体穴的三个不同 → 术前核对：耳廓是全身最难处理的皮肤之一 → 刺激方式与强度：能说的是「感觉」，不是「数量」 → 留置期间：四个字，每天看一遍」走一遍本章判据 | 569 | [`skill-erxue-ciji.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/07-erxue-ciji/outputs/skill-erxue-ciji.md) |
 
-#### 第 8 章 · 中药熏洗与外敷
+#### 第 8 章 · 熏洗与外敷是两条通道同时开着
 
 `04-zhongyi-huli-jishu/chapters/08-xunxi-waifu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中药熏洗与外敷 · 提示词 | — | 435 | [`prompt-08-xunxi-waifu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/08-xunxi-waifu/outputs/prompt-08-xunxi-waifu.md) |
-| skill | 中药熏洗与外敷 | 中药熏洗与外敷——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 361 | [`skill-xunxi-waifu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/08-xunxi-waifu/outputs/skill-xunxi-waifu.md) |
+| prompt | 熏洗与外敷是两条通道同时开着 · 提示词 | — | 642 | [`prompt-08-xunxi-waifu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/08-xunxi-waifu/outputs/prompt-08-xunxi-waifu.md) |
+| skill | 熏洗与外敷是两条通道同时开着 | 熏洗与外敷是两条通道同时开着——按「两条通道：热与药，各自会坏在哪 → 术前核对：六个问题，一个结论 → 温度与范围：三档与三条线 → 观察时点：五个段落」走一遍本章判据 | 550 | [`skill-xunxi-waifu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/08-xunxi-waifu/outputs/skill-xunxi-waifu.md) |
 
-#### 第 9 章 · 药膳与饮食调护
+#### 第 9 章 · 药膳这一章最讲禁忌，却一次都不说「中止」
 
 `04-zhongyi-huli-jishu/chapters/09-yaoshan-yinshi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 药膳与饮食调护 · 提示词 | — | 436 | [`prompt-09-yaoshan-yinshi.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/09-yaoshan-yinshi/outputs/prompt-09-yaoshan-yinshi.md) |
-| skill | 药膳与饮食调护 | 药膳与饮食调护——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 364 | [`skill-yaoshan-yinshi.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/09-yaoshan-yinshi/outputs/skill-yaoshan-yinshi.md) |
+| prompt | 药膳这一章最讲禁忌，却一次都不说「中止」 · 提示词 | — | 707 | [`prompt-09-yaoshan-yinshi.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/09-yaoshan-yinshi/outputs/prompt-09-yaoshan-yinshi.md) |
+| skill | 药膳这一章最讲禁忌，却一次都不说「中止」 | 药膳这一章最讲禁忌，却一次都不说「中止」——按「食性不是标签，是一组方向 → 术前核对：五个问题，重点是「不能吃什么」 → 交代怎么写：方向、份量、次数、停的条件 → 观察时点：吃之前、吃之中、吃之后」走一遍本章判据 | 612 | [`skill-yaoshan-yinshi.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/09-yaoshan-yinshi/outputs/skill-yaoshan-yinshi.md) |
 
-#### 第 10 章 · 情志护理与养生
+#### 第 10 章 · 这一章不动手，所以更没有「做到位」这回事
 
 `04-zhongyi-huli-jishu/chapters/10-qingzhi-yangsheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 情志护理与养生 · 提示词 | — | 437 | [`prompt-10-qingzhi-yangsheng.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/10-qingzhi-yangsheng/outputs/prompt-10-qingzhi-yangsheng.md) |
-| skill | 情志护理与养生 | 情志护理与养生——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 367 | [`skill-qingzhi-yangsheng.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/10-qingzhi-yangsheng/outputs/skill-qingzhi-yangsheng.md) |
+| prompt | 这一章不动手，所以更没有「做到位」这回事 · 提示词 | — | 687 | [`prompt-10-qingzhi-yangsheng.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/10-qingzhi-yangsheng/outputs/prompt-10-qingzhi-yangsheng.md) |
+| skill | 这一章不动手，所以更没有「做到位」这回事 | 这一章不动手，所以更没有「做到位」这回事——按「没有操作台的技术，靠三件事成立 → 接触之前：五个判断，一个「不做」 → 三个动作的具体做法 → 五音、导引与情志相胜：可以配合，不可自施」走一遍本章判据 | 594 | [`skill-qingzhi-yangsheng.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/10-qingzhi-yangsheng/outputs/skill-qingzhi-yangsheng.md) |
 
-#### 第 11 章 · 传统运动与导引类护理
+#### 第 11 章 · 导引的风险靶点从皮肤换成了心肺和关节
 
 `04-zhongyi-huli-jishu/chapters/11-chuantong-yundong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 传统运动与导引类护理 · 提示词 | — | 446 | [`prompt-11-chuantong-yundong.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/11-chuantong-yundong/outputs/prompt-11-chuantong-yundong.md) |
-| skill | 传统运动与导引类护理 | 传统运动与导引类护理——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 373 | [`skill-chuantong-yundong.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/11-chuantong-yundong/outputs/skill-chuantong-yundong.md) |
+| prompt | 导引的风险靶点从皮肤换成了心肺和关节 · 提示词 | — | 675 | [`prompt-11-chuantong-yundong.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/11-chuantong-yundong/outputs/prompt-11-chuantong-yundong.md) |
+| skill | 导引的风险靶点从皮肤换成了心肺和关节 | 导引的风险靶点从皮肤换成了心肺和关节——按「靶点换了：从皮肤换到心肺、关节与平衡 → 术前评估：六个方面，两类结论 → 动作与呼吸：三档强度，两条纪律 → 观察时点与四条停止线」走一遍本章判据 | 584 | [`skill-chuantong-yundong.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/11-chuantong-yundong/outputs/skill-chuantong-yundong.md) |
 
-#### 第 12 章 · 常见症状的适宜技术应用
+#### 第 12 章 · 症状应用章的动作是「选」，不是「做」
 
 `04-zhongyi-huli-jishu/chapters/12-zhengzhuang-yingyong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 常见症状的适宜技术应用 · 提示词 | — | 449 | [`prompt-12-zhengzhuang-yingyong.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/12-zhengzhuang-yingyong/outputs/prompt-12-zhengzhuang-yingyong.md) |
-| skill | 常见症状的适宜技术应用 | 常见症状的适宜技术应用——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 378 | [`skill-zhengzhuang-yingyong.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/12-zhengzhuang-yingyong/outputs/skill-zhengzhuang-yingyong.md) |
+| prompt | 症状应用章的动作是「选」，不是「做」 · 提示词 | — | 664 | [`prompt-12-zhengzhuang-yingyong.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/12-zhengzhuang-yingyong/outputs/prompt-12-zhengzhuang-yingyong.md) |
+| skill | 症状应用章的动作是「选」，不是「做」 | 症状应用章的动作是「选」，不是「做」——按「先分清三件事：症状、病情、适应证 → 红旗：三类症状各自的「先别做」 → 匹配：三类症状的技术选择与优先次序 → 观察：看症状，不看「感觉好点没有」」走一遍本章判据 | 576 | [`skill-zhengzhuang-yingyong.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/12-zhengzhuang-yingyong/outputs/skill-zhengzhuang-yingyong.md) |
 
-#### 第 13 章 · 观察记录、安全与效果评价
+#### 第 13 章 · 观察、记录、评价是同一条链上的三次落笔
 
 `04-zhongyi-huli-jishu/chapters/13-guancha-anquan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 观察记录、安全与效果评价 · 提示词 | — | 458 | [`prompt-13-guancha-anquan.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/13-guancha-anquan/outputs/prompt-13-guancha-anquan.md) |
-| skill | 观察记录、安全与效果评价 | 观察记录、安全与效果评价——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 374 | [`skill-guancha-anquan.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/13-guancha-anquan/outputs/skill-guancha-anquan.md) |
+| prompt | 观察、记录、评价是同一条链上的三次落笔 · 提示词 | — | 749 | [`prompt-13-guancha-anquan.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/13-guancha-anquan/outputs/prompt-13-guancha-anquan.md) |
+| skill | 观察、记录、评价是同一条链上的三次落笔 | 观察、记录、评价是同一条链上的三次落笔——按「观察的三层：局部、全身、主观 → 记录：五个字段组与一条可追溯线 → 安全：三层风险与报告的三个时点 → 效果评价：四个维度与三条禁令」走一遍本章判据 | 654 | [`skill-guancha-anquan.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/13-guancha-anquan/outputs/skill-guancha-anquan.md) |
 
-#### 第 14 章 · 技术推广、质量管理与平台
+#### 第 14 章 · 能复制出去的是过程，不是手感
 
 `04-zhongyi-huli-jishu/chapters/14-tuiguang-pingtai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 技术推广、质量管理与平台 · 提示词 | — | 455 | [`prompt-14-tuiguang-pingtai.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/14-tuiguang-pingtai/outputs/prompt-14-tuiguang-pingtai.md) |
-| skill | 技术推广、质量管理与平台 | 技术推广、质量管理与平台——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 376 | [`skill-tuiguang-pingtai.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/14-tuiguang-pingtai/outputs/skill-tuiguang-pingtai.md) |
+| prompt | 能复制出去的是过程，不是手感 · 提示词 | — | 719 | [`prompt-14-tuiguang-pingtai.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/14-tuiguang-pingtai/outputs/prompt-14-tuiguang-pingtai.md) |
+| skill | 能复制出去的是过程，不是手感 | 能复制出去的是过程，不是手感——按「可复制的是过程，不是手艺 → 培训与带教：三件事要写清，两件事不许做 → 质量管理：四个维度与一条反馈闭环 → 平台与单元表：把「依据」和「边界」写成两列」走一遍本章判据 | 631 | [`skill-tuiguang-pingtai.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/14-tuiguang-pingtai/outputs/skill-tuiguang-pingtai.md) |
 
 ### 中医养生学
 
 > Core · 第 3 学期 · 已产出 8 章
 
-#### 第 1 章 · 养生的基本原则：天人相应
+#### 第 1 章 · 养生的第一判断不是做什么，而是此刻该顺着什么
 
 `05-zhongyi-yangsheng-xue/chapters/01-jiben-yuanze/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 养生的基本原则：天人相应 · 提示词 | — | 452 | [`prompt-01-jiben-yuanze.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/01-jiben-yuanze/outputs/prompt-01-jiben-yuanze.md) |
-| skill | 养生的基本原则：天人相应 | 养生的基本原则：天人相应——按「定原则 → 选方法 → 随时令与体质调整 → 看效果」走一遍本章判据 | 373 | [`skill-jiben-yuanze.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/01-jiben-yuanze/outputs/skill-jiben-yuanze.md) |
+| prompt | 养生的第一判断不是做什么，而是此刻该顺着什么 · 提示词 | — | 573 | [`prompt-01-jiben-yuanze.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/01-jiben-yuanze/outputs/prompt-01-jiben-yuanze.md) |
+| skill | 养生的第一判断不是做什么，而是此刻该顺着什么 | 养生的第一判断不是做什么，而是此刻该顺着什么——按「天人相应在判断什么 → 四项评估：每次判断先看这四栏 → 判据与分档：顺、偏、逆 → 动作、边界与记录」走一遍本章判据 | 475 | [`skill-jiben-yuanze.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/01-jiben-yuanze/outputs/skill-jiben-yuanze.md) |
 
-#### 第 2 章 · 四时养生与节气调摄
+#### 第 2 章 · 节气不是日历装饰，它决定这一周该加还是该减
 
 `05-zhongyi-yangsheng-xue/chapters/02-sishi-yangsheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 四时养生与节气调摄 · 提示词 | — | 438 | [`prompt-02-sishi-yangsheng.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/02-sishi-yangsheng/outputs/prompt-02-sishi-yangsheng.md) |
-| skill | 四时养生与节气调摄 | 四时养生与节气调摄——按「定原则 → 选方法 → 随时令与体质调整 → 看效果」走一遍本章判据 | 370 | [`skill-sishi-yangsheng.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/02-sishi-yangsheng/outputs/skill-sishi-yangsheng.md) |
+| prompt | 节气不是日历装饰，它决定这一周该加还是该减 · 提示词 | — | 613 | [`prompt-02-sishi-yangsheng.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/02-sishi-yangsheng/outputs/prompt-02-sishi-yangsheng.md) |
+| skill | 节气不是日历装饰，它决定这一周该加还是该减 | 节气不是日历装饰，它决定这一周该加还是该减——按「四时判断的对象是「方向」，不是「温度」 → 四季的操作面：四栏各改什么 → 判据与分档：提前、守住、按住 → 动作、停止条件与记录」走一遍本章判据 | 519 | [`skill-sishi-yangsheng.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/02-sishi-yangsheng/outputs/skill-sishi-yangsheng.md) |
 
-#### 第 3 章 · 饮食养生与体质配膳
+#### 第 3 章 · 吃什么由体质和当下状态定，不由食物排行榜定
 
 `05-zhongyi-yangsheng-xue/chapters/03-yinshi-tizhi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 饮食养生与体质配膳 · 提示词 | — | 442 | [`prompt-03-yinshi-tizhi.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/03-yinshi-tizhi/outputs/prompt-03-yinshi-tizhi.md) |
-| skill | 饮食养生与体质配膳 | 饮食养生与体质配膳——按「定原则 → 选方法 → 随时令与体质调整 → 看效果」走一遍本章判据 | 367 | [`skill-yinshi-tizhi.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/03-yinshi-tizhi/outputs/skill-yinshi-tizhi.md) |
+| prompt | 吃什么由体质和当下状态定，不由食物排行榜定 · 提示词 | — | 580 | [`prompt-03-yinshi-tizhi.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/03-yinshi-tizhi/outputs/prompt-03-yinshi-tizhi.md) |
+| skill | 吃什么由体质和当下状态定，不由食物排行榜定 | 吃什么由体质和当下状态定，不由食物排行榜定——按「判断单位是「这一餐对这个人」 → 四项评估：下筷之前看什么 → 判据与分档：九种体质的配膳方向 → 动作、边界与记录」走一遍本章判据 | 483 | [`skill-yinshi-tizhi.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/03-yinshi-tizhi/outputs/skill-yinshi-tizhi.md) |
 
-#### 第 4 章 · 情志养生与疏泄
+#### 第 4 章 · 情绪不是要消灭的敌人，是要按时疏通的管道
 
 `05-zhongyi-yangsheng-xue/chapters/04-qingzhi-yangsheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 情志养生与疏泄 · 提示词 | — | 430 | [`prompt-04-qingzhi-yangsheng.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/04-qingzhi-yangsheng/outputs/prompt-04-qingzhi-yangsheng.md) |
-| skill | 情志养生与疏泄 | 情志养生与疏泄——按「定原则 → 选方法 → 随时令与体质调整 → 看效果」走一遍本章判据 | 368 | [`skill-qingzhi-yangsheng.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/04-qingzhi-yangsheng/outputs/skill-qingzhi-yangsheng.md) |
+| prompt | 情绪不是要消灭的敌人，是要按时疏通的管道 · 提示词 | — | 586 | [`prompt-04-qingzhi-yangsheng.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/04-qingzhi-yangsheng/outputs/prompt-04-qingzhi-yangsheng.md) |
+| skill | 情绪不是要消灭的敌人，是要按时疏通的管道 | 情绪不是要消灭的敌人，是要按时疏通的管道——按「情志养生的对象是气机，不是「心情」 → 四项评估：一次情绪事件要看四层 → 判据与分档：调畅、郁结、失序 → 动作、边界与记录」走一遍本章判据 | 495 | [`skill-qingzhi-yangsheng.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/04-qingzhi-yangsheng/outputs/skill-qingzhi-yangsheng.md) |
 
-#### 第 5 章 · 运动养生与传统功法
+#### 第 5 章 · 功法的效果不在动作多难，在能不能天天做到不受伤
 
 `05-zhongyi-yangsheng-xue/chapters/05-yundong-gongfa/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 运动养生与传统功法 · 提示词 | — | 436 | [`prompt-05-yundong-gongfa.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/05-yundong-gongfa/outputs/prompt-05-yundong-gongfa.md) |
-| skill | 运动养生与传统功法 | 运动养生与传统功法——按「定原则 → 选方法 → 随时令与体质调整 → 看效果」走一遍本章判据 | 369 | [`skill-yundong-gongfa.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/05-yundong-gongfa/outputs/skill-yundong-gongfa.md) |
+| prompt | 功法的效果不在动作多难，在能不能天天做到不受伤 · 提示词 | — | 608 | [`prompt-05-yundong-gongfa.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/05-yundong-gongfa/outputs/prompt-05-yundong-gongfa.md) |
+| skill | 功法的效果不在动作多难，在能不能天天做到不受伤 | 功法的效果不在动作多难，在能不能天天做到不受伤——按「判断对象是「运动量与耐受」，不是「功法高低」 → 四项评估：开练之前先看四栏 → 判据与分档：可练、减量、禁练 → 功法选择、动作边界与记录」走一遍本章判据 | 511 | [`skill-yundong-gongfa.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/05-yundong-gongfa/outputs/skill-yundong-gongfa.md) |
 
-#### 第 6 章 · 起居作息与睡眠
+#### 第 6 章 · 作息是最便宜的养生手段，也是最难坚持的那一个
 
 `05-zhongyi-yangsheng-xue/chapters/06-qiju-shuimian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 起居作息与睡眠 · 提示词 | — | 430 | [`prompt-06-qiju-shuimian.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/06-qiju-shuimian/outputs/prompt-06-qiju-shuimian.md) |
-| skill | 起居作息与睡眠 | 起居作息与睡眠——按「定原则 → 选方法 → 随时令与体质调整 → 看效果」走一遍本章判据 | 364 | [`skill-qiju-shuimian.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/06-qiju-shuimian/outputs/skill-qiju-shuimian.md) |
+| prompt | 作息是最便宜的养生手段，也是最难坚持的那一个 · 提示词 | — | 568 | [`prompt-06-qiju-shuimian.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/06-qiju-shuimian/outputs/prompt-06-qiju-shuimian.md) |
+| skill | 作息是最便宜的养生手段，也是最难坚持的那一个 | 作息是最便宜的养生手段，也是最难坚持的那一个——按「判断对象是「时点」，不是「时长」 → 四项评估：一夜睡眠看四段 → 判据与分档：规律、漂移、失序 → 动作与边界」走一遍本章判据 | 471 | [`skill-qiju-shuimian.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/06-qiju-shuimian/outputs/skill-qiju-shuimian.md) |
 
-#### 第 7 章 · 治未病与健康管理
+#### 第 7 章 · 治未病不是多查几项，而是把风险变成可跟踪的条目
 
 `05-zhongyi-yangsheng-xue/chapters/07-zhiweibing-jiankang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 治未病与健康管理 · 提示词 | — | 435 | [`prompt-07-zhiweibing-jiankang.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/07-zhiweibing-jiankang/outputs/prompt-07-zhiweibing-jiankang.md) |
-| skill | 治未病与健康管理 | 治未病与健康管理——按「定原则 → 选方法 → 随时令与体质调整 → 看效果」走一遍本章判据 | 372 | [`skill-zhiweibing-jiankang.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/07-zhiweibing-jiankang/outputs/skill-zhiweibing-jiankang.md) |
+| prompt | 治未病不是多查几项，而是把风险变成可跟踪的条目 · 提示词 | — | 565 | [`prompt-07-zhiweibing-jiankang.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/07-zhiweibing-jiankang/outputs/prompt-07-zhiweibing-jiankang.md) |
+| skill | 治未病不是多查几项，而是把风险变成可跟踪的条目 | 治未病不是多查几项，而是把风险变成可跟踪的条目——按「判断单位是「风险条目」，不是「套餐」 → 四项评估：建档时先收四组信息 → 判据与分档：低、中、高与转介线 → 人群分层与动作」走一遍本章判据 | 473 | [`skill-zhiweibing-jiankang.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/07-zhiweibing-jiankang/outputs/skill-zhiweibing-jiankang.md) |
 
-#### 第 8 章 · 养生干预的效果测量
+#### 第 8 章 · 养生有没有效，要看同一把尺子量了两次
 
 `05-zhongyi-yangsheng-xue/chapters/08-xiaoguo-celiang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 养生干预的效果测量 · 提示词 | — | 438 | [`prompt-08-xiaoguo-celiang.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/08-xiaoguo-celiang/outputs/prompt-08-xiaoguo-celiang.md) |
-| skill | 养生干预的效果测量 | 养生干预的效果测量——按「定原则 → 选方法 → 随时令与体质调整 → 看效果」走一遍本章判据 | 370 | [`skill-xiaoguo-celiang.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/08-xiaoguo-celiang/outputs/skill-xiaoguo-celiang.md) |
+| prompt | 养生有没有效，要看同一把尺子量了两次 · 提示词 | — | 589 | [`prompt-08-xiaoguo-celiang.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/08-xiaoguo-celiang/outputs/prompt-08-xiaoguo-celiang.md) |
+| skill | 养生有没有效，要看同一把尺子量了两次 | 养生有没有效，要看同一把尺子量了两次——按「测量的对象是「变化」，不是「状态」 → 四类指标：各自测什么、各自骗人在哪 → 判据与分档：改善、稳定、恶化 → 动作与边界：怎么把测量做实」走一遍本章判据 | 498 | [`skill-xiaoguo-celiang.md`](../departments/05-huli/05-zhongyi-yangsheng-xue/chapters/08-xiaoguo-celiang/outputs/skill-xiaoguo-celiang.md) |
 
 ### 中医心理学
 
 > Core · 第 4 学期 · 已产出 8 章
 
-#### 第 1 章 · 中医心理学的理论框架
+#### 第 1 章 · 中医心理学的第一道判断，是分清形与神各自的证据
 
 `06-zhongyi-xinli-xue/chapters/01-lilun-kuangjia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医心理学的理论框架 · 提示词 | — | 435 | [`prompt-01-lilun-kuangjia.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/01-lilun-kuangjia/outputs/prompt-01-lilun-kuangjia.md) |
-| skill | 中医心理学的理论框架 | 中医心理学的理论框架——按「识情志 → 辨脏腑 → 选疗法 → 评效果」走一遍本章判据 | 361 | [`skill-lilun-kuangjia.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/01-lilun-kuangjia/outputs/skill-lilun-kuangjia.md) |
+| prompt | 中医心理学的第一道判断，是分清形与神各自的证据 · 提示词 | — | 636 | [`prompt-01-lilun-kuangjia.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/01-lilun-kuangjia/outputs/prompt-01-lilun-kuangjia.md) |
+| skill | 中医心理学的第一道判断，是分清形与神各自的证据 | 中医心理学的第一道判断，是分清形与神各自的证据——按「学科边界由三个动作划出，不由一段定义划出 → 采集项：形六项、神六项，每一项都要能被第二个人复核 → 成组判据：四档回答的是「先动哪一头」，不是严重度【教学设定】 → 干预动作与停、转的边界」走一遍本章判据 | 539 | [`skill-lilun-kuangjia.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/01-lilun-kuangjia/outputs/skill-lilun-kuangjia.md) |
 
-#### 第 2 章 · 七情学说与情志致病
+#### 第 2 章 · 情志致病的关键不在情绪有多强，而在气机往哪里去
 
 `06-zhongyi-xinli-xue/chapters/02-qiqing-zhizhi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 七情学说与情志致病 · 提示词 | — | 430 | [`prompt-02-qiqing-zhizhi.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/02-qiqing-zhizhi/outputs/prompt-02-qiqing-zhizhi.md) |
-| skill | 七情学说与情志致病 | 七情学说与情志致病——按「识情志 → 辨脏腑 → 选疗法 → 评效果」走一遍本章判据 | 358 | [`skill-qiqing-zhizhi.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/02-qiqing-zhizhi/outputs/skill-qiqing-zhizhi.md) |
+| prompt | 情志致病的关键不在情绪有多强，而在气机往哪里去 · 提示词 | — | 638 | [`prompt-02-qiqing-zhizhi.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/02-qiqing-zhizhi/outputs/prompt-02-qiqing-zhizhi.md) |
+| skill | 情志致病的关键不在情绪有多强，而在气机往哪里去 | 情志致病的关键不在情绪有多强，而在气机往哪里去——按「三个词先分开：情绪、情志、情志病 → 采集项：问六个点，看六个征象 → 九气走向与护理落点【教学设定】 → 门槛：三档与「已成形」的判断」走一遍本章判据 | 540 | [`skill-qiqing-zhizhi.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/02-qiqing-zhizhi/outputs/skill-qiqing-zhizhi.md) |
 
-#### 第 3 章 · 五志与脏腑的关系
+#### 第 3 章 · 同一种情绪落在不同脏腑，观察项与第一动作都不该一样
 
 `06-zhongyi-xinli-xue/chapters/03-wuzhi-zangfu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 五志与脏腑的关系 · 提示词 | — | 427 | [`prompt-03-wuzhi-zangfu.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/03-wuzhi-zangfu/outputs/prompt-03-wuzhi-zangfu.md) |
-| skill | 五志与脏腑的关系 | 五志与脏腑的关系——按「识情志 → 辨脏腑 → 选疗法 → 评效果」走一遍本章判据 | 355 | [`skill-wuzhi-zangfu.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/03-wuzhi-zangfu/outputs/skill-wuzhi-zangfu.md) |
+| prompt | 同一种情绪落在不同脏腑，观察项与第一动作都不该一样 · 提示词 | — | 668 | [`prompt-03-wuzhi-zangfu.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/03-wuzhi-zangfu/outputs/prompt-03-wuzhi-zangfu.md) |
+| skill | 同一种情绪落在不同脏腑，观察项与第一动作都不该一样 | 同一种情绪落在不同脏腑，观察项与第一动作都不该一样——按「配属讲的是落点规律，不是把情绪分给器官 → 采集项：五脏落点的形征与神征 → 成组判据：单脏、相传、并病【教学设定】 → 相胜关系是地图，不是处方」走一遍本章判据 | 567 | [`skill-wuzhi-zangfu.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/03-wuzhi-zangfu/outputs/skill-wuzhi-zangfu.md) |
 
-#### 第 4 章 · 情志病的辨证与评估
+#### 第 4 章 · 评估的功夫在提问，不在结论
 
 `06-zhongyi-xinli-xue/chapters/04-qingzhibing-pinggu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 情志病的辨证与评估 · 提示词 | — | 430 | [`prompt-04-qingzhibing-pinggu.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/04-qingzhibing-pinggu/outputs/prompt-04-qingzhibing-pinggu.md) |
-| skill | 情志病的辨证与评估 | 情志病的辨证与评估——按「识情志 → 辨脏腑 → 选疗法 → 评效果」走一遍本章判据 | 363 | [`skill-qingzhibing-pinggu.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/04-qingzhibing-pinggu/outputs/skill-qingzhibing-pinggu.md) |
+| prompt | 评估的功夫在提问，不在结论 · 提示词 | — | 570 | [`prompt-04-qingzhibing-pinggu.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/04-qingzhibing-pinggu/outputs/prompt-04-qingzhibing-pinggu.md) |
+| skill | 评估的功夫在提问，不在结论 | 评估的功夫在提问，不在结论——按「四个入口，各有一条证据链 → 问情的六个技术动作 → 证据的三组状态与量表的位置【教学设定】 → 评估本身也是干预，边界同时成立」走一遍本章判据 | 487 | [`skill-qingzhibing-pinggu.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/04-qingzhibing-pinggu/outputs/skill-qingzhibing-pinggu.md) |
 
-#### 第 5 章 · 心理疏导与情志相胜
+#### 第 5 章 · 以情胜情是把情绪当药用，所以它比用药更危险
 
 `06-zhongyi-xinli-xue/chapters/05-shudao-xiangsheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 心理疏导与情志相胜 · 提示词 | — | 432 | [`prompt-05-shudao-xiangsheng.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/05-shudao-xiangsheng/outputs/prompt-05-shudao-xiangsheng.md) |
-| skill | 心理疏导与情志相胜 | 心理疏导与情志相胜——按「识情志 → 辨脏腑 → 选疗法 → 评效果」走一遍本章判据 | 362 | [`skill-shudao-xiangsheng.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/05-shudao-xiangsheng/outputs/skill-shudao-xiangsheng.md) |
+| prompt | 以情胜情是把情绪当药用，所以它比用药更危险 · 提示词 | — | 606 | [`prompt-05-shudao-xiangsheng.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/05-shudao-xiangsheng/outputs/prompt-05-shudao-xiangsheng.md) |
+| skill | 以情胜情是把情绪当药用，所以它比用药更危险 | 以情胜情是把情绪当药用，所以它比用药更危险——按「疏导是四步，不是一句劝 → 相胜的五条对应与三个实施条件 → 三组判据：可用、慎用、禁用【教学设定】 → 停、转与精神科会诊的界线」走一遍本章判据 | 514 | [`skill-shudao-xiangsheng.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/05-shudao-xiangsheng/outputs/skill-shudao-xiangsheng.md) |
 
-#### 第 6 章 · 身心疾病的中医干预
+#### 第 6 章 · 心身疾病的干预，一半在治法，一半在把不确定说清
 
 `06-zhongyi-xinli-xue/chapters/06-shenxin-ganyu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 身心疾病的中医干预 · 提示词 | — | 436 | [`prompt-06-shenxin-ganyu.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/06-shenxin-ganyu/outputs/prompt-06-shenxin-ganyu.md) |
-| skill | 身心疾病的中医干预 | 身心疾病的中医干预——按「识情志 → 辨脏腑 → 选疗法 → 评效果」走一遍本章判据 | 358 | [`skill-shenxin-ganyu.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/06-shenxin-ganyu/outputs/skill-shenxin-ganyu.md) |
+| prompt | 心身疾病的干预，一半在治法，一半在把不确定说清 · 提示词 | — | 656 | [`prompt-06-shenxin-ganyu.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/06-shenxin-ganyu/outputs/prompt-06-shenxin-ganyu.md) |
+| skill | 心身疾病的干预，一半在治法，一半在把不确定说清 | 心身疾病的干预，一半在治法，一半在把不确定说清——按「先把范围划清：心身疾病不等于「查不出病」 → 四条干预路径，各有强弱项 → 三档干预强度与三条会诊红线【教学设定】 → 调护的落点：四时、老人、小儿、病后」走一遍本章判据 | 558 | [`skill-shenxin-ganyu.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/06-shenxin-ganyu/outputs/skill-shenxin-ganyu.md) |
 
-#### 第 7 章 · 心理量表的使用与局限
+#### 第 7 章 · 量表能给一个数字，给不了这个数字的意思
 
 `06-zhongyi-xinli-xue/chapters/07-liangbiao-juxian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 心理量表的使用与局限 · 提示词 | — | 436 | [`prompt-07-liangbiao-juxian.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/07-liangbiao-juxian/outputs/prompt-07-liangbiao-juxian.md) |
-| skill | 心理量表的使用与局限 | 心理量表的使用与局限——按「识情志 → 辨脏腑 → 选疗法 → 评效果」走一遍本章判据 | 363 | [`skill-liangbiao-juxian.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/07-liangbiao-juxian/outputs/skill-liangbiao-juxian.md) |
+| prompt | 量表能给一个数字，给不了这个数字的意思 · 提示词 | — | 598 | [`prompt-07-liangbiao-juxian.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/07-liangbiao-juxian/outputs/prompt-07-liangbiao-juxian.md) |
+| skill | 量表能给一个数字，给不了这个数字的意思 | 量表能给一个数字，给不了这个数字的意思——按「量表的三件事：测什么、对谁成立、在什么条件下测 → 选表的四条判据与四种误用 → 一次测评结果的三种解读状态【教学设定】 → 从分数到动作：量表不产生处置」走一遍本章判据 | 507 | [`skill-liangbiao-juxian.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/07-liangbiao-juxian/outputs/skill-liangbiao-juxian.md) |
 
-#### 第 8 章 · 心理干预研究的对照设计
+#### 第 8 章 · 要证明一个干预有效，先得说清它跟什么比
 
 `06-zhongyi-xinli-xue/chapters/08-duizhao-sheji/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 心理干预研究的对照设计 · 提示词 | — | 437 | [`prompt-08-duizhao-sheji.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/08-duizhao-sheji/outputs/prompt-08-duizhao-sheji.md) |
-| skill | 心理干预研究的对照设计 | 心理干预研究的对照设计——按「识情志 → 辨脏腑 → 选疗法 → 评效果」走一遍本章判据 | 362 | [`skill-duizhao-sheji.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/08-duizhao-sheji/outputs/skill-duizhao-sheji.md) |
+| prompt | 要证明一个干预有效，先得说清它跟什么比 · 提示词 | — | 626 | [`prompt-08-duizhao-sheji.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/08-duizhao-sheji/outputs/prompt-08-duizhao-sheji.md) |
+| skill | 要证明一个干预有效，先得说清它跟什么比 | 要证明一个干预有效，先得说清它跟什么比——按「四个问题，缺一个结论就不成立 → 五种设计，各自能回答什么 → 三档可信度：读一篇研究时怎么下判断【教学设定】 → 偏倚与报告字段」走一遍本章判据 | 532 | [`skill-duizhao-sheji.md`](../departments/05-huli/06-zhongyi-xinli-xue/chapters/08-duizhao-sheji/outputs/skill-duizhao-sheji.md) |
 
 ### 内科护理学
 
 > Clinic · 第 5 学期 · 已产出 14 章
 
-#### 第 1 章 · 内科护理概述与理论基础
+#### 第 1 章 · 不诊断不等于不判断：内科护理的分寸全在观察的颗粒度上
 
 `07-neike-huli-xue/chapters/01-gaishu-lilun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：内科护理概述与理论基础 | — | 415 | [`prompt-01-gaishu-lilun.md`](../departments/05-huli/07-neike-huli-xue/chapters/01-gaishu-lilun/outputs/prompt-01-gaishu-lilun.md) |
-| skill | 内科护理概述与理论基础 | 用《内科护理学》第 1 章「内科护理概述与理论基础」的单元层做可核对的教学材料。 | 515 | [`skill-01-gaishu-lilun.md`](../departments/05-huli/07-neike-huli-xue/chapters/01-gaishu-lilun/outputs/skill-01-gaishu-lilun.md) |
+| prompt | 不诊断不等于不判断：内科护理的分寸全在观察的颗粒度上 · 提示词 | — | 618 | [`prompt-01-gaishu-lilun.md`](../departments/05-huli/07-neike-huli-xue/chapters/01-gaishu-lilun/outputs/prompt-01-gaishu-lilun.md) |
+| skill | 不诊断不等于不判断：内科护理的分寸全在观察的颗粒度上 | 不诊断不等于不判断：内科护理的分寸全在观察的颗粒度上——按「护理要判断的不是病名，是「变化的方向」 → 四组功能的观察项：每项都要有「和什么比」 → 判据分档：三档，每档都要能一句话说清【教学设定】 → 动作、时限与记录字段」走一遍本章判据 | 516 | [`skill-01-gaishu-lilun.md`](../departments/05-huli/07-neike-huli-xue/chapters/01-gaishu-lilun/outputs/skill-01-gaishu-lilun.md) |
 
-#### 第 2 章 · 内科护理评估与病情观察
+#### 第 2 章 · 评估的价值不在第一次问全，而在第二次问得比第一次少
 
 `07-neike-huli-xue/chapters/02-pinggu-guancha/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：内科护理评估与病情观察 | — | 415 | [`prompt-02-pinggu-guancha.md`](../departments/05-huli/07-neike-huli-xue/chapters/02-pinggu-guancha/outputs/prompt-02-pinggu-guancha.md) |
-| skill | 内科护理评估与病情观察 | 用《内科护理学》第 2 章「内科护理评估与病情观察」的单元层做可核对的教学材料。 | 519 | [`skill-02-pinggu-guancha.md`](../departments/05-huli/07-neike-huli-xue/chapters/02-pinggu-guancha/outputs/skill-02-pinggu-guancha.md) |
+| prompt | 评估的价值不在第一次问全，而在第二次问得比第一次少 · 提示词 | — | 614 | [`prompt-02-pinggu-guancha.md`](../departments/05-huli/07-neike-huli-xue/chapters/02-pinggu-guancha/outputs/prompt-02-pinggu-guancha.md) |
+| skill | 评估的价值不在第一次问全，而在第二次问得比第一次少 | 评估的价值不在第一次问全，而在第二次问得比第一次少——按「五个维度与「问全」的幻觉 → 三源不一致：先记录分歧，再决定信谁 → 判据分档：评估结果怎么变成观察频次【教学设定】 → 记录七要素与留痕」走一遍本章判据 | 515 | [`skill-02-pinggu-guancha.md`](../departments/05-huli/07-neike-huli-xue/chapters/02-pinggu-guancha/outputs/skill-02-pinggu-guancha.md) |
 
-#### 第 3 章 · 内科常用护理技术与安全
+#### 第 3 章 · 技术安全的关口不在禁忌表上，在开做前那三个必须核对的动作里
 
 `07-neike-huli-xue/chapters/03-jishu-anquan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：内科常用护理技术与安全 | — | 415 | [`prompt-03-jishu-anquan.md`](../departments/05-huli/07-neike-huli-xue/chapters/03-jishu-anquan/outputs/prompt-03-jishu-anquan.md) |
-| skill | 内科常用护理技术与安全 | 用《内科护理学》第 3 章「内科常用护理技术与安全」的单元层做可核对的教学材料。 | 515 | [`skill-03-jishu-anquan.md`](../departments/05-huli/07-neike-huli-xue/chapters/03-jishu-anquan/outputs/skill-03-jishu-anquan.md) |
+| prompt | 技术安全的关口不在禁忌表上，在开做前那三个必须核对的动作里 · 提示词 | — | 628 | [`prompt-03-jishu-anquan.md`](../departments/05-huli/07-neike-huli-xue/chapters/03-jishu-anquan/outputs/prompt-03-jishu-anquan.md) |
+| skill | 技术安全的关口不在禁忌表上，在开做前那三个必须核对的动作里 | 技术安全的关口不在禁忌表上，在开做前那三个必须核对的动作里——按「六要素是六道闸，不是六个步骤 → 这一类技术的共同结构：前、中、后各查什么 → 判据分档与「叫停权」【教学设定】 → 记录字段、交接与失效模式」走一遍本章判据 | 523 | [`skill-03-jishu-anquan.md`](../departments/05-huli/07-neike-huli-xue/chapters/03-jishu-anquan/outputs/skill-03-jishu-anquan.md) |
 | prompt | 中医护理技术的安全线画在施术前，不在出事之后 · 提示词 | — | 782 | [`prompt-03-jishu-anquan.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/03-jishu-anquan/outputs/prompt-03-jishu-anquan.md) |
 | skill | 中医护理技术的安全线画在施术前，不在出事之后 | 中医护理技术的安全线画在施术前，不在出事之后——按「安全线在施术前：技术越「熟悉」，越要先核对 → 五项准入核对：全过才动手 → 辨证要点：六类技术各看什么 → 动作与时限：从准备到撤离」走一遍本章判据 | 673 | [`skill-jishu-anquan.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/03-jishu-anquan/outputs/skill-jishu-anquan.md) |
 
-#### 第 4 章 · 内科常见症状的护理
+#### 第 4 章 · 症状是同一个词，背后却是五条互不通用的观察线
 
 `07-neike-huli-xue/chapters/04-zhengzhuang-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：内科常见症状的护理 | — | 413 | [`prompt-04-zhengzhuang-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/04-zhengzhuang-huli/outputs/prompt-04-zhengzhuang-huli.md) |
-| skill | 内科常见症状的护理 | 用《内科护理学》第 4 章「内科常见症状的护理」的单元层做可核对的教学材料。 | 519 | [`skill-04-zhengzhuang-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/04-zhengzhuang-huli/outputs/skill-04-zhengzhuang-huli.md) |
+| prompt | 症状是同一个词，背后却是五条互不通用的观察线 · 提示词 | — | 590 | [`prompt-04-zhengzhuang-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/04-zhengzhuang-huli/outputs/prompt-04-zhengzhuang-huli.md) |
+| skill | 症状是同一个词，背后却是五条互不通用的观察线 | 症状是同一个词，背后却是五条互不通用的观察线——按「共用骨架：五个症状填同一张表 → 发热与疼痛：两种完全不同的量化 → 呼吸困难与水肿：看动作幅度与时间分布 → 意识改变：最先变的往往不是意识本身」走一遍本章判据 | 496 | [`skill-04-zhengzhuang-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/04-zhengzhuang-huli/outputs/skill-04-zhengzhuang-huli.md) |
 
-#### 第 5 章 · 药物治疗与静脉治疗的护理安全
+#### 第 5 章 · 给药的错很少错在没对上，多错在对上之后再没有人看那一眼
 
 `07-neike-huli-xue/chapters/05-yaowu-jingmai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：药物治疗与静脉治疗的护理安全 | — | 418 | [`prompt-05-yaowu-jingmai.md`](../departments/05-huli/07-neike-huli-xue/chapters/05-yaowu-jingmai/outputs/prompt-05-yaowu-jingmai.md) |
-| skill | 药物治疗与静脉治疗的护理安全 | 用《内科护理学》第 5 章「药物治疗与静脉治疗的护理安全」的单元层做可核对的教学材料。 | 523 | [`skill-05-yaowu-jingmai.md`](../departments/05-huli/07-neike-huli-xue/chapters/05-yaowu-jingmai/outputs/skill-05-yaowu-jingmai.md) |
+| prompt | 给药的错很少错在没对上，多错在对上之后再没有人看那一眼 · 提示词 | — | 637 | [`prompt-05-yaowu-jingmai.md`](../departments/05-huli/07-neike-huli-xue/chapters/05-yaowu-jingmai/outputs/prompt-05-yaowu-jingmai.md) |
+| skill | 给药的错很少错在没对上，多错在对上之后再没有人看那一眼 | 给药的错很少错在没对上，多错在对上之后再没有人看那一眼——按「三条链共用一个骨架：核对、观察、处置 → 核对：三个时刻与两个盲区 → 输注与通路：五类观察，判断权不在护理 → 标本：一一对应的失败点只有三处」走一遍本章判据 | 535 | [`skill-05-yaowu-jingmai.md`](../departments/05-huli/07-neike-huli-xue/chapters/05-yaowu-jingmai/outputs/skill-05-yaowu-jingmai.md) |
 
-#### 第 6 章 · 内科营养支持与饮食护理
+#### 第 6 章 · 「吃不下」不是一句主诉，而是一笔当场就能算出来的缺口
 
 `07-neike-huli-xue/chapters/06-yingyang-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：内科营养支持与饮食护理 | — | 415 | [`prompt-06-yingyang-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/06-yingyang-huli/outputs/prompt-06-yingyang-huli.md) |
-| skill | 内科营养支持与饮食护理 | 用《内科护理学》第 6 章「内科营养支持与饮食护理」的单元层做可核对的教学材料。 | 517 | [`skill-06-yingyang-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/06-yingyang-huli/outputs/skill-06-yingyang-huli.md) |
+| prompt | 「吃不下」不是一句主诉，而是一笔当场就能算出来的缺口 · 提示词 | — | 607 | [`prompt-06-yingyang-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/06-yingyang-huli/outputs/prompt-06-yingyang-huli.md) |
+| skill | 「吃不下」不是一句主诉，而是一笔当场就能算出来的缺口 | 「吃不下」不是一句主诉，而是一笔当场就能算出来的缺口——按「七个维度里只有两维能算，先把这两维算清 → 摄入量：餐次、份量、剩余，三个数就够 → 体重与趋势：三个「同一」不齐，数字就是噪点 → 肠内与肠外：耐受、体位与通路」走一遍本章判据 | 506 | [`skill-06-yingyang-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/06-yingyang-huli/outputs/skill-06-yingyang-huli.md) |
 
-#### 第 7 章 · 呼吸系统疾病护理
+#### 第 7 章 · 呼吸的恶化很少是突然的，多半是「再观察一下」攒出来的
 
 `07-neike-huli-xue/chapters/07-huxi-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：呼吸系统疾病护理 | — | 412 | [`prompt-07-huxi-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/07-huxi-huli/outputs/prompt-07-huxi-huli.md) |
-| skill | 呼吸系统疾病护理 | 用《内科护理学》第 7 章「呼吸系统疾病护理」的单元层做可核对的教学材料。 | 503 | [`skill-07-huxi-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/07-huxi-huli/outputs/skill-07-huxi-huli.md) |
+| prompt | 呼吸的恶化很少是突然的，多半是「再观察一下」攒出来的 · 提示词 | — | 620 | [`prompt-07-huxi-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/07-huxi-huli/outputs/prompt-07-huxi-huli.md) |
+| skill | 呼吸的恶化很少是突然的，多半是「再观察一下」攒出来的 | 呼吸的恶化很少是突然的，多半是「再观察一下」攒出来的——按「七类观察项里，只有三项会「先动」 → 痰：四格都要与昨日比 → 氧疗与雾化：配合的边界，以及为什么不写参数 → 排痰与体位：时机、次序与耐受」走一遍本章判据 | 515 | [`skill-07-huxi-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/07-huxi-huli/outputs/skill-07-huxi-huli.md) |
 
-#### 第 8 章 · 循环系统疾病护理
+#### 第 8 章 · 循环的账要按天算：体重与出入量比一次听诊更早开口
 
 `07-neike-huli-xue/chapters/08-xunhuan-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：循环系统疾病护理 | — | 412 | [`prompt-08-xunhuan-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/08-xunhuan-huli/outputs/prompt-08-xunhuan-huli.md) |
-| skill | 循环系统疾病护理 | 用《内科护理学》第 8 章「循环系统疾病护理」的单元层做可核对的教学材料。 | 509 | [`skill-08-xunhuan-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/08-xunhuan-huli/outputs/skill-08-xunhuan-huli.md) |
+| prompt | 循环的账要按天算：体重与出入量比一次听诊更早开口 · 提示词 | — | 590 | [`prompt-08-xunhuan-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/08-xunhuan-huli/outputs/prompt-08-xunhuan-huli.md) |
+| skill | 循环的账要按天算：体重与出入量比一次听诊更早开口 | 循环的账要按天算：体重与出入量比一次听诊更早开口——按「七类观察项要按三个时间尺度分层 → 活动耐受：四级动作门槛，不按感觉分级 → 两本账：出入量与体重必须对得上 → 监测配合：连接部位、信号与判读权」走一遍本章判据 | 490 | [`skill-08-xunhuan-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/08-xunhuan-huli/outputs/skill-08-xunhuan-huli.md) |
 
-#### 第 9 章 · 消化系统疾病护理
+#### 第 9 章 · 消化道先看进出对不对得上，再看疼在哪里
 
 `07-neike-huli-xue/chapters/09-xiaohua-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：消化系统疾病护理 | — | 412 | [`prompt-09-xiaohua-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/09-xiaohua-huli/outputs/prompt-09-xiaohua-huli.md) |
-| skill | 消化系统疾病护理 | 用《内科护理学》第 9 章「消化系统疾病护理」的单元层做可核对的教学材料。 | 509 | [`skill-09-xiaohua-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/09-xiaohua-huli/outputs/skill-09-xiaohua-huli.md) |
+| prompt | 消化道先看进出对不对得上，再看疼在哪里 · 提示词 | — | 576 | [`prompt-09-xiaohua-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/09-xiaohua-huli/outputs/prompt-09-xiaohua-huli.md) |
+| skill | 消化道先看进出对不对得上，再看疼在哪里 | 消化道先看进出对不对得上，再看疼在哪里——按「七类观察项要两两配对看 → 腹痛：把它拆成四个维度 → 消化道出血：三条线索与报告的四要素 → 胃肠减压与鼻饲：耐受、误吸与口腔」走一遍本章判据 | 481 | [`skill-09-xiaohua-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/09-xiaohua-huli/outputs/skill-09-xiaohua-huli.md) |
 
-#### 第 10 章 · 泌尿系统疾病护理
+#### 第 10 章 · 尿量是内科最诚实的一项指标，前提是有人按同一个口径记
 
 `07-neike-huli-xue/chapters/10-miniao-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：泌尿系统疾病护理 | — | 413 | [`prompt-10-miniao-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/10-miniao-huli/outputs/prompt-10-miniao-huli.md) |
-| skill | 泌尿系统疾病护理 | 用《内科护理学》第 10 章「泌尿系统疾病护理」的单元层做可核对的教学材料。 | 508 | [`skill-10-miniao-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/10-miniao-huli/outputs/skill-10-miniao-huli.md) |
+| prompt | 尿量是内科最诚实的一项指标，前提是有人按同一个口径记 · 提示词 | — | 622 | [`prompt-10-miniao-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/10-miniao-huli/outputs/prompt-10-miniao-huli.md) |
+| skill | 尿量是内科最诚实的一项指标，前提是有人按同一个口径记 | 尿量是内科最诚实的一项指标，前提是有人按同一个口径记——按「六类要点与一条主线 → 出入量与尿液：四口径必须先定死 → 水肿与体重：三个部位、三个「同一」 → 导尿与透析：局部、通路与尊重」走一遍本章判据 | 518 | [`skill-10-miniao-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/10-miniao-huli/outputs/skill-10-miniao-huli.md) |
 
-#### 第 11 章 · 血液系统疾病护理
+#### 第 11 章 · 血液科的危险不在出血本身，在「看起来还好」的那几个小时
 
 `07-neike-huli-xue/chapters/11-xueye-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：血液系统疾病护理 | — | 413 | [`prompt-11-xueye-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/11-xueye-huli/outputs/prompt-11-xueye-huli.md) |
-| skill | 血液系统疾病护理 | 用《内科护理学》第 11 章「血液系统疾病护理」的单元层做可核对的教学材料。 | 506 | [`skill-11-xueye-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/11-xueye-huli/outputs/skill-11-xueye-huli.md) |
+| prompt | 血液科的危险不在出血本身，在「看起来还好」的那几个小时 · 提示词 | — | 640 | [`prompt-11-xueye-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/11-xueye-huli/outputs/prompt-11-xueye-huli.md) |
+| skill | 血液科的危险不在出血本身，在「看起来还好」的那几个小时 | 血液科的危险不在出血本身，在「看起来还好」的那几个小时——按「三组观察互为因果，不能分头看 → 出血：五个部位，与「新出现的」这个限定词 → 感染：体温之外的三项 → 保护性隔离与输血：配合的三道闸」走一遍本章判据 | 534 | [`skill-11-xueye-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/11-xueye-huli/outputs/skill-11-xueye-huli.md) |
 
-#### 第 12 章 · 内分泌与代谢性疾病护理
+#### 第 12 章 · 内分泌的观察要跨过「今天」：一次测量说明不了一件事
 
 `07-neike-huli-xue/chapters/12-neifenmi-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：内分泌与代谢性疾病护理 | — | 416 | [`prompt-12-neifenmi-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/12-neifenmi-huli/outputs/prompt-12-neifenmi-huli.md) |
-| skill | 内分泌与代谢性疾病护理 | 用《内科护理学》第 12 章「内分泌与代谢性疾病护理」的单元层做可核对的教学材料。 | 518 | [`skill-12-neifenmi-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/12-neifenmi-huli/outputs/skill-12-neifenmi-huli.md) |
+| prompt | 内分泌的观察要跨过「今天」：一次测量说明不了一件事 · 提示词 | — | 592 | [`prompt-12-neifenmi-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/12-neifenmi-huli/outputs/prompt-12-neifenmi-huli.md) |
+| skill | 内分泌的观察要跨过「今天」：一次测量说明不了一件事 | 内分泌的观察要跨过「今天」：一次测量说明不了一件事——按「四条线：症状之外还有三条 → 两个方向：低与高，动作完全不同 → 足与皮肤：最容易被看见，最晚被处理 → 自我监测的教法：教动作，不教数值」走一遍本章判据 | 491 | [`skill-12-neifenmi-huli.md`](../departments/05-huli/07-neike-huli-xue/chapters/12-neifenmi-huli/outputs/skill-12-neifenmi-huli.md) |
 
-#### 第 13 章 · 风湿免疫与神经系统疾病护理
+#### 第 13 章 · 风湿与神经合成一章，因为两者的失能都比疼痛更早发生
 
 `07-neike-huli-xue/chapters/13-fengshi-shenjing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：风湿免疫与神经系统疾病护理 | — | 418 | [`prompt-13-fengshi-shenjing.md`](../departments/05-huli/07-neike-huli-xue/chapters/13-fengshi-shenjing/outputs/prompt-13-fengshi-shenjing.md) |
-| skill | 风湿免疫与神经系统疾病护理 | 用《内科护理学》第 13 章「风湿免疫与神经系统疾病护理」的单元层做可核对的教学材料。 | 528 | [`skill-13-fengshi-shenjing.md`](../departments/05-huli/07-neike-huli-xue/chapters/13-fengshi-shenjing/outputs/skill-13-fengshi-shenjing.md) |
+| prompt | 风湿与神经合成一章，因为两者的失能都比疼痛更早发生 · 提示词 | — | 597 | [`prompt-13-fengshi-shenjing.md`](../departments/05-huli/07-neike-huli-xue/chapters/13-fengshi-shenjing/outputs/prompt-13-fengshi-shenjing.md) |
+| skill | 风湿与神经合成一章，因为两者的失能都比疼痛更早发生 | 风湿与神经合成一章，因为两者的失能都比疼痛更早发生——按「两类病真正的共同点：失能先于疼痛 → 关节与皮肤：四个「看」与三个「问」 → 神经：意识之外的五项 → 安全：四条风险，各有各的拦截动作」走一遍本章判据 | 499 | [`skill-13-fengshi-shenjing.md`](../departments/05-huli/07-neike-huli-xue/chapters/13-fengshi-shenjing/outputs/skill-13-fengshi-shenjing.md) |
 
-#### 第 14 章 · 传染病护理、质量风险与平台
+#### 第 14 章 · 传染、质量、平台三件事，共用一条「先防住、再留痕」的次序
 
 `07-neike-huli-xue/chapters/14-chuanran-zhiliang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：传染病护理、质量风险与平台 | — | 418 | [`prompt-14-chuanran-zhiliang.md`](../departments/05-huli/07-neike-huli-xue/chapters/14-chuanran-zhiliang/outputs/prompt-14-chuanran-zhiliang.md) |
-| skill | 传染病护理、质量风险与平台 | 用《内科护理学》第 14 章「传染病护理、质量风险与平台」的单元层做可核对的教学材料。 | 530 | [`skill-14-chuanran-zhiliang.md`](../departments/05-huli/07-neike-huli-xue/chapters/14-chuanran-zhiliang/outputs/skill-14-chuanran-zhiliang.md) |
+| prompt | 传染、质量、平台三件事，共用一条「先防住、再留痕」的次序 · 提示词 | — | 626 | [`prompt-14-chuanran-zhiliang.md`](../departments/05-huli/07-neike-huli-xue/chapters/14-chuanran-zhiliang/outputs/prompt-14-chuanran-zhiliang.md) |
+| skill | 传染、质量、平台三件事，共用一条「先防住、再留痕」的次序 | 传染、质量、平台三件事，共用一条「先防住、再留痕」的次序——按「最小闭环：识别、防住、报告、追踪 → 隔离的三道门：人、物、空间 → 质量与不良事件：按事实报，不按责任报 → 平台与信息：三条底线」走一遍本章判据 | 526 | [`skill-14-chuanran-zhiliang.md`](../departments/05-huli/07-neike-huli-xue/chapters/14-chuanran-zhiliang/outputs/skill-14-chuanran-zhiliang.md) |
 
 ### 外科护理学
 
 > Clinic · 第 5 学期 · 已产出 13 章
 
-#### 第 1 章 · 外科护理概述与工作模式
+#### 第 1 章 · 外科护理的分界线，划在"谁作决定"而不是"谁做的事多"
 
 `08-waike-huli-xue/chapters/01-gaishu-moshi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 外科护理概述与工作模式 · 提示词 | — | 458 | [`prompt-01-gaishu-moshi.md`](../departments/05-huli/08-waike-huli-xue/chapters/01-gaishu-moshi/outputs/prompt-01-gaishu-moshi.md) |
-| skill | 外科护理概述与工作模式 | 外科护理概述与工作模式——按「术前评估与准备 → 术中配合与安全 → 术后观察与并发症 → 出院与随访」走一遍本章判据 | 369 | [`skill-gaishu-moshi.md`](../departments/05-huli/08-waike-huli-xue/chapters/01-gaishu-moshi/outputs/skill-gaishu-moshi.md) |
+| prompt | 外科护理的分界线，划在"谁作决定"而不是"谁做的事多" · 提示词 | — | 608 | [`prompt-01-gaishu-moshi.md`](../departments/05-huli/08-waike-huli-xue/chapters/01-gaishu-moshi/outputs/prompt-01-gaishu-moshi.md) |
+| skill | 外科护理的分界线，划在"谁作决定"而不是"谁做的事多" | 外科护理的分界线，划在"谁作决定"而不是"谁做的事多"——按「三个不一样：对象、时点、责任 → 四种工作模式，各自最容易丢什么 → 围手术期链条上的四个交接点 → 两个不允许"凭印象"的环节」走一遍本章判据 | 505 | [`skill-gaishu-moshi.md`](../departments/05-huli/08-waike-huli-xue/chapters/01-gaishu-moshi/outputs/skill-gaishu-moshi.md) |
 | prompt | 妇产科护理的分界不在病种，而在一次照护里有两个人 · 提示词 | — | 820 | [`prompt-01-gaishu-moshi.md`](../departments/05-huli/09-fuchanke-huli-xue/chapters/01-gaishu-moshi/outputs/prompt-01-gaishu-moshi.md) |
 | skill | 妇产科护理的分界不在病种，而在一次照护里有两个人 | 妇产科护理的分界不在病种，而在一次照护里有两个人——按「两个当事人：这条线决定了后面所有动作 → 四个场景，四套判据 → 责任边界：护理回答"观察到什么" → 什么时候必须上报，什么时候必须转诊」走一遍本章判据 | 710 | [`skill-gaishu-moshi.md`](../departments/05-huli/09-fuchanke-huli-xue/chapters/01-gaishu-moshi/outputs/skill-gaishu-moshi.md) |
-| prompt | 儿科护理概述与工作模式 · 提示词 | — | 444 | [`prompt-01-gaishu-moshi.md`](../departments/05-huli/10-erke-huli-xue/chapters/01-gaishu-moshi/outputs/prompt-01-gaishu-moshi.md) |
-| skill | 儿科护理概述与工作模式 | 儿科护理概述与工作模式——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 356 | [`skill-gaishu-moshi.md`](../departments/05-huli/10-erke-huli-xue/chapters/01-gaishu-moshi/outputs/skill-gaishu-moshi.md) |
+| prompt | 儿童不替自己说话，每条观察都要能被第二个人复核 · 提示词 | — | 630 | [`prompt-01-gaishu-moshi.md`](../departments/05-huli/10-erke-huli-xue/chapters/01-gaishu-moshi/outputs/prompt-01-gaishu-moshi.md) |
+| skill | 儿童不替自己说话，每条观察都要能被第二个人复核 | 儿童不替自己说话，每条观察都要能被第二个人复核——按「儿科的三个不一样，各自换一个动作 → 观察的四要素与分龄差异 → 工作模式：交接是个人观察变成集体判断的唯一接口 → 沟通、宣教回述与记录字段」走一遍本章判据 | 531 | [`skill-gaishu-moshi.md`](../departments/05-huli/10-erke-huli-xue/chapters/01-gaishu-moshi/outputs/skill-gaishu-moshi.md) |
 
-#### 第 2 章 · 围手术期护理基础
+#### 第 2 章 · 围手术期不是三段流程，而是一条"基线—偏离—复核"的链
 
 `08-waike-huli-xue/chapters/02-weishoushu-jichu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 围手术期护理基础 · 提示词 | — | 447 | [`prompt-02-weishoushu-jichu.md`](../departments/05-huli/08-waike-huli-xue/chapters/02-weishoushu-jichu/outputs/prompt-02-weishoushu-jichu.md) |
-| skill | 围手术期护理基础 | 围手术期护理基础——按「术前评估与准备 → 术中配合与安全 → 术后观察与并发症 → 出院与随访」走一遍本章判据 | 367 | [`skill-weishoushu-jichu.md`](../departments/05-huli/08-waike-huli-xue/chapters/02-weishoushu-jichu/outputs/skill-weishoushu-jichu.md) |
+| prompt | 围手术期不是三段流程，而是一条"基线—偏离—复核"的链 · 提示词 | — | 628 | [`prompt-02-weishoushu-jichu.md`](../departments/05-huli/08-waike-huli-xue/chapters/02-weishoushu-jichu/outputs/prompt-02-weishoushu-jichu.md) |
+| skill | 围手术期不是三段流程，而是一条"基线—偏离—复核"的链 | 围手术期不是三段流程，而是一条"基线—偏离—复核"的链——按「分期的意义：不是时间刻度，是责任刻度 → 术前：评估项与准备项要分开记 → 术中：病房护士要知道的四件事 → 术后：体位、活动与"下床三步"」走一遍本章判据 | 529 | [`skill-weishoushu-jichu.md`](../departments/05-huli/08-waike-huli-xue/chapters/02-weishoushu-jichu/outputs/skill-weishoushu-jichu.md) |
 
-#### 第 3 章 · 外科护理评估、记录与常用技术
+#### 第 3 章 · 记录的用处不在证明做过，而在让别人能重做一遍
 
 `08-waike-huli-xue/chapters/03-pinggu-jishu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 外科护理评估、记录与常用技术 · 提示词 | — | 467 | [`prompt-03-pinggu-jishu.md`](../departments/05-huli/08-waike-huli-xue/chapters/03-pinggu-jishu/outputs/prompt-03-pinggu-jishu.md) |
-| skill | 外科护理评估、记录与常用技术 | 外科护理评估、记录与常用技术——按「术前评估与准备 → 术中配合与安全 → 术后观察与并发症 → 出院与随访」走一遍本章判据 | 375 | [`skill-pinggu-jishu.md`](../departments/05-huli/08-waike-huli-xue/chapters/03-pinggu-jishu/outputs/skill-pinggu-jishu.md) |
+| prompt | 记录的用处不在证明做过，而在让别人能重做一遍 · 提示词 | — | 670 | [`prompt-03-pinggu-jishu.md`](../departments/05-huli/08-waike-huli-xue/chapters/03-pinggu-jishu/outputs/prompt-03-pinggu-jishu.md) |
+| skill | 记录的用处不在证明做过，而在让别人能重做一遍 | 记录的用处不在证明做过，而在让别人能重做一遍——按「评估的四维与三源：先把信息的成色分清 → 疼痛与舒适：把"难受"拆成可记录的四项 → 体位、转运、换药：三个动作，各自的时限与停止条件 → 切口与引流：五个观察项与脱出后的顺序」走一遍本章判据 | 572 | [`skill-pinggu-jishu.md`](../departments/05-huli/08-waike-huli-xue/chapters/03-pinggu-jishu/outputs/skill-pinggu-jishu.md) |
 
-#### 第 4 章 · 感染防控与液体治疗、管路护理
+#### 第 4 章 · 防控的分水岭不在消毒的浓度，在"这条通路是谁在什么条件下打开的"
 
 `08-waike-huli-xue/chapters/04-ganran-yeti/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 感染防控与液体治疗、管路护理 · 提示词 | — | 467 | [`prompt-04-ganran-yeti.md`](../departments/05-huli/08-waike-huli-xue/chapters/04-ganran-yeti/outputs/prompt-04-ganran-yeti.md) |
-| skill | 感染防控与液体治疗、管路护理 | 感染防控与液体治疗、管路护理——按「术前评估与准备 → 术中配合与安全 → 术后观察与并发症 → 出院与随访」走一遍本章判据 | 374 | [`skill-ganran-yeti.md`](../departments/05-huli/08-waike-huli-xue/chapters/04-ganran-yeti/outputs/skill-ganran-yeti.md) |
+| prompt | 防控的分水岭不在消毒的浓度，在"这条通路是谁在什么条件下打开的" · 提示词 | — | 611 | [`prompt-04-ganran-yeti.md`](../departments/05-huli/08-waike-huli-xue/chapters/04-ganran-yeti/outputs/prompt-04-ganran-yeti.md) |
+| skill | 防控的分水岭不在消毒的浓度，在"这条通路是谁在什么条件下打开的" | 防控的分水岭不在消毒的浓度，在"这条通路是谁在什么条件下打开的"——按「无菌的三条边界：谁的边界谁守 → 隔离与防护：按传播途径选，不按病名选 → 液体：出入量的四个字段与三步判断 → 管路：四件事与一条失效链」走一遍本章判据 | 502 | [`skill-ganran-yeti.md`](../departments/05-huli/08-waike-huli-xue/chapters/04-ganran-yeti/outputs/skill-ganran-yeti.md) |
 
-#### 第 5 章 · 围手术期并发症的预防与护理
+#### 第 5 章 · 并发症不是"出事了才处理"，是四个每天都在发生的漏项
 
 `08-waike-huli-xue/chapters/05-bingfazheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 围手术期并发症的预防与护理 · 提示词 | — | 462 | [`prompt-05-bingfazheng.md`](../departments/05-huli/08-waike-huli-xue/chapters/05-bingfazheng/outputs/prompt-05-bingfazheng.md) |
-| skill | 围手术期并发症的预防与护理 | 围手术期并发症的预防与护理——按「术前评估与准备 → 术中配合与安全 → 术后观察与并发症 → 出院与随访」走一遍本章判据 | 372 | [`skill-bingfazheng.md`](../departments/05-huli/08-waike-huli-xue/chapters/05-bingfazheng/outputs/skill-bingfazheng.md) |
+| prompt | 并发症不是"出事了才处理"，是四个每天都在发生的漏项 · 提示词 | — | 594 | [`prompt-05-bingfazheng.md`](../departments/05-huli/08-waike-huli-xue/chapters/05-bingfazheng/outputs/prompt-05-bingfazheng.md) |
+| skill | 并发症不是"出事了才处理"，是四个每天都在发生的漏项 | 并发症不是"出事了才处理"，是四个每天都在发生的漏项——按「切口：三级观察，从敷料看到全身 → 呼吸：不是"多咳嗽"，而是"咳得动" → 血栓：风险识别与"预防漏项"这条失效链 → 压力性损伤：把"翻身"变成可核对的记录」走一遍本章判据 | 491 | [`skill-bingfazheng.md`](../departments/05-huli/08-waike-huli-xue/chapters/05-bingfazheng/outputs/skill-bingfazheng.md) |
 
-#### 第 6 章 · 普通外科疾病护理
+#### 第 6 章 · 腹部术后的第一判断不是疼不疼，而是"通没通"
 
 `08-waike-huli-xue/chapters/06-puwai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 普通外科疾病护理 · 提示词 | — | 447 | [`prompt-06-puwai.md`](../departments/05-huli/08-waike-huli-xue/chapters/06-puwai/outputs/prompt-06-puwai.md) |
-| skill | 普通外科疾病护理 | 普通外科疾病护理——按「术前评估与准备 → 术中配合与安全 → 术后观察与并发症 → 出院与随访」走一遍本章判据 | 356 | [`skill-puwai.md`](../departments/05-huli/08-waike-huli-xue/chapters/06-puwai/outputs/skill-puwai.md) |
+| prompt | 腹部术后的第一判断不是疼不疼，而是"通没通" · 提示词 | — | 636 | [`prompt-06-puwai.md`](../departments/05-huli/08-waike-huli-xue/chapters/06-puwai/outputs/prompt-06-puwai.md) |
+| skill | 腹部术后的第一判断不是疼不疼，而是"通没通" | 腹部术后的第一判断不是疼不疼，而是"通没通"——按「腹部四问：通、痛、胀、热 → 腹腔引流：量与性状怎么读 → 肝胆胰：黄疸与营养是两个慢变量 → 甲状腺与乳腺：两个"摸不到"的并发症」走一遍本章判据 | 531 | [`skill-puwai.md`](../departments/05-huli/08-waike-huli-xue/chapters/06-puwai/outputs/skill-puwai.md) |
 
-#### 第 7 章 · 神经外科疾病护理
+#### 第 7 章 · 神经外科的观察窗只有几分钟，记录必须能被下一个人接着读
 
 `08-waike-huli-xue/chapters/07-shenwai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 神经外科疾病护理 · 提示词 | — | 448 | [`prompt-07-shenwai.md`](../departments/05-huli/08-waike-huli-xue/chapters/07-shenwai/outputs/prompt-07-shenwai.md) |
-| skill | 神经外科疾病护理 | 神经外科疾病护理——按「术前评估与准备 → 术中配合与安全 → 术后观察与并发症 → 出院与随访」走一遍本章判据 | 358 | [`skill-shenwai.md`](../departments/05-huli/08-waike-huli-xue/chapters/07-shenwai/outputs/skill-shenwai.md) |
+| prompt | 神经外科的观察窗只有几分钟，记录必须能被下一个人接着读 · 提示词 | — | 658 | [`prompt-07-shenwai.md`](../departments/05-huli/08-waike-huli-xue/chapters/07-shenwai/outputs/prompt-07-shenwai.md) |
+| skill | 神经外科的观察窗只有几分钟，记录必须能被下一个人接着读 | 神经外科的观察窗只有几分钟，记录必须能被下一个人接着读——按「意识：三档描述，加一句"叫得应不应" → 瞳孔：五个字段，一样都不能省 → 颅内压增高：三类信号与三条体位规则 → 体位、活动与康复衔接：一条"从床到走"的阶梯」走一遍本章判据 | 550 | [`skill-shenwai.md`](../departments/05-huli/08-waike-huli-xue/chapters/07-shenwai/outputs/skill-shenwai.md) |
 
-#### 第 8 章 · 心胸外科疾病护理
+#### 第 8 章 · 胸科术后，呼吸与循环不是两个系统，而是一件事的两面
 
 `08-waike-huli-xue/chapters/08-xiongwai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 心胸外科疾病护理 · 提示词 | — | 448 | [`prompt-08-xiongwai.md`](../departments/05-huli/08-waike-huli-xue/chapters/08-xiongwai/outputs/prompt-08-xiongwai.md) |
-| skill | 心胸外科疾病护理 | 心胸外科疾病护理——按「术前评估与准备 → 术中配合与安全 → 术后观察与并发症 → 出院与随访」走一遍本章判据 | 359 | [`skill-xiongwai.md`](../departments/05-huli/08-waike-huli-xue/chapters/08-xiongwai/outputs/skill-xiongwai.md) |
+| prompt | 胸科术后，呼吸与循环不是两个系统，而是一件事的两面 · 提示词 | — | 619 | [`prompt-08-xiongwai.md`](../departments/05-huli/08-waike-huli-xue/chapters/08-xiongwai/outputs/prompt-08-xiongwai.md) |
+| skill | 胸科术后，呼吸与循环不是两个系统，而是一件事的两面 | 胸科术后，呼吸与循环不是两个系统，而是一件事的两面——按「呼吸：看"做功"，不只看"次数" → 循环：五个观察项，重点在"互相解释" → 胸腔引流：先看波动，再看量 → 疼痛与活动：胸科的疼痛是呼吸的敌人」走一遍本章判据 | 514 | [`skill-xiongwai.md`](../departments/05-huli/08-waike-huli-xue/chapters/08-xiongwai/outputs/skill-xiongwai.md) |
 
-#### 第 9 章 · 泌尿外科疾病护理
+#### 第 9 章 · 泌尿外科的护理主线，是让"出得来"这件事可被计量
 
 `08-waike-huli-xue/chapters/09-miniao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 泌尿外科疾病护理 · 提示词 | — | 448 | [`prompt-09-miniao.md`](../departments/05-huli/08-waike-huli-xue/chapters/09-miniao/outputs/prompt-09-miniao.md) |
-| skill | 泌尿外科疾病护理 | 泌尿外科疾病护理——按「术前评估与准备 → 术中配合与安全 → 术后观察与并发症 → 出院与随访」走一遍本章判据 | 357 | [`skill-miniao.md`](../departments/05-huli/08-waike-huli-xue/chapters/09-miniao/outputs/skill-miniao.md) |
+| prompt | 泌尿外科的护理主线，是让"出得来"这件事可被计量 · 提示词 | — | 597 | [`prompt-09-miniao.md`](../departments/05-huli/08-waike-huli-xue/chapters/09-miniao/outputs/prompt-09-miniao.md) |
+| skill | 泌尿外科的护理主线，是让"出得来"这件事可被计量 | 泌尿外科的护理主线，是让"出得来"这件事可被计量——按「排尿功能：四项观察与计量的三条纪律 → 造口：三件事，皮肤是长期战场 → 引流管与尿液性状：两根管，两套读法 → 感染：三个入口与一条共同的边界」走一遍本章判据 | 491 | [`skill-miniao.md`](../departments/05-huli/08-waike-huli-xue/chapters/09-miniao/outputs/skill-miniao.md) |
 
-#### 第 10 章 · 骨科疾病护理
+#### 第 10 章 · 骨科的两难写在同一个动作里：不动会僵，动早了会移位
 
 `08-waike-huli-xue/chapters/10-guke/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 骨科疾病护理 · 提示词 | — | 443 | [`prompt-10-guke.md`](../departments/05-huli/08-waike-huli-xue/chapters/10-guke/outputs/prompt-10-guke.md) |
-| skill | 骨科疾病护理 | 骨科疾病护理——按「术前评估与准备 → 术中配合与安全 → 术后观察与并发症 → 出院与随访」走一遍本章判据 | 351 | [`skill-guke.md`](../departments/05-huli/08-waike-huli-xue/chapters/10-guke/outputs/skill-guke.md) |
+| prompt | 骨科的两难写在同一个动作里：不动会僵，动早了会移位 · 提示词 | — | 611 | [`prompt-10-guke.md`](../departments/05-huli/08-waike-huli-xue/chapters/10-guke/outputs/prompt-10-guke.md) |
+| skill | 骨科的两难写在同一个动作里：不动会僵，动早了会移位 | 骨科的两难写在同一个动作里：不动会僵，动早了会移位——按「术后观察：出血与肿胀要看三个位置 → 牵引与外固定：五个观察点，缺一不可 → 神经血管功能：五项观察，与健侧比 → 体位、下床与安全：把"能不能动"拆成阶梯」走一遍本章判据 | 501 | [`skill-guke.md`](../departments/05-huli/08-waike-huli-xue/chapters/10-guke/outputs/skill-guke.md) |
 
-#### 第 11 章 · 血管外科与烧伤整形护理
+#### 第 11 章 · 血管与烧伤共用一个判据：这块组织还有没有血供
 
 `08-waike-huli-xue/chapters/11-xueguan-shaoshang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 血管外科与烧伤整形护理 · 提示词 | — | 458 | [`prompt-11-xueguan-shaoshang.md`](../departments/05-huli/08-waike-huli-xue/chapters/11-xueguan-shaoshang/outputs/prompt-11-xueguan-shaoshang.md) |
-| skill | 血管外科与烧伤整形护理 | 血管外科与烧伤整形护理——按「术前评估与准备 → 术中配合与安全 → 术后观察与并发症 → 出院与随访」走一遍本章判据 | 374 | [`skill-xueguan-shaoshang.md`](../departments/05-huli/08-waike-huli-xue/chapters/11-xueguan-shaoshang/outputs/skill-xueguan-shaoshang.md) |
+| prompt | 血管与烧伤共用一个判据：这块组织还有没有血供 · 提示词 | — | 609 | [`prompt-11-xueguan-shaoshang.md`](../departments/05-huli/08-waike-huli-xue/chapters/11-xueguan-shaoshang/outputs/prompt-11-xueguan-shaoshang.md) |
+| skill | 血管与烧伤共用一个判据：这块组织还有没有血供 | 血管与烧伤共用一个判据：这块组织还有没有血供——按「肢体循环：六项观察与"对照法" → 烧伤：先描述，再判断；判断有边界 → 创面与皮瓣：四项观察，一个顺序 → 液体与营养：两个慢变量，两条记录线」走一遍本章判据 | 515 | [`skill-xueguan-shaoshang.md`](../departments/05-huli/08-waike-huli-xue/chapters/11-xueguan-shaoshang/outputs/skill-xueguan-shaoshang.md) |
 
-#### 第 12 章 · 手术室护理与麻醉复苏期护理
+#### 第 12 章 · 手术室的安全靠三个时点，复苏期的安全靠每一次比较
 
 `08-waike-huli-xue/chapters/12-shoushushi-mazui/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 手术室护理与麻醉复苏期护理 · 提示词 | — | 467 | [`prompt-12-shoushushi-mazui.md`](../departments/05-huli/08-waike-huli-xue/chapters/12-shoushushi-mazui/outputs/prompt-12-shoushushi-mazui.md) |
-| skill | 手术室护理与麻醉复苏期护理 | 手术室护理与麻醉复苏期护理——按「术前评估与准备 → 术中配合与安全 → 术后观察与并发症 → 出院与随访」走一遍本章判据 | 377 | [`skill-shoushushi-mazui.md`](../departments/05-huli/08-waike-huli-xue/chapters/12-shoushushi-mazui/outputs/skill-shoushushi-mazui.md) |
+| prompt | 手术室的安全靠三个时点，复苏期的安全靠每一次比较 · 提示词 | — | 631 | [`prompt-12-shoushushi-mazui.md`](../departments/05-huli/08-waike-huli-xue/chapters/12-shoushushi-mazui/outputs/prompt-12-shoushushi-mazui.md) |
+| skill | 手术室的安全靠三个时点，复苏期的安全靠每一次比较 | 手术室的安全靠三个时点，复苏期的安全靠每一次比较——按「三条责任线：谁负责什么，先划清 → 核查：三个时点，各问不同的问题 → 无菌区、器械与标本：三件"不能靠记忆"的事 → 复苏期：四条线，每次都比」走一遍本章判据 | 534 | [`skill-shoushushi-mazui.md`](../departments/05-huli/08-waike-huli-xue/chapters/12-shoushushi-mazui/outputs/skill-shoushushi-mazui.md) |
 
-#### 第 13 章 · 外科护理质量风险与平台
+#### 第 13 章 · 质量指标先定口径，再谈数字；没有口径的数字比没有数字更危险
 
 `08-waike-huli-xue/chapters/13-zhiliang-pingtai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 外科护理质量风险与平台 · 提示词 | — | 461 | [`prompt-13-zhiliang-pingtai.md`](../departments/05-huli/08-waike-huli-xue/chapters/13-zhiliang-pingtai/outputs/prompt-13-zhiliang-pingtai.md) |
-| skill | 外科护理质量风险与平台 | 外科护理质量风险与平台——按「术前评估与准备 → 术中配合与安全 → 术后观察与并发症 → 出院与随访」走一遍本章判据 | 373 | [`skill-zhiliang-pingtai.md`](../departments/05-huli/08-waike-huli-xue/chapters/13-zhiliang-pingtai/outputs/skill-zhiliang-pingtai.md) |
+| prompt | 质量指标先定口径，再谈数字；没有口径的数字比没有数字更危险 · 提示词 | — | 656 | [`prompt-13-zhiliang-pingtai.md`](../departments/05-huli/08-waike-huli-xue/chapters/13-zhiliang-pingtai/outputs/prompt-13-zhiliang-pingtai.md) |
+| skill | 质量指标先定口径，再谈数字；没有口径的数字比没有数字更危险 | 质量指标先定口径，再谈数字；没有口径的数字比没有数字更危险——按「质量评价的四维与口径的三要素 → 不良事件：报告要素与非惩罚原则 → 分析与改进：把"人"换成"条件" → 知识组织与平台：术语、编码、脱敏、人工复核」走一遍本章判据 | 554 | [`skill-zhiliang-pingtai.md`](../departments/05-huli/08-waike-huli-xue/chapters/13-zhiliang-pingtai/outputs/skill-zhiliang-pingtai.md) |
 
 ### 妇产科护理学
 
 > Clinic · 第 6 学期 · 已产出 16 章
 
-#### 第 1 章 · 外科护理概述与工作模式
+#### 第 1 章 · 外科护理的分界线，划在"谁作决定"而不是"谁做的事多"
 
 `09-fuchanke-huli-xue/chapters/01-gaishu-moshi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 外科护理概述与工作模式 · 提示词 | — | 458 | [`prompt-01-gaishu-moshi.md`](../departments/05-huli/08-waike-huli-xue/chapters/01-gaishu-moshi/outputs/prompt-01-gaishu-moshi.md) |
-| skill | 外科护理概述与工作模式 | 外科护理概述与工作模式——按「术前评估与准备 → 术中配合与安全 → 术后观察与并发症 → 出院与随访」走一遍本章判据 | 369 | [`skill-gaishu-moshi.md`](../departments/05-huli/08-waike-huli-xue/chapters/01-gaishu-moshi/outputs/skill-gaishu-moshi.md) |
+| prompt | 外科护理的分界线，划在"谁作决定"而不是"谁做的事多" · 提示词 | — | 608 | [`prompt-01-gaishu-moshi.md`](../departments/05-huli/08-waike-huli-xue/chapters/01-gaishu-moshi/outputs/prompt-01-gaishu-moshi.md) |
+| skill | 外科护理的分界线，划在"谁作决定"而不是"谁做的事多" | 外科护理的分界线，划在"谁作决定"而不是"谁做的事多"——按「三个不一样：对象、时点、责任 → 四种工作模式，各自最容易丢什么 → 围手术期链条上的四个交接点 → 两个不允许"凭印象"的环节」走一遍本章判据 | 505 | [`skill-gaishu-moshi.md`](../departments/05-huli/08-waike-huli-xue/chapters/01-gaishu-moshi/outputs/skill-gaishu-moshi.md) |
 | prompt | 妇产科护理的分界不在病种，而在一次照护里有两个人 · 提示词 | — | 820 | [`prompt-01-gaishu-moshi.md`](../departments/05-huli/09-fuchanke-huli-xue/chapters/01-gaishu-moshi/outputs/prompt-01-gaishu-moshi.md) |
 | skill | 妇产科护理的分界不在病种，而在一次照护里有两个人 | 妇产科护理的分界不在病种，而在一次照护里有两个人——按「两个当事人：这条线决定了后面所有动作 → 四个场景，四套判据 → 责任边界：护理回答"观察到什么" → 什么时候必须上报，什么时候必须转诊」走一遍本章判据 | 710 | [`skill-gaishu-moshi.md`](../departments/05-huli/09-fuchanke-huli-xue/chapters/01-gaishu-moshi/outputs/skill-gaishu-moshi.md) |
-| prompt | 儿科护理概述与工作模式 · 提示词 | — | 444 | [`prompt-01-gaishu-moshi.md`](../departments/05-huli/10-erke-huli-xue/chapters/01-gaishu-moshi/outputs/prompt-01-gaishu-moshi.md) |
-| skill | 儿科护理概述与工作模式 | 儿科护理概述与工作模式——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 356 | [`skill-gaishu-moshi.md`](../departments/05-huli/10-erke-huli-xue/chapters/01-gaishu-moshi/outputs/skill-gaishu-moshi.md) |
+| prompt | 儿童不替自己说话，每条观察都要能被第二个人复核 · 提示词 | — | 630 | [`prompt-01-gaishu-moshi.md`](../departments/05-huli/10-erke-huli-xue/chapters/01-gaishu-moshi/outputs/prompt-01-gaishu-moshi.md) |
+| skill | 儿童不替自己说话，每条观察都要能被第二个人复核 | 儿童不替自己说话，每条观察都要能被第二个人复核——按「儿科的三个不一样，各自换一个动作 → 观察的四要素与分龄差异 → 工作模式：交接是个人观察变成集体判断的唯一接口 → 沟通、宣教回述与记录字段」走一遍本章判据 | 531 | [`skill-gaishu-moshi.md`](../departments/05-huli/10-erke-huli-xue/chapters/01-gaishu-moshi/outputs/skill-gaishu-moshi.md) |
 
 #### 第 2 章 · 评估的价值不在问了多少项，而在同一件事问第二遍还一致
 
@@ -10222,432 +10222,432 @@
 
 > Clinic · 第 6 学期 · 已产出 15 章
 
-#### 第 1 章 · 外科护理概述与工作模式
+#### 第 1 章 · 外科护理的分界线，划在"谁作决定"而不是"谁做的事多"
 
 `10-erke-huli-xue/chapters/01-gaishu-moshi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 外科护理概述与工作模式 · 提示词 | — | 458 | [`prompt-01-gaishu-moshi.md`](../departments/05-huli/08-waike-huli-xue/chapters/01-gaishu-moshi/outputs/prompt-01-gaishu-moshi.md) |
-| skill | 外科护理概述与工作模式 | 外科护理概述与工作模式——按「术前评估与准备 → 术中配合与安全 → 术后观察与并发症 → 出院与随访」走一遍本章判据 | 369 | [`skill-gaishu-moshi.md`](../departments/05-huli/08-waike-huli-xue/chapters/01-gaishu-moshi/outputs/skill-gaishu-moshi.md) |
+| prompt | 外科护理的分界线，划在"谁作决定"而不是"谁做的事多" · 提示词 | — | 608 | [`prompt-01-gaishu-moshi.md`](../departments/05-huli/08-waike-huli-xue/chapters/01-gaishu-moshi/outputs/prompt-01-gaishu-moshi.md) |
+| skill | 外科护理的分界线，划在"谁作决定"而不是"谁做的事多" | 外科护理的分界线，划在"谁作决定"而不是"谁做的事多"——按「三个不一样：对象、时点、责任 → 四种工作模式，各自最容易丢什么 → 围手术期链条上的四个交接点 → 两个不允许"凭印象"的环节」走一遍本章判据 | 505 | [`skill-gaishu-moshi.md`](../departments/05-huli/08-waike-huli-xue/chapters/01-gaishu-moshi/outputs/skill-gaishu-moshi.md) |
 | prompt | 妇产科护理的分界不在病种，而在一次照护里有两个人 · 提示词 | — | 820 | [`prompt-01-gaishu-moshi.md`](../departments/05-huli/09-fuchanke-huli-xue/chapters/01-gaishu-moshi/outputs/prompt-01-gaishu-moshi.md) |
 | skill | 妇产科护理的分界不在病种，而在一次照护里有两个人 | 妇产科护理的分界不在病种，而在一次照护里有两个人——按「两个当事人：这条线决定了后面所有动作 → 四个场景，四套判据 → 责任边界：护理回答"观察到什么" → 什么时候必须上报，什么时候必须转诊」走一遍本章判据 | 710 | [`skill-gaishu-moshi.md`](../departments/05-huli/09-fuchanke-huli-xue/chapters/01-gaishu-moshi/outputs/skill-gaishu-moshi.md) |
-| prompt | 儿科护理概述与工作模式 · 提示词 | — | 444 | [`prompt-01-gaishu-moshi.md`](../departments/05-huli/10-erke-huli-xue/chapters/01-gaishu-moshi/outputs/prompt-01-gaishu-moshi.md) |
-| skill | 儿科护理概述与工作模式 | 儿科护理概述与工作模式——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 356 | [`skill-gaishu-moshi.md`](../departments/05-huli/10-erke-huli-xue/chapters/01-gaishu-moshi/outputs/skill-gaishu-moshi.md) |
+| prompt | 儿童不替自己说话，每条观察都要能被第二个人复核 · 提示词 | — | 630 | [`prompt-01-gaishu-moshi.md`](../departments/05-huli/10-erke-huli-xue/chapters/01-gaishu-moshi/outputs/prompt-01-gaishu-moshi.md) |
+| skill | 儿童不替自己说话，每条观察都要能被第二个人复核 | 儿童不替自己说话，每条观察都要能被第二个人复核——按「儿科的三个不一样，各自换一个动作 → 观察的四要素与分龄差异 → 工作模式：交接是个人观察变成集体判断的唯一接口 → 沟通、宣教回述与记录字段」走一遍本章判据 | 531 | [`skill-gaishu-moshi.md`](../departments/05-huli/10-erke-huli-xue/chapters/01-gaishu-moshi/outputs/skill-gaishu-moshi.md) |
 
-#### 第 2 章 · 儿科护理评估与健康指导
+#### 第 2 章 · 评估难在分清「看到了什么」和「这是什么病」
 
 `10-erke-huli-xue/chapters/02-pinggu-jiankang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 儿科护理评估与健康指导 · 提示词 | — | 442 | [`prompt-02-pinggu-jiankang.md`](../departments/05-huli/10-erke-huli-xue/chapters/02-pinggu-jiankang/outputs/prompt-02-pinggu-jiankang.md) |
-| skill | 儿科护理评估与健康指导 | 儿科护理评估与健康指导——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 359 | [`skill-pinggu-jiankang.md`](../departments/05-huli/10-erke-huli-xue/chapters/02-pinggu-jiankang/outputs/skill-pinggu-jiankang.md) |
+| prompt | 评估难在分清「看到了什么」和「这是什么病」 · 提示词 | — | 584 | [`prompt-02-pinggu-jiankang.md`](../departments/05-huli/10-erke-huli-xue/chapters/02-pinggu-jiankang/outputs/prompt-02-pinggu-jiankang.md) |
+| skill | 评估难在分清「看到了什么」和「这是什么病」 | 评估难在分清「看到了什么」和「这是什么病」——按「评估是分层，不是清单 → 五个信息来源与冲突处理 → 生长与营养：用哪套标准，怎么读趋势 → 健康指导：内容分层、时机与回述」走一遍本章判据 | 490 | [`skill-pinggu-jiankang.md`](../departments/05-huli/10-erke-huli-xue/chapters/02-pinggu-jiankang/outputs/skill-pinggu-jiankang.md) |
 
-#### 第 3 章 · 儿童保健与生长发育的护理
+#### 第 3 章 · 生长曲线不是及格线，是看这个孩子自己往哪走
 
 `10-erke-huli-xue/chapters/03-baojian-shengzhang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 儿童保健与生长发育的护理 · 提示词 | — | 445 | [`prompt-03-baojian-shengzhang.md`](../departments/05-huli/10-erke-huli-xue/chapters/03-baojian-shengzhang/outputs/prompt-03-baojian-shengzhang.md) |
-| skill | 儿童保健与生长发育的护理 | 儿童保健与生长发育的护理——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 364 | [`skill-baojian-shengzhang.md`](../departments/05-huli/10-erke-huli-xue/chapters/03-baojian-shengzhang/outputs/skill-baojian-shengzhang.md) |
+| prompt | 生长曲线不是及格线，是看这个孩子自己往哪走 · 提示词 | — | 601 | [`prompt-03-baojian-shengzhang.md`](../departments/05-huli/10-erke-huli-xue/chapters/03-baojian-shengzhang/outputs/prompt-03-baojian-shengzhang.md) |
+| skill | 生长曲线不是及格线，是看这个孩子自己往哪走 | 生长曲线不是及格线，是看这个孩子自己往哪走——按「保健的实质：按时点把风险前置 → 生长判读：一点存疑、两点定向、三点定速 → 发育筛查：筛查不等于诊断 → 家长可执行的三件事与记录」走一遍本章判据 | 510 | [`skill-baojian-shengzhang.md`](../departments/05-huli/10-erke-huli-xue/chapters/03-baojian-shengzhang/outputs/skill-baojian-shengzhang.md) |
 
-#### 第 4 章 · 新生儿与早产儿的护理
+#### 第 4 章 · 新生儿的「不对劲」只差半度，靠的是他自己那条基线
 
 `10-erke-huli-xue/chapters/04-xinshenger/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 新生儿与早产儿的护理 · 提示词 | — | 439 | [`prompt-04-xinshenger.md`](../departments/05-huli/10-erke-huli-xue/chapters/04-xinshenger/outputs/prompt-04-xinshenger.md) |
-| skill | 新生儿与早产儿的护理 | 新生儿与早产儿的护理——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 352 | [`skill-xinshenger.md`](../departments/05-huli/10-erke-huli-xue/chapters/04-xinshenger/outputs/skill-xinshenger.md) |
+| prompt | 新生儿的「不对劲」只差半度，靠的是他自己那条基线 · 提示词 | — | 632 | [`prompt-04-xinshenger.md`](../departments/05-huli/10-erke-huli-xue/chapters/04-xinshenger/outputs/prompt-04-xinshenger.md) |
+| skill | 新生儿的「不对劲」只差半度，靠的是他自己那条基线 | 新生儿的「不对劲」只差半度，靠的是他自己那条基线——按「九类观察与「基线三件套」 → 呼吸与体温：两个最容易被设备掩盖的信号 → 早产儿：先把月龄换成矫正月龄 → 喂养、黄疸与出院」走一遍本章判据 | 530 | [`skill-xinshenger.md`](../departments/05-huli/10-erke-huli-xue/chapters/04-xinshenger/outputs/skill-xinshenger.md) |
 
-#### 第 5 章 · 营养障碍性疾病的护理
+#### 第 5 章 · 喂养够不够，写在孩子身上，不写在奶瓶刻度上
 
 `10-erke-huli-xue/chapters/05-yingyang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 营养障碍性疾病的护理 · 提示词 | — | 439 | [`prompt-05-yingyang.md`](../departments/05-huli/10-erke-huli-xue/chapters/05-yingyang/outputs/prompt-05-yingyang.md) |
-| skill | 营养障碍性疾病的护理 | 营养障碍性疾病的护理——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 350 | [`skill-yingyang.md`](../departments/05-huli/10-erke-huli-xue/chapters/05-yingyang/outputs/skill-yingyang.md) |
+| prompt | 喂养够不够，写在孩子身上，不写在奶瓶刻度上 · 提示词 | — | 606 | [`prompt-05-yingyang.md`](../departments/05-huli/10-erke-huli-xue/chapters/05-yingyang/outputs/prompt-05-yingyang.md) |
+| skill | 喂养够不够，写在孩子身上，不写在奶瓶刻度上 | 喂养够不够，写在孩子身上，不写在奶瓶刻度上——按「喂养的四个观察位点 → 够不够：三条线代替一个数 → 判据分档：什么时候只是观察，什么时候必须报告 → 家长宣教：把刻度换成信号」走一遍本章判据 | 505 | [`skill-yingyang.md`](../departments/05-huli/10-erke-huli-xue/chapters/05-yingyang/outputs/skill-yingyang.md) |
 
-#### 第 6 章 · 呼吸系统疾病的护理
+#### 第 6 章 · 呼吸变快是孩子最先付的代价，也最晚被看见
 
 `10-erke-huli-xue/chapters/06-huxi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 呼吸系统疾病的护理 · 提示词 | — | 436 | [`prompt-06-huxi.md`](../departments/05-huli/10-erke-huli-xue/chapters/06-huxi/outputs/prompt-06-huxi.md) |
-| skill | 呼吸系统疾病的护理 | 呼吸系统疾病的护理——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 344 | [`skill-huxi.md`](../departments/05-huli/10-erke-huli-xue/chapters/06-huxi/outputs/skill-huxi.md) |
+| prompt | 呼吸变快是孩子最先付的代价，也最晚被看见 · 提示词 | — | 604 | [`prompt-06-huxi.md`](../departments/05-huli/10-erke-huli-xue/chapters/06-huxi/outputs/prompt-06-huxi.md) |
+| skill | 呼吸变快是孩子最先付的代价，也最晚被看见 | 呼吸变快是孩子最先付的代价，也最晚被看见——按「四项做功体征：把「费力」变成数得出来的东西 → 频率：放进年龄基线里读，不放进固定阈值里读 → 气道照护与氧疗配合：护理能做的与不能做的 → 发热、咳嗽的照护与家长宣教」走一遍本章判据 | 500 | [`skill-huxi.md`](../departments/05-huli/10-erke-huli-xue/chapters/06-huxi/outputs/skill-huxi.md) |
 
-#### 第 7 章 · 消化系统疾病的护理
+#### 第 7 章 · 脱水不看哭不哭，要把五项体征放在一起称一次
 
 `10-erke-huli-xue/chapters/07-xiaohua/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 消化系统疾病的护理 · 提示词 | — | 436 | [`prompt-07-xiaohua.md`](../departments/05-huli/10-erke-huli-xue/chapters/07-xiaohua/outputs/prompt-07-xiaohua.md) |
-| skill | 消化系统疾病的护理 | 消化系统疾病的护理——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 347 | [`skill-xiaohua.md`](../departments/05-huli/10-erke-huli-xue/chapters/07-xiaohua/outputs/skill-xiaohua.md) |
+| prompt | 脱水不看哭不哭，要把五项体征放在一起称一次 · 提示词 | — | 601 | [`prompt-07-xiaohua.md`](../departments/05-huli/10-erke-huli-xue/chapters/07-xiaohua/outputs/prompt-07-xiaohua.md) |
+| skill | 脱水不看哭不哭，要把五项体征放在一起称一次 | 脱水不看哭不哭，要把五项体征放在一起称一次——按「五项体征，各自怕什么 → 补液：速度是处方，核对是流程 → 腹泻、呕吐与皮肤 → 记录与宣教」走一遍本章判据 | 499 | [`skill-xiaohua.md`](../departments/05-huli/10-erke-huli-xue/chapters/07-xiaohua/outputs/skill-xiaohua.md) |
 
-#### 第 8 章 · 循环与血液系统疾病的护理
+#### 第 8 章 · 贫血的脸不会说话，会说话的是活动耐量和生长速度
 
 `10-erke-huli-xue/chapters/08-xunhuan-xueye/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 循环与血液系统疾病的护理 · 提示词 | — | 445 | [`prompt-08-xunhuan-xueye.md`](../departments/05-huli/10-erke-huli-xue/chapters/08-xunhuan-xueye/outputs/prompt-08-xunhuan-xueye.md) |
-| skill | 循环与血液系统疾病的护理 | 循环与血液系统疾病的护理——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 359 | [`skill-xunhuan-xueye.md`](../departments/05-huli/10-erke-huli-xue/chapters/08-xunhuan-xueye/outputs/skill-xunhuan-xueye.md) |
+| prompt | 贫血的脸不会说话，会说话的是活动耐量和生长速度 · 提示词 | — | 580 | [`prompt-08-xunhuan-xueye.md`](../departments/05-huli/10-erke-huli-xue/chapters/08-xunhuan-xueye/outputs/prompt-08-xunhuan-xueye.md) |
+| skill | 贫血的脸不会说话，会说话的是活动耐量和生长速度 | 贫血的脸不会说话，会说话的是活动耐量和生长速度——按「面色之外的三项可复核量 → 循环：灌注看末梢 → 血液：出血倾向、输血配合与用药 → 宣教与记录」走一遍本章判据 | 482 | [`skill-xunhuan-xueye.md`](../departments/05-huli/10-erke-huli-xue/chapters/08-xunhuan-xueye/outputs/skill-xunhuan-xueye.md) |
 
-#### 第 9 章 · 泌尿与神经系统疾病的护理
+#### 第 9 章 · 神经观察先问「和昨天比变了没有」，再问「现在几分」
 
 `10-erke-huli-xue/chapters/09-miniao-shenjing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 泌尿与神经系统疾病的护理 · 提示词 | — | 446 | [`prompt-09-miniao-shenjing.md`](../departments/05-huli/10-erke-huli-xue/chapters/09-miniao-shenjing/outputs/prompt-09-miniao-shenjing.md) |
-| skill | 泌尿与神经系统疾病的护理 | 泌尿与神经系统疾病的护理——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 361 | [`skill-miniao-shenjing.md`](../departments/05-huli/10-erke-huli-xue/chapters/09-miniao-shenjing/outputs/skill-miniao-shenjing.md) |
+| prompt | 神经观察先问「和昨天比变了没有」，再问「现在几分」 · 提示词 | — | 635 | [`prompt-09-miniao-shenjing.md`](../departments/05-huli/10-erke-huli-xue/chapters/09-miniao-shenjing/outputs/prompt-09-miniao-shenjing.md) |
+| skill | 神经观察先问「和昨天比变了没有」，再问「现在几分」 | 神经观察先问「和昨天比变了没有」，再问「现在几分」——按「意识：先立基线，再看差异 → 瞳孔、抽搐、肢体：三项不能等 → 泌尿侧：出入量、水肿、血压 → 宣教与记录」走一遍本章判据 | 537 | [`skill-miniao-shenjing.md`](../departments/05-huli/10-erke-huli-xue/chapters/09-miniao-shenjing/outputs/skill-miniao-shenjing.md) |
 
-#### 第 10 章 · 儿童传染性疾病与感染防控的护理
+#### 第 10 章 · 隔离的第一道屏障不是口罩，是问诊时多问的那一句
 
 `10-erke-huli-xue/chapters/10-chuanran/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 儿童传染性疾病与感染防控的护理 · 提示词 | — | 456 | [`prompt-10-chuanran.md`](../departments/05-huli/10-erke-huli-xue/chapters/10-chuanran/outputs/prompt-10-chuanran.md) |
-| skill | 儿童传染性疾病与感染防控的护理 | 儿童传染性疾病与感染防控的护理——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 360 | [`skill-chuanran.md`](../departments/05-huli/10-erke-huli-xue/chapters/10-chuanran/outputs/skill-chuanran.md) |
+| prompt | 隔离的第一道屏障不是口罩，是问诊时多问的那一句 · 提示词 | — | 618 | [`prompt-10-chuanran.md`](../departments/05-huli/10-erke-huli-xue/chapters/10-chuanran/outputs/prompt-10-chuanran.md) |
+| skill | 隔离的第一道屏障不是口罩，是问诊时多问的那一句 | 隔离的第一道屏障不是口罩，是问诊时多问的那一句——按「问三句：把分流提到门口 → 隔离的三层：空间、行为、器具 → 传染病患儿的一般照护 → 家长宣教与依从性」走一遍本章判据 | 514 | [`skill-chuanran.md`](../departments/05-huli/10-erke-huli-xue/chapters/10-chuanran/outputs/skill-chuanran.md) |
 
-#### 第 11 章 · 儿童急症与意外伤害的护理
+#### 第 11 章 · 抢救的顺序不按重要性排，按「几分钟内会死」排
 
 `10-erke-huli-xue/chapters/11-jizheng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 儿童急症与意外伤害的护理 · 提示词 | — | 447 | [`prompt-11-jizheng.md`](../departments/05-huli/10-erke-huli-xue/chapters/11-jizheng/outputs/prompt-11-jizheng.md) |
-| skill | 儿童急症与意外伤害的护理 | 儿童急症与意外伤害的护理——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 353 | [`skill-jizheng.md`](../departments/05-huli/10-erke-huli-xue/chapters/11-jizheng/outputs/skill-jizheng.md) |
+| prompt | 抢救的顺序不按重要性排，按「几分钟内会死」排 · 提示词 | — | 585 | [`prompt-11-jizheng.md`](../departments/05-huli/10-erke-huli-xue/chapters/11-jizheng/outputs/prompt-11-jizheng.md) |
+| skill | 抢救的顺序不按重要性排，按「几分钟内会死」排 | 抢救的顺序不按重要性排，按「几分钟内会死」排——按「六个位置，60 秒 → 评估顺序：ABC 在儿科的三处改写 → 意外伤害：按年龄排风险 → 家长急救宣教」走一遍本章判据 | 481 | [`skill-jizheng.md`](../departments/05-huli/10-erke-huli-xue/chapters/11-jizheng/outputs/skill-jizheng.md) |
 
-#### 第 12 章 · 儿童外科疾病的护理
+#### 第 12 章 · 术前要谈的不是「别怕」，是「你会经历什么」
 
 `10-erke-huli-xue/chapters/12-waike/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 儿童外科疾病的护理 · 提示词 | — | 438 | [`prompt-12-waike.md`](../departments/05-huli/10-erke-huli-xue/chapters/12-waike/outputs/prompt-12-waike.md) |
-| skill | 儿童外科疾病的护理 | 儿童外科疾病的护理——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 345 | [`skill-waike.md`](../departments/05-huli/10-erke-huli-xue/chapters/12-waike/outputs/skill-waike.md) |
+| prompt | 术前要谈的不是「别怕」，是「你会经历什么」 · 提示词 | — | 592 | [`prompt-12-waike.md`](../departments/05-huli/10-erke-huli-xue/chapters/12-waike/outputs/prompt-12-waike.md) |
+| skill | 术前要谈的不是「别怕」，是「你会经历什么」 | 术前要谈的不是「别怕」，是「你会经历什么」——按「同意是两层：代理人的同意与孩子的认可 → 术前八个环节与 24 个核对点 → 术后：疼痛、体位、管路、活动 → 宣教与记录」走一遍本章判据 | 487 | [`skill-waike.md`](../departments/05-huli/10-erke-huli-xue/chapters/12-waike/outputs/skill-waike.md) |
 
-#### 第 13 章 · 儿童常见症状与疼痛的护理
+#### 第 13 章 · 疼痛要问孩子，不能只问那个替他回答的人
 
 `10-erke-huli-xue/chapters/13-zhengzhuang-tengtong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 儿童常见症状与疼痛的护理 · 提示词 | — | 447 | [`prompt-13-zhengzhuang-tengtong.md`](../departments/05-huli/10-erke-huli-xue/chapters/13-zhengzhuang-tengtong/outputs/prompt-13-zhengzhuang-tengtong.md) |
-| skill | 儿童常见症状与疼痛的护理 | 儿童常见症状与疼痛的护理——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 366 | [`skill-zhengzhuang-tengtong.md`](../departments/05-huli/10-erke-huli-xue/chapters/13-zhengzhuang-tengtong/outputs/skill-zhengzhuang-tengtong.md) |
+| prompt | 疼痛要问孩子，不能只问那个替他回答的人 · 提示词 | — | 592 | [`prompt-13-zhengzhuang-tengtong.md`](../departments/05-huli/10-erke-huli-xue/chapters/13-zhengzhuang-tengtong/outputs/prompt-13-zhengzhuang-tengtong.md) |
+| skill | 疼痛要问孩子，不能只问那个替他回答的人 | 疼痛要问孩子，不能只问那个替他回答的人——按「三套工具与谁用哪套 → 非药物干预：具体到动作 → 药物镇痛：护理的职责边界 → 其他常见症状的照护」走一遍本章判据 | 504 | [`skill-zhengzhuang-tengtong.md`](../departments/05-huli/10-erke-huli-xue/chapters/13-zhengzhuang-tengtong/outputs/skill-zhengzhuang-tengtong.md) |
 
-#### 第 14 章 · 特殊儿童与慢病儿童的护理
+#### 第 14 章 · 慢病照护的目标不是治好，是让日常过得下去
 
 `10-erke-huli-xue/chapters/14-teshu-manbing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 特殊儿童与慢病儿童的护理 · 提示词 | — | 447 | [`prompt-14-teshu-manbing.md`](../departments/05-huli/10-erke-huli-xue/chapters/14-teshu-manbing/outputs/prompt-14-teshu-manbing.md) |
-| skill | 特殊儿童与慢病儿童的护理 | 特殊儿童与慢病儿童的护理——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 359 | [`skill-teshu-manbing.md`](../departments/05-huli/10-erke-huli-xue/chapters/14-teshu-manbing/outputs/skill-teshu-manbing.md) |
+| prompt | 慢病照护的目标不是治好，是让日常过得下去 · 提示词 | — | 606 | [`prompt-14-teshu-manbing.md`](../departments/05-huli/10-erke-huli-xue/chapters/14-teshu-manbing/outputs/prompt-14-teshu-manbing.md) |
+| skill | 慢病照护的目标不是治好，是让日常过得下去 | 慢病照护的目标不是治好，是让日常过得下去——按「三类孩子，三种逻辑 → 把方案翻译成家庭的一天 → 过渡：从家长执行到孩子自己执行 → 依从性：先看设计，再看态度」走一遍本章判据 | 510 | [`skill-teshu-manbing.md`](../departments/05-huli/10-erke-huli-xue/chapters/14-teshu-manbing/outputs/skill-teshu-manbing.md) |
 
-#### 第 15 章 · 儿童保护、质量风险与平台
+#### 第 15 章 · 报告可疑伤害不是越权，是制度交给护理的第一个动作
 
 `10-erke-huli-xue/chapters/15-baohu-zhiliang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 儿童保护、质量风险与平台 · 提示词 | — | 453 | [`prompt-15-baohu-zhiliang.md`](../departments/05-huli/10-erke-huli-xue/chapters/15-baohu-zhiliang/outputs/prompt-15-baohu-zhiliang.md) |
-| skill | 儿童保护、质量风险与平台 | 儿童保护、质量风险与平台——按「按年龄定基线 → 按系统看异常 → 按家庭做落实」走一遍本章判据 | 360 | [`skill-baohu-zhiliang.md`](../departments/05-huli/10-erke-huli-xue/chapters/15-baohu-zhiliang/outputs/skill-baohu-zhiliang.md) |
+| prompt | 报告可疑伤害不是越权，是制度交给护理的第一个动作 · 提示词 | — | 637 | [`prompt-15-baohu-zhiliang.md`](../departments/05-huli/10-erke-huli-xue/chapters/15-baohu-zhiliang/outputs/prompt-15-baohu-zhiliang.md) |
+| skill | 报告可疑伤害不是越权，是制度交给护理的第一个动作 | 报告可疑伤害不是越权，是制度交给护理的第一个动作——按「识别：哪些表现不像「意外」 → 报告：触发即报告，留痕即是保护 → 质量与风险：三类事件与复盘 → 平台与数据：记录即证据」走一遍本章判据 | 538 | [`skill-baohu-zhiliang.md`](../departments/05-huli/10-erke-huli-xue/chapters/15-baohu-zhiliang/outputs/skill-baohu-zhiliang.md) |
 
 ### 社区护理学
 
 > Build · 第 6 学期 · 已产出 8 章
 
-#### 第 1 章 · 社区护理的对象与模式
+#### 第 1 章 · 社区护理的对象不是「辖区居民」，是一张按风险叠起来的分层名单
 
 `11-shequ-huli-xue/chapters/01-duixiang-moshi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 社区护理的对象与模式 · 提示词 | — | 443 | [`prompt-01-duixiang-moshi.md`](../departments/05-huli/11-shequ-huli-xue/chapters/01-duixiang-moshi/outputs/prompt-01-duixiang-moshi.md) |
-| skill | 社区护理的对象与模式 | 社区护理的对象与模式——按「评估社区 → 定服务内容 → 入户与随访 → 评价可及性」走一遍本章判据 | 365 | [`skill-duixiang-moshi.md`](../departments/05-huli/11-shequ-huli-xue/chapters/01-duixiang-moshi/outputs/skill-duixiang-moshi.md) |
+| prompt | 社区护理的对象不是「辖区居民」，是一张按风险叠起来的分层名单 · 提示词 | — | 648 | [`prompt-01-duixiang-moshi.md`](../departments/05-huli/11-shequ-huli-xue/chapters/01-duixiang-moshi/outputs/prompt-01-duixiang-moshi.md) |
+| skill | 社区护理的对象不是「辖区居民」，是一张按风险叠起来的分层名单 | 社区护理的对象不是「辖区居民」，是一张按风险叠起来的分层名单——按「对象的三层：全人群、重点人群、个案 → 分层判据与动作时限 → 服务模式与责任边界 → 记录字段与隐私」走一遍本章判据 | 544 | [`skill-duixiang-moshi.md`](../departments/05-huli/11-shequ-huli-xue/chapters/01-duixiang-moshi/outputs/skill-duixiang-moshi.md) |
 
-#### 第 2 章 · 家庭访视与健康档案
+#### 第 2 章 · 访视不是串门：没有记录的走访，只是去过
 
 `11-shequ-huli-xue/chapters/02-fangshi-dangan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 家庭访视与健康档案 · 提示词 | — | 441 | [`prompt-02-fangshi-dangan.md`](../departments/05-huli/11-shequ-huli-xue/chapters/02-fangshi-dangan/outputs/prompt-02-fangshi-dangan.md) |
-| skill | 家庭访视与健康档案 | 家庭访视与健康档案——按「评估社区 → 定服务内容 → 入户与随访 → 评价可及性」走一遍本章判据 | 363 | [`skill-fangshi-dangan.md`](../departments/05-huli/11-shequ-huli-xue/chapters/02-fangshi-dangan/outputs/skill-fangshi-dangan.md) |
+| prompt | 访视不是串门：没有记录的走访，只是去过 · 提示词 | — | 611 | [`prompt-02-fangshi-dangan.md`](../departments/05-huli/11-shequ-huli-xue/chapters/02-fangshi-dangan/outputs/prompt-02-fangshi-dangan.md) |
+| skill | 访视不是串门：没有记录的走访，只是去过 | 访视不是串门：没有记录的走访，只是去过——按「访视的四段：每一段都有它的失败方式 → 访视动作与时限 → 档案：建、用、更、管 → 三种失效」走一遍本章判据 | 518 | [`skill-fangshi-dangan.md`](../departments/05-huli/11-shequ-huli-xue/chapters/02-fangshi-dangan/outputs/skill-fangshi-dangan.md) |
 
-#### 第 3 章 · 慢性病的社区管理
+#### 第 3 章 · 慢病管理的产出不是「随访次数」，是「他自己能处理的那几步」
 
 `11-shequ-huli-xue/chapters/03-manxing-guanli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 慢性病的社区管理 · 提示词 | — | 435 | [`prompt-03-manxing-guanli.md`](../departments/05-huli/11-shequ-huli-xue/chapters/03-manxing-guanli/outputs/prompt-03-manxing-guanli.md) |
-| skill | 慢性病的社区管理 | 慢性病的社区管理——按「评估社区 → 定服务内容 → 入户与随访 → 评价可及性」走一遍本章判据 | 361 | [`skill-manxing-guanli.md`](../departments/05-huli/11-shequ-huli-xue/chapters/03-manxing-guanli/outputs/skill-manxing-guanli.md) |
+| prompt | 慢病管理的产出不是「随访次数」，是「他自己能处理的那几步」 · 提示词 | — | 661 | [`prompt-03-manxing-guanli.md`](../departments/05-huli/11-shequ-huli-xue/chapters/03-manxing-guanli/outputs/prompt-03-manxing-guanli.md) |
+| skill | 慢病管理的产出不是「随访次数」，是「他自己能处理的那几步」 | 慢病管理的产出不是「随访次数」，是「他自己能处理的那几步」——按「把「管理」重新定义：谁能做决定，就管到谁 → 分层、随访内容与转介条件 → 自我管理支持：教三步，不教一套 → 记录字段」走一遍本章判据 | 558 | [`skill-manxing-guanli.md`](../departments/05-huli/11-shequ-huli-xue/chapters/03-manxing-guanli/outputs/skill-manxing-guanli.md) |
 
-#### 第 4 章 · 传染病与疫苗接种
+#### 第 4 章 · 防疫的成败在报得早与说得少：报告要快，议论要停
 
 `11-shequ-huli-xue/chapters/04-chuanran-yimiao/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 传染病与疫苗接种 · 提示词 | — | 438 | [`prompt-04-chuanran-yimiao.md`](../departments/05-huli/11-shequ-huli-xue/chapters/04-chuanran-yimiao/outputs/prompt-04-chuanran-yimiao.md) |
-| skill | 传染病与疫苗接种 | 传染病与疫苗接种——按「评估社区 → 定服务内容 → 入户与随访 → 评价可及性」走一遍本章判据 | 362 | [`skill-chuanran-yimiao.md`](../departments/05-huli/11-shequ-huli-xue/chapters/04-chuanran-yimiao/outputs/skill-chuanran-yimiao.md) |
+| prompt | 防疫的成败在报得早与说得少：报告要快，议论要停 · 提示词 | — | 639 | [`prompt-04-chuanran-yimiao.md`](../departments/05-huli/11-shequ-huli-xue/chapters/04-chuanran-yimiao/outputs/prompt-04-chuanran-yimiao.md) |
+| skill | 防疫的成败在报得早与说得少：报告要快，议论要停 | 防疫的成败在报得早与说得少：报告要快，议论要停——按「三条线，各自的责任人与时限 → 环节、动作、时限与转介 → 隐私：从流程上防，不靠自觉 → 三种失效」走一遍本章判据 | 543 | [`skill-chuanran-yimiao.md`](../departments/05-huli/11-shequ-huli-xue/chapters/04-chuanran-yimiao/outputs/skill-chuanran-yimiao.md) |
 
-#### 第 5 章 · 老年与失能人群照护
+#### 第 5 章 · 照护失能老人，先算清「哪几件事他做不了」，再谈人力
 
 `11-shequ-huli-xue/chapters/05-laonian-zhaohu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 老年与失能人群照护 · 提示词 | — | 443 | [`prompt-05-laonian-zhaohu.md`](../departments/05-huli/11-shequ-huli-xue/chapters/05-laonian-zhaohu/outputs/prompt-05-laonian-zhaohu.md) |
-| skill | 老年与失能人群照护 | 老年与失能人群照护——按「评估社区 → 定服务内容 → 入户与随访 → 评价可及性」走一遍本章判据 | 363 | [`skill-laonian-zhaohu.md`](../departments/05-huli/11-shequ-huli-xue/chapters/05-laonian-zhaohu/outputs/skill-laonian-zhaohu.md) |
+| prompt | 照护失能老人，先算清「哪几件事他做不了」，再谈人力 · 提示词 | — | 632 | [`prompt-05-laonian-zhaohu.md`](../departments/05-huli/11-shequ-huli-xue/chapters/05-laonian-zhaohu/outputs/prompt-05-laonian-zhaohu.md) |
+| skill | 照护失能老人，先算清「哪几件事他做不了」，再谈人力 | 照护失能老人，先算清「哪几件事他做不了」，再谈人力——按「分层与「三种介入」 → 观察什么：五个最容易出事的地方 → 记录字段与尊严 → 三种失效」走一遍本章判据 | 533 | [`skill-laonian-zhaohu.md`](../departments/05-huli/11-shequ-huli-xue/chapters/05-laonian-zhaohu/outputs/skill-laonian-zhaohu.md) |
 
-#### 第 6 章 · 健康教育的设计与评价
+#### 第 6 章 · 健康教育的产出不是「讲了几场」，是「他回去改了哪一步」
 
 `11-shequ-huli-xue/chapters/06-jiankang-jiaoyu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 健康教育的设计与评价 · 提示词 | — | 443 | [`prompt-06-jiankang-jiaoyu.md`](../departments/05-huli/11-shequ-huli-xue/chapters/06-jiankang-jiaoyu/outputs/prompt-06-jiankang-jiaoyu.md) |
-| skill | 健康教育的设计与评价 | 健康教育的设计与评价——按「评估社区 → 定服务内容 → 入户与随访 → 评价可及性」走一遍本章判据 | 366 | [`skill-jiankang-jiaoyu.md`](../departments/05-huli/11-shequ-huli-xue/chapters/06-jiankang-jiaoyu/outputs/skill-jiankang-jiaoyu.md) |
+| prompt | 健康教育的产出不是「讲了几场」，是「他回去改了哪一步」 · 提示词 | — | 589 | [`prompt-06-jiankang-jiaoyu.md`](../departments/05-huli/11-shequ-huli-xue/chapters/06-jiankang-jiaoyu/outputs/prompt-06-jiankang-jiaoyu.md) |
+| skill | 健康教育的产出不是「讲了几场」，是「他回去改了哪一步」 | 健康教育的产出不是「讲了几场」，是「他回去改了哪一步」——按「四段链条：知道不等于做到 → 设计：一个目标、三次接触、一个动作 → 评价：三类指标，一个禁区 → 记录字段与隐私」走一遍本章判据 | 489 | [`skill-jiankang-jiaoyu.md`](../departments/05-huli/11-shequ-huli-xue/chapters/06-jiankang-jiaoyu/outputs/skill-jiankang-jiaoyu.md) |
 | prompt | 健康教育的效果，不在讲了几条，在他回家做对了几件 · 提示词 | — | 673 | [`prompt-06-jiankang-jiaoyu.md`](../departments/05-huli/16-huli-xue-daolun/chapters/06-jiankang-jiaoyu/outputs/prompt-06-jiankang-jiaoyu.md) |
 | skill | 健康教育的效果，不在讲了几条，在他回家做对了几件 | 健康教育的效果，不在讲了几条，在他回家做对了几件——按「对象与内容：三类对象，两类内容 → 四条原则，各自的失效形态 → 四种方法，各自管什么 → 四个环节：需求评估、计划、实施、反馈」走一遍本章判据 | 576 | [`skill-06-jiankang-jiaoyu.md`](../departments/05-huli/16-huli-xue-daolun/chapters/06-jiankang-jiaoyu/outputs/skill-06-jiankang-jiaoyu.md) |
 
-#### 第 7 章 · 社区卫生服务的信息化与急救
+#### 第 7 章 · 系统能替你提醒，替不了你判断；电话能替你呼救，替不了你先动手
 
 `11-shequ-huli-xue/chapters/07-weisheng-xinxihua/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 社区卫生服务的信息化与急救 · 提示词 | — | 454 | [`prompt-07-weisheng-xinxihua.md`](../departments/05-huli/11-shequ-huli-xue/chapters/07-weisheng-xinxihua/outputs/prompt-07-weisheng-xinxihua.md) |
-| skill | 社区卫生服务的信息化与急救 | 社区卫生服务的信息化与急救——按「评估社区 → 定服务内容 → 入户与随访 → 评价可及性」走一遍本章判据 | 374 | [`skill-weisheng-xinxihua.md`](../departments/05-huli/11-shequ-huli-xue/chapters/07-weisheng-xinxihua/outputs/skill-weisheng-xinxihua.md) |
+| prompt | 系统能替你提醒，替不了你判断；电话能替你呼救，替不了你先动手 · 提示词 | — | 623 | [`prompt-07-weisheng-xinxihua.md`](../departments/05-huli/11-shequ-huli-xue/chapters/07-weisheng-xinxihua/outputs/prompt-07-weisheng-xinxihua.md) |
+| skill | 系统能替你提醒，替不了你判断；电话能替你呼救，替不了你先动手 | 系统能替你提醒，替不了你判断；电话能替你呼救，替不了你先动手——按「数据：先可信，再自动 → 急救：先识别，再呼救，再处置 → 记录字段 → 三种失效」走一遍本章判据 | 522 | [`skill-weisheng-xinxihua.md`](../departments/05-huli/11-shequ-huli-xue/chapters/07-weisheng-xinxihua/outputs/skill-weisheng-xinxihua.md) |
 
-#### 第 8 章 · 社区护理的质量与可及性
+#### 第 8 章 · 可及性不是「有没有服务」，是「他能不能用得上」
 
 `11-shequ-huli-xue/chapters/08-zhiliang-kejixing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 社区护理的质量与可及性 · 提示词 | — | 454 | [`prompt-08-zhiliang-kejixing.md`](../departments/05-huli/11-shequ-huli-xue/chapters/08-zhiliang-kejixing/outputs/prompt-08-zhiliang-kejixing.md) |
-| skill | 社区护理的质量与可及性 | 社区护理的质量与可及性——按「评估社区 → 定服务内容 → 入户与随访 → 评价可及性」走一遍本章判据 | 370 | [`skill-zhiliang-kejixing.md`](../departments/05-huli/11-shequ-huli-xue/chapters/08-zhiliang-kejixing/outputs/skill-zhiliang-kejixing.md) |
+| prompt | 可及性不是「有没有服务」，是「他能不能用得上」 · 提示词 | — | 624 | [`prompt-08-zhiliang-kejixing.md`](../departments/05-huli/11-shequ-huli-xue/chapters/08-zhiliang-kejixing/outputs/prompt-08-zhiliang-kejixing.md) |
+| skill | 可及性不是「有没有服务」，是「他能不能用得上」 | 可及性不是「有没有服务」，是「他能不能用得上」——按「质量三层：结构、过程、结果 → 口径：没有口径的指标不是指标 → 可及性四维：把人挡在门外的四种方式 → 公平、报告与改进」走一遍本章判据 | 530 | [`skill-zhiliang-kejixing.md`](../departments/05-huli/11-shequ-huli-xue/chapters/08-zhiliang-kejixing/outputs/skill-zhiliang-kejixing.md) |
 
 ### 急危重症护理学
 
 > Clinic · 第 7 学期 · 已产出 10 章
 
-#### 第 1 章 · 分诊、优先级与团队协作
+#### 第 1 章 · 分诊不是排队，是把有限的注意力按分钟重新分配
 
 `12-jiwei-zhengzheng-huli/chapters/01-fenzhen-youxian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 分诊、优先级与团队协作 · 提示词 | — | 460 | [`prompt-01-fenzhen-youxian.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/01-fenzhen-youxian/outputs/prompt-01-fenzhen-youxian.md) |
-| skill | 分诊、优先级与团队协作 | 分诊、优先级与团队协作——按「分诊与识别 → 生命支持 → 器官支持 → 监测与转运 → 质量与伦理」走一遍本章判据 | 375 | [`skill-fenzhen-youxian.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/01-fenzhen-youxian/outputs/skill-fenzhen-youxian.md) |
+| prompt | 分诊不是排队，是把有限的注意力按分钟重新分配 · 提示词 | — | 980 | [`prompt-01-fenzhen-youxian.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/01-fenzhen-youxian/outputs/prompt-01-fenzhen-youxian.md) |
+| skill | 分诊不是排队，是把有限的注意力按分钟重新分配 | 分诊不是排队，是把有限的注意力按分钟重新分配——按「门口那一分钟：先归类，再分层看 → 判据与升级路径【教学设定】 → 动作与时限：分钟档上谁做什么 → 记录字段：时间轴七列」走一遍本章判据 | 874 | [`skill-fenzhen-youxian.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/01-fenzhen-youxian/outputs/skill-fenzhen-youxian.md) |
 
-#### 第 2 章 · 心搏骤停与心肺复苏、除颤
+#### 第 2 章 · 复苏的成败不在手法漂亮，而在中断的那几十秒
 
 `12-jiwei-zhengzheng-huli/chapters/02-fusu-chuchan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 心搏骤停与心肺复苏、除颤 · 提示词 | — | 459 | [`prompt-02-fusu-chuchan.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/02-fusu-chuchan/outputs/prompt-02-fusu-chuchan.md) |
-| skill | 心搏骤停与心肺复苏、除颤 | 心搏骤停与心肺复苏、除颤——按「分诊与识别 → 生命支持 → 器官支持 → 监测与转运 → 质量与伦理」走一遍本章判据 | 374 | [`skill-fusu-chuchan.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/02-fusu-chuchan/outputs/skill-fusu-chuchan.md) |
+| prompt | 复苏的成败不在手法漂亮，而在中断的那几十秒 · 提示词 | — | 924 | [`prompt-02-fusu-chuchan.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/02-fusu-chuchan/outputs/prompt-02-fusu-chuchan.md) |
+| skill | 复苏的成败不在手法漂亮，而在中断的那几十秒 | 复苏的成败不在手法漂亮，而在中断的那几十秒——按「几十秒的去向：质量由停手时间决定 → 判据与升级路径【教学设定】 → 动作与时限：分钟档上谁做什么 → 记录字段：时间轴九列」走一遍本章判据 | 816 | [`skill-fusu-chuchan.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/02-fusu-chuchan/outputs/skill-fusu-chuchan.md) |
 
-#### 第 3 章 · 休克、严重过敏与液体复苏
+#### 第 3 章 · 休克先看灌注够不够，再问血压低不低
 
 `12-jiwei-zhengzheng-huli/chapters/03-xiuke-fusu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 休克、严重过敏与液体复苏 · 提示词 | — | 459 | [`prompt-03-xiuke-fusu.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/03-xiuke-fusu/outputs/prompt-03-xiuke-fusu.md) |
-| skill | 休克、严重过敏与液体复苏 | 休克、严重过敏与液体复苏——按「分诊与识别 → 生命支持 → 器官支持 → 监测与转运 → 质量与伦理」走一遍本章判据 | 372 | [`skill-xiuke-fusu.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/03-xiuke-fusu/outputs/skill-xiuke-fusu.md) |
+| prompt | 休克先看灌注够不够，再问血压低不低 · 提示词 | — | 881 | [`prompt-03-xiuke-fusu.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/03-xiuke-fusu/outputs/prompt-03-xiuke-fusu.md) |
+| skill | 休克先看灌注够不够，再问血压低不低 | 休克先看灌注够不够，再问血压低不低——按「血压是最后一个投降的参数 → 判据与升级路径【教学设定】 → 动作与时限：分钟档上谁做什么 → 记录字段：时间轴八列」走一遍本章判据 | 775 | [`skill-xiuke-fusu.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/03-xiuke-fusu/outputs/skill-xiuke-fusu.md) |
 
-#### 第 4 章 · 呼吸急症、呼吸衰竭与通气支持
+#### 第 4 章 · 呼吸急症先保氧合，病因留到气道通了再谈
 
 `12-jiwei-zhengzheng-huli/chapters/04-huxishuai-tongqi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 呼吸急症、呼吸衰竭与通气支持 · 提示词 | — | 465 | [`prompt-04-huxishuai-tongqi.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/04-huxishuai-tongqi/outputs/prompt-04-huxishuai-tongqi.md) |
-| skill | 呼吸急症、呼吸衰竭与通气支持 | 呼吸急症、呼吸衰竭与通气支持——按「分诊与识别 → 生命支持 → 器官支持 → 监测与转运 → 质量与伦理」走一遍本章判据 | 382 | [`skill-huxishuai-tongqi.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/04-huxishuai-tongqi/outputs/skill-huxishuai-tongqi.md) |
+| prompt | 呼吸急症先保氧合，病因留到气道通了再谈 · 提示词 | — | 888 | [`prompt-04-huxishuai-tongqi.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/04-huxishuai-tongqi/outputs/prompt-04-huxishuai-tongqi.md) |
+| skill | 呼吸急症先保氧合，病因留到气道通了再谈 | 呼吸急症先保氧合，病因留到气道通了再谈——按「喘得快不等于通气够：一道减法 → 判据与升级路径【教学设定】 → 动作与时限：分钟档上谁做什么 → 记录字段：呼吸时间轴八列」走一遍本章判据 | 786 | [`skill-huxishuai-tongqi.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/04-huxishuai-tongqi/outputs/skill-huxishuai-tongqi.md) |
 
-#### 第 5 章 · 急性中毒与理化因素损伤
+#### 第 5 章 · 中毒先问时间与途径，解毒从来不是第一动作
 
 `12-jiwei-zhengzheng-huli/chapters/05-zhongdu-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 急性中毒与理化因素损伤 · 提示词 | — | 460 | [`prompt-05-zhongdu-huli.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/05-zhongdu-huli/outputs/prompt-05-zhongdu-huli.md) |
-| skill | 急性中毒与理化因素损伤 | 急性中毒与理化因素损伤——按「分诊与识别 → 生命支持 → 器官支持 → 监测与转运 → 质量与伦理」走一遍本章判据 | 372 | [`skill-zhongdu-huli.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/05-zhongdu-huli/outputs/skill-zhongdu-huli.md) |
+| prompt | 中毒先问时间与途径，解毒从来不是第一动作 · 提示词 | — | 936 | [`prompt-05-zhongdu-huli.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/05-zhongdu-huli/outputs/prompt-05-zhongdu-huli.md) |
+| skill | 中毒先问时间与途径，解毒从来不是第一动作 | 中毒先问时间与途径，解毒从来不是第一动作——按「四条时间线：把「中毒」还原成可定位的一段 → 判据与升级路径【教学设定】 → 动作与时限：分钟档上谁做什么 → 记录字段：时间轴九列」走一遍本章判据 | 829 | [`skill-zhongdu-huli.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/05-zhongdu-huli/outputs/skill-zhongdu-huli.md) |
 
-#### 第 6 章 · 创伤与多发伤的重症护理
+#### 第 6 章 · 多发伤的死有三个高峰，护理各守一段
 
 `12-jiwei-zhengzheng-huli/chapters/06-chuangshang-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 创伤与多发伤的重症护理 · 提示词 | — | 457 | [`prompt-06-chuangshang-huli.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/06-chuangshang-huli/outputs/prompt-06-chuangshang-huli.md) |
-| skill | 创伤与多发伤的重症护理 | 创伤与多发伤的重症护理——按「分诊与识别 → 生命支持 → 器官支持 → 监测与转运 → 质量与伦理」走一遍本章判据 | 376 | [`skill-chuangshang-huli.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/06-chuangshang-huli/outputs/skill-chuangshang-huli.md) |
+| prompt | 多发伤的死有三个高峰，护理各守一段 · 提示词 | — | 913 | [`prompt-06-chuangshang-huli.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/06-chuangshang-huli/outputs/prompt-06-chuangshang-huli.md) |
+| skill | 多发伤的死有三个高峰，护理各守一段 | 多发伤的死有三个高峰，护理各守一段——按「三个高峰与一条时间轴 → 判据与升级路径【教学设定】 → 动作与时限：分钟档上谁做什么 → 记录字段：时间轴十列」走一遍本章判据 | 813 | [`skill-chuangshang-huli.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/06-chuangshang-huli/outputs/skill-chuangshang-huli.md) |
 
-#### 第 7 章 · 重症监测、常用技术与配合
+#### 第 7 章 · 监护仪给的是数，护士要给的是趋势
 
 `12-jiwei-zhengzheng-huli/chapters/07-jiance-jishu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 重症监测、常用技术与配合 · 提示词 | — | 461 | [`prompt-07-jiance-jishu.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/07-jiance-jishu/outputs/prompt-07-jiance-jishu.md) |
-| skill | 重症监测、常用技术与配合 | 重症监测、常用技术与配合——按「分诊与识别 → 生命支持 → 器官支持 → 监测与转运 → 质量与伦理」走一遍本章判据 | 374 | [`skill-jiance-jishu.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/07-jiance-jishu/outputs/skill-jiance-jishu.md) |
+| prompt | 监护仪给的是数，护士要给的是趋势 · 提示词 | — | 873 | [`prompt-07-jiance-jishu.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/07-jiance-jishu/outputs/prompt-07-jiance-jishu.md) |
+| skill | 监护仪给的是数，护士要给的是趋势 | 监护仪给的是数，护士要给的是趋势——按「数、趋势与阈值：三者不能互相替代 → 判据与升级路径【教学设定】 → 动作与时限：技术配合的分寸 → 记录字段：趋势表与报警日志」走一遍本章判据 | 770 | [`skill-jiance-jishu.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/07-jiance-jishu/outputs/skill-jiance-jishu.md) |
 
-#### 第 8 章 · 意识障碍、抽搐与谵妄管理
+#### 第 8 章 · 意识下降先当急症处理，别急着给它贴标签
 
 `12-jiwei-zhengzheng-huli/chapters/08-zhentong-zhenwang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 意识障碍、抽搐与谵妄管理 · 提示词 | — | 462 | [`prompt-08-zhentong-zhenwang.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/08-zhentong-zhenwang/outputs/prompt-08-zhentong-zhenwang.md) |
-| skill | 意识障碍、抽搐与谵妄管理 | 意识障碍、抽搐与谵妄管理——按「分诊与识别 → 生命支持 → 器官支持 → 监测与转运 → 质量与伦理」走一遍本章判据 | 379 | [`skill-zhentong-zhenwang.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/08-zhentong-zhenwang/outputs/skill-zhentong-zhenwang.md) |
+| prompt | 意识下降先当急症处理，别急着给它贴标签 · 提示词 | — | 935 | [`prompt-08-zhentong-zhenwang.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/08-zhentong-zhenwang/outputs/prompt-08-zhentong-zhenwang.md) |
+| skill | 意识下降先当急症处理，别急着给它贴标签 | 意识下降先当急症处理，别急着给它贴标签——按「意识是结果，不是原因 → 判据与升级路径【教学设定】 → 动作与时限：分钟档上谁做什么 → 记录字段：时间轴八列」走一遍本章判据 | 834 | [`skill-zhentong-zhenwang.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/08-zhentong-zhenwang/outputs/skill-zhentong-zhenwang.md) |
 
-#### 第 9 章 · 特殊人群急症与转运安全
+#### 第 9 章 · 转运是一次可控的病情恶化，不是一段路程
 
 `12-jiwei-zhengzheng-huli/chapters/09-zhuanyun-anquan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 特殊人群急症与转运安全 · 提示词 | — | 463 | [`prompt-09-zhuanyun-anquan.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/09-zhuanyun-anquan/outputs/prompt-09-zhuanyun-anquan.md) |
-| skill | 特殊人群急症与转运安全 | 特殊人群急症与转运安全——按「分诊与识别 → 生命支持 → 器官支持 → 监测与转运 → 质量与伦理」走一遍本章判据 | 375 | [`skill-zhuanyun-anquan.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/09-zhuanyun-anquan/outputs/skill-zhuanyun-anquan.md) |
+| prompt | 转运是一次可控的病情恶化，不是一段路程 · 提示词 | — | 912 | [`prompt-09-zhuanyun-anquan.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/09-zhuanyun-anquan/outputs/prompt-09-zhuanyun-anquan.md) |
+| skill | 转运是一次可控的病情恶化，不是一段路程 | 转运是一次可控的病情恶化，不是一段路程——按「三个易损段：移动、途中、交接 → 判据与升级路径【教学设定】 → 动作与时限：出发前十分钟与途中五分钟 → 记录字段：转运单十列」走一遍本章判据 | 809 | [`skill-zhuanyun-anquan.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/09-zhuanyun-anquan/outputs/skill-zhuanyun-anquan.md) |
 
-#### 第 10 章 · 抢救记录、质量与伦理决策
+#### 第 10 章 · 抢救记录写的是可复核的时刻，不是事后的叙述
 
 `12-jiwei-zhengzheng-huli/chapters/10-lunli-juece/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 抢救记录、质量与伦理决策 · 提示词 | — | 464 | [`prompt-10-lunli-juece.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/10-lunli-juece/outputs/prompt-10-lunli-juece.md) |
-| skill | 抢救记录、质量与伦理决策 | 抢救记录、质量与伦理决策——按「分诊与识别 → 生命支持 → 器官支持 → 监测与转运 → 质量与伦理」走一遍本章判据 | 373 | [`skill-lunli-juece.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/10-lunli-juece/outputs/skill-lunli-juece.md) |
+| prompt | 抢救记录写的是可复核的时刻，不是事后的叙述 · 提示词 | — | 814 | [`prompt-10-lunli-juece.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/10-lunli-juece/outputs/prompt-10-lunli-juece.md) |
+| skill | 抢救记录写的是可复核的时刻，不是事后的叙述 | 抢救记录写的是可复核的时刻，不是事后的叙述——按「记录的三重身份与三个可算式 → 判据与升级路径【教学设定】 → 动作与时限：补记、封存与抽查 → 记录字段：抢救记录十二列」走一遍本章判据 | 704 | [`skill-lunli-juece.md`](../departments/05-huli/12-jiwei-zhengzheng-huli/chapters/10-lunli-juece/outputs/skill-lunli-juece.md) |
 
 ### 护理管理学
 
 > Reference · 第 7 学期 · 已产出 6 章
 
-#### 第 1 章 · 护理管理的组织、环境与计划
+#### 第 1 章 · 计划的可信度写在前提里，不写在目标里
 
 `13-huli-guanli-xue/chapters/01-zuzhi-gangwei/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理管理的组织、环境与计划 · 提示词 | — | 455 | [`prompt-01-zuzhi-gangwei.md`](../departments/05-huli/13-huli-guanli-xue/chapters/01-zuzhi-gangwei/outputs/prompt-01-zuzhi-gangwei.md) |
-| skill | 护理管理的组织、环境与计划 | 护理管理的组织、环境与计划——按「定职能 → 配人力 → 控质量 → 评绩效与信息化」走一遍本章判据 | 368 | [`skill-zuzhi-gangwei.md`](../departments/05-huli/13-huli-guanli-xue/chapters/01-zuzhi-gangwei/outputs/skill-zuzhi-gangwei.md) |
+| prompt | 计划的可信度写在前提里，不写在目标里 · 提示词 | — | 615 | [`prompt-01-zuzhi-gangwei.md`](../departments/05-huli/13-huli-guanli-xue/chapters/01-zuzhi-gangwei/outputs/prompt-01-zuzhi-gangwei.md) |
+| skill | 计划的可信度写在前提里，不写在目标里 | 计划的可信度写在前提里，不写在目标里——按「管理职能是一条链，每一环都要交出可核对的东西 → 计划：把判断变成可传达的约定 → 组织与岗位：结构是任务的承接器 → 理论是用来选条件的，不是用来引名的」走一遍本章判据 | 522 | [`skill-zuzhi-gangwei.md`](../departments/05-huli/13-huli-guanli-xue/chapters/01-zuzhi-gangwei/outputs/skill-zuzhi-gangwei.md) |
 
-#### 第 2 章 · 人力资源、排班与团队
+#### 第 2 章 · 排班的公平要写成规则，才经得起追问
 
 `13-huli-guanli-xue/chapters/02-renli-paiban/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 人力资源、排班与团队 · 提示词 | — | 444 | [`prompt-02-renli-paiban.md`](../departments/05-huli/13-huli-guanli-xue/chapters/02-renli-paiban/outputs/prompt-02-renli-paiban.md) |
-| skill | 人力资源、排班与团队 | 人力资源、排班与团队——按「定职能 → 配人力 → 控质量 → 评绩效与信息化」走一遍本章判据 | 361 | [`skill-renli-paiban.md`](../departments/05-huli/13-huli-guanli-xue/chapters/02-renli-paiban/outputs/skill-renli-paiban.md) |
+| prompt | 排班的公平要写成规则，才经得起追问 · 提示词 | — | 609 | [`prompt-02-renli-paiban.md`](../departments/05-huli/13-huli-guanli-xue/chapters/02-renli-paiban/outputs/prompt-02-renli-paiban.md) |
+| skill | 排班的公平要写成规则，才经得起追问 | 排班的公平要写成规则，才经得起追问——按「人力需求：先算工作量，再谈人头 → 排班：三个原则与一张能查的表 → 公平性：把「我觉得不公」变成可查的数 → 培训与带教：从需求到效果的四段」走一遍本章判据 | 516 | [`skill-renli-paiban.md`](../departments/05-huli/13-huli-guanli-xue/chapters/02-renli-paiban/outputs/skill-renli-paiban.md) |
 
-#### 第 3 章 · 护理质量评价与持续改进
+#### 第 3 章 · 指标没有分母与口径，就只是一个数字
 
 `13-huli-guanli-xue/chapters/03-zhiliang-gaijin/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理质量评价与持续改进 · 提示词 | — | 445 | [`prompt-03-zhiliang-gaijin.md`](../departments/05-huli/13-huli-guanli-xue/chapters/03-zhiliang-gaijin/outputs/prompt-03-zhiliang-gaijin.md) |
-| skill | 护理质量评价与持续改进 | 护理质量评价与持续改进——按「定职能 → 配人力 → 控质量 → 评绩效与信息化」走一遍本章判据 | 366 | [`skill-zhiliang-gaijin.md`](../departments/05-huli/13-huli-guanli-xue/chapters/03-zhiliang-gaijin/outputs/skill-zhiliang-gaijin.md) |
+| prompt | 指标没有分母与口径，就只是一个数字 · 提示词 | — | 648 | [`prompt-03-zhiliang-gaijin.md`](../departments/05-huli/13-huli-guanli-xue/chapters/03-zhiliang-gaijin/outputs/prompt-03-zhiliang-gaijin.md) |
+| skill | 指标没有分母与口径，就只是一个数字 | 指标没有分母与口径，就只是一个数字——按「质量可以分解，不能概括 → 指标的四要素：分子、分母、口径、时点 → 改进循环：每一步都要交出东西 → 数据质量：五个维度决定指标能不能用」走一遍本章判据 | 558 | [`skill-zhiliang-gaijin.md`](../departments/05-huli/13-huli-guanli-xue/chapters/03-zhiliang-gaijin/outputs/skill-zhiliang-gaijin.md) |
 
-#### 第 4 章 · 不良事件、根因与纠纷处理
+#### 第 4 章 · 报告的用处不在追责，而在让同一个环节不再出错
 
 `13-huli-guanli-xue/chapters/04-buliang-genyin/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 不良事件、根因与纠纷处理 · 提示词 | — | 451 | [`prompt-04-buliang-genyin.md`](../departments/05-huli/13-huli-guanli-xue/chapters/04-buliang-genyin/outputs/prompt-04-buliang-genyin.md) |
-| skill | 不良事件、根因与纠纷处理 | 不良事件、根因与纠纷处理——按「定职能 → 配人力 → 控质量 → 评绩效与信息化」走一遍本章判据 | 367 | [`skill-buliang-genyin.md`](../departments/05-huli/13-huli-guanli-xue/chapters/04-buliang-genyin/outputs/skill-buliang-genyin.md) |
+| prompt | 报告的用处不在追责，而在让同一个环节不再出错 · 提示词 | — | 628 | [`prompt-04-buliang-genyin.md`](../departments/05-huli/13-huli-guanli-xue/chapters/04-buliang-genyin/outputs/prompt-04-buliang-genyin.md) |
+| skill | 报告的用处不在追责，而在让同一个环节不再出错 | 报告的用处不在追责，而在让同一个环节不再出错——按「分级与报告：先把该报的报全 → 根因分析：从「个人疏忽」往后退三层 → 安全文化：非惩罚不等于不追责 → 投诉与纠纷：先接住，再查清，再答复」走一遍本章判据 | 532 | [`skill-buliang-genyin.md`](../departments/05-huli/13-huli-guanli-xue/chapters/04-buliang-genyin/outputs/skill-buliang-genyin.md) |
 
-#### 第 5 章 · 护理绩效与成本核算
+#### 第 5 章 · 绩效评的是岗位，成本算的是服务，两者都不能拿来排名
 
 `13-huli-guanli-xue/chapters/05-jixiao-chengben/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理绩效与成本核算 · 提示词 | — | 439 | [`prompt-05-jixiao-chengben.md`](../departments/05-huli/13-huli-guanli-xue/chapters/05-jixiao-chengben/outputs/prompt-05-jixiao-chengben.md) |
-| skill | 护理绩效与成本核算 | 护理绩效与成本核算——按「定职能 → 配人力 → 控质量 → 评绩效与信息化」走一遍本章判据 | 362 | [`skill-jixiao-chengben.md`](../departments/05-huli/13-huli-guanli-xue/chapters/05-jixiao-chengben/outputs/skill-jixiao-chengben.md) |
+| prompt | 绩效评的是岗位，成本算的是服务，两者都不能拿来排名 · 提示词 | — | 678 | [`prompt-05-jixiao-chengben.md`](../departments/05-huli/13-huli-guanli-xue/chapters/05-jixiao-chengben/outputs/prompt-05-jixiao-chengben.md) |
+| skill | 绩效评的是岗位，成本算的是服务，两者都不能拿来排名 | 绩效评的是岗位，成本算的是服务，两者都不能拿来排名——按「绩效评价：先问「评价来做什么」 → 评价内容与口径：五个维度，一个共同要求 → 成本：从构成到核算对象 → 成本与质量不能互相替代」走一遍本章判据 | 580 | [`skill-jixiao-chengben.md`](../departments/05-huli/13-huli-guanli-xue/chapters/05-jixiao-chengben/outputs/skill-jixiao-chengben.md) |
 
-#### 第 6 章 · 护理信息化与数据治理
+#### 第 6 章 · 数据治理从字段开始，不从大屏开始
 
 `13-huli-guanli-xue/chapters/06-xinxihua-zhili/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理信息化与数据治理 · 提示词 | — | 442 | [`prompt-06-xinxihua-zhili.md`](../departments/05-huli/13-huli-guanli-xue/chapters/06-xinxihua-zhili/outputs/prompt-06-xinxihua-zhili.md) |
-| skill | 护理信息化与数据治理 | 护理信息化与数据治理——按「定职能 → 配人力 → 控质量 → 评绩效与信息化」走一遍本章判据 | 363 | [`skill-xinxihua-zhili.md`](../departments/05-huli/13-huli-guanli-xue/chapters/06-xinxihua-zhili/outputs/skill-xinxihua-zhili.md) |
+| prompt | 数据治理从字段开始，不从大屏开始 · 提示词 | — | 642 | [`prompt-06-xinxihua-zhili.md`](../departments/05-huli/13-huli-guanli-xue/chapters/06-xinxihua-zhili/outputs/prompt-06-xinxihua-zhili.md) |
+| skill | 数据治理从字段开始，不从大屏开始 | 数据治理从字段开始，不从大屏开始——按「系统是流程的镜像，不是流程的替代 → 数据质量：五个维度落到字段级 → 权限与最小必要：谁能看，比能看多少更重要 → 决策支持：提示可以给，判断不能替」走一遍本章判据 | 552 | [`skill-xinxihua-zhili.md`](../departments/05-huli/13-huli-guanli-xue/chapters/06-xinxihua-zhili/outputs/skill-xinxihua-zhili.md) |
 
 ### 护理伦理与法规
 
 > Reference · 第 7 学期 · 已产出 6 章
 
-#### 第 1 章 · 护理伦理的原则、困境与决策
+#### 第 1 章 · 四个原则不是四句口号，是四种能被追问的动作
 
 `14-huli-lunli-fagui/chapters/01-yuanze-kunjing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理伦理的原则、困境与决策 · 提示词 | — | 464 | [`prompt-01-yuanze-kunjing.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/01-yuanze-kunjing/outputs/prompt-01-yuanze-kunjing.md) |
-| skill | 护理伦理的原则、困境与决策 | 护理伦理的原则、困境与决策——按「定原则 → 识别困境 → 走决策程序 → 依法规承担责任」走一遍本章判据 | 373 | [`skill-yuanze-kunjing.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/01-yuanze-kunjing/outputs/skill-yuanze-kunjing.md) |
+| prompt | 四个原则不是四句口号，是四种能被追问的动作 · 提示词 | — | 652 | [`prompt-01-yuanze-kunjing.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/01-yuanze-kunjing/outputs/prompt-01-yuanze-kunjing.md) |
+| skill | 四个原则不是四句口号，是四种能被追问的动作 | 四个原则不是四句口号，是四种能被追问的动作——按「原则要能被追问：四原则各自的落点 → 三种理论各自回答什么问题 → 困境的结构：不是「难选」，是「两种对」 → 决策程序：五步，每一步都要留下东西」走一遍本章判据 | 555 | [`skill-yuanze-kunjing.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/01-yuanze-kunjing/outputs/skill-yuanze-kunjing.md) |
 
-#### 第 2 章 · 知情同意与患者自主权
+#### 第 2 章 · 签字只是同意的痕迹，同意是一个被听懂的过程
 
 `14-huli-lunli-fagui/chapters/02-zhiqing-tongyi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 知情同意与患者自主权 · 提示词 | — | 446 | [`prompt-02-zhiqing-tongyi.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/02-zhiqing-tongyi/outputs/prompt-02-zhiqing-tongyi.md) |
-| skill | 知情同意与患者自主权 | 知情同意与患者自主权——按「定原则 → 识别困境 → 走决策程序 → 依法规承担责任」走一遍本章判据 | 367 | [`skill-zhiqing-tongyi.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/02-zhiqing-tongyi/outputs/skill-zhiqing-tongyi.md) |
+| prompt | 签字只是同意的痕迹，同意是一个被听懂的过程 · 提示词 | — | 664 | [`prompt-02-zhiqing-tongyi.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/02-zhiqing-tongyi/outputs/prompt-02-zhiqing-tongyi.md) |
+| skill | 签字只是同意的痕迹，同意是一个被听懂的过程 | 签字只是同意的痕迹，同意是一个被听懂的过程——按「五个要件：缺一个就不是同意 → 告知：说什么、怎么说、什么时候说 → 自愿：拒绝与同意要被同等对待 → 生命起始的议题：只写类别，不作裁断」走一遍本章判据 | 567 | [`skill-zhiqing-tongyi.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/02-zhiqing-tongyi/outputs/skill-zhiqing-tongyi.md) |
 
-#### 第 3 章 · 隐私保护与信息使用
+#### 第 3 章 · 隐私的边界由用途划定，不由权限划定
 
 `14-huli-lunli-fagui/chapters/03-yinsi-xinxi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 隐私保护与信息使用 · 提示词 | — | 444 | [`prompt-03-yinsi-xinxi.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/03-yinsi-xinxi/outputs/prompt-03-yinsi-xinxi.md) |
-| skill | 隐私保护与信息使用 | 隐私保护与信息使用——按「定原则 → 识别困境 → 走决策程序 → 依法规承担责任」走一遍本章判据 | 362 | [`skill-yinsi-xinxi.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/03-yinsi-xinxi/outputs/skill-yinsi-xinxi.md) |
+| prompt | 隐私的边界由用途划定，不由权限划定 · 提示词 | — | 675 | [`prompt-03-yinsi-xinxi.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/03-yinsi-xinxi/outputs/prompt-03-yinsi-xinxi.md) |
+| skill | 隐私的边界由用途划定，不由权限划定 | 隐私的边界由用途划定，不由权限划定——按「三类隐私：一次操作同时触及三种 → 保密：有范围，也有例外，但例外要讲程序 → 最小必要与目的限定：两条原则，两种执行 → 脱敏与去标识化：两个词，两种效果」走一遍本章判据 | 579 | [`skill-yinsi-xinxi.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/03-yinsi-xinxi/outputs/skill-yinsi-xinxi.md) |
 
-#### 第 4 章 · 护理差错与不良事件的法与责
+#### 第 4 章 · 报告的自由度，决定差错的可见度
 
 `14-huli-lunli-fagui/chapters/04-chacuo-faze/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理差错与不良事件的法与责 · 提示词 | — | 459 | [`prompt-04-chacuo-faze.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/04-chacuo-faze/outputs/prompt-04-chacuo-faze.md) |
-| skill | 护理差错与不良事件的法与责 | 护理差错与不良事件的法与责——按「定原则 → 识别困境 → 走决策程序 → 依法规承担责任」走一遍本章判据 | 370 | [`skill-chacuo-faze.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/04-chacuo-faze/outputs/skill-chacuo-faze.md) |
+| prompt | 报告的自由度，决定差错的可见度 · 提示词 | — | 654 | [`prompt-04-chacuo-faze.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/04-chacuo-faze/outputs/prompt-04-chacuo-faze.md) |
+| skill | 报告的自由度，决定差错的可见度 | 报告的自由度，决定差错的可见度——按「报告的四个要求：及时、如实、完整、留痕 → 报告之后：分级处理与公正文化 → 团队协作：职责边界与越界代行 → 特殊人群：不作标签化，支持而不是代替」走一遍本章判据 | 560 | [`skill-chacuo-faze.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/04-chacuo-faze/outputs/skill-chacuo-faze.md) |
 
-#### 第 5 章 · 安宁疗护与生命伦理
+#### 第 5 章 · 终末照护的第一项技术，是把话听完
 
 `14-huli-lunli-fagui/chapters/05-anning-shengming/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 安宁疗护与生命伦理 · 提示词 | — | 441 | [`prompt-05-anning-shengming.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/05-anning-shengming/outputs/prompt-05-anning-shengming.md) |
-| skill | 安宁疗护与生命伦理 | 安宁疗护与生命伦理——按「定原则 → 识别困境 → 走决策程序 → 依法规承担责任」走一遍本章判据 | 367 | [`skill-anning-shengming.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/05-anning-shengming/outputs/skill-anning-shengming.md) |
+| prompt | 终末照护的第一项技术，是把话听完 · 提示词 | — | 654 | [`prompt-05-anning-shengming.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/05-anning-shengming/outputs/prompt-05-anning-shengming.md) |
+| skill | 终末照护的第一项技术，是把话听完 | 终末照护的第一项技术，是把话听完——按「尊严：从一份「不做」的清单开始 → 舒适与陪伴：两件都需要被当作照护 → 自决：预立意愿与「撤除与不予」的讨论 → 家属：三重身份，三套要求」走一遍本章判据 | 564 | [`skill-anning-shengming.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/05-anning-shengming/outputs/skill-anning-shengming.md) |
 
-#### 第 6 章 · 护理法规与执业规范
+#### 第 6 章 · 规范不是捆住动作的条文，是划出可被信任的范围
 
 `14-huli-lunli-fagui/chapters/06-fagui-zhifan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理法规与执业规范 · 提示词 | — | 454 | [`prompt-06-fagui-zhifan.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/06-fagui-zhifan/outputs/prompt-06-fagui-zhifan.md) |
-| skill | 护理法规与执业规范 | 护理法规与执业规范——按「定原则 → 识别困境 → 走决策程序 → 依法规承担责任」走一遍本章判据 | 363 | [`skill-fagui-zhifan.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/06-fagui-zhifan/outputs/skill-fagui-zhifan.md) |
+| prompt | 规范不是捆住动作的条文，是划出可被信任的范围 · 提示词 | — | 660 | [`prompt-06-fagui-zhifan.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/06-fagui-zhifan/outputs/prompt-06-fagui-zhifan.md) |
+| skill | 规范不是捆住动作的条文，是划出可被信任的范围 | 规范不是捆住动作的条文，是划出可被信任的范围——按「信任：护患关系的伦理基础不是「态度好」 → 执业范围：能做什么，由三件事决定 → 教学与带教：学生的动作也是患者的风险 → 伦理质量：把「氛围」变成可观察的东西」走一遍本章判据 | 560 | [`skill-fagui-zhifan.md`](../departments/05-huli/14-huli-lunli-fagui/chapters/06-fagui-zhifan/outputs/skill-fagui-zhifan.md) |
 
 ### 护理研究与循证护理
 
@@ -10774,14 +10774,14 @@
 | prompt | 护理程序不是五步流水线，而是一个能被评价打回的循环 · 提示词 | — | 681 | [`prompt-05-huli-chengxu.md`](../departments/05-huli/16-huli-xue-daolun/chapters/05-huli-chengxu/outputs/prompt-05-huli-chengxu.md) |
 | skill | 护理程序不是五步流水线，而是一个能被评价打回的循环 | 护理程序不是五步流水线，而是一个能被评价打回的循环——按「五步的关系：前四步向前，第五步向后 → 评估：资料的来源与两级可信度 → 诊断：护理诊断不是医学诊断 → 计划：目标四要素与优先级」走一遍本章判据 | 580 | [`skill-05-huli-chengxu.md`](../departments/05-huli/16-huli-xue-daolun/chapters/05-huli-chengxu/outputs/skill-05-huli-chengxu.md) |
 
-#### 第 6 章 · 健康教育的设计与评价
+#### 第 6 章 · 健康教育的产出不是「讲了几场」，是「他回去改了哪一步」
 
 `16-huli-xue-daolun/chapters/06-jiankang-jiaoyu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 健康教育的设计与评价 · 提示词 | — | 443 | [`prompt-06-jiankang-jiaoyu.md`](../departments/05-huli/11-shequ-huli-xue/chapters/06-jiankang-jiaoyu/outputs/prompt-06-jiankang-jiaoyu.md) |
-| skill | 健康教育的设计与评价 | 健康教育的设计与评价——按「评估社区 → 定服务内容 → 入户与随访 → 评价可及性」走一遍本章判据 | 366 | [`skill-jiankang-jiaoyu.md`](../departments/05-huli/11-shequ-huli-xue/chapters/06-jiankang-jiaoyu/outputs/skill-jiankang-jiaoyu.md) |
+| prompt | 健康教育的产出不是「讲了几场」，是「他回去改了哪一步」 · 提示词 | — | 589 | [`prompt-06-jiankang-jiaoyu.md`](../departments/05-huli/11-shequ-huli-xue/chapters/06-jiankang-jiaoyu/outputs/prompt-06-jiankang-jiaoyu.md) |
+| skill | 健康教育的产出不是「讲了几场」，是「他回去改了哪一步」 | 健康教育的产出不是「讲了几场」，是「他回去改了哪一步」——按「四段链条：知道不等于做到 → 设计：一个目标、三次接触、一个动作 → 评价：三类指标，一个禁区 → 记录字段与隐私」走一遍本章判据 | 489 | [`skill-jiankang-jiaoyu.md`](../departments/05-huli/11-shequ-huli-xue/chapters/06-jiankang-jiaoyu/outputs/skill-jiankang-jiaoyu.md) |
 | prompt | 健康教育的效果，不在讲了几条，在他回家做对了几件 · 提示词 | — | 673 | [`prompt-06-jiankang-jiaoyu.md`](../departments/05-huli/16-huli-xue-daolun/chapters/06-jiankang-jiaoyu/outputs/prompt-06-jiankang-jiaoyu.md) |
 | skill | 健康教育的效果，不在讲了几条，在他回家做对了几件 | 健康教育的效果，不在讲了几条，在他回家做对了几件——按「对象与内容：三类对象，两类内容 → 四条原则，各自的失效形态 → 四种方法，各自管什么 → 四个环节：需求评估、计划、实施、反馈」走一遍本章判据 | 576 | [`skill-06-jiankang-jiaoyu.md`](../departments/05-huli/16-huli-xue-daolun/chapters/06-jiankang-jiaoyu/outputs/skill-06-jiankang-jiaoyu.md) |
 
@@ -10897,572 +10897,572 @@
 
 > Core · 第 3 学期 · 已产出 18 章
 
-#### 第 1 章 · 护理心理学概述与基本理论
+#### 第 1 章 · 心理护理的专业性，首先体现在它克制地不做什么
 
 `17-huli-xinli-xue/chapters/01-ch01/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理心理学概述与基本理论 · 提示词 | — | 460 | [`prompt-01-ch01.md`](../departments/05-huli/17-huli-xinli-xue/chapters/01-ch01/outputs/prompt-01-ch01.md) |
-| skill | 护理心理学概述与基本理论 | 护理心理学概述与基本理论——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 367 | [`skill-ch01.md`](../departments/05-huli/17-huli-xinli-xue/chapters/01-ch01/outputs/skill-ch01.md) |
-| prompt | 护理综合技能概述与训练要求 · 提示词 | — | 450 | [`prompt-01-ch01.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/01-ch01/outputs/prompt-01-ch01.md) |
-| skill | 护理综合技能概述与训练要求 | 护理综合技能概述与训练要求——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 364 | [`skill-ch01.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/01-ch01/outputs/skill-ch01.md) |
+| prompt | 心理护理的专业性，首先体现在它克制地不做什么 · 提示词 | — | 592 | [`prompt-01-ch01.md`](../departments/05-huli/17-huli-xinli-xue/chapters/01-ch01/outputs/prompt-01-ch01.md) |
+| skill | 心理护理的专业性，首先体现在它克制地不做什么 | 心理护理的专业性，首先体现在它克制地不做什么——按「四个动作、四条不做 → 心理现象的四个层面与护理落点 → 评估：先有结构，再谈工具 → 判据分档与动作时限【教学设定】」走一遍本章判据 | 486 | [`skill-ch01.md`](../departments/05-huli/17-huli-xinli-xue/chapters/01-ch01/outputs/skill-ch01.md) |
+| prompt | 技能的分水岭不在考站里，在考站外 · 提示词 | — | 524 | [`prompt-01-ch01.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/01-ch01/outputs/prompt-01-ch01.md) |
+| skill | 技能的分水岭不在考站里，在考站外 | 技能的分水岭不在考站里，在考站外——按「会做与做得稳之间隔着三样东西 → 训练开始之前必须过的六项核对 → 分项训练的四段推进与时限 → 训练记录的四组字段与四类失效」走一遍本章判据 | 423 | [`skill-ch01.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/01-ch01/outputs/skill-ch01.md) |
 
-#### 第 2 章 · 心理现象与心理过程基础
+#### 第 2 章 · 患者记住的不是宣教重点，而是被对待的方式
 
 `17-huli-xinli-xue/chapters/02-ch02/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 心理现象与心理过程基础 · 提示词 | — | 457 | [`prompt-02-ch02.md`](../departments/05-huli/17-huli-xinli-xue/chapters/02-ch02/outputs/prompt-02-ch02.md) |
-| skill | 心理现象与心理过程基础 | 心理现象与心理过程基础——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 365 | [`skill-ch02.md`](../departments/05-huli/17-huli-xinli-xue/chapters/02-ch02/outputs/skill-ch02.md) |
-| prompt | 技能操作的基本规范与准备要求 · 提示词 | — | 453 | [`prompt-02-ch02.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/02-ch02/outputs/prompt-02-ch02.md) |
-| skill | 技能操作的基本规范与准备要求 | 技能操作的基本规范与准备要求——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 366 | [`skill-ch02.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/02-ch02/outputs/skill-ch02.md) |
+| prompt | 患者记住的不是宣教重点，而是被对待的方式 · 提示词 | — | 626 | [`prompt-02-ch02.md`](../departments/05-huli/17-huli-xinli-xue/chapters/02-ch02/outputs/prompt-02-ch02.md) |
+| skill | 患者记住的不是宣教重点，而是被对待的方式 | 患者记住的不是宣教重点，而是被对待的方式——按「感觉与知觉：进入大脑的第一道闸 → 注意与记忆：信息为什么丢 → 思维与语言：抽象的话落不了地 → 情绪、意志与行为：依从的心理学」走一遍本章判据 | 522 | [`skill-ch02.md`](../departments/05-huli/17-huli-xinli-xue/chapters/02-ch02/outputs/skill-ch02.md) |
+| prompt | 规范不是流程的长度，是每个断点都有人接 · 提示词 | — | 595 | [`prompt-02-ch02.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/02-ch02/outputs/prompt-02-ch02.md) |
+| skill | 规范不是流程的长度，是每个断点都有人接 | 规范不是流程的长度，是每个断点都有人接——按「流程的长度不等于规范的密度 → 操作前的六类核对与一次三数清点 → 核对方式的选择与五个必须停的核对点 → 感控要求的三个落点与四类失效」走一遍本章判据 | 491 | [`skill-ch02.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/02-ch02/outputs/skill-ch02.md) |
 
-#### 第 3 章 · 心理评估与心理护理记录基础
+#### 第 3 章 · 心理护理记录不是留痕，是让下一个人接得住
 
 `17-huli-xinli-xue/chapters/03-ch03/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 心理评估与心理护理记录基础 · 提示词 | — | 463 | [`prompt-03-ch03.md`](../departments/05-huli/17-huli-xinli-xue/chapters/03-ch03/outputs/prompt-03-ch03.md) |
-| skill | 心理评估与心理护理记录基础 | 心理评估与心理护理记录基础——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 369 | [`skill-ch03.md`](../departments/05-huli/17-huli-xinli-xue/chapters/03-ch03/outputs/skill-ch03.md) |
-| prompt | 技能操作中的患者安全与权益保护 · 提示词 | — | 456 | [`prompt-03-ch03.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/03-ch03/outputs/prompt-03-ch03.md) |
-| skill | 技能操作中的患者安全与权益保护 | 技能操作中的患者安全与权益保护——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 368 | [`skill-ch03.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/03-ch03/outputs/skill-ch03.md) |
+| prompt | 心理护理记录不是留痕，是让下一个人接得住 · 提示词 | — | 606 | [`prompt-03-ch03.md`](../departments/05-huli/17-huli-xinli-xue/chapters/03-ch03/outputs/prompt-03-ch03.md) |
+| skill | 心理护理记录不是留痕，是让下一个人接得住 | 心理护理记录不是留痕，是让下一个人接得住——按「三种信息来源：各自能证明什么 → 观察：五个维度，以变化为线索 → 访谈：提问顺序与倾听的四个动作 → 工具目录、使用边界与分档时限」走一遍本章判据 | 502 | [`skill-ch03.md`](../departments/05-huli/17-huli-xinli-xue/chapters/03-ch03/outputs/skill-ch03.md) |
+| prompt | 安全的第一道防线不是谨慎，是可核对的重复 · 提示词 | — | 580 | [`prompt-03-ch03.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/03-ch03/outputs/prompt-03-ch03.md) |
+| skill | 安全的第一道防线不是谨慎，是可核对的重复 | 安全的第一道防线不是谨慎，是可核对的重复——按「谨慎是一种态度，重复才是一种保障 → 三处再核对：身份的、部位的、意愿的 → 告知的四要素与拒绝的三条路径 → 隐私的三个暴露面与四类失效」走一遍本章判据 | 475 | [`skill-ch03.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/03-ch03/outputs/skill-ch03.md) |
 
-#### 第 4 章 · 护理对象的心理反应与心理需求
+#### 第 4 章 · 同一句「我没事」，在四个年龄段说的是四件不同的事
 
 `17-huli-xinli-xue/chapters/04-ch04/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理对象的心理反应与心理需求 · 提示词 | — | 466 | [`prompt-04-ch04.md`](../departments/05-huli/17-huli-xinli-xue/chapters/04-ch04/outputs/prompt-04-ch04.md) |
-| skill | 护理对象的心理反应与心理需求 | 护理对象的心理反应与心理需求——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 371 | [`skill-ch04.md`](../departments/05-huli/17-huli-xinli-xue/chapters/04-ch04/outputs/skill-ch04.md) |
-| prompt | 生命体征与一般状况观察类技能 · 提示词 | — | 453 | [`prompt-04-ch04.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/04-ch04/outputs/prompt-04-ch04.md) |
-| skill | 生命体征与一般状况观察类技能 | 生命体征与一般状况观察类技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 366 | [`skill-ch04.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/04-ch04/outputs/skill-ch04.md) |
+| prompt | 同一句「我没事」，在四个年龄段说的是四件不同的事 · 提示词 | — | 629 | [`prompt-04-ch04.md`](../departments/05-huli/17-huli-xinli-xue/chapters/04-ch04/outputs/prompt-04-ch04.md) |
+| skill | 同一句「我没事」，在四个年龄段说的是四件不同的事 | 同一句「我没事」，在四个年龄段说的是四件不同的事——按「三个阶段：反应的内容随病程改变 → 四类人群：需求的结构不同 → 需求的分档与判断【教学设定】 → 沟通动作与时限」走一遍本章判据 | 521 | [`skill-ch04.md`](../departments/05-huli/17-huli-xinli-xue/chapters/04-ch04/outputs/skill-ch04.md) |
+| prompt | 观察的价值不在测到数，在测到之后谁接手 · 提示词 | — | 603 | [`prompt-04-ch04.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/04-ch04/outputs/prompt-04-ch04.md) |
+| skill | 观察的价值不在测到数，在测到之后谁接手 | 观察的价值不在测到数，在测到之后谁接手——按「一个数有三个属性，缺一个就不能用 → 测量前的四类条件与三个影响因素 → 方式与部位的选择，以及一次复测的判据 → 记录字段、复核与四类失效」走一遍本章判据 | 499 | [`skill-ch04.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/04-ch04/outputs/skill-ch04.md) |
 
-#### 第 5 章 · 护患关系与治疗性沟通
+#### 第 5 章 · 信任不靠态度好，靠可预测
 
 `17-huli-xinli-xue/chapters/05-ch05/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护患关系与治疗性沟通 · 提示词 | — | 454 | [`prompt-05-ch05.md`](../departments/05-huli/17-huli-xinli-xue/chapters/05-ch05/outputs/prompt-05-ch05.md) |
-| skill | 护患关系与治疗性沟通 | 护患关系与治疗性沟通——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 363 | [`skill-ch05.md`](../departments/05-huli/17-huli-xinli-xue/chapters/05-ch05/outputs/skill-ch05.md) |
-| prompt | 给药相关护理技能 · 提示词 | — | 435 | [`prompt-05-ch05.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/05-ch05/outputs/prompt-05-ch05.md) |
-| skill | 给药相关护理技能 | 给药相关护理技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 354 | [`skill-ch05.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/05-ch05/outputs/skill-ch05.md) |
+| prompt | 信任不靠态度好，靠可预测 · 提示词 | — | 565 | [`prompt-05-ch05.md`](../departments/05-huli/17-huli-xinli-xue/chapters/05-ch05/outputs/prompt-05-ch05.md) |
+| skill | 信任不靠态度好，靠可预测 | 信任不靠态度好，靠可预测——按「关系的三个阶段与各自的任务 → 信任的四个来源 → 沟通的要素：听、问、澄、非言语 → 边界与情绪激动的处置」走一遍本章判据 | 469 | [`skill-ch05.md`](../departments/05-huli/17-huli-xinli-xue/chapters/05-ch05/outputs/skill-ch05.md) |
+| prompt | 给药的安全冗余全在给药之前，不在给药之后 · 提示词 | — | 596 | [`prompt-05-ch05.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/05-ch05/outputs/prompt-05-ch05.md) |
+| skill | 给药的安全冗余全在给药之前，不在给药之后 | 给药的安全冗余全在给药之前，不在给药之后——按「同一个人核两遍不是冗余，是重复 → 给药前的四类清点与一张分核表 → 三个关键节点与时限 → 观察维度、记录九列与四类失效」走一遍本章判据 | 491 | [`skill-ch05.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/05-ch05/outputs/skill-ch05.md) |
 
-#### 第 6 章 · 心理支持与心理疏导的要求
+#### 第 6 章 · 支持不是让他别难过，是让他不必一个人难过
 
 `17-huli-xinli-xue/chapters/06-ch06/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 心理支持与心理疏导的要求 · 提示词 | — | 460 | [`prompt-06-ch06.md`](../departments/05-huli/17-huli-xinli-xue/chapters/06-ch06/outputs/prompt-06-ch06.md) |
-| skill | 心理支持与心理疏导的要求 | 心理支持与心理疏导的要求——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 367 | [`skill-ch06.md`](../departments/05-huli/17-huli-xinli-xue/chapters/06-ch06/outputs/skill-ch06.md) |
-| prompt | 无菌技术与伤口护理类技能 · 提示词 | — | 447 | [`prompt-06-ch06.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/06-ch06/outputs/prompt-06-ch06.md) |
-| skill | 无菌技术与伤口护理类技能 | 无菌技术与伤口护理类技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 362 | [`skill-ch06.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/06-ch06/outputs/skill-ch06.md) |
+| prompt | 支持不是让他别难过，是让他不必一个人难过 · 提示词 | — | 607 | [`prompt-06-ch06.md`](../departments/05-huli/17-huli-xinli-xue/chapters/06-ch06/outputs/prompt-06-ch06.md) |
+| skill | 支持不是让他别难过，是让他不必一个人难过 | 支持不是让他别难过，是让他不必一个人难过——按「四种支持形态与实际缺口 → 疏导的准备：三问与五个观察点 → 方法层：呼吸、放松、活动与节律 → 分档、时限与转介」走一遍本章判据 | 503 | [`skill-ch06.md`](../departments/05-huli/17-huli-xinli-xue/chapters/06-ch06/outputs/skill-ch06.md) |
+| prompt | 无菌的成败由看不见的边界决定，不由动作决定 · 提示词 | — | 591 | [`prompt-06-ch06.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/06-ch06/outputs/prompt-06-ch06.md) |
+| skill | 无菌的成败由看不见的边界决定，不由动作决定 | 无菌的成败由看不见的边界决定，不由动作决定——按「无菌面是一个边界，不是一个区域 → 操作前的六项核对与无菌台的布局 → 步骤与时限，以及破防的评分维度 → 伤口与管道的观察，记录与四类失效」走一遍本章判据 | 485 | [`skill-ch06.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/06-ch06/outputs/skill-ch06.md) |
 
-#### 第 7 章 · 心理危机的识别与转介
+#### 第 7 章 · 危机靠问出来，不靠看出来
 
 `17-huli-xinli-xue/chapters/07-ch07/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 心理危机的识别与转介 · 提示词 | — | 454 | [`prompt-07-ch07.md`](../departments/05-huli/17-huli-xinli-xue/chapters/07-ch07/outputs/prompt-07-ch07.md) |
-| skill | 心理危机的识别与转介 | 心理危机的识别与转介——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 363 | [`skill-ch07.md`](../departments/05-huli/17-huli-xinli-xue/chapters/07-ch07/outputs/skill-ch07.md) |
-| prompt | 氧疗与气道护理类技能 · 提示词 | — | 441 | [`prompt-07-ch07.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/07-ch07/outputs/prompt-07-ch07.md) |
-| skill | 氧疗与气道护理类技能 | 氧疗与气道护理类技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 358 | [`skill-ch07.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/07-ch07/outputs/skill-ch07.md) |
+| prompt | 危机靠问出来，不靠看出来 · 提示词 | — | 598 | [`prompt-07-ch07.md`](../departments/05-huli/17-huli-xinli-xue/chapters/07-ch07/outputs/prompt-07-ch07.md) |
+| skill | 危机靠问出来，不靠看出来 | 危机靠问出来，不靠看出来——按「三类信号：情绪、言语、行为 → 求助表达：两种形式与回应的边界 → 风险评估：直接问的四句话 → 安全照护、陪伴与报告转介」走一遍本章判据 | 502 | [`skill-ch07.md`](../departments/05-huli/17-huli-xinli-xue/chapters/07-ch07/outputs/skill-ch07.md) |
+| prompt | 气道护理的分数在判断谁接手，不在设定多少 · 提示词 | — | 580 | [`prompt-07-ch07.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/07-ch07/outputs/prompt-07-ch07.md) |
+| skill | 气道护理的分数在判断谁接手，不在设定多少 | 气道护理的分数在判断谁接手，不在设定多少——按「本章做的三件事，与不做的一件事 → 给氧前的五项核对与气道的四个观察维度 → 三段操作的步骤与时限 → 记录字段与四类失效」走一遍本章判据 | 475 | [`skill-ch07.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/07-ch07/outputs/skill-ch07.md) |
 
-#### 第 8 章 · 手术与创伤患者的心理护理
+#### 第 8 章 · 术前最该处理的不是恐惧，是不知道自己在等什么
 
 `17-huli-xinli-xue/chapters/08-ch08/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 手术与创伤患者的心理护理 · 提示词 | — | 460 | [`prompt-08-ch08.md`](../departments/05-huli/17-huli-xinli-xue/chapters/08-ch08/outputs/prompt-08-ch08.md) |
-| skill | 手术与创伤患者的心理护理 | 手术与创伤患者的心理护理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 367 | [`skill-ch08.md`](../departments/05-huli/17-huli-xinli-xue/chapters/08-ch08/outputs/skill-ch08.md) |
-| prompt | 排泄与导尿护理类技能 · 提示词 | — | 441 | [`prompt-08-ch08.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/08-ch08/outputs/prompt-08-ch08.md) |
-| skill | 排泄与导尿护理类技能 | 排泄与导尿护理类技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 358 | [`skill-ch08.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/08-ch08/outputs/skill-ch08.md) |
+| prompt | 术前最该处理的不是恐惧，是不知道自己在等什么 · 提示词 | — | 628 | [`prompt-08-ch08.md`](../departments/05-huli/17-huli-xinli-xue/chapters/08-ch08/outputs/prompt-08-ch08.md) |
+| skill | 术前最该处理的不是恐惧，是不知道自己在等什么 | 术前最该处理的不是恐惧，是不知道自己在等什么——按「术前：三类需求，一个都不能省 → 等待期与术后即刻：三种反应形态 → 创伤反应：三类与观察要点 → 分档与时限」走一遍本章判据 | 522 | [`skill-ch08.md`](../departments/05-huli/17-huli-xinli-xue/chapters/08-ch08/outputs/skill-ch08.md) |
+| prompt | 排泄护理的难点不在置管，在留置期间的每一次观察 · 提示词 | — | 598 | [`prompt-08-ch08.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/08-ch08/outputs/prompt-08-ch08.md) |
+| skill | 排泄护理的难点不在置管，在留置期间的每一次观察 | 排泄护理的难点不在置管，在留置期间的每一次观察——按「把「该不该置」当成必须回答的问题 → 置入前的五项核对与三项准备 → 协助方式的选择与留置期的五维观察 → 标本采集的标识链与四类失效」走一遍本章判据 | 490 | [`skill-ch08.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/08-ch08/outputs/skill-ch08.md) |
 
-#### 第 9 章 · 慢性病与肿瘤患者的心理护理
+#### 第 9 章 · 长期照护里最耗人的不是病，是每次复诊都要重新解释自己
 
 `17-huli-xinli-xue/chapters/09-ch09/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 慢性病与肿瘤患者的心理护理 · 提示词 | — | 463 | [`prompt-09-ch09.md`](../departments/05-huli/17-huli-xinli-xue/chapters/09-ch09/outputs/prompt-09-ch09.md) |
-| skill | 慢性病与肿瘤患者的心理护理 | 慢性病与肿瘤患者的心理护理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 369 | [`skill-ch09.md`](../departments/05-huli/17-huli-xinli-xue/chapters/09-ch09/outputs/skill-ch09.md) |
-| prompt | 体位与活动与转运类技能 · 提示词 | — | 444 | [`prompt-09-ch09.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/09-ch09/outputs/prompt-09-ch09.md) |
-| skill | 体位与活动与转运类技能 | 体位与活动与转运类技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 360 | [`skill-ch09.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/09-ch09/outputs/skill-ch09.md) |
+| prompt | 长期照护里最耗人的不是病，是每次复诊都要重新解释自己 · 提示词 | — | 619 | [`prompt-09-ch09.md`](../departments/05-huli/17-huli-xinli-xue/chapters/09-ch09/outputs/prompt-09-ch09.md) |
+| skill | 长期照护里最耗人的不是病，是每次复诊都要重新解释自己 | 长期照护里最耗人的不是病，是每次复诊都要重新解释自己——按「三个阶段：反应随病程变形 → 家庭负担与照护者支持 → 支持方式的选择 → 分档、告知配合与时限」走一遍本章判据 | 509 | [`skill-ch09.md`](../departments/05-huli/17-huli-xinli-xue/chapters/09-ch09/outputs/skill-ch09.md) |
+| prompt | 体位与转运的风险不在搬动那一刻，在搬动之前的评估 · 提示词 | — | 590 | [`prompt-09-ch09.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/09-ch09/outputs/prompt-09-ch09.md) |
+| skill | 体位与转运的风险不在搬动那一刻，在搬动之前的评估 | 体位与转运的风险不在搬动那一刻，在搬动之前的评估——按「五个场景，一种力学 → 转运前的六项评估与三方核对 → 变换体位的判据与四段操作的时限 → 约束的边界与四类失效」走一遍本章判据 | 481 | [`skill-ch09.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/09-ch09/outputs/skill-ch09.md) |
 
-#### 第 10 章 · 孕产妇与儿童青少年的心理护理
+#### 第 10 章 · 产房里的支持，先给的不是鼓励，是「你做得到」的确认
 
 `17-huli-xinli-xue/chapters/10-ch10/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 孕产妇与儿童青少年的心理护理 · 提示词 | — | 468 | [`prompt-10-ch10.md`](../departments/05-huli/17-huli-xinli-xue/chapters/10-ch10/outputs/prompt-10-ch10.md) |
-| skill | 孕产妇与儿童青少年的心理护理 | 孕产妇与儿童青少年的心理护理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 371 | [`skill-ch10.md`](../departments/05-huli/17-huli-xinli-xue/chapters/10-ch10/outputs/skill-ch10.md) |
-| prompt | 急救与复苏配合技能 · 提示词 | — | 440 | [`prompt-10-ch10.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/10-ch10/outputs/prompt-10-ch10.md) |
-| skill | 急救与复苏配合技能 | 急救与复苏配合技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 356 | [`skill-ch10.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/10-ch10/outputs/skill-ch10.md) |
+| prompt | 产房里的支持，先给的不是鼓励，是「你做得到」的确认 · 提示词 | — | 640 | [`prompt-10-ch10.md`](../departments/05-huli/17-huli-xinli-xue/chapters/10-ch10/outputs/prompt-10-ch10.md) |
+| skill | 产房里的支持，先给的不是鼓励，是「你做得到」的确认 | 产房里的支持，先给的不是鼓励，是「你做得到」的确认——按「孕期：两次关键谈话 → 产程与产后：窗口极短的支持 → 儿童与青少年：用游戏与选择代替提问 → 分档、沟通动作与时限」走一遍本章判据 | 530 | [`skill-ch10.md`](../departments/05-huli/17-huli-xinli-xue/chapters/10-ch10/outputs/skill-ch10.md) |
+| prompt | 急救配合的评价标准是让位是否及时，不是动作是否好看 · 提示词 | — | 601 | [`prompt-10-ch10.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/10-ch10/outputs/prompt-10-ch10.md) |
+| skill | 急救配合的评价标准是让位是否及时，不是动作是否好看 | 急救配合的评价标准是让位是否及时，不是动作是否好看——按「配合是一种可以被观察的行为 → 现场安全与呼救：三步，不许跳 → 意识与呼吸的观察，与启动流程的判据 → 配合记录与四类失效」走一遍本章判据 | 490 | [`skill-ch10.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/10-ch10/outputs/skill-ch10.md) |
 
-#### 第 11 章 · 老年与临终患者的心理护理
+#### 第 11 章 · 临终照护最难的，是把「还能做什么」说到最后一刻
 
 `17-huli-xinli-xue/chapters/11-ch11/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 老年与临终患者的心理护理 · 提示词 | — | 462 | [`prompt-11-ch11.md`](../departments/05-huli/17-huli-xinli-xue/chapters/11-ch11/outputs/prompt-11-ch11.md) |
-| skill | 老年与临终患者的心理护理 | 老年与临终患者的心理护理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 367 | [`skill-ch11.md`](../departments/05-huli/17-huli-xinli-xue/chapters/11-ch11/outputs/skill-ch11.md) |
-| prompt | 中医护理技能 · 提示词 | — | 431 | [`prompt-11-ch11.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/11-ch11/outputs/prompt-11-ch11.md) |
-| skill | 中医护理技能 | 中医护理技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 350 | [`skill-ch11.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/11-ch11/outputs/skill-ch11.md) |
+| prompt | 临终照护最难的，是把「还能做什么」说到最后一刻 · 提示词 | — | 627 | [`prompt-11-ch11.md`](../departments/05-huli/17-huli-xinli-xue/chapters/11-ch11/outputs/prompt-11-ch11.md) |
+| skill | 临终照护最难的，是把「还能做什么」说到最后一刻 | 临终照护最难的，是把「还能做什么」说到最后一刻——按「老年期：认知与情绪的观察要点 → 孤独与失落：支持的对象是关系，不是情绪 → 临终：四个阶段与「还能做什么」 → 尊重自决与分档时限」走一遍本章判据 | 519 | [`skill-ch11.md`](../departments/05-huli/17-huli-xinli-xue/chapters/11-ch11/outputs/skill-ch11.md) |
+| prompt | 中医护理技能的边界，比它的手法更需要被写清楚 · 提示词 | — | 602 | [`prompt-11-ch11.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/11-ch11/outputs/prompt-11-ch11.md) |
+| skill | 中医护理技能的边界，比它的手法更需要被写清楚 | 中医护理技能的边界，比它的手法更需要被写清楚——按「三个「不」：不诊断、不立法、不替代 → 操作前的四项评估与一次告知 → 手法类操作的共同骨架 → 皮肤与不适的观察，记录与四类失效」走一遍本章判据 | 494 | [`skill-ch11.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/11-ch11/outputs/skill-ch11.md) |
 
-#### 第 12 章 · 特殊情境中的心理护理
+#### 第 12 章 · 隔离病房里，最先塌掉的不是体力，是时间感
 
 `17-huli-xinli-xue/chapters/12-ch12/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 特殊情境中的心理护理 · 提示词 | — | 456 | [`prompt-12-ch12.md`](../departments/05-huli/17-huli-xinli-xue/chapters/12-ch12/outputs/prompt-12-ch12.md) |
-| skill | 特殊情境中的心理护理 | 特殊情境中的心理护理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 363 | [`skill-ch12.md`](../departments/05-huli/17-huli-xinli-xue/chapters/12-ch12/outputs/skill-ch12.md) |
-| prompt | 围手术期与专科协作类技能 · 提示词 | — | 449 | [`prompt-12-ch12.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/12-ch12/outputs/prompt-12-ch12.md) |
-| skill | 围手术期与专科协作类技能 | 围手术期与专科协作类技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 362 | [`skill-ch12.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/12-ch12/outputs/skill-ch12.md) |
+| prompt | 隔离病房里，最先塌掉的不是体力，是时间感 · 提示词 | — | 587 | [`prompt-12-ch12.md`](../departments/05-huli/17-huli-xinli-xue/chapters/12-ch12/outputs/prompt-12-ch12.md) |
+| skill | 隔离病房里，最先塌掉的不是体力，是时间感 | 隔离病房里，最先塌掉的不是体力，是时间感——按「四类情境的共同结构 → 隔离：把时间重新做出刻度 → 急诊、灾难与重症：把不确定说成下一步 → 分档、时限与转介」走一遍本章判据 | 482 | [`skill-ch12.md`](../departments/05-huli/17-huli-xinli-xue/chapters/12-ch12/outputs/skill-ch12.md) |
+| prompt | 围手术期的质量由交接决定，而不由手术本身决定 · 提示词 | — | 572 | [`prompt-12-ch12.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/12-ch12/outputs/prompt-12-ch12.md) |
+| skill | 围手术期的质量由交接决定，而不由手术本身决定 | 围手术期的质量由交接决定，而不由手术本身决定——按「交接丢的从来不是「情况」，是三样具体的东西 → 术前准备的四类内容与五项核对 → 术后观察的五个维度与疼痛的两个层面 → 交接五要素与四类失效」走一遍本章判据 | 464 | [`skill-ch12.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/12-ch12/outputs/skill-ch12.md) |
 
-#### 第 13 章 · 护士职业心理与压力管理
+#### 第 13 章 · 护士的耗竭不是抗压失败，是长期支出超过收入
 
 `17-huli-xinli-xue/chapters/13-ch13/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护士职业心理与压力管理 · 提示词 | — | 459 | [`prompt-13-ch13.md`](../departments/05-huli/17-huli-xinli-xue/chapters/13-ch13/outputs/prompt-13-ch13.md) |
-| skill | 护士职业心理与压力管理 | 护士职业心理与压力管理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 365 | [`skill-ch13.md`](../departments/05-huli/17-huli-xinli-xue/chapters/13-ch13/outputs/skill-ch13.md) |
-| prompt | 综合模拟训练与情景演练 · 提示词 | — | 446 | [`prompt-13-ch13.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/13-ch13/outputs/prompt-13-ch13.md) |
-| skill | 综合模拟训练与情景演练 | 综合模拟训练与情景演练——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 360 | [`skill-ch13.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/13-ch13/outputs/skill-ch13.md) |
+| prompt | 护士的耗竭不是抗压失败，是长期支出超过收入 · 提示词 | — | 600 | [`prompt-13-ch13.md`](../departments/05-huli/17-huli-xinli-xue/chapters/13-ch13/outputs/prompt-13-ch13.md) |
+| skill | 护士的耗竭不是抗压失败，是长期支出超过收入 | 护士的耗竭不是抗压失败，是长期支出超过收入——按「压力源的四个层面 → 自我觉察的四个信号 → 调节：班内、班后、长期 → 记录、失效模式、考核项」走一遍本章判据 | 494 | [`skill-ch13.md`](../departments/05-huli/17-huli-xinli-xue/chapters/13-ch13/outputs/skill-ch13.md) |
+| prompt | 模拟训练的价值不在演得像，在复盘时敢说哪一步错了 · 提示词 | — | 585 | [`prompt-13-ch13.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/13-ch13/outputs/prompt-13-ch13.md) |
+| skill | 模拟训练的价值不在演得像，在复盘时敢说哪一步错了 | 模拟训练的价值不在演得像，在复盘时敢说哪一步错了——按「一个只有正确答案的情境，练不出判断 → 情境设计的五要素与三层难度 → 角色分工、实施中的观察与安全 → 复盘的四段式与四类失效」走一遍本章判据 | 475 | [`skill-ch13.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/13-ch13/outputs/skill-ch13.md) |
 
-#### 第 14 章 · 护士心理健康与支持体系
+#### 第 14 章 · 支持体系的价值不在「有人可找」，在「找了不会更糟」
 
 `17-huli-xinli-xue/chapters/14-ch14/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护士心理健康与支持体系 · 提示词 | — | 459 | [`prompt-14-ch14.md`](../departments/05-huli/17-huli-xinli-xue/chapters/14-ch14/outputs/prompt-14-ch14.md) |
-| skill | 护士心理健康与支持体系 | 护士心理健康与支持体系——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 365 | [`skill-ch14.md`](../departments/05-huli/17-huli-xinli-xue/chapters/14-ch14/outputs/skill-ch14.md) |
-| prompt | 技能考核与评价要求 · 提示词 | — | 440 | [`prompt-14-ch14.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/14-ch14/outputs/prompt-14-ch14.md) |
-| skill | 技能考核与评价要求 | 技能考核与评价要求——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 356 | [`skill-ch14.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/14-ch14/outputs/skill-ch14.md) |
+| prompt | 支持体系的价值不在「有人可找」，在「找了不会更糟」 · 提示词 | — | 659 | [`prompt-14-ch14.md`](../departments/05-huli/17-huli-xinli-xue/chapters/14-ch14/outputs/prompt-14-ch14.md) |
+| skill | 支持体系的价值不在「有人可找」，在「找了不会更糟」 | 支持体系的价值不在「有人可找」，在「找了不会更糟」——按「三个层面的因素与支持的对应关系 → 四层支持体系与各自的功能 → 非惩罚性与公正文化 → 事件后的反应与分档时限」走一遍本章判据 | 549 | [`skill-ch14.md`](../departments/05-huli/17-huli-xinli-xue/chapters/14-ch14/outputs/skill-ch14.md) |
+| prompt | 考核评分的信度来自扣分点，而不是来自总分 · 提示词 | — | 597 | [`prompt-14-ch14.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/14-ch14/outputs/prompt-14-ch14.md) |
+| skill | 考核评分的信度来自扣分点，而不是来自总分 | 考核评分的信度来自扣分点，而不是来自总分——按「总分丢掉了什么 → 考核内容的结构：四层，从过程到判断 → 评分表的形式：判据、证据、否决项 → 记录、反馈与四类失效」走一遍本章判据 | 491 | [`skill-ch14.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/14-ch14/outputs/skill-ch14.md) |
 
-#### 第 15 章 · 护理团队沟通与协作心理
+#### 第 15 章 · 交接漏掉的那句话，通常是最难开口的那句
 
 `17-huli-xinli-xue/chapters/15-ch15/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理团队沟通与协作心理 · 提示词 | — | 459 | [`prompt-15-ch15.md`](../departments/05-huli/17-huli-xinli-xue/chapters/15-ch15/outputs/prompt-15-ch15.md) |
-| skill | 护理团队沟通与协作心理 | 护理团队沟通与协作心理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 365 | [`skill-ch15.md`](../departments/05-huli/17-huli-xinli-xue/chapters/15-ch15/outputs/skill-ch15.md) |
-| prompt | 技能教学与团队协作 · 提示词 | — | 440 | [`prompt-15-ch15.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/15-ch15/outputs/prompt-15-ch15.md) |
-| skill | 技能教学与团队协作 | 技能教学与团队协作——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 356 | [`skill-ch15.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/15-ch15/outputs/skill-ch15.md) |
+| prompt | 交接漏掉的那句话，通常是最难开口的那句 · 提示词 | — | 586 | [`prompt-15-ch15.md`](../departments/05-huli/17-huli-xinli-xue/chapters/15-ch15/outputs/prompt-15-ch15.md) |
+| skill | 交接漏掉的那句话，通常是最难开口的那句 | 交接漏掉的那句话，通常是最难开口的那句——按「沟通障碍的四类来源 → 交接：结构化顺序与心理条目的固定位置 → 冲突情境的沟通 → 心理安全与发言」走一遍本章判据 | 482 | [`skill-ch15.md`](../departments/05-huli/17-huli-xinli-xue/chapters/15-ch15/outputs/skill-ch15.md) |
+| prompt | 示教的效果取决于学员能复述什么，而不是老师演示了什么 · 提示词 | — | 590 | [`prompt-15-ch15.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/15-ch15/outputs/prompt-15-ch15.md) |
+| skill | 示教的效果取决于学员能复述什么，而不是老师演示了什么 | 示教的效果取决于学员能复述什么，而不是老师演示了什么——按「示教要交付的不是动作，是决策点 → 示教的四段结构与三个讲解时机 → 协作的三处接口 → 记录、反思与四类失效」走一遍本章判据 | 478 | [`skill-ch15.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/15-ch15/outputs/skill-ch15.md) |
 
-#### 第 16 章 · 护理心理护理质量与安全管理
+#### 第 16 章 · 心理护理的质量，卡在「做了没有」而不是「做得好不好」
 
 `17-huli-xinli-xue/chapters/16-ch16/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理心理护理质量与安全管理 · 提示词 | — | 465 | [`prompt-16-ch16.md`](../departments/05-huli/17-huli-xinli-xue/chapters/16-ch16/outputs/prompt-16-ch16.md) |
-| skill | 护理心理护理质量与安全管理 | 护理心理护理质量与安全管理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 369 | [`skill-ch16.md`](../departments/05-huli/17-huli-xinli-xue/chapters/16-ch16/outputs/skill-ch16.md) |
-| prompt | 技能风险与质量安全管理 · 提示词 | — | 446 | [`prompt-16-ch16.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/16-ch16/outputs/prompt-16-ch16.md) |
-| skill | 技能风险与质量安全管理 | 技能风险与质量安全管理——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 360 | [`skill-ch16.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/16-ch16/outputs/skill-ch16.md) |
+| prompt | 心理护理的质量，卡在「做了没有」而不是「做得好不好」 · 提示词 | — | 632 | [`prompt-16-ch16.md`](../departments/05-huli/17-huli-xinli-xue/chapters/16-ch16/outputs/prompt-16-ch16.md) |
+| skill | 心理护理的质量，卡在「做了没有」而不是「做得好不好」 | 心理护理的质量，卡在「做了没有」而不是「做得好不好」——按「三个维度：结构、过程、结果 → 口径：四个可查的过程指标 → 风险来源与防范 → 分档、时限与报告」走一遍本章判据 | 521 | [`skill-ch16.md`](../departments/05-huli/17-huli-xinli-xue/chapters/16-ch16/outputs/skill-ch16.md) |
+| prompt | 风险管理的成熟度看报告量，不看差错量 · 提示词 | — | 544 | [`prompt-16-ch16.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/16-ch16/outputs/prompt-16-ch16.md) |
+| skill | 风险管理的成熟度看报告量，不看差错量 | 风险管理的成熟度看报告量，不看差错量——按「报告是发现机制，不是追责机制 → 风险来源的四个层面与识别三问 → 报告的四要素与渠道 → 原因分析与四类失效」走一遍本章判据 | 440 | [`skill-ch16.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/16-ch16/outputs/skill-ch16.md) |
 
-#### 第 17 章 · 社区与家庭心理护理
+#### 第 17 章 · 社区随访的一半工时，注定要交给家属去用
 
 `17-huli-xinli-xue/chapters/17-ch17/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 社区与家庭心理护理 · 提示词 | — | 453 | [`prompt-17-ch17.md`](../departments/05-huli/17-huli-xinli-xue/chapters/17-ch17/outputs/prompt-17-ch17.md) |
-| skill | 社区与家庭心理护理 | 社区与家庭心理护理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 361 | [`skill-ch17.md`](../departments/05-huli/17-huli-xinli-xue/chapters/17-ch17/outputs/skill-ch17.md) |
-| prompt | 社区与居家护理技能 · 提示词 | — | 440 | [`prompt-17-ch17.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/17-ch17/outputs/prompt-17-ch17.md) |
-| skill | 社区与居家护理技能 | 社区与居家护理技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 356 | [`skill-ch17.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/17-ch17/outputs/skill-ch17.md) |
+| prompt | 社区随访的一半工时，注定要交给家属去用 · 提示词 | — | 616 | [`prompt-17-ch17.md`](../departments/05-huli/17-huli-xinli-xue/chapters/17-ch17/outputs/prompt-17-ch17.md) |
+| skill | 社区随访的一半工时，注定要交给家属去用 | 社区随访的一半工时，注定要交给家属去用——按「社区与医院的三点不同 → 家庭：支持的对象是关系与分工 → 照护者负担与随访形式 → 分档、转介与机构衔接」走一遍本章判据 | 512 | [`skill-ch17.md`](../departments/05-huli/17-huli-xinli-xue/chapters/17-ch17/outputs/skill-ch17.md) |
+| prompt | 居家护理的能力，是把机构标准翻译成家庭条件 · 提示词 | — | 553 | [`prompt-17-ch17.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/17-ch17/outputs/prompt-17-ch17.md) |
+| skill | 居家护理的能力，是把机构标准翻译成家庭条件 | 居家护理的能力，是把机构标准翻译成家庭条件——按「翻译的三条规则 → 访视前的五项核对 → 访视中的观察四维与指导的边界 → 照护者培训的四步与四类失效」走一遍本章判据 | 446 | [`skill-ch17.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/17-ch17/outputs/skill-ch17.md) |
 
-#### 第 18 章 · 护理心理学与 tcmP 平台
+#### 第 18 章 · 平台能帮你找到那句话，替不了你说出那句话
 
 `17-huli-xinli-xue/chapters/18-ch18/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理心理学与 tcmP 平台 · 提示词 | — | 462 | [`prompt-18-ch18.md`](../departments/05-huli/17-huli-xinli-xue/chapters/18-ch18/outputs/prompt-18-ch18.md) |
-| skill | 护理心理学与 tcmP 平台 | 护理心理学与 tcmP 平台——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 367 | [`skill-ch18.md`](../departments/05-huli/17-huli-xinli-xue/chapters/18-ch18/outputs/skill-ch18.md) |
-| prompt | 护理综合技能与 tcmP 平台 · 提示词 | — | 452 | [`prompt-18-ch18.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/18-ch18/outputs/prompt-18-ch18.md) |
-| skill | 护理综合技能与 tcmP 平台 | 护理综合技能与 tcmP 平台——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 364 | [`skill-ch18.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/18-ch18/outputs/skill-ch18.md) |
+| prompt | 平台能帮你找到那句话，替不了你说出那句话 · 提示词 | — | 632 | [`prompt-18-ch18.md`](../departments/05-huli/17-huli-xinli-xue/chapters/18-ch18/outputs/prompt-18-ch18.md) |
+| skill | 平台能帮你找到那句话，替不了你说出那句话 | 平台能帮你找到那句话，替不了你说出那句话——按「平台层的四个对象 → 「依据」与「边界」两列怎么填 → 敏感个人信息：脱敏与去标识化不是一回事 → 辅助定位的三种方式与不替代判断」走一遍本章判据 | 527 | [`skill-ch18.md`](../departments/05-huli/17-huli-xinli-xue/chapters/18-ch18/outputs/skill-ch18.md) |
+| prompt | 平台不替人做判断，它只让判断可追溯 · 提示词 | — | 589 | [`prompt-18-ch18.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/18-ch18/outputs/prompt-18-ch18.md) |
+| skill | 平台不替人做判断，它只让判断可追溯 | 平台不替人做判断，它只让判断可追溯——按「平台做的三件事，与它不做的一件事 → 技能单元：两级编码与必填的两列 → 四道门：命中即阻断 → 留痕、复核与四类失效」走一遍本章判据 | 486 | [`skill-ch18.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/18-ch18/outputs/skill-ch18.md) |
 
 ### 护理综合技能
 
 > Build · 第 4 学期 · 已产出 18 章
 
-#### 第 1 章 · 护理心理学概述与基本理论
+#### 第 1 章 · 心理护理的专业性，首先体现在它克制地不做什么
 
 `18-huli-zonghe-jineng/chapters/01-ch01/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理心理学概述与基本理论 · 提示词 | — | 460 | [`prompt-01-ch01.md`](../departments/05-huli/17-huli-xinli-xue/chapters/01-ch01/outputs/prompt-01-ch01.md) |
-| skill | 护理心理学概述与基本理论 | 护理心理学概述与基本理论——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 367 | [`skill-ch01.md`](../departments/05-huli/17-huli-xinli-xue/chapters/01-ch01/outputs/skill-ch01.md) |
-| prompt | 护理综合技能概述与训练要求 · 提示词 | — | 450 | [`prompt-01-ch01.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/01-ch01/outputs/prompt-01-ch01.md) |
-| skill | 护理综合技能概述与训练要求 | 护理综合技能概述与训练要求——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 364 | [`skill-ch01.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/01-ch01/outputs/skill-ch01.md) |
+| prompt | 心理护理的专业性，首先体现在它克制地不做什么 · 提示词 | — | 592 | [`prompt-01-ch01.md`](../departments/05-huli/17-huli-xinli-xue/chapters/01-ch01/outputs/prompt-01-ch01.md) |
+| skill | 心理护理的专业性，首先体现在它克制地不做什么 | 心理护理的专业性，首先体现在它克制地不做什么——按「四个动作、四条不做 → 心理现象的四个层面与护理落点 → 评估：先有结构，再谈工具 → 判据分档与动作时限【教学设定】」走一遍本章判据 | 486 | [`skill-ch01.md`](../departments/05-huli/17-huli-xinli-xue/chapters/01-ch01/outputs/skill-ch01.md) |
+| prompt | 技能的分水岭不在考站里，在考站外 · 提示词 | — | 524 | [`prompt-01-ch01.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/01-ch01/outputs/prompt-01-ch01.md) |
+| skill | 技能的分水岭不在考站里，在考站外 | 技能的分水岭不在考站里，在考站外——按「会做与做得稳之间隔着三样东西 → 训练开始之前必须过的六项核对 → 分项训练的四段推进与时限 → 训练记录的四组字段与四类失效」走一遍本章判据 | 423 | [`skill-ch01.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/01-ch01/outputs/skill-ch01.md) |
 
-#### 第 2 章 · 心理现象与心理过程基础
+#### 第 2 章 · 患者记住的不是宣教重点，而是被对待的方式
 
 `18-huli-zonghe-jineng/chapters/02-ch02/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 心理现象与心理过程基础 · 提示词 | — | 457 | [`prompt-02-ch02.md`](../departments/05-huli/17-huli-xinli-xue/chapters/02-ch02/outputs/prompt-02-ch02.md) |
-| skill | 心理现象与心理过程基础 | 心理现象与心理过程基础——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 365 | [`skill-ch02.md`](../departments/05-huli/17-huli-xinli-xue/chapters/02-ch02/outputs/skill-ch02.md) |
-| prompt | 技能操作的基本规范与准备要求 · 提示词 | — | 453 | [`prompt-02-ch02.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/02-ch02/outputs/prompt-02-ch02.md) |
-| skill | 技能操作的基本规范与准备要求 | 技能操作的基本规范与准备要求——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 366 | [`skill-ch02.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/02-ch02/outputs/skill-ch02.md) |
+| prompt | 患者记住的不是宣教重点，而是被对待的方式 · 提示词 | — | 626 | [`prompt-02-ch02.md`](../departments/05-huli/17-huli-xinli-xue/chapters/02-ch02/outputs/prompt-02-ch02.md) |
+| skill | 患者记住的不是宣教重点，而是被对待的方式 | 患者记住的不是宣教重点，而是被对待的方式——按「感觉与知觉：进入大脑的第一道闸 → 注意与记忆：信息为什么丢 → 思维与语言：抽象的话落不了地 → 情绪、意志与行为：依从的心理学」走一遍本章判据 | 522 | [`skill-ch02.md`](../departments/05-huli/17-huli-xinli-xue/chapters/02-ch02/outputs/skill-ch02.md) |
+| prompt | 规范不是流程的长度，是每个断点都有人接 · 提示词 | — | 595 | [`prompt-02-ch02.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/02-ch02/outputs/prompt-02-ch02.md) |
+| skill | 规范不是流程的长度，是每个断点都有人接 | 规范不是流程的长度，是每个断点都有人接——按「流程的长度不等于规范的密度 → 操作前的六类核对与一次三数清点 → 核对方式的选择与五个必须停的核对点 → 感控要求的三个落点与四类失效」走一遍本章判据 | 491 | [`skill-ch02.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/02-ch02/outputs/skill-ch02.md) |
 
-#### 第 3 章 · 心理评估与心理护理记录基础
+#### 第 3 章 · 心理护理记录不是留痕，是让下一个人接得住
 
 `18-huli-zonghe-jineng/chapters/03-ch03/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 心理评估与心理护理记录基础 · 提示词 | — | 463 | [`prompt-03-ch03.md`](../departments/05-huli/17-huli-xinli-xue/chapters/03-ch03/outputs/prompt-03-ch03.md) |
-| skill | 心理评估与心理护理记录基础 | 心理评估与心理护理记录基础——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 369 | [`skill-ch03.md`](../departments/05-huli/17-huli-xinli-xue/chapters/03-ch03/outputs/skill-ch03.md) |
-| prompt | 技能操作中的患者安全与权益保护 · 提示词 | — | 456 | [`prompt-03-ch03.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/03-ch03/outputs/prompt-03-ch03.md) |
-| skill | 技能操作中的患者安全与权益保护 | 技能操作中的患者安全与权益保护——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 368 | [`skill-ch03.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/03-ch03/outputs/skill-ch03.md) |
+| prompt | 心理护理记录不是留痕，是让下一个人接得住 · 提示词 | — | 606 | [`prompt-03-ch03.md`](../departments/05-huli/17-huli-xinli-xue/chapters/03-ch03/outputs/prompt-03-ch03.md) |
+| skill | 心理护理记录不是留痕，是让下一个人接得住 | 心理护理记录不是留痕，是让下一个人接得住——按「三种信息来源：各自能证明什么 → 观察：五个维度，以变化为线索 → 访谈：提问顺序与倾听的四个动作 → 工具目录、使用边界与分档时限」走一遍本章判据 | 502 | [`skill-ch03.md`](../departments/05-huli/17-huli-xinli-xue/chapters/03-ch03/outputs/skill-ch03.md) |
+| prompt | 安全的第一道防线不是谨慎，是可核对的重复 · 提示词 | — | 580 | [`prompt-03-ch03.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/03-ch03/outputs/prompt-03-ch03.md) |
+| skill | 安全的第一道防线不是谨慎，是可核对的重复 | 安全的第一道防线不是谨慎，是可核对的重复——按「谨慎是一种态度，重复才是一种保障 → 三处再核对：身份的、部位的、意愿的 → 告知的四要素与拒绝的三条路径 → 隐私的三个暴露面与四类失效」走一遍本章判据 | 475 | [`skill-ch03.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/03-ch03/outputs/skill-ch03.md) |
 
-#### 第 4 章 · 护理对象的心理反应与心理需求
+#### 第 4 章 · 同一句「我没事」，在四个年龄段说的是四件不同的事
 
 `18-huli-zonghe-jineng/chapters/04-ch04/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理对象的心理反应与心理需求 · 提示词 | — | 466 | [`prompt-04-ch04.md`](../departments/05-huli/17-huli-xinli-xue/chapters/04-ch04/outputs/prompt-04-ch04.md) |
-| skill | 护理对象的心理反应与心理需求 | 护理对象的心理反应与心理需求——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 371 | [`skill-ch04.md`](../departments/05-huli/17-huli-xinli-xue/chapters/04-ch04/outputs/skill-ch04.md) |
-| prompt | 生命体征与一般状况观察类技能 · 提示词 | — | 453 | [`prompt-04-ch04.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/04-ch04/outputs/prompt-04-ch04.md) |
-| skill | 生命体征与一般状况观察类技能 | 生命体征与一般状况观察类技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 366 | [`skill-ch04.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/04-ch04/outputs/skill-ch04.md) |
+| prompt | 同一句「我没事」，在四个年龄段说的是四件不同的事 · 提示词 | — | 629 | [`prompt-04-ch04.md`](../departments/05-huli/17-huli-xinli-xue/chapters/04-ch04/outputs/prompt-04-ch04.md) |
+| skill | 同一句「我没事」，在四个年龄段说的是四件不同的事 | 同一句「我没事」，在四个年龄段说的是四件不同的事——按「三个阶段：反应的内容随病程改变 → 四类人群：需求的结构不同 → 需求的分档与判断【教学设定】 → 沟通动作与时限」走一遍本章判据 | 521 | [`skill-ch04.md`](../departments/05-huli/17-huli-xinli-xue/chapters/04-ch04/outputs/skill-ch04.md) |
+| prompt | 观察的价值不在测到数，在测到之后谁接手 · 提示词 | — | 603 | [`prompt-04-ch04.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/04-ch04/outputs/prompt-04-ch04.md) |
+| skill | 观察的价值不在测到数，在测到之后谁接手 | 观察的价值不在测到数，在测到之后谁接手——按「一个数有三个属性，缺一个就不能用 → 测量前的四类条件与三个影响因素 → 方式与部位的选择，以及一次复测的判据 → 记录字段、复核与四类失效」走一遍本章判据 | 499 | [`skill-ch04.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/04-ch04/outputs/skill-ch04.md) |
 
-#### 第 5 章 · 护患关系与治疗性沟通
+#### 第 5 章 · 信任不靠态度好，靠可预测
 
 `18-huli-zonghe-jineng/chapters/05-ch05/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护患关系与治疗性沟通 · 提示词 | — | 454 | [`prompt-05-ch05.md`](../departments/05-huli/17-huli-xinli-xue/chapters/05-ch05/outputs/prompt-05-ch05.md) |
-| skill | 护患关系与治疗性沟通 | 护患关系与治疗性沟通——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 363 | [`skill-ch05.md`](../departments/05-huli/17-huli-xinli-xue/chapters/05-ch05/outputs/skill-ch05.md) |
-| prompt | 给药相关护理技能 · 提示词 | — | 435 | [`prompt-05-ch05.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/05-ch05/outputs/prompt-05-ch05.md) |
-| skill | 给药相关护理技能 | 给药相关护理技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 354 | [`skill-ch05.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/05-ch05/outputs/skill-ch05.md) |
+| prompt | 信任不靠态度好，靠可预测 · 提示词 | — | 565 | [`prompt-05-ch05.md`](../departments/05-huli/17-huli-xinli-xue/chapters/05-ch05/outputs/prompt-05-ch05.md) |
+| skill | 信任不靠态度好，靠可预测 | 信任不靠态度好，靠可预测——按「关系的三个阶段与各自的任务 → 信任的四个来源 → 沟通的要素：听、问、澄、非言语 → 边界与情绪激动的处置」走一遍本章判据 | 469 | [`skill-ch05.md`](../departments/05-huli/17-huli-xinli-xue/chapters/05-ch05/outputs/skill-ch05.md) |
+| prompt | 给药的安全冗余全在给药之前，不在给药之后 · 提示词 | — | 596 | [`prompt-05-ch05.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/05-ch05/outputs/prompt-05-ch05.md) |
+| skill | 给药的安全冗余全在给药之前，不在给药之后 | 给药的安全冗余全在给药之前，不在给药之后——按「同一个人核两遍不是冗余，是重复 → 给药前的四类清点与一张分核表 → 三个关键节点与时限 → 观察维度、记录九列与四类失效」走一遍本章判据 | 491 | [`skill-ch05.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/05-ch05/outputs/skill-ch05.md) |
 
-#### 第 6 章 · 心理支持与心理疏导的要求
+#### 第 6 章 · 支持不是让他别难过，是让他不必一个人难过
 
 `18-huli-zonghe-jineng/chapters/06-ch06/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 心理支持与心理疏导的要求 · 提示词 | — | 460 | [`prompt-06-ch06.md`](../departments/05-huli/17-huli-xinli-xue/chapters/06-ch06/outputs/prompt-06-ch06.md) |
-| skill | 心理支持与心理疏导的要求 | 心理支持与心理疏导的要求——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 367 | [`skill-ch06.md`](../departments/05-huli/17-huli-xinli-xue/chapters/06-ch06/outputs/skill-ch06.md) |
-| prompt | 无菌技术与伤口护理类技能 · 提示词 | — | 447 | [`prompt-06-ch06.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/06-ch06/outputs/prompt-06-ch06.md) |
-| skill | 无菌技术与伤口护理类技能 | 无菌技术与伤口护理类技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 362 | [`skill-ch06.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/06-ch06/outputs/skill-ch06.md) |
+| prompt | 支持不是让他别难过，是让他不必一个人难过 · 提示词 | — | 607 | [`prompt-06-ch06.md`](../departments/05-huli/17-huli-xinli-xue/chapters/06-ch06/outputs/prompt-06-ch06.md) |
+| skill | 支持不是让他别难过，是让他不必一个人难过 | 支持不是让他别难过，是让他不必一个人难过——按「四种支持形态与实际缺口 → 疏导的准备：三问与五个观察点 → 方法层：呼吸、放松、活动与节律 → 分档、时限与转介」走一遍本章判据 | 503 | [`skill-ch06.md`](../departments/05-huli/17-huli-xinli-xue/chapters/06-ch06/outputs/skill-ch06.md) |
+| prompt | 无菌的成败由看不见的边界决定，不由动作决定 · 提示词 | — | 591 | [`prompt-06-ch06.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/06-ch06/outputs/prompt-06-ch06.md) |
+| skill | 无菌的成败由看不见的边界决定，不由动作决定 | 无菌的成败由看不见的边界决定，不由动作决定——按「无菌面是一个边界，不是一个区域 → 操作前的六项核对与无菌台的布局 → 步骤与时限，以及破防的评分维度 → 伤口与管道的观察，记录与四类失效」走一遍本章判据 | 485 | [`skill-ch06.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/06-ch06/outputs/skill-ch06.md) |
 
-#### 第 7 章 · 心理危机的识别与转介
+#### 第 7 章 · 危机靠问出来，不靠看出来
 
 `18-huli-zonghe-jineng/chapters/07-ch07/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 心理危机的识别与转介 · 提示词 | — | 454 | [`prompt-07-ch07.md`](../departments/05-huli/17-huli-xinli-xue/chapters/07-ch07/outputs/prompt-07-ch07.md) |
-| skill | 心理危机的识别与转介 | 心理危机的识别与转介——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 363 | [`skill-ch07.md`](../departments/05-huli/17-huli-xinli-xue/chapters/07-ch07/outputs/skill-ch07.md) |
-| prompt | 氧疗与气道护理类技能 · 提示词 | — | 441 | [`prompt-07-ch07.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/07-ch07/outputs/prompt-07-ch07.md) |
-| skill | 氧疗与气道护理类技能 | 氧疗与气道护理类技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 358 | [`skill-ch07.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/07-ch07/outputs/skill-ch07.md) |
+| prompt | 危机靠问出来，不靠看出来 · 提示词 | — | 598 | [`prompt-07-ch07.md`](../departments/05-huli/17-huli-xinli-xue/chapters/07-ch07/outputs/prompt-07-ch07.md) |
+| skill | 危机靠问出来，不靠看出来 | 危机靠问出来，不靠看出来——按「三类信号：情绪、言语、行为 → 求助表达：两种形式与回应的边界 → 风险评估：直接问的四句话 → 安全照护、陪伴与报告转介」走一遍本章判据 | 502 | [`skill-ch07.md`](../departments/05-huli/17-huli-xinli-xue/chapters/07-ch07/outputs/skill-ch07.md) |
+| prompt | 气道护理的分数在判断谁接手，不在设定多少 · 提示词 | — | 580 | [`prompt-07-ch07.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/07-ch07/outputs/prompt-07-ch07.md) |
+| skill | 气道护理的分数在判断谁接手，不在设定多少 | 气道护理的分数在判断谁接手，不在设定多少——按「本章做的三件事，与不做的一件事 → 给氧前的五项核对与气道的四个观察维度 → 三段操作的步骤与时限 → 记录字段与四类失效」走一遍本章判据 | 475 | [`skill-ch07.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/07-ch07/outputs/skill-ch07.md) |
 
-#### 第 8 章 · 手术与创伤患者的心理护理
+#### 第 8 章 · 术前最该处理的不是恐惧，是不知道自己在等什么
 
 `18-huli-zonghe-jineng/chapters/08-ch08/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 手术与创伤患者的心理护理 · 提示词 | — | 460 | [`prompt-08-ch08.md`](../departments/05-huli/17-huli-xinli-xue/chapters/08-ch08/outputs/prompt-08-ch08.md) |
-| skill | 手术与创伤患者的心理护理 | 手术与创伤患者的心理护理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 367 | [`skill-ch08.md`](../departments/05-huli/17-huli-xinli-xue/chapters/08-ch08/outputs/skill-ch08.md) |
-| prompt | 排泄与导尿护理类技能 · 提示词 | — | 441 | [`prompt-08-ch08.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/08-ch08/outputs/prompt-08-ch08.md) |
-| skill | 排泄与导尿护理类技能 | 排泄与导尿护理类技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 358 | [`skill-ch08.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/08-ch08/outputs/skill-ch08.md) |
+| prompt | 术前最该处理的不是恐惧，是不知道自己在等什么 · 提示词 | — | 628 | [`prompt-08-ch08.md`](../departments/05-huli/17-huli-xinli-xue/chapters/08-ch08/outputs/prompt-08-ch08.md) |
+| skill | 术前最该处理的不是恐惧，是不知道自己在等什么 | 术前最该处理的不是恐惧，是不知道自己在等什么——按「术前：三类需求，一个都不能省 → 等待期与术后即刻：三种反应形态 → 创伤反应：三类与观察要点 → 分档与时限」走一遍本章判据 | 522 | [`skill-ch08.md`](../departments/05-huli/17-huli-xinli-xue/chapters/08-ch08/outputs/skill-ch08.md) |
+| prompt | 排泄护理的难点不在置管，在留置期间的每一次观察 · 提示词 | — | 598 | [`prompt-08-ch08.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/08-ch08/outputs/prompt-08-ch08.md) |
+| skill | 排泄护理的难点不在置管，在留置期间的每一次观察 | 排泄护理的难点不在置管，在留置期间的每一次观察——按「把「该不该置」当成必须回答的问题 → 置入前的五项核对与三项准备 → 协助方式的选择与留置期的五维观察 → 标本采集的标识链与四类失效」走一遍本章判据 | 490 | [`skill-ch08.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/08-ch08/outputs/skill-ch08.md) |
 
-#### 第 9 章 · 慢性病与肿瘤患者的心理护理
+#### 第 9 章 · 长期照护里最耗人的不是病，是每次复诊都要重新解释自己
 
 `18-huli-zonghe-jineng/chapters/09-ch09/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 慢性病与肿瘤患者的心理护理 · 提示词 | — | 463 | [`prompt-09-ch09.md`](../departments/05-huli/17-huli-xinli-xue/chapters/09-ch09/outputs/prompt-09-ch09.md) |
-| skill | 慢性病与肿瘤患者的心理护理 | 慢性病与肿瘤患者的心理护理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 369 | [`skill-ch09.md`](../departments/05-huli/17-huli-xinli-xue/chapters/09-ch09/outputs/skill-ch09.md) |
-| prompt | 体位与活动与转运类技能 · 提示词 | — | 444 | [`prompt-09-ch09.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/09-ch09/outputs/prompt-09-ch09.md) |
-| skill | 体位与活动与转运类技能 | 体位与活动与转运类技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 360 | [`skill-ch09.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/09-ch09/outputs/skill-ch09.md) |
+| prompt | 长期照护里最耗人的不是病，是每次复诊都要重新解释自己 · 提示词 | — | 619 | [`prompt-09-ch09.md`](../departments/05-huli/17-huli-xinli-xue/chapters/09-ch09/outputs/prompt-09-ch09.md) |
+| skill | 长期照护里最耗人的不是病，是每次复诊都要重新解释自己 | 长期照护里最耗人的不是病，是每次复诊都要重新解释自己——按「三个阶段：反应随病程变形 → 家庭负担与照护者支持 → 支持方式的选择 → 分档、告知配合与时限」走一遍本章判据 | 509 | [`skill-ch09.md`](../departments/05-huli/17-huli-xinli-xue/chapters/09-ch09/outputs/skill-ch09.md) |
+| prompt | 体位与转运的风险不在搬动那一刻，在搬动之前的评估 · 提示词 | — | 590 | [`prompt-09-ch09.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/09-ch09/outputs/prompt-09-ch09.md) |
+| skill | 体位与转运的风险不在搬动那一刻，在搬动之前的评估 | 体位与转运的风险不在搬动那一刻，在搬动之前的评估——按「五个场景，一种力学 → 转运前的六项评估与三方核对 → 变换体位的判据与四段操作的时限 → 约束的边界与四类失效」走一遍本章判据 | 481 | [`skill-ch09.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/09-ch09/outputs/skill-ch09.md) |
 
-#### 第 10 章 · 孕产妇与儿童青少年的心理护理
+#### 第 10 章 · 产房里的支持，先给的不是鼓励，是「你做得到」的确认
 
 `18-huli-zonghe-jineng/chapters/10-ch10/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 孕产妇与儿童青少年的心理护理 · 提示词 | — | 468 | [`prompt-10-ch10.md`](../departments/05-huli/17-huli-xinli-xue/chapters/10-ch10/outputs/prompt-10-ch10.md) |
-| skill | 孕产妇与儿童青少年的心理护理 | 孕产妇与儿童青少年的心理护理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 371 | [`skill-ch10.md`](../departments/05-huli/17-huli-xinli-xue/chapters/10-ch10/outputs/skill-ch10.md) |
-| prompt | 急救与复苏配合技能 · 提示词 | — | 440 | [`prompt-10-ch10.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/10-ch10/outputs/prompt-10-ch10.md) |
-| skill | 急救与复苏配合技能 | 急救与复苏配合技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 356 | [`skill-ch10.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/10-ch10/outputs/skill-ch10.md) |
+| prompt | 产房里的支持，先给的不是鼓励，是「你做得到」的确认 · 提示词 | — | 640 | [`prompt-10-ch10.md`](../departments/05-huli/17-huli-xinli-xue/chapters/10-ch10/outputs/prompt-10-ch10.md) |
+| skill | 产房里的支持，先给的不是鼓励，是「你做得到」的确认 | 产房里的支持，先给的不是鼓励，是「你做得到」的确认——按「孕期：两次关键谈话 → 产程与产后：窗口极短的支持 → 儿童与青少年：用游戏与选择代替提问 → 分档、沟通动作与时限」走一遍本章判据 | 530 | [`skill-ch10.md`](../departments/05-huli/17-huli-xinli-xue/chapters/10-ch10/outputs/skill-ch10.md) |
+| prompt | 急救配合的评价标准是让位是否及时，不是动作是否好看 · 提示词 | — | 601 | [`prompt-10-ch10.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/10-ch10/outputs/prompt-10-ch10.md) |
+| skill | 急救配合的评价标准是让位是否及时，不是动作是否好看 | 急救配合的评价标准是让位是否及时，不是动作是否好看——按「配合是一种可以被观察的行为 → 现场安全与呼救：三步，不许跳 → 意识与呼吸的观察，与启动流程的判据 → 配合记录与四类失效」走一遍本章判据 | 490 | [`skill-ch10.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/10-ch10/outputs/skill-ch10.md) |
 
-#### 第 11 章 · 老年与临终患者的心理护理
+#### 第 11 章 · 临终照护最难的，是把「还能做什么」说到最后一刻
 
 `18-huli-zonghe-jineng/chapters/11-ch11/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 老年与临终患者的心理护理 · 提示词 | — | 462 | [`prompt-11-ch11.md`](../departments/05-huli/17-huli-xinli-xue/chapters/11-ch11/outputs/prompt-11-ch11.md) |
-| skill | 老年与临终患者的心理护理 | 老年与临终患者的心理护理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 367 | [`skill-ch11.md`](../departments/05-huli/17-huli-xinli-xue/chapters/11-ch11/outputs/skill-ch11.md) |
-| prompt | 中医护理技能 · 提示词 | — | 431 | [`prompt-11-ch11.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/11-ch11/outputs/prompt-11-ch11.md) |
-| skill | 中医护理技能 | 中医护理技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 350 | [`skill-ch11.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/11-ch11/outputs/skill-ch11.md) |
+| prompt | 临终照护最难的，是把「还能做什么」说到最后一刻 · 提示词 | — | 627 | [`prompt-11-ch11.md`](../departments/05-huli/17-huli-xinli-xue/chapters/11-ch11/outputs/prompt-11-ch11.md) |
+| skill | 临终照护最难的，是把「还能做什么」说到最后一刻 | 临终照护最难的，是把「还能做什么」说到最后一刻——按「老年期：认知与情绪的观察要点 → 孤独与失落：支持的对象是关系，不是情绪 → 临终：四个阶段与「还能做什么」 → 尊重自决与分档时限」走一遍本章判据 | 519 | [`skill-ch11.md`](../departments/05-huli/17-huli-xinli-xue/chapters/11-ch11/outputs/skill-ch11.md) |
+| prompt | 中医护理技能的边界，比它的手法更需要被写清楚 · 提示词 | — | 602 | [`prompt-11-ch11.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/11-ch11/outputs/prompt-11-ch11.md) |
+| skill | 中医护理技能的边界，比它的手法更需要被写清楚 | 中医护理技能的边界，比它的手法更需要被写清楚——按「三个「不」：不诊断、不立法、不替代 → 操作前的四项评估与一次告知 → 手法类操作的共同骨架 → 皮肤与不适的观察，记录与四类失效」走一遍本章判据 | 494 | [`skill-ch11.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/11-ch11/outputs/skill-ch11.md) |
 
-#### 第 12 章 · 特殊情境中的心理护理
+#### 第 12 章 · 隔离病房里，最先塌掉的不是体力，是时间感
 
 `18-huli-zonghe-jineng/chapters/12-ch12/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 特殊情境中的心理护理 · 提示词 | — | 456 | [`prompt-12-ch12.md`](../departments/05-huli/17-huli-xinli-xue/chapters/12-ch12/outputs/prompt-12-ch12.md) |
-| skill | 特殊情境中的心理护理 | 特殊情境中的心理护理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 363 | [`skill-ch12.md`](../departments/05-huli/17-huli-xinli-xue/chapters/12-ch12/outputs/skill-ch12.md) |
-| prompt | 围手术期与专科协作类技能 · 提示词 | — | 449 | [`prompt-12-ch12.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/12-ch12/outputs/prompt-12-ch12.md) |
-| skill | 围手术期与专科协作类技能 | 围手术期与专科协作类技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 362 | [`skill-ch12.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/12-ch12/outputs/skill-ch12.md) |
+| prompt | 隔离病房里，最先塌掉的不是体力，是时间感 · 提示词 | — | 587 | [`prompt-12-ch12.md`](../departments/05-huli/17-huli-xinli-xue/chapters/12-ch12/outputs/prompt-12-ch12.md) |
+| skill | 隔离病房里，最先塌掉的不是体力，是时间感 | 隔离病房里，最先塌掉的不是体力，是时间感——按「四类情境的共同结构 → 隔离：把时间重新做出刻度 → 急诊、灾难与重症：把不确定说成下一步 → 分档、时限与转介」走一遍本章判据 | 482 | [`skill-ch12.md`](../departments/05-huli/17-huli-xinli-xue/chapters/12-ch12/outputs/skill-ch12.md) |
+| prompt | 围手术期的质量由交接决定，而不由手术本身决定 · 提示词 | — | 572 | [`prompt-12-ch12.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/12-ch12/outputs/prompt-12-ch12.md) |
+| skill | 围手术期的质量由交接决定，而不由手术本身决定 | 围手术期的质量由交接决定，而不由手术本身决定——按「交接丢的从来不是「情况」，是三样具体的东西 → 术前准备的四类内容与五项核对 → 术后观察的五个维度与疼痛的两个层面 → 交接五要素与四类失效」走一遍本章判据 | 464 | [`skill-ch12.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/12-ch12/outputs/skill-ch12.md) |
 
-#### 第 13 章 · 护士职业心理与压力管理
+#### 第 13 章 · 护士的耗竭不是抗压失败，是长期支出超过收入
 
 `18-huli-zonghe-jineng/chapters/13-ch13/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护士职业心理与压力管理 · 提示词 | — | 459 | [`prompt-13-ch13.md`](../departments/05-huli/17-huli-xinli-xue/chapters/13-ch13/outputs/prompt-13-ch13.md) |
-| skill | 护士职业心理与压力管理 | 护士职业心理与压力管理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 365 | [`skill-ch13.md`](../departments/05-huli/17-huli-xinli-xue/chapters/13-ch13/outputs/skill-ch13.md) |
-| prompt | 综合模拟训练与情景演练 · 提示词 | — | 446 | [`prompt-13-ch13.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/13-ch13/outputs/prompt-13-ch13.md) |
-| skill | 综合模拟训练与情景演练 | 综合模拟训练与情景演练——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 360 | [`skill-ch13.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/13-ch13/outputs/skill-ch13.md) |
+| prompt | 护士的耗竭不是抗压失败，是长期支出超过收入 · 提示词 | — | 600 | [`prompt-13-ch13.md`](../departments/05-huli/17-huli-xinli-xue/chapters/13-ch13/outputs/prompt-13-ch13.md) |
+| skill | 护士的耗竭不是抗压失败，是长期支出超过收入 | 护士的耗竭不是抗压失败，是长期支出超过收入——按「压力源的四个层面 → 自我觉察的四个信号 → 调节：班内、班后、长期 → 记录、失效模式、考核项」走一遍本章判据 | 494 | [`skill-ch13.md`](../departments/05-huli/17-huli-xinli-xue/chapters/13-ch13/outputs/skill-ch13.md) |
+| prompt | 模拟训练的价值不在演得像，在复盘时敢说哪一步错了 · 提示词 | — | 585 | [`prompt-13-ch13.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/13-ch13/outputs/prompt-13-ch13.md) |
+| skill | 模拟训练的价值不在演得像，在复盘时敢说哪一步错了 | 模拟训练的价值不在演得像，在复盘时敢说哪一步错了——按「一个只有正确答案的情境，练不出判断 → 情境设计的五要素与三层难度 → 角色分工、实施中的观察与安全 → 复盘的四段式与四类失效」走一遍本章判据 | 475 | [`skill-ch13.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/13-ch13/outputs/skill-ch13.md) |
 
-#### 第 14 章 · 护士心理健康与支持体系
+#### 第 14 章 · 支持体系的价值不在「有人可找」，在「找了不会更糟」
 
 `18-huli-zonghe-jineng/chapters/14-ch14/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护士心理健康与支持体系 · 提示词 | — | 459 | [`prompt-14-ch14.md`](../departments/05-huli/17-huli-xinli-xue/chapters/14-ch14/outputs/prompt-14-ch14.md) |
-| skill | 护士心理健康与支持体系 | 护士心理健康与支持体系——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 365 | [`skill-ch14.md`](../departments/05-huli/17-huli-xinli-xue/chapters/14-ch14/outputs/skill-ch14.md) |
-| prompt | 技能考核与评价要求 · 提示词 | — | 440 | [`prompt-14-ch14.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/14-ch14/outputs/prompt-14-ch14.md) |
-| skill | 技能考核与评价要求 | 技能考核与评价要求——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 356 | [`skill-ch14.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/14-ch14/outputs/skill-ch14.md) |
+| prompt | 支持体系的价值不在「有人可找」，在「找了不会更糟」 · 提示词 | — | 659 | [`prompt-14-ch14.md`](../departments/05-huli/17-huli-xinli-xue/chapters/14-ch14/outputs/prompt-14-ch14.md) |
+| skill | 支持体系的价值不在「有人可找」，在「找了不会更糟」 | 支持体系的价值不在「有人可找」，在「找了不会更糟」——按「三个层面的因素与支持的对应关系 → 四层支持体系与各自的功能 → 非惩罚性与公正文化 → 事件后的反应与分档时限」走一遍本章判据 | 549 | [`skill-ch14.md`](../departments/05-huli/17-huli-xinli-xue/chapters/14-ch14/outputs/skill-ch14.md) |
+| prompt | 考核评分的信度来自扣分点，而不是来自总分 · 提示词 | — | 597 | [`prompt-14-ch14.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/14-ch14/outputs/prompt-14-ch14.md) |
+| skill | 考核评分的信度来自扣分点，而不是来自总分 | 考核评分的信度来自扣分点，而不是来自总分——按「总分丢掉了什么 → 考核内容的结构：四层，从过程到判断 → 评分表的形式：判据、证据、否决项 → 记录、反馈与四类失效」走一遍本章判据 | 491 | [`skill-ch14.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/14-ch14/outputs/skill-ch14.md) |
 
-#### 第 15 章 · 护理团队沟通与协作心理
+#### 第 15 章 · 交接漏掉的那句话，通常是最难开口的那句
 
 `18-huli-zonghe-jineng/chapters/15-ch15/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理团队沟通与协作心理 · 提示词 | — | 459 | [`prompt-15-ch15.md`](../departments/05-huli/17-huli-xinli-xue/chapters/15-ch15/outputs/prompt-15-ch15.md) |
-| skill | 护理团队沟通与协作心理 | 护理团队沟通与协作心理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 365 | [`skill-ch15.md`](../departments/05-huli/17-huli-xinli-xue/chapters/15-ch15/outputs/skill-ch15.md) |
-| prompt | 技能教学与团队协作 · 提示词 | — | 440 | [`prompt-15-ch15.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/15-ch15/outputs/prompt-15-ch15.md) |
-| skill | 技能教学与团队协作 | 技能教学与团队协作——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 356 | [`skill-ch15.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/15-ch15/outputs/skill-ch15.md) |
+| prompt | 交接漏掉的那句话，通常是最难开口的那句 · 提示词 | — | 586 | [`prompt-15-ch15.md`](../departments/05-huli/17-huli-xinli-xue/chapters/15-ch15/outputs/prompt-15-ch15.md) |
+| skill | 交接漏掉的那句话，通常是最难开口的那句 | 交接漏掉的那句话，通常是最难开口的那句——按「沟通障碍的四类来源 → 交接：结构化顺序与心理条目的固定位置 → 冲突情境的沟通 → 心理安全与发言」走一遍本章判据 | 482 | [`skill-ch15.md`](../departments/05-huli/17-huli-xinli-xue/chapters/15-ch15/outputs/skill-ch15.md) |
+| prompt | 示教的效果取决于学员能复述什么，而不是老师演示了什么 · 提示词 | — | 590 | [`prompt-15-ch15.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/15-ch15/outputs/prompt-15-ch15.md) |
+| skill | 示教的效果取决于学员能复述什么，而不是老师演示了什么 | 示教的效果取决于学员能复述什么，而不是老师演示了什么——按「示教要交付的不是动作，是决策点 → 示教的四段结构与三个讲解时机 → 协作的三处接口 → 记录、反思与四类失效」走一遍本章判据 | 478 | [`skill-ch15.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/15-ch15/outputs/skill-ch15.md) |
 
-#### 第 16 章 · 护理心理护理质量与安全管理
+#### 第 16 章 · 心理护理的质量，卡在「做了没有」而不是「做得好不好」
 
 `18-huli-zonghe-jineng/chapters/16-ch16/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理心理护理质量与安全管理 · 提示词 | — | 465 | [`prompt-16-ch16.md`](../departments/05-huli/17-huli-xinli-xue/chapters/16-ch16/outputs/prompt-16-ch16.md) |
-| skill | 护理心理护理质量与安全管理 | 护理心理护理质量与安全管理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 369 | [`skill-ch16.md`](../departments/05-huli/17-huli-xinli-xue/chapters/16-ch16/outputs/skill-ch16.md) |
-| prompt | 技能风险与质量安全管理 · 提示词 | — | 446 | [`prompt-16-ch16.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/16-ch16/outputs/prompt-16-ch16.md) |
-| skill | 技能风险与质量安全管理 | 技能风险与质量安全管理——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 360 | [`skill-ch16.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/16-ch16/outputs/skill-ch16.md) |
+| prompt | 心理护理的质量，卡在「做了没有」而不是「做得好不好」 · 提示词 | — | 632 | [`prompt-16-ch16.md`](../departments/05-huli/17-huli-xinli-xue/chapters/16-ch16/outputs/prompt-16-ch16.md) |
+| skill | 心理护理的质量，卡在「做了没有」而不是「做得好不好」 | 心理护理的质量，卡在「做了没有」而不是「做得好不好」——按「三个维度：结构、过程、结果 → 口径：四个可查的过程指标 → 风险来源与防范 → 分档、时限与报告」走一遍本章判据 | 521 | [`skill-ch16.md`](../departments/05-huli/17-huli-xinli-xue/chapters/16-ch16/outputs/skill-ch16.md) |
+| prompt | 风险管理的成熟度看报告量，不看差错量 · 提示词 | — | 544 | [`prompt-16-ch16.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/16-ch16/outputs/prompt-16-ch16.md) |
+| skill | 风险管理的成熟度看报告量，不看差错量 | 风险管理的成熟度看报告量，不看差错量——按「报告是发现机制，不是追责机制 → 风险来源的四个层面与识别三问 → 报告的四要素与渠道 → 原因分析与四类失效」走一遍本章判据 | 440 | [`skill-ch16.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/16-ch16/outputs/skill-ch16.md) |
 
-#### 第 17 章 · 社区与家庭心理护理
+#### 第 17 章 · 社区随访的一半工时，注定要交给家属去用
 
 `18-huli-zonghe-jineng/chapters/17-ch17/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 社区与家庭心理护理 · 提示词 | — | 453 | [`prompt-17-ch17.md`](../departments/05-huli/17-huli-xinli-xue/chapters/17-ch17/outputs/prompt-17-ch17.md) |
-| skill | 社区与家庭心理护理 | 社区与家庭心理护理——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 361 | [`skill-ch17.md`](../departments/05-huli/17-huli-xinli-xue/chapters/17-ch17/outputs/skill-ch17.md) |
-| prompt | 社区与居家护理技能 · 提示词 | — | 440 | [`prompt-17-ch17.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/17-ch17/outputs/prompt-17-ch17.md) |
-| skill | 社区与居家护理技能 | 社区与居家护理技能——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 356 | [`skill-ch17.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/17-ch17/outputs/skill-ch17.md) |
+| prompt | 社区随访的一半工时，注定要交给家属去用 · 提示词 | — | 616 | [`prompt-17-ch17.md`](../departments/05-huli/17-huli-xinli-xue/chapters/17-ch17/outputs/prompt-17-ch17.md) |
+| skill | 社区随访的一半工时，注定要交给家属去用 | 社区随访的一半工时，注定要交给家属去用——按「社区与医院的三点不同 → 家庭：支持的对象是关系与分工 → 照护者负担与随访形式 → 分档、转介与机构衔接」走一遍本章判据 | 512 | [`skill-ch17.md`](../departments/05-huli/17-huli-xinli-xue/chapters/17-ch17/outputs/skill-ch17.md) |
+| prompt | 居家护理的能力，是把机构标准翻译成家庭条件 · 提示词 | — | 553 | [`prompt-17-ch17.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/17-ch17/outputs/prompt-17-ch17.md) |
+| skill | 居家护理的能力，是把机构标准翻译成家庭条件 | 居家护理的能力，是把机构标准翻译成家庭条件——按「翻译的三条规则 → 访视前的五项核对 → 访视中的观察四维与指导的边界 → 照护者培训的四步与四类失效」走一遍本章判据 | 446 | [`skill-ch17.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/17-ch17/outputs/skill-ch17.md) |
 
-#### 第 18 章 · 护理心理学与 tcmP 平台
+#### 第 18 章 · 平台能帮你找到那句话，替不了你说出那句话
 
 `18-huli-zonghe-jineng/chapters/18-ch18/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理心理学与 tcmP 平台 · 提示词 | — | 462 | [`prompt-18-ch18.md`](../departments/05-huli/17-huli-xinli-xue/chapters/18-ch18/outputs/prompt-18-ch18.md) |
-| skill | 护理心理学与 tcmP 平台 | 护理心理学与 tcmP 平台——按「识心理过程 → 评估与记录 → 干预与支持 → 危机与转介 → 护士自身」走一遍本章判据 | 367 | [`skill-ch18.md`](../departments/05-huli/17-huli-xinli-xue/chapters/18-ch18/outputs/skill-ch18.md) |
-| prompt | 护理综合技能与 tcmP 平台 · 提示词 | — | 452 | [`prompt-18-ch18.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/18-ch18/outputs/prompt-18-ch18.md) |
-| skill | 护理综合技能与 tcmP 平台 | 护理综合技能与 tcmP 平台——按「训练前准备 → 分项训练 → 综合演练 → 考核与反馈」走一遍本章判据 | 364 | [`skill-ch18.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/18-ch18/outputs/skill-ch18.md) |
+| prompt | 平台能帮你找到那句话，替不了你说出那句话 · 提示词 | — | 632 | [`prompt-18-ch18.md`](../departments/05-huli/17-huli-xinli-xue/chapters/18-ch18/outputs/prompt-18-ch18.md) |
+| skill | 平台能帮你找到那句话，替不了你说出那句话 | 平台能帮你找到那句话，替不了你说出那句话——按「平台层的四个对象 → 「依据」与「边界」两列怎么填 → 敏感个人信息：脱敏与去标识化不是一回事 → 辅助定位的三种方式与不替代判断」走一遍本章判据 | 527 | [`skill-ch18.md`](../departments/05-huli/17-huli-xinli-xue/chapters/18-ch18/outputs/skill-ch18.md) |
+| prompt | 平台不替人做判断，它只让判断可追溯 · 提示词 | — | 589 | [`prompt-18-ch18.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/18-ch18/outputs/prompt-18-ch18.md) |
+| skill | 平台不替人做判断，它只让判断可追溯 | 平台不替人做判断，它只让判断可追溯——按「平台做的三件事，与它不做的一件事 → 技能单元：两级编码与必填的两列 → 四道门：命中即阻断 → 留痕、复核与四类失效」走一遍本章判据 | 486 | [`skill-ch18.md`](../departments/05-huli/18-huli-zonghe-jineng/chapters/18-ch18/outputs/skill-ch18.md) |
 
 ### 护理人文修养与沟通
 
 > Reference · 第 3 学期 · 已产出 14 章
 
-#### 第 1 章 · 中医护理适宜技术概述与特点
+#### 第 1 章 · 「适宜」指的是资源可及，不是风险低
 
 `19-huli-renwen-goutong/chapters/01-gaishu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医护理适宜技术概述与特点 · 提示词 | — | 455 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 中医护理适宜技术概述与特点 | 中医护理适宜技术概述与特点——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 368 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 护理人文修养概述 · 提示词 | — | 441 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 护理人文修养概述 | 护理人文修养概述——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 361 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 「适宜」指的是资源可及，不是风险低 · 提示词 | — | 656 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 「适宜」指的是资源可及，不是风险低 | 「适宜」指的是资源可及，不是风险低——按「先把「适宜」两个字拆开 → 术前核对：禁忌排在适应证前面 → 四类技术的作用路径不同，观察的落点也不同 → 记录字段与三种失效模式」走一遍本章判据 | 556 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 人文修养的底子是「把人当人」的可核对动作 · 提示词 | — | 616 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 人文修养的底子是「把人当人」的可核对动作 | 人文修养的底子是「把人当人」的可核对动作——按「人文的三个层次，只有最外层能被看见 → 开口之前：三样东西必须先知道 → 判据分档：什么时候可以继续，什么时候必须停 → 六个动作与各自的时限」走一遍本章判据 | 510 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 急救护理学的起点是把不可逆点往前推 · 提示词 | — | 568 | [`prompt-01-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 精神科护理学概述 · 提示词 | — | 437 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 精神科护理学概述 | 精神科护理学概述——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 359 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 中医护理的第一步不是操作，是把证说清楚 | 中医护理的第一步不是操作，是把证说清楚——按「同一条医嘱，落在两个证上是两套做法 → 四诊采集：护士要采的不是「症状」，是能进记录的字段 → 辨证判据：八纲是四个二选一，不是八个标签 → 施护的四条边界：饮食、情志、起居、外治」走一遍本章判据 | 656 | [`skill-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/skill-01-gaishu.md) |
 | prompt | 中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练 · 提示词 | — | 901 | [`prompt-01-gaishu.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练 | 中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练——按「分水岭：先辨，再护，最后才是手法 → 辨证要点：床边先看四样，先问四句 → 护理判据：三线，各有各的允许动作 → 动作与时限：从发现到交班的一条链」走一遍本章判据 | 782 | [`skill-gaishu.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/01-gaishu/outputs/skill-gaishu.md) |
 
-#### 第 2 章 · 人文精神与职业价值观
+#### 第 2 章 · 价值观不挂在墙上，挂在你如何处理一个难缠的人
 
 `19-huli-renwen-goutong/chapters/02-renwen-jingshen/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 人文精神与职业价值观 · 提示词 | — | 447 | [`prompt-02-renwen-jingshen.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/02-renwen-jingshen/outputs/prompt-02-renwen-jingshen.md) |
-| skill | 人文精神与职业价值观 | 人文精神与职业价值观——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 374 | [`skill-renwen-jingshen.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/02-renwen-jingshen/outputs/skill-renwen-jingshen.md) |
+| prompt | 价值观不挂在墙上，挂在你如何处理一个难缠的人 · 提示词 | — | 591 | [`prompt-02-renwen-jingshen.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/02-renwen-jingshen/outputs/prompt-02-renwen-jingshen.md) |
+| skill | 价值观不挂在墙上，挂在你如何处理一个难缠的人 | 价值观不挂在墙上，挂在你如何处理一个难缠的人——按「价值观的三种可观察形态 → 开口之前：先把自己的排序写出来 → 判据分档：价值冲突时能不能继续 → 话术、动作与时限」走一遍本章判据 | 492 | [`skill-renwen-jingshen.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/02-renwen-jingshen/outputs/skill-renwen-jingshen.md) |
 
-#### 第 3 章 · 文化与文化差异
+#### 第 3 章 · 文化差异不在风俗清单，在谁有资格先开口
 
 `19-huli-renwen-goutong/chapters/03-wenhua-chayi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 文化与文化差异 · 提示词 | — | 438 | [`prompt-03-wenhua-chayi.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/03-wenhua-chayi/outputs/prompt-03-wenhua-chayi.md) |
-| skill | 文化与文化差异 | 文化与文化差异——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 365 | [`skill-wenhua-chayi.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/03-wenhua-chayi/outputs/skill-wenhua-chayi.md) |
+| prompt | 文化差异不在风俗清单，在谁有资格先开口 · 提示词 | — | 602 | [`prompt-03-wenhua-chayi.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/03-wenhua-chayi/outputs/prompt-03-wenhua-chayi.md) |
+| skill | 文化差异不在风俗清单，在谁有资格先开口 | 文化差异不在风俗清单，在谁有资格先开口——按「文化的三层：习俗、规则、假设 → 开口之前：问禁、问俗、问讳 → 判据分档：是误解、是冲突，还是越界 → 话术、动作与时限」走一遍本章判据 | 503 | [`skill-wenhua-chayi.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/03-wenhua-chayi/outputs/skill-wenhua-chayi.md) |
 
-#### 第 4 章 · 沟通的基本原理
+#### 第 4 章 · 沟通的原理是控制信息的落差，不是把话说漂亮
 
 `19-huli-renwen-goutong/chapters/04-goutong-yuanli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 沟通的基本原理 · 提示词 | — | 438 | [`prompt-04-goutong-yuanli.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/04-goutong-yuanli/outputs/prompt-04-goutong-yuanli.md) |
-| skill | 沟通的基本原理 | 沟通的基本原理——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 367 | [`skill-goutong-yuanli.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/04-goutong-yuanli/outputs/skill-goutong-yuanli.md) |
+| prompt | 沟通的原理是控制信息的落差，不是把话说漂亮 · 提示词 | — | 581 | [`prompt-04-goutong-yuanli.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/04-goutong-yuanli/outputs/prompt-04-goutong-yuanli.md) |
+| skill | 沟通的原理是控制信息的落差，不是把话说漂亮 | 沟通的原理是控制信息的落差，不是把话说漂亮——按「六个环节与三处必然的漏 → 开口之前：定目标、定对象、定渠道 → 判据分档：他到底懂没懂 → 话术、动作与时限」走一遍本章判据 | 482 | [`skill-goutong-yuanli.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/04-goutong-yuanli/outputs/skill-goutong-yuanli.md) |
 
-#### 第 5 章 · 护患沟通的环节与要求
+#### 第 5 章 · 护患沟通的成败，一半在入院那十分钟就定了
 
 `19-huli-renwen-goutong/chapters/05-huhuan-goutong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护患沟通的环节与要求 · 提示词 | — | 447 | [`prompt-05-huhuan-goutong.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/05-huhuan-goutong/outputs/prompt-05-huhuan-goutong.md) |
-| skill | 护患沟通的环节与要求 | 护患沟通的环节与要求——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 373 | [`skill-huhuan-goutong.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/05-huhuan-goutong/outputs/skill-huhuan-goutong.md) |
+| prompt | 护患沟通的成败，一半在入院那十分钟就定了 · 提示词 | — | 603 | [`prompt-05-huhuan-goutong.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/05-huhuan-goutong/outputs/prompt-05-huhuan-goutong.md) |
+| skill | 护患沟通的成败，一半在入院那十分钟就定了 | 护患沟通的成败，一半在入院那十分钟就定了——按「六个环节，各只有一个任务 → 开口之前：入院前十分钟做什么 → 判据分档：环节能不能往下推进 → 话术、动作与时限」走一遍本章判据 | 505 | [`skill-huhuan-goutong.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/05-huhuan-goutong/outputs/skill-huhuan-goutong.md) |
 
-#### 第 6 章 · 特殊情境的沟通要求
+#### 第 6 章 · 坏消息先说人话，冲突先降级再说理
 
 `19-huli-renwen-goutong/chapters/06-teshu-qingjing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 特殊情境的沟通要求 · 提示词 | — | 444 | [`prompt-06-teshu-qingjing.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/06-teshu-qingjing/outputs/prompt-06-teshu-qingjing.md) |
-| skill | 特殊情境的沟通要求 | 特殊情境的沟通要求——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 371 | [`skill-teshu-qingjing.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/06-teshu-qingjing/outputs/skill-teshu-qingjing.md) |
+| prompt | 坏消息先说人话，冲突先降级再说理 · 提示词 | — | 600 | [`prompt-06-teshu-qingjing.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/06-teshu-qingjing/outputs/prompt-06-teshu-qingjing.md) |
+| skill | 坏消息先说人话，冲突先降级再说理 | 坏消息先说人话，冲突先降级再说理——按「四类情境，各自的第一件事 → 开口之前：场地、在场人、开场句 → 判据分档：能不能继续谈 → 话术、动作与时限」走一遍本章判据 | 506 | [`skill-teshu-qingjing.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/06-teshu-qingjing/outputs/skill-teshu-qingjing.md) |
 
-#### 第 7 章 · 团队沟通与协作
+#### 第 7 章 · 团队沟通的成本不在开会，在交接的那三句话
 
 `19-huli-renwen-goutong/chapters/07-tuandui-goutong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 团队沟通与协作 · 提示词 | — | 440 | [`prompt-07-tuandui-goutong.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/07-tuandui-goutong/outputs/prompt-07-tuandui-goutong.md) |
-| skill | 团队沟通与协作 | 团队沟通与协作——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 368 | [`skill-tuandui-goutong.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/07-tuandui-goutong/outputs/skill-tuandui-goutong.md) |
+| prompt | 团队沟通的成本不在开会，在交接的那三句话 · 提示词 | — | 608 | [`prompt-07-tuandui-goutong.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/07-tuandui-goutong/outputs/prompt-07-tuandui-goutong.md) |
+| skill | 团队沟通的成本不在开会，在交接的那三句话 | 团队沟通的成本不在开会，在交接的那三句话——按「三种场景，三种判据 → 开口之前：交接前的五分钟 → 判据分档：交接、求助、冲突 → 话术、动作与时限」走一遍本章判据 | 511 | [`skill-tuandui-goutong.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/07-tuandui-goutong/outputs/skill-tuandui-goutong.md) |
 
-#### 第 8 章 · 护理礼仪与职业形象
+#### 第 8 章 · 礼仪不是微笑，是让对方不用猜你的下一步
 
 `19-huli-renwen-goutong/chapters/08-liyi-xingxiang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 护理礼仪与职业形象 · 提示词 | — | 444 | [`prompt-08-liyi-xingxiang.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/08-liyi-xingxiang/outputs/prompt-08-liyi-xingxiang.md) |
-| skill | 护理礼仪与职业形象 | 护理礼仪与职业形象——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 371 | [`skill-liyi-xingxiang.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/08-liyi-xingxiang/outputs/skill-liyi-xingxiang.md) |
+| prompt | 礼仪不是微笑，是让对方不用猜你的下一步 · 提示词 | — | 572 | [`prompt-08-liyi-xingxiang.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/08-liyi-xingxiang/outputs/prompt-08-liyi-xingxiang.md) |
+| skill | 礼仪不是微笑，是让对方不用猜你的下一步 | 礼仪不是微笑，是让对方不用猜你的下一步——按「礼仪的三个功能 → 开口之前：进门前三十秒 → 判据分档：形象失分到什么程度 → 话术、动作与时限」走一遍本章判据 | 475 | [`skill-liyi-xingxiang.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/08-liyi-xingxiang/outputs/skill-liyi-xingxiang.md) |
 
-#### 第 9 章 · 同理心与情感支持
+#### 第 9 章 · 同理心不是替人难过，是准确说出他难在哪里
 
 `19-huli-renwen-goutong/chapters/09-tongli-zhichi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 同理心与情感支持 · 提示词 | — | 445 | [`prompt-09-tongli-zhichi.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/09-tongli-zhichi/outputs/prompt-09-tongli-zhichi.md) |
-| skill | 同理心与情感支持 | 同理心与情感支持——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 368 | [`skill-tongli-zhichi.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/09-tongli-zhichi/outputs/skill-tongli-zhichi.md) |
+| prompt | 同理心不是替人难过，是准确说出他难在哪里 · 提示词 | — | 581 | [`prompt-09-tongli-zhichi.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/09-tongli-zhichi/outputs/prompt-09-tongli-zhichi.md) |
+| skill | 同理心不是替人难过，是准确说出他难在哪里 | 同理心不是替人难过，是准确说出他难在哪里——按「四个动作与三层深度 → 开口之前：先分清情绪与诉求 → 判据分档：情感支持到什么程度 → 话术、动作与时限」走一遍本章判据 | 482 | [`skill-tongli-zhichi.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/09-tongli-zhichi/outputs/skill-tongli-zhichi.md) |
 
-#### 第 10 章 · 人文关怀的实践要求
+#### 第 10 章 · 关怀要落到能被看见、能被记录的动作上
 
 `19-huli-renwen-goutong/chapters/10-renwen-shijian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 人文关怀的实践要求 · 提示词 | — | 446 | [`prompt-10-renwen-shijian.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/10-renwen-shijian/outputs/prompt-10-renwen-shijian.md) |
-| skill | 人文关怀的实践要求 | 人文关怀的实践要求——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 371 | [`skill-renwen-shijian.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/10-renwen-shijian/outputs/skill-renwen-shijian.md) |
+| prompt | 关怀要落到能被看见、能被记录的动作上 · 提示词 | — | 602 | [`prompt-10-renwen-shijian.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/10-renwen-shijian/outputs/prompt-10-renwen-shijian.md) |
+| skill | 关怀要落到能被看见、能被记录的动作上 | 关怀要落到能被看见、能被记录的动作上——按「四个维度与八个可观察动作 → 开口之前：先解决三类不适 → 判据分档：关怀做到什么程度 → 话术、动作与时限」走一遍本章判据 | 505 | [`skill-renwen-shijian.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/10-renwen-shijian/outputs/skill-renwen-shijian.md) |
 
-#### 第 11 章 · 伦理与法律的修养、道德困境
+#### 第 11 章 · 伦理困境不靠高尚解决，靠把选项摆全再排序
 
 `19-huli-renwen-goutong/chapters/11-lunli-juece/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 伦理与法律的修养、道德困境 · 提示词 | — | 461 | [`prompt-11-lunli-juece.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/11-lunli-juece/outputs/prompt-11-lunli-juece.md) |
-| skill | 伦理与法律的修养、道德困境 | 伦理与法律的修养、道德困境——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 376 | [`skill-lunli-juece.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/11-lunli-juece/outputs/skill-lunli-juece.md) |
+| prompt | 伦理困境不靠高尚解决，靠把选项摆全再排序 · 提示词 | — | 585 | [`prompt-11-lunli-juece.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/11-lunli-juece/outputs/prompt-11-lunli-juece.md) |
+| skill | 伦理困境不靠高尚解决，靠把选项摆全再排序 | 伦理困境不靠高尚解决，靠把选项摆全再排序——按「四原则与它们必然的冲突 → 开口之前：把事实、价值、程序分开 → 判据分档：谁能决定，走到哪一步 → 话术、动作与时限」走一遍本章判据 | 483 | [`skill-lunli-juece.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/11-lunli-juece/outputs/skill-lunli-juece.md) |
 
-#### 第 12 章 · 人文素质教育与反思实践
+#### 第 12 章 · 反思不是写感想，是把一次失误拆成可改的动作
 
 `19-huli-renwen-goutong/chapters/12-jiaoyu-fansi/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 人文素质教育与反思实践 · 提示词 | — | 452 | [`prompt-12-jiaoyu-fansi.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/12-jiaoyu-fansi/outputs/prompt-12-jiaoyu-fansi.md) |
-| skill | 人文素质教育与反思实践 | 人文素质教育与反思实践——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 373 | [`skill-jiaoyu-fansi.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/12-jiaoyu-fansi/outputs/skill-jiaoyu-fansi.md) |
+| prompt | 反思不是写感想，是把一次失误拆成可改的动作 · 提示词 | — | 604 | [`prompt-12-jiaoyu-fansi.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/12-jiaoyu-fansi/outputs/prompt-12-jiaoyu-fansi.md) |
+| skill | 反思不是写感想，是把一次失误拆成可改的动作 | 反思不是写感想，是把一次失误拆成可改的动作——按「反思与感想的分界线 → 开口之前：先攒素材 → 判据分档：反思做到什么深度 → 方法、动作与时限」走一遍本章判据 | 502 | [`skill-jiaoyu-fansi.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/12-jiaoyu-fansi/outputs/skill-jiaoyu-fansi.md) |
 
-#### 第 13 章 · 人文修养与职业发展
+#### 第 13 章 · 人文修养是长期竞争力，因为它最难被替代
 
 `19-huli-renwen-goutong/chapters/13-zhiye-fazhan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 人文修养与职业发展 · 提示词 | — | 446 | [`prompt-13-zhiye-fazhan.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/13-zhiye-fazhan/outputs/prompt-13-zhiye-fazhan.md) |
-| skill | 人文修养与职业发展 | 人文修养与职业发展——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 369 | [`skill-zhiye-fazhan.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/13-zhiye-fazhan/outputs/skill-zhiye-fazhan.md) |
+| prompt | 人文修养是长期竞争力，因为它最难被替代 · 提示词 | — | 592 | [`prompt-13-zhiye-fazhan.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/13-zhiye-fazhan/outputs/prompt-13-zhiye-fazhan.md) |
+| skill | 人文修养是长期竞争力，因为它最难被替代 | 人文修养是长期竞争力，因为它最难被替代——按「三个台阶与六格能力 → 开口之前：先做一次能力盘点 → 判据分档：什么时候该换方向 → 动作与时限」走一遍本章判据 | 492 | [`skill-zhiye-fazhan.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/13-zhiye-fazhan/outputs/skill-zhiye-fazhan.md) |
 
-#### 第 14 章 · 人文修养与护理质量、平台
+#### 第 14 章 · 人文要被评价，先得变成可统计的记录字段
 
 `19-huli-renwen-goutong/chapters/14-zhiliang-pingtai/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 人文修养与护理质量、平台 · 提示词 | — | 458 | [`prompt-14-zhiliang-pingtai.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/14-zhiliang-pingtai/outputs/prompt-14-zhiliang-pingtai.md) |
-| skill | 人文修养与护理质量、平台 | 人文修养与护理质量、平台——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 379 | [`skill-zhiliang-pingtai.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/14-zhiliang-pingtai/outputs/skill-zhiliang-pingtai.md) |
+| prompt | 人文要被评价，先得变成可统计的记录字段 · 提示词 | — | 607 | [`prompt-14-zhiliang-pingtai.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/14-zhiliang-pingtai/outputs/prompt-14-zhiliang-pingtai.md) |
+| skill | 人文要被评价，先得变成可统计的记录字段 | 人文要被评价，先得变成可统计的记录字段——按「三层指标与人文的位置 → 开口之前：先定评什么、为什么评 → 判据分档：这份数据能不能用来评价 → 动作与时限」走一遍本章判据 | 511 | [`skill-zhiliang-pingtai.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/14-zhiliang-pingtai/outputs/skill-zhiliang-pingtai.md) |
 
 ### 急救护理学
 
 > Clinic · 第 5 学期 · 已产出 18 章
 
-#### 第 1 章 · 中医护理适宜技术概述与特点
+#### 第 1 章 · 「适宜」指的是资源可及，不是风险低
 
 `20-jijiu-huli-xue/chapters/01-gaishu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医护理适宜技术概述与特点 · 提示词 | — | 455 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 中医护理适宜技术概述与特点 | 中医护理适宜技术概述与特点——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 368 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 护理人文修养概述 · 提示词 | — | 441 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 护理人文修养概述 | 护理人文修养概述——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 361 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 「适宜」指的是资源可及，不是风险低 · 提示词 | — | 656 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 「适宜」指的是资源可及，不是风险低 | 「适宜」指的是资源可及，不是风险低——按「先把「适宜」两个字拆开 → 术前核对：禁忌排在适应证前面 → 四类技术的作用路径不同，观察的落点也不同 → 记录字段与三种失效模式」走一遍本章判据 | 556 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 人文修养的底子是「把人当人」的可核对动作 · 提示词 | — | 616 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 人文修养的底子是「把人当人」的可核对动作 | 人文修养的底子是「把人当人」的可核对动作——按「人文的三个层次，只有最外层能被看见 → 开口之前：三样东西必须先知道 → 判据分档：什么时候可以继续，什么时候必须停 → 六个动作与各自的时限」走一遍本章判据 | 510 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 急救护理学的起点是把不可逆点往前推 · 提示词 | — | 568 | [`prompt-01-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 精神科护理学概述 · 提示词 | — | 437 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 精神科护理学概述 | 精神科护理学概述——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 359 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 中医护理的第一步不是操作，是把证说清楚 | 中医护理的第一步不是操作，是把证说清楚——按「同一条医嘱，落在两个证上是两套做法 → 四诊采集：护士要采的不是「症状」，是能进记录的字段 → 辨证判据：八纲是四个二选一，不是八个标签 → 施护的四条边界：饮食、情志、起居、外治」走一遍本章判据 | 656 | [`skill-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/skill-01-gaishu.md) |
 | prompt | 中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练 · 提示词 | — | 901 | [`prompt-01-gaishu.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
@@ -11626,8 +11626,8 @@
 | skill | 学老年护理，学的不是知识清单，是在信息不全时作判断 | 学老年护理，学的不是知识清单，是在信息不全时作判断——按「三种知识，三种考法 → 案例：六个要素缺一不可 → 技能：回示教与情景模拟的评分 → 平台：学—练—考—评的闭环」走一遍本章判据 | 496 | [`skill-pingtai.md`](../departments/05-huli/21-laonian-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
 | prompt | 教学平台给的是可复算的地基，不是标准答案 · 提示词 | — | 573 | [`prompt-18-pingtai.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
 | skill | 教学平台给的是可复算的地基，不是标准答案 | 教学平台给的是可复算的地基，不是标准答案——按「知识怎么被组织：四级结构 → 可复算：一个数的三条来历 → 数据门禁：脱敏、去标识化与合成案例 → 智能辅助的位置：辅助、可解释、人工复核」走一遍本章判据 | 471 | [`skill-pingtai.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
-| prompt | 精神科护理学与教学平台 · 提示词 | — | 448 | [`prompt-18-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
-| skill | 精神科护理学与教学平台 | 精神科护理学与教学平台——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 366 | [`skill-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
+| prompt | 把临床判断写成可复算的条目，才配得上叫教学材料 · 提示词 | — | 557 | [`prompt-18-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
+| skill | 把临床判断写成可复算的条目，才配得上叫教学材料 | 把临床判断写成可复算的条目，才配得上叫教学材料——按「病例库：让判断可判分 → 情景演练与复盘 → 评分表怎么写 → 伦理与数据的边界」走一遍本章判据 | 451 | [`skill-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
 | prompt | 中医临床护理的教学，考动作不如考判据 · 提示词 | — | 740 | [`prompt-18-pingtai.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
 | skill | 中医临床护理的教学，考动作不如考判据 | 中医临床护理的教学，考动作不如考判据——按「平台要训练的是判断，不是手法 → 三层结构：知识、判据、动作 → 四类考核站点：考判据，不考表演 → 数据留痕与复盘」走一遍本章判据 | 629 | [`skill-pingtai.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/18-pingtai/outputs/skill-pingtai.md) |
 
@@ -11635,24 +11635,24 @@
 
 > Clinic · 第 6 学期 · 已产出 18 章
 
-#### 第 1 章 · 中医护理适宜技术概述与特点
+#### 第 1 章 · 「适宜」指的是资源可及，不是风险低
 
 `21-laonian-huli-xue/chapters/01-gaishu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医护理适宜技术概述与特点 · 提示词 | — | 455 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 中医护理适宜技术概述与特点 | 中医护理适宜技术概述与特点——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 368 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 护理人文修养概述 · 提示词 | — | 441 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 护理人文修养概述 | 护理人文修养概述——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 361 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 「适宜」指的是资源可及，不是风险低 · 提示词 | — | 656 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 「适宜」指的是资源可及，不是风险低 | 「适宜」指的是资源可及，不是风险低——按「先把「适宜」两个字拆开 → 术前核对：禁忌排在适应证前面 → 四类技术的作用路径不同，观察的落点也不同 → 记录字段与三种失效模式」走一遍本章判据 | 556 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 人文修养的底子是「把人当人」的可核对动作 · 提示词 | — | 616 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 人文修养的底子是「把人当人」的可核对动作 | 人文修养的底子是「把人当人」的可核对动作——按「人文的三个层次，只有最外层能被看见 → 开口之前：三样东西必须先知道 → 判据分档：什么时候可以继续，什么时候必须停 → 六个动作与各自的时限」走一遍本章判据 | 510 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 急救护理学的起点是把不可逆点往前推 · 提示词 | — | 568 | [`prompt-01-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 精神科护理学概述 · 提示词 | — | 437 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 精神科护理学概述 | 精神科护理学概述——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 359 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 中医护理的第一步不是操作，是把证说清楚 | 中医护理的第一步不是操作，是把证说清楚——按「同一条医嘱，落在两个证上是两套做法 → 四诊采集：护士要采的不是「症状」，是能进记录的字段 → 辨证判据：八纲是四个二选一，不是八个标签 → 施护的四条边界：饮食、情志、起居、外治」走一遍本章判据 | 656 | [`skill-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/skill-01-gaishu.md) |
 | prompt | 中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练 · 提示词 | — | 901 | [`prompt-01-gaishu.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
@@ -11774,8 +11774,8 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 安全管理的水平，看的是上报之后发生了什么 · 提示词 | — | 590 | [`prompt-14-anquan-fengxian.md`](../departments/05-huli/21-laonian-huli-xue/chapters/14-anquan-fengxian/outputs/prompt-14-anquan-fengxian.md) |
 | skill | 安全管理的水平，看的是上报之后发生了什么 | 安全管理的水平，看的是上报之后发生了什么——按「四类风险与判据 → 约束：唯一需要三重把关的措施 → 报告：非惩罚性与可分析的格式 → 把改进钉进流程」走一遍本章判据 | 496 | [`skill-anquan-fengxian.md`](../departments/05-huli/21-laonian-huli-xue/chapters/14-anquan-fengxian/outputs/skill-anquan-fengxian.md) |
-| prompt | 精神科护理安全与风险管理 · 提示词 | — | 451 | [`prompt-14-anquan-fengxian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/14-anquan-fengxian/outputs/prompt-14-anquan-fengxian.md) |
-| skill | 精神科护理安全与风险管理 | 精神科护理安全与风险管理——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 376 | [`skill-anquan-fengxian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/14-anquan-fengxian/outputs/skill-anquan-fengxian.md) |
+| prompt | 风险管理的成品不是一张清单，是一条能被追溯的时间线 · 提示词 | — | 581 | [`prompt-14-anquan-fengxian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/14-anquan-fengxian/outputs/prompt-14-anquan-fengxian.md) |
+| skill | 风险管理的成品不是一张清单，是一条能被追溯的时间线 | 风险管理的成品不是一张清单，是一条能被追溯的时间线——按「风险的三类来源 → 检查项与观察项 → 判据分档与动作时限 → 交接班与事件复盘」走一遍本章判据 | 481 | [`skill-anquan-fengxian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/14-anquan-fengxian/outputs/skill-anquan-fengxian.md) |
 
 #### 第 15 章 · 临终照护的目标不是延长时间，是不让这段时间难熬
 
@@ -11816,8 +11816,8 @@
 | skill | 学老年护理，学的不是知识清单，是在信息不全时作判断 | 学老年护理，学的不是知识清单，是在信息不全时作判断——按「三种知识，三种考法 → 案例：六个要素缺一不可 → 技能：回示教与情景模拟的评分 → 平台：学—练—考—评的闭环」走一遍本章判据 | 496 | [`skill-pingtai.md`](../departments/05-huli/21-laonian-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
 | prompt | 教学平台给的是可复算的地基，不是标准答案 · 提示词 | — | 573 | [`prompt-18-pingtai.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
 | skill | 教学平台给的是可复算的地基，不是标准答案 | 教学平台给的是可复算的地基，不是标准答案——按「知识怎么被组织：四级结构 → 可复算：一个数的三条来历 → 数据门禁：脱敏、去标识化与合成案例 → 智能辅助的位置：辅助、可解释、人工复核」走一遍本章判据 | 471 | [`skill-pingtai.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
-| prompt | 精神科护理学与教学平台 · 提示词 | — | 448 | [`prompt-18-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
-| skill | 精神科护理学与教学平台 | 精神科护理学与教学平台——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 366 | [`skill-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
+| prompt | 把临床判断写成可复算的条目，才配得上叫教学材料 · 提示词 | — | 557 | [`prompt-18-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
+| skill | 把临床判断写成可复算的条目，才配得上叫教学材料 | 把临床判断写成可复算的条目，才配得上叫教学材料——按「病例库：让判断可判分 → 情景演练与复盘 → 评分表怎么写 → 伦理与数据的边界」走一遍本章判据 | 451 | [`skill-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
 | prompt | 中医临床护理的教学，考动作不如考判据 · 提示词 | — | 740 | [`prompt-18-pingtai.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
 | skill | 中医临床护理的教学，考动作不如考判据 | 中医临床护理的教学，考动作不如考判据——按「平台要训练的是判断，不是手法 → 三层结构：知识、判据、动作 → 四类考核站点：考判据，不考表演 → 数据留痕与复盘」走一遍本章判据 | 629 | [`skill-pingtai.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/18-pingtai/outputs/skill-pingtai.md) |
 
@@ -11825,24 +11825,24 @@
 
 > Clinic · 第 6 学期 · 已产出 18 章
 
-#### 第 1 章 · 中医护理适宜技术概述与特点
+#### 第 1 章 · 「适宜」指的是资源可及，不是风险低
 
 `22-kangfu-huli-xue/chapters/01-gaishu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医护理适宜技术概述与特点 · 提示词 | — | 455 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 中医护理适宜技术概述与特点 | 中医护理适宜技术概述与特点——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 368 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 护理人文修养概述 · 提示词 | — | 441 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 护理人文修养概述 | 护理人文修养概述——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 361 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 「适宜」指的是资源可及，不是风险低 · 提示词 | — | 656 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 「适宜」指的是资源可及，不是风险低 | 「适宜」指的是资源可及，不是风险低——按「先把「适宜」两个字拆开 → 术前核对：禁忌排在适应证前面 → 四类技术的作用路径不同，观察的落点也不同 → 记录字段与三种失效模式」走一遍本章判据 | 556 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 人文修养的底子是「把人当人」的可核对动作 · 提示词 | — | 616 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 人文修养的底子是「把人当人」的可核对动作 | 人文修养的底子是「把人当人」的可核对动作——按「人文的三个层次，只有最外层能被看见 → 开口之前：三样东西必须先知道 → 判据分档：什么时候可以继续，什么时候必须停 → 六个动作与各自的时限」走一遍本章判据 | 510 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 急救护理学的起点是把不可逆点往前推 · 提示词 | — | 568 | [`prompt-01-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 精神科护理学概述 · 提示词 | — | 437 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 精神科护理学概述 | 精神科护理学概述——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 359 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 中医护理的第一步不是操作，是把证说清楚 | 中医护理的第一步不是操作，是把证说清楚——按「同一条医嘱，落在两个证上是两套做法 → 四诊采集：护士要采的不是「症状」，是能进记录的字段 → 辨证判据：八纲是四个二选一，不是八个标签 → 施护的四条边界：饮食、情志、起居、外治」走一遍本章判据 | 656 | [`skill-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/skill-01-gaishu.md) |
 | prompt | 中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练 · 提示词 | — | 901 | [`prompt-01-gaishu.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
@@ -12008,8 +12008,8 @@
 | skill | 学老年护理，学的不是知识清单，是在信息不全时作判断 | 学老年护理，学的不是知识清单，是在信息不全时作判断——按「三种知识，三种考法 → 案例：六个要素缺一不可 → 技能：回示教与情景模拟的评分 → 平台：学—练—考—评的闭环」走一遍本章判据 | 496 | [`skill-pingtai.md`](../departments/05-huli/21-laonian-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
 | prompt | 教学平台给的是可复算的地基，不是标准答案 · 提示词 | — | 573 | [`prompt-18-pingtai.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
 | skill | 教学平台给的是可复算的地基，不是标准答案 | 教学平台给的是可复算的地基，不是标准答案——按「知识怎么被组织：四级结构 → 可复算：一个数的三条来历 → 数据门禁：脱敏、去标识化与合成案例 → 智能辅助的位置：辅助、可解释、人工复核」走一遍本章判据 | 471 | [`skill-pingtai.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
-| prompt | 精神科护理学与教学平台 · 提示词 | — | 448 | [`prompt-18-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
-| skill | 精神科护理学与教学平台 | 精神科护理学与教学平台——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 366 | [`skill-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
+| prompt | 把临床判断写成可复算的条目，才配得上叫教学材料 · 提示词 | — | 557 | [`prompt-18-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
+| skill | 把临床判断写成可复算的条目，才配得上叫教学材料 | 把临床判断写成可复算的条目，才配得上叫教学材料——按「病例库：让判断可判分 → 情景演练与复盘 → 评分表怎么写 → 伦理与数据的边界」走一遍本章判据 | 451 | [`skill-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
 | prompt | 中医临床护理的教学，考动作不如考判据 · 提示词 | — | 740 | [`prompt-18-pingtai.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
 | skill | 中医临床护理的教学，考动作不如考判据 | 中医临床护理的教学，考动作不如考判据——按「平台要训练的是判断，不是手法 → 三层结构：知识、判据、动作 → 四类考核站点：考判据，不考表演 → 数据留痕与复盘」走一遍本章判据 | 629 | [`skill-pingtai.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/18-pingtai/outputs/skill-pingtai.md) |
 
@@ -12017,136 +12017,136 @@
 
 > Clinic · 第 7 学期 · 已产出 18 章
 
-#### 第 1 章 · 中医护理适宜技术概述与特点
+#### 第 1 章 · 「适宜」指的是资源可及，不是风险低
 
 `23-jingshenke-huli-xue/chapters/01-gaishu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医护理适宜技术概述与特点 · 提示词 | — | 455 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 中医护理适宜技术概述与特点 | 中医护理适宜技术概述与特点——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 368 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 护理人文修养概述 · 提示词 | — | 441 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 护理人文修养概述 | 护理人文修养概述——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 361 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 「适宜」指的是资源可及，不是风险低 · 提示词 | — | 656 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 「适宜」指的是资源可及，不是风险低 | 「适宜」指的是资源可及，不是风险低——按「先把「适宜」两个字拆开 → 术前核对：禁忌排在适应证前面 → 四类技术的作用路径不同，观察的落点也不同 → 记录字段与三种失效模式」走一遍本章判据 | 556 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 人文修养的底子是「把人当人」的可核对动作 · 提示词 | — | 616 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 人文修养的底子是「把人当人」的可核对动作 | 人文修养的底子是「把人当人」的可核对动作——按「人文的三个层次，只有最外层能被看见 → 开口之前：三样东西必须先知道 → 判据分档：什么时候可以继续，什么时候必须停 → 六个动作与各自的时限」走一遍本章判据 | 510 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 急救护理学的起点是把不可逆点往前推 · 提示词 | — | 568 | [`prompt-01-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 精神科护理学概述 · 提示词 | — | 437 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 精神科护理学概述 | 精神科护理学概述——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 359 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 中医护理的第一步不是操作，是把证说清楚 | 中医护理的第一步不是操作，是把证说清楚——按「同一条医嘱，落在两个证上是两套做法 → 四诊采集：护士要采的不是「症状」，是能进记录的字段 → 辨证判据：八纲是四个二选一，不是八个标签 → 施护的四条边界：饮食、情志、起居、外治」走一遍本章判据 | 656 | [`skill-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/skill-01-gaishu.md) |
 | prompt | 中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练 · 提示词 | — | 901 | [`prompt-01-gaishu.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练 | 中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练——按「分水岭：先辨，再护，最后才是手法 → 辨证要点：床边先看四样，先问四句 → 护理判据：三线，各有各的允许动作 → 动作与时限：从发现到交班的一条链」走一遍本章判据 | 782 | [`skill-gaishu.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/01-gaishu/outputs/skill-gaishu.md) |
 
-#### 第 2 章 · 精神障碍的病因与症状学基础
+#### 第 2 章 · 症状学的全部工作，是把一句主诉拆成别人也能看见的行为
 
 `23-jingshenke-huli-xue/chapters/02-bingyin-zhengzhuang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 精神障碍的病因与症状学基础 · 提示词 | — | 452 | [`prompt-02-bingyin-zhengzhuang.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/02-bingyin-zhengzhuang/outputs/prompt-02-bingyin-zhengzhuang.md) |
-| skill | 精神障碍的病因与症状学基础 | 精神障碍的病因与症状学基础——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 382 | [`skill-bingyin-zhengzhuang.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/02-bingyin-zhengzhuang/outputs/skill-bingyin-zhengzhuang.md) |
+| prompt | 症状学的全部工作，是把一句主诉拆成别人也能看见的行为 · 提示词 | — | 585 | [`prompt-02-bingyin-zhengzhuang.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/02-bingyin-zhengzhuang/outputs/prompt-02-bingyin-zhengzhuang.md) |
+| skill | 症状学的全部工作，是把一句主诉拆成别人也能看见的行为 | 症状学的全部工作，是把一句主诉拆成别人也能看见的行为——按「病因模型为什么影响护理动作 → 精神检查的次序与观察项 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 489 | [`skill-bingyin-zhengzhuang.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/02-bingyin-zhengzhuang/outputs/skill-bingyin-zhengzhuang.md) |
 
-#### 第 3 章 · 基本技能与治疗配合
+#### 第 3 章 · 治疗配合的核心不是把药送进嘴，是让病人知道自己在吃什么
 
 `23-jingshenke-huli-xue/chapters/03-jiben-jineng/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 基本技能与治疗配合 · 提示词 | — | 440 | [`prompt-03-jiben-jineng.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/03-jiben-jineng/outputs/prompt-03-jiben-jineng.md) |
-| skill | 基本技能与治疗配合 | 基本技能与治疗配合——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 367 | [`skill-jiben-jineng.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/03-jiben-jineng/outputs/skill-jiben-jineng.md) |
+| prompt | 治疗配合的核心不是把药送进嘴，是让病人知道自己在吃什么 · 提示词 | — | 576 | [`prompt-03-jiben-jineng.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/03-jiben-jineng/outputs/prompt-03-jiben-jineng.md) |
+| skill | 治疗配合的核心不是把药送进嘴，是让病人知道自己在吃什么 | 治疗配合的核心不是把药送进嘴，是让病人知道自己在吃什么——按「基本技能的范围与治疗性关系 → 给药环节的观察项 → 判据分档与动作时限 → 其他治疗配合」走一遍本章判据 | 472 | [`skill-jiben-jineng.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/03-jiben-jineng/outputs/skill-jiben-jineng.md) |
 
-#### 第 4 章 · 急性期与危机状态的护理
+#### 第 4 章 · 危机处置的第一分钟，用的不是技术而是距离
 
 `23-jingshenke-huli-xue/chapters/04-jixing-weiji/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 急性期与危机状态的护理 · 提示词 | — | 446 | [`prompt-04-jixing-weiji.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/04-jixing-weiji/outputs/prompt-04-jixing-weiji.md) |
-| skill | 急性期与危机状态的护理 | 急性期与危机状态的护理——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 371 | [`skill-jixing-weiji.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/04-jixing-weiji/outputs/skill-jixing-weiji.md) |
+| prompt | 危机处置的第一分钟，用的不是技术而是距离 · 提示词 | — | 597 | [`prompt-04-jixing-weiji.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/04-jixing-weiji/outputs/prompt-04-jixing-weiji.md) |
+| skill | 危机处置的第一分钟，用的不是技术而是距离 | 危机处置的第一分钟，用的不是技术而是距离——按「急性期先判断什么 → 激越升级的观察阶梯 → 判据分档与动作时限 → 约束与隔离期间的观察与沟通」走一遍本章判据 | 500 | [`skill-jixing-weiji.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/04-jixing-weiji/outputs/skill-jixing-weiji.md) |
 
-#### 第 5 章 · 精神分裂症及相关障碍的护理
+#### 第 5 章 · 和幻觉争辩一次，等于替那个声音做了一次免费宣传
 
 `23-jingshenke-huli-xue/chapters/05-jingshen-fenlie/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 精神分裂症及相关障碍的护理 · 提示词 | — | 452 | [`prompt-05-jingshen-fenlie.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/05-jingshen-fenlie/outputs/prompt-05-jingshen-fenlie.md) |
-| skill | 精神分裂症及相关障碍的护理 | 精神分裂症及相关障碍的护理——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 378 | [`skill-jingshen-fenlie.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/05-jingshen-fenlie/outputs/skill-jingshen-fenlie.md) |
+| prompt | 和幻觉争辩一次，等于替那个声音做了一次免费宣传 · 提示词 | — | 580 | [`prompt-05-jingshen-fenlie.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/05-jingshen-fenlie/outputs/prompt-05-jingshen-fenlie.md) |
+| skill | 和幻觉争辩一次，等于替那个声音做了一次免费宣传 | 和幻觉争辩一次，等于替那个声音做了一次免费宣传——按「三个症状群，三个不同的护理目标 → 观察项 → 判据分档与动作时限 → 长期照护：依从、代谢与家庭」走一遍本章判据 | 483 | [`skill-jingshen-fenlie.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/05-jingshen-fenlie/outputs/skill-jingshen-fenlie.md) |
 
-#### 第 6 章 · 抑郁与双相障碍的护理
+#### 第 6 章 · 抑郁最危险的时刻，常常是"看起来好起来"的那几天
 
 `23-jingshenke-huli-xue/chapters/06-yiyu-shuangxiang/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 抑郁与双相障碍的护理 · 提示词 | — | 443 | [`prompt-06-yiyu-shuangxiang.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/06-yiyu-shuangxiang/outputs/prompt-06-yiyu-shuangxiang.md) |
-| skill | 抑郁与双相障碍的护理 | 抑郁与双相障碍的护理——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 373 | [`skill-yiyu-shuangxiang.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/06-yiyu-shuangxiang/outputs/skill-yiyu-shuangxiang.md) |
+| prompt | 抑郁最危险的时刻，常常是"看起来好起来"的那几天 · 提示词 | — | 571 | [`prompt-06-yiyu-shuangxiang.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/06-yiyu-shuangxiang/outputs/prompt-06-yiyu-shuangxiang.md) |
+| skill | 抑郁最危险的时刻，常常是"看起来好起来"的那几天 | 抑郁最危险的时刻，常常是"看起来好起来"的那几天——按「一条病程，两端的护理重点 → 观察项 → 判据分档与动作时限 → 治疗配合与物理治疗」走一遍本章判据 | 474 | [`skill-yiyu-shuangxiang.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/06-yiyu-shuangxiang/outputs/skill-yiyu-shuangxiang.md) |
 
-#### 第 7 章 · 焦虑与应激相关障碍的护理
+#### 第 7 章 · 焦虑病人的"我没事"，多数时候是"我说不出来"而不是"真的没事"
 
 `23-jingshenke-huli-xue/chapters/07-jiaolv-yingji/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 焦虑与应激相关障碍的护理 · 提示词 | — | 449 | [`prompt-07-jiaolv-yingji.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/07-jiaolv-yingji/outputs/prompt-07-jiaolv-yingji.md) |
-| skill | 焦虑与应激相关障碍的护理 | 焦虑与应激相关障碍的护理——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 374 | [`skill-jiaolv-yingji.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/07-jiaolv-yingji/outputs/skill-jiaolv-yingji.md) |
+| prompt | 焦虑病人的"我没事"，多数时候是"我说不出来"而不是"真的没事" · 提示词 | — | 634 | [`prompt-07-jiaolv-yingji.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/07-jiaolv-yingji/outputs/prompt-07-jiaolv-yingji.md) |
+| skill | 焦虑病人的"我没事"，多数时候是"我说不出来"而不是"真的没事" | 焦虑病人的"我没事"，多数时候是"我说不出来"而不是"真的没事"——按「焦虑的三个层次与对应的护理动作 → 观察项 → 判据分档与动作时限 → 护理干预的四个可教动作」走一遍本章判据 | 526 | [`skill-jiaolv-yingji.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/07-jiaolv-yingji/outputs/skill-jiaolv-yingji.md) |
 
-#### 第 8 章 · 强迫与躯体形式相关障碍的护理
+#### 第 8 章 · 不要替病人完成仪式，也不要在他做仪式时打断
 
 `23-jingshenke-huli-xue/chapters/08-qiangpo-tixing/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 强迫与躯体形式相关障碍的护理 · 提示词 | — | 455 | [`prompt-08-qiangpo-tixing.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/08-qiangpo-tixing/outputs/prompt-08-qiangpo-tixing.md) |
-| skill | 强迫与躯体形式相关障碍的护理 | 强迫与躯体形式相关障碍的护理——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 379 | [`skill-qiangpo-tixing.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/08-qiangpo-tixing/outputs/skill-qiangpo-tixing.md) |
+| prompt | 不要替病人完成仪式，也不要在他做仪式时打断 · 提示词 | — | 580 | [`prompt-08-qiangpo-tixing.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/08-qiangpo-tixing/outputs/prompt-08-qiangpo-tixing.md) |
+| skill | 不要替病人完成仪式，也不要在他做仪式时打断 | 不要替病人完成仪式，也不要在他做仪式时打断——按「两个部件与护理的站位 → 观察项 → 判据分档与动作时限 → 干预配合与沟通」走一遍本章判据 | 484 | [`skill-qiangpo-tixing.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/08-qiangpo-tixing/outputs/skill-qiangpo-tixing.md) |
 
-#### 第 9 章 · 器质性与老年精神障碍的护理
+#### 第 9 章 · 老年精神症状的第一鉴别永远是谵妄，而不是抑郁
 
 `23-jingshenke-huli-xue/chapters/09-qizhi-laonian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 器质性与老年精神障碍的护理 · 提示词 | — | 452 | [`prompt-09-qizhi-laonian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/09-qizhi-laonian/outputs/prompt-09-qizhi-laonian.md) |
-| skill | 器质性与老年精神障碍的护理 | 器质性与老年精神障碍的护理——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 376 | [`skill-qizhi-laonian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/09-qizhi-laonian/outputs/skill-qizhi-laonian.md) |
+| prompt | 老年精神症状的第一鉴别永远是谵妄，而不是抑郁 · 提示词 | — | 564 | [`prompt-09-qizhi-laonian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/09-qizhi-laonian/outputs/prompt-09-qizhi-laonian.md) |
+| skill | 老年精神症状的第一鉴别永远是谵妄，而不是抑郁 | 老年精神症状的第一鉴别永远是谵妄，而不是抑郁——按「为什么顺序比知识更重要 → 观察项 → 判据分档与动作时限 → 痴呆、抑郁与尊严」走一遍本章判据 | 466 | [`skill-qizhi-laonian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/09-qizhi-laonian/outputs/skill-qizhi-laonian.md) |
 
-#### 第 10 章 · 精神活性物质相关障碍的护理
+#### 第 10 章 · 戒断期最该被测量的是身体，不是意志
 
 `23-jingshenke-huli-xue/chapters/10-wuzhi-yila/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 精神活性物质相关障碍的护理 · 提示词 | — | 454 | [`prompt-10-wuzhi-yila.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/10-wuzhi-yila/outputs/prompt-10-wuzhi-yila.md) |
-| skill | 精神活性物质相关障碍的护理 | 精神活性物质相关障碍的护理——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 373 | [`skill-wuzhi-yila.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/10-wuzhi-yila/outputs/skill-wuzhi-yila.md) |
+| prompt | 戒断期最该被测量的是身体，不是意志 · 提示词 | — | 570 | [`prompt-10-wuzhi-yila.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/10-wuzhi-yila/outputs/prompt-10-wuzhi-yila.md) |
+| skill | 戒断期最该被测量的是身体，不是意志 | 戒断期最该被测量的是身体，不是意志——按「依赖不是道德问题 → 观察项 → 判据分档与动作时限 → 干预配合：动机、复发预防、家庭」走一遍本章判据 | 473 | [`skill-wuzhi-yila.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/10-wuzhi-yila/outputs/skill-wuzhi-yila.md) |
 
-#### 第 11 章 · 儿童与青少年精神障碍的护理
+#### 第 11 章 · 孩子的症状常常写在大人身上，也常常被大人写坏
 
 `23-jingshenke-huli-xue/chapters/11-erke-qingshaonian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 儿童与青少年精神障碍的护理 · 提示词 | — | 454 | [`prompt-11-erke-qingshaonian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/11-erke-qingshaonian/outputs/prompt-11-erke-qingshaonian.md) |
-| skill | 儿童与青少年精神障碍的护理 | 儿童与青少年精神障碍的护理——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 380 | [`skill-erke-qingshaonian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/11-erke-qingshaonian/outputs/skill-erke-qingshaonian.md) |
+| prompt | 孩子的症状常常写在大人身上，也常常被大人写坏 · 提示词 | — | 578 | [`prompt-11-erke-qingshaonian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/11-erke-qingshaonian/outputs/prompt-11-erke-qingshaonian.md) |
+| skill | 孩子的症状常常写在大人身上，也常常被大人写坏 | 孩子的症状常常写在大人身上，也常常被大人写坏——按「三方信息与三方矛盾 → 观察项 → 判据分档与动作时限 → 家庭与学校的联动」走一遍本章判据 | 483 | [`skill-erke-qingshaonian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/11-erke-qingshaonian/outputs/skill-erke-qingshaonian.md) |
 
-#### 第 12 章 · 进食与睡眠障碍的护理
+#### 第 12 章 · 体重不是一个数字，是一条需要被共同盯住的趋势
 
 `23-jingshenke-huli-xue/chapters/12-jinshi-shuimian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 进食与睡眠障碍的护理 · 提示词 | — | 445 | [`prompt-12-jinshi-shuimian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/12-jinshi-shuimian/outputs/prompt-12-jinshi-shuimian.md) |
-| skill | 进食与睡眠障碍的护理 | 进食与睡眠障碍的护理——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 372 | [`skill-jinshi-shuimian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/12-jinshi-shuimian/outputs/skill-jinshi-shuimian.md) |
+| prompt | 体重不是一个数字，是一条需要被共同盯住的趋势 · 提示词 | — | 598 | [`prompt-12-jinshi-shuimian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/12-jinshi-shuimian/outputs/prompt-12-jinshi-shuimian.md) |
+| skill | 体重不是一个数字，是一条需要被共同盯住的趋势 | 体重不是一个数字，是一条需要被共同盯住的趋势——按「进食障碍的两条轴 → 观察项 → 判据分档与动作时限 → 治疗配合与护理边界」走一遍本章判据 | 501 | [`skill-jinshi-shuimian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/12-jinshi-shuimian/outputs/skill-jinshi-shuimian.md) |
 
-#### 第 13 章 · 精神障碍病人的康复护理
+#### 第 13 章 · 康复的指标不是症状消失，是这个人重新有了日程
 
 `23-jingshenke-huli-xue/chapters/13-kangfu-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 精神障碍病人的康复护理 · 提示词 | — | 448 | [`prompt-13-kangfu-huli.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/13-kangfu-huli/outputs/prompt-13-kangfu-huli.md) |
-| skill | 精神障碍病人的康复护理 | 精神障碍病人的康复护理——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 370 | [`skill-kangfu-huli.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/13-kangfu-huli/outputs/skill-kangfu-huli.md) |
+| prompt | 康复的指标不是症状消失，是这个人重新有了日程 · 提示词 | — | 581 | [`prompt-13-kangfu-huli.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/13-kangfu-huli/outputs/prompt-13-kangfu-huli.md) |
+| skill | 康复的指标不是症状消失，是这个人重新有了日程 | 康复的指标不是症状消失，是这个人重新有了日程——按「康复的目标是角色，不是症状 → 评估项 → 判据分档与动作时限 → 康复技术与配合」走一遍本章判据 | 480 | [`skill-kangfu-huli.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/13-kangfu-huli/outputs/skill-kangfu-huli.md) |
 
 #### 第 14 章 · 安全管理的水平，看的是上报之后发生了什么
 
@@ -12156,35 +12156,35 @@
 | --- | --- | --- | :-: | --- |
 | prompt | 安全管理的水平，看的是上报之后发生了什么 · 提示词 | — | 590 | [`prompt-14-anquan-fengxian.md`](../departments/05-huli/21-laonian-huli-xue/chapters/14-anquan-fengxian/outputs/prompt-14-anquan-fengxian.md) |
 | skill | 安全管理的水平，看的是上报之后发生了什么 | 安全管理的水平，看的是上报之后发生了什么——按「四类风险与判据 → 约束：唯一需要三重把关的措施 → 报告：非惩罚性与可分析的格式 → 把改进钉进流程」走一遍本章判据 | 496 | [`skill-anquan-fengxian.md`](../departments/05-huli/21-laonian-huli-xue/chapters/14-anquan-fengxian/outputs/skill-anquan-fengxian.md) |
-| prompt | 精神科护理安全与风险管理 · 提示词 | — | 451 | [`prompt-14-anquan-fengxian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/14-anquan-fengxian/outputs/prompt-14-anquan-fengxian.md) |
-| skill | 精神科护理安全与风险管理 | 精神科护理安全与风险管理——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 376 | [`skill-anquan-fengxian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/14-anquan-fengxian/outputs/skill-anquan-fengxian.md) |
+| prompt | 风险管理的成品不是一张清单，是一条能被追溯的时间线 · 提示词 | — | 581 | [`prompt-14-anquan-fengxian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/14-anquan-fengxian/outputs/prompt-14-anquan-fengxian.md) |
+| skill | 风险管理的成品不是一张清单，是一条能被追溯的时间线 | 风险管理的成品不是一张清单，是一条能被追溯的时间线——按「风险的三类来源 → 检查项与观察项 → 判据分档与动作时限 → 交接班与事件复盘」走一遍本章判据 | 481 | [`skill-anquan-fengxian.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/14-anquan-fengxian/outputs/skill-anquan-fengxian.md) |
 
-#### 第 15 章 · 精神科的人际关系与沟通
+#### 第 15 章 · 在精神科，少说一句比多说一句更难，也更有用
 
 `23-jingshenke-huli-xue/chapters/15-renji-goutong/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 精神科的人际关系与沟通 · 提示词 | — | 448 | [`prompt-15-renji-goutong.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/15-renji-goutong/outputs/prompt-15-renji-goutong.md) |
-| skill | 精神科的人际关系与沟通 | 精神科的人际关系与沟通——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 372 | [`skill-renji-goutong.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/15-renji-goutong/outputs/skill-renji-goutong.md) |
+| prompt | 在精神科，少说一句比多说一句更难，也更有用 · 提示词 | — | 586 | [`prompt-15-renji-goutong.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/15-renji-goutong/outputs/prompt-15-renji-goutong.md) |
+| skill | 在精神科，少说一句比多说一句更难，也更有用 | 在精神科，少说一句比多说一句更难，也更有用——按「关系是技术，不是性格 → 四个可以训练的技术 → 边界：自我暴露、礼物、身体接触、双重关系 → 跨专业沟通与家属沟通」走一遍本章判据 | 488 | [`skill-renji-goutong.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/15-renji-goutong/outputs/skill-renji-goutong.md) |
 
-#### 第 16 章 · 精神科护理的法律与伦理实践
+#### 第 16 章 · 知情同意不是一张签过字的纸，是一条随时可以撤回的路
 
 `23-jingshenke-huli-xue/chapters/16-falv-lunli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 精神科护理的法律与伦理实践 · 提示词 | — | 454 | [`prompt-16-falv-lunli.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/16-falv-lunli/outputs/prompt-16-falv-lunli.md) |
-| skill | 精神科护理的法律与伦理实践 | 精神科护理的法律与伦理实践——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 373 | [`skill-falv-lunli.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/16-falv-lunli/outputs/skill-falv-lunli.md) |
+| prompt | 知情同意不是一张签过字的纸，是一条随时可以撤回的路 · 提示词 | — | 581 | [`prompt-16-falv-lunli.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/16-falv-lunli/outputs/prompt-16-falv-lunli.md) |
+| skill | 知情同意不是一张签过字的纸，是一条随时可以撤回的路 | 知情同意不是一张签过字的纸，是一条随时可以撤回的路——按「自愿原则与四个要件 → 约束与隔离的合法性 → 隐私与信息共享 → 代理决策与能力评估」走一遍本章判据 | 476 | [`skill-falv-lunli.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/16-falv-lunli/outputs/skill-falv-lunli.md) |
 
-#### 第 17 章 · 精神卫生服务与社区精神科护理
+#### 第 17 章 · 社区精神科护理的成败，常常取决于病人失约之后你打了几个电话
 
 `23-jingshenke-huli-xue/chapters/17-shequ-jingshen/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 精神卫生服务与社区精神科护理 · 提示词 | — | 457 | [`prompt-17-shequ-jingshen.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/17-shequ-jingshen/outputs/prompt-17-shequ-jingshen.md) |
-| skill | 精神卫生服务与社区精神科护理 | 精神卫生服务与社区精神科护理——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 379 | [`skill-shequ-jingshen.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/17-shequ-jingshen/outputs/skill-shequ-jingshen.md) |
+| prompt | 社区精神科护理的成败，常常取决于病人失约之后你打了几个电话 · 提示词 | — | 617 | [`prompt-17-shequ-jingshen.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/17-shequ-jingshen/outputs/prompt-17-shequ-jingshen.md) |
+| skill | 社区精神科护理的成败，常常取决于病人失约之后你打了几个电话 | 社区精神科护理的成败，常常取决于病人失约之后你打了几个电话——按「社区照护的形态与责任边界 → 评估项 → 判据分档与动作时限 → 家访安全与个案管理」走一遍本章判据 | 512 | [`skill-shequ-jingshen.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/17-shequ-jingshen/outputs/skill-shequ-jingshen.md) |
 
 #### 第 18 章 · 平台的价值是让判断可复核，不是替人判断
 
@@ -12198,8 +12198,8 @@
 | skill | 学老年护理，学的不是知识清单，是在信息不全时作判断 | 学老年护理，学的不是知识清单，是在信息不全时作判断——按「三种知识，三种考法 → 案例：六个要素缺一不可 → 技能：回示教与情景模拟的评分 → 平台：学—练—考—评的闭环」走一遍本章判据 | 496 | [`skill-pingtai.md`](../departments/05-huli/21-laonian-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
 | prompt | 教学平台给的是可复算的地基，不是标准答案 · 提示词 | — | 573 | [`prompt-18-pingtai.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
 | skill | 教学平台给的是可复算的地基，不是标准答案 | 教学平台给的是可复算的地基，不是标准答案——按「知识怎么被组织：四级结构 → 可复算：一个数的三条来历 → 数据门禁：脱敏、去标识化与合成案例 → 智能辅助的位置：辅助、可解释、人工复核」走一遍本章判据 | 471 | [`skill-pingtai.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
-| prompt | 精神科护理学与教学平台 · 提示词 | — | 448 | [`prompt-18-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
-| skill | 精神科护理学与教学平台 | 精神科护理学与教学平台——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 366 | [`skill-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
+| prompt | 把临床判断写成可复算的条目，才配得上叫教学材料 · 提示词 | — | 557 | [`prompt-18-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
+| skill | 把临床判断写成可复算的条目，才配得上叫教学材料 | 把临床判断写成可复算的条目，才配得上叫教学材料——按「病例库：让判断可判分 → 情景演练与复盘 → 评分表怎么写 → 伦理与数据的边界」走一遍本章判据 | 451 | [`skill-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
 | prompt | 中医临床护理的教学，考动作不如考判据 · 提示词 | — | 740 | [`prompt-18-pingtai.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
 | skill | 中医临床护理的教学，考动作不如考判据 | 中医临床护理的教学，考动作不如考判据——按「平台要训练的是判断，不是手法 → 三层结构：知识、判据、动作 → 四类考核站点：考判据，不考表演 → 数据留痕与复盘」走一遍本章判据 | 629 | [`skill-pingtai.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/18-pingtai/outputs/skill-pingtai.md) |
 
@@ -12207,24 +12207,24 @@
 
 > Core · 第 5 学期 · 已产出 18 章
 
-#### 第 1 章 · 中医护理适宜技术概述与特点
+#### 第 1 章 · 「适宜」指的是资源可及，不是风险低
 
 `24-zhongyi-huli-xue/chapters/01-gaishu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医护理适宜技术概述与特点 · 提示词 | — | 455 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 中医护理适宜技术概述与特点 | 中医护理适宜技术概述与特点——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 368 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 护理人文修养概述 · 提示词 | — | 441 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 护理人文修养概述 | 护理人文修养概述——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 361 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 「适宜」指的是资源可及，不是风险低 · 提示词 | — | 656 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 「适宜」指的是资源可及，不是风险低 | 「适宜」指的是资源可及，不是风险低——按「先把「适宜」两个字拆开 → 术前核对：禁忌排在适应证前面 → 四类技术的作用路径不同，观察的落点也不同 → 记录字段与三种失效模式」走一遍本章判据 | 556 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 人文修养的底子是「把人当人」的可核对动作 · 提示词 | — | 616 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 人文修养的底子是「把人当人」的可核对动作 | 人文修养的底子是「把人当人」的可核对动作——按「人文的三个层次，只有最外层能被看见 → 开口之前：三样东西必须先知道 → 判据分档：什么时候可以继续，什么时候必须停 → 六个动作与各自的时限」走一遍本章判据 | 510 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 急救护理学的起点是把不可逆点往前推 · 提示词 | — | 568 | [`prompt-01-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 精神科护理学概述 · 提示词 | — | 437 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 精神科护理学概述 | 精神科护理学概述——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 359 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 中医护理的第一步不是操作，是把证说清楚 | 中医护理的第一步不是操作，是把证说清楚——按「同一条医嘱，落在两个证上是两套做法 → 四诊采集：护士要采的不是「症状」，是能进记录的字段 → 辨证判据：八纲是四个二选一，不是八个标签 → 施护的四条边界：饮食、情志、起居、外治」走一遍本章判据 | 656 | [`skill-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/skill-01-gaishu.md) |
 | prompt | 中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练 · 提示词 | — | 901 | [`prompt-01-gaishu.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
@@ -12399,24 +12399,24 @@
 
 > Clinic · 第 8 学期 · 已产出 18 章
 
-#### 第 1 章 · 中医护理适宜技术概述与特点
+#### 第 1 章 · 「适宜」指的是资源可及，不是风险低
 
 `25-zhongyi-linchuang-huli/chapters/01-gaishu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医护理适宜技术概述与特点 · 提示词 | — | 455 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 中医护理适宜技术概述与特点 | 中医护理适宜技术概述与特点——按「评估与选法 → 施术前准备 → 施术与观察 → 评价与推广」走一遍本章判据 | 368 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 护理人文修养概述 · 提示词 | — | 441 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 护理人文修养概述 | 护理人文修养概述——按「修人文底子 → 练沟通技巧 → 应对困难情境 → 形成职业形象」走一遍本章判据 | 361 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 「适宜」指的是资源可及，不是风险低 · 提示词 | — | 656 | [`prompt-01-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 「适宜」指的是资源可及，不是风险低 | 「适宜」指的是资源可及，不是风险低——按「先把「适宜」两个字拆开 → 术前核对：禁忌排在适应证前面 → 四类技术的作用路径不同，观察的落点也不同 → 记录字段与三种失效模式」走一遍本章判据 | 556 | [`skill-gaishu.md`](../departments/05-huli/04-zhongyi-huli-jishu/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 人文修养的底子是「把人当人」的可核对动作 · 提示词 | — | 616 | [`prompt-01-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 人文修养的底子是「把人当人」的可核对动作 | 人文修养的底子是「把人当人」的可核对动作——按「人文的三个层次，只有最外层能被看见 → 开口之前：三样东西必须先知道 → 判据分档：什么时候可以继续，什么时候必须停 → 六个动作与各自的时限」走一遍本章判据 | 510 | [`skill-gaishu.md`](../departments/05-huli/19-huli-renwen-goutong/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 急救护理学的起点是把不可逆点往前推 · 提示词 | — | 568 | [`prompt-01-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 急救护理学的起点是把不可逆点往前推 | 急救护理学的起点是把不可逆点往前推——按「体系的价值在切段，不在分类 → 分诊判据：先看会不会死，再看多久会变 → 时间窗与站位：把「尽快」换算成分钟 → 记录字段与失效模式」走一遍本章判据 | 469 | [`skill-gaishu.md`](../departments/05-huli/20-jijiu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 老年护理的边界由功能决定，不由年龄决定 · 提示词 | — | 634 | [`prompt-01-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 老年护理的边界由功能决定，不由年龄决定 | 老年护理的边界由功能决定，不由年龄决定——按「年龄是群体量，功能是个体量 → 功能的刻度：ADL、IADL 各管一段 → 动作与时限：从基线到复评的 72 小时 → 记录字段与三种失效」走一遍本章判据 | 533 | [`skill-gaishu.md`](../departments/05-huli/21-laonian-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 康复护理管的是功能，不是病 · 提示词 | — | 488 | [`prompt-01-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 康复护理管的是功能，不是病 | 康复护理管的是功能，不是病——按「功能是照护工作量的计量单位 → 四层口径：功能不是一个词，是四个问题 → 五类时机：谁在什么时候做，交付给谁 → 记录字段与五种失效」走一遍本章判据 | 386 | [`skill-gaishu.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
-| prompt | 精神科护理学概述 · 提示词 | — | 437 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
-| skill | 精神科护理学概述 | 精神科护理学概述——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 359 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
+| prompt | 精神科护理的第一产品是安全，第二产品才是症状缓解 · 提示词 | — | 565 | [`prompt-01-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
+| skill | 精神科护理的第一产品是安全，第二产品才是症状缓解 | 精神科护理的第一产品是安全，第二产品才是症状缓解——按「精神科护理的判断从哪开始 → 观察与评估：入院首小时看什么 → 判据分档与动作时限 → 记录字段与失效模式」走一遍本章判据 | 458 | [`skill-gaishu.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/01-gaishu/outputs/skill-gaishu.md) |
 | prompt | 中医护理的第一步不是操作，是把证说清楚 · 提示词 | — | 757 | [`prompt-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
 | skill | 中医护理的第一步不是操作，是把证说清楚 | 中医护理的第一步不是操作，是把证说清楚——按「同一条医嘱，落在两个证上是两套做法 → 四诊采集：护士要采的不是「症状」，是能进记录的字段 → 辨证判据：八纲是四个二选一，不是八个标签 → 施护的四条边界：饮食、情志、起居、外治」走一遍本章判据 | 656 | [`skill-01-gaishu.md`](../departments/05-huli/24-zhongyi-huli-xue/chapters/01-gaishu/outputs/skill-01-gaishu.md) |
 | prompt | 中医临床护理的分水岭在辨清寒热虚实之后，不在手法熟练 · 提示词 | — | 901 | [`prompt-01-gaishu.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/01-gaishu/outputs/prompt-01-gaishu.md) |
@@ -12431,14 +12431,14 @@
 | prompt | 护理评估的价值在于把「说不清」变成可复核的记录 · 提示词 | — | 856 | [`prompt-02-pinggu-chengxu.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/02-pinggu-chengxu/outputs/prompt-02-pinggu-chengxu.md) |
 | skill | 护理评估的价值在于把「说不清」变成可复核的记录 | 护理评估的价值在于把「说不清」变成可复核的记录——按「程序不是表格，是把判断拆成可交接的段落 → 十二个床边问题：问什么，记什么 → 资料的三个层次：冲突时以谁为准 → 从资料到措施：一句可执行的转换」走一遍本章判据 | 748 | [`skill-pinggu-chengxu.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/02-pinggu-chengxu/outputs/skill-pinggu-chengxu.md) |
 
-#### 第 3 章 · 内科常用护理技术与安全
+#### 第 3 章 · 技术安全的关口不在禁忌表上，在开做前那三个必须核对的动作里
 
 `25-zhongyi-linchuang-huli/chapters/03-jishu-anquan/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 用本章内容做一件事：内科常用护理技术与安全 | — | 415 | [`prompt-03-jishu-anquan.md`](../departments/05-huli/07-neike-huli-xue/chapters/03-jishu-anquan/outputs/prompt-03-jishu-anquan.md) |
-| skill | 内科常用护理技术与安全 | 用《内科护理学》第 3 章「内科常用护理技术与安全」的单元层做可核对的教学材料。 | 515 | [`skill-03-jishu-anquan.md`](../departments/05-huli/07-neike-huli-xue/chapters/03-jishu-anquan/outputs/skill-03-jishu-anquan.md) |
+| prompt | 技术安全的关口不在禁忌表上，在开做前那三个必须核对的动作里 · 提示词 | — | 628 | [`prompt-03-jishu-anquan.md`](../departments/05-huli/07-neike-huli-xue/chapters/03-jishu-anquan/outputs/prompt-03-jishu-anquan.md) |
+| skill | 技术安全的关口不在禁忌表上，在开做前那三个必须核对的动作里 | 技术安全的关口不在禁忌表上，在开做前那三个必须核对的动作里——按「六要素是六道闸，不是六个步骤 → 这一类技术的共同结构：前、中、后各查什么 → 判据分档与「叫停权」【教学设定】 → 记录字段、交接与失效模式」走一遍本章判据 | 523 | [`skill-03-jishu-anquan.md`](../departments/05-huli/07-neike-huli-xue/chapters/03-jishu-anquan/outputs/skill-03-jishu-anquan.md) |
 | prompt | 中医护理技术的安全线画在施术前，不在出事之后 · 提示词 | — | 782 | [`prompt-03-jishu-anquan.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/03-jishu-anquan/outputs/prompt-03-jishu-anquan.md) |
 | skill | 中医护理技术的安全线画在施术前，不在出事之后 | 中医护理技术的安全线画在施术前，不在出事之后——按「安全线在施术前：技术越「熟悉」，越要先核对 → 五项准入核对：全过才动手 → 辨证要点：六类技术各看什么 → 动作与时限：从准备到撤离」走一遍本章判据 | 673 | [`skill-jishu-anquan.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/03-jishu-anquan/outputs/skill-jishu-anquan.md) |
 
@@ -12580,8 +12580,8 @@
 | skill | 学老年护理，学的不是知识清单，是在信息不全时作判断 | 学老年护理，学的不是知识清单，是在信息不全时作判断——按「三种知识，三种考法 → 案例：六个要素缺一不可 → 技能：回示教与情景模拟的评分 → 平台：学—练—考—评的闭环」走一遍本章判据 | 496 | [`skill-pingtai.md`](../departments/05-huli/21-laonian-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
 | prompt | 教学平台给的是可复算的地基，不是标准答案 · 提示词 | — | 573 | [`prompt-18-pingtai.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
 | skill | 教学平台给的是可复算的地基，不是标准答案 | 教学平台给的是可复算的地基，不是标准答案——按「知识怎么被组织：四级结构 → 可复算：一个数的三条来历 → 数据门禁：脱敏、去标识化与合成案例 → 智能辅助的位置：辅助、可解释、人工复核」走一遍本章判据 | 471 | [`skill-pingtai.md`](../departments/05-huli/22-kangfu-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
-| prompt | 精神科护理学与教学平台 · 提示词 | — | 448 | [`prompt-18-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
-| skill | 精神科护理学与教学平台 | 精神科护理学与教学平台——按「识别风险 → 建立关系 → 干预与治疗配合 → 康复与回归」走一遍本章判据 | 366 | [`skill-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
+| prompt | 把临床判断写成可复算的条目，才配得上叫教学材料 · 提示词 | — | 557 | [`prompt-18-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
+| skill | 把临床判断写成可复算的条目，才配得上叫教学材料 | 把临床判断写成可复算的条目，才配得上叫教学材料——按「病例库：让判断可判分 → 情景演练与复盘 → 评分表怎么写 → 伦理与数据的边界」走一遍本章判据 | 451 | [`skill-pingtai.md`](../departments/05-huli/23-jingshenke-huli-xue/chapters/18-pingtai/outputs/skill-pingtai.md) |
 | prompt | 中医临床护理的教学，考动作不如考判据 · 提示词 | — | 740 | [`prompt-18-pingtai.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/18-pingtai/outputs/prompt-18-pingtai.md) |
 | skill | 中医临床护理的教学，考动作不如考判据 | 中医临床护理的教学，考动作不如考判据——按「平台要训练的是判断，不是手法 → 三层结构：知识、判据、动作 → 四类考核站点：考判据，不考表演 → 数据留痕与复盘」走一遍本章判据 | 629 | [`skill-pingtai.md`](../departments/05-huli/25-zhongyi-linchuang-huli/chapters/18-pingtai/outputs/skill-pingtai.md) |
 
@@ -12589,50 +12589,50 @@
 
 > Clinic · 第 9 学期 · 已产出 6 章
 
-#### 第 1 章 · 内科护理轮转
+#### 第 1 章 · 内科轮转的前三天，决定这一站还能学到什么
 
 `26-huli-linchuang-lunzhuan/chapters/01-neike-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 内科护理轮转 · 提示词 | — | 457 | [`prompt-01-neike-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/01-neike-huli/outputs/prompt-01-neike-huli.md) |
-| skill | 内科护理轮转 | 内科护理轮转——按「入科准备 → 专科执行 → 观察记录 → 出科考核与复盘」走一遍本章判据 | 356 | [`skill-neike-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/01-neike-huli/outputs/skill-neike-huli.md) |
+| prompt | 内科轮转的前三天，决定这一站还能学到什么 · 提示词 | — | 583 | [`prompt-01-neike-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/01-neike-huli/outputs/prompt-01-neike-huli.md) |
+| skill | 内科轮转的前三天，决定这一站还能学到什么 | 内科轮转的前三天，决定这一站还能学到什么——按「入科前必须答出的三个问题 → 四个可观察的学习目标 → 班次里的观察点：从数值到趋势 → 交接：这一站最重要的一项技能」走一遍本章判据 | 484 | [`skill-neike-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/01-neike-huli/outputs/skill-neike-huli.md) |
 
-#### 第 2 章 · 外科护理轮转
+#### 第 2 章 · 外科轮转的核心在术前那一天与术后那几个窗口
 
 `26-huli-linchuang-lunzhuan/chapters/02-waike-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 外科护理轮转 · 提示词 | — | 457 | [`prompt-02-waike-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/02-waike-huli/outputs/prompt-02-waike-huli.md) |
-| skill | 外科护理轮转 | 外科护理轮转——按「入科准备 → 专科执行 → 观察记录 → 出科考核与复盘」走一遍本章判据 | 356 | [`skill-waike-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/02-waike-huli/outputs/skill-waike-huli.md) |
+| prompt | 外科轮转的核心在术前那一天与术后那几个窗口 · 提示词 | — | 654 | [`prompt-02-waike-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/02-waike-huli/outputs/prompt-02-waike-huli.md) |
+| skill | 外科轮转的核心在术前那一天与术后那几个窗口 | 外科轮转的核心在术前那一天与术后那几个窗口——按「围手术期三段，各段问的问题不一样 → 术前准备：一份可以自己核对的清单 → 术后观察：四个窗口，四种问法 → 交接与记录：三段最容易断的地方」走一遍本章判据 | 554 | [`skill-waike-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/02-waike-huli/outputs/skill-waike-huli.md) |
 
-#### 第 3 章 · 妇儿护理轮转
+#### 第 3 章 · 妇儿轮转要写两个人的记录，一份也不能省
 
 `26-huli-linchuang-lunzhuan/chapters/03-fuer-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 妇儿护理轮转 · 提示词 | — | 459 | [`prompt-03-fuer-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/03-fuer-huli/outputs/prompt-03-fuer-huli.md) |
-| skill | 妇儿护理轮转 | 妇儿护理轮转——按「入科准备 → 专科执行 → 观察记录 → 出科考核与复盘」走一遍本章判据 | 355 | [`skill-fuer-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/03-fuer-huli/outputs/skill-fuer-huli.md) |
+| prompt | 妇儿轮转要写两个人的记录，一份也不能省 · 提示词 | — | 612 | [`prompt-03-fuer-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/03-fuer-huli/outputs/prompt-03-fuer-huli.md) |
+| skill | 妇儿轮转要写两个人的记录，一份也不能省 | 妇儿轮转要写两个人的记录，一份也不能省——按「两个对象的记录规则 → 产科：三条线同时走 → 儿科：患儿与照护者，两条线一起读 → 家属沟通：三类话分开说」走一遍本章判据 | 513 | [`skill-fuer-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/03-fuer-huli/outputs/skill-fuer-huli.md) |
 
-#### 第 4 章 · 急危重症护理轮转
+#### 第 4 章 · 急危重症轮转先学排序：谁先看，比看得多快更重要
 
 `26-huli-linchuang-lunzhuan/chapters/04-jiwei-huli/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 急危重症护理轮转 · 提示词 | — | 450 | [`prompt-04-jiwei-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/04-jiwei-huli/outputs/prompt-04-jiwei-huli.md) |
-| skill | 急危重症护理轮转 | 急危重症护理轮转——按「入科准备 → 专科执行 → 观察记录 → 出科考核与复盘」走一遍本章判据 | 360 | [`skill-jiwei-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/04-jiwei-huli/outputs/skill-jiwei-huli.md) |
+| prompt | 急危重症轮转先学排序：谁先看，比看得多快更重要 · 提示词 | — | 644 | [`prompt-04-jiwei-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/04-jiwei-huli/outputs/prompt-04-jiwei-huli.md) |
+| skill | 急危重症轮转先学排序：谁先看，比看得多快更重要 | 急危重症轮转先学排序：谁先看，比看得多快更重要——按「分诊的四级与各自的判据 → 优先级：五个必须立刻看到的信号 → 团队与呼叫：谁能叫、叫谁、说什么 → 记录与交接：急诊的记录是给下一个班用的」走一遍本章判据 | 542 | [`skill-jiwei-huli.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/04-jiwei-huli/outputs/skill-jiwei-huli.md) |
 
-#### 第 5 章 · 中医护理技术临床应用轮转
+#### 第 5 章 · 中医技术轮转的门槛是辨证用技，不是把手法练熟
 
 `26-huli-linchuang-lunzhuan/chapters/05-zhongyi-huli-jishu/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 中医护理技术临床应用轮转 · 提示词 | — | 491 | [`prompt-05-zhongyi-huli-jishu.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/05-zhongyi-huli-jishu/outputs/prompt-05-zhongyi-huli-jishu.md) |
-| skill | 中医护理技术临床应用轮转 | 中医护理技术临床应用轮转——按「入科准备 → 专科执行 → 观察记录 → 出科考核与复盘」走一遍本章判据 | 376 | [`skill-zhongyi-huli-jishu.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/05-zhongyi-huli-jishu/outputs/skill-zhongyi-huli-jishu.md) |
+| prompt | 中医技术轮转的门槛是辨证用技，不是把手法练熟 · 提示词 | — | 638 | [`prompt-05-zhongyi-huli-jishu.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/05-zhongyi-huli-jishu/outputs/prompt-05-zhongyi-huli-jishu.md) |
+| skill | 中医技术轮转的门槛是辨证用技，不是把手法练熟 | 中医技术轮转的门槛是辨证用技，不是把手法练熟——按「施术前必须答出的三个问题 → 四类常用技术：适应证与禁忌的结构 → 操作记录与反应观察 → 出科考核项：把「会做」与「会用」分开考」走一遍本章判据 | 545 | [`skill-zhongyi-huli-jishu.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/05-zhongyi-huli-jishu/outputs/skill-zhongyi-huli-jishu.md) |
 
 #### 第 6 章 · 出科考核与病例复盘（含结构化病历）
 
@@ -12646,8 +12646,8 @@
 | skill | 出科考核与病例复盘 | 出科考核与病例复盘——按「门诊接诊 → 病种轮转 → 灸罐处置 → 推拿科 → 出科考核」走一遍本章判据 | 368 | [`skill-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 · 提示词 | — | 701 | [`prompt-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-chuke-kaohe.md) |
 | skill | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾——按「考核的五项结构 → 病例汇报的四问 → 病历与知情同意：自查六个字段 → 不良事件复盘：问五句，不追一个人」走一遍本章判据 | 588 | [`skill-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
-| prompt | 出科考核与护理个案复盘 · 提示词 | — | 474 | [`prompt-06-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
-| skill | 出科考核与护理个案复盘 | 出科考核与护理个案复盘——按「入科准备 → 专科执行 → 观察记录 → 出科考核与复盘」走一遍本章判据 | 367 | [`skill-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
+| prompt | 出科考的是一例能不能讲透，不是做过多少项 · 提示词 | — | 629 | [`prompt-06-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
+| skill | 出科考的是一例能不能讲透，不是做过多少项 | 出科考的是一例能不能讲透，不是做过多少项——按「出科考的三层：会做、会看、会讲 → 个案复盘：六栏格式 → 评价维度与不合格的判据 → 六站之间：迁移比积累更重要」走一遍本章判据 | 531 | [`skill-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考核与病例复盘 · 提示词 | — | 441 | [`prompt-06-chuke-kaohe.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
 | skill | 出科考核与病例复盘 | 出科考核与病例复盘——按「门诊 → 检查 → 治疗 → 考核」走一遍本章判据 | 371 | [`skill-chuke-kaohe.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 
@@ -12667,8 +12667,8 @@
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
 | skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -12678,32 +12678,32 @@
 | prompt | 选题：从机制假设到可检验实验 · 提示词 | — | 494 | [`prompt-01-xuan-ti.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从机制假设到可检验实验 | 选题：从机制假设到可检验实验——按「选题 → 方案与伦理 → 实施与记录 → 数据分析 → 论文答辩 → 知识移交」走一遍本章判据 | 391 | [`skill-xuan-ti.md`](../departments/09-jichu/17-jichu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 
-#### 第 2 章 · 证据检索与循证方案设计
+#### 第 2 章 · 证据检索的目的不是找到支持，是找到边界
 
 `27-huli-biye-sheji/chapters/02-zhengju-chaxun/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 证据检索与循证方案设计 · 提示词 | — | 494 | [`prompt-02-zhengju-chaxun.md`](../departments/05-huli/27-huli-biye-sheji/chapters/02-zhengju-chaxun/outputs/prompt-02-zhengju-chaxun.md) |
-| skill | 证据检索与循证方案设计 | 证据检索与循证方案设计——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-zhengju-chaxun.md`](../departments/05-huli/27-huli-biye-sheji/chapters/02-zhengju-chaxun/outputs/skill-zhengju-chaxun.md) |
+| prompt | 证据检索的目的不是找到支持，是找到边界 · 提示词 | — | 609 | [`prompt-02-zhengju-chaxun.md`](../departments/05-huli/27-huli-biye-sheji/chapters/02-zhengju-chaxun/outputs/prompt-02-zhengju-chaxun.md) |
+| skill | 证据检索的目的不是找到支持，是找到边界 | 证据检索的目的不是找到支持，是找到边界——按「把问题变成能检索的形态 → 证据的层级：知道它管什么，也知道它不管什么 → 检索与筛选：把漏斗的每一层留下来 → 从证据到方案：适配与「不做什么」」走一遍本章判据 | 510 | [`skill-zhengju-chaxun.md`](../departments/05-huli/27-huli-biye-sheji/chapters/02-zhengju-chaxun/outputs/skill-zhengju-chaxun.md) |
 
-#### 第 3 章 · 干预实现与伦理审查
+#### 第 3 章 · 伦理审查不是盖章，是把受试者的代价提前算清
 
 `27-huli-biye-sheji/chapters/03-ganyu-shixian/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 干预实现与伦理审查 · 提示词 | — | 488 | [`prompt-03-ganyu-shixian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/03-ganyu-shixian/outputs/prompt-03-ganyu-shixian.md) |
-| skill | 干预实现与伦理审查 | 干预实现与伦理审查——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 368 | [`skill-ganyu-shixian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/03-ganyu-shixian/outputs/skill-ganyu-shixian.md) |
+| prompt | 伦理审查不是盖章，是把受试者的代价提前算清 · 提示词 | — | 600 | [`prompt-03-ganyu-shixian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/03-ganyu-shixian/outputs/prompt-03-ganyu-shixian.md) |
+| skill | 伦理审查不是盖章，是把受试者的代价提前算清 | 伦理审查不是盖章，是把受试者的代价提前算清——按「干预落地要写死的四件事 → 伦理送审要交的东西 → 知情同意：五个要素与一个容易漏的动作 → 中途变更与退出：方案是会变的」走一遍本章判据 | 498 | [`skill-ganyu-shixian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/03-ganyu-shixian/outputs/skill-ganyu-shixian.md) |
 
-#### 第 4 章 · 指标与结局评价
+#### 第 4 章 · 指标选错，做得再规范也回答不了问题
 
 `27-huli-biye-sheji/chapters/04-jieju-pingjia/`
 
 | 类型 | 标题 | 说明 | 字数 | 文件 |
 | --- | --- | --- | :-: | --- |
-| prompt | 指标与结局评价 · 提示词 | — | 482 | [`prompt-04-jieju-pingjia.md`](../departments/05-huli/27-huli-biye-sheji/chapters/04-jieju-pingjia/outputs/prompt-04-jieju-pingjia.md) |
-| skill | 指标与结局评价 | 指标与结局评价——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-jieju-pingjia.md`](../departments/05-huli/27-huli-biye-sheji/chapters/04-jieju-pingjia/outputs/skill-jieju-pingjia.md) |
+| prompt | 指标选错，做得再规范也回答不了问题 · 提示词 | — | 630 | [`prompt-04-jieju-pingjia.md`](../departments/05-huli/27-huli-biye-sheji/chapters/04-jieju-pingjia/outputs/prompt-04-jieju-pingjia.md) |
+| skill | 指标选错，做得再规范也回答不了问题 | 指标选错，做得再规范也回答不了问题——按「三类指标，各回答一个问题 → 可测量化：分子、分母、时点、比较 → 替代指标：能用，但要说清它替代了什么 → 分析与偏倚：能说什么，不能说什么」走一遍本章判据 | 532 | [`skill-jieju-pingjia.md`](../departments/05-huli/27-huli-biye-sheji/chapters/04-jieju-pingjia/outputs/skill-jieju-pingjia.md) |
 
 #### 第 5 章 · 论文写作与答辩
 
@@ -12717,8 +12717,8 @@
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
 | skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -12740,8 +12740,8 @@
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
 | skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -15509,8 +15509,8 @@
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
 | skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -15559,8 +15559,8 @@
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
 | skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -15582,8 +15582,8 @@
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
 | skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -17217,8 +17217,8 @@
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
 | skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -17267,8 +17267,8 @@
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
 | skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -17290,8 +17290,8 @@
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
 | skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -18612,8 +18612,8 @@
 | skill | 出科考核与病例复盘 | 出科考核与病例复盘——按「门诊接诊 → 病种轮转 → 灸罐处置 → 推拿科 → 出科考核」走一遍本章判据 | 368 | [`skill-chuke-kaohe.md`](../departments/03-zhenjiu/21-zhenjiu-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 · 提示词 | — | 701 | [`prompt-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-chuke-kaohe.md) |
 | skill | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾 | 出科考核：考的不是背，是你能不能把一次接诊从头讲到尾——按「考核的五项结构 → 病例汇报的四问 → 病历与知情同意：自查六个字段 → 不良事件复盘：问五句，不追一个人」走一遍本章判据 | 588 | [`skill-chuke-kaohe.md`](../departments/04-gushang/16-gushang-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
-| prompt | 出科考核与护理个案复盘 · 提示词 | — | 474 | [`prompt-06-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
-| skill | 出科考核与护理个案复盘 | 出科考核与护理个案复盘——按「入科准备 → 专科执行 → 观察记录 → 出科考核与复盘」走一遍本章判据 | 367 | [`skill-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
+| prompt | 出科考的是一例能不能讲透，不是做过多少项 · 提示词 | — | 629 | [`prompt-06-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
+| skill | 出科考的是一例能不能讲透，不是做过多少项 | 出科考的是一例能不能讲透，不是做过多少项——按「出科考的三层：会做、会看、会讲 → 个案复盘：六栏格式 → 评价维度与不合格的判据 → 六站之间：迁移比积累更重要」走一遍本章判据 | 531 | [`skill-chuke-kaohe.md`](../departments/05-huli/26-huli-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 | prompt | 出科考核与病例复盘 · 提示词 | — | 441 | [`prompt-06-chuke-kaohe.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/prompt-06-chuke-kaohe.md) |
 | skill | 出科考核与病例复盘 | 出科考核与病例复盘——按「门诊 → 检查 → 治疗 → 考核」走一遍本章判据 | 371 | [`skill-chuke-kaohe.md`](../departments/08-wuguan/16-wuguan-linchuang-lunzhuan/chapters/06-chuke-kaohe/outputs/skill-chuke-kaohe.md) |
 
@@ -18633,8 +18633,8 @@
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
 | skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -18685,8 +18685,8 @@
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
 | skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -18708,8 +18708,8 @@
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
 | skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
@@ -21814,8 +21814,8 @@
 | skill | 选题：从配穴方案到可检验命题 | 选题：从配穴方案到可检验命题——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 373 | [`skill-xuan-ti.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 · 提示词 | — | 620 | [`prompt-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/prompt-xuan-ti.md) |
 | skill | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题 | 选题不是挑一个病种，是把一套复位方案压成一条别人能复算的命题——按「三条判据：骨伤版的可复现、可对照、可接手 → 四步降维：从一个病名到一条命题 → 三份能交出去的骨伤毕设产物 → 里程碑：四件必须交出去的东西」走一遍本章判据 | 503 | [`skill-xuan-ti.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
-| prompt | 选题：从护理问题到可评价方案 · 提示词 | — | 479 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
-| skill | 选题：从护理问题到可评价方案 | 选题：从护理问题到可评价方案——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 372 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
+| prompt | 选题在开题前就定了成败：缺口必须算得出来 · 提示词 | — | 629 | [`prompt-01-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
+| skill | 选题在开题前就定了成败：缺口必须算得出来 | 选题在开题前就定了成败：缺口必须算得出来——按「好选题的四个判据 → 缺口怎么算：分子、分母、来源 → 选题过大的四种形态 → 开题评什么：评能不能做，不评想不想做」走一遍本章判据 | 522 | [`skill-xuan-ti.md`](../departments/05-huli/27-huli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题：从管理问题到可测量命题 · 提示词 | — | 468 | [`prompt-01-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
 | skill | 选题：从管理问题到可测量命题 | 选题：从管理问题到可测量命题——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 378 | [`skill-xuan-ti.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/01-xuan-ti/outputs/skill-xuan-ti.md) |
 | prompt | 选题不是挑题目，是先把一个中医问题压成一条别人能重跑的实验 · 提示词 | — | 630 | [`prompt-01-xuan-ti.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/01-xuan-ti/outputs/prompt-01-xuan-ti.md) |
@@ -21864,8 +21864,8 @@
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 365 | [`skill-lunwen-dabian.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 · 提示词 | — | 622 | [`prompt-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-lunwen-dabian.md) |
 | skill | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好 | 论文不是把做过的事按时间讲一遍，是把「别人凭什么信你」按证据强度排好——按「六段骨架：每一段都能用一句话检验 → 图表与数字：先让读者能核对，再让读者相信 → 答辩前先自评：七项检查 → 答辩：三类必答题与五分钟陈述」走一遍本章判据 | 507 | [`skill-lunwen-dabian.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
-| prompt | 论文写作与答辩 · 提示词 | — | 481 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
-| skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 364 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
+| prompt | 答辩评的是判断链，不是字数与图表的数量 · 提示词 | — | 611 | [`prompt-05-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
+| skill | 答辩评的是判断链，不是字数与图表的数量 | 答辩评的是判断链，不是字数与图表的数量——按「四段式：每一段只回答一个问题 → 图表的三条规矩 → 陈述：十五分钟怎么分 → 提问：六类问题与应答方式」走一遍本章判据 | 511 | [`skill-lunwen-dabian.md`](../departments/05-huli/27-huli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文写作与答辩 · 提示词 | — | 447 | [`prompt-05-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
 | skill | 论文写作与答辩 | 论文写作与答辩——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 370 | [`skill-lunwen-dabian.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/05-lunwen-dabian/outputs/skill-lunwen-dabian.md) |
 | prompt | 论文不是把做过的事写一遍，是把「别人凭什么信你」按顺序摆出来 · 提示词 | — | 637 | [`prompt-05-lunwen-dabian.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/05-lunwen-dabian/outputs/prompt-05-lunwen-dabian.md) |
@@ -21887,8 +21887,8 @@
 | skill | 知识移交：方案手册与交接 | 知识移交：方案手册与交接——按「选题 → 数据准备 → 方法与实现 → 疗效评价 → 写作答辩 → 移交」走一遍本章判据 | 375 | [`skill-zhishi-yijiao.md`](../departments/03-zhenjiu/22-zhenjiu-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 · 提示词 | — | 646 | [`prompt-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-zhishi-yijiao.md) |
 | skill | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法 | 移交不是交一份文档，是让没参与过的人在离开你之后跑出同一个数、做出同一套手法——按「交接包四件：缺一件，复算就断在那一件 → SOP：把「做对」写成「照做也对」 → 三条验收动作：从能跑到敢用 → 失效清单与退役条件」走一遍本章判据 | 527 | [`skill-zhishi-yijiao.md`](../departments/04-gushang/17-gushang-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
-| prompt | 知识移交：护理方案与交接 · 提示词 | — | 492 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
-| skill | 知识移交：护理方案与交接 | 知识移交：护理方案与交接——按「选题 → 证据与方案 → 干预与伦理 → 指标与结局 → 写作答辩 → 移交」走一遍本章判据 | 374 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
+| prompt | 毕设的最后一关，是别人能不能接着用 · 提示词 | — | 588 | [`prompt-06-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
+| skill | 毕设的最后一关，是别人能不能接着用 | 毕设的最后一关，是别人能不能接着用——按「移交包四件，各有各的验收动作 → 数据移交：边界比内容更重要 → 交接会：三段，不要开成汇报会 → 被接手方的三个提问」走一遍本章判据 | 490 | [`skill-zhishi-yijiao.md`](../departments/05-huli/27-huli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 知识移交：制度文件与交接 · 提示词 | — | 462 | [`prompt-06-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |
 | skill | 知识移交：制度文件与交接 | 知识移交：制度文件与交接——按「选题 → 数据 → 分析 → 评价 → 答辩 → 移交」走一遍本章判据 | 380 | [`skill-zhishi-yijiao.md`](../departments/06-guanli/26-guanli-biye-sheji/chapters/06-zhishi-yijiao/outputs/skill-zhishi-yijiao.md) |
 | prompt | 移交不是交一份文档，是让接手的人在没有你的情况下跑出同一个数 · 提示词 | — | 608 | [`prompt-06-zhishi-yijiao.md`](../departments/07-zhineng/19-zhineng-biye-sheji/chapters/06-zhishi-yijiao/outputs/prompt-06-zhishi-yijiao.md) |

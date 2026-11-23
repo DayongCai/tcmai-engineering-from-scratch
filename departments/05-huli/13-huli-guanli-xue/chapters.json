@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-zuzhi-gangwei",
-   "title": "护理管理的组织、环境与计划",
+   "title": "计划的可信度写在前提里，不写在目标里",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-zuzhi-gangwei/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-renli-paiban",
-   "title": "人力资源、排班与团队",
+   "title": "排班的公平要写成规则，才经得起追问",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-renli-paiban/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-zhiliang-gaijin",
-   "title": "护理质量评价与持续改进",
+   "title": "指标没有分母与口径，就只是一个数字",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-zhiliang-gaijin/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-buliang-genyin",
-   "title": "不良事件、根因与纠纷处理",
+   "title": "报告的用处不在追责，而在让同一个环节不再出错",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-buliang-genyin/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-jixiao-chengben",
-   "title": "护理绩效与成本核算",
+   "title": "绩效评的是岗位，成本算的是服务，两者都不能拿来排名",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-jixiao-chengben/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-xinxihua-zhili",
-   "title": "护理信息化与数据治理",
+   "title": "数据治理从字段开始，不从大屏开始",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-xinxihua-zhili/docs/zh.md",

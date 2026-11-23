@@ -5,7 +5,7 @@
     {
       "n": 1,
       "slug": "01-neike-huli",
-      "title": "内科护理轮转",
+      "title": "内科轮转的前三天，决定这一站还能学到什么",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/01-neike-huli/docs/zh.md",
@@ -14,7 +14,7 @@
     {
       "n": 2,
       "slug": "02-waike-huli",
-      "title": "外科护理轮转",
+      "title": "外科轮转的核心在术前那一天与术后那几个窗口",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/02-waike-huli/docs/zh.md",
@@ -23,7 +23,7 @@
     {
       "n": 3,
       "slug": "03-fuer-huli",
-      "title": "妇儿护理轮转",
+      "title": "妇儿轮转要写两个人的记录，一份也不能省",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/03-fuer-huli/docs/zh.md",
@@ -32,7 +32,7 @@
     {
       "n": 4,
       "slug": "04-jiwei-huli",
-      "title": "急危重症护理轮转",
+      "title": "急危重症轮转先学排序：谁先看，比看得多快更重要",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/04-jiwei-huli/docs/zh.md",
@@ -41,7 +41,7 @@
     {
       "n": 5,
       "slug": "05-zhongyi-huli-jishu",
-      "title": "中医护理技术临床应用轮转",
+      "title": "中医技术轮转的门槛是辨证用技，不是把手法练熟",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/05-zhongyi-huli-jishu/docs/zh.md",
@@ -50,7 +50,7 @@
     {
       "n": 6,
       "slug": "06-chuke-kaohe",
-      "title": "出科考核与护理个案复盘",
+      "title": "出科考的是一例能不能讲透，不是做过多少项",
       "status": "🚧",
       "kind": "core",
       "docs": "chapters/06-chuke-kaohe/docs/zh.md",

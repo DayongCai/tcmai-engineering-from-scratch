@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-lilun-kuangjia",
-   "title": "中医心理学的理论框架",
+   "title": "中医心理学的第一道判断，是分清形与神各自的证据",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-lilun-kuangjia/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-qiqing-zhizhi",
-   "title": "七情学说与情志致病",
+   "title": "情志致病的关键不在情绪有多强，而在气机往哪里去",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-qiqing-zhizhi/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-wuzhi-zangfu",
-   "title": "五志与脏腑的关系",
+   "title": "同一种情绪落在不同脏腑，观察项与第一动作都不该一样",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-wuzhi-zangfu/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-qingzhibing-pinggu",
-   "title": "情志病的辨证与评估",
+   "title": "评估的功夫在提问，不在结论",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-qingzhibing-pinggu/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-shudao-xiangsheng",
-   "title": "心理疏导与情志相胜",
+   "title": "以情胜情是把情绪当药用，所以它比用药更危险",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-shudao-xiangsheng/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-shenxin-ganyu",
-   "title": "身心疾病的中医干预",
+   "title": "心身疾病的干预，一半在治法，一半在把不确定说清",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-shenxin-ganyu/docs/zh.md",
@@ -59,7 +59,7 @@
   {
    "n": 7,
    "slug": "07-liangbiao-juxian",
-   "title": "心理量表的使用与局限",
+   "title": "量表能给一个数字，给不了这个数字的意思",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/07-liangbiao-juxian/docs/zh.md",
@@ -68,7 +68,7 @@
   {
    "n": 8,
    "slug": "08-duizhao-sheji",
-   "title": "心理干预研究的对照设计",
+   "title": "要证明一个干预有效，先得说清它跟什么比",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/08-duizhao-sheji/docs/zh.md",

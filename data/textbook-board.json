@@ -16,7 +16,7 @@
     "gapSubjects": 46,
     "gapWithBody": 46,
     "gapWithBodyChapters": 404,
-    "gapWithBodyChars": 1688468,
+    "gapWithBodyChars": 1690340,
     "gapNoBody": 0
   },
   "totals": {
@@ -23327,9 +23327,9 @@
           "hours": 72,
           "body": {
             "chapters": 14,
-            "chars": 49595
+            "chars": 53428
           },
-          "note": "教学章已有正文（14 章 / 5.0 万字），未接教材出版线"
+          "note": "教学章已有正文（14 章 / 5.3 万字），未接教材出版线"
         },
         {
           "slug": "12-jiwei-zhengzheng-huli",
@@ -23339,9 +23339,9 @@
           "hours": 72,
           "body": {
             "chapters": 10,
-            "chars": 40105
+            "chars": 38144
           },
-          "note": "教学章已有正文（10 章 / 4.0 万字），未接教材出版线"
+          "note": "教学章已有正文（10 章 / 3.8 万字），未接教材出版线"
         }
       ]
     },

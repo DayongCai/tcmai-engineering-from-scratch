@@ -1,13 +1,8 @@
 #!/usr/bin/env node
 /**
- * 儿科护理学 · 第 14 章 特殊儿童与慢病儿童的护理：本章统计口径
+ * 儿科护理学 · 第 14 章 特殊儿童与慢病儿童的护理：正文自检
  * 课程: departments/05-huli/10-erke-huli-xue/chapters/14-teshu-manbing/docs/zh.md
- * 数据: standards/erke-huli/units.json（18 单元层，每单元带三辨与四位面词频）
- * 取数: standards/erke-huli/chapter-map.json（课程章 → 教材单元号）
- * 依赖: 仅 Node.js 标准库
- *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 只读本章正文，现算篇幅、结构与重点词频；不手打数字，不引用外部参数。
  */
 
 'use strict';
@@ -15,87 +10,90 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'erke-huli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/erke-huli/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'erke-huli', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'erke-huli', 'chapter-map.json');
-const CHAPTER = '14';
+const CHAPTER = 14;
 const SLUG = '14-teshu-manbing';
+const TITLE = '特殊儿童与慢病儿童的护理';
+const FOCUS = ["一日流程表","依从性","执行人","过渡"];
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+const hanzi = (s) => (String(s || '').match(/[\u3400-\u4dbf\u4e00-\u9fff]/g) || []).length;
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+function readDoc() {
+  return fs.readFileSync(DOC, 'utf8');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
+function analyze(text = readDoc()) {
+  const src = String(text);
+  const lines = src.split(/\r?\n/);
+  const sections = lines.filter((l) => /^##\s+/.test(l)).length;
+  const paragraphs = lines.filter((l) => {
+    const t = l.trim();
+    return t && !/^[#>|]/.test(t) && !/^[-*]\s+/.test(t);
+  }).length;
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+  let tables = 0;
+  let tableDataRows = 0;
+  let inTable = false;
+  let rowIndex = 0;
+  for (const l of lines) {
+    const isRow = /^\s*\|/.test(l);
+    if (isRow) {
+      if (!inTable) { inTable = true; tables += 1; rowIndex = 0; }
+      rowIndex += 1;
+      if (rowIndex > 2) tableDataRows += 1;
+    } else {
+      inTable = false;
+    }
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+
+  const listItems = lines.filter((l) => /^\s*[-*]\s+/.test(l)).length;
+  const bold = new Set();
+  for (const m of src.matchAll(/\*\*([^*\n]+)\*\*/g)) {
+    const term = m[1].trim();
+    if (term) bold.add(term);
+  }
+
+  const books = new Set();
+  let citations = 0;
+  for (const m of src.matchAll(/《([^》]+)》/g)) {
+    books.add(m[1]);
+    citations += 1;
+  }
+
+  const focus = {};
+  for (const term of FOCUS) {
+    focus[term] = src.split(term).length - 1;
+  }
+
+  return {
+    hanzi: hanzi(src),
+    sections,
+    paragraphs,
+    tables,
+    tableDataRows,
+    listItems,
+    boldTerms: bold.size,
+    citations,
+    books: books.size,
+    focus
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`儿科护理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const s = analyze();
+  console.log(`儿科护理学 · 第 ${CHAPTER} 章 ${TITLE} · 正文自检`);
+  console.log(`文件: chapters/${SLUG}/docs/zh.md`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`篇幅: ${s.hanzi.toLocaleString('en-US')} 汉字 · ${s.sections} 小节 · ${s.paragraphs} 段落`);
+  console.log(`结构: ${s.tables} 表格（${s.tableDataRows} 数据行）· ${s.listItems} 列表项 · ${s.boldTerms} 粗体术语 · 引书 ${s.books} 部 / ${s.citations} 次`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
-  }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
+  console.log('重点词频（正文现数）：');
+  for (const term of FOCUS) console.log(`  ${term}: ${s.focus[term]}`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/erke-huli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log('※ 数字全部由本章正文现算，不手打，不引用外部参数。');
+  console.log('※ 本输出仅用于教学演示，不构成临床判断依据；一切以现行规范与机构制度为准。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { analyze, readDoc, CHAPTER, SLUG, TITLE, FOCUS };

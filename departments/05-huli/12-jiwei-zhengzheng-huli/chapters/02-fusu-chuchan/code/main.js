@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 /**
- * 急危重症护理学 · 第 2 章 心搏骤停与心肺复苏、除颤：本章统计口径
+ * 急危重症护理学 · 第 2 章 复苏的成败不在手法漂亮，而在中断的那几十秒：正文判断卡
  * 课程: departments/05-huli/12-jiwei-zhengzheng-huli/chapters/02-fusu-chuchan/docs/zh.md
- * 数据: standards/jiwei-huli/units.json（18 单元层，每单元带三辨与四位面词频）
- * 取数: standards/jiwei-huli/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数字全部现算：汉字数、节与小节、表格与数据行、分层步数、停手由头、失效模式，
+ * 都从本章正文读出；按压效率与累计丢失时长由停手秒数逐轮累加算出。
  */
 
 'use strict';
@@ -15,87 +13,149 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'jiwei-huli', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/jiwei-huli/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'jiwei-huli', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'jiwei-huli', 'chapter-map.json');
 const CHAPTER = '2';
 const SLUG = '02-fusu-chuchan';
+const TITLE = '复苏的成败不在手法漂亮，而在中断的那几十秒';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
+const EOL = /\r?\n/;
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+// 本章正文点名的五种停手由头与其中必须停的一种。
+const SAMPLES = [
+  { text: '十四时零二分判断无反应、无正常呼吸，十四时零二分开始按压并呼救', note: '时刻加动作' },
+  { text: '经全力抢救，患者恢复自主循环', note: '总结代替时刻' },
+  { text: '按压两分钟后换人，换人间隔约十秒', note: '有动作无时刻' },
+  { text: '十四时零五分贴电极片，十四时零六分首次除颤，节律为可除颤', note: '时刻加节律' },
+  { text: '未除颤，因节律不可除颤', note: '阴性发现，仍缺时刻' },
+];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+const SUMMARY = /(经全力抢救|全力抢救|抢救成功|效果良好|病情稳定|恢复自主循环。?$)/;
+const TIME = /([零一二三四五六七八九十百千]+时[零一二三四五六七八九十]+分|\d{1,2}[:：]\d{2})/;
+const ACTION = /(按压|呼救|除颤|通气|识别|气管|换人|轮换)/;
+
+function readDoc() { return fs.readFileSync(DOC, 'utf8'); }
+function hanzi(text) { return (text.match(/[\u4e00-\u9fff]/g) || []).length; }
+
+function countHeadings(text, prefix) {
+  return text.split(EOL).filter((line) => line.startsWith(prefix) && !line.startsWith(prefix + '#')).length;
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
-}
-
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function tableBlocks(lines) {
+  const blocks = [];
+  let cur = null;
+  for (const line of lines) {
+    const t = line.trim();
+    if (t.startsWith('|')) {
+      if (!cur) { cur = []; blocks.push(cur); }
+      cur.push(t);
+    } else { cur = null; }
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return blocks;
+}
+
+function dataRows(block) {
+  return block.filter((l) => !/^\|[\s:\-|]+\|$/.test(l)).slice(1);
+}
+
+function sectionText(text, key) {
+  const out = [];
+  let on = false;
+  for (const line of text.split(EOL)) {
+    const m = /^##\s+(.*)$/.exec(line);
+    if (m) { on = m[1].includes(key); continue; }
+    if (on) out.push(line);
+  }
+  return out.join('\n');
+}
+
+function blockOf(text, key) {
+  return text.split(/\n(?=## )/).find((c) => c.includes(key)) || '';
+}
+
+/** 从「停手有五种由头：A、B、C…。」里取出各条 */
+function interruptionCauses(text) {
+  const m = /停手有[一二三四五六七八九十]+种由头：([^。]+)。/.exec(text);
+  return m ? m[1].split('、').map((s) => s.trim()).filter(Boolean) : [];
+}
+
+/** 一轮有效按压秒数与效率 */
+function roundEfficiency(roundSeconds, stops) {
+  const lost = stops.reduce((a, b) => a + b, 0);
+  const effective = roundSeconds - lost;
+  return { effective, lost, ratio: effective / roundSeconds };
+}
+
+/** 若干轮累计丢失秒数 */
+function cumulativeLost(roundSeconds, stops, rounds) {
+  return roundEfficiency(roundSeconds, stops).lost * rounds;
+}
+
+function classify(text) {
+  if (SUMMARY.test(text)) return '总结式';
+  if (TIME.test(text) && ACTION.test(text)) return '时刻式';
+  return '缺时刻';
+}
+
+function report() {
+  const text = readDoc();
+  const lines = text.split(EOL);
+  const blocks = tableBlocks(lines);
+  const rows = blocks.reduce((n, b) => n + dataRows(b).length, 0);
+
+  const size = {
+    hanzi: hanzi(text),
+    sections: countHeadings(text, '## '),
+    subsections: countHeadings(text, '### '),
+    tables: blocks.length,
+    rows,
+  };
+
+  const steps = ['**第一步，', '**第二步，', '**第三步，', '**第四步，', '**第五步，']
+    .filter((k) => blockOf(text, '分层评估').includes(k)).length;
+  const causes = interruptionCauses(text);
+  const modes = (sectionText(text, '失效模式').match(/失效模式[一二三四五六七八九]/g) || []).length;
+
+  const round = 120;
+  const stops = [10, 8];
+  const eff = roundEfficiency(round, stops);
+  const samples = SAMPLES.map((s) => ({ ...s, kind: classify(s.text) }));
+
+  return {
+    chapter: CHAPTER,
+    title: TITLE,
+    size,
+    steps,
+    causes,
+    modes,
+    round,
+    stops,
+    eff,
+    lostFive: cumulativeLost(round, stops, 5),
+    samples,
+    ok: samples.filter((s) => s.kind === '时刻式').length,
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`急危重症护理学 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = report();
+  console.log(`急危重症护理学 · 第 ${r.chapter} 章 ${r.title}`);
+  console.log(`正文: chapters/${SLUG}/docs/zh.md`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`规模: 汉字 ${r.size.hanzi.toLocaleString('en-US')} · 节 ${r.size.sections} · 小节 ${r.size.subsections} · 表格 ${r.size.tables} 张（数据行 ${r.size.rows}）`);
+  console.log(`分层: ${r.steps} 步；失效模式: ${r.modes} 条`);
+  console.log(`停手由头 ${r.causes.length} 种 → ${r.causes.join(' / ')}；其中必须停的只有「${r.causes.includes('贴电极片') ? '贴电极片' : '无'}」。`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log(`演算: 一轮 ${r.round} 秒，停手 ${r.stops.join('＋')} 秒，有效按压 ${r.eff.effective} 秒，效率 ${(r.eff.ratio * 100).toFixed(1)}%；连做五轮累计丢掉 ${r.lostFive} 秒。`);
+  console.log('');
+  console.log('样例复苏记录（规则逐条判定）:');
+  for (const s of r.samples) {
+    const mark = s.kind === '时刻式' ? '✅' : '❌';
+    console.log(`  ${mark} ${s.kind.padEnd(4)} ← ${s.text}　〔${s.note}〕`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/jiwei-huli/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`结论: ${r.samples.length} 条例句里 ${r.ok} 条可重建现场；总结句与缺时刻的条目，复盘时都无法回答「首次除颤距骤停几分钟」。`);
+  console.log('边界声明: 本输出为教学样例，数字由本章正文现算，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = { readDoc, hanzi, countHeadings, tableBlocks, dataRows, sectionText, blockOf, interruptionCauses, roundEfficiency, cumulativeLost, classify, report, SAMPLES, CHAPTER, SLUG, TITLE };

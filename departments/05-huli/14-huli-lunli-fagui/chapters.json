@@ -5,7 +5,7 @@
   {
    "n": 1,
    "slug": "01-yuanze-kunjing",
-   "title": "护理伦理的原则、困境与决策",
+   "title": "四个原则不是四句口号，是四种能被追问的动作",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/01-yuanze-kunjing/docs/zh.md",
@@ -14,7 +14,7 @@
   {
    "n": 2,
    "slug": "02-zhiqing-tongyi",
-   "title": "知情同意与患者自主权",
+   "title": "签字只是同意的痕迹，同意是一个被听懂的过程",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/02-zhiqing-tongyi/docs/zh.md",
@@ -23,7 +23,7 @@
   {
    "n": 3,
    "slug": "03-yinsi-xinxi",
-   "title": "隐私保护与信息使用",
+   "title": "隐私的边界由用途划定，不由权限划定",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/03-yinsi-xinxi/docs/zh.md",
@@ -32,7 +32,7 @@
   {
    "n": 4,
    "slug": "04-chacuo-faze",
-   "title": "护理差错与不良事件的法与责",
+   "title": "报告的自由度，决定差错的可见度",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/04-chacuo-faze/docs/zh.md",
@@ -41,7 +41,7 @@
   {
    "n": 5,
    "slug": "05-anning-shengming",
-   "title": "安宁疗护与生命伦理",
+   "title": "终末照护的第一项技术，是把话听完",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/05-anning-shengming/docs/zh.md",
@@ -50,7 +50,7 @@
   {
    "n": 6,
    "slug": "06-fagui-zhifan",
-   "title": "护理法规与执业规范",
+   "title": "规范不是捆住动作的条文，是划出可被信任的范围",
    "status": "🚧",
    "kind": "core",
    "docs": "chapters/06-fagui-zhifan/docs/zh.md",

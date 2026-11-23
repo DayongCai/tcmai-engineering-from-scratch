@@ -1,6 +1,6 @@
 {
   "note": "四级编码目录（课程→章→节→单元）。由 scripts/build_toc_4level.js 生成；authored=true 的科目为手写目录，脚本不覆盖，只校验章数。",
-  "generatedAt": "2026-11-22",
+  "generatedAt": "2026-11-23",
   "totals": {
     "subjects": 142,
     "chapters": 2149,

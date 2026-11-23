@@ -22,7 +22,7 @@ const fs = require('fs');
 const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const CJK = /[\u3400-\u4dbf\u4e00-\u9fff]/g;
-const FP = [/三辨/, /四位面/, /单元规模/, /本课第\s*\d+\s*章/, /见 code\/main\.js 输出/];
+const TEMPLATE = [/三辨/, /四位面/, /单元规模/, /本章实测/, /这一章要回答什么/, /本课第\s*\d+\s*章/, /见\s*code\/main\.js\s*输出/, /F:\/textbooks/];
 const MIN_HZ = 2500;
 
 const arg = (k, d) => (process.argv.find((a) => a.startsWith(`--${k}=`)) || `--${k}=${d}`).split('=')[1];
@@ -31,7 +31,7 @@ function auditChapter(file) {
   const md = fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
   const hz = (md.match(CJK) || []).length;
   const issues = [];
-  for (const re of FP) if (re.test(md)) issues.push(`模板残留 ${re}`);
+  for (const re of TEMPLATE) if (re.test(md)) issues.push(`模板残留 ${re}`);
   if (hz < MIN_HZ) issues.push(`汉字 ${hz} < ${MIN_HZ}`);
 
   const h1 = (md.match(/^#\s+(.+)$/m) || [, ''])[1].trim();

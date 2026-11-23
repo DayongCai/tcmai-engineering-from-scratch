@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * 护理临床轮转 · 第 5 章 中医护理技术临床应用轮转：本章统计口径
+ * 护理临床轮转 · 第 5 章 中医技术轮转的门槛是辨证用技，不是把手法练熟：正文判断卡
  * 课程: departments/05-huli/26-huli-linchuang-lunzhuan/chapters/05-zhongyi-huli-jishu/docs/zh.md
- * 数据: standards/huli-lunzhuan/units.json（13 单元层，每单元带三辨与四位面词频）
- * 取数: standards/huli-lunzhuan/chapter-map.json（课程章 → 教材单元号）
  * 依赖: 仅 Node.js 标准库
  *
- * 数字全部现算：本章规模、三辨分布、四位面分布、引书数与数值命中，都由本脚本从单元层读出。
- * 手打的数字会在教材改版后静默过期。
+ * 数字全部现算：汉字数、节数、表格与数据行、三问三条、四类技术、记录六项、
+ * 出科五项与失效五条，以及开篇「4 周 × 每班 2 次 × 20 个工作日 = 40 次」与
+ * 「前 2 周 20 次里 3 次落在禁忌」的算术，都由本脚本从正文读出并与正文写出的结果对账。
  */
 
 'use strict';
@@ -15,87 +14,161 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-function findRoot(start) {
-  let dir = start;
-  for (let i = 0; i < 12; i += 1) {
-    if (fs.existsSync(path.join(dir, 'standards', 'huli-lunzhuan', 'units.json'))) return dir;
-    const up = path.dirname(dir);
-    if (up === dir) break;
-    dir = up;
-  }
-  throw new Error('没找到 standards/huli-lunzhuan/units.json —— 章节目录是否已脱离仓库？');
-}
-
-const ROOT = findRoot(__dirname);
-const UNITS = path.join(ROOT, 'standards', 'huli-lunzhuan', 'units.json');
-const MAP = path.join(ROOT, 'standards', 'huli-lunzhuan', 'chapter-map.json');
 const CHAPTER = '5';
 const SLUG = '05-zhongyi-huli-jishu';
+const TITLE = '中医技术轮转的门槛是辨证用技，不是把手法练熟';
+const DOC = path.join(__dirname, '..', 'docs', 'zh.md');
 
-const loadAll = () => JSON.parse(fs.readFileSync(UNITS, 'utf8'));
-const loadMap = () => JSON.parse(fs.readFileSync(MAP, 'utf8'));
+// 记录样例取自本章记录六项与「无不适」的两种写法。
+const RECORD_SAMPLES = [
+  { text: '已行艾灸', note: '只剩技术名，六项全缺' },
+  {
+    text: '术前主诉腰冷、局部皮肤完整；艾灸腰部，仰卧位；已告知并复述；术中无不适；术毕局部皮肤微红、无灼痛，当班内复看；下一步：继续，次班复评',
+    note: '六项齐'
+  },
+  { text: '艾灸后病人说舒服，无异常', note: '「无异常」没有写看什么' }
+];
 
-function chapterKeys() {
-  const cm = loadMap().chapters;
-  if (!cm[SLUG]) throw new Error('chapter-map.json 里没有这一章: ' + SLUG);
-  return cm[SLUG].units.slice();
+const RECORD_ITEMS = [
+  { name: '施术前状态', re: /(术前|主诉|局部皮肤|局部情况)/ },
+  { name: '技术要素', re: /(艾灸|拔罐|刮痧|耳穴|部位|体位|技术名称)/ },
+  { name: '告知与同意', re: /(告知|同意|复述|签字)/ },
+  { name: '施术过程', re: /(过程中|术中|不适|中断|感受)/ },
+  { name: '施术后反应', re: /(术毕|灸后|罐后|操作后|做完|局部皮肤|灼热|头晕|心慌)/ },
+  { name: '下一步', re: /(继续|调整|停用|复评|下一次|次班)/ }
+];
+
+function readDoc() {
+  return fs.readFileSync(DOC, 'utf8');
 }
 
-function chapterUnits() {
-  const keys = chapterKeys();
-  const all = loadAll();
-  return all.units
-    .filter((u) => keys.includes(u.sub))
-    .sort((a, b) => a.sub.localeCompare(b.sub, 'en', { numeric: true }));
+function hanzi(text) {
+  return (text.match(/[\u4e00-\u9fff]/g) || []).length;
 }
 
-function summarize(units) {
-  const views = {};
-  const levels = {};
-  let hanzi = 0;
-  let values = 0;
-  let cites = 0;
-  const books = new Set();
-  for (const u of units) {
-    hanzi += u.hanzi;
-    values += (u.measure && u.measure.valueLike) || 0;
-    for (const [k, v] of Object.entries((u.measure && u.measure.views) || {})) views[k] = (views[k] || 0) + v;
-    for (const [k, v] of Object.entries((u.measure && u.measure.levels) || {})) levels[k] = (levels[k] || 0) + v;
-    for (const m of (u.prose || '').matchAll(/《([^》]+)》/g)) { books.add(m[1]); cites += 1; }
+function sectionTitles(text) {
+  return text.split(/\r?\n/).filter((l) => /^##\s/.test(l)).map((l) => l.replace(/^##\s*/, '').trim());
+}
+
+function sectionText(text, key) {
+  const out = [];
+  let on = false;
+  for (const line of text.split(/\r?\n/)) {
+    const m = /^##\s+(.*)$/.exec(line);
+    if (m) { on = m[1].includes(key); continue; }
+    if (on) out.push(line);
   }
-  const top = (o) => Object.entries(o).sort((a, b) => b[1] - a[1])[0] || ['—', 0];
-  return { views, levels, hanzi, values, cites, books: books.size, viewTop: top(views), levelTop: top(levels) };
+  return out.join('\n');
+}
+
+function tableBlocks(lines) {
+  const blocks = [];
+  let cur = null;
+  for (const line of lines) {
+    const t = line.trim();
+    if (t.startsWith('|')) {
+      if (!cur) { cur = []; blocks.push(cur); }
+      cur.push(t);
+    } else {
+      cur = null;
+    }
+  }
+  return blocks;
+}
+
+function dataRows(block) {
+  return block.filter((l) => !/^\s*\|[\s:\-|]+\|\s*$/.test(l)).slice(1);
+}
+
+/** 开篇算术：4 周、每班 2 次、20 个工作日合计多少次；前 2 周多少次；禁忌情形几次 */
+function problem(text) {
+  const num = (re, name) => {
+    const m = text.match(re);
+    if (!m) throw new Error('正文里找不到这个数：' + name);
+    return Number(m[1].replace(/,/g, ''));
+  };
+  const weeks = num(/一站\s*(\d+)\s*周/, '一站周数');
+  const perShift = num(/每班\s*(\d+)\s*次技术操作/, '每班次数');
+  const workdays = num(/(\d+)\s*个工作日/, '工作日数');
+  const statedTotal = num(/全站约\s*(\d+)\s*次/, '全站次数');
+  const halfWeeks = num(/前\s*(\d+)\s*周的\s*(\d+)\s*次/, '前几周的次数');
+  const halfTimes = num(/前\s*\d+\s*周的\s*(\d+)\s*次/, '前几周的次数');
+  const violation = num(/只要有\s*(\d+)\s*次落在禁忌/, '落在禁忌的次数');
+  const total = workdays * perShift;
+  const firstHalf = total / 2;
+  return {
+    weeks, perShift, workdays, total, firstHalf, violation,
+    stated: { total: statedTotal, halfTimes, halfWeeksEq: halfWeeks * 2 === weeks },
+    consistent: total === statedTotal && firstHalf === halfTimes && halfWeeks * 2 === weeks
+  };
+}
+
+/** 本章可数的结构：三问、四类技术、记录六项、出科五项、失效五条 */
+function structure(text) {
+  const lines = text.split(/\r?\n/);
+  const rows = tableBlocks(lines).map((b) => dataRows(b).length);
+  return {
+    questions: rows[0],
+    techniques: rows[1],
+    recordItems: (sectionText(text, '操作记录').match(/^\d+\.\s/gm) || []).length,
+    examItems: (sectionText(text, '出科考核项').match(/^\d+\.\s/gm) || []).length,
+    failures: (sectionText(text, '五种失效模式').match(/\*\*其[一二三四五六七八九]，/g) || []).length
+  };
+}
+
+/** 记录六项完整性：返回命中的项名 */
+function recordItems(sentence) {
+  const t = String(sentence || '');
+  return RECORD_ITEMS.filter((x) => x.re.test(t)).map((x) => x.name);
+}
+
+function report() {
+  const text = readDoc();
+  const lines = text.split(/\r?\n/);
+  const blocks = tableBlocks(lines);
+  let rows = 0;
+  for (const b of blocks) rows += dataRows(b).length;
+  return {
+    chapter: CHAPTER,
+    title: TITLE,
+    size: { hanzi: hanzi(text), sections: sectionTitles(text).length, tables: blocks.length, rows },
+    math: problem(text),
+    structure: structure(text),
+    records: RECORD_SAMPLES.map((s) => ({ ...s, items: recordItems(s.text) }))
+  };
 }
 
 function main() {
-  const units = chapterUnits();
-  const s = summarize(units);
-  const cm = loadMap().chapters[SLUG];
-  const all = loadAll();
-
-  console.log(`护理临床轮转 · 第 ${CHAPTER} 章 ${cm.title}`);
+  const r = report();
+  const m = r.math;
+  const s = r.structure;
+  console.log(`护理临床轮转 · 第 ${r.chapter} 章 ${r.title}`);
+  console.log(`正文: chapters/${SLUG}/docs/zh.md`);
   console.log('');
-  console.log(`本章 ${units.length} 单元 · ${s.hanzi.toLocaleString('en-US')} 汉字 · 教材章 ${cm.srcChapters.join('、')}`);
+  console.log(`规模: 汉字 ${r.size.hanzi.toLocaleString('en-US')} · 节 ${r.size.sections} · 表格 ${r.size.tables} 张（数据行 ${r.size.rows}）`);
   console.log('');
-  console.log('三辨分布（单元层 measure.views 求和）：');
-  for (const [k, v] of Object.entries(s.views).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}`);
+  console.log('操作量算术:');
+  console.log(`  ${m.weeks} 周一站 · 每班 ${m.perShift} 次 · ${m.workdays} 个工作日 → 全站 ${m.total} 次（${m.workdays} × ${m.perShift} = ${m.total}）`);
+  console.log(`  前 ${m.weeks / 2} 周 = ${m.firstHalf} 次；其中 ${m.violation} 次落在禁忌情形 → ${m.violation} 次需要上报`);
+  console.log(`  对账: 正文写出的 ${m.stated.total}/${m.stated.halfTimes} 与重算${m.consistent ? '一致' : '不一致'}`);
+  console.log(`  读法: 手法熟了、选择仍然不会，${m.total} 次的机会成本全在「先评后做」四个字上。`);
+  console.log('');
+  console.log(`结构: 施术三问 ${s.questions} 条 · 常用技术 ${s.techniques} 类 · 记录 ${s.recordItems} 项 · 考核 ${s.examItems} 项 · 失效模式 ${s.failures} 条`);
+  console.log('');
+  console.log('记录样例（六项逐条核对）:');
+  for (const x of r.records) {
+    console.log(`  ${x.items.length === 6 ? '✅' : '❌'} ${x.items.length}/6 项 ← ${x.text}　〔${x.note}〕`);
+    if (x.items.length < 6) console.log(`      缺: ${RECORD_ITEMS.map((i) => i.name).filter((n) => !x.items.includes(n)).join('、')}`);
   }
-  console.log(`  → 主导一辨：${s.viewTop[0]}（${s.viewTop[1]}）`);
   console.log('');
-  console.log(`四位面（${Object.keys(all.levels).join('／')}）分布：`);
-  const ltot = Object.values(s.levels).reduce((a, b) => a + b, 0) || 1;
-  for (const [k, v] of Object.entries(s.levels).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${k}：${v}（${((v / ltot) * 100).toFixed(1)}%）`);
-  }
-  console.log(`  → 主导位面：${s.levelTop[0]}（${s.levelTop[1]}）`);
-  console.log('');
-  console.log(`引书 ${s.books} 部 / ${s.cites} 次；数值类命中 ${s.values} 处。`);
-  console.log('');
-  console.log('※ 教学样例：数字由 standards/huli-lunzhuan/units.json 现算，不手打；改教材后重跑即可复现。');
-  console.log('※ 本输出仅用于教学演示，不构成临床判断依据。');
+  console.log(`结论: ${r.records.length} 份记录里 ${r.records.filter((x) => x.items.length === 6).length} 份六项齐全；术前状态与术后反应两栏缺席，这份记录既不能比较也不能交接。`);
+  console.log('边界声明: 本输出为教学样例，数字由本章正文现算，不构成临床判断依据。');
 }
 
 if (require.main === module) main();
 
-module.exports = { chapterKeys, chapterUnits, summarize, CHAPTER, SLUG };
+module.exports = {
+  readDoc, hanzi, sectionTitles, sectionText, tableBlocks, dataRows,
+  problem, structure, recordItems, RECORD_ITEMS, RECORD_SAMPLES,
+  report, CHAPTER, SLUG, TITLE
+};
